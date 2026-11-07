@@ -47,14 +47,14 @@ function tabel(el, kolom, rows, S, kosong) {
 const kelompok = (b) => (b.peng === "IPP" ? "ipp" : b.peng ? "pln" : "tak");
 function pengHtml(b) {
   if (!b.peng) return `<span class="jm-bantu">${esc(t("kp.peng.tak"))}</span>`;
-  const anak = b.peng === "SH-PLN", pil = anak ? (bahasa() === "en" ? "PLN subsidiary" : "Anak usaha PLN") : b.peng;
+  const anak = b.peng === "SH-PLN", pil = anak ? t("kp.peng.anak") : b.peng;
   const d = b.dev;
   let nama;
   if (d) {
     const logo = d.org_id ? logoOrgSatu(d.org_id, d.nama) : "";
     const teks = d.org_id ? tautOrg(d.org_id, d.nama) : esc(d.nama);
     nama = `<span class="jm-kp-dev">${logo ? `<img class="jm-kp-dev-logo" src="${esc(logo)}" alt="" width="22" height="22" loading="lazy" data-galat="hapus">` : ""}<span class="jm-kp-dev-nama">${teks}</span></span>`;
-  } else if (b.peng === "IPP") nama = `<span class="jm-bantu jm-kp-dev-nama">${esc(bahasa() === "en" ? "IPP (not yet identified)" : "IPP (belum diketahui)")}</span>`;
+  } else if (b.peng === "IPP") nama = `<span class="jm-bantu jm-kp-dev-nama">${esc(t("kp.peng.ipp_tak"))}</span>`;
   else nama = anak ? "" : `<span class="jm-kp-dev-nama">${"PT PLN (Persero)"}</span>`;
   return `<span class="jm-kp-peng-sel">${nama}<span class="jm-kp-peng jm-kp-peng-${kelompok(b)}">${esc(pil)}</span></span>`;
 }
@@ -64,7 +64,7 @@ function pager(hal, maks, a, b, total) {
   let nomor = "", prev = 0;
   for (const n of [...set].filter((x) => x >= 1 && x <= maks).sort((x, y) => x - y)) { if (n - prev > 1) nomor += `<span class="jm-hal-elips" aria-hidden="true">${UJUNG}</span>`; nomor += `<button type="button" class="jm-hal-no" data-hal="${n}"${n === hal ? ' aria-current="page"' : ""} aria-label="${esc(t("jm.hal", { n: angka(n) }))}">${num(n)}</button>`; prev = n; }
   const panah = (ik, h, kunci, mati) => `<button type="button" class="jm-hal-no jm-hal-panah" data-hal="${h}" aria-label="${esc(t(kunci))}"${mati ? " disabled" : ""}>${ikon(ik, 16)}</button>`;
-  return `<nav class="jm-hal jm-hal-no-bar" aria-label="${esc(t("jm.hal", { n: angka(hal) }))}"><span class="jm-hal-info">${num(a)}-${num(b)} ${esc(bahasa() === "en" ? "of" : "dari")} ${num(total)}</span>${maks > 1 ? `<span class="jm-hal-daftar">${panah("panah-kiri", hal - 1, "jm.sebelumnya", hal <= 1)}${nomor}${panah("panah-kanan", hal + 1, "jm.berikutnya", hal >= maks)}</span>` : ""}</nav>`;
+  return `<nav class="jm-hal jm-hal-no-bar" aria-label="${esc(t("jm.hal", { n: angka(hal) }))}"><span class="jm-hal-info">${num(a)}-${num(b)} ${esc(t("jm.dari"))} ${num(total)}</span>${maks > 1 ? `<span class="jm-hal-daftar">${panah("panah-kiri", hal - 1, "jm.sebelumnya", hal <= 1)}${nomor}${panah("panah-kanan", hal + 1, "jm.berikutnya", hal >= maks)}</span>` : ""}</nav>`;
 }
 function urutKlik(sec, S, gambar, kananDulu) {
   sec.addEventListener("click", (e) => {

@@ -75,7 +75,7 @@ export function bangun(j, kunci, teks) {
     return TEKNOLOGI.includes(k) ? anyam(j, RUTE.teknologi(k), teks ?? (ada("pj.tek." + k) ? t("pj.tek." + k) : k), null, k) : esc(teks ?? kunci);
   }
   const r = cari(j, kunci);
-  if (r === undefined) { siapTautan(j).then(naikkan); return tunda(j, kunci, teks ?? ""); }
+  if (r === undefined) { siapTautan(j).then(() => naikkan()); return tunda(j, kunci, teks ?? ""); }
   if (!r) return esc(teks ?? kunci);
   if (j === "orang") return r.org ? anyam(j, "/o/" + r.org, teks ?? r.nama, null) : esc(teks ?? r.nama);
   return anyam(j, RUTE[j](r.id), teks ?? r.nama, r, r.id);
