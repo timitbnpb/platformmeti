@@ -60,7 +60,7 @@ Singkatan: KP = KEPUTUSAN-METI, GD = GRAND-DESIGN, R1..R9 = riset/, DT = DESAIN-
 | JM-D05 | Panen Ember, OWID, IRENASTAT, World Bank | pipa | F1 | M | belum |
 | JM-D06 | Panen regulasi BPK + JDIH ESDM | pipa | F1 | M | belum |
 | JM-D07 | `[manusia]` Seed METI: 12 anggota, 12 mitra, pengurus SK 0008, METI Wilayah | kurator | F1 | M | belum |
-| JM-D08 | Panen 1001startup.id energi (fakta + sumber primer, C-13) | pipa | F1 | M | tertahan (C-13) |
+| JM-D08 | Panen 1001startup.id energi (fakta + sumber primer, C-13) | pipa | F1 | M | panen awal selesai (R13); izin rilis tunggu C-13 |
 | JM-D09 | Panen AESI anggota, GEM manual, WRI GPPD | pipa | F1 | M | belum |
 | JM-D10 | `hubung.mjs` diport: graf + dedup + `strategis()` DIRI=METI | pipa | F1 | L | belum |
 | JM-D11 | Daftar tolak terpusat + uji | pipa | F1 | S | belum |
@@ -202,7 +202,7 @@ Singkatan: KP = KEPUTUSAN-METI, GD = GRAND-DESIGN, R1..R9 = riset/, DT = DESAIN-
 - Kurator memasukkan 12 anggota + 12 mitra metiires.or.id, pengurus SK 0008 (nama + jabatan), 6 METI Wilayah diresmikan, agenda 2026. Penghambat C-10, C-11.
 
 #### JM-D08 1001startup.id energi
-- Hanya setelah C-13: ambil nama, sektor, lokasi, relasi, dan URL sumber primer; label `via-pihak-ketiga`; tanpa teks dan logo. **Status:** tertahan.
+- Hanya setelah C-13: ambil nama, sektor, lokasi, relasi, dan URL sumber primer; label `via-pihak-ketiga`; tanpa teks dan logo. **Status:** panen awal selesai 7 Nov 2026 (R13: 89 entitas, 508 ikatan, `scripts/panen/panen_1001.mjs`); tampil publik menunggu izin tertulis (C-13).
 
 #### JM-D09 AESI, GEM, WRI
 - AESI daftar anggota (dedup), GEM unduhan manual (saring baris CC BY-NC bila perlu), WRI GPPD (hanya 178 pembangkit Indonesia, tanpa surya/angin; tanda lemah). **Ukuran:** M
