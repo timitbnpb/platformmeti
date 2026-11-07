@@ -534,3 +534,5 @@ main>:is(section,div,article)+:is(section,div,article){margin-top:max(24px,var(-
 /* pemilik 8 Nov 2026: kolom Dokumen sempit, judul regulasi utuh (maks 2 baris), tanpa elipsis satu baris */
 .jm-reg-tabel th:nth-child(6){width:96px}.jm-reg-tabel th:nth-child(4){width:120px}.jm-reg-tabel th:nth-child(5){width:100px}
 .jm-reg-tabel .jm-id small{white-space:normal;display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2;line-clamp:2;overflow:hidden;text-overflow:clip}
+/* pemilik 8 Nov 2026 "dempet semua": kartu yang dibungkus div tunggal juga wajib berjarak 24px */
+:is(.jm-ex,.jm-kartu,div:has(> :is(.jm-ex,.jm-kartu):only-child))+:is(.jm-ex,.jm-kartu,div:has(> :is(.jm-ex,.jm-kartu):only-child)){margin-top:24px}
