@@ -82,6 +82,9 @@ a.kal-baris:hover{border-color:var(--accent);box-shadow:var(--shadow)}
   .kal-kepala{grid-template-columns:1fr}.kal-nav{flex-wrap:wrap}.kal-nav h2{min-width:0;flex:1 1 100%;order:-1;margin:0}
   .kal-seg{display:none}
   .kal-kanan,.kal-saring{width:100%}
+  .kal-kanan{justify-content:flex-start}
+  .kal-kanan .kal-hariini{flex:1}
+  .kal-saring{order:2}
   .kal-saring .jm-pil-pilih{flex:1;min-width:0}
   .kal-baris{grid-template-columns:60px minmax(0,1fr);gap:14px;padding:14px}
   .kal-tgl{height:64px}

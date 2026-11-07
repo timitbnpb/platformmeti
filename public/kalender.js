@@ -60,6 +60,8 @@ function gambarKepala() {
     </div>
     <div class="kal-seg" role="group" aria-label="${esc(t("kal.agenda"))}">${tombolTampil("bulan", "tabel")}${tombolTampil("agenda", "daftar2")}</div>
     <div class="kal-kanan">
+      <a class="kal-hariini" id="kalLanggan" href="https://calendar.google.com/calendar/r?cid=${encodeURIComponent("webcal://" + location.host + "/kalender.ics")}" target="_blank" rel="noopener noreferrer" title="${esc(t("kal.langgan"))}" aria-label="${esc(t("kal.langgan"))}">${ikon("tambah", 18)}<span>${esc(t("kal.langgan_pendek"))}</span></a>
+      <button type="button" class="kal-bulat" data-salin-ical aria-label="${esc(t("kal.salin_ical"))}" title="${esc(t("kal.salin_ical"))}">${ikon("salin", 20)}</button>
       <div class="jm-saring kal-saring">${pilihHtml({ id: "jenis", ikon: "jenis", label: t("kal.semua"), opsi: [["", t("kal.semua")], ...JENIS.map((j) => [j, label("kal.jenis.", j)])], nilai: S.jenis })}</div>
     </div>`;
   judulBulan();
@@ -251,7 +253,7 @@ function bukaAcara(id, opener) {
   tampilPop(`<div class="kal-pop-isi">${tutupX()}${pilJenis(b.jenis)}<h2 id="kalPopJ">${esc(b.judul)}</h2>
     <dl class="kal-pop-dl">${dd("kal.pop.tanggal", esc(tglRentang(b)))}${dd("kal.pop.mitra", b.mitra ? esc(b.mitra) : "")}${dd("kal.pop.lokasi", b.lokasi ? esc(b.lokasi) : "")}${dd("kal.pop.sumber", `${esc(t("kal.sumber." + b.sumber.label))}, ${esc(t("kal.diambil", { tanggal: tanggal(b.sumber.tanggal) }))}`)}</dl>
     ${b.deskripsi ? `<p class="kal-pop-desk">${esc(b.deskripsi)}</p>` : ""}
-    <div class="kal-pop-aksi">${buktiHtml(b)}<button type="button" class="jm-tbl" data-pop="ics" data-id="${esc(b.id)}">${ikon("kalender", 18)}${esc(t("kal.pop.ics"))}</button>
+    <div class="kal-pop-aksi">${buktiHtml(b)}<a class="jm-tbl" href="${esc(gcal(b))}" target="_blank" rel="noopener noreferrer">${ikon("kalender", 18)}<span>${esc(t("kal.pop.gcal"))}</span></a><button type="button" class="jm-tbl" data-pop="ics" data-id="${esc(b.id)}">${ikon("unduh", 18)}<span>${esc(t("kal.pop.ics"))}</span></button>
     ${u ? `<a class="jm-tbl" href="${esc(u)}" target="_blank" rel="noopener noreferrer">${esc(t("kal.pop.buka"))} &rarr;</a>` : ""}
     <button type="button" class="jm-tbl" data-pop="bagi" data-id="${esc(b.id)}">${ikon("tautan", 18)}<span>${esc(t("kal.pop.bagi"))}</span></button></div></div>`, opener);
   history.replaceState(null, "", `${location.pathname}${location.search}#acara-${b.id}`);
@@ -262,6 +264,8 @@ function bukaHari(h, opener) {
   tampilPop(`<div class="kal-pop-isi">${tutupX()}<h2 id="kalPopJ">${esc(t("kal.pop.hari", { tanggal: tanggal(h, { gaya: "panjang" }) }))}</h2>
     ${r.length ? `<ul class="kal-pop-daftar">${r.map(item).join("")}</ul>` : `<p>${esc(t("kal.pop.kosong"))}</p>${lanjut ? `<h3>${esc(t("kal.pop.berikut"))}</h3><ul class="kal-pop-daftar">${item(lanjut)}</ul>` : ""}`}</div>`, opener);
 }
+const gcal = (b) => `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${encodeURIComponent(b.judul)}&dates=${b.tanggal.replaceAll("-", "")}/${iso(utc(b.akhir) + 864e5).replaceAll("-", "")}&details=${encodeURIComponent([b.mitra, urlB(b)].filter(Boolean).join("\n"))}&location=${encodeURIComponent(b.lokasi || "")}`;
+const icsUrl = () => `${location.origin}/kalender.ics`;
 const ics = (b) => {
   const e = (x) => String(x).replace(/\\/g, "\\\\").replace(/[;,]/g, (m) => "\\" + m).replace(/\r?\n/g, "\\n"), d = (x) => x.replaceAll("-", "");
   const baris = ["BEGIN:VCALENDAR", "VERSION:2.0", "PRODID:-//METI//Direktori METI//ID", "BEGIN:VEVENT", `UID:${b.id}@meti`, `DTSTAMP:${new Date().toISOString().replace(/[-:]|\.\d+/g, "")}`,
@@ -328,6 +332,7 @@ async function main() {
       for (const x of document.querySelectorAll("[data-tampil]")) x.setAttribute("aria-pressed", String(x === b)); // chrome urgent
       ulang();
     } else if ((b = q("[data-geser]"))) { S.bulan = geser(S.bulan, +b.dataset.geser); judulBulan(); ulang(); }
+    else if ((b = q("[data-salin-ical]"))) navigator.clipboard?.writeText(icsUrl()).then(() => { b.title = t("kal.pop.disalin"); b.setAttribute("aria-label", t("kal.pop.disalin")); setTimeout(() => { b.title = t("kal.salin_ical"); b.setAttribute("aria-label", t("kal.salin_ical")); }, 1600); }, () => {});
     else if (q("[data-hariini]")) { S.bulan = KINI.slice(0, 7); judulBulan(); ulang(); }
     else if ((b = q("[data-acara]")) && akar.contains(b)) bukaAcara(b.dataset.acara, b);
     else if ((b = q("[data-hari]")) && akar.contains(b)) bukaHari(b.dataset.hari, b.closest("button") || b);
