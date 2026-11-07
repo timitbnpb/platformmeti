@@ -249,20 +249,23 @@ const tampilPop = (html, opener) => {
 function bukaAcara(id, opener) {
   const b = ROWS.find((x) => x.id === id) || acaraDari(D.baris).find((x) => x.id === id);
   if (!b) return;
-  const u = urlB(b), dd = (k, v) => (v ? `<dt>${esc(t(k))}</dt><dd>${v}</dd>` : "");
-  tampilPop(`<div class="kal-pop-isi">${tutupX()}${pilJenis(b.jenis)}<h2 id="kalPopJ">${esc(b.judul)}</h2>
-    <dl class="kal-pop-dl">${dd("kal.pop.tanggal", esc(tglRentang(b)))}${dd("kal.pop.mitra", b.mitra ? esc(b.mitra) : "")}${dd("kal.pop.lokasi", b.lokasi ? esc(b.lokasi) : "")}${dd("kal.pop.sumber", `${esc(t("kal.sumber." + b.sumber.label))}, ${esc(t("kal.diambil", { tanggal: tanggal(b.sumber.tanggal) }))}`)}</dl>
+  const u = urlB(b), hari = Math.round((utc(b.akhir) - utc(b.tanggal)) / 864e5) + 1;
+  const m = (ik, k, v) => (v ? `<li>${ikon(ik, 20)}<span><small>${esc(t(k))}</small>${v}</span></li>` : "");
+  const terkait = D.baris.filter((x) => x.id !== b.id && x.jenis === b.jenis).sort((p, q) => Math.abs(utc(p.tanggal) - utc(b.tanggal)) - Math.abs(utc(q.tanggal) - utc(b.tanggal))).slice(0, 3).map((x) => acaraDari([x])[0]);
+  tampilPop(`<div class="kal-pop-isi"><div class="kal-pop-kep kal-g-${esc(b.jenis)}">${tutupX()}<span class="kal-pop-ik">${ikon("kalender", 28)}</span>${pilJenis(b.jenis)}<h2 id="kalPopJ">${esc(b.judul)}</h2></div>
+    <div class="kal-pop-bd"><ul class="kal-pop-meta">${m("kalender", "kal.pop.tanggal", `${esc(tglRentang(b))}${hari > 1 ? ` <em>${esc(t("kal.pop.durasi", { n: angka(hari) }))}</em>` : ""}`)}${m("peta", "kal.pop.lokasi", b.lokasi ? esc(b.lokasi) : "")}${m("orang", "kal.pop.mitra", b.mitra ? esc(b.mitra) : "")}${m("info", "kal.pop.sumber", `${esc(t("kal.sumber." + b.sumber.label))}, ${esc(t("kal.diambil", { tanggal: tanggal(b.sumber.tanggal) }))}`)}</ul>
     ${b.deskripsi ? `<p class="kal-pop-desk">${esc(b.deskripsi)}</p>` : ""}
-    <div class="kal-pop-aksi">${buktiHtml(b)}<a class="jm-tbl" href="${esc(gcal(b))}" target="_blank" rel="noopener noreferrer">${ikon("kalender", 18)}<span>${esc(t("kal.pop.gcal"))}</span></a><button type="button" class="jm-tbl" data-pop="ics" data-id="${esc(b.id)}">${ikon("unduh", 18)}<span>${esc(t("kal.pop.ics"))}</span></button>
-    ${u ? `<a class="jm-tbl" href="${esc(u)}" target="_blank" rel="noopener noreferrer">${esc(t("kal.pop.buka"))} &rarr;</a>` : ""}
-    <button type="button" class="jm-tbl" data-pop="bagi" data-id="${esc(b.id)}">${ikon("tautan", 18)}<span>${esc(t("kal.pop.bagi"))}</span></button></div></div>`, opener);
+    <div class="kal-pop-aksi"><a class="jm-tbl" href="${esc(gcal(b))}" target="_blank" rel="noopener noreferrer">${ikon("kalender", 18)}<span>${esc(t("kal.pop.gcal"))}</span></a><button type="button" class="jm-tbl" data-pop="ics" data-id="${esc(b.id)}">${ikon("unduh", 18)}<span>${esc(t("kal.pop.ics"))}</span></button>
+    <button type="button" class="jm-tbl" data-pop="bagi" data-id="${esc(b.id)}">${ikon("tautan", 18)}<span>${esc(t("kal.pop.bagi"))}</span></button>
+    ${u ? `<a class="jm-tbl" href="${esc(u)}" target="_blank" rel="noopener noreferrer">${ikon("tautan", 18)}<span>${esc(t("kal.pop.buka"))}</span></a>` : ""}${buktiHtml(b)}</div>
+    ${terkait.length ? `<h3>${esc(t("kal.pop.terkait"))}</h3><ul class="kal-daftar">${terkait.map(barisHtml).join("")}</ul>` : ""}</div></div>`, opener);
   history.replaceState(null, "", `${location.pathname}${location.search}#acara-${b.id}`);
 }
 function bukaHari(h, opener) {
   const r = ROWS.filter((b) => b.tanggal <= h && b.akhir >= h), lanjut = ROWS.filter((b) => b.tanggal > h).sort((a, c) => a.tanggal.localeCompare(c.tanggal))[0];
-  const item = (b) => `<li><button type="button" class="kal-pop-item" data-acara="${esc(b.id)}">${pilJenis(b.jenis)}<strong>${esc(b.judul)}</strong><small>${esc(tglRentang(b))}</small></button></li>`;
-  tampilPop(`<div class="kal-pop-isi">${tutupX()}<h2 id="kalPopJ">${esc(t("kal.pop.hari", { tanggal: tanggal(h, { gaya: "panjang" }) }))}</h2>
-    ${r.length ? `<ul class="kal-pop-daftar">${r.map(item).join("")}</ul>` : `<p>${esc(t("kal.pop.kosong"))}</p>${lanjut ? `<h3>${esc(t("kal.pop.berikut"))}</h3><ul class="kal-pop-daftar">${item(lanjut)}</ul>` : ""}`}</div>`, opener);
+  const item = barisHtml;
+  tampilPop(`<div class="kal-pop-isi"><div class="kal-pop-kep">${tutupX()}<span class="kal-pop-ik">${ikon("kalender", 28)}</span><h2 id="kalPopJ">${esc(t("kal.pop.hari", { tanggal: tanggal(h, { gaya: "panjang" }) }))}</h2></div><div class="kal-pop-bd">
+    ${r.length ? `<ul class="kal-daftar">${r.map(item).join("")}</ul>` : `<p>${esc(t("kal.pop.kosong"))}</p>${lanjut ? `<h3>${esc(t("kal.pop.berikut"))}</h3><ul class="kal-daftar">${item(lanjut)}</ul>` : ""}`}</div></div>`, opener);
 }
 const gcal = (b) => `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${encodeURIComponent(b.judul)}&dates=${b.tanggal.replaceAll("-", "")}/${iso(utc(b.akhir) + 864e5).replaceAll("-", "")}&details=${encodeURIComponent([b.mitra, urlB(b)].filter(Boolean).join("\n"))}&location=${encodeURIComponent(b.lokasi || "")}`;
 const icsUrl = () => `${location.origin}/kalender.ics`;

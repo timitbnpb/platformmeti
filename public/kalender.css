@@ -161,27 +161,37 @@ a.kal-ev:hover{background:var(--surface)}
 .kal-ev:hover{filter:brightness(.95)}
 .kal-ev:focus-visible,.kal-hr button:focus-visible{outline:2px solid var(--fokus);outline-offset:1px}
 .kal-pekan{padding:10px}
-.kal-pop{width:min(520px,calc(100vw - 32px));max-height:calc(100vh - 48px);padding:0;border:1px solid var(--line);border-radius:var(--r-lg);background:var(--paper);color:var(--ink);box-shadow:var(--shadow-lg)}
+.kal-pop{width:min(760px,calc(100vw - 32px));overflow:auto;max-height:calc(100vh - 48px);padding:0;border:1px solid var(--line);border-radius:var(--r-lg);background:var(--paper);color:var(--ink);box-shadow:var(--shadow-lg)}
 .kal-pop::backdrop{background:color-mix(in srgb,var(--brand) 45%,transparent)}
-.kal-pop-isi{display:grid;gap:12px;padding:22px 24px 24px;position:relative}
-.kal-pop-isi h2{margin:0;padding-right:40px;font:700 var(--t-h2)/var(--lh-rapat) var(--display);color:var(--head)}
+.kal-pop-isi{display:grid;position:relative}
+.kal-pop-bd{display:grid;gap:20px;padding:24px 28px 28px}
+.kal-pop-kep{position:relative;display:grid;gap:12px;justify-items:start;padding:28px 28px 24px;background:var(--surface)}
+.kal-g-konferensi{background:linear-gradient(135deg,var(--ok-bg),var(--surface))}.kal-g-lokakarya{background:linear-gradient(135deg,var(--warn-bg),var(--surface))}.kal-g-seminar{background:linear-gradient(135deg,var(--info-bg),var(--surface))}
+.kal-pop-ik{display:inline-grid;place-items:center;width:52px;height:52px;border-radius:var(--r);background:var(--card);color:var(--accent);box-shadow:var(--shadow)}
+.kal-pop-meta{list-style:none;margin:0;padding:0;display:grid;gap:14px}
+.kal-pop-meta li{display:grid;grid-template-columns:20px minmax(0,1fr);gap:14px;align-items:start;color:var(--ink2)}
+.kal-pop-meta li>span{display:grid;gap:2px;color:var(--ink);font:500 var(--t-body)/var(--lh-rapat) var(--font)}
+.kal-pop-meta small{color:var(--ink2);font:600 var(--t-tombol)/1 var(--font)}
+.kal-pop-meta em{display:block;color:var(--ink2);font-style:normal}
+.kal-pop-isi h2{margin:0;padding-right:40px;font:700 var(--t-h1)/var(--lh-judul) var(--display);color:var(--head)}
 .kal-pop-isi h3{margin:6px 0 0;font:700 var(--t-body)/var(--lh-rapat) var(--display);color:var(--ink2)}
 .kal-pop-isi .kal-pil{justify-self:start}
-.kal-pop-x{position:absolute;top:14px;right:14px;display:inline-grid;place-items:center;width:36px;height:36px;border:1px solid var(--line);border-radius:50%;background:var(--card);color:var(--ink2);cursor:pointer}
+.kal-pop-x{position:absolute;top:16px;right:16px;display:inline-grid;place-items:center;width:36px;height:36px;border:1px solid var(--line);border-radius:50%;background:var(--card);color:var(--ink2);cursor:pointer}
 .kal-pop-x:hover{color:var(--accent);border-color:var(--accent)}
 .kal-pop :is(button,a):focus-visible{outline:2px solid var(--fokus);outline-offset:2px}
 .kal-pop-dl{display:grid;grid-template-columns:110px minmax(0,1fr);gap:8px 14px;margin:0}
 .kal-pop-dl dt{color:var(--ink2);font:600 var(--t-tombol)/var(--lh-rapat) var(--font)}.kal-pop-dl dd{margin:0;font:400 var(--t-body)/var(--lh-rapat) var(--font)}
 .kal-pop-desk{margin:0;line-height:var(--lh-isi)}
-.kal-pop-aksi{display:flex;flex-wrap:wrap;gap:8px}
-.kal-pop-aksi .jm-tbl{display:inline-flex;align-items:center;gap:8px;text-decoration:none}
+.kal-pop-aksi{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:10px}
+.kal-pop-aksi .kal-bukti{display:contents}
+.kal-pop-aksi .jm-tbl{white-space:nowrap;padding:0 12px;display:inline-flex;align-items:center;gap:8px;text-decoration:none}
 .kal-pop-daftar{list-style:none;margin:0;padding:0;display:grid;gap:8px}
 .kal-pop-item{display:grid;gap:4px;justify-items:start;width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:var(--r-sm);background:var(--card);color:var(--ink);text-align:left;font:inherit;cursor:pointer}
 .kal-pop-item:hover{border-color:var(--accent)}
 .kal-pop-item small{color:var(--ink2)}
 @media (max-width:639px){
   .kal-pop{width:100%;max-width:none;margin:auto 0 0;border-radius:var(--r-lg) var(--r-lg) 0 0;max-height:85vh}
-  .kal-pop-dl{grid-template-columns:90px minmax(0,1fr)}
+  .kal-pop-aksi{grid-template-columns:1fr}.kal-pop-bd{padding:20px}.kal-pop-kep{padding:24px 20px 20px}
 }
 @media (max-width:639px){.kal-seg{display:none}.kal-pekan{padding:8px}}
 /* bukti agenda (hanya tampil bagi yang login) */
