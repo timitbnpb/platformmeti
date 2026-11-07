@@ -4,7 +4,7 @@
 import { mulaiHalaman } from "/inti/kepala.js";
 import { khUbin } from "/inti/kh.js";
 import { t, angka, tanggal, tanggalSah } from "/i18n.js";
-import { esc, api, nanti, debounce, hantuHtml, kosongHtml, galatHtml, galatTeks, ikon, pesanHtml } from "/inti/umum.js";
+import { esc, api, nanti, debounce, kosongHtml, galatHtml, ikon, pesanHtml } from "/inti/umum.js";
 import { cariHtml, pilihHtml, hapusHtml, hitungHtml } from "/inti/komponen.js";
 import { kabar } from "/inti/aksi_ex.js";
 import { penerbitHtml } from "/penerbit.js";
@@ -89,10 +89,10 @@ function gambarSaring() {
 }
 
 /* --------------------------------------------------- kartu -------------------------------------------------- */
-function sampulHtml(d, kelas = "") {
+function sampulHtml(d, kelas = "", ceper = false) {
   const jenisIk = IKON_JENIS[d.jenis] || "buku";
   return d.u.sampul
-    ? `<span class="pu-sampul ${kelas}"><img src="${esc(d.u.sampul)}" width="600" height="849" alt="" loading="lazy" decoding="async"></span>`
+    ? `<span class="pu-sampul ${kelas}"><img${d.u.sampul_lanskap ? ' class="pu-lanskap"' : ""} src="${esc(d.u.sampul)}" width="600" height="849" alt="" loading="${ceper ? "eager" : "lazy"}" decoding="async"></span>`
     : `<span class="pu-sampul pu-sampul-ik ${kelas}" data-jenis="${esc(d.jenis)}"><span class="pu-sampul-lingkar">${ikon(jenisIk, 34)}</span><b>${esc(labelJenis(d.jenis))}</b>${d.tahun ? `<small>${esc(d.tahun)}</small>` : ""}</span>`;
 }
 function kartuHtml(d) {
@@ -154,14 +154,14 @@ function detailHtml(d) {
   const nav = (x, arah) => (x ? `<button type="button" class="jm-tbl jm-tbl-kecil" data-buka="${esc(x.id)}" aria-label="${esc(t("pu." + arah, { judul: x.judul }))}">${arah === "sebelumnya" ? ikon("panah-kiri", 16) : ""}<span>${esc(t("pu." + arah))}</span>${arah === "berikutnya" ? ikon("panah-kanan", 16) : ""}</button>` : "<span></span>");
   return `<div class="pu-d-atas"><button type="button" class="iconbtn pu-tutup" data-aksi="tutup" aria-label="${esc(t("jm.tutup"))}" title="${esc(t("jm.tutup"))}">${ikon("tutup", 20)}</button></div>
   <div class="pu-d">
-    <aside class="pu-d-kiri">${sampulHtml(d, "pu-sampul-besar")}
+    <aside class="pu-d-kiri">${sampulHtml(d, "pu-sampul-besar", true)}
       <ul class="pu-info">
         ${info("unduh", "pu.i.unduhan", esc(angka(d.n)))}
         ${info("pdf", "pu.i.ukuran", esc(ukuranTeks(ukuranTotal || d.ukuran) || "-"))}
         ${info("daftar2", "pu.i.berkas", esc(angka(d.berkas.length)))}
         ${info("tahun", "pu.i.terbit", esc(tglTerbit(d)))}
         ${info("jejak", "pu.i.diperbarui", esc(tanggalSah(d.diperbarui) ? tanggal(d.diperbarui) : "-"))}
-        ${info("direktori", "pu.i.penerbit", d.penerbit ? penerbitHtml(d.penerbit, 24) : "-")}
+        ${info("direktori", "pu.i.penerbit", d.penerbit ? `<span class="pu-pen">${penerbitHtml(d.penerbit, 24)}<span>${esc(d.penerbit)}</span></span>` : "-")}
         ${info("bahasa", "pu.i.bahasa", esc(t("pu.bahasa." + (d.bahasa === "en" ? "en" : "id"))))}
         ${info("buku", "pu.i.halaman", esc(d.halaman ? angka(d.halaman) : "-"))}
       </ul></aside>

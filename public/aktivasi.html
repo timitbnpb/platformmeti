@@ -19,13 +19,10 @@
 <body class="jm-hal-akun" data-halaman="aktivasi">
 <header class="top" id="kepala"></header>
 <div id="pita"></div>
-<div class="jm-halaman">
-  <section class="jm-kartu jm-sempit" aria-labelledby="judul">
-    <div class="jm-merek-kartu">
-      <img src="/img/logo-meti.png" width="67" height="96" alt="METI">
-      <strong data-i18n="akun.merek">Direktori METI</strong>
-      <span data-i18n="akun.merek_sub">Ekosistem energi terbarukan Indonesia</span>
-    </div>
+<main class="jm-ig">
+  <section class="jm-ig-kiri" aria-labelledby="judul">
+    <div class="jm-ig-atas" id="atas"></div>
+    <div class="jm-ig-isi">
     <div id="selesai" hidden>
       <div class="jm-form-judul"><h1 id="judul-selesai" data-i18n="aktivasi.sukses">Akunmu aktif. Silakan masuk.</h1></div>
       <a class="jm-tbl jm-tbl-utama" href="/masuk" data-i18n="jm.masuk">Masuk</a>
@@ -41,9 +38,11 @@
       <div class="jm-medan jm-ambang jm-sandi"><input class="jm-isian" id="ulang" name="ulang" type="password" autocomplete="new-password" placeholder=" " required><label for="ulang" data-i18n="sandi.ulang">Ulangi sandi</label></div>
       <button type="submit" class="jm-tbl jm-tbl-utama" id="kirim" data-i18n="aktivasi.kirim">Aktifkan akun</button>
     </form>
+    </div>
+    <footer class="jm-ig-kaki" id="kaki-akun"></footer>
   </section>
-</div>
-<footer class="jm-kaki" id="kaki"></footer>
+  <aside class="jm-ig-kanan" id="panggung" aria-hidden="true"></aside>
+</main>
 <script type="module" src="/masuk.js"></script>
 </body>
 </html>

@@ -8,7 +8,6 @@
 <title data-i18n="masuk.title">Masuk | Direktori METI</title>
 <meta name="theme-color" content="#122B4A">
 <link rel="icon" href="/img/logo-meti-tanda.png" type="image/png">
-<link rel="preload" href="/fonts/jakarta-800.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/fonts/inter-400.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="/inti/tema.css">
 <link rel="stylesheet" href="/inti/kepala.css">
@@ -20,38 +19,40 @@
 <body class="jm-hal-akun" data-halaman="masuk">
 <header class="top" id="kepala"></header>
 <div id="pita"></div>
-<div class="jm-halaman">
-  <section class="jm-kartu jm-sempit" aria-labelledby="judul">
-    <div class="jm-merek-kartu">
-      <img src="/img/logo-meti.png" width="67" height="96" alt="METI">
-      <strong data-i18n="akun.merek">Direktori METI</strong>
-      <span data-i18n="akun.merek_sub">Ekosistem energi terbarukan Indonesia</span>
-    </div>
+<main class="jm-ig">
+  <section class="jm-ig-kiri" aria-labelledby="judul">
+    <div class="jm-ig-atas" id="atas"></div>
+    <div class="jm-ig-isi">
     <div id="sudah" hidden>
       <div class="jm-form-judul"><h1 id="judul-sudah" data-i18n="masuk.sudah">Kamu sudah masuk.</h1></div>
       <a class="jm-tbl jm-tbl-utama" id="lanjut" href="/" data-i18n="masuk.lanjut">Lanjutkan</a>
     </div>
     <form id="form" class="jm-form" novalidate>
       <div class="jm-form-judul">
-        <h1 id="judul" data-i18n="masuk.judul">Masuk</h1>
+        <h1 id="judul" class="jm-ig-judul"><span data-i18n="masuk.hero1">Satu peta untuk seluruh</span> <em data-i18n="masuk.hero2">energi terbarukan</em> <span data-i18n="masuk.hero3">Indonesia.</span></h1>
+        <p data-i18n="masuk.lead">Cari pakar, lembaga, proyek, dan pendanaan energi terbarukan di satu direktori. Masuk dengan akun dari Admin METI.</p>
       </div>
       <div id="pesan"></div>
       <div class="jm-medan jm-ambang"><input class="jm-isian" id="surel" name="surel" type="email" autocomplete="username" placeholder=" " autocapitalize="none" spellcheck="false" required><label for="surel" data-i18n="masuk.surel">Surel</label></div>
       <div class="jm-medan jm-ambang jm-sandi"><input class="jm-isian" id="sandi" name="sandi" type="password" autocomplete="current-password" placeholder=" " required><label for="sandi" data-i18n="masuk.sandi">Sandi</label></div>
       <button type="submit" class="jm-tbl jm-tbl-utama" id="kirim" data-i18n="jm.masuk">Masuk</button>
-      <button type="button" class="jm-tbl jm-tbl-garis" id="lupa" aria-expanded="false" aria-controls="lupa-isi" data-i18n="masuk.lupa">Lupa sandi</button>
+      <button type="button" class="jm-tautan" id="lupa" aria-expanded="false" aria-controls="lupa-isi" data-i18n="masuk.lupa">Lupa sandi?</button>
       <div class="jm-lupa" id="lupa-isi" hidden>
         <strong data-i18n="masuk.lupa_judul">Lupa sandi?</strong>
         <p data-i18n="masuk.lupa_isi">Hubungi Admin Direktori METI untuk meminta tautan aktivasi baru. Setelah itu kamu bisa membuat sandi baru.</p>
       </div>
     </form>
-    <div class="jm-catatan">
-      <p data-i18n="masuk.catatan">Sesi berlaku 14 hari. Percobaan masuk dibatasi.</p>
-      <p><span data-i18n="masuk.bantuan">Bermasalah dengan akun? Hubungi</span> <b data-i18n="masuk.bantuan_admin">Admin</b>.</p>
+      <p class="jm-gabung"><span data-i18n="masuk.belum">Belum anggota?</span> <a href="https://metiires.or.id/membership" target="_blank" rel="noopener noreferrer" data-i18n="masuk.gabung">Gabung METI</a> <span aria-hidden="true">/</span> <a href="/langganan" data-i18n="masuk.langgan">Berlangganan newsletter</a></p>
+      <div class="jm-catatan">
+        <p data-i18n="masuk.catatan">Sesi berlaku 14 hari. Percobaan masuk dibatasi.</p>
+        <p><span data-i18n="masuk.bantuan">Bermasalah dengan akun? Hubungi</span> <b data-i18n="masuk.bantuan_admin">Admin</b>.</p>
+        <p data-i18n="masuk.setuju">Dengan masuk, kamu menyetujui kebijakan privasi METI.</p>
+      </div>
     </div>
+    <footer class="jm-ig-kaki" id="kaki-akun"></footer>
   </section>
-</div>
-<footer class="jm-kaki" id="kaki"></footer>
+  <aside class="jm-ig-kanan" id="panggung" aria-hidden="true"></aside>
+</main>
 <script type="module" src="/masuk.js"></script>
 </body>
 </html>

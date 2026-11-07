@@ -1,6 +1,7 @@
 /* /masuk, /aktivasi, /ganti-sandi (JM-B06). Satu skrip, cabang menurut <body data-halaman>. */
-import { t } from "/i18n.js";
-import { api, galatTeks, amanKe, pesanHtml } from "/inti/umum.js";
+import { t, gantiBahasa, bahasa } from "/i18n.js";
+import { SOSMED, sosmedHtml } from "/inti/sosmed.js";
+import { api, galatTeks, amanKe, pesanHtml, nanti } from "/inti/umum.js";
 import { mulaiHalaman } from "/inti/kepala.js";
 
 const saya = await mulaiHalaman();
@@ -12,6 +13,24 @@ const form = $("form");
 const pesan = $("pesan");
 const kirim = $("kirim");
 const MIN = 12, MAKS = 128;
+
+const MI = "https://metiires.or.id";
+// kerangka bersama tiga halaman akun: logo + bahasa, panggung kanan, kaki tipis (teks lewat data-i18n)
+$("atas").innerHTML = `<a href="${MI}" class="jm-ig-logo" aria-label="METI"><img src="/img/logo/meti.png" alt="METI" height="36"></a><div class="jm-ig-bahasa" role="group" aria-label="${t("masuk.bahasa")}"><button type="button" data-b="id" aria-pressed="${bahasa() === "id"}">ID</button><button type="button" data-b="en" aria-pressed="${bahasa() === "en"}">EN</button></div>`;
+$("atas").addEventListener("click", (e) => {
+  const b = e.target.closest("button[data-b]"); if (!b) return;
+  for (const x of $("atas").querySelectorAll("button[data-b]")) x.setAttribute("aria-pressed", String(x === b));
+  nanti(() => gantiBahasa(b.dataset.b, { masuk: saya.masuk }));
+});
+const QR = [[0,0],[1,0],[2,0],[0,1],[2,1],[0,2],[1,2],[2,2],[4,0],[6,0],[5,1],[4,2],[6,2],[0,4],[2,4],[1,5],[0,6],[2,6],[4,4],[5,4],[6,5],[4,6],[5,6],[3,3],[4,3]];
+$("panggung").innerHTML = `<div class="jm-pg-cahaya"></div>
+<figure class="jm-pg-foto jm-pg-a"><i class="jm-pg-tape"></i><img src="/img/beranda/surya-cirata.webp" alt="" width="1600" height="1067" loading="eager"></figure>
+<figure class="jm-pg-foto jm-pg-b"><i class="jm-pg-pin"></i><img src="/img/beranda/bayu-sidrap.webp" alt="" width="1600" height="1067" loading="lazy"></figure>
+<figure class="jm-pg-foto jm-pg-c"><img src="/img/beranda/panas-bumi-sibayak.webp" alt="" width="1600" height="1067" loading="lazy"></figure>
+<div class="jm-pg-struk"><b data-i18n="masuk.struk_judul">${t("masuk.struk_judul")}</b><span data-i18n="masuk.struk_sub">${t("masuk.struk_sub")}</span><i></i></div>
+<div class="jm-pg-lencana"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg></div>
+<div class="jm-pg-kta"><svg viewBox="0 0 7 7" aria-hidden="true">${QR.map(([x, y]) => `<rect x="${x}" y="${y}" width="1" height="1"/>`).join("")}</svg><div><b data-i18n="masuk.kta">${t("masuk.kta")}</b><span data-i18n="masuk.kta_sub">${t("masuk.kta_sub")}</span></div></div>`;
+$("kaki-akun").innerHTML = `<nav><a href="${MI}/about" target="_blank" rel="noopener noreferrer" data-i18n="masuk.k_tentang">${t("masuk.k_tentang")}</a><a href="${MI}/policy/membership" target="_blank" rel="noopener noreferrer" data-i18n="masuk.k_privasi">${t("masuk.k_privasi")}</a><a href="${MI}" target="_blank" rel="noopener noreferrer" data-i18n="masuk.k_kontak">${t("masuk.k_kontak")}</a></nav><div class="jm-ig-sosial">${sosmedHtml(SOSMED, 18)}</div><small>&copy; 2026 METI</small>`;
 
 const tampilPesan = (jenis, teks) => { pesan.innerHTML = pesanHtml(jenis, teks); };
 const sibuk = (ya) => {

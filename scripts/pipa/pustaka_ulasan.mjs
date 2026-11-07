@@ -56,6 +56,11 @@ const sha = (f) => crypto.createHash('sha256').update(fs.readFileSync(f)).digest
 function halamanPdf(f) {
   try { return Number(/Pages:\s+(\d+)/.exec(execFileSync('pdfinfo', [f], { encoding: 'utf8' }))?.[1]) || null; } catch { return null; }
 }
+// Halaman pertama lanskap (slide, deck): layar menampilkan utuh di atas latar brand, bukan dipotong.
+function lanskap(pdf) {
+  const m = /Page size:\s+([\d.]+) x ([\d.]+)/.exec(execFileSync('pdfinfo', [pdf], { encoding: 'utf8' }));
+  return !!m && Number(m[1]) > Number(m[2]) * 1.05;
+}
 function sampul(pdf, keluar, paksa) {
   if (ada(keluar) && !paksa) return true;
   const tmp = path.join(os.tmpdir(), 'pu-' + process.pid + '-' + path.basename(keluar, '.webp'));
@@ -108,7 +113,7 @@ function jalankan(paksa) {
       const b = { id: bid, nama: nama ?? null, format: ext, ukuran: fs.statSync(f).size, halaman: ext === 'pdf' ? halamanPdf(f) : null, r2: true };
       berkas.push(b);
       unggah.push({ kunci, berkas: path.relative(ROOT, salin), ukuran: b.ukuran, sha256: sha(f), tipe: ext });
-      if (bid === 'utama' && ext === 'pdf' && sampul(f, path.join(PUB, 'img/pustaka', d.id + '.webp'), paksa)) u.sampul = `/img/pustaka/${d.id}.webp`;
+      if (bid === 'utama' && ext === 'pdf' && sampul(f, path.join(PUB, 'img/pustaka', d.id + '.webp'), paksa)) { u.sampul = `/img/pustaka/${d.id}.webp`; if (lanskap(f)) u.sampul_lanskap = true; }
     };
     pasang('utama', u.berkas_nama, d.lokal, d.format);
     for (const l of d.lampiran || []) pasang(l.id, l.nama, l.lokal, 'pdf');
