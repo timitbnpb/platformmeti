@@ -14,20 +14,21 @@
   "d1_databases": [
     { "binding": "DB", "database_name": "jaringan-meti", "database_id": "54954854-9ba2-4752-83ff-412941fb9d52", "migrations_dir": "migrations" }
   ],
-  // aktifkan setelah R2 diaktifkan di akun
-  // "r2_buckets": [{ "binding": "BERKAS", "bucket_name": "jaringan-meti" }],
+  "r2_buckets": [{ "binding": "BERKAS", "bucket_name": "jaringan-meti" }],
   "ai": { "binding": "AI" },
   "triggers": { "crons": ["0 18 * * *"] },
   "observability": { "enabled": true },
   // Domain publik (zona metiires.or.id di Cloudflare sejak 7 Nov 2026); workers.dev tetap hidup sebagai cadangan.
   "routes": [{ "pattern": "direktori.metiires.or.id", "custom_domain": true }],
+  "workers_dev": true,
   // Pratinjau: `--env pratinjau` (Worker platformmeti-pratinjau). Binding D1/AI tidak diwarisi, wajib ditulis ulang.
   "env": {
     "pratinjau": {
       "d1_databases": [
         { "binding": "DB", "database_name": "jaringan-meti-pratinjau", "database_id": "4aca1930-b82c-46f5-a66f-4b66d44477b5", "migrations_dir": "migrations" }
       ],
-      "ai": { "binding": "AI" }
+      "ai": { "binding": "AI" },
+      "r2_buckets": [{ "binding": "BERKAS", "bucket_name": "jaringan-meti-pratinjau" }]
     }
   }
 }

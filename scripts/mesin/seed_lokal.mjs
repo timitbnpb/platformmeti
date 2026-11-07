@@ -40,7 +40,7 @@ async function hashSandi(sandi) {
 
 const SEKTOR = ['surya', 'bayu', 'air', 'panas-bumi', 'bioenergi', 'laut', 'hidrogen', 'penyimpanan', 'jaringan', 'efisiensi', 'kendaraan-listrik', 'sampah-energi'];
 const PROV = ['11', '12', '16', '31', '32', '33', '34', '35', '51', '52', '64', '73', '76', '91'];
-const KAT = ['swasta', 'bumn', 'riset-kampus', 'asosiasi', 'pengembang-teknologi', 'keuangan'];
+const KAT = ['swasta', 'bumn', 'perguruan-tinggi', 'asosiasi', 'think-tank', 'keuangan', 'pemda', 'koperasi'];
 const RANTAI = ['manufaktur-modul', 'epc', 'pengembang-ipp', 'operator', 'pembiaya', 'konsultan'];
 
 export async function bangunSql({ sandi, kini = new Date().toISOString().slice(0, 10) }) {
