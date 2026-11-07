@@ -5,9 +5,10 @@ import { mulaiHalaman } from "/inti/kepala.js";
 import { khUbin } from "/inti/kh.js";
 import { t, angka, tanggal, tanggalSah } from "/i18n.js";
 import { esc, api, nanti, debounce, kosongHtml, galatHtml, ikon, pesanHtml } from "/inti/umum.js";
-import { cariHtml, pilihHtml, hapusHtml, hitungHtml } from "/inti/komponen.js";
+import { cariHtml, pilihHtml, hapusHtml, hitungHtml, terkaitHtml } from "/inti/komponen.js";
 import { kabar } from "/inti/aksi_ex.js";
 import { penerbitHtml } from "/penerbit.js";
+import { tautOrg } from "/inti/tautan.js";
 
 const PER = 18;
 const TUJUAN = ["riset", "kebijakan", "bisnis", "media", "lainnya"];
@@ -161,7 +162,7 @@ function detailHtml(d) {
         ${info("daftar2", "pu.i.berkas", esc(angka(d.berkas.length)))}
         ${info("tahun", "pu.i.terbit", esc(tglTerbit(d)))}
         ${info("jejak", "pu.i.diperbarui", esc(tanggalSah(d.diperbarui) ? tanggal(d.diperbarui) : "-"))}
-        ${info("direktori", "pu.i.penerbit", d.penerbit ? `<span class="pu-pen">${penerbitHtml(d.penerbit, 24)}<span>${esc(d.penerbit)}</span></span>` : "-")}
+        ${info("direktori", "pu.i.penerbit", d.penerbit ? `<span class="pu-pen">${penerbitHtml(d.penerbit, 24)}<span>${tautOrg(d.penerbit)}</span></span>` : "-")}
         ${info("bahasa", "pu.i.bahasa", esc(t("pu.bahasa." + (d.bahasa === "en" ? "en" : "id"))))}
         ${info("buku", "pu.i.halaman", esc(d.halaman ? angka(d.halaman) : "-"))}
       </ul></aside>
@@ -187,6 +188,7 @@ function bukaDetail(id) {
   S.id = id; tulisUrl();
   dlg.innerHTML = detailHtml(d);
   dlg.setAttribute("aria-labelledby", "pu-dj");
+  terkaitHtml("dokumen", id).then((h) => { const a = dlg.querySelector(".pu-d-kanan") || dlg; if (h && dlg.open && S.id === id && !dlg.querySelector("#terkait")) a.insertAdjacentHTML("beforeend", h); });
   if (!dlg.open) dlg.showModal();
   dlg.scrollTop = 0; dlg.querySelector(".pu-d-kanan")?.scrollTo?.(0, 0);
 }

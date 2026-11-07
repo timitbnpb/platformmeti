@@ -218,3 +218,44 @@ if (typeof document !== "undefined" && !window.__jmBagi) {
     try { await navigator.clipboard.writeText(b.dataset.jmSalin); kabar(t("aksi.disalin")); } catch (x) { kabar(t("aksi.gagal")); }
   });
 }
+
+/* Panel "Terkait" (aturan pemilik 8 Nov 2026: semua halaman bertaut): entitas yang tersambung lewat id silang di data.
+   Pemakaian: `await terkaitHtml("org", id)`; "" bila tak ada sambungan. kecuali = jenis yang dilewati (sudah tampil di seksi sendiri). */
+const TERKAIT_URUT = [
+  ["proyek", "proyek"],
+  ["org", "direktori"],
+  ["orang", "orang"],
+  ["regulasi", "regulasi"],
+  ["program", "analisis"],
+  ["provinsi", "wilayah"],
+  ["teknologi", "topik"],
+  ["event", "kalender"],
+  ["dokumen", "buku"],
+  ["siaran", "siaran"],
+  ["berita", "berita"],
+];
+const TERKAIT_MAKS = 12;
+export async function terkaitHtml(jenis, id, { kecuali = [] } = {}) {
+  const { hubungan, bangun } = await import("/inti/tautan.js");
+  const h = await hubungan(jenis, id);
+  const grup = TERKAIT_URUT.filter(([j]) => h[j]?.length && !kecuali.includes(j)).map(([j, ik]) => {
+    const isi = [...new Set(h[j])];
+    const butir = isi.slice(0, TERKAIT_MAKS).map((x) =>
+      j === "berita"
+        ? `<li><a class="jm-taut jm-taut-berita" href="${esc(x.url)}" target="_blank" rel="noopener noreferrer"><span>${esc(x.nama)}</span></a></li>`
+        : `<li>${bangun(j, x)}</li>`,
+    );
+    const lagi = isi.length - butir.length;
+    return `<div class="jm-terkait-grup"><h3>${ikon(ik, 16)}<span>${esc(t("terkait." + j))}</span><b>${isi.length}</b></h3><ul>${butir.join("")}${lagi > 0 ? `<li class="jm-bantu">${esc(t("terkait.lagi", { n: lagi }))}</li>` : ""}</ul></div>`;
+  });
+  if (!grup.length) return "";
+  return exHtml({
+    id: "terkait",
+    ikon: "tautan",
+    topik: t("terkait.ey"),
+    judulHtml: esc(t("terkait.judul")),
+    subHtml: esc(t("terkait.sub")),
+    kelas: "jm-terkait",
+    isiHtml: `<div class="jm-terkait-isi">${grup.join("")}</div>`,
+  });
+}

@@ -11,6 +11,7 @@ import { catatHalaman } from "/inti/statistik.js";
 import { sosmedHtml } from "/inti/sosmed.js";
 import { teksLencana } from "/inti/pesan_umum.js";
 import { akunMenuHtml, pasangAkunMenu } from "/inti/akun_menu.js";
+import "/inti/mata_sandi.js";
 
 export const PITA_DRAF = false; // pemilik 7 Nov 2026: pita draf tidak ditampilkan
 const STAF = ["pengurus", "kurator", "admin", "super"];
@@ -20,7 +21,7 @@ const TAB = [
   { href: "/", kunci: "nav.beranda", ikon: "beranda", hak: null },
   { kunci: "nav.insight", ikon: "insight", hak: null, grup: [
     { href: "/insight", kunci: "nav.insight_ringkasan", ikon: "insight" }, { href: "/insight#tren", kunci: "nav.sub.tren", ikon: "analisis" },
-    { href: "/rantai", kunci: "nav.rantai", ikon: "rantai" }, { href: "/asean", kunci: "nav.asean", ikon: "asean" }, { href: "/metode", kunci: "nav.sub.metode", ikon: "metode" }] },
+    { href: "/rantai", kunci: "nav.rantai", ikon: "rantai" }, { href: "/asean", kunci: "nav.asean", ikon: "asean" }, { href: "/jejaring", kunci: "nav.jejaring", ikon: "rantai" }, { href: "/indeks", kunci: "nav.indeks", ikon: "analisis" }, { href: "/metode", kunci: "nav.sub.metode", ikon: "metode" }] },
   { href: "/proyek", kunci: "nav.proyek", ikon: "proyek", hak: null },
   { href: "/peluang", kunci: "nav.peluang", ikon: "analisis", hak: null },
   { href: "/wilayah", kunci: "nav.wilayah", ikon: "peta", hak: null },

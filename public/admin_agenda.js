@@ -1,6 +1,7 @@
 /* /admin: tab Agenda (K20, JM-F11). Bukti kegiatan METI: tempat, notulensi, foto. Hak ditegakkan di server (DT §4.4).
    INP: klik baris/tombol mengubah chrome seketika; kisi foto dan tabel dirender lewat nanti(). */
 import { t, ada, angka, tanggal } from "/i18n.js";
+import { cariHtml, pilihHtml, hitungHtml } from "/inti/komponen.js";
 import { esc, api, nanti, debounce, hantuHtml, kosongHtml, galatHtml, galatTeks, ikon, pesanHtml, GalatApi } from "/inti/umum.js";
 
 const MAKS_NOTULEN = 30000;
@@ -9,7 +10,7 @@ const TIPE = ["image/jpeg", "image/png", "image/webp"];
 const label = (j) => (ada("kal.jenis." + j) ? t("kal.jenis." + j) : j || "");
 
 export function panelAgenda(el, saya) {
-  const S = { acara: null, bukti: new Map(), cari: "", ref: "", ctl: null };
+  const S = { acara: null, bukti: new Map(), cari: "", jenis: "", notulen: "", urut: "tgl", arah: -1, ref: "", ctl: null };
   const $ = (id) => el.querySelector("#" + id);
   const dlg = document.getElementById("dlg");
   const kabar = (jenis, teks) => { const s = $("agStatus"); if (s) s.innerHTML = teks ? pesanHtml(jenis, teks) : ""; };
@@ -43,29 +44,37 @@ export function panelAgenda(el, saya) {
 
   function rangkaDaftar() {
     S.ref = "";
-    host.innerHTML = `<div class="jm-bar jm-ag-bar"><div class="jm-medan"><label class="sr" for="agCari">${esc(t("adm.agenda.cari"))}</label>
-        <input class="jm-isian" id="agCari" type="search" autocomplete="off" placeholder="${esc(t("adm.agenda.cari"))}" value="${esc(S.cari)}"></div>
-        <span class="jm-hitung" id="agHitung" role="status"></span></div>
-      <div id="agDaftar" aria-live="polite"></div>`;
+    const jenis = [...new Set(S.acara.map((b) => b.jenis).filter(Boolean))].sort();
+    host.innerHTML = `<section class="jm-adm-kartu"><header class="jm-adm-kh">${ikon("kalender", 20)}<h3>${esc(t("adm.agenda.judul_kartu"))}</h3>${hitungHtml({ id: "agHitung", teks: "" })}</header>
+      <div class="jm-adm-isi"><div class="jm-saring jm-ag-bar">${cariHtml({ id: "agCari", label: t("adm.agenda.cari") })}
+        ${pilihHtml({ id: "agJenis", ikon: "jenis", label: t("adm.agenda.f.jenis"), opsi: [["", t("adm.agenda.semua_jenis")], ...jenis.map((j) => [j, label(j)])], nilai: S.jenis })}
+        ${pilihHtml({ id: "agNot", ikon: "status", label: t("adm.agenda.f.notulen"), opsi: [["", t("adm.agenda.semua_notulen")], ["ada", t("adm.agenda.notulen_ada")], ["belum", t("adm.agenda.notulen_belum")]], nilai: S.notulen })}</div>
+      <div id="agDaftar" aria-live="polite"></div></div></section>`;
+    $("agCari").value = S.cari;
     isiTabel();
   }
+
+  const blokTgl = (iso) => { const [h, ...sisa] = tanggal(iso).split(" "); return `<span class="jm-ag-tgl"><b>${esc(h)}</b><small>${esc(sisa.join(" "))}</small></span>`; };
+  const ikonStatus = (ok, ik, teks) => `<span class="jm-ag-st${ok ? " jm-ag-ok" : ""}" title="${esc(teks)}">${ikon(ik, 20)}<span class="sr">${esc(teks)}</span></span>`;
 
   function isiTabel() {
     const d = $("agDaftar");
     if (!d) return;
     const q = S.cari.toLowerCase();
-    const baris = S.acara.filter((b) => !q || b.judul.toLowerCase().includes(q));
+    const baris = S.acara.filter((b) => (!q || b.judul.toLowerCase().includes(q)) && (!S.jenis || b.jenis === S.jenis)
+      && (!S.notulen || !!(S.bukti.get(b.id) || {}).ada_notulensi === (S.notulen === "ada")));
+    baris.sort((a, c) => S.arah * (S.urut === "judul" ? a.judul.localeCompare(c.judul) : a.tanggal.localeCompare(c.tanggal)));
     $("agHitung").textContent = t("adm.agenda.n", { n: angka(baris.length) });
     if (!baris.length) { d.innerHTML = kosongHtml("jm.kosong.cocok"); return; }
-    d.innerHTML = `<div class="jm-gulir"><table class="jm-tabel jm-ag-tabel"><thead><tr>${["tgl", "judul", "mitra", "jenis", "foto", "notulen"].map((k) => `<th scope="col">${esc(t("adm.agenda.k." + k))}</th>`).join("")}</tr></thead><tbody>${baris.map((b) => {
-      const x = S.bukti.get(b.id), n = x ? x.jumlah_foto || 0 : 0;
+    const th = (k, urut) => `<th scope="col"${urut ? ` aria-sort="${S.urut === urut ? (S.arah > 0 ? "ascending" : "descending") : "none"}"` : ""}>${urut ? `<button type="button" class="jm-adm-urut" data-m="urut" data-k="${urut}">${esc(t("adm.agenda.k." + k))}</button>` : esc(t("adm.agenda.k." + k))}</th>`;
+    d.innerHTML = `<div class="jm-gulir"><table class="jm-tabel jm-ag-tabel"><thead><tr>${th("tgl", "tgl")}${th("judul", "judul")}${th("jenis")}${th("foto")}${th("notulen")}</tr></thead><tbody>${baris.map((b) => {
+      const x = S.bukti.get(b.id), n = x ? x.jumlah_foto || 0 : 0, nt = !!(x && x.ada_notulensi);
       return `<tr class="jm-ag-baris" data-ref="${esc(b.id)}" tabindex="0">
-        <td class="jm-nowrap" data-l="${esc(t("adm.agenda.k.tgl"))}">${esc(tanggal(b.tanggal))}</td>
-        <td data-l="${esc(t("adm.agenda.k.judul"))}"><button type="button" class="jm-adm-nm" data-m="buka" data-ref="${esc(b.id)}"><strong>${esc(b.judul)}</strong></button></td>
-        <td data-l="${esc(t("adm.agenda.k.mitra"))}">${esc(b.mitra || "-")}</td>
+        <td class="jm-nowrap" data-l="${esc(t("adm.agenda.k.tgl"))}">${blokTgl(b.tanggal)}</td>
+        <td data-l="${esc(t("adm.agenda.k.judul"))}"><button type="button" class="jm-adm-nm" data-m="buka" data-ref="${esc(b.id)}"><strong>${esc(b.judul)}</strong></button>${b.mitra ? `<small class="jm-ag-mitra">${esc(b.mitra)}</small>` : ""}</td>
         <td data-l="${esc(t("adm.agenda.k.jenis"))}"><span class="jm-pil">${esc(label(b.jenis))}</span></td>
-        <td class="jm-num" data-l="${esc(t("adm.agenda.k.foto"))}">${n ? esc(angka(n)) : "-"}</td>
-        <td data-l="${esc(t("adm.agenda.k.notulen"))}"><span class="jm-pil ${x && x.ada_notulensi ? "jm-pil-ok" : "jm-pil-warn"}">${esc(t(x && x.ada_notulensi ? "adm.agenda.ada" : "adm.agenda.belum"))}</span></td></tr>`;
+        <td class="jm-ag-c" data-l="${esc(t("adm.agenda.k.foto"))}">${ikonStatus(n > 0, "gambar", n ? t("adm.agenda.foto_n", { n: angka(n) }) : t("adm.agenda.foto_nol"))}</td>
+        <td class="jm-ag-c" data-l="${esc(t("adm.agenda.k.notulen"))}">${ikonStatus(nt, "daftar", t(nt ? "adm.agenda.notulen_ada" : "adm.agenda.notulen_belum"))}</td></tr>`;
     }).join("")}</tbody></table></div>`;
   }
 
@@ -85,21 +94,25 @@ export function panelAgenda(el, saya) {
   function gambarEditor(acara, det) {
     const b = det.bukti || {};
     host.dataset.ref = acara.id;
+    const info = (ik, k, v) => (v ? `<li>${ikon(ik, 18)}<span><small>${esc(t(k))}</small><b>${esc(v)}</b></span></li>` : "");
     host.innerHTML = `<div class="jm-ag-ed">
-      <button type="button" class="jm-tbl jm-tbl-kecil" data-m="kembali">${ikon("panah-kiri", 18)}${esc(t("adm.agenda.kembali"))}</button>
-      <header class="jm-ag-judul"><h2>${esc(acara.judul)}</h2><p class="jm-bantu">${esc(tanggal(acara.tanggal))}${acara.mitra ? ", " + esc(acara.mitra) : ""}</p></header>
-      <form class="jm-form" id="agForm" novalidate>
-        <div class="jm-medan"><label for="agTempat">${esc(t("adm.agenda.tempat"))}</label><input class="jm-isian" id="agTempat" maxlength="200" autocomplete="off" value="${esc(b.tempat || "")}"></div>
-        <div class="jm-medan"><label for="agNotulen">${esc(t("adm.agenda.notulen"))}</label>
-          <textarea class="jm-isian jm-ag-teks" id="agNotulen" rows="12" maxlength="${MAKS_NOTULEN}">${esc(b.notulensi || "")}</textarea>
-          <small class="jm-bantu" id="agHitungK" aria-live="polite"></small></div>
-        <div class="jm-aksi"><button type="submit" class="jm-tbl jm-tbl-utama" id="agSimpan">${esc(t("jm.simpan"))}</button></div>
-      </form>
-      <section class="jm-ag-foto" aria-labelledby="agFotoJ"><h3 id="agFotoJ">${esc(t("adm.agenda.foto"))}</h3>
-        <div class="jm-medan"><label for="agBerkas">${esc(t("adm.agenda.pilih_foto"))}</label>
-          <input class="jm-isian" id="agBerkas" type="file" multiple accept="image/jpeg,image/png,image/webp"></div>
-        <p class="jm-bantu" id="agProgres" role="status"></p>
-        <div class="jm-ag-kisi" id="agKisi"></div></section></div>`;
+      <form id="agForm" novalidate><div class="jm-ag-kol">
+        <div class="jm-ag-kiri">
+          <section class="jm-adm-kartu"><header class="jm-adm-kh">${ikon("info", 20)}<h3>${esc(t("adm.agenda.info"))}</h3></header>
+            <ul class="jm-ag-info">${info("daftar", "adm.agenda.k.judul", acara.judul)}${info("kalender", "adm.agenda.k.tgl", tanggal(acara.tanggal))}${info("orang", "adm.agenda.k.mitra", acara.mitra)}${info("jenis", "adm.agenda.k.jenis", label(acara.jenis))}</ul></section>
+          <section class="jm-adm-kartu"><header class="jm-adm-kh">${ikon("daftar2", 20)}<h3>${esc(t("adm.agenda.notulen"))}</h3></header>
+            <div class="jm-adm-isi jm-form"><div class="jm-medan"><label for="agTempat">${ikon("lokasi", 16)} ${esc(t("adm.agenda.tempat"))}</label><input class="jm-isian" id="agTempat" maxlength="200" autocomplete="off" value="${esc(b.tempat || "")}"></div>
+            <div class="jm-medan"><label for="agNotulen">${esc(t("adm.agenda.notulen"))}</label>
+              <textarea class="jm-isian jm-ag-teks" id="agNotulen" rows="9" maxlength="${MAKS_NOTULEN}">${esc(b.notulensi || "")}</textarea>
+              <small class="jm-bantu" id="agHitungK" aria-live="polite"></small></div></div></section>
+        </div>
+        <section class="jm-adm-kartu jm-ag-foto" aria-labelledby="agFotoJ"><header class="jm-adm-kh">${ikon("gambar", 20)}<h3 id="agFotoJ">${esc(t("adm.agenda.foto"))}</h3></header>
+          <div class="jm-adm-isi"><label class="jm-ag-zona" for="agBerkas">${ikon("unduh", 28)}<strong>${esc(t("adm.agenda.zona"))}</strong><small>${esc(t("adm.agenda.zona_bantu"))}</small>
+            <input class="sr" id="agBerkas" type="file" multiple accept="image/jpeg,image/png,image/webp"></label>
+          <p class="jm-bantu" id="agProgres" role="status"></p>
+          <div class="jm-ag-kisi" id="agKisi"></div></div></section></div>
+        <div class="jm-ag-kaki"><button type="button" class="jm-tbl" data-m="kembali">${ikon("panah-kiri", 18)}${esc(t("adm.agenda.kembali"))}</button><button type="submit" class="jm-tbl jm-tbl-utama" id="agSimpan">${ikon("centang", 18)}${esc(t("jm.simpan"))}</button></div>
+      </form></div>`;
     hitungKar();
     kisi(det.foto || []);
   }
@@ -114,7 +127,7 @@ export function panelAgenda(el, saya) {
         <div class="jm-medan"><label class="sr" for="agK${esc(f.id)}">${esc(t("adm.agenda.keterangan"))}</label>
           <input class="jm-isian" id="agK${esc(f.id)}" data-ket="${esc(f.id)}" maxlength="300" autocomplete="off" placeholder="${esc(t("adm.agenda.keterangan"))}" value="${esc(f.keterangan || "")}"></div>
         <button type="button" class="jm-tbl jm-tbl-kecil jm-tbl-bahaya" data-m="hapus" data-id="${esc(f.id)}">${ikon("silang", 16)}${esc(t("adm.agenda.hapus"))}</button></figure>`).join("")
-      : `<p class="jm-bantu">${esc(t("adm.agenda.foto_kosong"))}</p>`;
+      : `<div class="jm-kosong">${ikon("gambar", 32)}<p>${esc(t("adm.agenda.foto_kosong"))}</p></div>`;
   }
 
   async function muatFoto() {
@@ -202,7 +215,8 @@ export function panelAgenda(el, saya) {
   }
   async function ubah(e) {
     const x = e.target;
-    if (x.id === "agBerkas") { if (x.files.length) unggah(x.files); }
+    if (x.id === "agJenis" || x.id === "agNot") { S[x.id === "agJenis" ? "jenis" : "notulen"] = x.value; nanti(isiTabel); }
+    else if (x.id === "agBerkas") { if (x.files.length) unggah(x.files); }
     else if (x.dataset.ket) {
       try { await api("/api/agenda/foto/" + encodeURIComponent(x.dataset.ket), { metode: "PATCH", badan: { keterangan: x.value.trim() } }); kabar("ok", t("adm.agenda.tersimpan")); }
       catch (err) { kabar("galat", galatTeks(err.kode || "umum")); }
@@ -217,11 +231,15 @@ export function panelAgenda(el, saya) {
     }
     if (b.dataset.aksi === "ulang") { S.ref ? bukaEditor(S.ref) : muatDaftar(); return; }
     switch (b.dataset.m) {
+      case "urut": S.arah = S.urut === b.dataset.k ? -S.arah : 1; S.urut = b.dataset.k; nanti(isiTabel); break;
       case "buka": bukaEditor(b.dataset.ref); break;
       case "kembali": kabar("ok", ""); nanti(rangkaDaftar); break;
       case "hapus": konfirmasi(b.dataset.id); break;
     }
   }
+  host.addEventListener("dragover", (e) => { const z = e.target.closest(".jm-ag-zona"); if (z) { e.preventDefault(); z.classList.add("jm-ag-zona-on"); } });
+  host.addEventListener("dragleave", (e) => { const z = e.target.closest(".jm-ag-zona"); if (z) z.classList.remove("jm-ag-zona-on"); });
+  host.addEventListener("drop", (e) => { const z = e.target.closest(".jm-ag-zona"); if (z) { e.preventDefault(); z.classList.remove("jm-ag-zona-on"); if (e.dataTransfer.files.length) unggah(e.dataTransfer.files); } });
   host.addEventListener("submit", (e) => { if (e.target.id === "agForm") { e.preventDefault(); simpan(); } });
   host.addEventListener("keydown", (e) => { if (e.key === "Enter" && e.target.matches && e.target.matches("tr[data-ref]")) bukaEditor(e.target.dataset.ref); });
 }

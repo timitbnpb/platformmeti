@@ -10,6 +10,7 @@ import { muatMapLibre } from "/inti/maplibre.js";
 import { rapikanPeta } from "/inti/peta_indonesia.js";
 import { PROV } from "/penerbit.js";
 import { namaProyek } from "/inti/nama_proyek.js";
+import { tautProvinsi, tautOrg, kodeProvinsi } from "/inti/tautan.js";
 
 export { t, angka, tanggal, esc, ikon, muat, urlAman, norm, label, namaRegulasi, kelasStatus, exHtml, sumberHtml, aksiHtml, hlHtml, pilTek, pilStatus, namaProyek };
 export const TAHUN = new Date().getFullYear();
@@ -17,7 +18,7 @@ export const idJalur = () => decodeURIComponent(location.pathname.split("/")[2] 
 
 const kodeProv = (n) => PROV[String(n || "").trim().toLowerCase()] ?? null;
 export const lambang = (prov, u = 20) => { const k = kodeProv(prov); return k ? `<img class="pf-lb" src="/img/provinsi/${k}.png" width="${u}" height="${u}" alt="" loading="lazy" decoding="async">` : ""; };
-export const provHtml = (prov, u = 20) => (prov ? `<span class="pf-prov">${lambang(prov, u) || ikon("peta", 16)}<span>${esc(prov)}</span></span>` : "-");
+export const provHtml = (prov, u = 20) => (prov ? kodeProvinsi(prov) ? tautProvinsi(prov, prov) : `<span class="pf-prov">${lambang(prov, u) || ikon("peta", 16)}<span>${esc(prov)}</span></span>` : "-");
 export const inisial = (n) => String(n || "?").replace(/^(PT|CV|Yayasan|Pemerintah|Kementerian)\.?\s+/i, "").split(/\s+/).slice(0, 2).map((w) => w[0] || "").join("").toUpperCase();
 export const ringkasTgl = (s) => (s ? tanggal(String(s).slice(0, 10)) : "-");
 export const tglSel = (s) => (s ? `<span data-urut="${esc(String(s).slice(0, 10))}">${esc(ringkasTgl(s))}</span>` : "-");

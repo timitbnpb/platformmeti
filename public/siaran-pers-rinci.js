@@ -2,7 +2,7 @@
 import { mulaiHalaman } from "/inti/kepala.js";
 import { t, tanggal } from "/i18n.js";
 import { esc, ikon } from "/inti/umum.js";
-import { bagikanHtml, sumberHtml } from "/inti/komponen.js";
+import { bagikanHtml, sumberHtml, terkaitHtml } from "/inti/komponen.js";
 import { urlAman, muat } from "/publik.js";
 import { muatSiaran, sampulHtml, cadanganHtml, jenisHtml, judulKartu, urlRinci, topikLabel, pasangGalatFoto, urlFoto } from "/siaran_umum.js";
 
@@ -50,6 +50,7 @@ ${chips(r, orgNama) ? `<div class="sp-chips" aria-label="${esc(t("sp.topik"))}">
 <section class="jm-ex sp-panel"><header class="jm-ex-hd"><div class="jm-ex-teks"><h2 class="jm-ex-j">${ikon("berita", 18)}${esc(t("sp.terbaru"))}</h2></div></header><div class="jm-ex-bd"><ul class="sp-minis">${terbaru.map((x) => barisKecil(x, D.foto)).join("")}</ul></div></section>
 ${terkait.length ? `<section class="jm-ex sp-panel"><header class="jm-ex-hd"><div class="jm-ex-teks"><h2 class="jm-ex-j">${ikon("tautan", 18)}${esc(t("sp.terkait"))}</h2></div></header><div class="jm-ex-bd"><ul class="sp-minis">${terkait.map((x) => barisKecil(x, D.foto)).join("")}</ul></div></section>` : ""}
 <section class="jm-ex sp-panel"><header class="jm-ex-hd"><div class="jm-ex-teks"><h2 class="jm-ex-j">${ikon("info", 18)}${esc(t("sp.info"))}</h2></div></header><div class="jm-ex-bd"><dl class="sp-info">${info.map(([k, v]) => `<dt>${esc(t(k))}</dt><dd>${esc(v)}</dd>`).join("")}</dl>${u ? `<a class="sp-asli" href="${esc(u)}" target="_blank" rel="noopener noreferrer">${ikon("tautan", 16)}${esc(t("sp.tautan_sumber"))}</a>` : ""}<a class="sp-asli" href="/siaran-pers?jenis=${r.jenis}">${ikon("panah-kiri", 16)}${esc(t("sp.kembali"))}</a></div></section>`;
+  terkaitHtml("siaran", r.id).then((h) => { document.getElementById("terkait")?.remove(); if (h) document.getElementById("artikel")?.insertAdjacentHTML("beforeend", h); });
 }
 
 (async () => {

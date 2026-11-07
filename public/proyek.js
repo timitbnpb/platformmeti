@@ -7,6 +7,7 @@ import { khUbin } from "/inti/kh.js";
 import { muatMapLibre } from "/inti/maplibre.js";
 import { lapisAnggota, anggotaDl } from "/publik.js";
 import { sumberHtml, exHtml, unduhRegHtml } from "/inti/komponen.js";
+import { tautProvinsi } from "/inti/tautan.js";
 import { ikonTek, pilTek, pilStatus, ikonStatus } from "/inti/ikon_tek.js";
 import { PROV } from "/penerbit.js";
 import { geserPanel } from "/inti/panel_geser.js";
@@ -229,8 +230,7 @@ const selPeng = (r) => {
   const nm = esc(x.nama);
   return `<span class="jm-pj-peng">${x.id ? `<a href="/o/${esc(x.id)}">${nm}</a>` : `<span>${nm}</span>`}${x.lebih > 0 ? `<small>+${x.lebih}</small>` : ""}</span>`;
 };
-const selProvL = (r) => (r.prov ? `<span class="jm-pj-provsel">${lambangProv(r.prov)}<span>${esc(r.prov)}</span></span>` : "-");
-const lambangProv = (prov) => { const k = PROV[String(prov || "").trim().toLowerCase()]; return k ? `<img src="/img/provinsi/${k}.png" width="18" height="18" alt="" loading="lazy" decoding="async">` : ""; };
+const selProvL = (r) => (r.prov ? `<span class="jm-pj-provsel">${tautProvinsi(r.prov)}</span>` : "-");
 const selTek = (r) => pilTek(r.tek);
 const selKap = (r) => (r.kap === null ? "-" : `<span>${num(r.kap)} <span class="jm-pj-sat">${esc(r.sat)}</span></span>`);
 const selSt = (r) => pilSt(r.st);
@@ -404,7 +404,7 @@ function kartuPopup(r) {
   const L = r.p.lokasi, d = document.createElement("div");
   d.className = "jm-pj-pk-kartu";
   d.innerHTML = `<b>${esc(r.nama)}</b><div class="jm-pj-pk-baris">${selTek(r)}${pilSt(r.st)}</div>
-    <dl><div><dt>${esc(t("pj.c.kap"))}</dt><dd>${selKap(r)}</dd></div><div><dt>${esc(t("pj.c.prov"))}</dt><dd>${esc(r.prov || "-")}</dd></div><div><dt>${esc(t("pj.c.cod"))}</dt><dd>${selCod(r)}</dd></div></dl>
+    <dl><div><dt>${esc(t("pj.c.kap"))}</dt><dd>${selKap(r)}</dd></div><div><dt>${esc(t("pj.c.prov"))}</dt><dd>${r.prov ? tautProvinsi(r.prov) : "-"}</dd></div><div><dt>${esc(t("pj.c.cod"))}</dt><dd>${selCod(r)}</dd></div></dl>
     <p class="jm-bantu">${esc(presisiTeks(r))}</p>
     <div class="jm-pj-pk-aksi"><a class="jm-tbl jm-tbl-utama jm-tbl-kecil" href="#${esc(r.id)}">${esc(t("pj.pop.profil"))}</a><a class="jm-tbl jm-tbl-kecil" href="${mapsUrl(L.lat, L.lng)}" target="_blank" rel="noopener noreferrer">${PIN}<span>${esc(t("pj.maps.pendek"))}</span></a></div>`;
   return d;
@@ -620,7 +620,7 @@ function profilHtml(r) {
     <section class="jm-pj-bag jm-pj-penuhlebar"><h3>${esc(t("pj.l.waktu"))}</h3><div class="jm-pj-kartubag">${linimasa}</div></section>
     ${sm.length ? `<section class="jm-pj-bag jm-pj-penuhlebar"><h3>${esc(t("pj.l.sumber"))}</h3><div class="jm-pj-kartubag"><ul class="jm-pj-sumberl jm-pj-sumber2">${sm.map((x) => `<li>${x.url ? `<a href="${esc(x.url)}" target="_blank" rel="noopener noreferrer">` : "<div>"}<span><b>${esc(x.judul)}</b><small>${esc(x.ket)}</small></span>${x.url ? ikon("tautan", 18) + "</a>" : "</div>"}</li>`).join("")}</ul></div></section>` : ""}</div></div>`;
 }
-const provHtmlSel = (r) => (r.prov ? `<span class="jm-pj-provsel">${lambangProv(r.prov)}<span>${esc(r.prov)}</span></span>` : "-");
+const provHtmlSel = (r) => (r.prov ? `<span class="jm-pj-provsel">${tautProvinsi(r.prov)}</span>` : "-");
 
 const kepalaModal = ({ id, img, ikonSvg, judul, ringkas, pilHtml = "", aks = "", balik = "" }) => `<div class="jm-ex jm-pj-mex" id="${esc(id)}"><header class="jm-pj-ban">
   <div class="jm-pj-ban-gb">${img ? `<img src="${img}" alt="" decoding="async">` : ""}</div>

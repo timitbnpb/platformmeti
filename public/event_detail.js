@@ -2,7 +2,7 @@
 import { mulaiHalaman } from "/inti/kepala.js";
 import { t, angka, tanggal } from "/i18n.js";
 import { esc, nanti, ikon, hantuHtml, kosongHtml, galatHtml, galatTeks, api } from "/inti/umum.js";
-import { exHtml, sumberHtml } from "/inti/komponen.js";
+import { exHtml, sumberHtml, terkaitHtml } from "/inti/komponen.js";
 import { muat, label, urlAman } from "/publik.js";
 import { svgSosmed } from "/inti/sosmed.js";
 import { muatAcara, hariIni, hariKe, urlEvent, urlMutlak, posterHtml, pilJenis, pilStatus, lokasiTeks, jamTeks, tglRentang, selesai, topikDari, tagHtml, bagikanHtml, pasangSalin,
@@ -176,7 +176,7 @@ async function gambar() {
     if (ul) Promise.all(daftar.map(async (n) => mitraHtml(n, await logoMitra(n)))).then((h) => { if (ul.isConnected && h.length) ul.innerHTML = h.join(""); });
   }
   nanti(muatPeta);
-  document.getElementById("evBagian").innerHTML = await isiUtama();
+  document.getElementById("evBagian").innerHTML = (await isiUtama()) + (await terkaitHtml("event", slug));
 }
 
 async function main() {

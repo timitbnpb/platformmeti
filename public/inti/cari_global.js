@@ -8,7 +8,7 @@ const GRUP = [ // urutan tampil; kunci i18n literal agar terbaca gerbang-i18n
   ["proyek", "cari.g.proyek", "proyek"], ["org", "cari.g.org", "direktori"], ["orang", "cari.g.orang", "orang"], ["reg", "cari.g.reg", "regulasi"],
   ["berita", "cari.g.berita", "berita"], ["wilayah", "cari.g.wilayah", "wilayah"], ["halaman", "cari.g.halaman", "tautan"],
 ];
-const HALAMAN = [["/", "nav.beranda"], ["/insight", "nav.insight_ringkasan"], ["/rantai", "nav.rantai"], ["/asean", "nav.asean"], ["/metode", "nav.sub.metode"], ["/proyek", "nav.proyek"],
+const HALAMAN = [["/", "nav.beranda"], ["/insight", "nav.insight_ringkasan"], ["/rantai", "nav.rantai"], ["/asean", "nav.asean"], ["/jejaring", "nav.jejaring"], ["/metode", "nav.sub.metode"], ["/proyek", "nav.proyek"],
   ["/wilayah", "nav.wilayah"], ["/regulasi", "nav.regulasi"], ["/berita", "nav.berita"], ["/kalender", "nav.kalender"], ["/tentang", "nav.tentang"]];
 const muat = (n) => fetch(`/data/${n}.json`).then((r) => { if (!r.ok) throw new Error(n); return r.json(); });
 const httpAman = (u) => /^https?:\/\//i.test(u || "");

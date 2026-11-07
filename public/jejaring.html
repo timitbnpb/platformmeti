@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title data-i18n="jj.title">Jejaring energi terbarukan | Direktori METI</title>
+<meta name="description" content="Graf yang bisa dijelajahi: siapa membangun apa, di mana, didanai siapa, dan diatur aturan apa." data-i18n-attr="content:jj.deskripsi">
+<meta name="theme-color" content="#122B4A">
+<link rel="icon" href="/img/logo-meti-tanda.png" type="image/png">
+<link rel="preload" href="/fonts/inter-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/inti/tema.css">
+<link rel="stylesheet" href="/inti/kepala.css">
+<link rel="stylesheet" href="/inti/gaya.css">
+<link rel="stylesheet" href="/inti/jm.css">
+<link rel="stylesheet" href="/inti/kh.css">
+<script src="/tema.js"></script>
+</head>
+<body>
+<header class="top" id="kepala"></header>
+<main class="jm-halaman jm-wadah">
+<section class="jm-kh" aria-labelledby="judul">
+  <div class="jm-kh-teks">
+    <p class="jm-kh-ey"><svg class="jm-ik" width="16" height="16" aria-hidden="true" focusable="false"><use href="/img/ikon.svg#i-rantai"/></svg><span data-i18n="jj.eyebrow">Graf pengetahuan</span></p>
+    <h1 id="judul" data-i18n="jj.judul">Jejaring energi terbarukan</h1>
+    <p class="jm-kh-lead" data-i18n="jj.lead">Siapa membangun apa, di mana, didanai siapa, dan diatur aturan apa. Pilih simpul untuk melihat tautannya.</p>
+  </div>
+  <div class="jm-kh-ubin" id="ubin" aria-live="polite"></div>
+</section>
+<section class="jm-ex" aria-labelledby="jj-j">
+  <header class="jm-ex-hd"><div class="jm-ex-teks"><span class="jm-ex-ey"><svg class="jm-ik" width="14" height="14" aria-hidden="true" focusable="false"><use href="/img/ikon.svg#i-rantai"/></svg><span data-i18n="jj.ey">Jelajah</span></span><h2 class="jm-ex-j" id="jj-j" data-i18n="jj.j">Hubungan antarpihak</h2></div></header>
+  <div class="jm-ex-bd">
+    <div class="jm-saring" id="jjSaring"></div>
+    <div class="jj-kisi">
+      <div class="jj-kanvas" id="jjKanvas" role="group" aria-label="Graf" data-i18n-attr="aria-label:jj.graf"></div>
+      <aside class="jj-panel" id="jjPanel" aria-live="polite"></aside>
+    </div>
+    <p class="jm-bantu" id="jjKet"></p>
+  </div>
+</section>
+</main>
+<footer class="jm-kaki" id="kaki"></footer>
+<script type="module" src="/jejaring.js"></script>
+</body>
+</html>

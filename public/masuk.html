@@ -30,7 +30,7 @@
     <form id="form" class="jm-form" novalidate>
       <div class="jm-form-judul">
         <h1 id="judul" class="jm-ig-judul"><span data-i18n="masuk.hero1">Satu peta untuk seluruh</span> <em data-i18n="masuk.hero2">energi terbarukan</em> <span data-i18n="masuk.hero3">Indonesia.</span></h1>
-        <p data-i18n="masuk.lead">Cari pakar, lembaga, proyek, dan pendanaan energi terbarukan di satu direktori. Masuk dengan akun dari Admin METI.</p>
+        <p data-i18n="masuk.lead">Akun diberikan oleh sekretariat METI.</p>
       </div>
       <div id="pesan"></div>
       <div class="jm-medan jm-ambang"><input class="jm-isian" id="surel" name="surel" type="email" autocomplete="username" placeholder=" " autocapitalize="none" spellcheck="false" required><label for="surel" data-i18n="masuk.surel">Surel</label></div>
@@ -42,7 +42,10 @@
         <p data-i18n="masuk.lupa_isi">Hubungi Admin Direktori METI untuk meminta tautan aktivasi baru. Setelah itu kamu bisa membuat sandi baru.</p>
       </div>
     </form>
-      <p class="jm-gabung"><span data-i18n="masuk.belum">Belum anggota?</span> <a href="https://metiires.or.id/membership" target="_blank" rel="noopener noreferrer" data-i18n="masuk.gabung">Gabung METI</a> <span aria-hidden="true">/</span> <a href="/langganan" data-i18n="masuk.langgan">Berlangganan newsletter</a></p>
+      <div class="jm-aksi2">
+        <a class="jm-tbl" href="https://metiires.or.id/membership" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2M9 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM19 8v6M22 11h-6"/></svg><span data-i18n="masuk.gabung">Gabung METI</span></a>
+        <a class="jm-tbl" href="/langganan"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 4h16v16H4zM4 7l8 6 8-6"/></svg><span data-i18n="masuk.langgan">Langganan buletin</span></a>
+      </div>
       <div class="jm-catatan">
         <p data-i18n="masuk.catatan">Sesi berlaku 14 hari. Percobaan masuk dibatasi.</p>
         <p><span data-i18n="masuk.bantuan">Bermasalah dengan akun? Hubungi</span> <b data-i18n="masuk.bantuan_admin">Admin</b>.</p>
@@ -51,7 +54,7 @@
     </div>
     <footer class="jm-ig-kaki" id="kaki-akun"></footer>
   </section>
-  <aside class="jm-ig-kanan" id="panggung" aria-hidden="true"></aside>
+  <aside class="jm-ig-kanan" id="panggung"></aside>
 </main>
 <script type="module" src="/masuk.js"></script>
 </body>

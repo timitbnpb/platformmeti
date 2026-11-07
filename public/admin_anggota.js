@@ -46,8 +46,8 @@ export function panelAnggota(panel, { boleh, kabari }) {
       const d = await api("/api/admin/anggota-meti", { signal: S.ctl.signal });
       S.semua = Array.isArray(d) ? d : d.baris || [];
       S.penyunting = !Array.isArray(d) && d.penyunting === true;
-      S.semua.forEach((r, i) => { r._i = i; { const b = namaBaku(r.nama); r.nama = b.nama; r._awalan = b.jenis; if (r.nama_lama) r.nama_lama = namaBaku(r.nama_lama).nama; } r._k = [r.nama, r.nama_lama, r.instansi, r.surel].join(" ").toLowerCase(); });
-      S.tampilNo = S.semua.filter((r) => r.no_anggota).length / (S.semua.length || 1) >= 0.1;
+      S.semua.forEach((r, i) => { r._i = i; { const b = namaBaku(r.nama); r.nama = b.nama.replace(/\b(PT|CV|UD)\.(?=\s)/gi, (m, k) => k.toUpperCase()); r._awalan = b.jenis; if (r.nama_lama) r.nama_lama = namaBaku(r.nama_lama).nama; } r._k = [r.nama, r.nama_lama, r.instansi, r.surel].join(" ").toLowerCase(); });
+      S.tampilNo = S.semua.some((r) => r.no_anggota);
     } catch (e) {
       if (e.name === "AbortError") return;
       host.innerHTML = galatHtml(e.kode || "umum");
@@ -63,8 +63,8 @@ export function panelAnggota(panel, { boleh, kabari }) {
     const iur = TAHUN.map((th) => [th, a.filter((r) => bayar(r, th)).length]), maks = Math.max(1, ...iur.map(([, c]) => c));
     const kartu = (k, c, v, aksi) => `<button type="button" class="jm-adm-s" data-m="f" data-k="${aksi}" data-v="${v}" aria-pressed="false"><strong>${esc(angka(c))}</strong><small>${esc(k)}</small></button>`;
     return kartu(t("adm.anggota.total"), a.length, "", "reset") + kartu(t("adm.anggota.aktif"), aktif, "aktif", "status")
-      + `<div class="jm-adm-s jm-adm-jenis" role="group" aria-label="${esc(t("adm.anggota.sebaran"))}"><div class="jm-adm-bar">${jum.map(([j, c], i) => `<button type="button" class="jm-adm-seg jm-adm-w${i % 5}" data-m="f" data-k="jenis" data-v="${j}" data-p="${(c / n * 100).toFixed(2)}" aria-pressed="false" title="${esc(label("adm.anggota.jenis.", j))}: ${esc(angka(c))}" aria-label="${esc(label("adm.anggota.jenis.", j))}: ${esc(angka(c))}"></button>`).join("")}</div>
-        <small>${jum.map(([j, c], i) => `<span><i class="jm-adm-w${i % 5}"></i>${esc(label("adm.anggota.jenis.", j))} ${esc(angka(c))}</span>`).join("")}</small></div>`
+      + `<div class="jm-adm-s jm-adm-jenis" role="group" aria-label="${esc(t("adm.anggota.sebaran"))}"><div class="jm-adm-bar">${jum.map(([j, c], i) => `<button type="button" class="jm-adm-seg jm-adm-dt${i % 5}" data-m="f" data-k="jenis" data-v="${j}" data-p="${(c / n * 100).toFixed(2)}" aria-pressed="false" title="${esc(label("adm.anggota.jenis.", j))}: ${esc(angka(c))}" aria-label="${esc(label("adm.anggota.jenis.", j))}: ${esc(angka(c))}"></button>`).join("")}</div>
+        <small>${jum.map(([j, c], i) => `<span><i class="jm-adm-dt${i % 5}"></i>${esc(label("adm.anggota.jenis.", j))} ${esc(angka(c))}</span>`).join("")}</small></div>`
       + `<div class="jm-adm-s jm-adm-iur" role="group" aria-label="${esc(t("adm.anggota.iuran_strip"))}">${iur.map(([th, c]) => `<button type="button" data-m="f" data-k="iuran" data-v="${th}" data-p="${(c / maks * 100).toFixed(1)}" aria-pressed="false" title="${esc(t("adm.anggota.iuran_th", { th }))}"><b></b><strong>${esc(angka(c))}</strong><small>${th}</small></button>`).join("")}</div>`;
   }
 
@@ -156,24 +156,25 @@ export function panelAnggota(panel, { boleh, kabari }) {
       const aksiTd = (r) => (S.konfirm === r._i
         ? `<span class="jm-adm-konfirm" role="alert">${esc(t("adm.anggota.hapus_tanya", { nama: r.nama }))}<button type="button" class="jm-tbl jm-tbl-kecil jm-tbl-bahaya" data-m="hapus-ya" data-i="${r._i}">${esc(t("adm.anggota.hapus_ya"))}</button><button type="button" class="jm-tbl jm-tbl-kecil" data-m="hapus-batal">${esc(t("jm.batal"))}</button></span>`
         : `<span class="jm-adm-acts"><button type="button" class="jm-tbl jm-tbl-kecil" data-m="ubah" data-i="${r._i}" aria-label="${esc(t("adm.anggota.ubah_aksi", { nama: r.nama }))}">${ikon("ubah", 16)}</button><button type="button" class="jm-tbl jm-tbl-kecil jm-tbl-bahaya" data-m="hapus" data-i="${r._i}" aria-label="${esc(t("adm.anggota.hapus_aksi", { nama: r.nama }))}">${ikon("tutup", 16)}</button></span>`);
+      const iuranTd = (r) => { const ya = TAHUN.filter((th) => bayar(r, th)); return ya.length ? `<span class="jm-adm-thn">${ya.map((th) => `<span class="jm-adm-ok" title="${esc(t("adm.anggota.iuran_th", { th }))}">${ikon("centang", 14)}${th.slice(2)}</span>`).join("")}</span>` : `<span class="jm-adm-mati">${esc(t("adm.anggota.belum"))}</span>`; };
       const K = (kunci, td, o = {}) => ({ kunci, td, ...o });
       const kol = [
-        ...(S.tampilNo && !org ? [K("adm.anggota.k.no", (r) => esc(r.no_anggota || "-"), { k: "no_anggota", kls: "jm-nowrap", w: 8 })] : []),
-        K("adm.anggota.k.nama", org ? orgTd : identitas, { k: "nama", kls: "jm-adm-nama", w: 22 }),
+        ...(S.tampilNo && !org ? [K("adm.anggota.k.no", (r) => esc(r.no_anggota || "-"), { k: "no_anggota", kls: "jm-nowrap jm-adm-c-no" })] : []),
+        K("adm.anggota.k.nama", org ? orgTd : identitas, { k: "nama", kls: "jm-adm-nama jm-adm-c-nama" }),
         ...(org ? [K("adm.anggota.k.pic", (r) => esc(r.pic || "-"))] : []),
-        ...(semuaJ ? [K("adm.anggota.f.jenis", (r) => pilJenis(r.jenis, r._awalan), { k: "jenis" })] : []),
-        K("adm.anggota.k.kontak", kontakTd, { kls: "jm-adm-kontak", w: 30 }),
+        ...(semuaJ ? [K("adm.anggota.f.jenis", (r) => pilJenis(r.jenis, r._awalan), { k: "jenis", kls: "jm-adm-c-jenis" })] : []),
+        K("adm.anggota.k.kontak", kontakTd, { kls: "jm-adm-kontak jm-adm-c-kontak" }),
         ...(org ? [K("adm.anggota.k.situs", situsTd, { kls: "jm-adm-cek" })] : []),
-        ...TAHUN.map((th) => K(th, (r) => centang(r, th), { th: 1, kls: "jm-adm-cek", w: 5 })),
-        K("adm.anggota.f.status", statusTd, { k: "status", w: 10 }),
-        ...(S.penyunting ? [K("adm.anggota.k.aksi", aksiTd, { w: 10 })] : []),
+        K("adm.anggota.f.iuran", iuranTd, { kls: "jm-adm-c-iuran" }),
+        K("adm.anggota.f.status", statusTd, { k: "status", kls: "jm-adm-c-status" }),
+        ...(S.penyunting ? [K("adm.anggota.k.aksi", aksiTd, { kls: "jm-adm-c-aksi" })] : []),
       ];
       const kepala = kol.map((c) => (c.k
-        ? `<th scope="col"${c.w ? ` class="jm-adm-w${c.w}"` : ""} aria-sort="${S.urut === c.k ? (S.arah > 0 ? "ascending" : "descending") : "none"}"><button type="button" class="jm-adm-urut" data-m="urut" data-k="${c.k}">${esc(c.th ? c.kunci : t(c.kunci))}</button></th>`
+        ? `<th scope="col"${c.kls ? ` class="${c.kls.split(" ").pop()}"` : ""} aria-sort="${S.urut === c.k ? (S.arah > 0 ? "ascending" : "descending") : "none"}"><button type="button" class="jm-adm-urut" data-m="urut" data-k="${c.k}">${esc(t(c.kunci))}</button></th>`
         
-        : `<th scope="col"${c.w ? ` class="jm-adm-w${c.w}"` : ""}>${esc(c.th ? c.kunci : t(c.kunci))}</th>`)).join("");
+        : `<th scope="col"${c.kls ? ` class="${c.kls.split(" ").pop()}"` : ""}>${esc(t(c.kunci))}</th>`)).join("");
       const baris = S.saring.slice((S.hal - 1) * BARIS, S.hal * BARIS).map((r) =>
-        `<tr data-i="${r._i}">${kol.map((c) => `<td${c.kls ? ` class="${c.kls}"` : ""} data-l="${esc(c.th ? c.kunci : t(c.kunci))}">${c.td(r)}</td>`).join("")}</tr>`).join("");
+        `<tr data-i="${r._i}">${kol.map((c) => `<td${c.kls ? ` class="${c.kls}"` : ""} data-l="${esc(t(c.kunci))}">${c.td(r)}</td>`).join("")}</tr>`).join("");
       daftar.innerHTML = `<div class="jm-gulir"><table class="jm-tabel jm-adm-tabel"><thead><tr>${kepala}</tr></thead><tbody>${baris}</tbody></table></div>`;
     }
     $("mHal").innerHTML = `<button type="button" class="jm-tbl jm-tbl-kecil" data-m="hal-" ${S.hal <= 1 ? "disabled" : ""} aria-label="${esc(t("jm.sebelumnya"))}">${ikon("panah-kiri", 18)}</button>

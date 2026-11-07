@@ -2,7 +2,8 @@
    Data: /data/wilayah.json (baris provinsi) + /data/wilayah/<kode>.json (berita, kalender, emisi, pakar). Nilai kosong = "-" berpetunjuk; seksi kosong disembunyikan. */
 import { esc, ikon, api } from "/inti/umum.js";
 import { t, tanggal, ada } from "/i18n.js";
-import { exHtml, unduhRegHtml } from "/inti/komponen.js";
+import { exHtml, unduhRegHtml, terkaitHtml } from "/inti/komponen.js";
+import { tautOrg } from "/inti/tautan.js";
 import { aksiHtml, hlHtml } from "/inti/aksi_ex.js";
 import { batang } from "/grafik.js";
 import { pilTek, pilTekTaut, pilStatus } from "/inti/ikon_tek.js";
@@ -120,7 +121,7 @@ function kelistrikan(p) {
     <ul class="jm-wp-leg"><li><i class="jm-wp-sw-e"></i><span>${esc(t("wp.k.ebt"))}</span><b>${esc(num(ebt, 0))} MW</b></li><li><i class="jm-wp-sw-f"></i><span>${esc(t("wp.k.fosil"))}</span><b>${esc(num(fosil, 0))} MW</b></li></ul></div>` : "";
   const mx = Math.max(1, ...jenis.map((k) => kj[k]));
   const bars = jenis.length ? `<div class="jm-wp-box"><ul class="jm-wp-bars" aria-label="${esc(t("wp.listrik.grafik"))}">${jenis.map((k, i) => `<li><span class="jm-wp-bl">${esc(t("wp.jenis." + k))}</span><span class="jm-wp-bt"><i class="${i === 0 ? "jm-wp-b1" : "jm-wp-b0"}" data-w="${((kj[k] / mx) * 100).toFixed(1)}"></i></span><b class="jm-wp-bv">${esc(num(kj[k], 0))} MW</b></li>`).join("")}</ul></div>` : "";
-  const pl = pltp ? `<h3 class="jm-wp-h3">${esc(t("wp.pltp"))}</h3><ul class="jm-wp-pltp">${pltp.daftar.map((x) => `<li class="jm-wp-pk"><b>${esc(x.nama)}</b>${x.org ? `<a class="jm-wp-op" href="/o/${encodeURIComponent(x.org.id)}">${x.org.logo && /^\/img\//.test(x.org.logo) ? `<img src="${esc(x.org.logo)}" width="24" height="24" alt="" loading="lazy" decoding="async">` : ""}<span>${esc(x.org.nama)}</span></a>` : `<span class="jm-wp-op">${esc(x.pemilik)}</span>`}${pilStatus("beroperasi")}</li>`).join("")}</ul>` : "";
+  const pl = pltp ? `<h3 class="jm-wp-h3">${esc(t("wp.pltp"))}</h3><ul class="jm-wp-pltp">${pltp.daftar.map((x) => `<li class="jm-wp-pk"><b>${esc(x.nama)}</b>${x.org ? `<a class="jm-wp-op" href="/o/${encodeURIComponent(x.org.id)}">${x.org.logo && /^\/img\//.test(x.org.logo) ? `<img src="${esc(x.org.logo)}" width="24" height="24" alt="" loading="lazy" decoding="async">` : ""}<span>${esc(x.org.nama)}</span></a>` : `<span class="jm-wp-op">${tautOrg(x.pemilik)}</span>`}${pilStatus("beroperasi")}</li>`).join("")}</ul>` : "";
   return seksi({ id: "kelistrikan", ikon: "analisis", topik: t("wp.ey.listrik"), judulHtml: j, aksiHtml: aksiHtml() + sumberDari(kj, desa, rs, pltp), isiHtml: `${st}${donut || bars ? `<div class="jm-wp-dua">${donut}${bars}</div>` : ""}${pl}`, kakiHtml: kj && p.terpasang_mw ? `<p class="jm-bantu">${esc(t("wp.cat.dua_sumber", { a: kj.tahun, b: p.terpasang_mw.tahun }))}</p>` : "" });
 }
 
@@ -283,7 +284,7 @@ export async function profilProvinsi(p, data, $) {
   try { for (const r of (await muatData("regulasi.json")).baris) REG.set(r.id, r); } catch (e) { /* tautan sumber saja */ }
   let d = null;
   try { d = await muatData("wilayah/" + encodeURIComponent(p.kode) + ".json"); } catch (e) { /* bagian tambahan disembunyikan */ }
-  $("profil-isi").innerHTML = kepala(data, p) + [ringkasan(p), kelistrikan(p), potensi(p), rued(p), petaSeksi(p), proyek(p), organisasi(p), '<div id="wp-meti"></div>', pakar(p, d), regulasi(p), emisi(p, d), berita(p, d), banding(data, p)].join("");
+  $("profil-isi").innerHTML = kepala(data, p) + [ringkasan(p), kelistrikan(p), potensi(p), rued(p), petaSeksi(p), proyek(p), organisasi(p), '<div id="wp-meti"></div>', pakar(p, d), regulasi(p), emisi(p, d), berita(p, d), banding(data, p), await terkaitHtml("provinsi", String(p.kode))].join("");
   $("cara").innerHTML = `<p>${esc(t("wl.cara_profil"))}</p>`;
   pasangBar($("profil-isi")); petaMini(p);
   isiMetiWilayah(p);

@@ -2,7 +2,8 @@
    (diajukan -> ditinjau -> SK terbit -> pelantikan -> berdiri) atau menolak. Hak ditegakkan di server (hak.js); jejak audit otomatis.
    INP: tombol berubah seketika; tabel digambar lewat nanti(). */
 import { t, tanggalDariUnix } from "/i18n.js";
-import { esc, api, nanti, hantuHtml, galatTeks, pesanHtml } from "/inti/umum.js";
+import { esc, api, nanti, debounce, hantuHtml, galatTeks, pesanHtml, ikon, kosongHtml } from "/inti/umum.js";
+import { cariHtml, pilihHtml, hitungHtml } from "/inti/komponen.js";
 import { kepalaTab, keadaan } from "/admin_umum.js";
 
 const STATUS = ["berdiri", "segera", "rencana", "belum"];
@@ -17,7 +18,7 @@ export async function panelMetiWilayah(el) {
   el.innerHTML = kepalaTab("wilayah", "adm.mw.ey", "adm.mw.j", "adm.mw.d") + `<div id="mwHost">${hantuHtml(5)}</div><div id="mwStatus" aria-live="polite"></div>`;
   const host = el.querySelector("#mwHost"), dlg = document.getElementById("dlg");
   const kabar = (j, tk) => { el.querySelector("#mwStatus").innerHTML = tk ? pesanHtml(j, tk) : ""; };
-  let D = null, kat = null;
+  let D = null, kat = null, cari = "", saringSt = "", wilJadi = [];
 
   async function muat() {
     try {
@@ -27,17 +28,39 @@ export async function panelMetiWilayah(el) {
   }
   const nama = (k) => kat.provinsi.find((p) => p.kode === k)?.nama || k;
 
+  const PIL = { berdiri: "jm-pil-ok", segera: "jm-pil-warn", rencana: "jm-pil-warn", belum: "jm-pil-mati" };
+  const tile = (ik, n, k, kls) => `<div class="jm-adm-tile ${kls}">${ikon(ik, 24)}<strong>${esc(n)}</strong><small>${esc(t(k))}</small></div>`;
+
   function gambar() {
     const per = new Map(D.wilayah.map((w) => [w.kode_prov, w]));
-    const wil = kat.provinsi.map((p) => ({ kode_prov: p.kode, status: "belum", ...per.get(p.kode) }));
-    const th = (k, c = "") => `<th class="${c}">${esc(t(k))}</th>`;
-    const tabelWil = `<div class="jm-gulir"><table class="jm-tabel" data-urut="tidak"><thead><tr>${th("adm.mw.c.prov")}${th("adm.mw.c.status")}${th("adm.mw.c.ketua")}${th("adm.mw.c.sumber")}<th><span class="sr">${esc(t("adm.mw.c.aksi"))}</span></th></tr></thead><tbody>${wil.map((w) => `<tr>
-      <td data-label="${esc(t("adm.mw.c.prov"))}">${esc(nama(w.kode_prov))}</td><td data-label="${esc(t("adm.mw.c.status"))}">${esc(t("mw.st." + w.status))}</td>
-      <td data-label="${esc(t("adm.mw.c.ketua"))}">${esc(w.ketua || "-")}</td><td data-label="${esc(t("adm.mw.c.sumber"))}">${esc(w.sumber ? `${w.sumber}${w.status_per ? " (" + w.status_per + ")" : ""}` : "-")}</td>
-      <td><button type="button" class="jm-tbl jm-tbl-kecil" data-aksi="sunting" data-k="${esc(w.kode_prov)}">${esc(t("adm.mw.sunting"))}</button></td></tr>`).join("")}</tbody></table></div>`;
-    const tabelAjuan = D.ajuan.length ? D.ajuan.map(ajuanHtml).join("") : `<p class="jm-bantu">${esc(t("adm.mw.ajuan_kosong"))}</p>`;
-    host.innerHTML = `<h3>${esc(t("adm.mw.ajuan"))}</h3>${tabelAjuan}<h3>${esc(t("adm.mw.wilayah"))}</h3>${tabelWil}`;
+    wilJadi = kat.provinsi.map((p) => ({ kode_prov: p.kode, status: "belum", ...per.get(p.kode) }));
+    const jum = (st) => wilJadi.filter((w) => w.status === st).length;
+    const ajuan = D.ajuan.length ? D.ajuan.map(ajuanHtml).join("") : `<div class="jm-kosong">${ikon("daftar", 32)}<p><strong>${esc(t("adm.mw.ajuan_kosong"))}</strong></p><p class="jm-bantu">${esc(t("adm.mw.ajuan_kosong_d"))}</p></div>`;
+    host.innerHTML = `<div class="jm-adm-tiles">${tile("centang", jum("berdiri"), "adm.mw.t.berdiri", "jm-tile-ok")}${tile("daftar", D.ajuan.length, "adm.mw.t.ajuan", "jm-tile-warn")}${tile("blokir", jum("belum"), "adm.mw.t.belum", "jm-tile-mati")}</div>
+      <section class="jm-adm-kartu"><header class="jm-adm-kh">${ikon("daftar", 20)}<h3>${esc(t("adm.mw.ajuan"))}</h3><span class="jm-hitung">${esc(String(D.ajuan.length))}</span></header><div class="jm-adm-isi">${ajuan}</div></section>
+      <section class="jm-adm-kartu"><header class="jm-adm-kh">${ikon("wilayah", 20)}<h3>${esc(t("adm.mw.wilayah"))}</h3>${hitungHtml({ id: "mwHitung", teks: "" })}</header>
+        <div class="jm-adm-isi"><div class="jm-saring jm-ag-bar">${cariHtml({ id: "mwCari", label: t("adm.mw.cari") })}
+          ${pilihHtml({ id: "mwSt", ikon: "status", label: t("adm.mw.f.saring"), opsi: [["", t("adm.mw.semua_status")], ...STATUS.map((v) => [v, t("mw.st." + v)])], nilai: saringSt })}</div>
+        <div id="mwTabel"></div></div></section>`;
+    host.querySelector("#mwCari").value = cari;
+    isiWil();
   }
+
+  function isiWil() {
+    const q = cari.toLowerCase(), baris = wilJadi.filter((w) => (!saringSt || w.status === saringSt) && (!q || nama(w.kode_prov).toLowerCase().includes(q)));
+    host.querySelector("#mwHitung").textContent = t("adm.mw.n", { n: baris.length });
+    const th = (k) => `<th scope="col">${esc(t(k))}</th>`;
+    const ring = (v, m) => { const x = String(v || ""); return x.length > m ? x.slice(0, m - 1) + "…" : x; };
+    host.querySelector("#mwTabel").innerHTML = baris.length ? `<div class="jm-gulir"><table class="jm-tabel jm-mw-tabel"><thead><tr>${th("adm.mw.c.prov")}${th("adm.mw.c.status")}${th("adm.mw.c.ketua")}${th("adm.mw.c.sumber")}${th("adm.mw.c.aksi")}</tr></thead><tbody>${baris.map((w) => `<tr>
+      <td data-l="${esc(t("adm.mw.c.prov"))}"><span class="jm-mw-nm"><img src="/img/provinsi/${esc(w.kode_prov)}.png" width="24" height="24" alt="" loading="lazy" decoding="async"><strong>${esc(nama(w.kode_prov))}</strong></span></td>
+      <td data-l="${esc(t("adm.mw.c.status"))}"><span class="jm-pil ${PIL[w.status] || ""}">${esc(t("mw.st." + w.status))}</span></td>
+      <td data-l="${esc(t("adm.mw.c.ketua"))}">${w.ketua ? esc(ring(w.ketua, 28)) : '<span class="jm-adm-mati">' + esc(t("mw.st.belum")) + "</span>"}</td>
+      <td data-l="${esc(t("adm.mw.c.sumber"))}">${w.sumber ? `<span title="${esc(w.sumber)}">${esc(ring(w.sumber, 36))}</span>${w.status_per ? `<small>${esc(w.status_per)}</small>` : ""}` : '<span class="jm-adm-mati">' + esc(t("mw.st.belum")) + "</span>"}</td>
+      <td class="jm-mw-aksi" data-l="${esc(t("adm.mw.c.aksi"))}"><button type="button" class="jm-tbl jm-tbl-kecil" data-aksi="sunting" data-k="${esc(w.kode_prov)}" aria-label="${esc(t("adm.mw.sunting"))}: ${esc(nama(w.kode_prov))}" title="${esc(t("adm.mw.sunting"))}">${ikon("ubah", 16)}</button></td></tr>`).join("")}</tbody></table></div>` : kosongHtml("jm.kosong.cocok");
+  }
+  const cariTunda = debounce(isiWil);
+  host.addEventListener("input", (e) => { if (e.target.id === "mwCari") { cari = e.target.value.trim(); cariTunda(); } });
+  host.addEventListener("change", (e) => { if (e.target.id === "mwSt") { saringSt = e.target.value; nanti(isiWil); } });
 
   function ajuanHtml(a) {
     const idx = TAHAP.indexOf(a.status), buka = idx >= 0 && idx < TAHAP.length - 1, isi = a.isi || {};

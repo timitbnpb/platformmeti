@@ -3,6 +3,7 @@ import { khUbin } from "/inti/kh.js";
 import { t, angka, tanggal } from "/i18n.js";
 import { esc, nanti, ikon, hantuHtml, kosongHtml, galatHtml, api } from "/inti/umum.js";
 import { pilihHtml, exHtml, sumberHtml } from "/inti/komponen.js";
+import { tautOrg } from "/inti/tautan.js";
 import { aksiHtml, hlHtml } from "/inti/aksi_ex.js";
 import { muat, label, urlAman } from "/publik.js";
 
@@ -254,7 +255,7 @@ function bukaAcara(id, opener) {
   const m = (ik, k, v) => (v ? `<li>${ikon(ik, 20)}<span><small>${esc(t(k))}</small>${v}</span></li>` : "");
   const terkait = D.baris.filter((x) => x.id !== b.id && x.jenis === b.jenis).sort((p, q) => Math.abs(utc(p.tanggal) - utc(b.tanggal)) - Math.abs(utc(q.tanggal) - utc(b.tanggal))).slice(0, 3).map((x) => acaraDari([x])[0]);
   tampilPop(`<div class="kal-pop-isi"><div class="kal-pop-kep kal-g-${esc(b.jenis)}">${tutupX()}<span class="kal-pop-ik">${ikon("kalender", 28)}</span>${pilJenis(b.jenis)}<h2 id="kalPopJ">${esc(b.judul)}</h2></div>
-    <div class="kal-pop-bd"><ul class="kal-pop-meta">${m("kalender", "kal.pop.tanggal", `${esc(tglRentang(b))}${hari > 1 ? ` <em>${esc(t("kal.pop.durasi", { n: angka(hari) }))}</em>` : ""}`)}${m("peta", "kal.pop.lokasi", b.lokasi ? esc(b.lokasi) : "")}${m("orang", "kal.pop.mitra", b.mitra ? esc(b.mitra) : "")}${m("info", "kal.pop.sumber", `${esc(t("kal.sumber." + b.sumber.label))}, ${esc(t("kal.diambil", { tanggal: tanggal(b.sumber.tanggal) }))}`)}</ul>
+    <div class="kal-pop-bd"><ul class="kal-pop-meta">${m("kalender", "kal.pop.tanggal", `${esc(tglRentang(b))}${hari > 1 ? ` <em>${esc(t("kal.pop.durasi", { n: angka(hari) }))}</em>` : ""}`)}${m("peta", "kal.pop.lokasi", b.lokasi ? esc(b.lokasi) : "")}${m("orang", "kal.pop.mitra", b.mitra ? tautOrg(b.mitra) : "")}${m("info", "kal.pop.sumber", `${esc(t("kal.sumber." + b.sumber.label))}, ${esc(t("kal.diambil", { tanggal: tanggal(b.sumber.tanggal) }))}`)}</ul>
     ${b.deskripsi ? `<p class="kal-pop-desk">${esc(b.deskripsi)}</p>` : ""}
     <div class="kal-pop-aksi"><a class="jm-tbl" href="${esc(gcal(b))}" target="_blank" rel="noopener noreferrer">${ikon("kalender", 18)}<span>${esc(t("kal.pop.gcal"))}</span></a><button type="button" class="jm-tbl" data-pop="ics" data-id="${esc(b.id)}">${ikon("unduh", 18)}<span>${esc(t("kal.pop.ics"))}</span></button>
     <button type="button" class="jm-tbl" data-pop="bagi" data-id="${esc(b.id)}">${ikon("tautan", 18)}<span>${esc(t("kal.pop.bagi"))}</span></button>

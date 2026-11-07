@@ -4,7 +4,8 @@
 import { mulaiHalaman } from "/inti/kepala.js";
 import { t, ada, tanggal } from "/i18n.js";
 import { esc, nanti, ikon, hantuHtml, fotoBerita } from "/inti/umum.js";
-import { exHtml } from "/inti/komponen.js";
+import { exHtml, terkaitHtml } from "/inti/komponen.js";
+import { tautProvinsi } from "/inti/tautan.js";
 import { aksiHtml, hlHtml } from "/inti/aksi_ex.js";
 import { sumberLipat, ubinHtml, batangHtml, pasangBar, pil, num, amanUrl, tampilGalat, saatBahasa } from "/analisis.js";
 import { kolom } from "/grafik.js";
@@ -131,7 +132,7 @@ function sProyek(D) {
   const cod = (p) => { const a = (p.cod_target || []).map((c) => c.nilai).filter(Number.isFinite); return a.length ? Math.min(...a) : null; };
   const baris = urutP.map((p, i) => {
     const k = p.kapasitas?.[0];
-    return `<tr${i >= BATAS_PROYEK ? " data-lebih hidden" : ""}>${sel("tk.c.nama", `<a href="/p/${esc(p.id)}">${esc(namaProyek(p))}</a>`)}${sel("tk.c.prov", esc(p.lokasi?.provinsi || "-"))}${sel("tk.c.kap", k ? `${esc(num(k.nilai, 1))} ${esc(k.satuan)}` : "-", "jm-num")}${sel("tk.c.status", pilStatus(p.status?.[0]?.nilai || "tidak-diketahui"), "jm-tengah")}${sel("tk.c.cod", cod(p) ?? "-", "jm-num")}</tr>`;
+    return `<tr${i >= BATAS_PROYEK ? " data-lebih hidden" : ""}>${sel("tk.c.nama", `<a href="/p/${esc(p.id)}">${esc(namaProyek(p))}</a>`)}${sel("tk.c.prov", p.lokasi?.provinsi ? tautProvinsi(p.lokasi.provinsi) : "-")}${sel("tk.c.kap", k ? `${esc(num(k.nilai, 1))} ${esc(k.satuan)}` : "-", "jm-num")}${sel("tk.c.status", pilStatus(p.status?.[0]?.nilai || "tidak-diketahui"), "jm-tengah")}${sel("tk.c.cod", cod(p) ?? "-", "jm-num")}</tr>`;
   }).join("");
   const lebih = urutP.length > BATAS_PROYEK ? `<p class="jm-tk-lebih"><button type="button" data-lebih="${urutP.length}" aria-expanded="false">${esc(t("tk.lebih", { n: urutP.length }))}</button></p>` : "";
   return bagian("tk-proyek", "proyek", "proyek", {
@@ -183,7 +184,7 @@ function sReg(D) {
 
 function sWkp() {
   if (!WKP?.baris?.length) return "";
-  const baris = [...WKP.baris].sort((a, z) => (z.rencana_mw || 0) - (a.rencana_mw || 0)).map((w) => `<tr>${sel("tk.c.wkp", esc(w.nama))}${sel("tk.c.prov", esc(w.provinsi))}${sel("tk.c.status", esc(label("tk.wkp.", w.status)), "jm-tengah")}${sel("tk.c.terpasang", mw(w.terpasang_mw, 1), "jm-num")}${sel("tk.c.rencana", mw(w.rencana_mw), "jm-num")}</tr>`).join("");
+  const baris = [...WKP.baris].sort((a, z) => (z.rencana_mw || 0) - (a.rencana_mw || 0)).map((w) => `<tr>${sel("tk.c.wkp", esc(w.nama))}${sel("tk.c.prov", tautProvinsi(w.provinsi))}${sel("tk.c.status", esc(label("tk.wkp.", w.status)), "jm-tengah")}${sel("tk.c.terpasang", mw(w.terpasang_mw, 1), "jm-num")}${sel("tk.c.rencana", mw(w.rencana_mw), "jm-num")}</tr>`).join("");
   return bagian("tk-wkp", "peta", "wkp", {
     judulHtml: hlHtml("tk.s.wkp.j", num(WKP.baris.length), {}), sub: esc(t("tk.s.wkp.sub")),
     isiHtml: tabel(["tk.c.wkp", "tk.c.prov", "tk.c.status", "tk.c.terpasang", "tk.c.rencana"], baris), sumber: src("tk.src.wkp", WKP.meta.diperbarui), csv: true,
@@ -235,6 +236,7 @@ function gambarIsi() {
   const D = olah();
   isi.innerHTML = [sPotensi(D), sRuptl(D), sProyek(D), C.rantai || C.tkdn ? sRantai() : "", C.wkp ? sWkp() : "", C.atap ? sAtap() : "", sHarga(), sReg(D), sPemain(D), sBerita(D), sCara(D)].join("");
   pasangBar(isi);
+  terkaitHtml("teknologi", KODE).then((h) => { if (h && isi.isConnected) isi.insertAdjacentHTML("beforeend", h); });
 }
 
 /* ---------- mulai ---------- */
