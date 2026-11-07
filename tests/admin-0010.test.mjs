@@ -36,13 +36,13 @@ test("hak: rute admin tamu 401, non-admin 403", async () => {
 
 test("koreksi publik: validasi, 201, laju 5/jam, tanpa data pribadi", async () => {
   for (const salah of [{ ...K, entitas: "hantu" }, { ...K, kolom: "nik" }, { ...K, nilai_usulan: "" }, { ...K, sumber_url: "http://x.id" }, { ...K, alasan: "x".repeat(1001) }, { ...K, entitas_id: "a b" }])
-    assert.equal((await panggil("/api/koreksi", "POST", null, salah, { ip: "198.51.100.1" })).status, 422);
-  const r = await panggil("/api/koreksi", "POST", null, K, { ip: "198.51.100.2" });
+    assert.equal((await panggil("/api/koreksi", "POST", "anggota", salah, { ip: "198.51.100.1" })).status, 422);
+  const r = await panggil("/api/koreksi", "POST", "anggota", K, { ip: "198.51.100.2" });
   assert.equal(r.status, 201); assert.ok(r.id);
   const kolom = (await E.DB.prepare("PRAGMA table_info(koreksi_usul)").all()).results.map((c) => c.name);
   assert.ok(!kolom.some((c) => /^ip|surel|agent|kontak/.test(c)));
-  for (let i = 0; i < 4; i++) await panggil("/api/koreksi", "POST", null, K, { ip: "198.51.100.2" });
-  assert.equal((await panggil("/api/koreksi", "POST", null, K, { ip: "198.51.100.2" })).status, 429);
+  for (let i = 0; i < 4; i++) await panggil("/api/koreksi", "POST", "anggota", K, { ip: "198.51.100.2" });
+  assert.equal((await panggil("/api/koreksi", "POST", "anggota", K, { ip: "198.51.100.2" })).status, 429);
 });
 
 test("koreksi admin: daftar, putus sekali + jejak, kedua kali 409", async () => {
@@ -64,7 +64,7 @@ test("statistik: normalisasi, agregat tanpa data pribadi, asal wajib, rekap admi
   assert.equal(normalisasiCari("x".repeat(100)).length, 60);
   assert.equal(normalisasiHalaman("/Direktori?q=1#a"), "/direktori");
   assert.equal(normalisasiHalaman("//evil.com"), null);
-  const kirim = (b, o = {}) => worker.fetch(new Request("https://uji.test/api/statistik", { method: "POST", body: JSON.stringify(b), headers: { origin: "https://uji.test", "content-type": "text/plain", "cf-connecting-ip": "203.0.113.50", ...o } }), E, {});
+  const kirim = (b, o = {}) => worker.fetch(new Request("https://uji.test/api/statistik", { method: "POST", body: JSON.stringify(b), headers: { origin: "https://uji.test", "content-type": "text/plain", "cf-connecting-ip": "203.0.113.50", cookie: sesi.anggota, ...o } }), E, {});
   assert.equal((await kirim({ jenis: "halaman", kunci: "/direktori?x=1" })).status, 204);
   assert.equal((await kirim({ jenis: "halaman", kunci: "/direktori" })).status, 204);
   assert.equal((await kirim({ jenis: "cari", kunci: "Budi@Mail.com" })).status, 204);
@@ -79,7 +79,7 @@ test("statistik: normalisasi, agregat tanpa data pribadi, asal wajib, rekap admi
 });
 
 test("konten beranda: publik kosong, PUT admin + jejak, validasi", async () => {
-  const k0 = await panggil("/api/konten-beranda", "GET", null);
+  const k0 = await panggil("/api/konten-beranda", "GET", "anggota");
   assert.deepEqual(Object.keys(k0).filter((k) => k !== "status").sort(), ["agenda", "berita_pilihan", "program", "sorotan"]);
   assert.equal((await panggil("/api/admin/konten-beranda", "PUT", "admin", { kunci: "x", isi: [] })).status, 422);
   assert.equal((await panggil("/api/admin/konten-beranda", "PUT", "admin", { kunci: "agenda", isi: "teks" })).status, 422);
@@ -97,10 +97,10 @@ test("toleransi tabel hilang: 503 fitur_belum_aktif, konten publik tetap 200", a
     for (const t of ["koreksi_usul", "statistik_harian", "konten_beranda"]) await E2.DB.prepare("DROP TABLE " + t).run();
     E = E2;
     await masuk("admin");
-    assert.equal((await panggil("/api/koreksi", "POST", null, K, { ip: "198.51.100.9" })).status, 503);
+    assert.equal((await panggil("/api/koreksi", "POST", "admin", K, { ip: "198.51.100.9" })).status, 503);
     assert.equal((await panggil("/api/admin/koreksi", "GET", "admin")).kode, "fitur_belum_aktif");
     assert.equal((await panggil("/api/admin/statistik", "GET", "admin")).status, 503);
     assert.equal((await panggil("/api/admin/konten-beranda", "PUT", "admin", { kunci: "agenda", isi: [] })).status, 503);
-    assert.equal((await panggil("/api/konten-beranda", "GET", null)).sorotan, null);
+    assert.equal((await panggil("/api/konten-beranda", "GET", "admin")).sorotan, null);
   } finally { E = E0; await t2(); }
 });

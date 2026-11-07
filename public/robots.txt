@@ -1,7 +1,2 @@
 User-agent: *
-Disallow: /api/
-Disallow: /direktori
-Disallow: /admin
-Disallow: /masuk
-Disallow: /aktivasi
-Sitemap: https://direktori.metiires.or.id/sitemap.xml
+Disallow: /

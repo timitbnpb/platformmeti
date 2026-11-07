@@ -8,7 +8,7 @@
     "binding": "ASSETS",
     "html_handling": "auto-trailing-slash",
     "not_found_handling": "404-page",
-    "run_worker_first": ["/api/*", "/direktori", "/direktori.html", "/admin", "/admin.html", "/admin/*", "/o/*", "/p/*", "/wilayah/*"]
+    "run_worker_first": true
   },
   // id D1 bukan rahasia (KEAMANAN-PRIVASI 9 menuntut id kosong; pemilik memutuskan id D1 boleh di repo).
   "d1_databases": [

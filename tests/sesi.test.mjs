@@ -208,10 +208,10 @@ test("R11 wajib_ganti: hanya ganti-sandi, keluar, saya, status yang jalan", asyn
 test("R12 halaman terkunci: tamu 302 ke /masuk?ke=, peran salah 403, peran benar lolos, .html langsung 404, no-store", async () => {
   const t = await kirim(minta("/direktori"));
   assert.equal(t.status, 302);
-  assert.equal(t.headers.get("location"), "/masuk?ke=/direktori");
+  assert.equal(t.headers.get("location"), "/masuk?ke=%2Fdirektori");
   const ta = await kirim(minta("/admin/akun"));
   assert.equal(ta.status, 302);
-  assert.equal(ta.headers.get("location"), "/masuk?ke=/admin");
+  assert.equal(ta.headers.get("location"), "/masuk?ke=%2Fadmin%2Fakun");
   const ang = await login(await buatAkun({ peran: "anggota" }));
   assert.equal((await kirim(minta("/direktori", { cookie: ang }))).status, 200);
   const adm = await kirim(minta("/admin", { cookie: ang }));
@@ -228,10 +228,37 @@ test("R12 halaman terkunci: tamu 302 ke /masuk?ke=, peran salah 403, peran benar
 });
 
 test("R13 halaman dinamis: slug dan kode provinsi divalidasi, halaman publik lewat aset", async () => {
-  assert.equal((await kirim(minta("/p/Bukan Slug!"))).status, 404);
-  assert.equal((await kirim(minta("/wilayah/3"))).status, 404);
-  assert.equal((await kirim(minta("/wilayah/32"))).status, 200);
-  assert.equal((await kirim(minta("/"))).status, 200);
+  const c = await login(await buatAkun({ peran: "anggota" }));
+  assert.equal((await kirim(minta("/p/Bukan Slug!", { cookie: c }))).status, 404);
+  assert.equal((await kirim(minta("/wilayah/3", { cookie: c }))).status, 404);
+  assert.equal((await kirim(minta("/wilayah/32", { cookie: c }))).status, 200);
+  assert.equal((await kirim(minta("/", { cookie: c }))).status, 200);
+});
+
+test("R15 seluruh situs di balik login: tamu 302/401, alur masuk dan aset login 200, token ICS", async () => {
+  for (const j of ["/", "/data/proyek.json", "/o/x", "/geo/x.json", "/sitemap.xml", "/kalender", "/teknologi/surya"]) {
+    const r = await kirim(minta(j));
+    assert.equal(r.status, 302, j);
+    assert.equal(r.headers.get("location"), "/masuk?ke=" + encodeURIComponent(j));
+    assert.match(r.headers.get("cache-control"), /no-store/);
+    assert.equal(r.headers.get("vary"), "Cookie");
+  }
+  assert.equal((await kirim(minta("/kalender.ics"))).status, 401);
+  assert.equal((await kirim(minta("/kalender.ics?t=1." + "0".repeat(64)))).status, 401);
+  for (const j of ["/masuk", "/aktivasi", "/ganti-sandi", "/inti/kepala.css", "/i18n/id.json", "/img/logo-meti.png", "/fonts/inter-400.woff2", "/masuk.js", "/robots.txt", "/api/status"]) {
+    assert.equal((await kirim(minta(j))).status, 200, j);
+  }
+  for (const [m, j] of [["POST", "/api/koreksi"], ["POST", "/api/statistik"], ["GET", "/api/konten-beranda"], ["GET", "/api/foto-berita/abcdef"], ["GET", "/api/kelayakan/power"], ["GET", "/api/kalender/tautan"]]) {
+    assert.equal((await kirim(minta(j, { metode: m, badan: m === "POST" ? {} : undefined }))).status, 401, j);
+  }
+  const c = await login(await buatAkun({ peran: "anggota" }));
+  assert.equal((await kirim(minta("/data/proyek.json", { cookie: c }))).status, 200);
+  const tl = await (await kirim(minta("/api/kalender/tautan", { cookie: c }))).json();
+  const u = new URL(tl.url);
+  const ics = await kirim(minta("/kalender.ics" + u.search));
+  assert.equal(ics.status, 200);
+  assert.match(ics.headers.get("cache-control"), /no-store/);
+  assert.equal((await kirim(minta("/kalender.ics?t=" + u.searchParams.get("t").slice(0, -1) + "0"))).status, 401);
 });
 
 test("R14 galat: JSON rusak 422, bukan JSON 415, terlalu besar 413, metode 405, jalur 404; tanpa jejak tumpukan", async () => {

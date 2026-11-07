@@ -11,7 +11,7 @@ const asliFetch = globalThis.fetch;
 const simpan = new Map();
 globalThis.caches = { default: { match: async (r) => simpan.get(r.url)?.clone(), put: async (r, res) => { simpan.set(r.url, res); } } };
 const ctx = { waitUntil: (p) => p };
-const get = (jalur, ip = "203.0.113.9") => worker.fetch(minta(jalur, { ip, cookie: undefined }), E, ctx);
+const get = (jalur, ip = "203.0.113.9") => worker.fetch(minta(jalur, { ip, cookie }), E, ctx);
 
 before(async () => {
   ({ env: E, tutup } = await buatEnv());
@@ -32,7 +32,7 @@ test("foto: badan >2MB tanpa content-length dibatalkan dan dicache negatif; laju
     cancel() { dibatalkan = true; },
   }), { status: 200, headers: { "content-type": "image/jpeg" } });
   const a = await get("/api/foto-berita/foto000x");
-  assert.equal(a.status, 404); assert.equal(a.headers.get("cache-control"), "public, max-age=3600");
+  assert.equal(a.status, 404); assert.equal(a.headers.get("cache-control"), "private, max-age=3600");
   assert.ok(dibatalkan && dibaca <= 4);
   globalThis.fetch = async () => { throw new Error("tidak boleh dipanggil: cache negatif"); };
   assert.equal((await get("/api/foto-berita/foto000x")).status, 404);
@@ -49,7 +49,7 @@ test("statistik: halaman hanya jalur dikenal; cari hanya tampil dari >= 3 koneks
   assert.equal(normalisasiHalaman("/Berita/"), "/berita");
   assert.equal(normalisasiHalaman("/sembarang"), null);
   assert.equal(normalisasiHalaman("/wilayah/abc"), null);
-  const kirim = (b, ip) => worker.fetch(new Request("https://uji.test/api/statistik", { method: "POST", body: JSON.stringify(b), headers: { origin: "https://uji.test", "cf-connecting-ip": ip } }), E, ctx);
+  const kirim = (b, ip) => worker.fetch(new Request("https://uji.test/api/statistik", { method: "POST", body: JSON.stringify(b), headers: { origin: "https://uji.test", "cf-connecting-ip": ip, cookie } }), E, ctx);
   await kirim({ jenis: "halaman", kunci: "/sembarang" }, "10.0.0.1");
   assert.equal((await E.DB.prepare("SELECT COUNT(*) n FROM statistik_harian WHERE jenis='halaman'").first()).n, 0);
   for (const ip of ["10.0.0.1", "10.0.0.1", "10.0.0.2"]) await kirim({ jenis: "cari", kunci: "kata langka" }, ip);

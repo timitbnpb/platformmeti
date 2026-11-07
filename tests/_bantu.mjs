@@ -75,3 +75,8 @@ export const ambilCookie = (res, nama = "sesi") => {
   const c = s.find((x) => x && x.startsWith(nama + "="));
   return c ? c.split(";")[0] : null;
 };
+
+// Sesi palsu untuk uji bermock tanpa D1: seluruh situs di balik login, jadi permintaan butuh cookie sah.
+// DB palsu hanya menjawab bacaSesi (satu .first()); jangan dipakai bila uji menyentuh D1 lain.
+export const COOKIE_PALSU = "sesi=" + "a".repeat(64);
+export const DB_SESI_PALSU = { prepare: () => ({ bind: () => ({ first: async () => ({ id: 1, surel: "x@uji.test", nama: "Uji", peran: "anggota", cakupan_prov: null, bahasa: "id", status: "aktif", wajib_ganti: 0, sampai: 9999999999 }) }) }) };

@@ -8,10 +8,17 @@ import { rute as ruteAdmin } from "./admin.js";
 import { rute as ruteKelayakan } from "./kelayakan.js";
 import * as hak from "./hak.js";
 import { halamanProfil } from "./profil.js";
-import { gagal, json, sha } from "./util.js";
+import { gagal, json, PRIVAT, sha } from "./util.js";
 
 const rutePemilik = {
   // Publik; satu SELECT 1 lewat hak.js.
+  // Tautan langganan kalender bertoken per akun (Google Calendar tak membawa cookie).
+  "GET /api/kalender/tautan": async (req, env, ctx, { akun }) => {
+    if (!akun) return gagal("belum_masuk");
+    const t = await tokenIcs(env, akun.id);
+    if (!t) return gagal("layanan");
+    return json({ url: new URL("/kalender.ics?t=" + t, req.url).href }, 200, { "cache-control": "private, no-store" });
+  },
   "GET /api/status": async (req, env) => {
     const db = await hak.ping(env).then(() => "ok", () => "galat");
     return json({ versi: env.VERSI || "dev", db }, db === "ok" ? 200 : 503, { "cache-control": "no-store" });
@@ -35,6 +42,32 @@ function cocok(r, bagian) {
   }
   return params;
 }
+
+const heksa = (b) => [...new Uint8Array(b)].map((x) => x.toString(16).padStart(2, "0")).join("");
+const kunciIcs = (env) => {
+  const r = env.ICS_RAHASIA || env.IP_SALT;
+  return r ? crypto.subtle.importKey("raw", new TextEncoder().encode("ics|" + r), { name: "HMAC", hash: "SHA-256" }, false, ["sign"]) : null;
+};
+async function tokenIcs(env, id) {
+  const k = kunciIcs(env);
+  return k ? `${id}.${heksa(await crypto.subtle.sign("HMAC", await k, new TextEncoder().encode("ics:" + id)))}` : null;
+}
+// Token sah = HMAC cocok DAN akun masih aktif (nonaktifkan akun = tautan mati).
+async function icsSah(env, t) {
+  const m = (t || "").match(/^(\d{1,12})\.[0-9a-f]{64}$/);
+  if (!m) return false;
+  try {
+    const benar = await tokenIcs(env, m[1]);
+    if (!benar || benar.length !== t.length) return false;
+    let d = 0;
+    for (let i = 0; i < t.length; i++) d |= benar.charCodeAt(i) ^ t.charCodeAt(i);
+    return d === 0 && (await hak.sistem.akunAktif(env, Number(m[1])));
+  } catch { return false; }
+}
+
+// Seluruh situs di balik login (KEPUTUSAN 7 Nov 2026): hanya alur masuk, aset yang dibutuhkannya, dan API masuk yang terbuka.
+const PUBLIK = /^\/((masuk|aktivasi|ganti-sandi|404)(\.html)?|masuk\.js|tema\.js|404\.js|favicon[^/]*|robots\.txt)$|^\/inti\/[^/]+\.(css|js)$|^\/i18n\/|^\/img\/(logo|ikon)[^/]*$|^\/fonts\//;
+const API_PUBLIK = new Set(["/api/masuk", "/api/keluar", "/api/status", "/api/aktivasi", "/api/saya"]);
 
 const TULIS = new Set(["POST", "PATCH", "PUT", "DELETE"]);
 const RE_TOKEN = /^[0-9a-f]{64}$/;
@@ -94,13 +127,18 @@ function halamanPrivat(res) {
   return r;
 }
 
-async function halaman(req, env, url) {
+async function halaman(req, env, url, akun) {
   const path = url.pathname;
   if (LANGSUNG_404.test(path)) return TIDAK_ADA();
+  if (!akun && !PUBLIK.test(path)) {
+    if (path === "/kalender.ics" && (await icsSah(env, url.searchParams.get("t")))) {
+      return halamanPrivat(await env.ASSETS.fetch(new Request(new URL("/kalender.ics", url), { method: req.method })));
+    }
+    if (path === "/kalender.ics") return gagal("belum_masuk", 401, PRIVAT);
+    return new Response(null, { status: 302, headers: { location: "/masuk?ke=" + encodeURIComponent(path + url.search), ...PRIVAT } });
+  }
   for (const k of TERKUNCI) {
     if (!k.re.test(path)) continue;
-    const { akun } = await muatSesi(req, env);
-    if (!akun) return new Response(null, { status: 302, headers: { location: "/masuk?ke=" + k.ke, "cache-control": "private, no-store", vary: "Cookie" } });
     if (k.peran && !k.peran.includes(akun.peran)) return halamanPrivat(new Response("Dilarang", { status: 403, headers: { "content-type": "text/plain; charset=utf-8" } }));
     return halamanPrivat(await env.ASSETS.fetch(new Request(new URL(k.aset, url), req)));
   }
@@ -135,11 +173,14 @@ async function api(req, env, ctx, url) {
   if (!ada) return metodeLain ? gagal("metode") : gagal("tidak_ditemukan");
   if (TULIS.has(req.method) && !(url.pathname === "/api/statistik" ? asalSama(req, url) : csrfSah(req, url))) return gagal("dilarang");
   const { sesi, akun } = await muatSesi(req, env);
+  if (!akun && !API_PUBLIK.has(url.pathname)) return gagal("belum_masuk", 401, PRIVAT);
   if (akun?.wajib_ganti && !BOLEH_WAJIB_GANTI.has(url.pathname)) return gagal("dilarang");
   const res = await ada.fn(req, env, ctx, { params, sesi, akun });
   const r = new Response(res.body, res);
-  if (akun) { r.headers.set("cache-control", "private, no-store"); r.headers.set("vary", "Cookie"); }
-  else if (!r.headers.has("cache-control")) r.headers.set("cache-control", "private, no-store");
+  // Semua respons API kini berautentikasi. "public, max-age=N" milik handler (dipakai Cache API Worker) keluar sebagai "private, max-age=N".
+  const cc = (r.headers.get("cache-control") || "").match(/^(?:public|private), (max-age=\d+(?:, immutable)?)$/);
+  r.headers.set("cache-control", cc ? "private, " + cc[1] : "private, no-store");
+  r.headers.set("vary", "Cookie");
   return r;
 }
 
@@ -148,7 +189,7 @@ export default {
     let res;
     try {
       const url = new URL(req.url);
-      res = url.pathname.startsWith("/api/") ? await api(req, env, ctx, url) : await halaman(req, env, url);
+      res = url.pathname.startsWith("/api/") ? await api(req, env, ctx, url) : await halaman(req, env, url, (await muatSesi(req, env)).akun);
     } catch (e) {
       if (e?.kode && Number.isInteger(e.status)) res = gagal(e.kode, e.status);
       else { console.error("galat-tak-terduga", e?.name, e?.message); res = gagal("server"); }

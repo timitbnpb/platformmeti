@@ -565,6 +565,10 @@ export async function bacaSesi(env, idHash) {
     .bind(idHash, kini()).first()) ?? null;
 }
 
+export async function akunAktif(env, id) {
+  return !!(await env.DB.prepare("SELECT 1 AS x FROM akun WHERE id = ? AND status = 'aktif'").bind(id).first());
+}
+
 export async function hapusSesi(env, idHash) {
   const [, hapus] = await BATCH(env, [
     env.DB.prepare("INSERT INTO jejak (siapa, peran, aksi, tabel, baris_id) SELECT a.id, a.peran, 'keluar', 'sesi', CAST(a.id AS TEXT) FROM sesi s JOIN akun a ON a.id = s.akun_id WHERE s.id_hash = ?").bind(idHash),
@@ -643,4 +647,4 @@ export async function rehashSandi(env, akunId, hash, garam, iterasi) {
 }
 export const ping = async (env) => (await env.DB.prepare("SELECT 1 AS ok").first()).ok === 1;
 
-export const sistem = { cariAkunUntukMasuk, catatSesi, bacaSesi, hapusSesi, catatLaju, periksaTautanAktivasi, pakaiTautanAktivasi, ubahSandi, rehashSandi, jejakTulis, sapu, ping };
+export const sistem = { cariAkunUntukMasuk, catatSesi, bacaSesi, akunAktif, hapusSesi, catatLaju, periksaTautanAktivasi, pakaiTautanAktivasi, ubahSandi, rehashSandi, jejakTulis, sapu, ping };

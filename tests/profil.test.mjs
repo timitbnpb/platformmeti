@@ -3,6 +3,7 @@ import test from "node:test";
 import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
 import worker from "../src/worker.js";
+import { COOKIE_PALSU, DB_SESI_PALSU } from "./_bantu.mjs";
 import { namaProyek } from "../public/inti/nama_proyek.js";
 
 const PUB = new URL("../public/", import.meta.url);
@@ -10,7 +11,7 @@ const ASSETS = { fetch: async (req) => {
   const p = new URL(req.url).pathname, f = p === "/o" ? "o.html" : p === "/p" ? "p.html" : p.slice(1);
   try { return new Response(readFileSync(new URL(f, PUB)), { status: 200 }); } catch { return new Response("x", { status: 404 }); }
 } };
-const ambil = (path) => worker.fetch(new Request("https://uji.example" + path), { ASSETS });
+const ambil = (path) => worker.fetch(new Request("https://uji.example" + path, { headers: { cookie: COOKIE_PALSU } }), { ASSETS, DB: DB_SESI_PALSU });
 const org = JSON.parse(readFileSync(new URL("data/organisasi.json", PUB))).baris, pro = JSON.parse(readFileSync(new URL("data/proyek.json", PUB))).baris;
 
 test("/o/<id>: 200, judul memuat nama (di-escape), og:title dan canonical", async () => {

@@ -47,7 +47,8 @@ test("halaman terkunci noindex + referrer; robots.txt menutup rute terkunci", ()
     assert.match(h, /name="referrer" content="no-referrer"/, f);
   }
   const r = baca("robots.txt");
-  for (const p of ["/api/", "/direktori", "/admin", "/masuk", "/aktivasi"]) assert.match(r, new RegExp("Disallow: " + p));
+  assert.match(r, /^Disallow: \/$/m);
+  assert.doesNotMatch(r, /Sitemap/i);
 });
 
 test("tanpa hex di CSS selain tema.css, tanpa :focus polos, tanpa em dash dan titik tengah", () => {
