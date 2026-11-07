@@ -2748,3 +2748,10 @@ button.ak-r[data-kh][aria-pressed="true"]{border-color:var(--w0,var(--brand2));b
 #akPita .ak-side-h .ak-ptlayer{width:100%!important;max-width:none!important;box-sizing:border-box;display:grid!important;grid-auto-flow:column!important;grid-auto-columns:minmax(0,1fr)!important}
 #akPita .ak-side-h .ak-ptlayer > button{width:100%!important;min-width:0}
 #akPita .ak-side-h:not(:has(.ak-ptlayer > button:not([hidden]))){padding:0}
+
+/* peta selebar layar; kontrol dan panel rata ke tepi konten */
+.ak-lbpeta .ak-pta,.ak-pta.ak-ptaisi{width:100vw;margin-left:calc(50% - 50vw);border-radius:0;border-inline:0}
+.ak-lbpeta .ak-pita{left:var(--tepi)}
+.ak-lbpeta .ak-drawer,.ak-lbpeta .ak-ptpanel{right:var(--tepi)}
+.ak-lbpeta .ak-ptlayer{right:calc(var(--tepi) + 44px)}
+@media (max-width:700px){.ak-lbpeta .ak-drawer{right:0}}

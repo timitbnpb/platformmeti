@@ -70,3 +70,8 @@
 /* filter teknologi: bilah kaca ujung ke ujung di atas peta */
 .jm-pel-penuh>.jm-pel-seg{position:absolute;z-index:5;top:0;left:0;right:0;padding:10px 12px;border-bottom:1px solid var(--line);background:color-mix(in srgb,var(--card) 86%,transparent);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px)}
 @media (max-width:999px){.jm-pel-penuh>.jm-pel-seg{display:flex;overflow-x:auto;scrollbar-width:none}.jm-pel-penuh>.jm-pel-seg .jm-kl-tb{flex:none}}
+
+/* peta selebar layar; bilah dan panel rata ke tepi konten */
+.jm-pel-penuh{width:100vw;margin-inline:calc(50% - 50vw);border-radius:0;border-inline:0}
+.jm-pel-penuh>.jm-pel-seg{padding-inline:var(--tepi)}
+.jm-pel-lapis{left:var(--tepi)}.jm-pel-panel{right:var(--tepi)}

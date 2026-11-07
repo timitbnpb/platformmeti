@@ -19,7 +19,7 @@
   --shadow:0 2px 14px rgb(10 60 45/.08); --shadow-lg:0 8px 28px rgb(10 60 45/.16);
   --pendar:0 0 0 1px rgb(74 169 224/.35),0 8px 28px rgb(74 169 224/.18);
   --r:14px; --r-sm:10px; --r-lg:16px; --r-pil:999px;
-  --top:60px; --maks:1600px; --gut:16px; --gap:12px; --target:44px;
+  --tepi:max(12px,calc((100vw - var(--maks)) / 2 + var(--gut))); --top:60px; --maks:1600px; --gut:16px; --gap:12px; --target:44px;
   --display:"Poppins",system-ui,sans-serif;
   --font:"Inter",Arial,system-ui,sans-serif;
   /* Skala tipografi tunggal (gerbang-tipografi): CSS lain WAJIB memakai token ini, bukan px literal.

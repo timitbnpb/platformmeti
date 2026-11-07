@@ -42,3 +42,7 @@
 /* kontrol teknologi dan provinsi: bilah kaca ujung ke ujung di atas peta (di layar kecil tetap di atas, tidak menutup peta) */
 .jm-kl-petaw>.jm-kl-kontrol{position:absolute;z-index:5;top:0;left:0;right:0;padding:10px 12px;border-bottom:1px solid var(--line);background:color-mix(in srgb,var(--card) 86%,transparent);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px)}
 @media (max-width:900px){.jm-kl-petaw>.jm-kl-kontrol{position:relative;background:var(--card)}.jm-kl-peta{height:max(420px,65vh)}}
+
+/* peta selebar layar; kontrol rata ke tepi konten */
+.jm-kl-petaw{width:100vw;margin-inline:calc(50% - 50vw);border-radius:0;border-inline:0}
+.jm-kl-petaw>.jm-kl-kontrol{padding-inline:var(--tepi)}

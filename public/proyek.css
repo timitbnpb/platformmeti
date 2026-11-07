@@ -617,3 +617,9 @@ dialog.jm-pj-sheet{height:fit-content;min-height:0}@media (max-width:599px){dial
 .jm-pj-ub-ik .jm-ikt{width:22px;height:22px;color:inherit}
 .jm-pj-ub b{font:700 var(--t-h1)/var(--lh-judul) var(--display);font-variant-numeric:tabular-nums;color:var(--head)}
 .jm-pj-ub-n{font:400 var(--t-tombol)/var(--lh-rapat) var(--font);color:var(--ink2);overflow-wrap:anywhere}
+
+/* peta selebar layar; bilah dan panel rata ke tepi konten */
+.jm-pj-penuh{width:100vw;margin-inline:calc(50% - 50vw);border-radius:0;border-inline:0}
+.jm-pj-penuh .jm-pj-bilah.jm-saring{padding-inline:var(--tepi)}
+.jm-pj-lapis{left:var(--tepi)}.jm-pj-panel{right:var(--tepi)}
+@media (max-width:999px){.jm-pj-penuh .jm-pj-bilah.jm-saring{border-radius:0;border-inline:0}.jm-pj-area{border-radius:0;border-inline:0}}

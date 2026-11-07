@@ -509,3 +509,10 @@ a.jm-wp-op:hover{color:var(--accent)}
 /* rantai: filter pasar dan keanggotaan melayang di atas peta (bilah kaca ujung ke ujung) */
 .jm-rt-bingkai>.jm-an-chip{position:absolute;z-index:6;top:0;left:0;right:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px 16px;margin:0;padding:8px 12px;border-bottom:1px solid var(--line);background:color-mix(in srgb,var(--card) 86%,transparent);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px)}
 @media (max-width:899px){.jm-rt-bingkai>.jm-an-chip{grid-template-columns:minmax(0,1fr)}.jm-rt-reset{top:auto;bottom:12px}}
+
+/* peta selebar layar; bilah dan panel rata ke tepi konten */
+.jm-wl-bingkai{width:100vw;margin-inline:calc(50% - 50vw);border-radius:0;border-inline:0}
+.jm-wl-bingkai>.jm-tab.jm-wl-seg,.jm-rt-bingkai>.jm-an-chip{padding-inline:var(--tepi)}
+.jm-wl-pr{right:var(--tepi)}.jm-wl-legenda{left:var(--tepi)}
+.jm-rt-reset{right:var(--tepi)}.jm-rt-laci{right:var(--tepi)}
+@media (max-width:899px){.jm-wl-pr{right:auto}.jm-wl-legenda{left:auto}}
