@@ -3,6 +3,8 @@
 import { t, tanggal, tanggalDariUnix } from "/i18n.js";
 import { api, esc, ikon, galatTeks, kosongHtml, pesanHtml } from "/inti/umum.js";
 import { mulaiHalaman } from "/inti/kepala.js";
+import { unggahHtml } from "/inti/unggah.js";
+import { siapHtml, matikan } from "/inti/siap.js";
 import { exHtml } from "/inti/komponen.js";
 import { namaProvinsi } from "/profil_tampil.js";
 
@@ -19,7 +21,7 @@ const tgl = (u) => (u ? `<span data-urut="${u}">${esc(tanggal(tanggalDariUnix(u)
 const medan = (id, kunci, isi, penuh = false) => `<div class="jm-medan${penuh ? " jm-penuh" : ""}"><label for="${id}">${esc(t(kunci))}</label>${isi}</div>`;
 const isian = (id, { tipe = "text", maks = 200, wajib = false, ph = "" } = {}) => `<input class="jm-isian" id="${id}" type="${tipe}" maxlength="${maks}" autocomplete="off"${wajib ? " required" : ""}${ph ? ` placeholder="${esc(ph)}"` : ""}>`;
 const area = (id, maks) => `<textarea class="jm-isian" id="${id}" rows="3" maxlength="${maks}"></textarea>`;
-const berkas = (id, terima) => `<input class="jm-isian" id="${id}" type="file" accept="${terima}">`;
+const berkas = (id, terima) => unggahHtml({ id, terima, maks: id === "wBerkas" && terima === "application/pdf" ? 5242880 : 2097152, bantu: t(terima === "application/pdf" ? "wk.f.pdf" : "wk.f.foto") });
 
 function bidang(j) {
   if (j === "sk") return `${medan("wNomor", "wk.f.nomor", isian("wNomor", { maks: 120, wajib: true }))}${medan("wTgl", "wk.f.tanggal", isian("wTgl", { tipe: "date" }))}${medan("wPerihal", "wk.f.perihal", isian("wPerihal"), true)}${medan("wBerkas", "wk.f.pdf", berkas("wBerkas", "application/pdf"), true)}`;
@@ -97,5 +99,10 @@ try {
     gambar();
   }
 } catch (e) {
-  akar.innerHTML = e.kode === "fitur_belum_aktif" ? kosongHtml("adm.belum_aktif") : pesanHtml("galat", galatTeks(e.kode || "umum"));
+  if (e.kode === "fitur_belum_aktif") {
+    S = { kode: kodeUrl, ajuan: [], nama: (await namaProvinsi().catch(() => [])).find(([k]) => k === kodeUrl)?.[1] || kodeUrl || "" };
+    gambar();
+    akar.insertAdjacentHTML("afterbegin", siapHtml("wk.siap"));
+    matikan(akar);
+  } else akar.innerHTML = pesanHtml("galat", galatTeks(e.kode || "umum"));
 }

@@ -87,4 +87,4 @@ export function negaraMedia(d) {
   if (TLD[tld]) return TLD[tld];
   return /\.(com|org|net|news|tv|us)$/.test(d) ? "us" : "";
 }
-export const BENDERA_ADA = new Set(["id", "my", "sg", "ph", "th", "vn", "bn", "kh", "la", "mm", "tl"]);
+export const BENDERA_ADA = new Set(["ae", "au", "az", "bd", "bn", "br", "ca", "cn", "de", "eg", "es", "fr", "gb", "gh", "hk", "id", "il", "in", "ir", "it", "jp", "ke", "kh", "kr", "la", "mm", "my", "ng", "nl", "nz", "ph", "pk", "qa", "ru", "sa", "sg", "th", "tl", "tr", "tw", "tz", "us", "vn", "za"]);

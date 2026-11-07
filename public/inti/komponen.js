@@ -34,11 +34,10 @@ export const tabTautan = (items) =>
 
 /** Subnav bagian Insight; dipasang otomatis oleh mulaiHalaman() di halaman bagian ini. */
 export const BAGIAN_INSIGHT = [
-  { href: "/insight", ikon: "insight", kunci: "nav.sub.ringkasan" },
-  { href: "/insight#tren", ikon: "analisis", kunci: "nav.sub.tren" },
+  { href: "/insight", ikon: "kajian", kunci: "nav.sub.ringkasan" },
+  { href: "/insight#tren", ikon: "linimasa", kunci: "nav.sub.tren" },
   { href: "/rantai", ikon: "rantai", kunci: "nav.rantai" },
   { href: "/asean", ikon: "asean", kunci: "nav.asean" },
-  { href: "/indeks", ikon: "analisis", kunci: "nav.indeks" },
   { href: "/metode", ikon: "metode", kunci: "nav.sub.metode" },
 ];
 export function subnavHtml(jalur, hash = "") {

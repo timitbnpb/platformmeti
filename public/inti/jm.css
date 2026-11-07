@@ -602,7 +602,7 @@ main>:is(section,div,article)+:is(section,div,article){margin-top:max(24px,var(-
 .jm-pag-elips{padding:0 4px;color:var(--ink2)}
 
 /* BATIK kawung bersama (pola putih transparan di kepala/kartu): .jm-batik pada elemen berisi; warna dari --batik (bawaan currentColor), kepekatan --batik-op, memudar ke bawah; .jm-batik-rata tanpa pudar */
-.jm-batik{--batik-pola:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40'%3E%3Cg fill='none' stroke='black' stroke-width='1.6'%3E%3Cellipse cx='20' cy='10' rx='6' ry='10'/%3E%3Cellipse cx='20' cy='30' rx='6' ry='10'/%3E%3Cellipse cx='10' cy='20' rx='10' ry='6'/%3E%3Cellipse cx='30' cy='20' rx='10' ry='6'/%3E%3C/g%3E%3Ccircle cx='20' cy='20' r='2' fill='black'/%3E%3C/svg%3E");--batik-pudar:linear-gradient(180deg,rgb(0 0 0) 0%,rgb(0 0 0 / .85) 35%,rgb(0 0 0 / 0) 78%);position:relative}
+.jm-batik{position:relative}
 .jm-batik-rata{--batik-pudar:linear-gradient(rgb(0 0 0),rgb(0 0 0))}
 .jm-batik::before{content:"";position:absolute;inset:0;pointer-events:none;background:var(--batik,currentColor);opacity:var(--batik-op,.1);-webkit-mask-image:var(--batik-pola),var(--batik-pudar);mask-image:var(--batik-pola),var(--batik-pudar);-webkit-mask-size:40px 40px,100% 100%;mask-size:40px 40px,100% 100%;-webkit-mask-composite:source-in;mask-composite:intersect}
 .jm-sejajar>*{margin-top:0!important}

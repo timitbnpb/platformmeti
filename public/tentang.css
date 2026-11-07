@@ -175,13 +175,6 @@
 .tn-logo span{font:600 var(--t-label)/var(--lh-judul) var(--font);color:var(--ink2);text-align:center;max-width:124px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .tn-nama{font:700 var(--t-h3)/1 var(--display);letter-spacing:.08em;color:var(--brand)}
 @media (prefers-reduced-motion:reduce){.tn-pita{-webkit-mask-image:none;mask-image:none}.tn-trek{animation:none;width:auto;flex-wrap:wrap;justify-content:center;gap:12px}.tn-trek li{margin:0}.tn-trek li[aria-hidden="true"]{display:none}}
-.tn-kr{margin:32px 0 0;font-size:var(--t-kecil);color:var(--ink2)}
-.tn-kr summary{cursor:pointer;min-height:var(--target);display:flex;align-items:center;font-weight:600}
-.tn-kr ul{list-style:none;margin:10px 0 0;padding:0;display:grid;gap:8px}
-.tn-kr li a{display:flex;align-items:center;gap:12px;color:var(--ink2)}.tn-kr li a:hover{color:var(--head)}
-.tn-kr img{width:64px;height:40px;object-fit:cover;border-radius:6px;flex:none}
-.tn-kr li span{flex:1;min-width:0}.tn-kr small{display:block}
-.tn-kr em{font-style:normal;font-size:var(--t-label);padding:3px 8px;border-radius:var(--r-pil);background:var(--soft-hijau);color:var(--ok);white-space:nowrap}
 .tn-kol.aktif .tn-kol-isi::after,.tn-kol:hover .tn-kol-isi::after{opacity:1}
 /* pemilik 7 Nov 2026: logo mitra tanpa kotak bersudut bulat; logo saja, lebih besar */
 .tn-logo,.tn-logo:hover,.tn-logo:focus-visible{background:transparent!important;border:0!important;box-shadow:none!important;border-radius:0;width:auto;min-width:96px;height:64px;padding:0}
@@ -270,3 +263,69 @@
 /* 9 teknologi: baris 1 lima kartu, baris 2 empat kartu melebar, tanpa slot kosong (8 Nov 2026) */
 @media (min-width:1281px){.tn-tek{grid-template-columns:repeat(20,minmax(0,1fr))}.tn-tek>li{grid-column:span 4}.tn-tek>li:nth-child(n+6):nth-last-child(-n+4):nth-child(9),.tn-tek:has(>li:nth-child(9):last-child)>li:nth-child(n+6){grid-column:span 5}}
 @media (max-width:760px){.tn-dg .tn-fk{aspect-ratio:1/1}.tn-dlg-daftar *{box-sizing:border-box;min-width:0}}
+
+/* ---------- struktur: latar foto bergradien + batik, kepala unit, bagan (8 Nov 2026) ---------- */
+.tn-fk-pt{background:radial-gradient(ellipse 62% 46% at 50% 34%,color-mix(in srgb,var(--on-brand) 30%,transparent),transparent 72%),linear-gradient(165deg,var(--brand) 0%,var(--brand2) 58%,color-mix(in srgb,var(--meti-cyan) 55%,var(--brand2)) 100%)}
+.tn-fk-nf,.tn-fk-kosong{--batik:var(--brand);--batik-op:.12;background:radial-gradient(circle at 50% 28%,color-mix(in srgb,var(--on-brand) 55%,transparent),transparent 62%),linear-gradient(170deg,var(--soft-hijau),var(--surface))}
+.tn-fk-nf .tn-fk-ini{width:56px;height:56px;font-size:var(--t-h3);box-shadow:0 0 0 3px var(--card),0 4px 14px color-mix(in srgb,var(--brand) 35%,transparent)}
+.tn-fk-nf.besar .tn-fk-ini{width:80px;height:80px;font-size:var(--t-h2)}
+.tn-fk-nf .tn-fk-t b{color:var(--head)}
+.tn-ketum .tn-fk{box-shadow:0 0 0 2px var(--meti-lime),0 0 0 5px color-mix(in srgb,var(--meti-lime) 28%,transparent),0 10px 30px color-mix(in srgb,var(--meti-lime) 30%,transparent),var(--shadow-lg)}
+.tn-ketum .tn-fk-pt .tn-fk-b::before{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;background:linear-gradient(115deg,transparent 35%,color-mix(in srgb,var(--on-brand) 22%,transparent) 50%,transparent 65%);transform:translateX(-120%)}
+.tn-fk{transition:transform .25s cubic-bezier(.16,1,.3,1),box-shadow .25s}
+.tn-fk:hover{transform:translateY(-4px);box-shadow:var(--shadow-lg)}
+.tn-grp h4{position:relative;justify-content:center;text-align:center;flex-wrap:wrap;padding-bottom:14px;border-bottom:1px solid var(--line)}
+.tn-grp h4::after{content:"";position:absolute;left:50%;bottom:-2px;width:64px;height:4px;border-radius:4px;transform:translateX(-50%);background:linear-gradient(90deg,var(--brand2),var(--meti-lime))}
+.tn-n{font-style:normal;padding:2px 10px;border-radius:var(--r-pil);background:var(--soft-hijau);color:var(--accent);font:700 var(--t-label)/1.5 var(--font)}
+.tn-konek{position:relative;width:3px;height:36px;border-radius:3px;background:linear-gradient(var(--brand2),var(--meti-lime));opacity:.75}
+.tn-konek::after{content:"";position:absolute;left:50%;bottom:-4px;width:9px;height:9px;border-radius:50%;transform:translateX(-50%);background:var(--meti-lime);box-shadow:0 0 0 3px var(--paper)}
+.tn-lr{height:264px;grid-template-rows:none}
+.tn-lr-k{grid-template-columns:minmax(0,2fr) minmax(0,1fr);grid-template-rows:repeat(2,minmax(0,1fr));grid-auto-flow:row}
+.tn-lr-k>.tn-fk:first-child{grid-row:1/span 2}
+.tn-lr-k>.tn-fk:nth-child(2):last-child{grid-row:1/span 2}
+.tn-lr-k .tn-fk:not(:first-child) .tn-fk-t{padding:8px}
+.tn-av-baris{justify-content:center;flex-wrap:wrap}
+.tn-tumpuk .tn-av{margin-left:-12px;box-shadow:0 0 0 3px var(--card),0 2px 6px color-mix(in srgb,var(--brand) 25%,transparent);transition:transform .2s,z-index 0s;position:relative}
+.tn-tumpuk .tn-av:first-child{margin-left:0}
+.tn-tumpuk .tn-av:hover{transform:translateY(-4px);z-index:2}
+.tn-plus{display:inline-flex;align-items:center;gap:6px;padding:4px 12px;border-radius:var(--r-pil);background:color-mix(in srgb,var(--accent) 12%,var(--card));color:var(--accent);font:600 var(--t-kecil)/var(--lh-rapat) var(--font)}
+.tn-semua{align-self:center;min-height:40px;padding:0 18px;border:0;background:var(--brand);color:var(--on-brand);box-shadow:0 2px 8px color-mix(in srgb,var(--brand) 30%,transparent);transition:background-color .15s,transform .15s}
+.tn-semua:hover{background:var(--brand2);transform:translateY(-1px)}
+@media (pointer:coarse){.tn-semua{min-height:var(--target)}}
+@media (max-width:760px){.tn-lr{height:240px}}
+@media (prefers-reduced-motion:no-preference){
+@keyframes tn-naik{from{opacity:0;transform:translateY(14px)}}
+@keyframes tn-kilau{0%,70%{transform:translateX(-120%)}100%{transform:translateX(120%)}}
+.tn-pohon .tn-grp{animation:tn-naik .6s cubic-bezier(.16,1,.3,1) both}
+.tn-r0>.tn-grp:nth-child(2),.tn-r2>.tn-grp:nth-child(2){animation-delay:.08s}
+.tn-r0>.tn-grp:nth-child(3),.tn-r2>.tn-grp:nth-child(3){animation-delay:.16s}
+.tn-r2>.tn-grp:nth-child(4){animation-delay:.24s}
+.tn-ketum .tn-fk-pt .tn-fk-b::before{animation:tn-kilau 5s ease-in-out infinite}
+}
+@media (prefers-reduced-motion:reduce){.tn-fk,.tn-semua,.tn-tumpuk .tn-av{transition:none}.tn-fk:hover,.tn-tumpuk .tn-av:hover,.tn-semua:hover{transform:none}}
+
+/* ---------- FAQ: blok berlatar foto + batik, kartu kaca (8 Nov 2026) ---------- */
+.tn-faq-bg{position:relative;isolation:isolate;padding-block:clamp(36px,6vw,72px)}
+.tn-faq-bg::before{content:"";position:absolute;inset:0 calc(50% - 50vw);z-index:-2;background:linear-gradient(160deg,color-mix(in srgb,var(--brand) 88%,transparent),color-mix(in srgb,var(--brand) 66%,transparent) 55%,color-mix(in srgb,var(--brand2) 55%,transparent)),url(/img/beranda/hidro-saguling.webp) center/cover}
+.tn-faq-bg .tn-faq-pola{position:absolute;inset:0 calc(50% - 50vw);z-index:-1;color:var(--on-brand);--batik-op:.07;pointer-events:none}
+.tn-sh-foto{background:none;border:0;padding:0;margin-bottom:clamp(20px,3vw,32px)}
+.tn-sh-foto h2,.tn-sh-foto .tn-ey{color:var(--on-brand)}
+.tn-faq-bg .tn-faq details{background:color-mix(in srgb,var(--card) 84%,transparent);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);border-color:color-mix(in srgb,var(--on-brand) 30%,transparent);border-left-color:color-mix(in srgb,var(--on-brand) 30%,transparent)}
+.tn-faq-bg .tn-faq details[open]{border-left-color:var(--meti-lime);border-left-width:5px;background:color-mix(in srgb,var(--card) 94%,transparent)}
+.tn-q-no{flex:none;min-width:22px;font:700 var(--t-kecil)/1 var(--display);color:var(--accent)}
+.tn-faq-bg .tn-ada{background:color-mix(in srgb,var(--card) 80%,transparent);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);border:1px solid color-mix(in srgb,var(--on-brand) 35%,transparent);border-top:4px solid var(--meti-lime)}
+.tn-ada-ik{--batik:var(--brand);--batik-op:.18;width:64px;height:64px;background:linear-gradient(160deg,var(--brand),var(--brand2));color:var(--on-brand);overflow:hidden;box-shadow:0 0 0 4px color-mix(in srgb,var(--meti-lime) 40%,transparent)}
+.tn-ada-ik::before{color:var(--on-brand);--batik:var(--on-brand)}
+.tn-ada-ik .jm-ik{position:relative}
+.tn-salin{display:inline-grid;place-items:center;width:36px;height:36px;padding:0;border-radius:50%}
+.tn-salin span{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
+.tn-ada .tn-aksi{display:grid;grid-template-columns:1fr 1fr}
+.tn-ada .tn-tbl{width:100%;box-sizing:border-box;text-align:center;padding:0 12px}
+.tn-kr{margin:18px 0 0;display:flex;justify-content:flex-end;color:var(--on-brand)}
+.tn-kr .jm-sumber-b{background:color-mix(in srgb,var(--card) 80%,transparent);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px)}
+.tn-kr .jm-sumber-isi{top:auto;bottom:calc(100% + 8px)}
+.tn-kr-l{margin:8px 0 0;padding-left:18px;font-size:var(--t-kecil)}
+@media (max-width:900px){.tn-faq-bg .tn-q-a{padding-left:18px}}
+.tn-lr-1{grid-template-columns:minmax(0,68%);justify-content:center}
+.tn-tumpuk .tn-av{margin-left:-8px}.tn-tumpuk .tn-av:first-child{margin-left:0}.tn-tumpuk .tn-ini{font-size:var(--t-label);letter-spacing:-.02em}
+.tn-konek{margin-bottom:8px}

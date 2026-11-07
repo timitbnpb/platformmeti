@@ -3,6 +3,7 @@
 import { t, tanggal, tanggalDariUnix } from "/i18n.js";
 import { api, esc, ikon, galatTeks, kosongHtml, pesanHtml } from "/inti/umum.js";
 import { mulaiHalaman } from "/inti/kepala.js";
+import { siapHtml } from "/inti/siap.js";
 import { exHtml } from "/inti/komponen.js";
 import { namaProyek } from "/inti/nama_proyek.js";
 import { namaProvinsi } from "/profil_tampil.js";
@@ -55,7 +56,7 @@ async function muat() {
     gambar(d, r);
     api("/api/ikuti/lihat", { metode: "POST", badan: {} }).catch(() => {});
   } catch (e) {
-    akar.innerHTML = e.kode === "fitur_belum_aktif" ? kosongHtml("adm.belum_aktif") : pesanHtml("galat", galatTeks(e.kode || "umum"));
+    akar.innerHTML = e.kode === "fitur_belum_aktif" ? siapHtml("dk.siap") + kosongHtml("dk.kosong") : pesanHtml("galat", galatTeks(e.kode || "umum"));
   }
 }
 akar.addEventListener("click", async (e) => {

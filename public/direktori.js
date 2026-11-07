@@ -1611,31 +1611,20 @@ h4{margin:0 0 2px;font-size:8px;letter-spacing:normal;text-transform:none;color:
     $("akSheet").dataset.k = ""; }
   const inisPin = n => { const k = String(n || "").replace(/\([^)]*\)/g, " ").split(/[\s/-]+/).filter(w => /^[A-Za-z0-9]/.test(w) && !/^(PT|CV|Tbk|dan|of|the|Persero)$/i.test(w)); return (k.length > 1 && String(n).length > 6 ? k.slice(0, 2).map(w => w[0]).join("") : (k[0] || "?").slice(0, 3)).toUpperCase(); };
   const elPin = i => { const b = document.createElement("button"); b.type = "button"; b.className = "ak-pin" + (i.redup ? " redup" : ""); b.title = i.tip; b.setAttribute("aria-label", i.tip || i.nama || "");
-    b.innerHTML = i.jenis === "klaster" ? `<span class="ak-pinlogo ak-pinklaster" data-st="--w0:${esc(i.warna)}"><b>${angka(i.n)}</b></span>` : `<span class="ak-pinlogo" data-st="--w0:${esc(i.warna)}">${i.ini ? `<b class="ak-pini">${esc(i.ini)}</b>` : ikon(i.ik || IK_GEDUNG, i.warna)}${(() => { const a = [].concat(i.logo || []).filter(u => urlOkLogo(u)); return a.length ? `<img src="${esc(urlOk(a[0]))}" alt="" referrerpolicy="no-referrer" loading="lazy" data-next="${esc(a.slice(1).join("|"))}">` : ""; })()}</span>${i.bintang ? bintangI(i.key.replace(/^l:/, "L:").replace(/^k:/, "K:")) : ""}${i.label === false ? "" : `<span class="ak-pinlabel">${esc(i.nama)}</span>`}`;
+    b.innerHTML = `<span class="ak-pinlogo" data-st="--w0:${esc(i.warna)}">${i.ini ? `<b class="ak-pini">${esc(i.ini)}</b>` : ikon(i.ik || IK_GEDUNG, i.warna)}${(() => { const a = [].concat(i.logo || []).filter(u => urlOkLogo(u)); return a.length ? `<img src="${esc(urlOk(a[0]))}" alt="" referrerpolicy="no-referrer" loading="lazy" data-next="${esc(a.slice(1).join("|"))}">` : ""; })()}</span>${i.bintang ? bintangI(i.key.replace(/^l:/, "L:").replace(/^k:/, "K:")) : ""}<span class="ak-pinlabel${i.label === false ? " sembunyi" : ""}">${esc(i.nama)}</span>`;
     b.addEventListener("click", e => { e.stopPropagation(); i.buka(); }); return b; };
   /* decluttering: urut bobot, tolak pin yang kotaknya menimpa pin terpilih; batas jumlah menurut zoom */
   const _kv = document.createElement("canvas").getContext("2d"); _kv.font = "700 12px sans-serif"; const ukurTeks = t => _kv.measureText(t).width;
   function gambarPin() {
     const m = PT.map; if (!m || !PT.siap) return;
-    const z = m.getZoom(), src = PT.items.filter(i => i.bintang || z >= 8)   /* partner strategis selalu; lembaga lain muncul saat diperbesar ke tingkat kota */, b = m.getBounds(), cap = z < 8 ? 400 : Math.min(90, Math.round(10 + (z - 3) * 9)), kotak = [], pilih = [], lebar = i => i.label === false ? 40 : 40 + Math.min(ukurTeks(String(i.nama)) + 18, 168);
+    const z = m.getZoom(), b = m.getBounds(), kotak = [], pilih = [], lebar = i => 40 + Math.min(ukurTeks(String(i.nama)) + 18, 168);
     const tabrak = (p, w) => kotak.some(k => p.x - 19 < k[2] && p.x - 19 + w > k[0] && p.y - 20 < k[3] && p.y + 20 > k[1]);
-    let dalam = src.filter(i => b.contains([i.lon, i.lat]));
-    if (z < 8) { /* jauh: lembaga non-strategis dikelompokkan per sel piksel; sel berisi >= 2 jadi bulatan berangka, sel tunggal tetap pin logo */
-      const sel = new Map(); PT.items.filter(i => !i.bintang && i.jenis === "lembaga" && b.contains([i.lon, i.lat])).forEach(i => { const p = m.project([i.lon, i.lat]), k = Math.floor(p.x / 64) + "," + Math.floor(p.y / 64); (sel.get(k) || sel.set(k, []).get(k)).push(i); });
-      sel.forEach((a, k) => { if (a.length < 2) { dalam.push(a[0]); return; } const la = a.reduce((u, i) => u + i.lat, 0) / a.length, lo = a.reduce((u, i) => u + i.lon, 0) / a.length;
-        dalam.push({key: "c:" + k + ":" + a.length, jenis: "klaster", n: a.length, lat: la, lon: lo, nama: String(a.length), tip: `${a.length} lembaga, klik untuk memperbesar`, label: false, warna: "var(--data1)", w: a.length, buka: () => m.easeTo({center: [lo, la], zoom: Math.min(z + 2.2, 9), duration: 500})}); });
-    }
-    /* partner strategis selalu digambar; hanya labelnya yang boleh hilang saat bertabrakan */
-    /* pin strategis berkoordinat identik disebar melingkar dalam piksel layar supaya tiap pin dan labelnya bisa diklik terpisah */
-    const sama = new Map(); dalam.filter(i => i.bintang).forEach(i => { const k = i.lat.toFixed(4) + "," + i.lon.toFixed(4); (sama.get(k) || sama.set(k, []).get(k)).push(i); });
-    sama.forEach(a => { a.sort((x, y) => String(x.key).localeCompare(String(y.key))); a.forEach((i, n) => { if (a.length < 2) { i._off = [0, 0]; return; } const r = a.length === 2 ? 24 : 28, t = -Math.PI / 2 + 2 * Math.PI * n / a.length; i._off = [Math.round(r * Math.cos(t)), Math.round(r * Math.sin(t))]; }); });
-    dalam.filter(i => !i.bintang).forEach(i => { i._off = [0, 0]; });
-    for (const i of dalam.filter(i => i.bintang).sort((a, c) => c.w - a.w)) { const p0 = m.project([i.lon, i.lat]), p = {x: p0.x + i._off[0], y: p0.y + i._off[1]}, w = lebar(i), t = tabrak(p, w); i._tl = t; kotak.push([p.x - 19, p.y - 20, p.x - 19 + (t ? 40 : w), p.y + 20]); pilih.push(i); }
-    for (const i of dalam.filter(i => !i.bintang).sort((a, c) => c.w - a.w)) {
-      if (pilih.length >= cap) break; const p = m.project([i.lon, i.lat]), w = lebar(i);
-      if (tabrak(p, w)) continue; i._tl = false;
-      kotak.push([p.x - 19, p.y - 20, p.x - 19 + w, p.y + 20]); pilih.push(i);
-    }
+    /* tanpa angka: semua lembaga selalu pin logo. Pin yang berdekatan (sel 40 px) disebar melingkar bertingkat dalam piksel layar */
+    const dalam = PT.items.filter(i => b.contains([i.lon, i.lat])), sel = new Map();
+    dalam.forEach(i => { const p = m.project([i.lon, i.lat]), k = Math.floor(p.x / 40) + "," + Math.floor(p.y / 40); (sel.get(k) || sel.set(k, []).get(k)).push(i); });
+    sel.forEach(a => { a.sort((x, y) => String(x.key).localeCompare(String(y.key))); a.forEach((i, n) => { if (a.length < 2) { i._off = [0, 0]; return; } let c = 8, g = 1, j = n; while (j >= c) { j -= c; g++; c = 8 * g; } const t = -Math.PI / 2 + 2 * Math.PI * j / Math.min(c, a.length - (n - j)), r = 26 * g; i._off = [Math.round(r * Math.cos(t)), Math.round(r * Math.sin(t))]; }); });
+    /* label nama hanya untuk pin yang tidak bertabrakan (atau zoom >= 7); sisanya tampil saat hover/fokus */
+    for (const i of dalam.sort((a, c) => c.w - a.w)) { const p0 = m.project([i.lon, i.lat]), p = {x: p0.x + i._off[0], y: p0.y + i._off[1]}, w = lebar(i), t = tabrak(p, w); i._tl = t && z < 7; kotak.push([p.x - 19, p.y - 20, p.x - 19 + (t ? 40 : w), p.y + 20]); pilih.push(i); }
     const ada = new Set(pilih.map(i => i.key));
     for (const [k, mk] of PT.pins) { const it = pilih.find(i => i.key === k); if (!it || mk._tl !== it._tl || mk._off !== String(it._off)) { mk.remove(); PT.pins.delete(k); } }
     for (const i of pilih) if (!PT.pins.has(i.key)) { const it = i._tl ? {...i, label: false} : i, mk = new maplibregl.Marker({element: elPin(it), anchor: "left", offset: [-19 + (i._off?.[0] || 0), i._off?.[1] || 0]}).setLngLat([i.lon, i.lat]).addTo(m); mk._tl = i._tl; mk._off = String(i._off); PT.pins.set(i.key, mk); }
@@ -1645,7 +1634,7 @@ h4{margin:0 0 2px;font-size:8px;letter-spacing:normal;text-transform:none;color:
     set("strat", STRAT ? Object.values(STRAT).filter(v => v?.bintang).length : 0); set("pusat", PT.pusatArr.length); set("sensor", PT.sensorArr.length); }
   function segarPeta() {   // dipanggil setelah lapisan/kategori/data berubah
     const m = PT.map; if (!m || !PT.siap) return; segarLayerBtn();
-    PT.items = itemPeta(); { const el = $("akPtN"); if (el) el.textContent = t("dir.peta.ditempatkan", {n: angka(PT.items.reduce((u, i) => u + (i.jenis === "lembaga" ? 1 : i.jenis === "grup" ? i.ref.filter(r => r.jenis === "lembaga").length : 0), 0)), m: angka(lbArr.filter(x => x.kategori !== "penerbit" && (!PT.kat.size || PT.kat.has(x.kategori))).length)}); } if (PT.fitKat) { PT.fitKat = false; const ks = PT.kat.size ? PT.items : []; if (ks.length) { const lo = ks.map(i => i.lon), la = ks.map(i => i.lat); m.fitBounds([[Math.min(...lo) - .5, Math.min(...la) - .5], [Math.max(...lo) + .5, Math.max(...la) + .5]], {padding: innerWidth > 700 ? {top: 80, bottom: 50, left: Math.round(($("akPita")?.getBoundingClientRect().width || 340) + 36), right: 70} : {top: 70, bottom: 260, left: 40, right: 40}, maxZoom: 9, duration: 400}); } } if (!PT.fitStrat && stratOn()) { const st2 = PT.items.filter(i => i.bintang && i.lon > 94 && i.lon < 142 && i.lat > -12 && i.lat < 7); if (st2.length) { PT.fitStrat = true; const lo = st2.map(i => i.lon), la = st2.map(i => i.lat); m.fitBounds([[Math.min(...lo) - 1, Math.min(...la) - 1], [Math.max(...lo) + 1, Math.max(...la) + 1]], {padding: innerWidth > 700 ? {top: 80, bottom: 50, left: Math.round(($("akPita")?.getBoundingClientRect().width || 340) + 36), right: 70} : {top: 70, bottom: 260, left: 40, right: 40}, animate: false, maxZoom: 6}); } } m.getSource("pts")?.setData(geoPts(PT.items)); m.getSource("sns")?.setData(geoSens());
+    PT.items = itemPeta(); if (PT.fitKat) { PT.fitKat = false; const ks = PT.kat.size ? PT.items : []; if (ks.length) { const lo = ks.map(i => i.lon), la = ks.map(i => i.lat); m.fitBounds([[Math.min(...lo) - .5, Math.min(...la) - .5], [Math.max(...lo) + .5, Math.max(...la) + .5]], {padding: innerWidth > 700 ? {top: 80, bottom: 50, left: Math.round(($("akPita")?.getBoundingClientRect().width || 340) + 36), right: 70} : {top: 70, bottom: 260, left: 40, right: 40}, maxZoom: 9, duration: 400}); } } if (!PT.fitStrat && stratOn()) { const st2 = PT.items.filter(i => i.bintang && i.lon > 94 && i.lon < 142 && i.lat > -12 && i.lat < 7); if (st2.length) { PT.fitStrat = true; const lo = st2.map(i => i.lon), la = st2.map(i => i.lat); m.fitBounds([[Math.min(...lo) - 1, Math.min(...la) - 1], [Math.max(...lo) + 1, Math.max(...la) + 1]], {padding: innerWidth > 700 ? {top: 80, bottom: 50, left: Math.round(($("akPita")?.getBoundingClientRect().width || 340) + 36), right: 70} : {top: 70, bottom: 260, left: 40, right: 40}, animate: false, maxZoom: 6}); } } m.getSource("pts")?.setData(geoPts(PT.items)); m.getSource("sns")?.setData(geoSens());
     for (const mk of PT.pins.values()) mk.remove(); PT.pins.clear(); gambarPin();
     const vis = (id, v) => { if (m.getLayer(id)) m.setLayoutProperty(id, "visibility", v ? "visible" : "none"); };
     vis("pts-dot", PT.mode === "pin"); vis("sns-dot", PT.lapis.sensor); segarSnLeg();
@@ -1893,7 +1882,7 @@ h4{margin:0 0 2px;font-size:8px;letter-spacing:normal;text-transform:none;color:
   }
   async function bangunPeta(el) {
     el.innerHTML = `<div class="ak-pta"><div class="ak-pita" id="akPita" role="group" aria-label="Wilayah"></div>
-      <div class="ak-ptaisi"><div id="akMap" class="ak-map" role="application" aria-label="Peta lembaga mitra"></div><p class="ak-ptn" id="akPtN" role="status" aria-live="polite"></p>
+      <div class="ak-ptaisi"><div id="akMap" class="ak-map" role="application" aria-label="Peta lembaga mitra"></div>
         <div class="ak-ptlayer" id="akPtLayer" role="group" aria-label="Lapisan peta"><button type="button" data-ly="pusat" aria-pressed="false" hidden>${ikon(IK_KAMPUS, "currentColor")}Pusat studi</button><button type="button" data-ly="strat" aria-pressed="${PT.lapis.strat}">${ikon(STAR_D, "currentColor")}Partner strategis</button><button type="button" data-ly="sensor" aria-pressed="false" hidden>${ikon(IK_BAR, "currentColor")}Sensor</button>
           <div hidden id="akPtSensW">${htmlPilih("akPtSens", IK_BAR, "Cari jenis sensor")}</div></div>
         <div class="ak-snleg" id="akSnLeg" hidden></div><aside class="ak-ptpanel" id="akPtPanel" hidden><h3>Lembaga di tiap kab/kota</h3>
@@ -1931,15 +1920,13 @@ h4{margin:0 0 2px;font-size:8px;letter-spacing:normal;text-transform:none;color:
     $("akSnLeg").addEventListener("keydown", e => { if ((e.key === "Enter" || e.key === " ") && e.target.matches("[data-snlipat]")) { e.preventDefault(); e.target.click(); } });
     $("akSnLeg").addEventListener("click", e => { if (e.target.closest("[data-snlipat]")) { PT.snLipat = !PT.snLipat; segarSnLeg(); return; } const b = e.target.closest("[data-sn]"); if (!b) return; const id = b.dataset.sn; PT.snOff.has(id) ? PT.snOff.delete(id) : PT.snOff.add(id); b.setAttribute("aria-pressed", String(!PT.snOff.has(id))); const t = ++snTok; nanti(() => { if (t === snTok) m.getSource("sns")?.setData(geoSens()); }); });
     const pasangLapis = () => {
-      m.addSource("pts", {type: "geojson", data: geoPts([]), cluster: true, clusterRadius: 38, clusterMaxZoom: 7}); m.addSource("sns", {type: "geojson", data: geoSens()}); m.addSource("cho", {type: "geojson", data: {type: "FeatureCollection", features: []}});
+      m.addSource("pts", {type: "geojson", data: geoPts([])}); m.addSource("sns", {type: "geojson", data: geoSens()}); m.addSource("cho", {type: "geojson", data: {type: "FeatureCollection", features: []}});
       m.addLayer({id: "cho-fill", type: "fill", source: "cho", layout: {visibility: "none"}, paint: {"fill-color": ["get", "warna"], "fill-opacity": 0}});   // pemilik: tanpa warna sebaran; lapisan tetap untuk tip wilayah
       m.addLayer({id: "cho-line", type: "line", source: "cho", layout: {visibility: "none"}, paint: {"line-color": rv("var(--data5)"), "line-opacity": .9, "line-width": ["interpolate", ["linear"], ["zoom"], 4, 1.3, 8, 2.2]}});   // batas wilayah selalu terlihat
       m.addLayer({id: "cho-sorot", type: "line", source: "cho", filter: ["==", ["get", "i"], -1], paint: {"line-color": rv("var(--sorot)"), "line-width": 2.6}});   // wilayah di bawah kursor
       SN_KLS.forEach(x => snIkon(m, x[0]));
       m.addLayer({id: "sns-dot", type: "symbol", source: "sns", layout: {visibility: "none", "icon-image": ["get", "ikon"], "icon-size": ["interpolate", ["linear"], ["zoom"], 3, .26, 6, .38, 9, .56, 12, .8], "icon-allow-overlap": true, "icon-ignore-placement": true}});
-      m.addLayer({id: "pts-dot", type: "circle", source: "pts", filter: ["!", ["has", "point_count"]], paint: {"circle-color": ["get", "warna"], "circle-radius": ["interpolate", ["linear"], ["zoom"], 3, 3, 10, 6], "circle-stroke-color": rv("var(--on-brand)"), "circle-stroke-width": 1, "circle-opacity": ["get", "op"]}});
-      m.addLayer({id: "pts-kluster", type: "circle", source: "pts", filter: ["has", "point_count"], paint: {"circle-color": rv("var(--data2)"), "circle-radius": ["step", ["get", "point_count"], 14, 10, 18, 40, 26], "circle-stroke-color": rv("var(--on-brand)"), "circle-stroke-width": 2}});
-      m.addLayer({id: "pts-kluster-n", type: "symbol", source: "pts", filter: ["has", "point_count"], layout: {"text-field": ["get", "point_count_abbreviated"], "text-font": ["Noto Sans Bold"], "text-size": 12}, paint: {"text-color": rv("var(--on-brand)")}});
+      m.addLayer({id: "pts-dot", type: "circle", source: "pts", paint: {"circle-color": ["get", "warna"], "circle-radius": ["interpolate", ["linear"], ["zoom"], 3, 3, 10, 6], "circle-stroke-color": rv("var(--on-brand)"), "circle-stroke-width": 1, "circle-opacity": ["get", "op"]}});
     };
     m.on("load", () => {
       pasangLapis();
@@ -1958,8 +1945,6 @@ h4{margin:0 0 2px;font-size:8px;letter-spacing:normal;text-transform:none;color:
       ambilData("pusat_studi").then(d => { PT.pusatArr = dlist(d).filter(x => x && x.nama && x.nama_terverifikasi === true); nanti(segarPeta); });
     });
     m.on("style.load", () => { if (!PT.siap) return; pasangLapis(); segarPeta(); nanti(() => modePeta(true)); });
-    m.on("click", "pts-kluster", e => { const f = m.queryRenderedFeatures(e.point, {layers: ["pts-kluster"]})[0]; if (!f) return; m.getSource("pts").getClusterExpansionZoom(f.properties.cluster_id).then(z => m.easeTo({center: f.geometry.coordinates, zoom: z + .5})).catch(() => {}); });
-    m.on("mouseenter", "pts-kluster", () => { m.getCanvas().style.cursor = "pointer"; }); m.on("mouseleave", "pts-kluster", () => { m.getCanvas().style.cursor = ""; });
     /* tema terang/gelap: gaya dasar diganti (diff:false) lalu lapisan dipasang ulang pada style.load */
     const gelapKini = () => document.documentElement.dataset.theme ? document.documentElement.dataset.theme === "dark" : matchMedia("(prefers-color-scheme: dark)").matches;
     let gelapPeta = gelapKini(); const gantiGayaPeta = () => { const g = gelapKini(); if (g === gelapPeta) return; gelapPeta = g; PT.siap && m.setStyle("https://tiles.openfreemap.org/styles/" + (g ? "dark" : "positron"), {diff: false}); };

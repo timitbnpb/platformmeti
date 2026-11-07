@@ -18,6 +18,8 @@
   --fokus:#1E7FA8; --kemajuan:0; --h:0%; --tk:var(--accent); --sk:var(--ink2); /* warna teknologi bawaan; pil/batang menimpanya per elemen */
   --shadow:0 2px 14px rgb(10 60 45/.08); --shadow-lg:0 8px 28px rgb(10 60 45/.16);
   --pendar:0 0 0 1px rgb(74 169 224/.35),0 8px 28px rgb(74 169 224/.18);
+  /* batik kawung (jm.css .jm-batik): pola, pudar ke bawah, warna, kepekatan */
+  --batik-pola:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40'%3E%3Cg fill='none' stroke='black' stroke-width='1.6'%3E%3Cellipse cx='20' cy='10' rx='6' ry='10'/%3E%3Cellipse cx='20' cy='30' rx='6' ry='10'/%3E%3Cellipse cx='10' cy='20' rx='10' ry='6'/%3E%3Cellipse cx='30' cy='20' rx='10' ry='6'/%3E%3C/g%3E%3Ccircle cx='20' cy='20' r='2' fill='black'/%3E%3C/svg%3E"); --batik-pudar:linear-gradient(180deg,rgb(0 0 0) 0%,rgb(0 0 0 / .85) 35%,rgb(0 0 0 / 0) 78%); --batik:currentColor; --batik-op:.1;
   --r:14px; --r-sm:10px; --r-lg:16px; --r-pil:999px;
   --tepi:max(12px,calc((100vw - var(--maks)) / 2 + var(--gut))); --top:60px; --maks:1600px; --gut:16px; --gap:12px; --target:44px;
   --display:"Inter",Arial,system-ui,sans-serif;

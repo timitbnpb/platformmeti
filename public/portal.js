@@ -3,6 +3,7 @@
 import { t, tanggal, tanggalDariUnix } from "/i18n.js";
 import { api, esc, ikon, galatTeks, kosongHtml, pesanHtml } from "/inti/umum.js";
 import { mulaiHalaman } from "/inti/kepala.js";
+import { siapHtml, matikan } from "/inti/siap.js";
 import { exHtml } from "/inti/komponen.js";
 import { namaProyek } from "/inti/nama_proyek.js";
 import { namaProvinsi } from "/profil_tampil.js";
@@ -12,7 +13,7 @@ const akar = document.getElementById("isi");
 const TEK = ["surya", "bayu", "hidro", "panas-bumi", "bioenergi", "biomassa-sampah", "penyimpanan", "hidrogen", "nuklir"];
 const STATUS = ["rencana", "konstruksi", "beroperasi"];
 const JENIS = ["profil", "proyek_baru", "proyek_status"];
-let ORG = new Map(), PROYEK = new Map(), PROV = [], saya = { klaim: [], ajuan: [] };
+let ORG = new Map(), PROYEK = new Map(), PROV = [], saya = { klaim: [], ajuan: [] }, mati = false;
 
 const muatData = (n) => fetch(`/data/${n}.json`).then((r) => r.json()).then((d) => new Map(d.baris.map((x) => [x.id, x]))).catch(() => new Map());
 const namaOrg = (id) => ORG.get(id)?.nama || id;
@@ -35,7 +36,7 @@ function kartuKlaim() {
     ? `<div class="jm-gulir"><table class="jm-tabel"><thead><tr>${["pt.c.org", "pt.c.jabatan", "pt.c.status", "pt.c.tanggal"].map((k) => `<th scope="col">${esc(t(k))}</th>`).join("")}</tr></thead><tbody>${saya.klaim.map((k) => `<tr><td data-l="${esc(t("pt.c.org"))}"><a href="/o/${encodeURIComponent(k.organisasi_id)}">${esc(namaOrg(k.organisasi_id))}</a></td><td data-l="${esc(t("pt.c.jabatan"))}">${esc(k.jabatan || "-")}</td><td data-l="${esc(t("pt.c.status"))}">${pil(k.status)}${k.catatan_admin ? `<small>${esc(k.catatan_admin)}</small>` : ""}</td><td class="jm-nowrap" data-l="${esc(t("pt.c.tanggal"))}">${tgl(k.dibuat)}</td></tr>`).join("")}</tbody></table></div>`
     : kosongHtml("pt.klaim_kosong");
   const form = `<form class="jm-form" id="fKlaim" novalidate><div class="jm-form-grid">
-    ${medan("kOrg", "pt.f.org", `<input class="jm-isian" id="kOrg" list="dlOrg" autocomplete="off" maxlength="120" required><datalist id="dlOrg">${[...ORG.values()].map((o) => `<option value="${esc(o.nama)}"></option>`).join("")}</datalist>`)}
+    ${medan("kOrg", "pt.f.org", `<div class="pt-cari">${ikon("cari", 18)}<input class="jm-isian" id="kOrg" list="dlOrg" autocomplete="off" maxlength="120" required placeholder="${esc(t("pt.org_pilih_ph"))}"></div><datalist id="dlOrg">${[...ORG.values()].map((o) => `<option value="${esc(o.nama)}"></option>`).join("")}</datalist>`, true)}
     ${medan("kJab", "pt.f.jabatan", isian("kJab", { maks: 120 }))}
     ${medan("kBukti", "pt.f.bukti_klaim", isian("kBukti", { tipe: "url", maks: 600, ph: "https://" }), true)}</div>
     <small class="jm-bantu">${esc(t("pt.klaim_bantu"))}</small><div id="pKlaim" aria-live="polite"></div>
@@ -54,9 +55,9 @@ function bidang(jenis, orgId) {
 
 function kartuAjuan() {
   const setuju = saya.klaim.filter((k) => k.status === "setuju");
-  if (!setuju.length) return exHtml({ id: "ajukan", ikon: "ubah", judulHtml: esc(t("pt.ajukan")), isiHtml: kosongHtml("pt.belum_terhubung") });
-  const orgId = document.getElementById("aOrg")?.value || setuju[0].organisasi_id, jenis = document.getElementById("aJenis")?.value || "profil";
-  const form = `<form class="jm-form" id="fAjuan" novalidate><div class="jm-form-grid">
+  const orgId = document.getElementById("aOrg")?.value || setuju[0]?.organisasi_id || "", jenis = document.getElementById("aJenis")?.value || "profil";
+  const catatan = setuju.length ? "" : `<p class="pt-catatan">${ikon("info", 16)}<span>${esc(t("pt.belum_klaim"))}</span></p>`;
+  const form = `${catatan}<form class="jm-form" id="fAjuan" novalidate><div class="jm-form-grid">
     ${medan("aOrg", "pt.f.org", pilihan("aOrg", setuju.map((k) => [k.organisasi_id, namaOrg(k.organisasi_id)])))}${medan("aJenis", "pt.f.jenis", pilihan("aJenis", JENIS.map((j) => [j, t("pt.j." + j)])))}
     ${bidang(jenis, orgId)}
     ${medan("aBukti", "pt.f.bukti", isian("aBukti", { tipe: "url", maks: 600, wajib: true, ph: "https://" }), true)}</div>
@@ -74,7 +75,10 @@ function kartuRiwayat() {
   return exHtml({ id: "riwayat", ikon: "linimasa", judulHtml: esc(t("pt.riwayat")), isiHtml: isi });
 }
 
-const gambar = () => { akar.innerHTML = kartuKlaim() + kartuAjuan() + kartuRiwayat(); };
+const gambar = () => {
+  akar.innerHTML = (mati ? siapHtml("pt.siap") : "") + kartuKlaim() + kartuAjuan() + kartuRiwayat();
+  if (mati) matikan(akar); else if (!saya.klaim.some((k) => k.status === "setuju")) matikan(document.getElementById("fAjuan"));
+};
 const v = (id) => (document.getElementById(id)?.value ?? "").trim();
 const angkaAtauNull = (s) => (s === "" ? null : Number(s));
 
@@ -111,9 +115,9 @@ akar.addEventListener("submit", async (e) => {
 });
 
 try {
-  saya = await api("/api/portal/saya");
+  try { saya = await api("/api/portal/saya"); } catch (e) { if (e.kode !== "fitur_belum_aktif") throw e; mati = true; }
   [ORG, PROYEK, PROV] = await Promise.all([muatData("organisasi"), muatData("proyek"), namaProvinsi()]);
   gambar();
 } catch (e) {
-  akar.innerHTML = e.kode === "fitur_belum_aktif" ? kosongHtml("adm.belum_aktif") : pesanHtml("galat", galatTeks(e.kode || "umum"));
+  akar.innerHTML = pesanHtml("galat", galatTeks(e.kode || "umum"));
 }

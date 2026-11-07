@@ -5,6 +5,7 @@ import { api, galatTeks, galatHtml, esc, pesanHtml, ikon, nanti, debounce, hantu
 import { mulaiHalaman } from "/inti/kepala.js";
 import { LEBAR, TINGGI, bikinQr, gambarDepan, gambarBelakang, labelJenis, muatGambar, pastikanFont, unduhPng, unduhPdf } from "/kta_kartu.js";
 import { potongFoto } from "/kta_foto.js";
+import { unggahHtml } from "/inti/unggah.js";
 
 const saya = await mulaiHalaman();
 const $ = (id) => document.getElementById(id);
@@ -36,6 +37,7 @@ async function muat() {
 }
 function tampil() {
   if (S.k === undefined) return;
+  kepala();
   if (S.k === null) return klaim();
   if (S.k.status === "tertunda") return tertunda();
   if (S.k.status === "dicabut") return dicabut();
@@ -45,17 +47,30 @@ function tampil() {
 /* ---------- belum terkait: cari nama lalu ajukan klaim ---------- */
 function klaim() {
   S.pilih = null;
+  const man = (ik, k) => `<li>${ikon(ik, 20)}<span>${esc(t(k))}</span></li>`;
+  const lg = (n, ik, k, isiHtml) => `<li class="kta-lg"><div class="kta-lg-kepala"><span class="kta-lg-no" aria-hidden="true">${n}</span>${ikon(ik, 20)}<h3>${esc(t(k))}</h3></div>${isiHtml}</li>`;
   isi.innerHTML = `<form class="kta-klaim kta-panel" id="fKlaim" novalidate aria-labelledby="kJudul">
     <div class="kta-klaim-kiri"><h2 id="kJudul">${ikon("kartu", 24)}<span>${esc(t("kta.klaim.judul"))}</span></h2>
-      <p>${esc(t("kta.klaim.lead"))}</p><p class="kta-klaim-pdp">${esc(t("kta.klaim.privasi"))}</p></div>
+      <p>${esc(t("kta.klaim.lead"))}</p>
+      <h3>${esc(t("kta.man.judul"))}</h3>
+      <ul class="kta-man">${man("qr", "kta.man.qr")}${man("pdf", "kta.man.pdf")}${man("buku", "kta.man.dok")}${man("perisai", "kta.man.aman")}</ul>
+      <p class="kta-klaim-pdp">${ikon("kunci", 18)}<span>${esc(t("kta.klaim.privasi"))}</span></p></div>
     <div class="kta-klaim-kanan"><div id="kPesan" aria-live="polite"></div>
-    <div class="jm-medan"><label for="kCari">${esc(t("kta.klaim.cari"))}</label><input class="jm-isian" id="kCari" type="search" autocomplete="off" maxlength="60" aria-describedby="kBantu"><span class="jm-bantu" id="kBantu">${esc(t("kta.klaim.min"))}</span></div>
-    <ul class="kta-hasil" id="kHasil"></ul>
-    <div id="kDipilih"></div>
-    <div class="jm-medan"><label for="kBukti">${esc(t("kta.klaim.bukti"))}</label><input class="jm-isian" id="kBukti" type="file" accept="image/*,application/pdf" aria-describedby="kBuktiBantu"><span class="jm-bantu" id="kBuktiBantu">${esc(t("kta.klaim.bukti_bantu"))}</span></div>
-    <button type="submit" class="jm-tbl jm-tbl-utama" id="kKirim" disabled>${esc(t("kta.klaim.kirim"))}</button></div>
+    <ol class="kta-langkah">
+    ${lg(1, "cari", "kta.l1", `<div class="jm-medan"><label class="sr" for="kCari">${esc(t("kta.klaim.cari"))}</label><div class="kta-cari">${ikon("cari", 18)}<input class="jm-isian" id="kCari" type="search" autocomplete="off" maxlength="60" placeholder="${esc(t("kta.klaim.cari_ph"))}" aria-describedby="kBantu"></div><span class="jm-bantu" id="kBantu">${esc(t("kta.klaim.min"))}</span></div><ul class="kta-hasil" id="kHasil"></ul>`)}
+    ${lg(2, "unduh", "kta.l2", unggahHtml({ id: "kBukti", terima: "image/*,application/pdf", maks: MAKS_BUKTI, bantu: t("kta.klaim.bukti_bantu"), ikon: "unduh" }))}
+    ${lg(3, "centang", "kta.l3", `<p class="kta-tinjau" id="kTinjau"></p><button type="submit" class="jm-tbl kta-kirim" id="kKirim" disabled aria-describedby="kAlasan">${ikon("centang", 18)}<span>${esc(t("kta.klaim.kirim"))}</span></button><p class="kta-alasan" id="kAlasan">${ikon("info", 16)}<span>${esc(t("kta.klaim.alasan"))}</span></p>`)}
+    </ol></div>
   </form>`;
   const pesan = (j, tk) => { $("kPesan").innerHTML = tk ? pesanHtml(j, tk) : ""; };
+  const tinjau = () => {
+    const f = $("kBukti").files[0];
+    $("kTinjau").textContent = S.pilih ? t("kta.klaim.tinjau", { nama: S.pilih.nama, bukti: f ? f.name : t("kta.klaim.tanpa_bukti") }) : "";
+    $("kKirim").disabled = !S.pilih;
+    $("kAlasan").hidden = !!S.pilih;
+  };
+  tinjau();
+  isi.querySelector(".jm-unggah").addEventListener("unggah:ubah", tinjau);
   let ctl = null;
   const cari = debounce(async () => {
     const q = $("kCari").value.trim();
@@ -65,7 +80,7 @@ function klaim() {
     try {
       const d = await api("/api/kta/anggota?cari=" + encodeURIComponent(q), { signal: ctl.signal });
       $("kBantu").textContent = d.baris.length ? "" : t("kta.klaim.kosong");
-      $("kHasil").innerHTML = d.baris.map((r) => `<li><button type="button" data-id="${esc(r.id)}" data-nama="${esc(r.nama)}" aria-pressed="${S.pilih?.id === r.id}"><b>${esc(r.nama)}</b>${r.instansi ? `<small>${esc(r.instansi)}</small>` : ""}</button></li>`).join("");
+      $("kHasil").innerHTML = d.baris.map((r) => `<li><button type="button" data-id="${esc(r.id)}" data-nama="${esc(r.nama)}" aria-pressed="${S.pilih?.id === r.id}"><span class="kta-av" aria-hidden="true">${esc((String(r.nama).match(/\p{L}/gu) || ["?"]).slice(0, 2).join("").toLocaleUpperCase())}</span><span class="kta-hasil-teks"><b>${esc(r.nama)}</b>${r.instansi ? `<small>${esc(r.instansi)}</small>` : ""}</span><span class="jm-pil">${esc(r.jenis ? labelJenis(r.jenis) : t("kta.jenis.individu"))}</span>${r.tahun_masuk ? `<small class="kta-tahun">${ikon("tahun", 14)}${esc(t("kta.klaim.tahun", { tahun: r.tahun_masuk }))}</small>` : ""}</button></li>`).join("");
     } catch (e) { if (e.name !== "AbortError") pesan("galat", galatTeks(e.kode || "umum")); }
   }, 250);
   $("kCari").addEventListener("input", cari);
@@ -74,8 +89,7 @@ function klaim() {
     if (!b) return;
     S.pilih = { id: b.dataset.id, nama: b.dataset.nama };
     for (const x of $("kHasil").querySelectorAll("button")) x.setAttribute("aria-pressed", String(x === b)); // chrome urgent
-    $("kDipilih").innerHTML = `<p class="kta-dipilih">${esc(t("kta.klaim.dipilih", { nama: S.pilih.nama }))}</p>`;
-    $("kKirim").disabled = false;
+    tinjau();
   });
   $("fKlaim").addEventListener("submit", async (e) => {
     e.preventDefault();
@@ -90,6 +104,25 @@ function klaim() {
     if (f) { try { await simpanBinari("/api/kta/bukti", f); } catch (er) { galatBukti = er.kode; } }
     await muat();
     if (galatBukti) kabari("galat", galatTeks(galatBukti));
+  });
+}
+
+/* ---------- sisi kanan kepala: kartu contoh (belum terbit) atau ubin ringkas (sudah terbit) ---------- */
+async function kepala() {
+  const k = S.k, h = $("kh-kanan");
+  if (k && k.status !== "dicabut" && k.status !== "tertunda") {
+    const ub = (ik, kk, v) => `<div class="jm-kh-ub">${ikon(ik, 20)}<p class="jm-kh-lbl">${esc(t(kk))}</p><p class="kta-ub-nilai">${v}</p></div>`;
+    h.innerHTML = `<div class="jm-kh-ubin">${ub("qr", "kta.kartu.nomor", esc(k.nomor_kta || "-"))}${ub("orang", "kta.kartu.jenis", esc(labelJenis(k.jenis)))}${ub("tahun", "kta.kartu.berlaku", esc(tanggal(k.berlaku_sampai)))}</div>`;
+    return;
+  }
+  h.innerHTML = `<figure class="kta-contoh"><canvas id="cContoh" width="${LEBAR}" height="${TINGGI}" role="img" aria-label="${esc(t("kta.contoh.cap"))}"></canvas><figcaption>${ikon("info", 14)}<span>${esc(t("kta.contoh.cap"))}</span></figcaption></figure>`;
+  nanti(async () => {
+    await pastikanFont();
+    const c = $("cContoh");
+    if (!c) return;
+    const [logo, qr] = await Promise.all([muatGambar("/img/logo-meti-tanda.png"), bikinQr("https://meti.or.id/kta/v/contoh").catch(() => null)]);
+    if (!$("cContoh")) return;
+    gambarDepan(c.getContext("2d"), { nama: t("kta.contoh.nama"), nomor: "MET-2026-\u2022\u2022\u2022\u2022", jenis: "individu", instansi: "", berlaku: new Date().getFullYear() + 1 + "-12-31", status: "aktif", qr, foto: null, logo });
   });
 }
 

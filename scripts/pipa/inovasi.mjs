@@ -70,7 +70,7 @@ export function dariTkdn(tk, orgs) {
     const nilai = n.map((x) => x.tkdn_persen).filter(Number.isFinite), lo = Math.min(...nilai), hi = Math.max(...nilai);
     const nm = merk && merk.toLowerCase() !== pr.toLowerCase() ? `${merk} (${kat})` : `${kat[0].toUpperCase()}${kat.slice(1)} ${pr.replace(/^PT /, '')}`;
     return { id: `in_tkdn_${n[0].id.replace('tkdn_', '')}`, nama: nm, jenis, sektor: [sek], status: 'dikomersialkan',
-      ringkasan: `Produk ${kat} dalam negeri dari ${pr}${r.provinsi ? ` (${r.provinsi})` : ''}, memiliki ${n.length} sertifikat TKDN dengan nilai ${lo === hi ? lo : lo + ' sampai ' + hi} persen (tipe: ${baku(r.tipe || '-').slice(0, 80)}).`,
+      ringkasan: `Produk ${kat} dalam negeri dari ${pr}${r.provinsi ? ` (${r.provinsi})` : ''}, memiliki ${n.length} sertifikat TKDN dengan nilai ${lo === hi ? lo : lo + ' sampai ' + hi} persen (tipe: ${baku(r.tipe || '-').replace(/[—–]/g, '-').slice(0, 80)}).`,
       pembuat: [{ nama: pr, lembaga_id: r.produsen_org_id && orgs.find((o) => o.id === r.produsen_org_id) ? r.produsen_org_id : idx.get(normOrg(r.produsen)) || null }],
       tahun: Number((r.diterbitkan || '').slice(-4)) || null, trl: 9, trl_dasar: 'perkiraan', lokasi: r.provinsi || null,
       sumber: [{ url: r.sumber_url, tanggal: r.tanggal }], asal: 'tkdn' };
@@ -86,7 +86,7 @@ function bangun(tgl) {
   const baris = [...kur, ...dariTkdn(tk, orgs)].sort((a, b) => a.id.localeCompare(b.id));
   const gal = baris.flatMap(periksa); if (gal.length) { console.error(gal.join('\n')); process.exit(1); }
   if (new Set(baris.map((b) => b.id)).size !== baris.length) { console.error('id ganda'); process.exit(1); }
-  const out = { lapis: 'publik', dibangun_pada: tgl, jumlah: baris.length, baris };
+  const out = { lapis: 'publik', dibangun_pada: tgl, jumlah: baris.length, inovasi: baris };
   fs.writeFileSync(path.join(ROOT, 'public/data/inovasi.json'), JSON.stringify(out) + '\n');
   const per = {}; baris.forEach((b) => b.sektor.forEach((s) => (per[s] = (per[s] || 0) + 1)));
   console.log(baris.length, per);
