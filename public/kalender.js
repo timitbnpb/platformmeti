@@ -1,9 +1,11 @@
 import { mulaiHalaman } from "/inti/kepala.js";
 import { khUbin } from "/inti/kh.js";
-import { t, angka, tanggal } from "/i18n.js";
+import { t, ada, angka, tanggal } from "/i18n.js";
 import { esc, nanti, ikon, hantuHtml, kosongHtml, galatHtml, api } from "/inti/umum.js";
 import { pilihHtml, exHtml, sumberHtml } from "/inti/komponen.js";
-import { tautOrg } from "/inti/tautan.js";
+import { tautOrg, siapTautan, rinci } from "/inti/tautan.js";
+import { tautanBagi } from "/inti/bagi.js";
+import { lokasiTeks, petaUrl, sumberDaftar, namaSumber, sumberTeks, namaPenyelenggara, gambarAcara } from "/kalender_fmt.js";
 import { aksiHtml, hlHtml } from "/inti/aksi_ex.js";
 import { muat, label, urlAman } from "/publik.js";
 
@@ -76,7 +78,11 @@ function judulBulan() { document.getElementById("judulBulan").innerHTML = `${esc
 function acaraDari(sem) {
   return sem.map((b) => ({ ...b, akhir: akhirDari(b) }));
 }
-const urlB = (b) => (b.sumber?.url && urlAman(b.sumber.url) ? b.sumber.url : "");
+const nmSumber = (l) => (ada("kal.sumber." + l) ? t("kal.sumber." + l) : "");
+const FMT = { nama: nmSumber, diambil: (d) => t("kal.diambil", { tanggal: tanggal(d) }) };
+const urlB = (b) => urlAman(sumberDaftar(b.sumber)[0]?.url || "");
+const mitraTeks = (b) => namaPenyelenggara(b).join(", ");
+const thumb = (b) => { const g = gambarAcara(b); return g ? `<img class="kal-thumb" src="${esc(g)}" alt="" width="64" height="64" loading="lazy" decoding="async" data-galat="hapus">` : ""; };
 const pilJenis = (j) => `<span class="kal-pil kal-t-${esc(j)}">${esc(label("kal.jenis.", j))}</span>`;
 
 /* ---------- kalender ---------- */
@@ -103,10 +109,11 @@ function pekanHtml(rows) {
 function barisHtml(b) {
   const rentang = b.akhir > b.tanggal, d = b.tanggal;
   const tgl = `<span class="kal-tgl"><b class="${rentang ? "kal-rg" : ""}">${rentang ? `${+d.slice(8)}-${+b.akhir.slice(8)}` : +d.slice(8)}</b><span>${esc(tanggal(d).split(" ")[1])}</span><small>${esc(t("kal.hari." + hariKe(d)))}</small></span>`;
-  return `<li><button type="button" class="kal-baris" id="acara-${esc(b.id)}" data-acara="${esc(b.id)}">${tgl}<span class="kal-isi"><strong>${esc(b.judul)}</strong>
-    ${b.mitra ? `<span class="kal-meta">${ikon("orang", 16)}<span>${esc(b.mitra)}</span></span>` : ""}
-    <span class="kal-meta kal-sumber">${ikon("info", 16)}<span>${esc(t("kal.sumber." + b.sumber.label))}, ${esc(t("kal.diambil", { tanggal: tanggal(b.sumber.tanggal) }))}</span></span></span>
-    <span class="kal-sisi">${pilJenis(b.jenis)}</span></button></li>`;
+  const sm = sumberTeks(b.sumber, FMT), mt = mitraTeks(b), th = thumb(b);
+  return `<li><button type="button" class="kal-baris${th ? " kal-baris-g" : ""}" id="acara-${esc(b.id)}" data-acara="${esc(b.id)}">${tgl}<span class="kal-isi"><strong>${esc(b.judul)}</strong>
+    ${mt ? `<span class="kal-meta">${ikon("orang", 16)}<span>${esc(mt)}</span></span>` : ""}
+    ${sm ? `<span class="kal-meta kal-sumber">${ikon("info", 16)}<span>${esc(sm)}</span></span>` : ""}</span>
+    <span class="kal-sisi">${th}${pilJenis(b.jenis)}</span></button></li>`;
 }
 function buktiHtml(b) {
   const x = BUKTI.get(b.id);
@@ -250,19 +257,47 @@ const tampilPop = (html, opener) => {
   if (!d.open) d.showModal();
   d.scrollTop = 0; d.querySelector("[data-pop=tutup]")?.focus();
 };
+const IK_JENIS_G = IKON_JENIS;
+/** Penyelenggara dengan logo + tautan /o bila dikenal; teks polos bila tidak. */
+function mitraHtml(b) {
+  return namaPenyelenggara(b).map((n) => {
+    const r = rinci("org", n);
+    return r ? `<a class="kal-org" href="${esc(r.href)}">${r.logo ? `<img src="${esc(r.logo)}" alt="" width="24" height="24" loading="lazy" decoding="async" data-galat="hapus">` : ""}<span>${esc(r.nama)}</span></a>` : `<span class="kal-org"><span>${esc(n)}</span></span>`;
+  }).join("");
+}
+function sumberHtmlPop(b) {
+  return sumberDaftar(b.sumber).map((s) => {
+    const n = namaSumber(s, nmSumber);
+    if (!n) return "";
+    const ket = esc(n) + (s.tanggal ? `, ${esc(FMT.diambil(s.tanggal))}` : "");
+    return s.url && urlAman(s.url) ? `<a href="${esc(s.url)}" target="_blank" rel="noopener noreferrer">${ket}</a>` : `<span>${ket}</span>`;
+  }).filter(Boolean).join("<br>");
+}
+function kartuTerkait(x) {
+  const th = thumb(x), mt = mitraTeks(x);
+  return `<li><button type="button" class="kal-trk" data-acara="${esc(x.id)}"><span class="kal-tgl"><b>${+x.tanggal.slice(8)}</b><span>${esc(tanggal(x.tanggal).split(" ")[1])}</span></span>
+    <span class="kal-isi"><strong>${esc(x.judul)}</strong>${mt ? `<span class="kal-meta">${ikon("orang", 16)}<span>${esc(mt)}</span></span>` : ""}${pilJenis(x.jenis)}</span>${th}</button></li>`;
+}
 function bukaAcara(id, opener) {
   const b = ROWS.find((x) => x.id === id) || acaraDari(D.baris).find((x) => x.id === id);
   if (!b) return;
-  const u = urlB(b), hari = Math.round((utc(b.akhir) - utc(b.tanggal)) / 864e5) + 1;
-  const m = (ik, k, v) => (v ? `<li>${ikon(ik, 20)}<span><small>${esc(t(k))}</small>${v}</span></li>` : "");
+  const u = urlB(b), hari = Math.round((utc(b.akhir) - utc(b.tanggal)) / 864e5) + 1, lok = lokasiTeks(b.lokasi), peta = petaUrl(b.lokasi), g = gambarAcara(b);
+  const f = (ik, k, v) => (v ? `<li>${ikon(ik, 20)}<span><small>${esc(t(k))}</small>${v}</span></li>` : "");
+  const kontak = b.daftar_url && urlAman(b.daftar_url) ? `<a href="${esc(b.daftar_url)}" target="_blank" rel="noopener noreferrer">${esc(t("kal.pop.daftar"))}</a>` : b.situs && urlAman(b.situs) ? `<a href="${esc(b.situs)}" target="_blank" rel="noopener noreferrer">${esc(t("kal.pop.situs"))}</a>` : "";
   const terkait = D.baris.filter((x) => x.id !== b.id && x.jenis === b.jenis).sort((p, q) => Math.abs(utc(p.tanggal) - utc(b.tanggal)) - Math.abs(utc(q.tanggal) - utc(b.tanggal))).slice(0, 3).map((x) => acaraDari([x])[0]);
-  tampilPop(`<div class="kal-pop-isi"><div class="kal-pop-kep kal-g-${esc(b.jenis)}">${tutupX()}<span class="kal-pop-ik">${ikon("kalender", 28)}</span>${pilJenis(b.jenis)}<h2 id="kalPopJ">${esc(b.judul)}</h2></div>
-    <div class="kal-pop-bd"><ul class="kal-pop-meta">${m("kalender", "kal.pop.tanggal", `${esc(tglRentang(b))}${hari > 1 ? ` <em>${esc(t("kal.pop.durasi", { n: angka(hari) }))}</em>` : ""}`)}${m("peta", "kal.pop.lokasi", b.lokasi ? esc(b.lokasi) : "")}${m("orang", "kal.pop.mitra", b.mitra ? tautOrg(b.mitra) : "")}${m("info", "kal.pop.sumber", `${esc(t("kal.sumber." + b.sumber.label))}, ${esc(t("kal.diambil", { tanggal: tanggal(b.sumber.tanggal) }))}`)}</ul>
-    ${b.deskripsi ? `<p class="kal-pop-desk">${esc(b.deskripsi)}</p>` : ""}
-    <div class="kal-pop-aksi"><a class="jm-tbl" href="${esc(gcal(b))}" target="_blank" rel="noopener noreferrer">${ikon("kalender", 18)}<span>${esc(t("kal.pop.gcal"))}</span></a><button type="button" class="jm-tbl" data-pop="ics" data-id="${esc(b.id)}">${ikon("unduh", 18)}<span>${esc(t("kal.pop.ics"))}</span></button>
-    <button type="button" class="jm-tbl" data-pop="bagi" data-id="${esc(b.id)}">${ikon("tautan", 18)}<span>${esc(t("kal.pop.bagi"))}</span></button>
-    ${u ? `<a class="jm-tbl" href="${esc(u)}" target="_blank" rel="noopener noreferrer">${ikon("tautan", 18)}<span>${esc(t("kal.pop.buka"))}</span></a>` : ""}${buktiHtml(b)}</div>
-    ${terkait.length ? `<h3>${esc(t("kal.pop.terkait"))}</h3><ul class="kal-daftar">${terkait.map(barisHtml).join("")}</ul>` : ""}</div></div>`, opener);
+  const url = `${location.origin}/kalender#acara-${b.id}`, bagi = tautanBagi(url, b.judul);
+  const tglTeks = tglRentang(b);
+  tampilPop(`<div class="kal-pop-isi"><div class="kal-pop-ban kal-g-${esc(b.jenis)}">${g ? `<img src="${esc(g)}" alt="" decoding="async" data-galat="hapus">` : ""}<span class="kal-pop-ik">${ikon(IK_JENIS_G[b.jenis] || "kalender", 56)}</span>${tutupX()}</div>
+    <div class="kal-pop-kep">${pilJenis(b.jenis)}<h2 id="kalPopJ">${esc(b.judul)}</h2>
+      <p class="kal-pop-sub"><span>${ikon("kalender", 18)}<span>${esc(tglTeks)}</span></span>${lok ? `<span>${ikon("lokasi", 18)}<span>${esc(lok)}</span></span>` : ""}</p></div>
+    <div class="kal-pop-bd"><div class="kal-pop-kiri">${b.deskripsi ? `<p class="kal-pop-desk">${esc(b.deskripsi)}</p>` : ""}
+      ${terkait.length ? `<section><h3>${esc(t("kal.pop.terkait"))}</h3><ul class="kal-trk-daftar">${terkait.map(kartuTerkait).join("")}</ul></section>` : ""}</div>
+    <aside class="kal-pop-kanan"><ul class="kal-pop-meta">${f("kalender", "kal.pop.tanggal", `${esc(tglTeks)}${hari > 1 ? ` <em>${esc(t("kal.pop.durasi", { n: angka(hari) }))}</em>` : ""}`)}${f("lokasi", "kal.pop.lokasi", lok ? `${esc(lok)}${peta ? ` <a class="kal-peta" href="${esc(peta)}" target="_blank" rel="noopener noreferrer">${ikon("peta", 16)}<span>${esc(t("kal.pop.peta"))}</span></a>` : ""}` : "")}${f("orang", "kal.pop.mitra", mitraHtml(b))}${f("info", "kal.pop.sumber", sumberHtmlPop(b))}${f("tautan", "kal.pop.kontak", kontak)}</ul>
+      <div class="kal-pop-aksi"><a class="jm-tbl" href="${esc(gcal(b))}" target="_blank" rel="noopener noreferrer">${ikon("kalender", 18)}<span>${esc(t("kal.pop.gcal"))}</span></a>
+        <button type="button" class="jm-tbl" data-pop="ics" data-id="${esc(b.id)}">${ikon("unduh", 18)}<span>${esc(t("kal.pop.ics"))}</span></button>
+        <button type="button" class="jm-tbl" data-pop="bagi" aria-expanded="false">${ikon("bagikan", 18)}<span>${esc(t("kal.pop.bagi"))}</span></button>
+        <div class="kal-bagi" hidden><a class="kal-bulat" href="${esc(bagi.wa)}" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp" title="WhatsApp">${ikon("whatsapp", 20)}</a><a class="kal-bulat" href="${esc(bagi.x)}" target="_blank" rel="noopener noreferrer" aria-label="X" title="X">${ikon("x", 20)}</a><a class="kal-bulat" href="${esc(bagi.li)}" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" title="LinkedIn">${ikon("linkedin", 20)}</a><button type="button" class="kal-bulat" data-pop="salin" data-url="${esc(url)}" aria-label="${esc(t("kal.pop.salin"))}" title="${esc(t("kal.pop.salin"))}">${ikon("salin", 20)}</button></div>
+        ${u ? `<a class="jm-tbl" href="${esc(u)}" target="_blank" rel="noopener noreferrer">${ikon("tautan", 18)}<span>${esc(t("kal.pop.buka"))}</span></a>` : ""}${buktiHtml(b)}</div></aside></div></div>`, opener);
   history.replaceState(null, "", `${location.pathname}${location.search}#acara-${b.id}`);
 }
 function bukaHari(h, opener) {
@@ -271,12 +306,12 @@ function bukaHari(h, opener) {
   tampilPop(`<div class="kal-pop-isi"><div class="kal-pop-kep">${tutupX()}<span class="kal-pop-ik">${ikon("kalender", 28)}</span><h2 id="kalPopJ">${esc(t("kal.pop.hari", { tanggal: tanggal(h, { gaya: "panjang" }) }))}</h2></div><div class="kal-pop-bd">
     ${r.length ? `<ul class="kal-daftar">${r.map(item).join("")}</ul>` : `<p>${esc(t("kal.pop.kosong"))}</p>${lanjut ? `<h3>${esc(t("kal.pop.berikut"))}</h3><ul class="kal-daftar">${item(lanjut)}</ul>` : ""}`}</div></div>`, opener);
 }
-const gcal = (b) => `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${encodeURIComponent(b.judul)}&dates=${b.tanggal.replaceAll("-", "")}/${iso(utc(b.akhir) + 864e5).replaceAll("-", "")}&details=${encodeURIComponent([b.mitra, urlB(b)].filter(Boolean).join("\n"))}&location=${encodeURIComponent(b.lokasi || "")}`;
+const gcal = (b) => `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${encodeURIComponent(b.judul)}&dates=${b.tanggal.replaceAll("-", "")}/${iso(utc(b.akhir) + 864e5).replaceAll("-", "")}&details=${encodeURIComponent([mitraTeks(b), urlB(b)].filter(Boolean).join("\n"))}&location=${encodeURIComponent(lokasiTeks(b.lokasi))}`;
 const icsUrl = () => `${location.origin}/kalender.ics`;
 const ics = (b) => {
   const e = (x) => String(x).replace(/\\/g, "\\\\").replace(/[;,]/g, (m) => "\\" + m).replace(/\r?\n/g, "\\n"), d = (x) => x.replaceAll("-", "");
   const baris = ["BEGIN:VCALENDAR", "VERSION:2.0", "PRODID:-//METI//Direktori METI//ID", "BEGIN:VEVENT", `UID:${b.id}@meti`, `DTSTAMP:${new Date().toISOString().replace(/[-:]|\.\d+/g, "")}`,
-    `DTSTART;VALUE=DATE:${d(b.tanggal)}`, `DTEND;VALUE=DATE:${d(iso(utc(b.akhir) + 864e5))}`, `SUMMARY:${e(b.judul)}`, b.mitra && `DESCRIPTION:${e(b.mitra)}`, b.lokasi && `LOCATION:${e(b.lokasi)}`, urlB(b) && `URL:${urlB(b)}`, "END:VEVENT", "END:VCALENDAR"].filter(Boolean);
+    `DTSTART;VALUE=DATE:${d(b.tanggal)}`, `DTEND;VALUE=DATE:${d(iso(utc(b.akhir) + 864e5))}`, `SUMMARY:${e(b.judul)}`, mitraTeks(b) && `DESCRIPTION:${e(mitraTeks(b))}`, lokasiTeks(b.lokasi) && `LOCATION:${e(lokasiTeks(b.lokasi))}`, urlB(b) && `URL:${urlB(b)}`, "END:VEVENT", "END:VCALENDAR"].filter(Boolean);
   const a = document.createElement("a");
   a.href = URL.createObjectURL(new Blob([baris.join("\r\n") + "\r\n"], { type: "text/calendar;charset=utf-8" })); a.download = `meti-${b.id}.ics`;
   document.body.append(a); a.click(); a.remove(); setTimeout(() => URL.revokeObjectURL(a.href), 4000);
@@ -293,8 +328,10 @@ function pasangPop() {
     const ev = ROWS.find((x) => x.id === b.dataset.id) || acaraDari(D.baris).find((x) => x.id === b.dataset.id);
     if (b.dataset.pop === "ics" && ev) ics(ev);
     else if (b.dataset.pop === "bagi") {
-      const span = b.querySelector("span"), url = `${location.origin}/kalender#acara-${b.dataset.id}`;
-      navigator.clipboard?.writeText(url).then(() => { span.textContent = t("kal.pop.disalin"); setTimeout(() => { span.textContent = t("kal.pop.bagi"); }, 1600); }, () => {});
+      const m = d.querySelector(".kal-bagi"), buka = m.hidden;
+      m.hidden = !buka; b.setAttribute("aria-expanded", String(buka));
+    } else if (b.dataset.pop === "salin") {
+      navigator.clipboard?.writeText(b.dataset.url).then(() => { b.title = t("kal.pop.disalin"); b.setAttribute("aria-label", t("kal.pop.disalin")); setTimeout(() => { b.title = t("kal.pop.salin"); b.setAttribute("aria-label", t("kal.pop.salin")); }, 1600); }, () => {});
     }
   });
   d.addEventListener("close", () => {
@@ -306,7 +343,7 @@ function pasangPop() {
 }
 
 /* CSV seksi kalender (hook jm:csv dari inti/aksi_ex.js): acara yang tampil menurut filter */
-const csvBaris = () => [[t("kal.pop.tanggal"), "s/d", "Judul", t("kal.pop.jenis"), t("kal.pop.mitra"), t("kal.pop.sumber"), "URL"], ...ROWS.slice().sort((a, c) => a.tanggal.localeCompare(c.tanggal)).map((b) => [b.tanggal, b.akhir, b.judul, label("kal.jenis.", b.jenis), b.mitra || "", t("kal.sumber." + b.sumber.label), urlB(b)])];
+const csvBaris = () => [[t("kal.pop.tanggal"), "s/d", "Judul", t("kal.pop.jenis"), t("kal.pop.mitra"), t("kal.pop.sumber"), "URL"], ...ROWS.slice().sort((a, c) => a.tanggal.localeCompare(c.tanggal)).map((b) => [b.tanggal, b.akhir, b.judul, label("kal.jenis.", b.jenis), mitraTeks(b), sumberTeks(b.sumber, FMT), urlB(b)])];
 
 async function main() {
   const saya = await mulaiHalaman();
@@ -315,7 +352,7 @@ async function main() {
   const isi = document.getElementById("isi");
   const mulai = async () => {
     isi.innerHTML = hantuHtml(5);
-    try { D = await muat("kalender"); } catch (e) { isi.innerHTML = galatHtml("layanan"); return; }
+    try { [D] = await Promise.all([muat("kalender"), siapTautan("org")]); } catch (e) { isi.innerHTML = galatHtml("layanan"); return; }
     const deep = /^#acara-(.+)$/.exec(location.hash)?.[1], tuju = deep && D.baris.find((b) => b.id === deep);
     if (tuju) S.bulan = bulanDari(tuju.tanggal);
     else if (!S.bulan) { const kini = KINI.slice(0, 7); S.bulan = D.baris.some((b) => bulanDari(b.tanggal) === kini) ? kini : bulanDari(D.baris.filter((b) => b.tanggal <= KINI).pop()?.tanggal || D.baris[D.baris.length - 1].tanggal); }
