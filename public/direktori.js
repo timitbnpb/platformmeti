@@ -2956,13 +2956,14 @@ h4{margin:0 0 2px;font-size:8px;letter-spacing:normal;text-transform:none;color:
       document.querySelectorAll("#akSektor button[data-r]").forEach(x => x.setAttribute("aria-pressed", String(x.dataset.r === "" ? !baru.size : baru.has(x.dataset.r)))); nanti(() => setSektorSet([...baru])); });
     $("akPkSeg").addEventListener("click", e => { const b = e.target.closest("button[data-v]"); if (b) pilihKelompok(b.dataset.v); });
     $("akTampil").innerHTML = TABS.map(k => `<button type="button" data-t="${k}" aria-pressed="false">${ikon(VIEW[k][1], "currentColor")}${TAB_LABEL[k] || VIEW[k][0]}</button>`).join("");
-    TAB_DATA.forEach(k => { const b = $("akTampil").querySelector(`[data-t="${k}"]`); if (b) b.hidden = true; tabAda(k).then(ok => { if (ok && b) b.hidden = false; }); });   // tab data muncul hanya bila datanya termuat
+    TAB_DATA.forEach(k => { const b = $("akTampil").querySelector(`[data-t="${k}"]`); if (b) b.hidden = true; if (k !== "pustaka") tabAda(k).then(ok => { if (ok && b) b.hidden = false; }); });   // tab data muncul hanya bila datanya termuat
     $("akSubTab").addEventListener("click", e => { const b = e.target.closest("button[data-v]"); if (b) tampil(tabSkrg, b.dataset.v); });
     document.querySelectorAll(".ak-tabpanah").forEach(b => b.addEventListener("click", () => $("akTampil").scrollBy({left: +b.dataset.d * 220, behavior: "smooth"})));
     $("akTampil").hidden = false;
     $("akTampil").addEventListener("click", e => { const b = e.target.closest("button[data-t]"); if (b) tampil(b.dataset.t); });
     periksaSub();
     const tujuan = VIEW[v] || LAMA[v] ? v : "pakar", tabT = (LAMA[tujuan] || [tujuan])[0];
+    if (tabT === "pustaka") { location.replace("/pustaka"); return; }   /* pemilik 8 Nov 2026: Pustaka satu rumah di /pustaka */
     if (TAB_DATA.includes(tabT)) tabAda(tabT).then(ok => tampil(ok ? tujuan : "pakar", ok ? sub : "")); else tampil(tujuan, sub);   // tautan ke tab tanpa data jatuh ke Orang
   }
   const INTRO = {};   // kalimat pembuka dimatikan (pemilik 30 Okt 2026)
