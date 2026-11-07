@@ -15,15 +15,15 @@
 
 .jm-merek-kartu{display:grid;justify-items:center;gap:4px;text-align:center;padding:40px 24px 28px}
 .jm-merek-kartu img{width:auto;height:96px;margin-bottom:12px}
-.jm-merek-kartu strong{font:800 clamp(30px,5vw,40px)/1.1 "Jakarta",var(--display);letter-spacing:-.01em;color:var(--head)}
-.jm-merek-kartu span{font:700 clamp(15px,2.4vw,18px)/1.35 "Jakarta",var(--display);color:var(--info)}
+.jm-merek-kartu strong{font:700 var(--t-h3)/var(--lh-judul) var(--display);letter-spacing:-.01em;color:var(--head)}
+.jm-merek-kartu span{font:700 var(--t-h3)/var(--lh-rapat) var(--display);color:var(--info)}
 .jm-hal-akun .jm-form,.jm-hal-akun #sudah,.jm-hal-akun #selesai{margin:0 24px}
 @media (min-width:600px){.jm-hal-akun .jm-form,.jm-hal-akun #sudah,.jm-hal-akun #selesai{margin:0 56px}}
 .jm-hal-akun .jm-merek-kartu::after{content:"";width:calc(100% + 48px);height:1px;margin:28px -24px 0;background:linear-gradient(to right,transparent,color-mix(in srgb,var(--ink) 12%,transparent),transparent)}
 .jm-hal-akun .jm-form{gap:16px;padding-top:28px}
 .jm-hal-akun #sudah,.jm-hal-akun #selesai{display:grid;gap:16px;padding-top:28px}
 .jm-hal-akun .jm-form-judul{margin-bottom:8px}
-.jm-hal-akun .jm-form-judul h1{font:700 var(--t-h2)/var(--lh-rapat) "Jakarta",var(--display);color:var(--head)}
+.jm-hal-akun .jm-form-judul h1{font:700 var(--t-h2)/var(--lh-rapat) var(--display);color:var(--head)}
 .jm-hal-akun .jm-form-judul p{font-size:var(--t-body)}
 .jm-hal-akun .jm-form .jm-tbl,.jm-hal-akun #sudah .jm-tbl,.jm-hal-akun #selesai .jm-tbl{justify-self:stretch}
 

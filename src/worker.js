@@ -3,6 +3,8 @@ import { rute as ruteSesi } from "./sesi.js";
 import { rute as ruteAkun } from "./akun.js";
 import { rute as ruteAgenda } from "./agenda.js";
 import { rute as ruteDirektori } from "./direktori.js";
+import { rute as ruteFoto } from "./foto_berita.js";
+import { rute as ruteAdmin } from "./admin.js";
 import * as hak from "./hak.js";
 import { halamanProfil } from "./profil.js";
 import { gagal, json, sha } from "./util.js";
@@ -16,7 +18,7 @@ const rutePemilik = {
 };
 
 // Tabel rute dikompilasi sekali: { metode, bagian[], fn }.
-const DAFTAR = Object.entries({ ...ruteSesi, ...ruteAkun, ...ruteAgenda, ...ruteDirektori, ...rutePemilik }).map(([k, fn]) => {
+const DAFTAR = Object.entries({ ...ruteSesi, ...ruteAkun, ...ruteAgenda, ...ruteDirektori, ...ruteFoto, ...ruteAdmin, ...rutePemilik }).map(([k, fn]) => {
   const [metode, jalur] = k.split(" ");
   return { metode, bagian: jalur.split("/").slice(1), fn };
 });
@@ -47,6 +49,9 @@ export function csrfSah(req, url) {
   return sfs === "same-origin";
 }
 
+// sendBeacon tak bisa memasang x-pb: rute statistik publik cukup dengan asal sama-situs.
+const asalSama = (req, url) => req.headers.get("origin") === url.origin || req.headers.get("sec-fetch-site") === "same-origin";
+
 export function bacaCookie(req, nama = "sesi") {
   for (const c of (req.headers.get("cookie") || "").split(";")) {
     const [k, ...v] = c.trim().split("=");
@@ -76,6 +81,7 @@ const TERKUNCI = [
   { re: /^\/direktori\/?$/, aset: "/direktori", peran: null, ke: "/direktori" },
   { re: /^\/admin(\/.*)?$/, aset: "/admin", peran: ["admin", "super"], ke: "/admin" },
 ];
+const NAMA_TEKNOLOGI = { surya: "Energi surya", bayu: "Energi bayu", hidro: "Hidro", "panas-bumi": "Panas bumi", bioenergi: "Bioenergi", "biomassa-sampah": "Sampah menjadi energi", sampah: "Sampah menjadi energi", penyimpanan: "Penyimpanan energi", hidrogen: "Hidrogen", nuklir: "Nuklir" };
 const TIDAK_ADA = () => new Response("Tidak ditemukan", { status: 404, headers: { "content-type": "text/plain; charset=utf-8" } });
 const LANGSUNG_404 = /^\/(direktori|admin)\.html$/;
 
@@ -105,6 +111,14 @@ async function halaman(req, env, url) {
     if (!/^\d{2}$/.test(m[1])) return TIDAK_ADA();
     return env.ASSETS.fetch(new Request(new URL("/wilayah", url), req));
   }
+  if ((m = path.match(/^\/teknologi\/([^/]+)$/))) {
+    const nama = NAMA_TEKNOLOGI[m[1]];
+    if (!nama) return TIDAK_ADA();
+    const res = await env.ASSETS.fetch(new Request(new URL("/teknologi", url), req));
+    if (!res.ok || req.method === "HEAD") return res;
+    const html = (await res.text()).replace(/<title>[^<]*<\/title>/, () => `<title>${nama} | Direktori METI</title>`);
+    return new Response(html, { status: 200, headers: { "content-type": "text/html; charset=utf-8", "cache-control": "public, max-age=300" } });
+  }
   return env.ASSETS.fetch(req);
 }
 
@@ -118,7 +132,7 @@ async function api(req, env, ctx, url) {
     metodeLain = true;
   }
   if (!ada) return metodeLain ? gagal("metode") : gagal("tidak_ditemukan");
-  if (TULIS.has(req.method) && !csrfSah(req, url)) return gagal("dilarang");
+  if (TULIS.has(req.method) && !(url.pathname === "/api/statistik" ? asalSama(req, url) : csrfSah(req, url))) return gagal("dilarang");
   const { sesi, akun } = await muatSesi(req, env);
   if (akun?.wajib_ganti && !BOLEH_WAJIB_GANTI.has(url.pathname)) return gagal("dilarang");
   const res = await ada.fn(req, env, ctx, { params, sesi, akun });

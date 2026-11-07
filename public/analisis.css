@@ -1,11 +1,11 @@
 /* Halaman analisis statis (/wilayah, /rantai, /asean). Hanya token tema.css; kelas .jm-an-*. */
 .jm-an{gap:24px}
 .jm-an h3{font-size:var(--t-body);color:var(--ink2);font-weight:600}
-.jm-hero .jm-an-label,.jm-an-label{font:700 var(--t-label)/1 var(--font);letter-spacing:.08em;text-transform:uppercase;color:var(--meti-lime)}
+.jm-hero .jm-an-label,.jm-an-label{font:700 var(--t-label)/1 var(--font);letter-spacing:normal;text-transform:none;color:var(--meti-lime)}
 .jm-an-kartu-baris{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));margin-top:8px}
 .jm-an-kartu{display:grid;grid-template-rows:auto auto auto 1fr;gap:8px;align-content:start;padding:18px 20px}
 .jm-kpi-kepala{display:flex;align-items:center;gap:10px;min-width:0}
-.jm-kpi-kepala h3{flex:1;min-width:0;margin:0;font:700 var(--t-label)/var(--lh-judul) var(--font);letter-spacing:.08em;text-transform:uppercase;color:var(--ink2);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.jm-kpi-kepala h3{flex:1;min-width:0;margin:0;font:700 var(--t-label)/var(--lh-judul) var(--font);letter-spacing:normal;text-transform:none;color:var(--ink2);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .jm-kpi-kepala .jm-pil{flex:none}
 .jm-kpi-ik{display:grid;place-items:center;flex:none;width:32px;height:32px;border-radius:50%;background:var(--soft-hijau);color:var(--accent)}
 .jm-an-angka{display:flex;align-items:baseline;gap:8px;margin:2px 0 0;white-space:nowrap}
@@ -204,14 +204,14 @@
 .jm-kh::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(var(--line) 1px,transparent 1px) 0 0/40px 40px,linear-gradient(90deg,var(--line) 1px,transparent 1px) 0 0/40px 40px;opacity:.5;-webkit-mask-image:linear-gradient(90deg,black,transparent 85%);mask-image:linear-gradient(90deg,black,transparent 85%)}
 .jm-kh>*{min-width:0}
 .jm-kh-teks{display:grid;gap:12px;align-content:center}
-.jm-kh h1{margin:0;font:800 clamp(28px,3.2vw,40px)/1.1 var(--display);color:var(--head);letter-spacing:-.01em}
+.jm-kh h1{margin:0;font:700 var(--t-display)/var(--lh-judul) var(--display);color:var(--head);letter-spacing:-.01em}
 .jm-kh-lead{margin:0;max-width:44ch;font-size:var(--t-h3);line-height:var(--lh-isi);color:var(--ink2)}
 .jm-kh-ubin{display:grid;gap:12px;grid-template-columns:repeat(3,minmax(0,1fr))}
 .jm-kh-ub{display:grid;grid-template-rows:auto auto auto;gap:8px;align-content:start;padding:16px;border:1px solid var(--line);border-radius:var(--r);background:var(--card);color:inherit;text-decoration:none;box-shadow:var(--shadow);transition:border-color .12s,transform .12s}
 .jm-kh-ub:hover{border-color:var(--accent);transform:translateY(-2px)}
 .jm-kh-ub:focus-visible{outline:2px solid var(--fokus);outline-offset:2px}
 .jm-kh-angka{display:flex;align-items:baseline;gap:6px;margin:0;white-space:nowrap}
-.jm-kh-angka b{font:900 clamp(26px,2.6vw,34px)/1.05 var(--display);color:var(--head);font-variant-numeric:tabular-nums}
+.jm-kh-angka b{font:700 var(--t-angka)/var(--lh-judul) var(--display);color:var(--head);font-variant-numeric:tabular-nums}
 .jm-kh-angka span{font:600 var(--t-body)/1 var(--font);color:var(--ink2)}
 .jm-kh-lbl{display:flex;align-items:center;gap:6px;margin:0;font:400 var(--t-tombol)/var(--lh-rapat) var(--font);color:var(--ink2);min-width:0}
 .jm-kh-lbl span:first-child{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
@@ -256,7 +256,7 @@
 .jm-wl-legenda i.jm-wl-k3{background:color-mix(in srgb,var(--accent-isi) 76%,var(--card))}
 .jm-wl-legenda i.jm-wl-k4{background:var(--accent-isi)}
 .jm-wl-legenda .jm-wl-sw-kos{background:repeating-linear-gradient(135deg,var(--card) 0 3px,color-mix(in srgb,var(--ink2) 50%,var(--card)) 3px 4px)}
-.jm-wl-lg-j{margin:0;font:700 var(--t-label)/var(--lh-judul) var(--font);letter-spacing:.08em;text-transform:uppercase;color:var(--ink2)}
+.jm-wl-lg-j{margin:0;font:700 var(--t-label)/var(--lh-judul) var(--font);letter-spacing:normal;text-transform:none;color:var(--ink2)}
 .jm-wl-lg-s{justify-self:end}
 @media (max-width:639px){.jm-wl-legenda{position:static;margin:0 8px 8px;max-width:none}.jm-wl-lg-s{justify-self:start}}
 .jm-wl-tip{position:absolute;z-index:6;width:270px;padding:12px 14px;border:1px solid var(--line);border-radius:var(--r);background:var(--card);box-shadow:var(--shadow-lg);pointer-events:none;display:grid;gap:8px}
@@ -390,7 +390,7 @@ main.jm-an{gap:24px}
 .jm-wl-rp .jm-wl-lg-s{justify-self:start}
 .jm-wl-lg-j{text-shadow:0 0 4px var(--card)}
 .jm-wl-pr{position:absolute;z-index:4;top:16px;right:16px;width:310px;padding:10px 12px;border-radius:var(--r);background:color-mix(in srgb,var(--card) 90%,transparent);box-shadow:var(--shadow);backdrop-filter:blur(4px)}
-.jm-wl-pr h3{margin:0 0 6px;font:700 var(--t-label)/1 var(--font);letter-spacing:.08em;text-transform:uppercase;color:var(--ink2)}
+.jm-wl-pr h3{margin:0 0 6px;font:700 var(--t-label)/1 var(--font);letter-spacing:normal;text-transform:none;color:var(--ink2)}
 .jm-wl-pr ol{list-style:none;margin:0;padding:0;display:grid;gap:2px}
 .jm-wl-pr li{display:grid;grid-template-columns:20px 18px minmax(0,1fr) auto;align-items:center;gap:6px;padding:3px 4px;border-radius:6px;font-size:var(--t-label);cursor:pointer}
 .jm-wl-pr li:hover,.jm-wl-pr li.jm-wl-aktif{background:var(--soft-hijau)}
@@ -458,7 +458,7 @@ main.jm-an{gap:24px}
 .jm-wp-ub-n{display:flex;align-items:baseline;gap:5px;white-space:nowrap}
 .jm-wp-ub-n b{font:700 var(--t-h1)/var(--lh-judul) var(--display);color:var(--head)}
 .jm-wp-ub-n span{font-size:var(--t-tombol);color:var(--ink2)}
-.jm-wp-ub-l{display:flex;align-items:center;gap:6px;font:700 var(--t-label)/var(--lh-judul) var(--font);letter-spacing:.08em;text-transform:uppercase;color:var(--ink2);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.jm-wp-ub-l{display:flex;align-items:center;gap:6px;font:700 var(--t-label)/var(--lh-judul) var(--font);letter-spacing:normal;text-transform:none;color:var(--ink2);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .jm-wp-dua{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.3fr);gap:16px;align-items:stretch}
 .jm-wp-box{display:flex;flex-direction:column;justify-content:center;gap:14px;padding:18px;border:1px solid var(--line);border-radius:var(--r);min-width:0}
 .jm-wp-donut{align-items:center}
@@ -496,3 +496,4 @@ a.jm-wp-op:hover{color:var(--accent)}
 
 .jm-wl-pd{display:inline-flex;align-items:center;gap:8px}
 .jm-wl-pr h3{padding-right:28px}
+.jm-wl-c4{width:250px}.jm-wl-pd{flex-wrap:nowrap;white-space:nowrap}

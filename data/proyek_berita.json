@@ -1,0 +1,885 @@
+{
+ "_catatan": "Sumber proyek dari berita (tingkat_bukti media). Diterapkan ke data-panen/proyek/*.jsonl oleh scripts/pipa/proyek_berita.mjs. Tidak ada nilai yang tidak disebut berita.",
+ "sumber": [
+  {
+   "id": "b01",
+   "media": "Liputan6",
+   "tanggal": "2026-07-21",
+   "url": "https://www.liputan6.com/bisnis/read/8251038/daftar-nama-8-mitra-penggarap-proyek-listrik-dari-sampah-di-indonesia",
+   "catatan": "CLoA delapan mitra PSEL tahap kedua",
+   "tingkat_bukti": "media"
+  },
+  {
+   "id": "b02",
+   "media": "Liputan6",
+   "tanggal": "2026-07-13",
+   "url": "https://www.liputan6.com/bisnis/read/8245497/danantara-tetapkan-8-mitra-proyek-sampah-jadi-listrik-di-20-daerah",
+   "catatan": "Danantara tetapkan 8 mitra PSEL tahap 2",
+   "tingkat_bukti": "media"
+  },
+  {
+   "id": "b03",
+   "media": "CNN Indonesia",
+   "tanggal": "2026-10-20",
+   "url": "https://www.cnnindonesia.com/ekonomi/20261019165217-85-1417168/denera-kejar-8-pembangkit-listrik-tenaga-sampah-groundbreaking-2027",
+   "catatan": "Denera kejar groundbreaking 8 PSEL kuartal I 2027, saham mayoritas 51 persen",
+   "tingkat_bukti": "media"
+  },
+  {
+   "id": "b04",
+   "media": "JPNN",
+   "tanggal": "2026-04-23",
+   "url": "https://www.jpnn.com/news/pemerintah-akan-groundbreaking-5-psel-olah-7000-ton-sampah-per-hari-jadi-listrik",
+   "catatan": "Lima PSEL pertama dan kapasitas sampah",
+   "tingkat_bukti": "media"
+  },
+  {
+   "id": "b05",
+   "media": "Liputan6",
+   "tanggal": "2026-08-11",
+   "url": "https://www.liputan6.com/bisnis/read/8267485/proyek-psel-di-yogyakarta-bakal-serap-1000-tenaga-kerja",
+   "catatan": "PSEL DIY di sebelah bekas TPST Piyungan, Bantul",
+   "tingkat_bukti": "media"
+  },
+  {
+   "id": "b06",
+   "media": "CNN Indonesia",
+   "tanggal": "2026-08-13",
+   "url": "https://www.cnnindonesia.com/ekonomi/20260812211007-92-1391637/danantara-bakal-bangun-psel-rp3-t-tuntaskan-polemik-sampah-diy",
+   "catatan": "MoU PSEL DIY Rp2,5-3 triliun",
+   "tingkat_bukti": "media"
+  },
+  {
+   "id": "b07",
+   "media": "Liputan6",
+   "tanggal": "2026-07-29",
+   "url": "https://www.liputan6.com/bisnis/read/8257484/psel-legok-nangka-mulai-dibangun-olah-2000-ton-sampah",
+   "catatan": "Groundbreaking PSEL Legok Nangka 29 Juli 2026",
+   "tingkat_bukti": "media"
+  },
+  {
+   "id": "b08",
+   "media": "JPNN",
+   "tanggal": "2026-09-08",
+   "url": "https://www.jpnn.com/news/groundbreaking-desember-2026-psel-semarang-raya-ditargetkan-olah-1000-ton-sampah-jadi-listrik",
+   "catatan": "PSEL Semarang Raya di TPA Jatibarang",
+   "tingkat_bukti": "media"
+  },
+  {
+   "id": "b09",
+   "media": "CNN Indonesia",
+   "tanggal": "2026-09-17",
+   "url": "https://www.cnnindonesia.com/ekonomi/20260917120546-85-1404978/investasi-rp28-t-psel-bogor-raya-1-olah-500-ribu-ton-sampah-setahun",
+   "catatan": "PSEL Bogor Raya 1, Galuga, Rp2,8 triliun",
+   "tingkat_bukti": "media"
+  },
+  {
+   "id": "b10",
+   "media": "Liputan6",
+   "tanggal": "2026-07-14",
+   "url": "https://www.liputan6.com/bisnis/read/8245763/psel-denpasar-ditargetkan-beroperasi-akhir-2027-atasi-sampah-di-bali",
+   "catatan": "PSEL Denpasar Raya groundbreaking 8 Juli 2026",
+   "tingkat_bukti": "media"
+  },
+  {
+   "id": "b11",
+   "media": "CNN Indonesia",
+   "tanggal": "2026-10-17",
+   "url": "https://www.cnnindonesia.com/ekonomi/20261017160541-97-1416509/pilah-olah-jadikan-energi-zulhas-buka-strategi-atasi-sampah-bekasi",
+   "catatan": "PSEL Kota Bekasi 1.500 ton per hari",
+   "tingkat_bukti": "media"
+  },
+  {
+   "id": "b12",
+   "media": "CNN Indonesia",
+   "tanggal": "2026-10-20",
+   "url": "https://www.cnnindonesia.com/ekonomi/20261019171622-85-1417178/denera-beber-kendala-proyek-olah-sampah-jadi-listrik-di-jakarta",
+   "catatan": "PSEL Jakarta belum dieksekusi, lahan",
+   "tingkat_bukti": "media"
+  },
+  {
+   "id": "b13",
+   "media": "JPNN",
+   "tanggal": "2026-05-04",
+   "url": "https://www.jpnn.com/news/kerja-sama-bangun-psel-pemprov-jakarta-gandeng-danantara-indonesia",
+   "catatan": "MoU Pemprov Jakarta-Danantara, Tanjung Muara dan Bantargebang",
+   "tingkat_bukti": "media"
+  },
+  {
+   "id": "b14",
+   "media": "Liputan6",
+   "tanggal": "2026-07-16",
+   "url": "https://www.liputan6.com/news/read/8246690/konsorsium-indonesia-china-garap-proyek-pengolahan-sampah-jadi-listrik",
+   "catatan": "Konsorsium Indonesia-China PSEL tahap 2",
+   "tingkat_bukti": "media"
+  },
+  {
+   "id": "b15",
+   "media": "CNN Indonesia",
+   "tanggal": "2026-11-05",
+   "url": "https://www.cnnindonesia.com/ekonomi/20261105184809-97-1423822/psel-palembang-hampir-rampung-1000-ton-sampah-diolah-per-hari",
+   "catatan": "PSEL Palembang 96 persen, COD 8 Desember 2026",
+   "tingkat_bukti": "media"
+  },
+  {
+   "id": "b16",
+   "media": "JPNN",
+   "tanggal": "2026-05-04",
+   "url": "https://www.jpnn.com/news/gubernur-herman-deru-genjot-operasional-psel-palembang-progres-tembus-83",
+   "catatan": "PSEL Palembang di PT Indo Green Power, progres 83 persen",
+   "tingkat_bukti": "media"
+  },
+  {
+   "id": "b17",
+   "media": "Koran Jakarta",
+   "tanggal": "2026-09-05",
+   "url": "https://koran-jakarta.com/2026-09-05/gebrakan-energi-hijau-prabowo-nabire-dapat-alokasi-plts-18-mwp",
+   "catatan": "Nabire 18 MWp; Dogiyai, Deiyai, Paniai, Intan Jaya 45 MWp",
+   "tingkat_bukti": "media"
+  },
+  {
+   "id": "b18",
+   "media": "Okezone",
+   "tanggal": "2026-09-22",
+   "url": "https://economy.okezone.com/read/2026/09/22/320/3243554/investasi-rp3-3-triliun-plts-berbasis-baterai-dikembangkan-di-10-lokasi-terisolasi",
+   "catatan": "PLTS 60 MWp + BESS 200 MWh, 10 lokasi Sulawesi Tengah",
+   "tingkat_bukti": "media"
+  },
+  {
+   "id": "b19",
+   "media": "Antara",
+   "tanggal": "2026-09-06",
+   "url": "https://www.antaranews.com/berita/5728435/pemkab-sigi-percepat-pengadaan-lahan-proyek-pltp-bora-pulu",
+   "catatan": "PLTP Bora Pulu, Sigi, tahap PSPE",
+   "tingkat_bukti": "media"
+  },
+  {
+   "id": "b20",
+   "media": "JPNN",
+   "tanggal": "2026-08-15",
+   "url": "https://jabar.jpnn.com/jabar-terkini/32740/raih-satu-juta-jam-kerja-selamat-pltp-patuha-unit-2-torehkan-prestasi-sebelum-beroperasi",
+   "catatan": "PLTP Patuha Unit 2 dibangun Geo Dipa Energi",
+   "tingkat_bukti": "media"
+  },
+  {
+   "id": "b21",
+   "media": "Republika",
+   "tanggal": "2026-09-23",
+   "url": "https://news.republika.co.id/berita/tls6a92230000/pemkab-serang-dan-pln-targetkan-listrik-24-jam-masuk-pulau-tunda-pada-2027-via-plts",
+   "catatan": "PLTS Pulau Tunda 2027",
+   "tingkat_bukti": "media"
+  },
+  {
+   "id": "b22",
+   "media": "Kontan",
+   "tanggal": "2026-08-18",
+   "url": "https://keuangan.kontan.co.id/news/danamart-bidik-pendanaan-rp-10-miliar-untuk-proyek-plts-di-asmat",
+   "catatan": "PLTS Terpadu Wilayah 6 Asmat, pendanaan Danamart",
+   "tingkat_bukti": "media"
+  },
+  {
+   "id": "b23",
+   "media": "Antara",
+   "tanggal": "2026-09-09",
+   "url": "https://www.antaranews.com/berita/5733229/kutim-target-tiga-desa-dialiri-listrik-melalui-plts-komunal",
+   "catatan": "PLTS komunal tiga desa Kutim 2027",
+   "tingkat_bukti": "media"
+  },
+  {
+   "id": "b24",
+   "media": "Kompas.com",
+   "tanggal": "2026-09-25",
+   "url": "https://megapolitan.kompas.com/read/2026/09/25/05355301/psel-tangsel-ditargetkan-beroperasi-2027-mampu-olah-1000-ton-sampah-per",
+   "catatan": "Judul: PSEL Tangsel ditargetkan beroperasi 2027, 1.000 ton per hari",
+   "tingkat_bukti": "media"
+  },
+  {
+   "id": "b25",
+   "media": "Kompas.com",
+   "tanggal": "2026-11-05",
+   "url": "https://makassar.kompas.com/read/2026/11/05/111000478/pemkot-makassar-menanti-tim-teknis-danantara-uji-kelayakan-psel",
+   "catatan": "Judul: Pemkot Makassar menanti tim teknis Danantara uji kelayakan PSEL",
+   "tingkat_bukti": "media"
+  },
+  {
+   "id": "b26",
+   "media": "Kompas.com",
+   "tanggal": "2026-10-07",
+   "url": "https://megapolitan.kompas.com/read/2026/10/07/23040951/sampah-bantargebang-segera-diolah-jadi-listrik-psel-ditargetkan-dibangun",
+   "catatan": "Judul: PSEL Bantargebang ditargetkan dibangun tahun ini",
+   "tingkat_bukti": "media"
+  }
+ ],
+ "perkaya": [
+  {
+   "id": "pj_0038",
+   "kapasitas": [
+    {
+     "nilai": 1200,
+     "satuan": "ton/hari",
+     "catatan": "target pelayanan Kota Denpasar dan Kabupaten Badung",
+     "s": "b04"
+    }
+   ],
+   "status": [
+    {
+     "nilai": "konstruksi",
+     "status_asli": "peletakan batu pertama 8 Juli 2026",
+     "s": "b10"
+    }
+   ],
+   "cod_target": [
+    {
+     "nilai": 2027,
+     "catatan": "ditargetkan beroperasi akhir 2027",
+     "s": "b10"
+    }
+   ],
+   "pemilik": [
+    {
+     "nilai": "PT Daya Energi Bersih Nusantara (Denera)",
+     "catatan": "pengembang program PSEL (Perpres 109/2025)",
+     "s": "b10"
+    }
+   ]
+  },
+  {
+   "id": "pj_0040",
+   "kapasitas": [
+    {
+     "nilai": 1000,
+     "satuan": "ton/hari",
+     "s": "b24"
+    }
+   ],
+   "cod_target": [
+    {
+     "nilai": 2027,
+     "s": "b24"
+    }
+   ]
+  },
+  {
+   "id": "pj_0041",
+   "status": [
+    {
+     "nilai": "rencana",
+     "status_asli": "lahan belum final; MoU Pemprov Jakarta-Danantara 4 Mei 2026 untuk Tanjung Muara dan Bantargebang",
+     "s": "b12"
+    }
+   ],
+   "pemilik": [
+    {
+     "nilai": "Badan Pengelola Investasi Daya Anagata Nusantara (Danantara)",
+     "catatan": "MoU dengan Pemprov DKI Jakarta, 4 Mei 2026",
+     "s": "b13"
+    }
+   ]
+  },
+  {
+   "id": "pj_0043",
+   "nama_lain": [
+    "PSEL Legok Nangka"
+   ],
+   "kapasitas": [
+    {
+     "nilai": 40.79,
+     "satuan": "MW",
+     "s": "b07"
+    },
+    {
+     "nilai": 2000,
+     "satuan": "ton/hari",
+     "catatan": "sekitar",
+     "s": "b07"
+    }
+   ],
+   "status": [
+    {
+     "nilai": "konstruksi",
+     "status_asli": "groundbreaking 29 Juli 2026 di TPPAS Legok Nangka, Kabupaten Bandung",
+     "s": "b07"
+    }
+   ],
+   "nilai_investasi": [
+    {
+     "nilai": 400000000,
+     "satuan": "USD",
+     "catatan": "sekitar Rp7,2 triliun",
+     "s": "b07"
+    }
+   ],
+   "pemilik": [
+    {
+     "nilai": "Sumitomo Corporation",
+     "catatan": "perusahaan patungan bersama Hitachi Zosen, Kaisu Electric (ejaan sumber) dan PT Energia Prima Nusantara",
+     "s": "b07"
+    }
+   ]
+  },
+  {
+   "id": "pj_0044",
+   "kapasitas": [
+    {
+     "nilai": 1400,
+     "satuan": "ton/hari",
+     "s": "b04"
+    },
+    {
+     "nilai": 1500,
+     "satuan": "ton/hari",
+     "s": "b11"
+    }
+   ],
+   "status": [
+    {
+     "nilai": "rencana",
+     "status_asli": "pembangunan PSEL Kota Bekasi menyusul Denpasar dan Legok Nangka",
+     "s": "b11"
+    }
+   ]
+  },
+  {
+   "id": "pj_0047",
+   "nama_lain": [
+    "PSEL Semarang Raya"
+   ],
+   "kapasitas": [
+    {
+     "nilai": 1000,
+     "satuan": "ton/hari",
+     "catatan": "sampah baru per hari dari Kota Semarang dan Kabupaten Kendal, TPA Jatibarang",
+     "s": "b08"
+    }
+   ],
+   "status": [
+    {
+     "nilai": "rencana",
+     "status_asli": "groundbreaking ditargetkan Desember 2026",
+     "s": "b08"
+    }
+   ],
+   "cod_target": [
+    {
+     "nilai": 2028,
+     "s": "b08"
+    }
+   ],
+   "pemilik": [
+    {
+     "nilai": "Veolia Environmental Services Asia Pte. Ltd (Veolia)",
+     "catatan": "mitra terpilih tahap 2, CLoA 21 Juli 2026",
+     "s": "b01"
+    }
+   ]
+  },
+  {
+   "id": "pj_0052",
+   "status": [
+    {
+     "nilai": "rencana",
+     "status_asli": "menanti uji kelayakan tim teknis Danantara",
+     "s": "b25"
+    }
+   ]
+  },
+  {
+   "id": "pj_0054",
+   "kapasitas": [
+    {
+     "nilai": 18.6,
+     "satuan": "MW",
+     "catatan": "potensi; 20 MW pada beban puncak",
+     "s": "b15"
+    },
+    {
+     "nilai": 1000,
+     "satuan": "ton/hari",
+     "s": "b15"
+    }
+   ],
+   "status": [
+    {
+     "nilai": "konstruksi",
+     "status_asli": "progres fisik 96 persen, tahap commissioning, listrik sudah masuk jaringan PLN",
+     "s": "b15"
+    }
+   ],
+   "cod_target": [
+    {
+     "nilai": 2026,
+     "catatan": "target COD 8 Desember 2026",
+     "s": "b15"
+    }
+   ],
+   "nilai_investasi": [
+    {
+     "nilai": 160000000,
+     "satuan": "USD",
+     "catatan": "hampir Rp3 triliun; skema BOO",
+     "s": "b15"
+    }
+   ],
+   "pemilik": [
+    {
+     "nilai": "PT Indo Green Power",
+     "catatan": "lokasi proyek di PT Indo Green Power, Kertapati",
+     "s": "b16"
+    }
+   ]
+  }
+ ],
+ "baru": [
+  {
+   "id": "pjb_001",
+   "nama": "PSEL Bogor Raya 1",
+   "teknologi": "biomassa-sampah",
+   "provinsi": "Jawa Barat",
+   "kabupaten_kota": "Kabupaten Bogor",
+   "program": "wte",
+   "kapasitas": [
+    {
+     "nilai": 1500,
+     "satuan": "ton/hari",
+     "s": "b04"
+    },
+    {
+     "nilai": 500000,
+     "satuan": "ton/tahun",
+     "catatan": "lebih dari",
+     "s": "b09"
+    }
+   ],
+   "status": [
+    {
+     "nilai": "konstruksi",
+     "status_asli": "peresmian pembangunan di Desa Galuga, Cibungbulang, 17 September 2026; PJBL ditandatangani",
+     "s": "b09"
+    }
+   ],
+   "nilai_investasi": [
+    {
+     "nilai": 2800000000000,
+     "satuan": "IDR",
+     "s": "b09"
+    }
+   ],
+   "pemilik": [
+    {
+     "nilai": "Badan Pengelola Investasi Daya Anagata Nusantara (Danantara)",
+     "catatan": "pengembang",
+     "s": "b09"
+    }
+   ]
+  },
+  {
+   "id": "pjb_002",
+   "nama": "PSEL Yogyakarta Raya (Piyungan)",
+   "teknologi": "biomassa-sampah",
+   "provinsi": "DI Yogyakarta",
+   "kabupaten_kota": "Kabupaten Bantul",
+   "program": "wte",
+   "kapasitas": [
+    {
+     "nilai": 1000,
+     "satuan": "ton/hari",
+     "catatan": "dari Kota Yogyakarta, Sleman, Bantul",
+     "s": "b05"
+    }
+   ],
+   "status": [
+    {
+     "nilai": "rencana",
+     "status_asli": "MoU 11 Agustus 2026; groundbreaking target Desember 2026, konstruksi fisik Januari 2027",
+     "s": "b06"
+    }
+   ],
+   "cod_target": [
+    {
+     "nilai": 2028,
+     "s": "b06"
+    }
+   ],
+   "nilai_investasi": [
+    {
+     "nilai": 3000000000000,
+     "satuan": "IDR",
+     "catatan": "perkiraan Rp2,5-3 triliun",
+     "s": "b06"
+    }
+   ],
+   "pemilik": [
+    {
+     "nilai": "PT Daya Energi Bersih Nusantara (Denera)",
+     "catatan": "pengembang",
+     "s": "b06"
+    },
+    {
+     "nilai": "Cakra Energi Lestari Consortium (Pertamina NRE, Tianjin, CITICC)",
+     "catatan": "mitra terpilih (CLoA)",
+     "s": "b01"
+    }
+   ]
+  },
+  {
+   "id": "pjb_003",
+   "nama": "PSEL Medan Raya",
+   "teknologi": "biomassa-sampah",
+   "provinsi": "Sumatera Utara",
+   "kabupaten_kota": "Kota Medan",
+   "program": "wte",
+   "status": [
+    {
+     "nilai": "rencana",
+     "status_asli": "tahap 2 PSEL: CLoA (Conditional Letter of Award) Juli 2026; Denera pemegang saham mayoritas 51 persen; groundbreaking target Desember 2026 sampai kuartal I 2027",
+     "s": "b01"
+    }
+   ],
+   "pemilik": [
+    {
+     "nilai": "PT Daya Energi Bersih Nusantara (Denera)",
+     "catatan": "pengembang dan pemegang saham mayoritas 51 persen (tahap 2)",
+     "s": "b03"
+    },
+    {
+     "nilai": "Nusantara Energi Hijau Consortium (BGE Sentosa Utama)",
+     "catatan": "mitra terpilih (CLoA)",
+     "s": "b01"
+    }
+   ]
+  },
+  {
+   "id": "pjb_004",
+   "nama": "PSEL Kabupaten Bekasi",
+   "teknologi": "biomassa-sampah",
+   "provinsi": "Jawa Barat",
+   "kabupaten_kota": "Kabupaten Bekasi",
+   "program": "wte",
+   "status": [
+    {
+     "nilai": "rencana",
+     "status_asli": "tahap 2 PSEL: CLoA (Conditional Letter of Award) Juli 2026; Denera pemegang saham mayoritas 51 persen; groundbreaking target Desember 2026 sampai kuartal I 2027",
+     "s": "b01"
+    }
+   ],
+   "pemilik": [
+    {
+     "nilai": "PT Daya Energi Bersih Nusantara (Denera)",
+     "catatan": "pengembang dan pemegang saham mayoritas 51 persen (tahap 2)",
+     "s": "b03"
+    },
+    {
+     "nilai": "Consortium Everbright Cemerlang Energy (China Everbright Environment, PT Harmoni Development Indonesia, PT Bioregen Enviro Tech)",
+     "catatan": "mitra terpilih (CLoA)",
+     "s": "b01"
+    }
+   ]
+  },
+  {
+   "id": "pjb_005",
+   "nama": "PSEL Lampung Raya",
+   "teknologi": "biomassa-sampah",
+   "provinsi": "Lampung",
+   "kabupaten_kota": "Kota Bandar Lampung",
+   "program": "wte",
+   "status": [
+    {
+     "nilai": "rencana",
+     "status_asli": "tahap 2 PSEL: CLoA (Conditional Letter of Award) Juli 2026; Denera pemegang saham mayoritas 51 persen; groundbreaking target Desember 2026 sampai kuartal I 2027",
+     "s": "b01"
+    }
+   ],
+   "pemilik": [
+    {
+     "nilai": "PT Daya Energi Bersih Nusantara (Denera)",
+     "catatan": "pengembang dan pemegang saham mayoritas 51 persen (tahap 2)",
+     "s": "b03"
+    },
+    {
+     "nilai": "Bumi Biru Indonesia (SUS Indoplas)",
+     "catatan": "mitra terpilih (CLoA)",
+     "s": "b01"
+    }
+   ]
+  },
+  {
+   "id": "pjb_006",
+   "nama": "PSEL Serang Raya",
+   "teknologi": "biomassa-sampah",
+   "provinsi": "Banten",
+   "kabupaten_kota": "Kota Serang",
+   "program": "wte",
+   "status": [
+    {
+     "nilai": "rencana",
+     "status_asli": "tahap 2 PSEL: CLoA (Conditional Letter of Award) Juli 2026; Denera pemegang saham mayoritas 51 persen; groundbreaking target Desember 2026 sampai kuartal I 2027",
+     "s": "b01"
+    }
+   ],
+   "pemilik": [
+    {
+     "nilai": "PT Daya Energi Bersih Nusantara (Denera)",
+     "catatan": "pengembang dan pemegang saham mayoritas 51 persen (tahap 2)",
+     "s": "b03"
+    },
+    {
+     "nilai": "Masa Depan Energi Indonesia (PT Chandra Waste Energy, Beijing GeoEnviron Engineering and Tech Inc)",
+     "catatan": "mitra terpilih (CLoA)",
+     "s": "b01"
+    }
+   ]
+  },
+  {
+   "id": "pjb_007",
+   "nama": "PSEL Surabaya Raya",
+   "teknologi": "biomassa-sampah",
+   "provinsi": "Jawa Timur",
+   "kabupaten_kota": "Kota Surabaya",
+   "program": "wte",
+   "status": [
+    {
+     "nilai": "rencana",
+     "status_asli": "tahap 2 PSEL: CLoA (Conditional Letter of Award) Juli 2026; Denera pemegang saham mayoritas 51 persen; groundbreaking target Desember 2026 sampai kuartal I 2027",
+     "s": "b01"
+    }
+   ],
+   "pemilik": [
+    {
+     "nilai": "PT Daya Energi Bersih Nusantara (Denera)",
+     "catatan": "pengembang dan pemegang saham mayoritas 51 persen (tahap 2)",
+     "s": "b03"
+    },
+    {
+     "nilai": "Consortium Mentari Citra Lestari (Bakrie Power, SUS)",
+     "catatan": "mitra terpilih (CLoA)",
+     "s": "b01"
+    }
+   ]
+  },
+  {
+   "id": "pjb_008",
+   "nama": "PSEL Bogor Raya 2",
+   "teknologi": "biomassa-sampah",
+   "provinsi": "Jawa Barat",
+   "kabupaten_kota": "Kota Bogor",
+   "program": "wte",
+   "status": [
+    {
+     "nilai": "rencana",
+     "status_asli": "tahap 2 PSEL: CLoA (Conditional Letter of Award) Juli 2026; Denera pemegang saham mayoritas 51 persen; groundbreaking target Desember 2026 sampai kuartal I 2027",
+     "s": "b01"
+    }
+   ],
+   "pemilik": [
+    {
+     "nilai": "PT Daya Energi Bersih Nusantara (Denera)",
+     "catatan": "pengembang dan pemegang saham mayoritas 51 persen (tahap 2)",
+     "s": "b03"
+    },
+    {
+     "nilai": "MPM-CEVIA Consortium (Mega Power CEVIA)",
+     "catatan": "mitra terpilih (CLoA)",
+     "s": "b01"
+    }
+   ]
+  },
+  {
+   "id": "pjb_009",
+   "nama": "PLTS Nabire",
+   "teknologi": "surya",
+   "provinsi": "Papua Tengah",
+   "kabupaten_kota": "Kabupaten Nabire",
+   "program": "plts-100gw",
+   "kapasitas": [
+    {
+     "nilai": 18,
+     "satuan": "MWp",
+     "s": "b17"
+    }
+   ],
+   "status": [
+    {
+     "nilai": "rencana",
+     "status_asli": "alokasi program PLTS dan BESS 100 GWp",
+     "s": "b17"
+    }
+   ],
+   "pemilik": [
+    {
+     "nilai": "PT PLN (Persero)",
+     "catatan": "UP3 Nabire",
+     "s": "b17"
+    }
+   ]
+  },
+  {
+   "id": "pjb_010",
+   "nama": "PLTS Dogiyai, Deiyai, Paniai, Intan Jaya",
+   "teknologi": "surya",
+   "provinsi": "Papua Tengah",
+   "kabupaten_kota": "Kabupaten Paniai",
+   "program": "plts-100gw",
+   "kapasitas": [
+    {
+     "nilai": 45,
+     "satuan": "MWp",
+     "catatan": "gabungan empat kabupaten",
+     "s": "b17"
+    }
+   ],
+   "status": [
+    {
+     "nilai": "rencana",
+     "s": "b17"
+    }
+   ],
+   "pemilik": [
+    {
+     "nilai": "PT PLN (Persero)",
+     "s": "b17"
+    }
+   ]
+  },
+  {
+   "id": "pjb_011",
+   "nama": "PLTS dan BESS Dedieselisasi Sulawesi Tengah (10 lokasi)",
+   "teknologi": "surya",
+   "provinsi": "Sulawesi Tengah",
+   "kabupaten_kota": null,
+   "kapasitas": [
+    {
+     "nilai": 60,
+     "satuan": "MWp",
+     "catatan": "potensi; BESS 200 MWh",
+     "s": "b18"
+    }
+   ],
+   "status": [
+    {
+     "nilai": "rencana",
+     "status_asli": "potensi kapasitas",
+     "s": "b18"
+    }
+   ],
+   "nilai_investasi": [
+    {
+     "nilai": 3300000000000,
+     "satuan": "IDR",
+     "s": "b18"
+    }
+   ],
+   "pemilik": [
+    {
+     "nilai": "PT PLN Indonesia Power",
+     "s": "b18"
+    },
+    {
+     "nilai": "PT Ace Energy Service",
+     "catatan": "kolaborasi (ACEES)",
+     "s": "b18"
+    }
+   ]
+  },
+  {
+   "id": "pjb_012",
+   "nama": "PLTP Bora Pulu",
+   "teknologi": "panas-bumi",
+   "provinsi": "Sulawesi Tengah",
+   "kabupaten_kota": "Kabupaten Sigi",
+   "kapasitas": [],
+   "status": [
+    {
+     "nilai": "rencana",
+     "status_asli": "tahap penugasan survei pendahuluan dan eksplorasi (PSPE); pembebasan lahan",
+     "s": "b19"
+    }
+   ]
+  },
+  {
+   "id": "pjb_013",
+   "nama": "PLTP Patuha Unit 2",
+   "teknologi": "panas-bumi",
+   "provinsi": "Jawa Barat",
+   "kabupaten_kota": "Kabupaten Bandung",
+   "kapasitas": [],
+   "status": [
+    {
+     "nilai": "konstruksi",
+     "status_asli": "1 juta jam kerja selamat per 14 Juli 2026",
+     "s": "b20"
+    }
+   ],
+   "pemilik": [
+    {
+     "nilai": "PT Geo Dipa Energi (Persero)",
+     "s": "b20"
+    }
+   ]
+  },
+  {
+   "id": "pjb_014",
+   "nama": "PLTS Pulau Tunda",
+   "teknologi": "surya",
+   "provinsi": "Banten",
+   "kabupaten_kota": "Kabupaten Serang",
+   "kapasitas": [],
+   "status": [
+    {
+     "nilai": "rencana",
+     "status_asli": "listrik 24 jam ditargetkan 2027",
+     "s": "b21"
+    }
+   ],
+   "cod_target": [
+    {
+     "nilai": 2027,
+     "s": "b21"
+    }
+   ],
+   "pemilik": [
+    {
+     "nilai": "PT PLN (Persero)",
+     "catatan": "PLN UP3 Banten Utara bersama Pemkab Serang",
+     "s": "b21"
+    }
+   ]
+  },
+  {
+   "id": "pjb_015",
+   "nama": "PLTS Terpadu Wilayah 6 Asmat",
+   "teknologi": "surya",
+   "provinsi": "Papua Selatan",
+   "kabupaten_kota": "Kabupaten Asmat",
+   "kapasitas": [],
+   "status": [],
+   "nilai_investasi": [
+    {
+     "nilai": 10000000000,
+     "satuan": "IDR",
+     "catatan": "target pendanaan crowdfunding Danamart, bukan total proyek",
+     "s": "b22"
+    }
+   ]
+  },
+  {
+   "id": "pjb_016",
+   "nama": "PLTS Komunal Kutai Timur (Pulau Miang, Sandaran, Tanjung Mangkalihat)",
+   "teknologi": "surya",
+   "provinsi": "Kalimantan Timur",
+   "kabupaten_kota": "Kabupaten Kutai Timur",
+   "kapasitas": [],
+   "status": [
+    {
+     "nilai": "rencana",
+     "s": "b23"
+    }
+   ],
+   "cod_target": [
+    {
+     "nilai": 2027,
+     "s": "b23"
+    }
+   ]
+  }
+ ]
+}

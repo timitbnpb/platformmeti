@@ -27,6 +27,9 @@ export const pilTek = (kode) => {
   return `<span class="jm-pil-tek jm-tek-${TEK_ADA.has(kode) ? kode : "lain"}">${kecil(ikonTek(kode))}<span>${esc(lab)}</span></span>`;
 };
 
+/* Pil teknologi sebagai tautan ke /teknologi/<kode> (hanya di sel/baris yang tidak berada di dalam <a> lain) */
+export const pilTekTaut = (kode) => (kode && TEK_ADA.has(kode) ? `<a class="jm-pil-taut" href="/teknologi/${esc(kode)}">${pilTek(kode)}</a>` : pilTek(kode));
+
 /* Pil status proyek dengan ikon (rencana, konstruksi, beroperasi, dibatalkan, tidak-diketahui) */
 const IK_ST = {
   rencana: '<rect x="6" y="4" width="12" height="17" rx="2"/><path d="M9 4h6v3H9zM9 12h6M9 16h4"/>',

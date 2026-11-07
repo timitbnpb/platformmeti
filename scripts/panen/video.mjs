@@ -40,7 +40,7 @@ export function ringkas(item, kueri, tanggal_ambil) {
 export function gabungStatistik(v, st) {
   if (!st) return v;
   const s = st.statistics || {}, d = durasi(st.contentDetails?.duration);
-  return { ...v, tonton: +s.viewCount || 0, durasi_detik: d, pendek: (d ?? 999) <= 60 || /#shorts?\b/i.test(v.judul) };
+  return { ...v, tonton: +s.viewCount || 0, ...(s.likeCount != null && { suka: +s.likeCount }), ...(s.commentCount != null && { komen: +s.commentCount }), durasi_detik: d, pendek: (d ?? 999) <= 60 || /#shorts?\b/i.test(v.judul) };
 }
 export function muatKunci() {
   if (process.env.YOUTUBE_API_KEY) return process.env.YOUTUBE_API_KEY;

@@ -12,6 +12,7 @@
 <link rel="stylesheet" href="/inti/kepala.css">
 <link rel="stylesheet" href="/inti/gaya.css">
 <link rel="stylesheet" href="/inti/jm.css">
+<link rel="stylesheet" href="/inti/kh.css">
 <link rel="stylesheet" href="/publik.css">
 <link rel="stylesheet" href="/regulasi.css">
 <script src="/tema.js"></script>
@@ -20,10 +21,11 @@
 <header class="top" id="kepala"></header>
 <div id="pita"></div>
 <main class="jm-halaman">
-  <div class="jm-judul">
-    <h1 data-i18n="reg.judul">Regulasi</h1>
-    <p data-i18n="reg.pengantar">Aturan yang mengikat proyek dan pelaku energi terbarukan, dari undang-undang sampai peraturan daerah, dengan rantai perubahan dan pencabutannya.</p>
-  </div>
+  <section class="jm-kh" aria-labelledby="judul"><div class="jm-kh-teks">
+    <p class="jm-kh-ey"><svg class="jm-ik" width="16" height="16" aria-hidden="true" focusable="false"><use href="/img/ikon.svg#i-regulasi"/></svg><span data-i18n="reg.eyebrow">Basis regulasi</span></p>
+    <h1 id="judul" data-i18n="reg.judul">Regulasi</h1>
+    <p class="jm-kh-lead" data-i18n="reg.pengantar">Aturan yang mengikat proyek dan pelaku energi terbarukan, dari undang-undang sampai peraturan daerah, dengan rantai perubahan dan pencabutannya.</p>
+  </div><div class="jm-kh-ubin" id="khUbin" aria-live="polite"></div></section>
   <div id="ruu"></div>
   <div id="daftar-reg"></div>
 </main>

@@ -12,6 +12,7 @@
 <link rel="stylesheet" href="/inti/kepala.css">
 <link rel="stylesheet" href="/inti/gaya.css">
 <link rel="stylesheet" href="/inti/jm.css">
+<link rel="stylesheet" href="/inti/kh.css">
 <link rel="stylesheet" href="/publik.css">
 <link rel="stylesheet" href="/beranda_bawah.css">
 <script src="/tema.js"></script>
@@ -40,27 +41,28 @@
 <nav class="jm-isi" aria-label="Di halaman ini" data-i18n-attr="aria-label:beranda.isi"><a href="#s01"><b>01</b><span class="jm-isi-l" data-i18n="beranda.s01.l">Kondisi sekarang</span></a><a href="#s02"><b>02</b><span class="jm-isi-l" data-i18n="beranda.s02.l">Ekosistem</span></a><a href="#s03"><b>03</b><span class="jm-isi-l" data-i18n="beranda.s03.l">Dataset</span></a><a href="#s04"><b>04</b><span class="jm-isi-l" data-i18n="beranda.s04.l">Proyek dan emisi</span></a><a href="#s05"><b>05</b><span class="jm-isi-l" data-i18n="beranda.s05.l">Teknologi</span></a><a href="#s06"><b>06</b><span class="jm-isi-l" data-i18n="beranda.s06.l">Halaman lain</span></a><a href="#s08"><b>08</b><span class="jm-isi-l" data-i18n="beranda.s08.l">Akses data</span></a></nav>
 <section class="jm-bagian" id="s01" aria-labelledby="s01-h"><div class="jm-wadah">
     <header class="jm-sh jm-sh-s"><span class="jm-sh-src" id="srcS01"></span>
-      <h2 id="s01-h" data-i18n="beranda.s01.h">Angka terbaru</h2><p class="jm-sh-lead" data-i18n="beranda.s01.p">Enam angka utama, masing-masing dengan sumber dan tanggal.</p></header>
+      <p class="jm-kh-ey"><svg class="jm-ik" width="16" height="16" aria-hidden="true" focusable="false"><use href="/img/ikon.svg#i-analisis"/></svg><span data-i18n="beranda.s01.ey">Kondisi terkini</span></p><h2 id="s01-h" data-i18n="beranda.s01.h">Angka terbaru</h2><p class="jm-sh-lead" data-i18n="beranda.s01.p">Enam angka utama, masing-masing dengan sumber dan tanggal.</p></header>
     <div class="jm-kisi" id="kartu"></div>
     <details class="jm-cara-hit"><summary data-i18n="beranda.cara">Cara menghitung</summary><p data-i18n="beranda.cara_isi">Angka berasal dari baris data yang punya sumber publik. Jumlah proyek, organisasi, tokoh, dan regulasi adalah hitungan baris. Kapasitas menjumlah nilai pertama tiap proyek (MW dan MWp dicampur), rencana maupun terpasang, sehingga berlabel EST.</p></details>
     <div class="jm-dua jm-terbaru">
       <div class="jm-kartu"><div class="jm-kartu-kep"><h3 data-i18n="beranda.berita">Berita terbaru</h3><span id="srcBerita"></span></div><div id="berita"></div></div>
       <div class="jm-kartu"><div class="jm-kartu-kep"><h3 data-i18n="beranda.proyek">Proyek terbaru di katalog</h3><span id="srcProyek"></span></div><div id="proyek"></div></div>
     </div>
+    <div class="jm-kartu" id="agendaKartu" hidden><div class="jm-kartu-kep"><h3 data-i18n="beranda.agenda">Agenda pilihan</h3></div><div id="agenda"></div></div>
   </div></section>
 <section class="jm-bagian jm-pita" id="s02" aria-labelledby="s02-h"><div class="jm-wadah">
     <header class="jm-sh jm-sh-s"><span class="jm-sh-src" id="srcS02"></span>
-      <h2 id="s02-h" data-i18n="beranda.s02.h">Siapa saja yang ada di dalamnya</h2><p class="jm-sh-lead" data-i18n="beranda.s02.p">Jumlah pelaku menurut jenis, dengan tautan ke tiap bagian data.</p></header>
+      <p class="jm-kh-ey"><svg class="jm-ik" width="16" height="16" aria-hidden="true" focusable="false"><use href="/img/ikon.svg#i-orang"/></svg><span data-i18n="beranda.s02.ey">Pelaku</span></p><h2 id="s02-h" data-i18n="beranda.s02.h">Siapa saja yang ada di dalamnya</h2><p class="jm-sh-lead" data-i18n="beranda.s02.p">Jumlah pelaku menurut jenis, dengan tautan ke tiap bagian data.</p></header>
     <ul class="jm-strip" id="ekoHitung"></ul>
     <div class="jm-kisi jm-kisi-j jm-jalur-kisi" id="ekoJalur"></div>
     <div id="jalur" hidden></div>
   </div></section>
 <section class="jm-bagian" id="s03" aria-labelledby="s03-h"><div class="jm-wadah">
-    <header class="jm-sh">      <h2 id="s03-h" data-i18n="beranda.s03.h">Data yang tersedia</h2><p class="jm-sh-lead" data-i18n="beranda.s03.p">Angka dihitung dari data bersumber. Label EST menandai angka hasil hitungan sendiri.</p></header>
+    <header class="jm-sh">      <p class="jm-kh-ey"><svg class="jm-ik" width="16" height="16" aria-hidden="true" focusable="false"><use href="/img/ikon.svg#i-daftar"/></svg><span data-i18n="beranda.s03.ey">Cakupan data</span></p><h2 id="s03-h" data-i18n="beranda.s03.h">Data yang tersedia</h2><p class="jm-sh-lead" data-i18n="beranda.s03.p">Angka dihitung dari data bersumber. Label EST menandai angka hasil hitungan sendiri.</p></header>
     <div class="jm-ds-kisi" id="dataset"></div>
   </div></section>
 <section class="jm-bagian jm-pita" id="s04" aria-labelledby="s04-h"><div class="jm-wadah">
-    <header class="jm-sh">      <h2 id="s04-h" data-i18n="beranda.s04.h">Lokasi proyek dan emisi pembangkit</h2><p class="jm-sh-lead" data-i18n="beranda.s04.p">Peta proyek menurut teknologi dan program, dan sebaran emisi pembangkit listrik.</p></header>
+    <header class="jm-sh">      <p class="jm-kh-ey"><svg class="jm-ik" width="16" height="16" aria-hidden="true" focusable="false"><use href="/img/ikon.svg#i-peta"/></svg><span data-i18n="beranda.s04.ey">Peta</span></p><h2 id="s04-h" data-i18n="beranda.s04.h">Lokasi proyek dan emisi pembangkit</h2><p class="jm-sh-lead" data-i18n="beranda.s04.p">Peta proyek menurut teknologi dan program, dan sebaran emisi pembangkit listrik.</p></header>
     <div class="jm-ds jm-w2 jm-peta-kartu" id="petaKartu">
       <div class="jm-peta-info" id="petaInfo"></div>
       <div class="jm-peta" id="petaEl" role="img" data-i18n-attr="aria-label:beranda.peta.aria" aria-label="Peta proyek energi terbarukan menurut teknologi dan program"></div>
@@ -68,14 +70,14 @@
     <div class="jm-ds jm-w4 jm-peta-kartu" id="karbon"></div>
   </div></section>
 <section class="jm-bagian" id="s05" aria-labelledby="s05-h"><div class="jm-wadah">
-    <header class="jm-sh">      <h2 id="s05-h" data-i18n="beranda.s05.h">Teknologi di lapangan</h2><p class="jm-sh-lead" data-i18n="beranda.s05.p">Jumlah proyek per teknologi dan jumlah organisasi per jenis.</p></header>
+    <header class="jm-sh">      <p class="jm-kh-ey"><svg class="jm-ik" width="16" height="16" aria-hidden="true" focusable="false"><use href="/img/ikon.svg#i-tek-surya"/></svg><span data-i18n="beranda.s05.ey">Teknologi</span></p><h2 id="s05-h" data-i18n="beranda.s05.h">Teknologi di lapangan</h2><p class="jm-sh-lead" data-i18n="beranda.s05.p">Jumlah proyek per teknologi dan jumlah organisasi per jenis.</p></header>
     <div class="jm-foto-kisi" id="foto"></div>
     <div class="jm-tile-kisi" id="sensus"></div>
     <p class="jm-sumber" id="sensusSumber"></p>
     <p class="jm-sumber" id="fotoKredit"></p>
   </div></section>
 <section class="jm-bagian jm-pita" id="s06" aria-labelledby="s06-h"><div class="jm-wadah">
-    <header class="jm-sh">      <h2 id="s06-h" data-i18n="beranda.s06.h">Halaman dari data yang sama</h2><p class="jm-sh-lead" data-i18n="beranda.s06.p">Halaman lain yang memakai data ini.</p></header>
+    <header class="jm-sh">      <p class="jm-kh-ey"><svg class="jm-ik" width="16" height="16" aria-hidden="true" focusable="false"><use href="/img/ikon.svg#i-beranda"/></svg><span data-i18n="beranda.s06.ey">Jelajah</span></p><h2 id="s06-h" data-i18n="beranda.s06.h">Halaman dari data yang sama</h2><p class="jm-sh-lead" data-i18n="beranda.s06.p">Halaman lain yang memakai data ini.</p></header>
     <div class="jm-bento-kisi" id="bento"></div>
   </div></section>
 <section class="jm-bagian jm-pita" id="s08" aria-labelledby="ak-h"><div class="jm-wadah">

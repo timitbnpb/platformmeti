@@ -1,4 +1,6 @@
 import { mulaiHalaman } from "/inti/kepala.js";
+import { tombolKoreksi } from "/inti/koreksi.js";
+import { khUbin } from "/inti/kh.js";
 import { t, angka, tanggal } from "/i18n.js";
 import { esc, nanti, debounce, hantuHtml, kosongHtml, galatHtml, ikon } from "/inti/umum.js";
 import { cariHtml, pilihHtml, hapusHtml, exHtml, sumberHtml, unduhRegHtml } from "/inti/komponen.js";
@@ -208,6 +210,7 @@ function profilHtml(r) {
   return `<div class="jm-lembar-isi"><div class="jm-lembar-kepala"><div><p class="jm-baris-no">${esc(namaRegulasi(r))}</p><h2 id="lembar-j">${esc(r.judul)}</h2></div>
     <button type="button" class="iconbtn" data-aksi="tutup" aria-label="${esc(t("jm.tutup"))}">${ikon("tutup", 22)}</button></div>
     <div class="jm-baris-meta">${r.instansi_penerbit ? penerbitHtml(r.instansi_penerbit, 32) : ""}${pil(r)}<span class="jm-pil">${esc(label("reg.tingkat.", tingkatDari(r)))}</span></div>
+    <p>${tombolKoreksi({ entitas: "regulasi", id: r.id, nama: namaRegulasi(r) })}</p>
     <dl class="jm-dl">${dd("reg.f.jenis", esc(label("reg.jenis.", r.jenis)))}${dd("reg.f.penerbit", esc(r.instansi_penerbit))}${dd("reg.f.ditetapkan", esc(tanggal(r.tanggal_ditetapkan)))}${r.tanggal_diundangkan ? dd("reg.f.diundangkan", esc(tanggal(r.tanggal_diundangkan))) : ""}${dd("reg.f.topik", (r.topik || []).map((x) => esc(label("reg.topik.", x))).join(", "))}</dl>
     <section><h3>${esc(t("reg.f.ringkasan"))} ${/^\S+ \d+\/\d+ mengatur /.test(r.ringkasan || "") ? `<span class="jm-pil jm-pil-est">${esc(t("reg.otomatis"))}</span>` : ""}</h3><p>${esc(r.ringkasan || "-")}</p></section>
     ${r.posisi_meti ? `<section class="jm-posisi"><h3>${esc(t("reg.f.posisi"))}</h3><p>${esc(r.posisi_meti)}</p></section>` : ""}
@@ -244,7 +247,12 @@ async function muatData() {
     return true;
   } catch (e) { isi.innerHTML = galatHtml("layanan"); return false; }
 }
+function gambarKepala() {
+  const n = (s) => D.baris.filter((r) => r.status === s).length;
+  khUbin("khUbin", [{ ikon: "regulasi", nilai: angka(D.baris.length), label: t("reg.n.total") }, { ikon: "centang", nilai: angka(n("berlaku")), label: label("reg.status.", "berlaku") }, { ikon: "ubah", nilai: angka(n("diubah")), label: label("reg.status.", "diubah") }, { ikon: "blokir", nilai: angka(n("dicabut")), label: label("reg.status.", "dicabut") }]);
+}
 function gambarSemua() {
+  gambarKepala();
   gambarSaring(); gambarIsi(); gambarRuu();
   document.querySelector("#ex-reg .jm-ex-aksi").innerHTML = aksiHtml({ csv: true }) + sumberHtml(esc(t("reg.sumber", { tanggal: tanggal(D.diambil) })));
 }

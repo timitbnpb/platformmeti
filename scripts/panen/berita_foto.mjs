@@ -67,17 +67,7 @@ await Promise.all(Array.from({ length: 6 }, kerja));
 // Hanya https, host bernama (bukan IP/localhost/port). Host foto -> img-src di public/_headers (diperbarui di bawah).
 const layak = (u) => { try { const x = new URL(u); return x.protocol === 'https:' && !x.port && /^[a-z0-9-]+(\.[a-z0-9-]+)+$/.test(x.hostname) && !/^\d+(\.\d+)+$/.test(x.hostname); } catch { return false; } };
 for (const [id, u] of Object.entries(peta)) if (!layak(u)) delete peta[id];
-// CSP: satu baris _headers maks 2000 karakter, tanpa '*' (gerbang-headers H2): host dipilih serakah menurut jumlah foto sampai muat; foto host sisa dibuang (celah, dicatat).
-const HDR = AKAR + 'public/_headers', hdr = readFileSync(HDR, 'utf8');
-const CSP = /(Content-Security-Policy:.*img-src 'self' data: blob: https:\/\/tiles\.openfreemap\.org https:\/\/i\.ytimg\.com)[^;]*/;
-const hitung = {}; for (const u of Object.values(peta)) { const h = new URL(u).host; hitung[h] = (hitung[h] || 0) + 1; }
-let sisaPanjang = 2000 - hdr.replace(CSP, '$1').match(/Content-Security-Policy:.*/)[0].length - 2; const hosts = [];
-for (const h of Object.keys(hitung).sort((x, y) => hitung[y] - hitung[x] || x.localeCompare(y))) { if (h.length + 9 <= sisaPanjang) { hosts.push(h); sisaPanjang -= h.length + 9; } }
-for (const [id, u] of Object.entries(peta)) if (!hosts.includes(new URL(u).host)) delete peta[id];
-hosts.sort();
-const baru = hdr.replace(CSP, '$1 ' + hosts.map((h) => 'https://' + h).join(' '));
-if (baru !== hdr) writeFileSync(HDR, baru);
-console.log('img-src host:', hosts.length, 'dari', Object.keys(hitung).length, 'panjang CSP', baru.match(/Content-Security-Policy:.*/)[0].length);
+// Foto dilayani Worker (GET /api/foto-berita/:id): CSP img-src cukup 'self', tanpa daftar host.
 writeFileSync(KELUAR, JSON.stringify(peta));
 mkdirSync(AKAR + 'data-panen/berita', { recursive: true }); writeFileSync(RINGKAS, JSON.stringify(ringkas));
 console.log(`foto: ${Object.keys(peta).length} dari ${baris.length} (rss ${dariRss}, og ${og}); host diblok ${[...blok].join(',') || '-'}`);

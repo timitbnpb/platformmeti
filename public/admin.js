@@ -5,6 +5,10 @@ import { esc, api, nanti, debounce, hantuHtml, kosongHtml, galatHtml, galatTeks,
 import { mulaiHalaman } from "/inti/kepala.js";
 import { panelAnggota } from "/admin_anggota.js";
 import { panelAgenda } from "/admin_agenda.js";
+import { panelKoreksi, panelAudit } from "/admin_koreksi.js";
+import { panelKesehatan } from "/admin_kesehatan.js";
+import { panelStatistik } from "/admin_statistik.js";
+import { panelBeranda } from "/admin_beranda.js";
 
 const saya = await mulaiHalaman();
 const $ = (id) => document.getElementById(id);
@@ -29,11 +33,11 @@ function jalan() {
   const peranBisa = sa ? PERAN : PERAN.filter((p) => p !== "super");
   // kurator: hanya tab Anggota (tab Akun dan Jejak tidak ada di DOM; server tetap menolak). CSV hanya admin dan super.
   const adm = ["admin", "super"].includes(saya.peran);
-  const TAB = [...(adm ? [["akun", "admin.tab.akun", "orang"], ["jejak", "admin.tab.jejak", "jejak"]] : []), ["anggota", "adm.anggota.tab", "daftar"], ["agenda", "adm.agenda.tab", "kalender"]];
+  const TAB = [...(adm ? [["akun", "admin.tab.akun", "orang"]] : []), ["koreksi", "admin.tab.koreksi", "ubah"], ...(adm ? [["jejak", "admin.tab.jejak", "jejak"]] : []), ["kesehatan", "admin.tab.kesehatan", "centang"],
+    ...(adm ? [["statistik", "admin.tab.statistik", "analisis"], ["beranda", "admin.tab.beranda", "beranda"]] : []), ["anggota", "adm.anggota.tab", "daftar"], ["agenda", "adm.agenda.tab", "kalender"]];
   let tab = TAB[0][0];
 
   const A = { cari: "", peran: "", status: "", hal: 1, baris: [], galat: null, ctl: null };
-  const J = { tabel: "", baris: "", hal: 1, rows: [], galat: null, ctl: null };
 
   const daftarDari = (d, kunci) => (Array.isArray(d) ? d : d && (d[kunci] || d.data || d.baris)) || [];
   const opsi = (daftar, awalan, pilih, semua) =>
@@ -83,7 +87,9 @@ function jalan() {
     tab = k;
     kabari("ok", "");
     $("panel").setAttribute("aria-labelledby", "tab-" + k);
-    if (k === "akun") panelAkun(); else if (k === "jejak") panelJejak(); else if (k === "agenda") panelAgenda($("panel"), saya); else panelAnggota($("panel"), { boleh: adm, kabari });
+    const P = $("panel");
+    if (k === "akun") panelAkun(); else if (k === "jejak") panelAudit(P); else if (k === "koreksi") panelKoreksi(P); else if (k === "kesehatan") panelKesehatan(P);
+    else if (k === "statistik") panelStatistik(P); else if (k === "beranda") panelBeranda(P); else if (k === "agenda") panelAgenda(P, saya); else panelAnggota(P, { boleh: adm, kabari });
   }
 
   /* ---------- tab Akun ---------- */
@@ -241,69 +247,12 @@ function jalan() {
   dlg.addEventListener("click", (e) => { if (e.target.closest('[data-aksi="batal"]')) dlg.close(); });
   dlg.addEventListener("change", (e) => { if (e.target.id === "dPeran") $("dProvKolom").hidden = e.target.value !== "wilayah"; });
 
-  /* ---------- tab Jejak ---------- */
-
-  function panelJejak() {
-    $("panel").innerHTML = `
-      <div class="jm-bar jm-adm-jejak">
-        <div class="jm-medan"><label class="sr" for="jTabel">${esc(t("jejak.f.tabel"))}</label>
-          <input class="jm-isian" id="jTabel" type="search" maxlength="40" autocomplete="off" placeholder="${esc(t("jejak.f.tabel"))}" value="${esc(J.tabel)}"></div>
-        <div class="jm-medan"><label class="sr" for="jBaris">${esc(t("jejak.f.baris"))}</label>
-          <input class="jm-isian" id="jBaris" type="search" maxlength="80" autocomplete="off" placeholder="${esc(t("jejak.f.baris"))}" value="${esc(J.baris)}"></div>
-      </div>
-      <div id="jDaftar" aria-live="polite"></div>
-      <div class="jm-hal" id="jHal"></div>`;
-    muatJejak();
-  }
-
-  async function muatJejak() {
-    if (J.ctl) J.ctl.abort();
-    J.ctl = new AbortController();
-    $("jDaftar").innerHTML = hantuHtml(5);
-    const q = new URLSearchParams({ hal: String(J.hal) });
-    if (J.tabel) q.set("tabel", J.tabel);
-    if (J.baris) q.set("baris", J.baris);
-    try {
-      J.rows = daftarDari(await api("/api/admin/jejak?" + q, { signal: J.ctl.signal }), "jejak");
-      J.galat = null;
-    } catch (e) {
-      if (e.name === "AbortError") return;
-      J.galat = e.kode || "umum";
-      J.rows = [];
-    }
-    nanti(() => { if (tab === "jejak") gambarJejak(); });
-  }
-
-  function gambarJejak() {
-    const daftar = $("jDaftar");
-    if (!daftar) return;
-    if (J.galat) daftar.innerHTML = galatHtml(J.galat);
-    else if (!J.rows.length) daftar.innerHTML = kosongHtml("jm.kosong.cocok", J.tabel || J.baris ? { data: "reset", kunci: "jm.kosong.reset" } : null);
-    else {
-      const baris = J.rows.map((r) => {
-        const siapa = r.siapa == null ? t("jejak.sistem") : "#" + r.siapa + (r.peran ? " " + labelPeran(r.peran) : "");
-        const rinci = r.dari || r.ke
-          ? `<details><summary>${esc(t("jejak.rincian"))}</summary><pre>${esc(r.dari ? t("jejak.dari") + ": " + r.dari : "")}${r.dari && r.ke ? "\n" : ""}${esc(r.ke ? t("jejak.ke") + ": " + r.ke : "")}</pre></details>` : "-";
-        return `<tr><td class="jm-nowrap" data-l="${esc(t("jejak.k.waktu"))}"><span>${esc(tanggal(tanggalDariUnix(r.kapan)))}<small>${esc(jam(r.kapan))}</small></span></td>
-          <td data-l="${esc(t("jejak.k.siapa"))}">${esc(siapa)}</td><td data-l="${esc(t("jejak.k.aksi"))}">${esc(ada("jejak.aksi." + r.aksi) ? t("jejak.aksi." + r.aksi) : r.aksi)}</td>
-          <td data-l="${esc(t("jejak.k.objek"))}">${esc(r.tabel)}${r.baris_id ? `<small>${esc("#" + r.baris_id)}</small>` : ""}</td><td data-l="${esc(t("jejak.rincian"))}">${rinci}</td></tr>`;
-      }).join("");
-      daftar.innerHTML = `<div class="jm-gulir jm-adm-jejak"><table class="jm-tabel"><thead><tr>
-        <th scope="col">${esc(t("jejak.k.waktu"))}</th><th scope="col">${esc(t("jejak.k.siapa"))}</th><th scope="col">${esc(t("jejak.k.aksi"))}</th><th scope="col">${esc(t("jejak.k.objek"))}</th><th scope="col">${esc(t("jejak.rincian"))}</th>
-        </tr></thead><tbody>${baris}</tbody></table></div>`;
-    }
-    halaman("jHal", J.hal, J.rows.length);
-  }
-
   /* ---------- penangan panel ---------- */
 
   const cariDebounce = debounce(() => { A.hal = 1; muatAkun(); });
-  const jejakDebounce = debounce(() => { J.hal = 1; muatJejak(); });
 
   function inputPanel(e) {
     if (e.target.id === "aCari") { A.cari = e.target.value.trim(); cariDebounce(); }
-    else if (e.target.id === "jTabel") { J.tabel = e.target.value.trim(); jejakDebounce(); }
-    else if (e.target.id === "jBaris") { J.baris = e.target.value.trim(); jejakDebounce(); }
   }
   function ubahPanel(e) {
     if (e.target.id === "aPeran") { A.peran = e.target.value; A.hal = 1; muatAkun(); }
@@ -313,8 +262,8 @@ function jalan() {
 
   function klikPanel(e) {
     const b = e.target.closest("button");
-    if (!b || tab === "anggota" || tab === "agenda") return; // tab Anggota dan Agenda punya penangan sendiri
-    const ke = (tab === "akun" ? A : J);
+    if (!b || tab !== "akun") return; // tab lain punya penangan sendiri
+    const ke = A;
     switch (b.id === "aBuat" ? "buat" : b.dataset.aksi) {
       case "buat": {
         const form = $("aForm");
@@ -325,12 +274,12 @@ function jalan() {
         break;
       }
       case "batal-buat": $("aForm").hidden = true; $("aBuat").setAttribute("aria-expanded", "false"); break;
-      case "hal-": ke.hal = Math.max(1, ke.hal - 1); tab === "akun" ? muatAkun() : muatJejak(); break;
-      case "hal+": ke.hal += 1; tab === "akun" ? muatAkun() : muatJejak(); break;
+      case "hal-": ke.hal = Math.max(1, ke.hal - 1); muatAkun(); break;
+      case "hal+": ke.hal += 1; muatAkun(); break;
       case "reset":
-        if (tab === "akun") { A.cari = A.peran = A.status = ""; A.hal = 1; panelAkun(); } else { J.tabel = J.baris = ""; J.hal = 1; panelJejak(); }
+        A.cari = A.peran = A.status = ""; A.hal = 1; panelAkun();
         break;
-      case "ulang": tab === "akun" ? muatAkun() : muatJejak(); break;
+      case "ulang": muatAkun(); break;
       case "peran": { const r = cari(b.dataset.id); if (r) dialogPeran(r); break; }
       case "nonaktif": { const r = cari(b.dataset.id); if (r) dialogNonaktif(r); break; }
       case "taut": buatTaut(b); break;

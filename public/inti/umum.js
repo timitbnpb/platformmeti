@@ -3,6 +3,9 @@ import { t, ada } from "/i18n.js";
 
 export const esc = (s) => String(s ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]);
 
+/** Foto berita lewat Worker (tanpa host luar di CSP): peta = berita_foto.json, kosong bila id tak punya foto. */
+export const fotoBerita = (peta, id) => (peta && peta[id] ? "/api/foto-berita/" + encodeURIComponent(id) : "");
+
 /** Serahkan kerja berat SESUDAH satu bingkai tercat (dua rAF; setTimeout jaring untuk tab tersembunyi). INP.md kelas kelima. */
 export function nanti(fn) {
   let sudah = false;
@@ -29,7 +32,7 @@ export function amanKe(ke) {
 export class GalatApi extends Error {
   constructor(kode, status) { super(kode); this.kode = kode; this.status = status; }
 }
-const KODE_STATUS = { 401: "belum-masuk", 403: "dilarang", 404: "tidak-ada", 405: "metode", 409: "konflik", 413: "terlalu-besar", 422: "salah-masukan", 429: "terlalu-sering", 502: "layanan" };
+const KODE_STATUS = { 401: "belum-masuk", 403: "dilarang", 404: "tidak-ada", 405: "metode", 409: "konflik", 413: "terlalu-besar", 422: "salah-masukan", 429: "terlalu-sering", 502: "layanan", 503: "fitur_belum_aktif" };
 
 export async function api(jalur, { metode = "GET", badan, signal } = {}) {
   const opsi = { method: metode, credentials: "same-origin", headers: { "x-pb": "1" }, signal };

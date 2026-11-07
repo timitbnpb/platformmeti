@@ -1,11 +1,12 @@
 /* Pembantu halaman publik statis (beranda, regulasi, kalender): baca /data/*.json dan label kamus. */
 import { t, ada } from "/i18n.js";
+import { namaBaku } from "/inti/nama_baku.js";
 
 const simpan = new Map();
 /** Baca /data/<nama>.json sekali; gagal tidak disimpan supaya "Coba lagi" bisa mengulang. */
 export function muat(nama) {
   if (!simpan.has(nama)) {
-    simpan.set(nama, fetch(`/data/${nama}.json`).then((r) => { if (!r.ok) throw new Error(nama); return r.json(); }).catch((e) => { simpan.delete(nama); throw e; }));
+    simpan.set(nama, fetch(`/data/${nama}.json`).then((r) => { if (!r.ok) throw new Error(nama); return r.json(); }).then((d) => { for (const b of d && Array.isArray(d.baris) ? d.baris : []) if (b && typeof b.nama === "string") b.nama = namaBaku(b.nama).nama; return d; }).catch((e) => { simpan.delete(nama); throw e; }));
   }
   return simpan.get(nama);
 }

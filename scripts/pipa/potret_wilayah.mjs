@@ -148,6 +148,7 @@ export function bangunRantai() {
   })).sort((a, b) => (b.mwp ?? -1) - (a.mwp ?? -1) || a.nama.localeCompare(b.nama));
   const jml = (f) => pabrikan.filter(f).reduce((s, x) => s + (x.mwp || 0), 0);
   const total = jml(() => true), lokal = jml((x) => x.pasar === 'lokal'), ekspor = jml((x) => x.pasar !== 'lokal');
+  const lain = JSON.parse(fs.readFileSync(path.join(ROOT, 'data/rantai_pasok_plts.json'), 'utf-8'));
   const prog = pub('program.json').baris.find((x) => x.id === 'plts-100gw');
   const kota = {};
   for (const x of pabrikan) if (x.kota && KOTA[x.kota]) { const k = (kota[x.kota] ||= { kota: x.kota, lat: KOTA[x.kota][0], lng: KOTA[x.kota][1], pabrik: 0, mwp: 0 }); k.pabrik++; k.mwp += x.mwp || 0; }
@@ -161,6 +162,8 @@ export function bangunRantai() {
       terlacak: { proyek: prog?.jumlah_proyek ?? 0, mw: prog?.kapasitas_mw ?? 0, sumber: 'public/data/program.json (METI, bersumber RUPTL dan materi publik)' },
     },
     kota: Object.values(kota), pabrikan,
+    // Fasilitas non-modul + proyek (data/rantai_pasok_plts.json); kunci tambahan, tidak dibaca layar lama.
+    fasilitas_lain: lain.fasilitas, pembanding: lain.pembanding, tarif_as: lain.tarif_as, celah: lain.celah,
   };
 }
 
@@ -169,6 +172,7 @@ function tulis(nama, o) { fs.writeFileSync(path.join(ROOT, 'public/data', nama),
 if (process.argv.includes('--selftest')) {
   const w = bangunWilayah(), a = bangunAsean(), r = bangunRantai();
   assert.equal(w.jumlah, 38); assert.equal(a.jumlah, 10); assert.equal(r.ringkas.pabrikan, 40);
+  assert.ok(r.fasilitas_lain.every((x) => x.sumber.length && x.sumber.every((u) => u.url && u.tanggal && u.tingkat_bukti)), 'fasilitas tanpa sumber');
   assert.equal(Math.round(r.ringkas.total_mwp / 100) / 10, 24.9); assert.equal(Math.round(r.ringkas.ekspor_mwp / 100) / 10, 18.3);
   assert.ok(w.baris.every((b) => b.rued.perda || b.rued.nilai === null));
   assert.ok(!JSON.stringify([w, a, r]).match(/[\w.]+@[\w.]+/), 'tanpa surel');

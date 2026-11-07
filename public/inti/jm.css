@@ -65,7 +65,7 @@ dialog.jm-dlg::backdrop{background:rgb(11 23 38/.55)}
 .jm-gulir{overflow-x:auto;-webkit-overflow-scrolling:touch;border:1px solid var(--line-cell);border-radius:var(--r)}
 .jm-tabel{width:100%;border-collapse:separate;border-spacing:0;font-size:var(--t-body);font-variant-numeric:tabular-nums}
 .jm-tabel thead{background:linear-gradient(90deg,var(--brand),var(--brand2))}
-.jm-tabel th{padding:12px 14px;background:transparent;color:var(--on-brand);font:600 var(--t-label)/var(--lh-rapat) var(--font);letter-spacing:.08em;text-transform:uppercase;text-align:center;white-space:nowrap;border-bottom:2px solid var(--meti-lime)}
+.jm-tabel th{padding:12px 14px;background:transparent;color:var(--on-brand);font:600 var(--t-label)/var(--lh-rapat) var(--font);letter-spacing:normal;text-transform:none;text-align:center;white-space:nowrap;border-bottom:2px solid var(--meti-lime)}
 .jm-tabel thead th:first-child{border-top-left-radius:calc(var(--r) - 1px)}.jm-tabel thead th:last-child{border-top-right-radius:calc(var(--r) - 1px)}
 .jm-tabel td{padding:12px 16px;border-bottom:1px solid var(--line-cell);vertical-align:middle;text-align:left;line-height:var(--lh-rapat)}
 /* tautan di sel: tanpa garis bawah, tebal, hover hijau; kolom angka selebar judulnya agar angka berada di bawah judul */
@@ -151,9 +151,9 @@ th[aria-sort="descending"] .jm-urut::after{opacity:1;clip-path:polygon(0 0,100% 
 .jm-ex{background:var(--card);border:1px solid var(--line);border-radius:var(--r-lg);box-shadow:var(--shadow);min-width:0}
 .jm-ex>.jm-ex-hd{border-radius:var(--r-lg) var(--r-lg) 0 0;position:relative;display:grid;grid-template-columns:minmax(0,1fr) auto;gap:6px 16px;align-items:start;padding:18px 22px 14px;background:linear-gradient(180deg,var(--surface),color-mix(in srgb,var(--surface) 40%,var(--card)));border-bottom:1px solid var(--line)}
 .jm-ex>.jm-ex-hd>.jm-ex-teks{min-width:0}
-.jm-ex .jm-ex-ey{display:inline-flex;align-items:center;gap:6px;margin-bottom:8px;padding:3px 10px;border-radius:var(--r-pil);background:var(--soft-hijau);color:var(--accent);font:700 var(--t-label)/var(--lh-rapat) var(--font);letter-spacing:.08em;text-transform:uppercase}
+.jm-ex .jm-ex-ey{display:inline-flex;align-items:center;gap:6px;margin-bottom:8px;padding:3px 10px;border-radius:var(--r-pil);background:var(--soft-hijau);color:var(--accent);font:700 var(--t-label)/var(--lh-rapat) var(--font);letter-spacing:normal;text-transform:none}
 .jm-ex .jm-ex-ey .jm-ik{width:14px;height:14px}
-.jm-ex .jm-ex-j{margin:0;font:700 clamp(17px,1.6vw,21px)/1.3 var(--display);letter-spacing:-.01em;color:var(--head);text-wrap:balance;max-width:68ch}
+.jm-ex .jm-ex-j{margin:0;font:700 var(--t-h2)/var(--lh-rapat) var(--display);letter-spacing:-.01em;color:var(--head);text-wrap:balance;max-width:68ch}
 .jm-ex .jm-hl{color:var(--accent)}
 .jm-ex .jm-ex-sub{display:flex;flex-wrap:wrap;align-items:center;gap:6px;margin:8px 0 0;font:600 var(--t-tombol)/var(--lh-rapat) var(--font);color:var(--ink2)}
 .jm-ex .jm-ex-aksi{display:flex;align-items:center;gap:8px;flex-wrap:wrap;justify-content:flex-end}
@@ -285,7 +285,7 @@ nav.jm-isi{display:none!important}
 @media (prefers-reduced-motion:reduce){.jm-geser-pegangan::after{transition:none}}
 /* REL v2 (pemilik: versi ikon jelek): daftar isi berlabel yang selalu terbaca, kartu ramping di kanan, hanya bila ruang samping cukup (>=1600px) */
 .jm-rel{top:calc(var(--top) + 24px);transform:none;width:184px;padding:12px 8px 12px 0;gap:2px;border-radius:var(--r);align-items:stretch}
-.jm-rel::before{content:attr(aria-label);display:block;margin:0 0 6px 14px;font:700 var(--t-label)/var(--lh-judul) var(--font);letter-spacing:.08em;text-transform:uppercase;color:var(--ink2)}
+.jm-rel::before{content:attr(aria-label);display:block;margin:0 0 6px 14px;font:700 var(--t-label)/var(--lh-judul) var(--font);letter-spacing:normal;text-transform:none;color:var(--ink2)}
 .jm-rel-garis{left:6px;top:34px;bottom:14px;transform:none}
 .jm-rel a{width:auto;height:auto;justify-content:flex-start;gap:8px;padding:6px 10px 6px 16px;border-radius:0 var(--r-pil) var(--r-pil) 0}
 .jm-rel .jm-rel-ik{display:none}
@@ -348,8 +348,8 @@ p.jm-hitung.sr,.sr{position:absolute!important;width:1px;height:1px;overflow:hid
 .jm-lm-item:hover{border-color:var(--accent);background:var(--soft-hijau)}
 .jm-lm-item::before{content:"";position:absolute;left:-31px;top:27px;width:10px;height:10px;border-radius:50%;background:var(--ok)}
 .jm-lm-s-warn::before{background:var(--warn)}.jm-lm-s-bad::before{background:var(--bad)}
-.jm-lm-tgl{display:grid;justify-items:center;line-height:var(--lh-judul);color:var(--ink2)}.jm-lm-tgl b{font:700 var(--t-h3)/var(--lh-judul) var(--display);color:var(--head)}.jm-lm-tgl small{font-size:var(--t-label);text-transform:uppercase;letter-spacing:.08em}
-.jm-lm-jn{display:inline-flex;align-items:center;justify-content:center;min-height:24px;padding:0 8px;border-radius:6px;font:700 var(--t-label)/1 var(--display);letter-spacing:.08em;text-transform:uppercase;color:var(--head)}
+.jm-lm-tgl{display:grid;justify-items:center;line-height:var(--lh-judul);color:var(--ink2)}.jm-lm-tgl b{font:700 var(--t-h3)/var(--lh-judul) var(--display);color:var(--head)}.jm-lm-tgl small{font-size:var(--t-label);text-transform:none;letter-spacing:normal}
+.jm-lm-jn{display:inline-flex;align-items:center;justify-content:center;min-height:24px;padding:0 8px;border-radius:6px;font:700 var(--t-label)/1 var(--display);letter-spacing:normal;text-transform:none;color:var(--head)}
 .jm-lm-no{font:700 var(--t-body)/var(--lh-rapat) var(--display);color:var(--ink);white-space:nowrap}
 .jm-lm-judul{display:grid;gap:4px;min-width:0}
 .jm-lm-j2{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;font-size:var(--t-body);line-height:var(--lh-rapat)}
@@ -408,3 +408,8 @@ p.jm-hitung.sr,.sr{position:absolute!important;width:1px;height:1px;overflow:hid
 .jm-pk-sel small{display:inline-flex;align-items:center;gap:4px;font-size:var(--t-kecil);color:var(--ink2)}
 .jm-pk-aksi{display:inline-flex;align-items:center;gap:6px;white-space:nowrap}
 @media (max-width:760px){.jm-pk-ub2{grid-template-columns:1fr}.jm-pk-aksi{justify-self:center}}
+/* Peran tipografi (gerbang-tipografi): halaman mewarisi, tidak menulis ukuran sendiri. */
+.jm-eyebrow{font:700 var(--t-label)/var(--lh-rapat) var(--font);letter-spacing:normal;text-transform:none}
+.jm-bantu{font:400 var(--t-kecil)/var(--lh-rapat) var(--font);color:var(--ink2)}
+.jm-angka{font:700 var(--t-angka)/var(--lh-judul) var(--display);font-variant-numeric:tabular-nums}
+button,.jm-tbl,.jm-pil,.jm-chip{font-family:var(--font);font-weight:600}

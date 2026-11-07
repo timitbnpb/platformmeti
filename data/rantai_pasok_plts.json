@@ -1,0 +1,508 @@
+{
+ "diperbarui": "2026-11-07",
+ "fasilitas": [
+  {
+   "id": "f_tmai_sel",
+   "nama": "PT Trina Mas Agra Indonesia (sel surya)",
+   "perusahaan_id": "p_f21482de0d",
+   "merek": "Trina Solar",
+   "komponen": [
+    "sel surya"
+   ],
+   "lokasi": {
+    "kota": "Kendal",
+    "provinsi": "Jawa Tengah",
+    "lat": -6.92,
+    "lng": 110.2,
+    "koordinat_perkiraan": true
+   },
+   "kapasitas": 1000,
+   "satuan": "MWp/tahun",
+   "status": "beroperasi",
+   "pasar": null,
+   "tahun_mulai": 2025,
+   "tkdn": null,
+   "pemilik": "Trina Solar; PT PLN Indonesia Power Renewables; PT Dian Swastatika Sentosa",
+   "negara_investor": "Tiongkok",
+   "catatan": "Pabrik sel dan modul terintegrasi pertama di Indonesia (TOPCon), KEK Kendal; investasi Rp1,5 triliun; rencana naik ke 3 GW dalam 2-3 tahun; modulnya sudah tercatat di daftar DJEBTKE.",
+   "sumber": [
+    {
+     "url": "https://www.antaranews.com/berita/4911013/menperin-meresmikan-pabrik-panel-surya-terbesar-di-indonesia",
+     "media": "ANTARA",
+     "tanggal": "2025-06-19",
+     "tingkat_bukti": "media"
+    },
+    {
+     "url": "https://www.antaranews.com/berita/5037269/menteri-bahlil-datangi-perusahaan-solar-pv-untuk-realisasi-plts-100-gw",
+     "media": "ANTARA",
+     "tanggal": "2025-08-14",
+     "tingkat_bukti": "media"
+    },
+    {
+     "url": "https://www.antaranews.com/berita/4800125/pln-indonesia-power-perkuat-industri-plts-dari-hulu-hingga-hilir",
+     "media": "ANTARA",
+     "tanggal": "2025-04-28",
+     "tingkat_bukti": "media"
+    }
+   ]
+  },
+  {
+   "id": "f_seg_batang",
+   "nama": "SEG Solar Indonesia (kawasan industri PV terintegrasi)",
+   "perusahaan_id": "p_1caeeedd8b",
+   "merek": "SEG Solar",
+   "komponen": [
+    "ingot",
+    "wafer",
+    "sel surya",
+    "modul surya"
+   ],
+   "lokasi": {
+    "kota": "Batang",
+    "provinsi": "Jawa Tengah",
+    "lat": -6.91,
+    "lng": 109.73,
+    "koordinat_perkiraan": true
+   },
+   "kapasitas": 5000,
+   "satuan": "MWp/tahun",
+   "status": "konstruksi",
+   "pasar": null,
+   "tahun_mulai": 2024,
+   "tkdn": null,
+   "pemilik": "SEG Solar Inc.; ATW Group (mitra Indonesia)",
+   "negara_investor": "Amerika Serikat",
+   "catatan": "Rencana 5 GW ingot-wafer, 5 GW sel, 5 GW modul di KITB/Grand Batang City; fase 1: 5 GW sel (10 lini TOPCon) + 3 GW modul, target Q2 2025; investasi US$500 juta (Rp5 triliun) di lahan 40 ha. Status terakhir fase 1 belum terverifikasi. Pabrik modul SEG ada di daftar DJEBTKE (2.000 MWp).",
+   "sumber": [
+    {
+     "url": "https://www.antaranews.com/berita/4370775/seg-solar-mulai-bangun-kawasan-industri-fotovoltaik-terintegrasi-dan-terbesar-di-indonesia",
+     "media": "ANTARA/PRNewswire",
+     "tanggal": "2024-10-02",
+     "tingkat_bukti": "kata-pihak"
+    },
+    {
+     "url": "https://www.antaranews.com/berita/4106301/seg-solar-dan-grand-batang-city-resmikan-perjanjian-pemanfaatan-tanah-industri-untuk-kawasan-industri-pv",
+     "media": "ANTARA/PRNewswire",
+     "tanggal": "2024-05-16",
+     "tingkat_bukti": "kata-pihak"
+    },
+    {
+     "url": "https://www.antaranews.com/berita/4367439/bkpm-sebut-pabrik-seg-solar-di-kitb-dorong-pemanfaatan-energi-bersih",
+     "media": "ANTARA",
+     "tanggal": "2024-09-30",
+     "tingkat_bukti": "media"
+    }
+   ]
+  },
+  {
+   "id": "f_gstar",
+   "nama": "Gstar (pabrik silicon rod dan wafer)",
+   "perusahaan_id": null,
+   "merek": "Gstar",
+   "komponen": [
+    "ingot",
+    "wafer"
+   ],
+   "lokasi": {
+    "kota": null,
+    "provinsi": null,
+    "lat": null,
+    "lng": null,
+    "koordinat_perkiraan": null
+   },
+   "kapasitas": 3000,
+   "satuan": "MW/tahun (3 GW crystal pulling dan 3 GW slicing)",
+   "status": "konstruksi",
+   "pasar": null,
+   "tahun_mulai": 2024,
+   "tkdn": null,
+   "pemilik": "Gstar",
+   "negara_investor": "Tiongkok",
+   "catatan": "Groundbreaking Mei 2024; 182 mm dan 210 mm; target produksi akhir 2024; lahan 60.000 m2. Rilis hanya menyebut 'Jakarta, Indonesia' (baris dateline), lokasi pabrik tidak terkonfirmasi, jadi dikosongkan. Status terkini belum terverifikasi.",
+   "sumber": [
+    {
+     "url": "https://www.antaranews.com/berita/4090908/gstar-umumkan-langkah-strategis-peletakan-batu-pertama-pabrik-silicon-wafer-di-indonesia",
+     "media": "ANTARA/PRNewswire",
+     "tanggal": "2024-05-06",
+     "tingkat_bukti": "kata-pihak"
+    }
+   ]
+  },
+  {
+   "id": "f_yingfa_bci",
+   "nama": "BCI (anak usaha Yingfa Ruineng, sel surya)",
+   "perusahaan_id": null,
+   "merek": "Yingfa Ruineng",
+   "komponen": [
+    "sel surya"
+   ],
+   "lokasi": {
+    "kota": null,
+    "provinsi": null,
+    "lat": null,
+    "lng": null,
+    "koordinat_perkiraan": null
+   },
+   "kapasitas": 7500,
+   "satuan": "MWp/tahun",
+   "status": "beroperasi",
+   "pasar": "keduanya",
+   "tahun_mulai": 2026,
+   "tkdn": null,
+   "pemilik": "Yingfa Ruineng",
+   "negara_investor": "Tiongkok",
+   "catatan": "Sel N-type TOPCon 7,5 GW; basis manufaktur pertama Yingfa di luar negeri; hub pasokan Asia Tenggara dan Timur Tengah sekaligus untuk TKDN lokal. Rilis hanya menyebut acara di Jakarta; lokasi pabrik tidak disebut.",
+   "sumber": [
+    {
+     "url": "https://www.antaranews.com/berita/5828235/yingfa-perkuat-manufaktur-sel-surya-di-indonesia-dengan-kapasitas-produksi-75-gw-dukung-rantai-pasok-lokal-dan-regulasi-tkdn",
+     "media": "ANTARA/PRNewswire",
+     "tanggal": "2026-11-03",
+     "tingkat_bukti": "kata-pihak"
+    }
+   ]
+  },
+  {
+   "id": "f_xinyi_gresik",
+   "nama": "PT Xinyi Solar Indonesia / PT Xinyi Glass Indonesia (JIIPE Gresik)",
+   "perusahaan_id": null,
+   "merek": "Xinyi",
+   "komponen": [
+    "kaca surya"
+   ],
+   "lokasi": {
+    "kota": "Gresik",
+    "provinsi": "Jawa Timur",
+    "lat": -7.1,
+    "lng": 112.62,
+    "koordinat_perkiraan": true
+   },
+   "kapasitas": null,
+   "satuan": null,
+   "status": "beroperasi",
+   "pasar": "ekspor",
+   "tahun_mulai": 2024,
+   "tkdn": null,
+   "pemilik": "Xinyi Group (Hong Kong)",
+   "negara_investor": "Tiongkok/Hong Kong",
+   "catatan": "KEK JIIPE; PGN pasok gas 18 BBTUD (Agu 2024); produk diekspor ke 45 negara, serapan kerja lokal 70 persen (Menperin, Okt 2026). Kapasitas kaca tidak disebut.",
+   "sumber": [
+    {
+     "url": "https://www.antaranews.com/berita/4262787/pgnpasok-gas-bumi-18-bbtudke-industri-panel-surya-di-gresik",
+     "media": "ANTARA",
+     "tanggal": "2024-08-15",
+     "tingkat_bukti": "media"
+    },
+    {
+     "url": "https://www.antaranews.com/berita/5791489/menperin-tekankan-penataan-sdm-di-kawasan-industri-gresik",
+     "media": "ANTARA",
+     "tanggal": "2026-10-16",
+     "tingkat_bukti": "media"
+    },
+    {
+     "url": "https://www.antaranews.com/berita/5790837/menperin-jiipe-berkontribusi-tingkatkan-aktivitas-ekonomi-gresik",
+     "media": "ANTARA",
+     "tanggal": "2026-10-16",
+     "tingkat_bukti": "media"
+    }
+   ]
+  },
+  {
+   "id": "f_xinyi_rempang",
+   "nama": "Xinyi International Investments (kawasan kaca dan solar, Rempang Eco-City)",
+   "perusahaan_id": null,
+   "merek": "Xinyi",
+   "komponen": [
+    "kaca surya"
+   ],
+   "lokasi": {
+    "kota": "Batam",
+    "provinsi": "Kepulauan Riau",
+    "lat": 0.85,
+    "lng": 104.15,
+    "koordinat_perkiraan": true
+   },
+   "kapasitas": null,
+   "satuan": null,
+   "status": "rencana",
+   "pasar": "ekspor",
+   "tahun_mulai": null,
+   "tkdn": null,
+   "pemilik": "Xinyi Group",
+   "negara_investor": "Tiongkok/Hong Kong",
+   "catatan": "MoU 28 Jul 2023 dengan BKPM; investasi US$11,5-11,6 miliar, 10 proyek (hilirisasi pasir kuarsa, kaca, panel surya); sekitar 95 persen untuk ekspor (Bahlil). Terhambat konflik lahan Rempang 2023; status terkini belum terverifikasi.",
+   "sumber": [
+    {
+     "url": "https://www.antaranews.com/berita/3656814/jokowi-gaet-investasi-115-miliar-dolar-as-dari-industri-kaca-china",
+     "media": "ANTARA",
+     "tanggal": "2023-07-28",
+     "tingkat_bukti": "media"
+    },
+    {
+     "url": "https://www.antaranews.com/berita/3752781/bahlil-investasi-116-miliar-dolar-as-di-rempang-proyek-besar",
+     "media": "ANTARA",
+     "tanggal": "2023-10-02",
+     "tingkat_bukti": "media"
+    }
+   ]
+  },
+  {
+   "id": "f_flat_iwip",
+   "nama": "PT Flat Solar Energy Indonesia (IWIP)",
+   "perusahaan_id": null,
+   "merek": null,
+   "komponen": [],
+   "lokasi": {
+    "kota": "Halmahera Tengah",
+    "provinsi": "Maluku Utara",
+    "lat": 0.45,
+    "lng": 127.95,
+    "koordinat_perkiraan": true
+   },
+   "kapasitas": null,
+   "satuan": null,
+   "status": "konstruksi",
+   "pasar": null,
+   "tahun_mulai": 2026,
+   "tkdn": null,
+   "pemilik": null,
+   "negara_investor": null,
+   "catatan": "Groundbreaking 8 Okt 2026 di Indonesia Weda Bay Industrial Park; berita hanya menyebut nama proyek (komponen tidak dijelaskan). Total tujuh groundbreaking IWIP senilai US$10,2 miliar.",
+   "sumber": [
+    {
+     "url": "https://www.antaranews.com/berita/5776614/prabowo-luncurkan-ekspor-perdana-baterai-ev-dan-11-proyek-di-iwip",
+     "media": "ANTARA",
+     "tanggal": "2026-10-08",
+     "tingkat_bukti": "media"
+    }
+   ]
+  },
+  {
+   "id": "f_hli",
+   "nama": "PT HLI Green Power (sel baterai)",
+   "perusahaan_id": null,
+   "merek": "HLI Green Power",
+   "komponen": [
+    "baterai (sel)"
+   ],
+   "lokasi": {
+    "kota": "Karawang",
+    "provinsi": "Jawa Barat",
+    "lat": -6.32,
+    "lng": 107.34,
+    "koordinat_perkiraan": true
+   },
+   "kapasitas": 10,
+   "satuan": "GWh/tahun",
+   "status": "beroperasi",
+   "pasar": null,
+   "tahun_mulai": 2024,
+   "tkdn": null,
+   "pemilik": "Hyundai Motor Group; LG Energy Solution",
+   "negara_investor": "Korea Selatan",
+   "catatan": "Pabrik sel baterai EV pertama Indonesia, diresmikan 3 Jul 2024; LG dilaporkan mundur dari konsorsium Apr 2025, pabrik HLI tetap beroperasi (Hyundai).",
+   "sumber": [
+    {
+     "url": "https://www.antaranews.com/berita/4791589/hyundai-sebut-pabrik-baterai-ev-hli-tetap-beroperasi-meski-lg-mundur",
+     "media": "ANTARA",
+     "tanggal": "2025-04-24",
+     "tingkat_bukti": "media"
+    }
+   ]
+  },
+  {
+   "id": "f_catib",
+   "nama": "PT Contemporary Amperex Technology Indonesia Battery (CATIB)",
+   "perusahaan_id": "p_c9b8bffbec",
+   "merek": "CATL",
+   "komponen": [
+    "baterai (sel)",
+    "baterai (pak)",
+    "BESS"
+   ],
+   "lokasi": {
+    "kota": "Karawang",
+    "provinsi": "Jawa Barat",
+    "lat": -6.32,
+    "lng": 107.34,
+    "koordinat_perkiraan": true
+   },
+   "kapasitas": 6.9,
+   "satuan": "GWh/tahun",
+   "status": "beroperasi",
+   "pasar": null,
+   "tahun_mulai": 2026,
+   "tkdn": null,
+   "pemilik": "Indonesia Battery Corporation (MIND ID/Danantara); konsorsium CATL-Brunp-Lygend",
+   "negara_investor": "Tiongkok",
+   "catatan": "Kawasan Artha Industrial Hills; fase 1 6,9 GWh, fase 2 total 15 GWh; investasi sekitar Rp7 triliun; produk baterai EV dan energy storage; mulai beroperasi bertahap per Agu 2026, peresmian menunggu jadwal Presiden.",
+   "sumber": [
+    {
+     "url": "https://www.antaranews.com/berita/5705060/esdm-sebut-pembangunan-pabrik-baterai-ev-di-karawang-sudah-rampung",
+     "media": "ANTARA",
+     "tanggal": "2026-08-21",
+     "tingkat_bukti": "media"
+    },
+    {
+     "url": "https://www.antaranews.com/berita/5390942/pabrik-baterai-ev-di-karawang-ditargetkan-mulai-operasi-pada-q3-2026",
+     "media": "ANTARA",
+     "tanggal": "2026-02-02",
+     "tingkat_bukti": "media"
+    },
+    {
+     "url": "https://www.antaranews.com/berita/5356533/battery-manufacture-selesai-diinstalasi-wujudkan-ekosistem-baterai-terintegrasi-di-indonesia",
+     "media": "ANTARA",
+     "tanggal": "2026-01-16",
+     "tingkat_bukti": "media"
+    }
+   ]
+  },
+  {
+   "id": "f_rept_iwip",
+   "nama": "REPT Battero Indonesia (IWIP)",
+   "perusahaan_id": null,
+   "merek": "REPT",
+   "komponen": [
+    "baterai (sel)"
+   ],
+   "lokasi": {
+    "kota": "Halmahera Tengah",
+    "provinsi": "Maluku Utara",
+    "lat": 0.45,
+    "lng": 127.95,
+    "koordinat_perkiraan": true
+   },
+   "kapasitas": null,
+   "satuan": null,
+   "status": "beroperasi",
+   "pasar": "ekspor",
+   "tahun_mulai": 2026,
+   "tkdn": null,
+   "pemilik": null,
+   "negara_investor": null,
+   "catatan": "Satu dari empat proyek IWIP yang memasuki tahap komersial pada 8 Okt 2026, bersamaan ekspor perdana baterai EV; kapasitas dan investor tidak disebut dalam berita.",
+   "sumber": [
+    {
+     "url": "https://www.antaranews.com/berita/5776614/prabowo-luncurkan-ekspor-perdana-baterai-ev-dan-11-proyek-di-iwip",
+     "media": "ANTARA",
+     "tanggal": "2026-10-08",
+     "tingkat_bukti": "media"
+    }
+   ]
+  },
+  {
+   "id": "f_huayou",
+   "nama": "Konsorsium Antam-IBI-HYD (Huayou, EVE Energy) baterai terintegrasi",
+   "perusahaan_id": null,
+   "merek": null,
+   "komponen": [
+    "baterai (sel)",
+    "BESS"
+   ],
+   "lokasi": {
+    "kota": null,
+    "provinsi": null,
+    "lat": null,
+    "lng": null,
+    "koordinat_perkiraan": null
+   },
+   "kapasitas": null,
+   "satuan": null,
+   "status": "rencana",
+   "pasar": null,
+   "tahun_mulai": null,
+   "tkdn": null,
+   "pemilik": "PT Aneka Tambang; PT Industri Baterai Indonesia; HYD Investment (Zhejiang Huayou Cobalt, EVE Energy)",
+   "negara_investor": "Tiongkok",
+   "catatan": "Kerangka kerja sama 30 Jan 2026; Bahlil: dirancang juga untuk baterai penyimpan PLTS (program 100 GW). Lokasi dan kapasitas belum diumumkan di berita ini.",
+   "sumber": [
+    {
+     "url": "https://www.antaranews.com/berita/5386382/menteri-bahlil-proyek-baterai-konsorsium-huayou-dukung-100-gw-plts",
+     "media": "ANTARA",
+     "tanggal": "2026-01-30",
+     "tingkat_bukti": "media"
+    }
+   ]
+  },
+  {
+   "id": "f_lbm",
+   "nama": "PT LBM Energi Baru Indonesia (katoda LFP)",
+   "perusahaan_id": null,
+   "merek": null,
+   "komponen": [
+    "bahan baterai (katoda LFP)"
+   ],
+   "lokasi": {
+    "kota": "Kendal",
+    "provinsi": "Jawa Tengah",
+    "lat": -6.92,
+    "lng": 110.2,
+    "koordinat_perkiraan": true
+   },
+   "kapasitas": null,
+   "satuan": null,
+   "status": "beroperasi",
+   "pasar": "ekspor",
+   "tahun_mulai": 2024,
+   "tkdn": null,
+   "pemilik": "Indonesia Investment Authority (INA); Changzhou Liyuan New Energy Technology",
+   "negara_investor": "Tiongkok",
+   "catatan": "Produksi tahap 1 dimulai 8 Okt 2024 di Kendal Industrial Park; berita menyebut pasokan baterai LFP global, bukan sel jadi.",
+   "sumber": [
+    {
+     "url": "https://www.antaranews.com/berita/4386582/konsorsium-indonesia-china-mulai-produksi-baterai-lfp",
+     "media": "ANTARA",
+     "tanggal": "2024-10-09",
+     "tingkat_bukti": "media"
+    }
+   ]
+  }
+ ],
+ "pembanding": [
+  {
+   "label": "Kemenperin: 33 pabrikan modul, 4,3 GW/tahun",
+   "nilai_mwp": 4300,
+   "sumber": {
+    "url": "https://www.antaranews.com/berita/4735373/kemenperin-perkuat-industri-modul-surya-dukung-elektrifikasi-ebt",
+    "media": "ANTARA",
+    "tanggal": "2025-03-25",
+    "tingkat_bukti": "media"
+   }
+  },
+  {
+   "label": "Kemenko Perekonomian: 34 pabrikan modul, 10.994 MWp/tahun",
+   "nilai_mwp": 10994,
+   "sumber": {
+    "url": "https://www.antaranews.com/berita/5764577/pemerintah-tarif-as-114-persen-buka-peluang-pasar-panel-surya-lokal",
+    "media": "ANTARA",
+    "tanggal": "2026-09-30",
+    "tingkat_bukti": "media"
+   }
+  }
+ ],
+ "tarif_as": [
+  {
+   "isi": "Departemen Perdagangan AS menetapkan bea masuk imbalan sementara 86-143 persen atas panel surya Indonesia (Laos 81, India 125,87 persen).",
+   "sumber": {
+    "url": "https://www.antaranews.com/berita/5438654/panel-surya-ri-hingga-india-dikenakan-tarif-ratusan-persen-oleh-as",
+    "media": "ANTARA",
+    "tanggal": "2026-02-26",
+    "tingkat_bukti": "media"
+   }
+  },
+  {
+   "isi": "Wamen ESDM: panel yang kena tarif tinggi adalah panel yang tidak diproduksi di Indonesia, hanya dilabeli/transhipment.",
+   "sumber": {
+    "url": "https://www.antaranews.com/berita/5441786/esdm-perjuangkan-panel-surya-produksi-dalam-negeri-tak-kena-tarif-as",
+    "media": "ANTARA",
+    "tanggal": "2026-02-27",
+    "tingkat_bukti": "media"
+   }
+  }
+ ],
+ "celah": [
+  "Nama dan kapasitas pabrik Batam (ekspor AS) tidak dapat ditelusuri dari berita yang diizinkan robots; hanya daftar DJEBTKE.",
+  "Belum ada sumber terverifikasi untuk: polisilikon, EVA/backsheet, frame aluminium, inverter, mounting, kabel DC, pak BESS di luar CATIB.",
+  "Lokasi Gstar dan BCI/Yingfa tidak disebut sumber.",
+  "Situs resmi (PV Tech, IESR, Kemenperin, Bisnis) 403/502 atau memblok; Kontan/Kompas melarang alat otomatis."
+ ]
+}

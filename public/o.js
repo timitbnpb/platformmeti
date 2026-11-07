@@ -1,5 +1,6 @@
 /* /o/<id>: profil publik organisasi dari /data/organisasi.json (lapis publik) + proyek, program, regulasi, berita, orang. */
 import { mulaiHalaman } from "/inti/kepala.js";
+import { tombolKoreksi } from "/inti/koreksi.js";
 import { hantuHtml } from "/inti/umum.js";
 import { t, angka, esc, ikon, muat, norm, urlAman, hlHtml, pilTek, idJalur, provHtml, lambang, inisial, barisProyek, kapTeks, kepalaHtml, metaItem, statHtml, seksi, tabel, td, tabelProyek, tabelBerita, tabelRegulasi, tabelSumber, kartuProgram, petaTitik, galatHtml, pasangLogoCadangan, ringkasTgl } from "/profil.js";
 
@@ -103,6 +104,7 @@ async function mulai() {
     + seksi({ id: "relasi", ik: "direktori", topik: t("pf.ey.relasi"), judulHtml: esc(t("pf.j.relasi")), isiHtml: tabelRelasi(rel), csv: true, sumber: sumberRingkas })
     + seksi({ id: "sumber", ik: "tautan", topik: t("pf.ey.sumber"), judulHtml: esc(t("pf.j.sumber")), isiHtml: tabelSumber(o.sumber, new Map(ber.baris.map((b) => [b.url, b.judul]))), csv: true, sumber: sumberRingkas })
     + `</div>`;
+  akar.querySelector(".pf-kepala-teks")?.insertAdjacentHTML("beforeend", `<p class="pf-koreksi">${tombolKoreksi({ entitas: "organisasi", id, nama: o.nama })}</p>`);
   pasangLogoCadangan(akar);
   petaTitik(document.getElementById("pfPeta"), rows);
 }

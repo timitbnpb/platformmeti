@@ -1,6 +1,7 @@
 /* /p/<id>: profil publik proyek dari /data/proyek.json (lapis publik) + program, organisasi, regulasi, berita. */
 import { ikonTek } from "/inti/ikon_tek.js";
 import { mulaiHalaman } from "/inti/kepala.js";
+import { tombolKoreksi } from "/inti/koreksi.js";
 import { hantuHtml } from "/inti/umum.js";
 import { t, angka, esc, ikon, muat, urlAman, label, hlHtml, pilTek, pilStatus, idJalur, provHtml, lambang, inisial, barisProyek, kapTeks, kepalaHtml, metaItem, statHtml, seksi, tabel, td, tabelBerita, tabelRegulasi, tabelSumber, kartuProgram, petaTitik, galatHtml, ringkasTgl, tglSel, TAHUN } from "/profil.js";
 
@@ -68,6 +69,7 @@ async function mulai() {
     + seksi({ id: "berita", ik: "berita", topik: t("pf.ey.berita"), judulHtml: hlHtml("pf.j.berita", angka(beritas.length)), isiHtml: tabelBerita(beritas, foto), csv: false, sumber: esc(t("pf.sumber_data", { tanggal: ringkasTgl(ber.dibangun_pada) })) })
     + seksi({ id: "sumber", ik: "tautan", topik: t("pf.ey.sumber"), judulHtml: esc(t("pf.j.sumber")), isiHtml: tabelSumber(p.sumber, new Map(ber.baris.map((b) => [b.url, b.judul]))), csv: true, sumber })
     + `</div>`;
+  akar.querySelector(".pf-kepala-teks")?.insertAdjacentHTML("beforeend", `<p class="pf-koreksi">${tombolKoreksi({ entitas: "proyek", id, nama: r.nama })}</p>`);
   petaTitik(document.getElementById("pfPeta"), [r], { zoomSatu: persis ? 11 : 6, klik: false });
 }
 mulaiHalaman().then(mulai);

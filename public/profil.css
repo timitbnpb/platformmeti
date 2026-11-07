@@ -43,7 +43,7 @@
 .pf-meta li>span{display:inline-flex;align-items:center;gap:8px;min-width:0}
 .pf-bagian .jm-tabel td{overflow-wrap:anywhere}
 .pf-satu{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px 24px;margin:0;padding:16px 20px;border:1px solid var(--line);border-radius:var(--r);background:var(--card)}
-.pf-satu dt{font:700 var(--t-label)/var(--lh-rapat) var(--font);letter-spacing:.08em;text-transform:uppercase;color:var(--ink2);margin-bottom:6px}
+.pf-satu dt{font:700 var(--t-label)/var(--lh-rapat) var(--font);letter-spacing:normal;text-transform:none;color:var(--ink2);margin-bottom:6px}
 .pf-satu dd{margin:0;min-width:0;overflow-wrap:anywhere}
 .pf-ber,.pf-prog{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:16px;margin:0;padding:0;list-style:none}
 .pf-ber a,.pf-ber li>div,.pf-prog a{display:grid;grid-template-rows:auto 1fr;height:100%;border:1px solid var(--line);border-radius:var(--r);background:var(--card);overflow:hidden;color:inherit;text-decoration:none;box-shadow:var(--shadow)}

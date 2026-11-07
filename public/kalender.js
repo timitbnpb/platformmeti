@@ -1,4 +1,5 @@
 import { mulaiHalaman } from "/inti/kepala.js";
+import { khUbin } from "/inti/kh.js";
 import { t, angka, tanggal } from "/i18n.js";
 import { esc, nanti, ikon, hantuHtml, kosongHtml, galatHtml, api } from "/inti/umum.js";
 import { pilihHtml, exHtml, sumberHtml } from "/inti/komponen.js";
@@ -44,7 +45,12 @@ function tulisUrl() {
 
 /* ---------- kepala ---------- */
 const tombolTampil = (v, ik) => `<button type="button" data-tampil="${v}" aria-pressed="${S.tampil === v}">${ikon(ik, 18)}<span>${esc(t("kal.tampil." + v))}</span></button>`;
+function gambarAngkaKunci() {
+  const bln = KINI.slice(0, 7);
+  khUbin("khUbin", [{ ikon: "kalender", nilai: angka(D.baris.length), label: t("kal.n.total") }, { ikon: "tahun", nilai: angka(D.baris.filter((b) => bulanDari(b.tanggal) === bln).length), label: t("kal.n.bulan") }, { ikon: "linimasa", nilai: angka(D.baris.filter((b) => b.tanggal >= KINI).length), label: t("kal.n.depan") }]);
+}
 function gambarKepala() {
+  gambarAngkaKunci();
   document.getElementById("kepalaKal").innerHTML = `
     <div class="kal-nav">
       <button type="button" class="kal-bulat" data-geser="-1" aria-label="${esc(t("kal.sebelumnya"))}">${ikon("panah-kiri", 20)}</button>
@@ -52,10 +58,10 @@ function gambarKepala() {
       <button type="button" class="kal-bulat" data-geser="1" aria-label="${esc(t("kal.berikutnya"))}">${ikon("panah-kanan", 20)}</button>
       <button type="button" class="kal-hariini" data-hariini>${ikon("kalender", 18)}<span>${esc(t("kal.hariini"))}</span></button>
     </div>
+    <div class="kal-seg" role="group" aria-label="${esc(t("kal.agenda"))}">${tombolTampil("bulan", "tabel")}${tombolTampil("agenda", "daftar2")}</div>
     <div class="kal-kanan">
-      <div class="jm-saring kal-saring">${pilihHtml({ id: "jenis", ikon: "jenis", label: t("kal.semua"), opsi: [["", t("kal.semua")], ...JENIS.map((j) => [j, label("kal.jenis.", j)])], nilai: S.jenis })}<span class="jm-hitung" id="hitung" role="status" aria-live="polite"></span></div>
-    </div>
-    <div class="kal-seg" role="group" aria-label="${esc(t("kal.agenda"))}">${tombolTampil("bulan", "tabel")}${tombolTampil("agenda", "daftar2")}</div>`;
+      <div class="jm-saring kal-saring">${pilihHtml({ id: "jenis", ikon: "jenis", label: t("kal.semua"), opsi: [["", t("kal.semua")], ...JENIS.map((j) => [j, label("kal.jenis.", j)])], nilai: S.jenis })}</div>
+    </div>`;
   judulBulan();
 }
 function judulBulan() { document.getElementById("judulBulan").innerHTML = `${esc(namaBulan(S.bulan))} <span>${esc(S.bulan.slice(0, 4))}</span>`; }
@@ -210,8 +216,8 @@ function bulanHtml(rows) {
       if (l < 0) l = akhirLane.length;
       akhirLane[l] = sg.k + sg.n - 1;
       if (l >= MAKS_LANE) { for (let c = sg.k; c < sg.k + sg.n; c++) lebih[c]++; continue; }
-      const kls = `kal-ev kal-ev-bar kal-t-${esc(sg.b.jenis)} kal-k${sg.k} kal-s${sg.n} kal-l${l}${sg.kiri ? " kal-pot-k" : ""}${sg.kanan ? " kal-pot-n" : ""}`;
-      out += `<button type="button" class="${kls}" data-acara="${esc(sg.b.id)}" title="${esc(sg.b.judul)}"><span>${esc(sg.b.judul)}</span></button>`;
+      const kls = `kal-ev ${sg.b.akhir > sg.b.tanggal ? "kal-ev-bar" : "kal-ev-satu"} kal-t-${esc(sg.b.jenis)} kal-k${sg.k} kal-s${sg.n} kal-l${l}${sg.kiri ? " kal-pot-k" : ""}${sg.kanan ? " kal-pot-n" : ""}`;
+      out += `<button type="button" class="${kls}" data-acara="${esc(sg.b.id)}" title="${esc(sg.b.judul)}"><i></i><span>${esc(sg.b.judul)}</span></button>`;
     }
     const sel = mg.map((h, i) => `<div class="kal-hr${bulanDari(h) !== S.bulan ? " kal-luar" : ""}${i > 4 ? " kal-akhir" : ""}${h === KINI ? " kal-kini" : ""} kal-k${i + 1}" data-hari="${h}"><button type="button" data-hari="${h}" aria-label="${esc(tanggal(h))}"><b>${+h.slice(8)}</b></button></div>`).join("");
     const lain = mg.map((h, i) => (lebih[i + 1] ? `<button type="button" class="kal-lain kal-k${i + 1}" data-hari="${h}">${esc(t("kal.lainnya", { n: lebih[i + 1] }))}</button>` : "")).join("");
@@ -226,7 +232,6 @@ function gambarIsi() {
   const rows = acaraDari(D.baris.filter((b) => !S.jenis || b.jenis === S.jenis));
   const v = efektif();
   ROWS = rows;
-  document.getElementById("hitung").textContent = t("kal.hitung", { n: angka(rows.length), total: angka(D.baris.length) });
   document.getElementById("isi").innerHTML = (v === "bulan" ? bulanHtml(rows) : HP.matches ? pekanHtml(rows) : "") + agendaHtml(rows);
 }
 

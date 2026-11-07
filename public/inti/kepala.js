@@ -6,6 +6,7 @@ import { api, ikon, nanti } from "/inti/umum.js";
 import { subnavHtml, diBagianInsight } from "/inti/komponen.js";
 import { pasangRel } from "/inti/rel.js";
 import { pasangCari } from "/inti/cari_global.js";
+import { catatHalaman } from "/inti/statistik.js";
 
 export const PITA_DRAF = false; // pemilik 7 Nov 2026: pita draf tidak ditampilkan
 const STAF = ["pengurus", "kurator", "admin", "super"];
@@ -17,6 +18,7 @@ const TAB = [
     { href: "/insight", kunci: "nav.insight_ringkasan", ikon: "insight" }, { href: "/insight#tren", kunci: "nav.sub.tren", ikon: "analisis" },
     { href: "/rantai", kunci: "nav.rantai", ikon: "rantai" }, { href: "/asean", kunci: "nav.asean", ikon: "asean" }, { href: "/metode", kunci: "nav.sub.metode", ikon: "metode" }] },
   { href: "/proyek", kunci: "nav.proyek", ikon: "proyek", hak: null },
+  { href: "/peluang", kunci: "nav.peluang", ikon: "analisis", hak: null },
   { href: "/wilayah", kunci: "nav.wilayah", ikon: "peta", hak: null },
   { href: "/regulasi", kunci: "nav.regulasi", ikon: "regulasi", hak: null },
   { href: "/berita", kunci: "nav.berita", ikon: "berita", hak: null },
@@ -150,5 +152,6 @@ export async function mulaiHalaman() {
   const kaki = document.getElementById("kaki");
   if (kaki) { kaki.innerHTML = kakiHtml(); kakiIsi(kaki, saya); }
   pasangRel();
+  catatHalaman();
   return saya;
 }

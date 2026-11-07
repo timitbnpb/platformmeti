@@ -3,6 +3,7 @@
 import { t, ada, angka, tanggal, bahasa } from "/i18n.js";
 import { esc, nanti, debounce, hantuHtml, galatHtml, ikon } from "/inti/umum.js";
 import { mulaiHalaman } from "/inti/kepala.js";
+import { khUbin } from "/inti/kh.js";
 import { muatMapLibre } from "/inti/maplibre.js";
 import { lapisAnggota, anggotaDl } from "/publik.js";
 import { sumberHtml, exHtml, unduhRegHtml } from "/inti/komponen.js";
@@ -10,6 +11,7 @@ import { ikonTek, pilTek, pilStatus } from "/inti/ikon_tek.js";
 import { PROV } from "/penerbit.js";
 import { geserPanel } from "/inti/panel_geser.js";
 import { aksiHtml } from "/inti/aksi_ex.js";
+import { pasangKeputusan } from "/proyek_keputusan.js";
 
 const $ = (id) => document.getElementById(id);
 const TAHUN = new Date().getFullYear();
@@ -139,19 +141,10 @@ const dokSumber = () => [...new Set(SEMUA.flatMap((r) => (r.p.sumber || []).map(
 
 /* ---------- hero: kartu KPI, batang status, batang program ---------- */
 const progNamaPendek = (id) => (ada("pj.pn." + id) ? t("pj.pn." + id) : progNama(id));
-const IKON_K = ["proyek", "analisis", "status", "jenis", "kalender"];
-function kpi(i, lab, nilai, satuan, ctx, estimasi) {
-  return `<div class="jm-kpi jm-w${i + 1}"><div class="jm-kpi-ik">${ikon(IKON_K[i], 22)}</div><div class="jm-kpi-lab"><span>${esc(lab)}</span>${estimasi ? `<span class="jm-pil jm-pil-est">${esc(t("pj.est"))}</span>` : ""}</div><div class="jm-kpi-n"><b>${esc(nilai)}</b>${satuan ? `<small>${esc(satuan)}</small>` : ""}</div><div class="jm-kpi-ctx">${esc(ctx)}</div></div>`;
-}
 function gambarHero() {
-  const n = SEMUA.length, mw = jumlahMW(SEMUA), nk = denganKap(SEMUA), st = hitung(SEMUA, (r) => r.st), telat = SEMUA.filter((r) => r.telat).length;
-  const persen = (x) => t("pj.k.persen", { n: num(((x || 0) / n) * 100, 0) });
+  const n = SEMUA.length, mw = jumlahMW(SEMUA), st = hitung(SEMUA, (r) => r.st);
   const [kv, ks] = mw >= 10000 ? [num(mw / 1000, 1), "GW"] : [num(mw, 0), "MW"];
-  $("pjAngka").innerHTML = kpi(0, t("pj.k.total"), num(n), "", t("pj.k.lokasi", { n: num(SEMUA.filter((r) => r.ada).length) }))
-    + kpi(1, t("pj.k.kap"), kv, ks, t("pj.k.penyebut", { n: num(nk), total: num(n) }), true)
-    + kpi(2, labSt("konstruksi"), num(st.konstruksi || 0), "", persen(st.konstruksi))
-    + kpi(3, labSt("beroperasi"), num(st.beroperasi || 0), "", persen(st.beroperasi))
-    + kpi(4, t("pj.k.telat"), num(telat), "", t("pj.k.telat.ket", { tahun: TAHUN }));
+  khUbin("pjAngka", [{ ikon: "proyek", nilai: num(n), label: t("pj.k.total") }, { ikon: "analisis", nilai: kv, satuan: ks, label: t("pj.k.kap") }, { ikon: "status", nilai: num(st.konstruksi || 0), label: labSt("konstruksi") }, { ikon: "centang", nilai: num(st.beroperasi || 0), label: labSt("beroperasi") }]);
   segarHero(); kepalaSeksi();
 }
 function segarHero() {
@@ -859,5 +852,6 @@ document.addEventListener("jm:bahasa", () => nanti(semua));
 
 semua();
 nanti(bukaPeta);
+nanti(() => pasangKeputusan(SEMUA, $("pjKeputusan"), DATA.dibangun_pada));
 if (DARI_URL) nanti(() => $("exDaftar").scrollIntoView({ block: "start" }));
 dariHash();

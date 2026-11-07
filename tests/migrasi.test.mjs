@@ -47,7 +47,7 @@ const hex = (n) => 'a'.repeat(n);
 
 test('berkas bernomor urut tanpa lompatan', () => {
   BERKAS.forEach((f, i) => assert.ok(f.startsWith(String(i + 1).padStart(4, '0')), f));
-  assert.equal(BERKAS.length, 10); // 0009_anggota_ubah, 0010_agenda_bukti (JM-F11)
+  assert.equal(BERKAS.length, 11); // 0009_anggota_ubah, 0010_agenda_bukti (JM-F11), 0011_admin
 });
 
 test('semua migrasi jalan di D1 kosong, lalu dua kali lagi tanpa galat dan tanpa baris ganda', async () => {

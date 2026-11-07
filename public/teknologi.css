@@ -1,0 +1,33 @@
+/* /teknologi/<kode>: foto di kepala, pemain bergambar, berita bergambar. Selebihnya memakai kelas bersama (.jm-ex, .jm-tabel, .jm-an-*). */
+.jm-tk-kh>.jm-tk-foto{grid-column:1/-1;margin:0;position:relative;overflow:hidden;border-radius:var(--r);background:var(--soft-hijau)}
+.jm-tk-foto img{display:block;width:100%;height:200px;object-fit:cover}
+.jm-tk-foto figcaption{position:absolute;inset:auto 0 0 0;padding:6px 12px;font:400 var(--t-label)/var(--lh-rapat) var(--font);color:var(--on-brand);background:color-mix(in srgb,var(--brand) 78%,transparent)}
+@media (min-width:1000px){.jm-tk-foto img{height:240px}}
+#tkIsi{display:grid;gap:20px}
+#tkIsi>.jm-ex{margin:0}
+.jm-tk-pair{display:grid;gap:20px;grid-template-columns:minmax(0,1fr)}
+.jm-tk-stat{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0 0;padding:0;list-style:none}
+.jm-tk-lebih{margin:12px 0 0}
+.jm-tk-lebih button{font:600 var(--t-tombol)/var(--lh-rapat) var(--font);min-height:44px;padding:0 16px;border:1px solid var(--line);border-radius:var(--r-pil);background:var(--card);color:var(--ink);cursor:pointer}
+.jm-tk-lebih button:hover{color:var(--accent);border-color:var(--accent)}
+.jm-tk-lebih button:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.jm-tk-sub{margin:16px 0 8px;font:600 var(--t-body)/var(--lh-rapat) var(--font);color:var(--head)}
+.jm-tk-sub:first-child{margin-top:0}
+.jm-tk-pemain,.jm-tk-berita{display:grid;gap:16px;margin:0;padding:0;list-style:none;grid-template-columns:minmax(0,1fr)}
+@media (min-width:640px){.jm-tk-pemain,.jm-tk-berita{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (min-width:1000px){.jm-tk-pemain{grid-template-columns:repeat(4,minmax(0,1fr))}.jm-tk-berita{grid-template-columns:repeat(3,minmax(0,1fr))}}
+.jm-tk-pemain a{display:grid;gap:10px;justify-items:center;align-content:start;height:100%;padding:16px 12px;text-align:center;border:1px solid var(--line);border-radius:var(--r);background:var(--card);color:var(--ink);text-decoration:none;box-shadow:var(--shadow)}
+.jm-tk-pemain a:hover{border-color:var(--accent)}
+.jm-tk-lg{display:grid;place-items:center;width:100%;height:56px;color:var(--ink2)}
+.jm-tk-lg img{max-width:100%;max-height:56px;object-fit:contain}
+.jm-tk-pemain strong{font:600 var(--t-body)/var(--lh-rapat) var(--font);overflow-wrap:anywhere}
+.jm-tk-pemain small{font:400 var(--t-kecil)/var(--lh-rapat) var(--font);color:var(--ink2)}
+.jm-tk-berita a{display:grid;gap:8px;align-content:start;height:100%;overflow:hidden;border:1px solid var(--line);border-radius:var(--r);background:var(--card);color:var(--ink);text-decoration:none;box-shadow:var(--shadow)}
+.jm-tk-berita a:hover{border-color:var(--accent)}
+.jm-tk-brt-f{display:block;width:100%;height:150px;object-fit:cover;background:var(--soft-hijau)}
+.jm-tk-brt-k{display:grid;place-items:center;height:150px;background:var(--soft-hijau);color:var(--accent)}
+.jm-tk-berita span.jm-tk-brt-t{padding:0 14px;font:600 var(--t-body)/var(--lh-rapat) var(--font)}
+.jm-tk-berita small{padding:0 14px 14px;font:400 var(--t-kecil)/var(--lh-rapat) var(--font);color:var(--ink2)}
+.jm-tk-cara{margin:0;padding-left:20px;display:grid;gap:8px}
+.jm-tk-nama{display:flex;align-items:center;gap:10px;min-width:0}
+.jm-tk-kh .jm-kh-angka b{font-size:var(--t-angka)}

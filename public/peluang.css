@@ -1,0 +1,68 @@
+/* /peluang: hanya token tema.css. Kelas .jm-pel-* (baru); tombol segmen memakai .jm-kl-tb dari kelayakan.css. */
+.jm-pel-halaman{display:grid;grid-template-columns:minmax(0,1fr);gap:var(--gap);padding-block:20px 64px;align-content:start}
+.jm-pel-halaman>*{min-width:0}
+.jm-pel-seg{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:8px}
+.jm-pel-penuh{position:relative;height:clamp(520px,calc(100vh - var(--top) - 80px),760px);border:1px solid var(--line);border-radius:var(--r);background:var(--surface);overflow:hidden}
+.jm-pel-kanvas{position:absolute;inset:0;width:100%;height:100%}
+.jm-pel-lapis,.jm-pel-panel{position:absolute;z-index:3;border:1px solid var(--line);border-radius:16px;background:color-mix(in srgb,var(--card) 94%,transparent);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);box-shadow:var(--shadow);font-size:var(--t-kecil)}
+.jm-pel-lapis{top:12px;left:12px;width:min(248px,calc(100% - 24px))}
+.jm-pel-panel{top:12px;right:12px;width:min(340px,calc(100% - 24px));max-height:calc(100% - 24px);display:flex;flex-direction:column;overflow:hidden}
+.jm-pel-panel:not([open]),.jm-pel-lapis:not([open]){width:auto}
+.jm-pel-lapis summary,.jm-pel-panel summary{cursor:pointer;min-height:40px;padding:0 14px;display:flex;align-items:center;gap:10px;font:700 var(--t-label)/1 var(--font);letter-spacing:normal;text-transform:none;color:var(--head);list-style:none}
+.jm-pel-panel summary{flex:none}
+.jm-pel-lapis summary::-webkit-details-marker,.jm-pel-panel summary::-webkit-details-marker{display:none}
+.jm-pel-lapis summary::after,.jm-pel-panel summary::after{content:"";margin-left:auto;width:7px;height:7px;border-right:2px solid var(--ink2);border-bottom:2px solid var(--ink2);transform:rotate(45deg)}
+.jm-pel-lapis[open] summary::after,.jm-pel-panel[open] summary::after{transform:rotate(-135deg)}
+.jm-pel-panel[open] summary{border-bottom:1px solid var(--line)}
+.jm-pel-lapis summary:focus-visible,.jm-pel-panel summary:focus-visible{outline:2px solid var(--fokus);outline-offset:-2px}
+#pelLegenda{padding:4px 14px 12px}
+.jm-pel-grad{height:12px;border-radius:var(--r-pil);background:linear-gradient(90deg,color-mix(in srgb,var(--accent-isi) 12%,transparent),var(--accent-isi))}
+.jm-pel-grad-n{display:flex;justify-content:space-between;margin-top:4px;color:var(--ink2);font-variant-numeric:tabular-nums}
+.jm-pel-nodata{display:flex;align-items:center;gap:8px;margin:8px 0 4px;color:var(--ink2)}
+.jm-pel-nodata i{width:16px;height:12px;border-radius:3px;border:1px solid var(--line-ctl);background:color-mix(in srgb,var(--accent-isi) 5%,transparent)}
+.jm-pel-panel-isi{flex:1;min-height:0;overflow:auto;padding:12px 14px 14px;display:grid;gap:8px;align-content:start}
+.jm-pel-panel-isi h4{margin:6px 0 0;font:700 var(--t-label)/var(--lh-rapat) var(--font);letter-spacing:normal;text-transform:none;color:var(--ink2)}
+.jm-pel-p{margin:0;font:400 var(--t-tombol)/var(--lh-isi) var(--font);color:var(--ink)}
+.jm-pel-pj{display:flex;align-items:center;gap:8px;min-width:0}
+.jm-pel-pj img{flex:none;border-radius:50%;object-fit:contain}
+.jm-pel-pj b{font:700 var(--t-h3)/var(--lh-rapat) var(--display);color:var(--head)}
+.jm-pel-tautan{margin-left:auto;font:600 var(--t-kecil)/1 var(--font);color:var(--accent);white-space:nowrap}
+.jm-pel-angka{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+.jm-pel-an{display:grid;gap:2px;padding:8px 10px;border:1px solid var(--line);border-radius:var(--r-sm);background:var(--card)}
+.jm-pel-an span{font:600 var(--t-label)/var(--lh-rapat) var(--font);color:var(--ink2)}
+.jm-pel-an b{font:700 var(--t-h2)/1 var(--display);color:var(--head);font-variant-numeric:tabular-nums}
+.jm-pel-an small{font:400 var(--t-label)/1 var(--font);color:var(--ink2)}
+.jm-pel-harga{list-style:none;margin:0;padding:0;display:grid;gap:6px}
+.jm-pel-harga li{display:flex;align-items:center;justify-content:space-between;gap:8px}
+.jm-pel-harga b{font-variant-numeric:tabular-nums;font-size:var(--t-tombol)}
+.jm-pel-kosong{padding:16px 8px}
+.jm-pel-tabel td.jm-pel-celah{font-weight:700;color:var(--head)}
+.jm-pel-cat{margin-top:10px}
+.jm-pel-kartu{list-style:none;margin:12px 0 0;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,280px),1fr));gap:12px}
+.jm-pel-k{display:grid;gap:8px;align-content:start;padding:14px;border:1px solid var(--line);border-radius:var(--r);background:var(--card)}
+.jm-pel-k-a{display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap}
+.jm-pel-k-s{font:400 var(--t-label)/var(--lh-rapat) var(--font);color:var(--ink2)}
+.jm-pel-k-n{font:700 var(--t-body)/var(--lh-rapat) var(--display);color:var(--head);overflow-wrap:anywhere}
+.jm-pel-k-n a{color:inherit;text-decoration:none}
+.jm-pel-k-n a:hover{color:var(--accent);text-decoration:underline}
+.jm-pel-k dl{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:6px 12px;margin:0}
+.jm-pel-k dt{font:600 var(--t-label)/var(--lh-rapat) var(--font);color:var(--ink2)}
+.jm-pel-k dd{margin:0;font:600 var(--t-tombol)/var(--lh-rapat) var(--font);color:var(--ink);font-variant-numeric:tabular-nums}
+.jm-pel-k-pr{grid-column:1/-1}
+.jm-pel-k-pr dd{display:flex;align-items:center;gap:6px}
+.jm-pel-k-pr img{border-radius:50%;flex:none}
+.jm-pel-kalk-alat{display:grid;gap:12px;grid-template-columns:minmax(0,1fr) minmax(220px,320px);align-items:center;margin-bottom:var(--gap)}
+.jm-pel-celah-j{margin:16px 0 6px;font:700 var(--t-h3)/var(--lh-rapat) var(--display);color:var(--head)}
+.jm-pel-celah-l{margin:0;padding-left:20px;display:grid;gap:4px;color:var(--ink)}
+@media (max-width:999px){
+  .jm-pel-seg{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .jm-pel-penuh{height:clamp(480px,calc(100vh - var(--top)),680px)}
+  .jm-pel-lapis{top:auto;bottom:40px}
+  .jm-pel-panel{top:auto;bottom:12px;max-height:55%}
+  .jm-pel-kalk-alat{grid-template-columns:minmax(0,1fr)}
+}
+@media (max-width:600px){.jm-pel-kalk-alat .jm-kl-tek{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (min-width:768px){.jm-pel-tabel td:first-child{min-width:170px}}
+.jm-pel-tabel th{white-space:normal}
+@media (min-width:768px){#pelTabel .jm-gulir{max-height:620px;overflow-y:auto}#pelTabel .jm-tabel thead th{position:sticky;top:0;z-index:2}}
+@media (max-width:767px){.jm-pel-tabel.jm-tabel td[data-label]{grid-template-columns:120px minmax(0,1fr);align-items:start}.jm-pel-tabel.jm-tabel td[data-label]::before{overflow-wrap:anywhere}}

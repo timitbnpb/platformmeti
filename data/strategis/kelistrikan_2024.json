@@ -1,0 +1,540 @@
+{
+ "tahun": 2024,
+ "rasio_elektrifikasi": [
+  {
+   "provinsi": "Aceh",
+   "rt_pln": 1534855,
+   "rt_non_pln": 130,
+   "rt_jumlah": 1535109,
+   "rasio_persen": 99.99
+  },
+  {
+   "provinsi": "Sumatera Utara",
+   "rt_pln": 4332947,
+   "rt_non_pln": 7812,
+   "rt_jumlah": 4341061,
+   "rasio_persen": 99.99
+  },
+  {
+   "provinsi": "Sumatera Barat",
+   "rt_pln": 1493000,
+   "rt_non_pln": 16743,
+   "rt_jumlah": 1509900,
+   "rasio_persen": 99.99
+  },
+  {
+   "provinsi": "Riau",
+   "rt_pln": 2032898,
+   "rt_non_pln": 102648,
+   "rt_jumlah": 2135698,
+   "rasio_persen": 99.99
+  },
+  {
+   "provinsi": "Kepulauan Riau",
+   "rt_pln": 627564,
+   "rt_non_pln": 3132,
+   "rt_jumlah": 630759,
+   "rasio_persen": 99.99
+  },
+  {
+   "provinsi": "Jambi",
+   "rt_pln": 1097570,
+   "rt_non_pln": 47628,
+   "rt_jumlah": 1145304,
+   "rasio_persen": 99.99
+  },
+  {
+   "provinsi": "Bengkulu",
+   "rt_pln": 643716,
+   "rt_non_pln": 6041,
+   "rt_jumlah": 649823,
+   "rasio_persen": 99.99
+  },
+  {
+   "provinsi": "Kepulauan Bangka Belitung",
+   "rt_pln": 517173,
+   "rt_non_pln": 0,
+   "rt_jumlah": 517222,
+   "rasio_persen": 99.99
+  },
+  {
+   "provinsi": "Sumatera Selatan",
+   "rt_pln": 2480300,
+   "rt_non_pln": 47722,
+   "rt_jumlah": 2528237,
+   "rasio_persen": 99.99
+  },
+  {
+   "provinsi": "Lampung",
+   "rt_pln": 2519068,
+   "rt_non_pln": 5012,
+   "rt_jumlah": 2524321,
+   "rasio_persen": 99.99
+  },
+  {
+   "provinsi": "Banten",
+   "rt_pln": 4645918,
+   "rt_non_pln": 934,
+   "rt_jumlah": 4647296,
+   "rasio_persen": 99.99
+  },
+  {
+   "provinsi": "Jawa Barat",
+   "rt_pln": 16775676,
+   "rt_non_pln": 717,
+   "rt_jumlah": 16777333,
+   "rasio_persen": 99.99
+  },
+  {
+   "provinsi": "DKI Jakarta",
+   "rt_pln": 3507091,
+   "rt_non_pln": 0,
+   "rt_jumlah": 3507091,
+   "rasio_persen": 100.0
+  },
+  {
+   "provinsi": "Jawa Tengah",
+   "rt_pln": 11167006,
+   "rt_non_pln": 95,
+   "rt_jumlah": 11168130,
+   "rasio_persen": 99.99
+  },
+  {
+   "provinsi": "DI Yogyakarta",
+   "rt_pln": 1409280,
+   "rt_non_pln": 4498,
+   "rt_jumlah": 1413898,
+   "rasio_persen": 99.99
+  },
+  {
+   "provinsi": "Jawa Timur",
+   "rt_pln": 12743923,
+   "rt_non_pln": 15065,
+   "rt_jumlah": 12800730,
+   "rasio_persen": 99.67
+  },
+  {
+   "provinsi": "Bali",
+   "rt_pln": 1468786,
+   "rt_non_pln": 0,
+   "rt_jumlah": 1468786,
+   "rasio_persen": 100.0
+  },
+  {
+   "provinsi": "Nusa Tenggara Barat",
+   "rt_pln": 1914658,
+   "rt_non_pln": 4308,
+   "rt_jumlah": 1919137,
+   "rasio_persen": 99.99
+  },
+  {
+   "provinsi": "Nusa Tenggara Timur",
+   "rt_pln": 1209067,
+   "rt_non_pln": 99794,
+   "rt_jumlah": 1358394,
+   "rasio_persen": 96.35
+  },
+  {
+   "provinsi": "Kalimantan Barat",
+   "rt_pln": 1483201,
+   "rt_non_pln": 87358,
+   "rt_jumlah": 1572863,
+   "rasio_persen": 99.85
+  },
+  {
+   "provinsi": "Kalimantan Tengah",
+   "rt_pln": 769537,
+   "rt_non_pln": 28212,
+   "rt_jumlah": 813597,
+   "rasio_persen": 98.05
+  },
+  {
+   "provinsi": "Kalimantan Selatan",
+   "rt_pln": 1388876,
+   "rt_non_pln": 10644,
+   "rt_jumlah": 1399724,
+   "rasio_persen": 99.99
+  },
+  {
+   "provinsi": "Kalimantan Timur",
+   "rt_pln": 1231645,
+   "rt_non_pln": 60782,
+   "rt_jumlah": 1292554,
+   "rasio_persen": 99.99
+  },
+  {
+   "provinsi": "Kalimantan Utara",
+   "rt_pln": 200468,
+   "rt_non_pln": 3982,
+   "rt_jumlah": 204468,
+   "rasio_persen": 99.99
+  },
+  {
+   "provinsi": "Sulawesi Utara",
+   "rt_pln": 787516,
+   "rt_non_pln": 4741,
+   "rt_jumlah": 792322,
+   "rasio_persen": 99.99
+  },
+  {
+   "provinsi": "Gorontalo",
+   "rt_pln": 343640,
+   "rt_non_pln": 1522,
+   "rt_jumlah": 345195,
+   "rasio_persen": 99.99
+  },
+  {
+   "provinsi": "Sulawesi Tengah",
+   "rt_pln": 932289,
+   "rt_non_pln": 9893,
+   "rt_jumlah": 942261,
+   "rasio_persen": 99.99
+  },
+  {
+   "provinsi": "Sulawesi Tenggara",
+   "rt_pln": 775795,
+   "rt_non_pln": 54775,
+   "rt_jumlah": 832390,
+   "rasio_persen": 99.78
+  },
+  {
+   "provinsi": "Sulawesi Barat",
+   "rt_pln": 352308,
+   "rt_non_pln": 36247,
+   "rt_jumlah": 388590,
+   "rasio_persen": 99.99
+  },
+  {
+   "provinsi": "Sulawesi Selatan",
+   "rt_pln": 2687988,
+   "rt_non_pln": 81932,
+   "rt_jumlah": 2770172,
+   "rasio_persen": 99.99
+  },
+  {
+   "provinsi": "Maluku",
+   "rt_pln": 443634,
+   "rt_non_pln": 7208,
+   "rt_jumlah": 455034,
+   "rasio_persen": 99.08
+  },
+  {
+   "provinsi": "Maluku Utara",
+   "rt_pln": 342344,
+   "rt_non_pln": 42640,
+   "rt_jumlah": 385017,
+   "rasio_persen": 99.99
+  },
+  {
+   "provinsi": "Papua Barat",
+   "rt_pln": 138188,
+   "rt_non_pln": 15933,
+   "rt_jumlah": 154135,
+   "rasio_persen": 99.99
+  },
+  {
+   "provinsi": "Papua Barat Daya",
+   "rt_pln": 134652,
+   "rt_non_pln": 17099,
+   "rt_jumlah": 151765,
+   "rasio_persen": 99.99
+  },
+  {
+   "provinsi": "Papua",
+   "rt_pln": 268426,
+   "rt_non_pln": 28736,
+   "rt_jumlah": 297726,
+   "rasio_persen": 99.81
+  },
+  {
+   "provinsi": "Papua Tengah",
+   "rt_pln": 130621,
+   "rt_non_pln": 108923,
+   "rt_jumlah": 253519,
+   "rasio_persen": 94.49
+  },
+  {
+   "provinsi": "Papua Selatan",
+   "rt_pln": 96445,
+   "rt_non_pln": 28488,
+   "rt_jumlah": 126089,
+   "rasio_persen": 99.08
+  },
+  {
+   "provinsi": "Papua Pegunungan",
+   "rt_pln": 37167,
+   "rt_non_pln": 187910,
+   "rt_jumlah": 239380,
+   "rasio_persen": 94.02
+  }
+ ],
+ "wilayah_pln": [
+  {
+   "id": "aceh",
+   "nama": "Aceh",
+   "provinsi": [
+    "Aceh"
+   ],
+   "penjualan_gwh": 3696.136,
+   "pelanggan": 1791668
+  },
+  {
+   "id": "sumut",
+   "nama": "Sumatera Utara",
+   "provinsi": [
+    "Sumatera Utara"
+   ],
+   "penjualan_gwh": 13234.255,
+   "pelanggan": 4633553
+  },
+  {
+   "id": "sumbar",
+   "nama": "Sumatera Barat",
+   "provinsi": [
+    "Sumatera Barat"
+   ],
+   "penjualan_gwh": 3955.878,
+   "pelanggan": 1761911
+  },
+  {
+   "id": "riau-kepri",
+   "nama": "Riau dan Kepulauan Riau",
+   "provinsi": [
+    "Riau",
+    "Kepulauan Riau"
+   ],
+   "penjualan_gwh": 9891.75,
+   "pelanggan": 3016803
+  },
+  {
+   "id": "s2jb",
+   "nama": "Sumatera Selatan, Jambi, Bengkulu",
+   "provinsi": [
+    "Sumatera Selatan",
+    "Jambi",
+    "Bengkulu"
+   ],
+   "penjualan_gwh": 10266.113,
+   "pelanggan": 4498263
+  },
+  {
+   "id": "babel",
+   "nama": "Kepulauan Bangka Belitung",
+   "provinsi": [
+    "Kepulauan Bangka Belitung"
+   ],
+   "penjualan_gwh": 1593.495,
+   "pelanggan": 579717
+  },
+  {
+   "id": "lampung",
+   "nama": "Lampung",
+   "provinsi": [
+    "Lampung"
+   ],
+   "penjualan_gwh": 5991.849,
+   "pelanggan": 2740560
+  },
+  {
+   "id": "banten",
+   "nama": "Banten",
+   "provinsi": [
+    "Banten"
+   ],
+   "penjualan_gwh": 28396.464,
+   "pelanggan": 4165436
+  },
+  {
+   "id": "dki",
+   "nama": "DKI Jakarta",
+   "provinsi": [
+    "DKI Jakarta"
+   ],
+   "penjualan_gwh": 38198.377,
+   "pelanggan": 5403929
+  },
+  {
+   "id": "jabar",
+   "nama": "Jawa Barat",
+   "provinsi": [
+    "Jawa Barat"
+   ],
+   "penjualan_gwh": 61637.474,
+   "pelanggan": 17563127
+  },
+  {
+   "id": "jateng-diy",
+   "nama": "Jawa Tengah dan DI Yogyakarta",
+   "provinsi": [
+    "Jawa Tengah",
+    "DI Yogyakarta"
+   ],
+   "penjualan_gwh": 34282.613,
+   "pelanggan": 13771232
+  },
+  {
+   "id": "jatim",
+   "nama": "Jawa Timur",
+   "provinsi": [
+    "Jawa Timur"
+   ],
+   "penjualan_gwh": 44311.837,
+   "pelanggan": 14202136
+  },
+  {
+   "id": "bali",
+   "nama": "Bali",
+   "provinsi": [
+    "Bali"
+   ],
+   "penjualan_gwh": 7301.364,
+   "pelanggan": 1796683
+  },
+  {
+   "id": "kalbar",
+   "nama": "Kalimantan Barat",
+   "provinsi": [
+    "Kalimantan Barat"
+   ],
+   "penjualan_gwh": 3559.871,
+   "pelanggan": 1617468
+  },
+  {
+   "id": "kalselteng",
+   "nama": "Kalimantan Selatan dan Tengah",
+   "provinsi": [
+    "Kalimantan Selatan",
+    "Kalimantan Tengah"
+   ],
+   "penjualan_gwh": 5950.923,
+   "pelanggan": 2414503
+  },
+  {
+   "id": "kaltimtara",
+   "nama": "Kalimantan Timur dan Utara",
+   "provinsi": [
+    "Kalimantan Timur",
+    "Kalimantan Utara"
+   ],
+   "penjualan_gwh": 6214.989,
+   "pelanggan": 1588600
+  },
+  {
+   "id": "suluttenggo",
+   "nama": "Sulawesi Utara, Tengah, Gorontalo",
+   "provinsi": [
+    "Sulawesi Utara",
+    "Sulawesi Tengah",
+    "Gorontalo"
+   ],
+   "penjualan_gwh": 4739.747,
+   "pelanggan": 2215307
+  },
+  {
+   "id": "sulselrabar",
+   "nama": "Sulawesi Selatan, Tenggara, Barat",
+   "provinsi": [
+    "Sulawesi Selatan",
+    "Sulawesi Tenggara",
+    "Sulawesi Barat"
+   ],
+   "penjualan_gwh": 10917.521,
+   "pelanggan": 4099518
+  },
+  {
+   "id": "ntb",
+   "nama": "Nusa Tenggara Barat",
+   "provinsi": [
+    "Nusa Tenggara Barat"
+   ],
+   "penjualan_gwh": 2853.13,
+   "pelanggan": 2005554
+  },
+  {
+   "id": "ntt",
+   "nama": "Nusa Tenggara Timur",
+   "provinsi": [
+    "Nusa Tenggara Timur"
+   ],
+   "penjualan_gwh": 1454.141,
+   "pelanggan": 1285297
+  },
+  {
+   "id": "maluku-malut",
+   "nama": "Maluku dan Maluku Utara",
+   "provinsi": [
+    "Maluku",
+    "Maluku Utara"
+   ],
+   "penjualan_gwh": 2026.718,
+   "pelanggan": 840938
+  },
+  {
+   "id": "papua",
+   "nama": "Papua dan Papua Barat (wilayah PLN)",
+   "provinsi": [
+    "Papua",
+    "Papua Barat",
+    "Papua Barat Daya",
+    "Papua Tengah",
+    "Papua Selatan",
+    "Papua Pegunungan"
+   ],
+   "penjualan_gwh": 2156.534,
+   "pelanggan": 885089
+  },
+  {
+   "id": "batam",
+   "nama": "PT PLN Batam",
+   "provinsi": [
+    "Kepulauan Riau"
+   ],
+   "penjualan_gwh": 3588.244,
+   "pelanggan": null
+  }
+ ],
+ "total": {
+  "penjualan_pln_gwh": 306219.424,
+  "pelanggan": 92877292,
+  "rt_berlistrik": 85995030,
+  "rasio_nasional": 99.83
+ },
+ "konsumsi_per_kapita_nasional": [
+  {
+   "tahun": 2020,
+   "gwh": 293465,
+   "penduduk": 269603400,
+   "kwh_per_kapita": 1089
+  },
+  {
+   "tahun": 2021,
+   "gwh": 305627,
+   "penduduk": 272248500,
+   "kwh_per_kapita": 1123
+  },
+  {
+   "tahun": 2022,
+   "gwh": 322337,
+   "penduduk": 274859100,
+   "kwh_per_kapita": 1173
+  },
+  {
+   "tahun": 2023,
+   "gwh": 370997,
+   "penduduk": 277433400,
+   "kwh_per_kapita": 1337
+  },
+  {
+   "tahun": 2024,
+   "gwh": 397606,
+   "penduduk": 281603900,
+   "kwh_per_kapita": 1411
+  }
+ ],
+ "halaman": {
+  "rasio": "Tabel 7 hlm 9",
+  "penjualan": "Tabel 37 hlm 45 (nilai asli dalam kWh, dibagi 1.000.000)",
+  "pelanggan": "Tabel 42 hlm 52",
+  "per_kapita": "Tabel 38 hlm 46"
+ }
+}

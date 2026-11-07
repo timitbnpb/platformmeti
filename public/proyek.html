@@ -12,18 +12,18 @@
 <link rel="stylesheet" href="/inti/kepala.css">
 <link rel="stylesheet" href="/inti/gaya.css">
 <link rel="stylesheet" href="/inti/jm.css">
+<link rel="stylesheet" href="/inti/kh.css">
 <link rel="stylesheet" href="/publik.css">
 <link rel="stylesheet" href="/proyek.css">
 </head>
 <body data-halaman="proyek">
 <header class="top" id="kepala"></header>
 <main class="jm-wadah jm-pj-halaman" id="isi">
-  <header class="jm-judul jm-pj-judul">
-    <p class="jm-eyebrow"><span class="jm-kotak" aria-hidden="true"></span><span data-i18n="pj.eyebrow">Pelacak proyek EBT</span></p>
+  <section class="jm-kh" aria-labelledby="judul"><div class="jm-kh-teks">
+    <p class="jm-kh-ey"><svg class="jm-ik" width="16" height="16" aria-hidden="true" focusable="false"><use href="/img/ikon.svg#i-proyek"/></svg><span data-i18n="pj.eyebrow">Pelacak proyek EBT</span></p>
     <h1 id="judul" data-i18n="pj.judul">Pelacak proyek energi terbarukan</h1>
-    <p data-i18n="pj.lead">Proyek pembangkit dan program transisi energi nasional, lengkap dengan status, target COD, lokasi, dan sumber tiap angka.</p>
-  </header>
-  <div class="jm-kisi" id="pjAngka"></div>
+    <p class="jm-kh-lead" data-i18n="pj.lead">Proyek pembangkit dan program transisi energi nasional, lengkap dengan status, target COD, lokasi, dan sumber tiap angka.</p>
+  </div><div class="jm-kh-ubin" id="pjAngka" aria-live="polite"></div></section>
   <div id="exGb"><div class="jm-pj-isi"><div class="jm-pj-ringkas">
     <div>
       <h3 id="hStat" data-i18n="pj.stat.judul">Status proyek</h3>
@@ -66,6 +66,8 @@
   <div id="exDaftar"><div class="jm-pj-isi">
     <div id="pjDaftar"></div>
   </div></div>
+
+  <div id="pjKeputusan"></div>
 
   <div id="exProg"><div class="jm-pj-isi">
     <div id="pjProg" class="jm-pj-prog"></div>

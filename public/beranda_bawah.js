@@ -7,7 +7,9 @@ import { aksiHtml } from "/inti/aksi_ex.js";
 import { sumberHtml, exHtml } from "/inti/komponen.js";
 import { BATAS_ID, rapikanPeta, pasangBatas, geoProvinsi, jalurPerProvinsi } from "/inti/peta_indonesia.js";
 import { muat, label, sembunyi } from "/publik.js";
+import { geserPanel } from "/inti/panel_geser.js";
 import { muatMapLibre } from "/inti/maplibre.js";
+import { kontenBeranda, daftarKonten } from "/inti/konten_beranda.js";
 
 export const P = (d) => `<svg class="jm-ikon" viewBox="0 0 24 24" width="40" height="40" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">${d}</svg>`;
 export const IKON = {
@@ -58,7 +60,7 @@ async function teknologi() {
     const pro = await muat("proyek");
     const kartu = TEK.map((k) => {
       const ps = pro.baris.filter((p) => p.teknologi === k), mw = jml(ps, mwDari);
-      return `<a class="jm-bb-foto" href="/proyek?teknologi=${k}"><img src="/img/beranda/${FOTO[k][0]}.webp" width="800" height="600" loading="lazy" alt=""><span class="jm-bb-foto-ik jm-bb-t-${k}" aria-hidden="true">${IKON_TEK[k] || IKON[k]}</span><span class="jm-bb-foto-isi"><span class="jm-pil">${esc(angka(ps.length))} ${esc(t("beranda.tek.n"))}</span><strong>${esc(label("beranda.tek.", k))}</strong><small>${esc(t("beranda.foto." + k))}</small><b>${mw ? esc(angka(mw)) + " MW" : "-"}</b></span></a>`;
+      return `<a class="jm-bb-foto" href="/teknologi/${k}"><img src="/img/beranda/${FOTO[k][0]}.webp" width="800" height="600" loading="lazy" alt=""><span class="jm-bb-foto-ik jm-bb-t-${k}" aria-hidden="true">${IKON_TEK[k] || IKON[k]}</span><span class="jm-bb-foto-isi"><span class="jm-pil">${esc(angka(ps.length))} ${esc(t("beranda.tek.n"))}</span><strong>${esc(label("beranda.tek.", k))}</strong><small>${esc(t("beranda.foto." + k))}</small><b>${mw ? esc(angka(mw)) + " MW" : "-"}</b></span></a>`;
     }).join("");
     const daftar = TEK.map((k) => `${t(ada("beranda.foto.cr." + k) ? "beranda.foto.cr." + k : "beranda.foto." + k)} (${FOTO[k][1]}, ${LISENSI[FOTO[k][2]].startsWith("beranda") ? t(LISENSI[FOTO[k][2]]) : LISENSI[FOTO[k][2]]})`).join("; ");
     foto.innerHTML = exHtml({ ikon: "tek-surya", topik: t("beranda.s05.l"), judulHtml: jud("beranda.ex.tek.j", angka(pro.baris.length), { k: angka(TEK.length) }), subHtml: esc(t("beranda.ex.tek.s")), aksiHtml: aksiHtml() + sumberHtml(`${esc(t("beranda.sensus.sumber", { tanggal: tanggal(pro.dibangun_pada) }))} ${esc(t("beranda.foto.kredit", { daftar }))}`), isiHtml: `<div class="jm-bb-foto-kisi">${kartu}</div>` });
@@ -136,7 +138,8 @@ async function siapPeta() {
   const titik = lok.map((p) => ({ type: "Feature", geometry: { type: "Point", coordinates: [p.lokasi.lng, p.lokasi.lat] }, properties: { id: p.id, nama: p.nama, k: p.teknologi || "lain", mw: mwDari(p), st: p.status?.[0]?.nilai || "tidak-diketahui", progs: "|" + (p.program_ids || []).join("|") + "|" } }));
   dataPeta = { titik, n: lok.length, tanpa: pro.baris.length - lok.length, tgl: pro.dibangun_pada };
   const awal = rt.program, target = (awal?.target_gwp || 0) * 1000;
-  const daftar = [...prog.baris].filter((g) => g.jumlah_proyek > 0).sort((a, b) => b.kapasitas_mw - a.kapasitas_mw);
+  const urutan = daftarKonten(await kontenBeranda(), "program").map(String), pos = (g) => { const i = urutan.indexOf(g.id); return i < 0 ? urutan.length : i; };
+  const daftar = [...prog.baris].filter((g) => g.jumlah_proyek > 0).sort((a, b) => pos(a) - pos(b) || b.kapasitas_mw - a.kapasitas_mw);
   const baris = daftar.map((g) => {
     const tek = Object.entries(g.per_teknologi || {}).sort((a, b) => b[1] - a[1])[0]?.[0];
     const meta = awal?.id === g.id ? t("beranda.prog.awal", { n: angka(g.jumlah_proyek), gw: angka(awal.tahap_awal_gwp, { desimal: 1 }) }) : t("beranda.prog.meta", { n: angka(g.jumlah_proyek), tek: label("beranda.tek.", tek).toLowerCase() });
@@ -146,7 +149,12 @@ async function siapPeta() {
   }).join("");
   const info = $("petaInfo");
   gantiKepala($("petaKartu"), { ikon: "peta", topik: t("beranda.peta.k"), judulHtml: jud("beranda.ex.peta.j", angka(lok.length)), subHtml: esc(t("beranda.peta.d")), aksiHtml: aksiHtml() + sumberHtml(esc(t("beranda.peta.s", { tanggal: tanggal(pro.dibangun_pada) }))) });
-  info.innerHTML = `<button type="button" class="jm-bb-pp-t" aria-expanded="${panelBuka}"><span>${esc(t("beranda.peta.tabel"))}</span><i aria-hidden="true"></i></button><div class="jm-bb-pp-b"${panelBuka ? "" : " hidden"}>
+  if (!info.firstElementChild) {
+    info.innerHTML = `<div class="jm-bb-pp-g" role="group" aria-label="${esc(t("jm.geser.label"))}"></div><div class="jm-bb-pp-r"></div>`;
+    if (innerWidth >= 900) geserPanel(info, { kunci: "program" });
+  }
+  info.querySelector(".jm-bb-pp-g").setAttribute("aria-label", t("jm.geser.label"));
+  info.querySelector(".jm-bb-pp-r").innerHTML = `<button type="button" class="jm-bb-pp-t" aria-expanded="${panelBuka}"><span>${esc(t("beranda.peta.tabel"))}</span><i aria-hidden="true"></i></button><div class="jm-bb-pp-b"${panelBuka ? "" : " hidden"}>
     <div class="jm-bb-prog-w"><ul class="jm-bb-prog-l">${baris}</ul></div></div>`;
   if (!info.dataset.pasang) {
     info.dataset.pasang = "1";

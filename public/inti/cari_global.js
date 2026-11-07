@@ -2,6 +2,7 @@
 import { t } from "/i18n.js";
 import { esc, ikon, nanti } from "/inti/umum.js";
 import { norm, jerami, cari, sorot } from "/inti/cari_rumus.js";
+import { catatCari } from "/inti/statistik.js";
 
 const GRUP = [ // urutan tampil; kunci i18n literal agar terbaca gerbang-i18n
   ["proyek", "cari.g.proyek", "proyek"], ["org", "cari.g.org", "direktori"], ["orang", "cari.g.orang", "orang"], ["reg", "cari.g.reg", "regulasi"],
@@ -46,9 +47,11 @@ function pasang() {
     isi.setAttribute("aria-activedescendant", o[aktif].id); o[aktif].scrollIntoView({ block: "nearest" });
   };
   const pesan = (k, rusak) => { hasil.innerHTML = `<p class="jm-cari-info"${rusak ? ' role="alert"' : ""}>${esc(t(k))}</p>`; };
+  let tCatat = 0;
   const gambar = () => {
     const q = isi.value, per = indeks && cari(indeks, q, 6);
     if (!indeks) return;
+    clearTimeout(tCatat); tCatat = setTimeout(() => catatCari(q), 1500);
     if (!norm(q)) { pesan("cari.mulai"); return; }
     if (!per.size) { hasil.innerHTML = `<p class="jm-cari-info">${esc(t("cari.kosong", { q }))}</p>`; return; }
     let n = 0;

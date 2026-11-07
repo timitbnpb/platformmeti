@@ -1,11 +1,11 @@
 /* Pembantu bersama halaman profil publik /o/<id> dan /p/<id>: lambang provinsi, tabel proyek, peta mini, seksi exhibit.
    Data statis /data/*.json (lapis publik). Semua teks lewat t(); semua nilai data lewat esc(). */
 import { t, angka, tanggal } from "/i18n.js";
-import { esc, ikon } from "/inti/umum.js";
+import { esc, ikon, fotoBerita } from "/inti/umum.js";
 import { muat, urlAman, norm, label, namaRegulasi, kelasStatus } from "/publik.js";
 import { exHtml, sumberHtml, unduhRegHtml } from "/inti/komponen.js";
 import { aksiHtml, hlHtml } from "/inti/aksi_ex.js";
-import { pilTek, pilStatus } from "/inti/ikon_tek.js";
+import { pilTek, pilTekTaut, pilStatus } from "/inti/ikon_tek.js";
 import { muatMapLibre } from "/inti/maplibre.js";
 import { rapikanPeta } from "/inti/peta_indonesia.js";
 import { PROV } from "/penerbit.js";
@@ -62,7 +62,7 @@ export const sumberKaki = (dibangun) => t("pf.sumber_data", { tanggal: ringkasTg
 /** Tabel proyek (kolom dasar), nama tertaut ke /p/<id>. */
 export function tabelProyek(rows) {
   const kol = [["pj.c.nama"], ["pj.c.tek"], ["pj.c.kap", "jm-num"], ["pj.c.prov"], ["pj.c.status"], ["pj.c.cod", "jm-tengah"]];
-  const b = rows.map((r) => `<tr>${td("pj.c.nama", `<b><a class="pf-nm" href="/p/${esc(r.id)}">${esc(r.nama)}</a></b>`)}${td("pj.c.tek", pilTek(r.tek))}${td("pj.c.kap", `<span data-urut="${r.kap ?? ""}">${esc(kapTeks(r))}</span>`, "jm-num")}${td("pj.c.prov", provHtml(r.prov))}${td("pj.c.status", pilStatus(r.st))}${td("pj.c.cod", r.cod ?? "-", "jm-tengah")}</tr>`).join("");
+  const b = rows.map((r) => `<tr>${td("pj.c.nama", `<b><a class="pf-nm" href="/p/${esc(r.id)}">${esc(r.nama)}</a></b>`)}${td("pj.c.tek", pilTekTaut(r.tek))}${td("pj.c.kap", `<span data-urut="${r.kap ?? ""}">${esc(kapTeks(r))}</span>`, "jm-num")}${td("pj.c.prov", provHtml(r.prov))}${td("pj.c.status", pilStatus(r.st))}${td("pj.c.cod", r.cod ?? "-", "jm-tengah")}</tr>`).join("");
   return tabel(kol, b, "pf-tabel-proyek");
 }
 
@@ -99,7 +99,7 @@ export function tabelBerita(daftar, foto = {}) {
   const urut = [...daftar].sort((a, b) => String(b.terbit).localeCompare(String(a.terbit))).slice(0, 12);
   if (!urut.length) return "";
   return `<ul class="pf-ber">${urut.map((x) => {
-    const f = urlAman(foto[x.id]);
+    const f = fotoBerita(foto, x.id);
     const isi = `<span class="pf-ber-foto">${ikon("berita", 28)}${f ? `<img class="pf-foto" src="${esc(f)}" alt="" loading="lazy" decoding="async" referrerpolicy="no-referrer">` : ""}</span><span class="pf-ber-t"><b>${esc(x.judul)}</b><small>${esc([x.media, x.terbit ? ringkasTgl(x.terbit) : ""].filter(Boolean).join(", "))}</small></span>`;
     return `<li>${urlAman(x.url) ? `<a href="${esc(x.url)}" target="_blank" rel="noopener noreferrer">${isi}</a>` : `<div>${isi}</div>`}</li>`;
   }).join("")}</ul>`;

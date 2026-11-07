@@ -420,6 +420,117 @@ export async function anggotaCatat(env, akun, { anggotaId, aksi, data = null, ca
   } catch (e) { throw terjemah(e); }
 }
 
+/* ========================= Admin 0010: koreksi_usul, statistik_harian, konten_beranda, daftar jejak ========================= */
+// Hasil null = tabel belum ada (migrasi 0010 belum diterapkan); pemanggil membalas 503.
+const ADM_HAK = ["admin", "super"];
+const gerbangAdm = (akun) => { if (!akun || !ADM_HAK.includes(akun.peran)) throw tolak("admin: peran tidak berhak"); };
+const tanpaTabel = async (fn) => {
+  try { return await fn(); }
+  catch (e) { if (/no such table/i.test(String(e?.message) + String(e?.cause?.message))) return null; throw e; }
+};
+const HALAMAN_ADM = 50;
+const jejakAdm = (env, akun, aksi, tabel, barisId, ringkas) =>
+  env.DB.prepare("INSERT INTO jejak (siapa, peran, aksi, tabel, baris_id, ke) VALUES (?, ?, ?, ?, ?, ?)")
+    .bind(akun.id, akun.peran, aksi, tabel, String(barisId).slice(0, 80), JSON.stringify({ ringkas: String(ringkas).slice(0, 300) }));
+
+// Publik; nilai sudah divalidasi rute. Batas laju dipanggil rute lewat sistem.catatLaju.
+export async function koreksiBaru(env, d) {
+  return tanpaTabel(async () => {
+    try {
+      const r = await env.DB.prepare("INSERT INTO koreksi_usul (entitas, entitas_id, kolom, nilai_usulan, alasan, sumber_url) VALUES (?, ?, ?, ?, ?, ?)")
+        .bind(d.entitas, d.entitas_id, d.kolom, d.nilai_usulan, d.alasan, d.sumber_url ?? null).run();
+      return { id: r.meta.last_row_id };
+    } catch (e) { throw terjemah(e); }
+  });
+}
+export async function koreksiDaftar(env, akun, status, hal = 1) {
+  gerbangAdm(akun);
+  const h = Math.min(Math.max(Number(hal) || 1, 1), 10000);
+  return tanpaTabel(async () => {
+    const [b, t] = await env.DB.batch([
+      env.DB.prepare("SELECT id, entitas, entitas_id, kolom, nilai_usulan, alasan, sumber_url, status, catatan_admin, dibuat_pada, diputus_pada, diputus_oleh FROM koreksi_usul WHERE status = ? ORDER BY id DESC LIMIT ? OFFSET ?")
+        .bind(status, HALAMAN_ADM, (h - 1) * HALAMAN_ADM),
+      env.DB.prepare("SELECT COUNT(*) AS n FROM koreksi_usul WHERE status = ?").bind(status),
+    ]);
+    return { baris: b.results, total: t.results[0].n };
+  });
+}
+// Putus sekali: UPDATE hanya bila masih 'baru'; jejak hanya bila UPDATE mengubah baris (changes()), satu batch.
+export async function koreksiPutus(env, akun, id, aksi, catatan) {
+  gerbangAdm(akun);
+  if (!["setuju", "tolak"].includes(aksi)) throw salah("aksi tidak dikenal");
+  if (!/^\d{1,12}$/.test(String(id))) throw salah("id tidak sah");
+  return tanpaTabel(async () => {
+    const [u] = await env.DB.batch([
+      env.DB.prepare("UPDATE koreksi_usul SET status = ?, catatan_admin = ?, diputus_pada = ?, diputus_oleh = ? WHERE id = ? AND status = 'baru'")
+        .bind(aksi, catatan ?? null, kini(), akun.id, Number(id)),
+      env.DB.prepare("INSERT INTO jejak (siapa, peran, aksi, tabel, baris_id, ke) SELECT ?, ?, 'tinjau', 'koreksi_usul', ?, ? WHERE changes() > 0")
+        .bind(akun.id, akun.peran, String(id), JSON.stringify({ ringkas: "koreksi " + aksi })),
+    ]);
+    return { ubah: u.meta.changes };
+  });
+}
+
+export async function statistikHit(env, jenis, kunci) {
+  return tanpaTabel(async () => {
+    await env.DB.prepare("INSERT INTO statistik_harian (tanggal, jenis, kunci) VALUES (?, ?, ?) ON CONFLICT (tanggal, jenis, kunci) DO UPDATE SET jumlah = jumlah + 1")
+      .bind(new Date().toISOString().slice(0, 10), jenis, kunci).run();
+    return true;
+  });
+}
+export async function statistikAdmin(env, akun, hari = 30) {
+  gerbangAdm(akun);
+  const dari = new Date(Date.now() - (Math.min(Math.max(Number(hari) || 30, 1), 90) - 1) * 86400000).toISOString().slice(0, 10);
+  const top = (j) => env.DB.prepare("SELECT kunci, SUM(jumlah) AS jumlah FROM statistik_harian WHERE jenis = ? AND tanggal >= ? GROUP BY kunci ORDER BY jumlah DESC, kunci LIMIT 20").bind(j, dari);
+  return tanpaTabel(async () => {
+    const [h, c, d] = await env.DB.batch([top("halaman"), top("cari"),
+      env.DB.prepare("SELECT tanggal, SUM(CASE WHEN jenis = 'halaman' THEN jumlah ELSE 0 END) AS halaman, SUM(CASE WHEN jenis = 'cari' THEN jumlah ELSE 0 END) AS cari FROM statistik_harian WHERE tanggal >= ? GROUP BY tanggal ORDER BY tanggal").bind(dari)]);
+    return { halaman: h.results, cari: c.results, harian: d.results };
+  });
+}
+
+const KUNCI_KONTEN = ["sorotan", "berita_pilihan", "agenda", "program"];
+export async function kontenBaca(env) {
+  return tanpaTabel(async () => {
+    const o = Object.fromEntries(KUNCI_KONTEN.map((k) => [k, null]));
+    for (const r of (await env.DB.prepare("SELECT kunci, isi FROM konten_beranda").all()).results) { try { o[r.kunci] = JSON.parse(r.isi); } catch { /* isi rusak = null */ } }
+    return o;
+  });
+}
+export async function kontenSimpan(env, akun, kunci, isi) {
+  gerbangAdm(akun);
+  if (!KUNCI_KONTEN.includes(kunci)) throw salah("kunci tidak dikenal");
+  const teks = JSON.stringify(isi);
+  if (teks === undefined || teks.length > 20000) throw salah("isi tidak sah");
+  return tanpaTabel(async () => {
+    try {
+      await env.DB.batch([
+        env.DB.prepare("INSERT INTO konten_beranda (kunci, isi, diubah_pada, diubah_oleh) VALUES (?, ?, ?, ?) ON CONFLICT (kunci) DO UPDATE SET isi = excluded.isi, diubah_pada = excluded.diubah_pada, diubah_oleh = excluded.diubah_oleh")
+          .bind(kunci, teks, kini(), akun.id),
+        jejakAdm(env, akun, "ubah", "konten_beranda", kunci, "konten beranda " + kunci),
+      ]);
+    } catch (e) { throw terjemah(e); }
+    return true;
+  });
+}
+
+// Daftar jejak untuk layar admin: bentuk {id, waktu, akun_id, akun_nama, peran, aksi, entitas, entitas_id, ringkas}. Tanpa ip_hash.
+export async function jejakDaftar(env, akun, { tabel, baris, hal = 1 } = {}) {
+  gerbangAdm(akun);
+  const h = Math.min(Math.max(Number(hal) || 1, 1), 10000);
+  const w = [], b = [];
+  if (tabel) { w.push("j.tabel = ?"); b.push(tabel); }
+  if (baris) { w.push("j.baris_id = ?"); b.push(baris); }
+  const where = w.length ? " WHERE " + w.join(" AND ") : "";
+  const [r, t] = await env.DB.batch([
+    env.DB.prepare("SELECT j.id, j.kapan, j.siapa, a.nama AS akun_nama, j.peran, j.aksi, j.tabel, j.baris_id, j.ke FROM jejak j LEFT JOIN akun a ON a.id = j.siapa" + where + " ORDER BY j.id DESC LIMIT ? OFFSET ?")
+      .bind(...b, HALAMAN_ADM, (h - 1) * HALAMAN_ADM),
+    env.DB.prepare("SELECT COUNT(*) AS n FROM jejak j" + where).bind(...b),
+  ]);
+  const ringkas = (ke) => { if (!ke) return ""; try { const o = JSON.parse(ke); return String(o?.ringkas ?? (o?.kolom ? "kolom: " + o.kolom.join(", ") : ke)).slice(0, 300); } catch { return ""; } };
+  return { baris: r.results.map((x) => ({ id: x.id, waktu: x.kapan, akun_id: x.siapa, akun_nama: x.akun_nama ?? null, peran: x.peran, aksi: x.aksi, entitas: x.tabel, entitas_id: x.baris_id, tabel: x.tabel, baris_id: x.baris_id, ringkas: ringkas(x.ke) })), total: t.results[0].n };
+}
+
 /* ========================================= sistem (tanpa peran) =================================== */
 const BATCH = (env, s) => env.DB.batch(s);
 const ip16 = (v) => (v && String(v).length === 16 ? String(v) : null);

@@ -8,9 +8,9 @@
 #s04 .jm-sh,#s05 .jm-sh,#s06 .jm-sh{display:none}
 .jm-bb-ex-w+.jm-bb-ex-w{margin-top:24px}
 #petaKartu{margin-bottom:24px}
-.jm-bb-kep{display:flex;justify-content:space-between;align-items:center;gap:12px;font:700 var(--t-label)/var(--lh-rapat) var(--font);letter-spacing:.08em;text-transform:uppercase;color:var(--ink2)}
+.jm-bb-kep{display:flex;justify-content:space-between;align-items:center;gap:12px;font:700 var(--t-label)/var(--lh-rapat) var(--font);letter-spacing:normal;text-transform:none;color:var(--ink2)}
 .jm-bb-kep small{margin-left:8px;font-weight:400;letter-spacing:0;text-transform:none;font-size:var(--t-kecil)}
-.jm-bb-h4{font:700 var(--t-kecil)/var(--lh-rapat) var(--font);text-transform:uppercase;letter-spacing:.08em;color:var(--ink2);margin-top:8px}
+.jm-bb-h4{font:700 var(--t-kecil)/var(--lh-rapat) var(--font);text-transform:none;letter-spacing:normal;color:var(--ink2);margin-top:8px}
 
 /* A + B: peta dan daftar program */
 
@@ -22,7 +22,7 @@
 .jm-bb-fakta{font-size:var(--t-tombol);color:var(--ink2)}
 .jm-bb-fakta b{color:var(--ink);font-variant-numeric:tabular-nums}
 .jm-bb-prog-w{display:flex;flex-direction:column;flex:1;margin-top:4px}
-.jm-bb-prog-kop{display:grid;grid-template-columns:minmax(0,1fr) 56px 76px;gap:10px;padding:10px 12px;border-bottom:2px solid var(--sorot);border-radius:var(--r-sm) var(--r-sm) 0 0;background:linear-gradient(90deg,var(--brand),var(--brand2));color:var(--on-brand);font:700 var(--t-label)/var(--lh-rapat) var(--font);letter-spacing:.08em;text-transform:uppercase;text-align:center}
+.jm-bb-prog-kop{display:grid;grid-template-columns:minmax(0,1fr) 56px 76px;gap:10px;padding:10px 12px;border-bottom:2px solid var(--sorot);border-radius:var(--r-sm) var(--r-sm) 0 0;background:linear-gradient(90deg,var(--brand),var(--brand2));color:var(--on-brand);font:700 var(--t-label)/var(--lh-rapat) var(--font);letter-spacing:normal;text-transform:none;text-align:center}
 .jm-bb-prog-l{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;flex:1;border:1px solid var(--line);border-top:0;border-radius:0 0 var(--r-sm) var(--r-sm)}
 .jm-bb-prog-l li+li{border-top:1px solid var(--line-cell)}
 .jm-bb-prog-l li{display:flex;flex:1}
@@ -102,7 +102,7 @@
 .jm-bb-kpi-f{display:flex;gap:24px}
 .jm-bb-kpi-f div{display:grid;gap:3px}
 .jm-bb-kpi-f b{font:700 var(--t-h2)/1 var(--display);font-variant-numeric:tabular-nums;color:var(--ink)}
-.jm-bb-kpi-f span{font:600 var(--t-label)/var(--lh-rapat) var(--font);letter-spacing:.08em;text-transform:uppercase;color:var(--ink2)}
+.jm-bb-kpi-f span{font:600 var(--t-label)/var(--lh-rapat) var(--font);letter-spacing:normal;text-transform:none;color:var(--ink2)}
 .jm-bb-sc-w{position:relative;flex:1;display:flex;align-items:center}
 .jm-bb-sc{display:block;width:100%;height:auto}
 .jm-bb-sc .jm-sc-sb{font-size:var(--t-kecil)}
@@ -193,3 +193,8 @@
 .jm-bb-prog-l>li+li{border-top:1px solid var(--line)}
 .jm-bb-mw{font-size:var(--t-h3);white-space:nowrap}
 .jm-bb-mw small{font-size:var(--t-kecil);font-weight:600;color:var(--ink2)}
+
+.jm-bb-pp-g{flex:none;position:relative;height:18px}
+.jm-bb-pp-g::before{content:"";position:absolute;left:50%;top:8px;width:36px;height:3px;margin-left:-18px;border-radius:2px;background:var(--line-ctl)}
+.jm-bb-pp-g .jm-geser-reset{position:absolute;right:6px;top:-2px;margin:0}
+@media (max-width:899px){.jm-bb-pp-g{display:none}}

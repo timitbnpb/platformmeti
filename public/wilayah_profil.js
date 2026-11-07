@@ -5,7 +5,7 @@ import { t, tanggal, ada } from "/i18n.js";
 import { exHtml, unduhRegHtml } from "/inti/komponen.js";
 import { aksiHtml, hlHtml } from "/inti/aksi_ex.js";
 import { batang } from "/grafik.js";
-import { pilTek, pilStatus } from "/inti/ikon_tek.js";
+import { pilTek, pilTekTaut, pilStatus } from "/inti/ikon_tek.js";
 import { muatMapLibre } from "/inti/maplibre.js";
 import { rapikanPeta, geoProvinsi, jalurPerProvinsi } from "/inti/peta_indonesia.js";
 import { sumberLipat, amanUrl, muatData, num, pil, pasangBar } from "/analisis.js";
@@ -134,7 +134,7 @@ function potensi(p) {
   const grafik = bars.length ? `<ul class="jm-wp-bars jm-wp-bars-l" aria-label="${esc(t("wp.pot.grafik"))}">${bars.map((b) => `<li><span class="jm-wp-bl">${esc(b.label)}</span><span class="jm-wp-bt"><i class="${b.on ? "jm-wp-b1" : "jm-wp-b0"}" data-w="${Math.min(100, b.w).toFixed(1)}"></i></span><b class="jm-wp-bv">${esc(b.teks)}</b></li>`).join("")}</ul>` : "";
   const j = pb && !(pt["panas-bumi"] > 0) ? hlHtml("wp.j.potensi_nol", num(pb.nilai, 0) + " MW", { nama: p.nama }) : pb ? hlHtml("wp.j.potensi", num(((pt["panas-bumi"] ?? 0) / pb.nilai) * 100, 1) + "%", { nama: p.nama, a: num(pt["panas-bumi"] ?? 0, 1), b: num(pb.nilai, 0) }) : hlHtml("wp.j.potensi0", num(p.terpasang_mw.nilai, 1) + " MW", { nama: p.nama });
   const tabel = `<div class="jm-gulir"><table class="jm-tabel"><thead><tr><th>${esc(t("wl.col.tek"))}</th><th class="jm-num">${esc(t("wp.col.terpasang"))}</th><th class="jm-num">${esc(t("wp.col.potensi"))}</th><th class="jm-num">${esc(t("wp.col.real"))}</th></tr></thead><tbody>${baris.map((r) =>
-    `<tr><td data-label="${esc(t("wl.col.tek"))}">${pilTek(r.k)}</td><td data-label="${esc(t("wp.col.terpasang"))}" class="jm-num">${nilaiAtau(r.mw, (v) => esc(num(v, 1)) + " MW")}</td><td data-label="${esc(t("wp.col.potensi"))}" class="jm-num">${r.pot != null ? esc(num(r.pot, 0)) + " MW" : kos(t("wp.kos.potensi"))}</td><td data-label="${esc(t("wp.col.real"))}" class="jm-num">${r.pot ? esc(num((r.mw / r.pot) * 100, 1)) + "%" : kos()}</td></tr>`).join("")}</tbody></table></div>`;
+    `<tr><td data-label="${esc(t("wl.col.tek"))}">${pilTekTaut(r.k)}</td><td data-label="${esc(t("wp.col.terpasang"))}" class="jm-num">${nilaiAtau(r.mw, (v) => esc(num(v, 1)) + " MW")}</td><td data-label="${esc(t("wp.col.potensi"))}" class="jm-num">${r.pot != null ? esc(num(r.pot, 0)) + " MW" : kos(t("wp.kos.potensi"))}</td><td data-label="${esc(t("wp.col.real"))}" class="jm-num">${r.pot ? esc(num((r.mw / r.pot) * 100, 1)) + "%" : kos()}</td></tr>`).join("")}</tbody></table></div>`;
   const sur = atlas?.pvout_kwh_per_kwp_tahun ? `<p class="jm-bantu">${esc(t("wp.surya_atlas", { pv: num(atlas.pvout_kwh_per_kwp_tahun), ghi: num(atlas.ghi_kwh_per_m2_tahun ?? 0) }))}</p>` : "";
   return seksi({ id: "potensi", ikon: "peta", topik: t("wp.ey.potensi"), judulHtml: j, aksiHtml: aksiHtml({ csv: true }) + sumberDari(p.terpasang_mw, pb, atlas && { sumber: atlas.sumber, url: atlas.url, tanggal: atlas.tanggal }), isiHtml: grafik + tabel, kakiHtml: sur + `<p class="jm-bantu">${esc(t("wp.cat.potensi"))}</p>` });
 }
@@ -204,7 +204,7 @@ function proyek(p) {
   const pengTd = (x) => (x.peng ? (x.peng.id && !x.peng.generik ? `<a href="/o/${encodeURIComponent(x.peng.id)}">${esc(x.peng.nama)}</a>` : x.peng.generik ? `<span class="jm-wp-redup">${esc(x.peng.nama)}</span>` : esc(x.peng.nama)) : kos());
   const L = (k) => esc(t(k));
   const tb = `<div class="jm-gulir"><table class="jm-tabel"><thead><tr><th>${L("wl.col.proyek")}</th><th>${L("wl.col.tek")}</th><th>${L("wp.col.program")}</th><th>${L("wp.col.peng")}</th><th class="jm-num">${L("wl.col.kap")}</th><th>${L("wl.col.status")}</th></tr></thead><tbody>${A.map((x) =>
-    `<tr><td data-label="${L("wl.col.proyek")}"><a href="/p/${encodeURIComponent(x.id)}">${esc(namaBersih(x))}</a></td><td data-label="${L("wl.col.tek")}">${pilTek(x.teknologi)}</td><td data-label="${L("wp.col.program")}">${x.program?.length ? progPil(x.program) : kos()}</td><td data-label="${L("wp.col.peng")}">${pengTd(x)}</td><td data-label="${L("wl.col.kap")}" class="jm-num">${x.mw == null ? kos() : esc(num(x.mw, 1) + " " + (x.satuan || "MW"))}</td><td data-label="${L("wl.col.status")}">${pilStatus(x.status || ST0)}</td></tr>`).join("")}</tbody></table></div>`;
+    `<tr><td data-label="${L("wl.col.proyek")}"><a href="/p/${encodeURIComponent(x.id)}">${esc(namaBersih(x))}</a></td><td data-label="${L("wl.col.tek")}">${pilTekTaut(x.teknologi)}</td><td data-label="${L("wp.col.program")}">${x.program?.length ? progPil(x.program) : kos()}</td><td data-label="${L("wp.col.peng")}">${pengTd(x)}</td><td data-label="${L("wl.col.kap")}" class="jm-num">${x.mw == null ? kos() : esc(num(x.mw, 1) + " " + (x.satuan || "MW"))}</td><td data-label="${L("wl.col.status")}">${pilStatus(x.status || ST0)}</td></tr>`).join("")}</tbody></table></div>`;
   return seksi({ id: "proyek", ikon: "proyek", topik: t("wp.ey.proyek"), judulHtml: hlHtml("wp.j.proyek", num(A.length), { nama: p.nama, mw: num(mw, 0) }), aksiHtml: aksiHtml({ csv: true }) + sumberDari({ sumber: t("wl.sumber_proyek"), tanggal: "" }), isiHtml: rinci + tb, kakiHtml: `<p class="jm-bantu">${esc(t("wp.cat.proyek"))}</p>` });
 }
 

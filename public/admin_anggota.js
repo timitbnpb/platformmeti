@@ -3,6 +3,7 @@
 import { t, ada, angka } from "/i18n.js";
 import { esc, api, nanti, debounce, hantuHtml, kosongHtml, galatHtml, galatTeks, ikon } from "/inti/umum.js";
 import { cariHtml, pilihHtml, hitungHtml } from "/inti/komponen.js";
+import { namaBaku } from "/inti/nama_baku.js";
 import { formHtml, bacaForm, tampilGalat } from "/admin_anggota_form.js";
 
 const BARIS = 50;
@@ -45,7 +46,7 @@ export function panelAnggota(panel, { boleh, kabari }) {
       const d = await api("/api/admin/anggota-meti", { signal: S.ctl.signal });
       S.semua = Array.isArray(d) ? d : d.baris || [];
       S.penyunting = !Array.isArray(d) && d.penyunting === true;
-      S.semua.forEach((r, i) => { r._i = i; r._k = [r.nama, r.nama_lama, r.instansi, r.surel].join(" ").toLowerCase(); });
+      S.semua.forEach((r, i) => { r._i = i; { const b = namaBaku(r.nama); r.nama = b.nama; r._awalan = b.jenis; if (r.nama_lama) r.nama_lama = namaBaku(r.nama_lama).nama; } r._k = [r.nama, r.nama_lama, r.instansi, r.surel].join(" ").toLowerCase(); });
       S.tampilNo = S.semua.filter((r) => r.no_anggota).length / (S.semua.length || 1) >= 0.1;
     } catch (e) {
       if (e.name === "AbortError") return;
@@ -118,7 +119,7 @@ export function panelAnggota(panel, { boleh, kabari }) {
       + (r.nama_lama ? `<small class="jm-adm-lama">${esc(t("adm.anggota.dahulu", { nama: r.nama_lama }))}</small>` : "")
       + (sub ? `<small>${esc(sub)}</small>` : "") + "</span>";
   };
-  const pilJenis = (j) => `<span class="jm-pil jm-adm-jn${j === "utama" ? " jm-pil-ok" : ""}">${esc(label("adm.anggota.jenis.", j))}</span>`;
+  const pilJenis = (j, aw) => `<span class="jm-pil jm-adm-jn${j === "utama" ? " jm-pil-ok" : ""}">${esc(label("adm.anggota.jenis.", j))}</span>` + (aw && !(aw === "utama" && j === "utama") ? `<span class="jm-pil jm-adm-jn">${esc(t("adm.anggota.awalan." + aw))}</span>` : "");
   const orgTd = (r) => {
     const nm = r.org_id ? `<a href="/direktori?tampil=lembaga&amp;id=${encodeURIComponent(r.org_id)}"><strong>${esc(r.nama)}</strong></a>` : `<button type="button" data-m="profil" data-i="${r._i}" aria-label="${esc(t("adm.anggota.buka", { nama: r.nama }))}"><strong>${esc(r.nama)}</strong></button>`;
     return `<span class="jm-adm-lg"><span class="jm-adm-ava" aria-hidden="true">${esc(awal(r.nama))}</span><span class="jm-adm-id">${nm}${r.nama_lama ? `<small class="jm-adm-lama">${esc(t("adm.anggota.dahulu", { nama: r.nama_lama }))}</small>` : ""}</span></span>`;
@@ -160,7 +161,7 @@ export function panelAnggota(panel, { boleh, kabari }) {
         ...(S.tampilNo && !org ? [K("adm.anggota.k.no", (r) => esc(r.no_anggota || "-"), { k: "no_anggota", kls: "jm-nowrap", w: 8 })] : []),
         K("adm.anggota.k.nama", org ? orgTd : identitas, { k: "nama", kls: "jm-adm-nama", w: 22 }),
         ...(org ? [K("adm.anggota.k.pic", (r) => esc(r.pic || "-"))] : []),
-        ...(semuaJ ? [K("adm.anggota.f.jenis", (r) => pilJenis(r.jenis), { k: "jenis" })] : []),
+        ...(semuaJ ? [K("adm.anggota.f.jenis", (r) => pilJenis(r.jenis, r._awalan), { k: "jenis" })] : []),
         K("adm.anggota.k.kontak", kontakTd, { kls: "jm-adm-kontak", w: 30 }),
         ...(org ? [K("adm.anggota.k.situs", situsTd, { kls: "jm-adm-cek" })] : []),
         ...TAHUN.map((th) => K(th, (r) => centang(r, th), { th: 1, kls: "jm-adm-cek", w: 5 })),
@@ -184,7 +185,7 @@ export function panelAnggota(panel, { boleh, kabari }) {
   function profil(r) {
     const bar = (k, v) => (v ? `<dt>${esc(t(k))}</dt><dd>${esc(v)}</dd>` : "");
     const dir = r.org_id ? `<a class="jm-tbl" href="/direktori?tampil=lembaga&amp;id=${encodeURIComponent(r.org_id)}">${ikon("direktori", 18)}${esc(t("adm.anggota.ke_direktori"))}</a>` : "";
-    return `<header><div><h2 id="mLembarJudul">${esc(r.nama)}</h2>${r.nama_lama ? `<small class="jm-adm-lama">${esc(t("adm.anggota.dahulu", { nama: r.nama_lama }))}</small>` : ""}<p>${pilJenis(r.jenis)} <span class="jm-pil ${r.status === "aktif" ? "jm-pil-ok" : r.status === "nonaktif" ? "jm-pil-bad" : "jm-pil-warn"}">${esc(label("adm.anggota.status.", r.status))}</span></p></div>
+    return `<header><div><h2 id="mLembarJudul">${esc(r.nama)}</h2>${r.nama_lama ? `<small class="jm-adm-lama">${esc(t("adm.anggota.dahulu", { nama: r.nama_lama }))}</small>` : ""}<p>${pilJenis(r.jenis, r._awalan)} <span class="jm-pil ${r.status === "aktif" ? "jm-pil-ok" : r.status === "nonaktif" ? "jm-pil-bad" : "jm-pil-warn"}">${esc(label("adm.anggota.status.", r.status))}</span></p></div>
       <button type="button" class="jm-tbl jm-tbl-kecil" data-m="tutup" aria-label="${esc(t("jm.tutup"))}">${ikon("tutup", 18)}</button></header>
       <dl>${bar("adm.anggota.k.no", r.no_anggota)}${bar("adm.anggota.k.tahun", r.tahun_daftar)}${bar("adm.anggota.k.instansi", r.instansi)}${bar("adm.anggota.k.jabatan", r.jabatan)}${bar("adm.anggota.k.alamat", r.alamat)}${bar("adm.anggota.k.surel", r.surel)}${bar("adm.anggota.k.seluler", r.seluler)}${bar("adm.anggota.k.telepon", r.telepon)}${bar("adm.anggota.k.faks", r.faks)}${bar("adm.anggota.k.hotline", r.hotline)}${bar("adm.anggota.k.pic", r.pic)}${bar("adm.anggota.k.situs", (r.situs || []).filter(aman).join(" "))}</dl>
       <h3>${esc(t("adm.anggota.riwayat"))}</h3><ul class="jm-adm-riwayat">${TAHUN.map((th) => `<li class="${bayar(r, th) ? "jm-adm-ok" : ""}"><span>${th}</span>${centang(r, th)}</li>`).join("")}</ul>${dir}`;

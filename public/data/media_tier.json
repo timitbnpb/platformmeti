@@ -1,0 +1,8 @@
+{"lapis":"publik","dibangun_pada":"2026-11-07","sumber":"Klasifikasi redaksi METI atas domain di berita.json (EST, bukan peringkat resmi)",
+"tier":{
+"antaranews.com":"utama","kompas.com":"utama","tempo.co":"utama","detik.com":"utama","cnnindonesia.com":"utama","cnbcindonesia.com":"utama","kontan.co.id":"utama","bisnis.com":"utama","katadata.co.id":"utama","republika.co.id":"utama","rri.co.id":"utama","metrotvnews.com":"utama","liputan6.com":"utama","thejakartapost.com":"utama",
+"tribunnews.com":"nasional","okezone.com":"nasional","sindonews.com":"nasional","viva.co.id":"nasional","jawapos.com":"nasional","jpnn.com":"nasional","merdeka.com":"nasional","koran-jakarta.com":"nasional","ruangenergi.com":"nasional","indonesiatribune.com":"nasional",
+"harianjogja.com":"daerah","beritajatim.com":"daerah","analisadaily.com":"daerah","gdnonline.com":"daerah","batampos.co.id":"daerah",
+"go.id":"rilis","prnewswire.com":"rilis","eurekalert.org":"rilis","miragenews.com":"rilis","mpoc.org.my":"rilis","investegate.co.uk":"rilis","finanznachrichten.de":"rilis","bignewsnetwork.com":"rilis"},
+"nama":{"Tempo":"tempo.co","CNN Indonesia":"cnnindonesia.com","CNBC Indonesia":"cnbcindonesia.com","Antara":"antaranews.com","Katadata":"katadata.co.id","Ruang Energi":"ruangenergi.com","Detik Finance":"detik.com"},
+"daerah_prefiks":["jateng","kupang","bali","jabar","makassar","kaltim","kaltara","pontianak","belitung","bangka","sumsel","palembang","manado","lampung","jogja","ntt","daerah","kepri","sumatra","semarang","surabaya","bandung","wartakota","rejogja","ecologic","manado"]}

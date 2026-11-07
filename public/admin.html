@@ -13,6 +13,7 @@
 <link rel="stylesheet" href="/inti/kepala.css">
 <link rel="stylesheet" href="/inti/gaya.css">
 <link rel="stylesheet" href="/inti/jm.css">
+<link rel="stylesheet" href="/inti/kh.css">
 <link rel="stylesheet" href="/admin.css">
 <script src="/tema.js"></script>
 </head>
@@ -20,7 +21,11 @@
 <header class="top" id="kepala"></header>
 <div id="pita"></div>
 <div class="jm-halaman">
-  <h1 data-i18n="admin.judul">Administrasi</h1>
+  <section class="jm-kh jm-kh-satu" aria-labelledby="judul"><div class="jm-kh-teks">
+    <p class="jm-kh-ey"><svg class="jm-ik" width="16" height="16" aria-hidden="true" focusable="false"><use href="/img/ikon.svg#i-perisai"/></svg><span data-i18n="admin.eyebrow">Khusus pengelola</span></p>
+    <h1 id="judul" data-i18n="admin.judul">Administrasi</h1>
+    <p class="jm-kh-lead" data-i18n="admin.lead">Kelola akun, peran, dan jejak perubahan platform.</p>
+  </div></section>
   <div id="isi"><div class="jm-hantu" role="status"><i></i><i></i><i></i></div></div>
 </div>
 <dialog class="jm-dlg" id="dlg" aria-labelledby="dlgJudul"></dialog>

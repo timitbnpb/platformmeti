@@ -12,6 +12,7 @@
 <link rel="stylesheet" href="/inti/kepala.css">
 <link rel="stylesheet" href="/inti/gaya.css">
 <link rel="stylesheet" href="/inti/jm.css">
+<link rel="stylesheet" href="/inti/kh.css">
 <link rel="stylesheet" href="/publik.css">
 <link rel="stylesheet" href="/berita.css">
 <script src="/tema.js"></script>
@@ -21,12 +22,15 @@
 <div id="pita"></div>
 <main>
 <section class="brt-kepala"><div class="jm-wadah">
-  <div class="jm-judul"><h1 data-i18n="brt.judul">Berita energi terbarukan</h1>
-    <p data-i18n="brt.lead">Judul dan tautan ke sumber aslinya, dengan analisis teknologi, wilayah, dan pelaku yang disebut.</p></div>
-  <dl class="brt-angka" id="angka"></dl>
+  <div class="jm-kh" aria-labelledby="judul"><div class="jm-kh-teks">
+    <p class="jm-kh-ey"><svg class="jm-ik" width="16" height="16" aria-hidden="true" focusable="false"><use href="/img/ikon.svg#i-berita"/></svg><span data-i18n="brt.eyebrow">Berita dan video EBET</span></p>
+    <h1 id="judul" data-i18n="brt.judul">Berita energi terbarukan</h1>
+    <p class="jm-kh-lead" data-i18n="brt.lead">Judul dan tautan ke sumber aslinya, dengan analisis teknologi, wilayah, dan pelaku yang disebut.</p></div>
+  <div class="jm-kh-ubin" id="khUbin" aria-live="polite"></div></div>
 </div></section>
 <section class="brt-bagian"><div class="jm-wadah"><div class="brt-grid" id="ringkasan"><div id="r-volume"></div><div id="r-peta"></div><div class="brt-dua" id="r-lain"></div></div></div></section>
 <div id="bagian"></div>
+<div id="analisis"></div>
 <section class="brt-bagian"><div class="jm-wadah" id="semua"></div></section>
 </main>
 <footer class="jm-kaki" id="kaki"></footer>

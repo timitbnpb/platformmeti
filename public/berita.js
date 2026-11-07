@@ -1,6 +1,7 @@
 import { mulaiHalaman } from "/inti/kepala.js";
+import { khUbin } from "/inti/kh.js";
 import { t, angka, tanggal } from "/i18n.js";
-import { esc, nanti, debounce, hantuHtml, galatHtml, ikon } from "/inti/umum.js";
+import { esc, nanti, debounce, hantuHtml, galatHtml, ikon, fotoBerita } from "/inti/umum.js";
 import { cariHtml, pilihHtml, hapusHtml, hitungHtml, exHtml, sumberHtml, unduhRegHtml } from "/inti/komponen.js";
 import { aksiHtml, hlHtml } from "/inti/aksi_ex.js";
 import { volumeSvg, batangMendatar, jumlahJendela } from "/berita_grafik.js";
@@ -8,6 +9,7 @@ import { muat, label, urlAman, norm, namaRegulasi } from "/publik.js";
 import { IKON_TEK as IKT } from "/inti/ikon_tek.js";
 import { LOGO_ORG } from "/beranda_data.js";
 import { petaHtml, pasangPeta, agregat } from "/berita_peta.js";
+import { gambarAnalisis } from "/berita_analisis.js";
 
 const LANJUT = 30;
 const HARI = 86400000;
@@ -69,9 +71,9 @@ function gambarPeta() {
   const el = document.getElementById("r-peta");
   if (!A.prov.length) { el.innerHTML = ""; return; }
   el.innerHTML = exHtml({ id: "ex-peta", ikon: "wilayah", topik: t("brt.ex.peta.ey"), tingkat: "h2", judulHtml: hlHtml("brt.ex.peta.j", A.prov[0].nama, { n: angka(A.berlokasi) }),
-    subHtml: `${esc(t("brt.ex.peta.sub", { p: angka(Math.round(A.berlokasi / B.length * 100)) }))} ${est}`, isiHtml: petaHtml(),
-    aksiHtml: aksiHtml({ csv: false }) + sumberHtml(`${esc(t("brt.sumber.peta"))} ${esc(tanggal(DIBANGUN))}.`) });
-  pasangPeta(B, { onCari: (nama) => cariKe(nama) });
+    subHtml: `${esc(t("brt.ex.peta.sub", { p: angka(Math.round(A.berlokasi / B.length * 100)) }))} ${est}`, isiHtml: "",
+    aksiHtml: aksiHtml({ csv: false }) + sumberHtml(`${esc(t("brt.sumber.peta"))} ${esc(tanggal(DIBANGUN))}.`) }) + petaHtml();
+  pasangPeta(B, { onCari: (nama) => cariKe(nama), baris: barisMini });
 }
 function cariKe(q) { ubah(() => { S.tab = "berita"; S.q = q; gambarTab(); gambarSaring(); }); document.getElementById("ex-semua").scrollIntoView({ block: "start" }); }
 
@@ -95,18 +97,26 @@ function gambarRingkas() {
   if (reg.length) h += ex({ id: "ex-regulasi", ikon: "regulasi", topik: t("brt.ex.reg.ey"), judulHtml: hlHtml("brt.ex.reg.j", namaRegulasi(reg[0].g)), subHtml: `${esc(t("brt.ex.reg.sub"))} ${est}`, sumberKunci: "brt.sumber.tag",
     isiHtml: batangMendatar(reg.slice(0, 8).map((x) => [namaRegulasi(x.g), x.n, namaRegulasi(x.g), { ikon: ikon("regulasi", 18), aksi: unduhRegHtml(x.g) }]), "cari") });
   h += ex({ id: "ex-media", ikon: "jenis", topik: t("brt.ex.med.ey"), judulHtml: hlHtml("brt.ex.med.j", medTop[0][0]), subHtml: esc(t("brt.ex.med.sub")),
-    isiHtml: batangMendatar(medTop.map(([k, v]) => [k, v, k, { ikon: `<span class="brt-lg">${esc(inisialMedia(k))}</span>` }]), "media") });
+    isiHtml: batangMendatar(medTop.map(([k, v]) => [k, v, k, { ikon: logoMedia(k, favMedia(k)) }]), "media") });
   document.getElementById("r-lain").innerHTML = h;
 }
 function gambarAngka() {
-  const item = (v, k, ik) => `<div>${ikon(ik, 20)}<dd>${angka(v)}</dd><dt>${esc(t(k))}</dt></div>`;
-  document.getElementById("angka").innerHTML = item(B.length, "brt.n.berita", "berita") + item(new Set(B.map((r) => r.media)).size, "brt.n.media", "jenis") + item(B.filter((r) => umur(r.terbit) <= 30).length, "brt.n.30", "tahun") + item(V.length, "brt.n.video", "video");
+  khUbin("khUbin", [["berita", B.length, "brt.n.berita"], ["jenis", new Set(B.map((r) => r.media)).size, "brt.n.media"], ["tahun", B.filter((r) => umur(r.terbit) <= 30).length, "brt.n.30"], ["video", V.length, "brt.n.video"]].map(([ik, v, k]) => ({ ikon: ik, nilai: angka(v), label: t(k) })));
 }
 
-const FOTO_URL = (r) => urlAman(FOTO[r.id] || "");
+const FOTO_URL = (r) => fotoBerita(FOTO, r.id);
+/** Favicon media (cadangan thumbnail dan logo baris media); gagal dimuat ditangani listener error di bawah, bukan onerror inline (CSP). */
+const hostDari = (u) => { try { return new URL(u).hostname.replace(/^www\./, ""); } catch { return ""; } };
+const favUrl = (h) => (h ? `https://www.google.com/s2/favicons?domain=${encodeURIComponent(h)}&sz=64` : "");
+const favMedia = (nama) => { const r = B.find((x) => x.media === nama); return favUrl(r ? hostDari(r.url) : ""); };
+const logoMedia = (nama, fv) => `<span class="brt-lg" aria-hidden="true">${esc(inisialMedia(nama))}${fv ? `<img src="${esc(fv)}" width="22" height="22" alt="" loading="lazy" decoding="async" referrerpolicy="no-referrer">` : ""}</span>`;
 const ikonSampul = (r) => ikTek((r.kepakaran || [])[0]);
 /** Gambar sampul; tanpa foto = latar bermerek dengan ikon teknologi (tidak pernah inisial). Gambar gagal dimuat dicopot oleh penangan error. */
-const sampul = (r, kelas, w, h, tag = false) => { const f = FOTO_URL(r); return `<span class="brt-sampul ${kelas}">${ikonSampul(r)}${f ? `<img src="${esc(f)}" width="${w}" height="${h}" alt="" loading="lazy" decoding="async" referrerpolicy="no-referrer">` : ""}${tag ? pil(r) : ""}</span>`; };
+const sampul = (r, kelas, w, h, tag = false) => {
+  const f = FOTO_URL(r), fv = favUrl(hostDari(r.url));
+  const img = f ? `<img src="${esc(f)}" width="${w}" height="${h}" alt="" loading="lazy" decoding="async" referrerpolicy="no-referrer" data-fav="${esc(fv)}">` : fv ? `<img class="brt-fv" src="${esc(fv)}" width="40" height="40" alt="" loading="lazy" decoding="async" referrerpolicy="no-referrer">` : "";
+  return `<span class="brt-sampul ${kelas}">${ikonSampul(r)}${img}${tag ? pil(r) : ""}</span>`;
+};
 const tautan = (r, isi, kelas) => `<a class="${kelas}" href="${esc(urlAman(r.url))}" target="_blank" rel="noopener noreferrer" title="${esc(t("brt.buka"))}">${isi}</a>`;
 const metaHtml = (r) => `<p class="brt-meta">${esc(r.media)}, ${esc(tanggal(r.terbit.slice(0, 10)))}</p>`;
 const pil = (r) => (r.kepakaran?.[0] ? `<span class="brt-pil">${esc(tek(r.kepakaran[0]))}</span>` : "");
@@ -119,7 +129,7 @@ const dalamBagian = (ks) => B.filter((r) => umur(r.terbit) <= 90 && ks.includes(
 const KANAL_TV = /^video\b|\btv\b|cnbc|cnn/i;
 /** Pilihan cerita utama: foto bukan tangkapan layar video dahulu, lalu foto lain, lalu tanpa foto. */
 const urutFoto = (xs) => [...xs.filter((r) => FOTO_URL(r) && !KANAL_TV.test(r.judul) && !KANAL_TV.test(r.media)), ...xs.filter((r) => FOTO_URL(r) && (KANAL_TV.test(r.judul) || KANAL_TV.test(r.media))), ...xs.filter((r) => !FOTO_URL(r))];
-const chipMedia = (r) => `<span class="brt-meta brt-meta-m"><span class="brt-lg" aria-hidden="true">${esc(inisialMedia(r.media))}</span><span>${esc(r.media)}, ${esc(tanggal(r.terbit.slice(0, 10)))}</span></span>`;
+const chipMedia = (r) => `<span class="brt-meta brt-meta-m">${logoMedia(r.media, favUrl(hostDari(r.url)))}<span>${esc(r.media)}, ${esc(tanggal(r.terbit.slice(0, 10)))}</span></span>`;
 const barisMini = (r) => `<li class="brt-br">${tautan(r, sampul(r, "brt-sm", 120, 80), "brt-gbr")}<div class="brt-brt">${tautan(r, esc(r.judul), "brt-judul")}${chipMedia(r)}</div></li>`;
 /** Blok majalah: satu cerita utama besar + 4 baris ringkas; pil teknologi hanya di cerita utama dan hanya bila beda dari bagiannya. */
 function majalah(xs, ks, balik) {
@@ -129,15 +139,16 @@ function majalah(xs, ks, balik) {
     <div class="brt-isi">${tautan(lead, esc(lead.judul), "brt-judul brt-judul-b")}${chipMedia(lead)}<div class="brt-label">${pilLead ? tagHtml(lead, 1) : ""}${orgHtml(lead)}</div></div></article>
     <ul class="brt-rows">${sisa.slice(0, 4).map(barisMini).join("")}</ul></div>`;
 }
+const angkaBagian = (xs) => `<span>${esc(t("brt.hero.media", { n: angka(new Set(xs.map((r) => r.media)).size) }))}</span><span>${esc(t("brt.hero.30", { n: angka(xs.filter((r) => umur(r.terbit) <= 30).length) }))}</span>`;
 function gambarBagian() {
   const el = document.getElementById("bagian"), sumber = sumberHtml(`${esc(t("brt.sumber"))} ${esc(tanggal(DIBANGUN))}.`);
-  const blok = (id, ik, topik, judulHtml, lihat, isi, i) => `<section class="brt-bagian"><div class="jm-wadah">${exHtml({ id, ikon: ik, topik, tingkat: "h2", judulHtml, isiHtml: isi, aksiHtml: lihat + aksiHtml({ csv: false }) + sumber })}</div></section>`;
-  let html = blok("ex-sorotan", "berita", t("brt.sek.sorotan"), esc(t("brt.sek.sorotan.p")), "", majalah(B.filter((r) => umur(r.terbit) <= 30), null, false), 0);
+  const blok = (id, ik, topik, judulHtml, lihat, isi, i, sub = "") => `<section class="brt-bagian"><div class="jm-wadah">${exHtml({ id, ikon: ik, topik, tingkat: "h2", judulHtml, subHtml: sub, isiHtml: isi, aksiHtml: lihat + aksiHtml({ csv: false }) + sumber })}</div></section>`;
+  let html = blok("ex-sorotan", "berita", t("brt.sek.sorotan"), esc(t("brt.sek.sorotan.p")), "", majalah(B.filter((r) => umur(r.terbit) <= 30), null, false), 0, angkaBagian(B.filter((r) => umur(r.terbit) <= 30)));
   BAGIAN.forEach(([kunci, ks, ik], i) => {
     const xs = dalamBagian(ks); if (xs.length < 2) return;
     const semua = B.filter((r) => (r.kepakaran || []).some((k) => ks.includes(k))).length;
     const lihat = `<button type="button" class="brt-semua" data-lihat="${esc(ks.join(","))}">${esc(t("brt.lihat", { n: angka(semua) }))} &rarr;</button>`;
-    html += blok("ex-" + kunci, ik, t("brt.sek." + kunci), hlHtml("brt.sek.j", angka(xs.length), { tek: t("brt.sek." + kunci).toLowerCase() }), lihat, majalah(xs, ks, i % 2 === 0), i + 1);
+    html += blok("ex-" + kunci, ik, t("brt.sek." + kunci), hlHtml("brt.sek.j", angka(xs.length), { tek: t("brt.sek." + kunci).toLowerCase() }), lihat, majalah(xs, ks, i % 2 === 0), i + 1, angkaBagian(xs));
   });
   el.innerHTML = html;
 }
@@ -206,6 +217,7 @@ async function mulai() {
   if (S.tab !== "video") S.tab = "berita";
   gambarAngka(); gambarBagian(); gambarRingkas(); gambarTab(); gambarSaring(); gambarIsi();
   gambarPeta();
+  gambarAnalisis(document.getElementById("analisis"), { B, FOTO, dibangun: DIBANGUN });
   Promise.all([muat("organisasi"), muat("program").catch(() => ({ baris: [] })), muat("regulasi").catch(() => ({ baris: [] }))]).then(([o, p, r]) => { ORG = new Map(o.baris.map((x) => [x.id, x.singkatan || x.nama])); PRG = p.baris; REG = r.baris; gambarBagian(); gambarRingkas(); gambarIsi(); }).catch(() => {});
 }
 
@@ -230,7 +242,7 @@ async function mulai() {
     ubah(() => { S.tab = "berita"; if (k.dataset.lihat) S.tek = k.dataset.lihat; else if (k.dataset.topik) S.tek = k.dataset.topik; else if (k.dataset.org) S.org = k.dataset.org; else S.media = k.dataset.media; gambarTab(); gambarSaring(); });
     document.getElementById("ex-semua").scrollIntoView({ block: "start" });
   });
-  addEventListener("error", (e) => { if (e.target.tagName === "IMG" && e.target.closest(".brt-sampul")) e.target.remove(); }, true);
+  addEventListener("error", (e) => { const i = e.target; if (i.tagName !== "IMG" || !i.closest(".brt-sampul,.brt-lg,.brt-lb")) return; if (i.dataset.fav) { i.src = i.dataset.fav; i.className = "brt-fv"; delete i.dataset.fav; } else i.remove(); }, true);
   const cariTunda = debounce(() => ubah(() => {}), 120);
   const sr = document.getElementById("saring");
   sr.addEventListener("input", (e) => { if (e.target.id === "f-q") { S.q = e.target.value; cariTunda(); } });

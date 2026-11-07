@@ -5,8 +5,8 @@ import { sumberHtml, unduhRegHtml } from "/inti/komponen.js";
 import { penerbitHtml } from "/penerbit.js";
 import { muat, label, namaRegulasi, sembunyi } from "/publik.js";
 
-export const LOGO_ORG = { p_6998264f50: "pertamina-nre", p_10e0dde689: "pertamina-nre", p_dda1e51dae: "pge", p_5a2e7d0c63: "pln-indonesia-power", p_ff7a390a42: "pln-nusantara-power", p_27ae5a4203: "medco-power", p_bdd0f2d140: "barito-renewables", p_7a803f3b71: "star-energy", l_41bf1f0b41: "meti", l_dd90c88f59: "aesi", l_d3dadc789e: "aprobi", l_7278e0528a: "esdm", l_973f60de15: "brin", su_ed074ff5: "pln", p_b1c52ad7b0: "pertamina", p_476a6bf2fb: "pertamina", p_e0f3886341: "pln-icon-plus", p_d99d5987f7: "sumitomo", p_9de27fd5b9: "medco-energi", l_38ba1d6f56: "ebtke", p_7f829f524e: "adaro", p_c6c4e478c0: "supreme-energy", ix_keen: "kencana-energi-lestari", l_7e5f8d771d: "api-inaga", l_15e21f04fa: "ojk", l_7b43a2574c: "kemenkeu", l_edde12ff1f: "kementerian-bumn", l_05301f48a5: "bkpm", l_3d20494e0a: "kemenhut", l_06d49428ac: "aplsi", l_67ed5e1422: "apamsi", l_1192cb8a15: "ibeka", l_0974f82eba: "aspebindo", p_978ca76d57: "mind-id" };
-const LOGO_NAMA = { PLN: "pln", "Indonesia Power": "pln-indonesia-power", "PLN Indonesia Power": "pln-indonesia-power", "PLN IP": "pln-indonesia-power", "PLN Nusantara Power": "pln-nusantara-power" };
+import { LOGO_ORG, LOGO_NAMA } from "/inti/logo_org.js";
+export { LOGO_ORG };
 const BUMN = /^(PLN|Indonesia Power|Pembangkitan Jawa Bali|Inalum|Jasa Tirta)/i;
 const jml = (a, f) => a.reduce((s, x) => s + (f(x) || 0), 0);
 const sat = (p) => p.kapasitas?.[0]?.nilai || 0;

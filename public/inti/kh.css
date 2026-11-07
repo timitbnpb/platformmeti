@@ -1,0 +1,21 @@
+/* Kepala halaman standar (.jm-kh): satu anatomi untuk semua halaman. Eyebrow berikon, h1, lead, ubin angka kunci di kanan.
+   Aturan dasar sama dengan analisis.css; halaman tanpa analisis.css memakai berkas ini. */
+.jm-kh{position:relative;isolation:isolate;display:grid;gap:20px;align-items:center;padding:32px 24px;margin:0 0 20px;border:1px solid var(--line);border-radius:var(--r-lg);background:linear-gradient(135deg,color-mix(in srgb,var(--accent) 9%,var(--paper)),color-mix(in srgb,var(--meti-cyan) 7%,var(--paper)));overflow:hidden}
+.jm-kh::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(var(--line) 1px,transparent 1px) 0 0/40px 40px,linear-gradient(90deg,var(--line) 1px,transparent 1px) 0 0/40px 40px;opacity:.5;-webkit-mask-image:linear-gradient(90deg,black,transparent 85%);mask-image:linear-gradient(90deg,black,transparent 85%)}
+.jm-kh>*{min-width:0}
+.jm-kh-teks{display:grid;gap:12px;align-content:center}
+.jm-kh-ey{display:flex;align-items:center;gap:8px;margin:0;font:700 var(--t-kecil)/var(--lh-rapat) var(--font);letter-spacing:normal;text-transform:none;color:var(--accent)}
+.jm-kh-ey svg{flex:none;width:16px;height:16px}
+.jm-kh h1{margin:0;font:700 var(--t-display)/var(--lh-judul) var(--display);color:var(--head);letter-spacing:-.01em}
+.jm-kh-lead{margin:0;max-width:60ch;font-size:var(--t-h3);line-height:var(--lh-isi);color:var(--ink2)}
+.jm-kh-ubin{display:grid;gap:12px;grid-template-columns:repeat(3,minmax(0,1fr))}
+.jm-kh-ub{display:grid;gap:8px;align-content:start;padding:16px;border:1px solid var(--line);border-radius:var(--r);background:var(--card);color:inherit;text-decoration:none;box-shadow:var(--shadow)}
+.jm-kh .jm-kpi-ik{display:grid;place-items:center;flex:none;width:32px;height:32px;border-radius:50%;background:var(--soft-hijau);color:var(--accent)}
+.jm-kh-angka{display:flex;align-items:baseline;gap:6px;margin:0;white-space:nowrap}
+.jm-kh-angka b{font:700 var(--t-display)/var(--lh-judul) var(--display);color:var(--head);font-variant-numeric:tabular-nums}
+.jm-kh-angka span{font:600 var(--t-body)/1 var(--font);color:var(--ink2)}
+.jm-kh-lbl{margin:0;font:400 var(--t-tombol)/var(--lh-rapat) var(--font);color:var(--ink2)}
+@media (min-width:1000px){.jm-kh{grid-template-columns:minmax(0,1fr) minmax(0,1.3fr);gap:40px;padding:36px 40px}}
+@media (max-width:639px){.jm-kh{padding:20px 16px}.jm-kh-ubin{gap:8px;grid-template-columns:repeat(2,minmax(0,1fr))!important}.jm-kh-ub{padding:12px 10px;gap:6px}.jm-kh-angka b{font-size:var(--t-h2)}.jm-kh-angka span{font-size:var(--t-kecil)}}
+.jm-kh.jm-kh-satu{grid-template-columns:minmax(0,1fr)}
+.jm-sh .jm-kh-ey{margin:0}
