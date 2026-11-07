@@ -214,3 +214,13 @@ th[aria-sort="descending"] .jm-urut::after{opacity:1;clip-path:polygon(0 0,100% 
 
 /* regulasi: lebar kolom tabel tetap */
 .jm-reg-tabel th:nth-child(2){width:42%}.jm-reg-tabel th:nth-child(3){width:26%}.jm-reg-tabel th:nth-child(4){width:130px}.jm-reg-tabel th:nth-child(5){width:110px}
+
+/* PIL TEKNOLOGI dan STATUS dengan ikon (pilTek/pilStatus di ikon_tek.js): warna dari token, tidak pernah terpotong */
+.jm-ikt-s{width:14px;height:14px;flex:none}
+.jm-pil-tek,.jm-pil-st{display:inline-flex;align-items:center;gap:6px;padding:3px 10px;border-radius:var(--r-pil);font:600 12.5px/1.3 var(--font);white-space:nowrap;max-width:100%;background:color-mix(in srgb,var(--tk,var(--ink2)) 14%,var(--card));color:color-mix(in srgb,var(--tk,var(--ink2)) 62%,var(--ink))}
+.jm-pil-tek>.jm-ikt,.jm-pil-st>.jm-ikt{color:var(--tk,var(--ink2))}
+.jm-pil-st{--tk:var(--sk)}
+.jm-tek-surya{--tk:var(--data4)}.jm-tek-bayu{--tk:var(--data3)}.jm-tek-hidro{--tk:var(--data5)}.jm-tek-panas-bumi{--tk:var(--warn)}
+.jm-tek-bioenergi{--tk:var(--data2)}.jm-tek-biomassa-sampah{--tk:var(--data1)}.jm-tek-penyimpanan{--tk:var(--ink2)}.jm-tek-nuklir{--tk:var(--bad)}.jm-tek-lain{--tk:var(--ink2)}
+.jm-st-rencana{--sk:var(--info)}.jm-st-izin{--sk:var(--data5)}.jm-st-pendanaan{--sk:var(--data1)}.jm-st-konstruksi{--sk:var(--warn)}
+.jm-st-beroperasi{--sk:var(--ok)}.jm-st-dibatalkan{--sk:var(--bad)}.jm-st-tidak-diketahui{--sk:var(--ink2)}

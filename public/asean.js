@@ -2,7 +2,7 @@
 import { mulaiHalaman } from "/inti/kepala.js";
 import { nanti, esc, hantuHtml } from "/inti/umum.js";
 import { t, tanggal } from "/i18n.js";
-import { muatData, tampilGalat, sumberHtml, kartuHtml, batangHtml, pasangBar, temuanHtml, heroVisual, ubinHtml, pil, num, saatBahasa } from "/analisis.js";
+import { muatData, tampilGalat, pasangAksi, sumberHtml, kartuHtml, batangHtml, pasangBar, temuanHtml, heroVisual, ubinHtml, pil, num, saatBahasa } from "/analisis.js";
 
 const $ = (id) => document.getElementById(id);
 let d = null, metrik = "bauran", pilih = null;
@@ -12,6 +12,9 @@ const M = {
   akses: { nilai: "akses_persen", tren: "tren_akses", satuan: "%", d: 1, sumber: "akses" },
 };
 const sumber = (m) => { const s = d.sumber[M[m].sumber]; return sumberHtml({ sumber: s.sumber, halaman: s.keterangan, url: s.url, tanggal: s.tanggal }); };
+const ISO2 = { IDN: "id", VNM: "vn", PHL: "ph", THA: "th", MYS: "my", SGP: "sg", LAO: "la", KHM: "kh", MMR: "mm", BRN: "bn", TLS: "tl" };
+const bendera = (n, u = 20) => `<img class="jm-bd${u > 20 ? " jm-bd-b" : ""}" src="/img/bendera/${ISO2[n.iso3]}.svg" width="${u}" height="${Math.round(u * 0.75)}" alt="" loading="lazy">`;
+const namaN = (n) => t("as.n." + n.iso3);
 const nilaiN = (n, m) => n[M[m].nilai]?.nilai ?? null;
 const urutan = (m) => d.baris.filter((n) => nilaiN(n, m) !== null).sort((a, b) => nilaiN(b, m) - nilaiN(a, m));
 const peringkat = (m) => urutan(m).findIndex((n) => n.iso3 === "IDN") + 1;
@@ -21,7 +24,7 @@ function jawab() {
   const i = idn();
   $("jawab").textContent = t("as.kh.lead");
   $("ubin").innerHTML = ubinHtml([
-    { ikon: "analisis", nilai: `${peringkat("bauran")}/${urutan("bauran").length}`, label: t("as.kh.u1"), href: "#h-band" },
+    { ikon: "analisis", ikonHtml: bendera(idn(), 32), nilai: `${peringkat("bauran")}/${urutan("bauran").length}`, label: t("as.kh.u1"), href: "#h-band" },
     { ikon: "peta", nilai: num(nilaiN(i, "bauran"), 1), satuan: "%", label: t("as.kh.u2"), href: "#h-band" },
     { ikon: "status", nilai: `${peringkat("kapasitas")}/${urutan("kapasitas").length}`, label: t("as.kh.u3"), href: "#h-tren" },
   ]);
@@ -30,7 +33,7 @@ function jawab() {
 function kartu() {
   const i = idn();
   $("kartu").innerHTML = ["bauran", "kapasitas", "akses"].map((m) => kartuHtml({
-    ikon: { bauran: "analisis", kapasitas: "tabel", akses: "status" }[m], judul: t("as.k." + m), nilai: num(nilaiN(i, m), M[m].d), satuan: M[m].satuan,
+    ikonHtml: bendera(i, 32), ikon: { bauran: "analisis", kapasitas: "tabel", akses: "status" }[m], judul: t("as.k." + m), nilai: num(nilaiN(i, m), M[m].d), satuan: M[m].satuan,
     penyebut: t("as.peringkat", { r: peringkat(m), n: urutan(m).length }) + " | " + t("as.tahun", { tahun: i[M[m].nilai].tahun }), sumber: sumber(m),
   })).join("");
 }
@@ -40,7 +43,7 @@ function band() {
   $("temuan-band").innerHTML = temuanHtml(t("as.t.band", { metrik: t("as.m." + m), r: peringkat(m), n: ada.length, v: num(nilaiN(i, m), M[m].d) + " " + M[m].satuan }), true);
   const baris = [...ada, ...tanpa].map((n) => {
     const v = nilaiN(n, m);
-    return { id: n.iso3, pilih: pilih === n.iso3, label: n.nama, sorot: n.iso3 === "IDN", bagian: [{ nilai: v ?? 0, kelas: n.iso3 === "IDN" ? "jm-an-b1" : "jm-an-b4" }], teks: v === null ? t("an.tanpa_data") : `${num(v, M[m].d)} ${M[m].satuan} (${n[M[m].nilai].tahun})` };
+    return { id: n.iso3, pilih: pilih === n.iso3, label: namaN(n), labelHtml: `${bendera(n, n.iso3 === "IDN" ? 32 : 20)}<span>${esc(namaN(n))}</span>`, sorot: n.iso3 === "IDN", bagian: [{ nilai: v ?? 0, kelas: n.iso3 === "IDN" ? "jm-an-b1" : "jm-an-b4" }], teks: v === null ? t("an.tanpa_data") : `${num(v, M[m].d)} ${M[m].satuan} (${n[M[m].nilai].tahun})` };
   });
   $("grafik-band").innerHTML = batangHtml(baris, { label: t("as.m." + m), aksi: true }) + `<p class="jm-bantu">${esc(t("as.klik"))}</p>` + sumber(m);
   pasangBar($("grafik-band"));
@@ -61,18 +64,18 @@ function tren() {
   for (const n of [...seri].sort((a, b) => y(a[M[m].tren].at(-1).nilai) - y(b[M[m].tren].at(-1).nilai))) { const v = Math.max(y(n[M[m].tren].at(-1).nilai), prev + 14); ly.set(n.iso3, v); prev = v; }
   const garis = [...seri].sort((a, b) => (a.iso3 === "IDN") - (b.iso3 === "IDN") || (a.iso3 === pilih) - (b.iso3 === pilih)).map((n) => {
     const s = n[M[m].tren], id = n.iso3 === "IDN", a = s[s.length - 1], pts = s.map((p) => x(p.tahun).toFixed(1) + "," + y(p.nilai).toFixed(1)).join(" ");
-    const titik = s.map((p) => `<circle class="jm-an-titik-tren" cx="${x(p.tahun).toFixed(1)}" cy="${y(p.nilai).toFixed(1)}" r="7"><title>${esc(n.nama)}, ${p.tahun}: ${esc(num(p.nilai, M[m].d))} ${esc(M[m].satuan)}</title></circle>`).join("");
+    const titik = s.map((p) => `<circle class="jm-an-titik-tren" cx="${x(p.tahun).toFixed(1)}" cy="${y(p.nilai).toFixed(1)}" r="7"><title>${esc(namaN(n))}, ${p.tahun}: ${esc(num(p.nilai, M[m].d))} ${esc(M[m].satuan)}</title></circle>`).join("");
     return `<g class="jm-an-gars${id ? " jm-an-sorot" : ""}${n.iso3 === pilih ? " jm-an-pilih" : ""}" data-iso="${n.iso3}"><polyline points="${pts}"/><polyline class="jm-an-tangkap" points="${pts}"/><polyline class="jm-an-penuntun" points="${x(a.tahun).toFixed(1)},${y(a.nilai).toFixed(1)} ${(LX - 4).toFixed(1)},${ly.get(n.iso3).toFixed(1)}"/><text class="jm-an-lbl" x="${LX}" y="${(ly.get(n.iso3) + 4).toFixed(1)}">${esc(n.iso3)}</text>${titik}</g>`;
   }).join("");
   const si = idn()[M[m].tren], pa = si[0], pb = si[si.length - 1];
   $("temuan-tren").innerHTML = temuanHtml(t("as.t.tren", { metrik: t("as.m." + m), a: num(pa.nilai, M[m].d) + " " + M[m].satuan, ta: pa.tahun, b: num(pb.nilai, M[m].d) + " " + M[m].satuan, tb: pb.tahun }));
   const dn = pilih && d.baris.find((n) => n.iso3 === pilih), sd = dn && dn[M[m].tren];
-  const detail = sd && sd.length ? `<p class="jm-detail" role="status"><b>${esc(dn.nama)}</b>: ${esc(num(sd[0].nilai, M[m].d))} ${esc(M[m].satuan)} (${sd[0].tahun}) &rarr; ${esc(num(sd[sd.length - 1].nilai, M[m].d))} ${esc(M[m].satuan)} (${sd[sd.length - 1].tahun})</p>` : "";
+  const detail = sd && sd.length ? `<p class="jm-detail" role="status"><b>${esc(namaN(dn))}</b>: ${esc(num(sd[0].nilai, M[m].d))} ${esc(M[m].satuan)} (${sd[0].tahun}) &rarr; ${esc(num(sd[sd.length - 1].nilai, M[m].d))} ${esc(M[m].satuan)} (${sd[sd.length - 1].tahun})</p>` : "";
   $("grafik-tren").innerHTML = `<svg class="jm-an-garis" viewBox="0 0 ${W} ${H}" role="img" aria-label="${esc(t("as.tren_label", { metrik: t("as.m." + m) }))}" focusable="false">${grid}${sb}${garis}</svg>${detail}<p class="jm-bantu">${esc(t("as.klik_garis"))}</p>${sumber(m)}`;
   const ubah = (s) => { const a = s[0], b = s[s.length - 1]; return m === "kapasitas" ? (a.nilai ? `${num(((b.nilai - a.nilai) / a.nilai) * 100, 0)}%` : "-") : `${num(b.nilai - a.nilai, 1)} ${t("as.pp")}`; };
   $("tabel-tren").innerHTML = `<div class="jm-gulir"><table class="jm-tabel"><thead><tr><th>${esc(t("as.col.negara"))}</th><th>${esc(t("as.col.awal"))}</th><th>${esc(t("as.col.akhir"))}</th><th>${esc(t("as.col.ubah"))} ${pil("an.est")}</th></tr></thead><tbody>${seri.map((n) => {
     const s = n[M[m].tren], a = s[0], b = s[s.length - 1];
-    return `<tr class="${n.iso3 === "IDN" ? "jm-an-baris-id" : ""}"><td data-label="${esc(t("as.col.negara"))}">${esc(n.nama)}</td><td data-label="${esc(t("as.col.awal"))}" class="jm-num">${esc(num(a.nilai, M[m].d))} ${esc(M[m].satuan)} (${a.tahun})</td><td data-label="${esc(t("as.col.akhir"))}" class="jm-num">${esc(num(b.nilai, M[m].d))} ${esc(M[m].satuan)} (${b.tahun})</td><td data-label="${esc(t("as.col.ubah"))}" class="jm-num">${esc(ubah(s))}</td></tr>`;
+    return `<tr class="${n.iso3 === "IDN" ? "jm-an-baris-id" : ""}"><td data-label="${esc(t("as.col.negara"))}"><span class="jm-bd-n">${bendera(n, n.iso3 === "IDN" ? 32 : 20)}<span>${esc(namaN(n))}</span></span></td><td data-label="${esc(t("as.col.awal"))}" class="jm-num">${esc(num(a.nilai, M[m].d))} ${esc(M[m].satuan)} (${a.tahun})</td><td data-label="${esc(t("as.col.akhir"))}" class="jm-num">${esc(num(b.nilai, M[m].d))} ${esc(M[m].satuan)} (${b.tahun})</td><td data-label="${esc(t("as.col.ubah"))}" class="jm-num">${esc(ubah(s))}</td></tr>`;
   }).join("")}</tbody></table></div>`;
 }
 
@@ -87,6 +90,7 @@ async function mulai() {
   await mulaiHalaman();
   $("kartu").innerHTML = hantuHtml(2);
   try { d = await muatData("asean.json"); } catch (e) { tampilGalat($("kartu"), mulai); return; }
+  pasangAksi(["aksi-tren"]);
   gambar();
   saatBahasa(gambar);
   document.querySelector(".jm-tab").addEventListener("click", (e) => {

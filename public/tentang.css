@@ -100,17 +100,16 @@
 /* ---------- logo mitra: marquee kanan ke kiri ---------- */
 .tn-tengah{text-align:center}
 .tn-pita{overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,black 8%,black 92%,transparent);mask-image:linear-gradient(90deg,transparent,black 8%,black 92%,transparent)}
-.tn-trek{list-style:none;margin:0;padding:6px 0;display:flex;width:max-content;animation:tn-gerak 40s linear infinite}
-.tn-trek.balik{animation-direction:reverse;animation-duration:52s}
+.tn-trek{list-style:none;margin:0;padding:6px 0;display:flex;width:max-content;animation:tn-gerak 35s linear infinite}
+.tn-trek.balik{animation-direction:reverse}
 .tn-pita:hover .tn-trek,.tn-pita:focus-within .tn-trek{animation-play-state:paused}
 @keyframes tn-gerak{to{transform:translateX(-50%)}}
-.tn-trek li{flex:none;margin-right:16px}
+.tn-trek li{flex:none;margin-right:48px}
 .tn-logo{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;width:140px;height:64px;padding:6px 10px;border-radius:var(--r-sm);background:var(--on-brand);border:1px solid var(--line);color:var(--brand)}
-.tn-logo img{width:auto;height:auto;max-width:110px;max-height:44px;object-fit:contain;filter:grayscale(1);opacity:.75;transition:filter .2s,opacity .2s}
+.tn-logo img{width:auto;height:auto;max-width:110px;max-height:44px;object-fit:contain}
 .tn-logo:has(span) img{max-height:30px}
 .tn-logo span{font:600 10.5px/1.1 var(--font);color:var(--ink2);text-align:center;max-width:124px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .tn-nama{font:700 17px/1 var(--display);letter-spacing:.04em;color:var(--brand)}
-.tn-logo:hover{border-color:var(--accent-isi);box-shadow:var(--shadow)}.tn-logo:hover img{filter:none;opacity:1}
 @media (prefers-reduced-motion:reduce){.tn-pita{-webkit-mask-image:none;mask-image:none}.tn-trek{animation:none;width:auto;flex-wrap:wrap;justify-content:center;gap:12px}.tn-trek li{margin:0}.tn-trek li[aria-hidden="true"]{display:none}}
 /* ---------- metode ---------- */
 .tn-pilar{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
@@ -158,8 +157,11 @@
 .tn-kol.aktif .tn-kol-isi,.tn-kol:hover .tn-kol-isi{opacity:1}
 .tn-kol.aktif .tn-kol-isi::after,.tn-kol:hover .tn-kol-isi::after{opacity:1}
 /* pemilik 7 Nov 2026: logo mitra tanpa kotak bersudut bulat; logo saja, lebih besar */
-.tn-logo,.tn-logo:hover,.tn-logo:focus-visible{background:transparent!important;border:0!important;box-shadow:none!important;border-radius:0;width:168px;height:72px;padding:0 12px}
-.tn-logo img{max-width:140px;max-height:52px}
+.tn-logo,.tn-logo:hover,.tn-logo:focus-visible{background:transparent!important;border:0!important;box-shadow:none!important;border-radius:0;width:auto;min-width:96px;height:64px;padding:0}
+.tn-logo img{max-width:160px;max-height:48px}
+.tn-logo:hover img{transform:scale(1.06)}.tn-logo img{transition:transform .2s}
+.tn-mono{display:grid;place-items:center;height:48px;padding:0 20px;border-radius:var(--r-pil);background:var(--soft-hijau);color:var(--accent);font:700 16px/1 var(--display);letter-spacing:.06em;box-shadow:inset 0 0 0 1.5px var(--brand2)}
+.tn-pangkal{margin-top:28px}
 .tn-logo:focus-visible{outline:2px solid var(--fokus);outline-offset:4px}
 /* ---------- blok fitur Tentang METI / Direktori ---------- */
 .tn .tn-fitur{display:flex;flex-direction:column;gap:16px;padding:0;overflow:hidden;border-top:4px solid var(--brand2)}
@@ -176,3 +178,29 @@
 .tn-cek li{display:flex;gap:10px;align-items:flex-start;color:var(--ink);line-height:1.45}
 .tn-cek .jm-ik{flex:none;margin-top:2px;color:var(--ok)}
 .tn-bawah{margin-top:auto;margin-bottom:clamp(20px,3vw,28px);font-weight:600}
+
+/* ---------- orang di bagan: tombol; dialog profil ---------- */
+.tn-org-b{all:unset;box-sizing:border-box;display:flex;align-items:center;gap:12px;width:100%;min-width:0;padding:6px;margin:-6px;border-radius:var(--r-sm);cursor:pointer;transition:background-color .15s}
+.tn-org-b:hover{background:var(--soft-hijau)}.tn-org-b:hover b{color:var(--accent)}
+.tn-org-b:focus-visible{outline:2px solid var(--fokus);outline-offset:2px}
+.tn-dlg{width:min(640px,94vw);max-height:88vh;padding:0;border:0;border-radius:var(--r-lg);background:var(--card);color:var(--ink);box-shadow:var(--shadow-lg);overflow:auto}
+.tn-dlg::backdrop{background:color-mix(in srgb,var(--brand) 60%,transparent)}
+.tn-x{position:absolute;top:10px;right:10px;width:44px;height:44px;display:grid;place-items:center;border:0;border-radius:50%;background:var(--surface);color:var(--ink);cursor:pointer}
+.tn-x .jm-ik{stroke:currentColor;fill:none}
+.tn-pi{padding:clamp(20px,4vw,32px);display:grid;gap:18px}
+.tn-ph{display:flex;gap:18px;align-items:center;padding-right:44px}
+.tn-ph h3{font:700 22px/1.2 var(--display);color:var(--head);margin:0}
+.tn-chip{display:inline-block;margin-top:8px;padding:4px 12px;border-radius:var(--r-pil);background:var(--soft-hijau);color:var(--ok);font-size:13px;font-weight:600}
+.tn-pb h4{font:700 12px/1 var(--font);letter-spacing:.1em;text-transform:uppercase;color:var(--accent);margin:0 0 8px}
+.tn-pb p{color:var(--ink2);line-height:1.6}
+.tn-kini{display:flex;gap:12px;align-items:center}.tn-kini b{display:block}.tn-kini small{color:var(--ink2)}
+.tn-pl{width:40px;height:40px;object-fit:contain;border-radius:8px;background:var(--on-brand);padding:3px;flex:none}
+.tn-pil{display:flex;flex-wrap:wrap;gap:8px}.tn-pil span{padding:4px 12px;border-radius:var(--r-pil);background:var(--soft-biru);color:var(--head);font-size:13px}
+.tn-jejak{list-style:none;margin:0;padding:0 0 0 16px;border-left:2px solid var(--line);display:grid;gap:12px}
+.tn-jejak li{position:relative}.tn-jejak li::before{content:"";position:absolute;left:-22px;top:6px;width:10px;height:10px;border-radius:50%;background:var(--brand2)}
+.tn-jejak b{display:block;font-size:14px}.tn-jejak small{color:var(--ink2);font-size:12.5px}
+.tn-pend{margin:0;padding-left:18px;color:var(--ink2);display:grid;gap:4px}
+.tn-tau{display:flex;flex-wrap:wrap;gap:8px 16px}.tn-tau a{color:var(--accent);font-weight:600}
+.tn-kosongp{padding:14px;border-radius:var(--r);background:var(--surface);color:var(--ink2);font-size:14px}
+@media (max-width:760px){.tn-dlg{width:100%;max-width:100%;margin:auto 0 0;border-radius:var(--r-lg) var(--r-lg) 0 0;max-height:90vh}}
+.tn-dlg a{text-decoration:none}

@@ -2675,3 +2675,7 @@ button.ak-r[data-kh][aria-pressed="true"]{border-color:var(--w0,var(--brand2));b
 .ak-tw-r{display:grid;grid-template-columns:auto minmax(0,1fr) auto;align-items:center;gap:7px;padding:3px 0}.ak-tw-r b{font-size:12px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.ak-tw-r em{font-style:normal;font-size:10px;font-weight:700;color:var(--ink2);background:var(--surface);border-radius:99px;padding:1px 7px;white-space:nowrap}
 /* gelembung klaster: warna brand, angka putih */
 .ak-pinklaster{background:var(--brand)!important;border-color:var(--paper)!important;color:var(--on-brand)!important}.ak-pinklaster b{color:var(--on-brand)!important}
+
+/* ikon tab dan sub-tab 18px */
+.ak-tampil button .ak-ikon,.ak-tampil button svg,.ak-kepala-nav>.ak-seg.ak-subtab button .ak-ikon,.ak-subtab button svg{width:18px;height:18px;flex:none}
+.ak-subtab button{display:inline-flex;align-items:center;gap:6px}

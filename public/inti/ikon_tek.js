@@ -1,3 +1,5 @@
+import { t, ada } from "/i18n.js";
+import { esc } from "/inti/umum.js";
 /* Ikon teknologi EBT (garis, currentColor). Satu sumber untuk /proyek; jalur salinan dari beranda_bawah.js IKON. */
 const S = (d) => `<svg class="jm-ikt" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">${d}</svg>`;
 export const IKON_TEK = {
@@ -15,3 +17,27 @@ export const IKON_TEK = {
   efisiensi: S('<path d="M4 19V9M10 19V5M16 19v-7M22 19H2M17 5l3 3 2-4"/>'),
 };
 export const ikonTek = (k) => IKON_TEK[k] || IKON_TEK.jaringan;
+
+/* Pil teknologi: ikon 14px + label, warna dari token teknologi (kelas .jm-tek-* di jm.css) */
+const TEK_ADA = new Set(["surya", "bayu", "hidro", "panas-bumi", "bioenergi", "biomassa-sampah", "nuklir", "penyimpanan"]);
+const kecil = (svg) => svg.replace('class="jm-ikt"', 'class="jm-ikt jm-ikt-s"');
+export const pilTek = (kode) => {
+  if (!kode) return "-";
+  const lab = ada("pj.tek." + kode) ? t("pj.tek." + kode) : kode;
+  return `<span class="jm-pil-tek jm-tek-${TEK_ADA.has(kode) ? kode : "lain"}">${kecil(ikonTek(kode))}<span>${esc(lab)}</span></span>`;
+};
+
+/* Pil status proyek dengan ikon (rencana, konstruksi, beroperasi, dibatalkan, tidak-diketahui) */
+const IK_ST = {
+  rencana: '<rect x="6" y="4" width="12" height="17" rx="2"/><path d="M9 4h6v3H9zM9 12h6M9 16h4"/>',
+  izin: '<path d="M6 3h9l4 4v14H6zM15 3v4h4M9 13l2 2 4-4"/>',
+  pendanaan: '<circle cx="12" cy="12" r="9"/><path d="M14.5 9.5c-.5-1-1.5-1.5-2.5-1.5-1.5 0-2.5.8-2.5 2s1 1.7 2.5 2 2.5.8 2.5 2-1 2-2.5 2c-1 0-2-.5-2.5-1.5M12 6.5V8M12 16v1.5"/>',
+  konstruksi: '<path d="M4 21h16M7 21V9M7 9l11-5M18 4v6M18 10v2"/><path d="M7 14h4"/>',
+  beroperasi: '<circle cx="12" cy="12" r="9"/><path d="m8 12 3 3 5-6"/>',
+  dibatalkan: '<circle cx="12" cy="12" r="9"/><path d="m9 9 6 6M15 9l-6 6"/>',
+  "tidak-diketahui": '<circle cx="12" cy="12" r="9"/><path d="M9.5 9.5a2.5 2.5 0 1 1 3.5 2.3c-.7.4-1 1-1 1.7M12 17h.01"/>',
+};
+export const pilStatus = (kode) => {
+  const k = IK_ST[kode] ? kode : "tidak-diketahui", lab = ada("pj.st." + kode) ? t("pj.st." + kode) : kode || "-";
+  return `<span class="jm-pil-st jm-st-${k}">${kecil(S(IK_ST[k]))}<span>${esc(lab)}</span></span>`;
+};

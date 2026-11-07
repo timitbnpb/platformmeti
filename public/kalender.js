@@ -1,13 +1,14 @@
 import { mulaiHalaman } from "/inti/kepala.js";
 import { t, angka, tanggal } from "/i18n.js";
 import { esc, nanti, ikon, hantuHtml, kosongHtml, galatHtml } from "/inti/umum.js";
-import { pilihHtml } from "/inti/komponen.js";
+import { pilihHtml, exHtml, sumberHtml } from "/inti/komponen.js";
+import { aksiHtml, hlHtml } from "/inti/aksi_ex.js";
 import { muat, label, urlAman } from "/publik.js";
 
 const JENIS = ["seminar", "konferensi", "audiensi", "lokakarya", "regulasi", "tenggat"];
 const HP = matchMedia("(max-width:639px)");
-const S = { tampil: "agenda", jenis: "", bulan: "", hari: "", mini: !HP.matches }; // bulan = "YYYY-MM"
-let D = null, KINI = "";
+const S = { tampil: "bulan", jenis: "", bulan: "" }; // bulan = "YYYY-MM"
+let D = null, KINI = "", ROWS = [], OPENER = null;
 
 const MAKS_LANE = 3;
 const BLN = { jan: 1, feb: 2, mar: 3, apr: 4, mei: 5, jun: 6, jul: 7, agu: 8, agt: 8, sep: 9, okt: 10, nov: 11, des: 12 };
@@ -28,16 +29,15 @@ function akhirDari(b) {
 
 function bacaUrl() {
   const p = new URLSearchParams(location.search);
-  if (p.get("tampil") === "bulan") S.tampil = "bulan";
+  if (p.get("tampil") === "agenda") S.tampil = "agenda";
   if (JENIS.includes(p.get("jenis"))) S.jenis = p.get("jenis");
   if (/^\d{4}-\d{2}$/.test(p.get("bulan") || "")) S.bulan = p.get("bulan");
 }
 function tulisUrl() {
   const u = new URL(location.href);
-  S.tampil === "bulan" ? u.searchParams.set("tampil", "bulan") : u.searchParams.delete("tampil");
+  S.tampil === "agenda" ? u.searchParams.set("tampil", "agenda") : u.searchParams.delete("tampil");
   S.jenis ? u.searchParams.set("jenis", S.jenis) : u.searchParams.delete("jenis");
   S.bulan ? u.searchParams.set("bulan", S.bulan) : u.searchParams.delete("bulan");
-  u.searchParams.delete("hari");
   history.replaceState(null, "", u);
 }
 
@@ -52,9 +52,9 @@ function gambarKepala() {
       <button type="button" class="kal-hariini" data-hariini>${ikon("kalender", 18)}<span>${esc(t("kal.hariini"))}</span></button>
     </div>
     <div class="kal-kanan">
-      <div class="kal-seg" role="group" aria-label="${esc(t("kal.agenda"))}">${tombolTampil("agenda", "daftar2")}${tombolTampil("bulan", "tabel")}</div>
       <div class="jm-saring kal-saring">${pilihHtml({ id: "jenis", ikon: "jenis", label: t("kal.semua"), opsi: [["", t("kal.semua")], ...JENIS.map((j) => [j, label("kal.jenis.", j)])], nilai: S.jenis })}<span class="jm-hitung" id="hitung" role="status" aria-live="polite"></span></div>
-    </div>`;
+    </div>
+    <div class="kal-seg" role="group" aria-label="${esc(t("kal.agenda"))}">${tombolTampil("bulan", "tabel")}${tombolTampil("agenda", "daftar2")}</div>`;
   judulBulan();
 }
 function judulBulan() { document.getElementById("judulBulan").innerHTML = `${esc(namaBulan(S.bulan))} <span>${esc(S.bulan.slice(0, 4))}</span>`; }
@@ -66,7 +66,7 @@ function acaraDari(sem) {
 const urlB = (b) => (b.sumber?.url && urlAman(b.sumber.url) ? b.sumber.url : "");
 const pilJenis = (j) => `<span class="kal-pil kal-t-${esc(j)}">${esc(label("kal.jenis.", j))}</span>`;
 
-/* ---------- kalender mini ---------- */
+/* ---------- kalender ---------- */
 function mingguDari(ym) {
   const awal = utc(ym + "-01"), mulai = awal - hariKe(ym + "-01") * 864e5;
   const jml = new Date(Date.UTC(+ym.slice(0, 4), +ym.slice(5), 0)).getUTCDate();
@@ -75,30 +75,25 @@ function mingguDari(ym) {
 }
 const kepalaHari = (kelas) => [0, 1, 2, 3, 4, 5, 6].map((i) => `<div class="${kelas}${i > 4 ? " kal-akhir" : ""}">${esc(t("kal.hari." + i))}</div>`).join("");
 
-function miniHtml(rows) {
-  const sel = [];
-  for (const mg of mingguDari(S.bulan)) for (const h of mg) {
-    const mulai = rows.filter((b) => b.tanggal === h), cakup = rows.find((b) => b.akhir > b.tanggal && b.tanggal <= h && b.akhir >= h);
-    const jen = [...new Set(mulai.map((b) => b.jenis))].slice(0, 3);
-    const kls = ["kal-sel", bulanDari(h) !== S.bulan && "kal-luar", hariKe(h) > 4 && "kal-akhir", h === KINI && "kal-kini", h === S.hari && "kal-pilih"].filter(Boolean).join(" ");
-    const rt = cakup ? `<i class="kal-rt kal-t-${esc(cakup.jenis)}${cakup.tanggal === h ? " kal-rt-a" : ""}${cakup.akhir === h ? " kal-rt-z" : ""}"></i>` : "";
-    sel.push(`<button type="button" class="${kls}" data-hari="${h}" aria-pressed="${h === S.hari}" aria-label="${esc(tanggal(h))}"><b>${+h.slice(8)}</b><span class="kal-titik">${jen.map((j) => `<i class="kal-t-${esc(j)}"></i>`).join("")}</span>${rt}</button>`);
-  }
-  return `<div class="jm-kartu kal-mini${S.mini ? " kal-buka" : ""}">
-    <button type="button" class="kal-mini-tgl" data-mini aria-expanded="${S.mini}">${ikon("kalender", 18)}<span>${esc(t("kal.mini"))}</span></button>
-    <div class="kal-mini-badan"><div class="kal-grid7">${kepalaHari("kal-hn")}${sel.join("")}</div></div></div>`;
+/** Pekan ringkas untuk HP: satu minggu (minggu hari ini bila di bulan tampil), titik jenis per hari. */
+function pekanHtml(rows) {
+  const ada = mingguDari(S.bulan), mg = ada.find((w) => w.includes(KINI)) || ada[0];
+  const sel = mg.map((h) => {
+    const jen = [...new Set(rows.filter((b) => b.tanggal <= h && b.akhir >= h).map((b) => b.jenis))].slice(0, 3);
+    const kls = ["kal-sel", bulanDari(h) !== S.bulan && "kal-luar", hariKe(h) > 4 && "kal-akhir", h === KINI && "kal-kini"].filter(Boolean).join(" ");
+    return `<button type="button" class="${kls}" data-hari="${h}" aria-label="${esc(tanggal(h))}"><b>${+h.slice(8)}</b><span class="kal-titik">${jen.map((j) => `<i class="kal-t-${esc(j)}"></i>`).join("")}</span></button>`;
+  });
+  return `<div class="jm-kartu kal-pekan"><div class="kal-grid7">${kepalaHari("kal-hn")}${sel.join("")}</div></div>`;
 }
 
 /* ---------- agenda ---------- */
 function barisHtml(b) {
   const rentang = b.akhir > b.tanggal, d = b.tanggal;
   const tgl = `<span class="kal-tgl"><b class="${rentang ? "kal-rg" : ""}">${rentang ? `${+d.slice(8)}-${+b.akhir.slice(8)}` : +d.slice(8)}</b><span>${esc(tanggal(d).split(" ")[1])}</span><small>${esc(t("kal.hari." + hariKe(d)))}</small></span>`;
-  const u = urlB(b);
-  const isi = `${tgl}<span class="kal-isi"><strong>${esc(b.judul)}</strong>
+  return `<li><button type="button" class="kal-baris" id="acara-${esc(b.id)}" data-acara="${esc(b.id)}">${tgl}<span class="kal-isi"><strong>${esc(b.judul)}</strong>
     ${b.mitra ? `<span class="kal-meta">${ikon("orang", 16)}<span>${esc(b.mitra)}</span></span>` : ""}
     <span class="kal-meta kal-sumber">${ikon("info", 16)}<span>${esc(t("kal.sumber." + b.sumber.label))}, ${esc(t("kal.diambil", { tanggal: tanggal(b.sumber.tanggal) }))}</span></span></span>
-    <span class="kal-sisi">${pilJenis(b.jenis)}${u ? `<span class="kal-buka-tautan"><span>${esc(t("kal.buka"))}</span>${ikon("panah-kanan", 16)}</span>` : ""}</span>`;
-  return `<li>${u ? `<a class="kal-baris" id="${esc(b.id)}" href="${esc(u)}" target="_blank" rel="noopener noreferrer">${isi}</a>` : `<div class="kal-baris" id="${esc(b.id)}">${isi}</div>`}</li>`;
+    <span class="kal-sisi">${pilJenis(b.jenis)}</span></button></li>`;
 }
 function kelompokHtml(rows, turun) {
   const g = new Map();
@@ -108,19 +103,15 @@ function kelompokHtml(rows, turun) {
     return `<section class="kal-grup"><h3>${esc(namaBulan(ym))} ${esc(ym.slice(0, 4))}<span>${esc(angka(r.length))}</span></h3><ul class="kal-daftar">${r.map(barisHtml).join("")}</ul></section>`;
   }).join("");
 }
+const sumberKal = () => sumberHtml(esc(t("kal.catatan", { tanggal: tanggal(D.dibangun_pada) })));
 function agendaHtml(rows) {
-  let kiri;
-  if (S.hari) {
-    const r = rows.filter((b) => b.tanggal <= S.hari && b.akhir >= S.hari);
-    kiri = `<div class="kal-pilih-bar"><strong>${esc(t("kal.pada", { tanggal: tanggal(S.hari) }))}</strong><button type="button" class="jm-hapus" data-hari="${S.hari}">${ikon("silang", 16)}${esc(t("kal.semuatgl"))}</button></div>${r.length ? `<ul class="kal-daftar">${r.map(barisHtml).join("")}</ul>` : kosongHtml("kal.kosong")}`;
-  } else {
-    const dep = rows.filter((b) => b.akhir >= KINI), lalu = rows.filter((b) => b.akhir < KINI);
-    kiri = (dep.length ? kelompokHtml(dep, false) : kosongHtml("kal.kosong")) + (lalu.length ? `<details class="jm-kartu kal-lalu"><summary>${ikon("jejak", 18)}<span>${esc(t("kal.lalu", { n: angka(lalu.length) }))}</span></summary>${kelompokHtml(lalu, true)}</details>` : "");
-  }
-  return `<div class="kal-dua">${miniHtml(rows)}<div class="kal-agenda">${kiri}</div></div>`;
+  const dep = rows.filter((b) => b.akhir >= KINI), lalu = rows.filter((b) => b.akhir < KINI);
+  const isi = (dep.length ? kelompokHtml(dep, false) : kosongHtml("kal.kosong")) + (lalu.length ? `<details class="kal-lalu"><summary>${ikon("jejak", 18)}<span>${esc(t("kal.lalu", { n: angka(lalu.length) }))}</span></summary>${kelompokHtml(lalu, true)}</details>` : "");
+  return exHtml({ id: "ex-agenda", ikon: "daftar2", topik: t("kal.ex.agenda.ey"), judulHtml: dep.length ? hlHtml("kal.ex.agenda.j", angka(dep.length)) : esc(t("kal.ex.agenda.j0")), subHtml: esc(t("kal.ex.agenda.sub")),
+    aksiHtml: aksiHtml({ csv: true }) + sumberKal(), isiHtml: `<div class="kal-agenda">${isi}</div>` });
 }
 
-/* ---------- tampilan bulan ---------- */
+/* ---------- tampilan bulan: 7 kolom penuh, batang rentang melintang ---------- */
 function bulanHtml(rows) {
   const minggu = mingguDari(S.bulan).map((mg) => {
     const aw = mg[0], ak = mg[6], seg = [];
@@ -136,62 +127,122 @@ function bulanHtml(rows) {
       if (l < 0) l = akhirLane.length;
       akhirLane[l] = sg.k + sg.n - 1;
       if (l >= MAKS_LANE) { for (let c = sg.k; c < sg.k + sg.n; c++) lebih[c]++; continue; }
-      const u = urlB(sg.b), multi = sg.b.akhir > sg.b.tanggal;
-      const kls = `kal-ev kal-t-${esc(sg.b.jenis)} kal-k${sg.k} kal-s${sg.n} kal-l${l}${multi ? " kal-ev-bar" : ""}${sg.kiri ? " kal-pot-k" : ""}${sg.kanan ? " kal-pot-n" : ""}`;
-      const dalam = (multi ? "" : "<i></i>") + `<span>${esc(sg.b.judul)}</span>`;
-      out += u ? `<a class="${kls}" href="${esc(u)}" target="_blank" rel="noopener noreferrer" title="${esc(sg.b.judul)}">${dalam}</a>` : `<span class="${kls}" title="${esc(sg.b.judul)}">${dalam}</span>`;
+      const kls = `kal-ev kal-ev-bar kal-t-${esc(sg.b.jenis)} kal-k${sg.k} kal-s${sg.n} kal-l${l}${sg.kiri ? " kal-pot-k" : ""}${sg.kanan ? " kal-pot-n" : ""}`;
+      out += `<button type="button" class="${kls}" data-acara="${esc(sg.b.id)}" title="${esc(sg.b.judul)}"><span>${esc(sg.b.judul)}</span></button>`;
     }
-    const sel = mg.map((h, i) => `<div class="kal-hr${bulanDari(h) !== S.bulan ? " kal-luar" : ""}${i > 4 ? " kal-akhir" : ""}${h === KINI ? " kal-kini" : ""} kal-k${i + 1}"><b>${+h.slice(8)}</b></div>`).join("");
-    const lain = mg.map((h, i) => (lebih[i + 1] ? `<button type="button" class="kal-lain kal-k${i + 1}" data-hari="${h}" data-ke="agenda">${esc(t("kal.lainnya", { n: lebih[i + 1] }))}</button>` : "")).join("");
+    const sel = mg.map((h, i) => `<div class="kal-hr${bulanDari(h) !== S.bulan ? " kal-luar" : ""}${i > 4 ? " kal-akhir" : ""}${h === KINI ? " kal-kini" : ""} kal-k${i + 1}" data-hari="${h}"><button type="button" data-hari="${h}" aria-label="${esc(tanggal(h))}"><b>${+h.slice(8)}</b></button></div>`).join("");
+    const lain = mg.map((h, i) => (lebih[i + 1] ? `<button type="button" class="kal-lain kal-k${i + 1}" data-hari="${h}">${esc(t("kal.lainnya", { n: lebih[i + 1] }))}</button>` : "")).join("");
     return `<div class="kal-minggu">${sel}${out}${lain}</div>`;
   }).join("");
-  return `<div class="jm-kartu kal-bulan"><div class="kal-hdr">${kepalaHari("kal-hn")}</div>${minggu}</div>`;
+  const n = rows.filter((b) => b.tanggal.slice(0, 7) <= S.bulan && b.akhir.slice(0, 7) >= S.bulan).length;
+  return exHtml({ id: "ex-bulan", ikon: "kalender", topik: t("kal.ex.bulan.ey"), judulHtml: hlHtml("kal.ex.bulan.j", angka(n), { bulan: `${namaBulan(S.bulan)} ${S.bulan.slice(0, 4)}` }), subHtml: esc(t("kal.ex.bulan.sub")),
+    aksiHtml: aksiHtml({ csv: true }) + sumberKal(), isiHtml: `<div class="kal-bulan"><div class="kal-hdr">${kepalaHari("kal-hn")}</div>${minggu}</div>` });
 }
 
 function gambarIsi() {
   const rows = acaraDari(D.baris.filter((b) => !S.jenis || b.jenis === S.jenis));
   const v = efektif();
+  ROWS = rows;
   document.getElementById("hitung").textContent = t("kal.hitung", { n: angka(rows.length), total: angka(D.baris.length) });
-  document.getElementById("isi").innerHTML = v === "bulan" ? bulanHtml(rows) : agendaHtml(rows);
+  document.getElementById("isi").innerHTML = (v === "bulan" ? bulanHtml(rows) : HP.matches ? pekanHtml(rows) : "") + agendaHtml(rows);
 }
+
+/* ---------- popup acara / hari (dialog modal; di HP jadi lembar bawah lewat CSS) ---------- */
+const pop = () => document.getElementById("kalPop");
+const tglRentang = (b) => `${t("kal.hari." + hariKe(b.tanggal))}, ${tanggal(b.tanggal)}${b.akhir > b.tanggal ? ` - ${t("kal.hari." + hariKe(b.akhir))}, ${tanggal(b.akhir)}` : ""}`;
+const tutupX = () => `<button type="button" class="kal-pop-x" data-pop="tutup" aria-label="${esc(t("kal.pop.tutup"))}">${ikon("silang", 22)}</button>`;
+const tampilPop = (html, opener) => {
+  const d = pop(); d.innerHTML = html; OPENER = opener || OPENER;
+  if (!d.open) d.showModal();
+  d.scrollTop = 0; d.querySelector("[data-pop=tutup]")?.focus();
+};
+function bukaAcara(id, opener) {
+  const b = ROWS.find((x) => x.id === id) || acaraDari(D.baris).find((x) => x.id === id);
+  if (!b) return;
+  const u = urlB(b), dd = (k, v) => (v ? `<dt>${esc(t(k))}</dt><dd>${v}</dd>` : "");
+  tampilPop(`<div class="kal-pop-isi">${tutupX()}${pilJenis(b.jenis)}<h2 id="kalPopJ">${esc(b.judul)}</h2>
+    <dl class="kal-pop-dl">${dd("kal.pop.tanggal", esc(tglRentang(b)))}${dd("kal.pop.mitra", b.mitra ? esc(b.mitra) : "")}${dd("kal.pop.lokasi", b.lokasi ? esc(b.lokasi) : "")}${dd("kal.pop.sumber", `${esc(t("kal.sumber." + b.sumber.label))}, ${esc(t("kal.diambil", { tanggal: tanggal(b.sumber.tanggal) }))}`)}</dl>
+    ${b.deskripsi ? `<p class="kal-pop-desk">${esc(b.deskripsi)}</p>` : ""}
+    <div class="kal-pop-aksi"><button type="button" class="jm-tbl" data-pop="ics" data-id="${esc(b.id)}">${ikon("kalender", 18)}${esc(t("kal.pop.ics"))}</button>
+    ${u ? `<a class="jm-tbl" href="${esc(u)}" target="_blank" rel="noopener noreferrer">${esc(t("kal.pop.buka"))} &rarr;</a>` : ""}
+    <button type="button" class="jm-tbl" data-pop="bagi" data-id="${esc(b.id)}">${ikon("tautan", 18)}<span>${esc(t("kal.pop.bagi"))}</span></button></div></div>`, opener);
+  history.replaceState(null, "", `${location.pathname}${location.search}#acara-${b.id}`);
+}
+function bukaHari(h, opener) {
+  const r = ROWS.filter((b) => b.tanggal <= h && b.akhir >= h), lanjut = ROWS.filter((b) => b.tanggal > h).sort((a, c) => a.tanggal.localeCompare(c.tanggal))[0];
+  const item = (b) => `<li><button type="button" class="kal-pop-item" data-acara="${esc(b.id)}">${pilJenis(b.jenis)}<strong>${esc(b.judul)}</strong><small>${esc(tglRentang(b))}</small></button></li>`;
+  tampilPop(`<div class="kal-pop-isi">${tutupX()}<h2 id="kalPopJ">${esc(t("kal.pop.hari", { tanggal: tanggal(h, { gaya: "panjang" }) }))}</h2>
+    ${r.length ? `<ul class="kal-pop-daftar">${r.map(item).join("")}</ul>` : `<p>${esc(t("kal.pop.kosong"))}</p>${lanjut ? `<h3>${esc(t("kal.pop.berikut"))}</h3><ul class="kal-pop-daftar">${item(lanjut)}</ul>` : ""}`}</div>`, opener);
+}
+const ics = (b) => {
+  const e = (x) => String(x).replace(/\\/g, "\\\\").replace(/[;,]/g, (m) => "\\" + m).replace(/\r?\n/g, "\\n"), d = (x) => x.replaceAll("-", "");
+  const baris = ["BEGIN:VCALENDAR", "VERSION:2.0", "PRODID:-//METI//Direktori METI//ID", "BEGIN:VEVENT", `UID:${b.id}@meti`, `DTSTAMP:${new Date().toISOString().replace(/[-:]|\.\d+/g, "")}`,
+    `DTSTART;VALUE=DATE:${d(b.tanggal)}`, `DTEND;VALUE=DATE:${d(iso(utc(b.akhir) + 864e5))}`, `SUMMARY:${e(b.judul)}`, b.mitra && `DESCRIPTION:${e(b.mitra)}`, b.lokasi && `LOCATION:${e(b.lokasi)}`, urlB(b) && `URL:${urlB(b)}`, "END:VEVENT", "END:VCALENDAR"].filter(Boolean);
+  const a = document.createElement("a");
+  a.href = URL.createObjectURL(new Blob([baris.join("\r\n") + "\r\n"], { type: "text/calendar;charset=utf-8" })); a.download = `meti-${b.id}.ics`;
+  document.body.append(a); a.click(); a.remove(); setTimeout(() => URL.revokeObjectURL(a.href), 4000);
+};
+function pasangPop() {
+  const d = document.createElement("dialog");
+  d.id = "kalPop"; d.className = "kal-pop"; d.setAttribute("aria-labelledby", "kalPopJ");
+  document.body.append(d);
+  d.addEventListener("click", (e) => {
+    if (e.target === d || e.target.closest("[data-pop=tutup]")) return d.close();
+    const a = e.target.closest("[data-acara]"); if (a) return bukaAcara(a.dataset.acara);
+    const b = e.target.closest("[data-pop]"); if (!b) return;
+    const ev = ROWS.find((x) => x.id === b.dataset.id) || acaraDari(D.baris).find((x) => x.id === b.dataset.id);
+    if (b.dataset.pop === "ics" && ev) ics(ev);
+    else if (b.dataset.pop === "bagi") {
+      const span = b.querySelector("span"), url = `${location.origin}/kalender#acara-${b.dataset.id}`;
+      navigator.clipboard?.writeText(url).then(() => { span.textContent = t("kal.pop.disalin"); setTimeout(() => { span.textContent = t("kal.pop.bagi"); }, 1600); }, () => {});
+    }
+  });
+  d.addEventListener("close", () => {
+    history.replaceState(null, "", location.pathname + location.search);
+    const o = OPENER; OPENER = null;
+    const el = o && (o.isConnected ? o : document.querySelector(o.dataset.acara ? `[data-acara="${o.dataset.acara}"]` : `[data-hari="${o.dataset.hari}"]`));
+    el?.focus();
+  });
+}
+
+/* CSV seksi kalender (hook jm:csv dari inti/aksi_ex.js): acara yang tampil menurut filter */
+const csvBaris = () => [[t("kal.pop.tanggal"), "s/d", "Judul", t("kal.pop.jenis"), t("kal.pop.mitra"), t("kal.pop.sumber"), "URL"], ...ROWS.slice().sort((a, c) => a.tanggal.localeCompare(c.tanggal)).map((b) => [b.tanggal, b.akhir, b.judul, label("kal.jenis.", b.jenis), b.mitra || "", t("kal.sumber." + b.sumber.label), urlB(b)])];
 
 async function main() {
   await mulaiHalaman();
   bacaUrl();
   KINI = new Date().toISOString().slice(0, 10);
   const isi = document.getElementById("isi");
-  const catatan = () => { document.getElementById("sumber").textContent = t("kal.catatan", { tanggal: tanggal(D.dibangun_pada) }); };
   const mulai = async () => {
     isi.innerHTML = hantuHtml(5);
     try { D = await muat("kalender"); } catch (e) { isi.innerHTML = galatHtml("layanan"); return; }
-    if (!S.bulan) { const kini = KINI.slice(0, 7); S.bulan = D.baris.some((b) => bulanDari(b.tanggal) === kini) ? kini : bulanDari(D.baris.filter((b) => b.tanggal <= KINI).pop()?.tanggal || D.baris[D.baris.length - 1].tanggal); }
-    catatan(); gambarKepala(); gambarIsi();
+    const deep = /^#acara-(.+)$/.exec(location.hash)?.[1], tuju = deep && D.baris.find((b) => b.id === deep);
+    if (tuju) S.bulan = bulanDari(tuju.tanggal);
+    else if (!S.bulan) { const kini = KINI.slice(0, 7); S.bulan = D.baris.some((b) => bulanDari(b.tanggal) === kini) ? kini : bulanDari(D.baris.filter((b) => b.tanggal <= KINI).pop()?.tanggal || D.baris[D.baris.length - 1].tanggal); }
+    gambarKepala(); gambarIsi();
+    if (tuju) bukaAcara(deep);
   };
+  pasangPop();
   await mulai();
   isi.addEventListener("click", (e) => e.target.closest("[data-aksi=ulang]") && mulai());
   const ulang = () => nanti(() => { tulisUrl(); gambarIsi(); });
   const akar = document.getElementById("kal");
-  akar.addEventListener("click", (e) => {
-    if (!D) return;
+  document.addEventListener("jm:csv", (e) => { const ex = e.target.closest?.(".jm-ex"); if (ex && akar.contains(ex)) e.detail.baris = csvBaris(); }, true);
+  addEventListener("click", (e) => {
+    if (!D || e.target.closest("dialog")) return;
     const q = (s) => e.target.closest(s);
     let b;
     if ((b = q("[data-tampil]"))) {
       S.tampil = b.dataset.tampil;
       for (const x of document.querySelectorAll("[data-tampil]")) x.setAttribute("aria-pressed", String(x === b)); // chrome urgent
       ulang();
-    } else if ((b = q("[data-geser]"))) { S.bulan = geser(S.bulan, +b.dataset.geser); S.hari = ""; judulBulan(); ulang(); }
-    else if (q("[data-hariini]")) { S.bulan = KINI.slice(0, 7); S.hari = ""; judulBulan(); ulang(); }
-    else if ((b = q("[data-mini]"))) { S.mini = !S.mini; b.setAttribute("aria-expanded", String(S.mini)); b.closest(".kal-mini").classList.toggle("kal-buka", S.mini); }
-    else if ((b = q("[data-hari]"))) {
-      const h = b.dataset.hari;
-      S.hari = S.hari === h && !b.dataset.ke ? "" : h;
-      if (b.dataset.ke) S.tampil = "agenda";
-      if (bulanDari(h) !== S.bulan && S.hari) { S.bulan = bulanDari(h); judulBulan(); }
-      ulang();
-    }
+    } else if ((b = q("[data-geser]"))) { S.bulan = geser(S.bulan, +b.dataset.geser); judulBulan(); ulang(); }
+    else if (q("[data-hariini]")) { S.bulan = KINI.slice(0, 7); judulBulan(); ulang(); }
+    else if ((b = q("[data-acara]")) && akar.contains(b)) bukaAcara(b.dataset.acara, b);
+    else if ((b = q("[data-hari]")) && akar.contains(b)) bukaHari(b.dataset.hari, b.closest("button") || b);
   });
   akar.addEventListener("change", (e) => { if (e.target.id === "jenis") { S.jenis = e.target.value; ulang(); } });
-  HP.addEventListener("change", () => D && nanti(() => { S.mini = !HP.matches; gambarIsi(); }));
-  document.addEventListener("jm:bahasa", () => D && nanti(() => { gambarKepala(); gambarIsi(); catatan(); }));
+  HP.addEventListener("change", () => D && nanti(() => { gambarIsi(); }));
+  document.addEventListener("jm:bahasa", () => D && nanti(() => { gambarKepala(); gambarIsi(); }));
 }
 main();

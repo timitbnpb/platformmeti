@@ -11,12 +11,14 @@ const MI = "https://metiires.or.id";
 const KONTAK = [["jm.kaki.surel", "meti.ires@gmail.com", "berita"], ["jm.kaki.situs", "www.meti.or.id", "tautan"], ["jm.kaki.kantor", "Taman Sari Parama Lt. 10, Jl. K.H. Wahid Hasyim No. 84-86, Kebon Sirih, Menteng, Jakarta Pusat 10340", "wilayah"], ["jm.kaki.rumah", "Jl. Jatinegara Barat IV No. 3A, Balimester, Jatinegara, Jakarta Timur 13310", "wilayah"]];
 /* ponytail: logo lebar (wordmark) diganti lambang kecil + label; ganti lewat data bila daftar bertambah */
 const LAMBANG = { "Ditjen EBTKE ESDM": ["/img/logo/ebtke.png", "Ditjen EBTKE"], "Kementerian ESDM": ["/img/logo/esdm.png", "Kementerian ESDM"] };
-const LOGO_ASOS = { AESI: "/img/logo/aesi.png", APROBI: "/img/logo/aprobi.png" };
+const LOGO_ASOS = { AESI: "/img/logo/aesi.png", APROBI: "/img/logo/aprobi.png", API: "/img/logo/api-inaga.png", APAMSI: "/img/logo/apamsi.png" };
 
 const sorot = (s, tag) => esc(s).replace(/\*(.+?)\*/g, `<${tag}>$1</${tag}>`);
 const inisial = (n) => String(n).replace(/[^\p{L} ]/gu, "").split(/\s+/).filter((w) => w.length > 1).slice(0, 2).map((w) => w[0]).join("").toUpperCase() || "?";
 const avatar = (o, besar) => o.foto ? `<img class="tn-av${besar ? " besar" : ""}" src="${esc(o.foto)}" alt="" width="${besar ? 96 : 48}" height="${besar ? 96 : 48}" loading="lazy">` : `<span class="tn-av tn-ini${besar ? " besar" : ""}" aria-hidden="true">${esc(inisial(o.nama))}</span>`;
-const orang = (o, besar) => `<li class="tn-org${besar ? " besar" : ""}">${avatar(o, besar)}<span><b>${esc(o.nama)}</b><small>${esc(o.jabatan)}</small></span></li>`;
+const PERS = new Map();
+const slug = (n) => String(n).toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
+const orang = (o, besar) => { const k = o.orang_id || slug(o.nama); PERS.set(k, o); return `<li class="tn-org${besar ? " besar" : ""}"><button type="button" class="tn-org-b" data-p="${esc(k)}" aria-label="${esc(t("tn.p.buka", { nama: o.nama }))}">${avatar(o, besar)}<span><b>${esc(o.nama)}</b><small>${esc(o.jabatan)}</small></span></button></li>`; };
 const lowong = (jabatan) => `<li class="tn-org"><span class="tn-av tn-kosong" aria-hidden="true">${ikon("orang", 22)}</span><span><b>${esc(t("tn.lowong"))}</b><small>${esc(jabatan)}</small></span></li>`;
 /* kartu unit: pemimpin tampil, sisanya terlipat */
 const kartu = (judul, a, ekstra = "") => {
@@ -28,7 +30,7 @@ const tbl = (x, dup) => {
   const l = LAMBANG[x.nama], src = l ? l[0] : x.logo, lebar = !l && x.w / x.h > 3.2;
   return `<li${dup ? ' aria-hidden="true"' : ""}><a class="tn-logo"${dup ? ' tabindex="-1"' : ""} href="/direktori?cari=${encodeURIComponent(x.nama)}" title="${esc(x.nama)}"><img src="${esc(src)}" alt="${esc(x.nama)}" loading="lazy">${l || lebar ? `<span>${esc(l ? l[1] : x.nama)}</span>` : ""}</a></li>`;
 };
-const tblAsos = (a, dup) => `<li${dup ? ' aria-hidden="true"' : ""}><a class="tn-logo"${dup ? ' tabindex="-1"' : ""} href="/direktori?cari=${encodeURIComponent(a)}" title="${esc(a)}">${LOGO_ASOS[a] ? `<img src="${LOGO_ASOS[a]}" alt="${esc(a)}" loading="lazy">` : `<b class="tn-nama">${esc(a)}</b>`}</a></li>`;
+const tblAsos = (a, dup) => `<li${dup ? ' aria-hidden="true"' : ""}><a class="tn-logo"${dup ? ' tabindex="-1"' : ""} href="/direktori?cari=${encodeURIComponent(a)}" title="${esc(a)}">${LOGO_ASOS[a] ? `<img src="${LOGO_ASOS[a]}" alt="${esc(a)}" loading="lazy">` : `<b class="tn-mono">${esc(a)}</b>`}</a></li>`;
 
 /* ponytail: marquee CSS murni; daftar pendek diulang sampai >= 10 butir lalu digandakan untuk putaran mulus */
 const jalur = (a, fn, balik) => { const r = Math.ceil(10 / a.length), basis = Array.from({ length: r }, (_, k) => a.map((x) => fn(x, k > 0))).flat(); return `<div class="tn-pita"><ul class="tn-trek${balik ? " balik" : ""}">${basis.join("")}${a.length ? Array.from({ length: r }, () => a.map((x) => fn(x, true))).flat().join("") : ""}</ul></div>`; };
@@ -74,7 +76,7 @@ function struktur(p) {
 function mitra(m) {
   const grup = (kunci, a, fn, balik) => `<h3 class="tn-sub tn-tengah">${esc(t("tn.mitra.judul_n", { judul: t(kunci), n: a.length }))}</h3>${jalur(a, fn, balik)}`;
   return `<section class="seksi kertas" id="mitra" aria-labelledby="tn-mitra">${bandL("tn-mitra", "/img/tentang/panas-bumi.webp", "50% 50%", t("tn.mitra.h2"), t("tn.mitra.pengantar", { tanggal: tanggal(m.diambil) }))}
-  <div class="wrap"><p class="tn-kanan"><a class="tn-lanjut" href="${esc(m.sumber)}" target="_blank" rel="noopener noreferrer">${esc(t("tn.mitra.lengkap"))}</a></p>${grup("tn.mitra.kerja", m.mitra, tbl)}${grup("tn.mitra.anggota", m.anggota, tbl, true)}${grup("tn.mitra.asosiasi", m.asosiasi, tblAsos)}</div></section>`;
+  <div class="wrap">${grup("tn.mitra.kerja", m.mitra, tbl)}${grup("tn.mitra.anggota", m.anggota, tbl, true)}${grup("tn.mitra.asosiasi", m.asosiasi, tblAsos)}<p class="tn-tengah tn-pangkal"><a class="tn-lanjut" href="${esc(m.sumber)}" target="_blank" rel="noopener noreferrer">${esc(t("tn.mitra.lengkap"))}</a></p></div></section>`;
 }
 
 function metode() {
@@ -110,3 +112,48 @@ isi.addEventListener("click", (e) => {
   if (!b || !navigator.clipboard) return;
   navigator.clipboard.writeText(b.dataset.salin).then(() => { b.textContent = t("tn.tersalin"); setTimeout(() => { b.textContent = t("tn.salin"); }, 1500); }, () => {});
 });
+
+/* ---------- profil orang (dialog; sheet bawah di layar sempit) ---------- */
+const http = (u) => /^https?:\/\//i.test(u || "");
+const host = (u) => { try { return new URL(u).hostname.replace(/^www\./, ""); } catch (e) { return u; } };
+const manusia = (k) => { const s = String(k).replace(/-/g, " "); return s.charAt(0).toUpperCase() + s.slice(1); };
+const norm = (n) => String(n).toLowerCase().replace(/\b(dr|ir|prof|drs|drg|mt|msc|mba|ph\.?d|s\.?t|m\.?t|s\.?e|m\.?m)\b\.?/g, "").replace(/[^a-z ]/g, "").replace(/\s+/g, " ").trim();
+let orangP;
+const dataOrang = () => orangP ??= muat("orang").then((d) => d.baris || []).catch(() => []);
+const bag = (judul, isi) => isi ? `<section class="tn-pb"><h4>${esc(judul)}</h4>${isi}</section>` : "";
+function profil(p, o) {
+  o = o || {};
+  const jb = []; const lihat = new Set();
+  for (const x of o.jabatan || []) { const k = (x.jabatan || "") + "|" + norm(x.organisasi || ""); if (!x.jabatan || lihat.has(k)) continue; lihat.add(k); jb.push(x); }
+  const th = (x) => { const m = String(x.mulai || "").slice(0, 4), s = x.kini ? t("tn.p.sekarang") : String(x.selesai || "").slice(0, 4); return m || s ? `${m}${m && s ? " - " : ""}${s}` : ""; };
+  const kini = o.jabatan_terkini || o.organisasi_terkini ? `<p class="tn-kini">${o.organisasi_id ? `<img class="tn-pl" src="/img/logo/org/${esc(o.organisasi_id)}.png" alt="" width="40" height="40">` : ""}<span><b>${esc(o.jabatan_terkini || "")}</b><small>${esc(o.organisasi_terkini || "")}</small></span></p>` : "";
+  const pend = (o.pendidikan || []).map((x) => `<li>${esc(typeof x === "string" ? x : [x.jenjang, x.institusi, x.tahun].filter(Boolean).join(", "))}</li>`).join("");
+  const tau = (o.tautan || []).filter((x) => http(x.url)).map((x) => `<a href="${esc(x.url)}" target="_blank" rel="noopener noreferrer">${esc(host(x.url))}</a>`).join("");
+  const sum = [...new Set([o.sumber_url, ...jb.map((x) => x.sumber_url)].filter(http))].map((u) => `<a href="${esc(u)}" target="_blank" rel="noopener noreferrer">${esc(host(u))}</a>`).join("");
+  const ada = kini || o.ringkasan || (o.kepakaran || []).length || jb.length || pend || tau;
+  return `<header class="tn-ph">${avatar(p, true)}<div><h3 id="tn-pj">${esc((o.gelar ? o.gelar + " " : "") + p.nama)}</h3><p class="tn-chip">${esc(t("tn.p.meti"))}: ${esc(p.jabatan)}</p></div></header>
+  ${bag(t("tn.p.kini"), kini)}${o.ringkasan ? bag(t("tn.p.ringkas"), `<p>${esc(o.ringkasan)}</p>`) : ""}
+  ${bag(t("tn.p.pakar"), (o.kepakaran || []).length ? `<p class="tn-pil">${o.kepakaran.map((x) => `<span>${esc(manusia(x.kode || x))}</span>`).join("")}</p>` : "")}
+  ${bag(t("tn.p.jejak"), jb.length ? `<ol class="tn-jejak">${jb.map((x) => `<li><b>${esc(x.jabatan)}</b><small>${esc(x.organisasi || "")}${th(x) ? " , " + esc(th(x)) : ""}</small></li>`).join("")}</ol>` : "")}
+  ${bag(t("tn.p.pendidikan"), pend ? `<ul class="tn-pend">${pend}</ul>` : "")}${bag(t("tn.p.tautan"), tau ? `<p class="tn-tau">${tau}</p>` : "")}${bag(t("tn.p.sumber"), sum ? `<p class="tn-tau">${sum}</p>` : "")}
+  ${ada ? "" : `<p class="tn-kosongp">${esc(t("tn.p.kosong"))}</p>`}`;
+}
+const dlg = document.createElement("dialog");
+dlg.className = "tn-dlg"; dlg.setAttribute("aria-labelledby", "tn-pj");
+dlg.innerHTML = `<button type="button" class="tn-x" data-tutup aria-label="${esc(t("tn.p.tutup"))}">${ikon("silang", 20)}</button><div class="tn-pi"></div>`;
+document.body.append(dlg);
+const pi = dlg.querySelector(".tn-pi");
+let tokenP = 0;
+async function bukaProfil(k) {
+  const p = PERS.get(k); if (!p) return;
+  const tk = ++tokenP; pi.innerHTML = profil(p); if (!dlg.open) dlg.showModal();
+  history.replaceState(null, "", "#pengurus-" + k);
+  const semua = await dataOrang(); if (tk !== tokenP) return;
+  const o = semua.find((x) => p.orang_id && x.id === p.orang_id) || semua.find((x) => norm(x.nama) === norm(p.nama));
+  if (o) pi.innerHTML = profil(p, o);
+}
+isi.addEventListener("click", (e) => { const b = e.target.closest("[data-p]"); if (b) bukaProfil(b.dataset.p); });
+dlg.addEventListener("click", (e) => { if (e.target === dlg || e.target.closest("[data-tutup]")) dlg.close(); });
+dlg.addEventListener("close", () => { tokenP++; if (location.hash.startsWith("#pengurus-")) history.replaceState(null, "", location.pathname + location.search); });
+dlg.addEventListener("error", (e) => { if (e.target.classList && e.target.classList.contains("tn-pl")) e.target.hidden = true; }, true);
+if (location.hash.startsWith("#pengurus-")) bukaProfil(decodeURIComponent(location.hash.slice(10)));

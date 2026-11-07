@@ -2,6 +2,7 @@
 import { t, angka, tanggal } from "/i18n.js";
 import { esc, galatHtml, ikon } from "/inti/umum.js";
 import { sumberHtml as sumberIkon } from "/inti/komponen.js";
+import { aksiHtml } from "/inti/aksi_ex.js";
 
 export const amanUrl = (u) => (/^https?:\/\//.test(u || "") ? u : null);
 
@@ -39,15 +40,15 @@ export const sumberHtml = (s) => sumberLipat([s]);
 export const pil = (kunci, jenis = "warn") => `<span class="jm-pil jm-pil-${jenis}">${esc(t(kunci))}</span>`;
 
 /* Kartu angka (KPI): ikon bertinta + label satu baris + pil EST, angka besar dengan satuan sebaris, sub baris, sumber satu baris (tooltip penuh). */
-export function kartuHtml({ judul, nilai, satuan, penyebut, sumber, turunan, ikon: ik = "analisis" }) {
-  return `<article class="jm-kartu jm-an-kartu"><header class="jm-kpi-kepala"><span class="jm-kpi-ik">${ikon(ik, 18)}</span><h3 title="${esc(judul)}">${esc(judul)}</h3>${turunan ? pil("an.est") : ""}</header>
+export function kartuHtml({ judul, nilai, satuan, penyebut, sumber, turunan, ikon: ik = "analisis", ikonHtml }) {
+  return `<article class="jm-kartu jm-an-kartu"><header class="jm-kpi-kepala"><span class="jm-kpi-ik">${ikonHtml || ikon(ik, 18)}</span><h3 title="${esc(judul)}">${esc(judul)}</h3>${turunan ? pil("an.est") : ""}</header>
     <p class="jm-an-angka"><b>${esc(nilai)}</b>${satuan ? `<span>${esc(satuan)}</span>` : ""}</p>
     <p class="jm-bantu jm-kpi-sub">${penyebut ? esc(penyebut) : "&nbsp;"}</p>${sumber || ""}</article>`;
 }
 
 /* Kepala halaman bersama: tiga ubin angka (ikon bertinta, angka+satuan, label 1 baris + pil EST sebaris, tautan ke seksi).
    ubin: [{ikon, nilai, satuan, label, href, turunan}] */
-export const ubinHtml = (ubin) => ubin.map((u) => `<a class="jm-kh-ub" href="${esc(u.href)}"><span class="jm-kpi-ik">${ikon(u.ikon, 20)}</span><p class="jm-kh-angka"><b>${esc(u.nilai)}</b>${u.satuan ? `<span>${esc(u.satuan)}</span>` : ""}</p><p class="jm-kh-lbl"><span title="${esc(u.label)}">${esc(u.label)}</span>${u.turunan ? pil("an.est") : ""}</p></a>`).join("");
+export const ubinHtml = (ubin) => ubin.map((u) => `<a class="jm-kh-ub" href="${esc(u.href)}"><span class="jm-kpi-ik">${u.ikonHtml || ikon(u.ikon, 20)}</span><p class="jm-kh-angka"><b>${esc(u.nilai)}</b>${u.satuan ? `<span>${esc(u.satuan)}</span>` : ""}</p><p class="jm-kh-lbl"><span title="${esc(u.label)}">${esc(u.label)}</span>${u.turunan ? pil("an.est") : ""}</p></a>`).join("");
 
 /* Jawaban visual di hero (dipakai profil provinsi): angka besar + label + batang kecil bersama (rows: [{label, nilai, teks, kelas}]; ref: garis putus-putus). */
 export function heroVisual({ angka: a, label, rows, ref, teksRef, turunan = true }) {
@@ -71,7 +72,7 @@ export function batangHtml(baris, { maks, ref, label, aksi } = {}) {
   const isi = baris.map((b) => {
     const garis = ref ? `<u class="jm-bar-garis" data-ref="${((ref / M) * 100).toFixed(2)}"></u>` : "";
     const seg = b.bagian.map((p) => `<i class="${p.kelas}" data-w="${(Math.max(0, (p.nilai || 0) / M) * 100).toFixed(2)}"></i>`).join("");
-    const dalam = `<span class="jm-bar-lbl">${esc(b.label)}</span><span class="jm-bar-trek">${seg}${garis}</span><b class="jm-bar-val">${esc(b.teks)}</b>`;
+    const dalam = `<span class="jm-bar-lbl">${b.labelHtml ?? esc(b.label)}</span><span class="jm-bar-trek">${seg}${garis}</span><b class="jm-bar-val">${esc(b.teks)}</b>`;
     const kelas = `${aksi ? "jm-bar-x" : "jm-bar-b"}${b.sorot ? " jm-an-sorot" : ""}`;
     return aksi ? `<li class="${kelas}"><button type="button" class="jm-bar-aksi" data-id="${esc(b.id)}" aria-pressed="${b.pilih ? "true" : "false"}" title="${esc(b.label + ": " + b.teks)}">${dalam}</button></li>`
       : `<li class="${kelas}" title="${esc(b.label + ": " + b.teks)}">${dalam}</li>`;
@@ -115,4 +116,18 @@ export function pasangSeg(seg, atribut, ambilKini, setel, kerja, nantiFn) {
     setel(b.dataset[atribut]);
     nantiFn(kerja);
   });
+}
+
+/* Aksi kepala seksi (.jm-ex-aksi[id^=aksi-]): PNG/PDF/bagikan (+CSV bila seksi bertabel); ikon sumber di dalam isi seksi dipindah ke area aksi. */
+export function pasangAksi(csvIds = []) {
+  for (const el of document.querySelectorAll(".jm-ex-aksi[id^=aksi-]")) el.innerHTML = aksiHtml({ csv: csvIds.includes(el.id) });
+  const pindah = () => {
+    for (const ex of document.querySelectorAll(".jm-ex")) {
+      const aksi = ex.querySelector(".jm-ex-aksi"); if (!aksi) continue;
+      for (const s of ex.querySelectorAll(".jm-ex-bd .jm-an-src")) aksi.append(s);
+    }
+  };
+  pindah();
+  let w = 0;
+  new MutationObserver(() => { cancelAnimationFrame(w); w = requestAnimationFrame(pindah); }).observe(document.querySelector("main"), { childList: true, subtree: true });
 }

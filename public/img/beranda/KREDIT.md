@@ -12,5 +12,6 @@ Foto dari Wikimedia Commons, diunduh 7 Nov 2026, diperkecil ke lebar 1600 px dan
 | biomassa-bantargebang.webp | TPST Bantargebang, Bekasi, dipotong 4:3, lebar 800 px | Kuncoro Widyo Rumpoko | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Siluet_Pemulung_Bantargebang.jpg |
 | nuklir-siwabessy.webp | Reaktor RSG G.A. Siwabessy, Serpong, dipotong 4:3 dan diperbesar dari 730 px | Bkusmono | Domain publik | https://commons.wikimedia.org/wiki/File:RSG_SIWABESSY.jpg |
 | penyimpanan-baterai.webp | Sistem baterai kontainer Tesvolt, Rheineck, Swiss (contoh, bukan di Indonesia), dipotong 4:3 | Kecko | CC BY 2.0 | https://commons.wikimedia.org/wiki/File:Tesvolt_battery_energy_storage_system_Rheineck.jpg |
+| bioetanol-tebu.webp | Kebun tebu di Jawa sekitar 1920 (foto sejarah, bahan baku bioetanol), dipotong 16:9, lebar 800 px | N.V. Photografisch Atelier Kurkdjian (koleksi KITLV) | Domain publik | https://commons.wikimedia.org/wiki/File:KITLV_-_33456_-_Kurkdjian,_N.V._Photografisch_Atelier_-_Soerabaja_-_Sugarcane_field,_Java_-_circa_1920.tif |
 
 Empat foto terakhir diunduh 7 Nov 2026 lewat API Commons (UA METI-Network-research/0.1, jeda 2 detik).

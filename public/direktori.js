@@ -2911,6 +2911,7 @@ h4{margin:0 0 2px;font-size:8px;letter-spacing:.08em;text-transform:uppercase;co
     document.querySelectorAll(".ak-tabpanah").forEach(b => b.addEventListener("click", () => $("akTampil").scrollBy({left: +b.dataset.d * 220, behavior: "smooth"})));
     $("akTampil").hidden = false;
     $("akTampil").addEventListener("click", e => { const b = e.target.closest("button[data-t]"); if (b) tampil(b.dataset.t); });
+    periksaSub();
     const tujuan = VIEW[v] || LAMA[v] ? v : "pakar", tabT = (LAMA[tujuan] || [tujuan])[0];
     if (TAB_DATA.includes(tabT)) tabAda(tabT).then(ok => tampil(ok ? tujuan : "pakar", ok ? sub : "")); else tampil(tujuan, sub);   // tautan ke tab tanpa data jatuh ke Orang
   }
@@ -2919,9 +2920,16 @@ h4{margin:0 0 2px;font-size:8px;letter-spacing:.08em;text-transform:uppercase;co
     el.textContent = t[0] + "."; el.hidden = false; ambilData(t[1]).then(d => { const a = dlist(Array.isArray(d) ? d : d && Object.values(d).find(Array.isArray)), tg = a.map(x => String(x?.diperiksa || "")).filter(Boolean).sort().pop(); if (tampilSkrg === v) el.textContent = t[0] + (tg ? `; diperiksa ${tglID(tg)}` : "") + "."; }); }
   /* 8 tab utama; Pustaka dan Riset punya sub-tab. ?tampil= lama (berita, riset, kejadian, pusat, aset) diarahkan ke tab+sub baru */
   const TABS = ["pakar", "lembaga", "inovasi", "riset", "sistem_data", "pendanaan", "pustaka"], TAB_LABEL = {riset: "Riset", pakar: "Orang", lembaga: "Organisasi"};
-  const SUBTAB = {pustaka: [["buku", "Buku", "pustaka"], ["dok", "Dokumen", "pustaka"], ["berita", "Berita", "berita"]], riset: [["riset", "Riset", "riset"], ["jejak-isu", "Jejak isu", "kejadian"], ["pusat", "Pusat studi", "pusat"], ["aset", "Aset riset", "pusat"]]};
+  const SUBTAB = {pustaka: [["dok", "Dokumen", "pustaka"], ["buku", "Buku", "pustaka"], ["berita", "Berita", "berita"]], riset: [["riset", "Riset", "riset"], ["jejak-isu", "Jejak isu", "kejadian"], ["pusat", "Pusat studi", "pusat"], ["aset", "Aset riset", "pusat"]]};
   const LAMA = {berita: ["pustaka", "berita"], riset: ["riset", "riset"], kejadian: ["riset", "jejak-isu"], "jejak-isu": ["riset", "jejak-isu"], pusat: ["riset", "pusat"], aset: ["riset", "aset"], pustaka: ["pustaka", "dok"], buku: ["pustaka", "buku"], dokumen: ["pustaka", "dok"], tokoh: ["pakar", ""]};
   let tabSkrg = "pakar";
+  /* sub-tab yang datanya kosong dilepas dari bilah; tiap tab dan sub-tab berikon 18px */
+  const SUB_DATA = {dok: "dokumen", buku: "buku", berita: "berita", riset: "riset", "jejak-isu": "jejak_isu", pusat: "pusat_studi", aset: "aset_riset"};
+  const adaIsi = d => Array.isArray(d) ? d.length > 0 : !!d && typeof d === "object" && Object.values(d).some(v => Array.isArray(v) && v.length);
+  const ikSub = (tab, v) => ikon((VIEW[v] || VIEW[tab] || VIEW.pakar)[1], "currentColor");
+  const gambarSub = sub => { const sl = SUBTAB[tabSkrg], b = $("akSubTab"); b.hidden = !sl || sl.length < 2; if (sl) b.innerHTML = sl.map(([k, l, v]) => `<button type="button" data-v="${k}" aria-pressed="${k === sub}">${ikSub(tabSkrg, v)}${l}</button>`).join(""); };
+  function periksaSub() { for (const tab of Object.keys(SUBTAB)) for (const [k] of SUBTAB[tab].slice()) ambilData(SUB_DATA[k]).then(d => { if (adaIsi(d)) return; const sl = SUBTAB[tab]; if (!sl || sl.length < 2) return; SUBTAB[tab] = sl.filter(x => x[0] !== k);
+    if (tabSkrg === tab) { const ada = SUBTAB[tab].some(x => x[0] === (new URL(location.href).searchParams.get("sub"))); ada ? gambarSub(new URL(location.href).searchParams.get("sub")) : tampil(tab, SUBTAB[tab][0][0]); } }); }
   const sinkron = (id, val, n = 0) => { const b = document.querySelector(`#${id} [data-v="${val}"]`); if (b) { if (b.getAttribute("aria-pressed") !== "true") b.click(); } else if (n < 40) setTimeout(() => sinkron(id, val, n + 1), 150); };
   /* urutan: tab utama, sub-tab (sub-tab di dalam panel ikut dihitung), baru pilihan sektor */
   /* segmen sub-tampilan tiap view (Peta/Daftar/Proyek mitra, Skema/Proyek/Negara donor, dst.) dipindah ke wadah kepala navy, hanya yang view aktif tampil; panel sektor tetap di bawah kepala */
@@ -2944,7 +2952,7 @@ h4{margin:0 0 2px;font-size:8px;letter-spacing:.08em;text-transform:uppercase;co
     tampilSkrg = view;
     $("akTampil").querySelectorAll("button").forEach(b => b.setAttribute("aria-pressed", String(b.dataset.t === tab)));
     $("akTampil").querySelector(`[aria-pressed=true]`)?.scrollIntoView({block: "nearest", inline: "center"});
-    const sb2 = $("akSubTab"); sb2.hidden = !sl; if (sl) sb2.innerHTML = sl.map(([k, l]) => `<button type="button" data-v="${k}" aria-pressed="${k === sub}">${l}</button>`).join("");
+    gambarSub(sub);
     $("akIsi").hidden = view !== "pakar";
     Object.keys(MUAT).forEach(k => { $("akv-" + k).hidden = k !== view; });
     nanti(() => { dpSegarkan(); setBuka(view); segarSektor(); if (view === "pakar" && saringKotor) { saringKotor = false; saring(); } });

@@ -257,3 +257,15 @@ body[data-halaman="proyek"]{overflow-x:clip}
 .jm-pj-leg-b{margin-bottom:0}
 .jm-tabel.jm-pj-tetap .jm-id{display:block}
 .jm-tabel.jm-pj-tetap .jm-id b{white-space:normal;overflow:visible}
+.jm-pj-pk-stat{grid-template-columns:auto minmax(0,1fr) auto;gap:8px 18px}
+.jm-pj-pk-stat dd{font-size:20px}
+@media (min-width:1200px){.jm-pj-pk:last-child:nth-child(4n+3){grid-column:span 2}}
+@media (min-width:768px) and (max-width:1199px){.jm-pj-pk:last-child:nth-child(2n+1){grid-column:span 2}}
+.jm-pj-tetap td .jm-pil{justify-self:start}
+@media (max-width:599px){
+  .jm-pj-halaman .jm-kisi>.jm-kpi:last-child:nth-child(odd){grid-column:1/-1}
+  .jm-pj-halaman .jm-kpi-lab{flex-wrap:wrap;white-space:normal}
+  .jm-pj-chip-hasil{bottom:64px}
+}
+@media (max-width:999px){.jm-pj-chip-hasil{bottom:64px}}
+.jm-pj-halaman .jm-corong~.jm-bantu,#pjCorong .jm-bantu{margin-top:10px}

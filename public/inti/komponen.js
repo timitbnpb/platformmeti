@@ -51,3 +51,45 @@ if (typeof document !== "undefined" && !window.__jmSumber) {
    exHtml({ id, ikon, topik, judulHtml, subHtml, aksiHtml, isiHtml, kakiHtml, tingkat: "h2"|"h3" }) */
 export const exHtml = ({ id = "", ikon: ik = "", topik = "", judulHtml = "", subHtml = "", aksiHtml = "", isiHtml = "", kakiHtml = "", tingkat = "h2" }) =>
   `<section class="jm-ex"${id ? ` id="${esc(id)}"` : ""}><header class="jm-ex-hd"><div class="jm-ex-teks">${topik ? `<span class="jm-ex-ey">${ik ? ikon(ik, 14) : ""}${esc(topik)}</span>` : ""}<${tingkat} class="jm-ex-j">${judulHtml}</${tingkat}>${subHtml ? `<p class="jm-ex-sub">${subHtml}</p>` : ""}</div>${aksiHtml ? `<div class="jm-ex-aksi">${aksiHtml}</div>` : ""}</header><div class="jm-ex-bd">${isiHtml}</div>${kakiHtml ? `<footer class="jm-ex-ft">${kakiHtml}</footer>` : ""}</section>`;
+
+/* Urut global (pemilik 7 Nov 2026: SEMUA tabel bisa diurutkan). Tiap table.jm-tabel yang belum punya button.jm-urut
+   dan tidak bertanda data-urut="tidak" mendapat tombol urut di tiap th; urut di DOM (tbody) per kolom.
+   Tabel berhalaman wajib mengurutkan data penuhnya sendiri (pasang .jm-urut sendiri, lihat regulasi.js). */
+const BULAN = { jan: 1, feb: 2, mar: 3, apr: 4, mei: 5, may: 5, jun: 6, jul: 7, agu: 8, aug: 8, sep: 9, okt: 10, oct: 10, nov: 11, des: 12, dec: 12 };
+const kunciSel = (td) => {
+  const v = td?.dataset?.urut ?? (td?.textContent || "").trim();
+  const tgl = /^(\d{1,2})\s+([A-Za-z]{3})[a-z]*\s+(\d{4})$/.exec(v);
+  if (tgl && BULAN[tgl[2].toLowerCase()]) return +tgl[3] * 1e4 + BULAN[tgl[2].toLowerCase()] * 100 + +tgl[1];
+  const n = /^[-+]?[\d.]+(,\d+)?/.exec(v.replace(/\s/g, ""));
+  if (n && /\d/.test(n[0])) { const x = Number(n[0].replace(/\./g, "").replace(",", ".")); if (Number.isFinite(x)) return x; }
+  return v === "-" || v === "" ? null : v.toLocaleLowerCase("id");
+};
+export function pasangUrutTabel(akar = document) {
+  akar.querySelectorAll("table.jm-tabel:not([data-urut-terpasang]):not([data-urut='tidak'])").forEach((tb) => {
+    tb.dataset.urutTerpasang = "1";
+    if (tb.querySelector("button.jm-urut")) return;
+    const ths = [...tb.querySelectorAll("thead th")];
+    ths.forEach((th, i) => {
+      if (!th.textContent.trim() || th.dataset.urut === "tidak") return;
+      th.setAttribute("aria-sort", "none");
+      const b = document.createElement("button"); b.type = "button"; b.className = "jm-urut";
+      while (th.firstChild) b.appendChild(th.firstChild);
+      th.appendChild(b);
+      b.addEventListener("click", () => {
+        const arah = th.getAttribute("aria-sort") === "ascending" ? -1 : 1;
+        ths.forEach((x) => x.hasAttribute("aria-sort") && x.setAttribute("aria-sort", "none"));
+        th.setAttribute("aria-sort", arah > 0 ? "ascending" : "descending");
+        const body = tb.tBodies[0]; if (!body) return;
+        const baris = [...body.rows].map((r, k) => [r, kunciSel(r.cells[i]), k]);
+        baris.sort((a, z) => (a[1] === null) - (z[1] === null) || (a[1] === null ? 0 : (typeof a[1] === "number" && typeof z[1] === "number" ? a[1] - z[1] : String(a[1]).localeCompare(String(z[1]), "id", { numeric: true })) * arah) || a[2] - z[2]);
+        body.append(...baris.map((x) => x[0]));
+      });
+    });
+  });
+}
+if (typeof document !== "undefined" && !window.__jmUrut) {
+  window.__jmUrut = true;
+  const jalan = () => pasangUrutTabel();
+  new MutationObserver(() => { clearTimeout(window.__jmUrutT); window.__jmUrutT = setTimeout(jalan, 60); }).observe(document.documentElement, { childList: true, subtree: true });
+  if (document.readyState !== "loading") jalan(); else document.addEventListener("DOMContentLoaded", jalan);
+}

@@ -230,6 +230,16 @@ export function bangun(masukan = {}) {
     for (const j of rj.riwayat || []) { r.jabatan.push({ organisasi: j.organisasi, jabatan: j.jabatan, mulai: j.mulai, selesai: j.selesai, kini: j.kini, sumber_url: j.sumber_url }); r.sumber_urls.push(j.sumber_url); }
     (rj.tautan || []).forEach((t) => r.sumber_urls.push(t.sumber_url));
   }
+  // profil publik pengurus METI (pengurus_panen.mjs): fakta profesional bersumber; pendidikan + ringkasan ikut lapis publik hanya untuk mereka
+  for (const pp of M('pprof', 'orang/pengurus_profil.jsonl')) {
+    const r = dapatOrang(pp.id, pp.nama); r.pengurus_profil = true; r.nama = r.nama || pp.nama; r.ringkasan = pp.ringkasan;
+    if (!r.jabatan_terkini && pp.jabatan_terkini) { r.jabatan_terkini = pp.jabatan_terkini; r.organisasi_terkini = pp.organisasi_terkini; }
+    if (!(r.kepakaran || []).length && (pp.kepakaran || []).length) r.kepakaran = pp.kepakaran;
+    for (const j of pp.rekam_jejak || []) if (!r.jabatan.some((x) => jabKey(x) === jabKey(j))) r.jabatan.push({ organisasi: j.organisasi, jabatan: j.jabatan, mulai: j.mulai, selesai: j.selesai, kini: !j.selesai && norm(j.jabatan) === norm(pp.jabatan_meti) || (!j.selesai && norm(j.jabatan) === norm(pp.jabatan_terkini)), sumber_url: j.sumber_url });
+    const pend = r.pendidikan || []; for (const e of pp.pendidikan || []) if (!pend.some((x) => norm(x.institusi) === norm(e.institusi))) pend.push({ jenjang: e.jenjang, bidang: e.bidang, institusi: e.institusi, lulus: e.tahun, sumber_url: e.sumber_url }); r.pendidikan = pend;
+    r.tautan = r.tautan || []; for (const t of pp.tautan_publik || []) if (!r.tautan.some((x) => x.url === t.url)) r.tautan.push({ jenis: t.jenis, url: t.url, sumber_url: t.url });
+    for (const s of pp.sumber || []) r.sumber_urls.push(s.url); r.sumber_url = r.sumber_url || pp.sumber?.[0]?.url; r.tanggal = r.tanggal || pp.sumber?.[0]?.tanggal;
+  }
   for (const j of M('jabatan', 'orang/jabatan.jsonl')) { const r = dapatOrang(j.orang_id); if (!r.nama) continue; if (!r.jabatan.some((x) => jabKey(x) === jabKey(j))) r.jabatan.push({ organisasi: j.organisasi, jabatan: j.jabatan, mulai: j.mulai, selesai: j.selesai, kini: j.status === 'menjabat', sumber_url: j.sumber_url }); r.sumber_urls.push(j.sumber_url); }
   for (const t of M('tokoh', 'akar/tokoh.jsonl')) { const r = dapatOrang(t.orang_id, t.nama); Object.assign(r, { jenis: 'tokoh-daerah', jabatan_terkini: t.peran, organisasi_terkini: t.organisasi, kepakaran: t.kepakaran || [], wilayah_tokoh: t.wilayah, kelompok: t.kelompok, sumber_url: t.sumber_url, tanggal: t.tanggal_ambil, kiprah: (t.capaian || []).map((c) => ({ teks: c, sumber_url: t.sumber_url })) }); r.sumber_urls.push(t.sumber_url); }
   const ketuaBaru = new Set(), dprIds = new Set();
@@ -455,7 +465,7 @@ export function bangun(masukan = {}) {
     if (!ada) { orangOut.pengurus.push(bersih({ ...pen, baru: true, ditahan: 'tanpa-sumber-url', nama: r.nama })); continue; }
     const oid = r.organisasi_terkini && orgPerNama(r.organisasi_terkini);
     const jab = r.jabatan.map((j) => bersih({ organisasi_id: j.organisasi_id || (j.organisasi && orgPerNama(j.organisasi)), organisasi: j.organisasi, jabatan: j.jabatan, mulai: j.mulai, selesai: j.selesai, kini: j.kini, catatan: j.catatan, sumber_url: j.sumber_url }));
-    orangOut.publik.push(bersih({ id: r.id, nama: r.nama, gelar: r.gelar, kelompok: { kode: kel, label: KELOMPOK[kel] }, jenis: r.jenis, wilayah: wilayahDari(r, oid), status: r.status, jabatan_terkini: r.jabatan_terkini, organisasi_terkini: r.organisasi_terkini, organisasi_id: oid || (jab.find((j) => j.organisasi_id)?.organisasi_id), kepakaran: kodeMax3(r.kepakaran), dpr: r.dpr, jalur: r.jalur, pernah_birokrasi: r.pernah_birokrasi, jabatan: jab, tautan: r.tautan, wikidata_id: r.wikidata_id, berita_ids: bTerbaru('orang', r.id), sumber_url: r.sumber_url || unik(r.sumber_urls).find(adaUrl), tanggal: r.tanggal }));
+    orangOut.publik.push(bersih({ id: r.id, nama: r.nama, gelar: r.gelar, kelompok: { kode: kel, label: KELOMPOK[kel] }, jenis: r.jenis, wilayah: wilayahDari(r, oid), status: r.status, jabatan_terkini: r.jabatan_terkini, organisasi_terkini: r.organisasi_terkini, organisasi_id: oid || (jab.find((j) => j.organisasi_id)?.organisasi_id), kepakaran: kodeMax3(r.kepakaran), ringkasan: r.ringkasan, pendidikan: r.pengurus_profil ? r.pendidikan : undefined, dpr: r.dpr, jalur: r.jalur, pernah_birokrasi: r.pernah_birokrasi, jabatan: jab, tautan: r.tautan, wikidata_id: r.wikidata_id, berita_ids: bTerbaru('orang', r.id), sumber_url: r.sumber_url || unik(r.sumber_urls).find(adaUrl), tanggal: r.tanggal }));
     const ang = bersih({ id: r.id, meti: metiOrang.get(r.id) || null, pendidikan: r.pendidikan, kiprah: r.kiprah, foto: fotoOut, akademik: r.akademik });
     if (Object.keys(ang).length > 1) orangOut.anggota.push(ang);
     if (Object.keys(pen).length > 1) orangOut.pengurus.push(pen);
@@ -544,6 +554,18 @@ export function periksaBerkas(berkas) { // berkas: [{lapis, berkas, byte, isi}]
   }
   return galat;
 }
+// public/data/pengurus-meti.json: struktur lama + orang_id (hanya bila orangnya ada di lapis publik) + foto bila berkas ada.
+export function sambungPengurusMeti(tpl, pprof, idPublik, adaFoto) {
+  const idDari = new Map(pprof.map((p) => [norm(p.nama), p.id])); const hasil = JSON.parse(JSON.stringify(tpl));
+  const tiap = (o) => { const id = idDari.get(norm(o.nama)); if (id && idPublik.has(id)) o.orang_id = id; if (!o.foto) { const sl = norm(o.nama).replace(/ /g, '-'); if (adaFoto(sl)) o.foto = '/img/pengurus/' + sl + '.webp'; } };
+  Object.values(hasil.unit).flat().forEach(tiap); (hasil.bidang || []).flatMap((b) => b.anggota).forEach(tiap);
+  return hasil;
+}
+function tulisPengurusMeti(orangPublik, pprof) {
+  const f = path.join(ROOT, 'public/data/pengurus-meti.json'); if (!fs.existsSync(f) || !pprof.length) return;
+  const h = sambungPengurusMeti(JSON.parse(fs.readFileSync(f, 'utf8')), pprof, new Set(orangPublik.map((o) => o.id)), (sl) => fs.existsSync(path.join(ROOT, 'public/img/pengurus', sl + '.webp')));
+  fs.writeFileSync(path.join(OUT, 'pengurus-meti.json'), JSON.stringify(h, null, 1) + '\n'); console.log('pengurus-meti.json: orang_id', JSON.stringify(h).split('"orang_id"').length - 1);
+}
 function jalankan() {
   const h = bangun(); const semua = [];
   const dirOut = (l) => { const d = path.join(OUT, l); fs.mkdirSync(d, { recursive: true }); return d; };
@@ -554,6 +576,7 @@ function jalankan() {
   }
   fs.writeFileSync(path.join(DP, 'orang/perlu-tinjau-meti.jsonl'), h.perluTinjauMeti.map((t) => JSON.stringify(t)).join('\n') + (h.perluTinjauMeti.length ? '\n' : ''));
   fs.writeFileSync(path.join(OUT, 'foto_peta.json'), JSON.stringify(h.fotoPeta, null, 1));
+  tulisPengurusMeti(h.lapisan.publik.orang || [], baca('orang/pengurus_profil.jsonl'));
   const galat = periksaBerkas(semua);
   const tabel = {}; for (const l of LAPIS) tabel[l] = Object.fromEntries(Object.entries(h.lapisan[l]).map(([k, v]) => [k, v.length]));
   console.log('jumlah per lapis:', JSON.stringify(tabel)); console.log('proyek dibuang (publik:false / sumber tertutup):', h.proyekBuang);

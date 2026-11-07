@@ -1,8 +1,8 @@
 /* /wilayah: peta koroplet 38 provinsi + profil provinsi (?prov=XX). Data statis /data/wilayah.json. */
 import { mulaiHalaman } from "/inti/kepala.js";
-import { nanti, esc, hantuHtml } from "/inti/umum.js";
+import { nanti, esc, hantuHtml, debounce } from "/inti/umum.js";
 import { t, tanggal } from "/i18n.js";
-import { muatData, tampilGalat, sumberHtml, sumberLipat, kartuHtml, batangHtml, pasangBar, temuanHtml, heroVisual, ubinHtml, pil, teksTek, teksStatus, num, saatBahasa, amanUrl } from "/analisis.js";
+import { muatData, tampilGalat, sumberHtml, sumberLipat, pasangAksi, kartuHtml, batangHtml, pasangBar, temuanHtml, heroVisual, ubinHtml, pil, teksTek, teksStatus, num, saatBahasa, amanUrl } from "/analisis.js";
 
 const $ = (id) => document.getElementById(id);
 const param = new URLSearchParams(location.search).get("prov");
@@ -77,14 +77,14 @@ function urutan() {
 function legenda() {
   const m = metrik, { rentang } = kelasPeta(m), s = ciriSumber(m), kosong = data.baris.length - berdata(m).length;
   const fmt = (v) => num(v, METRIK[m].d);
-  $("legenda").innerHTML = `<p class="jm-wl-lg-j">${esc(t("wl.m." + m))}</p><ul>${rentang.map((r) => `<li><i class="jm-wl-k${r.k}" aria-hidden="true"></i>${esc(m === "rued" ? t("wl.lg.ada") : r.min === r.max ? fmt(r.min) : `${fmt(r.min)} - ${fmt(r.max)}`)}</li>`).join("")}${kosong ? `<li><i class="jm-wl-sw-kos" aria-hidden="true"></i>${esc(t("an.tanpa_data"))}</li>` : ""}</ul><span class="jm-wl-lg-s">${sumberHtml(s)}</span>`;
+  $("legenda").innerHTML = `<p class="jm-wl-lg-j">${esc(t("wl.m." + m))}</p><div class="jm-wl-rp"><div class="jm-wl-rp-s">${rentang.map((r) => `<span><i class="jm-wl-k${r.k}" aria-hidden="true"></i><small>${esc(m === "rued" ? t("wl.lg.ada") : fmt(r.min))}</small></span>`).join("")}</div>${kosong ? `<span class="jm-wl-rp-k"><i class="jm-wl-sw-kos" aria-hidden="true"></i><small>${esc(t("an.tanpa_data"))}</small></span>` : ""}<span class="jm-wl-lg-s">${sumberHtml(s)}</span></div>`;
   const tp = urutM(m)[0], tgt = METRIK[m].ambil(tp);
   const sumP = berdata(m).reduce((a, p) => a + METRIK[m].ambil(p), 0), top10 = urutM(m).slice(0, 10).reduce((a, p) => a + (METRIK[m].ambil(p) ?? 0), 0);
   $("j-peta").innerHTML = m === "rued" ? hlHtml("wl.j.rued", { n: data.baris.length }, num(berdata(m).length)) : hlHtml("wl.j.peta", { mj: t("wl.mj." + m), nilai: nilaiTeks(m, tp) }, tp.nama);
   $("sub-peta").innerHTML = `${esc(t("wl.sub.peta", { metrik: t("wl.m." + m), n: berdata(m).length, total: data.baris.length }))} ${pil("an.est")}`;
   $("j-urut").innerHTML = m === "rued" ? hlHtml("wl.j.rued", { n: data.baris.length }, num(berdata(m).length)) : hlHtml("wl.j.urut", { mj: t("wl.mj." + m) }, num((top10 / sumP) * 100, 0) + "%");
   $("sub-urut").innerHTML = `${esc(t("wl.sub.urut", { metrik: t("wl.m." + m) }))} ${pil("an.est")}`;
-  $("aksi-urut").innerHTML = $("aksi-peta").innerHTML = sumberHtml(s); // ponytail: tempat aksiHtml({csv,png,pdf,bagi}) dari /inti/aksi_ex.js bila sudah ada
+  for (const id of ["aksi-peta", "aksi-urut"]) { const el = $(id); el.querySelector(".jm-sumber")?.remove(); el.insertAdjacentHTML("beforeend", sumberHtml(s)); }
 }
 
 /* ---------- peta (SVG: tiap provinsi satu jalur yang bisa difokus) ---------- */
@@ -120,20 +120,38 @@ function warnai() {
     pa.setAttribute("class", "jm-wl-p " + (k < 0 ? "jm-wl-kos-p" : "jm-wl-k" + k));
     pa.setAttribute("aria-label", `${p.nama}: ${t("wl.m." + metrik)}, ${nilaiTeks(metrik, p)}`);
   }
-  const g = svg.querySelector(".jm-wl-lbl"), ns = "http://www.w3.org/2000/svg";
+  // kotak peta menyesuaikan bentuk wadah (tepi ke tepi), daratan di tengah-bawah
+  const rc = svg.getBoundingClientRect(), asp = (rc.width || 1200) / (rc.height || 620), vh = Math.max(H, W / asp);
+  svg.setAttribute("viewBox", `0 ${((H - vh) / 2 - vh * 0.04).toFixed(1)} ${W} ${vh.toFixed(1)}`);
+  const s = (rc.width || 1200) / W; // piksel per satuan
+  const g = svg.querySelector(".jm-wl-lbl"), ns = "http://www.w3.org/2000/svg", el = (n, a) => { const e = document.createElementNS(ns, n); for (const k in a) e.setAttribute(k, a[k]); return e; };
   g.replaceChildren();
-  const dipakai = [];
+  const dipakai = [{ x: W - 340 / s, y: -1e4, w: 340 / s, h: 1e4 + 340 / s }]; // panel peringkat di kanan atas
   for (const p of urutM(metrik).slice(0, metrik === "rued" ? 0 : 5)) {
-    const bb = svg.querySelector(`path[data-k="${p.kode}"]`).getBBox(), cx = bb.x + bb.width / 2, cy = bb.y + bb.height / 2;
-    const teks = `${p.nama} ${nilaiTeks(metrik, p)}`, lw = teks.length * 6.6 + 10;
-    let ly = cy + 34 * (cy < 230 ? -1 : 1), lx = Math.max(4, Math.min(W - lw - 4, cx - lw / 2));
-    for (let i = 0; i < 12 && dipakai.some((r) => Math.abs(r.y - ly) < 18 && lx < r.x + r.w && lx + lw > r.x); i++) ly += 20;
-    dipakai.push({ x: lx, y: ly, w: lw });
-    const ln = document.createElementNS(ns, "line"); ln.setAttribute("class", "jm-wl-gl"); ln.setAttribute("x1", cx.toFixed(1)); ln.setAttribute("y1", cy.toFixed(1)); ln.setAttribute("x2", (lx + lw / 2).toFixed(1)); ln.setAttribute("y2", (ly + (ly < cy ? 4 : -12)).toFixed(1));
-    const bg = document.createElementNS(ns, "rect"); bg.setAttribute("class", "jm-wl-lr"); bg.setAttribute("x", lx); bg.setAttribute("y", ly - 12); bg.setAttribute("width", lw); bg.setAttribute("height", 18); bg.setAttribute("rx", 9);
-    const tx = document.createElementNS(ns, "text"); tx.setAttribute("class", "jm-wl-lt"); tx.setAttribute("x", lx + lw / 2); tx.setAttribute("y", ly + 1); tx.setAttribute("text-anchor", "middle"); tx.textContent = teks;
-    g.append(ln, bg, tx);
+    const pa = svg.querySelector(`path[data-k="${p.kode}"]`), bb = pa.getBBox(), cx = bb.x + bb.width / 2, cy = bb.y + bb.height / 2;
+    const nm = p.nama, vl = nilaiTeks(metrik, p), w = (Math.max(nm.length * 6.3, vl.length * 7) + 34) / s, h = 34 / s;
+    const kand = [];
+    for (const jar of [14, 40, 70]) for (const a of [90, 270, 0, 180, 45, 315, 135, 225]) {
+      const r = (a * Math.PI) / 180, ax = cx + (Math.cos(r) * jar) / s, ay = cy - (Math.sin(r) * jar) / s;
+      kand.push({ x: Math.cos(r) > 0.3 ? ax : Math.cos(r) < -0.3 ? ax - w : ax - w / 2, y: Math.sin(r) > 0.3 ? ay - h : Math.sin(r) < -0.3 ? ay : ay - h / 2, w, h, jar });
+    }
+    const tb = (a, b) => a.x < b.x + b.w && a.x + a.w > b.x && a.y < b.y + b.h && a.y + a.h > b.y;
+    const k = kand.find((c) => !dipakai.some((o) => tb(c, o))) || kand[0];
+    dipakai.push(k);
+    if (k.jar > 14) g.append(el("line", { class: "jm-wl-gl", x1: cx.toFixed(1), y1: cy.toFixed(1), x2: Math.max(k.x, Math.min(k.x + w, cx)).toFixed(1), y2: Math.max(k.y, Math.min(k.y + h, cy)).toFixed(1) }));
+    g.append(el("circle", { class: "jm-wl-gd", cx: cx.toFixed(1), cy: cy.toFixed(1), r: (3 / s).toFixed(2) }), el("rect", { class: "jm-wl-lr", x: k.x.toFixed(1), y: k.y.toFixed(1), width: w.toFixed(1), height: h.toFixed(1), rx: (8 / s).toFixed(1) }));
+    const im = el("image", { href: `/img/provinsi/${p.kode}.png`, x: (k.x + 8 / s).toFixed(1), y: (k.y + 9 / s).toFixed(1), width: (16 / s).toFixed(1), height: (16 / s).toFixed(1), preserveAspectRatio: "xMidYMid meet" });
+    const t1 = el("text", { class: "jm-wl-lt", x: (k.x + 30 / s).toFixed(1), y: (k.y + 14 / s).toFixed(1), "font-size": (11 / s).toFixed(2) }); t1.textContent = nm;
+    const t2 = el("text", { class: "jm-wl-lv", x: (k.x + 30 / s).toFixed(1), y: (k.y + 28 / s).toFixed(1), "font-size": (12 / s).toFixed(2) }); t2.textContent = vl;
+    g.append(im, t1, t2);
   }
+  peringkatPanel();
+}
+
+function peringkatPanel() {
+  const m = metrik, B = urutM(m).filter((p) => METRIK[m].ambil(p) !== null).slice(0, 10), maks = Math.max(1, ...B.map((p) => METRIK[m].ambil(p)));
+  $("peringkat").innerHTML = `<h3>${esc(t("wl.ey.urut"))}</h3><ol>${B.map((p, i) => `<li data-k="${esc(p.kode)}" tabindex="0"><span class="jm-wl-no">${i + 1}</span>${lambang(p, 18)}<span class="jm-wl-pn">${esc(p.nama)}</span>${m === "rued" ? "" : `<span class="jm-wl-mb" aria-hidden="true"><i data-w="${((METRIK[m].ambil(p) / maks) * 100).toFixed(1)}"></i></span>`}<b>${esc(nilaiTeks(m, p))}</b></li>`).join("")}</ol>`;
+  pasangBar($("peringkat"));
 }
 
 async function bukaPeta() {
@@ -141,10 +159,11 @@ async function bukaPeta() {
   catch (e) { $("peta").innerHTML = `<p class="jm-bantu">${esc(t("wl.peta_gagal"))}</p>`; return; }
   const nama = new Map(data.baris.map((p) => [p.kode, p]));
   const paths = geo.features.filter((f) => nama.has(f.properties.kode)).map((f) => `<path tabindex="0" role="link" data-k="${esc(f.properties.kode)}" d="${jalur(f.geometry)}"/>`).join("");
-  $("peta").innerHTML = `<svg class="jm-wl-svg" viewBox="0 0 ${W} ${H}" focusable="false"><defs><pattern id="wl-hatch" width="7" height="7" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width="7" height="7" class="jm-wl-hb"/><line x1="0" y1="0" x2="0" y2="7" class="jm-wl-hg"/></pattern></defs><g class="jm-wl-prov">${paths}</g><path class="jm-wl-sorot" d="" aria-hidden="true"/><g class="jm-wl-lbl" aria-hidden="true"></g></svg>`;
+  $("peta").innerHTML = `<svg class="jm-wl-svg" viewBox="0 0 ${W} ${H}" focusable="false"><defs><pattern id="wl-hatch" width="7" height="7" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width="7" height="7" class="jm-wl-hb"/><line x1="0" y1="0" x2="0" y2="7" class="jm-wl-hg"/></pattern><filter id="wl-bayang" x="-5%" y="-5%" width="110%" height="115%"><feDropShadow dx="0" dy="3" stdDeviation="3" class="jm-wl-fds"/></filter></defs><g class="jm-wl-prov" filter="url(#wl-bayang)">${paths}</g><path class="jm-wl-sorot" d="" aria-hidden="true"/><g class="jm-wl-lbl" aria-hidden="true"></g></svg>`;
   const svg = $("peta").querySelector("svg"), sorot = svg.querySelector(".jm-wl-sorot"), tip = $("tip");
-  const naik = (pa) => sorot.setAttribute("d", pa ? pa.getAttribute("d") : "");
+  const naik = (pa) => { sorot.setAttribute("d", pa ? pa.getAttribute("d") : ""); for (const li of $("peringkat").querySelectorAll("li")) li.classList.toggle("jm-wl-aktif", !!pa && li.dataset.k === pa.dataset.k); };
   const bingkai = () => $("peta").parentElement.getBoundingClientRect();
+  const dipa = (k) => svg.querySelector(`path[data-k="${k}"]`);
   svg.addEventListener("mousemove", (e) => {
     const pa = e.target.closest("path[data-k]");
     if (!pa) { naik(null); tip.hidden = true; return; }
@@ -154,11 +173,18 @@ async function bukaPeta() {
   svg.addEventListener("mouseleave", () => { naik(null); tip.hidden = true; });
   svg.addEventListener("focusin", (e) => { const pa = e.target.closest("path[data-k]"); if (!pa) return; naik(pa); const bb = pa.getBoundingClientRect(), b = bingkai(); tampilTip(nama.get(pa.dataset.k), bb.left - b.left + bb.width / 2, bb.top - b.top + bb.height / 2); });
   svg.addEventListener("focusout", () => { naik(null); tip.hidden = true; });
-  const buka = (pa) => pa && location.assign(`/wilayah?prov=${encodeURIComponent(pa.dataset.k)}`);
-  svg.addEventListener("click", (e) => buka(e.target.closest("path[data-k]")));
-  svg.addEventListener("keydown", (e) => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); buka(e.target.closest("path[data-k]")); } });
+  const buka = (k) => k && location.assign(`/wilayah?prov=${encodeURIComponent(k)}`);
+  svg.addEventListener("click", (e) => buka(e.target.closest("path[data-k]")?.dataset.k));
+  svg.addEventListener("keydown", (e) => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); buka(e.target.closest("path[data-k]")?.dataset.k); } });
+  // panel peringkat: sorot dua arah
+  const pr = $("peringkat");
+  pr.addEventListener("mouseover", (e) => { const li = e.target.closest("li[data-k]"); if (li) naik(dipa(li.dataset.k)); });
+  pr.addEventListener("mouseleave", () => naik(null));
+  pr.addEventListener("click", (e) => buka(e.target.closest("li[data-k]")?.dataset.k));
+  pr.addEventListener("keydown", (e) => { if (e.key === "Enter") buka(e.target.closest("li[data-k]")?.dataset.k); });
   petaSiap = true;
   warnai();
+  new ResizeObserver(debounce(warnai, 150)).observe($("peta"));
 }
 
 function pasangSakelar() {
@@ -260,6 +286,7 @@ async function mulai() {
   await mulaiHalaman();
   $("kartu") && ($("kartu").innerHTML = hantuHtml(2));
   try { data = await muatData("wilayah.json"); } catch (e) { tampilGalat($(param ? "profil-isi" : "kartu"), mulai); if (param) { $("daftar").hidden = true; $("profil").hidden = false; } return; }
+  if (!param) pasangAksi(["aksi-urut"]);
   gambar();
   saatBahasa(gambar);
   if (!param) { pasangSakelar(); nanti(bukaPeta); }

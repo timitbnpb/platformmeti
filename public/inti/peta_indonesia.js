@@ -37,14 +37,16 @@ export function pasangBatas(peta, warna, idLabel, sebelum) {
   });
 }
 
-/** Jalur SVG sederhana dari provinsi.json: proyeksi equirectangular ke kotak w x h, titik dirapatkan (jarak < eps dibuang). */
-export function jalurProvinsi(g, w, h, [[x0, y0], [x1, y1]] = BATAS_ID, eps = 0.7) {
+/** Jalur SVG sederhana per provinsi dari provinsi.json: proyeksi equirectangular ke kotak w x h, titik dirapatkan (jarak < eps dibuang). */
+export function jalurPerProvinsi(g, w, h, [[x0, y0], [x1, y1]] = BATAS_ID, eps = 0.7) {
   const X = (lng) => ((lng - x0) / (x1 - x0)) * w, Y = (lat) => ((y1 - lat) / (y1 - y0)) * h;
-  let d = "";
-  for (const f of g.features) for (const poli of f.geometry.type === "Polygon" ? [f.geometry.coordinates] : f.geometry.coordinates) {
-    const ring = poli[0]; let px = Infinity, py = Infinity, s = "", n = 0;
-    for (const [lng, lat] of ring) { const x = X(lng), y = Y(lat); if (Math.hypot(x - px, y - py) < eps) continue; s += (n++ ? "L" : "M") + x.toFixed(1) + " " + y.toFixed(1); px = x; py = y; }
-    if (n > 3) d += s + "Z";
-  }
-  return d;
+  return g.features.map((f) => {
+    let d = "";
+    for (const poli of f.geometry.type === "Polygon" ? [f.geometry.coordinates] : f.geometry.coordinates) {
+      let px = Infinity, py = Infinity, s = "", n = 0;
+      for (const [lng, lat] of poli[0]) { const x = X(lng), y = Y(lat); if (Math.hypot(x - px, y - py) < eps) continue; s += (n++ ? "L" : "M") + x.toFixed(1) + " " + y.toFixed(1); px = x; py = y; }
+      if (n > 3) d += s + "Z";
+    }
+    return { kode: f.properties.kode, d };
+  });
 }
