@@ -1,7 +1,7 @@
 /* Enam kartu dataset di beranda: semua angka dihitung dari public/data/*.json; grafik SVG/CSS polos. */
 import { t, angka, tanggal } from "/i18n.js";
-import { esc, galatHtml } from "/inti/umum.js";
-import { muat, label, namaRegulasi } from "/publik.js";
+import { esc } from "/inti/umum.js";
+import { muat, label, namaRegulasi, sembunyi } from "/publik.js";
 
 const LOGO_NAMA = { "Indonesia Power": "pln-indonesia-power", "PLN IP": "pln-indonesia-power" };
 const BUMN = /^(PLN|Indonesia Power|Pembangkitan Jawa Bali|Inalum|Jasa Tirta)/i;
@@ -71,5 +71,5 @@ export async function gambarDataset(R) {
         top5.map((w) => baris(w.nama, `${angka(w.terpasang_mw.nilai)} MW`) + bar(w.terpasang_mw.nilai / mw5, 5)).join(""), sm("wilayah", wil.dibangun_pada)),
       kartu("06", "pustaka", 1, "/direktori?tampil=pustaka", pus.dibangun_pada, [[angka(pus.baris.length), "beranda.ds.l.dok"], [angka(orang.baris.length), "beranda.ds.l.pakar"], [angka(ber.baris.length), "beranda.ds.l.berita"]], doc, sm("pustaka", pus.dibangun_pada)),
     ].join("");
-  } catch (e) { el.innerHTML = galatHtml("layanan"); }
+  } catch (e) { sembunyi(el, e); }
 }

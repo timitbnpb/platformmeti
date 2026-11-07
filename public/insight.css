@@ -1,7 +1,5 @@
 /* /insight: kartu temuan dan grafik tren. Hanya token tema.css; kelas .jm-ins-*. */
 .jm-ins-kepala{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:12px;margin-bottom:12px}
-.jm-ins-saring{display:flex;flex-wrap:wrap;gap:12px}
-.jm-ins-saring .jm-medan,.jm-ins-kepala>.jm-medan{min-width:180px}
 .jm-ins-grid{display:grid;gap:var(--gap);grid-template-columns:repeat(auto-fill,minmax(min(100%,420px),1fr))}
 .jm-ins{align-content:start}
 article.jm-ins-kartu{display:grid;gap:10px;align-content:start;min-width:0}
@@ -26,3 +24,33 @@ article.jm-ins-kartu[data-belum]{min-height:360px}
 .jm-ins-a1{fill:var(--data1);fill-opacity:.14;stroke:none}
 .jm-ins-t1{fill:var(--data1)}
 .jm-ins-t2{fill:var(--data3)}
+.jm-ins-bagian{scroll-margin-top:calc(var(--top) + 56px)}
+
+/* kepala kartu: topik, tanggal, bagikan */
+.jm-ins-h{display:flex;align-items:center;gap:10px;position:relative}
+.jm-ins-topik{font:700 11px/1 var(--font);letter-spacing:.1em;text-transform:uppercase}
+.jm-ins-w-a{color:var(--accent)}
+.jm-ins-w-b{color:var(--info)}
+.jm-ins-w-c{color:var(--warn)}
+.jm-ins-w-d{color:var(--ok)}
+.jm-ins-meta{margin-left:auto;font-size:var(--t-kecil);color:var(--ink2)}
+.jm-ins-bagi{min-width:var(--target);min-height:var(--target);margin:-10px -10px -10px 0;display:inline-flex;align-items:center;justify-content:center;border:0;border-radius:var(--r-pil);background:transparent;color:var(--ink2);cursor:pointer}
+.jm-ins-bagi:hover{color:var(--accent);background:var(--surface)}
+.jm-ins-menu{position:absolute;z-index:5;top:calc(100% + 2px);right:0;display:grid;min-width:210px;padding:6px;border:1px solid var(--line);border-radius:var(--r-sm);background:var(--card);box-shadow:var(--shadow-lg)}
+.jm-ins-mi{min-height:var(--target);padding:0 12px;border:0;border-radius:var(--r-sm);background:transparent;color:var(--ink);font:500 14px/1 var(--font);text-align:left;cursor:pointer}
+.jm-ins-mi:hover{background:var(--surface);color:var(--accent)}
+.jm-ins-stat{padding:0 12px 4px}
+.jm-ins-stat:empty{display:none}
+/* akordeon dan sumber */
+.jm-ins-ak{border-top:1px solid var(--line)}
+.jm-ins-ak p{margin:0 0 8px}
+.jm-ins-ak .jm-ins-penting{margin:0}
+.jm-ins-src .jm-an-sumber{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;margin:0}
+.jm-ins-src details summary{font:500 12.5px/1.3 var(--font);min-height:32px;color:var(--ink2)}
+.jm-ins-sorot{outline:3px solid var(--accent);outline-offset:2px}
+/* gambar unduhan */
+.jm-snap{background:var(--paper);color:var(--ink);font-family:var(--font);padding:28px;box-sizing:border-box;display:grid;gap:16px}
+.jm-snap .jm-ins-kartu{border:0;box-shadow:none;padding:0}
+.jm-snap-kaki{display:flex;align-items:center;gap:12px;border-top:1px solid var(--line);padding-top:14px;font-size:13px;color:var(--ink2)}
+.jm-snap-kaki p{margin:0;line-height:1.45}
+.jm-snap-kaki b{color:var(--head)}

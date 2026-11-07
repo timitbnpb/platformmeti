@@ -2590,3 +2590,20 @@ button.ak-r[data-kh][aria-pressed="true"]{border-color:var(--w0,var(--brand2));b
 .ak-segmeti button[aria-pressed="true"] small{opacity:1}
 /* wadah seragam dengan jm-wadah: lebar maks dan jarak tepi sama di hero, nav, dan isi */
 .ak,.ak-kepala-isi,.ak-kepala-nav{max-width:var(--maks);margin-inline:auto;padding-inline:clamp(16px,4vw,32px)}
+/* tabel direktori memakai .jm-tabel bersama (inti/jm.css): batalkan gaya lama .ak-t2 dan .ak-tabel */
+.jm-tabel.ak-t2 th,.jm-tabel.ak-tabel th{background:transparent;color:var(--on-brand);text-align:center;border-bottom:2px solid var(--meti-lime);text-transform:uppercase;letter-spacing:.09em;font:600 11.5px/1.3 var(--font);padding:12px 14px;border-radius:0}
+.jm-tabel.ak-t2 td,.jm-tabel.ak-tabel td{border:0;border-bottom:1px solid var(--line-cell);padding:11px 14px;background:transparent}
+.jm-tabel.ak-t2 tbody tr:nth-child(even) td,.jm-tabel.ak-tabel tbody tr:nth-child(even) td{background:color-mix(in srgb,var(--surface) 55%,transparent)}
+.jm-tabel.ak-t2 tbody tr:hover td,.jm-tabel.ak-tabel tbody tr:hover td{background:var(--soft-hijau)}
+.jm-tabel.ak-t2 td.r,.jm-tabel.ak-tabel td.r,.jm-tabel.ak-t2 th.r{text-align:right;font-variant-numeric:tabular-nums}
+.jm-tabel.ak-t2 th.r{text-align:center}
+
+/* tabel bersama: sdt dan bpt memakai .jm-tabel; kepala satu gradien dari jm.css */
+.jm-tabel.ak-sdt thead th,.ak-bpt .jm-tabel thead th{background:transparent;color:var(--on-brand);border-top-left-radius:0;border-top-right-radius:0;border-bottom:2px solid var(--meti-lime);position:static}
+.jm-tabel.ak-sdt tbody tr:nth-child(even),.ak-bpt .jm-tabel tbody tr:nth-child(even) td{background:var(--surface)}
+.jm-tabel.ak-sdt tbody tr:hover,.ak-bpt .jm-tabel tbody tr:hover td{background:var(--soft-hijau)}
+.ak-bpt .jm-tabel td{border-top:0;border-bottom:1px solid var(--line-cell)}
+/* filter direktori disamakan dengan .jm-saring: garis kontrol, tinggi, cincin fokus yang sama */
+.ak-saring .ak-kbtn,.ak-saring .ak-sel select,.ak-saring .ak-cari input{border-color:var(--line-ctl);min-height:var(--target);border-radius:var(--r-pil)}
+.ak-saring .ak-kbtn:focus-visible,.ak-saring .ak-sel select:focus-visible,.ak-saring .ak-cari input:focus-visible{border-color:var(--accent);box-shadow:0 0 0 3px color-mix(in srgb,var(--accent) 18%,transparent);outline:0}
+.ak-saring .ak-kbtn[aria-expanded="true"]{border-color:var(--accent)}

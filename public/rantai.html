@@ -17,48 +17,65 @@
 </head>
 <body>
 <header class="top" id="kepala"></header>
-<main class="jm-halaman jm-an">
+<main class="jm-halaman jm-wadah jm-an">
 <section class="jm-hero" aria-labelledby="judul">
   <h1 id="judul" data-i18n="rt.judul">Rantai pasok PLTS 100 GWp: cukupkah pasokan lokal?</h1>
   <p class="jm-an-label" data-i18n="an.jawaban">Jawaban singkat</p>
   <p id="jawab"></p>
 </section>
 <section id="kartu" class="jm-an-kartu-baris" aria-label="Ringkasan" data-i18n-attr="aria-label:an.ringkasan"></section>
-<section class="jm-kartu" aria-labelledby="h-keb">
-  <h2 id="h-keb" data-i18n="rt.kebutuhan">Kebutuhan program dan kapasitas pabrikan per tahun</h2>
-  <div class="jm-an-sakelar" role="group" aria-label="Horizon" data-i18n-attr="aria-label:rt.horizon">
-    <button type="button" data-h="5" aria-pressed="false" data-i18n="rt.h5">Selesai 5 tahun</button>
-    <button type="button" data-h="8" aria-pressed="false" data-i18n="rt.h8">Selesai 8 tahun</button>
-    <button type="button" data-h="10" aria-pressed="true" data-i18n="rt.h10">Selesai 10 tahun</button>
-  </div>
+<section class="jm-kartu jm-an-wadah" aria-labelledby="h-keb">
+  <header class="jm-an-kepala">
+    <div><h2 id="h-keb" data-i18n="rt.kebutuhan">Kebutuhan program dan kapasitas pabrikan per tahun</h2><p class="jm-temuan" id="temuan-keb"></p></div>
+    <div class="jm-tab" role="tablist" aria-label="Horizon" data-i18n-attr="aria-label:rt.horizon">
+      <button type="button" role="tab" data-h="5" aria-selected="false" data-i18n="rt.h5">5 tahun</button>
+      <button type="button" role="tab" data-h="8" aria-selected="false" data-i18n="rt.h8">8 tahun</button>
+      <button type="button" role="tab" data-h="10" aria-selected="true" data-i18n="rt.h10">10 tahun</button>
+    </div>
+  </header>
   <div id="grafik-keb"></div>
 </section>
-<section class="jm-kartu" aria-labelledby="h-tkdn">
-  <h2 id="h-tkdn" data-i18n="rt.tkdn">Sebaran TKDN pabrikan</h2>
+<section class="jm-kartu jm-an-wadah" aria-labelledby="h-tkdn">
+  <header class="jm-an-kepala"><div><h2 id="h-tkdn" data-i18n="rt.tkdn">Sebaran TKDN pabrikan</h2><p class="jm-temuan" id="temuan-tkdn"></p></div></header>
   <div id="grafik-tkdn"></div>
 </section>
-<section class="jm-kartu" aria-labelledby="h-peta">
-  <h2 id="h-peta" data-i18n="rt.peta">Lokasi pabrik modul</h2>
-  <div id="peta-pabrik"></div>
-</section>
-<section class="jm-kartu" aria-labelledby="h-tabel">
-  <h2 id="h-tabel" data-i18n="rt.tabel">Daftar pabrikan modul surya</h2>
-  <div class="jm-an-bar">
-    <div class="jm-medan"><label for="cari" data-i18n="rt.cari">Cari nama atau kota</label><input class="jm-isian" id="cari" type="search" autocomplete="off"></div>
-    <div class="jm-medan"><label for="f-pasar" data-i18n="rt.f_pasar">Pasar</label>
-      <select class="jm-pilih" id="f-pasar"><option value="" data-i18n="rt.semua">Semua</option><option value="lokal" data-i18n="rt.pasar.lokal">Lokal</option><option value="ekspor" data-i18n="rt.pasar.ekspor">Ekspor</option><option value="keduanya" data-i18n="rt.pasar.keduanya">Lokal dan ekspor</option></select></div>
-    <div class="jm-medan"><label for="f-apamsi" data-i18n="rt.f_apamsi">Anggota APAMSI</label>
-      <select class="jm-pilih" id="f-apamsi"><option value="" data-i18n="rt.semua">Semua</option><option value="ya" data-i18n="rt.ya">Ya</option><option value="tidak" data-i18n="rt.tidak">Tidak</option></select></div>
-    <div class="jm-medan"><label for="urut" data-i18n="rt.urut">Urutkan</label>
-      <select class="jm-pilih" id="urut"><option value="mwp" data-i18n="rt.col.mwp">Kapasitas (MWp per tahun)</option><option value="nama" data-i18n="rt.col.nama">Pabrikan</option><option value="tkdn" data-i18n="rt.col.tkdn">TKDN (%)</option></select></div>
+<section class="jm-kartu jm-an-wadah" aria-labelledby="h-peta">
+  <header class="jm-an-kepala">
+    <div><h2 id="h-peta" data-i18n="rt.peta">Lokasi pabrik modul</h2><p class="jm-temuan" id="temuan-peta"></p></div>
+    <div class="jm-an-chip">
+      <div class="jm-tab" id="seg-pasar" role="tablist" aria-label="Pasar" data-i18n-attr="aria-label:rt.f_pasar">
+        <button type="button" role="tab" data-p="" aria-selected="true" data-i18n="rt.semua">Semua</button>
+        <button type="button" role="tab" data-p="lokal" aria-selected="false" data-i18n="rt.pasar.lokal">Lokal</button>
+        <button type="button" role="tab" data-p="ekspor" aria-selected="false" data-i18n="rt.pasar.ekspor">Ekspor</button>
+        <button type="button" role="tab" data-p="keduanya" aria-selected="false" data-i18n="rt.pasar.keduanya">Lokal dan ekspor</button>
+      </div>
+      <div class="jm-tab" id="seg-apamsi" role="tablist" aria-label="APAMSI" data-i18n-attr="aria-label:rt.f_apamsi">
+        <button type="button" role="tab" data-a="" aria-selected="true" data-i18n="rt.apamsi_semua">Semua anggota</button>
+        <button type="button" role="tab" data-a="ya" aria-selected="false" data-i18n="rt.apamsi_ya">Anggota APAMSI</button>
+        <button type="button" role="tab" data-a="tidak" aria-selected="false" data-i18n="rt.apamsi_tidak">Bukan anggota</button>
+      </div>
+    </div>
+  </header>
+  <div class="jm-peta-grid">
+    <div class="jm-peta-bingkai">
+      <div id="peta-pabrik" class="jm-an-peta" role="region" aria-label="Peta" data-i18n-attr="aria-label:rt.peta_label"></div>
+      <span class="jm-pil jm-an-pilpeta" data-i18n="rt.peta_pil">Titik pusat kota, perkiraan</span>
+    </div>
+    <aside id="kota-panel" class="jm-peta-panel" aria-live="polite"></aside>
   </div>
-  <p id="tabel-info" class="jm-bantu" role="status"></p>
+  <p class="jm-an-kunci" id="legenda-peta"></p>
+  <div id="tabel-kota"></div>
+  <div id="sumber-peta"></div>
+</section>
+<section class="jm-kartu jm-an-wadah" aria-labelledby="h-tabel">
+  <header class="jm-an-kepala"><div><h2 id="h-tabel" data-i18n="rt.tabel">Daftar pabrikan modul surya</h2><p class="jm-temuan" id="temuan-tabel"></p></div></header>
+  <div class="jm-saring" id="saring"></div>
   <div id="tabel"></div>
 </section>
-<section class="jm-kartu" aria-labelledby="h-cara">
+<section class="jm-kartu jm-an-wadah" aria-labelledby="h-cara">
   <details open><summary id="h-cara" data-i18n="an.cara">Cara menghitung</summary><div class="jm-an-cara" id="cara"></div></details>
 </section>
-<section class="jm-kartu" aria-labelledby="h-kutip">
+<section class="jm-kartu jm-an-wadah" aria-labelledby="h-kutip">
   <h2 id="h-kutip" data-i18n="an.kutip">Cara mengutip</h2>
   <p id="kutip"></p>
 </section>

@@ -3,6 +3,7 @@
    Halaman memberi <header class="top" id="kepala"></header>, opsional <div id="pita"></div> dan <footer class="jm-kaki" id="kaki"></footer>. */
 import { t, angka, mulaiBahasa, gantiBahasa, bahasa } from "/i18n.js";
 import { api, ikon, nanti } from "/inti/umum.js";
+import { subnavHtml, diBagianInsight } from "/inti/komponen.js";
 
 export const PITA_DRAF = false; // pemilik 7 Nov 2026: pita draf tidak ditampilkan
 const STAF = ["pengurus", "kurator", "admin", "super"];
@@ -10,16 +11,21 @@ const STAF = ["pengurus", "kurator", "admin", "super"];
 /* Satu tabel halaman. Tambah baris saat halamannya benar-benar ada (F1, F2). hak: null = semua, "masuk", "staf". */
 const TAB = [
   { href: "/", kunci: "nav.beranda", ikon: "beranda", hak: null },
-  { href: "/insight", kunci: "nav.insight", ikon: "insight", hak: null },
+  { kunci: "nav.insight", ikon: "insight", hak: null, grup: [
+    { href: "/insight", kunci: "nav.insight_ringkasan", ikon: "insight" }, { href: "/wilayah", kunci: "nav.wilayah", ikon: "wilayah" },
+    { href: "/rantai", kunci: "nav.rantai", ikon: "rantai" }, { href: "/asean", kunci: "nav.asean", ikon: "asean" }] },
   { href: "/proyek", kunci: "nav.proyek", ikon: "proyek", hak: null },
-  { kunci: "nav.analisis", ikon: "analisis", hak: null, grup: [
-    { href: "/wilayah", kunci: "nav.wilayah", ikon: "wilayah" }, { href: "/rantai", kunci: "nav.rantai", ikon: "rantai" }, { href: "/asean", kunci: "nav.asean", ikon: "asean" }] },
   { href: "/regulasi", kunci: "nav.regulasi", ikon: "regulasi", hak: null },
+  { href: "/berita", kunci: "nav.berita", ikon: "berita", hak: null },
   { href: "/kalender", kunci: "nav.kalender", ikon: "kalender", hak: null },
   { href: "/direktori", kunci: "nav.direktori", ikon: "direktori", hak: "masuk" },
   { href: "/tentang", kunci: "nav.tentang", ikon: "info", hak: null },
   { href: "/admin", kunci: "nav.admin", ikon: "perisai", hak: "staf" },
 ];
+
+const BENDERA = {
+  id: '<svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" focusable="false"><clipPath id="bid"><circle cx="12" cy="12" r="11"/></clipPath><g clip-path="url(#bid)"><rect width="24" height="12" fill="#E70011"/><rect y="12" width="24" height="12" fill="#fff"/></g><circle cx="12" cy="12" r="10.75" fill="none" stroke="currentColor" stroke-opacity=".25" stroke-width=".5"/></svg>',
+  en: '<svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" focusable="false"><clipPath id="ben"><circle cx="12" cy="12" r="11"/></clipPath><g clip-path="url(#ben)"><rect width="24" height="24" fill="#012169"/><path d="M0 0l24 24M24 0L0 24" stroke="#fff" stroke-width="4"/><path d="M0 0l24 24M24 0L0 24" stroke="#C8102E" stroke-width="1.6"/><path d="M12 0v24M0 12h24" stroke="#fff" stroke-width="6"/><path d="M12 0v24M0 12h24" stroke="#C8102E" stroke-width="3.2"/></g><circle cx="12" cy="12" r="10.75" fill="none" stroke="currentColor" stroke-opacity=".25" stroke-width=".5"/></svg>' };
 
 const boleh = (hak, s) => hak === null || (hak === "masuk" && s.masuk) || (hak === "staf" && s.masuk && STAF.includes(s.peran));
 
@@ -41,18 +47,15 @@ function gambarKepala(el, saya) {
   }).join("");
   const b = bahasa();
   const akun = saya.masuk
-    ? `<button type="button" class="iconbtn jm-akun" id="keluar" data-i18n-attr="aria-label:jm.keluar;title:jm.keluar" aria-label="${t("jm.keluar")}" title="${t("jm.keluar")}">${ikon("keluar", 22)}<span class="jm-teks" data-i18n="jm.keluar">${t("jm.keluar")}</span></button>`
+    ? `<button type="button" class="iconbtn jm-bulat" id="keluar" data-i18n-attr="aria-label:jm.keluar;title:jm.keluar" aria-label="${t("jm.keluar")}" title="${t("jm.keluar")}">${ikon("keluar", 20)}</button>`
     : `<a class="iconbtn jm-akun" href="/masuk?ke=${encodeURIComponent(jalur === "/masuk" ? "/" : jalur)}" data-i18n-attr="aria-label:jm.masuk;title:jm.masuk" aria-label="${t("jm.masuk")}" title="${t("jm.masuk")}">${ikon("masuk", 22)}<span class="jm-teks" data-i18n="jm.masuk">${t("jm.masuk")}</span></a>`;
   el.innerHTML = `
     <button type="button" class="iconbtn" id="burger" aria-expanded="false" aria-controls="menu" data-i18n-attr="aria-label:jm.menu;title:jm.menu" aria-label="${t("jm.menu")}" title="${t("jm.menu")}">${ikon("burger", 22)}</button>
     <a class="jm-merek" href="/"><img src="/img/logo-meti-tanda.png" width="42" height="40" alt=""><span data-i18n="jm.merek">${t("jm.merek")}</span></a>
     <nav class="tabs" id="menu" data-i18n-attr="aria-label:jm.menu" aria-label="${t("jm.menu")}">${tab}</nav>
     <div class="jm-sisi">
-      <div class="jm-bahasa" role="group" data-i18n-attr="aria-label:jm.bahasa" aria-label="${t("jm.bahasa")}">
-        <button type="button" data-b="id" aria-pressed="${b === "id"}">ID</button>
-        <button type="button" data-b="en" aria-pressed="${b === "en"}">EN</button>
-      </div>
-      <button type="button" class="iconbtn" id="tema" data-i18n-attr="aria-label:jm.tema;title:jm.tema" aria-label="${t("jm.tema")}" title="${t("jm.tema")}">${ikon("tema", 22)}</button>
+      <button type="button" class="iconbtn jm-bulat jm-bahasa" id="bahasa" data-i18n-attr="aria-label:jm.ganti_bahasa;title:jm.ganti_bahasa" aria-label="${t("jm.ganti_bahasa")}" title="${t("jm.ganti_bahasa")}">${BENDERA[b]}</button>
+      <button type="button" class="iconbtn jm-bulat" id="tema" data-i18n-attr="aria-label:jm.tema;title:jm.tema" aria-label="${t("jm.tema")}" title="${t("jm.tema")}">${ikon("tema", 20)}</button>
       ${akun}
     </div>`;
 }
@@ -69,10 +72,11 @@ function pasangPenangan(el, saya) {
       const buka = tbl.getAttribute("aria-expanded") !== "true";
       tbl.setAttribute("aria-expanded", String(buka));
       el.querySelector("#menu").classList.toggle("buka", buka);
-    } else if (tbl.dataset.b) {
-      // chrome urgent: tombol aktif berganti seketika; kamus dan render menyusul sesudah satu bingkai tercat
-      for (const x of el.querySelectorAll(".jm-bahasa button")) x.setAttribute("aria-pressed", String(x === tbl));
-      nanti(() => gantiBahasa(tbl.dataset.b, { masuk: saya.masuk }));
+    } else if (tbl.id === "bahasa") {
+      // chrome urgent: bendera berganti seketika; kamus dan render menyusul sesudah satu bingkai tercat
+      const baru = bahasa() === "id" ? "en" : "id";
+      tbl.innerHTML = BENDERA[baru];
+      nanti(() => gantiBahasa(baru, { masuk: saya.masuk }));
     } else if (tbl.id === "tema") {
       const baru = temaEfektif() === "dark" ? "light" : "dark";
       document.documentElement.dataset.theme = baru;
@@ -130,6 +134,7 @@ export async function mulaiHalaman() {
   await mulaiBahasa(saya.bahasa);
   const kepala = document.getElementById("kepala");
   if (kepala) { gambarKepala(kepala, saya); pasangPenangan(kepala, saya); }
+  if (kepala && diBagianInsight(location.pathname) && !document.getElementById("subnav")) { kepala.insertAdjacentHTML("afterend", subnavHtml(location.pathname, location.hash)); addEventListener("hashchange", () => { const s = document.getElementById("subnav"); if (s) s.outerHTML = subnavHtml(location.pathname, location.hash); }); }
   const pita = document.getElementById("pita");
   if (pita && PITA_DRAF) {
     pita.className = "jm-pita";

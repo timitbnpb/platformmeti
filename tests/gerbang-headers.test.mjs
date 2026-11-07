@@ -6,7 +6,7 @@ import { join, dirname } from "node:path";
 import { fileURLToPath } from "node:url";
 
 const PUBLIK = join(dirname(fileURLToPath(import.meta.url)), "..", "public");
-const SUMBER_LUAR_SAH = new Set(["https://tiles.openfreemap.org"]);   // menambah sumber = mengubah berkas ini sengaja
+const SUMBER_LUAR_SAH = new Set(["https://tiles.openfreemap.org", "https://i.ytimg.com"]);   // menambah sumber = mengubah berkas ini sengaja
 
 function blok(teks) {
   const o = {};

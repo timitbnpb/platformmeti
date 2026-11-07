@@ -2,10 +2,10 @@
 import { mulaiHalaman } from "/inti/kepala.js";
 import { nanti, esc, hantuHtml } from "/inti/umum.js";
 import { t, tanggal } from "/i18n.js";
-import { muatData, tampilGalat, sumberHtml, kartuHtml, batangSvg, pil, num, saatBahasa } from "/analisis.js";
+import { muatData, tampilGalat, sumberHtml, kartuHtml, batangHtml, pasangBar, temuanHtml, pil, num, saatBahasa } from "/analisis.js";
 
 const $ = (id) => document.getElementById(id);
-let d = null, metrik = "bauran";
+let d = null, metrik = "bauran", pilih = null;
 const M = {
   bauran: { nilai: "bauran_persen", tren: "tren_bauran", satuan: "%", d: 1, sumber: "bauran" },
   kapasitas: { nilai: "kapasitas_ebt_mw", tren: "tren_kapasitas", satuan: "MW", d: 0, sumber: "kapasitas" },
@@ -31,13 +31,14 @@ function kartu() {
 }
 
 function band() {
-  const m = metrik, ada = urutan(m), tanpa = d.baris.filter((n) => nilaiN(n, m) === null);
+  const m = metrik, ada = urutan(m), tanpa = d.baris.filter((n) => nilaiN(n, m) === null), i = idn();
+  $("temuan-band").innerHTML = temuanHtml(t("as.t.band", { metrik: t("as.m." + m), r: peringkat(m), n: ada.length, v: num(nilaiN(i, m), M[m].d) + " " + M[m].satuan }), true);
   const baris = [...ada, ...tanpa].map((n) => {
     const v = nilaiN(n, m);
-    return { label: n.nama, sorot: n.iso3 === "IDN", bagian: [{ nilai: v ?? 0, kelas: n.iso3 === "IDN" ? "jm-an-b1" : "jm-an-b4" }], teks: v === null ? t("an.tanpa_data") : `${num(v, M[m].d)} ${M[m].satuan} (${n[M[m].nilai].tahun})` };
+    return { id: n.iso3, pilih: pilih === n.iso3, label: n.nama, sorot: n.iso3 === "IDN", bagian: [{ nilai: v ?? 0, kelas: n.iso3 === "IDN" ? "jm-an-b1" : "jm-an-b4" }], teks: v === null ? t("an.tanpa_data") : `${num(v, M[m].d)} ${M[m].satuan} (${n[M[m].nilai].tahun})` };
   });
-  $("grafik-band").innerHTML = batangSvg(baris, { label: t("as.m." + m) });
-  $("sumber-band").innerHTML = sumber(m);
+  $("grafik-band").innerHTML = batangHtml(baris, { label: t("as.m." + m), aksi: true }) + `<p class="jm-bantu">${esc(t("as.klik"))}</p>` + sumber(m);
+  pasangBar($("grafik-band"));
 }
 
 function tren() {
@@ -49,15 +50,20 @@ function tren() {
   const kisi = [0, 1, 2, 3, 4].map((i) => ymaks * i / 4);
   const grid = kisi.map((v) => `<line class="jm-an-grid" x1="${L}" x2="${W - R}" y1="${y(v).toFixed(1)}" y2="${y(v).toFixed(1)}"/><text class="jm-an-lbl" x="${L - 6}" y="${(y(v) + 4).toFixed(1)}" text-anchor="end">${esc(num(v, M[m].d))}</text>`).join("");
   const sb = [t0, Math.round((t0 + t1) / 2), t1].map((a) => `<text class="jm-an-lbl" x="${x(a).toFixed(1)}" y="${H - 8}" text-anchor="middle">${a}</text>`).join("");
-  const garis = [...seri].sort((a, b) => (a.iso3 === "IDN") - (b.iso3 === "IDN")).map((n) => {
-    const s = n[M[m].tren], id = n.iso3 === "IDN", a = s[s.length - 1];
-    return `<g class="${id ? "jm-an-gars jm-an-sorot" : "jm-an-gars"}"><polyline points="${s.map((p) => x(p.tahun).toFixed(1) + "," + y(p.nilai).toFixed(1)).join(" ")}"/><text class="jm-an-lbl" x="${(x(a.tahun) + 5).toFixed(1)}" y="${(y(a.nilai) + 4).toFixed(1)}">${esc(n.iso3)}</text></g>`;
+  const garis = [...seri].sort((a, b) => (a.iso3 === "IDN") - (b.iso3 === "IDN") || (a.iso3 === pilih) - (b.iso3 === pilih)).map((n) => {
+    const s = n[M[m].tren], id = n.iso3 === "IDN", a = s[s.length - 1], pts = s.map((p) => x(p.tahun).toFixed(1) + "," + y(p.nilai).toFixed(1)).join(" ");
+    const titik = s.map((p) => `<circle class="jm-an-titik-tren" cx="${x(p.tahun).toFixed(1)}" cy="${y(p.nilai).toFixed(1)}" r="7"><title>${esc(n.nama)}, ${p.tahun}: ${esc(num(p.nilai, M[m].d))} ${esc(M[m].satuan)}</title></circle>`).join("");
+    return `<g class="jm-an-gars${id ? " jm-an-sorot" : ""}${n.iso3 === pilih ? " jm-an-pilih" : ""}" data-iso="${n.iso3}"><polyline points="${pts}"/><polyline class="jm-an-tangkap" points="${pts}"/><text class="jm-an-lbl" x="${(x(a.tahun) + 5).toFixed(1)}" y="${(y(a.nilai) + 4).toFixed(1)}">${esc(n.iso3)}</text>${titik}</g>`;
   }).join("");
-  $("grafik-tren").innerHTML = `<svg class="jm-an-garis" viewBox="0 0 ${W} ${H}" role="img" aria-label="${esc(t("as.tren_label", { metrik: t("as.m." + m) }))}" focusable="false">${grid}${sb}${garis}</svg>${sumber(m)}`;
+  const si = idn()[M[m].tren], pa = si[0], pb = si[si.length - 1];
+  $("temuan-tren").innerHTML = temuanHtml(t("as.t.tren", { metrik: t("as.m." + m), a: num(pa.nilai, M[m].d) + " " + M[m].satuan, ta: pa.tahun, b: num(pb.nilai, M[m].d) + " " + M[m].satuan, tb: pb.tahun }));
+  const dn = pilih && d.baris.find((n) => n.iso3 === pilih), sd = dn && dn[M[m].tren];
+  const detail = sd && sd.length ? `<p class="jm-detail" role="status"><b>${esc(dn.nama)}</b>: ${esc(num(sd[0].nilai, M[m].d))} ${esc(M[m].satuan)} (${sd[0].tahun}) &rarr; ${esc(num(sd[sd.length - 1].nilai, M[m].d))} ${esc(M[m].satuan)} (${sd[sd.length - 1].tahun})</p>` : "";
+  $("grafik-tren").innerHTML = `<svg class="jm-an-garis" viewBox="0 0 ${W} ${H}" role="img" aria-label="${esc(t("as.tren_label", { metrik: t("as.m." + m) }))}" focusable="false">${grid}${sb}${garis}</svg>${detail}<p class="jm-bantu">${esc(t("as.klik_garis"))}</p>${sumber(m)}`;
   const ubah = (s) => { const a = s[0], b = s[s.length - 1]; return m === "kapasitas" ? (a.nilai ? `${num(((b.nilai - a.nilai) / a.nilai) * 100, 0)}%` : "-") : `${num(b.nilai - a.nilai, 1)} ${t("as.pp")}`; };
   $("tabel-tren").innerHTML = `<div class="jm-gulir"><table class="jm-tabel"><thead><tr><th>${esc(t("as.col.negara"))}</th><th>${esc(t("as.col.awal"))}</th><th>${esc(t("as.col.akhir"))}</th><th>${esc(t("as.col.ubah"))} ${pil("an.est")}</th></tr></thead><tbody>${seri.map((n) => {
     const s = n[M[m].tren], a = s[0], b = s[s.length - 1];
-    return `<tr class="${n.iso3 === "IDN" ? "jm-an-baris-id" : ""}"><td data-l="${esc(t("as.col.negara"))}">${esc(n.nama)}</td><td data-l="${esc(t("as.col.awal"))}" class="jm-nowrap">${esc(num(a.nilai, M[m].d))} ${esc(M[m].satuan)} (${a.tahun})</td><td data-l="${esc(t("as.col.akhir"))}" class="jm-nowrap">${esc(num(b.nilai, M[m].d))} ${esc(M[m].satuan)} (${b.tahun})</td><td data-l="${esc(t("as.col.ubah"))}" class="jm-nowrap">${esc(ubah(s))}</td></tr>`;
+    return `<tr class="${n.iso3 === "IDN" ? "jm-an-baris-id" : ""}"><td data-label="${esc(t("as.col.negara"))}">${esc(n.nama)}</td><td data-label="${esc(t("as.col.awal"))}" class="jm-num">${esc(num(a.nilai, M[m].d))} ${esc(M[m].satuan)} (${a.tahun})</td><td data-label="${esc(t("as.col.akhir"))}" class="jm-num">${esc(num(b.nilai, M[m].d))} ${esc(M[m].satuan)} (${b.tahun})</td><td data-label="${esc(t("as.col.ubah"))}" class="jm-num">${esc(ubah(s))}</td></tr>`;
   }).join("")}</tbody></table></div>`;
 }
 
@@ -74,12 +80,24 @@ async function mulai() {
   try { d = await muatData("asean.json"); } catch (e) { tampilGalat($("kartu"), mulai); return; }
   gambar();
   saatBahasa(gambar);
-  document.querySelector(".jm-an-sakelar").addEventListener("click", (e) => {
+  document.querySelector(".jm-tab").addEventListener("click", (e) => {
     const b = e.target.closest("button[data-m]");
     if (!b || b.dataset.m === metrik) return;
-    for (const x of b.parentElement.children) x.setAttribute("aria-pressed", String(x === b));
+    for (const x of b.parentElement.children) x.setAttribute("aria-selected", String(x === b));
     metrik = b.dataset.m;
     nanti(() => { band(); tren(); });
+  });
+  $("grafik-band").addEventListener("click", (e) => {
+    const b = e.target.closest("button[data-id]"); if (!b) return;
+    pilih = pilih === b.dataset.id ? null : b.dataset.id;
+    for (const x of $("grafik-band").querySelectorAll("button[data-id]")) x.setAttribute("aria-pressed", String(x.dataset.id === pilih));
+    nanti(tren);
+  });
+  $("grafik-tren").addEventListener("click", (e) => {
+    const g = e.target.closest("g[data-iso]"); if (!g) return;
+    pilih = pilih === g.dataset.iso ? null : g.dataset.iso;
+    for (const x of $("grafik-band").querySelectorAll("button[data-id]")) x.setAttribute("aria-pressed", String(x.dataset.id === pilih));
+    nanti(tren);
   });
 }
 mulai();

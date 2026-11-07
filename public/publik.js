@@ -21,3 +21,9 @@ export const norm = (s) => String(s ?? "").toLowerCase().normalize("NFD").replac
 export const SINGKAT = { uu: "UU", perppu: "Perppu", pp: "PP", perpres: "Perpres", keppres: "Keppres", inpres: "Inpres", permen: "Permen", perda: "Perda" };
 export const namaRegulasi = (r) => `${SINGKAT[r.jenis] || label("reg.jenis.", r.jenis)} ${r.nomor}/${r.tahun}`;
 export const kelasStatus = (s) => (s === "berlaku" ? "jm-pil-ok" : s === "diubah" ? "jm-pil-warn" : s === "dicabut" ? "jm-pil-bad" : "");
+
+/** Data tak tersedia: sembunyikan seluruh bagian (judul ikut), cukup peringatan di konsol. Pengunjung tidak melihat kotak galat. */
+export function sembunyi(el, e) {
+  console.warn("bagian disembunyikan:", el?.id || "", e?.message || e);
+  const s = el?.closest("section"); if (s) s.hidden = true;
+}

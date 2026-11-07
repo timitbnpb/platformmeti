@@ -2,10 +2,13 @@
 import { mulaiHalaman } from "/inti/kepala.js";
 import { nanti, esc, hantuHtml } from "/inti/umum.js";
 import { t, ada, tanggal } from "/i18n.js";
-import { muatData, sumberHtml, batangSvg, pil, num, saatBahasa } from "/analisis.js";
+import { pasangBagi, IKON_BAGI } from "/insight_bagi.js";
+import { kolom, batang, dumbbell, garis } from "/grafik.js";
+import { pilihHtml } from "/inti/komponen.js";
+import { muatData, sumberHtml, pil, num, saatBahasa } from "/analisis.js";
 
 const $ = (id) => document.getElementById(id);
-const NAMA = ["proyek", "program", "regulasi", "berita", "wilayah", "asean", "rantai_plts", "kalender"];
+const NAMA = ["proyek", "program", "regulasi", "berita", "wilayah", "asean", "rantai_plts", "kalender", "karbon", "keuangan"];
 const D = {};
 let fTek = "", fProv = "", urut = "penting", tinjau = null;
 const HARI = 86400000;
@@ -26,39 +29,6 @@ const sumberData = (kunci, berkas) => sumberHtml({ sumber: t(kunci), tanggal: D[
 const terpasangTotal = () => { const w = (D.wilayah?.baris ?? []).map((b) => b.terpasang_mw?.nilai).filter(Number.isFinite); return w.length ? jumlah(w) : null; };
 const pangsa = (m, k) => { const tot = jumlah(Object.values(m)); return tot ? (m[k] / tot) * 100 : 0; };
 
-/* ---------- grafik SVG ---------- */
-const W = 680, H = 190, L = 48, R = 12, T = 14, B = 26;
-
-function kolomSvg(item, { label }) {
-  const maks = Math.max(1, ...item.map((x) => x.v)), lebar = (W - L - R) / item.length, y = (v) => T + (1 - v / maks) * (H - T - B);
-  const batang = item.map((x, i) => {
-    const bx = L + i * lebar + lebar * 0.15, tinggi = H - B - y(x.v);
-    return `<rect class="jm-an-b1" x="${bx.toFixed(1)}" y="${y(x.v).toFixed(1)}" width="${(lebar * 0.7).toFixed(1)}" height="${Math.max(0, tinggi).toFixed(1)}"><title>${esc(x.label)}: ${esc(num(x.v))}</title></rect>` +
-      (item.length <= 14 ? `<text class="jm-ins-nilai" x="${(bx + lebar * 0.35).toFixed(1)}" y="${(y(x.v) - 4).toFixed(1)}" text-anchor="middle">${esc(num(x.v))}</text>` : "") +
-      `<text x="${(bx + lebar * 0.35).toFixed(1)}" y="${H - 8}" text-anchor="middle">${esc(x.label)}</text>`;
-  }).join("");
-  return `<svg class="jm-ins-svg" viewBox="0 0 ${W} ${H}" role="img" aria-label="${esc(label)}" focusable="false"><line class="jm-an-grid" x1="${L}" x2="${W - R}" y1="${H - B}" y2="${H - B}"/>${batang}</svg>`;
-}
-
-/* seri: [{nama, v:[...] (null = kosong), k:1..4}]; area hanya untuk seri pertama. */
-function garisSvg(label, seri, { area = false, d = 0, label: ariaLabel } = {}) {
-  const n = label.length, ymaks = Math.max(1, ...seri.flatMap((s) => s.v.filter((x) => x != null))) * 1.1;
-  const x = (i) => L + (n > 1 ? (i / (n - 1)) * (W - L - R) : (W - L - R) / 2), y = (v) => T + (1 - v / ymaks) * (H - T - B);
-  const grid = [0, 1, 2, 3].map((i) => { const v = (ymaks * i) / 3; return `<line class="jm-an-grid" x1="${L}" x2="${W - R}" y1="${y(v).toFixed(1)}" y2="${y(v).toFixed(1)}"/><text x="${L - 6}" y="${(y(v) + 4).toFixed(1)}" text-anchor="end">${esc(num(v, d))}</text>`; }).join("");
-  const langkah = Math.max(1, Math.ceil(n / 6));
-  const sb = label.map((l, i) => (i % langkah === 0 || i === n - 1 ? `<text x="${x(i).toFixed(1)}" y="${H - 8}" text-anchor="middle">${esc(l)}</text>` : "")).join("");
-  const g = seri.map((s, si) => {
-    const p = s.v.map((v, i) => (v == null ? null : [x(i), y(v), v, i])).filter(Boolean);
-    if (!p.length) return "";
-    const pts = p.map((q) => q[0].toFixed(1) + "," + q[1].toFixed(1)).join(" ");
-    const ar = area && si === 0 ? `<polygon class="jm-ins-a1" points="${p[0][0].toFixed(1)},${H - B} ${pts} ${p[p.length - 1][0].toFixed(1)},${H - B}"/>` : "";
-    const titik = p.map((q) => `<circle class="jm-ins-t${s.k === 2 ? 2 : 1}" cx="${q[0].toFixed(1)}" cy="${q[1].toFixed(1)}" r="3"><title>${esc(s.nama)}, ${esc(label[q[3]])}: ${esc(num(q[2], d))}</title></circle>`).join("");
-    return `${ar}<polyline class="jm-ins-l${s.k}" points="${pts}"/>${p.length <= 14 ? titik : ""}`;
-  }).join("");
-  const kunci = seri.length > 1 || seri[0]?.nama ? `<p class="jm-an-kunci">${seri.map((s) => `<span class="jm-an-sw jm-an-b${s.k}"></span>${esc(s.nama)}`).join(" ")}</p>` : "";
-  return `<svg class="jm-ins-svg" viewBox="0 0 ${W} ${H}" role="img" aria-label="${esc(ariaLabel ?? "")}" focusable="false">${grid}${sb}${g}</svg>${kunci}`;
-}
-
 /* ---------- kartu temuan ---------- */
 /* Bentuk kartu: {id, topik, bobot, judul, nilai, satuan, est, hip, penyebut, chart(), sumber[], cara, penting, tgl} atau null (disembunyikan). */
 
@@ -74,7 +44,7 @@ function cPipeline() {
     judul: t("ins.pip.j", { mw: num(total), a: th[0], b: th[th.length - 1], puncak, mwp: num(per.get(puncak)) }),
     nilai: num(total), satuan: "MW",
     penyebut: (terpasang ? t("ins.pip.vs", { persen: num((total / terpasang) * 100, 0), mw: num(terpasang) }) + " | " : "") + t("an.n_dari", { n: P.length, total: proyek().length }),
-    chart: () => kolomSvg(th.map((y) => ({ label: String(y), v: Math.round(per.get(y)) })), { label: t("ins.pip.chart") }),
+    chart: () => kolom(th.map((y) => ({ label: String(y), v: Math.round(per.get(y)) })), { rata: Math.round(total / th.length), teksRata: t("ins.g.rata", { v: num(total / th.length) }), label: t("ins.pip.chart") }),
     sumber: [sumberData("ins.s.proyek", "proyek"), sumberHtml(terpasangMeta())],
     cara: t("ins.pip.cara"), penting: t("ins.pip.penting"), tgl: D.proyek.dibangun_pada,
   };
@@ -87,13 +57,13 @@ function cTerlambat() {
   const per = new Map();
   lewat.forEach((p) => (p.program_ids?.length ? p.program_ids : ["-"]).forEach((id) => per.set(id, (per.get(id) ?? 0) + 1)));
   const nama = (id) => D.program?.baris?.find((b) => b.id === id)?.nama ?? t("an.tanpa_data");
-  const baris = [...per].sort((a, b) => b[1] - a[1]).slice(0, 6).map(([id, n]) => ({ label: nama(id), bagian: [{ nilai: n, kelas: "jm-an-b3" }], teks: num(n) }));
+  const baris = [...per].sort((a, b) => b[1] - a[1]).slice(0, 6).map(([id, n], i) => ({ label: nama(id), v: n, teks: num(n), sorot: i === 0 }));
   return {
     id: "terlambat", topik: "proyek", bobot: 95, est: true,
     judul: t("ins.tel.j", { n: lewat.length, mw: num(mw), tahun: tahunIni() }),
     nilai: num(lewat.length), satuan: t("ins.proyek"),
     penyebut: t("an.n_dari", { n: lewat.length, total: ada_.length }),
-    chart: () => (baris.length ? batangSvg(baris, { label: t("ins.tel.chart") }) : `<p class="jm-bantu">${esc(t("ins.kosong"))}</p>`),
+    chart: () => (baris.length ? batang(baris, { label: t("ins.tel.chart") }) : `<p class="jm-bantu">${esc(t("ins.kosong"))}</p>`),
     sumber: [sumberData("ins.s.proyek", "proyek")],
     cara: t("ins.tel.cara", { tahun: tahunIni() }), penting: t("ins.tel.penting"), tgl: D.proyek.dibangun_pada,
   };
@@ -110,8 +80,8 @@ function cCelah() {
     judul: t("ins.cel.j", { prov: a.nama, gap: num(a.gap), persen: num((a.ter / a.pot) * 100, 1) }),
     nilai: num(a.gap), satuan: "MW",
     penyebut: t("an.n_dari", { n: R_.length, total: D.wilayah.baris.length }),
-    chart: () => batangSvg(top.map((r) => ({ label: r.nama, bagian: [{ nilai: r.ter, kelas: "jm-an-b1" }, { nilai: r.gap, kelas: "jm-an-b3" }], teks: num(r.gap) + " MW" })), { maks, label: t("ins.cel.chart") }) +
-      `<p class="jm-an-kunci"><span class="jm-an-sw jm-an-b1"></span>${esc(t("ins.cel.terpasang"))} <span class="jm-an-sw jm-an-b3"></span>${esc(t("ins.cel.sisa"))}</p>`,
+    chart: () => batang(top.map((r, i) => ({ label: r.nama, v0: r.ter, v: r.gap, sorot: i === 0, teks: `${num(r.gap)} MW` })), { maks, label: t("ins.cel.chart") }) +
+      `<p class="jm-bantu">${esc(t("ins.cel.kunci"))}</p>`,
     sumber: [sumberHtml({ sumber: a.meta.sumber, halaman: a.meta.halaman, tahun: a.meta.tahun, url: a.meta.url, tanggal: a.meta.tanggal }), sumberHtml(terpasangMeta())],
     cara: t("ins.cel.cara"), penting: t("ins.cel.penting"), tgl: D.wilayah.dibangun_pada,
   };
@@ -126,9 +96,9 @@ function cPlts() {
     judul: t("ins.plt.j", { persen: num(persen, 0), butuh: num(butuh, 1), lokal: num(lokal, 1) }),
     nilai: num(persen, 0), satuan: "%",
     penyebut: t("an.n_dari", { n: r.pabrikan - r.tanpa_kapasitas, total: r.pabrikan }),
-    chart: () => batangSvg([
-      { label: t("ins.plt.butuh"), bagian: [{ nilai: butuh, kelas: "jm-an-b3" }], teks: num(butuh, 1) + " GWp" },
-      { label: t("ins.plt.lokal"), bagian: [{ nilai: lokal, kelas: "jm-an-b1" }], teks: num(lokal, 1) + " GWp" },
+    chart: () => batang([
+      { label: t("ins.plt.butuh"), v: butuh, teks: num(butuh, 1) + " GWp" },
+      { label: t("ins.plt.lokal"), v: lokal, teks: num(lokal, 1) + " GWp", sorot: true },
     ], { label: t("ins.plt.chart") }),
     sumber: [sumberHtml({ sumber: D.rantai_plts.sumber.judul, tanggal: D.rantai_plts.sumber.tanggal }), sumberHtml({ sumber: pr.sumber, tanggal: pr.tanggal_sumber })],
     cara: t("ins.plt.cara", { target: pr.target_gwp }), penting: t("ins.plt.penting"), tgl: D.rantai_plts.dibangun_pada,
@@ -145,16 +115,13 @@ function cBauran() {
   const hasil = kunci.map((k) => ({ k, a: pangsa(Object.fromEntries(kunci.map((x) => [x, pip[x]])), k), b: pangsa(Object.fromEntries(kunci.map((x) => [x, inst[x]])), k) }))
     .sort((x, y) => y.a - x.a);
   const sorot = [...hasil].sort((x, y) => (y.a - y.b) - (x.a - x.b))[0];
-  const baris = hasil.flatMap((h) => [
-    { label: `${namaTek(h.k)}: ${t("ins.mix.pipeline")}`, bagian: [{ nilai: h.a, kelas: "jm-an-b1" }], teks: num(h.a, 1) + "%" },
-    { label: `${namaTek(h.k)}: ${t("ins.mix.terpasang")}`, bagian: [{ nilai: h.b, kelas: "jm-an-b2" }], teks: num(h.b, 1) + "%" },
-  ]);
+  const baris = [...hasil].sort((x, y) => (y.a - y.b) - (x.a - x.b)).map((h) => ({ label: namaTek(h.k), a: h.b, b: h.a, sorot: h.k === sorot.k, tekA: num(h.b, 0) + "%", tekB: num(h.a, 0) + "%" }));
   return {
     id: "bauran", topik: "proyek", bobot: 75, est: true,
     judul: t("ins.mix.j", { tek: namaTek(sorot.k), a: num(sorot.a, 0), b: num(sorot.b, 0) }),
     nilai: num(sorot.a, 0), satuan: "%",
     penyebut: t("an.n_dari", { n: kunci.length, total: Object.keys(pip).length }),
-    chart: () => batangSvg(baris, { maks: 100, label: t("ins.mix.chart") }),
+    chart: () => dumbbell(baris, { kepA: t("ins.mix.terpasang"), kepB: t("ins.mix.pipeline"), label: t("ins.mix.chart") }),
     sumber: [sumberData("ins.s.proyek", "proyek"), sumberHtml(terpasangMeta())],
     cara: t("ins.mix.cara"), penting: t("ins.mix.penting"), tgl: D.proyek.dibangun_pada,
   };
@@ -166,16 +133,14 @@ function cRegulasi() {
   const now = sekarang(), n1 = R_.filter((r) => { const d = Date.parse(r.tanggal_ditetapkan); return d > now - 365 * HARI && d <= now; }).length;
   const n0 = R_.filter((r) => { const d = Date.parse(r.tanggal_ditetapkan); return d > now - 730 * HARI && d <= now - 365 * HARI; }).length;
   const dicabut = D.regulasi.baris.filter((r) => r.status === "dicabut").length;
+  const tmax = Math.max(...R_.map((r) => r.tahun).filter(Number.isFinite)), thReg = Array.from({ length: 10 }, (_, i) => tmax - 9 + i), perReg = thReg.map((y) => D.regulasi.baris.filter((r) => r.tahun === y).length);
   const ruu = (D.kalender?.baris ?? []).filter((k) => /RUU EBET/i.test(k.judul)).sort((a, b) => b.tanggal.localeCompare(a.tanggal))[0];
   return {
     id: "regulasi", topik: "regulasi", bobot: 70, est: true,
     judul: t("ins.reg.j", { n: num(n1), m: num(n0), dicabut: num(dicabut), total: num(D.regulasi.baris.length) }),
     nilai: num(n1), satuan: t("ins.regulasi"),
     penyebut: t("an.n_dari", { n: R_.length, total: D.regulasi.baris.length }),
-    chart: () => batangSvg([
-      { label: t("ins.reg.b1"), bagian: [{ nilai: n1, kelas: "jm-an-b1" }], teks: num(n1) },
-      { label: t("ins.reg.b0"), bagian: [{ nilai: n0, kelas: "jm-an-b4" }], teks: num(n0) },
-    ], { label: t("ins.reg.chart") }) + (ruu ? `<p class="jm-bantu">${esc(t("ins.reg.ruu", { judul: ruu.judul, tanggal: tanggal(ruu.tanggal) }))}</p>` : ""),
+    chart: () => kolom(thReg.map((y, i) => ({ label: String(y).slice(2), v: perReg[i], sorot: i === thReg.length - 1, tip: `${y}: ${num(perReg[i])}` })), { label: t("ins.reg.chart") }) + (ruu ? `<p class="jm-bantu">${esc(t("ins.reg.ruu", { judul: ruu.judul, tanggal: tanggal(ruu.tanggal) }))}</p>` : ""),
     sumber: [sumberData("ins.s.regulasi", "regulasi"), ...(ruu ? [sumberHtml({ sumber: t("ins.s.kalender"), tanggal: ruu.sumber?.tanggal ?? D.kalender.dibangun_pada })] : [])],
     cara: t("ins.reg.cara"), penting: t("ins.reg.penting"), tgl: D.regulasi.dibangun_pada,
   };
@@ -202,24 +167,63 @@ function cBerita() {
     judul: t("ins.ber.j", { tek: namaTek(k), n: num(n), m: num(m) }),
     nilai: num(n), satuan: t("ins.berita"),
     penyebut: t("an.n_dari", { n: jumlah(Object.values(baru)), total: D.berita.baris.length }),
-    chart: () => batangSvg(top.map(([kk, nn]) => ({ label: namaTek(kk), bagian: [{ nilai: nn, kelas: "jm-an-b1" }], teks: t("ins.ber.baris", { n: num(nn), m: num(lama[kk] ?? 0) }) })), { label: t("ins.ber.chart") }),
+    chart: () => dumbbell([...top].map(([kk, nn]) => ({ label: namaTek(kk), a: lama[kk] ?? 0, b: nn, sorot: kk === k })).sort((x, y) => (y.b - y.a) - (x.b - x.a)), { kepA: t("ins.ber.sebelum"), kepB: t("ins.ber.kini"), label: t("ins.ber.chart") }),
     sumber: [sumberData("ins.s.berita", "berita")],
     cara: t("ins.ber.cara"), penting: t("ins.ber.penting"), tgl: D.berita.dibangun_pada,
   };
 }
 
+const keu = (k) => (D.keuangan?.baris ?? []).filter((r) => r.kelompok === k);
+const bursa = () => (D.karbon?.baris ?? []).filter((r) => r.kelompok === "bursa_karbon" && Number.isFinite(r.volume_tco2e)).sort((x, y) => x.periode.localeCompare(y.periode));
+const blnPendek = (p) => `${p.slice(5)}/${p.slice(2, 4)}`;
+
 function cJetp() {
-  const j = D.program?.baris?.find((b) => b.id === "jetp");
-  if (!j?.jumlah_proyek) return null;
-  const baris = Object.entries(j.per_teknologi ?? {}).filter(([k]) => namaTek(k)).map(([k, n]) => ({ label: namaTek(k), bagian: [{ nilai: n, kelas: "jm-an-b1" }], teks: num(n) }));
+  const re = keu("green_finance").find((r) => r.sektor === "Renewable Energy" && Number.isFinite(r.usd));
+  if (!re) return null;
+  const jetp = keu("jetp").find((r) => r.jenis === "komitmen")?.total_usd_miliar, lain = keu("green_finance").filter((r) => r.jenis === "alokasi_kumulatif_2018_2024" && Number.isFinite(r.usd));
+  const jt = D.program?.baris?.find((b) => b.id === "jetp"), usdJt = (v) => Math.round(v / 1e6);
+  const baris = lain.map((r) => ({ label: r.sektor ?? r.pemilik_proyek, v: usdJt(r.usd), teks: num(usdJt(r.usd)), sorot: r === re }));
   return {
-    id: "jetp", topik: "pembiayaan", bobot: 60,
-    judul: t("ins.fin.j", { n: j.jumlah_proyek, mw: num(j.kapasitas_mw) }),
-    nilai: num(j.kapasitas_mw), satuan: "MW",
-    penyebut: t("an.n_dari", { n: j.jumlah_proyek, total: proyek().length }),
-    chart: () => batangSvg(baris, { label: t("ins.fin.chart") }),
-    sumber: [sumberData("ins.s.proyek", "program")],
-    cara: t("ins.fin.cara"), penting: t("ins.fin.penting"), tgl: D.program.dibangun_pada,
+    id: "jetp", anchor: "pembiayaan", topik: "pembiayaan", bobot: 60,
+    judul: t("ins.fin.j", { usd: num(usdJt(re.usd)), persen: num(re.porsi_persen, 1), jetp: jetp != null ? num(jetp) : t("an.tanpa_data") }),
+    nilai: num(usdJt(re.usd)), satuan: t("ins.fin.satuan"),
+    penyebut: t("an.n_dari", { n: lain.length, total: keu("green_finance").length }) + (jt?.jumlah_proyek ? " | " + t("ins.fin.proyek", { n: jt.jumlah_proyek, mw: num(jt.kapasitas_mw) }) : ""),
+    chart: () => batang(baris, { label: t("ins.fin.chart") }),
+    sumber: [sumberHtml({ sumber: re.dokumen, url: re.sumber_url, tanggal: re.tanggal }), sumberHtml({ sumber: t("ins.s.jetp"), url: "https://jetp-id.org/", tanggal: D.keuangan.dibangun_pada })],
+    cara: t("ins.fin.cara"), penting: t("ins.fin.penting"), tgl: D.keuangan.dibangun_pada,
+  };
+}
+
+function cKarbon() {
+  const B = bursa();
+  if (!B.length) return null;
+  const a = B[B.length - 1], tot = jumlah(B.map((r) => r.volume_tco2e));
+  return {
+    id: "karbon", topik: "karbon", bobot: 65, est: true,
+    judul: t("ins.kar.j", { v: num(a.volume_tco2e), bulan: a.periode, ytd: num(a.volume_ytd_tco2e), nilai: num(a.nilai_idr / 1e6) }),
+    nilai: num(a.volume_tco2e), satuan: "tCO2e",
+    penyebut: t("ins.kar.bulan", { n: B.length, tot: num(tot) }),
+    chart: () => kolom(B.map((r) => ({ label: blnPendek(r.periode), v: r.volume_tco2e })), { rata: Math.round(tot / B.length), teksRata: t("ins.g.rata", { v: num(tot / B.length) }), label: t("ins.kar.chart") }),
+    sumber: [sumberHtml({ sumber: a.sumber, url: a.halaman_sumber, tanggal: a.tanggal })],
+    cara: t("ins.kar.cara"), penting: t("ins.kar.penting"), tgl: D.karbon.dibangun_pada,
+  };
+}
+
+function cTarif() {
+  const T = keu("tarif").filter((r) => r.teknologi && Number.isFinite(r.thn_1_10_dasar));
+  if (!T.length) return null;
+  const per = {};
+  T.forEach((r) => (per[r.teknologi] ??= []).push(r.thn_1_10_dasar));
+  const baris = Object.entries(per).map(([k, v]) => ({ k, lo: Math.min(...v), hi: Math.max(...v) })).sort((x, y) => y.hi - x.hi);
+  const lo = baris.reduce((m, r) => (r.lo < m.lo ? r : m)), hi = baris[0], r0 = T[0];
+  return {
+    id: "tarif", topik: "pembiayaan", bobot: 68, est: true,
+    judul: t("ins.trf.j", { lo: num(lo.lo, 2), tlo: lo.k, hi: num(hi.hi, 2), thi: hi.k }),
+    nilai: num(hi.hi, 2), satuan: t("ins.trf.satuan"),
+    penyebut: t("an.n_dari", { n: T.length, total: keu("tarif").length }),
+    chart: () => dumbbell(baris.map((r) => ({ label: r.k, a: r.lo, b: r.hi, sorot: r.k === hi.k })), { kepA: t("ins.trf.rendah"), kepB: t("ins.trf.tinggi"), d: 2, label: t("ins.trf.chart") }),
+    sumber: [sumberHtml({ sumber: r0.dasar_hukum, url: r0.sumber_url, tanggal: r0.tanggal })],
+    cara: t("ins.trf.cara"), penting: t("ins.trf.penting"), tgl: D.keuangan.dibangun_pada,
   };
 }
 
@@ -233,7 +237,7 @@ function cAsean() {
     judul: t("ins.asn.j", { r: id + 1, n: ada_.length, v: num(nil(idn), 1), med: num(med, 1) }),
     nilai: num(nil(idn), 1), satuan: "%",
     penyebut: t("an.n_dari", { n: ada_.length, total: B.length }) + " | " + t("as.tahun", { tahun: idn.bauran_persen.tahun }),
-    chart: () => batangSvg(ada_.map((n) => ({ label: n.nama, sorot: n.iso3 === "IDN", bagian: [{ nilai: nil(n), kelas: n.iso3 === "IDN" ? "jm-an-b1" : "jm-an-b4" }], teks: num(nil(n), 1) + " %" })), { maks: 100, label: t("ins.asn.chart") }),
+    chart: () => batang(ada_.map((n) => ({ label: n.nama, sorot: n.iso3 === "IDN", v: nil(n), teks: num(nil(n), 1) + "%" })), { maks: 100, ref: med, teksRef: t("ins.g.median", { v: num(med, 1) }), label: t("ins.asn.chart") }),
     sumber: [sumberHtml({ sumber: s.sumber, halaman: s.keterangan, url: s.url, tanggal: s.tanggal })],
     cara: t("ins.asn.cara"), penting: t("ins.asn.penting"), tgl: D.asean.dibangun_pada,
   };
@@ -248,7 +252,7 @@ function tKapasitas() {
     id: "t-kap", topik: "asean", est: true,
     judul: t("ins.tk.j", { a: a.tahun, b: b.tahun, va: num(a.nilai), vb: num(b.nilai) }),
     nilai: num(b.nilai - a.nilai), satuan: "MW",
-    chart: () => garisSvg(s.map((p) => String(p.tahun)), [{ nama: t("ins.tk.seri"), v: s.map((p) => p.nilai), k: 1 }], { area: true, label: t("ins.tk.chart") }),
+    chart: () => garis(s.map((p) => String(p.tahun)), [{ nama: t("ins.tk.seri"), v: s.map((p) => p.nilai), sorot: true }], { area: true, label: t("ins.tk.chart"), teksAkhir: false }),
     sumber: [sumberHtml({ sumber: m.sumber, halaman: m.keterangan, url: m.url, tanggal: m.tanggal })],
     cara: t("ins.tk.cara"), penting: t("ins.tk.penting"), tgl: D.asean.dibangun_pada,
   };
@@ -265,7 +269,7 @@ function tPipeline() {
     judul: t("ins.tp.j", { tek: fTek ? namaTek(fTek) : t("rt.semua"), prov: fProv || t("rt.semua"), n: P.length }),
     nilai: num(jumlah([...per.values()])), satuan: "MW",
     penyebut: t("an.n_dari", { n: P.length, total: proyek().length }),
-    chart: () => (P.length ? garisSvg(semua.map(String), [{ nama: t("ins.tp.seri"), v: semua.map((y) => Math.round(per.get(y) ?? 0)), k: 1 }], { area: true, label: t("ins.tp.chart") }) : `<p class="jm-bantu">${esc(t("ins.kosong"))}</p>`),
+    chart: () => (P.length ? kolom(semua.map((y) => ({ label: String(y), v: Math.round(per.get(y) ?? 0) })), { label: t("ins.tp.chart") }) : `<p class="jm-bantu">${esc(t("ins.kosong"))}</p>`),
     sumber: [sumberData("ins.s.proyek", "proyek")],
     cara: t("ins.tp.cara"), penting: t("ins.tp.penting"), tgl: D.proyek.dibangun_pada,
   };
@@ -281,7 +285,7 @@ function tRegulasi() {
     judul: t("ins.tr.j", { a: th[0], b: maks, n: num(jumlah(terbit)) }),
     nilai: num(jumlah(terbit)), satuan: t("ins.regulasi"),
     penyebut: t("an.n_dari", { n: jumlah(terbit), total: R_.length }),
-    chart: () => garisSvg(th.map(String), [{ nama: t("ins.tr.terbit"), v: terbit, k: 1 }, { nama: t("ins.tr.dicabut"), v: cabut, k: 3 }], { area: true, label: t("ins.tr.chart") }),
+    chart: () => garis(th.map((y) => String(y).slice(2)), [{ nama: t("ins.tr.terbit"), v: terbit, sorot: true }, { nama: t("ins.tr.dicabut"), v: cabut }], { label: t("ins.tr.chart") }),
     sumber: [sumberData("ins.s.regulasi", "regulasi")],
     cara: t("ins.tr.cara"), penting: t("ins.tr.penting"), tgl: D.regulasi.dibangun_pada,
   };
@@ -295,14 +299,14 @@ function tBerita() {
   const tot = {};
   B.forEach((b) => (b.kepakaran ?? []).forEach((k) => { if (namaTek(k)) tot[k] = (tot[k] ?? 0) + 1; }));
   const pilih = fTek ? [fTek] : Object.entries(tot).sort((a, b) => b[1] - a[1]).slice(0, 4).map((x) => x[0]);
-  const seri = pilih.map((k, i) => ({ nama: namaTek(k), k: i + 1, v: bulan.map((m) => B.filter((b) => bln(b) === m && (b.kepakaran ?? []).includes(k)).length) }));
+  const seri = pilih.map((k, i) => ({ nama: namaTek(k), sorot: i === 0, v: bulan.map((m) => B.filter((b) => bln(b) === m && (b.kepakaran ?? []).includes(k)).length) }));
   const n = jumlah(seri.flatMap((s) => s.v));
   return {
     id: "t-ber", topik: "berita", est: true,
     judul: t("ins.tb.j", { tek: fTek ? namaTek(fTek) : t("rt.semua"), a: bulan[0], b: bulan[bulan.length - 1], n: num(n) }),
     nilai: num(n), satuan: t("ins.berita"),
     penyebut: t("an.n_dari", { n: B.filter((b) => (b.kepakaran ?? []).length).length, total: D.berita.baris.length }),
-    chart: () => (n ? garisSvg(bulan, seri, { label: t("ins.tb.chart") }) : `<p class="jm-bantu">${esc(t("ins.kosong"))}</p>`),
+    chart: () => (n ? garis(bulan.map((m) => m.slice(2)), seri, { label: t("ins.tb.chart") }) : `<p class="jm-bantu">${esc(t("ins.kosong"))}</p>`),
     sumber: [sumberData("ins.s.berita", "berita")],
     cara: t("ins.tb.cara"), penting: t("ins.tb.penting"), tgl: D.berita.dibangun_pada,
   };
@@ -319,32 +323,54 @@ function tAsean() {
     judul: t("ins.ta.j", { a: th[0], b: th[th.length - 1], va: num(a.nilai, 1), vb: num(b.nilai, 1), med: num(med[med.length - 1], 1) }),
     nilai: num(b.nilai - a.nilai, 1), satuan: t("as.pp"),
     penyebut: t("an.n_dari", { n: B.filter((n) => n.tren_bauran?.length).length, total: B.length }),
-    chart: () => garisSvg(th.map(String), [{ nama: "Indonesia", v: idn.tren_bauran.map((p) => p.nilai), k: 1 }, { nama: t("ins.ta.median"), v: med, k: 2 }], { d: 1, label: t("ins.ta.chart") }),
+    chart: () => garis(th.map((y) => String(y).slice(2)), [{ nama: "Indonesia", v: idn.tren_bauran.map((p) => p.nilai), sorot: true }, { nama: t("ins.ta.median"), v: med }], { d: 1, label: t("ins.ta.chart") }),
     sumber: [sumberHtml({ sumber: s.sumber, halaman: s.keterangan, url: s.url, tanggal: s.tanggal })],
     cara: t("ins.ta.cara"), penting: t("ins.ta.penting"), tgl: D.asean.dibangun_pada,
   };
 }
 
-const TEMUAN = [cPipeline, cTerlambat, cCelah, cPlts, cBauran, cRegulasi, cBerita, cJetp, cAsean];
-const TREN = [tKapasitas, tPipeline, tRegulasi, tBerita, tAsean];
-const URUT_TOPIK = ["proyek", "rantai", "wilayah", "regulasi", "berita", "pembiayaan", "asean"];
+function tKarbon() {
+  const B = bursa();
+  if (B.length < 2) return null;
+  const [a, z] = [B[0].periode, B[B.length - 1].periode], bln = [];
+  for (let y = +a.slice(0, 4), m = +a.slice(5); `${y}-${String(m).padStart(2, "0")}` <= z; m === 12 ? (y++, (m = 1)) : m++) bln.push(`${y}-${String(m).padStart(2, "0")}`);
+  const nilai = bln.map((p) => { const r = B.find((x) => x.periode === p); return r ? Math.round(r.nilai_idr / 1e6) : null; });
+  return {
+    id: "t-kar", topik: "karbon", est: true,
+    judul: t("ins.tkar.j", { a, b: z, n: B.length, max: num(Math.max(...nilai.filter((v) => v != null))) }),
+    nilai: num(jumlah(nilai.filter((v) => v != null))), satuan: t("ins.tkar.satuan"),
+    penyebut: t("an.n_dari", { n: B.length, total: bln.length }),
+    chart: () => garis(bln.map(blnPendek), [{ nama: t("ins.tkar.seri"), v: nilai, sorot: true }], { area: true, label: t("ins.tkar.chart"), teksAkhir: false }),
+    sumber: [sumberHtml({ sumber: B[0].sumber, url: B[0].halaman_sumber, tanggal: B[0].tanggal })],
+    cara: t("ins.tkar.cara"), penting: t("ins.tkar.penting"), tgl: D.karbon.dibangun_pada,
+  };
+}
+
+const TEMUAN = [cPipeline, cTerlambat, cCelah, cPlts, cBauran, cRegulasi, cBerita, cJetp, cKarbon, cTarif, cAsean];
+const TREN = [tKapasitas, tPipeline, tRegulasi, tBerita, tKarbon, tAsean];
+const URUT_TOPIK = ["proyek", "rantai", "wilayah", "regulasi", "berita", "pembiayaan", "karbon", "asean"];
 
 /* ---------- render lazy ---------- */
+const WARNA = { proyek: "a", rantai: "b", wilayah: "a", regulasi: "c", berita: "b", pembiayaan: "d", karbon: "d", asean: "c" };
+
 function isiKartu(c) {
-  return `<p class="jm-an-label">${esc(t("ins.topik." + c.topik))}</p>
+  const [utama, ...lain] = c.sumber;
+  return `<header class="jm-ins-h"><span class="jm-ins-topik jm-ins-w-${WARNA[c.topik] ?? "a"}">${esc(t("ins.topik." + c.topik))}</span>
+    <span class="jm-ins-meta">${esc(tanggal(c.tgl))}</span>
+    <button type="button" class="jm-ins-bagi" aria-haspopup="menu" aria-expanded="false" aria-label="${esc(t("ins.bagi"))}" title="${esc(t("ins.bagi"))}">${IKON_BAGI}</button></header>
+    ${c.anchor ? `<span id="${esc(c.anchor)}"></span>` : ""}
     <h3 class="jm-ins-j">${esc(c.judul)}</h3>
     <p class="jm-an-angka">${esc(c.nilai)} <span>${esc(c.satuan)}</span> ${c.est ? pil("an.est") : ""} ${c.hip ? pil("an.hipotesis") : ""}</p>
     ${c.penyebut ? `<p class="jm-bantu">${esc(c.penyebut)}</p>` : ""}
     <div class="jm-ins-grafik">${c.chart()}</div>
-    <p class="jm-ins-penting"><b>${esc(t("ins.penting"))}</b> ${esc(c.penting)}</p>
-    ${c.sumber.join("")}
-    <details${c.hip ? " open" : ""}><summary>${esc(t("an.cara"))}</summary><p>${esc(c.cara)}</p></details>
-    <small class="jm-an-sumber">${esc(t("ins.tgl", { tanggal: tanggal(c.tgl) }))}</small>`;
+    <details class="jm-ins-ak" open><summary>${esc(t("ins.penting"))}</summary><p>${esc(c.penting)}</p></details>
+    <details class="jm-ins-ak"${c.hip ? " open" : ""}><summary>${esc(t("an.cara"))}</summary><p>${esc(c.cara)}</p></details>
+    <div class="jm-ins-src">${utama ?? ""}${lain.length ? `<details><summary>${esc(t("ins.sumber_lain", { n: lain.length }))}</summary>${lain.join("")}</details>` : ""}</div>`;
 }
 
 function pasang(el, daftar) {
   const peta = new Map(daftar.map((c) => [c.id, c]));
-  el.innerHTML = daftar.map((c) => `<article class="jm-kartu jm-ins-kartu" data-id="${esc(c.id)}" data-belum="1">${hantuHtml(3)}</article>`).join("");
+  el.innerHTML = daftar.map((c) => `<article class="jm-kartu jm-ins-kartu" id="ins-${esc(c.id)}" data-id="${esc(c.id)}" data-belum="1">${hantuHtml(3)}</article>`).join("");
   const isi = (a) => { const c = peta.get(a.dataset.id); if (c && a.dataset.belum) { a.innerHTML = isiKartu(c); delete a.dataset.belum; } };
   if (!("IntersectionObserver" in window)) { el.querySelectorAll("article").forEach(isi); return; }
   tinjau ??= new IntersectionObserver((es) => es.forEach((e) => { if (e.isIntersecting) { tinjau.unobserve(e.target); isi(e.target); } }), { rootMargin: "400px 0px" });
@@ -357,13 +383,16 @@ function gambarTemuan() {
   pasang($("temuan"), k);
   return k.length;
 }
-const gambarTren = () => { const k = TREN.map((f) => f()).filter(Boolean); pasang($("tren"), k); return k.length; };
+const gambarTren = () => { const k = TREN.map((f) => f()).filter(Boolean); pasang($("tren-isi"), k); return k.length; };
 
 function isiFilter() {
-  const tek = new Set(proyek().map((p) => p.teknologi).filter(namaTek)), pv = [...new Set(proyek().map(prov).filter(Boolean))].sort();
-  const opsi = (el, daftar, lab) => el.insertAdjacentHTML("beforeend", daftar.map((v) => `<option value="${esc(v)}">${esc(lab ? lab(v) : v)}</option>`).join(""));
-  opsi($("f-tek"), [...tek].sort((a, b) => namaTek(a).localeCompare(namaTek(b))), namaTek);
-  opsi($("f-prov"), pv);
+  const tek = [...new Set(proyek().map((p) => p.teknologi).filter(namaTek))].sort((a, b) => namaTek(a).localeCompare(namaTek(b)));
+  const pv = [...new Set(proyek().map(prov).filter(Boolean))].sort(), semua = ["", t("rt.semua")];
+  $("saring-urut").innerHTML = pilihHtml({ id: "urut", ikon: "status", label: t("ins.urut"), nilai: urut, opsi: [["penting", t("ins.urut.penting")], ["topik", t("ins.urut.topik")]] });
+  $("saring-tren").innerHTML = pilihHtml({ id: "f-tek", ikon: "jenis", label: t("ins.f_tek"), nilai: fTek, opsi: [semua, ...tek.map((k) => [k, namaTek(k)])] }) + pilihHtml({ id: "f-prov", ikon: "wilayah", label: t("ins.f_prov"), nilai: fProv, opsi: [semua, ...pv.map((v) => [v, v])] });
+  $("urut").addEventListener("change", (e) => { urut = e.target.value; nanti(gambarTemuan); });
+  $("f-tek").addEventListener("change", (e) => { fTek = e.target.value; nanti(gambarTren); });
+  $("f-prov").addEventListener("change", (e) => { fProv = e.target.value; nanti(gambarTren); });
 }
 
 function cara() {
@@ -371,10 +400,21 @@ function cara() {
   $("kutip").textContent = t("ins.kutip", { tanggal: tanggal(D.proyek?.dibangun_pada ?? D.regulasi?.dibangun_pada, { gaya: "panjang" }) });
 }
 
+/* tautan #ins-<id>: gulir ke kartu (dirender dulu bila masih kerangka) dan sorot sebentar */
+function sorotHash() {
+  const a = location.hash.startsWith("#ins-") ? document.getElementById(decodeURIComponent(location.hash.slice(1))) : null;
+  if (!a) return;
+  a._isi?.();
+  a.scrollIntoView({ block: "start" });
+  a.classList.add("jm-ins-sorot");
+  setTimeout(() => a.classList.remove("jm-ins-sorot"), 3000);
+}
+
 function gambar() {
   const a = gambarTemuan(), b = gambarTren();
   $("jawab").textContent = t("ins.jawab", { n: a + b, tanggal: tanggal(D.proyek?.dibangun_pada ?? D.regulasi?.dibangun_pada) });
   cara();
+  sorotHash();
 }
 
 async function mulai() {
@@ -382,10 +422,9 @@ async function mulai() {
   $("temuan").innerHTML = hantuHtml(3);
   await Promise.all(NAMA.map(async (n) => { try { D[n] = await muatData(n + ".json"); } catch (e) { D[n] = null; } }));
   isiFilter();
+  pasangBagi();
   gambar();
-  saatBahasa(() => { document.querySelectorAll("#f-tek option[value]:not([value=''])").forEach((o) => { o.textContent = namaTek(o.value); }); gambar(); });
-  $("urut").addEventListener("change", (e) => { urut = e.target.value; nanti(gambarTemuan); });
-  $("f-tek").addEventListener("change", (e) => { fTek = e.target.value; nanti(gambarTren); });
-  $("f-prov").addEventListener("change", (e) => { fProv = e.target.value; nanti(gambarTren); });
+  addEventListener("hashchange", sorotHash);
+  saatBahasa(() => { isiFilter(); gambar(); });
 }
 mulai();

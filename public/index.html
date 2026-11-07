@@ -18,7 +18,8 @@
 <body data-halaman="beranda">
 <header class="top" id="kepala"></header>
 <div id="pita"></div>
-<main class="jm-halaman">
+<main>
+<div class="jm-wadah">
   <section class="jm-hero2" aria-labelledby="judul">
     <div class="jm-hero2-kiri">
       <p class="jm-eyebrow"><span class="jm-kotak" aria-hidden="true"></span><span data-i18n="beranda.eyebrow">Direktori METI: data ekosistem EBET</span></p>
@@ -34,67 +35,68 @@
     </div>
     <div class="jm-hero2-kanan"><div class="jm-logo-grid" id="ekoLogo"></div></div>
   </section>
-  <section aria-labelledby="angka-h" class="jm-dua-baris">
-    <h2 id="angka-h" data-i18n="beranda.angka">Kondisi sekarang</h2>
+</div>
+<nav class="jm-isi" aria-label="Di halaman ini" data-i18n-attr="aria-label:beranda.isi"><a href="#s01"><b>01</b><span class="jm-isi-l" data-i18n="beranda.s01.l">Kondisi sekarang</span></a><a href="#s02"><b>02</b><span class="jm-isi-l" data-i18n="beranda.s02.l">Ekosistem</span></a><a href="#s03"><b>03</b><span class="jm-isi-l" data-i18n="beranda.s03.l">Dataset</span></a><a href="#s04"><b>04</b><span class="jm-isi-l" data-i18n="beranda.s04.l">Proyek dan emisi</span></a><a href="#s05"><b>05</b><span class="jm-isi-l" data-i18n="beranda.s05.l">Teknologi</span></a><a href="#s06"><b>06</b><span class="jm-isi-l" data-i18n="beranda.s06.l">Halaman lain</span></a><a href="#s07"><b>07</b><span class="jm-isi-l" data-i18n="beranda.s07.l">Cara data dibuat</span></a><a href="#s08"><b>08</b><span class="jm-isi-l" data-i18n="beranda.s08.l">Akses data</span></a></nav>
+<section class="jm-bagian" id="s01" aria-labelledby="s01-h"><div class="jm-wadah">
+    <header class="jm-sh"><p class="jm-eyebrow"><span class="jm-kotak" aria-hidden="true"></span><span><b>01</b> <span data-i18n="beranda.s01.l">Kondisi sekarang</span></span></p>
+      <h2 id="s01-h" data-i18n="beranda.s01.h">Angka terbaru dari data bersumber</h2><p class="jm-sh-lead" data-i18n="beranda.s01.p">Enam angka utama, masing-masing dengan sumber dan tanggal.</p></header>
     <div class="jm-kisi" id="kartu"></div>
     <details class="jm-sumber"><summary data-i18n="beranda.cara">Cara menghitung</summary><p data-i18n="beranda.cara_isi">Semua angka dihitung dari baris data yang punya sumber publik. Jumlah proyek, organisasi, tokoh, dan regulasi adalah hitungan baris. Kapasitas menjumlah nilai pertama tiap proyek (MW dan MWp dicampur), rencana maupun terpasang, sehingga berlabel EST. Tidak ada angka yang ditebak.</p></details>
     <p class="jm-sumber" id="sumber"></p>
-  </section>
-  <section aria-labelledby="eko-h" class="jm-dua-baris">
-    <h2 id="eko-h" data-i18n="beranda.eko">Ekosistem EBET</h2>
+    <div class="jm-dua jm-terbaru">
+      <div class="jm-kartu"><h3 data-i18n="beranda.berita">Berita terbaru</h3><div id="berita"></div></div>
+      <div class="jm-kartu"><h3 data-i18n="beranda.proyek">Proyek terbaru di katalog</h3><div id="proyek"></div></div>
+    </div>
+  </div></section>
+<section class="jm-bagian jm-pita" id="s02" aria-labelledby="s02-h"><div class="jm-wadah">
+    <header class="jm-sh"><p class="jm-eyebrow"><span class="jm-kotak" aria-hidden="true"></span><span><b>02</b> <span data-i18n="beranda.s02.l">Ekosistem</span></span></p>
+      <h2 id="s02-h" data-i18n="beranda.s02.h">Siapa saja yang ada di dalamnya</h2><p class="jm-sh-lead" data-i18n="beranda.s02.p">Jumlah pelaku menurut jenisnya, dan pintu masuk ke tiap bagian data.</p></header>
     <ul class="jm-hitung-kat" id="ekoHitung"></ul>
+    <div class="jm-kisi jm-kisi-j" id="jalur"></div>
     <p class="jm-sumber" data-i18n="beranda.eko_sumber">Logo dipakai untuk mengenali organisasi, diambil dari situs resmi masing-masing (lihat img/logo/SUMBER.md). Jumlah dihitung dari data organisasi, proyek, dan regulasi bersumber.</p>
-  </section>
-  <section aria-labelledby="ds-h" class="jm-dua-baris">
-    <h2 id="ds-h" data-i18n="beranda.ds">Enam kumpulan data, satu aturan</h2>
-    <p class="jm-sumber" data-i18n="beranda.ds_sub">Setiap angka dihitung dari data bersumber di situs ini; EST berarti hasil turunan.</p>
+  </div></section>
+<section class="jm-bagian" id="s03" aria-labelledby="s03-h"><div class="jm-wadah">
+    <header class="jm-sh"><p class="jm-eyebrow"><span class="jm-kotak" aria-hidden="true"></span><span><b>03</b> <span data-i18n="beranda.s03.l">Dataset</span></span></p>
+      <h2 id="s03-h" data-i18n="beranda.s03.h">Enam kumpulan data, satu aturan</h2><p class="jm-sh-lead" data-i18n="beranda.s03.p">Setiap angka dihitung dari data bersumber; EST menandai hasil turunan.</p></header>
     <div class="jm-ds-kisi" id="dataset"></div>
-  </section>
-  <section aria-labelledby="pt-h" class="jm-dua-baris">
-    <h2 id="pt-h" data-i18n="beranda.peta">Proyek EBT di peta</h2>
+  </div></section>
+<section class="jm-bagian jm-pita" id="s04" aria-labelledby="s04-h"><div class="jm-wadah">
+    <header class="jm-sh"><p class="jm-eyebrow"><span class="jm-kotak" aria-hidden="true"></span><span><b>04</b> <span data-i18n="beranda.s04.l">Proyek dan emisi</span></span></p>
+      <h2 id="s04-h" data-i18n="beranda.s04.h">Di mana proyeknya, berapa emisinya</h2><p class="jm-sh-lead" data-i18n="beranda.s04.p">Peta proyek menurut teknologi dan program, dan sebaran emisi pembangkit listrik.</p></header>
     <div class="jm-ds jm-w2 jm-peta-kartu" id="petaKartu">
       <div class="jm-peta-info" id="petaInfo"></div>
       <div class="jm-peta" id="petaEl" role="img" data-i18n-attr="aria-label:beranda.peta.aria" aria-label="Peta proyek energi terbarukan menurut teknologi dan program"></div>
     </div>
-  </section>
-  <section aria-labelledby="kb-h" class="jm-dua-baris">
-    <h2 id="kb-h" data-i18n="beranda.karbon">Pembangkit dan emisinya</h2>
     <div class="jm-ds jm-w4 jm-peta-kartu" id="karbon"></div>
-  </section>
-  <section aria-labelledby="ft-h" class="jm-dua-baris">
-    <h2 id="ft-h" data-i18n="beranda.foto">Teknologi di lapangan</h2>
-    <p class="jm-sumber" data-i18n="beranda.foto_sub">Empat pembangkit di Indonesia.</p>
+  </div></section>
+<section class="jm-bagian" id="s05" aria-labelledby="s05-h"><div class="jm-wadah">
+    <header class="jm-sh"><p class="jm-eyebrow"><span class="jm-kotak" aria-hidden="true"></span><span><b>05</b> <span data-i18n="beranda.s05.l">Teknologi</span></span></p>
+      <h2 id="s05-h" data-i18n="beranda.s05.h">Teknologi di lapangan</h2><p class="jm-sh-lead" data-i18n="beranda.s05.p">Jumlah proyek per teknologi dan jumlah organisasi per jenis.</p></header>
     <div class="jm-foto-kisi" id="foto"></div>
-  </section>
-  <section aria-labelledby="sn-h" class="jm-dua-baris">
-    <h2 id="sn-h" data-i18n="beranda.sensus">Sensus per teknologi</h2>
-    <p class="jm-sumber" data-i18n="beranda.sensus_sub">Jumlah proyek per teknologi dan jumlah organisasi per jenis.</p>
     <div class="jm-tile-kisi" id="sensus"></div>
     <p class="jm-sumber" id="sensusSumber"></p>
-  </section>
-  <section aria-labelledby="bn-h" class="jm-dua-baris">
-    <h2 id="bn-h" data-i18n="beranda.bento">Halaman lain dari data yang sama</h2>
+    <p class="jm-sumber" id="fotoKredit"></p>
+  </div></section>
+<section class="jm-bagian jm-pita" id="s06" aria-labelledby="s06-h"><div class="jm-wadah">
+    <header class="jm-sh"><p class="jm-eyebrow"><span class="jm-kotak" aria-hidden="true"></span><span><b>06</b> <span data-i18n="beranda.s06.l">Halaman lain</span></span></p>
+      <h2 id="s06-h" data-i18n="beranda.s06.h">Dibangun dari data yang sama</h2><p class="jm-sh-lead" data-i18n="beranda.s06.p">Halaman lain yang memakai data ini.</p></header>
     <div class="jm-bento-kisi" id="bento"></div>
-  </section>
-  <section aria-labelledby="cr-h" class="jm-dua-baris">
-    <h2 id="cr-h" data-i18n="beranda.cara_data">Cara data dibuat</h2>
+  </div></section>
+<section class="jm-bagian" id="s07" aria-labelledby="s07-h"><div class="jm-wadah">
+    <header class="jm-sh"><p class="jm-eyebrow"><span class="jm-kotak" aria-hidden="true"></span><span><b>07</b> <span data-i18n="beranda.s07.l">Cara data dibuat</span></span></p>
+      <h2 id="s07-h" data-i18n="beranda.s07.h">Bersumber, bertanggal, dan berlabel</h2><p class="jm-sh-lead" data-i18n="beranda.s07.p">Empat aturan yang berlaku untuk setiap baris.</p></header>
     <div class="jm-cara-kisi" id="cara"></div>
-  </section>
-  <section class="jm-akses" aria-labelledby="ak-h">
-    <div><p class="jm-ds-kep" data-i18n="beranda.akses.eyebrow">Akses data</p><h2 id="ak-h" data-i18n="beranda.akses">Setiap angka bebas dibaca. Berkas kerja untuk anggota.</h2>
+  </div></section>
+<section class="jm-bagian jm-pita" id="s08" aria-labelledby="ak-h"><div class="jm-wadah">
+    <p class="jm-eyebrow"><span class="jm-kotak" aria-hidden="true"></span><span><b>08</b> <span data-i18n="beranda.s08.l">Akses data</span></span></p>
+  <div class="jm-akses">
+    <div><h2 id="ak-h" data-i18n="beranda.akses">Setiap angka bebas dibaca. Berkas kerja untuk anggota.</h2>
     <p data-i18n="beranda.akses.isi">Angka, sumber, dan tanggalnya terbuka untuk siapa saja. Direktori anggota, catatan kurator, dan data kontak hanya untuk anggota METI yang sudah masuk.</p></div>
     <div class="jm-akses-aksi"><a class="jm-tbl jm-tbl-utama" href="https://metiires.or.id/membership" target="_blank" rel="noopener noreferrer" data-i18n="beranda.akses.gabung">Gabung METI</a>
     <a class="jm-tbl" href="mailto:meti.ires@gmail.com" data-i18n="beranda.akses.hubungi">Hubungi kami</a>
     <p class="jm-sumber"><span data-i18n="beranda.akses.kutip">Cara mengutip dan siapa yang membangun situs ini:</span> <a href="/tentang" data-i18n="beranda.akses.tentang">halaman Tentang</a></p></div>
-  </section>
-  <section aria-labelledby="jalur-h" class="jm-dua-baris">
-    <h2 id="jalur-h" data-i18n="beranda.jalur">Jelajahi</h2>
-    <div class="jm-kisi jm-kisi-j" id="jalur"></div>
-  </section>
-  <div class="jm-dua">
-    <section class="jm-kartu" aria-labelledby="berita-h"><h2 id="berita-h" data-i18n="beranda.berita">Berita terbaru</h2><div id="berita"></div></section>
-    <section class="jm-kartu" aria-labelledby="proyek-h"><h2 id="proyek-h" data-i18n="beranda.proyek">Proyek terbaru di katalog</h2><div id="proyek"></div></section>
   </div>
+  </div></section>
 </main>
 <footer class="jm-kaki" id="kaki"></footer>
 <script type="module" src="/beranda.js"></script>

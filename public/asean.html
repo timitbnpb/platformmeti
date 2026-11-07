@@ -17,32 +17,34 @@
 </head>
 <body>
 <header class="top" id="kepala"></header>
-<main class="jm-halaman jm-an">
+<main class="jm-halaman jm-wadah jm-an">
 <section class="jm-hero" aria-labelledby="judul">
   <h1 id="judul" data-i18n="as.judul">ASEAN: di mana posisi Indonesia?</h1>
   <p class="jm-an-label" data-i18n="an.jawaban">Jawaban singkat</p>
   <p id="jawab"></p>
 </section>
 <section id="kartu" class="jm-an-kartu-baris" aria-label="Ringkasan" data-i18n-attr="aria-label:an.ringkasan"></section>
-<section class="jm-kartu" aria-labelledby="h-band">
-  <h2 id="h-band" data-i18n="as.bandingkan">Perbandingan 10 negara</h2>
-  <div class="jm-an-sakelar" role="group" aria-label="Metrik" data-i18n-attr="aria-label:wl.metrik">
-    <button type="button" data-m="bauran" aria-pressed="true" data-i18n="as.m.bauran">Pangsa listrik terbarukan</button>
-    <button type="button" data-m="kapasitas" aria-pressed="false" data-i18n="as.m.kapasitas">Kapasitas terbarukan</button>
-    <button type="button" data-m="akses" aria-pressed="false" data-i18n="as.m.akses">Akses listrik</button>
+<section class="jm-kartu jm-an-wadah" aria-labelledby="h-band">
+  <header class="jm-an-kepala">
+  <div><h2 id="h-band" data-i18n="as.bandingkan">Perbandingan 10 negara</h2><p class="jm-temuan" id="temuan-band"></p></div>
+  <div class="jm-tab" role="tablist" aria-label="Metrik" data-i18n-attr="aria-label:wl.metrik">
+    <button type="button" role="tab" data-m="bauran" aria-selected="true" data-i18n="as.m.bauran">Pangsa listrik terbarukan</button>
+    <button type="button" role="tab" data-m="kapasitas" aria-selected="false" data-i18n="as.m.kapasitas">Kapasitas terbarukan</button>
+    <button type="button" role="tab" data-m="akses" aria-selected="false" data-i18n="as.m.akses">Akses listrik</button>
   </div>
+  </header>
   <div id="grafik-band"></div>
   <p id="sumber-band"></p>
 </section>
-<section class="jm-kartu" aria-labelledby="h-tren">
-  <h2 id="h-tren" data-i18n="as.tren">Tren 10 tahun</h2>
+<section class="jm-kartu jm-an-wadah" aria-labelledby="h-tren">
+  <header class="jm-an-kepala"><div><h2 id="h-tren" data-i18n="as.tren">Tren 10 tahun</h2><p class="jm-temuan" id="temuan-tren"></p></div></header>
   <div id="grafik-tren"></div>
   <div id="tabel-tren"></div>
 </section>
-<section class="jm-kartu" aria-labelledby="h-cara">
+<section class="jm-kartu jm-an-wadah" aria-labelledby="h-cara">
   <details open><summary id="h-cara" data-i18n="an.cara">Cara menghitung</summary><div class="jm-an-cara" id="cara"></div></details>
 </section>
-<section class="jm-kartu" aria-labelledby="h-kutip">
+<section class="jm-kartu jm-an-wadah" aria-labelledby="h-kutip">
   <h2 id="h-kutip" data-i18n="an.kutip">Cara mengutip</h2>
   <p id="kutip"></p>
 </section>

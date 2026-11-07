@@ -6,6 +6,11 @@
 <title data-i18n="ins.title">Insight: temuan dan tren energi terbarukan Indonesia | Direktori METI</title>
 <meta name="description" content="Temuan dan tren yang dihitung langsung dari data Direktori METI: proyek, regulasi, berita, wilayah, dan perbandingan ASEAN, dengan sumber, tanggal, dan cara menghitung." data-i18n-attr="content:ins.deskripsi">
 <meta name="theme-color" content="#122B4A">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Insight: temuan dan tren energi terbarukan Indonesia" data-i18n-attr="content:ins.title">
+<meta property="og:description" content="Temuan dan tren yang dihitung langsung dari data Direktori METI, dengan sumber, tanggal, dan cara menghitung." data-i18n-attr="content:ins.og">
+<meta property="og:image" content="/img/og-insight.png">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="/img/logo-meti-tanda.png" type="image/png">
 <link rel="preload" href="/fonts/inter-400.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="/inti/tema.css">
@@ -13,6 +18,7 @@
 <link rel="stylesheet" href="/inti/gaya.css">
 <link rel="stylesheet" href="/inti/jm.css">
 <link rel="stylesheet" href="/analisis.css">
+<link rel="stylesheet" href="/grafik.css">
 <link rel="stylesheet" href="/insight.css">
 <script src="/tema.js"></script>
 </head>
@@ -27,27 +33,21 @@
 <section aria-labelledby="h-temuan">
   <div class="jm-ins-kepala">
     <h2 id="h-temuan" data-i18n="ins.temuan">Temuan</h2>
-    <div class="jm-medan"><label for="urut" data-i18n="ins.urut">Urutkan</label>
-      <select class="jm-pilih" id="urut"><option value="penting" data-i18n="ins.urut.penting">Terpenting</option><option value="topik" data-i18n="ins.urut.topik">Per topik</option></select></div>
+    <div class="jm-saring" id="saring-urut"></div>
   </div>
   <div id="temuan" class="jm-ins-grid"></div>
 </section>
-<section aria-labelledby="h-tren">
+<section id="tren" class="jm-ins-bagian" aria-labelledby="h-tren">
   <div class="jm-ins-kepala">
     <h2 id="h-tren" data-i18n="ins.tren">Tren</h2>
-    <div class="jm-ins-saring">
-      <div class="jm-medan"><label for="f-tek" data-i18n="ins.f_tek">Teknologi</label>
-        <select class="jm-pilih" id="f-tek"><option value="" data-i18n="rt.semua">Semua</option></select></div>
-      <div class="jm-medan"><label for="f-prov" data-i18n="ins.f_prov">Provinsi</label>
-        <select class="jm-pilih" id="f-prov"><option value="" data-i18n="rt.semua">Semua</option></select></div>
-    </div>
+    <div class="jm-saring" id="saring-tren"></div>
   </div>
-  <div id="tren" class="jm-ins-grid"></div>
+  <div id="tren-isi" class="jm-ins-grid"></div>
 </section>
-<section class="jm-kartu" aria-labelledby="h-cara">
+<section class="jm-wadah" aria-labelledby="h-cara">
   <details open><summary id="h-cara" data-i18n="an.cara">Cara menghitung</summary><div class="jm-an-cara" id="cara"></div></details>
 </section>
-<section class="jm-kartu" aria-labelledby="h-kutip">
+<section class="jm-wadah" aria-labelledby="h-kutip">
   <h2 id="h-kutip" data-i18n="an.kutip">Cara mengutip</h2>
   <p id="kutip"></p>
 </section>

@@ -1,6 +1,7 @@
 import { mulaiHalaman } from "/inti/kepala.js";
 import { t, angka, tanggal } from "/i18n.js";
 import { esc, nanti, hantuHtml, kosongHtml, galatHtml } from "/inti/umum.js";
+import { pilihHtml } from "/inti/komponen.js";
 import { muat, label, urlAman } from "/publik.js";
 
 const JENIS = ["seminar", "konferensi", "audiensi", "lokakarya", "regulasi", "tenggat"];
@@ -34,9 +35,7 @@ const acaraHtml = (b) => `<li class="jm-acara" id="${esc(b.id)}"><span class="jm
 
 function gambarChrome() {
   document.getElementById("tampil").innerHTML = ["bulan", "daftar"].map((v) => `<button type="button" role="tab" data-tampil="${v}" aria-selected="${S.tampil === v}">${esc(t("kal.tampil." + v))}</button>`).join("");
-  const sel = document.getElementById("jenis");
-  sel.innerHTML = `<option value="">${esc(t("kal.semua"))}</option>${JENIS.map((j) => `<option value="${j}"${S.jenis === j ? " selected" : ""}>${esc(label("kal.jenis.", j))}</option>`).join("")}`;
-  sel.setAttribute("aria-label", t("kal.semua"));
+  document.getElementById("jenisWadah").innerHTML = `${pilihHtml({ id: "jenis", ikon: "jenis", label: t("kal.semua"), opsi: [["", t("kal.semua")], ...JENIS.map((j) => [j, label("kal.jenis.", j)])], nilai: S.jenis })}`;
   document.getElementById("navbulan").hidden = S.tampil !== "bulan";
   document.getElementById("navbulan").innerHTML = `<div class="jm-nav-bulan"><button type="button" class="jm-tbl jm-tbl-kecil" data-geser="-1" aria-label="${esc(t("kal.sebelumnya"))}">&lsaquo;</button><strong>${esc(namaBulan(S.bulan))} ${S.bulan.slice(0, 4)}</strong><button type="button" class="jm-tbl jm-tbl-kecil" data-geser="1" aria-label="${esc(t("kal.berikutnya"))}">&rsaquo;</button></div>`;
 }
@@ -84,7 +83,7 @@ async function main() {
     for (const x of document.querySelectorAll("#tampil button")) x.setAttribute("aria-selected", String(x === b)); // chrome urgent
     document.getElementById("navbulan").hidden = S.tampil !== "bulan"; ulang();
   });
-  document.getElementById("jenis").addEventListener("change", (e) => { S.jenis = e.target.value; ulang(); });
+  document.getElementById("jenisWadah").addEventListener("change", (e) => { S.jenis = e.target.value; ulang(); });
   document.getElementById("navbulan").addEventListener("click", (e) => {
     const b = e.target.closest("[data-geser]"); if (!b) return;
     S.bulan = geser(S.bulan, +b.dataset.geser);

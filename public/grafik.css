@@ -1,0 +1,22 @@
+/* Gaya modul /grafik.js. Hanya token tema.css: satu warna sorot (hijau METI), abu untuk konteks. */
+.jm-gf{width:100%;height:auto;display:block;font-family:var(--font);font-variant-numeric:tabular-nums}
+.jm-gf-grid{stroke:var(--line);stroke-width:1;opacity:.6}
+.jm-gf-t1{fill:var(--ink)}
+.jm-gf-t2{fill:var(--ink2)}
+.jm-gf-tb{font-weight:700;fill:var(--head)}
+.jm-gf-b,.jm-gf-abu{fill:var(--line-ctl);fill-opacity:.45}
+.jm-gf-sorot{fill:var(--accent-isi);fill-opacity:1}
+.jm-gf-ref{stroke:var(--ink2);stroke-width:1.2;stroke-dasharray:5 4;opacity:.8}
+.jm-gf-pil{fill:var(--brand)}
+.jm-gf-pilt{fill:var(--on-brand);font-weight:700}
+.jm-gf-hub{stroke:var(--line-ctl);stroke-width:2;stroke-opacity:.55}
+.jm-gf-hub.jm-gf-sorot-g{stroke:var(--accent-isi);stroke-opacity:1;stroke-width:3}
+.jm-gf-da{fill:var(--card);stroke:var(--line-ctl);stroke-width:2}
+.jm-gf-db{fill:var(--accent-isi);stroke:var(--accent-isi)}
+.jm-gf-db-lemah{fill:var(--ink2);stroke:var(--ink2)}
+.jm-gf-gar{fill:none;stroke-width:2.5;stroke-linejoin:round;stroke-linecap:round}
+.jm-gf-gar-abu{stroke:var(--line-ctl);stroke-opacity:.8;stroke-width:2}
+.jm-gf-gar.jm-gf-sorot-g{stroke:var(--accent-isi)}
+.jm-gf-area{fill:var(--accent-isi);fill-opacity:.12}
+.jm-gf-tt{fill:var(--accent-isi)}
+.jm-gf-tt-abu{fill:var(--line-ctl)}

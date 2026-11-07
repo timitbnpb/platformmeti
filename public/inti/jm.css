@@ -23,19 +23,9 @@
 .jm-aksi{display:flex;flex-wrap:wrap;gap:8px}
 
 /* tabel (bergulir di dalam kartunya) */
-.jm-gulir{overflow-x:auto;-webkit-overflow-scrolling:touch;border:1px solid var(--line-cell);border-radius:var(--r-sm)}
-.jm-tabel{width:100%;border-collapse:collapse;font-size:14px}
-.jm-tabel th{padding:10px 12px;background:var(--brand2);color:var(--on-brand);font:600 12px/1.3 var(--display);text-align:left;white-space:nowrap}
-.jm-tabel td{padding:10px 12px;border-top:1px solid var(--line-cell);vertical-align:top;text-align:left}
-.jm-tabel tbody tr:nth-child(even) td{background:var(--surface)}
-.jm-tabel td.jm-nowrap{white-space:nowrap}
-.jm-tabel small{display:block;color:var(--ink2);font-size:var(--t-kecil)}
 .jm-sel-aksi{display:flex;flex-wrap:wrap;gap:6px}
 
 /* tab */
-.jm-tab{display:flex;gap:4px;border-bottom:1px solid var(--line);overflow-x:auto}
-.jm-tab button{display:inline-flex;align-items:center;gap:8px;min-height:var(--target);padding:0 16px;border:0;border-bottom:3px solid transparent;background:none;color:var(--ink2);font:600 14px/1 var(--font);cursor:pointer;white-space:nowrap}
-.jm-tab button[aria-selected="true"]{color:var(--accent);border-bottom-color:var(--accent)}
 
 /* bilah alat dan paginasi */
 .jm-bar{display:grid;gap:8px;margin-bottom:12px}
@@ -58,12 +48,74 @@ dialog.jm-dlg::backdrop{background:rgb(11 23 38/.55)}
 
 /* tabel menjadi kartu bertumpuk di layar sempit (tanpa gulir horizontal) */
 @media (max-width:639px){
-  .jm-gulir{border:0}
-  .jm-tabel thead{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
-  .jm-tabel,.jm-tabel tbody,.jm-tabel tr,.jm-tabel td{display:block}
-  .jm-tabel tr{margin-bottom:10px;border:1px solid var(--line-cell);border-radius:var(--r-sm);overflow:hidden}
-  .jm-tabel td{display:grid;grid-template-columns:96px minmax(0,1fr);gap:8px;border-top:1px solid var(--line-cell)}
-  .jm-tabel td:first-child{border-top:0}
-  .jm-tabel td::before{content:attr(data-l);font:600 12px/1.5 var(--display);color:var(--ink2)}
-  .jm-tabel td.jm-nowrap{white-space:normal}
+              }
+
+/* ===== KOMPONEN BERSAMA (pakai class ini, jangan buat sendiri) =====
+   TABEL  : <div class="jm-gulir"><table class="jm-tabel"> thead hijau satu gradien, garis lime 2px, th tengah huruf kapital;
+            td angka: class "jm-num" (rata kanan, tabular); identitas dua baris: <span class="jm-id"><b>Nama</b><small>meta</small></span>;
+            urut: <th aria-sort="none|ascending|descending"><button class="jm-urut">Judul</button></th>; layar < 768: baris jadi kartu
+            bila td punya data-label="Kolom" (atau tambahkan class jm-tabel--kartu pada tabel).
+   FILTER : <div class="jm-saring"> berisi .jm-cari (2 kolom), .jm-pil-pilih (label.jm-pil-pilih > ikon + select), .jm-hapus (tautan teks, atribut hidden bila tak ada filter),
+            .jm-hitung (pil abu kecil di kanan). Helper: /inti/komponen.js (cariHtml, pilihHtml, hapusHtml, hitungHtml).
+   TAB    : <div class="jm-tab" role="tablist"><button role="tab" aria-selected>ikon + label</button></div> atau <a> untuk antarhalaman; aktif = garis hijau.
+   SUBNAV : <nav class="jm-subnav"> tautan antarhalaman satu bagian (Insight, Wilayah, Rantai, ASEAN); bangun dengan subnav() di /inti/komponen.js.
+   WADAH  : class jm-wadah (gaya.css). */
+
+/* ---- tabel ---- */
+.jm-gulir{overflow-x:auto;-webkit-overflow-scrolling:touch;border:1px solid var(--line-cell);border-radius:var(--r)}
+.jm-tabel{width:100%;border-collapse:separate;border-spacing:0;font-size:14px;font-variant-numeric:tabular-nums}
+.jm-tabel thead{background:linear-gradient(90deg,var(--brand),var(--brand2))}
+.jm-tabel th{padding:12px 14px;background:transparent;color:var(--on-brand);font:600 11.5px/1.3 var(--font);letter-spacing:.09em;text-transform:uppercase;text-align:center;white-space:nowrap;border-bottom:2px solid var(--meti-lime)}
+.jm-tabel thead th:first-child{border-top-left-radius:calc(var(--r) - 1px)}.jm-tabel thead th:last-child{border-top-right-radius:calc(var(--r) - 1px)}
+.jm-tabel td{padding:11px 14px;border-bottom:1px solid var(--line-cell);vertical-align:top;text-align:left}
+.jm-tabel tbody tr:last-child td{border-bottom:0}
+.jm-tabel tbody tr:nth-child(even) td{background:color-mix(in srgb,var(--surface) 55%,transparent)}
+.jm-tabel tbody tr:hover td{background:var(--soft-hijau)}
+.jm-tabel td.jm-num,.jm-tabel td[data-num]{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+.jm-tabel td.jm-nowrap{white-space:nowrap}
+.jm-id b{display:block;font-weight:600}.jm-id small,.jm-tabel small{display:block;color:var(--ink2);font-size:var(--t-kecil)}
+.jm-urut{display:inline-flex;align-items:center;gap:6px;padding:0;border:0;background:none;color:inherit;font:inherit;letter-spacing:inherit;text-transform:inherit;cursor:pointer}
+.jm-urut::after{content:"";width:8px;height:12px;background:currentColor;opacity:.55;clip-path:polygon(50% 0,100% 40%,0 40%,50% 0,0 60%,100% 60%,50% 100%)}
+th[aria-sort="ascending"] .jm-urut::after{opacity:1;clip-path:polygon(50% 0,100% 100%,0 100%)}
+th[aria-sort="descending"] .jm-urut::after{opacity:1;clip-path:polygon(0 0,100% 0,50% 100%)}
+.jm-urut:focus-visible{outline:2px solid var(--meti-lime);outline-offset:3px}
+@media (max-width:767px){
+  .jm-tabel--kartu,.jm-tabel:has(td[data-label]),.jm-tabel:has(td[data-l]){display:block}
+  .jm-gulir:has(.jm-tabel--kartu),.jm-gulir:has(td[data-label]),.jm-gulir:has(td[data-l]){border:0}
+  .jm-tabel--kartu thead,.jm-tabel:has(td[data-label]) thead,.jm-tabel:has(td[data-l]) thead{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+  .jm-tabel--kartu tbody,.jm-tabel--kartu tr,.jm-tabel--kartu td,.jm-tabel:has(td[data-label]) tbody,.jm-tabel:has(td[data-label]) tr,.jm-tabel:has(td[data-label]) td,.jm-tabel:has(td[data-l]) tbody,.jm-tabel:has(td[data-l]) tr,.jm-tabel:has(td[data-l]) td{display:block}
+  .jm-tabel--kartu tr,.jm-tabel:has(td[data-label]) tr,.jm-tabel:has(td[data-l]) tr{margin-bottom:10px;border:1px solid var(--line-cell);border-radius:var(--r-sm);overflow:hidden;background:var(--card)}
+  .jm-tabel--kartu td,.jm-tabel:has(td[data-label]) td,.jm-tabel:has(td[data-l]) td{display:grid;grid-template-columns:96px minmax(0,1fr);gap:8px;border-bottom:0;border-top:1px solid var(--line-cell);background:transparent!important;text-align:left}
+  .jm-tabel--kartu td:first-child,.jm-tabel:has(td[data-label]) td:first-child,.jm-tabel:has(td[data-l]) td:first-child{border-top:0}
+  .jm-tabel--kartu td::before,.jm-tabel:has(td[data-label]) td::before{content:attr(data-label);font:600 12px/1.5 var(--display);color:var(--ink2)}
+  .jm-tabel:has(td[data-l]) td::before{content:attr(data-l);font:600 12px/1.5 var(--display);color:var(--ink2)}
 }
+
+/* ---- baris filter ---- */
+.jm-saring{display:grid;grid-template-columns:repeat(auto-fit,minmax(0,1fr));grid-auto-flow:column;gap:10px;align-items:center;width:100%}
+.jm-saring>*{min-width:0}
+.jm-cari{grid-column:span 2;display:flex;align-items:center;gap:10px;min-height:var(--target);padding:0 16px;border:1px solid var(--line-ctl);border-radius:var(--r-pil);background:var(--card)}
+.jm-cari .jm-ik{color:var(--ink2);flex:none}
+.jm-cari input{flex:1;min-width:0;border:0;background:none;color:var(--ink);font:400 15px/1.3 var(--font);outline:none}
+.jm-cari:focus-within{border-color:var(--accent);box-shadow:0 0 0 3px color-mix(in srgb,var(--accent) 18%,transparent)}
+.jm-pil-pilih{position:relative;display:flex;align-items:center;min-height:var(--target);border:1px solid var(--line-ctl);border-radius:var(--r-pil);background:var(--card);color:var(--ink)}
+.jm-pil-pilih>.jm-ik{position:absolute;left:14px;pointer-events:none;color:var(--ink2)}
+.jm-pil-pilih select{appearance:none;-webkit-appearance:none;width:100%;min-height:calc(var(--target) - 2px);padding:0 38px 0 42px;border:0;border-radius:var(--r-pil);background:none;color:inherit;font:600 14px/1 var(--font);text-overflow:ellipsis;cursor:pointer}
+.jm-pil-pilih::after{content:"";position:absolute;right:16px;width:8px;height:8px;border-right:2px solid var(--ink2);border-bottom:2px solid var(--ink2);transform:rotate(45deg) translateY(-2px);pointer-events:none}
+.jm-pil-pilih:focus-within{border-color:var(--accent);box-shadow:0 0 0 3px color-mix(in srgb,var(--accent) 18%,transparent)}
+.jm-hapus{display:inline-flex;align-items:center;gap:6px;justify-self:start;border:0;background:none;color:var(--accent);font:600 13px/1 var(--font);cursor:pointer;padding:8px 4px;text-decoration:underline;text-underline-offset:3px}
+.jm-hapus[hidden]{display:none}
+.jm-hitung{justify-self:end;padding:6px 12px;border-radius:var(--r-pil);background:var(--surface);border:1px solid var(--line-cell);color:var(--ink2);font:500 12.5px/1 var(--font);white-space:nowrap}
+@media (max-width:600px){.jm-saring{grid-auto-flow:row;grid-template-columns:repeat(2,minmax(0,1fr))}.jm-cari,.jm-hapus,.jm-hitung{grid-column:1/-1}.jm-hitung{justify-self:start}}
+
+/* ---- tab: ikon + label, garis hijau untuk aktif, tanpa garis tegak ---- */
+.jm-tab{display:flex;gap:2px;border-bottom:1px solid var(--line);overflow-x:auto;scrollbar-width:thin}
+.jm-tab :is(button,a){display:inline-flex;align-items:center;gap:8px;min-height:var(--target);padding:0 16px;border:0;border-bottom:3px solid transparent;margin-bottom:-1px;background:none;color:var(--ink2);font:600 14px/1 var(--font);text-decoration:none;white-space:nowrap;cursor:pointer;border-radius:var(--r-sm) var(--r-sm) 0 0}
+.jm-tab :is(button,a) .jm-ik{width:18px;height:18px;flex:none}
+.jm-tab :is(button,a):hover{background:var(--surface);color:var(--ink)}
+.jm-tab :is(button[aria-selected="true"],a[aria-current="page"]){color:var(--accent);border-bottom-color:var(--accent)}
+.jm-tab :is(button,a):focus-visible{outline:2px solid var(--fokus);outline-offset:-2px}
+
+/* ---- subnav antarhalaman (Insight, Wilayah, Rantai, ASEAN) ---- */
+.jm-subnav{background:var(--card);border-bottom:1px solid var(--line)}
+.jm-subnav .jm-tab{max-width:var(--maks);margin-inline:auto;padding-inline:clamp(16px,4vw,32px);border-bottom:0}

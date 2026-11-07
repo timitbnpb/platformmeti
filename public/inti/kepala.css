@@ -14,10 +14,9 @@ nav.tabs a:hover{background:var(--surface)}
 nav.tabs a[aria-current="page"]{background:var(--soft-hijau);color:var(--accent);font-weight:600}
 nav.tabs.buka{display:flex;flex-direction:column;position:absolute;top:var(--top);left:0;right:0;padding:8px var(--gut) 12px;background:var(--paper);border-bottom:1px solid var(--line);box-shadow:var(--shadow-lg)}
 .jm-sisi{margin-left:auto;display:flex;align-items:center;gap:4px}
-.jm-bahasa{display:flex;align-items:center;gap:2px}
-.jm-bahasa button{min-width:var(--target);height:var(--target);padding:0 6px;border:0;border-radius:var(--r-sm);background:none;color:var(--ink2);font:600 13px/1 var(--display);cursor:pointer}
-.jm-bahasa button[aria-pressed="true"]{background:var(--accent);color:var(--on-accent)}
-.jm-bahasa button:not([aria-pressed="true"]):hover{background:var(--surface)}
+.jm-bulat{width:36px;height:36px;min-width:36px;border-radius:50%;border:1px solid var(--line);background:var(--paper)}
+.jm-bulat .jm-ik{width:20px;height:20px}
+.jm-bahasa svg{display:block}
 .jm-sisi .jm-teks{display:none}
 @media (max-width:479px){.jm-merek span{display:none}}
 @media (min-width:600px){.jm-sisi .jm-teks{display:inline;margin-left:6px;font:500 14px/1 var(--font)}.jm-sisi .iconbtn.jm-akun{width:auto;padding:0 10px}}
@@ -49,5 +48,10 @@ nav.tabs a,.jm-grup-tbl{background:transparent}
 nav.tabs a:not([aria-current="page"]):hover,.jm-grup-tbl:not([aria-current="page"]):hover{background:var(--surface)}
 nav.tabs a .jm-ik,.jm-grup-tbl .jm-ik,.jm-sub a .jm-ik{width:18px;height:18px;flex:none;color:currentColor}
 .jm-sub a{gap:10px}
-/* 1200-1366: label Insight dan Kalender jadi ikon saja (tooltip lewat title) agar satu baris */
-@media (min-width:1200px) and (max-width:1366px){nav.tabs a[data-kunci="nav.insight"] span,nav.tabs a[data-kunci="nav.kalender"] span{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}}
+/* 1200-1366: rapatkan jarak agar semua label tetap terbaca */
+@media (min-width:1200px) and (max-width:1366px){nav.tabs{margin-left:4px;gap:0}nav.tabs a,.jm-grup-tbl{padding:0 8px;gap:6px;font-size:13px}.jm-merek span{display:none}}
+
+/* subnav bagian Insight berada tepat di bawah header tetap */
+.jm-subnav{position:relative;z-index:1}
+.jm-sub a{white-space:nowrap}
+@media (min-width:1200px){.jm-sub{min-width:210px}}

@@ -17,7 +17,7 @@
 </head>
 <body>
 <header class="top" id="kepala"></header>
-<main class="jm-halaman jm-an">
+<main class="jm-halaman jm-wadah jm-an">
 <div id="daftar">
 <section class="jm-hero" aria-labelledby="judul">
   <h1 id="judul" data-i18n="wl.judul">Wilayah: seberapa jauh realisasi dari potensi?</h1>
@@ -25,22 +25,24 @@
   <p id="jawab"></p>
 </section>
 <section id="kartu" class="jm-an-kartu-baris" aria-label="Ringkasan" data-i18n-attr="aria-label:an.ringkasan"></section>
-<section class="jm-kartu" aria-labelledby="h-peta">
-  <h2 id="h-peta" data-i18n="wl.peta">Peta 38 provinsi</h2>
-  <div class="jm-an-sakelar" role="group" aria-label="Metrik" data-i18n-attr="aria-label:wl.metrik">
-    <button type="button" data-m="terpasang" aria-pressed="true" data-i18n="wl.m.terpasang">Kapasitas EBT terpasang</button>
-    <button type="button" data-m="rasio" aria-pressed="false" data-i18n="wl.m.rasio">Rasio elektrifikasi</button>
-    <button type="button" data-m="panasbumi" aria-pressed="false" data-i18n="wl.m.panasbumi">Potensi panas bumi</button>
-    <button type="button" data-m="proyek" aria-pressed="false" data-i18n="wl.m.proyek">Jumlah proyek</button>
-  </div>
+<section class="jm-kartu jm-an-wadah" aria-labelledby="h-peta">
+  <header class="jm-an-kepala">
+    <div><h2 id="h-peta" data-i18n="wl.peta">Peta 38 provinsi</h2><p class="jm-temuan" id="temuan-peta"></p></div>
+    <div class="jm-tab" role="tablist" aria-label="Metrik" data-i18n-attr="aria-label:wl.metrik">
+      <button type="button" role="tab" data-m="terpasang" aria-selected="true" data-i18n="wl.m.terpasang">Kapasitas EBT terpasang</button>
+      <button type="button" role="tab" data-m="rasio" aria-selected="false" data-i18n="wl.m.rasio">Rasio elektrifikasi</button>
+      <button type="button" role="tab" data-m="panasbumi" aria-selected="false" data-i18n="wl.m.panasbumi">Potensi panas bumi</button>
+      <button type="button" role="tab" data-m="proyek" aria-selected="false" data-i18n="wl.m.proyek">Jumlah proyek</button>
+    </div>
+  </header>
   <div class="jm-an-petabagian">
     <div id="peta" class="jm-an-peta" role="region" aria-label="Peta" data-i18n-attr="aria-label:wl.peta_label"></div>
     <div id="legenda" class="jm-an-legenda"></div>
   </div>
-  <p id="peta-info" class="jm-bantu"></p>
+  <div id="peta-info"></div>
 </section>
-<section class="jm-kartu" aria-labelledby="h-urut">
-  <h2 id="h-urut" data-i18n="wl.urutan">Peringkat provinsi</h2>
+<section class="jm-kartu jm-an-wadah" aria-labelledby="h-urut">
+  <header class="jm-an-kepala"><div><h2 id="h-urut" data-i18n="wl.urutan">Peringkat provinsi</h2><p class="jm-temuan" id="temuan-urut"></p></div></header>
   <div id="urutan"></div>
 </section>
 </div>
@@ -48,10 +50,10 @@
   <p><a href="/wilayah" data-i18n="wl.semua">Semua provinsi</a></p>
   <div id="profil-isi"></div>
 </div>
-<section class="jm-kartu" aria-labelledby="h-cara">
+<section class="jm-kartu jm-an-wadah" aria-labelledby="h-cara">
   <details open><summary id="h-cara" data-i18n="an.cara">Cara menghitung</summary><div class="jm-an-cara" id="cara"></div></details>
 </section>
-<section class="jm-kartu" aria-labelledby="h-kutip">
+<section class="jm-kartu jm-an-wadah" aria-labelledby="h-kutip">
   <h2 id="h-kutip" data-i18n="an.kutip">Cara mengutip</h2>
   <p id="kutip"></p>
 </section>
