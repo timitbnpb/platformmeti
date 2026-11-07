@@ -78,6 +78,19 @@ Penulis kode bukan pengulasnya. Verifier = subagent baru tanpa riwayat pekerjany
 
 Fan-out yang membaca aman di tree yang sama; yang menulis pakai `isolation: "worktree"`. Commit dengan path spesifik, jangan `git add -A`.
 
+## 5. Alur desain dan review UI/UX (wajib untuk tiap layar)
+
+Perintah pemilik 7 Nov 2026: semua layar sesuai selera pemilik dan UI/UX terbaik, pakai semua skill UI/UX, lalu direview.
+
+1. **Arah.** `docs/perencanaan/DESIGN-SYSTEM.md` adalah DESIGN.md proyek ini dan menang atas skill mana pun (gaya visual METI, K4). Di atasnya berlaku selera pemilik `~/.claude/WEBSITE.md` §1 (detail dan konsistensi di atas segalanya, angka benar dan bisa dicek, premium tapi tenang, jujur, light + dark setara) dan checklist §2. Skill `design-taste-frontend` (app-screens untuk direktori/admin, halaman publik untuk beranda/sensus/profil) dan `frontend-design` dipakai untuk mengisi celah, bukan mengganti token METI.
+2. **Data token.** `ui-ux-pro-max` hanya bila DS punya celah (mis. skala jarak, pola tabel padat).
+3. **Gerak.** Tanpa React: CSS transition/WAAPI, komposit saja (transform, opacity), `prefers-reduced-motion` dihormati (skill `animate`, `animation-performance`). Klik tak boleh membekukan layar (`~/.claude/INP.md`).
+4. **Lihat.** `playwright-cli` atau browser bawaan: tangkapan 1440 dan 375, terang dan gelap, ID dan EN; perbaiki lalu ulangi.
+5. **Audit.** `web-design-guidelines` atas berkas yang berubah, `break-ui` (data terburuk: nama panjang, kosong, angka ekstrem), `design:accessibility-review` (WCAG AA, kontras DS §2.1, fokus, aria).
+6. **Review terpisah** oleh `peninjau-bersih` (konteks bersih, tidak menulis kodenya) dengan `emil-design-eng` + `design:design-critique`; temuan diperbaiki pengerja `layar`, lalu ulang langkah 4.
+
+Layar dinyatakan selesai hanya bila langkah 4 sampai 6 sudah jalan dan tangkapannya disimpan di `tests/layar/tangkapan/` (tidak di-commit bila berisi data nyata).
+
 ## 6. Review
 
 | Permukaan berubah | Pengulas |
