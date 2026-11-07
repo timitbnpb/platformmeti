@@ -4,7 +4,9 @@
   "nama": "Modul surya apung (contoh)",
   "ringkasan": "Ringkasan contoh dua kalimat untuk menilai tampilan kartu.",
   "jenis": "modul",
-  "sektor": "surya",
+  "sektor": [
+   "surya"
+  ],
   "pembuat": [
    {
     "nama": "Pembuat Contoh",
@@ -39,7 +41,9 @@
   "nama": "Baterai natrium lokal (contoh)",
   "ringkasan": "Ringkasan contoh dua kalimat untuk menilai tampilan kartu.",
   "jenis": "baterai",
-  "sektor": "penyimpanan",
+  "sektor": [
+   "penyimpanan"
+  ],
   "pembuat": [
    {
     "nama": "Pembuat Contoh",
@@ -74,7 +78,9 @@
   "nama": "Turbin angin kecepatan rendah (contoh)",
   "ringkasan": "Ringkasan contoh dua kalimat untuk menilai tampilan kartu.",
   "jenis": "turbin",
-  "sektor": "bayu",
+  "sektor": [
+   "bayu"
+  ],
   "pembuat": [
    {
     "nama": "Pembuat Contoh",
@@ -109,7 +115,9 @@
   "nama": "Pengering biomassa (contoh)",
   "ringkasan": "Ringkasan contoh dua kalimat untuk menilai tampilan kartu.",
   "jenis": "alat",
-  "sektor": "bioenergi",
+  "sektor": [
+   "bioenergi"
+  ],
   "pembuat": [
    {
     "nama": "Pembuat Contoh",
@@ -144,7 +152,9 @@
   "nama": "Pemantau jaringan mikro (contoh)",
   "ringkasan": "Ringkasan contoh dua kalimat untuk menilai tampilan kartu.",
   "jenis": "sistem informasi",
-  "sektor": "jaringan",
+  "sektor": [
+   "jaringan"
+  ],
   "pembuat": [
    {
     "nama": "Pembuat Contoh",

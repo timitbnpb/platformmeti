@@ -1,4 +1,4 @@
-// direktori.js (JM-C04): rute /api/direktori/* hasil port src/akademisi.js. Semua rute LOGIN (anggota ke atas); tamu 401.
+// direktori.js (JM-C04): rute /api/direktori/* hasil port src/akademisi.js. Semua rute LOGIN (anggota ke atas; tamu 401) kecuali logo (PB). Kontak dari lapis pengurus.
 // Data dari R2 potret/anggota/<nama>.json; bila potret belum ada (atau R2 belum aktif) dipakai data contoh fiktif data/contoh/*.json
 // (KP K15: tanpa tombol dummy; fixture saja). D1 hanya lewat hak.js (laju). Tanpa impor dari worker.js (siklus).
 import * as hak from "./hak.js";
@@ -35,18 +35,18 @@ export const KATEGORI_LEMBAGA = new Set(["pemerintah", "bumn", "swasta", "asosia
 export const DATA_DIREKTORI = ["riset", "pusat_studi", "aset_riset", "lembaga", "proyek_mitra", "inovasi", "sistem_data", "tokoh", "dokumen", "berita", "pendanaan", "temuan_riset", "jejak_isu", "buku", "jurnal", "graf", "strategis", "afiliasi", "kolaborasi", "diaspora", "baru"];
 
 // Potret anggota dari R2; kosong = contoh. Mengembalikan { data (objek), contoh, diperbarui } atau null.
-async function potret(env, nama) {
-  const o = env.BERKAS ? await env.BERKAS.get(`potret/anggota/${nama}.json`).catch(() => null) : null;
+async function potret(env, nama, lapis = "anggota") {
+  const o = env.BERKAS ? await env.BERKAS.get(`potret/${lapis}/${nama}.json`).catch(() => null) : null;
   if (o) return { data: await o.json(), contoh: false, diperbarui: o.uploaded.toISOString() };
   return nama in CONTOH ? { data: CONTOH[nama], contoh: true, diperbarui: null } : null;
 }
 const kirim = (p) => json(p.data, 200, { ...PRIVAT, ...(p.contoh ? { "x-contoh": "1" } : { "x-diperbarui": p.diperbarui }) });
-const adaData = async (env, nama) => { const p = await potret(env, nama); if (!p) throw new Galat("layanan"); return p; };
+const adaData = async (env, nama, lapis) => { const p = await potret(env, nama, lapis); if (!p) throw new Galat("layanan"); return p; };
 
 const induk = async (req, env, ctx, p) => { perlu(p, ANGGOTA); return kirim(await adaData(env, "induk")); };
 const kampus = async (req, env, ctx, p) => { perlu(p, ANGGOTA); return kirim(await adaData(env, "kampus")); };
 // Kontak orang: hanya pengurus ke atas (anggota 403; layar menyembunyikan kontak).
-const kontak = async (req, env, ctx, p) => { perlu(p, PENGURUS); return kirim(await adaData(env, "kontak")); };
+const kontak = async (req, env, ctx, p) => { perlu(p, PENGURUS); return kirim(await adaData(env, "kontak", "pengurus")); };
 const dataBaca = async (req, env, ctx, p) => {
   perlu(p, ANGGOTA);
   const nama = p.params.nama;
@@ -165,7 +165,7 @@ const banyak = (q) => { const nn = q.get("n"), n = nn === null ? 6 : Number(nn);
 async function terdekat(req, env, ctx, p) {
   const akun = perlu(p, ANGGOTA), q = new URL(req.url).searchParams, sektor = q.get("sektor") || "", prov = q.get("prov"), c = koordSah(q), n = banyak(q);
   if (!SEKTOR_SAH.has(sektor) || !c || n === null || (prov !== null && !/^\d{2}$/.test(prov))) throw new Galat("masukan_salah");
-  const [i, k, kt] = await Promise.all([adaData(env, "induk"), adaData(env, "kampus"), PENGURUS.includes(akun.peran) ? potret(env, "kontak") : null]);
+  const [i, k, kt] = await Promise.all([adaData(env, "induk"), adaData(env, "kampus"), PENGURUS.includes(akun.peran) ? potret(env, "kontak", "pengurus") : null]);
   let tanpa = 0; const cocok = [];
   for (const o of i.data.orang || []) {
     if (!(o[3] || []).includes(sektor)) continue;
@@ -245,6 +245,21 @@ async function logo(req, env, ctx, p) {
 // Foto orang: bawaan tidak ada (KPV 3.1).
 const foto = async (req, env, ctx, p) => { perlu(p, ANGGOTA); throw new Galat("tidak_ditemukan"); };
 
+// Analisa keahlian: sampai 200 karya terbaru penulis (judul, topik, kata kunci); klien menyimpulkannya (fungsi_direktori.js).
+// Lewat Worker supaya CSP connect-src klien tetap 'self'.
+async function keahlian(req, env, ctx, p) {
+  perlu(p, ANGGOTA);
+  const id = p.params.id;
+  if (!ID_OA.test(id)) throw new Galat("tidak_ditemukan");
+  return cacheTepi(req, ctx, async () => {
+    const u = oa(env, new URL("https://api.openalex.org/works"));
+    u.searchParams.set("filter", "author.id:" + id); u.searchParams.set("select", "id,title,type,publication_year,topics,keywords");
+    u.searchParams.set("sort", "publication_year:desc"); u.searchParams.set("per-page", "200");
+    try { const r = await ambil(u); if (!r.ok) { r.body?.cancel(); return gagal("layanan", 502); } const j = await r.json(); return json({ results: j.results || [] }, 200, PRIVAT); }
+    catch (e) { return gagal("layanan", 502); }
+  }, 86400);
+}
+
 export const rute = {
   "GET /api/direktori": induk,
   "GET /api/direktori/kampus": kampus,
@@ -252,6 +267,7 @@ export const rute = {
   "GET /api/direktori/data/:nama": dataBaca,
   "GET /api/direktori/karya/:id": karya,
   "GET /api/direktori/riset/:id": riset,
+  "GET /api/direktori/keahlian/:id": keahlian,
   "POST /api/direktori/ringkasan": ringkasan,
   "GET /api/direktori/terdekat": terdekat,
   "GET /api/direktori/lembaga/terdekat": lembagaTerdekat,

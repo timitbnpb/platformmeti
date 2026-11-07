@@ -7,17 +7,17 @@ body{padding-top:var(--top);overflow-x:hidden}
 .ak{max-width:1240px;margin:-64px auto 0;padding:0 20px 64px;display:grid;grid-template-columns:minmax(0,1fr);gap:20px;position:relative}
 /* kepala halaman: pita navy situs selebar layar; angka ringkas dilebur ke satu kalimat (tanpa kotak KPI) */
 /* kepala halaman: pita navy selebar layar, judul kiri, deretan angka kanan (tipografi, tanpa kotak), garis kontur samar */
-.ak-kepala{background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='260' viewBox='0 0 600 260' fill='none' stroke='%23ffffff' stroke-opacity='.07' stroke-width='1.2'%3E%3Cpath d='M-20 210c80-40 150 10 230-30s150-90 250-60 120 50 160 30'/%3E%3Cpath d='M-20 180c90-45 160 5 240-35s150-85 240-60 130 45 170 25'/%3E%3Cpath d='M-20 150c95-50 170 0 250-40s140-75 230-55 140 40 180 20'/%3E%3Cpath d='M-20 120c100-50 180-5 260-45s130-65 220-50 150 35 190 15'/%3E%3Cpath d='M-20 90c110-50 190-10 270-50s120-55 210-45 160 30 200 10'/%3E%3Cpath d='M-20 60c120-50 200-15 280-55s110-45 200-40 170 25 210 5'/%3E%3C/svg%3E") right -40px bottom 40px/720px auto no-repeat,radial-gradient(120% 140% at 85% -20%,oklch(52% .12 252 / .5),transparent 60%),linear-gradient(135deg,oklch(40% .11 255),oklch(24% .07 257));color:var(--paper);padding:40px 20px 100px}
+.ak-kepala{background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='260' viewBox='0 0 600 260' fill='none' stroke='%23ffffff' stroke-opacity='.07' stroke-width='1.2'%3E%3Cpath d='M-20 210c80-40 150 10 230-30s150-90 250-60 120 50 160 30'/%3E%3Cpath d='M-20 180c90-45 160 5 240-35s150-85 240-60 130 45 170 25'/%3E%3Cpath d='M-20 150c95-50 170 0 250-40s140-75 230-55 140 40 180 20'/%3E%3Cpath d='M-20 120c100-50 180-5 260-45s130-65 220-50 150 35 190 15'/%3E%3Cpath d='M-20 90c110-50 190-10 270-50s120-55 210-45 160 30 200 10'/%3E%3Cpath d='M-20 60c120-50 200-15 280-55s110-45 200-40 170 25 210 5'/%3E%3C/svg%3E") right -40px bottom 40px/720px auto no-repeat,radial-gradient(120% 140% at 85% -20%,oklch(52% .12 252 / .5),transparent 60%),linear-gradient(135deg,oklch(40% .11 255),oklch(24% .07 257));color:var(--on-brand);padding:40px 20px 100px}
 .ak-kepala-isi{max-width:1240px;margin:0 auto;display:flex;flex-wrap:wrap;gap:24px 40px;align-items:flex-end;justify-content:center;text-align:center}
-.ak-kepala h1{margin:0;width:100%;font-family:var(--display);font-size:clamp(30px,4.2vw,44px);line-height:1.05;font-weight:800;letter-spacing:-.025em;color:var(--paper)}
+.ak-kepala h1{margin:0;width:100%;font-family:var(--display);font-size:clamp(30px,4.2vw,44px);line-height:1.05;font-weight:800;letter-spacing:-.025em;color:var(--on-brand)}
 .ak-ringkas{display:grid;grid-template-columns:repeat(4,auto);justify-content:center;text-align:left;width:100%;border-top:1px solid oklch(100% 0 0 / .14);padding-top:18px}
 .ak-ringkas:empty{display:none}
 @media (max-width:1000px){.ak-ringkas{grid-template-columns:repeat(2,auto);row-gap:16px}.ak-ringkas div:nth-child(3){padding-left:0;border-left:0}}
 .ak-ringkas div{display:grid;grid-template-columns:auto 1fr;grid-template-rows:auto auto;column-gap:12px;row-gap:4px;align-items:center;padding:0 32px;border-left:1px solid oklch(100% 0 0 / .14);min-width:0}
 .ak-ringkas div:first-child{padding-left:0;border-left:0}
-.ak-ringkas svg{grid-row:1/3;width:40px;height:40px;padding:9px;border-radius:12px;fill:none;stroke:var(--paper);stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;background:oklch(100% 0 0 / .1)}
-.ak-ringkas b{font-family:var(--display);font-size:clamp(22px,2.4vw,30px);line-height:1;font-weight:800;letter-spacing:-.02em;color:var(--paper);font-variant-numeric:tabular-nums}
-.ak-ringkas span{font-size:12.5px;line-height:1.3;color:var(--paper);white-space:nowrap}
+.ak-ringkas svg{grid-row:1/3;width:40px;height:40px;padding:9px;border-radius:12px;fill:none;stroke:var(--on-brand);stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;background:oklch(100% 0 0 / .1)}
+.ak-ringkas b{font-family:var(--display);font-size:clamp(22px,2.4vw,30px);line-height:1;font-weight:800;letter-spacing:-.02em;color:var(--on-brand);font-variant-numeric:tabular-nums}
+.ak-ringkas span{font-size:12.5px;line-height:1.3;color:var(--on-brand);white-space:nowrap}
 .ak-panel{background:var(--card);border:1px solid var(--line);border-radius:var(--r);box-shadow:var(--shadow);padding:24px}
 .ak-kosong{display:grid;gap:10px;justify-items:start}
 .ak-kosong p{color:var(--ink2)}
@@ -53,7 +53,7 @@ body{padding-top:var(--top);overflow-x:hidden}
 .ak-kdaftar button{display:flex;align-items:center;gap:10px;font:inherit;font-size:14px;font-weight:600;line-height:1.3;color:var(--ink);background:transparent;border:0;border-radius:10px;padding:6px 10px;cursor:pointer;text-align:left;min-height:38px}
 .ak-kdaftar button:hover{background:var(--surface)}
 .ak-kdaftar button[aria-selected="true"]{background:var(--soft-biru);color:var(--data5);font-weight:800;box-shadow:inset 3px 0 0 var(--data5)}
-:root[data-theme="dark"] .ak-kdaftar button[aria-selected="true"]{background:oklch(35% .08 255);color:var(--paper)}
+:root[data-theme="dark"] .ak-kdaftar button[aria-selected="true"]{background:oklch(35% .08 255);color:var(--on-brand)}
 .ak-kdaftar button > span:not(.ak-klogo):not(.ak-bw):not(.ak-lgo):not(.ak-lw){flex:1;min-width:0}
 .ak-kdaftar button small{margin-left:auto;flex:none;color:var(--ink2);font-weight:700;font-variant-numeric:tabular-nums;font-size:12px;background:var(--surface);border-radius:999px;padding:2px 9px}
 .ak-kdaftar button[aria-selected="true"] small{background:var(--paper);color:var(--data5)}
@@ -78,8 +78,8 @@ body{padding-top:var(--top);overflow-x:hidden}
 .ak-seg button{transition:background-color .15s,color .15s;display:inline-flex;align-items:center;justify-content:center;gap:6px}
 .ak-seg button .ak-ikon{width:15px;height:15px;stroke:currentColor}
 .ak-seg button:hover:not([aria-pressed="true"]){color:var(--ink);background:var(--surface)}
-.ak-seg button[aria-pressed="true"]{background:var(--brand);color:var(--paper);box-shadow:0 1px 3px oklch(25% .07 256 / .25)}
-.ak button:focus,.ak-lembar button:focus{outline:none}
+.ak-seg button[aria-pressed="true"]{background:var(--brand);color:var(--on-brand);box-shadow:0 1px 3px oklch(25% .07 256 / .25)}
+.ak button:focus:not(:focus-visible),.ak-lembar button:focus:not(:focus-visible){outline:2px solid var(--fokus);outline-offset:2px}
 .ak button:focus-visible,.ak-lembar button:focus-visible,.ak a:focus-visible,.ak-lembar a:focus-visible{outline:2px solid var(--brand2);outline-offset:2px}
 
 /* sektor */
@@ -95,9 +95,9 @@ body{padding-top:var(--top);overflow-x:hidden}
 .ak-chip button[data-r=""]{padding:0 14px}
 .ak-chip button:hover{border-color:var(--ink2)}
 .ak-chip button span{font-size:11px;line-height:20px;font-weight:700;color:var(--ink2);background:var(--surface);border-radius:999px;padding:0 6px;font-variant-numeric:tabular-nums}
-.ak-chip button[aria-pressed="true"]{background:var(--brand);border-color:var(--brand);color:var(--paper)}
-.ak-chip button[aria-pressed="true"] span{color:var(--paper);background:oklch(100% 0 0 / .18)}
-.ak-chip button[aria-pressed="true"] .ak-ikon{stroke:var(--paper)}
+.ak-chip button[aria-pressed="true"]{background:var(--brand);border-color:var(--brand);color:var(--on-brand)}
+.ak-chip button[aria-pressed="true"] span{color:var(--on-brand);background:oklch(100% 0 0 / .18)}
+.ak-chip button[aria-pressed="true"] .ak-ikon{stroke:var(--on-brand)}
 .ak-jumlah{justify-self:end;font-size:12.5px;font-weight:600;color:var(--ink2);background:var(--card);border:1px solid var(--line);border-radius:999px;padding:5px 12px;margin-bottom:-6px!important;font-variant-numeric:tabular-nums;scroll-margin-top:calc(var(--top) + 16px)}
 .ak-jumlah:empty{display:none}
 .ak-jumlah b{color:var(--f2);font-weight:800}
@@ -132,7 +132,7 @@ body{padding-top:var(--top);overflow-x:hidden}
 /* kartu galeri: sampul 4:5, nama di atas gradasi gelap, metrik di bawah */
 .ak-hasil .ak-orang{padding:16px 14px 14px;gap:12px;border-radius:20px}
 .ak-lencana{display:flex;gap:5px}
-.ak-lencana em{font-style:normal;font-size:10.5px;line-height:16px;font-weight:800;letter-spacing:.04em;color:var(--paper);border-radius:999px;padding:1px 8px}
+.ak-lencana em{font-style:normal;font-size:10.5px;line-height:16px;font-weight:800;letter-spacing:.04em;color:var(--on-brand);border-radius:999px;padding:1px 8px}
 .ak-l-sinta{background:var(--data2)}
 .ak-l-diaspora{background:var(--bad)}
 .ak-hasil .ak-orang .ak-kartu-label,.ak-hasil .ak-orang .ak-pil,.ak-hasil .ak-orang .ak-metrik{padding-left:0;padding-right:0}
@@ -143,17 +143,17 @@ body{padding-top:var(--top);overflow-x:hidden}
 .ak-sampul-inisial{position:absolute;inset:0 0 34%;display:grid;place-items:center;font-family:var(--display);font-weight:800;font-size:64px;letter-spacing:-.03em;color:oklch(100% 0 0 / .9)}
 .ak-sampul-ikon{position:absolute;right:-18px;bottom:22%;width:120px;height:120px;fill:none;stroke:oklch(100% 0 0 / .08);stroke-width:1.4}
 .ak-sampul::after{content:"";position:absolute;inset:auto 0 0;height:62%;background:linear-gradient(transparent,oklch(14% .03 257 / .88));pointer-events:none}
-.ak-sampul-pil,.ak-sampul-sinta{position:absolute;top:10px;z-index:1;display:inline-flex;align-items:center;gap:5px;font-style:normal;font-size:11.5px;line-height:18px;font-weight:700;color:var(--paper);border-radius:999px;padding:3px 10px 3px 8px}
+.ak-sampul-pil,.ak-sampul-sinta{position:absolute;top:10px;z-index:1;display:inline-flex;align-items:center;gap:5px;font-style:normal;font-size:11.5px;line-height:18px;font-weight:700;color:var(--on-brand);border-radius:999px;padding:3px 10px 3px 8px}
 .ak-sampul-pil{left:10px;background:color-mix(in oklch,var(--w0) 80%,var(--ink))}
 .ak-sampul-pil .ak-ikon{width:13px;height:13px}
 .ak-sampul-pil small{font-size:10.5px;opacity:.8}
-.ak-sampul-diaspora{position:absolute;top:10px;left:10px;z-index:1;font-style:normal;font-size:10.5px;line-height:18px;font-weight:800;letter-spacing:.04em;color:var(--paper);background:var(--bad);border-radius:999px;padding:3px 9px}
-.ak-dkepala .ak-tanda.diaspora{color:var(--paper);background:var(--bad)}
+.ak-sampul-diaspora{position:absolute;top:10px;left:10px;z-index:1;font-style:normal;font-size:10.5px;line-height:18px;font-weight:800;letter-spacing:.04em;color:var(--on-brand);background:var(--bad);border-radius:999px;padding:3px 9px}
+.ak-dkepala .ak-tanda.diaspora{color:var(--on-brand);background:var(--bad)}
 .ak-sampul-sinta{right:10px;padding:3px 9px;background:var(--data2);letter-spacing:.04em;font-size:10.5px}
-.ak-sampul-nama{position:absolute;left:12px;right:12px;bottom:12px;z-index:1;display:grid;gap:2px;text-align:left;color:var(--paper)}
+.ak-sampul-nama{position:absolute;left:12px;right:12px;bottom:12px;z-index:1;display:grid;gap:2px;text-align:left;color:var(--on-brand)}
 .ak-sampul-nama b{font-family:var(--display);font-size:16px;line-height:1.25;font-weight:800;overflow-wrap:anywhere}
 .ak-sampul-nama small{font-size:12px;color:oklch(100% 0 0 / .78);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
-.ak-sampul-nama i{justify-self:start;margin-top:4px;font-style:normal;font-size:11px;font-weight:700;color:var(--paper);background:oklch(100% 0 0 / .18);border-radius:999px;padding:1px 8px;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.ak-sampul-nama i{justify-self:start;margin-top:4px;font-style:normal;font-size:11px;font-weight:700;color:var(--on-brand);background:oklch(100% 0 0 / .18);border-radius:999px;padding:1px 8px;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .ak-sampul-logo{position:absolute;right:10px;bottom:12px;z-index:1;width:30px;height:30px;padding:3px;border-radius:50%;background:var(--paper);object-fit:contain}
 .ak-sampul-logo ~ .ak-sampul-nama,.ak-sampul:has(.ak-sampul-logo) .ak-sampul-nama{right:48px}
 .ak-hasil .ak-orang .ak-metrik{padding:12px 6px 0}
@@ -161,7 +161,7 @@ body{padding-top:var(--top);overflow-x:hidden}
 
 .ak-kartu-label{display:flex;flex-wrap:wrap;gap:6px;padding:0 4px}
 .ak-kartu-label button,.ak-orang .ak-pil button{font-family:inherit;cursor:pointer;border:0}
-.ak-lbl-inst{max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-size:12px!important;font-style:italic;font-weight:700;color:var(--paper);background:var(--brand);border-radius:999px;padding:4px 11px}
+.ak-lbl-inst{max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-size:12px!important;font-style:italic;font-weight:700;color:var(--on-brand);background:var(--brand);border-radius:999px;padding:4px 11px}
 .ak-lbl-inst:hover{background:var(--brand2)}
 .ak-lbl-prodi{max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-size:11.5px!important;font-weight:700;color:var(--data5);background:var(--soft-biru);border-radius:999px;padding:4px 10px}
 .ak-lbl-prodi:hover{background:var(--line)}
@@ -186,7 +186,7 @@ body{padding-top:var(--top);overflow-x:hidden}
 .ak-hal div{display:flex;flex-wrap:wrap;gap:6px;align-items:center}
 .ak-hal button{font:inherit;font-weight:700;font-size:13.5px;color:var(--ink);background:var(--card);border:1px solid var(--line);border-radius:999px;min-width:36px;min-height:36px;padding:0 12px;cursor:pointer;font-variant-numeric:tabular-nums}
 .ak-hal button:hover:not([disabled]){border-color:var(--ink2)}
-.ak-hal button[aria-current="page"]{background:var(--brand);border-color:var(--brand);color:var(--paper)}
+.ak-hal button[aria-current="page"]{background:var(--brand);border-color:var(--brand);color:var(--on-brand)}
 .ak-hal button[disabled]{color:var(--ink2);opacity:.5;cursor:default}
 .ak-hal-arah{padding:0 14px!important}
 .ak-hal span{color:var(--ink2);padding:0 2px}
@@ -198,21 +198,21 @@ body{padding-top:var(--top);overflow-x:hidden}
 @media (min-width:720px){.ak-lembar{place-items:center}.ak-dlg{border-radius:24px}}
 .ak-x{position:absolute;top:14px;right:14px;z-index:2;width:40px;height:40px;border-radius:50%;border:0;background:oklch(100% 0 0 / .16);cursor:pointer;display:grid;place-items:center}
 .ak-x:hover{background:oklch(100% 0 0 / .26)}
-.ak-x svg{width:18px;height:18px;fill:none;stroke:var(--paper);stroke-width:2;stroke-linecap:round}
-.ak-dkepala{display:grid;gap:16px;padding:30px 24px 22px;color:var(--paper);background:radial-gradient(120% 140% at 90% -30%,oklch(52% .12 252 / .5),transparent 60%),linear-gradient(135deg,oklch(40% .11 255),oklch(24% .07 257))}
+.ak-x svg{width:18px;height:18px;fill:none;stroke:var(--on-brand);stroke-width:2;stroke-linecap:round}
+.ak-dkepala{display:grid;gap:16px;padding:30px 24px 22px;color:var(--on-brand);background:radial-gradient(120% 140% at 90% -30%,oklch(52% .12 252 / .5),transparent 60%),linear-gradient(135deg,oklch(40% .11 255),oklch(24% .07 257))}
 .ak-dk-atas{display:flex;flex-wrap:wrap;gap:14px 18px;align-items:center;padding-right:48px;min-width:0}
 .ak-dk-atas .ak-nama{flex:1 1 220px;min-width:0}
-.ak-dkepala .ak-foto.besar{width:88px;height:88px;font-size:28px;border:3px solid oklch(100% 0 0 / .22);background:oklch(100% 0 0 / .1);color:var(--paper)}
-.ak-dkepala .ak-nama h2{font-size:24px;line-height:1.2;color:var(--paper);letter-spacing:-.01em}
+.ak-dkepala .ak-foto.besar{width:88px;height:88px;font-size:28px;border:3px solid oklch(100% 0 0 / .22);background:oklch(100% 0 0 / .1);color:var(--on-brand)}
+.ak-dkepala .ak-nama h2{font-size:24px;line-height:1.2;color:var(--on-brand);letter-spacing:-.01em}
 .ak-dkepala .ak-nama p{font-size:14px;color:oklch(100% 0 0 / .75)}
-.ak-dkepala .ak-r{background:oklch(100% 0 0 / .12);color:var(--paper);box-shadow:none}
-.ak-dkepala .ak-r .ak-ikon{stroke:var(--paper)}
-.ak-dkepala .ak-prodi{margin:0;background:var(--paper);color:var(--brand,var(--data1))}
+.ak-dkepala .ak-r{background:oklch(100% 0 0 / .12);color:var(--on-brand);box-shadow:none}
+.ak-dkepala .ak-r .ak-ikon{stroke:var(--on-brand)}
+.ak-dkepala .ak-prodi{margin:0;background:var(--on-brand);color:var(--brand)}
 .ak-dkepala .ak-tanda{margin:0;background:oklch(100% 0 0 / .12);color:oklch(100% 0 0 / .85)}
 .ak-dkepala .ak-tanda.ok{color:var(--data4);background:oklch(80% .12 150 / .16)}
 .ak-dkepala .ak-metrik{border-top:0;padding-top:0;flex:none;margin-left:auto;grid-template-columns:repeat(3,auto)}
 .ak-dkepala .ak-metrik div{border-left-color:oklch(100% 0 0 / .16)}
-.ak-dkepala .ak-metrik b,.ak-dkepala .ak-metrik div:first-child b{color:var(--paper);font-size:20px}
+.ak-dkepala .ak-metrik b,.ak-dkepala .ak-metrik div:first-child b{color:var(--on-brand);font-size:20px}
 .ak-dkepala .ak-metrik div{padding:0 14px}
 .ak-dkepala .ak-metrik div:last-child{padding-right:0}
 .ak-dkepala .ak-mlabel{font-size:11.5px}
@@ -252,7 +252,7 @@ body{padding-top:var(--top);overflow-x:hidden}
 .ak-gr-bantu{stroke:var(--gw);stroke-width:1.2;stroke-dasharray:3 3;opacity:0;transition:opacity .12s}
 .ak-gr-sorot{opacity:0;transition:opacity .12s;pointer-events:none}
 .ak-grafik.aktif .ak-gr-bantu,.ak-grafik.aktif .ak-gr-sorot{opacity:1}
-.ak-gr-tip{position:absolute;z-index:2;pointer-events:none;display:grid;gap:2px;min-width:96px;padding:8px 11px;border-radius:10px;background:oklch(22% .05 257);color:var(--paper);font-size:12px;line-height:1.35;box-shadow:0 8px 24px oklch(20% .05 257 / .28);white-space:nowrap}
+.ak-gr-tip{position:absolute;z-index:2;pointer-events:none;display:grid;gap:2px;min-width:96px;padding:8px 11px;border-radius:10px;background:oklch(22% .05 257);color:var(--on-brand);font-size:12px;line-height:1.35;box-shadow:0 8px 24px oklch(20% .05 257 / .28);white-space:nowrap}
 .ak-gr-tip b{font-size:11.5px;font-weight:700;opacity:.7}
 .ak-gr-tip span{display:flex;align-items:center;gap:6px;font-family:var(--display);font-size:17px;font-weight:800;font-variant-numeric:tabular-nums}
 .ak-gr-tip i{width:9px;height:9px;border-radius:50%;background:var(--gw)}
@@ -276,7 +276,7 @@ body{padding-top:var(--top);overflow-x:hidden}
 .ak-garis li.kini::before{background:var(--gw);box-shadow:0 0 0 2px var(--gw),0 0 0 6px color-mix(in srgb,var(--gw) 20%,transparent)}
 .ak-garis li > div{display:grid;gap:3px;padding-left:16px;min-width:0}
 .ak-gthn{justify-self:start;align-self:start;font-size:11.5px;line-height:18px;font-weight:700;color:color-mix(in srgb,var(--gw) 80%,var(--ink));background:color-mix(in srgb,var(--gw) 11%,var(--card));border-radius:999px;padding:1px 9px;font-variant-numeric:tabular-nums;white-space:nowrap}
-.ak-garis li.kini .ak-gthn{color:var(--paper);background:var(--gw)}
+.ak-garis li.kini .ak-gthn{color:var(--on-brand);background:var(--gw)}
 .ak-garis b{font-size:14.5px;line-height:1.35;color:var(--ink)}
 .ak-garis small{font-size:12.5px;line-height:1.45;color:var(--ink2)}
 .ak-tabel{width:100%;border-collapse:separate;border-spacing:0;font-size:13.5px;font-variant-numeric:tabular-nums;border:1px solid var(--line);border-radius:14px;overflow:hidden}
@@ -287,14 +287,14 @@ body{padding-top:var(--top);overflow-x:hidden}
 .ak-tabel td{font-weight:700;color:var(--ink)}
 .ak-tabel thead th{background:var(--surface);font-weight:700}
 .ak-tabel em{font-style:normal;font-size:11.5px;font-weight:700;border-radius:999px;padding:2px 10px}
-.ak-tabel .sc{color:var(--paper);background:var(--meti-oranye)}
-.ak-tabel .gs{color:var(--paper);background:var(--data2)}
+.ak-tabel .sc{color:var(--on-brand);background:var(--meti-oranye)}
+.ak-tabel .gs{color:var(--on-brand);background:var(--data2)}
 .ak-skor{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin:12px 0 0}
 .ak-skor div{display:grid;gap:4px;padding:10px 14px;border:1px solid var(--line);border-radius:12px;background:var(--surface)}
 .ak-skor span{font-size:12px;color:var(--ink2)}
 .ak-skor b{font-family:var(--display);font-size:22px;line-height:1.1;font-weight:800;color:var(--ink);font-variant-numeric:tabular-nums}
 .ak-skor div:first-child b{color:var(--f2)}
-.ak-klabel .q{color:var(--paper);font-weight:800}
+.ak-klabel .q{color:var(--on-brand);font-weight:800}
 .ak-klabel .q1{background:var(--data2)}.ak-klabel .q2{background:var(--data5)}.ak-klabel .q3{background:var(--meti-oranye)}.ak-klabel .q4{background:var(--line-ctl)}
 .ak-ksaring{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
 .ak-ksaring .ak-kcari2{flex:1 1 220px}
@@ -314,14 +314,14 @@ body{padding-top:var(--top);overflow-x:hidden}
 .ak-klabel{display:flex;flex-wrap:wrap;gap:6px}
 .ak-klabel em{display:inline-flex;align-items:center;gap:5px;font-style:normal;font-size:11.5px;line-height:18px;font-weight:600;color:var(--ink2);background:var(--surface);border-radius:999px;padding:1px 9px;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .ak-klabel .ak-ikon{width:13px;height:13px}
-.ak-klabel .j{color:var(--paper);background:var(--brand)}
+.ak-klabel .j{color:var(--on-brand);background:var(--brand)}
 .ak-klabel .t{color:var(--brand2);background:color-mix(in oklch,var(--brand2) 10%,var(--card))}
 .ak-klabel .s{color:var(--f2);background:color-mix(in oklch,var(--f2) 11%,var(--card));font-weight:700}
 .ak-tautan{display:flex;flex-wrap:wrap;gap:8px}
 .ak-tautan a{display:inline-flex;align-items:center;gap:8px;font-weight:700;font-size:14px;color:var(--ink);text-decoration:none;border:1px solid var(--line);border-radius:999px;min-height:44px;padding:0 16px}
 .ak-tautan a:hover{border-color:var(--brand2);color:var(--brand2)}
 .ak-tautan .ak-ikon{width:15px;height:15px;stroke:currentColor}
-.ak-tbl{font:inherit;font-weight:700;background:var(--brand);color:var(--paper);border:0;border-radius:999px;padding:0 20px;min-height:46px;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center}
+.ak-tbl{font:inherit;font-weight:700;background:var(--brand);color:var(--on-brand);border:0;border-radius:999px;padding:0 20px;min-height:46px;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center}
 
 .ak-hantu{height:200px;border-radius:var(--r);background:linear-gradient(90deg,var(--surface),var(--line),var(--surface));background-size:200% 100%;animation:kilau 1.4s infinite}
 @keyframes kilau{to{background-position:-200% 0}}
@@ -341,7 +341,7 @@ body{padding-top:var(--top);overflow-x:hidden}
 .ak .ak-pilih{position:absolute;top:10px;right:10px;width:36px;height:36px;display:grid;place-items:center;cursor:pointer;z-index:1}
 .ak .ak-pilih input{position:absolute;inset:0;width:100%;height:100%;min-height:0;margin:0;padding:0;opacity:0;cursor:pointer;border-radius:50%}
 .ak-cek{width:22px;height:22px;border-radius:7px;border:1.5px solid var(--ink2);background:var(--card);display:grid;place-items:center;pointer-events:none;transition:background-color .12s,border-color .12s}
-.ak-cek svg{width:15px;height:15px;fill:none;stroke:var(--paper);stroke-width:3;stroke-linecap:round;stroke-linejoin:round;opacity:0}
+.ak-cek svg{width:15px;height:15px;fill:none;stroke:var(--on-brand);stroke-width:3;stroke-linecap:round;stroke-linejoin:round;opacity:0}
 .ak-pilih input:checked + .ak-cek{background:var(--brand);border-color:var(--brand)}
 .ak-pilih input:checked + .ak-cek svg{opacity:1}
 .ak-pilih input:focus-visible + .ak-cek{outline:2px solid var(--brand2);outline-offset:2px}
@@ -356,7 +356,7 @@ body.ak-ada-dp{padding-bottom:84px}
 .ak-dpaksi{display:flex;flex-wrap:wrap;gap:6px}
 .ak-dpb{display:inline-flex;align-items:center;gap:6px;font:inherit;font-size:13.5px;font-weight:700;color:var(--ink);background:var(--card);border:1px solid var(--line);border-radius:999px;min-height:40px;padding:0 14px;cursor:pointer}
 .ak-dpb:hover{border-color:var(--ink2)}
-.ak-dpb.utama{background:var(--brand);border-color:var(--brand);color:var(--paper)}
+.ak-dpb.utama{background:var(--brand);border-color:var(--brand);color:var(--on-brand)}
 .ak-dpb svg,.ak-dpmenu svg,.ak-dptog svg{width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round;flex:none}
 .ak-dpbar button:focus-visible{outline:2px solid var(--brand2);outline-offset:2px}
 .ak-dpmenu{position:absolute;right:12px;bottom:calc(100% + 8px);width:min(300px,calc(100vw - 48px));display:grid;gap:6px;background:var(--card);border:1px solid var(--line);border-radius:18px;box-shadow:var(--shadow-lg);padding:12px}
@@ -368,23 +368,23 @@ body.ak-ada-dp{padding-bottom:84px}
 
 /* tombol di dialog */
 .ak-dkepala .ak-pil{align-items:center}
-.ak-dptog{margin-left:auto;display:inline-flex;align-items:center;gap:6px;font:inherit;font-size:12.5px;font-weight:700;color:var(--paper);background:oklch(100% 0 0 / .12);border:1px solid oklch(100% 0 0 / .3);border-radius:999px;min-height:34px;padding:0 14px;cursor:pointer}
+.ak-dptog{margin-left:auto;display:inline-flex;align-items:center;gap:6px;font:inherit;font-size:12.5px;font-weight:700;color:var(--on-brand);background:oklch(100% 0 0 / .12);border:1px solid oklch(100% 0 0 / .3);border-radius:999px;min-height:34px;padding:0 14px;cursor:pointer}
 .ak-dptog:hover{background:oklch(100% 0 0 / .22)}
-.ak-dptog[aria-pressed="true"]{background:var(--paper);color:var(--brand,var(--data1));border-color:var(--paper)}
+.ak-dptog[aria-pressed="true"]{background:var(--on-brand);color:var(--brand);border-color:var(--on-brand)}
 .ak-dptog[aria-pressed="true"] svg{fill:currentColor}
 .ak-kp{font:inherit;font-size:14px;color:inherit;background:none;border:0;padding:0;cursor:pointer;text-align:left;text-decoration:underline;text-decoration-color:oklch(100% 0 0 / .4);text-underline-offset:3px}
 .ak-kp:hover{text-decoration-color:var(--paper)}
 .ak-dkepala .ak-nama p{margin:0}
 .ak-kontak{display:flex;flex-wrap:wrap;align-items:center;gap:6px 12px;font-size:13px;color:oklch(100% 0 0 / .85)}
 .ak-kontak svg{width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round}
-.ak-kontak a{color:var(--paper);overflow-wrap:anywhere}
-.ak-sumber{font-style:normal;font-size:11px;line-height:18px;font-weight:700;color:var(--paper);background:oklch(100% 0 0 / .16);border-radius:999px;padding:0 9px}
+.ak-kontak a{color:var(--on-brand);overflow-wrap:anywhere}
+.ak-sumber{font-style:normal;font-size:11px;line-height:18px;font-weight:700;color:var(--on-brand);background:oklch(100% 0 0 / .16);border-radius:999px;padding:0 9px}
 
 /* lembar bawah: profil kampus dan daftar pendek */
 .ak-sheet{z-index:80}
 .ak-sheet .ak-dk-atas .ak-klogo{width:56px;height:56px;padding:6px;font-size:16px}
 .ak-sheet .ak-nama h2{margin:0}
-.ak-ptl{display:inline-flex;align-items:center;gap:6px;font-size:12px;line-height:18px;font-weight:600;color:var(--paper);background:oklch(100% 0 0 / .12);border-radius:999px;padding:4px 10px;text-decoration:none;overflow-wrap:anywhere}
+.ak-ptl{display:inline-flex;align-items:center;gap:6px;font-size:12px;line-height:18px;font-weight:600;color:var(--on-brand);background:oklch(100% 0 0 / .12);border-radius:999px;padding:4px 10px;text-decoration:none;overflow-wrap:anywhere}
 a.ak-ptl:hover{background:oklch(100% 0 0 / .24)}
 .ak-ptl svg{width:14px;height:14px;fill:none;stroke:currentColor;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round}
 .ak-bars{display:grid;gap:8px}
@@ -427,8 +427,8 @@ a.ak-ptl:hover{background:oklch(100% 0 0 / .24)}
 .ak-tog:hover{border-color:var(--ink2)}
 .ak-tog .ak-ikon{width:16px;height:16px;stroke:currentColor}
 .ak-tog small{font-size:11px;font-weight:800;color:var(--f2);background:var(--surface);border-radius:999px;padding:1px 8px}
-.ak-tog[aria-pressed="true"]{background:var(--brand);border-color:var(--brand);color:var(--paper)}
-.ak-tog[aria-pressed="true"] small{background:oklch(100% 0 0 / .18);color:var(--paper)}
+.ak-tog[aria-pressed="true"]{background:var(--brand);border-color:var(--brand);color:var(--on-brand)}
+.ak-tog[aria-pressed="true"] small{background:oklch(100% 0 0 / .18);color:var(--on-brand)}
 .ak-l-baru{background:var(--f2)}
 .ak button:focus-visible{outline:2px solid var(--brand2);outline-offset:2px}
 
@@ -460,7 +460,7 @@ a.ak-ptl:hover{background:oklch(100% 0 0 / .24)}
 /* tabel baku: kepala navy, sudut atas membulat, bergulir di dalam kotak sendiri */
 .ak-tw{overflow-x:auto;border:1px solid var(--line);border-radius:14px}
 .ak-t2{width:100%;min-width:720px;border-collapse:separate;border-spacing:0;font-size:13.5px;font-variant-numeric:tabular-nums}
-.ak-t2 th{background:var(--brand);color:var(--paper);font-weight:700;text-align:center;padding:11px 14px;white-space:nowrap}
+.ak-t2 th{background:var(--brand);color:var(--on-brand);font-weight:700;text-align:center;padding:11px 14px;white-space:nowrap}
 .ak-t2 th:first-child{border-top-left-radius:13px}.ak-t2 th:last-child{border-top-right-radius:13px}
 .ak-t2 td{padding:10px 14px;text-align:left;vertical-align:top;color:var(--ink);border-top:1px solid var(--line)}
 .ak-t2 tbody tr:first-child td{border-top:0}
@@ -469,7 +469,7 @@ a.ak-ptl:hover{background:oklch(100% 0 0 / .24)}
 .ak-t2 a{color:var(--brand2);font-weight:600;overflow-wrap:anywhere}
 .ak-pls{display:flex;flex-wrap:wrap;gap:4px}
 .ak-pl{font-style:normal;font-size:11.5px;line-height:18px;font-weight:600;color:var(--ink2);background:var(--surface);border-radius:999px;padding:1px 9px}
-.ak-pl.ok{color:var(--paper);background:var(--data2);font-weight:800}
+.ak-pl.ok{color:var(--on-brand);background:var(--data2);font-weight:800}
 
 /* pusat studi */
 .ak-psgrup{display:grid;gap:12px}
@@ -510,7 +510,7 @@ a.ak-ptl:hover{background:oklch(100% 0 0 / .24)}
 .ak-raksi:empty{display:none}
 .ak-rbtn{display:inline-flex;align-items:center;gap:7px;font-size:13px;font-weight:700;line-height:20px;color:var(--brand,var(--data1));background:var(--paper);border-radius:999px;padding:8px 16px;text-decoration:none}
 .ak-rbtn:hover{background:var(--soft-biru)}
-.ak-rbtn.putih{color:var(--paper);background:oklch(100% 0 0 / .14);box-shadow:inset 0 0 0 1px oklch(100% 0 0 / .3)}
+.ak-rbtn.putih{color:var(--on-brand);background:oklch(100% 0 0 / .14);box-shadow:inset 0 0 0 1px oklch(100% 0 0 / .3)}
 .ak-rbtn.putih:hover{background:oklch(100% 0 0 / .22)}
 .ak-rbtn .ak-ikon{width:16px;height:16px}
 .ak-rata{text-align:justify;hyphens:auto;line-height:1.65;font-size:14px;color:var(--ink)}
@@ -533,7 +533,7 @@ a.ak-ptl:hover{background:oklch(100% 0 0 / .24)}
 .ak-jnama{flex:1;min-width:0}
 .ak-jnama h4{margin:0;font-size:15px;line-height:1.35;font-weight:800;color:var(--ink);overflow-wrap:anywhere}
 .ak-jnama p{margin:3px 0 0;font-size:12.5px;line-height:1.4;color:var(--ink2)}
-.ak-jdoaj{flex:none;font-style:normal;font-size:11px;font-weight:800;letter-spacing:.03em;color:var(--paper);background:var(--data2);border-radius:999px;padding:3px 9px}
+.ak-jdoaj{flex:none;font-style:normal;font-size:11px;font-weight:800;letter-spacing:.03em;color:var(--on-brand);background:var(--data2);border-radius:999px;padding:3px 9px}
 .ak-jkbawah{margin-top:auto;display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;padding-top:12px;border-top:1px solid var(--line)}
 .ak-issn{font-size:12px;color:var(--ink2);font-variant-numeric:tabular-nums}
 .ak-issn b{margin-right:6px;font-weight:800;color:var(--ink)}
@@ -553,7 +553,7 @@ a.ak-ptl:hover{background:oklch(100% 0 0 / .24)}
 .ak-psatas .ak-klogo{width:44px;height:44px;padding:4px}
 .ak-alamat{display:flex;align-items:flex-start;gap:7px;margin-top:6px;font-size:13px;line-height:1.45;color:oklch(100% 0 0 / .82)}
 .ak-alamat .ak-ikon{flex:none;width:15px;height:15px;margin-top:2px}
-.ak-alamat a{color:var(--paper);font-weight:700;white-space:nowrap}
+.ak-alamat a{color:var(--on-brand);font-weight:700;white-space:nowrap}
 .ak-dkepala .ak-metrik{align-self:center}
 .ak-dkepala .ak-metrik div{display:grid;justify-items:center;text-align:center;gap:4px;padding:0 22px}
 .ak-dkepala .ak-metrik b,.ak-dkepala .ak-metrik div:first-child b{font-size:30px;line-height:1.05}
@@ -562,7 +562,7 @@ a.ak-ptl:hover{background:oklch(100% 0 0 / .24)}
 
 /* ---------- lembaga mitra: peta berlogo, daftar, profil, analisa, proyek, aset (docs/meti/lembaga) ---------- */
 .ak-lb{position:relative;cursor:pointer;transition:border-color .15s,box-shadow .15s}
-.ak-lb:hover,.ak-lb:focus-visible{border-color:var(--brand2);outline:none}
+.ak-lb:hover,.ak-lb:focus-visible{border-color:var(--brand2);outline:2px solid var(--fokus);outline-offset:2px}
 .ak .ak-lb .ak-pilih{top:8px;right:8px}
 .ak-lb .ak-psatas{padding-right:34px}
 .ak-lkontak{display:grid;gap:6px;justify-items:start}
@@ -571,7 +571,7 @@ a.ak-ptl:hover{background:oklch(100% 0 0 / .24)}
 .ak-lfoot{display:flex;flex-wrap:wrap;align-items:center;gap:6px 8px}
 .ak-lper{font-size:11.5px;color:var(--ink2)}
 .ak-lper.basi{color:var(--meti-oranye);font-weight:700}
-.ak-izin{display:inline-flex;align-items:center;font-size:11.5px;line-height:18px;font-weight:700;color:var(--paper);border-radius:999px;padding:2px 10px;white-space:nowrap}
+.ak-izin{display:inline-flex;align-items:center;font-size:11.5px;line-height:18px;font-weight:700;color:var(--on-brand);border-radius:999px;padding:2px 10px;white-space:nowrap}
 .ak-izin.berlaku{background:var(--ok)}.ak-izin.habis{background:var(--meti-oranye)}.ak-izin.dicabut{background:var(--bad)}.ak-izin.belum{background:var(--line-ctl)}.ak-izin.mitra{background:var(--data5)}.ak-izin.contoh{background:var(--line-ctl)}
 .ak-lkaki{font-size:12px;color:var(--ink2);margin:0}
 .ak-lA{display:grid;gap:14px}
@@ -581,8 +581,8 @@ a.ak-ptl:hover{background:oklch(100% 0 0 / .24)}
 .ak-sw{display:inline-block;width:12px;height:12px;border-radius:3px;border:1px solid color-mix(in srgb,var(--ink) 20%,transparent)}.ak-sw.titik{border-radius:50%;background:var(--data1);border-color:var(--paper)}
 .ak-petaw{border:1px solid var(--line);border-radius:14px;overflow:hidden;background:var(--surface)}
 .ak-peta{display:block;width:100%;height:auto}
-.ak-pv{stroke:var(--paper);stroke-width:.5;cursor:pointer}.ak-pv:hover,.ak-pv:focus-visible{stroke:var(--data1);stroke-width:1.2;outline:none}
-.ak-pt{fill:var(--data1);stroke:var(--paper);stroke-width:.8}
+.ak-pv{stroke:var(--on-brand);stroke-width:.5;cursor:pointer}.ak-pv:hover,.ak-pv:focus-visible{stroke:var(--data1);stroke-width:1.2;outline:2px solid var(--fokus);outline-offset:2px}
+.ak-pt{fill:var(--data1);stroke:var(--on-brand);stroke-width:.8}
 .ak-matriks th span{display:inline-block;writing-mode:vertical-rl;transform:rotate(180deg);white-space:nowrap}
 .ak-matriks{min-width:900px}.ak-matriks td.c,.ak-matriks th.c{padding:6px;width:44px}
 .ak-mx{background:color-mix(in oklch,var(--data5) var(--m,0%),var(--card));font-weight:700}
@@ -601,15 +601,15 @@ a.ak-ptl:hover{background:oklch(100% 0 0 / .24)}
 .ak-pita button{flex:none;font:inherit;font-size:13px;font-weight:600;color:var(--ink);background:var(--card);border:1px solid var(--line);border-radius:999px;min-height:38px;padding:0 14px;cursor:pointer}
 .ak-pita button b{font-weight:700;margin-right:6px}
 .ak-pita button:hover{border-color:var(--ink2)}
-.ak-pita .ak-pitacho{background:var(--brand);border-color:var(--brand);color:var(--paper)}
+.ak-pita .ak-pitacho{background:var(--brand);border-color:var(--brand);color:var(--on-brand)}
 .ak-pita .ak-pitacho[aria-pressed="true"]{background:var(--brand2)}
 .ak-ptaisi{position:relative;border:1px solid var(--line);border-radius:var(--r);overflow:hidden;box-shadow:var(--shadow);background:var(--surface)}
 .ak-map{height:min(72vh,680px);min-height:420px}
 .ak-ptlayer{position:absolute;left:12px;bottom:28px;z-index:3;display:flex;flex-wrap:wrap;gap:6px;max-width:calc(100% - 24px);align-items:center}
 .ak-ptlayer > button{font:inherit;font-size:12.5px;font-weight:700;color:var(--ink);background:var(--card);border:1px solid var(--line);border-radius:999px;min-height:34px;padding:0 12px;cursor:pointer;box-shadow:var(--shadow)}
 .ak-ptlayer > button small{margin-left:6px;color:var(--ink2)}
-.ak-ptlayer > button[aria-pressed="true"]{background:var(--brand);border-color:var(--brand);color:var(--paper)}
-.ak-ptlayer > button[aria-pressed="true"] small{color:var(--paper)}
+.ak-ptlayer > button[aria-pressed="true"]{background:var(--brand);border-color:var(--brand);color:var(--on-brand)}
+.ak-ptlayer > button[aria-pressed="true"] small{color:var(--on-brand)}
 .ak-ptlayer .ak-kampus-pilih{flex:0 0 200px;min-width:0}
 .ak-ptlayer .ak-kpop{top:auto;bottom:calc(100% + 8px)}
 .ak-ptpanel{position:absolute;left:12px;top:12px;z-index:4;width:min(320px,calc(100% - 24px));max-height:calc(100% - 100px);overflow:auto;background:var(--card);border:1px solid var(--line);border-radius:16px;box-shadow:var(--shadow-lg);padding:14px;display:grid;gap:10px}
@@ -627,7 +627,7 @@ a.ak-ptl:hover{background:oklch(100% 0 0 / .24)}
 .ak-rank .ak-klogo{width:30px;height:30px}
 .ak-drawer .ak-dkepala{padding-top:52px}
 .ak-drawer{position:absolute;right:0;top:0;bottom:0;z-index:5;width:min(420px,100%);overflow:auto;background:var(--card);border-left:1px solid var(--line);box-shadow:var(--shadow-lg)}
-.ak-drtutup{position:absolute;top:10px;right:10px;z-index:2;display:inline-flex;align-items:center;gap:6px;font:inherit;font-size:13px;font-weight:700;color:var(--paper);background:oklch(100% 0 0 / .18);border:1px solid oklch(100% 0 0 / .4);border-radius:999px;min-height:36px;padding:0 14px;cursor:pointer}
+.ak-drtutup{position:absolute;top:10px;right:10px;z-index:2;display:inline-flex;align-items:center;gap:6px;font:inherit;font-size:13px;font-weight:700;color:var(--on-brand);background:oklch(100% 0 0 / .18);border:1px solid oklch(100% 0 0 / .4);border-radius:999px;min-height:36px;padding:0 14px;cursor:pointer}
 .ak-drawer .ak-dtubuh{padding:14px;display:grid;gap:12px}
 .ak-drawer .ak-psgrid{grid-template-columns:minmax(0,1fr)}
 .ak-pin{display:flex;align-items:center;gap:6px;background:none;border:0;padding:0;margin:0;cursor:pointer;font:inherit}
@@ -637,7 +637,7 @@ a.ak-ptl:hover{background:oklch(100% 0 0 / .24)}
 @media (max-width:700px){.ak-ptpanel{max-height:46%;top:auto;bottom:70px}.ak-map{min-height:520px}.ak-drawer{width:100%}}
 .ak-mapkecil{height:340px;min-height:280px}
 .ak-sdl{display:grid;grid-template-columns:auto minmax(0,1fr);gap:4px 12px;margin:0;font-size:13px}.ak-sdl dt{font-weight:700;color:var(--ink2)}.ak-sdl dd{margin:0}
-.ak-rbtn-b{background:var(--brand);color:var(--paper)}.ak-rbtn-b:hover{background:var(--brand2)}
+.ak-rbtn-b{background:var(--brand);color:var(--on-brand)}.ak-rbtn-b:hover{background:var(--brand2)}
 /* gelombang 2 */
 .ak-sektor{justify-self:center;max-width:100%}
 .ak-lgrp{grid-column:1/-1;margin:6px 0 0;font-family:var(--display);font-size:16px;font-weight:800;color:var(--ink)}
@@ -662,7 +662,7 @@ a.ak-ptl:hover{background:oklch(100% 0 0 / .24)}
 @media (max-width:600px){.ak-brk{grid-template-columns:minmax(0,1fr)}.ak-bre{grid-auto-flow:column;justify-content:start}}
 .ak-tgl{display:grid;gap:4px;font-size:12px;font-weight:700;color:var(--ink2)}.ak .ak-tgl input{padding-left:14px;min-height:44px}
 .ak-cara summary{list-style:none;cursor:pointer;justify-self:start}.ak-cara summary::-webkit-details-marker{display:none}.ak-cara[open] .ak-disi{padding:10px 0 0}
-.ak-lk-putih .ak-lnk{background:oklch(100% 0 0 / .14);color:var(--paper)}.ak-lk-putih .ak-lnk em{color:var(--paper)}.ak-lk-putih .ak-lsum{color:var(--paper)}
+.ak-lk-putih .ak-lnk{background:oklch(100% 0 0 / .14);color:var(--on-brand)}.ak-lk-putih .ak-lnk em{color:var(--on-brand)}.ak-lk-putih .ak-lsum{color:var(--on-brand)}
 .ak-lnk .ak-ikon{flex:none}
 /* profil lengkap */
 .ak-bgrup{display:grid;border:1px solid var(--line);border-radius:14px;background:var(--card)}
@@ -680,7 +680,7 @@ a.ak-ptl:hover{background:oklch(100% 0 0 / .24)}
 .ak-jar li{display:flex;flex-wrap:wrap;gap:6px;align-items:center}
 .ak-yakin{display:grid;gap:8px}.ak-ybar{height:10px;border-radius:999px;background:var(--surface);overflow:hidden}.ak-ybar i{display:block;height:100%;background:var(--ok)}
 .ak-srcl li{overflow-wrap:anywhere}
-.ak-ringk{font-size:13px;color:var(--paper);opacity:.92}
+.ak-ringk{font-size:13px;color:var(--on-brand);opacity:.92}
 .ak-kor{display:grid;gap:8px;background:var(--card);color:var(--ink);border-radius:14px;padding:12px;margin-top:8px}
 .ak-kor label{display:grid;gap:4px;font-size:12px;font-weight:700}.ak .ak-kor input,.ak-lembar .ak-kor input{padding-left:14px;min-height:40px;border-radius:12px}
 .ak-ngr{cursor:pointer}
@@ -703,7 +703,7 @@ a.ak-ptl:hover{background:oklch(100% 0 0 / .24)}
 /* buku */
 .ak-bkgrid{grid-template-columns:repeat(4,minmax(0,1fr))}@media (max-width:1000px){.ak-bkgrid{grid-template-columns:repeat(3,minmax(0,1fr))}}@media (max-width:700px){.ak-bkgrid{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}}
 .ak-bk2{grid-template-columns:96px minmax(0,1fr);gap:14px;align-items:start}
-.ak-sampul{width:96px;aspect-ratio:2/3;border-radius:8px;overflow:hidden;background:var(--w0,var(--data1));display:grid;place-items:center;color:var(--paper);box-shadow:0 2px 8px color-mix(in srgb,var(--ink) 20%,transparent)}
+.ak-sampul{width:96px;aspect-ratio:2/3;border-radius:8px;overflow:hidden;background:var(--w0,var(--data1));display:grid;place-items:center;color:var(--on-brand);box-shadow:0 2px 8px color-mix(in srgb,var(--ink) 20%,transparent)}
 .ak-sampul img{width:100%;height:100%;object-fit:cover}.ak-sampul span{padding:8px;font-size:11px;font-weight:800;text-align:center;line-height:1.25;overflow:hidden}
 .ak-bkm{display:grid;gap:6px;min-width:0}.ak-bkm h4{margin:0;font-size:14.5px;line-height:1.3}
 .ak-gmaps{display:inline-flex;align-items:center;gap:5px}.ak-gmaps svg{width:14px;height:14px;fill:none;stroke:currentColor;stroke-width:1.9}
@@ -727,11 +727,11 @@ a.ak-ptl:hover{background:oklch(100% 0 0 / .24)}
 .ak-lgo svg{width:22px;height:22px}
 .ak-lgo img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;padding:6px;box-sizing:border-box;background:var(--paper)}
 .ak-lgo.kecil{width:24px;height:24px;border-radius:7px}.ak-lgo.kecil svg{width:13px;height:13px}.ak-lgo.kecil img{padding:2px}
-.ak-dkepala .ak-lgo{width:64px;height:64px;border-radius:16px;background:var(--paper);border:0}.ak-dkepala .ak-lgo svg{width:30px;height:30px}.ak-dkepala .ak-lgo img{padding:8px}
+.ak-dkepala .ak-lgo{width:64px;height:64px;border-radius:16px;background:var(--on-brand);border:0}.ak-dkepala .ak-lgo svg{width:30px;height:30px}.ak-dkepala .ak-lgo img{padding:8px}
 .ak-fakta{display:flex;flex-wrap:wrap;gap:4px 14px;align-items:center;font-size:12.5px;color:oklch(100% 0 0 / .8)}.ak-fakta svg{width:14px;height:14px;fill:none;stroke:currentColor;stroke-width:1.9}
 .ak-orggrid{grid-template-columns:repeat(auto-fill,minmax(300px,1fr))}
 .ak-org{position:relative;display:grid;gap:10px;align-content:start;background:var(--card);border:1px solid var(--line);border-radius:var(--r);box-shadow:var(--shadow);padding:16px;cursor:pointer;transition:border-color .15s,box-shadow .15s;min-width:0}
-.ak-org:hover,.ak-org:focus-visible{border-color:var(--brand2);outline:none}
+.ak-org:hover,.ak-org:focus-visible{border-color:var(--brand2);outline:2px solid var(--fokus);outline-offset:2px}
 .ak-org .ak-pilih{position:absolute;top:10px;right:10px}
 .ak-orghead{display:flex;gap:12px;align-items:flex-start;padding-right:34px;min-width:0}.ak-orghead > div{min-width:0;display:grid;gap:2px}
 .ak-orghead h3{margin:0;font-size:15px;line-height:1.3;font-weight:800;overflow-wrap:anywhere}.ak-orghead h3 span{font-weight:600;color:var(--ink2)}
@@ -739,7 +739,7 @@ a.ak-ptl:hover{background:oklch(100% 0 0 / .24)}
 .ak-qk{display:inline-grid;place-items:center;width:34px;height:34px;border-radius:50%;border:1px solid var(--line);color:var(--brand);background:var(--card)}.ak-qk:hover{border-color:var(--brand2);color:var(--brand2)}.ak-qk svg{width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:1.9}
 .ak-prodgrid{grid-template-columns:repeat(auto-fill,minmax(280px,1fr))}
 .ak-prod{display:grid;grid-template-rows:auto 1fr;background:var(--card);border:1px solid var(--line);border-radius:var(--r);box-shadow:var(--shadow);overflow:hidden;cursor:pointer;min-width:0;transition:border-color .15s}
-.ak-prod:hover,.ak-prod:focus-visible{border-color:var(--brand2);outline:none}
+.ak-prod:hover,.ak-prod:focus-visible{border-color:var(--brand2);outline:2px solid var(--fokus);outline-offset:2px}
 .ak-prod-top{position:relative;height:104px;display:grid;place-items:center;background:color-mix(in oklch,var(--w0) 13%,var(--card))}
 .ak-prod-top > svg{width:52px;height:52px;stroke-width:1.5}
 .ak-prod-top em{position:absolute;top:10px;right:10px;font-style:normal}
@@ -795,13 +795,13 @@ a.ak-ptl:hover{background:oklch(100% 0 0 / .24)}
 .ak-lbpeta .ak-ptaisi{position:absolute;inset:0;border:0;border-radius:0;box-shadow:none;overflow:visible;background:none}
 .ak-lbpeta .ak-map,.ak-pta.ak-ptaisi .ak-map{position:absolute;inset:0;height:100%;min-height:0}
 .ak-lbpeta .ak-pita{position:absolute;z-index:5;top:12px;left:12px;right:60px;padding-bottom:0}
-.ak-lbpeta .ak-pita button{background:oklch(100% 0 0 / .86);backdrop-filter:blur(8px)}
-.ak-lbpeta .ak-pita .ak-pitacho{background:var(--brand);color:var(--paper)}
-.ak-segmeng{position:absolute;z-index:5;top:62px;left:12px;background:oklch(100% 0 0 / .86);backdrop-filter:blur(8px);max-width:calc(100% - 80px)}
+.ak-lbpeta .ak-pita button{background:color-mix(in srgb,var(--card) 86%,transparent);backdrop-filter:blur(8px)}
+.ak-lbpeta .ak-pita .ak-pitacho{background:var(--brand);color:var(--on-brand)}
+.ak-segmeng{position:absolute;z-index:5;top:62px;left:12px;background:color-mix(in srgb,var(--card) 86%,transparent);backdrop-filter:blur(8px);max-width:calc(100% - 80px)}
 .ak-lbpeta .ak-ptlayer{bottom:34px}
-.ak-lbpeta .ak-ptlayer > button,.ak-lbpeta .ak-ptlayer .ak-kbtn{background:oklch(100% 0 0 / .88);backdrop-filter:blur(8px)}
+.ak-lbpeta .ak-ptlayer > button,.ak-lbpeta .ak-ptlayer .ak-kbtn{background:color-mix(in srgb,var(--card) 88%,transparent);backdrop-filter:blur(8px)}
 .ak-lbpeta .ak-ptlayer > button[aria-pressed="true"]{background:var(--brand)}
-.ak-lbpeta .ak-ptpanel{top:112px;max-height:calc(100% - 200px);background:oklch(100% 0 0 / .94);backdrop-filter:blur(10px)}
+.ak-lbpeta .ak-ptpanel{top:112px;max-height:calc(100% - 200px);background:color-mix(in srgb,var(--card) 94%,transparent);backdrop-filter:blur(10px)}
 .ak-lbpeta .ak-drawer{top:12px;right:12px;bottom:34px;width:min(420px,calc(100% - 24px));border:1px solid var(--line);border-radius:18px;box-shadow:var(--shadow-lg)}
 @media (max-width:700px){.ak-lbpeta .ak-pita{right:12px}.ak-lbpeta .ak-drawer{top:auto;left:0;right:0;bottom:0;width:100%;height:72%;border-radius:20px 20px 0 0}.ak-lbpeta .ak-ptpanel{top:auto;bottom:70px;max-height:46%}.ak-lbpeta .ak-ptlayer{bottom:12px}.ak-segmeng{top:58px}}
 .ak-pinlogo{position:relative}.ak-pinlogo svg{width:18px;height:18px}.ak-pinlogo img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;padding:3px;box-sizing:border-box;background:var(--paper)}
@@ -824,7 +824,7 @@ a.ak-ptl:hover{background:oklch(100% 0 0 / .24)}
 /* G7: grafik batang seragam, batang tipis 10px, angka tebal + persen kecil di kanan */
 .ak-br{display:grid;grid-template-columns:minmax(120px,190px) minmax(0,1fr) auto;align-items:center;gap:12px;border-radius:10px;padding:5px 8px;min-height:34px}
 .ak-brx{cursor:pointer}
-.ak-br:hover,.ak-br:focus-visible{background:var(--surface);outline:none}
+.ak-br:hover,.ak-br:focus-visible{background:var(--surface);outline:2px solid var(--fokus);outline-offset:2px}
 .ak-br:focus-visible{box-shadow:0 0 0 2px var(--brand2)}
 .ak-bt{display:block;background:var(--surface);border-radius:999px;height:10px;overflow:hidden}
 .ak-bt i{display:block;height:100%;border-radius:999px;background:var(--w0);transition:filter .15s}
@@ -838,7 +838,7 @@ a.ak-ptl:hover{background:oklch(100% 0 0 / .24)}
 .ak-bkl{display:grid;gap:8px}
 .ak-bkr{display:grid;grid-template-columns:44px minmax(0,1fr) auto;gap:14px;align-items:start;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:12px 14px;transition:border-color .15s,box-shadow .15s}
 .ak-bkr[role=button]{cursor:pointer}
-.ak-bkr[role=button]:hover,.ak-bkr[role=button]:focus-visible{border-color:var(--brand2);box-shadow:var(--shadow);outline:none}
+.ak-bkr[role=button]:hover,.ak-bkr[role=button]:focus-visible{border-color:var(--brand2);box-shadow:var(--shadow);outline:2px solid var(--fokus);outline-offset:2px}
 .ak-bkr-t{display:grid;gap:5px;min-width:0;justify-items:start}
 .ak-bkr-n{font-size:14.5px;font-weight:800;color:var(--ink);line-height:1.3;overflow-wrap:anywhere}
 .ak-bkr-o{display:inline-flex;align-items:center;gap:6px;font-size:12px;color:var(--ink2);flex-wrap:wrap}
@@ -902,7 +902,7 @@ a.ak-ptl:hover{background:oklch(100% 0 0 / .24)}
 .ak-gpil{display:inline-flex;align-items:center;gap:7px;font:inherit;font-size:12.5px;font-weight:600;color:var(--ink);background:var(--card);border:1px solid var(--line);border-radius:999px;padding:5px 6px 5px 11px;cursor:pointer}
 .ak-gpil i{width:9px;height:9px;border-radius:50%;flex:none}
 .ak-gpil b{font-size:11px;font-weight:700;background:var(--surface);border-radius:999px;padding:0 7px;line-height:18px;font-variant-numeric:tabular-nums}
-.ak-gpil:hover{border-color:var(--ink2)}.ak-gpil[aria-pressed=true]{background:var(--brand);border-color:var(--brand);color:var(--paper)}.ak-gpil[aria-pressed=true] b{background:color-mix(in srgb,var(--paper) 18%,transparent);color:var(--paper)}
+.ak-gpil:hover{border-color:var(--ink2)}.ak-gpil[aria-pressed=true]{background:var(--brand);border-color:var(--brand);color:var(--on-brand)}.ak-gpil[aria-pressed=true] b{background:color-mix(in srgb,var(--paper) 18%,transparent);color:var(--on-brand)}
 .ak-sheet .ak-bkl{gap:0}.ak-sheet .ak-bkr{border:0;border-bottom:1px solid var(--line);border-radius:0;padding:16px 8px}.ak-sheet .ak-bkr[role=button]:hover{background:var(--surface);box-shadow:none;border-color:var(--line)}
 .ak-cari-besar{width:min(760px,100%);box-sizing:border-box}
 .ak-cari-besar .ak-cari{display:block;width:100%;position:relative}
@@ -932,7 +932,7 @@ a.ak-ptl:hover{background:oklch(100% 0 0 / .24)}
 @media (max-width:600px){.ak-bpanel .ak-sektor.ak-chip{display:flex;flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none}.ak-bpanel .ak-sektor button{flex:none}}
 
 /* sidebar tabel peta Lembaga */
-.ak-pta > .ak-side{position:absolute;z-index:6;top:12px;left:12px;right:auto;bottom:12px;width:320px;display:flex;flex-direction:column;overflow:hidden;padding:0;background:oklch(100% 0 0 / .95);backdrop-filter:blur(10px);border:1px solid var(--line);border-radius:16px;box-shadow:var(--shadow-lg);transition:transform .22s}
+.ak-pta > .ak-side{position:absolute;z-index:6;top:12px;left:12px;right:auto;bottom:12px;width:320px;display:flex;flex-direction:column;overflow:hidden;padding:0;background:color-mix(in srgb,var(--card) 95%,transparent);backdrop-filter:blur(10px);border:1px solid var(--line);border-radius:16px;box-shadow:var(--shadow-lg);transition:transform .22s}
 .ak-side.lipat{transform:translateX(calc(-100% - 20px))}
 .ak-side-buka{position:absolute;z-index:6;top:12px;left:12px;font:inherit;font-weight:700;font-size:13px;color:var(--ink);background:var(--card);border:1px solid var(--line);border-radius:999px;padding:8px 16px;box-shadow:var(--shadow);cursor:pointer}
 .ak-side-h{padding:12px 14px;display:grid;gap:8px;border-bottom:1px solid var(--line)}
@@ -944,7 +944,7 @@ a.ak-ptl:hover{background:oklch(100% 0 0 / .24)}
 .ak-side .ak-cari input{min-height:38px;font-size:13px}
 .ak-side-t{flex:1;overflow:auto}
 .ak-sdt{width:100%;border-collapse:collapse;font-size:12.5px}
-.ak-sdt thead th{position:sticky;top:0;z-index:1;background:var(--brand,var(--data1));color:var(--paper);font-size:10.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;text-align:center;padding:0;border-bottom:2px solid var(--data4)}
+.ak-sdt thead th{position:sticky;top:0;z-index:1;background:var(--brand,var(--data1));color:var(--on-brand);font-size:10.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;text-align:center;padding:0;border-bottom:2px solid var(--data4)}
 .ak-sdt thead button{font:inherit;color:inherit;letter-spacing:inherit;text-transform:inherit;background:none;border:0;cursor:pointer;padding:9px 8px;width:100%;text-align:inherit;display:inline-flex;gap:4px;justify-content:inherit}
 .ak-sdt thead i{font-style:normal;font-size:8px;min-width:8px}
 .ak-sdt td{padding:8px;border-bottom:1px solid color-mix(in oklch,var(--line) 60%,transparent)}
@@ -984,7 +984,7 @@ a.ak-ptl:hover{background:oklch(100% 0 0 / .24)}
 .ak-prod-top{height:auto;aspect-ratio:16/9;overflow:hidden}
 .ak-prod-foto{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;background:var(--paper)}
 .ak-prod-top em{z-index:2}
-.ak-prod-kredit{position:absolute;left:8px;bottom:8px;z-index:2;font-size:10.5px;line-height:1.2;color:var(--paper);background:color-mix(in srgb,var(--ink) 60%,transparent);border-radius:6px;padding:3px 7px;text-decoration:none;max-width:calc(100% - 16px);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.ak-prod-kredit{position:absolute;left:8px;bottom:8px;z-index:2;font-size:10.5px;line-height:1.2;color:var(--on-brand);background:color-mix(in srgb,var(--ink) 60%,transparent);border-radius:6px;padding:3px 7px;text-decoration:none;max-width:calc(100% - 16px);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .ak-rk{font-size:11px;padding:2px 8px 2px 6px;box-shadow:none;border:0;line-height:16px}.ak-rk .ak-ikon{width:13px;height:13px}
 .ak-bkr-f{display:grid;justify-items:end;gap:1px}.ak-bkr-f small{font-size:11px;font-weight:500;color:var(--ink2)}
 
@@ -1009,7 +1009,7 @@ a.ak-ptl:hover{background:oklch(100% 0 0 / .24)}
 /* aturan pemilik: semua deretan pilihan selebar kontainer, tombol dibagi rata */
 .ak-gring{display:flex;flex-wrap:nowrap;width:100%;gap:8px}
 .ak-gpil{flex:1 1 0;justify-content:center;min-width:0;padding:7px 10px}
-.ak-gpil[aria-pressed=true]{background:var(--w0,var(--brand));border-color:var(--w0,var(--brand));color:var(--paper)}
+.ak-gpil[aria-pressed=true]{background:var(--w0,var(--brand));border-color:var(--w0,var(--brand));color:var(--on-brand)}
 .ak-gpil[aria-pressed=true] i{background:var(--paper)!important}
 .ak-seg:not(.ak-segmeng){display:flex;width:100%;box-sizing:border-box}
 .ak-seg:not(.ak-segmeng) button{flex:1 1 0;justify-content:center}
@@ -1069,7 +1069,7 @@ a.ak-ptl:hover{background:oklch(100% 0 0 / .24)}
 .ak-pkbtn .ak-pkn{display:grid;gap:3px;min-width:0}
 .ak-pkbtn .ak-pkt{display:flex;align-items:center;gap:6px;flex-wrap:wrap}
 .ak-pkbtn .ak-pkt b{font-size:14.5px}
-.ak-pkbtn .ak-pkt em{font-style:normal;font-size:10px;font-weight:800;color:var(--paper);border-radius:999px;padding:1px 7px}
+.ak-pkbtn .ak-pkt em{font-style:normal;font-size:10px;font-weight:800;color:var(--on-brand);border-radius:999px;padding:1px 7px}
 .ak-pkr{display:flex!important;flex-wrap:wrap;gap:4px;margin-top:2px}
 .ak-pkr .ak-r{font-size:10.5px;padding:1px 8px;min-height:0;border-radius:999px;background:color-mix(in srgb,var(--w0) 12%,var(--paper));color:var(--w0);border:0;font-weight:700}
 .ak-pkm{display:grid!important;grid-template-columns:repeat(3,minmax(54px,auto));gap:0;text-align:center}
@@ -1083,7 +1083,7 @@ a.ak-ptl:hover{background:oklch(100% 0 0 / .24)}
 .ak-urut{display:inline-flex;gap:4px;background:var(--surface);border-radius:999px;padding:3px}
 .ak-urut button{display:inline-flex;align-items:center;gap:5px;font:inherit;font-size:11.5px;font-weight:700;color:var(--ink2);background:none;border:0;border-radius:999px;padding:4px 10px;cursor:pointer}
 .ak-urut button svg{width:13px;height:13px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
-.ak-urut button[aria-pressed="true"]{background:var(--brand);color:var(--paper)}
+.ak-urut button[aria-pressed="true"]{background:var(--brand);color:var(--on-brand)}
 @media (max-width:600px){.ak-pkbtn{grid-template-columns:auto minmax(0,1fr)}.ak-pkm{grid-column:1/-1;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--line);padding-top:8px}}
 .ak-bh{display:grid;gap:10px}
 .ak-urut{display:grid;grid-template-columns:repeat(3,1fr);width:100%;border-radius:12px}
@@ -1091,21 +1091,21 @@ a.ak-ptl:hover{background:oklch(100% 0 0 / .24)}
 
 /* G10 tabel lembaga daerah baku */
 .ak-bpt table{width:100%;border-collapse:separate;border-spacing:0;font-size:13.5px}
-.ak-bpt thead th{position:sticky;top:58px;z-index:2;background:var(--brand);color:var(--paper);text-align:center;padding:0;border-bottom:3px solid var(--data4);white-space:nowrap}
+.ak-bpt thead th{position:sticky;top:58px;z-index:2;background:var(--brand);color:var(--on-brand);text-align:center;padding:0;border-bottom:3px solid var(--data4);white-space:nowrap}
 .ak-bpt thead th:first-child{border-top-left-radius:12px}.ak-bpt thead th:last-child{border-top-right-radius:12px}
 .ak-bpt thead button{all:unset;display:block;box-sizing:border-box;width:100%;padding:11px 14px;font-weight:700;cursor:pointer}
 .ak-bpt thead th[aria-sort=ascending] button::after{content:" \25B2";font-size:9px}.ak-bpt thead th[aria-sort=descending] button::after{content:" \25BC";font-size:9px}
 .ak-bpt thead th:not([data-s]){padding:11px 14px;font-weight:700}
 .ak-bpt td{padding:8px 14px;text-align:center;vertical-align:middle;border-top:1px solid var(--line)}
 .ak-bpt tbody tr:nth-child(even) td{background:var(--surface)}
-.ak-bpt tbody tr:hover td{background:oklch(95% .02 250)}
+.ak-bpt tbody tr:hover td{background:var(--surface)}
 .ak-bpt td:first-child{text-align:left;width:38%}
 .ak-bpt .ak-btn0{width:100%}
 .ak-bttel{display:block;font-weight:700;color:var(--ink);font-variant-numeric:tabular-nums;font-size:14px;text-decoration:none}
 .ak-bpt td small{display:block;font-size:11.5px;color:var(--ink2)}
 .ak-btaksi{display:inline-flex;gap:6px}
 .ak-bti{all:unset;box-sizing:border-box;width:28px;height:28px;display:grid;place-items:center;border-radius:8px;background:var(--surface);color:var(--brand);cursor:pointer;border:1px solid var(--line)}
-.ak-bti:hover{background:var(--brand);color:var(--paper)}
+.ak-bti:hover{background:var(--brand);color:var(--on-brand)}
 .ak-bti svg{width:15px;height:15px;fill:none;stroke:currentColor;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round}
 @media (max-width:700px){.ak-bpt thead{display:none}.ak-bpt tr{display:grid;grid-template-columns:1fr auto;gap:2px 8px;padding:10px 4px;border-top:1px solid var(--line)}.ak-bpt td{display:block;border:0;background:none!important;padding:2px 6px;text-align:left}.ak-bpt td:first-child{grid-column:1/-1;width:auto}.ak-bpt td[data-l=Sumber]{grid-column:1/-1}}
 
@@ -1121,10 +1121,10 @@ a.ak-ptl:hover{background:oklch(100% 0 0 / .24)}
 .ak-dkepala .ak-dk-atas .ak-klogo,.ak-dkepala .ak-dk-atas .ak-lgo{width:48px;height:48px}
 .ak-dkepala .ak-nama h2{font-size:18px;line-height:1.25}
 .ak-pojok{position:absolute;top:0;right:0;display:flex;gap:6px}
-.ak-dkepala .ak-pojok button{width:34px;height:34px;min-height:0;padding:0;margin:0;display:grid;place-items:center;border-radius:50%;font-size:0;gap:0;background:oklch(100% 0 0 / .12);border:1px solid oklch(100% 0 0 / .3);color:var(--paper);cursor:pointer}
+.ak-dkepala .ak-pojok button{width:34px;height:34px;min-height:0;padding:0;margin:0;display:grid;place-items:center;border-radius:50%;font-size:0;gap:0;background:oklch(100% 0 0 / .12);border:1px solid oklch(100% 0 0 / .3);color:var(--on-brand);cursor:pointer}
 .ak-dkepala .ak-pojok button span{display:none}
 .ak-dkepala .ak-pojok button svg{width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:1.9}
-.ak-dkepala .ak-pojok .ak-dptog[aria-pressed="true"]{background:var(--paper);color:var(--brand)}
+.ak-dkepala .ak-pojok .ak-dptog[aria-pressed="true"]{background:var(--on-brand);color:var(--brand)}
 .ak-sheet .ak-dk-atas{padding-right:100px}
 .ak-sheet .ak-pojok{right:44px;top:2px}
 .ak-drawer .ak-pojok{right:44px;top:2px}.ak-drawer .ak-dk-atas{padding-right:100px}
@@ -1153,10 +1153,10 @@ a.ak-ptl:hover{background:oklch(100% 0 0 / .24)}
 .ak-bk3{display:grid;align-content:start;gap:6px;padding:14px;background:var(--card);border:1px solid var(--line);border-radius:14px;min-width:0}
 .ak-bk3-smp{all:unset;display:block;cursor:pointer;width:100%;box-sizing:border-box}
 .ak-bk3-besar{width:120px;flex:none;cursor:default}
-.ak-bsmp{position:relative;display:flex;flex-direction:column;justify-content:flex-end;gap:6px;aspect-ratio:2/3;padding:12px 11px;border-radius:6px 10px 10px 6px;overflow:hidden;color:var(--paper);background:linear-gradient(155deg,color-mix(in oklch,var(--w0) 85%,var(--paper)),color-mix(in oklch,var(--w0) 70%,var(--ink)));box-shadow:0 6px 14px color-mix(in srgb,var(--ink) 19%,transparent),inset 5px 0 6px -3px color-mix(in srgb,var(--ink) 27%,transparent);text-align:left}
+.ak-bsmp{position:relative;display:flex;flex-direction:column;justify-content:flex-end;gap:6px;aspect-ratio:2/3;padding:12px 11px;border-radius:6px 10px 10px 6px;overflow:hidden;color:var(--on-brand);background:linear-gradient(155deg,color-mix(in oklch,var(--w0) 85%,var(--paper)),color-mix(in oklch,var(--w0) 70%,var(--ink)));box-shadow:0 6px 14px color-mix(in srgb,var(--ink) 19%,transparent),inset 5px 0 6px -3px color-mix(in srgb,var(--ink) 27%,transparent);text-align:left}
 .ak-bsmp b{font-family:Georgia,"Times New Roman",serif;font-size:15px;line-height:1.2;font-weight:700;display:-webkit-box;-webkit-line-clamp:5;-webkit-box-orient:vertical;overflow:hidden;overflow-wrap:anywhere;position:relative}
 .ak-bsmp small{font-size:10px;letter-spacing:.03em;opacity:.85;font-weight:600;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;position:relative}
-.ak-bsmp-ik{position:absolute;top:12px;right:10px;width:30px;height:30px;fill:none;stroke:var(--paper);stroke-width:1.5;opacity:.55}
+.ak-bsmp-ik{position:absolute;top:12px;right:10px;width:30px;height:30px;fill:none;stroke:var(--on-brand);stroke-width:1.5;opacity:.55}
 .ak-bsmp-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:2}
 .ak-bk3 h4{margin:4px 0 0;font-size:14px;line-height:1.3}
 .ak-bk3 h4 button{all:unset;cursor:pointer;font-weight:800;color:var(--ink);display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
@@ -1226,11 +1226,11 @@ a.ak-ptl:hover{background:oklch(100% 0 0 / .24)}
 .ak-bpanel .ak-sektor.ak-chip{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:2px;width:100%;overflow:visible;flex:none}
 .ak-bpanel .ak-sektor button{display:flex;align-items:center;justify-content:flex-start;gap:7px;min-height:36px;padding:0 12px;border:0;background:transparent;border-radius:999px;font-size:13.5px;font-weight:600;color:var(--ink2);min-width:0;overflow:hidden}
 .ak-bpanel .ak-sektor button:hover:not([aria-pressed="true"]){background:var(--surface);color:var(--ink)}
-.ak-bpanel .ak-sektor button[aria-pressed="true"]{background:var(--brand);color:var(--paper);box-shadow:0 1px 3px oklch(25% .07 256 / .25)}
+.ak-bpanel .ak-sektor button[aria-pressed="true"]{background:var(--brand);color:var(--on-brand);box-shadow:0 1px 3px oklch(25% .07 256 / .25)}
 .ak-bpanel .ak-sektor button[aria-pressed="true"]::after{content:none}
 .ak-bpanel .ak-sektor button .ak-ikon{width:15px;height:15px;flex:none}
 .ak-bpanel .ak-sektor button span{margin-left:auto;font-size:11px;font-weight:600;color:var(--ink2);opacity:.8;background:none;padding:0}
-.ak-bpanel .ak-sektor button[aria-pressed="true"] span{color:var(--paper);opacity:.8}
+.ak-bpanel .ak-sektor button[aria-pressed="true"] span{color:var(--on-brand);opacity:.8}
 .ak-bpanel .ak-sektor button[data-nol]:not([aria-pressed="true"]){opacity:.45}
 @media (max-width:1100px){.ak-bpanel .ak-sektor.ak-chip{grid-template-columns:repeat(4,minmax(0,1fr));overflow:visible}}
 @media (max-width:600px){.ak-bpanel .ak-sektor.ak-chip{grid-template-columns:repeat(3,minmax(0,1fr))}.ak-bpanel .ak-sektor button{padding:0 8px;font-size:12px;gap:5px}.ak-bpanel .ak-sektor button .ak-ikon{width:13px;height:13px}}
@@ -1261,22 +1261,22 @@ a.ak-ptl:hover{background:oklch(100% 0 0 / .24)}
 @media (max-width:600px){.ak-strip{grid-template-columns:repeat(2,minmax(0,1fr))!important;row-gap:12px}.ak-strip>div:nth-child(odd){border-left:0;padding-left:0}}
 /* G13b tombol ikon bulat seragam */
 .ak-ib{all:unset;box-sizing:border-box;width:34px;height:34px;display:inline-grid;place-items:center;border-radius:50%;cursor:pointer;flex:none;background:var(--surface);border:1px solid var(--line);color:var(--brand)}
-.ak-ib:hover{background:var(--brand);color:var(--paper)}
+.ak-ib:hover{background:var(--brand);color:var(--on-brand)}
 .ak-ib svg{width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round}
 .ak-ib[aria-pressed="true"] svg{fill:currentColor}
-.ak-dkepala .ak-ib{background:oklch(100% 0 0 / .12);border-color:oklch(100% 0 0 / .3);color:var(--paper)}
+.ak-dkepala .ak-ib{background:oklch(100% 0 0 / .12);border-color:oklch(100% 0 0 / .3);color:var(--on-brand)}
 .ak-dkepala .ak-ib:hover{background:oklch(100% 0 0 / .26)}
-.ak-dkepala .ak-ib[aria-pressed="true"]{background:var(--paper);color:var(--brand)}
+.ak-dkepala .ak-ib[aria-pressed="true"]{background:var(--on-brand);color:var(--brand)}
 .ak-dkepala .ak-ib:focus-visible{outline:2px solid var(--paper);outline-offset:2px}
 .ak-gm-i{display:inline-grid;place-items:center;width:24px;height:24px;border-radius:50%;background:oklch(100% 0 0 / .16);vertical-align:middle;margin-left:6px;text-decoration:none}
-.ak-gm-i svg{width:14px;height:14px;fill:none;stroke:var(--paper);stroke-width:1.9}
+.ak-gm-i svg{width:14px;height:14px;fill:none;stroke:var(--on-brand);stroke-width:1.9}
 .ak-bg .ak-gmaps,.ak-bn .ak-gmaps{display:inline-grid;place-items:center;width:26px;height:26px;border-radius:50%;background:var(--surface);color:var(--brand2);margin-left:6px;vertical-align:middle}
 /* G13b pil mini pada kartu dan baris lembaga */
 .ak-mps,.ak-bkr-t .ak-pil{gap:5px}
 .ak-mp,.ak-org .ak-izin,.ak-bkr .ak-izin{display:inline-flex;align-items:center;gap:4px;min-height:20px;height:20px;padding:0 8px;border-radius:999px;font-size:11px;font-weight:600;line-height:1;background:var(--surface);color:var(--ink2);white-space:nowrap;max-width:100%;overflow:hidden;text-overflow:ellipsis}
 .ak-mp[style] {background:color-mix(in srgb,var(--w0) 12%,var(--paper));color:var(--ink)}
 .ak-mp svg{width:12px;height:12px;flex:none;fill:none;stroke:currentColor;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round}
-.ak-org .ak-izin,.ak-bkr .ak-izin{color:var(--paper)}
+.ak-org .ak-izin,.ak-bkr .ak-izin{color:var(--on-brand)}
 /* G13b catatan kaki: disclaimer rapi */
 .ak-lkaki,.ak-lkaki-s,.ak-lper.ak-lkaki-s{display:flex;align-items:center;gap:6px;width:fit-content;max-width:100%;margin:12px auto 0;padding:5px 12px;border-radius:999px;background:var(--surface);color:var(--ink2);font-size:11.5px;line-height:1.4;text-align:center}
 .ak-lkaki::before,.ak-lkaki-s::before{content:"";flex:none;width:13px;height:13px;background:currentColor;opacity:.7;-webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round'%3E%3Ccircle cx='12' cy='12' r='9'/%3E%3Cpath d='M12 11v6M12 7.5v.5'/%3E%3C/svg%3E") center/contain no-repeat;mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round'%3E%3Ccircle cx='12' cy='12' r='9'/%3E%3Cpath d='M12 11v6M12 7.5v.5'/%3E%3C/svg%3E") center/contain no-repeat}
@@ -1415,16 +1415,16 @@ a.ak-ptl:hover{background:oklch(100% 0 0 / .24)}
 .ak-pk-foto .ak-logo{width:26px;height:26px}
 .ak-pk-tengah h2{margin:0;font-size:20px;line-height:1.2}
 .ak-pk-kp{margin:2px 0 6px;display:flex;align-items:center;gap:6px;font-size:13px}
-.ak-pk-kp .ak-kp{background:none;border:0;color:var(--paper);opacity:.9;padding:0;font:inherit;cursor:pointer;text-align:left}
+.ak-pk-kp .ak-kp{background:none;border:0;color:var(--on-brand);opacity:.9;padding:0;font:inherit;cursor:pointer;text-align:left}
 .ak-pk-kp .ak-klogo.kecil{width:18px;height:18px;padding:2px;border-radius:50%;background:var(--paper);object-fit:contain}
 .ak-pk-angka{display:grid;gap:4px;justify-items:center}
 .ak-pk-angka .ak-metrik{border:0;padding:0}
-.ak-pk-src{font-size:11px;color:var(--paper);opacity:.75;text-decoration:none}.ak-pk-src:hover{opacity:1;text-decoration:underline}
+.ak-pk-src{font-size:11px;color:var(--on-brand);opacity:.75;text-decoration:none}.ak-pk-src:hover{opacity:1;text-decoration:underline}
 .ak-dk-pk .ak-pojok{position:absolute;top:14px;right:62px;display:flex;gap:6px}
-.ak-mp-sinta{background:var(--data2)!important;color:var(--paper)!important}
+.ak-mp-sinta{background:var(--data2)!important;color:var(--on-brand)!important}
 .ak-mp-redup{background:oklch(100% 0 0 / .1)!important;color:color-mix(in srgb,var(--paper) 67%,transparent)!important;font-weight:500}
-.ak-dk-pk .ak-mp{background:oklch(100% 0 0 / .16);color:var(--paper)}
-.ak-dk-pk .ak-mp svg{stroke:var(--paper)}
+.ak-dk-pk .ak-mp{background:oklch(100% 0 0 / .16);color:var(--on-brand)}
+.ak-dk-pk .ak-mp svg{stroke:var(--on-brand)}
 .ak-dk-pk .ak-mp-a{background:var(--paper)!important;color:var(--brand)!important}
 .ak-dk-pk .ak-mp-a svg{stroke:var(--brand)}
 @media (max-width:700px){.ak-pk-grid{grid-template-columns:56px minmax(0,1fr);padding-right:0;row-gap:10px}.ak-pk-foto .ak-foto,.ak-pk-foto .ak-sosok{width:56px;height:56px}.ak-pk-angka{grid-column:1/-1;justify-items:stretch}.ak-pk-angka .ak-metrik{grid-template-columns:repeat(3,1fr)}.ak-dk-pk .ak-pojok{top:12px;right:56px}.ak-pk-tengah .ak-mps{grid-column:1/-1}}
@@ -1458,12 +1458,12 @@ a.ak-ptl:hover{background:oklch(100% 0 0 / .24)}
 @media (hover:none){.ak-dphapus{opacity:1}}
 .ak-dpl .ak-pkm{margin-right:30px}
 .ak-dpfoot{position:sticky;bottom:0;display:flex;gap:6px;background:var(--card);border-top:1px solid var(--line);padding:10px 0 4px;margin-top:8px}
-.ak-dpfoot button{flex:1 1 0;display:inline-flex;align-items:center;justify-content:center;gap:6px;min-height:38px;font:inherit;font-size:13px;font-weight:700;color:var(--paper);background:var(--brand);border:0;border-radius:999px;cursor:pointer}
+.ak-dpfoot button{flex:1 1 0;display:inline-flex;align-items:center;justify-content:center;gap:6px;min-height:38px;font:inherit;font-size:13px;font-weight:700;color:var(--on-brand);background:var(--brand);border:0;border-radius:999px;cursor:pointer}
 .ak-dpfoot button:hover{background:var(--brand2)}
 .ak-dpfoot svg{width:15px;height:15px;fill:none;stroke:currentColor;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round}
 .ak-kosong-dp{display:grid;justify-items:center;gap:10px;padding:34px 20px;color:var(--ink2);text-align:center}
 .ak-kosong-dp svg{width:34px;height:34px;fill:none;stroke:currentColor;stroke-width:1.6}
-#akDpRingkas .ak-r{display:inline-flex;align-items:center;gap:5px;height:22px;padding:0 9px;border-radius:999px;font-size:11px;background:oklch(100% 0 0 / .14);color:var(--paper)}
+#akDpRingkas .ak-r{display:inline-flex;align-items:center;gap:5px;height:22px;padding:0 9px;border-radius:999px;font-size:11px;background:oklch(100% 0 0 / .14);color:var(--on-brand)}
 #akDpRingkas .ak-r svg{width:12px;height:12px}
 
 /* G13g tab utama dan sub-tab masuk ke area navy kepala */
@@ -1472,11 +1472,11 @@ a.ak-ptl:hover{background:oklch(100% 0 0 / .24)}
 .ak-kepala-nav>*{min-width:0}
 .ak{margin-top:16px!important}
 .ak-kepala .ak-seg{background:oklch(100% 0 0 / .12);border-color:oklch(100% 0 0 / .24);box-shadow:none}
-.ak-kepala .ak-seg button{color:var(--paper);opacity:.92}
-.ak-kepala .ak-seg button:hover:not([aria-pressed="true"]){background:oklch(100% 0 0 / .16);color:var(--paper)}
-.ak-kepala .ak-seg button[aria-pressed="true"]{background:var(--paper);color:var(--brand);opacity:1;box-shadow:none}
+.ak-kepala .ak-seg button{color:var(--on-brand);opacity:.92}
+.ak-kepala .ak-seg button:hover:not([aria-pressed="true"]){background:oklch(100% 0 0 / .16);color:var(--on-brand)}
+.ak-kepala .ak-seg button[aria-pressed="true"]{background:var(--on-brand);color:var(--brand);opacity:1;box-shadow:none}
 .ak-kepala .ak-tampil{box-shadow:none}
-.ak-kepala .ak-tabpanah{background:var(--paper)}
+.ak-kepala .ak-tabpanah{background:var(--on-brand);color:var(--brand)}
 
 /* G13h tabel sisi peta: lebar kolom tetap */
 .ak-sdt{table-layout:fixed;width:100%}
@@ -1486,11 +1486,11 @@ a.ak-ptl:hover{background:oklch(100% 0 0 / .24)}
 #akS button{padding:0 9px;font-size:13px}
 /* tip wilayah peta */
 .ak-tw{display:grid;gap:8px;min-width:200px;max-width:260px}
-.ak-tw-j{font-size:13px;font-weight:800;color:var(--paper)}
-.ak-tw-u{display:flex;align-items:baseline;gap:6px}.ak-tw-u strong{font-size:24px;font-weight:800;line-height:1;color:var(--paper)}.ak-tw-u span{font-size:12px;color:color-mix(in srgb,var(--paper) 70%,transparent)}
+.ak-tw-j{font-size:13px;font-weight:800;color:var(--on-brand)}
+.ak-tw-u{display:flex;align-items:baseline;gap:6px}.ak-tw-u strong{font-size:24px;font-weight:800;line-height:1;color:var(--on-brand)}.ak-tw-u span{font-size:12px;color:color-mix(in srgb,var(--paper) 70%,transparent)}
 .ak-tw ul{list-style:none;margin:0;padding:8px 0 0;border-top:1px solid color-mix(in srgb,var(--paper) 15%,transparent);display:grid;gap:5px}
-.ak-tw li{display:grid;grid-template-columns:14px 1fr auto;align-items:center;gap:7px;font-size:12px;color:color-mix(in srgb,var(--paper) 80%,transparent)}.ak-tw li .ak-ikon{width:13px;height:13px}.ak-tw li b{color:var(--paper);font-variant-numeric:tabular-nums}
-.ak-tw-top{display:grid;gap:1px;font-size:12px;padding-top:6px;border-top:1px solid color-mix(in srgb,var(--paper) 15%,transparent)}.ak-tw-top span{font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;color:color-mix(in srgb,var(--paper) 60%,transparent)}.ak-tw-top b{color:var(--paper);font-weight:600;line-height:1.3}
+.ak-tw li{display:grid;grid-template-columns:14px 1fr auto;align-items:center;gap:7px;font-size:12px;color:color-mix(in srgb,var(--paper) 80%,transparent)}.ak-tw li .ak-ikon{width:13px;height:13px}.ak-tw li b{color:var(--on-brand);font-variant-numeric:tabular-nums}
+.ak-tw-top{display:grid;gap:1px;font-size:12px;padding-top:6px;border-top:1px solid color-mix(in srgb,var(--paper) 15%,transparent)}.ak-tw-top span{font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;color:color-mix(in srgb,var(--paper) 60%,transparent)}.ak-tw-top b{color:var(--on-brand);font-weight:600;line-height:1.3}
 .ak-tw small{font-size:11px;color:color-mix(in srgb,var(--paper) 50%,transparent)}
 
 /* G14 jaringan mini, avatar siluet, strip rata, sumber */
@@ -1546,7 +1546,7 @@ button.ak-mj:hover{background:var(--surface)}
 .ak-tipw-top span{display:block;font-size:10px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--ink2);margin-bottom:2px}
 #akTip:has(.ak-tipw){background:var(--paper);color:var(--ink);border:1px solid var(--line);border-radius:12px;padding:12px 14px;box-shadow:0 10px 28px rgb(15 30 60 / .18)}
 .ak-kepala-nav{max-width:1200px}
-.ak-dk-pk .ak-kp-pil{display:inline-flex;align-items:center;gap:6px;height:26px;padding:0 12px;border-radius:999px;background:oklch(100% 0 0 / .14);border:1px solid oklch(100% 0 0 / .22);color:var(--paper);font:inherit;font-size:12.5px;font-weight:600;text-decoration:none;cursor:pointer}
+.ak-dk-pk .ak-kp-pil{display:inline-flex;align-items:center;gap:6px;height:26px;padding:0 12px;border-radius:999px;background:oklch(100% 0 0 / .14);border:1px solid oklch(100% 0 0 / .22);color:var(--on-brand);font:inherit;font-size:12.5px;font-weight:600;text-decoration:none;cursor:pointer}
 .ak-dk-pk .ak-kp-pil:hover{background:oklch(100% 0 0 / .24);text-decoration:none}
 .ak-dk-pk .ak-kp-pil .ak-ikon{width:14px;height:14px}
 /* tombol ikon kepala: warna per fungsi */
@@ -1556,7 +1556,7 @@ button.ak-mj:hover{background:var(--surface)}
 .ak-dkepala [data-kor].ak-ib{background:oklch(75% .1 235 / .22);border-color:oklch(78% .1 235 / .6);color:var(--line)}
 .ak-dkepala [data-kor].ak-ib:hover{background:oklch(75% .1 235 / .38)}
 .ak-x{background:var(--paper)!important;color:var(--brand)!important;border:0!important}
-.ak-x:hover{background:oklch(94% .02 250)!important}
+.ak-x:hover{background:var(--surface)!important}
 /* topik riset: label rapi berikon */
 .ak-topik{display:flex;flex-wrap:wrap;gap:6px}
 .ak-topik span{display:inline-flex;align-items:center;gap:6px;height:28px;padding:0 12px;border-radius:999px;background:var(--paper);border:1px solid var(--line);font-size:12.5px;font-weight:600;color:var(--ink)}
@@ -1572,7 +1572,7 @@ button.ak-afg-i{cursor:pointer}button.ak-afg-i:hover{background:var(--surface)}
 .ak-dkepala .ak-dk-atas > .ak-metrik{display:grid;grid-auto-flow:column;grid-auto-columns:minmax(96px,auto);gap:0;margin:0;background:oklch(100% 0 0 / .07);border:1px solid oklch(100% 0 0 / .14);border-radius:14px;padding:8px 4px}
 .ak-dkepala .ak-dk-atas > .ak-metrik > div{display:flex;flex-direction:column-reverse;align-items:flex-start;gap:2px;padding:2px 16px;border-left:1px solid oklch(100% 0 0 / .14)}
 .ak-dkepala .ak-dk-atas > .ak-metrik > div:first-child{border-left:0}
-.ak-dkepala .ak-dk-atas > .ak-metrik b{font-size:22px;line-height:1.1;font-weight:800;color:var(--paper);font-variant-numeric:tabular-nums}
+.ak-dkepala .ak-dk-atas > .ak-metrik b{font-size:22px;line-height:1.1;font-weight:800;color:var(--on-brand);font-variant-numeric:tabular-nums}
 .ak-dkepala .ak-dk-atas > .ak-metrik .ak-mlabel{display:inline-flex;align-items:center;gap:5px;font-size:11.5px;color:oklch(100% 0 0 / .7)}
 .ak-dkepala .ak-dk-atas > .ak-metrik .ak-mlabel .ak-ikon{width:12px;height:12px}
 .ak-dkepala .ak-kaksi{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin-top:12px}
@@ -1648,7 +1648,7 @@ button.ak-afg-i{cursor:pointer}button.ak-afg-i:hover{background:var(--surface)}
 .ak:has(> #akv-lembaga.ak-lbpeta:not([hidden])){margin-top:0}
 /* peta lembaga: panel kanan dihapus, legenda di bawah peta */
 #akv-lembaga .ak-ptpanel{display:none!important}
-.ak-legbawah{position:absolute;z-index:6;left:50%;bottom:28px;transform:translateX(-50%);display:flex;align-items:center;gap:14px;flex-wrap:wrap;justify-content:center;max-width:calc(100% - 24px);padding:8px 16px;background:oklch(100% 0 0 / .95);border:1px solid var(--line);border-radius:999px;box-shadow:0 6px 18px rgb(15 30 60 / .14);font-size:12px;color:var(--ink)}
+.ak-legbawah{position:absolute;z-index:6;left:50%;bottom:28px;transform:translateX(-50%);display:flex;align-items:center;gap:14px;flex-wrap:wrap;justify-content:center;max-width:calc(100% - 24px);padding:8px 16px;background:color-mix(in srgb,var(--card) 95%,transparent);border:1px solid var(--line);border-radius:999px;box-shadow:0 6px 18px rgb(15 30 60 / .14);font-size:12px;color:var(--ink)}
 .ak-legbawah b{font-weight:700;margin-right:4px}
 .ak-legbawah span{display:inline-flex;align-items:center;gap:6px;white-space:nowrap}
 .ak-legbawah i{width:18px;height:10px;border-radius:3px;display:inline-block;border:1px solid rgb(0 0 0 / .06)}
@@ -1730,7 +1730,7 @@ button.ak-afg-i{cursor:pointer}button.ak-afg-i:hover{background:var(--surface)}
 
 /* G14 kartu proyek mitra */
 .ak-lgo-d{background:var(--paper);border:1px solid var(--line)}
-.ak-lgo-d .ak-ini{display:grid;place-items:center;width:100%;height:100%;font-size:12px;font-weight:800;color:var(--paper);background:var(--w0)}
+.ak-lgo-d .ak-ini{display:grid;place-items:center;width:100%;height:100%;font-size:12px;font-weight:800;color:var(--on-brand);background:var(--w0)}
 .ak-lgo-d img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;padding:3px;box-sizing:border-box;background:var(--paper)}
 .ak-pjk{display:flex!important;flex-direction:column;gap:8px;align-content:start}
 .ak-pjk-a{display:flex;align-items:center;gap:8px}.ak-pjk-a .ak-lgo{width:32px;height:32px}
@@ -1746,11 +1746,11 @@ button.ak-afg-i{cursor:pointer}button.ak-afg-i:hover{background:var(--surface)}
 .ak-pjk-f{margin-top:auto}
 .ak-pjk-f{margin-top:2px!important}
 /* tombol pojok kepala profil: simpan, koreksi, tutup = satu ukuran, satu gaya */
-.ak-dkepala .ak-ib,.ak-dkepala .ak-pojok .ak-ib,.ak-pojok .ak-ib,.ak-dlg .ak-x,.ak-sheet .ak-x{width:36px!important;height:36px!important;border-radius:50%!important;display:inline-grid!important;place-items:center!important;padding:0!important;box-sizing:border-box;background:color-mix(in srgb,var(--paper) 12%,transparent)!important;border:1px solid color-mix(in srgb,var(--paper) 25%,transparent)!important;color:var(--paper)!important;box-shadow:none!important;transition:background .15s,border-color .15s}
+.ak-dkepala .ak-ib,.ak-dkepala .ak-pojok .ak-ib,.ak-pojok .ak-ib,.ak-dlg .ak-x,.ak-sheet .ak-x{width:36px!important;height:36px!important;border-radius:50%!important;display:inline-grid!important;place-items:center!important;padding:0!important;box-sizing:border-box;background:color-mix(in srgb,var(--paper) 12%,transparent)!important;border:1px solid color-mix(in srgb,var(--paper) 25%,transparent)!important;color:var(--on-brand)!important;box-shadow:none!important;transition:background .15s,border-color .15s}
 .ak-dkepala .ak-ib:hover,.ak-dlg .ak-x:hover,.ak-sheet .ak-x:hover{background:color-mix(in srgb,var(--paper) 22%,transparent)!important;border-color:color-mix(in srgb,var(--paper) 50%,transparent)!important}
 .ak-dkepala .ak-ib[aria-pressed="true"],.ak-dkepala .ak-ib.aktif{background:var(--data4)!important;border-color:var(--data4)!important;color:var(--data1)!important}
 .ak-dkepala .ak-ib svg,.ak-dlg .ak-x svg,.ak-sheet .ak-x svg{width:16px!important;height:16px!important}
-.ak-dkepala [data-kor].ak-ib{background:color-mix(in srgb,var(--paper) 12%,transparent)!important;border-color:color-mix(in srgb,var(--paper) 25%,transparent)!important;color:var(--paper)!important}
+.ak-dkepala [data-kor].ak-ib{background:color-mix(in srgb,var(--paper) 12%,transparent)!important;border-color:color-mix(in srgb,var(--paper) 25%,transparent)!important;color:var(--on-brand)!important}
 /* tabel samping peta: kepala rata tengah, angka ikut rata tengah supaya sejajar */
 .ak-sdt thead th,.ak-sdt thead th.r{text-align:center!important}
 .ak-sdt thead button,.ak-sdt thead th.r button{justify-content:center!important;text-align:center!important}
@@ -1758,11 +1758,11 @@ button.ak-afg-i{cursor:pointer}button.ak-afg-i:hover{background:var(--surface)}
 .ak-sdt thead th:first-child button{padding-left:8px}
 
 /* G15 label wilayah di luar panel samping */
-.ak-side-label{position:absolute;z-index:7;top:12px;left:12px;display:flex;align-items:center;gap:8px;height:34px;padding:0 6px 0 14px;background:var(--brand);color:var(--paper);border-radius:999px;box-shadow:var(--shadow);cursor:default}
+.ak-side-label{position:absolute;z-index:7;top:12px;left:12px;display:flex;align-items:center;gap:8px;height:34px;padding:0 6px 0 14px;background:var(--brand);color:var(--on-brand);border-radius:999px;box-shadow:var(--shadow);cursor:default}
 .ak-side-label.lipat{cursor:pointer}
-.ak-side-label b{font-size:14px;font-weight:800;color:var(--paper)}
+.ak-side-label b{font-size:14px;font-weight:800;color:var(--on-brand)}
 .ak-side-label span{font-size:12px;color:color-mix(in srgb,var(--paper) 72%,transparent)}
-.ak-sl-back,.ak-sl-lipat{all:unset;box-sizing:border-box;width:24px;height:24px;display:grid;place-items:center;border-radius:50%;background:oklch(100% 0 0 / .16);color:var(--paper);cursor:pointer;flex:none}
+.ak-sl-back,.ak-sl-lipat{all:unset;box-sizing:border-box;width:24px;height:24px;display:grid;place-items:center;border-radius:50%;background:oklch(100% 0 0 / .16);color:var(--on-brand);cursor:pointer;flex:none}
 .ak-sl-back{margin-left:-8px}
 .ak-sl-back[hidden]{display:none}
 .ak-sl-back svg,.ak-sl-lipat svg{width:14px;height:14px;fill:none;stroke:currentColor;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
@@ -1809,14 +1809,14 @@ button.ak-afg-i{cursor:pointer}button.ak-afg-i:hover{background:var(--surface)}
 .ak-daya>div{border-left:0;padding:4px 12px 4px 0;align-items:flex-start}
 .ak-daya small{white-space:normal!important;overflow:visible!important;text-overflow:clip!important;line-height:1.3}
 .ak-daya b{white-space:nowrap;font-size:21px!important}
-.ak-tkt{display:inline-block;font-style:normal;font-size:10.5px;font-weight:700;color:var(--paper);border-radius:999px;padding:1px 8px;margin-left:4px}
+.ak-tkt{display:inline-block;font-style:normal;font-size:10.5px;font-weight:700;color:var(--on-brand);border-radius:999px;padding:1px 8px;margin-left:4px}
 .ak-evgrid{margin:4px 0 12px}
 .ak-evb{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(40px,1fr) auto;align-items:center;gap:10px;padding:5px 4px}
 .ak-evn{display:flex;align-items:center;gap:7px;font-size:13px;font-weight:600;color:var(--ink);overflow:hidden;white-space:nowrap;text-overflow:ellipsis}
 .ak-evn svg{width:15px;height:15px;flex:none;fill:none;stroke:currentColor;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round}
 .ak-evb b{font-size:12.5px;font-variant-numeric:tabular-nums}
 .ak-wpil .ak-mp-b{all:unset;box-sizing:border-box;display:inline-flex;align-items:center;gap:5px;height:24px;padding:0 10px;border-radius:999px;background:var(--surface);font-size:11.5px;font-weight:700;color:var(--ink);cursor:pointer}
-.ak-wpil .ak-mp-b:hover{background:var(--brand);color:var(--paper)}
+.ak-wpil .ak-mp-b:hover{background:var(--brand);color:var(--on-brand)}
 .ak-wpil .ak-mp-b svg{width:12px;height:12px;fill:none;stroke:currentColor;stroke-width:1.9}
 
 /* G16 judul bagian wilayah kecil kapital di dalam kartu */
@@ -1980,7 +1980,7 @@ button.ak-pnl{cursor:pointer}button.ak-pnl:hover{border-color:var(--brand2)}
 #akPtSens,.ak-ptsens{display:none!important}
 /* tabel lembaga daerah: tanpa belang abu, garis tipis saja */
 .ak-bpt tbody tr:nth-child(even) td,.ak-bpt tbody tr td{background:var(--paper)!important}
-.ak-bpt tbody tr:hover td{background:oklch(97% .01 250)!important}
+.ak-bpt tbody tr:hover td{background:var(--surface)!important}
 .ak-bpt td .ak-btn0,.ak-bpt td:first-child > *{background:none!important}
 .ak-side-h > .ak-ptlayer .ak-kampus-pilih,.ak-side-h > .ak-ptlayer > div:not(:has(button[data-ly])){display:none!important}
 .ak-side-h > .ak-ptlayer button[data-ly="sensor"]{display:inline-flex!important}
@@ -2062,7 +2062,7 @@ button.ak-pnl{cursor:pointer}button.ak-pnl:hover{border-color:var(--brand2)}
 .ak-side-h .ak-ptlayer > button svg,.ak-side-h .ak-ptlayer > button .ak-ikon{width:15px!important;height:15px!important}
 .ak-side-h .ak-ptlayer > button small{display:none!important}
 .ak-side-h .ak-ptlayer > button:hover{background:var(--card)!important;color:var(--ink)}
-.ak-side-h .ak-ptlayer > button[aria-pressed="true"]{background:var(--brand,var(--data1))!important;color:var(--paper)!important}
+.ak-side-h .ak-ptlayer > button[aria-pressed="true"]{background:var(--brand,var(--data1))!important;color:var(--on-brand)!important}
 .ak-side-h .ak-ptlayer > button:focus-visible{outline:2px solid var(--brand2);outline-offset:1px}
 .ak-side-h .ak-ptlayer > button[data-ly]{display:grid!important}
 .ak-side-h .ak-ptlayer > button[data-ly][hidden]{display:none!important}
@@ -2086,7 +2086,7 @@ button.ak-pnl{cursor:pointer}button.ak-pnl:hover{border-color:var(--brand2)}
 
 /* G21 pemilih kategori di kanan atas kanvas peta */
 .ak-ptaisi>#akPtKat{position:absolute;top:12px;right:56px;width:220px;z-index:9;flex:none}
-.ak-ptaisi>#akPtKat .ak-kbtn{background:oklch(100% 0 0 / .94);box-shadow:var(--shadow)}
+.ak-ptaisi>#akPtKat .ak-kbtn{background:color-mix(in srgb,var(--card) 94%,transparent);box-shadow:var(--shadow)}
 .ak-ptaisi>#akPtKat .ak-kpop{top:calc(100% + 8px);bottom:auto;left:auto;right:0;width:min(360px,calc(100vw - 32px));z-index:60}
 @media (max-width:700px){.ak-ptaisi>#akPtKat{top:12px;right:56px;width:170px}}
 
@@ -2096,7 +2096,7 @@ button.ak-pnl{cursor:pointer}button.ak-pnl:hover{border-color:var(--brand2)}
 .ak-sdt thead th.r,.ak-sdt thead th:not(:first-child),.ak-sdt td:not(:first-child){width:46px!important;padding-right:4px!important}
 .ak-sdt thead th:not(:first-child) svg{display:none}
 .ak-sdt thead button{font-size:9px!important;letter-spacing:0!important;padding-left:2px!important}
-.ak-mp-x{all:unset;box-sizing:border-box;display:inline-flex;align-items:center;gap:5px;height:24px;padding:0 10px;border-radius:999px;background:var(--brand);color:var(--paper);font-size:12px;font-weight:700;cursor:pointer;margin-left:8px;vertical-align:middle}.ak-mp-x svg{width:13px;height:13px}
+.ak-mp-x{all:unset;box-sizing:border-box;display:inline-flex;align-items:center;gap:5px;height:24px;padding:0 10px;border-radius:999px;background:var(--brand);color:var(--on-brand);font-size:12px;font-weight:700;cursor:pointer;margin-left:8px;vertical-align:middle}.ak-mp-x svg{width:13px;height:13px}
 
 /* G22 multi-pilih sektor: tanda centang kecil di kiri tombol terpilih */
 .ak-bpanel .ak-sektor button[aria-pressed="true"]:not([data-r=""])::before{content:"\2713";font-size:12px;font-weight:800;margin-right:-2px;flex:none}
@@ -2125,9 +2125,9 @@ button.ak-pnl{cursor:pointer}button.ak-pnl:hover{border-color:var(--brand2)}
 .ak-oleh{display:inline-flex;align-items:center;gap:6px;font-size:12px;color:var(--ink2)}
 .ak-ol-lg{width:18px;height:18px;object-fit:contain;border-radius:4px;background:var(--paper)}
 .ak-oleh-n{all:unset;cursor:pointer;color:var(--ink);font-weight:600}.ak-oleh-n:hover{color:var(--brand2);text-decoration:underline}
-.ak-gpil[aria-pressed="true"]{background:var(--brand)!important;color:var(--paper)!important;border-color:var(--brand)!important}
+.ak-gpil[aria-pressed="true"]{background:var(--brand)!important;color:var(--on-brand)!important;border-color:var(--brand)!important}
 .ak-gpil[aria-pressed="true"]::before{content:"\2713";font-size:12px;font-weight:800;margin-right:4px}
-.ak-gpil[aria-pressed="true"] b{color:var(--paper)!important;background:oklch(100% 0 0 / .2)}
+.ak-gpil[aria-pressed="true"] b{color:var(--on-brand)!important;background:oklch(100% 0 0 / .2)}
 
 /* G24 batang multi-pilih */
 .ak-br.ak-bsel,[data-bar].ak-bsel{outline:2px solid var(--brand);outline-offset:1px;border-radius:8px;opacity:1}
@@ -2163,7 +2163,7 @@ button.ak-pnl{cursor:pointer}button.ak-pnl:hover{border-color:var(--brand2)}
 .ak-kjk2{display:flex;flex-direction:column;gap:10px;padding:16px;background:var(--card);border:1px solid var(--line);border-radius:16px;cursor:pointer;min-width:0;min-height:176px}
 .ak-kjk2:hover{box-shadow:var(--shadow);border-color:var(--brand2)}
 .ak-kj2-a{display:flex;align-items:center;gap:8px}
-.ak-kj2-ik{display:grid;place-items:center;width:36px;height:36px;border-radius:10px;background:var(--w0);flex:none}.ak-kj2-ik svg{width:20px;height:20px;fill:none;stroke:var(--paper);stroke-width:1.9}
+.ak-kj2-ik{display:grid;place-items:center;width:36px;height:36px;border-radius:10px;background:var(--w0);flex:none}.ak-kj2-ik svg{width:20px;height:20px;fill:none;stroke:var(--on-brand);stroke-width:1.9}
 .ak-kj2-j{background:color-mix(in srgb,var(--w0) 14%,var(--paper))!important;color:var(--ink)!important}
 .ak-kj2-tgl{margin-left:auto;font-size:11px;color:var(--ink2);white-space:nowrap}
 .ak-kjk2 h3{margin:0;font-family:inherit;font-size:16px;line-height:1.3;font-weight:800;color:var(--ink);display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;text-transform:none;letter-spacing:0}
@@ -2220,7 +2220,7 @@ button.ak-pnl{cursor:pointer}button.ak-pnl:hover{border-color:var(--brand2)}
 
 /* M1 pemilih multi: kaki Selesai */
 .ak-kselesai{position:sticky;bottom:0;display:flex;justify-content:flex-end;padding:8px 10px;background:var(--card);border-top:1px solid var(--line)}
-.ak-kselesai button{font:inherit;font-size:13px;font-weight:800;color:var(--paper);background:var(--data1);border:0;border-radius:999px;padding:6px 16px;cursor:pointer}
+.ak-kselesai button{font:inherit;font-size:13px;font-weight:800;color:var(--on-brand);background:var(--data1);border:0;border-radius:999px;padding:6px 16px;cursor:pointer}
 /* legenda jaringan sensor: pojok kanan bawah peta, di kiri kontrol zoom */
 #akSnLeg.ak-snleg{position:absolute!important;left:auto!important;top:auto!important;right:60px!important;bottom:28px!important;z-index:6;max-width:320px}
 
@@ -2245,7 +2245,7 @@ button.ak-pnl{cursor:pointer}button.ak-pnl:hover{border-color:var(--brand2)}
 .ak-bpk-d{display:flex;flex-wrap:wrap;gap:6px}
 .ak-bpk-w{display:flex;align-items:center;gap:12px;width:100%;text-align:left;font:inherit;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:10px 12px;cursor:pointer}
 .ak-bpk-w:hover{border-color:var(--data5)}.ak-bpk-w>span{flex:1;min-width:0;display:grid;gap:2px;font-size:14px}.ak-bpk-w em{font-style:normal;display:flex;flex-wrap:wrap;gap:2px 14px;font-size:12.5px;color:var(--ink2)}.ak-bpk-w em b{color:var(--ink)}
-.ak-bpk-w>i{font-style:normal;font-size:12px;font-weight:800;color:var(--paper);background:var(--data1);border-radius:999px;padding:4px 12px;flex:none}
+.ak-bpk-w>i{font-style:normal;font-size:12px;font-weight:800;color:var(--on-brand);background:var(--data1);border-radius:999px;padding:4px 12px;flex:none}
 .ak-bg,.ak-bpk,.ak-bpk>.ak-bg{min-width:0;max-width:100%}.ak-ksum{display:block;white-space:normal;overflow-wrap:anywhere}.ak-ksum .ak-izin{white-space:normal}.ak-bpk-b>div{min-width:0}.ak-bpk-b>div>span{overflow-wrap:anywhere}
 @media (max-width:560px){.ak-bpk-b>div{grid-template-columns:minmax(70px,110px) 1fr 38px}.ak-bpk-w{flex-wrap:wrap}.ak-bpk-w>i{order:3}}
 .ak-bg .ak-ksum{display:block!important;white-space:normal!important;overflow-wrap:anywhere;max-width:100%}.ak-alamat>span{min-width:0;overflow-wrap:anywhere}.ak-alamat a{overflow-wrap:anywhere;word-break:break-word}.ak-bg .ak-kontak2{min-width:0;max-width:100%}
@@ -2259,8 +2259,8 @@ button.ak-pnl{cursor:pointer}button.ak-pnl:hover{border-color:var(--brand2)}
 .ak-br[data-bar].ak-bsel .ak-bl::before{color:var(--brand)}
 /* lembar sistem data */
 .ak-sdik{display:flex;gap:8px}
-.ak-ikb{display:inline-grid;place-items:center;width:36px;height:36px;border-radius:999px;border:0;cursor:pointer;color:var(--paper);background:oklch(100% 0 0 / .14);box-shadow:inset 0 0 0 1px oklch(100% 0 0 / .3);text-decoration:none}
-.ak-ikb:hover{background:oklch(100% 0 0 / .26)}.ak-ikb .ak-ikon{width:18px;height:18px;stroke:var(--paper)}.ak-ikb.ok{background:var(--ok)}
+.ak-ikb{display:inline-grid;place-items:center;width:36px;height:36px;border-radius:999px;border:0;cursor:pointer;color:var(--on-brand);background:oklch(100% 0 0 / .14);box-shadow:inset 0 0 0 1px oklch(100% 0 0 / .3);text-decoration:none}
+.ak-ikb:hover{background:oklch(100% 0 0 / .26)}.ak-ikb .ak-ikon{width:18px;height:18px;stroke:var(--on-brand)}.ak-ikb.ok{background:var(--ok)}
 .ak-fkg{margin:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,140px),1fr));gap:10px 18px}
 .ak-fkg>div{min-width:0}.ak-fkg dt{font-size:10.5px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:var(--ink2)}.ak-fkg dd{margin:2px 0 0;font-size:13.5px;font-weight:600;overflow-wrap:anywhere}
 .ak-sheet .ak-dtubuh{overflow-x:hidden}.ak-sheet .ak-terh,.ak-sheet .ak-dbagian{min-width:0;max-width:100%}
@@ -2334,7 +2334,7 @@ button.ak-pnl{cursor:pointer}button.ak-pnl:hover{border-color:var(--brand2)}
 .ak-sr-pop{display:flex;align-items:center;gap:8px;max-width:260px;cursor:pointer}
 .ak-sr-pop > span:nth-child(2){display:grid;min-width:0}
 .ak-sr-pop b{font-size:12.5px;color:var(--ink)}.ak-sr-pop small{font-size:11px;color:var(--ink2)}
-.ak-sr-pop button{all:unset;flex:none;width:28px;height:28px;border-radius:50%;background:var(--brand);color:var(--paper);display:grid;place-items:center;cursor:pointer}
+.ak-sr-pop button{all:unset;flex:none;width:28px;height:28px;border-radius:50%;background:var(--brand);color:var(--on-brand);display:grid;place-items:center;cursor:pointer}
 .ak-sr-pop button svg{width:15px;height:15px;fill:none;stroke:currentColor;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
 .ak-sr-pop button:focus-visible{outline:2px solid var(--brand2);outline-offset:2px}
 @media (prefers-reduced-motion:reduce){.ak-sorot{animation:none}}
@@ -2358,7 +2358,7 @@ button.ak-pnl{cursor:pointer}button.ak-pnl:hover{border-color:var(--brand2)}
 .ak-wsn-g{display:grid;grid-template-columns:minmax(0,1fr) minmax(220px,300px);gap:12px;align-items:start}
 .ak-wsn-peta{height:360px;border-radius:12px;overflow:hidden;border:1px solid var(--line);background:var(--surface)}
 .ak-wsn-t table{width:100%;border-collapse:collapse;font-size:12px}
-.ak-wsn-t th{text-align:center;padding:6px 8px;background:var(--brand);color:var(--paper);font-weight:700}
+.ak-wsn-t th{text-align:center;padding:6px 8px;background:var(--brand);color:var(--on-brand);font-weight:700}
 .ak-wsn-t td{padding:4px 8px;border-top:1px solid var(--line)}.ak-wsn-t td:last-child{text-align:center}
 .ak-wsn-k{display:inline-flex;align-items:center;gap:5px}
 @media (max-width:800px){.ak-wsn-g{grid-template-columns:1fr}.ak-wsn-peta{height:300px}}
@@ -2384,7 +2384,7 @@ button.ak-pnl{cursor:pointer}button.ak-pnl:hover{border-color:var(--brand2)}
 .ak-tktn-k{display:flex;align-items:center;gap:8px;flex-wrap:wrap}.ak-tktn-k b{font-size:22px;color:var(--data1)}
 .ak-tktn-tg{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(9,1fr);gap:4px}
 .ak-tktn-tg li{height:28px;border-radius:6px;background:var(--surface);display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;color:var(--line-ctl);cursor:help}
-.ak-tktn-tg li.isi{background:var(--w0);color:var(--paper)}
+.ak-tktn-tg li.isi{background:var(--w0);color:var(--on-brand)}
 .ak-tktn-bk{list-style:none;margin:0;padding:0;display:grid;gap:6px}
 .ak-tktn-bk li{display:flex;gap:8px;align-items:baseline;font-size:13px;line-height:1.45}.ak-tktn-bk b{white-space:nowrap;color:var(--data1)}
 /* jejak kejadian */
@@ -2429,7 +2429,7 @@ button.ak-pnl{cursor:pointer}button.ak-pnl:hover{border-color:var(--brand2)}
 .ak-rw-f{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin-top:8px}
 .ak-rw-f input,.ak-rw-f select,.ak-rw-f textarea{font:inherit;font-size:13px;padding:8px 10px;border:1px solid var(--line);border-radius:10px;background:var(--card);min-width:0}
 .ak-rw-f input[name=judul],.ak-rw-f textarea{grid-column:1/-1}
-.ak-rw-simpan{font:inherit;font-size:13px;font-weight:700;color:var(--paper);background:var(--data1);border:0;border-radius:10px;padding:9px 14px;cursor:pointer}
+.ak-rw-simpan{font:inherit;font-size:13px;font-weight:700;color:var(--on-brand);background:var(--data1);border:0;border-radius:10px;padding:9px 14px;cursor:pointer}
 .ak-rw-msg{align-self:center;font-size:12px;color:var(--ink2);grid-column:span 2}
 @media (max-width:600px){.ak-rw-b{grid-template-columns:minmax(0,1fr) auto}.ak-rw-t{grid-column:1/-1}.ak-rw-f{grid-template-columns:minmax(0,1fr)}.ak-rw-msg{grid-column:auto}}
 .ak-kdaftar .ak-lw{flex:none;width:22px;height:22px;object-fit:contain}
@@ -2455,7 +2455,7 @@ button.ak-pnl{cursor:pointer}button.ak-pnl:hover{border-color:var(--brand2)}
 .ak-ks-ws{margin:10px 0 0;padding-left:18px;font-size:13px}.ak-ks-ws li{margin:2px 0}
 /* kotak cari peta di kiri pemilih kategori (pojok kanan atas kanvas) */
 .ak-ptaisi>#akPtCari{position:absolute;top:12px;right:364px;width:300px;z-index:9}
-.ak-ptaisi>#akPtCari input{background:oklch(100% 0 0 / .94);box-shadow:var(--shadow)}
+.ak-ptaisi>#akPtCari input{background:color-mix(in srgb,var(--card) 94%,transparent);box-shadow:var(--shadow)}
 @media (max-width:1100px){.ak-ptaisi>#akPtCari{width:220px}}
 @media (max-width:700px){.ak-ptaisi>#akPtCari{top:62px;right:12px;width:calc(100vw - 24px)}}
 /* Fakta: isian berchip banyak (Sektor terkait, Afiliasi) memakai satu baris penuh, tidak menumpuk di kolom 210px */
@@ -2485,3 +2485,10 @@ button.ak-r[data-kh] small{font-weight:800;color:var(--ink2)}
 button.ak-r[data-kh][aria-pressed="true"]{border-color:var(--w0,var(--brand2));box-shadow:0 0 0 2px color-mix(in oklab,var(--w0,var(--brand2)) 25%,transparent)}
 .ak-kh-bukti{margin-top:8px}
 @media (max-width:640px){.ak-kh-baris{grid-template-columns:1fr;gap:4px}}
+
+/* ===== penyesuaian token METI (port): judul di atas pita navy memakai teks pita, bukan --head ===== */
+.ak-dkepala :is(h1,h2,h3),.ak-kepala :is(h1,h2),.ak-lembar .ak-dkepala :is(h1,h2,h3){color:var(--on-brand)}
+@media (max-width:600px){.ak-bpanel{max-width:100%;overflow-x:clip}.ak-bpanel .ak-sektor.ak-chip{min-width:0;max-width:100%;scroll-padding-inline:8px}}
+.ak-ptn{position:absolute;left:50%;bottom:4px;transform:translateX(-50%);z-index:5;margin:0;padding:3px 10px;border-radius:var(--r-pil);background:var(--card);color:var(--ink);font-size:12px;box-shadow:var(--shadow);pointer-events:none}
+/* sentuh (DS 6.0): target minimal 44px untuk kontrol utama di layar sempit */
+@media (max-width:600px){.ak-seg button,.ak-chip button,.ak-tog,.ak-kbtn,.ak-tbl,.ak-hal button,.ak-tabpanah{min-height:44px}.ak-tabpanah{min-width:44px}}
