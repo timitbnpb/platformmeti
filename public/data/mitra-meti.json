@@ -1,0 +1,170 @@
+{
+ "sumber": "https://metiires.or.id/about/partnership",
+ "diambil": "2026-11-07",
+ "mitra": [
+  {
+   "nama": "PT PLN (Persero)",
+   "logo": "/img/mitra/pln.webp",
+   "w": 260,
+   "h": 356,
+   "gelap": false
+  },
+  {
+   "nama": "BRIN",
+   "logo": "/img/mitra/brin.webp",
+   "w": 260,
+   "h": 130,
+   "gelap": false
+  },
+  {
+   "nama": "Dewan Energi Nasional",
+   "logo": "/img/mitra/den-ri.webp",
+   "w": 260,
+   "h": 260,
+   "gelap": false
+  },
+  {
+   "nama": "Ditjen EBTKE ESDM",
+   "logo": "/img/mitra/ebtke.webp",
+   "w": 260,
+   "h": 38,
+   "gelap": false
+  },
+  {
+   "nama": "Kementerian ESDM",
+   "logo": "/img/mitra/esdm2.webp",
+   "w": 260,
+   "h": 49,
+   "gelap": false
+  },
+  {
+   "nama": "GIZ",
+   "logo": "/img/mitra/giz.webp",
+   "w": 260,
+   "h": 146,
+   "gelap": false
+  },
+  {
+   "nama": "Hivos",
+   "logo": "/img/mitra/hivos.webp",
+   "w": 260,
+   "h": 178,
+   "gelap": false
+  },
+  {
+   "nama": "KADIN Indonesia",
+   "logo": "/img/mitra/kaddin.webp",
+   "w": 260,
+   "h": 130,
+   "gelap": false
+  },
+  {
+   "nama": "KKBKI",
+   "logo": "/img/mitra/kkbki.webp",
+   "w": 260,
+   "h": 55,
+   "gelap": false
+  },
+  {
+   "nama": "LPEM FEB UI",
+   "logo": "/img/mitra/lpem-feb-ui.webp",
+   "w": 260,
+   "h": 260,
+   "gelap": false
+  },
+  {
+   "nama": "PSE UGM",
+   "logo": "/img/mitra/pse-ugm.webp",
+   "w": 260,
+   "h": 260,
+   "gelap": false
+  }
+ ],
+ "anggota": [
+  {
+   "nama": "Gobel",
+   "logo": "/img/mitra/gobel.webp",
+   "w": 260,
+   "h": 168,
+   "gelap": false
+  },
+  {
+   "nama": "Indika Energy",
+   "logo": "/img/mitra/indika-energy.webp",
+   "w": 260,
+   "h": 153,
+   "gelap": false
+  },
+  {
+   "nama": "MedcoEnergi",
+   "logo": "/img/mitra/medcoenergi.webp",
+   "w": 260,
+   "h": 172,
+   "gelap": false
+  },
+  {
+   "nama": "Pertamina Kilang Internasional",
+   "logo": "/img/mitra/pertamina-kilang-internasional.webp",
+   "w": 260,
+   "h": 106,
+   "gelap": false
+  },
+  {
+   "nama": "Pertamina Power Indonesia",
+   "logo": "/img/mitra/pertamina-power-indonesia.webp",
+   "w": 200,
+   "h": 200,
+   "gelap": false
+  },
+  {
+   "nama": "Energy Management Indonesia",
+   "logo": "/img/mitra/energy-management-indonesia.webp",
+   "w": 260,
+   "h": 260,
+   "gelap": false
+  },
+  {
+   "nama": "Indonesia Power",
+   "logo": "/img/mitra/indonesia-power.webp",
+   "w": 260,
+   "h": 173,
+   "gelap": false
+  },
+  {
+   "nama": "Maharaksa Biru Energi",
+   "logo": "/img/mitra/maharaksa-biru-energi.webp",
+   "w": 260,
+   "h": 82,
+   "gelap": false
+  },
+  {
+   "nama": "STR Energy Geothermal",
+   "logo": "/img/mitra/str-energy-geothermal.webp",
+   "w": 260,
+   "h": 145,
+   "gelap": false
+  },
+  {
+   "nama": "Supreme Energy",
+   "logo": "/img/mitra/supreme-energy.webp",
+   "w": 260,
+   "h": 58,
+   "gelap": false
+  },
+  {
+   "nama": "Yayasan Bina Usaha Lingkungan",
+   "logo": "/img/mitra/yayasan-bina-usaha-lingkungan.webp",
+   "w": 260,
+   "h": 260,
+   "gelap": false
+  }
+ ],
+ "asosiasi": [
+  "AESI",
+  "APROBI",
+  "API",
+  "APAMSI",
+  "APPLTA",
+  "AESKI"
+ ]
+}

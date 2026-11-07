@@ -9,12 +9,12 @@ Skrip: `scripts/panen/panen_tambahan.mjs` (`--selftest`, `--ambil`). Keluaran di
 | 1 | ESDM Geoportal / One Map | GAGAL | 0 | robots.txt `Disallow: /` untuk semua agen; jalur REST ArcGIS (`/arcgis`, `/server`) juga 404. Tidak diambil. |
 | 2a | Global Solar Atlas | BERHASIL | 38 | `wilayah/atlas.jsonl` |
 | 2b | Global Wind Atlas | GAGAL | 0 | Tidak ada API publik terdokumentasi (tebakan endpoint HTTP 400 atau timeout). Unduhan GeoTIFF negara butuh pengolahan raster. Kolom angin di `atlas.jsonl` sengaja `null`. |
-| 3a | IDXCarbon | BERHASIL | 14 | `karbon/idxcarbon.jsonl` (laporan bulanan resmi, PDF di `idxcarbon.co.id/id/data-monthly`) |
+| 3a | IDXCarbon | BERHASIL (13 dari 14 bulan) | 13 | `karbon/idxcarbon.jsonl` (laporan bulanan resmi). Tautan September 2026 membalas 404 pada putaran akhir (pernah 200 di putaran awal; server tidak stabil), jalankan ulang untuk melengkapi. |
 | 3b | SRN PPI KLHK | GAGAL | 0 | Host `srn.menlhk.go.id` tidak terselesaikan (ENOTFOUND); SRN PPI digantikan SRUK (POJK 10/2026) dan registri butuh login. |
 | 4 | PDDikti | GAGAL | 0 | API `api-pddikti` membalas 401 (butuh kunci); situs web melarang `/search/` dan `/hasil-pp` di robots.txt. Tidak ada jalur publik tanpa login. |
 | 5 | BKPM realisasi investasi per provinsi | GAGAL | 0 | `nswi.bkpm.go.id` timeout; `bkpm.go.id` memuat tabel lewat skrip dinamis tanpa berkas PDF/CSV; rincian provinsi x sektor listrik tidak ada di rilis yang terjangkau. Angka nasional ESDM (investasi EBTKE 2025 US$2,4 miliar versus US$2,284 miliar) saling berbeda di media dan TIDAK diambil. |
 | 6 | Climate TRACE | BERHASIL | 182 | `karbon/climatetrace.jsonl` (sektor `power`, IDN, tahun 2024, CC BY 4.0) |
-| 7a | IESR IETO 2026 (deck presentasi) | BERHASIL | lihat berkas | `angka/outlook.jsonl` |
+| 7a | IESR IETO 2026 (deck presentasi) | BERHASIL | 6 | `angka/outlook.jsonl` |
 | 7b | DEN Outlook Energi Indonesia | GAGAL | 0 | robots.txt `den.go.id` `Disallow: /` untuk semua agen. |
 
 `proyek/tambahan_geoportal.jsonl`, `wilayah/geoportal_*.jsonl`, `karbon/srn.jsonl`, `sdm/prodi.jsonl`, `keuangan/investasi_provinsi.jsonl` TIDAK dibuat (tidak ada data sah untuk diisi).

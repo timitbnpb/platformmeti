@@ -2561,3 +2561,19 @@ button.ak-r[data-kh][aria-pressed="true"]{border-color:var(--w0,var(--brand2));b
 @media (max-width:1100px){.ak-sg-b{grid-template-columns:repeat(4,minmax(0,1fr))!important}}
 @media (max-width:700px){.ak-sg-b{grid-template-columns:repeat(2,minmax(0,1fr))!important}}
 .ak-bpanel .ak-sektor .ak-sg-b>button{font-size:13px!important}
+/* Lintas bidang: 6 chip memenuhi lebar penuh sampai tepi kanan; Teknologi tetap 7+7 */
+.ak-sektor .ak-sg:nth-child(2) .ak-sg-b{grid-template-columns:repeat(6,minmax(0,1fr))!important}
+@media (max-width:1100px){.ak-sektor .ak-sg:nth-child(2) .ak-sg-b{grid-template-columns:repeat(3,minmax(0,1fr))!important}}
+@media (max-width:700px){.ak-sektor .ak-sg:nth-child(2) .ak-sg-b{grid-template-columns:repeat(2,minmax(0,1fr))!important}}
+/* 375: chip sektor, kelompok orang, dan angka hero tidak menumpuk */
+@media (max-width:700px){
+  .ak-bpanel .ak-sektor.ak-chip{display:grid!important;grid-template-columns:minmax(0,1fr)!important;overflow:visible!important;flex-wrap:wrap!important}
+  .ak-sg{width:100%;min-width:0}
+  .ak-sg-b>button{min-width:0}
+  .ak-kepala-nav>.ak-seg.ak-kelompok,.ak-kepala-nav>.ak-seg.ak-subtab{display:flex!important;flex-wrap:wrap!important;width:100%!important;overflow:visible!important}
+  .ak-kepala-nav>.ak-seg.ak-kelompok button,.ak-kepala-nav>.ak-seg.ak-subtab button{flex:0 1 auto!important;white-space:nowrap;max-width:100%}
+  .ak-ringkas.ak-ringkas{grid-template-columns:repeat(2,minmax(0,1fr))!important}
+  .ak-ringkas.ak-ringkas>div{grid-template-columns:34px auto;justify-items:start;align-items:center;column-gap:10px;text-align:left}
+  .ak-ringkas.ak-ringkas>div>svg{grid-row:span 2}
+}
+@media (max-width:700px){.ak-bpanel .ak-sektor button .ak-sl,.ak-bpanel .ak-sektor button .ak-sn{display:inline!important}.ak-bpanel .ak-sektor .ak-sg-b>button{display:flex!important;padding:0 8px;min-height:40px}}

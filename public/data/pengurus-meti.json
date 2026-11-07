@@ -1,0 +1,772 @@
+{
+ "periode": "2025-2028",
+ "sumber": "https://metiires.or.id/about/meettheteam",
+ "diambil": "2026-11-07",
+ "unit": {
+  "dewan": [
+   {
+    "nama": "Wiluyo Kusdiharto",
+    "jabatan": "Ketua Dewan Pengawas",
+    "foto": "/img/pengurus/wiluyo-kusdiharto.jpg"
+   },
+   {
+    "nama": "Nur Pamudji",
+    "jabatan": "Anggota Dewan Pengawas",
+    "foto": ""
+   },
+   {
+    "nama": "Eddie Widiono Suwondho",
+    "jabatan": "Anggota Dewan Pengawas",
+    "foto": ""
+   },
+   {
+    "nama": "Riki Firmandha Ibrahim",
+    "jabatan": "Anggota Dewan Pengawas",
+    "foto": ""
+   },
+   {
+    "nama": "Tri Mumpuni",
+    "jabatan": "Anggota Dewan Pengawas",
+    "foto": ""
+   },
+   {
+    "nama": "Sri Endah Agustina",
+    "jabatan": "Anggota Dewan Pengawas",
+    "foto": ""
+   },
+   {
+    "nama": "Abdul Malik Sadat Idris",
+    "jabatan": "Anggota Dewan Pengawas",
+    "foto": ""
+   },
+   {
+    "nama": "Dosmar Banjarnahor",
+    "jabatan": "Anggota Dewan Pengawas",
+    "foto": ""
+   },
+   {
+    "nama": "Rudi Margono",
+    "jabatan": "Anggota Dewan Pengawas",
+    "foto": ""
+   },
+   {
+    "nama": "Ahmad Erani Yustika",
+    "jabatan": "Anggota Dewan Pengawas (Ex-Officio)",
+    "foto": ""
+   },
+   {
+    "nama": "Dadan Kusdiana",
+    "jabatan": "Anggota Dewan Pengawas (Ex-Officio)",
+    "foto": ""
+   },
+   {
+    "nama": "Eniya Listiani Dewi",
+    "jabatan": "Anggota Dewan Pengawas (Ex-Officio)",
+    "foto": ""
+   },
+   {
+    "nama": "Tri Winarno",
+    "jabatan": "Anggota Dewan Pengawas (Ex-Officio)",
+    "foto": ""
+   },
+   {
+    "nama": "Febrio Nathan Kacaribu",
+    "jabatan": "Anggota Dewan Pengawas (Ex-Officio)",
+    "foto": ""
+   },
+   {
+    "nama": "Elen Setiadi",
+    "jabatan": "Anggota Dewan Pengawas (Ex-Officio)",
+    "foto": ""
+   },
+   {
+    "nama": "Ary Sudijanto",
+    "jabatan": "Anggota Dewan Pengawas (Ex-Officio)",
+    "foto": ""
+   },
+   {
+    "nama": "Abdi Mustakim",
+    "jabatan": "Anggota Dewan Pengawas (Ex-Officio)",
+    "foto": ""
+   },
+   {
+    "nama": "Herman Darnel Ibrahim",
+    "jabatan": "Ketua Dewan Pakar",
+    "foto": "/img/pengurus/herman-darnel-ibrahim.jpg"
+   },
+   {
+    "nama": "Widi Pancono",
+    "jabatan": "Wakil Ketua I",
+    "foto": ""
+   },
+   {
+    "nama": "Chairani Rachmatullah MT",
+    "jabatan": "Wakil Ketua II",
+    "foto": ""
+   },
+   {
+    "nama": "Mukhtasor",
+    "jabatan": "Anggota Dewan Pakar",
+    "foto": ""
+   },
+   {
+    "nama": "Saleh Abdurrahman",
+    "jabatan": "Anggota Dewan Pakar",
+    "foto": ""
+   },
+   {
+    "nama": "Hardiv Situmeang",
+    "jabatan": "Anggota Dewan Pakar",
+    "foto": ""
+   },
+   {
+    "nama": "Soeripno Martosaputro",
+    "jabatan": "Anggota Dewan Pakar",
+    "foto": ""
+   },
+   {
+    "nama": "Arief Yunan",
+    "jabatan": "Anggota Dewan Pakar",
+    "foto": ""
+   },
+   {
+    "nama": "Arya Rezavidi",
+    "jabatan": "Anggota Dewan Pakar",
+    "foto": ""
+   },
+   {
+    "nama": "Fabby Tumiwa",
+    "jabatan": "Anggota Dewan Pakar",
+    "foto": ""
+   },
+   {
+    "nama": "Prijandaru Effendi",
+    "jabatan": "Anggota Dewan Pakar",
+    "foto": ""
+   },
+   {
+    "nama": "Kusetiadi Raharjo (PLTM)",
+    "jabatan": "Anggota Dewan Pakar",
+    "foto": ""
+   },
+   {
+    "nama": "Muhammad Abdul Kholiq",
+    "jabatan": "Anggota Dewan Pakar",
+    "foto": ""
+   },
+   {
+    "nama": "Jalal",
+    "jabatan": "Anggota Dewan Pakar",
+    "foto": ""
+   },
+   {
+    "nama": "Alimin Ginting",
+    "jabatan": "Anggota Dewan Pakar",
+    "foto": ""
+   }
+  ],
+  "komite": [
+   {
+    "nama": "Suroso Isnandar",
+    "jabatan": "Koordinator Komite Energi Terbarukan",
+    "foto": "/img/pengurus/suroso-isnandar.jpg"
+   },
+   {
+    "nama": "Ruly Firmansyah",
+    "jabatan": "Wakil Koordinator",
+    "foto": ""
+   },
+   {
+    "nama": "Bernardus Sudarmanta",
+    "jabatan": "Wakil Koordinator",
+    "foto": ""
+   },
+   {
+    "nama": "Rakhmad Dewantoa",
+    "jabatan": "Wakil Koordinator",
+    "foto": ""
+   },
+   {
+    "nama": "Mada Ayu Habsari",
+    "jabatan": "Komite Energi Surya",
+    "foto": "/img/pengurus/mada-ayu-habsari.jpg"
+   },
+   {
+    "nama": "Agung Hermawan",
+    "jabatan": "Komite Energi Bayu",
+    "foto": "/img/pengurus/agung-hermawan.jpg"
+   },
+   {
+    "nama": "Sutiyo Siswanto",
+    "jabatan": "Komite Energi Air",
+    "foto": "/img/pengurus/sutiyo-siswanto.jpg"
+   },
+   {
+    "nama": "Julfi Hadi",
+    "jabatan": "Komite Energi Panas Bumi",
+    "foto": "/img/pengurus/julfi-hadi.jpg"
+   },
+   {
+    "nama": "Sumanggar Milton Pakpahan",
+    "jabatan": "Komite Bioenergi",
+    "foto": "/img/pengurus/sumanggar-milton-pakpahan.jpg"
+   }
+  ],
+  "ketum": [
+   {
+    "nama": "Norman Ginting",
+    "jabatan": "Ketua Umum",
+    "foto": "/img/pengurus/norman-ginting.jpg"
+   }
+  ],
+  "waketum": [
+   {
+    "nama": "Hokkop Situngkir",
+    "jabatan": "Wakil Ketua Umum 1",
+    "foto": "/img/pengurus/hokkop-situngkir.jpg"
+   },
+   {
+    "nama": "Fadli Rahman",
+    "jabatan": "Wakil Ketua Umum 2",
+    "foto": ""
+   }
+  ],
+  "bendahara": [
+   {
+    "nama": "Erik Agus Sandi",
+    "jabatan": "Bendahara Umum",
+    "foto": ""
+   },
+   {
+    "nama": "Andi Paluseri",
+    "jabatan": "Wakil Bendahara 1",
+    "foto": ""
+   },
+   {
+    "nama": "Mirda Rasyid",
+    "jabatan": "Wakil Bendahara 2",
+    "foto": "/img/pengurus/mirda-rasyid.jpg"
+   },
+   {
+    "nama": "Arief Subekti",
+    "jabatan": "Wakil Bendahara 3",
+    "foto": "/img/pengurus/arief-subekti.jpg"
+   }
+  ],
+  "sekjen": [
+   {
+    "nama": "Elvi Nasution",
+    "jabatan": "Sekretaris Jenderal",
+    "foto": "/img/pengurus/elvi-nasution.jpg"
+   },
+   {
+    "nama": "Ricky Andrian",
+    "jabatan": "Wakil Sekretaris 1",
+    "foto": "/img/pengurus/ricky-andrian.jpg"
+   },
+   {
+    "nama": "Lucila Ismoyo Rukmi",
+    "jabatan": "Wakil Sekretaris 2",
+    "foto": "/img/pengurus/lucila-ismoyo-rukmi.jpg"
+   },
+   {
+    "nama": "Daniel Tampubolon",
+    "jabatan": "Wakil Sekretaris 3",
+    "foto": "/img/pengurus/daniel-tampubolon.jpg"
+   },
+   {
+    "nama": "Dicky Septriadi",
+    "jabatan": "Wakil Sekretaris 4",
+    "foto": ""
+   },
+   {
+    "nama": "Bawa Santosa",
+    "jabatan": "Senior Advisor Sekretaris Jenderal",
+    "foto": ""
+   }
+  ],
+  "eksekutif": [
+   {
+    "nama": "Yasmine Surachman",
+    "jabatan": "Direktur Eksekutif",
+    "foto": ""
+   },
+   {
+    "nama": "Mutya Yustika",
+    "jabatan": "Wakil Direktur Eksekutif 1",
+    "foto": "/img/pengurus/mutya-yustika.jpg"
+   },
+   {
+    "nama": "Putri Anggani Oditha",
+    "jabatan": "Wakil Direktur Eksekutif 2",
+    "foto": ""
+   }
+  ],
+  "institute": [
+   {
+    "nama": "Elrika Hamdi",
+    "jabatan": "Direktur METI Institute",
+    "foto": "/img/pengurus/elrika-hamdi.jpg"
+   },
+   {
+    "nama": "Marlistya Citraningrum",
+    "jabatan": "Anggota Direktur METI Institute",
+    "foto": ""
+   },
+   {
+    "nama": "Wini Rizkiningayu",
+    "jabatan": "Anggota Direktur METI Institute",
+    "foto": ""
+   },
+   {
+    "nama": "Edo Ronaldo",
+    "jabatan": "Anggota Direktur METI Institute",
+    "foto": ""
+   },
+   {
+    "nama": "Josephine Looraine",
+    "jabatan": "Anggota Direktur METI Institute",
+    "foto": ""
+   }
+  ],
+  "staf": [
+   {
+    "nama": "Nurullita",
+    "jabatan": "Senior Program Officer",
+    "foto": ""
+   },
+   {
+    "nama": "Zakariya Fikriyadi",
+    "jabatan": "Consultant Program",
+    "foto": ""
+   },
+   {
+    "nama": "Syahrul Anwar",
+    "jabatan": "Consultant Finance Admin 1",
+    "foto": ""
+   },
+   {
+    "nama": "Siti Fadilla Ariadi",
+    "jabatan": "Consultant General Admin 2",
+    "foto": ""
+   }
+  ]
+ },
+ "bidang": [
+  {
+   "nama": "Pengembangan Organisasi & Kerjasama Antar Lembaga",
+   "anggota": [
+    {
+     "nama": "Yudha Permana Jayadikarta",
+     "jabatan": "Ketua Bidang 1",
+     "foto": "/img/pengurus/yudha-permana-jayadikarta.jpg"
+    },
+    {
+     "nama": "Alexander",
+     "jabatan": "Anggota Bidang 1",
+     "foto": ""
+    },
+    {
+     "nama": "Perry Shaza",
+     "jabatan": "Anggota Bidang 1",
+     "foto": ""
+    },
+    {
+     "nama": "Ade Irawan Tasmi",
+     "jabatan": "Anggota Bidang 1",
+     "foto": ""
+    },
+    {
+     "nama": "Indah Siregar",
+     "jabatan": "Anggota Bidang 1",
+     "foto": ""
+    },
+    {
+     "nama": "Ahmad Fauzan",
+     "jabatan": "Anggota Bidang 1",
+     "foto": ""
+    },
+    {
+     "nama": "Hanif Adi Rahmawan",
+     "jabatan": "Anggota Bidang 1",
+     "foto": ""
+    },
+    {
+     "nama": "Panji Sukma Nugraha",
+     "jabatan": "Anggota Bidang 1",
+     "foto": ""
+    },
+    {
+     "nama": "Dianissa Scheherazade Rachman",
+     "jabatan": "Anggota Bidang 1",
+     "foto": ""
+    }
+   ]
+  },
+  {
+   "nama": "Advokasi & Regulasi",
+   "anggota": [
+    {
+     "nama": "Ruly Marianti",
+     "jabatan": "Ketua Bidang 2",
+     "foto": "/img/pengurus/ruly-marianti.jpg"
+    },
+    {
+     "nama": "Aloysius Damar Pranadi",
+     "jabatan": "Anggota Bidang 2",
+     "foto": ""
+    },
+    {
+     "nama": "Andri Akbar Marthen",
+     "jabatan": "Anggota Bidang 2",
+     "foto": ""
+    },
+    {
+     "nama": "Ismet Rahmad Kartono",
+     "jabatan": "Anggota Bidang 2",
+     "foto": ""
+    },
+    {
+     "nama": "Chandra Agus Salim",
+     "jabatan": "Anggota Bidang 2",
+     "foto": ""
+    },
+    {
+     "nama": "Rifqi Nuril Huda",
+     "jabatan": "Anggota Bidang 2",
+     "foto": ""
+    },
+    {
+     "nama": "Primanitya Swastyastu",
+     "jabatan": "Anggota Bidang 2",
+     "foto": ""
+    },
+    {
+     "nama": "Diyah Sasanti R.",
+     "jabatan": "Anggota Bidang 2",
+     "foto": ""
+    },
+    {
+     "nama": "Priambudi Pujihatma",
+     "jabatan": "Anggota Bidang 2",
+     "foto": ""
+    }
+   ]
+  },
+  {
+   "nama": "Pengembangan SDM & Teknologi",
+   "anggota": [
+    {
+     "nama": "Sim Budiman Setiawan",
+     "jabatan": "Ketua Bidang 3",
+     "foto": "/img/pengurus/sim-budiman-setiawan.jpg"
+    },
+    {
+     "nama": "Bagus Bramantio",
+     "jabatan": "Anggota Bidang 3",
+     "foto": ""
+    },
+    {
+     "nama": "Dian Elvira Rosa",
+     "jabatan": "Anggota Bidang 3",
+     "foto": ""
+    },
+    {
+     "nama": "Remi Harimanda",
+     "jabatan": "Anggota Bidang 3",
+     "foto": ""
+    },
+    {
+     "nama": "Fajar Sastrowijoyo",
+     "jabatan": "Anggota Bidang 3",
+     "foto": ""
+    },
+    {
+     "nama": "Yudhi Satrio Nugroho",
+     "jabatan": "Anggota Bidang 3",
+     "foto": ""
+    },
+    {
+     "nama": "Hadian Novit",
+     "jabatan": "Anggota Bidang 3",
+     "foto": ""
+    },
+    {
+     "nama": "Kadek Fendy Sutrisna",
+     "jabatan": "Anggota Bidang 3",
+     "foto": ""
+    },
+    {
+     "nama": "Amarullah F. Sunaryo",
+     "jabatan": "Anggota Bidang 3",
+     "foto": ""
+    }
+   ]
+  },
+  {
+   "nama": "Pendanaan, Investasi & Hubungan Internasional",
+   "anggota": [
+    {
+     "nama": "Delano Dalo",
+     "jabatan": "Ketua Bidang 4",
+     "foto": "/img/pengurus/delano-dalo.jpg"
+    },
+    {
+     "nama": "Refi Kunaefi",
+     "jabatan": "Anggota Bidang 4",
+     "foto": ""
+    },
+    {
+     "nama": "Tiza Mafira",
+     "jabatan": "Anggota Bidang 4",
+     "foto": ""
+    },
+    {
+     "nama": "Ananda Setiyo Ivannanto",
+     "jabatan": "Anggota Bidang 4",
+     "foto": ""
+    },
+    {
+     "nama": "R.A. Adriani Kusumawardani",
+     "jabatan": "Anggota Bidang 4",
+     "foto": ""
+    },
+    {
+     "nama": "Avila Naufal Ananda",
+     "jabatan": "Anggota Bidang 4",
+     "foto": ""
+    },
+    {
+     "nama": "Anwar Ismail",
+     "jabatan": "Anggota Bidang 4",
+     "foto": ""
+    },
+    {
+     "nama": "Aqsha Prahitna Wahyudi",
+     "jabatan": "Anggota Bidang 4",
+     "foto": ""
+    },
+    {
+     "nama": "Febron RT Siregar",
+     "jabatan": "Anggota Bidang 4",
+     "foto": ""
+    },
+    {
+     "nama": "Pasha M. Shaquille Rekardianto",
+     "jabatan": "Anggota Bidang 4",
+     "foto": ""
+    },
+    {
+     "nama": "Dandy Imam Fauzi",
+     "jabatan": "Anggota Bidang 4",
+     "foto": ""
+    },
+    {
+     "nama": "Dimpos Giarto Valentino Tampubolon",
+     "jabatan": "Anggota Bidang 4",
+     "foto": ""
+    }
+   ]
+  },
+  {
+   "nama": "Pengembangan UMKM & Koperasi",
+   "anggota": [
+    {
+     "nama": "Muliandy Nasution",
+     "jabatan": "Ketua Bidang 5",
+     "foto": "/img/pengurus/muliandy-nasution.jpg"
+    },
+    {
+     "nama": "Ichsan",
+     "jabatan": "Anggota Bidang 5",
+     "foto": ""
+    },
+    {
+     "nama": "Trois Dilisusendi",
+     "jabatan": "Anggota Bidang 5",
+     "foto": ""
+    },
+    {
+     "nama": "Fuad Santoso",
+     "jabatan": "Anggota Bidang 5",
+     "foto": ""
+    },
+    {
+     "nama": "Rudy Sembiring",
+     "jabatan": "Anggota Bidang 5",
+     "foto": ""
+    },
+    {
+     "nama": "Gina Fairuz",
+     "jabatan": "Anggota Bidang 5",
+     "foto": ""
+    },
+    {
+     "nama": "Adrisman Tahar",
+     "jabatan": "Anggota Bidang 5",
+     "foto": ""
+    }
+   ]
+  },
+  {
+   "nama": "Dekarbonisasi & Keberlanjutan",
+   "anggota": [
+    {
+     "nama": "Kuki Soejachmoen",
+     "jabatan": "Ketua Bidang 6",
+     "foto": "/img/pengurus/kuki-soejachmoen.jpg"
+    },
+    {
+     "nama": "Kamia Handayani",
+     "jabatan": "Anggota Bidang 6",
+     "foto": ""
+    },
+    {
+     "nama": "Anthony Leong",
+     "jabatan": "Anggota Bidang 6",
+     "foto": ""
+    },
+    {
+     "nama": "Kus Heru Wibowo",
+     "jabatan": "Anggota Bidang 6",
+     "foto": ""
+    },
+    {
+     "nama": "Zulfal Faradis",
+     "jabatan": "Anggota Bidang 6",
+     "foto": ""
+    },
+    {
+     "nama": "Edwin Hartanto",
+     "jabatan": "Anggota Bidang 6",
+     "foto": ""
+    },
+    {
+     "nama": "Imanta Azaki",
+     "jabatan": "Anggota Bidang 6",
+     "foto": ""
+    },
+    {
+     "nama": "Ramadito Bagus Pradana",
+     "jabatan": "Anggota Bidang 6",
+     "foto": ""
+    }
+   ]
+  },
+  {
+   "nama": "Informasi & Multimedia",
+   "anggota": [
+    {
+     "nama": "Arief Noerhidayat",
+     "jabatan": "Ketua Bidang 7",
+     "foto": "/img/pengurus/arief-noerhidayat.jpg"
+    },
+    {
+     "nama": "Tommy Tampubolon",
+     "jabatan": "Anggota Bidang 7",
+     "foto": ""
+    },
+    {
+     "nama": "Anggita Pradipta",
+     "jabatan": "Anggota Bidang 7",
+     "foto": ""
+    },
+    {
+     "nama": "Brigita Manohara",
+     "jabatan": "Anggota Bidang 7",
+     "foto": ""
+    },
+    {
+     "nama": "Rachma Arifiani",
+     "jabatan": "Anggota Bidang 7",
+     "foto": ""
+    },
+    {
+     "nama": "Agus Hermawan",
+     "jabatan": "Anggota Bidang 7",
+     "foto": ""
+    },
+    {
+     "nama": "Alyssa Kunigen Izra",
+     "jabatan": "Anggota Bidang 7",
+     "foto": ""
+    }
+   ]
+  },
+  {
+   "nama": "Sertifikasi",
+   "anggota": [
+    {
+     "nama": "John Paulus Pantouw",
+     "jabatan": "Ketua Bidang 8",
+     "foto": "/img/pengurus/john-paulus-pantouw.jpg"
+    },
+    {
+     "nama": "Irfan Suwardi",
+     "jabatan": "Anggota Bidang 8",
+     "foto": ""
+    },
+    {
+     "nama": "Rudy Hendra Prastowo",
+     "jabatan": "Anggota Bidang 8",
+     "foto": ""
+    },
+    {
+     "nama": "A. Agung Feinuddin",
+     "jabatan": "Anggota Bidang 8",
+     "foto": ""
+    },
+    {
+     "nama": "Rifqi Taufiqurrahman",
+     "jabatan": "Anggota Bidang 8",
+     "foto": ""
+    },
+    {
+     "nama": "Ihsan Ramadhan",
+     "jabatan": "Anggota Bidang 8",
+     "foto": ""
+    }
+   ]
+  },
+  {
+   "nama": "",
+   "anggota": [
+    {
+     "nama": "Parlindungan Purba",
+     "jabatan": "Koordinator METI Wilayah",
+     "foto": "/img/pengurus/parlindungan-purba.jpg"
+    },
+    {
+     "nama": "Eva Djauhari",
+     "jabatan": "Wakil Koordinator",
+     "foto": ""
+    },
+    {
+     "nama": "Alif Zulviqar Syahroni",
+     "jabatan": "Ketua METI Energi Muda",
+     "foto": ""
+    },
+    {
+     "nama": "Anggi Renaldy Pratama",
+     "jabatan": "Anggota METI Energi Muda",
+     "foto": ""
+    },
+    {
+     "nama": "Bagas Maropindra",
+     "jabatan": "Anggota METI Energi Muda",
+     "foto": ""
+    },
+    {
+     "nama": "Rachel Anabeluthfiya Teratai Yudhistira",
+     "jabatan": "Anggota METI Energi Muda",
+     "foto": ""
+    },
+    {
+     "nama": "Vania Herlambang",
+     "jabatan": "Anggota METI Energi Muda",
+     "foto": ""
+    }
+   ]
+  }
+ ]
+}

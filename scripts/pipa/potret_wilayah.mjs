@@ -27,6 +27,7 @@ const kosong = (x) => ({ nilai: null, alasan: x?.alasan_kosong || null, tanggal:
 
 export function bangunWilayah() {
   const prov = jsonl('data-panen/wilayah/provinsi.jsonl');
+  const atlas = new Map(jsonl('data-panen/wilayah/atlas.jsonl').map((a) => [String(a.kode), a]));
   const proyek = pub('proyek.json').baris, reg = pub('regulasi.json').baris, org = pub('organisasi.json').baris, orang = pub('orang.json').baris;
   const per = (a, f) => { const m = new Map(); for (const x of a) { const k = f(x); if (k) (m.get(k) || m.set(k, []).get(k)).push(x); } return m; };
   const pProv = per(proyek, (x) => namaProv(x.lokasi?.provinsi));
@@ -50,6 +51,7 @@ export function bangunWilayah() {
       perda: (pPerda.get(p.nama) || []).map((x) => ({ id: x.id, nomor: x.nomor, tahun: x.tahun, judul: x.judul, status: x.status, url: x.url_sumber })),
       organisasi: os.map((o) => ({ id: o.id, nama: o.nama, kategori: o.kategori?.label || null })),
       pakar: pk,
+      surya_atlas: atlas.get(String(p.kode)) ? (({ titik, surya_pvout_kwh_per_kwp_tahun: pvout, ghi_kwh_per_m2_tahun: ghi, dni_kwh_per_m2_tahun: dni, gti_optimal_kwh_per_m2_tahun: gti, sudut_optimal_derajat: sudut, suhu_udara_c: suhu, lat, lon, sumber, sumber_url, tanggal_periksa, lisensi, tingkat_bukti, catatan }) => ({ label: 'indikasi satu titik (' + titik + '), BUKAN rata-rata provinsi', titik: { lat, lng: lon, keterangan: titik }, pvout_kwh_per_kwp_tahun: pvout, ghi_kwh_per_m2_tahun: ghi, dni_kwh_per_m2_tahun: dni, gti_optimal_kwh_per_m2_tahun: gti, sudut_optimal_derajat: sudut, suhu_udara_c: suhu != null ? Math.round(suhu * 10) / 10 : null, sumber, url: sumber_url, tanggal: tanggal_periksa, lisensi, tingkat_bukti, catatan }))(atlas.get(String(p.kode))) : null,
     };
   });
   const tanpaLokasi = proyek.filter((x) => !x.lokasi?.provinsi).length;

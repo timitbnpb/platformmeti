@@ -10,7 +10,14 @@ const STAF = ["kurator", "admin", "super"];
 /* Satu tabel halaman. Tambah baris saat halamannya benar-benar ada (F1, F2). hak: null = semua, "masuk", "staf". */
 const TAB = [
   { href: "/", kunci: "nav.beranda", ikon: "beranda", hak: null },
-  { href: "/direktori", kunci: "nav.direktori", ikon: "daftar", hak: "masuk" },
+  { href: "/insight", kunci: "nav.insight", ikon: "jejak", hak: null },
+  { href: "/proyek", kunci: "nav.proyek", ikon: "daftar", hak: null },
+  { kunci: "nav.analisis", ikon: "tautan", hak: null, grup: [
+    { href: "/wilayah", kunci: "nav.wilayah" }, { href: "/rantai", kunci: "nav.rantai" }, { href: "/asean", kunci: "nav.asean" }] },
+  { href: "/regulasi", kunci: "nav.regulasi", ikon: "daftar", hak: null },
+  { href: "/kalender", kunci: "nav.kalender", ikon: "daftar", hak: null },
+  { href: "/direktori", kunci: "nav.direktori", ikon: "orang", hak: "masuk" },
+  { href: "/tentang", kunci: "nav.tentang", ikon: "info", hak: null },
   { href: "/admin", kunci: "nav.admin", ikon: "kunci", hak: "staf" },
 ];
 
@@ -24,9 +31,13 @@ const temaEfektif = () => document.documentElement.dataset.theme || (matchMedia(
 
 function gambarKepala(el, saya) {
   const jalur = location.pathname;
+  const cocok = (h) => (h === "/" ? jalur === "/" || jalur === "/index.html" : jalur === h || jalur.startsWith(h + "/"));
   const tab = TAB.filter((x) => boleh(x.hak, saya)).map((x) => {
-    const aktif = x.href === "/" ? jalur === "/" || jalur === "/index.html" : jalur === x.href || jalur.startsWith(x.href + "/");
-    return `<a href="${x.href}"${aktif ? ' aria-current="page"' : ""}>${ikon(x.ikon, 18)}<span data-i18n="${x.kunci}">${t(x.kunci)}</span></a>`;
+    if (x.grup) {
+      const aktif = x.grup.some((g) => cocok(g.href)), id = "grup-" + x.kunci.replace(/\./g, "-");
+      return `<div class="jm-grup"><button type="button" class="jm-grup-tbl" aria-expanded="false" aria-controls="${id}"${aktif ? ' aria-current="page"' : ""}>${ikon(x.ikon, 18)}<span data-i18n="${x.kunci}">${t(x.kunci)}</span><svg class="jm-caret" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button><div class="jm-sub" id="${id}" hidden>${x.grup.map((g) => `<a href="${g.href}"${cocok(g.href) ? ' aria-current="page"' : ""}><span data-i18n="${g.kunci}">${t(g.kunci)}</span></a>`).join("")}</div></div>`;
+    }
+    return `<a href="${x.href}"${cocok(x.href) ? ' aria-current="page"' : ""}>${ikon(x.ikon, 18)}<span data-i18n="${x.kunci}">${t(x.kunci)}</span></a>`;
   }).join("");
   const b = bahasa();
   const akun = saya.masuk
@@ -47,9 +58,13 @@ function gambarKepala(el, saya) {
 }
 
 function pasangPenangan(el, saya) {
+  const tutupGrup = () => el.querySelectorAll(".jm-grup-tbl[aria-expanded=true]").forEach((b) => { b.setAttribute("aria-expanded", "false"); document.getElementById(b.getAttribute("aria-controls")).hidden = true; });
+  document.addEventListener("click", (e) => { if (!e.target.closest(".jm-grup")) tutupGrup(); });
+  document.addEventListener("keydown", (e) => { if (e.key === "Escape") tutupGrup(); });
   el.addEventListener("click", (e) => {
     const tbl = e.target.closest("button");
     if (!tbl) return;
+    if (tbl.classList.contains("jm-grup-tbl")) { const sub = document.getElementById(tbl.getAttribute("aria-controls")), buka = tbl.getAttribute("aria-expanded") !== "true"; tbl.setAttribute("aria-expanded", String(buka)); sub.hidden = !buka; return; }
     if (tbl.id === "burger") {
       const buka = tbl.getAttribute("aria-expanded") !== "true";
       tbl.setAttribute("aria-expanded", String(buka));

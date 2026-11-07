@@ -4,7 +4,7 @@ Dibangun `scripts/pipa/potret.mjs` ke `data-panen/potret/{publik,anggota,penguru
 
 ## Amplop (semua berkas)
 `{ "lapis": "publik|anggota|pengurus", "dibangun_pada": "YYYY-MM-DD", "jumlah": n, "baris": [ ... ] }`
-Benda: `proyek`, `organisasi`, `orang`, `regulasi`, `program`, `berita`, plus `ringkas.json` (bentuk sendiri). `anggota_meti.json` hanya di lapis pengurus.
+Benda: `proyek`, `organisasi`, `orang`, `regulasi`, `program`, `berita`, `video`, `angka`, `keuangan`, `karbon`, plus `ringkas.json` (bentuk sendiri). `anggota_meti.json` hanya di lapis pengurus.
 
 - **publik** = baris penuh. **anggota** dan **pengurus** = DELTA: `{id, ...kolom tambahan}`, digabung layar ke baris publik dengan `id` yang sama. Tidak ada kolom publik yang diulang. Baris yang ditahan dari publik (lihat Aturan) muncul di delta dengan `baru: true` dan `nama`.
 - Berkas lapis tanpa delta tetap ada dengan `baris: []`. Berkas yang melebihi 2 MB dipecah `<benda>.<n>.json` dan `<benda>.json` berisi `{bagian:[nama berkas]}`.
@@ -50,3 +50,15 @@ Judul dan tautan saja. publik: `judul`, `url`, `media`, `terbit`, `bahasa`, `kep
 2. Angka rapat IndoEBTKE (`angka.jsonl`) tanpa URL publik masuk lapis anggota (`anggota/angka.json`, baris utuh; `publik/angka.json` untuk yang berURL); yang berURL masuk publik. Nilai proyek dari materi paparan internal ke `dari_materi` (anggota).
 3. Pemindai (selftest dan tiap bangun): surel pribadi, ponsel, NIK, tanggal lahir di publik dan anggota = bangun GAGAL. Surel/telepon korporat generik lolos lewat allowlist (info@, humas@, sekretariat@, corsec@, cs@, ...).
 4. Tiap berkas publik < 2 MB.
+
+## Tambahan (8 Nov 2026)
+- **proyek** baru: `asal` (`worldbank`, `wkp`, `jica`), `waktu{persetujuan,penutupan}`, `pihak.peminjam[]`, `pihak.pelaksana[]`, `nilai_investasi` bisa `USD` atau `JPY juta`, `karbon_ids[]` (id baris `karbon.json` yang cocok nama dan jarak). anggota: `pemberi_dana[]` untuk Bank Dunia/JICA.
+- **organisasi** baru: `via_1001{sub,sektor,atribusi}` (startup/BUMD/pusat data dari 1001startup.id: hanya nama, sektor, lokasi, relasi, sumber primer; tanpa deskripsi, pegawai, valuasi; syarat izin C-13 tetap), `relasi[{arah,jenis,nama,organisasi_id?,persen_kepemilikan,label_bukti,sumber_url}]`, `teknis.sertifikat_tkdn[{produk,merk,tipe,tkdn_persen,bmp_persen,diterbitkan,berlaku_sd,sumber_url}]`, `keuangan[{tahun,metrik,nilai,satuan,sumber_url,tingkat_bukti}]` (emiten IDX).
+- **orang** baru: `dpr{komisi,fraksi,dapil}`, `jabatan[].catatan`; kelompok `praktisi` mencakup direksi/komisaris BUMN. Ketua Komisi XII mengikuti `tambahan_dpr` (menimpa guidebook lama).
+- **regulasi** baru: `tahap` (RUU EBET: `dalam pembahasan DPR`, boleh tanpa URL, ditandai `catatan_sumber`). Amplop anggota `posisi_topik[]` memuat `regulasi_id` (RUU EBET) per butir.
+- **program** `b50` membawa `alokasi_bbn[]` (alokasi biodiesel per tahun, Kepmen ESDM).
+- **keuangan.json** (publik): `baris[{kelompok: tarif|bpp|green_finance|jetp|idx|celah, ...baris sumber, sumber_url, tingkat_bukti, tanggal}]`; `idx` membawa `organisasi_id`; BPP lama bertanda `kedaluwarsa`.
+- **karbon.json** (publik): `kelompok: pembangkit` (Climate TRACE 2024, CC BY 4.0, `via-pihak-ketiga`, estimasi model; `proyek_ids`, `organisasi_ids`) dan `bursa_karbon` (IDXCarbon bulanan). Tiap baris membawa `sumber_url`, `lisensi`.
+- **video.json** (publik): `{id,judul,kanal,jenis (resmi|media|kreator),terbit,url,organisasi_ids,proyek_ids,regulasi_ids}`; kreator hanya bila judul menaut benda.
+- **angka.json**: baris IETO 2026 (IESR) berbentuk `{id,laporan,penerbit,indikator,nilai,satuan,teks,halaman,sumber_url,lisensi,tingkat_bukti}`.
+- **wilayah** (`public/data/wilayah.json`, dari `potret_wilayah.mjs`): `surya_atlas{label,titik,pvout_kwh_per_kwp_tahun,...,lisensi}` berlabel titik ibu kota, bukan rata-rata provinsi.

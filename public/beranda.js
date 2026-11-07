@@ -1,10 +1,20 @@
 import { mulaiHalaman } from "/inti/kepala.js";
 import { t, angka, tanggal } from "/i18n.js";
 import { esc, nanti, debounce, hantuHtml, kosongHtml, galatHtml, ikon } from "/inti/umum.js";
+import { gambarDataset } from "/beranda_data.js";
+import { pasangBawah } from "/beranda_bawah.js";
 import { muat, label, urlAman, norm, namaRegulasi } from "/publik.js";
 
 const JALUR = [["proyek", "/proyek", "info"], ["wilayah", "/wilayah", "pin"], ["rantai", "/rantai", "tautan"], ["regulasi", "/regulasi", "daftar"], ["direktori", "/direktori", "orang"], ["pustaka", "/pustaka", "info"], ["kalender", "/kalender", "jejak"]];
 const KARTU = ["proyek", "kapasitas", "organisasi", "orang", "regulasi"];
+const LOGO = new Set(["pertamina-nre", "pge", "pln-indonesia-power", "pln-nusantara-power", "medco-power", "barito-renewables", "star-energy", "meti", "aesi", "aprobi", "esdm", "brin"]);
+const EKO = [
+  ["bumn", 1, [["p_6998264f50", "pertamina-nre"], ["p_dda1e51dae", "pge"], ["p_5a2e7d0c63", "pln-indonesia-power"], ["p_ff7a390a42", "pln-nusantara-power"]]],
+  ["swasta", 2, [["p_27ae5a4203", "medco-power"], ["p_bdd0f2d140", "barito-renewables"], ["p_c6c4e478c0", "supreme-energy"], ["p_7a803f3b71", "star-energy"]]],
+  ["asosiasi", 3, [["l_41bf1f0b41", "meti"], ["l_dd90c88f59", "aesi"], ["l_d3dadc789e", "aprobi"], ["l_7e5f8d771d", "api"]]],
+  ["lembaga", 4, [["l_7278e0528a", "esdm"], ["l_973f60de15", "brin"], ["l_7b43a2574c", "kemenkeu"], ["l_05301f48a5", "bkpm"]]],
+];
+const HITUNG = [["bumn", 1, "organisasi", "bumn"], ["swasta", 2, "organisasi", "swasta"], ["asing", 5, "organisasi", "internasional"], ["asosiasi", 3, "organisasi", "asosiasi"], ["lembaga", 4, "organisasi", "kementerian-lembaga"], ["kampus", 3, "organisasi", "perguruan-tinggi"], ["proyek", 2, "proyek"], ["regulasi", 1, "regulasi"]];
 let R = null; // ringkas
 let indeks = null; // korpus cari
 
@@ -47,6 +57,23 @@ async function gambarProyek() {
   } catch (e) { el.innerHTML = galatHtml("layanan"); }
 }
 
+/* ---------- ekosistem: hitungan per kategori + kisi logo ---------- */
+const inisial = (n) => String(n).replace(/^PT\s+/i, "").split(/\s+/).slice(0, 2).map((w) => w[0]).join("").toUpperCase();
+async function gambarEkosistem() {
+  const hit = document.getElementById("ekoHitung"), kisi = document.getElementById("ekoLogo");
+  try {
+    const [org, pro, reg] = await Promise.all([muat("organisasi"), muat("proyek"), muat("regulasi")]);
+    const per = new Map(org.baris.map((o) => [o.id, o]));
+    const n = (k) => org.baris.filter((o) => o.kategori?.kode === k).length;
+    hit.innerHTML = HITUNG.map(([k, w, benda, kode]) => `<li><span class="jm-kotak jm-w${w}" aria-hidden="true"></span><b>${esc(angka(benda === "organisasi" ? n(kode) : benda === "proyek" ? pro.baris.length : reg.baris.length))}</b> ${esc(t("beranda.eko.h." + k))}</li>`).join("");
+    kisi.innerHTML = EKO.map(([kat, w, isi]) => `<div class="jm-logo-kol"><h3><span class="jm-kotak jm-w${w}" aria-hidden="true"></span>${esc(t("beranda.eko.k." + kat))}</h3>${isi.map(([id, slug]) => {
+      const o = per.get(id); if (!o) return "";
+      const nama = o.nama.replace(/^PT\s+/i, "");
+      return `<a class="jm-logo" href="/direktori?tampil=lembaga">${LOGO.has(slug) ? `<img src="/img/logo/${slug}.png" width="40" height="40" alt="" loading="lazy">` : `<span class="jm-logo-ini jm-w${w}" aria-hidden="true">${esc(inisial(nama))}</span>`}<span>${esc(nama)}</span></a>`;
+    }).join("")}</div>`).join("");
+  } catch (e) { kisi.innerHTML = galatHtml("layanan"); }
+}
+
 /* ---------- cari global ---------- */
 const GRUP = [
   ["proyek", (x) => `${x.nama} ${x.lokasi?.provinsi || ""} ${x.teknologi || ""}`, (x) => x.nama, (x) => x.lokasi?.provinsi, () => "/direktori?tampil=proyek"],
@@ -77,14 +104,15 @@ async function main() {
   document.getElementById("kartu").innerHTML = hantuHtml(2);
   const mulai = async () => {
     try { R = await muat("ringkas"); } catch (e) { document.getElementById("kartu").innerHTML = galatHtml("layanan"); return; }
-    gambarKartu(); nanti(() => { gambarBerita(); gambarProyek(); });
+    gambarKartu(); nanti(() => { gambarEkosistem(); gambarDataset(R); gambarBerita(); gambarProyek(); });
   };
   await mulai();
+  pasangBawah();
   document.getElementById("kartu").addEventListener("click", (e) => e.target.closest("[data-aksi=ulang]") && mulai());
   const input = document.getElementById("cari");
   input.addEventListener("focus", () => siapkanIndeks().catch(() => { indeks = null; }), { once: true });
   const tunda = debounce((q) => cari(q));
   input.addEventListener("input", () => tunda(input.value));
-  document.addEventListener("jm:bahasa", () => nanti(() => { gambarJalur(); R && gambarKartu(); gambarBerita(); gambarProyek(); input.value && cari(input.value); }));
+  document.addEventListener("jm:bahasa", () => nanti(() => { gambarJalur(); R && gambarKartu(); gambarEkosistem(); R && gambarDataset(R); gambarBerita(); gambarProyek(); input.value && cari(input.value); }));
 }
 main();
