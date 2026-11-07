@@ -16,3 +16,10 @@ Foto dari Wikimedia Commons, diunduh 7 Nov 2026, diperkecil ke lebar 1600 px dan
 | sampah-psel.webp | Fasilitas waste-to-energy Dublin (contoh pembangkit sampah jadi energi, bukan di Indonesia), dipotong 16:9, lebar 800 px | O'Dea | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Dublin_Waste-to-Energy_Facility.jpg |
 
 Empat foto terakhir diunduh 7 Nov 2026 lewat API Commons (UA METI-Network-research/0.1, jeda 2 detik).
+
+Dua foto berikut diunduh 8 Nov 2026 dari thumbnail 1280 px Commons (UA METI-Network-research/0.1, jeda 2 detik), dipotong 4:3, WebP maks 80 KB.
+
+| berkas | foto | pembuat | lisensi | halaman berkas |
+| --- | --- | --- | --- | --- |
+| hidrogen-spbu.webp | Pengisian hidrogen (H2) ke mobil sel bahan bakar (contoh, bukan di Indonesia) | Ogidya | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Hydrogen_refueling.jpg |
+| nuklir-menara.webp | Menara pendingin PLTN Gösgen, Swiss (contoh, bukan di Indonesia) | Christian David | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Cooling_tower_of_the_G%C3%B6sgen_Nuclear_Power_Plant,_close_view,_D%C3%A4niken,_Solothurn.jpg |

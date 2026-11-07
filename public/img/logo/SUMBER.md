@@ -198,3 +198,6 @@ Diambil oleh scripts/panen/panen_logo.mjs (UA METI, robots.txt dihormati, jeda >
 - tk_9421b538 | PT Baskara Prima Sarana | apple-touch-icon | https://www.baskara.co.id/wp-content/uploads/2025/04/cropped-cropped-Icon-Primary-1-192x192.png
 - tk_c71f99ab | PT Tirta Surya Cipta | apple-touch-icon | https://www.tirtasuryacipta.com/icon.png?icon.4ad45629.png
 - tk_d1dcaf67 | PT Jetspeed Mandiri Indonesia | apple-touch-icon | https://www.jetspeed.id/wp-content/uploads/2023/07/WhatsApp-Image-2025-01-23-at-11.32.58-AM.jpeg
+- media/aawsat.com.png: https://www.aawsat.com/themes/custom/aawsatv3/favicon-new.png?aa (diambil 2026-11-07)
+- media/allafrica.com.png: https://www.allafrica.com/apple-touch-icon.png (diambil 2026-11-07)
+- media/antaranews.com.png: https://static.antaranews.com/assets/img/favicon/apple-icon-180x180.png (diambil 2026-11-07)

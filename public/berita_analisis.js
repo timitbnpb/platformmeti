@@ -6,15 +6,16 @@ import { exHtml, sumberHtml } from "/inti/komponen.js";
 import { aksiHtml, hlHtml } from "/inti/aksi_ex.js";
 import { muat, urlAman, label } from "/publik.js";
 import { IKON_TEK as IKT } from "/inti/ikon_tek.js";
+import { logoLokal } from "/inti/nama_media.js";
 import { ISU, DESAK, DESAK_KATA, KEBIJAKAN, klaster, hitungIsu, harian, sparkPoin, tierMedia, negaraMedia, hostDari, BENDERA_ADA, banding } from "/berita_kamus.js";
 
 const HARI = 86400000, TIER = ["utama", "nasional", "daerah", "internasional", "rilis"];
 let K = null; // konteks terakhir {B, FOTO, TIER, ak}
 const est = () => `<span class="jm-pil jm-pil-est">${esc(t("an.est"))}</span>`;
 const hip = () => `<span class="jm-pil jm-pil-warn">${esc(t("brt.an.hip"))}</span>`;
-const fav = (r) => { const h = hostDari(r); return h ? `https://www.google.com/s2/favicons?domain=${encodeURIComponent(h)}&sz=64` : ""; };
+const fav = (r) => logoLokal(r.url);
 const ini = (m) => (String(m).replace(/^www\./, "").split(".")[0].replace(/[^a-z0-9]/gi, "").slice(0, 2) || "?").toUpperCase();
-const logo = (r) => `<span class="brt-lg" aria-hidden="true">${esc(ini(r.media))}<img src="${esc(fav(r))}" width="22" height="22" alt="" loading="lazy" decoding="async" referrerpolicy="no-referrer"></span>`;
+const logo = (r) => `<span class="brt-lg" aria-hidden="true">${esc(ini(r.media))}<img src="${esc(fav(r))}" width="22" height="22" alt="" loading="lazy" decoding="async" data-galat="hapus"></span>`;
 const tautan = (r, isi, kelas = "brt-judul") => `<a class="${kelas}" href="${esc(urlAman(r.url))}" target="_blank" rel="noopener noreferrer" title="${esc(t("brt.buka"))}">${isi}</a>`;
 const baris = (r) => `<li class="brt-an-b">${tautan(r, esc(r.judul))}<span class="brt-meta">${logo(r)}<span>${esc(r.media)}, ${esc(tanggal(r.terbit.slice(0, 10)))}</span></span></li>`;
 const sumber = (K0) => sumberHtml(`${esc(t("brt.an.sumber"))} ${esc(tanggal(K0.dibangun))}.`);

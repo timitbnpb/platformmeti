@@ -4,13 +4,14 @@ import "/inti/tautan_org.js";
 import { mulaiHalaman } from "/inti/kepala.js";
 import { t, tanggal, angka } from "/i18n.js";
 import { esc, ikon } from "/inti/umum.js";
+import { ikonTek } from "/inti/ikon_tek.js";
 
 const muat = (n) => fetch(`/data/${n}.json`).then((r) => { if (!r.ok) throw new Error(n); return r.json(); });
 const MI = "https://metiires.or.id";
 const SURELP = "meti.ires@gmail.com";
-const KONTAK = [["jm.kaki.surel", SURELP, "berita"], ["jm.kaki.situs", "www.meti.or.id", "tautan"], ["jm.kaki.kantor", "Taman Sari Parama Lt. 10, Jl. K.H. Wahid Hasyim No. 84-86, Kebon Sirih, Menteng, Jakarta Pusat 10340", "wilayah"], ["jm.kaki.rumah", "Jl. Jatinegara Barat IV No. 3A, Balimester, Jatinegara, Jakarta Timur 13310", "wilayah"]];
-/* kode teknologi sama dengan /teknologi/<kode>; foto dari /img/beranda (tanpa foto: gradasi merek + ikon besar) */
-const TEK = [["surya", "tek-surya", "surya-cirata"], ["bayu", "tek-listrik", "bayu-sidrap"], ["hidro", "tek-listrik", "hidro-saguling"], ["panas-bumi", "tek-panas", "panas-bumi-sibayak"], ["bioenergi", "tek-bio", "bioenergi-sawit"], ["biomassa-sampah", "tek-bio", "sampah-psel"], ["penyimpanan", "tek-listrik", "penyimpanan-baterai"], ["hidrogen", "tek-listrik", ""], ["nuklir", "perisai", "nuklir-siwabessy"]];
+const KONTAK = [["jm.kaki.surel", SURELP, "berita"], ["jm.kaki.situs", "www.meti.or.id", "tautan"], ["jm.kaki.kantor", "Taman Sari Parama Lt. 10, Jl. K.H. Wahid Hasyim No. 84-86, Kebon Sirih, Menteng, Jakarta Pusat 10340", "wilayah"]];
+/* kode teknologi sama dengan /teknologi/<kode>; topik regulasi sama dengan CFG.reg di teknologi.js; foto dari /img/beranda */
+const TEK = [["surya", ["surya"], "surya-cirata"], ["bayu", ["angin"], "bayu-sidrap"], ["hidro", ["hidro"], "hidro-saguling"], ["panas-bumi", ["panas_bumi"], "panas-bumi-sibayak"], ["bioenergi", ["bioenergi"], "bioenergi-sawit"], ["biomassa-sampah", ["bioenergi"], "biomassa-bantargebang"], ["penyimpanan", ["penyimpanan"], "penyimpanan-baterai"], ["hidrogen", ["hidrogen"], "hidrogen-spbu"], ["nuklir", ["nuklir"], "nuklir-menara"]];
 /* ponytail: logo lebar (wordmark) diganti lambang kecil + label; ganti lewat data bila daftar bertambah */
 const LAMBANG = { "Ditjen EBTKE ESDM": ["/img/logo/ebtke.png", "Ditjen EBTKE"], "Kementerian ESDM": ["/img/logo/esdm.png", "Kementerian ESDM"] };
 const LOGO_ASOS = { AESI: "/img/logo/aesi.png", APROBI: "/img/logo/aprobi.png", API: "/img/logo/api-inaga.png", APAMSI: "/img/logo/apamsi.png" };
@@ -22,20 +23,30 @@ const slug = (n) => String(n).toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g,
 /* kepala bagian standar: eyebrow berikon, judul, lead */
 const kepala = (id, ik, ey, h2, l) => `<header class="tn-sh"><p class="tn-ey">${ikon(ik, 16)}<span>${esc(ey)}</span></p><h2 id="${id}">${esc(h2.replace(/\*/g, ""))}</h2>${l ? `<p class="tn-lead">${esc(l.replace(/\*/g, ""))}</p>` : ""}</header>`;
 
-/* ---------- kartu orang: foto penuh wajah, nama dan jabatan di dalam foto ---------- */
+/* ---------- kartu orang: foto persegi penuh; tanpa foto = inisial kecil di tengah atas, nama dan jabatan di bawahnya ---------- */
+const TX = (k, f, par) => { const s = t(k, par); return s === k ? f.replace(/\{(\w+)\}/g, (m, n) => par[n]) : s; };
 const orang = (o, ukuran = "") => {
-  if (o.kosong || !o.nama) return `<li class="tn-fk tn-fk-kosong ${ukuran}"><span class="tn-fk-bg" aria-hidden="true">${ikon("orang", 40)}</span><span class="tn-fk-t"><b>${esc(t("tn.lowong"))}</b><small>${esc(o.jabatan)}</small></span></li>`;
+  if (o.kosong || !o.nama) return `<li class="tn-fk tn-fk-kosong ${ukuran}"><span class="tn-fk-bg" aria-hidden="true">${ikon("orang", 36)}</span><span class="tn-fk-t"><b>${esc(t("tn.lowong"))}</b><small>${esc(o.jabatan)}</small></span></li>`;
   const k = o.orang_id || slug(o.nama); PERS.set(k, o);
-  const bg = o.foto ? `<img src="${esc(o.foto)}" alt="" width="360" height="480" loading="lazy">` : `<span class="tn-fk-ini" aria-hidden="true">${esc(inisial(o.nama))}</span>`;
-  return `<li class="tn-fk ${ukuran}"><button type="button" class="tn-fk-b" data-p="${esc(k)}" aria-label="${esc(t("tn.p.buka", { nama: o.nama }))}"><span class="tn-fk-bg">${bg}</span><span class="tn-fk-t"><b>${esc(o.nama)}</b><small>${esc(o.jabatan)}</small></span></button></li>`;
+  const bg = o.foto ? `<img src="${esc(o.foto)}" alt="" width="360" height="360" loading="lazy">` : `<span class="tn-fk-ini" aria-hidden="true">${esc(inisial(o.nama))}</span>`;
+  const kls = o.foto ? (/-b\.webp$/.test(o.foto) ? "tn-fk-pt" : "tn-fk-ft") : "tn-fk-nf";
+  return `<li class="tn-fk ${kls} ${ukuran}"><button type="button" class="tn-fk-b" data-p="${esc(k)}" aria-label="${esc(t("tn.p.buka", { nama: o.nama }))}"><span class="tn-fk-bg">${bg}</span><span class="tn-fk-t"><b>${esc(o.nama)}</b><small>${esc(o.jabatan)}</small></span></button></li>`;
 };
 const ul = (a, uk) => `<ul class="tn-fkg">${a.map((o) => orang(o, uk)).join("")}</ul>`;
-const plus = (sisa, kunci = "tn.anggota_plus") => sisa.length ? `<details class="tn-unit"><summary><span>${esc(t(kunci, { n: sisa.length }))}</span>${ikon("panah-kanan", 16)}</summary>${ul(sisa, "kecil")}</details>` : "";
-/* kelompok: pemimpin tampil, sisanya di tombol buka */
-const kelompok = (judul, a, { semua = false, ekstra = "", ik = "orang", besar = "" } = {}) => {
-  const tampil = semua || a.length <= 2 ? a : [a[0]], sisa = semua || a.length <= 2 ? [] : a.slice(1);
-  return `<section class="tn-grp ${ekstra}"><h4>${ikon(ik, 16)}<span>${esc(judul)}</span></h4>${ul(tampil, besar)}${plus(sisa)}</section>`;
-};
+const kelompok = (judul, a, { ik = "orang", besar = "", ekstra = "" } = {}) => `<section class="tn-grp ${ekstra}"><h4>${ikon(ik, 16)}<span>${esc(judul)}</span></h4>${ul(a, besar)}</section>`;
+
+/* kelompok ringkas: kartu pimpinan + deret avatar + tombol "Lihat semua" yang membuka popup berisi seluruh anggota */
+const GR = new Map();
+const PIM = /^(Ketua|Wakil Ketua|Sekretaris|Chief|Vice Chief|Koordinator)\b/;
+function ringkas(judul, a, { ik = "orang", pimpinan = PIM } = {}) {
+  const pim = a.filter((o) => pimpinan.test(o.jabatan || "")).slice(0, 3), sisa = a.filter((o) => !pim.includes(o));
+  const nyata = a.filter((o) => o.nama && !o.kosong), avat = sisa.filter((o) => o.nama && !o.kosong);
+  const id = "g" + GR.size; GR.set(id, { judul, ik, a });
+  const lr = pim.length ? `<ul class="tn-lr">${pim.map((o) => orang(o)).join("")}</ul>` : "";
+  const bawah = sisa.length ? `<div class="tn-av-baris"><span class="tn-tumpuk" aria-hidden="true">${avat.slice(0, 8).map((o) => avatar(o)).join("")}</span><span class="tn-plus">${esc(TX("tn.anggota_plus", "+{n} anggota", { n: Math.max(0, avat.length - 8) || avat.length }))}</span></div>
+    <button type="button" class="tn-semua" data-grup="${id}">${ikon("orang", 18)}<span>${esc(TX("tn.lihat_semua", "Lihat semua {n} anggota", { n: nyata.length }))}</span></button>` : "";
+  return `<section class="tn-grp tn-rg"><h4>${ikon(ik, 16)}<span>${esc(judul)}</span></h4>${lr}${bawah}</section>`;
+}
 
 const tbl = (x, dup) => {
   const l = LAMBANG[x.nama], src = l ? l[0] : x.logo, lebar = !l && x.w / x.h > 3.2;
@@ -67,17 +78,21 @@ function tentang(f) {
     <a class="tn-lanjut tn-bawah" href="/metode">${esc(t("tn.dir.link"))}</a></article></div></section>`;
 }
 
-function teknologi() {
-  const kartu = TEK.map(([k, ik, foto]) => `<a class="tn-tp" href="/teknologi/${k}" aria-label="${esc(t("tn.foto.buka", { nama: t("tn.tek." + k) }))}">${foto ? `<img src="/img/beranda/${foto}.webp" alt="" width="640" height="800" loading="lazy">` : `<span class="tn-tp-ik" aria-hidden="true">${ikon(ik, 72)}</span>`}<span class="tn-tp-t">${ikon(ik, 20)}<b>${esc(t("tn.tek." + k))}</b><i>${ikon("panah-kanan", 16)}</i></span></a>`).join("");
-  return `<section class="tn-seksi tn-pita-bg" id="teknologi" aria-labelledby="tn-tek"><div class="tn-kepala-baris">${kepala("tn-tek", "tek-surya", t("tn.ey.teknologi"), t("tn.tek.h2"), t("tn.tek.lead"))}<div class="tn-nav"><button type="button" class="tn-nv" data-geser="-1" aria-label="${esc(t("tn.tek.sebelum"))}">${ikon("panah-kiri", 18)}</button><button type="button" class="tn-nv" data-geser="1" aria-label="${esc(t("tn.tek.sesudah"))}">${ikon("panah-kanan", 18)}</button></div></div>
-  <div class="tn-tek" id="tnTek" tabindex="-1">${kartu}</div></section>`;
+function teknologi(D) {
+  const batas = Date.now() - 30 * 864e5;
+  const kartu = TEK.map(([k, reg, foto]) => {
+    const pj = D.proyek.filter((p) => p.teknologi === k), mw = pj.reduce((a, p) => a + (Number(p.kapasitas?.[0]?.nilai) || 0), 0);
+    const n = [["proyek", angka(pj.length)], ["mw", mw ? angka(Math.round(mw)) : "-"], ["reg", angka(D.reg.filter((r) => reg.some((x) => r.topik.includes(x))).length)], ["ber", angka(D.ber.filter((b) => (b.kepakaran || []).includes(k) && Date.parse(b.terbit) >= batas).length)]];
+    const nama = t("tn.tek." + k);
+    return `<li><a class="tn-tp" href="/teknologi/${k}" aria-label="${esc(t("tn.foto.buka", { nama }))}"><span class="tn-tp-f"><img src="/img/beranda/${foto}.webp" alt="" width="800" height="600" loading="lazy"><span class="tn-tp-t"><i class="tn-tp-ik">${ikonTek(k)}</i><b>${esc(nama)}</b></span></span><span class="tn-tp-n">${n.map(([c, v], i) => `<span><i>${ikon(["proyek", "analisis", "regulasi", "berita"][i], 16)}</i><b>${esc(v)}</b><small>${esc(t("tn.tek.n." + c))}</small></span>`).join("")}</span></a></li>`;
+  }).join("");
+  const j = esc(t("tn.tek.h2", { n: TEK.length })).replace(String(TEK.length), `<span class="jm-hl">${TEK.length}</span>`);
+  return `<section class="tn-seksi tn-pita-bg" id="teknologi" aria-labelledby="tn-tek"><div class="jm-ex"><header class="jm-ex-hd"><div class="jm-ex-teks"><span class="jm-ex-ey">${ikon("proyek", 14)}${esc(t("tn.ey.teknologi"))}</span><h2 class="jm-ex-j" id="tn-tek">${j}</h2><p class="jm-ex-sub">${esc(t("tn.tek.lead"))}</p></div></header>
+  <div class="jm-ex-bd"><ul class="tn-tek">${kartu}</ul></div></div></section>`;
 }
 
-/* SDU: Chief dan Vice Chief terlihat; PMO di tombol buka, jabatan tanpa awalan "PMO " */
-function sdu(a) {
-  const inti = a.filter((o) => !o.pmo), pmo = a.filter((o) => o.pmo).map((o) => ({ ...o, jabatan: o.jabatan.replace(/^PMO\s+/, "") }));
-  return `<section class="tn-grp tn-sdu"><h4>${ikon("direktori", 16)}<span>${esc(t("tn.u.sdu"))}</span></h4>${ul(inti)}${plus(pmo, "tn.u.pmo")}</section>`;
-}
+/* SDU: Chief dan Vice Chief jadi pimpinan; PMO di popup, jabatan tanpa awalan "PMO " */
+const sdu = (a) => ringkas(t("tn.u.sdu"), a.map((o) => (o.pmo ? { ...o, jabatan: o.jabatan.replace(/^PMO\s+/, "") } : o)), { ik: "direktori", pimpinan: /^(Chief|Vice Chief)\b/ });
 
 function struktur(p) {
   const U = p.unit, d = U.dewan || [], iPakar = d.findIndex((o) => /Ketua Dewan Pakar/.test(o.jabatan));
@@ -85,14 +100,14 @@ function struktur(p) {
   const bidang = p.bidang.filter((b) => b.nama);
   const kb = (b, i) => `<section class="tn-grp"><h4>${ikon("daftar", 16)}<span>${esc(t("tn.u.bk", { n: i + 1 }))}: ${esc(b.nama)}</span></h4>${ul(b.anggota, "kecil")}</section>`;
   const ket = (U.ketum || [])[0];
-  const baris2 = [["waketum", "tn.u.waketum", true], ["sekjen", "tn.u.sekjen"], ["bendahara", "tn.u.bendahara"], ["eksekutif", "tn.u.eksekutif", true]].filter(([k]) => U[k]).map(([k, j, s]) => kelompok(t(j), U[k], { semua: !!s })).join("");
+  const baris2 = [["waketum", "tn.u.waketum", true], ["sekjen", "tn.u.sekjen"], ["bendahara", "tn.u.bendahara"], ["eksekutif", "tn.u.eksekutif", true]].filter(([k]) => U[k]).map(([k, j, s]) => kelompok(t(j), U[k])).join("");
   return `<section class="tn-seksi tn-bagan-bg" id="tim" aria-labelledby="tn-struktur">${kepala("tn-struktur", "orang", t("tn.ey.struktur"), t("tn.struktur.h2"), t("tn.struktur.pengantar", { periode: p.periode }))}
-  <div class="tn-pohon"><div class="tn-r tn-r0">${kelompok(t("tn.u.penasihat"), U.penasihat || [], { semua: true, ik: "perisai" })}${kelompok(t("tn.u.pengawas"), pengawas, { ik: "perisai" })}${kelompok(t("tn.u.pakar"), pakar, { semua: pakar.length <= 3, ik: "insight" })}</div>
+  <div class="tn-pohon"><div class="tn-r tn-r0">${ringkas(t("tn.u.penasihat"), U.penasihat || [], { ik: "perisai" })}${ringkas(t("tn.u.pengawas"), pengawas, { ik: "perisai" })}${ringkas(t("tn.u.pakar"), pakar, { ik: "insight" })}</div>
     <div class="tn-konek" aria-hidden="true"></div>
     ${ket ? `<div class="tn-r tn-r1"><section class="tn-grp tn-ketum"><h4>${ikon("orang", 16)}<span>${esc(t("tn.u.ketum"))}</span></h4>${ul([ket], "besar")}</section></div><div class="tn-konek" aria-hidden="true"></div>` : ""}
     <div class="tn-r tn-r2">${baris2}</div></div>
     <h3 class="tn-sub">${ikon("daftar", 18)}<span>${esc(t("tn.u.bidang"))}</span></h3><div class="tn-bidang tn-bk9">${bidang.map(kb).join("")}</div>
-    <h3 class="tn-sub">${ikon("wilayah", 18)}<span>${esc(t("tn.u.unit"))}</span></h3><div class="tn-bidang">${[U.institute && kelompok(t("tn.u.institute"), U.institute, { semua: true }), U.wilayah && kelompok(t("tn.u.wilayah"), U.wilayah, { semua: true, ik: "wilayah" }), U.muda && kelompok(t("tn.u.muda"), U.muda, { semua: true }), U.komite && kelompok(t("tn.u.komite"), U.komite), U.staf && kelompok(t("tn.u.staf"), U.staf), U.sdu && sdu(U.sdu)].filter(Boolean).join("")}</div>
+    <h3 class="tn-sub">${ikon("wilayah", 18)}<span>${esc(t("tn.u.unit"))}</span></h3><div class="tn-bidang">${[U.institute && ringkas(t("tn.u.institute"), U.institute), U.wilayah && ringkas(t("tn.u.wilayah"), U.wilayah, { ik: "wilayah" }), U.muda && ringkas(t("tn.u.muda"), U.muda), U.komite && ringkas(t("tn.u.komite"), U.komite), U.staf && ringkas(t("tn.u.staf"), U.staf), U.sdu && sdu(U.sdu)].filter(Boolean).join("")}</div>
     <p class="tn-kecil">${esc(t("tn.struktur.sumber", { sumber: p.sumber, tanggal: tanggal(p.diperbarui || p.diambil) }))}</p></section>`;
 }
 
@@ -113,40 +128,23 @@ function faq(k) {
 /* kotak "Masih ada pertanyaan?" + kontak sekretariat; tombol gabung */
 function kotakKontak() {
   return `<aside class="tn-ada" id="kontak" aria-labelledby="tn-ada"><span class="tn-ada-ik">${ikon("berita", 26)}</span><h3 id="tn-ada">${esc(t("tn.faq.ada"))}</h3><p class="tn-isi">${esc(t("tn.faq.ada_isi"))}</p>
-  <ul class="tn-kk">${KONTAK.map(([k, v, ik]) => `<li>${ikon(ik, 20)}<span><small>${esc(t(k))}</small><b>${esc(v)}</b></span><button type="button" class="tn-salin" data-salin="${esc(v)}">${esc(t("tn.salin"))}</button></li>`).join("")}</ul>
+  <ul class="tn-kk">${KONTAK.map(([k, v, ik]) => `<li>${ikon(ik, 20)}<span><small>${esc(t(k))}</small><b>${esc(v)}</b></span><button type="button" class="tn-salin" data-salin="${esc(v)}">${ikon("salin", 16)}<span>${esc(t("tn.salin"))}</span></button></li>`).join("")}</ul>
   <div class="tn-aksi"><a class="tn-tbl tn-tbl-hijau" href="mailto:${SURELP}">${esc(t("tn.faq.surel"))}</a><a class="tn-tbl tn-tbl-tepi" href="${MI}/membership" target="_blank" rel="noopener noreferrer">${esc(t("tn.cta_gabung"))}</a></div></aside>`;
 }
 
 await mulaiHalaman();
 const isi = document.getElementById("isi");
 try {
-  const [p, m, k, r] = await Promise.all([muat("pengurus-meti"), muat("mitra-meti"), muat("tentang-kredit"), muat("ringkas")]);
+  const [p, m, k, r, pry, rg, br] = await Promise.all([muat("pengurus-meti"), muat("mitra-meti"), muat("tentang-kredit"), muat("ringkas"), muat("proyek"), muat("regulasi"), muat("berita")]);
   const nama = new Set([...Object.values(p.unit).flat(), ...p.bidang.flatMap((b) => b.anggota)].filter((o) => o.nama).map((o) => o.nama));
-  isi.innerHTML = hero({ pengurus: nama.size, mitra: m.asosiasi.length, proyek: r.hitung.proyek }) + `<div class="tn-wrap">` + tentang({ pengurus: nama.size, anggota: m.anggota.length }) + teknologi() + struktur(p) + mitra(m) + faq(k) + `</div>`;
+  isi.innerHTML = hero({ pengurus: nama.size, mitra: m.asosiasi.length, proyek: r.hitung.proyek }) + `<div class="tn-wrap">` + tentang({ pengurus: nama.size, anggota: m.anggota.length }) + teknologi({ proyek: pry.baris, reg: rg.baris, ber: br.baris }) + struktur(p) + mitra(m) + faq(k) + `</div>`;
 } catch (e) {
   isi.innerHTML = `<p class="tn-wrap tn-galat jm-galat" role="alert">${esc(t("tn.galat"))}</p>`;
 }
 isi.addEventListener("click", (e) => {
   const b = e.target.closest("[data-salin]");
-  if (b && navigator.clipboard) navigator.clipboard.writeText(b.dataset.salin).then(() => { b.textContent = t("tn.tersalin"); setTimeout(() => { b.textContent = t("tn.salin"); }, 1500); }, () => {});
-  const g = e.target.closest("[data-geser]"), tk = document.getElementById("tnTek");
-  if (g && tk) tk.scrollBy({ left: Number(g.dataset.geser) * tk.clientWidth * 0.8, behavior: matchMedia("(prefers-reduced-motion:reduce)").matches ? "auto" : "smooth" });
+  if (b && navigator.clipboard) navigator.clipboard.writeText(b.dataset.salin).then(() => { const sp = b.querySelector("span"); sp.textContent = t("tn.tersalin"); setTimeout(() => { sp.textContent = t("tn.salin"); }, 1500); }, () => {});
 });
-/* panel teknologi berganti pelan sendiri; berhenti saat disorot/difokus atau gerak dikurangi */
-{
-  const tk = document.getElementById("tnTek");
-  if (tk && !matchMedia("(prefers-reduced-motion:reduce)").matches) {
-    let jeda = false;
-    for (const ev of ["pointerenter", "focusin", "touchstart"]) tk.addEventListener(ev, () => { jeda = true; });
-    for (const ev of ["pointerleave", "focusout"]) tk.addEventListener(ev, () => { jeda = false; });
-    setInterval(() => {
-      if (jeda || document.hidden) return;
-      const habis = tk.scrollLeft + tk.clientWidth >= tk.scrollWidth - 4;
-      tk.scrollTo({ left: habis ? 0 : tk.scrollLeft + tk.clientWidth * 0.5, behavior: "smooth" });
-    }, 4500);
-  }
-}
-
 /* ---------- profil orang (dialog; sheet bawah di layar sempit) ---------- */
 const http = (u) => /^https?:\/\//i.test(u || "");
 const host = (u) => { try { return new URL(u).hostname.replace(/^www\./, ""); } catch (e) { return u; } };
@@ -172,6 +170,19 @@ function profil(p, o) {
   ${bag(t("tn.p.pendidikan"), pend ? `<ul class="tn-pend">${pend}</ul>` : "")}${bag(t("tn.p.tautan"), tau ? `<p class="tn-tau">${tau}</p>` : "")}${bag(t("tn.p.sumber"), sum ? `<p class="tn-tau">${sum}</p>` : "")}
   ${ada ? "" : `<p class="tn-kosongp">${esc(t("tn.p.kosong"))}</p>`}`;
 }
+/* popup daftar anggota: kotak cari + kisi kartu seragam; klik kartu membuka profil */
+const dd = document.createElement("dialog");
+dd.className = "tn-dlg tn-dlg-daftar"; dd.setAttribute("aria-labelledby", "tn-dd-j");
+document.body.append(dd);
+isi.addEventListener("click", (e) => {
+  const b = e.target.closest("[data-grup]"); if (!b) return;
+  const g = GR.get(b.dataset.grup), n = g.a.filter((o) => o.nama && !o.kosong).length;
+  dd.innerHTML = `<button type="button" class="tn-x" data-tutup aria-label="${esc(t("tn.p.tutup"))}">${ikon("silang", 20)}</button><div class="tn-dd-k"><span class="tn-bulat">${ikon(g.ik, 22)}</span><div><h3 id="tn-dd-j">${esc(g.judul)}</h3><p>${esc(TX("tn.n_anggota", "{n} anggota", { n }))}</p></div></div>
+    <input type="search" class="tn-dd-cari" placeholder="${esc(TX("tn.cari_nama", "Cari nama"))}" aria-label="${esc(TX("tn.cari_nama", "Cari nama"))}"><ul class="tn-fkg tn-dg">${g.a.map((o) => orang(o)).join("")}</ul>`;
+  dd.showModal();
+});
+dd.addEventListener("input", (e) => { const q = norm(e.target.value || ""); dd.querySelectorAll(".tn-dg > li").forEach((li) => { li.hidden = !!q && !norm(li.textContent).includes(q); }); });
+dd.addEventListener("click", (e) => { if (e.target === dd || e.target.closest("[data-tutup]")) dd.close(); const b = e.target.closest("[data-p]"); if (b) bukaProfil(b.dataset.p); });
 const dlg = document.createElement("dialog");
 dlg.className = "tn-dlg"; dlg.setAttribute("aria-labelledby", "tn-pj");
 dlg.innerHTML = `<button type="button" class="tn-x" data-tutup aria-label="${esc(t("tn.p.tutup"))}">${ikon("silang", 20)}</button><div class="tn-pi"></div>`;

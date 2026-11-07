@@ -4,6 +4,8 @@ import { t, angka, tanggal } from "/i18n.js";
 import { esc, nanti, debounce, hantuHtml, galatHtml, ikon, fotoBerita } from "/inti/umum.js";
 import { cariHtml, pilihHtml, hapusHtml, hitungHtml, exHtml, sumberHtml, unduhRegHtml, bagikanHtml } from "/inti/komponen.js";
 import { aksiHtml, hlHtml } from "/inti/aksi_ex.js";
+import { namaMedia, logoLokal } from "/inti/nama_media.js";
+import { paginasiHtml } from "/inti/paginasi.js";
 import { volumeSvg, batangMendatar, jumlahJendela } from "/berita_grafik.js";
 import { muat, label, urlAman, norm, namaRegulasi } from "/publik.js";
 import { IKON_TEK as IKT } from "/inti/ikon_tek.js";
@@ -11,9 +13,9 @@ import { LOGO_ORG } from "/beranda_data.js";
 import { petaHtml, pasangPeta, agregat } from "/berita_peta.js";
 import { gambarAnalisis } from "/berita_analisis.js";
 
-const LANJUT = 30;
+const LANJUT = 15; // kartu per halaman (3 baris x 5)
 const HARI = 86400000;
-const S = { mode: "hari", tab: "berita", q: "", tek: "", media: "", periode: "", bahasa: "", org: "", n: LANJUT };
+const S = { mode: "hari", tab: "berita", q: "", tek: "", media: "", periode: "", bahasa: "", org: "", n: 1 };
 let DIBANGUN = "", PRG = [], REG = [], B = null, V = null, FOTO = {}, ORG = new Map(), SEKARANG = Date.now();
 
 const umur = (iso) => (SEKARANG - Date.parse(iso)) / HARI;
@@ -107,14 +109,14 @@ function gambarAngka() {
 const FOTO_URL = (r) => fotoBerita(FOTO, r.id);
 /** Favicon media (cadangan thumbnail dan logo baris media); gagal dimuat ditangani listener error di bawah, bukan onerror inline (CSP). */
 const hostDari = (u) => { try { return new URL(u).hostname.replace(/^www\./, ""); } catch { return ""; } };
-const favUrl = (h) => (h ? `https://www.google.com/s2/favicons?domain=${encodeURIComponent(h)}&sz=64` : "");
+const favUrl = (h) => logoLokal(h);
 const favMedia = (nama) => { const r = B.find((x) => x.media === nama); return favUrl(r ? hostDari(r.url) : ""); };
-const logoMedia = (nama, fv) => `<span class="brt-lg" aria-hidden="true">${esc(inisialMedia(nama))}${fv ? `<img src="${esc(fv)}" width="22" height="22" alt="" loading="lazy" decoding="async" referrerpolicy="no-referrer">` : ""}</span>`;
+const logoMedia = (nama, fv) => `<span class="brt-lg" aria-hidden="true">${esc(inisialMedia(nama))}${fv ? `<img src="${esc(fv)}" width="22" height="22" alt="" loading="lazy" decoding="async" data-galat="hapus">` : ""}</span>`;
 const ikonSampul = (r) => ikTek((r.kepakaran || [])[0]);
 /** Gambar sampul; tanpa foto = latar bermerek dengan ikon teknologi (tidak pernah inisial). Gambar gagal dimuat dicopot oleh penangan error. */
 const sampul = (r, kelas, w, h, tag = false) => {
   const f = FOTO_URL(r), fv = favUrl(hostDari(r.url));
-  const img = f ? `<img src="${esc(f)}" width="${w}" height="${h}" alt="" loading="lazy" decoding="async" referrerpolicy="no-referrer" data-fav="${esc(fv)}">` : fv ? `<img class="brt-fv" src="${esc(fv)}" width="40" height="40" alt="" loading="lazy" decoding="async" referrerpolicy="no-referrer">` : "";
+  const img = f ? `<img src="${esc(f)}" width="${w}" height="${h}" alt="" loading="lazy" decoding="async" referrerpolicy="no-referrer" data-fav="${esc(fv)}">` : fv ? `<img class="brt-fv" src="${esc(fv)}" width="40" height="40" alt="" loading="lazy" decoding="async" data-galat="hapus">` : "";
   return `<span class="brt-sampul ${kelas}">${ikonSampul(r)}${img}${tag ? pil(r) : ""}</span>`;
 };
 const tautan = (r, isi, kelas) => `<a class="${kelas}" href="${esc(urlAman(r.url))}" target="_blank" rel="noopener noreferrer" title="${esc(t("brt.buka"))}">${isi}</a>`;
@@ -173,7 +175,8 @@ function gambarIsi() {
   document.querySelector("#ex-semua .jm-ex-j").innerHTML = hlHtml("brt.ex.semua.j", angka(rows.length), { total: angka(baris().length), jenis: t("brt.tab." + S.tab).toLowerCase() });
   const el = document.getElementById("isi");
   if (!rows.length) { el.innerHTML = `<p class="brt-lead">${esc(t("brt.kosong"))}</p>`; return; }
-  const potong = rows.slice(0, S.n);
+  S.n = Math.min(S.n, Math.ceil(rows.length / LANJUT));
+  const potong = rows.slice((S.n - 1) * LANJUT, S.n * LANJUT);
   let html;
   if (S.tab === "video") html = `<ul class="brt-video">${potong.map(itemVideo).join("")}</ul>`;
   else {
@@ -186,7 +189,7 @@ function gambarIsi() {
     }
     html += "</ul>";
   }
-  if (rows.length > S.n) html += `<div class="brt-lagi"><button type="button" class="jm-tbl" data-aksi="lagi">${esc(t("brt.lagi", { n: angka(Math.min(LANJUT, rows.length - S.n)) }))}</button></div>`;
+  html += paginasiHtml({ hal: S.n, total: rows.length, per: LANJUT });
   el.innerHTML = html;
 }
 
@@ -197,7 +200,7 @@ function tulisUrl() {
 }
 /** Chrome sinkron, daftar berat sesudah satu bingkai tercat. */
 function ubah(sinkron) {
-  S.n = LANJUT; sinkron && sinkron(); aturSaring(); tulisUrl(); nanti(gambarIsi);
+  S.n = 1; sinkron && sinkron(); aturSaring(); tulisUrl(); nanti(gambarIsi);
 }
 
 async function mulai() {
@@ -206,7 +209,7 @@ async function mulai() {
     const [b, v, f] = await Promise.all([muat("berita"), muat("video"), muat("berita_foto").catch(() => ({}))]);
     FOTO = f || {};
     SEKARANG = Date.now();
-    B = b.baris.map((r) => ({ ...r, _cari: norm(`${r.judul} ${r.media}`) })).sort((x, y) => y.terbit.localeCompare(x.terbit));
+    B = b.baris.map((r) => { const media = namaMedia(r.media); return { ...r, media, _cari: norm(`${r.judul} ${media}`) }; }).sort((x, y) => y.terbit.localeCompare(x.terbit));
     V = v.baris.map((r) => ({ ...r, _cari: norm(`${r.judul} ${r.kanal}`) })).sort((x, y) => y.terbit.localeCompare(x.terbit));
     DIBANGUN = b.dibangun_pada;
     document.querySelector("#semua .jm-ex-aksi").innerHTML = aksiHtml({ csv: false }) + sumberHtml(`${esc(t("brt.sumber"))} ${esc(tanggal(DIBANGUN))}.`);
@@ -226,7 +229,7 @@ async function mulai() {
     isiHtml: `<div class="jm-tab" role="tablist" id="tab"></div><div class="jm-saring" id="saring"></div><div id="isi" role="tabpanel"></div>`, aksiHtml: " " });
   document.getElementById("isi").addEventListener("click", (e) => {
     if (e.target.closest("[data-aksi=ulang]")) return mulai();
-    if (e.target.closest("[data-aksi=lagi]")) { S.n += LANJUT; return nanti(gambarIsi); }
+    const pg = e.target.closest("[data-hal]"); if (pg) { S.n = Number(pg.dataset.hal); nanti(gambarIsi); return document.getElementById("ex-semua").scrollIntoView({ block: "start" }); }
     const c = e.target.closest("[data-topik]"); if (c) { ubah(() => { S.tek = c.dataset.topik; document.getElementById("f-tek").value = S.tek; }); }
   });
   document.getElementById("tab").addEventListener("click", (e) => {

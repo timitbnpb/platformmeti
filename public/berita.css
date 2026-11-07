@@ -305,3 +305,21 @@ button.brt-an-k:focus-visible,.brt-an-dlg button:focus-visible{outline:2px solid
 #bagian .jm-ex .jm-ex-aksi .jm-aksi-b{background:var(--card);color:var(--ink);border-color:var(--card)}
 #bagian .jm-ex .jm-ex-aksi .jm-aksi-b:hover{background:var(--soft-hijau);color:var(--accent)}
 #bagian .jm-ex .jm-ex-aksi .jm-sumber{color:var(--on-brand)}
+
+/* jarak antar exhibit hanya dari gap kisi (24px); aturan sibling global jm.css (+margin-top:24px) tidak boleh ikut menggandakan */
+#ringkasan>*,.brt-dua>*{margin-top:0!important}
+#ringkasan>*>.jm-ex+*,#ringkasan .brt-dua>.jm-ex{margin-top:0}
+
+/* kisi kartu berita: 5 kolom lebar, turun 4/3/2/1 */
+.brt-daftar.brt-grid{gap:16px;grid-template-columns:repeat(5,minmax(0,1fr))}
+@media (max-width:1280px){.brt-daftar.brt-grid{grid-template-columns:repeat(4,minmax(0,1fr))}}
+@media (max-width:1000px){.brt-daftar.brt-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media (max-width:760px){.brt-daftar.brt-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:479px){.brt-daftar.brt-grid{grid-template-columns:minmax(0,1fr)}}
+.brt-item{gap:8px;padding:8px}
+.brt-item .brt-s169{aspect-ratio:16/10}
+.brt-item .brt-isi{gap:6px;padding:0 2px 2px}
+.brt-item .brt-judul{font:600 var(--t-tombol)/1.35 var(--font);min-height:0;-webkit-line-clamp:3;line-clamp:3}
+.brt-item .brt-meta,.brt-item .brt-meta-m{font-size:var(--t-kecil);flex-wrap:nowrap}
+.brt-item .brt-label{margin-top:auto}
+.brt-item .brt-label>*:nth-child(n+3){display:none}

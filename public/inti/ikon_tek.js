@@ -11,7 +11,7 @@ export const IKON_TEK = {
   "biomassa-sampah": S('<path d="M5 7h14M10 7V4h4v3M7 7l1 13h8l1-13M10 11v6M14 11v6"/>'),
   nuklir: S('<circle cx="12" cy="12" r="1.5"/><ellipse cx="12" cy="12" rx="9" ry="3.5"/><ellipse cx="12" cy="12" rx="9" ry="3.5" transform="rotate(60 12 12)"/><ellipse cx="12" cy="12" rx="9" ry="3.5" transform="rotate(120 12 12)"/>'),
   penyimpanan: S('<rect x="3" y="7" width="16" height="10" rx="2"/><path d="M21 10v4M7 10v4M11 10v4"/>'),
-  hidrogen: S('<path d="M12 3c3 4 6 7 6 11a6 6 0 0 1-12 0c0-4 3-7 6-11zM9.5 14.5h5"/>'),
+  hidrogen: S('<circle cx="7" cy="12" r="3.6"/><circle cx="17" cy="12" r="3.6"/><path d="M10.6 12h2.8M12 4v2.5M12 17.5V20"/>'),
   laut: S('<path d="M2 15c2.5-3 5 3 7.5 0s5 3 7.5 0 3-1 5-1M12 3v8M9 6l3-3 3 3M2 20c2.5-3 5 3 7.5 0s5 3 7.5 0 3-1 5-1"/>'),
   jaringan: S('<path d="M13 2 5 14h6l-1 8 8-12h-6z"/>'),
   efisiensi: S('<path d="M4 19V9M10 19V5M16 19v-7M22 19H2M17 5l3 3 2-4"/>'),
