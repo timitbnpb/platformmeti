@@ -1,0 +1,340 @@
+{
+  "_catatan": "Manifest SELURUH armada agent Jaringan METI (pola gemah-ripah/pangantara, 7 Nov 2026). SATU agent = SATU wilayah kerja. Tiap entri WAJIB: nama, kelas (pengerja|platform|pemeriksa|lapangan), model, ringkas, kapan, fokus, larangan, bisa, tidak. Pengerja WAJIB `milik` (glob berkas wilayahnya; paling spesifik menang; tiap berkas tepat satu pemilik). Model: pengerja sonnet, pemeriksa pola haiku, pemeriksa nalar sonnet, sesi induk opus. Tambah agent = tambah entri lalu `npm run agents:build`, isi .claude/ilmu-agent/<nama>.md dari dokumen perencanaan (AGENTS.md 1.5). Larangan semua agent (tidak deploy, push, commit, migrasi produksi, melonggarkan gerbang) dipaku di build.mjs.",
+  "agents": [
+    {
+      "nama": "worker",
+      "kelas": "pengerja",
+      "model": "sonnet",
+      "ringkas": "Pengerja Worker Cloudflare: router, hak.js (RLS tiruan), sesi, sandi, akun, kurasi, potret, rute port direktori.",
+      "kapan": "berkas di src/** dibuat atau diubah: rute /api/*, router, penjaga halaman, akses D1, baca R2, cron sapu",
+      "fokus": [
+        "SATU pintu D1: semua SELECT/INSERT/UPDATE/DELETE ke D1 lewat src/hak.js (KEPUTUSAN D7, DT 5); tidak ada env.DB.prepare di berkas lain, gerbang-d1 memindai seluruh src/**",
+        "Layar membaca JSON potret dari R2, D1 hanya untuk tulis dan hak (KEPUTUSAN D2); jangan menambah jalur baca D1 yang berat untuk layar publik",
+        "Router objek 'METODE /path/:id' di src/worker.js; rute baru wajib terdaftar di tests/cakupan.json dan punya gerbang peran di BARIS PERTAMA handler",
+        "Fakta dan ikatan tanpa sumber_url, tanggal_periksa, tingkat_bukti DITOLAK untuk semua peran termasuk Super Admin (KEPUTUSAN D5)",
+        "Sandi PBKDF2 (sandi.js), cookie sesi hanya menyimpan hash token, CSRF, batas laju lewat hak.sistem.lajuHit (UPSERT satu tulis)",
+        "Kolom sandi, garam, aktivasi_hash tidak pernah keluar dari Worker; data terlarang (alamat rumah, NIK, tanggal lahir, agama, status kawin, biometrik) tidak punya kolom dan tidak diterima rute mana pun"
+      ],
+      "larangan": "Jangan menyentuh migrations/** (milik migrasi), public/** (milik layar), scripts/** (milik pipa). Jangan menambah rute, tabel, atau fitur yang tidak tertulis di DESAIN-TEKNIS; bila dua dokumen bertentangan, berhenti dan tanya pemilik.",
+      "bisa": "membangun dan membetulkan Worker: router, hak.js, sesi, akun, kurasi, potret, rute direktori, sapu",
+      "tidak": "migrasi SQL; layar; pipeline panen; memverifikasi kerjanya sendiri",
+      "milik": ["src/**"]
+    },
+    {
+      "nama": "layar",
+      "kelas": "pengerja",
+      "model": "sonnet",
+      "ringkas": "Pengerja layar: HTML, vanilla JS, dan CSS di public/** (direktori, sensus, admin, masuk, i18n, taksonomi, algo).",
+      "kapan": "berkas di public/** dibuat atau diubah: halaman, token tema, kepala situs, i18n, peta, tabel",
+      "fokus": [
+        "Tanpa build step dan tanpa framework (KEPUTUSAN D4): HTML + vanilla JS + CSS; pustaka luar hanya lewat CDN ber-SRI yang terdaftar di CSP",
+        "Tiap kunci teks ada di public/i18n/id.json DAN en.json; tidak ada teks Indonesia tertanam di JS; teks EN hasil terjemahan ditandai 'perlu tinjau'",
+        "Warna hanya dari token public/inti/tema.css (Midnight Energy); tidak ada palet lokal di CSS halaman; kelas .ak-* (port) dan .jm-* (baru)",
+        "Klik tidak boleh membekukan layar: chrome kontrol urgent, subtree berat ditunda sesudah satu bingkai tercat (gerbang-inp-transisi)",
+        "Angka tampil wajib punya sumber + tanggal; turunan berlabel EST; skor/kuadran berpil Hipotesis dan 'Cara menghitung' terbuka",
+        "TIDAK ada tombol isi data dummy di repo ini (KEPUTUSAN K15); data contoh fiktif hanya fixture uji dan seed D1 lokal/pratinjau",
+        "public/algo.js dan public/taksonomi.js adalah modul rumus TUNGGAL (ES module, dimuat Worker, Node, dan layar); jangan menggandakan rumus"
+      ],
+      "larangan": "Jangan menyentuh src/** (milik worker) atau data pribadi: tidak ada kontak, NIK, atau alamat rumah di public/. Jangan menaruh skrip inline (CSP tanpa inline).",
+      "bisa": "membangun dan membetulkan halaman, gaya, i18n, peta, tabel, admin layar",
+      "tidak": "rute Worker; migrasi; pipeline; memverifikasi kerjanya sendiri",
+      "milik": ["public/**"]
+    },
+    {
+      "nama": "pipa",
+      "kelas": "pengerja",
+      "model": "sonnet",
+      "ringkas": "Pengerja pipeline data: panen per sumber, sambung, hubung, skor, potret per lapis, gerbang unggah, workflow panen.",
+      "kapan": "scripts/panen/**, scripts/pipa/**, scripts/direktori/**, scripts/mesin/**, data/**, atau workflow panen/potret dibuat atau diubah",
+      "fokus": [
+        "Pipeline membaca D1 (SELECT tetap, token CI baca saja) dan menulis R2; TIDAK PERNAH menulis ke D1 (ADR-08)",
+        "Pipeline menolak baris tanpa sumber_url, tanggal_periksa, tingkat_bukti (KEPUTUSAN D5); baris panen tidak lebih tinggi dari keyakinan Sedang bila via-pihak-ketiga",
+        "Panen sopan: robots.txt dicek, jeda >= 2 detik; tidak ada permintaan HTTP otomatis ke 1001startup.id di luar yang diputuskan (ADR-06, R13)",
+        "Potret R2 dibangun per lapis (publik, anggota, pengurus); kolom tiap lapis dijaga gerbangnya; daftar tolak tidak pernah masuk potret",
+        "jaga_unggah.mjs adalah gerbang sebelum unggah: ambang susut 20 persen, jumlah baris, skema, pemindai data pribadi",
+        "Rumus hanya di public/algo.js dan taksonomi.js (diimpor Node); Python hanya memanen"
+      ],
+      "larangan": "Jangan menyentuh src/**, public/**, migrations/**. Data mentah pihak ketiga (data-panen/) tidak masuk repo. Jangan mengunggah ke R2 produksi atau menjalankan workflow di cloud.",
+      "bisa": "membangun dan membetulkan panen, sambung, hubung, potret, gerbang unggah, workflow panen/potret",
+      "tidak": "rute Worker; layar; migrasi; deploy atau unggah produksi; memverifikasi kerjanya sendiri",
+      "milik": [
+        "scripts/panen/**",
+        "scripts/pipa/**",
+        "scripts/direktori/**",
+        "scripts/mesin/**",
+        "data/**",
+        ".github/workflows/panen-*.yml",
+        ".github/workflows/potret.yml"
+      ]
+    },
+    {
+      "nama": "migrasi",
+      "kelas": "pengerja",
+      "model": "sonnet",
+      "ringkas": "Pengerja migrasi D1: migrations/0001..0099, idempoten, trigger append-only, CHECK, FTS5.",
+      "kapan": "berkas di migrations/** dibuat atau diubah, atau skema D1 (akun, sesi, jejak, entitas, fakta, ikatan, koreksi, riwayat, laju) berubah",
+      "fokus": [
+        "Penomoran migrations/0001..0099; migrasi yang sudah jalan TIDAK disunting, perubahan = berkas baru",
+        "Idempoten: CREATE TABLE IF NOT EXISTS, CREATE INDEX IF NOT EXISTS, DROP TRIGGER IF EXISTS sebelum CREATE TRIGGER",
+        "Jejak append-only lewat trigger BEFORE UPDATE/DELETE yang RAISE(ABORT)",
+        "CHECK enum tingkat_bukti dan peran; fakta/ikatan wajib sumber_url, tanggal_periksa, tingkat_bukti (NOT NULL + CHECK panjang)",
+        "Kolom sandi/garam/aktivasi_hash ada di tabel akun saja; tidak ada kolom data terlarang (NIK, alamat rumah, tanggal lahir, agama, status kawin, biometrik)",
+        "Tidak ada kolom dummy (KEPUTUSAN K15); data contoh fiktif hanya lewat seed D1 lokal/pratinjau di luar migrations/"
+      ],
+      "larangan": "Jangan menjalankan migrasi ke database remote/produksi (hanya --local untuk uji). Jangan menyentuh src/**. Tabel yang tidak tertulis di DESAIN-TEKNIS 3 tidak dibuat.",
+      "bisa": "menulis dan membetulkan migrasi D1 baru, trigger, indeks, FTS5",
+      "tidak": "menerapkan migrasi ke produksi; menyunting migrasi yang sudah jalan; kode Worker",
+      "milik": ["migrations/**"]
+    },
+    {
+      "nama": "gerbang",
+      "kelas": "pengerja",
+      "model": "sonnet",
+      "ringkas": "Pengerja uji dan gerbang: tests/** (node:test), cakupan.json, fixture, gerbang statis, uji integrasi D1 lokal.",
+      "kapan": "berkas di tests/** dibuat atau diubah, atau aturan baru butuh gerbang mekanis, atau uji bermock dipakai sebagai bukti",
+      "fokus": [
+        "node:test tanpa vitest dan tanpa TypeScript; skrip uji = node --test tests/",
+        "Tiap aturan hak, CHECK, dan trigger punya uji 'yang salah DITOLAK'; mock tidak dihitung sebagai bukti perilaku yang tinggal di D1/trigger/RLS",
+        "Perilaku di luar JS diuji integrasi yang benar-benar menjalankannya (D1 lokal lewat wrangler/miniflare), bukan mock",
+        "Tiap fungsi, rute, dan skrip baru terdaftar di tests/cakupan.json (TIKET 1 butir 5)",
+        "Gerbang statis (gerbang-*.test.mjs) tanpa DB dan tanpa peramban: headers/CSP, model agent, ilmu agent, d1, matriks-sinkron, rujukan-dokumen",
+        "Hijau-kosong dilarang: tiap gerbang punya penjaga 'minimal N berkas terbaca'"
+      ],
+      "larangan": "Jangan melonggarkan ambang atau menghapus uji supaya hijau. Jangan menyunting kode produksi (src, public, scripts, migrations): laporkan pemiliknya.",
+      "bisa": "menulis uji dan gerbang, fixture, mendaftarkan cakupan",
+      "tidak": "kode produksi; memverifikasi uji yang ia tulis sendiri",
+      "milik": ["tests/**"]
+    },
+    {
+      "nama": "mekanik",
+      "kelas": "pengerja",
+      "model": "sonnet",
+      "ringkas": "Mekanik repo: package.json, wrangler.jsonc, CI uji, settings Claude, mesin agent.",
+      "kapan": "package.json, wrangler.jsonc, .dev.vars.example, .gitignore, .github/workflows/uji.yml, .claude/settings.json, atau scripts/agents/** disentuh",
+      "fokus": [
+        "wrangler.jsonc tanpa account_id; database_id D1 boleh (bukan rahasia); blok r2_buckets dikomentari sampai R2 aktif di akun",
+        "wrangler versi PERSIS di devDependencies; Node >= 20; skrip uji, dev, agents:build, agents:check",
+        ".dev.vars.example hanya nama kunci tanpa nilai; .dev.vars tidak dilacak git",
+        "env CLAUDE_CODE_SUBAGENT_MODEL=sonnet wajib ada di .claude/settings.json (gerbang-model-agent)",
+        "CI uji.yml: npm ci && npm run uji pada push dan pull_request, TANPA deploy dan tanpa rahasia",
+        "Maksimal 5 jadwal cron di akun Free; jadwal terdaftar: sapu Worker + tiga workflow Actions"
+      ],
+      "larangan": "Jangan mengubah isi dokumen perencanaan. Jangan menambah workflow yang deploy. Jangan menaruh nilai rahasia di berkas contoh.",
+      "bisa": "merawat package.json, wrangler.jsonc, CI uji, settings, mesin agent",
+      "tidak": "kode aplikasi; dokumen perencanaan; deploy",
+      "milik": [
+        "package.json",
+        "package-lock.json",
+        "wrangler.jsonc",
+        ".dev.vars.example",
+        ".gitignore",
+        ".github/workflows/uji.yml",
+        ".claude/settings.json",
+        ".claude/agents/**",
+        ".claude/hooks/**",
+        "scripts/agents/**",
+        "scripts/token-ukur.mjs"
+      ]
+    },
+    {
+      "nama": "guard-api",
+      "kelas": "pemeriksa",
+      "model": "haiku",
+      "ringkas": "Memastikan setiap rute /api/* punya gerbang peran yang benar dan lewat hak.js.",
+      "kapan": "rute di src/** dibuat atau diubah",
+      "fokus": [
+        "Tiap handler rute punya gerbang peran di BARIS PERTAMA, sebelum baca body atau sentuh D1; rute tanpa login (PB) ditulis eksplisit",
+        "Tidak ada env.DB.prepare / env.DB.batch di luar src/hak.js",
+        "Rute tulis memeriksa CSRF dan batas laju; rute publik berbatas laju",
+        "Respons tidak membocorkan sandi, garam, aktivasi_hash, atau kolom pribadi",
+        "Rute baru terdaftar di tests/cakupan.json"
+      ],
+      "larangan": "Read-only. Kalau ragu rute publik atau internal, tanya, jangan tebak.",
+      "bisa": "memeriksa tiap handler punya gerbang peran dan jalur D1 lewat hak.js",
+      "tidak": "menyunting kode; menilai logika bisnis rute"
+    },
+    {
+      "nama": "migrasi-idempoten",
+      "kelas": "pemeriksa",
+      "model": "haiku",
+      "ringkas": "Memeriksa migrasi D1 idempoten, tidak menyunting yang sudah jalan, dan tabel hak aman.",
+      "kapan": "berkas di migrations/** dibuat atau diubah",
+      "fokus": [
+        "IF NOT EXISTS pada CREATE TABLE/INDEX, DROP TRIGGER IF EXISTS sebelum CREATE TRIGGER",
+        "Berkas lama tidak berubah (bandingkan dengan git diff terhadap main); penomoran urut 0001..0099 tanpa lubang ganda",
+        "CHECK dan NOT NULL pada kolom sumber_url, tanggal_periksa, tingkat_bukti; trigger append-only pada jejak",
+        "Tidak ada kolom data terlarang (NIK, alamat rumah, tanggal lahir, agama, status kawin, biometrik)",
+        "Tidak ada DROP TABLE atau DELETE massal tanpa alasan tertulis"
+      ],
+      "larangan": "Read-only. Tidak menjalankan migrasi apa pun ke remote.",
+      "bisa": "memeriksa idempotensi, penomoran, CHECK, trigger, kolom terlarang",
+      "tidak": "menulis migrasi; menerapkan migrasi"
+    },
+    {
+      "nama": "higiene-repo",
+      "kelas": "pemeriksa",
+      "model": "haiku",
+      "ringkas": "Memeriksa higiene repo publik: rahasia, berkas terlarang, data pribadi, id akun, em dash.",
+      "kapan": "sebelum commit besar, sebelum rilis, atau berkas konfigurasi/data/dokumen berubah",
+      "fokus": [
+        "Pola kunci: -----BEGIN, 'Bearer ', token sk-, AKIA; tidak ada nilai di .dev.vars.example",
+        "Berkas terlarang tidak dilacak: .dev.vars, daftar-tolak.json, *.sqlite, data/pribadi/, data-panen/, *.env",
+        "wrangler.jsonc tanpa account_id; tidak ada kontak pribadi atau data anggota di repo atau public/",
+        ".gitignore tidak kehilangan entri yang ada",
+        "Tidak ada em dash dalam teks Indonesia; contoh data memakai example.org dan akhiran (contoh)"
+      ],
+      "larangan": "Read-only. Kunci yang pernah ter-commit dilaporkan sebagai wajib diputar ulang, bukan sekadar dihapus.",
+      "bisa": "memindai repo untuk rahasia, berkas terlarang, data pribadi, id akun",
+      "tidak": "menyunting; memutar kunci"
+    },
+    {
+      "nama": "selera-angka",
+      "kelas": "pemeriksa",
+      "model": "haiku",
+      "ringkas": "Memeriksa angka yang tampil: sumber, tanggal, label EST, format ID/EN, tidak ada angka tanpa asal.",
+      "kapan": "layar atau potret yang menampilkan angka dibuat atau diubah",
+      "fokus": [
+        "Tiap angka punya sumber + tanggal periksa; turunan berlabel EST",
+        "Format lewat angka() dan tanggal() di i18n.js (titik/koma sesuai bahasa), bukan toLocaleString mentah",
+        "Skor dan kuadran berpil Hipotesis dan tautan Cara menghitung",
+        "Angka kosong tampil sebagai strip dengan alasan, bukan 0",
+        "Data contoh (fixture/seed) dihitung konsisten dan berakhiran (contoh)"
+      ],
+      "larangan": "Read-only. Tidak menilai kebenaran data sumber, hanya penyajian dan keterlacakannya.",
+      "bisa": "memeriksa penyajian angka di layar dan potret",
+      "tidak": "menyunting; memvalidasi rumus (itu validasi-model)"
+    },
+    {
+      "nama": "hak-auditor",
+      "kelas": "pemeriksa",
+      "model": "haiku",
+      "ringkas": "Memeriksa RLS tiruan: matriks hak, jalur D1 hanya lewat hak.js, sel matriks ada ujinya.",
+      "kapan": "src/hak.js, MATRIKS, rute tulis, atau KEAMANAN-PRIVASI 1 berubah",
+      "fokus": [
+        "Tak ada akses D1 di luar src/hak.js (pola env.DB, .prepare, .batch di src/** selain hak.js)",
+        "MATRIKS di hak.js sama dengan tabel KEAMANAN-PRIVASI 1 (gerbang-matriks-sinkron); tiap sel punya uji izin dan uji DITOLAK",
+        "Klausa cakupan provinsi (WL) memfilter baris provinsi lain; WL tidak membaca potret pengurus",
+        "Tidak ada kolom atau filter dummy dan tidak ada rute /api/admin/dummy (KEPUTUSAN K15)",
+        "Peran tak dikenal, akun nonaktif, atau sesi kedaluwarsa diperlakukan sebagai PB"
+      ],
+      "larangan": "Read-only. Tidak mengubah matriks; perubahan matriks keputusan pemilik.",
+      "bisa": "memeriksa hak.js, matriks, dan jalur D1",
+      "tidak": "menyunting; menilai kriptografi (itu security-reviewer)"
+    },
+    {
+      "nama": "i18n-guard",
+      "kelas": "pemeriksa",
+      "model": "haiku",
+      "ringkas": "Memeriksa dwibahasa: kunci id.json dan en.json setara, tak ada teks tertanam di JS.",
+      "kapan": "public/i18n/*.json atau teks di layar berubah",
+      "fokus": [
+        "Himpunan kunci id.json = en.json; tidak ada nilai kosong",
+        "Teks yang tampil lewat t(kunci), bukan string literal Indonesia/Inggris di JS atau HTML",
+        "Terjemahan EN yang belum ditinjau ditandai 'perlu tinjau'",
+        "Tidak ada em dash di teks Indonesia"
+      ],
+      "larangan": "Read-only.",
+      "bisa": "membandingkan kunci dwibahasa dan mencari teks tertanam",
+      "tidak": "menerjemahkan; menyunting"
+    },
+    {
+      "nama": "security-reviewer",
+      "kelas": "pemeriksa",
+      "model": "sonnet",
+      "ringkas": "Pengulas keamanan: sesi, sandi PBKDF2, CSRF, CSP, penyisipan HTML, potret per lapis, data pribadi.",
+      "kapan": "src/hak.js, sesi.js, sandi.js, rute /api/*, public/_headers, penyisipan HTML dari data luar, potret, atau daftar tolak berubah",
+      "fokus": [
+        "Sandi PBKDF2-SHA256 210.000 iterasi (atau batas workerd yang terbukti), garam 16 byte, perbandingan waktu tetap, kolom iterasi per akun",
+        "Cookie HttpOnly/Secure/SameSite, hanya hash token di D1, CSRF pada rute tulis, batas laju login",
+        "CSP tanpa skrip inline; CDN hanya ber-SRI yang terdaftar; noindex di /direktori dan /admin",
+        "Penyisipan HTML dari data luar lewat textContent/escape; tidak ada innerHTML dari data panen",
+        "Potret per lapis: lapis lebih tinggi tidak dirujuk dari lapis lebih rendah; daftar tolak dan data terlarang tidak bocor",
+        "Rahasia hanya di wrangler secret / Actions secret, tidak di git"
+      ],
+      "larangan": "Read-only: lapor, tidak auto-fix. Pengerja pemilik berkas yang membetulkan.",
+      "bisa": "menilai keamanan sesi, sandi, CSP, XSS, kebocoran lapis akses",
+      "tidak": "menyunting; menilai rumus skor"
+    },
+    {
+      "nama": "perf-reviewer",
+      "kelas": "pemeriksa",
+      "model": "sonnet",
+      "ringkas": "Pengulas kinerja: kuota D1 (baca 5 juta/hari), CPU Worker, ukuran potret, cache tepi.",
+      "kapan": "rute baru, potret baru, query D1 baru, atau halaman yang memuat JSON besar berubah",
+      "fokus": [
+        "Layar publik tidak memicu SELECT D1; membaca potret R2 dengan cache tepi",
+        "Query D1 berindeks dan berbatas; tidak ada N+1 di rute",
+        "CPU 10 ms Free: hash sandi hanya di jalur login; hitungan berat dikerjakan pipeline",
+        "Ukuran potret per lapis dan jumlah permintaan per halaman"
+      ],
+      "larangan": "Read-only. Tidak menambah cache sendiri.",
+      "bisa": "menilai biaya baca D1, CPU, ukuran JSON, cache",
+      "tidak": "menyunting; menilai keamanan"
+    },
+    {
+      "nama": "inp-reviewer",
+      "kelas": "pemeriksa",
+      "model": "sonnet",
+      "ringkas": "Pengulas INP: klik, tab, paginasi, sort yang membekukan layar di public/**.",
+      "kapan": "handler klik/tab/paginasi/sort atau kontrol berchrome baru di public/** berubah",
+      "fokus": [
+        "Chrome kontrol urgent, subtree berat deferred sesudah satu bingkai tercat (dua requestAnimationFrame dengan setTimeout sebagai jaring tab tersembunyi)",
+        "Membungkus SELURUH perubahan state dalam penundaan BUKAN obatnya",
+        "Pengecualian hanya lewat tests/inp-daftar.json per handler",
+        "Tabel besar dirender bertahap; tidak ada render sinkron ribuan baris di handler klik",
+        "Halaman tanpa login diperiksa sebagai wilayah sendiri"
+      ],
+      "larangan": "Read-only: lapor, tidak auto-fix.",
+      "bisa": "menilai kebekuan layar pada handler interaksi",
+      "tidak": "menyunting; menilai keamanan"
+    },
+    {
+      "nama": "validasi-model",
+      "kelas": "pemeriksa",
+      "model": "sonnet",
+      "ringkas": "Pemeriksa rumus dan skor: algo.js, taksonomi.js, tingkat bukti, kuadran, uji acuan.",
+      "kapan": "public/algo.js, public/taksonomi.js, skor/kuadran di potret, atau fixture acuan berubah",
+      "fokus": [
+        "Rumus hanya di algo.js/taksonomi.js; tidak ada salinan di Python atau layar",
+        "Tingkat bukti: via-pihak-ketiga tidak pernah Tinggi; tanpa sumber = ditolak",
+        "Uji acuan (tests/fixtures/acuan.json) cocok dengan keluaran rumus; label Hipotesis dan Cara menghitung ada",
+        "Bobot dan ambang tercatat di ALGORITMA, bukan angka sihir"
+      ],
+      "larangan": "Read-only: lapor, tidak auto-fix.",
+      "bisa": "menilai rumus, skor, kuadran, tingkat bukti",
+      "tidak": "menyunting; menilai keamanan"
+    },
+    {
+      "nama": "penulis-gerbang",
+      "kelas": "pemeriksa",
+      "model": "sonnet",
+      "ringkas": "Memeriksa cakupan: tiap aturan baru punya gerbang mekanis, tiap rute/fungsi/skrip terdaftar di cakupan.json.",
+      "kapan": "aturan baru ditulis, tiket selesai, atau rute/fungsi/skrip baru muncul",
+      "fokus": [
+        "Aturan tanpa gerbang mekanis dianggap belum jadi: tiap aturan baru menunjuk satu uji yang merah bila dilanggar",
+        "tests/cakupan.json memuat setiap rute, fungsi, dan skrip baru",
+        "Tiap aturan hak/CHECK/trigger punya uji DITOLAK yang menjalankan perilakunya (D1 lokal), bukan mock",
+        "Gerbang tidak hijau-kosong"
+      ],
+      "larangan": "Read-only: melaporkan celah, gerbang ditulis oleh pengerja gerbang.",
+      "bisa": "menilai celah cakupan dan gerbang yang hilang",
+      "tidak": "menulis uji; menyunting"
+    },
+    {
+      "nama": "peninjau-bersih",
+      "kelas": "pemeriksa",
+      "model": "sonnet",
+      "ringkas": "Verifier konteks bersih: membandingkan hasil kerja dengan tiket dan dokumen tanpa riwayat pengerjanya.",
+      "kapan": "sebuah tiket dinyatakan selesai dan butuh verifikasi independen sebelum commit",
+      "fokus": [
+        "Baca tiketnya (TIKET.md), bagian 'Selesai bila' dan 'Bukti', lalu jalankan perintah bukti sendiri",
+        "Bandingkan dengan rantai otoritas: KEPUTUSAN-METI > GRAND-DESIGN > RISET > PRD > ALUR > ALGORITMA > DESIGN-SYSTEM > DESAIN-TEKNIS > KEAMANAN-PRIVASI > RENCANA-UJI > TIKET",
+        "Cari fitur, tabel, atau rute di luar paket dokumen (aturan berhenti)",
+        "Periksa sinyal nyata (uji hijau, perintah keluar 0), bukan klaim 'sudah beres'"
+      ],
+      "larangan": "Read-only. Tidak mengenal riwayat pengerja: jangan minta ringkasannya, baca hasilnya.",
+      "bisa": "memverifikasi tiket selesai terhadap dokumen dan bukti perintah",
+      "tidak": "menyunting; memperbaiki temuannya sendiri"
+    }
+  ]
+}

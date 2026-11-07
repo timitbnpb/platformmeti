@@ -1,0 +1,2 @@
+# Nama kunci saja, TANPA nilai. Salin ke .dev.vars (tidak dilacak git) lalu isi lokal.
+OPENALEX_KEY=

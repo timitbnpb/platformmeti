@@ -1,0 +1,61 @@
+# Ilmu layar
+
+> Kelas: pengerja · Model: sonnet · Definisi: `.claude/agents/layar.md`
+> Dibaca SEBELUM kerja (`node scripts/agents/ilmu.mjs baca layar`). Kasus baru
+> ditambah SESUDAH kerja lewat `node scripts/agents/ilmu.mjs kasus layar "..."`.
+
+Singkatan: DT = DESAIN-TEKNIS, DS = DESIGN-SYSTEM, KPV = KEAMANAN-PRIVASI, RU = RENCANA-UJI, KP = KEPUTUSAN-METI. Semua di `docs/perencanaan/`. Bila dua dokumen bertentangan: berhenti dan tanya pemilik (rantai: KP > GD > RISET > PRD > ALUR > ALG > DS > DT > KPV > RU > TIKET).
+
+## Peta berkas & tabel
+
+Wilayahmu hanya `public/**` (DT §2). Dilarang menyentuh `src/**` (worker), `migrations/**`, `scripts/**`, `tests/**`.
+
+| Tiket | Berkas |
+| --- | --- |
+| JM-C01 token dan kepala | `public/inti/tema.css` (token Midnight Energy), `kepala.css`, `gaya.css`, `kepala.js` (ditulis ulang), `public/tema.js`, `public/img/meti-putih.svg` |
+| JM-C02 port direktori | `public/direktori.html`, `direktori.js` (3.961 baris, IIFE klasik), `direktori.css` (638 kelas `.ak-*`), `fungsi_direktori.js`, `public/geo/**` |
+| JM-C03 konstanta domain | `RUMPUN` jadi `SEKTOR`, 8 tab (Pakar, Lembaga, Wilayah, Inovasi, Riset, Sistem data, Pendanaan, Pustaka), `DIRI` = METI |
+| JM-C06 i18n | `public/i18n.js` (`t()`, `angka()`, `tanggal()`), `public/i18n/id.json`, `en.json` |
+| JM-B06 login | `masuk.html`, `aktivasi.html`, `ganti-sandi.html`, `masuk.js` |
+| JM-E01..E05 sensus F1 | `index.html`, `perusahaan.html`, `p.html`, `peta.html`, `metode.html` (+ `.js` per halaman), `public/inti/jm.css` (kelas `.jm-*`, maks 400 baris) |
+| JM-E06/E07 admin | `admin.html`, `admin.js`, `admin.css`, `public/admin/kurasi.js` |
+| JM-F01..F08 F2 | `rantai`, `pembiaya`, `bumn`, `data-center`, `desa`, `wilayah`, `kebijakan`, `cerita` (.html) |
+| modul rumus | `public/taksonomi.js`, `public/algo.js` (SATU-SATUNYA tempat rumus), `public/inti/umum.js` (`esc`, `nanti`, `hantu`, `kosong`, `galat`) |
+| JM-A05 | `public/_headers`, `public/robots.txt` (KPV §6; DT §2.2 lupa mencatatnya, RU §8 butir 4) |
+
+Rumah kontrol bersama (tab, chip, paginasi, sort, lipat, kotak cari) wajib satu berkas, mis. `public/kontrol.js`; DT belum mencatatnya (RU §8 butir 3): belum diputuskan di paket dokumen, tanya induk sebelum membuat nama berkas.
+
+## Aturan & invarian
+
+1. **Tanpa build, tanpa framework** (KP D4, ADR-03). Pustaka luar hanya MapLibre GL 4.7.1 dari cdnjs dengan `integrity` sha384 dan `crossorigin="anonymous"`, dimuat malas saat peta dibuka (DS §4 aturan muat 2). Pustaka lain: tanya pemilik.
+2. **Pemuatan skrip** (DT §2.1 catatan): `taksonomi.js` dan `algo.js` ES module yang menempel ke `window.JM`; `direktori.js` dimuat `defer` sesudahnya. Urutan dokumen = urutan jalan. Urutan CSS tetap: tema, kepala, gaya, direktori, jm; `?v=HASH` dari pipeline rilis (DS §4).
+3. **CSP tanpa inline** (KPV §8): tidak ada `<script>` tanpa `src`, `style=`, `onclick=`. Posisi dinamis lewat atribut SVG atau `el.style.setProperty`. Semua teks dari data lewat `esc()` sebelum `innerHTML`; URL luar lewat pemeriksa http(s).
+4. **Warna hanya token** (DS §2): tidak ada hex di CSS selain `tema.css`; teks teal selalu `--accent` `#07705A`, bukan teal asli `#0A896A` (kontras 4,38:1 gagal). Tidak ada warna per sektor, hanya `--data1..5` (DS §1). Fokus `:focus-visible`, tidak pernah `:focus`.
+5. **Kelas**: port tetap `.ak-*` (ADR-05), baru `.jm-*`. Jangan ganti nama 638 kelas. Jangan menyalin CSS/JS identik ke dua halaman: pindahkan ke `public/inti/`.
+6. **Klik tidak boleh membekukan layar** (DS §6.0, RU §2.3.3): chrome kontrol (`aria-selected`, `aria-pressed`, `aria-expanded`, kelas aktif) berubah sinkron di handler; isi berat ditunda lewat `nanti()` sesudah satu bingkai tercat. Membungkus semuanya dalam penundaan BUKAN obatnya. Kotak cari di-debounce 120 ms (DS §6.0) dengan `AbortController`.
+7. **Teks**: semua lewat `t(kunci)`; kunci ada di `id.json` DAN `en.json` bersamaan; tidak ada teks Indonesia tertanam di JS baru (DT §8.4). Angka dan tanggal hanya lewat `angka()`/`tanggal()` (KP D17); tanpa titik tengah dan em dash di teks.
+8. **Angka tampil**: tiap angka bersumber dan bertanggal per butir (DS §1); turunan berpil `EST`; skor, kuadran, matriks berpil `Hipotesis` dengan "Cara menghitung" terbuka (KP C-16, DS §6.9); sel tanpa data berisi `-`, bukan nol atau tebakan; kartu angka membawa penyebut "n dari N baris" (DS §6.2). Pola wajib halaman publik: Jawaban singkat, kartu angka, komponen utama, Cara menghitung, Cara mengutip + tanggal beku (PRD U4).
+9. **Keadaan komponen** (DS §6.0): memuat = kerangka `.jm-hantu` setinggi isi akhir; kosong = ikon, satu kalimat, satu aksi; galat = `role="alert"` + "Coba lagi"; di 390 px tanpa gulir horizontal halaman, target sentuh minimal 44 px.
+10. **Rute halaman** (DT §4.2): `/direktori` LOGIN (302 ke `/masuk?ke=`), `/admin` KR AD SA, tab Akun hanya AD dan SA dan benar-benar tidak ada di DOM untuk KR. Tak ada `/akademisi`. `?ke=` yang tidak relatif diabaikan. Tidak ada kontak (surel, telepon) di DOM halaman publik.
+11. **Tombol isi data dummy DIBATALKAN pemilik** (KP K15, 7 Nov 2026, mengalahkan D18 dan DUMMY.md untuk repo ini). Jangan membuat tombol, `dataContoh()` di layar, atau elemen `.ak-dummy`. Sisa rujukan di roster, DT §8.3, DS §5, TIKET JM-C05, RU §2.7 basi: laporkan, jangan ikuti. Data contoh hanya fixture uji dan seed D1 lokal.
+12. Bahasa: `?lang=` menang atas `localStorage` (try/catch) menang atas `akun.bahasa` menang atas `id`; isi data `_en` kosong tampil ID dengan pil "ID".
+
+## Ranjau yang pernah meledak
+
+- **Monolit** (R10 §8.3): `index.html` 898 KB, `akademisi.js` 658 KB. Sebab: semua di satu berkas. Akibat: sulit diuji, lambat, rawan. Tahu: ukuran berkas; ASAL `direktori.css` 238 KB sudah dimuat di halaman publik, ukur LCP di JM-E01 (DS §4 butir 4).
+- **CSP `unsafe-inline`** (R10 §8.2): lahir dari skrip/gaya inline. Tahu: gerbang-headers merah.
+- **MapLibre tanpa SRI, dua jalur muat** (R10 §8.14) dan **logo hotlink** (R10 §8.13): melacak pengunjung ke host lain. Logo hanya dari `/api/gambar/logo/`.
+- **Peta tidak ganti tema** setelah dibuat (R10 §8.15): gaya dipilih sekali. Ganti tema harus memanggil penggantian gaya peta.
+- **Kunci kamus = teks Indonesia, kamus 965 KB** (R10 §6.2): rapuh dan berat. Pakai kunci titik (`nav.sensus`), kamus per halaman bila membengkak.
+- **Pencarian menimpa `innerHTML` tiap ketukan tanpa debounce** (R12 §8.8): terasa baik di 400 entri, beku di ribuan. Render bertahap.
+- **Formulir tiruan** (R12 §8.11): tombol yang tidak mengirim apa pun. Tiap formulir menulis ke server, mengembalikan nomor rujukan, gagal terlihat.
+- **Kelas/variabel CSS dipakai tapi tak terdefinisi** gagal diam (R11 §6.2): periksa tiap `var(--x)` ada di `tema.css`.
+- **Overlay INP menyala meski sudah di-transition** (R11 §4.11): chrome ikut tertunda; cat tak pernah datang.
+
+## Gerbang yang menghakimi
+
+Merah bila: `gerbang-headers` (inline, `*`, sumber luar tak terdaftar), `gerbang-i18n` (kunci id/en beda, `t()` ke kunci tak ada, teks tertanam di JS baru), `gerbang-teks` (U+00B7, U+2014, sisa BNPB/BPBD/karhutla/DIBI, `toLocaleString` di luar `i18n.js`), `gerbang-token-meti` dan `gerbang-kontras` (hex liar, pasangan gagal AA), `gerbang-inp-transisi` (kontrol berchrome di luar rumah kontrol, handler tak terdaftar di `tests/inp-daftar.json`), port `direktori-seg/-klik/-layar/-versi`, dan `tests/layar/*.spec.mjs` L1 sampai L11 di 1440 dan 390, terang/gelap, ID/EN (RU §2.3). Pemeriksa dipanggil: `selera-angka` (angka, EST, Hipotesis), `inp-reviewer` (handler interaksi), `i18n-guard` (kamus). Status gerbang-dummy: basi karena K15, tanya induk.
+
+## Kasus
+
+Belum ada kasus. Tambahkan lewat ilmu.mjs kasus.

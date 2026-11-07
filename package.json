@@ -1,0 +1,20 @@
+{
+  "name": "platformmeti",
+  "version": "0.0.1",
+  "private": true,
+  "description": "Platform Jaringan METI: direktori dan sensus energi terbarukan Indonesia (Cloudflare Worker + static assets + D1 + R2, tanpa build step)",
+  "type": "module",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "uji": "node --test",
+    "dev": "wrangler dev",
+    "agents:build": "node scripts/agents/build.mjs",
+    "agents:check": "node scripts/agents/build.mjs --cek",
+    "token:ukur": "node scripts/token-ukur.mjs"
+  },
+  "devDependencies": {
+    "wrangler": "4.158.0"
+  }
+}

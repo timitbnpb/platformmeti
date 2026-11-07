@@ -10,3 +10,5 @@ daftar-tolak.json
 # Panen mentah pihak ketiga (1001startup.id dll): tidak masuk repo publik.
 data-panen/
 .DS_Store
+# Armada agent: jejak kerja lokal tidak masuk repo publik (R11 7.4: privasi)
+.claude/ilmu-agent/jejak/
