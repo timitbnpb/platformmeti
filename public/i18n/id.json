@@ -1292,5 +1292,14 @@
  "rt.urut_nama": "Nama",
  "wl.vis.peringkat": "peringkat kapasitas EBT terpasang antarprovinsi",
  "wl.vis.median": "Median provinsi",
- "wl.col.nilai": "Nilai"
+ "wl.col.nilai": "Nilai",
+ "brt.sek.sorotan": "Sorotan",
+ "brt.sek.sorotan.p": "Berita terbaru yang paling bergambar dari semua teknologi.",
+ "brt.sek.surya": "Surya",
+ "brt.sek.panas": "Panas bumi",
+ "brt.sek.bio": "Bioenergi dan sampah jadi energi",
+ "brt.sek.kebijakan": "Kebijakan dan pembiayaan",
+ "brt.sek.terbaru": "Terbaru",
+ "brt.lihat": "Lihat semua ({n})",
+ "brt.sek.p": "{n} berita dalam 90 hari terakhir."
 }

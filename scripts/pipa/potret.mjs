@@ -10,6 +10,7 @@ import path from 'node:path';
 import crypto from 'node:crypto';
 import assert from 'node:assert/strict';
 import { fileURLToPath } from 'node:url';
+import { normWilayah } from '../panen/panen_proyek.mjs';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '../..');
 const DP = path.join(ROOT, 'data-panen');
@@ -81,6 +82,74 @@ const PROGRAM = {
 const MW = new Set(['MW', 'MWp', 'MWP']);
 
 // ---------- pembangunan ----------
+
+// ---------- titik peta tiap organisasi (lokasi.lat/lng/presisi) ----------
+// Urutan: koordinat asli (tepat) > pusat kab/kota ADM2 (kota) > pusat provinsi ADM1 (provinsi) > teks alamat/nama > lokasi kampus untuk ormawa.
+// Pusat wilayah = geoBoundaries (ADM1 ODbL, ADM2 CC BY 3.0 IGO), berkas statis data/geo/pusat-wilayah.json. Titik tidak tepat digeser deterministik <= 0,08 derajat (hash id) agar logo tak menumpuk.
+let PUSAT = null;
+const pusatWilayah = () => PUSAT || (PUSAT = (() => { for (const f of [path.join(ROOT, 'data/geo/pusat-wilayah.json'), path.join(DP, 'proyek/raw/geo/pusat.json')]) if (fs.existsSync(f)) return JSON.parse(fs.readFileSync(f, 'utf8')); return { adm1: {}, adm2: [] }; })());
+const ALIAS_PROV = { 'bangka belitung': 'Kepulauan Bangka Belitung', 'yogyakarta': 'DI Yogyakarta', 'jakarta': 'DKI Jakarta', 'dki jakarta': 'DKI Jakarta', 'nad': 'Aceh', 'nanggroe aceh darussalam': 'Aceh' };
+const tanpaAksen = (s) => String(s || '').toLowerCase().replace(/[^a-z ]/g, ' ').replace(/\s+/g, ' ').trim();
+export function provinsiDari(teks) {
+  const t = tanpaAksen(teks); if (!t) return null;
+  const adm1 = pusatWilayah().adm1;
+  for (const k of Object.keys(adm1)) if (tanpaAksen(k) === t) return k;
+  if (ALIAS_PROV[t]) return ALIAS_PROV[t];
+  return null;
+}
+function cariKota(kota, provinsi) {
+  const mentah = String(kota || '').trim(); if (!mentah) return null;
+  const kurung = mentah.match(/\(([^)]*)\)/); const utama = mentah.replace(/\s*\(.*?\)\s*/g, ' ').trim();
+  if (/\(.*(arab|tiongkok|prancis|jepang|uea|kanada|amerika|jerman|inggris|belanda|korea|singapura|india|australia|malaysia|thailand)/i.test(mentah)) return null; // kota luar negeri
+  const adm2 = pusatWilayah().adm2;
+  for (const cand of [utama, kurung && kurung[1]].filter(Boolean)) {
+    const n = normWilayah(cand); if (!n.nama) continue;
+    let k = adm2.filter((x) => x.nama === n.nama);
+    if (n.tipe) { const t = k.filter((x) => x.tipe === n.tipe); k = t.length ? t : k; }
+    if (k.length > 1 && provinsi) { const t = k.filter((x) => x.provinsi === provinsi); if (t.length) k = t; }
+    if (k.length > 1 && !n.tipe) { const t = k.filter((x) => x.tipe === 'kota'); if (t.length) k = t; } // "Malang" tanpa penanda: kota lebih mungkin kantor
+    if (k.length === 1) return { lat: k[0].lat, lng: k[0].lng, provinsi: k[0].provinsi };
+  }
+  return null;
+}
+const KOTA_KAMPUS = { ugm: 'Kota Yogyakarta', unair: 'Kota Surabaya', its: 'Kota Surabaya', untirta: 'Kota Serang', undip: 'Kota Semarang', ui: 'Kota Depok', itb: 'Kota Bandung', ipb: 'Kota Bogor', unpad: 'Kabupaten Sumedang', unhas: 'Kota Makassar', usu: 'Kota Medan' };
+const geser = (id, nilai) => { const h = crypto.createHash('sha1').update(String(id)).digest(); return [nilai[0] + ((h[0] / 255) * 2 - 1) * 0.08, nilai[1] + ((h[1] / 255) * 2 - 1) * 0.08]; };
+export function titikLokasi(o, indukKampus) {
+  const L = o.lokasi || {}; const adm1 = pusatWilayah().adm1;
+  const lat = Number(L.lat), lng = Number(L.lng);
+  if (L.lat != null && L.lng != null && Number.isFinite(lat) && Number.isFinite(lng) && Math.abs(lat) <= 90 && Math.abs(lng) <= 180) return { ...L, lat, lng, presisi: 'tepat' };
+  const prov = provinsiDari(L.provinsi);
+  const kt = cariKota(L.kota, prov);
+  let r = null;
+  if (kt) r = { pt: [kt.lat, kt.lng], presisi: 'kota', provinsi: prov || kt.provinsi };
+  else if (prov === 'DKI Jakarta' && cariKota('Jakarta Pusat')) { const j = cariKota('Jakarta Pusat'); r = { pt: [j.lat, j.lng], presisi: 'kota', provinsi: prov }; } // Jakarta: pusat Jakarta, bukan pusat poligon provinsi
+  else if (prov && adm1[prov]) r = { pt: [adm1[prov].lat, adm1[prov].lng], presisi: 'provinsi', provinsi: prov };
+  if (!r) { // teks alamat: nama kota/kabupaten eksplisit (terpanjang menang), lalu Jakarta/provinsi
+    const teks = tanpaAksen([L.alamat, L.kota, o.nama].join(' '));
+    const kt2 = /\bjakarta\b/.test(teks) ? cariKota('Jakarta Pusat') : pusatWilayah().adm2.filter((x) => x.nama.length >= 5 && !/^(barat|timur|utara|selatan|tengah)/.test(x.nama) && new RegExp('\\b' + x.nama + '\\b').test(teks)).sort((a, b) => b.nama.length - a.nama.length || (a.tipe === 'kota' ? -1 : 1))[0];
+    if (kt2) r = { pt: [kt2.lat, kt2.lng], presisi: 'kota', provinsi: kt2.provinsi };
+  }
+  if (!r) {
+    const teks = tanpaAksen([L.alamat, L.kota, o.nama].join(' '));
+    const pv = /\bjakarta\b/.test(teks) ? 'DKI Jakarta' : Object.keys(adm1).filter((k) => k !== 'Papua' && k !== 'Papua Barat' && new RegExp('\\b' + tanpaAksen(k) + '\\b').test(teks)).sort((a, b) => b.length - a.length)[0];
+    if (pv && adm1[pv]) r = { pt: [adm1[pv].lat, adm1[pv].lng], presisi: 'provinsi', provinsi: pv };
+  }
+  if (!r && o.kategori === 'ormawa') { // singkatan kampus dikenal -> kota kampus (ormawa tak punya alamat sendiri)
+    const kata = new Set(tanpaAksen(o.nama).split(' ')); const kp = Object.keys(KOTA_KAMPUS).find((k) => kata.has(k));
+    const k2 = kp && cariKota(KOTA_KAMPUS[kp]); if (k2) r = { pt: [k2.lat, k2.lng], presisi: 'kota', provinsi: k2.provinsi };
+  }
+  if (!r && indukKampus?.lokasi?.lat != null) return { ...L, lat: indukKampus.lokasi.lat, lng: indukKampus.lokasi.lng, presisi: indukKampus.lokasi.presisi === 'tepat' ? 'tepat' : indukKampus.lokasi.presisi, provinsi: L.provinsi || indukKampus.lokasi.provinsi };
+  if (!r) return L;
+  const [a, b] = geser(o.id, r.pt);
+  return bersih({ ...L, provinsi: L.provinsi || r.provinsi, lat: +a.toFixed(5), lng: +b.toFixed(5), presisi: r.presisi });
+}
+// ormawa memakai lokasi kampus bila kampusnya (perguruan-tinggi) dikenal dari nama; selain itu jatuh ke aturan biasa
+function kampusUntuk(o, kampus) {
+  const n = norm(o.nama); let terbaik = null;
+  for (const [kn, k] of kampus) if (kn.length > 5 && n.includes(kn) && (!terbaik || kn.length > terbaik[0].length)) terbaik = [kn, k];
+  if (!terbaik) { const kata = new Set(n.split(' ')); for (const [kn, k] of kampus) if (k.singkatan && kata.has(k.singkatan.toLowerCase())) terbaik = [kn, k]; }
+  return terbaik && terbaik[1];
+}
 export function bangun(masukan = {}) {
   const M = (k, rel) => masukan[k] || baca(rel);
   const tanggalMax = [];
@@ -251,12 +320,17 @@ export function bangun(masukan = {}) {
     return { pub: bersih(pub), intr: bersih(intr) };
   };
   const orgPubRows = [], orgAng = [], orgPen = [];
+  { // titik peta: kampus dulu (ormawa meminjam), lalu sisanya
+    for (const o of org.values()) if (o.kategori === 'perguruan-tinggi') o.lokasi = titikLokasi(o);
+    const kampus = new Map([...org.values()].filter((o) => o.kategori === 'perguruan-tinggi' && o.lokasi?.lat != null).map((o) => [norm(o.nama), o]));
+    for (const o of org.values()) if (o.kategori !== 'perguruan-tinggi') o.lokasi = titikLokasi(o, o.kategori === 'ormawa' ? kampusUntuk(o, kampus) : null);
+  }
   for (const o of [...org.values()].sort((a, b) => (a.id < b.id ? -1 : 1))) {
     const url = o.sumber.some((s) => adaUrl(s.url)) || (o.kategori === 'koperasi' || o.kategori === 'ormawa') && o.sumber.some((s) => adaUrl(s.url));
     const ang = bersih({ id: o.id, meti: anggotaMeti.has(o.id) ? 'anggota' : null, pengurus_foto: [], pengurus_ormawa: ormawaPengurus.get(o.id) });
     const kk = hitung(o);
     const pen = bersih({ id: o.id, kontak_internal: kk.intr, catatan_kurator: bersih({ ...(o.extra || {}), verifikasi: o.extra?.verifikasi }), keanggotaan_meti: anggotaMeti.get(o.id) });
-    if (!url) { orgPen.push(bersih({ ...pen, baru: true, ditahan: 'tanpa-sumber-url', nama: o.nama, kategori: kat(o.kategori) })); if (ang.meti) orgAng.push(bersih({ id: o.id, baru: true, nama: o.nama, meti: ang.meti })); continue; }
+    if (!url) { orgPen.push(bersih({ ...pen, baru: true, ditahan: 'tanpa-sumber-url', nama: o.nama, kategori: kat(o.kategori), lokasi: o.lokasi })); if (ang.meti) orgAng.push(bersih({ id: o.id, baru: true, nama: o.nama, meti: ang.meti })); continue; }
     orgPub.add(o.id);
     orgPubRows.push({ o, kk, ang, pen });
   }

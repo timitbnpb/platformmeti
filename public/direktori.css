@@ -2607,3 +2607,7 @@ button.ak-r[data-kh][aria-pressed="true"]{border-color:var(--w0,var(--brand2));b
 .ak-saring .ak-kbtn,.ak-saring .ak-sel select,.ak-saring .ak-cari input{border-color:var(--line-ctl);min-height:var(--target);border-radius:var(--r-pil)}
 .ak-saring .ak-kbtn:focus-visible,.ak-saring .ak-sel select:focus-visible,.ak-saring .ak-cari input:focus-visible{border-color:var(--accent);box-shadow:0 0 0 3px color-mix(in srgb,var(--accent) 18%,transparent);outline:0}
 .ak-saring .ak-kbtn[aria-expanded="true"]{border-color:var(--accent)}
+
+/* peta lembaga: bulatan klaster berangka dan inisial pengganti logo */
+.ak-pinklaster{width:42px;height:42px;background:color-mix(in srgb,var(--data1) 16%,var(--paper))}.ak-pinklaster b,.ak-pini{font:800 12px/1 inherit;color:var(--w0,var(--data1))}.ak-pini{position:relative;z-index:0}
+.ak-pinlogo .ak-pini{background:color-mix(in srgb,var(--w0,var(--data1)) 14%,var(--paper));width:100%;height:100%;display:grid;place-items:center}

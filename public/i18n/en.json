@@ -1292,5 +1292,14 @@
  "rt.urut_nama": "Name",
  "wl.vis.peringkat": "rank in installed renewable capacity among provinces",
  "wl.vis.median": "Province median",
- "wl.col.nilai": "Value"
+ "wl.col.nilai": "Value",
+ "brt.sek.sorotan": "Highlights",
+ "brt.sek.sorotan.p": "The latest and most illustrated stories across all technologies.",
+ "brt.sek.surya": "Solar",
+ "brt.sek.panas": "Geothermal",
+ "brt.sek.bio": "Bioenergy and waste to energy",
+ "brt.sek.kebijakan": "Policy and finance",
+ "brt.sek.terbaru": "Latest",
+ "brt.lihat": "See all ({n})",
+ "brt.sek.p": "{n} articles in the last 90 days."
 }

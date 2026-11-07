@@ -236,6 +236,7 @@ const OVERRIDE = {
   'badan pengelola investasi daya anagata nusantara': { situs: 'https://www.danantaraindonesia.co.id/', situs_keyakinan: 'tinggi', situs_catatan: 'situs resmi BPI Danantara; robots.txt mengizinkan', pengurus_url: ['https://www.danantaraindonesia.co.id/about/our-people/supervisory-board', 'https://www.danantaraindonesia.co.id/about/our-people/bpi-danantaras'] },
 };
 const SUMBER_ARSIP_DENERA = { id: 'arsip-meti', jenis: 'dokumen-internal', judul: 'Deck UKP hlm 17; Enlit Asia 2026 pptx slide 1-11 (arsip METI, data-panen/arsip-meti)', url: null, tingkat_bukti: 'kata-pihak' };
+const SUMBER_JP_DENERA = { id: 'jakartapost-2026-07-14', jenis: 'media', judul: 'The Jakarta Post, Govt names consortia for second batch of waste-to-energy projects (14 Jul 2026): memuat "PT Daya Energi Bersih Nusantara (Denera), Danantara\'s WtE unit"', url: 'https://thejakartapost.com/business/2026/07/14/govt-names-consortia-for-second-batch-of-waste-to-energy-projects', tingkat_bukti: 'cuplikan' };
 const SUMBER_PERMINTAAN = { id: 'permintaan-pemilik', jenis: 'permintaan', judul: 'Permintaan pemilik METI 7 Nov 2026 (nama saja; belum ada sumber primer)', url: null, tingkat_bukti: 'inferensi' };
 const normNama = (n) => n.toLowerCase().replace(/\(.*?\)/g, ' ').replace(/\b(pt|tbk|persero|cv)\b/g, ' ').replace(/[^a-z0-9]+/g, ' ').trim();
 const TEMUAN = new Map(baca(path.join(ROOT, 'data-panen/temuan/situs_perusahaan.jsonl')).map((x) => [normNama(x.nama), x]));
@@ -265,7 +266,7 @@ function bangunRekaman() {
       for (const k of ['kapasitas_mwp_tahun', 'pasar', 'apamsi', 'tkdn', 'bmp']) r.sumber_field[k] = 'tabel-modul';
     }
     if (/Hanover Solar/.test(nama)) { r.kandidat = true; r.sumber.push({ ...SUMBER_HANOVER, tanggal_periksa: HARI_INI }); r.sumber_field.nama = 'solehan-slide6'; }
-    if (/^Denera/.test(nama)) { r.sumber.push({ ...SUMBER_ARSIP_DENERA, tanggal_periksa: HARI_INI }); r.kapasitas_portofolio = 'rencana 33 kota; kapasitas belum ada; dibentuk 1 Apr 2026 (arsip METI)'; r.sumber_field.kapasitas_portofolio = 'arsip-meti'; r.sumber_field.nama = 'arsip-meti'; r.nama_lain = ['Denera']; }
+    if (/^Denera/.test(nama)) { r.sumber.push({ ...SUMBER_ARSIP_DENERA, tanggal_periksa: HARI_INI }); r.sumber.push({ ...SUMBER_JP_DENERA, tanggal_periksa: HARI_INI }); r.nama_lain = ['Denera', nama]; r.nama = 'PT Daya Energi Bersih Nusantara (Denera)'; r.jenis = 'bumn'; r.sumber_field.nama = 'jakartapost-2026-07-14'; r.sumber_field.jenis = 'jakartapost-2026-07-14'; r.sumber_field.induk = 'jakartapost-2026-07-14'; r.kapasitas_portofolio = 'rencana 33 kota; kapasitas belum ada; dibentuk 1 Apr 2026 (arsip METI)'; r.sumber_field.kapasitas_portofolio = 'arsip-meti'; r.sumber_field.nama = 'arsip-meti'; r.nama_lain = ['Denera']; }
     if (/Mahakarsa/.test(nama)) r.sumber.push({ ...SUMBER_PERMINTAAN, tanggal_periksa: HARI_INI });
     const tm = TEMUAN.get(normNama(nama));
     if (tm && !r.situs) { r.situs = tm.url; r.situs_keyakinan = tm.keyakinan; r.situs_catatan = tm.catatan || null; r.sumber_field.situs = 'temuan-situs'; }
@@ -289,7 +290,7 @@ async function jalan(batches) {
     if (ov?.pengurus_url) { r.pengurus_url = ov.pengurus_url; if (r.pengurus_status === 'terbaca' && !r.pengurus_v2) { r.pengurus_status = 'belum-dibaca'; r.pengurus_v2 = true; } }
     // salah-tolak robots (bug wildcard lama): ulangi
     if (r.pengurus_status === 'situs-gagal' && gagalLama.some((x) => x.perusahaan_id === r.perusahaan_id && x.alasan === 'robots-tolak')) r.pengurus_status = 'belum-dibaca';
-    if (/^Denera|Mahakarsa/.test(r.nama) && !r.situs && !gagalLama.some((x) => x.perusahaan_id === r.perusahaan_id)) gagal.push({ perusahaan_id: r.perusahaan_id, url: null, alasan: 'situs-resmi-tidak-ditemukan: nama tidak ada di sumber resmi yang dibaca (situs Danantara, PNRE, direktori APROBI/AESI); butuh URL dari pemilik', tanggal: HARI_INI });
+    if (/Denera|Mahakarsa/.test(r.nama) && !r.situs && !gagalLama.some((x) => x.perusahaan_id === r.perusahaan_id)) gagal.push({ perusahaan_id: r.perusahaan_id, url: null, alasan: 'situs-resmi-tidak-ditemukan: nama tidak ada di sumber resmi yang dibaca (situs Danantara, PNRE, direktori APROBI/AESI); butuh URL dari pemilik', tanggal: HARI_INI });
   }
   const orangRows = baca(ORANG); const orangKunci = new Map();
   for (const o of orangRows) { const k = kunciNama(o.nama); orangKunci.set(k, orangKunci.has(k) ? 'ambigu' : o.orang_id); }
@@ -299,6 +300,7 @@ async function jalan(batches) {
     pengurus = pengurus.filter((x) => !(x.ekstraksi === 'heuristik' && tanpaSitus.has(x.perusahaan_id)));
     for (const r of semua) if (!r.situs && r.sumber_field?.kontak === 'situs') { delete r.kontak; delete r.sumber_field.kontak; delete r.sumber_field.pengurus; r.sumber = r.sumber.filter((x) => x.id !== 'situs'); } }
   const simpan = () => {
+    for (const r of semua) r.sumber = r.sumber.filter((x, i, a) => a.findIndex((y) => y.id === x.id && y.url === x.url) === i);
     tulis(path.join(OUT, 'perusahaan.jsonl'), semua); tulis(path.join(OUT, 'pengurus.jsonl'), pengurus);
     const g = baca(path.join(OUT, 'gagal.jsonl')); const k = new Set(g.map((x) => x.url + x.alasan));
     for (const x of gagal) if (!k.has(x.url + x.alasan)) { g.push(x); k.add(x.url + x.alasan); }
@@ -367,7 +369,7 @@ async function jalan(batches) {
       if (dapat) r.sumber_field.pengurus = 'situs';
     }
     if (b === 7) {
-      const d = semua.find((x) => /^Denera/.test(x.nama)); const kn = kunciNama('Fadli Rahman'); const oid = orangKunci.get(kn);
+      const d = semua.find((x) => /Denera/.test(x.nama)); const kn = kunciNama('Fadli Rahman'); const oid = orangKunci.get(kn);
       if (d && oid && oid !== 'ambigu' && !pengurus.some((p) => p.perusahaan_id === d.perusahaan_id)) {
         pengurus.push({ pengurus_id: 'g_' + sha(d.perusahaan_id + kn + 'ceo'), perusahaan_id: d.perusahaan_id, nama: 'Fadli Rahman', jabatan: 'CEO', jenis_jabatan: 'direktur-utama', mulai: null, orang_id: oid, orang_baru: false,
           sumber_url: null, sumber_ket: 'Arsip METI: deck UKP hlm 17; Enlit Asia 2026 slide 1-11 (CEO Denera, Wakil Ketua Umum 2 METI)', tanggal_ambil: HARI_INI, tingkat_bukti: 'kata-pihak', ekstraksi: 'manual-arsip-meti', foto_url: null, foto_berkas: null, foto_sumber: null, hak_cipta: null });
