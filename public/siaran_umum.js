@@ -45,7 +45,9 @@ export const jenisHtml = (r) => `<span class="sp-jenis">${ikon(IKON_JENIS[r.jeni
 /** Kartu kisi: foto, jenis, judul, tanggal, cuplikan dua baris, Selengkapnya, bagikan. */
 export function kartuHtml(r, foto) {
   const href = urlRinci(r), j = judulKartu(r);
-  return `<li class="sp-kartu" data-sp-id="${esc(r.id)}"><a class="sp-foto-a" href="${esc(href)}" tabindex="-1" aria-hidden="true">${sampulHtml(r, foto)}</a>
-<div class="sp-isi">${jenisHtml(r)}<h3 class="sp-judul"><a href="${esc(href)}">${esc(j)}</a></h3>${metaHtml(r)}<p class="sp-cuplikan">${esc(cuplikan(r))}</p>
+  /* pemilik 8 Nov 2026: jenis dan tanggal menumpang di foto */
+  const lapis = `<span class="sp-lapis">${jenisHtml(r)}<time class="sp-tgl" datetime="${esc(r.tanggal)}">${ikon("kalender", 14)}${esc(tanggal(r.tanggal))}</time></span>`;
+  return `<li class="sp-kartu" data-sp-id="${esc(r.id)}"><div class="sp-foto-bk"><a class="sp-foto-a" href="${esc(href)}" tabindex="-1" aria-hidden="true">${sampulHtml(r, foto)}</a>${lapis}</div>
+<div class="sp-isi"><h3 class="sp-judul"><a href="${esc(href)}">${esc(j)}</a></h3>${r.kota ? `<p class="sp-meta"><span>${ikon("lokasi", 14)}${esc(r.kota)}</span></p>` : ""}<p class="sp-cuplikan">${esc(cuplikan(r))}</p>
 <div class="sp-kaki"><a class="sp-lagi" href="${esc(href)}">${esc(t("sp.selengkapnya"))}${ikon("panah-kanan", 16)}</a>${bagikanHtml({ url: href, judul: j, kelas: "kecil" })}</div></div></li>`;
 }

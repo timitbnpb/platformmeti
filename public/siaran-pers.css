@@ -65,3 +65,9 @@
 @media (prefers-reduced-motion:reduce){.sp-kartu,.sp-kartu:hover{transition:none}}
 .sp-rkh .jm-kh-teks{max-width:none}
 .sp-rkh h1{font-size:var(--t-h1);max-width:none}
+/* jenis dan tanggal di atas foto kartu */
+.sp-foto-bk{position:relative}
+.sp-lapis{position:absolute;left:12px;right:12px;bottom:12px;display:flex;justify-content:space-between;align-items:center;gap:8px;pointer-events:none}
+.sp-lapis .sp-jenis{background:var(--card);box-shadow:var(--shadow)}
+.sp-tgl{display:inline-flex;align-items:center;gap:6px;min-height:24px;padding:0 10px;border-radius:var(--r-pil);background:var(--card);color:var(--ink);font:600 var(--t-kecil)/1 var(--font);box-shadow:var(--shadow)}
+.sp-meta span{display:inline-flex;align-items:center;gap:4px}
