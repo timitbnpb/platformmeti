@@ -833,14 +833,14 @@
  "tn.dir.isi": "Direktori ini untuk anggota METI. Tiap baris punya tautan sumber dan tanggal. Angka hasil hitungan diberi label EST. Skor diberi label Hipotesis. Data pribadi tidak ditampilkan.",
  "tn.struktur.judul": "Struktur organisasi METI",
  "tn.struktur.pengantar": "Kepengurusan periode {periode}. Klik sebuah unit untuk melihat anggotanya.",
- "tn.struktur.sumber": "Sumber: halaman tim metiires.or.id, diambil {tanggal}.",
+ "tn.struktur.sumber": "Sumber: {sumber}, diperbarui {tanggal}.",
  "tn.u.dewan": "Dewan Pengawas dan Dewan Pakar",
  "tn.u.penasihat": "Dewan Penasihat",
  "tn.u.penasihat_ketua": "Ketua Dewan Penasihat",
  "tn.lowong": "Vacant",
  "tn.u.ketum": "Ketua Umum",
  "tn.u.waketum": "Wakil Ketua Umum",
- "tn.u.sekjen": "Sekretariat",
+ "tn.u.sekjen": "Sekretariat Jenderal",
  "tn.u.bendahara": "Bendahara",
  "tn.u.eksekutif": "Eksekutif",
  "tn.u.bidang": "Bidang",
@@ -2086,5 +2086,6 @@
  "kal.bukti.kosong": "Belum ada bukti untuk acara ini.",
  "tn.u.sdu": "Strategic Delivery Unit",
  "tn.u.unit": "Unit khusus",
- "tn.u.pmo": "PMO ({n})"
+ "tn.u.pmo": "PMO ({n})",
+ "tn.u.bk": "Bidang Kerja {n}"
 }

@@ -833,14 +833,14 @@
  "tn.dir.isi": "This directory is for METI members. Each row has a source link and date. Calculated figures are labelled EST. Scores are labelled Hypothesis. Personal data is not shown.",
  "tn.struktur.judul": "METI organisational structure",
  "tn.struktur.pengantar": "Board for the {periode} term. Click a unit to see its members.",
- "tn.struktur.sumber": "Source: the metiires.or.id team page, retrieved {tanggal}.",
+ "tn.struktur.sumber": "Source: {sumber}, updated {tanggal}.",
  "tn.u.dewan": "Supervisory and Expert Council",
  "tn.u.penasihat": "Advisory Council",
  "tn.u.penasihat_ketua": "Chair of the Advisory Council",
  "tn.lowong": "Vacant",
  "tn.u.ketum": "Chairperson",
  "tn.u.waketum": "Deputy Chairpersons",
- "tn.u.sekjen": "Secretariat",
+ "tn.u.sekjen": "Secretariat General",
  "tn.u.bendahara": "Treasury",
  "tn.u.eksekutif": "Executive",
  "tn.u.bidang": "Divisions",
@@ -2086,5 +2086,6 @@
  "kal.bukti.kosong": "No evidence for this event yet.",
  "tn.u.sdu": "Strategic Delivery Unit",
  "tn.u.unit": "Special units",
- "tn.u.pmo": "PMO ({n})"
+ "tn.u.pmo": "PMO ({n})",
+ "tn.u.bk": "Working Division {n}"
 }
