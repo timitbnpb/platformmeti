@@ -2837,3 +2837,12 @@ img.ak-foto,.ak-pgr img,.ak-pk-foto img,.ak-pkbtn img.ak-foto,.ak-orang img.ak-f
 .ak-sdtab tbody th,.ak-sdtab tbody td{height:36px;padding-block:0}
 .ak-sdtab tbody th .ak-sdtab-n{gap:8px}
 .ak-sdtab tbody th img{width:20px;height:20px}
+/* saringan sektor: tiap kelompok kontainer sendiri, label kiri pita hijau berikon, pemisah, pilihan memenuhi lebar (pemilik 8 Nov 2026) */
+#akSektor{display:grid;gap:12px;background:none!important;border:0!important;box-shadow:none!important;padding:0!important}
+#akSektor .ak-sg{display:grid;grid-template-columns:180px minmax(0,1fr);align-items:stretch;padding:0;border:1px solid var(--line);border-radius:var(--r-lg);background:var(--card);box-shadow:var(--shadow);overflow:hidden}
+#akSektor .ak-sg-h{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;padding:14px 12px;background:linear-gradient(160deg,var(--brand),var(--brand2));color:var(--on-brand);font:700 var(--t-tombol)/1.2 var(--font);text-align:center}
+#akSektor .ak-sg-h svg{width:22px;height:22px;color:var(--meti-lime)}
+#akSektor .ak-sg-h em{font-style:normal;font-size:var(--t-label);padding:1px 8px;border-radius:var(--r-pil);background:color-mix(in srgb,var(--on-brand) 18%,transparent)}
+#akSektor .ak-sg-b{display:grid!important;grid-template-columns:repeat(auto-fill,minmax(170px,1fr));gap:4px;padding:10px;align-content:center}
+#akSektor .ak-sg-b>*{width:100%;min-width:0}
+@media (max-width:700px){#akSektor .ak-sg{grid-template-columns:1fr}#akSektor .ak-sg-h{flex-direction:row;padding:10px}#akSektor .ak-sg-b{grid-template-columns:repeat(2,minmax(0,1fr))}}

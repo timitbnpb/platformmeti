@@ -2211,7 +2211,7 @@ h4{margin:0 0 2px;font-size:8px;letter-spacing:normal;text-transform:none;color:
     if (sbMemo.k === kk) { c = sbMemo.c; tot = sbMemo.tot; } else { if (a && a.length) { tot = a.length; a.forEach(x => (Array.isArray(x) ? x[3] : strs(x.sektor)).forEach(r => { c[r] = (c[r] || 0) + 1; })); } sbMemo = {k: kk, c, tot}; }
     const chip = ([k, l]) => { const ic = SEKTOR[k], n = k ? (tot == null ? null : c[k] || 0) : tot;
       return `<button type="button" data-r="${esc(k)}" aria-pressed="${k === "" ? !GL.set.size : GL.set.has(k)}"${n === 0 ? " data-nol" : ""}${` title="${esc(l)}${n != null ? ": " + angka(n) : ""}"`}>${ic ? ikon(ic[1], ic[2]) : ikon(IK_SEMUA, "currentColor")}<span class="ak-sl">${esc(l)}</span>${n != null ? `<span class="ak-sn">${angka(n)}</span>` : ""}</button>`; };
-    $("akSektor").innerHTML = SEKTOR_GRUP.map(([jd, ks], i) => `<div class="ak-sg"><span class="ak-sg-h">${esc(jd)}</span><div class="ak-sg-b">${(i === 0 ? chip(GLB[0]) : "") + ks.map(k => chip([k, SEKTOR[k][0]])).join("")}</div></div>`).join("");
+    $("akSektor").innerHTML = SEKTOR_GRUP.map(([jd, ks], i) => `<div class="ak-sg"><span class="ak-sg-h">${ikon(i === 0 ? '<path d="M13 2 5 14h6l-1 8 8-12h-6z"/>' : '<circle cx="6" cy="6" r="2.5"/><circle cx="18" cy="6" r="2.5"/><circle cx="12" cy="18" r="2.5"/><path d="M8 7l3 9M16 7l-3 9M8.5 6h7"/>', "currentColor")}<span>${esc(jd)}</span><em>${ks.length}</em></span><div class="ak-sg-b">${(i === 0 ? chip(GLB[0]) : "") + ks.map(k => chip([k, SEKTOR[k][0]])).join("")}</div></div>`).join("");
   }
   const namaSektor = r => (GLB.find(x => x[0] === r) || [r, (SEKTOR[r] || [kapital(r)])[0]])[1];
   /* multi-pilih: GL.set = himpunan sektor terpilih (OR). Chrome (aria-pressed) diset seketika oleh pemanggil, saring lewat nanti. */
