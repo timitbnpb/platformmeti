@@ -9,6 +9,8 @@ import { pasangPilih } from "/inti/pilih.js";
 import { pasangCari } from "/inti/cari_global.js";
 import { catatHalaman } from "/inti/statistik.js";
 import { sosmedHtml } from "/inti/sosmed.js";
+import { teksLencana } from "/inti/pesan_umum.js";
+import { akunMenuHtml, pasangAkunMenu } from "/inti/akun_menu.js";
 
 export const PITA_DRAF = false; // pemilik 7 Nov 2026: pita draf tidak ditampilkan
 const STAF = ["pengurus", "kurator", "admin", "super"];
@@ -29,7 +31,8 @@ const TAB = [
     { href: "/galeri", kunci: "nav.foto", ikon: "gambar" }, { href: "/video", kunci: "nav.video", ikon: "video" }, { href: "/podcast", kunci: "nav.podcast", ikon: "mikrofon" }, { href: "/event", kunci: "nav.event", ikon: "kalender-bintang" }] },
   { href: "/kalender", kunci: "nav.kalender", ikon: "kalender", hak: null },
   { href: "/direktori", kunci: "nav.direktori", ikon: "direktori", hak: "masuk" },
-  { href: "/tentang", kunci: "nav.tentang", ikon: "info", hak: null },
+  { kunci: "nav.tentang", ikon: "info", hak: null, grup: [
+    { href: "/tentang", kunci: "nav.tentang_ringkas", ikon: "info" }, { href: "/meti-wilayah", kunci: "nav.meti_wilayah", ikon: "wilayah" }] },
   { href: "/admin", kunci: "nav.admin", ikon: "perisai", hak: "admin" },
 ];
 
@@ -57,7 +60,7 @@ function gambarKepala(el, saya) {
   }).join("");
   const b = bahasa();
   const akun = saya.masuk
-    ? `<button type="button" class="iconbtn jm-bulat" id="keluar" data-i18n-attr="aria-label:jm.keluar;title:jm.keluar" aria-label="${t("jm.keluar")}" title="${t("jm.keluar")}">${ikon("keluar", 20)}</button>`
+    ? akunMenuHtml(saya)
     : `<a class="iconbtn jm-akun" href="/masuk?ke=${encodeURIComponent(jalur === "/masuk" ? "/" : jalur)}" data-i18n-attr="aria-label:jm.masuk;title:jm.masuk" aria-label="${t("jm.masuk")}" title="${t("jm.masuk")}">${ikon("masuk", 22)}<span class="jm-teks" data-i18n="jm.masuk">${t("jm.masuk")}</span></a>`;
   el.innerHTML = `
     <button type="button" class="iconbtn" id="burger" aria-expanded="false" aria-controls="menu" data-i18n-attr="aria-label:jm.menu;title:jm.menu" aria-label="${t("jm.menu")}" title="${t("jm.menu")}">${ikon("burger", 22)}</button>
@@ -143,6 +146,15 @@ async function kakiIsi(kaki, saya) {
   } catch (e) { /* tanpa potret: angka disembunyikan, bukan ditebak */ }
 }
 
+/* lencana pesan belum dibaca di ikon Admin (navbar); diperbarui oleh tab Pesan lewat peristiwa "pesan-belum" */
+function lencanaAdmin(kepala, saya) {
+  const a = kepala?.querySelector('a[href="/admin"]');
+  if (!a || !boleh("admin", saya)) return;
+  const tanda = (n) => { a.querySelector(".ps-lencana")?.remove(); if (n > 0) a.insertAdjacentHTML("beforeend", `<span class="ps-lencana ps-lencana-nav">${teksLencana(n)}</span>`); };
+  document.addEventListener("pesan-belum", (e) => tanda(e.detail));
+  api("/api/admin/pesan-belum").then((d) => tanda(d.belum || 0)).catch(() => {});
+}
+
 export async function mulaiHalaman() {
   const saya = await ambilSaya();
   await mulaiBahasa(saya.bahasa);
@@ -154,7 +166,7 @@ export async function mulaiHalaman() {
     kepala?.remove(); document.getElementById("kaki")?.remove(); document.getElementById("pita")?.remove(); document.getElementById("subnav")?.remove();
     return saya;
   }
-  if (kepala) { gambarKepala(kepala, saya); pasangPenangan(kepala, saya); pasangCari(kepala); }
+  if (kepala) { gambarKepala(kepala, saya); pasangPenangan(kepala, saya); pasangCari(kepala); if (saya.masuk) pasangAkunMenu(kepala, saya); }
   if (kepala && diBagianInsight(location.pathname) && !document.getElementById("subnav")) { kepala.insertAdjacentHTML("afterend", subnavHtml(location.pathname, location.hash)); addEventListener("hashchange", () => { const s = document.getElementById("subnav"); if (s) s.outerHTML = subnavHtml(location.pathname, location.hash); }); }
   const pita = document.getElementById("pita");
   if (pita && PITA_DRAF) {
@@ -165,6 +177,7 @@ export async function mulaiHalaman() {
   const kaki = document.getElementById("kaki");
   if (kaki) { kaki.innerHTML = kakiHtml(); kakiIsi(kaki, saya); }
   pasangRel();
+  if (saya.masuk) { import("/pesan.js").then((m) => m.pasangPesan()).catch(() => {}); lencanaAdmin(kepala, saya); } // /pesan.js terkunci bagi tamu: impor dinamis hanya sesudah masuk
   pasangPilih();
   catatHalaman();
   return saya;

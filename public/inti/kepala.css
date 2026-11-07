@@ -99,3 +99,28 @@ dialog.jm-cari::backdrop{background:rgb(11 23 38/.55)}
   nav.tabs>a span,nav.tabs .jm-grup-tbl span{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 }
 @media (min-width:1200px) and (max-width:1599px){nav.tabs>a .jm-ik,nav.tabs .jm-grup-tbl .jm-ik{display:none}nav.tabs>a,nav.tabs .jm-grup-tbl{font-size:var(--t-tombol)}}
+
+/* menu akun: avatar bulat (foto atau inisial) membuka menu turun; kanan kepala, menggantikan tombol keluar */
+.jm-akunwrap{position:relative;display:flex}
+.jm-avatar{padding:0;overflow:hidden;color:var(--accent);background:var(--soft-hijau);font:700 var(--t-tombol)/1 var(--font);cursor:pointer}
+.jm-avatar img{display:block;width:100%;height:100%;object-fit:cover}
+.jm-avatar[aria-expanded="true"]{border-color:var(--accent)}
+.jm-akunmenu{position:absolute;top:calc(100% + 8px);right:0;z-index:60;display:grid;gap:2px;width:min(300px,calc(100vw - 24px));padding:8px;background:var(--paper);border:1px solid var(--line);border-radius:var(--r);box-shadow:var(--shadow-lg)}
+.jm-akunmenu[hidden]{display:none}
+.jm-akun-ident{display:flex;align-items:center;gap:12px;padding:8px 10px 12px;margin-bottom:4px;border-bottom:1px solid var(--line)}
+.jm-akun-ident .jm-avatar{flex:none;width:44px;height:44px;border-radius:50%;display:grid;place-items:center;font-size:var(--t-body)}
+.jm-akun-ident b{display:block;font:700 var(--t-body)/var(--lh-rapat) var(--font);color:var(--head);overflow-wrap:anywhere}
+.jm-akun-ident small{display:block;font:400 var(--t-kecil)/var(--lh-rapat) var(--font);color:var(--ink2)}
+.jm-akunmenu a,.jm-akunmenu button{display:flex;align-items:center;gap:12px;width:100%;min-height:44px;padding:0 12px;border:0;border-radius:var(--r-sm);background:none;color:var(--ink);text-align:left;text-decoration:none;font:400 var(--t-body)/1 var(--font);cursor:pointer}
+.jm-akunmenu a:hover,.jm-akunmenu button:hover{background:var(--surface)}
+.jm-akunmenu a:focus-visible,.jm-akunmenu button:focus-visible{outline:2px solid var(--fokus);outline-offset:-2px}
+.jm-akunmenu svg{flex:none;color:var(--accent)}
+.jm-akunmenu .jm-am-bendera{display:inline-grid;place-items:center;width:20px;height:20px}
+.jm-akunmenu .jm-am-sisi{margin-left:auto;color:var(--ink2);font-size:var(--t-kecil)}
+.jm-akunmenu .jm-am-lencana{margin-left:auto}
+.jm-akunmenu hr{margin:4px 0;border:0;border-top:1px solid var(--line)}
+.jm-akunmenu [data-am="keluar"] svg{color:var(--bad)}
+.jm-am-lencana{display:inline-grid;place-items:center;min-width:20px;height:20px;padding:0 6px;border-radius:var(--r-pil);background:var(--bad);color:var(--paper);font:700 var(--t-label)/1 var(--font)}
+.jm-am-lencana[hidden]{display:none}
+.jm-avatar .jm-ini{display:grid;place-items:center;width:100%;height:100%}
+.jm-avatar .jm-ini[hidden],.jm-avatar img[hidden]{display:none}

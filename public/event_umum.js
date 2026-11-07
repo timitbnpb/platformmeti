@@ -25,10 +25,16 @@ export function akhirDari(b) {
 /** Judul tampil: buang lokasi/tanggal di ekor judul arsip ("IndoEBTKE ConEx ke-12, JIEXPO, 2-4 Sep"). */
 export const judulBersih = (b) => (b.slug === "indoebtke-conex-2026" ? "The 12th IndoEBTKE ConEx 2026" : b.judul.replace(/,\s*\d{1,2}\s*-\s*\d{1,2}\s+\w+$/, ""));
 
+/** `mitra` di kalender berupa teks ("PLN, Bappenas"), di data perkaya berupa daftar: keduanya dinormalkan. */
+const normal = (b) => {
+  const teks = typeof b.mitra === "string" ? b.mitra : "";
+  const pen = Array.isArray(b.penyelenggara) && b.penyelenggara.length ? b.penyelenggara : teks.split(/,\s*/).filter(Boolean);
+  return { ...b, akhir: akhirDari(b), judulTampil: judulBersih(b), daftarPen: pen, daftarMitra: Array.isArray(b.mitra) ? b.mitra.filter((n) => !pen.includes(n)) : [] };
+};
 let cache = null;
 /** Semua acara (bukan regulasi/tenggat) berurut tanggal naik, dengan `akhir`. */
 export function muatAcara() {
-  return (cache ||= muat("kalender").then((d) => d.baris.filter((b) => !BUKAN_ACARA.has(b.jenis) && b.slug).map((b) => ({ ...b, akhir: akhirDari(b), judulTampil: judulBersih(b) })).sort((a, c) => a.tanggal.localeCompare(c.tanggal)))).catch((e) => { cache = null; throw e; });
+  return (cache ||= muat("kalender").then((d) => d.baris.filter((b) => !BUKAN_ACARA.has(b.jenis) && b.slug).map((b) => normal(b)).sort((a, c) => a.tanggal.localeCompare(c.tanggal)))).catch((e) => { cache = null; throw e; });
 }
 export const mendatang = (rows, kini = hariIni()) => rows.filter((b) => b.akhir >= kini);
 export const lalu = (rows, kini = hariIni()) => rows.filter((b) => b.akhir < kini).reverse();
@@ -111,3 +117,17 @@ export async function logoMitra(nama) {
 export const mitraHtml = (nama, logo) => `<li class="ev-mitra">${logo ? `<img src="${esc(logo)}" alt="" loading="lazy" decoding="async">` : `<span class="ev-mitra-in" aria-hidden="true">${esc(nama.replace(/[^A-Za-z]/g, "").slice(0, 2))}</span>`}<span>${esc(nama)}</span></li>`;
 
 export const unggahAman = urlAman;
+
+/* ---------- pemutar YouTube (youtube-nocookie, dimuat setelah klik; CSP frame-src hanya youtube-nocookie) ---------- */
+export const thumbUrl = (id, mutu = "mqdefault") => `https://i.ytimg.com/vi/${encodeURIComponent(id)}/${mutu}.jpg`;
+export const durasiTeks = (d) => { if (!d) return ""; const j = Math.floor(d / 3600), m = Math.floor((d % 3600) / 60), s = d % 60; return (j ? j + ":" + String(m).padStart(2, "0") : m) + ":" + String(s).padStart(2, "0"); };
+export const embedHtml = (id, judul, otomatis = true) => `<iframe class="ev-embed" src="https://www.youtube-nocookie.com/embed/${encodeURIComponent(id)}?rel=0${otomatis ? "&autoplay=1" : ""}" title="${esc(judul)}" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; picture-in-picture" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>`;
+export const pemutarHtml = (v) => `<div class="ev-pemutar" data-pemutar="${esc(v.id)}" data-judul="${esc(v.judul)}"><button type="button" class="ev-putar" data-putar="${esc(v.id)}" aria-label="${esc(t("ev.putar", { judul: v.judul }))}"><img src="${esc(thumbUrl(v.id, "hqdefault"))}" alt="" loading="lazy" decoding="async"><span class="ev-putar-ik">${ikon("putar", 56)}</span></button></div>`;
+export function pasangPemutar(akar = document) {
+  akar.addEventListener("click", (e) => {
+    const b = e.target.closest("[data-putar]");
+    if (!b) return;
+    const w = b.closest("[data-pemutar]");
+    w.innerHTML = embedHtml(b.dataset.putar, w.dataset.judul);
+  });
+}

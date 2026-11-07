@@ -38,7 +38,7 @@ export function sederhanakan(p, eps) {
   return p.filter((_, i) => keep[i]);
 }
 
-export function bangun(elemen, tanggal, eps = 0.0015) {
+export function bangun(elemen, tanggal, eps = 0.0015, cakupan = []) {
   const garis = new Map(), gardu = new Map();
   for (const e of elemen) {
     const t = e.tags || {}; const kv = tegMax(t.voltage) / 1000; if (kv < 150) continue;
@@ -56,7 +56,8 @@ export function bangun(elemen, tanggal, eps = 0.0015) {
   const meta = {
     diperbarui: tanggal, sumber_id: 'osm-power', lisensi: 'ODbL 1.0',
     atribusi: '© kontributor OpenStreetMap, ODbL 1.0, https://www.openstreetmap.org/copyright',
-    celah: ['OSM dipetakan sukarelawan: tidak lengkap dan tidak resmi; bukan data PLN. Jalur tegangan < 150 kV dan ganda-sirkuit tak dipecah.', 'Tegangan = nilai tertinggi pada tag voltage. Geometri disederhanakan (Douglas-Peucker ~170 m), koordinat 4 desimal.'],
+    cakupan_bbox: cakupan,
+    celah: [cakupan.length ? `Cakupan panen: ${cakupan.length} ubin bbox [S,W,N,E] (lihat cakupan_bbox); wilayah di luar ubin belum terpanen (server Overpass publik lambat, 502/504).` : 'Cakupan ubin tidak tercatat.', 'OSM dipetakan sukarelawan: tidak lengkap dan tidak resmi; bukan data PLN. Jalur tegangan < 150 kV dan ganda-sirkuit tak dipecah.', 'Tegangan = nilai tertinggi pada tag voltage. Geometri disederhanakan (Douglas-Peucker ~170 m), koordinat 4 desimal.'],
     sumber: [{ id: 'osm-power', judul: 'OpenStreetMap power=line / power=substation, voltage >= 150000, via Overpass API', penerbit: 'OpenStreetMap contributors', tahun: Number(tanggal.slice(0, 4)), url: 'https://www.openstreetmap.org/copyright' }],
   };
   const L = [...garis.values()].sort((a, b) => a.id - b.id), G = [...gardu.values()].sort((a, b) => a.id.localeCompare(b.id));
@@ -93,7 +94,8 @@ if (process.argv[1] === fileURLToPath(import.meta.url)) {
   if (cmd === 'ambil') await ambil(dir);
   else if (cmd === 'bangun') {
     const el = []; for (const f of fs.readdirSync(dir).filter((x) => x.endsWith('.json')).sort()) el.push(...JSON.parse(fs.readFileSync(path.join(dir, f), 'utf8')).elements);
-    const o = bangun(el, tgl);
+    const cak = fs.readdirSync(dir).map((f) => f.match(/^u_(-?[\d.]+)_(-?[\d.]+)_(-?[\d.]+)_(-?[\d.]+)\.json$/)).filter(Boolean).map((m) => m.slice(1).map(Number));
+    const o = bangun(el, tgl, undefined, cak);
     fs.mkdirSync(path.join(ROOT, 'public/geo'), { recursive: true });
     fs.writeFileSync(path.join(ROOT, 'public/geo/transmisi.json'), JSON.stringify(o.transmisi) + '\n');
     fs.writeFileSync(path.join(ROOT, 'public/geo/gardu.json'), JSON.stringify(o.gardu) + '\n');

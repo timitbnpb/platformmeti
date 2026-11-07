@@ -49,7 +49,10 @@
      "tingkat_bukti": "kata-pihak"
     }
    ],
-   "slug": "indonesia-hydropower-summit-2026"
+   "slug": "indonesia-hydropower-summit-2026",
+   "kata_kunci": [
+    "hydropower summit"
+   ]
   },
   {
    "cocok": {
@@ -163,7 +166,11 @@
     "Y-LfJ00sORQ",
     "2CRX-X8Vk44"
    ],
-   "seri": "conex"
+   "seri": "conex",
+   "kata_kunci": [
+    "conex",
+    "indoebtke"
+   ]
   },
   {
    "cocok": {
@@ -243,7 +250,10 @@
      "tingkat_bukti": "kata-pihak"
     }
    ],
-   "slug": "panel-meti-enlit-asia-2026"
+   "slug": "panel-meti-enlit-asia-2026",
+   "kata_kunci": [
+    "enlit"
+   ]
   },
   {
    "cocok": {
@@ -368,6 +378,9 @@
      "url": "https://www.antaranews.com/berita/5831215/klh-usung-paviliun-indonesia-di-cop31-turki-sebagai-rumah-solusi-iklim",
      "label": "Antara"
     }
+   ],
+   "kata_kunci": [
+    "cop31"
    ]
   },
   {
@@ -401,7 +414,6 @@
    "judul": "The 1st METI Challenge Trophy Golf Tournament 2026",
    "jenis": "seminar",
    "tanggal": "2026-11-22",
-   "tanggal_catatan": "API METI: mulai 2026-11-22T14:00Z, selesai 2026-11-23T06:00Z (22 Nov 21:00 sampai 23 Nov 13:00 WIB); jam janggal untuk golf, tanggal pasti perlu konfirmasi panitia",
    "deskripsi": "Turnamen golf perdana METI untuk silaturahmi dan jejaring pemangku kepentingan energi, infrastruktur, keuangan, dan industri; bertema Together for a Renewable Future. Kapasitas 216 peserta.",
    "lokasi": {
     "tempat": "Emeralda Golf Club, Cimanggis Boulevard",
@@ -438,7 +450,11 @@
    ],
    "slug": "meti-challenge-trophy-golf-2026",
    "kapasitas": 216,
-   "tema": "Together for a Renewable Future"
+   "tema": "Together for a Renewable Future",
+   "kata_kunci": [
+    "golf"
+   ],
+   "jam": "06.30 WIB"
   },
   {
    "kandidat_id": "kd_enlit_asia_2027",
@@ -473,7 +489,10 @@
      "tingkat_bukti": "kata-pihak"
     }
    ],
-   "slug": "enlit-asia-2027"
+   "slug": "enlit-asia-2027",
+   "kata_kunci": [
+    "enlit"
+   ]
   },
   {
    "kandidat_id": "kd_munas_meti_viii_2022",

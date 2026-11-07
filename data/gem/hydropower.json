@@ -1,0 +1,2043 @@
+{
+ "sumber": "Global Hydropower Tracker",
+ "rilis": "2026-03",
+ "halaman": "https://globalenergymonitor.org/projects/global-hydropower-tracker/",
+ "lisensi": "CC BY 4.0",
+ "atribusi": "Global Energy Monitor, Global Hydropower Tracker, 2026-03, CC BY 4.0; diunduh pemilik, diolah METI 2026-11-08",
+ "berkas_asal": "Global-Hydropower-Tracker-March-2026.xlsx",
+ "baris_dunia": 7267,
+ "jumlah": 78,
+ "baris": [
+  {
+   "nama": "Asahan 1 hydroelectric plant",
+   "nama_lokal": "PLTA Asahan",
+   "kapasitas_mw": 180,
+   "status": "operating",
+   "status_asli": "operating",
+   "tahun_mulai": 2011,
+   "pemilik": [
+    {
+     "nama": "PT PLN Nusantara Power PT",
+     "persen": 36,
+     "organisasi_id": "p_ff7a390a42"
+    },
+    {
+     "nama": "International Finance Corp",
+     "persen": 5
+    },
+    {
+     "nama": "RH International [",
+     "persen": null
+    }
+   ],
+   "operator": [
+    {
+     "nama": "PT Bajradaya Sentranusa",
+     "persen": null
+    }
+   ],
+   "provinsi": "Sumatera Utara",
+   "wilayah_asli": "North Sumatra",
+   "lat": 2.5123,
+   "lon": 99.2628,
+   "akurasi": "exact",
+   "gem_id": "G100000602125",
+   "lokasi_id": "L100000602099",
+   "url_wiki": "https://www.gem.wiki/Asahan_1_hydroelectric_plant",
+   "diriset": "2022-12-02",
+   "lembar": "Data",
+   "teknologi_tipe": "run-of-river"
+  },
+  {
+   "nama": "Asahan 3 hydroelectric plant",
+   "nama_lokal": "PLTA Asahan III",
+   "nama_lain": "Asahan III hydroelectric plant",
+   "kapasitas_mw": 174,
+   "status": "operating",
+   "status_asli": "operating",
+   "tahun_mulai": 2025,
+   "pemilik": [
+    {
+     "nama": "PT PLN (Persero)",
+     "persen": 100,
+     "organisasi_id": "su_ed074ff5"
+    }
+   ],
+   "operator": [
+    {
+     "nama": "PT PLN (Persero)",
+     "persen": null,
+     "organisasi_id": "su_ed074ff5"
+    }
+   ],
+   "provinsi": "Sumatera Utara",
+   "wilayah_asli": "North Sumatra Province",
+   "kota": "Asahan Regency",
+   "lat": 2.5901,
+   "lon": 99.403,
+   "akurasi": "approximate",
+   "gem_id": "G100000602126",
+   "lokasi_id": "L100000602100",
+   "url_wiki": "https://www.gem.wiki/Asahan_3_hydroelectric_plant",
+   "diriset": "2025-03-10",
+   "lembar": "Data",
+   "teknologi_tipe": "run-of-river"
+  },
+  {
+   "nama": "Bakaru 2 hydroelectric plant",
+   "nama_lokal": "PLTA Bakaru 2",
+   "kapasitas_mw": 140,
+   "status": "pre-construction",
+   "status_asli": "pre-construction",
+   "pemilik": [
+    {
+     "nama": "PT PLN (Persero)",
+     "persen": 100,
+     "organisasi_id": "su_ed074ff5"
+    }
+   ],
+   "provinsi": "Sulawesi Selatan",
+   "wilayah_asli": "South Sulawesi Province",
+   "kota": "Pinrang Regency",
+   "lat": -3.0661,
+   "lon": 100.3663,
+   "akurasi": "approximate",
+   "gem_id": "G100000602127",
+   "lokasi_id": "L100000602101",
+   "url_wiki": "https://www.gem.wiki/Bakaru_2_hydroelectric_plant",
+   "diriset": "2025-12-08",
+   "lembar": "Data",
+   "teknologi_tipe": "run-of-river"
+  },
+  {
+   "nama": "Bakaru hydroelectric plant",
+   "kapasitas_mw": 126,
+   "status": "operating",
+   "status_asli": "operating",
+   "tahun_mulai": 1991,
+   "pemilik": [
+    {
+     "nama": "PT PLN (Persero)",
+     "persen": 100,
+     "organisasi_id": "su_ed074ff5"
+    }
+   ],
+   "provinsi": "Sulawesi Selatan",
+   "wilayah_asli": "South Sulawesi",
+   "lat": -3.4487,
+   "lon": 119.6065,
+   "akurasi": "exact",
+   "gem_id": "G100000602128",
+   "lokasi_id": "L100000602102",
+   "url_wiki": "https://www.gem.wiki/Bakaru_hydroelectric_plant",
+   "diriset": "2022-12-02",
+   "lembar": "Data",
+   "teknologi_tipe": "conventional storage"
+  },
+  {
+   "nama": "Balambano hydroelectric plant",
+   "kapasitas_mw": 140,
+   "status": "operating",
+   "status_asli": "operating",
+   "tahun_mulai": 1999,
+   "pemilik": [
+    {
+     "nama": "PT Vale Indonesia Tbk",
+     "persen": 100
+    }
+   ],
+   "provinsi": "Sulawesi Selatan",
+   "wilayah_asli": "South Sulawesi",
+   "lat": -2.6418,
+   "lon": 121.214,
+   "akurasi": "exact",
+   "gem_id": "G100000602129",
+   "lokasi_id": "L100000602103",
+   "url_wiki": "https://www.gem.wiki/Balambano_hydroelectric_plant",
+   "diriset": "2022-12-02",
+   "lembar": "Data",
+   "teknologi_tipe": "conventional storage"
+  },
+  {
+   "nama": "Batang Toru hydroelectric plant",
+   "nama_lokal": "PLTA Batang Toru",
+   "kapasitas_mw": 510,
+   "status": "construction",
+   "status_asli": "construction",
+   "tahun_mulai": 2026,
+   "pemilik": [
+    {
+     "nama": "PT Dharma Hydro Nusantara",
+     "persen": 52
+    },
+    {
+     "nama": "PT PJB Investasi",
+     "persen": 25
+    },
+    {
+     "nama": "Fareast Green Energy",
+     "persen": 22
+    }
+   ],
+   "provinsi": "Sumatera Utara",
+   "wilayah_asli": "North Sumatra",
+   "lat": 1.623,
+   "lon": 99.1832,
+   "akurasi": "exact",
+   "gem_id": "G100000602130",
+   "lokasi_id": "L100000602104",
+   "url_wiki": "https://www.gem.wiki/Batang_Toru_hydroelectric_plant",
+   "diriset": "2025-12-08",
+   "lembar": "Data",
+   "teknologi_tipe": "conventional and run-of-river"
+  },
+  {
+   "nama": "Bendungan Merangin hydroelectric plant",
+   "nama_lokal": "PLTA Bendungan Merangin PUPR",
+   "kapasitas_mw": 107,
+   "status": "pre-construction",
+   "status_asli": "pre-construction",
+   "tahun_mulai": 2028,
+   "provinsi": "Jambi",
+   "wilayah_asli": "Jambi Province",
+   "kota": "Merangin Regency",
+   "lat": -2.1451,
+   "lon": 102.053,
+   "akurasi": "approximate",
+   "gem_id": "G100000602131",
+   "lokasi_id": "L100000602105",
+   "url_wiki": "https://www.gem.wiki/Bendungan_Merangin_hydroelectric_plant",
+   "diriset": "2025-12-08",
+   "lembar": "Data",
+   "teknologi_tipe": "conventional storage"
+  },
+  {
+   "nama": "Bongka hydroelectric plant",
+   "kapasitas_mw": 100,
+   "status": "pre-construction",
+   "status_asli": "pre-construction",
+   "pemilik": [
+    {
+     "nama": "Soma Power Indonesia",
+     "persen": 100
+    }
+   ],
+   "provinsi": "Sulawesi Tengah",
+   "wilayah_asli": "Central Sulawesi",
+   "lat": -1.1978,
+   "lon": 121.5899,
+   "akurasi": "exact",
+   "gem_id": "G100000602132",
+   "lokasi_id": "L100000602106",
+   "url_wiki": "https://www.gem.wiki/Bongka_hydroelectric_plant",
+   "diriset": "2025-12-08",
+   "lembar": "Data",
+   "teknologi_tipe": "run-of-river"
+  },
+  {
+   "nama": "Bonto Batu hydroelectric plant",
+   "kapasitas_mw": 100,
+   "status": "pre-construction",
+   "status_asli": "pre-construction",
+   "pemilik": [
+    {
+     "nama": "PT Sulawesi Mini Hydro Power",
+     "persen": 100
+    }
+   ],
+   "provinsi": "Sulawesi Selatan",
+   "wilayah_asli": "South Sulawesi Province",
+   "kota": "Enrekang Regency",
+   "lat": -3.0661,
+   "lon": 100.3663,
+   "akurasi": "approximate",
+   "gem_id": "G100000602133",
+   "lokasi_id": "L100000602107",
+   "url_wiki": "https://www.gem.wiki/Bonto_Batu_hydroelectric_plant",
+   "diriset": "2025-12-08",
+   "lembar": "Data",
+   "teknologi_tipe": "run-of-river"
+  },
+  {
+   "nama": "Buttu Batu hydroelectric plant",
+   "nama_lokal": "PLTA Buttu Batu",
+   "kapasitas_mw": 200,
+   "status": "pre-construction",
+   "status_asli": "pre-construction",
+   "tahun_mulai": 2027,
+   "pemilik": [
+    {
+     "nama": "PT Amera Terrasys Energi",
+     "persen": 100
+    }
+   ],
+   "provinsi": "Sulawesi Selatan",
+   "wilayah_asli": "South Sulawesi Province",
+   "kota": "Enrekang Regency",
+   "lat": -3.0661,
+   "lon": 100.3663,
+   "akurasi": "approximate",
+   "gem_id": "G100000602134",
+   "lokasi_id": "L100000602108",
+   "url_wiki": "https://www.gem.wiki/Buttu_Batu_hydroelectric_plant",
+   "diriset": "2025-12-08",
+   "lembar": "Data",
+   "teknologi_tipe": "conventional storage"
+  },
+  {
+   "nama": "Cirata hydroelectric plant",
+   "kapasitas_mw": 1008,
+   "status": "operating",
+   "status_asli": "operating",
+   "tahun_mulai": 1986,
+   "pemilik": [
+    {
+     "nama": "PT PLN Nusantara Power PT",
+     "persen": 100,
+     "organisasi_id": "p_ff7a390a42"
+    }
+   ],
+   "operator": [
+    {
+     "nama": "PT PLN Nusantara Power",
+     "persen": null,
+     "organisasi_id": "p_ff7a390a42"
+    }
+   ],
+   "provinsi": "Jawa Barat",
+   "wilayah_asli": "West Java",
+   "lat": -6.6826,
+   "lon": 107.3483,
+   "akurasi": "exact",
+   "gem_id": "G100000602135",
+   "lokasi_id": "L100000602109",
+   "url_wiki": "https://www.gem.wiki/Cirata_hydroelectric_plant",
+   "diriset": "2022-12-02",
+   "lembar": "Data",
+   "teknologi_tipe": "conventional storage"
+  },
+  {
+   "nama": "Grindulu hydroelectric plant",
+   "nama_lokal": "PLTA Grindulu PS",
+   "kapasitas_mw": 1000,
+   "status": "pre-construction",
+   "status_asli": "pre-construction",
+   "tahun_mulai": 2033,
+   "provinsi": "Jawa Timur",
+   "wilayah_asli": "East Java Province",
+   "kota": "Pacitan Regency",
+   "lat": -8.0627,
+   "lon": 111.2975,
+   "akurasi": "approximate",
+   "gem_id": "G100000602136",
+   "lokasi_id": "L100000602110",
+   "url_wiki": "https://www.gem.wiki/Grindulu_hydroelectric_plant",
+   "diriset": "2025-12-08",
+   "lembar": "Data",
+   "teknologi_tipe": "pumped storage"
+  },
+  {
+   "nama": "Jatigede hydroelectric plant",
+   "nama_lokal": "PLTA Jatigede",
+   "kapasitas_mw": 110,
+   "status": "operating",
+   "status_asli": "operating",
+   "tahun_mulai": 2021,
+   "pemilik": [
+    {
+     "nama": "PT PLN (Persero)",
+     "persen": null,
+     "organisasi_id": "su_ed074ff5"
+    }
+   ],
+   "provinsi": "Jawa Barat",
+   "wilayah_asli": "West Java Province",
+   "kota": "Sumedang Regency",
+   "lat": -6.8564,
+   "lon": 108.0948,
+   "akurasi": "exact",
+   "gem_id": "G100000602137",
+   "lokasi_id": "L100000602111",
+   "url_wiki": "https://www.gem.wiki/Jatigede_hydroelectric_plant",
+   "diriset": "2022-12-02",
+   "lembar": "Data",
+   "teknologi_tipe": "conventional storage"
+  },
+  {
+   "nama": "Jatiluhur hydroelectric plant",
+   "kapasitas_mw": 187,
+   "status": "operating",
+   "status_asli": "operating",
+   "tahun_mulai": 1967,
+   "pemilik": [
+    {
+     "nama": "PT PLN (Persero)",
+     "persen": null,
+     "organisasi_id": "su_ed074ff5"
+    }
+   ],
+   "provinsi": "Jawa Barat",
+   "wilayah_asli": "West Java",
+   "kota": "Purwakarta",
+   "lat": -6.5226,
+   "lon": 107.3892,
+   "akurasi": "exact",
+   "gem_id": "G100000602138",
+   "lokasi_id": "L100000602112",
+   "url_wiki": "https://www.gem.wiki/Jatiluhur_hydroelectric_plant",
+   "diriset": "2022-12-02",
+   "lembar": "Data",
+   "teknologi_tipe": "conventional storage"
+  },
+  {
+   "nama": "Karama hydroelectric plant",
+   "kapasitas_mw": 190,
+   "status": "pre-construction",
+   "status_asli": "pre-construction",
+   "tahun_mulai": 2027,
+   "pemilik": [
+    {
+     "nama": "PT Sulbar Group",
+     "persen": null
+    },
+    {
+     "nama": "China Gezhouba Group Co Ltd",
+     "persen": null
+    }
+   ],
+   "provinsi": "Sulawesi Barat",
+   "wilayah_asli": "West Sulawesi Province",
+   "kota": "Mamuju Regency",
+   "lat": -2.4779,
+   "lon": 119.4851,
+   "akurasi": "approximate",
+   "gem_id": "G100000602139",
+   "lokasi_id": "L100000602113",
+   "url_wiki": "https://www.gem.wiki/Karama_hydroelectric_plant",
+   "diriset": "2025-12-08",
+   "lembar": "Data",
+   "teknologi_tipe": "conventional storage"
+  },
+  {
+   "nama": "Karebbe hydroelectric plant",
+   "nama_lokal": "PLTA Karebbe",
+   "kapasitas_mw": 90,
+   "status": "operating",
+   "status_asli": "operating",
+   "tahun_mulai": 2011,
+   "pemilik": [
+    {
+     "nama": "PT International Nickel Indonesia Tbk",
+     "persen": 100
+    }
+   ],
+   "provinsi": "Sulawesi Selatan",
+   "wilayah_asli": "South Sulawesi Province",
+   "kota": "East Luwu Regency",
+   "lat": 2.6667,
+   "lon": 121.1813,
+   "akurasi": "exact",
+   "gem_id": "G100000602140",
+   "lokasi_id": "L100000602114",
+   "url_wiki": "https://www.gem.wiki/Karebbe_hydroelectric_plant",
+   "diriset": "2022-12-02",
+   "lembar": "Data",
+   "teknologi_tipe": "conventional storage"
+  },
+  {
+   "nama": "Kayan 1 hydroelectric plant",
+   "nama_lokal": "PLTA Kayan 1",
+   "nama_lain": "Kayan hydroelectric plant",
+   "kapasitas_mw": 900,
+   "status": "pre-construction",
+   "status_asli": "pre-construction",
+   "tahun_mulai": 2029,
+   "pemilik": [
+    {
+     "nama": "PT Kayan Hydro Energy",
+     "persen": 100,
+     "organisasi_id": "p_cab3e74cce"
+    }
+   ],
+   "operator": [
+    {
+     "nama": "PT Kayan Hydro Energy",
+     "persen": null,
+     "organisasi_id": "p_cab3e74cce"
+    }
+   ],
+   "provinsi": "Kalimantan Utara",
+   "wilayah_asli": "North Kalimantan Province",
+   "kota": "Bulungan Regency",
+   "lat": 2.6048,
+   "lon": 117.8146,
+   "akurasi": "approximate",
+   "gem_id": "G100000602141",
+   "lokasi_id": "L100000602115",
+   "url_wiki": "https://www.gem.wiki/Kayan_1_hydroelectric_plant",
+   "diriset": "2025-12-08",
+   "lembar": "Data",
+   "teknologi_tipe": "conventional storage"
+  },
+  {
+   "nama": "Kayan 2 hydroelectric plant",
+   "nama_lokal": "PLTA Kayan 2",
+   "kapasitas_mw": 1200,
+   "status": "pre-construction",
+   "status_asli": "pre-construction",
+   "pemilik": [
+    {
+     "nama": "PT Kayan Hydro Energy",
+     "persen": 100,
+     "organisasi_id": "p_cab3e74cce"
+    }
+   ],
+   "operator": [
+    {
+     "nama": "PT Kayan Hydro Energy",
+     "persen": null,
+     "organisasi_id": "p_cab3e74cce"
+    }
+   ],
+   "provinsi": "Kalimantan Utara",
+   "wilayah_asli": "North Kalimantan Province",
+   "kota": "Bulungan Regency",
+   "lat": 2.6048,
+   "lon": 117.8146,
+   "akurasi": "approximate",
+   "gem_id": "G100000602142",
+   "lokasi_id": "L100000602116",
+   "url_wiki": "https://www.gem.wiki/Kayan_2_hydroelectric_plant",
+   "diriset": "2025-12-08",
+   "lembar": "Data",
+   "teknologi_tipe": "conventional storage"
+  },
+  {
+   "nama": "Kayan 3 hydroelectric plant",
+   "nama_lokal": "PLTA Kayan 3",
+   "kapasitas_mw": 1800,
+   "status": "pre-construction",
+   "status_asli": "pre-construction",
+   "pemilik": [
+    {
+     "nama": "PT Kayan Hydro Energy",
+     "persen": 100,
+     "organisasi_id": "p_cab3e74cce"
+    }
+   ],
+   "operator": [
+    {
+     "nama": "PT Kayan Hydro Energy",
+     "persen": null,
+     "organisasi_id": "p_cab3e74cce"
+    }
+   ],
+   "provinsi": "Kalimantan Utara",
+   "wilayah_asli": "North Kalimantan Province",
+   "kota": "Bulungan Regency",
+   "lat": 2.6048,
+   "lon": 117.8146,
+   "akurasi": "approximate",
+   "gem_id": "G100000602143",
+   "lokasi_id": "L100000602117",
+   "url_wiki": "https://www.gem.wiki/Kayan_3_hydroelectric_plant",
+   "diriset": "2025-12-08",
+   "lembar": "Data",
+   "teknologi_tipe": "conventional storage"
+  },
+  {
+   "nama": "Kayan 4 hydroelectric plant",
+   "kapasitas_mw": 1800,
+   "status": "pre-construction",
+   "status_asli": "pre-construction",
+   "pemilik": [
+    {
+     "nama": "PT Kayan Hydro Energy",
+     "persen": 100,
+     "organisasi_id": "p_cab3e74cce"
+    }
+   ],
+   "operator": [
+    {
+     "nama": "PT Kayan Hydro Energy",
+     "persen": null,
+     "organisasi_id": "p_cab3e74cce"
+    }
+   ],
+   "provinsi": "Kalimantan Utara",
+   "wilayah_asli": "North Kalimantan Province",
+   "kota": "Bulungan Regency",
+   "lat": 2.6048,
+   "lon": 117.8146,
+   "akurasi": "approximate",
+   "gem_id": "G100000602144",
+   "lokasi_id": "L100000602118",
+   "url_wiki": "https://www.gem.wiki/Kayan_4_hydroelectric_plant",
+   "diriset": "2025-12-08",
+   "lembar": "Data",
+   "teknologi_tipe": "conventional storage"
+  },
+  {
+   "nama": "Kayan 5 hydroelectric plant",
+   "kapasitas_mw": 3300,
+   "status": "pre-construction",
+   "status_asli": "pre-construction",
+   "tahun_mulai": 2035,
+   "pemilik": [
+    {
+     "nama": "PT Kayan Hydro Energy",
+     "persen": 100,
+     "organisasi_id": "p_cab3e74cce"
+    }
+   ],
+   "operator": [
+    {
+     "nama": "PT Kayan Hydro Energy",
+     "persen": null,
+     "organisasi_id": "p_cab3e74cce"
+    }
+   ],
+   "provinsi": "Kalimantan Utara",
+   "wilayah_asli": "North Kalimantan Province",
+   "kota": "Bulungan Regency",
+   "lat": 2.6048,
+   "lon": 117.8146,
+   "akurasi": "approximate",
+   "gem_id": "G100000602145",
+   "lokasi_id": "L100000602119",
+   "url_wiki": "https://www.gem.wiki/Kayan_5_hydroelectric_plant",
+   "diriset": "2025-12-08",
+   "lembar": "Data",
+   "teknologi_tipe": "conventional storage"
+  },
+  {
+   "nama": "Koto Panjang hydroelectric plant",
+   "nama_lokal": "PLTA Koto Panjang",
+   "kapasitas_mw": 114,
+   "status": "operating",
+   "status_asli": "operating",
+   "tahun_mulai": 1996,
+   "pemilik": [
+    {
+     "nama": "PT PLN (Persero)",
+     "persen": 100,
+     "organisasi_id": "su_ed074ff5"
+    }
+   ],
+   "provinsi": "Sumatera Barat",
+   "wilayah_asli": "West Sumatra Province",
+   "kota": "Limapuluh Kota Regency",
+   "lat": 0.2901,
+   "lon": 100.8817,
+   "akurasi": "exact",
+   "gem_id": "G100000602147",
+   "lokasi_id": "L100000602121",
+   "url_wiki": "https://www.gem.wiki/Koto_Panjang_hydroelectric_plant",
+   "diriset": "2022-12-02",
+   "lembar": "Data",
+   "teknologi_tipe": "conventional storage"
+  },
+  {
+   "nama": "Krueng Teunom hydroelectric plant",
+   "kapasitas_mw": 100,
+   "status": "announced",
+   "status_asli": "announced",
+   "pemilik": [
+    {
+     "nama": "PT Energy Management Indonesia",
+     "persen": 100
+    }
+   ],
+   "provinsi": "Aceh",
+   "wilayah_asli": "Aceh Province",
+   "kota": "Aceh Jaya Regency",
+   "lat": 4.4441,
+   "lon": 95.8143,
+   "akurasi": "approximate",
+   "gem_id": "G100000602148",
+   "lokasi_id": "L100000602122",
+   "url_wiki": "https://www.gem.wiki/Krueng_Teunom_hydroelectric_plant",
+   "diriset": "2025-12-08",
+   "lembar": "Data",
+   "teknologi_tipe": "conventional storage"
+  },
+  {
+   "nama": "Lariang hydroelectric plant",
+   "kapasitas_mw": 127,
+   "status": "shelved",
+   "status_asli": "shelved - inferred 2 y",
+   "pemilik": [
+    {
+     "nama": "SN Aboitiz Power",
+     "persen": null
+    },
+    {
+     "nama": "PT Energi Infranusantara",
+     "persen": null
+    },
+    {
+     "nama": "SN Power",
+     "persen": null
+    }
+   ],
+   "provinsi": "Sulawesi Selatan",
+   "wilayah_asli": "South Sulawesi Province",
+   "kota": "North Luwu Regency",
+   "lat": -3.0661,
+   "lon": 100.3663,
+   "akurasi": "approximate",
+   "gem_id": "G100000602149",
+   "lokasi_id": "L100000602123",
+   "url_wiki": "https://www.gem.wiki/Lariang_hydroelectric_plant",
+   "diriset": "2025-12-08",
+   "lembar": "Data",
+   "teknologi_tipe": "run-of-river"
+  },
+  {
+   "nama": "Larona hydroelectric plant",
+   "kapasitas_mw": 165,
+   "status": "operating",
+   "status_asli": "operating",
+   "tahun_mulai": 1979,
+   "pemilik": [
+    {
+     "nama": "PT Vale Indonesia Tbk",
+     "persen": 100
+    }
+   ],
+   "provinsi": "Sulawesi Selatan",
+   "wilayah_asli": "South Sulawesi",
+   "lat": -2.666,
+   "lon": 121.2563,
+   "akurasi": "exact",
+   "gem_id": "G100000602150",
+   "lokasi_id": "L100000602124",
+   "url_wiki": "https://www.gem.wiki/Larona_hydroelectric_plant",
+   "diriset": "2022-12-02",
+   "lembar": "Data",
+   "teknologi_tipe": "conventional storage"
+  },
+  {
+   "nama": "Lau Renun hydroelectric plant",
+   "nama_lokal": "PLTA Lau Renun",
+   "kapasitas_mw": 82,
+   "status": "operating",
+   "status_asli": "operating",
+   "tahun_mulai": 2006,
+   "pemilik": [
+    {
+     "nama": "PT PLN (Persero)",
+     "persen": 100,
+     "organisasi_id": "su_ed074ff5"
+    }
+   ],
+   "provinsi": "Sumatera Utara",
+   "wilayah_asli": "North Sumatra",
+   "lat": 2.7865,
+   "lon": 98.5405,
+   "akurasi": "exact",
+   "gem_id": "G100000602151",
+   "lokasi_id": "L100000602125",
+   "url_wiki": "https://www.gem.wiki/Lau_Renun_hydroelectric_plant",
+   "diriset": "2022-12-02",
+   "lembar": "Data",
+   "teknologi_tipe": "run-of-river"
+  },
+  {
+   "nama": "Matenggeng hydroelectric plant",
+   "nama_lokal": "PLTA Matenggeng PS",
+   "kapasitas_mw": 900,
+   "status": "pre-construction",
+   "status_asli": "pre-construction",
+   "pemilik": [
+    {
+     "nama": "PT PLN (Persero)",
+     "persen": 100,
+     "organisasi_id": "su_ed074ff5"
+    }
+   ],
+   "provinsi": "Jawa Tengah",
+   "wilayah_asli": "Central Java Province",
+   "kota": "Cilacap Regency",
+   "lat": -7.2719,
+   "lon": 108.5885,
+   "akurasi": "approximate",
+   "gem_id": "G100000602156",
+   "lokasi_id": "L100000602130",
+   "url_wiki": "https://www.gem.wiki/Matenggeng_hydroelectric_plant",
+   "diriset": "2025-12-08",
+   "lembar": "Data",
+   "teknologi_tipe": "pumped storage"
+  },
+  {
+   "nama": "Maung hydroelectric plant",
+   "kapasitas_mw": 360,
+   "status": "shelved",
+   "status_asli": "shelved - inferred 2 y",
+   "pemilik": [
+    {
+     "nama": "PT PLN Indonesia Power",
+     "persen": 100,
+     "organisasi_id": "p_5a2e7d0c63"
+    }
+   ],
+   "provinsi": "Jawa Tengah",
+   "wilayah_asli": "Central Java Province",
+   "kota": "Cilacap Regency",
+   "lat": -7.2577,
+   "lon": 108.6089,
+   "akurasi": "approximate",
+   "gem_id": "G100000602157",
+   "lokasi_id": "L100000602131",
+   "url_wiki": "https://www.gem.wiki/Maung_hydroelectric_plant",
+   "diriset": "2025-12-09",
+   "lembar": "Data",
+   "teknologi_tipe": "conventional storage"
+  },
+  {
+   "nama": "Muara Juloi hydroelectric plant",
+   "kapasitas_mw": 284,
+   "status": "announced",
+   "status_asli": "announced",
+   "pemilik": [
+    {
+     "nama": "Korea Midland Power CO LTD (KOMIPO)",
+     "persen": 100
+    }
+   ],
+   "provinsi": "Kalimantan Tengah",
+   "wilayah_asli": "Central Kalimantan Province",
+   "kota": "Murung Raya Regency",
+   "lat": -0.6734,
+   "lon": 114.6246,
+   "akurasi": "approximate",
+   "gem_id": "G100000602159",
+   "lokasi_id": "L100000602133",
+   "url_wiki": "https://www.gem.wiki/Muara_Juloi_hydroelectric_plant",
+   "diriset": "2025-12-09",
+   "lembar": "Data",
+   "teknologi_tipe": "conventional storage"
+  },
+  {
+   "nama": "Musi hydroelectric plant",
+   "nama_lokal": "PLTA Musi",
+   "kapasitas_mw": 210,
+   "status": "operating",
+   "status_asli": "operating",
+   "tahun_mulai": 2006,
+   "pemilik": [
+    {
+     "nama": "PT PLN (Persero)",
+     "persen": 100,
+     "organisasi_id": "su_ed074ff5"
+    }
+   ],
+   "provinsi": "Bengkulu",
+   "wilayah_asli": "Bengkulu Province",
+   "kota": "Bengkulu City",
+   "lat": -3.6219,
+   "lon": 102.4532,
+   "akurasi": "exact",
+   "gem_id": "G100000602160",
+   "lokasi_id": "L100000602134",
+   "url_wiki": "https://www.gem.wiki/Musi_hydroelectric_plant",
+   "diriset": "2022-12-02",
+   "lembar": "Data",
+   "teknologi_tipe": "run-of-river"
+  },
+  {
+   "nama": "Nanga Pinoh hydroelectric plant",
+   "nama_lokal": "PLTA Nanga Pinoh",
+   "kapasitas_mw": 100,
+   "status": "announced",
+   "status_asli": "announced",
+   "tahun_mulai": 2030,
+   "pemilik": [
+    {
+     "nama": "PT PLN (Persero)",
+     "persen": 100,
+     "organisasi_id": "su_ed074ff5"
+    }
+   ],
+   "provinsi": "Kalimantan Barat",
+   "wilayah_asli": "West Kalimantan Province",
+   "kota": "Melawi Regency",
+   "lat": -0.3143,
+   "lon": 111.6999,
+   "akurasi": "approximate",
+   "gem_id": "G100000602161",
+   "lokasi_id": "L100000602135",
+   "url_wiki": "https://www.gem.wiki/Nanga_Pinoh_hydroelectric_plant",
+   "diriset": "2025-12-09",
+   "lembar": "Data",
+   "teknologi_tipe": "unknown"
+  },
+  {
+   "nama": "PB Sudirman hydroelectric plant",
+   "nama_lain": "Mirca hydroelectric plant",
+   "kapasitas_mw": 181,
+   "status": "operating",
+   "status_asli": "operating",
+   "tahun_mulai": 1989,
+   "pemilik": [
+    {
+     "nama": "PT PLN Indonesia Power",
+     "persen": 100,
+     "organisasi_id": "p_5a2e7d0c63"
+    }
+   ],
+   "provinsi": "Jawa Tengah",
+   "wilayah_asli": "Central Java",
+   "lat": -7.3927,
+   "lon": 109.6054,
+   "akurasi": "exact",
+   "gem_id": "G100000602163",
+   "lokasi_id": "L100000602137",
+   "url_wiki": "https://www.gem.wiki/PB_Sudirman_hydroelectric_plant",
+   "diriset": "2022-12-02",
+   "lembar": "Data",
+   "teknologi_tipe": "conventional storage"
+  },
+  {
+   "nama": "Peusanga hydroelectric plant",
+   "nama_lokal": "PLTA Peusanga 1 & 2, PLTA Peusanga",
+   "nama_lain": "Peusanga 1 & 2 hydroelectric plant, Peusangan hydroelectric plant",
+   "kapasitas_mw": 88,
+   "status": "construction",
+   "status_asli": "construction",
+   "pemilik": [
+    {
+     "nama": "PT PLN (Persero)",
+     "persen": 100,
+     "organisasi_id": "su_ed074ff5"
+    }
+   ],
+   "provinsi": "Aceh",
+   "wilayah_asli": "Aceh Province",
+   "kota": "Central Aceh Regency",
+   "lat": 4.4495,
+   "lon": 96.8839,
+   "akurasi": "approximate",
+   "gem_id": "G100000602164",
+   "lokasi_id": "L100000602138",
+   "url_wiki": "https://www.gem.wiki/Peusanga_hydroelectric_plant",
+   "diriset": "2025-12-09",
+   "lembar": "Data",
+   "teknologi_tipe": "run-of-river"
+  },
+  {
+   "nama": "Poso 2 hydroelectric plant",
+   "nama_lain": "Poso II hydroelectric plant",
+   "kapasitas_mw": 195,
+   "status": "operating",
+   "status_asli": "operating",
+   "tahun_mulai": 2012,
+   "pemilik": [
+    {
+     "nama": "PT Poso Energy",
+     "persen": 100
+    }
+   ],
+   "provinsi": "Sulawesi Tengah",
+   "wilayah_asli": "Central Sulawesi",
+   "kota": "Poso Regency",
+   "lat": -1.6438,
+   "lon": 120.6472,
+   "akurasi": "exact",
+   "gem_id": "G100000602166",
+   "lokasi_id": "L100000602140",
+   "url_wiki": "https://www.gem.wiki/Poso_2_hydroelectric_plant",
+   "diriset": "2025-03-11",
+   "lembar": "Data",
+   "teknologi_tipe": "run-of-river"
+  },
+  {
+   "nama": "Poso 3 hydroelectric plant",
+   "nama_lain": "Poso Peaker hydroelectric plant, Poso III hydroelectric plant",
+   "kapasitas_mw": 400,
+   "status": "pre-construction",
+   "status_asli": "pre-construction",
+   "pemilik": [
+    {
+     "nama": "PT Poso Energy",
+     "persen": 100
+    }
+   ],
+   "provinsi": "Sulawesi Tengah",
+   "wilayah_asli": "Central Sulawesi",
+   "kota": "Poso Regency",
+   "lat": -1.6554,
+   "lon": 120.6638,
+   "akurasi": "approximate",
+   "gem_id": "G100000602167",
+   "lokasi_id": "L100000602141",
+   "url_wiki": "https://www.gem.wiki/Poso_3_hydroelectric_plant",
+   "diriset": "2025-12-09",
+   "lembar": "Data",
+   "teknologi_tipe": "conventional storage"
+  },
+  {
+   "nama": "Saguling hydroelectric plant",
+   "kapasitas_mw": 701,
+   "status": "operating",
+   "status_asli": "operating",
+   "tahun_mulai": 1985,
+   "pemilik": [
+    {
+     "nama": "PT PLN Indonesia Power",
+     "persen": 100,
+     "organisasi_id": "p_5a2e7d0c63"
+    }
+   ],
+   "operator": [
+    {
+     "nama": "PT PLN Indonesia Power",
+     "persen": null,
+     "organisasi_id": "p_5a2e7d0c63"
+    }
+   ],
+   "provinsi": "Jawa Barat",
+   "wilayah_asli": "West Java",
+   "lat": -6.9122,
+   "lon": 107.3661,
+   "akurasi": "exact",
+   "gem_id": "G100000602168",
+   "lokasi_id": "L100000602142",
+   "url_wiki": "https://www.gem.wiki/Saguling_hydroelectric_plant",
+   "diriset": "2022-12-02",
+   "lembar": "Data",
+   "teknologi_tipe": "conventional storage"
+  },
+  {
+   "nama": "Sesayap hydroelectric plant",
+   "nama_lokal": "PLTA Sesayap",
+   "kapasitas_mw": 90,
+   "status": "announced",
+   "status_asli": "announced",
+   "tahun_mulai": 2028,
+   "provinsi": "Kalimantan Utara",
+   "wilayah_asli": "North Kalimantan Province",
+   "kota": "Nunukan Regency",
+   "lat": 3.9176,
+   "lon": 115.6634,
+   "akurasi": "approximate",
+   "gem_id": "G100000602169",
+   "lokasi_id": "L100000602143",
+   "url_wiki": "https://www.gem.wiki/Sesayap_hydroelectric_plant",
+   "diriset": "2025-12-09",
+   "lembar": "Data",
+   "teknologi_tipe": "unknown"
+  },
+  {
+   "nama": "Sigura Gura hydroelectric plant",
+   "kapasitas_mw": 286,
+   "status": "operating",
+   "status_asli": "operating",
+   "tahun_mulai": 1982,
+   "pemilik": [
+    {
+     "nama": "PT INALUM (Persero)",
+     "persen": 100
+    }
+   ],
+   "provinsi": "Sumatera Utara",
+   "wilayah_asli": "North Sumatra",
+   "lat": 2.5202,
+   "lon": 99.2798,
+   "akurasi": "exact",
+   "gem_id": "G100000602170",
+   "lokasi_id": "L100000602144",
+   "url_wiki": "https://www.gem.wiki/Sigura_Gura_hydroelectric_plant",
+   "diriset": "2022-12-02",
+   "lembar": "Data",
+   "teknologi_tipe": "conventional storage"
+  },
+  {
+   "nama": "Simonggo 2 hydroelectric plant",
+   "nama_lokal": "PLTA Simonggo 2",
+   "kapasitas_mw": 90,
+   "status": "announced",
+   "status_asli": "announced",
+   "tahun_mulai": 2029,
+   "provinsi": "Sumatera Utara",
+   "wilayah_asli": "North Sumatra Province",
+   "kota": "Humbang Hasundutan Regency",
+   "lat": -2.6767,
+   "lon": 100.0985,
+   "akurasi": "approximate",
+   "gem_id": "G100000602171",
+   "lokasi_id": "L100000602145",
+   "url_wiki": "https://www.gem.wiki/Simonggo_2_hydroelectric_plant",
+   "diriset": "2025-12-09",
+   "lembar": "Data",
+   "teknologi_tipe": "conventional storage"
+  },
+  {
+   "nama": "Singkarak hydroelectric plant",
+   "nama_lokal": "PLTA Singkarak",
+   "kapasitas_mw": 175,
+   "status": "operating",
+   "status_asli": "operating",
+   "tahun_mulai": 1998,
+   "pemilik": [
+    {
+     "nama": "PT PLN (Persero)",
+     "persen": 100,
+     "organisasi_id": "su_ed074ff5"
+    }
+   ],
+   "provinsi": "Sumatera Barat",
+   "wilayah_asli": "West Sumatra",
+   "lat": -0.6223,
+   "lon": 100.349,
+   "akurasi": "exact",
+   "gem_id": "G100000602172",
+   "lokasi_id": "L100000602146",
+   "url_wiki": "https://www.gem.wiki/Singkarak_hydroelectric_plant",
+   "diriset": "2022-12-02",
+   "lembar": "Data",
+   "teknologi_tipe": "conventional storage"
+  },
+  {
+   "nama": "Sumatera hydroelectric plant",
+   "nama_lokal": "PLTA Sumatera pumped storage 1",
+   "kapasitas_mw": 500,
+   "status": "announced",
+   "status_asli": "announced",
+   "tahun_mulai": 2029,
+   "pemilik": [
+    {
+     "nama": "PT PLN (Persero)",
+     "persen": 100,
+     "organisasi_id": "su_ed074ff5"
+    }
+   ],
+   "provinsi": "Sumatera Utara",
+   "wilayah_asli": "North Sumatra Province",
+   "kota": "Samosir Regency",
+   "lat": -2.6767,
+   "lon": 100.0985,
+   "akurasi": "approximate",
+   "gem_id": "G100000602173",
+   "lokasi_id": "L100000602147",
+   "url_wiki": "https://www.gem.wiki/Sumatera_hydroelectric_plant",
+   "diriset": "2025-12-09",
+   "lembar": "Data",
+   "teknologi_tipe": "pumped storage"
+  },
+  {
+   "nama": "Sutami hydroelectric plant",
+   "nama_lokal": "PLTA Karangkates",
+   "nama_lain": "Karangkates hydroelectric plant",
+   "kapasitas_mw": 105,
+   "status": "operating",
+   "status_asli": "operating",
+   "tahun_mulai": 1973,
+   "pemilik": [
+    {
+     "nama": "PT PLN Nusantara Power PT",
+     "persen": 100,
+     "organisasi_id": "p_ff7a390a42"
+    }
+   ],
+   "provinsi": "Jawa Timur",
+   "wilayah_asli": "East Java",
+   "lat": -8.1615,
+   "lon": 112.4443,
+   "akurasi": "exact",
+   "gem_id": "G100000602174",
+   "lokasi_id": "L100000602148",
+   "url_wiki": "https://www.gem.wiki/Sutami_hydroelectric_plant",
+   "diriset": "2022-12-02",
+   "lembar": "Data",
+   "teknologi_tipe": "conventional storage"
+  },
+  {
+   "nama": "Tabang hydroelectric plant",
+   "nama_lokal": "PLTA Tabang",
+   "kapasitas_mw": 110,
+   "status": "pre-construction",
+   "status_asli": "pre-construction",
+   "tahun_mulai": 2031,
+   "provinsi": "Kalimantan Timur",
+   "wilayah_asli": "East Kalimantan Province",
+   "kota": "Kutai Kartanegara Regency",
+   "lat": -0.3691,
+   "lon": 116.9239,
+   "akurasi": "approximate",
+   "gem_id": "G100000602175",
+   "lokasi_id": "L100000602149",
+   "url_wiki": "https://www.gem.wiki/Tabang_hydroelectric_plant",
+   "diriset": "2025-12-09",
+   "lembar": "Data",
+   "teknologi_tipe": "run-of-river"
+  },
+  {
+   "nama": "Tangga hydroelectric plant",
+   "kapasitas_mw": 317,
+   "status": "operating",
+   "status_asli": "operating",
+   "tahun_mulai": 1982,
+   "pemilik": [
+    {
+     "nama": "PT INALUM (Persero)",
+     "persen": 100
+    }
+   ],
+   "provinsi": "Sumatera Utara",
+   "wilayah_asli": "North Sumatra",
+   "lat": 2.561,
+   "lon": 99.3097,
+   "akurasi": "exact",
+   "gem_id": "G100000602176",
+   "lokasi_id": "L100000602150",
+   "url_wiki": "https://www.gem.wiki/Tangga_hydroelectric_plant",
+   "diriset": "2022-12-02",
+   "lembar": "Data",
+   "teknologi_tipe": "conventional storage"
+  },
+  {
+   "nama": "Tanjung Sakti hydroelectric plant",
+   "nama_lokal": "PLTA Tanjung Sakti",
+   "kapasitas_mw": 94,
+   "status": "announced",
+   "status_asli": "announced",
+   "tahun_mulai": 2032,
+   "provinsi": "Sumatera Selatan",
+   "wilayah_asli": "South Sumatera Province",
+   "kota": "South Bengkulu Regency",
+   "lat": -3.0661,
+   "lon": 100.3663,
+   "akurasi": "approximate",
+   "gem_id": "G100000602177",
+   "lokasi_id": "L100000602151",
+   "url_wiki": "https://www.gem.wiki/Tanjung_Sakti_hydroelectric_plant",
+   "diriset": "2025-12-09",
+   "lembar": "Data",
+   "teknologi_tipe": "conventional storage"
+  },
+  {
+   "nama": "Tumbuan Mamuju Atas hydroelectric plant",
+   "nama_lain": "Upper Mamuju Tumbuan",
+   "kapasitas_mw": 90,
+   "status": "announced",
+   "status_asli": "announced",
+   "pemilik": [
+    {
+     "nama": "Kalla Group",
+     "persen": 100
+    }
+   ],
+   "provinsi": "Sulawesi Barat",
+   "wilayah_asli": "West Sulawesi Province",
+   "kota": "Mamuju Regency",
+   "lat": -2.8367,
+   "lon": 118.897,
+   "akurasi": "approximate",
+   "gem_id": "G100000602178",
+   "lokasi_id": "L100000602152",
+   "url_wiki": "https://www.gem.wiki/Tumbuan_Mamuju_Atas_hydroelectric_plant",
+   "diriset": "2025-12-09",
+   "lembar": "Data",
+   "teknologi_tipe": "conventional storage"
+  },
+  {
+   "nama": "Tumbuan Mamuju Bawah hydroelectric plant",
+   "nama_lain": "Lower Mamuju Tumbuan",
+   "kapasitas_mw": 360,
+   "status": "announced",
+   "status_asli": "announced",
+   "pemilik": [
+    {
+     "nama": "Kalla Group",
+     "persen": 100
+    }
+   ],
+   "provinsi": "Sulawesi Barat",
+   "wilayah_asli": "West Sulawesi Province",
+   "kota": "Mamuju Regency",
+   "lat": -2.8367,
+   "lon": 118.897,
+   "akurasi": "approximate",
+   "gem_id": "G100000602179",
+   "lokasi_id": "L100000602153",
+   "url_wiki": "https://www.gem.wiki/Tumbuan_Mamuju_Bawah_hydroelectric_plant",
+   "diriset": "2025-12-09",
+   "lembar": "Data",
+   "teknologi_tipe": "conventional storage"
+  },
+  {
+   "nama": "Way Besai hydroelectric plant",
+   "kapasitas_mw": 90,
+   "status": "operating",
+   "status_asli": "operating",
+   "tahun_mulai": 2001,
+   "pemilik": [
+    {
+     "nama": "PT PLN (Persero)",
+     "persen": 100,
+     "organisasi_id": "su_ed074ff5"
+    }
+   ],
+   "provinsi": "Lampung",
+   "wilayah_asli": "Lampung",
+   "lat": -4.9826,
+   "lon": 104.4797,
+   "akurasi": "exact",
+   "gem_id": "G100000602182",
+   "lokasi_id": "L100000602156",
+   "url_wiki": "https://www.gem.wiki/Way_Besai_hydroelectric_plant",
+   "diriset": "2022-12-02",
+   "lembar": "Data",
+   "teknologi_tipe": "conventional storage"
+  },
+  {
+   "nama": "Kerinci Merangin hydroelectric plant",
+   "nama_lokal": "PLTA Merangin",
+   "nama_lain": "Kerinci hydroelectric plant",
+   "kapasitas_mw": 420,
+   "status": "construction",
+   "status_asli": "construction",
+   "tahun_mulai": 2026,
+   "pemilik": [
+    {
+     "nama": "PT Kerinci Merangin Hydro",
+     "persen": 100
+    }
+   ],
+   "provinsi": "Jambi",
+   "wilayah_asli": "Jambi Province",
+   "kota": "Kerinci Regency",
+   "lat": -2.1806,
+   "lon": 101.635,
+   "akurasi": "approximate",
+   "gem_id": "G100000604505",
+   "lokasi_id": "L100000602120",
+   "url_wiki": "https://www.gem.wiki/Kerinci_Merangin_hydroelectric_plant",
+   "diriset": "2025-12-08",
+   "lembar": "Data",
+   "teknologi_tipe": "conventional storage"
+  },
+  {
+   "nama": "Longgi hydroelectric plant",
+   "kapasitas_mw": 350,
+   "status": "cancelled",
+   "status_asli": "cancelled - inferred 4 y",
+   "pemilik": [
+    {
+     "nama": "PT Impha Nusantara Mandiri",
+     "persen": null
+    },
+    {
+     "nama": "IMPSA Malaysia Sdn Bhd",
+     "persen": null
+    }
+   ],
+   "provinsi": "Kalimantan Timur",
+   "wilayah_asli": "East Kalimantan Province",
+   "kota": "Paser Regency",
+   "lat": -1.8284,
+   "lon": 115.9294,
+   "akurasi": "approximate",
+   "gem_id": "G100000604562",
+   "lokasi_id": "L100000602126",
+   "url_wiki": "https://www.gem.wiki/Longgi_hydroelectric_plant",
+   "diriset": "2022-12-02",
+   "lembar": "Data",
+   "teknologi_tipe": "conventional storage"
+  },
+  {
+   "nama": "Makale hydroelectric plant",
+   "kapasitas_mw": 400,
+   "status": "cancelled",
+   "status_asli": "cancelled - inferred 4 y",
+   "pemilik": [
+    {
+     "nama": "PT Impha Nusantara Mandiri",
+     "persen": null
+    },
+    {
+     "nama": "IMPSA Malaysia Sdn Bhd",
+     "persen": null
+    }
+   ],
+   "provinsi": "Sulawesi Selatan",
+   "wilayah_asli": "South Sulawesi Province",
+   "kota": "Bulukumba Regency",
+   "lat": -3.0661,
+   "lon": 100.3663,
+   "akurasi": "approximate",
+   "gem_id": "G100000604590",
+   "lokasi_id": "L100000602127",
+   "url_wiki": "https://www.gem.wiki/Makale_hydroelectric_plant",
+   "diriset": "2022-12-02",
+   "lembar": "Data",
+   "teknologi_tipe": "conventional storage"
+  },
+  {
+   "nama": "Malea hydroelectric plant",
+   "nama_lokal": "PLTA Malea",
+   "kapasitas_mw": 90,
+   "status": "operating",
+   "status_asli": "operating",
+   "tahun_mulai": 2021,
+   "pemilik": [
+    {
+     "nama": "PT PLN (Persero)",
+     "persen": 100,
+     "organisasi_id": "su_ed074ff5"
+    }
+   ],
+   "provinsi": "Sulawesi Tengah",
+   "wilayah_asli": "Central Sulawesi Province",
+   "kota": "Tana Toraja Regency",
+   "lat": -3.1281,
+   "lon": 119.7936,
+   "akurasi": "exact",
+   "gem_id": "G100000604594",
+   "lokasi_id": "L100000602128",
+   "url_wiki": "https://www.gem.wiki/Malea_hydroelectric_plant",
+   "diriset": "2023-12-07",
+   "lembar": "Data",
+   "teknologi_tipe": "run-of-river"
+  },
+  {
+   "nama": "Mamuju hydroelectric plant",
+   "kapasitas_mw": 450,
+   "status": "cancelled",
+   "status_asli": "cancelled - inferred 4 y",
+   "pemilik": [
+    {
+     "nama": "Kalla Group",
+     "persen": 100
+    }
+   ],
+   "provinsi": "Sulawesi Barat",
+   "wilayah_asli": "West Sulawesi Province",
+   "kota": "Mamuju Regency",
+   "lat": -2.4511,
+   "lon": 119.4376,
+   "akurasi": "approximate",
+   "gem_id": "G100000604596",
+   "lokasi_id": "L100000602129",
+   "url_wiki": "https://www.gem.wiki/Mamuju_hydroelectric_plant",
+   "diriset": "2022-12-02",
+   "lembar": "Data",
+   "teknologi_tipe": "conventional storage"
+  },
+  {
+   "nama": "Mentarang hydroelectric plant",
+   "kapasitas_mw": 1375,
+   "status": "construction",
+   "status_asli": "construction",
+   "tahun_mulai": 2029,
+   "pemilik": [
+    {
+     "nama": "PT Kayan Hydro Energy",
+     "persen": 100,
+     "organisasi_id": "p_cab3e74cce"
+    }
+   ],
+   "provinsi": "Kalimantan Utara",
+   "wilayah_asli": "North Kalimantan Province",
+   "kota": "Malinau Regency",
+   "lat": 3.5839,
+   "lon": 116.6478,
+   "akurasi": "approximate",
+   "gem_id": "G100000604617",
+   "lokasi_id": "L100000602132",
+   "url_wiki": "https://www.gem.wiki/Mentarang_hydroelectric_plant",
+   "diriset": "2025-12-08",
+   "lembar": "Data",
+   "teknologi_tipe": "conventional storage"
+  },
+  {
+   "nama": "Nokan Nayan hydroelectric plant",
+   "kapasitas_mw": 100,
+   "status": "cancelled",
+   "status_asli": "cancelled - inferred 4 y",
+   "pemilik": [
+    {
+     "nama": "PT Khatulistiwa Sentra Energi",
+     "persen": 100
+    }
+   ],
+   "provinsi": "Kalimantan Barat",
+   "wilayah_asli": "West Kalimantan Province",
+   "kota": "Sintang Regency",
+   "lat": 0.063,
+   "lon": 111.4955,
+   "akurasi": "approximate",
+   "gem_id": "G100000604674",
+   "lokasi_id": "L100000602136",
+   "url_wiki": "https://www.gem.wiki/Nokan_Nayan_hydroelectric_plant",
+   "diriset": "2022-12-02",
+   "lembar": "Data",
+   "teknologi_tipe": "run-of-river"
+  },
+  {
+   "nama": "Peusangan 4 hydroelectric plant",
+   "nama_lain": "Peusangan IV hydroelectric plant",
+   "kapasitas_mw": 120,
+   "status": "pre-construction",
+   "status_asli": "pre-construction",
+   "pemilik": [
+    {
+     "nama": "PT Wijaya Karya (Persero)",
+     "persen": 25,
+     "organisasi_id": "p_a363064837"
+    },
+    {
+     "nama": "Korea South-East Power Co Ltd",
+     "persen": 25
+    },
+    {
+     "nama": "IGIS Asset Management",
+     "persen": 20
+    },
+    {
+     "nama": "Hyundai Engineering & Construction Co Ltd",
+     "persen": 30
+    }
+   ],
+   "provinsi": "Aceh",
+   "wilayah_asli": "Aceh Province",
+   "kota": "Central Aceh Regency",
+   "lat": 4.6242,
+   "lon": 96.8501,
+   "akurasi": "approximate",
+   "gem_id": "G100000604725",
+   "lokasi_id": "L100000602139",
+   "url_wiki": "https://www.gem.wiki/Peusangan_4_hydroelectric_plant",
+   "diriset": "2025-12-09",
+   "lembar": "Data",
+   "teknologi_tipe": "run-of-river"
+  },
+  {
+   "nama": "Pokko hydroelectric plant",
+   "nama_lokal": "PLTA Pokko",
+   "nama_lain": "Poko",
+   "kapasitas_mw": 125,
+   "status": "pre-construction",
+   "status_asli": "pre-construction",
+   "tahun_mulai": 2026,
+   "pemilik": [
+    {
+     "nama": "PT PLN (Persero)",
+     "persen": 100,
+     "organisasi_id": "su_ed074ff5"
+    }
+   ],
+   "wilayah_asli": "Sulawesi",
+   "kota": "West Sulawesi",
+   "lat": -3.3113,
+   "lon": 119.4289,
+   "akurasi": "approximate",
+   "gem_id": "G100000604736",
+   "lokasi_id": "L100000604319",
+   "url_wiki": "https://www.gem.wiki/Pokko_hydroelectric_plant",
+   "diriset": "2025-12-09",
+   "lembar": "Data",
+   "teknologi_tipe": "unknown"
+  },
+  {
+   "nama": "Upper Cisokan hydroelectric plant",
+   "kapasitas_mw": 1040,
+   "status": "construction",
+   "status_asli": "construction",
+   "tahun_mulai": 2027,
+   "pemilik": [
+    {
+     "nama": "PT PLN (Persero)",
+     "persen": 100,
+     "organisasi_id": "su_ed074ff5"
+    }
+   ],
+   "provinsi": "Jawa Barat",
+   "wilayah_asli": "West Java Province",
+   "kota": "Cianjur Regency",
+   "lat": -6.9458,
+   "lon": 107.2173,
+   "akurasi": "approximate",
+   "gem_id": "G100000604908",
+   "lokasi_id": "L100000602154",
+   "url_wiki": "https://www.gem.wiki/Upper_Cisokan_hydroelectric_plant",
+   "diriset": "2025-12-09",
+   "lembar": "Data",
+   "teknologi_tipe": "pumped storage"
+  },
+  {
+   "nama": "Urumuka hydroelectric plant",
+   "kapasitas_mw": 405,
+   "status": "cancelled",
+   "status_asli": "cancelled - inferred 4 y",
+   "pemilik": [
+    {
+     "nama": "PT Papua Power Indonesia",
+     "persen": 100
+    }
+   ],
+   "provinsi": "Papua Tengah",
+   "wilayah_asli": "Central Papua",
+   "lat": -4.2678,
+   "lon": 136.0683,
+   "akurasi": "exact",
+   "gem_id": "G100000604928",
+   "lokasi_id": "L100000602155",
+   "url_wiki": "https://www.gem.wiki/Urumuka_hydroelectric_plant",
+   "diriset": "2022-12-02",
+   "lembar": "Data",
+   "teknologi_tipe": "run-of-river"
+  },
+  {
+   "nama": "Sipansihaporas hydroelectric plant",
+   "kapasitas_mw": 50,
+   "status": "operating",
+   "status_asli": "operating",
+   "tahun_mulai": 2005,
+   "pemilik": [
+    {
+     "nama": "PT PLN (Persero)",
+     "persen": null,
+     "organisasi_id": "su_ed074ff5"
+    }
+   ],
+   "provinsi": "Sumatera Utara",
+   "wilayah_asli": "North Sumatra",
+   "kota": "City of Sibolga",
+   "lat": 1.7427,
+   "lon": 98.7792,
+   "akurasi": "exact",
+   "gem_id": "G100001027300",
+   "lokasi_id": "L100001023095",
+   "url_wiki": "https://www.gem.wiki/Sipansihaporas_hydroelectric_plant",
+   "diriset": "2025-03-10",
+   "lembar": "Data",
+   "teknologi_tipe": "run-of-river"
+  },
+  {
+   "nama": "Wlingi-Brantas hydroelectric plant",
+   "kapasitas_mw": 54,
+   "status": "operating",
+   "status_asli": "operating",
+   "tahun_mulai": 1979,
+   "pemilik": [
+    {
+     "nama": "PT PLN Nusantara Power PT",
+     "persen": null,
+     "organisasi_id": "p_ff7a390a42"
+    }
+   ],
+   "provinsi": "Jawa Timur",
+   "wilayah_asli": "East Java",
+   "kota": "Blitar",
+   "lat": -8.0776,
+   "lon": 112.3311,
+   "akurasi": "exact",
+   "gem_id": "G100001027301",
+   "lokasi_id": "L100001023096",
+   "url_wiki": "https://www.gem.wiki/Wlingi-Brantas_hydroelectric_plant",
+   "diriset": "2025-03-10",
+   "lembar": "Data",
+   "teknologi_tipe": "conventional storage"
+  },
+  {
+   "nama": "Meureubo 2 hydroelectric plant",
+   "kapasitas_mw": 59,
+   "status": "shelved",
+   "status_asli": "shelved - inferred 2 y",
+   "provinsi": "Aceh",
+   "wilayah_asli": "Aceh",
+   "lat": 4.8743,
+   "lon": 95.8803,
+   "akurasi": "approximate",
+   "gem_id": "G100001051484",
+   "lokasi_id": "L100001045703",
+   "url_wiki": "https://www.gem.wiki/Meureubo_2_hydroelectric_plant",
+   "diriset": "2025-12-09",
+   "lembar": "Data",
+   "teknologi_tipe": "unknown"
+  },
+  {
+   "nama": "Poso Extension Stage 2 hydroelectric plant",
+   "kapasitas_mw": 200,
+   "status": "operating",
+   "status_asli": "operating",
+   "tahun_mulai": 2021,
+   "pemilik": [
+    {
+     "nama": "PT Poso Energy",
+     "persen": null
+    }
+   ],
+   "provinsi": "Sulawesi Tengah",
+   "wilayah_asli": "Central Sulawesi",
+   "kota": "Poso Regency",
+   "lat": -1.6442,
+   "lon": 120.6471,
+   "akurasi": "exact",
+   "gem_id": "G100001051487",
+   "lokasi_id": "L100001045705",
+   "url_wiki": "https://www.gem.wiki/Poso_Extension_Stage_2_hydroelectric_plant",
+   "diriset": "2025-03-11",
+   "lembar": "Data",
+   "teknologi_tipe": "run-of-river"
+  },
+  {
+   "nama": "Poso Extension Stage 1 hydroelectric plant",
+   "kapasitas_mw": 120,
+   "status": "operating",
+   "status_asli": "operating",
+   "tahun_mulai": 2020,
+   "pemilik": [
+    {
+     "nama": "PT. Hadji Kalla",
+     "persen": null
+    }
+   ],
+   "provinsi": "Sulawesi Tengah",
+   "wilayah_asli": "Central Sulawesi",
+   "kota": "Poso Regency",
+   "lat": -1.6695,
+   "lon": 120.6526,
+   "akurasi": "exact",
+   "gem_id": "G100001051489",
+   "lokasi_id": "L100001045707",
+   "url_wiki": "https://www.gem.wiki/Poso_Extension_Stage_1_hydroelectric_plant",
+   "diriset": "2025-03-11",
+   "lembar": "Data",
+   "teknologi_tipe": "run-of-river"
+  },
+  {
+   "nama": "Karangkates IV hydroelectric plant",
+   "kapasitas_mw": 50,
+   "status": "shelved",
+   "status_asli": "shelved - inferred 2 y",
+   "provinsi": "Jawa Timur",
+   "wilayah_asli": "East Java",
+   "kota": "Malang",
+   "lat": -7.9858,
+   "lon": 112.6494,
+   "akurasi": "approximate",
+   "gem_id": "G100001051490",
+   "lokasi_id": "L100001045708",
+   "url_wiki": "https://www.gem.wiki/Karangkates_IV_hydroelectric_plant",
+   "diriset": "2025-12-08",
+   "lembar": "Data",
+   "teknologi_tipe": "unknown"
+  },
+  {
+   "nama": "Karangkates V hydroelectric plant",
+   "kapasitas_mw": 50,
+   "status": "shelved",
+   "status_asli": "shelved - inferred 2 y",
+   "provinsi": "Jawa Timur",
+   "wilayah_asli": "East Java",
+   "kota": "Malang",
+   "lat": -8.0057,
+   "lon": 112.632,
+   "akurasi": "approximate",
+   "gem_id": "G100001051491",
+   "lokasi_id": "L100001045709",
+   "url_wiki": "https://www.gem.wiki/Karangkates_V_hydroelectric_plant",
+   "diriset": "2025-12-08",
+   "lembar": "Data",
+   "teknologi_tipe": "unknown"
+  },
+  {
+   "nama": "Semangka hydroelectric plant",
+   "kapasitas_mw": 57,
+   "status": "operating",
+   "status_asli": "operating",
+   "tahun_mulai": 2018,
+   "pemilik": [
+    {
+     "nama": "Korea Midland Power Co Ltd",
+     "persen": null
+    },
+    {
+     "nama": "Posco E&C",
+     "persen": null
+    }
+   ],
+   "provinsi": "Lampung",
+   "wilayah_asli": "Lampung",
+   "kota": "Kabupaten Tanggamus",
+   "lat": -5.3911,
+   "lon": 104.3854,
+   "akurasi": "exact",
+   "gem_id": "G100001051492",
+   "lokasi_id": "L100001045710",
+   "url_wiki": "https://www.gem.wiki/Semangka_hydroelectric_plant",
+   "diriset": "2025-03-11",
+   "lembar": "Data",
+   "teknologi_tipe": "run-of-river"
+  },
+  {
+   "nama": "Wampu hydroelectric plant",
+   "kapasitas_mw": 47,
+   "status": "operating",
+   "status_asli": "operating",
+   "tahun_mulai": 2016,
+   "pemilik": [
+    {
+     "nama": "PT PLN (Persero)",
+     "persen": null,
+     "organisasi_id": "su_ed074ff5"
+    }
+   ],
+   "provinsi": "Sumatera Utara",
+   "wilayah_asli": "North Sumatra",
+   "kota": "Karo Regency",
+   "lat": 3.2185,
+   "lon": 98.2056,
+   "akurasi": "exact",
+   "gem_id": "G100001051493",
+   "lokasi_id": "L100001045711",
+   "url_wiki": "https://www.gem.wiki/Wampu_hydroelectric_plant",
+   "diriset": "2025-03-11",
+   "lembar": "Data",
+   "teknologi_tipe": "run-of-river"
+  },
+  {
+   "nama": "Rajamandala hydroelectric plant",
+   "kapasitas_mw": 47,
+   "status": "operating",
+   "status_asli": "operating",
+   "tahun_mulai": 2019,
+   "pemilik": [
+    {
+     "nama": "Kansai Electric Power Co",
+     "persen": null
+    },
+    {
+     "nama": "PT PLN Indonesia Power",
+     "persen": null,
+     "organisasi_id": "p_5a2e7d0c63"
+    }
+   ],
+   "operator": [
+    {
+     "nama": "Rajamandala Electric Power CO LTD",
+     "persen": null
+    }
+   ],
+   "provinsi": "Jawa Barat",
+   "wilayah_asli": "West Java",
+   "kota": "West Bandung Regency",
+   "lat": -6.8573,
+   "lon": 107.3394,
+   "akurasi": "exact",
+   "gem_id": "G100001051495",
+   "lokasi_id": "L100001045713",
+   "url_wiki": "https://www.gem.wiki/Rajamandala_hydroelectric_plant",
+   "diriset": "2025-03-11",
+   "lembar": "Data",
+   "teknologi_tipe": "run-of-river"
+  },
+  {
+   "nama": "Maninjau hydroelectric plant",
+   "kapasitas_mw": 68,
+   "status": "operating",
+   "status_asli": "operating",
+   "tahun_mulai": 1983,
+   "pemilik": [
+    {
+     "nama": "PT PLN (Persero)",
+     "persen": null,
+     "organisasi_id": "su_ed074ff5"
+    }
+   ],
+   "provinsi": "Sumatera Barat",
+   "wilayah_asli": "West Sumatra",
+   "kota": "Agam Regency",
+   "lat": -0.3112,
+   "lon": 100.1168,
+   "akurasi": "exact",
+   "gem_id": "G100001051496",
+   "lokasi_id": "L100001045714",
+   "url_wiki": "https://www.gem.wiki/Maninjau_hydroelectric_plant",
+   "diriset": "2025-03-11",
+   "lembar": "Data",
+   "teknologi_tipe": "conventional storage"
+  },
+  {
+   "nama": "Riam Kanan hydroelectric plant",
+   "nama_lain": "Pangeran Muhamad Nur",
+   "kapasitas_mw": 30,
+   "status": "operating",
+   "status_asli": "operating",
+   "tahun_mulai": 1973,
+   "pemilik": [
+    {
+     "nama": "PT PLN (Persero)",
+     "persen": null,
+     "organisasi_id": "su_ed074ff5"
+    }
+   ],
+   "provinsi": "Kalimantan Selatan",
+   "wilayah_asli": "South Kalimantan",
+   "lat": -3.5156,
+   "lon": 115.0074,
+   "akurasi": "exact",
+   "gem_id": "G100001062643",
+   "lokasi_id": "L100001054751",
+   "url_wiki": "https://www.gem.wiki/Riam_Kanan_hydroelectric_plant",
+   "diriset": "2025-12-09",
+   "lembar": "Data",
+   "teknologi_tipe": "unknown"
+  },
+  {
+   "nama": "Poso 4 hydroelectric plant",
+   "kapasitas_mw": 30,
+   "status": "announced",
+   "status_asli": "announced",
+   "pemilik": [
+    {
+     "nama": "PT Poso Energy",
+     "persen": null
+    }
+   ],
+   "provinsi": "Sulawesi Tengah",
+   "wilayah_asli": "Central Sulawesi",
+   "kota": "Poso Regency",
+   "lat": -1.697,
+   "lon": 120.6492,
+   "akurasi": "approximate",
+   "gem_id": "G100001073724",
+   "lokasi_id": "L100001064099",
+   "url_wiki": "https://www.gem.wiki/Poso_4_hydroelectric_plant",
+   "diriset": "2025-12-09",
+   "lembar": "Data",
+   "teknologi_tipe": "unknown"
+  },
+  {
+   "nama": "Kesamben hydroelectric plant",
+   "kapasitas_mw": 37,
+   "status": "operating",
+   "status_asli": "operating",
+   "tahun_mulai": 2019,
+   "provinsi": "Jawa Timur",
+   "wilayah_asli": "East Java",
+   "lat": -8.4525,
+   "lon": 114.2977,
+   "akurasi": "approximate",
+   "gem_id": "G100001073782",
+   "lokasi_id": "L100001064149",
+   "url_wiki": "https://www.gem.wiki/Kesamben_hydroelectric_plant",
+   "diriset": "2025-12-09",
+   "lembar": "Data",
+   "teknologi_tipe": "unknown"
+  },
+  {
+   "nama": "Tulungagung hydroelectric plant",
+   "kapasitas_mw": 36,
+   "status": "operating",
+   "status_asli": "operating",
+   "tahun_mulai": 1993,
+   "operator": [
+    {
+     "nama": "PT Pembangkitan Jawa Bali",
+     "persen": null
+    }
+   ],
+   "wilayah_asli": "Java",
+   "kota": "East Java",
+   "lat": -8.2535,
+   "lon": 111.7939,
+   "akurasi": "exact",
+   "gem_id": "G100001073789",
+   "lokasi_id": "L100001064154",
+   "url_wiki": "https://www.gem.wiki/Tulungagung_hydroelectric_plant",
+   "diriset": "2025-12-09",
+   "lembar": "Data",
+   "teknologi_tipe": "run-of-river"
+  },
+  {
+   "nama": "Hasang hydroelectric plant",
+   "kapasitas_mw": 40,
+   "status": "operating",
+   "status_asli": "operating",
+   "tahun_mulai": 2018,
+   "operator": [
+    {
+     "nama": "PT Binsar Natorang Energi",
+     "persen": null
+    }
+   ],
+   "provinsi": "Sumatera Utara",
+   "wilayah_asli": "North Sumatera",
+   "kota": "Toba Samosir Regency",
+   "lat": 2.298,
+   "lon": 99.4743,
+   "akurasi": "exact",
+   "gem_id": "G100001073793",
+   "lokasi_id": "L100001064159",
+   "url_wiki": "https://www.gem.wiki/Hasang_hydroelectric_plant",
+   "diriset": "2025-12-09",
+   "lembar": "Data",
+   "teknologi_tipe": "run-of-river"
+  },
+  {
+   "nama": "Poigar 2 hydroelectric plant",
+   "kapasitas_mw": 30,
+   "status": "operating",
+   "status_asli": "operating",
+   "tahun_mulai": 2019,
+   "provinsi": "Sulawesi Utara",
+   "wilayah_asli": "Sulawesi Utara",
+   "lat": 0.9701,
+   "lon": 124.3632,
+   "akurasi": "approximate",
+   "gem_id": "G100001073797",
+   "lokasi_id": "L100001064163",
+   "url_wiki": "https://www.gem.wiki/Poigar_2_hydroelectric_plant",
+   "diriset": "2025-12-09",
+   "lembar": "Data",
+   "teknologi_tipe": "unknown"
+  },
+  {
+   "nama": "Tanggari hydroelectric plant",
+   "kapasitas_mw": 37,
+   "status": "operating",
+   "status_asli": "operating",
+   "provinsi": "Sulawesi Utara",
+   "wilayah_asli": "Sulawesi Utara",
+   "kota": "North Sulawesi",
+   "lat": 1.3487,
+   "lon": 124.9234,
+   "akurasi": "exact",
+   "gem_id": "G100001073804",
+   "lokasi_id": "L100001064169",
+   "url_wiki": "https://www.gem.wiki/Tanggari_hydroelectric_plant",
+   "diriset": "2025-12-09",
+   "lembar": "Data",
+   "teknologi_tipe": "unknown"
+  },
+  {
+   "nama": "Batoq Kelo hydroelectric plant",
+   "kapasitas_mw": 300,
+   "status": "announced",
+   "status_asli": "announced",
+   "tahun_mulai": 2030,
+   "operator": [
+    {
+     "nama": "PT Tujuan Mulia Makmur",
+     "persen": null
+    }
+   ],
+   "provinsi": "Kalimantan Timur",
+   "wilayah_asli": "East Kalimantan",
+   "kota": "Mahakam Ulu",
+   "lat": 0.7009,
+   "lon": 115.1404,
+   "akurasi": "approximate",
+   "gem_id": "G100001073813",
+   "lokasi_id": "L100001064180",
+   "url_wiki": "https://www.gem.wiki/Batoq_Kelo_hydroelectric_plant",
+   "diriset": "2025-12-09",
+   "lembar": "Data",
+   "teknologi_tipe": "unknown"
+  }
+ ]
+}

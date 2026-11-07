@@ -1,6 +1,6 @@
 /* Profil provinsi (/wilayah?prov=XX): kepala ringan (lambang, nama, satu kalimat, strip angka) lalu seksi exhibit .jm-ex.
    Data: /data/wilayah.json (baris provinsi) + /data/wilayah/<kode>.json (berita, kalender, emisi, pakar). Nilai kosong = "-" berpetunjuk; seksi kosong disembunyikan. */
-import { esc, ikon } from "/inti/umum.js";
+import { esc, ikon, api } from "/inti/umum.js";
 import { t, tanggal, ada } from "/i18n.js";
 import { exHtml, unduhRegHtml } from "/inti/komponen.js";
 import { aksiHtml, hlHtml } from "/inti/aksi_ex.js";
@@ -263,14 +263,29 @@ function banding(data, p) {
   return seksi({ id: "banding", ikon: "tabel", topik: t("wp.ey.banding"), judulHtml: j, aksiHtml: aksiHtml({ csv: true }), isiHtml: tb, kakiHtml: `<p class="jm-bantu">${esc(t("wp.cat.banding"))}</p>` });
 }
 
+/* ---------- kartu METI Wilayah (hanya bila provinsi punya status selain "belum") ---------- */
+const ST_MW = { berdiri: "jm-pil jm-pil-ok", segera: "jm-pil", rencana: "jm-pil jm-pil-warn" };
+async function isiMetiWilayah(p) {
+  const el = document.getElementById("wp-meti");
+  if (!el) return;
+  try {
+    const w = (await api("/api/meti-wilayah/" + encodeURIComponent(p.kode))).wilayah;
+    if (!w || !ST_MW[w.status]) { el.remove(); return; }
+    const isi = dl([[t("mw.status"), `<span class="${ST_MW[w.status]}">${esc(t("mw.st." + w.status))}</span>`], [t("mw.ketua"), w.ketua ? esc(w.ketua) : '<span class="jm-wp-kos">-</span>'], [t("mw.sekretariat"), w.sekretariat ? esc(w.sekretariat) : '<span class="jm-wp-kos">-</span>']])
+      + `<p><a class="jm-tbl" href="/meti-wilayah/${esc(p.kode)}">${esc(t("mw.buka_profil"))}</a></p>`;
+    el.outerHTML = seksi({ id: "meti-wilayah", ikon: "wilayah", topik: t("mw.ey.kartu"), judulHtml: esc(t("mw.nama", { prov: p.nama })), isiHtml: isi });
+  } catch (e) { el.remove(); }
+}
+
 /* ---------- pasang ---------- */
 export async function profilProvinsi(p, data, $) {
   document.title = t("wl.profil_title", { nama: p.nama }); TGL = data.dibangun_pada;
   try { for (const r of (await muatData("regulasi.json")).baris) REG.set(r.id, r); } catch (e) { /* tautan sumber saja */ }
   let d = null;
   try { d = await muatData("wilayah/" + encodeURIComponent(p.kode) + ".json"); } catch (e) { /* bagian tambahan disembunyikan */ }
-  $("profil-isi").innerHTML = kepala(data, p) + [ringkasan(p), kelistrikan(p), potensi(p), rued(p), petaSeksi(p), proyek(p), organisasi(p), pakar(p, d), regulasi(p), emisi(p, d), berita(p, d), banding(data, p)].join("");
+  $("profil-isi").innerHTML = kepala(data, p) + [ringkasan(p), kelistrikan(p), potensi(p), rued(p), petaSeksi(p), proyek(p), organisasi(p), '<div id="wp-meti"></div>', pakar(p, d), regulasi(p), emisi(p, d), berita(p, d), banding(data, p)].join("");
   $("cara").innerHTML = `<p>${esc(t("wl.cara_profil"))}</p>`;
   pasangBar($("profil-isi")); petaMini(p);
+  isiMetiWilayah(p);
   bukaPeta(p);
 }

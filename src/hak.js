@@ -673,7 +673,6 @@ export const TOPIK_PESAN = ["umum", "koreksi", "keanggotaan", "kerja_sama", "wil
 export const STATUS_PESAN = ["baru", "dibalas", "selesai"];
 const bacaLampiran = (s) => { try { return s ? JSON.parse(s) : null; } catch { return null; } };
 const SEL_PESAN = "SELECT id, dari, isi, lampiran, waktu FROM pesan WHERE utas_id = ? ORDER BY waktu, rowid LIMIT 500";
-const jejakPesan = (env, akun, aksi, tabel, barisId, ringkas) => jejakAdm(env, akun, aksi, tabel, barisId, ringkas);
 
 export async function pesanDaftarSaya(env, akun) {
   gerbangMasuk(akun);
@@ -723,14 +722,14 @@ export async function pesanKirim(env, akun, { utasId, uid, topik, isi, lampiran 
         await env.DB.batch([
           env.DB.prepare("UPDATE pesan_utas SET status = 'baru', dibaca_admin = 0, dibaca_akun = 1, diubah = unixepoch() WHERE id = ? AND akun_id = ?").bind(utasId, akun.id),
           env.DB.prepare("INSERT INTO pesan (id, utas_id, dari, akun_id, isi, lampiran) VALUES (?, ?, 'akun', ?, ?, ?)").bind(pid, utasId, akun.id, isi, lamp),
-          jejakPesan(env, akun, "tambah", "pesan", pid, ket),
+          jejakAdm(env, akun, "tambah", "pesan", pid, ket),
         ]);
         return { ada: true, utas_id: utasId, id: pid };
       }
       await env.DB.batch([
         env.DB.prepare("INSERT INTO pesan_utas (id, akun_id, topik) VALUES (?, ?, ?)").bind(uid, akun.id, topik),
         env.DB.prepare("INSERT INTO pesan (id, utas_id, dari, akun_id, isi, lampiran) VALUES (?, ?, 'akun', ?, ?, ?)").bind(pid, uid, akun.id, isi, lamp),
-        jejakPesan(env, akun, "tambah", "pesan_utas", uid, ket),
+        jejakAdm(env, akun, "tambah", "pesan_utas", uid, ket),
       ]);
       return { ada: true, utas_id: uid, id: pid };
     } catch (e) { throw terjemah(e); }
@@ -783,7 +782,7 @@ export async function pesanAdminBalas(env, akun, utasId, { pid, isi, lampiran = 
       await env.DB.batch([
         env.DB.prepare("UPDATE pesan_utas SET status = 'dibalas', dibaca_admin = 1, dibaca_akun = 0, diubah = unixepoch() WHERE id = ?").bind(utasId),
         env.DB.prepare("INSERT INTO pesan (id, utas_id, dari, akun_id, isi, lampiran) VALUES (?, ?, 'admin', ?, ?, ?)").bind(pid, utasId, akun.id, isi, lampiran ? JSON.stringify(lampiran) : null),
-        jejakPesan(env, akun, "kirim", "pesan", pid, "balasan admin, " + isi.length + " karakter, utas " + utasId),
+        jejakAdm(env, akun, "kirim", "pesan", pid, "balasan admin, " + isi.length + " karakter, utas " + utasId),
       ]);
     } catch (e) { throw terjemah(e); }
     return { ada: true, id: pid };
@@ -820,6 +819,293 @@ export async function eventPeserta(env, akun, eventId, { unduh = false } = {}) {
     "SELECT d.id, d.akun_id, a.nama, a.surel, d.jumlah, d.instansi, d.telepon, d.catatan, d.status, d.waktu FROM event_daftar d JOIN akun a ON a.id = d.akun_id WHERE d.event_id = ? ORDER BY d.id").bind(String(eventId)).all();
   if (unduh) await jejakTulis(env, { siapa: akun.id, peran: p, aksi: "tinjau", tabel: "event_daftar", barisId: String(eventId).slice(0, 80) });
   return r.results;
+}
+
+/* ========================= METI Wilayah 0015 ========================= */
+// Semua akun masuk membaca status/profil (hanya kontak RESMI kantor; tidak ada kolom nomor pribadi). Tulis: akun masuk mengajukan, admin menyunting dan menyetujui tahap.
+// Hasil null = migrasi 0015 belum diterapkan (rute membalas 503).
+export const STATUS_MW = ["berdiri", "segera", "rencana", "belum"];
+export const TAHAP_MW = ["diajukan", "ditinjau", "sk_terbit", "pelantikan", "berdiri"];
+const KOLOM_MW = ["status", "ketua", "sekretaris", "bendahara", "sekretariat", "kontak_surel", "kontak_telp", "sk_nomor", "sk_tanggal", "masa_bakti", "tgl_pelantikan", "bidang", "sumber", "status_per"];
+const MW_PUBLIK = "kode_prov, status, ketua, sekretaris, bendahara, sekretariat, kontak_surel, kontak_telp, sk_nomor, sk_tanggal, masa_bakti, tgl_pelantikan, bidang, sumber, status_per, diubah";
+const BUKA_MW = "('diajukan','ditinjau','sk_terbit','pelantikan')";
+const urai = (s, bawaan) => { try { const v = JSON.parse(s); return v ?? bawaan; } catch { return bawaan; } };
+const bidangMw = (r) => { const b = urai(r.bidang, []); return { ...r, bidang: Array.isArray(b) ? b : [] }; };
+const jejakMw = (aksi, tabel, idSql, kondisi = "changes() > 0") =>
+  `INSERT INTO jejak (siapa, peran, aksi, tabel, baris_id, ke) SELECT ?, ?, '${aksi}', '${tabel}', ${idSql}, ? WHERE ${kondisi}`;
+const ringkasJ = (s) => JSON.stringify({ ringkas: String(s).slice(0, 300) });
+
+export async function metiWilayahDaftar(env, akun) {
+  gerbangMasuk(akun);
+  return tanpaTabel(async () => (await env.DB.prepare(`SELECT ${MW_PUBLIK} FROM meti_wilayah ORDER BY kode_prov`).all()).results.map(bidangMw));
+}
+export async function metiWilayahBaca(env, akun, kode) {
+  gerbangMasuk(akun);
+  return tanpaTabel(async () => {
+    const [r, a] = await env.DB.batch([
+      env.DB.prepare(`SELECT ${MW_PUBLIK} FROM meti_wilayah WHERE kode_prov = ?`).bind(kode),
+      env.DB.prepare("SELECT id, status, catatan, waktu, diubah, json_array_length(berkas) AS n_berkas FROM meti_wilayah_ajuan WHERE kode_prov = ? AND akun_id = ? ORDER BY id DESC LIMIT 5").bind(kode, akun.id),
+    ]);
+    return { wilayah: r.results[0] ? bidangMw(r.results[0]) : null, ajuan_saya: a.results };
+  });
+}
+// Satu ajuan terbuka per akun per provinsi, maks 3 terbuka per akun, tidak untuk provinsi yang sudah berdiri. null = tabel belum ada; false = ditolak aturan.
+export async function metiWilayahAjuanBaru(env, akun, { kode, isi }) {
+  gerbangMasuk(akun);
+  return tanpaTabel(async () => {
+    try {
+      const [ins] = await env.DB.batch([
+        env.DB.prepare(`INSERT INTO meti_wilayah_ajuan (kode_prov, akun_id, isi) SELECT ?1, ?2, ?3
+          WHERE NOT EXISTS (SELECT 1 FROM meti_wilayah WHERE kode_prov = ?1 AND status = 'berdiri')
+          AND NOT EXISTS (SELECT 1 FROM meti_wilayah_ajuan WHERE kode_prov = ?1 AND akun_id = ?2 AND status IN ${BUKA_MW})
+          AND (SELECT COUNT(*) FROM meti_wilayah_ajuan WHERE akun_id = ?2 AND status IN ${BUKA_MW}) < 3`).bind(kode, akun.id, JSON.stringify(isi)),
+        env.DB.prepare(jejakMw("tambah", "meti_wilayah_ajuan", "CAST(last_insert_rowid() AS TEXT)")).bind(akun.id, akun.peran, ringkasJ("ajuan METI Wilayah " + kode)),
+      ]);
+      return ins.meta.changes > 0 ? { id: ins.meta.last_row_id } : false;
+    } catch (e) { throw terjemah(e); }
+  });
+}
+export async function metiWilayahBerkasTambah(env, akun, id, meta) {
+  gerbangMasuk(akun);
+  return tanpaTabel(async () => {
+    try {
+      const [u] = await env.DB.batch([
+        env.DB.prepare(`UPDATE meti_wilayah_ajuan SET berkas = json_insert(berkas, '$[#]', json(?)), diubah = unixepoch()
+          WHERE id = ? AND akun_id = ? AND status IN ('diajukan','ditinjau') AND json_array_length(berkas) < 5`).bind(JSON.stringify(meta), id, akun.id),
+        env.DB.prepare(jejakMw("tambah", "meti_wilayah_ajuan", "?"))
+          .bind(akun.id, akun.peran, String(id), ringkasJ("berkas ajuan " + id)),
+      ]);
+      return u.meta.changes > 0;
+    } catch (e) { throw terjemah(e); }
+  });
+}
+// Pemilik atau admin. Admin dan pemilik melihat isi (memuat kontak pengaju); respons publik tidak pernah lewat sini.
+export async function metiWilayahAjuanBaca(env, akun, id) {
+  gerbangMasuk(akun);
+  const adm = ADM_HAK.includes(akun.peran);
+  return tanpaTabel(async () => {
+    const r = await env.DB.prepare("SELECT id, kode_prov, akun_id, isi, berkas, status, catatan, waktu, diubah FROM meti_wilayah_ajuan WHERE id = ?" + (adm ? "" : " AND akun_id = ?"))
+      .bind(...(adm ? [id] : [id, akun.id])).first();
+    return r ? { ...r, isi: urai(r.isi, {}), berkas: urai(r.berkas, []) } : false;
+  });
+}
+export async function metiWilayahAjuanSaya(env, akun) {
+  gerbangMasuk(akun);
+  return tanpaTabel(async () => (await env.DB.prepare("SELECT id, kode_prov, status, catatan, waktu, diubah, json_array_length(berkas) AS n_berkas FROM meti_wilayah_ajuan WHERE akun_id = ? ORDER BY id DESC LIMIT 20").bind(akun.id).all()).results);
+}
+export async function metiWilayahAdmin(env, akun) {
+  gerbangAdm(akun);
+  return tanpaTabel(async () => {
+    const [w, a] = await env.DB.batch([
+      env.DB.prepare(`SELECT ${MW_PUBLIK} FROM meti_wilayah ORDER BY kode_prov`),
+      env.DB.prepare("SELECT a.id, a.kode_prov, a.status, a.catatan, a.waktu, a.diubah, a.isi, a.berkas, a.akun_id, k.nama AS akun_nama, k.surel AS akun_surel FROM meti_wilayah_ajuan a LEFT JOIN akun k ON k.id = a.akun_id ORDER BY a.id DESC LIMIT 100"),
+    ]);
+    return { wilayah: w.results.map(bidangMw), ajuan: a.results.map((x) => ({ ...x, isi: urai(x.isi, {}), berkas: urai(x.berkas, []) })) };
+  });
+}
+// Sunting langsung oleh admin: hanya kolom daftar putih; nilai null mengosongkan. Jejak mencatat nama kolom, bukan isi.
+export async function metiWilayahUbah(env, akun, kode, data) {
+  gerbangAdm(akun);
+  const kol = Object.keys(data).filter((k) => KOLOM_MW.includes(k));
+  if (!kol.length) throw salah("tidak ada kolom sah");
+  if (data.status !== undefined && !STATUS_MW.includes(data.status)) throw salah("status tidak sah");
+  const nilai = kol.map((k) => (k === "bidang" ? JSON.stringify(data[k] ?? []) : data[k] ?? null));
+  return tanpaTabel(async () => {
+    try {
+      await env.DB.batch([
+        env.DB.prepare(`INSERT INTO meti_wilayah (kode_prov, ${kol.join(", ")}, diubah_oleh) VALUES (?, ${kol.map(() => "?").join(", ")}, ?)
+          ON CONFLICT (kode_prov) DO UPDATE SET ${kol.map((k) => `${k} = excluded.${k}`).join(", ")}, diubah = unixepoch(), diubah_oleh = excluded.diubah_oleh`).bind(kode, ...nilai, akun.id),
+        env.DB.prepare("INSERT INTO jejak (siapa, peran, aksi, tabel, baris_id, ke) VALUES (?, ?, 'ubah', 'meti_wilayah', ?, ?)").bind(akun.id, akun.peran, kode, JSON.stringify({ kolom: kol })),
+      ]);
+      return true;
+    } catch (e) { throw terjemah(e); }
+  });
+}
+const PERINGKAT = "(CASE %s WHEN 'berdiri' THEN 3 WHEN 'segera' THEN 2 WHEN 'rencana' THEN 1 ELSE 0 END)";
+const STATUS_TAHAP = { ditinjau: "rencana", sk_terbit: "segera", pelantikan: "segera", berdiri: "berdiri" };
+// Admin menyetujui tahap berikutnya (atau menolak). Atomik: semua pernyataan bersyarat pada status ajuan sebelumnya. true = pindah; false = status tak cocok.
+export async function metiWilayahTahap(env, akun, id, ke, d = {}) {
+  gerbangAdm(akun);
+  const ditolak = ke === "ditolak", urut = TAHAP_MW.indexOf(ke);
+  if (!ditolak && urut < 1) throw salah("tahap tidak sah");
+  const prev = ditolak ? null : TAHAP_MW[urut - 1], tgl = new Date().toISOString().slice(0, 10);
+  const syarat = ditolak ? `status IN ${BUKA_MW}` : "status = ?";
+  const ringkas = ringkasJ(`ajuan ${id}: ${ke}`);
+  const s = [];
+  if (!ditolak) {
+    const timpa = ke === "berdiri" ? 1 : 0, pilih = (k) => `CASE WHEN ?11 = 1 THEN COALESCE(excluded.${k}, meti_wilayah.${k}) ELSE COALESCE(meti_wilayah.${k}, excluded.${k}) END`;
+    s.push(env.DB.prepare(`INSERT INTO meti_wilayah (kode_prov, status, ketua, sekretaris, bendahara, sekretariat, bidang, sk_nomor, sk_tanggal, masa_bakti, tgl_pelantikan, sumber, status_per, diubah, diubah_oleh)
+      SELECT a.kode_prov, ?1, json_extract(a.isi, '$.ketua'), json_extract(a.isi, '$.sekretaris'), json_extract(a.isi, '$.bendahara'), json_extract(a.isi, '$.sekretariat'), COALESCE(json_extract(a.isi, '$.bidang'), '[]'),
+        ?2, ?3, ?4, ?5, ?6, ?7, unixepoch(), ?8 FROM meti_wilayah_ajuan a WHERE a.id = ?9 AND a.status = ?10
+      ON CONFLICT (kode_prov) DO UPDATE SET
+        status = CASE WHEN ${PERINGKAT.replace("%s", "excluded.status")} > ${PERINGKAT.replace("%s", "meti_wilayah.status")} THEN excluded.status ELSE meti_wilayah.status END,
+        ketua = ${pilih("ketua")}, sekretaris = ${pilih("sekretaris")}, bendahara = ${pilih("bendahara")}, sekretariat = ${pilih("sekretariat")},
+        bidang = CASE WHEN (?11 = 1 AND excluded.bidang <> '[]') OR meti_wilayah.bidang = '[]' THEN excluded.bidang ELSE meti_wilayah.bidang END,
+        sk_nomor = COALESCE(excluded.sk_nomor, meti_wilayah.sk_nomor), sk_tanggal = COALESCE(excluded.sk_tanggal, meti_wilayah.sk_tanggal),
+        masa_bakti = COALESCE(excluded.masa_bakti, meti_wilayah.masa_bakti), tgl_pelantikan = COALESCE(excluded.tgl_pelantikan, meti_wilayah.tgl_pelantikan),
+        sumber = excluded.sumber, status_per = excluded.status_per, diubah = unixepoch(), diubah_oleh = excluded.diubah_oleh`)
+      .bind(STATUS_TAHAP[ke], d.sk_nomor ?? null, d.sk_tanggal ?? null, d.masa_bakti ?? null, d.tgl_pelantikan ?? null, `Pengajuan ${id} disetujui admin (${ke})`, tgl, akun.id, id, prev, timpa));
+    s.push(env.DB.prepare("INSERT INTO jejak (siapa, peran, aksi, tabel, baris_id, ke) SELECT ?, ?, 'ubah', 'meti_wilayah', a.kode_prov, ? FROM meti_wilayah_ajuan a WHERE a.id = ? AND a.status = ? AND changes() > 0")
+      .bind(akun.id, akun.peran, ringkas, id, prev));
+  }
+  s.push(env.DB.prepare(`UPDATE meti_wilayah_ajuan SET status = ?, catatan = COALESCE(?, catatan), diubah = unixepoch() WHERE id = ? AND ${syarat}`).bind(ke, d.catatan ?? null, id, ...(ditolak ? [] : [prev])));
+  s.push(env.DB.prepare(jejakMw("tinjau", "meti_wilayah_ajuan", "?")).bind(akun.id, akun.peran, String(id), ringkas));
+  return tanpaTabel(async () => {
+    try { const r = await env.DB.batch(s); return r[r.length - 2].meta.changes > 0; } catch (e) { throw terjemah(e); }
+  });
+}
+
+/* ========================= KTA virtual 0017 ========================= */
+// Hasil null = migrasi 0017 belum diterapkan (rute membalas 503). Satu baris per anggota; jejak ikut satu batch dengan tulisnya.
+export const JENIS_KTA = ["individu", "utama", "biasa", "luar biasa", "kehormatan"];
+const KODE_KTA = { individu: "IND", utama: "UTM", biasa: "BSA", "luar biasa": "LBS", kehormatan: "KHR" };
+const KOLOM_KTA = "id, akun_id, anggota_id, nomor_kta, tahun_masuk, jenis, nama_cetak, instansi, berlaku_sampai, status, foto_kunci, bukti_kunci, nonce, dibuat, diubah, " +
+  "CASE WHEN status = 'aktif' AND berlaku_sampai IS NOT NULL AND berlaku_sampai < date('now') THEN 'kedaluwarsa' ELSE status END AS status_ef";
+const RE_TGL_KTA = /^\d{4}-\d{2}-\d{2}$/;
+const tglSah = (s) => RE_TGL_KTA.test(String(s)) && new Date(s + "T00:00:00Z").toISOString().slice(0, 10) === s;
+const jejakKta = (env, akun, aksi, barisId, ringkas, ip) =>
+  env.DB.prepare("INSERT INTO jejak (siapa, peran, aksi, tabel, baris_id, ke, ip_hash) VALUES (?, ?, ?, 'kta', ?, ?, ?)")
+    .bind(akun.id, akun.peran, aksi, barisId, JSON.stringify({ ringkas: String(ringkas).slice(0, 300) }), ip16(ip));
+// Nomor METI-<tahun masuk>-<jenis>-<urut 5 digit>: urut = maksimum tahun itu + 1, dihitung di dalam UPDATE (UNIQUE menjaga balapan).
+const SQL_NOMOR = "UPDATE kta SET nomor_kta = 'METI-' || tahun_masuk || '-' || ? || '-' || printf('%05d', (SELECT COALESCE(MAX(CAST(substr(k2.nomor_kta, -5) AS INTEGER)), 0) + 1 FROM kta k2 WHERE substr(k2.nomor_kta, 6, 4) = CAST(kta.tahun_masuk AS TEXT))) " +
+  "WHERE id = ? AND nomor_kta IS NULL AND tahun_masuk IS NOT NULL";
+
+// KTA milik akun sendiri (termasuk klaim tertunda); false bila belum ada, null bila migrasi 0017 belum diterapkan (juga untuk ktaBaca dan ktaPublik).
+export async function ktaSaya(env, akun) {
+  gerbangMasuk(akun);
+  return tanpaTabel(async () => (await env.DB.prepare(`SELECT ${KOLOM_KTA} FROM kta WHERE akun_id = ?`).bind(akun.id).first()) ?? false);
+}
+// Satu KTA menurut id: admin bebas, akun lain hanya miliknya.
+export async function ktaBaca(env, akun, id) {
+  gerbangMasuk(akun);
+  const adm = ADM_HAK.includes(akun.peran);
+  return tanpaTabel(async () => (await env.DB.prepare(`SELECT ${KOLOM_KTA} FROM kta WHERE id = ?${adm ? "" : " AND akun_id = ?"}`).bind(...(adm ? [id] : [id, akun.id])).first()) ?? false);
+}
+// Log penyuntingan anggota untuk pencarian klaim (nama saja yang keluar ke klien; penyaringan di rute).
+export async function ktaAnggotaLog(env, akun) {
+  gerbangMasuk(akun);
+  return tanpaTabel(async () => (await env.DB.prepare("SELECT id, anggota_id, aksi, data FROM anggota_ubah ORDER BY id LIMIT 5000").all()).results);
+}
+// Klaim keanggotaan: baris 'tertunda' milik akun. UNIQUE (akun, anggota) -> 409.
+export async function ktaAjukan(env, akun, { anggotaId, nama, instansi = null, jenis, nonce, ipHash = null }) {
+  gerbangMasuk(akun);
+  if (!JENIS_KTA.includes(jenis)) throw salah("jenis tidak sah");
+  return tanpaTabel(async () => {
+    try {
+      const [u] = await env.DB.batch([
+        env.DB.prepare("INSERT INTO kta (akun_id, anggota_id, jenis, nama_cetak, instansi, status, nonce) VALUES (?, ?, ?, ?, ?, 'tertunda', ?)").bind(akun.id, anggotaId, jenis, nama, instansi, nonce),
+        env.DB.prepare("INSERT INTO jejak (siapa, peran, aksi, tabel, baris_id, ke, ip_hash) VALUES (?, ?, 'tambah', 'kta', CAST(last_insert_rowid() AS TEXT), ?, ?)")
+          .bind(akun.id, akun.peran, JSON.stringify({ ringkas: "klaim keanggotaan " + anggotaId }), ip16(ipHash)),
+      ]);
+      return { id: u.meta.last_row_id };
+    } catch (e) { throw terjemah(e); }
+  });
+}
+// Foto atau bukti milik akun sendiri (kolom dari daftar tetap). null bila tak ada KTA yang boleh diubah.
+export async function ktaSetBerkas(env, akun, kolom, kunci) {
+  gerbangMasuk(akun);
+  if (!["foto_kunci", "bukti_kunci"].includes(kolom)) throw salah("kolom tidak sah");
+  return tanpaTabel(async () => {
+    const r = await env.DB.prepare(`UPDATE kta SET ${kolom} = ?, diubah = unixepoch() WHERE akun_id = ? AND status <> 'dicabut' RETURNING id`).bind(kunci, akun.id).first();
+    if (r) await jejakKta(env, akun, "ubah", String(r.id), kolom === "foto_kunci" ? "foto KTA" : "bukti klaim KTA").run();
+    return r?.id ?? null;
+  });
+}
+// Verifikasi publik: hanya kolom yang boleh tampil + nonce (untuk pencocokan token; rute tidak meneruskannya). Klaim tertunda = tak ada.
+export async function ktaPublik(env, id) {
+  return tanpaTabel(async () => (await env.DB.prepare(
+    "SELECT id, nama_cetak, jenis, berlaku_sampai, nonce, CASE WHEN status = 'aktif' AND berlaku_sampai IS NOT NULL AND berlaku_sampai < date('now') THEN 'kedaluwarsa' ELSE status END AS status_ef FROM kta WHERE id = ? AND status <> 'tertunda'")
+    .bind(id).first()) ?? false);
+}
+
+/* --- admin --- */
+const BATAS_KTA = 20000;
+// Semua baris KTA + nama/surel akun terkait. csv=true mencatat jejak 'kirim' (ekspor berisi data pribadi).
+export async function ktaDaftar(env, akun, { csv = false } = {}) {
+  gerbangAdm(akun);
+  return tanpaTabel(async () => {
+    const r = await env.DB.prepare(`SELECT k.id, k.akun_id, k.anggota_id, k.nomor_kta, k.tahun_masuk, k.jenis, k.nama_cetak, k.instansi, k.berlaku_sampai, k.status, k.foto_kunci IS NOT NULL AS ada_foto, k.bukti_kunci IS NOT NULL AS ada_bukti, k.dibuat, k.diubah,
+      CASE WHEN k.status = 'aktif' AND k.berlaku_sampai IS NOT NULL AND k.berlaku_sampai < date('now') THEN 'kedaluwarsa' ELSE k.status END AS status_ef, a.nama AS akun_nama, a.surel AS akun_surel
+      FROM kta k LEFT JOIN akun a ON a.id = k.akun_id ORDER BY k.id LIMIT ?`).bind(BATAS_KTA).all();
+    if (csv) await jejakKta(env, akun, "kirim", "csv", "unduh csv kta, " + r.results.length + " baris").run();
+    return r.results;
+  });
+}
+// Terbitkan (baru, atau terbitkan ulang yang dicabut/tertunda) untuk satu anggota. akunSurel opsional: kaitkan ke akun aktif itu.
+export async function ktaTerbit(env, akun, d) {
+  gerbangAdm(akun);
+  if (!JENIS_KTA.includes(d.jenis)) throw salah("jenis tidak sah");
+  if (!tglSah(d.berlaku_sampai)) throw salah("tanggal tidak sah");
+  return tanpaTabel(async () => {
+    let akunId = null;
+    if (d.akunSurel) {
+      akunId = (await env.DB.prepare("SELECT id FROM akun WHERE surel = ? AND status = 'aktif'").bind(String(d.akunSurel).trim().toLowerCase()).first())?.id;
+      if (!akunId) throw salah("akun tidak ditemukan");
+    }
+    const tahun = d.tahun_masuk ?? new Date().getUTCFullYear();
+    try {
+      const [, , , baca] = await env.DB.batch([
+        env.DB.prepare("INSERT INTO kta (akun_id, anggota_id, jenis, nama_cetak, instansi, berlaku_sampai, status, tahun_masuk, nonce) VALUES (?1, ?2, ?3, ?4, ?5, ?6, 'aktif', ?7, ?8) " +
+          "ON CONFLICT (anggota_id) DO UPDATE SET akun_id = COALESCE(excluded.akun_id, kta.akun_id), jenis = excluded.jenis, nama_cetak = excluded.nama_cetak, instansi = excluded.instansi, " +
+          "berlaku_sampai = excluded.berlaku_sampai, status = 'aktif', tahun_masuk = COALESCE(kta.tahun_masuk, excluded.tahun_masuk), diubah = unixepoch()")
+          .bind(akunId, d.anggotaId, d.jenis, d.nama, d.instansi ?? null, d.berlaku_sampai, tahun, d.nonce),
+        env.DB.prepare(SQL_NOMOR.replace("WHERE id = ?", "WHERE anggota_id = ?")).bind(KODE_KTA[d.jenis], d.anggotaId),
+        env.DB.prepare("INSERT INTO jejak (siapa, peran, aksi, tabel, baris_id, ke, ip_hash) SELECT ?, ?, 'tambah', 'kta', CAST(id AS TEXT), ?, ? FROM kta WHERE anggota_id = ?")
+          .bind(akun.id, akun.peran, JSON.stringify({ ringkas: "terbit " + d.jenis + " sampai " + d.berlaku_sampai }), ip16(d.ipHash), d.anggotaId),
+        env.DB.prepare("SELECT id, nomor_kta, akun_id FROM kta WHERE anggota_id = ?").bind(d.anggotaId),
+      ]);
+      return baca.results[0];
+    } catch (e) { throw terjemah(e); }
+  });
+}
+// aksi: setujui (klaim tertunda -> aktif, d: jenis, berlaku_sampai, nama?, instansi?), tolak (hapus klaim tertunda),
+// perpanjang (d: berlaku_sampai), cabut. { ok } false bila baris tak ada atau keadaannya tak cocok.
+export async function ktaAksi(env, akun, id, aksi, d = {}, ipHash = null) {
+  gerbangAdm(akun);
+  if (!["setujui", "tolak", "perpanjang", "cabut"].includes(aksi)) throw salah("aksi tidak dikenal");
+  if (["setujui", "perpanjang"].includes(aksi) && !tglSah(d.berlaku_sampai)) throw salah("tanggal tidak sah");
+  if (aksi === "setujui" && !JENIS_KTA.includes(d.jenis)) throw salah("jenis tidak sah");
+  const bid = String(id);
+  return tanpaTabel(async () => {
+    try {
+      if (aksi === "tolak") {
+        const [h] = await env.DB.batch([
+          env.DB.prepare("DELETE FROM kta WHERE id = ? AND status = 'tertunda' AND nomor_kta IS NULL").bind(id),
+          env.DB.prepare("INSERT INTO jejak (siapa, peran, aksi, tabel, baris_id, ke, ip_hash) SELECT ?, ?, 'hapus', 'kta', ?, ?, ? WHERE changes() > 0")
+            .bind(akun.id, akun.peran, bid, JSON.stringify({ ringkas: "klaim ditolak" }), ip16(ipHash)),
+        ]);
+        return { ok: h.meta.changes > 0 };
+      }
+      const p = {
+        setujui: ["UPDATE kta SET status = 'aktif', jenis = ?, berlaku_sampai = ?, nama_cetak = COALESCE(?, nama_cetak), instansi = COALESCE(?, instansi), tahun_masuk = COALESCE(tahun_masuk, ?), diubah = unixepoch() WHERE id = ? AND status = 'tertunda'",
+          [d.jenis, d.berlaku_sampai, d.nama ?? null, d.instansi ?? null, new Date().getUTCFullYear(), id], "tambah", "klaim disetujui sebagai " + d.jenis],
+        perpanjang: ["UPDATE kta SET berlaku_sampai = ?, diubah = unixepoch() WHERE id = ? AND status IN ('aktif','kedaluwarsa')", [d.berlaku_sampai, id], "ubah", "perpanjang sampai " + d.berlaku_sampai],
+        cabut: ["UPDATE kta SET status = 'dicabut', diubah = unixepoch() WHERE id = ? AND status <> 'dicabut'", [id], "cabut", "kta dicabut"],
+      }[aksi];
+      const s = [
+        env.DB.prepare(p[0]).bind(...p[1]),
+        env.DB.prepare("INSERT INTO jejak (siapa, peran, aksi, tabel, baris_id, ke, ip_hash) SELECT ?, ?, ?, 'kta', ?, ?, ? WHERE changes() > 0")
+          .bind(akun.id, akun.peran, p[2], bid, JSON.stringify({ ringkas: p[3] }), ip16(ipHash)),
+      ];
+      if (aksi === "setujui") s.push(env.DB.prepare(SQL_NOMOR).bind(KODE_KTA[d.jenis], id));
+      const [h] = await env.DB.batch(s);
+      return { ok: h.meta.changes > 0 };
+    } catch (e) { throw terjemah(e); }
+  });
+}
+// Atur masa berlaku massal: semua KTA aktif/kedaluwarsa (opsional satu jenis). Satu jejak berisi jumlah kartu.
+export async function ktaMasa(env, akun, { berlaku_sampai, jenis = null, ipHash = null }) {
+  gerbangAdm(akun);
+  if (!tglSah(berlaku_sampai)) throw salah("tanggal tidak sah");
+  if (jenis !== null && !JENIS_KTA.includes(jenis)) throw salah("jenis tidak sah");
+  return tanpaTabel(async () => {
+    const [h] = await env.DB.batch([
+      env.DB.prepare(`UPDATE kta SET berlaku_sampai = ?1, diubah = unixepoch() WHERE status IN ('aktif','kedaluwarsa')${jenis ? " AND jenis = ?2" : ""}`).bind(...(jenis ? [berlaku_sampai, jenis] : [berlaku_sampai])),
+      env.DB.prepare("INSERT INTO jejak (siapa, peran, aksi, tabel, baris_id, ke, ip_hash) VALUES (?, ?, 'ubah', 'kta', 'massal', json_object('ringkas', 'masa berlaku massal sampai ' || ? || ', ' || changes() || ' kartu'), ?)")
+        .bind(akun.id, akun.peran, berlaku_sampai, ip16(ipHash)),
+    ]);
+    return { diubah: h.meta.changes };
+  });
 }
 
 /* ========================================= sistem (tanpa peran) =================================== */
@@ -933,6 +1219,157 @@ export async function sapu(env, sekarang = kini()) {
 export async function rehashSandi(env, akunId, hash, garam, iterasi) {
   await env.DB.prepare("UPDATE akun SET sandi = ?, garam = ?, iterasi = ? WHERE id = ? AND status = 'aktif'").bind(hash, garam, iterasi, akunId).run();
 }
+/* ========================= Profil saya 0018: profil sendiri + lihat profil anggota lain sesuai privasi ========================= */
+// Akun hanya menulis profil/riwayat/foto miliknya (akun_id selalu dari sesi, tak pernah dari badan). Anggota lain hanya melihat bagian yang diizinkan
+// pemiliknya ("semua"); admin dan super melihat semuanya. Hasil null = migrasi 0018 belum diterapkan (rute membalas 503). Jejak hanya memuat NAMA bidang yang berubah (K20).
+export const BAGIAN_PRIVASI = ["foto", "pekerjaan", "lokasi", "bio", "keahlian", "tautan", "riwayat", "kontak"];
+const PRIVASI_BAWAAN = { foto: "semua", pekerjaan: "semua", lokasi: "semua", bio: "semua", keahlian: "semua", tautan: "semua", riwayat: "semua", kontak: "admin" };
+export const JENIS_RIWAYAT = ["pendidikan", "pengalaman", "sertifikasi", "publikasi"];
+export const MAKS_RIWAYAT = 15; // per jenis
+const KOLOM_PROFIL = ["gelar", "jabatan", "instansi", "organisasi_id", "kota", "kode_prov", "bio", "telepon"];
+const uraiP = (s, bawaan) => { try { const v = JSON.parse(s); return v && typeof v === "object" ? v : bawaan; } catch { return bawaan; } };
+const privasiPenuh = (s) => ({ ...PRIVASI_BAWAAN, ...Object.fromEntries(Object.entries(uraiP(s, {})).filter(([k, v]) => k in PRIVASI_BAWAAN && (v === "semua" || v === "admin"))) });
+
+// Satu profil: { ada:false } bila akun tak ada/nonaktif. Bidang yang tak boleh dilihat peminta TIDAK ikut dikirim (bukan disamarkan).
+export async function profilBaca(env, akun, id) {
+  gerbangMasuk(akun);
+  return tanpaTabel(async () => {
+    const a = await env.DB.prepare("SELECT id, nama, surel, peran FROM akun WHERE id = ? AND status = 'aktif'").bind(id).first();
+    if (!a) return { ada: false };
+    const [p, r] = await env.DB.batch([
+      env.DB.prepare("SELECT * FROM profil WHERE akun_id = ?").bind(id),
+      env.DB.prepare("SELECT id, jenis, isi FROM profil_riwayat WHERE akun_id = ? ORDER BY jenis, urut, id").bind(id),
+    ]);
+    const row = p.results[0] ?? null;
+    const kta = await tanpaTabel(() => env.DB.prepare("SELECT jenis, tahun_masuk, nomor_kta FROM kta WHERE akun_id = ? AND status = 'aktif'").bind(id).first());
+    const asal = row ?? (await tanpaTabel(() => env.DB.prepare("SELECT instansi, telepon FROM akun_profil WHERE akun_id = ?").bind(id).first())) ?? {};
+    const diri = a.id === akun.id, penuh = diri || ADM_HAK.includes(akun.peran);
+    const pv = privasiPenuh(row?.privasi);
+    const lihat = (b) => penuh || pv[b] === "semua";
+    const o = { ada: true, id: a.id, nama: a.nama, diri, lengkap: penuh, kta: kta ? { jenis: kta.jenis, tahun_masuk: kta.tahun_masuk, ...(penuh ? { nomor: kta.nomor_kta } : {}) } : null };
+    if (lihat("foto")) o.foto = row?.foto_kunci ? row.diubah : null;
+    if (lihat("pekerjaan")) Object.assign(o, { gelar: row?.gelar ?? null, jabatan: row?.jabatan ?? null, instansi: asal.instansi ?? null, organisasi_id: row?.organisasi_id ?? null });
+    if (lihat("lokasi")) Object.assign(o, { kota: row?.kota ?? null, kode_prov: row?.kode_prov ?? null });
+    if (lihat("bio")) o.bio = row?.bio ?? null;
+    if (lihat("keahlian")) o.keahlian = uraiP(row?.keahlian, []);
+    if (lihat("tautan")) o.tautan = uraiP(row?.tautan, {});
+    if (lihat("kontak")) o.kontak = { surel: a.surel, telepon: asal.telepon ?? null };
+    if (lihat("riwayat")) {
+      o.riwayat = Object.fromEntries(JENIS_RIWAYAT.map((j) => [j, []]));
+      for (const x of r.results) o.riwayat[x.jenis]?.push({ id: x.id, ...uraiP(x.isi, {}) });
+    }
+    if (penuh) { o.privasi = pv; o.peran = a.peran; }
+    return o;
+  });
+}
+
+// d = kunci sah saja (rute memvalidasi). Gabung ke baris lama lalu tulis utuh; instansi dan telepon disalin ke akun_profil (Pustaka) bila ikut berubah.
+export async function profilSimpan(env, akun, d) {
+  gerbangMasuk(akun);
+  return tanpaTabel(async () => {
+    const lama = await env.DB.prepare("SELECT * FROM profil WHERE akun_id = ?").bind(akun.id).first();
+    const dasar = lama ?? (await tanpaTabel(() => env.DB.prepare("SELECT instansi, telepon FROM akun_profil WHERE akun_id = ?").bind(akun.id).first())) ?? {};
+    const b = { ...dasar, ...d };
+    const kunci = Object.keys(d);
+    const privasi = JSON.stringify(privasiPenuh(JSON.stringify({ ...uraiP(lama?.privasi, {}), ...(d.privasi ?? {}) })));
+    const js = (v, bawaan) => JSON.stringify(typeof v === "string" ? uraiP(v, bawaan) : v ?? bawaan); // baris lama = teks JSON, masukan baru = objek
+    const nilai = [...KOLOM_PROFIL.map((k) => b[k] ?? null), js(b.keahlian, []), js(b.tautan, {}), privasi];
+    const upsert = env.DB.prepare(
+      "INSERT INTO profil (akun_id, " + KOLOM_PROFIL.join(", ") + ", keahlian, tautan, privasi, diubah) VALUES (?, " + "?, ".repeat(KOLOM_PROFIL.length + 3) + "unixepoch()) " +
+      "ON CONFLICT (akun_id) DO UPDATE SET " + [...KOLOM_PROFIL, "keahlian", "tautan", "privasi"].map((k) => `${k} = excluded.${k}`).join(", ") + ", diubah = unixepoch()").bind(akun.id, ...nilai);
+    const jej = jejakAdm(env, akun, "ubah", "profil", akun.id, "ubah profil: " + kunci.join(","));
+    const salin = ("instansi" in d || "telepon" in d)
+      ? env.DB.prepare("INSERT INTO akun_profil (akun_id, instansi, telepon, diubah) VALUES (?, ?, ?, unixepoch()) ON CONFLICT (akun_id) DO UPDATE SET instansi = excluded.instansi, telepon = excluded.telepon, diubah = unixepoch()")
+        .bind(akun.id, b.instansi ? String(b.instansi).slice(0, 120) : null, b.telepon ?? null)
+      : null;
+    try { await env.DB.batch(salin ? [upsert, salin, jej] : [upsert, jej]); }
+    catch (e) {
+      if (salin && /akun_profil/.test(String(e?.message) + String(e?.cause?.message))) await env.DB.batch([upsert, jej]); // migrasi 0012 belum ada: lewati salinan
+      else throw terjemah(e);
+    }
+    return { ok: true };
+  });
+}
+
+// Siapa boleh melihat foto id: dirinya, admin, atau bila bagian "foto" bernilai "semua". { ada:false } bila tak boleh/tak ada (404 tak membedakan).
+export async function profilFotoKunci(env, akun, id) {
+  gerbangMasuk(akun);
+  return tanpaTabel(async () => {
+    const r = await env.DB.prepare("SELECT p.foto_kunci, p.privasi, p.diubah FROM profil p JOIN akun a ON a.id = p.akun_id WHERE p.akun_id = ? AND a.status = 'aktif'").bind(id).first();
+    if (!r?.foto_kunci) return { ada: false };
+    if (!(id === akun.id || ADM_HAK.includes(akun.peran) || privasiPenuh(r.privasi).foto === "semua")) return { ada: false };
+    return { ada: true, kunci: r.foto_kunci, v: r.diubah };
+  });
+}
+
+export async function profilFotoSet(env, akun, kunci) {
+  gerbangMasuk(akun);
+  return tanpaTabel(async () => {
+    try {
+      await env.DB.batch([
+        env.DB.prepare("INSERT INTO profil (akun_id, foto_kunci) VALUES (?, ?) ON CONFLICT (akun_id) DO UPDATE SET foto_kunci = excluded.foto_kunci, diubah = unixepoch()").bind(akun.id, kunci),
+        jejakAdm(env, akun, "ubah", "profil", akun.id, kunci ? "ganti foto profil" : "hapus foto profil"),
+      ]);
+    } catch (e) { throw terjemah(e); }
+    return { ok: true };
+  });
+}
+
+export async function profilRiwayatTambah(env, akun, jenis, isi) {
+  gerbangMasuk(akun);
+  if (!JENIS_RIWAYAT.includes(jenis)) throw salah("jenis riwayat tidak sah");
+  return tanpaTabel(async () => {
+    const n = await env.DB.prepare("SELECT COUNT(*) AS n FROM profil_riwayat WHERE akun_id = ? AND jenis = ?").bind(akun.id, jenis).first();
+    if (n.n >= MAKS_RIWAYAT) throw mk("konflik", 409, "riwayat penuh");
+    try {
+      const [r] = await env.DB.batch([
+        env.DB.prepare("INSERT INTO profil_riwayat (akun_id, jenis, isi, urut) VALUES (?, ?, ?, (SELECT COALESCE(MAX(urut), 0) + 1 FROM profil_riwayat WHERE akun_id = ? AND jenis = ?))").bind(akun.id, jenis, JSON.stringify(isi), akun.id, jenis),
+        jejakAdm(env, akun, "tambah", "profil_riwayat", akun.id, "tambah riwayat " + jenis),
+      ]);
+      return { ada: true, id: r.meta.last_row_id };
+    } catch (e) { throw terjemah(e); }
+  });
+}
+
+export async function profilRiwayatUbah(env, akun, rid, jenis, isi) {
+  gerbangMasuk(akun);
+  return tanpaTabel(async () => {
+    try {
+      const [r] = await env.DB.batch([
+        env.DB.prepare("UPDATE profil_riwayat SET isi = ?, diubah = unixepoch() WHERE id = ? AND akun_id = ? AND jenis = ?").bind(JSON.stringify(isi), rid, akun.id, jenis),
+        jejakAdm(env, akun, "ubah", "profil_riwayat", akun.id, "ubah riwayat"),
+      ]);
+      return { ada: r.meta.changes === 1 };
+    } catch (e) { throw terjemah(e); }
+  });
+}
+
+export async function profilRiwayatHapus(env, akun, rid) {
+  gerbangMasuk(akun);
+  return tanpaTabel(async () => {
+    const [r] = await env.DB.batch([
+      env.DB.prepare("DELETE FROM profil_riwayat WHERE id = ? AND akun_id = ?").bind(rid, akun.id),
+      jejakAdm(env, akun, "hapus", "profil_riwayat", akun.id, "hapus riwayat"),
+    ]);
+    return { ada: r.meta.changes === 1 };
+  });
+}
+
+// Sesi aktif milik sendiri (tanpa hash; hanya penanda "perangkat ini") dan cabut semua sesi lain.
+export async function sesiSayaDaftar(env, akun, idHashIni) {
+  gerbangMasuk(akun);
+  const r = await env.DB.prepare("SELECT id_hash, dibuat, sampai FROM sesi WHERE akun_id = ? AND sampai > ? ORDER BY dibuat DESC LIMIT 20").bind(akun.id, kini()).all();
+  return r.results.map((s) => ({ ini: s.id_hash === idHashIni, dibuat: s.dibuat, sampai: s.sampai }));
+}
+export async function sesiSayaCabutLain(env, akun, idHashIni) {
+  gerbangMasuk(akun);
+  const [r] = await env.DB.batch([
+    env.DB.prepare("DELETE FROM sesi WHERE akun_id = ? AND id_hash <> ?").bind(akun.id, idHashIni),
+    jejakAdm(env, akun, "cabut", "sesi", akun.id, "keluar dari perangkat lain"),
+  ]);
+  return { dicabut: r.meta.changes };
+}
+
 export const ping = async (env) => (await env.DB.prepare("SELECT 1 AS ok").first()).ok === 1;
 
 export const sistem = { cariAkunUntukMasuk, catatSesi, bacaSesi, akunAktif, hapusSesi, catatLaju, periksaTautanAktivasi, pakaiTautanAktivasi, ubahSandi, rehashSandi, jejakTulis, sapu, ping };

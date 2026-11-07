@@ -1,0 +1,3580 @@
+{
+ "sumber": "Global Geothermal Power Tracker",
+ "rilis": "2026-03",
+ "halaman": "https://globalenergymonitor.org/projects/global-geothermal-power-tracker/",
+ "lisensi": "CC BY 4.0",
+ "atribusi": "Global Energy Monitor, Global Geothermal Power Tracker, 2026-03, CC BY 4.0; diunduh pemilik, diolah METI 2026-11-08",
+ "berkas_asal": "Geothermal-Power-Tracker-March-2026-Final.xlsx",
+ "baris_dunia": 835,
+ "jumlah": 119,
+ "baris": [
+  {
+   "nama": "Arrow Lampung geothermal power plant",
+   "kapasitas_mw": 50,
+   "status": "cancelled",
+   "status_asli": "cancelled - inferred 4 y",
+   "pemilik": [
+    {
+     "nama": "Arrow Resources Development",
+     "persen": 100
+    }
+   ],
+   "operator": [
+    {
+     "nama": "Arrow Resources Development",
+     "persen": null
+    }
+   ],
+   "provinsi": "Lampung",
+   "wilayah_asli": "Lampung",
+   "lat": -4.5846,
+   "lon": 105.3231,
+   "akurasi": "approximate",
+   "gem_id": "G100000700009",
+   "lokasi_id": "L100000700005",
+   "url_wiki": "https://www.gem.wiki/Arrow_Lampung_geothermal_power_plant",
+   "diriset": "2025-11-18",
+   "lembar": "Data",
+   "teknologi_tipe": "unknown type"
+  },
+  {
+   "nama": "Banten geothermal power plant",
+   "nama_lokal": "Pembangkit Listrik Tenaga Panas Bumi Banten",
+   "nama_lain": "Banten Prospect",
+   "kapasitas_mw": 110,
+   "status": "shelved",
+   "status_asli": "shelved",
+   "pemilik": [
+    {
+     "nama": "PT Sintesa Green Energy",
+     "persen": 100
+    }
+   ],
+   "operator": [
+    {
+     "nama": "PT Sintesa Green Energy",
+     "persen": null
+    }
+   ],
+   "provinsi": "Banten",
+   "wilayah_asli": "Banten",
+   "kota": "Pandeglang Regency",
+   "lat": -6.326,
+   "lon": 106.1161,
+   "akurasi": "approximate",
+   "gem_id": "G100000700013",
+   "lokasi_id": "L100000700008",
+   "url_wiki": "https://www.gem.wiki/Banten_geothermal_power_plant",
+   "diriset": "2025-11-18",
+   "lembar": "Data",
+   "teknologi_tipe": "unknown type"
+  },
+  {
+   "nama": "Blawan Ijen geothermal project",
+   "fase": "1.0",
+   "nama_lain": "East Java geothermal plant, Ijen geothermal power plant",
+   "kapasitas_mw": 34,
+   "status": "operating",
+   "status_asli": "operating",
+   "tahun_mulai": 2025,
+   "pemilik": [
+    {
+     "nama": "PT Medco Power Indonesia",
+     "persen": 51,
+     "organisasi_id": "p_27ae5a4203"
+    },
+    {
+     "nama": "Ormat Technology Inc",
+     "persen": 49
+    }
+   ],
+   "operator": [
+    {
+     "nama": "PT Medco Power Indonesia",
+     "persen": null,
+     "organisasi_id": "p_27ae5a4203"
+    }
+   ],
+   "provinsi": "Jawa Timur",
+   "wilayah_asli": "East Java",
+   "kota": "Blawan Ijen",
+   "lat": -7.9768,
+   "lon": 114.1883,
+   "akurasi": "approximate",
+   "gem_id": "G100000700022",
+   "lokasi_id": "L100000700014",
+   "url_wiki": "https://www.gem.wiki/Blawan_Ijen_geothermal_project",
+   "diriset": "2025-02-11",
+   "lembar": "Data",
+   "teknologi_tipe": "unknown type"
+  },
+  {
+   "nama": "Blawan Ijen geothermal project",
+   "fase": "2.0",
+   "nama_lain": "East Java geothermal plant, Ijen geothermal power plant",
+   "kapasitas_mw": 30,
+   "status": "pre-construction",
+   "status_asli": "pre-construction",
+   "tahun_mulai": 2026,
+   "pemilik": [
+    {
+     "nama": "PT Medco Power Indonesia",
+     "persen": 51,
+     "organisasi_id": "p_27ae5a4203"
+    },
+    {
+     "nama": "Ormat Technology Inc",
+     "persen": 49
+    }
+   ],
+   "operator": [
+    {
+     "nama": "PT Medco Power Indonesia",
+     "persen": null,
+     "organisasi_id": "p_27ae5a4203"
+    }
+   ],
+   "provinsi": "Jawa Timur",
+   "wilayah_asli": "East Java",
+   "kota": "Blawan Ijen",
+   "lat": -7.9735,
+   "lon": 114.1708,
+   "akurasi": "approximate",
+   "gem_id": "G100000700023",
+   "lokasi_id": "L100000700014",
+   "url_wiki": "https://www.gem.wiki/Blawan_Ijen_geothermal_project",
+   "diriset": "2025-11-18",
+   "lembar": "Data",
+   "teknologi_tipe": "unknown type"
+  },
+  {
+   "nama": "Darajat geothermal power plant",
+   "fase": "1.0",
+   "nama_lain": "Darajat Pln Geothermal Plant, Darajat Ceti II & III Geothermal Power Plant",
+   "kapasitas_mw": 55,
+   "status": "operating",
+   "status_asli": "operating",
+   "tahun_mulai": 1994,
+   "pemilik": [
+    {
+     "nama": "Star Energy Geothermal",
+     "persen": 100,
+     "organisasi_id": "p_7a803f3b71"
+    }
+   ],
+   "provinsi": "Jawa Barat",
+   "wilayah_asli": "West Java",
+   "kota": "Garut Regency",
+   "lat": -7.2173,
+   "lon": 107.7394,
+   "akurasi": "exact",
+   "gem_id": "G100000700056",
+   "lokasi_id": "L100000700037",
+   "url_wiki": "https://www.gem.wiki/Darajat_geothermal_power_plant",
+   "diriset": "2023-05-08",
+   "lembar": "Data",
+   "teknologi_tipe": "dry steam"
+  },
+  {
+   "nama": "Darajat geothermal power plant",
+   "fase": "2.0",
+   "nama_lain": "Darajat Pln Geothermal Plant, Darajat Ceti II & III Geothermal Power Plant",
+   "kapasitas_mw": 90,
+   "status": "operating",
+   "status_asli": "operating",
+   "tahun_mulai": 2000,
+   "pemilik": [
+    {
+     "nama": "Star Energy Geothermal",
+     "persen": 100,
+     "organisasi_id": "p_7a803f3b71"
+    }
+   ],
+   "operator": [
+    {
+     "nama": "Star Energy Geothermal",
+     "persen": null,
+     "organisasi_id": "p_7a803f3b71"
+    }
+   ],
+   "provinsi": "Jawa Barat",
+   "wilayah_asli": "West Java",
+   "kota": "Garut Regency",
+   "lat": -7.2173,
+   "lon": 107.7394,
+   "akurasi": "exact",
+   "gem_id": "G100000700057",
+   "lokasi_id": "L100000700037",
+   "url_wiki": "https://www.gem.wiki/Darajat_geothermal_power_plant",
+   "diriset": "2023-05-08",
+   "lembar": "Data",
+   "teknologi_tipe": "unknown type"
+  },
+  {
+   "nama": "Darajat geothermal power plant",
+   "fase": "3.0",
+   "nama_lain": "Darajat Pln Geothermal Plant, Darajat Ceti II & III Geothermal Power Plant",
+   "kapasitas_mw": 129,
+   "status": "operating",
+   "status_asli": "operating",
+   "tahun_mulai": 2009,
+   "pemilik": [
+    {
+     "nama": "Star Energy Geothermal",
+     "persen": 100,
+     "organisasi_id": "p_7a803f3b71"
+    }
+   ],
+   "operator": [
+    {
+     "nama": "Star Energy Geothermal",
+     "persen": null,
+     "organisasi_id": "p_7a803f3b71"
+    }
+   ],
+   "provinsi": "Jawa Barat",
+   "wilayah_asli": "West Java",
+   "kota": "Garut Regency",
+   "lat": -7.2173,
+   "lon": 107.7394,
+   "akurasi": "exact",
+   "gem_id": "G100000700058",
+   "lokasi_id": "L100000700037",
+   "url_wiki": "https://www.gem.wiki/Darajat_geothermal_power_plant",
+   "diriset": "2023-05-08",
+   "lembar": "Data",
+   "teknologi_tipe": "unknown type"
+  },
+  {
+   "nama": "Dieng geothermal power plant",
+   "fase": "1.0",
+   "nama_lokal": "Pembangkit Listrik Tenaga Uap Dieng",
+   "kapasitas_mw": 60,
+   "status": "operating",
+   "status_asli": "operating",
+   "tahun_mulai": 1998,
+   "pemilik": [
+    {
+     "nama": "PT Geo Dipa Energi (GDE)",
+     "persen": 100
+    }
+   ],
+   "operator": [
+    {
+     "nama": "PT Geo Dipa Energi (GDE)",
+     "persen": null
+    }
+   ],
+   "provinsi": "Jawa Tengah",
+   "wilayah_asli": "Central Java",
+   "lat": -7.2261,
+   "lon": 109.8975,
+   "akurasi": "exact",
+   "gem_id": "G100000700061",
+   "lokasi_id": "L100000700040",
+   "url_wiki": "https://www.gem.wiki/Dieng_geothermal_power_plant",
+   "diriset": "2023-05-08",
+   "lembar": "Data",
+   "teknologi_tipe": "flash steam - single"
+  },
+  {
+   "nama": "Dieng geothermal power plant",
+   "fase": "2.0",
+   "nama_lokal": "Pembangkit Listrik Tenaga Uap Dieng",
+   "kapasitas_mw": 55,
+   "status": "construction",
+   "status_asli": "construction",
+   "tahun_mulai": 2027,
+   "pemilik": [
+    {
+     "nama": "PT Geo Dipa Energi (GDE)",
+     "persen": 100
+    }
+   ],
+   "operator": [
+    {
+     "nama": "PT Geo Dipa Energi (GDE)",
+     "persen": null
+    }
+   ],
+   "provinsi": "Jawa Tengah",
+   "wilayah_asli": "Central Java",
+   "lat": -7.2261,
+   "lon": 109.8975,
+   "akurasi": "exact",
+   "gem_id": "G100000700062",
+   "lokasi_id": "L100000700040",
+   "url_wiki": "https://www.gem.wiki/Dieng_geothermal_power_plant",
+   "diriset": "2025-11-18",
+   "lembar": "Data",
+   "teknologi_tipe": "unknown type"
+  },
+  {
+   "nama": "Dieng geothermal power plant",
+   "fase": "3.0",
+   "nama_lokal": "Pembangkit Listrik Tenaga Uap Dieng",
+   "kapasitas_mw": 55,
+   "status": "pre-construction",
+   "status_asli": "pre-construction",
+   "tahun_mulai": 2030,
+   "pemilik": [
+    {
+     "nama": "PT Geo Dipa Energi (GDE)",
+     "persen": 100
+    }
+   ],
+   "operator": [
+    {
+     "nama": "PT Geo Dipa Energi (GDE)",
+     "persen": null
+    }
+   ],
+   "provinsi": "Jawa Tengah",
+   "wilayah_asli": "Central Java",
+   "lat": -7.2261,
+   "lon": 109.8975,
+   "akurasi": "exact",
+   "gem_id": "G100000700063",
+   "lokasi_id": "L100000700040",
+   "url_wiki": "https://www.gem.wiki/Dieng_geothermal_power_plant",
+   "diriset": "2025-11-18",
+   "lembar": "Data",
+   "teknologi_tipe": "unknown type"
+  },
+  {
+   "nama": "Dieng geothermal power plant",
+   "fase": "4.0",
+   "nama_lokal": "Pembangkit Listrik Tenaga Uap Dieng",
+   "kapasitas_mw": 55,
+   "status": "announced",
+   "status_asli": "announced",
+   "tahun_mulai": 2030,
+   "pemilik": [
+    {
+     "nama": "PT Geo Dipa Energi (GDE)",
+     "persen": 100
+    }
+   ],
+   "operator": [
+    {
+     "nama": "PT Geo Dipa Energi (GDE)",
+     "persen": null
+    }
+   ],
+   "provinsi": "Jawa Tengah",
+   "wilayah_asli": "Central Java",
+   "lat": -7.2261,
+   "lon": 109.8975,
+   "akurasi": "exact",
+   "gem_id": "G100000700064",
+   "lokasi_id": "L100000700040",
+   "url_wiki": "https://www.gem.wiki/Dieng_geothermal_power_plant",
+   "diriset": "2025-11-18",
+   "lembar": "Data",
+   "teknologi_tipe": "unknown type"
+  },
+  {
+   "nama": "Gunung Salak geothermal power plant",
+   "fase": "1.0",
+   "kapasitas_mw": 55,
+   "status": "operating",
+   "status_asli": "operating",
+   "tahun_mulai": 1994,
+   "pemilik": [
+    {
+     "nama": "Electricity Generating PCL",
+     "persen": null
+    },
+    {
+     "nama": "AC Energy and Infrastructure Corp",
+     "persen": 19
+    },
+    {
+     "nama": "Star Energy Geothermal",
+     "persen": null,
+     "organisasi_id": "p_7a803f3b71"
+    },
+    {
+     "nama": "Star Energy Group PLC",
+     "persen": null
+    }
+   ],
+   "operator": [
+    {
+     "nama": "Kamojang POMU",
+     "persen": null
+    }
+   ],
+   "provinsi": "Jawa Barat",
+   "wilayah_asli": "West Java",
+   "kota": "Bogor Regency",
+   "lat": -6.7416,
+   "lon": 106.648,
+   "akurasi": "exact",
+   "gem_id": "G100000700087",
+   "lokasi_id": "L100000700058",
+   "url_wiki": "https://www.gem.wiki/Gunung_Salak_geothermal_power_plant",
+   "diriset": "2024-04-10",
+   "lembar": "Data",
+   "teknologi_tipe": "flash steam - single"
+  },
+  {
+   "nama": "Gunung Salak geothermal power plant",
+   "fase": "2.0",
+   "kapasitas_mw": 55,
+   "status": "operating",
+   "status_asli": "operating",
+   "tahun_mulai": 1994,
+   "pemilik": [
+    {
+     "nama": "Electricity Generating PCL",
+     "persen": null
+    },
+    {
+     "nama": "AC Energy and Infrastructure Corp",
+     "persen": 19
+    },
+    {
+     "nama": "Star Energy Geothermal",
+     "persen": null,
+     "organisasi_id": "p_7a803f3b71"
+    },
+    {
+     "nama": "Star Energy Group PLC",
+     "persen": null
+    }
+   ],
+   "operator": [
+    {
+     "nama": "Kamojang POMU",
+     "persen": null
+    }
+   ],
+   "provinsi": "Jawa Barat",
+   "wilayah_asli": "West Java",
+   "kota": "Bogor Regency",
+   "lat": -6.7416,
+   "lon": 106.648,
+   "akurasi": "exact",
+   "gem_id": "G100000700088",
+   "lokasi_id": "L100000700058",
+   "url_wiki": "https://www.gem.wiki/Gunung_Salak_geothermal_power_plant",
+   "diriset": "2024-04-10",
+   "lembar": "Data",
+   "teknologi_tipe": "flash steam - single"
+  },
+  {
+   "nama": "Gunung Salak geothermal power plant",
+   "fase": "3.0",
+   "kapasitas_mw": 55,
+   "status": "operating",
+   "status_asli": "operating",
+   "pemilik": [
+    {
+     "nama": "Electricity Generating PCL",
+     "persen": null
+    },
+    {
+     "nama": "AC Energy and Infrastructure Corp",
+     "persen": 19
+    },
+    {
+     "nama": "Star Energy Geothermal",
+     "persen": null,
+     "organisasi_id": "p_7a803f3b71"
+    },
+    {
+     "nama": "Star Energy Group PLC",
+     "persen": null
+    }
+   ],
+   "operator": [
+    {
+     "nama": "Kamojang POMU",
+     "persen": null
+    }
+   ],
+   "provinsi": "Jawa Barat",
+   "wilayah_asli": "West Java",
+   "kota": "Bogor Regency",
+   "lat": -6.7416,
+   "lon": 106.648,
+   "akurasi": "exact",
+   "gem_id": "G100000700089",
+   "lokasi_id": "L100000700058",
+   "url_wiki": "https://www.gem.wiki/Gunung_Salak_geothermal_power_plant",
+   "diriset": "2024-04-10",
+   "lembar": "Data",
+   "teknologi_tipe": "flash steam - single"
+  },
+  {
+   "nama": "Gunung Salak geothermal power plant",
+   "fase": "Dayabumi Salak Pratama - 4",
+   "kapasitas_mw": 57.5,
+   "status": "operating",
+   "status_asli": "operating",
+   "tahun_mulai": 1997,
+   "pemilik": [
+    {
+     "nama": "Electricity Generating PCL",
+     "persen": null
+    },
+    {
+     "nama": "AC Energy and Infrastructure Corp",
+     "persen": 19
+    },
+    {
+     "nama": "Star Energy Geothermal",
+     "persen": null,
+     "organisasi_id": "p_7a803f3b71"
+    },
+    {
+     "nama": "Star Energy Group PLC",
+     "persen": null
+    }
+   ],
+   "operator": [
+    {
+     "nama": "Kamojang POMU",
+     "persen": null
+    }
+   ],
+   "provinsi": "Jawa Barat",
+   "wilayah_asli": "West Java",
+   "kota": "Bogor Regency",
+   "lat": -6.7416,
+   "lon": 106.648,
+   "akurasi": "exact",
+   "gem_id": "G100000700090",
+   "lokasi_id": "L100000700058",
+   "url_wiki": "https://www.gem.wiki/Gunung_Salak_geothermal_power_plant",
+   "diriset": "2025-10-20",
+   "lembar": "Data",
+   "teknologi_tipe": "flash steam - single"
+  },
+  {
+   "nama": "Gunung Salak geothermal power plant",
+   "fase": "Dayabumi Salak Pratama - 5",
+   "kapasitas_mw": 57.5,
+   "status": "operating",
+   "status_asli": "operating",
+   "tahun_mulai": 1997,
+   "pemilik": [
+    {
+     "nama": "Electricity Generating PCL",
+     "persen": null
+    },
+    {
+     "nama": "AC Energy and Infrastructure Corp",
+     "persen": 19
+    },
+    {
+     "nama": "Star Energy Geothermal",
+     "persen": null,
+     "organisasi_id": "p_7a803f3b71"
+    },
+    {
+     "nama": "Star Energy Group PLC",
+     "persen": null
+    }
+   ],
+   "operator": [
+    {
+     "nama": "Kamojang POMU",
+     "persen": null
+    }
+   ],
+   "provinsi": "Jawa Barat",
+   "wilayah_asli": "West Java",
+   "kota": "Bogor Regency",
+   "lat": -6.7416,
+   "lon": 106.648,
+   "akurasi": "exact",
+   "gem_id": "G100000700091",
+   "lokasi_id": "L100000700058",
+   "url_wiki": "https://www.gem.wiki/Gunung_Salak_geothermal_power_plant",
+   "diriset": "2025-10-20",
+   "lembar": "Data",
+   "teknologi_tipe": "flash steam - single"
+  },
+  {
+   "nama": "Gunung Salak geothermal power plant",
+   "fase": "Dayabumi Salak Pratama - 6",
+   "kapasitas_mw": 57.5,
+   "status": "operating",
+   "status_asli": "operating",
+   "tahun_mulai": 1997,
+   "pemilik": [
+    {
+     "nama": "Electricity Generating PCL",
+     "persen": null
+    },
+    {
+     "nama": "AC Energy and Infrastructure Corp",
+     "persen": 19
+    },
+    {
+     "nama": "Star Energy Geothermal",
+     "persen": null,
+     "organisasi_id": "p_7a803f3b71"
+    },
+    {
+     "nama": "Star Energy Group PLC",
+     "persen": null
+    }
+   ],
+   "operator": [
+    {
+     "nama": "Kamojang POMU",
+     "persen": null
+    }
+   ],
+   "provinsi": "Jawa Barat",
+   "wilayah_asli": "West Java",
+   "kota": "Bogor Regency",
+   "lat": -6.7416,
+   "lon": 106.648,
+   "akurasi": "exact",
+   "gem_id": "G100000700092",
+   "lokasi_id": "L100000700058",
+   "url_wiki": "https://www.gem.wiki/Gunung_Salak_geothermal_power_plant",
+   "diriset": "2025-10-20",
+   "lembar": "Data",
+   "teknologi_tipe": "flash steam - single"
+  },
+  {
+   "nama": "Gunung Tampomas geothermal power plant",
+   "kapasitas_mw": 32,
+   "status": "announced",
+   "status_asli": "announced",
+   "pemilik": [
+    {
+     "nama": "PT Resources Jaya Teknik Management",
+     "persen": 33
+    },
+    {
+     "nama": "PT Jasa Sarana",
+     "persen": 33
+    },
+    {
+     "nama": "PT Wijaya Karya",
+     "persen": 33,
+     "organisasi_id": "p_a363064837"
+    }
+   ],
+   "operator": [
+    {
+     "nama": "PT Wika Jabar Power",
+     "persen": null
+    }
+   ],
+   "provinsi": "Jawa Barat",
+   "wilayah_asli": "West Java",
+   "kota": "Sumedang Regency",
+   "lat": -6.8426,
+   "lon": 107.9143,
+   "akurasi": "approximate",
+   "gem_id": "G100000700093",
+   "lokasi_id": "L100000700059",
+   "url_wiki": "https://www.gem.wiki/Gunung_Tamponas_geothermal_power_plant",
+   "diriset": "2025-11-19",
+   "lembar": "Data",
+   "teknologi_tipe": "unknown type"
+  },
+  {
+   "nama": "Hululais geothermal power plant",
+   "fase": "1.0",
+   "kapasitas_mw": 55,
+   "status": "construction",
+   "status_asli": "construction",
+   "tahun_mulai": 2028,
+   "pemilik": [
+    {
+     "nama": "Pertamina Geothermal Energy",
+     "persen": 100,
+     "organisasi_id": "p_dda1e51dae"
+    }
+   ],
+   "operator": [
+    {
+     "nama": "Pertamina Geothermal Energy",
+     "persen": null,
+     "organisasi_id": "p_dda1e51dae"
+    }
+   ],
+   "provinsi": "Bengkulu",
+   "wilayah_asli": "Bengkulu",
+   "lat": -3.2413,
+   "lon": 102.2782,
+   "akurasi": "exact",
+   "gem_id": "G100000700108",
+   "lokasi_id": "L100000700066",
+   "url_wiki": "https://www.gem.wiki/Hululais_geothermal_power_plant",
+   "diriset": "2025-11-19",
+   "lembar": "Data",
+   "teknologi_tipe": "unknown type"
+  },
+  {
+   "nama": "Hululais geothermal power plant",
+   "fase": "2.0",
+   "kapasitas_mw": 55,
+   "status": "pre-construction",
+   "status_asli": "pre-construction",
+   "tahun_mulai": 2028,
+   "pemilik": [
+    {
+     "nama": "Pertamina Geothermal Energy",
+     "persen": 100,
+     "organisasi_id": "p_dda1e51dae"
+    }
+   ],
+   "operator": [
+    {
+     "nama": "Pertamina Geothermal Energy",
+     "persen": null,
+     "organisasi_id": "p_dda1e51dae"
+    }
+   ],
+   "provinsi": "Bengkulu",
+   "wilayah_asli": "Bengkulu",
+   "lat": -3.2413,
+   "lon": 102.2782,
+   "akurasi": "exact",
+   "gem_id": "G100000700109",
+   "lokasi_id": "L100000700066",
+   "url_wiki": "https://www.gem.wiki/Hululais_geothermal_power_plant",
+   "diriset": "2025-11-19",
+   "lembar": "Data",
+   "teknologi_tipe": "unknown type"
+  },
+  {
+   "nama": "Kamojang geothermal power plant",
+   "fase": "1.0",
+   "kapasitas_mw": 30,
+   "status": "operating",
+   "status_asli": "operating",
+   "tahun_mulai": 1983,
+   "pemilik": [
+    {
+     "nama": "Pertamina Geothermal Energy",
+     "persen": 100,
+     "organisasi_id": "p_dda1e51dae"
+    }
+   ],
+   "operator": [
+    {
+     "nama": "Pertamina Geothermal Energy",
+     "persen": null,
+     "organisasi_id": "p_dda1e51dae"
+    }
+   ],
+   "provinsi": "Jawa Barat",
+   "wilayah_asli": "West Java",
+   "kota": "Darajat",
+   "lat": -7.1388,
+   "lon": 107.7851,
+   "akurasi": "exact",
+   "gem_id": "G100000700119",
+   "lokasi_id": "L100000700072",
+   "url_wiki": "https://www.gem.wiki/Kamojang_geothermal_power_plant",
+   "diriset": "2023-05-08",
+   "lembar": "Data",
+   "teknologi_tipe": "unknown type"
+  },
+  {
+   "nama": "Kamojang geothermal power plant",
+   "fase": "2.0",
+   "kapasitas_mw": 55,
+   "status": "operating",
+   "status_asli": "operating",
+   "tahun_mulai": 1987,
+   "pemilik": [
+    {
+     "nama": "Pertamina Geothermal Energy",
+     "persen": 100,
+     "organisasi_id": "p_dda1e51dae"
+    }
+   ],
+   "operator": [
+    {
+     "nama": "Pertamina Geothermal Energy",
+     "persen": null,
+     "organisasi_id": "p_dda1e51dae"
+    }
+   ],
+   "provinsi": "Jawa Barat",
+   "wilayah_asli": "West Java",
+   "kota": "Darajat",
+   "lat": -7.1388,
+   "lon": 107.7851,
+   "akurasi": "exact",
+   "gem_id": "G100000700120",
+   "lokasi_id": "L100000700072",
+   "url_wiki": "https://www.gem.wiki/Kamojang_geothermal_power_plant",
+   "diriset": "2023-05-08",
+   "lembar": "Data",
+   "teknologi_tipe": "unknown type"
+  },
+  {
+   "nama": "Kamojang geothermal power plant",
+   "fase": "3.0",
+   "kapasitas_mw": 55,
+   "status": "operating",
+   "status_asli": "operating",
+   "tahun_mulai": 1987,
+   "pemilik": [
+    {
+     "nama": "Pertamina Geothermal Energy",
+     "persen": 100,
+     "organisasi_id": "p_dda1e51dae"
+    }
+   ],
+   "operator": [
+    {
+     "nama": "Pertamina Geothermal Energy",
+     "persen": null,
+     "organisasi_id": "p_dda1e51dae"
+    }
+   ],
+   "provinsi": "Jawa Barat",
+   "wilayah_asli": "West Java",
+   "kota": "Darajat",
+   "lat": -7.1388,
+   "lon": 107.7851,
+   "akurasi": "exact",
+   "gem_id": "G100000700121",
+   "lokasi_id": "L100000700072",
+   "url_wiki": "https://www.gem.wiki/Kamojang_geothermal_power_plant",
+   "diriset": "2023-05-08",
+   "lembar": "Data",
+   "teknologi_tipe": "unknown type"
+  },
+  {
+   "nama": "Kamojang geothermal power plant",
+   "fase": "4.0",
+   "kapasitas_mw": 60,
+   "status": "operating",
+   "status_asli": "operating",
+   "tahun_mulai": 2008,
+   "pemilik": [
+    {
+     "nama": "Pertamina Geothermal Energy",
+     "persen": 100,
+     "organisasi_id": "p_dda1e51dae"
+    }
+   ],
+   "operator": [
+    {
+     "nama": "Pertamina Geothermal Energy",
+     "persen": null,
+     "organisasi_id": "p_dda1e51dae"
+    }
+   ],
+   "provinsi": "Jawa Barat",
+   "wilayah_asli": "West Java",
+   "kota": "Darajat",
+   "lat": -7.1388,
+   "lon": 107.7851,
+   "akurasi": "exact",
+   "gem_id": "G100000700122",
+   "lokasi_id": "L100000700072",
+   "url_wiki": "https://www.gem.wiki/Kamojang_geothermal_power_plant",
+   "diriset": "2023-05-08",
+   "lembar": "Data",
+   "teknologi_tipe": "unknown type"
+  },
+  {
+   "nama": "Kamojang geothermal power plant",
+   "fase": "5.0",
+   "kapasitas_mw": 35,
+   "status": "operating",
+   "status_asli": "operating",
+   "tahun_mulai": 2015,
+   "pemilik": [
+    {
+     "nama": "Pertamina Geothermal Energy",
+     "persen": 100,
+     "organisasi_id": "p_dda1e51dae"
+    }
+   ],
+   "operator": [
+    {
+     "nama": "Pertamina Geothermal Energy",
+     "persen": null,
+     "organisasi_id": "p_dda1e51dae"
+    }
+   ],
+   "provinsi": "Jawa Barat",
+   "wilayah_asli": "West Java",
+   "kota": "Darajat",
+   "lat": -7.1388,
+   "lon": 107.7851,
+   "akurasi": "exact",
+   "gem_id": "G100000700123",
+   "lokasi_id": "L100000700072",
+   "url_wiki": "https://www.gem.wiki/Kamojang_geothermal_power_plant",
+   "diriset": "2023-05-08",
+   "lembar": "Data",
+   "teknologi_tipe": "dry steam"
+  },
+  {
+   "nama": "Karaha geothermal power plant",
+   "fase": "1.0",
+   "nama_lain": "PLTP Karaha Bodas",
+   "kapasitas_mw": 30,
+   "status": "operating",
+   "status_asli": "operating",
+   "tahun_mulai": 2018,
+   "pemilik": [
+    {
+     "nama": "Pertamina Geothermal Energy",
+     "persen": 100,
+     "organisasi_id": "p_dda1e51dae"
+    }
+   ],
+   "operator": [
+    {
+     "nama": "Pertamina Geothermal Energy",
+     "persen": null,
+     "organisasi_id": "p_dda1e51dae"
+    }
+   ],
+   "provinsi": "Jawa Barat",
+   "wilayah_asli": "West Java",
+   "kota": "Tasikmalaya Regency",
+   "lat": -7.1477,
+   "lon": 108.0848,
+   "akurasi": "exact",
+   "gem_id": "G100000700124",
+   "lokasi_id": "L100000700073",
+   "url_wiki": "https://www.gem.wiki/Karaha_geothermal_power_plant",
+   "diriset": "2023-05-08",
+   "lembar": "Data",
+   "teknologi_tipe": "dry steam"
+  },
+  {
+   "nama": "Lumut Balai geothermal power plant",
+   "fase": "1.0",
+   "kapasitas_mw": 55,
+   "status": "operating",
+   "status_asli": "operating",
+   "tahun_mulai": 2019,
+   "pemilik": [
+    {
+     "nama": "Pertamina Geothermal Energy",
+     "persen": 100,
+     "organisasi_id": "p_dda1e51dae"
+    }
+   ],
+   "operator": [
+    {
+     "nama": "Pertamina Geothermal Energy",
+     "persen": null,
+     "organisasi_id": "p_dda1e51dae"
+    }
+   ],
+   "provinsi": "Sumatera Selatan",
+   "wilayah_asli": "South Sumatra",
+   "lat": -4.1943,
+   "lon": 103.6403,
+   "akurasi": "exact",
+   "gem_id": "G100000700148",
+   "lokasi_id": "L100000700091",
+   "url_wiki": "https://www.gem.wiki/Lumut_Balai_geothermal_power_plant",
+   "diriset": "2023-05-08",
+   "lembar": "Data",
+   "teknologi_tipe": "flash steam - single"
+  },
+  {
+   "nama": "Lumut Balai geothermal power plant",
+   "fase": "2.0",
+   "kapasitas_mw": 55,
+   "status": "operating",
+   "status_asli": "operating",
+   "tahun_mulai": 2025,
+   "pemilik": [
+    {
+     "nama": "Pertamina Geothermal Energy",
+     "persen": 100,
+     "organisasi_id": "p_dda1e51dae"
+    }
+   ],
+   "operator": [
+    {
+     "nama": "Pertamina Geothermal Energy",
+     "persen": null,
+     "organisasi_id": "p_dda1e51dae"
+    }
+   ],
+   "provinsi": "Sumatera Selatan",
+   "wilayah_asli": "South Sumatra",
+   "lat": -4.1943,
+   "lon": 103.6403,
+   "akurasi": "exact",
+   "gem_id": "G100000700149",
+   "lokasi_id": "L100000700091",
+   "url_wiki": "https://www.gem.wiki/Lumut_Balai_geothermal_power_plant",
+   "diriset": "2025-11-19",
+   "lembar": "Data",
+   "teknologi_tipe": "unknown type"
+  },
+  {
+   "nama": "Mount Sibayak geothermal power plant",
+   "kapasitas_mw": 40,
+   "status": "cancelled",
+   "status_asli": "cancelled - inferred 4 y",
+   "pemilik": [
+    {
+     "nama": "PT Okha Hutomo Satrya",
+     "persen": 100
+    }
+   ],
+   "operator": [
+    {
+     "nama": "PT Okha Hutomo Satrya",
+     "persen": null
+    }
+   ],
+   "provinsi": "Sumatera Utara",
+   "wilayah_asli": "North Sumatra",
+   "kota": "Karo Regency",
+   "lat": 3.1853,
+   "lon": 98.5048,
+   "akurasi": "approximate",
+   "gem_id": "G100000700187",
+   "lokasi_id": "L100000700112",
+   "url_wiki": "https://www.gem.wiki/Mount_Sibayak_geothermal_power_plant",
+   "diriset": "2025-11-20",
+   "lembar": "Data",
+   "teknologi_tipe": "unknown type"
+  },
+  {
+   "nama": "Muarah Laboh geothermal plant",
+   "fase": "1.0",
+   "nama_lain": "Muara Laboh",
+   "kapasitas_mw": 85,
+   "status": "operating",
+   "status_asli": "operating",
+   "tahun_mulai": 2019,
+   "pemilik": [
+    {
+     "nama": "INPEX Corp",
+     "persen": 33
+    },
+    {
+     "nama": "ENGIE SA",
+     "persen": 18
+    },
+    {
+     "nama": "Sumitomo Corp",
+     "persen": 18
+    },
+    {
+     "nama": "PT Supreme Energy",
+     "persen": 30,
+     "organisasi_id": "p_c6c4e478c0"
+    }
+   ],
+   "operator": [
+    {
+     "nama": "PT Supreme Energy",
+     "persen": null,
+     "organisasi_id": "p_c6c4e478c0"
+    }
+   ],
+   "provinsi": "Sumatera Barat",
+   "wilayah_asli": "West Sumatra",
+   "lat": -1.6268,
+   "lon": 101.1296,
+   "akurasi": "exact",
+   "gem_id": "G100000700188",
+   "lokasi_id": "L100000700113",
+   "url_wiki": "https://www.gem.wiki/Muarah_Laboh_geothermal_plant",
+   "diriset": "2023-05-08",
+   "lembar": "Data",
+   "teknologi_tipe": "flash steam - double"
+  },
+  {
+   "nama": "Muarah Laboh geothermal plant",
+   "fase": "2.0",
+   "nama_lain": "Muara Laboh",
+   "kapasitas_mw": 80,
+   "status": "construction",
+   "status_asli": "construction",
+   "tahun_mulai": 2027,
+   "pemilik": [
+    {
+     "nama": "INPEX Corp",
+     "persen": 33
+    },
+    {
+     "nama": "ENGIE SA",
+     "persen": 18
+    },
+    {
+     "nama": "Sumitomo Corp",
+     "persen": 18
+    },
+    {
+     "nama": "PT Supreme Energy",
+     "persen": 30,
+     "organisasi_id": "p_c6c4e478c0"
+    }
+   ],
+   "operator": [
+    {
+     "nama": "PT Supreme Energy",
+     "persen": null,
+     "organisasi_id": "p_c6c4e478c0"
+    }
+   ],
+   "provinsi": "Sumatera Barat",
+   "wilayah_asli": "West Sumatra",
+   "lat": -1.6268,
+   "lon": 101.1296,
+   "akurasi": "exact",
+   "gem_id": "G100000700189",
+   "lokasi_id": "L100000700113",
+   "url_wiki": "https://www.gem.wiki/Muarah_Laboh_geothermal_plant",
+   "diriset": "2025-10-30",
+   "lembar": "Data",
+   "teknologi_tipe": "flash steam - unknown"
+  },
+  {
+   "nama": "Patuha geothermal power plant",
+   "fase": "1.0",
+   "kapasitas_mw": 60,
+   "status": "operating",
+   "status_asli": "operating",
+   "tahun_mulai": 2014,
+   "pemilik": [
+    {
+     "nama": "PT Geo Dipa Energi (GDE)",
+     "persen": 100
+    }
+   ],
+   "operator": [
+    {
+     "nama": "PT Geo Dipa Energi (GDE)",
+     "persen": null
+    }
+   ],
+   "provinsi": "Jawa Barat",
+   "wilayah_asli": "West Java",
+   "kota": "Bandung Regency",
+   "lat": -7.1838,
+   "lon": 107.4215,
+   "akurasi": "exact",
+   "gem_id": "G100000700229",
+   "lokasi_id": "L100000700139",
+   "url_wiki": "https://www.gem.wiki/Patuha_geothermal_power_plant",
+   "diriset": "2023-05-09",
+   "lembar": "Data",
+   "teknologi_tipe": "flash steam - single"
+  },
+  {
+   "nama": "Patuha geothermal power plant",
+   "fase": "2.0",
+   "kapasitas_mw": 55,
+   "status": "construction",
+   "status_asli": "construction",
+   "tahun_mulai": 2029,
+   "pemilik": [
+    {
+     "nama": "PT Geo Dipa Energi (GDE)",
+     "persen": 100
+    }
+   ],
+   "operator": [
+    {
+     "nama": "PT Geo Dipa Energi (GDE)",
+     "persen": null
+    }
+   ],
+   "provinsi": "Jawa Barat",
+   "wilayah_asli": "West Java",
+   "lat": -7.1838,
+   "lon": 107.4215,
+   "akurasi": "exact",
+   "gem_id": "G100000700230",
+   "lokasi_id": "L100000700139",
+   "url_wiki": "https://www.gem.wiki/Patuha_geothermal_power_plant",
+   "diriset": "2025-11-24",
+   "lembar": "Data",
+   "teknologi_tipe": "unknown type"
+  },
+  {
+   "nama": "Patuha geothermal power plant",
+   "fase": "3.0",
+   "kapasitas_mw": 55,
+   "status": "announced",
+   "status_asli": "announced",
+   "tahun_mulai": 2027,
+   "pemilik": [
+    {
+     "nama": "PT Geo Dipa Energi (GDE)",
+     "persen": 100
+    }
+   ],
+   "operator": [
+    {
+     "nama": "PT Geo Dipa Energi (GDE)",
+     "persen": null
+    }
+   ],
+   "provinsi": "Jawa Barat",
+   "wilayah_asli": "West Java",
+   "lat": -7.1838,
+   "lon": 107.4215,
+   "akurasi": "exact",
+   "gem_id": "G100000700231",
+   "lokasi_id": "L100000700139",
+   "url_wiki": "https://www.gem.wiki/Patuha_geothermal_power_plant",
+   "diriset": "2025-11-24",
+   "lembar": "Data",
+   "teknologi_tipe": "unknown type"
+  },
+  {
+   "nama": "Patuha geothermal power plant",
+   "fase": "46120.0",
+   "kapasitas_mw": 290,
+   "status": "announced",
+   "status_asli": "announced",
+   "tahun_mulai": 2032,
+   "pemilik": [
+    {
+     "nama": "PT Geo Dipa Energi (GDE)",
+     "persen": 100
+    }
+   ],
+   "operator": [
+    {
+     "nama": "PT Geo Dipa Energi (GDE)",
+     "persen": null
+    }
+   ],
+   "provinsi": "Jawa Barat",
+   "wilayah_asli": "West Java",
+   "lat": -7.1838,
+   "lon": 107.4215,
+   "akurasi": "exact",
+   "gem_id": "G100000700232",
+   "lokasi_id": "L100000700139",
+   "url_wiki": "https://www.gem.wiki/Patuha_geothermal_power_plant",
+   "diriset": "2025-11-24",
+   "lembar": "Data",
+   "teknologi_tipe": "unknown type"
+  },
+  {
+   "nama": "Rajabasa geothermal power plant",
+   "fase": "1.0",
+   "kapasitas_mw": 110,
+   "status": "construction",
+   "status_asli": "construction",
+   "pemilik": [
+    {
+     "nama": "ENGIE SA",
+     "persen": 33
+    },
+    {
+     "nama": "PT Supreme Energy",
+     "persen": 33,
+     "organisasi_id": "p_c6c4e478c0"
+    },
+    {
+     "nama": "Sumitomo Corp",
+     "persen": 33
+    }
+   ],
+   "operator": [
+    {
+     "nama": "PT Supreme Energy",
+     "persen": null,
+     "organisasi_id": "p_c6c4e478c0"
+    }
+   ],
+   "provinsi": "Lampung",
+   "wilayah_asli": "Lampung Province",
+   "kota": "South Lampung Regency",
+   "lat": -5.7817,
+   "lon": 105.6256,
+   "akurasi": "approximate",
+   "gem_id": "G100000700237",
+   "lokasi_id": "L100000700144",
+   "url_wiki": "https://www.gem.wiki/Rajabasa_geothermal_power_plant",
+   "diriset": "2025-11-24",
+   "lembar": "Data",
+   "teknologi_tipe": "unknown type"
+  },
+  {
+   "nama": "Rajabasa geothermal power plant",
+   "fase": "2.0",
+   "kapasitas_mw": 110,
+   "status": "construction",
+   "status_asli": "construction",
+   "pemilik": [
+    {
+     "nama": "ENGIE SA",
+     "persen": 33
+    },
+    {
+     "nama": "PT Supreme Energy",
+     "persen": 33,
+     "organisasi_id": "p_c6c4e478c0"
+    },
+    {
+     "nama": "Sumitomo Corp",
+     "persen": 33
+    }
+   ],
+   "operator": [
+    {
+     "nama": "PT Supreme Energy",
+     "persen": null,
+     "organisasi_id": "p_c6c4e478c0"
+    }
+   ],
+   "provinsi": "Lampung",
+   "wilayah_asli": "Lampung Province",
+   "kota": "South Lampung Regency",
+   "lat": -5.7817,
+   "lon": 105.6256,
+   "akurasi": "approximate",
+   "gem_id": "G100000700238",
+   "lokasi_id": "L100000700144",
+   "url_wiki": "https://www.gem.wiki/Rajabasa_geothermal_power_plant",
+   "diriset": "2025-11-24",
+   "lembar": "Data",
+   "teknologi_tipe": "unknown type"
+  },
+  {
+   "nama": "Rantau Dedep geothermal power plant",
+   "fase": "1.0",
+   "kapasitas_mw": 91,
+   "status": "operating",
+   "status_asli": "operating",
+   "tahun_mulai": 2021,
+   "pemilik": [
+    {
+     "nama": "Marubeni Corp",
+     "persen": 27
+    },
+    {
+     "nama": "PT Supreme Energy",
+     "persen": 25,
+     "organisasi_id": "p_c6c4e478c0"
+    },
+    {
+     "nama": "ENGIE SA",
+     "persen": 37
+    },
+    {
+     "nama": "Tohoku Electric Power Co Inc",
+     "persen": 10
+    }
+   ],
+   "operator": [
+    {
+     "nama": "PT Supreme Energy Rantau Dedap",
+     "persen": null
+    }
+   ],
+   "provinsi": "Sumatera Selatan",
+   "wilayah_asli": "South Sumatra",
+   "kota": "Swarna Dwipa",
+   "lat": -4.2069,
+   "lon": 103.3857,
+   "akurasi": "exact",
+   "gem_id": "G100000700240",
+   "lokasi_id": "L100000700146",
+   "url_wiki": "https://www.gem.wiki/Rantau_Dedep_geothermal_power_plant",
+   "diriset": "2025-02-11",
+   "lembar": "Data",
+   "teknologi_tipe": "flash steam - double"
+  },
+  {
+   "nama": "Ratai geothermal power plant",
+   "nama_lain": "Way Ratai",
+   "kapasitas_mw": 55,
+   "status": "pre-construction",
+   "status_asli": "pre-construction",
+   "pemilik": [
+    {
+     "nama": "PT Cahaya Anagata Energy",
+     "persen": null
+    }
+   ],
+   "provinsi": "Lampung",
+   "wilayah_asli": "Lampung Province",
+   "lat": -5.6001,
+   "lon": 105.0738,
+   "akurasi": "approximate",
+   "gem_id": "G100000700241",
+   "lokasi_id": "L100000700147",
+   "url_wiki": "https://www.gem.wiki/Ratai_geothermal_power_plant",
+   "diriset": "2025-11-25",
+   "lembar": "Data",
+   "teknologi_tipe": "unknown type"
+  },
+  {
+   "nama": "Sarulla geothermal power plant",
+   "fase": "NIL-1",
+   "kapasitas_mw": 110,
+   "status": "operating",
+   "status_asli": "operating",
+   "tahun_mulai": 2017,
+   "pemilik": [
+    {
+     "nama": "Sarulla Operations Ltd",
+     "persen": 100
+    }
+   ],
+   "operator": [
+    {
+     "nama": "Sarulla Operations",
+     "persen": null
+    }
+   ],
+   "provinsi": "Sumatera Utara",
+   "wilayah_asli": "North Sumatra",
+   "lat": 1.8202,
+   "lon": 99.0885,
+   "akurasi": "exact",
+   "gem_id": "G100000700256",
+   "lokasi_id": "L100000700157",
+   "url_wiki": "https://www.gem.wiki/Sarulla_geothermal_power_plant",
+   "diriset": "2023-05-08",
+   "lembar": "Data",
+   "teknologi_tipe": "unknown type"
+  },
+  {
+   "nama": "Sarulla geothermal power plant",
+   "fase": "NIL-2",
+   "kapasitas_mw": 110,
+   "status": "operating",
+   "status_asli": "operating",
+   "tahun_mulai": 2017,
+   "pemilik": [
+    {
+     "nama": "Sarulla Operations Ltd",
+     "persen": 100
+    }
+   ],
+   "operator": [
+    {
+     "nama": "Sarulla Operations",
+     "persen": null
+    }
+   ],
+   "provinsi": "Sumatera Utara",
+   "wilayah_asli": "North Sumatra",
+   "lat": 1.8202,
+   "lon": 99.0885,
+   "akurasi": "exact",
+   "gem_id": "G100000700257",
+   "lokasi_id": "L100000700157",
+   "url_wiki": "https://www.gem.wiki/Sarulla_geothermal_power_plant",
+   "diriset": "2023-05-08",
+   "lembar": "Data",
+   "teknologi_tipe": "unknown type"
+  },
+  {
+   "nama": "Sarulla geothermal power plant",
+   "fase": "SIL-3",
+   "kapasitas_mw": 110,
+   "status": "operating",
+   "status_asli": "operating",
+   "tahun_mulai": 2018,
+   "pemilik": [
+    {
+     "nama": "Sarulla Operations Ltd",
+     "persen": 100
+    }
+   ],
+   "operator": [
+    {
+     "nama": "Sarulla Operations",
+     "persen": null
+    }
+   ],
+   "provinsi": "Sumatera Utara",
+   "wilayah_asli": "North Sumatra",
+   "lat": 1.8202,
+   "lon": 99.0885,
+   "akurasi": "exact",
+   "gem_id": "G100000700258",
+   "lokasi_id": "L100000700157",
+   "url_wiki": "https://www.gem.wiki/Sarulla_geothermal_power_plant",
+   "diriset": "2023-05-08",
+   "lembar": "Data",
+   "teknologi_tipe": "unknown type"
+  },
+  {
+   "nama": "Sorik Marapi geothermal power plant",
+   "fase": "1.0",
+   "kapasitas_mw": 45,
+   "status": "operating",
+   "status_asli": "operating",
+   "tahun_mulai": 2019,
+   "pemilik": [
+    {
+     "nama": "KS Orka Renewables Pte Ltd",
+     "persen": 100
+    }
+   ],
+   "operator": [
+    {
+     "nama": "KS Orka Renewables",
+     "persen": null
+    }
+   ],
+   "provinsi": "Sumatera Utara",
+   "wilayah_asli": "North Sumatra",
+   "lat": 0.7475,
+   "lon": 99.5751,
+   "akurasi": "exact",
+   "gem_id": "G100000700261",
+   "lokasi_id": "L100000700160",
+   "url_wiki": "https://www.gem.wiki/Sorik_Marapi_geothermal_power_plant",
+   "diriset": "2023-05-08",
+   "lembar": "Data",
+   "teknologi_tipe": "binary cycle"
+  },
+  {
+   "nama": "Sorik Marapi geothermal power plant",
+   "fase": "2.0",
+   "kapasitas_mw": 45,
+   "status": "operating",
+   "status_asli": "operating",
+   "tahun_mulai": 2021,
+   "pemilik": [
+    {
+     "nama": "KS Orka Renewables Pte Ltd",
+     "persen": 100
+    }
+   ],
+   "operator": [
+    {
+     "nama": "KS Orka Renewables",
+     "persen": null
+    }
+   ],
+   "provinsi": "Sumatera Utara",
+   "wilayah_asli": "North Sumatra",
+   "lat": 0.7475,
+   "lon": 99.5751,
+   "akurasi": "exact",
+   "gem_id": "G100000700262",
+   "lokasi_id": "L100000700160",
+   "url_wiki": "https://www.gem.wiki/Sorik_Marapi_geothermal_power_plant",
+   "diriset": "2023-05-08",
+   "lembar": "Data",
+   "teknologi_tipe": "binary cycle"
+  },
+  {
+   "nama": "Sorik Marapi geothermal power plant",
+   "fase": "3.0",
+   "kapasitas_mw": 50,
+   "status": "operating",
+   "status_asli": "operating",
+   "tahun_mulai": 2022,
+   "pemilik": [
+    {
+     "nama": "KS Orka Renewables Pte Ltd",
+     "persen": 100
+    }
+   ],
+   "operator": [
+    {
+     "nama": "KS Orka Renewables",
+     "persen": null
+    }
+   ],
+   "provinsi": "Sumatera Utara",
+   "wilayah_asli": "North Sumatra",
+   "lat": 0.7475,
+   "lon": 99.5751,
+   "akurasi": "exact",
+   "gem_id": "G100000700263",
+   "lokasi_id": "L100000700160",
+   "url_wiki": "https://www.gem.wiki/Sorik_Marapi_geothermal_power_plant",
+   "diriset": "2023-05-08",
+   "lembar": "Data",
+   "teknologi_tipe": "unknown type"
+  },
+  {
+   "nama": "Sorik Marapi geothermal power plant",
+   "fase": "4.0",
+   "kapasitas_mw": 50,
+   "status": "operating",
+   "status_asli": "operating",
+   "tahun_mulai": 2024,
+   "pemilik": [
+    {
+     "nama": "KS Orka Renewables Pte Ltd",
+     "persen": 100
+    }
+   ],
+   "operator": [
+    {
+     "nama": "KS Orka Renewables",
+     "persen": null
+    }
+   ],
+   "provinsi": "Sumatera Utara",
+   "wilayah_asli": "North Sumatra",
+   "lat": 0.7475,
+   "lon": 99.5751,
+   "akurasi": "exact",
+   "gem_id": "G100000700264",
+   "lokasi_id": "L100000700160",
+   "url_wiki": "https://www.gem.wiki/Sorik_Marapi_geothermal_power_plant",
+   "diriset": "2024-03-13",
+   "lembar": "Data",
+   "teknologi_tipe": "unknown type"
+  },
+  {
+   "nama": "Sorik Marapi geothermal power plant",
+   "fase": "5.0",
+   "kapasitas_mw": 33,
+   "status": "operating",
+   "status_asli": "operating",
+   "tahun_mulai": 2025,
+   "pemilik": [
+    {
+     "nama": "KS Orka Renewables Pte Ltd",
+     "persen": 100
+    }
+   ],
+   "operator": [
+    {
+     "nama": "KS Orka Renewables",
+     "persen": null
+    }
+   ],
+   "provinsi": "Sumatera Utara",
+   "wilayah_asli": "North Sumatra",
+   "lat": 0.7475,
+   "lon": 99.5751,
+   "akurasi": "exact",
+   "gem_id": "G100000700265",
+   "lokasi_id": "L100000700160",
+   "url_wiki": "https://www.gem.wiki/Sorik_Marapi_geothermal_power_plant",
+   "diriset": "2025-01-15",
+   "lembar": "Data",
+   "teknologi_tipe": "unknown type"
+  },
+  {
+   "nama": "Sungai Penuh geothermal power plant",
+   "fase": "1.0",
+   "kapasitas_mw": 55,
+   "status": "construction",
+   "status_asli": "construction",
+   "pemilik": [
+    {
+     "nama": "Pertamina Geothermal Energy",
+     "persen": 100,
+     "organisasi_id": "p_dda1e51dae"
+    }
+   ],
+   "operator": [
+    {
+     "nama": "Pertamina Geothermal Energy",
+     "persen": null,
+     "organisasi_id": "p_dda1e51dae"
+    }
+   ],
+   "wilayah_asli": "Sumatra",
+   "kota": "Kerinci Regency",
+   "lat": -2.0625,
+   "lon": 101.4076,
+   "akurasi": "approximate",
+   "gem_id": "G100000700270",
+   "lokasi_id": "L100000700165",
+   "url_wiki": "https://www.gem.wiki/Sungai_Penuh_geothermal_power_plant",
+   "diriset": "2025-11-25",
+   "lembar": "Data",
+   "teknologi_tipe": "unknown type"
+  },
+  {
+   "nama": "Sungai Penuh geothermal power plant",
+   "fase": "2.0",
+   "kapasitas_mw": 55,
+   "status": "construction",
+   "status_asli": "construction",
+   "pemilik": [
+    {
+     "nama": "Pertamina Geothermal Energy",
+     "persen": 100,
+     "organisasi_id": "p_dda1e51dae"
+    }
+   ],
+   "operator": [
+    {
+     "nama": "Pertamina Geothermal Energy",
+     "persen": null,
+     "organisasi_id": "p_dda1e51dae"
+    }
+   ],
+   "wilayah_asli": "Sumatra",
+   "kota": "Kerinci Regency",
+   "lat": -2.0625,
+   "lon": 101.4076,
+   "akurasi": "approximate",
+   "gem_id": "G100000700271",
+   "lokasi_id": "L100000700165",
+   "url_wiki": "https://www.gem.wiki/Sungai_Penuh_geothermal_power_plant",
+   "diriset": "2025-11-25",
+   "lembar": "Data",
+   "teknologi_tipe": "unknown type"
+  },
+  {
+   "nama": "Ulubelu geothermal power plant",
+   "fase": "1.0",
+   "kapasitas_mw": 55,
+   "status": "operating",
+   "status_asli": "operating",
+   "tahun_mulai": 2012,
+   "pemilik": [
+    {
+     "nama": "Pertamina Geothermal Energy",
+     "persen": 100,
+     "organisasi_id": "p_dda1e51dae"
+    }
+   ],
+   "operator": [
+    {
+     "nama": "Pertamina Geothermal Energy",
+     "persen": null,
+     "organisasi_id": "p_dda1e51dae"
+    }
+   ],
+   "provinsi": "Lampung",
+   "wilayah_asli": "Lampung",
+   "lat": -5.3096,
+   "lon": 104.5733,
+   "akurasi": "exact",
+   "gem_id": "G100000700306",
+   "lokasi_id": "L100000700185",
+   "url_wiki": "https://www.gem.wiki/Ulubelu_geothermal_power_plant",
+   "diriset": "2023-05-08",
+   "lembar": "Data",
+   "teknologi_tipe": "flash steam - single"
+  },
+  {
+   "nama": "Ulubelu geothermal power plant",
+   "fase": "2.0",
+   "kapasitas_mw": 55,
+   "status": "operating",
+   "status_asli": "operating",
+   "tahun_mulai": 2012,
+   "pemilik": [
+    {
+     "nama": "Pertamina Geothermal Energy",
+     "persen": 100,
+     "organisasi_id": "p_dda1e51dae"
+    }
+   ],
+   "operator": [
+    {
+     "nama": "Pertamina Geothermal Energy",
+     "persen": null,
+     "organisasi_id": "p_dda1e51dae"
+    }
+   ],
+   "provinsi": "Lampung",
+   "wilayah_asli": "Lampung",
+   "lat": -5.3096,
+   "lon": 104.5733,
+   "akurasi": "exact",
+   "gem_id": "G100000700307",
+   "lokasi_id": "L100000700185",
+   "url_wiki": "https://www.gem.wiki/Ulubelu_geothermal_power_plant",
+   "diriset": "2023-05-08",
+   "lembar": "Data",
+   "teknologi_tipe": "flash steam - single"
+  },
+  {
+   "nama": "Ulubelu geothermal power plant",
+   "fase": "3.0",
+   "kapasitas_mw": 55,
+   "status": "operating",
+   "status_asli": "operating",
+   "tahun_mulai": 2016,
+   "pemilik": [
+    {
+     "nama": "Pertamina Geothermal Energy",
+     "persen": 100,
+     "organisasi_id": "p_dda1e51dae"
+    }
+   ],
+   "operator": [
+    {
+     "nama": "Pertamina Geothermal Energy",
+     "persen": null,
+     "organisasi_id": "p_dda1e51dae"
+    }
+   ],
+   "provinsi": "Lampung",
+   "wilayah_asli": "Lampung",
+   "lat": -5.305,
+   "lon": 104.5767,
+   "akurasi": "exact",
+   "gem_id": "G100000700308",
+   "lokasi_id": "L100000700185",
+   "url_wiki": "https://www.gem.wiki/Ulubelu_geothermal_power_plant",
+   "diriset": "2023-05-08",
+   "lembar": "Data",
+   "teknologi_tipe": "unknown type"
+  },
+  {
+   "nama": "Ulubelu geothermal power plant",
+   "fase": "4.0",
+   "kapasitas_mw": 55,
+   "status": "operating",
+   "status_asli": "operating",
+   "tahun_mulai": 2017,
+   "pemilik": [
+    {
+     "nama": "Pertamina Geothermal Energy",
+     "persen": 100,
+     "organisasi_id": "p_dda1e51dae"
+    }
+   ],
+   "operator": [
+    {
+     "nama": "Pertamina Geothermal Energy",
+     "persen": null,
+     "organisasi_id": "p_dda1e51dae"
+    }
+   ],
+   "provinsi": "Lampung",
+   "wilayah_asli": "Lampung",
+   "lat": -5.305,
+   "lon": 104.5767,
+   "akurasi": "exact",
+   "gem_id": "G100000700309",
+   "lokasi_id": "L100000700185",
+   "url_wiki": "https://www.gem.wiki/Ulubelu_geothermal_power_plant",
+   "diriset": "2023-05-08",
+   "lembar": "Data",
+   "teknologi_tipe": "unknown type"
+  },
+  {
+   "nama": "Wayang Windu geothermal power plant",
+   "fase": "1.0",
+   "kapasitas_mw": 124.45,
+   "status": "operating",
+   "status_asli": "operating",
+   "tahun_mulai": 2000,
+   "pemilik": [
+    {
+     "nama": "Star Energy Geothermal",
+     "persen": 100,
+     "organisasi_id": "p_7a803f3b71"
+    }
+   ],
+   "operator": [
+    {
+     "nama": "Star Energy Geothermal",
+     "persen": null,
+     "organisasi_id": "p_7a803f3b71"
+    }
+   ],
+   "provinsi": "Jawa Barat",
+   "wilayah_asli": "West Java",
+   "kota": "Bandung Regency",
+   "lat": -7.1966,
+   "lon": 107.6258,
+   "akurasi": "exact",
+   "gem_id": "G100000700319",
+   "lokasi_id": "L100000700191",
+   "url_wiki": "https://www.gem.wiki/Wayang_Windu_geothermal_power_plant",
+   "diriset": "2024-12-12",
+   "lembar": "Data",
+   "teknologi_tipe": "flash steam - single"
+  },
+  {
+   "nama": "Wayang Windu geothermal power plant",
+   "fase": "2.0",
+   "kapasitas_mw": 124.45,
+   "status": "operating",
+   "status_asli": "operating",
+   "tahun_mulai": 2009,
+   "pemilik": [
+    {
+     "nama": "Star Energy Geothermal",
+     "persen": 100,
+     "organisasi_id": "p_7a803f3b71"
+    }
+   ],
+   "operator": [
+    {
+     "nama": "Star Energy Geothermal",
+     "persen": null,
+     "organisasi_id": "p_7a803f3b71"
+    }
+   ],
+   "provinsi": "Jawa Barat",
+   "wilayah_asli": "West Java",
+   "kota": "Bandung Regency",
+   "lat": -7.1966,
+   "lon": 107.6258,
+   "akurasi": "exact",
+   "gem_id": "G100000700320",
+   "lokasi_id": "L100000700191",
+   "url_wiki": "https://www.gem.wiki/Wayang_Windu_geothermal_power_plant",
+   "diriset": "2024-12-12",
+   "lembar": "Data",
+   "teknologi_tipe": "unknown type"
+  },
+  {
+   "nama": "Wayang Windu geothermal power plant",
+   "fase": "3.0",
+   "kapasitas_mw": 60,
+   "status": "construction",
+   "status_asli": "construction",
+   "tahun_mulai": 2026,
+   "pemilik": [
+    {
+     "nama": "Star Energy Geothermal",
+     "persen": 100,
+     "organisasi_id": "p_7a803f3b71"
+    }
+   ],
+   "operator": [
+    {
+     "nama": "Star Energy Geothermal",
+     "persen": null,
+     "organisasi_id": "p_7a803f3b71"
+    }
+   ],
+   "provinsi": "Jawa Barat",
+   "wilayah_asli": "West Java",
+   "lat": -7.1966,
+   "lon": 107.6258,
+   "akurasi": "exact",
+   "gem_id": "G100000700321",
+   "lokasi_id": "L100000700191",
+   "url_wiki": "https://www.gem.wiki/Wayang_Windu_geothermal_power_plant",
+   "diriset": "2025-11-17",
+   "lembar": "Data",
+   "teknologi_tipe": "unknown type"
+  },
+  {
+   "nama": "Atadei geothermal power plant",
+   "fase": "1.0",
+   "kapasitas_mw": 5,
+   "status": "announced",
+   "status_asli": "announced",
+   "pemilik": [
+    {
+     "nama": "PT PLN (Persero)",
+     "persen": 100,
+     "organisasi_id": "su_ed074ff5"
+    }
+   ],
+   "provinsi": "Nusa Tenggara Timur",
+   "wilayah_asli": "Nusa Tenggara Timur",
+   "kota": "Lembata",
+   "lat": -8.4369,
+   "lon": 123.469,
+   "akurasi": "approximate",
+   "gem_id": "G100000700340",
+   "lokasi_id": "L100000700198",
+   "url_wiki": "https://www.gem.wiki/Atadei_geothermal_power_plant",
+   "diriset": "2025-11-18",
+   "lembar": "Data",
+   "teknologi_tipe": "unknown type"
+  },
+  {
+   "nama": "Atadei geothermal power plant",
+   "fase": "2.0",
+   "kapasitas_mw": 5,
+   "status": "pre-construction",
+   "status_asli": "pre-construction",
+   "pemilik": [
+    {
+     "nama": "PT PLN (Persero)",
+     "persen": 100,
+     "organisasi_id": "su_ed074ff5"
+    }
+   ],
+   "provinsi": "Nusa Tenggara Timur",
+   "wilayah_asli": "Nusa Tenggara Timur",
+   "kota": "Lembata",
+   "lat": -8.4369,
+   "lon": 123.469,
+   "akurasi": "approximate",
+   "gem_id": "G100000700341",
+   "lokasi_id": "L100000700198",
+   "url_wiki": "https://www.gem.wiki/Atadei_geothermal_power_plant",
+   "diriset": "2025-11-18",
+   "lembar": "Data",
+   "teknologi_tipe": "unknown type"
+  },
+  {
+   "nama": "Baturaden geothermal power plant",
+   "fase": "1.0",
+   "nama_lain": "Wkp Baturraden, Baturaden-Slamet",
+   "kapasitas_mw": 110,
+   "status": "construction",
+   "status_asli": "construction",
+   "tahun_mulai": 2028,
+   "pemilik": [
+    {
+     "nama": "PT Trinergy Mandiri International",
+     "persen": 11
+    },
+    {
+     "nama": "PT Nirwana Suci Abadi",
+     "persen": 89
+    }
+   ],
+   "provinsi": "Jawa Tengah",
+   "wilayah_asli": "Central Java",
+   "lat": -7.3001,
+   "lon": 109.2168,
+   "akurasi": "approximate",
+   "gem_id": "G100000700342",
+   "lokasi_id": "L100000700199",
+   "url_wiki": "https://www.gem.wiki/Baturaden_geothermal_power_plant",
+   "diriset": "2025-11-18",
+   "lembar": "Data",
+   "teknologi_tipe": "unknown type"
+  },
+  {
+   "nama": "Baturaden geothermal power plant",
+   "fase": "2.0",
+   "nama_lain": "Wkp Baturraden, Baturaden-Slamet",
+   "kapasitas_mw": 75,
+   "status": "pre-construction",
+   "status_asli": "pre-construction",
+   "tahun_mulai": 2029,
+   "pemilik": [
+    {
+     "nama": "PT Trinergy Mandiri International",
+     "persen": 11
+    },
+    {
+     "nama": "PT Nirwana Suci Abadi",
+     "persen": 89
+    }
+   ],
+   "provinsi": "Jawa Tengah",
+   "wilayah_asli": "Central Java",
+   "lat": -7.3001,
+   "lon": 109.2168,
+   "akurasi": "approximate",
+   "gem_id": "G100000700343",
+   "lokasi_id": "L100000700199",
+   "url_wiki": "https://www.gem.wiki/Baturaden_geothermal_power_plant",
+   "diriset": "2025-11-18",
+   "lembar": "Data",
+   "teknologi_tipe": "unknown type"
+  },
+  {
+   "nama": "Danau Ranau geothermal power plant",
+   "nama_lokal": "Pembangkit Listrik Tenaga Panas Bumi Danau Ranau",
+   "kapasitas_mw": 210,
+   "status": "announced",
+   "status_asli": "announced",
+   "tahun_mulai": 2027,
+   "pemilik": [
+    {
+     "nama": "PT PLN (Persero)",
+     "persen": 100,
+     "organisasi_id": "su_ed074ff5"
+    }
+   ],
+   "provinsi": "Lampung",
+   "wilayah_asli": "Lampung",
+   "kota": "South Ogan Komering Ulu",
+   "lat": -4.9372,
+   "lon": 103.8672,
+   "akurasi": "approximate",
+   "gem_id": "G100000700344",
+   "lokasi_id": "L100000700200",
+   "url_wiki": "https://www.gem.wiki/Danau_Ranau_geothermal_power_plant",
+   "diriset": "2025-02-10",
+   "lembar": "Data",
+   "teknologi_tipe": "unknown type"
+  },
+  {
+   "nama": "Guci geothermal power plant",
+   "kapasitas_mw": 55,
+   "status": "cancelled",
+   "status_asli": "cancelled",
+   "provinsi": "Jawa Tengah",
+   "wilayah_asli": "Central Java",
+   "kota": "Semarang",
+   "lat": -7.0446,
+   "lon": 110.4037,
+   "akurasi": "approximate",
+   "gem_id": "G100000700345",
+   "lokasi_id": "L100000700201",
+   "url_wiki": "https://www.gem.wiki/Guci_geothermal_power_plant",
+   "diriset": "2024-03-13",
+   "lembar": "Data",
+   "teknologi_tipe": "unknown type"
+  },
+  {
+   "nama": "Gunung Geureudong geothermal power plant",
+   "fase": "Future units",
+   "nama_lokal": "Wkp Gunung Geureudong Geothermal Plant",
+   "nama_lain": "Wkp Gunung Geureudong",
+   "kapasitas_mw": 220,
+   "status": "shelved",
+   "status_asli": "shelved - inferred 2 y",
+   "pemilik": [
+    {
+     "nama": "Hitay Energy Holdings",
+     "persen": 100
+    }
+   ],
+   "operator": [
+    {
+     "nama": "Hitay Energy Holdings",
+     "persen": null
+    }
+   ],
+   "provinsi": "Aceh",
+   "wilayah_asli": "Aceh",
+   "lat": 4.8106,
+   "lon": 96.8171,
+   "akurasi": "approximate",
+   "gem_id": "G100000700346",
+   "lokasi_id": "L100000700202",
+   "url_wiki": "https://www.gem.wiki/Gunung_Geureudong_geothermal_power_plant",
+   "diriset": "2024-03-13",
+   "lembar": "Data",
+   "teknologi_tipe": "unknown type"
+  },
+  {
+   "nama": "Gunung Salak geothermal power plant",
+   "fase": "7.0",
+   "kapasitas_mw": 40,
+   "status": "construction",
+   "status_asli": "construction",
+   "tahun_mulai": 2026,
+   "pemilik": [
+    {
+     "nama": "Electricity Generating PCL",
+     "persen": null
+    },
+    {
+     "nama": "AC Energy and Infrastructure Corp",
+     "persen": 19
+    },
+    {
+     "nama": "Star Energy Geothermal",
+     "persen": null,
+     "organisasi_id": "p_7a803f3b71"
+    },
+    {
+     "nama": "Star Energy Group PLC",
+     "persen": null
+    }
+   ],
+   "operator": [
+    {
+     "nama": "Star Energy Geothermal",
+     "persen": null,
+     "organisasi_id": "p_7a803f3b71"
+    }
+   ],
+   "provinsi": "Jawa Barat",
+   "wilayah_asli": "West Java",
+   "lat": -6.741,
+   "lon": 106.673,
+   "akurasi": "exact",
+   "gem_id": "G100000700347",
+   "lokasi_id": "L100000700058",
+   "url_wiki": "https://www.gem.wiki/Gunung_Salak_geothermal_power_plant",
+   "diriset": "2025-11-19",
+   "lembar": "Data",
+   "teknologi_tipe": "binary cycle"
+  },
+  {
+   "nama": "Gunung Sirung geothermal power plant",
+   "kapasitas_mw": 5,
+   "status": "cancelled",
+   "status_asli": "cancelled",
+   "pemilik": [
+    {
+     "nama": "PT PLN (Persero)",
+     "persen": 100,
+     "organisasi_id": "su_ed074ff5"
+    }
+   ],
+   "provinsi": "Nusa Tenggara Timur",
+   "wilayah_asli": "East Nusa Tenggara",
+   "kota": "Pantor Island Alor",
+   "lat": -8.5169,
+   "lon": 124.1334,
+   "akurasi": "approximate",
+   "gem_id": "G100000700348",
+   "lokasi_id": "L100000700203",
+   "url_wiki": "https://www.gem.wiki/Gunung_Sirung_geothermal_power_plant",
+   "diriset": "2025-02-11",
+   "lembar": "Data",
+   "teknologi_tipe": "unknown type"
+  },
+  {
+   "nama": "Hululais geothermal power plant",
+   "fase": "Future units",
+   "kapasitas_mw": 230,
+   "status": "announced",
+   "status_asli": "announced",
+   "operator": [
+    {
+     "nama": "Pertamina Geothermal Energy",
+     "persen": null,
+     "organisasi_id": "p_dda1e51dae"
+    }
+   ],
+   "provinsi": "Bengkulu",
+   "wilayah_asli": "Bengkulu",
+   "lat": -3.2413,
+   "lon": 102.2782,
+   "akurasi": "exact",
+   "gem_id": "G100000700349",
+   "lokasi_id": "L100000700066",
+   "url_wiki": "https://www.gem.wiki/Hululais_geothermal_power_plant",
+   "diriset": "2025-11-19",
+   "lembar": "Data",
+   "teknologi_tipe": "unknown type"
+  },
+  {
+   "nama": "Kepahiang geothermal power plant",
+   "fase": "1.0",
+   "kapasitas_mw": 55,
+   "status": "pre-construction",
+   "status_asli": "pre-construction",
+   "tahun_mulai": 2028,
+   "pemilik": [
+    {
+     "nama": "PT PLN (Persero)",
+     "persen": 100,
+     "organisasi_id": "su_ed074ff5"
+    }
+   ],
+   "provinsi": "Bengkulu",
+   "wilayah_asli": "Bengkulu",
+   "kota": "Kepahiang",
+   "lat": -3.629,
+   "lon": 102.6009,
+   "akurasi": "approximate",
+   "gem_id": "G100000700350",
+   "lokasi_id": "L100000700204",
+   "url_wiki": "https://www.gem.wiki/Kepahiang_geothermal_power_plant",
+   "diriset": "2025-02-11",
+   "lembar": "Data",
+   "teknologi_tipe": "unknown type"
+  },
+  {
+   "nama": "Kepahiang geothermal power plant",
+   "fase": "2.0",
+   "kapasitas_mw": 55,
+   "status": "pre-construction",
+   "status_asli": "pre-construction",
+   "tahun_mulai": 2028,
+   "pemilik": [
+    {
+     "nama": "PT PLN (Persero)",
+     "persen": 100,
+     "organisasi_id": "su_ed074ff5"
+    }
+   ],
+   "provinsi": "Bengkulu",
+   "wilayah_asli": "Bengkulu",
+   "kota": "Kepahiang",
+   "lat": -3.629,
+   "lon": 102.6009,
+   "akurasi": "approximate",
+   "gem_id": "G100000700351",
+   "lokasi_id": "L100000700204",
+   "url_wiki": "https://www.gem.wiki/Kepahiang_geothermal_power_plant",
+   "diriset": "2025-11-19",
+   "lembar": "Data",
+   "teknologi_tipe": "unknown type"
+  },
+  {
+   "nama": "Lahendong geothermal power plant",
+   "fase": "1.0",
+   "kapasitas_mw": 20,
+   "status": "operating",
+   "status_asli": "operating",
+   "tahun_mulai": 2001,
+   "pemilik": [
+    {
+     "nama": "Pertamina Geothermal Energy",
+     "persen": 100,
+     "organisasi_id": "p_dda1e51dae"
+    }
+   ],
+   "provinsi": "Sulawesi Utara",
+   "wilayah_asli": "North Sulawesi",
+   "kota": "Sulut",
+   "lat": 1.2542,
+   "lon": 124.8199,
+   "akurasi": "exact",
+   "gem_id": "G100000700352",
+   "lokasi_id": "L100000700205",
+   "url_wiki": "https://www.gem.wiki/Lahendong_geothermal_power_plant",
+   "diriset": "2023-05-08",
+   "lembar": "Data",
+   "teknologi_tipe": "unknown type"
+  },
+  {
+   "nama": "Lahendong geothermal power plant",
+   "fase": "2.0",
+   "kapasitas_mw": 20,
+   "status": "operating",
+   "status_asli": "operating",
+   "tahun_mulai": 2007,
+   "pemilik": [
+    {
+     "nama": "Pertamina Geothermal Energy",
+     "persen": 100,
+     "organisasi_id": "p_dda1e51dae"
+    }
+   ],
+   "provinsi": "Sulawesi Utara",
+   "wilayah_asli": "North Sulawesi",
+   "kota": "Sulut",
+   "lat": 1.2542,
+   "lon": 124.8199,
+   "akurasi": "exact",
+   "gem_id": "G100000700353",
+   "lokasi_id": "L100000700205",
+   "url_wiki": "https://www.gem.wiki/Lahendong_geothermal_power_plant",
+   "diriset": "2023-05-08",
+   "lembar": "Data",
+   "teknologi_tipe": "unknown type"
+  },
+  {
+   "nama": "Lahendong geothermal power plant",
+   "fase": "3.0",
+   "kapasitas_mw": 20,
+   "status": "operating",
+   "status_asli": "operating",
+   "tahun_mulai": 2009,
+   "pemilik": [
+    {
+     "nama": "Pertamina Geothermal Energy",
+     "persen": 100,
+     "organisasi_id": "p_dda1e51dae"
+    }
+   ],
+   "provinsi": "Sulawesi Utara",
+   "wilayah_asli": "North Sulawesi",
+   "kota": "Sulut",
+   "lat": 1.2712,
+   "lon": 124.8354,
+   "akurasi": "exact",
+   "gem_id": "G100000700354",
+   "lokasi_id": "L100000700205",
+   "url_wiki": "https://www.gem.wiki/Lahendong_geothermal_power_plant",
+   "diriset": "2023-05-08",
+   "lembar": "Data",
+   "teknologi_tipe": "unknown type"
+  },
+  {
+   "nama": "Lahendong geothermal power plant",
+   "fase": "4.0",
+   "kapasitas_mw": 20,
+   "status": "operating",
+   "status_asli": "operating",
+   "tahun_mulai": 2011,
+   "pemilik": [
+    {
+     "nama": "Pertamina Geothermal Energy",
+     "persen": 100,
+     "organisasi_id": "p_dda1e51dae"
+    }
+   ],
+   "provinsi": "Sulawesi Utara",
+   "wilayah_asli": "North Sulawesi",
+   "kota": "Sulut",
+   "lat": 1.2712,
+   "lon": 124.8354,
+   "akurasi": "exact",
+   "gem_id": "G100000700355",
+   "lokasi_id": "L100000700205",
+   "url_wiki": "https://www.gem.wiki/Lahendong_geothermal_power_plant",
+   "diriset": "2023-05-08",
+   "lembar": "Data",
+   "teknologi_tipe": "unknown type"
+  },
+  {
+   "nama": "Lahendong geothermal power plant",
+   "fase": "5.0",
+   "kapasitas_mw": 20,
+   "status": "operating",
+   "status_asli": "operating",
+   "tahun_mulai": 2016,
+   "pemilik": [
+    {
+     "nama": "Pertamina Geothermal Energy",
+     "persen": 100,
+     "organisasi_id": "p_dda1e51dae"
+    }
+   ],
+   "kota": "Sulut",
+   "lat": 1.174549,
+   "lon": 124.7954,
+   "akurasi": "exact",
+   "gem_id": "G100000700356",
+   "lokasi_id": "L100000700205",
+   "url_wiki": "https://www.gem.wiki/Lahendong_geothermal_power_plant",
+   "diriset": "2024-04-09",
+   "lembar": "Data",
+   "teknologi_tipe": "flash steam - single"
+  },
+  {
+   "nama": "Lahendong geothermal power plant",
+   "fase": "6.0",
+   "kapasitas_mw": 20,
+   "status": "operating",
+   "status_asli": "operating",
+   "tahun_mulai": 2016,
+   "pemilik": [
+    {
+     "nama": "Pertamina Geothermal Energy",
+     "persen": 100,
+     "organisasi_id": "p_dda1e51dae"
+    }
+   ],
+   "kota": "Sulut",
+   "lat": 1.174545,
+   "lon": 124.7954,
+   "akurasi": "exact",
+   "gem_id": "G100000700357",
+   "lokasi_id": "L100000700205",
+   "url_wiki": "https://www.gem.wiki/Lahendong_geothermal_power_plant",
+   "diriset": "2024-04-09",
+   "lembar": "Data",
+   "teknologi_tipe": "flash steam - single"
+  },
+  {
+   "nama": "Mataloko geothermal power plant",
+   "fase": "1.0",
+   "kapasitas_mw": 2,
+   "status": "operating",
+   "status_asli": "operating",
+   "operator": [
+    {
+     "nama": "PT PLN (Persero)",
+     "persen": null,
+     "organisasi_id": "su_ed074ff5"
+    }
+   ],
+   "provinsi": "Nusa Tenggara Timur",
+   "wilayah_asli": "East Nusa Tenggara",
+   "lat": -8.8332,
+   "lon": 121.0611,
+   "akurasi": "exact",
+   "gem_id": "G100000700358",
+   "lokasi_id": "L100000700206",
+   "url_wiki": "https://www.gem.wiki/Mataloko_geothermal_power_plant",
+   "diriset": "2023-05-08",
+   "lembar": "Data",
+   "teknologi_tipe": "unknown type"
+  },
+  {
+   "nama": "Ngebel geothermal power plant",
+   "fase": "1.0",
+   "nama_lain": "Wilis-Ngebel",
+   "kapasitas_mw": 55,
+   "status": "pre-construction",
+   "status_asli": "pre-construction",
+   "pemilik": [
+    {
+     "nama": "PT Bakrie Power",
+     "persen": 34
+    },
+    {
+     "nama": "Oakridge International",
+     "persen": 65
+    }
+   ],
+   "provinsi": "Jawa Timur",
+   "wilayah_asli": "East Java",
+   "lat": -7.7761,
+   "lon": 111.6374,
+   "akurasi": "exact",
+   "gem_id": "G100000700359",
+   "lokasi_id": "L100000700207",
+   "url_wiki": "https://www.gem.wiki/Ngebel_geothermal_power_plant",
+   "diriset": "2025-11-24",
+   "lembar": "Data",
+   "teknologi_tipe": "unknown type"
+  },
+  {
+   "nama": "Ngebel geothermal power plant",
+   "fase": "2.0",
+   "nama_lain": "Wilis-Ngebel",
+   "kapasitas_mw": 55,
+   "status": "pre-construction",
+   "status_asli": "pre-construction",
+   "pemilik": [
+    {
+     "nama": "PT Bakrie Power",
+     "persen": 34
+    },
+    {
+     "nama": "Oakridge International",
+     "persen": 65
+    }
+   ],
+   "provinsi": "Jawa Timur",
+   "wilayah_asli": "East Java",
+   "lat": -7.7761,
+   "lon": 111.6374,
+   "akurasi": "exact",
+   "gem_id": "G100000700360",
+   "lokasi_id": "L100000700207",
+   "url_wiki": "https://www.gem.wiki/Ngebel_geothermal_power_plant",
+   "diriset": "2025-11-24",
+   "lembar": "Data",
+   "teknologi_tipe": "unknown type"
+  },
+  {
+   "nama": "Ngebel geothermal power plant",
+   "fase": "3.0",
+   "nama_lain": "Wilis-Ngebel",
+   "kapasitas_mw": 55,
+   "status": "pre-construction",
+   "status_asli": "pre-construction",
+   "pemilik": [
+    {
+     "nama": "PT Bakrie Power",
+     "persen": 34
+    },
+    {
+     "nama": "Oakridge International",
+     "persen": 65
+    }
+   ],
+   "provinsi": "Jawa Timur",
+   "wilayah_asli": "East Java",
+   "lat": -7.7761,
+   "lon": 111.6374,
+   "akurasi": "exact",
+   "gem_id": "G100000700361",
+   "lokasi_id": "L100000700207",
+   "url_wiki": "https://www.gem.wiki/Ngebel_geothermal_power_plant",
+   "diriset": "2025-11-24",
+   "lembar": "Data",
+   "teknologi_tipe": "unknown type"
+  },
+  {
+   "nama": "Oka Ile Ange geothermal power plant",
+   "fase": "1.0",
+   "kapasitas_mw": 5,
+   "status": "cancelled",
+   "status_asli": "cancelled",
+   "pemilik": [
+    {
+     "nama": "PT PLN (Persero)",
+     "persen": 100,
+     "organisasi_id": "su_ed074ff5"
+    }
+   ],
+   "provinsi": "Nusa Tenggara Timur",
+   "wilayah_asli": "East Nusa",
+   "kota": "East Flores",
+   "lat": -8.3109,
+   "lon": 122.9693,
+   "akurasi": "approximate",
+   "gem_id": "G100000700362",
+   "lokasi_id": "L100000700208",
+   "url_wiki": "https://www.gem.wiki/Oka_Ile_Ange_geothermal_power_plant",
+   "diriset": "2025-02-10",
+   "lembar": "Data",
+   "teknologi_tipe": "unknown type"
+  },
+  {
+   "nama": "Oka Ile Ange geothermal power plant",
+   "fase": "2.0",
+   "kapasitas_mw": 5,
+   "status": "cancelled",
+   "status_asli": "cancelled",
+   "pemilik": [
+    {
+     "nama": "PT PLN (Persero)",
+     "persen": 100,
+     "organisasi_id": "su_ed074ff5"
+    }
+   ],
+   "provinsi": "Nusa Tenggara Timur",
+   "wilayah_asli": "East Nusa",
+   "kota": "East Flores",
+   "lat": -8.3109,
+   "lon": 122.9693,
+   "akurasi": "approximate",
+   "gem_id": "G100000700363",
+   "lokasi_id": "L100000700208",
+   "url_wiki": "https://www.gem.wiki/Oka_Ile_Ange_geothermal_power_plant",
+   "diriset": "2025-02-10",
+   "lembar": "Data",
+   "teknologi_tipe": "unknown type"
+  },
+  {
+   "nama": "Rantau Dedep geothermal power plant",
+   "fase": "2.0",
+   "kapasitas_mw": 134,
+   "status": "pre-construction",
+   "status_asli": "pre-construction",
+   "provinsi": "Sumatera Selatan",
+   "wilayah_asli": "South Sumatra",
+   "kota": "Lahat Regency",
+   "lat": -4.2069,
+   "lon": 103.3857,
+   "akurasi": "approximate",
+   "gem_id": "G100000700364",
+   "lokasi_id": "L100000700146",
+   "url_wiki": "https://www.gem.wiki/Rantau_Dedep_geothermal_power_plant",
+   "diriset": "2025-11-25",
+   "lembar": "Data",
+   "teknologi_tipe": "flash steam - double"
+  },
+  {
+   "nama": "Rawa Dano geothermal power plant",
+   "fase": "1.0",
+   "kapasitas_mw": 55,
+   "status": "pre-construction",
+   "status_asli": "pre-construction",
+   "tahun_mulai": 2026,
+   "pemilik": [
+    {
+     "nama": "PT Sintesa Banten Geothermal",
+     "persen": 100
+    }
+   ],
+   "operator": [
+    {
+     "nama": "PT Sintesa Banten Geothermal",
+     "persen": null
+    }
+   ],
+   "provinsi": "Banten",
+   "wilayah_asli": "Banten",
+   "lat": -6.1619,
+   "lon": 105.9835,
+   "akurasi": "approximate",
+   "gem_id": "G100000700365",
+   "lokasi_id": "L100000700209",
+   "url_wiki": "https://www.gem.wiki/Rawa_Dano_geothermal_power_plant",
+   "diriset": "2025-11-25",
+   "lembar": "Data",
+   "teknologi_tipe": "unknown type"
+  },
+  {
+   "nama": "Rawa Dano geothermal power plant",
+   "fase": "Future units",
+   "kapasitas_mw": 55,
+   "status": "pre-construction",
+   "status_asli": "pre-construction",
+   "tahun_mulai": 2026,
+   "pemilik": [
+    {
+     "nama": "PT Sintesa Banten Geothermal",
+     "persen": 100
+    }
+   ],
+   "operator": [
+    {
+     "nama": "PT Sintesa Banten Geothermal",
+     "persen": null
+    }
+   ],
+   "provinsi": "Banten",
+   "wilayah_asli": "Banten",
+   "lat": -6.1619,
+   "lon": 105.9835,
+   "akurasi": "approximate",
+   "gem_id": "G100000700366",
+   "lokasi_id": "L100000700209",
+   "url_wiki": "https://www.gem.wiki/Rawa_Dano_geothermal_power_plant",
+   "diriset": "2025-11-25",
+   "lembar": "Data",
+   "teknologi_tipe": "unknown type"
+  },
+  {
+   "nama": "Sibayak geothermal power plant",
+   "kapasitas_mw": 10,
+   "status": "operating",
+   "status_asli": "operating",
+   "pemilik": [
+    {
+     "nama": "Pertamina Geothermal Energy",
+     "persen": 100,
+     "organisasi_id": "p_dda1e51dae"
+    }
+   ],
+   "provinsi": "Sumatera Utara",
+   "wilayah_asli": "North Sumatra",
+   "kota": "Karo Regency",
+   "lat": 3.2266,
+   "lon": 98.5004,
+   "akurasi": "exact",
+   "gem_id": "G100000700367",
+   "lokasi_id": "L100000700210",
+   "url_wiki": "https://www.gem.wiki/Sibayak_geothermal_power_plant",
+   "diriset": "2023-05-08",
+   "lembar": "Data",
+   "teknologi_tipe": "unknown type"
+  },
+  {
+   "nama": "Sokoria geothermal power plant",
+   "fase": "1.0",
+   "kapasitas_mw": 3,
+   "status": "operating",
+   "status_asli": "operating",
+   "operator": [
+    {
+     "nama": "PT Sokoria Geothermal Indonesia",
+     "persen": null
+    }
+   ],
+   "provinsi": "Nusa Tenggara Timur",
+   "wilayah_asli": "East Nusa Tenggara",
+   "lat": -8.7938,
+   "lon": 121.7662,
+   "akurasi": "exact",
+   "gem_id": "G100000700368",
+   "lokasi_id": "L100000700211",
+   "url_wiki": "https://www.gem.wiki/Sokoria_geothermal_power_plant",
+   "diriset": "2023-05-08",
+   "lembar": "Data",
+   "teknologi_tipe": "unknown type"
+  },
+  {
+   "nama": "Sokoria geothermal power plant",
+   "fase": "2.0",
+   "kapasitas_mw": 3,
+   "status": "operating",
+   "status_asli": "operating",
+   "operator": [
+    {
+     "nama": "PT Sokoria Geothermal Indonesia",
+     "persen": null
+    }
+   ],
+   "provinsi": "Nusa Tenggara Timur",
+   "wilayah_asli": "East Nusa Tenggara",
+   "lat": -8.7938,
+   "lon": 121.7662,
+   "akurasi": "exact",
+   "gem_id": "G100000700369",
+   "lokasi_id": "L100000700211",
+   "url_wiki": "https://www.gem.wiki/Sokoria_geothermal_power_plant",
+   "diriset": "2023-05-08",
+   "lembar": "Data",
+   "teknologi_tipe": "unknown type"
+  },
+  {
+   "nama": "Songa Wayaua geothermal power plant",
+   "fase": "1.0",
+   "kapasitas_mw": 5,
+   "status": "announced",
+   "status_asli": "announced",
+   "tahun_mulai": 2027,
+   "pemilik": [
+    {
+     "nama": "PT PLN (Persero)",
+     "persen": 100,
+     "organisasi_id": "su_ed074ff5"
+    }
+   ],
+   "provinsi": "Maluku Utara",
+   "wilayah_asli": "Maluku Utara",
+   "kota": "Halmahere Selatan",
+   "lat": -0.5422,
+   "lon": 127.5245,
+   "akurasi": "approximate",
+   "gem_id": "G100000700370",
+   "lokasi_id": "L100000700212",
+   "url_wiki": "https://www.gem.wiki/Songa_Wayaua_geothermal_power_plant",
+   "diriset": "2025-11-25",
+   "lembar": "Data",
+   "teknologi_tipe": "unknown type"
+  },
+  {
+   "nama": "Songa Wayaua geothermal power plant",
+   "fase": "2.0",
+   "kapasitas_mw": 5,
+   "status": "announced",
+   "status_asli": "announced",
+   "tahun_mulai": 2027,
+   "pemilik": [
+    {
+     "nama": "PT PLN (Persero)",
+     "persen": 100,
+     "organisasi_id": "su_ed074ff5"
+    }
+   ],
+   "provinsi": "Maluku Utara",
+   "wilayah_asli": "Maluku Utara",
+   "kota": "Halmahere Selatan",
+   "lat": -0.5422,
+   "lon": 127.5245,
+   "akurasi": "approximate",
+   "gem_id": "G100000700371",
+   "lokasi_id": "L100000700212",
+   "url_wiki": "https://www.gem.wiki/Songa_Wayaua_geothermal_power_plant",
+   "diriset": "2025-11-25",
+   "lembar": "Data",
+   "teknologi_tipe": "unknown type"
+  },
+  {
+   "nama": "Tangkuban Perahu Ciater geothermal power plant",
+   "fase": "1.0",
+   "kapasitas_mw": 55,
+   "status": "shelved",
+   "status_asli": "shelved - inferred 2 y",
+   "pemilik": [
+    {
+     "nama": "PT PLN (Persero)",
+     "persen": 100,
+     "organisasi_id": "su_ed074ff5"
+    }
+   ],
+   "provinsi": "Jawa Barat",
+   "wilayah_asli": "West Java",
+   "kota": "Subang",
+   "lat": -6.7367,
+   "lon": 107.6705,
+   "akurasi": "approximate",
+   "gem_id": "G100000700372",
+   "lokasi_id": "L100000700213",
+   "url_wiki": "https://www.gem.wiki/Tangkuban_Perahu_Ciater_geothermal_power_plant",
+   "diriset": "2025-11-25",
+   "lembar": "Data",
+   "teknologi_tipe": "unknown type"
+  },
+  {
+   "nama": "Tangkuban Perahu Ciater geothermal power plant",
+   "fase": "2.0",
+   "kapasitas_mw": 55,
+   "status": "shelved",
+   "status_asli": "shelved - inferred 2 y",
+   "pemilik": [
+    {
+     "nama": "PT PLN (Persero)",
+     "persen": 100,
+     "organisasi_id": "su_ed074ff5"
+    }
+   ],
+   "provinsi": "Jawa Barat",
+   "wilayah_asli": "West Java",
+   "kota": "Subang",
+   "lat": -6.7367,
+   "lon": 107.6705,
+   "akurasi": "approximate",
+   "gem_id": "G100000700373",
+   "lokasi_id": "L100000700213",
+   "url_wiki": "https://www.gem.wiki/Tangkuban_Perahu_Ciater_geothermal_power_plant",
+   "diriset": "2025-11-25",
+   "lembar": "Data",
+   "teknologi_tipe": "unknown type"
+  },
+  {
+   "nama": "Tulehu geothermal power plant",
+   "kapasitas_mw": 20,
+   "status": "announced",
+   "status_asli": "announced",
+   "tahun_mulai": 2031,
+   "pemilik": [
+    {
+     "nama": "PT PLN (Persero)",
+     "persen": 100,
+     "organisasi_id": "su_ed074ff5"
+    }
+   ],
+   "provinsi": "Maluku",
+   "wilayah_asli": "Maluku",
+   "kota": "Maluku Tengah",
+   "lat": -3.6238,
+   "lon": 128.1486,
+   "akurasi": "approximate",
+   "gem_id": "G100000700374",
+   "lokasi_id": "L100000700214",
+   "url_wiki": "https://www.gem.wiki/Tulehu_geothermal_power_plant",
+   "diriset": "2025-11-25",
+   "lembar": "Data",
+   "teknologi_tipe": "unknown type"
+  },
+  {
+   "nama": "Ulumbo geothermal power plant",
+   "fase": "1.0",
+   "kapasitas_mw": 2,
+   "status": "operating",
+   "status_asli": "operating",
+   "operator": [
+    {
+     "nama": "PT PLN (Persero)",
+     "persen": null,
+     "organisasi_id": "su_ed074ff5"
+    }
+   ],
+   "provinsi": "Lampung",
+   "wilayah_asli": "Lampung",
+   "lat": -5.309,
+   "lon": 104.5734,
+   "akurasi": "exact",
+   "gem_id": "G100000700375",
+   "lokasi_id": "L100000700215",
+   "url_wiki": "https://www.gem.wiki/Ulumbo_geothermal_power_plant",
+   "diriset": "2023-05-08",
+   "lembar": "Data",
+   "teknologi_tipe": "unknown type"
+  },
+  {
+   "nama": "Ulumbo geothermal power plant",
+   "fase": "2.0",
+   "kapasitas_mw": 2,
+   "status": "operating",
+   "status_asli": "operating",
+   "operator": [
+    {
+     "nama": "PT PLN (Persero)",
+     "persen": null,
+     "organisasi_id": "su_ed074ff5"
+    }
+   ],
+   "provinsi": "Lampung",
+   "wilayah_asli": "Lampung",
+   "lat": -5.309,
+   "lon": 104.5734,
+   "akurasi": "exact",
+   "gem_id": "G100000700376",
+   "lokasi_id": "L100000700215",
+   "url_wiki": "https://www.gem.wiki/Ulumbo_geothermal_power_plant",
+   "diriset": "2023-05-08",
+   "lembar": "Data",
+   "teknologi_tipe": "unknown type"
+  },
+  {
+   "nama": "Ulumbo geothermal power plant",
+   "fase": "3.0",
+   "kapasitas_mw": 2,
+   "status": "operating",
+   "status_asli": "operating",
+   "operator": [
+    {
+     "nama": "PT PLN (Persero)",
+     "persen": null,
+     "organisasi_id": "su_ed074ff5"
+    }
+   ],
+   "provinsi": "Lampung",
+   "wilayah_asli": "Lampung",
+   "lat": -5.3058,
+   "lon": 104.577,
+   "akurasi": "exact",
+   "gem_id": "G100000700377",
+   "lokasi_id": "L100000700215",
+   "url_wiki": "https://www.gem.wiki/Ulumbo_geothermal_power_plant",
+   "diriset": "2023-05-08",
+   "lembar": "Data",
+   "teknologi_tipe": "unknown type"
+  },
+  {
+   "nama": "Ulumbo geothermal power plant",
+   "fase": "4.0",
+   "kapasitas_mw": 2,
+   "status": "operating",
+   "status_asli": "operating",
+   "operator": [
+    {
+     "nama": "PT PLN (Persero)",
+     "persen": null,
+     "organisasi_id": "su_ed074ff5"
+    }
+   ],
+   "provinsi": "Lampung",
+   "wilayah_asli": "Lampung",
+   "lat": -5.3058,
+   "lon": 104.577,
+   "akurasi": "exact",
+   "gem_id": "G100000700378",
+   "lokasi_id": "L100000700215",
+   "url_wiki": "https://www.gem.wiki/Ulumbo_geothermal_power_plant",
+   "diriset": "2023-05-08",
+   "lembar": "Data",
+   "teknologi_tipe": "unknown type"
+  },
+  {
+   "nama": "Ungaran geothermal power plant",
+   "kapasitas_mw": 55,
+   "status": "announced",
+   "status_asli": "announced",
+   "pemilik": [
+    {
+     "nama": "PT PLN (Persero)",
+     "persen": 100,
+     "organisasi_id": "su_ed074ff5"
+    }
+   ],
+   "provinsi": "Jawa Barat",
+   "wilayah_asli": "West Java",
+   "kota": "Subang",
+   "lat": -7.1366,
+   "lon": 110.3974,
+   "akurasi": "approximate",
+   "gem_id": "G100000700379",
+   "lokasi_id": "L100000700216",
+   "url_wiki": "https://www.gem.wiki/Ungaran_geothermal_power_plant",
+   "diriset": "2025-11-25",
+   "lembar": "Data",
+   "teknologi_tipe": "unknown type"
+  },
+  {
+   "nama": "Toka Tindung geothermal power plant",
+   "kapasitas_mw": 40,
+   "status": "pre-construction",
+   "status_asli": "pre-construction",
+   "pemilik": [
+    {
+     "nama": "Ormat Technology Inc",
+     "persen": null
+    },
+    {
+     "nama": "PT Archi Indonesia Tbk",
+     "persen": null
+    }
+   ],
+   "lat": 1.584241,
+   "lon": 125.1008,
+   "akurasi": "approximate",
+   "gem_id": "G100001030315",
+   "lokasi_id": "L100001025604",
+   "url_wiki": "https://www.gem.wiki/Toka_Tindung_geothermal_power_plant",
+   "diriset": "2025-11-25",
+   "lembar": "Data",
+   "teknologi_tipe": "unknown type"
+  },
+  {
+   "nama": "Nage geothermal power plant",
+   "kapasitas_mw": 40,
+   "status": "announced",
+   "status_asli": "announced",
+   "pemilik": [
+    {
+     "nama": "PT Daya Anugerah Sejati Utama",
+     "persen": null
+    }
+   ],
+   "lat": -8.88609,
+   "lon": 121.0078,
+   "akurasi": "approximate",
+   "gem_id": "G100001030316",
+   "lokasi_id": "L100001025607",
+   "url_wiki": "https://www.gem.wiki/Nage_geothermal_power_plant",
+   "diriset": "2025-11-24",
+   "lembar": "Data",
+   "teknologi_tipe": "unknown type"
+  },
+  {
+   "nama": "Lahendong geothermal power plant",
+   "fase": "7.0",
+   "kapasitas_mw": 20,
+   "status": "announced",
+   "status_asli": "announced",
+   "tahun_mulai": 2028,
+   "pemilik": [
+    {
+     "nama": "Pertamina Geothermal Energy",
+     "persen": null,
+     "organisasi_id": "p_dda1e51dae"
+    }
+   ],
+   "lat": 1.174545,
+   "lon": 124.7954,
+   "akurasi": "approximate",
+   "gem_id": "G100001030452",
+   "lokasi_id": "L100000700205",
+   "url_wiki": "https://www.gem.wiki/Lahendong_geothermal_power_plant",
+   "diriset": "2025-11-19",
+   "lembar": "Data",
+   "teknologi_tipe": "unknown type"
+  },
+  {
+   "nama": "Lahendong geothermal power plant",
+   "fase": "8.0",
+   "kapasitas_mw": 20,
+   "status": "announced",
+   "status_asli": "announced",
+   "tahun_mulai": 2028,
+   "pemilik": [
+    {
+     "nama": "Pertamina Geothermal Energy",
+     "persen": null,
+     "organisasi_id": "p_dda1e51dae"
+    }
+   ],
+   "lat": 1.174545,
+   "lon": 124.7954,
+   "akurasi": "approximate",
+   "gem_id": "G100001030453",
+   "lokasi_id": "L100000700205",
+   "url_wiki": "https://www.gem.wiki/Lahendong_geothermal_power_plant",
+   "diriset": "2025-11-19",
+   "lembar": "Data",
+   "teknologi_tipe": "unknown type"
+  },
+  {
+   "nama": "Sarulla 2 geothermal power plant",
+   "kapasitas_mw": 50,
+   "status": "pre-construction",
+   "status_asli": "pre-construction",
+   "tahun_mulai": 2029,
+   "lat": 1.8202,
+   "lon": 99.0885,
+   "akurasi": "approximate",
+   "gem_id": "G100001030454",
+   "lokasi_id": "L100001025662",
+   "url_wiki": "https://www.gem.wiki/Sarulla_2_geothermal_power_plant",
+   "diriset": "2024-11-20",
+   "lembar": "Data",
+   "teknologi_tipe": "unknown type"
+  },
+  {
+   "nama": "Blawan Ijen geothermal project",
+   "fase": "3.0",
+   "nama_lain": "East Java geothermal plant, Ijen geothermal power plant",
+   "kapasitas_mw": 76,
+   "status": "announced",
+   "status_asli": "announced",
+   "pemilik": [
+    {
+     "nama": "Ormat Technology Inc",
+     "persen": 49
+    },
+    {
+     "nama": "PT Medco Power Indonesia",
+     "persen": 51,
+     "organisasi_id": "p_27ae5a4203"
+    }
+   ],
+   "operator": [
+    {
+     "nama": "PT Medco Power Indonesia",
+     "persen": null,
+     "organisasi_id": "p_27ae5a4203"
+    }
+   ],
+   "provinsi": "Jawa Timur",
+   "wilayah_asli": "East Java",
+   "kota": "Blawan Ijen",
+   "lat": -7.9735,
+   "lon": 114.1708,
+   "akurasi": "approximate",
+   "gem_id": "G100001030456",
+   "lokasi_id": "L100000700014",
+   "url_wiki": "https://www.gem.wiki/Blawan_Ijen_geothermal_project",
+   "diriset": "2025-11-18",
+   "lembar": "Data",
+   "teknologi_tipe": "unknown type"
+  },
+  {
+   "nama": "Ulumbu geothermal power plant",
+   "fase": "Poco Leok",
+   "nama_lokal": "Pembangkit Listrik Tenaga Panas Bumi Ulumbu",
+   "nama_lain": "Poco Leok, Ulubelu Small-Scale Co-Generation",
+   "kapasitas_mw": 30,
+   "status": "announced",
+   "status_asli": "announced",
+   "tahun_mulai": 2028,
+   "pemilik": [
+    {
+     "nama": "PT Pertamina (Persero)",
+     "persen": null,
+     "organisasi_id": "p_b1c52ad7b0"
+    }
+   ],
+   "lat": -8.68293,
+   "lon": 120.5001,
+   "akurasi": "approximate",
+   "gem_id": "G100001030457",
+   "lokasi_id": "L100001025664",
+   "url_wiki": "https://www.gem.wiki/Ulumbu_geothermal_power_plant",
+   "diriset": "2024-11-20",
+   "lembar": "Data",
+   "teknologi_tipe": "unknown type"
+  },
+  {
+   "nama": "Candradimuka geothermal power plant",
+   "kapasitas_mw": 40,
+   "status": "announced",
+   "status_asli": "announced",
+   "pemilik": [
+    {
+     "nama": "PT Geo Dipa Energi (GDE)",
+     "persen": null
+    }
+   ],
+   "lat": -7.17876,
+   "lon": 109.8675,
+   "akurasi": "approximate",
+   "gem_id": "G100001030458",
+   "lokasi_id": "L100001025665",
+   "url_wiki": "https://www.gem.wiki/Candradimuka_geothermal_power_plant",
+   "diriset": "2025-11-18",
+   "lembar": "Data",
+   "teknologi_tipe": "unknown type"
+  },
+  {
+   "nama": "Bukit Daun geothermal power plant",
+   "fase": "1.0",
+   "kapasitas_mw": 30,
+   "status": "announced",
+   "status_asli": "announced",
+   "pemilik": [
+    {
+     "nama": "Pertamina Geothermal Energy",
+     "persen": null,
+     "organisasi_id": "p_dda1e51dae"
+    }
+   ],
+   "lat": -3.39291,
+   "lon": 102.2906,
+   "akurasi": "approximate",
+   "gem_id": "G100001030459",
+   "lokasi_id": "L100001025666",
+   "url_wiki": "https://www.gem.wiki/Bukit_Daun_geothermal_power_plant",
+   "diriset": "2025-11-18",
+   "lembar": "Data",
+   "teknologi_tipe": "unknown type"
+  },
+  {
+   "nama": "Klabat Wineru geothermal power plant",
+   "kapasitas_mw": 40,
+   "status": "announced",
+   "status_asli": "announced",
+   "lat": 1.446349,
+   "lon": 125.0333,
+   "akurasi": "approximate",
+   "gem_id": "G100001030959",
+   "lokasi_id": "L100001025883",
+   "url_wiki": "https://www.gem.wiki/Klabat_Wineru_geothermal_power_plant",
+   "diriset": "2025-11-19",
+   "lembar": "Data",
+   "teknologi_tipe": "unknown type"
+  },
+  {
+   "nama": "Hu'u Daha geothermal power plant",
+   "kapasitas_mw": 60,
+   "status": "announced",
+   "status_asli": "announced",
+   "pemilik": [
+    {
+     "nama": "Vale SA",
+     "persen": null
+    },
+    {
+     "nama": "PT Antam BK",
+     "persen": null
+    }
+   ],
+   "lat": -8.26127,
+   "lon": 118.0111,
+   "akurasi": "approximate",
+   "gem_id": "G100001030960",
+   "lokasi_id": "L100001025884",
+   "url_wiki": "https://www.gem.wiki/Hu'u_Daha_geothermal_power_plant",
+   "diriset": "2025-11-19",
+   "lembar": "Data",
+   "teknologi_tipe": "unknown type"
+  },
+  {
+   "nama": "Mataloko geothermal power plant",
+   "fase": "2.0",
+   "kapasitas_mw": 10,
+   "status": "pre-construction",
+   "status_asli": "pre-construction",
+   "provinsi": "Nusa Tenggara Timur",
+   "wilayah_asli": "East Nusa Tenggara",
+   "lat": -8.8332,
+   "lon": 121.0611,
+   "akurasi": "exact",
+   "gem_id": "G100001048284",
+   "lokasi_id": "L100000700206",
+   "url_wiki": "https://www.gem.wiki/Mataloko_geothermal_power_plant",
+   "diriset": "2025-11-20",
+   "lembar": "Data",
+   "teknologi_tipe": "unknown type"
+  },
+  {
+   "nama": "Mataloko geothermal power plant",
+   "fase": "3.0",
+   "kapasitas_mw": 10,
+   "status": "pre-construction",
+   "status_asli": "pre-construction",
+   "provinsi": "Nusa Tenggara Timur",
+   "wilayah_asli": "East Nusa Tenggara",
+   "lat": -8.8332,
+   "lon": 121.0611,
+   "akurasi": "exact",
+   "gem_id": "G100001048285",
+   "lokasi_id": "L100000700206",
+   "url_wiki": "https://www.gem.wiki/Mataloko_geothermal_power_plant",
+   "diriset": "2025-11-20",
+   "lembar": "Data",
+   "teknologi_tipe": "unknown type"
+  },
+  {
+   "nama": "Dieng Small Scale geothermal power plant",
+   "nama_lokal": "PLTP Dieng Geothermal Plant",
+   "kapasitas_mw": 10,
+   "status": "operating",
+   "status_asli": "operating",
+   "tahun_mulai": 2021,
+   "lat": -7.22231,
+   "lon": 109.9054,
+   "akurasi": "exact",
+   "gem_id": "G100001048305",
+   "lokasi_id": "L100001042931",
+   "url_wiki": "https://www.gem.wiki/Dieng_Small_Scale_geothermal_power_plant",
+   "diriset": "2025-01-08",
+   "lembar": "Data",
+   "teknologi_tipe": "unknown type"
+  },
+  {
+   "nama": "Muarah Laboh geothermal plant",
+   "fase": "3.0",
+   "nama_lain": "Muara Laboh",
+   "kapasitas_mw": 60,
+   "status": "pre-construction",
+   "status_asli": "pre-construction",
+   "tahun_mulai": 2033,
+   "provinsi": "Sumatera Barat",
+   "wilayah_asli": "West Sumatra",
+   "lat": -1.6268,
+   "lon": 101.1296,
+   "akurasi": "exact",
+   "gem_id": "G100001070955",
+   "lokasi_id": "L100000700113",
+   "url_wiki": "https://www.gem.wiki/Muarah_Laboh_geothermal_plant",
+   "diriset": "2025-10-30",
+   "lembar": "Data",
+   "teknologi_tipe": "flash steam - unknown"
+  },
+  {
+   "nama": "Baturaden geothermal power plant",
+   "fase": "3.0",
+   "nama_lain": "Wkp Baturraden, Baturaden-Slamet",
+   "kapasitas_mw": 35,
+   "status": "pre-construction",
+   "status_asli": "pre-construction",
+   "tahun_mulai": 2030,
+   "provinsi": "Jawa Tengah",
+   "wilayah_asli": "Central Java",
+   "lat": -7.3001,
+   "lon": 109.2168,
+   "akurasi": "approximate",
+   "gem_id": "G100001071901",
+   "lokasi_id": "L100000700199",
+   "url_wiki": "https://www.gem.wiki/Baturaden_geothermal_power_plant",
+   "diriset": "2025-11-18",
+   "lembar": "Data",
+   "teknologi_tipe": "unknown type"
+  },
+  {
+   "nama": "Bukit Daun geothermal power plant",
+   "fase": "2.0",
+   "kapasitas_mw": 30,
+   "status": "announced",
+   "status_asli": "announced",
+   "pemilik": [
+    {
+     "nama": "Pertamina Geothermal Energy",
+     "persen": null,
+     "organisasi_id": "p_dda1e51dae"
+    }
+   ],
+   "lat": -3.39291,
+   "lon": 102.2906,
+   "akurasi": "approximate",
+   "gem_id": "G100001071902",
+   "lokasi_id": "L100001025666",
+   "url_wiki": "https://www.gem.wiki/Bukit_Daun_geothermal_power_plant",
+   "diriset": "2025-11-18",
+   "lembar": "Data",
+   "teknologi_tipe": "unknown type"
+  },
+  {
+   "nama": "Bukit Daun geothermal power plant",
+   "fase": "3.0",
+   "kapasitas_mw": 30,
+   "status": "announced",
+   "status_asli": "announced",
+   "pemilik": [
+    {
+     "nama": "Pertamina Geothermal Energy",
+     "persen": null,
+     "organisasi_id": "p_dda1e51dae"
+    }
+   ],
+   "lat": -3.39291,
+   "lon": 102.2906,
+   "akurasi": "approximate",
+   "gem_id": "G100001071903",
+   "lokasi_id": "L100001025666",
+   "url_wiki": "https://www.gem.wiki/Bukit_Daun_geothermal_power_plant",
+   "diriset": "2025-11-18",
+   "lembar": "Data",
+   "teknologi_tipe": "unknown type"
+  },
+  {
+   "nama": "Dieng geothermal power plant",
+   "fase": "5.0",
+   "nama_lokal": "Pembangkit Listrik Tenaga Uap Dieng",
+   "kapasitas_mw": 55,
+   "status": "announced",
+   "status_asli": "announced",
+   "tahun_mulai": 2030,
+   "pemilik": [
+    {
+     "nama": "PT Geo Dipa Energi (GDE)",
+     "persen": 100
+    }
+   ],
+   "operator": [
+    {
+     "nama": "PT Geo Dipa Energi (GDE)",
+     "persen": null
+    }
+   ],
+   "provinsi": "Jawa Tengah",
+   "wilayah_asli": "Central Java",
+   "lat": -7.2261,
+   "lon": 109.8975,
+   "akurasi": "exact",
+   "gem_id": "G100001071904",
+   "lokasi_id": "L100000700040",
+   "url_wiki": "https://www.gem.wiki/Dieng_geothermal_power_plant",
+   "diriset": "2025-11-18",
+   "lembar": "Data",
+   "teknologi_tipe": "unknown type"
+  },
+  {
+   "nama": "Dieng geothermal power plant",
+   "fase": "6,7 Sikidang",
+   "nama_lokal": "Pembangkit Listrik Tenaga Uap Dieng",
+   "kapasitas_mw": 90,
+   "status": "announced",
+   "status_asli": "announced",
+   "tahun_mulai": 2030,
+   "pemilik": [
+    {
+     "nama": "PT Geo Dipa Energi (GDE)",
+     "persen": 100
+    }
+   ],
+   "operator": [
+    {
+     "nama": "PT Geo Dipa Energi (GDE)",
+     "persen": null
+    }
+   ],
+   "provinsi": "Jawa Tengah",
+   "wilayah_asli": "Central Java",
+   "lat": -7.2261,
+   "lon": 109.8975,
+   "akurasi": "exact",
+   "gem_id": "G100001071905",
+   "lokasi_id": "L100000700040",
+   "url_wiki": "https://www.gem.wiki/Dieng_geothermal_power_plant",
+   "diriset": "2025-11-18",
+   "lembar": "Data",
+   "teknologi_tipe": "unknown type"
+  },
+  {
+   "nama": "Gunung Tiga-Ulubelu geothermal power plant",
+   "kapasitas_mw": 55,
+   "status": "announced",
+   "status_asli": "announced",
+   "tahun_mulai": 2029,
+   "pemilik": [
+    {
+     "nama": "Pertamina Geothermal Energy",
+     "persen": null,
+     "organisasi_id": "p_dda1e51dae"
+    }
+   ],
+   "lat": -5.30292,
+   "lon": 104.5772,
+   "akurasi": "approximate",
+   "gem_id": "G100001071993",
+   "lokasi_id": "L100001062660",
+   "url_wiki": "https://www.gem.wiki/Gunung_Tiga-Ulubelu_geothermal_power_plant",
+   "diriset": "2025-11-19",
+   "lembar": "Data",
+   "teknologi_tipe": "unknown type"
+  },
+  {
+   "nama": "Wapsalit geothermal power plant",
+   "kapasitas_mw": 20,
+   "status": "pre-construction",
+   "status_asli": "pre-construction",
+   "tahun_mulai": 2028,
+   "pemilik": [
+    {
+     "nama": "PT PLN (Persero)",
+     "persen": null,
+     "organisasi_id": "su_ed074ff5"
+    }
+   ],
+   "operator": [
+    {
+     "nama": "PT PLN (Persero)",
+     "persen": null,
+     "organisasi_id": "su_ed074ff5"
+    }
+   ],
+   "lat": -3.50467,
+   "lon": 126.8611,
+   "akurasi": "approximate",
+   "gem_id": "G100001072667",
+   "lokasi_id": "L100001063268",
+   "url_wiki": "https://www.gem.wiki/Wapsalit_geothermal_power_plant",
+   "diriset": "2025-11-25",
+   "lembar": "Data",
+   "teknologi_tipe": "unknown type"
+  },
+  {
+   "nama": "Salak Binary geothermal power plant",
+   "kapasitas_mw": 15.5,
+   "status": "operating",
+   "status_asli": "operating",
+   "tahun_mulai": 2025,
+   "pemilik": [
+    {
+     "nama": "Star Energy Geothermal",
+     "persen": null,
+     "organisasi_id": "p_7a803f3b71"
+    }
+   ],
+   "operator": [
+    {
+     "nama": "Star Energy Geothermal",
+     "persen": null,
+     "organisasi_id": "p_7a803f3b71"
+    }
+   ],
+   "lat": -6.74061,
+   "lon": 106.672536718719,
+   "akurasi": "approximate",
+   "gem_id": "G100001072676",
+   "lokasi_id": "L100001063273",
+   "url_wiki": "https://www.gem.wiki/Salak_Binary_geothermal_power_plant",
+   "diriset": "2025-11-25",
+   "lembar": "Data",
+   "teknologi_tipe": "binary cycle"
+  }
+ ]
+}

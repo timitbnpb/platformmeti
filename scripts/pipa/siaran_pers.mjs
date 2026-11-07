@@ -155,9 +155,10 @@ async function panenMedia(kandidat, maks) {
     const id = idMedia(k.url);
     const gambar = metaIsi(h, "og:image", "twitter:image");
     if (/^https:\/\//.test(gambar) && !/\.(svg|mp4)(\?|$)/i.test(gambar) && gambar.length < 600) foto[id] = gambar;
-    const terbit = (metaIsi(h, "article:published_time", "og:article:published_time", "pubdate", "date") || k.terbit || "").slice(0, 10);
+    const terbit = (metaIsi(h, "article:published_time", "og:article:published_time", "pubdate", "date", "publishdate", "content_PublishedDate", "dtk:publishdate") || /"datePublished"\s*:\s*"(\d{4}-\d\d-\d\d)/.exec(h)?.[1] || /<time[^>]+datetime=["'](\d{4}-\d\d-\d\d)/i.exec(h)?.[1] || /\/(20\d\d)[/-](\d\d)[/-](\d\d)\//.exec(k.url)?.slice(1).join("-") || k.terbit || "").slice(0, 10);
     const host = new URL(k.url).host;
     const judul = bersih(metaIsi(h, "og:title") || k.judul).replace(/\s*[|]\s*[^|]{2,40}$/, "");
+    if (!/^\d{4}-\d\d-\d\d$/.test(terbit) && !/^\d{4}-\d\d-\d\d/.test(k.terbit || "")) continue; // tanpa tanggal tidak ditampilkan
     hasil.push({
       id, jenis: "liputan_media", judul, tanggal: /^\d{4}-\d\d-\d\d$/.test(terbit) ? terbit : (k.terbit || "").slice(0, 10), kota: "", foto: "", galeri: [],
       media: namaMedia(host), url_sumber: k.url, penulis: bersih(metaIsi(h, "author", "article:author")).slice(0, 80), kategori: "",
@@ -200,6 +201,11 @@ async function utama() {
   const lama = existsSync(KELUAR) ? JSON.parse(readFileSync(KELUAR, "utf8")).baris : [];
   const baru = new Map(lama.map((x) => [x.id, x]));
   if (process.argv.includes("--meti")) for (const x of await panenMeti()) baru.set(x.id, x);
+  if (process.argv.includes("--perbaiki")) { // ambil ulang liputan media yang tanggalnya kosong
+    const kosong = [...baru.values()].filter((x) => x.jenis === "liputan_media" && !x.tanggal).map((x) => ({ url: x.url_sumber, judul: x.judul, terbit: "" }));
+    for (const x of kosong) baru.delete(idMedia(x.url));
+    for (const x of await panenMedia(kosong, 400)) baru.set(x.id, x);
+  }
   if (process.argv.includes("--media")) for (const x of await panenMedia(kandidatMedia(arg("gdelt")), +arg("maks") || 400)) baru.set(x.id, x);
   const baris = [...baru.values()].sort((a, b) => b.tanggal.localeCompare(a.tanggal) || a.id.localeCompare(b.id));
   tautkan(baris);

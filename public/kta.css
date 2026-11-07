@@ -1,0 +1,80 @@
+/* /kta (kartu tanda anggota) dan /kta/v/<token> (verifikasi publik). Hanya token tema; kartu itu sendiri digambar di kanvas (kta_kartu.js). */
+.jm-hal-kta .kta-grid{display:grid;gap:24px;align-items:start}
+.kta-pentas{display:grid;gap:16px;justify-items:center;min-width:0;perspective:1800px}
+.kta-balik{position:relative;width:100%;max-width:640px;aspect-ratio:856/540;transform-style:preserve-3d;transition:transform .7s cubic-bezier(.2,.8,.2,1);cursor:pointer;-webkit-tap-highlight-color:transparent}
+.kta-balik[data-sisi="belakang"]{transform:rotateY(180deg)}
+.kta-balik:focus-visible{outline:2px solid var(--fokus);outline-offset:6px;border-radius:3.27%/5.19%}
+.kta-sisi{position:absolute;inset:0;display:block;width:100%;height:100%;border-radius:3.27%/5.19%;backface-visibility:hidden;-webkit-backface-visibility:hidden;box-shadow:var(--shadow-lg)}
+.kta-belakang{transform:rotateY(180deg)}
+.kta-pentas .jm-tbl{min-width:180px}
+.kta-panel{background:var(--card);border:1px solid var(--line);border-radius:var(--r);box-shadow:var(--shadow);padding:16px}
+@media (min-width:600px){.kta-panel{padding:24px}}
+.kta-panel h2{display:flex;align-items:center;gap:10px}
+.kta-panel h2 .jm-ik{flex:none;color:var(--accent)}
+.kta-info{display:grid;gap:16px;min-width:0}
+.kta-info h2{margin:0;font:700 var(--t-h2)/var(--lh-rapat) var(--display);color:var(--head)}
+.kta-dl{display:grid;gap:0;margin:0}
+.kta-dl>div{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:12px;align-items:center;padding:12px 0;border-top:1px solid var(--line-cell)}
+.kta-dl>div:first-child{border-top:0}
+.kta-dl dt{font-size:var(--t-kecil);color:var(--ink2)}
+.kta-dl dd{margin:0;font:600 var(--t-body)/var(--lh-rapat) var(--font);color:var(--ink);overflow-wrap:anywhere}
+.kta-aksi{display:grid;gap:10px}
+.kta-aksi .jm-tbl{justify-content:flex-start;min-height:48px;width:100%}
+.kta-aksi .jm-tbl[hidden]{display:none}
+.kta-bantu{margin:0;padding:12px 14px;border-radius:var(--r-sm);background:var(--info-bg);font-size:var(--t-kecil);line-height:var(--lh-isi);color:var(--ink)}
+.kta-status{min-height:0;margin-top:12px}
+.kta-status:empty{display:none}
+.kta-input-file{position:absolute;width:1px;height:1px;opacity:0;pointer-events:none}
+
+/* klaim dan keadaan tertunda */
+.kta-klaim{display:grid;gap:0;padding:0;overflow:hidden}
+.kta-klaim-kiri{display:grid;gap:14px;align-content:start;padding:28px 24px;color:var(--on-brand);background:linear-gradient(160deg,var(--brand),var(--brand2))}
+.kta-klaim-kiri h2{margin:0;font:700 var(--t-h2)/var(--lh-rapat) var(--display);color:var(--on-brand)}
+.kta-klaim-kiri h2 .jm-ik{color:var(--on-brand)}
+.kta-klaim-kiri p{margin:0;max-width:52ch;line-height:var(--lh-isi)}
+.kta-klaim-pdp{padding-top:14px;border-top:1px solid color-mix(in srgb,var(--on-brand) 24%,transparent);font-size:var(--t-kecil)}
+.kta-klaim-kanan{display:grid;gap:16px;align-content:start;min-width:0;padding:24px}
+@media (min-width:860px){.kta-klaim{grid-template-columns:minmax(0,5fr) minmax(0,7fr)}.kta-klaim-kiri{padding:40px}.kta-klaim-kanan{padding:40px}}
+.kta-hasil{display:grid;gap:8px;margin:0;padding:0;list-style:none}
+.kta-hasil button{display:grid;gap:2px;width:100%;min-height:var(--target);padding:10px 14px;border:1px solid var(--line-ctl);border-radius:var(--r-sm);background:var(--card);color:var(--ink);text-align:left;cursor:pointer;transition:background .15s,border-color .15s}
+.kta-hasil button:hover{border-color:var(--accent)}
+.kta-hasil button[aria-pressed="true"]{border-color:var(--accent);background:var(--soft-hijau)}
+.kta-hasil b{font-weight:600}
+.kta-hasil small{font-size:var(--t-kecil);color:var(--ink2)}
+.kta-dipilih{padding:12px 14px;border-radius:var(--r-sm);background:var(--ok-bg);color:var(--ok);font-weight:600}
+.kta-tertunda{display:grid;gap:12px;align-content:start}
+.kta-tertunda h2{margin:0;font:700 var(--t-h2)/var(--lh-rapat) var(--display);color:var(--head)}
+.kta-tertunda p{margin:0;color:var(--ink2);line-height:var(--lh-isi)}
+
+/* potong foto */
+.kta-dlg{width:min(380px,calc(100vw - 32px))}
+.kta-dlg h2{margin:0 0 12px;font:700 var(--t-h2)/var(--lh-rapat) var(--display);color:var(--head)}
+.kta-potong{display:block;width:100%;aspect-ratio:1/1;border-radius:var(--r);background:var(--surface);touch-action:none;cursor:grab}
+.kta-potong:active{cursor:grabbing}
+.kta-zoom{display:grid;gap:6px;margin-top:12px}
+.kta-zoom label{font:600 var(--t-tombol)/var(--lh-rapat) var(--font)}
+.kta-dlg .jm-aksi-baris{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin-top:16px}
+
+@media (min-width:960px){
+  .jm-hal-kta .kta-grid{grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:32px}
+  .kta-pentas{position:sticky;top:calc(var(--top) + 16px)}
+}
+@media (prefers-reduced-motion:reduce){.kta-balik{transition:none}.kta-hasil button{transition:none}}
+
+/* verifikasi publik */
+.jm-hal-kta-v{display:grid;place-items:center;min-height:100dvh;margin:0;padding:24px 16px;background:linear-gradient(160deg,var(--brand),var(--brand2))}
+.ktav{width:min(440px,100%)}
+.ktav-kartu{display:grid;gap:18px;justify-items:center;padding:32px 24px;border-radius:var(--r-lg);background:var(--card);box-shadow:var(--shadow-lg);text-align:center}
+.ktav-logo{display:block;width:auto;height:72px}
+.ktav-lencana{display:grid;place-items:center;width:64px;height:64px;border-radius:50%}
+.ktav-lencana.ok{background:var(--ok-bg);color:var(--ok)}
+.ktav-lencana.warn{background:var(--warn-bg);color:var(--warn)}
+.ktav-lencana.bad{background:var(--bad-bg);color:var(--bad)}
+.ktav-kartu h1{margin:0;font:700 var(--t-h1)/var(--lh-judul) var(--display);color:var(--head)}
+.ktav-nama{margin:0;font:700 var(--t-h2)/var(--lh-rapat) var(--display);color:var(--ink);overflow-wrap:anywhere}
+.ktav-dl{display:grid;gap:0;width:100%;margin:0;text-align:left}
+.ktav-dl>div{display:flex;justify-content:space-between;gap:16px;padding:12px 0;border-top:1px solid var(--line-cell)}
+.ktav-dl dt{color:var(--ink2);font-size:var(--t-kecil)}
+.ktav-dl dd{margin:0;font-weight:600;color:var(--ink);text-align:right}
+.ktav-catatan{margin:0;font-size:var(--t-kecil);line-height:var(--lh-isi);color:var(--ink2)}
+.ktav-kartu a{color:var(--info);font-weight:600}

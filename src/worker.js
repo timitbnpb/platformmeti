@@ -9,6 +9,10 @@ import { rute as ruteAdmin } from "./admin.js";
 import { rute as ruteLangganan } from "./langganan.js";
 import { rute as ruteKelayakan } from "./kelayakan.js";
 import { rute as rutePustaka } from "./pustaka.js";
+import { rute as ruteMetiWilayah, namaProvinsi } from "./meti_wilayah.js";
+import { rute as rutePesan } from "./pesan.js";
+import { rute as ruteProfilAkun } from "./profil_akun.js";
+import { rute as ruteKta } from "./kta.js";
 import * as hak from "./hak.js";
 import { halamanProfil } from "./profil.js";
 import { halamanSiaran } from "./siaran.js";
@@ -30,7 +34,7 @@ const rutePemilik = {
 };
 
 // Tabel rute dikompilasi sekali: { metode, bagian[], fn }.
-const DAFTAR = Object.entries({ ...ruteSesi, ...ruteAkun, ...ruteAgenda, ...ruteEvent, ...ruteDirektori, ...ruteFoto, ...ruteAdmin, ...ruteLangganan, ...ruteKelayakan, ...rutePustaka, ...rutePemilik }).map(([k, fn]) => {
+const DAFTAR = Object.entries({ ...ruteSesi, ...ruteAkun, ...ruteAgenda, ...ruteEvent, ...ruteDirektori, ...ruteFoto, ...ruteAdmin, ...ruteLangganan, ...ruteKelayakan, ...rutePustaka, ...ruteKta, ...ruteMetiWilayah, ...rutePesan, ...ruteProfilAkun, ...rutePemilik }).map(([k, fn]) => {
   const [metode, jalur] = k.split(" ");
   return { metode, bagian: jalur.split("/").slice(1), fn };
 });
@@ -70,10 +74,12 @@ async function icsSah(env, t) {
 }
 
 // Seluruh situs di balik login (KEPUTUSAN 7 Nov 2026): hanya alur masuk, aset yang dibutuhkannya, dan API masuk yang terbuka.
-const PUBLIK = /^\/((masuk|aktivasi|ganti-sandi|404)(\.html)?|masuk\.js|tema\.js|i18n\.js|404\.js|langganan(\.html|\.js|\.css)?|berhenti|favicon[^/]*|robots\.txt)$|^\/inti\/[^/]+\.(css|js)$|^\/i18n\/|^\/img\/(logo|ikon)[^/]*$|^\/fonts\//;
+const PUBLIK = /^\/((masuk|aktivasi|ganti-sandi|404)(\.html)?|masuk\.js|kta_v\.js|kta\.css|tema\.js|i18n\.js|404\.js|langganan(\.html|\.js|\.css)?|berhenti|favicon[^/]*|robots\.txt)$|^\/inti\/[^/]+\.(css|js)$|^\/i18n\/|^\/img\/(logo|ikon)[^/]*$|^\/img\/logo\/meti\.png$|^\/img\/beranda\/[^/]+\.webp$|^\/fonts\/|^\/kta\/v\/\d{1,9}\.[0-9a-f]{32}$/;
 // /api/langganan(/berhenti): ajakan publik newsletter (K19 turunan); rute lain di langganan.js tetap menagih sesi lewat perlu().
 const API_PUBLIK = new Set(["/api/masuk", "/api/keluar", "/api/status", "/api/aktivasi", "/api/saya", "/api/langganan", "/api/langganan/berhenti"]);
 
+// Verifikasi KTA publik (token HMAC di jalur; salah = 404 seragam): satu-satunya rute data terbuka selain alur masuk.
+const API_KTA_PUBLIK = /^\/api\/kta\/verifikasi\/[^/]+$/;
 const TULIS = new Set(["POST", "PATCH", "PUT", "DELETE"]);
 const RE_TOKEN = /^[0-9a-f]{64}$/;
 const BOLEH_WAJIB_GANTI = new Set(["/api/ganti-sandi", "/api/keluar", "/api/saya", "/api/status"]);
@@ -170,8 +176,19 @@ async function halaman(req, env, url, akun) {
   }
   // Tautan berhenti newsletter (terbuka, bertoken di query): halaman yang sama dengan /langganan, mode dipilih skrip dari jalurnya.
   if (path === "/berhenti") return halamanPrivat(await env.ASSETS.fetch(new Request(new URL("/langganan", url), { method: req.method })));
+  if (/^\/kta\/v\/\d{1,9}\.[0-9a-f]{32}$/.test(path) && (req.method === "GET" || req.method === "HEAD")) return halamanPrivat(await env.ASSETS.fetch(new Request(new URL("/kta_v", url), { method: req.method })));
   if ((m = path.match(/^\/siaran-pers\/([^/]+)$/)) && (req.method === "GET" || req.method === "HEAD")) {
     return (await halamanSiaran(req, env, url, m[1])) ?? TIDAK_ADA();
+  }
+  // /meti-wilayah/<kode BPS>: halaman yang sama dengan /meti-wilayah, judul diisi dari katalog (SSR judul); kode tak dikenal = 404.
+  if ((m = path.match(/^\/meti-wilayah\/([^/]+)$/))) {
+    const nama = namaProvinsi(m[1]);
+    if (!nama) return TIDAK_ADA();
+    const res = await env.ASSETS.fetch(new Request(new URL("/meti-wilayah", url), req));
+    if (!res.ok || req.method === "HEAD") return res;
+    const esc = nama.replace(/[&<>"']/g, (c) => `&#${c.charCodeAt(0)};`);
+    const html = (await res.text()).replace(/<title[^>]*>[^<]*<\/title>/, () => `<title>METI Wilayah ${esc} | Direktori METI</title>`);
+    return halamanPrivat(new Response(html, { status: 200, headers: { "content-type": "text/html; charset=utf-8" } }));
   }
   if ((m = path.match(/^\/wilayah\/([^/]+)$/))) {
     if (!/^\d{2}$/.test(m[1])) return TIDAK_ADA();
@@ -179,6 +196,8 @@ async function halaman(req, env, url, akun) {
   }
   if ((m = path.match(/^\/event\/([a-z0-9][a-z0-9-]{0,78})$/))) return env.ASSETS.fetch(new Request(new URL("/event_detail", url), req));
   if ((m = path.match(/^\/video\/([\w-]{11})$/))) return halamanVideo(req, env, url, m[1]);
+  // Profil anggota lain: cangkang statis /anggota (public/anggota.html); data dari /api/profil/<id> menurut privasi.
+  if ((m = path.match(/^\/anggota\/\d{1,12}$/))) return halamanPrivat(await env.ASSETS.fetch(new Request(new URL("/anggota", url), req)));
   if ((m = path.match(/^\/(event|video)\/.+$/))) return TIDAK_ADA();
   if ((m = path.match(/^\/teknologi\/([^/]+)$/))) {
     const nama = NAMA_TEKNOLOGI[m[1]];
@@ -203,7 +222,7 @@ async function api(req, env, ctx, url) {
   if (!ada) return metodeLain ? gagal("metode") : gagal("tidak_ditemukan");
   if (TULIS.has(req.method) && !(url.pathname === "/api/statistik" ? asalSama(req, url) : csrfSah(req, url))) return gagal("dilarang");
   const { sesi, akun } = await muatSesi(req, env);
-  if (!akun && !API_PUBLIK.has(url.pathname)) return gagal("belum_masuk", 401, PRIVAT);
+  if (!akun && !API_PUBLIK.has(url.pathname) && !API_KTA_PUBLIK.test(url.pathname)) return gagal("belum_masuk", 401, PRIVAT);
   if (akun?.wajib_ganti && !BOLEH_WAJIB_GANTI.has(url.pathname)) return gagal("dilarang");
   const res = await ada.fn(req, env, ctx, { params, sesi, akun });
   const r = new Response(res.body, res);
