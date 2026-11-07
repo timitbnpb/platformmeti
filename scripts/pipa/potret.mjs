@@ -504,6 +504,7 @@ export function bangun(masukan = {}) {
   const rosterNama = new Map(); for (const a of anggotaLengkap) if (a.status === 'aktif' && ['individu', 'utama'].includes(a.jenis) && !/^ANGGOTA/i.test(a.nama || '') && a.nama && a.instansi) { const k = norm(pisahNama(a.nama).nama); if (!rosterNama.has(k)) rosterNama.set(k, a); }
   const bersihInstansi = (s) => { const m = String(s).trim().match(/^(.*?),\s*(PT|CV|UD)\.?$/i); return (m ? m[2].toUpperCase() + ' ' + m[1] : String(s)).replace(/\s+/g, ' ').trim(); };
   const jmlNama = new Map(); for (const r of orangList) jmlNama.set(norm(r.nama), (jmlNama.get(norm(r.nama)) || 0) + 1);
+  const afilSk = new Map(); for (const a of M('afilSk', 'arsip-meti/afiliasi_sk.jsonl')) if (a.nama) afilSk.set(norm(pisahNama(a.nama).nama), a);
   const perluTinjauMeti = []; const metiOrang = new Map();
   for (const r of orangList) {
     if (metiPengurus.has(r.id)) { metiOrang.set(r.id, 'pengurus'); continue; }
@@ -529,7 +530,8 @@ export function bangun(masukan = {}) {
     const jab = r.jabatan.map((j) => bersih({ organisasi_id: j.organisasi_id || (j.organisasi && orgPerNama(j.organisasi)), organisasi: j.organisasi, jabatan: j.jabatan, mulai: j.mulai, selesai: j.selesai, kini: j.kini, catatan: j.catatan, sumber_url: j.sumber_url }));
     orangOut.publik.push(bersih({ id: r.id, nama: r.nama, gelar: r.gelar, kelompok: { kode: kel, label: KELOMPOK[kel] }, jenis: r.jenis, wilayah: wilayahDari(r, oid), status: r.status, jabatan_terkini: r.jabatan_terkini, organisasi_terkini: r.organisasi_terkini, organisasi_id: oid || (jab.find((j) => j.organisasi_id)?.organisasi_id), kepakaran: kodeMax3(r.kepakaran), ringkasan: r.ringkasan, pendidikan: r.pengurus_profil ? r.pendidikan : undefined, dpr: r.dpr, jalur: r.jalur, pernah_birokrasi: r.pernah_birokrasi, jabatan: jab, tautan: r.tautan, wikidata_id: r.wikidata_id, berita_ids: bTerbaru('orang', r.id), sumber_url: r.sumber_url || unik(r.sumber_urls).find(adaUrl), tanggal: r.tanggal }));
     const ros = metiOrang.has(r.id) && jmlNama.get(norm(r.nama)) === 1 && anggotaNama.get(norm(r.nama))?.size === 1 ? rosterNama.get(norm(r.nama)) : null;
-    const afil = ros ? [bersih({ organisasi: bersihInstansi(ros.instansi), organisasi_id: orgPerNama(bersihInstansi(ros.instansi)) || undefined, jabatan: ros.jabatan || undefined, sumber: 'daftar-keanggotaan-meti' })] : undefined;
+    const skAf = !ros && jmlNama.get(norm(r.nama)) === 1 ? afilSk.get(norm(pisahNama(r.nama).nama)) : null; // afiliasi dari SK/struktur METI (arsip lokal), nama unik saja
+    const afil = skAf ? [bersih({ organisasi: skAf.organisasi || undefined, organisasi_id: skAf.organisasi ? orgPerNama(skAf.organisasi) || undefined : undefined, jabatan: skAf.jabatan, sumber: 'sk-meti' })] : ros ? [bersih({ organisasi: bersihInstansi(ros.instansi), organisasi_id: orgPerNama(bersihInstansi(ros.instansi)) || undefined, jabatan: ros.jabatan || undefined, sumber: 'daftar-keanggotaan-meti' })] : undefined;
     const ang = bersih({ id: r.id, meti: metiOrang.get(r.id) || null, afiliasi: afil, pendidikan: r.pendidikan, kiprah: r.kiprah, foto: fotoOut, akademik: r.akademik });
     if (Object.keys(ang).length > 1) orangOut.anggota.push(ang);
     if (Object.keys(pen).length > 1) orangOut.pengurus.push(pen);

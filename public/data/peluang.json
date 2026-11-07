@@ -2,7 +2,7 @@
  "meta": {
   "diperbarui": "2026-11-07",
   "jumlah": 38,
-  "proyek_tanpa_provinsi": 95,
+  "proyek_tanpa_provinsi": 105,
   "definisi_tanpa_pengembang": "status proyek \"rencana\" dan tidak ada pemilik, atau pemilik hanya label generik \"IPP\" (RUPTL); proyek tanpa provinsi atau tanpa status tidak dihitung",
   "catatan": "Potensi RUEN bertahun data 2015 (34 provinsi); hidro RUEN per kelompok wilayah (null per provinsi bila kelompok); Papua/Papua Barat induk tidak dibagi ke provinsi pemekaran. Terpasang dan rasio dari HEESI 2025. BPP: Kepmen ESDM terbaru yang ada di berkas = BPP 2020 (Kepmen 169.K/2021); BPP 2021 ke atas belum terambil. Mikrohidro terpasang tidak dipisah dari hidro. Laut: potensi praktis RUEN, tanpa terpasang.",
   "celah": []
@@ -591,7 +591,7 @@
     "catatan": "F pulau kecil/Mentawai lebih tinggi; tidak dipetakan"
    },
    "proyek": {
-    "rencana": 7,
+    "rencana": 8,
     "rencana_tanpa_pengembang": 4,
     "mw_rencana_tanpa_pengembang": 220.3,
     "sumber_id": "proyek-meti"
@@ -987,7 +987,7 @@
     "catatan": "F pulau kecil/Mentawai lebih tinggi; tidak dipetakan"
    },
    "proyek": {
-    "rencana": 6,
+    "rencana": 7,
     "rencana_tanpa_pengembang": 5,
     "mw_rencana_tanpa_pengembang": 210.3,
     "sumber_id": "proyek-meti"
@@ -1371,9 +1371,9 @@
     "catatan": "F pulau kecil/Mentawai lebih tinggi; tidak dipetakan"
    },
    "proyek": {
-    "rencana": 1,
+    "rencana": 2,
     "rencana_tanpa_pengembang": 1,
-    "mw_rencana_tanpa_pengembang": 350,
+    "mw_rencana_tanpa_pengembang": 107,
     "sumber_id": "proyek-meti"
    }
   },
@@ -1956,7 +1956,7 @@
     "catatan": "F pulau kecil/Mentawai lebih tinggi; tidak dipetakan"
    },
    "proyek": {
-    "rencana": 10,
+    "rencana": 11,
     "rencana_tanpa_pengembang": 5,
     "mw_rencana_tanpa_pengembang": 267.8,
     "sumber_id": "proyek-meti"
@@ -2366,7 +2366,7 @@
     "catatan": "F pulau kecil/Mentawai lebih tinggi; tidak dipetakan"
    },
    "proyek": {
-    "rencana": 3,
+    "rencana": 4,
     "rencana_tanpa_pengembang": 3,
     "mw_rencana_tanpa_pengembang": 26,
     "sumber_id": "proyek-meti"
@@ -2755,9 +2755,9 @@
     "catatan": "F pulau kecil/Mentawai lebih tinggi; tidak dipetakan"
    },
    "proyek": {
-    "rencana": 24,
-    "rencana_tanpa_pengembang": 16,
-    "mw_rencana_tanpa_pengembang": 346.5,
+    "rencana": 26,
+    "rencana_tanpa_pengembang": 15,
+    "mw_rencana_tanpa_pengembang": 414.5,
     "sumber_id": "proyek-meti"
    }
   },
@@ -2953,8 +2953,8 @@
    },
    "proyek": {
     "rencana": 9,
-    "rencana_tanpa_pengembang": 5,
-    "mw_rencana_tanpa_pengembang": 312.7,
+    "rencana_tanpa_pengembang": 4,
+    "mw_rencana_tanpa_pengembang": 92.7,
     "sumber_id": "proyek-meti"
    }
   },
@@ -3354,8 +3354,8 @@
    },
    "proyek": {
     "rencana": 6,
-    "rencana_tanpa_pengembang": 3,
-    "mw_rencana_tanpa_pengembang": 206.7,
+    "rencana_tanpa_pengembang": 2,
+    "mw_rencana_tanpa_pengembang": 41.7,
     "sumber_id": "proyek-meti"
    }
   },
@@ -3550,7 +3550,7 @@
     "catatan": "F pulau kecil/Mentawai lebih tinggi; tidak dipetakan"
    },
    "proyek": {
-    "rencana": 12,
+    "rencana": 13,
     "rencana_tanpa_pengembang": 7,
     "mw_rencana_tanpa_pengembang": 131.8,
     "sumber_id": "proyek-meti"
@@ -4168,8 +4168,8 @@
    },
    "proyek": {
     "rencana": 15,
-    "rencana_tanpa_pengembang": 10,
-    "mw_rencana_tanpa_pengembang": 136.9,
+    "rencana_tanpa_pengembang": 5,
+    "mw_rencana_tanpa_pengembang": 71.9,
     "sumber_id": "proyek-meti"
    }
   },
@@ -4742,8 +4742,8 @@
    },
    "proyek": {
     "rencana": 1,
-    "rencana_tanpa_pengembang": 1,
-    "mw_rencana_tanpa_pengembang": 70,
+    "rencana_tanpa_pengembang": 0,
+    "mw_rencana_tanpa_pengembang": 0,
     "sumber_id": "proyek-meti"
    }
   },
@@ -5127,7 +5127,7 @@
     "catatan": "F pulau kecil/Mentawai lebih tinggi; tidak dipetakan"
    },
    "proyek": {
-    "rencana": 3,
+    "rencana": 8,
     "rencana_tanpa_pengembang": 1,
     "mw_rencana_tanpa_pengembang": 240,
     "sumber_id": "proyek-meti"
@@ -5532,7 +5532,7 @@
     "catatan": "F pulau kecil/Mentawai lebih tinggi; tidak dipetakan"
    },
    "proyek": {
-    "rencana": 8,
+    "rencana": 10,
     "rencana_tanpa_pengembang": 6,
     "mw_rencana_tanpa_pengembang": 49.6,
     "sumber_id": "proyek-meti"
@@ -5731,7 +5731,7 @@
     "catatan": "F pulau kecil/Mentawai lebih tinggi; tidak dipetakan"
    },
    "proyek": {
-    "rencana": 6,
+    "rencana": 9,
     "rencana_tanpa_pengembang": 4,
     "mw_rencana_tanpa_pengembang": 30.1,
     "sumber_id": "proyek-meti"
@@ -6310,7 +6310,7 @@
     "catatan": "F pulau kecil/Mentawai lebih tinggi; tidak dipetakan"
    },
    "proyek": {
-    "rencana": 0,
+    "rencana": 1,
     "rencana_tanpa_pengembang": 0,
     "mw_rencana_tanpa_pengembang": 0,
     "sumber_id": "proyek-meti"

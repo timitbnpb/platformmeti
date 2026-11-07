@@ -21,6 +21,7 @@ export const SUMBER = {
   's-jetp': { id: 's-jetp', judul: 'JETP Indonesia: Comprehensive Investment and Policy Plan (CIPP) dan portofolio', penerbit: 'Sekretariat JETP Indonesia', tahun: 2023, url: 'https://jetp-id.org/cipp' },
   's-djppr': { id: 's-djppr', judul: '2025 Green Sukuk Allocation and Impact Report', penerbit: 'DJPPR Kemenkeu', tahun: 2025, url: 'https://api-djppr.kemenkeu.go.id/web/api/v1/media/8C2C3353-9134-43B3-9307-D465DE7C2CB8' },
   's-idxcarbon': { id: 's-idxcarbon', judul: 'IDXCarbon Monthly Report (Carbon Market Trading Summary dan Listed Project)', penerbit: 'Bursa Efek Indonesia (IDXCarbon)', tahun: 2026, url: 'https://idxcarbon.co.id/id/data-monthly' },
+  's-gem': { id: 's-gem', judul: 'Global Energy Monitor: Solar, Wind, Hydropower, Geothermal, dan Coal Plant Tracker (baris Indonesia; CC BY 4.0)', penerbit: 'Global Energy Monitor', tahun: 2026, url: 'https://globalenergymonitor.org/projects/', lisensi: 'CC BY 4.0', atribusi: 'Global Energy Monitor, Global Solar/Wind/Hydropower/Geothermal Power Tracker dan Global Coal Plant Tracker (rilis Feb, Feb, Mar, Mar, Jul 2026), CC BY 4.0' },
   's-tkdn': { id: 's-tkdn', judul: 'Sertifikat TKDN Barang (pencarian publik)', penerbit: 'Kementerian Perindustrian (P3DN)', tahun: 2026, url: 'https://tkdn.kemenperin.go.id/sertifikat' },
   's-berita': { id: 's-berita', judul: 'Pemberitaan media nasional dan daerah (judul dan tautan; angka dikutip dari judul)', penerbit: 'media (lihat url tiap baris)', tahun: 2026, url: 'https://platformmeti.timitbnpb.workers.dev/berita' },
 };
@@ -163,7 +164,7 @@ export function bangunSemua() {
   const akhir = bursa[bursa.length - 1];
   kar.baris = [...kar.baris.filter((b) => !['bursa_karbon', 'proyek_srn'].includes(b.kelompok)), ...bursa, ...barisSrn(akhir.sumber_url, akhir.periode)];
   kar.jumlah = kar.baris.length; kar.dibangun_pada = TGL;
-  kar.sumber = blokSumber(['s-idxcarbon']);
+  kar.sumber = blokSumber(['s-idxcarbon', 's-gem']);
   kar.meta = { diperbarui: TGL, celah: CELAH_KAR };
 
   const tk = barisTkdn();
