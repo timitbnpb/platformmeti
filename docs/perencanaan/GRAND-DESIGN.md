@@ -22,7 +22,7 @@ Satu platform tempat siapa pun bisa menjawab dalam satu menit, dengan sumber ber
 
 | Sumber | Yang diambil | Yang tidak diambil |
 | --- | --- | --- |
-| Direktori Jaringan Kebencanaan (poskokarhutla) | Seluruh kode: layar 9 tab, pencarian global, profil berkartu, graf `simpul`/`sisi`, "Terhubung", peta MapLibre + panel tarik, daftar pendek + ekspor Excel/Word/PDF, hak koreksi, riwayat, tombol dummy, pipeline OpenAlex dan `hubung.mjs`, Worker berpenjaga sesi | Isi kebencanaan, data R2 BNPB, id Cloudflare, merek Centurisk97 |
+| Direktori Jaringan Kebencanaan (poskokarhutla) | Seluruh kode: layar 8 tab (Donasi dibuang), pencarian global, profil berkartu, graf `simpul`/`sisi`, "Terhubung", peta MapLibre + panel tarik, daftar pendek + ekspor Excel/Word/PDF, hak koreksi, riwayat, tombol dummy, pipeline OpenAlex dan `hubung.mjs`, Worker berpenjaga sesi | Isi kebencanaan, data R2 BNPB, id Cloudflare, merek Centurisk97 |
 | 1001startup.id | Isi dan cara penyajian: sensus berhitungan, rantai pasok "siapa memasok siapa", investor, kuadran dua sumbu, cerita data dengan Jawaban singkat, "Cara menghitung", "Cara mengutip", tanggal beku, skor keyakinan, label EST, sumber berlabel per butir | Gaya visual (tetap METI), teks dan estimasi mereka, logo massal |
 | neraca-papua | Skema `entitas`/`fakta`/`ikatan` dengan `sumber_url`, `tanggal_periksa`, `tingkat_bukti`; build menolak baris tanpa sumber; laci rincian, lencana sumber | HTML tunggal 1,6 MB, render sinkron, tanpa uji |
 
@@ -54,7 +54,7 @@ Satu platform tempat siapa pun bisa menjawab dalam satu menit, dengan sumber ber
 | `/kebijakan` | Regulasi dan jejak isu | Aturan apa, posisi METI apa | Publik | F2 |
 | `/cerita` | Cerita data | Satu pertanyaan, satu jawaban bersumber | Publik | F2 |
 | `/metode` | Metode, sumber, skor | Bagaimana angka dihitung | Publik | F1 |
-| `/direktori` | Direktori anggota (port langsung 9 tab) | Pakar, lembaga, riset, pendanaan, pustaka | Anggota | F0 |
+| `/direktori` | Direktori anggota (port langsung 8 tab) | Pakar, lembaga, riset, pendanaan, pustaka | Anggota | F0 |
 | `/masuk` | Login | | Semua | F0 |
 | `/admin` | Akun, peran, kurasi, antrean koreksi, jejak | | Admin | F0 |
 

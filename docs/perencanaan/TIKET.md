@@ -72,6 +72,7 @@ Singkatan: KP = KEPUTUSAN-METI, GD = GRAND-DESIGN, R1..R9 = riset/, DT = DESAIN-
 | JM-E04 | Peta `/peta` (MapLibre, panel tarik, logo bundar, lapisan) | layar | F1 | L | belum |
 | JM-E05 | `/metode` (cara hitung, tingkat bukti, skor, sumber) | layar | F1 | S | belum |
 | JM-E06 | Hak koreksi + antrean kurator | worker+layar | F1 | M | belum |
+| JM-E07 | Layar kurasi `/admin`: entitas, fakta, ikatan, sumber (PRD F-M4) | layar+worker | F1 | M | belum |
 | JM-F01 | Rantai pasok `/rantai` (pemasok kiri, pelanggan kanan) | layar | F2 | L | belum |
 | JM-F02 | Pembiaya `/pembiaya` (peringkat, portofolio) | layar | F2 | M | belum |
 | JM-F03 | Kuadran BUMN energi `/bumn` (pemilih X/Y, skor bersumber) | layar | F2 | L | belum |
@@ -238,9 +239,14 @@ Singkatan: KP = KEPUTUSAN-METI, GD = GRAND-DESIGN, R1..R9 = riset/, DT = DESAIN-
 #### JM-E06 Koreksi
 - Port `koreksi` asal ke D1 lewat `hak.js`; antrean kurator di `/admin`. **Ukuran:** M
 
+#### JM-E07 Layar kurasi
+- **Tujuan:** kurator menambah dan mengubah entitas, fakta, ikatan, dan sumber lewat `/admin` tab Kurasi; tiap simpan wajib sumber, tanggal periksa, tingkat bukti.
+- **Berkas:** `public/admin/kurasi.js`, rute kurasi di `src/kurasi.js` lewat `hak.js`.
+- **Pemeriksa:** `guard-api`. **Rujukan:** PRD F-M4. **Ukuran:** M
+
 ### 3.F Halaman F2
 
-JM-F01 sampai JM-F10 mengikuti PRD §6. Pola wajib tiap halaman: Jawaban singkat, kartu angka, komponen utama, "Cara menghitung", "Cara mengutip" dengan tanggal beku, tautan ke profil. Kuadran (`F03`) dan matriks risiko (`F04`) memakai skor 0-5 bersumber dengan pil "Hipotesis" sampai C-16 dijawab.
+JM-F01 sampai JM-F10 mengikuti fitur PRD §5 sampai §10 (peta tiket ke fitur di PRD §11.1). Pola wajib tiap halaman: Jawaban singkat, kartu angka, komponen utama, "Cara menghitung", "Cara mengutip" dengan tanggal beku, tautan ke profil. Kuadran (`F03`) dan matriks risiko (`F04`) memakai skor 0-5 bersumber dengan pil "Hipotesis" sampai C-16 dijawab.
 
 ### 3.G Halaman F3
 
