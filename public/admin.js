@@ -7,6 +7,7 @@ import { panelAnggota } from "/admin_anggota.js";
 import { panelAgenda } from "/admin_agenda.js";
 import { panelEvent } from "/admin_event.js";
 import { panelKoreksi, panelAudit } from "/admin_koreksi.js";
+import { panelPortal } from "/admin_portal.js";
 import { panelKesehatan } from "/admin_kesehatan.js";
 import { panelStatistik } from "/admin_statistik.js";
 import { panelPustaka } from "/admin_pustaka.js";
@@ -41,7 +42,7 @@ function jalan() {
   // kurator: hanya tab Anggota (tab Akun dan Jejak tidak ada di DOM; server tetap menolak). CSV hanya admin dan super.
   const adm = ["admin", "super"].includes(saya.peran);
   const TAB = [...(adm ? [["akun", "admin.tab.akun", "orang"]] : []), ["koreksi", "admin.tab.koreksi", "ubah"], ...(adm ? [["jejak", "admin.tab.jejak", "jejak"]] : []), ["kesehatan", "admin.tab.kesehatan", "centang"],
-    ...(adm ? [["statistik", "admin.tab.statistik", "analisis"], ["beranda", "admin.tab.beranda", "beranda"], ["pustaka", "adm.pu.tab", "unduh"]] : []), ["anggota", "adm.anggota.tab", "daftar"], ...(adm ? [["kta", "adm.kta.tab", "kartu"]] : []), ["agenda", "adm.agenda.tab", "kalender"], ...(adm ? [["event", "adm.event.tab", "kalender-bintang"]] : []), ...(adm ? [["langganan", "admin.tab.langganan", "berita"], ["pesan", "admin.tab.pesan", "info"], ["metiwilayah", "adm.mw.tab", "wilayah"]] : [])];
+    ...(adm ? [["statistik", "admin.tab.statistik", "analisis"], ["beranda", "admin.tab.beranda", "beranda"], ["pustaka", "adm.pu.tab", "unduh"]] : []), ["anggota", "adm.anggota.tab", "daftar"], ...(adm ? [["kta", "adm.kta.tab", "kartu"]] : []), ["agenda", "adm.agenda.tab", "kalender"], ...(adm ? [["event", "adm.event.tab", "kalender-bintang"]] : []), ...(adm ? [["langganan", "admin.tab.langganan", "berita"], ["pesan", "admin.tab.pesan", "info"], ["metiwilayah", "adm.mw.tab", "wilayah"], ["portal", "ap.tab", "centang"]] : [])];
   let tab = TAB[0][0];
 
   const A = { cari: "", peran: "", status: "", hal: 1, baris: [], galat: null, ctl: null };
@@ -110,7 +111,7 @@ function jalan() {
     $("panel").setAttribute("aria-labelledby", "tab-" + k);
     const P = $("panel");
     if (k === "akun") panelAkun(); else if (k === "jejak") panelAudit(P); else if (k === "koreksi") panelKoreksi(P); else if (k === "kesehatan") panelKesehatan(P);
-    else if (k === "statistik") panelStatistik(P); else if (k === "pustaka") panelPustaka(P); else if (k === "beranda") panelBeranda(P); else if (k === "agenda") panelAgenda(P, saya); else if (k === "kta") panelKta(P); else if (k === "event") panelEvent(P); else if (k === "langganan") panelLangganan(P); else if (k === "pesan") panelPesan(P); else if (k === "metiwilayah") panelMetiWilayah(P); else panelAnggota(P, { boleh: adm, kabari });
+    else if (k === "statistik") panelStatistik(P); else if (k === "pustaka") panelPustaka(P); else if (k === "beranda") panelBeranda(P); else if (k === "agenda") panelAgenda(P, saya); else if (k === "kta") panelKta(P); else if (k === "event") panelEvent(P); else if (k === "langganan") panelLangganan(P); else if (k === "pesan") panelPesan(P); else if (k === "metiwilayah") panelMetiWilayah(P); else if (k === "portal") panelPortal(P); else panelAnggota(P, { boleh: adm, kabari });
   }
 
   /* ---------- tab Akun ---------- */

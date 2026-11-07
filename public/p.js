@@ -2,6 +2,8 @@
 import { ikonTek } from "/inti/ikon_tek.js";
 import { mulaiHalaman } from "/inti/kepala.js";
 import { tombolKoreksi } from "/inti/koreksi.js";
+import { tombolIkuti, pasangIkuti } from "/inti/ikuti.js";
+import { muatPembaruan } from "/inti/pembaruan.js";
 import { hantuHtml } from "/inti/umum.js";
 import { terkaitHtml } from "/inti/komponen.js";
 import { tautOrg } from "/inti/tautan.js";
@@ -73,7 +75,8 @@ async function mulai() {
     + terkait
     + seksi({ id: "sumber", ik: "tautan", topik: t("pf.ey.sumber"), judulHtml: esc(t("pf.j.sumber")), isiHtml: tabelSumber(p.sumber, new Map(ber.baris.map((b) => [b.url, b.judul]))), csv: true, sumber })
     + `</div>`;
-  akar.querySelector(".pf-kepala-teks")?.insertAdjacentHTML("beforeend", `<p class="pf-koreksi">${tombolKoreksi({ entitas: "proyek", id, nama: r.nama })}</p>`);
+  akar.querySelector(".pf-kepala-teks")?.insertAdjacentHTML("beforeend", `<p class="pf-koreksi">${tombolKoreksi({ entitas: "proyek", id, nama: r.nama })} ${tombolIkuti({ jenis: "proyek", id, nama: r.nama })}</p>`);
+  pasangIkuti(akar); muatPembaruan("proyek", id, akar.querySelector(".pf-bagian"));
   petaTitik(document.getElementById("pfPeta"), [r], { zoomSatu: persis ? 11 : 6, klik: false });
 }
 mulaiHalaman().then(mulai);

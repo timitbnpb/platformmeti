@@ -1,6 +1,7 @@
 /* /wilayah: peta koroplet 38 provinsi + profil provinsi (?prov=XX). Data statis /data/wilayah.json. */
 import { mulaiHalaman } from "/inti/kepala.js";
 import { geserPanel } from "/inti/panel_geser.js";
+import { pasangPeta3d } from "/inti/peta3d.js";
 import { unduhRegHtml } from "/inti/komponen.js";
 import { nanti, esc, hantuHtml, debounce } from "/inti/umum.js";
 import { t, tanggal } from "/i18n.js";
@@ -9,12 +10,18 @@ import { muatData, tampilGalat, sumberHtml, sumberLipat, pasangAksi, kartuHtml, 
 const $ = (id) => document.getElementById(id);
 const param = new URLSearchParams(location.search).get("prov");
 const REG = new Map();
-let data = null, geo = null, metrik = "terpasang", peta = null, petaSiap = false;
+let data = null, geo = null, metrik = "terpasang", peta = null, petaSiap = false, p3 = null, tek = "semua";
+const PEL = new Map(); let PELMETA = null;
+const TEKS = ["surya", "bayu", "hidro", "mikrohidro", "panas_bumi", "bioenergi", "laut"], TEKIK = { panas_bumi: "panas-bumi", mikrohidro: "hidro", semua: "jaringan" };
+const daftarTek = () => (tek === "semua" ? TEKS : [tek]);
+const jumlah = (a) => (a.length ? a.reduce((x, y) => x + y, 0) : null);
+const sumberEbt = () => ({ sumber: t(tek === "panas_bumi" ? "wl.src.heesi" : tek === "semua" ? "wl.src.gabung" : "wl.src.ruen"), tanggal: PELMETA });
 
 const METRIK = {
-  terpasang: { ambil: (p) => p.terpasang_mw?.nilai ?? null, satuan: "MW", d: 1, sumber: (p) => p.terpasang_mw, kedua: ["proyek", "panasbumi"] },
-  panasbumi: { ambil: (p) => p.potensi_panas_bumi?.nilai ?? null, satuan: "MW", d: 0, sumber: (p) => p.potensi_panas_bumi, kedua: ["terpasang", "proyek"] },
-  proyek: { ambil: (p) => p.jumlah_proyek, satuan: "", d: 0, sumber: () => null, kedua: ["terpasang", "panasbumi"] },
+  terpasang: { ambil: (p) => p.terpasang_mw?.nilai ?? null, satuan: "MW", d: 1, sumber: (p) => p.terpasang_mw, kedua: ["proyek", "ebt"] },
+  ebt: { ambil: (p) => jumlah(daftarTek().map((k) => PEL.get(p.kode)?.potensi[k]?.mw).filter((v) => v != null)), satuan: "MW", d: 0, sumber: sumberEbt, kedua: ["terpasang", "proyek"] },
+  sisa: { ambil: (p) => jumlah(daftarTek().map((k) => { const b = PEL.get(p.kode), a = b?.potensi[k]?.mw, c = b?.terpasang?.[k]?.mw; return a != null && c != null ? Math.max(0, a - c) : null; }).filter((v) => v != null)), satuan: "MW", d: 0, sumber: sumberEbt, kedua: ["ebt", "terpasang"] },
+  proyek: { ambil: (p) => p.jumlah_proyek, satuan: "", d: 0, sumber: () => null, kedua: ["terpasang", "ebt"] },
   rued: { ambil: (p) => (p.rued.perda ? 1 : null), satuan: "", d: 0, sumber: (p) => (p.rued.perda ? { sumber: t("wl.sumber_rued"), url: p.rued.url, tanggal: p.rued.tanggal } : null), kedua: ["terpasang", "proyek"] },
 };
 const nilaiTeks = (m, p) => {
@@ -65,16 +72,16 @@ function kelasPeta(m) {
 function urutan() {
   const m = metrik, B = urutM(m);
   const th = (k, s = "") => `<th class="${s}">${esc(t(k))}</th>`;
-  const rued = (p) => {
-    if (!p.rued.perda) return `<span class="jm-wl-kos" title="${esc(t("wl.rued_belum"))}">-</span>`;
-    const [no, th] = p.rued.perda.split("/"), x = p.perda.find((q) => q.nomor === no && String(q.tahun) === th), r = x && REG.get(x.id);
-    const isi = esc(t("wl.rued_ada", { perda: p.rued.perda })), u = amanUrl(p.rued.url);
-    const nama = r ? `<a class="jm-pil jm-wl-perda" href="/regulasi?id=${encodeURIComponent(r.id)}">${isi}</a>` : u ? `<a class="jm-pil jm-wl-perda" href="${esc(u)}" target="_blank" rel="noopener noreferrer">${isi}</a>` : `<span class="jm-pil jm-wl-perda">${isi}</span>`;
-    return `<span class="jm-wl-pd">${nama}${unduhRegHtml(r || { url_sumber: p.rued.url, judul: isi })}</span>`;
+  const rr = (p) => { if (!p.rued.perda) return null; const [no, th] = p.rued.perda.split("/"), x = p.perda.find((q) => q.nomor === no && String(q.tahun) === th); return x && REG.get(x.id); };
+  const perda = (p) => {
+    if (!p.rued.perda) return `<span class="jm-wl-belum">${esc(t("wl.rued_belum_ada"))}</span>`;
+    const r = rr(p), isi = esc(t("wl.rued_ada", { perda: p.rued.perda })), u = amanUrl(p.rued.url);
+    return r ? `<a class="jm-pil jm-wl-perda" href="/regulasi?id=${encodeURIComponent(r.id)}">${isi}</a>` : u ? `<a class="jm-pil jm-wl-perda" href="${esc(u)}" target="_blank" rel="noopener noreferrer">${isi}</a>` : `<span class="jm-pil jm-wl-perda">${isi}</span>`;
   };
-  $("urutan").innerHTML = `<div class="jm-gulir"><table class="jm-tabel jm-wl-tabel"><colgroup><col class="jm-wl-c1"><col><col class="jm-wl-c3"><col class="jm-wl-c4"></colgroup><thead><tr><th>#</th>${th("wl.col.prov")}<th>${esc(t("wl.m." + m))}</th>${th("wl.col.rued")}</tr></thead><tbody>${B.map((p, i) => {
+  const dok = (p) => (p.rued.perda ? `<span class="jm-wl-pd">${unduhRegHtml(rr(p) || { url_sumber: p.rued.url, judul: t("wl.rued_ada", { perda: p.rued.perda }) })}</span>` : `<span class="jm-wl-belum">-</span>`);
+  $("urutan").innerHTML = `<div class="jm-gulir"><table class="jm-tabel jm-wl-tabel"><colgroup><col class="jm-wl-c1"><col><col class="jm-wl-c3"><col class="jm-wl-c4"><col class="jm-wl-c5"></colgroup><thead><tr><th>#</th>${th("wl.col.prov")}<th class="jm-num">${esc(t("wl.m." + m))}</th>${th("wl.col.rued")}${th("wl.col.dok", "jm-tengah")}</tr></thead><tbody>${B.map((p, i) => {
     const v = METRIK[m].ambil(p), lbl = (k) => esc(t(k));
-    return `<tr data-href="/wilayah?prov=${esc(p.kode)}"><td data-label="#"><span class="jm-wl-no">${i + 1}</span></td><td data-label="${lbl("wl.col.prov")}"><a class="jm-wl-nama" href="/wilayah?prov=${esc(p.kode)}">${lambang(p)}<span>${esc(p.nama)}</span></a></td><td data-label="${esc(t("wl.col.nilai"))}" class="jm-num"><b class="jm-wl-nil">${esc(nilaiTeks(m, p))}</b></td><td data-label="${lbl("wl.col.rued")}" class="jm-tengah">${rued(p)}</td></tr>`;
+    return `<tr data-href="/wilayah?prov=${esc(p.kode)}"><td data-label="#"><span class="jm-wl-no">${i + 1}</span></td><td data-label="${lbl("wl.col.prov")}"><a class="jm-wl-nama" href="/wilayah?prov=${esc(p.kode)}">${lambang(p)}<span>${esc(p.nama)}</span></a></td><td data-label="${esc(t("wl.col.nilai"))}" class="jm-num"><b class="jm-wl-nil">${esc(nilaiTeks(m, p))}</b></td><td data-label="${lbl("wl.col.rued")}">${perda(p)}</td><td data-label="${lbl("wl.col.dok")}" class="jm-tengah">${dok(p)}</td></tr>`;
   }).join("")}</tbody></table></div>`;
   pasangBar($("urutan"));
 }
@@ -107,17 +114,32 @@ const jalur = (g) => {
   return d;
 };
 
-function tampilTip(p, x, y) {
-  const m = metrik, tip = $("tip"), kd = METRIK[m].kedua.map((k) => `<li><span>${esc(t("wl.m." + k))}</span><b>${esc(nilaiTeks(k, p))}</b></li>`).join("");
+function tipHtml(p) {
+  const m = metrik, kd = METRIK[m].kedua.map((k) => `<li><span>${esc(t("wl.m." + k))}</span><b>${esc(nilaiTeks(k, p))}</b></li>`).join("");
   const rk = METRIK[m].ambil(p) === null ? esc(t("an.tanpa_data")) : esc(t("wl.peringkat", { r: peringkat(m, p), n: data.baris.length }));
-  tip.innerHTML = `<header>${lambang(p, 36)}<div><strong>${esc(p.nama)}</strong><small>${rk}</small></div></header><p><span>${esc(t("wl.m." + m))}</span><b>${esc(nilaiTeks(m, p))}</b></p><ul>${kd}</ul>`;
+  return `<header>${lambang(p, 36)}<div><strong>${esc(p.nama)}</strong><small>${rk}</small></div></header><p><span>${esc(t("wl.m." + m))}</span><b>${esc(nilaiTeks(m, p))}</b></p><ul>${kd}</ul><small class="jm-p3d-ajak">${esc(t("wl.tip.klik"))}</small>`;
+}
+
+function tampilTip(p, x, y) {
+  const tip = $("tip");
+  tip.innerHTML = tipHtml(p);
   tip.hidden = false;
   const b = $("peta").parentElement.getBoundingClientRect(), tw = tip.offsetWidth, th = tip.offsetHeight;
   tip.style.left = Math.max(8, Math.min(b.width - tw - 8, x + 14)) + "px";
   tip.style.top = Math.max(8, Math.min(b.height - th - 8, y + 14)) + "px";
 }
 
+const opsi3 = () => {
+  const m = metrik, bar = document.querySelector(".jm-wl-bar"), byKode = new Map(data.baris.map((p) => [p.kode, p]));
+  return {
+    nilai: new Map(data.baris.map((p) => [p.kode, METRIK[m].ambil(p)])), kelas: kelasPeta(m).kelas, nama: new Map(data.baris.map((p) => [p.kode, p.nama])),
+    satuan: METRIK[m].satuan, judulLegenda: t("wl.m." + m), nilaiTeks: (k) => nilaiTeks(m, byKode.get(k)), tip: (k) => tipHtml(byKode.get(k)),
+    tinggi: m !== "rued", label: m === "rued" ? 0 : 5, padding: { top: (bar?.offsetHeight || 52) + 24, bottom: 24, left: 24, right: 24 },
+  };
+};
+
 function warnai() {
+  if (p3) { p3.perbarui(opsi3()); peringkatPanel(); return; }
   const svg = $("peta").querySelector("svg");
   if (!svg) return;
   const { kelas } = kelasPeta(metrik);
@@ -160,6 +182,18 @@ function peringkatPanel() {
 }
 
 async function bukaPeta() {
+  p3 = await pasangPeta3d($("peta"), opsi3()).catch(() => null);
+  if (p3) {
+    const pr = $("peringkat"), li = (k) => pr.querySelectorAll("li").forEach((x) => x.classList.toggle("jm-wl-aktif", x.dataset.k === k));
+    $("peta").addEventListener("jm:p3d-sorot", (e) => li(e.detail));
+    pr.addEventListener("mouseover", (e) => { const l = e.target.closest("li[data-k]"); if (l) p3.sorot(l.dataset.k); });
+    pr.addEventListener("focusin", (e) => { const l = e.target.closest("li[data-k]"); if (l) p3.sorot(l.dataset.k); });
+    pr.addEventListener("mouseleave", () => p3.sorot(null));
+    pr.addEventListener("click", (e) => { const l = e.target.closest("li[data-k]"); if (l) location.assign(`/wilayah?prov=${encodeURIComponent(l.dataset.k)}`); });
+    pr.addEventListener("keydown", (e) => { if (e.key === "Enter") e.target.closest("li[data-k]")?.click(); });
+    if (innerWidth >= 900) for (const [id, k] of [["peringkat", "peringkat"], ["legenda", "legenda"]]) geserPanel($(id), { kunci: k });
+    petaSiap = true; peringkatPanel(); return;
+  }
   try { geo = await (await fetch("/geo/provinsi.json", { credentials: "same-origin" })).json(); }
   catch (e) { $("peta").innerHTML = `<p class="jm-bantu">${esc(t("wl.peta_gagal"))}</p>`; return; }
   const nama = new Map(data.baris.map((p) => [p.kode, p]));
@@ -194,12 +228,15 @@ async function bukaPeta() {
 }
 
 function pasangSakelar() {
+  $("tek").addEventListener("change", () => { tek = $("tek").value; nanti(() => { warnai(); legenda(); urutan(); }); });
   $("urutan").addEventListener("click", (e) => { const tr = e.target.closest("tr[data-href]"); if (tr && !e.target.closest("a")) location.assign(tr.dataset.href); });
   document.querySelector(".jm-wl-seg").addEventListener("click", (e) => {
     const b = e.target.closest("button[data-m]");
     if (!b || b.dataset.m === metrik) return;
     for (const x of b.parentElement.children) x.setAttribute("aria-selected", String(x === b)); // chrome urgent
     metrik = b.dataset.m;
+    const adaTek = metrik === "ebt" || metrik === "sisa";
+    $("tek-baris").hidden = !adaTek; b.closest(".jm-wl-bingkai").classList.toggle("jm-wl-ada-tek", adaTek);
     nanti(() => { warnai(); legenda(); urutan(); });
   });
 }
@@ -232,6 +269,7 @@ async function mulai() {
   $("kartu") && ($("kartu").innerHTML = hantuHtml(2));
   try { data = await muatData("wilayah.json"); } catch (e) { tampilGalat($(param ? "profil-isi" : "kartu"), mulai); if (param) { $("daftar").hidden = true; $("profil").hidden = false; } return; }
   try { for (const r of (await muatData("regulasi.json")).baris) REG.set(r.id, r); } catch (e) { /* tanpa naskah: tautan sumber saja */ }
+  try { const pl = await muatData("peluang.json"); PELMETA = pl.meta.diperbarui; for (const b of pl.baris) PEL.set(b.kode, b); } catch (e) { /* tanpa peluang: segmen EBT kosong */ }
   if (!param) pasangAksi(["aksi-urut"]);
   gambar();
   saatBahasa(gambar);

@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 // Logo organisasi -> public/img/logo/org/<org_id>.png. Dapat dilanjutkan (checkpoint data-panen/logo/status.json).
 //   node scripts/panen/panen_logo.mjs [--maks N] [--hanya=id1,id2] [--ulang] [--tanpa-wikidata]
+//   node scripts/panen/panen_logo.mjs --tetap=<org_id>=<url gambar logo di situs resmi>   (ganti logo yang salah, mis. favicon terpotong)
 // Urutan per organisasi dengan situs: (a) apple-touch-icon/icon >= 96, (b) <img> logo di kepala halaman,
 // (c) og:image yang mirip logo (rasio 0,5-2, <= 400 KB), (d) favicon >= 64. Tanpa situs / gagal: Wikidata P154 (logo) lewat Commons.
 // Sopan: robots.txt dihormati (kecuali API Wikimedia, sesuai kebijakan Wikimedia), UA METI, jeda >= 2 dtk per host, timeout 8 dtk,
@@ -159,7 +160,14 @@ function catat(o, h) {
 }
 async function kolam(daftar, kerja, n = 16) { let i = 0; await Promise.all(Array.from({ length: n }, async () => { while (i < daftar.length) { const o = daftar[i++]; try { await kerja(o); } catch (e) { console.error(o.id, String(e).slice(0, 100)); } simpan(); } })); }
 
-let orgs = muatOrg(); if (HANYA) orgs = orgs.filter((o) => HANYA.has(o.id)); orgs = orgs.slice(0, MAKS);
+const TETAP = arg('--tetap');
+if (TETAP) { // satu organisasi, URL logo ditunjuk manusia dari situs resminya sendiri; tetap lewat robots.txt dan jeda
+  const [id, url] = [TETAP.split('=')[0], TETAP.slice(TETAP.indexOf('=') + 1)];
+  const g = await ambilBoleh(url, { biner: true }); const png = g?.status === 200 && await jadikanPng(g.buf);
+  if (!png) { console.error('gagal', id); process.exit(1); }
+  catat({ id }, { png, metode: 'logo-header', url_sumber: url }); simpan(); console.log('logo diganti', id);
+}
+let orgs = TETAP ? [] : muatOrg(); if (HANYA) orgs = orgs.filter((o) => HANYA.has(o.id)); orgs = orgs.slice(0, MAKS);
 console.log('organisasi', orgs.length, 'bersitus', orgs.filter((o) => o.situs).length);
 const baru = (o) => st[o.id]?.hasil !== 'ok';
 await kolam(orgs.filter((o) => o.situs && baru(o) && !st[o.id]?.situs), async (o) => {

@@ -391,6 +391,7 @@ export function bangun(masukan = {}) {
     return { pub: bersih(pub), intr: bersih(intr) };
   };
   const orgPubRows = [], orgAng = [], orgPen = [];
+  const indukKampus = new Map(); // ormawa -> id kampus induk (logo dipinjam bila ormawa tak punya logo sendiri)
   { // kantor pusat hasil panen (data/direktori/lokasi_org.json): hanya mengisi organisasi yang provinsinya belum terbaca
     const fl = path.join(ROOT, 'data/direktori/lokasi_org.json');
     if (fs.existsSync(fl)) for (const [id, h] of Object.entries(JSON.parse(fs.readFileSync(fl, 'utf8')).baris || {})) {
@@ -398,10 +399,17 @@ export function bangun(masukan = {}) {
       o.lokasi = bersih({ ...(o.lokasi || {}), kota: h.kota, provinsi: h.provinsi, alamat: h.alamat, sumber_url: h.sumber_url, tingkat_bukti: h.tingkat_bukti });
     }
   }
+  { // sumber URL resmi yang diperiksa manusia/skrip (data/direktori/sumber_org.json): membuka organisasi yang tertahan tanpa-sumber-url
+    const fs_ = path.join(ROOT, 'data/direktori/sumber_org.json');
+    if (fs.existsSync(fs_)) for (const [id, h] of Object.entries(JSON.parse(fs.readFileSync(fs_, 'utf8')).baris || {})) {
+      const o = org.get(alias.get(id) || id); if (!o || !adaUrl(h.url) || o.sumber.some((s) => s.url === h.url)) continue;
+      o.sumber.push({ id: 'situs-resmi', jenis: 'situs-resmi', url: h.url, keterangan: 'situs resmi lembaga (diperiksa ' + h.tanggal + ')', tingkat_bukti: h.tingkat_bukti || 'situs-sendiri', tanggal: h.tanggal });
+    }
+  }
   { // titik peta: kampus dulu (ormawa meminjam), lalu sisanya
     for (const o of org.values()) if (o.kategori === 'perguruan-tinggi') o.lokasi = titikLokasi(o);
     const kampus = new Map([...org.values()].filter((o) => o.kategori === 'perguruan-tinggi' && o.lokasi?.lat != null).map((o) => [norm(o.nama), o]));
-    for (const o of org.values()) if (o.kategori !== 'perguruan-tinggi') o.lokasi = titikLokasi(o, o.kategori === 'ormawa' ? kampusUntuk(o, kampus) : null);
+    for (const o of org.values()) if (o.kategori !== 'perguruan-tinggi') { const k = o.kategori === 'ormawa' ? kampusUntuk(o, kampus) : null; o.lokasi = titikLokasi(o, k); if (k) indukKampus.set(o.id, k.id); }
   }
   for (const o of [...org.values()].sort((a, b) => (a.id < b.id ? -1 : 1))) {
     const url = o.sumber.some((s) => adaUrl(s.url)) || (o.kategori === 'koperasi' || o.kategori === 'ormawa') && o.sumber.some((s) => adaUrl(s.url));
@@ -589,6 +597,7 @@ export function bangun(masukan = {}) {
 
   // logo organisasi hasil panen_logo.mjs (berkas ada = tautan); logo kurasi lama (public/img/logo/*.png) tetap dipakai beranda dan menang
   for (const o of [...organisasi.publik, ...orgAng, ...orgPen]) if (/^[A-Za-z0-9_-]+$/.test(o.id) && fs.existsSync(path.join(ROOT, 'public/img/logo/org', o.id + '.png'))) o.logo = `/img/logo/org/${o.id}.png`;
+  for (const o of [...organisasi.publik, ...orgAng, ...orgPen]) { const ik = !o.logo && indukKampus.get(o.id); if (ik && fs.existsSync(path.join(ROOT, 'public/img/logo/org', ik + '.png'))) o.logo = `/img/logo/org/${ik}.png`; }
   const kosong = [];
   const idAng = new Map(); // id stabil baris anggota_meti; kembar nama+jenis+no diberi nomor urut
   const lapisan = {

@@ -1,5 +1,6 @@
 import { mulaiHalaman } from "/inti/kepala.js";
 import { tombolKoreksi } from "/inti/koreksi.js";
+import { tombolIkuti, pasangIkuti } from "/inti/ikuti.js";
 import { khUbin } from "/inti/kh.js";
 import { t, angka, tanggal } from "/i18n.js";
 import { esc, nanti, debounce, hantuHtml, kosongHtml, galatHtml, ikon } from "/inti/umum.js";
@@ -234,7 +235,7 @@ function profilHtml(r) {
   return `<div class="jm-lembar-isi"><div class="jm-lembar-kepala"><div class="jm-rg-kep jm-rg-kep-b">${r.instansi_penerbit ? penerbitHtml(r.instansi_penerbit, 48) : ""}<div><p class="jm-baris-no">${esc(namaRegulasi(r))}</p><h2 id="lembar-j">${esc(r.judul)}</h2></div></div>
     <button type="button" class="iconbtn" data-aksi="tutup" aria-label="${esc(t("jm.tutup"))}">${ikon("tutup", 22)}</button></div>
     <div class="jm-baris-meta">${pil(r)}<span class="jm-pil">${esc(label("reg.tingkat.", tingkatDari(r)))}</span>${r.tanggal_ditetapkan ? `<span class="jm-pil">${ikon("kalender", 14)}${esc(tanggal(r.tanggal_ditetapkan))}</span>` : ""}</div>
-    <p>${tombolKoreksi({ entitas: "regulasi", id: r.id, nama: namaRegulasi(r) })}</p>
+    <p>${tombolKoreksi({ entitas: "regulasi", id: r.id, nama: namaRegulasi(r) })} ${tombolIkuti({ jenis: "regulasi", id: r.id, nama: namaRegulasi(r) })}</p>
     <dl class="jm-dl">${dd("reg.f.jenis", esc(label("reg.jenis.", r.jenis)))}${dd("reg.f.penerbit", tautOrg(r.instansi_penerbit))}${dd("reg.f.ditetapkan", esc(tanggal(r.tanggal_ditetapkan)))}${r.tanggal_diundangkan ? dd("reg.f.diundangkan", esc(tanggal(r.tanggal_diundangkan))) : ""}${dd("reg.f.topik", (r.topik || []).map((x) => esc(label("reg.topik.", x))).join(", "))}</dl>
     <section><h3>${esc(t("reg.f.ringkasan"))} ${/^\S+ \d+\/\d+ mengatur /.test(r.ringkasan || "") ? `<span class="jm-pil jm-pil-est">${esc(t("reg.otomatis"))}</span>` : ""}</h3><p>${esc(r.ringkasan || "-")}</p></section>
     ${r.posisi_meti ? `<section class="jm-posisi"><h3>${esc(t("reg.f.posisi"))}</h3><p>${esc(r.posisi_meti)}</p></section>` : ""}
@@ -246,6 +247,7 @@ function bukaProfil(id) {
   const r = D.byId.get(id), dlg = document.getElementById("lembar");
   if (!r) return;
   dlg.innerHTML = profilHtml(r);
+  pasangIkuti(dlg);
   terkaitHtml("regulasi", id).then((h) => { const a = dlg.querySelector(".jm-lembar-isi"); if (h && a && dlg.open && !a.querySelector("#terkait")) a.insertAdjacentHTML("beforeend", h); });
   if (!dlg.open) dlg.showModal();
   dlg.scrollTop = 0;

@@ -37,12 +37,14 @@
   </header>
   <div class="jm-ex-bd jm-wl-bd">
     <div class="jm-wl-bingkai">
-      <div class="jm-tab jm-wl-seg" role="tablist" aria-label="Metrik" data-i18n-attr="aria-label:wl.metrik">
+      <div class="jm-wl-bar"><div class="jm-tab jm-wl-seg" role="tablist" aria-label="Metrik" data-i18n-attr="aria-label:wl.metrik">
         <button type="button" role="tab" data-m="terpasang" aria-selected="true"><svg class="jm-ik" width="18" height="18" aria-hidden="true" focusable="false"><use href="/img/ikon.svg#i-tek-listrik"/></svg><span data-i18n="wl.m.terpasang">Kapasitas terpasang (MW)</span></button>
-        <button type="button" role="tab" data-m="panasbumi" aria-selected="false"><svg class="jm-ik" width="18" height="18" aria-hidden="true" focusable="false"><use href="/img/ikon.svg#i-tek-panas"/></svg><span data-i18n="wl.m.panasbumi">Potensi panas bumi (MW)</span></button>
+        <button type="button" role="tab" data-m="ebt" aria-selected="false"><svg class="jm-ik" width="18" height="18" aria-hidden="true" focusable="false"><use href="/img/ikon.svg#i-tek-surya"/></svg><span data-i18n="wl.m.ebt">Potensi EBT (MW)</span></button>
+        <button type="button" role="tab" data-m="sisa" aria-selected="false"><svg class="jm-ik" width="18" height="18" aria-hidden="true" focusable="false"><use href="/img/ikon.svg#i-analisis"/></svg><span data-i18n="wl.m.sisa">Sisa potensi (MW)</span></button>
         <button type="button" role="tab" data-m="proyek" aria-selected="false"><svg class="jm-ik" width="18" height="18" aria-hidden="true" focusable="false"><use href="/img/ikon.svg#i-proyek"/></svg><span data-i18n="wl.m.proyek">Jumlah proyek</span></button>
         <button type="button" role="tab" data-m="rued" aria-selected="false"><svg class="jm-ik" width="18" height="18" aria-hidden="true" focusable="false"><use href="/img/ikon.svg#i-regulasi"/></svg><span data-i18n="wl.m.rued">Perda RUED</span></button>
       </div>
+      <div class="jm-wl-tek" id="tek-baris" hidden><label for="tek" data-i18n="wl.tek.label">Teknologi</label><select id="tek" data-ikon="tek:jaringan"><option value="semua" data-ikon="tek:jaringan" data-i18n="wl.tek.semua">Semua EBT (jumlah)</option><option value="surya" data-ikon="tek:surya" data-i18n="wl.tek.surya">Surya</option><option value="bayu" data-ikon="tek:bayu" data-i18n="wl.tek.bayu">Bayu</option><option value="hidro" data-ikon="tek:hidro" data-i18n="wl.tek.hidro">Hidro</option><option value="mikrohidro" data-ikon="tek:hidro" data-i18n="wl.tek.mikrohidro">Mikrohidro</option><option value="panas_bumi" data-ikon="tek:panas-bumi" data-i18n="wl.tek.panas_bumi">Panas bumi</option><option value="bioenergi" data-ikon="tek:bioenergi" data-i18n="wl.tek.bioenergi">Bioenergi (termasuk biofuel)</option><option value="laut" data-ikon="tek:laut" data-i18n="wl.tek.laut">Laut</option></select></div></div>
       <div id="peta" class="jm-wl-peta" role="region" aria-label="Peta" data-i18n-attr="aria-label:wl.peta_label"></div>
       <div id="legenda" class="jm-wl-legenda"><p class="jm-wl-lg-j" id="lg-j"></p><div id="lg-isi"></div></div>
       <aside id="peringkat" class="jm-wl-pr" aria-label="Peringkat" data-i18n-attr="aria-label:wl.ey.urut"><h3 data-i18n="wl.ey.urut">Peringkat</h3><div id="pr-isi"></div></aside>

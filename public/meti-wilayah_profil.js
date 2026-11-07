@@ -2,6 +2,8 @@
    anggota (agregat), kegiatan dan berita, proyek dan potensi, kit pelantikan, serta formulir pembentukan untuk akun masuk.
    Respons publik tidak memuat kontak pribadi: hanya nama, jabatan resmi, dan kontak kantor. */
 import { khUbin } from "/inti/kh.js";
+import { tombolIkuti, pasangIkuti } from "/inti/ikuti.js";
+import { muatPembaruanWilayah } from "/inti/pembaruan.js";
 import { geoProvinsi, jalurPerProvinsi } from "/inti/peta_indonesia.js";
 import { t, angka } from "/i18n.js";
 import { api, esc, ikon, nanti, galatTeks, pesanHtml, hantuHtml, GalatApi } from "/inti/umum.js";
@@ -62,7 +64,7 @@ const slotOrang = (nama, jabatan) => `<li class="mw-sl${nama ? "" : " mw-sl-koso
 
 function pengurusHtml(b, saya) {
   const kosong = !b.ketua && !b.sekretaris && !b.bendahara;
-  const kelola = Array.isArray(saya?.peran) ? saya.peran.includes("pengurus_wilayah") : ["pengurus_wilayah", "admin", "super"].includes(saya?.peran);
+  const kelola = saya?.wilayah_kode === b.kode || ["admin", "super"].includes(saya?.peran);
   const isi = kosong
     ? `<div class="mw-kosong-st">${ikon("orang", 28)}<p>${esc(t("mw.pengurus_kosong"))}</p>${kelola ? `<a class="jm-tbl jm-tbl-utama" href="/meti-wilayah/${esc(b.kode)}/kelola">${ikon("ubah", 16)}${esc(t("mw.kelola"))}</a>` : ""}</div>`
     : `<ul class="mw-slot">${slotOrang(b.ketua, t("mw.ketua"))}${slotOrang(b.sekretaris, t("mw.sekretaris"))}${slotOrang(b.bendahara, t("mw.bendahara"))}</ul>`;
@@ -237,6 +239,9 @@ export async function profilWilayah(kode, S, saya, akar) {
   const { html, ub } = kepalaHtml(w, det.wilayah, det.anggota);
   akar.innerHTML = html + `<div class="mw-isi">${[skHtml(w), sekretariatHtml(w), pengurusHtml(w, saya), bidangHtml(w), anggotaHtml(det.anggota, kode, saya), kegiatanHtml(), proyekHtml(w), kitHtml(w), w.status === "berdiri" ? "" : ajakanHtml(w, det.wilayah, det.ajuan_saya)].join("")}</div>`;
   khUbin("ubin-p", ub);
+  akar.querySelector(".jm-kh-lead")?.insertAdjacentHTML("afterend", `<p>${tombolIkuti({ jenis: "provinsi", id: kode, nama: b.nama })}</p>`);
+  pasangIkuti(akar);
+  muatPembaruanWilayah(kode, akar.querySelector(".mw-isi"));
   pasangFoto(akar); pasangKit(akar, w);
   pasangForm(akar, w, () => profilWilayah(kode, S, saya, akar));
   nanti(() => { petaMini(kode); isiKegiatan(w); isiProyek(w); });

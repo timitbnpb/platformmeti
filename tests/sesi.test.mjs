@@ -128,7 +128,7 @@ test("R6 GET /api/saya: tamu, masuk, tanpa surel, no-store + Vary Cookie", async
   const c = await login(surel);
   const r = await kirim(minta("/api/saya", { cookie: c }));
   const j = await r.json();
-  assert.deepEqual(j, { masuk: true, peran: "wilayah", nama: "Nama Uji", bahasa: "id", cakupan_prov: "32", super: false, wajib_ganti: false });
+  assert.deepEqual(j, { masuk: true, peran: "wilayah", nama: "Nama Uji", bahasa: "id", cakupan_prov: "32", super: false, wajib_ganti: false, wilayah_kode: null });
   assert.equal(r.headers.get("cache-control"), "private, no-store");
   assert.equal(r.headers.get("vary"), "Cookie");
   assert.ok(!JSON.stringify(j).includes("@"));

@@ -100,10 +100,10 @@ Diambil oleh scripts/panen/panen_logo.mjs (UA METI, robots.txt dihormati, jeda >
 - p_1848d9c52b | PT Adhi Karya (Persero) Tbk | logo-header | https://adhi.co.id/wp-content/uploads/2024/08/Logo-ADHI-Website-e1724213185210.webp
 - p_19a0c30f94 | LONGi Green Energy Technology | og-image | https://www.longi.com/_nuxt/img/seoLogo.1ecaaf1.png
 - p_1a272e3233 | PT Energi Agro Nusantara | apple-touch-icon | https://enero.co.id/wp-content/uploads/2017/12/logo_enero.png
-- p_1c9eb202dd | ENGIE | apple-touch-icon | https://www.engie.com/app/uploads/2026/03/favicon-engie.png
+- p_1c9eb202dd | Engie | apple-touch-icon | https://www.engie.com/app/uploads/2026/03/favicon-engie.png
 - p_1fec9f73f0 | PT Sankeindo | logo-header | https://www.sankeindo.co.id/img/logo_sankelux.png
 - p_236f2f34ab | PT Xurya Daya Indonesia | logo-header | https://storage.googleapis.com/xurya-app-files/xurya-web/xurya-logo-color.webp
-- p_26cfc39c2a | PT Surya Utama Putra | apple-touch-icon | https://suryautamaputra.co.id/wp-content/uploads/2021/10/Logo-SUP-300x300.png
+- p_26cfc39c2a | PT Surya Utama Putra | logo-header | https://suryautamaputra.co.id/wp-content/uploads/2017/02/logo-sup-2016-90.png
 - p_2869285953 | PT Ineco Solar Solutions | apple-touch-icon | https://inecosolar.com/wp-content/uploads/2023/05/cropped-favicon-light-blue-header-logo-solar-rooftop-bali-power-energy-panel-power-pv-solar-roof-company-indonesia-192x192.png
 - p_3bfe6ea3f4 | PT Musim Mas | apple-touch-icon | https://www.musimmas.com/wp-content/uploads/2024/04/Frame-4191-300x300.jpg
 - p_415a233f4b | Wiraky | apple-touch-icon | https://wiraky.co.id/wp-content/uploads/2021/07/cropped-favicon-fix-192x192.png
@@ -192,8 +192,8 @@ Diambil oleh scripts/panen/panen_logo.mjs (UA METI, robots.txt dihormati, jeda >
 - tk_65d260f1 | PT Wiraky Nusa Telekomunikasi | apple-touch-icon | https://wiraky.co.id/wp-content/uploads/2021/07/cropped-favicon-fix-192x192.png
 - tk_6d4297ef | PT Surya Semesta Cemerlang | apple-touch-icon | https://suryasemestacemerlang.com/wp-content/uploads/2023/07/cropped-favicon-192x192.png
 - tk_7dd282ce | PT Nusa Solar Indonesia | favicon | https://www.nusasolar.com/favicon.ico
-- tk_7ffb6866 | PT ADYAWINSA ELECTRICAL AND POWER | logo-header | https://adyawinsa.com/_next/image?url=%2Flogo-adw-white.png&w=256&q=75
-- tk_8f1a2d3a | PT USAHA BAKTI PERKASA | apple-touch-icon | https://www.usahabaktiperkasa.com/wp-content/uploads/2023/10/favicon-bakti-perkasa-300x300.png.webp
+- tk_7ffb6866 | PT Adyawinsa Electrical And Power | logo-header | https://adyawinsa.com/_next/image?url=%2Flogo-adw-white.png&w=256&q=75
+- tk_8f1a2d3a | PT Usaha Bakti Perkasa | apple-touch-icon | https://www.usahabaktiperkasa.com/wp-content/uploads/2023/10/favicon-bakti-perkasa-300x300.png.webp
 - tk_9421b538 | PT Baskara Prima Sarana | apple-touch-icon | https://www.baskara.co.id/wp-content/uploads/2025/04/cropped-cropped-Icon-Primary-1-192x192.png
 - tk_c71f99ab | PT Tirta Surya Cipta | apple-touch-icon | https://www.tirtasuryacipta.com/icon.png?icon.4ad45629.png
 - tk_d1dcaf67 | PT Jetspeed Mandiri Indonesia | apple-touch-icon | https://www.jetspeed.id/wp-content/uploads/2023/07/WhatsApp-Image-2025-01-23-at-11.32.58-AM.jpeg

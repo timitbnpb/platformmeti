@@ -391,3 +391,39 @@ test("kontrak sesi/sandi/laju/aktivasi untuk worker-inti", async () => {
   assert.equal((await satu("SELECT status FROM akun WHERE surel='dua@uji.test'")).status, "aktif");
   assert.equal(await hak.sapu(E).then((r) => typeof r.sesi), "number");
 });
+
+// Ikuti + portal + METI Wilayah (0019): matriks gerbang per peran. publik/tamu ditolak di semua fungsi; hanya admin dan super menyentuh antrean dan tautan wilayah;
+// peran lain (anggota..wilayah) boleh ikuti dan mengajukan klaim, tetapi ajuan lembaga/wilayah menuntut tautan yang disetujui admin.
+test("0019: gerbang hak per peran untuk ikuti, portal, wilayah", async () => {
+  const MASUK = ["anggota", "pengurus", "kurator", "wilayah", "admin", "super"], ADMIN = ["admin", "super"];
+  const fnMasuk = [
+    (a) => hak.ikutiDaftar(E, a), (a) => hak.ikutiSet(E, a, "proyek", "pj_x", true), (a) => hak.ikutiLihat(E, a), (a) => hak.ikutiPerubahan(E, a, 0),
+    (a) => hak.orgSaya(E, a), (a) => hak.orgTerbit(E, a, "organisasi", "ix_x"), (a) => hak.wilayahKode(E, a), (a) => hak.wilayahSaya(E, a), (a) => hak.wilayahTerbit(E, a, "32"),
+  ];
+  const fnAdmin = [
+    (a) => hak.orgAntrean(E, a, "ajuan", "baru"), (a) => hak.orgPutus(E, a, "ajuan", 999, "setuju", null), (a) => hak.wilayahAkunDaftar(E, a),
+    (a) => hak.wilayahAkunTaut(E, a, { akunId: 999999, kode: "32" }), (a) => hak.wilayahAkunLepas(E, a, 999999),
+  ];
+  const ditolak = async (f, a) => { try { await f(a); return false; } catch (e) { return e.status === 403; } };
+  for (const f of [...fnMasuk, ...fnAdmin]) {
+    assert.ok(await ditolak(f, null), "tamu ditolak");
+    assert.ok(await ditolak(f, { id: 1, peran: "publik" }), "publik ditolak");
+  }
+  for (const peran of MASUK) {
+    const a = akunDb[peran] ?? akunDb.anggota;
+    for (const f of fnMasuk) assert.ok(!(await ditolak(f, a)), `${peran} boleh fungsi masuk`);
+    for (const f of fnAdmin) assert.equal(await ditolak(f, a), !ADMIN.includes(peran), `${peran} vs fungsi admin`);
+  }
+  // ajuan lembaga dan wilayah tanpa tautan disetujui: ditolak untuk SEMUA peran, termasuk super
+  for (const peran of MASUK) {
+    const a = akunDb[peran];
+    assert.ok(await ditolak((x) => hak.orgAjuanBaru(E, x, { organisasiId: "ix_x", jenis: "profil", isi: { deskripsi: "d" }, bukti: "https://a.test/x" }), a), `${peran}: ajuan tanpa klaim`);
+    assert.ok(await ditolak((x) => hak.wilayahAjuanBaru(E, x, { kode: "32", jenis: "bidang", isi: { bidang: ["a"] }, bukti: "https://a.test/x" }), a), `${peran}: ajuan wilayah tanpa tautan`);
+  }
+  // sesudah ditautkan ke 32: boleh untuk 32, ditolak untuk 31
+  assert.equal((await hak.wilayahAkunTaut(E, akunDb.admin, { akunId: akunDb.anggota.id, kode: "32" })).ada, true);
+  assert.ok((await hak.wilayahAjuanBaru(E, akunDb.anggota, { kode: "32", jenis: "bidang", isi: { bidang: ["a"] }, bukti: "https://a.test/x" })).id > 0);
+  assert.ok(await ditolak((x) => hak.wilayahAjuanBaru(E, x, { kode: "31", jenis: "bidang", isi: { bidang: ["a"] }, bukti: "https://a.test/x" }), akunDb.anggota), "provinsi lain ditolak");
+  // PERAN/MATRIKS tidak berubah: tautan wilayah bukan peran baru
+  assert.equal(PERAN.length, 7);
+});

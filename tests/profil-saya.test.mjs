@@ -189,3 +189,23 @@ test("CSRF: tulis tanpa x-pb ditolak; nonaktif tak bisa dilihat", async () => {
   await q("UPDATE akun SET status = 'nonaktif' WHERE id = ?", AKUN.budi).run();
   assert.equal((await panggil("GET", `/api/profil/${AKUN.budi}`, { siapa: "adm" })).status, 404);
 });
+
+test("0019: bahasa, sampul (daftar putih), tautan akademik (https saja, host sesuai) disimpan di API profil", async () => {
+  assert.equal((await ubah("ani", { bahasa: [{ nama: "Indonesia", tingkat: "ibu" }, { nama: "Inggris", tingkat: "mahir" }], sampul: "bayu-sidrap" })).status, 200);
+  const a = await (await panggil("GET", "/api/profil/saya", { siapa: "ani" })).json();
+  assert.deepEqual(a.bahasa, [{ nama: "Indonesia", tingkat: "ibu" }, { nama: "Inggris", tingkat: "mahir" }]);
+  assert.equal(a.sampul, "bayu-sidrap");
+  // mengubah bidang lain tidak menghapus bahasa/sampul; mengirim satu saja tidak menimpa yang lain
+  assert.equal((await ubah("ani", { jabatan: "Analis 2" })).status, 200);
+  assert.equal((await ubah("ani", { sampul: "surya-cirata" })).status, 200);
+  const b = await (await panggil("GET", "/api/profil/saya", { siapa: "ani" })).json();
+  assert.deepEqual([b.bahasa.length, b.sampul], [2, "surya-cirata"]);
+  assert.equal((await ubah("ani", { sampul: null })).status, 200);
+  assert.equal((await (await panggil("GET", "/api/profil/saya", { siapa: "ani" })).json()).sampul, null);
+  for (const badan of [{ sampul: "../x" }, { sampul: "tak-ada" }, { bahasa: [{ nama: "X", tingkat: "dewa" }] }, { bahasa: [{ nama: "A", tingkat: "ibu" }, { nama: "a", tingkat: "ibu" }] },
+    { bahasa: Array(9).fill({ nama: "B", tingkat: "ibu" }) }, { tautan: { orcid: "http://orcid.org/0000" } }, { tautan: { orcid: "https://evil.example/0000" } }, { tautan: { scholar: "https://orcid.org/x" } }, { tautan: { facebook: "https://facebook.com/x" } }])
+    assert.equal((await ubah("ani", badan)).status, 422, JSON.stringify(badan));
+  const t = await ubah("ani", { tautan: { linkedin: "https://linkedin.com/in/a", orcid: "https://orcid.org/0000-0001-2345-6789", scholar: "https://scholar.google.com/citations?user=abc", researchgate: "https://www.researchgate.net/profile/Ani" } });
+  assert.equal(t.status, 200);
+  assert.equal((await (await panggil("GET", "/api/profil/saya", { siapa: "ani" })).json()).tautan.orcid, "https://orcid.org/0000-0001-2345-6789");
+});

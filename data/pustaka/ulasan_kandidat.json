@@ -1,0 +1,168 @@
+{
+ "catatan": "KANDIDAT Pustaka dari arsip lokal pemilik. TIDAK dibaca pipeline (bukan ulasan.json); pindahkan ke ulasan.json hanya setelah pemilik setuju.",
+ "diambil": "2026-11-08",
+ "dokumen": [
+  {
+   "id": "pk-kajian-ebt-meti-oktober-2026",
+   "judul": "Mengurai Akar Lambatnya Energi Terbarukan Indonesia (Kajian Kebijakan METI, Oktober 2026)",
+   "jenis": "kajian",
+   "penerbit": "Masyarakat Energi Terbarukan Indonesia (METI)",
+   "tanggal": "2026-10",
+   "acara": null,
+   "kepakaran": [
+    "kebijakan",
+    "surya",
+    "panas-bumi",
+    "bioenergi"
+   ],
+   "program": [
+    "plts-100gw"
+   ],
+   "ringkasan": "Kajian METI yang disusun dari data publik KESDM, PLN, dan lembaga independen. Menilai EBT lambat karena aturan main: sinyal harga memihak fosil, regulasi berubah, jaringan, pembiayaan, TKDN, dan izin sosial. Memuat studi kasus PLTP, PLTS, PLTA, biodiesel B50 dan bioetanol, kaitan dengan ketahanan energi (krisis Selat Hormuz 2026), delapan pergeseran kebijakan, tiga fase 2026-2035, dan indikator pantauan.",
+   "poin_kunci": [
+    {
+     "teks": "Bauran EBT 2025 sebesar 15,75%, jauh di bawah target awal 23%",
+     "hlm": "hlm 4"
+    },
+    {
+     "teks": "Lonjakan bauran 2026 ditopang mandatori biodiesel, bukan pembangkit baru; semester I-2026 turun ke 17,3%",
+     "hlm": "hlm 5"
+    },
+    {
+     "teks": "Hanya sekitar 0,4% potensi lima teknologi EBT utama (15,1 GW dari sekitar 3.624 GW) yang termanfaatkan",
+     "hlm": "hlm 6"
+    },
+    {
+     "teks": "Tambahan pembangkit 2025: sekitar 1,3 GW EBT berbanding sekitar 7 GW gas dan batubara",
+     "hlm": "hlm 7"
+    },
+    {
+     "teks": "Delapan pergeseran kebijakan dalam tiga fase bergerbang, 2026 sampai 2035",
+     "hlm": "hlm 23"
+    }
+   ],
+   "halaman": 29,
+   "bahasa": "id",
+   "format": "pdf",
+   "lapis": "publik",
+   "rahasia": false,
+   "terkait": {},
+   "lokal": "panen-baru:kajian-ebt-meti-oktober-2026.pdf",
+   "status_tayang": "perlu persetujuan pemilik sebelum tayang",
+   "berkas_salinan": "data-panen/pustaka/berkas/kajian-ebt-meti-oktober-2026.pdf"
+  },
+  {
+   "id": "pk-audiensi-meti-wakil-ketua-mpr-2026",
+   "judul": "Audiensi METI dengan Wakil Ketua MPR RI, 5 Oktober 2026",
+   "jenis": "paparan",
+   "penerbit": "METI",
+   "tanggal": "2026-10-05",
+   "ringkasan": "Paparan 24 halaman: profil METI, rekap kegiatan Mei-September 2026, hasil IndoEBTKE ConEx 2026, empat audiensi lembaga negara, lima pilar usulan dan 22 poin aspirasi untuk RUU EBET.",
+   "poin_kunci": [
+    {
+     "teks": "Enam METI Wilayah diresmikan; Maluku Utara, Surabaya, dan Riau menyusul",
+     "hlm": "hlm 5"
+    },
+    {
+     "teks": "IndoEBTKE ConEx 2026: 944 delegasi, 4.953 pengunjung, 21 MoU, 20 exhibitor, 15 sponsor",
+     "hlm": "hlm 6"
+    },
+    {
+     "teks": "263 bendungan milik negara disebut menyimpan potensi sekitar 23,9 GW EBT",
+     "hlm": "hlm 17"
+    }
+   ],
+   "halaman": 24,
+   "lapis": "publik",
+   "rahasia": false,
+   "status_tayang": "perlu persetujuan pemilik sebelum tayang (materi advokasi ke lembaga negara)"
+  },
+  {
+   "id": "pk-courtesy-meti-ukp-iklim-energi-2026",
+   "judul": "Courtesy METI dengan Utusan Khusus Presiden Bidang Iklim dan Energi, 22 Oktober 2026",
+   "jenis": "paparan",
+   "penerbit": "METI",
+   "tanggal": "2026-10-22",
+   "ringkasan": "Paparan 22 halaman: peran METI, struktur 2026-2028, 22 usulan RUU EBET, PLTS 100 GWp, E20 dan B50, waste-to-energy, nilai ekonomi karbon, dan usulan tindak lanjut 90 hari.",
+   "poin_kunci": [
+    {
+     "teks": "22 usulan METI dalam RUU EBET disampaikan pada RDPU Komisi XII, 8 September 2026",
+     "hlm": "hlm 12"
+    },
+    {
+     "teks": "Usulan tindak lanjut bersama Utusan Khusus Presiden dalam 90 hari",
+     "hlm": "hlm 21"
+    }
+   ],
+   "halaman": 22,
+   "lapis": "publik",
+   "rahasia": false,
+   "status_tayang": "tahan: memuat rujukan \"data internal METI\" dan bahan audiensi; perlu persetujuan pemilik"
+  }
+ ],
+ "ulasan": {
+  "pk-kajian-ebt-meti-oktober-2026": {
+   "angka": [
+    {
+     "nilai": "15,75",
+     "satuan": "%",
+     "label": "Bauran EBT energi primer 2025",
+     "hlm": "hlm 2"
+    },
+    {
+     "nilai": "15,1",
+     "satuan": "GW",
+     "label": "Kapasitas terpasang lima teknologi EBT utama, Desember 2025",
+     "hlm": "hlm 6"
+    },
+    {
+     "nilai": "1,3",
+     "satuan": "GW",
+     "label": "Tambahan EBT 2025, dibanding sekitar 7 GW fosil",
+     "hlm": "hlm 7"
+    },
+    {
+     "nilai": "71",
+     "satuan": "%",
+     "label": "Tambahan EBT RUPTL 2025-2034 yang baru dijadwalkan setelah 2030",
+     "hlm": "hlm 2"
+    },
+    {
+     "nilai": "68,18",
+     "satuan": "%",
+     "label": "Porsi batubara dalam produksi listrik nasional 2024 (408,4 TWh)",
+     "hlm": "hlm 5"
+    },
+    {
+     "nilai": "4,9",
+     "satuan": "juta kL",
+     "label": "Impor solar 2025; target nol sejak 2026",
+     "hlm": "hlm 25"
+    }
+   ],
+   "temuan": [
+    {
+     "teks": "Enam akar masalah saling mengunci: harga fosil, regulasi, jaringan, pembiayaan dan risiko, TKDN, serta lahan dan izin sosial.",
+     "hlm": "hlm 8"
+    },
+    {
+     "teks": "Perpres 112/2022, Permen ESDM 2/2024 dan kegagalan RUU EBET 2024 disebut sebagai contoh regulasi yang berubah lebih cepat daripada proyek dibangun.",
+     "hlm": "hlm 11"
+    },
+    {
+     "teks": "Pengebor panas bumi: tingkat keberhasilan pengeboran 30 sampai 40%; risiko eksplorasi disebut menyumbang hingga separuh risiko proyek.",
+     "hlm": "hlm 16"
+    },
+    {
+     "teks": "B50 berjalan karena bahan baku domestik, dana selisih harga BPDP, dan peningkatan bertahap; bioetanol belum memenuhi ketiganya.",
+     "hlm": "hlm 19"
+    },
+    {
+     "teks": "Tujuh prioritas: koreksi sinyal harga, kepastian hukum, lelang EBT terjadwal, jaringan dahulu, de-risking panas bumi, TKDN berbasis volume, bioetanol dengan ekosistem dahulu.",
+     "hlm": "hlm 26"
+    }
+   ],
+   "tautan": []
+  }
+ }
+}

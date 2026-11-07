@@ -11,7 +11,7 @@ const MAKS_LAMPIRAN = 5 * 1024 * 1024;
 const BATAS_KIRIM_JAM = 20, BATAS_UTAS_HARI = 5;
 
 // Jenis sah dari byte awal. SVG sengaja tidak ada (skrip tertanam).
-const sniff = (b) => {
+export const sniff = (b) => {
   const h = (...x) => x.every((v, i) => b[i] === v);
   if (h(0x89, 0x50, 0x4e, 0x47, 0x0d, 0x0a, 0x1a, 0x0a)) return "image/png";
   if (h(0xff, 0xd8, 0xff)) return "image/jpeg";
@@ -21,7 +21,7 @@ const sniff = (b) => {
   return null;
 };
 const EKSTENSI = { "image/png": "png", "image/jpeg": "jpg", "image/gif": "gif", "image/webp": "webp", "application/pdf": "pdf" };
-const namaAman = (n) => String(n || "").split(/[\\/]/).pop().replace(/[\u0000-\u001f\u007f"<>:*?|]/g, "").trim().slice(0, 80) || "lampiran";
+export const namaAman = (n) => String(n || "").split(/[\\/]/).pop().replace(/[\u0000-\u001f\u007f"<>:*?|]/g, "").trim().slice(0, 80) || "lampiran";
 
 // Badan: multipart (isi, topik?, utas?, berkas?) atau JSON tanpa berkas. Mengembalikan { f: {isi, topik, utas}, berkas: {data, tipe, nama} | null }.
 async function bacaMasukan(req) {
@@ -46,7 +46,7 @@ async function bacaMasukan(req) {
 const isiSah = (v) => (typeof v === "string" && v.trim().length >= 1 && v.trim().length <= 2000 && !KONTROL.test(v) ? v.trim() : null);
 
 // Simpan lampiran ke R2 lalu jalankan `tulis`; D1 gagal = objek dibuang (tanpa yatim).
-async function denganLampiran(env, berkas, kunci, tulis) {
+export async function denganLampiran(env, berkas, kunci, tulis) {
   if (!berkas) return tulis(null);
   if (!env.BERKAS) throw new Galat("layanan");
   await env.BERKAS.put(kunci, berkas.data, { httpMetadata: { contentType: berkas.tipe } });

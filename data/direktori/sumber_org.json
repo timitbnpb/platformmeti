@@ -1,0 +1,6 @@
+{
+ "_catatan": "Sumber URL resmi organisasi yang tertahan 'tanpa-sumber-url' di potret.mjs. Hanya situs resmi yang DIPERIKSA (HTTP 200, judul halaman memuat nama, robots.txt dihormati, UA METI, jeda >= 2 dtk). Dibaca potret.mjs; tingkat bukti situs-sendiri.",
+ "baris": {
+  "l_07dd603a7c": { "nama": "Institut Teknologi Bandung - Pusat Studi Energi", "url": "https://www.itb.ac.id/", "judul": "Institut Teknologi Bandung", "tanggal": "2026-11-08", "tingkat_bukti": "situs-sendiri" }
+ }
+}

@@ -66,7 +66,7 @@ export function bangunWilayah() {
       rued: r.perda ? { perda: r.perda, url: r.url_sumber, target_ebt_persen: r.target_ebt_persen ?? null, kandidat: (r.kandidat || []).map((k) => ({ tahun: k.tahun, persen: k.persen })), tanggal: r.tanggal_periksa, catatan_kosong: r.target_ebt_persen == null ? r.ekstraksi || null : null } : { ...kosong(r), perda: null },
       jumlah_proyek: ps.length, proyek: ps,
       perda: (pPerda.get(p.nama) || []).map((x) => ({ id: x.id, nomor: x.nomor, tahun: x.tahun, judul: x.judul, status: x.status, url: x.url_sumber })),
-      organisasi: os.map((o) => ({ id: o.id, nama: o.nama, kategori: o.kategori?.label || null, logo: o.logo || null })),
+      organisasi: os.map((o) => ({ id: o.id, nama: o.nama, kategori: o.kategori?.label || null, kode: o.kategori?.kode || null, kota: o.lokasi?.kota || null, logo: o.logo || null })),
       pakar: pk,
       surya_atlas: atlas.get(String(p.kode)) ? (({ titik, surya_pvout_kwh_per_kwp_tahun: pvout, ghi_kwh_per_m2_tahun: ghi, dni_kwh_per_m2_tahun: dni, gti_optimal_kwh_per_m2_tahun: gti, sudut_optimal_derajat: sudut, suhu_udara_c: suhu, lat, lon, sumber, sumber_url, tanggal_periksa, lisensi, tingkat_bukti, catatan }) => ({ label: 'indikasi satu titik (' + titik + '), BUKAN rata-rata provinsi', titik: { lat, lng: lon, keterangan: titik }, pvout_kwh_per_kwp_tahun: pvout, ghi_kwh_per_m2_tahun: ghi, dni_kwh_per_m2_tahun: dni, gti_optimal_kwh_per_m2_tahun: gti, sudut_optimal_derajat: sudut, suhu_udara_c: suhu != null ? Math.round(suhu * 10) / 10 : null, sumber, url: sumber_url, tanggal: tanggal_periksa, lisensi, tingkat_bukti, catatan }))(atlas.get(String(p.kode))) : null,
     };

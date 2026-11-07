@@ -75,3 +75,6 @@ Belum ada kasus. Tambahkan lewat ilmu.mjs kasus.
 - 2026-11-07 · Chrome headless min lebar jendela 500: tangkapan 375 lewat iframe 375 di halaman pembungkus; grid halaman wajib minmax(0,1fr) agar tabel/kartu tak melebarkan layar. Marker peta dipasang di style.load, bukan load (load menunggu semua ubin).
 - 2026-11-08 · Screenshot headless Chrome atas halaman bermodul JS tak stabil; cara andal: sisipkan skrip probe di salinan _p.html (hapus sesudahnya) yang menunggu elemen lalu klik, dan jalankan ulang beberapa kali. Dialog position:fixed inset:0 dengan height:auto meregang penuh; pakai height:fit-content.
 - 2026-11-08 · Headless Chrome --window-size<500 memotong tangkapan (layout 500px); .jm-hero di gaya.css sudah dipakai pita hijau, jangan pakai nama itu; tipografi gate menolak calc(px).
+- 2026-11-08 · Tabel admin table-layout:fixed: kolom tanpa kelas lebar jadi 0 px dan isi tetangga menimpa; jangan fixed tanpa lebar semua kolom. Kelas legenda jm-adm-w0..4 diganti jm-adm-dt0..4.
+- 2026-11-08 · Foto avatar: crop wajah dikerjakan di pipeline (scripts/pipa/foto_wajah.mjs + wajah.swift Vision, catatan data/foto_wajah.json), bukan object-position; python3 -I tak menemukan PIL user-site
+- 2026-11-08 · gerbang-i18n: regex literal salah pasang bila template berisi ${esc(x || "")} atau regex /\/\//; pindahkan ke const dan pakai [/][/]

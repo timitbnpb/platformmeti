@@ -516,3 +516,20 @@ a.jm-wp-op:hover{color:var(--accent)}
 .jm-wl-pr{right:var(--tepi)}.jm-wl-legenda{left:var(--tepi)}
 .jm-rt-reset{right:var(--tepi)}.jm-rt-laci{right:var(--tepi)}
 @media (max-width:899px){.jm-wl-pr{right:auto}.jm-wl-legenda{left:auto}}
+
+/* ---- /wilayah: bilah segmen + pemilih teknologi, panel di dalam peta, tabel 5 kolom ---- */
+.jm-wl-bingkai>.jm-wl-bar{position:absolute;z-index:5;top:0;left:0;right:0;display:grid;gap:8px;padding:8px var(--tepi);border-bottom:1px solid var(--line);background:color-mix(in srgb,var(--card) 86%,transparent);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px)}
+.jm-wl-bar .jm-wl-seg{width:100%}
+.jm-wl-tek{display:flex;align-items:center;gap:10px}
+.jm-wl-tek[hidden]{display:none}
+.jm-wl-tek label{flex:none;font:600 var(--t-label)/1 var(--font);color:var(--ink2)}
+.jm-wl-tek select,.jm-wl-tek .pc{flex:1;min-width:0}
+.jm-wl-ada-tek .jm-wl-pr{top:132px}
+.jm-wl-pr{display:flex;flex-direction:column;max-height:calc(100% - 156px);overflow:hidden}
+.jm-wl-pr #pr-isi{flex:1;min-height:0;overflow:auto}
+@media (max-width:899px){.jm-wl-pr{max-height:none}.jm-wl-ada-tek .jm-wl-pr{top:auto}}
+.jm-wl-c1{width:64px}.jm-wl-c3{width:160px}.jm-wl-c4{width:220px}.jm-wl-c5{width:96px}
+.jm-wl-tabel td:nth-child(3){text-align:right;padding-right:24px}
+.jm-wl-tabel td:last-child{padding-right:12px}
+.jm-wl-belum{color:var(--ink2);opacity:.7}
+@media (max-width:639px){.jm-wl-tabel td:nth-child(3){text-align:left}}

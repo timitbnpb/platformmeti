@@ -140,6 +140,26 @@
    "tingkat_bukti": "inferensi",
    "catatan": "provinsi tersirat dari nama BUMD; kota kantor belum diverifikasi",
    "tanggal": "2026-11-08"
+  },
+  "p_856a3ffec8": {
+   "nama": "Sunterra",
+   "kota": null,
+   "provinsi": "Bali",
+   "alamat": "Menara Tekno",
+   "sumber_url": "https://sunterra.id/",
+   "jenis": "situs-resmi",
+   "tingkat_bukti": "situs-sendiri",
+   "tanggal": "2026-11-07"
+  },
+  "su_1ffaaeb0": {
+   "nama": "SUN Energy",
+   "kota": "Karawang",
+   "provinsi": "Jawa Barat",
+   "alamat": "Gedung Industrial",
+   "sumber_url": "https://sunenergy.id/",
+   "jenis": "situs-resmi",
+   "tingkat_bukti": "situs-sendiri",
+   "tanggal": "2026-11-07"
   }
  }
 }

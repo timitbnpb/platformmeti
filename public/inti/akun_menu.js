@@ -19,6 +19,8 @@ export function akunMenuHtml(saya) {
       <div class="jm-akun-ident"><span class="jm-avatar">${avatarIsi(saya.nama, fotoDicoba())}</span><span><b>${esc(saya.nama)}</b><small data-i18n="peran.${esc(saya.peran)}">${esc(t("peran." + saya.peran))}</small></span></div>
       ${taut("/profil-saya", ikon("orang", 20), "am.profil")}
       ${taut("/kta", ikon("kartu", 20), "am.kta")}
+      <a role="menuitem" href="/diikuti" id="am-diikuti">${ikon("lonceng", 20)}<span data-i18n="am.diikuti">${esc(t("am.diikuti"))}</span><span class="jm-am-lencana" id="amIkuti" hidden></span></a>
+      ${taut("/portal", ikon("direktori", 20), "am.portal")}
       ${butir("pesan", IK_PESAN, "am.pesan", '<span class="jm-am-lencana" id="amBelum" hidden></span>')}
       ${taut("/langganan", ikon("surel", 20), "am.langganan")}
       ${taut("/ganti-sandi", ikon("kunci", 20), "am.sandi")}
@@ -59,6 +61,10 @@ export function pasangAkunMenu(kepala, saya) {
       const n = d.belum || 0, l = menu.querySelector("#amBelum");
       l.textContent = n > 99 ? "99+" : String(n); l.hidden = !n;
     }).catch((e) => { if (e.status === 503 || e.status === 404) menu.querySelector("#am-pesan").hidden = true; });
+    api("/api/ikuti").then((d) => {
+      const n = d.baru || 0, l = menu.querySelector("#amIkuti");
+      l.textContent = n > 99 ? "99+" : String(n); l.hidden = !n;
+    }).catch((e) => { if (e.status === 503 || e.status === 404) menu.querySelector("#am-diikuti").hidden = true; });
   };
   tombol.addEventListener("click", () => buka(menu.hidden));
   document.addEventListener("click", (e) => { if (!menu.hidden && !e.target.closest(".jm-akunwrap")) buka(false); });

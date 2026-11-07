@@ -1,0 +1,20 @@
+/* Peta 3D bersama (peta3d.js). Warna hanya token. */
+.jm-p3d{position:relative;padding:0;height:max(560px,75vh);background:var(--soft-biru)}
+.jm-p3d-k{position:absolute;inset:0}
+.jm-p3d-kon{position:absolute;z-index:3;right:var(--tepi,16px);bottom:16px;display:grid;gap:6px}
+.jm-p3d-b{display:grid;place-items:center;width:44px;height:44px;border:1px solid var(--line-ctl);border-radius:var(--r-sm);background:color-mix(in srgb,var(--card) 92%,transparent);color:var(--head);box-shadow:var(--shadow);cursor:pointer}
+.jm-p3d-b:hover,.jm-p3d-b[aria-pressed="true"]{background:var(--soft-hijau);color:var(--accent)}
+.jm-p3d-b:focus-visible{outline:2px solid var(--fokus);outline-offset:2px}
+.jm-p3d-tip{position:absolute;z-index:6;width:250px;padding:12px 14px;border:1px solid var(--line);border-radius:var(--r);background:var(--card);box-shadow:var(--shadow-lg);pointer-events:none;display:grid;gap:8px}
+.jm-p3d-tip[hidden]{display:none}
+.jm-p3d-tip header{display:flex;align-items:center;gap:10px}
+.jm-p3d-tip strong{display:block;font:700 var(--t-body)/var(--lh-judul) var(--display);color:var(--head)}
+.jm-p3d-tip small{color:var(--ink2);font-size:var(--t-kecil)}
+.jm-p3d-tip p{display:flex;justify-content:space-between;gap:12px;margin:0;padding:6px 0;border-block:1px solid var(--line);font-size:var(--t-tombol)}
+.jm-p3d-tip p b{white-space:nowrap;color:var(--accent);font-variant-numeric:tabular-nums}
+.jm-p3d-tip ul{list-style:none;margin:0;padding:0;display:grid;gap:3px;font-size:var(--t-kecil);color:var(--ink2)}
+.jm-p3d-tip li{display:flex;justify-content:space-between;gap:12px}
+.jm-p3d-lb{width:32px;height:32px;object-fit:contain}
+@media (max-width:639px){.jm-p3d{height:max(420px,65vh)}.jm-p3d-tip{display:none}}
+@media (max-width:899px){.jm-p3d-kon{right:12px}}
+.jm-p3d-ajak{color:var(--accent);font-weight:600}

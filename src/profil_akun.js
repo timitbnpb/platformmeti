@@ -8,6 +8,10 @@ const MAKS_FOTO = 2 * 1024 * 1024;
 const KONTROL = /[\u0000-\u0008\u000b\u000c\u000e-\u001f\u007f]/;
 const RE_ID = /^\d{1,12}$/;
 const RE_REF = /^[A-Za-z0-9_-]{2,60}$/;
+// Daftar putih sampul (public/img/beranda/<kode>.webp). Kode diterima hanya bila ada di sini.
+export const SAMPUL = ["surya-cirata", "bayu-sidrap", "hidro-saguling", "panas-bumi-sibayak", "bioenergi-sawit", "penyimpanan-baterai", "sampah-psel", "nuklir-siwabessy", "biomassa-bantargebang", "bioetanol-tebu"];
+export const TINGKAT_BAHASA = ["dasar", "menengah", "mahir", "fasih", "ibu"];
+const HOST_TAUTAN = { linkedin: "linkedin.com", situs: null, orcid: "orcid.org", scholar: "scholar.google.com", researchgate: "researchgate.net" };
 const RE_TELEPON = /^[0-9+ ()-]{6,20}$/;
 const SALAH = () => new Galat("masukan_salah", 422);
 
@@ -42,13 +46,13 @@ function tautanAman(v, { host = null } = {}) {
   if (!s) return null;
   let u;
   try { u = new URL(/^https?:\/\//i.test(s) ? s : "https://" + s); } catch { throw SALAH(); }
-  if (!/^https?:$/.test(u.protocol) || u.username || u.password || !u.hostname.includes(".")) throw SALAH();
+  if (u.protocol !== "https:" || u.username || u.password || !u.hostname.includes(".")) throw SALAH();
   if (host && !(u.hostname === host || u.hostname.endsWith("." + host))) throw SALAH();
   return u.href.slice(0, 200);
 }
 
 export function periksaProfil(b) {
-  const BOLEH = ["gelar", "jabatan", "instansi", "organisasi_id", "kota", "kode_prov", "bio", "keahlian", "tautan", "telepon", "privasi"];
+  const BOLEH = ["gelar", "jabatan", "instansi", "organisasi_id", "kota", "kode_prov", "bio", "keahlian", "tautan", "telepon", "privasi", "bahasa", "sampul"];
   if (Object.keys(b).some((k) => !BOLEH.includes(k))) throw SALAH();
   const d = {};
   if ("gelar" in b) d.gelar = teks(b.gelar, 40);
@@ -65,11 +69,25 @@ export function periksaProfil(b) {
     d.keahlian = k.filter((x, i) => k.findIndex((y) => y.toLowerCase() === x.toLowerCase()) === i);
   }
   if ("tautan" in b) {
-    if (!b.tautan || typeof b.tautan !== "object" || Array.isArray(b.tautan) || Object.keys(b.tautan).some((k) => !["linkedin", "situs"].includes(k))) throw SALAH();
+    if (!b.tautan || typeof b.tautan !== "object" || Array.isArray(b.tautan) || Object.keys(b.tautan).some((k) => !(k in HOST_TAUTAN))) throw SALAH();
     d.tautan = {};
-    const li = tautanAman(b.tautan.linkedin, { host: "linkedin.com" }), si = tautanAman(b.tautan.situs);
-    if (li) d.tautan.linkedin = li;
-    if (si) d.tautan.situs = si;
+    for (const k of Object.keys(HOST_TAUTAN)) { const u = tautanAman(b.tautan[k], { host: HOST_TAUTAN[k] }); if (u) d.tautan[k] = u; }
+    if (JSON.stringify(d.tautan).length > 600) throw SALAH(); // batas kolom tautan (0018)
+  }
+  if ("bahasa" in b) {
+    if (!Array.isArray(b.bahasa) || b.bahasa.length > 8) throw SALAH();
+    const nama = new Set();
+    d.bahasa = b.bahasa.map((x) => {
+      if (!x || typeof x !== "object" || !TINGKAT_BAHASA.includes(x.tingkat)) throw SALAH();
+      const n = wajib(x.nama, 40);
+      if (nama.has(n.toLowerCase())) throw SALAH();
+      nama.add(n.toLowerCase());
+      return { nama: n, tingkat: x.tingkat };
+    });
+  }
+  if ("sampul" in b) {
+    if (b.sampul != null && b.sampul !== "" && !SAMPUL.includes(b.sampul)) throw SALAH();
+    d.sampul = b.sampul || null;
   }
   if ("privasi" in b) {
     if (!b.privasi || typeof b.privasi !== "object" || Array.isArray(b.privasi)) throw SALAH();
@@ -171,7 +189,17 @@ export const rute = {
 
   "GET /api/profil/saya/sesi": async (req, env, ctx, p) => {
     const akun = perlu(p);
-    return json({ sesi: await hak.sesiSayaDaftar(env, akun, p.sesi.idHash) }, 200, PRIVAT);
+    let nama = null;
+    try { nama = new Intl.DisplayNames(["id"], { type: "region" }); } catch { /* tanpa nama negara: kode saja */ }
+    const sesi = (await hak.sesiSayaDaftar(env, akun, p.sesi.idHash)).map((s) => ({ ...s, negara_nama: s.negara ? (nama?.of(s.negara) ?? s.negara) : null }));
+    return json({ sesi }, 200, PRIVAT);
+  },
+
+  "DELETE /api/profil/saya/sesi/:sid": async (req, env, ctx, p) => {
+    const akun = perlu(p);
+    if (!/^[0-9a-f]{16}$/.test(p.params.sid)) return gagal("tidak_ditemukan");
+    const r = await hak.sesiSayaCabut(env, akun, p.sesi.idHash, p.params.sid);
+    return r.dicabut ? json({ ok: true }, 200, PRIVAT) : gagal("tidak_ditemukan");
   },
 
   "POST /api/profil/saya/sesi/keluar-lain": async (req, env, ctx, p) => {

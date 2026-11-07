@@ -4,6 +4,7 @@ import { esc, ikon, api } from "/inti/umum.js";
 import { t, tanggal, ada } from "/i18n.js";
 import { exHtml, unduhRegHtml, terkaitHtml } from "/inti/komponen.js";
 import { tautOrg } from "/inti/tautan.js";
+import { tombolIkuti, pasangIkuti } from "/inti/ikuti.js";
 import { aksiHtml, hlHtml } from "/inti/aksi_ex.js";
 import { batang } from "/grafik.js";
 import { pilTek, pilTekTaut, pilStatus } from "/inti/ikon_tek.js";
@@ -286,6 +287,8 @@ export async function profilProvinsi(p, data, $) {
   try { d = await muatData("wilayah/" + encodeURIComponent(p.kode) + ".json"); } catch (e) { /* bagian tambahan disembunyikan */ }
   $("profil-isi").innerHTML = kepala(data, p) + [ringkasan(p), kelistrikan(p), potensi(p), rued(p), petaSeksi(p), proyek(p), organisasi(p), '<div id="wp-meti"></div>', pakar(p, d), regulasi(p), emisi(p, d), berita(p, d), banding(data, p), await terkaitHtml("provinsi", String(p.kode))].join("");
   $("cara").innerHTML = `<p>${esc(t("wl.cara_profil"))}</p>`;
+  $("profil-isi").querySelector(".jm-wp-chips")?.insertAdjacentHTML("afterend", `<p>${tombolIkuti({ jenis: "provinsi", id: p.kode, nama: p.nama })}</p>`);
+  pasangIkuti($("profil-isi"));
   pasangBar($("profil-isi")); petaMini(p);
   isiMetiWilayah(p);
   bukaPeta(p);

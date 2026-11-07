@@ -46,7 +46,7 @@ const namaProv = () => (S.prov.find(([k]) => k === S.p.kode_prov) || [])[1] || "
 const daftarRw = (j) => S.p.riwayat?.[j] || [];
 
 /* ---------- kepala ---------- */
-function sampulIndeks() { try { return Math.abs(+localStorage.getItem("jm-sampul") || 0) % SAMPUL.length; } catch { return 0; } }
+const sampulIndeks = () => Math.max(0, SAMPUL.indexOf(S.p?.sampul)); // tersimpan di akun (API), bukan localStorage
 function gambarSampul(i = sampulIndeks()) { $("psSampul").src = `/img/beranda/${SAMPUL[i]}.webp`; }
 function gambarKepala() {
   const p = S.p, h1 = $("judul");
@@ -90,15 +90,16 @@ function gambarPanel() {
   const p = S.p, ubah = (bag) => tombolIk("buka", "ubah", t("pf.ubah"), `data-bag="${bag}"`);
   const tentang = kartu("info", "pf.bag.bio", p.bio ? `<p class="pf-bio">${esc(p.bio)}</p>` : kosong("info", "pf.kosong.bio", "buka", 'data-bag="bio"'), ubah("bio"));
   const ahli = kartu("topik", "pf.bag.keahlian", p.keahlian?.length ? `<div class="pf-pils">${p.keahlian.map((k) => `<span class="pf-pil">${IKON_TEK[k] || ikon("topik", 14)}<span>${esc(labelKeahlian(k))}</span></span>`).join("")}</div>` : kosong("topik", "pf.kosong.keahlian", "buka", 'data-bag="ahli"'), ubah("ahli"));
+  const bhs = kartu("bahasa", "pf.bag.bahasa", p.bahasa?.length ? `<ul class="ps-kons">${p.bahasa.map((b) => `<li><span class="ps-logo">${ikon("bahasa", 20)}</span><span class="ps-kon"><b>${esc(b.nama)}</b><small>${esc(t("pf.bhs." + b.tingkat))}</small></span></li>`).join("")}</ul>` : kosong("bahasa", "pf.kosong.bahasa", "buka", 'data-bag="bahasa"'), ubah("bahasa"));
   const meti = p.kta ? `<li class="ps-tl-i"><span class="ps-logo">${ikon("qr", 22)}</span><div class="ps-tl-isi"><b>${esc(t("pf.lencana"))}</b>${p.kta.tahun_masuk ? `<span>${esc(t("pf.sejak", { th: p.kta.tahun_masuk }))}</span>` : ""}</div></li>` : "";
   const inst = p.instansi ? `<li class="ps-tl-i"><span class="ps-logo">${ikon("gedung", 22)}</span><div class="ps-tl-isi"><b>${esc(p.instansi)}</b>${p.jabatan ? `<span>${esc(p.jabatan)}</span>` : ""}${p.organisasi_id ? `<a class="pf-taut pf-taut-kecil" href="/o/${encodeURIComponent(p.organisasi_id)}">${ikon("tautan", 14)}<span>${esc(t("pf.f.org_tertaut"))}</span></a>` : ""}</div></li>` : "";
   const org = kartu("gedung", "pf.bag.org", inst || meti ? `<ul class="ps-tl">${inst}${meti}</ul>` : kosong("gedung", "pf.kosong.org", "buka", 'data-bag="diri"'), ubah("diri"));
   const li = p.tautan?.linkedin, si = p.tautan?.situs, tel = p.kontak?.telepon, sur = p.kontak?.surel;
   const aman = (u) => (/^https?:[/][/]/i.test(u || "") ? u : "");
   const baris = (ik, label, v, href) => `<li><span class="ps-logo">${ikon(ik, 20)}</span><span class="ps-kon"><small>${esc(label)}</small>${href ? `<a class="pf-taut" href="${esc(href)}" target="_blank" rel="noopener noreferrer nofollow"><span>${esc(v)}</span></a>` : `<b>${esc(v)}</b>`}</span></li>`;
-  const kon = [li ? baris("linkedin", t("pf.f.linkedin"), li, aman(li)) : "", si ? baris("tautan", t("pf.f.situs"), si, aman(si)) : "", tel ? baris("whatsapp", t("pf.f.telepon"), tel) : "", sur ? baris("surel", t("pf.f.surel"), sur) : ""].filter(Boolean).join("");
+  const kon = [li ? baris("linkedin", t("pf.f.linkedin"), li, aman(li)) : "", si ? baris("tautan", t("pf.f.situs"), si, aman(si)) : "", ...["orcid", "scholar", "researchgate"].map((k) => (p.tautan?.[k] ? baris("tautan", t("pf.f." + k), p.tautan[k], aman(p.tautan[k])) : "")), tel ? baris("whatsapp", t("pf.f.telepon"), tel) : "", sur ? baris("surel", t("pf.f.surel"), sur) : ""].filter(Boolean).join("");
   const tautan = kartu("tautan", "pf.bag.kontak_tautan", kon ? `<ul class="ps-kons">${kon}</ul>` : kosong("tautan", "pf.kosong.tautan", "buka", 'data-bag="tautan"'), ubah("tautan"));
-  panel.innerHTML = tentang + kartuRw("pengalaman") + kartuRw("pendidikan") + ahli + kartuRw("sertifikasi") + kartuRw("publikasi") + org + tautan;
+  panel.innerHTML = tentang + kartuRw("pengalaman") + kartuRw("pendidikan") + ahli + bhs + kartuRw("sertifikasi") + kartuRw("publikasi") + org + tautan;
 }
 
 /* ---------- samping ---------- */
@@ -107,7 +108,7 @@ function kelengkapan() {
   return [
     ["foto", !!p.foto, "ganti-foto", ""], ["jabatan", !!(p.jabatan && p.instansi), "buka", "diri"], ["lokasi", !!(p.kota || p.kode_prov), "buka", "diri"],
     ["bio", !!p.bio, "buka", "bio"], ["keahlian", !!p.keahlian?.length, "buka", "ahli"], ["pengalaman", daftarRw("pengalaman").length > 0, "tambah-rw", "pengalaman"],
-    ["pendidikan", daftarRw("pendidikan").length > 0, "tambah-rw", "pendidikan"], ["tautan", !!(p.tautan?.linkedin || p.tautan?.situs), "buka", "tautan"],
+    ["pendidikan", daftarRw("pendidikan").length > 0, "tambah-rw", "pendidikan"], ["tautan", !!Object.keys(p.tautan || {}).length, "buka", "tautan"],
   ];
 }
 function gambarSamping() {
@@ -200,16 +201,29 @@ function tambahAhli(k) {
 }
 const kirimAhli = () => simpanProfil({ keahlian: Z.ahli });
 
+/* --- Bahasa (maks 8; tingkat dari daftar tetap) --- */
+const TINGKAT_BHS = ["dasar", "menengah", "mahir", "fasih", "ibu"], MAKS_BHS = 5;
+function bukaBahasa() {
+  const ada_ = S.p.bahasa || [];
+  const baris = Array.from({ length: MAKS_BHS }, (_, i) => `<div class="ps-grid ps-grid2">${medan("fBhsN" + i, "pf.f.bhs_nama", "bahasa", teks("fBhsN" + i, ada_[i]?.nama, 40))}
+    <div class="jm-medan ps-f"><label for="fBhsT${i}">${esc(t("pf.f.bhs_tingkat"))}</label><div class="ps-in ps-in-pilih"><select class="jm-pilih" id="fBhsT${i}" data-ikon="tingkat">${TINGKAT_BHS.map((k) => `<option value="${k}"${(ada_[i]?.tingkat || "mahir") === k ? " selected" : ""}>${esc(t("pf.bhs." + k))}</option>`).join("")}</select></div></div></div>`).join("");
+  buka({ judul: t("pf.bag.bahasa"), ik: "bahasa", form: "bahasa", isi: baris });
+}
+const kirimBahasa = () => simpanProfil({ bahasa: Array.from({ length: MAKS_BHS }, (_, i) => ({ nama: nilai("fBhsN" + i), tingkat: $("fBhsT" + i).value })).filter((b) => b.nama) });
+
 /* --- Kontak dan tautan --- */
 function bukaTautan() {
   const p = S.p;
   buka({ judul: t("pf.bag.kontak_tautan"), ik: "tautan", form: "tautan", isi: `<div class="ps-grid ps-grid2">
     ${medan("fLinkedin", "pf.f.linkedin", "linkedin", teks("fLinkedin", p.tautan?.linkedin, 200, { tipe: "url", mode: "url" }), esc(t("pf.f.linkedin_bantu")))}
     ${medan("fSitus", "pf.f.situs", "tautan", teks("fSitus", p.tautan?.situs, 200, { tipe: "url", mode: "url" }))}
+    ${medan("fOrcid", "pf.f.orcid", "tautan", teks("fOrcid", p.tautan?.orcid, 200, { tipe: "url", mode: "url" }))}
+    ${medan("fScholar", "pf.f.scholar", "tautan", teks("fScholar", p.tautan?.scholar, 200, { tipe: "url", mode: "url" }))}
+    ${medan("fResearchgate", "pf.f.researchgate", "tautan", teks("fResearchgate", p.tautan?.researchgate, 200, { tipe: "url", mode: "url" }))}
     ${medan("fTelepon", "pf.f.telepon", "whatsapp", teks("fTelepon", p.kontak?.telepon, 20, { tipe: "tel", ac: "tel", mode: "tel" }), esc(t("pf.f.telepon_bantu")))}
     ${medan("fSurel", "pf.f.surel", "kunci", teks("fSurel", p.kontak?.surel, 120, { ro: true }), esc(t("pf.f.surel_bantu")))}</div>` });
 }
-const kirimTautan = () => simpanProfil({ tautan: { linkedin: nilai("fLinkedin"), situs: nilai("fSitus") }, telepon: nilai("fTelepon") });
+const kirimTautan = () => simpanProfil({ tautan: { linkedin: nilai("fLinkedin"), situs: nilai("fSitus"), orcid: nilai("fOrcid"), scholar: nilai("fScholar"), researchgate: nilai("fResearchgate") }, telepon: nilai("fTelepon") });
 
 /* --- Riwayat (pendidikan, pengalaman, sertifikasi, publikasi) --- */
 function bukaRw(jenis, id = null) {
@@ -380,9 +394,13 @@ function pasangCombo(input, daftarEl, sumber, pilih) {
 }
 
 /* ---------- peristiwa ---------- */
-const BUKA = { diri: bukaDiri, bio: bukaBio, ahli: bukaAhli, tautan: bukaTautan, privasi: bukaPrivasi, keamanan: bukaKeamanan };
-const KIRIM = { diri: kirimDiri, bio: kirimBio, ahli: kirimAhli, tautan: kirimTautan, riwayat: kirimRw, sandi: kirimSandi, foto: kirimFoto };
+const BUKA = { diri: bukaDiri, bio: bukaBio, ahli: bukaAhli, bahasa: bukaBahasa, tautan: bukaTautan, privasi: bukaPrivasi, keamanan: bukaKeamanan };
+const KIRIM = { diri: kirimDiri, bio: kirimBio, ahli: kirimAhli, bahasa: kirimBahasa, tautan: kirimTautan, riwayat: kirimRw, sandi: kirimSandi, foto: kirimFoto };
 
+async function gantiSampul() {
+  const i = (sampulIndeks() + 1) % SAMPUL.length;
+  try { await simpanProfil({ sampul: SAMPUL[i] }); S.p.sampul = SAMPUL[i]; gambarSampul(i); } catch (e) { pesan("galat", galatTeks(e.kode)); }
+}
 async function bagikan() {
   const url = `${location.origin}/anggota/${encodeURIComponent(S.p.id)}`;
   try { if (navigator.share) { await navigator.share({ url, title: $("judul").textContent }); return; } } catch (e) { if (e?.name === "AbortError") return; }
@@ -397,7 +415,7 @@ document.addEventListener("click", (e) => {
   if (a === "buka") BUKA[b.dataset.bag]();
   else if (a === "tutup") dlg.close();
   else if (a === "ganti-foto") $("fBerkasFoto").click();
-  else if (a === "ganti-sampul") { const i = (sampulIndeks() + 1) % SAMPUL.length; try { localStorage.setItem("jm-sampul", String(i)); } catch { /* abaikan */ } gambarSampul(i); }
+  else if (a === "ganti-sampul") gantiSampul();
   else if (a === "bagikan") bagikan();
   else if (a === "tambah-rw") bukaRw(b.dataset.jenis);
   else if (a === "ubah-rw") bukaRw(b.dataset.jenis, +b.dataset.id);

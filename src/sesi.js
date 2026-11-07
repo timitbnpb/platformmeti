@@ -1,6 +1,7 @@
 // sesi.js (JM-B03): masuk, keluar, saya, aktivasi, ganti sandi. Cookie hanya memuat token; D1 hanya hash-nya.
 import * as hak from "./hak.js";
 import { hashSandi, cocokSandi, hashPalsu, perluRehash, sandiSah } from "./sandi.js";
+import { infoSesi } from "./ua.js";
 import { Galat, RE_EMAIL, acak, bacaBody, gagal, ipHash, json, perlu, sha } from "./util.js";
 
 const UMUR = 14 * 86400;
@@ -40,7 +41,7 @@ async function masuk(req, env) {
     await hak.rehashSandi(env, akun.id, h.hash, h.garam, h.iterasi);
   }
   const token = acak(32);
-  await hak.catatSesi(env, { idHash: await sha(token), akunId: akun.id, peran: akun.peran, sampai: Math.floor(Date.now() / 1000) + UMUR, ipHash: ip });
+  await hak.catatSesi(env, { idHash: await sha(token), akunId: akun.id, peran: akun.peran, sampai: Math.floor(Date.now() / 1000) + UMUR, ipHash: ip, info: infoSesi(req) });
   return json({ peran: akun.peran, nama: akun.nama, bahasa: akun.bahasa, wajib_ganti: !!akun.wajib_ganti }, 200, { "set-cookie": cookie(token, UMUR) });
 }
 
@@ -54,7 +55,9 @@ async function saya(req, env, ctx, p) {
   const a = p.akun;
   const kepala = { "cache-control": "private, no-store", vary: "Cookie" };
   if (!a) return json({ masuk: false }, 200, kepala);
-  return json({ masuk: true, peran: a.peran, nama: a.nama, bahasa: a.bahasa, cakupan_prov: a.cakupan_prov, super: a.peran === "super", wajib_ganti: a.wajib_ganti }, 200, kepala);
+  // wilayah_kode: provinsi tautan pengurus METI Wilayah (0019) atau null; menentukan tombol "Kelola" di profil wilayah.
+  const wk = await hak.wilayahKode(env, a).catch(() => null);
+  return json({ masuk: true, peran: a.peran, nama: a.nama, bahasa: a.bahasa, cakupan_prov: a.cakupan_prov, super: a.peran === "super", wajib_ganti: a.wajib_ganti, wilayah_kode: wk || null }, 200, kepala);
 }
 
 async function aktivasi(req, env) {
