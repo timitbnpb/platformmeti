@@ -763,7 +763,10 @@ h4{margin:0 0 2px;font-size:8px;letter-spacing:normal;text-transform:none;color:
   /* ---------- tampilan lain: data staf dari /api/direktori/data/<nama>, dimuat saat tampilannya dibuka (404/503 = disembunyikan) ---------- */
   const TAMPIL_KEY = "ak-tampil";
   const DATA = {};
-  const ambilLama = n => DATA[n] ||= fetch(`/api/direktori/data/${n}`, {credentials: "same-origin"}).then(r => r.ok ? r.json() : null).catch(() => null).then(x => { if (x == null) delete DATA[n]; return x; });
+  /* adapter Pustaka: /data/pustaka.json (statis) -> bentuk "dokumen" tab; tiap butir menaut ke /pustaka?id= */
+  const adaptDok = d => dlist(d?.baris).map(x => ({id: x.id, judul: x.judul, jenis: x.jenis, tahun: parseInt(String(x.tanggal || "").slice(0, 4), 10) || 0, penerbit: x.penerbit || "", sektor: x.kepakaran || [], url: "/pustaka?id=" + encodeURIComponent(x.id)}));
+  const ambilLama = n => DATA[n] ||= fetch(n === "dokumen" ? "/data/pustaka.json" : `/api/direktori/data/${n}`, {credentials: "same-origin"}).then(r => r.ok ? r.json() : null).catch(() => null).then(x => { if (n === "dokumen" && x) x = adaptDok(x); if (x == null) delete DATA[n]; return x; });
+  const urlDok = d => /^\/pustaka\?id=[\w%.-]+$/.test(d.url || "") ? d.url : urlOk(d.url) || urlOk(d.sumber_url);
   /* ---- potret baru (SKEMA-POTRET.md): organisasi, orang, proyek, regulasi dari /api/direktori/potret/<benda> (publik+anggota[+pengurus] sudah digabung Worker); diadaptasi ke bentuk layar ---- */
   const PB = {};
   const potretBaru = b => PB[b] ||= fetch(`/api/direktori/potret/${b}`, {credentials: "same-origin"}).then(r => r.ok ? r.json() : null).catch(() => null);
@@ -2343,7 +2346,7 @@ h4{margin:0 0 2px;font-size:8px;letter-spacing:normal;text-transform:none;color:
     puHasil = puArr.filter(d => dalam(PU.fs.jenis, [d.jenis]) && dalam(PU.fs.prov, wilDok(d).map(w => String(w.prov))) && dalam(PU.fs.tahun, [String(d.tahun)]) && (!GL.r || cocokGL(strs(d.sektor))) && (!PU.q || d._cari.includes(PU.q.toLowerCase())));
     const n = puHasil.length, a = (PU.hal - 1) * PUPER;
     $("akPuJ").innerHTML = `<b>${angka(n)}</b> dokumen${glT()}${msAda("pu") ? " " + msChips("pu") : ""}`; msTandai("pu");
-    $("akPuL").innerHTML = n ? `<ul class="ak-dokl">${puHasil.slice(a, a + PUPER).map(d => { const u = urlOk(d.url) || urlOk(d.sumber_url), wl = wilDok(d).slice(0, 3);
+    $("akPuL").innerHTML = n ? `<ul class="ak-dokl">${puHasil.slice(a, a + PUPER).map(d => { const u = urlDok(d), wl = wilDok(d).slice(0, 3);
       return `<li class="ak-dokr"${u ? ` role="link" tabindex="0" ${hrefAttr(u)}` : ""}><span class="ak-dikon" aria-hidden="true">${ikon('<path d="M6 3h9l4 4v14H6z"/><path d="M14 3v5h5M9 13h7M9 17h5"/>', "currentColor")}</span><div class="ak-dokm"><b>${u ? tautanLuar(u, esc(d.judul)) : esc(d.judul)}</b><div class="ak-pil"><span class="ak-prodi">${esc(kapital(d.jenis || "dokumen"))}</span>${d.tahun ? `<span class="ak-lper">${esc(d.tahun)}</span>` : ""}${wl.map(w => `<button type="button" class="ak-pk" data-wl="${esc(wilKunci(String(w.prov), w.kab || ""))}">${esc(wilTeks(wilKunci(String(w.prov), w.kab || "")))}</button>`).join("")}${pilContoh(d)}</div></div>${u ? `<a class="ak-rbtn ak-rbtn-b" href="${esc(u)}" ${LUAR}>Buka</a>` : ""}</li>`; }).join("")}</ul>` : hampa("dokumen");
     $("akPuH").innerHTML = navHal(PU.hal, n, PUPER, "dokumen");
     if (gulir) gulirKe("akPuJ");
