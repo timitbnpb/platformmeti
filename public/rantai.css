@@ -60,7 +60,7 @@ main.jm-an .jm-ex>.jm-ex-hd>.jm-ex-teks>.jm-ex-sub{grid-row:2}
 .jm-rt-n strong{font:700 var(--t-angka)/1 var(--display);color:var(--head);font-variant-numeric:tabular-nums}
 .jm-rt-n>span:not(.jm-pil){color:var(--ink2);font-size:var(--t-kecil)}
 .jm-rt-lgs{display:flex;align-items:center;align-self:end}
-.jm-rt-lgk{width:30px;height:30px;border:2px solid var(--card);border-radius:50%;margin-left:-8px;box-sizing:content-box}
+.jm-rt-lgk{width:30px;height:30px;border:2px solid var(--card);border-radius:9px;margin-left:-8px;box-sizing:content-box}
 .jm-rt-lgs .jm-rt-lgk:first-child{margin-left:0}
 .jm-rt-lebihk{margin-left:6px;color:var(--ink2);font:700 var(--t-kecil)/1 var(--font)}
 .jm-rt-celah{background:var(--warn-bg);border-color:color-mix(in srgb,var(--warn) 35%,var(--line));border-style:solid;color:var(--ink);text-decoration:none}
@@ -100,7 +100,7 @@ main.jm-an .jm-ex>.jm-ex-hd>.jm-ex-teks>.jm-ex-sub{grid-row:2}
 .jm-rt-pab{gap:6px;padding:0 10px 0 3px}
 .jm-rt-pab .jm-rt-lgk{width:20px;height:20px;margin:0;border:0;font-size:9px}
 .jm-tabel td button.jm-rt-lebih{padding:0 10px}
-.jm-rt-kap{display:inline-flex;align-items:baseline;gap:3px;justify-content:flex-end}
+.jm-rt-kap{display:inline-block;white-space:nowrap}
 /* ---- kebutuhan, TKDN ---- */
 .jm-rt-kuncibaris{display:flex;flex-wrap:wrap;align-items:center;gap:6px 18px;margin-top:8px}.jm-rt-kuncibaris>p{margin:0}
 /* ---- daftar pabrikan ---- */
@@ -134,3 +134,4 @@ dialog.jm-rt-pop{width:min(960px,calc(100vw - 24px));max-height:calc(100vh - 32p
 .jm-rt-lg img{position:absolute;inset:0;width:100%;height:100%;background:var(--card);object-fit:contain}
 .jm-rp-tabel{min-width:820px}
 .jm-an-cara.jm-an-cara{display:block;margin-top:0;counter-reset:none}.jm-an-cara::before{content:none}
+@media (max-width:639px){.jm-rt-svg{height:clamp(320px,52vh,400px)}}
