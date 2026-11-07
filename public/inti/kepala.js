@@ -148,7 +148,7 @@ export async function mulaiHalaman() {
   await mulaiBahasa(saya.bahasa);
   const kepala = document.getElementById("kepala");
   /* halaman akun (masuk, aktivasi, ganti sandi) dan tamu: tanpa menu dan kaki, fokus ke formulir */
-  const fokusAkun = /^\/(masuk|aktivasi|ganti-sandi|berhenti|kta\/v\/)/.test(location.pathname) || (saya?.masuk === false && !/^\/langganan/.test(location.pathname));
+  const fokusAkun = /^\/(masuk|aktivasi|ganti-sandi|berhenti|kta\/v\/)/.test(location.pathname) || (saya?.masuk === false && !saya?.galat && !/^\/langganan/.test(location.pathname));
   if (fokusAkun) {
     document.documentElement.classList.add("jm-fokus-akun");
     kepala?.remove(); document.getElementById("kaki")?.remove(); document.getElementById("pita")?.remove(); document.getElementById("subnav")?.remove();
