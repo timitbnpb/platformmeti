@@ -1,0 +1,19 @@
+/* Zona unggah bersama (inti/unggah.js). Hanya token tema. */
+.jm-unggah{display:grid;gap:8px;min-width:0}
+.jm-unggah-zona{display:grid;justify-items:center;gap:6px;padding:22px 16px;border:2px dashed var(--line-ctl);border-radius:var(--r);background:var(--surface);color:var(--ink2);text-align:center;cursor:pointer;transition:border-color .15s,background-color .15s}
+.jm-unggah-zona .jm-ik{color:var(--accent)}
+.jm-unggah-zona b{color:var(--ink);font-weight:600}
+.jm-unggah-zona:hover,.jm-unggah-zona.seret,.jm-unggah:focus-within .jm-unggah-zona{border-color:var(--accent);background:var(--soft-hijau)}
+.jm-unggah:focus-within .jm-unggah-zona{outline:2px solid var(--fokus);outline-offset:2px}
+.jm-unggah.ada .jm-unggah-zona{display:none}
+.jm-unggah-berkas{display:flex;align-items:center;gap:12px;padding:10px 12px;border:1px solid var(--accent);border-radius:var(--r-sm);background:var(--soft-hijau)}
+.jm-unggah-berkas>.jm-ik{flex:none;color:var(--accent)}
+.jm-unggah-nama{display:grid;flex:1;min-width:0}
+.jm-unggah-nama b{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-weight:600;color:var(--ink)}
+.jm-unggah-nama small{color:var(--ink2);font-size:var(--t-kecil)}
+.jm-unggah-hapus{display:grid;place-items:center;flex:none;width:var(--target);height:var(--target);border:0;border-radius:50%;background:transparent;color:var(--ink2);cursor:pointer}
+.jm-unggah-hapus:hover{background:var(--bad-bg);color:var(--bad)}
+.jm-unggah-galat{display:flex;align-items:center;gap:8px;margin:0;color:var(--bad);font-size:var(--t-kecil)}
+@media (prefers-reduced-motion:reduce){.jm-unggah-zona{transition:none}}
+.jm-unggah .jm-unggah-zona{font:400 var(--t-body)/var(--lh-rapat) var(--font)}
+.jm-unggah .jm-unggah-zona b{font-weight:600}

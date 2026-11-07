@@ -1,0 +1,4 @@
+.jm-siap{display:flex;align-items:flex-start;gap:12px;margin:0 0 16px;padding:14px 16px;border:1px solid var(--line);border-left:4px solid var(--accent);border-radius:var(--r-sm);background:var(--info-bg);color:var(--ink)}
+.jm-siap .jm-ik{flex:none;margin-top:2px;color:var(--accent)}
+.jm-siap b{display:block;font-weight:700}
+.jm-siap p{margin:2px 0 0;text-align:left;line-height:var(--lh-isi)}
