@@ -1,0 +1,82 @@
+# Keputusan pemilik: Platform Jaringan METI (7 Nov 2026)
+
+Dokumen pertama dalam urutan otoritas. Menang atas semua dokumen lain di folder ini.
+
+Rantai otoritas: `KEPUTUSAN-METI` > `GRAND-DESIGN` > `RISET` > `PRD` > `ALUR` > `ALGORITMA` > `DESIGN-SYSTEM` > `DESAIN-TEKNIS` > `KEAMANAN-PRIVASI` > `RENCANA-UJI` > `TIKET` (+ `GLOSARIUM`, `PENYELARASAN` sebagai lampiran, kalah dari semua).
+
+Aturan berhenti: fitur, layar, atau tabel yang tidak tertulis di paket ini tidak dibuat. Bila dua dokumen bertentangan atau sesuatu kurang, pengerja berhenti dan bertanya ke pemilik. Pertanyaan terbuka di bagian C selalu punya bawaan, jadi kerja tetap jalan memakai bawaan sampai dijawab.
+
+Sumber: percakapan pemilik 7 Nov 2026 (sesi perencanaan), materi METI di folder `1. METI`, situs metiires.or.id, repo poskokarhutla (Direktori Jaringan Kebencanaan), repo neraca-papua, situs 1001startup.id.
+
+## A. Diputus pemilik
+
+| No | Keputusan | Kata pemilik |
+| --- | --- | --- |
+| K1 | Platform METI meniru Direktori Jaringan Kebencanaan (`/direktori` di repo poskokarhutla) untuk ekosistem energi terbarukan. Repo: `timitbnpb/platformmeti`. | *"gw mau tiru yang direktori jaringan di Direktori Jaringan Kebencanaan untuk METI ... Ini untuk platform meti ya"* |
+| K2 | Seluruh backbone dan kode direktori diambil (porting), bukan ditulis ulang, lalu disesuaikan dengan Grand Design METI. | *"ambil aja semua backbone dan codingnya tapi sesuaikan grand design METI"* |
+| K3 | Berjalan di Cloudflare. | *"Ini gw buatnya mau di CLoudflare ya"* |
+| K4 | Tampilan memakai gaya METI (deck dan template METI). | *"Ini designnya kira kira seperti itu"*; *"Gayanya tetap pakai gaya METI"* |
+| K5 | Sebelum membangun, ditulis paket perencanaan lengkap seperti SIPPA: semua tiket, grand design, dan dokumen pendukung. | *"Tulis semua tiket. Buat semua grand design. Buat semua yang kaya SIPPA"* |
+| K6 | Semua informasi dan data dikumpulkan dulu, termasuk situs metiires.or.id dan riset cara membangun platform jaringan. | *"Cari semua infonya dan datanya dulu"*; *"lakukan juga semua riset untuk membangun platform jaringan ini"* |
+| K7 | Semua informasi dan cara penyampaian informasi meniru 1001startup.id (sensus, rantai pasok, investor, cerita data, kuadran, profil bersumber). Gaya visual tetap METI. Ambil yang relevan untuk energi. | *"semua informasi dan cara penyampaian informasi tiru yang 1001startup"*; *"Lu tiru semuanya. Buat yang relevan"* |
+| K8 | Dwibahasa Indonesia dan Inggris dengan tombol ganti bahasa. | *"Bisa dalam bahasa Indonesia dan bahasa inggris ya ada toggle nya"* |
+| K9 | Ada admin untuk membuat akun (email dan lainnya), pembatasan baris (RLS), dan login. | *"1. Admin untuk buat email dll 2. RLS 3. Login"* |
+| K10 | Peta meniru peta Direktori Jaringan Kebencanaan. | *"Petanya miripin kaya yang Direktori Jaringan Kebencanaan"* |
+| K11 | Data perusahaan PLTS dan sejenisnya boleh diambil dari 1001startup.id. | *"Ini contoh bagus perusahaan PLTS. Bahkan lu scraping aja data dari web ini."* |
+| K12 | Repo neraca-papua dijadikan rujukan. | *"Cek github neraca papua ini ya."* |
+| K13 | Artifact (Grand Design, Design System) dibuat, lalu semua rencana dan artifact masuk GitHub. | *"Buat artifactsnya juga masukin ke githubnya nanti di akhir dan design system semuanya"*; *"Artifact dan rencana semua masukkan ke github."* |
+| K14 | Sebelum mulai membangun, pemilik menerima 20 pertanyaan. | *"Habis itu kasih 20 pertanyaan sebelum kita mulai nanti"* |
+
+## B. Diputus perancang (sesi induk), boleh dibatalkan pemilik
+
+| No | Keputusan | Alasan |
+| --- | --- | --- |
+| D1 | Nama kerja: **Jaringan METI** (EN: *METI Network*). Rute utama `/` untuk sensus publik, `/direktori` untuk direktori anggota (port langsung). Kode tiket `JM-*`. | Satu nama pendek untuk dokumen, kode, dan agent. |
+| D2 | Satu Cloudflare Worker dengan static assets, D1 untuk data tulis (akun, peran, kurasi, klaim, koreksi, riwayat, jejak), R2 untuk berkas besar dan potret data hasil pipeline. Pola persis direktori lama: layar membaca JSON potret, D1 hanya untuk tulis dan hak. | Kuota baca D1 Free 5 juta/hari pernah menjatuhkan situs lama. Potret JSON murah dan cepat. |
+| D3 | Porting mengikuti peta porting di `riset/R1-DIREKTORI-ASAL.md` §9: berkas [G] disalin apa adanya, [A] disalin lalu titik domain diganti, [K] dibuang atau ditulis ulang. Nama kelas `.ak-*` dipertahankan di tahap port supaya diff kecil. | Pemilik minta ambil kodenya (K2). Mengganti 638 nama kelas tidak menambah nilai. |
+| D4 | Tanpa build step dan tanpa framework: HTML + vanilla JS + CSS, sama dengan direktori lama. Pustaka luar hanya lewat CDN ber-SRI yang terdaftar di CSP. | Kode yang diporting sudah begitu; satu gaya kerja. |
+| D5 | Model data inti meniru neraca-papua: tiga konsep `entitas`, `fakta`, `ikatan`. Tiap fakta dan ikatan wajib punya `sumber_url`, `tanggal_periksa`, `tingkat_bukti`. Pipeline menolak baris tanpa sumber. | Cocok dengan cara 1001startup.id menyajikan "every claim some named document still makes today" dan aturan pemilik "tidak ada angka tanpa sumber". |
+| D6 | Penyajian informasi ala 1001startup.id: tiap halaman punya Jawaban singkat, kartu angka kunci, tabel atau grafik, "Cara menghitung", "Cara mengutip" dengan tanggal beku, label `EST` untuk angka turunan, skor keyakinan 0 sampai 1 per profil, daftar sumber bertanggal per butir. | K7. |
+| D7 | RLS di D1 ditiru di Worker: D1 (SQLite) tidak punya RLS bawaan. Semua baca dan tulis D1 lewat satu modul penjaga `src/hak.js` (`boleh(peran, aksi, tabel, baris)`) yang memakai matriks kebijakan tertulis di KEAMANAN-PRIVASI §1. Tiap sel matriks punya uji "peran salah DITOLAK". Potret R2 dibuat per lapis akses (publik, anggota, pengurus), bukan disaring di klien. | K9 tanpa menjanjikan fitur yang tidak ada di platform. |
+| D8 | Login: email + sandi (hash PBKDF2-SHA256 lewat WebCrypto, bukan sha256 tunggal seperti kode lama) dan sesi cookie `HttpOnly; Secure; SameSite=Lax`. Akun hanya dibuat Admin (tanpa daftar mandiri di fase 1). Admin membuat akun dan sistem menghasilkan tautan aktivasi sekali pakai yang disalin Admin. Kirim surel otomatis menunggu pilihan penyedia (C-08). | K9, aman, tanpa ketergantungan penyedia surel di hari pertama. |
+| D9 | Empat lapis akses: **Publik** (tanpa login), **Anggota**, **Pengurus/Sekretariat**, **Admin** (+ **Super Admin** untuk akun dan tombol dummy). Data pribadi (surel, telepon, alamat rumah) tidak pernah tampil di lapis Publik dan tidak pernah masuk repo. | UU PDP 27/2022; repo publik. |
+| D10 | Dwibahasa: kamus antarmuka `public/i18n/id.json` dan `en.json`, pilihan disimpan `localStorage` (dibungkus try/catch) dan `?lang=`. Isi data punya kolom `_en` bila tersedia; bila kosong tampil versi Indonesia dengan pil "ID". Bawaan bahasa: Indonesia. | K8 tanpa menerjemahkan data mesin secara diam-diam. |
+| D11 | Visual: palet resmi METI "Midnight Energy" (Navy `#122B4A`, Petrol `#155B79`, Teal `#0A896A`, Cyan `#65C7EC`, Lime `#B9D75A`, Cloud `#F3F7FB`), judul Poppins, isi Inter. Teal untuk teks diganti `#07705A` karena Teal asli gagal kontras AA (4,38:1). Kepala situs navy bersama di semua halaman. | K4, aturan pemilik kepala situs wajib, kontras WCAG. |
+| D12 | Peta: MapLibre GL + panel samping yang bisa ditarik, lapisan, legenda, "Terbang ke" provinsi, persis pola peta Lembaga di direktori lama. Penanda perusahaan berupa logo bundar seperti peta 1001startup.id. | K10, K7. |
+| D13 | "Kita = METI": METI Pusat, METI Wilayah, METI Institute, METI Energi Muda tidak diberi bintang "mitra strategis". Anggota METI diberi lencana "Anggota METI" hanya bila dikonfirmasi Sekretariat. | Pelajaran "Kita BNPB" dari direktori lama. |
+| D14 | Satu daftar tolak terpusat `data/daftar-tolak.json` (berkas privat di R2, bukan repo) + uji: orang atau lembaga terkait kasus hukum korupsi, orang yang sudah meninggal, dan nama yang diminta keluar tidak tampil di mana pun. | Prinsip direktori lama yang belum pernah terkodifikasi. |
+| D15 | Data dari 1001startup.id: diambil sebatas fakta (nama, sektor, lokasi, relasi) dan tautan sumber primer yang mereka kutip, dengan atribusi "via 1001startup.id" dan tanggal ambil. Teks deskripsi, estimasi mereka, dan logo tidak disalin massal. Panen menghormati robots.txt dan syarat penggunaan mereka (lihat RISET §4). | K11 dengan menjaga hak cipta dan etika panen. |
+| D16 | Fase: **F0** porting kerangka dan login (direktori lama berjalan di METI dengan data contoh), **F1** sensus publik EBT dan direktori anggota, **F2** rantai pasok, pembiaya, kuadran BUMN, cerita data, peta lengkap, **F3** klaim profil, API terbuka, pencocokan kebutuhan. | Nilai terlihat paling cepat: kode yang sudah ada jalan dulu. |
+| D17 | Semua angka tampil dengan format Indonesia (`toLocaleString("id-ID")`) di mode ID dan format Inggris di mode EN, lewat satu formatter. Tanpa titik tengah "·" sebagai pemisah teks. | Aturan pemilik. |
+| D18 | Tiap halaman punya tombol isi data dummy dua ikon, hanya Super Admin, isinya ditentukan halaman yang dibuka. | Aturan global pemilik `DUMMY.md`. |
+
+## C. Pertanyaan terbuka (punya bawaan, tidak menghalangi kerja)
+
+Dua puluh pertanyaan untuk pemilik sebelum mulai membangun. Kolom "Bawaan" dipakai sampai dijawab.
+
+| Kode | Pertanyaan | Bawaan sementara | Dampak bila berubah |
+| --- | --- | --- | --- |
+| C-01 | Platform ini milik siapa secara resmi: proyek resmi METI (disetujui Pengurus Harian) atau purwarupa tim lu dulu? | Purwarupa, ditunjukkan ke Pengurus Harian sebelum publik. | Bila resmi, semua teks "Working draft" diganti dan butuh persetujuan Sekjen. |
+| C-02 | Domain: subdomain `jaringan.metiires.or.id`, domain baru, atau `*.workers.dev` dulu? | `*.workers.dev` sampai DNS METI disetujui. | Ubah `wrangler.jsonc` dan CSP. |
+| C-03 | Hubungan dengan situs metiires.or.id (Nuxt + API Laravel yang sudah punya login, membership, event): berdiri sendiri, atau login anggota memakai akun situs itu? | Berdiri sendiri; situs METI hanya dibaca (berita, acara) lewat API publiknya. | Bila satu akun, perlu SSO/OAuth dengan pengelola situs METI. |
+| C-04 | Siapa yang boleh melihat apa tanpa login? | Publik: perusahaan, lembaga, proyek, regulasi, wilayah, cerita data. Orang/pakar: nama, jabatan publik, afiliasi saja. Kontak: hanya Pengurus. | Matriks KEAMANAN-PRIVASI §1 dan potret R2 per lapis berubah. |
+| C-05 | Palet: deck METI (Midnight Energy, navy-teal) atau situs METI (emerald `#059669`)? | Midnight Energy (sesuai template resmi). | Token `tema.css` saja. |
+| C-06 | Akun Cloudflare: akun METI sendiri atau akun lu dulu? | Akun lu dulu, dipindah sebelum rilis publik. | ID D1, R2, Worker di `wrangler.jsonc`. |
+| C-07 | Peran apa saja yang dibutuhkan selain Publik, Anggota, Pengurus, Admin, Super Admin (misalnya Ketua METI Wilayah yang hanya mengurus provinsinya)? | Tambah peran `wilayah` dengan cakupan provinsi. | Kolom `cakupan_prov` dan uji RLS per provinsi. |
+| C-08 | Penyedia surel untuk aktivasi akun dan reset sandi (Resend, Brevo, SMTP METI, atau salin tautan manual)? | Salin tautan manual oleh Admin. | Tiket JM-B05 menambah integrasi surel. |
+| C-09 | Anggota daftar sendiri atau hanya dibuat Admin? | Hanya Admin di F0 sampai F2; daftar mandiri + verifikasi Sekretariat di F3. | Alur ALUR §2 dan Turnstile. |
+| C-10 | Boleh memakai data anggota METI (1.800+ klaim) dari Sekretariat? Dalam bentuk apa dan dengan persetujuan anggota seperti apa? | Belum. Isi awal hanya dari sumber publik + 12 anggota dan 12 mitra yang sudah tampil di metiires.or.id. | Impor anggota (JM-D07) dan formulir persetujuan. |
+| C-11 | Pengurus METI (Dewan Penasihat, Pengawas, Pakar, Pengurus Harian dari SK 0008) boleh tampil publik dengan nama dan jabatan? | Ya, nama dan jabatan saja, karena sudah publik di metiires.or.id. | Lapis akses entitas orang. |
+| C-12 | Cakupan sektor: hanya energi terbarukan, atau juga gas transisi, CCS/CCUS, nuklir, kendaraan listrik, efisiensi? | EBT + penyimpanan + jaringan + efisiensi + kendaraan listrik + sampah jadi energi + hidrogen. Nuklir dan CCS sebagai sektor "terkait" tanpa chip utama. | Daftar `SEKTOR` di ALGORITMA §2. |
+| C-13 | Seberapa jauh boleh mengambil dari 1001startup.id (lihat RISET §4)? | Fakta + sumber primer dengan atribusi, tanpa teks/estimasi/logo. Minta izin tertulis ke pengelolanya sebelum rilis publik. | Pipeline `panen_1001.py` diaktifkan penuh atau dibuang. |
+| C-14 | Teks halaman: bahasa Indonesia ditulis dulu lalu diterjemahkan, atau terjemahan Inggris ditinjau penutur? | ID ditulis dulu; EN diterjemahkan dan ditandai "perlu tinjau" sampai ada peninjau. | Kolom status terjemahan. |
+| C-15 | Logo perusahaan dan lembaga: boleh diunduh dan disimpan ke R2? | Hanya logo dari situs resmi entitasnya, disimpan di R2, dengan penghapusan atas permintaan. | Fungsi `gambar` dan kebijakan hapus. |
+| C-16 | Skor dan kuadran (misalnya BUMN energi, kesiapan provinsi): boleh tampil publik walau belum diuji? | Boleh dengan pil "Hipotesis" dan "Cara menghitung" terbuka. | Label di DESIGN-SYSTEM §7. |
+| C-17 | Riwayat dengan METI (narasumber, audiensi, MoU, sponsor) boleh dilihat siapa? | Hanya Pengurus dan Admin. | Matriks hak. |
+| C-18 | Fitur AI (ringkasan riset Workers AI seperti direktori lama) dipertahankan? | Ya untuk ringkasan abstrak riset, ekstraktif, berlabel "Ringkasan mesin". | Rute `/api/riset/:id` dan biaya Workers AI. |
+| C-19 | Prioritas F1: sensus perusahaan EBT publik dulu, atau direktori anggota (port langsung) dulu? | Port direktori dulu (F0, cepat karena kode ada), lalu sensus publik (F1). | Urutan TIKET §5. |
+| C-20 | Siapa pemelihara data harian di METI (Sekretariat, Bidang Informasi dan Multimedia, METI Institute)? | Bidang Informasi dan Multimedia sebagai kurator, METI Institute sebagai peninjau angka. | Peran `kurator` dan alur koreksi. |
+
+## D. Perubahan sesudah rilis awal
+
+Belum ada.
