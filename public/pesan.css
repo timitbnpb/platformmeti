@@ -96,4 +96,4 @@
 .ps-komposer #psKirim{border-radius:var(--r-pil)}
 
 /* seluler: panel Tanya admin layar penuh, tombol tutup besar */
-@media (max-width:640px){.ps-pn{inset:0;right:0;bottom:0;width:100vw;height:100dvh;max-height:none;border-radius:0;border:0;padding-bottom:env(safe-area-inset-bottom,0px)}.ps-pn .ps-ik{width:44px;height:44px}.ps-pn textarea,.ps-pn input,.ps-pn select{font-size:16px}}
+@media (max-width:640px){.ps-pn{inset:0;right:0;bottom:0;width:100vw;height:100dvh;max-height:none;border-radius:0;border:0;padding-bottom:env(safe-area-inset-bottom,0px)}.ps-pn .ps-ik{width:44px;height:44px}.ps-pn textarea,.ps-pn input,.ps-pn select{font-size:var(--t-masukan)}}

@@ -13,19 +13,26 @@
 <link rel="stylesheet" href="/inti/gaya.css">
 <link rel="stylesheet" href="/inti/jm.css">
 <link rel="stylesheet" href="/analisis.css">
+<link rel="stylesheet" href="/rantai.css">
 <script src="/tema.js"></script>
 </head>
 <body>
 <header class="top" id="kepala"></header>
 <main class="jm-halaman jm-wadah jm-an">
-<section class="jm-kh" aria-labelledby="judul">
+<section class="jm-kh jm-rt-kh" aria-labelledby="judul">
   <div class="jm-kh-teks">
-    <h1 id="judul" data-i18n="rt.judul">Rantai pasok modul surya</h1>
+    <h1 id="judul" data-i18n="rt.judul">Rantai pasok energi terbarukan</h1>
     <p id="jawab" class="jm-kh-lead"></p>
   </div>
   <div class="jm-kh-ubin" id="ubin" aria-live="polite"></div>
+  <div class="jm-rt-gbr"><img id="gbr-tek" src="/img/beranda/surya-cirata.webp" alt="" width="640" height="480" decoding="async"></div>
 </section>
-<section class="jm-ex" aria-labelledby="h-peta">
+<div class="jm-tab jm-rt-tek" id="seg-tek" role="tablist" aria-label="Teknologi" data-i18n-attr="aria-label:rt.f_tek"></div>
+<section class="jm-ex" aria-labelledby="h-komp">
+  <header class="jm-ex-hd"><div class="jm-ex-teks"><span class="jm-ex-ey"><svg class="jm-ik" width="14" height="14" aria-hidden="true" focusable="false"><use href="/img/ikon.svg#i-rantai"/></svg><span data-i18n="rt.ey.komp">Komponen</span></span><h2 class="jm-ex-j" id="temuan-komp"></h2><p class="jm-ex-sub" id="h-komp" data-i18n="rt.komp">Komponen utama dan pemasok dalam negeri</p></div></header>
+  <div class="jm-ex-bd"><div id="komp"></div></div>
+</section>
+<section class="jm-ex" data-surya aria-labelledby="h-peta">
   <header class="jm-ex-hd"><div class="jm-ex-teks"><span class="jm-ex-ey"><svg class="jm-ik" width="14" height="14" aria-hidden="true" focusable="false"><use href="/img/ikon.svg#i-peta"/></svg><span data-i18n="an.ey.peta">Peta pabrik</span></span><h2 class="jm-ex-j" id="temuan-peta"></h2><p class="jm-ex-sub" id="h-peta" data-i18n="rt.peta">Lokasi pabrik modul</p></div><div class="jm-ex-aksi" id="aksi-peta"><!-- aksiHtml({csv,png,pdf,bagi}) --></div></header>
   <div class="jm-ex-bd">
   <div class="jm-wl-bingkai jm-rt-bingkai">
@@ -52,8 +59,8 @@
   <div id="sumber-peta"></div>
 </div>
 </section>
-<section id="kartu" class="jm-an-kartu-baris" aria-label="Ringkasan" data-i18n-attr="aria-label:an.ringkasan"></section>
-<section class="jm-ex" aria-labelledby="h-keb">
+<section id="kartu" data-surya class="jm-an-kartu-baris" aria-label="Ringkasan" data-i18n-attr="aria-label:an.ringkasan"></section>
+<section class="jm-ex" data-surya aria-labelledby="h-keb">
   <header class="jm-ex-hd"><div class="jm-ex-teks"><span class="jm-ex-ey"><svg class="jm-ik" width="14" height="14" aria-hidden="true" focusable="false"><use href="/img/ikon.svg#i-proyek"/></svg><span data-i18n="an.ey.keb">Kebutuhan</span></span><h2 class="jm-ex-j" id="temuan-keb"></h2><p class="jm-ex-sub" id="h-keb" data-i18n="rt.kebutuhan">Kebutuhan program dan kapasitas pabrikan per tahun</p></div><div class="jm-ex-aksi" id="aksi-keb"><!-- aksiHtml({csv,png,pdf,bagi}) --></div></header>
   <div class="jm-ex-bd">
   <div class="jm-tab" role="tablist" aria-label="Horizon" data-i18n-attr="aria-label:rt.horizon">
@@ -65,7 +72,7 @@
   <div id="grafik-keb"></div>
 </div>
 </section>
-<section class="jm-ex" aria-labelledby="h-tkdn">
+<section class="jm-ex" data-surya aria-labelledby="h-tkdn">
   <header class="jm-ex-hd"><div class="jm-ex-teks"><span class="jm-ex-ey"><svg class="jm-ik" width="14" height="14" aria-hidden="true" focusable="false"><use href="/img/ikon.svg#i-analisis"/></svg><span data-i18n="an.ey.tkdn">Sebaran TKDN</span></span><h2 class="jm-ex-j" id="temuan-tkdn"></h2><p class="jm-ex-sub" id="h-tkdn" data-i18n="rt.tkdn">Sebaran TKDN pabrikan</p></div><div class="jm-ex-aksi" id="aksi-tkdn"><!-- aksiHtml({csv,png,pdf,bagi}) --></div></header>
   <div class="jm-ex-bd">
 
@@ -73,7 +80,7 @@
 </div>
 </section>
 <section class="jm-ex" aria-labelledby="h-tabel">
-  <header class="jm-ex-hd"><div class="jm-ex-teks"><span class="jm-ex-ey"><svg class="jm-ik" width="14" height="14" aria-hidden="true" focusable="false"><use href="/img/ikon.svg#i-tabel"/></svg><span data-i18n="an.ey.tabel">Daftar pabrikan</span></span><h2 class="jm-ex-j" id="temuan-tabel"></h2><p class="jm-ex-sub" id="h-tabel" data-i18n="rt.tabel">Daftar pabrikan modul surya</p></div><div class="jm-ex-aksi" id="aksi-tabel"><!-- aksiHtml({csv,png,pdf,bagi}) --></div></header>
+  <header class="jm-ex-hd"><div class="jm-ex-teks"><span class="jm-ex-ey"><svg class="jm-ik" width="14" height="14" aria-hidden="true" focusable="false"><use href="/img/ikon.svg#i-tabel"/></svg><span data-i18n="an.ey.tabel">Daftar pabrikan</span></span><h2 class="jm-ex-j" id="temuan-tabel"></h2><p class="jm-ex-sub" id="h-tabel" data-i18n="rt.tabel">Daftar pabrikan dan pemasok komponen</p></div><div class="jm-ex-aksi" id="aksi-tabel"><!-- aksiHtml({csv,png,pdf,bagi}) --></div></header>
   <div class="jm-ex-bd">
 
   <div class="jm-saring" id="saring"></div>

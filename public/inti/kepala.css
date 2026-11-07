@@ -134,4 +134,4 @@ dialog.jm-cari::backdrop{background:rgb(11 23 38/.55)}
 /* seluler: tombol bulat kepala 44px */
 @media (max-width:760px){.jm-bulat{width:44px;height:44px;min-width:44px}.jm-sisi{gap:4px}}
 /* seluler: pencarian global layar penuh */
-@media (max-width:600px){dialog.jm-cari{width:100vw;max-width:100vw;height:100dvh;max-height:100dvh;margin:0;border:0;border-radius:0}.jm-cari-atas .iconbtn,.jm-cari-atas button{min-width:44px;min-height:44px}.jm-cari .jm-cari-isi{font-size:16px}}
+@media (max-width:600px){dialog.jm-cari{width:100vw;max-width:100vw;height:100dvh;max-height:100dvh;margin:0;border:0;border-radius:0}.jm-cari-atas .iconbtn,.jm-cari-atas button{min-width:44px;min-height:44px}.jm-cari .jm-cari-isi{font-size:var(--t-masukan)}}

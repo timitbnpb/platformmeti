@@ -33,7 +33,7 @@ const PENY = [ // [teknologi, komponen, kategori_layanan]
 const lokasi = (l) => ({ kota: l?.kota || null, provinsi: l?.provinsi || null });
 const dalamNegeri = (p) => !!p.provinsi;
 
-export function bangun({ plts, tkdn, peny }, tanggal) {
+export function bangun({ plts, tkdn, peny }, tanggal, adaLogo = () => false, adaOrg = () => true) {
   const penyById = new Map(peny.baris.map((b) => [b.organisasi_id || b.id, b]));
   const T = {};
   for (const [id, ks] of Object.entries(KOMPONEN)) T[id] = { id, komponen: ks.map((k) => ({ id: k, pemasok: [] })) };
@@ -57,7 +57,7 @@ export function bangun({ plts, tkdn, peny }, tanggal) {
     taruh(tek, kom, { id: b.organisasi_id || b.id, org_id: b.organisasi_id || null, nama: b.nama, ...lokasi(b.lokasi), mwp: null, tkdn: b.sertifikasi?.tkdn_persen_terbaik ?? null, sumber: 'penyedia' });
   }
   const keluar = Object.values(T).map((t) => {
-    for (const k of t.komponen) { k.pemasok = k.pemasok.filter(dalamNegeri); k.pemasok.sort((a, b) => (b.mwp ?? 0) - (a.mwp ?? 0) || (b.tkdn ?? 0) - (a.tkdn ?? 0) || a.nama.localeCompare(b.nama)); }
+    for (const k of t.komponen) { k.pemasok = k.pemasok.filter(dalamNegeri).map((p) => ({ ...p, org_id: p.org_id && adaOrg(p.org_id) ? p.org_id : null, logo: p.org_id && adaLogo(p.org_id) ? p.org_id : null })); k.pemasok.sort((a, b) => (b.mwp ?? 0) - (a.mwp ?? 0) || (b.tkdn ?? 0) - (a.tkdn ?? 0) || a.nama.localeCompare(b.nama)); }
     const uniq = new Set(t.komponen.flatMap((k) => k.pemasok.map((p) => p.id)));
     return { id: t.id, tipis: uniq.size < 5, pemasok_unik: uniq.size, celah: t.komponen.filter((k) => !k.pemasok.length).map((k) => k.id), komponen: t.komponen };
   });
@@ -74,7 +74,8 @@ export function bangun({ plts, tkdn, peny }, tanggal) {
 }
 
 if (process.argv[1] === fileURLToPath(import.meta.url)) {
-  const j = bangun({ plts: baca('rantai_plts.json'), tkdn: baca('tkdn.json'), peny: baca('penyedia_teknologi.json') }, new Date().toISOString().slice(0, 10));
+  const org = new Set(baca('organisasi.json').baris.map((o) => o.id));
+  const j = bangun({ plts: baca('rantai_plts.json'), tkdn: baca('tkdn.json'), peny: baca('penyedia_teknologi.json') }, new Date().toISOString().slice(0, 10), (id) => fs.existsSync(path.join(ROOT, 'public/img/logo/org', id + '.png')), (id) => org.has(id));
   fs.writeFileSync(path.join(ROOT, 'public/data/rantai_pasok.json'), JSON.stringify(j));
   console.log(j.teknologi.map((t) => `${t.id}: ${t.pemasok_unik} pemasok, celah ${t.celah.length}${t.tipis ? ' (tipis)' : ''}`).join('\n'));
 }

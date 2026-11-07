@@ -1,0 +1,36 @@
+/* /rantai lintas teknologi: kepala, pemilih teknologi, kartu komponen, tabel pabrikan. Warna hanya dari token. */
+.jm-rt-kh{align-items:stretch;overflow:hidden}
+body .jm-rt-kh .jm-kh-teks .jm-kh-lead{text-align:left;hyphens:none;-webkit-hyphens:none;max-width:48ch}
+.jm-rt-kh .jm-kh-ubin{grid-template-columns:repeat(2,minmax(0,1fr));align-content:center}
+.jm-rt-kh .jm-kh-ub:hover{transform:none}
+.jm-rt-kh .jm-kh-lbl{flex-wrap:wrap}
+.jm-rt-kh .jm-kh-lbl span:first-child{white-space:normal;overflow:visible}
+.jm-rt-kh .jm-kh-angka{flex-wrap:wrap;white-space:normal}
+.jm-rt-gbr{display:none;border-radius:var(--r);overflow:hidden;border:1px solid var(--line);min-height:200px}
+.jm-rt-gbr img{display:block;width:100%;height:100%;object-fit:cover}
+@media (min-width:1000px){.jm-rt-kh{grid-template-columns:minmax(0,1fr) minmax(0,1.25fr) minmax(0,.8fr);gap:28px;padding:32px}.jm-rt-gbr{display:block}}
+@media (max-width:999px){.jm-rt-gbr{display:block;order:-1;min-height:0;height:140px}}
+.jm-rt-tek{margin:0 0 20px;gap:0;border-bottom:1px solid var(--line)}
+.jm-rt-tek button{flex:1 1 0;justify-content:center;padding:0 10px;min-width:max-content}
+.jm-rt-tek button svg{flex:none;width:18px;height:18px}
+.jm-rt-komp{display:grid;gap:12px;grid-template-columns:repeat(auto-fill,minmax(220px,1fr))}
+.jm-rt-kk{display:grid;gap:6px;align-content:start;text-align:left;padding:14px;min-height:var(--target);border:1px solid var(--line);border-radius:var(--r);background:var(--card);color:var(--ink);font:400 var(--t-body)/var(--lh-rapat) var(--font);cursor:pointer}
+.jm-rt-kk b{color:var(--head);font-weight:700}
+.jm-rt-kk small{color:var(--ink2);font-size:var(--t-kecil)}
+.jm-rt-kk:hover:not(:disabled){border-color:var(--accent)}
+.jm-rt-kk[aria-pressed="true"]{border-color:var(--accent);background:var(--soft-hijau)}
+.jm-rt-kk:focus-visible{outline:2px solid var(--fokus);outline-offset:2px}
+.jm-rt-celah{cursor:default;border-style:dashed;background:var(--surface)}
+.jm-rp-tabel{width:100%;min-width:900px}
+.jm-rp-tabel .jm-an-nama{display:flex;align-items:center;gap:10px}
+.jm-rp-tabel .jm-id b{white-space:normal;overflow:visible}
+.jm-rp-tabel td{vertical-align:middle}
+.jm-rp-tabel .jm-rt-k-nama .jm-an-nama{min-width:250px}
+.jm-rp-tabel .jm-rt-k-daerah .jm-rt-daerah{min-width:190px}
+.jm-rp-tabel .jm-rt-k-nk{min-width:150px}
+.jm-rp-tabel th.jm-rt-k-mwp,.jm-rp-tabel th.jm-rt-k-tkdn,.jm-rp-tabel th.jm-rt-k-bmp{text-align:right}
+.jm-rp-tabel th.jm-rt-k-pasar,.jm-rp-tabel th.jm-rt-k-apamsi{text-align:center}
+.jm-rt-daerah{display:flex;align-items:center;gap:8px;color:inherit;text-decoration:none}
+.jm-rt-daerah img{flex:none;width:24px;height:24px;object-fit:contain}
+a.jm-rt-daerah:hover span{text-decoration:underline}
+@media (max-width:719px){.jm-rp-tabel td::before{white-space:normal;min-width:0}.jm-rp-tabel td[data-label]{grid-template-columns:130px minmax(0,1fr)!important;align-items:center}.jm-rp-tabel td .jm-pil{justify-self:start;white-space:nowrap}.jm-rp-tabel td.jm-num{text-align:left}.jm-rp-tabel{min-width:0}.jm-rp-tabel .jm-an-nama,.jm-rp-tabel .jm-rt-daerah{min-width:0!important}}
