@@ -48,7 +48,14 @@ export function seksi({ id, ik, topik, judulHtml, subHtml = "", isiHtml, csv = f
   if (!isiHtml) return "";
   return exHtml({ id, ikon: ik, topik, judulHtml, subHtml, aksiHtml: aksiHtml({ csv }) + (sumber ? sumberHtml(sumber) : ""), isiHtml });
 }
-export const tabel = (kolom, barisHtml, kelas = "") => `<div class="jm-gulir"><table class="jm-tabel jm-tabel-tetap ${kelas}"><thead><tr>${kolom.map(([k, kls]) => `<th scope="col"${kls ? ` class="${kls}"` : ""}>${esc(t(k))}</th>`).join("")}</tr></thead><tbody>${barisHtml}</tbody></table></div>`;
+/* Tabel; satu baris saja ditampilkan sebagai kartu (tabel 1 baris memboroskan ruang). */
+export const tabel = (kolom, barisHtml, kelas = "") => {
+  if ((barisHtml.match(/<tr>/g) || []).length === 1) {
+    const sel = [...barisHtml.matchAll(/<td data-label="([^"]*)"[^>]*>([\s\S]*?)<\/td>/g)];
+    return `<dl class="pf-satu ${kelas}">${sel.map(([, l, v]) => `<div><dt>${l}</dt><dd>${v}</dd></div>`).join("")}</dl>`;
+  }
+  return `<div class="jm-gulir"><table class="jm-tabel jm-tabel-tetap ${kelas}"><thead><tr>${kolom.map(([k, kls]) => `<th scope="col"${kls ? ` class="${kls}"` : ""}>${esc(t(k))}</th>`).join("")}</tr></thead><tbody>${barisHtml}</tbody></table></div>`;
+};
 export const td = (kunci, isi, kls = "") => `<td data-label="${esc(t(kunci))}"${kls ? ` class="${kls}"` : ""}>${isi}</td>`;
 export const sumberKaki = (dibangun) => t("pf.sumber_data", { tanggal: ringkasTgl(dibangun) });
 
@@ -87,13 +94,16 @@ export function petaTitik(el, rows, { zoomSatu = 9, klik = true } = {}) {
   }).catch(() => { el.textContent = t("pj.peta.galat"); el.classList.add("jm-bantu"); });
 }
 
-/** Tabel berita (judul tertaut keluar, media, terbit), terbaru dulu, maks 20. */
-export function tabelBerita(daftar) {
-  const urut = [...daftar].sort((a, b) => String(b.terbit).localeCompare(String(a.terbit))).slice(0, 20);
+/** Berita sebagai kartu bergambar (berita_foto.json: id -> url foto), terbaru dulu, maks 12. Tanpa foto = latar bermerek berikon. */
+export function tabelBerita(daftar, foto = {}) {
+  const urut = [...daftar].sort((a, b) => String(b.terbit).localeCompare(String(a.terbit))).slice(0, 12);
   if (!urut.length) return "";
-  return tabel([["pf.c.judul"], ["pf.c.media"], ["pf.c.terbit", "jm-tengah"]], urut.map((x) => `<tr>${td("pf.c.judul", urlAman(x.url) ? `<a class="pf-nm" href="${esc(x.url)}" target="_blank" rel="noopener noreferrer">${esc(x.judul)}</a>` : esc(x.judul))}${td("pf.c.media", esc(x.media || "-"))}${td("pf.c.terbit", tglSel(x.terbit), "jm-tengah")}</tr>`).join(""), "pf-tabel-berita");
+  return `<ul class="pf-ber">${urut.map((x) => {
+    const f = urlAman(foto[x.id]);
+    const isi = `<span class="pf-ber-foto">${ikon("berita", 28)}${f ? `<img class="pf-foto" src="${esc(f)}" alt="" loading="lazy" decoding="async" referrerpolicy="no-referrer">` : ""}</span><span class="pf-ber-t"><b>${esc(x.judul)}</b><small>${esc([x.media, x.terbit ? ringkasTgl(x.terbit) : ""].filter(Boolean).join(", "))}</small></span>`;
+    return `<li>${urlAman(x.url) ? `<a href="${esc(x.url)}" target="_blank" rel="noopener noreferrer">${isi}</a>` : `<div>${isi}</div>`}</li>`;
+  }).join("")}</ul>`;
 }
-
 /** Tabel regulasi terkait, tertaut ke /regulasi?id=, maks 50. */
 export function tabelRegulasi(daftar) {
   const urut = [...daftar].sort((a, b) => (b.tahun || 0) - (a.tahun || 0)).slice(0, 50);
@@ -101,18 +111,35 @@ export function tabelRegulasi(daftar) {
   return tabel([["pf.c.aturan"], ["pf.c.status"], ["pf.c.tanggal", "jm-tengah"], ["pf.c.unduh", "jm-tengah"]], urut.map((x) => `<tr>${td("pf.c.aturan", `<span class="jm-id"><b><a class="pf-nm" href="/regulasi?id=${encodeURIComponent(x.id)}">${esc(namaRegulasi(x))}</a></b><small>${esc(x.judul || "")}</small></span>`)}${td("pf.c.status", `<span class="jm-pil ${kelasStatus(x.status)}">${esc(label("reg.status.", x.status))}</span>`)}${td("pf.c.tanggal", tglSel(x.tanggal_ditetapkan), "jm-tengah")}${td("pf.c.unduh", unduhRegHtml(x) || "-", "jm-tengah")}</tr>`).join(""), "pf-tabel-reg");
 }
 
-/** Tabel sumber: unik per URL, maks 40. */
-export function tabelSumber(daftar) {
+/* Nama penerbit dari domain; tak dikenal = domain polos. Jenis tertentu punya nama sendiri. */
+const PENERBIT = { "kontan.co.id": "Kontan", "katadata.co.id": "Katadata", "esdm.go.id": "Kementerian ESDM", "wikipedia.org": "Wikipedia", "wikidata.org": "Wikidata", "detik.com": "detikcom", "antaranews.com": "ANTARA", "kompas.com": "Kompas", "bisnis.com": "Bisnis.com", "cnbcindonesia.com": "CNBC Indonesia", "pln.co.id": "PLN", "bpk.go.id": "JDIH BPK", "worldbank.org": "World Bank", "geoboundaries.org": "geoBoundaries", "cnnindonesia.com": "CNN Indonesia", "tempo.co": "Tempo", "kumparan.com": "kumparan", "okezone.com": "Okezone", "liputan6.com": "Liputan6", "mongabay.co.id": "Mongabay", "iea.org": "IEA", "irena.org": "IRENA", "adb.org": "ADB", "jica.go.jp": "JICA" };
+const JENIS = { ruptl: "RUPTL PLN 2025-2034" };
+export function namaPenerbit(s) {
+  if (JENIS[s.jenis]) return JENIS[s.jenis];
+  let h = ""; try { h = new URL(s.url).hostname.replace(/^www\./, ""); } catch { return String(s.url || "-"); }
+  const k = Object.keys(PENERBIT).find((d) => h === d || h.endsWith("." + d));
+  return k ? PENERBIT[k] : h;
+}
+/** Tabel sumber: unik per URL, maks 40; nama penerbit (+ judul berita bila dikenal) tertaut, tanpa URL mentah. judulPerUrl: Map url -> judul. */
+export function tabelSumber(daftar, judulPerUrl = new Map()) {
   const lihat = new Set(), u = [];
   for (const s of daftar || []) { if (!s.url || lihat.has(s.url)) continue; lihat.add(s.url); u.push(s); }
   if (!u.length) return "";
   return tabel([["pf.c.sumber"], ["pf.c.jenis"], ["pf.c.bukti"], ["pf.c.tanggal", "jm-tengah"]], u.slice(0, 40).map((s) => {
-    const a = urlAman(s.url) ? `<a class="pf-nm" href="${esc(s.url)}" target="_blank" rel="noopener noreferrer">${esc(String(s.url).replace(/^https?:\/\/(www\.)?/, "").slice(0, 70))}</a>` : esc(s.url);
-    return `<tr>${td("pf.c.sumber", a)}${td("pf.c.jenis", esc(s.jenis || "-"))}${td("pf.c.bukti", esc(s.tingkat_bukti || "-"))}${td("pf.c.tanggal", tglSel(s.tanggal), "jm-tengah")}</tr>`;
+    const judul = s.judul || judulPerUrl.get(s.url), nm = esc(namaPenerbit(s));
+    const a = `<span class="jm-id"><b>${urlAman(s.url) ? `<a class="pf-nm" href="${esc(s.url)}" target="_blank" rel="noopener noreferrer">${nm}</a>` : nm}</b>${judul ? `<small>${esc(judul)}</small>` : ""}</span>`;
+    const pil = (v) => (v ? `<span class="jm-pil">${esc(v)}</span>` : "-");
+    return `<tr>${td("pf.c.sumber", a)}${td("pf.c.jenis", pil(s.jenis))}${td("pf.c.bukti", pil(s.tingkat_bukti))}${td("pf.c.tanggal", tglSel(s.tanggal), "jm-tengah")}</tr>`;
   }).join(""), "pf-tabel-sumber");
 }
+
+const IMG = (f) => `/img/beranda/${f}.webp`;
+const IMG_PROG = { "plts-100gw": IMG("surya-cirata"), wte: IMG("sampah-psel"), b50: IMG("bioenergi-sawit"), e20: IMG("bioetanol-tebu"), ruptl: IMG("hidro-saguling"), psn: IMG("panas-bumi-sibayak"), jetp: IMG("bayu-sidrap") };
+/** Kartu program: foto, ikon, nama, ringkas, tautan ke /proyek#program-<id>; stat opsional (teks). */
+export const kartuProgram = (daftar) => (daftar.length ? `<ul class="pf-prog">${daftar.map(({ g, stat }) => `<li><a href="/proyek#program-${esc(g.id)}"><span class="pf-prog-foto">${IMG_PROG[g.id] ? `<img src="${IMG_PROG[g.id]}" alt="" loading="lazy" decoding="async">` : ""}</span><span class="pf-prog-t"><b>${ikon("regulasi", 18)}<span>${esc(g.nama)}</span></b><span>${esc(g.ringkas || "")}</span>${stat ? `<em>${esc(stat)}</em>` : ""}<span class="pf-prog-lihat">${esc(t("pf.lihat_program"))}${ikon("panah-kanan", 16)}</span></span></a></li>`).join("")}</ul>` : "");
 
 export function galatHtml(kunci) { return `<div class="jm-kosong">${ikon("info", 32)}<p>${esc(t(kunci))}</p><a class="jm-tbl" href="/">${esc(t("pf.ke_beranda"))}</a></div>`; }
 export function pasangLogoCadangan(akar) {
   akar.querySelectorAll("img.pf-logo").forEach((im) => im.addEventListener("error", () => { const s = document.createElement("span"); s.className = "pf-av"; s.textContent = im.dataset.ini || "?"; im.replaceWith(s); }, { once: true }));
+  akar.querySelectorAll("img.pf-foto").forEach((im) => im.addEventListener("error", () => im.remove(), { once: true }));
 }

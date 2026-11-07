@@ -1,0 +1,670 @@
+{
+ "sumber": "Perpres 22/2017 (RUEN) Lampiran I",
+ "tahun_data": 2015,
+ "satuan": "MW",
+ "catatan": "Transkripsi dari pdftotext Lampiran I; nama provinsi mengikuti RUEN (34 provinsi, sebelum pemekaran Papua). Baris dengan koma = kelompok wilayah.",
+ "tabel": {
+  "surya": {
+   "tabel": "Tabel 44",
+   "hlm": 77,
+   "total": 207898,
+   "baris": [
+    {
+     "nama": "Kalimantan Barat",
+     "nilai": 20113
+    },
+    {
+     "nama": "Sumatera Selatan",
+     "nilai": 17233
+    },
+    {
+     "nama": "Kalimantan Timur",
+     "nilai": 13479
+    },
+    {
+     "nama": "Sumatera Utara",
+     "nilai": 11851
+    },
+    {
+     "nama": "Jawa Timur",
+     "nilai": 10335
+    },
+    {
+     "nama": "Nusa Tenggara Barat",
+     "nilai": 9931
+    },
+    {
+     "nama": "Jawa Barat",
+     "nilai": 9099
+    },
+    {
+     "nama": "Jambi",
+     "nilai": 8847
+    },
+    {
+     "nama": "Jawa Tengah",
+     "nilai": 8753
+    },
+    {
+     "nama": "Kalimantan Tengah",
+     "nilai": 8459
+    },
+    {
+     "nama": "Aceh",
+     "nilai": 7881
+    },
+    {
+     "nama": "Kepulauan Riau",
+     "nilai": 7763
+    },
+    {
+     "nama": "Sulawesi Selatan",
+     "nilai": 7588
+    },
+    {
+     "nama": "Nusa Tenggara Timur",
+     "nilai": 7272
+    },
+    {
+     "nama": "Papua Barat",
+     "nilai": 6307
+    },
+    {
+     "nama": "Sulawesi Tengah",
+     "nilai": 6187
+    },
+    {
+     "nama": "Kalimantan Selatan",
+     "nilai": 6031
+    },
+    {
+     "nama": "Sumatera Barat",
+     "nilai": 5898
+    },
+    {
+     "nama": "Kalimantan Utara",
+     "nilai": 4643
+    },
+    {
+     "nama": "Sulawesi Tenggara",
+     "nilai": 3917
+    },
+    {
+     "nama": "Bengkulu",
+     "nilai": 3475
+    },
+    {
+     "nama": "Maluku Utara",
+     "nilai": 3036
+    },
+    {
+     "nama": "Bangka Belitung",
+     "nilai": 2810
+    },
+    {
+     "nama": "Banten",
+     "nilai": 2461
+    },
+    {
+     "nama": "Lampung",
+     "nilai": 2238
+    },
+    {
+     "nama": "Sulawesi Utara",
+     "nilai": 2113
+    },
+    {
+     "nama": "Papua",
+     "nilai": 2035
+    },
+    {
+     "nama": "Maluku",
+     "nilai": 2020
+    },
+    {
+     "nama": "Sulawesi Barat",
+     "nilai": 1677
+    },
+    {
+     "nama": "Bali",
+     "nilai": 1254
+    },
+    {
+     "nama": "Gorontalo",
+     "nilai": 1218
+    },
+    {
+     "nama": "DI Yogyakarta",
+     "nilai": 996
+    },
+    {
+     "nama": "Riau",
+     "nilai": 753
+    },
+    {
+     "nama": "DKI Jakarta",
+     "nilai": 225
+    }
+   ]
+  },
+  "bayu": {
+   "tabel": "Tabel 46",
+   "hlm": 80,
+   "total": 60647,
+   "baris": [
+    {
+     "nama": "Nusa Tenggara Timur",
+     "nilai": 10188
+    },
+    {
+     "nama": "Jawa Timur",
+     "nilai": 7907
+    },
+    {
+     "nama": "Jawa Barat",
+     "nilai": 7036
+    },
+    {
+     "nama": "Jawa Tengah",
+     "nilai": 5213
+    },
+    {
+     "nama": "Sulawesi Selatan",
+     "nilai": 4193
+    },
+    {
+     "nama": "Maluku",
+     "nilai": 3188
+    },
+    {
+     "nama": "Nusa Tenggara Barat",
+     "nilai": 2605
+    },
+    {
+     "nama": "Bangka Belitung",
+     "nilai": 1787
+    },
+    {
+     "nama": "Banten",
+     "nilai": 1753
+    },
+    {
+     "nama": "Bengkulu",
+     "nilai": 1513
+    },
+    {
+     "nama": "Sulawesi Tenggara",
+     "nilai": 1414
+    },
+    {
+     "nama": "Papua",
+     "nilai": 1411
+    },
+    {
+     "nama": "Sulawesi Utara",
+     "nilai": 1214
+    },
+    {
+     "nama": "Lampung",
+     "nilai": 1137
+    },
+    {
+     "nama": "DI Yogyakarta",
+     "nilai": 1079
+    },
+    {
+     "nama": "Bali",
+     "nilai": 1019
+    },
+    {
+     "nama": "Kalimantan Selatan",
+     "nilai": 1006
+    },
+    {
+     "nama": "Kepulauan Riau",
+     "nilai": 922
+    },
+    {
+     "nama": "Sulawesi Tengah",
+     "nilai": 908
+    },
+    {
+     "nama": "Aceh",
+     "nilai": 894
+    },
+    {
+     "nama": "Kalimantan Tengah",
+     "nilai": 681
+    },
+    {
+     "nama": "Kalimantan Barat",
+     "nilai": 554
+    },
+    {
+     "nama": "Sulawesi Barat",
+     "nilai": 514
+    },
+    {
+     "nama": "Maluku Utara",
+     "nilai": 504
+    },
+    {
+     "nama": "Papua Barat",
+     "nilai": 437
+    },
+    {
+     "nama": "Sumatera Barat",
+     "nilai": 428
+    },
+    {
+     "nama": "Sumatera Utara",
+     "nilai": 356
+    },
+    {
+     "nama": "Sumatera Selatan",
+     "nilai": 301
+    },
+    {
+     "nama": "Kalimantan Timur",
+     "nilai": 212
+    },
+    {
+     "nama": "Gorontalo",
+     "nilai": 137
+    },
+    {
+     "nama": "Kalimantan Utara",
+     "nilai": 73
+    },
+    {
+     "nama": "Jambi",
+     "nilai": 37
+    },
+    {
+     "nama": "Riau",
+     "nilai": 22
+    },
+    {
+     "nama": "DKI Jakarta",
+     "nilai": 4
+    }
+   ]
+  },
+  "mikrohidro": {
+   "tabel": "Tabel 40 (minihidro + mikrohidro)",
+   "hlm": 72,
+   "total": 19385,
+   "baris": [
+    {
+     "nama": "Kalimantan Timur",
+     "nilai": 3562
+    },
+    {
+     "nama": "Kalimantan Tengah",
+     "nilai": 3313
+    },
+    {
+     "nama": "Aceh",
+     "nilai": 1538
+    },
+    {
+     "nama": "Sumatera Barat",
+     "nilai": 1353
+    },
+    {
+     "nama": "Sumatera Utara",
+     "nilai": 1204
+    },
+    {
+     "nama": "Jawa Timur",
+     "nilai": 1142
+    },
+    {
+     "nama": "Jawa Tengah",
+     "nilai": 1044
+    },
+    {
+     "nama": "Kalimantan Utara",
+     "nilai": 943
+    },
+    {
+     "nama": "Sulawesi Selatan",
+     "nilai": 762
+    },
+    {
+     "nama": "Jawa Barat",
+     "nilai": 647
+    },
+    {
+     "nama": "Papua",
+     "nilai": 615
+    },
+    {
+     "nama": "Sumatera Selatan",
+     "nilai": 448
+    },
+    {
+     "nama": "Jambi",
+     "nilai": 447
+    },
+    {
+     "nama": "Sulawesi Tengah",
+     "nilai": 370
+    },
+    {
+     "nama": "Lampung",
+     "nilai": 352
+    },
+    {
+     "nama": "Sulawesi Tenggara",
+     "nilai": 301
+    },
+    {
+     "nama": "Riau",
+     "nilai": 284
+    },
+    {
+     "nama": "Maluku",
+     "nilai": 190
+    },
+    {
+     "nama": "Kalimantan Selatan",
+     "nilai": 158
+    },
+    {
+     "nama": "Kalimantan Barat",
+     "nilai": 124
+    },
+    {
+     "nama": "Gorontalo",
+     "nilai": 117
+    },
+    {
+     "nama": "Sulawesi Utara",
+     "nilai": 111
+    },
+    {
+     "nama": "Bengkulu",
+     "nilai": 108
+    },
+    {
+     "nama": "Nusa Tenggara Timur",
+     "nilai": 95
+    },
+    {
+     "nama": "Banten",
+     "nilai": 72
+    },
+    {
+     "nama": "Nusa Tenggara Barat",
+     "nilai": 31
+    },
+    {
+     "nama": "Maluku Utara",
+     "nilai": 24
+    },
+    {
+     "nama": "Bali",
+     "nilai": 15
+    },
+    {
+     "nama": "Sulawesi Barat",
+     "nilai": 7
+    },
+    {
+     "nama": "DI Yogyakarta",
+     "nilai": 5
+    },
+    {
+     "nama": "Papua Barat",
+     "nilai": 3
+    }
+   ]
+  },
+  "bioenergi": {
+   "tabel": "Tabel 42 (biomassa/biofuel + biogas)",
+   "hlm": 74,
+   "total": 32653.8,
+   "baris": [
+    {
+     "nama": "Riau",
+     "nilai": 4195.1
+    },
+    {
+     "nama": "Jawa Timur",
+     "nilai": 3420.9
+    },
+    {
+     "nama": "Sumatera Utara",
+     "nilai": 2911.6
+    },
+    {
+     "nama": "Jawa Barat",
+     "nilai": 2554.1
+    },
+    {
+     "nama": "Jawa Tengah",
+     "nilai": 2232.5
+    },
+    {
+     "nama": "Sumatera Selatan",
+     "nilai": 2132.6
+    },
+    {
+     "nama": "Jambi",
+     "nilai": 1839.9
+    },
+    {
+     "nama": "Kalimantan Tengah",
+     "nilai": 1498.9
+    },
+    {
+     "nama": "Lampung",
+     "nilai": 1492.1
+    },
+    {
+     "nama": "Kalimantan Barat",
+     "nilai": 1308.2
+    },
+    {
+     "nama": "Kalimantan Selatan",
+     "nilai": 1289.9
+    },
+    {
+     "nama": "Aceh",
+     "nilai": 1174.3
+    },
+    {
+     "nama": "Kalimantan Timur/Utara",
+     "nilai": 964.3
+    },
+    {
+     "nama": "Sulawesi Selatan",
+     "nilai": 959.4
+    },
+    {
+     "nama": "Sumatera Barat",
+     "nilai": 957.8
+    },
+    {
+     "nama": "Bengkulu",
+     "nilai": 644.8
+    },
+    {
+     "nama": "Banten",
+     "nilai": 465.1
+    },
+    {
+     "nama": "Nusa Tenggara Barat",
+     "nilai": 394.1
+    },
+    {
+     "nama": "Sulawesi Tengah",
+     "nilai": 326.9
+    },
+    {
+     "nama": "Nusa Tenggara Timur",
+     "nilai": 240.5
+    },
+    {
+     "nama": "DI Yogyakarta",
+     "nilai": 224.2
+    },
+    {
+     "nama": "Bangka Belitung",
+     "nilai": 223.1
+    },
+    {
+     "nama": "Sulawesi Barat",
+     "nilai": 205.9
+    },
+    {
+     "nama": "Bali",
+     "nilai": 191.6
+    },
+    {
+     "nama": "Sulawesi Utara",
+     "nilai": 164
+    },
+    {
+     "nama": "Sulawesi Tenggara",
+     "nilai": 150.5
+    },
+    {
+     "nama": "Gorontalo",
+     "nilai": 130.6
+    },
+    {
+     "nama": "DKI Jakarta",
+     "nilai": 126.6
+    },
+    {
+     "nama": "Papua",
+     "nilai": 96.5
+    },
+    {
+     "nama": "Papua Barat",
+     "nilai": 54.9
+    },
+    {
+     "nama": "Maluku Utara",
+     "nilai": 34.5
+    },
+    {
+     "nama": "Maluku",
+     "nilai": 32.6
+    },
+    {
+     "nama": "Kepulauan Riau",
+     "nilai": 15.9
+    }
+   ]
+  },
+  "hidro": {
+   "tabel": "Tabel 37 (PLTA per wilayah)",
+   "hlm": 69,
+   "total": 75091,
+   "baris": [
+    {
+     "nama": "Papua",
+     "nilai": 22371
+    },
+    {
+     "nama": "Kalimantan Selatan,Kalimantan Tengah,Kalimantan Timur",
+     "nilai": 16844
+    },
+    {
+     "nama": "Sulawesi Selatan,Sulawesi Tenggara",
+     "nilai": 6340
+    },
+    {
+     "nama": "Aceh",
+     "nilai": 5062
+    },
+    {
+     "nama": "Kalimantan Barat",
+     "nilai": 4737
+    },
+    {
+     "nama": "Sulawesi Utara,Sulawesi Tengah",
+     "nilai": 3967
+    },
+    {
+     "nama": "Sumatera Utara",
+     "nilai": 3808
+    },
+    {
+     "nama": "Sumatera Barat,Riau",
+     "nilai": 3607
+    },
+    {
+     "nama": "Sumatera Selatan,Bengkulu,Jambi,Lampung",
+     "nilai": 3102
+    },
+    {
+     "nama": "Jawa Barat",
+     "nilai": 2861
+    },
+    {
+     "nama": "Jawa Tengah",
+     "nilai": 813
+    },
+    {
+     "nama": "Bali,Nusa Tenggara Barat,Nusa Tenggara Timur",
+     "nilai": 624
+    },
+    {
+     "nama": "Jawa Timur",
+     "nilai": 525
+    },
+    {
+     "nama": "Maluku",
+     "nilai": 430
+    }
+   ]
+  },
+  "laut": {
+   "tabel": "Tabel 48 (praktis; teknis dan teoritis ikut)",
+   "hlm": 82,
+   "total": 17989,
+   "baris": [
+    {
+     "nama": "Nusa Tenggara Barat",
+     "nilai": 8644,
+     "teknis": 34577,
+     "teoritis": 138308
+    },
+    {
+     "nama": "Kepulauan Riau",
+     "nilai": 6027,
+     "teknis": 24108,
+     "teoritis": 96432
+    },
+    {
+     "nama": "Jawa Barat,Lampung",
+     "nilai": 2273,
+     "teknis": 9092,
+     "teoritis": 36367
+    },
+    {
+     "nama": "Papua Barat",
+     "nilai": 391,
+     "teknis": 1565,
+     "teoritis": 6261
+    },
+    {
+     "nama": "Nusa Tenggara Timur",
+     "nilai": 333,
+     "teknis": 1334,
+     "teoritis": 5335
+    },
+    {
+     "nama": "Bali",
+     "nilai": 320,
+     "teknis": 1280,
+     "teoritis": 5119
+    }
+   ]
+  }
+ }
+}

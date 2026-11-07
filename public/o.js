@@ -1,7 +1,7 @@
 /* /o/<id>: profil publik organisasi dari /data/organisasi.json (lapis publik) + proyek, program, regulasi, berita, orang. */
 import { mulaiHalaman } from "/inti/kepala.js";
 import { hantuHtml } from "/inti/umum.js";
-import { t, angka, esc, ikon, muat, norm, urlAman, hlHtml, pilTek, idJalur, provHtml, lambang, inisial, barisProyek, kapTeks, kepalaHtml, metaItem, statHtml, seksi, tabel, td, tabelProyek, tabelBerita, tabelRegulasi, tabelSumber, petaTitik, galatHtml, pasangLogoCadangan, ringkasTgl } from "/profil.js";
+import { t, angka, esc, ikon, muat, norm, urlAman, hlHtml, pilTek, idJalur, provHtml, lambang, inisial, barisProyek, kapTeks, kepalaHtml, metaItem, statHtml, seksi, tabel, td, tabelProyek, tabelBerita, tabelRegulasi, tabelSumber, kartuProgram, petaTitik, galatHtml, pasangLogoCadangan, ringkasTgl } from "/profil.js";
 
 const akar = document.getElementById("profil");
 const MAKS_REL = 60;
@@ -35,8 +35,7 @@ function tabelProgram(prog, rows) {
   const ag = new Map();
   for (const r of rows) for (const g of r.program) { const a = ag.get(g) || { n: 0, kap: 0 }; a.n++; a.kap += r.kap ?? 0; ag.set(g, a); }
   const daftar = prog.filter((g) => ag.has(g.id));
-  if (!daftar.length) return { html: "", n: 0 };
-  return { n: daftar.length, html: tabel([["pf.c.program"], ["pf.c.proyek", "jm-num"], ["pf.c.kap", "jm-num"]], daftar.map((g) => `<tr>${td("pf.c.program", `<span class="jm-id"><b><a class="pf-nm" href="/proyek#program-${esc(g.id)}">${esc(g.nama)}</a></b><small>${esc(g.ringkas || "")}</small></span>`)}${td("pf.c.proyek", `<span data-urut="${ag.get(g.id).n}">${esc(angka(ag.get(g.id).n))}</span>`, "jm-num")}${td("pf.c.kap", `<span data-urut="${ag.get(g.id).kap}">${ag.get(g.id).kap ? esc(angka(ag.get(g.id).kap) + " MW") : "-"}</span>`, "jm-num")}</tr>`).join(""), "pf-tabel-prog") };
+  return { n: daftar.length, html: kartuProgram(daftar.map((g) => ({ g, stat: [t("pf.prog.proyek", { n: angka(ag.get(g.id).n) }), ag.get(g.id).kap ? angka(ag.get(g.id).kap) + " MW" : ""].filter(Boolean).join(", ") }))) };
 }
 
 function tabelPengurus(daftar) {
@@ -47,9 +46,9 @@ function tabelPengurus(daftar) {
 async function mulai() {
   akar.innerHTML = hantuHtml(6);
   const id = idJalur();
-  let org, proyek, prog, reg, ber, orang, mitra;
+  let org, proyek, prog, reg, ber, orang, mitra, foto;
   try {
-    [org, proyek, prog, reg, ber, orang, mitra] = await Promise.all(["organisasi", "proyek", "program", "regulasi", "berita", "orang", "mitra-meti"].map(muat));
+    [org, proyek, prog, reg, ber, orang, mitra, foto] = await Promise.all(["organisasi", "proyek", "program", "regulasi", "berita", "orang", "mitra-meti"].map(muat).concat(muat("berita_foto").catch(() => ({}))));
   } catch { akar.innerHTML = galatHtml("pf.galat"); return; }
   const o = org.baris.find((x) => x.id === id);
   if (!o) { akar.innerHTML = galatHtml("pf.o.tak"); return; }
@@ -97,12 +96,12 @@ async function mulai() {
 
   akar.innerHTML = kepalaHtml({ avatar: avatar(o), nama: o.nama, pil, meta, balik: ["/", t("pf.ke_beranda")] })
     + `<div class="pf-bagian">${ringkasan}${proyekSek}`
-    + seksi({ id: "program", ik: "regulasi", topik: t("pf.ey.program"), judulHtml: hlHtml("pf.j.program", angka(progT.n)), isiHtml: progT.html, csv: true, sumber: sumberRingkas })
+    + seksi({ id: "program", ik: "regulasi", topik: t("pf.ey.program"), judulHtml: hlHtml("pf.j.program", angka(progT.n)), isiHtml: progT.html, csv: false, sumber: sumberRingkas })
     + seksi({ id: "regulasi", ik: "regulasi", topik: t("pf.ey.regulasi"), judulHtml: hlHtml("pf.j.regulasi", angka(regs.length)), isiHtml: tabelRegulasi(regs), csv: true, sumber: esc(t("pf.sumber_data", { tanggal: ringkasTgl(reg.dibangun_pada) })) })
-    + seksi({ id: "berita", ik: "berita", topik: t("pf.ey.berita"), judulHtml: hlHtml("pf.j.berita", angka(beritas.length)), isiHtml: tabelBerita(beritas), csv: true, sumber: esc(t("pf.sumber_data", { tanggal: ringkasTgl(ber.dibangun_pada) })) })
+    + seksi({ id: "berita", ik: "berita", topik: t("pf.ey.berita"), judulHtml: hlHtml("pf.j.berita", angka(beritas.length)), isiHtml: tabelBerita(beritas, foto), csv: false, sumber: esc(t("pf.sumber_data", { tanggal: ringkasTgl(ber.dibangun_pada) })) })
     + seksi({ id: "pengurus", ik: "orang", topik: t("pf.ey.pengurus"), judulHtml: hlHtml("pf.j.pengurus", angka(pengurus.length)), isiHtml: tabelPengurus(pengurus), csv: true, sumber: esc(t("pf.sumber_data", { tanggal: ringkasTgl(orang.dibangun_pada) })) })
     + seksi({ id: "relasi", ik: "direktori", topik: t("pf.ey.relasi"), judulHtml: esc(t("pf.j.relasi")), isiHtml: tabelRelasi(rel), csv: true, sumber: sumberRingkas })
-    + seksi({ id: "sumber", ik: "tautan", topik: t("pf.ey.sumber"), judulHtml: esc(t("pf.j.sumber")), isiHtml: tabelSumber(o.sumber), csv: true, sumber: sumberRingkas })
+    + seksi({ id: "sumber", ik: "tautan", topik: t("pf.ey.sumber"), judulHtml: esc(t("pf.j.sumber")), isiHtml: tabelSumber(o.sumber, new Map(ber.baris.map((b) => [b.url, b.judul]))), csv: true, sumber: sumberRingkas })
     + `</div>`;
   pasangLogoCadangan(akar);
   petaTitik(document.getElementById("pfPeta"), rows);

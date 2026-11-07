@@ -112,22 +112,32 @@ const metaHtml = (r) => `<p class="brt-meta">${esc(r.media)}, ${esc(tanggal(r.te
 const pil = (r) => (r.kepakaran?.[0] ? `<span class="brt-pil">${esc(tek(r.kepakaran[0]))}</span>` : "");
 const tagHtml = (r, n = 2) => (r.kepakaran || []).slice(0, n).map((k) => `<button type="button" class="brt-tek" data-topik="${esc(k)}">${esc(tek(k))}</button>`).join("");
 const orgHtml = (r) => (r.organisasi_ids || []).filter((id) => ORG.has(id)).slice(0, 2).map((id) => `<a class="brt-org" href="/o/${esc(id)}">${esc(ORG.get(id))}</a>`).join("");
-const kartu = (r) => `<li class="brt-kartu-b">${tautan(r, sampul(r, "brt-s169", 400, 225, true) + `<span class="brt-cb"><span class="brt-judul">${esc(r.judul)}</span>${metaHtml(r)}</span>`, "brt-card")}</li>`;
-const kecil = (r) => `<li class="brt-kartu-b">${tautan(r, sampul(r, "brt-s32", 96, 64) + `<span class="brt-cb"><span class="brt-judul">${esc(r.judul)}</span>${metaHtml(r)}</span>`, "brt-card brt-card-h")}</li>`;
-const BAGIAN = [["surya", ["surya"]], ["panas", ["panas-bumi"]], ["bio", ["bioenergi", "biomassa-sampah"]], ["kebijakan", ["kebijakan", "pembiayaan", "transisi-adil"]]];
-const dalamBagian = (ks) => B.filter((r) => umur(r.terbit) <= 90 && (r.kepakaran || []).some((k) => ks.includes(k)));
-const urutFoto = (xs) => [...xs.filter(FOTO_URL), ...xs.filter((r) => !FOTO_URL(r))];
-const kepalaBagian = (kunci, p, lihat) => `<header class="brt-sh"><h2>${esc(t("brt.sek." + kunci))}</h2>${p ? `<p class="brt-sub">${esc(p)}</p>` : ""}${lihat || ""}</header>`;
+const BAGIAN = [["surya", ["surya"], "tek-surya"], ["panas", ["panas-bumi"], "tek-panas"], ["bio", ["bioenergi", "biomassa-sampah"], "tek-bio"], ["kebijakan", ["kebijakan", "pembiayaan", "transisi-adil"], "regulasi"]];
+const utama = (r) => (r.kepakaran || [])[0];
+/** Berita milik satu bagian menurut teknologi UTAMA saja (kepakaran pertama), 90 hari terakhir. */
+const dalamBagian = (ks) => B.filter((r) => umur(r.terbit) <= 90 && ks.includes(utama(r)));
+const KANAL_TV = /^video\b|\btv\b|cnbc|cnn/i;
+/** Pilihan cerita utama: foto bukan tangkapan layar video dahulu, lalu foto lain, lalu tanpa foto. */
+const urutFoto = (xs) => [...xs.filter((r) => FOTO_URL(r) && !KANAL_TV.test(r.judul) && !KANAL_TV.test(r.media)), ...xs.filter((r) => FOTO_URL(r) && (KANAL_TV.test(r.judul) || KANAL_TV.test(r.media))), ...xs.filter((r) => !FOTO_URL(r))];
+const chipMedia = (r) => `<span class="brt-meta brt-meta-m"><span class="brt-lg" aria-hidden="true">${esc(inisialMedia(r.media))}</span><span>${esc(r.media)}, ${esc(tanggal(r.terbit.slice(0, 10)))}</span></span>`;
+const barisMini = (r) => `<li class="brt-br">${tautan(r, sampul(r, "brt-sm", 120, 80), "brt-gbr")}<div class="brt-brt">${tautan(r, esc(r.judul), "brt-judul")}${chipMedia(r)}</div></li>`;
+/** Blok majalah: satu cerita utama besar + 4 baris ringkas; pil teknologi hanya di cerita utama dan hanya bila beda dari bagiannya. */
+function majalah(xs, ks, balik) {
+  const u = urutFoto(xs.slice(0, 24)), [lead, ...sisa] = u, pilLead = !ks || !(ks.length === 1 && ks[0] === utama(lead));
+  if (!lead) return "";
+  return `<div class="brt-mag${balik ? " brt-mag-b" : ""}"><article class="brt-lead-k">${tautan(lead, sampul(lead, "brt-s169", 800, 450), "brt-gbr")}
+    <div class="brt-isi">${tautan(lead, esc(lead.judul), "brt-judul brt-judul-b")}${chipMedia(lead)}<div class="brt-label">${pilLead ? tagHtml(lead, 1) : ""}${orgHtml(lead)}</div></div></article>
+    <ul class="brt-rows">${sisa.slice(0, 4).map(barisMini).join("")}</ul></div>`;
+}
 function gambarBagian() {
-  const el = document.getElementById("bagian"), terbaru = B.filter((r) => umur(r.terbit) <= 90);
-  const sor = urutFoto(B.slice(0, 40)).slice(0, 5), [lead, ...sisi] = sor;
-  let html = `<section class="brt-bagian"><div class="jm-wadah">${kepalaBagian("sorotan", "")}
-    <div class="brt-sorot"><article class="brt-lead-k">${tautan(lead, sampul(lead, "brt-s169", 800, 450, true) + `<span class="brt-cb"><span class="brt-judul brt-judul-b">${esc(lead.judul)}</span>${metaHtml(lead)}</span>`, "brt-card")}</article>
-    <ul class="brt-sisi">${sisi.map(kecil).join("")}</ul></div></div></section>`;
-  BAGIAN.forEach(([kunci, ks], i) => {
-    const xs = dalamBagian(ks); if (!xs.length) return;
-    const lihat = `<button type="button" class="brt-semua" data-lihat="${esc(ks.join(","))}">${esc(t("brt.lihat", { n: angka(xs.length) }))} &rarr;</button>`;
-    html += `<section class="brt-bagian"><div class="jm-wadah">${kepalaBagian(kunci, t("brt.sek.p", { n: angka(xs.length) }), lihat)}<ul class="brt-grid-k">${urutFoto(xs.slice(0, 16)).slice(0, 4).map(kartu).join("")}</ul></div></section>`;
+  const el = document.getElementById("bagian"), sumber = sumberHtml(`${esc(t("brt.sumber"))} ${esc(tanggal(DIBANGUN))}.`);
+  const blok = (id, ik, topik, judulHtml, lihat, isi, i) => `<section class="brt-bagian"><div class="jm-wadah">${exHtml({ id, ikon: ik, topik, tingkat: "h2", judulHtml, isiHtml: isi, aksiHtml: lihat + aksiHtml({ csv: false }) + sumber })}</div></section>`;
+  let html = blok("ex-sorotan", "berita", t("brt.sek.sorotan"), esc(t("brt.sek.sorotan.p")), "", majalah(B.filter((r) => umur(r.terbit) <= 30), null, false), 0);
+  BAGIAN.forEach(([kunci, ks, ik], i) => {
+    const xs = dalamBagian(ks); if (xs.length < 2) return;
+    const semua = B.filter((r) => (r.kepakaran || []).some((k) => ks.includes(k))).length;
+    const lihat = `<button type="button" class="brt-semua" data-lihat="${esc(ks.join(","))}">${esc(t("brt.lihat", { n: angka(semua) }))} &rarr;</button>`;
+    html += blok("ex-" + kunci, ik, t("brt.sek." + kunci), hlHtml("brt.sek.j", angka(xs.length), { tek: t("brt.sek." + kunci).toLowerCase() }), lihat, majalah(xs, ks, i % 2 === 0), i + 1);
   });
   el.innerHTML = html;
 }

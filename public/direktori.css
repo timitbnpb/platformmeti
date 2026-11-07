@@ -2454,10 +2454,9 @@ button.ak-pnl{cursor:pointer}button.ak-pnl:hover{border-color:var(--brand2)}
 .ak-wlcetak{margin-right:8px;vertical-align:middle}
 .ak-ks-ws{margin:10px 0 0;padding-left:18px;font-size:13px}.ak-ks-ws li{margin:2px 0}
 /* kotak cari peta di kiri pemilih kategori (pojok kanan atas kanvas) */
-.ak-ptaisi>#akPtCari{position:absolute;top:12px;right:364px;width:300px;z-index:9}
+.ak-ptaisi>#akPtCari{position:absolute;top:12px;left:372px;right:56px;width:auto;z-index:9}
 .ak-ptaisi>#akPtCari input{background:color-mix(in srgb,var(--card) 94%,transparent);box-shadow:var(--shadow)}
-@media (max-width:1100px){.ak-ptaisi>#akPtCari{width:220px}}
-@media (max-width:700px){.ak-ptaisi>#akPtCari{top:62px;right:12px;width:calc(100vw - 24px)}}
+@media (max-width:700px){.ak-ptaisi>#akPtCari{top:12px;left:12px;right:12px}}
 /* Fakta: isian berchip banyak (Sektor terkait, Afiliasi) memakai satu baris penuh, tidak menumpuk di kolom 210px */
 .ak-in-f:has(> div > :nth-child(4)){grid-column:1/-1}
 .ak-ks-uji{margin:4px 0 10px;font-size:12.5px;line-height:1.5;color:var(--ink2);text-align:justify}
@@ -2649,19 +2648,23 @@ button.ak-r[data-kh][aria-pressed="true"]{border-color:var(--w0,var(--brand2));b
 @media (max-width:767px){.ak-kepala-nav>.ak-seg.ak-subtab,.ak-kepala-nav>.ak-seg.ak-kelompok{grid-auto-flow:row;grid-template-columns:repeat(2,minmax(0,1fr))}}
 
 /* peta: kisi chip melayang di dalam kanvas, kolom sama lebar */
-.ak-ptaisi > .ak-kchips{position:absolute;z-index:8;top:60px;left:12px;right:56px;margin:0;grid-template-columns:repeat(8,minmax(0,1fr));gap:5px;pointer-events:none}
+.ak-ptaisi > .ak-kchips{position:absolute;z-index:8;top:60px;left:372px;right:56px;margin:0;display:flex;flex-wrap:wrap;gap:5px;pointer-events:none}
+.ak-ptaisi > .ak-kchips button{flex:1 1 auto}
 .ak-ptaisi > .ak-kchips button{pointer-events:auto;box-shadow:var(--shadow);background:color-mix(in srgb,var(--card) 94%,transparent);backdrop-filter:blur(8px)}
 .ak-kchips button small{background:var(--surface);border-radius:999px;padding:0 6px;font-size:10.5px;line-height:16px}
 .ak-kchips button[aria-pressed="true"] small{background:var(--brand);color:var(--on-brand)}
-@media (max-width:1100px){.ak-ptaisi > .ak-kchips{grid-template-columns:repeat(4,minmax(0,1fr))}}
-@media (max-width:600px){.ak-ptaisi > .ak-kchips{grid-template-columns:repeat(2,minmax(0,1fr));top:56px;right:12px}}
+@media (max-width:700px){.ak-ptaisi > .ak-kchips{left:12px;right:12px;top:58px;flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;padding:2px 0 6px;pointer-events:auto}.ak-ptaisi > .ak-kchips button{flex:0 0 auto}.ak-ptaisi > .ak-kchips::-webkit-scrollbar{display:none}
+#akv-lembaga.ak-lbpeta .ak-pta > .ak-side{top:auto;bottom:0;height:46%}#akv-lembaga.ak-lbpeta .ak-side-label{top:106px}}
 /* panel kiri: kotak lapisan kosong disembunyikan; daftar provinsi */
 .ak-ptlayer:not(:has(> button:not([hidden]))){display:none!important}
 .ak-sdp-l{display:grid;gap:2px}
 .ak-sdp{all:unset;box-sizing:border-box;display:grid;grid-template-columns:22px minmax(0,1fr) auto;align-items:center;gap:10px;padding:7px 8px;border-radius:10px;cursor:pointer}
 .ak-sdp:hover,.ak-sdp:focus-visible{background:var(--surface)}
-.ak-sdp-n{display:grid;gap:4px;min-width:0}.ak-sdp-n b{font-size:13px;font-weight:700;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
-.ak-sdp-bar,.ak-tw-bar{display:flex;height:5px;border-radius:99px;overflow:hidden;background:var(--line)}.ak-sdp-bar i,.ak-tw-bar i{display:block;height:100%}
+.ak-sdp-n{display:grid;gap:6px;min-width:0}.ak-sdp-n b{font-size:13px;font-weight:700;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.ak-tw-bar{display:flex;height:5px;border-radius:99px;overflow:hidden;background:var(--line)}.ak-tw-bar i{display:block;height:100%}
+.ak-sdp-k{display:flex;flex-wrap:wrap;gap:4px 6px;min-width:0}
+.ak-sdp-p{display:inline-flex;align-items:center;gap:5px;padding:2px 8px;border:1px solid var(--line);border-radius:999px;background:var(--card);font-size:11px;line-height:16px;color:var(--ink2);white-space:nowrap}
+.ak-sdp-p i{width:7px;height:7px;border-radius:50%;flex:none}.ak-sdp-p b{color:var(--ink);font-weight:700;font-variant-numeric:tabular-nums}
 .ak-sdp em{font-style:normal;font-weight:800;font-size:12.5px;font-variant-numeric:tabular-nums}
 .ak-sdp .ak-lw{width:22px;height:22px;object-fit:contain}
 /* kartu hover provinsi */

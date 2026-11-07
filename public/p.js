@@ -2,7 +2,7 @@
 import { ikonTek } from "/inti/ikon_tek.js";
 import { mulaiHalaman } from "/inti/kepala.js";
 import { hantuHtml } from "/inti/umum.js";
-import { t, angka, esc, ikon, muat, urlAman, label, hlHtml, pilTek, pilStatus, idJalur, provHtml, lambang, inisial, barisProyek, kapTeks, kepalaHtml, metaItem, statHtml, seksi, tabel, td, tabelBerita, tabelRegulasi, tabelSumber, petaTitik, galatHtml, ringkasTgl, tglSel, TAHUN } from "/profil.js";
+import { t, angka, esc, ikon, muat, urlAman, label, hlHtml, pilTek, pilStatus, idJalur, provHtml, lambang, inisial, barisProyek, kapTeks, kepalaHtml, metaItem, statHtml, seksi, tabel, td, tabelBerita, tabelRegulasi, tabelSumber, kartuProgram, petaTitik, galatHtml, ringkasTgl, tglSel, TAHUN } from "/profil.js";
 
 const akar = document.getElementById("profil");
 
@@ -12,29 +12,26 @@ function pihak(p, orgById) {
   return tabel([["pf.c.peran"], ["pf.c.organisasi"], ["pf.c.ket"]], baris.map((b) => `<tr>${td("pf.c.peran", `<span class="jm-pil">${esc(label("pf.peran.", b.peran))}</span>`)}${td("pf.c.organisasi", b.org ? `<b><a class="pf-nm" href="/o/${esc(b.org.id)}">${esc(b.org.nama)}</a></b>` : `<b>${esc(b.nama)}</b>`)}${td("pf.c.ket", esc(b.catatan || "-"))}</tr>`).join(""), "pf-tabel-pihak");
 }
 
-function programTabel(daftar) {
-  if (!daftar.length) return "";
-  return tabel([["pf.c.program"], ["pf.c.ringkas"]], daftar.map((g) => `<tr>${td("pf.c.program", `<b><a class="pf-nm" href="/proyek#program-${esc(g.id)}">${esc(g.nama)}</a></b>`)}${td("pf.c.ringkas", esc(g.ringkas || "-"))}</tr>`).join(""), "pf-tabel-prog");
-}
-
-/* Linimasa: tiap peristiwa bertahun; COD target dibandingkan dengan keadaan sekarang. Tanggal COD aktual belum ada di data. */
+/* Linimasa tahap mendatar: Rencana, Konstruksi, COD target, COD aktual. Hanya bila ada peristiwa bertanggal. */
 function linimasa(r) {
-  const p = r.p, ev = [];
-  const w = p.waktu || {};
-  if (w.persetujuan) ev.push([t("pf.l.persetujuan"), w.persetujuan, "-", "-"]);
-  if (w.penutupan) ev.push([t("pf.l.penutupan"), w.penutupan, "-", "-"]);
-  for (const c of p.cod_target || []) ev.push([t("pf.l.cod_target"), String(c.nilai), c.catatan || "-", "-"]);
+  const p = r.p, w = p.waktu || {}, cods = (p.cod_target || []).map((c) => c.nilai).filter(Number.isFinite);
+  if (!w.persetujuan && !w.penutupan && !cods.length) return "";
+  const urutSt = { rencana: 1, konstruksi: 2, beroperasi: 3 }, n = urutSt[r.st] || 0;
   const telat = r.cod !== null && r.cod < TAHUN && r.st !== "beroperasi" ? TAHUN - r.cod : 0;
-  if (r.cod !== null || r.st) ev.push([t("pf.l.aktual"), "", r.st === "beroperasi" ? t("pf.l.aktual_tak") : (r.cod === null ? t("pf.l.tanpa_target") : telat ? t("pf.l.telat", { n: angka(telat) }) : t("pf.l.belum")), r.st]);
-  if (!ev.length) return "";
-  return tabel([["pf.c.peristiwa"], ["pf.c.waktu", "jm-tengah"], ["pf.c.ket"], ["pf.c.status"]], ev.map(([a, wk, ket, st]) => `<tr>${td("pf.c.peristiwa", `<b>${esc(a)}</b>`)}${td("pf.c.waktu", /^\d{4}-\d{2}-\d{2}/.test(wk) ? tglSel(wk) : esc(wk || "-"), "jm-tengah")}${td("pf.c.ket", esc(ket))}${td("pf.c.status", st === "-" ? "-" : pilStatus(st))}</tr>`).join(""), "pf-tabel-lini");
+  const tahap = [
+    ["rencana", "rencana", w.persetujuan ? ringkasTgl(w.persetujuan) : "-", t("pf.t.persetujuan"), n >= 1],
+    ["konstruksi", "konstruksi", w.penutupan ? ringkasTgl(w.penutupan) : "-", t("pf.t.penutupan"), n >= 2],
+    ["cod", "pendanaan", cods.length ? [...new Set(cods)].sort().join(", ") : "-", telat ? t("pf.l.telat", { n: angka(telat) }) : t("pf.t.cod_target"), false],
+    ["aktual", "beroperasi", r.st === "beroperasi" ? t("pf.t.beroperasi") : "-", r.st === "beroperasi" ? t("pf.l.aktual_tak") : t("pf.t.cod_aktual"), n >= 3],
+  ];
+  return `<ol class="pf-tahap">${tahap.map(([k, ik, nilai, ket, selesai], i) => `<li class="${selesai ? "selesai" : ""}${k === "cod" && telat ? " telat" : ""}"><span class="pf-tahap-ik">${ikon(k === "cod" ? "kalender" : k === "aktual" ? "centang" : k === "rencana" ? "daftar" : "proyek", 20)}</span><b>${esc(t("pf.t." + (k === "cod" ? "cod_target" : k === "aktual" ? "cod_aktual" : k)))}</b><span class="pf-tahap-v">${esc(nilai)}</span><small>${esc(ket)}</small></li>`).join("")}</ol>`;
 }
 
 async function mulai() {
   akar.innerHTML = hantuHtml(6);
   const id = idJalur();
-  let proyek, org, prog, reg, ber;
-  try { [proyek, org, prog, reg, ber] = await Promise.all(["proyek", "organisasi", "program", "regulasi", "berita"].map(muat)); } catch { akar.innerHTML = galatHtml("pf.galat"); return; }
+  let proyek, org, prog, reg, ber, foto;
+  try { [proyek, org, prog, reg, ber, foto] = await Promise.all(["proyek", "organisasi", "program", "regulasi", "berita"].map(muat).concat(muat("berita_foto").catch(() => ({})))); } catch { akar.innerHTML = galatHtml("pf.galat"); return; }
   const p = proyek.baris.find((x) => x.id === id);
   if (!p) { akar.innerHTML = galatHtml("pf.p.tak"); return; }
   const r = barisProyek(p);
@@ -65,11 +62,11 @@ async function mulai() {
   akar.innerHTML = kepalaHtml({ avatar: `<span class="pf-av pf-av-tek">${ikonTek(r.tek)}</span>`, nama: r.nama, pil, meta, balik: ["/proyek", t("pf.ke_proyek")] })
     + `<div class="pf-bagian">${ringkasan}${lokasi}`
     + seksi({ id: "pihak", ik: "orang", topik: t("pf.ey.pihak"), judulHtml: esc(t("pf.j.pihak")), isiHtml: pihakHtml, csv: true, sumber })
-    + seksi({ id: "program", ik: "regulasi", topik: t("pf.ey.program"), judulHtml: hlHtml("pf.j.program", angka(programs.length)), isiHtml: programTabel(programs), csv: true, sumber })
-    + seksi({ id: "linimasa", ik: "linimasa", topik: t("pf.ey.linimasa"), judulHtml: esc(t("pf.j.linimasa")), subHtml: esc(t("pf.sub.linimasa")), isiHtml: linimasa(r), csv: true, sumber })
+    + seksi({ id: "program", ik: "regulasi", topik: t("pf.ey.program"), judulHtml: hlHtml("pf.j.program", angka(programs.length)), isiHtml: kartuProgram(programs.map((g) => ({ g }))), csv: false, sumber })
+    + seksi({ id: "linimasa", ik: "linimasa", topik: t("pf.ey.linimasa"), judulHtml: esc(t("pf.j.linimasa")), isiHtml: linimasa(r), csv: false, sumber })
     + seksi({ id: "regulasi", ik: "regulasi", topik: t("pf.ey.regulasi"), judulHtml: hlHtml("pf.j.regulasi", angka(regs.length)), isiHtml: tabelRegulasi(regs), csv: true, sumber: esc(t("pf.sumber_data", { tanggal: ringkasTgl(reg.dibangun_pada) })) })
-    + seksi({ id: "berita", ik: "berita", topik: t("pf.ey.berita"), judulHtml: hlHtml("pf.j.berita", angka(beritas.length)), isiHtml: tabelBerita(beritas), csv: true, sumber: esc(t("pf.sumber_data", { tanggal: ringkasTgl(ber.dibangun_pada) })) })
-    + seksi({ id: "sumber", ik: "tautan", topik: t("pf.ey.sumber"), judulHtml: esc(t("pf.j.sumber")), isiHtml: tabelSumber(p.sumber), csv: true, sumber })
+    + seksi({ id: "berita", ik: "berita", topik: t("pf.ey.berita"), judulHtml: hlHtml("pf.j.berita", angka(beritas.length)), isiHtml: tabelBerita(beritas, foto), csv: false, sumber: esc(t("pf.sumber_data", { tanggal: ringkasTgl(ber.dibangun_pada) })) })
+    + seksi({ id: "sumber", ik: "tautan", topik: t("pf.ey.sumber"), judulHtml: esc(t("pf.j.sumber")), isiHtml: tabelSumber(p.sumber, new Map(ber.baris.map((b) => [b.url, b.judul]))), csv: true, sumber })
     + `</div>`;
   petaTitik(document.getElementById("pfPeta"), [r], { zoomSatu: persis ? 11 : 6, klik: false });
 }

@@ -25,6 +25,20 @@ const nilai = (x) => (x && x.nilai != null ? x.nilai : null);
 const sm = (x) => (x && x.nilai != null ? { nilai: x.nilai, satuan: x.satuan, tahun: x.tahun, sumber: x.sumber, halaman: x.halaman, url: x.sumber_url, tanggal: x.tanggal_periksa } : null);
 const kosong = (x) => ({ nilai: null, alasan: x?.alasan_kosong || null, tanggal: x?.tanggal_periksa || TANGGAL });
 
+/* pengembang seperti proyek.js: "IPP", "SH-PLN" dan sejenisnya bukan nama perusahaan */
+const GENERIK = /^(ipp|sh-pln|pln|swasta|pemerintah|-)$/i;
+export function pengembang(p) {
+  const ph = p.pihak || {}, daftar = ph.pemilik || ph.pengembang || Object.values(ph)[0] || [], x = daftar[0];
+  if (!x || !x.nilai) return null;
+  const n = x.nilai.trim();
+  return { nama: /^(sh-)?pln$/i.test(n) ? 'PLN' : x.nilai, id: x.organisasi_id || null, generik: GENERIK.test(n) || /bukan nama perusahaan/i.test(x.catatan || '') };
+}
+const normOrg = (s) => String(s || '').toLowerCase().replace(/\(persero\)|\btbk\b|\bpt\b|[^a-z]/g, '');
+export function cariOrg(org, nama) {
+  const k = normOrg(nama); if (k.length < 6) return null;
+  const o = org.find((x) => { const n = normOrg(x.nama); return n === k || n.startsWith(k) || (n.length >= 12 && k.startsWith(n)); });
+  return o ? { id: o.id, nama: o.nama, logo: o.logo || null } : null;
+}
 export function bangunWilayah() {
   const prov = jsonl('data-panen/wilayah/provinsi.jsonl');
   const atlas = new Map(jsonl('data-panen/wilayah/atlas.jsonl').map((a) => [String(a.kode), a]));
@@ -37,14 +51,14 @@ export function bangunWilayah() {
   const profil = new Map(fs.existsSync(path.join(ROOT, 'data-panen/wilayah/profil_provinsi.jsonl')) ? jsonl('data-panen/wilayah/profil_provinsi.jsonl').map((x) => [String(x.kode), x]) : []);
   const baris = prov.map((p) => {
     const pr = profil.get(String(p.kode)) || {};
-    const ps = (pProv.get(p.nama) || []).map((x) => ({ id: x.id, nama: x.nama, teknologi: x.teknologi, mw: x.kapasitas?.[0]?.nilai ?? null, satuan: x.kapasitas?.[0]?.satuan ?? null, status: x.status?.[0]?.nilai ?? null, lat: x.lokasi?.lat != null ? +x.lokasi.lat.toFixed(4) : null, lng: x.lokasi?.lng != null ? +x.lokasi.lng.toFixed(4) : null, presisi: x.lokasi?.presisi || null }));
+    const ps = (pProv.get(p.nama) || []).map((x) => ({ id: x.id, nama: x.nama, teknologi: x.teknologi, mw: x.kapasitas?.[0]?.nilai ?? null, satuan: x.kapasitas?.[0]?.satuan ?? null, status: x.status?.[0]?.nilai ?? null, program: x.program_ids || [], nama_lain: (x.nama_lain || []).filter((n) => /^PLT[A-Za-z]*\s/.test(n)).slice(0, 3), peng: pengembang(x), lat: x.lokasi?.lat != null ? +x.lokasi.lat.toFixed(4) : null, lng: x.lokasi?.lng != null ? +x.lokasi.lng.toFixed(4) : null, presisi: x.lokasi?.presisi || null }));
     const os = pOrg.get(p.nama) || [];
     const ids = new Set(os.map((o) => o.nama));
     const pk = orang.filter((o) => ids.has(o.organisasi_terkini)).map((o) => ({ id: o.id, nama: o.nama, jabatan: o.jabatan_terkini, organisasi: o.organisasi_terkini }));
     const r = p.rued || {};
     return {
       kode: String(p.kode), nama: p.nama, diperbarui: p.diperbarui,
-      identitas: pr.identitas || null, listrik: pr.listrik || null,
+      identitas: pr.identitas || null, listrik: pr.listrik ? { ...pr.listrik, pltp: pr.listrik.pltp ? { ...pr.listrik.pltp, daftar: pr.listrik.pltp.daftar.map((x) => ({ ...x, org: cariOrg(org, x.pemilik) })) } : null } : null,
       terpasang_mw: sm(p.terpasang), per_teknologi_mw: p.terpasang?.per_teknologi_mw || {},
       rasio_elektrifikasi: sm(p.rasio_elektrifikasi),
       potensi_panas_bumi: sm(p.potensi?.['panas-bumi']),

@@ -5,6 +5,7 @@ import { t, angka, mulaiBahasa, gantiBahasa, bahasa } from "/i18n.js";
 import { api, ikon, nanti } from "/inti/umum.js";
 import { subnavHtml, diBagianInsight } from "/inti/komponen.js";
 import { pasangRel } from "/inti/rel.js";
+import { pasangCari } from "/inti/cari_global.js";
 
 export const PITA_DRAF = false; // pemilik 7 Nov 2026: pita draf tidak ditampilkan
 const STAF = ["pengurus", "kurator", "admin", "super"];
@@ -56,6 +57,7 @@ function gambarKepala(el, saya) {
     <a class="jm-merek" href="/"><img src="/img/logo-meti-tanda.png" width="42" height="40" alt=""><span data-i18n="jm.merek">${t("jm.merek")}</span></a>
     <nav class="tabs" id="menu" data-i18n-attr="aria-label:jm.menu" aria-label="${t("jm.menu")}">${tab}</nav>
     <div class="jm-sisi">
+      <button type="button" class="iconbtn jm-bulat" id="cari" aria-haspopup="dialog" data-i18n-attr="aria-label:cari.tombol;title:cari.tombol" aria-label="${t("cari.tombol")}" title="${t("cari.tombol")}">${ikon("cari", 20)}</button>
       <button type="button" class="iconbtn jm-bulat jm-bahasa" id="bahasa" data-i18n-attr="aria-label:jm.ganti_bahasa;title:jm.ganti_bahasa" aria-label="${t("jm.ganti_bahasa")}" title="${t("jm.ganti_bahasa")}">${BENDERA[b]}</button>
       <button type="button" class="iconbtn jm-bulat" id="tema" data-i18n-attr="aria-label:jm.tema;title:jm.tema" aria-label="${t("jm.tema")}" title="${t("jm.tema")}">${ikon("tema", 20)}</button>
       ${akun}
@@ -137,7 +139,7 @@ export async function mulaiHalaman() {
   const saya = await ambilSaya();
   await mulaiBahasa(saya.bahasa);
   const kepala = document.getElementById("kepala");
-  if (kepala) { gambarKepala(kepala, saya); pasangPenangan(kepala, saya); }
+  if (kepala) { gambarKepala(kepala, saya); pasangPenangan(kepala, saya); pasangCari(kepala); }
   if (kepala && diBagianInsight(location.pathname) && !document.getElementById("subnav")) { kepala.insertAdjacentHTML("afterend", subnavHtml(location.pathname, location.hash)); addEventListener("hashchange", () => { const s = document.getElementById("subnav"); if (s) s.outerHTML = subnavHtml(location.pathname, location.hash); }); }
   const pita = document.getElementById("pita");
   if (pita && PITA_DRAF) {

@@ -1,7 +1,7 @@
 import { mulaiHalaman } from "/inti/kepala.js";
 import { t, angka, tanggal } from "/i18n.js";
 import { esc, nanti, debounce, hantuHtml, kosongHtml, galatHtml, ikon } from "/inti/umum.js";
-import { cariHtml, pilihHtml, hapusHtml, exHtml, sumberHtml } from "/inti/komponen.js";
+import { cariHtml, pilihHtml, hapusHtml, exHtml, sumberHtml, unduhRegHtml } from "/inti/komponen.js";
 import { aksiHtml, hlHtml } from "/inti/aksi_ex.js";
 import { penerbitHtml } from "/penerbit.js";
 import { lapisAnggota, anggotaDl, muat, label, urlAman, norm, namaRegulasi, kelasStatus, SINGKAT } from "/publik.js";
@@ -82,18 +82,39 @@ function gambarDaftar(rows) {
   document.getElementById("hal").innerHTML = maks > 1 ? `<button type="button" class="jm-tbl jm-tbl-kecil" data-hal="-1"${S.hal <= 1 ? " disabled" : ""}>${esc(t("jm.sebelumnya"))}</button><span>${esc(t("jm.hal", { n: angka(S.hal) }))} / ${angka(maks)}</span><button type="button" class="jm-tbl jm-tbl-kecil" data-hal="1"${S.hal >= maks ? " disabled" : ""}>${esc(t("jm.berikutnya"))}</button>` : "";
 }
 
-/** Linimasa vertikal: tiap tahun = judul lengket di kiri + daftar aturan yang terbit tahun itu; relasi mengubah/mencabut jadi chip pada aturan pengubahnya. */
-const MAKS_TAHUN = 8;
+/** Linimasa: grafik per tahun (klik = lompat), lalu tiap tahun = bilah lengket yang bisa dilipat + baris padat; relasi mengubah/mencabut jadi chip di bawah judul. */
+const MAKS_TAHUN = 8, TAHUN_GRAFIK = 15;
+const warnaStatus = { berlaku: "ok", diubah: "warn", dicabut: "bad" };
 function itemHtml(r, tersembunyi) {
   const nama = (id) => { const x = D.byId.get(id); return x ? namaRegulasi(x) : id; };
   const chip = (ik) => {
     const teks = `${ik.jenis === "mengubah" ? "\u21bb" : "\u2715"} ${t("reg.tl." + ik.jenis)} ${nama(ik.ke)}`;
     return D.byId.has(ik.ke) ? `<button type="button" class="jm-tl-chip jm-tl-${ik.jenis}" data-id="${esc(ik.ke)}">${esc(teks)}</button>` : `<span class="jm-tl-chip jm-tl-${ik.jenis}">${esc(teks)}</span>`;
   };
-  const status = r.status !== "berlaku" ? `<span class="jm-tl-status jm-tl-s-${esc(r.status)}">${ikon("peringatan", 14)}${esc(label("reg.status.", r.status).toLowerCase())}</span>` : "";
   const rel = (r.ikatan || []).filter((x) => x.jenis === "mengubah" || x.jenis === "mencabut").map(chip).join("");
-  return `<li class="jm-tl-item" data-id="${esc(r.id)}"${tersembunyi ? " hidden data-lebih" : ""}><span class="jm-tl-jn jm-jn-${esc(r.jenis)}">${esc(SINGKAT[r.jenis] || label("reg.jenis.", r.jenis))}</span><button type="button" class="jm-tl-no" data-id="${esc(r.id)}">${esc(`${r.nomor}/${r.tahun}`)}</button>
-    <span class="jm-tl-judul">${esc(r.judul)}</span><span class="jm-tl-meta"><span class="jm-tl-pen">${r.instansi_penerbit ? penerbitHtml(r.instansi_penerbit, 24) : "-"}</span><span>${esc(tanggal(r.tanggal_ditetapkan))}</span><span>${esc(label("reg.tingkat.", tingkatDari(r)))}</span></span>${status || rel ? `<span class="jm-tl-rel">${status}${rel}</span>` : ""}</li>`;
+  const [hr, bln] = r.tanggal_ditetapkan ? tanggal(r.tanggal_ditetapkan).split(" ") : [];
+  return `<li class="jm-lm-item jm-lm-s-${esc(warnaStatus[r.status] || "ok")}" data-id="${esc(r.id)}"${tersembunyi ? " hidden data-lebih" : ""}>
+    <span class="jm-lm-tgl">${hr ? `<b>${esc(hr)}</b><small>${esc(bln || "")}</small>` : "-"}</span>
+    <span class="jm-lm-jn jm-jn-${esc(r.jenis)}">${esc(SINGKAT[r.jenis] || label("reg.jenis.", r.jenis))}</span><b class="jm-lm-no">${esc(`${r.nomor}/${r.tahun}`)}</b>
+    <span class="jm-lm-judul"><span class="jm-lm-j2" title="${esc(r.judul)}">${esc(r.judul)}</span>${rel ? `<span class="jm-tl-rel">${rel}</span>` : ""}</span>
+    <span class="jm-lm-pen">${r.instansi_penerbit ? penerbitHtml(r.instansi_penerbit, 28) : "-"}</span>
+    <span class="jm-lm-ting">${esc(label("reg.tingkat.", tingkatDari(r)))}</span><span class="jm-lm-sts">${pil(r)}</span><span class="jm-lm-dok">${unduhRegHtml(r)}</span></li>`;
+}
+/* kolom bertumpuk Nasional (bawah) + Daerah (atas) per tahun, SVG murni: kelas + atribut saja (CSP) */
+function grafikTahun(per) {
+  const ada = [...per.keys()].filter(Boolean), akhir = Math.max(...ada), M = innerWidth < 640, W = M ? 360 : 640, H = 150, B = H - 22, T = 22, n = TAHUN_GRAFIK, gap = W / n, bw = gap * 0.62;
+  const ys = Array.from({ length: n }, (_, i) => akhir - n + 1 + i);
+  const tot = (y) => (per.get(y) || []).length, mx = Math.max(1, ...ys.map(tot)), Y = (v) => (v / mx) * (B - T);
+  const g = ys.map((y, i) => {
+    const rs = per.get(y) || [], nas = rs.filter((r) => tingkatDari(r) === "nasional").length, dae = rs.length - nas, x = i * gap + (gap - bw) / 2, cx = x + bw / 2;
+    const hn = Y(nas), hd = Y(dae), lab = M ? "'" + String(y).slice(2) : String(y);
+    return `<g class="jm-lg-k${String(y) === S.tahun ? " jm-lg-pilih" : ""}" data-th="${y}" role="button" tabindex="0" aria-label="${y}: ${rs.length}"><rect class="jm-lg-hit" x="${(i * gap).toFixed(1)}" y="0" width="${gap.toFixed(1)}" height="${H}"/>`
+      + (nas ? `<rect class="jm-lg-n" x="${x.toFixed(1)}" y="${(B - hn).toFixed(1)}" width="${bw.toFixed(1)}" height="${hn.toFixed(1)}" rx="2"/>` : "")
+      + (dae ? `<rect class="jm-lg-d" x="${x.toFixed(1)}" y="${(B - hn - hd).toFixed(1)}" width="${bw.toFixed(1)}" height="${hd.toFixed(1)}" rx="2"/>` : "")
+      + `<text class="jm-lg-v" x="${cx.toFixed(1)}" y="${(B - hn - hd - 5).toFixed(1)}" text-anchor="middle">${rs.length ? esc(angka(rs.length)) : ""}</text><text class="jm-lg-y" x="${cx.toFixed(1)}" y="${H - 6}" text-anchor="middle">${esc(lab)}</text></g>`;
+  }).join("");
+  return `<div class="jm-lg"><div class="jm-lg-kep"><h3>${ikon("tahun", 18)}<span>${esc(t("reg.tl.grafik"))}</span></h3><span class="jm-lg-leg"><i class="jm-lg-n"></i>${esc(label("reg.tingkat.", "nasional"))}<i class="jm-lg-d"></i>${esc(label("reg.tingkat.", "daerah"))}</span></div>`
+    + `<svg viewBox="0 0 ${W} ${H}" role="group" aria-label="${esc(t("reg.tl.grafik"))}" focusable="false">${g}<line class="jm-lg-dasar" x1="0" x2="${W}" y1="${B}" y2="${B}"/></svg></div>`;
 }
 function gambarLinimasa(rows) {
   document.getElementById("hal").innerHTML = "";
@@ -102,10 +123,10 @@ function gambarLinimasa(rows) {
   const tahun = [...per.keys()].sort((a, b) => b - a);
   if (!tahun.length) { document.getElementById("isi").innerHTML = kosongHtml("jm.kosong.cocok", { data: "reset", kunci: "jm.kosong.reset" }); return; }
   const chipN = (j, n) => (n ? `<span class="jm-tanda jm-tanda-${j}">${esc(t("reg.tl.n." + j, { n: angka(n) }))}</span>` : "");
-  document.getElementById("isi").innerHTML = `<div class="jm-tl">${tahun.map((y) => {
+  document.getElementById("isi").innerHTML = (tahun.some(Boolean) ? grafikTahun(per) : "") + `<div class="jm-lm">${tahun.map((y) => {
     const rs = per.get(y), ub = jml(rs, "mengubah"), cb = jml(rs, "mencabut");
-    return `<section class="jm-tl-tahun" aria-label="${y || "-"}"><header class="jm-tl-th"><h3>${y || "-"}</h3><div class="jm-baris-kecil">${chipN("terbit", rs.length)}${chipN("mengubah", ub)}${chipN("mencabut", cb)}</div></header>
-      <ol class="jm-tl-daftar">${rs.map((r, i) => itemHtml(r, i >= MAKS_TAHUN)).join("")}</ol>${rs.length > MAKS_TAHUN ? `<button type="button" class="jm-tbl jm-tbl-kecil jm-tl-lebih" data-lebih="${rs.length - MAKS_TAHUN}">${esc(t("reg.tl.lebih", { n: angka(rs.length - MAKS_TAHUN) }))}</button>` : ""}</section>`;
+    return `<section class="jm-lm-tahun" id="th-${y}" aria-label="${y || "-"}"><button type="button" class="jm-lm-th" data-lipat aria-expanded="true" aria-label="${esc(t("reg.tl.lipat"))} ${y || "-"}"><h3>${y || "-"}</h3><span class="jm-lm-pils">${chipN("terbit", rs.length)}${chipN("mengubah", ub)}${chipN("mencabut", cb)}</span>${ikon("panah-kanan", 18)}</button>
+      <ol class="jm-lm-daftar">${rs.map((r, i) => itemHtml(r, i >= MAKS_TAHUN)).join("")}</ol>${rs.length > MAKS_TAHUN ? `<button type="button" class="jm-tbl jm-tbl-kecil jm-tl-lebih" data-lebih="${rs.length - MAKS_TAHUN}">${esc(t("reg.tl.lebih", { n: angka(rs.length - MAKS_TAHUN) }))}</button>` : ""}</section>`;
   }).join("")}</div>`;
 }
 const jml = (rs, j) => rs.reduce((n, r) => n + (r.ikatan || []).filter((x) => x.jenis === j).length, 0);
@@ -122,24 +143,50 @@ function gambarIsi() {
   (S.tampil === "linimasa" ? gambarLinimasa : gambarDaftar)(rows);
 }
 
-/* ---------- RUU EBET ---------- */
-const adalahRuu = (r) => r.jenis === "ruu" || /^RUU\b|rancangan undang-undang/i.test(r.judul || "");
+/* ---------- pelacak kebijakan: baru 90 hari, mengubah/mencabut, dalam pembahasan (tenggat: belum ada datanya, bagian tidak dibuat) ---------- */
+const HARI = 90, MAKS_UBAH = 6;
+const tglReg = (r) => r.tanggal_diundangkan || r.tanggal_ditetapkan || "";
+const ikId = (id) => { const x = D.byId.get(id); return x ? `<button type="button" class="jm-pk-nm" data-id="${esc(id)}">${esc(namaRegulasi(x))}</button>` : `<span class="jm-pk-nm">${esc(id)}</span>`; };
+function pkBagian(ik, judul, sub, isi) {
+  return `<section class="jm-pk-b"><h3>${ikon(ik, 18)}<span>${esc(judul)}</span></h3><p class="jm-pk-sub">${esc(sub)}</p>${isi}</section>`;
+}
+function pkBaru() {
+  const akhir = D.baris.reduce((m, r) => (tglReg(r) > m ? tglReg(r) : m), "");
+  if (!akhir) return "";
+  const batas = new Date(akhir + "T00:00:00Z"); batas.setUTCDate(batas.getUTCDate() - HARI);
+  const mulai = batas.toISOString().slice(0, 10);
+  const baru = D.baris.filter((r) => tglReg(r) > mulai).sort((a, b) => tglReg(b).localeCompare(tglReg(a)));
+  const kartu = (r) => `<li class="jm-pk-kartu"><div class="jm-pk-atas"><span class="jm-lm-jn jm-jn-${esc(r.jenis)}">${esc(SINGKAT[r.jenis] || label("reg.jenis.", r.jenis))}</span>${r.instansi_penerbit ? penerbitHtml(r.instansi_penerbit, 28) : ""}</div>
+    <button type="button" class="jm-pk-nm" data-id="${esc(r.id)}">${esc(namaRegulasi(r))}</button><span class="jm-pk-jd" title="${esc(r.judul)}">${esc(r.judul)}</span>
+    <div class="jm-pk-bawah"><span class="jm-pk-tgl">${ikon("kalender", 16)}${esc(tanggal(tglReg(r)))}</span>${unduhRegHtml(r)}</div></li>`;
+  return pkBagian("tahun", t("reg.pk.baru"), t("reg.pk.baru.sub", { n: angka(HARI), tanggal: tanggal(akhir) }),
+    baru.length ? `<ul class="jm-pk-kartu-daftar">${baru.map(kartu).join("")}</ul>` : `<p class="jm-pk-kosong">${esc(t("reg.pk.baru.kosong"))}</p>`);
+}
+function pkUbah() {
+  const pasang = D.baris.filter((r) => (r.ikatan || []).some((x) => x.jenis === "mengubah" || x.jenis === "mencabut")).sort((a, b) => (tglReg(b) || String(b.tahun)).localeCompare(tglReg(a) || String(a.tahun))).slice(0, MAKS_UBAH);
+  if (!pasang.length) return "";
+  const baris = pasang.flatMap((r) => (r.ikatan || []).filter((x) => x.jenis === "mengubah" || x.jenis === "mencabut").slice(0, 2).map((x) =>
+    `<li class="jm-pk-ub">${ikId(r.id)}<span class="jm-tanda jm-tanda-${x.jenis}">${esc(t("reg.pk.kata." + x.jenis))}</span>${ikId(x.ke)}<span class="jm-pk-unduh">${unduhRegHtml(r)}</span></li>`));
+  return pkBagian("ubah", t("reg.pk.ubah"), t("reg.pk.ubah.sub"), `<ul class="jm-pk-ubah">${baris.join("")}</ul>`);
+}
+const LANGKAH = ["usul", "prolegnas", "pembahasan", "pengesahan", "diundangkan"];
+function pkBahas(k) {
+  const kartu = (e) => {
+    const sekarang = LANGKAH.indexOf(e.tahap), s = e.sumber || {};
+    const lgk = (e.langkah || LANGKAH).map((l, i) => `<li class="jm-pk-l${i < sekarang ? " jm-pk-l-lalu" : i === sekarang ? " jm-pk-l-kini" : ""}"${i === sekarang ? ' aria-current="step"' : ""}>${ikon(i < sekarang ? "centang" : i === sekarang ? "info" : "linimasa", 16)}<span>${esc(t("reg.pk.l." + l))}</span></li>`).join("");
+    const src = urlAman(s.url) ? `<a href="${esc(s.url)}" target="_blank" rel="noopener noreferrer">${ikon("tautan", 16)}${esc(s.label)}</a>` : `<span>${ikon("tautan", 16)}${esc(s.label)}</span>`;
+    return `<li class="jm-pk-bh"><div class="jm-pk-atas"><span class="jm-lm-jn">${esc(label("reg.jenis.", e.jenis))}</span><b>${esc(e.nama)}</b></div>
+      <p class="jm-pk-tahap">${esc(t("reg.pk.tahap"))}: <b>${esc(t("reg.pk.l." + e.tahap))}</b></p><ol class="jm-pk-langkah">${lgk}</ol>
+      <p class="jm-pk-src">${src}<span class="jm-pk-tgl">${ikon("kalender", 16)}${esc(tanggal(e.tanggal))}</span>${s.diverifikasi_ke_dpr === false ? `<span class="jm-pil jm-pil-warn">${esc(t("reg.ruu.belum"))}</span>` : ""}</p></li>`;
+  };
+  return k.length ? pkBagian("regulasi", t("reg.pk.bahas"), t("reg.pk.bahas.sub"), `<ul class="jm-pk-bahas">${k.map(kartu).join("")}</ul>`) : "";
+}
 async function gambarRuu() {
   const el = document.getElementById("ruu");
-  const baris = D.baris.find(adalahRuu);
-  let tahap = baris ? label("reg.status.", baris.status) : "", sumber = "";
-  if (baris) sumber = urlAman(baris.url_sumber) ? `<a href="${esc(baris.url_sumber)}" target="_blank" rel="noopener noreferrer">${esc(t("reg.naskah"))}</a>` : "";
-  else {
-    // belum ada baris RUU di berkas regulasi: tahap diturunkan dari agenda publik METI (audiensi RDPU Komisi XII), diberi pil belum diverifikasi
-    try {
-      const k = (await muat("kalender")).baris.filter((b) => /RUU EBET/i.test(b.judul)).sort((a, b) => b.tanggal.localeCompare(a.tanggal))[0];
-      if (!k) { el.innerHTML = ""; return; }
-      tahap = t("reg.ruu.tahap");
-      sumber = `<span class="jm-sumber">${esc(t("reg.ruu.sumber", { tanggal: tanggal(k.tanggal), mitra: k.mitra }))}</span> <span class="jm-pil jm-pil-warn">${esc(t("reg.ruu.belum"))}</span>`;
-    } catch (e) { el.innerHTML = ""; return; }
-  }
-  el.innerHTML = exHtml({ id: "ex-ruu", ikon: "regulasi", topik: t("reg.ruu.label"), judulHtml: hlHtml("reg.ex.ruu.j", tahap), subHtml: esc(baris ? baris.judul : t("reg.ruu.nama")),
-    aksiHtml: aksiHtml({ csv: false }), isiHtml: `<p><strong>${esc(t("reg.ruu.tahap_label"))}:</strong> ${esc(tahap)}</p><p>${sumber}</p>` });
+  let k = [];
+  try { k = (await muat("kebijakan_proses")).baris; } catch (e) { /* bagian pembahasan diam bila berkas gagal */ }
+  const isi = pkBaru() + pkUbah() + pkBahas(k);
+  el.innerHTML = isi ? exHtml({ id: "ex-pk", ikon: "regulasi", topik: t("reg.pk.ey"), judulHtml: esc(t("reg.pk.j")), subHtml: esc(t("reg.pk.sub")), aksiHtml: " ", isiHtml: `<div class="jm-pk">${isi}</div>` }) : "";
 }
 
 /* ---------- lembar profil ---------- */
@@ -202,7 +249,7 @@ function gambarSemua() {
 async function main() {
   await mulaiHalaman();
   document.getElementById("daftar-reg").innerHTML = exHtml({ id: "ex-reg", ikon: "regulasi", topik: t("reg.ex.ey.daftar"), judulHtml: "", subHtml: " ", aksiHtml: " ",
-    isiHtml: `<div class="jm-saring" id="saring"></div><div class="jm-alat"><div class="jm-tab" role="tablist" id="tampil"></div><p class="jm-hitung" id="hitung" role="status"></p></div><div id="isi"></div><div class="jm-hal" id="hal"></div>` });
+    isiHtml: `<div class="jm-saring" id="saring"></div><div class="jm-alat"><div class="jm-tab" role="tablist" id="tampil"></div><p class="jm-hitung sr" id="hitung" role="status"></p></div><div id="isi"></div><div class="jm-hal" id="hal"></div>` });
   const idAwal = bacaUrl();
   const mulai = async () => { if (await muatData()) { gambarSemua(); if (idAwal && D.byId.has(idAwal)) bukaProfil(idAwal); } };
   await mulai();
@@ -224,15 +271,19 @@ async function main() {
     for (const x of document.querySelectorAll("#tampil button")) x.setAttribute("aria-selected", String(x === b)); // chrome urgent
     tunda();
   });
-  const bukaDari = (e) => { const b = e.target.closest("[data-id]"); if (b) bukaProfil(b.dataset.id); };
+  const bukaDari = (e) => { if (e.target.closest("a")) return; const b = e.target.closest("[data-id]"); if (b) bukaProfil(b.dataset.id); };
+  document.getElementById("isi").addEventListener("keydown", (e) => { const k = e.target.closest?.("[data-th]"); if (k && (e.key === "Enter" || e.key === " ")) { e.preventDefault(); k.dispatchEvent(new MouseEvent("click", { bubbles: true })); } });
   document.getElementById("isi").addEventListener("click", (e) => {
     const ub = e.target.closest("button[data-uk]"); if (ub) { const k = ub.dataset.uk; S.ua = S.uk === k ? -S.ua : 1; S.uk = k; S.hal = 1; tunda(); return; }
-    const lb = e.target.closest("[data-lebih]:not(li)"); if (lb) { lb.closest(".jm-tl-tahun").querySelectorAll("li[data-lebih]").forEach((x) => { x.hidden = false; }); lb.remove(); return; }
+    const lp = e.target.closest("[data-lipat]"); if (lp) { const buka = lp.getAttribute("aria-expanded") !== "true", sc = lp.closest(".jm-lm-tahun"); lp.setAttribute("aria-expanded", String(buka)); sc.classList.toggle("jm-lm-tutup", !buka); return; }
+    const gk = e.target.closest("[data-th]"); if (gk) { const sc = document.getElementById("th-" + gk.dataset.th); if (sc) { sc.classList.remove("jm-lm-tutup"); sc.querySelector("[data-lipat]").setAttribute("aria-expanded", "true"); sc.scrollIntoView({ block: "start", behavior: "smooth" }); } return; }
+    const lb = e.target.closest("[data-lebih]:not(li)"); if (lb) { lb.closest(".jm-lm-tahun").querySelectorAll("li[data-lebih]").forEach((x) => { x.hidden = false; }); lb.remove(); return; }
     bukaDari(e); if (e.target.closest("[data-aksi=reset]")) document.querySelector("#saring [data-aksi=reset]").click(); });
   document.getElementById("hal").addEventListener("click", (e) => {
     const b = e.target.closest("[data-hal]"); if (!b) return;
     S.hal += +b.dataset.hal; tunda(); nanti(() => document.getElementById("saring").scrollIntoView({ block: "start" }));
   });
+  document.getElementById("ruu").addEventListener("click", bukaDari);
   const dlg = document.getElementById("lembar");
   dlg.addEventListener("click", (e) => { if (e.target === dlg || e.target.closest("[data-aksi=tutup]")) dlg.close(); else bukaDari(e); });
   dlg.addEventListener("close", () => tulisUrl(""));

@@ -1,5 +1,6 @@
 /* Halaman /tentang (publik), anatomi halaman Tentang Posko Karhutla: hero berfoto, pita logo, seksi berpita foto, bagan organisasi, mitra, metode, kontak, FAQ, kredit foto.
    Teks dari kamus (tn.*); data statis /data/pengurus-meti.json, mitra-meti.json, tentang-kredit.json, ringkas.json. */
+import "/inti/tautan_org.js";
 import { mulaiHalaman } from "/inti/kepala.js";
 import { t, tanggal, angka } from "/i18n.js";
 import { esc, ikon } from "/inti/umum.js";
@@ -28,7 +29,7 @@ const kartu = (judul, a, ekstra = "") => {
 
 const tbl = (x, dup) => {
   const l = LAMBANG[x.nama], src = l ? l[0] : x.logo, lebar = !l && x.w / x.h > 3.2;
-  return `<li${dup ? ' aria-hidden="true"' : ""}><a class="tn-logo"${dup ? ' tabindex="-1"' : ""} href="/direktori?cari=${encodeURIComponent(x.nama)}" title="${esc(x.nama)}"><img src="${esc(src)}" alt="${esc(x.nama)}" loading="lazy">${l || lebar ? `<span>${esc(l ? l[1] : x.nama)}</span>` : ""}</a></li>`;
+  return `<li${dup ? ' aria-hidden="true"' : ""}><a class="tn-logo"${dup ? ' tabindex="-1"' : ""} data-org-nama="${esc(x.nama)}" href="/direktori?cari=${encodeURIComponent(x.nama)}" title="${esc(x.nama)}"><img src="${esc(src)}" alt="${esc(x.nama)}" loading="lazy">${l || lebar ? `<span>${esc(l ? l[1] : x.nama)}</span>` : ""}</a></li>`;
 };
 const tblAsos = (a, dup) => `<li${dup ? ' aria-hidden="true"' : ""}><a class="tn-logo"${dup ? ' tabindex="-1"' : ""} href="/direktori?cari=${encodeURIComponent(a)}" title="${esc(a)}">${LOGO_ASOS[a] ? `<img src="${LOGO_ASOS[a]}" alt="${esc(a)}" loading="lazy">` : `<b class="tn-mono">${esc(a)}</b>`}</a></li>`;
 

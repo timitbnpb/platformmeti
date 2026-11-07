@@ -1,5 +1,6 @@
 /* logo penerbit regulasi: satu helper untuk tabel, linimasa, dan lembar rinci. Tanpa teks tampak; nama lengkap di title + aria-label. */
 import { esc } from "/inti/umum.js";
+import "/inti/tautan_org.js";
 
 export const PROV = { "aceh": 11, "sumatera utara": 12, "sumatera barat": 13, "riau": 14, "jambi": 15, "sumatera selatan": 16, "bengkulu": 17, "lampung": 18, "bangka belitung": 19, "kepulauan bangka belitung": 19, "kepulauan riau": 21,
   "daerah khusus ibukota jakarta": 31, "dki jakarta": 31, "jawa barat": 32, "jawa tengah": 33, "daerah istimewa yogyakarta": 34, "di yogyakarta": 34, "jawa timur": 35, "banten": 36, "bali": 51, "nusa tenggara barat": 52, "nusa tenggara timur": 53,
@@ -34,12 +35,16 @@ export function logoUrl(nama) {
   return m ? `/img/kabkota/${slug(m[1] + " " + m[2])}.png` : GEDUNG;
 }
 /* nama pendek untuk kartu seluler */
-export const namaPendek = (nama) => String(nama || "").replace(/^Pemerintah Provinsi /, "Prov. ").replace(/^Pemerintah Kabupaten /, "Kab. ").replace(/^Pemerintah Kota /, "Kota ").replace(/^Kementerian /, "Kem. ");
+const SINGKAT_PEN = [[/^Pemerintah Pusat$/i, "Presiden RI"], [/Energi dan Sumber Daya Mineral/i, "Kementerian ESDM"], [/Lingkungan Hidup dan Kehutanan/i, "Kementerian LHK"], [/Badan Usaha Milik Negara/i, "Kementerian BUMN"], [/Pekerjaan Umum/i, "Kementerian PU"], [/Perencanaan Pembangunan Nasional|Bappenas/i, "Bappenas"], [/Koordinator Bidang Perekonomian/i, "Kemenko Perekonomian"], [/Koordinator Bidang Kemaritiman/i, "Kemenko Marves"], [/Dewan Perwakilan Rakyat/i, "DPR RI"], [/Otoritas Jasa Keuangan/i, "OJK"]];
+export const namaPendek = (nama) => {
+  const s = String(nama || ""); const k = SINGKAT_PEN.find(([re]) => re.test(s)); if (k) return k[1];
+  return s.replace(/^Pemerintah Provinsi Daerah Istimewa /, "DI ").replace(/^Pemerintah Provinsi /, "Prov. ").replace(/^Pemerintah Kabupaten /, "Kab. ").replace(/^Pemerintah Kota /, "Kota ").replace(/^Kementerian /, "Kementerian ");
+};
 
 export function penerbitHtml(nama, ukuran = 32) {
   if (!nama) return "";
   const n = esc(nama);
-  return `<span class="jm-pen" title="${n}" role="img" aria-label="${n}"><img class="jm-pen-lg" src="${esc(logoUrl(nama))}" width="${ukuran}" height="${ukuran}" alt="" loading="lazy" decoding="async"><span class="jm-pen-pendek">${esc(namaPendek(nama))}</span></span>`;
+  return `<span class="jm-pen" data-org-nama="${n}" title="${n}" role="img" aria-label="${n}"><img class="jm-pen-lg" src="${esc(logoUrl(nama))}" width="${ukuran}" height="${ukuran}" alt="" loading="lazy" decoding="async"><span class="jm-pen-pendek">${esc(namaPendek(nama))}</span></span>`;
 }
 /* berkas hilang -> ikon gedung (tanpa onerror inline: CSP) */
 document.addEventListener("error", (e) => { const i = e.target; if (i && i.tagName === "IMG" && i.classList.contains("jm-pen-lg") && !i.src.endsWith("gedung.svg")) i.src = GEDUNG; }, true);

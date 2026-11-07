@@ -304,7 +304,7 @@ export function bangun(masukan = {}) {
     tambahPengurus(oid, { orang_id: p.orang_id, nama: pisahNama(p.nama).nama, jabatan: p.jabatan, jenis_jabatan: p.jenis_jabatan, mulai: p.mulai, selesai: p.selesai });
     if (p.fotoLokal && fs.existsSync(path.join(DP, p.fotoLokal))) r.foto_pengurus = { lokal: p.fotoLokal, sumber_url: p.fotoSumber, hak_cipta: p.hak };
   }
-  const nmapAll = new Map(); const petaNama = () => { nmapAll.clear(); for (const o of org.values()) { nmapAll.set(norm(o.nama), o.id); (o.nama_lain || []).forEach((n) => nmapAll.set(norm(n), o.id)); if (o.singkatan) nmapAll.set(norm(o.singkatan), o.id); } }; petaNama();
+  const nmapAll = new Map(); const petaNama = () => { nmapAll.clear(); for (const o of org.values()) { nmapAll.set(norm(o.nama), o.id); (o.nama_lain || []).concat(ALIAS_ORG[o.id] || []).forEach((n) => nmapAll.set(norm(n), o.id)); if (o.singkatan) nmapAll.set(norm(o.singkatan), o.id); } }; petaNama();
   const orgPerNama = (n) => nmapAll.get(norm(n)) || null;
   const kodeMax3 = (k) => (k || []).slice(0, 3).map((x) => (typeof x === 'string' ? { kode: x } : { kode: x.kode, utama: x.utama, bukti: x.bukti, sumber_url: x.sumber_url }));
 
@@ -393,7 +393,7 @@ export function bangun(masukan = {}) {
   // pasang tautan berita
   const regPola = /\b(uu|pp|perpres|permen|permen esdm|kepmen|perppu|inpres)\s*(?:no\.?|nomor)?\s*(\d{1,3})\s*(?:\/|tahun|th\.?)\s*(\d{4})/gi;
   const namaProyek = proyekPub.map((p) => ({ id: p.id, n: ' ' + norm(p.nama) + ' ' })).filter((x) => x.n.length >= 16);
-  const orgKey = [...org.values()].filter((o) => orgPub.has(o.id)).map((o) => ({ id: o.id, n: norm(o.nama).length >= 8 ? ' ' + norm(o.nama) + ' ' : null, s: o.singkatan && o.singkatan.length >= 3 ? new RegExp('(?<![A-Za-z])' + o.singkatan.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + '(?![A-Za-z])') : null }));
+  const orgKey = [...org.values()].filter((o) => orgPub.has(o.id)).flatMap((o) => (ALIAS_ORG[o.id] || []).map((a) => ({ id: o.id, n: ' ' + norm(a) + ' ', s: null }))).concat([...org.values()].filter((o) => orgPub.has(o.id)).map((o) => ({ id: o.id, n: norm(o.nama).length >= 8 ? ' ' + norm(o.nama) + ' ' : null, s: o.singkatan && o.singkatan.length >= 3 ? new RegExp('(?<![A-Za-z])' + o.singkatan.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + '(?![A-Za-z])') : null })));
   // ringkasan berita (og:description/RSS) hanya untuk mencocokkan wilayah/proyek/regulasi; dibaca dari data-panen, tidak pernah ditulis ke public
   const ringkasBerita = masukan.ringkasBerita || (() => { try { return JSON.parse(fs.readFileSync(path.join(DP, 'berita/ringkas.json'), 'utf8')); } catch { return {}; } })();
   const konteksBerita = bangunKonteks({ proyek: proyekPub, regulasi: regRows });
@@ -624,6 +624,8 @@ function periksa() {
   for (const l of LAPIS) { const d = path.join(OUT, l); if (!fs.existsSync(d)) { console.error('potret belum dibangun: ' + d); process.exit(1); } for (const f of fs.readdirSync(d)) { const isi = fs.readFileSync(path.join(d, f), 'utf8'); semua.push({ lapis: l, berkas: f, byte: Buffer.byteLength(isi), isi }); } }
   const galat = periksaBerkas(semua); if (galat.length) { console.error('GAGAL:\n' + galat.slice(0, 40).join('\n')); process.exit(1); } console.log('periksa ok:', semua.length, 'berkas');
 }
+export // Alias nama organisasi (id -> sebutan lazim di berita/sumber) untuk pencocokan nama; tidak menebak pemilik proyek.
+const ALIAS_ORG = { p_10e0dde689: ['Pertamina NRE', 'PT Pertamina NRE'], p_a3b5b106e6: ['Pertamina Power Indonesia'] };
 export function selftest() {
   { const k = rapikanKontak({ telepon: '021 5551234 / Hotline: 021 5559999', seluler: 'Budi Santoso +62 812 3456 7890', surel: 'a@x.co.id / b@x.co.id;http://www.x.co.id/en', faks: '021 5550000' });
     assert.equal(k.telepon, '021 5551234'); assert.equal(k.hotline, '021 5559999'); assert.equal(k.pic, 'Budi Santoso'); assert.equal(k.seluler, '+62 812 3456 7890'); assert.equal(k.surel, 'a@x.co.id / b@x.co.id'); assert.deepEqual(k.situs, ['http://www.x.co.id/en']);

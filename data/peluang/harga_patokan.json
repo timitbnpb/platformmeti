@@ -1,0 +1,56 @@
+{
+ "sumber": "Perpres 112/2022 Lampiran I (harga) dan Lampiran II (faktor lokasi F)",
+ "tahun": 2022,
+ "satuan": "sen USD/kWh",
+ "catatan": "Tahun ke-1 s.d. 10 = koefisien x F (F per Lampiran II); tahun ke-11 dst = nilai tetap tanpa F. Ditranskripsi dari pdftotext (OCR) dan dicek visual untuk Lampiran II. Laut/arus/gelombang tidak diatur Perpres 112/2022.",
+ "teknologi": {
+  "hidro": { "jenis": "PLTA aliran/terjunan air", "tahun_maks": 30, "tingkat": [
+   { "kapasitas": "s.d. 1 MW", "koef_1_10": 11.23, "tahun_11_dst": 7.02 },
+   { "kapasitas": ">1 MW s.d. 3 MW", "koef_1_10": 10.92, "tahun_11_dst": 6.82 },
+   { "kapasitas": ">3 MW s.d. 5 MW", "koef_1_10": 9.65, "tahun_11_dst": 6.03 },
+   { "kapasitas": ">5 MW s.d. 20 MW", "koef_1_10": 9.09, "tahun_11_dst": 5.68 },
+   { "kapasitas": ">20 MW s.d. 50 MW", "koef_1_10": 8.86, "tahun_11_dst": 5.54 },
+   { "kapasitas": ">50 MW s.d. 100 MW", "koef_1_10": 7.81, "tahun_11_dst": 4.88 },
+   { "kapasitas": ">100 MW", "koef_1_10": 6.74, "tahun_11_dst": 4.21 } ],
+   "varian": [ { "nama": "waduk/bendungan atau irigasi Kementerian PUPR (multiguna)", "pengali": 0.8 }, { "nama": "PLTA ekspansi", "pengali": 0.7 }, { "nama": "excess power", "tetap": 4.06 }, { "nama": "dibangun seluruhnya oleh pemerintah", "tetap": 3.76 } ] },
+  "mikrohidro": { "jenis": "diatur lewat tingkat PLTA kapasitas kecil (s.d. 1 MW dan >1 MW s.d. 3 MW); Perpres 112/2022 tidak punya kelas mikrohidro tersendiri", "rujuk": "hidro", "tingkat_rujukan": ["s.d. 1 MW", ">1 MW s.d. 3 MW", ">3 MW s.d. 5 MW"] },
+  "surya": { "jenis": "PLTS fotovoltaik (di luar baterai)", "tahun_maks": 30, "tingkat": [
+   { "kapasitas": "s.d. 1 MW", "koef_1_10": 11.47, "tahun_11_dst": 6.88 },
+   { "kapasitas": ">1 MW s.d. 3 MW", "koef_1_10": 9.94, "tahun_11_dst": 5.97 },
+   { "kapasitas": ">3 MW s.d. 5 MW", "koef_1_10": 8.77, "tahun_11_dst": 5.26 },
+   { "kapasitas": ">5 MW s.d. 10 MW", "koef_1_10": 8.26, "tahun_11_dst": 4.96 },
+   { "kapasitas": ">10 MW s.d. 20 MW", "koef_1_10": 7.94, "tahun_11_dst": 4.76 },
+   { "kapasitas": ">20 MW", "koef_1_10": 6.95, "tahun_11_dst": 4.17 } ],
+   "varian": [ { "nama": "PLTS ekspansi", "pengali": 0.8 }, { "nama": "lahan disediakan pemerintah", "pengali": 0.95 }, { "nama": "dibangun seluruhnya oleh pemerintah", "tetap": 5.63 } ] },
+  "bayu": { "jenis": "PLTB (di luar baterai)", "tahun_maks": 30, "tingkat": [
+   { "kapasitas": "s.d. 5 MW", "koef_1_10": 11.22, "tahun_11_dst": 6.73 },
+   { "kapasitas": ">5 MW s.d. 20 MW", "koef_1_10": 10.26, "tahun_11_dst": 6.15 },
+   { "kapasitas": ">20 MW", "koef_1_10": 9.54, "tahun_11_dst": 5.73 } ],
+   "varian": [ { "nama": "PLTB ekspansi", "pengali": 0.7 }, { "nama": "dibangun seluruhnya oleh pemerintah", "tetap": 5.63 } ] },
+  "bioenergi": { "jenis": "PLTBm (biomassa) dan PLTBg (biogas)", "tahun_maks": { "PLTBm": 25, "PLTBg": 20 }, "tingkat": [
+   { "jenis": "PLTBm", "kapasitas": "s.d. 1 MW", "koef_1_10": 11.55, "tahun_11_dst": 9.24 },
+   { "jenis": "PLTBm", "kapasitas": ">1 MW s.d. 3 MW", "koef_1_10": 10.73, "tahun_11_dst": 8.59 },
+   { "jenis": "PLTBm", "kapasitas": ">3 MW s.d. 5 MW", "koef_1_10": 10.20, "tahun_11_dst": 8.16 },
+   { "jenis": "PLTBm", "kapasitas": ">5 MW s.d. 10 MW", "koef_1_10": 9.86, "tahun_11_dst": 7.89 },
+   { "jenis": "PLTBm", "kapasitas": ">10 MW", "koef_1_10": 9.29, "tahun_11_dst": 7.43 },
+   { "jenis": "PLTBg", "kapasitas": "s.d. 1 MW", "koef_1_10": 10.18, "tahun_11_dst": 6.11 },
+   { "jenis": "PLTBg", "kapasitas": ">1 MW s.d. 3 MW", "koef_1_10": 9.81, "tahun_11_dst": 5.89 },
+   { "jenis": "PLTBg", "kapasitas": ">3 MW s.d. 5 MW", "koef_1_10": 8.99, "tahun_11_dst": 5.39 },
+   { "jenis": "PLTBg", "kapasitas": ">5 MW s.d. 10 MW", "koef_1_10": 8.51, "tahun_11_dst": 5.10 },
+   { "jenis": "PLTBg", "kapasitas": ">10 MW", "koef_1_10": 7.44, "tahun_11_dst": 4.46 } ],
+   "varian": [ { "nama": "ekspansi", "pengali": 0.8 }, { "nama": "excess power", "tetap": { "PLTBm": 9.29, "PLTBg": 7.44 } }, { "nama": "dibangun seluruhnya oleh pemerintah", "tetap": { "PLTBm": 9.29, "PLTBg": 7.44 } } ] },
+  "panas_bumi": { "jenis": "PLTP (listrik)", "tahun_maks": 30, "tingkat": [
+   { "kapasitas": "s.d. 10 MW", "koef_1_10": 9.76, "tahun_11_dst": 8.30 },
+   { "kapasitas": ">10 MW s.d. 50 MW", "koef_1_10": 9.41, "tahun_11_dst": 8.00 },
+   { "kapasitas": ">50 MW s.d. 100 MW", "koef_1_10": 8.64, "tahun_11_dst": 7.35 },
+   { "kapasitas": ">100 MW", "koef_1_10": 7.65, "tahun_11_dst": 6.50 } ],
+   "varian": [ { "nama": "uap setara listrik", "tingkat": [ { "kapasitas": "s.d. 10 MW", "koef_1_10": 6.60, "tahun_11_dst": 5.60 }, { "kapasitas": ">10 MW s.d. 50 MW", "koef_1_10": 6.25, "tahun_11_dst": 5.31 }, { "kapasitas": ">50 MW s.d. 100 MW", "koef_1_10": 5.48, "tahun_11_dst": 4.65 }, { "kapasitas": ">100 MW", "koef_1_10": 4.48, "tahun_11_dst": 3.91 } ] } ] },
+  "laut": null
+ },
+ "faktor_lokasi": [
+  { "wilayah": "Jawa, Madura, Bali", "F": 1.00 }, { "wilayah": "Sumatera", "F": 1.10 }, { "wilayah": "Kepulauan Riau", "F": 1.20 },
+  { "wilayah": "Bangka Belitung", "F": 1.10 }, { "wilayah": "Kalimantan", "F": 1.10 }, { "wilayah": "Sulawesi", "F": 1.10 },
+  { "wilayah": "Nusa Tenggara", "F": 1.20 }, { "wilayah": "Maluku Utara", "F": 1.25 }, { "wilayah": "Maluku", "F": 1.25 },
+  { "wilayah": "Papua Barat", "F": 1.50 }, { "wilayah": "Papua", "F": 1.50 } ],
+ "faktor_lokasi_kecil": "Pulau kecil dan Mentawai punya F lebih tinggi (1,10 s.d. 1,30); tidak dipetakan ke provinsi karena butuh daftar pulau."
+}

@@ -1,14 +1,15 @@
 /* Profil provinsi (/wilayah?prov=XX): kepala ringan (lambang, nama, satu kalimat, strip angka) lalu seksi exhibit .jm-ex.
    Data: /data/wilayah.json (baris provinsi) + /data/wilayah/<kode>.json (berita, kalender, emisi, pakar). Nilai kosong = "-" berpetunjuk; seksi kosong disembunyikan. */
 import { esc, ikon } from "/inti/umum.js";
-import { t, tanggal } from "/i18n.js";
+import { t, tanggal, ada } from "/i18n.js";
 import { exHtml, unduhRegHtml } from "/inti/komponen.js";
 import { aksiHtml, hlHtml } from "/inti/aksi_ex.js";
 import { batang } from "/grafik.js";
 import { pilTek, pilStatus } from "/inti/ikon_tek.js";
 import { muatMapLibre } from "/inti/maplibre.js";
-import { rapikanPeta, geoProvinsi } from "/inti/peta_indonesia.js";
-import { sumberLipat, amanUrl, muatData, num } from "/analisis.js";
+import { rapikanPeta, geoProvinsi, jalurPerProvinsi } from "/inti/peta_indonesia.js";
+import { sumberLipat, amanUrl, muatData, num, pil, pasangBar } from "/analisis.js";
+import { namaProyek } from "/inti/nama_proyek.js";
 
 const ST0 = "tidak" + "-diketahui"; // slug data status, bukan teks layar
 const TEK = ["hidro", "panas-bumi", "surya", "bayu", "bioenergi"];
@@ -44,28 +45,39 @@ function peringkat(data, p, k) {
 const satuan = (k) => (UKUR[k].satKey ? t(UKUR[k].satKey) : UKUR[k].sat);
 const fmt = (k, v) => (v == null ? null : UKUR[k].juta ? juta(v) : num(v, UKUR[k].d)) ;
 
-/* ---------- kepala ---------- */
+/* ---------- kepala: pita (breadcrumb, lambang, nama, chip fakta, peta mini) + strip angka ---------- */
+const chip = (ik, teks) => (teks ? `<li class="jm-wp-chip">${ikon(ik, 16)}<span>${esc(teks)}</span></li>` : "");
+const sel = (ik, nilai, sat, label, href, est) => (nilai == null ? "" : `<a class="jm-wp-sel" href="${href}"><span class="jm-wp-ub-ik">${ikon(ik, 20)}</span><span class="jm-wp-sel-t"><span class="jm-wp-ub-n"><b>${esc(nilai)}</b>${sat ? `<span>${esc(sat)}</span>` : ""}</span><span class="jm-wp-ub-l">${esc(label)}${est ? " " + pil("an.est") : ""}</span></span></a>`);
+const strip = (cells) => `<div class="jm-wp-strip">${cells.join("")}</div>`;
 function kepala(data, p) {
   const id = p.identitas || {}, rk = peringkat(data, p, "ebt");
-  const bagian = [id.ibu_kota && t("wp.l.ibu", { ibu: id.ibu_kota }), id.kabupaten != null && t("wp.l.kab", { kab: num(id.kabupaten), kota: num(id.kota ?? 0) }), id.luas_km2 != null && t("wp.l.luas", { luas: num(id.luas_km2, 0) })].filter(Boolean);
-  const lead = bagian.length ? bagian.join(", ") + "." : t("wp.l.kosong");
-  const u = (ik, nilai, sat, label, href) => `<a class="jm-wp-ub" href="${href}"><span class="jm-wp-ub-ik">${ikon(ik, 18)}</span><p class="jm-wp-ub-n">${nilai == null ? kos() : `<b>${esc(nilai)}</b>${sat ? `<span>${esc(sat)}</span>` : ""}`}</p><p class="jm-wp-ub-l">${esc(label)}</p></a>`;
+  const chips = [chip("direktori", id.ibu_kota && t("wp.l.ibu", { ibu: id.ibu_kota })), chip("wilayah", id.kabupaten != null && t("wp.l.kab", { kab: num(id.kabupaten), kota: num(id.kota ?? 0) })), chip("peta", id.luas_km2 != null && t("wp.l.luas2", { luas: num(id.luas_km2, 0) })), chip("orang", id.penduduk != null && t("wp.l.pend", { n: juta(id.penduduk) })), chip("analisis", id.pdrb && t("wp.l.pdrb", { n: num(id.pdrb.triliun, 0) }))].join("");
   const pb = p.potensi_panas_bumi, rs = p.rasio_elektrifikasi;
-  return `<div class="jm-judul jm-wp-kepala"><h1 class="jm-wl-h1">${lambang(p)}<span>${esc(p.nama)}</span></h1><p>${esc(lead)}</p></div>
-    <div class="jm-wp-strip">
-      ${u("analisis", rk.r ? t("wp.u.rank", { r: rk.r, n: rk.n }) : null, "", t("wp.u.rank_l"), "#kelistrikan")}
-      ${u("analisis", p.terpasang_mw ? num(p.terpasang_mw.nilai, 1) : null, "MW", t("wp.u.mw_l"), "#potensi")}
-      ${u("peta", pb ? num(pb.nilai, 0) : null, "MW", t("wp.u.pot_l"), "#potensi")}
-      ${u("proyek", p.jumlah_proyek ? num(p.jumlah_proyek) : null, t("wp.proyek_sat"), t("wp.u.proyek_l"), "#proyek")}
-      ${u("status", rs ? num(rs.nilai, 2) : null, "%", t("wp.u.rasio_l"), "#kelistrikan")}
-      ${u("orang", id.penduduk != null ? juta(id.penduduk) : null, "", t("wp.u.pend_l"), "#ringkasan")}
-    </div>`;
+  const band = `<section class="jm-ex jm-wp-band" id="band">
+    <div class="jm-wp-crumb"><a class="jm-wp-pilbtn" href="/wilayah">${ikon("panah-kiri", 16)}<span>${esc(t("wl.semua"))}</span></a><span class="jm-wp-jejak"><a href="/wilayah">${esc(t("wp.band.wilayah"))}</a> <span aria-hidden="true">›</span> <span>${esc(p.nama)}</span></span><div class="jm-ex-aksi">${aksiHtml()}</div></div>
+    <div class="jm-wp-isi">
+      <div class="jm-wp-kiri"><span class="jm-wp-lb">${lambang(p, 88)}</span><div class="jm-wp-nama"><h1 class="jm-ex-j jm-wp-h1">${esc(p.nama)}</h1><ul class="jm-wp-chips">${chips}</ul></div></div>
+      <figure class="jm-wp-mini"><svg id="wp-mini" viewBox="0 0 320 130" role="img" aria-label="${esc(t("wp.band.mini", { nama: p.nama }))}" focusable="false"></svg>${rk.r ? `<figcaption><b>${esc(t("wp.band.rank", { r: rk.r, n: rk.n }))}</b> <span>${esc(t("wp.band.rank_ket"))}</span></figcaption>` : ""}</figure>
+    </div></section>`;
+  return band + strip([
+    sel("analisis", rk.r ? rk.r : null, rk.r ? t("wp.u.dari", { n: rk.n }) : "", t("wp.u.rank_l"), "#kelistrikan", true),
+    sel("analisis", p.terpasang_mw ? num(p.terpasang_mw.nilai, 1) : null, "MW", t("wp.u.mw_l"), "#potensi"),
+    sel("peta", pb ? num(pb.nilai, 0) : null, "MW", t("wp.u.pot_l"), "#potensi"),
+    sel("proyek", p.jumlah_proyek ? num(p.jumlah_proyek) : null, "", t("wp.u.proyek_l"), "#proyek"),
+    sel("status", rs ? num(rs.nilai, 2) : null, "%", t("wp.u.rasio_l"), "#kelistrikan"),
+  ]);
+}
+async function petaMini(p) {
+  const el = document.getElementById("wp-mini"); if (!el) return;
+  const g = await geoProvinsi(); if (!g) return;
+  const js = jalurPerProvinsi(g, 320, 130, undefined, 0.5), on = js.find((x) => x.kode === p.kode);
+  el.innerHTML = js.filter((x) => x.kode !== p.kode).map((x) => `<path class="jm-wp-mp" d="${x.d}"/>`).join("") + (on ? `<path class="jm-wp-mp jm-wp-mp-on" d="${on.d}"/>` : "");
 }
 
 /* ---------- pembantu seksi ---------- */
 const sumberDari = (...a) => sumberLipat(a.filter(Boolean).map((s) => ({ sumber: s.sumber, halaman: s.halaman, tahun: s.tahun, url: s.url || s.sumber_url, tanggal: s.tanggal || s.tanggal_periksa || TGL })));
 const seksi = (o) => exHtml({ tingkat: "h2", ...o });
-const dl = (baris) => `<dl class="jm-wp-dl">${baris.map(([k, v]) => `<div><dt>${esc(k)}</dt><dd>${v}</dd></div>`).join("")}</dl>`;
+const dl = (baris) => `<dl class="jm-wp-dl">${baris.filter((r) => !String(r[1]).includes("jm-wp-kos")).map(([k, v]) => `<div><dt>${esc(k)}</dt><dd>${v}</dd></div>`).join("")}</dl>`;
 
 /* ---------- 1. ringkasan ---------- */
 function ringkasan(p) {
@@ -93,21 +105,21 @@ function kelistrikan(p) {
   const fosil = kj ? FOSIL.reduce((s, k) => s + (kj[k] || 0), 0) : null, ebt = kj ? EBT.reduce((s, k) => s + (kj[k] || 0), 0) : null;
   const porsi = kj && kj.total ? (ebt / kj.total) * 100 : null;
   const j = kj ? hlHtml("wp.j.listrik", num(kj.total, 0) + " MW", { nama: p.nama, persen: num(porsi, 0) }) : hlHtml("wp.j.listrik0", num(rs.nilai, 2) + "%", { nama: p.nama });
-  const jenis = kj ? ["pltu", "pltg", "pltd", "plta", "plt_bio", "pltp", "plts", "pltb", "pltgb", "plt_lain"].filter((k) => kj[k] > 0).sort((a, b) => kj[b] - kj[a]) : [];
-  const grafik = jenis.length ? batang(jenis.map((k, i) => ({ label: t("wp.jenis." + k), v: kj[k], teks: num(kj[k], 0) + " MW", sorot: i === 0 })), { label: t("wp.listrik.grafik") }) : "";
-  const kartu = dl([
-    [t("wp.k.rasio"), rs ? `${esc(num(rs.nilai, 2))}% <small>(${rs.tahun})</small>` : kos()],
-    [t("wp.k.rt"), rs?.rumah_tangga_berlistrik != null ? `${esc(num(rs.rumah_tangga_berlistrik))} <small>(${esc(t("wp.k.rt_pln", { n: num(rs.rumah_tangga_pln ?? 0) }))})</small>` : kos()],
-    [t("wp.k.desa"), desa ? esc(t("wp.k.desa_isi", { n: num(desa.jumlah), p: num(desa.persen, 2) })) + (desa.non_pln ? ` <small>(${esc(t("wp.k.desa_non", { n: num(desa.non_pln) }))})</small>` : "") : kos()],
-    [t("wp.k.kapt"), kj ? `${esc(num(kj.total, 0))} MW <small>(${kj.tahun})</small>` : kos()],
-    [t("wp.k.fosil"), kj ? `${esc(num(fosil, 0))} MW <small>${esc(t("wp.k.fosil_n"))}</small>` : kos()],
-    [t("wp.k.ebt"), kj ? `${esc(num(ebt, 0))} MW (${esc(num(porsi, 1))}%)` : kos()],
-    [t("wp.k.konsumsi"), kos(t("wp.kos.konsumsi"))],
-    [t("wp.k.bpp"), kos(t("wp.kos.bpp"))],
-    [t("wp.k.uid"), kos(t("wp.kos.uid"))],
+  const st = strip([
+    sel("status", rs ? num(rs.nilai, 2) : null, "%", t("wp.k.rasio"), "#kelistrikan"),
+    sel("orang", rs?.rumah_tangga_berlistrik != null ? num(rs.rumah_tangga_berlistrik) : null, "", t("wp.k.rt"), "#kelistrikan"),
+    sel("wilayah", desa ? num(desa.jumlah) : null, desa ? t("wp.u.desa", { p: num(desa.persen, 1) }) : "", t("wp.k.desa"), "#kelistrikan"),
+    sel("analisis", kj ? num(kj.total, 0) : null, "MW", t("wp.k.kapt"), "#kelistrikan"),
+    sel("analisis", porsi != null ? num(porsi, 1) : null, "%", t("wp.k.porsi"), "#kelistrikan"),
   ]);
-  const pl = pltp ? `<h3 class="jm-wp-h3">${esc(t("wp.pltp"))}</h3><ul class="jm-wp-daftar">${pltp.daftar.map((x) => `<li><b>${esc(x.nama)}</b> <small>${esc(x.pemilik)}</small></li>`).join("")}</ul>` : "";
-  return seksi({ id: "kelistrikan", ikon: "analisis", topik: t("wp.ey.listrik"), judulHtml: j, aksiHtml: aksiHtml() + sumberDari(kj, desa, rs, pltp), isiHtml: `<div class="jm-wp-dua">${kartu}<div>${grafik}</div></div>${pl}`, kakiHtml: kj && p.terpasang_mw ? `<p class="jm-bantu">${esc(t("wp.cat.dua_sumber", { a: kj.tahun, b: p.terpasang_mw.tahun }))}</p>` : "" });
+  const jenis = kj ? ["pltu", "pltg", "pltd", "plta", "plt_bio", "pltp", "plts", "pltb", "pltgb", "plt_lain"].filter((k) => kj[k] > 0).sort((a, b) => kj[b] - kj[a]) : [];
+  const C = 2 * Math.PI * 50, arc = porsi != null ? (porsi / 100) * C : 0;
+  const donut = kj ? `<div class="jm-wp-box jm-wp-donut"><svg viewBox="0 0 140 140" role="img" aria-label="${esc(t("wp.donut", { persen: num(porsi, 1) }))}" focusable="false"><circle class="jm-wp-dn-f" cx="70" cy="70" r="50"/><circle class="jm-wp-dn-e" cx="70" cy="70" r="50" stroke-dasharray="${arc.toFixed(1)} ${C.toFixed(1)}" transform="rotate(-90 70 70)"/><text x="70" y="70" text-anchor="middle" class="jm-wp-dn-n">${esc(num(porsi, 0))}%</text><text x="70" y="88" text-anchor="middle" class="jm-wp-dn-s">${esc(t("wp.donut_ebt"))}</text></svg>
+    <ul class="jm-wp-leg"><li><i class="jm-wp-sw-e"></i><span>${esc(t("wp.k.ebt"))}</span><b>${esc(num(ebt, 0))} MW</b></li><li><i class="jm-wp-sw-f"></i><span>${esc(t("wp.k.fosil"))}</span><b>${esc(num(fosil, 0))} MW</b></li></ul></div>` : "";
+  const mx = Math.max(1, ...jenis.map((k) => kj[k]));
+  const bars = jenis.length ? `<div class="jm-wp-box"><ul class="jm-wp-bars" aria-label="${esc(t("wp.listrik.grafik"))}">${jenis.map((k, i) => `<li><span class="jm-wp-bl">${esc(t("wp.jenis." + k))}</span><span class="jm-wp-bt"><i class="${i === 0 ? "jm-wp-b1" : "jm-wp-b0"}" data-w="${((kj[k] / mx) * 100).toFixed(1)}"></i></span><b class="jm-wp-bv">${esc(num(kj[k], 0))} MW</b></li>`).join("")}</ul></div>` : "";
+  const pl = pltp ? `<h3 class="jm-wp-h3">${esc(t("wp.pltp"))}</h3><ul class="jm-wp-pltp">${pltp.daftar.map((x) => `<li class="jm-wp-pk"><b>${esc(x.nama)}</b>${x.org ? `<a class="jm-wp-op" href="/o/${encodeURIComponent(x.org.id)}">${x.org.logo && /^\/img\//.test(x.org.logo) ? `<img src="${esc(x.org.logo)}" width="24" height="24" alt="" loading="lazy" decoding="async">` : ""}<span>${esc(x.org.nama)}</span></a>` : `<span class="jm-wp-op">${esc(x.pemilik)}</span>`}${pilStatus("beroperasi")}</li>`).join("")}</ul>` : "";
+  return seksi({ id: "kelistrikan", ikon: "analisis", topik: t("wp.ey.listrik"), judulHtml: j, aksiHtml: aksiHtml() + sumberDari(kj, desa, rs, pltp), isiHtml: `${st}${donut || bars ? `<div class="jm-wp-dua">${donut}${bars}</div>` : ""}${pl}`, kakiHtml: kj && p.terpasang_mw ? `<p class="jm-bantu">${esc(t("wp.cat.dua_sumber", { a: kj.tahun, b: p.terpasang_mw.tahun }))}</p>` : "" });
 }
 
 /* ---------- 3. potensi vs terpasang ---------- */
@@ -115,12 +127,14 @@ function potensi(p) {
   const pt = p.per_teknologi_mw || {}, pb = p.potensi_panas_bumi, atlas = p.surya_atlas;
   if (!p.terpasang_mw && !pb) return "";
   const baris = TEK.map((k) => ({ k, mw: pt[k] ?? null, pot: k === "panas-bumi" ? pb?.nilai ?? null : null }));
-  const rows = baris.filter((r) => r.mw != null).map((r) => ({ label: t("an.tek." + r.k), v0: r.pot != null ? Math.min(r.mw, r.pot) : 0, v: r.pot != null ? Math.max(0, r.pot - r.mw) : r.mw, sorot: r.pot != null, teks: r.pot != null ? (r.mw > 0 ? t("wp.pot.dari", { a: num(r.mw, 1), b: num(r.pot, 0) }) : t("wp.pot.nol", { b: num(r.pot, 0) })) : num(r.mw, 1) + " MW" }));
+  const mxT = Math.max(1, ...baris.map((r) => r.mw || 0));
+  const bars = baris.filter((r) => r.mw != null).map((r) => ({ label: t("an.tek." + r.k), w: r.pot ? (r.mw / r.pot) * 100 : (r.mw / mxT) * 100, on: r.pot != null, teks: r.pot != null ? (r.mw > 0 ? t("wp.pot.dari", { a: num(r.mw, 1), b: num(r.pot, 0) }) : t("wp.pot.nol")) : num(r.mw, 1) + " MW" }));
+  const grafik = bars.length ? `<ul class="jm-wp-bars jm-wp-bars-l" aria-label="${esc(t("wp.pot.grafik"))}">${bars.map((b) => `<li><span class="jm-wp-bl">${esc(b.label)}</span><span class="jm-wp-bt"><i class="${b.on ? "jm-wp-b1" : "jm-wp-b0"}" data-w="${Math.min(100, b.w).toFixed(1)}"></i></span><b class="jm-wp-bv">${esc(b.teks)}</b></li>`).join("")}</ul>` : "";
   const j = pb && !(pt["panas-bumi"] > 0) ? hlHtml("wp.j.potensi_nol", num(pb.nilai, 0) + " MW", { nama: p.nama }) : pb ? hlHtml("wp.j.potensi", num(((pt["panas-bumi"] ?? 0) / pb.nilai) * 100, 1) + "%", { nama: p.nama, a: num(pt["panas-bumi"] ?? 0, 1), b: num(pb.nilai, 0) }) : hlHtml("wp.j.potensi0", num(p.terpasang_mw.nilai, 1) + " MW", { nama: p.nama });
   const tabel = `<div class="jm-gulir"><table class="jm-tabel"><thead><tr><th>${esc(t("wl.col.tek"))}</th><th class="jm-num">${esc(t("wp.col.terpasang"))}</th><th class="jm-num">${esc(t("wp.col.potensi"))}</th><th class="jm-num">${esc(t("wp.col.real"))}</th></tr></thead><tbody>${baris.map((r) =>
     `<tr><td data-label="${esc(t("wl.col.tek"))}">${pilTek(r.k)}</td><td data-label="${esc(t("wp.col.terpasang"))}" class="jm-num">${nilaiAtau(r.mw, (v) => esc(num(v, 1)) + " MW")}</td><td data-label="${esc(t("wp.col.potensi"))}" class="jm-num">${r.pot != null ? esc(num(r.pot, 0)) + " MW" : kos(t("wp.kos.potensi"))}</td><td data-label="${esc(t("wp.col.real"))}" class="jm-num">${r.pot ? esc(num((r.mw / r.pot) * 100, 1)) + "%" : kos()}</td></tr>`).join("")}</tbody></table></div>`;
   const sur = atlas?.pvout_kwh_per_kwp_tahun ? `<p class="jm-bantu">${esc(t("wp.surya_atlas", { pv: num(atlas.pvout_kwh_per_kwp_tahun), ghi: num(atlas.ghi_kwh_per_m2_tahun ?? 0) }))}</p>` : "";
-  return seksi({ id: "potensi", ikon: "peta", topik: t("wp.ey.potensi"), judulHtml: j, aksiHtml: aksiHtml({ csv: true }) + sumberDari(p.terpasang_mw, pb, atlas && { sumber: atlas.sumber, url: atlas.url, tanggal: atlas.tanggal }), isiHtml: (rows.length ? batang(rows, { label: t("wp.pot.grafik") }) : "") + tabel, kakiHtml: sur + `<p class="jm-bantu">${esc(t("wp.cat.potensi"))}</p>` });
+  return seksi({ id: "potensi", ikon: "peta", topik: t("wp.ey.potensi"), judulHtml: j, aksiHtml: aksiHtml({ csv: true }) + sumberDari(p.terpasang_mw, pb, atlas && { sumber: atlas.sumber, url: atlas.url, tanggal: atlas.tanggal }), isiHtml: grafik + tabel, kakiHtml: sur + `<p class="jm-bantu">${esc(t("wp.cat.potensi"))}</p>` });
 }
 
 /* ---------- 4. RUED ---------- */
@@ -165,7 +179,7 @@ async function bukaPeta(p) {
       peta.addSource("prov", { type: "geojson", data: f });
       peta.addLayer({ id: "luar", type: "fill", source: "luar", paint: { "fill-color": warna("--paper"), "fill-opacity": 0.72 } });
       peta.addLayer({ id: "prov", type: "line", source: "prov", paint: { "line-color": warna("--accent-isi"), "line-width": 2 } });
-      const titik = p.proyek.filter((x) => x.lat != null).map((x) => ({ type: "Feature", geometry: { type: "Point", coordinates: [x.lng, x.lat] }, properties: { nama: x.nama, mw: x.mw || 0, tepat: x.presisi === "provinsi" ? 0 : 1 } }));
+      const titik = p.proyek.filter((x) => x.lat != null).map((x) => ({ type: "Feature", geometry: { type: "Point", coordinates: [x.lng, x.lat] }, properties: { nama: namaBersih(x), mw: x.mw || 0, tepat: x.presisi === "provinsi" ? 0 : 1 } }));
       peta.addSource("titik", { type: "geojson", data: { type: "FeatureCollection", features: titik } });
       peta.addLayer({ id: "titik", type: "circle", source: "titik", paint: { "circle-color": warna("--accent-isi"), "circle-opacity": ["case", ["==", ["get", "tepat"], 1], 0.85, 0.25], "circle-radius": ["interpolate", ["linear"], ["sqrt", ["get", "mw"]], 0, 5, 10, 8, 30, 13], "circle-stroke-color": warna("--card"), "circle-stroke-width": 1.5 } });
       const pop = new maplibregl.Popup({ closeButton: false, closeOnClick: false, offset: 10 });
@@ -176,14 +190,19 @@ async function bukaPeta(p) {
 }
 
 /* ---------- 6. daftar proyek ---------- */
+const dedupe = (n) => String(n).replace(/\b(\S+)(\s+\1)+(?=\s|$)/gi, "$1");
+const namaBersih = (x) => dedupe(namaProyek(x));
 function proyek(p) {
   if (!p.proyek.length) return "";
-  const A = [...p.proyek].sort((a, b) => (b.mw ?? -1) - (a.mw ?? -1) || a.nama.localeCompare(b.nama));
+  const A = [...p.proyek].sort((a, b) => (b.mw ?? -1) - (a.mw ?? -1) || namaBersih(a).localeCompare(namaBersih(b)));
   const mw = A.reduce((s, x) => s + (x.mw || 0), 0);
   const hit = (f) => { const m = new Map(); for (const x of A) m.set(f(x), (m.get(f(x)) || 0) + 1); return [...m].sort((a, b) => b[1] - a[1]); };
   const rinci = `<div class="jm-wp-pil">${hit((x) => x.teknologi).map(([k, n]) => `<span class="jm-wp-pilgrup">${pilTek(k)} <b>${n}</b></span>`).join("")}${hit((x) => x.status || ST0).map(([k, n]) => `<span class="jm-wp-pilgrup">${pilStatus(k)} <b>${n}</b></span>`).join("")}</div>`;
-  const tb = `<div class="jm-gulir"><table class="jm-tabel"><thead><tr><th>${esc(t("wl.col.proyek"))}</th><th>${esc(t("wl.col.tek"))}</th><th class="jm-num">${esc(t("wl.col.kap"))}</th><th>${esc(t("wl.col.status"))}</th><th>${esc(t("pf.c.unduh"))}</th></tr></thead><tbody>${A.map((x) =>
-    `<tr><td data-label="${esc(t("wl.col.proyek"))}">${esc(x.nama)}</td><td data-label="${esc(t("wl.col.tek"))}">${pilTek(x.teknologi)}</td><td data-label="${esc(t("wl.col.kap"))}" class="jm-num">${x.mw == null ? kos() : esc(num(x.mw, 1) + " " + (x.satuan || "MW"))}</td><td data-label="${esc(t("wl.col.status"))}">${pilStatus(x.status || ST0)}</td></tr>`).join("")}</tbody></table></div>`;
+  const progPil = (a) => (a || []).map((g) => `<span class="jm-pil jm-wp-prog">${esc(ada("pj.pn." + g) ? t("pj.pn." + g) : g)}</span>`).join(" ");
+  const pengTd = (x) => (x.peng ? (x.peng.id && !x.peng.generik ? `<a href="/o/${encodeURIComponent(x.peng.id)}">${esc(x.peng.nama)}</a>` : x.peng.generik ? `<span class="jm-wp-redup">${esc(x.peng.nama)}</span>` : esc(x.peng.nama)) : kos());
+  const L = (k) => esc(t(k));
+  const tb = `<div class="jm-gulir"><table class="jm-tabel"><thead><tr><th>${L("wl.col.proyek")}</th><th>${L("wl.col.tek")}</th><th>${L("wp.col.program")}</th><th>${L("wp.col.peng")}</th><th class="jm-num">${L("wl.col.kap")}</th><th>${L("wl.col.status")}</th></tr></thead><tbody>${A.map((x) =>
+    `<tr><td data-label="${L("wl.col.proyek")}"><a href="/p/${encodeURIComponent(x.id)}">${esc(namaBersih(x))}</a></td><td data-label="${L("wl.col.tek")}">${pilTek(x.teknologi)}</td><td data-label="${L("wp.col.program")}">${x.program?.length ? progPil(x.program) : kos()}</td><td data-label="${L("wp.col.peng")}">${pengTd(x)}</td><td data-label="${L("wl.col.kap")}" class="jm-num">${x.mw == null ? kos() : esc(num(x.mw, 1) + " " + (x.satuan || "MW"))}</td><td data-label="${L("wl.col.status")}">${pilStatus(x.status || ST0)}</td></tr>`).join("")}</tbody></table></div>`;
   return seksi({ id: "proyek", ikon: "proyek", topik: t("wp.ey.proyek"), judulHtml: hlHtml("wp.j.proyek", num(A.length), { nama: p.nama, mw: num(mw, 0) }), aksiHtml: aksiHtml({ csv: true }) + sumberDari({ sumber: t("wl.sumber_proyek"), tanggal: "" }), isiHtml: rinci + tb, kakiHtml: `<p class="jm-bantu">${esc(t("wp.cat.proyek"))}</p>` });
 }
 
@@ -249,6 +268,6 @@ export async function profilProvinsi(p, data, $) {
   try { d = await muatData("wilayah/" + encodeURIComponent(p.kode) + ".json"); } catch (e) { /* bagian tambahan disembunyikan */ }
   $("profil-isi").innerHTML = kepala(data, p) + [ringkasan(p), kelistrikan(p), potensi(p), rued(p), petaSeksi(p), proyek(p), organisasi(p), pakar(p, d), regulasi(p), emisi(p, d), berita(p, d), banding(data, p)].join("");
   $("cara").innerHTML = `<p>${esc(t("wl.cara_profil"))}</p>`;
-  $("kutip").textContent = t("wl.kutip_profil", { nama: p.nama, tanggal: tanggal(data.dibangun_pada, { gaya: "panjang" }) });
+  pasangBar($("profil-isi")); petaMini(p);
   bukaPeta(p);
 }
