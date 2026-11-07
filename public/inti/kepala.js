@@ -145,9 +145,17 @@ async function kakiIsi(kaki, saya) {
   kaki.querySelector("#kakiAtas")?.addEventListener("click", () => scrollTo({ top: 0, behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth" }));
   if (!saya?.masuk) return;
   try {
-    const r = await fetch("/data/ringkas.json").then((x) => (x.ok ? x.json() : null)) /* satu sumber dengan Tentang dan masuk (8 Nov 2026) */, h = r?.hitung || {}, ul = kaki.querySelector("#kakiStat"), sumber = (n) => t("jm.kaki.sumber_potret").replace("{tanggal}", r.dibangun_pada || "-").replace("{lapis}", r.lapis || "");
-    const tambah = (n, kunci, ik) => { if (Number.isFinite(n)) ul.insertAdjacentHTML("beforeend", `<li title="${sumber(n)}"><i>${ikon(ik, 18)}</i><b>${angka(n)}</b><span data-i18n="${kunci}">${t(kunci)}</span></li>`); };
-    tambah(h.proyek, "jm.kaki.proyek", "proyek"); tambah(h.organisasi, "jm.kaki.organisasi", "direktori");
+    /* angka milik METI sendiri (pemilik 8 Nov 2026): anggota, METI Wilayah berdiri, pengurus. Bukan proyek/organisasi ekosistem. */
+    const ul = kaki.querySelector("#kakiStat"), ambil = (u) => fetch(u).then((x) => (x.ok ? x.json() : null)).catch(() => null);
+    const [mw, pg] = await Promise.all([ambil("/data/meti-wilayah.json"), ambil("/data/pengurus-meti.json")]);
+    const tambah = (n, kunci, ik, judul) => { if (Number.isFinite(n) && n > 0) ul.insertAdjacentHTML("beforeend", `<li title="${judul || ""}"><i>${ikon(ik, 18)}</i><b>${angka(n)}</b><span data-i18n="${kunci}">${t(kunci)}</span></li>`); };
+    if (mw) {
+      const anggota = (mw.provinsi || []).reduce((u, x) => u + (x.individu || 0) + (x.organisasi || 0), 0);
+      const terbaru = [...(mw.versi_angka || [])].sort((x, y) => (y.tanggal || "").localeCompare(x.tanggal || ""))[0];
+      tambah(anggota, "jm.kaki.anggota", "orang", mw.anggota_sumber?.label);
+      tambah(terbaru?.berdiri, "jm.kaki.wilayah", "lokasi", terbaru?.sumber);
+    }
+    if (pg) tambah(new Set([...Object.values(pg.unit || {}).flat(), ...(pg.bidang || []).flatMap((b) => b.anggota || [])].filter((o) => o?.nama).map((o) => o.nama)).size, "jm.kaki.pengurus_n", "direktori");
   } catch (e) { /* tanpa potret: angka disembunyikan, bukan ditebak */ }
 }
 

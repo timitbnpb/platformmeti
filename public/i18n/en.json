@@ -354,6 +354,9 @@
  "jm.kaki.berdiri": "Founded",
  "jm.kaki.sumber_berdiri": "Source: metiires.or.id, checked 7 Nov 2026",
  "jm.kaki.sumber_potret": "Source: directory snapshot, level {lapis}, built {tanggal}",
+ "jm.kaki.anggota": "Members",
+ "jm.kaki.wilayah": "Regional chapters",
+ "jm.kaki.pengurus_n": "Board",
  "jm.kaki.proyek": "Projects",
  "jm.kaki.organisasi": "Organisations",
  "jm.kaki.kebijakan": "Membership and payment policy",
@@ -4403,5 +4406,16 @@
  "pt.nonaktif": "Cannot be sent until the portal opens.",
  "pt.belum_klaim": "Claim an organisation in the My organisations card first to unlock this form.",
  "pt.org_pilih_ph": "Type an organisation name",
- "pt.f.alamat_kantor": "Office address"
+ "pt.f.alamat_kantor": "Office address",
+ "beranda.pel.j": "{n} players in {k} types",
+ "beranda.pel.bumn": "State-owned",
+ "beranda.pel.swasta": "Private and IPPs",
+ "beranda.pel.internasional": "Foreign",
+ "beranda.pel.asosiasi": "Associations",
+ "beranda.pel.kementerian-lembaga": "State institutions",
+ "beranda.pel.koperasi": "Cooperatives",
+ "beranda.pel.ormawa": "Student organizations",
+ "beranda.pel.perguruan-tinggi": "Universities",
+ "beranda.pel.think-tank": "Think tanks",
+ "beranda.pm.belum": "IPP (not yet known)"
 }

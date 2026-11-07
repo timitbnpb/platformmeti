@@ -354,6 +354,9 @@
  "jm.kaki.berdiri": "Berdiri",
  "jm.kaki.sumber_berdiri": "Sumber: metiires.or.id, diperiksa 7 Nov 2026",
  "jm.kaki.sumber_potret": "Sumber: potret direktori tingkat {lapis}, dibangun {tanggal}",
+ "jm.kaki.anggota": "Anggota",
+ "jm.kaki.wilayah": "METI Wilayah",
+ "jm.kaki.pengurus_n": "Pengurus",
  "jm.kaki.proyek": "Proyek",
  "jm.kaki.organisasi": "Organisasi",
  "jm.kaki.kebijakan": "Kebijakan membership dan pembayaran",
@@ -4403,5 +4406,16 @@
  "pt.nonaktif": "Belum dapat dikirim sampai portal dibuka.",
  "pt.belum_klaim": "Klaim lembaga dulu di kartu Lembaga saya agar formulir ini terbuka.",
  "pt.org_pilih_ph": "Ketik nama organisasi",
- "pt.f.alamat_kantor": "Alamat kantor"
+ "pt.f.alamat_kantor": "Alamat kantor",
+ "beranda.pel.j": "{n} pelaku dalam {k} jenis",
+ "beranda.pel.bumn": "BUMN",
+ "beranda.pel.swasta": "Swasta dan IPP",
+ "beranda.pel.internasional": "Asing",
+ "beranda.pel.asosiasi": "Asosiasi",
+ "beranda.pel.kementerian-lembaga": "Lembaga negara",
+ "beranda.pel.koperasi": "Koperasi",
+ "beranda.pel.ormawa": "Organisasi mahasiswa",
+ "beranda.pel.perguruan-tinggi": "Perguruan tinggi",
+ "beranda.pel.think-tank": "Lembaga kajian",
+ "beranda.pm.belum": "IPP (belum diketahui)"
 }

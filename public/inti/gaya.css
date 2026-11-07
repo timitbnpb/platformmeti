@@ -153,3 +153,4 @@ h1,h2,h3,.jm-kh h1{letter-spacing:-.015em}
 /* tombol langganan di baris kontak: tinggi normal, lebar seukuran isi, rata kanan (8 Nov 2026) */
 .jm-kaki .jm-kaki-hub li.jm-kaki-lgli a.jm-kaki-lg{display:inline-flex!important;align-items:center;gap:8px;width:auto;max-width:none;min-height:44px;padding:0 20px;border:1.5px solid var(--meti-lime);border-radius:var(--r-pil);font:600 var(--t-tombol)/1 var(--font);white-space:nowrap}
 .jm-kaki .jm-kaki-hub li.jm-kaki-lgli{align-self:center}
+.jm-kaki-stat{max-width:none;grid-auto-columns:auto}
