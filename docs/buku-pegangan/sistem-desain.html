@@ -1,0 +1,1044 @@
+<title>Sistem Desain METI</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+/* Token METI (hijau, biru langit, lime dari logo) (DS §2). Satu-satunya berkas CSS yang boleh berisi hex (gerbang-token-meti).
+   Dua blok gelap (@media dan [data-theme="dark"]) WAJIB identik (gerbang-tema-kembar). */
+:root{
+  --meti-navy:#0A5C47; --meti-petrol:#1E7FA8; --meti-teal:#12896B;
+  --meti-cyan:#4AA9E0; --meti-lime:#9DC94F; --meti-cloud:#F2F8F5; --meti-oranye:#C55A11;
+
+  --paper:#FFFFFF; --surface:#F2F8F5; --card:#FFFFFF;
+  --soft-biru:#E3F3FA; --soft-hijau:#E2F3EC; --akun-isi:#E4F3EE; --akun-krem:#FBF1DC; --akun-biru:#BFE3F4;
+  --line:#D3E3DC; --line-cell:#DCE9E3; --line-ctl:#667C73;
+  --ink:#0E1B17; --ink2:#46594F; --head:#0B3D31;
+  --brand:#0A5C47; --brand2:#12896B;
+  --accent:#00705A; --accent-isi:#12896B; --on-accent:#FFFFFF;
+  --on-brand:#FFFFFF;   /* teks di atas pita hijau METI */
+  --data1:#0A5C47; --data2:#12896B; --data3:#4AA9E0; --data4:#9DC94F; --data5:#1E7FA8;
+  --sorot:#9DC94F; --kaki-bg:#06261D;
+  --ok:#066B52; --warn:#A8480A; --bad:#B3261E; --info:#1E7FA8;
+  --ok-bg:#E2F3EC; --warn-bg:#FBEBDD; --bad-bg:#FBE7E5; --info-bg:#E3F3FA;
+  --fokus:#1E7FA8;
+  --shadow:0 2px 14px rgb(10 60 45/.08); --shadow-lg:0 8px 28px rgb(10 60 45/.16);
+  --pendar:0 0 0 1px rgb(74 169 224/.35),0 8px 28px rgb(74 169 224/.18);
+  --r:14px; --r-sm:10px; --r-lg:16px; --r-pil:999px;
+  --top:60px; --maks:1240px; --gut:16px; --gap:12px; --target:44px;
+  --display:"Poppins",system-ui,sans-serif;
+  --font:"Inter",Arial,system-ui,sans-serif;
+  --t-display:30px; --t-h1:24px; --t-h2:18px; --t-angka:28px; --t-body:15px; --t-kecil:12.5px; --t-label:11px;
+  color-scheme:light;
+}
+@media (min-width:600px){:root{--gut:20px}}
+@media (min-width:768px){:root{--t-display:44px; --t-h1:32px; --t-h2:22px; --t-angka:40px}}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --paper:#0E1A17; --surface:#14241F; --card:#14241F;
+  --soft-biru:#153A4A; --soft-hijau:#123A2F; --akun-isi:#153A4A; --akun-krem:#3A2E1C; --akun-biru:#1E5E78;
+  --line:#25403A; --line-cell:#25403A; --line-ctl:#7E9A8F;
+  --ink:#E8F2EE; --ink2:#A7BDB4; --head:#FFFFFF;
+  --brand:#0B3D31; --brand2:#12896B;
+  --accent:#4FD3AD; --accent-isi:#12896B; --on-accent:#08201A;
+  --data1:#5BB8EC; --data2:#4FD3AD; --data3:#B3DB6E; --data4:#9FB8AE; --data5:#3E9BCB;
+  --ok:#4FD3AD; --warn:#F2955A; --bad:#FF8A80; --info:#5BB8EC;
+  --ok-bg:#123A2F; --warn-bg:#3A2616; --bad-bg:#3A1B19; --info-bg:#153A4A;
+  --fokus:#5BB8EC; --kaki-bg:#041912;
+  --shadow:0 2px 14px rgb(0 0 0/.35); --shadow-lg:0 8px 28px rgb(0 0 0/.5);
+  color-scheme:dark;
+}}
+:root[data-theme="dark"]{
+  --paper:#0E1A17; --surface:#14241F; --card:#14241F;
+  --soft-biru:#153A4A; --soft-hijau:#123A2F; --akun-isi:#153A4A; --akun-krem:#3A2E1C; --akun-biru:#1E5E78;
+  --line:#25403A; --line-cell:#25403A; --line-ctl:#7E9A8F;
+  --ink:#E8F2EE; --ink2:#A7BDB4; --head:#FFFFFF;
+  --brand:#0B3D31; --brand2:#12896B;
+  --accent:#4FD3AD; --accent-isi:#12896B; --on-accent:#08201A;
+  --data1:#5BB8EC; --data2:#4FD3AD; --data3:#B3DB6E; --data4:#9FB8AE; --data5:#3E9BCB;
+  --ok:#4FD3AD; --warn:#F2955A; --bad:#FF8A80; --info:#5BB8EC;
+  --ok-bg:#123A2F; --warn-bg:#3A2616; --bad-bg:#3A1B19; --info-bg:#153A4A;
+  --fokus:#5BB8EC; --kaki-bg:#041912;
+  --shadow:0 2px 14px rgb(0 0 0/.35); --shadow-lg:0 8px 28px rgb(0 0 0/.5);
+  color-scheme:dark;
+}
+
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:72px}
+body{margin:0;background:var(--paper);color:var(--ink);font:400 var(--t-body)/1.6 var(--font);padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));-webkit-text-size-adjust:100%}
+h1,h2,h3,h4{font-family:var(--display);color:var(--head);margin:0;line-height:1.2}
+p{margin:0}
+a{color:var(--accent)}
+:focus-visible{outline:2px solid var(--fokus);outline-offset:2px}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.jm-ik{width:20px;height:20px;flex:none;vertical-align:middle}
+.sprite{position:absolute;width:0;height:0;overflow:hidden}
+code,.kode{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:.88em}
+code{background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:1px 6px;color:var(--head);overflow-wrap:anywhere}
+
+/* kerangka halaman */
+.rangka{max-width:var(--maks);margin:0 auto;display:grid;grid-template-columns:minmax(0,1fr);gap:24px;padding-block:24px 64px}
+@media (min-width:960px){.rangka{grid-template-columns:230px minmax(0,1fr);gap:40px;align-items:start}}
+.daftar-isi{position:sticky;top:0;z-index:20;background:var(--paper);border-bottom:1px solid var(--line);margin-inline:-16px;padding:0 16px}
+.daftar-isi ol{list-style:none;margin:0;padding:0;display:flex;gap:2px;overflow-x:auto;scrollbar-width:thin}
+.daftar-isi a{display:inline-flex;align-items:center;gap:8px;min-height:var(--target);padding:0 12px;border-radius:var(--r-pil);color:var(--ink2);text-decoration:none;font:500 14px/1 var(--font);white-space:nowrap}
+.daftar-isi a:hover{background:var(--surface);color:var(--ink)}
+.daftar-isi a.aktif{background:var(--soft-hijau);color:var(--accent);font-weight:600}
+.daftar-isi small{font:600 11px/1 var(--display);color:var(--ink2)}
+.daftar-isi .judul-isi{display:none}
+@media (min-width:960px){
+  .daftar-isi{top:16px;margin:0;padding:12px;border:1px solid var(--line);border-radius:var(--r);background:var(--card);box-shadow:var(--shadow);max-height:calc(100vh - 32px);overflow:auto}
+  .daftar-isi ol{flex-direction:column;overflow:visible}
+  .daftar-isi a{width:100%}
+  .daftar-isi .judul-isi{display:block;margin:0 0 8px 12px;font:700 11px/1 var(--display);letter-spacing:.1em;text-transform:uppercase;color:var(--ink2)}
+}
+.tema{margin-top:4px}
+.isi{display:grid;gap:40px;min-width:0}
+.hero{background:var(--brand);color:var(--on-brand);border-radius:var(--r-lg);padding:28px 20px;display:grid;gap:14px}
+.hero h1{color:var(--on-brand);font-size:var(--t-display)}
+.hero p{max-width:62ch;color:var(--on-brand)}
+.hero .label{font:700 11px/1 var(--font);letter-spacing:.1em;text-transform:uppercase;color:var(--meti-lime)}
+@media (min-width:768px){.hero{padding:40px}}
+section.bagian{display:grid;gap:24px;min-width:0}
+section.bagian>h2{font-size:var(--t-h1);display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+section.bagian>h2 .no{display:grid;place-items:center;width:36px;height:36px;border-radius:50%;background:var(--soft-hijau);color:var(--accent);font:700 15px/1 var(--display);flex:none}
+.pengantar{max-width:70ch;color:var(--ink2)}
+.kartu{background:var(--card);border:1px solid var(--line);border-radius:var(--r);box-shadow:var(--shadow);padding:20px;display:grid;gap:16px;min-width:0}
+.kartu>h3{font-size:var(--t-h2)}
+.kartu-baris{display:grid;gap:24px;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr))}
+.pakai{display:grid;gap:8px;font-size:14px;color:var(--ink2)}
+.pakai b{color:var(--ink);font-weight:600}
+.kelas{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.salin{display:inline-flex;align-items:center;gap:6px;min-height:32px;padding:0 10px;border:1px solid var(--line-ctl);border-radius:var(--r-pil);background:var(--card);color:var(--ink);font:600 12.5px/1 ui-monospace,Menlo,Consolas,monospace;cursor:pointer}
+.salin:hover{border-color:var(--accent);color:var(--accent)}
+.salin .jm-ik{width:14px;height:14px}
+.salin.sudah{background:var(--ok-bg);color:var(--ok);border-color:var(--ok)}
+.pv{border:1px dashed var(--line-ctl);border-radius:var(--r);padding:16px;background:var(--paper);display:grid;gap:16px;min-width:0}
+.pv>*{min-width:0}
+.pv-label{font:700 11px/1 var(--display);letter-spacing:.1em;text-transform:uppercase;color:var(--ink2)}
+.gulir-x{overflow-x:auto;-webkit-overflow-scrolling:touch}
+.gulir-x>.dalam{min-width:760px}
+.tabel-ref{width:100%;border-collapse:separate;border-spacing:0;font-size:14px}
+.tabel-ref th{text-align:center;padding:10px 12px;background:var(--surface);color:var(--head);font:600 12px/1.3 var(--display);border-bottom:1px solid var(--line)}
+.tabel-ref td{padding:10px 12px;border-bottom:1px solid var(--line-cell);vertical-align:top}
+.tabel-ref tr:last-child td{border-bottom:0}
+
+/* swatch */
+.grup-warna{display:grid;gap:12px}
+.grup-warna>h3{font-size:var(--t-h2)}
+.swatch-grid{display:grid;gap:16px;grid-template-columns:repeat(auto-fill,minmax(min(100%,200px),1fr))}
+.sw{border:1px solid var(--line);border-radius:var(--r);overflow:hidden;background:var(--card);display:grid;grid-template-rows:64px auto}
+.sw i{display:block;border-bottom:1px solid var(--line)}
+.sw div{padding:10px 12px;display:grid;gap:4px;font-size:12.5px;min-width:0}
+.sw b{font:600 13px/1.2 ui-monospace,Menlo,Consolas,monospace;color:var(--head);overflow-wrap:anywhere}
+.sw span{display:flex;align-items:center;gap:6px;color:var(--ink2);font-variant-numeric:tabular-nums}
+.sw span em{font-style:normal;font:700 10px/1 var(--display);letter-spacing:.08em;text-transform:uppercase;color:var(--ink2);width:30px;flex:none}
+.sw .samadark{font-style:italic}
+.sw-uji{display:grid;grid-template-columns:repeat(5,1fr);height:24px;border-radius:6px;overflow:hidden}
+.pasangan{display:flex;align-items:center;justify-content:center;min-height:64px;border-bottom:1px solid var(--line)}
+
+/* tipografi */
+.contoh-t{display:grid;grid-template-columns:minmax(0,150px) minmax(0,1fr);gap:8px 20px;align-items:baseline;padding:14px 0;border-bottom:1px solid var(--line)}
+.contoh-t:last-child{border-bottom:0}
+.contoh-t .meta{font-size:12.5px;color:var(--ink2);display:grid;gap:2px}
+.contoh-t .meta b{color:var(--head);font:600 13px/1.2 ui-monospace,Menlo,Consolas,monospace}
+@media (max-width:560px){.contoh-t{grid-template-columns:1fr}}
+
+/* ruang, radius, bayangan */
+.kotak-uji{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(min(100%,150px),1fr))}
+.kotak-uji div{height:88px;background:var(--soft-hijau);border:1px solid var(--line);display:grid;place-items:center;text-align:center;font-size:12.5px;color:var(--ink2);padding:8px}
+.kotak-uji div b{display:block;color:var(--head);font:600 13px/1.2 ui-monospace,Menlo,Consolas,monospace}
+.kotak-bayang div{background:var(--card);border:0}
+.jarak{display:grid;gap:12px}
+.jarak-baris{display:grid;grid-template-columns:90px 1fr;align-items:center;gap:12px;font-size:13px;color:var(--ink2)}
+.jarak-baris i{display:block;height:16px;background:var(--accent-isi);border-radius:4px}
+
+/* ===== KOMPONEN ASLI (salinan dari public/inti/*.css, publik.css, analisis.css, grafik.css) ===== */
+.jm-wadah{width:100%;max-width:var(--maks);margin-inline:auto;padding-inline:clamp(16px,4vw,32px)}
+/* Komponen .jm-* bersama (maks 400 baris, DS §1). Hanya token. */
+.jm-jawab{display:grid;gap:10px}
+.jm-jawab h1 em.hl{color:var(--accent)}
+.jm-hero{background:var(--brand);color:var(--on-brand);border-radius:var(--r-lg);padding:28px 20px;display:grid;gap:14px}
+.jm-hero h1{color:var(--on-brand);font-size:var(--t-display)}
+.jm-hero h1 em.hl{color:var(--meti-cyan)}
+.jm-hero p{max-width:60ch;color:var(--on-brand)}
+.jm-hero .jm-tbl-utama{justify-self:start}
+@media (min-width:768px){.jm-hero{padding:48px 40px}}
+
+/* pil status (tidak pernah hanya warna: selalu ada teks) */
+.jm-pil{display:inline-flex;align-items:center;min-height:24px;padding:0 10px;border-radius:var(--r-pil);font:600 12px/1 var(--font);background:var(--info-bg);color:var(--info);white-space:nowrap}
+.jm-pil-ok{background:var(--ok-bg);color:var(--ok)}
+.jm-pil-warn{background:var(--warn-bg);color:var(--warn)}
+.jm-pil-bad{background:var(--bad-bg);color:var(--bad)}
+
+/* formulir */
+.jm-form{display:grid;gap:14px}
+.jm-form .jm-tbl{justify-self:start}
+.jm-form-judul{display:grid;gap:4px;margin-bottom:4px}
+.jm-form-judul p{color:var(--ink2);font-size:14px}
+.jm-sandi{position:relative}
+.jm-aksi{display:flex;flex-wrap:wrap;gap:8px}
+
+/* tabel (bergulir di dalam kartunya) */
+.jm-sel-aksi{display:flex;flex-wrap:wrap;gap:6px}
+
+/* tab */
+
+/* bilah alat dan paginasi */
+.jm-bar{display:grid;gap:8px;margin-bottom:12px}
+@media (min-width:768px){.jm-bar{grid-template-columns:minmax(0,1fr) 180px 180px auto}}
+.jm-hal{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-top:12px;color:var(--ink2);font-size:14px}
+
+/* dialog bawaan */
+dialog.jm-dlg{width:min(440px,calc(100vw - 32px));padding:20px;border:1px solid var(--line);border-radius:var(--r-lg);background:var(--card);color:var(--ink);box-shadow:var(--shadow-lg)}
+dialog.jm-dlg::backdrop{background:rgb(11 23 38/.55)}
+
+/* tautan aktivasi */
+.jm-taut{display:grid;gap:8px;padding:14px;border-radius:var(--r-sm);background:var(--soft-hijau);color:var(--ink)}
+.jm-taut input{font-family:ui-monospace,Menlo,monospace;font-size:13px}
+
+/* 404 */
+.jm-404{display:grid;justify-items:center;gap:14px;text-align:center;padding:32px 0}
+.jm-404 svg{width:min(320px,80%);height:auto;color:var(--accent-isi)}
+.jm-404 .jm-angka-404{font:700 var(--t-display)/1 var(--display);color:var(--head)}
+.jm-404 p{max-width:46ch;color:var(--ink2)}
+
+/* tabel menjadi kartu bertumpuk di layar sempit (tanpa gulir horizontal) */
+@media (max-width:639px){
+              }
+
+/* ===== KOMPONEN BERSAMA (pakai class ini, jangan buat sendiri) =====
+   TABEL  : <div class="jm-gulir"><table class="jm-tabel"> thead hijau satu gradien, garis lime 2px, th tengah huruf kapital;
+            td angka: class "jm-num" (rata kanan, tabular); identitas dua baris: <span class="jm-id"><b>Nama</b><small>meta</small></span>;
+            urut: <th aria-sort="none|ascending|descending"><button class="jm-urut">Judul</button></th>; layar < 768: baris jadi kartu
+            bila td punya data-label="Kolom" (atau tambahkan class jm-tabel--kartu pada tabel).
+   FILTER : <div class="jm-saring"> berisi .jm-cari (2 kolom), .jm-pil-pilih (label.jm-pil-pilih > ikon + select), .jm-hapus (tautan teks, atribut hidden bila tak ada filter),
+            .jm-hitung (pil abu kecil di kanan). Helper: /inti/komponen.js (cariHtml, pilihHtml, hapusHtml, hitungHtml).
+   TAB    : <div class="jm-tab" role="tablist"><button role="tab" aria-selected>ikon + label</button></div> atau <a> untuk antarhalaman; aktif = garis hijau.
+   SUBNAV : <nav class="jm-subnav"> tautan antarhalaman satu bagian (Insight, Wilayah, Rantai, ASEAN); bangun dengan subnav() di /inti/komponen.js.
+   WADAH  : class jm-wadah (gaya.css). */
+
+/* ---- tabel ---- */
+.jm-gulir{overflow-x:auto;-webkit-overflow-scrolling:touch;border:1px solid var(--line-cell);border-radius:var(--r)}
+.jm-tabel{width:100%;border-collapse:separate;border-spacing:0;font-size:14px;font-variant-numeric:tabular-nums}
+.jm-tabel thead{background:linear-gradient(90deg,var(--brand),var(--brand2))}
+.jm-tabel th{padding:12px 14px;background:transparent;color:var(--on-brand);font:600 11.5px/1.3 var(--font);letter-spacing:.09em;text-transform:uppercase;text-align:center;white-space:nowrap;border-bottom:2px solid var(--meti-lime)}
+.jm-tabel thead th:first-child{border-top-left-radius:calc(var(--r) - 1px)}.jm-tabel thead th:last-child{border-top-right-radius:calc(var(--r) - 1px)}
+.jm-tabel td{padding:12px 16px;border-bottom:1px solid var(--line-cell);vertical-align:middle;text-align:left;line-height:1.4}
+/* tautan di sel: tanpa garis bawah, tebal, hover hijau; kolom angka selebar judulnya agar angka berada di bawah judul */
+.jm-tabel td :is(a,button){text-decoration:none;font-weight:600;color:var(--ink);background:none;border:0;padding:0;font-size:inherit;cursor:pointer;text-align:left}
+.jm-tabel td :is(a,button):hover{color:var(--accent)}
+.jm-tabel td.jm-num,.jm-tabel td[data-num],.jm-tabel td.jm-tengah{width:1%}
+.jm-tabel td.jm-tengah{text-align:center;white-space:nowrap}
+.jm-tabel tbody tr:last-child td{border-bottom:0}
+.jm-tabel tbody tr:nth-child(even) td{background:color-mix(in srgb,var(--surface) 55%,transparent)}
+.jm-tabel tbody tr:hover td{background:var(--soft-hijau)}
+.jm-tabel td.jm-num,.jm-tabel td[data-num]{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+.jm-tabel td.jm-nowrap{white-space:nowrap}
+.jm-id b{display:block;font-weight:600}.jm-id small,.jm-tabel small{display:block;color:var(--ink2);font-size:var(--t-kecil)}
+.jm-urut{display:inline-flex;align-items:center;gap:6px;padding:0;border:0;background:none;color:inherit;font:inherit;letter-spacing:inherit;text-transform:inherit;cursor:pointer}
+.jm-urut::after{content:"";width:8px;height:12px;background:currentColor;opacity:.55;clip-path:polygon(50% 0,100% 40%,0 40%,50% 0,0 60%,100% 60%,50% 100%)}
+th[aria-sort="ascending"] .jm-urut::after{opacity:1;clip-path:polygon(50% 0,100% 100%,0 100%)}
+th[aria-sort="descending"] .jm-urut::after{opacity:1;clip-path:polygon(0 0,100% 0,50% 100%)}
+.jm-urut:focus-visible{outline:2px solid var(--meti-lime);outline-offset:3px}
+@media (max-width:767px){
+  .jm-tabel--kartu,.jm-tabel:has(td[data-label]),.jm-tabel:has(td[data-l]){display:block}
+  .jm-gulir:has(.jm-tabel--kartu),.jm-gulir:has(td[data-label]),.jm-gulir:has(td[data-l]){border:0}
+  .jm-tabel--kartu thead,.jm-tabel:has(td[data-label]) thead,.jm-tabel:has(td[data-l]) thead{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+  .jm-tabel--kartu tbody,.jm-tabel--kartu tr,.jm-tabel--kartu td,.jm-tabel:has(td[data-label]) tbody,.jm-tabel:has(td[data-label]) tr,.jm-tabel:has(td[data-label]) td,.jm-tabel:has(td[data-l]) tbody,.jm-tabel:has(td[data-l]) tr,.jm-tabel:has(td[data-l]) td{display:block}
+  .jm-tabel--kartu tr,.jm-tabel:has(td[data-label]) tr,.jm-tabel:has(td[data-l]) tr{margin-bottom:10px;border:1px solid var(--line-cell);border-radius:var(--r-sm);overflow:hidden;background:var(--card)}
+  .jm-tabel--kartu td,.jm-tabel:has(td[data-label]) td,.jm-tabel:has(td[data-l]) td{display:grid;grid-template-columns:96px minmax(0,1fr);gap:8px;border-bottom:0;border-top:1px solid var(--line-cell);background:transparent!important;text-align:left}
+  .jm-tabel--kartu td:first-child,.jm-tabel:has(td[data-label]) td:first-child,.jm-tabel:has(td[data-l]) td:first-child{border-top:0}
+  .jm-tabel--kartu td::before,.jm-tabel:has(td[data-label]) td::before{content:attr(data-label);font:600 12px/1.5 var(--display);color:var(--ink2)}
+  .jm-tabel:has(td[data-l]) td::before{content:attr(data-l);font:600 12px/1.5 var(--display);color:var(--ink2)}
+}
+
+/* ---- baris filter ---- */
+.jm-saring{display:grid;grid-template-columns:repeat(auto-fit,minmax(0,1fr));grid-auto-flow:column;gap:10px;align-items:center;width:100%}
+.jm-saring>*{min-width:0}
+.jm-cari{grid-column:span 2;display:flex;align-items:center;gap:10px;min-height:var(--target);padding:0 16px;border:1px solid var(--line-ctl);border-radius:var(--r-pil);background:var(--card)}
+.jm-cari .jm-ik{color:var(--ink2);flex:none}
+.jm-cari input{flex:1;min-width:0;border:0;background:none;color:var(--ink);font:400 15px/1.3 var(--font);outline:none}
+.jm-cari:focus-within{border-color:var(--accent);box-shadow:0 0 0 3px color-mix(in srgb,var(--accent) 18%,transparent)}
+.jm-pil-pilih{position:relative;display:flex;align-items:center;min-height:var(--target);border:1px solid var(--line-ctl);border-radius:var(--r-pil);background:var(--card);color:var(--ink)}
+.jm-pil-pilih>.jm-ik{position:absolute;left:14px;pointer-events:none;color:var(--ink2)}
+.jm-pil-pilih select{appearance:none;-webkit-appearance:none;width:100%;min-height:calc(var(--target) - 2px);padding:0 38px 0 42px;border:0;border-radius:var(--r-pil);background:none;color:inherit;font:600 14px/1 var(--font);text-overflow:ellipsis;cursor:pointer}
+.jm-pil-pilih::after{content:"";position:absolute;right:16px;width:8px;height:8px;border-right:2px solid var(--ink2);border-bottom:2px solid var(--ink2);transform:rotate(45deg) translateY(-2px);pointer-events:none}
+.jm-pil-pilih:focus-within{border-color:var(--accent);box-shadow:0 0 0 3px color-mix(in srgb,var(--accent) 18%,transparent)}
+.jm-hapus{display:inline-flex;align-items:center;gap:6px;justify-self:start;border:0;background:none;color:var(--accent);font:600 13px/1 var(--font);cursor:pointer;padding:8px 4px;text-decoration:underline;text-underline-offset:3px}
+.jm-hapus[hidden]{display:none}
+.jm-hitung{justify-self:end;padding:6px 12px;border-radius:var(--r-pil);background:var(--surface);border:1px solid var(--line-cell);color:var(--ink2);font:500 12.5px/1 var(--font);white-space:nowrap}
+@media (max-width:600px){.jm-saring{grid-auto-flow:row;grid-template-columns:repeat(2,minmax(0,1fr))}.jm-cari,.jm-hapus,.jm-hitung{grid-column:1/-1}.jm-hitung{justify-self:start}}
+
+/* ---- tab: ikon + label, garis hijau untuk aktif, tanpa garis tegak ---- */
+.jm-tab{display:flex;gap:2px;border-bottom:1px solid var(--line);overflow-x:auto;scrollbar-width:thin}
+.jm-tab :is(button,a){display:inline-flex;align-items:center;gap:8px;min-height:var(--target);padding:0 16px;border:0;border-bottom:3px solid transparent;margin-bottom:-1px;background:none;color:var(--ink2);font:600 14px/1 var(--font);text-decoration:none;white-space:nowrap;cursor:pointer;border-radius:var(--r-sm) var(--r-sm) 0 0}
+.jm-tab :is(button,a) .jm-ik{width:18px;height:18px;flex:none}
+.jm-tab :is(button,a):hover{background:var(--surface);color:var(--ink)}
+.jm-tab :is(button[aria-selected="true"],a[aria-current="page"]){color:var(--accent);border-bottom-color:var(--accent)}
+.jm-tab :is(button,a):focus-visible{outline:2px solid var(--fokus);outline-offset:-2px}
+
+/* ---- subnav antarhalaman (Insight, Wilayah, Rantai, ASEAN) ---- */
+.jm-subnav{background:var(--card);border-bottom:1px solid var(--line)}
+.jm-subnav .jm-tab{max-width:var(--maks);margin-inline:auto;padding-inline:clamp(16px,4vw,32px);border-bottom:0}
+
+/* Gaya modul /grafik.js. Hanya token tema.css: satu warna sorot (hijau METI), abu untuk konteks. */
+.jm-gf{width:100%;height:auto;display:block;font-family:var(--font);font-variant-numeric:tabular-nums}
+.jm-gf-grid{stroke:var(--line);stroke-width:1;opacity:.6}
+.jm-gf-t1{fill:var(--ink)}
+.jm-gf-t2{fill:var(--ink2)}
+.jm-gf-tb{font-weight:700;fill:var(--head)}
+.jm-gf-b,.jm-gf-abu{fill:var(--line-ctl);fill-opacity:.45}
+.jm-gf-sorot{fill:var(--accent-isi);fill-opacity:1}
+.jm-gf-ref{stroke:var(--ink2);stroke-width:1.2;stroke-dasharray:5 4;opacity:.8}
+.jm-gf-pil{fill:var(--brand)}
+.jm-gf-pilt{fill:var(--on-brand);font-weight:700}
+.jm-gf-hub{stroke:var(--line-ctl);stroke-width:2;stroke-opacity:.55}
+.jm-gf-hub.jm-gf-sorot-g{stroke:var(--accent-isi);stroke-opacity:1;stroke-width:3}
+.jm-gf-da{fill:var(--card);stroke:var(--line-ctl);stroke-width:2}
+.jm-gf-db{fill:var(--accent-isi);stroke:var(--accent-isi)}
+.jm-gf-db-lemah{fill:var(--ink2);stroke:var(--ink2)}
+.jm-gf-gar{fill:none;stroke-width:2.5;stroke-linejoin:round;stroke-linecap:round}
+.jm-gf-gar-abu{stroke:var(--line-ctl);stroke-opacity:.8;stroke-width:2}
+.jm-gf-gar.jm-gf-sorot-g{stroke:var(--accent-isi)}
+.jm-gf-area{fill:var(--accent-isi);fill-opacity:.12}
+.jm-gf-tt{fill:var(--accent-isi)}
+.jm-gf-tt-abu{fill:var(--line-ctl)}
+
+.jm-pil-est{background:var(--surface);color:var(--ink2);border:1px solid var(--line)}
+.jm-tbl{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:var(--target);padding:0 18px;border:1px solid var(--line-ctl);border-radius:var(--r-pil);background:var(--card);color:var(--ink);font:600 14px/1 var(--font);text-decoration:none;cursor:pointer}
+.jm-tbl:hover{border-color:var(--accent);color:var(--accent)}
+.jm-tbl-utama{background:var(--accent);border-color:var(--accent);color:var(--on-accent)}
+.jm-tbl-utama:hover{color:var(--on-accent);filter:brightness(1.08)}
+.jm-tbl-bahaya{border-color:var(--bad);color:var(--bad)}
+.jm-kartu{background:var(--card);border:1px solid var(--line);border-radius:var(--r);box-shadow:var(--shadow);padding:16px}
+.jm-kpi{display:flex;flex-direction:column;gap:8px;padding:16px;border:1px solid var(--line);border-radius:var(--r);background:var(--card);box-shadow:var(--shadow);min-width:0}
+.jm-kpi-ik{display:grid;place-items:center;flex:none;width:32px;height:32px;border-radius:50%;background:color-mix(in srgb,var(--data1) 18%,var(--card));color:var(--head)}
+.jm-kpi.jm-w2 .jm-kpi-ik{background:color-mix(in srgb,var(--data2) 18%,var(--card))}.jm-kpi.jm-w3 .jm-kpi-ik{background:color-mix(in srgb,var(--data3) 22%,var(--card))}
+.jm-kpi.jm-w4 .jm-kpi-ik{background:color-mix(in srgb,var(--data4) 28%,var(--card))}.jm-kpi.jm-w5 .jm-kpi-ik{background:color-mix(in srgb,var(--data5) 20%,var(--card))}
+.jm-kpi-kepala{display:flex;align-items:center;gap:10px;min-width:0}
+.jm-kpi-kepala h3{flex:1;min-width:0;margin:0;font:700 11.5px/1.2 var(--font);letter-spacing:.08em;text-transform:uppercase;color:var(--ink2);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.jm-kpi-kepala .jm-pil{flex:none}
+.jm-an-angka{display:flex;align-items:baseline;gap:8px;margin:2px 0 0;white-space:nowrap}
+.jm-an-angka b{font:900 var(--t-angka)/1.05 var(--display);color:var(--head);font-variant-numeric:tabular-nums}
+.jm-an-angka span{font:500 14px/1 var(--font);color:var(--ink2)}
+.jm-kpi-sub{min-height:3em;margin:0;font-size:13px;color:var(--ink2)}
+.jm-kpi-src{display:flex;align-items:center;gap:6px;margin-top:auto;padding-top:8px;border-top:1px solid var(--line);font-size:12px;color:var(--ink2);min-width:0}
+.jm-kpi-src span{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.jm-kpi-src .jm-ik{flex:none;width:14px;height:14px}
+.jm-an-kartu-baris{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr))}
+.jm-rank{list-style:none;margin:0;padding:0;display:grid;gap:2px}
+.jm-rank a{display:grid;grid-template-columns:28px minmax(0,1fr) auto;column-gap:12px;row-gap:6px;align-items:center;padding:10px 8px;border-radius:var(--r-sm);color:var(--ink);text-decoration:none}
+.jm-rank a:hover{background:var(--surface)}
+.jm-rank a:focus-visible{outline:2px solid var(--fokus);outline-offset:0}
+.jm-rank-no{grid-row:1/3;align-self:start;display:grid;place-items:center;width:28px;height:28px;border-radius:50%;background:color-mix(in srgb,var(--brand2) 14%,var(--card));color:var(--head);font:700 12px/1 var(--display)}
+.jm-rank-t{display:grid;gap:2px;min-width:0}
+.jm-rank-t strong{font-weight:600;font-size:14px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.jm-rank-t small{font-size:12px;color:var(--ink2)}
+.jm-rank-v{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+.jm-rank-v b{font:700 15px/1 var(--display)}
+.jm-rank-v small{font-size:12px;color:var(--ink2)}
+.jm-rank-bar{grid-column:2/4;display:block;width:100%;height:6px}
+.jm-bar-latar{fill:var(--surface)}.jm-bar-isi{fill:var(--data1)}
+.jm-rank-bar .jm-bar-isi{fill:color-mix(in srgb,var(--brand2) 55%,var(--card))}
+.jm-rank-bar.jm-rank-atas .jm-bar-isi{fill:var(--brand)}
+.jm-rank-bar.jm-rank-panas .jm-bar-isi{fill:color-mix(in srgb,var(--warn) 55%,var(--card))}
+.jm-kaki{display:block;position:relative;padding:0;background:var(--kaki-bg);color:var(--on-brand);font-size:15px;line-height:1.5}
+.jm-kaki::before{content:"";position:absolute;inset:0 0 auto 0;height:2px;background:linear-gradient(90deg,var(--brand2),var(--meti-lime))}
+.jm-kaki-isi{max-width:var(--maks);margin:0 auto;padding:48px var(--gut) 36px;display:grid;gap:36px 32px;grid-template-columns:minmax(0,1.7fr) repeat(3,minmax(0,.8fr)) minmax(0,1.5fr);align-items:start}
+.jm-kaki-merek{display:flex;align-items:center;gap:14px}
+.jm-kaki-merek strong{display:block;font:700 20px/1.1 var(--display)}
+.jm-kaki-merek span:not(.jm-kaki-logo){display:block;font-size:14px;margin-top:4px;color:color-mix(in srgb,var(--on-brand) 70%,transparent)}
+.jm-kaki-logo{display:grid;place-items:center;width:48px;height:48px;border-radius:12px;background:var(--on-brand);flex:none}
+.jm-kaki .jm-kaki-logo img{width:34px;height:32px}
+.jm-kaki-stat{list-style:none;margin:22px 0 0;padding:0;display:grid;grid-auto-flow:column;grid-auto-columns:minmax(0,1fr);gap:8px;max-width:360px}
+.jm-kaki-stat li{padding:10px 12px;border-radius:10px;background:color-mix(in srgb,var(--on-brand) 6%,transparent);border:1px solid color-mix(in srgb,var(--on-brand) 12%,transparent);display:grid;gap:2px;cursor:help;min-width:0}
+.jm-kaki-stat b{font:700 22px/1 var(--display);color:var(--meti-lime)}
+.jm-kaki-stat span{font-size:12px;color:color-mix(in srgb,var(--on-brand) 70%,transparent);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.jm-kaki-sos{display:flex;gap:10px;margin-top:18px}
+.jm-kaki-sos a{display:grid;place-items:center;width:36px;height:36px;border-radius:50%;color:var(--on-brand);border:1px solid color-mix(in srgb,var(--on-brand) 22%,transparent);transition:background .15s,color .15s}
+.jm-kaki-sos a:hover{background:var(--meti-lime);color:var(--kaki-bg);border-color:var(--meti-lime)}
+.jm-kaki-kol h2{margin:0 0 14px;font:700 12px/1 var(--font);letter-spacing:.12em;text-transform:uppercase;color:color-mix(in srgb,var(--meti-lime) 80%,var(--kaki-bg));white-space:nowrap}
+.jm-kaki-kol ul{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+.jm-kaki-kol>ul>li>a:not(.jm-kaki-ln){display:inline-flex;align-items:center;gap:8px;color:color-mix(in srgb,var(--on-brand) 75%,transparent);text-decoration:none;min-height:24px}
+.jm-kaki-kol>ul>li>a:not(.jm-kaki-ln):hover{color:var(--on-brand);text-decoration:underline;text-underline-offset:4px;text-decoration-thickness:1px}
+.jm-kaki-kunci{display:inline-flex;opacity:.6}
+.jm-kaki-hub ul{gap:14px}
+.jm-kaki-hub li{display:grid;grid-template-columns:16px minmax(0,1fr);gap:10px;align-items:start;font-size:14px}
+.jm-kaki-hub .jm-kaki-ik{color:var(--meti-lime);margin-top:2px;display:inline-flex}
+.jm-kaki-hub small{display:block;font-size:12px;color:color-mix(in srgb,var(--on-brand) 60%,transparent);margin-bottom:1px}
+.jm-kaki-hub a{color:color-mix(in srgb,var(--on-brand) 85%,transparent);text-decoration:none;overflow-wrap:anywhere}
+.jm-kaki-hub a:hover{color:var(--on-brand);text-decoration:underline;text-underline-offset:3px;text-decoration-thickness:1px}
+.jm-kaki-bawah{max-width:var(--maks);margin:0 auto;padding:16px var(--gut) 22px;display:flex;flex-wrap:wrap;gap:10px 24px;align-items:center;border-top:1px solid color-mix(in srgb,var(--on-brand) 12%,transparent);font-size:13px;color:color-mix(in srgb,var(--on-brand) 60%,transparent)}
+.jm-kaki-bawah p{margin:0}
+.jm-kaki-bawah a{margin-left:auto;color:color-mix(in srgb,var(--on-brand) 60%,transparent);text-decoration:none}
+.jm-kaki-bawah a:hover{color:var(--on-brand);text-decoration:underline;text-underline-offset:3px}
+.jm-kaki-atas{display:grid;place-items:center;width:36px;height:36px;padding:0;border-radius:50%;border:1px solid color-mix(in srgb,var(--on-brand) 22%,transparent);background:none;color:var(--on-brand);cursor:pointer}
+.jm-kaki-atas:hover{background:var(--meti-lime);color:var(--kaki-bg);border-color:var(--meti-lime)}
+.jm-kaki :focus-visible{outline:2px solid var(--meti-lime);outline-offset:2px}
+@media (max-width:1100px){.jm-kaki-isi{grid-template-columns:repeat(3,minmax(0,1fr))}.jm-kaki-k1{grid-column:1/-1}.jm-kaki-hub{grid-column:1/-1}.jm-kaki-hub ul{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:600px){.jm-kaki-isi{grid-template-columns:repeat(2,minmax(0,1fr));padding-top:36px}.jm-kaki-hub ul{grid-template-columns:1fr}.jm-kaki-bawah a{margin-left:0}}
+.jm-kaki-isi{padding-block:48px 36px}
+.jm-kaki-kol>ul>li>a:not(.jm-kaki-ln){white-space:nowrap}
+.jm-kaki-isi{grid-template-columns:minmax(0,1.6fr) repeat(3,minmax(0,.95fr)) minmax(0,1.5fr)}
+.jm-kaki-isi{grid-template-columns:minmax(0,1.5fr) repeat(3,minmax(0,1fr));padding-bottom:28px}
+.jm-kaki-stat{max-width:none}
+.jm-kaki-stat b{font-size:20px}
+.jm-kaki-kontak{max-width:var(--maks);margin-inline:auto;padding:24px clamp(16px,4vw,32px) 28px;border-top:1px solid color-mix(in srgb,var(--on-brand) 12%,transparent)}
+.jm-kaki-kontak h2{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);margin:0}
+.jm-kaki-kontak .jm-kaki-hub ul{grid-template-columns:repeat(4,minmax(0,1fr));gap:24px}
+.jm-kaki-kontak .jm-kaki-hub li{font-size:13.5px;line-height:1.45}
+.jm-kaki-kontak .jm-kaki-hub li a{display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+@media (max-width:1100px){.jm-kaki-isi{grid-template-columns:repeat(3,minmax(0,1fr))}.jm-kaki-kontak .jm-kaki-hub ul{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:600px){.jm-kaki-isi{grid-template-columns:repeat(2,minmax(0,1fr))}.jm-kaki-kontak .jm-kaki-hub ul{grid-template-columns:repeat(2,minmax(0,1fr));gap:18px 14px}.jm-kaki-kontak .jm-kaki-hub li{grid-template-columns:1fr}.jm-kaki-kontak .jm-kaki-hub .jm-kaki-ik{display:none}}
+@media (max-width:420px){.jm-kaki-kontak .jm-kaki-hub ul{grid-template-columns:1fr}.jm-kaki-kontak .jm-kaki-hub li{grid-template-columns:16px minmax(0,1fr)}.jm-kaki-kontak .jm-kaki-hub .jm-kaki-ik{display:inline-flex}}
+.jm-kaki-isi,.jm-kaki-bawah{max-width:var(--maks);margin-inline:auto;padding-inline:clamp(16px,4vw,32px)}
+/* nav header (header.top asli posisi fixed; di sini ditaruh statis untuk pratinjau) */
+.pv-kepala{position:relative;height:var(--top);display:flex;align-items:center;gap:8px;padding:0 12px;background:var(--paper);color:var(--ink);border:1px solid var(--line);border-radius:var(--r-sm)}
+.pv-kepala::after{content:"";position:absolute;left:0;bottom:0;width:48px;height:2px;background:var(--accent-isi)}
+.pv-kepala nav.tabs{display:grid;grid-auto-flow:column;grid-auto-columns:1fr;flex:1;gap:4px;margin-left:12px}
+.pv-kepala nav.tabs a{display:flex;align-items:center;justify-content:center;gap:8px;min-height:var(--target);width:100%;padding:0 6px;color:var(--ink);text-decoration:none;font:500 14px/1 var(--font);border-radius:var(--r-pil);background:transparent;white-space:nowrap}
+.pv-kepala nav.tabs a:not([aria-current="page"]):hover{background:var(--surface)}
+.pv-kepala nav.tabs a[aria-current="page"]{background:var(--soft-hijau);color:var(--accent);font-weight:600}
+.pv-kepala nav.tabs a .jm-ik{width:18px;height:18px;flex:none;color:currentColor}
+.pv-kepala .jm-merek{display:flex;align-items:center;gap:10px;min-height:var(--target);color:var(--head);font:600 16px/1 var(--display);white-space:nowrap}
+.pv-logo{display:grid;place-items:center;width:36px;height:36px;border-radius:10px;background:var(--brand);color:var(--on-brand);font:700 13px/1 var(--display)}
+.pv-kepala .iconbtn{display:inline-flex;align-items:center;justify-content:center;width:var(--target);height:var(--target);padding:0;border:0;background:none;color:var(--ink2);cursor:pointer;border-radius:var(--r-sm)}
+.pv-kepala .iconbtn:hover{color:var(--accent);background:var(--soft-hijau)}
+.pv-kaki .jm-kaki{border-radius:var(--r);overflow:hidden}
+.pv-grid-ref{display:grid;gap:16px;grid-template-columns:repeat(3,1fr)}
+.pv-cekdaftar{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+.pv-cekdaftar li{display:grid;grid-template-columns:28px minmax(0,1fr);gap:10px;align-items:start;padding:12px 14px;border:1px solid var(--line);border-radius:var(--r-sm);background:var(--card)}
+.pv-cekdaftar input{width:20px;height:20px;margin:2px 0 0;accent-color:var(--accent-isi)}
+.pv-cekdaftar label{cursor:pointer;display:grid;gap:2px}
+.pv-cekdaftar label small{color:var(--ink2);font-size:var(--t-kecil)}
+.pv-cekdaftar li:has(input:checked){background:var(--ok-bg);border-color:var(--ok)}
+.hasil-cek{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.larangan{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr))}
+.larangan .kartu{gap:8px}
+.larangan .kartu>h3{font-size:16px}
+.larangan .kartu>p{font-size:14px;color:var(--ink2)}
+.ikon-grid{display:grid;gap:12px;grid-template-columns:repeat(auto-fill,minmax(min(100%,132px),1fr))}
+.ikon-grid button{display:grid;justify-items:center;gap:8px;padding:14px 8px;border:1px solid var(--line);border-radius:var(--r-sm);background:var(--card);color:var(--ink);cursor:pointer;font:500 12px/1.2 ui-monospace,Menlo,Consolas,monospace;min-width:0}
+.ikon-grid button:hover{border-color:var(--accent);color:var(--accent)}
+.ikon-grid button .jm-ik{width:24px;height:24px}
+.ikon-grid button span{overflow-wrap:anywhere}
+.ikon-grid button.sudah{background:var(--ok-bg);border-color:var(--ok);color:var(--ok)}
+.status-kembar{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+
+<div class="sprite" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="0" height="0">
+  <!-- Sprite kontur 1,5px (gaya Lucide, ISC). Dipanggil <use href="/img/ikon.svg#i-nama"/>. -->
+  <symbol id="i-burger" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M4 6h16M4 12h16M4 18h16"/></symbol>
+  <symbol id="i-tutup" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18"/></symbol>
+  <symbol id="i-tema" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><circle cx="12" cy="12" r="8.5"/><path d="M12 3.5v17a8.5 8.5 0 0 0 0-17z" fill="currentColor"/></symbol>
+  <symbol id="i-bahasa" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.5 3.5 5.5 3.5 9s-1 6.500-3.500 9c-2.500-2.500-3.500-5.500-3.500-9s1-6.500 3.500-9z"/></symbol>
+  <symbol id="i-masuk" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 4h4a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2h-4M10 8l4 4-4 4M14 12H3"/></symbol>
+  <symbol id="i-keluar" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M10 4H6a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h4M16 8l4 4-4 4M20 12H9"/></symbol>
+  <symbol id="i-cari" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.500-3.500"/></symbol>
+  <symbol id="i-info" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 7.500v.5"/></symbol>
+  <symbol id="i-peringatan" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3.500 2.500 20h19z"/><path d="M12 10v4.500M12 17.500v.5"/></symbol>
+  <symbol id="i-centang" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="m8 12.500 2.800 2.800L16.500 9.500"/></symbol>
+  <symbol id="i-salin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h8"/></symbol>
+  <symbol id="i-tambah" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></symbol>
+  <symbol id="i-panah-kiri" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="m15 6-6 6 6 6"/></symbol>
+  <symbol id="i-panah-kanan" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="m9 6 6 6-6 6"/></symbol>
+  <symbol id="i-kunci" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></symbol>
+  <symbol id="i-orang" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><circle cx="12" cy="8" r="3.500"/><path d="M5 20c0-3.500 3-6 7-6s7 2.500 7 6"/></symbol>
+  <symbol id="i-jejak" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol>
+  <symbol id="i-tautan" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M10 14a4 4 0 0 0 5.700 0l3-3a4 4 0 0 0-5.700-5.700l-1 1M14 10a4 4 0 0 0-5.700 0l-3 3a4 4 0 0 0 5.700 5.700l1-1"/></symbol>
+  <symbol id="i-beranda" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 11 12 4l8 7v8a1 1 0 0 1-1 1h-4v-6H9v6H5a1 1 0 0 1-1-1z"/></symbol>
+  <symbol id="i-daftar" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M8 6h12M8 12h12M8 18h12M4 6h.01M4 12h.01M4 18h.01"/></symbol>
+  <symbol id="i-ubah" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20h4L19 9a2.800 2.800 0 0 0-4-4L4 16z"/></symbol>
+  <symbol id="i-blokir" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="m5.600 5.600 12.800 12.800"/></symbol>
+  <symbol id="i-insight" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l5-5 4 4 8-9"/><path d="M15 7h5v5"/></symbol>
+  <symbol id="i-proyek" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></symbol>
+  <symbol id="i-analisis" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></symbol>
+  <symbol id="i-wilayah" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6l6-3 6 3 6-3v15l-6 3-6-3-6 3z"/><path d="M9 3v15M15 6v15"/></symbol>
+  <symbol id="i-rantai" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7 0l3-3a5 5 0 0 0-7-7l-1 1"/><path d="M14 11a5 5 0 0 0-7 0l-3 3a5 5 0 0 0 7 7l1-1"/></symbol>
+  <symbol id="i-asean" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3 3 15 0 18M12 3c-3 3-3 15 0 18"/></symbol>
+  <symbol id="i-regulasi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h9l4 4v14H6z"/><path d="M14 3v5h5M9 13h7M9 17h5"/></symbol>
+  <symbol id="i-kalender" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></symbol>
+  <symbol id="i-direktori" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20c0-3.6 2.9-6 6.5-6s6.5 2.4 6.5 6"/><circle cx="17" cy="9" r="2.5"/><path d="M16 14c3 0 5.5 2 5.5 5"/></symbol>
+  <symbol id="i-perisai" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 4 6v6c0 5 4 8 8 9 4-1 8-4 8-9V6z"/><path d="m9 12 2 2 4-4"/></symbol>
+  <symbol id="i-cari2" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></symbol>
+  <symbol id="i-jenis" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h9l4 4v14H6z"/><path d="M14 3v5h5"/></symbol>
+  <symbol id="i-tahun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></symbol>
+  <symbol id="i-status" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="m8.5 12 2.5 2.5 4.5-5"/></symbol>
+  <symbol id="i-topik" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12V4h8l10 10-8 8z"/><circle cx="7.500" cy="8.500" r="1.200"/></symbol>
+  <symbol id="i-tingkat" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></symbol>
+  <symbol id="i-silang" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 6l12 12M18 6 6 18"/></symbol>
+  <symbol id="i-linimasa" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v18"/><circle cx="12" cy="7" r="2"/><circle cx="12" cy="17" r="2"/><path d="M14 7h6M4 17h6"/></symbol>
+  <symbol id="i-peta" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6l6-3 6 3 6-3v15l-6 3-6-3-6 3z"/><path d="M9 3v15M15 6v15"/></symbol>
+  <symbol id="i-tabel" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 10h18M3 15h18M9 4v16"/></symbol>
+  <symbol id="i-daftar2" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M8 6h12M8 12h12M8 18h12M4 6h.01M4 12h.01M4 18h.01"/></symbol>
+  <symbol id="i-berita" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4h11a2 2 0 0 1 2 2v13H7a2 2 0 0 1-2-2zM18 9h2v8a2 2 0 0 1-2 2M8 8h6M8 12h6M8 15h4"/></symbol>
+</svg></div>
+
+<div class="rangka">
+<aside class="daftar-isi" aria-label="Daftar isi">
+  <p class="judul-isi">Daftar isi</p>
+  <ol>
+    <li><a href="#prinsip"><small>1</small>Prinsip</a></li>
+    <li><a href="#warna"><small>2</small>Warna</a></li>
+    <li><a href="#tipografi"><small>3</small>Tipografi</a></li>
+    <li><a href="#ruang"><small>4</small>Ruang dan bayangan</a></li>
+    <li><a href="#komponen"><small>5</small>Komponen</a></li>
+    <li><a href="#grafik"><small>6</small>Grafik</a></li>
+    <li><a href="#ikon"><small>7</small>Ikon</a></li>
+    <li><a href="#gelap-terang"><small>8</small>Gelap dan terang</a></li>
+    <li><a href="#checklist"><small>9</small>Checklist push</a></li>
+  </ol>
+</aside>
+
+<main class="isi">
+<div class="hero">
+  <span class="label">Buku pegangan</span>
+  <h1>Sistem Desain METI</h1>
+  <p>Acuan visual Direktori METI untuk orang dan agent yang membangun layarnya. Semua contoh di halaman ini dirender dengan CSS asli platform, dalam terang dan gelap. Warna hanya berasal dari <code>public/inti/tema.css</code>.</p>
+  <div><button type="button" class="jm-tbl tema" id="tombol-tema" aria-label="Ganti tema terang atau gelap"><svg class="jm-ik" aria-hidden="true"><use href="#i-tema"/></svg><span>Ganti tema</span></button></div>
+</div>
+
+<section class="bagian" id="prinsip">
+  <h2><span class="no">1</span>Prinsip</h2>
+  <p class="pengantar">Aturan pemilik. Layar yang melanggar salah satunya dikembalikan ke pengerja.</p>
+  <div class="larangan">
+    <article class="kartu"><h3>1. Tidak ada yang dempet</h3><p>Jarak minimal 24px dari hero ke baris kartu, tanpa overlap negatif. Label KPI satu baris, tinggi kartu sama, semua angka sejajar di satu garis dasar. Gap antar kartu 16 sampai 24px.</p></article>
+    <article class="kartu"><h3>2. Header tabel rata tengah</h3><p>Th putih, huruf kapital, rata tengah, di atas gradien hijau dengan garis lime 2px. Sel angka rata kanan dan tabular. Bukan header terang, bukan rata kiri.</p></article>
+    <article class="kartu"><h3>3. Data berupa grafik sungguhan</h3><p>Batang, kolom, dumbbell atau garis dengan ambang dan nilai. Tidak ada baris teks "label ... N" berjarak lebar. Hero tidak boleh setengah kosong: isi sisi kanan dengan angka besar dan bar.</p></article>
+    <article class="kartu"><h3>4. Semua bisa diklik</h3><p>Kartu KPI, baris peringkat, batang grafik, dan sel nama membuka halaman atau laci yang relevan. Elemen yang terlihat seperti data tetapi mati dianggap cacat.</p></article>
+    <article class="kartu"><h3>5. Tanpa kotak galat</h3><p>Bagian yang gagal dimuat disembunyikan, bukan diganti kotak merah atau catatan "tidak tersedia". Fitur yang tidak jalan di platform ini tidak ditampilkan.</p></article>
+    <article class="kartu"><h3>6. Tautan di tabel tanpa garis bawah</h3><p>Tautan dan tombol di sel: tebal, warna teks, hover hijau. Garis bawah hanya untuk tautan di paragraf dan tombol teks "hapus filter".</p></article>
+    <article class="kartu"><h3>7. Wadah per bagian</h3><p>Tiap bagian halaman berada dalam satu wadah (<code>.jm-wadah</code>) dan satu kartu dengan judul kecil di dalamnya. Tidak ada bagian yang menempel ke tepi layar.</p></article>
+    <article class="kartu"><h3>8. Item nav selebar sama</h3><p>Di desktop semua item menu kepala memakai kolom sama lebar, isi di tengah, ikon dan teks sejajar. Lebar tidak mengikuti panjang label.</p></article>
+    <article class="kartu"><h3>9. Tanpa bahasa AI</h3><p>Tanpa em dash, tanpa emoji, tanpa kata hype. Pemisah teks memakai koma, kalimat, atau baris baru. Kalimat singkat, langsung, bersumber.</p></article>
+    <article class="kartu"><h3>10. Ikon di nav dan tab</h3><p>Setiap item menu kepala, tab, dan subnav membawa ikon 18px dari sprite <code>ikon.svg</code>. Deretan pilihan membentang ujung ke ujung. Tombol ikon polos, tanpa kotak.</p></article>
+    <article class="kartu"><h3>11. Tidak ada hex di luar tema.css</h3><p>Semua warna lewat <code>var(--token)</code>. Gerbang <code>gerbang-token-meti</code> menolak hex di CSS lain. Berlaku juga untuk warna di SVG dan JS.</p></article>
+  </div>
+</section>
+
+<section class="bagian" id="warna">
+  <h2><span class="no">2</span>Warna</h2>
+  <p class="pengantar">Sumber tunggal: <code>public/inti/tema.css</code>. Kolom <b>T</b> adalah hex mode terang, <b>G</b> mode gelap. "sama" berarti token tidak ditimpa di blok gelap. Pakai selalu lewat nama token.</p>
+  <div id="peta-warna" class="grup-warna"></div>
+  <div class="kartu">
+    <h3>Pasangan teks yang dipakai</h3>
+    <div class="kartu-baris">
+      <div class="pasangan" style="background:var(--brand);color:var(--on-brand)">on-brand di atas brand</div>
+      <div class="pasangan" style="background:var(--accent);color:var(--on-accent)">on-accent di atas accent</div>
+      <div class="pasangan" style="background:var(--ok-bg);color:var(--ok)">ok di atas ok-bg</div>
+      <div class="pasangan" style="background:var(--warn-bg);color:var(--warn)">warn di atas warn-bg</div>
+      <div class="pasangan" style="background:var(--bad-bg);color:var(--bad)">bad di atas bad-bg</div>
+      <div class="pasangan" style="background:var(--info-bg);color:var(--info)">info di atas info-bg</div>
+    </div>
+    <p class="pakai">Teks teal memakai <b>--accent</b>. Cyan dan lime bukan warna teks di latar terang. Pil status selalu membawa teks, tidak pernah hanya warna.</p>
+  </div>
+</section>
+
+<section class="bagian" id="tipografi">
+  <h2><span class="no">3</span>Tipografi</h2>
+  <p class="pengantar">Poppins untuk judul, angka, label, dan header tabel. Inter untuk isi, cadangan Arial. Angka selalu <code>font-variant-numeric:tabular-nums</code>. Ukuran di bawah mengikuti lebar layar (nilai kecil di HP, besar mulai 768px).</p>
+  <div class="kartu">
+    <div class="contoh-t"><div class="meta"><b>--t-display</b>30 / 44px, Poppins 700</div><div style="font:700 var(--t-display)/1.1 var(--display);color:var(--head)">Jawaban di judul</div></div>
+    <div class="contoh-t"><div class="meta"><b>--t-h1</b>24 / 32px, Poppins 700</div><div style="font:700 var(--t-h1)/1.2 var(--display);color:var(--head)">Kapasitas EBT naik 12 persen</div></div>
+    <div class="contoh-t"><div class="meta"><b>--t-h2</b>18 / 22px, Poppins 600</div><div style="font:600 var(--t-h2)/1.3 var(--display);color:var(--head)">Judul kartu atau bagian</div></div>
+    <div class="contoh-t"><div class="meta"><b>--t-angka</b>28 / 40px, Poppins 900 di KPI</div><div style="font:900 var(--t-angka)/1.05 var(--display);color:var(--head);font-variant-numeric:tabular-nums">1.284,6 <span style="font:500 14px/1 var(--font);color:var(--ink2)">MW</span></div></div>
+    <div class="contoh-t"><div class="meta"><b>--t-body</b>15px, Inter 400, baris 1,55</div><div style="font:400 var(--t-body)/1.55 var(--font)">Teks isi dipakai untuk paragraf dan sel tabel. Paragraf panjang dibatasi sekitar 60 karakter per baris.</div></div>
+    <div class="contoh-t"><div class="meta"><b>--t-kecil</b>12,5px, Inter 400</div><div style="font:400 var(--t-kecil)/1.4 var(--font);color:var(--ink2)">Sumber: ESDM, Desember 2025. Dipakai untuk sumber dan keterangan.</div></div>
+    <div class="contoh-t"><div class="meta"><b>--t-label</b>11px, kapital, spasi .08em</div><div style="font:600 var(--t-label)/1.2 var(--display);letter-spacing:.08em;text-transform:uppercase;color:var(--ink2)">Label kecil dan pil kategori</div></div>
+    <div class="contoh-t"><div class="meta"><b>--display / --font</b>keluarga huruf</div><div><span style="font-family:var(--display);font-weight:600">Poppins: judul dan angka</span><br><span style="font-family:var(--font)">Inter: isi dan keterangan</span></div></div>
+  </div>
+  <p class="pakai">Judul halaman berupa kalimat temuan, kata kunci diberi <code>&lt;em class="hl"&gt;</code>. Satuan di samping angka besar kecil dan abu. Sel tabel dan judul rata kiri atau tengah, bukan rata kiri-kanan.</p>
+</section>
+
+<section class="bagian" id="ruang">
+  <h2><span class="no">4</span>Ruang, radius, bayangan</h2>
+  <div class="kartu">
+    <h3>Ruang</h3>
+    <div class="jarak">
+      <div class="jarak-baris"><b>--gut</b><i style="width:var(--gut)"></i></div>
+      <div class="jarak-baris"><b>--gap</b><i style="width:var(--gap)"></i></div>
+      <div class="jarak-baris"><b>--target</b><i style="width:var(--target)"></i></div>
+      <div class="jarak-baris"><b>24px</b><i style="width:24px"></i></div>
+    </div>
+    <p class="pakai"><b>--gut</b> 16px di HP, 20px mulai 600px (tepi halaman). <b>--gap</b> 12px (antar kontrol). <b>--target</b> 44px (tinggi minimum yang bisa disentuh). <b>--maks</b> 1240px (lebar isi, dipakai <code>.jm-wadah</code>). Hero ke baris kartu minimal <b>24px</b>; antar kartu 16 sampai 24px.</p>
+  </div>
+  <div class="kartu">
+    <h3>Radius</h3>
+    <div class="kotak-uji">
+      <div style="border-radius:var(--r-sm)"><span><b>--r-sm</b>10px, kontrol kecil</span></div>
+      <div style="border-radius:var(--r)"><span><b>--r</b>14px, kartu, tabel</span></div>
+      <div style="border-radius:var(--r-lg)"><span><b>--r-lg</b>16px, hero, dialog</span></div>
+      <div style="border-radius:var(--r-pil)"><span><b>--r-pil</b>999px, pil, tombol</span></div>
+    </div>
+  </div>
+  <div class="kartu">
+    <h3>Bayangan</h3>
+    <div class="kotak-uji kotak-bayang">
+      <div style="border-radius:var(--r);box-shadow:var(--shadow)"><span><b>--shadow</b>kartu</span></div>
+      <div style="border-radius:var(--r);box-shadow:var(--shadow-lg)"><span><b>--shadow-lg</b>menu, dialog</span></div>
+      <div style="border-radius:var(--r);box-shadow:var(--pendar)"><span><b>--pendar</b>sorotan biru</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="bagian" id="komponen">
+  <h2><span class="no">5</span>Komponen</h2>
+  <p class="pengantar">Setiap pratinjau memakai CSS asli yang disalin ke halaman ini. Tombol salin menyalin nama kelas. Pakai kelas yang ada, jangan membuat padanan sendiri.</p>
+
+  <article class="kartu" id="k-wadah">
+    <h3>.jm-wadah</h3>
+    <div class="kelas"><button type="button" class="salin" data-salin="jm-wadah"><svg class="jm-ik" aria-hidden="true"><use href="#i-salin"/></svg>jm-wadah</button></div>
+    <div class="pv"><span class="pv-label">Pratinjau</span><div class="jm-wadah" style="outline:1px dashed var(--line-ctl);padding-block:16px"><div class="jm-kartu">Isi halaman. Lebar maksimum <b>--maks</b> 1240px, jarak tepi <code>clamp(16px,4vw,32px)</code>.</div></div></div>
+    <p class="pakai"><b>Kapan dipakai:</b> pembungkus tiap bagian halaman (hero, KPI, tabel, grafik) supaya lebar isi dan jarak tepi sama di semua halaman. Berkas: <code>inti/gaya.css</code>.</p>
+  </article>
+
+  <article class="kartu" id="k-tabel">
+    <h3>.jm-tabel dalam .jm-gulir</h3>
+    <div class="kelas">
+      <button type="button" class="salin" data-salin="jm-gulir"><svg class="jm-ik" aria-hidden="true"><use href="#i-salin"/></svg>jm-gulir</button>
+      <button type="button" class="salin" data-salin="jm-tabel"><svg class="jm-ik" aria-hidden="true"><use href="#i-salin"/></svg>jm-tabel</button>
+      <button type="button" class="salin" data-salin="jm-num"><svg class="jm-ik" aria-hidden="true"><use href="#i-salin"/></svg>jm-num</button>
+      <button type="button" class="salin" data-salin="jm-tengah"><svg class="jm-ik" aria-hidden="true"><use href="#i-salin"/></svg>jm-tengah</button>
+      <button type="button" class="salin" data-salin="jm-id"><svg class="jm-ik" aria-hidden="true"><use href="#i-salin"/></svg>jm-id</button>
+      <button type="button" class="salin" data-salin="jm-urut"><svg class="jm-ik" aria-hidden="true"><use href="#i-salin"/></svg>jm-urut</button>
+    </div>
+    <div class="pv">
+      <span class="pv-label">Pratinjau, klik judul kolom untuk mengurutkan. Di bawah 768px baris menjadi kartu.</span>
+      <div class="jm-gulir"><table class="jm-tabel" id="tabel-contoh">
+        <thead><tr>
+          <th aria-sort="none"><button type="button" class="jm-urut" data-k="0">Perusahaan</button></th>
+          <th aria-sort="none"><button type="button" class="jm-urut" data-k="1">Sektor</button></th>
+          <th aria-sort="descending"><button type="button" class="jm-urut" data-k="2">Kapasitas (MW)</button></th>
+          <th>Status</th>
+        </tr></thead>
+        <tbody>
+          <tr><td data-label="Perusahaan"><span class="jm-id"><b><a href="#k-tabel">Contoh Surya Nusantara</a></b><small>Jawa Barat</small></span></td><td data-label="Sektor">Surya</td><td class="jm-num" data-label="Kapasitas">412,5</td><td class="jm-tengah" data-label="Status"><span class="jm-pil jm-pil-ok">Beroperasi</span></td></tr>
+          <tr><td data-label="Perusahaan"><span class="jm-id"><b><a href="#k-tabel">Contoh Bayu Selatan</a></b><small>Sulawesi Selatan</small></span></td><td data-label="Sektor">Angin</td><td class="jm-num" data-label="Kapasitas">315,0</td><td class="jm-tengah" data-label="Status"><span class="jm-pil jm-pil-warn">Konstruksi</span></td></tr>
+          <tr><td data-label="Perusahaan"><span class="jm-id"><b><a href="#k-tabel">Contoh Panas Bumi Barat</a></b><small>Sumatra Barat</small></span></td><td data-label="Sektor">Panas bumi</td><td class="jm-num" data-label="Kapasitas">98,2</td><td class="jm-tengah" data-label="Status"><span class="jm-pil">Rencana</span></td></tr>
+          <tr><td data-label="Perusahaan"><span class="jm-id"><b><a href="#k-tabel">Contoh Hidro Kalimantan</a></b><small>Kalimantan Utara</small></span></td><td data-label="Sektor">Air</td><td class="jm-num" data-label="Kapasitas">1.284,6</td><td class="jm-tengah" data-label="Status"><span class="jm-pil jm-pil-bad">Tertunda</span></td></tr>
+        </tbody>
+      </table></div>
+    </div>
+    <p class="pakai"><b>Struktur:</b> <code>&lt;div class="jm-gulir"&gt;&lt;table class="jm-tabel"&gt;</code>. Thead satu gradien <b>--brand</b> ke <b>--brand2</b>, th putih kapital rata tengah, garis lime 2px, zebra halus, hover <b>--soft-hijau</b>. Identitas dua baris: <code>&lt;span class="jm-id"&gt;&lt;b&gt;Nama&lt;/b&gt;&lt;small&gt;meta&lt;/small&gt;&lt;/span&gt;</code>. Angka: <code>td.jm-num</code>. Pil atau kolom sempit: <code>td.jm-tengah</code>. Urut: <code>th[aria-sort]</code> berisi <code>button.jm-urut</code>. Kartu di HP: beri tiap td <code>data-label="Kolom"</code>.</p>
+    <p class="pakai"><b>Kapan dipakai:</b> semua tabel data, tanpa pengecualian. Header tidak pernah terang atau rata kiri. Tautan di sel tanpa garis bawah.</p>
+  </article>
+
+  <article class="kartu" id="k-saring">
+    <h3>.jm-saring</h3>
+    <div class="kelas">
+      <button type="button" class="salin" data-salin="jm-saring"><svg class="jm-ik" aria-hidden="true"><use href="#i-salin"/></svg>jm-saring</button>
+      <button type="button" class="salin" data-salin="jm-cari"><svg class="jm-ik" aria-hidden="true"><use href="#i-salin"/></svg>jm-cari</button>
+      <button type="button" class="salin" data-salin="jm-pil-pilih"><svg class="jm-ik" aria-hidden="true"><use href="#i-salin"/></svg>jm-pil-pilih</button>
+      <button type="button" class="salin" data-salin="jm-hapus"><svg class="jm-ik" aria-hidden="true"><use href="#i-salin"/></svg>jm-hapus</button>
+      <button type="button" class="salin" data-salin="jm-hitung"><svg class="jm-ik" aria-hidden="true"><use href="#i-salin"/></svg>jm-hitung</button>
+    </div>
+    <div class="pv gulir-x"><span class="pv-label">Pratinjau, ketik untuk menyaring tabel di atas</span>
+      <div class="jm-saring">
+        <label class="jm-cari"><svg class="jm-ik" aria-hidden="true"><use href="#i-cari2"/></svg><span class="sr">Cari perusahaan</span><input id="q-contoh" type="search" autocomplete="off" placeholder="Cari perusahaan"></label>
+        <label class="jm-pil-pilih"><svg class="jm-ik" aria-hidden="true"><use href="#i-jenis"/></svg><span class="sr">Jenis</span><select id="jenis-contoh" title="Jenis"><option value="">Semua sektor</option><option>Surya</option><option>Angin</option><option>Panas bumi</option><option>Air</option></select></label>
+        <button type="button" class="jm-hapus" id="hapus-contoh" hidden><svg class="jm-ik" aria-hidden="true" style="width:16px;height:16px"><use href="#i-silang"/></svg>Hapus filter</button>
+        <span class="jm-hitung" id="hitung-contoh" role="status" aria-live="polite">4 dari 4</span>
+      </div>
+    </div>
+    <p class="pakai"><b>Kapan dipakai:</b> di atas tabel atau daftar yang bisa disaring. Helper JS: <code>cariHtml</code>, <code>pilihHtml</code>, <code>hapusHtml</code>, <code>hitungHtml</code> di <code>/inti/komponen.js</code>. Pencarian dua kolom lebar, select berbentuk pil berikon, tautan hapus disembunyikan sampai ada filter aktif, hitungan pil abu di kanan.</p>
+  </article>
+
+  <article class="kartu" id="k-tab">
+    <h3>.jm-tab</h3>
+    <div class="kelas">
+      <button type="button" class="salin" data-salin="jm-tab"><svg class="jm-ik" aria-hidden="true"><use href="#i-salin"/></svg>jm-tab</button>
+    </div>
+    <div class="pv"><span class="pv-label">Pratinjau</span>
+      <div class="jm-tab" role="tablist" id="tab-contoh">
+        <button type="button" role="tab" aria-selected="true"><svg class="jm-ik" aria-hidden="true"><use href="#i-tabel"/></svg>Tabel</button>
+        <button type="button" role="tab" aria-selected="false"><svg class="jm-ik" aria-hidden="true"><use href="#i-peta"/></svg>Peta</button>
+        <button type="button" role="tab" aria-selected="false"><svg class="jm-ik" aria-hidden="true"><use href="#i-linimasa"/></svg>Linimasa</button>
+      </div>
+    </div>
+    <p class="pakai"><b>Kapan dipakai:</b> berpindah tampilan dalam satu halaman (<code>button[role=tab][aria-selected]</code>) atau antarhalaman (<code>a[aria-current=page]</code>, helper <code>tabTautan</code>). Selalu ikon plus label. Aktif ditandai garis hijau 3px.</p>
+  </article>
+
+  <article class="kartu" id="k-subnav">
+    <h3>.jm-subnav</h3>
+    <div class="kelas">
+      <button type="button" class="salin" data-salin="jm-subnav"><svg class="jm-ik" aria-hidden="true"><use href="#i-salin"/></svg>jm-subnav</button>
+    </div>
+    <div class="pv"><span class="pv-label">Pratinjau</span>
+      <nav class="jm-subnav" aria-label="Insight"><div class="jm-tab">
+        <a href="#k-subnav" aria-current="page"><svg class="jm-ik" aria-hidden="true"><use href="#i-insight"/></svg><span>Ringkasan</span></a>
+        <a href="#k-subnav"><svg class="jm-ik" aria-hidden="true"><use href="#i-analisis"/></svg><span>Tren</span></a>
+        <a href="#k-subnav"><svg class="jm-ik" aria-hidden="true"><use href="#i-wilayah"/></svg><span>Wilayah</span></a>
+        <a href="#k-subnav"><svg class="jm-ik" aria-hidden="true"><use href="#i-rantai"/></svg><span>Rantai</span></a>
+        <a href="#k-subnav"><svg class="jm-ik" aria-hidden="true"><use href="#i-asean"/></svg><span>ASEAN</span></a>
+      </div></nav>
+    </div>
+    <p class="pakai"><b>Kapan dipakai:</b> tautan antarhalaman dalam satu bagian (Insight, Wilayah, Rantai, ASEAN). Bangun dengan <code>subnavHtml(jalur, hash)</code>; mulaiHalaman() memasangnya otomatis.</p>
+  </article>
+
+  <article class="kartu" id="k-kpi">
+    <h3>Kartu KPI</h3>
+    <div class="kelas">
+      <button type="button" class="salin" data-salin="jm-kpi"><svg class="jm-ik" aria-hidden="true"><use href="#i-salin"/></svg>jm-kpi</button>
+      <button type="button" class="salin" data-salin="jm-kpi-kepala"><svg class="jm-ik" aria-hidden="true"><use href="#i-salin"/></svg>jm-kpi-kepala</button>
+      <button type="button" class="salin" data-salin="jm-kpi-ik"><svg class="jm-ik" aria-hidden="true"><use href="#i-salin"/></svg>jm-kpi-ik</button>
+      <button type="button" class="salin" data-salin="jm-an-angka"><svg class="jm-ik" aria-hidden="true"><use href="#i-salin"/></svg>jm-an-angka</button>
+      <button type="button" class="salin" data-salin="jm-kpi-src"><svg class="jm-ik" aria-hidden="true"><use href="#i-salin"/></svg>jm-kpi-src</button>
+    </div>
+    <div class="pv"><span class="pv-label">Pratinjau, tinggi sama dan angka sejajar</span>
+      <div class="jm-an-kartu-baris">
+        <a class="jm-kpi" href="#k-kpi" style="text-decoration:none;color:inherit">
+          <div class="jm-kpi-kepala"><span class="jm-kpi-ik"><svg class="jm-ik" aria-hidden="true"><use href="#i-proyek"/></svg></span><h3>Kapasitas terpasang</h3><span class="jm-pil jm-pil-est">EST</span></div>
+          <p class="jm-an-angka"><b>14,3</b><span>GW</span></p>
+          <p class="jm-kpi-sub">Naik 0,8 GW dibanding tahun lalu, 38 provinsi.</p>
+          <div class="jm-kpi-src" title="Sumber: Statistik Ketenagalistrikan ESDM, Desember 2025"><svg class="jm-ik" aria-hidden="true"><use href="#i-tautan"/></svg><span>Statistik Ketenagalistrikan ESDM, Des 2025</span></div>
+        </a>
+        <a class="jm-kpi jm-w3" href="#k-kpi" style="text-decoration:none;color:inherit">
+          <div class="jm-kpi-kepala"><span class="jm-kpi-ik"><svg class="jm-ik" aria-hidden="true"><use href="#i-wilayah"/></svg></span><h3>Provinsi tercakup</h3></div>
+          <p class="jm-an-angka"><b>38</b><span>provinsi</span></p>
+          <p class="jm-kpi-sub">Semua provinsi punya sedikitnya satu proyek tercatat.</p>
+          <div class="jm-kpi-src" title="Sumber: Direktori METI, dibekukan 7 November 2026"><svg class="jm-ik" aria-hidden="true"><use href="#i-tautan"/></svg><span>Direktori METI, 7 Nov 2026</span></div>
+        </a>
+        <a class="jm-kpi jm-w4" href="#k-kpi" style="text-decoration:none;color:inherit">
+          <div class="jm-kpi-kepala"><span class="jm-kpi-ik"><svg class="jm-ik" aria-hidden="true"><use href="#i-regulasi"/></svg></span><h3>Regulasi aktif</h3></div>
+          <p class="jm-an-angka"><b>212</b><span>aturan</span></p>
+          <p class="jm-kpi-sub">87 dari 312 baris punya sumber resmi.</p>
+          <div class="jm-kpi-src" title="Sumber: JDIH Kementerian ESDM, diunduh 5 November 2026"><svg class="jm-ik" aria-hidden="true"><use href="#i-tautan"/></svg><span>JDIH Kementerian ESDM, 5 Nov 2026</span></div>
+        </a>
+      </div>
+    </div>
+    <p class="pakai"><b>Aturan:</b> lingkaran ikon 32px bertint dari <b>--data1..5</b> (kelas <code>jm-w2..w5</code>); label kapital satu baris dan dipotong elipsis, konteks pindah ke subjudul atau tooltip; angka Poppins 900 dengan satuan kecil sebaris (<code>align-items:baseline</code>); pil <b>EST</b> untuk angka turunan; sumber satu baris dengan <code>title</code> berisi sumber penuh. Subjudul <code>min-height:3em</code> agar angka tidak bergeser. Seluruh kartu adalah tautan.</p>
+    <p class="pakai"><b>Kapan dipakai:</b> angka kunci di bawah hero, jarak hero ke kartu minimal 24px. Berkas: <code>publik.css</code> (<code>.jm-kpi</code>) dan <code>analisis.css</code> (<code>.jm-kpi-kepala</code>, <code>.jm-an-angka</code>).</p>
+  </article>
+
+  <article class="kartu" id="k-rank">
+    <h3>Daftar peringkat berbar</h3>
+    <div class="kelas">
+      <button type="button" class="salin" data-salin="jm-rank"><svg class="jm-ik" aria-hidden="true"><use href="#i-salin"/></svg>jm-rank</button>
+      <button type="button" class="salin" data-salin="jm-rank-no"><svg class="jm-ik" aria-hidden="true"><use href="#i-salin"/></svg>jm-rank-no</button>
+      <button type="button" class="salin" data-salin="jm-rank-bar"><svg class="jm-ik" aria-hidden="true"><use href="#i-salin"/></svg>jm-rank-bar</button>
+      <button type="button" class="salin" data-salin="jm-rank-v"><svg class="jm-ik" aria-hidden="true"><use href="#i-salin"/></svg>jm-rank-v</button>
+    </div>
+    <div class="pv"><span class="pv-label">Pratinjau</span>
+      <ol class="jm-rank">
+        <li><a href="#k-rank"><span class="jm-rank-no">1</span><span class="jm-rank-t"><strong>Contoh Hidro Kalimantan</strong><small>Kalimantan Utara</small></span><span class="jm-rank-v"><b>1.284,6</b> <small>MW</small></span><svg class="jm-rank-bar jm-rank-atas" viewBox="0 0 100 6" preserveAspectRatio="none" aria-hidden="true"><rect class="jm-bar-latar" width="100" height="6" rx="3"/><rect class="jm-bar-isi" width="100" height="6" rx="3"/></svg></a></li>
+        <li><a href="#k-rank"><span class="jm-rank-no">2</span><span class="jm-rank-t"><strong>Contoh Surya Nusantara</strong><small>Jawa Barat</small></span><span class="jm-rank-v"><b>412,5</b> <small>MW</small></span><svg class="jm-rank-bar" viewBox="0 0 100 6" preserveAspectRatio="none" aria-hidden="true"><rect class="jm-bar-latar" width="100" height="6" rx="3"/><rect class="jm-bar-isi" width="32" height="6" rx="3"/></svg></a></li>
+        <li><a href="#k-rank"><span class="jm-rank-no">3</span><span class="jm-rank-t"><strong>Contoh Bayu Selatan</strong><small>Sulawesi Selatan</small></span><span class="jm-rank-v"><b>315,0</b> <small>MW</small></span><svg class="jm-rank-bar" viewBox="0 0 100 6" preserveAspectRatio="none" aria-hidden="true"><rect class="jm-bar-latar" width="100" height="6" rx="3"/><rect class="jm-bar-isi" width="24.5" height="6" rx="3"/></svg></a></li>
+        <li><a href="#k-rank"><span class="jm-rank-no">4</span><span class="jm-rank-t"><strong>Contoh Panas Bumi Barat</strong><small>Sumatra Barat</small></span><span class="jm-rank-v"><b>98,2</b> <small>MW</small></span><svg class="jm-rank-bar" viewBox="0 0 100 6" preserveAspectRatio="none" aria-hidden="true"><rect class="jm-bar-latar" width="100" height="6" rx="3"/><rect class="jm-bar-isi" width="7.6" height="6" rx="3"/></svg></a></li>
+      </ol>
+    </div>
+    <p class="pakai"><b>Kapan dipakai:</b> setiap daftar "terbesar", "teratas", atau "penghasil emisi". Nomor bulat, nama dengan meta satu baris, bar proporsional terhadap nilai terbesar, angka tabular rata kanan. Seluruh baris adalah tautan. Jangan pernah teks polos rata kiri-kanan.</p>
+  </article>
+
+  <article class="kartu" id="k-nav">
+    <h3>Nav header, item selebar sama</h3>
+    <div class="kelas">
+      <button type="button" class="salin" data-salin="header.top"><svg class="jm-ik" aria-hidden="true"><use href="#i-salin"/></svg>header.top</button>
+      <button type="button" class="salin" data-salin="nav.tabs"><svg class="jm-ik" aria-hidden="true"><use href="#i-salin"/></svg>nav.tabs</button>
+      <button type="button" class="salin" data-salin="iconbtn"><svg class="jm-ik" aria-hidden="true"><use href="#i-salin"/></svg>iconbtn</button>
+    </div>
+    <div class="pv gulir-x"><span class="pv-label">Pratinjau (di aplikasi: tetap di atas layar, mulai 1200px)</span>
+      <div class="dalam" style="min-width:880px">
+        <div class="pv-kepala">
+          <a class="jm-merek" href="#k-nav" style="text-decoration:none"><span class="pv-logo">M</span><span>METI</span></a>
+          <nav class="tabs" aria-label="Menu utama">
+            <a href="#k-nav" aria-current="page"><svg class="jm-ik" aria-hidden="true"><use href="#i-beranda"/></svg>Beranda</a>
+            <a href="#k-nav"><svg class="jm-ik" aria-hidden="true"><use href="#i-direktori"/></svg>Direktori</a>
+            <a href="#k-nav"><svg class="jm-ik" aria-hidden="true"><use href="#i-insight"/></svg>Insight</a>
+            <a href="#k-nav"><svg class="jm-ik" aria-hidden="true"><use href="#i-regulasi"/></svg>Regulasi</a>
+            <a href="#k-nav"><svg class="jm-ik" aria-hidden="true"><use href="#i-kalender"/></svg>Kalender</a>
+          </nav>
+          <button type="button" class="iconbtn" aria-label="Ganti tema" title="Ganti tema"><svg class="jm-ik" aria-hidden="true" style="width:22px;height:22px"><use href="#i-tema"/></svg></button>
+          <button type="button" class="iconbtn" aria-label="Bahasa" title="Bahasa"><svg class="jm-ik" aria-hidden="true" style="width:22px;height:22px"><use href="#i-bahasa"/></svg></button>
+        </div>
+      </div>
+    </div>
+    <p class="pakai"><b>Aturan:</b> <code>grid-auto-flow:column; grid-auto-columns:1fr</code> membuat semua item selebar sama, isi di tengah, padding dan tinggi sama (44px), ikon 18px sejajar teks. Aktif = pil <b>--soft-hijau</b> dengan teks <b>--accent</b>. Tombol ikon polos dengan <code>aria-label</code> dan <code>title</code>. Di bawah 1200px menu jadi hamburger. Berkas: <code>inti/kepala.css</code>.</p>
+  </article>
+
+  <article class="kartu pv-kaki" id="k-kaki">
+    <h3>Footer</h3>
+    <div class="kelas">
+      <button type="button" class="salin" data-salin="jm-kaki"><svg class="jm-ik" aria-hidden="true"><use href="#i-salin"/></svg>jm-kaki</button>
+      <button type="button" class="salin" data-salin="jm-kaki-isi"><svg class="jm-ik" aria-hidden="true"><use href="#i-salin"/></svg>jm-kaki-isi</button>
+      <button type="button" class="salin" data-salin="jm-kaki-kol"><svg class="jm-ik" aria-hidden="true"><use href="#i-salin"/></svg>jm-kaki-kol</button>
+      <button type="button" class="salin" data-salin="jm-kaki-kontak"><svg class="jm-ik" aria-hidden="true"><use href="#i-salin"/></svg>jm-kaki-kontak</button>
+    </div>
+    <div class="pv" style="padding:0;border:0"><footer class="jm-kaki">
+      <div class="jm-kaki-isi">
+        <div class="jm-kaki-k1">
+          <div class="jm-kaki-merek"><span class="jm-kaki-logo"><svg class="jm-ik" aria-hidden="true" style="color:var(--brand);width:28px;height:28px"><use href="#i-perisai"/></svg></span><div><strong>Direktori METI</strong><span>Masyarakat Energi Terbarukan Indonesia</span></div></div>
+          <ul class="jm-kaki-stat"><li title="Entitas tercatat"><b>312</b><span>Entitas</span></li><li title="Proyek tercatat"><b>148</b><span>Proyek</span></li><li title="Provinsi tercakup"><b>38</b><span>Provinsi</span></li></ul>
+        </div>
+        <div class="jm-kaki-kol"><h2>Jelajah</h2><ul><li><a href="#k-kaki">Direktori</a></li><li><a href="#k-kaki">Insight</a></li><li><a href="#k-kaki">Wilayah</a></li></ul></div>
+        <div class="jm-kaki-kol"><h2>Data</h2><ul><li><a href="#k-kaki">Regulasi</a></li><li><a href="#k-kaki">Kalender</a></li><li><a href="#k-kaki">Berita</a></li></ul></div>
+        <div class="jm-kaki-kol"><h2>Tentang</h2><ul><li><a href="#k-kaki">Cara menghitung</a></li><li><a href="#k-kaki">Kebijakan</a></li></ul></div>
+      </div>
+      <div class="jm-kaki-bawah"><p>Contoh footer. Data bersumber, bertanggal, dan dapat ditelusuri.</p></div>
+    </footer></div>
+    <p class="pakai"><b>Kapan dipakai:</b> satu footer bersama di semua halaman. Latar <b>--kaki-bg</b>, garis gradien hijau ke lime di atas, judul kolom lime kapital, angka statistik lime. Tautan footer boleh bergaris bawah saat hover. Berkas: <code>inti/gaya.css</code>.</p>
+  </article>
+
+  <article class="kartu" id="k-pil">
+    <h3>Pil</h3>
+    <div class="kelas">
+      <button type="button" class="salin" data-salin="jm-pil"><svg class="jm-ik" aria-hidden="true"><use href="#i-salin"/></svg>jm-pil</button>
+      <button type="button" class="salin" data-salin="jm-pil-ok"><svg class="jm-ik" aria-hidden="true"><use href="#i-salin"/></svg>jm-pil-ok</button>
+      <button type="button" class="salin" data-salin="jm-pil-warn"><svg class="jm-ik" aria-hidden="true"><use href="#i-salin"/></svg>jm-pil-warn</button>
+      <button type="button" class="salin" data-salin="jm-pil-bad"><svg class="jm-ik" aria-hidden="true"><use href="#i-salin"/></svg>jm-pil-bad</button>
+      <button type="button" class="salin" data-salin="jm-pil-est"><svg class="jm-ik" aria-hidden="true"><use href="#i-salin"/></svg>jm-pil-est</button>
+    </div>
+    <div class="pv"><span class="pv-label">Pratinjau</span>
+      <div class="jm-aksi"><span class="jm-pil">Info</span><span class="jm-pil jm-pil-ok">Beroperasi</span><span class="jm-pil jm-pil-warn">Konstruksi</span><span class="jm-pil jm-pil-bad">Tertunda</span><span class="jm-pil jm-pil-est">EST</span></div>
+    </div>
+    <p class="pakai"><b>Kapan dipakai:</b> status dan penanda kecil. Pil tidak pernah hanya warna, selalu ada teks. <b>EST</b> menandai angka turunan atau perkiraan.</p>
+  </article>
+
+  <article class="kartu" id="k-tombol">
+    <h3>Tombol</h3>
+    <div class="kelas">
+      <button type="button" class="salin" data-salin="jm-tbl"><svg class="jm-ik" aria-hidden="true"><use href="#i-salin"/></svg>jm-tbl</button>
+      <button type="button" class="salin" data-salin="jm-tbl jm-tbl-utama"><svg class="jm-ik" aria-hidden="true"><use href="#i-salin"/></svg>jm-tbl-utama</button>
+      <button type="button" class="salin" data-salin="jm-tbl jm-tbl-bahaya"><svg class="jm-ik" aria-hidden="true"><use href="#i-salin"/></svg>jm-tbl-bahaya</button>
+      <button type="button" class="salin" data-salin="iconbtn"><svg class="jm-ik" aria-hidden="true"><use href="#i-salin"/></svg>iconbtn</button>
+    </div>
+    <div class="pv"><span class="pv-label">Pratinjau</span>
+      <div class="jm-aksi">
+        <button type="button" class="jm-tbl jm-tbl-utama"><svg class="jm-ik" aria-hidden="true"><use href="#i-tambah"/></svg>Tambah</button>
+        <button type="button" class="jm-tbl"><svg class="jm-ik" aria-hidden="true"><use href="#i-salin"/></svg>Salin</button>
+        <button type="button" class="jm-tbl jm-tbl-bahaya"><svg class="jm-ik" aria-hidden="true"><use href="#i-blokir"/></svg>Blokir</button>
+        <a class="jm-tbl" href="#k-tombol"><svg class="jm-ik" aria-hidden="true"><use href="#i-tautan"/></svg>Tautan</a>
+        <button type="button" class="jm-tbl" disabled style="opacity:.5;cursor:not-allowed">Nonaktif</button>
+      </div>
+    </div>
+    <p class="pakai"><b>Kapan dipakai:</b> <code>jm-tbl-utama</code> untuk satu aksi utama per area, <code>jm-tbl</code> (garis) untuk aksi biasa, <code>jm-tbl-bahaya</code> untuk aksi merusak. Tinggi minimum 44px. Tombol ikon saja polos: tanpa border, kotak, atau latar; hover cukup ganti warna.</p>
+  </article>
+</section>
+
+<section class="bagian" id="grafik">
+  <h2><span class="no">6</span>Grafik</h2>
+  <p class="pengantar">Data disajikan sebagai grafik SVG, bukan baris teks. Modul <code>/grafik.js</code> menghasilkan string SVG, gayanya di <code>/grafik.css</code>. Kelas <code>jm-gf-*</code> hanya memakai token.</p>
+  <div class="kartu">
+    <h3>Aturan grafik</h3>
+    <ul class="pakai" style="margin:0;padding-left:20px">
+      <li><b>Satu warna sorot</b> (<b>--accent-isi</b>) untuk hal yang dijawab grafik, sisanya abu <b>--line-ctl</b> sebagai konteks. Tanpa pelangi, tanpa legenda bila label langsung bisa dipakai.</li>
+      <li><b>Garis ambang</b> putus-putus (<code>jm-gf-ref</code>) untuk rata-rata, target, atau batas, dengan label teks di dekat garis.</li>
+      <li><b>Label nilai</b> di ujung batang atau di atas kolom; puncak diberi pil bernilai. Angka tabular, format id-ID lewat <code>angka()</code>.</li>
+      <li><b>Bisa diklik</b>: tiap batang atau titik membuka halaman yang relevan dan punya <code>&lt;title&gt;</code> sebagai tooltip dan teks alternatif. Ada padanan tabel atau daftar teks.</li>
+      <li>Tanpa kotak sumbu, tanpa gerak saat <code>prefers-reduced-motion</code>. Setiap grafik punya judul yang berupa kalimat temuan.</li>
+    </ul>
+  </div>
+  <div class="kartu-baris">
+    <article class="kartu"><h3>Kolom</h3>
+      <svg class="jm-gf" viewBox="0 0 420 200" role="img" aria-label="Contoh kolom: kapasitas per tahun, 2025 disorot" focusable="false">
+        <line class="jm-gf-grid" x1="38" x2="410" y1="30" y2="30"/><line class="jm-gf-grid" x1="38" x2="410" y1="95" y2="95"/><line class="jm-gf-grid" x1="38" x2="410" y1="160" y2="160"/>
+        <text class="jm-gf-t2" x="32" y="34" text-anchor="end" font-size="11">16</text><text class="jm-gf-t2" x="32" y="99" text-anchor="end" font-size="11">8</text><text class="jm-gf-t2" x="32" y="164" text-anchor="end" font-size="11">0</text>
+        <a href="#grafik"><rect class="jm-gf-b" x="58" y="108" width="44" height="52" rx="4"><title>2021: 6,4 GW</title></rect></a>
+        <a href="#grafik"><rect class="jm-gf-b" x="120" y="96" width="44" height="64" rx="4"><title>2022: 7,9 GW</title></rect></a>
+        <a href="#grafik"><rect class="jm-gf-b" x="182" y="80" width="44" height="80" rx="4"><title>2023: 9,9 GW</title></rect></a>
+        <a href="#grafik"><rect class="jm-gf-b" x="244" y="62" width="44" height="98" rx="4"><title>2024: 12,1 GW</title></rect></a>
+        <a href="#grafik"><rect class="jm-gf-b jm-gf-sorot" x="306" y="44" width="44" height="116" rx="4"><title>2025: 14,3 GW</title></rect></a>
+        <line class="jm-gf-ref" x1="38" x2="410" y1="82" y2="82"/><text class="jm-gf-t1" x="42" y="76" font-size="10.5">rata-rata 10,1</text>
+        <rect class="jm-gf-pil" x="314" y="14" width="28" height="20" rx="10"/><text class="jm-gf-pilt" x="328" y="28" text-anchor="middle" font-size="11">14,3</text>
+        <text class="jm-gf-t2" x="80" y="178" text-anchor="middle" font-size="11">2021</text><text class="jm-gf-t2" x="142" y="178" text-anchor="middle" font-size="11">2022</text><text class="jm-gf-t2" x="204" y="178" text-anchor="middle" font-size="11">2023</text><text class="jm-gf-t2" x="266" y="178" text-anchor="middle" font-size="11">2024</text><text class="jm-gf-t2 jm-gf-tb" x="328" y="178" text-anchor="middle" font-size="11">2025</text>
+      </svg>
+      <p class="pakai">Waktu atau kategori berurutan. <code>kolom(items, {rata})</code></p></article>
+    <article class="kartu"><h3>Batang</h3>
+      <svg class="jm-gf" viewBox="0 0 420 150" role="img" aria-label="Contoh batang: kapasitas per sektor, surya disorot" focusable="false">
+        <text class="jm-gf-t1 jm-gf-tb" x="92" y="19" text-anchor="end" font-size="11.5">Surya</text><a href="#grafik"><rect class="jm-gf-sorot" x="100" y="10" width="220" height="10" rx="2"><title>Surya: 5,8 GW</title></rect></a><text class="jm-gf-t1 jm-gf-tb" x="326" y="19" font-size="11.5">5,8</text>
+        <text class="jm-gf-t1" x="92" y="49" text-anchor="end" font-size="11.5">Air</text><a href="#grafik"><rect class="jm-gf-abu" x="100" y="40" width="168" height="10" rx="2"><title>Air: 4,4 GW</title></rect></a><text class="jm-gf-t1" x="274" y="49" font-size="11.5">4,4</text>
+        <text class="jm-gf-t1" x="92" y="79" text-anchor="end" font-size="11.5">Panas bumi</text><a href="#grafik"><rect class="jm-gf-abu" x="100" y="70" width="90" height="10" rx="2"><title>Panas bumi: 2,4 GW</title></rect></a><text class="jm-gf-t1" x="196" y="79" font-size="11.5">2,4</text>
+        <text class="jm-gf-t1" x="92" y="109" text-anchor="end" font-size="11.5">Angin</text><a href="#grafik"><rect class="jm-gf-abu" x="100" y="100" width="40" height="10" rx="2"><title>Angin: 1,1 GW</title></rect></a><text class="jm-gf-t1" x="146" y="109" font-size="11.5">1,1</text>
+        <line class="jm-gf-ref" x1="210" x2="210" y1="2" y2="128"/><text class="jm-gf-t1" x="210" y="142" text-anchor="middle" font-size="10.5">target 3,0</text>
+      </svg>
+      <p class="pakai">Peringkat dan perbandingan kategori. <code>batang(rows, {ref})</code></p></article>
+    <article class="kartu"><h3>Dumbbell</h3>
+      <svg class="jm-gf" viewBox="0 0 420 130" role="img" aria-label="Contoh dumbbell: 2020 lawan 2025 per sektor" focusable="false">
+        <circle class="jm-gf-da" cx="110" cy="10" r="5"/><text class="jm-gf-t2" x="120" y="14" font-size="11">2020</text><circle class="jm-gf-db" cx="180" cy="10" r="5"/><text class="jm-gf-t2" x="190" y="14" font-size="11">2025</text>
+        <text class="jm-gf-t1 jm-gf-tb" x="92" y="44" text-anchor="end" font-size="11.5">Surya</text><line class="jm-gf-hub jm-gf-sorot-g" x1="140" x2="300" y1="40" y2="40"/><a href="#grafik"><circle class="jm-gf-da" cx="140" cy="40" r="5"><title>2020: 0,2 GW</title></circle></a><a href="#grafik"><circle class="jm-gf-db" cx="300" cy="40" r="5.5"><title>2025: 5,8 GW</title></circle></a><text class="jm-gf-t2" x="131" y="44" text-anchor="end" font-size="10.5">0,2</text><text class="jm-gf-t1 jm-gf-tb" x="309" y="44" font-size="10.5">5,8</text>
+        <text class="jm-gf-t1" x="92" y="74" text-anchor="end" font-size="11.5">Air</text><line class="jm-gf-hub" x1="230" x2="256" y1="70" y2="70"/><a href="#grafik"><circle class="jm-gf-da" cx="230" cy="70" r="5"><title>2020: 4,0 GW</title></circle></a><a href="#grafik"><circle class="jm-gf-db jm-gf-db-lemah" cx="256" cy="70" r="5.5"><title>2025: 4,4 GW</title></circle></a><text class="jm-gf-t2" x="221" y="74" text-anchor="end" font-size="10.5">4,0</text><text class="jm-gf-t1" x="265" y="74" font-size="10.5">4,4</text>
+        <text class="jm-gf-t1" x="92" y="104" text-anchor="end" font-size="11.5">Panas bumi</text><line class="jm-gf-hub" x1="190" x2="212" y1="100" y2="100"/><a href="#grafik"><circle class="jm-gf-da" cx="190" cy="100" r="5"><title>2020: 2,1 GW</title></circle></a><a href="#grafik"><circle class="jm-gf-db jm-gf-db-lemah" cx="212" cy="100" r="5.5"><title>2025: 2,4 GW</title></circle></a><text class="jm-gf-t2" x="181" y="104" text-anchor="end" font-size="10.5">2,1</text><text class="jm-gf-t1" x="221" y="104" font-size="10.5">2,4</text>
+      </svg>
+      <p class="pakai">Perubahan dari dulu ke kini per kategori. <code>dumbbell(rows, {kepA, kepB})</code></p></article>
+    <article class="kartu"><h3>Garis</h3>
+      <svg class="jm-gf" viewBox="0 0 420 200" role="img" aria-label="Contoh garis: dua seri, satu disorot" focusable="false">
+        <line class="jm-gf-grid" x1="38" x2="300" y1="20" y2="20"/><line class="jm-gf-grid" x1="38" x2="300" y1="75" y2="75"/><line class="jm-gf-grid" x1="38" x2="300" y1="130" y2="130"/><line class="jm-gf-grid" x1="38" x2="300" y1="170" y2="170"/>
+        <polyline class="jm-gf-area" points="38,150 100,128 162,100 224,70 286,36 286,170 38,170"/>
+        <polyline class="jm-gf-gar jm-gf-gar-abu" points="38,140 100,136 162,130 224,126 286,118"/>
+        <polyline class="jm-gf-gar jm-gf-sorot-g" points="38,150 100,128 162,100 224,70 286,36"/>
+        <a href="#grafik"><circle class="jm-gf-tt" cx="286" cy="36" r="4.5"><title>2025: 14,3 GW</title></circle></a><a href="#grafik"><circle class="jm-gf-tt-abu" cx="286" cy="118" r="3.5"><title>Target: 8,0 GW</title></circle></a>
+        <text class="jm-gf-t1 jm-gf-tb" x="296" y="40" font-size="11.5">EBT 14,3</text><text class="jm-gf-t2" x="296" y="122" font-size="11.5">Batubara 8,0</text>
+        <text class="jm-gf-t2" x="38" y="188" font-size="11">2021</text><text class="jm-gf-t2" x="286" y="188" text-anchor="end" font-size="11">2025</text>
+      </svg>
+      <p class="pakai">Tren waktu. Seri sorot hijau tebal, lainnya abu, label langsung di ujung kanan. <code>garis(labels, seri, {area})</code></p></article>
+    <article class="kartu"><h3>Pil bernilai</h3>
+      <svg class="jm-gf" viewBox="0 0 420 70" role="img" aria-label="Contoh pil bernilai" focusable="false" style="max-width:420px">
+        <rect class="jm-gf-pil" x="20" y="20" width="62" height="24" rx="12"/><text class="jm-gf-pilt" x="51" y="36" text-anchor="middle" font-size="12">14,3 GW</text>
+        <rect class="jm-gf-pil" x="110" y="20" width="44" height="24" rx="12"/><text class="jm-gf-pilt" x="132" y="36" text-anchor="middle" font-size="12">+12%</text>
+      </svg>
+      <p class="pakai">Menandai puncak atau nilai kunci di atas kolom. <code>pil(x, y, teks, {anchor})</code></p></article>
+  </div>
+</section>
+
+<section class="bagian" id="ikon">
+  <h2><span class="no">7</span>Ikon</h2>
+  <p class="pengantar">Sprite <code>public/img/ikon.svg</code>, dipanggil <code>&lt;svg class="jm-ik" aria-hidden="true"&gt;&lt;use href="#i-nama"/&gt;&lt;/svg&gt;</code>. Kontur 1,5px, <code>currentColor</code>. Ukuran 18, 20, atau 24px. Klik ikon untuk menyalin id. Helper JS: <code>ikon("nama", 18)</code>.</p>
+  <div class="ikon-grid" id="ikon-grid"></div>
+</section>
+
+<section class="bagian" id="gelap-terang">
+  <h2><span class="no">8</span>Gelap dan terang</h2>
+  <p class="pengantar">Mode gelap ditulis dua kali di <code>tema.css</code>: di dalam <code>@media (prefers-color-scheme:dark)</code> untuk <code>:root:not([data-theme="light"])</code>, dan di <code>:root[data-theme="dark"]</code> untuk pilihan manual. Dua blok itu <b>wajib identik</b> (gerbang <code>gerbang-tema-kembar</code>).</p>
+  <div class="kartu">
+    <h3>Aturan</h3>
+    <ul class="pakai" style="margin:0;padding-left:20px">
+      <li>Token baru ditambahkan di tiga tempat: <code>:root</code> (terang), blok <code>@media</code>, dan blok <code>[data-theme="dark"]</code>.</li>
+      <li>Mengubah satu blok gelap tanpa blok lainnya berarti pengguna yang memilih tema manual melihat warna lain dari pengguna yang mengikuti sistem.</li>
+      <li>Tema diatur lewat atribut <code>data-theme</code> di <code>:root</code>; tanpa atribut mengikuti sistem. Tombol tema memasang <code>light</code> atau <code>dark</code>.</li>
+      <li>Hex hanya di <code>tema.css</code>. Komponen memakai <code>var(--token)</code> dan <code>color-mix()</code> sehingga gelap otomatis benar.</li>
+      <li>Periksa tampilan gelap di 1440 dan 390px. Hasilnya bukan hitam polos: permukaan hijau gelap dengan teks terang.</li>
+    </ul>
+    <div class="pv"><span class="pv-label">Pemeriksaan langsung halaman ini</span>
+      <div class="status-kembar" id="cek-kembar"><span class="jm-pil">Memeriksa</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="bagian" id="checklist">
+  <h2><span class="no">9</span>Checklist sebelum push</h2>
+  <p class="pengantar">Centang untuk memeriksa layar Anda. Semua harus ya. Satu tidak berarti kembali ke pengerja. Centang tidak disimpan.</p>
+  <ul class="pv-cekdaftar" id="cek-daftar">
+    <li><input type="checkbox" id="c1"><label for="c1">Hex hanya ada di tema.css?<small><code>grep -nE "#[0-9a-fA-F]{3,8}" public/*.css public/inti/*.css</code> hanya mengenai tema.css.</small></label></li>
+    <li><input type="checkbox" id="c2"><label for="c2">Dua blok gelap di tema.css identik?<small>Blok <code>@media</code> dan <code>[data-theme="dark"]</code> sama persis.</small></label></li>
+    <li><input type="checkbox" id="c3"><label for="c3">Tampilan gelap dan terang sudah dilihat di 1440 dan 390px?<small>Tangkapan layar sendiri diperiksa sebelum lapor.</small></label></li>
+    <li><input type="checkbox" id="c4"><label for="c4">Jarak hero ke baris kartu sedikitnya 24px dan tidak ada overlap negatif?</label></li>
+    <li><input type="checkbox" id="c5"><label for="c5">Label KPI satu baris dan angka semua kartu sejajar dengan tinggi kartu sama?</label></li>
+    <li><input type="checkbox" id="c6"><label for="c6">Semua tabel memakai .jm-gulir dan .jm-tabel dengan th rata tengah?<small>Header gradien hijau, garis lime, angka <code>jm-num</code>, kartu di bawah 768px.</small></label></li>
+    <li><input type="checkbox" id="c7"><label for="c7">Tidak ada tautan bergaris bawah di dalam tabel?</label></li>
+    <li><input type="checkbox" id="c8"><label for="c8">Setiap data penting berupa grafik sungguhan dengan sorot tunggal, ambang, dan nilai?</label></li>
+    <li><input type="checkbox" id="c9"><label for="c9">Daftar peringkat memakai .jm-rank dengan bar, bukan teks polos?</label></li>
+    <li><input type="checkbox" id="c10"><label for="c10">Kartu, baris, dan batang bisa diklik dan batang punya tooltip?</label></li>
+    <li><input type="checkbox" id="c11"><label for="c11">Bagian yang gagal dimuat disembunyikan, bukan diganti kotak galat?</label></li>
+    <li><input type="checkbox" id="c12"><label for="c12">Tiap bagian halaman dalam .jm-wadah dan satu kartu?</label></li>
+    <li><input type="checkbox" id="c13"><label for="c13">Item nav selebar sama, dan nav, tab, serta subnav semuanya berikon?</label></li>
+    <li><input type="checkbox" id="c14"><label for="c14">Teks bebas bahasa AI: tanpa em dash, emoji, atau kata hype?</label></li>
+    <li><input type="checkbox" id="c15"><label for="c15">Tiap angka bersumber dan bertanggal, turunan berpil EST, penyebut "n dari N" ada?</label></li>
+    <li><input type="checkbox" id="c16"><label for="c16">Teks tampil lewat t(kunci) dan kunci ada di id.json dan en.json?</label></li>
+    <li><input type="checkbox" id="c17"><label for="c17">Klik, tab, urut, dan paginasi tidak membekukan layar?<small>Kontrol berubah seketika, render berat ditunda. Jalankan inp-reviewer.</small></label></li>
+    <li><input type="checkbox" id="c18"><label for="c18">npm run uji hijau dan higiene repo bersih (tanpa rahasia atau data pribadi)?</label></li>
+  </ul>
+  <div class="hasil-cek"><span class="jm-pil" id="hasil-cek">0 dari 18 ya</span><button type="button" class="jm-tbl" id="reset-cek"><svg class="jm-ik" aria-hidden="true"><use href="#i-silang"/></svg>Kosongkan</button></div>
+</section>
+</main>
+</div>
+
+<script>
+(function(){
+  var WARNA=[{"judul": "Merek (tetap di kedua mode)", "isi": [["meti-navy", "#0A5C47", null], ["meti-petrol", "#1E7FA8", null], ["meti-teal", "#12896B", null], ["meti-cyan", "#4AA9E0", null], ["meti-lime", "#9DC94F", null], ["meti-cloud", "#F2F8F5", null], ["meti-oranye", "#C55A11", null]]}, {"judul": "Permukaan dan garis", "isi": [["paper", "#FFFFFF", "#0E1A17"], ["surface", "#F2F8F5", "#14241F"], ["card", "#FFFFFF", "#14241F"], ["soft-biru", "#E3F3FA", "#153A4A"], ["soft-hijau", "#E2F3EC", "#123A2F"], ["akun-isi", "#E4F3EE", "#153A4A"], ["akun-krem", "#FBF1DC", "#3A2E1C"], ["akun-biru", "#BFE3F4", "#1E5E78"], ["line", "#D3E3DC", "#25403A"], ["line-cell", "#DCE9E3", "#25403A"], ["line-ctl", "#667C73", "#7E9A8F"]]}, {"judul": "Teks", "isi": [["ink", "#0E1B17", "#E8F2EE"], ["ink2", "#46594F", "#A7BDB4"], ["head", "#0B3D31", "#FFFFFF"], ["on-brand", "#FFFFFF", null], ["on-accent", "#FFFFFF", "#08201A"]]}, {"judul": "Merek dan aksen", "isi": [["brand", "#0A5C47", "#0B3D31"], ["brand2", "#12896B", null], ["accent", "#00705A", "#4FD3AD"], ["accent-isi", "#12896B", null], ["sorot", "#9DC94F", null], ["kaki-bg", "#06261D", "#041912"], ["fokus", "#1E7FA8", "#5BB8EC"]]}, {"judul": "Semantik (ok, warn, bad, info)", "isi": [["ok", "#066B52", "#4FD3AD"], ["warn", "#A8480A", "#F2955A"], ["bad", "#B3261E", "#FF8A80"], ["info", "#1E7FA8", "#5BB8EC"], ["ok-bg", "#E2F3EC", "#123A2F"], ["warn-bg", "#FBEBDD", "#3A2616"], ["bad-bg", "#FBE7E5", "#3A1B19"], ["info-bg", "#E3F3FA", "#153A4A"]]}, {"judul": "Palet data 1 sampai 5 (grafik)", "isi": [["data1", "#0A5C47", "#5BB8EC"], ["data2", "#12896B", "#4FD3AD"], ["data3", "#4AA9E0", "#B3DB6E"], ["data4", "#9DC94F", "#9FB8AE"], ["data5", "#1E7FA8", "#3E9BCB"]]}];
+  var root=document.documentElement;
+
+  /* peta warna */
+  var peta=document.getElementById("peta-warna");
+  WARNA.forEach(function(g){
+    var sec=document.createElement("section"); sec.className="grup-warna";
+    var h=document.createElement("h3"); h.textContent=g.judul; sec.appendChild(h);
+    var grid=document.createElement("div"); grid.className="swatch-grid";
+    g.isi.forEach(function(t){
+      var d=document.createElement("div"); d.className="sw";
+      var i=document.createElement("i"); i.style.background="var(--"+t[0]+")"; d.appendChild(i);
+      var b=document.createElement("div");
+      var n=document.createElement("b"); n.textContent="--"+t[0]; b.appendChild(n);
+      var a=document.createElement("span"); a.innerHTML="<em>T</em>"; a.appendChild(document.createTextNode(t[1])); b.appendChild(a);
+      var c=document.createElement("span"); c.innerHTML="<em>G</em>";
+      var teks=document.createElement("span"); teks.textContent=t[2]||"sama"; if(!t[2]) teks.className="samadark"; teks.style.display="inline"; c.appendChild(teks); b.appendChild(c);
+      d.appendChild(b); grid.appendChild(d);
+    });
+    sec.appendChild(grid); peta.appendChild(sec);
+  });
+
+  /* ikon */
+  var sprite=document.querySelector(".sprite");
+  var gridIkon=document.getElementById("ikon-grid");
+  sprite.querySelectorAll("symbol").forEach(function(s){
+    var id=s.id, btn=document.createElement("button"); btn.type="button"; btn.setAttribute("data-salin",id); btn.title="Salin "+id;
+    btn.innerHTML='<svg class="jm-ik" aria-hidden="true"><use href="#'+id+'"/></svg><span>'+id+'</span>';
+    gridIkon.appendChild(btn);
+  });
+
+  /* salin ke papan klip */
+  document.addEventListener("click",function(e){
+    var el=e.target.closest("[data-salin]"); if(!el) return;
+    var teks=el.getAttribute("data-salin"), lama=el.getAttribute("data-lama");
+    var tandai=function(){ el.classList.add("sudah"); setTimeout(function(){ el.classList.remove("sudah"); },1200); };
+    try{ navigator.clipboard.writeText(teks).then(tandai,function(){}); }catch(x){}
+  });
+
+  /* tema */
+  document.getElementById("tombol-tema").addEventListener("click",function(){
+    var gelap=root.getAttribute("data-theme")==="dark"||(!root.getAttribute("data-theme")&&matchMedia("(prefers-color-scheme: dark)").matches);
+    root.setAttribute("data-theme",gelap?"light":"dark");
+  });
+
+  /* daftar isi aktif */
+  var tautan=[].slice.call(document.querySelectorAll(".daftar-isi a"));
+  var bag=tautan.map(function(a){return document.querySelector(a.getAttribute("href"));});
+  if("IntersectionObserver" in window){
+    var io=new IntersectionObserver(function(es){
+      es.forEach(function(en){ if(en.isIntersecting){ var k=bag.indexOf(en.target); tautan.forEach(function(a,i){a.classList.toggle("aktif",i===k);}); } });
+    },{rootMargin:"-20% 0px -70% 0px"});
+    bag.forEach(function(s){ if(s) io.observe(s); });
+  }
+
+  /* tab contoh */
+  var tabs=document.querySelectorAll("#tab-contoh [role=tab]");
+  tabs.forEach(function(t){ t.addEventListener("click",function(){ tabs.forEach(function(x){x.setAttribute("aria-selected",x===t?"true":"false");}); }); });
+
+  /* tabel: urut dan saring */
+  var tb=document.querySelector("#tabel-contoh tbody"), baris=[].slice.call(tb.rows);
+  var q=document.getElementById("q-contoh"), js=document.getElementById("jenis-contoh"), hp=document.getElementById("hapus-contoh"), hit=document.getElementById("hitung-contoh");
+  function saring(){
+    var kata=q.value.trim().toLowerCase(), jn=js.value, n=0;
+    baris.forEach(function(r){
+      var ok=(!kata||r.cells[0].textContent.toLowerCase().indexOf(kata)>-1)&&(!jn||r.cells[1].textContent===jn);
+      r.hidden=!ok; if(ok) n++;
+    });
+    hit.textContent=n+" dari "+baris.length; hp.hidden=!(kata||jn);
+  }
+  q.addEventListener("input",saring); js.addEventListener("change",saring);
+  hp.addEventListener("click",function(){ q.value=""; js.value=""; saring(); });
+  document.querySelectorAll("#tabel-contoh .jm-urut").forEach(function(bt){
+    bt.addEventListener("click",function(){
+      var th=bt.closest("th"), naik=th.getAttribute("aria-sort")!=="ascending", k=+bt.dataset.k;
+      document.querySelectorAll("#tabel-contoh th[aria-sort]").forEach(function(x){x.setAttribute("aria-sort","none");});
+      th.setAttribute("aria-sort",naik?"ascending":"descending");
+      var nilai=function(r){ var t=r.cells[k].textContent.trim(); return k===2?parseFloat(t.replace(/\./g,"").replace(",",".")):t.toLowerCase(); };
+      baris.sort(function(a,b){ var x=nilai(a), y=nilai(b); return (x<y?-1:x>y?1:0)*(naik?1:-1); });
+      baris.forEach(function(r){tb.appendChild(r);});
+    });
+  });
+
+  /* cek tema kembar: bandingkan dua blok gelap dari stylesheet halaman ini */
+  function deklarasi(st){ var o={}; for(var i=0;i<st.length;i++){ var p=st[i]; o[p]=st.getPropertyValue(p).trim(); } return o; }
+  var out=document.getElementById("cek-kembar");
+  try{
+    var a=null,b=null;
+    [].slice.call(document.styleSheets).forEach(function(ss){
+      var rules; try{ rules=ss.cssRules; }catch(x){ return; }
+      [].slice.call(rules).forEach(function(r){
+        if(r.type===CSSRule.MEDIA_RULE&&/prefers-color-scheme:\s*dark/.test(r.conditionText)){ [].slice.call(r.cssRules).forEach(function(s){ if(s.selectorText&&s.selectorText.indexOf("data-theme")>-1&&s.selectorText.indexOf("not")>-1&&!a) a=deklarasi(s.style); }); }
+        else if(r.selectorText===':root[data-theme="dark"]'&&!b) b=deklarasi(r.style);
+      });
+    });
+    var ka=Object.keys(a||{}), kb=Object.keys(b||{}), beda=[];
+    ka.concat(kb).forEach(function(k){ if((a||{})[k]!==(b||{})[k]&&beda.indexOf(k)<0) beda.push(k); });
+    if(a&&b&&!beda.length) out.innerHTML='<span class="jm-pil jm-pil-ok">Identik</span><span>'+ka.length+' deklarasi sama di kedua blok gelap.</span>';
+    else out.innerHTML='<span class="jm-pil jm-pil-bad">Berbeda</span><span>'+(beda.length?beda.join(", "):"blok tidak ditemukan")+'</span>';
+  }catch(x){ out.innerHTML='<span class="jm-pil">Tidak dapat diperiksa</span>'; }
+
+  /* checklist */
+  var cek=[].slice.call(document.querySelectorAll("#cek-daftar input")), hasil=document.getElementById("hasil-cek");
+  function hitungCek(){ var n=cek.filter(function(c){return c.checked;}).length; hasil.textContent=n+" dari "+cek.length+" ya"; hasil.className="jm-pil"+(n===cek.length?" jm-pil-ok":""); }
+  cek.forEach(function(c){c.addEventListener("change",hitungCek);});
+  document.getElementById("reset-cek").addEventListener("click",function(){ cek.forEach(function(c){c.checked=false;}); hitungCek(); });
+})();
+</script>

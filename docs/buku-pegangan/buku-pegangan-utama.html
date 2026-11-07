@@ -1,0 +1,483 @@
+<title>Buku Pegangan METI</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@500;600;700&display=swap');
+:root{
+  --paper:#FFFFFF; --surface:#F2F8F5; --card:#FFFFFF;
+  --line:#D3E3DC; --line-ctl:#667C73;
+  --ink:#0E1B17; --ink2:#46594F; --head:#0B3D31;
+  --brand:#0A5C47; --brand2:#12896B; --accent:#00705A; --on-brand:#FFFFFF;
+  --sky:#4AA9E0; --lime:#9DC94F; --petrol:#1E7FA8;
+  --soft-hijau:#E2F3EC; --soft-biru:#E3F3FA; --zebra:#F5FAF7;
+  --ok:#066B52; --warn:#A8480A; --warn-bg:#FBEBDD;
+  --fokus:#1E7FA8; --shadow:0 2px 14px rgb(10 60 45/.08);
+  --display:"Poppins",system-ui,sans-serif; --font:"Inter",Arial,system-ui,sans-serif;
+  --r:14px; --r-sm:10px;
+  color-scheme:light;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --paper:#0E1A17; --surface:#14241F; --card:#14241F;
+  --line:#25403A; --line-ctl:#7E9A8F;
+  --ink:#E8F2EE; --ink2:#A7BDB4; --head:#FFFFFF;
+  --brand:#0B3D31; --brand2:#12896B; --accent:#4FD3AD; --on-brand:#FFFFFF;
+  --sky:#5BB8EC; --lime:#B3DB6E; --petrol:#3E9BCB;
+  --soft-hijau:#123A2F; --soft-biru:#153A4A; --zebra:#172A25;
+  --ok:#4FD3AD; --warn:#F2955A; --warn-bg:#3A2616;
+  --fokus:#5BB8EC; --shadow:0 2px 14px rgb(0 0 0/.35);
+  color-scheme:dark;
+}}
+:root[data-theme="dark"]{
+  --paper:#0E1A17; --surface:#14241F; --card:#14241F;
+  --line:#25403A; --line-ctl:#7E9A8F;
+  --ink:#E8F2EE; --ink2:#A7BDB4; --head:#FFFFFF;
+  --brand:#0B3D31; --brand2:#12896B; --accent:#4FD3AD; --on-brand:#FFFFFF;
+  --sky:#5BB8EC; --lime:#B3DB6E; --petrol:#3E9BCB;
+  --soft-hijau:#123A2F; --soft-biru:#153A4A; --zebra:#172A25;
+  --ok:#4FD3AD; --warn:#F2955A; --warn-bg:#3A2616;
+  --fokus:#5BB8EC; --shadow:0 2px 14px rgb(0 0 0/.35);
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:84px}
+body{margin:0;background:var(--paper);color:var(--ink);font:400 16px/1.7 var(--font);-webkit-text-size-adjust:100%}
+a{color:var(--accent);text-underline-offset:3px}
+a:focus-visible,button:focus-visible,summary:focus-visible{outline:3px solid var(--fokus);outline-offset:2px;border-radius:6px}
+code,kbd{font:500 .88em ui-monospace,SFMono-Regular,Menlo,monospace;background:var(--soft-hijau);padding:2px 7px;border-radius:6px;word-break:break-word}
+.bar{position:sticky;top:0;z-index:20;background:linear-gradient(90deg,var(--brand),var(--brand2));color:var(--on-brand);border-bottom:2px solid var(--lime);
+  padding:12px max(16px,env(safe-area-inset-right,0px)) 12px max(16px,env(safe-area-inset-left,0px))}
+.bar-in{max-width:1240px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:16px}
+.bar b{font:600 16px/1.3 var(--display);letter-spacing:.01em}
+.bar button{font:500 14px var(--font);min-height:40px;padding:0 16px;border-radius:999px;border:1px solid rgb(255 255 255/.55);background:transparent;color:var(--on-brand);cursor:pointer}
+.bar button:hover{background:rgb(255 255 255/.14)}
+.wrap{max-width:1240px;margin:0 auto;padding:40px max(16px,env(safe-area-inset-right,0px)) 80px max(16px,env(safe-area-inset-left,0px));display:grid;grid-template-columns:minmax(0,1fr);gap:32px}
+@media (min-width:980px){.wrap{grid-template-columns:272px minmax(0,1fr);gap:48px}}
+.toc{align-self:start}
+@media (min-width:980px){.toc{position:sticky;top:96px;max-height:calc(100vh - 120px);overflow:auto}}
+.toc-box{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:20px;box-shadow:var(--shadow)}
+.toc summary{font:600 13px var(--display);text-transform:uppercase;letter-spacing:.09em;color:var(--head);cursor:pointer;list-style:none;padding:4px 0}
+.toc summary::-webkit-details-marker{display:none}
+.toc ol{list-style:none;margin:14px 0 0;padding:0;display:grid;gap:4px}
+.toc a{display:block;padding:9px 12px;border-radius:var(--r-sm);color:var(--ink2);text-decoration:none;font-size:14.5px;line-height:1.35;border-left:3px solid transparent}
+.toc a:hover{background:var(--soft-hijau);color:var(--ink)}
+.toc a.on{background:var(--soft-hijau);color:var(--head);font-weight:600;border-left-color:var(--lime)}
+@media (min-width:980px){.toc details>summary{pointer-events:none}}
+main{min-width:0;display:grid;gap:32px}
+.intro h1{font:700 clamp(26px,4vw,38px)/1.2 var(--display);color:var(--head);margin:0 0 14px}
+.intro p{margin:0;color:var(--ink2);max-width:68ch}
+.meta{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px}
+.pil{display:inline-block;font:500 13px/1.2 var(--font);padding:7px 14px;border-radius:999px;background:var(--soft-biru);color:var(--ink);border:1px solid var(--line)}
+section.bab{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:32px;box-shadow:var(--shadow);min-width:0}
+@media (max-width:560px){section.bab{padding:22px 18px}}
+section.bab>h2{font:600 clamp(21px,3vw,26px)/1.3 var(--display);color:var(--head);margin:0 0 6px;padding-bottom:14px;border-bottom:2px solid var(--lime)}
+section.bab>.lead{color:var(--ink2);margin:18px 0 0;max-width:70ch}
+h3{font:600 17px/1.4 var(--display);color:var(--head);margin:32px 0 12px}
+p{margin:14px 0 0;max-width:72ch}
+ul,ol.l{margin:14px 0 0;padding-left:22px;max-width:72ch}
+li{margin:8px 0}
+.tw{overflow-x:auto;margin:20px 0 0;border:1px solid var(--line);border-radius:var(--r-sm);-webkit-overflow-scrolling:touch}
+table{border-collapse:collapse;width:100%;min-width:620px;font-size:14.5px;line-height:1.55}
+thead{background:linear-gradient(90deg,var(--brand),var(--brand2))}
+th{color:#fff;text-transform:uppercase;letter-spacing:.09em;text-align:center;font:600 12px/1.3 var(--font);padding:14px 16px;border-bottom:2px solid var(--lime);white-space:nowrap}
+td{padding:14px 16px;vertical-align:top;border-top:1px solid var(--line)}
+tbody tr:nth-child(even){background:var(--zebra)}
+td:first-child{font-weight:600;color:var(--head);min-width:96px}
+.nw{white-space:nowrap}
+.note{margin:22px 0 0;padding:18px 20px;border-radius:var(--r-sm);background:var(--soft-biru);border-left:4px solid var(--sky);max-width:72ch}
+.note.warn{background:var(--warn-bg);border-left-color:var(--warn)}
+.note b{color:var(--head)}
+.cmd{margin:14px 0 0;padding:16px 18px;background:var(--surface);border:1px solid var(--line);border-radius:var(--r-sm);overflow-x:auto;font:500 13.5px/1.8 ui-monospace,SFMono-Regular,Menlo,monospace;white-space:pre;color:var(--ink)}
+.grid{display:grid;gap:16px;margin-top:20px;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr))}
+.kartu{border:1px solid var(--line);border-radius:var(--r-sm);padding:20px;background:var(--surface)}
+.kartu h4{font:600 15px/1.4 var(--display);margin:0 0 8px;color:var(--head)}
+.kartu p{margin:0;font-size:14.5px}
+.langkah{counter-reset:s;list-style:none;padding:0;margin:18px 0 0;display:grid;gap:12px;max-width:76ch}
+.langkah li{counter-increment:s;position:relative;margin:0;padding:16px 18px 16px 58px;border:1px solid var(--line);border-radius:var(--r-sm);background:var(--surface)}
+.langkah li::before{content:counter(s);position:absolute;left:16px;top:14px;width:30px;height:30px;border-radius:50%;background:linear-gradient(135deg,var(--brand),var(--brand2));color:#fff;font:600 14px/30px var(--display);text-align:center}
+footer{color:var(--ink2);font-size:14px;padding-top:8px;max-width:72ch}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+
+<header class="bar"><div class="bar-in"><b>Direktori METI: Buku Pegangan Utama</b><button type="button" id="tema" aria-label="Ganti tema terang atau gelap">Ganti tema</button></div></header>
+
+<div class="wrap">
+<nav class="toc" aria-label="Daftar isi">
+  <div class="toc-box"><details id="tocd" open>
+    <summary>Daftar isi</summary>
+    <ol id="tocl">
+      <li><a href="#apa-ini">1. Apa ini dan untuk siapa</a></li>
+      <li><a href="#peta-halaman">2. Peta halaman</a></li>
+      <li><a href="#peran">3. Peran dan lapis data</a></li>
+      <li><a href="#pipa">4. Sumber data dan pipa</a></li>
+      <li><a href="#harian">5. Cara kerja harian</a></li>
+      <li><a href="#keamanan">6. Aturan keamanan dan privasi</a></li>
+      <li><a href="#keputusan">7. Keputusan pemilik</a></li>
+      <li><a href="#glosarium">8. Glosarium singkat</a></li>
+      <li><a href="#infrastruktur">9. Infrastruktur</a></li>
+      <li><a href="#kontak">10. Kontak dan eskalasi</a></li>
+    </ol>
+  </details></div>
+</nav>
+
+<main>
+<div class="intro">
+  <h1>Buku Pegangan Utama Direktori METI</h1>
+  <p>Rujukan satu halaman untuk siapa pun yang memakai, merawat, atau mengisi Direktori METI di direktori.metiires.or.id. Isinya diringkas dari paket perencanaan di <code>docs/perencanaan/</code>. Bila ada beda, <code>KEPUTUSAN-METI.md</code> yang berlaku.</p>
+  <div class="meta"><span class="pil">Versi 7 Nov 2026</span><span class="pil">Repo publik: tanpa rahasia dan data pribadi</span><span class="pil">Bahasa: Indonesia</span></div>
+</div>
+
+<section class="bab" id="apa-ini">
+  <h2>1. Apa ini dan untuk siapa</h2>
+  <p class="lead">Direktori METI adalah direktori dan sensus ekosistem energi baru terbarukan (EBET) Indonesia untuk Masyarakat Energi Terbarukan Indonesia (METI). Tiap angka dan profil punya sumber dan tanggal.</p>
+  <h3>Masalah yang dijawab</h3>
+  <ul>
+    <li>METI mengklaim 1.800+ anggota dan 20+ mitra, tetapi situs metiires.or.id hanya menampilkan 12 logo anggota dan 12 logo mitra. Tidak ada direktori, peta, pencarian, atau relasi.</li>
+    <li>Data EBET tersebar di banyak tempat dan tidak saling terhubung: orang, lembaga, perusahaan, proyek, pembiaya, dan regulasi.</li>
+    <li>Angka EBET sering berbeda antar dokumen. Tanpa tanggal dan sumber, angka METI mudah dipatahkan.</li>
+  </ul>
+  <h3>Pertanyaan yang dijawab dalam satu menit</h3>
+  <ul>
+    <li>Siapa saja pemain EBET, per sektor, per provinsi, per rantai nilai?</li>
+    <li>Siapa memasok, mendanai, dan mengatur siapa?</li>
+    <li>Proyek apa yang sudah jalan, di mana, berapa MW, siapa pengembangnya, dan seberapa terlambat dari target COD?</li>
+    <li>Siapa pakar yang bisa diundang untuk isu tertentu di provinsi tertentu?</li>
+    <li>Apa jejak regulasi dan posisi METI terhadap RUU EBET, Perpres 112/2022, RUEN, dan RUPTL?</li>
+  </ul>
+  <h3>Untuk siapa</h3>
+  <div class="grid">
+    <div class="kartu"><h4>Pengunjung publik</h4><p>Membaca insight, proyek, regulasi, berita, kalender, wilayah, dan rantai pasok PLTS tanpa login.</p></div>
+    <div class="kartu"><h4>Anggota METI</h4><p>Membuka direktori orang dan lembaga, menyusun daftar pendek, dan mengekspor.</p></div>
+    <div class="kartu"><h4>Pengurus dan Sekretariat</h4><p>Melihat lapis pengurus, termasuk kontak korporat dan riwayat dengan METI.</p></div>
+    <div class="kartu"><h4>Kurator, Admin, Super Admin</h4><p>Merawat data, membuat akun, dan menjaga mutu serta keamanan.</p></div>
+  </div>
+  <h3>Prinsip kerja</h3>
+  <ul>
+    <li>Tiap fakta dan hubungan wajib punya <code>sumber_url</code>, <code>tanggal_periksa</code>, dan <code>tingkat_bukti</code>. Baris tanpa sumber ditolak.</li>
+    <li>Angka turunan hitungan platform berlabel <code>EST</code>, rumusnya ditulis di bawah angka.</li>
+    <li>Tiap halaman publik memuat jawaban singkat bertanggal, cara menghitung, dan cara mengutip.</li>
+    <li>Fitur, layar, atau tabel yang tidak tertulis di paket perencanaan tidak dibuat. Bila dokumen bertentangan, pengerja berhenti dan bertanya ke pemilik.</li>
+  </ul>
+</section>
+
+<section class="bab" id="peta-halaman">
+  <h2>2. Peta halaman</h2>
+  <p class="lead">Halaman yang ada di <code>public/</code> saat ini. Isi tampilan dibaca dari potret JSON, bukan dari database, supaya cepat dan hemat kuota.</p>
+  <div class="tw"><table>
+    <thead><tr><th>Halaman</th><th>Alamat</th><th>Yang ditampilkan</th><th>Akses</th></tr></thead>
+    <tbody>
+      <tr><td>Beranda</td><td class="nw"><code>/</code></td><td>Peta ekosistem EBET: kartu angka kunci yang dihitung dari data bersumber, jumlah proyek per teknologi, organisasi per jenis, program terbesar, dan penghasil emisi terbesar.</td><td>Publik</td></tr>
+      <tr><td>Insight: Ringkasan</td><td class="nw"><code>/insight</code></td><td>Temuan inti yang dihitung langsung dari proyek, regulasi, berita, dan wilayah, tiap temuan dengan cara menghitung dan cara membagikan.</td><td>Publik</td></tr>
+      <tr><td>Insight: Tren</td><td class="nw"><code>/insight</code></td><td>Perubahan dari waktu ke waktu: kapasitas, status proyek, regulasi baru, dan arus berita.</td><td>Publik</td></tr>
+      <tr><td>Insight: Wilayah</td><td class="nw"><code>/wilayah</code></td><td>Peta 38 provinsi: kapasitas EBT terpasang, rasio elektrifikasi, potensi panas bumi, proyek terlacak, peraturan daerah, organisasi, dan pakar per provinsi. Pertanyaan utamanya: seberapa jauh realisasi dari potensi.</td><td>Publik</td></tr>
+      <tr><td>Insight: Rantai PLTS</td><td class="nw"><code>/rantai</code></td><td>Cukupkah pasokan modul surya lokal untuk program PLTS 100 GWp: kapasitas pabrikan, ekspor, TKDN, lokasi pabrik, dan anggota APAMSI.</td><td>Publik</td></tr>
+      <tr><td>Insight: ASEAN</td><td class="nw"><code>/asean</code></td><td>Perbandingan 10 negara ASEAN: pangsa listrik terbarukan, kapasitas terbarukan, dan akses listrik, dengan tren 10 tahun.</td><td>Publik</td></tr>
+      <tr><td>Proyek</td><td class="nw"><code>/proyek</code></td><td>Pelacak proyek energi terbarukan: peta proyek, corong status, daftar yang terlambat dari target COD, daftar proyek, dan program nasional (PLTS 100 GW, WtE, B50/E20, RUPTL, PSN/JETP).</td><td>Publik</td></tr>
+      <tr><td>Regulasi</td><td class="nw"><code>/regulasi</code></td><td>Daftar dan linimasa regulasi EBET dengan status, rantai perubahan, dan tautan ke naskah. Memuat bagian khusus RUU Energi Baru dan Energi Terbarukan.</td><td>Publik</td></tr>
+      <tr><td>Berita</td><td class="nw"><code>/berita</code></td><td>Judul dan tautan berita dan video EBET dari media dan kanal resmi, dikelompokkan menurut teknologi dan pelaku yang disebut. Isi artikel tidak disimpan.</td><td>Publik</td></tr>
+      <tr><td>Kalender</td><td class="nw"><code>/kalender</code></td><td>Agenda METI dan acara ekosistem: seminar, konferensi, audiensi, dan terbitnya regulasi.</td><td>Publik</td></tr>
+      <tr><td>Direktori</td><td class="nw"><code>/direktori</code></td><td>Direktori pakar, lembaga, dan wilayah: pencarian, profil berkartu, bagian Terhubung, daftar pendek dengan ekspor, peta, dan riwayat dengan METI. Pengunjung tanpa login melihat ajakan masuk.</td><td>Login</td></tr>
+      <tr><td>Tentang</td><td class="nw"><code>/tentang</code></td><td>Tentang METI, susunan pengurus, mitra, cara direktori dibangun, dan jalur menghubungi pengelola.</td><td>Publik</td></tr>
+      <tr><td>Admin</td><td class="nw"><code>/admin</code></td><td>Tab Akun (membuat akun, tautan aktivasi, peran, nonaktifkan) dan tab Jejak (siapa mengubah apa dan kapan).</td><td>Admin, Super</td></tr>
+      <tr><td>Masuk</td><td class="nw"><code>/masuk</code></td><td>Masuk dengan akun yang dibuat Admin, plus lupa sandi. Halaman pendukung: <code>/aktivasi</code> (menyetel sandi lewat tautan sekali pakai) dan <code>/ganti-sandi</code>.</td><td>Publik</td></tr>
+    </tbody>
+  </table></div>
+  <div class="note"><b>Catatan Insight.</b> Insight adalah halaman ringkasan; Wilayah, Rantai PLTS, dan ASEAN juga punya halaman sendiri (<code>/wilayah</code>, <code>/rantai</code>, <code>/asean</code>) untuk pembacaan penuh.</div>
+</section>
+
+<section class="bab" id="peran">
+  <h2>3. Peran dan lapis data</h2>
+  <p class="lead">Ada tiga lapis data (publik, anggota, pengurus) dan tujuh peran. Lapis dipisah saat potret dibuat, bukan disaring di peramban, jadi berkas lapis tinggi tidak pernah dirujuk dari halaman lapis rendah.</p>
+  <h3>Peran</h3>
+  <div class="tw"><table>
+    <thead><tr><th>Peran</th><th>Siapa</th><th>Akses utama</th></tr></thead>
+    <tbody>
+      <tr><td>Publik</td><td>Siapa saja, tanpa login</td><td>Baca entitas publik, fakta bersumber, nama, jabatan publik, dan afiliasi orang; potret lapis publik.</td></tr>
+      <tr><td>Anggota</td><td>Akun yang dibuat Admin</td><td>Seperti publik, ditambah potret lapis anggota (rincian kontrak dan pendana) dan direktori. Boleh mengirim usulan koreksi.</td></tr>
+      <tr><td>Pengurus</td><td>Pengurus dan Sekretariat</td><td>Seperti anggota, ditambah lapis pengurus, kontak korporat dan kontak kantor orang, serta riwayat dengan METI.</td></tr>
+      <tr><td>Kurator</td><td>Bidang yang merawat data</td><td>Menulis entitas, fakta, dan ikatan; memutus antrean koreksi.</td></tr>
+      <tr><td>Wilayah</td><td>Ketua METI Wilayah</td><td>Baca seperti anggota; kontak orang hanya untuk provinsinya (<code>cakupan_prov</code>).</td></tr>
+      <tr><td>Admin</td><td>Pengelola akun</td><td>Membuat dan menonaktifkan akun, mengubah peran selain Super, membaca jejak. Tidak bisa menjadikan siapa pun Super, termasuk dirinya.</td></tr>
+      <tr><td>Super</td><td>Pemegang akun tertinggi</td><td>Semua yang dimiliki Admin, ditambah mengelola akun Super dan membaca daftar tolak. Harus selalu tersisa satu.</td></tr>
+    </tbody>
+  </table></div>
+  <h3>Siapa melihat apa</h3>
+  <div class="tw"><table>
+    <thead><tr><th>Jenis data</th><th>Publik</th><th>Anggota</th><th>Pengurus</th></tr></thead>
+    <tbody>
+      <tr><td>Identitas, lokasi, teknis, status, sumber</td><td>Ya</td><td>Ya</td><td>Ya</td></tr>
+      <tr><td>Uang: angka ringkas</td><td>Ya</td><td>Ya</td><td>Ya</td></tr>
+      <tr><td>Uang: rincian kontrak dan pendana</td><td>Tidak</td><td>Ya</td><td>Ya</td></tr>
+      <tr><td>Orang: nama, jabatan publik, afiliasi</td><td>Ya</td><td>Ya</td><td>Ya</td></tr>
+      <tr><td>Kontak korporat</td><td>Ya</td><td>Ya</td><td>Ya</td></tr>
+      <tr><td>Kontak orang</td><td>Tidak</td><td>Tidak</td><td>Ya</td></tr>
+      <tr><td>Riwayat dengan METI (narasumber, audiensi, MoU, sponsor)</td><td>Tidak</td><td>Tidak</td><td>Ya</td></tr>
+      <tr><td>Catatan kurator dan konflik belum putus</td><td>Tidak</td><td>Tidak</td><td>Ya</td></tr>
+      <tr><td>Alamat rumah, NIK, tanggal lahir, agama, status kawin, biometrik</td><td colspan="3" style="text-align:center">Tidak ada kolomnya, ditolak untuk semua peran</td></tr>
+    </tbody>
+  </table></div>
+  <div class="note">Peran tidak dikenal, akun nonaktif, atau sesi kedaluwarsa diperlakukan sebagai Publik. Semua baca dan tulis ke D1 lewat satu modul penjaga, <code>src/hak.js</code>, karena D1 tidak punya RLS bawaan. Tiap sel matriks hak punya uji bahwa peran yang salah ditolak.</div>
+</section>
+
+<section class="bab" id="pipa">
+  <h2>4. Sumber data dan pipa</h2>
+  <p class="lead">Data masuk lewat panen otomatis dari sumber publik, kurasi manusia, dan unggahan. Layar membaca potret JSON hasil pipa, bukan database.</p>
+  <h3>Alur dari sumber sampai layar</h3>
+  <ol class="langkah">
+    <li><b>Panen.</b> Skrip <code>scripts/panen/*.mjs</code> mengambil dari sumber publik (OpenAlex, OpenStreetMap, Wikidata, Ember, BPK dan JDIH ESDM untuk regulasi, GDELT dan RSS media untuk berita, dan lainnya). Hasil mentah masuk <code>data-panen/</code> yang tidak ikut repo.</li>
+    <li><b>Normalisasi.</b> Tiap keluaran menjadi fakta atau ikatan dengan sumber, tanggal periksa, dan tingkat bukti. Baris tanpa sumber dibuang dan dihitung di laporan.</li>
+    <li><b>Penggabungan.</b> Entitas yang sama dari sumber berbeda digabung: kunci kuat dulu (NPWP, NIB, ORCID, DOI, ROR), lalu skor lunak. Kunci ambigu tidak ditautkan.</li>
+    <li><b>Penyaringan.</b> Id di daftar tolak dibuang dari entitas, ikatan, dan graf.</li>
+    <li><b>Potret.</b> <code>scripts/pipa/potret.mjs</code> membangun JSON per lapis. Pemindai data pribadi dan batas ukuran 2 MB membuat build gagal bila dilanggar.</li>
+    <li><b>Unggah.</b> <code>scripts/pipa/unggah_potret.mjs</code> mengirim potret ke R2 hanya bila lolos pemeriksaan ulang: semua atau tidak sama sekali. Potret lama tetap tayang bila baru ditolak.</li>
+    <li><b>Layar.</b> Worker melayani potret sesuai peran. Cache tepi dipakai agar kuota baca D1 tidak habis per kunjungan.</li>
+  </ol>
+  <h3>Potret yang terbit</h3>
+  <p>Per 7 Nov 2026 snapshot publik di <code>public/data/</code> berjumlah baris berikut.</p>
+  <div class="tw"><table>
+    <thead><tr><th>Berkas</th><th>Isi</th><th>Baris</th></tr></thead>
+    <tbody>
+      <tr><td><code>proyek.json</code></td><td>Pelacak proyek</td><td>397</td></tr>
+      <tr><td><code>organisasi.json</code></td><td>Perusahaan, lembaga, asosiasi</td><td>355</td></tr>
+      <tr><td><code>orang.json</code></td><td>Pakar dan tokoh (nama, jabatan publik, afiliasi)</td><td>409</td></tr>
+      <tr><td><code>regulasi.json</code></td><td>Regulasi</td><td>430</td></tr>
+      <tr><td><code>berita.json</code></td><td>Judul dan tautan berita</td><td>519</td></tr>
+      <tr><td><code>video.json</code></td><td>Video</td><td>95</td></tr>
+      <tr><td><code>pustaka.json</code></td><td>Publikasi dan kajian</td><td>457</td></tr>
+      <tr><td><code>kalender.json</code></td><td>Acara</td><td>37</td></tr>
+      <tr><td><code>wilayah.json</code></td><td>Provinsi</td><td>38</td></tr>
+      <tr><td><code>karbon.json</code></td><td>Penghasil emisi</td><td>195</td></tr>
+      <tr><td><code>keuangan.json</code></td><td>Pembiaya dan keuangan</td><td>145</td></tr>
+      <tr><td><code>asean.json</code></td><td>Negara ASEAN</td><td>10</td></tr>
+      <tr><td><code>program.json</code></td><td>Program nasional</td><td>7</td></tr>
+      <tr><td><code>angka.json</code></td><td>Kartu angka beranda</td><td>6</td></tr>
+      <tr><td>Lainnya</td><td><code>ringkas.json</code>, <code>rantai_plts.json</code>, <code>mitra-meti.json</code>, <code>pengurus-meti.json</code>, <code>tentang-kredit.json</code></td><td>berkas ringkasan</td></tr>
+    </tbody>
+  </table></div>
+  <h3>Jadwal pembaruan</h3>
+  <ul>
+    <li>Tiap potret mencatat <code>dibangun_pada</code>; semua berkas di atas bertanggal 7 Nov 2026.</li>
+    <li>Worker punya pemicu terjadwal harian pukul 18.00 UTC (<code>0 18 * * *</code> di <code>wrangler.jsonc</code>). Fungsinya saat ini masih kosong.</li>
+    <li>Panen dan unggah potret dijalankan koordinator dari mesin kerja, bukan dari server. Di <code>.github/workflows/</code> baru ada alur uji (<code>uji.yml</code>), belum ada alur panen terjadwal.</li>
+    <li>Rencana awal: panen per sumber di GitHub Actions menurut jadwal, maksimal 5 pemicu terjadwal, hasil ke R2.</li>
+  </ul>
+  <div class="note warn"><b>Panen dari 1001startup.id.</b> Hanya fakta dan tautan sumber primer, dengan atribusi dan tanggal ambil. Teks, estimasi, skor, dan logo mereka tidak disimpan. Situs yang melarang robot (misalnya ESDM One Map dan SINTA) tidak dipanen; yang ada hanya tautan.</div>
+</section>
+
+<section class="bab" id="harian">
+  <h2>5. Cara kerja harian</h2>
+  <p class="lead">Perintah ditulis persis seperti di repo. Jalankan dari akar repo.</p>
+  <h3>Skrip di package.json</h3>
+  <div class="tw"><table>
+    <thead><tr><th>Perintah</th><th>Fungsi</th></tr></thead>
+    <tbody>
+      <tr><td><code>npm run uji</code></td><td>Menjalankan seluruh uji (<code>node --test</code>): hak, sesi, sandi, migrasi, potret, header, i18n, layar statis, dan gerbang agent. Wajib hijau sebelum push; CI menjalankan perintah yang sama.</td></tr>
+      <tr><td><code>npm run dev</code></td><td>Menjalankan Worker lokal dengan <code>wrangler dev</code>.</td></tr>
+      <tr><td><code>npm run agents:build</code></td><td>Membangun ulang katalog dan ilmu agent dari <code>scripts/agents/roster.json</code>.</td></tr>
+      <tr><td><code>npm run agents:check</code></td><td>Memeriksa katalog agent masih sinkron dengan roster.</td></tr>
+      <tr><td><code>npm run token:ukur</code></td><td>Mengukur pemakaian token konteks agent.</td></tr>
+    </tbody>
+  </table></div>
+
+  <h3>Menambah akun secara manual</h3>
+  <p>Selama masa uji tidak ada pendaftaran mandiri. Akun dibuat Admin.</p>
+  <ol class="langkah">
+    <li>Admin membuka <code>/admin</code>, tab Akun, lalu menekan Buat akun.</li>
+    <li>Isi nama, surel, dan peran (<code>anggota</code>, <code>pengurus</code>, <code>kurator</code>, <code>wilayah</code>, atau <code>admin</code>). Peran <code>wilayah</code> wajib diberi cakupan provinsi. Peran <code>super</code> hanya bisa dibuat Super.</li>
+    <li>Sistem menyimpan akun berstatus <code>menunggu</code> dan menampilkan tautan aktivasi satu kali. Tautan berlaku 72 jam dan hanya hash-nya yang tersimpan.</li>
+    <li>Admin menekan Salin tautan dan menyampaikannya lewat saluran sendiri. Bila halaman tertutup sebelum menyalin, tekan Buat tautan baru.</li>
+    <li>Pemilik akun membuka <code>/aktivasi</code> lewat tautan itu dan menyetel sandi minimal 12 karakter. Akun menjadi <code>aktif</code> dan tautan hangus.</li>
+    <li>Nonaktifkan akun dari tab yang sama; semua sesi akun itu dicabut seketika.</li>
+  </ol>
+  <p>Akun Super pertama dibuat dari terminal. Sandi tidak lewat skrip; tautan aktivasi dicetak sekali ke terminal.</p>
+  <div class="cmd">node scripts/mesin/buat_super.mjs --surel=ALAMAT-SUREL --nama="Nama" [--db=jaringan-meti] [--asal=URL-WORKER] [--lokal]</div>
+
+  <h3>Menerbitkan data</h3>
+  <div class="cmd">node scripts/panen/berita.mjs --uji          # uji parser tanpa jaringan
+node scripts/panen/berita.mjs                # panen berita
+node scripts/panen/panen_proyek.mjs --ambil  # lalu --wikidata, --bangun, --statistik
+node scripts/pipa/pustaka.mjs                # bangun pustaka
+node scripts/pipa/potret.mjs                 # bangun potret per lapis
+node scripts/pipa/potret.mjs --periksa       # pindai ulang hasil
+node scripts/pipa/unggah_potret.mjs --kering # cetak perintah unggah, belum mengirim
+node scripts/pipa/unggah_potret.mjs          # unggah ke R2 (koordinator saja)</div>
+  <p>Skrip panen lain mengikuti pola yang sama, misalnya <code>panen_perusahaan.mjs</code>, <code>panen_lembaga.mjs</code>, <code>panen_orang.mjs</code>, <code>panen_regulasi.mjs</code>, dan <code>panen_wilayah.mjs</code>; tiap berkas membuka dengan daftar pilihan perintahnya. Pegangan umum: jalankan <code>--selftest</code> atau <code>--uji</code> dulu, lalu bangun, lalu <code>--kering</code>, baru unggah.</p>
+  <div class="note warn"><b>Push ke main berarti tayang ke publik.</b> Pastikan <code>npm run uji</code> hijau dan tidak ada data pribadi atau id akun di berkas yang dikomit sebelum push.</div>
+
+  <h3>Memeriksa mutu</h3>
+  <ul>
+    <li><b>Uji otomatis:</b> <code>npm run uji</code>. Gerbang penting: <code>hak.test.mjs</code> (peran salah ditolak), <code>potret.test.mjs</code> (pemindai data pribadi), <code>gerbang-i18n.test.mjs</code> (kunci id dan en setara), <code>gerbang-headers.test.mjs</code> (CSP dan header), <code>gerbang-layar-statis.test.mjs</code>.</li>
+    <li><b>Jaga unggah:</b> potret ditolak bila menyusut lebih dari 20% dari yang tayang, JSON rusak, ada baris tanpa sumber, atau ada pola surel atau telepon di lapis publik dan anggota.</li>
+    <li><b>Angka:</b> tiap angka punya sumber, tanggal, dan label <code>EST</code> bila turunan. Tidak ada angka tanpa asal.</li>
+    <li><b>Peninjauan manual:</b> peninjau angka memeriksa sampel; koreksi diproses menurut batas waktu di bab 10.</li>
+    <li><b>Data contoh:</b> tidak ada tombol isi data dummy di platform ini (keputusan K15). Data fiktif hanya untuk uji dan D1 lokal atau pratinjau lewat <code>SEED_SANDI=... node scripts/mesin/seed_lokal.mjs --lokal</code> (atau <code>--pratinjau</code>); skrip menolak target produksi.</li>
+  </ul>
+</section>
+
+<section class="bab" id="keamanan">
+  <h2>6. Aturan keamanan dan privasi</h2>
+  <p class="lead">Dasar hukumnya UU 27 Tahun 2022 tentang Pelindungan Data Pribadi. Repo ini publik, jadi aturan terbesarnya: tidak ada rahasia dan data pribadi di dalamnya.</p>
+  <div class="grid">
+    <div class="kartu"><h4>Sandi dan sesi</h4><p>PBKDF2-SHA256 210.000 iterasi dengan garam acak per akun. Sandi minimal 12 karakter. Sesi memakai cookie <code>HttpOnly; Secure; SameSite=Lax</code>, berlaku 14 hari; yang disimpan hanya hash token.</p></div>
+    <div class="kartu"><h4>Batas percobaan</h4><p>10 percobaan gagal per 15 menit per IP dan per surel. IP disimpan sebagai hash bergaram harian. Pesan gagal masuk sama untuk surel tak dikenal dan sandi salah.</p></div>
+    <div class="kartu"><h4>CSRF dan masukan</h4><p>Pemeriksaan <code>Origin</code> pada tiap tulis, hanya JSON, badan maksimal 64 KB, kolom tak dikenal ditolak. Semua teks dari data melewati <code>esc()</code> sebelum masuk HTML.</p></div>
+    <div class="kartu"><h4>Header dan CSP</h4><p>Tanpa skrip dan gaya inline di halaman produksi. Pustaka luar hanya yang terdaftar di CSP. Tanpa analitik pihak ketiga atau piksel iklan.</p></div>
+  </div>
+  <h3>Aturan yang tidak boleh dilanggar</h3>
+  <ul>
+    <li>Tidak ada surel, telepon, alamat rumah, NIK, atau data anggota di repo, <code>public/</code>, potret publik, log, atau pesan galat. Data contoh memakai <code>example.org</code> dan akhiran "(contoh)".</li>
+    <li>Tidak ada <code>account_id</code>, token, kunci API, atau sandi di repo. Rahasia hidup di secret Cloudflare. Kunci OpenAlex disimpan sebagai secret, bukan di berkas.</li>
+    <li>Tidak ada scraping profil pribadi (LinkedIn, media sosial, PDDikti, situs ber-CAPTCHA). Data orang hanya dari sumber resmi, publikasi terbuka, atau diberikan sendiri.</li>
+    <li>Foto orang tidak disimpan. Logo hanya dari situs resmi entitasnya, disimpan di R2, dan dihapus atas permintaan.</li>
+    <li>Daftar tolak (<code>daftar-tolak.json</code>, privat di R2) memuat orang dan lembaga yang tidak boleh tampil: terkait kasus hukum korupsi, sudah meninggal, atau meminta keluar. Id di dalamnya tidak boleh muncul di potret mana pun, dan ada uji untuk itu.</li>
+    <li>Ringkasan mesin (Workers AI) hanya menerima teks abstrak publik, berlabel Ringkasan mesin, tanpa data pribadi.</li>
+    <li>Kegagalan pelindungan data diberitahukan ke subjek dan lembaga paling lambat 3 x 24 jam.</li>
+  </ul>
+  <h3>Hak subjek data</h3>
+  <p>Orang berhak meminta akses, koreksi, hapus, dan menarik persetujuan. Batas layanan 14 hari kerja. Koreksi faktual dengan bukti jelas diproses dalam 5 hari kerja, yang perlu pemeriksaan sumber dalam 10 hari kerja. Entitas yang merasa dirugikan boleh menambah tanggapan singkat pada profilnya.</p>
+</section>
+
+<section class="bab" id="keputusan">
+  <h2>7. Keputusan pemilik</h2>
+  <p class="lead">Ringkasan keputusan bernomor K di <code>KEPUTUSAN-METI.md</code>. Dokumen itu menang atas semua dokumen lain. K15 membatalkan keputusan perancang D18 (tombol dummy).</p>
+  <div class="tw"><table>
+    <thead><tr><th>No</th><th>Keputusan</th></tr></thead>
+    <tbody>
+      <tr><td>K1</td><td>Platform meniru Direktori Jaringan Kebencanaan untuk ekosistem energi terbarukan.</td></tr>
+      <tr><td>K2</td><td>Backbone dan kode direktori diambil (porting), bukan ditulis ulang, lalu disesuaikan dengan Grand Design METI.</td></tr>
+      <tr><td>K3</td><td>Berjalan di Cloudflare.</td></tr>
+      <tr><td>K4</td><td>Tampilan memakai gaya METI.</td></tr>
+      <tr><td>K5</td><td>Sebelum membangun, ditulis paket perencanaan lengkap: tiket, grand design, dan dokumen pendukung.</td></tr>
+      <tr><td>K6</td><td>Semua informasi dan data dikumpulkan dulu, termasuk situs metiires.or.id dan riset cara membangun platform jaringan.</td></tr>
+      <tr><td>K7</td><td>Informasi dan cara penyampaiannya meniru 1001startup.id (sensus, rantai pasok, investor, cerita data, kuadran, profil bersumber). Visual tetap METI.</td></tr>
+      <tr><td>K8</td><td>Dwibahasa Indonesia dan Inggris dengan tombol ganti bahasa.</td></tr>
+      <tr><td>K9</td><td>Ada admin pembuat akun, pembatasan baris (RLS), dan login.</td></tr>
+      <tr><td>K10</td><td>Peta meniru peta Direktori Jaringan Kebencanaan.</td></tr>
+      <tr><td>K11</td><td>Data perusahaan PLTS dan sejenisnya boleh diambil dari 1001startup.id, dengan batasan atribusi (D15).</td></tr>
+      <tr><td>K12</td><td>Repo neraca-papua dijadikan rujukan model data.</td></tr>
+      <tr><td>K13</td><td>Artifact (Grand Design, Design System) dibuat, lalu semua rencana dan artifact masuk GitHub.</td></tr>
+      <tr><td>K14</td><td>Sebelum mulai membangun, pemilik menerima 20 pertanyaan terbuka (bagian C, tiap pertanyaan punya bawaan).</td></tr>
+      <tr><td>K15</td><td>Tidak ada tombol isi data dummy di platform ini. Mengalahkan aturan global dummy khusus untuk repo ini. Data contoh hanya sebagai fixture uji dan seed lokal atau pratinjau.</td></tr>
+      <tr><td>K16</td><td>Taksonomi kepakaran direktori profesional dengan dua sumbu. Bidang kepakaran: kode stabil, maksimal 3 per orang dengan satu utama, tiap tag wajib bersumber dan tidak boleh ditebak dari nama lembaga.</td></tr>
+      <tr><td>K17</td><td>Arah strategis prioritas F1 dan F2: pelacak proyek per daerah sebagai unggulan, Rapor Transisi Energi tiap kuartal, semua data saling terhubung, peta rantai pasok PLTS 100 GW, dan regulasi terhubung ke proyek.</td></tr>
+      <tr><td>K18</td><td>Fitur strategis tambahan (tiket JM-Q01 sampai Q14): potensi vs realisasi provinsi, kesiapan investasi, pelacak tarif, pemantau pengadaan, linimasa regulasi, pencari narasumber, rotasi jabatan, ikuti dan ringkasan surel, kalender, kerja hijau, kalkulator manfaat, dana iklim, isu sosial dan lingkungan, perbandingan ASEAN. Yang tidak dipilih tidak dibuat sampai diminta.</td></tr>
+      <tr><td>K19</td><td>Pendaftaran mandiri, profil sendiri, dan kelompok. Bagian pendaftaran mandiri ditunda pemilik: selama masa uji akun dibuat Admin lewat tautan aktivasi. Bagian profil sendiri dan kelompok tetap F1.</td></tr>
+    </tbody>
+  </table></div>
+  <h3>Keputusan perancang yang paling sering dirujuk</h3>
+  <div class="tw"><table>
+    <thead><tr><th>No</th><th>Isi</th></tr></thead>
+    <tbody>
+      <tr><td>D2</td><td>Satu Worker dengan static assets, D1 untuk data tulis, R2 untuk berkas besar dan potret. Layar membaca JSON potret, D1 hanya untuk tulis dan hak.</td></tr>
+      <tr><td>D4</td><td>HTML, JavaScript, dan CSS biasa: tanpa build step dan tanpa framework.</td></tr>
+      <tr><td>D5</td><td>Model data tiga konsep: entitas, fakta, ikatan. Tanpa sumber, baris ditolak.</td></tr>
+      <tr><td>D7, D8</td><td>RLS ditiru di Worker lewat <code>hak.js</code>. Login surel dan sandi (PBKDF2), sesi cookie, akun hanya dibuat Admin.</td></tr>
+      <tr><td>D13</td><td>"Kita = METI": METI Pusat, Wilayah, Institute, dan Energi Muda tidak diberi bintang mitra strategis.</td></tr>
+      <tr><td>D14</td><td>Satu daftar tolak terpusat, privat di R2.</td></tr>
+      <tr><td>D16</td><td>Fase: F0 porting kerangka dan login, F1 sensus dan direktori, F2 rantai pasok dan cerita data, F3 klaim profil dan API terbuka.</td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<section class="bab" id="glosarium">
+  <h2>8. Glosarium singkat</h2>
+  <div class="tw"><table>
+    <thead><tr><th>Istilah</th><th>Arti</th></tr></thead>
+    <tbody>
+      <tr><td>EBET</td><td>Energi baru dan energi terbarukan.</td></tr>
+      <tr><td>Sensus</td><td>Daftar entitas EBET yang dicatat platform, dengan nomor urut. Entitas di luar sensus tidak dihitung.</td></tr>
+      <tr><td>Entitas</td><td>Satu objek yang punya halaman: perusahaan, lembaga, orang, proyek, wilayah, regulasi.</td></tr>
+      <tr><td>Fakta</td><td>Pernyataan bernilai tentang entitas (kapasitas, tahun, lokasi) dengan satuan, tanggal, dan sumber.</td></tr>
+      <tr><td>Ikatan</td><td>Hubungan antar dua entitas (memasok, mendanai, memiliki, mengembangkan), bertanggal dan bersumber.</td></tr>
+      <tr><td>Tingkat bukti</td><td>Derajat kepercayaan klaim menurut jenis sumbernya; dipakai untuk label dan skor.</td></tr>
+      <tr><td>Skor keyakinan</td><td>Angka 0 sampai 1 per profil dengan label Tinggi, Sedang, atau Rendah dan alasan.</td></tr>
+      <tr><td>EST</td><td>Label angka turunan: hitungan platform, bukan angka yang diumumkan pihak lain.</td></tr>
+      <tr><td>Potret</td><td>Berkas JSON hasil pipa yang dibaca layar, dibuat terpisah per lapis akses.</td></tr>
+      <tr><td>Lapis</td><td>Tingkat akses data: Publik, Anggota, Pengurus.</td></tr>
+      <tr><td>RLS</td><td>Pembatasan baris. Di sini ditegakkan <code>src/hak.js</code> di Worker.</td></tr>
+      <tr><td>Jejak</td><td>Catatan tiap tulis ke D1: siapa, kapan, aksi, dari, dan ke. Tidak bisa diubah dari aplikasi.</td></tr>
+      <tr><td>Daftar tolak</td><td>Berkas privat nama yang tidak boleh tampil di mana pun.</td></tr>
+      <tr><td>Tanggal beku</td><td>Tanggal angka sebuah cerita data atau rapor dikunci supaya bisa dikutip.</td></tr>
+      <tr><td>COD</td><td>Commercial operation date, tanggal mulai operasi komersial pembangkit.</td></tr>
+      <tr><td>RUPTL, RUEN, RUED</td><td>Rencana usaha penyediaan tenaga listrik; rencana umum energi nasional; rencana umum energi daerah.</td></tr>
+      <tr><td>TKDN</td><td>Tingkat komponen dalam negeri.</td></tr>
+      <tr><td>METI</td><td>Masyarakat Energi Terbarukan Indonesia (Indonesian Renewable Energy Society), didirikan 1999.</td></tr>
+      <tr><td>METI Wilayah</td><td>Cabang METI di provinsi.</td></tr>
+      <tr><td>Pengurus Harian</td><td>Badan eksekutif METI.</td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<section class="bab" id="infrastruktur">
+  <h2>9. Infrastruktur</h2>
+  <p class="lead">Semua berjalan di Cloudflare dengan satu repo dan satu berkas <code>wrangler.jsonc</code>. Tanpa id akun dalam buku ini.</p>
+  <div class="tw"><table>
+    <thead><tr><th>Komponen</th><th>Peran</th></tr></thead>
+    <tbody>
+      <tr><td>Worker</td><td>Titik masuk <code>src/worker.js</code>: rute <code>/api/*</code>, penjaga halaman terkunci (<code>/direktori</code>, <code>/admin</code>), sesi, sandi, <code>hak.js</code>, dan pemicu terjadwal harian.</td></tr>
+      <tr><td>Static assets</td><td>Folder <code>public/</code> disajikan sebagai aset statik. Hanya rute yang butuh logika yang dilayani Worker lebih dulu; halaman publik langsung dari aset dan cache tepi.</td></tr>
+      <tr><td>D1</td><td>Database SQLite untuk data tulis: akun, sesi, kurasi, koreksi, riwayat, jejak, program. Migrasi bernomor di <code>migrations/</code> (0001 sampai 0008). Kuota baca gratis 5 juta per hari, sebab itu layar tidak membaca D1 per kunjungan.</td></tr>
+      <tr><td>R2</td><td>Bucket untuk potret per lapis dan berkas besar.</td></tr>
+      <tr><td>Workers AI</td><td>Ringkasan abstrak riset, ekstraktif, berlabel Ringkasan mesin.</td></tr>
+      <tr><td>Domain</td><td>Produksi di <code>direktori.metiires.or.id</code> (domain khusus Worker, zona metiires.or.id di Cloudflare). Alamat <code>workers.dev</code> tetap hidup sebagai cadangan.</td></tr>
+      <tr><td>Lingkungan</td><td>Produksi dan pratinjau (<code>--env pratinjau</code>) dengan D1 dan R2 terpisah. Seed contoh menolak target produksi. Uji lokal tidak menyentuh produksi.</td></tr>
+      <tr><td>CI</td><td>GitHub Actions menjalankan <code>npm ci</code> dan <code>npm run uji</code> pada tiap push dan pull request.</td></tr>
+    </tbody>
+  </table></div>
+  <div class="note warn"><b>Deploy.</b> Push ke cabang <code>main</code> membuat perubahan tayang ke publik. Perubahan <code>wrangler.jsonc</code> ditahan sampai pemilik menyetujui. Jalan balik tersedia lewat versi Worker sebelumnya.</div>
+</section>
+
+<section class="bab" id="kontak">
+  <h2>10. Kontak dan eskalasi</h2>
+  <p class="lead">Hanya peran organisasi yang ditulis di sini. Kontak sebenarnya diberikan lewat saluran internal METI dan halaman Tentang.</p>
+  <div class="tw"><table>
+    <thead><tr><th>Peran</th><th>Urusan</th></tr></thead>
+    <tbody>
+      <tr><td>Pemilik produk</td><td>Anggota Pengurus Harian yang ditunjuk Ketua Umum (usulan awal: Sekretaris Jenderal). Memutus tampil atau tidaknya data, menyetujui rilis, menengahi sengketa. Memutus dalam 5 hari kerja.</td></tr>
+      <tr><td>Sponsor</td><td>Ketua Umum. Mandat publik dan surat rilis.</td></tr>
+      <tr><td>Kurator</td><td>Bidang informasi dan multimedia. Menambah dan memeriksa data, menerima koreksi.</td></tr>
+      <tr><td>Peninjau angka</td><td>METI Institute. Memeriksa angka turunan, skor, dan rapor.</td></tr>
+      <tr><td>Admin akun</td><td>Sekretariat. Membuat dan menonaktifkan akun, tautan aktivasi, reset sandi.</td></tr>
+      <tr><td>Penanganan privasi</td><td>Sekretariat dan kurator. Antrean hak subjek data dan permintaan hapus.</td></tr>
+      <tr><td>Pengembang</td><td>Tim pengembang. Perawatan, galat, pipa panen, migrasi, deploy.</td></tr>
+      <tr><td>Koordinator METI Wilayah</td><td>Menjaga data dan agenda wilayahnya lewat peran Wilayah.</td></tr>
+      <tr><td>Penasihat hukum</td><td>Meninjau kebijakan dan kasus sengketa.</td></tr>
+    </tbody>
+  </table></div>
+  <h3>Jalur eskalasi</h3>
+  <ol class="langkah">
+    <li><b>Koreksi data.</b> Lewat antrean koreksi ke kurator. Konfirmasi dalam 2 hari kerja, koreksi jelas dalam 5, yang perlu periksa sumber dalam 10.</li>
+    <li><b>Angka dipertanyakan.</b> Kurator meneruskan ke peninjau angka.</li>
+    <li><b>Sengketa belum selesai.</b> Naik ke pemilik produk, yang memberi keputusan tertulis dalam 14 hari kerja.</li>
+    <li><b>Permintaan data pribadi atau hapus.</b> Ke penanganan privasi di Sekretariat dan kurator, selesai dalam 14 hari kerja.</li>
+    <li><b>Akun bermasalah.</b> Admin akun. Bila menyangkut akun Super, Super lain.</li>
+    <li><b>Dugaan kebocoran data atau insiden keamanan.</b> Segera ke pemilik produk dan pengembang: nonaktifkan sesi massal, putar rahasia, bekukan potret. Pemberitahuan ke subjek dan lembaga paling lambat 3 x 24 jam.</li>
+    <li><b>Situs mati atau galat.</b> Pengembang, dengan rollback ke versi Worker sebelumnya bila perlu.</li>
+  </ol>
+</section>
+
+<footer>Sumber: paket perencanaan <code>docs/perencanaan/</code>, <code>AGENTS.md</code>, <code>package.json</code>, dan isi <code>public/</code>, per 7 Nov 2026. Perbarui buku ini bila keputusan pemilik atau halaman berubah.</footer>
+</main>
+</div>
+
+<script>
+(function(){
+  var r=document.documentElement,b=document.getElementById('tema');
+  try{var t=localStorage.getItem('meti-tema');if(t)r.setAttribute('data-theme',t)}catch(e){}
+  b.addEventListener('click',function(){
+    var dark=r.getAttribute('data-theme')?r.getAttribute('data-theme')==='dark':matchMedia('(prefers-color-scheme:dark)').matches;
+    var n=dark?'light':'dark';r.setAttribute('data-theme',n);
+    try{localStorage.setItem('meti-tema',n)}catch(e){}
+  });
+  var d=document.getElementById('tocd');
+  if(!matchMedia('(min-width:980px)').matches)d.removeAttribute('open');
+  var links=[].slice.call(document.querySelectorAll('#tocl a'));
+  links.forEach(function(a){a.addEventListener('click',function(){if(!matchMedia('(min-width:980px)').matches)d.removeAttribute('open')})});
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){
+      es.forEach(function(e){
+        if(e.isIntersecting){links.forEach(function(a){a.classList.toggle('on',a.getAttribute('href')==='#'+e.target.id)})}
+      });
+    },{rootMargin:'-90px 0px -65% 0px'});
+    document.querySelectorAll('section.bab').forEach(function(s){io.observe(s)});
+  }
+})();
+</script>

@@ -22,9 +22,11 @@
 /masuk
   X-Robots-Tag: noindex, nofollow
   Referrer-Policy: no-referrer
+  Cache-Control: private, no-store
 /aktivasi
   X-Robots-Tag: noindex, nofollow
   Referrer-Policy: no-referrer
+  Cache-Control: private, no-store
 /api/*
   Cache-Control: private, no-store
 /fonts/*
