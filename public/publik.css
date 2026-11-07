@@ -291,7 +291,7 @@ main{flex:1}
 .jm-isi a{display:inline-flex;gap:6px;align-items:center;white-space:nowrap;min-height:36px;padding:0 12px;border-radius:var(--r-pil);color:var(--ink2);text-decoration:none;font-size:13px}
 .jm-isi a:hover{background:var(--surface);color:var(--ink)}
 .jm-isi b{font:700 11px/1 ui-monospace,Menlo,monospace;color:var(--accent)}
-@media (min-width:1280px){.jm-isi{position:fixed;top:50%;right:12px;translate:0 -50%;flex-direction:column;overflow:visible;padding:8px 6px;border:1px solid var(--line);border-radius:var(--r);box-shadow:var(--shadow);gap:2px;z-index:6}
+@media (min-width:1500px){.jm-isi{position:fixed;top:50%;right:12px;translate:0 -50%;flex-direction:column;overflow:visible;padding:8px 6px;border:1px solid var(--line);border-radius:var(--r);box-shadow:var(--shadow);gap:2px;z-index:6}
   .jm-isi a{min-height:30px;padding:0 8px}.jm-isi-l{display:none}.jm-isi a:hover .jm-isi-l{display:inline;position:absolute;right:100%;margin-right:8px;padding:4px 8px;border-radius:6px;background:var(--ink);color:var(--paper);white-space:nowrap}.jm-isi a{position:relative}}
 /* jalur dengan angka */
 .jm-jalur{position:relative;align-content:start;transition:transform .15s,border-color .15s}
@@ -381,3 +381,30 @@ a.jm-foto:focus-visible{outline:3px solid var(--fokus)}
 .jm-peta-info,.jm-ds{gap:16px}
 .jm-peta-kartu+.jm-peta-kartu{margin-top:24px}
 .jm-kisi+details,.jm-hero2+*{margin-top:24px}
+
+/* kisi logo hero: 8 baris sama tinggi */
+.jm-hero2 .jm-logo{height:72px;padding:6px 10px;gap:3px;font-size:12.5px;align-items:flex-start}
+.jm-hero2 .jm-logo img,.jm-hero2 .jm-logo-ini{width:26px;height:26px}
+.jm-hero2 .jm-logo span:not(.jm-logo-ini){line-height:1.2}
+.jm-hero2 .jm-logo-lain{justify-content:center;color:var(--accent);font-weight:600}
+.jm-hero2 .jm-logo-kosong{background:var(--surface)}
+.jm-hero2-kiri{padding-block:24px}
+.jm-rank .jm-rank-i{display:grid;grid-template-columns:28px minmax(0,1fr) auto;column-gap:12px;row-gap:6px;align-items:center;padding:10px 8px}
+/* navigasi samping: menempel pada kolom isi, label muncul saat hover */
+@media (min-width:1500px){.jm-isi{right:max(12px,calc((100vw - var(--maks)) / 2 - 56px))}}
+/* hero ringkas: seluruh hero (kisi 4x8) muat satu layar 1440x900 dan 1280x800 */
+.jm-hero2{padding:16px 0 8px;gap:24px}
+@media (min-width:1000px){.jm-hero2{padding:20px 0 12px;gap:32px}}
+.jm-hero2 h1{font-size:clamp(36px,4vw,54px);line-height:1.04}
+.jm-hero2-sub{font-size:16px}
+.jm-hero2-kiri{padding-block:0;gap:16px}
+.jm-cari2,.jm-cari2 .jm-isian{min-height:52px}
+.jm-hero2 .jm-logo{flex-direction:row;align-items:center;height:46px;padding:0 8px;gap:8px;font-size:11.5px}
+.jm-hero2 .jm-logo img,.jm-hero2 .jm-logo-ini{width:28px;height:28px}
+.jm-hero2 .jm-logo-ini{font-size:10.5px}
+.jm-hero2 .jm-logo span:not(.jm-logo-ini){line-height:1.2}
+.jm-hero2 .jm-logo-lain{justify-content:center}
+.jm-hero2 .jm-logo-kol h3{padding:8px 8px;font-size:10.5px;gap:5px}
+.jm-hero2 .jm-lihat{font-size:13px}
+.jm-hero2-kanan{gap:6px}
+@media (min-width:1000px){.jm-hero2{grid-template-columns:minmax(0,10fr) minmax(0,11fr)}}

@@ -612,7 +612,7 @@
  "rt.col.bmp": "BMP",
  "rt.jawab": "If the 100 GWp programme is completed within {n} years, it needs about {butuh} GWp per year (EST). Module makers serving the local market have {lokal} GWp per year, about {persen}% of that need; of the {total} GWp per year in total, {ekspor} GWp is export-oriented.",
  "rt.k.total": "Manufacturer capacity",
- "rt.k.ekspor": "Export-oriented",
+ "rt.k.ekspor": "Export market",
  "rt.k.ekspor_cat": "includes {gw} GWp from makers serving both local and export",
  "rt.k.program": "Programme first phase",
  "rt.k.program_cat": "first {n} projects of the {target} GWp target; not yet installed",
@@ -1281,5 +1281,8 @@
  "rt.tk.median": "Median {v}%",
  "rt.tk.tanpa": "No TKDN data: {n} manufacturers.",
  "wl.vis.label": "of the installed renewable capacity of 38 provinces is in {nama}",
- "as.vis.label": "Indonesia's rank in ASEAN renewable electricity share"
+ "as.vis.label": "Indonesia's rank in ASEAN renewable electricity share",
+ "beranda.eko.lain": "+ {n} more",
+ "beranda.eko.dir": "See directory",
+ "beranda.lihat.berita": "See all news"
 }

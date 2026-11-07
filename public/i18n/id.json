@@ -612,7 +612,7 @@
  "rt.col.bmp": "BMP",
  "rt.jawab": "Jika program 100 GWp selesai dalam {n} tahun, kebutuhannya sekitar {butuh} GWp per tahun (EST). Pabrikan modul yang melayani pasar lokal berkapasitas {lokal} GWp per tahun, sekitar {persen}% dari kebutuhan itu; dari total {total} GWp per tahun, {ekspor} GWp berorientasi ekspor.",
  "rt.k.total": "Kapasitas pabrikan",
- "rt.k.ekspor": "Berorientasi ekspor",
+ "rt.k.ekspor": "Pasar ekspor",
  "rt.k.ekspor_cat": "termasuk {gw} GWp pabrikan yang melayani lokal dan ekspor",
  "rt.k.program": "Tahap awal program",
  "rt.k.program_cat": "{n} proyek pertama dari target {target} GWp; belum terpasang",
@@ -1281,5 +1281,8 @@
  "rt.tk.median": "Median {v}%",
  "rt.tk.tanpa": "Tanpa data TKDN: {n} pabrikan.",
  "wl.vis.label": "dari kapasitas EBT terpasang 38 provinsi ada di {nama}",
- "as.vis.label": "peringkat Indonesia dalam pangsa listrik terbarukan ASEAN"
+ "as.vis.label": "peringkat Indonesia dalam pangsa listrik terbarukan ASEAN",
+ "beranda.eko.lain": "+ {n} lainnya",
+ "beranda.eko.dir": "Lihat direktori",
+ "beranda.lihat.berita": "Lihat semua berita"
 }

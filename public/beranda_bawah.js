@@ -107,7 +107,7 @@ async function cara() {
 }
 
 /** Daftar peringkat berbatang: item {nama, meta, nilai, unit, frac, href, panas}. */
-const rankHtml = (items) => `<ol class="jm-rank">${items.map((x, i) => `<li><a href="${esc(x.href)}"><span class="jm-rank-no">${i + 1}</span><span class="jm-rank-t"><strong title="${esc(x.nama)}">${esc(x.nama)}</strong><small>${esc(x.meta)}</small></span><span class="jm-rank-v"><b>${esc(x.nilai)}</b> <small>${esc(x.unit)}</small></span><svg class="jm-rank-bar${i === 0 ? " jm-rank-atas" : ""}${x.panas ? " jm-rank-panas" : ""}" viewBox="0 0 100 6" preserveAspectRatio="none" aria-hidden="true"><rect class="jm-bar-latar" width="100" height="6"/><rect class="jm-bar-isi" width="${Math.max(2, Math.round(x.frac * 100))}" height="6"/></svg></a></li>`).join("")}</ol>`;
+const rankHtml = (items) => `<ol class="jm-rank">${items.map((x, i) => `<li><${x.href ? `a href="${esc(x.href)}"` : "div class=\"jm-rank-i\""}><span class="jm-rank-no">${i + 1}</span><span class="jm-rank-t"><strong title="${esc(x.nama)}">${esc(x.nama)}</strong><small>${esc(x.meta)}</small></span><span class="jm-rank-v"><b>${esc(x.nilai)}</b> <small>${esc(x.unit)}</small></span><svg class="jm-rank-bar${i === 0 ? " jm-rank-atas" : ""}${x.panas ? " jm-rank-panas" : ""}" viewBox="0 0 100 6" preserveAspectRatio="none" aria-hidden="true"><rect class="jm-bar-latar" width="100" height="6"/><rect class="jm-bar-isi" width="${Math.max(2, Math.round(x.frac * 100))}" height="6"/></svg></${x.href ? "a" : "div"}></li>`).join("")}</ol>`;
 const infoSumber = (teks) => `<span class="jm-info" tabindex="0" title="${esc(teks)}">${IKON.waktu.replace('width="40" height="40"', 'width="16" height="16"')}<span>${esc(t("beranda.sumber_l"))}</span></span>`;
 
 /* ---------- peta proyek (MapLibre dimuat malas saat bagian ini mendekati layar) ---------- */
@@ -177,7 +177,7 @@ async function karbon() {
       <h3>${esc(t("beranda.karbon.j"))}</h3><p>${esc(t("beranda.karbon.d"))}</p>
       <dl class="jm-ds-stat">${stat(angka(p.length), "beranda.karbon.l.n")}${stat(angka(jml(p, (x) => x.kapasitas_mw) / 1000, { desimal: 1 }), "beranda.karbon.l.gw")}${stat(angka(tot / 1e6, { desimal: 1 }), "beranda.karbon.l.mt", 1)}</dl>
       <div class="jm-kpi-strip"><b>${esc(angka(pct, { desimal: 0 }))}%</b><span>${esc(t("beranda.karbon.wawasan", { n: angka(top.length), total: angka(p.length) }))}</span></div>
-      <div class="jm-ds-viz"><h4>${esc(t("beranda.karbon.tabel"))}</h4>${rankHtml(top.slice(0, 6).map((x) => ({ nama: x.nama.replace(/ power station$/i, ""), meta: label("beranda.karbon.j.", String(x.jenis_aset).split(",")[0].trim()), nilai: angka(x.emisi_tco2e / 1e6, { desimal: 1 }), unit: "Mt", frac: x.emisi_tco2e / top[0].emisi_tco2e, href: "/insight#emisi", panas: true })))}</div>
+      <div class="jm-ds-viz"><h4>${esc(t("beranda.karbon.tabel"))}</h4>${rankHtml(top.slice(0, 6).map((x) => ({ nama: x.nama.replace(/ power station$/i, ""), meta: label("beranda.karbon.j.", String(x.jenis_aset).split(",")[0].trim()), nilai: angka(x.emisi_tco2e / 1e6, { desimal: 1 }), unit: "Mt", frac: x.emisi_tco2e / top[0].emisi_tco2e, href: "", panas: true })))}</div>
       ${infoSumber(t("beranda.karbon.s", { tanggal: tanggal(k.dibangun_pada), tahun: p[0].tahun }))}</div>${svg}`;
   } catch (e) { sembunyi(el, e); }
 }

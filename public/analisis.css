@@ -11,7 +11,7 @@
 .jm-an-angka{display:flex;align-items:baseline;gap:8px;margin:2px 0 0;white-space:nowrap}
 .jm-an-angka b{font:900 var(--t-angka)/1.05 var(--display);color:var(--head);font-variant-numeric:tabular-nums}
 .jm-an-angka span{font:500 14px/1 var(--font);color:var(--ink2)}
-.jm-kpi-sub{min-height:1.5em;margin:0}
+.jm-kpi-sub{min-height:3em;margin:0}
 .jm-an-sumber{display:block;color:var(--ink2);font-size:var(--t-kecil);line-height:1.4;margin-top:4px}
 .jm-an-sumber a{color:var(--accent)}
 .jm-an-cara{display:grid;gap:8px;margin-top:10px}
@@ -151,7 +151,8 @@
 .jm-an-hero2{display:grid;gap:24px;align-items:center}
 .jm-an-hero2>*{min-width:0}
 @media (min-width:1024px){.jm-an-hero2{grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:40px}}
-.jm-an-hero2 h1{max-width:20ch}
+.jm-an-hero2 h1{max-width:none;font-size:clamp(26px,3.4vw,38px);line-height:1.15}
+.jm-an-hero2 .jm-an-label{margin-top:4px}
 .jm-an-hero2 p{max-width:56ch}
 .jm-an-hero2 #jawab{font-size:17px;line-height:1.55}
 .jm-an-visual{background:color-mix(in srgb,var(--on-brand) 10%,transparent);border:1px solid color-mix(in srgb,var(--on-brand) 22%,transparent);border-radius:var(--r);padding:20px 24px;display:grid;gap:6px}
@@ -168,7 +169,7 @@
 .jm-hv-ref{stroke:var(--on-brand);stroke-width:2;stroke-dasharray:5 4}
 
 /* kolom TKDN interaktif */
-.jm-tk{width:100%;max-width:760px;height:auto;display:block;font-family:var(--font);font-variant-numeric:tabular-nums}
+.jm-tk{width:100%;height:auto;display:block;font-family:var(--font);font-variant-numeric:tabular-nums}
 .jm-tk-kol{cursor:pointer;outline:none}
 .jm-tk-kol .jm-tk-isi{transition:fill-opacity .12s}
 .jm-tk-kol:hover .jm-tk-isi,.jm-tk-kol:focus-visible .jm-tk-isi{fill-opacity:.8}

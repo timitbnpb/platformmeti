@@ -67,7 +67,7 @@ function grafikTkdn() {
   const v = d.pabrikan.map((x) => x.tkdn), isi = v.filter((x) => x != null), med = median(isi), tanpa = v.length - isi.length;
   const n = BIN.map((b) => isi.filter((x) => x >= b[0] && x < b[1]).length);
   $("temuan-tkdn").innerHTML = temuanHtml(t("rt.t.tkdn", { med: num(med, 1), n: isi.length, k: isi.filter((x) => x < 40).length }));
-  const W = innerWidth < 640 ? 420 : 680, H = 250, L = 12, R = 12, T = 52, B = 196, fs = innerWidth < 640 ? 13 : 12, g = (W - L - R) / BIN.length, bw = g * 0.62, mx = Math.max(...n) * 1.12, Y = (q) => B - (q / mx) * (B - T);
+  const W = Math.max(320, Math.round($("grafik-tkdn").clientWidth || 680)), H = 250, L = 12, R = 12, T = 52, B = 196, fs = innerWidth < 640 ? 13 : 12, g = (W - L - R) / BIN.length, bw = g * 0.62, mx = Math.max(...n) * 1.12, Y = (q) => B - (q / mx) * (B - T);
   const xBatas = L + 2 * g, xMed = L + (BIN.findIndex((b) => med >= b[0] && med < b[1]) + (med - BIN[BIN.findIndex((b) => med >= b[0] && med < b[1])][0]) / (BIN[BIN.findIndex((b) => med >= b[0] && med < b[1])][1] - BIN[BIN.findIndex((b) => med >= b[0] && med < b[1])][0])) * g;
   const kol = BIN.map((b, i) => {
     const x0 = L + i * g, px = x0 + (g - bw) / 2, y = Y(n[i]), aktif = fBin === String(i), tip = `${labelBin(b)}: ${t("rt.n_pabrikan", { n: n[i] })}`;
