@@ -151,3 +151,16 @@ dialog.pu-konfirm{width:min(560px,calc(100vw - 24px))}
 .pu-k footer .jm-tbl[disabled]{opacity:.5;cursor:not-allowed}
 @media (max-width:520px){.pu-k-data{grid-template-columns:minmax(0,1fr)}.pu-k{padding:18px}}
 @media (prefers-reduced-motion:reduce){.pu-kartu,.pu-lanjut svg,.pu-chip{transition:none}.pu-kartu:hover{transform:none}}
+/* pemilik 8 Nov 2026: 5 kartu per baris, sampul dan teks lebih ringkas */
+.pu-kisi{grid-template-columns:repeat(5,minmax(0,1fr));gap:16px}
+@media (max-width:1280px){.pu-kisi{grid-template-columns:repeat(4,minmax(0,1fr))}}
+@media (max-width:1000px){.pu-kisi{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media (max-width:760px){.pu-kisi{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}}
+@media (max-width:420px){.pu-kisi{grid-template-columns:minmax(0,1fr)}}
+.pu-kisi .pu-sampul{aspect-ratio:3/4}
+.pu-kisi .pu-badan{gap:6px;padding:12px 14px 4px}
+.pu-kisi .pu-badan h3{font-size:var(--t-body);line-height:var(--lh-rapat)}
+.pu-kisi .pu-ring{-webkit-line-clamp:2;line-clamp:2;font-size:var(--t-kecil)}
+.pu-kisi .pu-kaki{padding:10px 14px}
+.pu-kisi .pu-sampul-lingkar{width:52px;height:52px}
+.pu-kisi .pu-sampul-ik b{font-size:var(--t-body)}
