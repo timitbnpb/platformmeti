@@ -1,6 +1,7 @@
 /* Pembantu bersama halaman analisis statis (/wilayah, /rantai, /asean): data JSON statis, sumber bertanggal (dilipat), batang, kartu angka. */
 import { t, angka, tanggal } from "/i18n.js";
 import { esc, galatHtml, ikon } from "/inti/umum.js";
+import { sumberHtml as sumberIkon } from "/inti/komponen.js";
 
 export const amanUrl = (u) => (/^https?:\/\//.test(u || "") ? u : null);
 
@@ -25,12 +26,13 @@ function sumberBaris(s) {
   return `<span>${u ? `<a href="${esc(u)}" target="_blank" rel="noopener noreferrer">${teks}</a>` : teks}, ${esc(t("an.diperiksa", { tanggal: tanggal(s.tanggal) }))}</span>`;
 }
 
-/* Sumber dilipat: ringkasan memuat jumlah dan tanggal periksa; isi lengkap saat dibuka. */
+/* Sumber: ikon info bulat (komponen.js) yang membuka daftar butir sumber bertanggal. */
 export function sumberLipat(daftar) {
   const a = daftar.filter(Boolean);
   if (!a.length) return "";
   const tgl = tanggal(a[0].tanggal);
-  return `<details class="jm-an-src"><summary title="${esc(a.map(sumberPolos).join(" | "))}">${esc(a.length > 1 ? t("an.sumber_n", { n: a.length, tanggal: tgl }) : t("an.sumber_1", { tanggal: tgl }))}</summary><div>${a.map(sumberBaris).join("")}</div></details>`;
+  const label = a.length > 1 ? t("an.sumber_n", { n: a.length, tanggal: tgl }) : t("an.sumber_1", { tanggal: tgl });
+  return `<div class="jm-an-src">${sumberIkon(`<span class="jm-an-srcl">${a.map(sumberBaris).join("")}</span>`, label)}</div>`;
 }
 export const sumberHtml = (s) => sumberLipat([s]);
 
@@ -43,7 +45,11 @@ export function kartuHtml({ judul, nilai, satuan, penyebut, sumber, turunan, iko
     <p class="jm-bantu jm-kpi-sub">${penyebut ? esc(penyebut) : "&nbsp;"}</p>${sumber || ""}</article>`;
 }
 
-/* Jawaban visual di hero: angka besar + label + batang kecil bersama (rows: [{label, nilai, teks, kelas}]; ref: garis putus-putus). */
+/* Kepala halaman bersama: tiga ubin angka (ikon bertinta, angka+satuan, label 1 baris + pil EST sebaris, tautan ke seksi).
+   ubin: [{ikon, nilai, satuan, label, href, turunan}] */
+export const ubinHtml = (ubin) => ubin.map((u) => `<a class="jm-kh-ub" href="${esc(u.href)}"><span class="jm-kpi-ik">${ikon(u.ikon, 20)}</span><p class="jm-kh-angka"><b>${esc(u.nilai)}</b>${u.satuan ? `<span>${esc(u.satuan)}</span>` : ""}</p><p class="jm-kh-lbl"><span title="${esc(u.label)}">${esc(u.label)}</span>${u.turunan ? pil("an.est") : ""}</p></a>`).join("");
+
+/* Jawaban visual di hero (dipakai profil provinsi): angka besar + label + batang kecil bersama (rows: [{label, nilai, teks, kelas}]; ref: garis putus-putus). */
 export function heroVisual({ angka: a, label, rows, ref, teksRef, turunan = true }) {
   const W = 340, rh = 40, T = ref ? 22 : 4, H = T + rows.length * rh + 4;
   const M = Math.max(1e-9, ref?.nilai ?? 0, ...rows.map((r) => r.nilai)) * 1.04, X = (v) => (v / M) * W;

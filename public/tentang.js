@@ -5,6 +5,7 @@ import { t, tanggal, angka } from "/i18n.js";
 import { esc, ikon } from "/inti/umum.js";
 
 const muat = (n) => fetch(`/data/${n}.json`).then((r) => { if (!r.ok) throw new Error(n); return r.json(); });
+const IKT = { surya: "tek-surya", bayu: "tek-listrik", hidro: "tek-listrik", "panas-bumi": "tek-panas", bioenergi: "tek-bio" };
 const FOTO = ["surya", "bayu", "hidro", "panas-bumi", "bioenergi"], FILE = { surya: "solar", bayu: "bayu", hidro: "hidro", "panas-bumi": "panas-bumi", bioenergi: "bioenergi" };
 const MI = "https://metiires.or.id";
 const KONTAK = [["jm.kaki.surel", "meti.ires@gmail.com", "berita"], ["jm.kaki.situs", "www.meti.or.id", "tautan"], ["jm.kaki.kantor", "Taman Sari Parama Lt. 10, Jl. K.H. Wahid Hasyim No. 84-86, Kebon Sirih, Menteng, Jakarta Pusat 10340", "wilayah"], ["jm.kaki.rumah", "Jl. Jatinegara Barat IV No. 3A, Balimester, Jatinegara, Jakarta Timur 13310", "wilayah"]];
@@ -23,24 +24,26 @@ const kartu = (judul, a, ekstra = "") => {
   return `<section class="tn-kartu${ekstra}"><h4>${esc(judul)}</h4><ul class="tn-daftar">${ketua ? orang(ketua) : ""}</ul>${sisa.length ? `<details class="tn-unit"><summary><span>${esc(t("tn.anggota_plus", { n: sisa.length }))}</span></summary><ul class="tn-daftar">${sisa.map((o) => orang(o)).join("")}</ul></details>` : ""}</section>`;
 };
 
-const tbl = (x) => {
+const tbl = (x, dup) => {
   const l = LAMBANG[x.nama], src = l ? l[0] : x.logo, lebar = !l && x.w / x.h > 3.2;
-  return `<li><a class="tn-logo" href="/direktori?cari=${encodeURIComponent(x.nama)}" title="${esc(x.nama)}"><img src="${esc(src)}" alt="${esc(x.nama)}" loading="lazy">${l || lebar ? `<span>${esc(l ? l[1] : x.nama)}</span>` : ""}</a></li>`;
+  return `<li${dup ? ' aria-hidden="true"' : ""}><a class="tn-logo"${dup ? ' tabindex="-1"' : ""} href="/direktori?cari=${encodeURIComponent(x.nama)}" title="${esc(x.nama)}"><img src="${esc(src)}" alt="${esc(x.nama)}" loading="lazy">${l || lebar ? `<span>${esc(l ? l[1] : x.nama)}</span>` : ""}</a></li>`;
 };
-const tblAsos = (a) => `<li><a class="tn-logo" href="/direktori?cari=${encodeURIComponent(a)}" title="${esc(a)}">${LOGO_ASOS[a] ? `<img src="${LOGO_ASOS[a]}" alt="${esc(a)}" loading="lazy">` : `<b class="tn-nama">${esc(a)}</b>`}</a></li>`;
+const tblAsos = (a, dup) => `<li${dup ? ' aria-hidden="true"' : ""}><a class="tn-logo"${dup ? ' tabindex="-1"' : ""} href="/direktori?cari=${encodeURIComponent(a)}" title="${esc(a)}">${LOGO_ASOS[a] ? `<img src="${LOGO_ASOS[a]}" alt="${esc(a)}" loading="lazy">` : `<b class="tn-nama">${esc(a)}</b>`}</a></li>`;
 
+/* ponytail: marquee CSS murni; daftar pendek diulang sampai >= 10 butir lalu digandakan untuk putaran mulus */
+const jalur = (a, fn, balik) => { const r = Math.ceil(10 / a.length), basis = Array.from({ length: r }, (_, k) => a.map((x) => fn(x, k > 0))).flat(); return `<div class="tn-pita"><ul class="tn-trek${balik ? " balik" : ""}">${basis.join("")}${a.length ? Array.from({ length: r }, () => a.map((x) => fn(x, true))).flat().join("") : ""}</ul></div>`; };
 const lead = (s) => esc(s).replace(/\*(.+?)\*/g, '<span class="sorot">$1</span>');
 const bandL = (id, foto, pos, h2, l) => `<div class="tn-band"><img class="tn-bg" src="${foto}" alt="" width="1600" height="900" loading="lazy" data-pos="${pos}"><div class="wrap"><header class="kepala"><h2 class="h2" id="${id}">${sorot(h2, "em")}</h2>${l ? `<p class="lead">${lead(l)}</p>` : ""}</header></div></div>`;
 
 function hero(f) {
-  const kol = FOTO.map((k, i) => `<a class="tn-kol" href="/proyek?teknologi=${k}" aria-label="${esc(t("tn.foto.buka", { nama: t("tn.foto." + k) }))}"><img src="/img/tentang/${FILE[k]}.webp" alt="" width="1600" height="900" ${i ? 'loading="lazy"' : 'fetchpriority="high"'}><span class="tn-kol-isi">${esc(t("tn.foto." + k))}</span></a>`).join("");
-  const st = [["kalender", "1999", t("tn.stat.berdiri")], ["orang", f.pengurus, t("tn.stat.pengurus")], ["tautan", f.mitra, t("tn.stat.mitra")], ["proyek", f.proyek, t("tn.stat.proyek")]];
+  const kol = FOTO.map((k, i) => `<a class="tn-kol${i === 0 ? " aktif" : ""}" href="/proyek?teknologi=${k}" aria-label="${esc(t("tn.foto.buka", { nama: t("tn.foto." + k) }))}"><img src="/img/tentang/${FILE[k]}.webp" alt="" width="1600" height="900" ${i ? 'loading="lazy"' : 'fetchpriority="high"'}><span class="tn-kol-isi">${ikon(IKT[k], 18)}${esc(t("tn.foto." + k))}</span></a>`).join("");
+  const st = [["kalender", 1999, t("tn.stat.berdiri")], ["orang", f.pengurus, t("tn.stat.pengurus")], ["tautan", f.mitra, t("tn.stat.mitra")], ["proyek", f.proyek, t("tn.stat.proyek")]];
   return `<section class="tn-hero" aria-labelledby="tn-judul"><div class="tn-kolom">${kol}</div><div class="wrap tn-hero-isi"><h1 id="tn-judul">${esc(t("tn.judul"))}</h1><p class="tn-misi">${esc(t("tn.lead"))}</p>
     <div class="aksi"><a class="tn-tbl tn-tbl-putih" href="/direktori">${esc(t("tn.cta_direktori"))}</a><a class="tn-tbl tn-tbl-garis" href="${MI}/membership" target="_blank" rel="noopener noreferrer">${esc(t("tn.cta_gabung"))}</a></div>
-    <dl class="tn-angka" aria-label="${esc(t("tn.hero.aria"))}">${st.map(([ik, n, l]) => `<div>${ikon(ik, 22)}<dd>${esc(angka(Number(n)))}</dd><dt>${esc(l)}</dt></div>`).join("")}</dl></div></section>`;
+    <dl class="tn-angka" aria-label="${esc(t("tn.hero.aria"))}">${st.map(([ik, n, l]) => `<div>${ikon(ik, 22)}<dd>${esc(n === 1999 ? "1999" : angka(Number(n)))}</dd><dt>${esc(l)}</dt></div>`).join("")}</dl></div></section>`;
 }
 
-const pita = (m) => `<section class="tn-kredit" aria-label="${esc(t("tn.mitra.kerja"))}"><div class="wrap"><p>${esc(t("tn.mitra.kerja"))}</p><ul class="tn-logos">${m.mitra.map(tbl).join("")}</ul></div></section>`;
+const pita = (m) => `<section class="tn-kredit" aria-label="${esc(t("tn.mitra.kerja"))}"><div class="wrap"><p>${esc(t("tn.mitra.judul_n", { judul: t("tn.mitra.kerja"), n: m.mitra.length }))}</p></div>${jalur(m.mitra, tbl)}</section>`;
 
 function mengapa() {
   return `<section class="seksi kertas" aria-labelledby="tn-mengapa">${bandL("tn-mengapa", "/img/tentang/hidro.webp", "50% 50%", t("tn.mengapa.h2"), t("tn.mengapa.lead"))}
@@ -65,9 +68,9 @@ function struktur(p) {
 }
 
 function mitra(m) {
-  const grup = (kunci, a, fn) => `<h3 class="tn-sub">${esc(t("tn.mitra.judul_n", { judul: t(kunci), n: a.length }))}</h3><ul class="tn-logos">${a.map(fn).join("")}</ul>`;
+  const grup = (kunci, a, fn, balik) => `<h3 class="tn-sub tn-tengah">${esc(t("tn.mitra.judul_n", { judul: t(kunci), n: a.length }))}</h3>${jalur(a, fn, balik)}`;
   return `<section class="seksi kertas" id="mitra" aria-labelledby="tn-mitra">${bandL("tn-mitra", "/img/tentang/panas-bumi.webp", "50% 50%", t("tn.mitra.h2"), t("tn.mitra.pengantar", { tanggal: tanggal(m.diambil) }))}
-  <div class="wrap"><p class="tn-kanan"><a class="tn-lanjut" href="${esc(m.sumber)}" target="_blank" rel="noopener noreferrer">${esc(t("tn.mitra.lengkap"))}</a></p>${grup("tn.mitra.kerja", m.mitra, tbl)}${grup("tn.mitra.anggota", m.anggota, tbl)}${grup("tn.mitra.asosiasi", m.asosiasi, tblAsos)}</div></section>`;
+  <div class="wrap"><p class="tn-kanan"><a class="tn-lanjut" href="${esc(m.sumber)}" target="_blank" rel="noopener noreferrer">${esc(t("tn.mitra.lengkap"))}</a></p>${grup("tn.mitra.kerja", m.mitra, tbl)}${grup("tn.mitra.anggota", m.anggota, tbl, true)}${grup("tn.mitra.asosiasi", m.asosiasi, tblAsos)}</div></section>`;
 }
 
 function metode() {

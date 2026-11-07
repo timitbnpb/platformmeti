@@ -76,7 +76,7 @@ a.kal-baris:hover{border-color:var(--accent);box-shadow:var(--shadow)}
 .kal-pilih-bar{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px;padding:12px 16px;border:1px solid var(--line);border-radius:var(--r);background:var(--card);color:var(--head)}
 @media (max-width:639px){
   .kal-kepala{padding:14px}
-  .kal-nav h2{min-width:0;flex:1;font-size:20px}
+  .kal-nav h2{min-width:0;flex:1 1 100%;order:-1;font-size:22px}
   .kal-seg{display:none}
   .kal-kanan,.kal-saring{width:100%}
   .kal-saring .jm-pil-pilih{flex:1;min-width:0}

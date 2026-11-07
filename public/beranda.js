@@ -1,18 +1,20 @@
 import { mulaiHalaman } from "/inti/kepala.js";
 import { t, angka, tanggal } from "/i18n.js";
 import { esc, nanti, debounce, hantuHtml, kosongHtml, ikon } from "/inti/umum.js";
-import { gambarDataset } from "/beranda_data.js";
+import { gambarDataset, LOGO_ORG } from "/beranda_data.js";
 import { pasangBawah, IKON } from "/beranda_bawah.js";
+import { sumberHtml } from "/inti/komponen.js";
 import { muat, label, urlAman, norm, namaRegulasi, sembunyi } from "/publik.js";
 
 const KARTU = ["proyek", "kapasitas", "organisasi", "orang", "regulasi"];
-const LOGO_ORG = { p_6998264f50: "pertamina-nre", p_10e0dde689: "pertamina-nre", p_dda1e51dae: "pge", p_5a2e7d0c63: "pln-indonesia-power", p_ff7a390a42: "pln-nusantara-power", p_27ae5a4203: "medco-power", p_bdd0f2d140: "barito-renewables", p_7a803f3b71: "star-energy", l_41bf1f0b41: "meti", l_dd90c88f59: "aesi", l_d3dadc789e: "aprobi", l_7278e0528a: "esdm", l_973f60de15: "brin", su_ed074ff5: "pln", p_b1c52ad7b0: "pertamina", p_476a6bf2fb: "pertamina", p_e0f3886341: "pln-icon-plus", p_d99d5987f7: "sumitomo", p_9de27fd5b9: "medco-energi", l_38ba1d6f56: "ebtke", p_7f829f524e: "adaro", p_c6c4e478c0: "supreme-energy", ix_keen: "kencana-energi-lestari", l_7e5f8d771d: "api-inaga", l_15e21f04fa: "ojk", l_7b43a2574c: "kemenkeu", l_edde12ff1f: "kementerian-bumn", l_05301f48a5: "bkpm", l_3d20494e0a: "kemenhut", l_06d49428ac: "aplsi", l_67ed5e1422: "apamsi", l_1192cb8a15: "ibeka", l_0974f82eba: "aspebindo", p_978ca76d57: "mind-id" };
 const ALIAS = [[/pertamina power indonesia|pertamina nre/i, "Pertamina NRE"], [/kementerian energi dan sumber daya mineral/i, "Kementerian ESDM"], [/masyarakat energi terbarukan/i, "METI"], [/badan riset dan inovasi nasional/i, "BRIN"], [/asosiasi energi surya/i, "AESI"], [/asosiasi produsen biofuel/i, "APROBI"], [/asosiasi panas bumi/i, "API (panas bumi)"], [/kementerian investasi/i, "Kementerian Investasi/BKPM"], [/direktorat jenderal energi baru/i, "Ditjen EBTKE"], [/^pln$/i, "PLN"], [/otoritas jasa keuangan/i, "OJK"], [/medco energi internasional/i, "Medco Energi"], [/sumitomo/i, "Sumitomo"], [/barito renewables/i, "Barito Renewables"], [/pertamina geothermal/i, "Pertamina Geothermal"], [/badan usaha milik negara/i, "Kementerian BUMN"], [/kementerian investasi/i, "Kementerian Investasi"], [/pln nusantara power/i, "PLN Nusantara Power"], [/asosiasi panas bumi/i, "API Panas Bumi"]];
 const namaPendek = (n) => { for (const [re, a] of ALIAS) if (re.test(n)) return a; return n.replace(/^PT\.?\s+/i, "").replace(/\s*\((Persero)\)/i, "").replace(/\s+Tbk$/i, ""); };
 const URUT_ASOSIASI = [/metiires|masyarakat energi terbarukan/i, /surya/i, /biofuel/i, /panas bumi/i, /apamsi|modul surya/i, /applta|hidro/i, /aeski/i, /mki|ketenagalistrikan/i];
 const URUT_LEMBAGA = [/energi dan sumber daya mineral/i, /dewan energi/i, /bappenas|perencanaan pembangunan/i, /riset dan inovasi/i, /kementerian keuangan/i, /perindustrian/i, /lingkungan hidup|kehutanan/i, /danantara|investasi/i];
 const KAT_EKO = [["bumn", 1], ["swasta", 2], ["asosiasi", 3], ["lembaga", 4]];
-const HITUNG = [["bumn", 1, "organisasi", "bumn"], ["swasta", 2, "organisasi", "swasta"], ["asing", 5, "organisasi", "internasional"], ["asosiasi", 3, "organisasi", "asosiasi"], ["lembaga", 4, "organisasi", "kementerian-lembaga"], ["kampus", 3, "organisasi", "perguruan-tinggi"], ["proyek", 2, "proyek"], ["regulasi", 1, "regulasi"]];
+/** Strip hitungan: [kode kategori, warna, kunci label] */
+const STRIP = [["bumn", 1, "beranda.eko.h.bumn"], ["swasta", 2, "beranda.eko.h.swasta"], ["internasional", 5, "beranda.eko.h.asing"], ["asosiasi", 3, "beranda.eko.h.asosiasi"], ["kementerian-lembaga", 4, "beranda.eko.h.lembaga"], ["koperasi", 1, "beranda.sensus.k.koperasi"], ["ormawa", 2, "beranda.sensus.k.ormawa"], ["perguruan-tinggi", 3, "beranda.sensus.k.perguruan-tinggi"], ["think-tank", 4, "beranda.sensus.k.think-tank"]];
+const INSIGHT_KARTU = 17; // ponytail: jumlah kartu /insight ditulis tetap; hitung dari halaman itu bila kartunya sering berubah
 /** 8 teratas per kategori: daftar sematan (id atau nama) lebih dulu, sisanya menurut total MW proyek terkait. Nama baru di data masuk otomatis. */
 const PIN = {
   bumn: ["su_ed074ff5", "p_5a2e7d0c63", "p_ff7a390a42", "p_10e0dde689", "p_dda1e51dae", "p_b1c52ad7b0", "p_e0f3886341", "p_978ca76d57"],
@@ -47,18 +49,24 @@ const IKON_KPI = {
   regulasi: IK('<path d="M12 3v18M6 21h12M5 7h14M5 7l-3 7a3 3 0 0 0 6 0zM19 7l-3 7a3 3 0 0 0 6 0z"/>'),
   konstruksi: IK('<path d="M3 21h18M6 21V9h5v12M11 9 4 6M8 3l8 6M16 9v7l-2 2"/>'),
 };
+/** Ikon info bulat di pojok kanan atas tiap bagian (isi: catatan sumber). */
+function pasangSumber(tgl) {
+  const isi = { srcS01: t("beranda.sumber", { tanggal: tgl }), srcS02: t("beranda.eko_sumber"), srcBerita: t("beranda.src.berita", { tanggal: tgl }), srcProyek: t("beranda.src.proyek", { tanggal: tgl }) };
+  for (const [id, teks] of Object.entries(isi)) { const el = document.getElementById(id); if (el) el.innerHTML = sumberHtml(esc(teks)); }
+  const ak = document.getElementById("srcAkses");
+  if (ak) ak.innerHTML = sumberHtml(`${esc(t("beranda.akses.kutip"))} <a href="/tentang">${esc(t("beranda.akses.tentang"))}</a>`);
+}
 function gambarKartu() {
   const el = document.getElementById("kartu"), tgl = tanggal(R.dibangun_pada);
   const kartu = R.kartu.filter((k) => KARTU.includes(k.kode)).map((k) => ({ kode: k.kode, nilai: k.nilai, satuan: k.satuan }));
   const konstruksi = R.proyek_per_status?.konstruksi;
   if (Number.isFinite(konstruksi)) kartu.push({ kode: "konstruksi", nilai: konstruksi, satuan: "proyek", dari: R.hitung.proyek });
-  el.innerHTML = kartu.map((k, i) => `<div class="jm-kpi jm-w${(i % 5) + 1}"><div class="jm-kpi-ik">${IKON_KPI[k.kode]}</div>
+  el.innerHTML = kartu.map((k, i) => `<div class="jm-kpi jm-w${(i % 5) + 1}"><div class="jm-kpi-ik">${IKON_KPI[k.kode]}</div><span class="jm-kpi-src">${sumberHtml(esc(t("beranda.src." + k.kode, { tanggal: tgl, total: angka(R.hitung.regulasi) })))}</span>
     <div class="jm-kpi-lab"><span>${esc(t("beranda.kk." + k.kode))}</span>${k.kode === "kapasitas" ? `<span class="jm-pil jm-pil-est">EST</span>` : ""}</div>
     <div class="jm-kpi-n"><b>${esc(angka(k.nilai))}</b><small>${esc(t("beranda.u." + k.satuan))}</small></div>
-    <div class="jm-kpi-ctx">${k.dari ? esc(t("beranda.dari", { n: angka(k.nilai), total: angka(k.dari) })) : "&nbsp;"}</div>
-    <div class="jm-kpi-src" title="${esc(t("beranda.src." + k.kode, { tanggal: tgl, total: angka(R.hitung.regulasi) }))}">${ikon("info", 14)}<span>${esc(t("beranda.srcs." + k.kode, { tanggal: tgl }))}</span></div></div>`).join("");
-  document.getElementById("sumber").textContent = t("beranda.sumber", { tanggal: tgl });
-  document.getElementById("heroHitung").innerHTML = ["proyek", "organisasi", "orang", "regulasi", "berita"].map((k, i) => `<li><span class="jm-kotak jm-w${(i % 5) + 1}" aria-hidden="true"></span><b>${esc(angka(R.hitung[k]))}</b> ${esc(t("beranda.hero.h." + k))}</li>`).join("");
+    <div class="jm-kpi-ctx">${k.dari ? esc(t("beranda.dari", { n: angka(k.nilai), total: angka(k.dari) })) : "&nbsp;"}</div></div>`).join("");
+  pasangSumber(tgl);
+  document.getElementById("heroHitung").innerHTML = ["proyek", "organisasi", "orang", "regulasi", "berita"].map((k, i) => `<li><span class="jm-kotak jm-w${(i % 5) + 1}" aria-hidden="true"></span><b>${esc(angka(R.hitung[k]))}</b> ${esc(t("beranda.hero.h." + k))}</li>`).join("") + `<li class="jm-hitung-src">${sumberHtml(esc(t("beranda.sumber", { tanggal: tgl })))}</li>`;
 }
 
 async function gambarBerita() {
@@ -89,9 +97,9 @@ const inisial = (n) => { const w = String(n).split(/\s+/).filter((x) => /^[A-Za-
 async function gambarEkosistem() {
   const hit = document.getElementById("ekoHitung"), kisi = document.getElementById("ekoLogo");
   try {
-    const [org, pro, reg] = await Promise.all([muat("organisasi"), muat("proyek"), muat("regulasi")]);
+    const [org, pro] = await Promise.all([muat("organisasi"), muat("proyek")]);
     const n = (k) => org.baris.filter((o) => o.kategori?.kode === k).length;
-    hit.innerHTML = HITUNG.map(([k, w, benda, kode]) => `<li><span class="jm-kotak jm-w${w}" aria-hidden="true"></span><b>${esc(angka(benda === "organisasi" ? n(kode) : benda === "proyek" ? pro.baris.length : reg.baris.length))}</b> ${esc(t("beranda.eko.h." + k))}</li>`).join("");
+    hit.innerHTML = STRIP.map(([k, w, kunci]) => `<li><a href="/direktori?tampil=lembaga&amp;kat=${encodeURIComponent(k)}"><span class="jm-kotak jm-w${w}" aria-hidden="true"></span><b>${esc(angka(n(k)))}</b><span class="jm-strip-l">${esc(t(kunci))}</span></a></li>`).join("");
     const d = delapan(org.baris, pro);
     kisi.innerHTML = KAT_EKO.map(([kat, w]) => {
       const { daftar } = d[kat];
@@ -103,6 +111,17 @@ async function gambarEkosistem() {
     }).join("");
     document.getElementById("ekoSemua").innerHTML = `${esc(t("beranda.eko.semua", { n: angka(org.baris.length) }))} &rarr;`;
   } catch (e) { sembunyi(kisi, e); }
+}
+
+/* ---------- 8 pintu masuk (dulu di beranda_bawah.js) ---------- */
+async function gambarJalur() {
+  const el = document.getElementById("ekoJalur");
+  try {
+    const [rg, wl, rt, kl, pk, og] = await Promise.all(["ringkas", "wilayah", "rantai_plts", "kalender", "pustaka", "organisasi"].map(muat));
+    const J = [["proyek", "/proyek", "pin", rg.hitung.proyek, "proyek"], ["wilayah", "/wilayah", "peta", wl.jumlah, "provinsi"], ["rantai", "/rantai", "pabrik", rt.ringkas.pabrikan, "pabrikan"], ["regulasi", "/regulasi", "timbangan", rg.hitung.regulasi, "regulasi"],
+      ["direktori", "/direktori", "orangkunci", og.jumlah, "organisasi"], ["pustaka", "/direktori?tampil=pustaka", "buku", pk.jumlah, "dokumen"], ["kalender", "/kalender", "kalender", kl.jumlah, "acara"], ["insight", "/insight", "grafik", INSIGHT_KARTU, "kartu"]];
+    el.innerHTML = J.map(([k, href, ik, n, u]) => `<a class="jm-jalur" href="${href}"><span class="jm-jalur-ik">${IKON[ik] || ""}</span>${k === "direktori" ? `<span class="jm-pil jm-jalur-kunci">${ikon("kunci", 12)}${esc(t("beranda.j.masuk"))}</span>` : ""}<strong>${esc(t("beranda.j." + k))}</strong><span class="jm-jalur-ket">${esc(t("beranda.j." + k + ".ket"))}</span><b class="jm-jalur-n">${esc(angka(n))} <small>${esc(t("beranda.jn." + u))}</small></b><span class="jm-jalur-panah" aria-hidden="true">&rarr;</span></a>`).join("");
+  } catch (e) { sembunyi(el, e); }
 }
 
 /* ---------- cari global ---------- */
@@ -134,11 +153,11 @@ async function main() {
   document.getElementById("kartu").innerHTML = hantuHtml(2);
   const mulai = async () => {
     try { R = await muat("ringkas"); } catch (e) { sembunyi(document.getElementById("kartu"), e); return; }
-    gambarKartu(); nanti(() => { gambarEkosistem(); gambarDataset(R); gambarBerita(); gambarProyek(); });
+    gambarKartu(); nanti(() => { gambarEkosistem(); gambarJalur(); gambarDataset(R); gambarBerita(); gambarProyek(); });
   };
   await mulai();
   pasangBawah(R);
-  addEventListener("error", (e) => { if (e.target.tagName === "IMG" && e.target.closest(".jm-feed-th")) e.target.remove(); }, true);
+  addEventListener("error", (e) => { if (e.target.tagName !== "IMG") return; if (e.target.closest(".jm-feed-th")) e.target.remove(); else if (e.target.closest(".jm-pm-lg")) e.target.replaceWith(Object.assign(document.createElement("span"), { className: "jm-pm-ini", textContent: e.target.dataset.ini || "" })); }, true);
   document.getElementById("kartu").addEventListener("click", (e) => e.target.closest("[data-aksi=ulang]") && mulai());
   const input = document.getElementById("cari");
   input.addEventListener("focus", () => siapkanIndeks().catch(() => { indeks = null; }), { once: true });
@@ -146,6 +165,6 @@ async function main() {
   input.addEventListener("input", () => tunda(input.value));
   document.getElementById("cariTbl").addEventListener("click", () => cari(input.value));
   input.addEventListener("keydown", (e) => e.key === "Enter" && cari(input.value));
-  document.addEventListener("jm:bahasa", () => nanti(() => { R && gambarKartu(); gambarEkosistem(); R && gambarDataset(R); gambarBerita(); gambarProyek(); input.value && cari(input.value); }));
+  document.addEventListener("jm:bahasa", () => nanti(() => { R && gambarKartu(); gambarEkosistem(); gambarJalur(); R && gambarDataset(R); gambarBerita(); gambarProyek(); input.value && cari(input.value); }));
 }
 main();

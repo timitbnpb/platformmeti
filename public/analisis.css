@@ -80,11 +80,10 @@
 .jm-temuan .jm-pil{vertical-align:middle;margin-left:4px}
 @media (min-width:768px){.jm-temuan{font-size:24px}}
 
-/* sumber dilipat */
-.jm-an-src{font-size:var(--t-kecil);color:var(--ink2)}
-.jm-an-src summary{cursor:pointer;min-height:32px;display:flex;align-items:center;color:var(--ink2);font:500 12.5px/1.3 var(--font)}
-.jm-an-src div{display:grid;gap:4px;padding:2px 0 6px}
-.jm-an-src a{color:var(--accent)}
+/* sumber: ikon info bulat (jm-sumber), butir di popover */
+.jm-an-src{display:flex;justify-content:flex-end;margin-top:4px}
+.jm-an-src .jm-sumber-isi{left:0;right:auto}
+.jm-an-srcl{display:block;margin:0 0 6px}
 
 /* batang lebar penuh: label kiri tetap, batang tengah, nilai kanan; garis putus-putus = ambang */
 .jm-batang{list-style:none;margin:0;padding:0;display:grid;gap:12px}
@@ -192,3 +191,30 @@
 @media (min-width:768px){#saring{grid-auto-flow:row;grid-template-columns:minmax(0,2fr) repeat(3,minmax(0,1fr))}#saring .jm-hitung,#saring .jm-hapus{grid-column:1/-1;justify-self:start}}
 @media (max-width:639px){.jm-an-visual{padding:16px}.jm-hv-t{font-size:15px}.jm-hv-angka{font-size:48px}}
 .jm-an-gars polyline.jm-an-penuntun{stroke-width:.8;stroke-opacity:.5;stroke-dasharray:none}.jm-an-gars.jm-an-sorot polyline.jm-an-penuntun,.jm-an-gars.jm-an-pilih polyline.jm-an-penuntun{stroke-width:1;stroke-opacity:.8}
+
+/* kepala halaman bersama (/wilayah, /rantai, /asean): pita terang bertinta brand + tekstur kisi, tiga ubin angka */
+.jm-kh{position:relative;isolation:isolate;display:grid;gap:20px;align-items:center;padding:32px 24px;border:1px solid var(--line);border-radius:var(--r-lg);background:linear-gradient(135deg,color-mix(in srgb,var(--accent) 9%,var(--paper)),color-mix(in srgb,var(--meti-cyan) 7%,var(--paper)));overflow:hidden}
+.jm-kh::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(var(--line) 1px,transparent 1px) 0 0/40px 40px,linear-gradient(90deg,var(--line) 1px,transparent 1px) 0 0/40px 40px;opacity:.5;-webkit-mask-image:linear-gradient(90deg,black,transparent 85%);mask-image:linear-gradient(90deg,black,transparent 85%)}
+.jm-kh>*{min-width:0}
+.jm-kh-teks{display:grid;gap:12px;align-content:center}
+.jm-kh h1{margin:0;font:800 clamp(28px,3.2vw,40px)/1.1 var(--display);color:var(--head);letter-spacing:-.01em}
+.jm-kh-lead{margin:0;max-width:44ch;font-size:16px;line-height:1.55;color:var(--ink2)}
+.jm-kh-ubin{display:grid;gap:12px;grid-template-columns:repeat(3,minmax(0,1fr))}
+.jm-kh-ub{display:grid;grid-template-rows:auto auto auto;gap:8px;align-content:start;padding:16px;border:1px solid var(--line);border-radius:var(--r);background:var(--card);color:inherit;text-decoration:none;box-shadow:var(--shadow);transition:border-color .12s,transform .12s}
+.jm-kh-ub:hover{border-color:var(--accent);transform:translateY(-2px)}
+.jm-kh-ub:focus-visible{outline:2px solid var(--fokus);outline-offset:2px}
+.jm-kh-angka{display:flex;align-items:baseline;gap:6px;margin:0;white-space:nowrap}
+.jm-kh-angka b{font:900 clamp(26px,2.6vw,34px)/1.05 var(--display);color:var(--head);font-variant-numeric:tabular-nums}
+.jm-kh-angka span{font:600 14px/1 var(--font);color:var(--ink2)}
+.jm-kh-lbl{display:flex;align-items:center;gap:6px;margin:0;font:500 13px/1.3 var(--font);color:var(--ink2);min-width:0}
+.jm-kh-lbl span:first-child{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.jm-kh-lbl .jm-pil{flex:none}
+@media (min-width:1000px){.jm-kh{grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:40px;padding:36px 40px;min-height:230px}}
+@media (max-width:639px){.jm-kh{padding:20px 16px}.jm-kh-ubin{gap:8px}.jm-kh-ub{padding:12px 10px;gap:6px}.jm-kh-ub .jm-kpi-ik{width:28px;height:28px}.jm-kh-angka b{font-size:22px}.jm-kh-angka span{font-size:12px}.jm-kh-lbl{flex-wrap:wrap}.jm-kh-lbl span:first-child{white-space:normal}}
+
+/* deretan pilihan: ujung ke ujung, lebar sama */
+.jm-an-kepala .jm-tab,.jm-an-sakelar{display:grid;grid-auto-flow:column;grid-auto-columns:1fr;width:100%;flex:1 1 100%;max-width:none}
+.jm-an-kepala .jm-tab :is(button,a){justify-content:center;text-align:center}
+.jm-an-kepala .jm-tab.jm-tab-bagi,#seg-pasar,#seg-apamsi{width:100%}
+.jm-an-kepala>.jm-an-chip{flex:1 1 100%;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px 16px}
+@media (max-width:639px){.jm-an-kepala>.jm-an-chip{grid-template-columns:1fr}}

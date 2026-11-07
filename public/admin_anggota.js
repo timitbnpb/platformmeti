@@ -80,7 +80,8 @@ export function panelAnggota(panel, { boleh, kabari }) {
       <div id="mDaftar" aria-live="polite"></div>
       <div class="jm-hal" id="mHal"></div>
       <dialog class="jm-lembar" id="mLembar" aria-labelledby="mLembarJudul"></dialog>`;
-    host.querySelectorAll("[data-p]").forEach((el) => el.style.setProperty("--p", el.dataset.p));
+    host.querySelectorAll(".jm-adm-seg[data-p]").forEach((el) => { el.style.flexGrow = el.dataset.p; });
+    host.querySelectorAll(".jm-adm-iur [data-p] b").forEach((el) => { el.style.height = el.parentNode.dataset.p + "%"; });
     tandaStrip();
     isiTabel();
   }
@@ -115,9 +116,9 @@ export function panelAnggota(panel, { boleh, kabari }) {
       const kepala = (S.tampilNo ? urutTh("no_anggota", "adm.anggota.k.no") : "") + urutTh("nama", "adm.anggota.k.nama") + urutTh("jenis", "adm.anggota.f.jenis") + urutTh("status", "adm.anggota.f.status")
         + TAHUN.map((th) => `<th scope="col">${esc(th)}</th>`).join("") + `<th scope="col">${esc(t("adm.anggota.k.kontak"))}</th>`;
       const baris = S.saring.slice((S.hal - 1) * BARIS, S.hal * BARIS).map((r) => {
-        const terbuka = S.buka.has(r._i), hp = [r.seluler, r.telepon].filter(Boolean).join(" / ");
-        const kontak = hp || r.surel
-          ? `<span class="jm-adm-kt">${r.surel ? `<span>${esc(terbuka ? r.surel : samarKontak(r.surel))}</span>` : ""}${hp ? `<small>${esc(terbuka ? hp : samarKontak(hp))}</small>` : ""}</span><button type="button" class="jm-tbl jm-tbl-kecil" data-m="tampil" data-i="${r._i}" aria-pressed="${terbuka}">${esc(t(terbuka ? "adm.anggota.sembunyi" : "adm.anggota.tampilkan"))}</button>` : "-";
+        const terbuka = S.buka.has(r._i), em = r.surel, hp = [r.seluler, r.telepon].filter(Boolean).join(" / ");
+        const kontak = hp || em
+          ? `<span class="jm-adm-kt">${em ? `<span>${esc(terbuka ? em : samarKontak(em))}</span>` : ""}${hp ? `<small>${esc(terbuka ? hp : samarKontak(hp))}</small>` : ""}</span><button type="button" class="jm-tbl jm-tbl-kecil" data-m="tampil" data-i="${r._i}" aria-pressed="${terbuka}">${esc(t(terbuka ? "adm.anggota.sembunyi" : "adm.anggota.tampilkan"))}</button>` : "-";
         return `<tr data-i="${r._i}">${S.tampilNo ? `<td class="jm-nowrap" data-l="${esc(t("adm.anggota.k.no"))}">${esc(r.no_anggota || "-")}</td>` : ""}
           <td class="jm-adm-id" data-l="${esc(t("adm.anggota.k.nama"))}">${identitas(r)}</td>
           <td data-l="${esc(t("adm.anggota.f.jenis"))}">${pilJenis(r.jenis)}</td>

@@ -2611,3 +2611,24 @@ button.ak-r[data-kh][aria-pressed="true"]{border-color:var(--w0,var(--brand2));b
 /* peta lembaga: bulatan klaster berangka dan inisial pengganti logo */
 .ak-pinklaster{width:42px;height:42px;background:color-mix(in srgb,var(--data1) 16%,var(--paper))}.ak-pinklaster b,.ak-pini{font:800 12px/1 inherit;color:var(--w0,var(--data1))}.ak-pini{position:relative;z-index:0}
 .ak-pinlogo .ak-pini{background:color-mix(in srgb,var(--w0,var(--data1)) 14%,var(--paper));width:100%;height:100%;display:grid;place-items:center}
+
+/* pemilik 7 Nov 2026: deretan pilihan membentang ujung ke ujung, lebar item sama, isi di tengah */
+.ak-seg{display:grid;grid-auto-flow:column;grid-auto-columns:1fr;width:100%}
+.ak-seg>button{justify-content:center;width:100%}
+/* hitungan di toggle keanggotaan METI tampil sebagai label pil (pemilik 7 Nov 2026) */
+.ak-segmeti button small{display:inline-grid;place-items:center;min-width:28px;height:22px;padding:0 8px;border-radius:999px;background:var(--soft-hijau);color:var(--accent);font:700 12px/1 var(--font);font-variant-numeric:tabular-nums}
+.ak-segmeti button[aria-pressed="true"] small{background:var(--on-brand);color:var(--brand)}
+
+/* kartu orang: lencana kelompok kecil satu baris + chip wilayah */
+.ak-lencana .ak-l-kel{background:var(--surface);color:var(--ink2);font-weight:700;font-size:10.5px;letter-spacing:0;white-space:nowrap;max-width:100%;overflow:hidden;text-overflow:ellipsis}
+.ak-wil{display:inline-flex;align-items:center;gap:4px;max-width:100%;font-size:11px;font-weight:600;color:var(--ink2);line-height:16px;white-space:nowrap}
+.ak-wil svg{width:12px;height:12px;flex:none;fill:none;stroke:currentColor;stroke-width:2}
+.ak-wil{overflow:hidden;text-overflow:ellipsis}
+
+/* kisi chip lapisan peta: lebar sama, tepi ke tepi, membungkus */
+.ak-kchips{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:6px;margin:0 0 10px}
+.ak-kchips button{display:flex;align-items:center;gap:6px;min-width:0;min-height:34px;padding:0 10px;font:inherit;font-size:12px;font-weight:700;color:var(--ink);background:var(--card);border:1px solid var(--line);border-radius:999px;cursor:pointer}
+.ak-kchips button span{flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;text-align:left}
+.ak-kchips button small{color:var(--ink2);font-weight:600}
+.ak-kchips .ak-kdot{width:9px;height:9px;border-radius:50%;flex:none}
+.ak-kchips button[aria-pressed="true"]{border-color:var(--brand);background:color-mix(in srgb,var(--brand) 12%,var(--card))}

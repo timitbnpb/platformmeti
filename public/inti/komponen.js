@@ -46,3 +46,8 @@ if (typeof document !== "undefined" && !window.__jmSumber) {
   });
   document.addEventListener("keydown", (e) => { if (e.key === "Escape") tutup(); });
 }
+
+/* Kepala seksi "exhibit" bersama. Semua argumen *Html sudah di-escape/dirakit aman oleh pemanggil.
+   exHtml({ id, ikon, topik, judulHtml, subHtml, aksiHtml, isiHtml, kakiHtml, tingkat: "h2"|"h3" }) */
+export const exHtml = ({ id = "", ikon: ik = "", topik = "", judulHtml = "", subHtml = "", aksiHtml = "", isiHtml = "", kakiHtml = "", tingkat = "h2" }) =>
+  `<section class="jm-ex"${id ? ` id="${esc(id)}"` : ""}><header class="jm-ex-hd"><div class="jm-ex-teks">${topik ? `<span class="jm-ex-ey">${ik ? ikon(ik, 14) : ""}${esc(topik)}</span>` : ""}<${tingkat} class="jm-ex-j">${judulHtml}</${tingkat}>${subHtml ? `<p class="jm-ex-sub">${subHtml}</p>` : ""}</div>${aksiHtml ? `<div class="jm-ex-aksi">${aksiHtml}</div>` : ""}</header><div class="jm-ex-bd">${isiHtml}</div>${kakiHtml ? `<footer class="jm-ex-ft">${kakiHtml}</footer>` : ""}</section>`;

@@ -74,7 +74,7 @@ const adaUrl = (s) => typeof s === 'string' && /^https?:\/\//.test(s);
 
 // ---------- taksonomi K19 ----------
 export const KATEGORI = { bumn: 'BUMN', bumd: 'BUMD', swasta: 'Swasta', internasional: 'Perusahaan Internasional di Indonesia', 'kementerian-lembaga': 'Kementerian dan Lembaga Negara', pemda: 'Pemerintah Daerah', 'perguruan-tinggi': 'Perguruan Tinggi', 'think-tank': 'Think Tank dan Lembaga Riset', 'lsm-yayasan': 'LSM dan Yayasan', donor: 'Lembaga Donor', asosiasi: 'Asosiasi', keuangan: 'Lembaga Keuangan', ormawa: 'Organisasi Mahasiswa', koperasi: 'Koperasi' };
-export const KELOMPOK = { profesional: 'Profesional', praktisi: 'Praktisi', akademisi: 'Akademisi', 'think-tank-peneliti': 'Think Tank dan Peneliti', 'tokoh-publik': 'Tokoh Publik', 'aktivis-tokoh-daerah': 'Aktivis dan Tokoh Daerah' };
+export const KELOMPOK = { profesional: 'Profesional', praktisi: 'Praktisi', akademisi: 'Akademisi', 'tokoh-publik': 'Tokoh Publik', 'aktivis-tokoh-daerah': 'Aktivis dan Tokoh Daerah' };
 const JENIS_LEMBAGA = { asosiasi: 'asosiasi', kementerian: 'kementerian-lembaga', lembaga: 'kementerian-lembaga', dpr: 'kementerian-lembaga', 'think-tank': 'think-tank', lsm: 'lsm-yayasan', universitas: 'perguruan-tinggi', donor: 'donor', pemda: 'pemda' };
 function kategoriPerusahaan(p) {
   if (/\b(bank|bpd)\b/i.test(p.nama) || (p.peran_rantai || []).includes('pembiaya')) return 'keuangan';
@@ -231,7 +231,7 @@ export function bangun(masukan = {}) {
     (rj.tautan || []).forEach((t) => r.sumber_urls.push(t.sumber_url));
   }
   for (const j of M('jabatan', 'orang/jabatan.jsonl')) { const r = dapatOrang(j.orang_id); if (!r.nama) continue; if (!r.jabatan.some((x) => jabKey(x) === jabKey(j))) r.jabatan.push({ organisasi: j.organisasi, jabatan: j.jabatan, mulai: j.mulai, selesai: j.selesai, kini: j.status === 'menjabat', sumber_url: j.sumber_url }); r.sumber_urls.push(j.sumber_url); }
-  for (const t of M('tokoh', 'akar/tokoh.jsonl')) { const r = dapatOrang(t.orang_id, t.nama); Object.assign(r, { jenis: 'tokoh-daerah', jabatan_terkini: t.peran, organisasi_terkini: t.organisasi, kepakaran: t.kepakaran || [], kelompok: t.kelompok, sumber_url: t.sumber_url, tanggal: t.tanggal_ambil, kiprah: (t.capaian || []).map((c) => ({ teks: c, sumber_url: t.sumber_url })) }); r.sumber_urls.push(t.sumber_url); }
+  for (const t of M('tokoh', 'akar/tokoh.jsonl')) { const r = dapatOrang(t.orang_id, t.nama); Object.assign(r, { jenis: 'tokoh-daerah', jabatan_terkini: t.peran, organisasi_terkini: t.organisasi, kepakaran: t.kepakaran || [], wilayah_tokoh: t.wilayah, kelompok: t.kelompok, sumber_url: t.sumber_url, tanggal: t.tanggal_ambil, kiprah: (t.capaian || []).map((c) => ({ teks: c, sumber_url: t.sumber_url })) }); r.sumber_urls.push(t.sumber_url); }
   const ketuaBaru = new Set(), dprIds = new Set();
   for (let d of M('dpr', 'orang/tambahan_dpr.jsonl')) { // Komisi XII DPR: menimpa guidebook lama (Ketua kini Bambang Patijaya)
     if (!orang.has(d.orang_id)) { const kn = norm(d.nama.replace(/,.*$/, '')).split(' ').slice(0, 2).join(' '); const lama = [...orang.values()].find((x) => x.jenis === 'anggota-dpr' && norm(x.nama).split(' ').slice(0, 2).join(' ') === kn); if (lama) d = { ...d, orang_id: lama.id }; } // id baru = orang lama bernama sama (gelar beda)
@@ -418,9 +418,10 @@ export function bangun(masukan = {}) {
   const fotoPeta = {}; const fotoKey = new Map(); const orangOut = { publik: [], anggota: [], pengurus: [] };
   const katOrg = new Map([...org.values()].map((o) => [o.id, o.kategori]));
   const kelompokDari = (r) => {
+    if (r.kelompok === 'think-tank-peneliti') return 'akademisi'; // pemilik 7 Nov 2026: think tank = organisasi, orangnya masuk Akademisi dan pakar
     if (r.kelompok && KELOMPOK[r.kelompok]) return r.kelompok;
     const oid = r.organisasi_terkini && orgPerNama(r.organisasi_terkini);
-    if (oid && katOrg.get(oid) === 'think-tank') return 'think-tank-peneliti';
+    if (oid && katOrg.get(oid) === 'think-tank') return 'akademisi';
     return { akademisi: 'akademisi', 'pejabat-publik': 'tokoh-publik', 'anggota-dpr': 'tokoh-publik', direksi: 'praktisi', komisaris: 'praktisi', 'direksi-komisaris-bumn': 'praktisi', 'tokoh-daerah': 'aktivis-tokoh-daerah' }[r.jenis] || 'profesional';
   };
   for (const r of orang.values()) if (r.nama) { const p = pisahNama(r.nama, r.gelar); r.nama = p.nama; r.gelar = p.gelar; }
@@ -438,6 +439,13 @@ export function bangun(masukan = {}) {
     if (jmlNama.get(k) > 1 || inst.size > 1) perluTinjauMeti.push({ orang_id: r.id, nama: r.nama, alasan: jmlNama.get(k) > 1 ? 'nama sama dengan ' + (jmlNama.get(k) - 1) + ' orang lain di direktori; cocok anggota METI tidak ditandai' : 'nama sama pada ' + inst.size + ' baris anggota METI berinstansi beda; tidak ditandai' }); else metiOrang.set(r.id, 'anggota');
   }
   const tinjauMeti = new Map(perluTinjauMeti.map((t) => [t.orang_id, t.alasan]));
+  // lingkup wilayah (provinsi/kabupaten saja, tidak pernah alamat rumah): tokoh = 2 bagian terakhir wilayahnya; lainnya menurut lokasi organisasi daerah
+  const KAT_DAERAH = new Set(['pemda', 'bumd', 'koperasi', 'ormawa', 'lsm-yayasan']);
+  const wilayahDari = (r, oid) => {
+    if (r.wilayah_tokoh) { const b = String(r.wilayah_tokoh).split(',').map((x) => x.trim()).filter(Boolean); return bersih({ lingkup: 'daerah', label: b.slice(-2).join(', '), provinsi: b.at(-1), lengkap: r.wilayah_tokoh }); }
+    const o = oid && org.get(oid), prov = o?.lokasi?.provinsi;
+    return prov && KAT_DAERAH.has(katOrg.get(oid)) ? { lingkup: 'daerah', label: prov, provinsi: prov } : { lingkup: 'nasional', label: 'Nasional' };
+  };
   for (const r of orangList) {
     const ada = unik(r.sumber_urls).some(adaUrl) || adaUrl(r.sumber_url);
     const kel = kelompokDari(r);
@@ -447,7 +455,7 @@ export function bangun(masukan = {}) {
     if (!ada) { orangOut.pengurus.push(bersih({ ...pen, baru: true, ditahan: 'tanpa-sumber-url', nama: r.nama })); continue; }
     const oid = r.organisasi_terkini && orgPerNama(r.organisasi_terkini);
     const jab = r.jabatan.map((j) => bersih({ organisasi_id: j.organisasi_id || (j.organisasi && orgPerNama(j.organisasi)), organisasi: j.organisasi, jabatan: j.jabatan, mulai: j.mulai, selesai: j.selesai, kini: j.kini, catatan: j.catatan, sumber_url: j.sumber_url }));
-    orangOut.publik.push(bersih({ id: r.id, nama: r.nama, gelar: r.gelar, kelompok: { kode: kel, label: KELOMPOK[kel] }, jenis: r.jenis, status: r.status, jabatan_terkini: r.jabatan_terkini, organisasi_terkini: r.organisasi_terkini, organisasi_id: oid || (jab.find((j) => j.organisasi_id)?.organisasi_id), kepakaran: kodeMax3(r.kepakaran), dpr: r.dpr, jalur: r.jalur, pernah_birokrasi: r.pernah_birokrasi, jabatan: jab, tautan: r.tautan, wikidata_id: r.wikidata_id, berita_ids: bTerbaru('orang', r.id), sumber_url: r.sumber_url || unik(r.sumber_urls).find(adaUrl), tanggal: r.tanggal }));
+    orangOut.publik.push(bersih({ id: r.id, nama: r.nama, gelar: r.gelar, kelompok: { kode: kel, label: KELOMPOK[kel] }, jenis: r.jenis, wilayah: wilayahDari(r, oid), status: r.status, jabatan_terkini: r.jabatan_terkini, organisasi_terkini: r.organisasi_terkini, organisasi_id: oid || (jab.find((j) => j.organisasi_id)?.organisasi_id), kepakaran: kodeMax3(r.kepakaran), dpr: r.dpr, jalur: r.jalur, pernah_birokrasi: r.pernah_birokrasi, jabatan: jab, tautan: r.tautan, wikidata_id: r.wikidata_id, berita_ids: bTerbaru('orang', r.id), sumber_url: r.sumber_url || unik(r.sumber_urls).find(adaUrl), tanggal: r.tanggal }));
     const ang = bersih({ id: r.id, meti: metiOrang.get(r.id) || null, pendidikan: r.pendidikan, kiprah: r.kiprah, foto: fotoOut, akademik: r.akademik });
     if (Object.keys(ang).length > 1) orangOut.anggota.push(ang);
     if (Object.keys(pen).length > 1) orangOut.pengurus.push(pen);

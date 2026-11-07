@@ -4,7 +4,7 @@ import { muatMapLibre } from "/inti/maplibre.js";
 import { nanti, esc, hantuHtml, debounce } from "/inti/umum.js";
 import { cariHtml, pilihHtml, hapusHtml, hitungHtml } from "/inti/komponen.js";
 import { t, tanggal } from "/i18n.js";
-import { muatData, tampilGalat, sumberLipat, kartuHtml, batangHtml, pasangBar, temuanHtml, heroVisual, pil, num, saatBahasa } from "/analisis.js";
+import { muatData, tampilGalat, sumberLipat, kartuHtml, batangHtml, pasangBar, temuanHtml, heroVisual, ubinHtml, pil, num, saatBahasa } from "/analisis.js";
 
 const $ = (id) => document.getElementById(id);
 const KELAS = { lokal: "jm-an-b1", ekspor: "jm-an-b2", keduanya: "jm-an-b4" };
@@ -22,15 +22,13 @@ const warna = (v) => getComputedStyle(document.documentElement).getPropertyValue
 const tautOrg = (x) => `<a href="/direktori#${esc(x.id)}">${esc(x.nama)}</a>`;
 
 function jawab() {
-  const r = d.ringkas, b = butuh(), lokal = gw(r.lokal_mwp);
-  visual();
-  $("jawab").textContent = t("rt.jawab", { butuh: num(b, 1), n: horizon, lokal: num(lokal, 1), persen: num((lokal / b) * 100, 0), total: num(gw(r.total_mwp), 1), ekspor: num(gw(r.ekspor_mwp), 1) });
-}
-
-function visual() {
-  const r = d.ringkas, b = butuh(), lokal = gw(r.lokal_mwp), ek = gw(r.ekspor_mwp), v = (x) => t("rt.gwp_th", { v: num(x, 1) });
-  $("visual").innerHTML = heroVisual({ angka: num((lokal / b) * 100, 0) + "%", label: t("rt.vis.label"), ref: { nilai: b }, teksRef: t("rt.vis.butuh", { v: num(b, 1) }),
-    rows: [{ label: t("rt.vis.lokal"), nilai: lokal, teks: v(lokal), kelas: "jm-hv-b1" }, { label: t("rt.vis.ekspor"), nilai: ek, teks: v(ek), kelas: "jm-hv-b2" }] });
+  const r = d.ringkas, b = butuh(), lokal = gw(r.lokal_mwp), tk = d.pabrikan.map((x) => x.tkdn).filter((x) => x != null);
+  $("jawab").textContent = t("rt.kh.lead");
+  $("ubin").innerHTML = ubinHtml([
+    { ikon: "proyek", nilai: num((lokal / b) * 100, 0), satuan: "%", label: t("rt.kh.u1"), href: "#h-keb", turunan: true },
+    { ikon: "tabel", nilai: num(gw(r.total_mwp), 1), satuan: "GWp", label: t("rt.kh.u2"), href: "#h-peta", turunan: true },
+    { ikon: "tingkat", nilai: num(median(tk), 1), satuan: "%", label: t("rt.kh.u3"), href: "#h-tkdn", turunan: true },
+  ]);
 }
 
 function kartu() {

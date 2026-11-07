@@ -3,7 +3,7 @@ import { mulaiHalaman } from "/inti/kepala.js";
 import { muatMapLibre } from "/inti/maplibre.js";
 import { nanti, esc, hantuHtml } from "/inti/umum.js";
 import { t, tanggal } from "/i18n.js";
-import { muatData, tampilGalat, sumberHtml, sumberLipat, kartuHtml, batangHtml, pasangBar, temuanHtml, heroVisual, pil, teksTek, teksStatus, num, saatBahasa, amanUrl } from "/analisis.js";
+import { muatData, tampilGalat, sumberHtml, sumberLipat, kartuHtml, batangHtml, pasangBar, temuanHtml, heroVisual, ubinHtml, pil, teksTek, teksStatus, num, saatBahasa, amanUrl } from "/analisis.js";
 
 const $ = (id) => document.getElementById(id);
 const param = new URLSearchParams(location.search).get("prov");
@@ -21,17 +21,15 @@ const warna = (v) => getComputedStyle(document.documentElement).getPropertyValue
 
 /* ---------- daftar ---------- */
 
-function visual() {
-  const urut = [...data.baris].filter((p) => p.terpasang_mw).sort((a, b) => b.terpasang_mw.nilai - a.terpasang_mw.nilai), tot = urut.reduce((x, p) => x + p.terpasang_mw.nilai, 0);
-  $("visual").innerHTML = heroVisual({ angka: num((urut[0].terpasang_mw.nilai / tot) * 100, 0) + "%", label: t("wl.vis.label", { nama: urut[0].nama }),
-    rows: urut.slice(0, 3).map((p, i) => ({ label: p.nama, nilai: p.terpasang_mw.nilai, teks: num(p.terpasang_mw.nilai, 0) + " MW", kelas: i ? "jm-hv-b2" : "jm-hv-b1" })) });
-}
-
 function jawab() {
-  visual();
-  const urut = [...data.baris].filter((p) => p.terpasang_mw).sort((a, b) => b.terpasang_mw.nilai - a.terpasang_mw.nilai);
-  const a = urut[0];
-  $("jawab").textContent = t("wl.jawab", { nama: a.nama, mw: num(a.terpasang_mw.nilai, 1), n: num(data.baris.filter((p) => p.rued.perda).length), tahun: a.terpasang_mw.tahun });
+  const urut = [...data.baris].filter((p) => p.terpasang_mw).sort((a, b) => b.terpasang_mw.nilai - a.terpasang_mw.nilai), a = urut[0];
+  const tot = urut.reduce((x, p) => x + p.terpasang_mw.nilai, 0), rued = data.baris.filter((p) => p.rued.perda).length;
+  $("jawab").textContent = t("wl.kh.lead");
+  $("ubin").innerHTML = ubinHtml([
+    { ikon: "analisis", nilai: num(a.terpasang_mw.nilai, 0), satuan: "MW", label: t("wl.kh.u1", { nama: a.nama }), href: "#h-peta" },
+    { ikon: "regulasi", nilai: num(rued), satuan: t("wl.kh.u2s", { n: data.baris.length }), label: t("wl.kh.u2"), href: "#h-urut" },
+    { ikon: "peta", nilai: num((a.terpasang_mw.nilai / tot) * 100, 0), satuan: "%", label: t("wl.kh.u3", { nama: a.nama }), href: "#h-urut", turunan: true },
+  ]);
 }
 
 function kartu() {

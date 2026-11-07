@@ -14,3 +14,6 @@ data-panen/
 .claude/ilmu-agent/jejak/
 # Dokumen internal METI: ringkasan berkas rahasia/draf, tidak masuk repo publik.
 docs/internal/
+
+# Log dan rekaman playwright-cli lokal: tidak masuk repo publik.
+.playwright-cli/
