@@ -27,21 +27,75 @@ Logo hanya untuk mengenali organisasi. Diambil 7 Nov 2026 dari ikon resmi di sit
 
 Diambil oleh scripts/panen/panen_logo.mjs (UA METI, robots.txt dihormati, jeda >= 2 dtk per host). Berkas public/img/logo/org/<org_id>.png; catatan mentah data-panen/logo/logo.jsonl. Logo hanya untuk mengenali organisasi; hak cipta tetap pada pemiliknya. Metode wikidata-p154: logo di Wikimedia Commons.
 
+- en_27ab45ac94 | PT Toyota-Astra Motor | logo-header | https://www.toyota.astra.co.id/assets/svg/LogoDark.svg
+- en_43c1d59ffc | VinFast Indonesia | logo-header | https://vinfastauto.id/themes/custom/vinfast/images/logo.png
+- en_4e09b94b48 | Gaikindo | apple-touch-icon | https://www.gaikindo.or.id/wp-content/uploads/2015/08/cropped-log-stick1-360x360.png
+- en_5455f1bbf9 | Pupuk Indonesia | logo-header | https://www.pupuk-indonesia.com/assets/img/logo-asean.png
+- en_69420x4809 | Asian Agri | apple-touch-icon | https://www.asianagri.com/wp-content/uploads/2021/02/cropped-cropped-asianagri_logo-2-192x192.png
+- en_9babc68051 | PT Astra International Tbk | wikidata-p154 | https://commons.wikimedia.org/wiki/File:Logo_of_PT_Astra_International_Tbk_terbaru_2025.png (Wikidata Q4688912)
+- in_01f50e6d62 | REC Group | logo-header | https://www.recgroup.com/themes/custom/rec_tara/logo.svg
+- in_0585deca28 | Ministry of Foreign Affairs of the Netherlands | apple-touch-icon | https://www.rijksoverheid.nl/themes/logoblauw/apple-touch-icon.png
+- in_114f742f83 | Preformed Line Products | logo-header | https://plp.com/templates/preformed-home/img/preformed-line-products-logo-new-brand.png
+- in_12222945f1 | Agence Francaise de Developpement | logo-header | https://www.afd.fr/sites/default/files/2025-03/logo_AFD.png
+- in_163f0208f6 | Mubadala | logo-header | https://masdar.ae/-/media/corporate-revamp/logo/masdar-logo-white.svg?iar=0&hash=0121760320B8BDCD218684677631E055
+- in_1964fb1e88 | Standard Chartered | wikidata-p154 | https://commons.wikimedia.org/wiki/File:Standard_Chartered_(2021).svg (Wikidata Q548278)
+- in_277ebc86bd | Wilmar International | wikidata-p154 | https://commons.wikimedia.org/wiki/File:Wilmar_International_Logo.svg (Wikidata Q1786712)
+- in_2acc58947a | International Finance Corporation | logo-header | https://iif.co.id/images/logo.png
+- in_2e43564369 | Tohoku Electric Power | wikidata-p154 | https://commons.wikimedia.org/wiki/File:T%C5%8Dhoku-Denryoku-Logo.svg (Wikidata Q592765)
 - in_34901d69af | Siemens Energy | favicon | https://www.siemens-energy.com/favicon.ico
+- in_3b887e9870 | China Gezhouba Group | favicon | http://www.cggc.cn/favicon.ico
+- in_3f774c96af | Cnooc | wikidata-p154 | https://commons.wikimedia.org/wiki/File:CNOOC_Logo.svg (Wikidata Q795354)
+- in_4227ab3084 | Giz | apple-touch-icon | https://www.giz.de/themes/custom/dreist/build/assets/images/favicon/apple-touch-icon-180x180.png
+- in_43cfaca072 | Lapp Group (JJ Lapp) | logo-header | https://www.lappgroup.com/_assets/6130e8f553858737b1120435df12e747/Images/logo_lapp.svg
+- in_4a05a779f3 | Deg | logo-header | https://iif.co.id/images/logo.png
 - in_4c35ebc90f | Equinor | wikidata-p154 | https://commons.wikimedia.org/wiki/File:Equinor.svg (Wikidata Q1776022)
+- in_526566f0dc | United Nations Development Programme | logo-header | https://www.undp.org/sites/g/files/zskgke326/files/2025-04/undp-logo-blue.4f32e17f.svg
+- in_553d02ab56 | Siemens | favicon | https://www.siemens.com/_static/favicon.svg
+- in_5f27d254a7 | Taqa | logo-header | https://masdar.ae/-/media/corporate-revamp/logo/masdar-logo-white.svg?iar=0&hash=0121760320B8BDCD218684677631E055
+- in_6abe276544 | Proparco | logo-header | https://www.proparco.fr/sites/proparco/files/2025-04/proparco_logo_rvb.png
+- in_6f68666e54 | US Department of Energy | logo-header | https://www.energy.gov/themes/custom/energy_gov/img/logo-image.png
+- in_7d89514771 | Dongfang Electric | wikidata-p154 | https://commons.wikimedia.org/wiki/File:Dongfang_Electric_logo.svg (Wikidata Q5295864)
+- in_8ad0a593f5 | Greenvolt | apple-touch-icon | https://greenvolt.com/wp-content/uploads/2022/10/cropped-G_Corporate_rede-03-scaled-1-192x192.jpg
+- in_9a375db244 | Asian Development Bank | wikidata-p154 | https://commons.wikimedia.org/wiki/File:ADB_logo_%26_wordmark.svg (Wikidata Q188822)
+- in_a1cf50e2c0 | Astronergy (Chint) | apple-touch-icon | https://image.chint.id/s3/webp/co93635/companylogo/chintindonesia6e85b17d-a6e4-43fd-892b-1254406c0369.png
+- in_a402f0b258 | myclimate Foundation | apple-touch-icon | https://www.myclimate.org/assets/Icons/android-chrome-512x512.png
+- in_b060da46bb | GE Vernova | logo-header | https://www.gevernova.com/themes/custom/ge_vernova_unified/logo.svg
+- in_b1b68a3e6f | US Agency for International Development (USAID) | wikidata-p154 | https://commons.wikimedia.org/wiki/File:USAID-Identity.svg (Wikidata Q217072)
+- in_cd6da9ed54 | Veolia | logo-header | https://www.veolia.com/sites/g/files/dvc4206/files/styles/logo_mobile_base/public/logo-veolia.png.webp?itok=G6OrciMo
+- in_dfb3ec26f0 | Hyundai Motor Group | wikidata-p154 | https://commons.wikimedia.org/wiki/File:Hyundai_Motor_Group_CI.svg (Wikidata Q59243)
+- in_e7e1f656b9 | Harbin Electric | wikidata-p154 | https://commons.wikimedia.org/wiki/File:Harbin_Electronic_Corporation_logo.svg (Wikidata Q5654441)
+- in_f57be26fd0 | Bharat Heavy Electricals (BHEL) | wikidata-p154 | https://commons.wikimedia.org/wiki/File:BHEL_logo.svg (Wikidata Q854820)
 - l_pjci_asosiasi | Indonesia Smart Grid Association (PJCI) | apple-touch-icon | https://pjci.or.id/wp-content/uploads/2025/07/cropped-logo_pjci-1-192x192.png
 - p_00e64c4829 | PT Swadaya Prima Utama | apple-touch-icon | https://swadaya.co.id/wp-content/uploads/2022/04/cropped-STP_logo-192x192.png
+- p_22ac8f2b5a | Agra | logo-header | https://agra.nic.in/wp-content/themes/district-theme/images/digital-india.png
+- p_2b9ed19302 | Solarvest | apple-touch-icon | https://solarvest.com/wp-content/uploads/2023/07/cropped-solarvest-favicon-v2-192x192.png
+- p_48287deb5e | Inergia | favicon | https://www.inergia.id/favicon.svg
+- p_5380eeb9d6 | PT Eleska Iatki | logo-header | https://eleskaiatki.com/image/logo.png
 - p_54c31c66e1 | PT Preformed Line Products Indonesia | logo-header | https://plp.com/templates/preformed-home/img/preformed-line-products-logo-new-brand.png
+- p_5fc1234af4 | PT Bmt Asia Indonesia | logo-header | https://bmtasiaindonesia.com/public/uploads/logo.PNG
+- p_6671d875f7 | PT Wedosolar Indonesia | favicon | https://www.wedosolarindonesia.com/favicon.ico
+- p_68919c25c9 | PT Prima Perkasa Teknik Indonesia | apple-touch-icon | https://primaperkasa.co.id/wp-content/uploads/2021/07/cropped-cropped-favicon-prima_perkasa-v.1.1-192x192.png
+- p_75703b5fda | Energihub | logo-header | https://www.energihub.id/assets/logo.svg
 - p_79b7fffa25 | PT Adyawinsa Electrical & Power | logo-header | https://www.adyawinsa.com/_next/image?url=%2Flogo-adw-white.png&w=256&q=75
+- p_7f829f524e | Adaro | apple-touch-icon | https://www.djadaro.com/wp-content/themes/adaro/assets/img/favicons/favicon-194x194.png
 - p_8841495321 | Wpd | apple-touch-icon | https://www.wpd.de/android-icon-192x192.png
+- p_8e8a5c07cc | Hexa Multi Energi | apple-touch-icon | https://hexamultienergi.com/wp-content/uploads/2022/09/cropped-Picsart_22-09-30_11-01-38-827-192x192.png
 - p_98d844b1d5 | PT Bernadi Utama (Solterra) | logo-header | https://www.bernadi.co.id/images/2026/05/20/logo_elterra1.png
+- p_a9395eb2af | Iforte | logo-header | https://www.iforte.id/media/company-logo/new-iforte.png
+- p_c59badb422 | Agc | favicon | https://www.agcti.org/favicon.ico
 - p_ccd4299e75 | PT Azet Surya Lestari | apple-touch-icon | https://www.azetsurya.id/img/apple-touch-icon.png
 - p_deeb9728ee | PT Thornova Solar Indonesia | favicon | https://www.thornova-solar.com/assets/images/favicon.png
 - p_e67d3df2d3 | PT Primalayan Citra Mandiri | apple-touch-icon | https://primalayan.com/assets/themes/frontend/universal/img/apple-touch-icon-152x152.png
 - p_f05b131e81 | PT IDN Solar Tech | logo-header | https://www.idnsolar.co.id/wp-content/uploads/2023/11/LOGO-IDN-SOLAR.png
 - p_f21482de0d | PT Trina Mas Agra Indonesia | logo-header | https://www-cdn.trinasolar.com/wwwstorage/public/images/en-glb/footer/footer_logo_logo1.png
+- p_fb9fd602c6 | Sedayu | apple-touch-icon | https://sedayu.co.id/wp-content/uploads/2021/11/cropped-icon-sedayu-1-192x192.png
+- pm_1c66exc8e3f | PT Archi Indonesia Tbk | logo-header | https://archiindonesia.com/wp-content/uploads/2024/11/logo-archi-full.webp
+- pm_7bedfx6b888 | PT Bajradaya Sentranusa | apple-touch-icon | https://bajradaya.com/wp-content/uploads/2019/08/cropped-go-green29091901-750x420-192x192.jpg
+- pm_895aax201f5 | PT Bakrie Power | logo-header | https://bakriepower.co.id//template/frontend/images/bp-logo-baru.png
+- pm_b4424x486f6 | PT Sumber Organik | logo-header | https://www.sumberorganik.com/img/logo%20SO.png
 - tk_0668df98 | tk_0668df98 | apple-touch-icon | https://www.starlite.id/wp-content/uploads/2025/03/cropped-logo-192x192.png
 - tk_07501176 | tk_07501176 | favicon | https://www.suryamaxindustries.com/favicon.ico
+- tk_0931efe8 | PT Microvision Indonesia | favicon | https://microvision.co.id/favicon.ico
 - tk_0eed018a | tk_0eed018a | logo-header | https://www.newasia.co.id/_img/logos.png
 - tk_1629b0b7 | tk_1629b0b7 | logo-header | https://www.powerindo.co.id/images/logo/50146logo.png
 - tk_1d3a597d | tk_1d3a597d | logo-header | https://magnakabelnusantara.co.id/logo-magna.png
@@ -88,74 +142,3 @@ Diambil oleh scripts/panen/panen_logo.mjs (UA METI, robots.txt dihormati, jeda >
 - tk_db3acaae | tk_db3acaae | apple-touch-icon | https://bambangdjaja.com/wp-content/uploads/2019/02/cropped-favicon-bd-192x192.jpg
 - tk_de99b435 | tk_de99b435 | logo-header | https://www.pindad.com/assets/img/theme-1/logo-putih.png
 - tk_e79c0f86 | tk_e79c0f86 | logo-header | https://jembo.co.id/assets/images/fav/logo_mobile.png
-
-## Logo kampus
-
-scripts/panen/logo_kampus.mjs (UA METI, jeda >= 2 dtk). Logo hanya untuk mengenali kampus; hak cipta pada pemiliknya. Pemetaan nama: public/data/logo_kampus.json. Ditolak: Wikidata P154 UGM (logo fakultas FEB) dan berkas JPG (tidak tembus pandang); UGM, USK, UPI, Unpad, Unsri, Unej, Polinema tanpa logo (situs 403/timeout/ikon tak terbaca).
-
-- kampus/ipb.png | Institut Pertanian Bogor | ikon/logo resmi situs | https://ipb.ac.id
-- kampus/itb.png | Institut Teknologi Bandung | ikon/logo resmi situs | https://itb.ac.id
-- kampus/its.png | Institut Teknologi Sepuluh Nopember | ikon/logo resmi situs | https://its.ac.id
-- kampus/telkom.png | Universitas Telkom | wikidata-p154 | Wikimedia Commons via Wikidata Q15057698
-- kampus/ub.png | Universitas Brawijaya | wikidata-p154 | Wikimedia Commons via Wikidata Q1336952
-- kampus/ui.png | Universitas Indonesia | ikon/logo resmi situs | https://ui.ac.id
-- kampus/um.png | Universitas Negeri Malang | wikidata-p154 | Wikimedia Commons via Wikidata Q4250919
-- kampus/unair.png | Universitas Airlangga | wikidata-p154 | Wikimedia Commons via Wikidata Q1494353
-- kampus/unand.png | Universitas Andalas | ikon/logo resmi situs | https://unand.ac.id
-- kampus/undip.png | Universitas Diponegoro | ikon/logo resmi situs | https://undip.ac.id
-- kampus/unhas.png | Universitas Hasanuddin | ikon/logo resmi situs | https://unhas.ac.id
-- kampus/unila.png | Universitas Lampung | ikon/logo resmi situs | https://unila.ac.id
-- kampus/unnes.png | Universitas Negeri Semarang | ikon/logo resmi situs | https://unnes.ac.id
-- kampus/unp.png | Universitas Negeri Padang | ikon/logo resmi situs | https://unp.ac.id
-- kampus/unri.png | Universitas Riau | ikon/logo resmi situs | https://unri.ac.id
-- kampus/uns.png | Universitas Sebelas Maret | ikon/logo resmi situs | https://uns.ac.id
-- kampus/unud.png | Universitas Udayana | wikidata-p154 | Wikimedia Commons via Wikidata Q1573634
-- kampus/usu.png | Universitas Sumatera Utara | ikon/logo resmi situs | https://usu.ac.id
-
-## Logo organisasi tambahan 8 Nov 2026
-
-Oleh scripts/pipa/logo_org_situs.mjs (cari situs resmi: data, tautan sumber, Wikidata P856, tebakan domain terverifikasi nama) lalu scripts/panen/panen_logo.mjs --daftar (apple-touch-icon, logo header, favicon, Wikidata P154; og:image TIDAK dipakai). Ditinjau tangan; yang salah ada di data/rantai/logo_tolak.json.
-
-- in_01f50e6d62 | REC Group | logo-header | https://www.recgroup.com/themes/custom/rec_tara/logo.svg
-- in_0585deca28 | Ministry of Foreign Affairs of the Netherlands | apple-touch-icon | https://www.rijksoverheid.nl/themes/logoblauw/apple-touch-icon.png
-- in_114f742f83 | Preformed Line Products | logo-header | https://plp.com/templates/preformed-home/img/preformed-line-products-logo-new-brand.png
-- in_12222945f1 | Agence Francaise de Developpement | logo-header | https://www.afd.fr/sites/default/files/2025-03/logo_AFD.png
-- in_1964fb1e88 | Standard Chartered | wikidata-p154 | https://commons.wikimedia.org/wiki/File:Standard_Chartered_(2021).svg (Wikidata Q548278)
-- in_277ebc86bd | Wilmar International | wikidata-p154 | https://commons.wikimedia.org/wiki/File:Wilmar_International_Logo.svg (Wikidata Q1786712)
-- in_2e43564369 | Tohoku Electric Power | wikidata-p154 | https://commons.wikimedia.org/wiki/File:T%C5%8Dhoku-Denryoku-Logo.svg (Wikidata Q592765)
-- in_3b887e9870 | China Gezhouba Group | favicon | http://www.cggc.cn/favicon.ico
-- in_3f774c96af | Cnooc | wikidata-p154 | https://commons.wikimedia.org/wiki/File:CNOOC_Logo.svg (Wikidata Q795354)
-- in_4227ab3084 | Giz | apple-touch-icon | https://www.giz.de/themes/custom/dreist/build/assets/images/favicon/apple-touch-icon-180x180.png
-- in_43cfaca072 | Lapp Group (JJ Lapp) | logo-header | https://www.lappgroup.com/_assets/6130e8f553858737b1120435df12e747/Images/logo_lapp.svg
-- in_526566f0dc | United Nations Development Programme | logo-header | https://www.undp.org/sites/g/files/zskgke326/files/2025-04/undp-logo-blue.4f32e17f.svg
-- in_553d02ab56 | Siemens | favicon | https://www.siemens.com/_static/favicon.svg
-- in_6abe276544 | Proparco | logo-header | https://www.proparco.fr/sites/proparco/files/2025-04/proparco_logo_rvb.png
-- in_6f68666e54 | US Department of Energy | logo-header | https://www.energy.gov/themes/custom/energy_gov/img/logo-image.png
-- in_7d89514771 | Dongfang Electric | wikidata-p154 | https://commons.wikimedia.org/wiki/File:Dongfang_Electric_logo.svg (Wikidata Q5295864)
-- in_9a375db244 | Asian Development Bank | wikidata-p154 | https://commons.wikimedia.org/wiki/File:ADB_logo_%26_wordmark.svg (Wikidata Q188822)
-- in_a1cf50e2c0 | Astronergy (Chint) | apple-touch-icon | https://image.chint.id/s3/webp/co93635/companylogo/chintindonesia6e85b17d-a6e4-43fd-892b-1254406c0369.png | DIWARISI: logo induk CHINT
-- in_b060da46bb | GE Vernova | logo-header | https://www.gevernova.com/themes/custom/ge_vernova_unified/logo.svg
-- in_b1b68a3e6f | US Agency for International Development (USAID) | wikidata-p154 | https://commons.wikimedia.org/wiki/File:USAID-Identity.svg (Wikidata Q217072)
-- in_cd6da9ed54 | Veolia | logo-header | https://www.veolia.com/sites/g/files/dvc4206/files/styles/logo_mobile_base/public/logo-veolia.png.webp?itok=G6OrciMo
-- in_dfb3ec26f0 | Hyundai Motor Group | wikidata-p154 | https://commons.wikimedia.org/wiki/File:Hyundai_Motor_Group_CI.svg (Wikidata Q59243)
-- in_e7e1f656b9 | Harbin Electric | wikidata-p154 | https://commons.wikimedia.org/wiki/File:Harbin_Electronic_Corporation_logo.svg (Wikidata Q5654441)
-- in_f57be26fd0 | Bharat Heavy Electricals (BHEL) | wikidata-p154 | https://commons.wikimedia.org/wiki/File:BHEL_logo.svg (Wikidata Q854820)
-- l_11621e2b6c | Direktorat Perencanaan dan Pembangunan Infrastruktur EBTKE | logo-header | https://ebtke.esdm.go.id/media/landing/logo-esdm.png | DIWARISI: logo Ditjen EBTKE/ESDM dipakai situs unit ini
-- l_15bc6ff298 | Direktorat Konservasi Energi | logo-header | https://ebtke.esdm.go.id/media/landing/logo-esdm.png | DIWARISI: logo Ditjen EBTKE/ESDM dipakai situs unit ini
-- l_21d3901823 | Direktorat Panas Bumi | logo-header | https://ebtke.esdm.go.id/media/landing/logo-esdm.png | DIWARISI: logo Ditjen EBTKE/ESDM dipakai situs unit ini
-- l_38ba1d6f56 | Direktorat Jenderal Energi Baru, Terbarukan dan Konservasi Energi | logo-header | https://ebtke.esdm.go.id/media/landing/logo-esdm.png | DIWARISI: logo Ditjen EBTKE/ESDM dipakai situs unit ini
-- l_69296f786c | Direktorat Aneka Energi Baru dan Energi Terbarukan | logo-header | https://ebtke.esdm.go.id/media/landing/logo-esdm.png | DIWARISI: logo Ditjen EBTKE/ESDM dipakai situs unit ini
-- l_e4f0f03487 | Direktorat Bioenergi | logo-header | https://ebtke.esdm.go.id/media/landing/logo-esdm.png | DIWARISI: logo Ditjen EBTKE/ESDM dipakai situs unit ini
-- p_2b9ed19302 | Solarvest | apple-touch-icon | https://solarvest.com/wp-content/uploads/2023/07/cropped-solarvest-favicon-v2-192x192.png
-- p_48287deb5e | Inergia | favicon | https://www.inergia.id/favicon.svg
-- p_5380eeb9d6 | PT Eleska Iatki | logo-header | https://eleskaiatki.com/image/logo.png
-- p_5fc1234af4 | PT Bmt Asia Indonesia | logo-header | https://bmtasiaindonesia.com/public/uploads/logo.PNG
-- p_68919c25c9 | PT Prima Perkasa Teknik Indonesia | apple-touch-icon | https://primaperkasa.co.id/wp-content/uploads/2021/07/cropped-cropped-favicon-prima_perkasa-v.1.1-192x192.png
-- p_75703b5fda | Energihub | logo-header | https://www.energihub.id/assets/logo.svg
-- p_8e8a5c07cc | Hexa Multi Energi | apple-touch-icon | https://hexamultienergi.com/wp-content/uploads/2022/09/cropped-Picsart_22-09-30_11-01-38-827-192x192.png
-- p_a9395eb2af | Iforte | logo-header | https://www.iforte.id/media/company-logo/new-iforte.png
-- p_fb9fd602c6 | Sedayu | apple-touch-icon | https://sedayu.co.id/wp-content/uploads/2021/11/cropped-icon-sedayu-1-192x192.png
-- pm_1c66exc8e3f | PT Archi Indonesia Tbk | logo-header | https://archiindonesia.com/wp-content/uploads/2024/11/logo-archi-full.webp
-- pm_895aax201f5 | PT Bakrie Power | logo-header | https://bakriepower.co.id//template/frontend/images/bp-logo-baru.png
-- pm_b4424x486f6 | PT Sumber Organik | logo-header | https://www.sumberorganik.com/img/logo%20SO.png
-- pm_129dbx35045 | PT Vale Indonesia Tbk | DIWARISI dari in_fe91e3c6a5 (Vale) | situs resminya vale.com/indonesia memakai logo Vale induk
