@@ -623,3 +623,19 @@ dialog.jm-pj-sheet{height:fit-content;min-height:0}@media (max-width:599px){dial
 .jm-pj-penuh .jm-pj-bilah.jm-saring{padding-inline:var(--tepi)}
 .jm-pj-lapis{left:var(--tepi)}.jm-pj-panel{right:var(--tepi)}
 @media (max-width:999px){.jm-pj-penuh .jm-pj-bilah.jm-saring{border-radius:0;border-inline:0}.jm-pj-area{border-radius:0;border-inline:0}}
+/* pemilik 8 Nov 2026: saring tabel pembangkit ujung ke ujung */
+.jm-saring:has(#kpNIpp){display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.jm-saring:has(#kpNIpp)>*{width:100%;min-width:0}
+#kpNIpp{justify-content:center;width:100%}
+/* status dan program di panel Lapisan peta */
+.jm-pj-lap-1{display:grid;grid-template-columns:minmax(0,1fr);gap:4px;margin:0 0 10px;padding:0;list-style:none}
+.jm-pj-lap-st{display:flex;align-items:center;gap:8px;width:100%;min-height:32px;padding:4px 8px;border:1px solid transparent;border-radius:var(--r-sm);background:none;color:var(--ink);font:500 var(--t-tombol)/1.2 var(--font);text-align:left;cursor:pointer}
+.jm-pj-lap-st>span:nth-child(2){flex:1;min-width:0}
+.jm-pj-lap-st b{font-variant-numeric:tabular-nums}
+.jm-pj-lap-st:hover{background:var(--surface)}
+.jm-pj-lap-st[aria-pressed="true"]{background:var(--soft-hijau);border-color:var(--accent)}
+.jm-pj-titik{flex:none;width:10px;height:10px;border-radius:50%}
+.jm-pj-lap-ik{flex:none;display:inline-grid;place-items:center;width:22px;height:22px;color:var(--accent)}
+.jm-pj-lap-ik svg{width:16px;height:16px}
+.jm-pj-s-dibatalkan{background:var(--bad)}
+.jm-pj-lap .jm-pj-lap-st,.jm-pj-lap .jm-pj-lap-st[aria-pressed="false"]{opacity:1;filter:none;color:var(--ink)}

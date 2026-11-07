@@ -127,7 +127,7 @@ function ex(id, d) {
 }
 function kepalaSeksi() {
   const dok = dokSumber();
-  ex("exGb", { ikon: "analisis", topik: t("pj.ex.gb"), judulHtml: esc(t("pj.ex.gb.j")), subHtml: esc(t("pj.ex.gb.s")), aksiHtml: aksiHtml() + sumberHtml(`${esc(t("pj.sumber", { tgl: tanggal(DATA.dibangun_pada, { gaya: "panjang" }), dok }))}<br>${esc(t("pj.sumber.rinci"))}`) });
+  if ($("exGb")) ex("exGb", { ikon: "analisis", topik: t("pj.ex.gb"), judulHtml: esc(t("pj.ex.gb.j")), subHtml: esc(t("pj.ex.gb.s")), aksiHtml: aksiHtml() + sumberHtml(`${esc(t("pj.sumber", { tgl: tanggal(DATA.dibangun_pada, { gaya: "panjang" }), dok }))}<br>${esc(t("pj.sumber.rinci"))}`) });
   ex("exProg", { ikon: "topik", topik: t("pj.ex.prog"), judulHtml: `${hl(num(PROG.baris.length))} ${esc(t("pj.ex.prog.j"))}`, subHtml: esc(t("pj.ex.prog.s", { n: num(PROG.baris.filter((g) => g.jumlah_proyek).length) })), aksiHtml: aksiHtml() });
   kepalaTabel();
 }
@@ -150,6 +150,7 @@ function gambarHero() {
 function segarHero() {
   const st = hitung(SEMUA, (r) => r.st), ada1 = URUT_ST.concat(TIDAK).filter((k) => st[k]);
   const ub = (att, nilai, ikonHtml, nama, n, tekan, kls = "") => `<button type="button" class="jm-pj-ub ${kls}" ${att}="${esc(nilai)}" aria-pressed="${tekan}"><span class="jm-pj-ub-ik">${ikonHtml}</span><b>${num(n)}</b><span class="jm-pj-ub-n">${esc(nama)}</span></button>`;
+  if (!$("pjStatus")) return;
   $("pjStatus").innerHTML = ada1.map((k) => ub("data-st", k, ikonStatus(k), labSt(k), st[k], F.st === k, "jm-st-" + k)).join("");
   const pc = hitung(SEMUA, (r) => r.prog), baris = PROG.baris.map((g) => [g.id, pc[g.id] || 0]).sort((a, b) => b[1] - a[1]);
   $("pjProgBar").innerHTML = baris.map(([id, c]) => ub("data-pg", id, ikProg(id), progNamaPendek(id), c, F.prog === id)).join("");
@@ -157,10 +158,10 @@ function segarHero() {
 function ubahFilter(k, v) {
   F[k] = F[k] === v ? "" : v;
   $({ st: "fst", prog: "fprog" }[k]).value = F[k];
-  segarHero(); terapkan();
+  segarHero(); terapkan(); gambarLegenda();
 }
-$("pjStatus").addEventListener("click", (e) => { const b = e.target.closest("[data-st]"); if (b) ubahFilter("st", b.dataset.st); });
-$("pjProgBar").addEventListener("click", (e) => { const b = e.target.closest("[data-pg]"); if (b) ubahFilter("prog", b.dataset.pg); });
+$("pjStatus")?.addEventListener("click", (e) => { const b = e.target.closest("[data-st]"); if (b) ubahFilter("st", b.dataset.st); });
+$("pjProgBar")?.addEventListener("click", (e) => { const b = e.target.closest("[data-pg]"); if (b) ubahFilter("prog", b.dataset.pg); });
 
 /* ---------- filter ---------- */
 const F = { q: "", tek: "", st: "", prog: "", prov: "" };
@@ -319,9 +320,13 @@ function rapikanPeta(peta) {
     if (sl === "place") peta.setFilter(ly.id, ly.filter ? ["all", ly.filter, ["within", INDONESIA]] : ["within", INDONESIA]);
   }
 }
+/* pemilik 8 Nov 2026: status dan program masuk ke peta; titik bisa diwarnai menurut teknologi atau status */
+const WARNA_ST = { rencana: "--info", izin: "--data5", pendanaan: "--data1", konstruksi: "--warn", beroperasi: "--ok", dibatalkan: "--bad", [TIDAK]: "--ink2" };
+let WARNAI = "tek";
 const fiturSemua = () => {
   const w = {}; for (const k of TEKS) w[k] = warna(TEK_WARNA[k] || "--ink2");
-  return { type: "FeatureCollection", features: tampil.filter((r) => r.ada && !HIDE.has(r.tek) && (r.p.lokasi.presisi === "titik_persis" ? PRES.pasti : PRES.kira)).map((r) => ({ type: "Feature", properties: { id: r.id, tek: r.tek, warna: w[r.tek] || warna("--ink2"), op: r.p.lokasi.presisi === "titik_persis" ? 1 : 0.6 }, geometry: { type: "Point", coordinates: [r.p.lokasi.lng, r.p.lokasi.lat] } })) };
+  const ws = {}; for (const k in WARNA_ST) ws[k] = warna(WARNA_ST[k]);
+  return { type: "FeatureCollection", features: tampil.filter((r) => r.ada && !HIDE.has(r.tek) && (r.p.lokasi.presisi === "titik_persis" ? PRES.pasti : PRES.kira)).map((r) => ({ type: "Feature", properties: { id: r.id, tek: r.tek, warna: (WARNAI === "st" ? ws[r.st] : w[r.tek]) || warna("--ink2"), op: r.p.lokasi.presisi === "titik_persis" ? 1 : 0.6 }, geometry: { type: "Point", coordinates: [r.p.lokasi.lng, r.p.lokasi.lat] } })) };
 };
 function pasangLapisan() {
   const lingkar = warna("--paper");
@@ -469,11 +474,23 @@ function kePeta(fit = true) {
 }
 function gambarLegenda() {
   const c = hitung(tampil, (r) => r.tek), loc = tampil.filter((r) => r.ada), pasti = loc.filter((r) => r.p.lokasi.presisi === "titik_persis").length;
-  $("pjLegenda").innerHTML = `<p class="jm-pj-lapis-j">${esc(t("pj.lapis.tek"))}</p><ul class="jm-pj-lap jm-pj-lap-2">${TEKS.filter((k) => c[k]).map((k) => `<li><button type="button" aria-pressed="${!HIDE.has(k)}" data-tek="${esc(k)}" title="${esc(labTek(k))}">${pilTek(k)}<b>${num(c[k])}</b></button></li>`).join("")}</ul>
+  const stc = hitung(SEMUA, (r) => r.st), pc = hitung(SEMUA, (r) => r.prog);
+  const lapSt = URUT_ST.concat(TIDAK).filter((k) => stc[k]).map((k) => `<li><button type="button" class="jm-pj-lap-st" aria-pressed="${F.st === k}" data-st="${esc(k)}"><span class="jm-pj-titik jm-pj-s-${k}" aria-hidden="true"></span><span>${esc(labSt(k))}</span><b>${num(stc[k])}</b></button></li>`).join("");
+  const lapPg = PROG.baris.map((g) => [g.id, pc[g.id] || 0]).filter(([, n]) => n).sort((a, b) => b[1] - a[1]).map(([id, n]) => `<li><button type="button" class="jm-pj-lap-st" aria-pressed="${F.prog === id}" data-pg="${esc(id)}"><span class="jm-pj-lap-ik" aria-hidden="true">${ikProg(id)}</span><span>${esc(progNamaPendek(id))}</span><b>${num(n)}</b></button></li>`).join("");
+  $("pjLegenda").innerHTML = `<div class="jm-pj-seg2" role="group" aria-label="${esc(t("pj.lapis.warnai"))}"><button type="button" aria-pressed="${WARNAI === "tek"}" data-wr="tek">${esc(t("pj.lapis.w_tek"))}</button><button type="button" aria-pressed="${WARNAI === "st"}" data-wr="st">${esc(t("pj.lapis.w_st"))}</button></div>
+    <p class="jm-pj-lapis-j">${esc(t("pj.stat.judul"))}</p><ul class="jm-pj-lap jm-pj-lap-1">${lapSt}</ul>
+    <p class="jm-pj-lapis-j">${esc(t("pj.pbar.judul"))}</p><ul class="jm-pj-lap jm-pj-lap-1">${lapPg}</ul>
+    <p class="jm-pj-lapis-j">${esc(t("pj.lapis.tek"))}</p><ul class="jm-pj-lap jm-pj-lap-2">${TEKS.filter((k) => c[k]).map((k) => `<li><button type="button" aria-pressed="${!HIDE.has(k)}" data-tek="${esc(k)}" title="${esc(labTek(k))}">${pilTek(k)}<b>${num(c[k])}</b></button></li>`).join("")}</ul>
     <p class="jm-pj-lapis-j">${esc(t("pj.lapis.presisi"))}${sumberHtml(esc(t("pj.peta.tempat", { n: num(loc.length), m: num(tampil.length), kira: num(loc.length - pasti) })))}</p>
     <div class="jm-pj-seg2" role="group" aria-label="${esc(t("pj.lapis.presisi"))}"><button type="button" aria-pressed="${PRES.pasti}" data-pr="pasti" title="${esc(t("pj.presisi.titik_persis"))}">${esc(t("pj.lapis.tepat"))} <b>${num(pasti)}</b></button><button type="button" aria-pressed="${PRES.kira}" data-pr="kira" title="${esc(t("pj.presisi.kira"))}">${esc(t("pj.lapis.kira"))} <b>${num(loc.length - pasti)}</b></button></div>`;
 }
 $("pjLegenda").addEventListener("click", (e) => {
+  const sp = e.target.closest("[data-st],[data-pg],[data-wr]");
+  if (sp) {
+    if (sp.dataset.wr) { WARNAI = sp.dataset.wr; gambarLegenda(); nanti(() => kePeta(false)); }
+    else ubahFilter(sp.dataset.st ? "st" : "prog", sp.dataset.st || sp.dataset.pg);
+    return;
+  }
   const b = e.target.closest("[data-tek],[data-pr]");
   if (!b) return;
   if (b.dataset.tek) HIDE.has(b.dataset.tek) ? HIDE.delete(b.dataset.tek) : HIDE.add(b.dataset.tek);
