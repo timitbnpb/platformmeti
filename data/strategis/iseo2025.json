@@ -1,0 +1,906 @@
+{
+ "meta": {
+  "diperbarui": "2026-11-08",
+  "tingkat_bukti": "kajian",
+  "jenis_sumber": "kajian-lembaga-riset (bukan dokumen resmi pemerintah)",
+  "lisensi": "Hak cipta IESR; hanya angka dan parafrase singkat, bukan salinan paragraf",
+  "halaman_catatan": "halaman = nomor halaman berkas PDF; nomor cetak = halaman PDF dikurangi 7",
+  "diunduh_oleh": "pemilik, 2026-11-08 (berkas lokal, tanpa permintaan HTTP otomatis)",
+  "catatan": "Tautan sumber di atas adalah beranda IESR; alamat unduhan tepat tidak disertakan pemilik, berkas lokal dari unduhan pemilik. Pemetaan pabrikan memakai nama bisnis di Lampiran C (hlm 60).",
+  "masuk_ke": {
+   "kapasitas, segmen": "public/data/target.json (kapasitas surya per segmen, pembanding) dan public/data/plts_atap.json (realisasi atap 245 MWp dan kuota per klaster: kolom realisasi di plts_atap masih null)",
+   "rantai": "public/data/rantai_plts.json: hanya pembanding tambahan (lihat pembanding_rantai), tidak menimpa nilai DJEBTKE",
+   "pipeline, target, investasi, biaya, tenaga_kerja, provinsi": "public/data/target.json atau dataset surya; belum ada padanan lain"
+  },
+  "celah": [
+   "Seri kapasitas per tahun hanya total (2020-2022, 2023 dibaca dari label batang, Q2/Agustus 2024), bukan per segmen per tahun; rincian per segmen hanya satu titik (Agustus 2024).",
+   "Nilai kapasitas dan penambahan berbeda antara versi Inggris dan Indonesia (717,71 vs 664,5 MW; 510 vs 457 MW; atap 196 vs 143 MW): dicatat, tidak dipilih diam-diam.",
+   "LCOE PLTS tidak dinyatakan sebagai angka; hanya penurunan biaya total 19% dan harga modul global.",
+   "Potensi teknis per provinsi tidak ada (hanya potensi nasional 3.294 GW dan FPV 89,4 GWp); kapasitas PLTS atap per provinsi hanya grafik tanpa label.",
+   "Kebutuhan investasi untuk 100 GW tidak disebut; hanya klaim JETP CIPP 2,5 miliar USD untuk 29 GW (kemungkinan salah cetak).",
+   "Kapasitas per pabrikan modul hanya untuk sembilan nama bisnis di Lampiran C; tidak ada daftar penuh pabrikan eksisting."
+  ]
+ },
+ "sumber": [
+  {
+   "id": "iesr-iseo-2025",
+   "judul": "Indonesia Solar Energy Outlook (ISEO) 2025",
+   "penerbit": "IESR (Institute for Essential Services Reform)",
+   "tahun": 2024,
+   "url": "https://iesr.or.id/"
+  }
+ ],
+ "angka": [
+  {
+   "id": "iseo-001",
+   "kelompok": "kapasitas",
+   "label": "Kapasitas PLTS terpasang total",
+   "nilai": 717.71,
+   "satuan": "MW",
+   "tahun_data": 2024,
+   "halaman": 10,
+   "rujukan": "Key Highlights, grafik 2020-Q2 2024 (IESR, per Agustus 2024)",
+   "tingkat_bukti": "kajian",
+   "sumber_id": "iesr-iseo-2025",
+   "catatan": "Versi Indonesia (hlm 12) menyebut 664,5 MW per Juni 2024; pakai versi Inggris, selisih dicatat"
+  },
+  {
+   "id": "iseo-002",
+   "kelompok": "kapasitas",
+   "label": "Kapasitas PLTS terpasang 2020",
+   "nilai": 170.66,
+   "satuan": "MW",
+   "tahun_data": 2020,
+   "halaman": 10,
+   "rujukan": "Key Highlights, grafik 2020-Q2 2024",
+   "tingkat_bukti": "kajian",
+   "sumber_id": "iesr-iseo-2025"
+  },
+  {
+   "id": "iseo-003",
+   "kelompok": "kapasitas",
+   "label": "Kapasitas PLTS terpasang 2021",
+   "nilai": 207.72,
+   "satuan": "MW",
+   "tahun_data": 2021,
+   "halaman": 10,
+   "rujukan": "Key Highlights, grafik",
+   "tingkat_bukti": "kajian",
+   "sumber_id": "iesr-iseo-2025"
+  },
+  {
+   "id": "iseo-004",
+   "kelompok": "kapasitas",
+   "label": "Kapasitas PLTS terpasang 2022",
+   "nilai": 292.4,
+   "satuan": "MW",
+   "tahun_data": 2022,
+   "halaman": 10,
+   "rujukan": "Key Highlights, grafik",
+   "tingkat_bukti": "kajian",
+   "sumber_id": "iesr-iseo-2025"
+  },
+  {
+   "id": "iseo-005",
+   "kelompok": "kapasitas",
+   "label": "Kapasitas PLTS terpasang 2023 (label batang, perkiraan baca)",
+   "nilai": 600,
+   "satuan": "MW",
+   "tahun_data": 2023,
+   "halaman": 10,
+   "rujukan": "Key Highlights, grafik",
+   "tingkat_bukti": "kajian",
+   "sumber_id": "iesr-iseo-2025",
+   "catatan": "Label batang 2023 tercetak sekitar 600; tanpa desimal, nilai tepat tidak tercetak"
+  },
+  {
+   "id": "iseo-006",
+   "kelompok": "kapasitas",
+   "label": "Penambahan kapasitas PLTS 2023 (rekor)",
+   "nilai": 260,
+   "satuan": "MW",
+   "tahun_data": 2023,
+   "halaman": 8,
+   "rujukan": "Executive Summary",
+   "tingkat_bukti": "kajian",
+   "sumber_id": "iesr-iseo-2025"
+  },
+  {
+   "id": "iseo-007",
+   "kelompok": "kapasitas",
+   "label": "Penambahan kapasitas sejak 2022 (versi Inggris)",
+   "nilai": 510,
+   "satuan": "MW",
+   "tahun_data": 2024,
+   "halaman": 8,
+   "rujukan": "Executive Summary",
+   "tingkat_bukti": "kajian",
+   "sumber_id": "iesr-iseo-2025",
+   "catatan": "Versi Indonesia (hlm 9) menyebut 457 MW dengan atap 143 MW; versi Inggris 196 MW; tidak konsisten antarbahasa"
+  },
+  {
+   "id": "iseo-008",
+   "kelompok": "segmen",
+   "label": "PLTS skala utilitas (darat dan terapung) terpasang",
+   "nilai": 285,
+   "satuan": "MWp",
+   "tahun_data": 2024,
+   "halaman": 19,
+   "rujukan": "Bab 'Current Status', definisi dan total",
+   "tingkat_bukti": "kajian",
+   "sumber_id": "iesr-iseo-2025",
+   "catatan": "Termasuk Cirata terapung 145 MWac (Nov 2023); utilitas 48% total pada 2023 (hlm 20)"
+  },
+  {
+   "id": "iseo-009",
+   "kelompok": "segmen",
+   "label": "PLTS atap/terdistribusi terpasang",
+   "nilai": 245,
+   "satuan": "MWp",
+   "tahun_data": 2024,
+   "halaman": 19,
+   "rujukan": "Bab 'Current Status' (data MEMR Agustus 2024)",
+   "tingkat_bukti": "kajian",
+   "sumber_id": "iesr-iseo-2025",
+   "catatan": "Hanya pelanggan PLN; non-PLN masuk captive"
+  },
+  {
+   "id": "iseo-010",
+   "kelompok": "segmen",
+   "label": "PLTS off-grid terpasang",
+   "nilai": 56,
+   "satuan": "MWp",
+   "tahun_data": 2024,
+   "halaman": 19,
+   "rujukan": "Bab 'Current Status' (data MEMR Maret 2024)",
+   "tingkat_bukti": "kajian",
+   "sumber_id": "iesr-iseo-2025",
+   "catatan": "Sekitar 50 MWp program pra-elektrifikasi (LTSHE, SPEL/APDAL, PJU-TS) tidak masuk total"
+  },
+  {
+   "id": "iseo-011",
+   "kelompok": "segmen",
+   "label": "PLTS captive terpasang",
+   "nilai": 131,
+   "satuan": "MWp",
+   "tahun_data": 2024,
+   "halaman": 19,
+   "rujukan": "Bab 'Current Status' (data MEMR Maret 2024)",
+   "tingkat_bukti": "kajian",
+   "sumber_id": "iesr-iseo-2025"
+  },
+  {
+   "id": "iseo-012",
+   "kelompok": "segmen",
+   "label": "PLTS atap: CAGR kumulatif 2018-2021",
+   "nilai": 138,
+   "satuan": "persen per tahun",
+   "tahun_data": "2018-2021",
+   "halaman": 22,
+   "rujukan": "Bab 'Current Status'",
+   "tingkat_bukti": "kajian",
+   "sumber_id": "iesr-iseo-2025",
+   "catatan": "Turun jadi 41% per tahun 2021-2023 setelah pembatasan 10-15% PLN; residensial 17% vs 92%"
+  },
+  {
+   "id": "iseo-013",
+   "kelompok": "segmen",
+   "label": "PLTS atap industri: tambahan terpasang sampai akhir Juli 2024",
+   "nilai": 104,
+   "satuan": "MWp",
+   "tahun_data": 2024,
+   "halaman": 22,
+   "rujukan": "Bab 'Current Status'",
+   "tingkat_bukti": "kajian",
+   "sumber_id": "iesr-iseo-2025"
+  },
+  {
+   "id": "iseo-014",
+   "kelompok": "segmen",
+   "label": "Kuota PLTS atap 2024 / 2025-2028 (total Kepmen ESDM 4 Juli 2024)",
+   "nilai": 1.5931,
+   "satuan": "GW",
+   "tahun_data": 2028,
+   "halaman": 32,
+   "rujukan": "Bab 'Enabling Environment'",
+   "tingkat_bukti": "kajian",
+   "sumber_id": "iesr-iseo-2025",
+   "catatan": "Rincian 2025-2033: kuota tambahan 1,91 GW pada 2029-2033 (hlm 28); total sampai 2033 2,38 GW (hlm 10)"
+  },
+  {
+   "id": "iseo-015",
+   "kelompok": "segmen",
+   "label": "Kuota PLTS atap diisi pada bulan perizinan Juli 2024",
+   "nilai": 60,
+   "satuan": "persen",
+   "tahun_data": 2024,
+   "halaman": 32,
+   "rujukan": "Bab 'Enabling Environment'",
+   "tingkat_bukti": "kajian",
+   "sumber_id": "iesr-iseo-2025"
+  },
+  {
+   "id": "iseo-016",
+   "kelompok": "segmen",
+   "label": "Pemegang wilayah usaha (PPU) dengan PLTS captive/atap terpasang",
+   "nilai": 44.1,
+   "satuan": "MW (di 61 wilus)",
+   "tahun_data": 2024,
+   "halaman": 25,
+   "rujukan": "Bab 'Current Status'",
+   "tingkat_bukti": "kajian",
+   "sumber_id": "iesr-iseo-2025",
+   "catatan": "Jababeka (Cikarang Listrindo) 21,2 MWp pada 2023"
+  },
+  {
+   "id": "iseo-017",
+   "kelompok": "segmen",
+   "label": "Captive: rencana PLTS industri nikel dan baterai EV",
+   "nilai": 3.3,
+   "satuan": "GWp",
+   "tahun_data": 2024,
+   "halaman": 31,
+   "rujukan": "Bab pipeline",
+   "tingkat_bukti": "kajian",
+   "sumber_id": "iesr-iseo-2025",
+   "catatan": "IMIP 1 GWp, IWIP 2 GWp; total rencana captive 3,75 GW (hlm 10)"
+  },
+  {
+   "id": "iseo-018",
+   "kelompok": "segmen",
+   "label": "Captive: potensi teknis PLTS di lahan PLTU captive batu bara",
+   "nilai": 2.88,
+   "satuan": "GW",
+   "tahun_data": 2024,
+   "halaman": 10,
+   "rujukan": "Key Highlights",
+   "tingkat_bukti": "kajian",
+   "sumber_id": "iesr-iseo-2025"
+  },
+  {
+   "id": "iseo-019",
+   "kelompok": "segmen",
+   "label": "Terapung (FPV) diumumkan",
+   "nilai": 1.3,
+   "satuan": "GWp",
+   "tahun_data": 2024,
+   "halaman": 29,
+   "rujukan": "Bab pipeline",
+   "tingkat_bukti": "kajian",
+   "sumber_id": "iesr-iseo-2025",
+   "catatan": "11 dari 13 proyek di waduk PLTA; Cirata tahap II 500 MWp rencana"
+  },
+  {
+   "id": "iseo-020",
+   "kelompok": "segmen",
+   "label": "Potensi teknis PLTS terapung pada 20% badan air",
+   "nilai": 89.4,
+   "satuan": "GWp",
+   "tahun_data": 2024,
+   "halaman": 29,
+   "rujukan": "Bab pipeline (MEMR 2024b)",
+   "tingkat_bukti": "kajian",
+   "sumber_id": "iesr-iseo-2025",
+   "catatan": "74,7 GWp di danau alami; pembanding NREL 300 GWp, Silalahi 200 GWp"
+  },
+  {
+   "id": "iseo-021",
+   "kelompok": "pipeline",
+   "label": "Total proyek PLTS diumumkan",
+   "nilai": 16.92,
+   "satuan": "GW",
+   "tahun_data": 2024,
+   "halaman": 10,
+   "rujukan": "Key Highlights (Agustus 2024)",
+   "tingkat_bukti": "kajian",
+   "sumber_id": "iesr-iseo-2025",
+   "catatan": "Ekspor Singapura 7,56 GW; captive 3,75; atap 2,38; terapung 1,30; darat 1,13; de-dieselisasi 0,81"
+  },
+  {
+   "id": "iseo-022",
+   "kelompok": "pipeline",
+   "label": "Pipa proyek surya PLN (persiapan 668,9 / pengadaan 1.006 / PPA-konstruksi 211 MW)",
+   "nilai": 1886.5,
+   "satuan": "MW",
+   "tahun_data": 2024,
+   "halaman": 27,
+   "rujukan": "Bab pipeline, September 2024",
+   "tingkat_bukti": "kajian",
+   "sumber_id": "iesr-iseo-2025"
+  },
+  {
+   "id": "iseo-023",
+   "kelompok": "pipeline",
+   "label": "Total proyek surya RUPTL 2021-2030 yang akan dilaksanakan PLN",
+   "nilai": 3.24,
+   "satuan": "GW",
+   "tahun_data": 2024,
+   "halaman": 10,
+   "rujukan": "Key Highlights",
+   "tingkat_bukti": "kajian",
+   "sumber_id": "iesr-iseo-2025"
+  },
+  {
+   "id": "iseo-024",
+   "kelompok": "pipeline",
+   "label": "Realisasi surya skala utilitas terhadap target RUPTL sampai 2023",
+   "nilai": 33.37,
+   "satuan": "persen",
+   "tahun_data": 2023,
+   "halaman": 20,
+   "rujukan": "Bab 'Current Status'",
+   "tingkat_bukti": "kajian",
+   "sumber_id": "iesr-iseo-2025"
+  },
+  {
+   "id": "iseo-025",
+   "kelompok": "pipeline",
+   "label": "Draf RUPTL 2024-2033: tambahan surya (utilitas 4,4 + atap 3,5 GW)",
+   "nilai": 7.9,
+   "satuan": "GW",
+   "tahun_data": 2033,
+   "halaman": 28,
+   "rujukan": "Bab pipeline",
+   "tingkat_bukti": "kajian",
+   "sumber_id": "iesr-iseo-2025",
+   "catatan": "Sampai 2030 sekitar 6 GW"
+  },
+  {
+   "id": "iseo-026",
+   "kelompok": "pipeline",
+   "label": "Izin ekspor listrik Singapura bersyarat",
+   "nilai": 3.4,
+   "satuan": "GW ekspor (setara 7,56 GWac surya)",
+   "tahun_data": 2024,
+   "halaman": 30,
+   "rujukan": "Bab pipeline",
+   "tingkat_bukti": "kajian",
+   "sumber_id": "iesr-iseo-2025",
+   "catatan": "Lima lisensi bersyarat 2 GWac; dua persetujuan bersyarat 1,4 GW"
+  },
+  {
+   "id": "iseo-027",
+   "kelompok": "pipeline",
+   "label": "Program de-dieselisasi PLN fase 1: PV dan BESS",
+   "nilai": 165,
+   "satuan": "MWp dan 322 MWh",
+   "tahun_data": 2028,
+   "halaman": 33,
+   "rujukan": "Bab pipeline",
+   "tingkat_bukti": "kajian",
+   "sumber_id": "iesr-iseo-2025",
+   "catatan": "Fase 2 199 MWp/398 MWh; fase 3 648 MWp/1.295 MWh; COD fase 1 2027"
+  },
+  {
+   "id": "iseo-028",
+   "kelompok": "target",
+   "label": "Roadmap NZE ESDM: surya 2030 / 2060",
+   "nilai": "32 GW / 421 GW",
+   "satuan": "GW",
+   "tahun_data": 2030,
+   "halaman": 16,
+   "rujukan": "Bab 1",
+   "tingkat_bukti": "kajian",
+   "sumber_id": "iesr-iseo-2025"
+  },
+  {
+   "id": "iseo-029",
+   "kelompok": "target",
+   "label": "Draf KEN Juli 2024: surya 2030 / 2060 (minimum ekuivalen)",
+   "nilai": "7 GW / 309 GW",
+   "satuan": "GW",
+   "tahun_data": 2030,
+   "halaman": 16,
+   "rujukan": "Bab 1",
+   "tingkat_bukti": "kajian",
+   "sumber_id": "iesr-iseo-2025",
+   "catatan": "Pangsa energi primer 1,6% (2030), sekitar 32% (2060)"
+  },
+  {
+   "id": "iseo-030",
+   "kelompok": "target",
+   "label": "Draf RUKN Mei 2024: surya 2030 / 2060",
+   "nilai": "14 GW / 134 GW",
+   "satuan": "GW",
+   "tahun_data": 2030,
+   "halaman": 16,
+   "rujukan": "Bab 1",
+   "tingkat_bukti": "kajian",
+   "sumber_id": "iesr-iseo-2025"
+  },
+  {
+   "id": "iseo-031",
+   "kelompok": "target",
+   "label": "Kebutuhan tambahan surya per tahun 2024-2030 (jalur 1,5 derajat): IEA / IRENA / IESR",
+   "nilai": "10,06 / 9,54 / 15,46",
+   "satuan": "GW per tahun",
+   "tahun_data": "2024-2030",
+   "halaman": 17,
+   "rujukan": "Bab 1, tabel benchmark",
+   "tingkat_bukti": "kajian",
+   "sumber_id": "iesr-iseo-2025"
+  },
+  {
+   "id": "iseo-032",
+   "kelompok": "target",
+   "label": "Pangsa surya 2030 jalur 1,5 derajat: IEA / IRENA / IESR",
+   "nilai": "17,4 / 17,65 / 22,83",
+   "satuan": "persen",
+   "tahun_data": 2030,
+   "halaman": 17,
+   "rujukan": "Bab 1, tabel benchmark",
+   "tingkat_bukti": "kajian",
+   "sumber_id": "iesr-iseo-2025"
+  },
+  {
+   "id": "iseo-033",
+   "kelompok": "target",
+   "label": "Potensi surya nasional diperbarui DJEBTKE",
+   "nilai": 3294,
+   "satuan": "GW",
+   "tahun_data": 2021,
+   "halaman": 16,
+   "rujukan": "Bab 1",
+   "tingkat_bukti": "kajian",
+   "sumber_id": "iesr-iseo-2025",
+   "catatan": "Naik dari 207 GW"
+  },
+  {
+   "id": "iseo-034",
+   "kelompok": "investasi",
+   "label": "Investasi terealisasi terkait surya",
+   "nilai": 68.5,
+   "satuan": "juta USD",
+   "tahun_data": 2021,
+   "halaman": 42,
+   "rujukan": "Bab 'Enabling Environment', grafik (DJEBTKE)",
+   "tingkat_bukti": "kajian",
+   "sumber_id": "iesr-iseo-2025"
+  },
+  {
+   "id": "iseo-035",
+   "kelompok": "investasi",
+   "label": "Investasi terealisasi terkait surya",
+   "nilai": 91.1,
+   "satuan": "juta USD",
+   "tahun_data": 2022,
+   "halaman": 42,
+   "rujukan": "grafik (DJEBTKE)",
+   "tingkat_bukti": "kajian",
+   "sumber_id": "iesr-iseo-2025"
+  },
+  {
+   "id": "iseo-036",
+   "kelompok": "investasi",
+   "label": "Investasi terealisasi terkait surya",
+   "nilai": 134.6,
+   "satuan": "juta USD",
+   "tahun_data": 2023,
+   "halaman": 42,
+   "rujukan": "grafik (DJEBTKE)",
+   "tingkat_bukti": "kajian",
+   "sumber_id": "iesr-iseo-2025"
+  },
+  {
+   "id": "iseo-037",
+   "kelompok": "investasi",
+   "label": "Investasi surya diumumkan sampai Juli 2024",
+   "nilai": 112.4,
+   "satuan": "juta USD",
+   "tahun_data": 2024,
+   "halaman": 42,
+   "rujukan": "grafik; tabel pendanaan swasta",
+   "tingkat_bukti": "kajian",
+   "sumber_id": "iesr-iseo-2025",
+   "catatan": "Misalnya Permata Bank Rp500 miliar, BNI 14 juta USD, pendanaan Norwegia 55 juta USD"
+  },
+  {
+   "id": "iseo-038",
+   "kelompok": "investasi",
+   "label": "Kebutuhan investasi JETP CIPP untuk sekitar 29 GW surya 2025-2030 (sesuai teks sumber)",
+   "nilai": 2.5,
+   "satuan": "miliar USD",
+   "tahun_data": 2030,
+   "halaman": 42,
+   "rujukan": "Bab 'Enabling Environment'",
+   "tingkat_bukti": "kajian",
+   "sumber_id": "iesr-iseo-2025",
+   "catatan": "Rasio USD per GW sangat rendah dan kemungkinan salah cetak di sumber; angka target 100 GW tidak disebut"
+  },
+  {
+   "id": "iseo-039",
+   "kelompok": "biaya",
+   "label": "Penurunan biaya total PLTS utilitas Indonesia (USD/kW)",
+   "nilai": 19,
+   "satuan": "persen",
+   "tahun_data": "2018-2022",
+   "halaman": 35,
+   "rujukan": "Bab 'Enabling Environment' (IRENA)",
+   "tingkat_bukti": "kajian",
+   "sumber_id": "iesr-iseo-2025",
+   "catatan": "Modul turun 44%, biaya lunak 38%; modul 35-45% biaya proyek; BOS perangkat keras 20-32%"
+  },
+  {
+   "id": "iseo-040",
+   "kelompok": "biaya",
+   "label": "Harga modul global rata-rata Q4 2023: India / Tiongkok",
+   "nilai": "0,22 / 0,15",
+   "satuan": "USD/W",
+   "tahun_data": 2023,
+   "halaman": 45,
+   "rujukan": "Bab rantai pasok (Wood Mackenzie)",
+   "tingkat_bukti": "kajian",
+   "sumber_id": "iesr-iseo-2025",
+   "catatan": "Proyeksi 2024 rata-rata 0,11 USD/W (BNEF)"
+  },
+  {
+   "id": "iseo-041",
+   "kelompok": "biaya",
+   "label": "Modul lokal lebih mahal dari impor",
+   "nilai": "30-45",
+   "satuan": "persen",
+   "tahun_data": 2024,
+   "halaman": 46,
+   "rujukan": "Bab rantai pasok (MENTARI 2024)",
+   "tingkat_bukti": "kajian",
+   "sumber_id": "iesr-iseo-2025",
+   "catatan": "Efisiensi tertinggi lokal 21,5% vs impor 24,1%; ukuran maksimum 560 vs 750 Wp"
+  },
+  {
+   "id": "iseo-042",
+   "kelompok": "biaya",
+   "label": "Lama konstruksi PLTS: rata-rata perkiraan",
+   "nilai": "500 hari (2017) menjadi sekitar 120 hari (2023)",
+   "satuan": "hari",
+   "tahun_data": 2023,
+   "halaman": 35,
+   "rujukan": "Bab 'Enabling Environment' (TransitionZero)",
+   "tingkat_bukti": "kajian",
+   "sumber_id": "iesr-iseo-2025"
+  },
+  {
+   "id": "iseo-043",
+   "kelompok": "biaya",
+   "label": "Kenaikan periode balik modal PLTS atap residensial akibat penghapusan kredit ekspor",
+   "nilai": 40,
+   "satuan": "persen (C&I sekitar 5 persen)",
+   "tahun_data": 2024,
+   "halaman": 32,
+   "rujukan": "Bab 'Enabling Environment'",
+   "tingkat_bukti": "kajian",
+   "sumber_id": "iesr-iseo-2025",
+   "catatan": "Akibat penghapusan kredit ekspor net-metering"
+  },
+  {
+   "id": "iseo-044",
+   "kelompok": "rantai",
+   "label": "Kapasitas produksi modul surya Indonesia",
+   "nilai": 2.3,
+   "satuan": "GW/tahun",
+   "tahun_data": 2023,
+   "halaman": 47,
+   "rujukan": "Bab rantai pasok, per Q4 2023",
+   "tingkat_bukti": "kajian",
+   "sumber_id": "iesr-iseo-2025",
+   "catatan": "Produksi aktual sekitar 200 MW (2022), 300-400 MW (2023), pada hlm 46; sekitar 90% pabrikan di bawah 100 MWp"
+  },
+  {
+   "id": "iseo-045",
+   "kelompok": "rantai",
+   "label": "Kapasitas dalam konstruksi: wafer / sel / modul",
+   "nilai": "5 / 3,5 / 3,5",
+   "satuan": "GW/tahun",
+   "tahun_data": 2024,
+   "halaman": 47,
+   "rujukan": "Bab rantai pasok, Juni 2024",
+   "tingkat_bukti": "kajian",
+   "sumber_id": "iesr-iseo-2025"
+  },
+  {
+   "id": "iseo-046",
+   "kelompok": "rantai",
+   "label": "Rencana atau disepakati: polisilikon / wafer / sel / modul",
+   "nilai": "200.000 ton / 6 GW / 13,5 GW / 15,5 GW",
+   "satuan": "per tahun",
+   "tahun_data": 2024,
+   "halaman": 47,
+   "rujukan": "Bab rantai pasok, Juni 2024",
+   "tingkat_bukti": "kajian",
+   "sumber_id": "iesr-iseo-2025"
+  },
+  {
+   "id": "iseo-047",
+   "kelompok": "rantai",
+   "label": "Pangsa pasar Jinko Solar di Indonesia",
+   "nilai": 60,
+   "satuan": "persen",
+   "tahun_data": 2023,
+   "halaman": 46,
+   "rujukan": "Bab rantai pasok",
+   "tingkat_bukti": "kajian",
+   "sumber_id": "iesr-iseo-2025"
+  },
+  {
+   "id": "iseo-048",
+   "kelompok": "rantai",
+   "label": "Batas muatan lokal (TKDN) proyek PLTS menurut Permen ESDM 11/2024",
+   "nilai": 20,
+   "satuan": "persen",
+   "tahun_data": 2024,
+   "halaman": 48,
+   "rujukan": "Bab rantai pasok",
+   "tingkat_bukti": "kajian",
+   "sumber_id": "iesr-iseo-2025",
+   "catatan": "Ambang modul 60 persen dihapus lewat Permenperin 33/2024; impor modul diizinkan untuk proyek mulai sebelum Juli 2026 atau PPA sebelum 2025"
+  },
+  {
+   "id": "iseo-049",
+   "kelompok": "tenaga_kerja",
+   "label": "Pekerjaan langsung dari 146 MW PLTS terpasang",
+   "nilai": 2118,
+   "satuan": "pekerjaan",
+   "tahun_data": 2019,
+   "halaman": 43,
+   "rujukan": "Bab 'Enabling Environment' (Koaksi 2022)",
+   "tingkat_bukti": "kajian",
+   "sumber_id": "iesr-iseo-2025",
+   "catatan": "O&M 767 pekerjaan terbesar"
+  },
+  {
+   "id": "iseo-050",
+   "kelompok": "tenaga_kerja",
+   "label": "Kebutuhan tenaga kerja industri surya (skenario RUKN 2019-2030)",
+   "nilai": 175000,
+   "satuan": "tahun-orang",
+   "tahun_data": 2030,
+   "halaman": 43,
+   "rujukan": "Bab 'Enabling Environment' (GGGI 2020)",
+   "tingkat_bukti": "kajian",
+   "sumber_id": "iesr-iseo-2025"
+  },
+  {
+   "id": "iseo-051",
+   "kelompok": "provinsi",
+   "label": "Kuota PLTS atap 2024 / 2025-2028: Sumatera (7 klaster)",
+   "nilai": "35,0 / 45,0",
+   "satuan": "MWp",
+   "tahun_data": 2028,
+   "halaman": 32,
+   "rujukan": "Bab 'Enabling Environment', gambar kuota 3 Juli 2024",
+   "tingkat_bukti": "kajian",
+   "sumber_id": "iesr-iseo-2025",
+   "catatan": "Kuota Sumatera Utara sempat negatif; dibaca dari gambar"
+  },
+  {
+   "id": "iseo-052",
+   "kelompok": "provinsi",
+   "label": "Kuota PLTS atap 2024 / 2025-2028: Jawa-Madura-Bali",
+   "nilai": "825,0 / 575,0",
+   "satuan": "MWp",
+   "tahun_data": 2028,
+   "halaman": 32,
+   "rujukan": "gambar kuota 3 Juli 2024",
+   "tingkat_bukti": "kajian",
+   "sumber_id": "iesr-iseo-2025"
+  },
+  {
+   "id": "iseo-053",
+   "kelompok": "provinsi",
+   "label": "Kuota PLTS atap 2024 / 2025-2028: Kalimantan Barat",
+   "nilai": "7,1 / 11,4",
+   "satuan": "MWp",
+   "tahun_data": 2028,
+   "halaman": 32,
+   "rujukan": "gambar kuota 3 Juli 2024",
+   "tingkat_bukti": "kajian",
+   "sumber_id": "iesr-iseo-2025"
+  },
+  {
+   "id": "iseo-054",
+   "kelompok": "provinsi",
+   "label": "Kuota PLTS atap 2024 / 2025-2028: Kalimantan Timur plus Selatan dan Tengah",
+   "nilai": "22,1 / 26,2",
+   "satuan": "MWp",
+   "tahun_data": 2028,
+   "halaman": 32,
+   "rujukan": "gambar kuota 3 Juli 2024",
+   "tingkat_bukti": "kajian",
+   "sumber_id": "iesr-iseo-2025"
+  },
+  {
+   "id": "iseo-055",
+   "kelompok": "provinsi",
+   "label": "Kuota PLTS atap 2024 / 2025-2028: Sulut dan Gorontalo",
+   "nilai": "0,2 / 1,4",
+   "satuan": "MWp",
+   "tahun_data": 2028,
+   "halaman": 32,
+   "rujukan": "gambar kuota 3 Juli 2024",
+   "tingkat_bukti": "kajian",
+   "sumber_id": "iesr-iseo-2025"
+  },
+  {
+   "id": "iseo-056",
+   "kelompok": "provinsi",
+   "label": "Kuota PLTS atap 2024 / 2025-2028: Sulsel, Sultra, Sulbar",
+   "nilai": "8,0 / 0,8",
+   "satuan": "MWp",
+   "tahun_data": 2028,
+   "halaman": 32,
+   "rujukan": "gambar kuota 3 Juli 2024",
+   "tingkat_bukti": "kajian",
+   "sumber_id": "iesr-iseo-2025"
+  },
+  {
+   "id": "iseo-057",
+   "kelompok": "provinsi",
+   "label": "Kuota PLTS atap 2024 / 2025-2028: Maluku / Papua / NTB / NTT",
+   "nilai": "0,7 / 1,0; 0,8 / 1,1; 0,9 / 1,3; 0,6 / 0,7",
+   "satuan": "MWp",
+   "tahun_data": 2028,
+   "halaman": 32,
+   "rujukan": "gambar kuota 3 Juli 2024",
+   "tingkat_bukti": "kajian",
+   "sumber_id": "iesr-iseo-2025"
+  },
+  {
+   "id": "iseo-058",
+   "kelompok": "provinsi",
+   "label": "Provinsi pengadopsi PLTS atap teratas (di atas 5 MWp), 2023: Jabar, Banten, DKI, Jateng, Jatim, Bali; di luar Jawa terbesar Lampung",
+   "nilai": "6 provinsi + Lampung",
+   "satuan": "provinsi",
+   "tahun_data": 2023,
+   "halaman": 23,
+   "rujukan": "Bab 'Current Status', gambar kapasitas per provinsi 2023",
+   "tingkat_bukti": "kajian",
+   "sumber_id": "iesr-iseo-2025",
+   "catatan": "Grafik tanpa label nilai per provinsi; Babel, DIY, Sumut disebut berpotensi belum tergarap"
+  }
+ ],
+ "pembanding_rantai": [
+  {
+   "pabrikan_iesr": "Trina Mas Agra Indonesia (Kendal)",
+   "rantai_plts_id": "p_f21482de0d",
+   "nilai_iesr": "1 GWp sel dan modul (Q2/Q3 2024); 3 GWp pada 2025/2026",
+   "nilai_rantai_plts_mwp": 1000,
+   "selisih": "sama",
+   "halaman": 60,
+   "sumber_id": "iesr-iseo-2025",
+   "tingkat_bukti": "kajian"
+  },
+  {
+   "pabrikan_iesr": "LESSO New Energy (Demak)",
+   "rantai_plts_id": "p_dd458f8374",
+   "nilai_iesr": "2 x 1,2 GW modul (2,4 GW), rencana tambah 2 GW",
+   "nilai_rantai_plts_mwp": 960,
+   "selisih": "berbeda (IESR 2.400 MW vs DJEBTKE 960 MWp)",
+   "halaman": 60,
+   "sumber_id": "iesr-iseo-2025",
+   "tingkat_bukti": "kajian"
+  },
+  {
+   "pabrikan_iesr": "SEG Solar (Batang)",
+   "rantai_plts_id": "p_1caeeedd8b",
+   "nilai_iesr": "Fase 1: 5 GW sel dan 3 GW modul (produksi Q2 2024); fase 2: +5 GW wafer dan 2 GW modul (Q2 2025)",
+   "nilai_rantai_plts_mwp": 2000,
+   "selisih": "berbeda (IESR 3.000 MW modul fase 1 vs DJEBTKE 2.000 MWp)",
+   "halaman": 60,
+   "sumber_id": "iesr-iseo-2025",
+   "tingkat_bukti": "kajian"
+  },
+  {
+   "pabrikan_iesr": "IDN Solar Tech (Batam)",
+   "rantai_plts_id": "p_f05b131e81",
+   "nilai_iesr": "1 GW modul saat ini; rencana wafer plus modul terintegrasi",
+   "nilai_rantai_plts_mwp": 3800,
+   "selisih": "berbeda (IESR 1.000 MW vs DJEBTKE 3.800 MWp)",
+   "halaman": 60,
+   "sumber_id": "iesr-iseo-2025",
+   "tingkat_bukti": "kajian"
+  },
+  {
+   "pabrikan_iesr": "New East Solar (Batam)",
+   "rantai_plts_id": null,
+   "nilai_iesr": "2,5 GW sel dan modul (2023), +5,5 GW sampai 2024, dalam konstruksi",
+   "nilai_rantai_plts_mwp": null,
+   "selisih": "tidak ada padanan nama di rantai_plts.json",
+   "halaman": 60,
+   "sumber_id": "iesr-iseo-2025",
+   "tingkat_bukti": "kajian"
+  },
+  {
+   "pabrikan_iesr": "Gstar (Greenland Industrial Center, Jawa Barat)",
+   "rantai_plts_id": "f_gstar",
+   "nilai_iesr": "3 GW batang silikon dan 3 GW wafer sampai akhir 2024",
+   "nilai_rantai_plts_mwp": 3000,
+   "selisih": "sama",
+   "halaman": 60,
+   "sumber_id": "iesr-iseo-2025",
+   "tingkat_bukti": "kajian"
+  },
+  {
+   "pabrikan_iesr": "Xinyi (Rempang, Batam)",
+   "rantai_plts_id": "f_xinyi_rempang",
+   "nilai_iesr": "polisilikon 200.000 ton, kaca, sel, modul: masih dibahas",
+   "nilai_rantai_plts_mwp": null,
+   "selisih": "tanpa kapasitas di rantai_plts.json; status sama (rencana)",
+   "halaman": 60,
+   "sumber_id": "iesr-iseo-2025",
+   "tingkat_bukti": "kajian"
+  }
+ ],
+ "kebijakan": [
+  {
+   "nama": "Permen ESDM 2/2024 (PLTS atap)",
+   "isi": "Hapus ekspor-impor dan batas kapasitas; kuota per empat tahun oleh pemegang IUPTLU; perizinan digital (PLN Mobile, Simantap); persetujuan otomatis jika tidak dijawab 30 hari",
+   "halaman": [
+    32,
+    38
+   ]
+  },
+  {
+   "nama": "Permen PUPR 7/2023",
+   "isi": "Hilangkan batas 5% pemakaian badan air untuk PLTS terapung; di atas 20% perlu rekomendasi Komisi Keamanan Bendungan",
+   "halaman": [
+    29
+   ]
+  },
+  {
+   "nama": "Permenperin 33/2024, 34/2024 dan Permen ESDM 11/2024 (TKDN)",
+   "isi": "Ambang TKDN modul 60% dihapus; TKDN proyek PLTS 20% berbasis biaya; relaksasi impor modul untuk proyek yang mulai sebelum Juli 2026 atau PPA sebelum 2025",
+   "halaman": [
+    47,
+    48
+   ]
+  },
+  {
+   "nama": "Fasilitas fiskal (Perpres 112/2022)",
+   "isi": "Tax holiday, tax allowance, fasilitas bea masuk lebih menguntungkan pengembang bermodal besar; tidak ada insentif untuk pelanggan atap setelah net-metering dihapus",
+   "halaman": [
+    41
+   ]
+  }
+ ],
+ "hambatan": [
+  {
+   "hambatan": "Kaitan perencanaan dan pengadaan lemah (volume pengadaan di bawah target RUPTL)",
+   "halaman": [
+    20,
+    21,
+    36
+   ]
+  },
+  {
+   "hambatan": "Kunci mati bahan bakar fosil, regulasi tidak pasti, harga tidak menarik (survei pengembang)",
+   "halaman": [
+    36
+   ]
+  },
+  {
+   "hambatan": "Pembagian risiko tidak seimbang antara PLN dan mitra (skema pinjaman pemegang saham)",
+   "halaman": [
+    37
+   ]
+  },
+  {
+   "hambatan": "Perizinan lahan dan lingkungan 9-12 bulan; negosiasi PPA 1-2 tahun",
+   "halaman": [
+    21,
+    35
+   ]
+  },
+  {
+   "hambatan": "Permintaan pasar tak terduga membuat pabrikan modul lokal menahan ekspansi",
+   "halaman": [
+    46
+   ]
+  },
+  {
+   "hambatan": "Izin PLN regional dan transparansi kuota atap",
+   "halaman": [
+    23,
+    38
+   ]
+  }
+ ]
+}
