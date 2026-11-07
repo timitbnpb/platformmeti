@@ -1,6 +1,102 @@
 {
  "baris": [
   {
+   "orang_id": null,
+   "pengurus": "agung-wicaksono",
+   "nama": "Agung Wicaksono",
+   "sumber_url": "https://commons.wikimedia.org/wiki/File:Agung_Wicaksono.jpg",
+   "foto_url": "https://upload.wikimedia.org/wikipedia/commons/e/ec/Agung_Wicaksono.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=index&amp;utm_content=original",
+   "lisensi": "CC BY-SA 4.0",
+   "penulis": "Mgglputs",
+   "sisi_sumber_px": 795,
+   "diambil": "2026-11-07"
+  },
+  {
+   "orang_id": null,
+   "pengurus": "agus-hermanto",
+   "nama": "Agus Hermanto",
+   "sumber_url": "https://commons.wikimedia.org/wiki/File:Agus_Hermanto.jpg",
+   "foto_url": "https://upload.wikimedia.org/wikipedia/commons/2/2a/Agus_Hermanto.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=index&amp;utm_content=original",
+   "lisensi": "Public domain (PD-IDGov, Indonesia Pasal 43 UU Hak Cipta)",
+   "penulis": "Dewan Perwakilan Rakyat",
+   "sisi_sumber_px": 259,
+   "diambil": "2026-11-07"
+  },
+  {
+   "orang_id": null,
+   "pengurus": "bambang-patijaya",
+   "nama": "Bambang Patijaya",
+   "sumber_url": "https://commons.wikimedia.org/wiki/File:Bambang_patijaya.jpg",
+   "foto_url": "https://upload.wikimedia.org/wikipedia/commons/e/e2/Bambang_patijaya.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=index&amp;utm_content=original",
+   "lisensi": "CC BY-SA 4.0",
+   "penulis": "Hassacitto Kumaro",
+   "sisi_sumber_px": 401,
+   "diambil": "2026-11-07"
+  },
+  {
+   "orang_id": null,
+   "pengurus": "brian-yuliarto",
+   "nama": "Brian Yuliarto",
+   "sumber_url": "https://commons.wikimedia.org/wiki/File:Menteri_Pendidikan_Tinggi%2C_Sains%2C_dan_Teknologi_Republik_Indonesia_Brian_Yuliarto_(cropped).jpg",
+   "foto_url": "https://upload.wikimedia.org/wikipedia/commons/8/86/Menteri_Pendidikan_Tinggi%2C_Sains%2C_dan_Teknologi_Republik_Indonesia_Brian_Yuliarto_%28cropped%29.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=index&amp;utm_content=original",
+   "lisensi": "Public domain (PD-IDGov, Indonesia Pasal 43 UU Hak Cipta)",
+   "sisi_sumber_px": 535,
+   "diambil": "2026-11-07"
+  },
+  {
+   "orang_id": null,
+   "pengurus": "burhanuddin-abdullah",
+   "nama": "Burhanuddin Abdullah",
+   "sumber_url": "https://commons.wikimedia.org/wiki/File:Burhanuddin_Abdullah%2C_Komisaris_Utama_PLN.png",
+   "foto_url": "https://upload.wikimedia.org/wikipedia/commons/6/67/Burhanuddin_Abdullah%2C_Komisaris_Utama_PLN.png?utm_source=commons.wikimedia.org&amp;utm_campaign=index&amp;utm_content=original",
+   "lisensi": "Public domain (PD-IDGov, Indonesia Pasal 43 UU Hak Cipta)",
+   "penulis": "State Electricity Company (Perusahaan Listrik Negara)",
+   "sisi_sumber_px": 743,
+   "diambil": "2026-11-07"
+  },
+  {
+   "orang_id": null,
+   "pengurus": "dody-hanggodo",
+   "nama": "Dody Hanggodo",
+   "sumber_url": "https://commons.wikimedia.org/wiki/File:Menteri_Pekerjaan_Umum_Dody_Hanggodo.jpg",
+   "foto_url": "https://upload.wikimedia.org/wikipedia/commons/0/0b/Menteri_Pekerjaan_Umum_Dody_Hanggodo.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=index&amp;utm_content=original",
+   "lisensi": "Public domain (PD-IDGov, Indonesia Pasal 43 UU Hak Cipta)",
+   "penulis": "Kementerian Pekerjaan Umum Republik Indonesia",
+   "sisi_sumber_px": 873,
+   "diambil": "2026-11-07"
+  },
+  {
+   "orang_id": null,
+   "pengurus": "ferry-juliantono",
+   "nama": "Ferry Juliantono",
+   "sumber_url": "https://commons.wikimedia.org/wiki/File:Ferry_Juliantono%2C_Wakil_Menteri_Koperasi_(2025).png",
+   "foto_url": "https://upload.wikimedia.org/wikipedia/commons/0/03/Ferry_Juliantono%2C_Wakil_Menteri_Koperasi_%282025%29.png?utm_source=commons.wikimedia.org&amp;utm_campaign=index&amp;utm_content=original",
+   "lisensi": "Public domain (PD-IDGov, Indonesia Pasal 43 UU Hak Cipta)",
+   "penulis": "Kementerian Koperasi Republik Indonesja",
+   "sisi_sumber_px": 389,
+   "diambil": "2026-11-07"
+  },
+  {
+   "orang_id": null,
+   "pengurus": "hanif-faisol-nurofiq",
+   "nama": "Hanif Faisol Nurofiq",
+   "sumber_url": "https://commons.wikimedia.org/wiki/File:Hanif_Faisol_Nurofiq%2C_Menteri_Lingkungan_Hidup_(2024).jpg",
+   "foto_url": "https://upload.wikimedia.org/wikipedia/commons/9/9f/Hanif_Faisol_Nurofiq%2C_Menteri_Lingkungan_Hidup_%282024%29.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=index&amp;utm_content=original",
+   "lisensi": "Public domain (PD-IDGov, Indonesia Pasal 43 UU Hak Cipta)",
+   "sisi_sumber_px": 463,
+   "diambil": "2026-11-07"
+  },
+  {
+   "orang_id": null,
+   "pengurus": "ilham-akbar-habibie",
+   "nama": "Ilham Akbar Habibie",
+   "sumber_url": "https://commons.wikimedia.org/wiki/File:Ilham_Akbar_Habibie_Ketua_WANTIKNAS.jpg",
+   "foto_url": "https://upload.wikimedia.org/wikipedia/commons/e/ea/Ilham_Akbar_Habibie_Ketua_WANTIKNAS.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=index&amp;utm_content=original",
+   "lisensi": "Public domain (PD-IDGov, Indonesia Pasal 43 UU Hak Cipta)",
+   "sisi_sumber_px": 340,
+   "diambil": "2026-11-07"
+  },
+  {
    "orang_id": "o_02b0410b12",
    "nama": "Bobby Gafur Umar",
    "sumber_url": "https://kadin.id/tentang-kadin/struktur-organisasi-kadin/",
@@ -30,6 +126,16 @@
    "sumber_url": "https://www.danantaraindonesia.co.id/about/our-people/bpi-danantaras",
    "foto_url": "https://www.danantaraindonesia.co.id/_next/image?url=https%3A%2F%2Fd19ypesdspgr78.cloudfront.net%2F240%2FSigit-Puji-Santosa.webp&w=3840&q=75",
    "lisensi": "milik perusahaan, tampil dengan atribusi",
+   "diambil": "2026-11-07"
+  },
+  {
+   "orang_id": "o_09299baa45",
+   "pengurus": "sigit-puji-santosa",
+   "nama": "Sigit Puji Santosa",
+   "sumber_url": "https://www.danantaraindonesia.co.id/about/our-people/bpi-danantaras",
+   "foto_url": "https://www.danantaraindonesia.co.id/_next/image?url=https%3A%2F%2Fd19ypesdspgr78.cloudfront.net%2F240%2FSigit-Puji-Santosa.webp&w=3840&q=75",
+   "lisensi": "milik perusahaan, tampil dengan atribusi",
+   "sisi_sumber_px": 382,
    "diambil": "2026-11-07"
   },
   {
@@ -289,6 +395,16 @@
    "diambil": "2026-11-07"
   },
   {
+   "orang_id": "o_4c31ad4490",
+   "pengurus": "rizal-calvary-marimbo",
+   "nama": "Rizal Calvary Marimbo",
+   "sumber_url": "https://www.pln.co.id/tentang-kami-id/jajaran-direksi-id",
+   "foto_url": "https://www.pln.co.id/webapi/media/file/webkorp/asset/3a090d8f-d145-47ef-b3e9-e55ba77b3127.png",
+   "lisensi": "milik PT PLN (Persero), tampil dengan atribusi",
+   "sisi_sumber_px": 2124,
+   "diambil": "2026-11-07"
+  },
+  {
    "orang_id": "o_4c6b0735fb",
    "nama": "Dony Oskaria",
    "sumber_url": "https://www.danantaraindonesia.co.id/about/our-people/bpi-danantaras",
@@ -350,6 +466,16 @@
    "sumber_url": "https://www.medcoenergi.com/en/about-us/our-leaders/board-of-directors/",
    "foto_url": "https://www.medcoenergi.com/uploads/mprofiles/Hilmi%20Panigoro-min.png",
    "lisensi": "milik perusahaan, tampil dengan atribusi",
+   "diambil": "2026-11-07"
+  },
+  {
+   "orang_id": "o_58df02167d",
+   "pengurus": "hilmi-panigoro",
+   "nama": "Hilmi Panigoro",
+   "sumber_url": "https://www.medcoenergi.com/en/about-us/our-leaders/board-of-directors/",
+   "foto_url": "https://www.medcoenergi.com/uploads/mprofiles/Hilmi%20Panigoro-min.png",
+   "lisensi": "milik perusahaan, tampil dengan atribusi",
+   "sisi_sumber_px": 828,
    "diambil": "2026-11-07"
   },
   {
@@ -457,6 +583,16 @@
    "diambil": "2026-11-07"
   },
   {
+   "orang_id": "o_6ca0780a28",
+   "pengurus": "anindya-novyan-bakrie",
+   "nama": "Anindya Novyan Bakrie",
+   "sumber_url": "https://kadin.id/tentang-kadin/struktur-organisasi-kadin/",
+   "foto_url": "https://kadin.id/uploads/legacy/Anindya-Novyan-Bakrie.png",
+   "lisensi": "milik pemilik situs sumber, tampil dengan atribusi",
+   "sisi_sumber_px": 1000,
+   "diambil": "2026-11-07"
+  },
+  {
    "orang_id": "o_6e230653be",
    "nama": "Sudirman Said",
    "sumber_url": "https://esdm.go.id/id/profil/daftar-menteri",
@@ -518,6 +654,16 @@
    "sumber_url": "https://adhi.co.id/tentang-adhi/manajemen/direksi/",
    "foto_url": "https://adhi.co.id/wp-content/uploads/2026/07/Ki-Syahgolang-Permata.webp",
    "lisensi": "milik perusahaan, tampil dengan atribusi",
+   "diambil": "2026-11-07"
+  },
+  {
+   "orang_id": "o_78c9b81374",
+   "pengurus": "ahmad-erani-yustika",
+   "nama": "Ahmad Erani Yustika",
+   "sumber_url": "https://www.pln.co.id/tentang-kami-id/dewan-komisaris-id",
+   "foto_url": "https://www.pln.co.id/webapi/media/file/webkorp/asset/0911d2ff-421f-4f6a-ac60-d1723c9cf1cf.png",
+   "lisensi": "milik PT PLN (Persero), tampil dengan atribusi",
+   "sisi_sumber_px": 2100,
    "diambil": "2026-11-07"
   },
   {
@@ -1001,6 +1147,16 @@
    "diambil": "2026-11-07"
   },
   {
+   "orang_id": "o_d6fac3543f",
+   "pengurus": "fabby-tumiwa",
+   "nama": "Fabby Tumiwa",
+   "sumber_url": "https://aesi.or.id/tentang-kami",
+   "foto_url": "https://aesi.or.id/wp-content/uploads/2026/01/Fabby-Tumiwa-300x300.jpg",
+   "lisensi": "milik pemilik situs sumber, tampil dengan atribusi",
+   "sisi_sumber_px": 174,
+   "diambil": "2026-11-07"
+  },
+  {
    "orang_id": "o_d7f4bc0ff4",
    "nama": "Pradana Murti",
    "sumber_url": "https://www.ptsmi.co.id/management",
@@ -1297,11 +1453,108 @@
    "diambil": "2026-11-07"
   },
   {
+   "orang_id": null,
+   "pengurus": "pandu-patria-sjahrir",
+   "nama": "Pandu Patria Sjahrir",
+   "sumber_url": "https://commons.wikimedia.org/wiki/File:Pandu_Sjahrir_Potrait_(Shopee_wall)_(face_cropped).jpg",
+   "foto_url": "https://upload.wikimedia.org/wikipedia/commons/5/5b/Pandu_Sjahrir_Potrait_%28Shopee_wall%29_%28face_cropped%29.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=index&amp;utm_content=original",
+   "lisensi": "CC BY 4.0",
+   "penulis": "WSP",
+   "sisi_sumber_px": 700,
+   "diambil": "2026-11-07"
+  },
+  {
    "orang_id": "pm_8b84cf3d",
    "nama": "M. Darwin",
    "sumber_url": "https://esdm.kepriprov.go.id/",
    "foto_url": "https://cms.kepriprov.go.id/api/files/uploads/2026/03/d558812d-b23a-4bf6-a12a-d728464e839b_thumb.webp",
    "lisensi": "milik pemilik situs sumber, tampil dengan atribusi",
+   "diambil": "2026-11-07"
+  },
+  {
+   "orang_id": null,
+   "pengurus": "rachmat-pambudy",
+   "nama": "Rachmat Pambudy",
+   "sumber_url": "https://commons.wikimedia.org/wiki/File:Rachmat_Pambudy%2C_Menteri_PPN_Portrait.jpg",
+   "foto_url": "https://upload.wikimedia.org/wikipedia/commons/a/a3/Rachmat_Pambudy%2C_Menteri_PPN_Portrait.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=index&amp;utm_content=original",
+   "lisensi": "Public domain (PD-IDGov, Indonesia Pasal 43 UU Hak Cipta)",
+   "sisi_sumber_px": 990,
+   "diambil": "2026-11-07"
+  },
+  {
+   "orang_id": null,
+   "pengurus": "rosan-roeslani",
+   "nama": "Rosan Roeslani",
+   "sumber_url": "https://commons.wikimedia.org/wiki/File:Rosan_Perkasa_Roeslani%2C_Menteri_Investasi_dan_Hilirisasi_(2024).webp",
+   "foto_url": "https://upload.wikimedia.org/wikipedia/commons/1/1f/Rosan_Perkasa_Roeslani%2C_Menteri_Investasi_dan_Hilirisasi_%282024%29.webp?utm_source=commons.wikimedia.org&amp;utm_campaign=index&amp;utm_content=original",
+   "lisensi": "Public domain (PD-IDGov, Indonesia Pasal 43 UU Hak Cipta)",
+   "sisi_sumber_px": 1573,
+   "diambil": "2026-11-07"
+  },
+  {
+   "orang_id": null,
+   "pengurus": "rudi-margono",
+   "nama": "Rudi Margono",
+   "sumber_url": "https://commons.wikimedia.org/wiki/File:Rudi_Margono_JAMWAS.jpg",
+   "foto_url": "https://upload.wikimedia.org/wikipedia/commons/f/f4/Rudi_Margono_JAMWAS.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=index&amp;utm_content=original",
+   "lisensi": "Public domain (PD-IDGov, Indonesia Pasal 43 UU Hak Cipta)",
+   "penulis": "Kejaksaan Agung Republik Indonesia",
+   "sisi_sumber_px": 1569,
+   "diambil": "2026-11-07"
+  },
+  {
+   "orang_id": null,
+   "pengurus": "satya-widya-yudha",
+   "nama": "Satya Widya Yudha",
+   "sumber_url": "https://commons.wikimedia.org/wiki/File:Satya_Widya_Yudha.png",
+   "foto_url": "https://upload.wikimedia.org/wikipedia/commons/7/75/Satya_Widya_Yudha.png?utm_source=commons.wikimedia.org&amp;utm_campaign=index&amp;utm_content=original",
+   "lisensi": "CC BY-SA 4.0",
+   "penulis": "Dyah Roro Esti Team",
+   "sisi_sumber_px": 2629,
+   "diambil": "2026-11-07"
+  },
+  {
+   "orang_id": null,
+   "pengurus": "simon-aloysius-mantiri",
+   "nama": "Simon Aloysius Mantiri",
+   "sumber_url": "https://commons.wikimedia.org/wiki/File:Simon_Aloysius_Mantiri_CEO_of_Pertamina.jpg",
+   "foto_url": "https://upload.wikimedia.org/wikipedia/commons/c/c6/Simon_Aloysius_Mantiri_CEO_of_Pertamina.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=index&amp;utm_content=original",
+   "lisensi": "Public domain (PD-IDGov, Indonesia Pasal 43 UU Hak Cipta)",
+   "penulis": "PT Pertamina (Persero)",
+   "sisi_sumber_px": 888,
+   "diambil": "2026-11-07"
+  },
+  {
+   "orang_id": null,
+   "pengurus": "sudaryono",
+   "nama": "Sudaryono",
+   "sumber_url": "https://commons.wikimedia.org/wiki/File:Sudaryono%2C_Wakil_Menteri_Pertanian_(2026).jpg",
+   "foto_url": "https://upload.wikimedia.org/wikipedia/commons/e/e8/Sudaryono%2C_Wakil_Menteri_Pertanian_%282026%29.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=index&amp;utm_content=original",
+   "lisensi": "Public domain (PD-IDGov, Indonesia Pasal 43 UU Hak Cipta)",
+   "penulis": "Ministry of Agriculture of the Republic of Indonesia",
+   "sisi_sumber_px": 856,
+   "diambil": "2026-11-07"
+  },
+  {
+   "orang_id": null,
+   "pengurus": "suroso-isnandar",
+   "nama": "Suroso Isnandar",
+   "sumber_url": "https://commons.wikimedia.org/wiki/File:Suroso_Isnandar.png",
+   "foto_url": "https://upload.wikimedia.org/wikipedia/commons/a/a1/Suroso_Isnandar.png?utm_source=commons.wikimedia.org&amp;utm_campaign=index&amp;utm_content=original",
+   "lisensi": "Public domain (PD-IDGov, Indonesia Pasal 43 UU Hak Cipta)",
+   "penulis": "State Electricity Company (Perusahaan Listrik Negara)",
+   "sisi_sumber_px": 2034,
+   "diambil": "2026-11-07"
+  },
+  {
+   "orang_id": null,
+   "pengurus": "todotua-pasaribu",
+   "nama": "Todotua Pasaribu",
+   "sumber_url": "https://commons.wikimedia.org/wiki/File:Wakil_Menteri_Investasi_dan_Hilirisasi_dan_Wakil_Kepala_Badan_Koordinasi_Penanaman_Modal_Todotua_Pasaribu.webp",
+   "foto_url": "https://upload.wikimedia.org/wikipedia/commons/a/ae/Wakil_Menteri_Investasi_dan_Hilirisasi_dan_Wakil_Kepala_Badan_Koordinasi_Penanaman_Modal_Todotua_Pasaribu.webp?utm_source=commons.wikimedia.org&amp;utm_campaign=index&amp;utm_content=original",
+   "lisensi": "Public domain (PD-IDGov, Indonesia Pasal 43 UU Hak Cipta)",
+   "penulis": "Kementerian Investasi dan Hilirisasi/Badan Koordinasi Penanaman Modal Republik Indonesia",
+   "sisi_sumber_px": 1149,
    "diambil": "2026-11-07"
   }
  ]

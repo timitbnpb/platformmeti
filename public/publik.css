@@ -527,3 +527,53 @@ a.jm-foto:focus-visible{outline:3px solid var(--fokus)}
 .jm-rank-th{flex:none;grid-row:auto}
 .jm-rank-lg{flex:none}
 .jm-rank .jm-rank-i{min-height:64px;padding:8px 4px}
+
+/* ===== beranda: exhibit Pelaku (kartu per jenis) ===== */
+.jm-pel{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;align-items:stretch}
+@media (min-width:900px){.jm-pel{grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}}
+.jm-pel li{display:flex}
+.jm-pel-k{--jp:var(--accent);flex:1;display:grid;grid-template-columns:auto minmax(0,1fr);grid-template-areas:"ik n" "ik l" "lg lg";align-content:start;align-items:center;column-gap:14px;row-gap:2px;padding:16px;border:1px solid color-mix(in srgb,var(--jp) 28%,var(--line));border-radius:var(--r-lg);background:color-mix(in srgb,var(--jp) 9%,var(--card));color:var(--ink);text-decoration:none;transition:transform .15s,box-shadow .15s}
+.jm-pel-k:hover{transform:translateY(-3px);box-shadow:0 8px 20px color-mix(in srgb,var(--jp) 22%,transparent)}
+.jm-pel-k:focus-visible{outline:2px solid var(--fokus);outline-offset:2px}
+@media (prefers-reduced-motion:reduce){.jm-pel-k{transition:none}.jm-pel-k:hover{transform:none}}
+.jm-pel-ik{grid-area:ik;display:grid;place-items:center;width:56px;height:56px;border-radius:16px;background:color-mix(in srgb,var(--jp) 18%,var(--card));color:var(--jp)}
+.jm-pel-ik svg{width:30px;height:30px}
+.jm-pel-n{grid-area:n;align-self:end;font:700 var(--t-display)/1 var(--display);font-variant-numeric:tabular-nums;color:var(--head)}
+.jm-pel-l{grid-area:l;align-self:start;font:600 var(--t-body)/var(--lh-rapat) var(--font);color:var(--ink2)}
+.jm-pel-lg{grid-area:lg;display:flex;align-items:center;min-height:32px;margin-top:12px;padding-left:8px}
+.jm-pel-lo{position:relative;display:grid;place-items:center;width:32px;height:32px;margin-left:-8px;overflow:hidden;border-radius:50%;border:1px solid var(--line);background:color-mix(in srgb,var(--jp) 20%,var(--card));color:var(--head);font:700 var(--t-label)/1 var(--display)}
+.jm-pel-lo img{position:absolute;inset:0;width:100%;height:100%;padding:3px;object-fit:contain;background:var(--on-brand)}
+.jm-pel-bumn{--jp:var(--data1)}.jm-pel-swasta{--jp:var(--data5)}.jm-pel-internasional{--jp:var(--info)}.jm-pel-asosiasi{--jp:var(--data2)}.jm-pel-kementerian-lembaga{--jp:var(--warn)}.jm-pel-koperasi{--jp:var(--ok)}.jm-pel-ormawa{--jp:var(--data3)}.jm-pel-perguruan-tinggi{--jp:var(--data4)}.jm-pel-think-tank{--jp:var(--bad)}
+@media (max-width:479px){.jm-pel-k{grid-template-columns:minmax(0,1fr);grid-template-areas:"ik" "n" "l" "lg";padding:14px}.jm-pel-ik{width:48px;height:48px;margin-bottom:6px}}
+#s02 .jm-pel-ex{margin-bottom:24px}
+
+/* ===== ubin proyek (ikon teknologi + MW; foto berita menutup bila ada) ===== */
+.jm-pt-k{grid-auto-flow:row;gap:0;align-content:center;justify-items:center;background:color-mix(in srgb,var(--tk,var(--ink2)) 14%,var(--card));color:var(--tk,var(--ink2))}
+.jm-pt-k>.jm-ikt{width:20px;height:20px}
+.jm-pt-k b{font:700 var(--t-body)/1.1 var(--font);color:var(--ink)}
+.jm-pt-k small{font:600 var(--t-label)/1 var(--font);color:var(--ink2)}
+.jm-feed-th.jm-pt-k{width:96px;height:72px}
+.jm-rank-th.jm-pt-k{width:72px;height:52px}
+.jm-feed-j{color:inherit;text-decoration:none;min-width:0}
+.jm-feed-j:hover strong{color:var(--accent)}
+.jm-redup{color:var(--ink2);opacity:.75}
+.jm-baris-meta{display:flex;flex-wrap:wrap;align-items:center;gap:6px 10px}
+.jm-media{display:inline-flex;align-items:center;gap:6px;color:var(--ink2)}
+.jm-media img{width:16px;height:16px;object-fit:contain;border-radius:3px}
+
+/* ===== sensus proyek: baris peringkat = nomor | thumbnail+nama | MW ===== */
+.jm-rank .jm-rank-i{grid-template-columns:28px minmax(0,1fr) auto;align-items:center}
+.jm-rank-t{display:grid;grid-template-columns:auto minmax(0,1fr);align-items:center;gap:12px}
+.jm-rank-t:not(:has(.jm-rank-th,.jm-rank-lg)){grid-template-columns:minmax(0,1fr)}
+.jm-rank-tx strong{overflow-wrap:normal;word-break:normal;hyphens:none}
+.jm-rank-tx small .jm-pil-tek{font-size:var(--t-label)}
+
+/* ===== pengembang: logo bundar atau inisial berwarna, pil status berikon ===== */
+.jm-pm-lg{position:relative}
+.jm-pm-lg img{position:absolute;inset:0;width:100%;height:100%;padding:3px;background:var(--on-brand)}
+.jm-pm-ini.jm-w1{background:color-mix(in srgb,var(--data1) 18%,var(--card))}.jm-pm-ini.jm-w2{background:color-mix(in srgb,var(--data2) 18%,var(--card))}.jm-pm-ini.jm-w3{background:color-mix(in srgb,var(--data3) 22%,var(--card))}.jm-pm-ini.jm-w4{background:color-mix(in srgb,var(--data4) 26%,var(--card))}.jm-pm-ini.jm-w5{background:color-mix(in srgb,var(--data5) 18%,var(--card))}
+.jm-pm-n .jm-taut{display:block;padding:0;background:none;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.jm-pm-n .jm-taut-lb{display:none}
+.jm-pm-pil .jm-pil-st{--tk:var(--sk);min-height:22px;padding:2px 9px;font-size:var(--t-label)}
+.jm-pm-pil .jm-pil-st>.jm-ik{color:var(--sk)}
+.jm-pm-pil .jm-st-rencana{--sk:var(--info)}

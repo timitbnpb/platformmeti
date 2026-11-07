@@ -13,6 +13,7 @@ import assert from 'node:assert/strict';
 import { execFileSync } from 'node:child_process';
 import { fileURLToPath } from 'node:url';
 import { UA, robotsBolehkan, norm } from './berita.mjs';
+import { kotakCrop, deteksi } from '../pipa/foto_wajah.mjs';
 
 const AKAR = fileURLToPath(new URL('../..', import.meta.url));
 const DP = AKAR + 'data-panen/orang/', KAND = DP + 'foto_kandidat.json', TAMB = DP + 'foto_tambahan.jsonl', KREDIT = AKAR + 'data/foto_orang_kredit.json';
@@ -132,7 +133,50 @@ async function ambilFoto() {
   console.log(JSON.stringify({ foto_baru: baru, total_kredit: kredit.baris.length }));
 }
 
+
+// ---------- foto pengurus METI: public/img/pengurus/<slug>.webp (640px HD, <= 60 KB, kualitas 82 turun bila perlu, persegi berpusat wajah, latar putih; alfa diratakan) ----------
+//   node scripts/panen/foto_orang.mjs --pengurus   baca data-panen/orang/foto_pengurus.json [{nama, foto_url, halaman, hak, penulis?}] -> unduh (robots+jeda), crop wajah, tulis webp + kredit
+//   lalu: node scripts/pipa/pengurus_foto_isi.mjs  (mengisi field foto lewat sambungPengurusMeti di potret.mjs)
+export const slugPengurus = (n) => norm(n).replace(/ /g, '-');
+const PENGURUS = DP + 'foto_pengurus.json', IMG = AKAR + 'public/img/pengurus/';
+function cropPengurus(src, dst, { x, y, s }) {
+  const py = `
+import sys,io
+from PIL import Image
+x,y,s=map(int,sys.argv[3:6])
+im=Image.open(sys.argv[1]).convert("RGBA")
+bg=Image.new("RGBA",im.size,"white"); im=Image.alpha_composite(bg,im).convert("RGB")
+im=im.crop((x,y,x+s,y+s)).resize((640,640),Image.LANCZOS)
+for q in (82,78,74,70,66,62,56,50):
+    b=io.BytesIO(); im.save(b,"WEBP",quality=q,method=6)
+    if len(b.getvalue())<=60000: break
+open(sys.argv[2],"wb").write(b.getvalue())`;
+  execFileSync('python3', ['-c', py, src, dst, x, y, s].map(String));
+}
+async function pengurus() {
+  const daftar = JSON.parse(fs.readFileSync(PENGURUS, 'utf8')); const kredit = JSON.parse(fs.readFileSync(KREDIT, 'utf8')); const lapor = { ok: [], gagal: [] };
+  fs.mkdirSync(DP + 'foto_raw', { recursive: true });
+  for (const c of daftar) {
+    const sl = slugPengurus(c.nama), dst = IMG + sl + '.webp'; if (fs.existsSync(dst) && !process.argv.includes('--ulang')) continue;
+    if (HOST_TOLAK.test(new URL(c.foto_url).host) && !/commons\.wikimedia|upload\.wikimedia/.test(c.foto_url)) { lapor.gagal.push([c.nama, 'host-tolak']); continue; }
+    if (!(await boleh(c.foto_url))) { lapor.gagal.push([c.nama, 'robots']); continue; }
+    const b = await ambil(c.foto_url, { biner: true, batas: 8e7 }); if (!b || b.length < 2000) { lapor.gagal.push([c.nama, 'unduh']); continue; }
+    const raw = DP + 'foto_raw/pengurus-' + sl + '.img'; fs.writeFileSync(raw, b);
+    try {
+      const [h] = deteksi([raw]); if (!h?.w1) { lapor.gagal.push([c.nama, 'wajah-tak-terdeteksi']); continue; }
+      const kt = kotakCrop(h.w, h.h, h.w1); cropPengurus(raw, dst, kt); const sisi = kt.s;
+      kredit.baris = kredit.baris.filter((k) => k.pengurus !== sl);
+      kredit.baris.push({ orang_id: c.orang_id || null, pengurus: sl, nama: c.nama, sumber_url: c.halaman, foto_url: c.foto_url, lisensi: c.hak, ...(c.penulis ? { penulis: c.penulis } : {}), sisi_sumber_px: sisi, diambil: c.diambil || hariIni() });
+      lapor.ok.push([c.nama, sisi]);
+    } catch (e) { lapor.gagal.push([c.nama, 'proses:' + String(e.message).slice(0, 60)]); }
+  }
+  kredit.baris.sort((a, b) => (a.orang_id || a.pengurus).localeCompare(b.orang_id || b.pengurus));
+  fs.writeFileSync(KREDIT, JSON.stringify(kredit, null, 1) + '\n');
+  console.log(JSON.stringify({ ok: lapor.ok.length, gagal: lapor.gagal }));
+}
+
 function selftest() {
+  assert.equal(slugPengurus('Dr. Ir. A. Feiral Batubara'), 'dr-ir-a-feiral-batubara');
   assert.equal(kunciNama('Ir. Nur Pamudji, MPM., M.Eng., IPU'), 'nur pamudji');
   const h = '<div><img src="/a/p1.jpg" alt=""><h3>Budi Santoso</h3><p>Direktur</p></div><div><img data-src="/a/p2.jpg" alt="Siti Aminah"><h3>Siti Aminah</h3></div>';
   const r = cocokkan(h, 'https://x.id/t', ['Budi Santoso', 'Siti Aminah']);
@@ -145,5 +189,6 @@ if (process.argv[1] === fileURLToPath(import.meta.url)) {
   if (process.argv.includes('--selftest')) selftest();
   else if (process.argv.includes('--cari')) await cari();
   else if (process.argv.includes('--ambil')) await ambilFoto();
-  else console.log('pakai --selftest | --cari | --ambil');
+  else if (process.argv.includes('--pengurus')) await pengurus();
+  else console.log('pakai --selftest | --cari | --ambil | --pengurus');
 }

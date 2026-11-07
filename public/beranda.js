@@ -1,7 +1,12 @@
 import { mulaiHalaman } from "/inti/kepala.js";
 import { t, angka, tanggal } from "/i18n.js";
 import { esc, nanti, debounce, hantuHtml, kosongHtml, ikon, fotoBerita } from "/inti/umum.js";
-import { gambarDataset, LOGO_ORG, GEDUNG, FOTO_TEK } from "/beranda_data.js";
+import { gambarDataset, LOGO_ORG, ubinProyek } from "/beranda_data.js";
+import { pilTek, pilStatus } from "/inti/ikon_tek.js";
+import { tautProvinsi } from "/inti/tautan.js";
+import { namaMedia, logoLokal } from "/inti/nama_media.js";
+import { namaProyek } from "/inti/nama_proyek.js";
+import { pelakuHtml } from "/beranda_pelaku.js";
 import { pasangBawah, IKON } from "/beranda_bawah.js";
 import { sumberHtml, lihatSemuaHtml } from "/inti/komponen.js";
 import { kontenBeranda, daftarKonten } from "/inti/konten_beranda.js";
@@ -13,9 +18,6 @@ const namaPendek = (n) => { for (const [re, a] of ALIAS) if (re.test(n)) return 
 const URUT_ASOSIASI = [/metiires|masyarakat energi terbarukan/i, /surya/i, /biofuel/i, /panas bumi/i, /apamsi|modul surya/i, /applta|hidro/i, /aeski/i, /mki|ketenagalistrikan/i];
 const URUT_LEMBAGA = [/energi dan sumber daya mineral/i, /dewan energi/i, /bappenas|perencanaan pembangunan/i, /riset dan inovasi/i, /kementerian keuangan/i, /perindustrian/i, /lingkungan hidup|kehutanan/i, /danantara|investasi/i];
 const KAT_EKO = [["bumn", 1], ["swasta", 2], ["asosiasi", 3], ["lembaga", 4]];
-/** Strip hitungan: [kode kategori, warna, kunci label] */
-const STRIP_IK = { bumn: "perisai", swasta: "direktori", internasional: "asean", asosiasi: "orang", "kementerian-lembaga": "regulasi", koperasi: "koperasi", ormawa: "ormawa", "perguruan-tinggi": "perguruan-tinggi", "think-tank": "insight" };
-const STRIP = [["bumn", 1, "beranda.eko.h.bumn"], ["swasta", 2, "beranda.eko.h.swasta"], ["internasional", 5, "beranda.eko.h.asing"], ["asosiasi", 3, "beranda.eko.h.asosiasi"], ["kementerian-lembaga", 4, "beranda.eko.h.lembaga"], ["koperasi", 1, "beranda.sensus.k.koperasi"], ["ormawa", 2, "beranda.sensus.k.ormawa"], ["perguruan-tinggi", 3, "beranda.sensus.k.perguruan-tinggi"], ["think-tank", 4, "beranda.sensus.k.think-tank"]];
 const INSIGHT_KARTU = 17; // ponytail: jumlah kartu /insight ditulis tetap; hitung dari halaman itu bila kartunya sering berubah
 /** 8 teratas per kategori: daftar sematan (id atau nama) lebih dulu, sisanya menurut total MW proyek terkait. Nama baru di data masuk otomatis. */
 const PIN = {
@@ -81,7 +83,7 @@ async function gambarBerita() {
     const manual = pilih.map((i) => byId.get(i)).filter((x) => x && urlAman(x.url)).slice(0, 6);
     const baris = manual.length ? manual : [...b.baris].filter((x) => urlAman(x.url) && x.terbit).sort((x, y) => String(y.terbit).localeCompare(String(x.terbit))).slice(0, 6);
     if (!baris.length) throw new Error("berita kosong");
-    el.innerHTML = `<ul class="jm-feed">${baris.map((x) => `<li><a class="jm-feed-i jm-feed-foto" href="${esc(x.url)}" target="_blank" rel="noopener noreferrer"><span class="jm-feed-th">${ikon(IK[x.kepakaran?.[0]] || "tek-listrik", 28)}${fotoBerita(foto, x.id) ? `<img src="${fotoBerita(foto, x.id)}" width="112" height="72" alt="" loading="lazy" decoding="async" referrerpolicy="no-referrer">` : ""}</span><span class="jm-feed-t"><strong>${esc(x.judul)}</strong><span class="jm-baris-meta"><span>${esc(x.media)}, ${esc(tanggal(String(x.terbit).slice(0, 10)))}</span>${x.kepakaran?.[0] ? `<span class="jm-pil">${esc(label("beranda.tek.", x.kepakaran[0]))}</span>` : ""}</span></span></a></li>`).join("")}</ul>${lihatSemuaHtml("/berita", t("beranda.lihat.berita"))}`;
+    el.innerHTML = `<ul class="jm-feed">${baris.map((x) => `<li><a class="jm-feed-i jm-feed-foto" href="${esc(x.url)}" target="_blank" rel="noopener noreferrer"><span class="jm-feed-th">${ikon(IK[x.kepakaran?.[0]] || "tek-listrik", 28)}${fotoBerita(foto, x.id) ? `<img src="${fotoBerita(foto, x.id)}" width="112" height="72" alt="" loading="lazy" decoding="async" referrerpolicy="no-referrer">` : ""}</span><span class="jm-feed-t"><strong>${esc(x.judul)}</strong><span class="jm-baris-meta">${x.kepakaran?.[0] ? pilTek(x.kepakaran[0]) : ""}<span class="jm-media">${logoLokal(x.media) ? `<img src="${esc(logoLokal(x.media))}" width="16" height="16" alt="" loading="lazy" decoding="async" data-galat="hapus">` : ""}<span>${esc(namaMedia(x.media))}, ${esc(tanggal(String(x.terbit).slice(0, 10)))}</span></span></span></span></a></li>`).join("")}</ul>${lihatSemuaHtml("/berita", t("beranda.lihat.berita"))}`;
   } catch (e) { sembunyi(el, e); el.closest(".jm-ex").hidden = true; }
 }
 
@@ -92,9 +94,10 @@ async function gambarProyek() {
     const sorot = daftarKonten(await kontenBeranda(), "sorotan").filter((x) => x && x.jenis === "proyek"), byId = new Map(p.baris.map((x) => [x.id, x]));
     const manual = sorot.map((x) => byId.get(x.id)).filter(Boolean).slice(0, 6);
     const baru = manual.length ? manual : [...p.baris].sort((a, b) => String(b.sumber?.[0]?.tanggal).localeCompare(String(a.sumber?.[0]?.tanggal)) || b.id.localeCompare(a.id)).slice(0, 6);
+    const foto = await muat("berita_foto").catch(() => ({}));
     el.innerHTML = `<ul class="jm-feed">${baru.map((x) => {
-      const kap = x.kapasitas?.[0], st = x.status?.[0]?.nilai;
-      return `<li><a class="jm-feed-i jm-feed-foto" href="/p/${encodeURIComponent(x.id)}"><span class="jm-feed-th">${IKON[x.teknologi] || IKON.surya}${FOTO_TEK[x.teknologi] ? `<img src="/img/beranda/${FOTO_TEK[x.teknologi]}.webp" width="112" height="72" alt="" loading="lazy" decoding="async">` : ""}</span><span class="jm-feed-t"><strong>${esc(x.nama)}</strong><span class="jm-baris-meta">${st ? `<span class="jm-pil">${esc(label("beranda.st.", st))}</span>` : ""}<span>${esc(x.lokasi?.provinsi || "-")}</span>${kap ? `<span class="jm-angka-tab">${esc(angka(kap.nilai, { desimal: kap.nilai % 1 ? 1 : 0 }))} ${esc(kap.satuan)}</span>` : ""}</span></span></a></li>`;
+      const st = x.status?.[0]?.nilai || "tidak-diketahui", prov = x.lokasi?.provinsi, href = "/p/" + encodeURIComponent(x.id);
+      return `<li><div class="jm-feed-i"><a class="jm-feed-th jm-pt-k jm-tek-${esc(x.teknologi || "lain")}" href="${href}" tabindex="-1" aria-hidden="true">${ubinProyek(x, foto)}</a><span class="jm-feed-t"><a class="jm-feed-j" href="${href}"><strong>${esc(namaProyek(x))}</strong></a><span class="jm-baris-meta">${pilStatus(st)}${prov ? tautProvinsi(prov) : `<span class="jm-redup">${esc(t("tk.lokasi_belum"))}</span>`}</span></span></div></li>`;
     }).join("")}</ul>${lihatSemuaHtml("/proyek", t("beranda.lihat.proyek"))}`;
   } catch (e) { sembunyi(el, e); el.closest(".jm-ex").hidden = true; }
 }
@@ -118,7 +121,7 @@ async function gambarEkosistem() {
   try {
     const [org, pro] = await Promise.all([muat("organisasi"), muat("proyek")]);
     const n = (k) => org.baris.filter((o) => o.kategori?.kode === k).length;
-    hit.innerHTML = STRIP.map(([k, w, kunci]) => `<li><a href="/direktori?tampil=lembaga&amp;kat=${encodeURIComponent(k)}"><span class="jm-strip-ik jm-w${w}" aria-hidden="true">${IKON[STRIP_IK[k]] || ikon(STRIP_IK[k] || "direktori", 20)}</span><span class="jm-strip-t"><b>${esc(angka(n(k)))}</b><span class="jm-strip-l">${esc(t(kunci))}</span></span>${ikon("panah-kanan", 16)}</a></li>`).join("");
+    hit.innerHTML = pelakuHtml(org.baris, pro);
     const d = delapan(org.baris, pro);
     kisi.innerHTML = KAT_EKO.map(([kat, w]) => {
       const { daftar } = d[kat];
@@ -176,7 +179,7 @@ async function main() {
   };
   await mulai();
   pasangBawah(R);
-  addEventListener("error", (e) => { if (e.target.tagName !== "IMG") return; if (e.target.closest(".jm-feed-th")) e.target.remove(); else if (e.target.closest(".jm-pm-lg")) e.target.replaceWith(Object.assign(document.createElement("span"), { className: "jm-pm-ini", innerHTML: GEDUNG })); }, true);
+  addEventListener("error", (e) => { if (e.target.tagName !== "IMG") return; if (e.target.closest(".jm-feed-th")) e.target.remove(); }, true);
   document.getElementById("kartu").addEventListener("click", (e) => e.target.closest("[data-aksi=ulang]") && mulai());
   const input = document.getElementById("cariBeranda");
   input.addEventListener("focus", () => siapkanIndeks().catch(() => { indeks = null; }), { once: true });

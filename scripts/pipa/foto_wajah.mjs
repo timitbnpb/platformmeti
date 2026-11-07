@@ -24,7 +24,7 @@ export function kotakCrop(W, H, [fx, fy, fw, fh]) {
   return { x, y, s };
 }
 
-function deteksi(berkas) {
+export function deteksi(berkas) {
   const bin = path.join(os.tmpdir(), 'meti-wajah');
   if (!fs.existsSync(bin)) execFileSync('swiftc', ['-O', fileURLToPath(new URL('./wajah.swift', import.meta.url)), '-o', bin]);
   return execFileSync(bin, berkas, { maxBuffer: 1 << 26 }).toString().trim().split('\n').filter(Boolean).map((l) => JSON.parse(l));
