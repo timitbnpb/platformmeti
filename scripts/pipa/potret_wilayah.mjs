@@ -87,8 +87,10 @@ export function bangunAsean() {
 export function bangunRantai() {
   const p = jsonl('data-panen/perusahaan/perusahaan.jsonl').filter((x) => x.sumber?.some((s) => s.id === 'tabel-modul'));
   const sumber = p[0].sumber.find((s) => s.id === 'tabel-modul');
+  const slug = (n) => String(n).toLowerCase().replace(/\([^)]*\)/g, ' ').replace(/\b(pt|tbk|persero)\b/g, ' ').replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+  const adaLogo = (n) => fs.existsSync(path.join(ROOT, 'public/img/logo', slug(n) + '.png')) ? slug(n) : null;
   const pabrikan = p.map((x) => ({
-    id: x.perusahaan_id, nama: x.nama, kota: x.kantor_pusat?.kota || null, provinsi: x.kantor_pusat?.provinsi || null,
+    logo: adaLogo(x.nama), id: x.perusahaan_id, nama: x.nama, kota: x.kantor_pusat?.kota || null, provinsi: x.kantor_pusat?.provinsi || null,
     mwp: x.kapasitas_mwp_tahun, pasar: x.pasar, apamsi: x.apamsi, tkdn: x.tkdn, bmp: x.bmp,
   })).sort((a, b) => (b.mwp ?? -1) - (a.mwp ?? -1) || a.nama.localeCompare(b.nama));
   const jml = (f) => pabrikan.filter(f).reduce((s, x) => s + (x.mwp || 0), 0);

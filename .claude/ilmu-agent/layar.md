@@ -62,3 +62,4 @@ Belum ada kasus. Tambahkan lewat ilmu.mjs kasus.
 - 2026-11-07 · Pseudo-elemen fixed z-index pada body menimpa kartu di Chrome; latar grid/gradasi taruh di background body (attachment fixed), bukan ::before.
 - 2026-11-07 · Gerbang CSS menolak var(--x) lokal (--tc, --w): pakai kelas per warna dan el.style.width, bukan variabel kustom
 - 2026-11-07 · Tangkapan layar peta WebGL headless: set tinggi viewport = scrollHeight (desktop) sebelum capture, kalau tidak kanvas MapLibre terpotong; viewport tinggi >8000px di mobile menggandakan isi.
+- 2026-11-07 · IntersectionObserver tidak menyala bila bagian dilewati lompatan gulir; tambah cek posisi saat scroll. Grid CSS tanpa grid-template-columns:minmax(0,1fr) melebar mengikuti isi nowrap (overflow 375). Regex pengganti CSS bisa merusak @media; periksa keseimbangan kurung

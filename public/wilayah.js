@@ -3,7 +3,7 @@ import { mulaiHalaman } from "/inti/kepala.js";
 import { muatMapLibre } from "/inti/maplibre.js";
 import { nanti, esc, hantuHtml } from "/inti/umum.js";
 import { t, tanggal } from "/i18n.js";
-import { muatData, tampilGalat, sumberHtml, sumberLipat, kartuHtml, batangHtml, pasangBar, temuanHtml, pil, teksTek, teksStatus, num, saatBahasa, amanUrl } from "/analisis.js";
+import { muatData, tampilGalat, sumberHtml, sumberLipat, kartuHtml, batangHtml, pasangBar, temuanHtml, heroVisual, pil, teksTek, teksStatus, num, saatBahasa, amanUrl } from "/analisis.js";
 
 const $ = (id) => document.getElementById(id);
 const param = new URLSearchParams(location.search).get("prov");
@@ -21,7 +21,14 @@ const warna = (v) => getComputedStyle(document.documentElement).getPropertyValue
 
 /* ---------- daftar ---------- */
 
+function visual() {
+  const urut = [...data.baris].filter((p) => p.terpasang_mw).sort((a, b) => b.terpasang_mw.nilai - a.terpasang_mw.nilai), tot = urut.reduce((x, p) => x + p.terpasang_mw.nilai, 0);
+  $("visual").innerHTML = heroVisual({ angka: num((urut[0].terpasang_mw.nilai / tot) * 100, 0) + "%", label: t("wl.vis.label", { nama: urut[0].nama }),
+    rows: urut.slice(0, 3).map((p, i) => ({ label: p.nama, nilai: p.terpasang_mw.nilai, teks: num(p.terpasang_mw.nilai, 0) + " MW", kelas: i ? "jm-hv-b2" : "jm-hv-b1" })) });
+}
+
 function jawab() {
+  visual();
   const urut = [...data.baris].filter((p) => p.terpasang_mw).sort((a, b) => b.terpasang_mw.nilai - a.terpasang_mw.nilai);
   const a = urut[0];
   $("jawab").textContent = t("wl.jawab", { nama: a.nama, mw: num(a.terpasang_mw.nilai, 1), n: num(data.baris.filter((p) => p.rued.perda).length), tahun: a.terpasang_mw.tahun });
@@ -31,10 +38,10 @@ function kartu() {
   const B = data.baris, tp = B.filter((p) => p.terpasang_mw), pb = B.filter((p) => p.potensi_panas_bumi);
   const jp = B.reduce((s, p) => s + p.jumlah_proyek, 0);
   $("kartu").innerHTML =
-    kartuHtml({ judul: t("wl.k.terpasang"), nilai: num(tp.reduce((s, p) => s + p.terpasang_mw.nilai, 0), 0), satuan: "MW", turunan: true, penyebut: t("an.n_dari", { n: tp.length, total: B.length }), sumber: sumberHtml(tp[0]?.terpasang_mw) }) +
-    kartuHtml({ judul: t("wl.k.potensi"), nilai: num(pb.reduce((s, p) => s + p.potensi_panas_bumi.nilai, 0), 0), satuan: "MW", turunan: true, penyebut: t("an.n_dari", { n: pb.length, total: B.length }), sumber: sumberHtml(pb[0]?.potensi_panas_bumi) }) +
-    kartuHtml({ judul: t("wl.k.proyek"), nilai: num(jp), satuan: t("wl.proyek_sat"), penyebut: t("wl.tanpa_prov", { n: data.proyek_tanpa_provinsi }), sumber: sumberHtml({ sumber: t("wl.sumber_proyek"), tanggal: data.dibangun_pada }) }) +
-    kartuHtml({ judul: t("wl.k.rued"), nilai: num(B.filter((p) => p.rued.perda).length), satuan: t("wl.prov_sat"), penyebut: t("an.n_dari", { n: B.filter((p) => p.rued.perda).length, total: B.length }), sumber: sumberHtml({ sumber: t("wl.sumber_rued"), tanggal: B.find((p) => p.rued.tanggal)?.rued.tanggal }) });
+    kartuHtml({ ikon: "analisis", judul: t("wl.k.terpasang"), nilai: num(tp.reduce((s, p) => s + p.terpasang_mw.nilai, 0), 0), satuan: "MW", turunan: true, penyebut: t("wl.sub_prov", { n: tp.length, total: B.length }), sumber: sumberHtml(tp[0]?.terpasang_mw) }) +
+    kartuHtml({ ikon: "peta", judul: t("wl.k.potensi"), nilai: num(pb.reduce((s, p) => s + p.potensi_panas_bumi.nilai, 0), 0), satuan: "MW", turunan: true, penyebut: t("wl.sub_prov", { n: pb.length, total: B.length }), sumber: sumberHtml(pb[0]?.potensi_panas_bumi) }) +
+    kartuHtml({ ikon: "proyek", judul: t("wl.k.proyek"), nilai: num(jp), satuan: t("wl.proyek_sat"), penyebut: t("wl.tanpa_prov", { n: data.proyek_tanpa_provinsi }), sumber: sumberHtml({ sumber: t("wl.sumber_proyek"), tanggal: data.dibangun_pada }) }) +
+    kartuHtml({ ikon: "regulasi", judul: t("wl.k.rued"), nilai: num(B.filter((p) => p.rued.perda).length), satuan: t("wl.prov_sat"), penyebut: t("wl.sub_prov", { n: B.filter((p) => p.rued.perda).length, total: B.length }), sumber: sumberHtml({ sumber: t("wl.sumber_rued"), tanggal: B.find((p) => p.rued.tanggal)?.rued.tanggal }) });
 }
 
 function urutan() {

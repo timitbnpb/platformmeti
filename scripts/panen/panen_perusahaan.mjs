@@ -62,7 +62,7 @@ export function jenisJabatan(j) {
   if (/chairman.*(supervisory|board)/i.test(j) && !/vice/i.test(j)) return 'komisaris-utama';
   if (/member of .*(supervisory|board)|vice chairman/i.test(j)) return 'komisaris';
   if (/(presiden|president)\s+komisaris|(president|chairman)\s+commissioner|komisaris utama/i.test(j)) return 'komisaris-utama';
-  if (/(presiden|president)\s+direktur|(president|managing)\s+director|direktur utama|^ceo$|chief executive/i.test(j) && !/wakil|vice|deputy/i.test(j)) return 'direktur-utama';
+  if (/(presiden|president)\s+direktur|(president|managing)\s+director$|direktur utama|^ceo$|chief executive/i.test(j) && !/wakil|vice|deputy/i.test(j)) return 'direktur-utama';
   if (/komisaris|commissioner/i.test(j)) return 'komisaris';
   if (/direktur|director|chief/i.test(j)) return 'direktur';
   return 'lain';
@@ -93,6 +93,7 @@ export function uraiPengurus(t) {
   const pisah = (l) => { for (const sep of [' - ', ' – ', ' | ', ' — ']) { const p = l.split(sep); if (p.length === 2) { if (jabatanOk(p[1]) && namaOk(p[0])) return [namaOk(p[0]), p[1].trim()]; if (jabatanOk(p[0]) && namaOk(p[1])) return [namaOk(p[1]), p[0].trim()]; } } return null; };
   L.forEach((l) => { const p = pisah(l); if (p) tambah(p[0], p[1]); });
   const A = idxJ.length && idxJ[0] > 0 && namaOk(L[idxJ[0] - 1]);
+  if (A) { L.forEach((l, i) => { if (/^(komisaris|direktur|commissioner|director)$/i.test(l) && i > 0 && namaOk(L[i - 1])) idxJ.push(i); }); idxJ.sort((a, b) => a - b); } // jabatan tunggal ("Komisaris") sah bila didahului nama (layout A)
   for (const i of idxJ) {
     const n = A ? namaOk(L[i - 1] || '') : namaOk(L[i + 1] || '');
     if (n) tambah(n, L[i]);
@@ -285,7 +286,7 @@ async function jalan(batches) {
   for (const r of semua) {
     const ov = OVERRIDE[normNama(r.nama)];
     if (ov && r.situs !== ov.situs) { Object.assign(r, { situs: ov.situs, situs_keyakinan: ov.situs_keyakinan, situs_catatan: ov.situs_catatan, pengurus_status: 'belum-dibaca', verifikasi: { situs_ok: false, http: null, judul: null, tanggal_periksa: null } }); }
-    if (ov?.pengurus_url) r.pengurus_url = ov.pengurus_url;
+    if (ov?.pengurus_url) { r.pengurus_url = ov.pengurus_url; if (r.pengurus_status === 'terbaca' && !r.pengurus_v2) { r.pengurus_status = 'belum-dibaca'; r.pengurus_v2 = true; } }
     // salah-tolak robots (bug wildcard lama): ulangi
     if (r.pengurus_status === 'situs-gagal' && gagalLama.some((x) => x.perusahaan_id === r.perusahaan_id && x.alasan === 'robots-tolak')) r.pengurus_status = 'belum-dibaca';
     if (/^Denera|Mahakarsa/.test(r.nama) && !r.situs && !gagalLama.some((x) => x.perusahaan_id === r.perusahaan_id)) gagal.push({ perusahaan_id: r.perusahaan_id, url: null, alasan: 'situs-resmi-tidak-ditemukan: nama tidak ada di sumber resmi yang dibaca (situs Danantara, PNRE, direktori APROBI/AESI); butuh URL dari pemilik', tanggal: HARI_INI });
@@ -293,6 +294,10 @@ async function jalan(batches) {
   const orangRows = baca(ORANG); const orangKunci = new Map();
   for (const o of orangRows) { const k = kunciNama(o.nama); orangKunci.set(k, orangKunci.has(k) ? 'ambigu' : o.orang_id); }
   let pengurus = baca(path.join(OUT, 'pengurus.jsonl'));
+  for (const x of pengurus) x.jenis_jabatan = jenisJabatan(x.jabatan); // aturan klasifikasi bisa berubah; hitung ulang
+  { const tanpaSitus = new Set(semua.filter((x) => !x.situs).map((x) => x.perusahaan_id)); // sisa dari situs yang dicabut (mis. situs induk salah-pasang)
+    pengurus = pengurus.filter((x) => !(x.ekstraksi === 'heuristik' && tanpaSitus.has(x.perusahaan_id)));
+    for (const r of semua) if (!r.situs && r.sumber_field?.kontak === 'situs') { delete r.kontak; delete r.sumber_field.kontak; delete r.sumber_field.pengurus; r.sumber = r.sumber.filter((x) => x.id !== 'situs'); } }
   const simpan = () => {
     tulis(path.join(OUT, 'perusahaan.jsonl'), semua); tulis(path.join(OUT, 'pengurus.jsonl'), pengurus);
     const g = baca(path.join(OUT, 'gagal.jsonl')); const k = new Set(g.map((x) => x.url + x.alasan));
@@ -357,7 +362,7 @@ async function jalan(batches) {
           if (c && k.lat == null) { k.lat = c.lat; k.lng = c.lng; k.lat_lng_sumber = 'halaman-resmi'; } }
         if (k.alamat_kantor && k.lat == null) { const c = await nominatim(k.alamat_kantor, r.perusahaan_id); if (c) { k.lat = c.lat; k.lng = c.lng; k.lat_lng_sumber = 'OpenStreetMap Nominatim (ODbL)'; } }
         r.kontak = k; r.sumber_field.kontak = 'situs'; }
-      r.pengurus_status = dapat ? 'terbaca' : 'tak-terurai';
+      r.pengurus_status = (dapat || sudah.size) ? 'terbaca' : 'tak-terurai';
       if (!dapat) catatGagal(r.perusahaan_id, r.situs, 'halaman-pengurus-tak-terurai:' + urut.length + '-kandidat');
       if (dapat) r.sumber_field.pengurus = 'situs';
     }
@@ -442,6 +447,9 @@ function selftest() {
   assert.equal(A.length, 3); assert.equal(A[1].jabatan, 'Direktur Keuangan');
   const B = uraiPengurus('Direksi\nDirektur Utama\nBudi Santoso\nDirektur Keuangan\nSiti Rahma');
   assert.equal(B.length, 2); assert.equal(B[0].nama, 'Budi Santoso');
+  const K = uraiPengurus('Komisaris\nJajaran Komisaris\nHavidh Nazif\nKomisaris\nLihat profil\nReni Mayerni\nKomisaris Independen\nDireksi\nJohn Anis\nDirektur Utama');
+  assert.deepEqual(K.map((x) => x.nama), ['Havidh Nazif', 'Reni Mayerni', 'John Anis']);
+  assert.equal(jenisJabatan('Managing Director, Finance'), 'direktur'); assert.equal(jenisJabatan('Chief Executive Officer'), 'direktur-utama');
   const C = uraiPengurus('Budi Santoso - Direktur Utama\nSiti Rahma | Direktur SDM'); assert.equal(C.length, 2);
   const html = '<div><img src="/u/budi.jpg"><h3>Budi Santoso</h3><p>Direktur Utama</p></div><div><img src="/u/siti.jpg"><h3>Siti Rahma</h3></div><img src="/logo.png"><img src="https://evil.com/x.jpg">';
   assert.deepEqual(fotoKandidat(html, ['Budi Santoso', 'Siti Rahma'], 'https://www.example.org/direksi'), ['https://www.example.org/u/budi.jpg', 'https://www.example.org/u/siti.jpg']);

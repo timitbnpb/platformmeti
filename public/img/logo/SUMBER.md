@@ -16,3 +16,9 @@ Logo hanya untuk mengenali organisasi. Diambil 7 Nov 2026 dari ikon resmi di sit
 | aprobi.png | https://www.aprobi.or.id/wp-content/themes/aprobi/img/logo.png |
 | esdm.png | https://www.esdm.go.id/themes/v2/img/faviconesdm-large.png |
 | brin.png | https://www.brin.go.id/images/favicon.png |
+| pln.png | https://www.pln.co.id/resources/pln-mobile-logo.png (logo kepala situs) |
+| pertamina.png | https://www.pertamina.com/images/ah-180.png |
+| sumitomo.png | https://www.sumitomocorp.com/common/images/apple-touch-icon.png |
+| ebtke.png | https://ebtke.esdm.go.id/media/landing/logo-esdm.png (Ditjen EBTKE) |
+| pln-icon-plus.png | https://plniconplus.co.id/seo/apple-icon-180x180.png |
+| medco-energi.png | https://www.medcoenergi.com/apple-touch-icon.png |

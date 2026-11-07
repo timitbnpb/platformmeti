@@ -30,7 +30,7 @@
 .jm-tahun summary{display:flex;flex-wrap:wrap;gap:8px;align-items:center;min-height:var(--target);padding:6px 14px;cursor:pointer;font:700 16px/1 var(--display);color:var(--head)}
 .jm-tahun ul{list-style:none;margin:0;padding:0 14px 12px;display:grid;gap:6px}
 .jm-tahun li{display:flex;flex-wrap:wrap;gap:8px;align-items:baseline}
-.jm-tahun li button{border:0;background:none;padding:2px 0;color:var(--accent);font:inherit;text-align:left;cursor:pointer;text-decoration:underline;text-underline-offset:3px}
+.jm-tahun li button{border:0;background:none;padding:2px 0;color:var(--accent);font:inherit;text-align:left;cursor:pointer;text-decoration:none;font-weight:600}
 .jm-tanda{display:inline-flex;align-items:center;min-height:22px;padding:0 8px;border-radius:var(--r-pil);font:600 11px/1 var(--font);white-space:nowrap}
 .jm-tanda-terbit{background:var(--info-bg);color:var(--info)}
 .jm-tanda-mengubah{background:var(--warn-bg);color:var(--warn)}
@@ -48,7 +48,7 @@ dialog.jm-lembar::backdrop{background:rgb(11 23 38/.55)}
 .jm-rantai{list-style:none;margin:0;padding:0;display:grid;gap:6px}
 .jm-rantai li{display:flex;flex-wrap:wrap;gap:6px;align-items:center}
 .jm-rantai button,.jm-lembar a{color:var(--accent)}
-.jm-rantai button{border:0;background:none;padding:0;font:inherit;cursor:pointer;text-decoration:underline;text-underline-offset:3px;text-align:left}
+.jm-rantai button{border:0;background:none;padding:0;font:inherit;cursor:pointer;text-decoration:none;font-weight:600;text-align:left}
 .jm-posisi{padding:12px;border-radius:var(--r-sm);background:var(--soft-hijau)}
 
 /* kartu angka dan jalur masuk */
@@ -356,3 +356,28 @@ a.jm-foto:focus-visible{outline:3px solid var(--fokus)}
 .jm-hero2 .jm-logo-ini{display:grid;place-items:center;font:700 12px/1 var(--display);background:color-mix(in srgb,var(--data1) 16%,var(--card));color:var(--head);-webkit-line-clamp:unset;overflow:visible}
 .jm-hero2 .jm-logo-ini.jm-w2{background:color-mix(in srgb,var(--data2) 16%,var(--card))}.jm-hero2 .jm-logo-ini.jm-w3{background:color-mix(in srgb,var(--data3) 20%,var(--card))}.jm-hero2 .jm-logo-ini.jm-w4{background:color-mix(in srgb,var(--data4) 26%,var(--card))}
 .jm-hero2-kanan{display:grid;gap:10px}
+
+/* daftar peringkat berbatang */
+.jm-rank{list-style:none;margin:0;padding:0;display:grid;gap:2px}
+.jm-rank a{display:grid;grid-template-columns:28px minmax(0,1fr) auto;column-gap:12px;row-gap:6px;align-items:center;padding:10px 8px;border-radius:var(--r-sm);color:var(--ink);text-decoration:none}
+.jm-rank a:hover{background:var(--surface)}
+.jm-rank a:focus-visible{outline:2px solid var(--fokus);outline-offset:0}
+.jm-rank-no{grid-row:1/3;align-self:start;display:grid;place-items:center;width:28px;height:28px;border-radius:50%;background:color-mix(in srgb,var(--brand2) 14%,var(--card));color:var(--head);font:700 12px/1 var(--display)}
+.jm-rank-t{display:grid;gap:2px;min-width:0}
+.jm-rank-t strong{font-weight:600;font-size:14px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.jm-rank-t small{font-size:12px;color:var(--ink2)}
+.jm-rank-v{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+.jm-rank-v b{font:700 15px/1 var(--display)}
+.jm-rank-v small{font-size:12px;color:var(--ink2)}
+.jm-rank-bar{grid-column:2/4;display:block;width:100%;height:6px}
+.jm-rank-bar .jm-bar-isi{fill:color-mix(in srgb,var(--brand2) 55%,var(--card))}
+.jm-rank-bar.jm-rank-atas .jm-bar-isi{fill:var(--brand)}
+.jm-rank-bar.jm-rank-panas .jm-bar-isi{fill:color-mix(in srgb,var(--warn) 55%,var(--card))}
+.jm-rank-bar.jm-rank-panas.jm-rank-atas .jm-bar-isi{fill:var(--warn)}
+.jm-kpi-strip{display:flex;align-items:center;gap:16px;padding:14px 16px;border:1px solid var(--line);border-radius:var(--r-sm);background:var(--surface)}
+.jm-kpi-strip b{font:800 40px/1 var(--display);font-variant-numeric:tabular-nums;color:var(--head)}
+.jm-kpi-strip span{font-size:14px;color:var(--ink2)}
+.jm-info{display:inline-flex;align-items:center;gap:6px;font-size:12px;color:var(--ink2);cursor:help;justify-self:start}
+.jm-peta-info,.jm-ds{gap:16px}
+.jm-peta-kartu+.jm-peta-kartu{margin-top:24px}
+.jm-kisi+details,.jm-hero2+*{margin-top:24px}

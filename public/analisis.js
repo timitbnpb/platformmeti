@@ -1,6 +1,6 @@
 /* Pembantu bersama halaman analisis statis (/wilayah, /rantai, /asean): data JSON statis, sumber bertanggal (dilipat), batang, kartu angka. */
 import { t, angka, tanggal } from "/i18n.js";
-import { esc, galatHtml } from "/inti/umum.js";
+import { esc, galatHtml, ikon } from "/inti/umum.js";
 
 export const amanUrl = (u) => (/^https?:\/\//.test(u || "") ? u : null);
 
@@ -16,8 +16,10 @@ export const tampilGalat = (el, ulang) => {
 };
 
 /* Satu butir sumber: "Sumber: X, halaman, data 2025, diperiksa 7 Nov 2026" (tautan bila URL sah). */
+const sumberIsi = (s) => [s.sumber, s.halaman, s.tahun ? t("an.data_tahun", { tahun: s.tahun }) : null].filter(Boolean).join(", ");
+const sumberPolos = (s) => `${t("an.sumber", { isi: sumberIsi(s) })}, ${t("an.diperiksa", { tanggal: tanggal(s.tanggal) })}`;
 function sumberBaris(s) {
-  const isi = [s.sumber, s.halaman, s.tahun ? t("an.data_tahun", { tahun: s.tahun }) : null].filter(Boolean).join(", ");
+  const isi = sumberIsi(s);
   const u = amanUrl(s.url);
   const teks = esc(t("an.sumber", { isi }));
   return `<span>${u ? `<a href="${esc(u)}" target="_blank" rel="noopener noreferrer">${teks}</a>` : teks}, ${esc(t("an.diperiksa", { tanggal: tanggal(s.tanggal) }))}</span>`;
@@ -28,17 +30,29 @@ export function sumberLipat(daftar) {
   const a = daftar.filter(Boolean);
   if (!a.length) return "";
   const tgl = tanggal(a[0].tanggal);
-  return `<details class="jm-an-src"><summary>${esc(a.length > 1 ? t("an.sumber_n", { n: a.length, tanggal: tgl }) : t("an.sumber_1", { tanggal: tgl }))}</summary><div>${a.map(sumberBaris).join("")}</div></details>`;
+  return `<details class="jm-an-src"><summary title="${esc(a.map(sumberPolos).join(" | "))}">${esc(a.length > 1 ? t("an.sumber_n", { n: a.length, tanggal: tgl }) : t("an.sumber_1", { tanggal: tgl }))}</summary><div>${a.map(sumberBaris).join("")}</div></details>`;
 }
 export const sumberHtml = (s) => sumberLipat([s]);
 
 export const pil = (kunci, jenis = "warn") => `<span class="jm-pil jm-pil-${jenis}">${esc(t(kunci))}</span>`;
 
-/* Kartu angka: nilai, satuan, penyebut "n dari N", sumber, pil EST bila turunan. */
-export function kartuHtml({ judul, nilai, satuan, penyebut, sumber, turunan }) {
-  return `<article class="jm-kartu jm-an-kartu"><h3>${esc(judul)}${turunan ? " " + pil("an.est") : ""}</h3>
-    <p class="jm-an-angka">${esc(nilai)}${satuan ? ` <span>${esc(satuan)}</span>` : ""}</p>
-    ${penyebut ? `<p class="jm-bantu">${esc(penyebut)}</p>` : ""}${sumber || ""}</article>`;
+/* Kartu angka (KPI): ikon bertinta + label satu baris + pil EST, angka besar dengan satuan sebaris, sub baris, sumber satu baris (tooltip penuh). */
+export function kartuHtml({ judul, nilai, satuan, penyebut, sumber, turunan, ikon: ik = "analisis" }) {
+  return `<article class="jm-kartu jm-an-kartu"><header class="jm-kpi-kepala"><span class="jm-kpi-ik">${ikon(ik, 18)}</span><h3 title="${esc(judul)}">${esc(judul)}</h3>${turunan ? pil("an.est") : ""}</header>
+    <p class="jm-an-angka"><b>${esc(nilai)}</b>${satuan ? `<span>${esc(satuan)}</span>` : ""}</p>
+    <p class="jm-bantu jm-kpi-sub">${penyebut ? esc(penyebut) : "&nbsp;"}</p>${sumber || ""}</article>`;
+}
+
+/* Jawaban visual di hero: angka besar + label + batang kecil bersama (rows: [{label, nilai, teks, kelas}]; ref: garis putus-putus). */
+export function heroVisual({ angka: a, label, rows, ref, teksRef, turunan = true }) {
+  const W = 340, rh = 40, T = ref ? 22 : 4, H = T + rows.length * rh + 4;
+  const M = Math.max(1e-9, ref?.nilai ?? 0, ...rows.map((r) => r.nilai)) * 1.04, X = (v) => (v / M) * W;
+  const isi = rows.map((r, i) => {
+    const y = T + i * rh;
+    return `<text class="jm-hv-t" x="0" y="${y + 12}">${esc(r.label)}</text><text class="jm-hv-t jm-hv-tb" x="${W}" y="${y + 12}" text-anchor="end">${esc(r.teks)}</text><rect class="jm-hv-trek" x="0" y="${y + 18}" width="${W}" height="12" rx="6"/><rect class="${r.kelas}" x="0" y="${y + 18}" width="${Math.max(6, X(r.nilai)).toFixed(1)}" height="12" rx="6"><title>${esc(r.label + ": " + r.teks)}</title></rect>`;
+  }).join("");
+  const garis = ref ? `<line class="jm-hv-ref" x1="${X(ref.nilai).toFixed(1)}" x2="${X(ref.nilai).toFixed(1)}" y1="${T - 6}" y2="${H}"/><text class="jm-hv-t jm-hv-tb" x="${Math.min(W - 4, X(ref.nilai)).toFixed(1)}" y="10" text-anchor="middle">${esc(teksRef)}</text>` : "";
+  return `<p class="jm-hv-angka">${esc(a)}</p><p class="jm-hv-label">${esc(label)}${turunan ? " " + pil("an.est") : ""}</p><svg class="jm-hv" viewBox="0 0 ${W} ${H}" role="img" aria-label="${esc(label)}" focusable="false">${isi}${garis}</svg>`;
 }
 
 /* Temuan utama di kepala wadah: kalimat besar dari data + pil EST bila turunan. */

@@ -2,7 +2,7 @@
 import { mulaiHalaman } from "/inti/kepala.js";
 import { nanti, esc, hantuHtml } from "/inti/umum.js";
 import { t, tanggal } from "/i18n.js";
-import { muatData, tampilGalat, sumberHtml, kartuHtml, batangHtml, pasangBar, temuanHtml, pil, num, saatBahasa } from "/analisis.js";
+import { muatData, tampilGalat, sumberHtml, kartuHtml, batangHtml, pasangBar, temuanHtml, heroVisual, pil, num, saatBahasa } from "/analisis.js";
 
 const $ = (id) => document.getElementById(id);
 let d = null, metrik = "bauran", pilih = null;
@@ -17,7 +17,14 @@ const urutan = (m) => d.baris.filter((n) => nilaiN(n, m) !== null).sort((a, b) =
 const peringkat = (m) => urutan(m).findIndex((n) => n.iso3 === "IDN") + 1;
 const idn = () => d.baris.find((n) => n.iso3 === "IDN");
 
+function visual() {
+  const u = urutan("bauran"), i = idn(), v = (n) => num(nilaiN(n, "bauran"), 1) + " %", hi = u[0], lo = u[u.length - 1];
+  $("visual").innerHTML = heroVisual({ angka: `${peringkat("bauran")}/${u.length}`, label: t("as.vis.label"), turunan: true,
+    rows: [{ label: i.nama, nilai: nilaiN(i, "bauran"), teks: v(i), kelas: "jm-hv-b1" }, { label: hi.nama, nilai: nilaiN(hi, "bauran"), teks: v(hi), kelas: "jm-hv-b2" }, { label: lo.nama, nilai: nilaiN(lo, "bauran"), teks: v(lo), kelas: "jm-hv-b3" }] });
+}
+
 function jawab() {
+  visual();
   const i = idn();
   $("jawab").textContent = t("as.jawab", { r: peringkat("bauran"), n: urutan("bauran").length, v: num(nilaiN(i, "bauran"), 1), tahun: i.bauran_persen.tahun, rk: peringkat("kapasitas"), nk: urutan("kapasitas").length, ra: peringkat("akses"), na: urutan("akses").length });
 }
@@ -25,7 +32,7 @@ function jawab() {
 function kartu() {
   const i = idn();
   $("kartu").innerHTML = ["bauran", "kapasitas", "akses"].map((m) => kartuHtml({
-    judul: t("as.m." + m), nilai: num(nilaiN(i, m), M[m].d), satuan: M[m].satuan,
+    ikon: { bauran: "analisis", kapasitas: "tabel", akses: "status" }[m], judul: t("as.m." + m), nilai: num(nilaiN(i, m), M[m].d), satuan: M[m].satuan,
     penyebut: t("as.peringkat", { r: peringkat(m), n: urutan(m).length }) + " | " + t("as.tahun", { tahun: i[M[m].nilai].tahun }), sumber: sumber(m),
   })).join("");
 }

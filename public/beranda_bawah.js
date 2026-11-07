@@ -106,6 +106,10 @@ async function cara() {
   el.innerHTML = CARA.map(([k, ik, ex], i) => `<div class="jm-cara"><div class="jm-cara-kep"><span class="jm-kpi-ik">${IKON[ik]}</span><span class="jm-cara-no">0${i + 1}</span></div><h3>${esc(t("beranda.cara." + k))}</h3><p>${esc(t("beranda.cara." + k + ".d"))}</p><div class="jm-baris-kecil">${k === "tanggal" && !tgl ? "" : ex(tgl)}</div></div>`).join("");
 }
 
+/** Daftar peringkat berbatang: item {nama, meta, nilai, unit, frac, href, panas}. */
+const rankHtml = (items) => `<ol class="jm-rank">${items.map((x, i) => `<li><a href="${esc(x.href)}"><span class="jm-rank-no">${i + 1}</span><span class="jm-rank-t"><strong title="${esc(x.nama)}">${esc(x.nama)}</strong><small>${esc(x.meta)}</small></span><span class="jm-rank-v"><b>${esc(x.nilai)}</b> <small>${esc(x.unit)}</small></span><svg class="jm-rank-bar${i === 0 ? " jm-rank-atas" : ""}${x.panas ? " jm-rank-panas" : ""}" viewBox="0 0 100 6" preserveAspectRatio="none" aria-hidden="true"><rect class="jm-bar-latar" width="100" height="6"/><rect class="jm-bar-isi" width="${Math.max(2, Math.round(x.frac * 100))}" height="6"/></svg></a></li>`).join("")}</ol>`;
+const infoSumber = (teks) => `<span class="jm-info" tabindex="0" title="${esc(teks)}">${IKON.waktu.replace('width="40" height="40"', 'width="16" height="16"')}<span>${esc(t("beranda.sumber_l"))}</span></span>`;
+
 /* ---------- peta proyek (MapLibre dimuat malas saat bagian ini mendekati layar) ---------- */
 const warna = (v) => getComputedStyle(document.documentElement).getPropertyValue(v).trim();
 const gelap = () => (document.documentElement.dataset.theme || (matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light")) === "dark";
@@ -129,8 +133,8 @@ async function siapPeta() {
   document.getElementById("petaInfo").innerHTML = `<div class="jm-ds-kep"><span>${esc(t("beranda.peta.k"))}</span><span>${esc(t("beranda.ds.diperbarui", { tanggal: tanggal(pro.dibangun_pada) }))}</span></div>
     <h3>${esc(t("beranda.peta.j"))}</h3><p>${esc(t("beranda.peta.d"))}</p>
     <dl class="jm-ds-stat"><div><dd class="jm-ds-n">${esc(angka(ada.length))}</dd><dt>${esc(t("beranda.peta.l.titik"))}</dt></div><div><dd class="jm-ds-n">${esc(angka(dataPeta.nProg))}</dd><dt>${esc(t("beranda.peta.l.prog"))}</dt></div><div><dd class="jm-ds-n">${esc(angka(pro.baris.length - ada.length))}</dd><dt>${esc(t("beranda.peta.l.tanpa"))}</dt></div></dl>
-    <div class="jm-ds-viz"><h4>${esc(t("beranda.peta.tabel"))}</h4>${tabel.map((g) => row(g.nama, `${angka(g.jumlah_proyek)} ${t("beranda.tek.n")}, ${angka(g.kapasitas_mw)} MW`)).join("")}</div>
-    <small class="jm-sumber">${esc(t("beranda.peta.s", { tanggal: tanggal(pro.dibangun_pada) }))}</small>`;
+    <div class="jm-ds-viz"><h4>${esc(t("beranda.peta.tabel"))}</h4>${rankHtml(tabel.map((g) => ({ nama: g.nama, meta: `${angka(g.jumlah_proyek)} ${t("beranda.tek.n")}`, nilai: angka(g.kapasitas_mw), unit: "MW", frac: g.kapasitas_mw / Math.max(1, tabel[0].kapasitas_mw), href: `/proyek#program-${encodeURIComponent(g.id)}` })))}</div>
+    ${infoSumber(t("beranda.peta.s", { tanggal: tanggal(pro.dibangun_pada) }))}`;
 }
 async function bangunPeta() {
   const el = document.getElementById("petaEl");
@@ -172,9 +176,9 @@ async function karbon() {
     el.innerHTML = `<div class="jm-peta-info"><div class="jm-ds-kep"><span>${esc(t("beranda.karbon.k"))}</span><span>${esc(t("beranda.ds.diperbarui", { tanggal: tanggal(k.dibangun_pada) }))}</span></div>
       <h3>${esc(t("beranda.karbon.j"))}</h3><p>${esc(t("beranda.karbon.d"))}</p>
       <dl class="jm-ds-stat">${stat(angka(p.length), "beranda.karbon.l.n")}${stat(angka(jml(p, (x) => x.kapasitas_mw) / 1000, { desimal: 1 }), "beranda.karbon.l.gw")}${stat(angka(tot / 1e6, { desimal: 1 }), "beranda.karbon.l.mt", 1)}</dl>
-      <div class="jm-ds-viz"><h4>${esc(t("beranda.karbon.tabel"))}</h4>${top.slice(0, 6).map((x, i) => row(`${i + 1}. ${x.nama.replace(/ power station$/i, "")}`, `${angka(x.emisi_tco2e / 1e6, { desimal: 1 })} Mt`)).join("")}</div>
-      <blockquote class="jm-kutip">${esc(t("beranda.karbon.wawasan", { n: angka(top.length), pct: angka(pct, { desimal: 0 }), total: angka(p.length) }))}</blockquote>
-      <small class="jm-sumber">${esc(t("beranda.karbon.s", { tanggal: tanggal(k.dibangun_pada), tahun: p[0].tahun }))}</small></div>${svg}`;
+      <div class="jm-kpi-strip"><b>${esc(angka(pct, { desimal: 0 }))}%</b><span>${esc(t("beranda.karbon.wawasan", { n: angka(top.length), total: angka(p.length) }))}</span></div>
+      <div class="jm-ds-viz"><h4>${esc(t("beranda.karbon.tabel"))}</h4>${rankHtml(top.slice(0, 6).map((x) => ({ nama: x.nama.replace(/ power station$/i, ""), meta: label("beranda.karbon.j.", String(x.jenis_aset).split(",")[0].trim()), nilai: angka(x.emisi_tco2e / 1e6, { desimal: 1 }), unit: "Mt", frac: x.emisi_tco2e / top[0].emisi_tco2e, href: "/insight#emisi", panas: true })))}</div>
+      ${infoSumber(t("beranda.karbon.s", { tanggal: tanggal(k.dibangun_pada), tahun: p[0].tahun }))}</div>${svg}`;
   } catch (e) { sembunyi(el, e); }
 }
 
