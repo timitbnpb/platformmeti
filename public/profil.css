@@ -68,3 +68,13 @@
 .pf-tahap-v{font:700 var(--t-h3)/var(--lh-judul) var(--display);color:var(--ink);font-variant-numeric:tabular-nums}
 .pf-tahap small{color:var(--ink2);font-size:var(--t-kecil);line-height:var(--lh-rapat)}
 @media (max-width:767px){.pf-tahap{grid-template-columns:repeat(2,minmax(0,1fr));row-gap:20px}.pf-tahap li:nth-child(3)::before{display:none}}
+
+/* kartu pengurus /o/<id>: foto bulat atau inisial, nama, jabatan, kelompok */
+.pf-orang{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,230px),1fr));gap:12px}
+@media (min-width:1100px){.pf-orang{grid-template-columns:repeat(auto-fit,minmax(calc(25% - 12px),1fr))}}
+.pf-orang-k{display:flex;align-items:center;gap:12px;min-width:0;padding:14px;border:1px solid var(--line);border-radius:var(--r-lg);background:var(--card)}
+.pf-orang-f{flex:none;width:64px;height:64px;border-radius:50%;overflow:hidden;display:grid;place-items:center;color:var(--on-brand);background:linear-gradient(135deg,var(--brand),var(--brand2));font:700 var(--t-h2)/1 var(--display)}
+.pf-orang-f img{width:100%;height:100%;object-fit:cover;display:block}
+.pf-orang-t{display:flex;flex-direction:column;align-items:flex-start;gap:4px;min-width:0}
+.pf-orang-n{font-weight:700;color:var(--ink);overflow-wrap:anywhere}
+.pf-orang-j{font-size:var(--t-kecil);color:var(--ink2);overflow-wrap:anywhere}

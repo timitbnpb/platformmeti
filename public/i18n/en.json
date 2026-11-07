@@ -3977,5 +3977,6 @@
  "pg.cara.3": "Empty means not found in citable sources, not that it does not exist.",
  "pg.cara.4": "Projects link from the METI project base; METI positions come only from non-confidential records.",
  "pg.tak_dikenal": "Program not found",
- "pg.tak_dikenal.ket": "Unknown program code. Pick one of the programs below."
+ "pg.tak_dikenal.ket": "Unknown program code. Pick one of the programs below.",
+ "pg.beranda.semua": "Full analysis of all programs"
 }

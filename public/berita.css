@@ -25,7 +25,7 @@
 .jm-saring .jm-hapus{text-decoration:none;color:var(--ink2);font-weight:400}
 .jm-saring .jm-hapus:hover{color:var(--accent)}
 .jm-saring .jm-hapus,.jm-saring .jm-hitung{align-self:center}
-@media (min-width:900px){.jm-saring{grid-template-columns:minmax(0,1fr) repeat(4,minmax(176px,1fr)) auto auto}}
+@media (min-width:900px){.jm-saring{grid-template-columns:minmax(0,1fr) repeat(4,minmax(176px,1fr)) auto}}
 #isi{min-width:0}
 
 .brt-grup{margin:20px 0 4px;padding-bottom:6px;border-bottom:1px solid var(--line);font:600 var(--t-kecil)/var(--lh-rapat) var(--font);letter-spacing:normal;text-transform:none;color:var(--ink2)}
@@ -103,9 +103,22 @@ button.brt-bb-r:hover .brt-bb-n{color:var(--accent)}
 .brt-kartu-b .brt-judul{-webkit-line-clamp:3;line-clamp:3}
 
 /* semua berita: baris dengan thumbnail 96x64 */
-.brt-item{display:grid;grid-template-columns:96px minmax(0,1fr);gap:16px;align-items:start;padding:14px 0;border-bottom:1px solid var(--line-cell)}
-.brt-item>div{display:grid;gap:4px;min-width:0}
-.brt-item .brt-label{display:flex;flex-wrap:wrap;gap:6px;margin-top:2px}
+.brt-grid{display:grid;gap:16px;grid-template-columns:minmax(0,1fr);margin-top:12px}
+@media (min-width:640px){.brt-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (min-width:1000px){.brt-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
+.brt-item{position:relative;display:flex;flex-direction:column;gap:10px;padding:10px;border:1px solid var(--line);border-radius:var(--r);background:var(--card);height:100%}
+.brt-item .brt-s169{width:100%}
+.brt-item .brt-isi{flex:1;align-content:start;gap:8px;padding:0 4px 4px}
+.brt-item .brt-judul{font-size:var(--t-body);-webkit-line-clamp:3;line-clamp:3;min-height:calc(3 * 1.3em)}
+.brt-item .brt-label{margin-top:auto}
+.brt-bagi{position:absolute;top:18px;right:18px}
+.brt-bagi summary{list-style:none;display:grid;place-items:center;width:36px;height:36px;border-radius:50%;background:var(--card);color:var(--ink);box-shadow:var(--shadow);cursor:pointer}
+.brt-bagi summary::-webkit-details-marker{display:none}
+.brt-bagi summary:hover,.brt-bagi[open] summary{color:var(--accent)}
+.brt-bagi summary:focus-visible{outline:2px solid var(--fokus);outline-offset:2px}
+.brt-bagi-m{position:absolute;top:42px;right:0;z-index:5;padding:4px;border:1px solid var(--line);border-radius:var(--r);background:var(--card);box-shadow:var(--shadow)}
+#tab{overflow:visible;flex-wrap:wrap}
+#isi{padding-bottom:96px}
 
 /* header satu baris, band per bagian, kartu wadah */
 #bagian>.brt-bagian{padding:48px 0}
@@ -276,3 +289,6 @@ button.brt-an-k:focus-visible,.brt-an-dlg button:focus-visible{outline:2px solid
 /* peta selebar layar; panel rata ke tepi konten */
 .brt-peta{width:100vw;margin-inline:calc(50% - 50vw);border-radius:0;border-inline:0}
 .brt-fl{left:var(--tepi)}.brt-fr{right:var(--tepi)}
+/* cadangan favicon di sampul 16:9: kecil di tengah di atas latar lembut, tidak diregangkan */
+.brt-sampul{background:var(--surface)}
+.brt-sampul img.brt-fv{position:absolute;inset:0;margin:auto;width:48px!important;height:48px!important;object-fit:contain!important;border-radius:var(--r-sm)}

@@ -1,6 +1,102 @@
 {
  "baris": [
   {
+   "orang_id": "o_02b0410b12",
+   "nama": "Bobby Gafur Umar",
+   "sumber_url": "https://kadin.id/tentang-kadin/struktur-organisasi-kadin/",
+   "foto_url": "https://kadin.id/uploads/legacy/Bobby-Gafur-Umar.png",
+   "lisensi": "milik pemilik situs sumber, tampil dengan atribusi",
+   "diambil": "2026-11-07"
+  },
+  {
+   "orang_id": "o_04618eab9c",
+   "nama": "R. Benny Susanto",
+   "sumber_url": "https://www.bki.co.id/company-profile",
+   "foto_url": "https://www.bki.co.id/_next/image?url=%2Fbod%2Fdirector1_1.jpg&w=3840&q=75",
+   "lisensi": "milik pemilik situs sumber, tampil dengan atribusi",
+   "diambil": "2026-11-07"
+  },
+  {
+   "orang_id": "o_049a6d113f",
+   "nama": "Ryo Ogawa",
+   "sumber_url": "https://alamenergy.co.id/about-us/",
+   "foto_url": "https://alamenergy.co.id/wp-content/uploads/2026/09/ryo-ogawa.png",
+   "lisensi": "milik pemilik situs sumber, tampil dengan atribusi",
+   "diambil": "2026-11-07"
+  },
+  {
+   "orang_id": "o_09299baa45",
+   "nama": "Sigit Puji Santosa",
+   "sumber_url": "https://www.danantaraindonesia.co.id/about/our-people/bpi-danantaras",
+   "foto_url": "https://www.danantaraindonesia.co.id/_next/image?url=https%3A%2F%2Fd19ypesdspgr78.cloudfront.net%2F240%2FSigit-Puji-Santosa.webp&w=3840&q=75",
+   "lisensi": "milik perusahaan, tampil dengan atribusi",
+   "diambil": "2026-11-07"
+  },
+  {
+   "orang_id": "o_0989126215",
+   "nama": "Kuok Khoon Hong",
+   "sumber_url": "https://www.wilmar-international.com/about-us/leadership",
+   "foto_url": "http://www.wilmar-international.com/images/default-source/default-album/leadership/kkh-cropped-20234d3f6574b8994182972156af3db36c14.png?sfvrsn=a64f8e86_0",
+   "lisensi": "milik pemilik situs sumber, tampil dengan atribusi",
+   "diambil": "2026-11-07"
+  },
+  {
+   "orang_id": "o_0f8dd76ddb",
+   "nama": "Dr. Ir. Zulkipli",
+   "sumber_url": "https://ppid.bps.go.id/app/konten/0000/Profil-BPS.html",
+   "foto_url": "https://ppid.bps.go.id/upload/doc/foto_zulkipli_new_1769488246.jpg",
+   "lisensi": "milik pemilik situs sumber, tampil dengan atribusi",
+   "diambil": "2026-11-07"
+  },
+  {
+   "orang_id": "o_11c27e7091",
+   "nama": "Erick Thohir",
+   "sumber_url": "https://www.danantaraindonesia.co.id/about/our-people/supervisory-board",
+   "foto_url": "https://www.danantaraindonesia.co.id/_next/image?url=https%3A%2F%2Fd19ypesdspgr78.cloudfront.net%2F624%2FErick_Tohir.webp&w=3840&q=75",
+   "lisensi": "milik perusahaan, tampil dengan atribusi",
+   "diambil": "2026-11-07"
+  },
+  {
+   "orang_id": "o_124b61ab6f",
+   "nama": "Zidny Ilman",
+   "sumber_url": "https://suryanesia.com/en",
+   "foto_url": "https://cms.suryanesia.com/uploads/Kalla_5_f109383c02.jpg",
+   "lisensi": "milik pemilik situs sumber, tampil dengan atribusi",
+   "diambil": "2026-11-07"
+  },
+  {
+   "orang_id": "o_12f24c3644",
+   "nama": "Gerhard Kossytorz",
+   "sumber_url": "https://atapsurya.id/",
+   "foto_url": "https://atapsurya.id/wp-content/uploads/2021/05/kossytorz.png",
+   "lisensi": "milik pemilik situs sumber, tampil dengan atribusi",
+   "diambil": "2026-11-07"
+  },
+  {
+   "orang_id": "o_151ee76002",
+   "nama": "Dhanu Prasetyo",
+   "sumber_url": "https://www.bki.co.id/company-profile",
+   "foto_url": "https://www.bki.co.id/_next/image?url=%2Fboc%2Fboc5.jpg&w=3840&q=75",
+   "lisensi": "milik pemilik situs sumber, tampil dengan atribusi",
+   "diambil": "2026-11-07"
+  },
+  {
+   "orang_id": "o_15a26d6d74",
+   "nama": "Amri Siahaan",
+   "sumber_url": "https://www.medcoenergi.com/en/about-us/our-leaders/board-of-directors/",
+   "foto_url": "https://www.medcoenergi.com/uploads/mprofiles/Amri%20Siahaan-min.png",
+   "lisensi": "milik perusahaan, tampil dengan atribusi",
+   "diambil": "2026-11-07"
+  },
+  {
+   "orang_id": "o_1cabf6c3b2",
+   "nama": "M. Azis Syamsuddin",
+   "sumber_url": "https://kadin.id/tentang-kadin/struktur-organisasi-kadin/",
+   "foto_url": "https://kadin.id/uploads/legacy/Bapak-Azis-opsi-2.png",
+   "lisensi": "milik pemilik situs sumber, tampil dengan atribusi",
+   "diambil": "2026-11-07"
+  },
+  {
    "orang_id": "o_20d46220ac",
    "nama": "Luhut Binsar Pandjaitan",
    "sumber_url": "https://esdm.go.id/id/profil/daftar-menteri",
@@ -9,10 +105,74 @@
    "diambil": "2026-11-07"
   },
   {
+   "orang_id": "o_267ac590b3",
+   "nama": "Shinta W. Kamdani",
+   "sumber_url": "https://kadin.id/tentang-kadin/struktur-organisasi-kadin/",
+   "foto_url": "https://kadin.id/uploads/legacy/Shinta-W.-Kamdani.png",
+   "lisensi": "milik pemilik situs sumber, tampil dengan atribusi",
+   "diambil": "2026-11-07"
+  },
+  {
+   "orang_id": "o_268ecfb536",
+   "nama": "Reni Mayerni",
+   "sumber_url": "https://pertaminanre.com/id/tentang-kami/manajemen",
+   "foto_url": "https://pertaminanre.com/_next/image?url=https%3A%2F%2Fapi.pertaminanre.com%2Fmedia%2F2026%2F10%2Fa1bc89e54a4242d5bc4e10159e261a56.webp&w=3840&q=75",
+   "lisensi": "milik perusahaan, tampil dengan atribusi",
+   "diambil": "2026-11-07"
+  },
+  {
+   "orang_id": "o_2a18b23212",
+   "nama": "Lydia Natalia",
+   "sumber_url": "https://alamenergy.co.id/about-us/",
+   "foto_url": "https://alamenergy.co.id/wp-content/uploads/2026/09/Lydia-Natalia.jpeg",
+   "lisensi": "milik pemilik situs sumber, tampil dengan atribusi",
+   "diambil": "2026-11-07"
+  },
+  {
+   "orang_id": "o_2c9573f328",
+   "nama": "Norman Ginting",
+   "sumber_url": "https://pertaminanre.com/id/tentang-kami/manajemen",
+   "foto_url": "https://pertaminanre.com/_next/image?url=https%3A%2F%2Fapi.pertaminanre.com%2Fmedia%2F2026%2F10%2F348656e75ac44d268abf11211a8cb4d7.webp&w=3840&q=75",
+   "lisensi": "milik perusahaan, tampil dengan atribusi",
+   "diambil": "2026-11-07"
+  },
+  {
+   "orang_id": "o_2d1f779775",
+   "nama": "M. Iswahyudi",
+   "sumber_url": "https://ptpn.id/dewan-direksi/",
+   "foto_url": "https://ptpn.id/wp-content/uploads/2026/07/ptpn-iii-3-holding-perkebunan-nusantara-pabrik-teh-kelapa-sawit-kopi-karet-tebu-indonesia-denaldy-pages.jpg",
+   "lisensi": "milik perusahaan, tampil dengan atribusi",
+   "diambil": "2026-11-07"
+  },
+  {
+   "orang_id": "o_2d203e7837",
+   "nama": "Agus Sandy Widyanto",
+   "sumber_url": "https://www.baritorenewables.co.id/en/board-of-directors",
+   "foto_url": "https://www.baritorenewables.co.id/uploads/2025/10/2bbe199bf523fb8aa27095d85d69a8a3_c4f0f72331912f62caa7cdfabd02d285_compressed.png?v=1759831001",
+   "lisensi": "milik pemilik situs sumber, tampil dengan atribusi",
+   "diambil": "2026-11-07"
+  },
+  {
    "orang_id": "o_2e10bbe20f",
    "nama": "Fuad Bawazier",
    "sumber_url": "https://mind.id/pages/board-of-commisioner",
    "foto_url": "https://mind.id/storage/1366/MINDID_BOC_FUAD-BAWAZIER.jpg",
+   "lisensi": "milik pemilik situs sumber, tampil dengan atribusi",
+   "diambil": "2026-11-07"
+  },
+  {
+   "orang_id": "o_2eec87fb1b",
+   "nama": "Kenneth Riedel",
+   "sumber_url": "https://www.baritorenewables.co.id/en/board-of-directors",
+   "foto_url": "https://www.baritorenewables.co.id/uploads/2023/08/a7a82685da0d50d16e7ad6a6b0da4739_9b582a16b19df833dcd42c5906b1db0e_compressed.jpeg?v=1691580679",
+   "lisensi": "milik pemilik situs sumber, tampil dengan atribusi",
+   "diambil": "2026-11-07"
+  },
+  {
+   "orang_id": "o_30c7a0acb5",
+   "nama": "Arief Budi Permana",
+   "sumber_url": "https://www.bki.co.id/company-profile",
+   "foto_url": "https://www.bki.co.id/_next/image?url=%2Fbod%2Fdirector2.jpg&w=3840&q=75",
    "lisensi": "milik pemilik situs sumber, tampil dengan atribusi",
    "diambil": "2026-11-07"
   },
@@ -33,6 +193,70 @@
    "diambil": "2026-11-07"
   },
   {
+   "orang_id": "o_33d3d555f9",
+   "nama": "Juan Permata Adoe",
+   "sumber_url": "https://kadin.id/tentang-kadin/struktur-organisasi-kadin/",
+   "foto_url": "https://kadin.id/uploads/legacy/Juan-P.-Adoe.png",
+   "lisensi": "milik pemilik situs sumber, tampil dengan atribusi",
+   "diambil": "2026-11-07"
+  },
+  {
+   "orang_id": "o_34330c9b53",
+   "nama": "Kemal Sudiro",
+   "sumber_url": "https://www.inalum.id/id/tentang-kami/organisasi/direksi",
+   "foto_url": "https://www.inalum.id/storage/media/2026/06/kemal-sudiro-offuea.png",
+   "lisensi": "milik perusahaan, tampil dengan atribusi",
+   "diambil": "2026-11-07"
+  },
+  {
+   "orang_id": "o_370d9c44f0",
+   "nama": "Harsono Budi Santoso",
+   "sumber_url": "https://pertaminanre.com/id/tentang-kami/manajemen",
+   "foto_url": "https://pertaminanre.com/_next/image?url=https%3A%2F%2Fapi.pertaminanre.com%2Fmedia%2F2026%2F10%2Fbf15ff953cac4c50a481d25af4ae8ae8.webp&w=3840&q=75",
+   "lisensi": "milik perusahaan, tampil dengan atribusi",
+   "diambil": "2026-11-07"
+  },
+  {
+   "orang_id": "o_3808ad8b82",
+   "nama": "Eddy Abdurrachman",
+   "sumber_url": "https://www.bpdp.or.id/direksi-bpdp",
+   "foto_url": "http://www.bpdp.or.id/uploads/images/image_750x_6ab0ed10d645a.jpg",
+   "lisensi": "milik pemilik situs sumber, tampil dengan atribusi",
+   "diambil": "2026-11-07"
+  },
+  {
+   "orang_id": "o_3bafdaed86",
+   "nama": "Ilhamsyah Mahendra",
+   "sumber_url": "https://www.inalum.id/id/tentang-kami/organisasi/direksi",
+   "foto_url": "https://www.inalum.id/storage/media/2024/08/ilhamsyah-mahendra-cw2yry.png",
+   "lisensi": "milik perusahaan, tampil dengan atribusi",
+   "diambil": "2026-11-07"
+  },
+  {
+   "orang_id": "o_3ee288406d",
+   "nama": "Effendi Hengki",
+   "sumber_url": "https://www.danantaraindonesia.co.id/about/our-people/bpi-danantaras",
+   "foto_url": "https://www.danantaraindonesia.co.id/_next/image?url=https%3A%2F%2Fd19ypesdspgr78.cloudfront.net%2F877%2FEffendi_Hengki_Photo.webp&w=3840&q=75",
+   "lisensi": "milik perusahaan, tampil dengan atribusi",
+   "diambil": "2026-11-07"
+  },
+  {
+   "orang_id": "o_408b7ffb32",
+   "nama": "Erwin Ernanto Hoesni",
+   "sumber_url": "https://www.bki.co.id/company-profile",
+   "foto_url": "https://www.bki.co.id/_next/image?url=%2Fbod%2Fdirector3.jpg&w=3840&q=75",
+   "lisensi": "milik pemilik situs sumber, tampil dengan atribusi",
+   "diambil": "2026-11-07"
+  },
+  {
+   "orang_id": "o_40e421970d",
+   "nama": "Prof. Ir. Teuku Faisal Fathani",
+   "sumber_url": "https://www.bmkg.go.id/profil/pejabat",
+   "foto_url": "https://dataweb.bmkg.go.id/profil/pejabat/faisal.jpg",
+   "lisensi": "milik pemilik situs sumber, tampil dengan atribusi",
+   "diambil": "2026-11-07"
+  },
+  {
    "orang_id": "o_443c3d502b",
    "nama": "Maroef Sjamsoeddin",
    "sumber_url": "https://mind.id/pages/board-of-director",
@@ -41,10 +265,194 @@
    "diambil": "2026-11-07"
   },
   {
+   "orang_id": "o_44550dda0b",
+   "nama": "Zulkifli Hasan",
+   "sumber_url": "https://www.danantaraindonesia.co.id/about/our-people/supervisory-board",
+   "foto_url": "https://www.danantaraindonesia.co.id/_next/image?url=https%3A%2F%2Fd19ypesdspgr78.cloudfront.net%2F634%2F18_Zulkifli_Hasan.webp&w=3840&q=75",
+   "lisensi": "milik perusahaan, tampil dengan atribusi",
+   "diambil": "2026-11-07"
+  },
+  {
+   "orang_id": "o_4569762026",
+   "nama": "Catra De Thouars",
+   "sumber_url": "https://www.aprobi.or.id/about-us/board-of-directors/",
+   "foto_url": "https://www.aprobi.or.id/wp-content/uploads/CATRA-ARADEA-DE-THOUARS-Wakil-Ketua-Umum-Bidang-Promosi-dan-Komunikasi_1.png",
+   "lisensi": "milik pemilik situs sumber, tampil dengan atribusi",
+   "diambil": "2026-11-07"
+  },
+  {
+   "orang_id": "o_47591127b5",
+   "nama": "Arif Haendra",
+   "sumber_url": "https://www.inalum.id/id/tentang-kami/organisasi/direksi",
+   "foto_url": "https://www.inalum.id/storage/media/2025/07/haendra-naa2ts.png",
+   "lisensi": "milik perusahaan, tampil dengan atribusi",
+   "diambil": "2026-11-07"
+  },
+  {
+   "orang_id": "o_4c6b0735fb",
+   "nama": "Dony Oskaria",
+   "sumber_url": "https://www.danantaraindonesia.co.id/about/our-people/bpi-danantaras",
+   "foto_url": "https://www.danantaraindonesia.co.id/_next/image?url=https%3A%2F%2Fd19ypesdspgr78.cloudfront.net%2F104%2FMember-Image-(3).png&w=3840&q=75",
+   "lisensi": "milik perusahaan, tampil dengan atribusi",
+   "diambil": "2026-11-07"
+  },
+  {
+   "orang_id": "o_4f067be437",
+   "nama": "Hariyadi Santoso",
+   "sumber_url": "https://www.aprobi.or.id/about-us/board-of-directors/",
+   "foto_url": "https://www.aprobi.or.id/wp-content/uploads/HARIYADI-SANTOSO-Wakil-Sekretaris-Jenderal_1.png",
+   "lisensi": "milik pemilik situs sumber, tampil dengan atribusi",
+   "diambil": "2026-11-07"
+  },
+  {
+   "orang_id": "o_502b533e4e",
+   "nama": "Sachit Tewani",
+   "sumber_url": "https://www.recgroup.com/en/management",
+   "foto_url": "https://www.recgroup.com/sites/default/files/2024-06/Management_Sachit_Tewani.jpg",
+   "lisensi": "milik pemilik situs sumber, tampil dengan atribusi",
+   "diambil": "2026-11-07"
+  },
+  {
+   "orang_id": "o_50c5fb0b99",
+   "nama": "Amalia Adininggar Widyasanti",
+   "sumber_url": "https://ppid.bps.go.id/app/konten/0000/Profil-BPS.html",
+   "foto_url": "https://ppid.bps.go.id/upload/img/bps-baru_1643968985122.jpg",
+   "lisensi": "milik pemilik situs sumber, tampil dengan atribusi",
+   "diambil": "2026-11-07"
+  },
+  {
+   "orang_id": "o_53431023c9",
+   "nama": "Kanji Kawado",
+   "sumber_url": "https://alamenergy.co.id/about-us/",
+   "foto_url": "https://alamenergy.co.id/wp-content/uploads/2026/09/kanji-kawado.png",
+   "lisensi": "milik pemilik situs sumber, tampil dengan atribusi",
+   "diambil": "2026-11-07"
+  },
+  {
+   "orang_id": "o_57020e35a4",
+   "nama": "Pahala Nugraha Mansury",
+   "sumber_url": "https://www.danantaraindonesia.co.id/about/our-people/bpi-danantaras",
+   "foto_url": "https://www.danantaraindonesia.co.id/_next/image?url=https%3A%2F%2Fd19ypesdspgr78.cloudfront.net%2F875%2FPahala_Mansury.webp&w=3840&q=75",
+   "lisensi": "milik perusahaan, tampil dengan atribusi",
+   "diambil": "2026-11-07"
+  },
+  {
+   "orang_id": "o_58dc35919f",
+   "nama": "Mirna Wijayanti",
+   "sumber_url": "https://pertaminanre.com/id/tentang-kami/manajemen",
+   "foto_url": "https://pertaminanre.com/_next/image?url=https%3A%2F%2Fapi.pertaminanre.com%2Fmedia%2F2026%2F10%2Fd084750a5755481888db6168c2fdce39.webp&w=3840&q=75",
+   "lisensi": "milik perusahaan, tampil dengan atribusi",
+   "diambil": "2026-11-07"
+  },
+  {
+   "orang_id": "o_58df02167d",
+   "nama": "Hilmi Panigoro",
+   "sumber_url": "https://www.medcoenergi.com/en/about-us/our-leaders/board-of-directors/",
+   "foto_url": "https://www.medcoenergi.com/uploads/mprofiles/Hilmi%20Panigoro-min.png",
+   "lisensi": "milik perusahaan, tampil dengan atribusi",
+   "diambil": "2026-11-07"
+  },
+  {
+   "orang_id": "o_592b6271d7",
+   "nama": "John Anis",
+   "sumber_url": "https://pertaminanre.com/id/tentang-kami/manajemen",
+   "foto_url": "https://pertaminanre.com/_next/image?url=https%3A%2F%2Fapi.pertaminanre.com%2Fmedia%2F2026%2F10%2F133e4d64b808435f9378c3011c4248f9.webp&w=3840&q=75",
+   "lisensi": "milik perusahaan, tampil dengan atribusi",
+   "diambil": "2026-11-07"
+  },
+  {
+   "orang_id": "o_5d4ea2ba31",
+   "nama": "Dr. Samir J Serhan",
+   "sumber_url": "https://acwapower.com/en/who-we-are/management/",
+   "foto_url": "https://acwapower.com/media/vk0lfoof/dr-samir-main-cropped-aproved-image.jpg?width=353&height=399",
+   "lisensi": "milik perusahaan, tampil dengan atribusi",
+   "diambil": "2026-11-07"
+  },
+  {
+   "orang_id": "o_5dfc34a165",
+   "nama": "Teguh Widhi Harsono",
+   "sumber_url": "https://plnnusantarapower.co.id/about-us/board-of-directors",
+   "foto_url": "https://plnnusantarapower.co.id/storage/about_us/board_of_directors/details/YQpt5g59A6Z11dk8Msy3nJNb3rUreyAl8QN4YP3n.jpg",
+   "lisensi": "milik perusahaan, tampil dengan atribusi",
+   "diambil": "2026-11-07"
+  },
+  {
+   "orang_id": "o_6124cff83d",
+   "nama": "Justin Mandera",
+   "sumber_url": "https://suryanesia.com/en",
+   "foto_url": "https://cms.suryanesia.com/uploads/Justin_33ac8228a0.jpg",
+   "lisensi": "milik pemilik situs sumber, tampil dengan atribusi",
+   "diambil": "2026-11-07"
+  },
+  {
+   "orang_id": "o_622a5140d7",
+   "nama": "Jonathon Allaway",
+   "sumber_url": "https://www.danantaraindonesia.co.id/about/our-people/bpi-danantaras",
+   "foto_url": "https://www.danantaraindonesia.co.id/_next/image?url=https%3A%2F%2Fd19ypesdspgr78.cloudfront.net%2F248%2FJonathon-Allaway.webp&w=3840&q=75",
+   "lisensi": "milik perusahaan, tampil dengan atribusi",
+   "diambil": "2026-11-07"
+  },
+  {
    "orang_id": "o_6493c4fe03",
    "nama": "Niko Chandra",
    "sumber_url": "https://www.indonesiabatterycorp.com/id/about-us/dewan-direksi",
    "foto_url": "https://indonesiabatterycorp-bucket.s3.ap-southeast-3.amazonaws.com/ibc/images/gcg/profile-picture/direksi/697c648930021-niko-chandra.png",
+   "lisensi": "milik pemilik situs sumber, tampil dengan atribusi",
+   "diambil": "2026-11-07"
+  },
+  {
+   "orang_id": "o_68a25b39a2",
+   "nama": "Mohamad Iwan",
+   "sumber_url": "https://atapsurya.id/",
+   "foto_url": "https://atapsurya.id/wp-content/uploads/2021/05/iwan.png",
+   "lisensi": "milik pemilik situs sumber, tampil dengan atribusi",
+   "diambil": "2026-11-07"
+  },
+  {
+   "orang_id": "o_6922994e30",
+   "nama": "Agus Harimurti Yudhoyono",
+   "sumber_url": "https://www.danantaraindonesia.co.id/about/our-people/supervisory-board",
+   "foto_url": "https://www.danantaraindonesia.co.id/_next/image?url=https%3A%2F%2Fd19ypesdspgr78.cloudfront.net%2F633%2FAgus_Harimurti_Yudhoyono.webp&w=3840&q=75",
+   "lisensi": "milik perusahaan, tampil dengan atribusi",
+   "diambil": "2026-11-07"
+  },
+  {
+   "orang_id": "o_6942b6c4c3",
+   "nama": "Abdul Muhaimin Iskandar",
+   "sumber_url": "https://www.danantaraindonesia.co.id/about/our-people/supervisory-board",
+   "foto_url": "https://www.danantaraindonesia.co.id/_next/image?url=https%3A%2F%2Fd19ypesdspgr78.cloudfront.net%2F632%2F64_A._Muhaimin_Iskandar.webp&w=3840&q=75",
+   "lisensi": "milik perusahaan, tampil dengan atribusi",
+   "diambil": "2026-11-07"
+  },
+  {
+   "orang_id": "o_695debe5f6",
+   "nama": "Erwin Aksa",
+   "sumber_url": "https://kadin.id/tentang-kadin/struktur-organisasi-kadin/",
+   "foto_url": "https://kadin.id/uploads/legacy/ERWIN-AKSA.png",
+   "lisensi": "milik pemilik situs sumber, tampil dengan atribusi",
+   "diambil": "2026-11-07"
+  },
+  {
+   "orang_id": "o_6b8040dea0",
+   "nama": "Sanjay Bharwani",
+   "sumber_url": "https://www.danantaraindonesia.co.id/about/our-people/bpi-danantaras",
+   "foto_url": "https://www.danantaraindonesia.co.id/_next/image?url=https%3A%2F%2Fd19ypesdspgr78.cloudfront.net%2F256%2FSanjay-Bharwani.webp&w=3840&q=75",
+   "lisensi": "milik perusahaan, tampil dengan atribusi",
+   "diambil": "2026-11-07"
+  },
+  {
+   "orang_id": "o_6ba09a26a8",
+   "nama": "Pua Seck Guan",
+   "sumber_url": "https://www.wilmar-international.com/about-us/leadership",
+   "foto_url": "http://www.wilmar-international.com/images/default-source/default-album/leadership/psg-cropped-2023d33d63d10ee64a5891789f205eaea286.png?sfvrsn=e55e1ae7_0",
+   "lisensi": "milik pemilik situs sumber, tampil dengan atribusi",
+   "diambil": "2026-11-07"
+  },
+  {
+   "orang_id": "o_6ca0780a28",
+   "nama": "Anindya Novyan Bakrie",
+   "sumber_url": "https://kadin.id/tentang-kadin/struktur-organisasi-kadin/",
+   "foto_url": "https://kadin.id/uploads/legacy/Anindya-Novyan-Bakrie.png",
    "lisensi": "milik pemilik situs sumber, tampil dengan atribusi",
    "diambil": "2026-11-07"
   },
@@ -57,10 +465,74 @@
    "diambil": "2026-11-07"
   },
   {
+   "orang_id": "o_71032ae142",
+   "nama": "Abdi Mustakim",
+   "sumber_url": "https://pertaminanre.com/id/tentang-kami/manajemen",
+   "foto_url": "https://pertaminanre.com/_next/image?url=https%3A%2F%2Fapi.pertaminanre.com%2Fmedia%2F2026%2F10%2F8a83417189194fe6a1802ff376133c4b.webp&w=3840&q=75",
+   "lisensi": "milik perusahaan, tampil dengan atribusi",
+   "diambil": "2026-11-07"
+  },
+  {
+   "orang_id": "o_71be393193",
+   "nama": "Carmelita Hartoto",
+   "sumber_url": "https://kadin.id/tentang-kadin/struktur-organisasi-kadin/",
+   "foto_url": "https://kadin.id/uploads/legacy/Carmelita-Hartoto.png",
+   "lisensi": "milik pemilik situs sumber, tampil dengan atribusi",
+   "diambil": "2026-11-07"
+  },
+  {
+   "orang_id": "o_730af90d0c",
+   "nama": "Suwandi Winardi",
+   "sumber_url": "https://www.aprobi.or.id/about-us/board-of-directors/",
+   "foto_url": "https://www.aprobi.or.id/wp-content/uploads/SUWANDI-WINARDI-Wakil-Ketua-Umum-Bidang-Rantai-Pasok_1.png",
+   "lisensi": "milik pemilik situs sumber, tampil dengan atribusi",
+   "diambil": "2026-11-07"
+  },
+  {
+   "orang_id": "o_737bbd1723",
+   "nama": "Jan Enno Bicker",
+   "sumber_url": "https://www.recgroup.com/en/management",
+   "foto_url": "https://www.recgroup.com/sites/default/files/2024-06/Management_Jan_Enno_Bicker.jpg",
+   "lisensi": "milik pemilik situs sumber, tampil dengan atribusi",
+   "diambil": "2026-11-07"
+  },
+  {
    "orang_id": "o_74f02913f7",
    "nama": "Wishnu Wardhana",
    "sumber_url": "https://indikaenergy.co.id/governance/",
    "foto_url": "https://indikaenergy.co.id/wp-content/uploads/2025/05/WISHNU-WARDHANA_THUMB-1-e1746519694777-90x90.jpg",
+   "lisensi": "milik pemilik situs sumber, tampil dengan atribusi",
+   "diambil": "2026-11-07"
+  },
+  {
+   "orang_id": "o_771aff7bda",
+   "nama": "Yan Arianto",
+   "sumber_url": "https://adhi.co.id/tentang-adhi/manajemen/direksi/",
+   "foto_url": "https://adhi.co.id/wp-content/uploads/2026/07/Yan-Arianto.webp",
+   "lisensi": "milik perusahaan, tampil dengan atribusi",
+   "diambil": "2026-11-07"
+  },
+  {
+   "orang_id": "o_78590a9fda",
+   "nama": "Ki Syahgolang Permata",
+   "sumber_url": "https://adhi.co.id/tentang-adhi/manajemen/direksi/",
+   "foto_url": "https://adhi.co.id/wp-content/uploads/2026/07/Ki-Syahgolang-Permata.webp",
+   "lisensi": "milik perusahaan, tampil dengan atribusi",
+   "diambil": "2026-11-07"
+  },
+  {
+   "orang_id": "o_78dbfa6231",
+   "nama": "Manumpak Manurung",
+   "sumber_url": "https://www.aprobi.or.id/about-us/board-of-directors/",
+   "foto_url": "https://www.aprobi.or.id/wp-content/uploads/MANUMPAK-MANURUNG-Ketua-Bidang-Hukum-dan-Kelembagaan_1.png",
+   "lisensi": "milik pemilik situs sumber, tampil dengan atribusi",
+   "diambil": "2026-11-07"
+  },
+  {
+   "orang_id": "o_79ec677f1a",
+   "nama": "Stanley Iriawan",
+   "sumber_url": "https://www.bki.co.id/company-profile",
+   "foto_url": "https://www.bki.co.id/_next/image?url=%2Fbod%2Fdirector5.PNG&w=3840&q=75",
    "lisensi": "milik pemilik situs sumber, tampil dengan atribusi",
    "diambil": "2026-11-07"
   },
@@ -81,6 +553,14 @@
    "diambil": "2026-11-07"
   },
   {
+   "orang_id": "o_7bcf5383e7",
+   "nama": "Mulyadi Jayabaya",
+   "sumber_url": "https://kadin.id/tentang-kadin/struktur-organisasi-kadin/",
+   "foto_url": "https://kadin.id/uploads/legacy/Mulyadi-Jayabaya.png",
+   "lisensi": "milik pemilik situs sumber, tampil dengan atribusi",
+   "diambil": "2026-11-07"
+  },
+  {
    "orang_id": "o_7db1722608",
    "nama": "Arcandra Tahar",
    "sumber_url": "https://esdm.go.id/id/profil/daftar-menteri",
@@ -89,10 +569,66 @@
    "diambil": "2026-11-07"
   },
   {
+   "orang_id": "o_7fc74309e3",
+   "nama": "Ahmad Hidayat",
+   "sumber_url": "https://www.danantaraindonesia.co.id/about/our-people/bpi-danantaras",
+   "foto_url": "https://www.danantaraindonesia.co.id/_next/image?url=https%3A%2F%2Fd19ypesdspgr78.cloudfront.net%2F242%2FAhmad-Hidayat.webp&w=3840&q=75",
+   "lisensi": "milik perusahaan, tampil dengan atribusi",
+   "diambil": "2026-11-07"
+  },
+  {
+   "orang_id": "o_806858e1b4",
+   "nama": "Yusril Ihza Mahendra",
+   "sumber_url": "https://www.danantaraindonesia.co.id/about/our-people/supervisory-board",
+   "foto_url": "https://www.danantaraindonesia.co.id/_next/image?url=https%3A%2F%2Fd19ypesdspgr78.cloudfront.net%2F631%2F84_Yusril_Ihza_Mahendra.webp&w=3840&q=75",
+   "lisensi": "milik perusahaan, tampil dengan atribusi",
+   "diambil": "2026-11-07"
+  },
+  {
+   "orang_id": "o_81bad8893f",
+   "nama": "Irma Rachmania",
+   "sumber_url": "https://www.aprobi.or.id/about-us/board-of-directors/",
+   "foto_url": "https://www.aprobi.or.id/wp-content/uploads/IRMA-RACHMANIA-Ketua-Bidang-Promosi-dan-Komunikasi_1.png",
+   "lisensi": "milik pemilik situs sumber, tampil dengan atribusi",
+   "diambil": "2026-11-07"
+  },
+  {
+   "orang_id": "o_839ab0e826",
+   "nama": "Abdulhameed Al Muhaidib",
+   "sumber_url": "https://acwapower.com/en/who-we-are/management/",
+   "foto_url": "https://acwapower.com/media/k0mjvcl0/abdulhameed-al-muhaidib.png?width=353&height=399",
+   "lisensi": "milik perusahaan, tampil dengan atribusi",
+   "diambil": "2026-11-07"
+  },
+  {
+   "orang_id": "o_88c2edbb38",
+   "nama": "Ronny Ariuly Hutahayan",
+   "sumber_url": "https://pertaminanre.com/id/tentang-kami/manajemen",
+   "foto_url": "https://pertaminanre.com/_next/image?url=https%3A%2F%2Fapi.pertaminanre.com%2Fmedia%2F2026%2F10%2F3dea817770dc400a9cde0dcb18b166c5.webp&w=3840&q=75",
+   "lisensi": "milik perusahaan, tampil dengan atribusi",
+   "diambil": "2026-11-07"
+  },
+  {
    "orang_id": "o_8903ea0a59",
    "nama": "A. Miftahuddin Amin",
    "sumber_url": "https://ptpn.id/dewan-direksi/",
    "foto_url": "https://ptpn.id/wp-content/uploads/2026/10/ptpn-iii-3-holding-perkebunan-nusantara-pabrik-teh-kelapa-sawit-kopi-karet-tebu-indonesia-A.-Miftahuddin-Amin.jpg",
+   "lisensi": "milik pemilik situs sumber, tampil dengan atribusi",
+   "diambil": "2026-11-07"
+  },
+  {
+   "orang_id": "o_89fc5a2b60",
+   "nama": "R. Agus Doddy Dwi Sagita",
+   "sumber_url": "https://www.bki.co.id/company-profile",
+   "foto_url": "https://www.bki.co.id/_next/image?url=%2Fbod%2Fdirector4_3.jpg&w=3840&q=75",
+   "lisensi": "milik pemilik situs sumber, tampil dengan atribusi",
+   "diambil": "2026-11-07"
+  },
+  {
+   "orang_id": "o_8c5aaa2e69",
+   "nama": "Filipus Winata",
+   "sumber_url": "https://www.aprobi.or.id/about-us/board-of-directors/",
+   "foto_url": "https://www.aprobi.or.id/wp-content/uploads/FILIPUS-R.-WINATA-Wakil-Sekretaris-Jenderal_1.png",
    "lisensi": "milik pemilik situs sumber, tampil dengan atribusi",
    "diambil": "2026-11-07"
   },
@@ -105,6 +641,110 @@
    "diambil": "2026-11-07"
   },
   {
+   "orang_id": "o_8e6f73c2c8",
+   "nama": "Ardy Muawin",
+   "sumber_url": "https://www.danantaraindonesia.co.id/about/our-people/bpi-danantaras",
+   "foto_url": "https://www.danantaraindonesia.co.id/_next/image?url=https%3A%2F%2Fd19ypesdspgr78.cloudfront.net%2F243%2FArdy-Mu%E2%80%99awin.webp&w=3840&q=75",
+   "lisensi": "milik perusahaan, tampil dengan atribusi",
+   "diambil": "2026-11-07"
+  },
+  {
+   "orang_id": "o_9085fd2fc1",
+   "nama": "Sylvi J. Gani",
+   "sumber_url": "https://www.ptsmi.co.id/management",
+   "foto_url": "https://www.ptsmi.co.id/cfind/source/thumb/images/management/cover_w320_h480_bod-sjg-2025.jpg",
+   "lisensi": "milik pemilik situs sumber, tampil dengan atribusi",
+   "diambil": "2026-11-07"
+  },
+  {
+   "orang_id": "o_91430190f5",
+   "nama": "Ayman AlGeer",
+   "sumber_url": "https://acwapower.com/en/who-we-are/management/",
+   "foto_url": "https://acwapower.com/media/mctpwrmb/ayman.png?width=353&height=399",
+   "lisensi": "milik perusahaan, tampil dengan atribusi",
+   "diambil": "2026-11-07"
+  },
+  {
+   "orang_id": "o_943d7abbea",
+   "nama": "M. Irwansyah Putra",
+   "sumber_url": "https://plnnusantarapower.co.id/about-us/board-of-directors",
+   "foto_url": "https://plnnusantarapower.co.id/storage/about_us/board_of_directors/details/65RypBKhUiHsPIuXgSaXL5deWftEwKmWVLme7sy6.jpg",
+   "lisensi": "milik perusahaan, tampil dengan atribusi",
+   "diambil": "2026-11-07"
+  },
+  {
+   "orang_id": "o_951f9a9324",
+   "nama": "Sanjeev Bansal",
+   "sumber_url": "https://www.medcoenergi.com/en/about-us/our-leaders/board-of-directors/",
+   "foto_url": "https://www.medcoenergi.com/uploads/mprofiles/Sanjeev_Bansal.jpg",
+   "lisensi": "milik perusahaan, tampil dengan atribusi",
+   "diambil": "2026-11-07"
+  },
+  {
+   "orang_id": "o_973538c595",
+   "nama": "Ricardo Irwan Rei",
+   "sumber_url": "https://www.danantaraindonesia.co.id/about/our-people/bpi-danantaras",
+   "foto_url": "https://www.danantaraindonesia.co.id/_next/image?url=https%3A%2F%2Fd19ypesdspgr78.cloudfront.net%2F668%2FRicardo_Irwan_Rei_2.webp&w=3840&q=75",
+   "lisensi": "milik perusahaan, tampil dengan atribusi",
+   "diambil": "2026-11-07"
+  },
+  {
+   "orang_id": "o_97610c14db",
+   "nama": "Reza Yamora Siregar",
+   "sumber_url": "https://www.danantaraindonesia.co.id/about/our-people/bpi-danantaras",
+   "foto_url": "https://www.danantaraindonesia.co.id/_next/image?url=https%3A%2F%2Fd19ypesdspgr78.cloudfront.net%2F251%2FReza-Yamora-Siregar.webp&w=3840&q=75",
+   "lisensi": "milik perusahaan, tampil dengan atribusi",
+   "diambil": "2026-11-07"
+  },
+  {
+   "orang_id": "o_97948a1cd1",
+   "nama": "Reynaldi Hermansjah",
+   "sumber_url": "https://www.ptsmi.co.id/management",
+   "foto_url": "https://www.ptsmi.co.id/cfind/source/thumb/images/management/cover_w320_h480_bod-rh-2024.jpg",
+   "lisensi": "milik pemilik situs sumber, tampil dengan atribusi",
+   "diambil": "2026-11-07"
+  },
+  {
+   "orang_id": "o_9a84767c83",
+   "nama": "Teo La-Mei",
+   "sumber_url": "https://www.wilmar-international.com/about-us/leadership",
+   "foto_url": "http://www.wilmar-international.com/images/default-source/default-album/leadership/tlm-cropped-2023f0f40aa2a68d4cdcba204a0f16553249.png?sfvrsn=f6e401ba_0",
+   "lisensi": "milik pemilik situs sumber, tampil dengan atribusi",
+   "diambil": "2026-11-07"
+  },
+  {
+   "orang_id": "o_9c4d677c0e",
+   "nama": "Catur Budi Fatayatin",
+   "sumber_url": "https://pertaminanre.com/id/tentang-kami/manajemen",
+   "foto_url": "https://pertaminanre.com/_next/image?url=https%3A%2F%2Fapi.pertaminanre.com%2Fmedia%2F2026%2F10%2Ffe2e387a7cbf4459b3d2f5a559cdf06b.webp&w=3840&q=75",
+   "lisensi": "milik perusahaan, tampil dengan atribusi",
+   "diambil": "2026-11-07"
+  },
+  {
+   "orang_id": "o_9cf1f9bce1",
+   "nama": "Mustafa Alayoubi",
+   "sumber_url": "https://atapsurya.id/",
+   "foto_url": "https://atapsurya.id/wp-content/uploads/2021/05/alayoubi.png",
+   "lisensi": "milik pemilik situs sumber, tampil dengan atribusi",
+   "diambil": "2026-11-07"
+  },
+  {
+   "orang_id": "o_9eb6ab115c",
+   "nama": "Arief Budiman",
+   "sumber_url": "https://www.danantaraindonesia.co.id/about/our-people/bpi-danantaras",
+   "foto_url": "https://www.danantaraindonesia.co.id/_next/image?url=https%3A%2F%2Fd19ypesdspgr78.cloudfront.net%2F244%2FArief-Budiman.webp&w=3840&q=75",
+   "lisensi": "milik perusahaan, tampil dengan atribusi",
+   "diambil": "2026-11-07"
+  },
+  {
+   "orang_id": "o_a203f6bf28",
+   "nama": "Rosan Roeslani",
+   "sumber_url": "https://www.danantaraindonesia.co.id/about/our-people/bpi-danantaras",
+   "foto_url": "https://www.danantaraindonesia.co.id/_next/image?url=https%3A%2F%2Fd19ypesdspgr78.cloudfront.net%2F105%2FMember-Image-(2).png&w=3840&q=75",
+   "lisensi": "milik perusahaan, tampil dengan atribusi",
+   "diambil": "2026-11-07"
+  },
+  {
    "orang_id": "o_a37f57f36e",
    "nama": "STJ. Budi Santoso",
    "sumber_url": "https://mind.id/pages/board-of-director",
@@ -113,10 +753,90 @@
    "diambil": "2026-11-07"
   },
   {
+   "orang_id": "o_a626b0c7f0",
+   "nama": "Ivan Ermisyam",
+   "sumber_url": "https://www.inalum.id/id/tentang-kami/organisasi/direksi",
+   "foto_url": "https://www.inalum.id/storage/media/2024/08/ivan-emirsyam-texisr.png",
+   "lisensi": "milik perusahaan, tampil dengan atribusi",
+   "diambil": "2026-11-07"
+  },
+  {
+   "orang_id": "o_a62d6c2bda",
+   "nama": "Irmawaty Habie",
+   "sumber_url": "https://www.bki.co.id/company-profile",
+   "foto_url": "https://www.bki.co.id/_next/image?url=%2Fboc%2Fboc3.jpg&w=3840&q=75",
+   "lisensi": "milik pemilik situs sumber, tampil dengan atribusi",
+   "diambil": "2026-11-07"
+  },
+  {
+   "orang_id": "o_a69c555a3f",
+   "nama": "Ernest Gunawan",
+   "sumber_url": "https://www.aprobi.or.id/about-us/board-of-directors/",
+   "foto_url": "https://www.aprobi.or.id/wp-content/uploads/ERNEST-GUNAWAN-Sekretaris-Jenderal_1.png",
+   "lisensi": "milik pemilik situs sumber, tampil dengan atribusi",
+   "diambil": "2026-11-07"
+  },
+  {
+   "orang_id": "o_a6d0668363",
+   "nama": "Pandu Patria Sjahrir",
+   "sumber_url": "https://www.danantaraindonesia.co.id/about/our-people/bpi-danantaras",
+   "foto_url": "https://www.danantaraindonesia.co.id/_next/image?url=https%3A%2F%2Fd19ypesdspgr78.cloudfront.net%2F267%2F85_Pandu-Patria-Sjahrir.webp&w=3840&q=75",
+   "lisensi": "milik perusahaan, tampil dengan atribusi",
+   "diambil": "2026-11-07"
+  },
+  {
    "orang_id": "o_aa80783794",
    "nama": "Dany Amrul Ichdan",
    "sumber_url": "https://mind.id/pages/board-of-director",
    "foto_url": "https://mind.id/storage/1382/MINDID_BOD_DANY-AMRUL-ICHDAN-.jpg",
+   "lisensi": "milik pemilik situs sumber, tampil dengan atribusi",
+   "diambil": "2026-11-07"
+  },
+  {
+   "orang_id": "o_ab64440035",
+   "nama": "Rohan Hafas",
+   "sumber_url": "https://www.danantaraindonesia.co.id/about/our-people/bpi-danantaras",
+   "foto_url": "https://www.danantaraindonesia.co.id/_next/image?url=https%3A%2F%2Fd19ypesdspgr78.cloudfront.net%2F255%2FRohan-Hafas.webp&w=3840&q=75",
+   "lisensi": "milik perusahaan, tampil dengan atribusi",
+   "diambil": "2026-11-07"
+  },
+  {
+   "orang_id": "o_ac0848a077",
+   "nama": "Aradita Priyanti",
+   "sumber_url": "https://www.ptsmi.co.id/management",
+   "foto_url": "https://www.ptsmi.co.id/cfind/source/thumb/images/management/cover_w320_h480_bod-ap-2024.jpg",
+   "lisensi": "milik pemilik situs sumber, tampil dengan atribusi",
+   "diambil": "2026-11-07"
+  },
+  {
+   "orang_id": "o_ad49e4fd32",
+   "nama": "A.A.A. Indira Pratyaksa Yukthi",
+   "sumber_url": "https://pertaminanre.com/id/tentang-kami/manajemen",
+   "foto_url": "https://pertaminanre.com/_next/image?url=https%3A%2F%2Fapi.pertaminanre.com%2Fmedia%2F2026%2F10%2Fea05805b241249f3a76e759ec15d8d09.webp&w=3840&q=75",
+   "lisensi": "milik perusahaan, tampil dengan atribusi",
+   "diambil": "2026-11-07"
+  },
+  {
+   "orang_id": "o_b0153171c4",
+   "nama": "Muliaman D. Hadad",
+   "sumber_url": "https://www.danantaraindonesia.co.id/about/our-people/supervisory-board",
+   "foto_url": "https://www.danantaraindonesia.co.id/_next/image?url=https%3A%2F%2Fd19ypesdspgr78.cloudfront.net%2F625%2FMuliaman_D._Hadad.webp&w=3840&q=75",
+   "lisensi": "milik perusahaan, tampil dengan atribusi",
+   "diambil": "2026-11-07"
+  },
+  {
+   "orang_id": "o_b057f5ea4f",
+   "nama": "Munathsir Mustaman",
+   "sumber_url": "https://pertaminanre.com/id/tentang-kami/manajemen",
+   "foto_url": "https://pertaminanre.com/_next/image?url=https%3A%2F%2Fapi.pertaminanre.com%2Fmedia%2F2026%2F10%2Fa662734617d146a7b993b533e743f438.webp&w=3840&q=75",
+   "lisensi": "milik perusahaan, tampil dengan atribusi",
+   "diambil": "2026-11-07"
+  },
+  {
+   "orang_id": "o_b479e14c9c",
+   "nama": "Nurdin Halid",
+   "sumber_url": "https://kadin.id/tentang-kadin/struktur-organisasi-kadin/",
+   "foto_url": "https://kadin.id/uploads/legacy/Nurdin-Halid.png",
    "lisensi": "milik pemilik situs sumber, tampil dengan atribusi",
    "diambil": "2026-11-07"
   },
@@ -129,10 +849,90 @@
    "diambil": "2026-11-07"
   },
   {
+   "orang_id": "o_b6765b88a9",
+   "nama": "Dr. Sonny Harry B Harmadi",
+   "sumber_url": "https://ppid.bps.go.id/app/konten/0000/Profil-BPS.html",
+   "foto_url": "https://ppid.bps.go.id/upload/img/Sonny3_1741755492932.png",
+   "lisensi": "milik pemilik situs sumber, tampil dengan atribusi",
+   "diambil": "2026-11-07"
+  },
+  {
+   "orang_id": "o_b7c1b61335",
+   "nama": "Rionald Silaban",
+   "sumber_url": "https://www.danantaraindonesia.co.id/about/our-people/bpi-danantaras",
+   "foto_url": "https://www.danantaraindonesia.co.id/_next/image?url=https%3A%2F%2Fd19ypesdspgr78.cloudfront.net%2F881%2FRionald.webp&w=3840&q=75",
+   "lisensi": "milik perusahaan, tampil dengan atribusi",
+   "diambil": "2026-11-07"
+  },
+  {
+   "orang_id": "o_b8133a70ee",
+   "nama": "Rozi Sparta",
+   "sumber_url": "https://adhi.co.id/tentang-adhi/manajemen/direksi/",
+   "foto_url": "https://adhi.co.id/wp-content/uploads/2026/07/Rozi-Sparta.webp",
+   "lisensi": "milik perusahaan, tampil dengan atribusi",
+   "diambil": "2026-11-07"
+  },
+  {
    "orang_id": "o_ba106c57f8",
    "nama": "Pambudi Soenarsihanto",
    "sumber_url": "https://mind.id/pages/board-of-director",
    "foto_url": "https://mind.id/storage/1515/Profile_Pambudi_Website-size.jpg",
+   "lisensi": "milik pemilik situs sumber, tampil dengan atribusi",
+   "diambil": "2026-11-07"
+  },
+  {
+   "orang_id": "o_bcf0b6ee4e",
+   "nama": "Jessica Rolindrowan",
+   "sumber_url": "https://alamenergy.co.id/about-us/",
+   "foto_url": "https://alamenergy.co.id/wp-content/uploads/2026/09/jessica-rolindrowan.png",
+   "lisensi": "milik pemilik situs sumber, tampil dengan atribusi",
+   "diambil": "2026-11-07"
+  },
+  {
+   "orang_id": "o_bdc9ec787d",
+   "nama": "Sikin Hutomo",
+   "sumber_url": "https://www.aprobi.or.id/about-us/board-of-directors/",
+   "foto_url": "https://www.aprobi.or.id/wp-content/uploads/SIKIN-HUTOMO-Wakil-Ketua-Umum-Bidang-Sustainability_1.png",
+   "lisensi": "milik pemilik situs sumber, tampil dengan atribusi",
+   "diambil": "2026-11-07"
+  },
+  {
+   "orang_id": "o_bec51b7659",
+   "nama": "Hendra Setiawan",
+   "sumber_url": "https://www.aprobi.or.id/about-us/board-of-directors/",
+   "foto_url": "https://www.aprobi.or.id/wp-content/uploads/HENDRA-SETIAWAN-Wakil-Ketua-Umum-Bidang-Hukum-dan-Kelembagaan_1.png",
+   "lisensi": "milik pemilik situs sumber, tampil dengan atribusi",
+   "diambil": "2026-11-07"
+  },
+  {
+   "orang_id": "o_c150e18fd8",
+   "nama": "Ronald Gunawan",
+   "sumber_url": "https://www.medcoenergi.com/en/about-us/our-leaders/board-of-directors/",
+   "foto_url": "https://www.medcoenergi.com/uploads/mprofiles/Ronald_Gunawan.png",
+   "lisensi": "milik perusahaan, tampil dengan atribusi",
+   "diambil": "2026-11-07"
+  },
+  {
+   "orang_id": "o_c26d85fe1e",
+   "nama": "Jeremy Goon",
+   "sumber_url": "https://www.wilmar-international.com/about-us/leadership",
+   "foto_url": "http://www.wilmar-international.com/images/default-source/default-album/leadership/tsm-cropped-2023.png?sfvrsn=5ad5b006_0",
+   "lisensi": "milik pemilik situs sumber, tampil dengan atribusi",
+   "diambil": "2026-11-07"
+  },
+  {
+   "orang_id": "o_c296edc192",
+   "nama": "Riad Sadikhov",
+   "sumber_url": "https://acwapower.com/en/who-we-are/management/",
+   "foto_url": "https://acwapower.com/media/rf3n54g1/riad-headshot.png?width=353&height=399",
+   "lisensi": "milik perusahaan, tampil dengan atribusi",
+   "diambil": "2026-11-07"
+  },
+  {
+   "orang_id": "o_c423673886",
+   "nama": "James T. Riady",
+   "sumber_url": "https://kadin.id/tentang-kadin/struktur-organisasi-kadin/",
+   "foto_url": "https://kadin.id/uploads/legacy/James-Riady.png",
    "lisensi": "milik pemilik situs sumber, tampil dengan atribusi",
    "diambil": "2026-11-07"
   },
@@ -145,10 +945,34 @@
    "diambil": "2026-11-07"
   },
   {
+   "orang_id": "o_c6b4f49c59",
+   "nama": "Rapolo Hutabarat",
+   "sumber_url": "https://www.aprobi.or.id/about-us/board-of-directors/",
+   "foto_url": "https://www.aprobi.or.id/wp-content/uploads/RAPOLO-HUTABARAT-Ketua-Bidang-Sustainability_1.png",
+   "lisensi": "milik pemilik situs sumber, tampil dengan atribusi",
+   "diambil": "2026-11-07"
+  },
+  {
    "orang_id": "o_cad0086638",
    "nama": "Achmad Ardianto",
    "sumber_url": "https://mind.id/pages/board-of-director",
    "foto_url": "https://mind.id/storage/1564/EDIT_Achmad-Ardianto---MIND-ID---021126-%281%29.png",
+   "lisensi": "milik pemilik situs sumber, tampil dengan atribusi",
+   "diambil": "2026-11-07"
+  },
+  {
+   "orang_id": "o_cf5b6caa7e",
+   "nama": "Tahir Mahmood",
+   "sumber_url": "https://acwapower.com/en/who-we-are/management/",
+   "foto_url": "https://acwapower.com/media/fn3pcycm/tahir-mahmood.png?width=353&height=399",
+   "lisensi": "milik perusahaan, tampil dengan atribusi",
+   "diambil": "2026-11-07"
+  },
+  {
+   "orang_id": "o_cfe162d1d9",
+   "nama": "Wee Kay Hwa",
+   "sumber_url": "https://www.recgroup.com/en/management",
+   "foto_url": "https://www.recgroup.com/sites/default/files/2024-06/Management_Wee_Kay_Hwa.jpg",
    "lisensi": "milik pemilik situs sumber, tampil dengan atribusi",
    "diambil": "2026-11-07"
   },
@@ -161,11 +985,35 @@
    "diambil": "2026-11-07"
   },
   {
+   "orang_id": "o_d2864882da",
+   "nama": "Rohmat Marzuki S.Hut",
+   "sumber_url": "https://www.kehutanan.go.id/profile/leader",
+   "foto_url": "https://www.kehutanan.go.id/s/uploads/wamen_2fd0090611.png",
+   "lisensi": "milik pemilik situs sumber, tampil dengan atribusi",
+   "diambil": "2026-11-07"
+  },
+  {
    "orang_id": "o_d6fac3543f",
    "nama": "Fabby Tumiwa",
    "sumber_url": "https://aesi.or.id/tentang-kami",
    "foto_url": "https://aesi.or.id/wp-content/uploads/2026/01/Fabby-Tumiwa-300x300.jpg",
    "lisensi": "milik pemilik situs sumber, tampil dengan atribusi",
+   "diambil": "2026-11-07"
+  },
+  {
+   "orang_id": "o_d7f4bc0ff4",
+   "nama": "Pradana Murti",
+   "sumber_url": "https://www.ptsmi.co.id/management",
+   "foto_url": "https://www.ptsmi.co.id/cfind/source/thumb/images/management/cover_w320_h480_bod-pm-2024.jpg",
+   "lisensi": "milik pemilik situs sumber, tampil dengan atribusi",
+   "diambil": "2026-11-07"
+  },
+  {
+   "orang_id": "o_d82076a9a3",
+   "nama": "Havidh Nazif",
+   "sumber_url": "https://pertaminanre.com/id/tentang-kami/manajemen",
+   "foto_url": "https://pertaminanre.com/_next/image?url=https%3A%2F%2Fapi.pertaminanre.com%2Fmedia%2F2026%2F10%2Ff546cabfb5184958a92480d74747828f.webp&w=3840&q=75",
+   "lisensi": "milik perusahaan, tampil dengan atribusi",
    "diambil": "2026-11-07"
   },
   {
@@ -185,11 +1033,147 @@
    "diambil": "2026-11-07"
   },
   {
+   "orang_id": "o_ddffddee1e",
+   "nama": "Faaris Pranawa",
+   "sumber_url": "https://www.ptsmi.co.id/management",
+   "foto_url": "https://www.ptsmi.co.id/cfind/source/thumb/images/management/cover_w320_h480_bod-fp-2024.jpg",
+   "lisensi": "milik pemilik situs sumber, tampil dengan atribusi",
+   "diambil": "2026-11-07"
+  },
+  {
+   "orang_id": "o_df59eba597",
+   "nama": "TB Ari Wibawa Mukti",
+   "sumber_url": "https://plnnusantarapower.co.id/about-us/board-of-directors",
+   "foto_url": "https://plnnusantarapower.co.id/storage/about_us/board_of_directors/details/hrsPzf2nM4PXAC5bzTQfdj1O72COMhZBMeacRiiu.jpg",
+   "lisensi": "milik perusahaan, tampil dengan atribusi",
+   "diambil": "2026-11-07"
+  },
+  {
+   "orang_id": "o_e05f2b2afb",
+   "nama": "Benny Soetrisno",
+   "sumber_url": "https://kadin.id/tentang-kadin/struktur-organisasi-kadin/",
+   "foto_url": "https://kadin.id/uploads/legacy/Benny-Soetrisno.png",
+   "lisensi": "milik pemilik situs sumber, tampil dengan atribusi",
+   "diambil": "2026-11-07"
+  },
+  {
+   "orang_id": "o_e0e1ab9e7a",
+   "nama": "Hartono Mitra",
+   "sumber_url": "https://www.aprobi.or.id/about-us/board-of-directors/",
+   "foto_url": "https://www.aprobi.or.id/wp-content/uploads/HARTONO-MITRA-Ketua-Bidang-Rantai-Pasok_1.png",
+   "lisensi": "milik pemilik situs sumber, tampil dengan atribusi",
+   "diambil": "2026-11-07"
+  },
+  {
+   "orang_id": "o_e34fde4171",
+   "nama": "Jummy Bismar Martua Sinaga",
+   "sumber_url": "https://www.aprobi.or.id/about-us/board-of-directors/",
+   "foto_url": "https://www.aprobi.or.id/wp-content/uploads/JUMMY-BISMAR-MARTUA-SINAGA-Wakil-Ketua-Umum-Bidang-Riset-Teknologi_1.png",
+   "lisensi": "milik pemilik situs sumber, tampil dengan atribusi",
+   "diambil": "2026-11-07"
+  },
+  {
+   "orang_id": "o_e3f3390eb0",
+   "nama": "Ivy Santoso",
+   "sumber_url": "https://www.danantaraindonesia.co.id/about/our-people/bpi-danantaras",
+   "foto_url": "https://www.danantaraindonesia.co.id/_next/image?url=https%3A%2F%2Fd19ypesdspgr78.cloudfront.net%2F247%2FIvy-Santoso.webp&w=3840&q=75",
+   "lisensi": "milik perusahaan, tampil dengan atribusi",
+   "diambil": "2026-11-07"
+  },
+  {
+   "orang_id": "o_e45f072671",
+   "nama": "Bhima Yudhistira Adhinegara",
+   "sumber_url": "https://celios.co.id/about",
+   "foto_url": "https://celios.co.id/bhima-yudhistira-bw.png",
+   "lisensi": "milik pemilik situs sumber, tampil dengan atribusi",
+   "diambil": "2026-11-07"
+  },
+  {
+   "orang_id": "o_e53f2c788d",
+   "nama": "Ady Purwo",
+   "sumber_url": "https://atapsurya.id/",
+   "foto_url": "https://atapsurya.id/wp-content/uploads/2021/05/puryo.png",
+   "lisensi": "milik pemilik situs sumber, tampil dengan atribusi",
+   "diambil": "2026-11-07"
+  },
+  {
+   "orang_id": "o_e5a517c214",
+   "nama": "Herudi Kandau Nugroho",
+   "sumber_url": "https://www.bki.co.id/company-profile",
+   "foto_url": "https://www.bki.co.id/_next/image?url=%2Fboc%2Fboc2.jpg&w=3840&q=75",
+   "lisensi": "milik pemilik situs sumber, tampil dengan atribusi",
+   "diambil": "2026-11-07"
+  },
+  {
    "orang_id": "o_e6f94d18a7",
    "nama": "Suko Hartono",
    "sumber_url": "https://mind.id/pages/board-of-director",
    "foto_url": "https://mind.id/storage/1440/MINDID_BOD_SUKO-HARTONO.jpg",
    "lisensi": "milik pemilik situs sumber, tampil dengan atribusi",
+   "diambil": "2026-11-07"
+  },
+  {
+   "orang_id": "o_e7c00e5697",
+   "nama": "Raja Juli Antoni",
+   "sumber_url": "https://www.kehutanan.go.id/profile/leader",
+   "foto_url": "https://www.kehutanan.go.id/s/uploads/medium_menteri_kehutanan_f750fac8a9.jpeg",
+   "lisensi": "milik pemilik situs sumber, tampil dengan atribusi",
+   "diambil": "2026-11-07"
+  },
+  {
+   "orang_id": "o_e9108c751f",
+   "nama": "Ramadi Ken Permana",
+   "sumber_url": "https://www.inalum.id/id/tentang-kami/organisasi/direksi",
+   "foto_url": "https://www.inalum.id/storage/media/2025/07/ken-permana-x5eyo8.png",
+   "lisensi": "milik perusahaan, tampil dengan atribusi",
+   "diambil": "2026-11-07"
+  },
+  {
+   "orang_id": "o_eadfd04916",
+   "nama": "Shankar Sridhara",
+   "sumber_url": "https://www.recgroup.com/en/management",
+   "foto_url": "https://www.recgroup.com/sites/default/files/2024-06/Management_Shankar_Sridhara.jpg",
+   "lisensi": "milik pemilik situs sumber, tampil dengan atribusi",
+   "diambil": "2026-11-07"
+  },
+  {
+   "orang_id": "o_eb77a12a80",
+   "nama": "Furqan Kamlani",
+   "sumber_url": "https://acwapower.com/en/who-we-are/management/",
+   "foto_url": "https://acwapower.com/media/qeunokja/furqan-kamlani.png?width=353&height=399",
+   "lisensi": "milik perusahaan, tampil dengan atribusi",
+   "diambil": "2026-11-07"
+  },
+  {
+   "orang_id": "o_ebebf29fc3",
+   "nama": "Daniel Ginting",
+   "sumber_url": "https://www.danantaraindonesia.co.id/about/our-people/bpi-danantaras",
+   "foto_url": "https://www.danantaraindonesia.co.id/_next/image?url=https%3A%2F%2Fd19ypesdspgr78.cloudfront.net%2F876%2FDaniel_Ginting.webp&w=3840&q=75",
+   "lisensi": "milik perusahaan, tampil dengan atribusi",
+   "diambil": "2026-11-07"
+  },
+  {
+   "orang_id": "o_ec8758546d",
+   "nama": "TB Ardi Januar",
+   "sumber_url": "https://www.bki.co.id/company-profile",
+   "foto_url": "https://www.bki.co.id/_next/image?url=%2Fboc%2Fboc1.jpg&w=3840&q=75",
+   "lisensi": "milik pemilik situs sumber, tampil dengan atribusi",
+   "diambil": "2026-11-07"
+  },
+  {
+   "orang_id": "o_edb30181c6",
+   "nama": "Wataru Yoshio",
+   "sumber_url": "https://alamenergy.co.id/about-us/",
+   "foto_url": "https://alamenergy.co.id/wp-content/uploads/2026/09/wataru-yoshio.png",
+   "lisensi": "milik pemilik situs sumber, tampil dengan atribusi",
+   "diambil": "2026-11-07"
+  },
+  {
+   "orang_id": "o_eec7bf71fe",
+   "nama": "Dwi Susanto",
+   "sumber_url": "https://www.danantaraindonesia.co.id/about/our-people/bpi-danantaras",
+   "foto_url": "https://www.danantaraindonesia.co.id/_next/image?url=https%3A%2F%2Fd19ypesdspgr78.cloudfront.net%2F249%2FDwi-Susanto.webp&w=3840&q=75",
+   "lisensi": "milik perusahaan, tampil dengan atribusi",
    "diambil": "2026-11-07"
   },
   {
@@ -209,11 +1193,107 @@
    "diambil": "2026-11-07"
   },
   {
+   "orang_id": "o_f4acc37124",
+   "nama": "Hengky Witarsa",
+   "sumber_url": "https://apamsi.org/struktur-organisasi/",
+   "foto_url": "https://apamsi.org/wp-content/themes/apamsi/dist/images/about/22.png",
+   "lisensi": "milik pemilik situs sumber, tampil dengan atribusi",
+   "diambil": "2026-11-07"
+  },
+  {
+   "orang_id": "o_f684ef4d55",
+   "nama": "R. Anggakara Pratama",
+   "sumber_url": "https://www.aprobi.or.id/about-us/board-of-directors/",
+   "foto_url": "https://www.aprobi.or.id/wp-content/uploads/R.-ANGGAKARA-PRATAMA-Wakil-Sekretaris-Jenderal_1.png",
+   "lisensi": "milik pemilik situs sumber, tampil dengan atribusi",
+   "diambil": "2026-11-07"
+  },
+  {
+   "orang_id": "o_f951287824",
+   "nama": "Iin Febrian",
+   "sumber_url": "https://pertaminanre.com/id/tentang-kami/manajemen",
+   "foto_url": "https://pertaminanre.com/_next/image?url=https%3A%2F%2Fapi.pertaminanre.com%2Fmedia%2F2026%2F10%2F974d4c28aa6542ecb0e8ffaf97a989e7.webp&w=3840&q=75",
+   "lisensi": "milik perusahaan, tampil dengan atribusi",
+   "diambil": "2026-11-07"
+  },
+  {
+   "orang_id": "o_f965e65f65",
+   "nama": "Benny Setiawan",
+   "sumber_url": "https://www.medcoenergi.com/en/about-us/our-leaders/board-of-directors/",
+   "foto_url": "https://www.medcoenergi.com/uploads/mprofiles/Benny-Setiawan.jpg",
+   "lisensi": "milik perusahaan, tampil dengan atribusi",
+   "diambil": "2026-11-07"
+  },
+  {
+   "orang_id": "o_f9c769dceb",
+   "nama": "Kodratul Safti",
+   "sumber_url": "https://atapsurya.id/",
+   "foto_url": "https://atapsurya.id/wp-content/uploads/2021/05/seo.png",
+   "lisensi": "milik pemilik situs sumber, tampil dengan atribusi",
+   "diambil": "2026-11-07"
+  },
+  {
+   "orang_id": "o_f9f5767c0d",
+   "nama": "Hendra Soetjipto Tan",
+   "sumber_url": "https://www.baritorenewables.co.id/en/board-of-directors",
+   "foto_url": "https://www.baritorenewables.co.id/uploads/2023/08/bb02abb4262b69c243efc7ce6e475f63_5ae71145c07ceb94998565d94ad08d0b_compressed.jpg?v=1691565471",
+   "lisensi": "milik pemilik situs sumber, tampil dengan atribusi",
+   "diambil": "2026-11-07"
+  },
+  {
+   "orang_id": "o_fa586ac257",
+   "nama": "Shahnaz Yusof",
+   "sumber_url": "https://acwapower.com/en/who-we-are/management/",
+   "foto_url": "https://acwapower.com/media/4zejktom/shahnaz-headshot.png?width=353&height=399",
+   "lisensi": "milik perusahaan, tampil dengan atribusi",
+   "diambil": "2026-11-07"
+  },
+  {
    "orang_id": "o_fb42f71e9e",
    "nama": "Wahyu Suparyono",
    "sumber_url": "https://mind.id/pages/board-of-director",
    "foto_url": "https://mind.id/storage/1442/MINDID_BOD_WAHYU-SUPARYONO.jpg",
    "lisensi": "milik pemilik situs sumber, tampil dengan atribusi",
+   "diambil": "2026-11-07"
+  },
+  {
+   "orang_id": "o_fb467b0941",
+   "nama": "Ravi Farkhan Pratama",
+   "sumber_url": "https://www.aprobi.or.id/about-us/board-of-directors/",
+   "foto_url": "https://www.aprobi.or.id/wp-content/uploads/RAVI-FARKHAN-PRATAMA-Ketua-Bidang-Riset-Teknologi_1.png",
+   "lisensi": "milik pemilik situs sumber, tampil dengan atribusi",
+   "diambil": "2026-11-07"
+  },
+  {
+   "orang_id": "o_fd43432691",
+   "nama": "Prasetyo Hadi",
+   "sumber_url": "https://www.danantaraindonesia.co.id/about/our-people/supervisory-board",
+   "foto_url": "https://www.danantaraindonesia.co.id/_next/image?url=https%3A%2F%2Fd19ypesdspgr78.cloudfront.net%2F626%2FPrasetyo_Hadi.webp&w=3840&q=75",
+   "lisensi": "milik perusahaan, tampil dengan atribusi",
+   "diambil": "2026-11-07"
+  },
+  {
+   "orang_id": "o_fe73f8d3b1",
+   "nama": "Melati Sarnita",
+   "sumber_url": "https://www.inalum.id/id/tentang-kami/organisasi/direksi",
+   "foto_url": "https://www.inalum.id/storage/media/2024/08/melati-sarnita-wjrahw.png",
+   "lisensi": "milik perusahaan, tampil dengan atribusi",
+   "diambil": "2026-11-07"
+  },
+  {
+   "orang_id": "o_fecaf7d558",
+   "nama": "Soichiro Nishimori",
+   "sumber_url": "https://alamenergy.co.id/about-us/",
+   "foto_url": "https://alamenergy.co.id/wp-content/uploads/2026/09/soichiro-nishimori.png",
+   "lisensi": "milik pemilik situs sumber, tampil dengan atribusi",
+   "diambil": "2026-11-07"
+  },
+  {
+   "orang_id": "o_ffa553a552",
+   "nama": "Airlangga Hartarto",
+   "sumber_url": "https://www.danantaraindonesia.co.id/about/our-people/supervisory-board",
+   "foto_url": "https://www.danantaraindonesia.co.id/_next/image?url=https%3A%2F%2Fd19ypesdspgr78.cloudfront.net%2F621%2FAirlangga_Hartarto.webp&w=3840&q=75",
+   "lisensi": "milik perusahaan, tampil dengan atribusi",
    "diambil": "2026-11-07"
   },
   {

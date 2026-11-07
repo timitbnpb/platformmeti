@@ -42,7 +42,7 @@ function gambarSaring() {
     + pilihHtml({ id: "f-media", ikon: "jenis", label: t(S.tab === "berita" ? "brt.f.media" : "brt.f.kanal"), opsi: o.media, nilai: S.media })
     + pilihHtml({ id: "f-periode", ikon: "tahun", label: t("brt.f.periode"), opsi: o.periode, nilai: S.periode })
     + pilihHtml({ id: "f-bahasa", ikon: "bahasa", label: t("brt.f.bahasa"), opsi: o.bahasa, nilai: S.bahasa })
-    + hapusHtml({ id: "f-hapus", label: t("jm.hapus_filter") }) + hitungHtml({ id: "f-hitung", teks: "" });
+    + hapusHtml({ id: "f-hapus", label: t("jm.hapus_filter") });
   document.getElementById("f-q").value = S.q;
   aturSaring();
 }
@@ -156,8 +156,8 @@ const GRUP = [["hari", (u) => u < 1], ["minggu", (u) => u < 7], ["bulan", (u) =>
 const grupDari = (iso) => { const u = umur(iso); return GRUP.find(([, f]) => f(u))[0]; };
 
 function itemBerita(r) {
-  const chips = tagHtml(r) + orgHtml(r);
-  return `<li class="brt-item">${tautan(r, sampul(r, "brt-s32", 96, 64), "brt-gbr")}<div>${tautan(r, esc(r.judul), "brt-judul")}${metaHtml(r)}${chips ? `<div class="brt-label">${chips}</div>` : ""}${urlAman(r.url) ? bagikanHtml({ url: urlAman(r.url), judul: r.judul, kelas: "kecil" }) : ""}</div></li>`;
+  const chips = orgHtml(r), bagi = urlAman(r.url) ? `<details class="brt-bagi"><summary title="${esc(t("bagi.grup"))}" aria-label="${esc(t("bagi.grup"))}">${ikon("bagikan", 18)}</summary><div class="brt-bagi-m">${bagikanHtml({ url: urlAman(r.url), judul: r.judul, kelas: "kecil" })}</div></details>` : "";
+  return `<li class="brt-item">${tautan(r, sampul(r, "brt-s169", 320, 180, true), "brt-gbr")}<div class="brt-isi">${tautan(r, esc(r.judul), "brt-judul")}${chipMedia(r)}${chips ? `<div class="brt-label">${chips}</div>` : ""}</div>${bagi}</li>`;
 }
 function durasi(d) { const j = Math.floor(d / 3600), m = Math.floor((d % 3600) / 60), s = String(d % 60).padStart(2, "0"); return j ? `${j}:${String(m).padStart(2, "0")}:${s}` : `${m}:${s}`; }
 function itemVideo(r) {
@@ -170,7 +170,6 @@ function itemVideo(r) {
 
 function gambarIsi() {
   const rows = saring();
-  document.getElementById("f-hitung").textContent = t("brt.hitung", { n: angka(rows.length), total: angka(baris().length) });
   document.querySelector("#ex-semua .jm-ex-j").innerHTML = hlHtml("brt.ex.semua.j", angka(rows.length), { total: angka(baris().length), jenis: t("brt.tab." + S.tab).toLowerCase() });
   const el = document.getElementById("isi");
   if (!rows.length) { el.innerHTML = `<p class="brt-lead">${esc(t("brt.kosong"))}</p>`; return; }
@@ -182,7 +181,7 @@ function gambarIsi() {
     let g = "";
     for (const r of potong) {
       const k = grupDari(r.terbit);
-      if (k !== g) { html += `${g ? "</ul>" : ""}<h3 class="brt-grup">${esc(t("brt.g." + k))}</h3><ul class="brt-daftar">`; g = k; }
+      if (k !== g) { html += `${g ? "</ul>" : ""}<h3 class="brt-grup">${esc(t("brt.g." + k))}</h3><ul class="brt-daftar brt-grid">`; g = k; }
       html += itemBerita(r);
     }
     html += "</ul>";

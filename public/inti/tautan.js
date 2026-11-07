@@ -54,8 +54,8 @@ export const namaProvinsiKode = (k) => NAMA_PROV.get(String(k))?.replace(/\b[a-z
 
 /* ---------- penggambar ---------- */
 const ikonKecil = (j, r, kunci) => {
-  if (j === "org" && r?.logo) return `<img class="jm-taut-lb" src="${esc(r.logo)}" alt="" width="16" height="16" loading="lazy" decoding="async" onerror="this.remove()">`;
-  if (j === "provinsi") return `<img class="jm-taut-lb" src="/img/provinsi/${esc(kunci)}.png" alt="" width="16" height="16" loading="lazy" decoding="async" onerror="this.remove()">`;
+  if (j === "org" && r?.logo) return `<img class="jm-taut-lb" src="${esc(r.logo)}" alt="" width="16" height="16" loading="lazy" decoding="async" data-galat="hapus">`;
+  if (j === "provinsi") return `<img class="jm-taut-lb" src="/img/provinsi/${esc(kunci)}.png" alt="" width="16" height="16" loading="lazy" decoding="async" data-galat="hapus">`;
   if (j === "teknologi" && IKON_TEK[kunci]) return `<span class="jm-taut-ik">${IKON_TEK[kunci]}</span>`;
   return "";
 };

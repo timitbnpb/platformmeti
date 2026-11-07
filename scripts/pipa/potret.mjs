@@ -291,6 +291,8 @@ export function bangun(masukan = {}) {
   }
   for (const f of M('foto_t', 'orang/foto_tambahan.jsonl')) { const r = orang.get(f.orang_id); const lokal = 'orang/' + f.foto_file; if (r && fs.existsSync(path.join(DP, lokal))) r.foto_tambahan = { lokal, sumber_url: f.sumber_url, hak_cipta: f.hak }; }
   // pengurus organisasi (3 sumber) -> keanggotaan jabatan + daftar pengurus per org
+  // foto wajah pengurus: public/img/orang/<orang_id>.webp (panen_pengurus.mjs --foto), atau foto pengurus METI di public/img/pengurus/<nama>-b.webp (pencocokan nama)
+  const fotoPengurus = (id, nama) => { const sl = norm(nama).replace(/ /g, '-'); for (const [rel, f] of [['/img/orang/' + id + '.webp', 'public/img/orang/' + id + '.webp'], ['/img/pengurus/' + sl + '-b.webp', 'public/img/pengurus/' + sl + '-b.webp']]) if (fs.existsSync(path.join(ROOT, f))) return rel; return undefined; };
   const pengOrg = new Map(); const foto = []; const tambahPengurus = (orgId, p) => { const l = pengOrg.get(orgId) || pengOrg.set(orgId, []).get(orgId); if (!l.some((x) => x.orang_id === p.orang_id && x.jabatan === p.jabatan)) l.push(p); };
   const pengurusRows = [];
   for (const p of M('p_pengurus', 'perusahaan/pengurus.jsonl')) pengurusRows.push({ org: p.perusahaan_id, orang_id: p.orang_id, nama: p.nama, jabatan: p.jabatan, jenis_jabatan: p.jenis_jabatan, mulai: p.mulai, sumber_url: p.sumber_url, fotoLokal: p.foto_berkas && 'perusahaan/' + p.foto_berkas, fotoSumber: p.foto_sumber || p.sumber_url, hak: p.hak_cipta });
@@ -305,7 +307,7 @@ export function bangun(masukan = {}) {
     if (!r.jabatan_terkini) { r.jabatan_terkini = p.jabatan; r.organisasi_terkini = on; }
     if (!r.jenis) r.jenis = 'asosiasi';
     r.sumber_urls.push(p.sumber_url); r.sumber_url = r.sumber_url || p.sumber_url; r.tanggal = r.tanggal || '2026-11-07';
-    tambahPengurus(oid, { orang_id: p.orang_id, nama: pisahNama(p.nama).nama, jabatan: p.jabatan, jenis_jabatan: p.jenis_jabatan, mulai: p.mulai, selesai: p.selesai });
+    tambahPengurus(oid, { orang_id: p.orang_id, nama: pisahNama(p.nama).nama, jabatan: p.jabatan, jenis_jabatan: p.jenis_jabatan, mulai: p.mulai, selesai: p.selesai, sumber_url: p.sumber_url, foto: fotoPengurus(p.orang_id, p.nama) });
     if (p.fotoLokal && fs.existsSync(path.join(DP, p.fotoLokal))) r.foto_pengurus = { lokal: p.fotoLokal, sumber_url: p.fotoSumber, hak_cipta: p.hak };
   }
   const nmapAll = new Map(); const petaNama = () => { nmapAll.clear(); for (const o of org.values()) { nmapAll.set(norm(o.nama), o.id); (o.nama_lain || []).concat(ALIAS_ORG[o.id] || []).forEach((n) => nmapAll.set(norm(n), o.id)); if (o.singkatan) nmapAll.set(norm(o.singkatan), o.id); } }; petaNama();

@@ -3977,5 +3977,6 @@
  "pg.cara.3": "Kosong berarti belum ditemukan pada sumber yang dapat dirujuk, bukan berarti tidak ada.",
  "pg.cara.4": "Proyek terhubung dari basis proyek METI; posisi METI hanya dari arsip yang tidak rahasia.",
  "pg.tak_dikenal": "Program tidak ditemukan",
- "pg.tak_dikenal.ket": "Kode program tidak dikenal. Pilih salah satu program di bawah."
+ "pg.tak_dikenal.ket": "Kode program tidak dikenal. Pilih salah satu program di bawah.",
+ "pg.beranda.semua": "Analisis lengkap semua program"
 }
