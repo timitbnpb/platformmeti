@@ -1,0 +1,51 @@
+[
+ {
+  "id": "d1",
+  "judul": "Rencana Umum Energi Daerah contoh",
+  "jenis": "RUED",
+  "tahun": 2024,
+  "sektor": [
+   "surya"
+  ],
+  "wilayah": [
+   {
+    "prov": "33",
+    "kab": "Kota Semarang"
+   }
+  ],
+  "url": "https://contoh-dok.example.org/1",
+  "sumber_url": "https://contoh-dok.example.org"
+ },
+ {
+  "id": "d2",
+  "judul": "Kajian potensi panas bumi contoh",
+  "jenis": "kajian",
+  "tahun": 2023,
+  "sektor": [
+   "panas-bumi"
+  ],
+  "wilayah": [
+   {
+    "prov": "32"
+   }
+  ],
+  "url": "https://contoh-dok.example.org/2",
+  "sumber_url": "https://contoh-dok.example.org"
+ },
+ {
+  "id": "d3",
+  "judul": "Peraturan daerah energi bersih contoh",
+  "jenis": "regulasi",
+  "tahun": 2022,
+  "sektor": [
+   "bayu"
+  ],
+  "wilayah": [
+   {
+    "prov": "73"
+   }
+  ],
+  "url": "https://contoh-dok.example.org/3",
+  "sumber_url": "https://contoh-dok.example.org"
+ }
+]

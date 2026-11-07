@@ -1,0 +1,30 @@
+[
+ {
+  "id": "t1",
+  "nama": "Tokoh Contoh Satu (contoh)",
+  "peran": "Direktur Jenderal (contoh)",
+  "jenis": "pejabat",
+  "lembaga": "Kementerian Energi Contoh (contoh)",
+  "sektor": [
+   "surya",
+   "bayu"
+  ],
+  "prov": "31",
+  "kiprah": [
+   {
+    "teks": "Memimpin penyusunan peta jalan contoh",
+    "tahun": 2025,
+    "sumber_url": "https://contoh-tokoh.example.org"
+   }
+  ],
+  "web": "https://contoh-tokoh.example.org",
+  "sumber": [
+   {
+    "butir": "profil",
+    "url": "https://contoh-tokoh.example.org",
+    "diperiksa": "2026-11-07"
+   }
+  ],
+  "diperiksa": "2026-11-07"
+ }
+]

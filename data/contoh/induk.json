@@ -1,0 +1,295 @@
+{
+ "sumber": {
+  "url": "https://contoh-induk.example.org",
+  "jenis": "data-terbuka",
+  "diperiksa": "2026-11-07"
+ },
+ "sektor": [
+  "surya",
+  "bayu",
+  "air",
+  "panas-bumi",
+  "bioenergi",
+  "laut",
+  "hidrogen",
+  "penyimpanan",
+  "jaringan",
+  "efisiensi",
+  "kendaraan-listrik",
+  "sampah-energi",
+  "nuklir",
+  "ccs"
+ ],
+ "orang": [
+  [
+   "A500100",
+   "Andi Contoh (contoh)",
+   "Universitas Contoh Barat",
+   [
+    "surya",
+    "penyimpanan"
+   ],
+   4,
+   12,
+   150,
+   "",
+   [
+    "photovoltaic",
+    "solar cell",
+    "battery storage"
+   ],
+   "",
+   "",
+   "Teknik Mesin",
+   "",
+   "x",
+   ""
+  ],
+  [
+   "A500137",
+   "Budi Contoh (contoh)",
+   "Institut Contoh Teknologi",
+   [
+    "bayu"
+   ],
+   11,
+   21,
+   361,
+   "",
+   [
+    "wind turbine"
+   ],
+   "",
+   "6000101",
+   "Teknik Elektro",
+   "",
+   "s",
+   ""
+  ],
+  [
+   "A500174",
+   "Citra Contoh (contoh)",
+   "Universitas Contoh Sumatera",
+   [
+    "air",
+    "jaringan"
+   ],
+   18,
+   30,
+   572,
+   "",
+   [
+    "micro-hydro",
+    "smart grid"
+   ],
+   "",
+   "6000102",
+   "Teknik Mesin",
+   "",
+   "s",
+   ""
+  ],
+  [
+   "A500211",
+   "Dewi Contoh (contoh)",
+   "Universitas Contoh Timur",
+   [
+    "panas-bumi"
+   ],
+   25,
+   39,
+   783,
+   "",
+   [
+    "geothermal reservoir"
+   ],
+   "",
+   "",
+   "Teknik Elektro",
+   "",
+   "x",
+   ""
+  ],
+  [
+   "A500248",
+   "Eka Contoh (contoh)",
+   "Politeknik Contoh Energi",
+   [
+    "bioenergi",
+    "sampah-energi"
+   ],
+   32,
+   48,
+   994,
+   "",
+   [
+    "biomass",
+    "biogas",
+    "waste-to-energy"
+   ],
+   "",
+   "6000104",
+   "Teknik Mesin",
+   "",
+   "s",
+   ""
+  ],
+  [
+   "A500285",
+   "Fajar Contoh (contoh)",
+   "Universitas Contoh Barat",
+   [
+    "laut"
+   ],
+   8,
+   57,
+   1205,
+   "",
+   [
+    "tidal energy"
+   ],
+   "",
+   "6000105",
+   "Teknik Elektro",
+   "",
+   "s",
+   ""
+  ],
+  [
+   "A500322",
+   "Gita Contoh (contoh)",
+   "Institut Contoh Teknologi",
+   [
+    "hidrogen",
+    "penyimpanan"
+   ],
+   15,
+   66,
+   1416,
+   "",
+   [
+    "green hydrogen",
+    "battery storage"
+   ],
+   "",
+   "",
+   "Teknik Mesin",
+   "",
+   "x",
+   ""
+  ],
+  [
+   "A500359",
+   "Hadi Contoh (contoh)",
+   "Universitas Contoh Sumatera",
+   [
+    "efisiensi",
+    "jaringan"
+   ],
+   22,
+   75,
+   1627,
+   "",
+   [
+    "energy efficiency",
+    "smart grid"
+   ],
+   "",
+   "6000107",
+   "Teknik Elektro",
+   "",
+   "s",
+   ""
+  ],
+  [
+   "A500396",
+   "Indah Contoh (contoh)",
+   "Universitas Contoh Timur",
+   [
+    "kendaraan-listrik",
+    "penyimpanan"
+   ],
+   29,
+   84,
+   1838,
+   "",
+   [
+    "electric vehicle",
+    "battery storage"
+   ],
+   "",
+   "6000108",
+   "Teknik Mesin",
+   "",
+   "s",
+   ""
+  ],
+  [
+   "A500433",
+   "Joko Contoh (contoh)",
+   "Politeknik Contoh Energi",
+   [
+    "surya",
+    "jaringan"
+   ],
+   5,
+   93,
+   2049,
+   "",
+   [
+    "photovoltaic",
+    "solar cell",
+    "smart grid"
+   ],
+   "",
+   "",
+   "Teknik Elektro",
+   "",
+   "x",
+   ""
+  ],
+  [
+   "A500470",
+   "Kirana Contoh (contoh)",
+   "Universitas Contoh Barat",
+   [
+    "bioenergi"
+   ],
+   12,
+   102,
+   2260,
+   "",
+   [
+    "biomass",
+    "biogas"
+   ],
+   "",
+   "6000110",
+   "Teknik Mesin",
+   "",
+   "s",
+   ""
+  ],
+  [
+   "A500507",
+   "Lukman Contoh (contoh)",
+   "Institut Contoh Teknologi",
+   [
+    "air"
+   ],
+   19,
+   111,
+   2471,
+   "",
+   [
+    "micro-hydro"
+   ],
+   "",
+   "6000111",
+   "Teknik Elektro",
+   "",
+   "s",
+   ""
+  ]
+ ]
+}

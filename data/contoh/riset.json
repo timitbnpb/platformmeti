@@ -1,0 +1,54 @@
+[
+ {
+  "id": "W1",
+  "judul": "Kinerja PLTS atap di iklim tropis (contoh)",
+  "tahun": 2024,
+  "sitasi": 12,
+  "jurnal": "Jurnal Energi Contoh",
+  "kampus": "Universitas Contoh Barat",
+  "penulis": [
+   "Andi Contoh (contoh)"
+  ],
+  "pakar": [
+   "A500100"
+  ],
+  "sektor": [
+   "surya"
+  ],
+  "wilayah": [
+   {
+    "prov": "33",
+    "kab": "Kota Semarang"
+   }
+  ],
+  "sumber": "openalex",
+  "url": "https://contoh-riset.example.org/W1",
+  "sumber_url": "https://contoh-riset.example.org/W1"
+ },
+ {
+  "id": "W2",
+  "judul": "Penyimpanan baterai untuk jaringan mikro pulau (contoh)",
+  "tahun": 2025,
+  "sitasi": 5,
+  "jurnal": "Jurnal Energi Contoh",
+  "kampus": "Institut Contoh Teknologi",
+  "penulis": [
+   "Eka Contoh (contoh)"
+  ],
+  "pakar": [
+   "A500248"
+  ],
+  "sektor": [
+   "penyimpanan",
+   "jaringan"
+  ],
+  "wilayah": [
+   {
+    "prov": "53"
+   }
+  ],
+  "sumber": "openalex",
+  "url": "https://contoh-riset.example.org/W2",
+  "sumber_url": "https://contoh-riset.example.org/W2"
+ }
+]

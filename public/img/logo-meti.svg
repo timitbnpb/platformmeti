@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80" width="80" height="80" role="img" aria-label="METI">
+  <rect x="2" y="2" width="76" height="76" rx="16" fill="#155B79"/>
+  <text x="40" y="47" text-anchor="middle" font-family="Poppins,Arial,sans-serif" font-size="25" font-weight="700" fill="#FFFFFF">METI</text>
+  <rect x="16" y="56" width="48" height="4" rx="2" fill="#B9D75A"/>
+</svg>

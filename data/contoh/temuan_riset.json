@@ -1,0 +1,38 @@
+{
+ "temuan": [
+  {
+   "id": "W1",
+   "doi": "https://doi.org/10.0000/contoh",
+   "judul": "Kinerja PLTS atap di iklim tropis (contoh)",
+   "tahun": 2024,
+   "temuan": "Produksi PLTS atap di lokasi contoh turun saat suhu modul naik (contoh).",
+   "pilar": [
+    "teknologi"
+   ],
+   "jenis": [
+    "surya"
+   ],
+   "angka": [
+    {
+     "besaran": "penurunan daya per derajat",
+     "nilai": "0,4",
+     "satuan": "persen",
+     "jenis": "koefisien"
+    }
+   ],
+   "teknologi": "Modul silikon kristal (contoh)",
+   "rekomendasi": null,
+   "kualitas": "sedang",
+   "pakar": [],
+   "sumber_url": "https://contoh-riset.example.org/W1"
+  }
+ ],
+ "prov": {
+  "33": [
+   "W1"
+  ]
+ },
+ "kab": {},
+ "kejadian": {},
+ "sumber_url": "https://contoh-riset.example.org"
+}

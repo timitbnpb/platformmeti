@@ -1,0 +1,32 @@
+{
+ "Universitas Contoh Barat": {
+  "prov": "32",
+  "kota": "Kota Bandung",
+  "lat": -6.9,
+  "lon": 107.61
+ },
+ "Institut Contoh Teknologi": {
+  "prov": "35",
+  "kota": "Kota Surabaya",
+  "lat": -7.28,
+  "lon": 112.79
+ },
+ "Universitas Contoh Sumatera": {
+  "prov": "14",
+  "kota": "Kota Pekanbaru",
+  "lat": 0.51,
+  "lon": 101.45
+ },
+ "Universitas Contoh Timur": {
+  "prov": "73",
+  "kota": "Kota Makassar",
+  "lat": -5.14,
+  "lon": 119.41
+ },
+ "Politeknik Contoh Energi": {
+  "prov": "33",
+  "kota": "Kota Semarang",
+  "lat": -6.99,
+  "lon": 110.42
+ }
+}

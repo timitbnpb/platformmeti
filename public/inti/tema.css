@@ -1,0 +1,57 @@
+/* Token METI "Midnight Energy" (DS §2). Satu-satunya berkas CSS yang boleh berisi hex (gerbang-token-meti).
+   Dua blok gelap (@media dan [data-theme="dark"]) WAJIB identik (gerbang-tema-kembar). */
+:root{
+  --meti-navy:#122B4A; --meti-petrol:#155B79; --meti-teal:#0A896A;
+  --meti-cyan:#65C7EC; --meti-lime:#B9D75A; --meti-cloud:#F3F7FB; --meti-oranye:#C55A11;
+
+  --paper:#FFFFFF; --surface:#F3F7FB; --card:#FFFFFF;
+  --soft-biru:#E3F4FB; --soft-hijau:#E3F2EC;
+  --line:#D5DEE8; --line-cell:#DCE6EF; --line-ctl:#6F7F90;
+  --ink:#0B1726; --ink2:#4A5A6B; --head:#122B4A;
+  --brand:#122B4A; --brand2:#155B79;
+  --accent:#07705A; --accent-isi:#0A896A; --on-accent:#FFFFFF;
+  --on-brand:#FFFFFF;   /* teks di atas kepala navy */
+  --data1:#122B4A; --data2:#0A896A; --data3:#65C7EC; --data4:#B9D75A; --data5:#155B79;
+  --sorot:#B9D75A;
+  --ok:#066B52; --warn:#A8480A; --bad:#B3261E; --info:#155B79;
+  --ok-bg:#E3F2EC; --warn-bg:#FBEBDD; --bad-bg:#FBE7E5; --info-bg:#E3F4FB;
+  --fokus:#155B79;
+  --shadow:0 2px 14px rgb(18 43 74/.08); --shadow-lg:0 8px 28px rgb(18 43 74/.16);
+  --pendar:0 0 0 1px rgb(101 199 236/.35),0 8px 28px rgb(101 199 236/.18);
+  --r:14px; --r-sm:10px; --r-lg:16px; --r-pil:999px;
+  --top:60px; --maks:1240px; --gut:16px; --gap:12px; --target:44px;
+  --display:"Poppins",system-ui,sans-serif;
+  --font:"Inter",Arial,system-ui,sans-serif;
+  --t-display:30px; --t-h1:24px; --t-h2:18px; --t-angka:28px; --t-body:15px; --t-kecil:12.5px; --t-label:11px;
+  color-scheme:light;
+}
+@media (min-width:600px){:root{--gut:20px}}
+@media (min-width:768px){:root{--t-display:44px; --t-h1:32px; --t-h2:22px; --t-angka:40px}}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --paper:#0C1D33; --surface:#122B4A; --card:#122B4A;
+  --soft-biru:#163456; --soft-hijau:#10382F;
+  --line:#25405F; --line-cell:#25405F; --line-ctl:#6E88A3;
+  --ink:#EAF1F8; --ink2:#A9BBCD; --head:#FFFFFF;
+  --brand:#0A1830; --brand2:#1B4F6E;
+  --accent:#3FC9A2; --accent-isi:#0A896A; --on-accent:#0C1D33;
+  --data1:#65C7EC; --data2:#3FC9A2; --data3:#B9D75A; --data4:#9FB3C6; --data5:#2C7FA3;
+  --ok:#3FC9A2; --warn:#F2955A; --bad:#FF8A80; --info:#65C7EC;
+  --ok-bg:#10382F; --warn-bg:#3A2616; --bad-bg:#3A1B19; --info-bg:#163456;
+  --fokus:#65C7EC;
+  --shadow:0 2px 14px rgb(0 0 0/.35); --shadow-lg:0 8px 28px rgb(0 0 0/.5);
+  color-scheme:dark;
+}}
+:root[data-theme="dark"]{
+  --paper:#0C1D33; --surface:#122B4A; --card:#122B4A;
+  --soft-biru:#163456; --soft-hijau:#10382F;
+  --line:#25405F; --line-cell:#25405F; --line-ctl:#6E88A3;
+  --ink:#EAF1F8; --ink2:#A9BBCD; --head:#FFFFFF;
+  --brand:#0A1830; --brand2:#1B4F6E;
+  --accent:#3FC9A2; --accent-isi:#0A896A; --on-accent:#0C1D33;
+  --data1:#65C7EC; --data2:#3FC9A2; --data3:#B9D75A; --data4:#9FB3C6; --data5:#2C7FA3;
+  --ok:#3FC9A2; --warn:#F2955A; --bad:#FF8A80; --info:#65C7EC;
+  --ok-bg:#10382F; --warn-bg:#3A2616; --bad-bg:#3A1B19; --info-bg:#163456;
+  --fokus:#65C7EC;
+  --shadow:0 2px 14px rgb(0 0 0/.35); --shadow-lg:0 8px 28px rgb(0 0 0/.5);
+  color-scheme:dark;
+}

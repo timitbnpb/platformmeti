@@ -1,0 +1,87 @@
+[
+ {
+  "id": "p1",
+  "judul": "PLTS atap sekolah di Jawa Tengah (contoh)",
+  "donor": "Badan Pembangunan Internasional Contoh",
+  "pelaksana": "Komunitas Surya Atap Contoh",
+  "sektor": [
+   "surya"
+  ],
+  "prov": [
+   "33"
+  ],
+  "nilai_usd": 2400000,
+  "mulai": "2025-01-01",
+  "selesai": "2027-12-31",
+  "status": "aktif",
+  "sumber_url": "https://contoh-proyek.example.org/p1"
+ },
+ {
+  "id": "p2",
+  "judul": "Pembangkit mikrohidro desa Papua (contoh)",
+  "donor": "Bank Pembiayaan Energi Contoh",
+  "pelaksana": "PT Mikrohidro Contoh",
+  "sektor": [
+   "air"
+  ],
+  "prov": [
+   "91"
+  ],
+  "nilai_usd": 780000,
+  "mulai": "2026-01-01",
+  "selesai": "2027-06-30",
+  "status": "aktif",
+  "sumber_url": "https://contoh-proyek.example.org/p2"
+ },
+ {
+  "id": "p3",
+  "judul": "Studi panas bumi Jawa Barat (contoh)",
+  "donor": "Badan Pembangunan Internasional Contoh",
+  "pelaksana": "PT Panas Bumi Contoh",
+  "sektor": [
+   "panas-bumi"
+  ],
+  "prov": [
+   "32"
+  ],
+  "nilai_usd": 5100000,
+  "mulai": "2024-06-01",
+  "selesai": "2028-05-31",
+  "status": "aktif",
+  "sumber_url": "https://contoh-proyek.example.org/p3"
+ },
+ {
+  "id": "p4",
+  "judul": "Ladang angin Sulawesi Selatan tahap 1 (contoh)",
+  "donor": "Bank Pembiayaan Energi Contoh",
+  "pelaksana": "PT Bayu Timur Contoh",
+  "sektor": [
+   "bayu"
+  ],
+  "prov": [
+   "73"
+  ],
+  "nilai_usd": 12800000,
+  "mulai": "2023-09-01",
+  "selesai": "2025-08-31",
+  "status": "selesai",
+  "sumber_url": "https://contoh-proyek.example.org/p4"
+ },
+ {
+  "id": "p5",
+  "judul": "Biogas limbah sawit Riau (contoh)",
+  "donor": "Badan Pembangunan Internasional Contoh",
+  "pelaksana": "PT Bioenergi Sumatera Contoh",
+  "sektor": [
+   "bioenergi"
+  ],
+  "prov": [
+   "14"
+  ],
+  "nilai_usd": 310000,
+  "mulai": "2025-03-01",
+  "selesai": "2026-02-28",
+  "status": "aktif",
+  "sumber_url": "https://contoh-proyek.example.org/p5"
+ }
+]

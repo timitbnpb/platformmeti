@@ -67,3 +67,4 @@ Tabel D1 (migrasi di luar wilayahmu, kamu hanya memakainya lewat `hak.js`): `aku
 ## Kasus
 
 Belum ada kasus. Tambahkan lewat ilmu.mjs kasus.
+- 2026-11-07 · workerd lokal (wrangler 4.158) menerima PBKDF2 210000 dan 600000; batas produksi diyakini 100000 dan tak bisa diuji lokal, jadi sandi.js turun otomatis ke 100000 saat NotSupportedError dan akun menyimpan iterasi sebenarnya. D1.exec memecah per baris: migrasi uji dipecah sendiri (tests/_bantu.mjs). hak.ubahSandi mereset wajib_ganti dan mencabut semua sesi, jadi tak cocok untuk rehash saat masuk.

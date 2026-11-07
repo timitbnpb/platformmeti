@@ -1,0 +1,27 @@
+{
+ "A500100": {
+  "email": [
+   "pakar1@contoh-kampus.example.org"
+  ]
+ },
+ "A500137": {
+  "email": [
+   "pakar2@contoh-kampus.example.org"
+  ]
+ },
+ "A500174": {
+  "email": [
+   "pakar3@contoh-kampus.example.org"
+  ]
+ },
+ "A500211": {
+  "email": [
+   "pakar4@contoh-kampus.example.org"
+  ]
+ },
+ "A500248": {
+  "email": [
+   "pakar5@contoh-kampus.example.org"
+  ]
+ }
+}

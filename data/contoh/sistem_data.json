@@ -1,0 +1,212 @@
+[
+ {
+  "id": "sd0",
+  "nama": "Portal terbuka (contoh)",
+  "kepanjangan": "Sistem Data Contoh",
+  "pemilik": "Lembaga Contoh",
+  "lembaga_id": "kemenesdm",
+  "uraian": "Uraian contoh sistem data energi.",
+  "jenis_data": [
+   "kapasitas terpasang"
+  ],
+  "sektor": [
+   "surya"
+  ],
+  "cakupan": "Nasional",
+  "rentang": "2018 sampai sekarang",
+  "frekuensi": "bulanan",
+  "akses": "terbuka",
+  "format": [
+   "CSV",
+   "JSON"
+  ],
+  "lisensi": "belum diketahui",
+  "portal_url": "https://contoh-sd.example.org",
+  "api_url": "",
+  "status": "hidup",
+  "dipakai": false,
+  "sumber": [
+   {
+    "butir": "portal",
+    "url": "https://contoh-sd.example.org",
+    "diperiksa": "2026-11-07"
+   }
+  ],
+  "diperiksa": "2026-11-07"
+ },
+ {
+  "id": "sd1",
+  "nama": "Portal api-terbuka (contoh)",
+  "kepanjangan": "Sistem Data Contoh",
+  "pemilik": "Lembaga Contoh",
+  "lembaga_id": null,
+  "uraian": "Uraian contoh sistem data energi.",
+  "jenis_data": [
+   "kapasitas terpasang"
+  ],
+  "sektor": [
+   "surya"
+  ],
+  "cakupan": "Nasional",
+  "rentang": "2018 sampai sekarang",
+  "frekuensi": "bulanan",
+  "akses": "api-terbuka",
+  "format": [
+   "CSV",
+   "JSON"
+  ],
+  "lisensi": "belum diketahui",
+  "portal_url": "https://contoh-sd.example.org",
+  "api_url": "https://contoh-sd.example.org/api",
+  "status": "hidup",
+  "dipakai": false,
+  "sumber": [
+   {
+    "butir": "portal",
+    "url": "https://contoh-sd.example.org",
+    "diperiksa": "2026-11-07"
+   }
+  ],
+  "diperiksa": "2026-11-07"
+ },
+ {
+  "id": "sd2",
+  "nama": "Portal api-kunci (contoh)",
+  "kepanjangan": "Sistem Data Contoh",
+  "pemilik": "Lembaga Contoh",
+  "lembaga_id": null,
+  "uraian": "Uraian contoh sistem data energi.",
+  "jenis_data": [
+   "kapasitas terpasang"
+  ],
+  "sektor": [
+   "surya"
+  ],
+  "cakupan": "Nasional",
+  "rentang": "2018 sampai sekarang",
+  "frekuensi": "bulanan",
+  "akses": "api-kunci",
+  "format": [
+   "CSV",
+   "JSON"
+  ],
+  "lisensi": "belum diketahui",
+  "portal_url": "https://contoh-sd.example.org",
+  "api_url": "https://contoh-sd.example.org/api",
+  "status": "hidup",
+  "dipakai": false,
+  "sumber": [
+   {
+    "butir": "portal",
+    "url": "https://contoh-sd.example.org",
+    "diperiksa": "2026-11-07"
+   }
+  ],
+  "diperiksa": "2026-11-07"
+ },
+ {
+  "id": "sd3",
+  "nama": "Portal login (contoh)",
+  "kepanjangan": "Sistem Data Contoh",
+  "pemilik": "Lembaga Contoh",
+  "lembaga_id": null,
+  "uraian": "Uraian contoh sistem data energi.",
+  "jenis_data": [
+   "kapasitas terpasang"
+  ],
+  "sektor": [
+   "surya"
+  ],
+  "cakupan": "Nasional",
+  "rentang": "2018 sampai sekarang",
+  "frekuensi": "bulanan",
+  "akses": "login",
+  "format": [
+   "CSV",
+   "JSON"
+  ],
+  "lisensi": "belum diketahui",
+  "portal_url": "https://contoh-sd.example.org",
+  "api_url": "",
+  "status": "hidup",
+  "dipakai": false,
+  "sumber": [
+   {
+    "butir": "portal",
+    "url": "https://contoh-sd.example.org",
+    "diperiksa": "2026-11-07"
+   }
+  ],
+  "diperiksa": "2026-11-07"
+ },
+ {
+  "id": "sd4",
+  "nama": "Portal permohonan (contoh)",
+  "kepanjangan": "Sistem Data Contoh",
+  "pemilik": "Lembaga Contoh",
+  "lembaga_id": null,
+  "uraian": "Uraian contoh sistem data energi.",
+  "jenis_data": [
+   "kapasitas terpasang"
+  ],
+  "sektor": [
+   "surya"
+  ],
+  "cakupan": "Nasional",
+  "rentang": "2018 sampai sekarang",
+  "frekuensi": "bulanan",
+  "akses": "permohonan",
+  "format": [
+   "CSV",
+   "JSON"
+  ],
+  "lisensi": "belum diketahui",
+  "portal_url": "https://contoh-sd.example.org",
+  "api_url": "",
+  "status": "hidup",
+  "dipakai": false,
+  "sumber": [
+   {
+    "butir": "portal",
+    "url": "https://contoh-sd.example.org",
+    "diperiksa": "2026-11-07"
+   }
+  ],
+  "diperiksa": "2026-11-07"
+ },
+ {
+  "id": "sd5",
+  "nama": "Portal tertutup (contoh)",
+  "kepanjangan": "Sistem Data Contoh",
+  "pemilik": "Lembaga Contoh",
+  "lembaga_id": null,
+  "uraian": "Uraian contoh sistem data energi.",
+  "jenis_data": [
+   "kapasitas terpasang"
+  ],
+  "sektor": [
+   "surya"
+  ],
+  "cakupan": "Nasional",
+  "rentang": "2018 sampai sekarang",
+  "frekuensi": "bulanan",
+  "akses": "tertutup",
+  "format": [
+   "CSV",
+   "JSON"
+  ],
+  "lisensi": "belum diketahui",
+  "portal_url": "https://contoh-sd.example.org",
+  "api_url": "",
+  "status": "mati",
+  "dipakai": false,
+  "sumber": [
+   {
+    "butir": "portal",
+    "url": "https://contoh-sd.example.org",
+    "diperiksa": "2026-11-07"
+   }
+  ],
+  "diperiksa": "2026-11-07"
+ }
+]

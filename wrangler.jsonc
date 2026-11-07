@@ -1,0 +1,22 @@
+{
+  // account_id sengaja TIDAK ditulis: wrangler membacanya dari login lokal atau CLOUDFLARE_ACCOUNT_ID.
+  "name": "platformmeti",
+  "main": "src/worker.js",
+  "compatibility_date": "2026-11-01",
+  "assets": {
+    "directory": "./public",
+    "binding": "ASSETS",
+    "html_handling": "auto-trailing-slash",
+    "not_found_handling": "404-page",
+    "run_worker_first": ["/api/*", "/direktori", "/direktori.html", "/admin", "/admin.html", "/admin/*", "/p/*", "/wilayah/*"]
+  },
+  // id D1 bukan rahasia (KEAMANAN-PRIVASI 9 menuntut id kosong; pemilik memutuskan id D1 boleh di repo).
+  "d1_databases": [
+    { "binding": "DB", "database_name": "jaringan-meti", "database_id": "54954854-9ba2-4752-83ff-412941fb9d52", "migrations_dir": "migrations" }
+  ],
+  // aktifkan setelah R2 diaktifkan di akun
+  // "r2_buckets": [{ "binding": "BERKAS", "bucket_name": "jaringan-meti" }],
+  "ai": { "binding": "AI" },
+  "triggers": { "crons": ["0 18 * * *"] },
+  "observability": { "enabled": true }
+}

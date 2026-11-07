@@ -1,0 +1,28 @@
+{
+ "diperbarui": "2026-11-07",
+ "kejadian": [
+  {
+   "id": "isu1",
+   "nama": "Harga pembelian listrik EBT (contoh)",
+   "jenis": "surya",
+   "tanggal": "2024-03-01",
+   "prov": [],
+   "jejak": {
+    "ringkasan": "Ringkasan contoh perjalanan isu tarif.",
+    "kronologi": [
+     {
+      "tanggal": "2024-03-01",
+      "teks": "Rancangan aturan tarif contoh diumumkan.",
+      "sumber": "https://contoh-isu.example.org/1"
+     },
+     {
+      "tanggal": "2025-01-15",
+      "teks": "Aturan tarif contoh ditetapkan.",
+      "sumber": "https://contoh-isu.example.org/2"
+     }
+    ]
+   },
+   "sumber_url": "https://contoh-isu.example.org"
+  }
+ ]
+}

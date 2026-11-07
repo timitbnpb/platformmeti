@@ -1,0 +1,61 @@
+[
+ {
+  "id": "b1",
+  "judul": "PT Surya Nusantara menambah kapasitas pabrik (contoh)",
+  "tanggal": "2026-11-07",
+  "media": "Media Contoh",
+  "url": "https://contoh-berita.example.org/b1",
+  "ringkas": "Ringkasan berita contoh satu sampai dua kalimat.",
+  "kategori": "kerja sama",
+  "entitas": [
+   {
+    "jenis": "lembaga",
+    "id": "pt-surya"
+   }
+  ],
+  "sektor": [
+   "surya"
+  ],
+  "sumber_url": "https://contoh-berita.example.org/b1"
+ },
+ {
+  "id": "b2",
+  "judul": "Startup luncurkan baterai natrium (contoh)",
+  "tanggal": "2026-11-07",
+  "media": "Media Contoh",
+  "url": "https://contoh-berita.example.org/b2",
+  "ringkas": "Ringkasan berita contoh satu sampai dua kalimat.",
+  "kategori": "peluncuran inovasi",
+  "entitas": [
+   {
+    "jenis": "lembaga",
+    "id": "startup-baterai"
+   },
+   {
+    "jenis": "inovasi",
+    "id": "i2"
+   }
+  ],
+  "sektor": [
+   "penyimpanan"
+  ],
+  "sumber_url": "https://contoh-berita.example.org/b2"
+ },
+ {
+  "id": "b3",
+  "judul": "Bank energi siapkan skema pembiayaan (contoh)",
+  "tanggal": "2026-11-07",
+  "media": "Media Contoh",
+  "url": "https://contoh-berita.example.org/b3",
+  "ringkas": "Ringkasan berita contoh satu sampai dua kalimat.",
+  "kategori": "pendanaan dan hibah",
+  "entitas": [
+   {
+    "jenis": "lembaga",
+    "id": "bank-energi"
+   }
+  ],
+  "sektor": [],
+  "sumber_url": "https://contoh-berita.example.org/b3"
+ }
+]

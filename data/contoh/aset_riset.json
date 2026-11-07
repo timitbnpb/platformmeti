@@ -1,0 +1,44 @@
+[
+ {
+  "id": "a1",
+  "nama": "Laboratorium uji modul surya (contoh)",
+  "jenis": "lab surya",
+  "pemilik": "Universitas Contoh Barat",
+  "unit": "Unit Layanan Contoh",
+  "prov": "32",
+  "kota": "Bandung",
+  "layanan": "Uji kinerja modul fotovoltaik",
+  "bisa_disewa": true,
+  "web": "https://contoh-a1.example.org",
+  "sumber_url": "https://contoh-a1.example.org/katalog",
+  "diperiksa": "2026-11-07"
+ },
+ {
+  "id": "a2",
+  "nama": "Terowongan angin skala kecil (contoh)",
+  "jenis": "terowongan angin",
+  "pemilik": "Institut Contoh Teknologi",
+  "unit": "Unit Layanan Contoh",
+  "prov": "35",
+  "kota": "Surabaya",
+  "layanan": "Uji bilah turbin",
+  "bisa_disewa": false,
+  "web": "https://contoh-a2.example.org",
+  "sumber_url": "https://contoh-a2.example.org/katalog",
+  "diperiksa": "2026-11-07"
+ },
+ {
+  "id": "a3",
+  "nama": "Fasilitas uji baterai (contoh)",
+  "jenis": "lab baterai",
+  "pemilik": "Politeknik Contoh Energi",
+  "unit": "Unit Layanan Contoh",
+  "prov": "33",
+  "kota": "Semarang",
+  "layanan": "Uji siklus dan keselamatan baterai",
+  "bisa_disewa": true,
+  "web": "https://contoh-a3.example.org",
+  "sumber_url": "https://contoh-a3.example.org/katalog",
+  "diperiksa": "2026-11-07"
+ }
+]

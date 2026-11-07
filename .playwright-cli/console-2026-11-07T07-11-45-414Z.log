@@ -1,0 +1,136 @@
+[     418ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:8811/fonts/poppins-700.woff2:0
+[     468ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:8811/fonts/poppins-600.woff2:0
+[    8469ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:8811/fonts/poppins-700.woff2:0
+[    8498ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:8811/fonts/poppins-600.woff2:0
+[    9657ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:8811/tidak-ada-halaman?lang=id:0
+[    9672ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:8811/fonts/poppins-700.woff2:0
+[    9681ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:8811/fonts/poppins-600.woff2:0
+[   10740ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:8811/fonts/poppins-700.woff2:0
+[   10747ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:8811/fonts/poppins-600.woff2:0
+[   11820ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:8811/fonts/poppins-700.woff2:0
+[   11826ms] [VERBOSE] [DOM] Password forms should have (optionally hidden) username fields for accessibility: (More info: https://goo.gl/9p2vKq) %o @ http://localhost:8811/aktivasi?lang=id:0
+[   11848ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:8811/fonts/poppins-600.woff2:0
+[   12906ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:8811/fonts/poppins-700.woff2:0
+[   12910ms] [VERBOSE] [DOM] Password forms should have (optionally hidden) username fields for accessibility: (More info: https://goo.gl/9p2vKq) %o @ http://localhost:8811/aktivasi?token=aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa&lang=id:0
+[   12931ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:8811/fonts/poppins-600.woff2:0
+[   13988ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:8811/fonts/poppins-700.woff2:0
+[   14014ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:8811/fonts/poppins-600.woff2:0
+[   15065ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:8811/tidak-ada-halaman?lang=en:0
+[   15076ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:8811/fonts/poppins-700.woff2:0
+[   15099ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:8811/fonts/poppins-600.woff2:0
+[   16158ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:8811/fonts/poppins-700.woff2:0
+[   16180ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:8811/fonts/poppins-600.woff2:0
+[   17256ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:8811/fonts/poppins-700.woff2:0
+[   17260ms] [VERBOSE] [DOM] Password forms should have (optionally hidden) username fields for accessibility: (More info: https://goo.gl/9p2vKq) %o @ http://localhost:8811/aktivasi?lang=en:0
+[   17281ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:8811/fonts/poppins-600.woff2:0
+[   18340ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:8811/fonts/poppins-700.woff2:0
+[   18344ms] [VERBOSE] [DOM] Password forms should have (optionally hidden) username fields for accessibility: (More info: https://goo.gl/9p2vKq) %o @ http://localhost:8811/aktivasi?token=aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa&lang=en:0
+[   18365ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:8811/fonts/poppins-600.woff2:0
+[   19395ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:8811/fonts/poppins-700.woff2:0
+[   19414ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:8811/fonts/poppins-600.woff2:0
+[   20487ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:8811/tidak-ada-halaman?lang=id:0
+[   20502ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:8811/fonts/poppins-700.woff2:0
+[   20513ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:8811/fonts/poppins-600.woff2:0
+[   21596ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:8811/fonts/poppins-700.woff2:0
+[   21614ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:8811/fonts/poppins-600.woff2:0
+[   22691ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:8811/fonts/poppins-700.woff2:0
+[   22697ms] [VERBOSE] [DOM] Password forms should have (optionally hidden) username fields for accessibility: (More info: https://goo.gl/9p2vKq) %o @ http://localhost:8811/aktivasi?lang=id:0
+[   22715ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:8811/fonts/poppins-600.woff2:0
+[   23777ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:8811/fonts/poppins-700.woff2:0
+[   23783ms] [VERBOSE] [DOM] Password forms should have (optionally hidden) username fields for accessibility: (More info: https://goo.gl/9p2vKq) %o @ http://localhost:8811/aktivasi?token=aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa&lang=id:0
+[   23797ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:8811/fonts/poppins-600.woff2:0
+[   24855ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:8811/fonts/poppins-700.woff2:0
+[   24881ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:8811/fonts/poppins-600.woff2:0
+[   25933ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:8811/tidak-ada-halaman?lang=en:0
+[   25944ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:8811/fonts/poppins-700.woff2:0
+[   25965ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:8811/fonts/poppins-600.woff2:0
+[   27041ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:8811/fonts/poppins-700.woff2:0
+[   27067ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:8811/fonts/poppins-600.woff2:0
+[   28125ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:8811/fonts/poppins-700.woff2:0
+[   28129ms] [VERBOSE] [DOM] Password forms should have (optionally hidden) username fields for accessibility: (More info: https://goo.gl/9p2vKq) %o @ http://localhost:8811/aktivasi?lang=en:0
+[   28148ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:8811/fonts/poppins-600.woff2:0
+[   29212ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:8811/fonts/poppins-700.woff2:0
+[   29218ms] [VERBOSE] [DOM] Password forms should have (optionally hidden) username fields for accessibility: (More info: https://goo.gl/9p2vKq) %o @ http://localhost:8811/aktivasi?token=aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa&lang=en:0
+[   29230ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:8811/fonts/poppins-600.woff2:0
+[   30319ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:8811/fonts/poppins-700.woff2:0
+[   30330ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:8811/fonts/poppins-600.woff2:0
+[   31405ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:8811/tidak-ada-halaman?lang=id:0
+[   31422ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:8811/fonts/poppins-700.woff2:0
+[   31431ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:8811/fonts/poppins-600.woff2:0
+[   32501ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:8811/fonts/poppins-700.woff2:0
+[   32514ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:8811/fonts/poppins-600.woff2:0
+[   33578ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:8811/fonts/poppins-700.woff2:0
+[   33585ms] [VERBOSE] [DOM] Password forms should have (optionally hidden) username fields for accessibility: (More info: https://goo.gl/9p2vKq) %o @ http://localhost:8811/aktivasi?lang=id:0
+[   33597ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:8811/fonts/poppins-600.woff2:0
+[   34670ms] [VERBOSE] [DOM] Password forms should have (optionally hidden) username fields for accessibility: (More info: https://goo.gl/9p2vKq) %o @ http://localhost:8811/aktivasi?token=aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa&lang=id:0
+[   34670ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:8811/fonts/poppins-700.woff2:0
+[   34680ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:8811/fonts/poppins-600.woff2:0
+[   35745ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:8811/fonts/poppins-700.woff2:0
+[   35763ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:8811/fonts/poppins-600.woff2:0
+[   36803ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:8811/tidak-ada-halaman?lang=en:0
+[   36819ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:8811/fonts/poppins-700.woff2:0
+[   36829ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:8811/fonts/poppins-600.woff2:0
+[   37902ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:8811/fonts/poppins-700.woff2:0
+[   37913ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:8811/fonts/poppins-600.woff2:0
+[   38979ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:8811/fonts/poppins-700.woff2:0
+[   38984ms] [VERBOSE] [DOM] Password forms should have (optionally hidden) username fields for accessibility: (More info: https://goo.gl/9p2vKq) %o @ http://localhost:8811/aktivasi?lang=en:0
+[   38996ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:8811/fonts/poppins-600.woff2:0
+[   40059ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:8811/fonts/poppins-700.woff2:0
+[   40065ms] [VERBOSE] [DOM] Password forms should have (optionally hidden) username fields for accessibility: (More info: https://goo.gl/9p2vKq) %o @ http://localhost:8811/aktivasi?token=aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa&lang=en:0
+[   40080ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:8811/fonts/poppins-600.woff2:0
+[   41129ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:8811/fonts/poppins-700.woff2:0
+[   41146ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:8811/fonts/poppins-600.woff2:0
+[   42205ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:8811/tidak-ada-halaman?lang=id:0
+[   42222ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:8811/fonts/poppins-700.woff2:0
+[   42230ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:8811/fonts/poppins-600.woff2:0
+[   43271ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:8811/fonts/poppins-700.woff2:0
+[   43296ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:8811/fonts/poppins-600.woff2:0
+[   44354ms] [VERBOSE] [DOM] Password forms should have (optionally hidden) username fields for accessibility: (More info: https://goo.gl/9p2vKq) %o @ http://localhost:8811/aktivasi?lang=id:0
+[   44354ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:8811/fonts/poppins-700.woff2:0
+[   44362ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:8811/fonts/poppins-600.woff2:0
+[   45435ms] [VERBOSE] [DOM] Password forms should have (optionally hidden) username fields for accessibility: (More info: https://goo.gl/9p2vKq) %o @ http://localhost:8811/aktivasi?token=aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa&lang=id:0
+[   45435ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:8811/fonts/poppins-700.woff2:0
+[   45446ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:8811/fonts/poppins-600.woff2:0
+[   46518ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:8811/fonts/poppins-700.woff2:0
+[   46529ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:8811/fonts/poppins-600.woff2:0
+[   47609ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:8811/tidak-ada-halaman?lang=en:0
+[   47621ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:8811/fonts/poppins-700.woff2:0
+[   47646ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:8811/fonts/poppins-600.woff2:0
+[   48695ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:8811/fonts/poppins-700.woff2:0
+[   48712ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:8811/fonts/poppins-600.woff2:0
+[   49787ms] [VERBOSE] [DOM] Password forms should have (optionally hidden) username fields for accessibility: (More info: https://goo.gl/9p2vKq) %o @ http://localhost:8811/aktivasi?lang=en:0
+[   49787ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:8811/fonts/poppins-700.woff2:0
+[   49797ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:8811/fonts/poppins-600.woff2:0
+[   50871ms] [VERBOSE] [DOM] Password forms should have (optionally hidden) username fields for accessibility: (More info: https://goo.gl/9p2vKq) %o @ http://localhost:8811/aktivasi?token=aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa&lang=en:0
+[   50871ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:8811/fonts/poppins-700.woff2:0
+[   50879ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:8811/fonts/poppins-600.woff2:0
+[   75721ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:8811/fonts/poppins-700.woff2:0
+[   75866ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:8811/fonts/poppins-600.woff2:0
+[   76463ms] [ERROR] Failed to load resource: the server responded with a status of 503 (Service Unavailable) @ http://localhost:8811/api/masuk:0
+[   77721ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:8811/fonts/poppins-700.woff2:0
+[   77745ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:8811/fonts/poppins-600.woff2:0
+[  187918ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:8812/fonts/poppins-700.woff2:0
+[  187928ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:8812/fonts/poppins-600.woff2:0
+[  188528ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:8812/fonts/poppins-700.woff2:0
+[  188546ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:8812/fonts/poppins-600.woff2:0
+[  189721ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:8812/fonts/poppins-700.woff2:0
+[  189744ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:8812/fonts/poppins-600.woff2:0
+[  191996ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:8812/fonts/poppins-700.woff2:0
+[  192008ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:8812/fonts/poppins-600.woff2:0
+[  194264ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:8812/fonts/poppins-700.woff2:0
+[  194276ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:8812/fonts/poppins-600.woff2:0
+[  196545ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:8812/fonts/poppins-700.woff2:0
+[  196558ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:8812/fonts/poppins-600.woff2:0
+[  198823ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:8812/fonts/poppins-700.woff2:0
+[  198841ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:8812/fonts/poppins-600.woff2:0
+[  201363ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:8812/fonts/poppins-700.woff2:0
+[  201375ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:8812/fonts/poppins-600.woff2:0
+[  203652ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:8812/fonts/poppins-700.woff2:0
+[  203675ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:8812/fonts/poppins-600.woff2:0
+[  205954ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:8812/fonts/poppins-700.woff2:0
+[  205975ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:8812/fonts/poppins-600.woff2:0
+[  208263ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:8812/fonts/poppins-700.woff2:0
+[  208275ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:8812/fonts/poppins-600.woff2:0
+[  215359ms] [ERROR] Failed to load resource: net::ERR_FAILED @ http://localhost:8812/api/admin/akun?hal=1:0
+[  241349ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:8812/fonts/poppins-700.woff2:0
+[  241525ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:8812/fonts/poppins-600.woff2:0

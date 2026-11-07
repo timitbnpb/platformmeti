@@ -1,0 +1,30 @@
+[
+ {
+  "id": "ps1",
+  "nama": "Pusat Studi Energi Surya Contoh",
+  "singkatan": "PSESC",
+  "induk": "Universitas Contoh Barat",
+  "prov": "32",
+  "kota": "Kota Bandung",
+  "fokus": [
+   "surya"
+  ],
+  "nama_terverifikasi": true,
+  "web": "https://contoh-ps1.example.org",
+  "sumber_url": "https://contoh-ps1.example.org"
+ },
+ {
+  "id": "ps2",
+  "nama": "Pusat Kajian Penyimpanan Energi Contoh",
+  "singkatan": "PKPEC",
+  "induk": "Institut Contoh Teknologi",
+  "prov": "35",
+  "kota": "Kota Surabaya",
+  "fokus": [
+   "penyimpanan"
+  ],
+  "nama_terverifikasi": true,
+  "web": "https://contoh-ps2.example.org",
+  "sumber_url": "https://contoh-ps2.example.org"
+ }
+]

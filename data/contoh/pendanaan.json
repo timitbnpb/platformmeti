@@ -1,0 +1,164 @@
+[
+ {
+  "id": "pd1",
+  "jenis_entri": "skema",
+  "nama": "Pinjaman energi bersih (contoh)",
+  "pemberi": "Bank Pembiayaan Energi Contoh",
+  "lembaga_id": null,
+  "jenis": "pinjaman",
+  "sasaran": [
+   "pemerintah daerah",
+   "swasta"
+  ],
+  "nilai": 50000000,
+  "mata_uang": "USD",
+  "nilai_usd": 50000000,
+  "tahun": 2025,
+  "selesai": 2029,
+  "status": "aktif",
+  "penerima": "Pengembang Indonesia",
+  "pelaksana": [
+   "PT Surya Nusantara Contoh"
+  ],
+  "prov": [
+   "33",
+   "32"
+  ],
+  "sektor": [
+   "surya"
+  ],
+  "syarat": "Proposal contoh",
+  "cara": "Ajukan lewat surat resmi ke sekretariat.",
+  "tenggat": "Setiap Maret",
+  "url": "https://contoh-dana.example.org",
+  "sumber": [
+   {
+    "butir": "profil",
+    "url": "https://contoh-dana.example.org",
+    "diperiksa": "2026-11-07"
+   }
+  ],
+  "diperiksa": "2026-11-07"
+ },
+ {
+  "id": "pd2",
+  "jenis_entri": "skema",
+  "nama": "Hibah studi kelayakan (contoh)",
+  "pemberi": "Badan Pembangunan Internasional Contoh",
+  "lembaga_id": null,
+  "jenis": "hibah",
+  "sasaran": [
+   "swasta"
+  ],
+  "nilai": 50000000,
+  "mata_uang": "USD",
+  "nilai_usd": 50000000,
+  "tahun": 2025,
+  "selesai": 2029,
+  "status": "aktif",
+  "penerima": "Pengembang Indonesia",
+  "pelaksana": [
+   "PT Surya Nusantara Contoh"
+  ],
+  "prov": [
+   "33",
+   "32"
+  ],
+  "sektor": [
+   "surya"
+  ],
+  "syarat": "Proposal contoh",
+  "cara": "Ajukan lewat surat resmi ke sekretariat.",
+  "tenggat": "Setiap Maret",
+  "url": "https://contoh-dana.example.org",
+  "sumber": [
+   {
+    "butir": "profil",
+    "url": "https://contoh-dana.example.org",
+    "diperiksa": "2026-11-07"
+   }
+  ],
+  "diperiksa": "2026-11-07"
+ },
+ {
+  "id": "pd3",
+  "jenis_entri": "skema",
+  "nama": "Dana riset energi (contoh)",
+  "pemberi": "Lembaga Riset Contoh",
+  "lembaga_id": null,
+  "jenis": "dana riset",
+  "sasaran": [
+   "kampus"
+  ],
+  "nilai": 50000000,
+  "mata_uang": "USD",
+  "nilai_usd": 50000000,
+  "tahun": 2025,
+  "selesai": 2029,
+  "status": "aktif",
+  "penerima": "Pengembang Indonesia",
+  "pelaksana": [
+   "PT Surya Nusantara Contoh"
+  ],
+  "prov": [
+   "33",
+   "32"
+  ],
+  "sektor": [
+   "penyimpanan"
+  ],
+  "syarat": "Proposal contoh",
+  "cara": "Ajukan lewat surat resmi ke sekretariat.",
+  "tenggat": "Setiap Maret",
+  "url": "https://contoh-dana.example.org",
+  "sumber": [
+   {
+    "butir": "profil",
+    "url": "https://contoh-dana.example.org",
+    "diperiksa": "2026-11-07"
+   }
+  ],
+  "diperiksa": "2026-11-07"
+ },
+ {
+  "id": "pd4",
+  "jenis_entri": "proyek",
+  "nama": "Proyek PLTS terapung (contoh)",
+  "pemberi": "Bank Pembiayaan Energi Contoh",
+  "lembaga_id": null,
+  "jenis": "pinjaman",
+  "sasaran": [
+   "pemerintah daerah",
+   "swasta"
+  ],
+  "nilai": 150000000,
+  "mata_uang": "USD",
+  "nilai_usd": 150000000,
+  "tahun": 2025,
+  "selesai": 2029,
+  "status": "aktif",
+  "penerima": "Pengembang Indonesia",
+  "pelaksana": [
+   "PT Surya Nusantara Contoh"
+  ],
+  "prov": [
+   "33",
+   "32"
+  ],
+  "sektor": [
+   "surya"
+  ],
+  "syarat": "Proposal contoh",
+  "cara": "Ajukan lewat surat resmi ke sekretariat.",
+  "tenggat": "Setiap Maret",
+  "url": "https://contoh-dana.example.org",
+  "sumber": [
+   {
+    "butir": "profil",
+    "url": "https://contoh-dana.example.org",
+    "diperiksa": "2026-11-07"
+   }
+  ],
+  "diperiksa": "2026-11-07"
+ }
+]

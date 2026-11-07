@@ -1,0 +1,177 @@
+[
+ {
+  "id": "i1",
+  "nama": "Modul surya apung (contoh)",
+  "ringkasan": "Ringkasan contoh dua kalimat untuk menilai tampilan kartu.",
+  "jenis": "modul",
+  "sektor": "surya",
+  "pembuat": [
+   {
+    "nama": "Pembuat Contoh",
+    "lembaga_id": "pt-surya",
+    "jenis": "startup"
+   }
+  ],
+  "tahun": 2023,
+  "status": "terpasang",
+  "penerapan": [
+   {
+    "lokasi": "Lokasi contoh",
+    "prov": "33",
+    "lat": -6.95,
+    "lon": 107.6,
+    "tahun": 2024,
+    "sumber_url": "https://contoh-inovasi.example.org"
+   }
+  ],
+  "web": "https://contoh-inovasi.example.org",
+  "sumber": [
+   {
+    "butir": "profil",
+    "url": "https://contoh-inovasi.example.org",
+    "diperiksa": "2026-11-07"
+   }
+  ],
+  "diperiksa": "2026-11-07"
+ },
+ {
+  "id": "i2",
+  "nama": "Baterai natrium lokal (contoh)",
+  "ringkasan": "Ringkasan contoh dua kalimat untuk menilai tampilan kartu.",
+  "jenis": "baterai",
+  "sektor": "penyimpanan",
+  "pembuat": [
+   {
+    "nama": "Pembuat Contoh",
+    "lembaga_id": "startup-baterai",
+    "jenis": "startup"
+   }
+  ],
+  "tahun": 2023,
+  "status": "uji lapangan",
+  "penerapan": [
+   {
+    "lokasi": "Lokasi contoh",
+    "prov": "33",
+    "lat": -7.27,
+    "lon": 112.78,
+    "tahun": 2024,
+    "sumber_url": "https://contoh-inovasi.example.org"
+   }
+  ],
+  "web": "https://contoh-inovasi.example.org",
+  "sumber": [
+   {
+    "butir": "profil",
+    "url": "https://contoh-inovasi.example.org",
+    "diperiksa": "2026-11-07"
+   }
+  ],
+  "diperiksa": "2026-11-07"
+ },
+ {
+  "id": "i3",
+  "nama": "Turbin angin kecepatan rendah (contoh)",
+  "ringkasan": "Ringkasan contoh dua kalimat untuk menilai tampilan kartu.",
+  "jenis": "turbin",
+  "sektor": "bayu",
+  "pembuat": [
+   {
+    "nama": "Pembuat Contoh",
+    "lembaga_id": null,
+    "jenis": "kampus"
+   }
+  ],
+  "tahun": 2023,
+  "status": "purwarupa",
+  "penerapan": [
+   {
+    "lokasi": "Lokasi contoh",
+    "prov": "33",
+    "lat": -5.14,
+    "lon": 119.4,
+    "tahun": 2024,
+    "sumber_url": "https://contoh-inovasi.example.org"
+   }
+  ],
+  "web": "https://contoh-inovasi.example.org",
+  "sumber": [
+   {
+    "butir": "profil",
+    "url": "https://contoh-inovasi.example.org",
+    "diperiksa": "2026-11-07"
+   }
+  ],
+  "diperiksa": "2026-11-07"
+ },
+ {
+  "id": "i4",
+  "nama": "Pengering biomassa (contoh)",
+  "ringkasan": "Ringkasan contoh dua kalimat untuk menilai tampilan kartu.",
+  "jenis": "alat",
+  "sektor": "bioenergi",
+  "pembuat": [
+   {
+    "nama": "Pembuat Contoh",
+    "lembaga_id": null,
+    "jenis": "kampus"
+   }
+  ],
+  "tahun": 2023,
+  "status": "dikomersialkan",
+  "penerapan": [
+   {
+    "lokasi": "Lokasi contoh",
+    "prov": "33",
+    "lat": 0.5,
+    "lon": 101.4,
+    "tahun": 2024,
+    "sumber_url": "https://contoh-inovasi.example.org"
+   }
+  ],
+  "web": "https://contoh-inovasi.example.org",
+  "sumber": [
+   {
+    "butir": "profil",
+    "url": "https://contoh-inovasi.example.org",
+    "diperiksa": "2026-11-07"
+   }
+  ],
+  "diperiksa": "2026-11-07"
+ },
+ {
+  "id": "i5",
+  "nama": "Pemantau jaringan mikro (contoh)",
+  "ringkasan": "Ringkasan contoh dua kalimat untuk menilai tampilan kartu.",
+  "jenis": "sistem informasi",
+  "sektor": "jaringan",
+  "pembuat": [
+   {
+    "nama": "Pembuat Contoh",
+    "lembaga_id": null,
+    "jenis": "kampus"
+   }
+  ],
+  "tahun": 2023,
+  "status": "berhenti",
+  "penerapan": [
+   {
+    "lokasi": "Lokasi contoh",
+    "prov": "33",
+    "lat": -6.98,
+    "lon": 110.41,
+    "tahun": 2024,
+    "sumber_url": "https://contoh-inovasi.example.org"
+   }
+  ],
+  "web": "https://contoh-inovasi.example.org",
+  "sumber": [
+   {
+    "butir": "profil",
+    "url": "https://contoh-inovasi.example.org",
+    "diperiksa": "2026-11-07"
+   }
+  ],
+  "diperiksa": "2026-11-07"
+ }
+]

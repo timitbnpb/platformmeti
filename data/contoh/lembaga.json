@@ -1,0 +1,463 @@
+[
+ {
+  "id": "kemenesdm",
+  "nama": "Kementerian Energi Contoh (contoh)",
+  "singkatan": "KEC",
+  "kategori": "pemerintah",
+  "skala": "nasional",
+  "bidang": [
+   "kebijakan"
+  ],
+  "web": "https://contoh-kemenesdm.example.org",
+  "sumber": [
+   {
+    "butir": "web",
+    "url": "https://contoh-kemenesdm.example.org",
+    "diperiksa": "2026-11-07"
+   }
+  ],
+  "diperiksa": "2026-11-07",
+  "prov": "31",
+  "kab": "Jakarta Selatan",
+  "lat": -6.24,
+  "lon": 106.83,
+  "sektor": [
+   "surya",
+   "bayu",
+   "air",
+   "panas-bumi",
+   "bioenergi"
+  ]
+ },
+ {
+  "id": "dinas-esdm-jabar",
+  "nama": "Dinas Energi Provinsi Contoh Barat (contoh)",
+  "singkatan": "Dinas Energi Jabar",
+  "kategori": "pemerintah",
+  "skala": "provinsi",
+  "bidang": [
+   "kebijakan"
+  ],
+  "web": "https://contoh-dinas-esdm-jabar.example.org",
+  "sumber": [
+   {
+    "butir": "web",
+    "url": "https://contoh-dinas-esdm-jabar.example.org",
+    "diperiksa": "2026-11-07"
+   }
+  ],
+  "diperiksa": "2026-11-07",
+  "prov": "32",
+  "kab": "Kota Bandung",
+  "lat": -6.91,
+  "lon": 107.6,
+  "sektor": [
+   "surya",
+   "air"
+  ]
+ },
+ {
+  "id": "pln-contoh",
+  "nama": "Perusahaan Listrik Contoh (contoh)",
+  "singkatan": "PLC",
+  "kategori": "bumn",
+  "skala": "nasional",
+  "bidang": [
+   "kebijakan"
+  ],
+  "web": "https://contoh-pln-contoh.example.org",
+  "sumber": [
+   {
+    "butir": "web",
+    "url": "https://contoh-pln-contoh.example.org",
+    "diperiksa": "2026-11-07"
+   }
+  ],
+  "diperiksa": "2026-11-07",
+  "prov": "31",
+  "kab": "Jakarta Pusat",
+  "lat": -6.18,
+  "lon": 106.82,
+  "sektor": [
+   "jaringan",
+   "surya"
+  ]
+ },
+ {
+  "id": "pt-surya",
+  "nama": "PT Surya Nusantara Contoh (contoh)",
+  "singkatan": "Surya Nusantara",
+  "kategori": "swasta",
+  "skala": "nasional",
+  "bidang": [
+   "kebijakan"
+  ],
+  "web": "https://contoh-pt-surya.example.org",
+  "sumber": [
+   {
+    "butir": "web",
+    "url": "https://contoh-pt-surya.example.org",
+    "diperiksa": "2026-11-07"
+   }
+  ],
+  "diperiksa": "2026-11-07",
+  "prov": "32",
+  "kab": "Kota Bandung",
+  "lat": -6.89,
+  "lon": 107.62,
+  "sektor": [
+   "surya"
+  ]
+ },
+ {
+  "id": "pt-bayu",
+  "nama": "PT Bayu Timur Contoh (contoh)",
+  "singkatan": "Bayu Timur",
+  "kategori": "swasta",
+  "skala": "provinsi",
+  "bidang": [
+   "kebijakan"
+  ],
+  "web": "https://contoh-pt-bayu.example.org",
+  "sumber": [
+   {
+    "butir": "web",
+    "url": "https://contoh-pt-bayu.example.org",
+    "diperiksa": "2026-11-07"
+   }
+  ],
+  "diperiksa": "2026-11-07",
+  "prov": "73",
+  "kab": "Kabupaten Sidenreng Rappang",
+  "lat": -3.9,
+  "lon": 119.9,
+  "sektor": [
+   "bayu"
+  ]
+ },
+ {
+  "id": "pt-geo",
+  "nama": "PT Panas Bumi Contoh (contoh)",
+  "singkatan": "Geo Contoh",
+  "kategori": "swasta",
+  "skala": "provinsi",
+  "bidang": [
+   "kebijakan"
+  ],
+  "web": "https://contoh-pt-geo.example.org",
+  "sumber": [
+   {
+    "butir": "web",
+    "url": "https://contoh-pt-geo.example.org",
+    "diperiksa": "2026-11-07"
+   }
+  ],
+  "diperiksa": "2026-11-07",
+  "prov": "32",
+  "kab": "Kabupaten Garut",
+  "lat": -7.2,
+  "lon": 107.9,
+  "sektor": [
+   "panas-bumi"
+  ]
+ },
+ {
+  "id": "pt-bio",
+  "nama": "PT Bioenergi Sumatera Contoh (contoh)",
+  "singkatan": "Bio Sumatera",
+  "kategori": "swasta",
+  "skala": "provinsi",
+  "bidang": [
+   "kebijakan"
+  ],
+  "web": "https://contoh-pt-bio.example.org",
+  "sumber": [
+   {
+    "butir": "web",
+    "url": "https://contoh-pt-bio.example.org",
+    "diperiksa": "2026-11-07"
+   }
+  ],
+  "diperiksa": "2026-11-07",
+  "prov": "14",
+  "kab": "Kota Pekanbaru",
+  "lat": 0.52,
+  "lon": 101.44,
+  "sektor": [
+   "bioenergi",
+   "sampah-energi"
+  ]
+ },
+ {
+  "id": "asosiasi-ebt",
+  "nama": "Asosiasi Energi Bersih Contoh (contoh)",
+  "singkatan": "AEBC",
+  "kategori": "asosiasi",
+  "skala": "nasional",
+  "bidang": [
+   "kebijakan"
+  ],
+  "web": "https://contoh-asosiasi-ebt.example.org",
+  "sumber": [
+   {
+    "butir": "web",
+    "url": "https://contoh-asosiasi-ebt.example.org",
+    "diperiksa": "2026-11-07"
+   }
+  ],
+  "diperiksa": "2026-11-07",
+  "prov": "31",
+  "kab": "Jakarta Pusat",
+  "lat": -6.2,
+  "lon": 106.84,
+  "sektor": [
+   "surya",
+   "bayu",
+   "air"
+  ]
+ },
+ {
+  "id": "kampus-barat",
+  "nama": "Universitas Contoh Barat (contoh)",
+  "singkatan": "UCB",
+  "kategori": "riset-kampus",
+  "skala": "nasional",
+  "bidang": [
+   "kebijakan"
+  ],
+  "web": "https://contoh-kampus-barat.example.org",
+  "sumber": [
+   {
+    "butir": "web",
+    "url": "https://contoh-kampus-barat.example.org",
+    "diperiksa": "2026-11-07"
+   }
+  ],
+  "diperiksa": "2026-11-07",
+  "prov": "32",
+  "kab": "Kota Bandung",
+  "lat": -6.9,
+  "lon": 107.61,
+  "sektor": [
+   "surya",
+   "penyimpanan"
+  ]
+ },
+ {
+  "id": "think-tank",
+  "nama": "Lembaga Kajian Transisi Contoh (contoh)",
+  "singkatan": "LKTC",
+  "kategori": "lsm-think-tank",
+  "skala": "nasional",
+  "bidang": [
+   "kebijakan"
+  ],
+  "web": "https://contoh-think-tank.example.org",
+  "sumber": [
+   {
+    "butir": "web",
+    "url": "https://contoh-think-tank.example.org",
+    "diperiksa": "2026-11-07"
+   }
+  ],
+  "diperiksa": "2026-11-07",
+  "prov": "31",
+  "kab": "Jakarta Selatan",
+  "lat": -6.26,
+  "lon": 106.81,
+  "sektor": [
+   "jaringan",
+   "efisiensi"
+  ]
+ },
+ {
+  "id": "bank-energi",
+  "nama": "Bank Pembiayaan Energi Contoh (contoh)",
+  "singkatan": "BPEC",
+  "kategori": "keuangan",
+  "skala": "nasional",
+  "bidang": [
+   "kebijakan"
+  ],
+  "web": "https://contoh-bank-energi.example.org",
+  "sumber": [
+   {
+    "butir": "web",
+    "url": "https://contoh-bank-energi.example.org",
+    "diperiksa": "2026-11-07"
+   }
+  ],
+  "diperiksa": "2026-11-07",
+  "prov": "31",
+  "kab": "Jakarta Pusat",
+  "lat": -6.17,
+  "lon": 106.83,
+  "sektor": [
+   "surya",
+   "bayu"
+  ]
+ },
+ {
+  "id": "donor-int",
+  "nama": "Badan Pembangunan Internasional Contoh (contoh)",
+  "singkatan": "BPIC",
+  "kategori": "internasional",
+  "skala": "internasional",
+  "bidang": [
+   "kebijakan"
+  ],
+  "web": "https://contoh-donor-int.example.org",
+  "sumber": [
+   {
+    "butir": "web",
+    "url": "https://contoh-donor-int.example.org",
+    "diperiksa": "2026-11-07"
+   }
+  ],
+  "diperiksa": "2026-11-07",
+  "prov": "31",
+  "kab": "Jakarta Pusat",
+  "lat": -6.19,
+  "lon": 106.82,
+  "sektor": [
+   "panas-bumi",
+   "surya"
+  ]
+ },
+ {
+  "id": "startup-baterai",
+  "nama": "Startup Baterai Contoh (contoh)",
+  "singkatan": "Baterai Contoh",
+  "kategori": "pengembang-teknologi",
+  "skala": "nasional",
+  "bidang": [
+   "kebijakan"
+  ],
+  "web": "https://contoh-startup-baterai.example.org",
+  "sumber": [
+   {
+    "butir": "web",
+    "url": "https://contoh-startup-baterai.example.org",
+    "diperiksa": "2026-11-07"
+   }
+  ],
+  "diperiksa": "2026-11-07",
+  "prov": "35",
+  "kab": "Kota Surabaya",
+  "lat": -7.27,
+  "lon": 112.78,
+  "sektor": [
+   "penyimpanan",
+   "kendaraan-listrik"
+  ]
+ },
+ {
+  "id": "komunitas-surya",
+  "nama": "Komunitas Surya Atap Contoh (contoh)",
+  "singkatan": "KSAC",
+  "kategori": "komunitas",
+  "skala": "provinsi",
+  "bidang": [
+   "kebijakan"
+  ],
+  "web": "https://contoh-komunitas-surya.example.org",
+  "sumber": [
+   {
+    "butir": "web",
+    "url": "https://contoh-komunitas-surya.example.org",
+    "diperiksa": "2026-11-07"
+   }
+  ],
+  "diperiksa": "2026-11-07",
+  "prov": "33",
+  "kab": "Kota Semarang",
+  "lat": -6.98,
+  "lon": 110.41,
+  "sektor": [
+   "surya"
+  ]
+ },
+ {
+  "id": "meti",
+  "nama": "Masyarakat Energi Terbarukan Indonesia (contoh)",
+  "singkatan": "METI",
+  "kategori": "asosiasi",
+  "skala": "nasional",
+  "bidang": [
+   "kebijakan"
+  ],
+  "web": "https://contoh-meti.example.org",
+  "sumber": [
+   {
+    "butir": "web",
+    "url": "https://contoh-meti.example.org",
+    "diperiksa": "2026-11-07"
+   }
+  ],
+  "diperiksa": "2026-11-07",
+  "prov": "31",
+  "kab": "Jakarta Selatan",
+  "lat": -6.25,
+  "lon": 106.8,
+  "sektor": [
+   "surya",
+   "bayu",
+   "air",
+   "panas-bumi",
+   "bioenergi"
+  ]
+ },
+ {
+  "id": "dinas-esdm-ntt",
+  "nama": "Dinas Energi Provinsi Contoh Timur (contoh)",
+  "singkatan": "Dinas Energi Timur",
+  "kategori": "pemerintah",
+  "skala": "provinsi",
+  "bidang": [
+   "kebijakan"
+  ],
+  "web": "https://contoh-dinas-esdm-ntt.example.org",
+  "sumber": [
+   {
+    "butir": "web",
+    "url": "https://contoh-dinas-esdm-ntt.example.org",
+    "diperiksa": "2026-11-07"
+   }
+  ],
+  "diperiksa": "2026-11-07",
+  "prov": "53",
+  "kab": "Kota Kupang",
+  "lat": -10.17,
+  "lon": 123.6,
+  "sektor": [
+   "surya",
+   "bayu"
+  ]
+ },
+ {
+  "id": "pt-air",
+  "nama": "PT Mikrohidro Contoh (contoh)",
+  "singkatan": "Mikrohidro Contoh",
+  "kategori": "swasta",
+  "skala": "provinsi",
+  "bidang": [
+   "kebijakan"
+  ],
+  "web": "https://contoh-pt-air.example.org",
+  "sumber": [
+   {
+    "butir": "web",
+    "url": "https://contoh-pt-air.example.org",
+    "diperiksa": "2026-11-07"
+   }
+  ],
+  "diperiksa": "2026-11-07",
+  "prov": "91",
+  "kab": "Kota Jayapura",
+  "lat": -2.53,
+  "lon": 140.7,
+  "sektor": [
+   "air"
+  ]
+ }
+]
