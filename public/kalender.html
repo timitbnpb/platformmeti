@@ -13,6 +13,7 @@
 <link rel="stylesheet" href="/inti/gaya.css">
 <link rel="stylesheet" href="/inti/jm.css">
 <link rel="stylesheet" href="/publik.css">
+<link rel="stylesheet" href="/kalender.css">
 <script src="/tema.js"></script>
 </head>
 <body data-halaman="kalender">
@@ -23,18 +24,11 @@
     <h1 data-i18n="kal.judul">Kalender</h1>
     <p data-i18n="kal.pengantar">Agenda METI dan acara ekosistem energi terbarukan. Yang tampil hanya judul, tanggal, dan mitra penyelenggara.</p>
   </div>
-  <section class="jm-kartu" aria-labelledby="kal-h">
-    <h2 id="kal-h" class="sr" data-i18n="kal.agenda">Agenda</h2>
-    <div class="jm-alat">
-      <div class="jm-tab" role="tablist" id="tampil"></div>
-      <div id="jenisWadah"><select id="jenis"></select></div>
-      <p class="jm-hitung" id="hitung" role="status"></p>
-    </div>
-    <div class="jm-alat" id="navbulan"></div>
-    <div id="grid"></div>
+  <div class="kal" id="kal">
+    <section class="jm-kartu kal-kepala" id="kepalaKal" aria-label="Kalender"></section>
     <div id="isi"></div>
-    <p class="jm-sumber" id="sumber"></p>
-  </section>
+  </div>
+  <p class="jm-sumber" id="sumber"></p>
 </main>
 <footer class="jm-kaki" id="kaki"></footer>
 <script type="module" src="/kalender.js"></script>

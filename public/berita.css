@@ -7,10 +7,10 @@
 .brt-angka div{display:flex;align-items:baseline;gap:8px}
 .brt-angka dt{order:2;color:var(--ink2);font-size:14px}
 .brt-angka dd{margin:0;font:700 24px/1 var(--display);color:var(--head)}
-.brt-bagian{padding:0}
+.brt-bagian{padding:48px 0}
 .brt-bagian .jm-wadah{display:grid;gap:14px}
 .brt-bagian .jm-sh{display:grid;gap:6px}
-.brt-bagian h2{font-size:clamp(22px,2.6vw,30px);color:var(--head)}
+.brt-bagian h2{font-size:clamp(20px,2.2vw,26px);color:var(--head)}
 
 .brt-topik{display:flex;flex-wrap:wrap;gap:8px}
 .brt-chip{display:inline-flex;align-items:center;gap:8px;min-height:36px;padding:0 14px;border:1px solid var(--line);border-radius:var(--r-pil);background:var(--card);color:var(--ink);font:500 14px/1 var(--font);cursor:pointer}
@@ -76,7 +76,7 @@ button.brt-bb-r:hover .brt-bb-n{color:var(--accent);text-decoration:underline}
 .brt-sampul{position:relative;display:grid;place-items:center;overflow:hidden;border-radius:var(--r-sm);background:color-mix(in srgb,var(--brand) 12%,var(--surface));color:var(--accent)}
 .brt-sampul .jm-ik{width:28px;height:28px;opacity:.7}
 .brt-sampul img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;background:var(--surface)}
-.brt-s169{aspect-ratio:16/10}
+.brt-s169{aspect-ratio:16/9}
 .brt-s32{width:96px;height:64px}
 .brt-isi{display:grid;gap:6px;align-content:start;min-width:0}
 .brt-judul-b{font-size:clamp(20px,2.4vw,28px);line-height:1.25;-webkit-line-clamp:3;line-clamp:3}

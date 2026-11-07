@@ -4,6 +4,7 @@ import { t, ada, angka, tanggal, bahasa } from "/i18n.js";
 import { esc, nanti, debounce, hantuHtml, galatHtml, ikon } from "/inti/umum.js";
 import { mulaiHalaman } from "/inti/kepala.js";
 import { muatMapLibre } from "/inti/maplibre.js";
+import { lapisAnggota, anggotaDl } from "/publik.js";
 
 const $ = (id) => document.getElementById(id);
 const TAHUN = new Date().getFullYear();
@@ -491,6 +492,15 @@ function bukaProgram(id) {
   dlg.scrollTop = 0;
   nanti(() => isiTerkaitProgram(g));
 }
+/* lapis anggota/pengurus (hanya bila masuk; tamu: diam). Disisipkan sesudah profil tercat. */
+const LAPIS_PJ = lapisAnggota("proyek");
+async function isiAnggota(id) {
+  const x = (await LAPIS_PJ)?.get(id);
+  if (!x || dlg.dataset.id !== id || dlg.querySelector("#pjAnggota")) return;
+  const materi = Object.entries(x.dari_materi || {}).map(([k, v]) => `${k}: ${[].concat(v).join(", ")}`);
+  const isi = anggotaDl([["pj.ang.skema", x.skema_kerjasama], ["pj.ang.dana", x.pemberi_dana], ["pj.ang.pihak", x.pihak_terlibat], ["pj.ang.fc", x.financial_close], ["pj.ang.ppa", x.tanggal_ppa], ["pj.ang.tk", x.tenaga_kerja], ["pj.ang.materi", materi], ["pj.ang.catatan", x.catatan], ["pj.ang.konflik", x.konflik]], esc);
+  if (isi) dlg.querySelector(".jm-pj-sh-badan")?.insertAdjacentHTML("afterbegin", `<section class="jm-pj-bag" id="pjAnggota"><h3>${esc(t("pj.l.anggota"))}</h3><div class="jm-pj-kartubag">${isi}</div></section>`);
+}
 function bukaProfil(id) {
   const r = PER_ID.get(id);
   if (!r) { if (dlg.open) dlg.close(); return; }
@@ -500,7 +510,7 @@ function bukaProfil(id) {
   dlg.innerHTML = profilHtml(r);
   if (!dlg.open) dlg.showModal();
   dlg.scrollTop = 0;
-  nanti(() => { miniPeta(r); isiTerkait(r); });
+  nanti(() => { miniPeta(r); isiTerkait(r); isiAnggota(id); });
 }
 dlg.addEventListener("click", (e) => {
   const tp = e.target.closest("[data-tampil]");

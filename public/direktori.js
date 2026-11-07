@@ -4,6 +4,12 @@
 (() => {
   "use strict";
   const $ = id => document.getElementById(id);
+  /* proyek, regulasi, wilayah punya satu rumah sendiri: tautan ?tampil= lama dialihkan, id ikut terbawa */
+  const RUMAH = {proyek: "/proyek", regulasi: "/regulasi", wilayah: "/wilayah"};
+  function aliheLama() { const qs = new URLSearchParams(location.search), k = qs.get("tampil") || (location.hash.match(/^#(?:tampil=)?(proyek|regulasi|wilayah)\b/) || [])[1]; if (!RUMAH[k]) return false;
+    const id = qs.get("id") || qs.get(k) || (k === "wilayah" ? qs.get("prov") || qs.get("wilayah") : "") || (location.hash.match(/[#&]id=([^&]+)/) || [])[1] || (/^#(?!tampil=)(?!(?:proyek|regulasi|wilayah)\b)./.test(location.hash) ? decodeURIComponent(location.hash.slice(1)) : "");
+    location.replace(RUMAH[k] + (!id ? "" : k === "proyek" ? "#" + encodeURIComponent(id) : k === "regulasi" ? "?id=" + encodeURIComponent(id) : "?prov=" + encodeURIComponent(id.split("|")[0]))); return true; }
+  if (aliheLama()) return;
   /* kamus i18n (public/i18n.js, kunci dir.*) */
   const t = (k, v) => (globalThis.JM && JM.ada && JM.ada(k) ? JM.t(k, v) : k);
   /* CSP tanpa style= inline: template memakai data-st, diterapkan lewat CSSOM (cssText) begitu node masuk DOM; nilai warna = var(--token) */
@@ -730,15 +736,15 @@ h4{margin:0 0 2px;font-size:8px;letter-spacing:.08em;text-transform:uppercase;co
     const kampus = Object.keys(perK).filter(k => jenisK(k) === "k").length;
     const IK = ['<circle cx="9" cy="8" r="3.5"/><path d="M2.5 20c0-3.6 2.9-6 6.5-6s6.5 2.4 6.5 6"/><circle cx="17" cy="9" r="2.5"/><path d="M16 14c3 0 5.5 2 5.5 5"/>', IK_GEDUNG, KAT.inovasi[1], IKP.data];
     /* statistik hero: angka nyata dari ringkas.json (potret); tanpa potret: dihitung dari data yang termuat */
-    const TIL = [["proyek", "akProyekN", "proyek", '<path d="M3 21V9l6 4V9l6 4V5h6v16z"/>'], ["MW tercatat", "akMwN", "proyek", '<path d="M13 3 6 13h5l-1 8 7-10h-5z"/>'], ["organisasi", "akLembagaN", "lembaga", IK_GEDUNG], ["orang", "akTokohN", "tokoh", '<circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.4 3.6-7 8-7s8 2.6 8 7"/>'],
-      ...(semua.length ? [["pakar", "akPakarN", "pakar", IK[0]]] : []), ["regulasi", "akRegN", "regulasi", IKJ], ["program", "akProgN", "proyek", IKP.data], ["berita", "akBeritaN", "pustaka", '<path d="M4 5h13v14H6a2 2 0 0 1-2-2zM17 9h3v8a2 2 0 0 1-2 2M7 9h7M7 13h7M7 16h4"/>']];
-    $("akAngka").innerHTML = TIL.map(([l, id, go, ic]) => `<div role="button" tabindex="0" data-go="${go}"><svg viewBox="0 0 24 24" aria-hidden="true">${ic}</svg><b id="${id}">${id === "akPakarN" ? angka(semua.length) : "..."}</b><span>${l}</span></div>`).join("");
+    const TIL = [["proyek", "akProyekN", "/proyek", '<path d="M3 21V9l6 4V9l6 4V5h6v16z"/>'], ["MW tercatat", "akMwN", "/proyek", '<path d="M13 3 6 13h5l-1 8 7-10h-5z"/>'], ["organisasi", "akLembagaN", "lembaga", IK_GEDUNG], ["orang", "akTokohN", "tokoh", '<circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.4 3.6-7 8-7s8 2.6 8 7"/>'],
+      ...(semua.length ? [["pakar", "akPakarN", "pakar", IK[0]]] : []), ["regulasi", "akRegN", "/regulasi", IKJ], ["program", "akProgN", "/proyek", IKP.data], ["berita", "akBeritaN", "/berita", '<path d="M4 5h13v14H6a2 2 0 0 1-2-2zM17 9h3v8a2 2 0 0 1-2 2M7 9h7M7 13h7M7 16h4"/>']];
+    $("akAngka").innerHTML = TIL.map(([l, id, go, ic]) => `<div role="${go[0] === "/" ? "link" : "button"}" tabindex="0" data-go="${go}"><svg viewBox="0 0 24 24" aria-hidden="true">${ic}</svg><b id="${id}">${id === "akPakarN" ? angka(semua.length) : "..."}</b><span>${l}</span></div>`).join("");
     $("akAngka").style.setProperty("--n", TIL.length);
     const isi = (id, n) => { const e = $(id); if (e) e.textContent = n == null ? "-" : angka(n); };
     nanti(() => ambilData("ringkas").then(r => { const h = r?.hitung || {}, mw = dlist(r?.kartu).find(k => k.kode === "kapasitas");
       isi("akProyekN", h.proyek); isi("akMwN", mw?.nilai); isi("akLembagaN", h.organisasi); isi("akTokohN", h.orang); isi("akRegN", h.regulasi); isi("akProgN", h.program); isi("akBeritaN", h.berita);
       if (!r) [["lembaga", "akLembagaN"], ["tokoh", "akTokohN"]].forEach(([nm, id]) => ambilData(nm).then(d => isi(id, dlist(d).length))); }));
-    const goTil = e => { const t = e.target.closest("[data-go]"); if (!t || (e.type === "keydown" && e.key !== "Enter")) return; if (t.dataset.go === "tokoh") { pilihKelompok("profesional"); tampil("pakar"); } else if (t.dataset.go === "pakar") { pilihKelompok("akademisi"); tampil("pakar"); } else tampil(t.dataset.go); };
+    const goTil = e => { const t = e.target.closest("[data-go]"); if (!t || (e.type === "keydown" && e.key !== "Enter")) return; if (t.dataset.go[0] === "/") location.assign(t.dataset.go); else if (t.dataset.go === "tokoh") { pilihKelompok("profesional"); tampil("pakar"); } else if (t.dataset.go === "pakar") { pilihKelompok("akademisi"); tampil("pakar"); } else tampil(t.dataset.go); };
     $("akAngka").addEventListener("click", goTil); $("akAngka").addEventListener("keydown", goTil);
     const bdIk = r => { const x = SEKTOR[r]; return x ? [x[1], x[2]] : null };
     $("akBdSlot")?.remove();   // dropdown bidang keahlian dibuang: bidang lintas sektor belum didefinisikan di ALG
@@ -2842,7 +2848,7 @@ h4{margin:0 0 2px;font-size:8px;letter-spacing:.08em;text-transform:uppercase;co
     pusat: ["pusat_studi", bangunPs, d => Array.isArray(d) && d.length]};
   const sudah = {};
   let tampilSkrg = "pakar";
-  const bacaTampil = () => { try { return localStorage.getItem(TAMPIL_KEY); } catch (e) { return null; } };
+  const bacaTampil = () => { try { const v = localStorage.getItem(TAMPIL_KEY); return RUMAH[v] ? null : v; } catch (e) { return null; } };
   function bukaView(v) {
     const [nama, bangun, sah] = MUAT[v], p = $("akv-" + v);
     if (sudah[v]) return;
@@ -2867,7 +2873,7 @@ h4{margin:0 0 2px;font-size:8px;letter-spacing:.08em;text-transform:uppercase;co
   function setBuka(v) { const el = $("akBuka"); if (el) el.hidden = true; return; /* kalimat pembuka dihilangkan atas permintaan pemilik 30 Okt 2026; pulihkan: hapus baris ini */ const t = INTRO[v]; if (!t) { el.hidden = true; return; } if (typeof t === "string") { el.textContent = t + "."; el.hidden = false; return; }
     el.textContent = t[0] + "."; el.hidden = false; ambilData(t[1]).then(d => { const a = dlist(Array.isArray(d) ? d : d && Object.values(d).find(Array.isArray)), tg = a.map(x => String(x?.diperiksa || "")).filter(Boolean).sort().pop(); if (tampilSkrg === v) el.textContent = t[0] + (tg ? `; diperiksa ${tglID(tg)}` : "") + "."; }); }
   /* 8 tab utama; Pustaka dan Riset punya sub-tab. ?tampil= lama (berita, riset, kejadian, pusat, aset) diarahkan ke tab+sub baru */
-  const TABS = ["pakar", "lembaga", "proyek", "regulasi", "wilayah", "inovasi", "riset", "sistem_data", "pendanaan", "pustaka"], TAB_LABEL = {riset: "Riset", pakar: "Orang", lembaga: "Organisasi"};
+  const TABS = ["pakar", "lembaga", "inovasi", "riset", "sistem_data", "pendanaan", "pustaka"], TAB_LABEL = {riset: "Riset", pakar: "Orang", lembaga: "Organisasi"};
   const SUBTAB = {pustaka: [["buku", "Buku", "pustaka"], ["dok", "Dokumen", "pustaka"], ["berita", "Berita", "berita"]], riset: [["riset", "Riset", "riset"], ["jejak-isu", "Jejak isu", "kejadian"], ["pusat", "Pusat studi", "pusat"], ["aset", "Aset riset", "pusat"]]};
   const LAMA = {berita: ["pustaka", "berita"], riset: ["riset", "riset"], kejadian: ["riset", "jejak-isu"], "jejak-isu": ["riset", "jejak-isu"], pusat: ["riset", "pusat"], aset: ["riset", "aset"], pustaka: ["pustaka", "dok"], buku: ["pustaka", "buku"], dokumen: ["pustaka", "dok"], tokoh: ["pakar", ""]};
   let tabSkrg = "pakar";
@@ -2974,7 +2980,7 @@ h4{margin:0 0 2px;font-size:8px;letter-spacing:.08em;text-transform:uppercase;co
   document.addEventListener("click", e => {
     const pk = e.target.closest("[data-pk]"); if (pk) { const o = peta.get(pk.dataset.pk); if (o) buka(o); return; }
     const tks = e.target.closest("[data-tks]"); if (tks) { const x = tkArr.find(y => y.id === tks.dataset.tks); if (x) sheetTk(x); return; }
-    const wl = e.target.closest("[data-wl],[data-wlbuka]"); if (wl) { WL.kode = wl.dataset.wlbuka || wl.dataset.wl; delete sudah.wilayah; tutup(); tutupSheet(); tampil("wilayah"); return; }
+    const wl = e.target.closest("[data-wl],[data-wlbuka]"); if (wl) { location.assign("/wilayah?prov=" + encodeURIComponent(String(wl.dataset.wlbuka || wl.dataset.wl).split("|")[0])); return; }
     const bt = e.target.closest("[data-brt]"); if (bt) { lihatBerita(bt.dataset.brt); return; }
     const rw = e.target.closest("[data-rw]"); if (rw) { const [p, k] = rw.dataset.rw.split("|"); tutup(); setWilRiset(p, k || ""); tampil("riset"); }
   });
@@ -3237,7 +3243,7 @@ h4{margin:0 0 2px;font-size:8px;letter-spacing:.08em;text-transform:uppercase;co
     if (id != null) {
       if (t === "pakar") { const o = peta.get(id); if (o) buka(o); return; }
       if (t === "kampus") { profilKampus(id); return; }
-      if (t === "wilayah") { WL.kode = id; delete sudah.wilayah; tampil("wilayah"); return; }
+      if (t === "wilayah") { location.assign("/wilayah?prov=" + encodeURIComponent(String(id).split("|")[0])); return; }
       if (t === "lembaga") { (async () => { if (!lbArr.length) { const l = await ambilData("lembaga"); if (l) indeksLb(l); } const x = lbMap.get(id); if (x) bukaLb(x); })(); return; }
       /* inovasi, sistem data, pendanaan, tokoh: buka lembarnya langsung lewat penangan klik global yang sama dengan kartu */
       const at = {inovasi: "inid", sistem_data: "sd", pendanaan: "sk", tokoh: "tkid"}[t];

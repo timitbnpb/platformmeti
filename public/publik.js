@@ -27,3 +27,16 @@ export function sembunyi(el, e) {
   console.warn("bagian disembunyikan:", el?.id || "", e?.message || e);
   const s = el?.closest("section"); if (s) s.hidden = true;
 }
+
+/** Lapis anggota/pengurus dari GET /api/direktori/potret/<benda> (digabung per peran di server): Map id -> baris. 401/403/galat = null, diam (tamu tidak melihat apa pun). */
+const lapisSimpan = {};
+export const lapisAnggota = (benda) => lapisSimpan[benda] ||= fetch(`/api/direktori/potret/${benda}`, { credentials: "same-origin", headers: { accept: "application/json" } })
+  .then((r) => (r.ok && /json/.test(r.headers.get("content-type") || "") ? r.json() : null))
+  .then((d) => (d && Array.isArray(d.baris) ? new Map(d.baris.map((x) => [x.id, x])) : null)).catch(() => null);
+
+const teksNilai = (v) => (v == null ? "" : Array.isArray(v) ? v.map(teksNilai).filter(Boolean).join(", ") : typeof v === "object" ? [teksNilai(v.nilai ?? v.nama), v.catatan].filter(Boolean).join(" ") : String(v));
+/** Daftar [kunciKamus, nilai] -> <dl>; baris kosong dibuang; semua kosong = "". Isi di-escape oleh pemanggil lewat esc. */
+export function anggotaDl(pasangan, esc) {
+  const p = pasangan.map(([k, v]) => [k, teksNilai(v)]).filter(([, v]) => v);
+  return p.length ? `<dl class="jm-dl">${p.map(([k, v]) => `<dt>${esc(t(k))}</dt><dd>${esc(v)}</dd>`).join("")}</dl>` : "";
+}

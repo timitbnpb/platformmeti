@@ -2,7 +2,7 @@ import { mulaiHalaman } from "/inti/kepala.js";
 import { t, angka, tanggal } from "/i18n.js";
 import { esc, nanti, debounce, hantuHtml, kosongHtml, galatHtml, ikon } from "/inti/umum.js";
 import { cariHtml, pilihHtml, hapusHtml } from "/inti/komponen.js";
-import { muat, label, urlAman, norm, namaRegulasi, kelasStatus, SINGKAT } from "/publik.js";
+import { lapisAnggota, anggotaDl, muat, label, urlAman, norm, namaRegulasi, kelasStatus, SINGKAT } from "/publik.js";
 
 const HAL = 25;
 const S = { q: "", jenis: "", tahun: "", status: "", topik: "", tingkat: "", tampil: "daftar", hal: 1 };
@@ -147,6 +147,15 @@ function bukaProfil(id) {
   if (!dlg.open) dlg.showModal();
   dlg.scrollTop = 0;
   tulisUrl(id);
+  isiAnggota(id);
+}
+/* lapis anggota/pengurus: posisi_meti (sudah ditangani bila ada di data) dan sumber_posisi; tamu: diam */
+const LAPIS_RG = lapisAnggota("regulasi");
+async function isiAnggota(id) {
+  const x = (await LAPIS_RG)?.get(id), dlg = document.getElementById("lembar");
+  if (!x || !dlg.open || dlg.querySelector("#rgAnggota")) return;
+  const isi = anggotaDl([["reg.f.posisi", typeof x.posisi_meti === "string" ? x.posisi_meti : ""], ["reg.ang.sumber", x.sumber_posisi]], esc);
+  if (isi) dlg.querySelector(".jm-lembar-isi")?.insertAdjacentHTML("beforeend", `<section id="rgAnggota"><h3>${esc(t("reg.ang.judul"))}</h3>${isi}</section>`);
 }
 
 /* ---------- mulai ---------- */

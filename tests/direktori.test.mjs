@@ -15,9 +15,11 @@ test("konstanta tak lagi memuat istilah kebencanaan atau merek asal", () => {
   }
 });
 
-test("sepuluh tab (Proyek dan Regulasi baru), tanpa Donasi; Jejak isu jadi sub-tab Riset", () => {
+test("tujuh tab (Proyek, Regulasi, Wilayah pindah ke rumahnya), tanpa Donasi; Jejak isu jadi sub-tab Riset", () => {
   const tabs = JS.match(/const TABS = \[([^\]]*)\]/)[1].split(",").map((s) => s.trim().replace(/"/g, ""));
-  assert.deepEqual(tabs, ["pakar", "lembaga", "proyek", "regulasi", "wilayah", "inovasi", "riset", "sistem_data", "pendanaan", "pustaka"]);
+  assert.deepEqual(tabs, ["pakar", "lembaga", "inovasi", "riset", "sistem_data", "pendanaan", "pustaka"]);
+  assert.match(JS, /RUMAH = \{proyek: "\/proyek", regulasi: "\/regulasi", wilayah: "\/wilayah"\}/);
+  assert.match(JS, /location\.replace\(RUMAH\[k\]/);
   assert.match(JS, /\["jejak-isu", "Jejak isu", "kejadian"\]/);
 });
 
