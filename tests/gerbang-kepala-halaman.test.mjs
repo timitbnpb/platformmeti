@@ -61,7 +61,7 @@ for (const f of readdirSync(AKAR).filter((n) => n.endsWith(".html") && !n.starts
   });
 }
 test("kepala profil /o dan /p memasang sisi kanan", () => {
-  for (const f of ["o.js", "p.js"]) assert.ok(/kepalaHtml\(\{[^}]*sisi/.test(readFileSync(AKAR + f, "utf8")), `${f}: kepalaHtml tanpa sisi`);
+  for (const f of ["o.js", "p.js"]) assert.ok(/kepalaHtml\(.*\bsisi\b/.test(readFileSync(AKAR + f, "utf8")), `${f}: kepalaHtml tanpa sisi`);
 });
 // JS yang membangun .jm-kh sendiri wajib menyertakan salah satu penanda sisi di berkas yang sama.
 for (const f of readdirSync(AKAR).filter((n) => n.endsWith(".js"))) {
