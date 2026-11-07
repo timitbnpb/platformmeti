@@ -106,16 +106,17 @@ dialog.ix-dlg h3{margin:14px 0 6px;font:700 var(--t-body)/1.3 var(--font)}
 .ix-sk{white-space:nowrap}.ix-sk .ix-sel{margin-left:6px}
 .ix-mini{display:inline-flex;align-items:center;gap:4px;margin:2px 4px 2px 0;padding:2px 8px;border-radius:var(--r-pil);font:600 var(--t-label)/1.3 var(--font);white-space:nowrap}
 .ix-mini-warn{background:var(--warn-bg);color:var(--warn)}.ix-mini-ok{background:var(--ok-bg);color:var(--ok)}
-#ixTab .jm-tab{display:grid;grid-auto-flow:column;grid-auto-columns:1fr;width:100%}
+#ixTab .jm-tab{overflow:visible;display:grid;grid-auto-flow:column;grid-auto-columns:1fr;width:100%}
 #ixTab .jm-tab button{justify-content:center;gap:8px}
 /* kajian */
-.ix-kj{display:grid;gap:14px;text-align:justify;hyphens:auto}
+.ix-kj{display:grid;gap:14px}
+.ix-kj :is(.ix-kj-sub,.ix-kj-rs span,.ix-kj-tk span,.ix-kj-bt li,.jm-bantu){text-align:justify;hyphens:auto}
 .ix-kj h3{margin:10px 0 0;font:700 var(--t-h3)/1.3 var(--font);color:var(--head);text-align:left}
 .ix-kj-sub{margin:0}
 .ix-kj-kartu{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,330px),1fr));gap:12px}
 .ix-kj-k{display:grid;gap:10px;align-content:start;padding:16px;border:1px solid var(--line);border-radius:var(--r);background:var(--card);box-shadow:var(--shadow)}
 .ix-kj-k header{display:flex;align-items:center;gap:12px}
-.ix-kj-k header>div{flex:1;min-width:0;display:grid;gap:4px}
+.ix-kj-k header>div{flex:1;min-width:0;display:grid;gap:4px;justify-items:start}
 .ix-kj-k h4{margin:0;font:700 var(--t-h3)/1.2 var(--font);color:var(--head);text-align:left}
 .ix-skor-b{font-size:var(--t-h2);padding:6px 14px}
 .ix-kj-al{margin:0;padding:0;list-style:none;display:grid;gap:6px}
@@ -131,15 +132,26 @@ dialog.ix-dlg h3{margin:14px 0 6px;font:700 var(--t-body)/1.3 var(--font)}
 .ix-kj-b li,.ix-kj-tg li{display:flex;gap:10px;align-items:flex-start;font-size:var(--t-body);line-height:var(--lh-rapat)}
 .ix-kj-bt{padding-left:18px;list-style:disc}
 /* 390: popup dan tabel menjadi kartu */
+.ix-tb-proy{table-layout:fixed}
+.ix-tb-proy td{white-space:normal;overflow-wrap:break-word}
+.ix-tb-proy th{white-space:normal;padding-inline:6px}
+.ix-tb-proy td{padding-inline:8px}
+.ix-tb-proy .p-pr{width:19%}.ix-tb-proy .p-pe{width:10%}.ix-tb-proy .p-te{width:11%}.ix-tb-proy .p-pv{width:10%}.ix-tb-proy .p-st{width:12%}.ix-tb-proy .p-ka{width:11%}.ix-tb-proy .p-sk{width:9%}.ix-tb-proy .p-lk{width:9%}.ix-tb-proy .p-kb{width:9%}
+.ix-tb-proy .jm-pil,.ix-tb-proy :is(.jm-pil-tek,.jm-pil-st){white-space:normal;line-height:1.25;padding-block:3px}
 @media (max-width:640px){
+  .ix-tb-proy colgroup{display:none}
+  .ix-tb td{justify-items:start}
+  .ix-kep-prov{display:grid;grid-template-columns:48px minmax(0,1fr);gap:10px 12px;padding-right:44px;position:relative}
+  .ix-kep-prov .ix-dlg-x{position:absolute;top:0;right:0}
+  .ix-bulat{grid-column:1/-1;justify-self:start;display:flex;align-items:center;gap:10px;width:auto;height:auto;padding:6px 16px;border-radius:var(--r-pil);border-width:2px}
+  .ix-bulat small{display:inline;max-width:none}
   dialog.ix-dlg{padding:16px}
-  .ix-kep-prov{flex-wrap:wrap}.ix-kep-prov .ix-lamb{width:48px;height:48px}
-  .ix-bulat{width:88px;height:88px}.ix-bulat small{display:none}
+  .ix-kep-prov .ix-lamb{width:48px;height:48px}
   .ix-pt,.ix-pt tbody,.ix-pt tr{display:block}
   .ix-pt colgroup{display:none}
   .ix-pt td:first-child{white-space:normal}
   .ix-tb,.ix-tb td{white-space:normal}
   .ix-tb-prov colgroup{display:none}
   .ix-btn{flex:1;justify-content:center}
-  .ix-kj{text-align:left;hyphens:none}
+  .ix-kj :is(.ix-kj-sub,.ix-kj-rs span,.ix-kj-tk span,.ix-kj-bt li,.jm-bantu){text-align:left;hyphens:none}
 }

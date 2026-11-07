@@ -23,7 +23,16 @@
 "Susun konsep lalu proposal pendanaan bersama entitas itu.",
 "Proposal dinilai sekretariat dan diputus Dewan GCF."
 ],
-"url": "https://www.greenclimate.fund/"
+"url": "https://www.greenclimate.fund/",
+"alur": [
+"Pilih jalur pendanaan: proses persetujuan standar (proyek besar atau kompleks) atau Simplified Approval Process (proyek kecil berisiko rendah).",
+"Bila proposal belum siap, ajukan dukungan Project Preparation Facility untuk menyiapkan proposal yang layak.",
+"Bermitra dengan entitas terakreditasi GCF, atau lewat Project-specific Assessment Approach untuk akreditasi khusus proyek.",
+"Pantau Readiness and Preparatory Support untuk membangun kapasitas sebelum mengajukan."
+],
+"detail_sumber": [
+"https://www.greenclimate.fund/"
+]
 },
 {
 "id": "sk_gef",
@@ -142,7 +151,11 @@
 "Ikuti uji tuntas kelayakan dan penilaian dampak.",
 "Tanda tangani perjanjian pembiayaan."
 ],
-"url": "https://www.ptsmi.co.id/"
+"url": "https://www.ptsmi.co.id/",
+"instrumen_detail": "SDG Indonesia One, Indonesia Energy Transition Mechanism Country Platform, dan Geothermal Resource Risk Mitigation (GREM)",
+"detail_sumber": [
+"https://www.ptsmi.co.id/"
+]
 },
 {
 "id": "sk_cif_act",
@@ -355,7 +368,11 @@
 "Daftar sebagai pengguna jasa bursa karbon.",
 "Perdagangkan unit karbon yang sudah tercatat."
 ],
-"url": "https://idxcarbon.co.id/"
+"url": "https://idxcarbon.co.id/",
+"instrumen_detail": "Produk Kuota Emisi GRK dan SPE GRK (sertifikat pengurangan emisi); data harian dan bulanan dipublikasikan",
+"detail_sumber": [
+"https://idxcarbon.co.id/"
+]
 },
 {
 "id": "sk_karbon_sukarela",

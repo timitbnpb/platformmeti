@@ -1,0 +1,1281 @@
+{
+ "in_biogas_its": {
+  "ringkasan": "Sistem Pemurnian Biogas Otomatis dengan Teori Kelarutan Gas oleh Air, karya tim Departemen Teknik Instrumentasi ITS yang dipimpin Arief Abdurrakhman bersama lima mahasiswa. Alat ini pertama hadir pada 2017 dan memperoleh paten dari Direktorat Jenderal Kekayaan Intelektual. Dirancang berskala rumah tangga agar peternak sapi dapat mengubah biogas kotoran sapi menjadi listrik.",
+  "masalah": "Biogas dari reaktor tanpa pemurnian mengandung pengotor 40 sampai 50 persen, antara lain hidrogen sulfida dan karbon dioksida, sehingga tidak bisa langsung dialirkan ke genset tanpa merusak mesin.",
+  "cara_kerja": "Memurnikan biogas secara otomatis memakai prinsip kelarutan gas dalam air, dengan bahan yang relatif mudah didapat.",
+  "spesifikasi": [
+   {
+    "nama": "Kandungan metana setelah pemurnian",
+    "nilai": "80 sampai 90 persen",
+    "sumber_url": "https://www.its.ac.id/kembangkan-alat-pemurnian-biogas-dosen-its-berhasil-raih-paten/"
+   },
+   {
+    "nama": "Kandungan pengotor tanpa pemurnian",
+    "nilai": "40 sampai 50 persen",
+    "sumber_url": "https://www.its.ac.id/kembangkan-alat-pemurnian-biogas-dosen-its-berhasil-raih-paten/"
+   }
+  ],
+  "tonggak": [
+   {
+    "tanggal": "2017",
+    "teks": "Alat pertama hadir",
+    "sumber_url": "https://www.its.ac.id/kembangkan-alat-pemurnian-biogas-dosen-its-berhasil-raih-paten/"
+   },
+   {
+    "tanggal": "2021-11-27",
+    "teks": "Paten dari DJKI diberitakan ITS",
+    "sumber_url": "https://www.its.ac.id/kembangkan-alat-pemurnian-biogas-dosen-its-berhasil-raih-paten/"
+   }
+  ],
+  "tim": [
+   {
+    "nama": "Arief Abdurrakhman",
+    "afiliasi": "Departemen Teknik Instrumentasi, ITS",
+    "peran": "Ketua tim"
+   }
+  ],
+  "paten": [
+   {
+    "nomor": "Sistem Pemurnian Biogas Otomatis dengan Teori Kelarutan Gas oleh Air",
+    "status": "diberikan DJKI",
+    "sumber_url": "https://www.its.ac.id/kembangkan-alat-pemurnian-biogas-dosen-its-berhasil-raih-paten/"
+   }
+  ],
+  "foto_sumber": {
+   "url": "https://www.its.ac.id/wp-content/uploads/2021/11/WhatsApp-Image-2020-06-25-at-14.56.43.jpeg",
+   "halaman": "https://www.its.ac.id/kembangkan-alat-pemurnian-biogas-dosen-its-berhasil-raih-paten/",
+   "kredit": "Dokumentasi ITS (tidak disalin, hanya tautan)"
+  },
+  "publikasi": [
+   {
+    "judul": "The Effect of Temperature Variation on Water Scrubber System to Optimize Biogas Purification (Abdurrakhman dkk., 2018, E3S Web of Conferences)",
+    "doi": "10.1051/e3sconf/20184201006"
+   }
+  ],
+  "sumber_tambah": [
+   {
+    "url": "https://doi.org/10.1051/e3sconf/20184201006",
+    "tanggal": "2026-11-08"
+   }
+  ]
+ },
+ "in_pengairan_surya_pacitan": {
+  "status": "terpasang",
+  "ringkasan": "Program EPICS in IEEE 2025 sampai 2026 oleh tim ITS bersama Telkom University Surabaya memasang PLTS empat panel surya terintegrasi IoT di Desa Cokrokembang, Pacitan. Sistem memompa air sumur bor ke sekitar 20 petak sawah dan memantau kualitas air secara berkala.",
+  "masalah": "Petani harus iuran listrik setiap bulan untuk mengoperasikan pompa air, dan warga mengeluhkan dugaan pencemaran air akibat aktivitas pertambangan di sekitar desa.",
+  "cara_kerja": "Panel surya menggerakkan pompa dari sumur bor ke petak sawah tanpa listrik berbayar, sedangkan sensor IoT memantau kualitas air.",
+  "spesifikasi": [
+   {
+    "nama": "Panel surya",
+    "nilai": "4 unit",
+    "sumber_url": "https://www.its.ac.id/epics-in-ieee-2026-hadirkan-sistem-pengairan-berbasis-panel-surya-dan-iot-untuk-petani-pacitan/"
+   },
+   {
+    "nama": "Kedalaman sumur bor",
+    "nilai": "40 meter (pengeboran awal 20 meter dinilai belum cukup baik)",
+    "sumber_url": "https://www.its.ac.id/epics-in-ieee-2026-hadirkan-sistem-pengairan-berbasis-panel-surya-dan-iot-untuk-petani-pacitan/"
+   },
+   {
+    "nama": "Cakupan pengairan",
+    "nilai": "sekitar 20 petak sawah",
+    "sumber_url": "https://www.its.ac.id/epics-in-ieee-2026-hadirkan-sistem-pengairan-berbasis-panel-surya-dan-iot-untuk-petani-pacitan/"
+   }
+  ],
+  "tonggak": [
+   {
+    "tanggal": "2025",
+    "teks": "Program EPICS in IEEE 2025 sampai 2026 dimulai",
+    "sumber_url": "https://www.its.ac.id/epics-in-ieee-2026-hadirkan-sistem-pengairan-berbasis-panel-surya-dan-iot-untuk-petani-pacitan/"
+   },
+   {
+    "tanggal": "2026-05-08",
+    "teks": "Program diberitakan FTEIC ITS",
+    "sumber_url": "https://www.its.ac.id/epics-in-ieee-2026-hadirkan-sistem-pengairan-berbasis-panel-surya-dan-iot-untuk-petani-pacitan/"
+   }
+  ],
+  "tim": [
+   {
+    "nama": "Feby Artwodini Muqtadiroh",
+    "afiliasi": "Sistem Informasi, ITS",
+    "peran": "Pemimpin program"
+   }
+  ],
+  "mitra_peran": [
+   {
+    "nama": "Universitas Telkom Surabaya",
+    "peran": "Mitra tim multidisiplin"
+   }
+  ],
+  "pendana": [
+   {
+    "nama": "IEEE",
+    "nilai": "skema EPICS in IEEE"
+   }
+  ],
+  "lokasi_uji": {
+   "kota": "Pacitan",
+   "provinsi": "Jawa Timur",
+   "lat": -8.1955,
+   "lng": 111.0961,
+   "presisi": "kota"
+  },
+  "foto_sumber": {
+   "url": "https://www.its.ac.id/wp-content/uploads/2026/05/unnamed-8.jpg",
+   "halaman": "https://www.its.ac.id/epics-in-ieee-2026-hadirkan-sistem-pengairan-berbasis-panel-surya-dan-iot-untuk-petani-pacitan/",
+   "kredit": "Dokumentasi ITS (tidak disalin, hanya tautan)"
+  }
+ },
+ "in_irigasi_pintar_sre_undip": {
+  "status": "terpasang",
+  "ringkasan": "SMART PLTS IoT adalah sistem irigasi otomatis bertenaga surya buatan mahasiswa Society of Renewable Energy UNDIP bersama NGO Desabumi. Sistem diterapkan di Mangunsari, Semarang, dan diserahkan kepada Kelompok Tani Teger 02. Pengairan berjalan otomatis menurut kelembapan tanah dan dipantau lewat telepon pintar.",
+  "masalah": "Petani kekurangan air pada musim kemarau dan menanggung biaya energi konvensional untuk pengairan.",
+  "cara_kerja": "Panel surya mengisi baterai, mikrokontroler membaca sensor kelembapan tanah dan suhu, lalu mengatur pompa. Petani memantau lewat aplikasi Blynk IoT dengan tiga mode: otomatis, manual jarak jauh, dan pewaktu.",
+  "spesifikasi": [
+   {
+    "nama": "Panel surya",
+    "nilai": "bifacial 520 Wp",
+    "sumber_url": "https://undip.ac.id/post/58280/sre-undip-kembangkan-smart-irrigation-bertenaga-surya-bantu-petani-mangunsari-untuk-hemat-air-dan-energi.html"
+   },
+   {
+    "nama": "Baterai",
+    "nilai": "LiFePO4 100 Ah",
+    "sumber_url": "https://undip.ac.id/post/58280/sre-undip-kembangkan-smart-irrigation-bertenaga-surya-bantu-petani-mangunsari-untuk-hemat-air-dan-energi.html"
+   },
+   {
+    "nama": "Pengendali",
+    "nilai": "mikrokontroler ESP32",
+    "sumber_url": "https://undip.ac.id/post/58280/sre-undip-kembangkan-smart-irrigation-bertenaga-surya-bantu-petani-mangunsari-untuk-hemat-air-dan-energi.html"
+   },
+   {
+    "nama": "Sensor",
+    "nilai": "kelembapan tanah kapasitif dan suhu DHT21",
+    "sumber_url": "https://undip.ac.id/post/58280/sre-undip-kembangkan-smart-irrigation-bertenaga-surya-bantu-petani-mangunsari-untuk-hemat-air-dan-energi.html"
+   }
+  ],
+  "tonggak": [
+   {
+    "tanggal": "2026-07-30",
+    "teks": "Pengenalan dan penyerahan di UPTD Kebun Bibit Cepoko, Semarang, dihadiri sekitar 75 warga dan petani",
+    "sumber_url": "https://undip.ac.id/post/58280/sre-undip-kembangkan-smart-irrigation-bertenaga-surya-bantu-petani-mangunsari-untuk-hemat-air-dan-energi.html"
+   },
+   {
+    "tanggal": "2026-05-09",
+    "teks": "Diberitakan situs UNDIP",
+    "sumber_url": "https://undip.ac.id/post/58280/sre-undip-kembangkan-smart-irrigation-bertenaga-surya-bantu-petani-mangunsari-untuk-hemat-air-dan-energi.html"
+   }
+  ],
+  "tim": [
+   {
+    "nama": "Beryl Cholif Arrahman",
+    "afiliasi": "SRE UNDIP",
+    "peran": "Ketua Pelaksana RE-ACTION 2026"
+   },
+   {
+    "nama": "Almuhtada Rizal Budiman",
+    "afiliasi": "SRE UNDIP",
+    "peran": "Presiden SRE UNDIP 2026"
+   }
+  ],
+  "mitra_peran": [
+   {
+    "nama": "Desabumi",
+    "peran": "NGO mitra kolaborasi"
+   }
+  ],
+  "lokasi_uji": {
+   "kota": "Semarang",
+   "provinsi": "Jawa Tengah",
+   "lat": -6.9932,
+   "lng": 110.4203,
+   "presisi": "kota"
+  },
+  "foto_sumber": {
+   "url": "https://undip.ac.id/wp-content/uploads/2026/08/irigasi.jpeg",
+   "halaman": "https://undip.ac.id/post/58280/sre-undip-kembangkan-smart-irrigation-bertenaga-surya-bantu-petani-mangunsari-untuk-hemat-air-dan-energi.html",
+   "kredit": "Dokumentasi Universitas Diponegoro (tidak disalin, hanya tautan)"
+  }
+ },
+ "in_dipofuel_gen3": {
+  "ringkasan": "Mesin Pirolisis Statis Dipofuel Generasi Ketiga mengubah limbah plastik menjadi bahan bakar cair, dikembangkan tim Prof. Didi Dwi Anggoro dari Teknik Kimia UNDIP. Kapasitasnya naik dari 5 kilogram pada prototipe pertama menjadi 100 kilogram pada generasi kedua dan 200 kilogram per produksi pada generasi ketiga.",
+  "masalah": "Sampah plastik sulit terurai dan menumpuk, sehingga perlu cara mengolahnya menjadi produk bernilai guna.",
+  "cara_kerja": "Plastik dipanaskan tanpa oksigen dalam reaktor tertutup (pirolisis) menjadi bahan bakar cair, gas sintesis, dan residu padat. Gas hasil proses dialirkan kembali ke pemanas lewat blower untuk mengurangi kebutuhan kayu bakar.",
+  "spesifikasi": [
+   {
+    "nama": "Kapasitas",
+    "nilai": "200 kg plastik sekali produksi",
+    "sumber_url": "https://undip.ac.id/post/59863/mesin-pirolisis-dipofuel-gen-3-undip-ubah-sampah-plastik-jadi-bahan-bakar.html"
+   },
+   {
+    "nama": "Waktu proses",
+    "nilai": "sekitar 4 sampai 8 jam",
+    "sumber_url": "https://undip.ac.id/post/59863/mesin-pirolisis-dipofuel-gen-3-undip-ubah-sampah-plastik-jadi-bahan-bakar.html"
+   },
+   {
+    "nama": "Perkiraan hasil",
+    "nilai": "60 persen bahan bakar cair, 20 persen gas bakar, 20 persen wax padat",
+    "sumber_url": "https://undip.ac.id/post/59863/mesin-pirolisis-dipofuel-gen-3-undip-ubah-sampah-plastik-jadi-bahan-bakar.html"
+   },
+   {
+    "nama": "Reaktor",
+    "nilai": "1.000 liter, plat besi, insulator fiber ceramic",
+    "sumber_url": "https://undip.ac.id/post/59863/mesin-pirolisis-dipofuel-gen-3-undip-ubah-sampah-plastik-jadi-bahan-bakar.html"
+   },
+   {
+    "nama": "Pemanas",
+    "nilai": "berbahan bakar biomassa",
+    "sumber_url": "https://undip.ac.id/post/59863/mesin-pirolisis-dipofuel-gen-3-undip-ubah-sampah-plastik-jadi-bahan-bakar.html"
+   }
+  ],
+  "tonggak": [
+   {
+    "tanggal": "2026-10-15",
+    "teks": "Dipamerkan pada Orasi Ilmiah Dies Natalis ke-69 UNDIP, Muladi Dome, Tembalang",
+    "sumber_url": "https://undip.ac.id/post/59863/mesin-pirolisis-dipofuel-gen-3-undip-ubah-sampah-plastik-jadi-bahan-bakar.html"
+   },
+   {
+    "tanggal": "2026-10-16",
+    "teks": "Diberitakan situs UNDIP",
+    "sumber_url": "https://undip.ac.id/post/59863/mesin-pirolisis-dipofuel-gen-3-undip-ubah-sampah-plastik-jadi-bahan-bakar.html"
+   }
+  ],
+  "tim": [
+   {
+    "nama": "Didi Dwi Anggoro",
+    "afiliasi": "Departemen Teknik Kimia, Fakultas Teknik UNDIP",
+    "peran": "Ketua tim peneliti"
+   }
+  ],
+  "penerapan": [
+   {
+    "lokasi": "Batang, Jawa Tengah",
+    "keterangan": "Alat dipakai petani setempat untuk pompa irigasi",
+    "sumber_url": "https://undip.ac.id/post/59863/mesin-pirolisis-dipofuel-gen-3-undip-ubah-sampah-plastik-jadi-bahan-bakar.html"
+   }
+  ],
+  "lokasi_uji": {
+   "kota": "Semarang",
+   "provinsi": "Jawa Tengah",
+   "lat": -6.9932,
+   "lng": 110.4203,
+   "presisi": "kota"
+  },
+  "foto_sumber": {
+   "url": "https://undip.ac.id/wp-content/uploads/2026/10/IMG_1300.webp",
+   "halaman": "https://undip.ac.id/post/59863/mesin-pirolisis-dipofuel-gen-3-undip-ubah-sampah-plastik-jadi-bahan-bakar.html",
+   "kredit": "Dokumentasi Universitas Diponegoro (tidak disalin, hanya tautan)"
+  }
+ },
+ "in_pengering_rumput_laut_brebes": {
+  "status": "terpasang",
+  "ringkasan": "Unit Pengering Rumput Laut Surya-Biomassa dengan Dehumidifikasi Udara dikembangkan tim Prof. Moh. Djaeni dari UNDIP bersama Unwahas. Unit diresmikan di Desa Randusanga Kulon, Brebes, bersama Ditjen PDSPKP Kementerian Kelautan dan Perikanan serta pemerintah daerah.",
+  "masalah": "Rumput laut di Brebes dikeringkan dengan menjemur di pinggir jalan atau tambak sehingga mutunya turun akibat debu, air, dan kotoran hewan.",
+  "cara_kerja": "Pengeringan memakai energi surya dan biomassa dengan dehumidifikasi udara di dalam unit tertutup.",
+  "tonggak": [
+   {
+    "tanggal": "2026-09-16",
+    "teks": "Peresmian unit di Desa Randusanga Kulon, Brebes",
+    "sumber_url": "https://undip.ac.id/post/59212/peneliti-undip-terapkan-teknologi-pengering-rumput-laut-surya-biomassa-tingkatkan-nilai-tambah-produk-budidaya-kelautan-di-pesisir-brebes.html"
+   }
+  ],
+  "tim": [
+   {
+    "nama": "Moh. Djaeni",
+    "afiliasi": "Fakultas Teknik UNDIP",
+    "peran": "Ketua tim peneliti"
+   }
+  ],
+  "mitra_peran": [
+   {
+    "nama": "Direktorat Jenderal Penguatan Daya Saing Produk Kelautan dan Perikanan, Kementerian Kelautan dan Perikanan",
+    "peran": "Mitra pelaksana peresmian"
+   },
+   {
+    "nama": "Universitas Wahid Hasyim",
+    "peran": "Mitra pengembang bersama (Unwahas)"
+   },
+   {
+    "nama": "Pemerintah Kabupaten Brebes",
+    "peran": "Mitra daerah"
+   }
+  ],
+  "lokasi_uji": {
+   "kota": "Brebes",
+   "provinsi": "Jawa Tengah",
+   "lat": -6.8722,
+   "lng": 109.0402,
+   "presisi": "kota"
+  },
+  "foto_sumber": {
+   "url": "https://undip.ac.id/wp-content/uploads/2026/09/DSC00848-EDIT.webp",
+   "halaman": "https://undip.ac.id/post/59212/peneliti-undip-terapkan-teknologi-pengering-rumput-laut-surya-biomassa-tingkatkan-nilai-tambah-produk-budidaya-kelautan-di-pesisir-brebes.html",
+   "kredit": "Dokumentasi Universitas Diponegoro (tidak disalin, hanya tautan)"
+  }
+ },
+ "in_sweeper_ev_undip": {
+  "status": "purwarupa",
+  "ringkasan": "Sweeper EV adalah kendaraan penyapu jalan listrik beroda tiga karya tim Prof. Sulistyo dari Teknik Mesin UNDIP. Kendaraan menyapu dan menyedot sampah dalam satu unit tanpa emisi knalpot, dan diperkenalkan pada Dies Natalis ke-69 UNDIP.",
+  "masalah": "Pembersihan jalan kampus dan kota masih bergantung pada tenaga manual atau kendaraan konvensional yang bising dan beremisi.",
+  "cara_kerja": "Empat sikat elektrik mengarahkan sampah ke tengah, lalu disedot sistem vakum. Putaran sikat dan daya isap dapat diatur rendah, menengah, atau tinggi.",
+  "spesifikasi": [
+   {
+    "nama": "Motor",
+    "nilai": "5 kW",
+    "sumber_url": "https://undip.ac.id/post/59884/auto-draft-2sweeper-ev-undip-kendaraan-penyapu-jalan-listrik.html"
+   },
+   {
+    "nama": "Baterai",
+    "nilai": "lithium 72 V, 300 Ah",
+    "sumber_url": "https://undip.ac.id/post/59884/auto-draft-2sweeper-ev-undip-kendaraan-penyapu-jalan-listrik.html"
+   },
+   {
+    "nama": "Vakum",
+    "nilai": "3 kW, daya hisap sekitar 15 sampai 20 kPa",
+    "sumber_url": "https://undip.ac.id/post/59884/auto-draft-2sweeper-ev-undip-kendaraan-penyapu-jalan-listrik.html"
+   },
+   {
+    "nama": "Sikat",
+    "nilai": "4 unit, tinggi dapat diatur",
+    "sumber_url": "https://undip.ac.id/post/59884/auto-draft-2sweeper-ev-undip-kendaraan-penyapu-jalan-listrik.html"
+   },
+   {
+    "nama": "Bobot",
+    "nilai": "sekitar 700 kg",
+    "sumber_url": "https://undip.ac.id/post/59884/auto-draft-2sweeper-ev-undip-kendaraan-penyapu-jalan-listrik.html"
+   }
+  ],
+  "tonggak": [
+   {
+    "tanggal": "2026-10-15",
+    "teks": "Diperkenalkan pada perayaan Dies Natalis ke-69 UNDIP, Muladi Dome",
+    "sumber_url": "https://undip.ac.id/post/59884/auto-draft-2sweeper-ev-undip-kendaraan-penyapu-jalan-listrik.html"
+   }
+  ],
+  "tim": [
+   {
+    "nama": "Sulistyo",
+    "afiliasi": "Departemen Teknik Mesin, Fakultas Teknik UNDIP",
+    "peran": "Ketua tim peneliti"
+   }
+  ],
+  "lokasi_uji": {
+   "kota": "Semarang",
+   "provinsi": "Jawa Tengah",
+   "lat": -6.9932,
+   "lng": 110.4203,
+   "presisi": "kota"
+  },
+  "foto_sumber": {
+   "url": "https://undip.ac.id/wp-content/uploads/2026/10/Sweeper-EV-UNDIP-1.webp",
+   "halaman": "https://undip.ac.id/post/59884/auto-draft-2sweeper-ev-undip-kendaraan-penyapu-jalan-listrik.html",
+   "kredit": "Dokumentasi Universitas Diponegoro (tidak disalin, hanya tautan)"
+  }
+ },
+ "in_buggy_hybrid_undip": {
+  "status": "uji lapangan",
+  "ringkasan": "Buggy car hybrid bertenaga motor listrik dan panel surya berkapasitas hingga 8 penumpang, dikembangkan dosen dan mahasiswa Sekolah Vokasi UNDIP di Teaching Factory Manufacture. Uji coba perdana dilakukan di kampus Tembalang pada Agustus 2025.",
+  "masalah": "Kawasan kampus, wisata, dan lingkungan khusus membutuhkan kendaraan efisien yang minim emisi dan sanggup melewati kontur perbukitan.",
+  "cara_kerja": "Motor listrik menggerakkan kendaraan, panel surya membantu suplai daya, dan baterai LiFePO4 menyimpan energi.",
+  "spesifikasi": [
+   {
+    "nama": "Kapasitas",
+    "nilai": "hingga 8 penumpang",
+    "sumber_url": "https://undip.ac.id/post/50326/buggy-car-hybrid-sekolah-vokasi-undip-inovasi-ramah-lingkungan-berbasis-energi-surya.html"
+   },
+   {
+    "nama": "Baterai",
+    "nilai": "lithium iron phosphate (LiFePO4)",
+    "sumber_url": "https://undip.ac.id/post/50326/buggy-car-hybrid-sekolah-vokasi-undip-inovasi-ramah-lingkungan-berbasis-energi-surya.html"
+   }
+  ],
+  "tonggak": [
+   {
+    "tanggal": "2025-08-05",
+    "teks": "Uji coba perdana di kampus UNDIP Tembalang",
+    "sumber_url": "https://undip.ac.id/post/50326/buggy-car-hybrid-sekolah-vokasi-undip-inovasi-ramah-lingkungan-berbasis-energi-surya.html"
+   },
+   {
+    "tanggal": "2025-08-10",
+    "teks": "Diberitakan situs UNDIP",
+    "sumber_url": "https://undip.ac.id/post/50326/buggy-car-hybrid-sekolah-vokasi-undip-inovasi-ramah-lingkungan-berbasis-energi-surya.html"
+   }
+  ],
+  "tim": [
+   {
+    "nama": "Didik Ariwibowo",
+    "afiliasi": "Prodi Rekayasa Perancangan Mekanik, Sekolah Vokasi UNDIP",
+    "peran": "Pimpinan proyek"
+   },
+   {
+    "nama": "Rofig Cahyo Prayogi",
+    "afiliasi": "Prodi Teknik Rekayasa Otomasi, Sekolah Vokasi UNDIP",
+    "peran": "Pimpinan proyek"
+   }
+  ],
+  "lokasi_uji": {
+   "kota": "Semarang",
+   "provinsi": "Jawa Tengah",
+   "lat": -6.9932,
+   "lng": 110.4203,
+   "presisi": "kota"
+  },
+  "foto_sumber": {
+   "url": "https://undip.ac.id/wp-content/uploads/2025/08/sekolah-vokasi-edit-aa.webp",
+   "halaman": "https://undip.ac.id/post/50326/buggy-car-hybrid-sekolah-vokasi-undip-inovasi-ramah-lingkungan-berbasis-energi-surya.html",
+   "kredit": "Dokumentasi Universitas Diponegoro (tidak disalin, hanya tautan)"
+  }
+ },
+ "in_mobil_listrik_vokasi_undip": {
+  "ringkasan": "Dua tim komunitas riset Kayovoks Chem-E-Car dari Sekolah Vokasi UNDIP meraih dua Gold Medal pada Jakarta International Science Fair 2025 secara daring. Tim Ramayana memakai tekanan oksigen dari penguraian hidrogen peroksida, sedangkan IO-Kayovoks mengembangkan mobil dengan baterai aluminium-udara.",
+  "cara_kerja": "Ramayana: oksigen hasil dekomposisi hidrogen peroksida dengan katalis kalium permanganat menggerakkan sistem pneumatik. IO-Kayovoks: baterai aluminium-udara dengan sistem berhenti otomatis berbasis reaksi iodine clock dan sensor laser.",
+  "tonggak": [
+   {
+    "tanggal": "2025-04-17",
+    "teks": "Dua Gold Medal pada JISF 2025 (kompetisi 15 sampai 17 April 2025)",
+    "sumber_url": "https://undip.ac.id/post/44623/kembangkan-mobil-listrik-mahasiswa-vokasi-undip-raih-dua-gold-medal-di-kompetisi-internasional.html"
+   }
+  ],
+  "tim": [
+   {
+    "nama": "Abdullah Malik Islam Fillardli",
+    "afiliasi": "Prodi TRKI, Sekolah Vokasi UNDIP",
+    "peran": "Dosen pembina"
+   }
+  ],
+  "lokasi_uji": {
+   "kota": "Semarang",
+   "provinsi": "Jawa Tengah",
+   "lat": -6.9932,
+   "lng": 110.4203,
+   "presisi": "kota"
+  },
+  "foto_sumber": {
+   "url": "https://undip.ac.id/wp-content/uploads/2025/04/IMG_4082-2.jpeg",
+   "halaman": "https://undip.ac.id/post/44623/kembangkan-mobil-listrik-mahasiswa-vokasi-undip-raih-dua-gold-medal-di-kompetisi-internasional.html",
+   "kredit": "Dokumentasi Universitas Diponegoro (tidak disalin, hanya tautan)"
+  }
+ },
+ "in_pats_banyubiru": {
+  "status": "terpasang",
+  "ringkasan": "Pompa Air Tenaga Surya (PATS) dibangun mahasiswa KKN-T IDBU 66 UNDIP di Desa Banyubiru, Kabupaten Semarang, untuk irigasi lahan padi kelompok tani Dusun Randusari. Pembangunan selesai 21 Juli 2026 dan diresmikan 23 Juli 2026 di Balai Desa Banyubiru.",
+  "masalah": "Sebagian lahan padi kekurangan air irigasi pada musim kemarau, sedangkan pompa berbahan bakar atau listrik berbiaya operasional tinggi.",
+  "cara_kerja": "Panel surya menyuplai pompa lewat panel box kendali; uji coba memastikan panel surya, panel box, dan pompa berfungsi.",
+  "tonggak": [
+   {
+    "tanggal": "2026-07-21",
+    "teks": "Pembangunan selesai",
+    "sumber_url": "https://undip.ac.id/post/58470/pompa-air-tenaga-surya-pats-bantuan-undip-atasi-keterbatasan-irigasi-petani-desa-banyubiru.html"
+   },
+   {
+    "tanggal": "2026-07-23",
+    "teks": "Peresmian di Balai Desa Banyubiru",
+    "sumber_url": "https://undip.ac.id/post/58470/pompa-air-tenaga-surya-pats-bantuan-undip-atasi-keterbatasan-irigasi-petani-desa-banyubiru.html"
+   }
+  ],
+  "tim": [
+   {
+    "nama": "Mahasiswa KKN-T IDBU 66",
+    "afiliasi": "Universitas Diponegoro",
+    "peran": "Perancang dan perakit"
+   }
+  ],
+  "lokasi_uji": {
+   "kota": "Banyubiru, Kabupaten Semarang",
+   "provinsi": "Jawa Tengah",
+   "lat": -7.138,
+   "lng": 110.406,
+   "presisi": "kota"
+  },
+  "foto_sumber": {
+   "url": "https://undip.ac.id/wp-content/uploads/2026/08/IMG_4731-edit-ezgif.com-jpg-to-webp-converter.webp",
+   "halaman": "https://undip.ac.id/post/58470/pompa-air-tenaga-surya-pats-bantuan-undip-atasi-keterbatasan-irigasi-petani-desa-banyubiru.html",
+   "kredit": "Dokumentasi Universitas Diponegoro (tidak disalin, hanya tautan)"
+  }
+ },
+ "in_desalinasi_surya_nusakambangan": {
+  "status": "terpasang",
+  "ringkasan": "Instalasi desalinasi air laut bertenaga surya buatan UNDIP memasok lebih dari 20 ribu liter air minum per hari di Nusakambangan untuk penghuni lapas dan petugas. Teknologi dikembangkan Prof. Nyoman Widiasa dari Teknik Kimia UNDIP, yang juga mendampingi pembangunan dan operasional.",
+  "masalah": "Kawasan Nusakambangan kesulitan memperoleh air minum dan bergantung pada pasokan dari luar wilayah.",
+  "cara_kerja": "Air laut diolah menjadi air minum dengan teknologi desalinasi yang ditenagai energi surya.",
+  "spesifikasi": [
+   {
+    "nama": "Kapasitas produksi",
+    "nilai": "lebih dari 20.000 liter air minum per hari",
+    "sumber_url": "https://undip.ac.id/post/57116/desalinasi-undip-pasok-20-ribu-liter-air-minum-per-hari-di-nusakambangan.html"
+   }
+  ],
+  "tonggak": [
+   {
+    "tanggal": "2026-01",
+    "teks": "Pengembangan sistem dimulai",
+    "sumber_url": "https://undip.ac.id/post/57116/desalinasi-undip-pasok-20-ribu-liter-air-minum-per-hari-di-nusakambangan.html"
+   },
+   {
+    "tanggal": "2026-04",
+    "teks": "Pembangunan instalasi",
+    "sumber_url": "https://undip.ac.id/post/57116/desalinasi-undip-pasok-20-ribu-liter-air-minum-per-hari-di-nusakambangan.html"
+   },
+   {
+    "tanggal": "2026-06-20",
+    "teks": "Diberitakan siap beroperasi",
+    "sumber_url": "https://undip.ac.id/post/57116/desalinasi-undip-pasok-20-ribu-liter-air-minum-per-hari-di-nusakambangan.html"
+   }
+  ],
+  "tim": [
+   {
+    "nama": "Nyoman Widiasa",
+    "afiliasi": "Fakultas Teknik UNDIP",
+    "peran": "Pengembang teknologi (Guru Besar Teknik Kimia)"
+   }
+  ],
+  "lokasi_uji": {
+   "kota": "Nusakambangan, Cilacap",
+   "provinsi": "Jawa Tengah",
+   "lat": -7.7266,
+   "lng": 109.0153,
+   "presisi": "kota"
+  },
+  "foto_sumber": {
+   "url": "https://undip.ac.id/wp-content/uploads/2026/06/Instalasi-1.jpeg",
+   "halaman": "https://undip.ac.id/post/57116/desalinasi-undip-pasok-20-ribu-liter-air-minum-per-hari-di-nusakambangan.html",
+   "kredit": "Dokumentasi Universitas Diponegoro (tidak disalin, hanya tautan)"
+  }
+ },
+ "in_pengering_surya_hibrida_temanggung": {
+  "status": "terpasang",
+  "ringkasan": "Pengering kabinet surya hibrida portabel berkapasitas 20 rak, dipadukan sumber gas, diserahkan LPPM UNDIP kepada kelompok tani di Desa Wonosari, Temanggung. Alat dipakai mengeringkan kopi, jagung, dan hasil tani lain secara higienis.",
+  "masalah": "Panen serentak menekan harga, dan petani tidak dapat menyimpan hasil lama sehingga terpaksa menjual murah.",
+  "cara_kerja": "Kabinet pengering menggabungkan energi surya dengan sistem hibrida bertenaga gas.",
+  "spesifikasi": [
+   {
+    "nama": "Kapasitas",
+    "nilai": "20 rak",
+    "sumber_url": "https://undip.ac.id/language/en/post/60034/supporting-food-security-undip-provides-temanggung-farmers-with-portable-hybrid-solar-cabinet-dryer.html"
+   }
+  ],
+  "tonggak": [
+   {
+    "tanggal": "2026-10-06",
+    "teks": "Penyerahan di Pendopo Makukuhan, Desa Wonosari, Temanggung",
+    "sumber_url": "https://undip.ac.id/language/en/post/60034/supporting-food-security-undip-provides-temanggung-farmers-with-portable-hybrid-solar-cabinet-dryer.html"
+   }
+  ],
+  "mitra_peran": [
+   {
+    "nama": "Pemerintah Kabupaten Temanggung",
+    "peran": "Penerima dan pendamping daerah"
+   }
+  ],
+  "lokasi_uji": {
+   "kota": "Temanggung",
+   "provinsi": "Jawa Tengah",
+   "lat": -7.3167,
+   "lng": 110.1833,
+   "presisi": "kota"
+  },
+  "foto_sumber": {
+   "url": "https://undip.ac.id/wp-content/uploads/2026/10/Alat-Pengering-Surya-Hibrida-Kabinet-Portabel.webp",
+   "halaman": "https://undip.ac.id/language/en/post/60034/supporting-food-security-undip-provides-temanggung-farmers-with-portable-hybrid-solar-cabinet-dryer.html",
+   "kredit": "Dokumentasi Universitas Diponegoro (tidak disalin, hanya tautan)"
+  }
+ },
+ "in_hidram_wanadipa": {
+  "status": "terpasang",
+  "ringkasan": "Pompa hidram diresmikan Departemen Bisnis dan Keuangan Sekolah Vokasi UNDIP di KHDTK Wanadipa, Penggaron, Ungaran Timur, sebagai bagian dari International Community Service yang melibatkan 18 mahasiswa summer course dari delapan negara. Pompa melengkapi pompa tenaga surya dalam sistem pengairan sawah petani pesanggem.",
+  "masalah": "Petani pesanggem yang menggarap lahan di kawasan hutan membutuhkan pengairan hemat energi.",
+  "cara_kerja": "Pompa hidram memanfaatkan energi aliran air dan siklus katup untuk mengangkat sebagian air ke tempat lebih tinggi tanpa motor listrik.",
+  "tonggak": [
+   {
+    "tanggal": "2026-10-24",
+    "teks": "Peresmian di KHDTK Wanadipa",
+    "sumber_url": "https://undip.ac.id/post/60077/pompa-hidram-inovasi-sekolah-vokasi-undip-hadirkan-solusi-irigasi-hemat-energi-bagi-petani-pesanggem.html"
+   }
+  ],
+  "mitra_peran": [
+   {
+    "nama": "Universiti Kuala Lumpur",
+    "peran": "Pembicara tamu sesi pengelolaan hutan"
+   }
+  ],
+  "lokasi_uji": {
+   "kota": "Ungaran Timur, Kabupaten Semarang",
+   "provinsi": "Jawa Tengah",
+   "lat": -7.138,
+   "lng": 110.406,
+   "presisi": "kota"
+  },
+  "foto_sumber": {
+   "url": "https://undip.ac.id/wp-content/uploads/2026/10/Pompa-Hidram-Inovasi-Sekolah-Vokasi-UNDIP.webp",
+   "halaman": "https://undip.ac.id/post/60077/pompa-hidram-inovasi-sekolah-vokasi-undip-hadirkan-solusi-irigasi-hemat-energi-bagi-petani-pesanggem.html",
+   "kredit": "Dokumentasi Universitas Diponegoro (tidak disalin, hanya tautan)"
+  }
+ },
+ "in_bioavtur_jelantah_undip": {
+  "ringkasan": "Penelitian Anggun Puspitarini Siswanto dari Sekolah Vokasi UNDIP mengubah metil ester minyak jelantah menjadi bioavtur lewat reaktor ozonolisis nano bubble. Riset didanai LPDP melalui program RIIM BRIN 2023 sampai 2025.",
+  "masalah": "Krisis energi fosil dan emisi sektor penerbangan mendorong kebutuhan bahan bakar alternatif terbarukan untuk pesawat.",
+  "cara_kerja": "Metil ester dari minyak jelantah dikonversi menjadi bioavtur melalui pengembangan reaktor ozonolisis nano bubble.",
+  "tonggak": [
+   {
+    "tanggal": "2023",
+    "teks": "Pendanaan RIIM BRIN dengan LPDP dimulai (2023 sampai 2025)",
+    "sumber_url": "https://undip.ac.id/language/en/post/36530/innovative-young-vocational-school-undip-lecturer-owner-of-11-granted-patents-develops-airplane-fuel-from-used-cooking-oil.html"
+   },
+   {
+    "tanggal": "2024-06-19",
+    "teks": "Diberitakan situs UNDIP",
+    "sumber_url": "https://undip.ac.id/language/en/post/36530/innovative-young-vocational-school-undip-lecturer-owner-of-11-granted-patents-develops-airplane-fuel-from-used-cooking-oil.html"
+   }
+  ],
+  "tim": [
+   {
+    "nama": "Anggun Puspitarini Siswanto",
+    "afiliasi": "Prodi TRKI, Sekolah Vokasi UNDIP",
+    "peran": "Peneliti utama"
+   },
+   {
+    "nama": "Ria Desiriani",
+    "afiliasi": "BRIN",
+    "peran": "Anggota tim"
+   },
+   {
+    "nama": "Mohamad Endy Yulianto",
+    "afiliasi": "Sekolah Vokasi UNDIP",
+    "peran": "Pengelola Biodiesel Mini Plant"
+   }
+  ],
+  "pendana": [
+   {
+    "nama": "LPDP",
+    "nilai": "melalui RIIM BRIN 2023 sampai 2025"
+   }
+  ],
+  "paten": [
+   {
+    "nomor": "IDS000007969",
+    "status": "granted",
+    "sumber_url": "https://undip.ac.id/language/en/post/36530/innovative-young-vocational-school-undip-lecturer-owner-of-11-granted-patents-develops-airplane-fuel-from-used-cooking-oil.html"
+   },
+   {
+    "nomor": "IDS000007413",
+    "status": "granted",
+    "sumber_url": "https://undip.ac.id/language/en/post/36530/innovative-young-vocational-school-undip-lecturer-owner-of-11-granted-patents-develops-airplane-fuel-from-used-cooking-oil.html"
+   }
+  ],
+  "foto_sumber": {
+   "url": "https://undip.ac.id/wp-content/uploads/2024/06/wesf.png",
+   "halaman": "https://undip.ac.id/language/en/post/36530/innovative-young-vocational-school-undip-lecturer-owner-of-11-granted-patents-develops-airplane-fuel-from-used-cooking-oil.html",
+   "kredit": "Dokumentasi Universitas Diponegoro (tidak disalin, hanya tautan)"
+  }
+ },
+ "in_cold_storage_pcm_undip": {
+  "ringkasan": "Tim UNDIP bersama PT Dewa Salju Nusantara mengembangkan cold storage hemat energi berbasis Phase Change Material (PCM) dalam skema Latent Thermal Energy Storage. Teknologi ini disebut mampu mengurangi konsumsi energi hingga 25 persen.",
+  "masalah": "Cold storage berbasis refrigeran boros energi dan berbiaya operasional tinggi, sementara pemborosan pangan, terutama buah dan sayur, besar.",
+  "cara_kerja": "PCM menyimpan dan melepaskan energi lewat perubahan fasa sehingga beban pendinginan berkurang; juga mulai dikembangkan untuk transportasi dingin.",
+  "spesifikasi": [
+   {
+    "nama": "Penghematan energi",
+    "nilai": "hingga 25 persen",
+    "sumber_url": "https://undip.ac.id/post/51921/undip-kembangkan-cold-storage-hemat-energi-berbasis-pcm-dukung-ketersediaan-pangan-berkelanjutan.html"
+   }
+  ],
+  "tonggak": [
+   {
+    "tanggal": "2025-09-26",
+    "teks": "Diberitakan situs UNDIP",
+    "sumber_url": "https://undip.ac.id/post/51921/undip-kembangkan-cold-storage-hemat-energi-berbasis-pcm-dukung-ketersediaan-pangan-berkelanjutan.html"
+   }
+  ],
+  "tim": [
+   {
+    "nama": "Mohamad Endy Julianto",
+    "afiliasi": "TRKI, Sekolah Vokasi UNDIP",
+    "peran": "Peneliti"
+   },
+   {
+    "nama": "Eflita Yohana",
+    "afiliasi": "UNDIP",
+    "peran": "Anggota tim"
+   },
+   {
+    "nama": "Ria Desiriani",
+    "afiliasi": "BRIN",
+    "peran": "Pendukung"
+   }
+  ],
+  "mitra_peran": [
+   {
+    "nama": "PT Dewa Salju Nusantara",
+    "peran": "Mitra industri"
+   }
+  ],
+  "foto_sumber": {
+   "url": "https://undip.ac.id/wp-content/uploads/2025/09/WhatsAppImage2025-09-25at21.37.24-1.webp",
+   "halaman": "https://undip.ac.id/post/51921/undip-kembangkan-cold-storage-hemat-energi-berbasis-pcm-dukung-ketersediaan-pangan-berkelanjutan.html",
+   "kredit": "Dokumentasi Universitas Diponegoro (tidak disalin, hanya tautan)"
+  }
+ },
+ "in_palka_pendingin_surya": {
+  "status": "uji lapangan",
+  "ringkasan": "Palka Pendingin Tenaga Surya (PPTS) dikembangkan tim Dr Ayi Rahmat dari FPIK IPB University untuk kapal nelayan kecil. Sistem diuji pada tiga kapal 7 sampai 9 meter dan disebut menekan biaya operasional nelayan hingga 30 persen karena tidak membeli es.",
+  "masalah": "Nelayan kecil bergantung pada es balok dari darat yang mahal dan tidak efisien, terutama di daerah terpencil.",
+  "cara_kerja": "Panel surya mengisi baterai LiFePO4, lalu freezer menjaga ikan; IoT memantau suhu, posisi kapal, dan baterai secara waktu nyata.",
+  "spesifikasi": [
+   {
+    "nama": "Panel surya",
+    "nilai": "1 kWp sampai 5 kWp",
+    "sumber_url": "https://www.ipb.ac.id/news/index/2025/11/inovator-ipb-university-ciptakan-palka-pendingin-tenaga-surya-mampu-tekan-30-persen-biaya-operasional-nelayan/"
+   },
+   {
+    "nama": "Freezer",
+    "nilai": "300 liter, di bawah 4 derajat Celsius selama 24 jam",
+    "sumber_url": "https://www.ipb.ac.id/news/index/2025/11/inovator-ipb-university-ciptakan-palka-pendingin-tenaga-surya-mampu-tekan-30-persen-biaya-operasional-nelayan/"
+   },
+   {
+    "nama": "Baterai",
+    "nilai": "LiFePO4",
+    "sumber_url": "https://www.ipb.ac.id/news/index/2025/11/inovator-ipb-university-ciptakan-palka-pendingin-tenaga-surya-mampu-tekan-30-persen-biaya-operasional-nelayan/"
+   },
+   {
+    "nama": "Penghematan biaya operasional",
+    "nilai": "hingga 30 persen",
+    "sumber_url": "https://www.ipb.ac.id/news/index/2025/11/inovator-ipb-university-ciptakan-palka-pendingin-tenaga-surya-mampu-tekan-30-persen-biaya-operasional-nelayan/"
+   },
+   {
+    "nama": "Kenaikan harga jual ikan",
+    "nilai": "10 sampai 15 persen",
+    "sumber_url": "https://www.ipb.ac.id/news/index/2025/11/inovator-ipb-university-ciptakan-palka-pendingin-tenaga-surya-mampu-tekan-30-persen-biaya-operasional-nelayan/"
+   }
+  ],
+  "tonggak": [
+   {
+    "tanggal": "2025-11-14",
+    "teks": "Diberitakan situs IPB University",
+    "sumber_url": "https://www.ipb.ac.id/news/index/2025/11/inovator-ipb-university-ciptakan-palka-pendingin-tenaga-surya-mampu-tekan-30-persen-biaya-operasional-nelayan/"
+   }
+  ],
+  "tim": [
+   {
+    "nama": "Ayi Rahmat",
+    "afiliasi": "Departemen Ilmu dan Teknologi Kelautan, FPIK IPB University",
+    "peran": "Ketua tim peneliti"
+   }
+  ],
+  "penerapan": [
+   {
+    "lokasi": "Pelabuhan Ratu, Sukabumi",
+    "keterangan": "Uji pada kapal nelayan kecil",
+    "sumber_url": "https://www.ipb.ac.id/news/index/2025/11/inovator-ipb-university-ciptakan-palka-pendingin-tenaga-surya-mampu-tekan-30-persen-biaya-operasional-nelayan/"
+   },
+   {
+    "lokasi": "Cirebon",
+    "keterangan": "Uji pada kapal nelayan kecil",
+    "sumber_url": "https://www.ipb.ac.id/news/index/2025/11/inovator-ipb-university-ciptakan-palka-pendingin-tenaga-surya-mampu-tekan-30-persen-biaya-operasional-nelayan/"
+   },
+   {
+    "lokasi": "Brebes",
+    "keterangan": "Uji pada kapal nelayan kecil",
+    "sumber_url": "https://www.ipb.ac.id/news/index/2025/11/inovator-ipb-university-ciptakan-palka-pendingin-tenaga-surya-mampu-tekan-30-persen-biaya-operasional-nelayan/"
+   }
+  ],
+  "lokasi_uji": {
+   "kota": "Sukabumi",
+   "provinsi": "Jawa Barat",
+   "lat": -6.9277,
+   "lng": 106.93,
+   "presisi": "kota"
+  },
+  "foto_sumber": {
+   "url": "https://www.ipb.ac.id/wp-content/uploads/2025/11/inovator-ipb-university-ciptakan-palka-pendingin-tenaga-surya-mampu-tekan-30-persen-biaya-operasional-nelayan.jpg",
+   "halaman": "https://www.ipb.ac.id/news/index/2025/11/inovator-ipb-university-ciptakan-palka-pendingin-tenaga-surya-mampu-tekan-30-persen-biaya-operasional-nelayan/",
+   "kredit": "Dokumentasi IPB University (tidak disalin, hanya tautan)"
+  }
+ },
+ "in_biodigester_kopi_sumberdem": {
+  "status": "terpasang",
+  "ringkasan": "Tim Revolusi Kopi dari IPB University dan Universitas Negeri Malang memasang biodigester tipe kantong di Desa Sumberdem, Kabupaten Malang, memakai kulit kopi dan kotoran ternak. Selain biogas, proses menghasilkan bio-slurry untuk pupuk organik.",
+  "masalah": "Limbah kulit kopi dan kotoran ternak belum dimanfaatkan sebagai energi dan pupuk di desa penghasil kopi.",
+  "cara_kerja": "Proses anaerobik mengubah bahan organik menjadi biogas dan bio-slurry dalam bag digester yang portabel dan mudah dipasang.",
+  "tonggak": [
+   {
+    "tanggal": "2026-09-20",
+    "teks": "Instalasi dan pelatihan biodigester di Desa Sumberdem",
+    "sumber_url": "https://www.ipb.ac.id/news/index/2026/09/revolusi-kopi-ipb-university-dan-um-ubah-limbah-kopi-dan-ternak-menjadi-energi-bersih-di-sumberdem/"
+   }
+  ],
+  "tim": [
+   {
+    "nama": "Yessie Widya Sari",
+    "afiliasi": "Center for Transdisciplinary and Sustainability Sciences (CTSS), IPB University",
+    "peran": "Ketua tim Revolusi Kopi"
+   }
+  ],
+  "mitra_peran": [
+   {
+    "nama": "Universitas Negeri Malang",
+    "peran": "Mitra kampus"
+   },
+   {
+    "nama": "su-re.co (Sustainability and Resilience)",
+    "peran": "Pendukung instalasi dan pelatihan"
+   }
+  ],
+  "pendana": [
+   {
+    "nama": "Kemdiktisaintek bersama LPDP",
+    "nilai": "Program Bestari Saintek"
+   }
+  ],
+  "lokasi_uji": {
+   "kota": "Kabupaten Malang",
+   "provinsi": "Jawa Timur",
+   "lat": -7.9839,
+   "lng": 112.6214,
+   "presisi": "kota"
+  }
+ },
+ "in_chpp_ipb": {
+  "ringkasan": "Combined Heat, Power and Product (CHPP) adalah konsep Prof Edy Hartulistiyoso dari IPB University untuk memanfaatkan panas sisa industri menjadi listrik dan produk bernilai tambah seperti biochar dan bio-oil. Konsep dipaparkan pada Orasi Ilmiah Guru Besar di Kampus IPB Dramaga.",
+  "masalah": "Panas sisa proses industri banyak terbuang, sementara kebutuhan energi termal Indonesia masih didominasi batu bara dan gas alam.",
+  "cara_kerja": "Panas sisa dipakai untuk membangkitkan listrik, antara lain dengan organic rankine cycle untuk sumber panas bersuhu rendah, sambil menghasilkan produk seperti biochar dan bio-oil.",
+  "tonggak": [
+   {
+    "tanggal": "2026-05-23",
+    "teks": "Orasi Ilmiah Guru Besar IPB University, Kampus IPB Dramaga",
+    "sumber_url": "https://www.ipb.ac.id/news/index/2026/05/prof-edy-hartulistiyoso-panas-sisa-industri-bisa-diubah-jadi-listrik-dan-biochar/"
+   }
+  ],
+  "tim": [
+   {
+    "nama": "Edy Hartulistiyoso",
+    "afiliasi": "Fakultas Teknik dan Teknologi, IPB University",
+    "peran": "Guru Besar, pemaparan konsep"
+   }
+  ],
+  "lokasi_uji": {
+   "kota": "Bogor",
+   "provinsi": "Jawa Barat",
+   "lat": -6.595,
+   "lng": 106.816,
+   "presisi": "kota"
+  },
+  "foto_sumber": {
+   "url": "https://www.ipb.ac.id/wp-content/uploads/2026/05/prof-edy-hartulistiyoso-panas-sisa-industri-bisa-diubah-jadi-listrik-dan-biochar.jpg.jpeg",
+   "halaman": "https://www.ipb.ac.id/news/index/2026/05/prof-edy-hartulistiyoso-panas-sisa-industri-bisa-diubah-jadi-listrik-dan-biochar/",
+   "kredit": "Dokumentasi IPB University (tidak disalin, hanya tautan)"
+  }
+ },
+ "in_agrivoltaik_pengisian_motor": {
+  "status": "purwarupa",
+  "ringkasan": "Proyek Establishment of Agrivoltaics-based Electric Motorcycle Charging System in Indonesia dikerjakan IPB University bersama Korea Energy Agency dan ENVELOPS Co, Ltd. Proyek melanjutkan Agri-Photovoltaic Research Station yang diresmikan di Kebun Pendidikan Cikabayan IPB pada 2025.",
+  "masalah": "Pangan dan energi bersaing memakai lahan; agrivoltaik menggabungkan produksi pertanian dan listrik surya di satu lahan.",
+  "cara_kerja": "Panel surya di atas lahan tanam menghasilkan listrik untuk sistem pengisian motor listrik sambil tetap menumbuhkan tanaman di bawahnya.",
+  "tonggak": [
+   {
+    "tanggal": "2025",
+    "teks": "Agri-Photovoltaic Research Station diresmikan di Kebun Pendidikan Cikabayan IPB University, disebut yang pertama di Indonesia",
+    "sumber_url": "https://www.ipb.ac.id/news/index/2026/06/ipb-university-korea-selatan-siap-kembangkan-sistem-pengisian-motor-listrik-berbasis-agri-photovoltaic/"
+   },
+   {
+    "tanggal": "2026-06-12",
+    "teks": "Kunjungan Presiden KEA Choi Jae-Gwan ke IPB University membahas rencana implementasi",
+    "sumber_url": "https://www.ipb.ac.id/news/index/2026/06/ipb-university-korea-selatan-siap-kembangkan-sistem-pengisian-motor-listrik-berbasis-agri-photovoltaic/"
+   }
+  ],
+  "tim": [
+   {
+    "nama": "Bambang Hendro Trisasongko",
+    "afiliasi": "Departemen Ilmu Tanah dan Sumberdaya Lahan, IPB University",
+    "peran": "Pengelola Agri-Photovoltaic"
+   }
+  ],
+  "mitra_peran": [
+   {
+    "nama": "Korea Energy Agency",
+    "peran": "Mitra dan pendana"
+   },
+   {
+    "nama": "ENVELOPS Co, Ltd",
+    "peran": "Mitra proyek"
+   }
+  ],
+  "pendana": [
+   {
+    "nama": "Korea Energy Agency",
+    "nilai": ""
+   },
+   {
+    "nama": "Ministry of Trade, Industry, and Resources, Korea Selatan",
+    "nilai": ""
+   }
+  ],
+  "lokasi_uji": {
+   "kota": "Bogor",
+   "provinsi": "Jawa Barat",
+   "lat": -6.595,
+   "lng": 106.816,
+   "presisi": "kota"
+  },
+  "foto_sumber": {
+   "url": "https://www.ipb.ac.id/wp-content/uploads/2026/06/ipb-university-korea-selatan-siap-kembangkan-sistem-pengisian-motor-listrik-berbasis-agri-photovoltaic.jpg.jpeg",
+   "halaman": "https://www.ipb.ac.id/news/index/2026/06/ipb-university-korea-selatan-siap-kembangkan-sistem-pengisian-motor-listrik-berbasis-agri-photovoltaic/",
+   "kredit": "Dokumentasi IPB University (tidak disalin, hanya tautan)"
+  }
+ },
+ "in_nyamplung_biogas_mesin_tani": {
+  "ringkasan": "Prof Desrial dari IPB University mengembangkan minyak nyamplung murni sebagai bahan bakar mesin diesel pertanian dan konverter biogas untuk motor bakar bensin. Riset ini masuk daftar 104 inovasi paling prospektif di Indonesia.",
+  "masalah": "Mesin pertanian di perdesaan dan wilayah terpencil bergantung pada BBM fosil, padahal potensi bahan bakar nabati dan biogas lokal besar.",
+  "cara_kerja": "Sistem pemanas bahan bakar memanfaatkan panas gas buang sehingga mesin diesel dapat memakai minyak nabati murni tanpa konversi kimia; konverter biogas dipasang menggantikan karburator pada motor bensin.",
+  "spesifikasi": [
+   {
+    "nama": "Potensi minyak nyamplung Indonesia",
+    "nilai": "sekitar 4,8 juta ton per tahun",
+    "sumber_url": "https://www.ipb.ac.id/news/index/2026/01/inovasi-prof-desrial-nyamplung-dan-biogas-jadi-bahan-bakar-mesin-pertanian/"
+   },
+   {
+    "nama": "Potensi biogas peternakan",
+    "nilai": "sekitar 28 juta meter kubik per tahun",
+    "sumber_url": "https://www.ipb.ac.id/news/index/2026/01/inovasi-prof-desrial-nyamplung-dan-biogas-jadi-bahan-bakar-mesin-pertanian/"
+   }
+  ],
+  "tonggak": [
+   {
+    "tanggal": "2026-01-24",
+    "teks": "Orasi Ilmiah Guru Besar IPB University",
+    "sumber_url": "https://www.ipb.ac.id/news/index/2026/01/inovasi-prof-desrial-nyamplung-dan-biogas-jadi-bahan-bakar-mesin-pertanian/"
+   }
+  ],
+  "tim": [
+   {
+    "nama": "Desrial",
+    "afiliasi": "Teknik Mesin Pertanian, IPB University",
+    "peran": "Guru Besar, peneliti utama"
+   }
+  ],
+  "foto_sumber": {
+   "url": "https://www.ipb.ac.id/wp-content/uploads/2026/01/inovasi-prof-desrial-nyamplung-dan-biogas-jadi-bahan-bakar-mesin-pertanian.jpg.jpeg",
+   "halaman": "https://www.ipb.ac.id/news/index/2026/01/inovasi-prof-desrial-nyamplung-dan-biogas-jadi-bahan-bakar-mesin-pertanian/",
+   "kredit": "Dokumentasi IPB University (tidak disalin, hanya tautan)"
+  }
+ },
+ "in_sagara_baterai_air_laut": {
+  "status": "uji lapangan",
+  "ringkasan": "SAGARA (Seawater Energy Utilization for Coastal Community) adalah baterai tenaga air laut untuk menyalakan lampu pemikat ikan pada bagan, dikembangkan Departemen PSP FPIK IPB University dalam Matching Fund Kedaireka 2023. Enam sel baterai diuji di Teluk Palabuhanratu dan menyalakan dua warna lampu 2 sampai 3 jam.",
+  "masalah": "Nelayan bagan bergantung pada BBM untuk operasional lampu pemikat ikan.",
+  "cara_kerja": "Air laut menjadi sumber tenaga baterai; sistem dipadukan dengan otomatisasi dan penyimpanan daya seperti powerbank, serta lampu yang warnanya dapat diatur jarak jauh.",
+  "spesifikasi": [
+   {
+    "nama": "Hasil uji",
+    "nilai": "6 sel baterai menyalakan 2 warna lampu selama 2 sampai 3 jam",
+    "sumber_url": "https://www.ipb.ac.id/news/index/2023/10/implementasi-kedaireka-departemen-psp-ipb-university-sosialisasi-sagara-baterai-tenaga-air-laut-ke-nelayan-palabuhanratu/"
+   }
+  ],
+  "tonggak": [
+   {
+    "tanggal": "2023-09-22",
+    "teks": "Uji coba di Teluk Palabuhanratu",
+    "sumber_url": "https://www.ipb.ac.id/news/index/2023/10/implementasi-kedaireka-departemen-psp-ipb-university-sosialisasi-sagara-baterai-tenaga-air-laut-ke-nelayan-palabuhanratu/"
+   },
+   {
+    "tanggal": "2023-10-04",
+    "teks": "Diberitakan situs IPB University",
+    "sumber_url": "https://www.ipb.ac.id/news/index/2023/10/implementasi-kedaireka-departemen-psp-ipb-university-sosialisasi-sagara-baterai-tenaga-air-laut-ke-nelayan-palabuhanratu/"
+   }
+  ],
+  "tim": [
+   {
+    "nama": "Sugeng Hari Wisudo",
+    "afiliasi": "Departemen PSP, FPIK IPB University",
+    "peran": "Ketua tim program Kedaireka"
+   },
+   {
+    "nama": "Mohammad Imron",
+    "afiliasi": "IPB University",
+    "peran": "Anggota tim"
+   },
+   {
+    "nama": "Firdaus Basbeth",
+    "afiliasi": "IPB University",
+    "peran": "Anggota tim"
+   }
+  ],
+  "pendana": [
+   {
+    "nama": "Kedaireka (Matching Fund 2023)",
+    "nilai": ""
+   }
+  ],
+  "lokasi_uji": {
+   "kota": "Palabuhanratu, Sukabumi",
+   "provinsi": "Jawa Barat",
+   "lat": -6.9277,
+   "lng": 106.93,
+   "presisi": "kota"
+  },
+  "foto_sumber": {
+   "url": "https://www.ipb.ac.id/wp-content/uploads/2023/10/Implementasi-Kedaireka-Departemen-PSP-IPB-University-Sosialisasi-‘SAGARA-Baterai-Tenaga-Air-Laut-ke-Nelayan-Palabuhanratu.png",
+   "halaman": "https://www.ipb.ac.id/news/index/2023/10/implementasi-kedaireka-departemen-psp-ipb-university-sosialisasi-sagara-baterai-tenaga-air-laut-ke-nelayan-palabuhanratu/",
+   "kredit": "Dokumentasi IPB University (tidak disalin, hanya tautan)"
+  }
+ },
+ "in_tedapis_ipb": {
+  "ringkasan": "TEDAPIS (Tenda Darurat Pintar Bertenaga Panel Surya) adalah tenda pengungsian bertenaga panel surya dengan piranti pintar, karya mahasiswa Departemen Fisika FMIPA IPB University dalam PKM Karsa Cipta. Tim dipimpin Aldi Destia Lesmana dengan pembimbing Dr. Ir. Irzaman.",
+  "masalah": "Korban bencana alam membutuhkan energi listrik darurat dari sumber yang mudah didapat di pengungsian.",
+  "cara_kerja": "Panel surya terintegrasi pada tenda menyediakan listrik, dilengkapi piranti pintar.",
+  "tonggak": [
+   {
+    "tanggal": "2019-07-20",
+    "teks": "Diberitakan situs IPB University",
+    "sumber_url": "https://www.ipb.ac.id/news/index/2019/07/mahasiswa-ipb-university-ciptakan-tenda-darurat-pintar-bertenaga-panel-surya-sediakan-energi-listrik-di-tempat-bencana/db2e07a5b98f62882174b7d601b0b2b6/"
+   }
+  ],
+  "tim": [
+   {
+    "nama": "Aldi Destia Lesmana",
+    "afiliasi": "Departemen Fisika, FMIPA IPB University",
+    "peran": "Ketua tim"
+   },
+   {
+    "nama": "Astri Wahyuningtyas",
+    "afiliasi": "IPB University",
+    "peran": "Anggota"
+   },
+   {
+    "nama": "Rohul Rizki Mubaroq Hartman",
+    "afiliasi": "IPB University",
+    "peran": "Anggota"
+   },
+   {
+    "nama": "Irzaman",
+    "afiliasi": "Departemen Fisika, IPB University",
+    "peran": "Pembimbing"
+   }
+  ],
+  "foto_sumber": {
+   "url": "https://www.ipb.ac.id/wp-content/uploads/2023/07/mahasiswa-ipb-university-ciptakan-tenda-darurat-pintar-bertenaga-panel-surya-sediakan-energi-listrik-di-tempat-bencana-news.jpg",
+   "halaman": "https://www.ipb.ac.id/news/index/2019/07/mahasiswa-ipb-university-ciptakan-tenda-darurat-pintar-bertenaga-panel-surya-sediakan-energi-listrik-di-tempat-bencana/db2e07a5b98f62882174b7d601b0b2b6/",
+   "kredit": "Dokumentasi IPB University (tidak disalin, hanya tautan)"
+  }
+ },
+ "in_plts_hybrid_lele_jombang": {
+  "status": "terpasang",
+  "ringkasan": "Pranata Laboratorium Pendidikan PENS memasang satu unit PLTS Hybrid untuk pompa sirkulasi air kolam lele Kelompok Barokah Lele di Dusun Gabus, Desa Tunggorono, Jombang. Kegiatan berlangsung 24 Oktober 2026 dan dipimpin Agus Fitriyanto.",
+  "masalah": "Pembudidaya dengan 11 kolam bundar terpal mengeluarkan biaya listrik lebih dari Rp200.000 per bulan untuk pompa, dan pemadaman PLN mengganggu sirkulasi air.",
+  "cara_kerja": "PLTS Hybrid menyuplai pompa sirkulasi air kolam sehingga tidak bergantung penuh pada listrik PLN.",
+  "tonggak": [
+   {
+    "tanggal": "2026-10-24",
+    "teks": "Implementasi di Dusun Gabus, Desa Tunggorono, Jombang",
+    "sumber_url": "https://www.pens.ac.id/2026/10/31/plts-hybrid-pens-bantu-pembudidaya-lele-di-jombang-tekan-biaya-operasional-dan-jaga-sirkulasi-air-kolam/"
+   }
+  ],
+  "tim": [
+   {
+    "nama": "Agus Fitriyanto",
+    "afiliasi": "Pranata Laboratorium Pendidikan, PENS",
+    "peran": "Ketua tim"
+   }
+  ],
+  "lokasi_uji": {
+   "kota": "Jombang",
+   "provinsi": "Jawa Timur",
+   "lat": -7.5467,
+   "lng": 112.2336,
+   "presisi": "kota"
+  }
+ },
+ "in_pju_plts_cukir": {
+  "status": "terpasang",
+  "ringkasan": "Tim Prodi Sarjana Terapan Teknik Elektronika PENS yang diketuai Ibnu Cipta Ramadhan memasang penerangan jalan umum berbasis PLTS di kawasan Masjid At-Taqwa, Desa Cukir, Kecamatan Diwek, Jombang, pada 10 Oktober 2026.",
+  "masalah": "Pencahayaan malam di kawasan masjid kurang memadai sehingga mengurangi kenyamanan warga.",
+  "cara_kerja": "Energi matahari diubah menjadi listrik untuk menyalakan lampu penerangan di kawasan masjid.",
+  "tonggak": [
+   {
+    "tanggal": "2026-10-10",
+    "teks": "Pemasangan di Masjid At-Taqwa, Desa Cukir",
+    "sumber_url": "https://www.pens.ac.id/2026/10/30/manfaatkan-energi-matahari-pens-hadirkan-penerangan-jalan-berbasis-plts-di-masjid-at-taqwa-desa-cukir/"
+   },
+   {
+    "tanggal": "2026-10-30",
+    "teks": "Diberitakan situs PENS",
+    "sumber_url": "https://www.pens.ac.id/2026/10/30/manfaatkan-energi-matahari-pens-hadirkan-penerangan-jalan-berbasis-plts-di-masjid-at-taqwa-desa-cukir/"
+   }
+  ],
+  "tim": [
+   {
+    "nama": "Ibnu Cipta Ramadhan",
+    "afiliasi": "Prodi Sarjana Terapan Teknik Elektronika, PENS",
+    "peran": "Ketua tim Pengmas"
+   }
+  ],
+  "lokasi_uji": {
+   "kota": "Jombang",
+   "provinsi": "Jawa Timur",
+   "lat": -7.5467,
+   "lng": 112.2336,
+   "presisi": "kota"
+  }
+ },
+ "in_penyimpanan_surya_pju_sajen": {
+  "status": "terpasang",
+  "ringkasan": "Prodi D3 Teknik Elektro Industri PENS memasang PJU bertenaga surya dengan penyimpanan baterai di kawasan peternakan dan pertanian Desa Sajen, Kecamatan Pacet, Mojokerto, pada 6 Agustus 2026.",
+  "masalah": "Jalur menuju kandang dan lahan minim penerangan sehingga berisiko kecelakaan, dan sebagian lokasi belum terjangkau jaringan listrik konvensional.",
+  "cara_kerja": "Panel surya mengisi baterai lewat solar charge controller pada siang hari, lalu lampu LED menyala otomatis malam hari tanpa listrik PLN.",
+  "tonggak": [
+   {
+    "tanggal": "2026-08-06",
+    "teks": "Implementasi di Desa Sajen, Pacet",
+    "sumber_url": "https://www.pens.ac.id/2026/08/07/tingkatkan-akses-penerangan-pens-implementasikan-sistem-penyimpanan-energi-di-desa-sajen/"
+   }
+  ],
+  "lokasi_uji": {
+   "kota": "Pacet, Mojokerto",
+   "provinsi": "Jawa Timur",
+   "lat": -7.4726,
+   "lng": 112.4338,
+   "presisi": "kota"
+  }
+ },
+ "in_pju_surya_pacet": {
+  "status": "terpasang",
+  "ringkasan": "Prodi Sarjana Terapan Teknik Elektro Industri PENS memasang PJU berbasis panel surya di kawasan peternakan dan pertanian Desa Sajen, Kecamatan Pacet, Mojokerto, pada 6 Agustus 2026, berdasarkan observasi lapangan dan koordinasi dengan pemerintah desa.",
+  "masalah": "Penerangan jalan menuju area kandang dan lahan terbatas sehingga menghambat mobilitas dan mengurangi keamanan.",
+  "cara_kerja": "Panel surya mengisi baterai lewat solar charge controller; lampu LED menyala otomatis di malam hari secara mandiri.",
+  "tonggak": [
+   {
+    "tanggal": "2026-08-06",
+    "teks": "Pemasangan di Desa Sajen, Pacet",
+    "sumber_url": "https://www.pens.ac.id/2026/08/07/dukung-energi-bersih-pens-terapkan-pju-panel-surya-di-kawasan-peternakan-kecamatan-pacet/"
+   }
+  ],
+  "lokasi_uji": {
+   "kota": "Pacet, Mojokerto",
+   "provinsi": "Jawa Timur",
+   "lat": -7.4726,
+   "lng": 112.4338,
+   "presisi": "kota"
+  }
+ },
+ "in_charging_surya_gebang_putih": {
+  "status": "terpasang",
+  "ringkasan": "Prodi Teknik Mekatronika PENS menyerahkan charging station panel surya untuk kendaraan listrik roda dua kepada Kelurahan Gebang Putih, Sukolilo, Surabaya, pada 17 Oktober 2025. Ini pengembangan dari charging station ponsel yang dipasang tahun sebelumnya.",
+  "masalah": "Pengguna motor listrik di Gebang Putih meningkat dan membutuhkan tempat pengisian daya.",
+  "cara_kerja": "Panel surya mengisi baterai, lalu inverter 220 V mengeluarkan listrik untuk mengisi kendaraan.",
+  "spesifikasi": [
+   {
+    "nama": "Panel surya",
+    "nilai": "hingga 1100 watt",
+    "sumber_url": "https://www.pens.ac.id/2025/11/12/manfaatkan-fungsi-tenaga-surya-pens-kembangkan-inovasi-charging-station-bagi-kelurahan-gebang-putih/"
+   },
+   {
+    "nama": "Baterai",
+    "nilai": "24 V, 100 Ah",
+    "sumber_url": "https://www.pens.ac.id/2025/11/12/manfaatkan-fungsi-tenaga-surya-pens-kembangkan-inovasi-charging-station-bagi-kelurahan-gebang-putih/"
+   }
+  ],
+  "tonggak": [
+   {
+    "tanggal": "2025-10-17",
+    "teks": "Penyerahan di Kantor Kelurahan Gebang Putih",
+    "sumber_url": "https://www.pens.ac.id/2025/11/12/manfaatkan-fungsi-tenaga-surya-pens-kembangkan-inovasi-charging-station-bagi-kelurahan-gebang-putih/"
+   }
+  ],
+  "tim": [
+   {
+    "nama": "Novian Fajar Satria",
+    "afiliasi": "Prodi Teknik Mekatronika, PENS",
+    "peran": "Ketua prodi pembuka kegiatan"
+   }
+  ],
+  "lokasi_uji": {
+   "kota": "Surabaya",
+   "provinsi": "Jawa Timur",
+   "lat": -7.2575,
+   "lng": 112.7521,
+   "presisi": "kota"
+  }
+ },
+ "in_charging_surya_mangrove_wonorejo": {
+  "status": "terpasang",
+  "ringkasan": "Prodi Sarjana Terapan Teknik Mekatronika PENS menyerahkan charging station portabel tenaga surya kepada pengelola Taman Ekowisata Mangrove Wonorejo, Surabaya, pada 20 Oktober 2026. Alat dipasang di perahu wisata untuk penerangan, pengisian ponsel, dan pompa air.",
+  "masalah": "Kapal wisata mangrove membutuhkan listrik mandiri dan ramah lingkungan tanpa pasokan PLN.",
+  "cara_kerja": "Modul surya portabel mengisi baterai di perahu tanpa kabel dari darat.",
+  "spesifikasi": [
+   {
+    "nama": "Baterai",
+    "nilai": "12 V, 100 Ah",
+    "sumber_url": "https://www.pens.ac.id/2026/10/24/dukung-operasional-kapal-wisata-mangrove-wonorejo-prodi-sarjana-terapan-teknik-mekatronika-pens-hadirkan-charging-station-tenaga-surya/"
+   },
+   {
+    "nama": "Daya maksimum",
+    "nilai": "450 watt",
+    "sumber_url": "https://www.pens.ac.id/2026/10/24/dukung-operasional-kapal-wisata-mangrove-wonorejo-prodi-sarjana-terapan-teknik-mekatronika-pens-hadirkan-charging-station-tenaga-surya/"
+   }
+  ],
+  "tonggak": [
+   {
+    "tanggal": "2026-10-20",
+    "teks": "Serah terima dan demonstrasi di Taman Ekowisata Mangrove Wonorejo",
+    "sumber_url": "https://www.pens.ac.id/2026/10/24/dukung-operasional-kapal-wisata-mangrove-wonorejo-prodi-sarjana-terapan-teknik-mekatronika-pens-hadirkan-charging-station-tenaga-surya/"
+   }
+  ],
+  "tim": [
+   {
+    "nama": "Nobby Bagus Muliawan",
+    "afiliasi": "Prodi Sarjana Terapan Teknik Mekatronika, PENS",
+    "peran": "Ketua pelaksana"
+   }
+  ],
+  "lokasi_uji": {
+   "kota": "Surabaya",
+   "provinsi": "Jawa Timur",
+   "lat": -7.2575,
+   "lng": 112.7521,
+   "presisi": "kota"
+  }
+ },
+ "in_bus_listrik_vktr": {
+  "ringkasan": "Bus listrik pertama dari PT VKTR Teknologi Mobilitas tiba di PENS pada 28 Mei 2022 sebagai awal kolaborasi menuju pusat riset dan inovasi elektrifikasi transportasi. Unit awal masih diimpor utuh dari China.",
+  "cara_kerja": "Bus listrik low floor berbaterai LiFePO4 dengan teknologi kemiringan bodi ke kiri agar ramah penyandang disabilitas; dipelajari PENS untuk pengembangan komponen dalam negeri.",
+  "spesifikasi": [
+   {
+    "nama": "Baterai",
+    "nilai": "324 kWh, lithium ferro phosphate",
+    "sumber_url": "https://www.pens.ac.id/2022/05/28/berkolaborasi-dengan-pt-vktr-teknologi-mobilitas-pens-kedatangan-bus-listrik-pertama-di-indonesia/"
+   },
+   {
+    "nama": "Kapasitas",
+    "nilai": "sekitar 50 penumpang",
+    "sumber_url": "https://www.pens.ac.id/2022/05/28/berkolaborasi-dengan-pt-vktr-teknologi-mobilitas-pens-kedatangan-bus-listrik-pertama-di-indonesia/"
+   },
+   {
+    "nama": "Panjang",
+    "nilai": "12 meter",
+    "sumber_url": "https://www.pens.ac.id/2022/05/28/berkolaborasi-dengan-pt-vktr-teknologi-mobilitas-pens-kedatangan-bus-listrik-pertama-di-indonesia/"
+   },
+   {
+    "nama": "Kecepatan maksimum",
+    "nilai": "60 km per jam",
+    "sumber_url": "https://www.pens.ac.id/2022/05/28/berkolaborasi-dengan-pt-vktr-teknologi-mobilitas-pens-kedatangan-bus-listrik-pertama-di-indonesia/"
+   }
+  ],
+  "tonggak": [
+   {
+    "tanggal": "2022-05-28",
+    "teks": "Bus tiba di PENS dari Jakarta",
+    "sumber_url": "https://www.pens.ac.id/2022/05/28/berkolaborasi-dengan-pt-vktr-teknologi-mobilitas-pens-kedatangan-bus-listrik-pertama-di-indonesia/"
+   }
+  ],
+  "mitra_peran": [
+   {
+    "nama": "Politeknik Elektronika Negeri Surabaya",
+    "peran": "Mitra riset dan penerima bus"
+   }
+  ],
+  "lokasi_uji": {
+   "kota": "Surabaya",
+   "provinsi": "Jawa Timur",
+   "lat": -7.2575,
+   "lng": 112.7521,
+   "presisi": "kota"
+  }
+ }
+}

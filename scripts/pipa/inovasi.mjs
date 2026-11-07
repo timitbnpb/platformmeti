@@ -116,6 +116,9 @@ function bangun(tgl) {
   for (const b of kur) for (const p of b.pembuat || []) p.lembaga_id ||= (ids.has(p.lembaga_id) && p.lembaga_id) || byNm.get(normOrg(p.nama)) || null;
   const rinci = fs.existsSync(path.join(ROOT, 'data/inovasi/rinci.json')) ? JSON.parse(fs.readFileSync(path.join(ROOT, 'data/inovasi/rinci.json'), 'utf8')) : {};
   for (const b of kur) { const r = rinci[b.id]; if (!r) continue; const { sumber_tambah, ...isi } = r; Object.assign(b, isi); if (sumber_tambah) b.sumber = [...b.sumber, ...sumber_tambah.filter((t) => !b.sumber.some((x) => x.url === t.url))]; }
+  const orang = JSON.parse(fs.readFileSync(path.join(ROOT, 'public/data/orang.json'), 'utf8')).baris, nOr = (x) => String(x).toLowerCase().replace(/[^a-z ]/g, '').trim(), byOr = new Map();
+  for (const o of orang) byOr.set(nOr(o.nama), [...(byOr.get(nOr(o.nama)) || []), o.id]);
+  for (const b of kur) for (const m of b.tim || []) { const h = byOr.get(nOr(m.nama)); if (h?.length === 1) m.orang_id = h[0]; } // hanya cocok persis dan unik
   const baris = [...kur, ...dariTkdn(tk, orgs)].sort((a, b) => a.id.localeCompare(b.id));
   const gal = baris.flatMap(periksa); if (gal.length) { console.error(gal.join('\n')); process.exit(1); }
   if (new Set(baris.map((b) => b.id)).size !== baris.length) { console.error('id ganda'); process.exit(1); }

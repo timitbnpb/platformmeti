@@ -308,22 +308,28 @@ nav.jm-isi{display:none!important}
 .jm-taut>span{min-width:0;overflow-wrap:anywhere}
 .jm-taut-lb{width:16px;height:16px;flex:none;object-fit:contain;border-radius:3px}
 .jm-taut-ik{display:inline-grid;width:16px;height:16px;flex:none}.jm-taut-ik svg{width:16px;height:16px}
-.jm-terkait-isi{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:20px 24px;padding:18px 22px;align-items:start}
-.jm-terkait-grup{display:flex;flex-direction:column;gap:8px;min-width:0}
-.jm-terkait-grup h3{display:flex;align-items:center;gap:8px;margin:0;padding-bottom:8px;border-bottom:2px solid var(--line);font:700 var(--t-body)/var(--lh-judul) var(--display);color:var(--head)}.jm-terkait-grup h3 .jm-ik{stroke:var(--accent);fill:none}
-.jm-terkait-grup h3 b{margin-left:auto;min-width:24px;padding:0 8px;border-radius:var(--r-pil);background:var(--soft-hijau);color:var(--accent);font:700 var(--t-kecil)/var(--lh-rapat) var(--font);padding-block:2px;text-align:center}
-.jm-terkait-grup ul{list-style:none;margin:0;padding:0;display:grid;gap:6px}
-.jm-tr{display:flex;align-items:center;gap:8px;min-width:0;padding:8px 10px;border:1px solid var(--line);border-radius:var(--r-sm);background:var(--card)}
-.jm-tr[hidden]{display:none}
-.jm-tr:hover{border-color:var(--accent);background:var(--soft-hijau)}
-.jm-tr-a{display:flex;align-items:center;gap:10px;flex:1;min-width:0;color:var(--ink);text-decoration:none}
-.jm-tr-ik{display:inline-grid;place-items:center;flex:none;width:28px;height:28px;border-radius:var(--r-sm);background:var(--soft-hijau)}.jm-tr-ik .jm-ik{stroke:var(--accent);fill:none}
-.jm-tr-lb{width:24px;height:24px;object-fit:contain;border-radius:3px}
-.jm-tr-isi{display:flex;flex-direction:column;min-width:0;flex:1}
-.jm-tr-isi b{font:600 var(--t-tombol)/var(--lh-rapat) var(--font);color:var(--accent);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
-.jm-tr-isi small{font-size:var(--t-kecil);color:var(--ink2);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
-.jm-tr-meta{display:flex;flex-direction:column;align-items:flex-end;gap:2px;flex:none}.jm-tr-tgl{font-size:var(--t-kecil);color:var(--ink2);white-space:nowrap}
-.jm-tr-semua{align-self:flex-start}.jm-tr-semua .jm-ik{stroke:currentColor;fill:none}
+.jm-terkait-isi{display:flex;flex-direction:column;gap:14px;padding:16px 22px 18px}
+.jm-terkait-isi{min-width:0}.jm-terkait-isi>.jm-tab{margin-bottom:0;display:flex!important;overflow-x:auto}.jm-terkait-isi>.jm-tab>button{flex:1 0 auto;width:auto!important}.jm-terkait-isi>.jm-tab button b{min-width:24px;padding:2px 8px;border-radius:var(--r-pil);background:var(--soft-hijau);color:var(--accent);font:700 var(--t-kecil)/var(--lh-rapat) var(--font);text-align:center}
+.jm-terkait{min-width:0;max-width:100%}.jm-terkait-grup[hidden],.jm-tk[hidden]{display:none}
+.jm-tk-kisi{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+@media (max-width:1023px){.jm-tk-kisi{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:640px){.jm-tk-kisi{grid-template-columns:minmax(0,1fr)}}
+.jm-tk{position:relative;min-width:0;border:1px solid var(--line);border-radius:var(--r-md);background:var(--card);transition:border-color .15s,background .15s}
+.jm-tk:hover{border-color:var(--accent);background:var(--soft-hijau)}
+.jm-tk-a{display:flex;align-items:flex-start;gap:12px;min-width:0;min-height:var(--target);padding:12px 14px;color:var(--ink);text-decoration:none}
+.jm-tk-a:focus-visible{outline:3px solid var(--fokus);outline-offset:2px;border-radius:var(--r-md)}
+.jm-tk-lg{position:relative;display:inline-grid;place-items:center;flex:none;width:40px;height:40px;border-radius:var(--r-sm);background:color-mix(in srgb,var(--tk,var(--accent)) 14%,var(--card));color:var(--tk,var(--accent));overflow:hidden}
+.jm-tk-lg .jm-ikt,.jm-tk-lg .jm-ik{width:22px;height:22px}.jm-tk-dok .jm-ik{stroke:var(--accent);fill:none}
+.jm-tk-mono{font:700 var(--t-tombol)/1 var(--display);color:var(--head);background:color-mix(in srgb,var(--data2) 16%,var(--card))}
+.jm-tk-mono.jm-w3{background:color-mix(in srgb,var(--data3) 20%,var(--card))}.jm-tk-mono.jm-w4{background:color-mix(in srgb,var(--data4) 24%,var(--card))}.jm-tk-mono.jm-w5{background:color-mix(in srgb,var(--data5) 18%,var(--card))}
+.jm-tk-img{position:absolute;inset:0;width:100%;height:100%;padding:4px;box-sizing:border-box;object-fit:contain;background:var(--card)}
+.jm-tk-isi{display:flex;flex-direction:column;gap:6px;min-width:0;flex:1}
+.jm-tk-j{font:600 var(--t-tombol)/var(--lh-rapat) var(--font);color:var(--head);display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;overflow-wrap:anywhere}
+.jm-tk-m{display:flex;flex-wrap:wrap;align-items:center;gap:4px 8px}
+.jm-tk-s{font-size:var(--t-kecil);color:var(--ink2)}
+.jm-tk-pen{display:inline-flex;align-items:center;gap:6px;min-width:0}.jm-tk-pen>span:last-child{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.jm-tk-kecil{width:18px;height:18px;font-size:9px;border-radius:50%}
+.jm-tk .jm-reg-iks{position:absolute;top:8px;right:8px}
 /* penerbit: logo + nama pendek (pemilik: logo saja tidak terbaca); jumlah aturan disembunyikan secara visual */
 .jm-reg-pen .jm-pen{display:flex;align-items:center;gap:10px;text-align:left}
 .jm-reg-pen .jm-pen-pendek{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;font:600 var(--t-tombol)/var(--lh-rapat) var(--font);color:var(--ink)}
@@ -678,3 +684,10 @@ main>:is(section,div,article)+:is(section,div,article){margin-top:max(24px,var(-
 .jm-uang{display:flex;justify-content:space-between;align-items:baseline;gap:8px;width:100%;font-variant-numeric:tabular-nums}
 .jm-uang-s{color:var(--ink2);font-weight:600}
 .jm-uang-n{text-align:right;white-space:nowrap}
+/* "Cara menghitung" seragam di semua halaman (pemilik 8 Nov 2026 "jelek"): daftar bernomor dua kolom lega,
+   nomor bulat di kiri sejajar baris pertama, teks rata kiri-kanan, tanpa kotak kecil bertumpuk. */
+:is(.jm-an-cara,.jm-tr-cara,.jm-tk-cara,.jm-pg-cara,.jm-pel-cara,.jm-cara,.ak-cara,.ak-sk-cara,.oj-cara,.sta-cara,.ix-cara){display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px 28px;margin:0;padding:0;list-style:none;counter-reset:cara}
+:is(.jm-an-cara,.jm-tr-cara,.jm-tk-cara,.jm-pg-cara,.jm-pel-cara,.jm-cara,.ak-cara,.ak-sk-cara,.oj-cara,.sta-cara,.ix-cara)>*{position:relative;display:block!important;margin:0;padding:12px 14px 12px 52px!important;border:1px solid var(--line);border-radius:var(--r-lg);background:var(--card)!important;text-align:justify;hyphens:auto;line-height:1.55;counter-increment:cara}
+:is(.jm-an-cara,.jm-tr-cara,.jm-tk-cara,.jm-pg-cara,.jm-pel-cara,.jm-cara,.ak-cara,.ak-sk-cara,.oj-cara,.sta-cara,.ix-cara)>*::before{content:counter(cara);position:absolute;left:14px;top:12px;display:grid;place-items:center;width:26px;height:26px;border-radius:50%;background:var(--soft-hijau);color:var(--accent);font:700 var(--t-kecil)/1 var(--font)}
+:is(.jm-an-cara,.jm-tr-cara,.jm-tk-cara,.jm-pg-cara,.jm-pel-cara,.jm-cara,.ak-cara,.ak-sk-cara,.oj-cara,.sta-cara,.ix-cara)>* :is(.jm-cara-no,b.no,.no){display:none}
+@media (max-width:760px){:is(.jm-an-cara,.jm-tr-cara,.jm-tk-cara,.jm-pg-cara,.jm-pel-cara,.jm-cara,.ak-cara,.ak-sk-cara,.oj-cara,.sta-cara,.ix-cara){grid-template-columns:1fr}}

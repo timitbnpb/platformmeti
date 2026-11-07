@@ -21,12 +21,12 @@ const idx = {}; // jenis -> { byId: Map(id -> rekam), byNama: Map(norm -> id) }
 const muatJson = (j) => (data[j] ??= fetch(`/data/${SUMBER[j]}.json`).then((r) => r.json()).catch(() => { delete data[j]; return { baris: [] }; }));
 const KODE_REG = { uu: "UU", perppu: "Perppu", pp: "PP", perpres: "Perpres", keppres: "Keppres", inpres: "Inpres", permen: "Permen", perda: "Perda" };
 const rekam = {
-  proyek: (b) => ({ id: b.id, nama: namaProyek(b), lain: [b.nama, ...(b.nama_lain || [])] }),
-  org: (b) => ({ id: b.id, nama: b.nama, lain: [b.nama, b.singkatan, ...(b.nama_lain || [])], logo: b.logo }),
+  proyek: (b) => ({ id: b.id, nama: namaProyek(b), lain: [b.nama, ...(b.nama_lain || [])], tek: b.teknologi, prov: b.lokasi?.provinsi, mw: (b.kapasitas || []).find((c) => /^MWp?$/.test(c.satuan))?.nilai, st: b.status?.[0]?.nilai }),
+  org: (b) => ({ id: b.id, nama: b.nama, lain: [b.nama, b.singkatan, ...(b.nama_lain || [])], logo: b.logo, kat: b.kategori?.label }),
   orang: (b) => ({ id: b.id, nama: [b.gelar, b.nama].filter(Boolean).join(" "), lain: [b.nama], org: b.organisasi_id }),
   regulasi: (b) => ({ id: b.id, nama: b.judul, lain: [], kode: `${KODE_REG[b.jenis] || String(b.jenis || "").toUpperCase()} ${b.nomor}/${b.tahun}`, tgl: b.tanggal_ditetapkan, status: b.status, pdf: b.url_pdf, sumber: b.url_sumber }),
   event: (b) => ({ id: b.slug, nama: b.judul, lain: [], ada: !!b.slug, tgl: b.tanggal }),
-  dokumen: (b) => ({ id: b.id, nama: b.judul, lain: [], tgl: b.tanggal }),
+  dokumen: (b) => ({ id: b.id, nama: b.judul, lain: [], tgl: b.tanggal, jenis: b.jenis, penerbit: b.penerbit }),
   program: (b) => ({ id: b.id, nama: b.nama, lain: [b.nama] }),
   siaran: (b) => ({ id: b.id, nama: b.judul, lain: [], tgl: b.tanggal }),
   berita: (b) => ({ id: b.id, nama: b.judul, lain: [] }),
@@ -102,7 +102,7 @@ export const tautSiaran = (id, teks) => bangun("siaran", id, teks);
 
 /* ---------- graf hubungan dari id silang di data ---------- */
 let graf = null;
-const NAMA_BERITA = (b) => ({ id: b.id, nama: b.judul, url: b.url, media: b.media });
+const NAMA_BERITA = (b) => ({ id: b.id, nama: b.judul, url: b.url, media: b.media, tgl: b.terbit });
 async function bangunGraf() {
   const J = ["proyek", "org", "orang", "regulasi", "berita", "event", "dokumen", "siaran", "program"];
   const D = Object.fromEntries(await Promise.all(J.map(async (j) => [j, (await muatJson(j)).baris || []])));

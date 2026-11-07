@@ -46,3 +46,6 @@
 .jm-kh-ubin[data-n="1"]{grid-template-columns:minmax(0,1fr)}
 .jm-kh-ubin[data-n="2"]{grid-template-columns:repeat(2,minmax(0,1fr))}
 .jm-kh-gambar:not(:has(.jm-kh-foto)) .jm-kh-lencana img{width:64px;height:64px}
+/* kepala halaman tidak boleh menempel subnav di atasnya (pemilik 8 Nov 2026 "kenapa atasnya nempel") */
+.jm-kh{margin-top:24px}
+@media (max-width:639px){.jm-kh{margin-top:16px}}

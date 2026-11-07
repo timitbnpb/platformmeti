@@ -3011,3 +3011,4 @@ button.ak-orgt:hover,button.ak-orgt:focus-visible{color:var(--brand);background:
 .ak-in-pb{list-style:none;margin:0;padding:0;display:grid;gap:8px}.ak-in-pb li{display:flex;gap:8px;align-items:flex-start;font-size:var(--t-tombol)}.ak-in-pb svg{width:16px;height:16px;flex:none;margin-top:2px}
 .ak-in-jn{position:static}
 .ak-lkaki:has(.ak-info)::before{display:none}.ak-lkaki:has(.ak-info){display:flex;align-items:center;gap:6px}
+.ak-in-f>div{display:grid;gap:8px;min-width:0}.ak-in-mini{width:100%}

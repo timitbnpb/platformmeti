@@ -24,7 +24,7 @@ const kuintil = (s) => Math.min(4, Math.floor(s / 20));
 function mentahTeks(id, k) {
   if (k.skor === null) return `<span class="ix-kosong-sel">${esc(t("ix.p.kosong"))}</span>`;
   if (id === "rued") return esc(t("ix.ada"));
-  return esc(num(k.mentah, id === "elektrifikasi" ? 2 : 1) + (SATUAN[id] ? " " + SATUAN[id] : ""));
+  return esc(num(k.mentah, id === "elektrifikasi" ? 2 : Number.isInteger(k.mentah) ? 0 : 1) + (SATUAN[id] ? " " + SATUAN[id] : ""));
 }
 const alasanTeks = (al, kosong = t("ix.a.bersih")) => al.map((a) => t("ix.a." + a.k, { n: a.n, f: (a.f || []).map((x) => t("ix.f." + x)).join(", ") })).join("; ") || kosong;
 
@@ -148,7 +148,7 @@ function tabelProyek() {
   const n = (k) => S.d.proyek.filter((p) => p.kategori === k).length;
   const sar = [["semua", t("ix.f.semua"), S.d.proyek.length], ["bermasalah", t("ix.cat.bermasalah"), n("bermasalah")], ["data_tipis", t("ix.f.tipis"), n("data_tipis")]];
   return `<div class="ix-saring" role="group" aria-label="${esc(t("ix.f.j"))}">${sar.map(([v, l, c]) => `<button type="button" data-saring="${v}" aria-pressed="${S.saring === v}">${esc(l)} (${esc(num(c))})</button>`).join("")}</div>
-    <div class="jm-gulir"><table class="jm-tabel ix-tb ix-tb-proy"><thead><tr>${["ix.c.proyek", "ix.c.pemilik", "ix.c.tek", "ix.c.prov", "ix.c.status", "ix.c.kategori", "ix.c.kes", "ix.c.lk", "ix.c.kabar"].map((k) => `<th>${esc(t(k))}</th>`).join("")}</tr></thead><tbody>${baris}</tbody></table></div>`;
+    <div class="jm-gulir"><table class="jm-tabel ix-tb ix-tb-proy"><colgroup><col class="p-pr"><col class="p-pe"><col class="p-te"><col class="p-pv"><col class="p-st"><col class="p-ka"><col class="p-sk"><col class="p-lk"><col class="p-kb"></colgroup><thead><tr>${["ix.c.proyek", "ix.c.pemilik", "ix.c.tek", "ix.c.prov", "ix.c.status", "ix.c.kategori", "ix.c.kes", "ix.c.lk", "ix.c.kabar"].map((k) => `<th>${esc(t(k))}</th>`).join("")}</tr></thead><tbody>${baris}</tbody></table></div>`;
 }
 
 /* ---------- kajian (perakit murni: /indeks_kajian.js) ---------- */

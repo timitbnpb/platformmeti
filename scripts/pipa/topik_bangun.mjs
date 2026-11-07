@@ -95,6 +95,7 @@ function blokKarbon() {
     sistem: (tr.sistem || []).map((s) => ({ id: s.id, nama: s.nama, tabel: s.tabel_ruptl, skenario: s.skenario, tahun: s.tahun, emisi: s.emisi_juta_ton, produksi: s.produksi_gwh, ebt: s.bauran_ebt_persen, batubara: s.bauran_batubara_persen, intensitas: s.emisi_juta_ton.map((e, i) => (s.produksi_gwh[i] ? Math.round((e / s.produksi_gwh[i]) * 1e5) / 100 : null)) })),
     jetp: (() => { const kh = baca("keuangan_hijau"), jc = baca("jetp_cipp"); return { komitmen_usd_miliar: kh.jetp.komitmen_usd_miliar, tanggal: kh.jetp.tanggal, bukti: kh.jetp.tingkat_bukti, ebt_didukung_mw: jc.ringkasan.energi_terbarukan_didukung_mw, penurunan_ghg_tco2e: jc.ringkasan.potensi_penurunan_ghg_tco2e, catatan: jc.ringkasan.catatan, sumber: jc.sumber.map((x) => ({ judul: x.judul, penerbit: x.penerbit, url: x.url })), tanggal_cipp: jc.dibangun_pada }; })(),
     target: baca("target").target.filter((t) => /^ndc|ken-2060|rukn-2060-kapasitas/.test(t.id)).map((t) => ({ id: t.id, dokumen: t.dokumen, tahun: t.tahun_target, min: t.min, maks: t.maks, ukuran: t.ukuran, catatan: t.catatan, halaman: t.halaman })),
+    target_sumber: baca("target").sumber.map((x) => ({ id: x.id, judul: x.judul, url: x.url, tahun: x.tahun })),
     regulasi_resmi: tr.regulasi_karbon,
     sumber_ruptl: tr.sumber[0],
     tanggal: hariIni,

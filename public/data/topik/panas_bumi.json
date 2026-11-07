@@ -1,0 +1,4755 @@
+{
+ "id": "panas-bumi",
+ "versi": 1,
+ "diperbarui": "2026-11-08",
+ "judul": {
+  "id": "Panas bumi",
+  "en": "Geothermal"
+ },
+ "lead": {
+  "id": "Panas bumi memberi Indonesia beban dasar bersih dengan kapasitas terpasang 2,7 GW, tetapi pertumbuhannya ditentukan oleh siapa yang menanggung risiko eksplorasi.",
+  "en": "Geothermal gives Indonesia clean baseload with 2.7 GW installed, but its growth is decided by who carries the exploration risk."
+ },
+ "kunci": [
+  {
+   "label": {
+    "id": "Kapasitas terpasang 2025",
+    "en": "Installed capacity 2025"
+   },
+   "nilai": 2743.76,
+   "d": 1,
+   "satuan": {
+    "id": "MW",
+    "en": "MW"
+   },
+   "sumber": "irena",
+   "est": false
+  },
+  {
+   "label": {
+    "id": "Pembangkitan 2024",
+    "en": "Generation 2024"
+   },
+   "nilai": 16763,
+   "d": 0,
+   "satuan": {
+    "id": "GWh",
+    "en": "GWh"
+   },
+   "sumber": "irena",
+   "est": false
+  },
+  {
+   "label": {
+    "id": "Faktor kapasitas nasional 2024",
+    "en": "National capacity factor 2024"
+   },
+   "nilai": 72.5,
+   "d": 1,
+   "satuan": {
+    "id": "%",
+    "en": "%"
+   },
+   "sumber": "irena",
+   "est": true
+  },
+  {
+   "label": {
+    "id": "Tingkat sukses sumur eksplorasi (ESMAP)",
+    "en": "Exploration well success rate (ESMAP)"
+   },
+   "nilai": 59,
+   "d": 0,
+   "satuan": {
+    "id": "%",
+    "en": "%"
+   },
+   "sumber": "esmap",
+   "est": false
+  },
+  {
+   "label": {
+    "id": "WKP dan PSPE dilelang 2025",
+    "en": "WKP and PSPE auctioned in 2025"
+   },
+   "nilai": 10,
+   "d": 0,
+   "satuan": {
+    "id": "wilayah",
+    "en": "areas"
+   },
+   "sumber": "lelang",
+   "est": false
+  }
+ ],
+ "penting": [
+  {
+   "id": "Tarif PLTP dibatasi harga patokan tertinggi Perpres 112/2022 (mulai 9,76 sen US$/kWh untuk sampai 10 MW, sebelum faktor F), sehingga kelayakan bergantung pada biaya eksplorasi.",
+   "en": "PLTP prices are capped by the Perpres 112/2022 ceiling (from 9.76 US cents/kWh up to 10 MW, before the F factor), so feasibility depends on exploration cost."
+  },
+  {
+   "id": "Risiko hulu sebagian ditanggung negara lewat PISP/PT SMI (pengeboran pemerintah); proyek besar dibiayai JBIC, ADB, dan bank mitra.",
+   "en": "Upstream risk is partly carried by the state through PISP/PT SMI (government drilling); large projects are financed by JBIC, ADB and partner banks."
+  },
+  {
+   "id": "Kasus gagal di Indonesia berpusat pada keselamatan H2S dan penerimaan warga, bukan pada teknologi.",
+   "en": "Failed cases in Indonesia centre on H2S safety and resident acceptance, not technology."
+  }
+ ],
+ "posisi": {
+  "id": "Kapasitas terpasang Indonesia (2743.76 MW, IRENA 2025) lebih besar daripada Turki (1.691 MW, 2024), tetapi pertumbuhan 10 tahun terakhir sebesar 1305.5 MW (EST) masih jauh di bawah potensi yang sering dikutip.",
+  "en": "Indonesia's installed capacity (2743.76 MW, IRENA 2025) is larger than Turkey's (1,691 MW, 2024), but the 1305.5 MW (EST) added over the last 10 years is still far below the potential often cited."
+ },
+ "sumber": {
+  "irena": {
+   "judul": "IRENASTAT Renewable Energy Statistics 2026, kapasitas dan pembangkitan Indonesia (panas bumi)",
+   "penerbit": "IRENA",
+   "url": "https://pxweb.irena.org/pxweb/en/IRENASTAT/IRENASTAT__Power%20Capacity%20and%20Generation/",
+   "tanggal": "2026-11-08",
+   "tahun": 2026,
+   "bukti": "resmi",
+   "lisensi": "IRENA: bebas dipakai dengan atribusi IRENASTAT"
+  },
+  "perpres112": {
+   "judul": "Perpres 112/2022 Percepatan Pengembangan Energi Terbarukan untuk Penyediaan Tenaga Listrik, Lampiran I (harga patokan tertinggi)",
+   "penerbit": "JDIH BPK",
+   "url": "https://peraturan.bpk.go.id/Details/225308/perpres-no-112-tahun-2022",
+   "tanggal": "2026-11-08",
+   "tahun": 2022,
+   "bukti": "resmi",
+   "lisensi": "Dokumen publik pemerintah"
+  },
+  "uu21": {
+   "judul": "UU 21/2014 tentang Panas Bumi",
+   "penerbit": "JDIH BPK",
+   "url": "https://peraturan.bpk.go.id/Details/38684",
+   "tanggal": "2026-11-08",
+   "tahun": 2014,
+   "bukti": "resmi",
+   "lisensi": "Dokumen publik pemerintah"
+  },
+  "pp7": {
+   "judul": "PP 7/2017 tentang Panas Bumi untuk Pemanfaatan Tidak Langsung",
+   "penerbit": "JDIH BPK",
+   "url": "https://peraturan.bpk.go.id/Details/5827",
+   "tanggal": "2026-11-08",
+   "tahun": 2017,
+   "bukti": "resmi",
+   "lisensi": "Dokumen publik pemerintah"
+  },
+  "pp49": {
+   "judul": "PP 49/2022 (Bab V, Pasal 25), PPN dibebaskan atas impor barang kontraktor panas bumi",
+   "penerbit": "JDIH BPK",
+   "url": "https://peraturan.bpk.go.id/Details/232943/pp-no-49-tahun-2022",
+   "tanggal": "2026-11-08",
+   "tahun": 2022,
+   "bukti": "resmi",
+   "lisensi": "Dokumen publik pemerintah"
+  },
+  "wkp": {
+   "judul": "Daftar kurasi WKP/PSPE panas bumi METI (public/data/wkp.json)",
+   "penerbit": "METI Network",
+   "url": "/data/wkp.json",
+   "tanggal": "2026-11-08",
+   "tahun": 2026,
+   "bukti": "editorial",
+   "lisensi": "CC BY 4.0 (METI)"
+  },
+  "proyek": {
+   "judul": "Data proyek METI (public/data/proyek.json; Wikipedia/Wikidata/GEM/RUPTL)",
+   "penerbit": "METI Network",
+   "url": "/data/proyek.json",
+   "tanggal": "2026-11-08",
+   "tahun": 2026,
+   "bukti": "editorial",
+   "lisensi": "CC BY 4.0 (METI)"
+  },
+  "lelang": {
+   "judul": "Investasi capai US$ 1,99 miliar, Kementerian ESDM lelang 3 WKP Panas Bumi dan 7 PSP",
+   "penerbit": "Kontan",
+   "url": "https://industri.kontan.co.id/news/investasi-capai-us-199-miliar-kementerian-esdm-lelang-3-wkp-panas-bumi-dan-7-psp",
+   "tanggal": "2026-11-08",
+   "tahun": 2025,
+   "bukti": "media",
+   "lisensi": "Hak cipta penerbit; METI hanya mengutip fakta dan menautkan"
+  },
+  "lelang2": {
+   "judul": "Bahlil Lelang 10 Wilayah Panas Bumi RI Tahun 2025, Ini Daftarnya",
+   "penerbit": "CNBC Indonesia",
+   "url": "https://www.cnbcindonesia.com/news/20250917184934-4-667921/bahlil-lelang-10-wilayah-panas-bumi-ri-tahun-2025-ini-daftarnya",
+   "tanggal": "2026-11-08",
+   "tahun": 2025,
+   "bukti": "media",
+   "lisensi": "Hak cipta penerbit; METI hanya mengutip fakta dan menautkan"
+  },
+  "esmap": {
+   "judul": "ESMAP, Harding-Newman, data pengeboran panas bumi (presentasi 2012)",
+   "penerbit": "ESMAP / Bank Dunia",
+   "url": "https://esmap.org/sites/esmap.org/files/Harding_Drilling%20data_%28Day%203%29.pdf",
+   "tanggal": "2026-11-08",
+   "tahun": 2012,
+   "bukti": "kajian",
+   "lisensi": "Dokumen publik ESMAP"
+  },
+  "stanford": {
+   "judul": "Sanyal dkk., catatan tingkat sukses pengeboran panas bumi Indonesia (IGA standard db)",
+   "penerbit": "Stanford Geothermal / IGA",
+   "url": "https://pangea.stanford.edu/ERE/db/IGAstandard/record_detail.php?id=7163",
+   "tanggal": "2026-11-08",
+   "tahun": 2011,
+   "bukti": "kajian",
+   "lisensi": "Hak cipta penerbit; METI hanya mengutip fakta dan menautkan"
+  },
+  "lemigas": {
+   "judul": "Lemigas, studi kasus biaya sumur panas bumi (Scientific Contributions Oil & Gas)",
+   "penerbit": "Lemigas / ESDM",
+   "url": "https://journal.lemigas.esdm.go.id/index.php/SCOG/article/download/1591/pdf",
+   "tanggal": "2026-11-08",
+   "tahun": 2023,
+   "bukti": "kajian",
+   "lisensi": "Hak cipta penerbit; METI hanya mengutip fakta dan menautkan"
+  },
+  "smi": {
+   "judul": "PISP Fund Management Reports",
+   "penerbit": "PT Sarana Multi Infrastruktur",
+   "url": "https://www.ptsmi.co.id/pisp-fund-management-reports",
+   "tanggal": "2026-11-08",
+   "tahun": 2024,
+   "bukti": "resmi",
+   "lisensi": "Hak cipta penerbit; METI hanya mengutip fakta dan menautkan"
+  },
+  "pmk80": {
+   "judul": "PMK 80/2022 tentang Dana PISP",
+   "penerbit": "KBLI.co.id (salinan peraturan)",
+   "url": "https://kbli.co.id/regulations/other-80-pmk-08-2022-2022",
+   "tanggal": "2026-11-08",
+   "tahun": 2022,
+   "bukti": "via-pihak-ketiga",
+   "lisensi": "Hak cipta penerbit; METI hanya mengutip fakta dan menautkan"
+  },
+  "wbpisp": {
+   "judul": "World Bank, dokumen proyek PISP/Geothermal Resource Risk Mitigation (P155047)",
+   "penerbit": "Bank Dunia",
+   "url": "https://ewsdata.rightsindevelopment.org/files/documents/47/WB-P155047.pdf",
+   "tanggal": "2026-11-08",
+   "tahun": 2016,
+   "bukti": "resmi",
+   "lisensi": "Dokumen publik Bank Dunia"
+  },
+  "tgefund": {
+   "judul": "New funding schemes in Jakarta, Indonesia to fund geothermal exploration",
+   "penerbit": "ThinkGeoEnergy",
+   "url": "https://www.thinkgeoenergy.com/new-funding-schemes-in-jarkarta-indonesia-to-fund-geothermal-exploration/",
+   "tanggal": "2026-11-08",
+   "tahun": 2016,
+   "bukti": "media",
+   "lisensi": "Hak cipta penerbit; METI hanya mengutip fakta dan menautkan"
+  },
+  "waesano": {
+   "judul": "SMI to provide $30m fund for Waesano geothermal exploration project",
+   "penerbit": "Petromindo",
+   "url": "https://www.petromindo.com/news/article/smi-to-provide-30m-fund-for-waesano-geothermal-exploration-project",
+   "tanggal": "2026-11-08",
+   "tahun": 2017,
+   "bukti": "media",
+   "lisensi": "Hak cipta penerbit; METI hanya mengutip fakta dan menautkan"
+  },
+  "jica": {
+   "judul": "JICA, siaran pers perjanjian pinjaman PLTP Hululais",
+   "penerbit": "JICA",
+   "url": "https://www.jica.go.jp/english/information/press/2025/20260330_11.html",
+   "tanggal": "2026-11-08",
+   "tahun": 2026,
+   "bukti": "resmi",
+   "lisensi": "Hak cipta penerbit; METI hanya mengutip fakta dan menautkan"
+  },
+  "insentif": {
+   "judul": "Katalog insentif METI (public/data/insentif.json)",
+   "penerbit": "METI Network",
+   "url": "/data/insentif.json",
+   "tanggal": "2026-11-08",
+   "tahun": 2026,
+   "bukti": "editorial",
+   "lisensi": "CC BY 4.0 (METI)"
+  },
+  "keuangan": {
+   "judul": "Tarif Perpres 112/2022 Lampiran I, transkripsi METI (public/data/keuangan.json, kelompok tarif)",
+   "penerbit": "METI Network",
+   "url": "/data/keuangan.json",
+   "tanggal": "2026-11-08",
+   "tahun": 2026,
+   "bukti": "editorial",
+   "lisensi": "CC BY 4.0 (METI)"
+  },
+  "pge_q3": {
+   "judul": "PGE, pendapatan US$318,86 juta s.d. Q3 2025, tambahan kapasitas Lumut Balai Unit 2",
+   "penerbit": "PT Pertamina Geothermal Energy Tbk",
+   "url": "https://www.pge.pertamina.com/en/press-release/pge-posts-us318-86-million-in-revenue-through-q3-2025-with-additional-capacity-at-lumut-balai-unit-2-a-key-driver",
+   "tanggal": "2026-11-08",
+   "tahun": 2025,
+   "bukti": "resmi",
+   "lisensi": "Hak cipta penerbit; METI hanya mengutip fakta dan menautkan"
+  },
+  "pge_q1": {
+   "judul": "PGE, pendapatan US$101,51 juta kuartal I 2025",
+   "penerbit": "PT Pertamina Geothermal Energy Tbk",
+   "url": "https://www.pge.pertamina.com/en/siaran-pers/raih-pendapatan-us101-51-di-kuartal-i-2025-pge-dorong-hadirnya-ekosistem-energi-berkelanjutan",
+   "tanggal": "2026-11-08",
+   "tahun": 2025,
+   "bukti": "resmi",
+   "lisensi": "Hak cipta penerbit; METI hanya mengutip fakta dan menautkan"
+  },
+  "pge_1gw": {
+   "judul": "PGE mempercepat ekspansi panas bumi menuju kapasitas 1 GW",
+   "penerbit": "PT Pertamina Geothermal Energy Tbk",
+   "url": "https://www.pge.pertamina.com/en/press-release/maintaining-strong-financial-fundamentals-pge-accelerates-geothermal-expansion-to-1-gw-capacity",
+   "tanggal": "2026-11-08",
+   "tahun": 2025,
+   "bukti": "resmi",
+   "lisensi": "Hak cipta penerbit; METI hanya mengutip fakta dan menautkan"
+  },
+  "pge_kmj": {
+   "judul": "PGE, Lapangan Kamojang",
+   "penerbit": "PT Pertamina Geothermal Energy Tbk",
+   "url": "https://pge.pertamina.com/en/own-operation/kamojang",
+   "tanggal": "2026-11-08",
+   "tahun": 2026,
+   "bukti": "resmi",
+   "lisensi": "Hak cipta penerbit; METI hanya mengutip fakta dan menautkan"
+  },
+  "esdm_kmj": {
+   "judul": "Lapangan Kamojang, PLTP Pertama di Indonesia",
+   "penerbit": "Kementerian ESDM",
+   "url": "https://www.esdm.go.id/id/media-center/arsip-berita/lapangan-kamojang-pltp-pertama-di-indonesia",
+   "tanggal": "2026-11-08",
+   "tahun": 2026,
+   "bukti": "resmi",
+   "lisensi": "Hak cipta penerbit; METI hanya mengutip fakta dan menautkan"
+  },
+  "sarulla": {
+   "judul": "Sarulla project secures $1.17 billion project financing",
+   "penerbit": "ThinkGeoEnergy",
+   "url": "https://www.thinkgeoenergy.com/sarulla-project-secures-1-7-billion-project-financing/",
+   "tanggal": "2026-11-08",
+   "tahun": 2014,
+   "bukti": "media",
+   "lisensi": "Hak cipta penerbit; METI hanya mengutip fakta dan menautkan"
+  },
+  "sarulla2": {
+   "judul": "Ormat, partners sign $1.17b Indonesian project financing",
+   "penerbit": "Globes",
+   "url": "https://en.globes.co.il/en/article-ormat-partners-sign-117b-indonesia-project-financing-1000928039",
+   "tanggal": "2026-11-08",
+   "tahun": 2014,
+   "bukti": "media",
+   "lisensi": "Hak cipta penerbit; METI hanya mengutip fakta dan menautkan"
+  },
+  "sarulla3": {
+   "judul": "JBIC dan ADB mendukung proyek panas bumi konsorsium Sarulla",
+   "penerbit": "Energy Monitor",
+   "url": "https://www.energymonitor.ai/news/newsjbic-adb-to-support-sarulla-consortiums-geothermal-project-in-indonesia-4206154/",
+   "tanggal": "2026-11-08",
+   "tahun": 2014,
+   "bukti": "media",
+   "lisensi": "Hak cipta penerbit; METI hanya mengutip fakta dan menautkan"
+  },
+  "laboh_sc": {
+   "judul": "Sumitomo Corporation, Muara Laboh mulai beroperasi komersial 16 Desember 2019",
+   "penerbit": "Sumitomo Corporation",
+   "url": "https://www.sumitomocorp.com/en/jp/news/release/2019/group/12770",
+   "tanggal": "2026-11-08",
+   "tahun": 2019,
+   "bukti": "resmi",
+   "lisensi": "Hak cipta penerbit; METI hanya mengutip fakta dan menautkan"
+  },
+  "laboh_tge": {
+   "judul": "Japanese funding to push development of geothermal project in West Sumatra",
+   "penerbit": "ThinkGeoEnergy",
+   "url": "https://www.thinkgeoenergy.com/japanese-funding-to-push-development-of-geothermal-project-in-west-sumatra/",
+   "tanggal": "2026-11-08",
+   "tahun": 2017,
+   "bukti": "media",
+   "lisensi": "Hak cipta penerbit; METI hanya mengutip fakta dan menautkan"
+  },
+  "laboh_jbic": {
+   "judul": "JBIC interview 62 (pinjaman ekspansi Muara Laboh, Januari 2025)",
+   "penerbit": "JBIC",
+   "url": "https://www.jbic.go.jp/en/image/JBIC_interview62_en.pdf",
+   "tanggal": "2026-11-08",
+   "tahun": 2025,
+   "bukti": "resmi",
+   "lisensi": "Hak cipta penerbit; METI hanya mengutip fakta dan menautkan"
+  },
+  "laboh_bisnis": {
+   "judul": "PLTP Muara Laboh 85 MW Mulai Beroperasi",
+   "penerbit": "Bisnis.com",
+   "url": "https://ekonomi.bisnis.com/read/20191216/44/1181674/pltp-muara-laboh-85-mw-mulai-beroperasi",
+   "tanggal": "2026-11-08",
+   "tahun": 2019,
+   "bukti": "media",
+   "lisensi": "Hak cipta penerbit; METI hanya mengutip fakta dan menautkan"
+  },
+  "dedap_se": {
+   "judul": "PT Supreme Energy Rantau Dedap starts commercial operation",
+   "penerbit": "PT Supreme Energy",
+   "url": "https://www.supreme-energy.com/id/publication_/pt-supreme-energy-rantau-dedap-starts-commercial-operation-rantau-dedap-geothermal-power-plant-development",
+   "tanggal": "2026-11-08",
+   "tahun": 2021,
+   "bukti": "resmi",
+   "lisensi": "Hak cipta penerbit; METI hanya mengutip fakta dan menautkan"
+  },
+  "dedap_jp": {
+   "judul": "Geothermal plant of 91 MW begins operations in S. Sumatra",
+   "penerbit": "The Jakarta Post",
+   "url": "https://www.thejakartapost.com/paper/2022/01/09/geothermal-plant-of-91-mw-begins-operations-in-s-sumatra.html",
+   "tanggal": "2026-11-08",
+   "tahun": 2022,
+   "bukti": "media",
+   "lisensi": "Hak cipta penerbit; METI hanya mengutip fakta dan menautkan"
+  },
+  "dedap_loan": {
+   "judul": "Rantau Dedap geothermal project secures $540M loan from JBIC, ADB and others",
+   "penerbit": "ThinkGeoEnergy",
+   "url": "https://www.thinkgeoenergy.com/rantau-dedap-geothermal-projects-secures-540m-loan-from-jbic-adb-and-others/",
+   "tanggal": "2026-11-08",
+   "tahun": 2018,
+   "bukti": "media",
+   "lisensi": "Hak cipta penerbit; METI hanya mengutip fakta dan menautkan"
+  },
+  "dedap_ppa": {
+   "judul": "PLN, Supreme Energy agree on adapted PPA for Rantau Dedap geothermal project",
+   "penerbit": "ThinkGeoEnergy",
+   "url": "https://www.thinkgeoenergy.com/pln-supreme-energy-agree-on-adapted-ppa-for-rantau-dedap-geothermal-project/",
+   "tanggal": "2026-11-08",
+   "tahun": 2017,
+   "bukti": "media",
+   "lisensi": "Hak cipta penerbit; METI hanya mengutip fakta dan menautkan"
+  },
+  "wayang": {
+   "judul": "Star Energy starts operations of W. Java geothermal plant 2nd unit",
+   "penerbit": "Petromindo",
+   "url": "https://www.petromindo.com/news/article/star-energy-starts-operations-of-w-java-geothermal-plant-2nd-unit",
+   "tanggal": "2026-11-08",
+   "tahun": 2008,
+   "bukti": "media",
+   "lisensi": "Hak cipta penerbit; METI hanya mengutip fakta dan menautkan"
+  },
+  "wayang2": {
+   "judul": "Star Energi gandeng ABB, modernisasi PLTP Wayang Windu",
+   "penerbit": "Listrik Indonesia",
+   "url": "https://listrikindonesia.com/detail/18766/star-energi-gandeng-abb-dukung-transisi-energi-melalui-modernisasi-pltp-wayang-windu",
+   "tanggal": "2026-11-08",
+   "tahun": 2025,
+   "bukti": "media",
+   "lisensi": "Hak cipta penerbit; METI hanya mengutip fakta dan menautkan"
+  },
+  "kenya": {
+   "judul": "Kenya's journey towards geothermal leadership and model for African peers",
+   "penerbit": "ThinkGeoEnergy",
+   "url": "https://www.thinkgeoenergy.com/kenyas-journey-towards-geothermal-leadership-and-model-for-african-peers/",
+   "tanggal": "2026-11-08",
+   "tahun": 2024,
+   "bukti": "media",
+   "lisensi": "Hak cipta penerbit; METI hanya mengutip fakta dan menautkan"
+  },
+  "kengen": {
+   "judul": "KenGen, Information Memorandum Olkaria PPP Geothermal Project",
+   "penerbit": "KenGen",
+   "url": "https://www.kengen.co.ke/Procurement/public/archive/tenders/INFORMATION%20MEMORANDUM%20OLKARIA%20PPP%20GEOTHERMAL%20PROJECT.pdf",
+   "tanggal": "2026-11-08",
+   "tahun": 2020,
+   "bukti": "resmi",
+   "lisensi": "Hak cipta penerbit; METI hanya mengutip fakta dan menautkan"
+  },
+  "iceland_oecd": {
+   "judul": "OECD, Environment at a Glance, catatan negara Islandia",
+   "penerbit": "OECD",
+   "url": "https://www.oecd.org/en/publications/environment-at-a-glance-country-notes_59ce6fe6-en/iceland_ffb31d15-en.html",
+   "tanggal": "2026-11-08",
+   "tahun": 2024,
+   "bukti": "resmi",
+   "lisensi": "Hak cipta penerbit; METI hanya mengutip fakta dan menautkan"
+  },
+  "iceland_eea": {
+   "judul": "EEA, sumber energi terbarukan Islandia",
+   "penerbit": "European Environment Agency",
+   "url": "https://www.eea.europa.eu/en/europe-environment-2025/countries/iceland/renewable-energy-sources/",
+   "tanggal": "2026-11-08",
+   "tahun": 2025,
+   "bukti": "resmi",
+   "lisensi": "Hak cipta penerbit; METI hanya mengutip fakta dan menautkan"
+  },
+  "iceland_bb": {
+   "judul": "Iceland shows the world how to run on reliable, clean energy",
+   "penerbit": "EnergyConnects (sindikasi Bloomberg)",
+   "url": "https://www.energyconnects.com/news/renewables/2023/february/iceland-shows-europe-how-to-run-on-reliable-clean-energy",
+   "tanggal": "2026-11-08",
+   "tahun": 2023,
+   "bukti": "media",
+   "lisensi": "Hak cipta penerbit; METI hanya mengutip fakta dan menautkan"
+  },
+  "tiwi": {
+   "judul": "40th anniversary of geothermal power generation at Tiwi, Philippines",
+   "penerbit": "ThinkGeoEnergy",
+   "url": "https://www.thinkgeoenergy.com/40th-anniversary-of-geothermal-power-generation-at-tiwi-philippines/",
+   "tanggal": "2026-11-08",
+   "tahun": 2019,
+   "bukti": "media",
+   "lisensi": "Hak cipta penerbit; METI hanya mengutip fakta dan menautkan"
+  },
+  "tiwi2": {
+   "judul": "Asia's first steam field continues to power homes",
+   "penerbit": "The Manila Times (PressReader)",
+   "url": "https://www.pressreader.com/philippines/manila-times/20230129/281706913818124",
+   "tanggal": "2026-11-08",
+   "tahun": 2023,
+   "bukti": "media",
+   "lisensi": "Hak cipta penerbit; METI hanya mengutip fakta dan menautkan"
+  },
+  "ph_edc": {
+   "judul": "Geothermal energy development in the Philippines",
+   "penerbit": "ThinkGeoEnergy",
+   "url": "https://www.thinkgeoenergy.com/geothermal-energy-development-in-the-philippines/",
+   "tanggal": "2026-11-08",
+   "tahun": 2020,
+   "bukti": "media",
+   "lisensi": "Hak cipta penerbit; METI hanya mengutip fakta dan menautkan"
+  },
+  "tr_kapsarc": {
+   "judul": "Turkiye's geothermal growth lessons, insights by KAPSARC",
+   "penerbit": "ThinkGeoEnergy",
+   "url": "https://www.thinkgeoenergy.com/turkiyes-geothermal-growth-lessons-insights-by-kapsarc/",
+   "tanggal": "2026-11-08",
+   "tahun": 2024,
+   "bukti": "media",
+   "lisensi": "Hak cipta penerbit; METI hanya mengutip fakta dan menautkan"
+  },
+  "tr_2016": {
+   "judul": "Geothermal represents 11% of electricity under Turkey's renewable FIT scheme in 2016",
+   "penerbit": "ThinkGeoEnergy",
+   "url": "https://www.thinkgeoenergy.com/geothermal-represents-11-of-electricity-under-turkeys-renewable-fit-scheme-in-2016/",
+   "tanggal": "2026-11-08",
+   "tahun": 2017,
+   "bukti": "media",
+   "lisensi": "Hak cipta penerbit; METI hanya mengutip fakta dan menautkan"
+  },
+  "tr_rate": {
+   "judul": "Turkey introduces updated geothermal energy feed-in-tariff rates",
+   "penerbit": "ThinkGeoEnergy",
+   "url": "https://www.thinkgeoenergy.com/turkey-introduces-updated-geothermal-energy-feed-in-tariff-rates/",
+   "tanggal": "2026-11-08",
+   "tahun": 2021,
+   "bukti": "media",
+   "lisensi": "Hak cipta penerbit; METI hanya mengutip fakta dan menautkan"
+  },
+  "sorik_esdm": {
+   "judul": "Investigasi paparan gas H2S, Kementerian ESDM hentikan sementara aktivitas PLTP Sorik Marapi",
+   "penerbit": "Kementerian ESDM",
+   "url": "https://www.esdm.go.id/en/media-center/news-archives/investigasi-paparan-gas-h2s-kementerian-esdm-hentikan-sementara-aktivitas-pltp-sorik-marapi-",
+   "tanggal": "2026-11-08",
+   "tahun": 2021,
+   "bukti": "resmi",
+   "lisensi": "Hak cipta penerbit; METI hanya mengutip fakta dan menautkan"
+  },
+  "sorik_hrm": {
+   "judul": "Dozens poisoned with hydrogen sulfide gas due to PT SMGP's operations in North Sumatra",
+   "penerbit": "Human Rights Monitor",
+   "url": "https://humanrightsmonitor.org/case/dozens-poisoned-with-hydrogen-sulfide-gas-due-to-pt-smgps-operations-in-north-sumatra/",
+   "tanggal": "2026-11-08",
+   "tahun": 2022,
+   "bukti": "via-pihak-ketiga",
+   "lisensi": "Hak cipta penerbit; METI hanya mengutip fakta dan menautkan"
+  },
+  "sorik_jp": {
+   "judul": "Activists call for better geothermal safety after accident",
+   "penerbit": "The Jakarta Post",
+   "url": "https://www.thejakartapost.com/paper/2022/03/15/activists-call-for-better-geothermal-safety-after-accident",
+   "tanggal": "2026-11-08",
+   "tahun": 2022,
+   "bukti": "media",
+   "lisensi": "Hak cipta penerbit; METI hanya mengutip fakta dan menautkan"
+  },
+  "sorik_pm": {
+   "judul": "Investigation reveals negligence in deadly incident at Sorik Merapi geothermal project",
+   "penerbit": "Petromindo",
+   "url": "https://petromindo.com/news/article/investigation-reveals-negligence-in-deadly-incident-at-sorik-merapi-geothermal-project",
+   "tanggal": "2026-11-08",
+   "tahun": 2021,
+   "bukti": "media",
+   "lisensi": "Hak cipta penerbit; METI hanya mengutip fakta dan menautkan"
+  },
+  "sorik_pt": {
+   "judul": "PT Sorik Marapi dukung penuh investigasi pemerintah dan kepolisian",
+   "penerbit": "Listrik Indonesia",
+   "url": "https://listrikindonesia.com/detail/9465/pt-sorik-marapi-dukung-penuh-investigasi-pemerintah-dan-kepolisian",
+   "tanggal": "2026-11-08",
+   "tahun": 2021,
+   "bukti": "media",
+   "lisensi": "Hak cipta penerbit; METI hanya mengutip fakta dan menautkan"
+  },
+  "dieng_kabar": {
+   "judul": "Ini penjelasan Geo Dipa soal kronologi keluarnya gas beracun di Dieng",
+   "penerbit": "Bisnis.com (Kabar24)",
+   "url": "https://kabar24.bisnis.com/read/20220313/15/1509974/ini-penjelasan-geo-dipa-soal-kronologi-keluarnya-gas-beracun-di-dieng",
+   "tanggal": "2026-11-08",
+   "tahun": 2022,
+   "bukti": "media",
+   "lisensi": "Hak cipta penerbit; METI hanya mengutip fakta dan menautkan"
+  },
+  "dieng_detik": {
+   "judul": "Kronologi kebocoran gas beracun di Dieng hingga tewaskan 1 pekerja",
+   "penerbit": "detikFinance",
+   "url": "https://finance.detik.com/energi/d-5980605/kronologi-kebocoran-gas-beracun-di-dieng-hingga-tewaskan-1-pekerja",
+   "tanggal": "2026-11-08",
+   "tahun": 2022,
+   "bukti": "media",
+   "lisensi": "Hak cipta penerbit; METI hanya mengutip fakta dan menautkan"
+  },
+  "dieng_mb": {
+   "judul": "Ancaman gas beracun di Dieng, bagaimana mitigasinya",
+   "penerbit": "Mongabay Indonesia",
+   "url": "https://mongabay.co.id/2022/03/15/ancaman-gas-beracun-di-dieng-bagaimana-mitigasinya/",
+   "tanggal": "2026-11-08",
+   "tahun": 2022,
+   "bukti": "media",
+   "lisensi": "Hak cipta penerbit; METI hanya mengutip fakta dan menautkan"
+  },
+  "talang25": {
+   "judul": "Mengapa warga kukuh tolak proyek PLTP Gunung Talang",
+   "penerbit": "Mongabay Indonesia",
+   "url": "https://mongabay.co.id/2025/12/01/mengapa-warga-kukuh-tolak-proyek-pltp-gunung-talang/",
+   "tanggal": "2026-11-08",
+   "tahun": 2025,
+   "bukti": "media",
+   "lisensi": "Hak cipta penerbit; METI hanya mengutip fakta dan menautkan"
+  },
+  "talang26": {
+   "judul": "Perempuan Gunung Talang kukuh menolak proyek panas bumi",
+   "penerbit": "Mongabay Indonesia",
+   "url": "https://mongabay.co.id/2026/03/17/perempuan-gunung-talang-kukuh-menolak-proyek-panas-bumi/",
+   "tanggal": "2026-11-08",
+   "tahun": 2026,
+   "bukti": "media",
+   "lisensi": "Hak cipta penerbit; METI hanya mengutip fakta dan menautkan"
+  },
+  "talang17": {
+   "judul": "Ketika warga di Solok protes pembangunan pembangkit panas bumi, mengapa?",
+   "penerbit": "Mongabay Indonesia",
+   "url": "https://mongabay.co.id/2017/09/30/ketika-warga-di-solok-protes-pembagunan-pembangkit-panas-bumi-mengapa/",
+   "tanggal": "2026-11-08",
+   "tahun": 2017,
+   "bukti": "media",
+   "lisensi": "Hak cipta penerbit; METI hanya mengutip fakta dan menautkan"
+  },
+  "talang18": {
+   "judul": "Arcandra heran ada penolakan proyek panas bumi di Sumbar",
+   "penerbit": "Republika",
+   "url": "https://ekonomi.republika.co.id/berita/pj073p430/arcandra-heran-ada-penolakan-proyek-panas-bumi-di-sumbar",
+   "tanggal": "2026-11-08",
+   "tahun": 2018,
+   "bukti": "media",
+   "lisensi": "Hak cipta penerbit; METI hanya mengutip fakta dan menautkan"
+  },
+  "ungaran1": {
+   "judul": "PLN sebut PLTP Gunung Ungaran masih tahap kajian",
+   "penerbit": "Antara",
+   "url": "https://www.antaranews.com/berita/5728691/pln-sebut-pltp-gunung-ungaran-masih-tahap-kajian",
+   "tanggal": "2026-11-08",
+   "tahun": 2026,
+   "bukti": "media",
+   "lisensi": "Hak cipta penerbit; METI hanya mengutip fakta dan menautkan"
+  },
+  "ungaran2": {
+   "judul": "Kementerian ESDM izinkan PLN kembangkan panas bumi Gunung Ungaran jadi PLTP",
+   "penerbit": "Koran Jakarta",
+   "url": "https://koran-jakarta.com/2026-08-26/kementerian-esdm-izinkan-pln-kembangkan-panas-bumi-gunung-ungaran-jadi-pltp-perkuat-energi-bersih-nasional",
+   "tanggal": "2026-11-08",
+   "tahun": 2026,
+   "bukti": "media",
+   "lisensi": "Hak cipta penerbit; METI hanya mengutip fakta dan menautkan"
+  },
+  "ungaran3": {
+   "judul": "Warga menolak, proyek panas bumi Ungaran terus berjalan",
+   "penerbit": "Mongabay Indonesia",
+   "url": "https://mongabay.co.id/short-article/2026/09/warga-menolak-proyek-panas-bumi-ungaran-terus-berjalan/",
+   "tanggal": "2026-11-08",
+   "tahun": 2026,
+   "bukti": "media",
+   "lisensi": "Hak cipta penerbit; METI hanya mengutip fakta dan menautkan"
+  },
+  "puna_hei": {
+   "judul": "Puna Geothermal Venture back online after 2.5 years, sends power to Hawaii Island grid",
+   "penerbit": "Hawaiian Electric",
+   "url": "https://www.hawaiianelectric.com/puna-geothermal-venture-back-online-after-two-and-a-half-years-sends-power-to-hawaii-island-grid",
+   "tanggal": "2026-11-08",
+   "tahun": 2020,
+   "bukti": "resmi",
+   "lisensi": "Hak cipta penerbit; METI hanya mengutip fakta dan menautkan"
+  },
+  "puna_ap": {
+   "judul": "Hawaii geothermal power plant pushes back relaunch",
+   "penerbit": "Associated Press (Washington Times)",
+   "url": "https://www.washingtontimes.com/news/2020/may/15/hawaii-geothermal-power-plant-pushes-back-relaunch/",
+   "tanggal": "2026-11-08",
+   "tahun": 2020,
+   "bukti": "media",
+   "lisensi": "Hak cipta penerbit; METI hanya mengutip fakta dan menautkan"
+  },
+  "puna_tge": {
+   "judul": "Puna Geothermal Venture (ThinkGeoEnergy)",
+   "penerbit": "ThinkGeoEnergy",
+   "url": "https://www.thinkgeoenergy.com/no-geothermal-royalties-collected-in-hawaii-in-2020/",
+   "tanggal": "2026-11-08",
+   "tahun": 2021,
+   "bukti": "media",
+   "lisensi": "Hak cipta penerbit; METI hanya mengutip fakta dan menautkan"
+  },
+  "bren": {
+   "judul": "Barito Renewables (BREN) tambah kapasitas setrum panas bumi 41 MW",
+   "penerbit": "Bisnis.com",
+   "url": "https://market.bisnis.com/read/20250116/192/1832150/barito-renewables-bren-tambah-kapasitas-setrum-panas-bumi-41-mw",
+   "tanggal": "2026-11-08",
+   "tahun": 2025,
+   "bukti": "media",
+   "lisensi": "Hak cipta penerbit; METI hanya mengutip fakta dan menautkan"
+  },
+  "medco": {
+   "judul": "Medco Energi, transisi ke energi rendah karbon (PLTP Ijen 35 MW beroperasi komersial Feb 2025)",
+   "penerbit": "Medco Energi",
+   "url": "https://www.medcoenergi.com/en/our-sustainability/climate-change/transition-to-low-carbon-energy/",
+   "tanggal": "2026-11-08",
+   "tahun": 2025,
+   "bukti": "resmi",
+   "lisensi": "Hak cipta penerbit; METI hanya mengutip fakta dan menautkan"
+  },
+  "jetp": {
+   "judul": "JETP Indonesia, portofolio (hibah PLTP Patuha Unit 2)",
+   "penerbit": "Sekretariat JETP Indonesia",
+   "url": "https://jetp-id.org/",
+   "tanggal": "2026-11-08",
+   "tahun": 2026,
+   "bukti": "resmi",
+   "lisensi": "Hak cipta penerbit; METI hanya mengutip fakta dan menautkan"
+  },
+  "patuha": {
+   "judul": "Raih satu juta jam kerja selamat, PLTP Patuha Unit 2",
+   "penerbit": "JPNN Jabar",
+   "url": "https://jabar.jpnn.com/jabar-terkini/32740/raih-satu-juta-jam-kerja-selamat-pltp-patuha-unit-2-torehkan-prestasi-sebelum-beroperasi",
+   "tanggal": "2026-11-08",
+   "tahun": 2026,
+   "bukti": "media",
+   "lisensi": "Hak cipta penerbit; METI hanya mengutip fakta dan menautkan"
+  },
+  "mataloko": {
+   "judul": "PLN UIP Nusra dorong penyerapan tenaga kerja lokal lewat pengembangan PLTP Mataloko",
+   "penerbit": "Tribun Kupang",
+   "url": "https://kupang.tribunnews.com/adv/975061/pln-uip-nusra-dorong-penyerapan-tenaga-kerja-lokal-melalui-pengembangan-pltp-mataloko",
+   "tanggal": "2026-11-08",
+   "tahun": 2026,
+   "bukti": "media",
+   "lisensi": "Hak cipta penerbit; METI hanya mengutip fakta dan menautkan"
+  },
+  "geodipa": {
+   "judul": "Geo Dipa bidik RI jadi negara berkapasitas panas bumi nomor 1 dunia",
+   "penerbit": "CNN Indonesia",
+   "url": "https://www.cnnindonesia.com/ekonomi/20261106171043-85-1424202/geo-dipa-bidik-ri-jadi-negara-berkapasitas-panas-bumi-nomor-1-dunia",
+   "tanggal": "2026-11-08",
+   "tahun": 2026,
+   "bukti": "media",
+   "lisensi": "Hak cipta penerbit; METI hanya mengutip fakta dan menautkan"
+  },
+  "sdgone": {
+   "judul": "SDG Indonesia One (PT SMI)",
+   "penerbit": "PT Sarana Multi Infrastruktur",
+   "url": "https://www.ptsmi.co.id/",
+   "tanggal": "2026-11-08",
+   "tahun": 2026,
+   "bukti": "resmi",
+   "lisensi": "Hak cipta penerbit; METI hanya mengutip fakta dan menautkan"
+  },
+  "ruptl": {
+   "judul": "RUPTL PT PLN (Persero) 2025-2034 (lampiran Kepmen ESDM 188.K/TL.03/MEM.L/2025)",
+   "penerbit": "PT PLN (Persero); Kementerian ESDM",
+   "url": "https://gatrik.esdm.go.id/gatrik/gatrik-api//storage/migrasi/download_index/files/b967d-ruptl-pln-2025-2034-pub-.pdf",
+   "tanggal": "2026-11-08",
+   "tahun": 2025,
+   "bukti": "resmi",
+   "lisensi": "Hak cipta penerbit; METI hanya mengutip fakta dan menautkan"
+  },
+  "geoportal": {
+   "judul": "Catatan METI: Geoportal ESDM melarang robot (robots.txt Disallow /); koordinat WKP tidak dipanen",
+   "penerbit": "METI Network",
+   "url": "/data/wkp.json",
+   "tanggal": "2026-11-08",
+   "tahun": 2026,
+   "bukti": "editorial",
+   "lisensi": "CC BY 4.0 (METI)"
+  }
+ },
+ "bab": {
+  "2": {
+   "tipe": "faq",
+   "butir": [
+    {
+     "t": {
+      "id": "Apa itu panas bumi (PLTP)?",
+      "en": "What is geothermal (PLTP)?"
+     },
+     "j": {
+      "id": "Energi panas dari dalam bumi. Uap atau air panas dari sumur dipakai memutar turbin (PLTP) atau dipakai langsung sebagai panas.",
+      "en": "Heat from within the earth. Steam or hot water from wells turns a turbine (PLTP) or is used directly as heat."
+     }
+    },
+    {
+     "t": {
+      "id": "Mengapa panas bumi dianggap penting untuk Indonesia?",
+      "en": "Why is geothermal important for Indonesia?"
+     },
+     "j": {
+      "id": "Indonesia berada di cincin gunung api sehingga banyak lapangan; panas bumi bisa jadi beban dasar yang stabil, tidak bergantung cuaca. Faktor kapasitas nasional rata-rata 2024 sekitar 72% (hitungan METI dari data IRENA).",
+      "en": "Indonesia sits on the ring of fire so many fields exist; geothermal can be stable baseload independent of weather. The 2024 national average capacity factor is about 72% (METI calculation from IRENA data)."
+     }
+    },
+    {
+     "t": {
+      "id": "Siapa yang boleh mengusahakan panas bumi?",
+      "en": "Who may develop geothermal?"
+     },
+     "j": {
+      "id": "Badan usaha, koperasi, atau BUMN yang memegang izin panas bumi setelah menang lelang wilayah kerja atau mendapat penugasan, menurut UU 21/2014.",
+      "en": "Companies, cooperatives or state companies holding a geothermal permit after winning a working area auction or being assigned, per Law 21/2014."
+     }
+    },
+    {
+     "t": {
+      "id": "Berapa harga jual listrik panas bumi ke PLN?",
+      "en": "What price does PLN pay for geothermal power?"
+     },
+     "j": {
+      "id": "Perpres 112/2022 menetapkan harga patokan tertinggi, misalnya 9,76 sen US$/kWh untuk PLTP sampai 10 MW pada tahun 1-10 sebelum dikali faktor lokasi F. Lihat tabel di bab 11.",
+      "en": "Perpres 112/2022 sets ceiling prices, for example 9.76 US cents/kWh for PLTP up to 10 MW in years 1-10 before the location factor F. See the table in chapter 11."
+     }
+    },
+    {
+     "t": {
+      "id": "Mengapa eksplorasi disebut berisiko?",
+      "en": "Why is exploration called risky?"
+     },
+     "j": {
+      "id": "Biaya sumur besar dan hasilnya baru diketahui setelah dibor. ESMAP mencatat tingkat sukses sumur eksplorasi sekitar 59%; riset lain menyebut 63-73% untuk Indonesia (definisi sukses berbeda antar studi).",
+      "en": "Wells are costly and results are known only after drilling. ESMAP notes an exploration well success rate of about 59%; other research cites 63-73% for Indonesia (success definitions differ between studies)."
+     }
+    },
+    {
+     "t": {
+      "id": "Apa itu pengeboran pemerintah (government drilling)?",
+      "en": "What is government drilling?"
+     },
+     "j": {
+      "id": "Pemerintah membiayai pengeboran eksplorasi di wilayah tertentu lewat dana PISP yang dikelola PT SMI, lalu data hasilnya ditawarkan kepada peserta lelang; bila tak ada pemenang, Kemenkeu memulihkan biaya.",
+      "en": "The government funds exploration drilling in certain areas through the PISP fund managed by PT SMI, then offers the data to auction bidders; if no winner emerges the Ministry of Finance recovers the cost."
+     }
+    },
+    {
+     "t": {
+      "id": "Apakah PLTP aman bagi warga?",
+      "en": "Is a PLTP safe for residents?"
+     },
+     "j": {
+      "id": "Risiko utama ialah gas H2S saat uji alir dan pengeboran. Insiden Sorik Marapi 2021 dan Dieng 2022 menunjukkan perlunya zona aman dan peringatan dini. Lihat bab 40.",
+      "en": "The main risk is H2S gas during discharge testing and drilling. The 2021 Sorik Marapi and 2022 Dieng incidents show the need for buffer zones and early warning. See chapter 40."
+     }
+    },
+    {
+     "t": {
+      "id": "Apa bedanya penjualan uap dan penjualan listrik?",
+      "en": "What is the difference between selling steam and selling electricity?"
+     },
+     "j": {
+      "id": "Pengembang hulu menjual uap ke pembangkit (PLN atau lain) pada harga uap; pengembang terpadu menjual listrik. Perpres 112/2022 memuat tarif keduanya.",
+      "en": "An upstream developer sells steam to a power plant (PLN or other) at a steam price; an integrated developer sells electricity. Perpres 112/2022 has tariffs for both."
+     }
+    },
+    {
+     "t": {
+      "id": "Bisakah panas bumi dipakai tanpa listrik?",
+      "en": "Can geothermal be used without electricity?"
+     },
+     "j": {
+      "id": "Bisa, sebagai pemanfaatan langsung: pengering hasil tani, pemanas proses, pariwisata. Islandia memenuhi hampir seluruh keluaran pemanas dari panas bumi (OECD).",
+      "en": "Yes, as direct use: crop drying, process heat, tourism. Iceland meets almost all heating output from geothermal (OECD)."
+     }
+    },
+    {
+     "t": {
+      "id": "Mengapa banyak proyek tertunda?",
+      "en": "Why are many projects delayed?"
+     },
+     "j": {
+      "id": "Penyebab yang berulang dalam kasus bab 39 dan 40: tarif dan PPA, kawasan hutan, pendanaan eksplorasi, dan penerimaan warga. Tabel pola ada di bab 41.",
+      "en": "Recurring causes in chapters 39 and 40: tariff and PPA, forest area, exploration funding and resident acceptance. The pattern table is in chapter 41."
+     }
+    }
+   ],
+   "sumber": [
+    "uu21",
+    "perpres112",
+    "esmap",
+    "stanford",
+    "smi",
+    "iceland_oecd",
+    "irena"
+   ]
+  },
+  "3": {
+   "tipe": "glosarium",
+   "butir": [
+    {
+     "istilah": {
+      "id": "WKP (Wilayah Kerja Panas Bumi)",
+      "en": "WKP (geothermal working area)"
+     },
+     "arti": {
+      "id": "Wilayah yang ditetapkan pemerintah untuk diusahakan panas bumi lewat lelang atau penugasan.",
+      "en": "An area designated by the government for geothermal development through auction or assignment."
+     }
+    },
+    {
+     "istilah": {
+      "id": "PSPE (Penugasan Survei Pendahuluan dan Eksplorasi)",
+      "en": "PSPE (preliminary survey and exploration assignment)"
+     },
+     "arti": {
+      "id": "Penugasan survei dan eksplorasi di area yang belum menjadi WKP.",
+      "en": "Assignment for survey and exploration in an area that is not yet a WKP."
+     }
+    },
+    {
+     "istilah": {
+      "id": "IPB (Izin Panas Bumi)",
+      "en": "IPB (geothermal permit)"
+     },
+     "arti": {
+      "id": "Izin yang diberikan kepada pemenang lelang WKP menurut UU 21/2014.",
+      "en": "The permit given to the WKP auction winner under Law 21/2014."
+     }
+    },
+    {
+     "istilah": {
+      "id": "PPA (perjanjian jual beli listrik)",
+      "en": "PPA (power purchase agreement)"
+     },
+     "arti": {
+      "id": "Kontrak penjualan listrik atau uap, umumnya ke PLN.",
+      "en": "A contract for selling electricity or steam, generally to PLN."
+     }
+    },
+    {
+     "istilah": {
+      "id": "PISP",
+      "en": "PISP"
+     },
+     "arti": {
+      "id": "Dana pembiayaan infrastruktur panas bumi (Geothermal Fund) yang dikelola PT SMI.",
+      "en": "Geothermal infrastructure financing fund (Geothermal Fund) managed by PT SMI."
+     }
+    },
+    {
+     "istilah": {
+      "id": "Government drilling",
+      "en": "Government drilling"
+     },
+     "arti": {
+      "id": "Pengeboran eksplorasi yang dibiayai pemerintah untuk mengurangi risiko pengembang.",
+      "en": "Exploration drilling funded by government to reduce developer risk."
+     }
+    },
+    {
+     "istilah": {
+      "id": "JOC (kontrak operasi bersama)",
+      "en": "JOC (joint operation contract)"
+     },
+     "arti": {
+      "id": "Skema kemitraan lapangan lama dengan PGE, misalnya Wayang Windu, Darajat, dan Salak.",
+      "en": "Partnership scheme of older fields with PGE, for example Wayang Windu, Darajat and Salak."
+     }
+    },
+    {
+     "istilah": {
+      "id": "H2S",
+      "en": "H2S"
+     },
+     "arti": {
+      "id": "Hidrogen sulfida, gas beracun yang dapat keluar dari sumur panas bumi.",
+      "en": "Hydrogen sulfide, a toxic gas that can escape from geothermal wells."
+     }
+    },
+    {
+     "istilah": {
+      "id": "Workover",
+      "en": "Workover"
+     },
+     "arti": {
+      "id": "Perbaikan sumur yang sudah ada, bukan pengeboran baru.",
+      "en": "Repair of an existing well rather than a new drilling."
+     }
+    },
+    {
+     "istilah": {
+      "id": "Faktor F",
+      "en": "F factor"
+     },
+     "arti": {
+      "id": "Pengali harga patokan menurut wilayah dalam Lampiran II Perpres 112/2022.",
+      "en": "Regional multiplier of the ceiling price in Annex II of Perpres 112/2022."
+     }
+    },
+    {
+     "istilah": {
+      "id": "Faktor kapasitas",
+      "en": "Capacity factor"
+     },
+     "arti": {
+      "id": "Energi yang dibangkitkan dibagi energi bila beroperasi penuh sepanjang tahun.",
+      "en": "Energy generated divided by energy at full output through the year."
+     }
+    },
+    {
+     "istilah": {
+      "id": "Pemanfaatan langsung",
+      "en": "Direct use"
+     },
+     "arti": {
+      "id": "Memakai panas bumi sebagai panas, tanpa dikonversi menjadi listrik.",
+      "en": "Using geothermal as heat, without converting it to electricity."
+     }
+    },
+    {
+     "istilah": {
+      "id": "COD",
+      "en": "COD"
+     },
+     "arti": {
+      "id": "Tanggal operasi komersial pembangkit.",
+      "en": "Commercial operation date of a plant."
+     }
+    },
+    {
+     "istilah": {
+      "id": "FPIC",
+      "en": "FPIC"
+     },
+     "arti": {
+      "id": "Persetujuan bebas, didahulukan, dan diinformasikan dari masyarakat terdampak.",
+      "en": "Free, prior and informed consent from affected communities."
+     }
+    }
+   ],
+   "sumber": [
+    "uu21",
+    "pp7",
+    "perpres112",
+    "smi"
+   ]
+  },
+  "4": {
+   "tipe": "teks",
+   "paragraf": [
+    {
+     "id": "Panas bumi memanfaatkan panas dari dalam bumi. Sumur dibor sampai reservoir, uap atau air panas dialirkan ke turbin, lalu uap dikondensasi dan air diinjeksikan kembali ke reservoir. Karena panas bumi bekerja siang malam, ia cocok sebagai beban dasar bagi jaringan yang dipenuhi pembangkit surya dan bayu yang berfluktuasi.",
+     "en": "Geothermal uses heat from within the earth. Wells are drilled to a reservoir, steam or hot water goes to a turbine, then the steam is condensed and the water is injected back into the reservoir. Because geothermal works day and night it suits baseload for grids with more variable solar and wind."
+    },
+    {
+     "id": "Kapasitas terpasang Indonesia 2.743,76 MW pada 2025 (IRENA), naik dari 1.438,3 MW pada 2015. Pembangkitan 2024 sebesar 16.763 GWh.",
+     "en": "Indonesia's installed capacity was 2,743.76 MW in 2025 (IRENA), up from 1,438.3 MW in 2015. Generation in 2024 was 16,763 GWh."
+    }
+   ],
+   "sumber": [
+    "irena"
+   ]
+  },
+  "5": {
+   "tipe": "rumus",
+   "rumus": [
+    {
+     "id": "Energi tahunan (GWh) = kapasitas (MW) x faktor kapasitas x 8,76",
+     "en": "Annual energy (GWh) = capacity (MW) x capacity factor x 8.76"
+    },
+    {
+     "id": "Peluang minimal satu sumur berhasil dari n sumur = 1 - (1 - p)^n, dengan p peluang sukses satu sumur",
+     "en": "Probability at least one of n wells succeeds = 1 - (1 - p)^n, with p the success probability of one well"
+    },
+    {
+     "id": "Pendapatan tahun 1-10 (US$) = energi (kWh) x harga dasar x F x pengali (Perpres 112/2022)",
+     "en": "Years 1-10 revenue (US$) = energy (kWh) x base price x F x multiplier (Perpres 112/2022)"
+    }
+   ],
+   "contoh": [
+    {
+     "id": "Faktor kapasitas nasional 2024 = 16.763 GWh / (2.638,76 MW x 8,76) = 72.5% (EST METI dari data IRENA).",
+     "en": "National 2024 capacity factor = 16,763 GWh / (2,638.76 MW x 8.76) = 72.5% (METI EST from IRENA data)."
+    },
+    {
+     "id": "Bila p = 50% dan 5 sumur dibor, peluang minimal satu berhasil = 1 - 0,5^5 = 96,9% (risiko semua gagal sekitar 3%, selaras dengan analisis yang dikutip ESMAP). Asumsi bahwa sumur saling bebas adalah penyederhanaan.",
+     "en": "If p = 50% and 5 wells are drilled, probability of at least one success = 1 - 0.5^5 = 96.9% (all-fail risk about 3%, in line with the analysis cited by ESMAP). Assuming wells are independent is a simplification."
+    }
+   ],
+   "sumber": [
+    "irena",
+    "esmap",
+    "perpres112"
+   ]
+  },
+  "6": {
+   "tipe": "langkah",
+   "butir": [
+    {
+     "judul": {
+      "id": "Survei pendahuluan dan penetapan WKP",
+      "en": "Preliminary survey and WKP designation"
+     },
+     "isi": {
+      "id": "Pemerintah atau badan usaha yang ditugaskan memetakan potensi; wilayah ditetapkan sebagai WKP.",
+      "en": "The government or an assigned company maps the potential; the area is designated a WKP."
+     },
+     "pelaku": {
+      "id": "Kementerian ESDM, Badan Geologi",
+      "en": "Ministry of ESDM, Geological Agency"
+     }
+    },
+    {
+     "judul": {
+      "id": "Lelang atau penugasan",
+      "en": "Auction or assignment"
+     },
+     "isi": {
+      "id": "WKP dilelang kepada badan usaha, atau ditugaskan ke BUMN; pemenang memperoleh izin panas bumi.",
+      "en": "The WKP is auctioned to companies or assigned to a state company; the winner gets the geothermal permit."
+     },
+     "pelaku": {
+      "id": "Kementerian ESDM, peserta lelang",
+      "en": "Ministry of ESDM, bidders"
+     }
+    },
+    {
+     "judul": {
+      "id": "Eksplorasi dan pengeboran",
+      "en": "Exploration and drilling"
+     },
+     "isi": {
+      "id": "Survei rinci dan sumur eksplorasi untuk memastikan reservoir; tahap berisiko tinggi.",
+      "en": "Detailed surveys and exploration wells to confirm the reservoir; a high risk stage."
+     },
+     "pelaku": {
+      "id": "Pengembang, kontraktor bor",
+      "en": "Developer, drilling contractors"
+     }
+    },
+    {
+     "judul": {
+      "id": "Studi kelayakan dan PPA",
+      "en": "Feasibility and PPA"
+     },
+     "isi": {
+      "id": "Hitung biaya, negosiasi harga dengan PLN, tutup keuangan.",
+      "en": "Cost calculation, price negotiation with PLN, financial close."
+     },
+     "pelaku": {
+      "id": "Pengembang, PLN, pendana",
+      "en": "Developer, PLN, lenders"
+     }
+    },
+    {
+     "judul": {
+      "id": "Pengembangan lapangan dan pembangkit",
+      "en": "Field and plant development"
+     },
+     "isi": {
+      "id": "Sumur produksi dan injeksi, pipa uap, turbin, dan sambungan jaringan.",
+      "en": "Production and injection wells, steam pipes, turbine and grid connection."
+     },
+     "pelaku": {
+      "id": "Pengembang, kontraktor EPC, pemasok turbin",
+      "en": "Developer, EPC contractors, turbine suppliers"
+     }
+    },
+    {
+     "judul": {
+      "id": "Operasi dan pemeliharaan",
+      "en": "Operation and maintenance"
+     },
+     "isi": {
+      "id": "Pengelolaan reservoir, pengeboran isi ulang (make-up wells), dan pemantauan lingkungan.",
+      "en": "Reservoir management, make-up wells and environmental monitoring."
+     },
+     "pelaku": {
+      "id": "Operator",
+      "en": "Operator"
+     }
+    }
+   ],
+   "sumber": [
+    "uu21",
+    "pp7"
+   ]
+  },
+  "7": {
+   "tipe": "grafik",
+   "jenis": "garis",
+   "label": {
+    "id": "Kapasitas terpasang panas bumi Indonesia",
+    "en": "Installed geothermal capacity, Indonesia"
+   },
+   "satuan": "MW",
+   "d": 0,
+   "seri": [
+    {
+     "nama": {
+      "id": "Kapasitas terpasang (IRENA)",
+      "en": "Installed capacity (IRENA)"
+     },
+     "sorot": true,
+     "titik": [
+      [
+       "2000",
+       525
+      ],
+      [
+       "2001",
+       785
+      ],
+      [
+       "2002",
+       785
+      ],
+      [
+       "2003",
+       805
+      ],
+      [
+       "2004",
+       820
+      ],
+      [
+       "2005",
+       850
+      ],
+      [
+       "2006",
+       850
+      ],
+      [
+       "2007",
+       980
+      ],
+      [
+       "2008",
+       1052
+      ],
+      [
+       "2009",
+       1189
+      ],
+      [
+       "2010",
+       1189
+      ],
+      [
+       "2011",
+       1226
+      ],
+      [
+       "2012",
+       1336
+      ],
+      [
+       "2013",
+       1343.5
+      ],
+      [
+       "2014",
+       1403.5
+      ],
+      [
+       "2015",
+       1438.3
+      ],
+      [
+       "2016",
+       1533.3
+      ],
+      [
+       "2017",
+       1808.3
+      ],
+      [
+       "2018",
+       1948.3
+      ],
+      [
+       "2019",
+       2130.7
+      ],
+      [
+       "2020",
+       2130.7
+      ],
+      [
+       "2021",
+       2286.05
+      ],
+      [
+       "2022",
+       2360.33
+      ],
+      [
+       "2023",
+       2597.51
+      ],
+      [
+       "2024",
+       2638.76
+      ],
+      [
+       "2025",
+       2743.76
+      ]
+     ]
+    }
+   ],
+   "catatan": {
+    "id": "Tambahan 2015 sampai 2025 sebesar 1305.5 MW (EST METI dari selisih dua tahun IRENA).",
+    "en": "Additions from 2015 to 2025 of 1305.5 MW (METI EST, difference of two IRENA years)."
+   },
+   "sumber": [
+    "irena"
+   ]
+  },
+  "8": {
+   "tipe": "tabel",
+   "per": 10,
+   "judul": {
+    "id": "Peta WKP dan status lelang (kurasi METI)",
+    "en": "WKP map and auction status (METI curation)"
+   },
+   "kolom": [
+    {
+     "k": "nama",
+     "l": {
+      "id": "Wilayah",
+      "en": "Area"
+     }
+    },
+    {
+     "k": "jenis",
+     "l": {
+      "id": "Jenis",
+      "en": "Type"
+     }
+    },
+    {
+     "k": "provinsi",
+     "l": {
+      "id": "Provinsi",
+      "en": "Province"
+     }
+    },
+    {
+     "k": "pemegang",
+     "l": {
+      "id": "Pemegang",
+      "en": "Holder"
+     }
+    },
+    {
+     "k": "status",
+     "l": {
+      "id": "Status (menurut sumber)",
+      "en": "Status (per source)"
+     }
+    },
+    {
+     "k": "rencana_mw",
+     "l": {
+      "id": "Rencana (MW)",
+      "en": "Plan (MW)"
+     },
+     "num": true,
+     "d": 0
+    },
+    {
+     "k": "bukti",
+     "l": {
+      "id": "Bukti",
+      "en": "Evidence"
+     }
+    },
+    {
+     "k": "url_sumber",
+     "l": {
+      "id": "Sumber",
+      "en": "Source"
+     },
+     "url": "url_sumber"
+    }
+   ],
+   "baris": [
+    {
+     "nama": "Telaga Ranau",
+     "jenis": "WKP",
+     "provinsi": "Maluku Utara",
+     "pemegang": "-",
+     "status": "dilelang 2025 (WKP)",
+     "rencana_mw": 40,
+     "bukti": "media",
+     "url_sumber": "https://www.cnbcindonesia.com/news/20250917184934-4-667921/bahlil-lelang-10-wilayah-panas-bumi-ri-tahun-2025-ini-daftarnya"
+    },
+    {
+     "nama": "Songgoriti",
+     "jenis": "WKP",
+     "provinsi": "Jawa Timur",
+     "pemegang": "-",
+     "status": "dilelang 2025 (WKP)",
+     "rencana_mw": 40,
+     "bukti": "media",
+     "url_sumber": "https://www.cnbcindonesia.com/news/20250917184934-4-667921/bahlil-lelang-10-wilayah-panas-bumi-ri-tahun-2025-ini-daftarnya"
+    },
+    {
+     "nama": "Danau Ranau",
+     "jenis": "WKP",
+     "provinsi": "Lampung",
+     "pemegang": "-",
+     "status": "dilelang 2025 (WKP)",
+     "rencana_mw": 40,
+     "bukti": "media",
+     "url_sumber": "https://www.cnbcindonesia.com/news/20250917184934-4-667921/bahlil-lelang-10-wilayah-panas-bumi-ri-tahun-2025-ini-daftarnya"
+    },
+    {
+     "nama": "Bandar Baru Sepa",
+     "jenis": "PSPE",
+     "provinsi": "Maluku",
+     "pemegang": "-",
+     "status": "dilelang 2025 (PSPE)",
+     "rencana_mw": 40,
+     "bukti": "media",
+     "url_sumber": "https://www.cnbcindonesia.com/news/20250917184934-4-667921/bahlil-lelang-10-wilayah-panas-bumi-ri-tahun-2025-ini-daftarnya"
+    },
+    {
+     "nama": "Jenawi",
+     "jenis": "PSPE",
+     "provinsi": "Jawa Tengah",
+     "pemegang": "-",
+     "status": "dilelang 2025 (PSPE)",
+     "rencana_mw": 86,
+     "bukti": "media",
+     "url_sumber": "https://www.cnbcindonesia.com/news/20250917184934-4-667921/bahlil-lelang-10-wilayah-panas-bumi-ri-tahun-2025-ini-daftarnya"
+    },
+    {
+     "nama": "Gunung Tampomas",
+     "jenis": "PSPE",
+     "provinsi": "Jawa Barat",
+     "pemegang": "-",
+     "status": "dilelang 2025 (PSPE)",
+     "rencana_mw": 30,
+     "bukti": "media",
+     "url_sumber": "https://www.cnbcindonesia.com/news/20250917184934-4-667921/bahlil-lelang-10-wilayah-panas-bumi-ri-tahun-2025-ini-daftarnya"
+    },
+    {
+     "nama": "Kadidia",
+     "jenis": "PSPE",
+     "provinsi": "Sulawesi Tengah",
+     "pemegang": "-",
+     "status": "dilelang 2025 (PSPE)",
+     "rencana_mw": 40,
+     "bukti": "media",
+     "url_sumber": "https://www.cnbcindonesia.com/news/20250917184934-4-667921/bahlil-lelang-10-wilayah-panas-bumi-ri-tahun-2025-ini-daftarnya"
+    },
+    {
+     "nama": "Cubudak-Panti",
+     "jenis": "PSPE",
+     "provinsi": "Sumatera Barat",
+     "pemegang": "-",
+     "status": "dilelang 2025 (PSPE)",
+     "rencana_mw": 40,
+     "bukti": "media",
+     "url_sumber": "https://www.cnbcindonesia.com/news/20250917184934-4-667921/bahlil-lelang-10-wilayah-panas-bumi-ri-tahun-2025-ini-daftarnya"
+    },
+    {
+     "nama": "Cisurupan Kertasari",
+     "jenis": "PSPE",
+     "provinsi": "Jawa Barat",
+     "pemegang": "-",
+     "status": "dilelang 2025 (PSPE)",
+     "rencana_mw": 20,
+     "bukti": "media",
+     "url_sumber": "https://www.cnbcindonesia.com/news/20250917184934-4-667921/bahlil-lelang-10-wilayah-panas-bumi-ri-tahun-2025-ini-daftarnya"
+    },
+    {
+     "nama": "Tuang",
+     "jenis": "PSPE",
+     "provinsi": "Sulawesi Selatan",
+     "pemegang": "-",
+     "status": "dilelang 2025 (PSPE)",
+     "rencana_mw": 20,
+     "bukti": "media",
+     "url_sumber": "https://www.cnbcindonesia.com/news/20250917184934-4-667921/bahlil-lelang-10-wilayah-panas-bumi-ri-tahun-2025-ini-daftarnya"
+    },
+    {
+     "nama": "Gunung Ungaran",
+     "jenis": "WKP",
+     "provinsi": "Jawa Tengah",
+     "pemegang": "PLN",
+     "status": "PLN: masih tahap kajian (berita 2026)",
+     "rencana_mw": 55,
+     "bukti": "media",
+     "url_sumber": "https://www.antaranews.com/berita/5728691/pln-sebut-pltp-gunung-ungaran-masih-tahap-kajian"
+    },
+    {
+     "nama": "Hululais",
+     "jenis": "WKP",
+     "provinsi": "Bengkulu",
+     "pemegang": "PLN",
+     "status": "perjanjian pinjaman JICA ditandatangani 2026-03-30",
+     "rencana_mw": 110,
+     "bukti": "resmi",
+     "url_sumber": "https://www.jica.go.jp/english/information/press/2025/20260330_11.html"
+    },
+    {
+     "nama": "Bora Pulu (Sigi)",
+     "jenis": "WKP",
+     "provinsi": "Sulawesi Tengah",
+     "pemegang": "-",
+     "status": "pengadaan lahan proyek PLTP (berita 2026)",
+     "rencana_mw": null,
+     "bukti": "media",
+     "url_sumber": "https://www.antaranews.com/berita/5728435/pemkab-sigi-percepat-pengadaan-lahan-proyek-pltp-bora-pulu"
+    },
+    {
+     "nama": "Mataloko",
+     "jenis": "WKP",
+     "provinsi": "Nusa Tenggara Timur",
+     "pemegang": "PLN",
+     "status": "pengembangan PLTP Mataloko oleh PLN UIP Nusra (berita 2026)",
+     "rencana_mw": 20,
+     "bukti": "media",
+     "url_sumber": "https://kupang.tribunnews.com/adv/975061/pln-uip-nusra-dorong-penyerapan-tenaga-kerja-lokal-melalui-pengembangan-pltp-mataloko"
+    },
+    {
+     "nama": "Ulumbu",
+     "jenis": "WKP",
+     "provinsi": "Nusa Tenggara Timur",
+     "pemegang": "-",
+     "status": "PLTP beroperasi (berita pascagempa Flores 2026)",
+     "rencana_mw": null,
+     "bukti": "media",
+     "url_sumber": "https://kupang.tribunnews.com/adv/977279/pascagempa-m77-flores-keandalan-pltp-ulumbu-tetap-terjaga"
+    },
+    {
+     "nama": "Patuha",
+     "jenis": "WKP",
+     "provinsi": "Jawa Barat",
+     "pemegang": "Geo Dipa Energi",
+     "status": "Unit 2 belum beroperasi (berita 2026); unit lain produksi",
+     "rencana_mw": null,
+     "bukti": "media",
+     "url_sumber": "https://jabar.jpnn.com/jabar-terkini/32740/raih-satu-juta-jam-kerja-selamat-pltp-patuha-unit-2-torehkan-prestasi-sebelum-beroperasi"
+    },
+    {
+     "nama": "Kamojang",
+     "jenis": "WKP",
+     "provinsi": "Jawa Barat",
+     "pemegang": "-",
+     "status": "PLTP beroperasi (berita liputan6)",
+     "rencana_mw": null,
+     "bukti": "media",
+     "url_sumber": "https://berita.liputan6.com/peristiwa/read/8318429/menelusuri-pltp-kamojang-saat-panas-bumi-diubah-jadi-listrik"
+    },
+    {
+     "nama": "Ulubelu",
+     "jenis": "WKP",
+     "provinsi": "Lampung",
+     "pemegang": "Pertamina Geothermal Energy",
+     "status": "pengembangan PLTP Ulubelu oleh PGE (berita 2026)",
+     "rencana_mw": null,
+     "bukti": "media",
+     "url_sumber": "https://www.antaranews.com/berita/5705529/pge-pengembangan-pltp-ulubelu-dan-lahendong-perkuat-ketahanan-energi"
+    },
+    {
+     "nama": "Lahendong",
+     "jenis": "WKP",
+     "provinsi": "Sulawesi Utara",
+     "pemegang": "Pertamina Geothermal Energy",
+     "status": "pengembangan PLTP Lahendong oleh PGE (berita 2026)",
+     "rencana_mw": null,
+     "bukti": "media",
+     "url_sumber": "https://www.antaranews.com/berita/5705529/pge-pengembangan-pltp-ulubelu-dan-lahendong-perkuat-ketahanan-energi"
+    }
+   ],
+   "catatan": {
+    "id": "Daftar kurasi 19 WKP/PSPE dengan bukti publik, bukan seluruh WKP nasional. Koordinat tidak dipanen karena robots.txt Geoportal ESDM melarang robot; hasil lelang 2025 (pemenang) belum ditemukan; semua status berdasar berita (bukti media), bukan Kepmen.",
+    "en": "A curated list of 19 WKP/PSPE with public evidence, not all national WKP. Coordinates are not harvested because the ESDM Geoportal robots.txt disallows robots; 2025 auction results (winners) were not found; all statuses are based on news (media evidence), not ministerial decrees."
+   },
+   "sumber": [
+    "wkp",
+    "lelang",
+    "lelang2",
+    "geoportal"
+   ]
+  },
+  "9": {
+   "tipe": "tabel",
+   "per": 12,
+   "judul": {
+    "id": "Pemain panas bumi di basis METI",
+    "en": "Geothermal players in the METI base"
+   },
+   "kolom": [
+    {
+     "k": "nama",
+     "l": {
+      "id": "Organisasi",
+      "en": "Organisation"
+     }
+    },
+    {
+     "k": "kategori",
+     "l": {
+      "id": "Kategori",
+      "en": "Category"
+     }
+    },
+    {
+     "k": "peran",
+     "l": {
+      "id": "Peran rantai",
+      "en": "Chain role"
+     }
+    },
+    {
+     "k": "proyek",
+     "l": {
+      "id": "Proyek tercatat",
+      "en": "Recorded projects"
+     },
+     "num": true,
+     "d": 0
+    }
+   ],
+   "baris": [
+    {
+     "nama": "PT PLN Indonesia Power",
+     "kategori": "BUMN",
+     "peran": "operator, pengembang",
+     "proyek": 18
+    },
+    {
+     "nama": "PT Pertamina Geothermal Energy Tbk",
+     "kategori": "Swasta",
+     "peran": "pengembang, operator",
+     "proyek": 11
+    },
+    {
+     "nama": "PT Star Energy Geothermal",
+     "kategori": "Swasta",
+     "peran": "pengembang, IPP",
+     "proyek": 5
+    },
+    {
+     "nama": "PT Geo Dipa Energi (Persero)",
+     "kategori": "BUMN",
+     "peran": "pengembang, operator",
+     "proyek": 5
+    },
+    {
+     "nama": "Star Energy Group",
+     "kategori": "Perusahaan Internasional di Indonesia",
+     "peran": "pengembang",
+     "proyek": 4
+    },
+    {
+     "nama": "Engie",
+     "kategori": "Perusahaan Internasional di Indonesia",
+     "peran": "pengembang, IPP",
+     "proyek": 3
+    },
+    {
+     "nama": "PT Medco Power Indonesia",
+     "kategori": "Swasta",
+     "peran": "pengembang, IPP",
+     "proyek": 3
+    },
+    {
+     "nama": "PT Barito Renewables Energy Tbk",
+     "kategori": "Swasta",
+     "peran": "pengembang, IPP",
+     "proyek": 3
+    },
+    {
+     "nama": "PT Supreme Energy",
+     "kategori": "Swasta",
+     "peran": "pengembang, IPP",
+     "proyek": 3
+    },
+    {
+     "nama": "Sumitomo Corporation",
+     "kategori": "Perusahaan Internasional di Indonesia",
+     "peran": "pengembang, pembiaya",
+     "proyek": 3
+    },
+    {
+     "nama": "Ormat Technologies",
+     "kategori": "Perusahaan Internasional di Indonesia",
+     "peran": "pengembang",
+     "proyek": 2
+    },
+    {
+     "nama": "Chevron",
+     "kategori": "Perusahaan Internasional di Indonesia",
+     "peran": "pengembang",
+     "proyek": 2
+    },
+    {
+     "nama": "PT Pertamina (Persero)",
+     "kategori": "BUMN",
+     "peran": "operator, produsen BBN",
+     "proyek": 2
+    },
+    {
+     "nama": "Tohoku Electric Power",
+     "kategori": "Perusahaan Internasional di Indonesia",
+     "peran": "pengembang",
+     "proyek": 1
+    },
+    {
+     "nama": "KS Orka Renewables",
+     "kategori": "Perusahaan Internasional di Indonesia",
+     "peran": "pengembang",
+     "proyek": 1
+    },
+    {
+     "nama": "Kansai Electric Power",
+     "kategori": "Perusahaan Internasional di Indonesia",
+     "peran": "pengembang",
+     "proyek": 1
+    },
+    {
+     "nama": "Electricity Generating PCL (EGCO)",
+     "kategori": "Perusahaan Internasional di Indonesia",
+     "peran": "pengembang",
+     "proyek": 1
+    },
+    {
+     "nama": "Inpex",
+     "kategori": "Perusahaan Internasional di Indonesia",
+     "peran": "pengembang",
+     "proyek": 1
+    },
+    {
+     "nama": "Marubeni Corporation",
+     "kategori": "Perusahaan Internasional di Indonesia",
+     "peran": "pengembang, pembiaya",
+     "proyek": 1
+    },
+    {
+     "nama": "PT Dizamatara Powerindo",
+     "kategori": "Swasta",
+     "peran": "pengembang",
+     "proyek": 1
+    },
+    {
+     "nama": "PT Trinergy Mandiri International",
+     "kategori": "Swasta",
+     "peran": "pengembang",
+     "proyek": 1
+    },
+    {
+     "nama": "PT Cahaya Anagata Energy",
+     "kategori": "Swasta",
+     "peran": "pengembang",
+     "proyek": 1
+    },
+    {
+     "nama": "PT Archi Indonesia Tbk",
+     "kategori": "Swasta",
+     "peran": "pengembang",
+     "proyek": 1
+    },
+    {
+     "nama": "PT Sintesa Banten Geothermal",
+     "kategori": "Swasta",
+     "peran": "pengembang",
+     "proyek": 1
+    }
+   ],
+   "catatan": {
+    "id": "Pemain utama menurut berita dan sumber di bab ini: PGE (1.932 MW termasuk mitra JOC dalam rilis terbaru PGE yang terbaca; 727 MW dikelola sendiri), PLN dan PLN Indonesia Power, Geo Dipa, Star Energy, Supreme Energy, Medco, Barito Renewables, Sorik Marapi Geothermal Power.",
+    "en": "Main players per news and sources in this chapter: PGE (1,932 MW including JOC partners per the latest PGE release read; 727 MW self-operated), PLN and PLN Indonesia Power, Geo Dipa, Star Energy, Supreme Energy, Medco, Barito Renewables, Sorik Marapi Geothermal Power."
+   },
+   "sumber": [
+    "pge_q3",
+    "pge_q1",
+    "proyek",
+    "bren",
+    "medco"
+   ]
+  },
+  "10": {
+   "tipe": "tabel",
+   "per": 10,
+   "judul": {
+    "id": "Proyek panas bumi terbesar di basis METI",
+    "en": "Largest geothermal projects in the METI base"
+   },
+   "kolom": [
+    {
+     "k": "nama",
+     "l": {
+      "id": "Proyek",
+      "en": "Project"
+     }
+    },
+    {
+     "k": "provinsi",
+     "l": {
+      "id": "Provinsi",
+      "en": "Province"
+     }
+    },
+    {
+     "k": "mw",
+     "l": {
+      "id": "MW",
+      "en": "MW"
+     },
+     "num": true,
+     "d": 0
+    },
+    {
+     "k": "status",
+     "l": {
+      "id": "Status",
+      "en": "Status"
+     }
+    },
+    {
+     "k": "bukti",
+     "l": {
+      "id": "Bukti",
+      "en": "Evidence"
+     }
+    }
+   ],
+   "baris": [
+    {
+     "nama": "PLTP 2030 2030 (FTP2)",
+     "provinsi": "Sumatera Selatan",
+     "mw": 600,
+     "status": "rencana",
+     "bukti": "resmi"
+    },
+    {
+     "nama": "PLTP Dieng (FTP2)",
+     "provinsi": "Jawa Tengah",
+     "mw": 345,
+     "status": "konstruksi",
+     "bukti": "resmi"
+    },
+    {
+     "nama": "Sarulla geothermal power plant",
+     "provinsi": "Sumatera Utara",
+     "mw": 330,
+     "status": "beroperasi",
+     "bukti": "kajian"
+    },
+    {
+     "nama": "Kamojang geothermal",
+     "provinsi": "Jawa Barat",
+     "mw": 235,
+     "status": "beroperasi",
+     "bukti": "media"
+    },
+    {
+     "nama": "Wayang Windu geothermal",
+     "provinsi": "Jawa Barat",
+     "mw": 227,
+     "status": "-",
+     "bukti": "media"
+    },
+    {
+     "nama": "Rantau Dedep geothermal power plant",
+     "provinsi": "Sumatera Selatan",
+     "mw": 225,
+     "status": "beroperasi",
+     "bukti": "kajian"
+    },
+    {
+     "nama": "PLTP Baturaden (FTP2)",
+     "provinsi": "Jawa Tengah",
+     "mw": 220,
+     "status": "rencana",
+     "bukti": "resmi"
+    },
+    {
+     "nama": "Rajabasa geothermal power plant",
+     "provinsi": "Lampung",
+     "mw": 220,
+     "status": "konstruksi",
+     "bukti": "kajian"
+    },
+    {
+     "nama": "Darajat geothermal",
+     "provinsi": "Jawa Barat",
+     "mw": 200,
+     "status": "-",
+     "bukti": "media"
+    },
+    {
+     "nama": "PLTP Sorik Marapi (FTP2)",
+     "provinsi": "Sumatera Utara",
+     "mw": 185,
+     "status": "konstruksi",
+     "bukti": "resmi"
+    },
+    {
+     "nama": "Gunung Salak geothermal",
+     "provinsi": "Jawa Barat",
+     "mw": 180,
+     "status": "-",
+     "bukti": "media"
+    },
+    {
+     "nama": "PLTP Bedugul",
+     "provinsi": "Bali",
+     "mw": 175,
+     "status": "rencana",
+     "bukti": "resmi"
+    },
+    {
+     "nama": "Muara Laboh Geothermal Power Plant",
+     "provinsi": "Sumatera Barat",
+     "mw": 168,
+     "status": "beroperasi",
+     "bukti": "resmi"
+    },
+    {
+     "nama": "Gunung Salak geothermal",
+     "provinsi": "Jawa Barat",
+     "mw": 165,
+     "status": "-",
+     "bukti": "media"
+    },
+    {
+     "nama": "Patuha geothermal",
+     "provinsi": "Jawa Barat",
+     "mw": 165,
+     "status": "konstruksi",
+     "bukti": "resmi"
+    },
+    {
+     "nama": "PLTP Telaga Ngebel (FTP2)",
+     "provinsi": "Jawa Timur",
+     "mw": 165,
+     "status": "rencana",
+     "bukti": "resmi"
+    },
+    {
+     "nama": "PLTP Wayang Windu",
+     "provinsi": "Jawa Barat",
+     "mw": 150,
+     "status": "rencana",
+     "bukti": "resmi"
+    },
+    {
+     "nama": "PLTP Muara Laboh (FTP2)",
+     "provinsi": "Sumatera Barat",
+     "mw": 140,
+     "status": "rencana",
+     "bukti": "resmi"
+    },
+    {
+     "nama": "PLTP Wayang Windu (FTP2)",
+     "provinsi": "Jawa Barat",
+     "mw": 130,
+     "status": "-",
+     "bukti": "resmi"
+    },
+    {
+     "nama": "PLTP Rawadano (FTP2)",
+     "provinsi": "Banten",
+     "mw": 110,
+     "status": "rencana",
+     "bukti": "resmi"
+    }
+   ],
+   "catatan": {
+    "id": "Satu lapangan dapat muncul lebih dari sekali (unit atau sumber berbeda). Entri \"FTP2\" dan \"2030\" adalah rencana, bukan operasi.",
+    "en": "One field can appear more than once (different units or sources). Entries marked \"FTP2\" and \"2030\" are plans, not operations."
+   },
+   "sumber": [
+    "proyek"
+   ]
+  },
+  "11": {
+   "tipe": "tabel",
+   "per": 8,
+   "judul": {
+    "id": "Harga patokan tertinggi PLTP, Perpres 112/2022 (sen US$/kWh)",
+    "en": "PLTP ceiling prices, Perpres 112/2022 (US cents/kWh)"
+   },
+   "kolom": [
+    {
+     "k": "varian",
+     "l": {
+      "id": "Varian",
+      "en": "Variant"
+     }
+    },
+    {
+     "k": "kap",
+     "l": {
+      "id": "Kapasitas",
+      "en": "Capacity"
+     }
+    },
+    {
+     "k": "d1",
+     "l": {
+      "id": "Tahun 1-10 (x F)",
+      "en": "Years 1-10 (x F)"
+     },
+     "num": true,
+     "d": 2
+    },
+    {
+     "k": "d11",
+     "l": {
+      "id": "Tahun 11-30",
+      "en": "Years 11-30"
+     },
+     "num": true,
+     "d": 2
+    }
+   ],
+   "baris": [
+    {
+     "varian": {
+      "id": "Listrik (PLTP)",
+      "en": "Electricity (PLTP)"
+     },
+     "kap": "s.d. 10 MW",
+     "d1": 9.76,
+     "d11": 8.3
+    },
+    {
+     "varian": {
+      "id": "Listrik (PLTP)",
+      "en": "Electricity (PLTP)"
+     },
+     "kap": ">10-50 MW",
+     "d1": 9.41,
+     "d11": 8
+    },
+    {
+     "varian": {
+      "id": "Listrik (PLTP)",
+      "en": "Electricity (PLTP)"
+     },
+     "kap": ">50-100 MW",
+     "d1": 8.64,
+     "d11": 7.35
+    },
+    {
+     "varian": {
+      "id": "Listrik (PLTP)",
+      "en": "Electricity (PLTP)"
+     },
+     "kap": ">100 MW",
+     "d1": 7.65,
+     "d11": 6.5
+    },
+    {
+     "varian": {
+      "id": "Uap setara listrik",
+      "en": "Steam, electricity equivalent"
+     },
+     "kap": "s.d. 10 MW",
+     "d1": 6.6,
+     "d11": 5.6
+    },
+    {
+     "varian": {
+      "id": "Uap setara listrik",
+      "en": "Steam, electricity equivalent"
+     },
+     "kap": ">10-50 MW",
+     "d1": 6.25,
+     "d11": 5.31
+    },
+    {
+     "varian": {
+      "id": "Uap setara listrik",
+      "en": "Steam, electricity equivalent"
+     },
+     "kap": ">50-100 MW",
+     "d1": 5.48,
+     "d11": 4.65
+    },
+    {
+     "varian": {
+      "id": "Uap setara listrik",
+      "en": "Steam, electricity equivalent"
+     },
+     "kap": ">100 MW",
+     "d1": 4.48,
+     "d11": 3.91
+    }
+   ],
+   "catatan": {
+    "id": "PLN adalah pembeli utama. Nilai adalah transkripsi METI dari PDF yang dibaca OCR; satu angka uap (3,91) terbaca samar. Tarif dapat diubah lewat Kepmen ESDM; cek ulang sebelum dikutip. Faktor lokasi F ada di Lampiran II.",
+    "en": "PLN is the main buyer. Values are a METI transcription from an OCR-read PDF; one steam figure (3.91) is faint. Tariffs can be changed by ministerial decree; re-check before citing. The location factor F is in Annex II."
+   },
+   "sumber": [
+    "keuangan",
+    "perpres112"
+   ]
+  },
+  "12": {
+   "tipe": "tabel",
+   "per": 8,
+   "judul": {
+    "id": "Kerangka hukum panas bumi",
+    "en": "Geothermal legal framework"
+   },
+   "kolom": [
+    {
+     "k": "aturan",
+     "l": {
+      "id": "Aturan",
+      "en": "Instrument"
+     }
+    },
+    {
+     "k": "judul",
+     "l": {
+      "id": "Judul",
+      "en": "Title"
+     }
+    },
+    {
+     "k": "tanggal",
+     "l": {
+      "id": "Ditetapkan",
+      "en": "Enacted"
+     }
+    },
+    {
+     "k": "status",
+     "l": {
+      "id": "Status",
+      "en": "Status"
+     }
+    },
+    {
+     "k": "url",
+     "l": {
+      "id": "Sumber",
+      "en": "Source"
+     },
+     "url": "url"
+    }
+   ],
+   "baris": [
+    {
+     "judul": "Panas Bumi untuk Pemanfaatan Tidak Langsung",
+     "aturan": "PP 7/2017",
+     "tanggal": "2017-02-21",
+     "status": "diubah",
+     "url": "https://peraturan.bpk.go.id/Details/5827"
+    },
+    {
+     "judul": "Besaran dan Tata Cara Pemberian Bonus Produksi Panas Bumi",
+     "aturan": "PP 28/2016",
+     "tanggal": "2016-07-14",
+     "status": "berlaku",
+     "url": "https://peraturan.bpk.go.id/Details/5749"
+    },
+    {
+     "judul": "Perubahan Kedua Atas Peraturan Pemerintah Nomor 59 Tahun 2007 Tentang Kegiatan Usaha Panas Bumi",
+     "aturan": "PP 75/2014",
+     "tanggal": "2014-10-14",
+     "status": "dicabut",
+     "url": "https://peraturan.bpk.go.id/Details/5517"
+    },
+    {
+     "judul": "Panas Bumi",
+     "aturan": "UU 21/2014",
+     "tanggal": "2014-09-17",
+     "status": "diubah",
+     "url": "https://peraturan.bpk.go.id/Details/38684"
+    },
+    {
+     "judul": "Pembelian Tenaga Listrik Dari PLTP Dan Uap Panas Bumi Untuk PLTP Oleh PT Perusahaan Listrik Negara (Persero)",
+     "aturan": "Permen 17/2014",
+     "tanggal": "2014-06-03",
+     "status": "berlaku",
+     "url": "https://peraturan.bpk.go.id/Details/143716"
+    },
+    {
+     "judul": "Permen ESDM No. 22 Tahun 2012 tentang Penugasan Kepada PT Perusahaan Listrik Negara (Persero) Untuk Melakukan Pembelian Tenaga Listrik Dari Pembangkit Listrik Tenaga Panas Bumi dan Harga Patokan Pembelian Tenaga Listrik oleh PT Perusahaan Listrik Negara (Persero) Dari Pembangkit Listrik Tenaga Panas Bumi",
+     "aturan": "Permen 22/2012",
+     "tanggal": "2012-08-16",
+     "status": "dicabut",
+     "url": "https://peraturan.bpk.go.id/Details/143717"
+    },
+    {
+     "judul": "Permen ESDM No. 2 Tahun 2011 tentang Penugasan Kepada PT Perusahaan Listrik Negara (Persero) Untuk Melakukan Pembelian Tenaga Listrik Dari Pembangkit Listrik Tenaga Panas Bumi Dan Harga Patokan Pembelian Tenaga Listrik Oleh PT Perusahaan Listrik Negara (Persero) Dari Pembangkit Listrik Tenaga Panas Bumi",
+     "aturan": "Permen 2/2011",
+     "tanggal": "2011-02-16",
+     "status": "dicabut",
+     "url": "https://peraturan.bpk.go.id/Details/143718"
+    },
+    {
+     "judul": "Perubahan Atas Peraturan Pemerintah Nomor 59 Tahun 2007 Tentang Kegiatan Usaha Panas Bumi",
+     "aturan": "PP 70/2010",
+     "tanggal": "2010-10-20",
+     "status": "dicabut",
+     "url": "https://peraturan.bpk.go.id/Details/5094"
+    },
+    {
+     "judul": "Permen ESDM No. 32 Tahun 2009 tentang Harga Patokan Pembelian Tenaga Listrik Oleh PT PLN (Persero) Dari Pembangkit Listrik Tenaga Panas Bumi",
+     "aturan": "Permen 32/2009",
+     "tanggal": "2009-12-04",
+     "status": "dicabut",
+     "url": "https://peraturan.bpk.go.id/Details/143719"
+    },
+    {
+     "judul": "Kegiatan Usaha Panas Bumi",
+     "aturan": "PP 59/2007",
+     "tanggal": "2007-11-05",
+     "status": "dicabut",
+     "url": "https://peraturan.bpk.go.id/Details/4782"
+    },
+    {
+     "judul": "Panas Bumi",
+     "aturan": "UU 27/2003",
+     "tanggal": "2003-10-22",
+     "status": "dicabut",
+     "url": "https://peraturan.bpk.go.id/Details/44080"
+    },
+    {
+     "judul": "Pengusahaan Sumber Daya Panas Bumi Untuk Pembangkitan Tenaga Listrik",
+     "aturan": "Keppres 76/2000",
+     "tanggal": "2000-05-31",
+     "status": "berlaku",
+     "url": "https://peraturan.bpk.go.id/Details/57970"
+    },
+    {
+     "judul": "Perlakuan Pajak Penghasilan, Pajak Pertambahan Nilai Dan Pungutan-Pungutan Lainnya Terhadap Pelaksanaan Kuasa Dan Ijin Pengusahaan Sumberdaya Panas Bumi Untuk Membangkitkan Energi/Listrik",
+     "aturan": "Keppres 49/1991",
+     "tanggal": "1991-11-12",
+     "status": "dicabut",
+     "url": "https://peraturan.bpk.go.id/Details/63776"
+    },
+    {
+     "judul": "Penundaan Pembayaran Pajak Pertambahan Nilai Atas Penyerahan Jasa Pencarian Sumber-Sumber Dan Pemboran Minyak, Gas Bumi, Dan Panas Bumi Bagi Para Kontraktor Yang Belum Berproduksi",
+     "aturan": "Keppres 22/1989",
+     "tanggal": "1989-05-24",
+     "status": "berlaku",
+     "url": "https://peraturan.bpk.go.id/Details/64113"
+    },
+    {
+     "judul": "Pajak Perseroan Dan Pajak Atas Bunga, Dividen Dan Royalty Pada Pelaksanaan Kuasa Pengusahaan Sumber Daya Panas Bumi Dan Kontrak Operasi Bersama (Joint Operation Contract) Antara Pertamina Dan Kontraktor Dalam Pengusahaan Sumber Daya Panas Bumi",
+     "aturan": "Keppres 23/1981",
+     "tanggal": "1981-06-03",
+     "status": "dicabut",
+     "url": "https://peraturan.bpk.go.id/Details/66427"
+    },
+    {
+     "judul": "Mencabut Keputusan Presiden Nomor 16 Tahun 1974 Dan Memberikan Kuasa Pengusahaan Eksplorasi Dan Eksploitasi Sumber Daya Panasbumi Untuk Pembangkitan Energi/Listrik Kepada Pertamina Di Indonesia",
+     "aturan": "Keppres 22/1981",
+     "tanggal": "1981-06-01",
+     "status": "dicabut",
+     "url": "https://peraturan.bpk.go.id/Details/66424"
+    }
+   ],
+   "catatan": {
+    "id": "Pasal kunci belum dirangkum di sini; UU 21/2014 menjadi payung, PP 7/2017 mengatur pemanfaatan tidak langsung, dan Perpres 112/2022 mengatur harga. Status mengikuti JDIH BPK per tanggal ambil.",
+    "en": "Key articles are not summarised here; Law 21/2014 is the umbrella, PP 7/2017 governs indirect use and Perpres 112/2022 governs price. Status follows JDIH BPK at harvest date."
+   },
+   "sumber": [
+    "uu21",
+    "pp7",
+    "perpres112"
+   ]
+  },
+  "13": {
+   "tipe": "linimasa",
+   "butir": [
+    {
+     "tanggal": "1978-01-01",
+     "judul": {
+      "id": "Kamojang menghasilkan listrik pertama 0,25 MW (tahun)",
+      "en": "Kamojang produces first electricity, 0.25 MW (year)"
+     },
+     "url": "https://www.esdm.go.id/id/media-center/arsip-berita/lapangan-kamojang-pltp-pertama-di-indonesia"
+    },
+    {
+     "tanggal": "1983-01-01",
+     "judul": {
+      "id": "Unit 1 Kamojang 30 MW diresmikan (tahun)",
+      "en": "Kamojang unit 1, 30 MW, officially recognised (year)"
+     },
+     "url": "https://pge.pertamina.com/en/own-operation/kamojang"
+    },
+    {
+     "tanggal": "2014-09-17",
+     "judul": {
+      "id": "UU 21/2014 tentang Panas Bumi ditetapkan",
+      "en": "Law 21/2014 on Geothermal enacted"
+     },
+     "url": "https://peraturan.bpk.go.id/Details/38684"
+    },
+    {
+     "tanggal": "2017-02-21",
+     "judul": {
+      "id": "PP 7/2017 tentang pemanfaatan tidak langsung",
+      "en": "PP 7/2017 on indirect use"
+     },
+     "url": "https://peraturan.bpk.go.id/Details/5827"
+    },
+    {
+     "tanggal": "2019-12-16",
+     "judul": {
+      "id": "Muara Laboh 85 MW beroperasi komersial",
+      "en": "Muara Laboh 85 MW enters commercial operation"
+     },
+     "url": "https://www.sumitomocorp.com/en/jp/news/release/2019/group/12770"
+    },
+    {
+     "tanggal": "2021-01-25",
+     "judul": {
+      "id": "Insiden gas H2S Sorik Marapi",
+      "en": "Sorik Marapi H2S gas incident"
+     },
+     "url": "https://www.esdm.go.id/en/media-center/news-archives/investigasi-paparan-gas-h2s-kementerian-esdm-hentikan-sementara-aktivitas-pltp-sorik-marapi-"
+    },
+    {
+     "tanggal": "2021-12-26",
+     "judul": {
+      "id": "Rantau Dedap fase 1 beroperasi komersial",
+      "en": "Rantau Dedap phase 1 enters commercial operation"
+     },
+     "url": "https://www.supreme-energy.com/id/publication_/pt-supreme-energy-rantau-dedap-starts-commercial-operation-rantau-dedap-geothermal-power-plant-development"
+    },
+    {
+     "tanggal": "2022-03-12",
+     "judul": {
+      "id": "Kebocoran gas pad 28 Dieng",
+      "en": "Dieng pad 28 gas release"
+     },
+     "url": "https://kabar24.bisnis.com/read/20220313/15/1509974/ini-penjelasan-geo-dipa-soal-kronologi-keluarnya-gas-beracun-di-dieng"
+    },
+    {
+     "tanggal": "2022-09-13",
+     "judul": {
+      "id": "Perpres 112/2022 ditetapkan",
+      "en": "Perpres 112/2022 enacted"
+     },
+     "url": "https://peraturan.bpk.go.id/Details/225308/perpres-no-112-tahun-2022"
+    },
+    {
+     "tanggal": "2025-09-17",
+     "judul": {
+      "id": "Pemerintah mengumumkan lelang 3 WKP dan 7 PSPE",
+      "en": "Government announces auction of 3 WKP and 7 PSPE"
+     },
+     "url": "https://www.cnbcindonesia.com/news/20250917184934-4-667921/bahlil-lelang-10-wilayah-panas-bumi-ri-tahun-2025-ini-daftarnya"
+    },
+    {
+     "tanggal": "2026-03-30",
+     "judul": {
+      "id": "Perjanjian pinjaman JICA untuk PLTP Hululais",
+      "en": "JICA loan agreement for PLTP Hululais"
+     },
+     "url": "https://www.jica.go.jp/english/information/press/2025/20260330_11.html"
+    }
+   ],
+   "sumber": [
+    "esdm_kmj",
+    "uu21",
+    "pp7",
+    "laboh_sc",
+    "sorik_esdm",
+    "dedap_se",
+    "dieng_kabar",
+    "perpres112",
+    "lelang2",
+    "jica"
+   ]
+  },
+  "14": {
+   "tipe": "teks",
+   "paragraf": [
+    {
+     "id": "Insentif fiskal yang tercatat untuk panas bumi: PPN dibebaskan atas impor barang yang dipakai kontraktor panas bumi pemanfaatan tidak langsung (PP 49/2022, Pasal 25). Pembebasan bea masuk barang modal pembangkit diatur PMK 66/PMK.010/2015 dengan syarat barang belum diproduksi dalam negeri. Instrumen lama (PMK 177/PMK.011/2007) tercatat tidak berlaku menurut JDIH BPK.",
+     "en": "Fiscal incentives recorded for geothermal: VAT exemption on imports used by indirect-use geothermal contractors (PP 49/2022, Article 25). Import duty exemption for power plant capital goods is governed by PMK 66/PMK.010/2015 on condition the goods are not made domestically. The older instrument (PMK 177/PMK.011/2007) is recorded as no longer in force per JDIH BPK."
+    },
+    {
+     "id": "Insentif nonfiskal utama ialah harga patokan tertinggi Perpres 112/2022. Bonus produksi untuk daerah diatur PP 28/2016. Pemakaian produk dalam negeri (TKDN) diatur Permen ESDM 11/2024; ambang per komponen belum dibaca METI.",
+     "en": "The main non-fiscal incentive is the ceiling price in Perpres 112/2022. Production bonuses for regions are governed by PP 28/2016. Domestic content (TKDN) is governed by Permen ESDM 11/2024; thresholds per component have not been read by METI."
+    }
+   ],
+   "sumber": [
+    "insentif",
+    "pp49",
+    "perpres112"
+   ]
+  },
+  "15": {
+   "tipe": "langkah",
+   "butir": [
+    {
+     "judul": {
+      "id": "Pastikan status wilayah",
+      "en": "Confirm area status"
+     },
+     "isi": {
+      "id": "Cek apakah wilayah sudah WKP, sedang dilelang, atau masih PSPE; irisan dengan kawasan hutan dan konservasi.",
+      "en": "Check whether the area is a WKP, being auctioned, or still PSPE; overlap with forest and conservation areas."
+     },
+     "pelaku": {
+      "id": "Calon pengembang",
+      "en": "Prospective developer"
+     }
+    },
+    {
+     "judul": {
+      "id": "Ikuti lelang dan peroleh izin panas bumi",
+      "en": "Join the auction and obtain the geothermal permit"
+     },
+     "isi": {
+      "id": "Ikuti lelang WKP; pemenang menerima izin. Waktu dan biaya bergantung dokumen lelang, bukan angka tunggal.",
+      "en": "Join the WKP auction; the winner receives the permit. Time and cost depend on the tender documents, not a single figure."
+     },
+     "pelaku": {
+      "id": "Pengembang, Kementerian ESDM",
+      "en": "Developer, Ministry of ESDM"
+     }
+    },
+    {
+     "judul": {
+      "id": "Izin lingkungan dan kawasan hutan",
+      "en": "Environmental and forest area permits"
+     },
+     "isi": {
+      "id": "AMDAL dan izin penggunaan kawasan hutan bila lokasi di dalam kawasan hutan.",
+      "en": "AMDAL and forest area use permit if the site is inside forest area."
+     },
+     "pelaku": {
+      "id": "Pengembang, KLH, Kementerian Kehutanan",
+      "en": "Developer, Ministry of Environment, Ministry of Forestry"
+     }
+    },
+    {
+     "judul": {
+      "id": "Eksplorasi, kelayakan, lalu PPA",
+      "en": "Exploration, feasibility, then PPA"
+     },
+     "isi": {
+      "id": "Bor sumur eksplorasi, nyatakan cadangan, negosiasi harga dalam batas Perpres 112/2022.",
+      "en": "Drill exploration wells, declare reserves, negotiate price within Perpres 112/2022 limits."
+     },
+     "pelaku": {
+      "id": "Pengembang, PLN",
+      "en": "Developer, PLN"
+     }
+    },
+    {
+     "judul": {
+      "id": "Pendanaan dan konstruksi",
+      "en": "Financing and construction"
+     },
+     "isi": {
+      "id": "Tutup keuangan, konstruksi, uji, lalu COD.",
+      "en": "Financial close, construction, testing then COD."
+     },
+     "pelaku": {
+      "id": "Pengembang, pendana, kontraktor",
+      "en": "Developer, lenders, contractors"
+     }
+    }
+   ],
+   "catatan": {
+    "id": "Alur umum menurut UU 21/2014 dan PP 7/2017; METI belum merinci lama dan biaya tiap izin karena aturan turunan perlu dibaca per kasus. Jangan dipakai sebagai nasihat hukum.",
+    "en": "A general flow per Law 21/2014 and PP 7/2017; METI has not detailed the time and cost of each permit because implementing rules need reading case by case. Not legal advice."
+   },
+   "sumber": [
+    "uu21",
+    "pp7",
+    "perpres112"
+   ]
+  },
+  "19": {
+   "tipe": "teks",
+   "paragraf": [
+    {
+     "id": "Biaya rata-rata satu sumur panas bumi sekitar US$5 juta (studi kasus Lemigas 2023); pengeboran dilaporkan memakan 35-40% biaya total proyek (dikutip dari ESMAP). Estimasi lama untuk Indonesia: US$300.000-400.000 per MW (Stanford, 2011).",
+     "en": "The average cost of one geothermal well is about US$5 million (Lemigas 2023 case study); drilling is reported to take 35-40% of total project cost (citing ESMAP). An older estimate for Indonesia: US$300,000-400,000 per MW (Stanford, 2011)."
+    },
+    {
+     "id": "Tingkat sukses sumur naik seiring pengalaman: ESMAP mencatat sekitar 59% pada eksplorasi, 74% pada pengembangan, dan 83% pada operasi.",
+     "en": "Well success rises with experience: ESMAP records about 59% in exploration, 74% in development and 83% in operation."
+    }
+   ],
+   "catatan": {
+    "id": "Angka biaya berasal dari studi yang usianya berbeda dan definisi sukses tidak seragam; periksa laporan asli sebelum dipakai untuk model keuangan.",
+    "en": "Cost figures come from studies of different ages and success definitions are not uniform; check original reports before using them in a financial model."
+   },
+   "sumber": [
+    "lemigas",
+    "esmap",
+    "stanford"
+   ]
+  },
+  "20": {
+   "tipe": "tabel",
+   "per": 8,
+   "judul": {
+    "id": "Pembanding negara (kapasitas dan skema)",
+    "en": "Country comparison (capacity and scheme)"
+   },
+   "kolom": [
+    {
+     "k": "negara",
+     "l": {
+      "id": "Negara",
+      "en": "Country"
+     }
+    },
+    {
+     "k": "kap",
+     "l": {
+      "id": "Kapasitas (MW)",
+      "en": "Capacity (MW)"
+     },
+     "num": true,
+     "d": 0
+    },
+    {
+     "k": "tahun",
+     "l": {
+      "id": "Tahun data",
+      "en": "Data year"
+     }
+    },
+    {
+     "k": "skema",
+     "l": {
+      "id": "Skema kunci",
+      "en": "Key scheme"
+     }
+    },
+    {
+     "k": "bukti",
+     "l": {
+      "id": "Bukti",
+      "en": "Evidence"
+     }
+    }
+   ],
+   "baris": [
+    {
+     "negara": {
+      "id": "Indonesia",
+      "en": "Indonesia"
+     },
+     "kap": 2743.76,
+     "tahun": "2025",
+     "skema": {
+      "id": "Harga patokan tertinggi (Perpres 112/2022), pengeboran pemerintah lewat PISP",
+      "en": "Ceiling price (Perpres 112/2022), government drilling through PISP"
+     },
+     "bukti": "resmi"
+    },
+    {
+     "negara": {
+      "id": "Turki",
+      "en": "Turkey"
+     },
+     "kap": 1691.4,
+     "tahun": "2024",
+     "skema": {
+      "id": "FiT YEKDEM dalam dolar AS dengan bonus komponen lokal",
+      "en": "YEKDEM FiT in US dollars with local content bonus"
+     },
+     "bukti": "media"
+    },
+    {
+     "negara": {
+      "id": "Filipina",
+      "en": "Philippines"
+     },
+     "kap": null,
+     "tahun": "-",
+     "skema": {
+      "id": "Badan negara membuka lapangan lalu diprivatisasi (EDC 2006)",
+      "en": "A state body opens fields then privatises (EDC 2006)"
+     },
+     "bukti": "media"
+    },
+    {
+     "negara": {
+      "id": "Kenya",
+      "en": "Kenya"
+     },
+     "kap": null,
+     "tahun": "-",
+     "skema": {
+      "id": "GDC milik negara menanggung risiko uap, KenGen dan Ormat membangkitkan",
+      "en": "State-owned GDC carries steam risk, KenGen and Ormat generate"
+     },
+     "bukti": "media"
+    },
+    {
+     "negara": {
+      "id": "Islandia",
+      "en": "Iceland"
+     },
+     "kap": null,
+     "tahun": "-",
+     "skema": {
+      "id": "Pemanfaatan langsung: 97% keluaran pemanas dari panas bumi",
+      "en": "Direct use: 97% of heating output from geothermal"
+     },
+     "bukti": "resmi"
+    }
+   ],
+   "catatan": {
+    "id": "Sel kapasitas kosong berarti METI belum punya angka bersumber yang sebanding; sengaja tidak diisi. Tiongkok, India, Jepang, Korea, Uni Eropa, AS, Australia, Brasil, dan Afrika Selatan belum dipanen.",
+    "en": "An empty capacity cell means METI has no comparable sourced figure; deliberately left blank. China, India, Japan, Korea, EU, USA, Australia, Brazil and South Africa have not been harvested."
+   },
+   "sumber": [
+    "irena",
+    "tr_kapsarc",
+    "ph_edc",
+    "kenya",
+    "iceland_oecd"
+   ]
+  },
+  "21": {
+   "tipe": "teks",
+   "paragraf": [
+    {
+     "id": "Analisis METI (Hipotesis): tiga negara yang berhasil (Kenya, Filipina, Turki) menempuh tiga jalan berbeda untuk satu masalah yang sama, yakni siapa yang menanggung risiko eksplorasi: negara lewat GDC (Kenya), negara lewat badan nasional lalu privatisasi (Filipina), atau pasar lewat tarif beli terjamin (Turki). Indonesia kini menggabungkan dua: PISP untuk pengeboran pemerintah dan harga patokan tertinggi untuk pembeli.",
+     "en": "METI analysis (Hypothesis): the three successful countries (Kenya, Philippines, Turkey) took three different roads to the same problem, namely who bears exploration risk: the state through GDC (Kenya), the state through a national body then privatisation (Philippines), or the market through a guaranteed tariff (Turkey). Indonesia now combines two: PISP for government drilling and a ceiling price for the buyer."
+    },
+    {
+     "id": "Negara yang gagal atau tertahan dibahas di bab 40 (kasus Puna, Hawaii). Selandia Baru belum dipanen untuk bab ini.",
+     "en": "Failed or stalled cases are in chapter 40 (the Puna, Hawaii case). New Zealand has not been harvested for this chapter."
+    }
+   ],
+   "sumber": [
+    "kenya",
+    "tiwi",
+    "tr_kapsarc",
+    "puna_hei"
+   ]
+  },
+  "22": {
+   "tipe": "teks",
+   "paragraf": [
+    {
+     "id": "Kapasitas terpasang Indonesia 2743.76 MW (IRENA 2025) melampaui Turki 1.691,4 MW (April 2024) dengan catatan beda tahun dan cakupan. Pangsa Indonesia dalam pembangkitan 2024 ialah 16.763 GWh.",
+     "en": "Indonesia's installed capacity of 2743.76 MW (IRENA 2025) exceeds Turkey's 1,691.4 MW (April 2024), with caveats on year and scope. Indonesia's 2024 generation was 16,763 GWh."
+    },
+    {
+     "id": "Peringkat dunia belum dihitung METI dari satu sumber seragam; satu berita Geo Dipa (CNN Indonesia, 6 November 2026) menyebut cita-cita menjadi negara berkapasitas panas bumi nomor satu dunia.",
+     "en": "METI has not computed a world ranking from one uniform source; one Geo Dipa news item (CNN Indonesia, 6 November 2026) mentions the aspiration to be the world's number one in geothermal capacity."
+    }
+   ],
+   "sumber": [
+    "irena",
+    "tr_kapsarc",
+    "geodipa"
+   ]
+  },
+  "23": {
+   "tipe": "teks",
+   "paragraf": [
+    {
+     "id": "Kerja sama yang tercatat: pinjaman lunak JICA untuk PLTP Hululais (perjanjian 30 Maret 2026); pembiayaan JBIC dan ADB untuk Sarulla, Muara Laboh, dan Rantau Dedap; Bank Dunia, Clean Technology Fund, dan GEF untuk dana mitigasi risiko eksplorasi (PISP); serta hibah JETP untuk PLTP Patuha unit 2.",
+     "en": "Recorded cooperation: JICA soft loan for PLTP Hululais (agreement 30 March 2026); JBIC and ADB financing for Sarulla, Muara Laboh and Rantau Dedap; the World Bank, Clean Technology Fund and GEF for the exploration risk mitigation fund (PISP); and a JETP grant for PLTP Patuha unit 2."
+    }
+   ],
+   "sumber": [
+    "jica",
+    "sarulla",
+    "laboh_tge",
+    "dedap_loan",
+    "wbpisp",
+    "tgefund",
+    "jetp"
+   ]
+  },
+  "24": {
+   "tipe": "teks",
+   "paragraf": [
+    {
+     "id": "Geothermal Fund (PISP) adalah dana pembiayaan infrastruktur panas bumi pemerintah yang dikelola PT SMI; menurut PT SMI dana dipakai untuk eksplorasi, eksploitasi, dan pembangkit lewat pinjaman, penyertaan ekuitas, serta penyediaan data. Pengaturannya dalam PMK 80/2022. Laporan pengelolaan 2024 diaudit dan dipublikasikan.",
+     "en": "The Geothermal Fund (PISP) is the government's geothermal infrastructure financing fund managed by PT SMI; per PT SMI it is used for exploration, exploitation and power plants through loans, equity participation and data provision. It is regulated in PMK 80/2022. The 2024 management report is audited and published."
+    },
+    {
+     "id": "Skema pengeboran pemerintah: ESDM meminta pengeboran di lokasi tertentu, PT SMI mengontrak pengeboran dan sertifikasi data, lalu data diserahkan ke Kemenkeu; bila tak ada pemenang lelang, Kemenkeu memulihkan biaya. Proyek percontohan: Waesano (NTT) dan Jailolo (Maluku Utara). Satu laporan menyebut US$49 juta dari PISP disandingkan US$49 juta Clean Technology Fund dan hibah GEF US$6,25 juta (2016).",
+     "en": "Government drilling scheme: ESDM requests drilling at a site, PT SMI contracts drilling and data certification, then submits the data to the Ministry of Finance; if no auction winner emerges, the Ministry recovers the cost. Pilot projects: Waesano (NTT) and Jailolo (North Maluku). One report cites US$49 million from PISP matched by US$49 million from the Clean Technology Fund and a US$6.25 million GEF grant (2016)."
+    },
+    {
+     "id": "Skema lain di basis METI: pinjaman ODA JICA, SDG Indonesia One, Green Sukuk, dan pinjaman luar negeri lewat Green Book Bappenas.",
+     "en": "Other schemes in the METI base: JICA ODA loans, SDG Indonesia One, Green Sukuk, and foreign loans via the Bappenas Green Book."
+    }
+   ],
+   "catatan": {
+    "id": "Angka PISP berasal dari 2016-2017; besaran dan alokasi terkini perlu dicek di laporan PT SMI dan PMK 80/2022.",
+    "en": "PISP figures date from 2016-2017; current size and allocation should be checked in PT SMI reports and PMK 80/2022."
+   },
+   "sumber": [
+    "smi",
+    "pmk80",
+    "wbpisp",
+    "tgefund",
+    "waesano",
+    "sdgone",
+    "jica"
+   ]
+  },
+  "25": {
+   "tipe": "rumus",
+   "rumus": [
+    {
+     "id": "Pendapatan tahun 1-10 = kapasitas x faktor kapasitas x 8,76 x harga dasar x F",
+     "en": "Years 1-10 revenue = capacity x capacity factor x 8.76 x base price x F"
+    }
+   ],
+   "contoh": [
+    {
+     "id": "Contoh ilustrasi (EST): PLTP 55 MW, faktor kapasitas 72.5% (rata-rata nasional 2024), energi 349.4 GWh per tahun. Dengan harga dasar 8.64 sen US$/kWh (kelas >50-100 MW) dan F = 1 (asumsi), pendapatan 30.2 juta US$ per tahun. Harga patokan adalah batas atas; harga akhir hasil negosiasi dapat lebih rendah, dan F aktual menurut wilayah.",
+     "en": "Illustrative example (EST): 55 MW PLTP, capacity factor 72.5% (2024 national average), energy 349.4 GWh a year. With a base price of 8.64 US cents/kWh (the >50-100 MW class) and F = 1 (assumed), revenue is US$30.2 million a year. The ceiling price is an upper bound; the negotiated price can be lower and the actual F depends on region."
+    },
+    {
+     "id": "Tambahan pendapatan kredit karbon: proyek Ulubelu 3-4 (Gold Standard GS2297) telah menerbitkan 1.726.532 tCO2e kredit (registri); nilai uang tidak dilaporkan registri.",
+     "en": "Carbon credit revenue: the Ulubelu 3-4 project (Gold Standard GS2297) has issued 1,726,532 tCO2e of credits (registry); monetary value is not reported by the registry."
+    }
+   ],
+   "sumber": [
+    "perpres112",
+    "keuangan",
+    "irena"
+   ]
+  },
+  "26": {
+   "tipe": "teks",
+   "paragraf": [
+    {
+     "id": "Investasi dan transaksi yang tercatat: lelang 2025 untuk 3 WKP dan 7 PSPE dengan nilai investasi sekitar US$1,99 miliar (Kontan); Barito Renewables (BREN) menambah kapasitas panas bumi 41 MW (Bisnis.com, 16 Januari 2025); PLTP Ijen 35 MW (Medco) beroperasi komersial Februari 2025; JBIC menandatangani pinjaman ekspansi Muara Laboh Januari 2025; PGE membukukan pendapatan US$318,86 juta sampai kuartal III 2025.",
+     "en": "Recorded investment and transactions: the 2025 auction of 3 WKP and 7 PSPE with investment of about US$1.99 billion (Kontan); Barito Renewables (BREN) added 41 MW of geothermal (Bisnis.com, 16 January 2025); the 35 MW Ijen PLTP (Medco) entered commercial operation in February 2025; JBIC signed the Muara Laboh expansion loan in January 2025; PGE booked revenue of US$318.86 million through Q3 2025."
+    }
+   ],
+   "catatan": {
+    "id": "Sebagian angka perusahaan berstatus media dan perlu diverifikasi dengan keterbukaan IDX.",
+    "en": "Some company figures are media-sourced and should be verified against IDX disclosures."
+   },
+   "sumber": [
+    "lelang",
+    "bren",
+    "medco",
+    "laboh_jbic",
+    "pge_q3"
+   ]
+  },
+  "27": {
+   "tipe": "teks",
+   "paragraf": [
+    {
+     "id": "Risiko lingkungan dan sosial yang tercatat dalam kasus: gas H2S (Sorik Marapi 2021, Dieng 2022), kekhawatiran air dan lahan pertanian (Gunung Talang), serta risiko geologi (Puna). Warga berhak atas informasi yang utuh dan persetujuan bebas, didahulukan, dan diinformasikan (FPIC) sebagaimana diingatkan LBH Padang.",
+     "en": "Environmental and social risks recorded in the cases: H2S gas (Sorik Marapi 2021, Dieng 2022), water and farmland concerns (Gunung Talang), and geological risk (Puna). Residents have the right to complete information and free, prior and informed consent (FPIC) as LBH Padang reminded."
+    },
+    {
+     "id": "Dari sisi pengembang, Patuha unit 2 mencatat satu juta jam kerja selamat sebelum beroperasi (JPNN, Agustus 2026), contoh praktik keselamatan kerja yang dapat ditiru.",
+     "en": "On the developer side, Patuha unit 2 logged one million safe working hours before operating (JPNN, August 2026), an example of work safety practice that can be copied."
+    }
+   ],
+   "sumber": [
+    "sorik_esdm",
+    "dieng_kabar",
+    "talang25",
+    "puna_hei",
+    "patuha"
+   ]
+  },
+  "28": {
+   "tipe": "teks",
+   "paragraf": [
+    {
+     "id": "Pengembangan Mataloko oleh PLN UIP Nusra disebut mendorong penyerapan tenaga kerja lokal (Tribun Kupang, 10 Agustus 2026, konten iklan advertorial). Angka pekerja per MW belum tersedia dalam sumber yang METI baca, sehingga tidak ditampilkan.",
+     "en": "The Mataloko development by PLN UIP Nusra is said to boost local labour absorption (Tribun Kupang, 10 August 2026, advertorial content). Jobs-per-MW figures are not in the sources METI read, so none are shown."
+    }
+   ],
+   "sumber": [
+    "mataloko"
+   ]
+  },
+  "29": {
+   "tipe": "teks",
+   "paragraf": [
+    {
+     "id": "Sisi pendukung: mantan Menteri ESDM Arcandra Tahar menilai PLTP dapat meningkatkan pendapatan asli daerah dan merupakan pembangkit paling ramah lingkungan (Republika, 30 November 2018).",
+     "en": "Supportive side: former ESDM minister Arcandra Tahar said a PLTP can raise local revenue and is the most environmentally friendly form of generation (Republika, 30 November 2018)."
+    },
+    {
+     "id": "Sisi penolak: warga Gunung Talang menyebut pencemaran air, hilangnya lahan, gas beracun, dan status keramat gunung; LBH Padang menilai protes sebagai hak konstitusional (Mongabay, 1 Desember 2025).",
+     "en": "Opposing side: Gunung Talang residents cite water pollution, land loss, toxic gas and the sacred status of the mountain; LBH Padang sees the protest as a constitutional right (Mongabay, 1 December 2025)."
+    },
+    {
+     "id": "Analisis METI (Hipotesis): kedua sisi sering benar pada hal berbeda: manfaat pendapatan daerah nyata, risiko lokal juga nyata. Yang sering hilang ialah forum bersama untuk memeriksa klaim.",
+     "en": "METI analysis (Hypothesis): both sides are often right about different things: the local revenue benefit is real and the local risk is real. What is often missing is a shared forum to check claims."
+    }
+   ],
+   "sumber": [
+    "talang18",
+    "talang25"
+   ]
+  },
+  "30": {
+   "tipe": "teks",
+   "paragraf": [
+    {
+     "id": "Target resmi dari perusahaan: PGE menargetkan kapasitas yang dikelola sendiri 1 GW pada 2028 dan 1,8 GW pada 2034 (siaran pers PGE). Proyeksi nasional per tahun 2030, 2045, dan 2060 dari RUEN dan RUPTL 2025-2034 belum diekstrak METI ke bab ini.",
+     "en": "Official company targets: PGE targets self-operated capacity of 1 GW by 2028 and 1.8 GW by 2034 (PGE press release). National projections for 2030, 2045 and 2060 from RUEN and RUPTL 2025-2034 have not yet been extracted by METI into this chapter."
+    }
+   ],
+   "sumber": [
+    "pge_1gw",
+    "ruptl"
+   ]
+  },
+  "31": {
+   "tipe": "teks",
+   "paragraf": [
+    {
+     "id": "Analisis METI (Hipotesis): Pengembang: peluang terbesar ada di WKP lelang 2025 dan ekspansi lapangan yang sudah berproduksi (Muara Laboh, Wayang Windu unit 3), tantangan utamanya risiko eksplorasi dan penerimaan warga.",
+     "en": "METI analysis (Hypothesis): Developers: the biggest opportunities are in the 2025 auction WKP and expansion of producing fields (Muara Laboh, Wayang Windu unit 3); the main challenges are exploration risk and resident acceptance."
+    },
+    {
+     "id": "Analisis METI (Hipotesis): Pemasok dan kontraktor: bor, turbin, dan pekerjaan sipil; kandungan dalam negeri (TKDN) dan keselamatan H2S menjadi pembeda.",
+     "en": "METI analysis (Hypothesis): Suppliers and contractors: drilling, turbines and civil works; local content (TKDN) and H2S safety are the differentiators."
+    },
+    {
+     "id": "Analisis METI (Hipotesis): Investor dan pendana: struktur Sarulla dan Rantau Dedap menunjukkan pola pembiayaan; PISP dan dana multilateral menurunkan risiko hulu.",
+     "en": "METI analysis (Hypothesis): Investors and lenders: the Sarulla and Rantau Dedap structures show financing patterns; PISP and multilateral funds lower upstream risk."
+    },
+    {
+     "id": "Analisis METI (Hipotesis): Pemda: bonus produksi (PP 28/2016) dan pendapatan daerah; bayarannya adalah komunikasi yang jujur kepada warga.",
+     "en": "METI analysis (Hypothesis): Local governments: production bonuses (PP 28/2016) and local revenue; the price is honest communication to residents."
+    },
+    {
+     "id": "Analisis METI (Hipotesis): Akademisi: data reservoir, pemantauan kegempaan dan gas, serta pemanfaatan langsung.",
+     "en": "METI analysis (Hypothesis): Academics: reservoir data, seismicity and gas monitoring, and direct use."
+    }
+   ],
+   "sumber": [
+    "lelang",
+    "wayang2",
+    "sarulla",
+    "dedap_loan",
+    "smi"
+   ]
+  },
+  "32": {
+   "tipe": "teks",
+   "paragraf": [
+    {
+     "id": "Yang perlu dipantau: hasil lelang 3 WKP dan 7 PSPE 2025 (pemenang belum ditemukan METI); pembaruan harga patokan Perpres 112/2022 lewat Kepmen ESDM; pembukaan kembali sumur dan hasil proses hukum Sorik Marapi; keputusan Gunung Talang dan Ungaran; penyelesaian pinjaman JICA untuk Hululais; dan realisasi target PGE 1 GW pada 2028.",
+     "en": "To watch: results of the 2025 auction of 3 WKP and 7 PSPE (winners not found by METI); updates to the Perpres 112/2022 ceiling prices via ministerial decree; the outcome of legal processes at Sorik Marapi; decisions on Gunung Talang and Ungaran; the JICA loan for Hululais; and delivery of the PGE 1 GW target by 2028."
+    }
+   ],
+   "sumber": [
+    "lelang2",
+    "perpres112",
+    "sorik_esdm",
+    "talang26",
+    "ungaran3",
+    "jica",
+    "pge_1gw"
+   ]
+  },
+  "38": {
+   "tipe": "teks",
+   "paragraf": [
+    {
+     "id": "Sumber: IRENASTAT (kapasitas dan pembangkitan), JDIH BPK (aturan), berkas METI (proyek, WKP, tarif, insentif), rilis PGE dan Sumitomo/Supreme Energy, ESDM, Bank Dunia/ESMAP, serta media kredibel (Bisnis.com, Kontan, Antara, Mongabay, ThinkGeoEnergy, Jakarta Post, detik). Panen sopan: UA METI-Network-research/0.1, hormati robots, jeda minimal 2 detik, berhenti pada 403/429, tanpa login atau media sosial.",
+     "en": "Sources: IRENASTAT (capacity and generation), JDIH BPK (rules), METI files (projects, WKP, tariffs, incentives), PGE and Sumitomo/Supreme Energy releases, ESDM, World Bank/ESMAP, and credible media (Bisnis.com, Kontan, Antara, Mongabay, ThinkGeoEnergy, Jakarta Post, detik). Polite harvesting: UA METI-Network-research/0.1, robots respected, at least 2 s delay, stop on 403/429, no login or social media."
+    },
+    {
+     "id": "Batas data: pencarian web dibaca lewat ringkasan; beberapa halaman media hanya terbaca judul. Tingkat bukti: resmi, kajian, media, via-pihak-ketiga, editorial. Sintesis METI diberi label \"Analisis METI (Hipotesis)\". Angka turunan diberi label EST.",
+     "en": "Data limits: web searches were read through summaries; some media pages were read by headline only. Evidence levels: official, study, media, third-party, editorial. METI synthesis is labelled \"METI analysis (Hypothesis)\". Derived figures are labelled EST."
+    }
+   ],
+   "sumber": [
+    "irena",
+    "wkp",
+    "geoportal"
+   ]
+  },
+  "39": {
+   "tipe": "kasus",
+   "butir": [
+    {
+     "id": "kamojang",
+     "nama": "PLTP Kamojang",
+     "jenis": "berhasil",
+     "negara": "ID",
+     "lokasi": {
+      "id": "Jawa Barat",
+      "en": "West Java"
+     },
+     "profil": [
+      {
+       "label": {
+        "id": "Pengelola",
+        "en": "Operator"
+       },
+       "nilai": {
+        "id": "PT Pertamina Geothermal Energy (PGE)",
+        "en": "PT Pertamina Geothermal Energy (PGE)"
+       }
+      },
+      {
+       "label": {
+        "id": "Kapasitas terpasang",
+        "en": "Installed capacity"
+       },
+       "nilai": 235,
+       "satuan": "MW"
+      },
+      {
+       "label": {
+        "id": "Listrik pertama",
+        "en": "First electricity"
+       },
+       "nilai": "1978"
+      },
+      {
+       "label": {
+        "id": "Unit 1 (30 MW), operasi komersial",
+        "en": "Unit 1 (30 MW), commercial operation"
+       },
+       "nilai": "1983"
+      }
+     ],
+     "tindakan": [
+      {
+       "id": "Survei dan pengeboran eksplorasi dimulai sejak masa kolonial (1926) lalu dilanjutkan program bersama Selandia Baru 1971-1979 dengan 14 sumur eksplorasi.",
+       "en": "Surveys and exploration drilling began in the colonial era (1926), followed by a joint programme with New Zealand in 1971-1979 with 14 exploration wells."
+      },
+      {
+       "id": "Skala dinaikkan bertahap: pembangkit percontohan 0,25 MW (1978), unit 1 30 MW, unit 2 dan 3 masing-masing 55 MW (1987-1988), unit 4 60 MW (2003-2007).",
+       "en": "Scaled up step by step: a 0.25 MW pilot (1978), a 30 MW unit 1, 55 MW units 2 and 3 (1987-1988), and a 60 MW unit 4 (2003-2007)."
+      }
+     ],
+     "sebab": [
+      {
+       "id": "Analisis METI (Hipotesis): risiko eksplorasi ditanggung negara dan BUMN selama puluhan tahun, sehingga data reservoir sudah ada sebelum investasi besar masuk.",
+       "en": "METI analysis (Hypothesis): exploration risk was carried by the state and a state company for decades, so reservoir data existed before large investment arrived."
+      }
+     ],
+     "angka": [
+      {
+       "label": {
+        "id": "Kapasitas terpasang saat ini (lima unit)",
+        "en": "Current installed capacity (five units)"
+       },
+       "nilai": 235,
+       "d": 0,
+       "satuan": "MW",
+       "sumber": "pge_kmj",
+       "est": false
+      },
+      {
+       "label": {
+        "id": "Unit tertua yang masih berproduksi sejak",
+        "en": "Oldest unit still producing since"
+       },
+       "nilai": 1983,
+       "d": 0,
+       "satuan": "",
+       "sumber": "esdm_kmj",
+       "est": false
+      }
+     ],
+     "pelajaran": [
+      {
+       "id": "Analisis METI (Hipotesis): lapangan yang datanya matang dan diwariskan antar generasi menurunkan risiko tiap ekspansi; data sumur sangat bernilai bila dibuka kepada pengembang baru.",
+       "en": "METI analysis (Hypothesis): a field with mature data passed between generations lowers the risk of each expansion; well data is highly valuable when opened to new developers."
+      }
+     ],
+     "kronologi": [
+      {
+       "tanggal": "1926-01-01",
+       "teks": {
+        "id": "Eksplorasi awal oleh pemerintah kolonial Belanda (tahun saja, tanggal tidak dirinci sumber).",
+        "en": "Early exploration by the Dutch colonial government (year only; the source gives no date)."
+       }
+      },
+      {
+       "tanggal": "1978-01-01",
+       "teks": {
+        "id": "Listrik pertama 0,25 MW dari Kamojang (tahun saja).",
+        "en": "First electricity, 0.25 MW, from Kamojang (year only)."
+       }
+      },
+      {
+       "tanggal": "1983-01-01",
+       "teks": {
+        "id": "Unit 1 30 MW diresmikan; sumber lain menyebut mulai beroperasi 1981-1982 (tahun saja).",
+        "en": "Unit 1 (30 MW) officially recognised; other sources say it started in 1981-1982 (year only)."
+       }
+      }
+     ],
+     "faktor": {
+      "risiko_eksplorasi": true,
+      "teknologi": true,
+      "ppa_tarif": true
+     },
+     "sumber": [
+      "esdm_kmj",
+      "pge_kmj"
+     ],
+     "hak_jawab": false
+    },
+    {
+     "id": "sarulla",
+     "nama": "PLTP Sarulla (330 MW)",
+     "jenis": "berhasil",
+     "negara": "ID",
+     "lokasi": {
+      "id": "Sumatera Utara",
+      "en": "North Sumatra"
+     },
+     "profil": [
+      {
+       "label": {
+        "id": "Kapasitas rencana",
+        "en": "Planned capacity"
+       },
+       "nilai": 330,
+       "satuan": "MW"
+      },
+      {
+       "label": {
+        "id": "Struktur",
+        "en": "Structure"
+       },
+       "nilai": {
+        "id": "tiga fase masing-masing 110 MW",
+        "en": "three phases of 110 MW each"
+       }
+      },
+      {
+       "label": {
+        "id": "Pemilik konsorsium",
+        "en": "Consortium owners"
+       },
+       "nilai": {
+        "id": "Medco 37,25%, Itochu 25%, Kyushu 25%, Ormat 12,75%",
+        "en": "Medco 37.25%, Itochu 25%, Kyushu 25%, Ormat 12.75%"
+       }
+      },
+      {
+       "label": {
+        "id": "Pembiayaan",
+        "en": "Financing"
+       },
+       "nilai": {
+        "id": "US$1,17 miliar, Maret 2014 (JBIC, ADB, bank komersial)",
+        "en": "US$1.17 billion, March 2014 (JBIC, ADB, commercial banks)"
+       }
+      }
+     ],
+     "tindakan": [
+      {
+       "id": "Pembiayaan proyek (project finance) dengan pinjaman langsung JBIC dan ADB serta pinjaman bank swasta yang dijamin risiko politiknya oleh JBIC.",
+       "en": "Project finance with direct JBIC and ADB loans plus commercial bank loans backed by JBIC political risk guarantees."
+      },
+      {
+       "id": "Konsorsium gabungan operator Indonesia, trader Jepang, utilitas Jepang, dan penyedia teknologi (Ormat) yang menyebar risiko.",
+       "en": "A consortium of an Indonesian operator, a Japanese trader, a Japanese utility and a technology provider (Ormat) that spreads risk."
+      }
+     ],
+     "sebab": [
+      {
+       "id": "Analisis METI (Hipotesis): kombinasi pendana pemerintah-multilateral yang sabar dan pemilik berpengalaman membuat struktur yang bisa dibiayai bank (bankable) walau proyeknya sangat besar.",
+       "en": "METI analysis (Hypothesis): a mix of patient government and multilateral lenders and experienced owners made a bankable structure despite the very large size."
+      }
+     ],
+     "angka": [
+      {
+       "label": {
+        "id": "Nilai pembiayaan proyek",
+        "en": "Project financing value"
+       },
+       "nilai": 1170,
+       "d": 0,
+       "satuan": "US$ juta",
+       "sumber": "sarulla",
+       "est": false
+      },
+      {
+       "label": {
+        "id": "Kapasitas total rencana",
+        "en": "Total planned capacity"
+       },
+       "nilai": 330,
+       "d": 0,
+       "satuan": "MW",
+       "sumber": "sarulla",
+       "est": false
+      }
+     ],
+     "pelajaran": [
+      {
+       "id": "Analisis METI (Hipotesis): proyek di atas 300 MW perlu konsorsium dan jaminan risiko politik; tiap fase dibangun dan dibiayai terpisah agar risiko tidak menumpuk.",
+       "en": "METI analysis (Hypothesis): projects above 300 MW need a consortium and political risk cover; each phase is built and financed separately so risk does not pile up."
+      },
+      {
+       "id": "Catatan data: nilai pinjaman ADB dilaporkan berbeda antar media (US$250 juta atau US$350 juta), dan tanggal operasi komersial tiap fase belum diverifikasi dari sumber primer.",
+       "en": "Data note: the ADB loan amount is reported differently across media (US$250 million or US$350 million), and the commercial operation date of each phase has not been verified from a primary source."
+      }
+     ],
+     "kronologi": [
+      {
+       "tanggal": "2014-03-01",
+       "teks": {
+        "id": "Perjanjian pembiayaan US$1,17 miliar ditandatangani (bulan saja); first drawdown dilaporkan Mei 2014.",
+        "en": "US$1.17 billion financing agreements signed (month only); first drawdown reported in May 2014."
+       }
+      }
+     ],
+     "faktor": {
+      "pendanaan": true,
+      "risiko_eksplorasi": true,
+      "ppa_tarif": true
+     },
+     "sumber": [
+      "sarulla",
+      "sarulla2",
+      "sarulla3"
+     ],
+     "hak_jawab": false
+    },
+    {
+     "id": "muara-laboh",
+     "nama": "PLTP Muara Laboh",
+     "jenis": "berhasil",
+     "negara": "ID",
+     "lokasi": {
+      "id": "Sumatera Barat",
+      "en": "West Sumatra"
+     },
+     "profil": [
+      {
+       "label": {
+        "id": "Kapasitas fase 1",
+        "en": "Phase 1 capacity"
+       },
+       "nilai": 85,
+       "satuan": "MW"
+      },
+      {
+       "label": {
+        "id": "Pemilik",
+        "en": "Owners"
+       },
+       "nilai": {
+        "id": "Supreme Energy 30%, ENGIE 35%, Sumitomo 35% (menurut satu sumber media)",
+        "en": "Supreme Energy 30%, ENGIE 35%, Sumitomo 35% (per one media source)"
+       }
+      },
+      {
+       "label": {
+        "id": "Operasi komersial",
+        "en": "Commercial operation"
+       },
+       "nilai": "16 Desember 2019"
+      },
+      {
+       "label": {
+        "id": "Investasi fase 1",
+        "en": "Phase 1 investment"
+       },
+       "nilai": "US$580 juta"
+      }
+     ],
+     "tindakan": [
+      {
+       "id": "Pinjaman proyek sekitar US$439-440 juta: JBIC dari neracanya sendiri US$198 juta dan sindikasi bank komersial dipimpin ADB, didukung asuransi NEXI.",
+       "en": "Project loans of about US$439-440 million: JBIC's own US$198 million and a commercial bank syndicate led by ADB, with NEXI insurance."
+      },
+      {
+       "id": "Ekspansi: JBIC menandatangani pinjaman proyek hingga sekitar US$138 juta (porsi JBIC) pada Januari 2025.",
+       "en": "Expansion: JBIC signed a project loan of up to about US$138 million (JBIC portion) in January 2025."
+      }
+     ],
+     "sebab": [
+      {
+       "id": "Analisis METI (Hipotesis): pengembang swasta yang konsisten memegang WKP lintas fase, dengan mitra utilitas dan perdagangan Jepang yang membawa akses pembiayaan murah.",
+       "en": "METI analysis (Hypothesis): a private developer that kept the working area across phases, with Japanese utility and trading partners that brought cheap financing access."
+      }
+     ],
+     "angka": [
+      {
+       "label": {
+        "id": "Kapasitas fase 1",
+        "en": "Phase 1 capacity"
+       },
+       "nilai": 85,
+       "d": 0,
+       "satuan": "MW",
+       "sumber": "laboh_sc",
+       "est": false
+      },
+      {
+       "label": {
+        "id": "Pinjaman JBIC dari neraca sendiri",
+        "en": "JBIC loan from own account"
+       },
+       "nilai": 198,
+       "d": 0,
+       "satuan": "US$ juta",
+       "sumber": "laboh_tge",
+       "est": false
+      }
+     ],
+     "pelajaran": [
+      {
+       "id": "Pelajaran: pemilik gabungan lokal dan asing dengan pendana bilateral dapat menuntaskan proyek di lokasi terpencil dalam sekitar satu dekade dari tonggak awal.",
+       "en": "Lesson: a mixed local and foreign ownership with bilateral lenders can finish a remote project in about a decade from its first milestone (a METI reading; the exact timeline is not documented here)."
+      },
+      {
+       "id": "Catatan data: tanggal COD tercatat 16 Desember (Sumitomo) dan 15 Desember 2019 (Bisnis.com); angka pinjaman bervariasi antar sumber.",
+       "en": "Data note: COD is recorded as 16 December (Sumitomo) and 15 December 2019 (Bisnis.com); loan figures vary across sources."
+      }
+     ],
+     "kronologi": [
+      {
+       "tanggal": "2019-12-16",
+       "teks": {
+        "id": "Operasi komersial 85 MW.",
+        "en": "Commercial operation, 85 MW."
+       }
+      },
+      {
+       "tanggal": "2025-01-01",
+       "teks": {
+        "id": "JBIC menandatangani pinjaman ekspansi (bulan Januari 2025).",
+        "en": "JBIC signs the expansion loan (January 2025)."
+       }
+      }
+     ],
+     "faktor": {
+      "pendanaan": true,
+      "risiko_eksplorasi": true,
+      "ppa_tarif": true
+     },
+     "sumber": [
+      "laboh_sc",
+      "laboh_tge",
+      "laboh_jbic",
+      "laboh_bisnis"
+     ],
+     "hak_jawab": false
+    },
+    {
+     "id": "rantau-dedap",
+     "nama": "PLTP Rantau Dedap",
+     "jenis": "berhasil",
+     "negara": "ID",
+     "lokasi": {
+      "id": "Sumatera Selatan",
+      "en": "South Sumatra"
+     },
+     "profil": [
+      {
+       "label": {
+        "id": "Kapasitas fase 1",
+        "en": "Phase 1 capacity"
+       },
+       "nilai": 91.2,
+       "satuan": "MW"
+      },
+      {
+       "label": {
+        "id": "Pemilik",
+        "en": "Owners"
+       },
+       "nilai": {
+        "id": "Supreme Energy, ENGIE, Marubeni, Tohoku Electric Power",
+        "en": "Supreme Energy, ENGIE, Marubeni, Tohoku Electric Power"
+       }
+      },
+      {
+       "label": {
+        "id": "Tutup keuangan fase 1",
+        "en": "Phase 1 financial close"
+       },
+       "nilai": "Maret 2018"
+      },
+      {
+       "label": {
+        "id": "Operasi komersial",
+        "en": "Commercial operation"
+       },
+       "nilai": "26 Desember 2021"
+      }
+     ],
+     "tindakan": [
+      {
+       "id": "Perjanjian jual beli listrik (PPA) disesuaikan antara PLN dan Supreme Energy pada 2017 sebelum tutup keuangan.",
+       "en": "The power purchase agreement (PPA) was adapted between PLN and Supreme Energy in 2017 before financial close."
+      },
+      {
+       "id": "Pinjaman sekitar US$540 juta dari JBIC, ADB, dan bank lain; dibangun di lereng terjal sekitar 2.600 m dan selesai di tengah pandemi.",
+       "en": "Loans of about US$540 million from JBIC, ADB and other banks; built on steep terrain at about 2,600 m and completed during the pandemic."
+      }
+     ],
+     "sebab": [
+      {
+       "id": "Analisis METI (Hipotesis): PPA yang diubah sampai bisa dibiayai bank (bankable) membuka pinjaman besar; fase 1 dibatasi supaya risiko terkendali.",
+       "en": "METI analysis (Hypothesis): a PPA reworked until it was bankable unlocked the large loan; phase 1 was limited to keep risk contained."
+      }
+     ],
+     "angka": [
+      {
+       "label": {
+        "id": "Kapasitas fase 1 (semula direncanakan 86 MW)",
+        "en": "Phase 1 capacity (originally planned 86 MW)"
+       },
+       "nilai": 91.2,
+       "d": 1,
+       "satuan": "MW",
+       "sumber": "dedap_se",
+       "est": false
+      },
+      {
+       "label": {
+        "id": "Nilai pinjaman proyek",
+        "en": "Project loan value"
+       },
+       "nilai": 540,
+       "d": 0,
+       "satuan": "US$ juta",
+       "sumber": "dedap_loan",
+       "est": false
+      }
+     ],
+     "pelajaran": [
+      {
+       "id": "Analisis METI (Hipotesis): negosiasi PPA yang terbuka terhadap penyesuaian adalah syarat tutup keuangan; jeda antara tutup keuangan (2018) dan COD (2021) menunjukkan masa konstruksi panas bumi di medan sulit.",
+       "en": "METI analysis (Hypothesis): negotiating a PPA that can be adapted is a condition of financial close; the gap between financial close (2018) and COD (2021) shows the construction time of geothermal in difficult terrain."
+      }
+     ],
+     "kronologi": [
+      {
+       "tanggal": "2017-11-22",
+       "teks": {
+        "id": "Para pihak menyepakati perubahan PPA (berita Jakarta Post 22 November 2017).",
+        "en": "The parties agree to amend the PPA (Jakarta Post, 22 November 2017)."
+       }
+      },
+      {
+       "tanggal": "2018-03-01",
+       "teks": {
+        "id": "Tutup keuangan fase 1 (bulan saja).",
+        "en": "Phase 1 financial close (month only)."
+       }
+      },
+      {
+       "tanggal": "2021-12-26",
+       "teks": {
+        "id": "Operasi komersial fase 1.",
+        "en": "Phase 1 commercial operation."
+       }
+      }
+     ],
+     "faktor": {
+      "ppa_tarif": true,
+      "pendanaan": true,
+      "risiko_eksplorasi": true
+     },
+     "sumber": [
+      "dedap_se",
+      "dedap_jp",
+      "dedap_loan",
+      "dedap_ppa"
+     ],
+     "hak_jawab": false
+    },
+    {
+     "id": "wayang-windu",
+     "nama": "PLTP Wayang Windu",
+     "jenis": "berhasil",
+     "negara": "ID",
+     "lokasi": {
+      "id": "Jawa Barat",
+      "en": "West Java"
+     },
+     "profil": [
+      {
+       "label": {
+        "id": "Kapasitas awal",
+        "en": "Initial capacity"
+       },
+       "nilai": 227,
+       "satuan": "MW"
+      },
+      {
+       "label": {
+        "id": "Unit",
+        "en": "Units"
+       },
+       "nilai": {
+        "id": "Unit 1 110 MW dan unit 2 117 MW",
+        "en": "Unit 1 110 MW and unit 2 117 MW"
+       }
+      },
+      {
+       "label": {
+        "id": "Pengelola",
+        "en": "Operator"
+       },
+       "nilai": {
+        "id": "Star Energy (Magma Nusantara)",
+        "en": "Star Energy (Magma Nusantara)"
+       }
+      },
+      {
+       "label": {
+        "id": "Kapasitas terpasang setelah retrofit",
+        "en": "Installed after retrofit"
+       },
+       "nilai": 230.5,
+       "satuan": "MW"
+      }
+     ],
+     "tindakan": [
+      {
+       "id": "Unit 2 beroperasi sekitar 2008-2009 di atas kontrak operasi bersama (JOC) dengan PGE dan kontrak penjualan energi dengan Pertamina dan PLN.",
+       "en": "Unit 2 started around 2008-2009 under a joint operation contract (JOC) with PGE and an energy sales contract with Pertamina and PLN."
+      },
+      {
+       "id": "Retrofit unit 1 dan 2 telah selesai; tambahan 30 MW unit 3 ditargetkan akhir 2026.",
+       "en": "Retrofit of units 1 and 2 is complete; a further 30 MW from unit 3 is targeted by end 2026."
+      }
+     ],
+     "sebab": [
+      {
+       "id": "Analisis METI (Hipotesis): lapangan berproduksi lebih dari dua dekade karena pengelola swasta berpengalaman mau menanam ulang modal untuk retrofit dan pengembangan unit baru.",
+       "en": "METI analysis (Hypothesis): the field has produced for over two decades because an experienced private operator reinvests in retrofit and new units."
+      }
+     ],
+     "angka": [
+      {
+       "label": {
+        "id": "Kapasitas awal dua unit",
+        "en": "Initial capacity of two units"
+       },
+       "nilai": 227,
+       "d": 0,
+       "satuan": "MW",
+       "sumber": "wayang",
+       "est": false
+      },
+      {
+       "label": {
+        "id": "Kapasitas terpasang setelah retrofit",
+        "en": "Installed capacity after retrofit"
+       },
+       "nilai": 230.5,
+       "d": 1,
+       "satuan": "MW",
+       "sumber": "wayang2",
+       "est": false
+      }
+     ],
+     "pelajaran": [
+      {
+       "id": "Skema JOC dengan PGE terbukti dapat menjaga kontinuitas lapangan ketika kepemilikan pengelola berganti; tanggal mulai operasi unit 1 berbeda antar sumber dan belum diverifikasi.",
+       "en": "A JOC with PGE has kept a field going as operator ownership changed; the start date of unit 1 differs across sources and is not verified."
+      }
+     ],
+     "kronologi": [
+      {
+       "tanggal": "2008-12-01",
+       "teks": {
+        "id": "Laporan Petromindo: unit 2 mulai operasi komersial (bulan saja).",
+        "en": "Petromindo report: unit 2 starts commercial operation (month only)."
+       }
+      }
+     ],
+     "faktor": {
+      "teknologi": true,
+      "ppa_tarif": true
+     },
+     "sumber": [
+      "wayang",
+      "wayang2"
+     ],
+     "hak_jawab": false
+    },
+    {
+     "id": "olkaria",
+     "nama": "Olkaria dan model GDC (Kenya)",
+     "jenis": "berhasil",
+     "negara": "KE",
+     "lokasi": {
+      "id": "Lembah Rift, Kenya",
+      "en": "Rift Valley, Kenya"
+     },
+     "profil": [
+      {
+       "label": {
+        "id": "Pengelola pembangkit",
+        "en": "Plant operator"
+       },
+       "nilai": {
+        "id": "KenGen (milik negara) dan Ormat (Olkaria III, 150 MW)",
+        "en": "KenGen (state-owned) and Ormat (Olkaria III, 150 MW)"
+       }
+      },
+      {
+       "label": {
+        "id": "Pengembang uap",
+        "en": "Steam developer"
+       },
+       "nilai": {
+        "id": "GDC, perusahaan milik pemerintah sejak 2009",
+        "en": "GDC, a government-owned company since 2009"
+       }
+      },
+      {
+       "label": {
+        "id": "Uap yang dijual GDC ke KenGen (Olkaria)",
+        "en": "Steam sold by GDC to KenGen (Olkaria)"
+       },
+       "nilai": 320,
+       "satuan": "MW"
+      },
+      {
+       "label": {
+        "id": "Kapasitas uap GDC di Menengai",
+        "en": "GDC steam capacity at Menengai"
+       },
+       "nilai": 170,
+       "satuan": "MW"
+      }
+     ],
+     "tindakan": [
+      {
+       "id": "Negara membentuk GDC sebagai perusahaan khusus yang membor sumur, menanggung risiko eksplorasi, lalu menjual uap kepada pembangkit.",
+       "en": "The state created GDC as a special company that drills wells, carries exploration risk and sells steam to generators."
+      }
+     ],
+     "sebab": [
+      {
+       "id": "Analisis METI (Hipotesis): pemisahan risiko hulu (uap) dan hilir (pembangkit) membuat investor swasta cukup menanggung risiko pembangkit.",
+       "en": "METI analysis (Hypothesis): separating upstream (steam) from downstream (generation) risk means private investors need only carry generation risk."
+      }
+     ],
+     "angka": [
+      {
+       "label": {
+        "id": "Uap GDC dijual ke KenGen",
+        "en": "GDC steam sold to KenGen"
+       },
+       "nilai": 320,
+       "d": 0,
+       "satuan": "MW",
+       "sumber": "kenya",
+       "est": false
+      },
+      {
+       "label": {
+        "id": "Kapasitas uap Menengai",
+        "en": "Menengai steam capacity"
+       },
+       "nilai": 170,
+       "d": 0,
+       "satuan": "MW",
+       "sumber": "kenya",
+       "est": false
+      }
+     ],
+     "pelajaran": [
+      {
+       "id": "Analisis METI (Hipotesis): Indonesia punya padanan: pengeboran pemerintah lewat PISP/PT SMI. Perbedaannya, di Kenya uap dijual sebagai produk tetap; di Indonesia data sumur diserahkan ke pelelang.",
+       "en": "METI analysis (Hypothesis): Indonesia has a counterpart: government drilling through PISP/PT SMI. The difference is that in Kenya steam is sold as a standing product; in Indonesia the well data is handed to the auction winner."
+      },
+      {
+       "id": "Catatan data: total kapasitas kompleks Olkaria berbeda antar sumber (573 MW sampai sekitar 810 MW) dan bergantung cakupan; tidak ditampilkan sebagai satu angka.",
+       "en": "Data note: total Olkaria complex capacity differs across sources (573 MW to about 810 MW) depending on scope; not shown as a single number."
+      }
+     ],
+     "kronologi": [
+      {
+       "tanggal": "2009-01-01",
+       "teks": {
+        "id": "Pemerintah Kenya membentuk GDC (tahun saja).",
+        "en": "The Government of Kenya forms GDC (year only)."
+       }
+      }
+     ],
+     "faktor": {
+      "risiko_eksplorasi": true,
+      "pendanaan": true
+     },
+     "sumber": [
+      "kenya",
+      "kengen"
+     ],
+     "hak_jawab": false
+    },
+    {
+     "id": "islandia",
+     "nama": "Islandia: pemanfaatan langsung",
+     "jenis": "berhasil",
+     "negara": "IS",
+     "lokasi": {
+      "id": "Islandia",
+      "en": "Iceland"
+     },
+     "profil": [
+      {
+       "label": {
+        "id": "Pangsa panas bumi dalam keluaran pemanas",
+        "en": "Geothermal share of heating output"
+       },
+       "nilai": 97,
+       "satuan": "%"
+      },
+      {
+       "label": {
+        "id": "Rumah dengan pemanas distrik dari air panas bumi",
+        "en": "Homes on district heating from geothermal water"
+       },
+       "nilai": 90,
+       "satuan": "% (laporan media)"
+      }
+     ],
+     "tindakan": [
+      {
+       "id": "Air panas dari sumur disalurkan langsung lewat jaringan pemanas distrik ke rumah; sisanya listrik dari hidro dan uap panas bumi.",
+       "en": "Hot water from wells is piped directly through district heating networks to homes; the rest is electricity from hydro and geothermal steam."
+      }
+     ],
+     "sebab": [
+      {
+       "id": "Analisis METI (Hipotesis): pemanfaatan langsung (panas, bukan listrik) memberi efisiensi jauh lebih tinggi untuk kebutuhan panas dan tidak bergantung tarif listrik.",
+       "en": "METI analysis (Hypothesis): direct use (heat, not electricity) is far more efficient for heat demand and does not depend on an electricity tariff."
+      }
+     ],
+     "angka": [
+      {
+       "label": {
+        "id": "Pangsa panas bumi dalam keluaran pemanas",
+        "en": "Geothermal share of heating output"
+       },
+       "nilai": 97,
+       "d": 0,
+       "satuan": "%",
+       "sumber": "iceland_oecd",
+       "est": false
+      },
+      {
+       "label": {
+        "id": "Rumah dengan pemanas distrik (laporan media)",
+        "en": "Homes on district heating (media report)"
+       },
+       "nilai": 90,
+       "d": 0,
+       "satuan": "%",
+       "sumber": "iceland_bb",
+       "est": false
+      }
+     ],
+     "pelajaran": [
+      {
+       "id": "Analisis METI (Hipotesis): untuk Indonesia, pemanfaatan langsung (pengeringan hasil pertanian, agrowisata, pemanas) layak dibahas sebagai pelengkap; iklim tropis menutup pasar pemanas ruang.",
+       "en": "METI analysis (Hypothesis): for Indonesia direct use (crop drying, agro-tourism, process heat) deserves discussion as a complement; the tropical climate removes the space heating market."
+      },
+      {
+       "id": "Catatan data: sumber berbeda soal pangsa rumah (85-90%); EEA menyebut panas bumi dan hidro menyuplai hampir seluruh listrik dan pemanas.",
+       "en": "Data note: sources differ on the share of homes (85-90%); the EEA says geothermal and hydro supply almost all electricity and heating."
+      }
+     ],
+     "kronologi": [],
+     "faktor": {
+      "teknologi": true
+     },
+     "sumber": [
+      "iceland_oecd",
+      "iceland_eea",
+      "iceland_bb"
+     ],
+     "hak_jawab": false
+    },
+    {
+     "id": "tiwi-makban",
+     "nama": "Tiwi dan Makban (Filipina)",
+     "jenis": "berhasil",
+     "negara": "PH",
+     "lokasi": {
+      "id": "Albay, Batangas, Laguna",
+      "en": "Albay, Batangas, Laguna"
+     },
+     "profil": [
+      {
+       "label": {
+        "id": "Operasi komersial Tiwi",
+        "en": "Tiwi commercial operation"
+       },
+       "nilai": "Mei 1979"
+      },
+      {
+       "label": {
+        "id": "Kapasitas Tiwi",
+        "en": "Tiwi capacity"
+       },
+       "nilai": 234,
+       "satuan": "MW"
+      },
+      {
+       "label": {
+        "id": "Badan negara pengembang",
+        "en": "State developer"
+       },
+       "nilai": {
+        "id": "PNOC-EDC, dibentuk 1976",
+        "en": "PNOC-EDC, formed 1976"
+       }
+      }
+     ],
+     "tindakan": [
+      {
+       "id": "Pemerintah membentuk PNOC-EDC (1976) untuk mengembangkan panas bumi sendiri tanpa swasta karena biaya awalnya tinggi.",
+       "en": "The government formed PNOC-EDC (1976) to develop geothermal itself, without the private sector, because of the high upfront cost."
+      },
+      {
+       "id": "EDC diprivatisasi lewat IPO pada 2006 dan diakuisisi Lopez Group; Tiwi dan Makban kini dijalankan perusahaan berbeda.",
+       "en": "EDC was privatised through an IPO in 2006 and acquired by the Lopez Group; Tiwi and Makban are now run by different companies."
+      }
+     ],
+     "sebab": [
+      {
+       "id": "Analisis METI (Hipotesis): negara mengambil risiko eksplorasi di awal, membangun basis lapangan, baru kemudian melepas ke swasta ketika risiko sudah jelas.",
+       "en": "METI analysis (Hypothesis): the state took exploration risk first, built the field base, and only then released it to the private sector once risk was clear."
+      }
+     ],
+     "angka": [
+      {
+       "label": {
+        "id": "Kapasitas Tiwi (menurut The Manila Times, ketiga terbesar di Filipina)",
+        "en": "Tiwi capacity (per The Manila Times, third largest in the Philippines)"
+       },
+       "nilai": 234,
+       "d": 0,
+       "satuan": "MW",
+       "sumber": "tiwi2",
+       "est": false
+      }
+     ],
+     "pelajaran": [
+      {
+       "id": "Analisis METI (Hipotesis): urutan negara membuka lapangan lalu swasta mengoperasikan terbukti bekerja; relevan bagi gagasan pengeboran pemerintah di Indonesia.",
+       "en": "METI analysis (Hypothesis): the sequence of the state opening a field and then private operators running it has worked; relevant to government drilling in Indonesia."
+      }
+     ],
+     "kronologi": [
+      {
+       "tanggal": "1976-01-01",
+       "teks": {
+        "id": "PNOC-EDC dibentuk (tahun saja).",
+        "en": "PNOC-EDC is formed (year only)."
+       }
+      },
+      {
+       "tanggal": "1979-05-01",
+       "teks": {
+        "id": "Tiwi mulai operasi komersial (bulan saja).",
+        "en": "Tiwi starts commercial operation (month only)."
+       }
+      }
+     ],
+     "faktor": {
+      "risiko_eksplorasi": true,
+      "pendanaan": true
+     },
+     "sumber": [
+      "tiwi",
+      "tiwi2",
+      "ph_edc"
+     ],
+     "hak_jawab": false
+    },
+    {
+     "id": "turki",
+     "nama": "Turki: tarif jual beli terjamin (FiT)",
+     "jenis": "berhasil",
+     "negara": "TR",
+     "lokasi": {
+      "id": "Turki",
+      "en": "Turkey"
+     },
+     "profil": [
+      {
+       "label": {
+        "id": "Tarif panas bumi YEKDEM (awal)",
+        "en": "Geothermal YEKDEM tariff (initial)"
+       },
+       "nilai": "US$ 10,5 sen/kWh + 2,7 sen bonus komponen lokal"
+      },
+      {
+       "label": {
+        "id": "Kapasitas terpasang 2008",
+        "en": "Installed capacity 2008"
+       },
+       "nilai": 80,
+       "satuan": "MW"
+      },
+      {
+       "label": {
+        "id": "Kapasitas terpasang April 2024",
+        "en": "Installed capacity April 2024"
+       },
+       "nilai": 1691.4,
+       "satuan": "MW"
+      }
+     ],
+     "tindakan": [
+      {
+       "id": "Tarif beli tetap berbasis dolar AS untuk panas bumi dengan bonus bagi peralatan buatan dalam negeri.",
+       "en": "A fixed US dollar feed-in tariff for geothermal, with a bonus for domestically made equipment."
+      },
+      {
+       "id": "Tarif direvisi turun sekitar 36% dengan batas atas US$0,086/kWh untuk pembangkit yang beroperasi 1 Juli 2021 sampai 31 Desember 2030.",
+       "en": "The tariff was revised down by about 36% with a cap of US$0.086/kWh for plants operating from 1 July 2021 to 31 December 2030."
+      }
+     ],
+     "sebab": [
+      {
+       "id": "Analisis METI (Hipotesis): kepastian pembeli dan tarif membuat bank mau meminjam, sehingga pengembang swasta membor sendiri.",
+       "en": "METI analysis (Hypothesis): a certain buyer and tariff let banks lend, so private developers drilled on their own."
+      }
+     ],
+     "angka": [
+      {
+       "label": {
+        "id": "Pembayaran FiT ke operator panas bumi 2016",
+        "en": "FiT payout to geothermal operators, 2016"
+       },
+       "nilai": 695,
+       "d": 0,
+       "satuan": "US$ juta",
+       "sumber": "tr_2016",
+       "est": false
+      },
+      {
+       "label": {
+        "id": "Kapasitas terpasang April 2024",
+        "en": "Installed capacity April 2024"
+       },
+       "nilai": 1691.4,
+       "d": 1,
+       "satuan": "MW",
+       "sumber": "tr_kapsarc",
+       "est": false
+      }
+     ],
+     "pelajaran": [
+      {
+       "id": "Analisis METI (Hipotesis): tarif yang pasti cepat menarik modal, tetapi beban subsidi membengkak sehingga pemerintah memangkas tarif: Indonesia memilih harga patokan tertinggi, bukan FiT tetap.",
+       "en": "METI analysis (Hypothesis): a certain tariff attracts capital fast, but the subsidy burden grows so the government cut it: Indonesia chose a ceiling price rather than a fixed FiT."
+      },
+      {
+       "id": "Catatan data: angka 752 MW (cakupan YEKDEM akhir 2016) dan 1.691 MW (nasional 2024) berbeda cakupan; tidak untuk dibandingkan langsung.",
+       "en": "Data note: 752 MW (YEKDEM scope, end 2016) and 1,691 MW (national, 2024) differ in scope and should not be compared directly."
+      }
+     ],
+     "kronologi": [],
+     "faktor": {
+      "ppa_tarif": true,
+      "pendanaan": true
+     },
+     "sumber": [
+      "tr_kapsarc",
+      "tr_2016",
+      "tr_rate"
+     ],
+     "hak_jawab": false
+    }
+   ]
+  },
+  "40": {
+   "tipe": "kasus",
+   "butir": [
+    {
+     "id": "sorik-marapi",
+     "nama": "PLTP Sorik Marapi: paparan gas H2S",
+     "jenis": "gagal",
+     "negara": "ID",
+     "lokasi": {
+      "id": "Mandailing Natal, Sumatera Utara",
+      "en": "Mandailing Natal, North Sumatra"
+     },
+     "profil": [
+      {
+       "label": {
+        "id": "Pengembang",
+        "en": "Developer"
+       },
+       "nilai": {
+        "id": "PT Sorik Marapi Geothermal Power (SMGP)",
+        "en": "PT Sorik Marapi Geothermal Power (SMGP)"
+       }
+      },
+      {
+       "label": {
+        "id": "Unit I",
+        "en": "Unit I"
+       },
+       "nilai": 45,
+       "satuan": "MW"
+      },
+      {
+       "label": {
+        "id": "Insiden 25 Januari 2021, korban meninggal",
+        "en": "25 January 2021 incident, deaths"
+       },
+       "nilai": 5
+      }
+     ],
+     "sebab": [
+      {
+       "id": "Menurut rilis ESDM: gas diduga H2S dilepas saat uji alir (discharge) sumur SM T02 di unit II; pendeteksi gas di dekat lokasi tidak mencatat kebocoran; warga yang bekerja di sawah 300-500 m dari lokasi pingsan.",
+       "en": "Per the ESDM release: gas presumed to be H2S was released during discharge of well SM T02 at unit II; gas detectors near the site did not register a leak; villagers working in rice fields 300-500 m away collapsed."
+      },
+      {
+       "id": "Media melaporkan insiden berulang di lokasi yang sama pada 2021-2022 (Human Rights Monitor menghitung korban dirawat 87 orang pada akhir September 2022); penyebab pasti tiap insiden perlu dibaca dari hasil investigasi resmi.",
+       "en": "Media report repeated incidents at the same site in 2021-2022 (Human Rights Monitor counts 87 people hospitalised by late September 2022); the exact cause of each incident should be read from official investigations."
+      }
+     ],
+     "terdampak": {
+      "id": "Warga sekitar lokasi (sawah dan permukiman), dengan korban meninggal termasuk anak-anak menurut laporan media.",
+      "en": "Residents near the site (rice fields and homes), with deaths including children per media reports."
+     },
+     "seharusnya": {
+      "id": "Analisis METI (Hipotesis): zona aman (buffer) dan sirene peringatan sebelum uji alir, jalur evakuasi yang diumumkan ke desa, serta detektor di arah angin, dilakukan sebelum sumur dibuka.",
+      "en": "METI analysis (Hypothesis): a buffer zone and warning sirens before discharge, an evacuation route announced to villages, and detectors downwind should be in place before a well is opened."
+     },
+     "tanda_bahaya": [
+      {
+       "id": "Insiden gas yang berulang tanpa perbaikan prosedur yang diumumkan.",
+       "en": "Repeated gas incidents without an announced procedure fix."
+      },
+      {
+       "id": "Detektor di lokasi tidak mencatat apa pun padahal korban ada di luar pagar.",
+       "en": "On-site detectors register nothing while victims are outside the fence."
+      }
+     ],
+     "kronologi": [
+      {
+       "tanggal": "2021-01-25",
+       "teks": {
+        "id": "Sekitar pukul 12.00 WIB uji alir sumur SM T02; sekitar 12.30 WIB warga di sawah pingsan.",
+        "en": "About 12:00 WIB discharge of well SM T02; about 12:30 WIB villagers in the fields collapse."
+       }
+      },
+      {
+       "tanggal": "2021-01-26",
+       "teks": {
+        "id": "ESDM menghentikan sementara operasi unit I, pengeboran dua rig, dan pengembangan unit II; inspektur dikirim.",
+        "en": "ESDM suspends unit I operation, drilling with two rigs and unit II development; inspectors dispatched."
+       }
+      }
+     ],
+     "faktor": {
+      "keselamatan": true,
+      "sosial": true
+     },
+     "sumber": [
+      "sorik_esdm",
+      "sorik_hrm",
+      "sorik_jp",
+      "sorik_pm",
+      "sorik_pt"
+     ],
+     "catatan": {
+      "id": "Tanggapan pengembang: SMGP menyatakan mendukung penuh investigasi pemerintah dan kepolisian (Listrik Indonesia, 2021). Hasil investigasi dan proses hukum perlu dibaca dari sumber resmi.",
+      "en": "Developer response: SMGP said it fully supports the government and police investigations (Listrik Indonesia, 2021). Investigation results and legal processes should be read from official sources."
+     },
+     "hak_jawab": true
+    },
+    {
+     "id": "dieng-2022",
+     "nama": "PLTP Dieng: kebocoran gas pad 28",
+     "jenis": "gagal",
+     "negara": "ID",
+     "lokasi": {
+      "id": "Banjarnegara, Jawa Tengah",
+      "en": "Banjarnegara, Central Java"
+     },
+     "profil": [
+      {
+       "label": {
+        "id": "Pengelola",
+        "en": "Operator"
+       },
+       "nilai": {
+        "id": "PT Geo Dipa Energi",
+        "en": "PT Geo Dipa Energi"
+       }
+      },
+      {
+       "label": {
+        "id": "Tanggal",
+        "en": "Date"
+       },
+       "nilai": "12 Maret 2022"
+      },
+      {
+       "label": {
+        "id": "Korban",
+        "en": "Casualties"
+       },
+       "nilai": {
+        "id": "1 pekerja meninggal, 8 dirawat (menurut media)",
+        "en": "1 worker died, 8 hospitalised (per media)"
+       }
+      }
+     ],
+     "sebab": [
+      {
+       "id": "Menurut penjelasan Geo Dipa: paparan terjadi saat katup pelepas (relief valve) terbuka otomatis di bawah tekanan standar ketika satu sumur produksi sedang diperbaiki (workover) oleh rig kontraktor.",
+       "en": "Per Geo Dipa's explanation: exposure occurred when a relief valve opened automatically below the standard pressure while a production well was being repaired (workover) by a contractor rig."
+      },
+      {
+       "id": "Geo Dipa menyatakan kejadian bukan ledakan sumur dan tidak terjadi pada sumur yang sedang dibor; polisi menyelidiki penyebab dan kepatuhan prosedur.",
+       "en": "Geo Dipa said the event was not a well blowout and did not occur at a well being drilled; police investigated the cause and procedural compliance."
+      }
+     ],
+     "terdampak": {
+      "id": "Pekerja kontraktor dan pengelola; korban dari kalangan warga tidak dilaporkan pada kejadian ini menurut penjelasan Geo Dipa.",
+      "en": "Contractor and operator workers; no resident casualties were reported for this event per Geo Dipa's explanation."
+     },
+     "seharusnya": {
+      "id": "Analisis METI (Hipotesis): pekerjaan workover dengan sumur berpotensi H2S memerlukan izin kerja panas, pemantauan gas personel, dan penghentian pekerjaan bila tekanan menyimpang.",
+      "en": "METI analysis (Hypothesis): workover on wells with potential H2S needs a permit to work, personal gas monitors and a stop-work trigger when pressure deviates."
+     },
+     "tanda_bahaya": [
+      {
+       "id": "Katup pelepas membuka di bawah tekanan yang ditetapkan.",
+       "en": "A relief valve opens below the set pressure."
+      },
+      {
+       "id": "Riwayat insiden lapangan yang sama diingatkan Mongabay (2007 dan 2016) sebagai konteks risiko lokasi.",
+       "en": "Mongabay recalls earlier incidents at the same field (2007 and 2016) as site risk context."
+      }
+     ],
+     "kronologi": [
+      {
+       "tanggal": "2022-03-12",
+       "teks": {
+        "id": "Gas beracun keluar di pad 28, satu pekerja meninggal, delapan dirawat di RSUD Wonosobo.",
+        "en": "Toxic gas released at pad 28, one worker dies, eight are treated at Wonosobo hospital."
+       }
+      }
+     ],
+     "faktor": {
+      "keselamatan": true,
+      "sosial": true
+     },
+     "sumber": [
+      "dieng_kabar",
+      "dieng_detik",
+      "dieng_mb"
+     ],
+     "catatan": {
+      "id": "Tanggapan pengelola: Geo Dipa menerangkan kronologi dan membantah adanya ledakan sumur (Bisnis.com, 13 Maret 2022). Proyek PLTP Dieng pengembangan (345 MW, status konstruksi menurut data METI) tidak berhenti total; status terkini perlu dikonfirmasi pengelola.",
+      "en": "Operator response: Geo Dipa explained the chronology and denied a well blowout (Bisnis.com, 13 March 2022). The Dieng expansion (345 MW, construction status per METI data) has not stopped altogether; the current status should be confirmed with the operator."
+     },
+     "hak_jawab": true
+    },
+    {
+     "id": "gunung-talang",
+     "nama": "PLTP Gunung Talang: penolakan warga",
+     "jenis": "mundur",
+     "negara": "ID",
+     "lokasi": {
+      "id": "Kabupaten Solok, Sumatera Barat",
+      "en": "Solok Regency, West Sumatra"
+     },
+     "profil": [
+      {
+       "label": {
+        "id": "Penolakan tercatat sejak",
+        "en": "Rejection recorded since"
+       },
+       "nilai": "2016-2017"
+      },
+      {
+       "label": {
+        "id": "Sosialisasi terakhir yang diprotes",
+        "en": "Latest protested briefing"
+       },
+       "nilai": "13 November 2025"
+      },
+      {
+       "label": {
+        "id": "Status terakhir",
+        "en": "Latest status"
+       },
+       "nilai": {
+        "id": "belum dibatalkan; warga meminta izin dicabut (Mongabay, 1 Desember 2025)",
+        "en": "not cancelled; residents ask for the permit to be revoked (Mongabay, 1 December 2025)"
+       }
+      }
+     ],
+     "sebab": [
+      {
+       "id": "Warga khawatir pencemaran air, hilangnya tanah dan lahan pertanian, risiko gas beracun, dan menyebut pengalaman di Sorik Marapi, Mataloko, serta Muara Laboh; sebagian menganggap gunung keramat.",
+       "en": "Residents fear water pollution, loss of land and farmland and toxic gas risk, citing experience at Sorik Marapi, Mataloko and Muara Laboh; some regard the mountain as sacred."
+      },
+      {
+       "id": "Warga menilai sosialisasi tidak transparan (hanya sisi positif) dan menunjuk materi paparan yang keliru; LBH Padang mengingatkan prinsip persetujuan bebas, didahulukan, dan diinformasikan (FPIC).",
+       "en": "Residents judged the briefing non-transparent (positives only) and pointed to an erroneous presentation slide; LBH Padang reminded of the free, prior and informed consent (FPIC) principle."
+      }
+     ],
+     "terdampak": {
+      "id": "Warga nagari di sekitar lokasi, termasuk petani; Mongabay dan lembaga masyarakat sipil menyorot peran perempuan penolak.",
+      "en": "Residents of nearby villages including farmers; Mongabay and civil society highlight the role of women opponents."
+     },
+     "seharusnya": {
+      "id": "Analisis METI (Hipotesis): persetujuan warga didahulukan sebelum izin dan lelang diteruskan, materi sosialisasi diverifikasi bersama warga, dan kunjungan ke PLTP yang berjalan dibuka.",
+      "en": "METI analysis (Hypothesis): resident consent should come before the permit and tender proceed, briefing material should be verified with residents, and visits to operating plants opened."
+     },
+     "tanda_bahaya": [
+      {
+       "id": "Protes sosialisasi dan pembakaran kendaraan perusahaan oleh oknum pada 2017 (menurut Mongabay).",
+       "en": "Protest at the briefing and burning of company vehicles by individuals in 2017 (per Mongabay)."
+      },
+      {
+       "id": "Pemerintah daerah menilai penolakan berasal dari sosialisasi yang minim, warga menilai informasi sudah berat sebelah: dua tafsir yang tidak dipertemukan.",
+       "en": "The provincial government attributes opposition to limited outreach, residents see the information as one-sided: two readings that were never reconciled."
+      }
+     ],
+     "kronologi": [
+      {
+       "tanggal": "2017-09-15",
+       "teks": {
+        "id": "Ratusan warga berunjuk rasa ke kantor Bupati Solok (pertengahan September 2017, tanggal tepat tidak dirinci).",
+        "en": "Hundreds of residents rally at the Solok Regent's office (mid September 2017, exact date not given)."
+       }
+      },
+      {
+       "tanggal": "2018-11-30",
+       "teks": {
+        "id": "Mantan Menteri ESDM Arcandra Tahar menyayangkan penolakan dan menilai PLTP dapat menaikkan PAD (Republika).",
+        "en": "Former ESDM minister Arcandra Tahar regrets the opposition and says a plant could raise local revenue (Republika)."
+       }
+      },
+      {
+       "tanggal": "2025-11-13",
+       "teks": {
+        "id": "Sosialisasi di Nagari Batu Bajanjang diwarnai protes.",
+        "en": "Briefing in Nagari Batu Bajanjang met with protest."
+       }
+      }
+     ],
+     "faktor": {
+      "sosial": true,
+      "perizinan": true
+     },
+     "sumber": [
+      "talang17",
+      "talang18",
+      "talang25",
+      "talang26"
+     ],
+     "catatan": {
+      "id": "Tanggapan: perusahaan tidak menanggapi Mongabay hingga artikel 1 Desember 2025 terbit; Pemprov Sumbar pada Maret 2026 menyatakan tetap melanjutkan percepatan proyek (Mongabay, 17 Maret 2026). Nama pemegang izin tidak dimuat di artikel 2025.",
+      "en": "Response: the company did not respond to Mongabay by the 1 December 2025 article; the West Sumatra government said in March 2026 it still pursues the acceleration (Mongabay, 17 March 2026). The permit holder is not named in the 2025 article."
+     },
+     "hak_jawab": true
+    },
+    {
+     "id": "ungaran",
+     "nama": "PLTP Gunung Ungaran: tahap kajian dan penolakan",
+     "jenis": "mundur",
+     "negara": "ID",
+     "lokasi": {
+      "id": "Jawa Tengah",
+      "en": "Central Java"
+     },
+     "profil": [
+      {
+       "label": {
+        "id": "Potensi",
+        "en": "Potential"
+       },
+       "nilai": 55,
+       "satuan": "MW"
+      },
+      {
+       "label": {
+        "id": "Pengembang",
+        "en": "Developer"
+       },
+       "nilai": {
+        "id": "PLN",
+        "en": "PLN"
+       }
+      },
+      {
+       "label": {
+        "id": "Status per September 2026",
+        "en": "Status as of September 2026"
+       },
+       "nilai": {
+        "id": "masih tahap kajian menurut PLN",
+        "en": "still at study stage per PLN"
+       }
+      }
+     ],
+     "sebab": [
+      {
+       "id": "PLN menyatakan proyek masih tahap kajian (Antara, 6 September 2026) walau ESDM sudah mengizinkan PLN mengembangkan (Koran Jakarta, 25 Agustus 2026); Mongabay melaporkan penolakan warga sementara proyek terus berjalan.",
+       "en": "PLN says the project is still at study stage (Antara, 6 September 2026) even though ESDM allowed PLN to develop it (Koran Jakarta, 25 August 2026); Mongabay reports resident opposition while the project continues."
+      }
+     ],
+     "terdampak": {
+      "id": "Warga sekitar Gunung Ungaran; isi keberatan warga perlu dibaca pada laporan Mongabay yang ditautkan (METI baru membaca judul dan ringkasan).",
+      "en": "Residents around Mount Ungaran; the substance of objections should be read in the linked Mongabay report (METI has read only the headline and summary)."
+     },
+     "seharusnya": {
+      "id": "Analisis METI (Hipotesis): status kajian dan izin diumumkan sejajar dengan sosialisasi supaya warga tidak membaca proyek sudah berjalan sementara pengembang menyebutnya kajian.",
+      "en": "METI analysis (Hypothesis): study and permit status should be announced in step with outreach so residents do not read the project as proceeding while the developer calls it a study."
+     },
+     "tanda_bahaya": [
+      {
+       "id": "Dua pernyataan status yang berbeda dari pihak berbeda dalam sebulan.",
+       "en": "Two different status statements from different parties within a month."
+      }
+     ],
+     "kronologi": [
+      {
+       "tanggal": "2026-08-25",
+       "teks": {
+        "id": "Kementerian ESDM mengizinkan PLN mengembangkan panas bumi Gunung Ungaran (Koran Jakarta).",
+        "en": "The Ministry of ESDM allows PLN to develop Mount Ungaran geothermal (Koran Jakarta)."
+       }
+      },
+      {
+       "tanggal": "2026-09-06",
+       "teks": {
+        "id": "PLN menyebut masih tahap kajian (Antara).",
+        "en": "PLN says it is still at study stage (Antara)."
+       }
+      }
+     ],
+     "faktor": {
+      "sosial": true,
+      "perizinan": true
+     },
+     "sumber": [
+      "ungaran1",
+      "ungaran2",
+      "ungaran3"
+     ],
+     "catatan": {
+      "id": "Kasus ini masih berjalan; label \"tertunda\" bukan penilaian gagal. Tanggapan PLN dan warga dapat dikirim lewat formulir koreksi.",
+      "en": "This case is ongoing; the \"delayed\" label is not a failure judgement. PLN and resident responses can be sent via the correction form."
+     },
+     "hak_jawab": true
+    },
+    {
+     "id": "puna",
+     "nama": "Puna Geothermal Venture, Hawaii",
+     "jenis": "gagal",
+     "negara": "US",
+     "lokasi": {
+      "id": "Pulau Hawaii, AS",
+      "en": "Hawaii Island, USA"
+     },
+     "profil": [
+      {
+       "label": {
+        "id": "Kapasitas sebelum erupsi",
+        "en": "Capacity before eruption"
+       },
+       "nilai": 38,
+       "satuan": "MW"
+      },
+      {
+       "label": {
+        "id": "Berhenti sejak",
+        "en": "Offline since"
+       },
+       "nilai": "Mei 2018"
+      },
+      {
+       "label": {
+        "id": "Kembali beroperasi (terbatas)",
+        "en": "Back online (reduced)"
+       },
+       "nilai": "November 2020"
+      }
+     ],
+     "sebab": [
+      {
+       "id": "Erupsi Kilauea Mei 2018: lava menimpa gardu, gudang, dan sedikitnya tiga sumur serta memutus akses jalan; pembangkit dihentikan.",
+       "en": "Kilauea eruption May 2018: lava covered a substation, a warehouse and at least three wells and cut road access; the plant was shut."
+      },
+      {
+       "id": "Pembukaan kembali mundur dari target semula; menurut Ormat penyebabnya izin bangunan yang tertunda dan COVID-19, selain masalah peralatan saat mencoba menyala kembali.",
+       "en": "The restart slipped from the original target; per Ormat due to delayed building permits and COVID-19, besides equipment problems on restart attempts."
+      }
+     ],
+     "terdampak": {
+      "id": "Jaringan listrik Pulau Hawaii: pembangkit ini sekitar 15% kapasitas pasti pulau sebelum erupsi.",
+      "en": "The Hawaii Island grid: the plant was about 15% of firm generation capacity before the eruption."
+     },
+     "seharusnya": {
+      "id": "Analisis METI (Hipotesis): risiko geologi lokasi (sesar, aliran lava) dinilai dalam pemilihan lokasi sumur dan gardu, dengan rencana pemulihan dan asuransi; bagi Indonesia relevan untuk lokasi dekat gunung api aktif.",
+      "en": "METI analysis (Hypothesis): site geology risk (faults, lava flow) should be assessed in siting wells and substations, with a recovery plan and insurance; relevant to Indonesian sites near active volcanoes."
+     },
+     "tanda_bahaya": [
+      {
+       "id": "Pembangkit berada di zona rift gunung api aktif.",
+       "en": "A plant sited in the rift zone of an active volcano."
+      }
+     ],
+     "kronologi": [
+      {
+       "tanggal": "2018-05-01",
+       "teks": {
+        "id": "Erupsi Puna bawah; pembangkit dihentikan (bulan saja).",
+        "en": "Lower Puna eruption; the plant is shut (month only)."
+       }
+      },
+      {
+       "tanggal": "2020-11-01",
+       "teks": {
+        "id": "Beroperasi kembali dengan kapasitas terbatas, 2,5 tahun kemudian (bulan saja).",
+        "en": "Back online at reduced output about 2.5 years later (month only)."
+       }
+      }
+     ],
+     "faktor": {
+      "risiko_eksplorasi": true,
+      "teknologi": true,
+      "keselamatan": true
+     },
+     "sumber": [
+      "puna_hei",
+      "puna_ap",
+      "puna_tge"
+     ],
+     "catatan": {
+      "id": "Tanggapan pengembang: Ormat memaparkan alasan penundaan (izin dan COVID-19) lewat siaran pers; lihat sumber.",
+      "en": "Developer response: Ormat gave the reasons for delay (permits and COVID-19) in press statements; see sources."
+     },
+     "hak_jawab": true
+    }
+   ],
+   "catatan": {
+    "id": "Pihak yang disebut berhak menanggapi. Kirim koreksi atau tanggapan lewat formulir koreksi METI; tanggapan yang diverifikasi dimuat berdampingan dengan teks ini.",
+    "en": "Parties named have a right of reply. Send corrections or responses through the METI correction form; verified responses are published alongside this text."
+   }
+  },
+  "41": {
+   "tipe": "pola",
+   "faktor": [
+    {
+     "k": "risiko_eksplorasi",
+     "l": {
+      "id": "Risiko eksplorasi ditanggung pihak berkapasitas (negara, BUMN, atau dana)",
+      "en": "Exploration risk carried by a capable party (state, state company or fund)"
+     }
+    },
+    {
+     "k": "ppa_tarif",
+     "l": {
+      "id": "PPA dan tarif dapat dibiayai bank",
+      "en": "PPA and tariff bankable"
+     }
+    },
+    {
+     "k": "pendanaan",
+     "l": {
+      "id": "Pendanaan jangka panjang bunga rendah",
+      "en": "Long-term low-interest funding"
+     }
+    },
+    {
+     "k": "teknologi",
+     "l": {
+      "id": "Teknologi dan data lapangan matang",
+      "en": "Mature technology and field data"
+     }
+    },
+    {
+     "k": "perizinan",
+     "l": {
+      "id": "Perizinan dan kawasan hutan",
+      "en": "Permits and forest area"
+     }
+    },
+    {
+     "k": "sosial",
+     "l": {
+      "id": "Penerimaan warga",
+      "en": "Resident acceptance"
+     }
+    },
+    {
+     "k": "keselamatan",
+     "l": {
+      "id": "Keselamatan H2S dan prosedur",
+      "en": "H2S safety and procedures"
+     }
+    }
+   ],
+   "catatan": {
+    "id": "Analisis METI (Hipotesis): faktor keselamatan dan sosial muncul pada kasus gagal, sedangkan faktor risiko eksplorasi dan pendanaan muncul pada kasus berhasil. Ini pola dari sampel kecil (13 kasus), bukan bukti sebab-akibat.",
+    "en": "METI analysis (Hypothesis): safety and social factors appear in the failed cases, while exploration risk and funding factors appear in the successful ones. This is a pattern from a small sample (13 cases), not evidence of causation."
+   }
+  },
+  "42": {
+   "tipe": "periksa",
+   "peran": [
+    {
+     "k": "pengembang",
+     "l": {
+      "id": "Pengembang",
+      "en": "Developer"
+     }
+    },
+    {
+     "k": "pendana",
+     "l": {
+      "id": "Investor dan pendana",
+      "en": "Investor and lender"
+     }
+    },
+    {
+     "k": "pemda",
+     "l": {
+      "id": "Pemda",
+      "en": "Local government"
+     }
+    },
+    {
+     "k": "pusat",
+     "l": {
+      "id": "Pemerintah pusat",
+      "en": "Central government"
+     }
+    },
+    {
+     "k": "pln",
+     "l": {
+      "id": "PLN",
+      "en": "PLN"
+     }
+    },
+    {
+     "k": "meti",
+     "l": {
+      "id": "METI",
+      "en": "METI"
+     }
+    }
+   ],
+   "tahap": [
+    {
+     "k": "eksplorasi",
+     "l": {
+      "id": "Eksplorasi",
+      "en": "Exploration"
+     }
+    },
+    {
+     "k": "kawasan",
+     "l": {
+      "id": "Perizinan kawasan hutan",
+      "en": "Forest area permitting"
+     }
+    },
+    {
+     "k": "ppa",
+     "l": {
+      "id": "PPA",
+      "en": "PPA"
+     }
+    },
+    {
+     "k": "pengeboran",
+     "l": {
+      "id": "Pengeboran",
+      "en": "Drilling"
+     }
+    },
+    {
+     "k": "sosial",
+     "l": {
+      "id": "Sosial",
+      "en": "Social"
+     }
+    }
+   ],
+   "butir": [
+    {
+     "peran": "pengembang",
+     "tahap": "eksplorasi",
+     "teks": {
+      "id": "Pelajari data sumur dan survei yang ada di wilayah (termasuk data pengeboran pemerintah) sebelum menawar lelang.",
+      "en": "Study existing well and survey data for the area (including government drilling data) before bidding."
+     },
+     "dasar": "smi"
+    },
+    {
+     "peran": "pengembang",
+     "tahap": "eksplorasi",
+     "teks": {
+      "id": "Rancang program sumur eksplorasi berseri; satu sumur tidak menjawab risiko (peluang berhasil naik dengan jumlah sumur).",
+      "en": "Design a staged exploration well programme; one well does not settle the risk (success probability rises with the number of wells)."
+     },
+     "dasar": "stanford"
+    },
+    {
+     "peran": "pengembang",
+     "tahap": "eksplorasi",
+     "teks": {
+      "id": "Pakai asumsi tingkat sukses eksplorasi sekitar 59% bukan 100% dalam model keuangan.",
+      "en": "Use an exploration success assumption of about 59%, not 100%, in the financial model."
+     },
+     "dasar": "esmap"
+    },
+    {
+     "peran": "pengembang",
+     "tahap": "kawasan",
+     "teks": {
+      "id": "Petakan irisan WKP dengan kawasan hutan dan konservasi sebelum menawar.",
+      "en": "Map the overlap of the WKP with forest and conservation areas before bidding."
+     },
+     "dasar": "uu21"
+    },
+    {
+     "peran": "pengembang",
+     "tahap": "kawasan",
+     "teks": {
+      "id": "Siapkan AMDAL dan izin penggunaan kawasan hutan sejak awal; jadwalkan sebagai jalur kritis.",
+      "en": "Prepare AMDAL and the forest area use permit early; schedule them as a critical path."
+     },
+     "dasar": "pp7"
+    },
+    {
+     "peran": "pengembang",
+     "tahap": "ppa",
+     "teks": {
+      "id": "Hitung kelayakan di bawah harga patokan tertinggi Perpres 112/2022 dengan faktor F wilayah, bukan di harga yang diharapkan.",
+      "en": "Test feasibility under the Perpres 112/2022 ceiling with the regional F factor, not at a hoped-for price."
+     },
+     "dasar": "perpres112"
+    },
+    {
+     "peran": "pengembang",
+     "tahap": "ppa",
+     "teks": {
+      "id": "Siapkan klausul PPA yang dapat disesuaikan agar bankable, seperti pada Rantau Dedap (2017).",
+      "en": "Prepare PPA clauses that can be adapted to be bankable, as at Rantau Dedap (2017)."
+     },
+     "dasar": "dedap_ppa"
+    },
+    {
+     "peran": "pengembang",
+     "tahap": "pengeboran",
+     "teks": {
+      "id": "Tetapkan zona aman, sirene, dan detektor H2S di arah angin sebelum uji alir; umumkan jalur evakuasi ke desa.",
+      "en": "Set a buffer zone, sirens and downwind H2S detectors before discharge testing; announce the evacuation route to villages."
+     },
+     "dasar": "sorik_esdm"
+    },
+    {
+     "peran": "pengembang",
+     "tahap": "pengeboran",
+     "teks": {
+      "id": "Izin kerja, pemantau gas personel, dan pemicu berhenti kerja untuk workover pada sumur H2S.",
+      "en": "Work permit, personal gas monitors and a stop-work trigger for workover on H2S wells."
+     },
+     "dasar": "dieng_kabar"
+    },
+    {
+     "peran": "pengembang",
+     "tahap": "sosial",
+     "teks": {
+      "id": "Verifikasi materi sosialisasi bersama warga dan buka kunjungan ke PLTP yang berjalan.",
+      "en": "Verify briefing material with residents and open visits to operating plants."
+     },
+     "dasar": "talang25"
+    },
+    {
+     "peran": "pengembang",
+     "tahap": "sosial",
+     "teks": {
+      "id": "Cari persetujuan bebas, didahulukan, dan diinformasikan (FPIC) sebelum konstruksi; catat dan jawab tiap keberatan secara tertulis.",
+      "en": "Seek free, prior and informed consent (FPIC) before construction; log and answer every objection in writing."
+     },
+     "dasar": "talang25"
+    },
+    {
+     "peran": "pendana",
+     "tahap": "eksplorasi",
+     "teks": {
+      "id": "Nilai struktur risiko hulu: apakah ada dana PISP, hibah, atau jaminan yang menutup sumur eksplorasi.",
+      "en": "Assess the upstream risk structure: is there PISP money, grant or guarantee covering exploration wells."
+     },
+     "dasar": "wbpisp"
+    },
+    {
+     "peran": "pendana",
+     "tahap": "ppa",
+     "teks": {
+      "id": "Syaratkan PPA yang bankable dan jaminan risiko politik untuk proyek besar (pola Sarulla: JBIC).",
+      "en": "Require a bankable PPA and political risk cover for large projects (Sarulla pattern: JBIC)."
+     },
+     "dasar": "sarulla"
+    },
+    {
+     "peran": "pendana",
+     "tahap": "pengeboran",
+     "teks": {
+      "id": "Periksa rencana keselamatan H2S dan asuransi sebelum pencairan fase pengeboran.",
+      "en": "Check the H2S safety plan and insurance before disbursing the drilling phase."
+     },
+     "dasar": "sorik_esdm"
+    },
+    {
+     "peran": "pendana",
+     "tahap": "sosial",
+     "teks": {
+      "id": "Tuntut laporan penerimaan warga dan mekanisme keluhan sebagai syarat pinjaman.",
+      "en": "Require a resident acceptance report and complaint mechanism as a loan condition."
+     },
+     "dasar": "talang25"
+    },
+    {
+     "peran": "pemda",
+     "tahap": "kawasan",
+     "teks": {
+      "id": "Ketahui status kawasan hutan dan tata ruang wilayah sebelum rekomendasi.",
+      "en": "Know the forest area status and spatial plan before issuing recommendations."
+     },
+     "dasar": "uu21"
+    },
+    {
+     "peran": "pemda",
+     "tahap": "sosial",
+     "teks": {
+      "id": "Adakan forum bersama warga dengan data lengkap; hindari sosialisasi hanya sisi positif.",
+      "en": "Hold a joint forum with residents with full data; avoid positives-only briefings."
+     },
+     "dasar": "talang25"
+    },
+    {
+     "peran": "pemda",
+     "tahap": "sosial",
+     "teks": {
+      "id": "Pastikan skema bonus produksi (PP 28/2016) dan serapan tenaga kerja lokal dijelaskan ke warga.",
+      "en": "Make sure the production bonus scheme (PP 28/2016) and local labour absorption are explained to residents."
+     },
+     "dasar": "mataloko"
+    },
+    {
+     "peran": "pusat",
+     "tahap": "eksplorasi",
+     "teks": {
+      "id": "Pertimbangkan pengeboran pemerintah di WKP yang berisiko tinggi sebelum lelang; model Waesano dan Jailolo sudah ada.",
+      "en": "Consider government drilling in high-risk WKP before auction; the Waesano and Jailolo models exist."
+     },
+     "dasar": "waesano"
+    },
+    {
+     "peran": "pusat",
+     "tahap": "ppa",
+     "teks": {
+      "id": "Perbarui harga patokan dan faktor F secara berkala berdasarkan biaya riil.",
+      "en": "Update ceiling prices and the F factor periodically from real costs."
+     },
+     "dasar": "perpres112"
+    },
+    {
+     "peran": "pusat",
+     "tahap": "pengeboran",
+     "teks": {
+      "id": "Pastikan inspektur panas bumi hadir dan standar zona aman wajib sebelum uji alir.",
+      "en": "Ensure geothermal inspectors are present and buffer zone standards are mandatory before discharge tests."
+     },
+     "dasar": "sorik_esdm"
+    },
+    {
+     "peran": "pusat",
+     "tahap": "sosial",
+     "teks": {
+      "id": "Umumkan status kajian dan izin selaras dengan sosialisasi (pelajaran Ungaran).",
+      "en": "Announce study and permit status in step with outreach (Ungaran lesson)."
+     },
+     "dasar": "ungaran1"
+    },
+    {
+     "peran": "pln",
+     "tahap": "ppa",
+     "teks": {
+      "id": "Buka kalkulasi biaya penyediaan dan proses negosiasi PPA agar pengembang dan bank dapat merencanakan.",
+      "en": "Open the cost of supply calculation and PPA negotiation process so developers and banks can plan."
+     },
+     "dasar": "perpres112"
+    },
+    {
+     "peran": "pln",
+     "tahap": "pengeboran",
+     "teks": {
+      "id": "Untuk proyek PLN sendiri (Ungaran, Hululais, Mataloko), terapkan standar keselamatan H2S yang sama dengan swasta.",
+      "en": "For PLN's own projects (Ungaran, Hululais, Mataloko), apply the same H2S safety standard as the private sector."
+     },
+     "dasar": "dieng_kabar"
+    },
+    {
+     "peran": "meti",
+     "tahap": "sosial",
+     "teks": {
+      "id": "Sediakan formulir hak jawab dan koreksi dan muat tanggapan berdampingan dengan kasus.",
+      "en": "Provide a reply and correction form and publish responses alongside cases."
+     },
+     "dasar": "talang25"
+    },
+    {
+     "peran": "meti",
+     "tahap": "eksplorasi",
+     "teks": {
+      "id": "Perbarui daftar WKP dan hasil lelang begitu sumber resmi tersedia; tandai yang masih media.",
+      "en": "Update the WKP list and auction results as soon as official sources exist; mark those still media-based."
+     },
+     "dasar": "wkp"
+    }
+   ]
+  }
+ }
+}

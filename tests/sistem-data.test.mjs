@@ -17,10 +17,11 @@ test('enam jenis akses dikenal, sumber terpakai ditandai, lembaga_id valid', () 
   assert.ok(d.sistem.every((b) => !b.lembaga_id || org.has(b.lembaga_id)));
   assert.ok(d.sistem.some((b) => b.cakupan_internasional) && d.sistem.some((b) => !b.cakupan_internasional));
 });
-test('tanpa 1001startup, tanpa em dash, diverifikasi kosong (isi belum dicocokkan)', () => {
+test('tanpa 1001startup, tanpa em dash, tiap butir diverifikasi punya URL bukti', () => {
   const s = JSON.stringify(d);
   assert.ok(!/1001startup/i.test(s) && !/[—–]/.test(s));
-  assert.ok(d.sistem.every((b) => b.diverifikasi.length === 0));
+  for (const b of d.sistem) for (const f of b.diverifikasi) assert.ok(/^https:/.test(b.bukti?.[f] || ''), b.id + ' ' + f);
+  assert.ok(d.sistem.some((b) => b.diverifikasi.length) && d.sistem.every((b) => !b.butuh_pemilik || b.catatan_periksa));
 });
 test('periksa menolak: tanpa sumber, akses asing, http, tertutup berAPI', () => {
   const ok = d.sistem[0];

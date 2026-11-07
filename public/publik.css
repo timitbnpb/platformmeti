@@ -606,3 +606,10 @@ a.jm-foto:focus-visible{outline:3px solid var(--fokus)}
 .jm-pm-leg{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:8px 12px;padding:10px 0 12px;border-bottom:1px solid var(--line);font-size:var(--t-label)}
 .jm-pm-leg b{font-weight:600}
 .jm-pm-leg .jm-pil-st{--tk:var(--sk);min-height:22px;padding:2px 9px;font-size:var(--t-label)}
+/* daftar proyek beranda: rapat, tanpa ruang kosong kanan (pemilik 8 Nov 2026 "terlalu banyak white space"):
+   ubin kapasitas lebih kecil, kapasitas dan pemilik di kanan baris, angka tanpa garis bawah */
+.jm-feed-i{min-height:0;padding:10px 4px;gap:14px}
+.jm-feed-th{width:64px;height:56px}
+.jm-feed-th b,.jm-feed-th small{text-decoration:none}
+.jm-feed-i>div,.jm-feed-i>span:not(.jm-feed-th){flex:1;min-width:0}
+@media (min-width:640px){.jm-feed{grid-template-columns:repeat(2,minmax(0,1fr));column-gap:24px}.jm-feed li+li{border-top:0}.jm-feed li{border-bottom:1px solid var(--line)}}

@@ -2,20 +2,26 @@
    industriHtml(cfg, ctx) lalu gambarSemua(); cara pasang tertulis di laporan. Hanya informasi dari data yang ada; yang belum ada = "butuh unduhan pemilik". */
 import { t } from "/i18n.js";
 import { esc, ikon } from "/inti/umum.js";
-import { exHtml } from "/inti/komponen.js";
+import { exHtml, sumberHtml as infoHtml } from "/inti/komponen.js";
+import { namaBaku } from "/inti/nama_baku.js";
+import { kolomHtml } from "/pelacak_grafik.js";
 import { aksiHtml, hlHtml } from "/inti/aksi_ex.js";
-import { sumberLipat, pil, num, amanUrl } from "/analisis.js";
-import { kolom } from "/grafik.js";
+import { sumberLipat, num, amanUrl, batangHtml } from "/analisis.js";
 import { tautOrg, tautProyek } from "/inti/tautan.js";
 import { logoOrgSatu } from "/inti/logo_org.js";
 import { tabelHtml } from "/pelacak_tabel.js";
 
+const inisial = (nama) => namaBaku(nama).nama.replace(/^PT\.?\s+/i, "").charAt(0).toUpperCase() || "?";
+const warnaMg = (nama) => [...String(nama)].reduce((z, c) => z + c.charCodeAt(0), 0) % 6;
+const monogram = (nama) => `<span class="pl-lg pl-mg pl-mg-${warnaMg(nama)}" aria-hidden="true">${esc(inisial(nama))}</span>`;
+/* satu logo 32px bulat di kiri nama; tanpa logo atau gambar rusak = monogram berwarna (bukan ikon orang) */
 export const logoHtml = (id, nama, logo) => {
   const u = logoOrgSatu(id, nama, logo);
-  return `<span class="pl-lg">${u ? `<img src="${esc(u)}" data-lg="1" alt="" loading="lazy" decoding="async" referrerpolicy="no-referrer">` : ikon("direktori", 22)}</span>`;
+  return u ? `<span class="pl-lg"><img src="${esc(u)}" data-lg="${esc(nama)}" alt="" loading="lazy" decoding="async" referrerpolicy="no-referrer"></span>` : monogram(nama);
 };
-const nm = (id, nama, logo) => `<span class="pl-nm">${logoHtml(id, nama, logo)}<span>${id ? tautOrg(id, nama) : esc(nama)}</span></span>`;
-const ex = (id, ik, kunci, o) => exHtml({ id, ikon: ik, topik: t(`pl.i.${kunci}.ey`), aksiHtml: aksiHtml({ csv: false }) + (o.sumber || ""), ...o });
+export const gantiMonogram = (img) => { const h = Object.assign(document.createElement("span"), { innerHTML: monogram(img.dataset.lg) }).firstChild; (img.closest(".pl-lg") || img).replaceWith(h); };
+const nm = (id, nama, logo) => { const n = namaBaku(nama).nama; return `<span class="pl-nm">${logoHtml(id, nama, logo)}<span>${id ? tautOrg(id, n) : esc(n)}</span></span>`; };
+const ex = (id, ik, kunci, { info, ss, ...o }) => exHtml({ id, ikon: ik, topik: t(`pl.i.${kunci}.ey`), aksiHtml: aksiHtml({ csv: false }) + (o.sumber || "") + (info ? infoHtml(esc(info), t("pl.info")) : ""), ...o, subHtml: ss ? esc(t(ss)) : o.subHtml || "" });
 const sel = (v) => (v == null || v === "" ? "-" : esc(v));
 const tautSumber = (u) => { const a = amanUrl(u); return a ? `<a href="${esc(a)}" target="_blank" rel="noopener noreferrer">${esc(new URL(a).hostname.replace(/^www\./, ""))}</a>` : "-"; };
 const adaKata = (teks, daftar) => daftar.some((k) => String(teks || "").toLowerCase().includes(k));
@@ -31,7 +37,9 @@ export function barisPabrik(cfg, RT) {
     id: f.perusahaan_id, nama: f.nama, logo: null, kota: f.lokasi?.kota, prov: f.lokasi?.provinsi, komp: (f.komponen || []).join(", "), kap: Number(f.kapasitas) || null,
     sat: String(f.satuan || "").replace("/tahun", ""), status: f.status, mulai: f.tahun_mulai, tkdn: f.tkdn, investor: f.negara_investor, sumber: f.sumber?.[0]?.url, tanggal: f.sumber?.[0]?.tanggal,
   }));
-  return [...mod, ...fas];
+  const g = new Map();
+  for (const r of [...mod, ...fas]) { const k = namaBaku(r.nama).nama.toLowerCase() + "|" + r.komp; const o = g.get(k); if (!o || (r.kap || 0) > (o.kap || 0)) g.set(k, r); }
+  return [...g.values()];
 }
 
 export function industriHtml(cfg, X) {
@@ -44,11 +52,11 @@ export function industriHtml(cfg, X) {
   if (jalan.length) {
     const kap = jalan.filter((r) => r.sat === "MWp" && r.kap);
     const tot = kap.reduce((s, r) => s + r.kap, 0);
-    const per = new Map(); for (const r of kap) per.set(r.kota || "-", (per.get(r.kota || "-") || 0) + r.kap);
-    const kota = [...per].sort((a, z) => z[1] - a[1]).slice(0, 8).map(([k, v]) => ({ label: k, v, tip: `${k}: ${num(v)} MWp/${t("pl.tahun")}` }));
-    const g = kota.length >= 2 ? `<h3 class="pl-sub">${esc(t("pl.i.pabrik.g"))}</h3>${kolom(kota, { label: t("pl.i.pabrik.g") })}` : "";
+    const per = new Map(); for (const r of kap) if (r.kota) per.set(r.kota, (per.get(r.kota) || 0) + r.kap);
+    const kota = [...per].sort((a, z) => z[1] - a[1]).slice(0, 8).map(([k, v]) => ({ label: k, bagian: [{ nilai: v, kelas: "jm-an-b1" }], teks: num(v) }));
+    const g = kota.length >= 2 ? `<h3 class="pl-sub">${esc(t("pl.i.pabrik.g"))}</h3>${batangHtml(kota, { maks: kota[0].bagian[0].nilai, label: t("pl.i.pabrik.g") })}` : "";
     out.push(ex("ind-pabrik", "gedung", "pabrik", {
-      judulHtml: tot ? hlHtml("pl.i.pabrik.j", num(jalan.length), { mw: num(tot) }) : hlHtml("pl.i.pabrik.j0", num(jalan.length)), subHtml: `${esc(t("pl.i.pabrik.sub"))} ${pil("an.est")}`,
+      judulHtml: tot ? hlHtml("pl.i.pabrik.j", num(jalan.length), { mw: num(tot) }) : hlHtml("pl.i.pabrik.j0", num(jalan.length)), ss: "pl.ss.pabrik", info: t("pl.i.pabrik.sub"),
       isiHtml: g + tabelHtml("tb-pabrik", { urut: "kap", arah: -1, satuan: "pl.u.pabrik", baris: jalan, kolom: [
         { k: "nama", j: "pl.c.pabrik", u: (r) => r.nama, sel: (r) => nm(r.id, r.nama, r.logo) },
         { k: "komp", j: "pl.c.komponen", u: (r) => r.komp, sel: (r) => esc(r.komp) },
@@ -61,15 +69,17 @@ export function industriHtml(cfg, X) {
   }
 
   /* J02 + J06 TKDN dan katalog produk bersertifikat */
-  const tk = (TK?.baris || []).filter((r) => cfg.ind.tkdn.includes(r.kategori));
+  const gt = new Map();
+  for (const r of (TK?.baris || []).filter((r) => cfg.ind.tkdn.includes(r.kategori))) { const k = [r.produsen, r.produk, r.merk].join("|").toLowerCase(), o = gt.get(k); if (!o) gt.set(k, { ...r, n: 1 }); else { o.n++; if ((r.tkdn_persen || 0) > (o.tkdn_persen || 0)) Object.assign(o, { tkdn_persen: r.tkdn_persen, berlaku_sampai: r.berlaku_sampai, sumber_url: r.sumber_url }); } }
+  const tk = [...gt.values()];
   if (tk.length) {
     const rata = tk.reduce((s, r) => s + (r.tkdn_persen || 0), 0) / tk.length;
     const ember = [["<25", (v) => v < 25], ["25-40", (v) => v >= 25 && v < 40], ["40-60", (v) => v >= 40 && v < 60], ["60+", (v) => v >= 60]].map(([l, f]) => { const n = tk.filter((r) => f(r.tkdn_persen || 0)).length; return { label: l + "%", v: n, tip: `${l}%: ${num(n)} ${t("pl.u.produk")}` }; });
     out.push(ex("ind-tkdn", "tabel", "tkdn", {
-      judulHtml: hlHtml("pl.i.tkdn.j", num(tk.length), { rata: num(rata, 1) }), subHtml: `${esc(t("pl.i.tkdn.sub"))} ${pil("an.est")}`,
-      isiHtml: (ember.filter((x) => x.v).length >= 2 ? `<h3 class="pl-sub">${esc(t("pl.i.tkdn.g"))}</h3>${kolom(ember, { label: t("pl.i.tkdn.g") })}` : "") + tabelHtml("tb-tkdn", { urut: "tkdn", arah: -1, satuan: "pl.u.produk", baris: tk, kolom: [
+      judulHtml: hlHtml("pl.i.tkdn.j", num(tk.length), { rata: num(rata, 1) }), ss: "pl.ss.tkdn", info: t("pl.i.tkdn.sub"),
+      isiHtml: (ember.filter((x) => x.v).length >= 2 ? `<h3 class="pl-sub">${esc(t("pl.i.tkdn.g"))}</h3>${kolomHtml(ember, { label: t("pl.i.tkdn.g") })}` : "") + tabelHtml("tb-tkdn", { urut: "tkdn", arah: -1, satuan: "pl.u.produk", baris: tk, kolom: [
         { k: "produsen", j: "pl.c.produsen", u: (r) => r.produsen, sel: (r) => nm(r.produsen_org_id, r.produsen) },
-        { k: "produk", j: "pl.c.produk", u: (r) => r.produk, sel: (r) => esc([r.produk, r.merk, r.tipe].filter(Boolean).join(", ")) },
+        { k: "produk", j: "pl.c.produk", u: (r) => r.produk, sel: (r) => esc([r.produk, r.merk].filter(Boolean).join(", ")) + (r.n > 1 ? `<small class="pl-ket">${esc(t("pl.i.tipe", { n: r.n }))}</small>` : "") },
         { k: "tkdn", j: "pl.c.tkdn", u: (r) => r.tkdn_persen, desc: 1, kelas: "jm-num", sel: (r) => esc(num(r.tkdn_persen, 1)) + "%" },
         { k: "berlaku", j: "pl.c.berlaku", u: (r) => r.berlaku_sampai, sel: (r) => sel(r.berlaku_sampai) },
         { k: "sumber", j: "pl.c.sumber", u: (r) => r.sumber_url, sel: (r) => tautSumber(r.sumber_url) },
@@ -81,7 +91,7 @@ export function industriHtml(cfg, X) {
   const idP = new Map((PROY || []).map((p) => [p.id, p]));
   const pem = (PT?.baris || []).filter((r) => (r.teknologi || []).includes(cfg.ind.pt) && (r.proyek_rujukan || []).length);
   if (pem.length) out.push(ex("ind-pemasok", "proyek", "pemasok", {
-    judulHtml: hlHtml("pl.i.pemasok.j", num(pem.length), { n: num(pem.reduce((s, r) => s + r.proyek_rujukan.length, 0)) }), subHtml: esc(t("pl.i.pemasok.sub")),
+    judulHtml: hlHtml("pl.i.pemasok.j", num(pem.length), { n: num(pem.reduce((s, r) => s + r.proyek_rujukan.length, 0)) }), ss: "pl.ss.pemasok", info: t("pl.i.pemasok.sub"),
     isiHtml: tabelHtml("tb-pemasok", { urut: "n", arah: -1, satuan: "pl.u.pemasok", baris: pem, kolom: [
       { k: "nama", j: "pl.c.pemasok", u: (r) => r.nama, sel: (r) => nm(r.organisasi_id, r.nama) },
       { k: "kat", j: "pl.c.kategori", u: (r) => (r.kategori_layanan || [])[0], sel: (r) => esc((r.kategori_layanan || []).slice(0, 2).join(", ")) },
@@ -95,7 +105,7 @@ export function industriHtml(cfg, X) {
   const brt = (BER || []).filter((b) => /pabrik|manufaktur|smelter/i.test(b.judul) && cfg.ind.rt.some((k) => b.judul.toLowerCase().includes(k.split(" ")[0])));
   const bar = [...baru.map((r) => ({ ...r, jenis: "fasilitas" })), ...brt.map((b) => ({ nama: b.judul, jenis: "berita", status: null, mulai: String(b.terbit).slice(0, 4), komp: "", kap: null, sat: "", investor: null, sumber: b.url, tanggal: b.terbit }))];
   if (bar.length) out.push(ex("ind-investasi", "grafik", "investasi", {
-    judulHtml: hlHtml("pl.i.investasi.j", num(bar.length), {}), subHtml: esc(t("pl.i.investasi.sub")),
+    judulHtml: hlHtml("pl.i.investasi.j", num(bar.length), {}), ss: "pl.ss.investasi", info: t("pl.i.investasi.sub"),
     isiHtml: tabelHtml("tb-investasi", { urut: "mulai", arah: -1, satuan: "pl.u.kabar", baris: bar, kolom: [
       { k: "nama", j: "pl.c.pabrik", u: (r) => r.nama, sel: (r) => (r.jenis === "fasilitas" ? nm(r.id, r.nama) : esc(r.nama)) },
       { k: "status", j: "pl.c.status", u: (r) => r.status, kelas: "jm-tengah", sel: (r) => (r.status ? `<span class="jm-pil">${stat(r.status)}</span>` : `<span class="jm-pil">${esc(t("pl.i.berita"))}</span>`) },
@@ -109,7 +119,7 @@ export function industriHtml(cfg, X) {
   /* J09 + A19 lab uji dan lembaga sertifikasi */
   const lab = (PT?.baris || []).filter((r) => (r.teknologi || []).includes(cfg.ind.pt) && (r.kategori_layanan || []).some((k) => /uji|sertifikasi|inspeksi/.test(k)));
   if (lab.length) out.push(ex("ind-lab", "metode", "lab", {
-    judulHtml: hlHtml("pl.i.lab.j", num(lab.length), {}), subHtml: esc(t("pl.i.lab.sub")),
+    judulHtml: hlHtml("pl.i.lab.j", num(lab.length), {}), ss: "pl.ss.lab", info: t("pl.i.lab.sub"),
     isiHtml: tabelHtml("tb-lab", { urut: "nama", satuan: "pl.u.lembaga", baris: lab, kolom: [
       { k: "nama", j: "pl.c.lembaga", u: (r) => r.nama, sel: (r) => nm(r.organisasi_id, r.nama) },
       { k: "kat", j: "pl.c.kategori", u: (r) => (r.kategori_layanan || [])[0], sel: (r) => esc((r.kategori_layanan || []).filter((k) => /uji|sertifikasi|inspeksi/.test(k)).join(", ")) },
@@ -119,7 +129,7 @@ export function industriHtml(cfg, X) {
   }));
 
   /* J03 J05 A19 dan sisanya: yang belum ada di Direktori */
-  out.push(ex("ind-celah", "gedung", "celah", { judulHtml: esc(t("pl.i.celah.j")), subHtml: esc(t("pl.i.celah.sub")), isiHtml: celahIsi(cfg) }));
+  out.push(ex("ind-celah", "gedung", "celah", { judulHtml: esc(t("pl.i.celah.j")), ss: "pl.ss.celah", info: t("pl.i.celah.sub"), isiHtml: celahIsi(cfg) }));
   return out.join("");
 }
 

@@ -31,7 +31,7 @@ const orang = (o, ukuran = "") => {
   if (o.kosong || !o.nama) return `<li class="tn-fk tn-fk-kosong jm-batik ${ukuran}"><span class="tn-fk-bg" aria-hidden="true">${ikon("orang", 36)}</span><span class="tn-fk-t"><b>${esc(t("tn.lowong"))}</b><small>${esc(o.jabatan)}</small></span></li>`;
   const k = o.orang_id || slug(o.nama); PERS.set(k, o);
   const bg = o.foto ? `<img src="${esc(o.foto)}" alt="" width="360" height="360" loading="lazy">` : `<span class="tn-fk-ini" aria-hidden="true">${esc(inisial(o.nama))}</span>`;
-  const kls = o.foto ? (/-b\.webp$/.test(o.foto) ? "tn-fk-pt jm-batik" : "tn-fk-ft") : "tn-fk-nf jm-batik";
+  const kls = o.foto ? (/-b\.webp$/.test(o.foto) ? "tn-fk-pt" : "tn-fk-ft") : "tn-fk-nf jm-batik";
   return `<li class="tn-fk ${kls} ${ukuran}"><button type="button" class="tn-fk-b" data-p="${esc(k)}" aria-label="${esc(t("tn.p.buka", { nama: o.nama }))}"><span class="tn-fk-bg">${bg}</span><span class="tn-fk-t"><b>${esc(o.nama)}</b><small>${esc(o.jabatan)}</small></span></button></li>`;
 };
 const ul = (a, uk) => `<ul class="tn-fkg">${a.map((o) => orang(o, uk)).join("")}</ul>`;
@@ -63,8 +63,14 @@ const tbl = (x) => {
   return kartuLogo("/direktori?cari=" + encodeURIComponent(x.nama), l ? l[1] : x.nama, src ? `<img src="${esc(src)}" alt="" loading="lazy">` : mono(x.nama), `data-org-nama="${esc(x.nama)}"`);
 };
 const tblAsos = (a, sudah) => kartuLogo("/direktori?cari=" + encodeURIComponent(a), a, LOGO_ASOS[a] && !sudah.has(LOGO_ASOS[a]) ? (sudah.add(LOGO_ASOS[a]), `<img src="${LOGO_ASOS[a]}" alt="" loading="lazy">`) : mono(a));
-/* kisi kartu seragam; duplikat nama dibuang */
-const jalur = (a, fn) => { const lihat = new Set(), sudah = new Set(); return `<ul class="tn-kisi">${a.filter((x) => { const k = typeof x === "string" ? x : x.nama; return lihat.has(k) ? false : lihat.add(k); }).map((x) => fn(x, sudah)).join("")}</ul>`; };
+/* pita bergeser (marquee CSS murni): kartu logo seragam, duplikat nama dibuang; daftar diulang sampai cukup lebar lalu digandakan untuk putaran mulus */
+const jalur = (a, fn, balik) => {
+  const lihat = new Set(), sudah = new Set();
+  const kartu = a.filter((x) => { const k = typeof x === "string" ? x : x.nama; return lihat.has(k) ? false : lihat.add(k); }).map((x) => fn(x, sudah));
+  const r = Math.max(1, Math.ceil(12 / kartu.length)), basis = Array.from({ length: r }, () => kartu).flat();
+  const dup = basis.map((h) => h.replace("<li>", '<li aria-hidden="true">').replace("<a ", '<a tabindex="-1" '));
+  return `<div class="tn-pita"><ul class="tn-trek${balik ? " balik" : ""}">${basis.join("")}${dup.join("")}</ul></div>`;
+};
 
 /* ---------- bagian ---------- */
 const KOLFOTO = [["surya", "surya-cirata"], ["bayu", "bayu-sidrap"], ["hidro", "hidro-saguling"], ["panas-bumi", "panas-bumi-sibayak"], ["bioenergi", "bioenergi-sawit"]];
@@ -119,9 +125,9 @@ function struktur(p) {
 }
 
 function mitra(m) {
-  const grup = (kunci, a, fn, ik) => `<h3 class="tn-sub tn-tengah">${ikon(ik, 18)}<span>${esc(t(kunci))}</span><span class="tn-jml">${angka(new Set(a.map((x) => (typeof x === "string" ? x : x.nama))).size)}</span></h3>${jalur(a, fn)}`;
+  const grup = (kunci, a, fn, ik, balik) => `<h3 class="tn-sub tn-tengah">${ikon(ik, 18)}<span>${esc(t(kunci))}</span><span class="tn-jml">${angka(new Set(a.map((x) => (typeof x === "string" ? x : x.nama))).size)}</span></h3>${jalur(a, fn, balik)}`;
   return `<section class="tn-seksi tn-pita-bg" id="mitra" aria-labelledby="tn-mitra">${kepala("tn-mitra", "tautan", t("tn.ey.mitra"), t("tn.mitra.h2"), t("tn.mitra.pengantar", { tanggal: tanggal(m.diambil) }))}
-  ${grup("tn.mitra.kerja", m.mitra, tbl, "tautan")}${grup("tn.mitra.anggota", m.anggota, tbl, "gedung")}${grup("tn.mitra.asosiasi", m.asosiasi, tblAsos, "direktori")}</section>`;
+  ${grup("tn.mitra.kerja", m.mitra, tbl, "tautan")}${grup("tn.mitra.anggota", m.anggota, tbl, "gedung", true)}${grup("tn.mitra.asosiasi", m.asosiasi, tblAsos, "direktori")}</section>`;
 }
 
 function faq(k) {

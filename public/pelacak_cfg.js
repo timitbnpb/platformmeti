@@ -14,7 +14,7 @@ export const ikonPelacak = (id) => (IKON_SENDIRI[id] || IKON_TEK[TEK.find((x) =>
 
 const pj = (kod, rx) => (p) => (!kod || p.teknologi === kod) && (!rx || rx.test(p.nama));
 export const TEK = [
-  { id: "plts-atap", pemilik: true, ik: "surya", warna: "surya", p: pj("surya", /atap|rooftop|komunal/i), ruptl: "surya", kep: "surya", reg: ["surya"], rr: /atap|rooftop/i, rb: /plts atap|atap surya|rooftop|komunal/i, atap: true, tren: ["surya"], ind: { rt: ["modul", "sel", "inverter"], tkdn: ["modul_surya", "inverter"], pt: "surya" } },
+  { id: "plts-atap", pemilik: true, ik: "surya", warna: "surya", p: pj("surya", /atap|rooftop|komunal/i), kep: "surya", reg: ["surya"], rr: /atap|rooftop/i, rb: /plts atap|atap surya|rooftop|komunal/i, atap: true, tren: ["surya"], ind: { rt: ["modul", "sel", "inverter"], tkdn: ["modul_surya", "inverter"], pt: "surya" } },
   { id: "plts-terapung", pemilik: true, ik: "terapung", warna: "surya", p: pj(null, /terapung|floating/i), kep: "surya", rb: /terapung|floating/i, rr: /terapung/i, waduk: true, ind: { rt: ["modul", "sel", "inverter"], tkdn: ["modul_surya", "inverter"], pt: "surya" } },
   { id: "bayu", ik: "bayu", warna: "bayu", p: pj("bayu"), ruptl: "bayu", kep: "bayu", reg: ["angin"], tren: ["bayu"], ind: { rt: ["turbin", "bilah", "menara"], tkdn: ["turbin"], pt: "angin" } },
   { id: "panas-bumi", ik: "panas-bumi", warna: "panas-bumi", p: pj("panas-bumi"), ruptl: "panas-bumi", kep: "panas-bumi", reg: ["panas_bumi"], wkp: true, tren: ["panas_bumi"], ind: { rt: ["turbin uap"], tkdn: [], pt: "panas bumi" } },

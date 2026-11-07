@@ -53,7 +53,25 @@ export function cariOrg(nama, orgs) {
   return o ? o.id : null;
 }
 
-export function ubah(r, orgs, tgl, cek = {}) {
+// Fakta dari penelusuran laman resmi (telusuri.mjs): hanya yang terbaca di laman, tiap butir dengan URL bukti.
+export function terapkanTelusur(b, t) {
+  if (!t) return b;
+  if (!t.terjangkau) { b.catatan_periksa = t.catatan || 'tidak dapat diperiksa'; b.butuh_pemilik = true; return b; }
+  const bukti = {}, ver = new Set(b.diverifikasi || []), url = t.url_akhir || b.portal_url;
+  b.status = 'hidup'; b.diperiksa = t.tanggal;
+  if (t.nama_cocok) { ver.add('nama'); ver.add('portal_url'); bukti.nama = url; bukti.portal_url = url; }
+  if (t.lisensi) {
+    if (/tidak dinyatakan/i.test(b.lisensi)) { b.lisensi = `${t.lisensi} (tertulis di laman portal)`; ver.add('lisensi'); bukti.lisensi = url; }
+    else if (norm(b.lisensi).includes(norm(t.lisensi).split(' ').slice(0, 2).join(' '))) { ver.add('lisensi'); bukti.lisensi = url; }
+  }
+  if (t.api && /^https:/.test(t.api) && b.akses !== 'tertutup') { if (!b.api_url) b.api_url = t.api; if (b.api_url === t.api) { ver.add('api_url'); bukti.api_url = url; } }
+  if (t.unduhan?.length) { b.unduhan = t.unduhan.map((u) => ({ label: u.label.replace(/[—–]/g, '-').slice(0, 60), url: u.url })); bukti.unduhan = url; }
+  if (t.kontak && /contact|kontak|hubungi/i.test(new URL(t.kontak).pathname)) { b.kontak = { url: t.kontak, teks: 'Halaman kontak resmi' }; bukti.kontak = t.kontak; }
+  b.diverifikasi = [...ver]; if (Object.keys(bukti).length) b.bukti = bukti;
+  return b;
+}
+
+export function ubah(r, orgs, tgl, cek = {}, telusur = {}) {
   const c = cek[r.id] || {};
   const b = {
     id: r.id, nama: r.nama, kepanjangan: r.kep || undefined, pemilik: r.pemilik, lembaga_id: cariOrg(r.org || r.pemilik, orgs),
@@ -63,6 +81,7 @@ export function ubah(r, orgs, tgl, cek = {}) {
     diperiksa: c.terjangkau ? c.tanggal : undefined, diverifikasi: [],
     sumber: [{ url: r.portal, tanggal: tgl }], sumber_url: r.portal, tanggal_periksa: tgl, tingkat_bukti: 'kata-pihak',
   };
+  terapkanTelusur(b, telusur[r.id]);
   for (const k of Object.keys(b)) if (b[k] === undefined) delete b[k];
   return b;
 }
@@ -96,7 +115,9 @@ function bangun(tgl) {
   const kur = JSON.parse(fs.readFileSync(path.join(ROOT, 'data/sistem_data/kurasi.json'), 'utf8'));
   const pf = path.join(ROOT, 'data/sistem_data/periksa.json');
   const cek = fs.existsSync(pf) ? JSON.parse(fs.readFileSync(pf, 'utf8')) : {};
-  const baris = kur.map((r) => ubah(r, orgs, tgl, cek)).sort((a, b) => a.id.localeCompare(b.id));
+  const tf = path.join(ROOT, 'data/sistem_data/telusur.json');
+  const tel = fs.existsSync(tf) ? JSON.parse(fs.readFileSync(tf, 'utf8')) : {};
+  const baris = kur.map((r) => ubah(r, orgs, tgl, cek, tel)).sort((a, b) => a.id.localeCompare(b.id));
   const gal = baris.flatMap(periksa);
   if (new Set(baris.map((b) => b.id)).size !== baris.length) gal.push('id ganda');
   if (gal.length) { console.error(gal.join('\n')); process.exit(1); }

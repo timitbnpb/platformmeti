@@ -1,9 +1,13 @@
 /* Komponen bersama (CSS di inti/jm.css): baris filter, tab, subnav. Teks selalu dari pemanggil lewat t().
    Contoh filter: `<div class="jm-saring">${cariHtml({id:"q",label:t("reg.cari")})}${pilihHtml({id:"jenis",ikon:"jenis",label:t("reg.jenis"),opsi:[["","Semua"],["uu","UU"]]})}${hapusHtml({id:"hapus",label:t("jm.hapus_filter")})}${hitungHtml({id:"hitung",teks:"430 dari 430"})}</div>` */
-import { t, tanggal } from "/i18n.js";
+import { t, tanggal, angka } from "/i18n.js";
 import { esc, ikon, judulHuruf } from "/inti/umum.js";
 import { paginasiHtml } from "/inti/paginasi.js";
 import { kabar } from "/inti/aksi_ex.js";
+import { ikonTek, pilStatus } from "/inti/ikon_tek.js";
+import { logoOrg } from "/inti/logo_org.js";
+import { namaBaku } from "/inti/nama_baku.js";
+import { namaMedia, logoLokal } from "/inti/nama_media.js";
 import { urlMutlak, tautanBagi } from "/inti/bagi.js";
 export { urlMutlak, tautanBagi };
 
@@ -258,28 +262,78 @@ const TERKAIT_URUT = [
   ["siaran", "siaran"],
   ["berita", "berita"],
 ];
-const TERKAIT_TAMPIL = 10;
+const TERKAIT_TAMPIL = 9;
 const KLS_STATUS = { berlaku: "jm-pil-ok", diubah: "jm-pil-warn", dicabut: "jm-pil-bad" };
-/* satu butir: ikon/logo kecil, label pendek, satu baris judul (elipsis, title penuh), meta (tanggal, status) */
-function butirTerkait(j, x, ik, bangun, rinci) {
-  if (j === "berita") return `<li class="jm-tr"><a class="jm-tr-a" href="${esc(x.url)}" target="_blank" rel="noopener noreferrer" title="${esc(x.nama)}"><span class="jm-tr-ik">${ikon(ik, 18)}</span><span class="jm-tr-isi"><b>${esc(judulHuruf(x.nama))}</b>${x.media ? `<small>${esc(x.media)}</small>` : ""}</span></a></li>`;
+const KECIL_NAMA = new Set(["dan", "di", "ke", "dari", "untuk", "of", "and", "the", "for"]);
+/* nama organisasi: kapital penuh -> namaBaku; huruf kecil semua ("PT solar karya indonesia") -> Kapital Tiap Kata, PT/CV tetap kapital */
+const rapi = (n) => {
+  const b = namaBaku(n).nama;
+  if (/[A-Z]/.test(b.replace(/^(PT|CV)\b/, "").replace(/^\W*\w/, "")) ) return b;
+  return b.split(/(\s+)/).map((w, i) => (/^(pt|cv)\.?$/i.test(w) ? w.toUpperCase() : KECIL_NAMA.has(w) && i ? w : w.replace(/^(\W*)([a-z])/, (_, x, c) => x + c.toUpperCase()))).join("");
+};
+const kunciNama = (n) => String(n || "").toLowerCase().replace(/[^a-z0-9]+/g, "");
+const inisialNama = (n) => ([...String(n || "").replace(/^(PT|CV)\.?\s+/i, "").split(/\s+/).slice(0, 2).map((w) => [...w][0] || "")].join("") || "?").toUpperCase();
+const warna = (n) => 1 + [...String(n)].reduce((h, c) => h + c.charCodeAt(0), 0) % 5;
+const gambar = (u) => (u ? `<img class="jm-tk-img" src="${esc(u)}" alt="" width="40" height="40" loading="lazy" decoding="async" data-galat="hapus">` : "");
+const monogram = (n, u) => `<span class="jm-tk-lg jm-tk-mono jm-w${warna(n)}" aria-hidden="true">${esc(inisialNama(n))}${gambar(u)}</span>`;
+const kartu = (href, lg, judul, meta, luar, ekstra = "") =>
+  `<li class="jm-tk"><a class="jm-tk-a" href="${esc(href)}"${luar ? ' target="_blank" rel="noopener noreferrer"' : ""} title="${esc(judul)}">${lg}<span class="jm-tk-isi"><b class="jm-tk-j">${esc(judul)}</b>${meta ? `<span class="jm-tk-m">${meta}</span>` : ""}</span></a>${ekstra}</li>`;
+const mutuKecil = (x) => `<small class="jm-tk-s">${x}</small>`;
+/* satu kartu per jenis; mengembalikan { k: kunci dedup, tgl, mw, html } atau null */
+function kartuTerkait(j, x, ik, bangun, rinci) {
+  if (j === "berita") {
+    const lok = x.media ? logoLokal(x.media) : "";
+    const lg = `<span class="jm-tk-lg jm-tk-mono jm-w${warna(x.media || "")}" aria-hidden="true">${esc(inisialNama(namaMedia(x.media || x.nama)))}${gambar(lok)}</span>`;
+    return { k: x.id || kunciNama(x.nama), n: kunciNama(x.nama), tgl: String(x.tgl || ""), html: kartu(x.url, lg, judulHuruf(x.nama), mutuKecil(esc([x.media ? namaMedia(x.media) : "", x.tgl ? tanggal(String(x.tgl).slice(0, 10)) : ""].filter(Boolean).join(", "))), true) };
+  }
   const r = rinci(j, x);
-  if (!r) return `<li class="jm-tr jm-tr-p"><span class="jm-tr-ik">${ikon(ik, 18)}</span><span class="jm-tr-isi">${bangun(j, x)}</span></li>`;
+  if (!r) return null;
+  const tgl = String(r.tgl || "");
+  if (j === "proyek") {
+    const lg = `<span class="jm-tk-lg jm-tek-${esc(r.tek)}">${ikonTek(r.tek)}</span>`;
+    const meta = `${r.prov ? mutuKecil(esc(r.prov)) : ""}${Number.isFinite(r.mw) ? mutuKecil(esc(angka(r.mw)) + " MW") : ""}${r.st ? pilStatus(r.st) : ""}`;
+    return { k: r.id, n: kunciNama(r.nama), mw: r.mw || 0, html: kartu(r.href, lg, r.nama, meta) };
+  }
+  if (j === "org") {
+    const nama = rapi(r.nama);
+    return { k: r.id, n: kunciNama(nama), html: kartu(r.href, monogram(nama, logoOrg(r.id, r.nama, r.logo)[0]), nama, r.kat ? mutuKecil(esc(r.kat)) : "") };
+  }
+  if (j === "dokumen") {
+    const pen = r.penerbit ? rapi(r.penerbit) : "";
+    const lg = `<span class="jm-tk-lg jm-tk-dok">${ikon(r.jenis === "regulasi" ? "regulasi" : "pdf", 22)}</span>`;
+    const meta = `${pen ? `<small class="jm-tk-s jm-tk-pen">${monogram(pen, logoOrg(null, r.penerbit)[0]).replace("jm-tk-lg", "jm-tk-lg jm-tk-kecil")}<span>${esc(pen)}</span></small>` : ""}${r.tgl ? mutuKecil(esc(String(r.tgl).slice(0, 4))) : ""}`;
+    return { k: r.id, n: kunciNama(r.nama), tgl, html: kartu(r.href, lg, judulHuruf(r.nama), meta) };
+  }
   const judul = judulHuruf(r.nama);
-  const logo = r.logo ? `<img class="jm-tr-lb" src="${esc(r.logo)}" alt="" width="24" height="24" loading="lazy" decoding="async" data-galat="hapus">` : ikon(ik, 18);
-  const meta = (r.tgl ? `<small class="jm-tr-tgl">${esc(tanggal(r.tgl))}</small>` : "") + (r.status && KLS_STATUS[r.status] ? `<span class="jm-pil ${KLS_STATUS[r.status]}">${esc(t("reg.status." + r.status))}</span>` : "");
-  return `<li class="jm-tr"><a class="jm-tr-a" href="${esc(r.href)}" title="${esc(r.kode ? r.kode + ": " + judul : judul)}"><span class="jm-tr-ik">${logo}</span><span class="jm-tr-isi"><b>${esc(r.kode || judul)}</b>${r.kode ? `<small class="jm-tr-jd">${esc(judul)}</small>` : ""}</span>${meta ? `<span class="jm-tr-meta">${meta}</span>` : ""}</a>${j === "regulasi" ? unduhRegHtml({ url_pdf: r.pdf, url_sumber: r.sumber, judul: r.kode }) : ""}</li>`;
+  const meta = (r.tgl ? mutuKecil(esc(tanggal(r.tgl))) : "") + (r.status && KLS_STATUS[r.status] ? `<span class="jm-pil ${KLS_STATUS[r.status]}">${esc(t("reg.status." + r.status))}</span>` : "");
+  const lg = `<span class="jm-tk-lg jm-tk-dok">${ikon(ik, 22)}</span>`;
+  const ekstra = j === "regulasi" ? unduhRegHtml({ url_pdf: r.pdf, url_sumber: r.sumber, judul: r.kode }) : "";
+  return { k: r.id, n: kunciNama(r.kode ? r.kode + judul : judul), tgl, html: kartu(r.href, lg, r.kode ? r.kode + ": " + judul : judul, meta, false, ekstra) };
 }
 export async function terkaitHtml(jenis, id, { kecuali = [] } = {}) {
   const { hubungan, bangun, rinci } = await import("/inti/tautan.js");
   const h = await hubungan(jenis, id);
-  const grup = TERKAIT_URUT.filter(([j]) => h[j]?.length && !kecuali.includes(j)).map(([j, ik]) => {
-    const isi = j === "berita" ? h[j] : [...new Set(h[j])];
-    const butir = isi.map((x, i) => butirTerkait(j, x, ik, bangun, rinci).replace('class="jm-tr', i >= TERKAIT_TAMPIL ? 'hidden class="jm-tr' : 'class="jm-tr'));
-    const nav = isi.length > TERKAIT_TAMPIL ? paginasiHtml({ hal: 1, total: isi.length, per: TERKAIT_TAMPIL }) : "";
-    return `<div class="jm-terkait-grup" data-jm-total="${isi.length}"><h3>${ikon(ik, 18)}<span>${esc(t("terkait." + j))}</span><b>${isi.length}</b></h3><ul>${butir.join("")}</ul>${nav}</div>`;
-  });
+  const grup = [];
+  for (const [j, ik] of TERKAIT_URUT) {
+    if (!h[j]?.length || kecuali.includes(j)) continue;
+    const lihat = new Set(), lihatN = new Set(), isi = [];
+    for (const x of h[j]) {
+      const k = kartuTerkait(j, x, ik, bangun, rinci);
+      if (!k || lihat.has(k.k) || lihatN.has(k.n)) continue;
+      lihat.add(k.k); lihatN.add(k.n); isi.push(k);
+    }
+    if (!isi.length) continue;
+    /* relevansi: urutan graf (sambungan langsung dulu), lalu terbaru; proyek besar dulu */
+    isi.sort((a, b) => (b.tgl || "").localeCompare(a.tgl || "") || (b.mw || 0) - (a.mw || 0));
+    grup.push({ j, ik, isi });
+  }
   if (!grup.length) return "";
+  const tab = grup.map((g, i) => `<button type="button" role="tab" id="trt-${g.j}" aria-controls="trp-${g.j}" aria-selected="${i === 0}"${i ? ' tabindex="-1"' : ""} data-trt="${g.j}">${ikon(g.ik, 18)}<span>${esc(t("terkait." + g.j))}</span><b>${esc(angka(g.isi.length))}</b></button>`).join("");
+  const panel = grup.map((g, i) => {
+    const li = g.isi.map((k, n) => (n >= TERKAIT_TAMPIL ? k.html.replace('class="jm-tk"', 'hidden class="jm-tk"') : k.html)).join("");
+    const nav = g.isi.length > TERKAIT_TAMPIL ? paginasiHtml({ hal: 1, total: g.isi.length, per: TERKAIT_TAMPIL }) : "";
+    return `<div class="jm-terkait-grup" role="tabpanel" id="trp-${g.j}" aria-labelledby="trt-${g.j}"${i ? " hidden" : ""} data-jm-total="${g.isi.length}"><ul class="jm-tk-kisi">${li}</ul>${nav}</div>`;
+  }).join("");
   return exHtml({
     id: "terkait",
     ikon: "tautan",
@@ -287,13 +341,20 @@ export async function terkaitHtml(jenis, id, { kecuali = [] } = {}) {
     judulHtml: esc(t("terkait.judul")),
     subHtml: esc(t("terkait.sub")),
     kelas: "jm-terkait",
-    isiHtml: `<div class="jm-terkait-isi">${grup.join("")}</div>`,
+    isiHtml: `<div class="jm-terkait-isi"><div class="jm-tab" role="tablist" aria-label="${esc(t("terkait.judul"))}">${tab}</div>${panel}</div>`,
   });
 }
 
 if (typeof document !== "undefined" && !window.__jmSemua) {
   window.__jmSemua = true;
   document.addEventListener("click", (e) => {
+    const tb = e.target.closest(".jm-terkait [data-trt]");
+    if (tb) {
+      const akar = tb.closest(".jm-terkait");
+      akar.querySelectorAll("[data-trt]").forEach((x) => { const on = x === tb; x.setAttribute("aria-selected", on); x.tabIndex = on ? 0 : -1; });
+      akar.querySelectorAll(".jm-terkait-grup").forEach((g) => { g.hidden = g.id !== "trp-" + tb.dataset.trt; });
+      return;
+    }
     const b = e.target.closest(".jm-terkait-grup [data-hal]");
     if (!b || b.disabled) return;
     const g = b.closest(".jm-terkait-grup"), hal = +b.dataset.hal;

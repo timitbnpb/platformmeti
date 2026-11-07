@@ -45,6 +45,16 @@ export function skemaDariKurasi(r, tgl) {
   };
 }
 
+// Hasil penelusuran laman resmi (telusuri.mjs): tanggal periksa, halaman kontak (hanya jalur contact/kontak/hubungi), atau catatan butuh pemilik.
+export function terapkanTelusur(s, t) {
+  if (!t) return s;
+  if (!t.terjangkau) { s.catatan_periksa = t.catatan; s.butuh_pemilik = true; return s; }
+  s.diperiksa = t.tanggal;
+  if (t.nama_cocok) s.diverifikasi = ['pemberi', 'url'];
+  if (t.kontak && /contact|kontak|hubungi/i.test(new URL(t.kontak).pathname)) { s.kontak_url = t.kontak; s.kontak_teks = 'Halaman kontak resmi'; s.detail_sumber = [...new Set([...(s.detail_sumber || []), t.kontak])]; }
+  return s;
+}
+
 export function skemaDariInsentif(i, tgl) {
   return {
     id: 'sk_' + i.id, jenis_entri: 'skema', nama: kap(i.instrumen), pemberi: 'Kementerian Keuangan', jenis: 'insentif fiskal', iso2: 'ID', sasaran: ['pelaku usaha'],
@@ -220,7 +230,8 @@ export function rakit(tgl) {
   const pi = baca('public/data/pendanaan_internasional.json'), jt = baca('public/data/jetp_cipp.json'), ob = baca('public/data/obligasi_hijau.json');
   const kb = baca('public/data/karbon_proyek.json'), ins = baca('public/data/insentif.json'), ke = baca('public/data/keuangan.json'), kur = baca('data/pendanaan/skema_kurasi.json');
   const orgs = new Set(baca('public/data/organisasi.json').baris.map((o) => o.id));
-  const skema = [...kur.map((r) => skemaDariKurasi(r, tgl)), ...ins.baris.filter((i) => i.jenis === 'fiskal' && i.status_berlaku === 'berlaku').map((i) => skemaDariInsentif(i, tgl))];
+  const tf = path.join(ROOT, 'data/pendanaan/telusur.json'), tel = fs.existsSync(tf) ? JSON.parse(fs.readFileSync(tf, 'utf8')) : {};
+  const skema = [...kur.map((r) => terapkanTelusur(skemaDariKurasi(r, tgl), tel[r.id])), ...ins.baris.filter((i) => i.jenis === 'fiskal' && i.status_berlaku === 'berlaku').map((i) => skemaDariInsentif(i, tgl))];
   const iati = pi.baris.map(proyekDariIati), adaWb = new Set(iati.map((p) => wbId(p.sumber_url)).filter(Boolean));
   const keu = ke.baris.filter((r) => r.kelompok === 'pendanaan' && !adaWb.has(wbId(r.sumber_url))).map(proyekDariKeuangan);
   const jetp = jt.baris.filter((j) => j.ebt === true).map((j) => proyekDariJetp(j));

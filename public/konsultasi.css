@@ -41,7 +41,7 @@
 .kf-teks{margin:0;font-size:var(--t-body);line-height:1.7;white-space:pre-wrap;overflow-wrap:anywhere;color:var(--ink);cursor:text}
 .kf-ayat-no{margin-right:6px;font-weight:700;color:var(--accent)}
 .kf-teks mark,.kf-teks del,.kf-teks ins{padding:1px 2px;border-radius:4px;font:inherit;cursor:pointer;text-decoration:none}
-.kf-teks mark{background:var(--akun-krem);color:inherit;box-shadow:inset 0 -2px 0 var(--warn)}
+.kf-teks mark{background:var(--akun-krem);color:inherit}
 .kf-teks del{background:var(--bad-bg);color:var(--bad);text-decoration:line-through;text-decoration-thickness:2px}
 .kf-teks ins{background:var(--ok-bg);color:var(--ok);user-select:none}
 .kf-teks .kf-aktif{outline:2px solid var(--fokus);outline-offset:1px}
@@ -110,7 +110,6 @@
   .kf-baca.kf-buka .kf-tombol-panel{display:none}
   .kf-panel-tutup{display:inline-flex}
   .kf-daftar{grid-template-columns:minmax(0,1fr)}
-  .kf-saring{grid-template-columns:minmax(0,1fr)}
   .kf-menu-sorot{left:8px!important;right:8px;bottom:12px;top:auto!important;max-width:none;justify-content:center}
 }
 @media (min-width:901px){.kf-panel-tutup{display:none}}

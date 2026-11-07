@@ -24,10 +24,15 @@ export function gambarTabel(id, fokus) {
   const rows = T.baris.slice().sort(banding(c, T.arah));
   if (!rows.length) { el.innerHTML = `<div class="jm-kosong">${ikon("info", 32)}<p>${esc(t("pl.kosong.tabel"))}</p></div>`; return; }
   T.hal = Math.min(T.hal, Math.max(1, Math.ceil(rows.length / T.per)));
-  const kep = `<th scope="col" class="jm-num pl-no">${esc(t("pl.c.no"))}</th>` + T.kolom.map((x) => `<th scope="col" class="${x.kelas || ""}" aria-sort="${T.k === x.k ? (T.arah > 0 ? "ascending" : "descending") : "none"}"><button type="button" class="jm-urut" data-u="${esc(x.k)}">${esc(t(x.j))}</button></th>`).join("");
+  if (T.kartu) {
+    const aw = (T.hal - 1) * T.per;
+    el.innerHTML = `<ul class="pl-kartu">${rows.slice(aw, aw + T.per).map((r) => `<li>${T.kartu(r)}</li>`).join("")}</ul>${paginasiHtml({ hal: T.hal, total: rows.length, per: T.per, satuan: T.satuan || "jm.pag.u.data" })}`;
+    return;
+  }
+  const kep = (T.rapat ? "" : `<th scope="col" class="jm-num pl-no">${esc(t("pl.c.no"))}</th>`) + T.kolom.map((x) => `<th scope="col" class="${x.kelas || ""}" aria-sort="${T.k === x.k ? (T.arah > 0 ? "ascending" : "descending") : "none"}"><button type="button" class="jm-urut" data-u="${esc(x.k)}">${esc(t(x.j))}</button></th>`).join("");
   const awal = (T.hal - 1) * T.per;
-  const isi = rows.slice(awal, awal + T.per).map((r, i) => `<tr><td class="jm-num pl-no" data-label="${esc(t("pl.c.no"))}">${awal + i + 1}</td>${T.kolom.map((x) => `<td data-label="${esc(t(x.j))}"${x.kelas ? ` class="${x.kelas}"` : ""}>${x.sel(r)}</td>`).join("")}</tr>`).join("");
-  el.innerHTML = `<div class="jm-gulir"><table class="jm-tabel jm-tabel--kartu" data-urut="tidak"><thead><tr>${kep}</tr></thead><tbody>${isi}</tbody></table></div>${paginasiHtml({ hal: T.hal, total: rows.length, per: T.per, satuan: T.satuan || "jm.pag.u.data" })}`;
+  const isi = rows.slice(awal, awal + T.per).map((r, i) => `<tr>${T.rapat ? "" : `<td class="jm-num pl-no" data-label="${esc(t("pl.c.no"))}">${awal + i + 1}</td>`}${T.kolom.map((x) => `<td data-label="${esc(t(x.j))}"${x.kelas ? ` class="${x.kelas}"` : ""}>${x.sel(r)}</td>`).join("")}</tr>`).join("");
+  el.innerHTML = `<div class="jm-gulir"><table class="jm-tabel${T.rapat ? "" : " jm-tabel--kartu"}" data-urut="tidak"><thead><tr>${kep}</tr></thead><tbody>${isi}</tbody></table></div>${paginasiHtml({ hal: T.hal, total: rows.length, per: T.per, satuan: T.satuan || "jm.pag.u.data" })}`;
   if (fokus) el.querySelector(fokus)?.focus();
 }
 export function pasangTabel(akar) {

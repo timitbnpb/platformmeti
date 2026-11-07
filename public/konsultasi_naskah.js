@@ -27,7 +27,7 @@ export async function bukaDokumen(akar, id, { tutup, bagianAwal = null }) {
   if (!(await muat())) { akar.addEventListener("click", (e) => { if (e.target.closest("[data-aksi=ulang]")) bukaDokumen(akar, id, { tutup, bagianAwal }); }, { once: true }); return; }
 
   const utasBagian = (bid) => S.d.utas.filter((u) => u.bagian_id === bid && !u.tersembunyi && ["sorot", "komentar", ...UBAHAN].includes(u.jenis));
-  const hitung = (bid) => S.d.utas.filter((u) => u.bagian_id === bid && u.status === "terbuka" && !u.tersembunyi).length;
+  const hitung = (bid) => S.d.utas.filter((u) => u.bagian_id === bid && !u.tersembunyi).length;
   const staf = () => S.d.saya.putus;
   const label = (() => { let pasal = ""; const m = new Map(); for (const b of S.d.bagian) { if (b.tingkat === "pasal") pasal = b.nomor; m.set(b.id, labelBagian(b, pasal) + (b.judul && b.tingkat !== "ayat" ? ": " + b.judul : "")); } return m; })();
 
@@ -59,7 +59,7 @@ export async function bukaDokumen(akar, id, { tutup, bagianAwal = null }) {
   }
   function daftarIsi() {
     const hit = new Map();
-    for (const u of S.d.utas) if (u.status === "terbuka" && !u.tersembunyi && u.bagian_id) hit.set(u.bagian_id, (hit.get(u.bagian_id) || 0) + 1);
+    for (const u of S.d.utas) if (!u.tersembunyi && u.bagian_id) hit.set(u.bagian_id, (hit.get(u.bagian_id) || 0) + 1);
     const butir = S.d.dokumen.bentuk === "butir";
     const baris = S.d.bagian.filter((b) => butir || b.tingkat !== "ayat").map((b) => {
       const l = butir ? `${b.nomor}. ${b.judul || ""}` : labelBagian(b) + (b.tingkat === "bab" && b.judul ? ": " + b.judul : "");
