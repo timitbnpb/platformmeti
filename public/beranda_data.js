@@ -69,7 +69,7 @@ export async function gambarDataset(R) {
         `<div class="jm-ds-baris"><span>${esc(t("beranda.ds.l.lokal"))}</span><span>${esc(angka(rr.lokal_mwp))} MWp</span></div>${bar(rr.lokal_mwp / rr.total_mwp, 4)}<div class="jm-ds-baris"><span>${esc(t("beranda.ds.l.ekspor"))}</span><span>${esc(angka(rr.ekspor_mwp))} MWp</span></div>${bar(rr.ekspor_mwp / rr.total_mwp, 5)}`, t("beranda.ds.rantai.s", { tanggal: tanggal(rantai.sumber.tanggal) })),
       kartu("05", "wilayah", 5, "/wilayah", wil.dibangun_pada, [[angka(wil.baris.length), "beranda.ds.l.prov"], [angka(jml(wil.baris, (w) => w.terpasang_mw?.nilai)), "beranda.ds.l.terpasang"], [re.length ? angka(jml(re, (x) => x) / re.length, { desimal: 1 }) + "%" : "-", "beranda.ds.l.rasio", 1]],
         top5.map((w) => baris(w.nama, `${angka(w.terpasang_mw.nilai)} MW`) + bar(w.terpasang_mw.nilai / mw5, 5)).join(""), sm("wilayah", wil.dibangun_pada)),
-      kartu("06", "pustaka", 1, "/pustaka", pus.dibangun_pada, [[angka(pus.baris.length), "beranda.ds.l.dok"], [angka(orang.baris.length), "beranda.ds.l.pakar"], [angka(ber.baris.length), "beranda.ds.l.berita"]], doc, sm("pustaka", pus.dibangun_pada)),
+      kartu("06", "pustaka", 1, "/direktori?tampil=pustaka", pus.dibangun_pada, [[angka(pus.baris.length), "beranda.ds.l.dok"], [angka(orang.baris.length), "beranda.ds.l.pakar"], [angka(ber.baris.length), "beranda.ds.l.berita"]], doc, sm("pustaka", pus.dibangun_pada)),
     ].join("");
   } catch (e) { el.innerHTML = galatHtml("layanan"); }
 }

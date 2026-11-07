@@ -6,3 +6,12 @@
 .jm-adm-jejak summary{cursor:pointer;color:var(--accent);min-height:24px}
 .jm-adm-status{min-height:24px}
 @media (min-width:768px){.jm-bar.jm-adm-jejak{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}}
+/* tab Anggota METI */
+.jm-adm-stats{display:grid;grid-template-columns:repeat(auto-fill,minmax(120px,1fr));gap:8px;margin-bottom:14px}
+.jm-adm-stat{padding:10px 12px;border:1px solid var(--line-cell);border-radius:var(--r-sm);background:var(--surface)}
+.jm-adm-stat strong{display:block;font:700 20px/1.2 var(--display);color:var(--ink)}
+.jm-adm-stat small{color:var(--ink2);font-size:var(--t-kecil)}
+@media (min-width:768px){.jm-bar.jm-adm-anggota{grid-template-columns:minmax(0,1fr) 160px 160px 160px auto}}
+.jm-adm-urut{padding:0;border:0;background:none;color:inherit;font:inherit;cursor:pointer;min-height:24px}
+.jm-adm-urut:hover{text-decoration:underline}
+.jm-adm-cek{text-align:center;color:var(--ok)}

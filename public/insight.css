@@ -1,0 +1,28 @@
+/* /insight: kartu temuan dan grafik tren. Hanya token tema.css; kelas .jm-ins-*. */
+.jm-ins-kepala{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:12px;margin-bottom:12px}
+.jm-ins-saring{display:flex;flex-wrap:wrap;gap:12px}
+.jm-ins-saring .jm-medan,.jm-ins-kepala>.jm-medan{min-width:180px}
+.jm-ins-grid{display:grid;gap:var(--gap);grid-template-columns:repeat(auto-fill,minmax(min(100%,420px),1fr))}
+.jm-ins{align-content:start}
+article.jm-ins-kartu{display:grid;gap:10px;align-content:start;min-width:0}
+article.jm-ins-kartu[data-belum]{min-height:360px}
+.jm-ins h3.jm-ins-j{font:600 17px/1.35 var(--display);color:var(--head)}
+.jm-ins-kartu .jm-an-angka{display:flex;flex-wrap:wrap;align-items:baseline;gap:8px}
+.jm-ins-grafik{min-width:0}
+.jm-ins-grafik .jm-an-batang{max-width:none}
+.jm-ins-penting{font-size:14px;line-height:1.5;color:var(--ink);max-width:70ch}
+.jm-ins-penting b{color:var(--head)}
+.jm-ins summary{font:600 14px/1.3 var(--font);color:var(--accent)}
+.jm-ins-kartu details p{font-size:14px;line-height:1.5;max-width:70ch;color:var(--ink2)}
+.jm-ins-svg{width:100%;height:auto;display:block}
+.jm-ins-svg text{font-size:11px;fill:var(--ink2)}
+.jm-ins-svg .jm-ins-nilai{fill:var(--ink);font-weight:600}
+@media (max-width:700px){.jm-ins-svg text{font-size:18px}}
+.jm-ins-l1,.jm-ins-l2,.jm-ins-l3,.jm-ins-l4{fill:none;stroke-width:2.5;stroke-linejoin:round;stroke-linecap:round}
+.jm-ins-l1{stroke:var(--data1)}
+.jm-ins-l2{stroke:var(--data3)}
+.jm-ins-l3{stroke:var(--warn)}
+.jm-ins-l4{stroke:var(--data4)}
+.jm-ins-a1{fill:var(--data1);fill-opacity:.14;stroke:none}
+.jm-ins-t1{fill:var(--data1)}
+.jm-ins-t2{fill:var(--data3)}

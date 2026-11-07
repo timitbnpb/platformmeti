@@ -5,20 +5,20 @@ import { t, angka, mulaiBahasa, gantiBahasa, bahasa } from "/i18n.js";
 import { api, ikon, nanti } from "/inti/umum.js";
 
 export const PITA_DRAF = false; // pemilik 7 Nov 2026: pita draf tidak ditampilkan
-const STAF = ["kurator", "admin", "super"];
+const STAF = ["pengurus", "kurator", "admin", "super"];
 
 /* Satu tabel halaman. Tambah baris saat halamannya benar-benar ada (F1, F2). hak: null = semua, "masuk", "staf". */
 const TAB = [
   { href: "/", kunci: "nav.beranda", ikon: "beranda", hak: null },
-  { href: "/insight", kunci: "nav.insight", ikon: "jejak", hak: null },
-  { href: "/proyek", kunci: "nav.proyek", ikon: "daftar", hak: null },
-  { kunci: "nav.analisis", ikon: "tautan", hak: null, grup: [
-    { href: "/wilayah", kunci: "nav.wilayah" }, { href: "/rantai", kunci: "nav.rantai" }, { href: "/asean", kunci: "nav.asean" }] },
-  { href: "/regulasi", kunci: "nav.regulasi", ikon: "daftar", hak: null },
-  { href: "/kalender", kunci: "nav.kalender", ikon: "daftar", hak: null },
-  { href: "/direktori", kunci: "nav.direktori", ikon: "orang", hak: "masuk" },
+  { href: "/insight", kunci: "nav.insight", ikon: "insight", hak: null },
+  { href: "/proyek", kunci: "nav.proyek", ikon: "proyek", hak: null },
+  { kunci: "nav.analisis", ikon: "analisis", hak: null, grup: [
+    { href: "/wilayah", kunci: "nav.wilayah", ikon: "wilayah" }, { href: "/rantai", kunci: "nav.rantai", ikon: "rantai" }, { href: "/asean", kunci: "nav.asean", ikon: "asean" }] },
+  { href: "/regulasi", kunci: "nav.regulasi", ikon: "regulasi", hak: null },
+  { href: "/kalender", kunci: "nav.kalender", ikon: "kalender", hak: null },
+  { href: "/direktori", kunci: "nav.direktori", ikon: "direktori", hak: "masuk" },
   { href: "/tentang", kunci: "nav.tentang", ikon: "info", hak: null },
-  { href: "/admin", kunci: "nav.admin", ikon: "kunci", hak: "staf" },
+  { href: "/admin", kunci: "nav.admin", ikon: "perisai", hak: "staf" },
 ];
 
 const boleh = (hak, s) => hak === null || (hak === "masuk" && s.masuk) || (hak === "staf" && s.masuk && STAF.includes(s.peran));
@@ -35,9 +35,9 @@ function gambarKepala(el, saya) {
   const tab = TAB.filter((x) => boleh(x.hak, saya)).map((x) => {
     if (x.grup) {
       const aktif = x.grup.some((g) => cocok(g.href)), id = "grup-" + x.kunci.replace(/\./g, "-");
-      return `<div class="jm-grup"><button type="button" class="jm-grup-tbl" aria-expanded="false" aria-controls="${id}"${aktif ? ' aria-current="page"' : ""}>${ikon(x.ikon, 18)}<span data-i18n="${x.kunci}">${t(x.kunci)}</span><svg class="jm-caret" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button><div class="jm-sub" id="${id}" hidden>${x.grup.map((g) => `<a href="${g.href}"${cocok(g.href) ? ' aria-current="page"' : ""}><span data-i18n="${g.kunci}">${t(g.kunci)}</span></a>`).join("")}</div></div>`;
+      return `<div class="jm-grup"><button type="button" class="jm-grup-tbl" aria-expanded="false" aria-controls="${id}"${aktif ? ' aria-current="page"' : ""}>${ikon(x.ikon, 18)}<span data-i18n="${x.kunci}">${t(x.kunci)}</span><svg class="jm-caret" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button><div class="jm-sub" id="${id}" hidden>${x.grup.map((g) => `<a href="${g.href}"${cocok(g.href) ? ' aria-current="page"' : ""}>${ikon(g.ikon, 18)}<span data-i18n="${g.kunci}">${t(g.kunci)}</span></a>`).join("")}</div></div>`;
     }
-    return `<a href="${x.href}"${cocok(x.href) ? ' aria-current="page"' : ""}>${ikon(x.ikon, 18)}<span data-i18n="${x.kunci}">${t(x.kunci)}</span></a>`;
+    return `<a href="${x.href}" data-kunci="${x.kunci}" title="${t(x.kunci)}"${cocok(x.href) ? ' aria-current="page"' : ""}>${ikon(x.ikon, 18)}<span data-i18n="${x.kunci}">${t(x.kunci)}</span></a>`;
   }).join("");
   const b = bahasa();
   const akun = saya.masuk
@@ -103,16 +103,16 @@ const KONTAK = [
 ];
 function kakiHtml() {
   const kol = KOLOM.map(([jd, ls]) => `<nav class="jm-kaki-kol" aria-labelledby="${jd.replace(/\./g, "-")}"><h2 id="${jd.replace(/\./g, "-")}" data-i18n="${jd}">${t(jd)}</h2><ul>${ls.map(([k, u, kunci]) => `<li><a href="${u}"${u.startsWith("http") ? ' target="_blank" rel="noopener noreferrer"' : ""}><span data-i18n="${k}">${t(k)}</span>${kunci ? `<span class="jm-kaki-kunci" title="${t("jm.kaki.perlu_masuk")}" data-i18n-attr="title:jm.kaki.perlu_masuk">${SVG(IK.kunci, 13)}<span class="sr" data-i18n="jm.kaki.perlu_masuk">${t("jm.kaki.perlu_masuk")}</span></span>` : ""}</a></li>`).join("")}</ul></nav>`).join("");
-  const kontak = KONTAK.map(([k, v, ik, u]) => `<li><a class="jm-kaki-kartu" href="${u}"${u.startsWith("http") ? ' target="_blank" rel="noopener noreferrer"' : ""}><span class="jm-kaki-ik">${SVG(ik, 18)}</span><span><small data-i18n="${k}">${t(k)}</small><span>${v}</span></span></a></li>`).join("");
-  return `<div class="jm-kaki-isi">
+  const kontak = KONTAK.map(([k, v, ik, u]) => `<li><span class="jm-kaki-ik">${SVG(ik, 16)}</span><span><small data-i18n="${k}">${t(k)}</small><a href="${u}"${u.startsWith("http") ? ' target="_blank" rel="noopener noreferrer"' : ""}>${v}</a></span></li>`).join("");
+  return `<div class="jm-kaki-isi jm-wadah">
     <div class="jm-kaki-k1"><div class="jm-kaki-merek"><span class="jm-kaki-logo"><img src="/img/logo-meti-tanda.png" width="40" height="38" alt=""></span><div><strong>METI</strong><span data-i18n="jm.kaki_org_pendek">${t("jm.kaki_org_pendek")}</span></div></div>
       <ul class="jm-kaki-stat" id="kakiStat"><li title="${t("jm.kaki.sumber_berdiri")}" data-i18n-attr="title:jm.kaki.sumber_berdiri"><b>1999</b><span data-i18n="jm.kaki.berdiri">${t("jm.kaki.berdiri")}</span></li></ul>
       <div class="jm-kaki-sos"><a href="https://www.linkedin.com/in/meti-ires-b06066a1/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn METI">${SVG(IK.linkedin, 20)}</a><a href="https://www.instagram.com/metiires/" target="_blank" rel="noopener noreferrer" aria-label="Instagram METI">${SVG(IK.instagram, 20)}</a></div></div>
     ${kol}
     <nav class="jm-kaki-kol jm-kaki-hub" aria-labelledby="jm-kaki-hubungi"><h2 id="jm-kaki-hubungi" data-i18n="jm.kaki.hubungi">${t("jm.kaki.hubungi")}</h2><ul>${kontak}</ul></nav>
   </div>
-  <div class="jm-kaki-bawah"><p>&copy; 2026 METI</p><a href="${MI}/policy/membership" target="_blank" rel="noopener noreferrer" data-i18n="jm.kaki.kebijakan">${t("jm.kaki.kebijakan")}</a>
-    <button type="button" class="jm-kaki-atas" id="kakiAtas">${SVG(IK.atas, 16)}<span data-i18n="jm.kaki.atas">${t("jm.kaki.atas")}</span></button></div>`;
+  <div class="jm-kaki-bawah jm-wadah"><p>&copy; 2026 METI</p><a href="${MI}/policy/membership" target="_blank" rel="noopener noreferrer" data-i18n="jm.kaki.kebijakan">${t("jm.kaki.kebijakan")}</a>
+    <button type="button" class="jm-kaki-atas" id="kakiAtas" aria-label="${t("jm.kaki.atas")}" title="${t("jm.kaki.atas")}" data-i18n-attr="aria-label:jm.kaki.atas;title:jm.kaki.atas">${SVG(IK.atas, 16)}</button></div>`;
 }
 /* angka kaki: hanya yang bersumber; ringkas.json (lapis sesuai peran) bila sudah masuk; title = sumber dan tanggal bangun */
 async function kakiIsi(kaki, saya) {

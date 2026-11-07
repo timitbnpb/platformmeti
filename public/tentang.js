@@ -17,10 +17,10 @@ const kartu = (judul, a) => `<section class="tn-kartu"><h4>${esc(judul)}</h4><ul
 
 function hero() {
   const gambar = FOTO.map((k, i) => `<figure class="tn-f tn-f${i}"><img src="/img/tentang/${FILE[k]}.webp" alt="${esc(t("tn.foto." + k))}" width="1600" height="900" ${i ? 'loading="lazy"' : 'fetchpriority="high"'}><figcaption>${esc(t("tn.foto." + k))}</figcaption></figure>`).join("");
-  return `<section class="tn-band" aria-labelledby="tn-judul"><div class="tn-isi"><h1 id="tn-judul">${esc(t("tn.judul"))}</h1><p>${esc(t("tn.lead"))}</p>
+  return `<section class="tn-band" aria-labelledby="tn-judul"><div class="jm-wadah tn-isi"><h1 id="tn-judul">${esc(t("tn.judul"))}</h1><p>${esc(t("tn.lead"))}</p>
     <div class="tn-aksi"><a class="jm-tbl jm-tbl-utama" href="/direktori">${esc(t("tn.cta_direktori"))}</a><a class="jm-tbl tn-sekunder" href="${MI}/membership" target="_blank" rel="noopener noreferrer">${esc(t("tn.cta_gabung"))}</a></div></div></section>
-    <div class="tn-isi tn-mosaik">${gambar}</div>
-    <div class="tn-isi tn-dua"><article class="jm-kartu"><h2>${esc(t("tn.meti.judul"))}</h2><p>${esc(t("tn.meti.isi"))}</p></article><article class="jm-kartu"><h2>${esc(t("tn.dir.judul"))}</h2><p>${esc(t("tn.dir.isi"))}</p></article></div>`;
+    <div class="jm-wadah tn-isi tn-mosaik">${gambar}</div>
+    <div class="jm-wadah tn-isi tn-dua"><article class="jm-kartu"><h2>${esc(t("tn.meti.judul"))}</h2><p>${esc(t("tn.meti.isi"))}</p></article><article class="jm-kartu"><h2>${esc(t("tn.dir.judul"))}</h2><p>${esc(t("tn.dir.isi"))}</p></article></div>`;
 }
 
 function struktur(p) {
@@ -28,7 +28,7 @@ function struktur(p) {
   const lowong = `<section class="tn-kartu tn-lowong"><h4>${esc(t("tn.u.penasihat"))}</h4><ul class="tn-daftar"><li class="tn-org"><span class="tn-av tn-ini tn-kosong" aria-hidden="true">?</span><span><b>${esc(t("tn.lowong"))}</b><small>${esc(t("tn.u.penasihat_ketua"))}</small></span></li></ul></section>`;
   const tetap = (k, jd) => U[k] ? kartu(jd, U[k]) : "";
   const bidang = p.bidang.filter((b) => b.nama).map((b) => unit(b.nama, b.anggota)).join("");
-  return `<section class="tn-isi tn-bagan" aria-labelledby="tn-struktur"><h2 id="tn-struktur">${esc(t("tn.struktur.judul"))}</h2>
+  return `<section class="jm-wadah tn-isi tn-bagan" aria-labelledby="tn-struktur"><h2 id="tn-struktur">${esc(t("tn.struktur.judul"))}</h2>
     <p class="tn-pengantar">${esc(t("tn.struktur.pengantar", { periode: p.periode }))}</p>
     <div class="tn-baris tn-r0">${lowong}<div class="tn-kartu">${unit(t("tn.u.dewan"), U.dewan || [])}</div></div>${konek}
     <div class="tn-baris tn-r1">${(U.ketum || []).map((o) => `<section class="tn-kartu tn-ketum"><h4>${esc(t("tn.u.ketum"))}</h4><ul class="tn-daftar">${orang(o, true)}</ul></section>`).join("")}</div>${konek}
@@ -40,7 +40,7 @@ function struktur(p) {
 
 function mitra(m) {
   const logo = (x) => `<li class="tn-logo${x.gelap ? " gelap" : ""}" title="${esc(x.nama)}"><img src="${esc(x.logo)}" alt="${esc(x.nama)}" width="${x.w}" height="${x.h}"></li>`;
-  return `<section class="tn-isi tn-mitra" aria-labelledby="tn-mitra"><h2 id="tn-mitra">${esc(t("tn.mitra.judul"))}</h2><p class="tn-pengantar">${esc(t("tn.mitra.pengantar", { tanggal: tanggal(m.diambil) }))}</p>
+  return `<section class="jm-wadah tn-isi tn-mitra" aria-labelledby="tn-mitra"><h2 id="tn-mitra">${esc(t("tn.mitra.judul"))}</h2><p class="tn-pengantar">${esc(t("tn.mitra.pengantar", { tanggal: tanggal(m.diambil) }))}</p>
     <h3>${esc(t("tn.mitra.kerja"))}</h3><ul class="tn-logos">${m.mitra.map(logo).join("")}</ul>
     <h3>${esc(t("tn.mitra.anggota"))}</h3><ul class="tn-logos">${m.anggota.map(logo).join("")}</ul>
     <h3>${esc(t("tn.mitra.asosiasi"))}</h3><ul class="tn-asos">${m.asosiasi.map((a) => `<li class="tn-asosiasi" title="${esc(t("tn.mitra.asosiasi_cat"))}"><b>${esc(a)}</b></li>`).join("")}</ul>
@@ -48,9 +48,9 @@ function mitra(m) {
 }
 
 function bawah(k) {
-  return `<section class="tn-isi tn-dua"><article class="jm-kartu"><h2>${esc(t("tn.metode.judul"))}</h2><p>${esc(t("tn.metode.isi"))}</p></article>
+  return `<section class="jm-wadah tn-isi tn-dua"><article class="jm-kartu"><h2>${esc(t("tn.metode.judul"))}</h2><p>${esc(t("tn.metode.isi"))}</p></article>
     <article class="jm-kartu"><h2>${esc(t("tn.kontak.judul"))}</h2><p>${esc(t("tn.kontak.isi"))}</p><p><a href="mailto:meti.ires@gmail.com">meti.ires@gmail.com</a>, <a href="https://www.meti.or.id" target="_blank" rel="noopener noreferrer">www.meti.or.id</a></p></article></section>
-    <section class="tn-isi tn-kredit" aria-labelledby="tn-kredit"><h2 id="tn-kredit">${esc(t("tn.kredit.judul"))}</h2><p class="tn-pengantar">${esc(t("tn.kredit.pengantar"))}</p><ul>${k.map((x) => `<li><a href="${esc(x.sumber)}" target="_blank" rel="noopener noreferrer">${esc(t("tn.kredit.baris", { judul: x.judul, pencipta: x.pencipta, lisensi: x.lisensi }))}</a></li>`).join("")}</ul></section>`;
+    <section class="jm-wadah tn-isi tn-kredit" aria-labelledby="tn-kredit"><h2 id="tn-kredit">${esc(t("tn.kredit.judul"))}</h2><p class="tn-pengantar">${esc(t("tn.kredit.pengantar"))}</p><ul>${k.map((x) => `<li><a href="${esc(x.sumber)}" target="_blank" rel="noopener noreferrer">${esc(t("tn.kredit.baris", { judul: x.judul, pencipta: x.pencipta, lisensi: x.lisensi }))}</a></li>`).join("")}</ul></section>`;
 }
 
 await mulaiHalaman();
@@ -59,5 +59,5 @@ try {
   const [p, m, k] = await Promise.all([muat("pengurus-meti"), muat("mitra-meti"), muat("tentang-kredit")]);
   isi.innerHTML = hero() + struktur(p) + mitra(m) + bawah(k);
 } catch (e) {
-  isi.innerHTML = hero() + `<p class="tn-isi jm-galat" role="alert">${esc(t("tn.galat"))}</p>`;
+  isi.innerHTML = hero() + `<p class="jm-wadah tn-isi jm-galat" role="alert">${esc(t("tn.galat"))}</p>`;
 }

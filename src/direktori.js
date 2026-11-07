@@ -319,7 +319,17 @@ async function potretBaru(req, env, ctx, p) {
   return json({ lapis: lapis[lapis.length - 1], dibangun_pada: pub.dibangun_pada, jumlah: baris.length, baris, ...extra }, 200, PRIVAT);
 }
 
+// Basis keanggotaan METI (DATA PRIBADI): lapis pengurus saja, hanya R2, tidak masuk BENDA_POTRET. Akses baca belum dijejak:
+// CHECK jejak.aksi (migrasi 0002) tidak memuat 'baca' dan jejakTulis memakainya; butuh migrasi (milik migrasi).
+const anggotaMeti = async (req, env, ctx, p) => {
+  perlu(p, PENGURUS);
+  const o = env.BERKAS ? await env.BERKAS.get("potret/pengurus/anggota_meti.json").catch(() => null) : null;
+  if (!o) throw new Galat("tidak_ditemukan");
+  return new Response(o.body, { status: 200, headers: JSON_HDR });
+};
+
 export const rute = {
+  "GET /api/admin/anggota-meti": anggotaMeti,
   "GET /api/direktori": induk,
   "GET /api/direktori/kampus": kampus,
   "GET /api/direktori/kontak": kontak,

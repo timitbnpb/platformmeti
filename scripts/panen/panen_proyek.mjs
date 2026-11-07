@@ -200,6 +200,7 @@ export function bangun(masukan) {
       }
     }
     if (r.nama_perlu_tinjau) t.nama_perlu_tinjau = true;
+    if (r.nama_diperbaiki) t.nama_diperbaiki = r.nama_diperbaiki;
     if (r.catatan) t.catatan.push({ nilai: r.catatan, sumber_id: sid });
     for (const p of larik(r.pihak)) t.pihak_terlibat.push({ nama: p.nama, peran: p.peran, sumber_id: sid });
     if (r.lat != null && r.lng != null && r.presisi_lokasi && t.lat == null) {
@@ -604,18 +605,28 @@ export function ruptlDari(teks) {
 const URL_RUPTL = 'https://gatrik.esdm.go.id/gatrik/gatrik-api//storage/migrasi/download_index/files/b967d-ruptl-pln-2025-2034-pub-.pdf'; // dokumen publik resmi Ditjen Gatrik (daftar unduhan)
 // Nama terpotong oleh kolom tata letak PDF ("ulehu" = Tulehu): lengkapi dari teks yang sama bila hanya satu pelengkap huruf-awal ditemukan; kalau tidak, tandai.
 const esc = (s) => s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-export function perbaikiNama(nama, teks) {
+export function perbaikiNama(nama, teks, extra = '') {
   const kotor = /\d{1,3}(\.\d{3})*,\d|Jumlah|\.\s|\s(yang|dan|dapat|sebagai|akan|tersebut|pembangkit)\s/i.test(nama) || nama.length > 50 || /\s[a-z]{1,2}$/.test(nama);
   const m = nama.match(/^(\S+)\s+([a-z]\S*(?:\s+\S+){0,2})$/);
   if (m && !kotor) {
-    const cari = new RegExp('(?<![A-Za-z])([A-Z][A-Za-z]{0,3})' + esc(m[2].split(/[(\d#]/)[0].trim()).replace(/\s+/g, '\\s+'), 'g');
+    const cari = new RegExp('(?<![A-Za-z])([A-Z][A-Za-z]{0,5})' + esc(m[2].split(/[(\d#]/)[0].trim()).replace(/\s+/g, '\\s+'), 'g');
     const semua = [...teks.matchAll(cari)].map((x) => x[1]);
-    const cand = new Set(semua);
+    const dariNama = [...extra.matchAll(cari)].map((x) => x[1]); // nama proyek lain / Wikidata yang sudah utuh
+    const cand = new Set([...semua, ...dariNama]);
     // pelengkap harus tunggal dan muncul >= 2 kali di dokumen (tabel + narasi/transmisi)
-    if (cand.size === 1 && semua.length >= 2) { const [c] = cand; return { nama: m[1] + ' ' + c + m[2], diperbaiki: true }; }
+    if (cand.size === 1 && (semua.length >= 2 || dariNama.length >= 1)) { const [c] = cand; return { nama: m[1] + ' ' + c + m[2], diperbaiki: true }; }
     return { nama, perlu_tinjau: true };
   }
   return kotor || /^\S+\s+[a-z]/.test(nama) ? { nama, perlu_tinjau: true } : { nama };
+}
+let _utuh = null;
+function namaUtuh() { // nama proyek yang sudah utuh (sumber lain) dan nama Wikidata, untuk melengkapi nama RUPTL yang terpotong
+  if (_utuh !== null) return _utuh;
+  const n = [];
+  const pj = path.join(OUT, 'proyek.jsonl');
+  if (fs.existsSync(pj)) for (const p of bacaJsonl(pj)) for (const x of p.nama) if (!/^(PLT\w*|BESS)\s+[a-z]/.test(x.nilai)) n.push(x.nilai);
+  if (fs.existsSync(WD_RAW)) for (const r of bacaJsonl(WD_RAW)) n.push(r.nama, r.nama_id || '');
+  return (_utuh = n.join('\n'));
 }
 export function ruptlSeed(teks, tanggal) {
   const { proyek, lewat, tabel } = ruptlDari(teks);
@@ -624,7 +635,7 @@ export function ruptlSeed(teks, tanggal) {
     baris.push({ _sumber: { jenis: 'ruptl', url: URL_RUPTL + '#page=' + p.halaman, halaman: 'hlm PDF ' + p.halaman, tingkat_bukti: 'resmi', lisensi: 'dokumen publik PLN', tanggal_ambil: tanggal, catatan: 'Tabel rincian rencana pembangunan pembangkit ' + p.sek + '; status pengembang RUPTL (PLN/IPP/SH-PLN) bukan nama perusahaan; tahun COD = skenario RE Base' } });
     const total = +p.tahap.reduce((s, t) => s + t.mw, 0).toFixed(3);
     const tahunBeda = [...new Set(p.tahap.map((t) => t.base ?? t.ared).filter(Boolean))].sort();
-    const pn = perbaikiNama(`${p.jenis} ${p.nama}`, teks);
+    const pn = perbaikiNama(`${p.jenis} ${p.nama}`, teks, namaUtuh());
     const r = { nama: pn.nama, nama_perlu_tinjau: pn.perlu_tinjau ? true : undefined, nama_diperbaiki: pn.diperbaiki ? `${p.jenis} ${p.nama}` : undefined, teknologi: p.tek, provinsi: p.provinsi,
       kapasitas: { nilai: total, satuan: 'MW', catatan: p.baris > 1 || p.tahap.length > 1 ? `jumlah ${p.tahap.length} tahap/unit: ${p.tahap.map((t) => t.mw).join(' + ')}` : undefined },
       cod_target: tahunBeda.map((y) => ({ nilai: y, catatan: 'RE Base' + (p.tahap.some((t) => t.base === y && t.ared !== y) ? '; ARED ' + [...new Set(p.tahap.filter((t) => t.base === y).map((t) => t.ared))].join('/') : p.tahap.some((t) => t.base == null && t.ared === y) ? '; hanya skenario ARED (RE Base tanpa tahun)' : '') })),

@@ -19,14 +19,20 @@
 <header class="top" id="kepala"></header>
 <div id="pita"></div>
 <main class="jm-halaman">
-  <section class="jm-hero" aria-labelledby="judul">
-    <h1 id="judul" data-i18n="beranda.judul">Direktori METI</h1>
-    <p data-i18n="beranda.pengantar">Proyek, organisasi, tokoh, dan regulasi energi terbarukan Indonesia di satu tempat, dengan sumber dan tanggal di setiap angka.</p>
-    <div class="jm-hero-cari">
-      <label class="jm-cari"><span class="sr" data-i18n="beranda.cari">Cari proyek, organisasi, tokoh, atau regulasi</span><svg class="jm-ik" width="20" height="20" aria-hidden="true" focusable="false"><use href="/img/ikon.svg#i-cari"/></svg>
-        <input class="jm-isian" type="search" id="cari" autocomplete="off" data-i18n-attr="placeholder:beranda.cari" placeholder="Cari proyek, organisasi, tokoh, atau regulasi"></label>
-      <div class="jm-hasil" id="hasil" role="region" aria-live="polite" hidden></div>
+  <section class="jm-hero2" aria-labelledby="judul">
+    <div class="jm-hero2-kiri">
+      <p class="jm-eyebrow"><span class="jm-kotak" aria-hidden="true"></span><span data-i18n="beranda.eyebrow">Direktori METI: data ekosistem EBET</span></p>
+      <h1 id="judul" data-i18n="beranda.judul">Peta ekosistem energi terbarukan Indonesia.</h1>
+      <p class="jm-hero2-sub" data-i18n="beranda.pengantar">Proyek, perusahaan, lembaga, tokoh, dan regulasi energi terbarukan. Setiap angka menaut ke dokumen sumbernya.</p>
+      <div class="jm-hero-cari">
+        <div class="jm-cari2"><label class="sr" for="cari" data-i18n="beranda.cari">Cari proyek, organisasi, tokoh, atau regulasi</label>
+          <input class="jm-isian" type="search" id="cari" autocomplete="off" data-i18n-attr="placeholder:beranda.cari" placeholder="Cari proyek, organisasi, tokoh, atau regulasi">
+          <button type="button" class="jm-cari2-tbl" id="cariTbl" data-i18n="beranda.cari_tbl">Cari</button></div>
+        <div class="jm-hasil" id="hasil" role="region" aria-live="polite" hidden></div>
+      </div>
+      <ul class="jm-hitung-kat jm-hitung-hero" id="heroHitung"></ul>
     </div>
+    <div class="jm-hero2-kanan"><div class="jm-logo-grid" id="ekoLogo"></div></div>
   </section>
   <section aria-labelledby="angka-h" class="jm-dua-baris">
     <h2 id="angka-h" data-i18n="beranda.angka">Kondisi sekarang</h2>
@@ -37,13 +43,28 @@
   <section aria-labelledby="eko-h" class="jm-dua-baris">
     <h2 id="eko-h" data-i18n="beranda.eko">Ekosistem EBET</h2>
     <ul class="jm-hitung-kat" id="ekoHitung"></ul>
-    <div class="jm-logo-grid" id="ekoLogo"></div>
     <p class="jm-sumber" data-i18n="beranda.eko_sumber">Logo dipakai untuk mengenali organisasi, diambil dari situs resmi masing-masing (lihat img/logo/SUMBER.md). Jumlah dihitung dari data organisasi, proyek, dan regulasi bersumber.</p>
   </section>
   <section aria-labelledby="ds-h" class="jm-dua-baris">
     <h2 id="ds-h" data-i18n="beranda.ds">Enam kumpulan data, satu aturan</h2>
     <p class="jm-sumber" data-i18n="beranda.ds_sub">Setiap angka dihitung dari data bersumber di situs ini; EST berarti hasil turunan.</p>
     <div class="jm-ds-kisi" id="dataset"></div>
+  </section>
+  <section aria-labelledby="pt-h" class="jm-dua-baris">
+    <h2 id="pt-h" data-i18n="beranda.peta">Proyek EBT di peta</h2>
+    <div class="jm-ds jm-w2 jm-peta-kartu" id="petaKartu">
+      <div class="jm-peta-info" id="petaInfo"></div>
+      <div class="jm-peta" id="petaEl" role="img" data-i18n-attr="aria-label:beranda.peta.aria" aria-label="Peta proyek energi terbarukan menurut teknologi dan program"></div>
+    </div>
+  </section>
+  <section aria-labelledby="kb-h" class="jm-dua-baris">
+    <h2 id="kb-h" data-i18n="beranda.karbon">Pembangkit dan emisinya</h2>
+    <div class="jm-ds jm-w4 jm-peta-kartu" id="karbon"></div>
+  </section>
+  <section aria-labelledby="ft-h" class="jm-dua-baris">
+    <h2 id="ft-h" data-i18n="beranda.foto">Teknologi di lapangan</h2>
+    <p class="jm-sumber" data-i18n="beranda.foto_sub">Empat pembangkit di Indonesia.</p>
+    <div class="jm-foto-kisi" id="foto"></div>
   </section>
   <section aria-labelledby="sn-h" class="jm-dua-baris">
     <h2 id="sn-h" data-i18n="beranda.sensus">Sensus per teknologi</h2>

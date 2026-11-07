@@ -5,7 +5,7 @@ import { gambarDataset } from "/beranda_data.js";
 import { pasangBawah } from "/beranda_bawah.js";
 import { muat, label, urlAman, norm, namaRegulasi } from "/publik.js";
 
-const JALUR = [["proyek", "/proyek", "info"], ["wilayah", "/wilayah", "pin"], ["rantai", "/rantai", "tautan"], ["regulasi", "/regulasi", "daftar"], ["direktori", "/direktori", "orang"], ["pustaka", "/pustaka", "info"], ["kalender", "/kalender", "jejak"]];
+const JALUR = [["proyek", "/proyek", "info"], ["wilayah", "/wilayah", "pin"], ["rantai", "/rantai", "tautan"], ["regulasi", "/regulasi", "daftar"], ["direktori", "/direktori", "orang"], ["pustaka", "/direktori?tampil=pustaka", "info"], ["kalender", "/kalender", "jejak"]];
 const KARTU = ["proyek", "kapasitas", "organisasi", "orang", "regulasi"];
 const LOGO = new Set(["pertamina-nre", "pge", "pln-indonesia-power", "pln-nusantara-power", "medco-power", "barito-renewables", "star-energy", "meti", "aesi", "aprobi", "esdm", "brin"]);
 const EKO = [
@@ -31,8 +31,9 @@ function gambarKartu() {
   if (Number.isFinite(konstruksi)) kartu.push({ kode: "konstruksi", nilai: konstruksi, satuan: "proyek", dari: R.hitung.proyek });
   el.innerHTML = kartu.map((k) => `<div class="jm-kartu jm-angka"><span>${esc(t("beranda.k." + k.kode))}${k.kode === "kapasitas" ? ` <span class="jm-pil jm-pil-est">EST</span>` : ""}</span>
     <b>${esc(angka(k.nilai))}</b><small>${esc(k.dari ? t("beranda.dari", { n: angka(k.nilai), total: angka(k.dari) }) : t("beranda.u." + k.satuan))}</small>
-    <small>${esc(t("beranda.src." + k.kode, { tanggal: tgl, total: angka(R.hitung.regulasi) }))}</small></div>`).join("");
+    <small class="jm-angka-src" title="${esc(t("beranda.src." + k.kode, { tanggal: tgl, total: angka(R.hitung.regulasi) }))}">${ikon("info", 14)}<span>${esc(t("beranda.srcs." + k.kode, { tanggal: tgl }))}</span></small></div>`).join("");
   document.getElementById("sumber").textContent = t("beranda.sumber", { tanggal: tgl });
+  document.getElementById("heroHitung").innerHTML = ["proyek", "organisasi", "orang", "regulasi", "berita"].map((k, i) => `<li><span class="jm-kotak jm-w${(i % 5) + 1}" aria-hidden="true"></span><b>${esc(angka(R.hitung[k]))}</b> ${esc(t("beranda.hero.h." + k))}</li>`).join("");
 }
 
 async function gambarBerita() {
@@ -113,6 +114,8 @@ async function main() {
   input.addEventListener("focus", () => siapkanIndeks().catch(() => { indeks = null; }), { once: true });
   const tunda = debounce((q) => cari(q));
   input.addEventListener("input", () => tunda(input.value));
+  document.getElementById("cariTbl").addEventListener("click", () => cari(input.value));
+  input.addEventListener("keydown", (e) => e.key === "Enter" && cari(input.value));
   document.addEventListener("jm:bahasa", () => nanti(() => { gambarJalur(); R && gambarKartu(); gambarEkosistem(); R && gambarDataset(R); gambarBerita(); gambarProyek(); input.value && cari(input.value); }));
 }
 main();

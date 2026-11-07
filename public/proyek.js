@@ -65,6 +65,7 @@ const hitung = (rows, f) => { const m = {}; for (const r of rows) for (const k o
 
 const pil = (teks, jenis) => `<span class="jm-pil${jenis ? " jm-pil-" + jenis : ""}">${esc(teks)}</span>`;
 const pilSt = (st) => pil(labSt(st), st === "beroperasi" ? "ok" : st === TIDAK ? "" : st === "konstruksi" ? "warn" : "");
+const progNama = (id) => (PROG.baris.find((x) => x.id === id) || {}).nama || id;
 const titik = (tek) => `<span class="jm-pj-titik ${warnaTek(tek)}" aria-hidden="true"></span>`;
 const presisiTeks = (r) => (r.p.lokasi && r.ada ? t("pj.presisi." + (["titik_persis", "kabupaten", "provinsi"].includes(r.p.lokasi.presisi) ? r.p.lokasi.presisi : "provinsi")) : t("pj.presisi.tak"));
 const mapsTbl = (r) => r.ada
@@ -125,22 +126,24 @@ function gambarCorong() {
 }
 
 /* ---------- tabel (urut + paging) ---------- */
+const selNama = (r) => {
+  const ket = [...r.prog.map(progNama), r.pemilik].filter(Boolean).join(", ");
+  return `<a class="jm-pj-nm" href="#${esc(r.id)}">${esc(r.nama)}</a>${r.p.nama_perlu_tinjau ? ` <span class="jm-pj-tinjau">${esc(t("pj.tinjau"))}</span>` : ""}${ket ? `<small>${esc(ket)}</small>` : ""}`;
+};
+const selTek = (r) => `<span class="jm-pj-chip">${titik(r.tek)}${esc(labTek(r.tek))}</span>`;
+const selKap = (r) => (r.kap === null ? "-" : `${num(r.kap)} <span class="jm-pj-sat">${esc(r.sat)}</span>`);
+const selProv = (r) => esc(r.prov || "-");
+const selSt = (r) => pilSt(r.st);
+const selCod = (r) => (r.cod === null ? "-" : r.cod);
 const kolomDaftar = [
-  ["nama", "pj.c.nama", (r) => `<a href="#${esc(r.id)}">${esc(r.nama)}</a>`],
-  ["tek", "pj.c.tek", (r) => `${titik(r.tek)}${esc(labTek(r.tek))}`],
-  ["kap", "pj.c.kap", (r) => (r.kap === null ? "-" : `${num(r.kap)} ${esc(r.sat)}`), "jm-nowrap"],
-  ["prov", "pj.c.prov", (r) => esc(r.prov || "-")],
-  ["st", "pj.c.status", (r) => pilSt(r.st)],
-  ["prog", "pj.c.program", (r) => (r.prog.length ? r.prog.map((g) => pil(g)).join(" ") : "-")],
-  ["pemilik", "pj.c.pemilik", (r) => esc(r.pemilik || "-")],
-  ["cod", "pj.c.cod", (r) => (r.cod === null ? "-" : r.cod), "jm-nowrap"],
-  [null, "pj.c.maps", mapsTbl],
-  [null, "pj.c.sumber", sumberRingkas],
+  ["nama", "pj.c.nama", selNama, "jm-pj-k-nama"], ["tek", "pj.c.tek", selTek, "jm-nowrap"], ["kap", "pj.c.kap", selKap, "jm-pj-k-ang"],
+  ["prov", "pj.c.prov", selProv, "jm-pj-k-sam"], ["st", "pj.c.status", selSt, "jm-nowrap"], ["cod", "pj.c.cod", selCod, "jm-pj-k-ang"],
+  [null, "pj.c.sumber", sumberRingkas, "jm-pj-k-sam"], [null, "pj.c.maps", mapsTbl, "jm-pj-k-aksi"],
 ];
 const kolomTelat = [
-  ["nama", "pj.c.nama", kolomDaftar[0][2]], ["tek", "pj.c.tek", kolomDaftar[1][2]], ["kap", "pj.c.kap", kolomDaftar[2][2], "jm-nowrap"],
-  ["prov", "pj.c.prov", kolomDaftar[3][2]], ["st", "pj.c.status", kolomDaftar[4][2]], ["cod", "pj.c.cod", kolomDaftar[7][2], "jm-nowrap"],
-  ["telat", "pj.c.telat", (r) => pil(t("pj.telat.tahun", { n: r.telat }), "bad"), "jm-nowrap"], [null, "pj.c.maps", mapsTbl],
+  ["nama", "pj.c.nama", selNama, "jm-pj-k-nama"], ["tek", "pj.c.tek", selTek, "jm-nowrap"], ["kap", "pj.c.kap", selKap, "jm-pj-k-ang"],
+  ["prov", "pj.c.prov", selProv, "jm-pj-k-sam"], ["st", "pj.c.status", selSt, "jm-nowrap"], ["cod", "pj.c.cod", selCod, "jm-pj-k-ang"],
+  ["telat", "pj.c.telat", (r) => `<span class="jm-pil jm-pil-warn">${esc(t("pj.telat.singkat", { n: r.telat }))}</span>`, "jm-nowrap"], [null, "pj.c.maps", mapsTbl, "jm-pj-k-aksi"],
 ];
 const TD = { el: "pjDaftar", kolom: kolomDaftar, k: "nama", arah: 1, n: BATAS, baris: () => tampil };
 const TT = { el: "pjTelat", kolom: kolomTelat, k: "telat", arah: -1, n: BATAS, baris: () => tampil.filter((r) => r.telat) };
@@ -155,11 +158,12 @@ const bandingkan = (k, a) => (x, y) => {
 function gambarTabel(T, fokus) {
   const rows = T.baris().slice().sort(bandingkan(T.k, T.arah)), el = $(T.el);
   if (!rows.length) { el.innerHTML = `<div class="jm-kosong">${ikon("info", 32)}<p>${esc(t(T === TT ? "pj.telat.kosong" : "jm.kosong.cocok"))}</p></div>`; return; }
-  const kepala = T.kolom.map(([k, kt]) => k
-    ? `<th scope="col" aria-sort="${T.k === k ? (T.arah > 0 ? "ascending" : "descending") : "none"}"><button type="button" class="jm-pj-urut" data-u="${k}">${esc(t(kt))}</button></th>`
-    : `<th scope="col">${esc(t(kt))}</th>`).join("");
+  const IK = '<svg class="jm-pj-sort" viewBox="0 0 24 24" width="14" height="14" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m7 10 5-5 5 5M7 14l5 5 5-5"/></svg>';
+  const kepala = T.kolom.map(([k, kt, , kls]) => k
+    ? `<th scope="col" class="${kls || ""}" aria-sort="${T.k === k ? (T.arah > 0 ? "ascending" : "descending") : "none"}"><button type="button" class="jm-pj-urut" data-u="${k}">${esc(t(kt))}${IK}</button></th>`
+    : `<th scope="col" class="${kls || ""}">${k === null && kls === "jm-pj-k-aksi" ? `<span class="sr">${esc(t(kt))}</span>` : esc(t(kt))}</th>`).join("");
   const badan = rows.slice(0, T.n).map((r) => `<tr>${T.kolom.map(([, kt, f, kls]) => `<td data-label="${esc(t(kt))}"${kls ? ` class="${kls}"` : ""}>${f(r)}</td>`).join("")}</tr>`).join("");
-  el.innerHTML = `<div class="jm-gulir"><table class="jm-tabel jm-pj-tabel"><thead><tr>${kepala}</tr></thead><tbody>${badan}</tbody></table></div>
+  el.innerHTML = `<div class="jm-pj-gulir"><table class="jm-pj-tabel"><thead><tr>${kepala}</tr></thead><tbody>${badan}</tbody></table></div>
     <div class="jm-hal"><span>${esc(t("pj.tampil", { n: num(Math.min(T.n, rows.length)), total: num(rows.length) }))}</span>${rows.length > T.n ? `<button type="button" class="jm-tbl" data-lagi="1">${esc(t("pj.lagi"))}</button>` : ""}</div>`;
   if (fokus) { const b = el.querySelector(fokus); if (b) b.focus(); }
 }

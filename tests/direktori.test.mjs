@@ -137,3 +137,14 @@ test("sinta: rincian dilayani untuk anggota, 404 bila tak ada, 401 tamu", async 
 test("lembar orang memuat semua bagian: riwayat jabatan, pendidikan, kiprah, tautan, riwayat METI, SINTA", () => {
   for (const k of ["riwayatTk(", "pendidikanTk(", "tautanTk(", "Kiprah EBET", "rinciSinta(o)", "dir.riwayat.judulBagian", "Tokoh sejenis", "Berita terkait", "Pakar sejenis", "Sering menulis bersama", "Metrik publikasi menurut SINTA", "Artikel Scopus terbaru"]) assert.ok(JS.includes(k), k);
 });
+
+test("GET /api/admin/anggota-meti: anggota 403, pengurus 200 dari R2 tanpa cache, R2 kosong 404", async () => {
+  const f = "GET /api/admin/anggota-meti", isi = JSON.stringify({ lapis: "pengurus", jumlah: 1, baris: [{ no_anggota: "X1", nama: "Fiktif" }] });
+  const env = { BERKAS: { get: async (k) => (k === "potret/pengurus/anggota_meti.json" ? { body: isi } : null) } };
+  await assert.rejects(() => rute[f](req(), env, ctx, p({ id: 1, peran: "anggota" })), (e) => e.kode === "dilarang" && e.status === 403);
+  await assert.rejects(() => rute[f](req(), env, ctx, p(null)), (e) => e.status === 401);
+  const r = await rute[f](req(), env, ctx, p({ id: 2, peran: "pengurus" }));
+  assert.equal(r.status, 200); assert.match(r.headers.get("cache-control"), /private, no-store/);
+  assert.equal((await r.json()).baris[0].no_anggota, "X1");
+  await assert.rejects(() => rute[f](req(), {}, ctx, p({ id: 2, peran: "admin" })), (e) => e.kode === "tidak_ditemukan");
+});

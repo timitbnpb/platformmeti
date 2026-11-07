@@ -70,7 +70,7 @@ export async function muatSesi(req, env) {
 
 const TERKUNCI = [
   { re: /^\/direktori\/?$/, aset: "/direktori", peran: null, ke: "/direktori" },
-  { re: /^\/admin(\/.*)?$/, aset: "/admin", peran: ["kurator", "admin", "super"], ke: "/admin" },
+  { re: /^\/admin(\/.*)?$/, aset: "/admin", peran: ["pengurus", "kurator", "admin", "super"], ke: "/admin" },
 ];
 const TIDAK_ADA = () => new Response("Tidak ditemukan", { status: 404, headers: { "content-type": "text/plain; charset=utf-8" } });
 const LANGSUNG_404 = /^\/(direktori|admin)\.html$/;

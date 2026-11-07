@@ -61,3 +61,4 @@
 .tn a:focus-visible,.tn summary:focus-visible{outline:2px solid var(--fokus);outline-offset:2px}
 @media (max-width:900px){.tn-r3{grid-template-columns:1fr}.tn-r0{grid-template-columns:1fr}}
 @media (max-width:700px){.tn-mosaik{grid-template-columns:repeat(2,minmax(0,1fr));margin-top:-36px}.tn-f0,.tn-f1,.tn-f2,.tn-f3,.tn-f4{grid-column:span 1;grid-row:span 1}.tn-f0{grid-column:span 2}.tn-dua{grid-template-columns:1fr}.tn-band{padding:34px 0 56px}}
+.tn-isi{padding-inline:clamp(16px,4vw,32px)}

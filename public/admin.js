@@ -3,6 +3,7 @@
 import { t, ada, angka, tanggal, tanggalDariUnix, jam } from "/i18n.js";
 import { esc, api, nanti, debounce, hantuHtml, kosongHtml, galatHtml, galatTeks, ikon, pesanHtml } from "/inti/umum.js";
 import { mulaiHalaman } from "/inti/kepala.js";
+import { panelAnggota } from "/admin_anggota.js";
 
 const saya = await mulaiHalaman();
 const $ = (id) => document.getElementById(id);
@@ -18,9 +19,6 @@ if (!saya.masuk) {
   location.replace("/masuk?ke=" + encodeURIComponent("/admin"));
 } else if (!STAF.includes(saya.peran)) {
   isi.innerHTML = kosongHtml("jm.akses.ditolak");
-} else if (!["admin", "super"].includes(saya.peran)) {
-  // kurator: tab Akun dan Jejak tidak ada di DOM; kurasi dan koreksi hadir di tiket JM-E06
-  isi.innerHTML = kosongHtml("admin.kurator");
 } else {
   jalan();
 }
@@ -28,8 +26,10 @@ if (!saya.masuk) {
 function jalan() {
   const sa = saya.peran === "super";
   const peranBisa = sa ? PERAN : PERAN.filter((p) => p !== "super");
-  const TAB = [["akun", "admin.tab.akun", "orang"], ["jejak", "admin.tab.jejak", "jejak"]];
-  let tab = "akun";
+  // kurator: hanya tab Anggota (tab Akun dan Jejak tidak ada di DOM; server tetap menolak). CSV hanya admin dan super.
+  const adm = ["admin", "super"].includes(saya.peran);
+  const TAB = [...(adm ? [["akun", "admin.tab.akun", "orang"], ["jejak", "admin.tab.jejak", "jejak"]] : []), ["anggota", "adm.anggota.tab", "daftar"]];
+  let tab = TAB[0][0];
 
   const A = { cari: "", peran: "", status: "", hal: 1, baris: [], galat: null, ctl: null };
   const J = { tabel: "", baris: "", hal: 1, rows: [], galat: null, ctl: null };
@@ -82,7 +82,7 @@ function jalan() {
     tab = k;
     kabari("ok", "");
     $("panel").setAttribute("aria-labelledby", "tab-" + k);
-    if (k === "akun") panelAkun(); else panelJejak();
+    if (k === "akun") panelAkun(); else if (k === "jejak") panelJejak(); else panelAnggota($("panel"), { boleh: adm, kabari });
   }
 
   /* ---------- tab Akun ---------- */
@@ -312,7 +312,7 @@ function jalan() {
 
   function klikPanel(e) {
     const b = e.target.closest("button");
-    if (!b) return;
+    if (!b || tab === "anggota") return; // tab Anggota punya penangan sendiri
     const ke = (tab === "akun" ? A : J);
     switch (b.id === "aBuat" ? "buat" : b.dataset.aksi) {
       case "buat": {

@@ -12,7 +12,7 @@
   --accent:#00705A; --accent-isi:#12896B; --on-accent:#FFFFFF;
   --on-brand:#FFFFFF;   /* teks di atas pita hijau METI */
   --data1:#0A5C47; --data2:#12896B; --data3:#4AA9E0; --data4:#9DC94F; --data5:#1E7FA8;
-  --sorot:#9DC94F;
+  --sorot:#9DC94F; --kaki-bg:#06261D;
   --ok:#066B52; --warn:#A8480A; --bad:#B3261E; --info:#1E7FA8;
   --ok-bg:#E2F3EC; --warn-bg:#FBEBDD; --bad-bg:#FBE7E5; --info-bg:#E3F3FA;
   --fokus:#1E7FA8;
@@ -37,7 +37,7 @@
   --data1:#5BB8EC; --data2:#4FD3AD; --data3:#B3DB6E; --data4:#9FB8AE; --data5:#3E9BCB;
   --ok:#4FD3AD; --warn:#F2955A; --bad:#FF8A80; --info:#5BB8EC;
   --ok-bg:#123A2F; --warn-bg:#3A2616; --bad-bg:#3A1B19; --info-bg:#153A4A;
-  --fokus:#5BB8EC;
+  --fokus:#5BB8EC; --kaki-bg:#041912;
   --shadow:0 2px 14px rgb(0 0 0/.35); --shadow-lg:0 8px 28px rgb(0 0 0/.5);
   color-scheme:dark;
 }}
@@ -51,7 +51,7 @@
   --data1:#5BB8EC; --data2:#4FD3AD; --data3:#B3DB6E; --data4:#9FB8AE; --data5:#3E9BCB;
   --ok:#4FD3AD; --warn:#F2955A; --bad:#FF8A80; --info:#5BB8EC;
   --ok-bg:#123A2F; --warn-bg:#3A2616; --bad-bg:#3A1B19; --info-bg:#153A4A;
-  --fokus:#5BB8EC;
+  --fokus:#5BB8EC; --kaki-bg:#041912;
   --shadow:0 2px 14px rgb(0 0 0/.35); --shadow-lg:0 8px 28px rgb(0 0 0/.5);
   color-scheme:dark;
 }

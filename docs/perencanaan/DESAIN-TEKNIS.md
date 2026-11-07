@@ -665,6 +665,7 @@ Kolom Hak memakai lambang di kepala. "Fase" hanya ditulis bila bukan F0.
 | `PATCH /api/admin/akun/:id` `{nama?, peran?, cakupan_prov?, status?}` | ADM | AD tidak mengubah akun `super`, tidak menetapkan `super`, tidak mengubah perannya sendiri; trigger `akun_super_terakhir_*` menjaga SA terakhir; `status = 'nonaktif'` mencabut semua sesi seketika; jejak `ubah` |
 | `POST /api/admin/akun/:id/aktivasi` | ADM | tautan baru (aktivasi ulang atau reset sandi), sekali tampil, 72 jam |
 | `GET /api/admin/jejak?tabel&baris&hal` | ADM | baca `jejak`, maks 50 |
+| `GET /api/admin/anggota-meti` | PG, KR, ADM | basis keanggotaan METI (data pribadi) dari R2 `potret/pengurus/anggota_meti.json`, dialirkan utuh; `private, no-store`; bukan `BENDA_POTRET`; tanpa D1; akses baca belum dijejak (CHECK `jejak.aksi` tanpa `baca`) |
 | `POST /api/admin/dummy/:halaman` | SA | isi baris dummy untuk halaman itu (`dummy=1`, domain `example.org`, akhiran "(contoh)"); jejak `dummy-isi` |
 | `DELETE /api/admin/dummy/:halaman` | SA | hapus baris `dummy=1` halaman itu; jejak dummy ikut terhapus (satu-satunya pengecualian trigger) |
 
