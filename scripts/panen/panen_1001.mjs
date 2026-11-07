@@ -13,7 +13,7 @@ import assert from 'node:assert/strict';
 import { fileURLToPath } from 'node:url';
 
 const BASE = 'https://1001startup.id';
-const UA = 'METI-Network-research/0.1 (+timitbnpb@gmail.com)';
+const UA = 'METI-Network-research/0.1 (+https://platformmeti.timitbnpb.workers.dev)';
 const GAP_MS = 2200;
 const OUT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '../../data-panen/1001');
 const RAW = path.join(OUT, 'raw');

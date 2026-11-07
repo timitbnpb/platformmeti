@@ -14,7 +14,7 @@ import crypto from 'node:crypto';
 import assert from 'node:assert/strict';
 import { fileURLToPath } from 'node:url';
 
-const UA = 'METI-Network-research/0.1 (+timitbnpb@gmail.com)';
+const UA = 'METI-Network-research/0.1 (+https://platformmeti.timitbnpb.workers.dev)';
 const GAP_MS = 2200;
 const HOME = process.env.HOME;
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '../..');
@@ -144,7 +144,7 @@ export function urai_dpr(t) {
 function selftest() {
   const buruk = [
     { nama: 'A B', jabatan: 'Direktur', organisasi: 'X', surel: 'a@b.co' },
-    { nama: 'A B', jabatan: 'Direktur surel a.b@pln.co.id', organisasi: 'X' },
+    { nama: 'A B', jabatan: 'Direktur surel a.b@example.org', organisasi: 'X' },
     { nama: 'A B', jabatan: 'Direktur', organisasi: 'X', catatan: 'tel 0812-3456-7890' },
     { nama: 'A B', jabatan: 'Direktur', organisasi: 'X', catatan: '+62 21 5551234' },
     { nama: 'A B', jabatan: 'Direktur', organisasi: 'X', catatan: 'lahir di Solo' },
@@ -163,6 +163,33 @@ function selftest() {
   const d = urai_dpr('ANGGOTA KOMISI XII\nPartai Demokrat\n\n  Budi Santoso, S.H.    Ani Yulia\n  Dapil Jateng I    Dapil Jabar II\n');
   assert.equal(d.length, 2); assert.equal(d[0].fraksi, 'Demokrat');
   console.log('selftest OK: 10 pola ditolak, 1 rekaman sah lolos, normalisasi nama, parser DPR');
+}
+
+// ---------- K16: kepakaran (bukti dari teks jabatan SAJA) dan jalur ----------
+const KANON = new Map([['Jisman Parada Hutajulu', 'Jisman P. Hutajulu'], ['Rakhmad Dewantoa', 'Rakhmad Dewanto Haris J.'],
+  ['Daniel Tampubolon', 'Daniel K. F. Tampubolon'], ['Nur Pamuji', 'Nur Pamudji']].map(([a, b]) => [kunciNama(a), kunciNama(b)]));
+const KEPAKARAN = [ // [kode, regex pada teks jabatan]; tanpa tebakan dari nama lembaga
+  ['panas-bumi', /panas bumi/i], ['surya', /energi surya/i], ['bayu', /energi bayu/i], ['hidro', /energi air|plta|hidro/i],
+  ['bioenergi', /bioenergi|biodiesel|bioetanol|biogas/i], ['biomassa-sampah', /biomassa|sampah|waste/i], ['nuklir', /nuklir/i],
+  ['hidrogen', /hidrogen|amonia/i], ['laut', /energi laut|gelombang/i], ['penyimpanan', /baterai|penyimpanan/i],
+  ['jaringan', /transmisi|mikrogrid|smart grid|listrik desa/i], ['efisiensi', /konservasi energi|efisiensi/i], ['elektrifikasi', /kendaraan listrik/i],
+  ['karbon', /dekarbonisasi|karbon|perubahan iklim/i], ['pembiayaan', /pendanaan|investasi|pembiayaan/i], ['kebijakan', /regulasi|kebijakan/i],
+  ['industri', /industri/i], ['transisi-adil', /transisi adil|jetp/i], ['riset-data', /penelitian|riset|statistik/i]];
+const JALUR = { 'pejabat-publik': 'birokrasi', 'anggota-dpr': 'legislatif', direksi: 'bumn', komisaris: 'bumn', asosiasi: 'asosiasi', akademisi: 'akademisi', lsm: 'masyarakat-sipil' };
+export function tandai(orangRows, jabatan) {
+  const per = new Map(); for (const j of jabatan) (per.get(j.orang_id) ?? per.set(j.orang_id, []).get(j.orang_id)).push(j);
+  const kosong = [];
+  for (const o of orangRows) {
+    const js = per.get(o.orang_id) || []; const hit = new Map();
+    for (const j of js) for (const [kode, re] of KEPAKARAN) if (re.test(j.jabatan)) { const h = hit.get(kode) ?? { kode, n: 0, sumber_url: j.sumber_url }; h.n++; hit.set(kode, h); }
+    const top = [...hit.values()].sort((a, b) => b.n - a.n).slice(0, 3);
+    o.kepakaran = top.map((h, i) => ({ kode: h.kode, utama: i === 0, bukti: 'jabatan', sumber_url: h.sumber_url }));
+    o.jalur = [...new Set(js.map((j) => JALUR[j.jenis]).filter(Boolean))];
+    o.pernah_birokrasi = o.jalur.includes('birokrasi');
+    if (!o.kepakaran.length) kosong.push({ nama: o.nama, alasan: 'kepakaran-tanpa-bukti (teks jabatan tidak menyebut bidang)', sumber_url: o.sumber_url, tanggal_ambil: HARI_INI });
+    if (!o.alias.length) delete o.alias;
+  }
+  return kosong;
 }
 
 // ---------- bangun ----------
@@ -188,16 +215,17 @@ function bangun() {
     }
     const kn = kunciNama(nama);
     if (kn.split(' ').length < 2 && !r.boleh_satu_kata) { tolak.push({ nama, alasan: 'nama-satu-kata-ambigu', sumber_url: r.sumber_url, tanggal_ambil: HARI_INI }); return; }
-    const dupe = [kn, rec.organisasi, rec.jabatan, rec.periode_mulai].join('|');
+    const kanon = KANON.get(kn) ?? kn; // K16/konflik nama: ejaan berbeda orang yang sama digabung, ejaan lain masuk alias
+    const dupe = [kanon, rec.organisasi, rec.jabatan, rec.periode_mulai].join('|');
     if (seen.has(dupe)) return; seen.add(dupe);
-    const id = idOrang(kn);
+    const id = idOrang(kanon);
     const o = orang.get(id);
-    if (!o) orang.set(id, { orang_id: id, nama, gelar: rec.gelar, jenis: rec.jenis, sektor: rec.sektor, status: rec.status,
+    if (!o) orang.set(id, { orang_id: id, nama, alias: [], gelar: rec.gelar, jenis: rec.jenis, status: rec.status,
       jabatan_terkini: rec.jabatan, organisasi_terkini: rec.organisasi, sumber_url: rec.sumber_url, tanggal_sumber: rec.tanggal_sumber, tanggal_ambil: rec.tanggal_ambil });
     else {
       if (!o.gelar && rec.gelar) o.gelar = rec.gelar;
       if (rec.status === 'menjabat' && o.status !== 'menjabat') { o.status = 'menjabat'; o.jabatan_terkini = rec.jabatan; o.organisasi_terkini = rec.organisasi; }
-      if (o.nama !== nama && kunciNama(o.nama) === kn) { /* variasi penulisan, sama */ }
+      if (o.nama !== nama && !o.alias.includes(nama)) o.alias.push(nama);
     }
     jabatan.push({ orang_id: id, jabatan: rec.jabatan, organisasi: rec.organisasi, mulai: rec.periode_mulai, selesai: rec.periode_selesai,
       status: rec.status, jenis: rec.jenis, fraksi: rec.fraksi, catatan: rec.catatan, sumber_url: rec.sumber_url, tanggal_sumber: rec.tanggal_sumber, tanggal_ambil: rec.tanggal_ambil });
@@ -233,6 +261,7 @@ function bangun() {
     if ((ta[0] === tb[0] && ta.at(-1) === tb.at(-1)) || (ta[0] === tb[0] && ta[1] && tb[1] && lev(ta[1], tb[1]) <= 1) || lev(a, b) <= 2) konflik.push({ a: rows[i].nama, b: rows[j].nama, org_a: rows[i].organisasi_terkini, org_b: rows[j].organisasi_terkini, catatan: 'ditandai, belum digabung' });
   }
 
+  tinjau.push(...tandai(rows, jabatan));
   fs.mkdirSync(OUT, { recursive: true });
   tulis(path.join(OUT, 'orang.jsonl'), rows);
   tulis(path.join(OUT, 'jabatan.jsonl'), jabatan);
@@ -256,7 +285,9 @@ else if (arg('ambil')) {
   const o = baca(path.join(OUT, 'orang.jsonl')), j = baca(path.join(OUT, 'jabatan.jsonl'));
   const hitung = (rows, k) => rows.reduce((m, r) => (m[r[k] ?? '(kosong)'] = (m[r[k] ?? '(kosong)'] || 0) + 1, m), {});
   const isi = (rows, ks) => Object.fromEntries(ks.map((k) => [k, Math.round(100 * rows.filter((r) => r[k] != null && r[k] !== '').length / rows.length) + '%']));
-  console.log(JSON.stringify({ orang: o.length, jabatan: j.length, orang_status: hitung(o, 'status'), jabatan_status: hitung(j, 'status'), jabatan_per_organisasi: hitung(j, 'organisasi'),
+  const hit = {}, jl = {}; for (const x of o) { for (const k of x.kepakaran || []) hit[k.kode] = (hit[k.kode] || 0) + 1; for (const z of x.jalur || []) jl[z] = (jl[z] || 0) + 1; }
+  console.log(JSON.stringify({ kepakaran: hit, jalur: jl, pernah_birokrasi: o.filter((x) => x.pernah_birokrasi).length, tanpa_kepakaran: o.filter((x) => !(x.kepakaran || []).length).length,
+    alias: o.filter((x) => x.alias).map((x) => [x.nama, ...x.alias]), orang: o.length, jabatan: j.length, orang_status: hitung(o, 'status'), jabatan_status: hitung(j, 'status'), jabatan_per_organisasi: hitung(j, 'organisasi'),
     jabatan_per_jenis: hitung(j, 'jenis'), isi_orang: isi(o, ['nama', 'gelar', 'jenis', 'sektor', 'jabatan_terkini', 'organisasi_terkini', 'sumber_url', 'tanggal_sumber', 'tanggal_ambil']),
     isi_jabatan: isi(j, ['jabatan', 'organisasi', 'mulai', 'selesai', 'status', 'sumber_url', 'tanggal_sumber', 'fraksi']) }, null, 1));
 } else if (process.argv.includes('--adu')) { // adu baris ke teks halaman resmi di raw/: nama (case-insensitive) + kata kunci jabatan
