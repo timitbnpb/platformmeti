@@ -216,6 +216,7 @@ async function mulai() {
   } catch { document.getElementById("isi").innerHTML = galatHtml(); return; }
   const p = new URLSearchParams(location.search);
   for (const k of Object.keys(S)) if (p.has(k) && k !== "n") S[k] = p.get(k);
+  if (p.has("teknologi")) S.tek = p.get("teknologi");
   if (S.tab !== "video") S.tab = "berita";
   gambarAngka(); gambarBagian(); gambarRingkas(); gambarTab(); gambarSaring(); gambarIsi();
   gambarPeta();

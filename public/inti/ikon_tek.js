@@ -14,17 +14,25 @@ export const IKON_TEK = {
   hidrogen: S('<circle cx="7" cy="12" r="3.6"/><circle cx="17" cy="12" r="3.6"/><path d="M10.6 12h2.8M12 4v2.5M12 17.5V20"/>'),
   laut: S('<path d="M2 15c2.5-3 5 3 7.5 0s5 3 7.5 0 3-1 5-1M12 3v8M9 6l3-3 3 3M2 20c2.5-3 5 3 7.5 0s5 3 7.5 0 3-1 5-1"/>'),
   jaringan: S('<path d="M13 2 5 14h6l-1 8 8-12h-6z"/>'),
+  kebijakan: S('<path d="M6 3h9l4 4v14H6zM15 3v4h4M9 12h7M9 16h5"/>'),
+  industri: S('<path d="M3 21V10l6 3V10l6 3V6h3l3 1v14zM7 17h2M12 17h2"/>'),
+  pembiayaan: S('<circle cx="12" cy="12" r="9"/><path d="M14.5 9.5c-.5-1-1.5-1.5-2.5-1.5-1.5 0-2.5.8-2.5 2s1 1.7 2.5 2 2.5.8 2.5 2-1 2-2.5 2c-1 0-2-.5-2.5-1.5M12 6.5V8M12 16v1.5"/>'),
+  "transisi-adil": S('<path d="M12 3v18M5 7h14M5 7l-3 7a3 3 0 0 0 6 0zM19 7l-3 7a3 3 0 0 0 6 0zM8 21h8"/>'),
+  karbon: S('<path d="M7 18a4 4 0 0 1-.5-8A5.5 5.5 0 0 1 17 8.5a4.8 4.8 0 0 1 0 9.5z"/>'),
+  elektrifikasi: S('<path d="M9 3v5M15 3v5M6 8h12v3a6 6 0 0 1-12 0zM12 17v4"/>'),
   efisiensi: S('<path d="M4 19V9M10 19V5M16 19v-7M22 19H2M17 5l3 3 2-4"/>'),
 };
 export const ikonTek = (k) => IKON_TEK[k] || IKON_TEK.jaringan;
 
 /* Pil teknologi: ikon 14px + label, warna dari token teknologi (kelas .jm-tek-* di jm.css) */
 const TEK_ADA = new Set(["surya", "bayu", "hidro", "panas-bumi", "bioenergi", "biomassa-sampah", "nuklir", "penyimpanan"]);
+/* topik berita selain teknologi (kebijakan, industri, ...) ikut dipakai pilTek dengan warna sendiri */
+const TOPIK_ADA = new Set(["kebijakan", "industri", "pembiayaan", "transisi-adil", "karbon", "elektrifikasi", "efisiensi", "jaringan"]);
 const kecil = (svg) => svg.replace('class="jm-ikt"', 'class="jm-ikt jm-ikt-s"');
 export const pilTek = (kode) => {
   if (!kode) return "-";
-  const lab = ada("pj.tek.s." + kode) ? t("pj.tek.s." + kode) : ada("pj.tek." + kode) ? t("pj.tek." + kode) : kode;
-  return `<span class="jm-pil-tek jm-tek-${TEK_ADA.has(kode) ? kode : "lain"}">${kecil(ikonTek(kode))}<span>${esc(lab)}</span></span>`;
+  const lab = ada("pj.tek.s." + kode) ? t("pj.tek.s." + kode) : ada("pj.tek." + kode) ? t("pj.tek." + kode) : ada("brt.tek." + kode) ? t("brt.tek." + kode) : kode.charAt(0).toUpperCase() + kode.slice(1);
+  return `<span class="jm-pil-tek jm-tek-${TEK_ADA.has(kode) || TOPIK_ADA.has(kode) ? kode : "lain"}">${kecil(ikonTek(kode))}<span>${esc(lab)}</span></span>`;
 };
 
 /* Pil teknologi sebagai tautan ke /teknologi/<kode> (hanya di sel/baris yang tidak berada di dalam <a> lain) */

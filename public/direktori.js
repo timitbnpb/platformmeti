@@ -765,7 +765,7 @@ h4{margin:0 0 2px;font-size:8px;letter-spacing:normal;text-transform:none;color:
   const DATA = {};
   /* adapter Pustaka: /data/pustaka.json (statis) -> bentuk "dokumen" tab; tiap butir menaut ke /pustaka?id= */
   const adaptDok = d => dlist(d?.baris).map(x => ({id: x.id, judul: x.judul, jenis: x.jenis, tahun: parseInt(String(x.tanggal || "").slice(0, 4), 10) || 0, penerbit: x.penerbit || "", sektor: x.kepakaran || [], url: "/pustaka?id=" + encodeURIComponent(x.id)}));
-  const ambilLama = n => DATA[n] ||= fetch(n === "dokumen" ? "/data/pustaka.json" : `/api/direktori/data/${n}`, {credentials: "same-origin"}).then(r => r.ok ? r.json() : null).catch(() => null).then(x => { if (n === "dokumen" && x) x = adaptDok(x); if (x == null) delete DATA[n]; return x; });
+  const ambilLama = n => DATA[n] ||= fetch(n === "dokumen" ? "/data/pustaka.json" : n === "inovasi" ? "/data/inovasi.json" : `/api/direktori/data/${n}`, {credentials: "same-origin"}).then(r => r.ok ? r.json() : null).catch(() => null).then(x => { if (n === "dokumen" && x) x = adaptDok(x); if (x == null) delete DATA[n]; return x; });
   const urlDok = d => /^\/pustaka\?id=[\w%.-]+$/.test(d.url || "") ? d.url : urlOk(d.url) || urlOk(d.sumber_url);
   /* ---- potret baru (SKEMA-POTRET.md): organisasi, orang, proyek, regulasi dari /api/direktori/potret/<benda> (publik+anggota[+pengurus] sudah digabung Worker); diadaptasi ke bentuk layar ---- */
   const PB = {};
@@ -1667,7 +1667,7 @@ h4{margin:0 0 2px;font-size:8px;letter-spacing:normal;text-transform:none;color:
     const orang = prov ? semua.filter(o => String(provO(o)) === String(prov)).length : 0, pj = prov ? PT.proyekArr.filter(x => x.lokasi?.provinsi === provT(prov)).length : 0;
     const ubin = [["Lembaga", r.n], ["Orang", orang], ["Proyek", pj]].filter(([, v]) => v > 0);
     const top = a.slice().sort((p, q) => ((strat("L:" + q.id) ? 1000 : 0) + (terhLb(q.id)[0] || 0) + bobot(q)) - ((strat("L:" + p.id) ? 1000 : 0) + (terhLb(p.id)[0] || 0) + bobot(p))).slice(0, 3);
-    return `<div class="ak-tipw ak-tipw2"><div class="ak-tw-h">${lambangHtml(lambangUrl(prov, ""), 32)}<b>${esc(r.nama)}</b><span class="ak-tw-l">Lihat semua \u2192</span></div>
+    return `<div class="ak-tipw ak-tipw2"><div class="ak-tw-h">${lambangHtml(lambangUrl(prov, ""), 32)}<b>${esc(r.nama)}</b><span class="ak-tw-l">Lihat semua</span></div>
       ${ubin.length ? `<div class="ak-tw-u">${ubin.map(([l, v]) => `<div><b>${angka(v)}</b><small>${l}</small></div>`).join("")}</div>` : ""}
       ${kats.length ? pilKatP(kats) : ""}
       ${top.length ? `<div class="ak-tw-t"><small>Terbesar</small>${top.map(x => `<div class="ak-tw-r">${logoLb(x).replace('class="ak-lgo"', 'class="ak-lgo kecil"')}<b>${esc(x.nama)}</b><em>${esc((KAT[x.kategori] || [x.kategori])[0])}</em></div>`).join("")}</div>` : ""}</div>`; };
@@ -1735,10 +1735,8 @@ h4{margin:0 0 2px;font-size:8px;letter-spacing:normal;text-transform:none;color:
     const lepas = () => { removeEventListener("pointermove", gerak); removeEventListener("pointerup", lepas); try { localStorage.setItem(LEBAR_KEY[k], String(Math.round(el.getBoundingClientRect().width))); } catch (er) {} PT.map?.resize(); };
     addEventListener("pointermove", gerak); addEventListener("pointerup", lepas); });
   function pitaPeta() {
-    if (!$("akSideT")) { $("akPita").className = "ak-side"; $("akPita").innerHTML = `<div class="ak-side-h">
-      
-      <div class="ak-sr-w"><label class="ak-cari"><span class="sr">Cari lembaga, kampus, atau wilayah</span><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><input id="akSideQ" type="search" autocomplete="off" role="combobox" aria-expanded="false" aria-controls="akSaran" aria-autocomplete="list" placeholder="Cari lembaga, kampus, atau wilayah"></label><div class="ak-saran" id="akSaran" role="listbox" hidden></div></div><div class="ak-ukd" id="akSideUk" hidden><button type="button" class="ak-ukb" aria-haspopup="listbox" aria-expanded="false"><span></span><svg class="ak-panah" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button><div class="ak-ukm" role="listbox" hidden></div></div></div><div class="ak-side-t" id="akSideT"></div><div class="ak-sideleg" id="akSideLeg" hidden></div>`;
-      $("akPita").insertAdjacentHTML("beforebegin", `<div class="ak-side-label" id="akSideLabel"><button type="button" class="ak-sl-back" id="akSideBack" data-sd-naik="id" hidden title="Naik satu tingkat" aria-label="Naik satu tingkat">${ikon('<path d="m15 6-6 6 6 6"/>', "currentColor")}</button><b id="akSideJ"></b><span id="akSideN"></span><button type="button" class="ak-sl-lipat" id="akSideLipat" aria-label="Lipat panel" title="Lipat panel">${ikon('<path d="m6 9 6 6 6-6"/>', "currentColor")}</button></div>`);
+    if (!$("akSideT")) { $("akPita").className = "ak-side"; $("akPita").innerHTML = `<div class="ak-side-label" id="akSideLabel"><button type="button" class="ak-sl-back" id="akSideBack" data-sd-naik="id" hidden title="${esc(t("dir.peta.naik"))}" aria-label="${esc(t("dir.peta.naik"))}">${ikon('<path d="m15 6-6 6 6 6"/>', "currentColor")}</button><b id="akSideJ"></b><span id="akSideN"></span><button type="button" class="ak-sl-lipat" id="akSideLipat" aria-expanded="true" aria-label="${esc(t("dir.peta.lipat"))}" title="${esc(t("dir.peta.lipat"))}">${ikon('<path d="m6 9 6 6 6-6"/>', "currentColor")}</button></div><div class="ak-side-h">
+      <div class="ak-sr-w"><label class="ak-cari"><span class="sr">${esc(t("dir.peta.cari"))}</span><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><input id="akSideQ" type="search" autocomplete="off" role="combobox" aria-expanded="false" aria-controls="akSaran" aria-autocomplete="list" placeholder="${esc(t("dir.peta.cari"))}"></label><div class="ak-saran" id="akSaran" role="listbox" hidden></div></div><div class="ak-ukd" id="akSideUk" hidden><button type="button" class="ak-ukb" aria-haspopup="listbox" aria-expanded="false"><span></span><svg class="ak-panah" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button><div class="ak-ukm" role="listbox" hidden></div></div></div><div class="ak-side-t" id="akSideT"></div><div class="ak-sideleg" id="akSideLeg" hidden></div>`;
       $("akPita").insertAdjacentHTML("afterend", '<button type="button" class="ak-side-buka" id="akSideBuka" hidden>Panel</button>');
     }
     if (!$("akGripSide")) { $("akPita").insertAdjacentHTML("beforeend", '<div class="ak-grip" id="akGripSide" data-grip="side" role="separator" aria-orientation="vertical" aria-label="Geser lebar panel"></div>'); $("akDrawer").insertAdjacentHTML("afterbegin", '<div class="ak-grip ak-grip-kiri" data-grip="drawer" role="separator" aria-orientation="vertical" aria-label="Geser lebar profil"></div>'); aturLebar();
@@ -1746,6 +1744,7 @@ h4{margin:0 0 2px;font-size:8px;letter-spacing:normal;text-transform:none;color:
         $("akDrawer").insertAdjacentHTML("afterbegin", '<div class="ak-dr-g" role="group" aria-label="Geser panel"></div>');
         geserPanel($("akPita"), {kunci: "samping", batas: $("akPita").parentElement}); geserPanel($("akDrawer"), {kunci: "profil", batas: $("akDrawer").parentElement});
         const pp = $("akPtPanel"); if (pp) geserPanel(pp, {kunci: "kabkota", batas: pp.parentElement});
+        const kt = $("akPtKontrol"); if (kt) geserPanel(kt, {kunci: "kontrol", batas: kt.parentElement});
       }).catch(() => {}); }
     { const ly = $("akPtLayer"), h = document.querySelector("#akPita .ak-side-h"); if (ly && h && ly.parentElement !== h) h.appendChild(ly); if (ly) for (const [k, t] of [["strat", "Strategis"], ["sensor", "Sensor"], ["lembaga", "Mitra"]]) { const b = ly.querySelector(`[data-ly="${k}"]`); const tn = b && [...b.childNodes].find(n => n.nodeType === 3 && n.textContent.trim()); if (tn) tn.textContent = t; } }
     isiSide();
@@ -1871,14 +1870,17 @@ h4{margin:0 0 2px;font-size:8px;letter-spacing:normal;text-transform:none;color:
   function chipKategori(el) {
     const ada = x => Number.isFinite(x.lat) && Number.isFinite(x.lon), nk = Object.values(kampusInfo).filter(v => Number.isFinite(v?.lat)).length;
     const hit = k => lbArr.filter(x => x.kategori === k).length + (k === "perguruan-tinggi" ? nk : 0);   /* total per kategori, bukan hanya yang berkoordinat */
-    const chip = (k, l, n, w) => `<button type="button" data-kk="${k}" aria-pressed="false"><i class="ak-kdot" data-st="background:${w}"></i><span>${esc(l)}</span><small>${angka(n)}</small></button>`;
-    const box = document.createElement("div"); box.className = "ak-kchips"; box.id = "akPtKChip"; box.setAttribute("role", "group"); box.setAttribute("aria-label", "Lapisan peta");
+    const IK_PROY = '<path d="M3 21V9l6 4V9l6 4V5h6v16z"/>', IK_LAIN = '<circle cx="5" cy="12" r="1.6"/><circle cx="12" cy="12" r="1.6"/><circle cx="19" cy="12" r="1.6"/>', IK_LAPIS = '<path d="m12 3 9 5-9 5-9-5z"/><path d="m3 13 9 5 9-5"/>';
+    const chip = (k, l, n, w, ic) => `<button type="button" data-kk="${k}" aria-pressed="false">${ikon(ic || (KAT[k] || [])[1] || IK_TITIK, w)}<span>${esc(l)}</span><small>${angka(n)}</small></button>`;   /* ikon di tiap chip dan pilihan (aturan pemilik) */
+    const kontrol = document.createElement("div"); kontrol.className = "ak-kontrol"; kontrol.id = "akPtKontrol"; kontrol.setAttribute("role", "group"); kontrol.setAttribute("aria-label", t("dir.peta.lapisan"));
+    kontrol.innerHTML = `<div class="ak-kontrol-h">${ikon(IK_LAPIS, "currentColor")}<b>${esc(t("dir.peta.lapisan"))}</b></div><div class="ak-kontrol-i"></div>`;   /* kepala = pegangan geser (panel_geser.js) */
+    const box = document.createElement("div"); box.className = "ak-kchips"; box.id = "akPtKChip"; box.setAttribute("role", "group"); box.setAttribute("aria-label", t("dir.peta.lapisan"));
     const kats = [...CHIP_KAT, ...Object.keys(hitungLb(x => x.kategori)).filter(k => k !== "penerbit" && !CHIP_KAT.some(c => c[0] === k)).map(k => [k, (KAT[k] || [k])[0]])].filter(([k]) => hit(k)).sort((a, c) => hit(c[0]) - hit(a[0])), tops = kats.slice(0, 5), sisa = kats.slice(5);
-    box.innerHTML = chip("", "Semua", lbArr.filter(x => x.kategori !== "penerbit").length + nk, "var(--brand)") + tops.map(([k, l]) => chip(k, ({"swasta": "Swasta", "kementerian-lembaga": "K/L", "ormawa": "Ormawa", "perguruan-tinggi": "Kampus"})[k] || l, hit(k), (KAT[k] || [])[2] || "var(--ink2)")).join("")
-      + (sisa.length ? `<button type="button" data-kl="1" aria-expanded="false" aria-haspopup="true"><span>Lainnya</span><small>${angka(sisa.length)}</small><svg class="ak-panah" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button>` : "") + chip("proyek", "Proyek", 0, "var(--meti-oranye)");
-    const menu = document.createElement("div"); menu.className = "ak-kmenu"; menu.id = "akPtKMenu"; menu.hidden = true; menu.setAttribute("role", "group"); menu.setAttribute("aria-label", "Kategori lain");
+    box.innerHTML = chip("", t("dir.peta.semua"), lbArr.filter(x => x.kategori !== "penerbit").length + nk, "currentColor", IK_SEMUA) + tops.map(([k, l]) => chip(k, ({"swasta": "Swasta", "kementerian-lembaga": "K/L", "ormawa": "Ormawa", "perguruan-tinggi": "Kampus"})[k] || l, hit(k), (KAT[k] || [])[2] || "var(--ink2)")).join("")
+      + (sisa.length ? `<button type="button" data-kl="1" aria-expanded="false" aria-haspopup="true">${ikon(IK_LAIN, "currentColor")}<span>${esc(t("dir.peta.lainnya"))}</span><small>${angka(sisa.length)}</small><svg class="ak-panah" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button>` : "") + chip("proyek", t("dir.peta.proyek"), 0, "var(--meti-oranye)", IK_PROY);
+    const menu = document.createElement("div"); menu.className = "ak-kmenu"; menu.id = "akPtKMenu"; menu.hidden = true; menu.setAttribute("role", "group"); menu.setAttribute("aria-label", t("dir.peta.lainnya"));
     menu.innerHTML = sisa.map(([k, l]) => chip(k, l, hit(k), (KAT[k] || [])[2] || "var(--ink2)")).join("");
-    const isi = el.querySelector(".ak-ptaisi") || el; isi.append(box, menu);
+    kontrol.querySelector(".ak-kontrol-i").append(box, menu); (el.querySelector(".ak-ptaisi") || el).append(kontrol);
     const segar = () => { const pk = b => { const k = b.dataset.kk; b.setAttribute("aria-pressed", String(k === "" ? !PT.kat.size && !PT.lapis.proyek : k === "proyek" ? PT.lapis.proyek : PT.kat.has(k))); }; box.querySelectorAll("button[data-kk]").forEach(pk); menu.querySelectorAll("button").forEach(pk); const lb = box.querySelector("[data-kl]"); if (lb) lb.setAttribute("aria-pressed", String(sisa.some(([k]) => PT.kat.has(k)))); };
     ambilData("proyek").then(d => { PT.proyekArr = dlist(d).filter(x => x?.lokasi && Number.isFinite(x.lokasi.lat)); const s = box.querySelector('[data-kk="proyek"] small'); if (s) s.textContent = angka(PT.proyekArr.length); if (PT.lapis.proyek) nanti(segarPeta); });
     const tutup = () => { menu.hidden = true; box.querySelector("[data-kl]")?.setAttribute("aria-expanded", "false"); };
@@ -1901,7 +1903,7 @@ h4{margin:0 0 2px;font-size:8px;letter-spacing:normal;text-transform:none;color:
     chipKategori(el);
     pitaPeta();
     $("akPita").addEventListener("keydown", e => { if (e.key === "Enter" && e.target.matches?.("tr[data-sd-baris]")) e.target.click(); });
-    { const sr = $("akSideQ")?.closest(".ak-sr-w"); if (sr) { sr.id = "akPtCari"; el.querySelector(".ak-ptaisi").append(sr); } }   /* kotak cari di samping pemilih kategori, tetap ada walau panel dilipat */
+    { const sr = $("akSideQ")?.closest(".ak-sr-w"); if (sr) { sr.id = "akPtCari"; $("akPtKontrol").querySelector(".ak-kontrol-i").prepend(sr); } }   /* kotak cari satu panel dengan chip kategori (tiru Posko), tetap ada walau panel dilipat */
     try { await muatMapLib(); } catch (e) { $("akMap").innerHTML = '<p class="ak-khampa">Peta tidak bisa dimuat. Periksa koneksi lalu muat ulang.</p>'; return; }
     const gelap = document.documentElement.dataset.theme ? document.documentElement.dataset.theme === "dark" : matchMedia("(prefers-color-scheme: dark)").matches;
     const m = PT.map = new maplibregl.Map({container: "akMap", style: "https://tiles.openfreemap.org/styles/" + (gelap ? "dark" : "positron"), bounds: [[94, -11.5], [141.5, 6.5]], fitBoundsOptions: {padding: padAwal()}, minZoom: 3, maxZoom: 16, dragRotate: false, pitchWithRotate: false,
@@ -1911,8 +1913,8 @@ h4{margin:0 0 2px;font-size:8px;letter-spacing:normal;text-transform:none;color:
     pasangPilih("akPtSens", {semua: "Semua jenis sensor", nilai: () => PT.sens, opsi: () => Object.entries(sub1(PT.sensorArr, s => s.jenis)).map(([k, a]) => [k, kapital(k), a.length]).sort((a, b) => b[2] - a[2]), pilih: v => { PT.sens = v; nanti(segarPeta); }});
     $("akPtLayer").addEventListener("click", e => { const b = e.target.closest("[data-ly]"); if (!b) return; PT.lapis[b.dataset.ly] = !PT.lapis[b.dataset.ly]; if (b.dataset.ly === "strat") { try { const u = new URL(location.href); PT.lapis.strat ? u.searchParams.delete("strat") : u.searchParams.set("strat", "0"); history.replaceState(null, "", u); } catch (er) {} } b.setAttribute("aria-pressed", String(PT.lapis[b.dataset.ly]));
       $("akPtSensW").hidden = !PT.lapis.sensor; if (b.dataset.ly === "pusat" && PT.lapis.pusat && !PT.pusatArr.length) ambilData("pusat_studi").then(d => { PT.pusatArr = dlist(d).filter(x => x && x.nama && x.nama_terverifikasi === true); nanti(segarPeta); }); nanti(segarPeta); });
-    const lipat = v => { SDP.lipat = v; $("akPita").classList.toggle("lipat", v); $("akSideLabel").classList.toggle("lipat", v); $("akSideBuka").hidden = true; setTimeout(() => m.resize(), 250); };
-    $("akSideLabel").addEventListener("click", e => { if (e.target.closest("#akSideBack")) return; lipat(e.target.closest("#akSideLipat") ? true : (SDP.lipat ? false : !!SDP.lipat)); });
+    const lipat = v => { SDP.lipat = v; $("akPita").classList.toggle("lipat", v); $("akSideLabel").classList.toggle("lipat", v); $("akSideLipat").setAttribute("aria-expanded", String(!v)); $("akSideBuka").hidden = true; setTimeout(() => m.resize(), 250); };
+    $("akSideLabel").addEventListener("click", e => { if (e.target.closest("#akSideLipat")) lipat(!SDP.lipat); });   /* kepala = pegangan geser; hanya tombol lipat yang melipat */
 
     pasangCariPeta();
     $("akPita").addEventListener("click", e => {
@@ -2813,7 +2815,7 @@ h4{margin:0 0 2px;font-size:8px;letter-spacing:normal;text-transform:none;color:
     return `<article class="ak-org ak-skm" role="button" tabindex="0" data-sk="${esc(x.id)}" aria-label="Buka ${esc(x.nama)}"><div class="ak-orghead">${lgoIkon(logoOrg(x.pemberi, l?.id || x.lembaga_id), IK_UANG, w)}<div><h3>${esc(x.nama)}</h3><small class="ak-lper">${iso ? esc(bendera(iso)) + " " : ""}${esc(x.pemberi || "")}${negara ? ", " + esc(negara) : ""}</small></div></div>
       <div class="ak-pil">${pilStatus(x.jenis || "skema", w)}${lencRB(x)}${pilPeranB(x)}${pilContoh(x)}</div>${x.kolaborasi && mitraNeg(x).length ? `<small class="ak-lper">Mitra: ${esc(mitraNeg(x).slice(0, 2).join(", "))}</small>` : ""}${ket(jelas, 2)}
       ${f.length ? `<ul class="ak-fk">${f.map(([k, ik, v]) => `<li><span>${ikon(ik, "currentColor")}${k}</span><b>${typeof v === "string" && k === "Besaran" ? v : esc(v)}</b></li>`).join("")}</ul>` : ""}
-      <span class="ak-sk-cara">Cara mengajukan &rarr;</span></article>`; };
+      <span class="ak-sk-cara">Cara mengajukan</span></article>`; };
   function lembarSkema(x) {
     const {l, iso, negara} = skPemberi(x), w = JENIS_DANA[x.jenis] || "var(--ok)", u = urlOk(x.url) || urlOk(dlist(x.sumber)[0]?.url), f = [["Besaran", skBesaran(x)], ["Sasaran", strs(x.sasaran).map(kapital).join(", ")], ["Siklus", x.siklus], ["Tenggat", x.tenggat], ["Mitra negara", x.kolaborasi ? mitraNeg(x).join(", ") : ""], ["Syarat", x.syarat_singkat]].filter(r => skOk(r[1]));
     const langkah = (Array.isArray(x.cara) ? x.cara : String(x.cara || "").split(/\n|;\s+|(?<=\.)\s+(?=\d+[.)]\s)/)).map(t => String(t).replace(/^\s*\d+[.)]\s*/, "").trim()).filter(skOk);

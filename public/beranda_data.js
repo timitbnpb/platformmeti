@@ -1,7 +1,7 @@
 /* Enam kartu dataset di beranda: semua angka dihitung dari public/data/*.json; grafik SVG/CSS polos. */
 import { t, angka, tanggal } from "/i18n.js";
 import { esc, ikon } from "/inti/umum.js";
-import { sumberHtml, unduhRegHtml, exHtml } from "/inti/komponen.js";
+import { sumberHtml, unduhRegHtml, exHtml, lihatSemuaHtml } from "/inti/komponen.js";
 import { penerbitHtml } from "/penerbit.js";
 import { muat, label, namaRegulasi, sembunyi } from "/publik.js";
 
@@ -29,7 +29,7 @@ const kartu = (kunci, w, href, tgl, stat, viz, sumberTeks) => exHtml({
   kelas: "jm-ds jm-w" + w, tingkat: "h3", ikon: IKON_DS[kunci], topik: t("beranda.ds." + kunci + ".k"),
   judulHtml: esc(t("beranda.ds." + kunci + ".j")), subHtml: esc(t("beranda.ds." + kunci + ".sub")), aksiHtml: sumberHtml(esc(sumberTeks)),
   isiHtml: `<dl class="jm-ds-stat">${stat.map(([n, l, est]) => `<div><dd class="jm-ds-n">${esc(n)}</dd><dt>${esc(t(l))}${est ? ` <span class="jm-pil jm-pil-est">EST</span>` : ""}</dt></div>`).join("")}</dl><div class="jm-ds-viz">${viz}</div>`,
-  kakiHtml: `<span>${esc(t("beranda.ds.diperbarui", { tanggal: tanggal(tgl) }))}</span><a class="jm-lihat" href="${href}">${esc(t("beranda.ds.buka"))} &rarr;</a>` });
+  kakiHtml: `<span>${esc(t("beranda.ds.diperbarui", { tanggal: tanggal(tgl) }))}</span>${lihatSemuaHtml(href, t("beranda.ds.buka"))}` });
 
 /** Baris peringkat: nomor bulat, nama + pil, batang tipis, nilai tabular di kanan. items: {nama, pil, nilai, unit, frac} */
 const rangking = (items) => `<ol class="jm-rank">${items.map((o, i) => `<li class="jm-rank-i"><span class="jm-rank-no">${i + 1}</span><span class="jm-rank-t">${o.foto ? `<span class="jm-rank-th">${IKON_TEK}<img src="/img/beranda/${esc(o.foto)}.webp" width="72" height="48" alt="" decoding="async"></span>` : ""}${o.logo ? `<img class="jm-rank-lg" src="${esc(o.logo)}" width="24" height="24" alt="" loading="lazy">` : ""}<span class="jm-rank-tx"><strong title="${esc(o.nama)}">${o.href ? `<a href="${esc(o.href)}">${esc(o.nama)}</a>` : esc(o.nama)}</strong>${o.aksi || ""}${o.pil ? `<small><span class="jm-pil">${esc(o.pil)}</span></small>` : ""}</span></span><span class="jm-rank-v"><b>${esc(o.nilai)}</b>${o.unit ? ` <small>${esc(o.unit)}</small>` : ""}</span></li>`).join("")}</ol>`;

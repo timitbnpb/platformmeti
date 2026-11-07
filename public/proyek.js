@@ -6,7 +6,7 @@ import { mulaiHalaman } from "/inti/kepala.js";
 import { khUbin } from "/inti/kh.js";
 import { muatMapLibre } from "/inti/maplibre.js";
 import { lapisAnggota, anggotaDl } from "/publik.js";
-import { sumberHtml, exHtml, unduhRegHtml } from "/inti/komponen.js";
+import { sumberHtml, exHtml, unduhRegHtml, lihatSemuaHtml } from "/inti/komponen.js";
 import { tautProvinsi } from "/inti/tautan.js";
 import { ikonTek, pilTek, pilStatus, ikonStatus } from "/inti/ikon_tek.js";
 import { PROV } from "/penerbit.js";
@@ -545,17 +545,17 @@ function dasarKosong(g) {
 const legTitik = (per) => `<ul class="jm-pj-leg2">${ST_BAR.filter((k) => per[k]).map((k) => `<li><span class="jm-pj-s-${k}" aria-hidden="true"></span><b>${num(per[k])}</b> ${esc(labSt(k).toLowerCase())}</li>`).join("")}</ul>`;
 /* kartu penutup kisi program (pemilik 8 Nov 2026: 8 kartu biar simetris): tautan ke analisis semua program */
 const kartuSemuaProg = () => `<a class="jm-pj-pk jm-pj-pk-semua" href="/program"><div class="jm-pj-pk-gb"><img src="${IMG("panas-bumi-sibayak")}" alt="" width="800" height="450" loading="lazy" decoding="async"><span class="jm-pj-pk-ik">${ikon("daftar2", 20)}</span><h3>${esc(t("pj.prog.semua"))}</h3></div>
-  <div class="jm-pj-pk-isi"><p class="jm-pj-pk-desk">${esc(t("pj.prog.semua_ket"))}</p><span class="jm-pj-link">${esc(t("pj.prog.semua_buka"))} <span aria-hidden="true">\u2192</span></span></div></a>`;
+  <div class="jm-pj-pk-isi"><p class="jm-pj-pk-desk">${esc(t("pj.prog.semua_ket"))}</p>${lihatSemuaHtml("", t("pj.prog.semua_buka"))}</div></a>`;
 function gambarProg() {
   $("pjProg").innerHTML = PROG.baris.map((g, i) => {
     const rows = SEMUA.filter((r) => r.prog.includes(g.id)), per = g.per_status || {}, tot = g.jumlah_proyek || 0, nreg = (g.regulasi_ids || []).length, sat = satuanProg(rows);
     const punyaKap = tot && g.kapasitas_mw;
     const isi = tot ? legTitik(per) : dasarKosong(g); /* tanpa batang progres tumpuk (aturan pemilik) */
-    const kaki = (tot ? t("pj.prog.lihat", { n: num(tot) }) : t(nreg ? "pj.prog.reg" : "pj.prog.buka")).replace(/\s*\u2192\s*$/, "");
+    const kaki = (tot ? t("pj.prog.lihat", { n: num(tot) }) : t(nreg ? "pj.prog.reg" : "pj.prog.buka"));
     return `<a class="jm-pj-pk jm-pj-pg-${i % 5}" href="/program/${esc(g.id)}"><div class="jm-pj-pk-gb">${IMG_PROG[g.id] ? `<img src="${IMG_PROG[g.id]}" alt="" width="800" height="450" loading="lazy" decoding="async">` : ""}<span class="jm-pj-pk-ik">${ikProg(g.id)}</span><h3>${esc(g.nama)}</h3></div>
       <div class="jm-pj-pk-isi"><p class="jm-pj-pk-desk">${esc(g.ringkas || "")}</p>
       <dl class="jm-pj-pk-stat"><div><dt>${esc(t("pj.prog.proyek"))}</dt><dd>${num(tot)}</dd></div><div><dt>${esc(t("pj.c.kap"))}</dt><dd${punyaKap ? "" : ` class="jm-pj-redup" title="${esc(t("pj.prog.belum.ket"))}"`}>${punyaKap ? kapKecil(g.kapasitas_mw, sat) : "-"}</dd></div><div><dt>${esc(t("pj.rel.reg"))}</dt><dd${nreg ? "" : ' class="jm-pj-redup"'}>${nreg ? num(nreg) : "-"}</dd></div></dl>
-      ${isi}<span class="jm-pj-link">${esc(kaki)} <span aria-hidden="true">\u2192</span></span></div></a>`;
+      ${isi}${lihatSemuaHtml("", kaki)}</div></a>`;
   }).join("") + kartuSemuaProg();
   for (const i of $("pjProg").querySelectorAll("i[data-w]")) i.style.width = i.dataset.w + "%";
   isiDasar();

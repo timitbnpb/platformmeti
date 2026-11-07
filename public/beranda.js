@@ -3,7 +3,7 @@ import { t, angka, tanggal } from "/i18n.js";
 import { esc, nanti, debounce, hantuHtml, kosongHtml, ikon, fotoBerita } from "/inti/umum.js";
 import { gambarDataset, LOGO_ORG, GEDUNG, FOTO_TEK } from "/beranda_data.js";
 import { pasangBawah, IKON } from "/beranda_bawah.js";
-import { sumberHtml } from "/inti/komponen.js";
+import { sumberHtml, lihatSemuaHtml } from "/inti/komponen.js";
 import { kontenBeranda, daftarKonten } from "/inti/konten_beranda.js";
 import { muat, label, urlAman, norm, namaRegulasi, sembunyi } from "/publik.js";
 
@@ -81,7 +81,7 @@ async function gambarBerita() {
     const manual = pilih.map((i) => byId.get(i)).filter((x) => x && urlAman(x.url)).slice(0, 6);
     const baris = manual.length ? manual : [...b.baris].filter((x) => urlAman(x.url) && x.terbit).sort((x, y) => String(y.terbit).localeCompare(String(x.terbit))).slice(0, 6);
     if (!baris.length) throw new Error("berita kosong");
-    el.innerHTML = `<ul class="jm-feed">${baris.map((x) => `<li><a class="jm-feed-i jm-feed-foto" href="${esc(x.url)}" target="_blank" rel="noopener noreferrer"><span class="jm-feed-th">${ikon(IK[x.kepakaran?.[0]] || "tek-listrik", 28)}${fotoBerita(foto, x.id) ? `<img src="${fotoBerita(foto, x.id)}" width="112" height="72" alt="" loading="lazy" decoding="async" referrerpolicy="no-referrer">` : ""}</span><span class="jm-feed-t"><strong>${esc(x.judul)}</strong><span class="jm-baris-meta"><span>${esc(x.media)}, ${esc(tanggal(String(x.terbit).slice(0, 10)))}</span>${x.kepakaran?.[0] ? `<span class="jm-pil">${esc(label("beranda.tek.", x.kepakaran[0]))}</span>` : ""}</span></span></a></li>`).join("")}</ul><a class="jm-lihat" href="/berita">${esc(t("beranda.lihat.berita"))} &rarr;</a>`;
+    el.innerHTML = `<ul class="jm-feed">${baris.map((x) => `<li><a class="jm-feed-i jm-feed-foto" href="${esc(x.url)}" target="_blank" rel="noopener noreferrer"><span class="jm-feed-th">${ikon(IK[x.kepakaran?.[0]] || "tek-listrik", 28)}${fotoBerita(foto, x.id) ? `<img src="${fotoBerita(foto, x.id)}" width="112" height="72" alt="" loading="lazy" decoding="async" referrerpolicy="no-referrer">` : ""}</span><span class="jm-feed-t"><strong>${esc(x.judul)}</strong><span class="jm-baris-meta"><span>${esc(x.media)}, ${esc(tanggal(String(x.terbit).slice(0, 10)))}</span>${x.kepakaran?.[0] ? `<span class="jm-pil">${esc(label("beranda.tek.", x.kepakaran[0]))}</span>` : ""}</span></span></a></li>`).join("")}</ul>${lihatSemuaHtml("/berita", t("beranda.lihat.berita"))}`;
   } catch (e) { sembunyi(el, e); el.closest(".jm-ex").hidden = true; }
 }
 
@@ -95,7 +95,7 @@ async function gambarProyek() {
     el.innerHTML = `<ul class="jm-feed">${baru.map((x) => {
       const kap = x.kapasitas?.[0], st = x.status?.[0]?.nilai;
       return `<li><a class="jm-feed-i jm-feed-foto" href="/p/${encodeURIComponent(x.id)}"><span class="jm-feed-th">${IKON[x.teknologi] || IKON.surya}${FOTO_TEK[x.teknologi] ? `<img src="/img/beranda/${FOTO_TEK[x.teknologi]}.webp" width="112" height="72" alt="" loading="lazy" decoding="async">` : ""}</span><span class="jm-feed-t"><strong>${esc(x.nama)}</strong><span class="jm-baris-meta">${st ? `<span class="jm-pil">${esc(label("beranda.st.", st))}</span>` : ""}<span>${esc(x.lokasi?.provinsi || "-")}</span>${kap ? `<span class="jm-angka-tab">${esc(angka(kap.nilai, { desimal: kap.nilai % 1 ? 1 : 0 }))} ${esc(kap.satuan)}</span>` : ""}</span></span></a></li>`;
-    }).join("")}</ul><a class="jm-lihat" href="/proyek">${esc(t("beranda.lihat.proyek"))} &rarr;</a>`;
+    }).join("")}</ul>${lihatSemuaHtml("/proyek", t("beranda.lihat.proyek"))}`;
   } catch (e) { sembunyi(el, e); el.closest(".jm-ex").hidden = true; }
 }
 
@@ -106,7 +106,7 @@ async function gambarAgenda() {
     if (!ids.length) { kartu.hidden = true; return; }
     const k = await muat("kalender"), byId = new Map(k.baris.map((x) => [x.id, x])), baris = ids.map((i) => byId.get(i)).filter(Boolean).slice(0, 6);
     if (!baris.length) { kartu.hidden = true; return; }
-    el.innerHTML = `<ul class="jm-feed">${baris.map((x) => `<li><a class="jm-feed-i" href="/kalender"><span class="jm-feed-t"><strong>${esc(x.judul)}</strong><span class="jm-baris-meta"><span>${esc(tanggal(String(x.tanggal).slice(0, 10)))}</span></span></span></a></li>`).join("")}</ul><a class="jm-lihat" href="/kalender">${esc(t("beranda.lihat.agenda"))} &rarr;</a>`;
+    el.innerHTML = `<ul class="jm-feed">${baris.map((x) => `<li><a class="jm-feed-i" href="/kalender"><span class="jm-feed-t"><strong>${esc(x.judul)}</strong><span class="jm-baris-meta"><span>${esc(tanggal(String(x.tanggal).slice(0, 10)))}</span></span></span></a></li>`).join("")}</ul>${lihatSemuaHtml("/kalender", t("beranda.lihat.agenda"))}`;
     kartu.hidden = false;
   } catch (e) { kartu.hidden = true; }
 }
@@ -128,7 +128,7 @@ async function gambarEkosistem() {
       });
       return `<div class="jm-logo-kol"><h3><span class="jm-kotak jm-w${w}" aria-hidden="true"></span>${esc(t("beranda.eko.k." + kat))}</h3>${tiles.join("")}</div>`;
     }).join("");
-    document.getElementById("ekoSemua").innerHTML = `${esc(t("beranda.eko.semua", { n: angka(org.baris.length) }))} &rarr;`;
+    document.getElementById("ekoSemua").innerHTML = `${ikon("daftar2", 16)}<span>${esc(t("beranda.eko.semua", { n: angka(org.baris.length) }))}</span>`;
   } catch (e) { sembunyi(kisi, e); }
 }
 
@@ -139,7 +139,7 @@ async function gambarJalur() {
     const [rg, wl, rt, kl, pk, og] = await Promise.all(["ringkas", "wilayah", "rantai_plts", "kalender", "pustaka", "organisasi"].map(muat));
     const J = [["proyek", "/proyek", "pin", rg.hitung.proyek, "proyek"], ["wilayah", "/wilayah", "peta", wl.jumlah, "provinsi"], ["rantai", "/rantai", "pabrik", rt.ringkas.pabrikan, "pabrikan"], ["regulasi", "/regulasi", "timbangan", rg.hitung.regulasi, "regulasi"],
       ["direktori", "/direktori", "orangkunci", og.jumlah, "organisasi"], ["pustaka", "/direktori?tampil=pustaka", "buku", pk.jumlah, "dokumen"], ["kalender", "/kalender", "kalender", kl.jumlah, "acara"], ["insight", "/insight", "grafik", INSIGHT_KARTU, "kartu"]];
-    el.innerHTML = J.map(([k, href, ik, n, u]) => `<a class="jm-jalur" href="${href}"><span class="jm-jalur-ik">${IKON[ik] || ""}</span>${k === "direktori" ? `<span class="jm-pil jm-jalur-kunci">${ikon("kunci", 12)}${esc(t("beranda.j.masuk"))}</span>` : ""}<strong>${esc(t("beranda.j." + k))}</strong><span class="jm-jalur-ket">${esc(t("beranda.j." + k + ".ket"))}</span><b class="jm-jalur-n">${esc(angka(n))} <small>${esc(t("beranda.jn." + u))}</small></b><span class="jm-jalur-panah" aria-hidden="true">&rarr;</span></a>`).join("");
+    el.innerHTML = J.map(([k, href, ik, n, u]) => `<a class="jm-jalur" href="${href}"><span class="jm-jalur-ik">${IKON[ik] || ""}</span>${k === "direktori" ? `<span class="jm-pil jm-jalur-kunci">${ikon("kunci", 12)}${esc(t("beranda.j.masuk"))}</span>` : ""}<strong>${esc(t("beranda.j." + k))}</strong><span class="jm-jalur-ket">${esc(t("beranda.j." + k + ".ket"))}</span><b class="jm-jalur-n">${esc(angka(n))} <small>${esc(t("beranda.jn." + u))}</small></b></a>`).join("");
   } catch (e) { sembunyi(el, e); }
 }
 

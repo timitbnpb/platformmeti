@@ -4,7 +4,7 @@
 import { mulaiHalaman } from "/inti/kepala.js";
 import { t, ada, angka, tanggal, bahasa } from "/i18n.js";
 import { esc, nanti, ikon, hantuHtml } from "/inti/umum.js";
-import { exHtml, sumberHtml, pilihHtml, cariHtml, hapusHtml, hitungHtml, unduhRegHtml } from "/inti/komponen.js";
+import { exHtml, sumberHtml, pilihHtml, cariHtml, hapusHtml, hitungHtml, unduhRegHtml, lihatSemuaHtml } from "/inti/komponen.js";
 import { aksiHtml, hlHtml } from "/inti/aksi_ex.js";
 import { ubinHtml, tampilGalat, saatBahasa } from "/analisis.js";
 import { ikonTek, ikonStatus, pilStatus, pilTek } from "/inti/ikon_tek.js";
@@ -72,7 +72,7 @@ const kartuIndeks = (g) => {
     <div><dt>${esc(t("pg.u.proyek"))}</dt><dd>${g.proyek_ringkas.jumlah ? num(g.proyek_ringkas.jumlah) : "-"}</dd></div>
     <div><dt>${esc(t("pg.u.isu"))}</dt><dd>${nb ? num(nb) : "-"}</dd></div></dl>
     ${tt ? `<p class="jm-pg-teratas">${pilSev(tt.tingkat)}<span>${esc(L(tt.judul))}</span></p>` : ""}
-    <span class="jm-pg-link">${esc(t("pg.buka"))} <span aria-hidden="true">→</span></span></div></a>`;
+    ${lihatSemuaHtml("", t("pg.buka"))}</div></a>`;
 };
 
 function gambarIndeks() {

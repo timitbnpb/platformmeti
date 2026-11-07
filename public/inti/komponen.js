@@ -236,6 +236,13 @@ if (typeof document !== "undefined" && !window.__jmBagi) {
   });
 }
 
+/* "Lihat semua": pil lembut brand di kanan bawah kartu, tanpa panah (pemilik 8 Nov 2026). href kosong = penanda (span) untuk dipakai di dalam kartu bertaut.
+   Pakai sebagai kakiHtml exHtml: lihatSemuaHtml("/proyek?teknologi=bayu", t("tk.lihat.proyek", { n })). */
+export const lihatSemuaHtml = (href, label, n) => {
+  const isi = `${ikon("daftar2", 16)}<span>${esc(n === undefined ? label : label.replace("{n}", n))}</span>`;
+  return href ? `<a class="jm-lihat" href="${esc(href)}">${isi}</a>` : `<span class="jm-lihat">${isi}</span>`;
+};
+
 /* Panel "Terkait" (aturan pemilik 8 Nov 2026: semua halaman bertaut): entitas yang tersambung lewat id silang di data.
    Pemakaian: `await terkaitHtml("org", id)`; "" bila tak ada sambungan. kecuali = jenis yang dilewati (sudah tampil di seksi sendiri). */
 const TERKAIT_URUT = [

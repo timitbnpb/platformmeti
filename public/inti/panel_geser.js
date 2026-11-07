@@ -36,6 +36,7 @@ export function geserPanel(el, { kunci = "", batas = el.parentElement } = {}) {
     x = Math.min(Math.max(0, x), Math.max(0, b.width - lebar)); y = Math.min(Math.max(0, y), Math.max(0, b.height - 44));
     Object.assign(el.style, { left: x + "px", top: y + "px", right: "auto", bottom: "auto", width: lebar + "px" });
     if (h) { const t = Math.min(Math.max(MIN_T, h), b.height - y - 8); el.style.height = t + "px"; el.style.maxHeight = t + "px"; }
+    else el.style.maxHeight = Math.max(MIN_T, b.height - y - 8) + "px";   // tanpa tinggi tetap: isi tidak menjulur keluar wadah, kontennya menggulir
     el.classList.toggle("sisi-kanan", x + lebar / 2 > b.width / 2);
     reset.hidden = false;
     return { x, y, w: lebar };

@@ -373,7 +373,7 @@ function isiKartu(c) {
   <div class="jm-ex-bd">${grafik}</div>
   <footer class="jm-ex-ft"><p class="jm-ex-fn"><b>${esc(t("ins.penting"))}</b> ${esc(c.penting)}</p>
     <p class="jm-ex-fn">${esc(c.penyebut ?? "")}</p>
-    <div class="jm-ex-sum">${sumberLipat(c.sumber)}<a class="jm-ex-met" href="/metode#metode-${esc(c.id)}">${ikon("metode", 16)}${esc(t("ins.metode"))} \u2192</a></div></footer>`;
+    <div class="jm-ex-sum">${sumberLipat(c.sumber)}<a class="jm-ex-met" href="/metode#metode-${esc(c.id)}">${ikon("metode", 16)}${esc(t("ins.metode"))}</a></div></footer>`;
 }
 
 function pasang(el, daftar) {

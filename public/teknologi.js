@@ -4,12 +4,13 @@
 import { mulaiHalaman } from "/inti/kepala.js";
 import { t, ada, tanggal } from "/i18n.js";
 import { esc, nanti, ikon, hantuHtml, fotoBerita } from "/inti/umum.js";
-import { exHtml, terkaitHtml } from "/inti/komponen.js";
-import { tautProvinsi } from "/inti/tautan.js";
+import { exHtml, terkaitHtml, lihatSemuaHtml } from "/inti/komponen.js";
+import { tautProvinsi, tautOrg } from "/inti/tautan.js";
 import { aksiHtml, hlHtml } from "/inti/aksi_ex.js";
 import { sumberLipat, ubinHtml, batangHtml, pasangBar, pil, num, amanUrl, tampilGalat, saatBahasa } from "/analisis.js";
 import { kolom } from "/grafik.js";
-import { pilStatus } from "/inti/ikon_tek.js";
+import { pilStatus, pilTek, ikonTek } from "/inti/ikon_tek.js";
+import { namaMedia, logoLokal } from "/inti/nama_media.js";
 import { logoOrgSatu } from "/inti/logo_org.js";
 import { namaProyek } from "/inti/nama_proyek.js";
 import { muat, namaRegulasi, kelasStatus } from "/publik.js";
@@ -49,8 +50,8 @@ const label = (awal, k) => (ada(awal + k) ? t(awal + k) : String(k ?? "-"));
 const sel = (k, v, kelas = "") => `<td data-label="${esc(t(k))}"${kelas ? ` class="${kelas}"` : ""}>${v}</td>`;
 const kepTabel = (kunci) => kunci.map((k) => `<th>${esc(t(k))}</th>`).join("");
 const tabel = (kunci, baris) => `<div class="jm-gulir"><table class="jm-tabel"><thead><tr>${kepTabel(kunci)}</tr></thead><tbody>${baris}</tbody></table></div>`;
-const bagian = (id, ik, kunci, { judulHtml, sub, isiHtml, sumber = "", csv = false }) =>
-  isiHtml ? exHtml({ id, ikon: ik, topik: t(`tk.s.${kunci}.ey`), judulHtml, subHtml: sub || "", aksiHtml: aksiHtml({ csv }) + sumber, isiHtml }) : "";
+const bagian = (id, ik, kunci, { judulHtml, sub, isiHtml, sumber = "", csv = false, kakiHtml = "" }) =>
+  isiHtml ? exHtml({ id, ikon: ik, topik: t(`tk.s.${kunci}.ey`), judulHtml, subHtml: sub || "", aksiHtml: aksiHtml({ csv }) + sumber, isiHtml, kakiHtml }) : "";
 
 function olah() {
   const d = C.pel;
@@ -131,14 +132,20 @@ function sProyek(D) {
   const urutP = [...D.proyek].sort((a, z) => kapProyek(z) - kapProyek(a));
   const cod = (p) => { const a = (p.cod_target || []).map((c) => c.nilai).filter(Number.isFinite); return a.length ? Math.min(...a) : null; };
   const baris = urutP.map((p, i) => {
-    const k = p.kapasitas?.[0];
-    return `<tr${i >= BATAS_PROYEK ? " data-lebih hidden" : ""}>${sel("tk.c.nama", `<a href="/p/${esc(p.id)}">${esc(namaProyek(p))}</a>`)}${sel("tk.c.prov", p.lokasi?.provinsi ? tautProvinsi(p.lokasi.provinsi) : "-")}${sel("tk.c.kap", k ? `${esc(num(k.nilai, 1))} ${esc(k.satuan)}` : "-", "jm-num")}${sel("tk.c.status", pilStatus(p.status?.[0]?.nilai || "tidak-diketahui"), "jm-tengah")}${sel("tk.c.cod", cod(p) ?? "-", "jm-num")}</tr>`;
+    const k = p.kapasitas?.[0], pem = p.pihak?.pemilik?.[0]?.nilai;
+    const fid = (p.berita_ids || []).find((b) => fotoBerita(FOTO, b)), foto = fid ? fotoBerita(FOTO, fid) : "";
+    const ubin = foto ? `<span class="jm-tk-pt"><img src="${esc(foto)}" alt="" width="64" height="48" loading="lazy" decoding="async" referrerpolicy="no-referrer"></span>`
+      : `<span class="jm-tk-pt jm-tk-pt-k jm-tek-${esc(KODE)}">${ikonTek(KODE)}<b>${k ? esc(num(k.nilai, 0)) : "-"}</b>${k ? `<small>${esc(k.satuan)}</small>` : ""}</span>`;
+    const nama = `<span class="jm-tk-pj">${ubin}<span class="jm-tk-pj-t"><a href="/p/${esc(p.id)}">${esc(namaProyek(p))}</a>${pem ? `<small>${tautOrg(pem)}</small>` : ""}</span></span>`;
+    const lok = p.lokasi?.provinsi ? tautProvinsi(p.lokasi.provinsi) : `<span class="jm-tk-redup">${esc(t("tk.lokasi_belum"))}</span>`;
+    return `<tr${i >= BATAS_PROYEK ? " data-lebih hidden" : ""}>${sel("tk.c.nama", nama)}${sel("tk.c.prov", lok)}${sel("tk.c.kap", k ? `${esc(num(k.nilai, 1))} ${esc(k.satuan)}` : "-", "jm-num")}${sel("tk.c.status", pilStatus(p.status?.[0]?.nilai || "tidak-diketahui"), "jm-tengah")}${sel("tk.c.cod", cod(p) ?? "-", "jm-num")}</tr>`;
   }).join("");
   const lebih = urutP.length > BATAS_PROYEK ? `<p class="jm-tk-lebih"><button type="button" data-lebih="${urutP.length}" aria-expanded="false">${esc(t("tk.lebih", { n: urutP.length }))}</button></p>` : "";
   return bagian("tk-proyek", "proyek", "proyek", {
     judulHtml: hlHtml("tk.s.proyek.j", num(urutP.length), { mw: num(jumlah(D.proyek.map(kapProyek))) }), sub: esc(t("tk.s.proyek.sub")),
     isiHtml: tabel(["tk.c.nama", "tk.c.prov", "tk.c.kap", "tk.c.status", "tk.c.cod"], baris) + lebih,
     sumber: src("tk.src.proyek", PROY.dibangun_pada), csv: true,
+    kakiHtml: lihatSemuaHtml(`/proyek?teknologi=${encodeURIComponent(KODE)}`, t("tk.lihat.proyek"), num(urutP.length)),
   });
 }
 
@@ -218,12 +225,13 @@ function sPemain(D) {
 function sBerita(D) {
   if (!D.ber.length) return "";
   const kartu = D.ber.slice(0, 6).map((b) => {
-    const f = fotoBerita(FOTO, b.id), u = amanUrl(b.url);
-    return `<li><a href="${esc(u || "#")}" target="_blank" rel="noopener noreferrer">${f ? `<img class="jm-tk-brt-f" src="${esc(f)}" alt="" loading="lazy" decoding="async" referrerpolicy="no-referrer">` : `<span class="jm-tk-brt-k">${ikon("berita", 32)}</span>`}<span class="jm-tk-brt-t">${esc(b.judul)}</span><small>${esc(b.media)} - ${esc(tanggal(String(b.terbit).slice(0, 10)))}</small></a></li>`;
+    const f = fotoBerita(FOTO, b.id), u = amanUrl(b.url), lg = logoLokal(b.media);
+    return `<li><a href="${esc(u || "#")}" target="_blank" rel="noopener noreferrer">${f ? `<img class="jm-tk-brt-f" src="${esc(f)}" alt="" loading="lazy" decoding="async" referrerpolicy="no-referrer">` : `<span class="jm-tk-brt-k">${ikon("berita", 32)}</span>`}<span class="jm-tk-brt-t">${esc(b.judul)}</span><span class="jm-tk-brt-p">${(b.kepakaran || []).slice(0, 2).map(pilTek).join("")}</span><small class="jm-tk-media">${lg ? `<img src="${esc(lg)}" width="16" height="16" alt="" loading="lazy" decoding="async" data-galat="hapus">` : ""}<span>${esc(namaMedia(b.media))}, ${esc(tanggal(String(b.terbit).slice(0, 10)))}</span></small></a></li>`;
   }).join("");
   return bagian("tk-berita", "berita", "berita", {
     judulHtml: hlHtml("tk.s.berita.j", num(D.ber.length), { nama: nm(KODE) }), sub: esc(t("tk.s.berita.sub")),
     isiHtml: `<ul class="jm-tk-berita">${kartu}</ul>`, sumber: src("tk.src.berita", BER.dibangun_pada),
+    kakiHtml: lihatSemuaHtml(`/berita?teknologi=${encodeURIComponent(C.kep)}`, t("tk.lihat.berita"), num(D.ber.length)),
   });
 }
 
