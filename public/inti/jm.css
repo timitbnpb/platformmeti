@@ -431,6 +431,7 @@ html .jm-rel.sembunyi{transform:translate(-50%,calc(100% + 32px));opacity:0;poin
 .jm-rel-gulir::-webkit-scrollbar{display:none}
 html .jm-rel a{position:relative;flex:none;padding:8px 14px;border-radius:var(--r-pil);gap:8px;white-space:nowrap}
 html .jm-rel a[aria-current]{background:var(--accent);color:var(--on-accent)}
+html .jm-rel a[aria-current]{--kemajuan:0}
 html .jm-rel a[aria-current]::after{content:"";position:absolute;left:14px;right:14px;bottom:3px;height:2px;border-radius:2px;background:currentColor;opacity:.7;transform:scaleX(var(--kemajuan,0));transform-origin:left}
 html .jm-rel .jm-rel-l{display:block;overflow:visible}
 html .jm-rel .jm-rel-ik,html .jm-rel a[aria-current] .jm-rel-ik{border:0;box-shadow:none;background:none}
