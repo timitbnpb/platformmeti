@@ -1,0 +1,99 @@
+{
+ "catatan": "Tambahan dari arsip lokal pemilik; tidak menimpa status pilihan admin di D1. Status = klaim dokumen pada tanggalnya; angka antar dokumen tidak konsisten. Kontak hanya kantor/organisasi.",
+ "diambil": "2026-11-08",
+ "versi_angka": [
+  {
+   "sumber": "Deck Audiensi MPR RI hlm 5 (5 Okt 2026)",
+   "tanggal": "2026-10-05",
+   "berdiri": 6,
+   "segera": 4,
+   "rencana": 25,
+   "berdiri_daftar": [
+    "Aceh",
+    "Sumatera Utara",
+    "Sumatera Barat",
+    "Kepulauan Riau",
+    "Jawa Barat",
+    "Sulawesi Utara"
+   ],
+   "segera_daftar": [
+    "Maluku Utara",
+    "Jawa Timur (Surabaya)",
+    "Riau",
+    "Jawa Tengah"
+   ]
+  },
+  {
+   "sumber": "Panduan Penyelenggaraan Pelantikan METI Wilayah, hlm 4 (Okt 2026)",
+   "tanggal": "2026-10-01",
+   "berdiri": 6,
+   "segera": 4,
+   "rencana": 25,
+   "catatan": "teks panduan menyebut hadir di 5 titik (Aceh, Sumut, Kepri, Jabar, Sulut); angka 6/4/25 pada peta"
+  }
+ ],
+ "provinsi": [
+  {
+   "kode": "32",
+   "nama": "Jawa Barat",
+   "status": "berdiri",
+   "tgl_pelantikan": "2026-01-30",
+   "ketua": "Fragaria Alfissima",
+   "sumber": "Deck Program Updates Rapat Pengurus 9 Juni 2026 (internal; peristiwa diumumkan publik di Bandung)",
+   "status_per": "2026-06-09"
+  },
+  {
+   "kode": "13",
+   "nama": "Sumatera Barat",
+   "status": "berdiri",
+   "tgl_pelantikan": "2026-02-06",
+   "ketua": "Firman Hidayat",
+   "sumber": "Deck Program Updates 9 Juni 2026, mengutip posmetropadang.co.id dan jurnalissumbar.com",
+   "status_per": "2026-06-09"
+  },
+  {
+   "kode": "21",
+   "nama": "Kepulauan Riau",
+   "status": "berdiri",
+   "masa_bakti": "2026-2028",
+   "sekretariat": "Kampus Politeknik Negeri Batam, Gedung Utama lt 3, Jl. Ahmad Yani, Teluk Tering, Batam Center",
+   "kontak_surel": "meti-kepri@gmail.com",
+   "bidang": [
+    "Kebijakan, regulasi, advokasi, kelembagaan dan kemitraan strategis",
+    "Teknologi, riset, inovasi dan pengembangan SDM",
+    "Industri, investasi, pembiayaan, pengembangan proyek dan rantai pasok",
+    "Energi kepulauan, lingkungan, sosial dan tata kelola"
+   ],
+   "catatan": "SK masih draft (progres 21 Jul 2026), susunan belum terisi; calon formatur berasal dari pengusaha, Dinas ESDM Kepri, UMRAH, Polibatam (nama tidak disalin). Dokumen: PLTS Pulau Sembur.",
+   "sumber": "Draft SK Kepengurusan METI Kepri 210726",
+   "status_per": "2026-07-21"
+  },
+  {
+   "kode": "12",
+   "nama": "Sumatera Utara",
+   "status": "berdiri",
+   "catatan": "Surat 0205/METI-KU/X/2026 (25 Okt 2026) memohon audiensi Gubernur pada 27 Okt 2026 dan menyebut rencana pelantikan pengurus METI Wilayah Sumut: status berdiri (deck MPR) vs pelantikan belum terlaksana per surat; perlu verifikasi pemilik.",
+   "sumber": "Surat METI audiensi Gubernur Sumut; deck MPR RI 5 Okt 2026",
+   "status_per": "2026-10-25"
+  },
+  {
+   "kode": "71",
+   "nama": "Sulawesi Utara",
+   "status": "berdiri",
+   "catatan": "Materi Ketua Umum untuk Renewable Energy Forum 2026 (keynote dan pemateri) tersedia; tanggal pelantikan tidak tertulis di materi.",
+   "sumber": "Berkas METI SULUT",
+   "status_per": "2026-10-05"
+  },
+  {
+   "kode": "11",
+   "nama": "Aceh",
+   "status": "berdiri",
+   "sumber": "Deck MPR RI hlm 4-5; tidak ada dokumen Aceh di folder",
+   "status_per": "2026-10-05"
+  }
+ ],
+ "ketua_wilayah_pusat": "Parlindungan Purba (Koordinator/Ketua METI Wilayah), wakil Eva Djauhari",
+ "sumber": [
+  "Arsip METI lokal pemilik (dibaca 8 Nov 2026): Panduan_Acara_Pelantikan_METI_Wilayah.pdf, METI Wilayah/*"
+ ]
+}

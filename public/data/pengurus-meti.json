@@ -1,6 +1,6 @@
 {
  "periode": "2026-2028",
- "sumber": "SK METI No. 0008/SK/METI/VIII/2026, dengan pembaruan Bidang Kerja 8 dan Bidang Kerja 9",
+ "sumber": "SK METI No. 0008/SK/METI/VIII/2026, dengan pembaruan Bidang Kerja 8 dan Bidang Kerja 9; Dewan Penasihat dan Dewan Pakar dilengkapi dari slide 2 Struktur Organisasi METI (arsip lokal)",
  "diambil": "2026-11-07",
  "unit": {
   "penasihat": [
@@ -13,6 +13,174 @@
    {
     "nama": "Brian Yuliarto",
     "jabatan": "Wakil Ketua Dewan Penasihat",
+    "foto": ""
+   },
+   {
+    "nama": "Muhammad Assegaf",
+    "jabatan": "Sekretaris Dewan Penasihat",
+    "foto": ""
+   },
+   {
+    "nama": "Ferry Juliantono",
+    "jabatan": "Anggota Dewan Penasihat",
+    "foto": ""
+   },
+   {
+    "nama": "Rosan Roeslani",
+    "jabatan": "Anggota Dewan Penasihat",
+    "foto": ""
+   },
+   {
+    "nama": "Rachmat Pambudy",
+    "jabatan": "Anggota Dewan Penasihat",
+    "foto": ""
+   },
+   {
+    "nama": "Dody Hanggodo",
+    "jabatan": "Anggota Dewan Penasihat",
+    "foto": ""
+   },
+   {
+    "nama": "Todotua Pasaribu",
+    "jabatan": "Anggota Dewan Penasihat",
+    "foto": ""
+   },
+   {
+    "nama": "Hanif Faisol Nurofiq",
+    "jabatan": "Anggota Dewan Penasihat",
+    "foto": ""
+   },
+   {
+    "nama": "Sudaryono",
+    "jabatan": "Anggota Dewan Penasihat",
+    "foto": ""
+   },
+   {
+    "nama": "Bambang Patijaya",
+    "jabatan": "Anggota Dewan Penasihat",
+    "foto": "",
+    "orang_id": "o_4f99fe937c"
+   },
+   {
+    "nama": "Agus Hermanto",
+    "jabatan": "Anggota Dewan Penasihat",
+    "foto": ""
+   },
+   {
+    "nama": "Satya Widya Yudha",
+    "jabatan": "Anggota Dewan Penasihat",
+    "foto": ""
+   },
+   {
+    "nama": "Pandu Patria Sjahrir",
+    "jabatan": "Anggota Dewan Penasihat",
+    "foto": ""
+   },
+   {
+    "nama": "Sigit Puji Santosa",
+    "jabatan": "Anggota Dewan Penasihat",
+    "foto": ""
+   },
+   {
+    "nama": "Burhanuddin Abdullah",
+    "jabatan": "Anggota Dewan Penasihat",
+    "foto": ""
+   },
+   {
+    "nama": "Mochamad Iriawan",
+    "jabatan": "Anggota Dewan Penasihat",
+    "foto": ""
+   },
+   {
+    "nama": "Darmawan Prasojdo",
+    "jabatan": "Anggota Dewan Penasihat",
+    "foto": ""
+   },
+   {
+    "nama": "Simon Aloysius Mantiri",
+    "jabatan": "Anggota Dewan Penasihat",
+    "foto": ""
+   },
+   {
+    "nama": "Suroso Isnandar",
+    "jabatan": "Anggota Dewan Penasihat",
+    "foto": "",
+    "orang_id": "o_da0236222d"
+   },
+   {
+    "nama": "Rizal Calvary Marimbo",
+    "jabatan": "Anggota Dewan Penasihat",
+    "foto": "",
+    "orang_id": "o_4c31ad4490"
+   },
+   {
+    "nama": "Agung Wicaksono",
+    "jabatan": "Anggota Dewan Penasihat",
+    "foto": ""
+   },
+   {
+    "nama": "Musa Bangun",
+    "jabatan": "Anggota Dewan Penasihat",
+    "foto": ""
+   },
+   {
+    "nama": "Ilham Akbar Habibie",
+    "jabatan": "Anggota Dewan Penasihat",
+    "foto": ""
+   },
+   {
+    "nama": "Surya Darma",
+    "jabatan": "Anggota Dewan Penasihat",
+    "foto": ""
+   },
+   {
+    "nama": "Hilmi Panigoro",
+    "jabatan": "Anggota Dewan Penasihat",
+    "foto": ""
+   },
+   {
+    "nama": "Sukmo Harsono",
+    "jabatan": "Anggota Dewan Penasihat",
+    "foto": ""
+   },
+   {
+    "nama": "Eka Satria",
+    "jabatan": "Anggota Dewan Penasihat",
+    "foto": ""
+   },
+   {
+    "nama": "A. Feiral Rizky Batubara",
+    "jabatan": "Anggota Dewan Penasihat",
+    "foto": ""
+   },
+   {
+    "nama": "M. Riza Husni",
+    "jabatan": "Anggota Dewan Penasihat",
+    "foto": ""
+   },
+   {
+    "nama": "Syamsul Bachri Yusuf",
+    "jabatan": "Anggota Dewan Penasihat",
+    "foto": ""
+   },
+   {
+    "nama": "Ardinanda Sinulingga",
+    "jabatan": "Anggota Dewan Penasihat",
+    "foto": ""
+   },
+   {
+    "nama": "Wishnu Wardhana",
+    "jabatan": "Anggota Dewan Penasihat",
+    "foto": ""
+   },
+   {
+    "nama": "Anindya Novyan Bakrie",
+    "jabatan": "Anggota Dewan Penasihat",
+    "foto": ""
+   },
+   {
+    "nama": "Shinta Widjaja Kamdani",
+    "jabatan": "Anggota Dewan Penasihat",
     "foto": ""
    }
   ],
@@ -138,6 +306,136 @@
     "nama": "Bambang Praptono",
     "jabatan": "Anggota Dewan Pakar",
     "foto": ""
+   },
+   {
+    "nama": "Widi Pancono",
+    "jabatan": "Anggota Dewan Pakar",
+    "foto": "",
+    "orang_id": "o_2e14a00c0d"
+   },
+   {
+    "nama": "Chairani Rachmatullah",
+    "jabatan": "Anggota Dewan Pakar",
+    "foto": "",
+    "orang_id": "o_d81787ea72"
+   },
+   {
+    "nama": "Mukhtasor",
+    "jabatan": "Anggota Dewan Pakar",
+    "foto": "",
+    "orang_id": "o_598d4aad77"
+   },
+   {
+    "nama": "Saleh Abdurrahman",
+    "jabatan": "Anggota Dewan Pakar",
+    "foto": "",
+    "orang_id": "o_77ba6ca840"
+   },
+   {
+    "nama": "Hardiv Situmeang",
+    "jabatan": "Anggota Dewan Pakar",
+    "foto": "",
+    "orang_id": "o_632d1e0e3d"
+   },
+   {
+    "nama": "Soeripno Martosaputro",
+    "jabatan": "Anggota Dewan Pakar",
+    "foto": "",
+    "orang_id": "o_b392cd9977"
+   },
+   {
+    "nama": "Arief Yunan",
+    "jabatan": "Anggota Dewan Pakar",
+    "foto": "",
+    "orang_id": "o_a4b1db0647"
+   },
+   {
+    "nama": "Arya Rezavidi",
+    "jabatan": "Anggota Dewan Pakar",
+    "foto": "",
+    "orang_id": "o_65494229ce"
+   },
+   {
+    "nama": "Fabby Tumiwa",
+    "jabatan": "Anggota Dewan Pakar",
+    "foto": "",
+    "orang_id": "o_d6fac3543f"
+   },
+   {
+    "nama": "Prijandaru Effendi",
+    "jabatan": "Anggota Dewan Pakar",
+    "foto": "",
+    "orang_id": "o_098a42b9a8"
+   },
+   {
+    "nama": "Kusetiadi Raharjo",
+    "jabatan": "Anggota Dewan Pakar",
+    "foto": "",
+    "orang_id": "o_3e7bac3640"
+   },
+   {
+    "nama": "Muhammad Abdul Kholiq",
+    "jabatan": "Anggota Dewan Pakar",
+    "foto": "",
+    "orang_id": "o_d91951ba4a"
+   },
+   {
+    "nama": "Jalal",
+    "jabatan": "Anggota Dewan Pakar",
+    "foto": "",
+    "orang_id": "o_ca344138b1"
+   },
+   {
+    "nama": "Alimin Ginting",
+    "jabatan": "Anggota Dewan Pakar",
+    "foto": "",
+    "orang_id": "o_6e6da0092c"
+   },
+   {
+    "nama": "Oki Muraza",
+    "jabatan": "Anggota Dewan Pakar",
+    "foto": ""
+   },
+   {
+    "nama": "Rachman Arief Dienaputra",
+    "jabatan": "Anggota Dewan Pakar",
+    "foto": ""
+   },
+   {
+    "nama": "Lala Wilaga",
+    "jabatan": "Anggota Dewan Pakar",
+    "foto": ""
+   },
+   {
+    "nama": "Agustin Peranginangin",
+    "jabatan": "Anggota Dewan Pakar",
+    "foto": ""
+   },
+   {
+    "nama": "Indra Maulana",
+    "jabatan": "Anggota Dewan Pakar",
+    "foto": ""
+   },
+   {
+    "nama": "Martha Maulidia",
+    "jabatan": "Anggota Dewan Pakar",
+    "foto": ""
+   },
+   {
+    "nama": "Nenen Rusnaeni",
+    "jabatan": "Anggota Dewan Pakar",
+    "foto": ""
+   },
+   {
+    "nama": "Yani Witjaksono",
+    "jabatan": "Anggota Dewan Pakar",
+    "foto": ""
+   },
+   {
+    "nama": "Sripeni Inten Cahyani",
+    "jabatan": "Anggota Dewan Pakar",
+    "foto": "",
+    "orang_id": "o_fd2abc2ff0"
    }
   ],
   "ketum": [
