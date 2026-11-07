@@ -2,7 +2,7 @@
 // Data dari R2 potret/anggota/<nama>.json; bila potret belum ada (atau R2 belum aktif) dipakai data contoh fiktif data/contoh/*.json
 // (KP K15: tanpa tombol dummy; fixture saja). D1 hanya lewat hak.js (laju). Tanpa impor dari worker.js (siklus).
 import * as hak from "./hak.js";
-import { Galat, bacaBody, cacheTepi, gagal, json, perlu } from "./util.js";
+import { Galat, RE_EMAIL, acak, bacaBody, cacheTepi, gagal, json, perlu } from "./util.js";
 import c_induk from "../data/contoh/induk.json" with { type: "json" };
 import c_kampus from "../data/contoh/kampus.json" with { type: "json" };
 import c_kontak from "../data/contoh/kontak.json" with { type: "json" };
@@ -319,17 +319,96 @@ async function potretBaru(req, env, ctx, p) {
   return json({ lapis: lapis[lapis.length - 1], dibangun_pada: pub.dibangun_pada, jumlah: baris.length, baris, ...extra }, 200, PRIVAT);
 }
 
-// Basis keanggotaan METI (DATA PRIBADI): lapis pengurus saja, hanya R2, tidak masuk BENDA_POTRET. Akses baca belum dijejak:
-// CHECK jejak.aksi (migrasi 0002) tidak memuat 'baca' dan jejakTulis memakainya; butuh migrasi (milik migrasi).
+// Basis keanggotaan METI (DATA PRIBADI): lapis pengurus saja, hanya R2, tidak masuk BENDA_POTRET.
+// Dasar R2 + log D1 anggota_ubah (tambah menambah, ubah menimpa kolom, hapus menyembunyikan), digabung per GET.
+// Baris dasar tanpa id diberi "b<indeks>"; indeks bergeser bila pipa potret membangun ulang (ponytail: id stabil dari pipa bila perlu).
+const JENIS_ANGGOTA = new Set(["individu", "utama", "perusahaan", "organisasi", "koperasi", "baru-registrasi"]);
+const STATUS_ANGGOTA = new Set(["aktif", "tidak-ditemukan", "nonaktif"]);
+const TAHUN_IURAN = /^20(2\d|30)$/;
+const RE_ID_ANGGOTA = /^(b\d{1,6}|m_[0-9a-f]{8,12}|am_[a-z0-9]{8,16})$/;
+const TEKS = { instansi: 200, jabatan: 200, provinsi: 100, wilayah: 100 };
+
+// Murni. Mengembalikan { data, kolom:{nama:pesan} }; tambah mewajibkan nama.
+export function periksaAnggota(b, tambah) {
+  const kolom = {}, data = {};
+  if (!b || typeof b !== "object" || Array.isArray(b)) return { data, kolom: { _: "Isian tidak sah." } };
+  const teks = (k, maks) => { const v = b[k]; if (v === undefined) return undefined; if (v === null) return ""; if (typeof v !== "string") { kolom[k] = "Isian harus berupa teks."; return undefined; } const w = v.trim(); if (w.length > maks) kolom[k] = `Maksimal ${maks} karakter.`; return w; };
+  const nama = teks("nama", 200);
+  if (nama !== undefined) { if (!nama) kolom.nama = "Nama wajib diisi."; else data.nama = nama; } else if (tambah) kolom.nama = "Nama wajib diisi.";
+  if (b.jenis !== undefined) { const j = String(b.jenis).trim().toLowerCase().replace(/\s+/g, "-"); if (JENIS_ANGGOTA.has(j)) data.jenis = j; else kolom.jenis = "Jenis keanggotaan tidak dikenal."; }
+  else if (tambah) kolom.jenis = "Jenis keanggotaan wajib dipilih.";
+  if (b.status !== undefined) { if (STATUS_ANGGOTA.has(b.status)) data.status = b.status; else kolom.status = "Status tidak dikenal."; }
+  for (const [k, m] of Object.entries(TEKS)) { const v = teks(k, m); if (v !== undefined && !kolom[k]) data[k] = v; }
+  const surel = teks("surel", 120);
+  if (surel !== undefined && !kolom.surel) { if (surel && !RE_EMAIL.test(surel)) kolom.surel = "Format surel tidak sah."; else data.surel = surel.toLowerCase(); }
+  const tel = teks("telepon", 25);
+  if (tel !== undefined && !kolom.telepon) { if (tel && !/^[0-9+()\-\s.]{5,25}$/.test(tel)) kolom.telepon = "Telepon hanya angka, spasi, +, -, titik, dan kurung."; else data.telepon = tel; }
+  const situs = teks("situs", 200);
+  if (situs !== undefined && !kolom.situs) {
+    let ok = situs === "";
+    if (!ok) try { const u = new URL(situs); ok = u.protocol === "https:" && !u.username && !u.password; } catch { /* tak sah */ }
+    if (ok) data.situs = situs; else kolom.situs = "Situs harus berupa alamat https://.";
+  }
+  if (b.iuran !== undefined) {
+    const o = b.iuran;
+    if (!o || typeof o !== "object" || Array.isArray(o)) kolom.iuran = "Iuran tidak sah.";
+    else { const h = {}; for (const [th, v] of Object.entries(o)) { if (!TAHUN_IURAN.test(th) || typeof v !== "boolean") { kolom.iuran = "Iuran per tahun harus ya atau tidak (2022-2030)."; break; } h[th] = v; } if (!kolom.iuran) data.iuran = h; }
+  }
+  const catatan = teks("catatan", 500);
+  return { data, kolom, catatan: catatan || null };
+}
+
+const NONAKTIF = () => json({ galat: "fitur_belum_aktif", kode: "fitur_belum_aktif" }, 503, PRIVAT);
+const dasarBaris = (d) => (Array.isArray(d) ? d : d.baris || []);
+export function gabungAnggota(dasar, log) {
+  const baris = new Map(dasar.map((r, i) => [r.id ?? "b" + i, { ...r, id: r.id ?? "b" + i }]));
+  for (const l of log) {
+    const x = l.data ? JSON.parse(l.data) : {};
+    if ("situs" in x) x.situs = x.situs ? [x.situs] : []; // layar membaca situs sebagai larik
+    if (l.aksi === "hapus") baris.delete(l.anggota_id);
+    else if (l.aksi === "tambah") baris.set(l.anggota_id, { ...x, id: l.anggota_id, iuran: iuranNilai(x.iuran, {}), diubah: true });
+    else { const r = baris.get(l.anggota_id); if (r) baris.set(l.anggota_id, { ...r, ...x, iuran: x.iuran ? iuranNilai(x.iuran, r.iuran) : r.iuran, diubah: true }); }
+  }
+  return [...baris.values()];
+}
+const iuranNilai = (baru, lama) => { const h = { ...(lama || {}) }; for (const [th, v] of Object.entries(baru || {})) h[th] = v ? "1" : "0"; return h; };
+
 const anggotaMeti = async (req, env, ctx, p) => {
-  perlu(p, PENGURUS);
+  const akun = perlu(p, PENGURUS);
   const o = env.BERKAS ? await env.BERKAS.get("potret/pengurus/anggota_meti.json").catch(() => null) : null;
   if (!o) throw new Galat("tidak_ditemukan");
-  return new Response(o.body, { status: 200, headers: JSON_HDR });
+  const d = await o.json(), log = await hak.anggotaLog(env, akun), baris = gabungAnggota(dasarBaris(d), log ?? []);
+  return json({ ...(Array.isArray(d) ? {} : d), baris, jumlah: baris.length, penyunting: log !== null }, 200, JSON_HDR);
+};
+
+const keadaanId = async (env, akun, id) => { // "ada" | "hapus" | null menurut log; dasar "b*" dianggap ada
+  const log = (await hak.anggotaLog(env, akun)) ?? [];
+  let ada = !id.startsWith("am_");
+  for (const l of log) if (l.anggota_id === id) ada = l.aksi !== "hapus";
+  return ada;
+};
+const tulisAnggota = async (req, env, p, aksi) => {
+  const akun = perlu(p, PENGURUS);
+  if ((await hak.anggotaLog(env, akun)) === null) return NONAKTIF();
+  const id = aksi === "tambah" ? "am_" + acak(6) : p.params.id;
+  if (!RE_ID_ANGGOTA.test(id)) throw new Galat("tidak_ditemukan");
+  let data = null, catatan = null;
+  if (aksi !== "hapus") {
+    const v = periksaAnggota(await bacaBody(req, 16384), aksi === "tambah");
+    if (Object.keys(v.kolom).length) return json({ galat: "Masukan tidak sah.", kode: "masukan_salah", kolom: v.kolom }, 422, PRIVAT);
+    if (aksi === "ubah" && !Object.keys(v.data).length) return json({ galat: "Masukan tidak sah.", kode: "masukan_salah", kolom: { _: "Tidak ada perubahan." } }, 422, PRIVAT);
+    data = v.data; catatan = v.catatan;
+  }
+  if (aksi !== "tambah" && !(await keadaanId(env, akun, id))) throw new Galat("tidak_ditemukan");
+  await hak.anggotaCatat(env, akun, { anggotaId: id, aksi, data, catatan });
+  return json({ ok: true, id }, aksi === "tambah" ? 201 : 200, PRIVAT);
 };
 
 export const rute = {
   "GET /api/admin/anggota-meti": anggotaMeti,
+  "POST /api/admin/anggota-meti": (req, env, ctx, p) => tulisAnggota(req, env, p, "tambah"),
+  "PATCH /api/admin/anggota-meti/:id": (req, env, ctx, p) => tulisAnggota(req, env, p, "ubah"),
+  "DELETE /api/admin/anggota-meti/:id": (req, env, ctx, p) => tulisAnggota(req, env, p, "hapus"),
   "GET /api/direktori": induk,
   "GET /api/direktori/kampus": kampus,
   "GET /api/direktori/kontak": kontak,

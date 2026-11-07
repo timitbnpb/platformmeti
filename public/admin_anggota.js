@@ -1,13 +1,18 @@
 /* /admin: tab Anggota METI. Data pribadi: dimuat dari /api/admin/anggota-meti (hanya pengurus ke atas), disaring dan diurut di peramban.
    INP: chrome (nilai filter, tombol) berubah seketika; yang dirender hanya satu halaman (50 baris) lewat nanti(). Kontak tersamar sampai "tampilkan". */
 import { t, ada, angka } from "/i18n.js";
-import { esc, api, nanti, debounce, hantuHtml, kosongHtml, galatHtml, ikon } from "/inti/umum.js";
+import { esc, api, nanti, debounce, hantuHtml, kosongHtml, galatHtml, galatTeks, ikon } from "/inti/umum.js";
 import { cariHtml, pilihHtml, hitungHtml } from "/inti/komponen.js";
 import { samarKontak } from "/inti/samar.js";
+import { formHtml, bacaForm, tampilGalat } from "/admin_anggota_form.js";
 
 const BARIS = 50;
 const TAHUN = ["2022", "2023", "2024", "2025"];
 const JENIS = ["individu", "utama", "perusahaan", "organisasi", "koperasi", "baru-registrasi"];
+const ORG = ["utama", "perusahaan", "organisasi", "koperasi"];
+const IKON_SUB = { "": "daftar", individu: "orang", utama: "perisai", perusahaan: "direktori", organisasi: "rantai", koperasi: "wilayah", "baru-registrasi": "tambah" };
+const aman = (u) => (/^https?:\/\//i.test(u) ? u : "");
+const awal = (n) => String(n || "").replace(/^(pt|cv|ud)\.?\s+/i, "").split(/\s+/).filter(Boolean).slice(0, 2).map((w) => w[0]).join("").toUpperCase();
 const STATUS = ["aktif", "tidak-ditemukan", "nonaktif"];
 const URUT = ["no_anggota", "nama", "jenis", "status"];
 
@@ -18,17 +23,18 @@ const cmp = (a, b) => String(a || "").localeCompare(String(b || ""), undefined, 
 const csvSel = (v) => { let s = String(v ?? ""); if (/^[=+\-@\t\r]/.test(s)) s = "'" + s; return '"' + s.replace(/"/g, '""') + '"'; };
 
 export function panelAnggota(panel, { boleh, kabari }) {
-  const S = { semua: null, cari: "", jenis: "", status: "", iuran: "", urut: "no_anggota", arah: 1, hal: 1, buka: new Set(), saring: [], ctl: null, tampilNo: true };
+  const S = { semua: null, cari: "", jenis: "", status: "", iuran: "", urut: "no_anggota", arah: 1, hal: 1, buka: new Set(), konfirm: null, saring: [], ctl: null, tampilNo: true };
   const $ = (id) => panel.querySelector("#" + id);
 
   panel.innerHTML = `<div id="mHost"></div>`;
   const host = panel.firstElementChild;
   host.addEventListener("input", (e) => { if (e.target.id === "mCari") { S.cari = e.target.value.trim().toLowerCase(); cariTunda(); } });
   host.addEventListener("change", (e) => {
-    const k = { mJenis: "jenis", mStatus: "status", mIuran: "iuran" }[e.target.id];
-    if (k) { S[k] = e.target.value; S.hal = 1; tandaStrip(); nanti(isiTabel); }
+    const k = { mStatus: "status", mIuran: "iuran" }[e.target.id];
+    if (k) { S[k] = e.target.value; S.hal = 1; nanti(isiTabel); }
   });
   host.addEventListener("click", klik);
+  host.addEventListener("submit", (e) => { if (e.target.id === "mFormIsi") { e.preventDefault(); simpan(e.target); } });
   const cariTunda = debounce(() => { S.hal = 1; isiTabel(); });
   muat();
 
@@ -39,6 +45,7 @@ export function panelAnggota(panel, { boleh, kabari }) {
     try {
       const d = await api("/api/admin/anggota-meti", { signal: S.ctl.signal });
       S.semua = Array.isArray(d) ? d : d.baris || [];
+      S.penyunting = !Array.isArray(d) && d.penyunting === true;
       S.semua.forEach((r, i) => { r._i = i; r._k = [r.nama, r.nama_lama, r.instansi, r.surel].join(" ").toLowerCase(); });
       S.tampilNo = S.semua.filter((r) => r.no_anggota).length / (S.semua.length || 1) >= 0.1;
     } catch (e) {
@@ -51,8 +58,8 @@ export function panelAnggota(panel, { boleh, kabari }) {
 
   /* satu baris ringkasan: Total, Aktif, sebaran jenis (batang tersegmen), iuran per tahun (4 kolom mini); tiap bagian menyaring */
   function ringkas() {
-    const a = S.semua, n = a.length || 1, aktif = a.filter((r) => r.status === "aktif").length;
-    const jum = JENIS.map((j) => [j, a.filter((r) => r.jenis === j).length]).filter(([, c]) => c);
+    const sem = S.semua, a = S.jenis ? sem.filter((r) => r.jenis === S.jenis) : sem, n = sem.length || 1, aktif = a.filter((r) => r.status === "aktif").length;
+    const jum = JENIS.map((j) => [j, sem.filter((r) => r.jenis === j).length]).filter(([, c]) => c);
     const iur = TAHUN.map((th) => [th, a.filter((r) => bayar(r, th)).length]), maks = Math.max(1, ...iur.map(([, c]) => c));
     const kartu = (k, c, v, aksi) => `<button type="button" class="jm-adm-s" data-m="f" data-k="${aksi}" data-v="${v}" aria-pressed="false"><strong>${esc(angka(c))}</strong><small>${esc(k)}</small></button>`;
     return kartu(t("adm.anggota.total"), a.length, "", "reset") + kartu(t("adm.anggota.aktif"), aktif, "aktif", "status")
@@ -65,24 +72,37 @@ export function panelAnggota(panel, { boleh, kabari }) {
     host.querySelectorAll('.jm-adm-strip [data-m="f"]').forEach((b) => b.setAttribute("aria-pressed", String(b.dataset.k !== "reset" && S[b.dataset.k] === b.dataset.v)));
   }
 
+  function tabsHtml() {
+    const hit = (j) => (j ? S.semua.filter((r) => r.jenis === j).length : S.semua.length);
+    return `<div class="jm-tab jm-adm-sub" role="tablist" aria-label="${esc(t("adm.anggota.f.jenis"))}">${["", ...JENIS].filter((j) => !j || hit(j)).map((j) => `<button type="button" role="tab" data-m="sub" data-v="${j}" aria-selected="${S.jenis === j}">${ikon(IKON_SUB[j], 18)}<span>${esc(j ? label("adm.anggota.jenis.", j) : t("adm.anggota.sub.semua"))}</span><b class="jm-adm-n">${esc(angka(hit(j)))}</b></button>`).join("")}</div>`;
+  }
+
+  function isiStrip() {
+    const st = $("mStrip");
+    if (!st) return;
+    st.innerHTML = ringkas();
+    st.querySelectorAll(".jm-adm-seg[data-p]").forEach((el) => { el.style.flexGrow = el.dataset.p; });
+    st.querySelectorAll(".jm-adm-iur [data-p] b").forEach((el) => { el.style.height = el.parentNode.dataset.p + "%"; });
+    tandaStrip();
+  }
+
   function rangka() {
-    const opsi = (daftar, awalan, semua) => [["", t(semua)], ...daftar.map((v) => [v, label(awalan, v)])];
     host.innerHTML = `
-      <div class="jm-adm-strip">${ringkas()}</div>
+      ${tabsHtml()}
+      <div class="jm-adm-strip" id="mStrip"></div>
       <div class="jm-saring jm-adm-saring">
         ${cariHtml({ id: "mCari", label: t("adm.anggota.cari") })}
-        ${pilihHtml({ id: "mJenis", ikon: "jenis", label: t("adm.anggota.f.jenis"), opsi: opsi(JENIS, "adm.anggota.jenis.", "adm.anggota.semua_jenis"), nilai: S.jenis })}
-        ${pilihHtml({ id: "mStatus", ikon: "status", label: t("adm.anggota.f.status"), opsi: opsi(STATUS, "adm.anggota.status.", "adm.anggota.semua_status"), nilai: S.status })}
+        ${pilihHtml({ id: "mStatus", ikon: "status", label: t("adm.anggota.f.status"), opsi: [["", t("adm.anggota.semua_status")], ...STATUS.map((v) => [v, label("adm.anggota.status.", v)])], nilai: S.status })}
         ${pilihHtml({ id: "mIuran", ikon: "tahun", label: t("adm.anggota.f.iuran"), opsi: [["", t("adm.anggota.semua_iuran")], ...TAHUN.map((th) => [th, t("adm.anggota.iuran_th", { th })])], nilai: S.iuran })}
+        ${S.penyunting ? `<button type="button" class="jm-tbl jm-tbl-utama" data-m="baru">${ikon("tambah", 18)}${esc(t("adm.anggota.form.tambah"))}</button>` : ""}
         ${boleh ? `<button type="button" class="jm-tbl" data-m="csv">${ikon("salin", 18)}${esc(t("adm.anggota.csv"))}</button>` : ""}
         ${hitungHtml({ id: "mHitung", teks: "" })}
       </div>
       <div id="mDaftar" aria-live="polite"></div>
       <div class="jm-hal" id="mHal"></div>
-      <dialog class="jm-lembar" id="mLembar" aria-labelledby="mLembarJudul"></dialog>`;
-    host.querySelectorAll(".jm-adm-seg[data-p]").forEach((el) => { el.style.flexGrow = el.dataset.p; });
-    host.querySelectorAll(".jm-adm-iur [data-p] b").forEach((el) => { el.style.height = el.parentNode.dataset.p + "%"; });
-    tandaStrip();
+      <dialog class="jm-lembar" id="mLembar" aria-labelledby="mLembarJudul"></dialog>
+      <dialog class="jm-modal" id="mForm" aria-labelledby="mFormJudul"></dialog>`;
+    isiStrip();
     isiTabel();
   }
 
@@ -100,6 +120,10 @@ export function panelAnggota(panel, { boleh, kabari }) {
       + (sub ? `<small>${esc(sub)}</small>` : "");
   };
   const pilJenis = (j) => `<span class="jm-pil jm-adm-jn${j === "utama" ? " jm-pil-ok" : ""}">${esc(label("adm.anggota.jenis.", j))}</span>`;
+  const orgTd = (r) => {
+    const nm = r.org_id ? `<a href="/direktori?tampil=lembaga&amp;id=${encodeURIComponent(r.org_id)}"><strong>${esc(r.nama)}</strong></a>` : `<button type="button" data-m="profil" data-i="${r._i}" aria-label="${esc(t("adm.anggota.buka", { nama: r.nama }))}"><strong>${esc(r.nama)}</strong></button>`;
+    return `<span class="jm-adm-lg"><span class="jm-adm-ava" aria-hidden="true">${esc(awal(r.nama))}</span><span class="jm-adm-id">${nm}${r.nama_lama ? `<small class="jm-adm-lama">${esc(t("adm.anggota.dahulu", { nama: r.nama_lama }))}</small>` : ""}</span></span>`;
+  };
   const centang = (r, th) => (bayar(r, th) ? `${ikon("centang", 16)}<span class="sr">${esc(t("adm.anggota.lunas"))}</span>` : `<span aria-hidden="true">-</span><span class="sr">${esc(t("adm.anggota.belum"))}</span>`);
 
   function isiTabel() {
@@ -112,20 +136,34 @@ export function panelAnggota(panel, { boleh, kabari }) {
     if (hitung) hitung.textContent = t("adm.anggota.n", { n: angka(n) });
     if (!n) daftar.innerHTML = kosongHtml("jm.kosong.cocok", { data: "reset", kunci: "jm.kosong.reset" });
     else {
-      const urutTh = (k, kunci) => `<th scope="col" aria-sort="${S.urut === k ? (S.arah > 0 ? "ascending" : "descending") : "none"}"><button type="button" class="jm-adm-urut" data-m="urut" data-k="${k}">${esc(t(kunci))}</button></th>`;
-      const kepala = (S.tampilNo ? urutTh("no_anggota", "adm.anggota.k.no") : "") + urutTh("nama", "adm.anggota.k.nama") + urutTh("jenis", "adm.anggota.f.jenis") + urutTh("status", "adm.anggota.f.status")
-        + TAHUN.map((th) => `<th scope="col">${esc(th)}</th>`).join("") + `<th scope="col">${esc(t("adm.anggota.k.kontak"))}</th>`;
-      const baris = S.saring.slice((S.hal - 1) * BARIS, S.hal * BARIS).map((r) => {
-        const terbuka = S.buka.has(r._i), em = r.surel, hp = [r.seluler, r.telepon].filter(Boolean).join(" / ");
-        const kontak = hp || em
+      const org = ORG.includes(S.jenis), semuaJ = !S.jenis;
+      const kontakTd = (r) => {
+        const terbuka = S.buka.has(r._i), em = r.surel, hp = [r.seluler, r.telepon, r.hotline].filter(Boolean).join(" / ");
+        return hp || em
           ? `<span class="jm-adm-kt">${em ? `<span>${esc(terbuka ? em : samarKontak(em))}</span>` : ""}${hp ? `<small>${esc(terbuka ? hp : samarKontak(hp))}</small>` : ""}</span><button type="button" class="jm-tbl jm-tbl-kecil" data-m="tampil" data-i="${r._i}" aria-pressed="${terbuka}">${esc(t(terbuka ? "adm.anggota.sembunyi" : "adm.anggota.tampilkan"))}</button>` : "-";
-        return `<tr data-i="${r._i}">${S.tampilNo ? `<td class="jm-nowrap" data-l="${esc(t("adm.anggota.k.no"))}">${esc(r.no_anggota || "-")}</td>` : ""}
-          <td class="jm-adm-id" data-l="${esc(t("adm.anggota.k.nama"))}">${identitas(r)}</td>
-          <td data-l="${esc(t("adm.anggota.f.jenis"))}">${pilJenis(r.jenis)}</td>
-          <td data-l="${esc(t("adm.anggota.f.status"))}"><span class="jm-pil ${r.status === "aktif" ? "jm-pil-ok" : r.status === "nonaktif" ? "jm-pil-bad" : "jm-pil-warn"}">${esc(label("adm.anggota.status.", r.status))}</span></td>
-          ${TAHUN.map((th) => `<td class="jm-adm-cek" data-l="${esc(th)}">${centang(r, th)}</td>`).join("")}
-          <td class="jm-adm-kontak" data-l="${esc(t("adm.anggota.k.kontak"))}">${kontak}</td></tr>`;
-      }).join("");
+      };
+      const statusTd = (r) => `<span class="jm-pil ${r.status === "aktif" ? "jm-pil-ok" : r.status === "nonaktif" ? "jm-pil-bad" : "jm-pil-warn"}">${esc(label("adm.anggota.status.", r.status))}</span>`;
+      const situsTd = (r) => (r.situs || []).map(aman).filter(Boolean).slice(0, 2).map((u) => `<a href="${esc(u)}" target="_blank" rel="noopener noreferrer" aria-label="${esc(t("adm.anggota.k.situs"))}" title="${esc(u)}">${ikon("tautan", 18)}</a>`).join("") || "-";
+      const aksiTd = (r) => (S.konfirm === r._i
+        ? `<span class="jm-adm-konfirm" role="alert">${esc(t("adm.anggota.hapus_tanya", { nama: r.nama }))}<button type="button" class="jm-tbl jm-tbl-kecil jm-tbl-bahaya" data-m="hapus-ya" data-i="${r._i}">${esc(t("adm.anggota.hapus_ya"))}</button><button type="button" class="jm-tbl jm-tbl-kecil" data-m="hapus-batal">${esc(t("jm.batal"))}</button></span>`
+        : `<span class="jm-adm-acts"><button type="button" class="jm-tbl jm-tbl-kecil" data-m="ubah" data-i="${r._i}" aria-label="${esc(t("adm.anggota.ubah_aksi", { nama: r.nama }))}">${ikon("ubah", 16)}</button><button type="button" class="jm-tbl jm-tbl-kecil jm-tbl-bahaya" data-m="hapus" data-i="${r._i}" aria-label="${esc(t("adm.anggota.hapus_aksi", { nama: r.nama }))}">${ikon("tutup", 16)}</button></span>`);
+      const K = (kunci, td, o = {}) => ({ kunci, td, ...o });
+      const kol = [
+        ...(S.tampilNo && !org ? [K("adm.anggota.k.no", (r) => esc(r.no_anggota || "-"), { k: "no_anggota", kls: "jm-nowrap" })] : []),
+        K("adm.anggota.k.nama", org ? orgTd : identitas, { k: "nama", kls: "jm-adm-id" }),
+        ...(org ? [K("adm.anggota.k.pic", (r) => esc(r.pic || "-"))] : []),
+        ...(semuaJ ? [K("adm.anggota.f.jenis", (r) => pilJenis(r.jenis), { k: "jenis" })] : []),
+        K("adm.anggota.k.kontak", kontakTd, { kls: "jm-adm-kontak" }),
+        ...(org ? [K("adm.anggota.k.situs", situsTd, { kls: "jm-adm-cek" })] : []),
+        ...TAHUN.map((th) => K(th, (r) => centang(r, th), { th: 1, kls: "jm-adm-cek" })),
+        K("adm.anggota.f.status", statusTd, { k: "status" }),
+        ...(S.penyunting ? [K("adm.anggota.k.aksi", aksiTd)] : []),
+      ];
+      const kepala = kol.map((c) => (c.k
+        ? `<th scope="col" aria-sort="${S.urut === c.k ? (S.arah > 0 ? "ascending" : "descending") : "none"}"><button type="button" class="jm-adm-urut" data-m="urut" data-k="${c.k}">${esc(c.th ? c.kunci : t(c.kunci))}</button></th>`
+        : `<th scope="col">${esc(c.th ? c.kunci : t(c.kunci))}</th>`)).join("");
+      const baris = S.saring.slice((S.hal - 1) * BARIS, S.hal * BARIS).map((r) =>
+        `<tr data-i="${r._i}">${kol.map((c) => `<td${c.kls ? ` class="${c.kls}"` : ""} data-l="${esc(c.th ? c.kunci : t(c.kunci))}">${c.td(r)}</td>`).join("")}</tr>`).join("");
       daftar.innerHTML = `<div class="jm-gulir"><table class="jm-tabel jm-adm-tabel"><thead><tr>${kepala}</tr></thead><tbody>${baris}</tbody></table></div>`;
     }
     $("mHal").innerHTML = `<button type="button" class="jm-tbl jm-tbl-kecil" data-m="hal-" ${S.hal <= 1 ? "disabled" : ""} aria-label="${esc(t("jm.sebelumnya"))}">${ikon("panah-kiri", 18)}</button>
@@ -139,24 +177,24 @@ export function panelAnggota(panel, { boleh, kabari }) {
     const dir = r.org_id ? `<a class="jm-tbl" href="/direktori?tampil=lembaga&amp;id=${encodeURIComponent(r.org_id)}">${ikon("direktori", 18)}${esc(t("adm.anggota.ke_direktori"))}</a>` : "";
     return `<header><div><h2 id="mLembarJudul">${esc(r.nama)}</h2>${r.nama_lama ? `<small class="jm-adm-lama">${esc(t("adm.anggota.dahulu", { nama: r.nama_lama }))}</small>` : ""}<p>${pilJenis(r.jenis)} <span class="jm-pil ${r.status === "aktif" ? "jm-pil-ok" : r.status === "nonaktif" ? "jm-pil-bad" : "jm-pil-warn"}">${esc(label("adm.anggota.status.", r.status))}</span></p></div>
       <button type="button" class="jm-tbl jm-tbl-kecil" data-m="tutup" aria-label="${esc(t("jm.tutup"))}">${ikon("tutup", 18)}</button></header>
-      <dl>${bar("adm.anggota.k.no", r.no_anggota)}${bar("adm.anggota.k.tahun", r.tahun_daftar)}${bar("adm.anggota.k.instansi", r.instansi)}${bar("adm.anggota.k.jabatan", r.jabatan)}${bar("adm.anggota.k.alamat", r.alamat)}${bar("adm.anggota.k.surel", r.surel)}${bar("adm.anggota.k.seluler", r.seluler)}${bar("adm.anggota.k.telepon", r.telepon)}${bar("adm.anggota.k.faks", r.faks)}</dl>
+      <dl>${bar("adm.anggota.k.no", r.no_anggota)}${bar("adm.anggota.k.tahun", r.tahun_daftar)}${bar("adm.anggota.k.instansi", r.instansi)}${bar("adm.anggota.k.jabatan", r.jabatan)}${bar("adm.anggota.k.alamat", r.alamat)}${bar("adm.anggota.k.surel", r.surel)}${bar("adm.anggota.k.seluler", r.seluler)}${bar("adm.anggota.k.telepon", r.telepon)}${bar("adm.anggota.k.faks", r.faks)}${bar("adm.anggota.k.hotline", r.hotline)}${bar("adm.anggota.k.pic", r.pic)}${bar("adm.anggota.k.situs", (r.situs || []).filter(aman).join(" "))}</dl>
       <h3>${esc(t("adm.anggota.riwayat"))}</h3><ul class="jm-adm-riwayat">${TAHUN.map((th) => `<li class="${bayar(r, th) ? "jm-adm-ok" : ""}"><span>${th}</span>${centang(r, th)}</li>`).join("")}</ul>${dir}`;
   }
 
   function csv() {
-    const kol = ["no_anggota", "jenis", "status", "tahun_daftar", "nama", "nama_lama", "jabatan", "instansi", "telepon", "seluler", "surel"];
+    const kol = ["no_anggota", "jenis", "status", "tahun_daftar", "nama", "nama_lama", "pic", "jabatan", "instansi", "telepon", "seluler", "hotline", "surel"];
     const baris = [[...kol, ...TAHUN.map((th) => "iuran_" + th)].map(csvSel).join(",")]
       .concat(S.saring.map((r) => [...kol.map((k) => r[k]), ...TAHUN.map((th) => (bayar(r, th) ? 1 : 0))].map(csvSel).join(",")));
     const a = document.createElement("a");
     a.href = URL.createObjectURL(new Blob(["﻿" + baris.join("\r\n")], { type: "text/csv;charset=utf-8" }));
-    a.download = "anggota-meti.csv";
+    a.download = "anggota-meti" + (S.jenis ? "-" + S.jenis : "") + ".csv";
     a.click();
     setTimeout(() => URL.revokeObjectURL(a.href), 1000);
   }
 
   function klik(e) {
     const d = e.target;
-    if (d.id === "mLembar") { d.close(); return; }
+    if (d.id === "mLembar" || d.id === "mForm") { d.close(); return; }
     const b = d.closest("button");
     if (!b) {
       const tr = d.closest("tr[data-i]");
@@ -170,9 +208,10 @@ export function panelAnggota(panel, { boleh, kabari }) {
         const k = b.dataset.k;
         if (k === "reset") S.jenis = S.status = S.iuran = ""; else S[k] = S[k] === b.dataset.v ? "" : b.dataset.v;
         S.hal = 1;
-        for (const [id, kk] of [["mJenis", "jenis"], ["mStatus", "status"], ["mIuran", "iuran"]]) $(id).value = S[kk];
-        tandaStrip(); nanti(isiTabel); break;
+        for (const [id, kk] of [["mStatus", "status"], ["mIuran", "iuran"]]) $(id).value = S[kk];
+        ubahSub(); break;
       }
+      case "sub": S.jenis = b.dataset.v; S.hal = 1; ubahSub(); break;
       case "profil": bukaProfil(Number(b.dataset.i)); break;
       case "tutup": $("mLembar").close(); break;
       case "tampil": { const i = Number(b.dataset.i); S.buka.has(i) ? S.buka.delete(i) : S.buka.add(i); nanti(isiTabel); break; }
@@ -180,7 +219,52 @@ export function panelAnggota(panel, { boleh, kabari }) {
       case "hal-": S.hal = Math.max(1, S.hal - 1); nanti(isiTabel); break;
       case "hal+": S.hal += 1; nanti(isiTabel); break;
       case "csv": if (boleh) csv(); break;
+      case "baru": bukaForm(null); break;
+      case "ubah": bukaForm(S.semua[Number(b.dataset.i)]); break;
+      case "form-tutup": $("mForm").close(); break;
+      case "hapus": S.konfirm = Number(b.dataset.i); nanti(isiTabel); break;
+      case "hapus-batal": S.konfirm = null; nanti(isiTabel); break;
+      case "hapus-ya": hapus(S.semua[Number(b.dataset.i)]); break;
     }
+  }
+
+  /* chrome (tab, pil strip) seketika; strip dan tabel berat ditunda */
+  function ubahSub() {
+    host.querySelectorAll('.jm-adm-sub [role="tab"]').forEach((x) => x.setAttribute("aria-selected", String(x.dataset.v === S.jenis)));
+    tandaStrip();
+    nanti(() => { isiStrip(); isiTabel(); });
+  }
+
+  /* tambah/ubah/hapus: server menghakimi; layar memuat ulang daftar lalu mengabari */
+  function bukaForm(r) {
+    const dlg = $("mForm");
+    if (!dlg) return;
+    dlg.innerHTML = formHtml(r, { jenis: JENIS, status: STATUS, bayar });
+    if (!dlg.open) dlg.showModal();
+    dlg.querySelector("#f_nama").focus();
+  }
+  async function simpan(form) {
+    const { badan, galat } = bacaForm(form);
+    tampilGalat(form, galat);
+    if (Object.keys(galat).length) return;
+    const id = form.dataset.id, kirim = form.querySelector("#mFormKirim");
+    kirim.disabled = true;
+    try {
+      await api(id ? "/api/admin/anggota-meti/" + encodeURIComponent(id) : "/api/admin/anggota-meti", { metode: id ? "PATCH" : "POST", badan });
+    } catch (e) {
+      kirim.disabled = false;
+      form.querySelector("#g__").textContent = galatTeks(e.kode || "umum");
+      return;
+    }
+    $("mForm").close();
+    kabari("ok", t(id ? "adm.anggota.ubah_ok" : "adm.anggota.tambah_ok"));
+    muat();
+  }
+  async function hapus(r) {
+    S.konfirm = null;
+    try { await api("/api/admin/anggota-meti/" + encodeURIComponent(r.id), { metode: "DELETE" }); } catch (e) { kabari("galat", galatTeks(e.kode || "umum")); nanti(isiTabel); return; }
+    kabari("ok", t("adm.anggota.hapus_ok"));
+    muat();
   }
 
   function bukaProfil(i) {

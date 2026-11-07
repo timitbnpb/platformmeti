@@ -59,9 +59,7 @@ const ikTek = (k) => IKT[k] || ikon(TEMA_IKON[k] || "tek-listrik", 18);
 const klsTek = (k) => "jm-tek-" + (TEK_WARNA.has(k) ? k : "lain");
 const inisialMedia = (m) => (String(m).replace(/^www\./, "").split(".")[0].replace(/[^a-z0-9]/gi, "").slice(0, 2) || "?").toUpperCase();
 const PROGRAM = { "plts-100gw": [/100\s*GW/i, "100 GW"], b50: [/\bB-?50\b|biodiesel/i, "B50"], e20: [/\bE-?20\b|etanol/i, "E20"], jetp: [/\bJETP\b/i, "JETP"], wte: [/\bPSEL\b|waste to energy|\bWtE\b|sampah.{0,25}(energi|listrik)|(energi|listrik).{0,25}sampah/i, "sampah"], ruptl: [/RUPTL/i, "RUPTL"], psn: [/\bPSN\b|Proyek Strategis Nasional/i, "PSN"] };
-const JENIS_REG = { uu: "uu", perpres: "perpres", pp: "pp", permen: "permen", perppu: "perppu", keppres: "keppres", inpres: "inpres", kepmen: "kepmen" };
-const RX_REG = /\b(UU|Perpres|PP|Permen|Perppu|Keppres|Inpres|Kepmen)\s*(?:ESDM\s*)?(?:No\.?|Nomor)?\s*(\d{1,3})\s*(?:\/|\s*Tahun\s*)\s*(\d{4})/gi;
-const regulasiDisebut = () => { const m = new Map(); for (const r of B) for (const x of r.judul.matchAll(RX_REG)) { const g = REG.find((q) => q.jenis === JENIS_REG[x[1].toLowerCase()] && String(q.nomor) === x[2] && String(q.tahun) === x[3]); if (g) m.set(g.id, { g, n: (m.get(g.id)?.n || 0) + 1 }); } return [...m.values()].sort((a, b) => b.n - a.n); };
+const regulasiDisebut = () => { const m = new Map(); for (const r of B) for (const id of r.regulasi_ids || []) m.set(id, (m.get(id) || 0) + 1); return [...m].map(([id, n]) => ({ g: REG.find((q) => q.id === id), n })).filter((x) => x.g).sort((a, b) => b.n - a.n); };
 /** Perubahan 7 hari terakhir terhadap 7 hari sebelumnya (kosong bila sebelumnya nol). */
 const tren = (f) => { const ak = Date.parse(B[0].terbit), d = (r) => (ak - Date.parse(r.terbit)) / HARI; const a = B.filter((r) => f(r) && d(r) < 7).length, b = B.filter((r) => f(r) && d(r) >= 7 && d(r) < 14).length; return b ? Math.round((a / b - 1) * 100) : null; };
 const urutHitung = (f) => { const m = new Map(); for (const r of B) for (const k of f(r)) m.set(k, (m.get(k) || 0) + 1); return [...m].sort((a, b) => b[1] - a[1]); };

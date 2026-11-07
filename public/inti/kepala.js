@@ -4,6 +4,7 @@
 import { t, angka, mulaiBahasa, gantiBahasa, bahasa } from "/i18n.js";
 import { api, ikon, nanti } from "/inti/umum.js";
 import { subnavHtml, diBagianInsight } from "/inti/komponen.js";
+import { pasangRel } from "/inti/rel.js";
 
 export const PITA_DRAF = false; // pemilik 7 Nov 2026: pita draf tidak ditampilkan
 const STAF = ["pengurus", "kurator", "admin", "super"];
@@ -146,5 +147,6 @@ export async function mulaiHalaman() {
   }
   const kaki = document.getElementById("kaki");
   if (kaki) { kaki.innerHTML = kakiHtml(); kakiIsi(kaki, saya); }
+  pasangRel();
   return saya;
 }

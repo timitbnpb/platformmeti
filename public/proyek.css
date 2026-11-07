@@ -372,3 +372,33 @@ dialog.jm-pj-sheet[open]::backdrop{animation:jm-pj-pudar .22s ease-out}
   .jm-pj-pk:last-child:nth-child(2n+1){display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.3fr)}
   .jm-pj-pk:last-child:nth-child(2n+1) .jm-pj-pk-gb{aspect-ratio:auto;min-height:100%}
 }
+
+/* ---- panel peta ramping, kaca ---- */
+.jm-pj-lapis,.jm-pj-panel{background:color-mix(in srgb,var(--card) 92%,transparent);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-radius:16px;box-shadow:0 6px 22px rgb(10 60 45/.14);font-size:12.5px}
+.jm-pj-lapis{width:min(248px,calc(100% - 24px))}
+.jm-pj-panel{width:min(300px,calc(100% - 24px));max-height:calc(100% - 120px)}
+.jm-pj-lapis summary,.jm-pj-panel summary{min-height:38px;font-size:11.5px}
+#pjLegenda{padding:0 10px 10px}
+.jm-pj-lapis-j{display:flex;align-items:center;justify-content:space-between;margin:8px 4px 4px}
+.jm-pj-lapis .jm-sumber-b{width:20px;height:20px}
+.jm-pj-lapis .jm-sumber-isi{left:0;right:auto;width:210px;text-transform:none;letter-spacing:0;font-weight:400}
+.jm-pj-lap-2{grid-template-columns:repeat(2,minmax(0,1fr));gap:4px}
+.jm-pj-lap-2 button{min-height:28px;padding:0 2px;gap:4px}
+.jm-pj-lap-2 .jm-pil-tek{min-width:0;overflow:hidden;font-size:11.5px;padding:2px 7px}
+.jm-pj-lap-2 .jm-pil-tek>span{overflow:hidden;text-overflow:ellipsis}
+.jm-pj-lap-2 button b{margin-left:auto;font-size:11px;font-weight:600}
+.jm-pj-seg2{display:grid;grid-auto-columns:1fr;grid-auto-flow:column;border:1px solid var(--line);border-radius:var(--r-pil);overflow:hidden}
+.jm-pj-seg2 button{all:unset;box-sizing:border-box;cursor:pointer;text-align:center;padding:6px 4px;font:600 12px/1.2 var(--font);color:var(--ink2)}
+.jm-pj-seg2 button[aria-pressed="true"]{background:var(--soft-hijau);color:var(--accent)}
+.jm-pj-seg2 button+button{border-left:1px solid var(--line)}
+.jm-pj-seg2 button:focus-visible{outline:2px solid var(--fokus);outline-offset:-2px}
+.jm-pj-seg2 b{font-weight:600;opacity:.8}
+.jm-pj-pr{grid-template-columns:minmax(0,1fr) auto;gap:2px 8px;align-items:center;padding:8px 10px;min-height:56px}
+.jm-pj-pr-n{display:block;white-space:nowrap;text-overflow:ellipsis;overflow:hidden;-webkit-line-clamp:unset;font-size:13.5px}
+.jm-pj-pr-k{font:600 12.5px/1.2 var(--font);white-space:nowrap;text-align:right}
+.jm-pj-pr-m{grid-column:1/-1;display:flex;align-items:center;gap:8px;min-width:0;white-space:normal}
+.jm-pj-pr-m .jm-pil-tek{font-size:11px;padding:1px 8px;min-height:22px}
+.jm-pj-pr-m small{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-size:11.5px}
+.jm-pj-chip-hasil{display:inline-flex;align-items:center;gap:8px;background:color-mix(in srgb,var(--card) 92%,transparent);backdrop-filter:blur(10px)}
+.jm-pj-chip-hasil .jm-ik{color:var(--accent);flex:none}
+.jm-pj-donat b{font:700 12px/1 var(--display)}

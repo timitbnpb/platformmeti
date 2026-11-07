@@ -191,7 +191,7 @@ async function bangunPeta() {
     await Promise.all([siapPeta(), muatMapLibre()]);
     petaSiapOk = false; peta?.remove();
     el.removeAttribute("role");
-    peta = new maplibregl.Map({ container: el, style: "https://tiles.openfreemap.org/styles/" + (gelap() ? "dark" : "positron"), bounds: FIT, fitBoundsOptions: { padding: pad() }, minZoom: 3, maxZoom: 12, dragRotate: false, pitchWithRotate: false, scrollZoom: false, attributionControl: { compact: true } });
+    peta = new maplibregl.Map({ container: el, style: "https://tiles.openfreemap.org/styles/" + (gelap() ? "dark" : "positron"), bounds: FIT, fitBoundsOptions: { padding: pad() }, minZoom: 2, maxZoom: 12, dragRotate: false, pitchWithRotate: false, scrollZoom: false, attributionControl: { compact: true } });
     peta.addControl(new maplibregl.NavigationControl({ showCompass: false }), "bottom-right");
     legendaPeta(el);
     const tip = el.querySelector(".jm-bb-tip");
@@ -211,7 +211,7 @@ async function bangunPeta() {
       peta.addSource("besar", { type: "geojson", data: fc([]) });
       peta.addLayer({ id: "besar", type: "symbol", source: "besar", layout: { "text-field": ["get", "nama"], "text-size": 11, "text-font": ["Noto Sans Regular"], "text-anchor": "top", "text-offset": [0, 1.1], "text-max-width": 9 }, paint: { "text-color": warna("--ink"), "text-halo-color": warna("--paper"), "text-halo-width": 1.5 } });
       pasangBatas(peta, warna, idLabel, "titik");
-      petaSiapOk = true; terapkan(!!terpilih);
+      petaSiapOk = true; peta.resize(); if (!terpilih) peta.fitBounds(FIT, { padding: pad(), duration: 0 }); terapkan(!!terpilih);
     });
     peta.on("mouseenter", "titik", () => { peta.getCanvas().style.cursor = "pointer"; });
     peta.on("mouseleave", "titik", () => { peta.getCanvas().style.cursor = ""; tip.hidden = true; });

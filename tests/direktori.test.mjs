@@ -142,7 +142,7 @@ test("lembar orang memuat semua bagian: riwayat jabatan, pendidikan, kiprah, tau
 
 test("GET /api/admin/anggota-meti: anggota 403, pengurus 200 dari R2 tanpa cache, R2 kosong 404", async () => {
   const f = "GET /api/admin/anggota-meti", isi = JSON.stringify({ lapis: "pengurus", jumlah: 1, baris: [{ no_anggota: "X1", nama: "Fiktif" }] });
-  const env = { BERKAS: { get: async (k) => (k === "potret/pengurus/anggota_meti.json" ? { body: isi } : null) } };
+  const env = { BERKAS: { get: async (k) => (k === "potret/pengurus/anggota_meti.json" ? { body: isi, json: async () => JSON.parse(isi) } : null) }, DB: { prepare: () => ({ all: async () => ({ results: [] }) }) } }; // log anggota_ubah kosong; gabungan nyata diuji di anggota-ubah.test.mjs
   await assert.rejects(() => rute[f](req(), env, ctx, p({ id: 1, peran: "anggota" })), (e) => e.kode === "dilarang" && e.status === 403);
   await assert.rejects(() => rute[f](req(), env, ctx, p(null)), (e) => e.status === 401);
   const r = await rute[f](req(), env, ctx, p({ id: 2, peran: "pengurus" }));

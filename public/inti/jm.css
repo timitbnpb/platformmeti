@@ -224,3 +224,26 @@ th[aria-sort="descending"] .jm-urut::after{opacity:1;clip-path:polygon(0 0,100% 
 .jm-tek-bioenergi{--tk:var(--data2)}.jm-tek-biomassa-sampah{--tk:var(--data1)}.jm-tek-penyimpanan{--tk:var(--ink2)}.jm-tek-nuklir{--tk:var(--bad)}.jm-tek-lain{--tk:var(--ink2)}
 .jm-st-rencana{--sk:var(--info)}.jm-st-izin{--sk:var(--data5)}.jm-st-pendanaan{--sk:var(--data1)}.jm-st-konstruksi{--sk:var(--warn)}
 .jm-st-beroperasi{--sk:var(--ok)}.jm-st-dibatalkan{--sk:var(--bad)}.jm-st-tidak-diketahui{--sk:var(--ink2)}
+
+/* REL seksi (inti/rel.js): rel mengambang kanan >=1280px, tombol mengambang di layar kecil */
+.jm-rel{position:fixed;right:max(16px,env(safe-area-inset-right,0px));top:50%;transform:translateY(-50%);z-index:40;display:none;flex-direction:column;gap:6px;padding:10px 6px;background:color-mix(in srgb,var(--card) 92%,transparent);backdrop-filter:blur(8px);border:1px solid var(--line);border-radius:var(--r-pil);box-shadow:var(--shadow)}
+.jm-rel a,.jm-rel-lembar a{position:relative;display:flex;align-items:center;gap:10px;color:var(--ink2);text-decoration:none;border-radius:var(--r-pil)}
+.jm-rel a{width:36px;height:36px;justify-content:center}
+.jm-rel .jm-rel-ik{display:grid;place-items:center;width:36px;height:36px;border-radius:50%}
+.jm-rel .jm-rel-ik svg{width:18px;height:18px}
+.jm-rel a:hover .jm-rel-ik,.jm-rel a:focus-visible .jm-rel-ik{background:var(--soft-hijau);color:var(--accent)}
+.jm-rel a[aria-current] .jm-rel-ik{background:var(--accent);color:var(--on-accent)}
+.jm-rel .jm-rel-l{position:absolute;right:calc(100% + 10px);white-space:nowrap;padding:6px 10px;border-radius:var(--r-sm);background:var(--head);color:var(--paper);font:600 12.5px/1 var(--font);opacity:0;pointer-events:none;transform:translateX(4px);transition:opacity .15s,transform .15s}
+.jm-rel a:hover .jm-rel-l,.jm-rel a:focus-visible .jm-rel-l{opacity:1;transform:none}
+.jm-rel-garis{position:absolute;left:50%;top:14px;bottom:14px;width:2px;transform:translateX(-50%);background:var(--line);z-index:-1;border-radius:2px}
+.jm-rel-garis i{display:block;width:100%;height:0;background:var(--accent);border-radius:2px;transition:height .2s}
+.jm-rel-fab{position:fixed;right:max(16px,env(safe-area-inset-right,0px));bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:40;display:none;place-items:center;width:48px;height:48px;border-radius:50%;border:0;background:var(--accent);color:var(--on-accent);box-shadow:var(--shadow-lg);cursor:pointer}
+.jm-rel-lembar{position:fixed;right:max(16px,env(safe-area-inset-right,0px));bottom:calc(76px + env(safe-area-inset-bottom,0px));z-index:41;display:grid;gap:2px;width:min(300px,calc(100vw - 32px));max-height:60vh;overflow:auto;padding:8px;background:var(--card);border:1px solid var(--line);border-radius:var(--r-lg);box-shadow:var(--shadow-lg)}
+.jm-rel-lembar a{padding:10px 12px;font:600 14px/1.2 var(--font)}
+.jm-rel-lembar a[aria-current]{background:var(--soft-hijau);color:var(--accent)}
+.jm-rel-lembar .jm-rel-ik svg{width:18px;height:18px}
+@media (min-width:1280px){.jm-ada-rel .jm-rel{display:flex}}
+@media (max-width:1279px){.jm-ada-rel .jm-rel-fab{display:grid}}
+@media (prefers-reduced-motion:reduce){.jm-rel .jm-rel-l,.jm-rel-garis i{transition:none}}
+/* strip "Di halaman ini" lama di beranda digantikan rel */
+nav.jm-isi{display:none!important}

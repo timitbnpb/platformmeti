@@ -45,7 +45,15 @@ try {
 
 /* ---------- bentuk baris ---------- */
 /* nama dari Wikidata sering berbahasa Inggris ("Agam hydro"); pakai nama_lain berawalan PLT bila ada ("PLTA Agam") */
-const namaId = (p) => (/^PLT/i.test(p.nama || "") ? p.nama : (p.nama_lain || []).find((x) => /^PLT[A-Za-z]*\s/.test(x) && !/power|plant/i.test(x)) || p.nama || "");
+const ID_POLA = [[/^(.+?) floating solar$/i, "PLTS Terapung $1"], [/^(.+?) pumped storage(?: hydro)?(.*)$/i, "PLTA pumped storage $1$2"], [/^(.+?) hydro(?:power)?(?: project)?$/i, "PLTA $1"], [/^(.+?) geothermal$/i, "PLTP $1"], [/^(.+?) wind(?: farm)?$/i, "PLTB $1"]];
+const namaId = (p) => {
+  const n = p.nama || "";
+  if (/^PLT/i.test(n)) return n;
+  const lain = (p.nama_lain || []).find((x) => /^PLT[A-Za-z]*\s/.test(x) && !/power|plant/i.test(x));
+  if (lain) return lain;
+  for (const [re, to] of ID_POLA) if (re.test(n)) return n.replace(re, to);
+  return n;
+};
 const SEMUA = DATA.baris.map((p) => {
   const k = (p.kapasitas || [])[0];
   const cods = (p.cod_target || []).map((x) => x.nilai).filter(Number.isFinite);
@@ -185,7 +193,7 @@ function terapkan() {
   sinkronUrl();
   const ada = Object.values(F).some(Boolean);
   $("freset").hidden = !ada;
-  $("pjHasil").textContent = t("pj.hasil", { n: num(tampil.length), total: num(SEMUA.length), mw: num(jumlahMW(tampil), 0) });
+  $("pjHasil").innerHTML = ikon("peta", 16) + `<span>${esc(t("pj.hasil", { n: num(tampil.length), total: num(SEMUA.length), mw: num(jumlahMW(tampil), 0) }))}</span>`;
   for (const x of document.querySelectorAll("#pjStatus [data-st]")) x.setAttribute("aria-pressed", String(x.dataset.st === F.st));
   for (const x of document.querySelectorAll("#pjProgBar [data-pg]")) x.setAttribute("aria-pressed", String(x.dataset.pg === F.prog));
   nanti(() => { if (v !== versi) return; kepalaTabel(); gambarCorong(); gambarLegenda(); kePeta(); PN.n = 40; gambarPanel(); TT.n = BATAS; TD.n = BATAS; gambarTelat(); gambarDaftar(); });
@@ -287,7 +295,9 @@ function rapikanPeta(peta) {
     if (!idLabel) idLabel = ly.id;
     const sl = ly["source-layer"];
     if (SEMBUNYI.test(sl) || /shield|road_number/i.test(ly.id)) { peta.setLayoutProperty(ly.id, "visibility", "none"); continue; }
-    if (sl === "place" || sl === "water_name") peta.setLayoutProperty(ly.id, "text-field", ["coalesce", ["get", "name:id"], ["get", "name:latin"], ["get", "name"]]);
+    if (sl === "water_name") { peta.setLayoutProperty(ly.id, "visibility", "none"); continue; }
+    if (sl === "place") peta.setLayerZoomRange(ly.id, 6, 24);
+    if (sl === "place") peta.setLayoutProperty(ly.id, "text-field", ["coalesce", ["get", "name:id"], ["get", "name:latin"], ["get", "name"]]);
     if (sl === "place") peta.setFilter(ly.id, ly.filter ? ["all", ly.filter, ["within", INDONESIA]] : ["within", INDONESIA]);
   }
 }
@@ -300,7 +310,7 @@ function pasangLapisan() {
   for (const m of MARC.values()) m.remove();
   MARC.clear();
   const sum = {}; for (const k of TEKS) sum[k] = ["+", ["case", ["==", ["get", "tek"], k], 1, 0]];
-  peta.addSource("pts", { type: "geojson", data: fiturSemua(), cluster: true, clusterRadius: 44, clusterMaxZoom: 7, clusterProperties: sum });
+  peta.addSource("pts", { type: "geojson", data: fiturSemua(), cluster: true, clusterRadius: 60, clusterMaxZoom: 7, clusterProperties: sum });
   peta.addLayer({ id: "pts-sel", type: "circle", source: "pts", filter: ["==", ["get", "id"], ""], paint: { "circle-radius": 14, "circle-color": warna("--sorot"), "circle-opacity": 0.55, "circle-stroke-color": warna("--sorot"), "circle-stroke-width": 2 } });
   peta.addLayer({ id: "pts-t", type: "circle", source: "pts", filter: ["!", ["has", "point_count"]], paint: { "circle-color": ["get", "warna"], "circle-radius": ["interpolate", ["linear"], ["zoom"], 3, 4, 8, 7, 12, 9], "circle-opacity": ["get", "op"], "circle-stroke-color": lingkar, "circle-stroke-width": 1.5 } });
 }
@@ -315,13 +325,14 @@ function pasangBatas() {
       peta.addSource("luar", { type: "geojson", data: luar });
       peta.addLayer({ id: "luar-redam", type: "fill", source: "luar", paint: { "fill-color": warna("--paper"), "fill-opacity": 0.72 } }, idLabel || "pts-t");
     }
+    peta.addLayer({ id: "prov-tint", type: "fill", source: "prov", paint: { "fill-color": warna("--accent-isi"), "fill-opacity": gelap() ? 0.12 : 0.07 } }, "pts-t");
     peta.addLayer({ id: "prov-garis", type: "line", source: "prov", paint: { "line-color": warna("--accent-isi"), "line-opacity": 0.55, "line-width": ["interpolate", ["linear"], ["zoom"], 4, 0.6, 9, 1.6] } }, "pts-t");
   });
 }
 /* klaster donat: tiap klaster = lingkaran cincin berwarna per teknologi, angka total di tengah */
 const MARC = new Map();
 function donatSvg(pr, tot, uk) {
-  const r = uk / 2, tebal = Math.max(7, uk * 0.2), rr = r - tebal / 2, K = 2 * Math.PI * rr;
+  const r = uk / 2, tebal = 5, rr = r - tebal / 2 - 1, K = 2 * Math.PI * rr;
   let off = 0, seg = "";
   for (const k of TEKS) {
     const n = pr[k] || 0; if (!n) continue;
@@ -329,13 +340,13 @@ function donatSvg(pr, tot, uk) {
     seg += `<circle r="${rr}" cx="${r}" cy="${r}" fill="none" stroke="${warna(TEK_WARNA[k] || "--ink2")}" stroke-width="${tebal}" stroke-dasharray="${pj} ${K - pj}" stroke-dashoffset="${-off}" transform="rotate(-90 ${r} ${r})"/>`;
     off += pj;
   }
-  return `<svg width="${uk}" height="${uk}" viewBox="0 0 ${uk} ${uk}" aria-hidden="true" focusable="false"><circle cx="${r}" cy="${r}" r="${r}" fill="${warna("--card")}"/>${seg}<circle cx="${r}" cy="${r}" r="${r - tebal}" fill="${warna("--card")}"/></svg>`;
+  return `<svg width="${uk}" height="${uk}" viewBox="0 0 ${uk} ${uk}" aria-hidden="true" focusable="false"><circle cx="${r}" cy="${r}" r="${r - 0.75}" fill="${warna("--card")}" stroke="${warna("--card")}" stroke-width="1.5"/>${seg}</svg>`;
 }
 function ringkasKlaster(pr) {
   return TEKS.filter((k) => pr[k]).sort((a, b) => pr[b] - pr[a]).map((k) => `<span class="jm-pj-tipbaris">${pilTek(k)}<b>${num(pr[k])}</b></span>`).join("");
 }
 function donatEl(f) {
-  const pr = f.properties, tot = pr.point_count, uk = Math.round(Math.min(76, 34 + Math.sqrt(tot) * 4.2));
+  const pr = f.properties, tot = pr.point_count, uk = Math.round(Math.min(56, 34 + Math.sqrt(tot) * 2.4));
   const el = document.createElement("button");
   el.type = "button"; el.className = "jm-pj-donat"; el.setAttribute("aria-label", t("pj.tip.kluster", { n: num(tot) }));
   el.innerHTML = donatSvg(pr, tot, uk) + `<b>${esc(pr.point_count_abbreviated)}</b>`;
@@ -389,9 +400,16 @@ function sorotPeta(r) {
   popup = new maplibregl.Popup({ closeButton: true, closeOnClick: false, focusAfterOpen: false, offset: 14, maxWidth: "300px", className: "jm-pj-pop" }).setLngLat([L.lng, L.lat]).setDOMContent(kartuPopup(r)).addTo(peta);
   popup.on("close", () => { if (peta && petaSiap) peta.setFilter("pts-sel", ["==", ["get", "id"], ""]); });
 }
+/* padding peta mengikuti lebar panel melayang supaya Indonesia memenuhi ruang bebas di antaranya */
+const padPanel = () => {
+  const lebar = innerWidth >= 1000, kiri = $("pjLapis"), kanan = $("pjDrawer");
+  return { top: 72, bottom: 48, left: lebar ? kiri.offsetWidth + 24 : 12, right: lebar && kanan.open ? kanan.offsetWidth + 24 : 12 };
+};
+function pasIndonesia() { if (peta && !Object.values(F).some(Boolean)) peta.fitBounds([[94, -11.5], [141.5, 6.5]], { padding: padPanel(), duration: 350 }); }
+for (const id of ["pjLapis", "pjDrawer"]) $(id).addEventListener("toggle", () => nanti(pasIndonesia));
 function bukaPeta() {
   muatMapLibre().then(() => {
-    peta = new maplibregl.Map({ container: "pjPeta", style: gaya(), bounds: [[94, -11.5], [141.5, 6.5]], fitBoundsOptions: { padding: { top: 56, bottom: 36, left: $("pjLapis").open && innerWidth >= 1000 ? 284 : 12, right: $("pjDrawer").open && innerWidth >= 1000 ? 352 : 12 } }, minZoom: 3, maxZoom: 16, dragRotate: false, pitchWithRotate: false, attributionControl: { compact: true } });
+    peta = new maplibregl.Map({ container: "pjPeta", style: gaya(), bounds: [[94, -11.5], [141.5, 6.5]], fitBoundsOptions: { padding: padPanel() }, minZoom: 3, maxZoom: 16, dragRotate: false, pitchWithRotate: false, attributionControl: { compact: true } });
     peta.addControl(new maplibregl.NavigationControl({ showCompass: false }), "bottom-right");
     peta.on("style.load", () => { rapikanPeta(peta); pasangLapisan(); pasangBatas(); petaSiap = true; });
     peta.addControl(new maplibregl.ScaleControl({ unit: "metric", maxWidth: 90 }), "bottom-left");
@@ -427,9 +445,9 @@ function kePeta(fit = true) {
 }
 function gambarLegenda() {
   const c = hitung(tampil, (r) => r.tek), loc = tampil.filter((r) => r.ada), pasti = loc.filter((r) => r.p.lokasi.presisi === "titik_persis").length;
-  $("pjLegenda").innerHTML = `<p class="jm-pj-lapis-j">${esc(t("pj.lapis.tek"))}</p><ul class="jm-pj-lap">${TEKS.filter((k) => c[k]).map((k) => `<li><button type="button" aria-pressed="${!HIDE.has(k)}" data-tek="${esc(k)}">${pilTek(k)}<b>${num(c[k])}</b></button></li>`).join("")}</ul>
-    <p class="jm-pj-lapis-j">${esc(t("pj.lapis.presisi"))}</p><ul class="jm-pj-lap"><li><button type="button" aria-pressed="${PRES.pasti}" data-pr="pasti"><span>${esc(t("pj.presisi.titik_persis"))}</span><b>${num(pasti)}</b></button></li><li><button type="button" aria-pressed="${PRES.kira}" data-pr="kira"><span>${esc(t("pj.presisi.kira"))}</span><b>${num(loc.length - pasti)}</b></button></li></ul>
-    <p class="jm-pj-pilpeta" id="pjPresisi" role="status"></p>`;
+  $("pjLegenda").innerHTML = `<p class="jm-pj-lapis-j">${esc(t("pj.lapis.tek"))}</p><ul class="jm-pj-lap jm-pj-lap-2">${TEKS.filter((k) => c[k]).map((k) => `<li><button type="button" aria-pressed="${!HIDE.has(k)}" data-tek="${esc(k)}" title="${esc(labTek(k))}">${pilTek(k)}<b>${num(c[k])}</b></button></li>`).join("")}</ul>
+    <p class="jm-pj-lapis-j">${esc(t("pj.lapis.presisi"))}${sumberHtml(esc(t("pj.peta.tempat", { n: num(loc.length), m: num(tampil.length), kira: num(loc.length - pasti) })))}</p>
+    <div class="jm-pj-seg2" role="group" aria-label="${esc(t("pj.lapis.presisi"))}"><button type="button" aria-pressed="${PRES.pasti}" data-pr="pasti" title="${esc(t("pj.presisi.titik_persis"))}">${esc(t("pj.lapis.tepat"))} <b>${num(pasti)}</b></button><button type="button" aria-pressed="${PRES.kira}" data-pr="kira" title="${esc(t("pj.presisi.kira"))}">${esc(t("pj.lapis.kira"))} <b>${num(loc.length - pasti)}</b></button></div>`;
 }
 $("pjLegenda").addEventListener("click", (e) => {
   const b = e.target.closest("[data-tek],[data-pr]");
@@ -446,7 +464,7 @@ const PN = { n: 40 };
 function gambarPanel() {
   const rows = tampil.slice().sort((a, b) => (b.kap ?? -1) - (a.kap ?? -1) || a.nama.localeCompare(b.nama)), el = $("pjPanel");
   if (!rows.length) { el.innerHTML = `<div class="jm-kosong">${ikon("info", 32)}<p>${esc(t("jm.kosong.cocok"))}</p></div>`; return; }
-  el.innerHTML = `<ul class="jm-pj-pl">${rows.slice(0, PN.n).map((r) => `<li><button type="button" class="jm-pj-pr" data-id="${esc(r.id)}"><span class="jm-pj-pr-n">${esc(r.nama)}</span><span class="jm-pj-pr-m">${selTek(r)}<span>${selKap(r)}</span></span><small>${esc(r.prov || "-")}${r.ada ? "" : " (" + esc(t("pj.presisi.tak")) + ")"}</small></button></li>`).join("")}</ul>` +
+  el.innerHTML = `<ul class="jm-pj-pl">${rows.slice(0, PN.n).map((r) => `<li><button type="button" class="jm-pj-pr" data-id="${esc(r.id)}" title="${esc(r.nama)}"><span class="jm-pj-pr-n">${esc(r.nama)}</span><span class="jm-pj-pr-k">${selKap(r)}</span><span class="jm-pj-pr-m">${selTek(r)}<small>${esc(r.prov || "-")}${r.ada ? "" : " (" + esc(t("pj.presisi.tak")) + ")"}</small></span></button></li>`).join("")}</ul>` +
     (rows.length > PN.n ? `<button type="button" class="jm-tbl jm-tbl-kecil" data-lagi="1">${esc(t("pj.lagi"))}</button>` : "");
 }
 $("pjPanel").addEventListener("click", (e) => {

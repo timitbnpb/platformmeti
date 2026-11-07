@@ -11,6 +11,7 @@ import crypto from 'node:crypto';
 import assert from 'node:assert/strict';
 import { fileURLToPath } from 'node:url';
 import { normWilayah } from '../panen/panen_proyek.mjs';
+import { bangunKonteks, perkaya } from '../panen/berita_wilayah.mjs';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '../..');
 const DP = path.join(ROOT, 'data-panen');
@@ -62,6 +63,33 @@ export function bersihkanNamaAnggota(mentah) {
   let nama_lama; const a = nama.match(/^(.*?)\s+akuisisi\s+(?:menjadi|oleh)\s+(.+)$/i);
   if (a) { nama_lama = judulHuruf(a[1].trim()); nama = a[2]; }
   return { nama: judulHuruf(nama.trim()), jenis_awalan, nama_lama };
+}
+/** Kontak anggota mentah -> bidang bertipe: situs[], surel, telepon, seluler, faks, hotline, pic (nama di depan nomor). Murni. */
+export function rapikanKontak(a) {
+  const situs = [], surel = [], hotline = []; let pic;
+  const URL_RE = /(?:https?:\/\/|www\.)[^\s;,|]+/gi, EM_RE = /[A-Za-z0-9._%+-]+@[A-Za-z0-9-]+(?:\.[A-Za-z0-9-]+)+/g;
+  const LABEL = /^(?:hotline|tel(?:p|epon)?|hp|wa|phone|mobile|fax|faks|ph)\s*[:.]?\s*/i;
+  const lepas = (v) => {
+    let t = String(v || '');
+    t = t.replace(URL_RE, (u) => { situs.push(u.replace(/[.)]+$/, '')); return ' '; });
+    t = t.replace(EM_RE, (e) => { surel.push(e.toLowerCase().replace(/\.$/, '')); return ' '; });
+    return t;
+  };
+  const nomor = (v) => {
+    const out = [];
+    for (let seg of lepas(v).split(/[\/;|]/)) {
+      seg = seg.trim(); if (!seg) continue;
+      const hot = /^hotline/i.test(seg); seg = seg.replace(LABEL, '').trim();
+      const m = seg.match(/^([A-Za-z][A-Za-z .'-]{2,}?)\s+(?=[+(\d])/); if (m) { pic = pic || m[1].trim(); seg = seg.slice(m[0].length).trim(); }
+      if (!/\d/.test(seg)) continue;
+      (hot ? hotline : out).push(seg);
+    }
+    return out.join(' / ') || undefined;
+  };
+  const telepon = nomor(a.telepon), seluler = nomor(a.seluler), faks = nomor(a.faks); lepas(a.surel);
+  const u = (x) => [...new Set(x)];
+  const web = u(situs.map((x) => (/^https?:/i.test(x) ? x : 'https://' + x)));
+  return { telepon, seluler, faks, surel: u(surel).join(' / ') || undefined, hotline: u(hotline).join(' / ') || undefined, situs: web.length ? web : undefined, pic };
 }
 // ---------- util ----------
 const baca = (rel) => { const f = path.join(DP, rel); return fs.existsSync(f) ? fs.readFileSync(f, 'utf8').split('\n').filter(Boolean).map((l) => JSON.parse(l)) : []; };
@@ -365,15 +393,19 @@ export function bangun(masukan = {}) {
   const regPola = /\b(uu|pp|perpres|permen|permen esdm|kepmen|perppu|inpres)\s*(?:no\.?|nomor)?\s*(\d{1,3})\s*(?:\/|tahun|th\.?)\s*(\d{4})/gi;
   const namaProyek = proyekPub.map((p) => ({ id: p.id, n: ' ' + norm(p.nama) + ' ' })).filter((x) => x.n.length >= 16);
   const orgKey = [...org.values()].filter((o) => orgPub.has(o.id)).map((o) => ({ id: o.id, n: norm(o.nama).length >= 8 ? ' ' + norm(o.nama) + ' ' : null, s: o.singkatan && o.singkatan.length >= 3 ? new RegExp('(?<![A-Za-z])' + o.singkatan.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + '(?![A-Za-z])') : null }));
+  // ringkasan berita (og:description/RSS) hanya untuk mencocokkan wilayah/proyek/regulasi; dibaca dari data-panen, tidak pernah ditulis ke public
+  const ringkasBerita = masukan.ringkasBerita || (() => { try { return JSON.parse(fs.readFileSync(path.join(DP, 'berita/ringkas.json'), 'utf8')); } catch { return {}; } })();
+  const konteksBerita = bangunKonteks({ proyek: proyekPub, regulasi: regRows });
   const beritaPub = [], beritaPen = []; const revB = { organisasi: new Map(), proyek: new Map(), regulasi: new Map(), orang: new Map() };
   const orangIds = new Set(orang.keys());
   for (const b of beritaRows.sort((x, y) => (x.id < y.id ? -1 : 1))) {
     const nj = ' ' + norm(b.judul) + ' ';
     const o_ids = unik(orgKey.filter((k) => (k.n && nj.includes(k.n)) || (k.s && k.s.test(b.judul))).map((k) => k.id));
-    const p_ids = namaProyek.filter((k) => nj.includes(k.n)).map((k) => k.id);
-    const r_ids = unik([...b.judul.matchAll(regPola)].map((m) => `${m[1].toLowerCase().split(' ')[0]}-${m[2]}-${m[3]}`).filter((id) => regById.has(id)));
+    const kaya = perkaya(b.judul, ringkasBerita[b.id], konteksBerita);
+    const p_ids = unik([...namaProyek.filter((k) => nj.includes(k.n)).map((k) => k.id), ...kaya.proyek_ids]);
+    const r_ids = unik([...[...b.judul.matchAll(regPola)].map((m) => `${m[1].toLowerCase().split(' ')[0]}-${m[2]}-${m[3]}`).filter((id) => regById.has(id)), ...kaya.regulasi_ids]);
     const ent = b.entitas_disebut || []; const pasti = unik(ent.filter((e) => e.jenis !== 'kandidat-rujukan' && orangIds.has(e.orang_id)).map((e) => e.orang_id)); const kand = unik(ent.filter((e) => e.jenis === 'kandidat-rujukan' && orangIds.has(e.orang_id)).map((e) => e.orang_id));
-    beritaPub.push(bersih({ id: b.id, judul: b.judul, url: b.url, media: b.media, terbit: b.terbit, bahasa: b.bahasa, kepakaran: b.kepakaran, organisasi_ids: o_ids, proyek_ids: p_ids, regulasi_ids: r_ids, orang_ids: pasti, sumber_panen: b.sumber_panen, tanggal_ambil: b.tanggal_ambil }));
+    beritaPub.push(bersih({ id: b.id, judul: b.judul, url: b.url, media: b.media, terbit: b.terbit, bahasa: b.bahasa, kepakaran: b.kepakaran, organisasi_ids: o_ids, proyek_ids: p_ids, regulasi_ids: r_ids, orang_ids: pasti, wilayah: kaya.wilayah, sumber_panen: b.sumber_panen, tanggal_ambil: b.tanggal_ambil }));
     if (kand.length) beritaPen.push({ id: b.id, orang_kandidat_ids: kand });
     for (const [k, ids] of [['organisasi', o_ids], ['proyek', p_ids], ['regulasi', r_ids], ['orang', pasti]]) for (const i of ids) (revB[k].get(i) || revB[k].set(i, []).get(i)).push(b);
   }
@@ -521,10 +553,11 @@ export function bangun(masukan = {}) {
   // logo organisasi hasil panen_logo.mjs (berkas ada = tautan); logo kurasi lama (public/img/logo/*.png) tetap dipakai beranda dan menang
   for (const o of [...organisasi.publik, ...orgAng, ...orgPen]) if (/^[A-Za-z0-9_-]+$/.test(o.id) && fs.existsSync(path.join(ROOT, 'public/img/logo/org', o.id + '.png'))) o.logo = `/img/logo/org/${o.id}.png`;
   const kosong = [];
+  const idAng = new Map(); // id stabil baris anggota_meti; kembar nama+jenis+no diberi nomor urut
   const lapisan = {
     publik: { proyek: proyekPub, organisasi: organisasi.publik, orang: orangOut.publik, regulasi: regOut.publik, program: progOut, berita: beritaPub, angka: angkaPub, keuangan: keuanganPub, karbon: karbonPub, video: videoPub },
     anggota: { proyek: proyekAng, organisasi: orgAng, orang: orangOut.anggota, regulasi: regOut.anggota, program: kosong, berita: kosong, angka: angkaAng, keuangan: kosong, karbon: kosong, video: kosong },
-    pengurus: { proyek: proyekPen, organisasi: orgPen, orang: orangOut.pengurus, regulasi: regOut.pengurus, program: kosong, berita: beritaPen, angka: kosong, keuangan: kosong, karbon: kosong, video: kosong, anggota_meti: anggotaLengkap.map((a) => { const b = bersihkanNamaAnggota(a.nama); const o = nmap.get(norm(b.nama)); return bersih({ ...a, nama: b.nama || a.nama, jenis: a.jenis || b.jenis_awalan, nama_lama: b.nama_lama, org_id: o && o.id }); }) },
+    pengurus: { proyek: proyekPen, organisasi: orgPen, orang: orangOut.pengurus, regulasi: regOut.pengurus, program: kosong, berita: beritaPen, angka: kosong, keuangan: kosong, karbon: kosong, video: kosong, anggota_meti: anggotaLengkap.map((a) => { const b = bersihkanNamaAnggota(a.nama); const o = nmap.get(norm(b.nama)); const k0 = 'm_' + hash(norm(b.nama || a.nama) + '|' + (a.jenis || b.jenis_awalan || '') + '|' + (a.no_anggota || '')); const n = (idAng.get(k0) || 0) + 1; idAng.set(k0, n); return bersih({ id: n > 1 ? k0 + n : k0, ...a, ...rapikanKontak(a), nama: b.nama || a.nama, jenis: a.jenis || b.jenis_awalan, nama_lama: b.nama_lama, org_id: o && o.id }); }) },
   };
   const ekstra = { anggota: { regulasi: { posisi_topik: posisi } } };
   const ringkas = {
@@ -590,6 +623,9 @@ function periksa() {
   const galat = periksaBerkas(semua); if (galat.length) { console.error('GAGAL:\n' + galat.slice(0, 40).join('\n')); process.exit(1); } console.log('periksa ok:', semua.length, 'berkas');
 }
 export function selftest() {
+  { const k = rapikanKontak({ telepon: '021 5551234 / Hotline: 021 5559999', seluler: 'Budi Santoso +62 812 3456 7890', surel: 'a@x.co.id / b@x.co.id;http://www.x.co.id/en', faks: '021 5550000' });
+    assert.equal(k.telepon, '021 5551234'); assert.equal(k.hotline, '021 5559999'); assert.equal(k.pic, 'Budi Santoso'); assert.equal(k.seluler, '+62 812 3456 7890'); assert.equal(k.surel, 'a@x.co.id / b@x.co.id'); assert.deepEqual(k.situs, ['http://www.x.co.id/en']);
+    assert.deepEqual(rapikanKontak({ surel: 'www.pln.co.id' }).situs, ['https://www.pln.co.id']); assert.equal(rapikanKontak({ surel: 'www.pln.co.id' }).surel, undefined); }
   assert.deepEqual(bersihkanNamaAnggota('ANGGOTA UTAMA: PT. INDIKA ENERGY'), { nama: 'PT. Indika Energy', jenis_awalan: 'utama', nama_lama: undefined });
   assert.deepEqual(bersihkanNamaAnggota('ANGGOTA UTAMA: CHEVRON GEOTHERMAL INDONESIA, LTD akuisisi menjadi STAR ENERGY GEOTHERMAL'), { nama: 'Star Energy Geothermal', jenis_awalan: 'utama', nama_lama: 'Chevron Geothermal Indonesia, LTD' });
   assert.equal(bersihkanNamaAnggota('PT PLN (Persero)').nama, 'PT PLN (Persero)'); assert.equal(bersihkanNamaAnggota("ABDI NAFI'").nama, "Abdi Nafi'"); assert.equal(bersihkanNamaAnggota('ANGGOTA PERUSAHAAN: PT. BANK X TBK').nama, 'PT. Bank X Tbk');

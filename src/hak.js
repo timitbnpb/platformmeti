@@ -386,6 +386,27 @@ export async function tulis(env, akun, tabel, aksi, data = {}, id = null, server
   } catch (e) { throw terjemah(e); }
 }
 
+/* ========================= Anggota METI (basis di R2; penyuntingan = baris pencatat di anggota_ubah) ========================= */
+const PENYUNTING_ANGGOTA = ["pengurus", "kurator", "admin", "super"];
+// Baca log berurutan (id naik) untuk digabung ke dasar R2 oleh direktori.js.
+export async function anggotaLog(env, akun) {
+  if (!akun || !PENYUNTING_ANGGOTA.includes(akun.peran)) throw tolak("anggota_ubah: peran tidak berhak");
+  try { return (await env.DB.prepare("SELECT id, anggota_id, aksi, data, dibuat FROM anggota_ubah ORDER BY id LIMIT 5000").all()).results; }
+  catch (e) { if (/no such table/i.test(String(e?.message) + String(e?.cause?.message))) return null; throw e; } // migrasi 0009 belum diterapkan
+}
+// Satu tulis = batch([anggota_ubah, jejak]). `data` sudah divalidasi pemanggil; jejak tanpa catatan bebas.
+export async function anggotaCatat(env, akun, { anggotaId, aksi, data = null, catatan = null }) {
+  if (!akun || !PENYUNTING_ANGGOTA.includes(akun.peran)) throw tolak("anggota_ubah: peran tidak berhak");
+  if (!["tambah", "ubah", "hapus"].includes(aksi)) throw salah("aksi tidak dikenal");
+  const j = susunJejak({ tabel: "anggota_ubah", dari: null, ke: data ? { anggota_id: anggotaId, kolom: Object.keys(data) } : { anggota_id: anggotaId } });
+  try {
+    await env.DB.batch([
+      env.DB.prepare("INSERT INTO anggota_ubah (anggota_id, aksi, data, oleh, catatan) VALUES (?, ?, ?, ?, ?)").bind(anggotaId, aksi, data ? JSON.stringify(data) : null, akun.id, catatan),
+      env.DB.prepare("INSERT INTO jejak (siapa, peran, aksi, tabel, baris_id, dari, ke) VALUES (?, ?, ?, 'anggota_ubah', ?, ?, ?)").bind(akun.id, akun.peran, aksi, anggotaId, j.dari, j.ke),
+    ]);
+  } catch (e) { throw terjemah(e); }
+}
+
 /* ========================================= sistem (tanpa peran) =================================== */
 const BATCH = (env, s) => env.DB.batch(s);
 const ip16 = (v) => (v && String(v).length === 16 ? String(v) : null);

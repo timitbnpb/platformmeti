@@ -1,7 +1,7 @@
 // Foto sampul berita: URL gambar saja (bukan berkas), dari media:content/thumbnail/enclosure RSS, lalu og:image halaman.
 // Pakai: node scripts/panen/berita_foto.mjs [--maks N]. Menulis public/data/berita_foto.json {id: url https}. Gagal = dilewati.
 // Sopan: robots.txt dihormati, UA METI, jeda 1,5 s per host, timeout 8 s, 6 host paralel, 403 = host dilewati.
-import { readFileSync, writeFileSync, existsSync } from 'node:fs';
+import { readFileSync, writeFileSync, existsSync, mkdirSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import { FEEDS, UA, robotsBolehkan, urlKanon } from './berita.mjs';
 
@@ -9,6 +9,9 @@ const AKAR = fileURLToPath(new URL('../..', import.meta.url));
 const BERITA = AKAR + 'public/data/berita.json', KELUAR = AKAR + 'public/data/berita_foto.json';
 const maks = +(process.argv[process.argv.indexOf('--maks') + 1]) || 1e9;
 const baris = JSON.parse(readFileSync(BERITA, 'utf8')).baris.sort((a, b) => b.terbit.localeCompare(a.terbit));
+// Ringkasan (og:description / description RSS) HANYA untuk pencocokan wilayah dan regulasi; disimpan di data-panen (di luar repo), tidak pernah ke public.
+const RINGKAS = AKAR + 'data-panen/berita/ringkas.json';
+const ringkas = existsSync(RINGKAS) ? JSON.parse(readFileSync(RINGKAS, 'utf8')) : {};
 const peta = existsSync(KELUAR) ? JSON.parse(readFileSync(KELUAR, 'utf8')) : {};
 const tidur = (ms) => new Promise((r) => setTimeout(r, ms));
 const lepas = (s) => s.replace(/&amp;/g, '&').replace(/&#x2F;/gi, '/').replace(/&quot;/g, '"');
@@ -29,10 +32,11 @@ async function boleh(url) {
   if (!robots.has(u.host)) robots.set(u.host, ambil(u.origin + '/robots.txt', { batas: 100000 }));
   return robotsBolehkan(await robots.get(u.host), u.pathname + u.search);
 }
+const deskripsi = (h) => { for (const p of [/<meta[^>]+property=["']og:description["'][^>]*content=["']([^"']*)/i, /<meta[^>]+content=["']([^"']*)["'][^>]+property=["']og:description/i, /<meta[^>]+name=["']description["'][^>]*content=["']([^"']*)/i, /<meta[^>]+name=["']twitter:description["'][^>]*content=["']([^"']*)/i]) { const m = h.match(p); if (m && m[1].trim()) return lepas(m[1]).replace(/&#(\d+);/g, (_, n) => String.fromCodePoint(+n)).replace(/&(nbsp|apos);/g, ' ').replace(/\s+/g, ' ').trim().slice(0, 600); } return ''; };
 const ogImage = (h) => { for (const p of [/<meta[^>]+property=["']og:image(?::secure_url)?["'][^>]*content=["']([^"']+)/i, /<meta[^>]+content=["']([^"']+)["'][^>]+property=["']og:image/i, /<meta[^>]+name=["']twitter:image["'][^>]*content=["']([^"']+)/i]) { const m = h.match(p); if (m) return m[1]; } return ''; };
 
 // 1) RSS: gambar dari media:content, media:thumbnail, enclosure
-const dariFeed = new Map();
+const dariFeed = new Map(), dariDesk = new Map();
 for (const [, url] of FEEDS) {
   try {
     if (!(await boleh(url))) continue;
@@ -40,22 +44,23 @@ for (const [, url] of FEEDS) {
       const b = m[1], link = (b.match(/<link>\s*(?:<!\[CDATA\[)?\s*([^<\s\]]+)/i) || [])[1]; if (!link) continue;
       const g = (b.match(/<media:content[^>]+url=["']([^"']+)/i) || b.match(/<media:thumbnail[^>]+url=["']([^"']+)/i) || b.match(/<enclosure[^>]+url=["']([^"']+)/i) || [])[1];
       const u = g && https(g, link); if (u) dariFeed.set(urlKanon(link), u);
+      const d = (b.match(/<description>\s*(?:<!\[CDATA\[)?([\s\S]*?)(?:\]\]>)?\s*<\/description>/i) || [])[1]; if (d) dariDesk.set(urlKanon(link), lepas(d.replace(/<[^>]+>/g, ' ')).replace(/\s+/g, ' ').trim().slice(0, 600));
     }
   } catch { /* lewati */ }
 }
 let dariRss = 0;
-for (const a of baris) { const u = dariFeed.get(urlKanon(a.url)); if (u) { peta[a.id] = u; dariRss++; } }
+for (const a of baris) { const u = dariFeed.get(urlKanon(a.url)); if (u) { peta[a.id] = u; dariRss++; } const d = dariDesk.get(urlKanon(a.url)); if (d) ringkas[a.id] = d; }
 
 // 2) og:image untuk sisanya, terbaru dulu, paralel antar host
-const sisa = baris.filter((a) => !peta[a.id]).slice(0, maks); let og = 0, i = 0, tulis = 0;
+const sisa = baris.filter((a) => !peta[a.id] || !(a.id in ringkas)).slice(0, maks); let og = 0, i = 0, tulis = 0;
 async function kerja() {
   while (i < sisa.length) {
     const a = sisa[i++];
     try {
       if (!/^https:/.test(a.url) || !(await boleh(a.url))) continue;
-      const u = https(ogImage(await ambil(a.url)), a.url); if (u) { peta[a.id] = u; og++; }
+      const h = await ambil(a.url); const u = peta[a.id] ? '' : https(ogImage(h), a.url); if (u) { peta[a.id] = u; og++; } if (!(a.id in ringkas)) ringkas[a.id] = deskripsi(h);
     } catch { /* lewati */ }
-    if (++tulis % 25 === 0) writeFileSync(KELUAR, JSON.stringify(peta));
+    if (++tulis % 25 === 0) { writeFileSync(KELUAR, JSON.stringify(peta)); mkdirSync(AKAR + 'data-panen/berita', { recursive: true }); writeFileSync(RINGKAS, JSON.stringify(ringkas)); }
   }
 }
 await Promise.all(Array.from({ length: 6 }, kerja));
@@ -64,5 +69,6 @@ const hitung = {}; for (const u of Object.values(peta)) { const h = new URL(u).h
 for (const [id, u] of Object.entries(peta)) if (hitung[new URL(u).host] < 3) delete peta[id];
 const hosts = Object.keys(hitung).filter((h) => hitung[h] >= 3).sort();
 writeFileSync(KELUAR, JSON.stringify(peta));
+mkdirSync(AKAR + 'data-panen/berita', { recursive: true }); writeFileSync(RINGKAS, JSON.stringify(ringkas));
 console.log('img-src host:', hosts.map((h) => 'https://' + h).join(' '));
 console.log(`foto: ${Object.keys(peta).length} dari ${baris.length} (rss ${dariRss}, og ${og}); host diblok ${[...blok].join(',') || '-'}`);
