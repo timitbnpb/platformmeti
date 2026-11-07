@@ -4,6 +4,7 @@ import { t, angka, tanggal } from "/i18n.js";
 import { esc, nanti, ikon, hantuHtml, kosongHtml, galatHtml, galatTeks, api } from "/inti/umum.js";
 import { exHtml, sumberHtml, terkaitHtml } from "/inti/komponen.js";
 import { muat, label, urlAman } from "/publik.js";
+import { khSisi } from "/inti/kh.js";
 import { svgSosmed } from "/inti/sosmed.js";
 import { muatAcara, hariIni, hariKe, urlEvent, urlMutlak, posterHtml, pilJenis, pilStatus, lokasiTeks, jamTeks, tglRentang, selesai, topikDari, tagHtml, bagikanHtml, pasangSalin,
   gcalUrl, unduhIcs, qrSvg, logoMitra, mitraHtml, pemutarHtml, pasangPemutar, durasiTeks, thumbUrl, utc, IKON_JENIS } from "/event_umum.js";
@@ -167,6 +168,10 @@ async function gambar() {
   document.getElementById("judul").textContent = B.judulTampil;
   document.title = `${B.judulTampil} | Event METI`;
   document.getElementById("lead").textContent = [tglRentang(B), lokasiTeks(B)].filter(Boolean).join(" - ");
+  const mitra = [].concat(B.penyelenggara || B.mitra || []).join(", ");
+  khSisi(".jm-kh", B.poster
+    ? { gambar: { src: B.poster.file, alt: B.judulTampil, judul: label("kal.jenis.", B.jenis), poster: true } }
+    : { fakta: [{ ikon: "kalender", label: t("kh.tgl"), nilai: tglRentang(B) }, { ikon: "lokasi", label: t("kh.lokasi"), nilai: lokasiTeks(B) }, { ikon: "jenis", label: t("kh.jenis"), nilai: label("kal.jenis.", B.jenis) }, { ikon: "orang", label: t("kh.mitra"), nilai: mitra }] });
   isi.innerHTML = `<div class="ev-detail-kisi"><div class="ev-utama"><figure class="ev-besar">${posterHtml(B, "ev-poster-besar")}${B.poster ? `<figcaption class="jm-bantu">${esc(t("ev.poster.hak", { hak: B.poster.hak }))}${urlAman(B.poster.url_sumber) ? ` <a href="${esc(B.poster.url_sumber)}" target="_blank" rel="noopener noreferrer">${esc(t("ev.poster.sumber"))}</a>` : ""}</figcaption>` : ""}</figure><div id="evBagian">${hantuHtml(3)}</div></div>${panelHtml()}</div>`;
   document.querySelector(".ev-rsvp").outerHTML = rsvpHtml() || '<div class="ev-rsvp"></div>';
   tik(); clearInterval(WAKTU); WAKTU = setInterval(tik, 1000);

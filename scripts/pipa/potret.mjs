@@ -109,6 +109,7 @@ export const KATEGORI = { bumn: 'BUMN', bumd: 'BUMD', swasta: 'Swasta', internas
 export const KELOMPOK = { profesional: 'Profesional', praktisi: 'Praktisi', akademisi: 'Akademisi', 'tokoh-publik': 'Tokoh Publik', 'aktivis-tokoh-daerah': 'Aktivis dan Tokoh Daerah' };
 const JENIS_LEMBAGA = { asosiasi: 'asosiasi', kementerian: 'kementerian-lembaga', lembaga: 'kementerian-lembaga', dpr: 'kementerian-lembaga', 'think-tank': 'think-tank', lsm: 'lsm-yayasan', universitas: 'perguruan-tinggi', donor: 'donor', pemda: 'pemda' };
 function kategoriPerusahaan(p) {
+  if (p.jenis === 'asing' && !/\b(bank|bpd)\b/i.test(p.nama)) return 'internasional'; // perusahaan asing (termasuk pengembang pembiaya seperti Marubeni) tetap internasional
   if (/\b(bank|bpd)\b/i.test(p.nama) || (p.peran_rantai || []).includes('pembiaya')) return 'keuangan';
   if (/\bBUMD\b|\bPDAM\b|Perusahaan Daerah|Perseroda/i.test(p.nama)) return 'bumd';
   return { bumn: 'bumn', asing: 'internasional' }[p.jenis] || 'swasta';
@@ -187,7 +188,8 @@ export function titikLokasi(o, indukKampus) {
   }
   if (!r && indukKampus?.lokasi?.lat != null) return { ...L, lat: indukKampus.lokasi.lat, lng: indukKampus.lokasi.lng, presisi: indukKampus.lokasi.presisi === 'tepat' ? 'tepat' : indukKampus.lokasi.presisi, provinsi: L.provinsi || indukKampus.lokasi.provinsi };
   if (!r) return L;
-  const [a, b] = geser(o.id, r.pt);
+  // alamat jelas = pin di pusat kota/kab dari alamat itu, tanpa sebaran acak (sebaran membuat Grha Pertamina jatuh di Jakarta Utara); peta menyebar pin tumpuk
+  const [a, b] = L.alamat && r.presisi === 'kota' ? r.pt : geser(o.id, r.pt);
   return bersih({ ...L, provinsi: L.provinsi || r.provinsi, lat: +a.toFixed(5), lng: +b.toFixed(5), presisi: r.presisi });
 }
 // ormawa memakai lokasi kampus bila kampusnya (perguruan-tinggi) dikenal dari nama; selain itu jatuh ke aturan biasa
@@ -207,7 +209,7 @@ export function bangun(masukan = {}) {
   const tambahOrg = (o) => {
     if (o.nama) o.nama = judulHuruf(String(o.nama).replace(/^ANGGOTA\s+(UTAMA|BIASA|LUAR\s+BIASA)\s*:\s*/i, '').trim()); // nama baku: tanpa awalan, tanpa KAPITAL PENUH
     const k = norm(o.nama); const ada = nmap.get(k);
-    if (ada) { alias.set(o.id, ada.id); for (const f of ['singkatan', 'induk', 'situs', 'tahun_berdiri', 'kode_saham', 'dasar_hukum', 'lokasi', 'kontak_mentah', 'via1001']) if (!ada[f] && o[f]) ada[f] = o[f]; ada.kepakaran = unik([...(ada.kepakaran || []), ...(o.kepakaran || [])]); ada.peran_rantai = unik([...(ada.peran_rantai || []), ...(o.peran_rantai || [])]); ada.sumber.push(...o.sumber); if (o.keuangan) ada.keuangan = [...(ada.keuangan || []), ...o.keuangan]; ada.teknis = { ...(o.teknis || {}), ...(ada.teknis || {}) }; ada.extra = { ...(o.extra || {}), ...(ada.extra || {}) }; return; }
+    if (ada) { alias.set(o.id, ada.id); for (const f of ['internasional', 'proyek_ekstra', 'singkatan', 'induk', 'situs', 'tahun_berdiri', 'kode_saham', 'dasar_hukum', 'lokasi', 'kontak_mentah', 'via1001']) if (!ada[f] && o[f]) ada[f] = o[f]; ada.kepakaran = unik([...(ada.kepakaran || []), ...(o.kepakaran || [])]); ada.peran_rantai = unik([...(ada.peran_rantai || []), ...(o.peran_rantai || [])]); ada.sumber.push(...o.sumber); if (o.keuangan) ada.keuangan = [...(ada.keuangan || []), ...o.keuangan]; ada.teknis = { ...(o.teknis || {}), ...(ada.teknis || {}) }; ada.extra = { ...(o.extra || {}), ...(ada.extra || {}) }; return; }
     org.set(o.id, o); nmap.set(k, o); alias.set(o.id, o.id);
   };
   const sumberOrg = (arr) => (arr || []).map((s) => ({ id: s.id, jenis: s.jenis, url: s.url || null, keterangan: s.keterangan || s.judul || null, tingkat_bukti: s.tingkat_bukti, tanggal: s.tanggal_periksa || s.tanggal_ambil }));
@@ -215,6 +217,8 @@ export function bangun(masukan = {}) {
   for (const l of lembaga) tambahOrg({ id: l.lembaga_id, nama: l.nama, singkatan: l.singkatan, kategori: JENIS_LEMBAGA[l.jenis] || 'kementerian-lembaga', induk: l.induk, kepakaran: l.kepakaran || [], peran_rantai: [], situs: l.situs, tahun_berdiri: l.tahun_berdiri, dasar_hukum: l.dasar_hukum, lokasi: bersih({ alamat: l.kontak?.alamat_kantor, kota: l.kontak?.kota, provinsi: l.kontak?.provinsi, lat: l.kontak?.lat, lng: l.kontak?.lng }), kontak_mentah: l.kontak || {}, sumber: sumberOrg(l.sumber), extra: { pengurus_status: l.pengurus_status, verifikasi: l.verifikasi } });
   const perusahaan = M('perusahaan', 'perusahaan/perusahaan.jsonl'); catatTgl(perusahaan);
   for (const p of perusahaan) tambahOrg({ id: p.perusahaan_id, nama: p.nama, nama_lain: p.nama_lain, kategori: kategoriPerusahaan(p), induk: p.induk, kepakaran: p.kepakaran || [], peran_rantai: p.peran_rantai || [], situs: p.situs, tahun_berdiri: p.tahun_berdiri, kode_saham: p.kode_saham, lokasi: bersih({ alamat: p.kontak?.alamat_kantor, kota: p.kantor_pusat?.kota || p.kontak?.kota, provinsi: p.kantor_pusat?.provinsi || p.kontak?.provinsi, lat: p.kontak?.lat, lng: p.kontak?.lng }), teknis: bersih({ kapasitas_mwp_tahun: p.kapasitas_mwp_tahun, pasar: p.pasar, apamsi: p.apamsi, tkdn: p.tkdn, bmp: p.bmp, kapasitas_portofolio: p.kapasitas_portofolio }), kontak_mentah: p.kontak || {}, sumber: sumberOrg(p.sumber), asosiasi: p.anggota_asosiasi || [], extra: { pengurus_status: p.pengurus_status, verifikasi: p.verifikasi, situs_keyakinan: p.situs_keyakinan, situs_catatan: p.situs_catatan, kandidat: p.kandidat } });
+  // entitas internasional (scripts/pipa/data_internasional.mjs bangun): hanya yang punya sumber berurl; negara/subjenis/afiliasi/proyek dibawa ke baris publik
+  for (const p of M('internasional', 'perusahaan/internasional.jsonl')) { catatTgl([p]); tambahOrg({ id: p.perusahaan_id, nama: p.nama, nama_lain: p.nama_lain, singkatan: (p.nama_lain || [])[0], kategori: 'internasional', induk: p.induk, kepakaran: p.kepakaran || [], peran_rantai: p.peran_rantai || [], situs: p.situs, lokasi: bersih({ kota: p.kantor_pusat?.kota }), internasional: p.internasional, proyek_ekstra: p.proyek_ids || [], sumber: sumberOrg(p.sumber), extra: {} }); }
   // 1001startup.id (R13/D15): hanya nama, sektor, lokasi, relasi, sumber primer + atribusi; tanpa deskripsi/EST/skor/pegawai/valuasi/pendiri
   const slugOrg = new Map();
   for (const p of M('p1001', '1001/perusahaan.jsonl')) {
@@ -248,10 +252,16 @@ export function bangun(masukan = {}) {
   const anggotaLengkap = masukan.anggota_lengkap || baca('arsip-meti/anggota_lengkap.jsonl');
   const bersihPrefiks = (n) => String(n || '').replace(/^ANGGOTA\s+\w+\s*:\s*/i, '').trim();
   for (const a of anggotaLengkap) if (a.status === 'aktif' && ['perusahaan', 'organisasi', 'koperasi', 'utama'].includes(a.jenis) && /^ANGGOTA/i.test(a.nama || '')) { const o = nmap.get(norm(bersihPrefiks(a.nama))); if (o && !anggotaMeti.has(o.id)) anggotaMeti.set(o.id, { dari: 'anggota_lengkap' }); }
+  for (const [dup, tujuan] of Object.entries(GABUNG_ORG)) { // duplikat nama gabungan -> organisasi baku; nama dup jadi nama_lain
+    const d = org.get(dup), t = org.get(tujuan); if (!d || !t || d === t) continue;
+    t.nama_lain = unik([...(t.nama_lain || []), d.nama]); t.sumber.push(...d.sumber); t.kepakaran = unik([...(t.kepakaran || []), ...(d.kepakaran || [])]); t.peran_rantai = unik([...(t.peran_rantai || []), ...(d.peran_rantai || [])]);
+    org.delete(dup); nmap.set(norm(d.nama), t); for (const [k, v] of alias) if (v === dup) alias.set(k, tujuan); alias.set(dup, tujuan);
+  }
   const idOrg = (id) => alias.get(id) || null;
   // keanggotaan antar-organisasi
   const keanggotaan = new Map(); const tambahKeang = (dari, ke, jenis) => { if (!dari || !ke || dari === ke) return; const l = keanggotaan.get(dari) || keanggotaan.set(dari, []).get(dari); if (!l.some((x) => x.organisasi_id === ke && x.jenis === jenis)) l.push({ organisasi_id: ke, jenis }); };
   for (const k of M('keanggotaan', 'lembaga/keanggotaan.jsonl')) tambahKeang(idOrg(k.dari), idOrg(k.ke), k.jenis);
+  for (const o of org.values()) for (const a of o.internasional?.afiliasi || []) tambahKeang(idOrg(a.organisasi_id), o.id, 'bagian_dari');
   const singk = new Map(); for (const o of org.values()) if (o.singkatan) singk.set(o.singkatan.toUpperCase(), o.id);
   for (const o of [...org.values()]) for (const s of o.asosiasi || []) tambahKeang(o.id, singk.get(String(s).toUpperCase()), 'anggota_dari');
 
@@ -401,6 +411,14 @@ export function bangun(masukan = {}) {
       o.lokasi = bersih({ ...(o.lokasi || {}), kota: h.kota, provinsi: h.provinsi, alamat: h.alamat, sumber_url: h.sumber_url, tingkat_bukti: h.tingkat_bukti });
     }
   }
+  { // alamat kantor yang diperiksa dari situs resmi (data/direktori/alamat_org.json) menimpa alamat hasil ekstraksi yang salah; koordinat lama dibuang agar dihitung ulang dari alamat
+    const fa = path.join(ROOT, 'data/direktori/alamat_org.json');
+    if (fs.existsSync(fa)) for (const [id, h] of Object.entries(JSON.parse(fs.readFileSync(fa, 'utf8')).baris || {})) {
+      const o = org.get(alias.get(id) || id); if (!o) continue;
+      const { lat, lng, presisi, ...sisa } = o.lokasi || {};
+      o.lokasi = bersih({ ...sisa, alamat: h.alamat, kota: h.kota || sisa.kota, provinsi: h.provinsi || sisa.provinsi, sumber_url: h.sumber_url, tingkat_bukti: h.tingkat_bukti });
+    }
+  }
   { // sumber URL resmi yang diperiksa manusia/skrip (data/direktori/sumber_org.json): membuka organisasi yang tertahan tanpa-sumber-url
     const fs_ = path.join(ROOT, 'data/direktori/sumber_org.json');
     if (fs.existsSync(fs_)) for (const [id, h] of Object.entries(JSON.parse(fs.readFileSync(fs_, 'utf8')).baris || {})) {
@@ -486,7 +504,7 @@ export function bangun(masukan = {}) {
     const peng = (pengOrg.get(o.id) || []).filter((x) => true).map((x) => bersih({ ...x }));
     const ke = (keanggotaan.get(o.id) || []).filter((x) => orgPub.has(x.organisasi_id));
     const anggotaPub = []; for (const [dari, l] of keanggotaan) if (orgPub.has(dari)) for (const x of l) if (x.organisasi_id === o.id) anggotaPub.push({ organisasi_id: dari, jenis: 'anggota' });
-    organisasi.publik.push(bersih({ id: o.id, nama: o.nama, singkatan: o.singkatan, nama_lain: o.nama_lain, kategori: kat(o.kategori), induk: o.induk, kepakaran: (o.kepakaran || []).slice(0, 3), peran_rantai: o.peran_rantai, lokasi: o.lokasi, situs: o.situs, tahun_berdiri: o.tahun_berdiri, deskripsi: o.deskripsi, kode_saham: o.kode_saham, dasar_hukum: o.dasar_hukum, teknis: o.teknis, via_1001: o.via1001, relasi: relasiPer.get(o.id), keuangan: o.keuangan, kontak: kk.pub, keanggotaan: ke, anggota: anggotaPub, pengurus: peng, proyek_ids: [...(proyekPerOrg.get(o.id) || [])].sort(), berita_ids: bTerbaru('organisasi', o.id), sumber: o.sumber.filter((s) => adaUrl(s.url)).map(bersih), diperiksa: o.sumber.map((s) => s.tanggal).filter(Boolean).sort().pop() }));
+    organisasi.publik.push(bersih({ id: o.id, nama: o.nama, singkatan: o.singkatan, nama_lain: o.nama_lain, kategori: kat(o.kategori), induk: o.induk, kepakaran: (o.kepakaran || []).slice(0, 3), peran_rantai: o.peran_rantai, lokasi: o.lokasi, situs: o.situs, tahun_berdiri: o.tahun_berdiri, deskripsi: o.deskripsi, kode_saham: o.kode_saham, dasar_hukum: o.dasar_hukum, teknis: o.teknis, via_1001: o.via1001, relasi: relasiPer.get(o.id), keuangan: o.keuangan, kontak: kk.pub, keanggotaan: ke, anggota: anggotaPub, pengurus: peng, internasional: o.internasional, proyek_ids: unik([...(proyekPerOrg.get(o.id) || []), ...(o.proyek_ekstra || []).filter((x) => proyekPub.some((p) => p.id === x))]).sort(), berita_ids: bTerbaru('organisasi', o.id), sumber: o.sumber.filter((s) => adaUrl(s.url)).map(bersih), diperiksa: o.sumber.map((s) => s.tanggal).filter(Boolean).sort().pop() }));
     const a = { ...ang }; // foto pengurus ke lapis anggota
     const fotos = []; for (const x of pengOrg.get(o.id) || []) { const r = orang.get(x.orang_id); if (r?.foto_pengurus) fotos.push(bersih({ orang_id: x.orang_id, berkas: null, sumber_url: r.foto_pengurus.sumber_url, hak_cipta: r.foto_pengurus.hak_cipta })); }
     if (fotos.length) a.pengurus_foto = fotos; else delete a.pengurus_foto;
@@ -673,6 +691,7 @@ function periksa() {
   const galat = periksaBerkas(semua); if (galat.length) { console.error('GAGAL:\n' + galat.slice(0, 40).join('\n')); process.exit(1); } console.log('periksa ok:', semua.length, 'berkas');
 }
 export // Alias nama organisasi (id -> sebutan lazim di berita/sumber) untuk pencocokan nama; tidak menebak pemilik proyek.
+const GABUNG_ORG = { p_a3b5b106e6: 'p_10e0dde689' }; // 'PT Pertamina Power Indonesia Pertamina Nre' (nama hasil tempel) = PT Pertamina New & Renewable Energy
 const ALIAS_ORG = { p_10e0dde689: ['Pertamina NRE', 'PT Pertamina NRE'], p_a3b5b106e6: ['Pertamina Power Indonesia'] };
 export function selftest() {
   { const k = rapikanKontak({ telepon: '021 5551234 / Hotline: 021 5559999', seluler: 'Budi Santoso +62 812 3456 7890', surel: 'a@x.co.id / b@x.co.id;http://www.x.co.id/en', faks: '021 5550000' });

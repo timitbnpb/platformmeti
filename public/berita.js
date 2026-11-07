@@ -5,7 +5,7 @@ import { esc, nanti, debounce, hantuHtml, galatHtml, ikon, fotoBerita } from "/i
 import { cariHtml, pilihHtml, hapusHtml, hitungHtml, exHtml, sumberHtml, unduhRegHtml, bagikanHtml } from "/inti/komponen.js";
 import { aksiHtml, hlHtml } from "/inti/aksi_ex.js";
 import { namaMedia, logoLokal } from "/inti/nama_media.js";
-import { paginasiHtml } from "/inti/paginasi.js";
+import { paginasiHtml, sorotHalaman } from "/inti/paginasi.js";
 import { volumeSvg, batangMendatar, jumlahJendela } from "/berita_grafik.js";
 import { muat, label, urlAman, norm, namaRegulasi } from "/publik.js";
 import { IKON_TEK as IKT, pilTek } from "/inti/ikon_tek.js";
@@ -189,7 +189,7 @@ function gambarIsi() {
     }
     html += "</ul>";
   }
-  html += paginasiHtml({ hal: S.n, total: rows.length, per: LANJUT });
+  html += paginasiHtml({ hal: S.n, total: rows.length, per: LANJUT, satuan: "jm.pag.u.berita" });
   el.innerHTML = html;
 }
 
@@ -230,7 +230,7 @@ async function mulai() {
     isiHtml: `<div class="jm-tab" role="tablist" id="tab"></div><div class="jm-saring" id="saring"></div><div id="isi" role="tabpanel"></div>`, aksiHtml: " " });
   document.getElementById("isi").addEventListener("click", (e) => {
     if (e.target.closest("[data-aksi=ulang]")) return mulai();
-    const pg = e.target.closest("[data-hal]"); if (pg) { S.n = Number(pg.dataset.hal); nanti(gambarIsi); return document.getElementById("ex-semua").scrollIntoView({ block: "start" }); }
+    const pg = e.target.closest("[data-hal]"); if (pg) { S.n = Number(pg.dataset.hal); sorotHalaman(pg, S.n); nanti(gambarIsi); return document.getElementById("ex-semua").scrollIntoView({ block: "start" }); }
     const c = e.target.closest("[data-topik]"); if (c) { ubah(() => { S.tek = c.dataset.topik; document.getElementById("f-tek").value = S.tek; }); }
   });
   document.getElementById("tab").addEventListener("click", (e) => {

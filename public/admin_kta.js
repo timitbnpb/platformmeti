@@ -1,5 +1,6 @@
 /* /admin: tab KTA (migrasi 0017). Daftar anggota (basis R2) digabung dengan status KTA; terbitkan, setujui klaim, perpanjang, cabut,
    masa berlaku massal, ekspor CSV. Hanya admin. Server: /api/admin/kta*, /api/admin/anggota-meti. */
+import { paginasiHtml, sorotHalaman } from "/inti/paginasi.js";
 import { t, angka, tanggal } from "/i18n.js";
 import { esc, api, nanti, debounce, hantuHtml, kosongHtml, galatHtml, galatTeks, ikon, pesanHtml } from "/inti/umum.js";
 
@@ -80,7 +81,7 @@ export function panelKta(panel) {
         <td ${L("adm.kta.k.aksi")}><span class="jm-adm-acts">${tombol}${k?.ada_bukti && r.st === "tertunda" ? `<a class="jm-tbl jm-tbl-kecil" href="/api/admin/kta/${k.id}/bukti" download title="${esc(t("adm.kta.a.bukti"))}" aria-label="${esc(t("adm.kta.a.bukti"))}">${ikon("unduh", 18)}</a>` : ""}</span></td></tr>`;
     }).join("");
     $("kIsi").innerHTML = `<div class="jm-gulir"><table class="jm-tabel jm-adm-tabel"><thead><tr>${th("adm.kta.k.nama", "nama")}${ada.sumber ? th("adm.kta.k.sumber") : ""}${ada.nomor ? th("adm.kta.k.nomor", "nomor") : ""}${ada.jenis ? th("adm.kta.k.jenis") : ""}${th("adm.kta.k.status", "status")}${ada.berlaku ? th("adm.kta.k.berlaku", "berlaku") : ""}${ada.akun ? th("adm.kta.k.akun") : ""}${th("adm.kta.k.aksi")}</tr></thead><tbody>${baris}</tbody></table></div>
-      ${maks > 1 ? `<div class="jm-bar"><button type="button" class="jm-tbl jm-tbl-kecil" data-k="hal-"${S.hal <= 1 ? " disabled" : ""} aria-label="${esc(t("jm.sebelumnya"))}">${ikon("panah-kiri", 18)}</button><span>${esc(t("adm.kta.hal", { n: angka(S.hal), m: angka(maks) }))}</span><button type="button" class="jm-tbl jm-tbl-kecil" data-k="hal+"${S.hal >= maks ? " disabled" : ""} aria-label="${esc(t("jm.berikutnya"))}">${ikon("panah-kanan", 18)}</button></div>` : ""}`;
+      ${paginasiHtml({ hal: S.hal, total: n, per: BARIS, satuan: "jm.pag.u.anggota" })}`;
   }
 
   /* ---------- dialog aksi ---------- */
@@ -132,10 +133,11 @@ export function panelKta(panel) {
   }
 
   panel.addEventListener("click", (e) => {
+    const ph = e.target.closest("[data-hal]");
+    if (ph) { S.hal = +ph.dataset.hal; sorotHalaman(ph, S.hal); nanti(gambar); return; }
     const b = e.target.closest("[data-k]");
     if (!b) { if (e.target.closest("[data-aksi=ulang]")) muat(); return; }
     const k = b.dataset.k;
-    if (k === "hal-" || k === "hal+") { S.hal += k === "hal+" ? 1 : -1; nanti(gambar); return; }
     if (k === "urut") { S.arah = S.urut === b.dataset.u ? -S.arah : 1; S.urut = b.dataset.u; nanti(() => { saring(); gambar(); }); return; }
     bukaDialog(k, S.baris.find((x) => x.id === b.dataset.id));
   });

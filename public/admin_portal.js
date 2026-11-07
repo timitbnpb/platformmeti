@@ -2,7 +2,8 @@
    Tolak wajib catatan. Nilai di-escape. */
 import { t, tanggal, tanggalDariUnix } from "/i18n.js";
 import { esc, api, nanti, hantuHtml, kosongHtml, galatTeks, ikon, pesanHtml } from "/inti/umum.js";
-import { kepalaTab, keadaan, halHtml, aman } from "/admin_umum.js";
+import { paginasiHtml, sorotHalaman } from "/inti/paginasi.js";
+import { kepalaTab, keadaan, aman } from "/admin_umum.js";
 import { namaProvinsi } from "/profil_tampil.js";
 
 const TIPE = ["ajuan", "klaim", "wilayah"], STATUS = ["baru", "setuju", "tolak"];
@@ -31,7 +32,7 @@ export function panelPortal(panel) {
   panel.addEventListener("click", async (e) => {
     const b = e.target.closest("button"); if (!b) return;
     const a = b.dataset.aksi;
-    if (a === "hal-") { S.hal = Math.max(1, S.hal - 1); muat(); } else if (a === "hal+") { S.hal += 1; muat(); } else if (a === "ulang") muat();
+    if (b?.dataset.hal) { S.hal = +b.dataset.hal; sorotHalaman(b, S.hal); muat(); } else if (a === "ulang") muat();
     else if (a === "setuju" || a === "tolak") tinjau(a, b.dataset.id);
     else if (a === "batal") dlg.close();
     else if (a === "lepas") { try { await api(`/api/admin/wilayah-akun/${encodeURIComponent(b.dataset.id)}`, { metode: "DELETE" }); muatWil(); } catch (er) { $("pWilPesan").innerHTML = pesanHtml("galat", galatTeks(er.kode || "umum")); } }
@@ -83,7 +84,7 @@ export function panelPortal(panel) {
       }).join("");
       el.innerHTML = `<div class="jm-gulir"><table class="jm-tabel"><thead><tr>${["pt.c.org", "pt.c.jenis", "pt.c.isi", "kor.c.sumber", "pt.c.tanggal"].map((k) => `<th scope="col">${esc(t(k))}</th>`).join("")}<th scope="col" data-urut="tidak">${esc(t("admin.k.aksi"))}</th></tr></thead><tbody>${baris}</tbody></table></div>`;
     }
-    $("pHal").innerHTML = halHtml(S.hal, S.baris.length >= 50 && S.hal * 50 < S.total);
+    $("pHal").innerHTML = paginasiHtml({ hal: S.hal, total: S.total, per: 50, satuan: "jm.pag.u.permohonan" });
   }
   async function muatWil() {
     const el = $("pWilIsi");

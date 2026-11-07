@@ -5,6 +5,7 @@ import { khUbin } from "/inti/kh.js";
 import { t, angka, tanggal } from "/i18n.js";
 import { judulHuruf, esc, nanti, debounce, hantuHtml, kosongHtml, galatHtml, ikon } from "/inti/umum.js";
 import { cariHtml, pilihHtml, hapusHtml, exHtml, sumberHtml, unduhRegHtml, terkaitHtml, bagikanHtml } from "/inti/komponen.js";
+import { paginasiHtml, sorotHalaman } from "/inti/paginasi.js";
 import { tautOrg } from "/inti/tautan.js";
 import { aksiHtml, hlHtml } from "/inti/aksi_ex.js";
 import { penerbitHtml, penerbitDari } from "/penerbit.js";
@@ -86,7 +87,7 @@ function gambarDaftar(rows) {
   const potong = rows.slice((S.hal - 1) * HAL, S.hal * HAL);
   const th = (k, kelas = "", uk = "") => uk ? `<th class="${kelas}" aria-sort="${S.uk === uk ? (S.ua > 0 ? "ascending" : "descending") : "none"}"><button type="button" class="jm-urut" data-uk="${uk}">${esc(t(k))}</button></th>` : `<th class="${kelas}">${esc(t(k))}</th>`;
   document.getElementById("isi").innerHTML = potong.length ? `<div class="jm-gulir"><table class="jm-tabel jm-tabel-tetap jm-reg-tabel" data-urut="tidak"><thead><tr>${th("reg.col.no", "jm-no")}${th("reg.col.aturan", "", "aturan")}${th("reg.col.penerbit", "", "penerbit")}${th("reg.col.tanggal", "", "tanggal")}${th("reg.col.status", "", "status")}${th("reg.col.dok", "", "dok")}</tr></thead><tbody>${potong.map((r, i) => barisHtml(r, (S.hal - 1) * HAL + i)).join("")}</tbody></table></div>` : kosongHtml("jm.kosong.cocok", { data: "reset", kunci: "jm.kosong.reset" });
-  document.getElementById("hal").innerHTML = maks > 1 ? `<button type="button" class="jm-tbl jm-tbl-kecil" data-hal="-1"${S.hal <= 1 ? " disabled" : ""}>${esc(t("jm.sebelumnya"))}</button><span>${esc(t("jm.hal", { n: angka(S.hal) }))} / ${angka(maks)}</span><button type="button" class="jm-tbl jm-tbl-kecil" data-hal="1"${S.hal >= maks ? " disabled" : ""}>${esc(t("jm.berikutnya"))}</button>` : "";
+  document.getElementById("hal").innerHTML = paginasiHtml({ hal: S.hal, total: rows.length, per: HAL, satuan: "jm.pag.u.regulasi" });
 }
 
 /** Linimasa: grafik per tahun (klik = lompat), lalu tiap tahun = bilah lengket yang bisa dilipat + baris padat; relasi mengubah/mencabut jadi chip di bawah judul. */
@@ -337,7 +338,7 @@ async function main() {
     bukaDari(e); if (e.target.closest("[data-aksi=reset]")) document.querySelector("#saring [data-aksi=reset]").click(); });
   document.getElementById("hal").addEventListener("click", (e) => {
     const b = e.target.closest("[data-hal]"); if (!b) return;
-    S.hal += +b.dataset.hal; tunda(); nanti(() => document.getElementById("saring").scrollIntoView({ block: "start" }));
+    if (b.disabled) return; S.hal = +b.dataset.hal; sorotHalaman(b, S.hal); tunda(); nanti(() => document.getElementById("saring").scrollIntoView({ block: "start" }));
   });
   document.getElementById("ruu").addEventListener("click", (e) => {
     const ps = e.target.closest(".jm-pk-ub2");

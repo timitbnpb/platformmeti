@@ -1,4 +1,5 @@
 /* /admin: tab Langganan (newsletter, migrasi 0014). Daftar + hitungan per minat + unduh CSV. Server: GET /api/admin/langganan. Hanya admin. */
+import { paginasiHtml, sorotHalaman } from "/inti/paginasi.js";
 import { t, angka, tanggalDariUnix } from "/i18n.js";
 import { esc, api, nanti, hantuHtml, kosongHtml, galatHtml, pesanHtml, ikon } from "/inti/umum.js";
 
@@ -16,7 +17,7 @@ export function panelLangganan(panel) {
   panel.addEventListener("click", (e) => {
     if (e.target.closest("[data-aksi=ulang]")) return muat();
     const h = e.target.closest("[data-hal]");
-    if (h) { S.hal = +h.dataset.hal; muat(); }
+    if (h && !h.disabled) { S.hal = +h.dataset.hal; sorotHalaman(h, S.hal); muat(); }
   });
   muat();
 
@@ -36,9 +37,8 @@ export function panelLangganan(panel) {
     const minat = MINAT.map((m) => `<li><b>${esc(angka(d.per_minat[m] || 0))}</b><span>${esc(t("lg.minat." + m))}</span></li>`).join("");
     const baris = d.baris.map((b) => `<tr><td data-l="${esc(t("adm.lg.k.nama"))}">${esc(b.nama)}</td><td data-l="${esc(t("adm.lg.k.surel"))}">${esc(b.surel)}</td><td data-l="${esc(t("adm.lg.k.instansi"))}">${b.instansi ? esc(b.instansi) : '<span class="jm-adm-mati">-</span>'}</td>
       <td data-l="${esc(t("adm.lg.k.minat"))}">${esc(b.minat.map((m) => t("lg.minat." + m)).join(", ") || "-")}</td><td data-l="${esc(t("adm.lg.k.status"))}"><span class="jm-pil ${b.status === "aktif" ? "jm-pil-ok" : "jm-pil-mati"}">${esc(t("adm.lg." + b.status))}</span></td><td data-l="${esc(t("adm.lg.k.dibuat"))}">${esc(tanggalDariUnix(b.dibuat))}</td></tr>`).join("");
-    const hal = Math.max(1, Math.ceil((S.status === "aktif" ? d.aktif : S.status === "berhenti" ? d.berhenti : d.total) / 50));
     isi.innerHTML = `<ul class="jm-kh-ubin">${ringkas}</ul><section class="jm-adm-kartu"><header class="jm-adm-kh">${ikon("topik", 20)}<h3>${esc(t("adm.lg.per_minat"))}</h3></header><div class="jm-adm-isi"><ul class="jm-kh-ubin">${minat}</ul></div></section>
       <section class="jm-adm-kartu"><header class="jm-adm-kh">${ikon("surel", 20)}<h3>${esc(t("adm.lg.daftar"))}</h3></header><div class="jm-adm-isi">${d.baris.length ? `<div class="jm-gulir"><table class="jm-tabel"><thead><tr>${KOLOM.map((k) => `<th scope="col">${esc(t("adm.lg.k." + k))}</th>`).join("")}</tr></thead><tbody>${baris}</tbody></table></div>` : kosongHtml("adm.lg.kosong")}</div></section>
-      ${hal > 1 ? `<div class="jm-bar"><button type="button" class="jm-tbl" data-hal="${Math.max(1, S.hal - 1)}"${S.hal <= 1 ? " disabled" : ""}>${esc(t("adm.lg.sebelum"))}</button><span>${esc(S.hal + " / " + hal)}</span><button type="button" class="jm-tbl" data-hal="${S.hal + 1}"${S.hal >= hal ? " disabled" : ""}>${esc(t("adm.lg.berikut"))}</button></div>` : ""}`;
+      ${paginasiHtml({ hal: S.hal, total: S.status === "aktif" ? d.aktif : S.status === "berhenti" ? d.berhenti : d.total, per: 50, satuan: "jm.pag.u.langganan" })}`;
   }
 }

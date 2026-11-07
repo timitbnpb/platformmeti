@@ -194,5 +194,6 @@ export async function mulaiHalaman() {
   if (saya.masuk) { import("/pesan.js").then((m) => m.pasangPesan()).catch(() => {}); lencanaAdmin(kepala, saya); } // /pesan.js terkunci bagi tamu: impor dinamis hanya sesudah masuk
   pasangPilih();
   catatHalaman();
+  if (document.querySelector(".jm-kh[data-kh-tautan]")) import("/inti/kh.js").then((m) => m.khTautanOtomatis()).catch(() => {});
   return saya;
 }

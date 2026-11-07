@@ -2,6 +2,7 @@
    INP: chrome (nilai filter, tombol) berubah seketika; yang dirender hanya satu halaman (50 baris) lewat nanti(). Kontak tersamar sampai "tampilkan". */
 import { t, ada, angka } from "/i18n.js";
 import { esc, api, nanti, debounce, hantuHtml, kosongHtml, galatHtml, galatTeks, ikon } from "/inti/umum.js";
+import { paginasiHtml, sorotHalaman } from "/inti/paginasi.js";
 import { cariHtml, pilihHtml, hitungHtml } from "/inti/komponen.js";
 import { namaBaku } from "/inti/nama_baku.js";
 import { formHtml, bacaForm, tampilGalat } from "/admin_anggota_form.js";
@@ -177,9 +178,7 @@ export function panelAnggota(panel, { boleh, kabari }) {
         `<tr data-i="${r._i}">${kol.map((c) => `<td${c.kls ? ` class="${c.kls}"` : ""} data-l="${esc(t(c.kunci))}">${c.td(r)}</td>`).join("")}</tr>`).join("");
       daftar.innerHTML = `<div class="jm-gulir"><table class="jm-tabel jm-adm-tabel"><thead><tr>${kepala}</tr></thead><tbody>${baris}</tbody></table></div>`;
     }
-    $("mHal").innerHTML = `<button type="button" class="jm-tbl jm-tbl-kecil" data-m="hal-" ${S.hal <= 1 ? "disabled" : ""} aria-label="${esc(t("jm.sebelumnya"))}">${ikon("panah-kiri", 18)}</button>
-      <span>${esc(t("adm.anggota.hal", { n: angka(S.hal), m: angka(maks) }))}</span>
-      <button type="button" class="jm-tbl jm-tbl-kecil" data-m="hal+" ${S.hal >= maks ? "disabled" : ""} aria-label="${esc(t("jm.berikutnya"))}">${ikon("panah-kanan", 18)}</button>`;
+    $("mHal").innerHTML = paginasiHtml({ hal: S.hal, total: n, per: BARIS, satuan: "jm.pag.u.anggota" });
   }
 
   /* lembar profil: kontak tampil penuh (pengurus sudah sah membukanya) */
@@ -212,6 +211,7 @@ export function panelAnggota(panel, { boleh, kabari }) {
       if (tr && !d.closest("a")) bukaProfil(Number(tr.dataset.i));
       return;
     }
+    if (b.dataset.hal) { S.hal = +b.dataset.hal; sorotHalaman(b, S.hal); nanti(isiTabel); return; }
     if (b.dataset.aksi === "ulang") { muat(); return; }
     if (b.dataset.aksi === "reset") { S.cari = S.jenis = S.status = S.iuran = ""; S.hal = 1; rangka(); return; }
     switch (b.dataset.m) {
@@ -228,8 +228,6 @@ export function panelAnggota(panel, { boleh, kabari }) {
       case "tutup": $("mLembar").close(); break;
       case "tampil": { const i = Number(b.dataset.i); S.buka.has(i) ? S.buka.delete(i) : S.buka.add(i); nanti(isiTabel); break; }
       case "urut": { const k = b.dataset.k; S.arah = S.urut === k ? -S.arah : 1; S.urut = URUT.includes(k) ? k : "no_anggota"; S.hal = 1; nanti(isiTabel); break; }
-      case "hal-": S.hal = Math.max(1, S.hal - 1); nanti(isiTabel); break;
-      case "hal+": S.hal += 1; nanti(isiTabel); break;
       case "csv": if (boleh) csv(); break;
       case "baru": bukaForm(null); break;
       case "ubah": bukaForm(S.semua[Number(b.dataset.i)]); break;

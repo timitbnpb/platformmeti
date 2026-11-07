@@ -1,6 +1,7 @@
 /* /proyek: pelacak proyek nasional (K17, JM-P02/P03). Data = potret statis /data/*.json, tanpa rute Worker.
    INP: chrome filter/sort berubah seketika; peta, corong, tabel menyusul lewat nanti(); tabel dipaging 50 baris. */
 import { t, ada, angka, tanggal, bahasa } from "/i18n.js";
+import { paginasiHtml, sorotHalaman } from "/inti/paginasi.js";
 import { esc, nanti, debounce, hantuHtml, galatHtml, ikon } from "/inti/umum.js";
 import { mulaiHalaman } from "/inti/kepala.js";
 import { khUbin } from "/inti/kh.js";
@@ -202,7 +203,7 @@ function terapkan() {
   $("pjHasil").innerHTML = ikon("peta", 16) + `<span>${esc(t("pj.hasil", { n: num(tampil.length), total: num(SEMUA.length), mw: num(jumlahMW(tampil), 0) }))}</span>`;
   for (const x of document.querySelectorAll("#pjStatus [data-st]")) x.setAttribute("aria-pressed", String(x.dataset.st === F.st));
   for (const x of document.querySelectorAll("#pjProgBar [data-pg]")) x.setAttribute("aria-pressed", String(x.dataset.pg === F.prog));
-  nanti(() => { if (v !== versi) return; kepalaTabel(); gambarCorong(); gambarLegenda(); kePeta(); PN.n = 40; gambarPanel(); TT.n = BATAS; TD.n = BATAS; gambarTelat(); gambarDaftar(); });
+  nanti(() => { if (v !== versi) return; kepalaTabel(); gambarCorong(); gambarLegenda(); kePeta(); PN.n = 40; gambarPanel(); TT.hal = 1; TD.hal = 1; gambarTelat(); gambarDaftar(); });
 }
 
 /* ---------- corong ---------- */
@@ -246,8 +247,8 @@ const kolomPeta = [null, "pj.c.maps", mapsTbl, "jm-pj-aksi"];
 const kolomDaftar = [...kolomDasar, [null, "pj.c.sumber", sumberRingkas, "jm-tengah jm-pj-src"], kolomPeta];
 const kolomTelat = [...kolomDasar, ["telat", "pj.c.telat", selTelat, "jm-tengah"], kolomPeta];
 for (const r of SEMUA) { r.progS = r.prog.length ? progNamaPendek(r.prog[0]) : ""; r.pengS = r.peng ? r.peng.nama : ""; }
-const TD = { el: "pjDaftar", kolom: kolomDaftar, k: "nama", arah: 1, n: BATAS, baris: () => tampil };
-const TT = { el: "pjTelat", kolom: kolomTelat, k: "telat", arah: -1, n: BATAS, baris: () => tampil.filter((r) => r.telat) };
+const TD = { el: "pjDaftar", kolom: kolomDaftar, k: "nama", arah: 1, hal: 1, baris: () => tampil };
+const TT = { el: "pjTelat", kolom: kolomTelat, k: "telat", arah: -1, hal: 1, baris: () => tampil.filter((r) => r.telat) };
 const bandingkan = (k, a) => (x, y) => {
   const u = x[k], v = y[k];
   if (u === v) return x.nama.localeCompare(y.nama);
@@ -258,13 +259,14 @@ const bandingkan = (k, a) => (x, y) => {
 
 function gambarTabel(T, fokus) {
   const rows = T.baris().slice().sort(bandingkan(T.k, T.arah)), el = $(T.el);
+  T.hal = Math.min(T.hal, Math.max(1, Math.ceil(rows.length / BATAS)));
   if (!rows.length) { el.innerHTML = `<div class="jm-kosong">${ikon("info", 32)}<p>${esc(t(T === TT ? "pj.telat.kosong" : "jm.kosong.cocok"))}</p></div>`; return; }
   const kepala = T.kolom.map(([k, kt, , kls]) => k
     ? `<th scope="col" aria-sort="${T.k === k ? (T.arah > 0 ? "ascending" : "descending") : "none"}"><button type="button" class="jm-urut" data-u="${k}">${esc(t(kt))}</button></th>`
     : `<th scope="col" class="${kls === "jm-pj-aksi" ? "jm-pj-aksi" : ""}">${kls === "jm-pj-aksi" ? `<span role="img" aria-label="${esc(t(kt))}" title="${esc(t(kt))}">${PIN}</span>` : esc(t(kt))}</th>`).join("");
-  const badan = rows.slice(0, T.n).map((r) => `<tr>${T.kolom.map(([, kt, f, kls]) => `<td data-label="${esc(t(kt))}"${kls ? ` class="${kls}"` : ""}>${f(r)}</td>`).join("")}</tr>`).join("");
+  const badan = rows.slice((T.hal - 1) * BATAS, T.hal * BATAS).map((r) => `<tr>${T.kolom.map(([, kt, f, kls]) => `<td data-label="${esc(t(kt))}"${kls ? ` class="${kls}"` : ""}>${f(r)}</td>`).join("")}</tr>`).join("");
   el.innerHTML = `<div class="jm-gulir"><table class="jm-tabel jm-pj-tetap"><thead><tr>${kepala}</tr></thead><tbody>${badan}</tbody></table></div>
-    <div class="jm-hal"><span>${esc(t("pj.tampil", { n: num(Math.min(T.n, rows.length)), total: num(rows.length) }))}</span>${rows.length > T.n ? `<button type="button" class="jm-tbl" data-lagi="1">${esc(t("pj.lagi"))}</button>` : ""}</div>`;
+    ${paginasiHtml({ hal: T.hal, total: rows.length, per: BATAS, satuan: "jm.pag.u.proyek" })}`;
   for (const i of el.querySelectorAll("i[data-w]")) i.style.width = i.dataset.w + "%";
   if (fokus) { const b = el.querySelector(fokus); if (b) b.focus(); }
 }
@@ -274,13 +276,13 @@ const gambarTelat = () => {
 };
 for (const T of [TD, TT]) {
   $(T.el).addEventListener("click", (e) => {
-    const u = e.target.closest("[data-u]"), l = e.target.closest("[data-lagi]");
+    const u = e.target.closest("[data-u]"), l = e.target.closest("[data-hal]");
     if (u) {
       const k = u.dataset.u;
-      T.arah = T.k === k ? -T.arah : (k === "kap" || k === "telat" ? -1 : 1); T.k = k;
+      T.hal = 1; T.arah = T.k === k ? -T.arah : (k === "kap" || k === "telat" ? -1 : 1); T.k = k;
       for (const th of $(T.el).querySelectorAll("th[aria-sort]")) th.setAttribute("aria-sort", th.contains(u) ? (T.arah > 0 ? "ascending" : "descending") : "none");
       nanti(() => gambarTabel(T, `[data-u="${k}"]`));
-    } else if (l) { T.n += BATAS; l.setAttribute("aria-busy", "true"); nanti(() => gambarTabel(T)); }
+    } else if (l && !l.disabled) { T.hal = +l.dataset.hal; sorotHalaman(l, T.hal); nanti(() => gambarTabel(T)); }
   });
 }
 

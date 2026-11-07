@@ -2,6 +2,7 @@
    INP: chrome (tab aktif, nilai filter, tombol) berubah seketika di handler; render tabel menyusul lewat nanti(). */
 import { t, ada, angka, tanggal, tanggalDariUnix, jam } from "/i18n.js";
 import { esc, api, nanti, debounce, hantuHtml, kosongHtml, galatHtml, galatTeks, ikon, pesanHtml } from "/inti/umum.js";
+import { paginasiHtml, sorotHalaman } from "/inti/paginasi.js";
 import { mulaiHalaman } from "/inti/kepala.js";
 import { panelAnggota } from "/admin_anggota.js";
 import { panelAgenda } from "/admin_agenda.js";
@@ -197,10 +198,7 @@ function jalan() {
 
   function halaman(id, hal, n) {
     const el = $(id);
-    if (!el) return;
-    el.innerHTML = `<button type="button" class="jm-tbl jm-tbl-kecil" data-aksi="hal-" ${hal <= 1 ? "disabled" : ""} aria-label="${esc(t("jm.sebelumnya"))}">${ikon("panah-kiri", 18)}</button>
-      <span>${esc(t("jm.hal", { n: angka(hal) }))}</span>
-      <button type="button" class="jm-tbl jm-tbl-kecil" data-aksi="hal+" ${n < BARIS_HAL ? "disabled" : ""} aria-label="${esc(t("jm.berikutnya"))}">${ikon("panah-kanan", 18)}</button>`;
+    if (el) el.innerHTML = paginasiHtml({ hal, per: BARIS_HAL, n, ada: n >= BARIS_HAL, satuan: "jm.pag.u.akun" });
   }
 
   function tampilTaut(url) {
@@ -286,6 +284,7 @@ function jalan() {
     const b = e.target.closest("button");
     if (!b || tab !== "akun") return; // tab lain punya penangan sendiri
     const ke = A;
+    if (b.dataset.hal) { ke.hal = +b.dataset.hal; sorotHalaman(b, ke.hal); muatAkun(); return; }
     switch (b.id === "aBuat" ? "buat" : b.dataset.aksi) {
       case "buat": {
         const form = $("aForm");
@@ -296,8 +295,6 @@ function jalan() {
         break;
       }
       case "batal-buat": $("aForm").hidden = true; $("aBuat").setAttribute("aria-expanded", "false"); break;
-      case "hal-": ke.hal = Math.max(1, ke.hal - 1); muatAkun(); break;
-      case "hal+": ke.hal += 1; muatAkun(); break;
       case "reset":
         A.cari = A.peran = A.status = ""; A.hal = 1; panelAkun();
         break;

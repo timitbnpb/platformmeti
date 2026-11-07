@@ -3,7 +3,8 @@
 import { t, ada, tanggal, tanggalDariUnix, jam } from "/i18n.js";
 import { esc, api, nanti, hantuHtml, kosongHtml, galatTeks, ikon, pesanHtml } from "/inti/umum.js";
 import { logoOrgSatu } from "/inti/logo_org.js";
-import { data, kepalaTab, keadaan, halHtml, aman, detik } from "/admin_umum.js";
+import { paginasiHtml, sorotHalaman } from "/inti/paginasi.js";
+import { data, kepalaTab, keadaan, aman, detik } from "/admin_umum.js";
 import { nilaiKolom, labelKolom } from "/inti/koreksi.js";
 
 const STATUS = ["baru", "setuju", "tolak"];
@@ -38,7 +39,7 @@ export function panelKoreksi(panel) {
   panel.addEventListener("click", (e) => {
     const b = e.target.closest("button"); if (!b) return;
     const a = b.dataset.aksi;
-    if (a === "hal-") { S.hal = Math.max(1, S.hal - 1); muat(); } else if (a === "hal+") { S.hal += 1; muat(); } else if (a === "ulang") muat();
+    if (b?.dataset.hal) { S.hal = +b.dataset.hal; sorotHalaman(b, S.hal); muat(); } else if (a === "ulang") muat();
     else if (a === "setuju" || a === "tolak") tinjau(a, S.baris.find((r) => String(r.id) === b.dataset.id));
     else if (a === "batal") dlg.close();
   });
@@ -73,7 +74,7 @@ export function panelKoreksi(panel) {
       }).join("");
       el.innerHTML = `<div class="jm-gulir"><table class="jm-tabel"><thead><tr>${["kor.c.entitas", "kor.c.kolom", "kor.c.banding", "kor.c.alasan", "kor.c.sumber", "kor.c.waktu"].map((k) => `<th scope="col">${esc(t(k))}</th>`).join("")}<th scope="col" data-urut="tidak">${esc(t("admin.k.aksi"))}</th></tr></thead><tbody>${baris}</tbody></table></div>`;
     }
-    $("kHal").innerHTML = halHtml(S.hal, S.baris.length >= 50 && S.hal * 50 < S.total);
+    $("kHal").innerHTML = paginasiHtml({ hal: S.hal, total: S.total, per: 50, satuan: "jm.pag.u.koreksi" });
   }
 
   function tinjau(aksi, r) {
@@ -106,8 +107,8 @@ export function panelAudit(panel) {
   const $ = (i) => panel.querySelector("#" + i);
   panel.addEventListener("change", (e) => { if (e.target.id === "aJenis") { S.jenis = e.target.value; S.hal = 1; muat(); } });
   panel.addEventListener("click", (e) => {
-    const a = e.target.closest("button")?.dataset.aksi;
-    if (a === "hal-") { S.hal = Math.max(1, S.hal - 1); muat(); } else if (a === "hal+") { S.hal += 1; muat(); } else if (a === "ulang" || a === "reset") { if (a === "reset") { S.jenis = ""; $("aJenis").value = ""; S.hal = 1; } muat(); }
+    const b = e.target.closest("button"), a = b?.dataset.aksi;
+    if (b?.dataset.hal) { S.hal = +b.dataset.hal; sorotHalaman(b, S.hal); muat(); } else if (a === "ulang" || a === "reset") { if (a === "reset") { S.jenis = ""; $("aJenis").value = ""; S.hal = 1; } muat(); }
   });
   muat();
 
@@ -128,6 +129,6 @@ export function panelAudit(panel) {
         <td data-l="${esc(t("jejak.k.aksi"))}"><span class="jm-adm-aksi">${ikon(IK_AKSI[r.aksi] || "jejak", 16)}${esc(ada("aud.aksi." + r.aksi) ? t("aud.aksi." + r.aksi) : r.aksi)}</span></td>
         <td data-l="${esc(t("aud.c.entitas"))}">${esc(r.entitas || "-")}${r.entitas_id ? `<small>${esc("#" + r.entitas_id)}</small>` : ""}</td><td data-l="${esc(t("aud.c.ringkas"))}">${esc(r.ringkas || "-")}</td></tr>`).join("")}</tbody></table></div>`;
     }
-    $("aHal").innerHTML = halHtml(S.hal, S.baris.length >= 50);
+    $("aHal").innerHTML = paginasiHtml({ hal: S.hal, per: 50, n: S.baris.length, ada: S.baris.length >= 50, satuan: "jm.pag.u.data" });
   }
 }

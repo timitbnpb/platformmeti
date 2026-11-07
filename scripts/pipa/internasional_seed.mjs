@@ -138,14 +138,12 @@ Huayou Cobalt|Huayou|CN|pemasok|penyimpanan|https://www.huayou.com|huayou|
 GEM Co (Greenland)|GEM|CN|pemasok|penyimpanan|https://www.gem.com.cn|gem co ltd|
 LG Chem|LG Chem|KR|pemasok|penyimpanan|https://www.lgchem.com|lg chem|
 Panasonic|Panasonic|JP|pemasok|penyimpanan|https://www.panasonic.com|panasonic|
-Toyota|Toyota|JP|pemasok|elektrifikasi,hidrogen|https://global.toyota|toyota|
 Honda|Honda|JP|pemasok|elektrifikasi|https://global.honda|honda|
 Nissan|Nissan|JP|pemasok|elektrifikasi|https://global.nissannews.com|nissan|
 JA Solar|JA Solar|CN|pemasok|surya|https://www.jasolar.com|ja solar|
 Risen Energy|Risen|CN|pemasok|surya|https://www.risenenergy.com|risen|
 Tongwei|Tongwei|CN|pemasok|surya|https://www.tongwei.com|tongwei|
 Astronergy (Chint)|Astronergy|CN|pemasok|surya|https://www.astronergy.com|astronergy;chint|
-GCL|GCL|CN|pemasok|surya|https://www.gclsilicon.com|gcl|
 REC Group|REC|NO|pemasok|surya|https://www.recgroup.com|rec solar;rec group|
 First Solar|First Solar|US|pemasok|surya|https://www.firstsolar.com|first solar|
 Enphase Energy|Enphase|US|pemasok|surya|https://enphase.com|enphase|
@@ -194,7 +192,6 @@ International Energy Agency|IEA|IEA|lembaga|multi|https://www.iea.org|internatio
 International Renewable Energy Agency|IRENA|IRENA|lembaga|multi|https://www.irena.org|irena;international renewable energy agency|
 Climate Investment Funds|CIF|CIF|pendana|multi|https://www.cif.org|climate investment funds|
 Global Green Growth Institute|GGGI|GGGI|lembaga|multi|https://gggi.org|global green growth|
-UNIDO|UNIDO|UNIDO|lembaga|multi|https://www.unido.org|unido|
 Japan International Cooperation Agency|JICA|JP|pendana|multi|https://www.jica.go.jp|jica;japan international cooperation|
 Japan Bank for International Cooperation|JBIC|JP|pendana|multi|https://www.jbic.go.jp|jbic;japan bank for international cooperation|
 Nippon Export and Investment Insurance|NEXI|JP|pendana|multi|https://www.nexi.go.jp|nexi|
@@ -302,4 +299,10 @@ Genex Power|Genex|AU|pengembang|surya|https://www.genexpower.com.au|genex|
 Lightsource bp|Lightsource bp|GB|pengembang|surya|https://www.lightsourcebp.com|lightsource|
 Octopus Energy|Octopus|GB|pendana|surya|https://octopus.energy|octopus energy|
 Aker|Aker|NO|pengembang|hidrogen|https://www.akerhorizons.com|aker horizons;aker solutions|
+GSMA Foundation|GSMA Foundation|GB|lembaga|multi|https://www.gsma.com|gsma foundation|
+Office for Government Policy Coordination (Korea)|OPC Korea|KR|lembaga|multi|https://www.opm.go.kr|office for government policy coordination|
+German Federal Foreign Office|Auswaertiges Amt|DE|lembaga|multi|https://www.auswaertiges-amt.de|federal foreign office|
+Ministry of Foreign Affairs of the Netherlands|Buitenlandse Zaken|NL|lembaga|multi|https://www.government.nl|ministry of foreign affairs of the netherlands|
+IMPSA|IMPSA|AR|pemasok|hidro|https://www.impsa.com|impsa|
+Hangzhou Jinjiang Group|Jinjiang|CN|pengembang|batubara|https://www.jinjianggroup.com|hangzhou jinjiang|
 `;

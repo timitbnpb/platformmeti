@@ -11,7 +11,7 @@ import { logoUrl, PROV } from "/penerbit.js";
 import { logoOrgSatu } from "/inti/logo_org.js";
 import { IKON_TEK } from "/inti/ikon_tek.js";
 import { bagikanHtml } from "/inti/komponen.js";
-import { paginasiHtml } from "/inti/paginasi.js";
+import { paginasiHtml, sorotHalaman } from "/inti/paginasi.js";
 import { tautOrg } from "/inti/tautan.js";
 
 const PER = 10; // 2 baris x 5 kartu
@@ -154,7 +154,7 @@ function gambarKisi() {
   if (!baris.length) { isi.innerHTML = kosongHtml("pu.kosong", { data: "reset", kunci: "jm.kosong.reset" }); hal.innerHTML = ""; return; }
   const potong = baris.slice((S.hal - 1) * PER, S.hal * PER);
   isi.innerHTML = `<div class="pu-kisi">${potong.map(kartuHtml).join("")}</div>`;
-  hal.innerHTML = paginasiHtml({ hal: S.hal, total: baris.length, per: PER });
+  hal.innerHTML = paginasiHtml({ hal: S.hal, total: baris.length, per: PER, satuan: "jm.pag.u.dokumen" });
 }
 function ubin() {
   const penerbit = new Set(D.docs.map((d) => d.penerbit)).size, unduh = D.docs.reduce((a, d) => a + d.n, 0);
@@ -328,7 +328,7 @@ function pasang() {
   });
   document.getElementById("lagi").addEventListener("click", (e) => {
     const b = e.target.closest("[data-hal]"); if (!b || b.disabled) return;
-    S.hal = Number(b.dataset.hal); tulisUrl();
+    S.hal = Number(b.dataset.hal); sorotHalaman(b, S.hal); tulisUrl();
     nanti(() => { gambarKisi(); document.getElementById("isi").scrollIntoView({ block: "start" }); });
   });
   isi.addEventListener("click", (e) => {

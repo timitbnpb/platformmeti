@@ -1,0 +1,13 @@
+{
+  "_catatan": "Alamat kantor pusat yang diperiksa dari halaman resmi; menimpa alamat hasil ekstraksi heuristik yang salah. potret.mjs membuang koordinat lama dan menghitung ulang dari alamat. Geokode alamat via Nominatim TIDAK dilakukan: robots.txt nominatim.openstreetmap.org melarang /search untuk agen *.",
+  "baris": {
+    "p_dda1e51dae": {
+      "alamat": "Grha Pertamina, Tower Pertamax Lantai 7, Jalan Medan Merdeka Timur No. 11-13, Jakarta Pusat 10110",
+      "kota": "Jakarta Pusat",
+      "provinsi": "DKI Jakarta",
+      "sumber_url": "https://pge.pertamina.com/contact-us",
+      "tingkat_bukti": "situs-sendiri",
+      "tanggal": "2026-11-08"
+    }
+  }
+}

@@ -1,7 +1,7 @@
 {
  "dibangun": "2026-11-08",
- "calon": 297,
- "bersumber": 129,
+ "calon": 300,
+ "bersumber": 147,
  "tanpa_sumber": [
   "Mitsubishi Corporation",
   "JERA",
@@ -13,7 +13,6 @@
   "Toyota Tsusho",
   "Mitsui & Co",
   "Sojitz Corporation",
-  "J-Power (Electric Power Development)",
   "Idemitsu Kosan",
   "ENEOS",
   "Tokyo Electric Power (TEPCO)",
@@ -24,9 +23,7 @@
   "Goldwind",
   "Sun Cable",
   "Gentari",
-  "Shell",
   "BP",
-  "Equinor",
   "Eni",
   "Iberdrola",
   "Statkraft",
@@ -45,16 +42,10 @@
   "Schneider Electric",
   "Huawei Digital Power",
   "SMA Solar Technology",
-  "Fuji Electric",
-  "Ansaldo Energia",
-  "Andritz",
   "Voith",
-  "Dongfang Electric",
-  "Harbin Electric",
   "Hanwha",
   "Hyosung Heavy Industries",
   "LS Electric",
-  "Doosan Enerbility",
   "Samsung C&T",
   "GS Engineering & Construction",
   "Power Construction Corporation of China (PowerChina)",
@@ -68,7 +59,6 @@
   "GEM Co (Greenland)",
   "LG Chem",
   "Panasonic",
-  "Toyota",
   "Honda",
   "Nissan",
   "JA Solar",
@@ -83,7 +73,6 @@
   "Eaton",
   "Legrand",
   "Nidec",
-  "Temasek",
   "GIC",
   "Brookfield",
   "Macquarie",
@@ -95,8 +84,6 @@
   "European Investment Bank",
   "Global Energy Alliance for People and Planet",
   "Global Green Growth Institute",
-  "UNIDO",
-  "Japan Bank for International Cooperation",
   "Nippon Export and Investment Insurance",
   "Japan Organization for Metals and Energy Security",
   "New Energy and Industrial Technology Development Organization",
@@ -123,7 +110,6 @@
   "Citibank",
   "Bank of America",
   "JPMorgan Chase",
-  "US International Development Finance Corporation (DFC)",
   "Export-Import Bank of the United States",
   "Korea Eximbank",
   "Korea International Cooperation Agency",
@@ -155,7 +141,6 @@
   "Sinopec",
   "Petronas",
   "Tenaga Nasional Berhad",
-  "Khazanah",
   "Hindustan Power",
   "Adani",
   "Tata Power",
@@ -265,8 +250,9 @@
   },
   {
    "nama": "Marubeni Corporation",
-   "jumlah_bukti": 5,
+   "jumlah_bukti": 6,
    "jenis": [
+    "wikipedia",
     "gem",
     "proyek",
     "penyedia",
@@ -279,6 +265,13 @@
     "p_4322497a63"
    ],
    "bukti": [
+    {
+     "url": "https://en.wikipedia.org/wiki/List_of_power_stations_in_Indonesia",
+     "tanggal": "2026-11-08",
+     "tb": "media",
+     "jenis": "wikipedia",
+     "ket": "Wikipedia (CC BY-SA), artikel List of power stations in Indonesia, tentang Indonesia"
+    },
     {
      "url": "https://www.gem.wiki/Rantau_Dedep_geothermal_power_plant",
      "tanggal": "2026-11-08",
@@ -328,8 +321,9 @@
   },
   {
    "nama": "INPEX",
-   "jumlah_bukti": 3,
+   "jumlah_bukti": 5,
    "jenis": [
+    "wikipedia",
     "gem",
     "proyek"
    ],
@@ -338,6 +332,13 @@
    ],
    "org_ids": [],
    "bukti": [
+    {
+     "url": "https://en.wikipedia.org/wiki/Energy_in_Indonesia",
+     "tanggal": "2026-11-08",
+     "tb": "media",
+     "jenis": "wikipedia",
+     "ket": "Wikipedia (CC BY-SA), artikel Energy in Indonesia, tentang Indonesia"
+    },
     {
      "url": "https://www.gem.wiki/Muarah_Laboh_geothermal_plant",
      "tanggal": "2026-11-08",
@@ -367,6 +368,24 @@
      "jenis": "gem",
      "ket": "GEM Global Geothermal Power Tracker (2026-03), pemilik/operator proyek Rantau Dedep geothermal power plant",
      "proyek_id": "gem_geothermal_L100000700146"
+    }
+   ]
+  },
+  {
+   "nama": "J-Power (Electric Power Development)",
+   "jumlah_bukti": 1,
+   "jenis": [
+    "wikipedia"
+   ],
+   "proyek_ids": [],
+   "org_ids": [],
+   "bukti": [
+    {
+     "url": "https://en.wikipedia.org/wiki/List_of_power_stations_in_Indonesia",
+     "tanggal": "2026-11-08",
+     "tb": "media",
+     "jenis": "wikipedia",
+     "ket": "Wikipedia (CC BY-SA), artikel List of power stations in Indonesia, tentang Indonesia"
     }
    ]
   },
@@ -1037,13 +1056,21 @@
   },
   {
    "nama": "China Shenhua Energy",
-   "jumlah_bukti": 8,
+   "jumlah_bukti": 9,
    "jenis": [
+    "wikipedia",
     "gem"
    ],
    "proyek_ids": [],
    "org_ids": [],
    "bukti": [
+    {
+     "url": "https://en.wikipedia.org/wiki/List_of_power_stations_in_Indonesia",
+     "tanggal": "2026-11-08",
+     "tb": "media",
+     "jenis": "wikipedia",
+     "ket": "Wikipedia (CC BY-SA), artikel List of power stations in Indonesia, tentang Indonesia"
+    },
     {
      "url": "https://www.gem.wiki/Adaro_East_Kalimantan_power_station",
      "tanggal": "2026-11-08",
@@ -1276,10 +1303,43 @@
    ]
   },
   {
-   "nama": "Chevron",
+   "nama": "Shell",
    "jumlah_bukti": 3,
    "jenis": [
+    "wikipedia"
+   ],
+   "proyek_ids": [],
+   "org_ids": [],
+   "bukti": [
+    {
+     "url": "https://en.wikipedia.org/wiki/Electricity_sector_in_Indonesia",
+     "tanggal": "2026-11-08",
+     "tb": "media",
+     "jenis": "wikipedia",
+     "ket": "Wikipedia (CC BY-SA), artikel Electricity sector in Indonesia, tentang Indonesia"
+    },
+    {
+     "url": "https://en.wikipedia.org/wiki/Energy_in_Indonesia",
+     "tanggal": "2026-11-08",
+     "tb": "media",
+     "jenis": "wikipedia",
+     "ket": "Wikipedia (CC BY-SA), artikel Energy in Indonesia, tentang Indonesia"
+    },
+    {
+     "url": "https://en.wikipedia.org/wiki/Biofuel_in_Indonesia",
+     "tanggal": "2026-11-08",
+     "tb": "media",
+     "jenis": "wikipedia",
+     "ket": "Wikipedia (CC BY-SA), artikel Biofuel in Indonesia, tentang Indonesia"
+    }
+   ]
+  },
+  {
+   "nama": "Chevron",
+   "jumlah_bukti": 10,
+   "jenis": [
     "berita",
+    "wikipedia",
     "proyek"
    ],
    "proyek_ids": [
@@ -1296,12 +1356,51 @@
      "ket": "judul berita Antara (pencarian)"
     },
     {
+     "url": "https://en.wikipedia.org/wiki/Geothermal_power_in_Indonesia",
+     "tanggal": "2026-11-08",
+     "tb": "media",
+     "jenis": "wikipedia",
+     "ket": "Wikipedia (CC BY-SA), artikel Geothermal power in Indonesia, tentang Indonesia"
+    },
+    {
      "url": "https://en.wikipedia.org/wiki/List_of_power_stations_in_Indonesia",
      "tanggal": "2026-11-07",
      "tb": "media",
      "jenis": "proyek",
      "ket": "pihak pemilik pada Darajat geothermal",
      "proyek_id": "pj_0229"
+    },
+    {
+     "url": "https://en.wikipedia.org/wiki/Energy_in_Indonesia",
+     "tanggal": "2026-11-08",
+     "tb": "media",
+     "jenis": "wikipedia",
+     "ket": "Wikipedia (CC BY-SA), artikel Energy in Indonesia, tentang Indonesia"
+    },
+    {
+     "url": "https://en.wikipedia.org/wiki/Pertamina",
+     "tanggal": "2026-11-08",
+     "tb": "media",
+     "jenis": "wikipedia",
+     "ket": "Wikipedia (CC BY-SA), artikel Pertamina, tentang Indonesia"
+    }
+   ]
+  },
+  {
+   "nama": "Equinor",
+   "jumlah_bukti": 1,
+   "jenis": [
+    "wikipedia"
+   ],
+   "proyek_ids": [],
+   "org_ids": [],
+   "bukti": [
+    {
+     "url": "https://en.wikipedia.org/wiki/Energy_in_Indonesia",
+     "tanggal": "2026-11-08",
+     "tb": "media",
+     "jenis": "wikipedia",
+     "ket": "Wikipedia (CC BY-SA), artikel Energy in Indonesia, tentang Indonesia"
     }
    ]
   },
@@ -1677,9 +1776,10 @@
   },
   {
    "nama": "GE Vernova",
-   "jumlah_bukti": 1,
+   "jumlah_bukti": 2,
    "jenis": [
-    "berita"
+    "berita",
+    "wikipedia"
    ],
    "proyek_ids": [],
    "org_ids": [],
@@ -1690,14 +1790,22 @@
      "tb": "media",
      "jenis": "berita",
      "ket": "judul berita Antara (pencarian)"
+    },
+    {
+     "url": "https://en.wikipedia.org/wiki/List_of_power_stations_in_Indonesia",
+     "tanggal": "2026-11-08",
+     "tb": "media",
+     "jenis": "wikipedia",
+     "ket": "Wikipedia (CC BY-SA), artikel List of power stations in Indonesia, tentang Indonesia"
     }
    ]
   },
   {
    "nama": "Hitachi Energy",
-   "jumlah_bukti": 2,
+   "jumlah_bukti": 3,
    "jenis": [
-    "berita"
+    "berita",
+    "wikipedia"
    ],
    "proyek_ids": [],
    "org_ids": [],
@@ -1710,6 +1818,13 @@
      "ket": "judul berita Antara (pencarian)"
     },
     {
+     "url": "https://en.wikipedia.org/wiki/List_of_power_stations_in_Indonesia",
+     "tanggal": "2026-11-08",
+     "tb": "media",
+     "jenis": "wikipedia",
+     "ket": "Wikipedia (CC BY-SA), artikel List of power stations in Indonesia, tentang Indonesia"
+    },
+    {
      "url": "https://www.antaranews.com/berita/3358935/bertemu-ceo-hitachi-energy-menteri-esdm-jelaskan-transisi-energi-ri",
      "tanggal": "2023-01-20",
      "tb": "media",
@@ -1720,9 +1835,10 @@
   },
   {
    "nama": "ABB",
-   "jumlah_bukti": 3,
+   "jumlah_bukti": 4,
    "jenis": [
-    "berita"
+    "berita",
+    "wikipedia"
    ],
    "proyek_ids": [],
    "org_ids": [],
@@ -1733,6 +1849,13 @@
      "tb": "media",
      "jenis": "berita",
      "ket": "judul berita Antara (pencarian)"
+    },
+    {
+     "url": "https://en.wikipedia.org/wiki/List_of_power_stations_in_Indonesia",
+     "tanggal": "2026-11-08",
+     "tb": "media",
+     "jenis": "wikipedia",
+     "ket": "Wikipedia (CC BY-SA), artikel List of power stations in Indonesia, tentang Indonesia"
     },
     {
      "url": "https://www.antaranews.com/berita/4689005/abb-soroti-kompleksitas-transisi-energi-di-indonesia",
@@ -1751,10 +1874,29 @@
    ]
   },
   {
-   "nama": "Toshiba",
+   "nama": "Fuji Electric",
    "jumlah_bukti": 2,
    "jenis": [
-    "berita"
+    "wikipedia"
+   ],
+   "proyek_ids": [],
+   "org_ids": [],
+   "bukti": [
+    {
+     "url": "https://en.wikipedia.org/wiki/List_of_power_stations_in_Indonesia",
+     "tanggal": "2026-11-08",
+     "tb": "media",
+     "jenis": "wikipedia",
+     "ket": "Wikipedia (CC BY-SA), artikel List of power stations in Indonesia, tentang Indonesia"
+    }
+   ]
+  },
+  {
+   "nama": "Toshiba",
+   "jumlah_bukti": 5,
+   "jenis": [
+    "berita",
+    "wikipedia"
    ],
    "proyek_ids": [],
    "org_ids": [],
@@ -1765,14 +1907,22 @@
      "tb": "media",
      "jenis": "berita",
      "ket": "judul berita antaranews.com"
+    },
+    {
+     "url": "https://en.wikipedia.org/wiki/List_of_power_stations_in_Indonesia",
+     "tanggal": "2026-11-08",
+     "tb": "media",
+     "jenis": "wikipedia",
+     "ket": "Wikipedia (CC BY-SA), artikel List of power stations in Indonesia, tentang Indonesia"
     }
    ]
   },
   {
    "nama": "Mitsubishi Heavy Industries",
-   "jumlah_bukti": 2,
+   "jumlah_bukti": 3,
    "jenis": [
-    "berita"
+    "berita",
+    "wikipedia"
    ],
    "proyek_ids": [],
    "org_ids": [],
@@ -1785,6 +1935,13 @@
      "ket": "judul berita Antara (pencarian)"
     },
     {
+     "url": "https://en.wikipedia.org/wiki/List_of_power_stations_in_Indonesia",
+     "tanggal": "2026-11-08",
+     "tb": "media",
+     "jenis": "wikipedia",
+     "ket": "Wikipedia (CC BY-SA), artikel List of power stations in Indonesia, tentang Indonesia"
+    },
+    {
      "url": "https://www.antaranews.com/berita/2693689/mitsubishi-heavy-industries-dan-itb-dorong-dekarbonisasi",
      "tanggal": "2022-02-09",
      "tb": "media",
@@ -1794,10 +1951,83 @@
    ]
   },
   {
-   "nama": "Shanghai Electric",
+   "nama": "Ansaldo Energia",
+   "jumlah_bukti": 2,
+   "jenis": [
+    "wikipedia"
+   ],
+   "proyek_ids": [],
+   "org_ids": [],
+   "bukti": [
+    {
+     "url": "https://en.wikipedia.org/wiki/List_of_power_stations_in_Indonesia",
+     "tanggal": "2026-11-08",
+     "tb": "media",
+     "jenis": "wikipedia",
+     "ket": "Wikipedia (CC BY-SA), artikel List of power stations in Indonesia, tentang Indonesia"
+    }
+   ]
+  },
+  {
+   "nama": "Andritz",
    "jumlah_bukti": 1,
    "jenis": [
-    "berita"
+    "wikipedia"
+   ],
+   "proyek_ids": [],
+   "org_ids": [],
+   "bukti": [
+    {
+     "url": "https://en.wikipedia.org/wiki/List_of_power_stations_in_Indonesia",
+     "tanggal": "2026-11-08",
+     "tb": "media",
+     "jenis": "wikipedia",
+     "ket": "Wikipedia (CC BY-SA), artikel List of power stations in Indonesia, tentang Indonesia"
+    }
+   ]
+  },
+  {
+   "nama": "Dongfang Electric",
+   "jumlah_bukti": 2,
+   "jenis": [
+    "wikipedia"
+   ],
+   "proyek_ids": [],
+   "org_ids": [],
+   "bukti": [
+    {
+     "url": "https://en.wikipedia.org/wiki/List_of_power_stations_in_Indonesia",
+     "tanggal": "2026-11-08",
+     "tb": "media",
+     "jenis": "wikipedia",
+     "ket": "Wikipedia (CC BY-SA), artikel List of power stations in Indonesia, tentang Indonesia"
+    }
+   ]
+  },
+  {
+   "nama": "Harbin Electric",
+   "jumlah_bukti": 2,
+   "jenis": [
+    "wikipedia"
+   ],
+   "proyek_ids": [],
+   "org_ids": [],
+   "bukti": [
+    {
+     "url": "https://en.wikipedia.org/wiki/Paiton_Power_Station",
+     "tanggal": "2026-11-08",
+     "tb": "media",
+     "jenis": "wikipedia",
+     "ket": "Wikipedia (CC BY-SA), artikel Paiton Power Station, tentang Indonesia"
+    }
+   ]
+  },
+  {
+   "nama": "Shanghai Electric",
+   "jumlah_bukti": 2,
+   "jenis": [
+    "berita",
+    "wikipedia"
    ],
    "proyek_ids": [],
    "org_ids": [],
@@ -1808,6 +2038,31 @@
      "tb": "media",
      "jenis": "berita",
      "ket": "judul berita vietnamtribune.com"
+    },
+    {
+     "url": "https://en.wikipedia.org/wiki/List_of_power_stations_in_Indonesia",
+     "tanggal": "2026-11-08",
+     "tb": "media",
+     "jenis": "wikipedia",
+     "ket": "Wikipedia (CC BY-SA), artikel List of power stations in Indonesia, tentang Indonesia"
+    }
+   ]
+  },
+  {
+   "nama": "Doosan Enerbility",
+   "jumlah_bukti": 1,
+   "jenis": [
+    "wikipedia"
+   ],
+   "proyek_ids": [],
+   "org_ids": [],
+   "bukti": [
+    {
+     "url": "https://en.wikipedia.org/wiki/List_of_power_stations_in_Indonesia",
+     "tanggal": "2026-11-08",
+     "tb": "media",
+     "jenis": "wikipedia",
+     "ket": "Wikipedia (CC BY-SA), artikel List of power stations in Indonesia, tentang Indonesia"
     }
    ]
   },
@@ -1988,24 +2243,6 @@
      "jenis": "organisasi",
      "ket": "direktori METI: Chint",
      "org_id": "p_db9a161e69"
-    }
-   ]
-  },
-  {
-   "nama": "GCL",
-   "jumlah_bukti": 2,
-   "jenis": [
-    "berita"
-   ],
-   "proyek_ids": [],
-   "org_ids": [],
-   "bukti": [
-    {
-     "url": "https://en.antaranews.com/news/430791/gcl-si-to-showcase-ecopower-mate-at-oil-gas-indonesia-2026",
-     "tanggal": "2026-09-10",
-     "tb": "media",
-     "jenis": "berita",
-     "ket": "judul berita en.antaranews.com"
     }
    ]
   },
@@ -2236,9 +2473,10 @@
   },
   {
    "nama": "Masdar",
-   "jumlah_bukti": 12,
+   "jumlah_bukti": 13,
    "jenis": [
     "tkdn",
+    "wikipedia",
     "gem",
     "proyek",
     "penyedia",
@@ -2259,6 +2497,13 @@
      "tb": "resmi",
      "jenis": "tkdn",
      "ket": "sertifikat TKDN Kemenperin: PT. Pembangkitan Jawa Bali Masdar Solar Energi"
+    },
+    {
+     "url": "https://en.wikipedia.org/wiki/Indonesia_Investment_Authority",
+     "tanggal": "2026-11-08",
+     "tb": "media",
+     "jenis": "wikipedia",
+     "ket": "Wikipedia (CC BY-SA), artikel Indonesia Investment Authority, tentang Indonesia"
     },
     {
      "url": "https://www.gem.wiki/Cirata_Reservoir_solar_farm",
@@ -2282,13 +2527,6 @@
      "jenis": "organisasi",
      "ket": "direktori METI: Masdar",
      "org_id": "p_45c7d8a27f"
-    },
-    {
-     "url": "https://aesi.or.id/anggota/",
-     "tanggal": "2026-11-07",
-     "tb": "kata-pihak",
-     "jenis": "penyedia",
-     "ket": "penyedia teknologi: PT Masdar Mitra Solar Radiance"
     }
    ]
   },
@@ -2527,9 +2765,28 @@
    ]
   },
   {
-   "nama": "Asian Development Bank",
-   "jumlah_bukti": 40,
+   "nama": "Temasek",
+   "jumlah_bukti": 1,
    "jenis": [
+    "wikipedia"
+   ],
+   "proyek_ids": [],
+   "org_ids": [],
+   "bukti": [
+    {
+     "url": "https://en.wikipedia.org/wiki/Danantara",
+     "tanggal": "2026-11-08",
+     "tb": "media",
+     "jenis": "wikipedia",
+     "ket": "Wikipedia (CC BY-SA), artikel Danantara, tentang Indonesia"
+    }
+   ]
+  },
+  {
+   "nama": "Asian Development Bank",
+   "jumlah_bukti": 44,
+   "jenis": [
+    "wikipedia",
     "pendanaan",
     "organisasi"
    ],
@@ -2540,6 +2797,13 @@
     "p_15bc360dc3"
    ],
    "bukti": [
+    {
+     "url": "https://en.wikipedia.org/wiki/Geothermal_power_in_Indonesia",
+     "tanggal": "2026-11-08",
+     "tb": "media",
+     "jenis": "wikipedia",
+     "ket": "Wikipedia (CC BY-SA), artikel Geothermal power in Indonesia, tentang Indonesia"
+    },
     {
      "url": "https://d-portal.org/ctrack.html#view=act&aid=AU-5-INM618-ID",
      "tanggal": "2026-11-07",
@@ -2556,33 +2820,27 @@
      "org_id": "p_15bc360dc3"
     },
     {
+     "url": "https://en.wikipedia.org/wiki/Energy_in_Indonesia",
+     "tanggal": "2026-11-08",
+     "tb": "media",
+     "jenis": "wikipedia",
+     "ket": "Wikipedia (CC BY-SA), artikel Energy in Indonesia, tentang Indonesia"
+    },
+    {
      "url": "https://d-portal.org/ctrack.html#view=act&aid=XM-DAC-46004-40009-013-LN2264",
      "tanggal": "2026-11-07",
      "tb": "resmi",
      "jenis": "pendanaan",
      "ket": "pendanaan energi Indonesia: Infrastructure Project Development Facility"
-    },
-    {
-     "url": "https://d-portal.org/ctrack.html#view=act&aid=XM-DAC-46004-40061-013-GRNT0198",
-     "tanggal": "2026-11-07",
-     "tb": "resmi",
-     "jenis": "pendanaan",
-     "ket": "pendanaan energi Indonesia: Java-Bali Electricity Distribution Performance Improvement Project"
-    },
-    {
-     "url": "https://d-portal.org/ctrack.html#view=act&aid=XM-DAC-46004-40061-013-LN2619",
-     "tanggal": "2026-11-07",
-     "tb": "resmi",
-     "jenis": "pendanaan",
-     "ket": "pendanaan energi Indonesia: Java-Bali Electricity Distribution Performance Improvement Project"
     }
    ]
   },
   {
    "nama": "World Bank",
-   "jumlah_bukti": 9,
+   "jumlah_bukti": 12,
    "jenis": [
     "berita",
+    "wikipedia",
     "pendanaan",
     "organisasi"
    ],
@@ -2601,6 +2859,13 @@
      "ket": "ringkasan berita foreignpolicy.com"
     },
     {
+     "url": "https://en.wikipedia.org/wiki/Geothermal_power_in_Indonesia",
+     "tanggal": "2026-11-08",
+     "tb": "media",
+     "jenis": "wikipedia",
+     "ket": "Wikipedia (CC BY-SA), artikel Geothermal power in Indonesia, tentang Indonesia"
+    },
+    {
      "url": "https://d-portal.org/ctrack.html#view=act&aid=GB-1-204867-403",
      "tanggal": "2026-11-07",
      "tb": "resmi",
@@ -2616,18 +2881,11 @@
      "org_id": "l_18a9ec31f4"
     },
     {
-     "url": "https://d-portal.org/ctrack.html#view=act&aid=XI-BRIDGE-6385676864-9115",
-     "tanggal": "2026-11-07",
-     "tb": "resmi",
-     "jenis": "pendanaan",
-     "ket": "pendanaan energi Indonesia: IBRD Geothermal Energy Upstream Development Project"
-    },
-    {
-     "url": "https://d-portal.org/ctrack.html#view=act&aid=XI-IATI-WBTF-TF071811",
-     "tanggal": "2026-11-07",
-     "tb": "resmi",
-     "jenis": "pendanaan",
-     "ket": "pendanaan energi Indonesia: Geothermal Development in Indonesia: Technical Assistance for Capacity Building Single Donor Trust Fund"
+     "url": "https://en.wikipedia.org/wiki/Paiton_Power_Station",
+     "tanggal": "2026-11-08",
+     "tb": "media",
+     "jenis": "wikipedia",
+     "ket": "Wikipedia (CC BY-SA), artikel Paiton Power Station, tentang Indonesia"
     }
    ]
   },
@@ -2911,9 +3169,10 @@
   },
   {
    "nama": "International Energy Agency",
-   "jumlah_bukti": 1,
+   "jumlah_bukti": 2,
    "jenis": [
-    "berita"
+    "berita",
+    "wikipedia"
    ],
    "proyek_ids": [],
    "org_ids": [],
@@ -2924,15 +3183,23 @@
      "tb": "media",
      "jenis": "berita",
      "ket": "ringkasan berita trend.az"
+    },
+    {
+     "url": "https://en.wikipedia.org/wiki/Geothermal_power_in_Indonesia",
+     "tanggal": "2026-11-08",
+     "tb": "media",
+     "jenis": "wikipedia",
+     "ket": "Wikipedia (CC BY-SA), artikel Geothermal power in Indonesia, tentang Indonesia"
     }
    ]
   },
   {
    "nama": "International Renewable Energy Agency",
-   "jumlah_bukti": 2,
+   "jumlah_bukti": 3,
    "jenis": [
     "pustaka",
-    "regulasi"
+    "regulasi",
+    "wikipedia"
    ],
    "proyek_ids": [],
    "org_ids": [],
@@ -2950,6 +3217,13 @@
      "tb": "resmi",
      "jenis": "regulasi",
      "ket": "regulasi: Pengesahan Statute Of The International Renewable Energy Agency (Statuta Badan Energi Terbarukan Internasional)"
+    },
+    {
+     "url": "https://en.wikipedia.org/wiki/Geothermal_power_in_Indonesia",
+     "tanggal": "2026-11-08",
+     "tb": "media",
+     "jenis": "wikipedia",
+     "ket": "Wikipedia (CC BY-SA), artikel Geothermal power in Indonesia, tentang Indonesia"
     }
    ]
   },
@@ -2973,8 +3247,9 @@
   },
   {
    "nama": "Japan International Cooperation Agency",
-   "jumlah_bukti": 5,
+   "jumlah_bukti": 7,
    "jenis": [
+    "wikipedia",
     "pendanaan",
     "jetp",
     "keuangan"
@@ -2982,6 +3257,13 @@
    "proyek_ids": [],
    "org_ids": [],
    "bukti": [
+    {
+     "url": "https://en.wikipedia.org/wiki/Geothermal_power_in_Indonesia",
+     "tanggal": "2026-11-08",
+     "tb": "media",
+     "jenis": "wikipedia",
+     "ket": "Wikipedia (CC BY-SA), artikel Geothermal power in Indonesia, tentang Indonesia"
+    },
     {
      "url": "https://d-portal.org/ctrack.html#view=act&aid=XM-DAC-701-8-201942390",
      "tanggal": "2026-11-07",
@@ -3004,11 +3286,36 @@
      "ket": "catatan keuangan jetp"
     },
     {
-     "url": "https://d-portal.org/ctrack.html#view=act&aid=XM-DAC-701-8-202004819",
-     "tanggal": "2026-11-07",
-     "tb": "resmi",
-     "jenis": "pendanaan",
-     "ket": "pendanaan energi Indonesia: プサンガン水力発電所建設事業（第二期）"
+     "url": "https://en.wikipedia.org/wiki/List_of_power_stations_in_Indonesia",
+     "tanggal": "2026-11-08",
+     "tb": "media",
+     "jenis": "wikipedia",
+     "ket": "Wikipedia (CC BY-SA), artikel List of power stations in Indonesia, tentang Indonesia"
+    }
+   ]
+  },
+  {
+   "nama": "Japan Bank for International Cooperation",
+   "jumlah_bukti": 2,
+   "jenis": [
+    "wikipedia"
+   ],
+   "proyek_ids": [],
+   "org_ids": [],
+   "bukti": [
+    {
+     "url": "https://en.wikipedia.org/wiki/Geothermal_power_in_Indonesia",
+     "tanggal": "2026-11-08",
+     "tb": "media",
+     "jenis": "wikipedia",
+     "ket": "Wikipedia (CC BY-SA), artikel Geothermal power in Indonesia, tentang Indonesia"
+    },
+    {
+     "url": "https://en.wikipedia.org/wiki/Indonesia_Investment_Authority",
+     "tanggal": "2026-11-08",
+     "tb": "media",
+     "jenis": "wikipedia",
+     "ket": "Wikipedia (CC BY-SA), artikel Indonesia Investment Authority, tentang Indonesia"
     }
    ]
   },
@@ -3711,14 +4018,40 @@
    ]
   },
   {
-   "nama": "US Agency for International Development (USAID)",
-   "jumlah_bukti": 11,
+   "nama": "US International Development Finance Corporation (DFC)",
+   "jumlah_bukti": 1,
    "jenis": [
+    "wikipedia"
+   ],
+   "proyek_ids": [],
+   "org_ids": [],
+   "bukti": [
+    {
+     "url": "https://en.wikipedia.org/wiki/Indonesia_Investment_Authority",
+     "tanggal": "2026-11-08",
+     "tb": "media",
+     "jenis": "wikipedia",
+     "ket": "Wikipedia (CC BY-SA), artikel Indonesia Investment Authority, tentang Indonesia"
+    }
+   ]
+  },
+  {
+   "nama": "US Agency for International Development (USAID)",
+   "jumlah_bukti": 13,
+   "jenis": [
+    "wikipedia",
     "pendanaan"
    ],
    "proyek_ids": [],
    "org_ids": [],
    "bukti": [
+    {
+     "url": "https://en.wikipedia.org/wiki/Indonesia%E2%80%93United_States_relations",
+     "tanggal": "2026-11-08",
+     "tb": "media",
+     "jenis": "wikipedia",
+     "ket": "Wikipedia (CC BY-SA), artikel Indonesia%E2%80%93United States relations, tentang Indonesia"
+    },
     {
      "url": "https://d-portal.org/ctrack.html#view=act&aid=US-GOV-1-7200AA22C00044",
      "tanggal": "2026-11-07",
@@ -3746,13 +4079,6 @@
      "tb": "resmi",
      "jenis": "pendanaan",
      "ket": "pendanaan energi Indonesia: Partnership for Decarbonized and Climate Resilient Energy Systems"
-    },
-    {
-     "url": "https://d-portal.org/ctrack.html#view=act&aid=US-GOV-1-AID-497-A-12-00001",
-     "tanggal": "2026-11-07",
-     "tb": "resmi",
-     "jenis": "pendanaan",
-     "ket": "pendanaan energi Indonesia: Greenhouse Gas Mitigation Program"
     }
    ]
   },
@@ -3829,13 +4155,21 @@
   },
   {
    "nama": "US Department of Energy",
-   "jumlah_bukti": 2,
+   "jumlah_bukti": 3,
    "jenis": [
+    "wikipedia",
     "pendanaan"
    ],
    "proyek_ids": [],
    "org_ids": [],
    "bukti": [
+    {
+     "url": "https://en.wikipedia.org/wiki/Nuclear_power_in_Indonesia",
+     "tanggal": "2026-11-08",
+     "tb": "media",
+     "jenis": "wikipedia",
+     "ket": "Wikipedia (CC BY-SA), artikel Nuclear power in Indonesia, tentang Indonesia"
+    },
     {
      "url": "https://d-portal.org/ctrack.html#view=act&aid=US-GOV-20-DN4001020-30281",
      "tanggal": "2026-11-07",
@@ -4026,6 +4360,24 @@
    ]
   },
   {
+   "nama": "Khazanah",
+   "jumlah_bukti": 1,
+   "jenis": [
+    "wikipedia"
+   ],
+   "proyek_ids": [],
+   "org_ids": [],
+   "bukti": [
+    {
+     "url": "https://en.wikipedia.org/wiki/Danantara",
+     "tanggal": "2026-11-08",
+     "tb": "media",
+     "jenis": "wikipedia",
+     "ket": "Wikipedia (CC BY-SA), artikel Danantara, tentang Indonesia"
+    }
+   ]
+  },
+  {
    "nama": "Aboitiz Equity Ventures",
    "jumlah_bukti": 1,
    "jenis": [
@@ -4040,6 +4392,191 @@
      "tb": "kajian",
      "jenis": "gem",
      "ket": "GEM Global Hydropower Tracker (2026-03), pemilik/operator proyek Lariang hydroelectric plant"
+    }
+   ]
+  },
+  {
+   "nama": "GSMA Foundation",
+   "jumlah_bukti": 1,
+   "jenis": [
+    "pendanaan"
+   ],
+   "proyek_ids": [],
+   "org_ids": [],
+   "bukti": [
+    {
+     "url": "https://d-portal.org/ctrack.html#view=act&aid=US-EIN-37-1552838-96",
+     "tanggal": "2026-11-07",
+     "tb": "resmi",
+     "jenis": "pendanaan",
+     "ket": "pendanaan energi Indonesia: Electrict Vine Industries - Solar PV Microgrids: TCASH mobile money integration and device leasing pilot for eletrification of rural areas in Sumbia"
+    }
+   ]
+  },
+  {
+   "nama": "Office for Government Policy Coordination (Korea)",
+   "jumlah_bukti": 6,
+   "jenis": [
+    "pendanaan"
+   ],
+   "proyek_ids": [],
+   "org_ids": [],
+   "bukti": [
+    {
+     "url": "https://d-portal.org/ctrack.html#view=act&aid=KR-GOV-010-KR-GOV-051-2026040101564000",
+     "tanggal": "2026-11-07",
+     "tb": "resmi",
+     "jenis": "pendanaan",
+     "ket": "pendanaan energi Indonesia: Capacity Building of Alternative Energy Smart Agriculture Responding to Climate Change in Indonesia('25-'27)(2026)"
+    },
+    {
+     "url": "https://d-portal.org/ctrack.html#view=act&aid=KR-GOV-100-1450000_2021_038",
+     "tanggal": "2026-11-07",
+     "tb": "resmi",
+     "jenis": "pendanaan",
+     "ket": "pendanaan energi Indonesia: Energy Policy Consulting Projects(Establishment of Indonesia e-vehicle Master Plan Using Solar Power Utilization)"
+    },
+    {
+     "url": "https://d-portal.org/ctrack.html#view=act&aid=KR-GOV-100-1450000_2022_007",
+     "tanggal": "2026-11-07",
+     "tb": "resmi",
+     "jenis": "pendanaan",
+     "ket": "pendanaan energi Indonesia: Installation of solar charged e-vehicle system in Indonesia"
+    },
+    {
+     "url": "https://d-portal.org/ctrack.html#view=act&aid=KR-GOV-120-1450000_2023_019",
+     "tanggal": "2026-11-07",
+     "tb": "resmi",
+     "jenis": "pendanaan",
+     "ket": "pendanaan energi Indonesia: AMI Implementation in West Java, Indonesia"
+    },
+    {
+     "url": "https://d-portal.org/ctrack.html#view=act&aid=KR-GOV-120-1480000_2026_005",
+     "tanggal": "2026-11-07",
+     "tb": "resmi",
+     "jenis": "pendanaan",
+     "ket": "pendanaan energi Indonesia: Establishment of hydrogen mobility ecosystem in West Java, Indonesia"
+    }
+   ]
+  },
+  {
+   "nama": "German Federal Foreign Office",
+   "jumlah_bukti": 3,
+   "jenis": [
+    "pendanaan"
+   ],
+   "proyek_ids": [],
+   "org_ids": [],
+   "bukti": [
+    {
+     "url": "https://d-portal.org/ctrack.html#view=act&aid=XM-DAC-5-7-6611913",
+     "tanggal": "2026-11-07",
+     "tb": "resmi",
+     "jenis": "pendanaan",
+     "ket": "pendanaan energi Indonesia: Travelling Exhibition Germany´s Energy Transition in Indonesia"
+    },
+    {
+     "url": "https://d-portal.org/ctrack.html#view=act&aid=XM-DAC-5-7-6614348",
+     "tanggal": "2026-11-07",
+     "tb": "resmi",
+     "jenis": "pendanaan",
+     "ket": "pendanaan energi Indonesia: Establishing Renewable Energy Education at UKRIM"
+    },
+    {
+     "url": "https://d-portal.org/ctrack.html#view=act&aid=XM-DAC-5-7-6618680",
+     "tanggal": "2026-11-07",
+     "tb": "resmi",
+     "jenis": "pendanaan",
+     "ket": "pendanaan energi Indonesia: Support JETP Indonesia through ETM Trust Fund"
+    }
+   ]
+  },
+  {
+   "nama": "Ministry of Foreign Affairs of the Netherlands",
+   "jumlah_bukti": 6,
+   "jenis": [
+    "pendanaan"
+   ],
+   "proyek_ids": [],
+   "org_ids": [],
+   "bukti": [
+    {
+     "url": "https://d-portal.org/ctrack.html#view=act&aid=NL-1-PPR-13996",
+     "tanggal": "2026-11-07",
+     "tb": "resmi",
+     "jenis": "pendanaan",
+     "ket": "pendanaan energi Indonesia: Energy Working Group Programme"
+    },
+    {
+     "url": "https://d-portal.org/ctrack.html#view=act&aid=NL-1-PPR-18269",
+     "tanggal": "2026-11-07",
+     "tb": "resmi",
+     "jenis": "pendanaan",
+     "ket": "pendanaan energi Indonesia: DMW- Indonesia palmoil certif."
+    },
+    {
+     "url": "https://d-portal.org/ctrack.html#view=act&aid=NL-1-PPR-18737",
+     "tanggal": "2026-11-07",
+     "tb": "resmi",
+     "jenis": "pendanaan",
+     "ket": "pendanaan energi Indonesia: PNPM Micro-Hydro programme"
+    },
+    {
+     "url": "https://d-portal.org/ctrack.html#view=act&aid=NL-1-PPR-19565",
+     "tanggal": "2026-11-07",
+     "tb": "resmi",
+     "jenis": "pendanaan",
+     "ket": "pendanaan energi Indonesia: JAK-Biogasproject"
+    },
+    {
+     "url": "https://d-portal.org/ctrack.html#view=act&aid=NL-1-PPR-25280",
+     "tanggal": "2026-11-07",
+     "tb": "resmi",
+     "jenis": "pendanaan",
+     "ket": "pendanaan energi Indonesia: JAK PPP Geothermie"
+    }
+   ]
+  },
+  {
+   "nama": "IMPSA",
+   "jumlah_bukti": 2,
+   "jenis": [
+    "gem"
+   ],
+   "proyek_ids": [],
+   "org_ids": [],
+   "bukti": [
+    {
+     "url": "https://www.gem.wiki/Longgi_hydroelectric_plant",
+     "tanggal": "2026-11-08",
+     "tb": "kajian",
+     "jenis": "gem",
+     "ket": "GEM Global Hydropower Tracker (2026-03), pemilik/operator proyek Longgi hydroelectric plant"
+    },
+    {
+     "url": "https://www.gem.wiki/Makale_hydroelectric_plant",
+     "tanggal": "2026-11-08",
+     "tb": "kajian",
+     "jenis": "gem",
+     "ket": "GEM Global Hydropower Tracker (2026-03), pemilik/operator proyek Makale hydroelectric plant"
+    }
+   ]
+  },
+  {
+   "nama": "Hangzhou Jinjiang Group",
+   "jumlah_bukti": 2,
+   "jenis": [
+    "gem"
+   ],
+   "proyek_ids": [],
+   "org_ids": [],
+   "bukti": [
+    {
+     "url": "https://www.gem.wiki/Ketapang_Bangun_Sarana_power_station",
+     "tanggal": "2026-11-08",
+     "tb": "kajian",
+     "jenis": "gem",
+     "ket": "GEM Global Coal Plant Tracker (2026-07), pemilik/operator proyek Ketapang Bangun Sarana power station"
     }
    ]
   }

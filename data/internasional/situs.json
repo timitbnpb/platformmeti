@@ -1,0 +1,336 @@
+{
+ "baris": {
+  "Ormat Technologies": {
+   "status": "ok",
+   "url_akhir": "https://www.ormat.com/en/home/a/main/",
+   "judul": "Ormat Technologies Inc. - Geothermal Power | Renewable Energy Expertise",
+   "tanggal": "2026-11-08"
+  },
+  "Sumitomo Corporation": {
+   "status": "ok",
+   "url_akhir": "https://www.sumitomocorp.com/en/global",
+   "judul": "Sumitomo Corporation",
+   "tanggal": "2026-11-08"
+  },
+  "Marubeni Corporation": {
+   "status": "ok",
+   "url_akhir": "https://www.marubeni.com/en/",
+   "judul": "Marubeni Corporation",
+   "tanggal": "2026-11-08"
+  },
+  "Kansai Electric Power": {
+   "status": "diblokir",
+   "alasan": "robots.txt 403/429"
+  },
+  "INPEX": {
+   "status": "ok",
+   "url_akhir": "https://www.inpex.com/",
+   "judul": "INPEX",
+   "tanggal": "2026-11-08"
+  },
+  "Tohoku Electric Power": {
+   "status": "tak-memuat-nama",
+   "url_akhir": "https://www.tohoku-epco.co.jp/",
+   "judul": "���k�d��"
+  },
+  "J-Power (Electric Power Development)": {
+   "status": "ok",
+   "url_akhir": "https://www.jpower.co.jp/",
+   "judul": "J-POWER 電源開発株式会社",
+   "tanggal": "2026-11-08"
+  },
+  "Hokuriku Electrical Construction": {
+   "status": "gagal",
+   "alasan": "fetch failed"
+  },
+  "Sembcorp Industries": {
+   "status": "diblokir",
+   "alasan": "robots.txt 403/429"
+  },
+  "ACEN Corporation": {
+   "status": "ok",
+   "url_akhir": "https://www.acenrenewables.com/",
+   "judul": "A fast-growing renewable energy company | ACEN",
+   "tanggal": "2026-11-08"
+  },
+  "UPC Renewables": {
+   "status": "ok",
+   "url_akhir": "https://upcrenewables.com/",
+   "judul": "UPC Renewables",
+   "tanggal": "2026-11-08"
+  },
+  "Vena Energy": {
+   "status": "gagal",
+   "alasan": "fetch failed"
+  },
+  "Envision Energy": {
+   "status": "ok",
+   "url_akhir": "https://www.envision-group.com/",
+   "judul": "Envision",
+   "tanggal": "2026-11-08"
+  },
+  "Quantum Power Asia": {
+   "status": "gagal",
+   "alasan": "fetch failed"
+  },
+  "Keppel": {
+   "status": "ok",
+   "url_akhir": "https://www.keppel.com/",
+   "judul": "Keppel - Global asset manager and operator creating solutions for a sustainable future",
+   "tanggal": "2026-11-08"
+  },
+  "Star Energy Group": {
+   "status": "tak-memuat-nama",
+   "url_akhir": "https://www.starenergygroup.net/"
+  },
+  "Electricity Generating PCL (EGCO)": {
+   "status": "diblokir",
+   "alasan": "robots.txt melarang"
+  },
+  "KS Orka Renewables": {
+   "status": "tak-memuat-nama",
+   "url_akhir": "https://www.ksorka.com/",
+   "judul": "KSORKA Renewables"
+  },
+  "Scatec": {
+   "status": "ok",
+   "url_akhir": "https://www.scatec.com/en/",
+   "judul": "Scatec Group",
+   "tanggal": "2026-11-08"
+  },
+  "Aboitiz Power (SN Aboitiz Power)": {
+   "status": "ok",
+   "url_akhir": "https://aboitizpower.com/",
+   "judul": "AboitizPower | A Philippine Power Company",
+   "tanggal": "2026-11-08"
+  },
+  "Korea South-East Power (KOEN)": {
+   "status": "tak-memuat-nama",
+   "url_akhir": "https://www.koenergy.kr/",
+   "judul": "한국남동발전(주)"
+  },
+  "Korea Midland Power (KOMIPO)": {
+   "status": "gagal",
+   "alasan": "fetch failed"
+  },
+  "Hyundai Engineering & Construction": {
+   "status": "ok",
+   "url_akhir": "https://www.hdec.kr/",
+   "judul": "현대건설",
+   "tanggal": "2026-11-08"
+  },
+  "POSCO E&C": {
+   "status": "tak-memuat-nama",
+   "url_akhir": "https://www.poscoenc.com/ko/index.aspx",
+   "judul": "포스코이앤씨"
+  },
+  "IGIS Asset Management": {
+   "status": "ok",
+   "url_akhir": "https://www.igisam.com/ko",
+   "judul": "이지스자산운용",
+   "tanggal": "2026-11-08"
+  },
+  "Solar Philippines": {
+   "status": "ok",
+   "url_akhir": "https://www.solarphilippines.ph/",
+   "judul": "",
+   "tanggal": "2026-11-08"
+  },
+  "Sunseap Group": {
+   "status": "gagal",
+   "alasan": "fetch failed"
+  },
+  "PacificLight Power": {
+   "status": "ok",
+   "url_akhir": "https://www.pacificlight.com.sg/",
+   "judul": "PacificLight | Electricity Retailer in Singapore",
+   "tanggal": "2026-11-08"
+  },
+  "ib vogt": {
+   "status": "ok",
+   "url_akhir": "https://www.ibvogt.com/",
+   "judul": "Home &#8226; ib vogt",
+   "tanggal": "2026-11-08"
+  },
+  "China Gezhouba Group": {
+   "status": "gagal",
+   "alasan": "fetch failed"
+  },
+  "China Guodian": {
+   "status": "tak-memuat-nama",
+   "url_akhir": "https://www.chnenergy.com.cn/",
+   "judul": "国家能源集团"
+  },
+  "China Shenhua Energy": {
+   "status": "gagal",
+   "alasan": "fetch failed"
+  },
+  "Bharat Heavy Electricals (BHEL)": {
+   "status": "diblokir",
+   "alasan": "robots.txt melarang"
+  },
+  "Xinyi Glass Holdings": {
+   "status": "tak-memuat-nama",
+   "url_akhir": "https://www.xinyiglass.com/",
+   "judul": "信义玻璃控股有限公司"
+  },
+  "Vale": {
+   "status": "ok",
+   "url_akhir": "https://vale.com/",
+   "judul": "Mining, Logistics, and Energy - Vale",
+   "tanggal": "2026-11-08"
+  },
+  "Gallant Venture": {
+   "status": "ok",
+   "url_akhir": "https://www.gallantventure.com/",
+   "judul": "GALLANT VENTURE LTD",
+   "tanggal": "2026-11-08"
+  },
+  "ReNu Energy": {
+   "status": "diblokir",
+   "alasan": "robots.txt 403/429"
+  },
+  "Pace Energy": {
+   "status": "gagal",
+   "alasan": "fetch failed"
+  },
+  "Veolia": {
+   "status": "diblokir",
+   "alasan": "robots.txt melarang"
+  },
+  "Wilmar International": {
+   "status": "tak-memuat-nama",
+   "url_akhir": "https://www.wilmar-international.com/"
+  },
+  "Shell": {
+   "status": "ok",
+   "url_akhir": "https://www.shell.com/",
+   "judul": "Shell Global",
+   "tanggal": "2026-11-08"
+  },
+  "Chevron": {
+   "status": "diblokir",
+   "alasan": "robots.txt 403/429"
+  },
+  "Equinor": {
+   "status": "ok",
+   "url_akhir": "https://www.equinor.com/",
+   "judul": "",
+   "tanggal": "2026-11-08"
+  },
+  "Wpd": {
+   "status": "ok",
+   "url_akhir": "https://www.wpd.de/",
+   "judul": "Entwicklung, Finanzierung, Bau und Betrieb von Wind- und Solarprojekten : wpd.de",
+   "tanggal": "2026-11-08"
+  },
+  "Greenvolt": {
+   "status": "gagal",
+   "alasan": "fetch failed"
+  },
+  "Ampotech": {
+   "status": "ok",
+   "url_akhir": "https://www.ampotech.com/",
+   "judul": "Intelligence Driven Energy Solutions",
+   "tanggal": "2026-11-08"
+  },
+  "Jiangsu Seraphim Solar System": {
+   "status": "ok",
+   "url_akhir": "https://www.seraphim-energy.com/",
+   "judul": "Solar Module Manufacturer | Solar PV Pannel | Seraphim Solar",
+   "tanggal": "2026-11-08"
+  },
+  "SEG Solar": {
+   "status": "ok",
+   "url_akhir": "https://www.segsolar.com/",
+   "judul": "BORN AND RAISED IN THE USA-SEG Solar",
+   "tanggal": "2026-11-08"
+  },
+  "Lesso Group": {
+   "status": "ok",
+   "url_akhir": "https://www.lesso.com/",
+   "judul": "LESSO联塑_联塑集团-中国联塑官方网站",
+   "tanggal": "2026-11-08"
+  },
+  "Preformed Line Products": {
+   "status": "gagal",
+   "alasan": "fetch failed"
+  },
+  "Lapp Group (JJ Lapp)": {
+   "status": "diblokir",
+   "alasan": "robots.txt melarang"
+  },
+  "REPT Battero": {
+   "status": "ok",
+   "url_akhir": "https://www.reptbattero.com/",
+   "judul": "Lithium Battery Manufacturer for EV &amp; ESS Solutions | REPT BATTERO",
+   "tanggal": "2026-11-08"
+  },
+  "Tianneng Power": {
+   "status": "gagal",
+   "alasan": "fetch failed"
+  },
+  "Contemporary Amperex Technology (CATL)": {
+   "status": "ok",
+   "url_akhir": "https://www.catl.com/",
+   "judul": "宁德时代·CATL",
+   "tanggal": "2026-11-08"
+  },
+  "Hyundai Motor Group": {
+   "status": "diblokir",
+   "alasan": "robots.txt melarang"
+  },
+  "SK On": {
+   "status": "diblokir",
+   "alasan": "robots.txt melarang"
+  },
+  "Wartsila": {
+   "status": "ok",
+   "url_akhir": "https://www.wartsila.com/",
+   "judul": "The global leader in innovative technologies and lifecycle solutions for the marine and energy markets | Wärtsilä",
+   "tanggal": "2026-11-08"
+  },
+  "Siemens Energy": {
+   "status": "ok",
+   "url_akhir": "https://www.siemens-energy.com/global/en/home.html",
+   "judul": "Siemens Energy | Let&#39;s make tomorrow different today",
+   "tanggal": "2026-11-08"
+  },
+  "Siemens": {
+   "status": "diblokir",
+   "alasan": "robots.txt melarang"
+  },
+  "GE Vernova": {
+   "status": "diblokir",
+   "alasan": "robots.txt melarang"
+  },
+  "Hitachi Energy": {
+   "status": "ok",
+   "url_akhir": "https://www.hitachienergy.com/",
+   "judul": "Hitachi Energy - Powering the electricity era",
+   "tanggal": "2026-11-08"
+  },
+  "ABB": {
+   "status": "gagal",
+   "alasan": "The operation was aborted due to timeout"
+  },
+  "Fuji Electric": {
+   "status": "ok",
+   "url_akhir": "https://www.fujielectric.com/",
+   "judul": "Fuji Electric Global",
+   "tanggal": "2026-11-08"
+  },
+  "Toshiba": {
+   "status": "ok",
+   "url_akhir": "https://www.global.toshiba/jp/top.html",
+   "judul": "トップページ | 東芝",
+   "tanggal": "2026-11-08"
+  },
+  "Mitsubishi Heavy Industries": {
+   "status": "ok",
+   "url_akhir": "https://www.mhi.com/",
+   "judul": "Mitsubishi Heavy Industries, Ltd. Global Website",
+   "tanggal": "2026-11-08"
+  }
+ }
+}

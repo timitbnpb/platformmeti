@@ -14,10 +14,6 @@ export const keadaan = (kode) => (kode === "fitur_belum_aktif"
   ? `<div class="jm-kosong" role="status">${ikon("kunci", 32)}<p><strong>${esc(t("adm.belum_aktif"))}</strong></p><p class="jm-bantu">${esc(t("adm.belum_aktif.d"))}</p></div>`
   : galatHtml(kode));
 
-export const halHtml = (hal, ada) => `<button type="button" class="jm-tbl jm-tbl-kecil" data-aksi="hal-" ${hal <= 1 ? "disabled" : ""} aria-label="${esc(t("jm.sebelumnya"))}">${ikon("panah-kiri", 18)}</button>
-  <span>${esc(t("jm.hal", { n: angka(hal) }))}</span>
-  <button type="button" class="jm-tbl jm-tbl-kecil" data-aksi="hal+" ${ada ? "" : "disabled"} aria-label="${esc(t("jm.berikutnya"))}">${ikon("panah-kanan", 18)}</button>`;
-
 export const aman = (u) => (/^https?:\/\//i.test(u || "") ? u : "");
 /** waktu dari server: detik unix, angka teks, atau ISO. */
 export const detik = (w) => (typeof w === "number" ? w : /^\d+$/.test(String(w)) ? Number(w) : Math.floor(Date.parse(w) / 1000));

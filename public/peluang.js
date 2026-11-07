@@ -2,6 +2,7 @@
    Data = potret statis /data/*.json. Celah = potensi RUEN (2015) dikurangi terpasang HEESI (2025): indikasi (EST), bukan potensi teknis terbaru.
    INP: segmen teknologi berubah seketika (aria-pressed); peta, tabel, kartu menyusul lewat nanti(). */
 import { t, angka, tanggal } from "/i18n.js";
+import { paginasiHtml, sorotHalaman } from "/inti/paginasi.js";
 import { esc, nanti, ikon, hantuHtml, galatHtml } from "/inti/umum.js";
 import { khUbin } from "/inti/kh.js";
 import { muatMapLibre } from "/inti/maplibre.js";
@@ -269,7 +270,7 @@ $("pelIsi").addEventListener("jm:csv", (e) => {
 
 /* ---------- proyek terbuka ---------- */
 const daftarProyek = () => TERBUKA.filter((p) => (S.tek === "semua" || p.tek === S.tek) && (!S.prov || p.kode === S.prov) && (!S.cod || String(p.cod) === S.cod)).sort((a, z) => (z.mw ?? -1) - (a.mw ?? -1));
-let nKartu = BATAS_KARTU;
+let hKartu = 1;
 function saring() {
   const tekAdaList = TEK.filter((k) => TERBUKA.some((p) => p.tek === k));
   const cods = [...new Set(TERBUKA.map((p) => p.cod).filter(Boolean))].sort();
@@ -287,14 +288,15 @@ $("pelIsi").addEventListener("change", (e) => {
 function kepalaProyek() { judulSemua(); }
 function kartuProyek() {
   const rows = daftarProyek(), el = $("pelKartu");
+  hKartu = Math.min(hKartu, Math.max(1, Math.ceil(rows.length / BATAS_KARTU)));
   if ($("pelHitungP")) $("pelHitungP").textContent = t("pel.hitung_p", { n: N(rows.length), total: N(TERBUKA.length) });
   if (!rows.length) { el.innerHTML = `<div class="jm-kosong">${ikon("info", 32)}<p>${esc(t("jm.kosong.cocok"))}</p></div>`; return; }
-  el.innerHTML = `<ul class="jm-pel-kartu">${rows.slice(0, nKartu).map((p) => {
+  el.innerHTML = `<ul class="jm-pel-kartu">${rows.slice((hKartu - 1) * BATAS_KARTU, hKartu * BATAS_KARTU).map((p) => {
     const nama = esc(p.nama), tautan = p.href ? `<a href="${esc(p.href)}">${nama}</a>` : nama;
     return `<li class="jm-pel-k"><div class="jm-pel-k-a">${pilTek(p.tek)}<span class="jm-pel-k-s">${esc(p.sumber === "ruptl" ? t("pel.src.ruptl", { hal: p.hal ?? "-" }) : t("pel.src.proyek"))}</span></div><b class="jm-pel-k-n">${tautan}</b><dl><div><dt>${esc(t("pj.c.kap"))}</dt><dd>${p.mw === null ? "-" : esc(N(p.mw, p.mw % 1 ? 1 : 0) + " MW")}</dd></div><div><dt>${esc(t("pj.c.cod"))}</dt><dd>${p.cod ?? "-"}</dd></div><div class="jm-pel-k-pr"><dt>${esc(t("pj.c.prov"))}</dt><dd>${p.kode ? lambang(p.kode) : ""}<span>${esc(p.prov)}</span></dd></div></dl></li>`;
-  }).join("")}</ul><div class="jm-hal"><span>${esc(t("pj.tampil", { n: N(Math.min(nKartu, rows.length)), total: N(rows.length) }))}</span>${rows.length > nKartu ? `<button type="button" class="jm-tbl" id="pelLagi">${esc(t("pj.lagi"))}</button>` : ""}</div>`;
+  }).join("")}</ul>${paginasiHtml({ hal: hKartu, total: rows.length, per: BATAS_KARTU, satuan: "jm.pag.u.peluang" })}`;
 }
-$("pelIsi").addEventListener("click", (e) => { if (e.target.closest("#pelLagi")) { nKartu += BATAS_KARTU; e.target.closest("#pelLagi").setAttribute("aria-busy", "true"); nanti(kartuProyek); } });
+$("pelIsi").addEventListener("click", (e) => { const b = e.target.closest(".jm-pag [data-hal]"); if (b && !b.disabled) { hKartu = +b.dataset.hal; sorotHalaman(b, hKartu); nanti(kartuProyek); } });
 
 /* ---------- metode ---------- */
 function isiMetode() {
@@ -309,7 +311,7 @@ function segarkanTek() {
   const f = fitur();
   if (peta && petaSiap) peta.getSource("pel")?.setData(f);
   legenda();
-  tabel(); panelProv(); nKartu = BATAS_KARTU; saring(); kartuProyek(); judulSemua();
+  tabel(); panelProv(); hKartu = 1; saring(); kartuProyek(); judulSemua();
 }
 function semua() {
   hero(); segmen(); kerangka();

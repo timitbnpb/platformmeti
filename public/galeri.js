@@ -1,8 +1,8 @@
-/* /galeri (Foto): karusel 3 foto terbaru, kisi masonry, lightbox berketerangan (acara, tanggal, tautan liputan). Hanya foto berhak METI (data/galeri.json). */
+/* /galeri (Foto): karusel 3 foto terbaru, mosaik rata, lightbox berketerangan (acara, tanggal, tautan liputan). Hanya foto berhak METI (data/galeri.json). */
 import { khUbin } from "/inti/kh.js";
 import { t, angka, tanggal } from "/i18n.js";
 import { esc, nanti, ikon, hantuHtml, kosongHtml, galatHtml } from "/inti/umum.js";
-import { pilihHtml, exHtml } from "/inti/komponen.js";
+import { sumberHtml, exHtml } from "/inti/komponen.js";
 import { hlHtml } from "/inti/aksi_ex.js";
 import { muat, urlAman } from "/publik.js";
 import { muatAcara, urlEvent } from "/event_umum.js";
@@ -39,15 +39,50 @@ function otomatis() {
   WAKTU = setInterval(() => { if (!jeda && !document.hidden && k.isConnected) aturSlide(S.slide + 1); }, 6000);
 }
 function saring() { return FOTO.filter((f) => (!S.tahun || f.tanggal.startsWith(S.tahun)) && (!S.acara || f.event === S.acara)); }
+const tileHtml = (f, kelas) => `<button type="button" class="gal-foto ${kelas}" data-foto="${esc(f.id)}" aria-label="${esc(t("gal.buka", { judul: ket(f) }))}"><img class="gal-latar" src="${esc(f.file)}" alt="" aria-hidden="true" loading="lazy" decoding="async"><img class="gal-g" src="${esc(f.file)}" alt="" decoding="async"><span class="gal-ket"><b>${esc(ket(f))}</b><small>${esc(tanggal(f.tanggal))}</small><i class="jm-pil gal-jenis">${ikon(f.event ? "kalender-bintang" : "berita", 14)}<span>${esc(t(f.event ? "gal.jenis.acara" : "gal.jenis.berita"))}</span></i></span></button>`;
 function kisiHtml() {
   LIHAT = saring();
-  return LIHAT.length ? `<ul class="gal-masonry">${LIHAT.map((f) => `<li><button type="button" class="gal-foto" data-foto="${esc(f.id)}" aria-label="${esc(t("gal.buka", { judul: ket(f) }))}"><img src="${esc(f.file)}" alt="" loading="lazy" decoding="async"><span class="gal-ket"><b>${esc(ket(f))}</b><small>${esc(tanggal(f.tanggal))}</small></span></button></li>`).join("")}</ul>` : kosongHtml("gal.kosong");
+  if (!LIHAT.length) return kosongHtml("gal.kosong");
+  const [h, ...sisa] = LIHAT;
+  return `<div class="gal-hero">${tileHtml(h, "gal-h")}</div>${sisa.length ? `<ul class="gal-mosaik">${sisa.map((f) => `<li>${tileHtml(f, "")}</li>`).join("")}</ul>` : ""}`;
+}
+/* mosaik rata: tiap baris setinggi seragam, lebar mengikuti rasio, ujung ke ujung (ponytail: greedy, tanpa optimasi kebijakan baris) */
+const G = 6, TARGET = 240;
+function susun() {
+  const u = document.querySelector(".gal-mosaik");
+  if (!u) return;
+  const li = [...u.children];
+  li.forEach((l) => { const im = l.querySelector(".gal-g"); if (im && im.naturalWidth) { l.dataset.r = im.naturalWidth / im.naturalHeight; l.firstElementChild.classList.toggle("gal-pos", im.naturalWidth / im.naturalHeight < 0.9); } });
+  const hero = document.querySelector(".gal-h .gal-g");
+  if (hero && hero.naturalWidth) hero.closest(".gal-h").classList.toggle("gal-pos", hero.naturalWidth / hero.naturalHeight < 1.2);
+  const set = (l, w, h) => { if (w == null) { l.style.removeProperty("width"); l.style.removeProperty("height"); } else { l.style.setProperty("width", w + "px"); l.style.setProperty("height", h + "px"); } };
+  if (innerWidth < 640) { li.forEach((l) => set(l)); return; }
+  const W = u.clientWidth;
+  if (!W || li.some((l) => !l.dataset.r)) return;
+  let baris = [], jum = 0;
+  const tutup = () => {
+    const h = (W - G * (baris.length - 1)) / jum;
+    let sisa = W;
+    baris.forEach((l, k) => { const w = k === baris.length - 1 ? sisa : Math.floor(l.dataset.r * h); sisa -= w + G; set(l, w, Math.round(h)); });
+    baris = []; jum = 0;
+  };
+  li.forEach((l) => { baris.push(l); jum += Number(l.dataset.r); if (jum * TARGET + G * (baris.length - 1) >= W) tutup(); });
+  if (baris.length) tutup();
+}
+function pasangMosaik() {
+  document.querySelectorAll(".gal-g").forEach((im) => { if (!im.complete) im.addEventListener("load", () => requestAnimationFrame(susun), { once: true }); });
+  susun();
+}
+function chipHtml() {
+  const tahun = [...new Set(FOTO.map((f) => f.tanggal.slice(0, 4)))].sort().reverse();
+  const acara = [...new Set(FOTO.map((f) => f.event).filter(Boolean))];
+  const c = (k, nilai, ik, teks, n, aktif) => `<button type="button" class="gal-chip" data-chip="${k}" data-nilai="${esc(nilai)}" aria-pressed="${aktif}">${ikon(ik, 16)}<span>${esc(teks)}</span><em>${esc(angka(n))}</em></button>`;
+  return c("semua", "", "gambar", t("gal.f.semua"), FOTO.length, !S.tahun && !S.acara) +
+    tahun.map((y) => c("tahun", y, "tahun", y, FOTO.filter((f) => f.tanggal.startsWith(y)).length, S.tahun === y)).join("") +
+    acara.map((s) => c("acara", s, "kalender-bintang", NAMA.get(s) || s, FOTO.filter((f) => f.event === s).length, S.acara === s)).join("");
 }
 function badanHtml() {
-  const tahun = [...new Set(FOTO.map((f) => f.tanggal.slice(0, 4)))].sort().reverse();
-  const acara = [...new Set(FOTO.map((f) => f.event).filter(Boolean))].map((s) => [s, NAMA.get(s) || s]);
-  const aksi = `<div class="jm-saring ev-saring">${pilihHtml({ id: "gTahun", ikon: "tahun", label: t("ev.f.tahun"), opsi: [["", t("ev.f.semua_tahun")], ...tahun.map((y) => [y, y])], nilai: S.tahun })}${pilihHtml({ id: "gAcara", ikon: "kalender-bintang", label: t("gal.f.acara"), opsi: [["", t("gal.f.semua_acara")], ...acara], nilai: S.acara })}</div>`;
-  return exHtml({ id: "gal-kisi", ikon: "gambar", topik: t("gal.kisi.ey"), judulHtml: hlHtml("gal.kisi.j", angka(FOTO.length)), subHtml: esc(t("gal.kisi.sub")), aksiHtml: aksi, isiHtml: `<div id="galIsi">${kisiHtml()}</div><p class="jm-bantu">${esc(t("gal.hak"))}</p>` });
+  return exHtml({ id: "gal-kisi", ikon: "gambar", topik: t("gal.kisi.ey"), judulHtml: hlHtml("gal.kisi.j", angka(FOTO.length)), subHtml: `${esc(t("gal.kisi.sub"))} ${sumberHtml(esc(t("gal.hak")))}`, aksiHtml: "", isiHtml: `<div class="gal-chips" id="galChip" role="group" aria-label="${esc(t("gal.f.label"))}">${chipHtml()}</div><div id="galIsi">${kisiHtml()}</div>` });
 }
 
 /* ---------- lightbox ---------- */
@@ -84,7 +119,7 @@ function bukaId(id) {
 function gambar() {
   document.getElementById("isi").innerHTML = (FOTO.length ? exHtml({ id: "gal-sorot", ikon: "bintang", topik: t("gal.sorot.ey"), judulHtml: esc(t("gal.sorot.j")), subHtml: esc(t("gal.sorot.sub")), isiHtml: karuselHtml() }) : "") + badanHtml();
   ubin();
-  nanti(() => { aturSlide(S.slide); otomatis(); });
+  nanti(() => { aturSlide(S.slide); otomatis(); pasangMosaik(); });
 }
 
 async function main() {
@@ -107,10 +142,16 @@ async function main() {
     else if ((b = q("[data-ke]"))) aturSlide(Number(b.dataset.ke));
     else if ((b = q("[data-foto]"))) { LIHAT = saring(); if (!LIHAT.some((f) => f.id === b.dataset.foto)) LIHAT = FOTO.slice(); S.buka = LIHAT.findIndex((f) => f.id === b.dataset.foto); lightbox(); }
   });
-  isi.addEventListener("change", (e) => {
-    if (e.target.id === "gTahun") S.tahun = e.target.value; else if (e.target.id === "gAcara") S.acara = e.target.value; else return;
-    nanti(() => { document.getElementById("galIsi").innerHTML = kisiHtml(); });
+  isi.addEventListener("click", (e) => {
+    const b = e.target.closest("[data-chip]");
+    if (!b) return;
+    const k = b.dataset.chip, v = b.dataset.nilai;
+    if (k === "semua") { S.tahun = ""; S.acara = ""; } else if (k === "tahun") S.tahun = S.tahun === v ? "" : v; else S.acara = S.acara === v ? "" : v;
+    document.getElementById("galChip").innerHTML = chipHtml();
+    nanti(() => { document.getElementById("galIsi").innerHTML = kisiHtml(); pasangMosaik(); });
   });
+  let tunda = 0;
+  addEventListener("resize", () => { clearTimeout(tunda); tunda = setTimeout(susun, 150); });
   document.addEventListener("jm:bahasa", () => FOTO.length && nanti(gambar));
 }
 main();

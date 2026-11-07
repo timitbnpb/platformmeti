@@ -3,6 +3,7 @@
    INP: chrome filter/ubin/urut berubah seketika; badan tabel digambar ulang lewat nanti(). */
 import { t, ada, angka, tanggal, bahasa } from "/i18n.js";
 import { esc, nanti, debounce, ikon } from "/inti/umum.js";
+import { paginasiHtml, sorotHalaman } from "/inti/paginasi.js";
 import { sumberHtml, exHtml } from "/inti/komponen.js";
 import { pilTek, pilStatus } from "/inti/ikon_tek.js";
 import { PROV } from "/penerbit.js";
@@ -41,7 +42,7 @@ function tabel(el, kolom, rows, S, kosong) {
   const dari = (S.hal - 1) * BATAS;
   const badan = rows.slice(dari, dari + BATAS).map((r) => `<tr>${kolom.map(([, kt, f, kls]) => `<td data-label="${esc(t(kt))}"${kls ? ` class="${kls}"` : ""}>${f(r)}</td>`).join("")}</tr>`).join("");
   el.innerHTML = `<div class="jm-gulir"><table class="jm-tabel jm-kp-tabel"><thead><tr>${kepala}</tr></thead><tbody>${badan}</tbody></table></div>
-    ${pager(S.hal, maks, dari + 1, Math.min(dari + BATAS, rows.length), rows.length)}`;
+    ${paginasiHtml({ hal: S.hal, total: rows.length, per: BATAS, satuan: "jm.pag.u.keputusan" })}`;
 }
 /* kolom Pengembang: logo kecil + nama perusahaan (tautan /o/<id> bila ada di organisasi) + pil status di bawahnya */
 const kelompok = (b) => (b.peng === "IPP" ? "ipp" : b.peng ? "pln" : "tak");
@@ -58,14 +59,6 @@ function pengHtml(b) {
   else nama = anak ? "" : `<span class="jm-kp-dev-nama">${"PT PLN (Persero)"}</span>`;
   return `<span class="jm-kp-peng-sel">${nama}<span class="jm-kp-peng jm-kp-peng-${kelompok(b)}">${esc(pil)}</span></span>`;
 }
-/* paginasi bernomor: panah ikon, nomor dengan elipsis, "a-b dari n"; tanpa kunci i18n baru (jm.sebelumnya/berikutnya sudah ada) */
-function pager(hal, maks, a, b, total) {
-  const set = new Set([1, maks, hal - 1, hal, hal + 1]); if (hal <= 3) [2, 3].forEach((x) => set.add(x)); if (hal >= maks - 2) [maks - 1, maks - 2].forEach((x) => set.add(x));
-  let nomor = "", prev = 0;
-  for (const n of [...set].filter((x) => x >= 1 && x <= maks).sort((x, y) => x - y)) { if (n - prev > 1) nomor += `<span class="jm-hal-elips" aria-hidden="true">${UJUNG}</span>`; nomor += `<button type="button" class="jm-hal-no" data-hal="${n}"${n === hal ? ' aria-current="page"' : ""} aria-label="${esc(t("jm.hal", { n: angka(n) }))}">${num(n)}</button>`; prev = n; }
-  const panah = (ik, h, kunci, mati) => `<button type="button" class="jm-hal-no jm-hal-panah" data-hal="${h}" aria-label="${esc(t(kunci))}"${mati ? " disabled" : ""}>${ikon(ik, 16)}</button>`;
-  return `<nav class="jm-hal jm-hal-no-bar" aria-label="${esc(t("jm.hal", { n: angka(hal) }))}"><span class="jm-hal-info">${num(a)}-${num(b)} ${esc(t("jm.dari"))} ${num(total)}</span>${maks > 1 ? `<span class="jm-hal-daftar">${panah("panah-kiri", hal - 1, "jm.sebelumnya", hal <= 1)}${nomor}${panah("panah-kanan", hal + 1, "jm.berikutnya", hal >= maks)}</span>` : ""}</nav>`;
-}
 function urutKlik(sec, S, gambar, kananDulu) {
   sec.addEventListener("click", (e) => {
     const u = e.target.closest("[data-u]"), l = e.target.closest("[data-hal]");
@@ -74,7 +67,7 @@ function urutKlik(sec, S, gambar, kananDulu) {
       S.hal = 1; S.arah = S.k === k ? -S.arah : (kananDulu.includes(k) ? -1 : 1); S.k = k;
       for (const th of sec.querySelectorAll("th[aria-sort]")) th.setAttribute("aria-sort", th.contains(u) ? (S.arah > 0 ? "ascending" : "descending") : "none");
       nanti(gambar);
-    } else if (l && !l.disabled) { S.hal = +l.dataset.hal; nanti(gambar); }
+    } else if (l && !l.disabled) { S.hal = +l.dataset.hal; sorotHalaman(l, S.hal); nanti(gambar); }
   });
 }
 const pilihHtml = (id, ik, label, opsi, nilai) => `<label class="jm-pil-pilih">${ikon(ik, 18)}<span class="sr">${esc(label)}</span><select id="${id}" data-ikon="${esc(ik)}">${opsi.map(([v, l, oi]) => `<option value="${esc(v)}"${oi ? ` data-ikon="${esc(oi)}"` : ""}${v === nilai ? " selected" : ""}>${esc(l)}</option>`).join("")}</select></label>`;

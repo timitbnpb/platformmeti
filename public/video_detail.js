@@ -4,7 +4,8 @@ import { t, angka, tanggal } from "/i18n.js";
 import { esc, ikon, hantuHtml, kosongHtml, galatHtml } from "/inti/umum.js";
 import { exHtml } from "/inti/komponen.js";
 import { muat, label, urlAman } from "/publik.js";
-import { muatAcara, embedHtml, durasiTeks, tagHtml, bagikanHtml, pasangSalin, urlEvent } from "/event_umum.js";
+import { muatAcara, embedHtml, durasiTeks, tagHtml, bagikanHtml, pasangSalin, urlEvent, thumbUrl } from "/event_umum.js";
+import { khSisi } from "/inti/kh.js";
 import { muatVideo, kartuVideo, logoKanal, SERI_SLUG } from "/video_umum.js";
 
 const id = decodeURIComponent(location.pathname.split("/").filter(Boolean)[1] || "");
@@ -43,6 +44,7 @@ async function gambar(D, v) {
   document.getElementById("judul").textContent = v.judul;
   document.title = `${v.judul} | Video METI`;
   document.getElementById("lead").textContent = `${v.kanalNama} - ${tanggal(v.tanggal)}`;
+  khSisi(".jm-kh", { gambar: { src: thumbUrl(v.id, "hqdefault"), alt: v.judul, logo: logoKanal(v), judul: v.kanalNama } });
   isi.innerHTML = `<div class="ev-detail-kisi"><div class="ev-utama"><div class="vid-layar">${embedHtml(v.id, v.judul, false)}</div>
     ${exHtml({ id: "vid-tentang", ikon: "info", topik: t("vid.tentang.ey"), judulHtml: esc(t("vid.tentang.j")), isiHtml: `${kanalHtml}${v.ringkas ? `<p class="ev-isi">${esc(v.ringkas)}</p>` : `<p class="jm-bantu">${esc(t("vid.tanpa_ringkas"))}</p>`}<div class="ev-tags">${tags}</div><div class="vid-nav">${lama ? `<a class="jm-tbl jm-tbl-kecil" href="/video/${esc(lama.id)}" rel="prev">${ikon("panah-kiri", 16)}<span>${esc(t("vid.sebelumnya"))}</span></a>` : "<span></span>"}${baru ? `<a class="jm-tbl jm-tbl-kecil" href="/video/${esc(baru.id)}" rel="next"><span>${esc(t("vid.berikutnya"))}</span>${ikon("panah-kanan", 16)}</a>` : ""}</div>` })}
     ${terkait.length ? exHtml({ id: "vid-terkait", ikon: "video", topik: t("vid.terkait.ey"), judulHtml: esc(t("vid.terkait.j")), isiHtml: `<ul class="vid-kisi">${terkait.map(kartuVideo).join("")}</ul>` }) : ""}</div>

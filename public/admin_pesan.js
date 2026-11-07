@@ -1,5 +1,6 @@
 /* /admin: tab Pesan (migrasi 0016). Kotak masuk chat akun: filter topik/status, percakapan dua arah, balas (dengan lampiran dan templat), tandai selesai.
    Server: GET /api/admin/pesan, GET|POST /api/admin/pesan/:id[/balas|/status]. Hanya admin dan super. Polling 20 detik saat tab terlihat. */
+import { paginasiHtml, sorotHalaman } from "/inti/paginasi.js";
 import { t, tanggalDariUnix, jam, angka } from "/i18n.js";
 import { esc, api, nanti, hantuHtml, kosongHtml, galatHtml } from "/inti/umum.js";
 import { TOPIK, MAKS_ISI, gelembungHtml, periksaBerkas, kirimForm, kunciGalat, umumkanBelum } from "/inti/pesan_umum.js";
@@ -32,7 +33,7 @@ export function panelPesan(panel) {
   panel.addEventListener("click", (e) => {
     if (e.target.closest("[data-aksi=ulang]")) return muatDaftar();
     const h = e.target.closest("[data-hal]");
-    if (h) { S.hal = +h.dataset.hal; return muatDaftar(); }
+    if (h) { if (h.disabled) return; S.hal = +h.dataset.hal; sorotHalaman(h, S.hal); return muatDaftar(); }
     const u = e.target.closest("[data-utas]");
     if (u) { // chrome urgent: baris aktif seketika
       daf.querySelectorAll(".ps-utas.aktif").forEach((x) => x.classList.remove("aktif")); u.classList.add("aktif");
@@ -74,7 +75,7 @@ export function panelPesan(panel) {
     daf.innerHTML = `<p class="jm-bantu">${esc(t("adm.ps.ringkas", { total: angka(d.total), belum: angka(d.belum) }))}</p>` + (d.baris.length
       ? `<ul class="ps-daftar">${d.baris.map((u) => `<li><button type="button" class="ps-utas${u.dibaca_admin ? "" : " belum"}${u.id === S.id ? " aktif" : ""}" data-utas="${esc(u.id)}"><span class="ps-utas-a"><b>${esc(u.nama || u.surel || "-")}</b><span class="ps-pil ps-pil-${esc(u.status)}">${esc(t("ps.status." + u.status))}</span></span><span class="ps-g-meta"><span>${esc(t("ps.topik." + u.topik))}</span><span>${esc(waktu(u.diubah))}</span></span><span class="ps-utas-t">${esc(u.terakhir_dari === "admin" ? t("adm.ps.anda") + ": " : "")}${esc(u.terakhir || "")}</span></button></li>`).join("")}</ul>`
       : kosongHtml("adm.ps.kosong"))
-      + (hal > 1 ? `<div class="jm-bar"><button type="button" class="jm-tbl jm-tbl-kecil" data-hal="${Math.max(1, S.hal - 1)}"${S.hal <= 1 ? " disabled" : ""}>${esc(t("adm.lg.sebelum"))}</button><span>${esc(S.hal + " / " + hal)}</span><button type="button" class="jm-tbl jm-tbl-kecil" data-hal="${S.hal + 1}"${S.hal >= hal ? " disabled" : ""}>${esc(t("adm.lg.berikut"))}</button></div>` : "");
+      + paginasiHtml({ hal: S.hal, total: d.total, per: 50, satuan: "jm.pag.u.pesan" });
   }
 
   async function muatUtas(awal) {

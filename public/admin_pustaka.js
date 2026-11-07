@@ -2,7 +2,8 @@
 import { t, angka, tanggal, tanggalDariUnix, jam } from "/i18n.js";
 import { esc, api, nanti, hantuHtml, kosongHtml } from "/inti/umum.js";
 import { exHtml } from "/inti/komponen.js";
-import { data, kepalaTab, keadaan, halHtml, detik } from "/admin_umum.js";
+import { paginasiHtml, sorotHalaman } from "/inti/paginasi.js";
+import { data, kepalaTab, keadaan, detik } from "/admin_umum.js";
 
 const HAL = 50;
 const tgl = (w) => { const d = detik(w); return Number.isFinite(d) ? `<span data-urut="${d}">${esc(tanggal(tanggalDariUnix(d)))}<small>${esc(jam(d))}</small></span>` : "-"; };
@@ -13,8 +14,7 @@ export function panelPustaka(panel) {
   const isi = panel.querySelector("#puIsi"), hal = panel.querySelector("#puHal");
   panel.addEventListener("click", (e) => {
     const b = e.target.closest("button"); if (!b) return;
-    if (b.dataset.aksi === "hal-" && S.hal > 1) { S.hal--; muat(); }
-    else if (b.dataset.aksi === "hal+") { S.hal++; muat(); }
+    if (b.dataset.hal) { S.hal = +b.dataset.hal; sorotHalaman(b, S.hal); muat(); }
     else if (b.dataset.aksi === "ulang") muat();
   });
   muat();
@@ -39,7 +39,7 @@ export function panelPustaka(panel) {
         d.daftar.map((r) => `<tr><td data-label="${esc(t("adm.pu.c.waktu"))}">${tgl(r.waktu)}</td><td data-label="${esc(t("adm.pu.c.akun"))}">${r.nama ? `<b>${esc(r.nama)}</b><small>${esc(r.surel || "")}</small>` : `<span class="jm-redup">${esc(t("adm.pu.akun_hapus"))}</span>`}</td><td data-label="${esc(t("adm.pu.c.instansi"))}">${esc(r.instansi || "-")}</td><td data-label="${esc(t("adm.pu.c.telepon"))}">${esc(r.telepon || "-")}</td><td data-label="${esc(t("adm.pu.c.dok"))}">${dok(r.dokumen_id)}</td><td data-label="${esc(t("adm.pu.c.berkas"))}">${esc(r.berkas_id)}</td><td data-label="${esc(t("adm.pu.c.tujuan"))}"><span class="jm-pil">${esc(t("pu.tujuan." + r.tujuan))}</span></td><td data-label="${esc(t("adm.pu.c.via"))}">${esc(t("adm.pu.via." + r.via))}</td></tr>`).join("")}</tbody></table></div>` : kosongHtml("adm.pu.kosong");
       const ex = (judul, sub, isiHtml) => exHtml({ ikon: "tabel", topik: t("adm.pu.ey"), tingkat: "h3", judulHtml: esc(judul), subHtml: esc(sub), isiHtml });
       isi.innerHTML = ex(t("adm.pu.rekap", { n: angka(d.total) }), t("adm.pu.sub.rekap"), rekap) + ex(t("adm.pu.daftar"), t("adm.pu.sub.daftar"), daftar);
-      hal.innerHTML = d.total > HAL || S.hal > 1 ? halHtml(S.hal, S.hal * HAL < d.total) : "";
+      hal.innerHTML = paginasiHtml({ hal: S.hal, total: d.total, per: HAL, satuan: "jm.pag.u.dokumen" });
     });
   }
 }
