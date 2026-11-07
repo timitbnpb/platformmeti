@@ -128,7 +128,7 @@ function kakiHtml() {
   const kontak = KONTAK.map(([k, v, ik, u]) => `<li><span class="jm-kaki-ik">${SVG(ik, 16)}</span><span><small data-i18n="${k}">${t(k)}</small><a href="${u}"${u.startsWith("http") ? ' target="_blank" rel="noopener noreferrer"' : ""}>${v}</a></span></li>`).join("");
   return `<div class="jm-kaki-isi jm-wadah">
     <div class="jm-kaki-k1"><div class="jm-kaki-merek"><span class="jm-kaki-logo"><img src="/img/logo-meti-tanda.png" width="40" height="38" alt=""></span><div><strong>METI</strong><span data-i18n="jm.kaki_org_pendek">${t("jm.kaki_org_pendek")}</span></div></div>
-      <ul class="jm-kaki-stat" id="kakiStat"><li title="${t("jm.kaki.sumber_berdiri")}" data-i18n-attr="title:jm.kaki.sumber_berdiri"><b>1999</b><span data-i18n="jm.kaki.berdiri">${t("jm.kaki.berdiri")}</span></li></ul>
+      <ul class="jm-kaki-stat" id="kakiStat"><li title="${t("jm.kaki.sumber_berdiri")}" data-i18n-attr="title:jm.kaki.sumber_berdiri"><i>${ikon("kalender", 18)}</i><b>1999</b><span data-i18n="jm.kaki.berdiri">${t("jm.kaki.berdiri")}</span></li></ul>
       <div class="jm-kaki-sos">${sosmedHtml()}</div>
       <a class="jm-tbl jm-kaki-lg" href="/langganan">${SVG(IK.surel, 16)}<span data-i18n="jm.kaki.langganan">${t("jm.kaki.langganan")}</span></a></div>
     ${kol}
@@ -145,8 +145,8 @@ async function kakiIsi(kaki, saya) {
   if (!saya?.masuk) return;
   try {
     const r = await api("/api/direktori/potret/ringkas"), h = r?.hitung || {}, ul = kaki.querySelector("#kakiStat"), sumber = (n) => t("jm.kaki.sumber_potret").replace("{tanggal}", r.dibangun_pada || "-").replace("{lapis}", r.lapis || "");
-    const tambah = (n, kunci) => { if (Number.isFinite(n)) ul.insertAdjacentHTML("beforeend", `<li title="${sumber(n)}"><b>${angka(n)}</b><span data-i18n="${kunci}">${t(kunci)}</span></li>`); };
-    tambah(h.proyek, "jm.kaki.proyek"); tambah(h.organisasi, "jm.kaki.organisasi");
+    const tambah = (n, kunci, ik) => { if (Number.isFinite(n)) ul.insertAdjacentHTML("beforeend", `<li title="${sumber(n)}"><i>${ikon(ik, 18)}</i><b>${angka(n)}</b><span data-i18n="${kunci}">${t(kunci)}</span></li>`); };
+    tambah(h.proyek, "jm.kaki.proyek", "proyek"); tambah(h.organisasi, "jm.kaki.organisasi", "direktori");
   } catch (e) { /* tanpa potret: angka disembunyikan, bukan ditebak */ }
 }
 
