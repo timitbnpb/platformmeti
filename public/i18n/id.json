@@ -1,4 +1,9 @@
 {
+ "nav.d_orang": "Orang dan pakar",
+ "nav.d_org": "Organisasi",
+ "nav.d_inovasi": "Inovasi",
+ "nav.dokumen": "Dokumen",
+ "nav.acara": "Acara dan kalender",
  "tn.lihat_semua": "Lihat semua {n} anggota",
  "tn.cari_nama": "Cari nama",
  "tn.n_anggota": "{n} anggota",

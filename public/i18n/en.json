@@ -1,4 +1,9 @@
 {
+ "nav.d_orang": "People and experts",
+ "nav.d_org": "Organisations",
+ "nav.d_inovasi": "Innovations",
+ "nav.dokumen": "Documents",
+ "nav.acara": "Events and calendar",
  "tn.lihat_semua": "See all {n} members",
  "tn.cari_nama": "Search name",
  "tn.n_anggota": "{n} members",

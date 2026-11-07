@@ -23,6 +23,7 @@ export function akunMenuHtml(saya) {
       ${taut("/portal", ikon("direktori", 20), "am.portal")}
       ${butir("pesan", IK_PESAN, "am.pesan", '<span class="jm-am-lencana" id="amBelum" hidden></span>')}
       ${taut("/langganan", ikon("surel", 20), "am.langganan")}
+      ${saya.peran === "admin" || saya.peran === "super" || saya.peran === "pengurus" ? taut("/admin", ikon("perisai", 20), "nav.admin") : ""}
       ${taut("/ganti-sandi", ikon("kunci", 20), "am.sandi")}
       ${butir("bahasa", ikon("bahasa", 20), "am.bahasa", `<span class="jm-am-sisi" data-i18n="am.bahasa_now">${esc(t("am.bahasa_now"))}</span>`)}
       <hr>

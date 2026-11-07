@@ -628,3 +628,9 @@ main>:is(section,div,article)+:is(section,div,article){margin-top:max(24px,var(-
   .jm-pk-nm,.ix-buka{display:inline-flex;align-items:center;min-height:44px}
   .jm-sisi .iconbtn{width:44px;height:44px}
 }
+@media (max-width:760px){
+  button.brt-chip,a.jm-wp-pilbtn,.kal-bulat{min-height:44px;min-width:44px}
+  .jm-reg-ik{flex:none;min-width:44px}
+  .maplibregl-ctrl-group button{width:44px;height:44px}
+}
+@media (max-width:760px){.jm-pk-sel .jm-pk-nm{display:inline-flex;align-items:center;min-height:44px}}
