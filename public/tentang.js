@@ -182,8 +182,8 @@ document.body.append(dd);
 isi.addEventListener("click", (e) => {
   const b = e.target.closest("[data-grup]"); if (!b) return;
   const g = GR.get(b.dataset.grup), n = g.a.filter((o) => o.nama && !o.kosong).length;
-  dd.innerHTML = `<button type="button" class="tn-x" data-tutup aria-label="${esc(t("tn.p.tutup"))}">${ikon("silang", 20)}</button><div class="tn-dd-k"><span class="tn-bulat">${ikon(g.ik, 22)}</span><div><h3 id="tn-dd-j">${esc(g.judul)}</h3><p>${esc(TX("tn.n_anggota", "{n} anggota", { n }))}</p></div></div>
-    <input type="search" class="tn-dd-cari" placeholder="${esc(TX("tn.cari_nama", "Cari nama"))}" aria-label="${esc(TX("tn.cari_nama", "Cari nama"))}"><ul class="tn-fkg tn-dg">${g.a.map((o) => orang(o)).join("")}</ul>`;
+  dd.innerHTML = `<button type="button" class="tn-x" data-tutup aria-label="${esc(t("tn.p.tutup"))}">${ikon("silang", 20)}</button><div class="tn-dd-kp jm-batik jm-batik-rata"><div class="tn-dd-k"><span class="tn-bulat">${ikon(g.ik, 24)}</span><div><h3 id="tn-dd-j">${esc(g.judul)}</h3><p>${ikon("orang", 14)}<span>${esc(TX("tn.n_anggota", "{n} anggota", { n }))}</span></p></div></div>
+    <label class="tn-dd-cr">${ikon("cari", 18)}<input type="search" class="tn-dd-cari" placeholder="${esc(TX("tn.cari_nama", "Cari nama"))}" aria-label="${esc(TX("tn.cari_nama", "Cari nama"))}"></label></div><ul class="tn-fkg tn-dg">${g.a.map((o) => orang(o)).join("")}</ul>`;
   dd.showModal();
 });
 dd.addEventListener("input", (e) => { const q = norm(e.target.value || ""); dd.querySelectorAll(".tn-dg > li").forEach((li) => { li.hidden = !!q && !norm(li.textContent).includes(q); }); });
