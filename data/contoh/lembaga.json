@@ -27,7 +27,8 @@
    "air",
    "panas-bumi",
    "bioenergi"
-  ]
+  ],
+  "eid": 201
  },
  {
   "id": "dinas-esdm-jabar",
@@ -54,7 +55,8 @@
   "sektor": [
    "surya",
    "air"
-  ]
+  ],
+  "eid": 202
  },
  {
   "id": "pln-contoh",
@@ -81,7 +83,8 @@
   "sektor": [
    "jaringan",
    "surya"
-  ]
+  ],
+  "eid": 203
  },
  {
   "id": "pt-surya",
@@ -107,7 +110,8 @@
   "lon": 107.62,
   "sektor": [
    "surya"
-  ]
+  ],
+  "eid": 204
  },
  {
   "id": "pt-bayu",
@@ -133,7 +137,8 @@
   "lon": 119.9,
   "sektor": [
    "bayu"
-  ]
+  ],
+  "eid": 205
  },
  {
   "id": "pt-geo",
@@ -159,7 +164,8 @@
   "lon": 107.9,
   "sektor": [
    "panas-bumi"
-  ]
+  ],
+  "eid": 206
  },
  {
   "id": "pt-bio",
@@ -186,7 +192,8 @@
   "sektor": [
    "bioenergi",
    "sampah-energi"
-  ]
+  ],
+  "eid": 207
  },
  {
   "id": "asosiasi-ebt",
@@ -214,7 +221,8 @@
    "surya",
    "bayu",
    "air"
-  ]
+  ],
+  "eid": 208
  },
  {
   "id": "kampus-barat",
@@ -241,7 +249,8 @@
   "sektor": [
    "surya",
    "penyimpanan"
-  ]
+  ],
+  "eid": 209
  },
  {
   "id": "think-tank",
@@ -268,7 +277,8 @@
   "sektor": [
    "jaringan",
    "efisiensi"
-  ]
+  ],
+  "eid": 210
  },
  {
   "id": "bank-energi",
@@ -295,7 +305,8 @@
   "sektor": [
    "surya",
    "bayu"
-  ]
+  ],
+  "eid": 211
  },
  {
   "id": "donor-int",
@@ -322,7 +333,8 @@
   "sektor": [
    "panas-bumi",
    "surya"
-  ]
+  ],
+  "eid": 212
  },
  {
   "id": "startup-baterai",
@@ -349,7 +361,8 @@
   "sektor": [
    "penyimpanan",
    "kendaraan-listrik"
-  ]
+  ],
+  "eid": 213
  },
  {
   "id": "komunitas-surya",
@@ -375,7 +388,8 @@
   "lon": 110.41,
   "sektor": [
    "surya"
-  ]
+  ],
+  "eid": 214
  },
  {
   "id": "meti",
@@ -405,7 +419,8 @@
    "air",
    "panas-bumi",
    "bioenergi"
-  ]
+  ],
+  "eid": 215
  },
  {
   "id": "dinas-esdm-ntt",
@@ -432,7 +447,8 @@
   "sektor": [
    "surya",
    "bayu"
-  ]
+  ],
+  "eid": 216
  },
  {
   "id": "pt-air",
@@ -458,6 +474,7 @@
   "lon": 140.7,
   "sektor": [
    "air"
-  ]
+  ],
+  "eid": 217
  }
 ]

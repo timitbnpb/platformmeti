@@ -1,0 +1,257 @@
+{
+ "6000101": {
+  "diperiksa": "2026-11-07",
+  "sumber_url": "https://contoh-sinta.example.org",
+  "prodi": "S3 - Teknik Elektro",
+  "subjek": [
+   "Energi Terbarukan",
+   "Sistem Tenaga"
+  ],
+  "tabel": {
+   "Article": [
+    21,
+    41
+   ],
+   "Citation": [
+    310,
+    910
+   ],
+   "Cited Document": [
+    15,
+    30
+   ],
+   "H-Index": [
+    7,
+    13
+   ],
+   "i10-Index": [
+    5,
+    10
+   ],
+   "G-Index": [
+    8,
+    15
+   ]
+  },
+  "skor": {
+   "SINTA Score Overall": 1300,
+   "SINTA Score 3Yr": 310
+  },
+  "grafik": {
+   "scopus-chart-articles": [
+    [
+     2021,
+     2
+    ],
+    [
+     2022,
+     4
+    ],
+    [
+     2023,
+     5
+    ],
+    [
+     2024,
+     6
+    ],
+    [
+     2025,
+     3
+    ]
+   ]
+  },
+  "artikel": [
+   {
+    "judul": "Kinerja modul surya di iklim tropis (contoh)",
+    "url": "https://contoh-sinta-a1.example.org",
+    "tahun": 2025,
+    "sitasi": 4,
+    "terbitan": "Jurnal Energi Contoh",
+    "kuartil": "Q1 Journal",
+    "urutan": "1 of 4",
+    "penulis": "Contoh A, Contoh B"
+   },
+   {
+    "judul": "Penyimpanan baterai untuk jaringan mikro (contoh)",
+    "url": "https://contoh-sinta-a2.example.org",
+    "tahun": 2024,
+    "sitasi": 9,
+    "terbitan": "Prosiding Energi Contoh",
+    "kuartil": "Q3 Conference",
+    "urutan": "2 of 3",
+    "penulis": "Contoh C"
+   }
+  ]
+ },
+ "6000102": {
+  "diperiksa": "2026-11-07",
+  "sumber_url": "https://contoh-sinta.example.org",
+  "prodi": "S3 - Teknik Elektro",
+  "subjek": [
+   "Energi Terbarukan",
+   "Sistem Tenaga"
+  ],
+  "tabel": {
+   "Article": [
+    22,
+    42
+   ],
+   "Citation": [
+    320,
+    920
+   ],
+   "Cited Document": [
+    15,
+    30
+   ],
+   "H-Index": [
+    8,
+    14
+   ],
+   "i10-Index": [
+    5,
+    10
+   ],
+   "G-Index": [
+    8,
+    15
+   ]
+  },
+  "skor": {
+   "SINTA Score Overall": 1400,
+   "SINTA Score 3Yr": 320
+  },
+  "grafik": {
+   "scopus-chart-articles": [
+    [
+     2021,
+     2
+    ],
+    [
+     2022,
+     4
+    ],
+    [
+     2023,
+     5
+    ],
+    [
+     2024,
+     6
+    ],
+    [
+     2025,
+     3
+    ]
+   ]
+  },
+  "artikel": [
+   {
+    "judul": "Kinerja modul surya di iklim tropis (contoh)",
+    "url": "https://contoh-sinta-a1.example.org",
+    "tahun": 2025,
+    "sitasi": 4,
+    "terbitan": "Jurnal Energi Contoh",
+    "kuartil": "Q1 Journal",
+    "urutan": "1 of 4",
+    "penulis": "Contoh A, Contoh B"
+   },
+   {
+    "judul": "Penyimpanan baterai untuk jaringan mikro (contoh)",
+    "url": "https://contoh-sinta-a2.example.org",
+    "tahun": 2024,
+    "sitasi": 9,
+    "terbitan": "Prosiding Energi Contoh",
+    "kuartil": "Q3 Conference",
+    "urutan": "2 of 3",
+    "penulis": "Contoh C"
+   }
+  ]
+ },
+ "6000104": {
+  "diperiksa": "2026-11-07",
+  "sumber_url": "https://contoh-sinta.example.org",
+  "prodi": "S3 - Teknik Elektro",
+  "subjek": [
+   "Energi Terbarukan",
+   "Sistem Tenaga"
+  ],
+  "tabel": {
+   "Article": [
+    24,
+    44
+   ],
+   "Citation": [
+    340,
+    940
+   ],
+   "Cited Document": [
+    15,
+    30
+   ],
+   "H-Index": [
+    10,
+    16
+   ],
+   "i10-Index": [
+    5,
+    10
+   ],
+   "G-Index": [
+    8,
+    15
+   ]
+  },
+  "skor": {
+   "SINTA Score Overall": 1600,
+   "SINTA Score 3Yr": 340
+  },
+  "grafik": {
+   "scopus-chart-articles": [
+    [
+     2021,
+     2
+    ],
+    [
+     2022,
+     4
+    ],
+    [
+     2023,
+     5
+    ],
+    [
+     2024,
+     6
+    ],
+    [
+     2025,
+     3
+    ]
+   ]
+  },
+  "artikel": [
+   {
+    "judul": "Kinerja modul surya di iklim tropis (contoh)",
+    "url": "https://contoh-sinta-a1.example.org",
+    "tahun": 2025,
+    "sitasi": 4,
+    "terbitan": "Jurnal Energi Contoh",
+    "kuartil": "Q1 Journal",
+    "urutan": "1 of 4",
+    "penulis": "Contoh A, Contoh B"
+   },
+   {
+    "judul": "Penyimpanan baterai untuk jaringan mikro (contoh)",
+    "url": "https://contoh-sinta-a2.example.org",
+    "tahun": 2024,
+    "sitasi": 9,
+    "terbitan": "Prosiding Energi Contoh",
+    "kuartil": "Q3 Conference",
+    "urutan": "2 of 3",
+    "penulis": "Contoh C"
+   }
+  ]
+ }
+}

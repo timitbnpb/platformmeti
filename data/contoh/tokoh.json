@@ -1,30 +1,288 @@
 [
  {
+  "sumber": [
+   {
+    "butir": "profil",
+    "url": "https://contoh-t1.example.org",
+    "diperiksa": "2026-11-07"
+   }
+  ],
+  "diperiksa": "2026-11-07",
   "id": "t1",
+  "eid": 101,
   "nama": "Tokoh Contoh Satu (contoh)",
   "peran": "Direktur Jenderal (contoh)",
   "jenis": "pejabat",
   "lembaga": "Kementerian Energi Contoh (contoh)",
+  "lembaga_id": "kemenesdm",
   "sektor": [
    "surya",
    "bayu"
   ],
   "prov": "31",
-  "kiprah": [
+  "peran_energi": "pengambil kebijakan",
+  "alasan": "Memimpin penyusunan peta jalan energi surya dan bayu (contoh).",
+  "riwayat": [
    {
-    "teks": "Memimpin penyusunan peta jalan contoh",
-    "tahun": 2025,
-    "sumber_url": "https://contoh-tokoh.example.org"
+    "jabatan": "Direktur Jenderal (contoh)",
+    "lembaga": "Kementerian Energi Contoh (contoh)",
+    "mulai": "2023",
+    "sumber_url": "https://contoh-t1-rw1.example.org"
+   },
+   {
+    "jabatan": "Direktur Perencanaan (contoh)",
+    "lembaga": "Kementerian Energi Contoh (contoh)",
+    "mulai": "2019",
+    "selesai": "2023",
+    "sumber_url": "https://contoh-t1-rw2.example.org"
+   },
+   {
+    "jabatan": "Peneliti Madya (contoh)",
+    "lembaga": "Universitas Contoh Barat",
+    "mulai": "2012",
+    "selesai": "2019",
+    "sumber_url": "https://contoh-t1-rw3.example.org"
    }
   ],
-  "web": "https://contoh-tokoh.example.org",
+  "pendidikan": [
+   {
+    "jenjang": "S3",
+    "gelar": "Dr.",
+    "bidang": "Teknik Energi",
+    "institusi": "Institut Contoh Teknologi",
+    "mulai": "2008",
+    "selesai": "2012",
+    "sumber_url": "https://contoh-t1-pd1.example.org"
+   },
+   {
+    "jenjang": "S2",
+    "gelar": "M.T.",
+    "bidang": "Teknik Elektro",
+    "institusi": "Universitas Contoh Barat",
+    "mulai": "2004",
+    "selesai": "2006",
+    "sumber_url": "https://contoh-t1-pd2.example.org"
+   }
+  ],
+  "kiprah": [
+   {
+    "teks": "Memimpin penyusunan peta jalan energi surya contoh",
+    "tahun": 2025,
+    "sumber_url": "https://contoh-t1-k1.example.org"
+   },
+   {
+    "teks": "Narasumber forum energi bersih contoh",
+    "tahun": 2024,
+    "sumber_url": "https://contoh-t1-k2.example.org"
+   }
+  ],
+  "tautan": [
+   {
+    "jenis": "linkedin",
+    "url": "https://contoh-t1.example.org/linkedin"
+   },
+   {
+    "jenis": "web",
+    "url": "https://contoh-t1.example.org"
+   }
+  ]
+ },
+ {
   "sumber": [
    {
     "butir": "profil",
-    "url": "https://contoh-tokoh.example.org",
+    "url": "https://contoh-t2.example.org",
     "diperiksa": "2026-11-07"
    }
   ],
-  "diperiksa": "2026-11-07"
+  "diperiksa": "2026-11-07",
+  "id": "t2",
+  "eid": 102,
+  "pakar_id": "A500100",
+  "nama": "Andi Contoh (contoh)",
+  "peran": "Guru Besar Teknik Energi (contoh)",
+  "jenis": "akademisi",
+  "lembaga": "Universitas Contoh Barat",
+  "lembaga_id": "kampus-barat",
+  "sektor": [
+   "surya",
+   "penyimpanan"
+  ],
+  "prov": "32",
+  "peran_energi": "peneliti/ahli",
+  "alasan": "Meneliti modul surya dan penyimpanan untuk iklim tropis (contoh).",
+  "riwayat": [
+   {
+    "jabatan": "Guru Besar (contoh)",
+    "lembaga": "Universitas Contoh Barat",
+    "mulai": "2021",
+    "sumber_url": "https://contoh-t2-rw1.example.org"
+   },
+   {
+    "jabatan": "Kepala Pusat Studi Energi Surya (contoh)",
+    "lembaga": "Universitas Contoh Barat",
+    "mulai": "2016",
+    "selesai": "2021",
+    "sumber_url": "https://contoh-t2-rw2.example.org"
+   }
+  ],
+  "pendidikan": [
+   {
+    "jenjang": "S3",
+    "gelar": "Ph.D.",
+    "bidang": "Fotovoltaik",
+    "institusi": "Universitas Luar Negeri Contoh",
+    "mulai": "2008",
+    "selesai": "2012",
+    "sumber_url": "https://contoh-t2-pd1.example.org"
+   },
+   {
+    "jenjang": "S1",
+    "gelar": "S.T.",
+    "bidang": "Teknik Fisika",
+    "institusi": "Institut Contoh Teknologi",
+    "mulai": "2000",
+    "selesai": "2004",
+    "sumber_url": "https://contoh-t2-pd2.example.org"
+   }
+  ],
+  "kiprah": [
+   {
+    "teks": "Ketua tim studi PLTS atap kampus contoh",
+    "tahun": 2025,
+    "sumber_url": "https://contoh-t2-k1.example.org"
+   }
+  ],
+  "tautan": [
+   {
+    "jenis": "scholar",
+    "url": "https://contoh-t2.example.org/scholar"
+   },
+   {
+    "jenis": "x",
+    "url": "https://contoh-t2.example.org/x"
+   },
+   {
+    "jenis": "linkedin",
+    "url": "https://contoh-t2.example.org/in"
+   }
+  ]
+ },
+ {
+  "sumber": [
+   {
+    "butir": "profil",
+    "url": "https://contoh-t3.example.org",
+    "diperiksa": "2026-11-07"
+   }
+  ],
+  "diperiksa": "2026-11-07",
+  "id": "t3",
+  "eid": 103,
+  "pakar_id": "A500174",
+  "nama": "Citra Contoh (contoh)",
+  "peran": "Peneliti Utama (contoh)",
+  "jenis": "akademisi",
+  "lembaga": "Universitas Contoh Barat",
+  "lembaga_id": "kampus-barat",
+  "sektor": [
+   "air",
+   "jaringan"
+  ],
+  "prov": "32",
+  "peran_energi": "peneliti/ahli",
+  "alasan": "Meneliti mikrohidro dan jaringan mikro (contoh).",
+  "riwayat": [
+   {
+    "jabatan": "Peneliti Utama (contoh)",
+    "lembaga": "Universitas Contoh Barat",
+    "mulai": "2018",
+    "sumber_url": "https://contoh-t3-rw1.example.org"
+   }
+  ],
+  "pendidikan": [
+   {
+    "jenjang": "S2",
+    "gelar": "M.Sc.",
+    "bidang": "Sistem Tenaga",
+    "institusi": "Universitas Contoh Barat",
+    "mulai": "2010",
+    "selesai": "2012",
+    "sumber_url": "https://contoh-t3-pd1.example.org"
+   }
+  ],
+  "kiprah": [],
+  "tautan": [
+   {
+    "jenis": "web",
+    "url": "https://contoh-t3.example.org"
+   }
+  ]
+ },
+ {
+  "sumber": [
+   {
+    "butir": "profil",
+    "url": "https://contoh-t4.example.org",
+    "diperiksa": "2026-11-07"
+   }
+  ],
+  "diperiksa": "2026-11-07",
+  "id": "t4",
+  "eid": 104,
+  "nama": "Tokoh Contoh Empat (contoh)",
+  "peran": "Direktur Utama (contoh)",
+  "jenis": "pengusaha",
+  "lembaga": "PT Surya Nusantara Contoh (contoh)",
+  "lembaga_id": "pt-surya",
+  "sektor": [
+   "surya"
+  ],
+  "prov": "32",
+  "peran_energi": "pelaku usaha",
+  "alasan": "Memimpin pabrik modul surya skala menengah (contoh).",
+  "riwayat": [
+   {
+    "jabatan": "Direktur Utama (contoh)",
+    "lembaga": "PT Surya Nusantara Contoh (contoh)",
+    "mulai": "2020",
+    "sumber_url": "https://contoh-t4-rw1.example.org"
+   },
+   {
+    "jabatan": "Manajer Operasi (contoh)",
+    "lembaga": "Perusahaan Listrik Contoh (contoh)",
+    "mulai": "2012",
+    "selesai": "2020",
+    "sumber_url": "https://contoh-t4-rw2.example.org"
+   }
+  ],
+  "pendidikan": [
+   {
+    "jenjang": "S1",
+    "gelar": "S.T.",
+    "bidang": "Teknik Mesin",
+    "institusi": "Politeknik Contoh Energi",
+    "mulai": "2004",
+    "selesai": "2008",
+    "sumber_url": "https://contoh-t4-pd1.example.org"
+   }
+  ],
+  "kiprah": [
+   {
+    "teks": "Meresmikan lini produksi modul 500 MW contoh",
+    "tahun": 2025,
+    "sumber_url": "https://contoh-t4-k1.example.org"
+   }
+  ],
+  "tautan": [
+   {
+    "jenis": "linkedin",
+    "url": "https://contoh-t4.example.org/in"
+   },
+   {
+    "jenis": "x",
+    "url": "https://contoh-t4.example.org/x"
+   }
+  ]
  }
 ]

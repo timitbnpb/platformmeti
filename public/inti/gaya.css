@@ -48,7 +48,12 @@ em.hl{font-style:normal;color:var(--accent)}
 .jm-kartu>h2{margin-bottom:12px}
 .jm-sempit{max-width:440px;margin:0 auto;width:100%}
 .jm-kaki{display:flex;align-items:center;gap:12px;padding:20px var(--gut);background:var(--brand);color:var(--on-brand);font-size:var(--t-kecil)}
-.jm-kaki img{width:32px;height:32px}
+.jm-kaki{flex-wrap:wrap;justify-content:space-between;align-items:flex-start;row-gap:16px}
+.jm-kaki img{width:34px;height:32px}
+.jm-kaki-merek{display:flex;align-items:center;gap:12px}
+.jm-kaki-alamat{display:flex;flex-direction:column;gap:4px;font-style:normal;max-width:60ch;line-height:1.5}
+.jm-kaki-alamat a{color:inherit;text-decoration:underline;text-underline-offset:3px}
+.jm-kaki-alamat a:focus-visible{outline:2px solid currentColor;outline-offset:2px}
 
 /* keadaan komponen (DS §6.0) */
 .jm-hantu{display:grid;gap:10px}

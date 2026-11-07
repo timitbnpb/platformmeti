@@ -1,0 +1,86 @@
+{
+ "sumber_url": "https://contoh-graf.example.org",
+ "diperiksa": "2026-11-07",
+ "simpul": {
+  "T:t1": {
+   "j": "tokoh",
+   "n": "Tokoh Contoh Satu (contoh)"
+  },
+  "T:t2": {
+   "j": "tokoh",
+   "n": "Andi Contoh (contoh)"
+  },
+  "T:t3": {
+   "j": "tokoh",
+   "n": "Citra Contoh (contoh)"
+  },
+  "T:t4": {
+   "j": "tokoh",
+   "n": "Tokoh Contoh Empat (contoh)"
+  },
+  "L:kemenesdm": {
+   "j": "lembaga",
+   "n": "Kementerian Energi Contoh (contoh)"
+  },
+  "L:kampus-barat": {
+   "j": "lembaga",
+   "n": "Universitas Contoh Barat (contoh)"
+  },
+  "L:pt-surya": {
+   "j": "lembaga",
+   "n": "PT Surya Nusantara Contoh (contoh)"
+  }
+ },
+ "sisi": [
+  [
+   "T:t1",
+   "L:kemenesdm",
+   "bekerja di",
+   {
+    "url": "https://contoh-graf-1.example.org",
+    "judul": "Sumber hubungan (contoh)",
+    "tanggal": "2026-11-07"
+   }
+  ],
+  [
+   "T:t2",
+   "L:kampus-barat",
+   "bekerja di",
+   {
+    "url": "https://contoh-graf-2.example.org",
+    "judul": "Sumber hubungan (contoh)",
+    "tanggal": "2026-11-07"
+   }
+  ],
+  [
+   "T:t3",
+   "L:kampus-barat",
+   "bekerja di",
+   {
+    "url": "https://contoh-graf-3.example.org",
+    "judul": "Sumber hubungan (contoh)",
+    "tanggal": "2026-11-07"
+   }
+  ],
+  [
+   "T:t4",
+   "L:pt-surya",
+   "bekerja di",
+   {
+    "url": "https://contoh-graf-4.example.org",
+    "judul": "Sumber hubungan (contoh)",
+    "tanggal": "2026-11-07"
+   }
+  ],
+  [
+   "T:t1",
+   "L:kampus-barat",
+   "berafiliasi dengan",
+   {
+    "url": "https://contoh-graf-9.example.org",
+    "judul": "Sumber hubungan (contoh)",
+    "tanggal": "2026-11-07"
+   }
+  ]
+ ]
+}

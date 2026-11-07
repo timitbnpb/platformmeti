@@ -4,6 +4,7 @@
 //   node panen_proyek.mjs --ambil           unduh Wikipedia (CC BY-SA) ke raw/ (robots dicek, jeda >= 2 dtk, resumable)
 //   node panen_proyek.mjs --bangun          bangun proyek.jsonl, pihak.jsonl, konflik.jsonl
 //   node panen_proyek.mjs --geo-pusat      hitung titik pusat kabupaten/provinsi dari geoBoundaries (berkas statis di raw/geo/)
+//   node panen_proyek.mjs --ruptl-teks=BERKAS.txt   urai tabel pembangkit RUPTL (hasil pdftotext -layout) ke seed/ruptl.jsonl
 //   node panen_proyek.mjs --gem-periksa     tampilkan header CSV GEM di raw/gem/ dan kolom yang dipakai
 //   node panen_proyek.mjs --statistik       angka cakupan untuk laporan
 // Sumber masukan:
@@ -118,10 +119,10 @@ export function mirip(a, b) {
   return sama / (A.size + B.size - sama) >= 0.6; // Jaccard: Tangerang tidak melebur ke Tangerang Selatan
 }
 const MW = new Set(['MW', 'MWp', 'MWac']);
-export function kapasitasSama(a, b) { // true bila sebanding dalam +-10 persen, atau tak bisa dibandingkan
-  const ca = (a || []).find((c) => MW.has(c.satuan)), cb = (b || []).find((c) => MW.has(c.satuan));
-  if (!ca || !cb) return null; // salah satu kosong: tidak dapat dinilai
-  return Math.abs(ca.nilai - cb.nilai) <= 0.1 * Math.max(ca.nilai, cb.nilai);
+export function kapasitasSama(a, b) { // true bila ADA pasangan kapasitas sebanding (+-10 persen); null bila tak dapat dibandingkan
+  const A = (a || []).filter((c) => MW.has(c.satuan) && typeof c.nilai === 'number'), B = (b || []).filter((c) => MW.has(c.satuan) && typeof c.nilai === 'number');
+  if (!A.length || !B.length) return null;
+  return A.some((x) => B.some((y) => Math.abs(x.nilai - y.nilai) <= 0.1 * Math.max(x.nilai, y.nilai)));
 }
 
 // ---------- berkas ----------
@@ -174,18 +175,19 @@ export function bangun(masukan) {
     if (t) {
       const sama = kapasitasSama(t.kapasitas, kapBaru);
       if (sama === false) {
-        konflik.push({ jenis: 'nama-sama-kapasitas-beda-tidak-digabung', proyek_id: t.id, nama: r.nama, kapasitas_a: t.kapasitas, kapasitas_b: kapBaru, sumber_id: sid });
+        konflik.push({ jenis: 'nama-sama-kapasitas-beda-tidak-digabung', _t: t, nama: r.nama, kapasitas_a: t.kapasitas, kapasitas_b: kapBaru, sumber_id: sid });
         t = null;
       }
     }
     if (!t) {
-      t = { id: null, nama: [], teknologi: r.teknologi, provinsi: r.provinsi || null, kabupaten_kota: null, program: r.program || null, lat: null, lng: null, presisi_lokasi: null, sumber_lokasi: null, sumber_ids: [] };
+      t = { id: null, nama: [], teknologi: r.teknologi, provinsi: r.provinsi || null, kabupaten_kota: null, program: r.program || null, programs: [], lat: null, lng: null, presisi_lokasi: null, sumber_lokasi: null, sumber_ids: [] };
       ATRIBUT.forEach((a) => (t[a] = []));
       t.pihak_terlibat = []; t.catatan = [];
       proyek.push(t);
     }
     t.provinsi ||= r.provinsi || null;
     t.program ||= r.program || null;
+    if (r.program && !t.programs.includes(r.program)) t.programs.push(r.program); // satu proyek bisa di beberapa program (Saguling: jetp dan plts-100gw)
     if (!t.sumber_ids.includes(sid)) t.sumber_ids.push(sid);
     if (!t.nama.some((n) => n.nilai === r.nama)) t.nama.push({ nilai: r.nama, sumber_id: sid });
     if (r.kabupaten_kota) { t.kabupaten_kota ||= []; if (!Array.isArray(t.kabupaten_kota)) t.kabupaten_kota = []; if (!t.kabupaten_kota.some((k) => k.nilai === r.kabupaten_kota)) t.kabupaten_kota.push({ nilai: r.kabupaten_kota, sumber_id: sid }); }
@@ -205,14 +207,16 @@ export function bangun(masukan) {
   // id stabil: urut teknologi, provinsi, nama
   proyek.sort((a, b) => (a.teknologi + (a.provinsi || '') + a.nama[0].nilai).localeCompare(b.teknologi + (b.provinsi || '') + b.nama[0].nilai));
   proyek.forEach((p, i) => (p.id = 'pj_' + String(i + 1).padStart(4, '0')));
+  for (const k of konflik) if (k._t) { k.proyek_id = k._t.id; delete k._t; }
   // konflik nilai antar sumber
   for (const p of proyek) {
-    for (const a of ['kapasitas', 'status', 'nilai_investasi', 'cod_target', 'cod_aktual', 'pemilik']) {
+    for (const a of ['kapasitas', 'status', 'nilai_investasi', 'cod_target', 'cod_aktual']) { // pemilik tidak dibandingkan: kepemilikan bersama bukan pertentangan {
       const per = new Map();
       for (const v of p[a]) { const k = a === 'kapasitas' ? v.satuan : a === 'nilai_investasi' ? v.mata_uang : '_'; (per.get(k) || per.set(k, []).get(k)).push(v); }
       for (const [k, vs] of per) {
         const bedaVal = new Set(vs.map((v) => JSON.stringify(v.nilai)));
-        if (bedaVal.size > 1) konflik.push({ jenis: 'nilai-bertentangan', proyek_id: p.id, atribut: a, satuan: k === '_' ? null : k, nilai: vs.map((v) => ({ nilai: v.nilai, sumber_id: v.sumber_id })) });
+        const sumberBeda = new Set(vs.map((v) => v.sumber_id)).size > 1;
+        if (bedaVal.size > 1 && (sumberBeda || !a.startsWith('cod'))) konflik.push({ jenis: 'nilai-bertentangan', proyek_id: p.id, atribut: a, satuan: k === '_' ? null : k, nilai: vs.map((v) => ({ nilai: v.nilai, sumber_id: v.sumber_id })) });
       }
     }
     const tertinggi = p.sumber_ids.map((s) => BUKTI.indexOf([...sumberTab.values()].find((x) => x.id === s).tingkat_bukti)).reduce((m, x) => Math.max(m, x), 0);
@@ -263,8 +267,11 @@ export function dalamCincin(x, y, ring) {
 }
 export function normWilayah(s) {
   const t = String(s || '').normalize('NFKD').replace(/[̀-ͯ]/g, '').toLowerCase().replace(/[^a-z ]/g, ' ');
+  const arah = { west: 'barat', east: 'timur', north: 'utara', south: 'selatan', central: 'tengah' };
+  const m = t.trim().match(/^(west|east|north|south|central) ([a-z ]+)$/); // West Lampung -> lampung barat
+  const t2 = m ? m[2] + ' ' + arah[m[1]] : t;
   const tipe = /\b(kota|city)\b/.test(t) ? 'kota' : /\b(kabupaten|kab|regency)\b/.test(t) ? 'kabupaten' : null;
-  return { nama: t.replace(/\b(kota|city|kabupaten|kab|regency|administrasi|administrative)\b/g, ' ').replace(/\s+/g, ' ').trim(), tipe };
+  return { nama: t2.replace(/\b(kota|city|kabupaten|kab|regency|administrasi|administrative)\b/g, ' ').replace(/\s+/g, ' ').trim(), tipe };
 }
 function bangunPusat() {
   const a1 = JSON.parse(fs.readFileSync(path.join(GEO_DIR, 'IDN-ADM1.geojson'), 'utf8'));
@@ -278,7 +285,7 @@ function bangunPusat() {
     const polys = f.geometry.type === 'Polygon' ? [f.geometry.coordinates] : f.geometry.coordinates;
     const pv = prov.find((p) => p.nama && (p.g.type === 'Polygon' ? [p.g.coordinates] : p.g.coordinates).some((q) => dalamCincin(c.lng, c.lat, q[0]))); // pusat kab dalam provinsi mana
     const n = normWilayah(f.properties.shapeName);
-    adm2.push({ asli: f.properties.shapeName, nama: n.nama, tipe: n.tipe, provinsi: pv ? pv.nama : null, ...c, _p: polys.length });
+    adm2.push({ asli: f.properties.shapeName, nama: n.nama, tipe: n.tipe || 'kabupaten', provinsi: pv ? pv.nama : null, ...c, _p: polys.length });
   }
   fs.writeFileSync(GEO_PUSAT, JSON.stringify({ adm1, adm2 }));
   return { adm1: Object.keys(adm1).length, adm2: adm2.length };
@@ -390,6 +397,117 @@ async function ambil() {
     fs.writeFileSync(f, Buffer.from(await r.arrayBuffer()));
   }
 }
+// ---------- RUPTL PLN 2025-2034 (teks hasil `pdftotext -layout`; dokumen publik PLN) ----------
+// Tabel rincian pembangkit per provinsi (Lampiran A, B, C). Baris bernama sama dalam satu provinsi digabung (kapasitas dijumlah,
+// tiap tahap COD dicatat). Baris "kuota/tersebar" bukan proyek bernama: dilewati dan dihitung. Tabel berupa gambar: tidak diurai (tanpa OCR).
+const PROV_RUPTL = {
+  A1: 'Aceh', A2: 'Sumatera Utara', A3: 'Riau', A4: 'Kepulauan Riau', A5: 'Kepulauan Bangka Belitung', A6: 'Sumatera Barat', A7: 'Jambi', A8: 'Sumatera Selatan',
+  A9: 'Bengkulu', A10: 'Lampung', A11: 'Kalimantan Barat', A12: 'Kalimantan Selatan', A13: 'Kalimantan Tengah', A14: 'Kalimantan Timur', A15: 'Kalimantan Utara',
+  B1: 'DKI Jakarta', B2: 'Banten', B3: 'Jawa Barat', B4: 'Jawa Tengah', B5: 'DI Yogyakarta', B6: 'Jawa Timur', B7: 'Bali',
+  C1: 'Sulawesi Utara', C2: 'Sulawesi Tengah', C3: 'Gorontalo', C4: 'Sulawesi Selatan', C5: 'Sulawesi Tenggara', C6: 'Sulawesi Barat', C7: 'Maluku', C8: 'Maluku Utara',
+  C9: null, C10: null, C11: 'Nusa Tenggara Barat', C12: 'Nusa Tenggara Timur', // C9, C10: gabungan beberapa provinsi Papua; provinsi per baris tidak pasti
+};
+const TEK_RUPTL = { PLTS: 'surya', 'PLTS+BESS': 'surya', 'PLTS+BESS ': 'surya', PLTB: 'bayu', PLTA: 'hidro', PLTM: 'hidro', PLTMH: 'hidro', PLTP: 'panas-bumi', PLTBm: 'bioenergi', PLTBg: 'bioenergi', 'PLT Bio': 'bioenergi', PLTBio: 'bioenergi',
+  PLTSa: 'biomassa-sampah', BESS: 'penyimpanan', PS: 'penyimpanan', PLTN: 'nuklir', PLTL: 'laut', PLTH: 'hidrogen' };
+const STATUS_RUPTL = { konstruksi: 'konstruksi', rencana: 'rencana', ppa: 'rencana', committed: 'rencana', pengadaan: 'rencana', pendanaan: 'rencana', eksplorasi: 'rencana' };
+const RE_STATUS = /(Konstruksi|Rencana|PPA|Committed|Pengadaan|Pendanaan|Eksplorasi|Dilanjutkan|Operasi|Studi|Perencanaan)\s+(SH-PLN|PLN|IPP|[A-Za-z][A-Za-z/&+-]{1,15})\s*$/;
+const RE_TAHAP = /((?:\d+x)?\d[\d.,]*)\*?\s+(20\d\d|-)\s+(20\d\d|-)(?=\s|$)/g;
+const RE_JENIS = /(?:^|\s)(PLTS\s?\+\s?BESS|PLT Bio|PLT[A-Za-z]{1,3}|BESS|PS)(?=\s|$)/;
+const numId = (s) => { const [a, b] = String(s).includes('x') ? String(s).split('x') : [1, s]; return +(Number(a) * Number(String(b).replace(/\./g, '').replace(',', '.'))).toFixed(3); }; // 3.567,7 -> 3567.7 ; 9,8 -> 9.8 ; 2,08 -> 2.08
+const RE_STATUS_LONGGAR = /(Konstru\s*ksi|Konstru|Rencana|PPA|Committed|Pengadaan|Pendanaan|Eksplorasi|Dilanjutkan|Operasi)\b/;
+const RE_PENG = /(?:^|\s)(SH-PLN|PLN|IPP)\s*$/;
+const RE_TAJUK_ISI = /Skenario|\bBase\b|\bARED\b|\(MW\)|Tenaga|Listrik|\bTarget\b|\bCOD\b|Lokasi|Pembangk|^\s*(No|Sistem|Jenis|Status)\b/;
+export function ruptlDari(teks) {
+  const hal = []; let cf = 1;
+  const baris = teks.split('\n').map((l) => { hal.push(cf); cf += (l.match(/\f/g) || []).length; return l.replace(/\f/g, ''); });
+  const judul = [];
+  baris.forEach((l, i) => {
+    const m = l.match(/^\s*Tabel ([ABC]\d+)\.(\d+)\.?\s+(Rincian|Rencana|Daftar)\b.*Pembangkit/);
+    if (m && !/KTT|Rekapitulasi|Confidence|Kepastian/i.test(l)) judul.push({ i, sek: m[1] });
+  });
+  const hasil = new Map(); const lewat = { kuota: 0, bukan_ebt: 0, tanpa_tahap: 0 }; const tabel = {};
+  for (const { i: mulai, sek } of judul) {
+    let akhir = baris.length;
+    for (let k = mulai + 1; k < baris.length; k++) if (/^\s*Tabel [A-Z]\d+\.\d+/.test(baris[k]) || /^\s*TOTAL\b/.test(baris[k])) { akhir = k; break; }
+    // 1. kumpulkan baris isi: {l, lok, utama(jenis), halaman}
+    let lok = -1; let sejakTajuk = 0; const isi = [];
+    for (let k = mulai; k < akhir; k++) {
+      const l = baris[k];
+      if (/Pengembang\s*$/.test(l) && k > mulai) { // tajuk (berulang tiap halaman); posisi kolom nama = 'Lokasi' di sekitar tajuk
+        const dekat = [l, baris[k - 1], baris[k - 2], baris[k - 3], baris[k + 1]].filter(Boolean);
+        const sekitar = dekat.find((x) => /Lokasi/.test(x));
+        if (sekitar) lok = sekitar.indexOf('Lokasi');
+        else { const q = dekat.find((x) => /\b(Proyek|Pembangkit)\b/.test(x)); if (!q) continue; lok = q.search(/\b(Proyek|Pembangkit)\b/); }
+        sejakTajuk = 1; continue;
+      }
+      if (lok < 0 || !l.trim() || /^\s*[A-C]\s*-\s*\d+\s*$/.test(l) || /\bKapasitas\b|\bCOD\b.*\bCOD\b/.test(l)) continue;
+      const jm = l.match(RE_JENIS); const utama = !!jm && jm.index + jm[0].length - jm[1].length < lok - 3;
+      if (sejakTajuk && !utama && RE_TAJUK_ISI.test(l)) continue; // sisa tajuk bertingkat
+      if (utama) sejakTajuk = 0;
+      isi.push({ l, lok, utama, jenis: utama ? jm[1].replace(/\s/g, '').replace('PLTBio', 'PLTBio') : null, hal: hal[k] });
+    }
+    // 2. tiap baris bukan-utama dibagi ke baris utama terdekat: separuh atas ke sebelumnya, sisanya ke sesudahnya
+    const utamaIdx = isi.map((x, i) => (x.utama ? i : -1)).filter((i) => i >= 0);
+    const blok = utamaIdx.map((i) => ({ sek, jenis: isi[i].jenis, halaman: isi[i].hal, baris: [isi[i]] }));
+    const taruh = (a, b, ke) => { for (let i = a; i < b; i++) blok[ke].baris.push(isi[i]); };
+    // baris utama yang sudah memuat nama sendiri tidak mengambil pecahan tetangga; pecahan tanpa pemilik jelas dibagi dua
+    const sendiri = utamaIdx.map((i) => { const x = isi[i]; const tm = x.l.match(new RegExp(RE_TAHAP.source)); const sm = x.l.match(RE_STATUS_LONGGAR); const potong = Math.min(x.l.length, tm ? tm.index : 1e9, sm && sm.index > x.lok ? sm.index : 1e9); return x.l.slice(Math.max(0, x.lok - 3), potong).trim().length > 0; });
+    if (utamaIdx.length) {
+      taruh(0, utamaIdx[0], 0);
+      for (let u = 0; u < utamaIdx.length; u++) {
+        const a = utamaIdx[u] + 1, b = u + 1 < utamaIdx.length ? utamaIdx[u + 1] : isi.length;
+        if (u + 1 >= utamaIdx.length) { taruh(a, b, u); continue; }
+        if (!sendiri[u] && !sendiri[u + 1]) { const mid = a + Math.floor((b - a) / 2); taruh(a, mid, u); taruh(mid, b, u + 1); }
+        else if (!sendiri[u]) taruh(a, b, u);
+        else if (!sendiri[u + 1]) taruh(a, b, u + 1);
+        else taruh(a, b, u); // dua baris bernama sendiri: lanjutan baris menggantung ke atas
+      }
+    }
+    tabel[sek] = blok.length;
+    for (const b of blok) {
+      const tek = TEK_RUPTL[b.jenis];
+      if (!tek) { lewat.bukan_ebt++; continue; }
+      const tahap = []; const nm = []; let peng = null; const ekor = [];
+      b.baris.sort((x, y) => isi.indexOf(x) - isi.indexOf(y));
+      for (const { l, lok: lk } of b.baris) {
+        let potong = l.length;
+        const tm = l.match(new RegExp(RE_TAHAP.source)); if (tm) potong = Math.min(potong, tm.index);
+        for (const mm of l.matchAll(RE_TAHAP)) tahap.push({ mw: numId(mm[1]), base: mm[2] === '-' ? null : Number(mm[2]), ared: mm[3] === '-' ? null : Number(mm[3]) });
+        const sm = l.match(RE_STATUS_LONGGAR); if (sm && sm.index > lk) { potong = Math.min(potong, sm.index); ekor.push(sm[1]); }
+        const pm = l.match(RE_PENG); if (pm) { potong = Math.min(potong, pm.index); peng = pm[1]; }
+        const frag = l.slice(Math.max(0, lk - 3), potong).trim();
+        if (frag && frag.length <= 45) nm.push(frag); // pecahan lebih panjang = teks paragraf di bawah tabel tanpa TOTAL
+      }
+      const st = ekor.length ? ekor.join('').replace(/\s/g, '').replace(/^Konstru(ksi)?$/, 'Konstruksi') : null;
+      const nama = nm.join(' ').replace(/\s+/g, ' ').replace(/([a-z])\d\)/g, '$1').replace(/\s\d\)/g, '').replace(/\*/g, '').trim();
+      const bersihNama = nama.replace(/\b(Jawa-Bali|Jawa Barat|Jawa Tengah|Jawa Timur|Sumatera\(Kuo|Tersebar|Upper)\b\s*/g, (m) => (m.startsWith('Upper') ? m : '')).replace(/\s+/g, ' ').trim();
+      if (/kuota|dedieselisasi|isolated|lisdes/i.test(nama) || !bersihNama) { lewat.kuota++; continue; }
+      if (!tahap.length) { lewat.tanpa_tahap++; if (process.env.DEBUG_RUPTL) console.error('TANPA', sek, b.jenis, JSON.stringify(nama), b.baris.length); continue; }
+      const kunci = [sek, tek, bersihNama.toLowerCase()].join('|');
+      const h = hasil.get(kunci) || { sek, provinsi: PROV_RUPTL[sek] ?? null, jenis: b.jenis, tek, nama: bersihNama, tahap: [], st, peng, halaman: b.halaman, baris: 0 };
+      h.tahap.push(...tahap); h.baris++; hasil.set(kunci, h);
+    }
+  }
+  return { proyek: [...hasil.values()], lewat, tabel };
+}
+export function ruptlSeed(teks, tanggal) {
+  const { proyek, lewat, tabel } = ruptlDari(teks);
+  const baris = [];
+  for (const p of proyek) {
+    baris.push({ _sumber: { jenis: 'ruptl', url: 'internal:RUPTL PLN 2025-2034.pdf', halaman: 'hlm PDF ' + p.halaman, tingkat_bukti: 'resmi', lisensi: 'dokumen publik PLN', tanggal_ambil: tanggal, catatan: 'Tabel rincian rencana pembangunan pembangkit ' + p.sek + '; status pengembang RUPTL (PLN/IPP/SH-PLN) bukan nama perusahaan; tahun COD = skenario RE Base' } });
+    const total = +p.tahap.reduce((s, t) => s + t.mw, 0).toFixed(3);
+    const tahunBeda = [...new Set(p.tahap.map((t) => t.base ?? t.ared).filter(Boolean))].sort();
+    const r = { nama: `${p.jenis} ${p.nama}`, teknologi: p.tek, provinsi: p.provinsi,
+      kapasitas: { nilai: total, satuan: 'MW', catatan: p.baris > 1 || p.tahap.length > 1 ? `jumlah ${p.tahap.length} tahap/unit: ${p.tahap.map((t) => t.mw).join(' + ')}` : undefined },
+      cod_target: tahunBeda.map((y) => ({ nilai: y, catatan: 'RE Base' + (p.tahap.some((t) => t.base === y && t.ared !== y) ? '; ARED ' + [...new Set(p.tahap.filter((t) => t.base === y).map((t) => t.ared))].join('/') : p.tahap.some((t) => t.base == null && t.ared === y) ? '; hanya skenario ARED (RE Base tanpa tahun)' : '') })),
+      pemilik: p.peng ? { nilai: p.peng, catatan: 'status pengembang menurut RUPTL, bukan nama perusahaan' } : undefined,
+      catatan: `RUPTL ${p.sek}; status asli: ${p.st || 'tidak terbaca'}` };
+    const sk = STATUS_RUPTL[String(p.st || '').toLowerCase()]; if (sk) r.status = { nilai: sk, status_asli: p.st };
+    baris.push(JSON.parse(JSON.stringify(r)));
+  }
+  return { baris, lewat, tabel, n: proyek.length };
+}
+
 // ---------- perakitan ----------
 const SUMBER_WIKI_EN = { jenis: 'wikipedia', url: 'https://en.wikipedia.org/wiki/List_of_power_stations_in_Indonesia', tingkat_bukti: 'media', lisensi: 'CC BY-SA 4.0', atribusi: 'Wikipedia contributors, List of power stations in Indonesia, CC BY-SA 4.0, diambil ' + HARI_INI + '; data turunan wajib berlisensi sama', catatan: 'daftar komunitas, tanpa tanggal data per baris; status tidak dinyatakan' };
 function kumpulMasukan() {
@@ -470,6 +588,8 @@ async function main() {
   fs.mkdirSync(RAW, { recursive: true });
   if (a.has('--ambil')) await ambil();
   if (a.has('--geo-pusat')) console.error('pusat wilayah:', JSON.stringify(bangunPusat()));
+  const rt = process.argv.find((x) => x.startsWith('--ruptl-teks='));
+  if (rt) { const h = ruptlSeed(fs.readFileSync(rt.slice(13), 'utf8'), HARI_INI); fs.mkdirSync(path.join(OUT, 'seed'), { recursive: true }); tulis(path.join(OUT, 'seed/ruptl.jsonl'), h.baris); console.error('ruptl:', JSON.stringify({ proyek: h.n, lewat: h.lewat, tabel: h.tabel })); }
   if (a.has('--gem-periksa')) console.log(JSON.stringify(gemMuat().lapor, null, 1));
   if (a.has('--bangun') || a.has('--statistik')) {
     const h = dasarProyek();

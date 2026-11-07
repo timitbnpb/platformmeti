@@ -4,7 +4,7 @@
 import { t, mulaiBahasa, gantiBahasa, bahasa } from "/i18n.js";
 import { api, ikon, nanti } from "/inti/umum.js";
 
-export const PITA_DRAF = true; // false bila C-01 dijawab "resmi"
+export const PITA_DRAF = false; // pemilik 7 Nov 2026: pita draf tidak ditampilkan
 const STAF = ["kurator", "admin", "super"];
 
 /* Satu tabel halaman. Tambah baris saat halamannya benar-benar ada (F1, F2). hak: null = semua, "masuk", "staf". */
@@ -34,7 +34,7 @@ function gambarKepala(el, saya) {
     : `<a class="iconbtn jm-akun" href="/masuk?ke=${encodeURIComponent(jalur === "/masuk" ? "/" : jalur)}" data-i18n-attr="aria-label:jm.masuk;title:jm.masuk" aria-label="${t("jm.masuk")}" title="${t("jm.masuk")}">${ikon("masuk", 22)}<span class="jm-teks" data-i18n="jm.masuk">${t("jm.masuk")}</span></a>`;
   el.innerHTML = `
     <button type="button" class="iconbtn" id="burger" aria-expanded="false" aria-controls="menu" data-i18n-attr="aria-label:jm.menu;title:jm.menu" aria-label="${t("jm.menu")}" title="${t("jm.menu")}">${ikon("burger", 22)}</button>
-    <a class="jm-merek" href="/"><img src="/img/logo-meti.svg" width="40" height="40" alt=""><span data-i18n="jm.merek">${t("jm.merek")}</span></a>
+    <a class="jm-merek" href="/"><img src="/img/logo-meti-tanda.png" width="42" height="40" alt=""><span data-i18n="jm.merek">${t("jm.merek")}</span></a>
     <nav class="tabs" id="menu" data-i18n-attr="aria-label:jm.menu" aria-label="${t("jm.menu")}">${tab}</nav>
     <div class="jm-sisi">
       <div class="jm-bahasa" role="group" data-i18n-attr="aria-label:jm.bahasa" aria-label="${t("jm.bahasa")}">
@@ -81,6 +81,10 @@ export async function mulaiHalaman() {
     pita.innerHTML = `${ikon("info", 18)}<span data-i18n="jm.pita">${t("jm.pita")}</span>`;
   }
   const kaki = document.getElementById("kaki");
-  if (kaki) kaki.innerHTML = `<img src="/img/logo-meti.svg" width="32" height="32" alt=""><span data-i18n="jm.kaki">${t("jm.kaki")}</span>`;
+  if (kaki) kaki.innerHTML = `<div class="jm-kaki-merek"><img src="/img/logo-meti-tanda.png" width="34" height="32" alt=""><span data-i18n="jm.kaki">${t("jm.kaki")}</span></div>
+    <address class="jm-kaki-alamat"><strong data-i18n="jm.kaki_org">${t("jm.kaki_org")}</strong>
+      <span><span data-i18n="jm.kaki_kantor">${t("jm.kaki_kantor")}</span>: Taman Sari Parama Lt. 10, Jl. K.H. Wahid Hasyim No. 84-86, Kebon Sirih, Menteng, Jakarta Pusat 10340</span>
+      <span>Rumah Energi Terbarukan: Jl. Jatinegara Barat IV No. 3A, Balimester, Jatinegara, Jakarta Timur 13310</span>
+      <span><a href="mailto:meti.ires@gmail.com">meti.ires@gmail.com</a>, <a href="https://www.meti.or.id" rel="noopener">www.meti.or.id</a></span></address>`;
   return saya;
 }

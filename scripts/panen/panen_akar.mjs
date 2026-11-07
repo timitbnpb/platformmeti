@@ -102,6 +102,7 @@ function bangun() {
     const S = JSON.parse(fs.readFileSync(path.join(SEED, f), 'utf8'));
     for (const b of S.baris) {
       const u = b.sumber_url ?? S.sumber_url;
+      if (b.tolak) { tolak(b.nama, b.tolak, u); continue; }
       if (!u || !/^https?:\/\//.test(u)) { tolak(b.nama, 'tanpa-sumber', u); continue; }
       const dasar = { ...b, sumber_url: u, tanggal_sumber: b.tanggal_sumber ?? S.tanggal_sumber ?? null, tanggal_ambil: HARI_INI };
       if (S.jenis === 'org') {

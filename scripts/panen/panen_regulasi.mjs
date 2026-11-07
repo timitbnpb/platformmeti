@@ -35,7 +35,7 @@ const KATA = [
   'perizinan berusaha berbasis risiko', 'sistem registri unit karbon', 'bahan bakar minyak biodiesel',
 ];
 // relevansi judul (lebih ketat dari kata kunci pencarian)
-const RELEVAN = /energi (baru|terbarukan)|panas ?bumi|surya|bayu|tenaga angin|tenaga air|hidro|bio ?(energi|diesel|etanol|massa|gas|fuel)|nabati|hidrogen|ketenagalistrikan|tenaga listrik|ketenaganukliran|nuklir|pembangkit|kelistrikan|\blistrik\b|konservasi energi|efisiensi energi|kebijakan energi|rencana umum energi|\benergi\b.*(nasional|daerah)|karbon|gas rumah kaca|emisi|perubahan iklim|komponen dalam negeri|tkdn|baterai|penyimpanan energi|taksonomi|keuangan berkelanjutan|cipta kerja|berbasis risiko|transisi energi|energi laut|sampah.*(energi|listrik)|\bplt[a-z]{0,2}\b|konversi/i;
+const RELEVAN = /energi (baru|terbarukan)|panas ?bumi|surya|bayu|tenaga angin|tenaga air|hidro|bio ?(energi|diesel|etanol|massa|gas|fuel)|nabati|hidrogen|ketenagalistrikan|tenaga listrik|ketenaganukliran|nuklir|pembangkit|kelistrikan|\blistrik\b|konservasi energi|efisiensi energi|kebijakan energi|rencana umum energi|\benergi\b.*(nasional|daerah)|karbon|gas rumah kaca|emisi|perubahan iklim|komponen dalam negeri|tkdn|baterai|penyimpanan energi|taksonomi|keuangan berkelanjutan|cipta kerja|berbasis risiko|transisi energi|energi laut|sampah.*(energi|listrik)|\bplt[a-z]{0,2}\b|konversi|bidang energi dan sumber daya mineral|perlindungan dan pengelolaan lingkungan hidup/i;
 const TOPIK = [
   ['surya', /surya|\bplts\b/i], ['panas_bumi', /panas ?bumi|\bpltp\b/i],
   ['bioenergi', /bio ?(energi|diesel|etanol|massa|gas|fuel)|nabati|\bpltbm\b|sampah/i], ['hidro', /tenaga air|hidro|\bplta\b/i],
@@ -160,14 +160,48 @@ async function detail() {
 // ---------- bangun ----------
 const JENIS = [[/^uu$|undang-undang nomor/i, 'uu'], [/perppu|perpu/i, 'perppu'], [/^pp\b|peraturan pemerintah/i, 'pp'], [/perpres|peraturan presiden/i, 'perpres'],
   [/inpres|instruksi presiden/i, 'inpres'], [/keppres|keputusan presiden/i, 'keppres'], [/kepmen|keputusan menteri/i, 'kepmen'], [/permen|peraturan menteri/i, 'permen'],
-  [/perda|peraturan daerah/i, 'perda'], [/ojk|otoritas jasa/i, 'ojk']];
+  [/perda|perbup|pergub|perwali|peraturan (daerah|bupati|gubernur|walikota|wali kota)/i, 'perda'], [/^pmk\b|peraturan menteri keuangan/i, 'permen'], [/ojk|otoritas jasa/i, 'ojk']];
 const jenisDari = (s) => (JENIS.find(([re]) => re.test(s)) || [0, 'lainnya'])[1];
-const slugId = (jenis, instansi, nomor, tahun) => {
-  const inst = (jenis === 'permen' || jenis === 'kepmen') ? (/energi|esdm/i.test(instansi) ? '-esdm' : /lingkungan|kehutanan/i.test(instansi) ? '-klhk' : /perindustrian/i.test(instansi) ? '-kemenperin' : /keuangan/i.test(instansi) ? '-kemenkeu' : /kelautan/i.test(instansi) ? '-kkp' : '') : '';
+const slugId = (jenis, instansi, nomor, tahun, bpk) => {
+  const unik = (jenis === 'perda' || jenis === 'lainnya') && bpk ? '-b' + bpk : '';
+  const inst = (jenis === 'permen' || jenis === 'kepmen') ? (/energi|esdm/i.test(instansi) ? '-esdm' : /lingkungan|kehutanan/i.test(instansi) ? '-klhk' : /perindustrian/i.test(instansi) ? '-kemenperin' : /keuangan/i.test(instansi) ? '-kemenkeu' : /kelautan/i.test(instansi) ? '-kkp' : (bpk ? '-b' + bpk : '')) : unik;
   return `${jenis}${inst}-${String(nomor).toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '')}-${tahun}`;
 };
 const topikDari = (j) => { const t = TOPIK.filter(([, re]) => re.test(j)).map(([k]) => k); return t.length ? t : ['energi_umum']; };
-const ringkas = (jenis, nomor, tahun, judul) => {
+const RINGKAS_MANUAL = {
+ "uu-30-2007": "Payung hukum energi nasional: penguasaan negara, kebijakan dan Dewan Energi Nasional, prioritas energi baru dan terbarukan dalam pengelolaan energi.",
+ "uu-30-2009": "Mengatur usaha ketenagalistrikan: kewenangan, izin usaha, penyediaan oleh PLN dan swasta, harga jual serta pemanfaatan sumber energi primer, termasuk terbarukan.",
+ "uu-21-2014": "Mengatur pengusahaan panas bumi: wilayah kerja, izin, eksplorasi dan eksploitasi, termasuk pemanfaatan langsung dan tidak langsung. Mengganti UU 27/2003.",
+ "uu-6-2023": "Menetapkan Perppu Cipta Kerja menjadi UU; mengubah banyak aturan sektor energi, termasuk perizinan berusaha dan ketenagalistrikan.",
+ "uu-16-2016": "Mengesahkan Persetujuan Paris tentang perubahan iklim; dasar komitmen penurunan emisi dan transisi energi Indonesia.",
+ "uu-10-1997": "Mengatur ketenaganukliran: pemanfaatan, pengawasan, dan perizinan tenaga nuklir untuk tujuan damai, termasuk pembangkit.",
+ "pp-40-2025": "Kebijakan Energi Nasional terbaru: sasaran bauran energi dan arah transisi sampai 2060; menggantikan PP 79/2014.",
+ "pp-79-2014": "Kebijakan Energi Nasional lama dengan target bauran EBT 23 persen pada 2025; dicabut oleh PP 40/2025.",
+ "perpres-22-2017": "Rencana Umum Energi Nasional: target bauran, kapasitas pembangkit, dan program per sektor sebagai penjabaran KEN sampai 2050.",
+ "perpres-112-2022": "Mengatur percepatan pembangunan pembangkit EBT: harga patokan, penugasan PLN, penghentian PLTU bertahap, dan insentif.",
+ "permen-esdm-2-2024": "Mengatur PLTS atap yang tersambung jaringan pemegang izin usaha; menghapus skema net metering lama dan mengatur kuota.",
+ "permen-esdm-26-2021": "Aturan PLTS atap terdahulu dengan skema ekspor-impor energi; dicabut oleh peraturan yang lebih baru.",
+ "pp-14-2012": "Mengatur kegiatan usaha penyediaan tenaga listrik: izin, wilayah usaha, jual beli listrik, dan peran swasta.",
+ "pp-7-2017": "Mengatur panas bumi untuk pemanfaatan tidak langsung: lelang wilayah kerja, penugasan, dan hak serta kewajiban pengembang.",
+ "pp-33-2023": "Mengatur konservasi energi: kewajiban manajemen energi, standar dan label efisiensi, serta sanksi bagi pengguna energi besar.",
+ "perpres-98-2021": "Aturan nilai ekonomi karbon untuk capaian NDC dan pengendalian emisi; dicabut oleh Perpres 110/2025.",
+ "perpres-110-2025": "Mengatur instrumen nilai ekonomi karbon dan sistem registri unit karbon; menggantikan Perpres 98/2021.",
+ "perpres-55-2019": "Mendorong percepatan program kendaraan bermotor listrik berbasis baterai, termasuk insentif dan infrastruktur pengisian.",
+ "pp-28-2025": "Mengatur penyelenggaraan perizinan berusaha berbasis risiko, dasar perizinan sektor energi dan ketenagalistrikan.",
+ "permen-esdm-12-2023": "Mengatur pemanfaatan biomassa sebagai campuran bahan bakar (co-firing) di pembangkit listrik batu bara.",
+ "permen-esdm-11-2021": "Mengatur pelaksanaan usaha ketenagalistrikan, termasuk izin usaha dan penggunaan jaringan.",
+ "permen-esdm-10-2022": "Mengatur tata cara persetujuan harga jual tenaga listrik dan sewa jaringan tenaga listrik.",
+ "permen-esdm-4-2025": "Mengatur kewajiban pencampuran bioetanol pada bahan bakar minyak oleh badan usaha.",
+ "permen-esdm-5-2025": "Mengatur ketentuan deemed commissioning dan deemed dispatch pada perjanjian jual beli listrik.",
+ "perpres-5-2006": "Kebijakan Energi Nasional lama yang menetapkan target bauran energi 2025; telah digantikan peraturan berikutnya.",
+ "uu-27-2003": "UU panas bumi lama yang mengatur pengusahaan sektor panas bumi; digantikan UU 21/2014.",
+ "pp-25-2021": "Mengatur penyelenggaraan bidang energi dan sumber daya mineral, termasuk kewenangan, perizinan, dan pengawasan.",
+ "uu-32-2009": "Mengatur perlindungan dan pengelolaan lingkungan hidup, termasuk AMDAL dan izin lingkungan bagi proyek energi.",
+ "uu-15-1985": "UU ketenagalistrikan lama; dicabut dan digantikan UU 30/2009.",
+ "perpres-35-2018": "Mengatur percepatan pembangunan pengolah sampah menjadi energi listrik berbasis teknologi ramah lingkungan."
+}; // parafrase penulis; sisanya templat dari judul
+const ringkas = (jenis, nomor, tahun, judul, id) => {
+  if (RINGKAS_MANUAL[id]) return RINGKAS_MANUAL[id];
   const kata = `${judul.toLowerCase()}`.split(/\s+/).slice(0, 18).join(' ');
   return `${jenis.toUpperCase()} ${nomor}/${tahun} mengatur ${kata}.`;
 };
@@ -181,21 +215,26 @@ function bangun() {
   for (const { id, d } of parsed) { // pass 1: id BPK -> slug stabil
     const f = d.f; if (!f.Nomor || !f.Tahun) continue;
     const jenis = jenisDari(f['Bentuk Singkat'] || f.Bentuk || '');
-    idDariBpk.set(id, slugId(jenis, f.Lokasi || f['Bentuk Singkat'] || '', f.Nomor, f.Tahun));
+    idDariBpk.set(id, slugId(jenis, f.Lokasi || f['Bentuk Singkat'] || '', f.Nomor, f.Tahun, id));
   }
   for (const { id, d } of parsed) {
     const f = d.f; if (!f.Nomor || !f.Tahun) continue;
+    if (/tunjangan kinerja|susunan organisasi|penyertaan modal|struktur kepemilikan saham/i.test((cand.get(id) || {}).judul || d.title)) continue; // kebisingan: kepegawaian/organisasi/modal
     const jenis = jenisDari(f['Bentuk Singkat'] || f.Bentuk || '');
     const judul = (cand.get(id) || {}).judul || (d.title.split(' - ')[0]);
     const rid = idDariBpk.get(id);
-    const ref = (arr) => (arr || []).map((x) => idDariBpk.get(x.id) || `bpk-${x.id}`);
+    const ref = (arr) => (arr || []).map((x) => {
+      if (idDariBpk.has(x.id)) return idDariBpk.get(x.id);
+      const m = x.ref.match(/^(.+?)\s+(?:No\.?|Nomor)\s*(\S+?)\s+Tahun\s+(\d{4})/i); // tujuan di luar set: id dari teks rujukan
+      return m ? slugId(jenisDari(m[1]), m[1], m[2], m[3], x.id) : `bpk-${x.id}`;
+    });
     const diubah = ref(d.rel['diubah dengan']), dicabut = ref(d.rel['dicabut dengan']);
     const mencabut = ref(d.rel['mencabut']), mengubah = ref(d.rel['mengubah']);
     const status = dicabut.length || /tidak berlaku/i.test(f.Status || '') ? 'dicabut' : diubah.length ? 'diubah' : /berlaku/i.test(f.Status || '') ? 'berlaku' : 'tidak-diketahui';
     rows.push({
       id: rid, jenis, nomor: f.Nomor, tahun: +f.Tahun, judul, tanggal_ditetapkan: tglIso(f['Tanggal Penetapan']), tanggal_diundangkan: tglIso(f['Tanggal Pengundangan']),
       instansi_penerbit: f.Lokasi || null, status, diubah_oleh: diubah, mencabut, mengubah, dicabut_oleh: dicabut[0] || null,
-      topik: topikDari(judul), ringkasan: ringkas(jenis, f.Nomor, f.Tahun, judul), pasal_kunci: null,
+      topik: topikDari(judul), ringkasan: ringkas(jenis, f.Nomor, f.Tahun, judul, rid), pasal_kunci: null,
       url_sumber: `${BASE}/Details/${id}`, url_pdf: d.pdf, tanggal_ambil: today, posisi_meti: null, sumber_posisi: null,
     });
     const tambah = (arr, jn, balik) => arr.forEach((t) => ikat.push(balik ? { dari: t, ke: rid, jenis: jn } : { dari: rid, ke: t, jenis: jn }));

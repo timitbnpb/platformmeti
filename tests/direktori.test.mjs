@@ -52,6 +52,7 @@ test("data contoh fiktif lulus skema sumber wajib (url, tanggal), tanpa kontak p
   assert.ok(berkas.length >= 14);
   for (const f of berkas) {
     const d = JSON.parse(fs.readFileSync(new URL(f, dir), "utf8")), nama = f.replace(".json", "");
+    if (nama === "sinta") { for (const [id, x] of Object.entries(d)) { assert.match(id, /^\d{1,9}$/); periksaSumber(nama, x, "sinta:" + id); assert.ok(x.tabel["H-Index"] && x.artikel.length); } continue; }
     if (nama === "kampus") { assert.ok(Object.keys(d).length); continue; }
     if (nama === "kontak") { for (const [id, v] of Object.entries(d)) for (const e of v.email) assert.match(e, /@contoh-kampus\.example\.org$/, id); continue; }
     if (nama === "induk") { periksaSumber(nama, d); assert.equal(d.sektor.length, 14); for (const r of d.orang) { assert.match(r[0], /^A\d{4,12}$/); assert.match(r[1], /\(contoh\)$/); for (const s of r[3]) assert.ok(SEKTOR_SAH.has(s)); } continue; }
@@ -110,4 +111,29 @@ test("fungsi_direktori: sektor multi-pilih dan analisa keahlian energi", () => {
   const h = win.analisaKeahlian([{ id: "W1", judul: "Solar photovoltaic rooftop in Semarang", tahun: 2024, topik: [], kunci: [] }, { id: "W2", judul: "Photovoltaic battery storage", tahun: 2023, topik: [], kunci: [] }]);
   assert.equal(h.jenis[0].kunci, "surya"); assert.equal(h.jenis[0].n, 2);
   assert.equal(win.tingkatPenerima("PT Contoh Energi"), "nonpem");
+});
+
+test("orang di tokoh.json: riwayat, pendidikan, kiprah, tautan bersumber; pakar_id menunjuk baris induk", () => {
+  const T = JSON.parse(baca("data/contoh/tokoh.json")), induk = JSON.parse(baca("data/contoh/induk.json")).orang.map((r) => r[0]);
+  assert.ok(T.length >= 4);
+  for (const x of T) {
+    assert.ok(Number.isInteger(x.eid), x.id); assert.ok(x.riwayat.length && x.pendidikan.length && Array.isArray(x.kiprah) && x.tautan.length, x.id);
+    for (const r of x.riwayat) { assert.ok(r.jabatan && r.mulai); assert.match(r.sumber_url, URL_SAH); }
+    for (const r of x.pendidikan) { assert.match(r.jenjang, /^S[123]$/); assert.ok(r.institusi && r.bidang); assert.match(r.sumber_url, URL_SAH); }
+    for (const r of x.tautan) assert.match(r.url, /^https:\/\/[^\s]+example\.org/);
+    if (x.pakar_id) assert.ok(induk.includes(x.pakar_id), x.id);
+  }
+  assert.ok(T.some((x) => x.riwayat.some((r) => !r.selesai)), "ada jabatan Kini");
+});
+
+test("sinta: rincian dilayani untuk anggota, 404 bila tak ada, 401 tamu", async () => {
+  const a = { id: 1, peran: "anggota" };
+  const r = await rute["GET /api/direktori/sinta/:id"](req(), {}, ctx, { params: { id: "6000101" }, sesi: {}, akun: a });
+  assert.equal(r.status, 200); assert.ok((await r.json()).artikel.length);
+  await assert.rejects(() => rute["GET /api/direktori/sinta/:id"](req(), {}, ctx, { params: { id: "1" }, sesi: {}, akun: a }), (e) => e.kode === "tidak_ditemukan");
+  await assert.rejects(() => rute["GET /api/direktori/sinta/:id"](req(), {}, ctx, { params: { id: "6000101" }, sesi: null, akun: null }), (e) => e.status === 401);
+});
+
+test("lembar orang memuat semua bagian: riwayat jabatan, pendidikan, kiprah, tautan, riwayat METI, SINTA", () => {
+  for (const k of ["riwayatTk(", "pendidikanTk(", "tautanTk(", "Kiprah EBET", "rinciSinta(o)", "dir.riwayat.judulBagian", "Tokoh sejenis", "Berita terkait", "Pakar sejenis", "Sering menulis bersama", "Metrik publikasi menurut SINTA", "Artikel Scopus terbaru"]) assert.ok(JS.includes(k), k);
 });

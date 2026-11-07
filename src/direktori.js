@@ -19,8 +19,10 @@ import c_temuan_riset from "../data/contoh/temuan_riset.json" with { type: "json
 import c_riset from "../data/contoh/riset.json" with { type: "json" };
 import c_pusat_studi from "../data/contoh/pusat_studi.json" with { type: "json" };
 import c_jejak_isu from "../data/contoh/jejak_isu.json" with { type: "json" };
+import c_graf from "../data/contoh/graf.json" with { type: "json" };
+import c_sinta from "../data/contoh/sinta.json" with { type: "json" };
 
-const CONTOH = { induk: c_induk, kampus: c_kampus, kontak: c_kontak, lembaga: c_lembaga, proyek_mitra: c_proyek_mitra, aset_riset: c_aset_riset, inovasi: c_inovasi, sistem_data: c_sistem_data, tokoh: c_tokoh, dokumen: c_dokumen, berita: c_berita, pendanaan: c_pendanaan, temuan_riset: c_temuan_riset, riset: c_riset, pusat_studi: c_pusat_studi, jejak_isu: c_jejak_isu };
+const CONTOH = { induk: c_induk, kampus: c_kampus, kontak: c_kontak, lembaga: c_lembaga, proyek_mitra: c_proyek_mitra, aset_riset: c_aset_riset, inovasi: c_inovasi, sistem_data: c_sistem_data, tokoh: c_tokoh, dokumen: c_dokumen, berita: c_berita, pendanaan: c_pendanaan, temuan_riset: c_temuan_riset, riset: c_riset, pusat_studi: c_pusat_studi, jejak_isu: c_jejak_isu, sinta: c_sinta, graf: c_graf };
 
 // Semua peran bersesi sudah anggota ke atas (PERAN di hak.js); kontak hanya lapis pengurus (KPV 1).
 const ANGGOTA = ["anggota", "pengurus", "kurator", "wilayah", "admin", "super"];
@@ -260,6 +262,18 @@ async function keahlian(req, env, ctx, p) {
   }, 86400);
 }
 
+// Rincian SINTA per pakar (metrik Scopus/Scholar, skor, artikel): R2 potret/anggota/sinta/<id % 64>.json (peta id -> rincian), atau contoh.
+const ID_SINTA = /^\d{1,9}$/;
+async function sinta(req, env, ctx, p) {
+  perlu(p, ANGGOTA);
+  const id = p.params.id;
+  if (!ID_SINTA.test(id)) throw new Galat("tidak_ditemukan");
+  const o = env.BERKAS ? await env.BERKAS.get(`potret/anggota/sinta/${Number(id) % 64}.json`).catch(() => null) : null;
+  const x = (o ? await o.json() : CONTOH.sinta)[id];
+  if (!x) throw new Galat("tidak_ditemukan");
+  return json(x, 200, { ...PRIVAT, "cache-control": "private, max-age=3600" });
+}
+
 export const rute = {
   "GET /api/direktori": induk,
   "GET /api/direktori/kampus": kampus,
@@ -268,6 +282,7 @@ export const rute = {
   "GET /api/direktori/karya/:id": karya,
   "GET /api/direktori/riset/:id": riset,
   "GET /api/direktori/keahlian/:id": keahlian,
+  "GET /api/direktori/sinta/:id": sinta,
   "POST /api/direktori/ringkasan": ringkasan,
   "GET /api/direktori/terdekat": terdekat,
   "GET /api/direktori/lembaga/terdekat": lembagaTerdekat,

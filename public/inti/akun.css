@@ -1,12 +1,10 @@
 /* Halaman akun (masuk, aktivasi, ganti sandi): kartu tengah, label mengambang. Hanya token. Gerak: transform/opacity. */
-.jm-akun .jm-halaman,.jm-akun .jm-kaki{position:relative;z-index:1}
-.jm-akun::before{content:"";position:fixed;inset:0;z-index:0;pointer-events:none;
-  background:
-    linear-gradient(to right,color-mix(in srgb,var(--line) 55%,transparent) 1px,transparent 1px) 0 0/48px 48px,
-    linear-gradient(to bottom,color-mix(in srgb,var(--line) 55%,transparent) 1px,transparent 1px) 0 0/48px 48px;
-  -webkit-mask-image:radial-gradient(ellipse at 50% 40%,#000 25%,transparent 75%);mask-image:radial-gradient(ellipse at 50% 40%,#000 25%,transparent 75%)}
-.jm-akun::after{content:"";position:fixed;z-index:0;pointer-events:none;width:min(70vw,640px);height:min(70vw,640px);left:50%;top:18%;margin-left:calc(min(70vw,640px)/-2);border-radius:50%;
-  background:radial-gradient(circle at 35% 35%,var(--meti-cyan),transparent 62%),radial-gradient(circle at 70% 70%,var(--meti-lime),transparent 60%);opacity:.22;filter:blur(70px)}
+.jm-akun{background:
+  linear-gradient(to right,color-mix(in srgb,var(--line) 60%,transparent) 1px,transparent 1px) 0 0/48px 48px,
+  linear-gradient(to bottom,color-mix(in srgb,var(--line) 60%,transparent) 1px,transparent 1px) 0 0/48px 48px,
+  radial-gradient(ellipse 520px 420px at 35% 22%,color-mix(in srgb,var(--meti-cyan) 24%,transparent),transparent 70%),
+  radial-gradient(ellipse 520px 420px at 68% 78%,color-mix(in srgb,var(--meti-lime) 18%,transparent),transparent 70%),
+  var(--paper);background-attachment:fixed}
 .jm-akun .jm-halaman{align-content:center;padding-top:32px}
 .jm-akun .jm-kartu{padding:28px 22px;border-radius:28px;box-shadow:var(--shadow-lg)}
 @media (min-width:600px){.jm-akun .jm-kartu{padding:36px 36px 28px}}

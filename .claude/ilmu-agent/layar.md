@@ -59,3 +59,4 @@ Merah bila: `gerbang-headers` (inline, `*`, sumber luar tak terdaftar), `gerbang
 ## Kasus
 
 Belum ada kasus. Tambahkan lewat ilmu.mjs kasus.
+- 2026-11-07 · Pseudo-elemen fixed z-index pada body menimpa kartu di Chrome; latar grid/gradasi taruh di background body (attachment fixed), bukan ::before.
