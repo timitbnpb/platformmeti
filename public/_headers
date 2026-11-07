@@ -33,3 +33,9 @@
   Cache-Control: public, max-age=31536000, immutable
 /vendor/*
   Cache-Control: public, max-age=31536000, immutable
+/berhenti
+  X-Robots-Tag: noindex, nofollow
+  Referrer-Policy: no-referrer
+  Cache-Control: private, no-store
+/langganan
+  Referrer-Policy: no-referrer

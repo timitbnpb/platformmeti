@@ -133,3 +133,6 @@ header.top{padding-inline:clamp(12px,2vw,28px)}
 
 /* peta selebar layar (full-bleed): html tidak boleh bergulir ke samping; panel dan bilah di atas peta rata ke --tepi (tepi konten) */
 html{overflow-x:clip}
+/* tombol "Langganan newsletter" di kaki situs */
+.jm-kaki .jm-kaki-lg{margin-top:18px;min-height:var(--target);border-color:var(--meti-lime);background:transparent;color:var(--meti-lime)}
+.jm-kaki .jm-kaki-lg:hover{background:var(--meti-lime);color:var(--kaki-bg);border-color:var(--meti-lime)}
