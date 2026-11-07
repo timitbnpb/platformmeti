@@ -15,7 +15,7 @@ import { webcrypto as crypto } from 'node:crypto';
 const arg = (n, b) => (process.argv.find((a) => a.startsWith(`--${n}=`)) ?? '').slice(n.length + 3) || b;
 const surel = arg('surel'), nama = arg('nama');
 const db = arg('db', 'jaringan-meti');
-const asal = arg('asal', 'https://platformmeti.timitbnpb.workers.dev');
+const asal = arg('asal', 'https://direktori.metiires.or.id');
 const lokal = process.argv.includes('--lokal');
 if (!surel || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(surel) || !nama) {
   console.error('wajib: --surel=<surel sah> --nama="<nama>"');
@@ -27,7 +27,11 @@ const hash = hex(await crypto.subtle.digest('SHA-256', new TextEncoder().encode(
 const sampai = Math.floor(Date.now() / 1000) + 72 * 3600;
 const q = (s) => `'${String(s).replace(/'/g, "''")}'`;
 // Gagal bila surel sudah ada (UNIQUE): super kedua dibuat lewat /admin, bukan skrip ini.
-const sql = `INSERT INTO akun (surel, nama, peran, status, aktivasi_hash, aktivasi_sampai) VALUES (${q(surel)}, ${q(nama)}, 'super', 'menunggu', ${q(hash)}, ${sampai});
+// --ulang: tautan aktivasi baru untuk akun super yang masih `menunggu` (tautan lama hilang/kedaluwarsa).
+const ulang = process.argv.includes('--ulang');
+const sql = ulang
+  ? `UPDATE akun SET aktivasi_hash = ${q(hash)}, aktivasi_sampai = ${sampai} WHERE surel = ${q(surel)} AND peran = 'super' AND status = 'menunggu';`
+  : `INSERT INTO akun (surel, nama, peran, status, aktivasi_hash, aktivasi_sampai) VALUES (${q(surel)}, ${q(nama)}, 'super', 'menunggu', ${q(hash)}, ${sampai});
 INSERT INTO jejak (siapa, peran, aksi, tabel, baris_id) SELECT id, 'super', 'tambah', 'akun', CAST(id AS TEXT) FROM akun WHERE surel = ${q(surel)};`;
 const dir = mkdtempSync(join(tmpdir(), 'super-'));
 const f = join(dir, 'super.sql');

@@ -31,3 +31,8 @@ Kontak: hanya surel umum (info@, sekretariat@, humas@ dst.; daftar putih awalan)
 
 ## Usulan halaman profil (meniru lembaga di Direktori Kebencanaan)
 Kepala: nama, jenis, induk/grup, kode saham, peran rantai, kepakaran (chip). Blok "Pimpinan" langsung di atas lipatan: kartu Direktur Utama lalu direktur lalu komisaris (foto, nama, jabatan, "sumber: halaman resmi", tanggal ambil; foto dengan atribusi "milik perusahaan"). Samping: kontak korporat + peta bila ada koordinat. Bawah: portofolio proyek, kapasitas, TKDN/BMP/APAMSI (pabrikan modul), sumber dan tingkat bukti per kolom. Foto tampil hanya setelah tinjau dan izin; tanpa foto resmi = inisial.
+
+## Pembaruan (batch temuan situs + anggota asosiasi)
+- `data-panen/temuan/situs_perusahaan.jsonl` (31 situs) dipakai; keyakinan "sedang" lolos hanya bila nama lengkap tampil di beranda (14 ditolak: situs induk tanpa nama anak usaha).
+- `--anggota`: APROBI (25 anggota; nama, telepon kantor, alamat, kapasitas dari halaman anggotanya) dan AESI (114 nama dari alt logo di halaman anggota; tanpa kontak) ditambahkan sebagai batch 6 dengan `anggota_asosiasi`. Jenis/peran anggota AESI belum diketahui. INAGA (API) dan APAMSI belum dipanen. AESI meminta Crawl-delay 20 dtk; kini dihormati per host (satu unduhan awal memakai jeda 2 dtk sebelum ketahuan).
+- Total 240 perusahaan; persentase di laporan memakai penyebut 240.

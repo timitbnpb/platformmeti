@@ -10,7 +10,7 @@ for (const [el, teks, label] of awal) {
   if (el.dataset.i18n && !ada(el.dataset.i18n)) el.textContent = teks;
   if (el.dataset.i18nAttr && label !== null && el.dataset.i18nAttr.split(";").some((p) => !ada(p.split(":")[1]))) el.setAttribute("aria-label", label);
 }
-if (document.title === "dir.title") document.title = "Direktori Jaringan METI";
+if (document.title === "dir.title") document.title = "Direktori METI";
 window.JM = { ...(window.JM || {}), t, ada, angka, tanggal, bahasa, saya };
 const muat = (src) => new Promise((ok, gagal) => {
   const s = document.createElement("script"); s.src = src; s.onload = ok; s.onerror = () => gagal(new Error(src)); document.body.append(s);

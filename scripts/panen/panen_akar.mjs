@@ -30,7 +30,8 @@ const POLA = [
   ['akun-sosial', /(instagram|facebook|twitter|tiktok|linkedin)\.com\/|(?:^|\s)@[a-z0-9_]{3,}\b/i],
 ];
 const BOLEH_ORG = new Set(['nama', 'kategori', 'kampus', 'kota', 'provinsi', 'tingkat', 'induk', 'situs', 'tautan', 'surel_org', 'pengurus', 'program', 'sumber_url', 'tanggal_sumber', 'tanggal_ambil', 'tingkat_bukti', 'catatan']);
-const BOLEH_TOKOH = new Set(['nama', 'kelompok', 'peran', 'wilayah', 'organisasi', 'capaian', 'kepakaran', 'sumber_url', 'tanggal_sumber', 'tanggal_ambil', 'tingkat_bukti', 'catatan']);
+const BOLEH_TOKOH = new Set(['boleh_satu_kata', 'nama', 'kelompok', 'peran', 'wilayah', 'organisasi', 'capaian', 'kepakaran', 'sumber_url', 'tanggal_sumber', 'tanggal_ambil', 'tingkat_bukti', 'catatan']);
+const BOLEH_KOP = new Set(['nama', 'jenis_koperasi', 'desa', 'kecamatan', 'kabupaten', 'provinsi', 'jenis_ebt', 'kapasitas', 'mitra', 'status', 'tautan', 'sumber_url', 'tanggal_sumber', 'tanggal_ambil', 'tingkat_bukti', 'catatan']);
 const KEPAKARAN_OK = new Set(['surya', 'bayu', 'hidro', 'panas-bumi', 'bioenergi', 'biomassa-sampah', 'nuklir', 'hidrogen', 'laut', 'penyimpanan', 'jaringan', 'efisiensi', 'elektrifikasi', 'karbon', 'pembiayaan', 'kebijakan', 'industri', 'transisi-adil', 'riset-data']);
 const LEPAS = new Set(['surel_org', 'tautan', 'situs']); // URL/surel organisasi dikecualikan dari pola; diperiksa terpisah
 export function saring(rec, boleh) {
@@ -96,7 +97,7 @@ const id = (p, s) => p + '_' + crypto.createHash('sha1').update(s).digest('hex')
 
 // ---------- bangun ----------
 function bangun() {
-  const orgs = new Map(), tokoh = new Map(), gagal = [];
+  const orgs = new Map(), tokoh = new Map(), kops = new Map(), gagal = [];
   const tolak = (nama, alasan, u) => gagal.push({ nama, alasan, sumber_url: u, tanggal_ambil: HARI_INI });
   for (const f of fs.existsSync(SEED) ? fs.readdirSync(SEED).filter((x) => x.endsWith('.json')).sort() : []) {
     const S = JSON.parse(fs.readFileSync(path.join(SEED, f), 'utf8'));
@@ -105,16 +106,22 @@ function bangun() {
       if (b.tolak) { tolak(b.nama, b.tolak, u); continue; }
       if (!u || !/^https?:\/\//.test(u)) { tolak(b.nama, 'tanpa-sumber', u); continue; }
       const dasar = { ...b, sumber_url: u, tanggal_sumber: b.tanggal_sumber ?? S.tanggal_sumber ?? null, tanggal_ambil: HARI_INI };
-      if (S.jenis === 'org') {
+      if (S.jenis === 'koperasi') {
+        const rec = { ...dasar, tingkat_bukti: dasar.tingkat_bukti ?? 'cuplikan' };
+        const s = saring(rec, BOLEH_KOP); if (!s.ok) { tolak(b.nama, s.alasan, u); continue; }
+        if (!rec.nama || !['kdmp', 'energi'].includes(rec.jenis_koperasi) || !rec.provinsi) { tolak(b.nama, 'skema', u); continue; }
+        const k = kunci(rec.nama + ' ' + (rec.provinsi)); if (kops.has(k)) continue;
+        kops.set(k, { entitas_id: id('kp', k), kategori: 'koperasi', ...rec });
+      } else if (S.jenis === 'org') {
         const rec = { ...dasar, kategori: 'organisasi-mahasiswa', tingkat_bukti: dasar.tingkat_bukti ?? 'situs-sendiri' };
         const s = saring(rec, BOLEH_ORG); if (!s.ok) { tolak(b.nama, s.alasan, u); continue; }
-        if (!rec.nama || !['nasional', 'kampus'].includes(rec.tingkat)) { tolak(b.nama, 'skema', u); continue; }
+        if (!rec.nama || !['nasional', 'daerah', 'kampus'].includes(rec.tingkat)) { tolak(b.nama, 'skema', u); continue; }
         const k = kunci(rec.nama + ' ' + (rec.kampus ?? '')); if (orgs.has(k)) continue;
         orgs.set(k, { entitas_id: id('om', k), ...rec });
       } else {
         const rec = { ...dasar, kelompok: 'aktivis-tokoh-daerah', tingkat_bukti: dasar.tingkat_bukti ?? 'cuplikan' };
         const s = saring(rec, BOLEH_TOKOH); if (!s.ok) { tolak(b.nama, s.alasan, u); continue; }
-        if (!rec.nama || rec.nama.trim().split(/\s+/).length < 2 || !rec.peran || !rec.wilayah) { tolak(b.nama, 'skema-atau-nama-satu-kata', u); continue; }
+        if (!rec.nama || (rec.nama.trim().split(/\s+/).length < 2 && !b.boleh_satu_kata) || !rec.peran || !rec.wilayah) { tolak(b.nama, 'skema-atau-nama-satu-kata', u); continue; }
         if (!(rec.kepakaran ?? []).every((x) => KEPAKARAN_OK.has(x.kode) && x.bukti && x.sumber_url)) { tolak(b.nama, 'kepakaran-tanpa-bukti', u); continue; }
         if (/via-pihak-ketiga|media/.test(rec.tingkat_bukti) && rec.tingkat_bukti === 'tinggi') rec.tingkat_bukti = 'cuplikan';
         const k = kunci(rec.nama); const ada = tokoh.get(k);
@@ -126,8 +133,9 @@ function bangun() {
   fs.mkdirSync(OUT, { recursive: true });
   tulis(path.join(OUT, 'organisasi_mahasiswa.jsonl'), [...orgs.values()]);
   tulis(path.join(OUT, 'tokoh.jsonl'), [...tokoh.values()]);
+  tulis(path.join(OUT, 'koperasi.jsonl'), [...kops.values()]);
   tulis(path.join(OUT, 'gagal.jsonl'), gagal);
-  console.log(JSON.stringify({ organisasi: orgs.size, tokoh: tokoh.size, gagal: gagal.length }));
+  console.log(JSON.stringify({ organisasi: orgs.size, tokoh: tokoh.size, koperasi: kops.size, gagal: gagal.length }));
 }
 
 function selftest() {

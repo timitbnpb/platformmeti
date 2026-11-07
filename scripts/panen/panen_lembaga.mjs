@@ -322,7 +322,7 @@ async function metiPengurus() {
 // ---------- dinas ESDM provinsi (domain dari data-panen/temuan) + anggota API ----------
 export function kepalaDinas(teksPolos) {
   const L = teksPolos.split('\n').map((s) => s.trim()).filter(Boolean);
-  const namaOk = (s) => s && s.length < 70 && !/\d/.test(s) && s.split(' ').length >= 2 && s.split(' ').length <= 9 && /^[A-Z]/.test(s) && !/(dinas|provinsi|selamat|kepala|bidang|sekretaris|visi|misi)/i.test(s);
+  const namaOk = (s) => s && s.length < 70 && !/\d/.test(s) && s.split(' ').length >= 2 && s.split(' ').length <= 9 && /^[A-Z]/.test(s) && !/(dinas|provinsi|selamat|kepala|bidang|sekretaris|visi|misi|terima|struktur|organisasi|kasih)/i.test(s) && s !== s.toUpperCase();
   for (let i = 0; i < L.length; i++) {
     if (/^kepala dinas( energi dan sumber daya mineral)?( provinsi [\w\s]+)?$/i.test(L[i])) {
       for (const c of [L[i - 1], L[i + 1]]) if (namaOk(c)) return c.replace(/\s+/g, ' ');

@@ -121,8 +121,10 @@ export function fotoKandidat(html, namaList, pageUrl) {
 // ---------- jaringan ----------
 let terakhir = 0;
 const robotsCache = new Map(); const hostBlok = new Set();
+const hostGap = new Map(), terakhirHost = new Map(); // Crawl-delay robots.txt per host
 async function tunggu(u, aksi = 'text/html,application/xhtml+xml,*/*') {
-  const d = Date.now() - terakhir; if (d < GAP_MS) await sleep(GAP_MS - d); terakhir = Date.now();
+  const host = new URL(u).hostname, gap = Math.max(GAP_MS, hostGap.get(host) || 0), d = Date.now() - Math.max(terakhir, terakhirHost.get(host) || 0);
+  if (d < gap) await sleep(gap - d); terakhir = terakhirHost.set(host, Date.now()).get(host);
   return fetch(u, { headers: { 'User-Agent': UA, Accept: aksi }, redirect: 'follow', signal: AbortSignal.timeout(25000) });
 }
 async function robotsOk(u) {
@@ -136,7 +138,7 @@ async function robotsOk(u) {
         for (const b of (await r.text()).split(/\r?\n/)) {
           const m = b.match(/^\s*([a-z-]+)\s*:\s*(.*?)\s*(#.*)?$/i); if (!m) continue;
           const k = m[1].toLowerCase();
-          if (k === 'user-agent') ua = m[2] === '*'; else if (ua && k === 'disallow' && m[2]) aturan.push(m[2]);
+          if (k === 'user-agent') ua = m[2] === '*'; else if (ua && k === 'crawl-delay' && +m[2] > 0) hostGap.set(new URL(u).hostname, Math.min(+m[2], 60) * 1000); else if (ua && k === 'disallow' && m[2]) aturan.push(m[2]);
         }
       }
     } catch {}
@@ -261,6 +263,8 @@ async function jalan(batches) {
   fs.mkdirSync(OUT, { recursive: true });
   const lama = new Map(baca(path.join(OUT, 'perusahaan.jsonl')).map((r) => [r.perusahaan_id, r]));
   const semua = bangunRekaman().map((r) => { const o = lama.get(r.perusahaan_id); return o ? { ...r, verifikasi: o.verifikasi, pengurus_status: o.pengurus_status, sumber: [...r.sumber, ...o.sumber.filter((x) => !r.sumber.some((y) => y.id === x.id))], sumber_field: { ...o.sumber_field, ...r.sumber_field }, situs: r.situs || o.situs, kontak: o.kontak } : r; });
+  { const id = new Set(semua.map((x) => x.perusahaan_id)); for (const o of lama.values()) if (!id.has(o.perusahaan_id)) semua.push(o); } // rekaman hasil direktori anggota (batch 6) dipertahankan
+  for (const r of semua) { const o = lama.get(r.perusahaan_id); if (o?.anggota_asosiasi) r.anggota_asosiasi = o.anggota_asosiasi; if (o?.kapasitas_portofolio && !r.kapasitas_portofolio) r.kapasitas_portofolio = o.kapasitas_portofolio; }
   const orangRows = baca(ORANG); const orangKunci = new Map();
   for (const o of orangRows) { const k = kunciNama(o.nama); orangKunci.set(k, orangKunci.has(k) ? 'ambigu' : o.orang_id); }
   let pengurus = baca(path.join(OUT, 'pengurus.jsonl'));
@@ -336,6 +340,51 @@ async function jalan(batches) {
   }
 }
 
+
+// ---------- direktori anggota asosiasi (APROBI: nama+kontak kantor+kapasitas; AESI: nama dari alt logo anggota) ----------
+const rapi = (n) => n.replace(/\s+/g, ' ').trim().replace(/^pt\b/i, 'PT').replace(/\b(\w)(\w*)/g, (m, a, b) => (/^(PT|CV|TBK|PLTS|BESS|EPC)$/i.test(m) ? m.toUpperCase() : a.toUpperCase() + b.toLowerCase())).replace(/\bPt\b/, 'PT');
+export function uraiAprobi(t) {
+  const L = t.split('\n').map((s) => s.trim()).filter(Boolean); const out = [];
+  for (let i = 0; i < L.length; i++) {
+    if (!/^PT [A-Z0-9 .&-]{3,}$/.test(L[i])) continue;
+    const r = { nama: rapi(L[i]), telepon: [], alamat: null, kapasitas: null, bidang: null };
+    for (let j = i + 1; j < L.length && !/^PT [A-Z0-9 .&-]{3,}$/.test(L[j]); j++) {
+      if (/^Work\s*:?$/i.test(L[j]) && L[j + 1]) r.telepon.push(...telepon('Telp: ' + L[j + 1].replace(/\(62-?(\d+)\)/, '(0$1)').replace(/^\+62\s*0/, '+62 ')));
+      else if (/^Work Address/i.test(L[j]) && L[j + 1]) r.alamat = L[j + 1];
+      else if (/^Capacity (Biodiesel|Bioethanol)/i.test(L[j])) { r.bidang = /bioethanol/i.test(L[j]) ? 'bioetanol' : 'biodiesel'; r.kapasitas = (L[j].match(/(TPY|KL)/i) || [''])[0].toUpperCase() + ' ' + (L[j + 1] || ''); }
+    }
+    out.push(r);
+  }
+  return out;
+}
+export function uraiAesi(html) {
+  const out = new Set();
+  for (const m of html.matchAll(/<img[^>]*alt="([^"]{3,70})"/gi)) { let n = dec(m[1]).replace(/\s+\d+$/, '').trim(); if (/logo|banner|icon|^img/i.test(n) || !/[a-z]/i.test(n)) continue; out.add(rapi(n)); }
+  return [...out];
+}
+async function anggota() {
+  const lama = baca(path.join(OUT, 'perusahaan.jsonl')); const peta = new Map(lama.map((r) => [normNama(r.nama), r]));
+  const tambah = (nama, grup, url, extra) => {
+    let r = peta.get(normNama(nama));
+    if (!r) { r = { perusahaan_id: 'p_' + sha(kunciPerusahaan(nama, null)), batch: 6, nama, nama_lain: [], jenis: 'tidak-diketahui', induk: null, kepakaran: grup === 'APROBI' ? ['bioenergi'] : ['surya'], peran_rantai: grup === 'APROBI' ? ['produsen BBN'] : [], kantor_pusat: { kota: null, provinsi: null }, situs: null, tahun_berdiri: null, proyek: [], kapasitas_portofolio: null, kode_saham: null, kapasitas_mwp_tahun: null, pasar: null, apamsi: null, tkdn: null, bmp: null,
+        sumber: [], sumber_field: { nama: 'anggota-' + grup, kepakaran: 'anggota-' + grup, peran_rantai: 'anggota-' + grup }, verifikasi: { situs_ok: false, http: null, judul: null, tanggal_periksa: null }, pengurus_status: 'belum-dibaca', anggota_asosiasi: [] };
+      peta.set(normNama(nama), r); lama.push(r);
+    }
+    r.anggota_asosiasi = [...new Set([...(r.anggota_asosiasi || []), grup])];
+    if (!r.sumber.some((x) => x.id === 'anggota-' + grup)) r.sumber.push({ id: 'anggota-' + grup, jenis: 'direktori-asosiasi', url, keterangan: 'halaman anggota resmi ' + grup, tanggal_periksa: HARI_INI, tingkat_bukti: 'kata-pihak' });
+    if (extra) extra(r);
+  };
+  const A = await ambil('https://www.aprobi.or.id/about-us/members/', 'asosiasi');
+  if (A) for (const x of uraiAprobi(teks(fs.readFileSync(A.file, 'utf8')))) tambah(x.nama, 'APROBI', 'https://www.aprobi.or.id/about-us/members/', (r) => {
+    if (x.kapasitas && !r.kapasitas_portofolio) r.kapasitas_portofolio = `kapasitas ${x.bidang} ${x.kapasitas.trim()} (anggota APROBI)`; r.sumber_field.kapasitas_portofolio = 'anggota-APROBI';
+    if (!r.kontak && (x.telepon.length || x.alamat)) { r.kontak = { alamat_kantor: x.alamat, kota: r.kantor_pusat.kota, provinsi: r.kantor_pusat.provinsi, kode_pos: (x.alamat || '').match(/\b([1-9]\d{4})\b/)?.[1] || null, telepon: x.telepon, surel: [], situs: r.situs, lat: null, lng: null, lat_lng_sumber: null, sumber_url: 'https://www.aprobi.or.id/about-us/members/', tanggal_ambil: HARI_INI, tingkat_bukti: 'kata-pihak' }; r.sumber_field.kontak = 'anggota-APROBI'; } });
+  const S = await ambil('https://aesi.or.id/anggota/', 'asosiasi');
+  if (S) for (const n of uraiAesi(fs.readFileSync(S.file, 'utf8'))) tambah(n, 'AESI', 'https://aesi.or.id/anggota/');
+  tulis(path.join(OUT, 'perusahaan.jsonl'), lama);
+  const g = baca(path.join(OUT, 'gagal.jsonl')); for (const x of gagal) g.push(x); tulis(path.join(OUT, 'gagal.jsonl'), g);
+  console.log(JSON.stringify({ total: lama.length, aprobi: lama.filter((r) => r.anggota_asosiasi?.includes('APROBI')).length, aesi: lama.filter((r) => r.anggota_asosiasi?.includes('AESI')).length }));
+}
+
 function statistik() {
   const P = baca(path.join(OUT, 'perusahaan.jsonl')), G = baca(path.join(OUT, 'pengurus.jsonl')), F = baca(path.join(OUT, 'gagal.jsonl'));
   const h = (f) => P.reduce((m, r) => { for (const k of [].concat(f(r))) m[k] = (m[k] || 0) + 1; return m; }, {});
@@ -369,6 +418,8 @@ function selftest() {
   assert.deepEqual(telepon('Telepon HP: 0812 3456 7890'), []);
   assert.equal(alamat('Alamat\nJl. Medan Merdeka Selatan No. 9, Jakarta 10110').kode_pos, '10110');
   assert.deepEqual(koordinat('x !2d106.8273!3d-6.1754 y'), { lat: -6.1754, lng: 106.8273 });
+  assert.equal(uraiAprobi('Members\nPT CONTOH BIODIESEL\nWork :\n+62 21 0000 0000\nWork Address :\nJl. Contoh No. 1, Jakarta 10110\nCapacity Biodiesel TPY:\n100,000')[0].telepon[0], '+622100000000');
+  assert.deepEqual(uraiAesi('<img alt="Pt Contoh Surya"><img alt="AESI_Logo_White"><img alt="Bti 1">'), ['PT Contoh Surya', 'Bti']);
   const r = bangunRekaman(); assert(r.length > 100); assert(new Set(r.map((x) => x.perusahaan_id)).size === r.length);
   assert.equal(r.filter((x) => x.kapasitas_mwp_tahun !== null || x.pasar).length, 40);
   assert(r.every((x) => ['bumn', 'swasta', 'asing', 'patungan', 'koperasi', 'tbk', 'tidak-diketahui'].includes(x.jenis)));
@@ -378,5 +429,6 @@ function selftest() {
 const arg = (n) => (process.argv.find((a) => a.startsWith(`--${n}`)) || '').split('=').slice(1).join('=');
 if (process.argv.includes('--selftest')) selftest();
 else if (process.argv.some((a) => a.startsWith('--jalan'))) { const b = arg('jalan'); await jalan(b ? b.split(',').map(Number) : [1, 2, 3, 4, 5]); }
+else if (process.argv.includes('--anggota')) await anggota();
 else if (process.argv.includes('--statistik')) statistik();
 else console.log('lihat komentar di kepala berkas');

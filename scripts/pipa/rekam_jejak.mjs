@@ -77,6 +77,7 @@ async function http(u, opsi = {}, biner = false) {
   for (let i = 0; i < 2; i++) {
     let r; try { r = await tunggu(u, opsi); } catch (e) { if (i) return { status: 'jaringan', ket: e.message }; await sleep(4000); continue; }
     if (r.status === 403) throw new Berhenti('403 ' + u);
+    if (r.status === 429 && +r.headers.get('retry-after') > 300) throw new Berhenti('429 kuota habis, ulangi setelah ' + r.headers.get('retry-after') + ' dtk (atau set OPENALEX_KEY) ' + u.slice(0, 60));
     if (r.status === 429 || r.status >= 500) { if (i) return { status: r.status }; await sleep(Math.min(60, +r.headers.get('retry-after') || 8) * 1000); continue; }
     if (r.status !== 200) return { status: r.status };
     return biner ? { status: 200, buf: Buffer.from(await r.arrayBuffer()), tipe: r.headers.get('content-type') } : { status: 200, teks: await r.text() };
@@ -330,7 +331,6 @@ async function langkahFoto() {
 }
 
 // ---------- 5. OpenAlex ----------
-const KATA_ENERGI = /(energy|power|solar|photovolt|wind|geotherm|biomass|bioenergy|hydro|renewable|electric|grid|battery|hydrogen|fuel|carbon|climate)/i;
 const akademisi = (o) => /prof|dr\b|dr\.|ph\.?d|d\.?eng/i.test(o.gelar || '') || /univers|institut|politeknik|badan riset|brin|peneliti|dosen|guru besar|profesor/i.test([o.jabatan_terkini, o.organisasi_terkini, ...o.jabatan.map((j) => j.jabatan + ' ' + j.organisasi)].join(' ')) || o.alias.some((a) => /^(prof|dr)\b/i.test(a));
 export function cocokPenulis(o, kandidat) {
   const mau = new Set(token(namaBersih(o.nama))); const ada = [];
@@ -342,8 +342,7 @@ export function cocokPenulis(o, kandidat) {
     const orgs = (a.affiliations || []).map((f) => f.institution?.display_name || '').concat((a.last_known_institutions || []).map((i) => i.display_name)).join(' ');
     const k = kataKonteks([o.organisasi_terkini, ...o.jabatan.map((j) => j.organisasi)].join(' '));
     const irisan = [...kataKonteks(orgs)].filter((x) => k.has(x));
-    const topik = (a.topics || []).some((t2) => KATA_ENERGI.test(t2.display_name));
-    ada.push({ a, kuat: irisan.length >= 1 || (topik && sama) });
+    ada.push({ a, kuat: irisan.length >= 1 }); // ponytail: topik energi saja tidak cukup (nama umum); wajib irisan afiliasi
   }
   const kuat = ada.filter((x) => x.kuat);
   return { cocok: kuat.length === 1 ? kuat[0].a : null, ambigu: kuat.length > 1, lemah: !kuat.length && ada.length ? ada.map((x) => x.a.id) : [] };

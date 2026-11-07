@@ -5,7 +5,7 @@
   --meti-cyan:#65C7EC; --meti-lime:#B9D75A; --meti-cloud:#F3F7FB; --meti-oranye:#C55A11;
 
   --paper:#FFFFFF; --surface:#F3F7FB; --card:#FFFFFF;
-  --soft-biru:#E3F4FB; --soft-hijau:#E3F2EC;
+  --soft-biru:#E3F4FB; --soft-hijau:#E3F2EC; --akun-isi:#E8F0FE; --akun-krem:#FBF1DC; --akun-biru:#BFD9F5;
   --line:#D5DEE8; --line-cell:#DCE6EF; --line-ctl:#6F7F90;
   --ink:#0B1726; --ink2:#4A5A6B; --head:#122B4A;
   --brand:#122B4A; --brand2:#155B79;
@@ -29,7 +29,7 @@
 @media (min-width:768px){:root{--t-display:44px; --t-h1:32px; --t-h2:22px; --t-angka:40px}}
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
   --paper:#0C1D33; --surface:#122B4A; --card:#122B4A;
-  --soft-biru:#163456; --soft-hijau:#10382F;
+  --soft-biru:#163456; --soft-hijau:#10382F; --akun-isi:#163456; --akun-krem:#3A2E1C; --akun-biru:#1B4F6E;
   --line:#25405F; --line-cell:#25405F; --line-ctl:#6E88A3;
   --ink:#EAF1F8; --ink2:#A9BBCD; --head:#FFFFFF;
   --brand:#0A1830; --brand2:#1B4F6E;
@@ -43,7 +43,7 @@
 }}
 :root[data-theme="dark"]{
   --paper:#0C1D33; --surface:#122B4A; --card:#122B4A;
-  --soft-biru:#163456; --soft-hijau:#10382F;
+  --soft-biru:#163456; --soft-hijau:#10382F; --akun-isi:#163456; --akun-krem:#3A2E1C; --akun-biru:#1B4F6E;
   --line:#25405F; --line-cell:#25405F; --line-ctl:#6E88A3;
   --ink:#EAF1F8; --ink2:#A9BBCD; --head:#FFFFFF;
   --brand:#0A1830; --brand2:#1B4F6E;
