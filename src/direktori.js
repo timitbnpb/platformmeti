@@ -31,8 +31,8 @@ const PRIVAT = { "cache-control": "private, no-store" };
 const JSON_HDR = { "content-type": "application/json; charset=utf-8", "x-content-type-options": "nosniff", ...PRIVAT };
 
 // Sama dengan SEKTOR ALG 2.1 (uji tests/direktori.test.mjs menjaga 14 nilai).
-export const SEKTOR_SAH = new Set(["surya", "bayu", "air", "panas-bumi", "bioenergi", "laut", "hidrogen", "penyimpanan", "jaringan", "efisiensi", "kendaraan-listrik", "sampah-energi", "nuklir", "ccs"]);
-export const KATEGORI_LEMBAGA = new Set(["pemerintah", "bumn", "swasta", "asosiasi", "riset-kampus", "lsm-think-tank", "keuangan", "internasional", "pengembang-teknologi", "komunitas"]);
+export const SEKTOR_SAH = new Set(["surya", "bayu", "hidro", "panas-bumi", "bioenergi", "biomassa-sampah", "nuklir", "hidrogen", "laut", "penyimpanan", "jaringan", "efisiensi", "elektrifikasi", "karbon", "pembiayaan", "kebijakan", "industri", "transisi-adil", "riset-data"]);   // K16
+export const KATEGORI_LEMBAGA = new Set(["bumn", "bumd", "swasta", "internasional", "kementerian-lembaga", "pemda", "perguruan-tinggi", "think-tank", "lsm-yayasan", "donor", "asosiasi", "keuangan", "ormawa", "koperasi"]);   // K19d
 // Daftar tetap nama data tab (dipangkas dari 51 nama asal). Nama lain: 404 tanpa menyentuh R2.
 export const DATA_DIREKTORI = ["riset", "pusat_studi", "aset_riset", "lembaga", "proyek_mitra", "inovasi", "sistem_data", "tokoh", "dokumen", "berita", "pendanaan", "temuan_riset", "jejak_isu", "buku", "jurnal", "graf", "strategis", "afiliasi", "kolaborasi", "diaspora", "baru"];
 
@@ -40,6 +40,8 @@ export const DATA_DIREKTORI = ["riset", "pusat_studi", "aset_riset", "lembaga", 
 async function potret(env, nama, lapis = "anggota") {
   const o = env.BERKAS ? await env.BERKAS.get(`potret/${lapis}/${nama}.json`).catch(() => null) : null;
   if (o) return { data: await o.json(), contoh: false, diperbarui: o.uploaded.toISOString() };
+  // R2 aktif tapi potret belum ada: jangan tampilkan data contoh sebagai nyata (induk kosong sampai pakar OpenAlex mendarat)
+  if (env.BERKAS) return nama === "induk" ? { data: { sumber: null, sektor: [], orang: [] }, contoh: false, diperbarui: null } : nama === "kampus" || nama === "kontak" ? { data: {}, contoh: false, diperbarui: null } : null;
   return nama in CONTOH ? { data: CONTOH[nama], contoh: true, diperbarui: null } : null;
 }
 const kirim = (p) => json(p.data, 200, { ...PRIVAT, ...(p.contoh ? { "x-contoh": "1" } : { "x-diperbarui": p.diperbarui }) });
@@ -245,7 +247,16 @@ async function logo(req, env, ctx, p) {
   return new Response(o.body, { headers: { "content-type": TIPE[m[1]], "cache-control": "public, max-age=604800, immutable", "x-content-type-options": "nosniff" } });
 }
 // Foto orang: bawaan tidak ada (KPV 3.1).
-const foto = async (req, env, ctx, p) => { perlu(p, ANGGOTA); throw new Galat("tidak_ditemukan"); };
+// Foto orang/pengurus: R2 potret/anggota/foto/<id>.<ext> (lapis anggota ke atas; hak cipta tercatat di baris)
+const KUNCI_FOTO = /^[a-z]{1,3}_[a-z0-9]{4,40}\.(jpg|jpeg|png|webp)$/, TIPE_FOTO = { jpg: "image/jpeg", jpeg: "image/jpeg", png: "image/png", webp: "image/webp" };
+const foto = async (req, env, ctx, p) => {
+  perlu(p, ANGGOTA);
+  const m = String(p.params.id).match(KUNCI_FOTO);
+  if (!m || !env.BERKAS) throw new Galat("tidak_ditemukan");
+  const o = await env.BERKAS.get(`potret/anggota/foto/${p.params.id}`);
+  if (!o) throw new Galat("tidak_ditemukan");
+  return new Response(o.body, { headers: { "content-type": TIPE_FOTO[m[1]], "cache-control": "private, max-age=86400", "x-content-type-options": "nosniff" } });
+};
 
 // Analisa keahlian: sampai 200 karya terbaru penulis (judul, topik, kata kunci); klien menyimpulkannya (fungsi_direktori.js).
 // Lewat Worker supaya CSP connect-src klien tetap 'self'.
@@ -274,6 +285,40 @@ async function sinta(req, env, ctx, p) {
   return json(x, 200, { ...PRIVAT, "cache-control": "private, max-age=3600" });
 }
 
+// ---- Potret baru (SKEMA-POTRET.md): lapis publik penuh, anggota dan pengurus = delta per id; digabung per peran ----
+export const BENDA_POTRET = ["proyek", "organisasi", "orang", "regulasi", "program", "berita", "angka", "ringkas"];
+async function bacaLapis(env, lapis, benda) {
+  const o = await env.BERKAS.get(`potret/${lapis}/${benda}.json`).catch(() => null);
+  if (!o) return null;
+  const d = await o.json();
+  if (Array.isArray(d.bagian)) {   // dipecah: <benda>.<n>.json
+    const baris = [];
+    for (const n of d.bagian) { const p = await env.BERKAS.get(`potret/${lapis}/${n}`).catch(() => null); if (p) baris.push(...((await p.json()).baris || [])); }
+    return { ...d, bagian: undefined, baris };
+  }
+  return d;
+}
+// Gabung delta ke baris publik dengan id sama; delta tanpa baris publik (baru:true) ikut sebagai baris sendiri.
+export function gabungLapis(dasar, ...delta) {
+  const peta = new Map(dasar.map((b) => [b.id, { ...b }]));
+  for (const d of delta) for (const x of d || []) { const a = peta.get(x.id); if (a) Object.assign(a, x); else peta.set(x.id, { ...x }); }
+  return [...peta.values()];
+}
+const LAPIS_PERAN = (akun) => (PENGURUS.includes(akun.peran) ? ["publik", "anggota", "pengurus"] : ["publik", "anggota"]);
+async function potretBaru(req, env, ctx, p) {
+  const akun = perlu(p, ANGGOTA), benda = p.params.benda;
+  if (!BENDA_POTRET.includes(benda)) throw new Galat("tidak_ditemukan");
+  if (!env.BERKAS) throw new Galat("layanan");
+  const lapis = LAPIS_PERAN(akun), baca = await Promise.all(lapis.map((l) => bacaLapis(env, l, benda)));
+  const pub = baca[0];
+  if (!pub) throw new Galat("tidak_ditemukan");
+  if (benda === "ringkas" || benda === "angka" && !Array.isArray(pub.baris)) return json({ ...pub, lapis: lapis[lapis.length - 1] }, 200, PRIVAT);
+  const delta = baca.slice(1).map((d) => d?.baris);
+  const extra = baca.slice(1).reduce((a, d) => (d?.posisi_topik ? { ...a, posisi_topik: d.posisi_topik } : a), {});
+  const baris = gabungLapis(pub.baris || [], ...delta);
+  return json({ lapis: lapis[lapis.length - 1], dibangun_pada: pub.dibangun_pada, jumlah: baris.length, baris, ...extra }, 200, PRIVAT);
+}
+
 export const rute = {
   "GET /api/direktori": induk,
   "GET /api/direktori/kampus": kampus,
@@ -282,6 +327,7 @@ export const rute = {
   "GET /api/direktori/karya/:id": karya,
   "GET /api/direktori/riset/:id": riset,
   "GET /api/direktori/keahlian/:id": keahlian,
+  "GET /api/direktori/potret/:benda": potretBaru,
   "GET /api/direktori/sinta/:id": sinta,
   "POST /api/direktori/ringkasan": ringkasan,
   "GET /api/direktori/terdekat": terdekat,

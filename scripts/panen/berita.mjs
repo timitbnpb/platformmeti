@@ -12,7 +12,7 @@ import { fileURLToPath } from 'node:url';
 
 const AKAR = join(dirname(fileURLToPath(import.meta.url)), '..', '..');
 export const UA = 'METI-Network-research/0.1 (+https://platformmeti.timitbnpb.workers.dev)';
-const JEDA_MS = 2100;
+const JEDA_MS = 2100, ANGGARAN_GDELT_MS = 15 * 60e3;
 const EDISI = { id: { hl: 'id', gl: 'ID', ceid: 'ID:id' }, en: { hl: 'en-US', gl: 'US', ceid: 'US:en' } };
 
 // Aturan kata kunci K16 sumbu 1 (judul dinormalisasi: huruf kecil, tanpa tanda baca). Satu artikel boleh banyak kode.
@@ -196,7 +196,7 @@ async function ambil(url, { coba = 2 } = {}) {
     try { r = await fetch(url, { headers: { 'User-Agent': UA }, redirect: 'follow', signal: AbortSignal.timeout(60000) }); }
     catch (e) { if (i === coba - 1) throw new Error(`jaringan ${host}: ${e.cause?.code || e.message}`); await tidur(15000); continue; }
     if (r.status === 403) throw new Error('403: ' + host);
-    if (r.status === 429) { if (i === coba - 1) throw new Error('429: ' + host); await tidur((+r.headers.get('retry-after') || 60) * 1000); continue; }
+    if (r.status === 429) { if (i === coba - 1) throw new Error('429: ' + host); await tidur(Math.min(+r.headers.get('retry-after') || 45, 90) * 1000); continue; }
     if (r.ok) {
       const buf = Buffer.from(await r.arrayBuffer());
       const cs = /charset=([\w-]+)/i.exec(r.headers.get('content-type') || '')?.[1] || /<\?xml[^>]*encoding=["']([\w-]+)/i.exec(buf.subarray(0, 200).toString('latin1'))?.[1] || 'utf-8';
@@ -243,10 +243,11 @@ async function main() {
       }
     }
     if (pilih.includes('gdelt')) {
-      let beruntun = 0;
+      let beruntun = 0; const mulai = Date.now();   // anggaran waktu: GDELT sering membatasi laju; jangan menggantung berjam-jam
       for (const [kode, ed, terms] of daftarKueri()) {
+        if (Date.now() - mulai > ANGGARAN_GDELT_MS) { gagal.push('gdelt: anggaran waktu habis'); break; }
         if (beruntun >= 6) { gagal.push('gdelt: dihentikan setelah 6 kegagalan beruntun'); break; }
-        try { catat(uraiGdelt(await ambil(urlGdelt(kueriGdelt(terms, ed)), { coba: 3 })), { kueri: `${kode}:${ed}`, sumber_panen: 'gdelt' }); beruntun = 0; }
+        try { catat(uraiGdelt(await ambil(urlGdelt(kueriGdelt(terms, ed)), { coba: 2 })), { kueri: `${kode}:${ed}`, sumber_panen: 'gdelt' }); beruntun = 0; }
         catch (e) { beruntun++; gagal.push(`gdelt ${kode}:${ed} ${e.message}`); }
       }
     }

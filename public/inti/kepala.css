@@ -1,23 +1,23 @@
-/* Kepala situs navy bersama (DS §5). Hanya token dari tema.css. */
+/* Kepala situs terang bersama (DS §5): latar putih, garis tipis, aktif = pil hijau lembut; gelap = permukaan gelap hijau. Hanya token. */
 header.top{position:fixed;inset:0 0 auto 0;z-index:50;height:var(--top);display:flex;align-items:center;gap:8px;padding:0 max(8px,env(safe-area-inset-right)) 0 max(8px,env(safe-area-inset-left));
-  background:linear-gradient(90deg,var(--brand),var(--brand2));color:var(--on-brand)}
-header.top::after{content:"";position:absolute;left:0;bottom:0;width:48px;height:2px;background:var(--sorot)}
-.jm-merek{display:flex;align-items:center;gap:10px;min-height:var(--target);color:var(--on-brand);text-decoration:none;font:600 16px/1 var(--display);white-space:nowrap}
+  background:var(--paper);color:var(--ink);border-bottom:1px solid var(--line)}
+header.top::after{content:"";position:absolute;left:0;bottom:0;width:48px;height:2px;background:var(--accent-isi)}
+.jm-merek{display:flex;align-items:center;gap:10px;min-height:var(--target);color:var(--head);text-decoration:none;font:600 16px/1 var(--display);white-space:nowrap}
 .jm-merek img{width:40px;height:40px;display:block}
-.iconbtn{display:inline-flex;align-items:center;justify-content:center;width:var(--target);height:var(--target);padding:0;border:0;background:none;color:var(--on-brand);cursor:pointer;border-radius:var(--r-sm);text-decoration:none}
-.iconbtn:hover{color:var(--sorot)}
+.iconbtn{display:inline-flex;align-items:center;justify-content:center;width:var(--target);height:var(--target);padding:0;border:0;background:none;color:var(--ink2);cursor:pointer;border-radius:var(--r-sm);text-decoration:none}
+.iconbtn:hover{color:var(--accent);background:var(--soft-hijau)}
 .iconbtn .jm-ik{width:22px;height:22px}
-header.top :focus-visible{outline:2px solid var(--sorot);outline-offset:2px}
+header.top :focus-visible{outline:2px solid var(--fokus);outline-offset:2px}
 nav.tabs{display:none}
-nav.tabs a{display:flex;align-items:center;gap:8px;min-height:var(--target);padding:0 14px;color:var(--on-brand);text-decoration:none;font:500 14px/1 var(--font);border-radius:var(--r-sm)}
-nav.tabs a:hover{background:rgb(255 255 255/.1)}
-nav.tabs a[aria-current="page"]{background:rgb(255 255 255/.16);font-weight:600}
-nav.tabs.buka{display:flex;flex-direction:column;position:absolute;top:var(--top);left:0;right:0;padding:8px var(--gut) 12px;background:var(--brand);box-shadow:var(--shadow-lg)}
+nav.tabs a{display:flex;align-items:center;gap:8px;min-height:var(--target);padding:0 14px;color:var(--ink);text-decoration:none;font:500 14px/1 var(--font);border-radius:var(--r-pil)}
+nav.tabs a:hover{background:var(--surface)}
+nav.tabs a[aria-current="page"]{background:var(--soft-hijau);color:var(--accent);font-weight:600}
+nav.tabs.buka{display:flex;flex-direction:column;position:absolute;top:var(--top);left:0;right:0;padding:8px var(--gut) 12px;background:var(--paper);border-bottom:1px solid var(--line);box-shadow:var(--shadow-lg)}
 .jm-sisi{margin-left:auto;display:flex;align-items:center;gap:4px}
 .jm-bahasa{display:flex;align-items:center;gap:2px}
-.jm-bahasa button{min-width:var(--target);height:var(--target);padding:0 6px;border:0;border-radius:var(--r-sm);background:none;color:var(--on-brand);font:600 13px/1 var(--display);cursor:pointer}
+.jm-bahasa button{min-width:var(--target);height:var(--target);padding:0 6px;border:0;border-radius:var(--r-sm);background:none;color:var(--ink2);font:600 13px/1 var(--display);cursor:pointer}
 .jm-bahasa button[aria-pressed="true"]{background:var(--accent);color:var(--on-accent)}
-.jm-bahasa button:not([aria-pressed="true"]):hover{background:rgb(255 255 255/.12)}
+.jm-bahasa button:not([aria-pressed="true"]):hover{background:var(--surface)}
 .jm-sisi .jm-teks{display:none}
 @media (max-width:479px){.jm-merek span{display:none}}
 @media (min-width:600px){.jm-sisi .jm-teks{display:inline;margin-left:6px;font:500 14px/1 var(--font)}.jm-sisi .iconbtn.jm-akun{width:auto;padding:0 10px}}

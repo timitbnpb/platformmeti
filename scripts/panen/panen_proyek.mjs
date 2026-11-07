@@ -2,6 +2,7 @@
 // Panen proyek EBT (energi baru terbarukan) Indonesia untuk Jaringan METI (R18). Node stdlib saja.
 //   node panen_proyek.mjs --selftest        uji parser, dedup, presisi; tanpa jaringan
 //   node panen_proyek.mjs --ambil           unduh Wikipedia (CC BY-SA) ke raw/ (robots dicek, jeda >= 2 dtk, resumable)
+//   node panen_proyek.mjs --wikidata        ambil pembangkit Wikidata (CC0, Action API) ke raw/wikidata_pembangkit.jsonl
 //   node panen_proyek.mjs --bangun          bangun proyek.jsonl, pihak.jsonl, konflik.jsonl
 //   node panen_proyek.mjs --geo-pusat      hitung titik pusat kabupaten/provinsi dari geoBoundaries (berkas statis di raw/geo/)
 //   node panen_proyek.mjs --ruptl-teks=BERKAS.txt   urai tabel pembangkit RUPTL (hasil pdftotext -layout) ke seed/ruptl.jsonl
@@ -198,6 +199,7 @@ export function bangun(masukan) {
         if (!t[a].some((x) => JSON.stringify({ ...x, sumber_id: 0 }) === JSON.stringify({ ...o, sumber_id: 0 }))) t[a].push(o);
       }
     }
+    if (r.nama_perlu_tinjau) t.nama_perlu_tinjau = true;
     if (r.catatan) t.catatan.push({ nilai: r.catatan, sumber_id: sid });
     for (const p of larik(r.pihak)) t.pihak_terlibat.push({ nama: p.nama, peran: p.peran, sumber_id: sid });
     if (r.lat != null && r.lng != null && r.presisi_lokasi && t.lat == null) {
@@ -397,6 +399,115 @@ async function ambil() {
     fs.writeFileSync(f, Buffer.from(await r.arrayBuffer()));
   }
 }
+// ---------- Wikidata (CC0): pembangkit Indonesia lewat Action API (query.wikidata.org/sparql DILARANG robots.txt-nya: tidak dipakai) ----------
+// Pencarian haswbstatement:P17=Q252 + kata kunci, lalu wbgetentities per 50. Fosil disimpan di raw (teknologi null) tapi tidak masuk proyek.jsonl.
+const WD_API = 'https://www.wikidata.org/w/api.php';
+const WD_RAW = path.join(RAW, 'wikidata_pembangkit.jsonl');
+const SUMBER_WD = { jenis: 'wikidata', url: 'https://www.wikidata.org/', tingkat_bukti: 'media', lisensi: 'CC0 1.0', atribusi: 'Wikidata (CC0), diambil ' + HARI_INI + '; data komunitas, koordinat sebagaimana tercatat', catatan: 'Wikidata; QID di catatan baris' };
+export function tekDariTeks(t) {
+  const s = String(t || '').toLowerCase();
+  if (/pumped|battery|energy storage/.test(s)) return 'penyimpanan';
+  if (/geotherm|panas bumi|pltp/.test(s)) return 'panas-bumi';
+  if (/solar|photovoltaic|pltS\b|plts\b/i.test(s)) return 'surya';
+  if (/wind|pltb\b|bayu/.test(s)) return 'bayu';
+  if (/hydro|plta\b|pltm|run-of-the-river|tidal/.test(s) && !/tidal/.test(s)) return 'hidro';
+  if (/waste|garbage|landfill|pltsa|sampah/.test(s)) return 'biomassa-sampah';
+  if (/biomass|biogas|biofuel|bioenergy|biodiesel|palm oil|pltbm|pltbg/.test(s)) return 'bioenergi';
+  if (/nuclear/.test(s)) return 'nuklir';
+  if (/tidal|wave/.test(s)) return 'laut';
+  return null;
+}
+const SATUAN_MW = { megawatt: 1, kilowatt: 1e-3, watt: 1e-6, gigawatt: 1e3 };
+// ent: entitas Wikidata; lab: {qid:{en,id}}; induk: {qid:[qid P131]}
+export function dariWikidata(ent, lab, induk) {
+  const L = (q) => lab[q]?.en || lab[q]?.id || null;
+  const cl = (p) => ent.claims?.[p] || [];
+  const nilaiQ = (p) => cl(p).map((c) => c.mainsnak?.datavalue?.value?.id).filter(Boolean);
+  const p31 = nilaiQ('P31').map(L).filter(Boolean), sumberE = nilaiQ('P618').map(L).filter(Boolean);
+  const nama = ent.labels?.en?.value || ent.labels?.id?.value || null;
+  if (!nama) return null;
+  const tek = tekDariTeks([...sumberE, ...p31, nama].join(' | '));
+  const kap = cl('P2109').map((c) => c.mainsnak?.datavalue?.value).filter(Boolean).map((v) => ({ n: Number(v.amount), u: L((v.unit || '').split('/').pop()) })).map((v) => ({ mw: Number.isFinite(v.n) && SATUAN_MW[String(v.u).toLowerCase()] ? +(v.n * SATUAN_MW[String(v.u).toLowerCase()]).toFixed(4) : null })).map((v) => v.mw).filter((x) => x > 0);
+  const k = cl('P625')[0]?.mainsnak?.datavalue?.value;
+  // rantai P131 sampai provinsi (maks 5 lompatan)
+  const rantai = []; let fr = nilaiQ('P131'); let provinsi = null;
+  for (let i = 0; i < 5 && fr.length && !provinsi; i++) {
+    const nx = [];
+    for (const q of fr) { const nm = L(q); if (nm) rantai.push(nm); const pv = provId(nm); if (pv) { provinsi = pv; break; } nx.push(...(induk[q] || [])); }
+    fr = nx;
+  }
+  const tgl = (p) => (cl(p)[0]?.mainsnak?.datavalue?.value?.time || '').slice(1, 5) || null;
+  const st = nilaiQ('P5817').map(L).join(' ').toLowerCase();
+  return {
+    qid: ent.id, nama, nama_id: ent.labels?.id?.value || null, jenis: p31, sumber_energi: sumberE, teknologi: tek, kapasitas_mw: kap.length ? Math.max(...kap) : null,
+    pemilik: [...new Set([...nilaiQ('P127'), ...nilaiQ('P137')].map(L).filter(Boolean))], lat: k ? k.latitude : null, lng: k ? k.longitude : null,
+    provinsi, kabupaten: rantai.find((x) => x !== provinsi && !provId(x)) || null, tahun_operasi: tgl('P729'), tahun_berdiri: tgl('P571'),
+    status: /operat|in use/.test(st) ? 'beroperasi' : /construct/.test(st) ? 'konstruksi' : /plan|propos/.test(st) ? 'rencana' : null,
+  };
+}
+async function wdGet(params) {
+  const u = WD_API + '?' + new URLSearchParams({ format: 'json', maxlag: '30', ...params });
+  for (let i = 0; i < 4; i++) {
+    const r = await tunggu(u);
+    if (r.status === 429 || r.status === 403) { console.error('BERHENTI', r.status, u); process.exit(3); }
+    if (r.status === 200) { const j = await r.json(); if (!j.error) return j; if (j.error.code !== 'maxlag') throw new Error(JSON.stringify(j.error)); }
+    await sleep(5000);
+  }
+  throw new Error('wikidata gagal ' + u);
+}
+async function ambilWikidata() {
+  const ids = new Set();
+  for (const q of ['power station', 'power plant', 'PLTU', 'PLTA', 'PLTP', 'PLTS', 'PLTB', 'PLTD', 'PLTG', 'PLTMH', 'geothermal', 'solar', 'wind farm', 'hydroelectric', 'dam', 'biomass', 'waste to energy', 'coal-fired', 'gas-fired', 'diesel']) {
+    for (let off = 0; ;) {
+      const j = await wdGet({ action: 'query', list: 'search', srsearch: q + ' haswbstatement:P17=Q252', srlimit: '50', sroffset: String(off) });
+      j.query.search.forEach((s) => ids.add(s.title));
+      if (!j.continue) break; off = j.continue.sroffset;
+    }
+  }
+  const ent = {}; const lab = {}; const induk = {};
+  const batch = async (qs, props) => { const out = {}; for (let i = 0; i < qs.length; i += 50) Object.assign(out, (await wdGet({ action: 'wbgetentities', ids: qs.slice(i, i + 50).join('|'), props, languages: 'en|id' })).entities); return out; };
+  Object.assign(ent, await batch([...ids], 'labels|claims'));
+  // rujukan: P31, P618, P127, P137, P131, satuan P2109
+  const ruj = new Set();
+  const rujDari = (e) => { for (const p of ['P31', 'P618', 'P127', 'P137', 'P131', 'P5817']) for (const c of e.claims?.[p] || []) { const q = c.mainsnak?.datavalue?.value?.id; if (q) ruj.add(q); } for (const c of e.claims?.P2109 || []) { const u = c.mainsnak?.datavalue?.value?.unit; if (u) ruj.add(u.split('/').pop()); } };
+  Object.values(ent).forEach(rujDari);
+  let antre = [...ruj]; const lihat = new Set();
+  for (let lompat = 0; lompat < 5 && antre.length; lompat++) {
+    const baru = antre.filter((q) => !lihat.has(q)); baru.forEach((q) => lihat.add(q)); antre = [];
+    const e = await batch(baru, lompat < 5 ? 'labels|claims' : 'labels');
+    for (const [q, v] of Object.entries(e)) {
+      lab[q] = { en: v.labels?.en?.value, id: v.labels?.id?.value };
+      if (lompat < 4 && !provId(lab[q].en)) { induk[q] = (v.claims?.P131 || []).map((c) => c.mainsnak?.datavalue?.value?.id).filter(Boolean); antre.push(...induk[q]); }
+    }
+  }
+  const hasil = [];
+  for (const e of Object.values(ent)) {
+    if (!e.id) continue;
+    const r = dariWikidata(e, lab, induk);
+    if (!r) continue;
+    const bukanPembangkit = !r.jenis.some((j) => /power (station|plant)|power stat|dam|wind farm|solar park|geothermal|plant/i.test(j)) && !r.kapasitas_mw && !r.sumber_energi.length;
+    if (!bukanPembangkit) hasil.push(r);
+  }
+  hasil.sort((a, b) => a.qid.localeCompare(b.qid, 'en', { numeric: true }));
+  tulis(WD_RAW, hasil.map((r) => ({ ...r, diambil: HARI_INI })));
+  const ebt = hasil.filter((r) => r.teknologi);
+  console.error('wikidata:', JSON.stringify({ kandidat: ids.size, pembangkit: hasil.length, ebt: ebt.length, fosil_atau_lain: hasil.length - ebt.length, berkoordinat: hasil.filter((r) => r.lat != null).length, berprovinsi: hasil.filter((r) => r.provinsi).length }));
+}
+export function wdMasukan(rows, tanggal) {
+  const m = [];
+  for (const r of rows) {
+    const tek = tekDariTeks([...r.sumber_energi, ...r.jenis, r.nama].join(' | ')); // ulang: bendungan/waduk saja bukan pembangkit
+    if (!tek) continue;
+    m.push({
+      nama: r.nama, teknologi: tek, provinsi: r.provinsi, kabupaten_kota: r.kabupaten,
+      kapasitas: r.kapasitas_mw ? [{ nilai: r.kapasitas_mw, satuan: 'MW' }] : [], pemilik: r.pemilik,
+      status: r.status ? { nilai: r.status, status_asli: 'Wikidata P5817' } : null, cod_aktual: r.tahun_operasi ? [{ nilai: Number(r.tahun_operasi), catatan: 'Wikidata P729' }] : [],
+      lat: r.lat, lng: r.lng, presisi_lokasi: r.lat != null ? 'titik_persis' : null, catatan: 'Wikidata ' + r.qid,
+      _sumber: { ...SUMBER_WD, halaman: r.qid, url: 'https://www.wikidata.org/wiki/' + r.qid, tanggal_ambil: r.diambil || tanggal },
+    });
+  }
+  return m;
+}
 // ---------- RUPTL PLN 2025-2034 (teks hasil `pdftotext -layout`; dokumen publik PLN) ----------
 // Tabel rincian pembangkit per provinsi (Lampiran A, B, C). Baris bernama sama dalam satu provinsi digabung (kapasitas dijumlah,
 // tiap tahap COD dicatat). Baris "kuota/tersebar" bukan proyek bernama: dilewati dan dihitung. Tabel berupa gambar: tidak diurai (tanpa OCR).
@@ -490,14 +601,31 @@ export function ruptlDari(teks) {
   }
   return { proyek: [...hasil.values()], lewat, tabel };
 }
+const URL_RUPTL = 'https://gatrik.esdm.go.id/gatrik/gatrik-api//storage/migrasi/download_index/files/b967d-ruptl-pln-2025-2034-pub-.pdf'; // dokumen publik resmi Ditjen Gatrik (daftar unduhan)
+// Nama terpotong oleh kolom tata letak PDF ("ulehu" = Tulehu): lengkapi dari teks yang sama bila hanya satu pelengkap huruf-awal ditemukan; kalau tidak, tandai.
+const esc = (s) => s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+export function perbaikiNama(nama, teks) {
+  const kotor = /\d{1,3}(\.\d{3})*,\d|Jumlah|\.\s|\s(yang|dan|dapat|sebagai|akan|tersebut|pembangkit)\s/i.test(nama) || nama.length > 50 || /\s[a-z]{1,2}$/.test(nama);
+  const m = nama.match(/^(\S+)\s+([a-z]\S*(?:\s+\S+){0,2})$/);
+  if (m && !kotor) {
+    const cari = new RegExp('(?<![A-Za-z])([A-Z][A-Za-z]{0,3})' + esc(m[2].split(/[(\d#]/)[0].trim()).replace(/\s+/g, '\\s+'), 'g');
+    const semua = [...teks.matchAll(cari)].map((x) => x[1]);
+    const cand = new Set(semua);
+    // pelengkap harus tunggal dan muncul >= 2 kali di dokumen (tabel + narasi/transmisi)
+    if (cand.size === 1 && semua.length >= 2) { const [c] = cand; return { nama: m[1] + ' ' + c + m[2], diperbaiki: true }; }
+    return { nama, perlu_tinjau: true };
+  }
+  return kotor || /^\S+\s+[a-z]/.test(nama) ? { nama, perlu_tinjau: true } : { nama };
+}
 export function ruptlSeed(teks, tanggal) {
   const { proyek, lewat, tabel } = ruptlDari(teks);
   const baris = [];
   for (const p of proyek) {
-    baris.push({ _sumber: { jenis: 'ruptl', url: 'internal:RUPTL PLN 2025-2034.pdf', halaman: 'hlm PDF ' + p.halaman, tingkat_bukti: 'resmi', lisensi: 'dokumen publik PLN', tanggal_ambil: tanggal, catatan: 'Tabel rincian rencana pembangunan pembangkit ' + p.sek + '; status pengembang RUPTL (PLN/IPP/SH-PLN) bukan nama perusahaan; tahun COD = skenario RE Base' } });
+    baris.push({ _sumber: { jenis: 'ruptl', url: URL_RUPTL + '#page=' + p.halaman, halaman: 'hlm PDF ' + p.halaman, tingkat_bukti: 'resmi', lisensi: 'dokumen publik PLN', tanggal_ambil: tanggal, catatan: 'Tabel rincian rencana pembangunan pembangkit ' + p.sek + '; status pengembang RUPTL (PLN/IPP/SH-PLN) bukan nama perusahaan; tahun COD = skenario RE Base' } });
     const total = +p.tahap.reduce((s, t) => s + t.mw, 0).toFixed(3);
     const tahunBeda = [...new Set(p.tahap.map((t) => t.base ?? t.ared).filter(Boolean))].sort();
-    const r = { nama: `${p.jenis} ${p.nama}`, teknologi: p.tek, provinsi: p.provinsi,
+    const pn = perbaikiNama(`${p.jenis} ${p.nama}`, teks);
+    const r = { nama: pn.nama, nama_perlu_tinjau: pn.perlu_tinjau ? true : undefined, nama_diperbaiki: pn.diperbaiki ? `${p.jenis} ${p.nama}` : undefined, teknologi: p.tek, provinsi: p.provinsi,
       kapasitas: { nilai: total, satuan: 'MW', catatan: p.baris > 1 || p.tahap.length > 1 ? `jumlah ${p.tahap.length} tahap/unit: ${p.tahap.map((t) => t.mw).join(' + ')}` : undefined },
       cod_target: tahunBeda.map((y) => ({ nilai: y, catatan: 'RE Base' + (p.tahap.some((t) => t.base === y && t.ared !== y) ? '; ARED ' + [...new Set(p.tahap.filter((t) => t.base === y).map((t) => t.ared))].join('/') : p.tahap.some((t) => t.base == null && t.ared === y) ? '; hanya skenario ARED (RE Base tanpa tahun)' : '') })),
       pemilik: p.peng ? { nilai: p.peng, catatan: 'status pengembang menurut RUPTL, bukan nama perusahaan' } : undefined,
@@ -518,6 +646,7 @@ function kumpulMasukan() {
     for (const k of kandidat) m.push({ ...k, _sumber: { ...SUMBER_WIKI_EN, tanggal_ambil: HARI_INI } });
   }
   m.push(...gemMuat().m);
+  if (fs.existsSync(WD_RAW)) m.push(...wdMasukan(bacaJsonl(WD_RAW), HARI_INI));
   for (const d of SEED_DIRS) m.push(...muatSeed(d));
   return m;
 }
@@ -544,6 +673,14 @@ function statistik(h) {
 }
 
 function selftest() {
+  { // Wikidata: tanpa jaringan
+    const lab = { Q1: { en: 'geothermal power station' }, Q2: { en: 'Kamojang' }, Q3: { en: 'West Java' }, Q4: { en: 'megawatt' }, Q5: { en: 'Pertamina' } };
+    const e = { id: 'Q99', labels: { en: { value: 'Kamojang Geothermal' } }, claims: { P31: [{ mainsnak: { datavalue: { value: { id: 'Q1' } } } }], P131: [{ mainsnak: { datavalue: { value: { id: 'Q2' } } } }], P2109: [{ mainsnak: { datavalue: { value: { amount: '+235', unit: 'http://www.wikidata.org/entity/Q4' } } } }], P625: [{ mainsnak: { datavalue: { value: { latitude: -7.14, longitude: 107.8 } } } }], P127: [{ mainsnak: { datavalue: { value: { id: 'Q5' } } } }] } };
+    const r = dariWikidata(e, lab, { Q2: ['Q3'] });
+    assert.equal(r.teknologi, 'panas-bumi'); assert.equal(r.kapasitas_mw, 235); assert.equal(r.provinsi, 'Jawa Barat'); assert.deepEqual(r.pemilik, ['Pertamina']);
+    const m = wdMasukan([{ ...r, diambil: '2026-11-07' }], '2026-11-07')[0];
+    assert.equal(m.presisi_lokasi, 'titik_persis'); assert.equal(m._sumber.tingkat_bukti, 'media'); assert.equal(tekDariTeks('coal-fired power station'), null);
+  }
   assert.equal(angka('1,320'), 1320); assert.equal(angka('4 x 65'), null); assert.equal(angka(' 235 '), 235);
   assert.equal(bersih("[[Kamojang|Kamojang geothermal]] ''x''<ref>a</ref>"), 'Kamojang geothermal x');
   assert.equal(provId('West Java'), 'Jawa Barat'); assert.equal(provId('Nowhere'), null);
@@ -592,6 +729,7 @@ async function main() {
   if (a.has('--selftest')) return selftest();
   fs.mkdirSync(RAW, { recursive: true });
   if (a.has('--ambil')) await ambil();
+  if (a.has('--wikidata')) { if (!(await robotsOk(WD_API)) && process.env.WIKIDATA_IZIN_PEMILIK !== '1') { console.error('ROBOTS-TOLAK', WD_API, '(robots.txt Wikidata: Disallow /w/ dan /sparql untuk agen *; lanjut hanya atas izin pemilik: WIKIDATA_IZIN_PEMILIK=1)'); process.exit(2); } await ambilWikidata(); }
   if (a.has('--geo-pusat')) console.error('pusat wilayah:', JSON.stringify(bangunPusat()));
   const rt = process.argv.find((x) => x.startsWith('--ruptl-teks='));
   if (rt) { const h = ruptlSeed(fs.readFileSync(rt.slice(13), 'utf8'), HARI_INI); fs.mkdirSync(path.join(OUT, 'seed'), { recursive: true }); tulis(path.join(OUT, 'seed/ruptl.jsonl'), h.baris); console.error('ruptl:', JSON.stringify({ proyek: h.n, lewat: h.lewat, tabel: h.tabel })); }

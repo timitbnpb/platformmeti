@@ -1,7 +1,7 @@
 /* Kepala situs navy bersama + pita draf + kaki (DS §5). Dipakai semua halaman buatan layar:
    const saya = await mulaiHalaman();
    Halaman memberi <header class="top" id="kepala"></header>, opsional <div id="pita"></div> dan <footer class="jm-kaki" id="kaki"></footer>. */
-import { t, mulaiBahasa, gantiBahasa, bahasa } from "/i18n.js";
+import { t, angka, mulaiBahasa, gantiBahasa, bahasa } from "/i18n.js";
 import { api, ikon, nanti } from "/inti/umum.js";
 
 export const PITA_DRAF = false; // pemilik 7 Nov 2026: pita draf tidak ditampilkan
@@ -69,6 +69,47 @@ function pasangPenangan(el, saya) {
   });
 }
 
+
+/* ---------- kaki situs (model metiires.or.id, diperbaiki): merek + angka bersumber + sosial, empat kolom, bilah bawah ---------- */
+const MI = "https://metiires.or.id";
+const SVG = (d, u = 18) => `<svg viewBox="0 0 24 24" width="${u}" height="${u}" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">${d}</svg>`;
+const IK = { kunci: '<rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/>', pin: '<path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/>', surel: '<rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/>', web: '<circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3 3 15 0 18M12 3c-3 3-3 15 0 18"/>',
+  linkedin: '<rect x="3" y="3" width="18" height="18" rx="3"/><path d="M8 10v7M8 7v.01M12 17v-4a2 2 0 0 1 4 0v4M12 10v7"/>', instagram: '<rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><path d="M17.5 6.5v.01"/>', atas: '<path d="M12 19V5M5 12l7-7 7 7"/>' };
+const KOLOM = [
+  ["jm.kaki.tentang", [["jm.kaki.siapa", `${MI}/about`], ["jm.kaki.pengurus", `${MI}/about/meettheteam`], ["jm.kaki.gabung", `${MI}/membership`], ["jm.kaki.kemitraan", `${MI}/about/partnership`]]],
+  ["jm.kaki.berita", [["jm.kaki.berita_l", `${MI}/news`], ["jm.kaki.event", `${MI}/news/events`], ["jm.kaki.evoting", `${MI}/login?redirect=/news/evoting`, 1], ["jm.kaki.materi", `${MI}/login?redirect=/news/materials`, 1]]],
+  ["jm.kaki.direktori", [["jm.kaki.d_proyek", "/direktori?tampil=proyek"], ["jm.kaki.d_org", "/direktori?tampil=lembaga"], ["jm.kaki.d_orang", "/direktori?tampil=pakar"], ["jm.kaki.d_reg", "/direktori?tampil=regulasi"], ["jm.kaki.d_pustaka", "/direktori?tampil=pustaka"]]],
+];
+const KONTAK = [
+  ["jm.kaki.kantor", "Taman Sari Parama Lt. 10, Jl. K.H. Wahid Hasyim No. 84-86, Kebon Sirih, Menteng, Jakarta Pusat 10340", IK.pin, "https://www.google.com/maps/search/?api=1&query=" + encodeURIComponent("Taman Sari Parama, Jl. K.H. Wahid Hasyim No. 84-86, Kebon Sirih, Menteng, Jakarta Pusat 10340")],
+  ["jm.kaki.rumah", "Jl. Jatinegara Barat IV No. 3A, Balimester, Jatinegara, Jakarta Timur 13310", IK.pin, "https://www.google.com/maps/search/?api=1&query=" + encodeURIComponent("Jl. Jatinegara Barat IV No. 3A, Balimester, Jatinegara, Jakarta Timur 13310")],
+  ["jm.kaki.surel", "meti.ires@gmail.com", IK.surel, "mailto:meti.ires@gmail.com"],
+  ["jm.kaki.situs", "www.meti.or.id", IK.web, "https://www.meti.or.id"],
+];
+function kakiHtml() {
+  const kol = KOLOM.map(([jd, ls]) => `<nav class="jm-kaki-kol" aria-labelledby="${jd.replace(/\./g, "-")}"><h2 id="${jd.replace(/\./g, "-")}" data-i18n="${jd}">${t(jd)}</h2><ul>${ls.map(([k, u, kunci]) => `<li><a href="${u}"${u.startsWith("http") ? ' target="_blank" rel="noopener noreferrer"' : ""}><span data-i18n="${k}">${t(k)}</span>${kunci ? `<span class="jm-kaki-kunci" title="${t("jm.kaki.perlu_masuk")}" data-i18n-attr="title:jm.kaki.perlu_masuk">${SVG(IK.kunci, 13)}<span class="sr" data-i18n="jm.kaki.perlu_masuk">${t("jm.kaki.perlu_masuk")}</span></span>` : ""}</a></li>`).join("")}</ul></nav>`).join("");
+  const kontak = KONTAK.map(([k, v, ik, u]) => `<li><a class="jm-kaki-kartu" href="${u}"${u.startsWith("http") ? ' target="_blank" rel="noopener noreferrer"' : ""}><span class="jm-kaki-ik">${SVG(ik, 18)}</span><span><small data-i18n="${k}">${t(k)}</small><span>${v}</span></span></a></li>`).join("");
+  return `<div class="jm-kaki-isi">
+    <div class="jm-kaki-k1"><div class="jm-kaki-merek"><span class="jm-kaki-logo"><img src="/img/logo-meti-tanda.png" width="40" height="38" alt=""></span><div><strong>METI</strong><span data-i18n="jm.kaki_org_pendek">${t("jm.kaki_org_pendek")}</span></div></div>
+      <ul class="jm-kaki-stat" id="kakiStat"><li title="${t("jm.kaki.sumber_berdiri")}" data-i18n-attr="title:jm.kaki.sumber_berdiri"><b>1999</b><span data-i18n="jm.kaki.berdiri">${t("jm.kaki.berdiri")}</span></li></ul>
+      <div class="jm-kaki-sos"><a href="https://www.linkedin.com/in/meti-ires-b06066a1/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn METI">${SVG(IK.linkedin, 20)}</a><a href="https://www.instagram.com/metiires/" target="_blank" rel="noopener noreferrer" aria-label="Instagram METI">${SVG(IK.instagram, 20)}</a></div></div>
+    ${kol}
+    <nav class="jm-kaki-kol jm-kaki-hub" aria-labelledby="jm-kaki-hubungi"><h2 id="jm-kaki-hubungi" data-i18n="jm.kaki.hubungi">${t("jm.kaki.hubungi")}</h2><ul>${kontak}</ul></nav>
+  </div>
+  <div class="jm-kaki-bawah"><p>&copy; 2026 METI</p><a href="${MI}/policy/membership" target="_blank" rel="noopener noreferrer" data-i18n="jm.kaki.kebijakan">${t("jm.kaki.kebijakan")}</a>
+    <button type="button" class="jm-kaki-atas" id="kakiAtas">${SVG(IK.atas, 16)}<span data-i18n="jm.kaki.atas">${t("jm.kaki.atas")}</span></button></div>`;
+}
+/* angka kaki: hanya yang bersumber; ringkas.json (lapis sesuai peran) bila sudah masuk; title = sumber dan tanggal bangun */
+async function kakiIsi(kaki, saya) {
+  kaki.querySelector("#kakiAtas")?.addEventListener("click", () => scrollTo({ top: 0, behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth" }));
+  if (!saya?.masuk) return;
+  try {
+    const r = await api("/api/direktori/potret/ringkas"), h = r?.hitung || {}, ul = kaki.querySelector("#kakiStat"), sumber = (n) => t("jm.kaki.sumber_potret").replace("{tanggal}", r.dibangun_pada || "-").replace("{lapis}", r.lapis || "");
+    const tambah = (n, kunci) => { if (Number.isFinite(n)) ul.insertAdjacentHTML("beforeend", `<li title="${sumber(n)}"><b>${angka(n)}</b><span data-i18n="${kunci}">${t(kunci)}</span></li>`); };
+    tambah(h.proyek, "jm.kaki.proyek"); tambah(h.organisasi, "jm.kaki.organisasi");
+  } catch (e) { /* tanpa potret: angka disembunyikan, bukan ditebak */ }
+}
+
 export async function mulaiHalaman() {
   const saya = await ambilSaya();
   await mulaiBahasa(saya.bahasa);
@@ -81,10 +122,6 @@ export async function mulaiHalaman() {
     pita.innerHTML = `${ikon("info", 18)}<span data-i18n="jm.pita">${t("jm.pita")}</span>`;
   }
   const kaki = document.getElementById("kaki");
-  if (kaki) kaki.innerHTML = `<div class="jm-kaki-merek"><img src="/img/logo-meti-tanda.png" width="34" height="32" alt=""><span data-i18n="jm.kaki">${t("jm.kaki")}</span></div>
-    <address class="jm-kaki-alamat"><strong data-i18n="jm.kaki_org">${t("jm.kaki_org")}</strong>
-      <span><span data-i18n="jm.kaki_kantor">${t("jm.kaki_kantor")}</span>: Taman Sari Parama Lt. 10, Jl. K.H. Wahid Hasyim No. 84-86, Kebon Sirih, Menteng, Jakarta Pusat 10340</span>
-      <span>Rumah Energi Terbarukan: Jl. Jatinegara Barat IV No. 3A, Balimester, Jatinegara, Jakarta Timur 13310</span>
-      <span><a href="mailto:meti.ires@gmail.com">meti.ires@gmail.com</a>, <a href="https://www.meti.or.id" rel="noopener">www.meti.or.id</a></span></address>`;
+  if (kaki) { kaki.innerHTML = kakiHtml(); kakiIsi(kaki, saya); }
   return saya;
 }

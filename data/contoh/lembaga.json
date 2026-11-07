@@ -3,7 +3,7 @@
   "id": "kemenesdm",
   "nama": "Kementerian Energi Contoh (contoh)",
   "singkatan": "KEC",
-  "kategori": "pemerintah",
+  "kategori": "kementerian-lembaga",
   "skala": "nasional",
   "bidang": [
    "kebijakan"
@@ -24,7 +24,7 @@
   "sektor": [
    "surya",
    "bayu",
-   "air",
+   "hidro",
    "panas-bumi",
    "bioenergi"
   ],
@@ -34,7 +34,7 @@
   "id": "dinas-esdm-jabar",
   "nama": "Dinas Energi Provinsi Contoh Barat (contoh)",
   "singkatan": "Dinas Energi Jabar",
-  "kategori": "pemerintah",
+  "kategori": "kementerian-lembaga",
   "skala": "provinsi",
   "bidang": [
    "kebijakan"
@@ -54,7 +54,7 @@
   "lon": 107.6,
   "sektor": [
    "surya",
-   "air"
+   "hidro"
   ],
   "eid": 202
  },
@@ -191,7 +191,7 @@
   "lon": 101.44,
   "sektor": [
    "bioenergi",
-   "sampah-energi"
+   "biomassa-sampah"
   ],
   "eid": 207
  },
@@ -220,7 +220,7 @@
   "sektor": [
    "surya",
    "bayu",
-   "air"
+   "hidro"
   ],
   "eid": 208
  },
@@ -228,7 +228,7 @@
   "id": "kampus-barat",
   "nama": "Universitas Contoh Barat (contoh)",
   "singkatan": "UCB",
-  "kategori": "riset-kampus",
+  "kategori": "perguruan-tinggi",
   "skala": "nasional",
   "bidang": [
    "kebijakan"
@@ -256,7 +256,7 @@
   "id": "think-tank",
   "nama": "Lembaga Kajian Transisi Contoh (contoh)",
   "singkatan": "LKTC",
-  "kategori": "lsm-think-tank",
+  "kategori": "think-tank",
   "skala": "nasional",
   "bidang": [
    "kebijakan"
@@ -340,7 +340,7 @@
   "id": "startup-baterai",
   "nama": "Startup Baterai Contoh (contoh)",
   "singkatan": "Baterai Contoh",
-  "kategori": "pengembang-teknologi",
+  "kategori": "swasta",
   "skala": "nasional",
   "bidang": [
    "kebijakan"
@@ -360,7 +360,7 @@
   "lon": 112.78,
   "sektor": [
    "penyimpanan",
-   "kendaraan-listrik"
+   "elektrifikasi"
   ],
   "eid": 213
  },
@@ -368,7 +368,7 @@
   "id": "komunitas-surya",
   "nama": "Komunitas Surya Atap Contoh (contoh)",
   "singkatan": "KSAC",
-  "kategori": "komunitas",
+  "kategori": "koperasi",
   "skala": "provinsi",
   "bidang": [
    "kebijakan"
@@ -416,7 +416,7 @@
   "sektor": [
    "surya",
    "bayu",
-   "air",
+   "hidro",
    "panas-bumi",
    "bioenergi"
   ],
@@ -426,7 +426,7 @@
   "id": "dinas-esdm-ntt",
   "nama": "Dinas Energi Provinsi Contoh Timur (contoh)",
   "singkatan": "Dinas Energi Timur",
-  "kategori": "pemerintah",
+  "kategori": "kementerian-lembaga",
   "skala": "provinsi",
   "bidang": [
    "kebijakan"
@@ -473,7 +473,7 @@
   "lat": -2.53,
   "lon": 140.7,
   "sektor": [
-   "air"
+   "hidro"
   ],
   "eid": 217
  }

@@ -71,3 +71,32 @@ em.hl{font-style:normal;color:var(--accent)}
 .jm-pesan-ok{background:var(--ok-bg);color:var(--ok)}
 .jm-pesan-ok span{color:var(--ink)}
 @media (prefers-reduced-motion:reduce){.jm-hantu i{animation:none}*{scroll-behavior:auto!important}}
+
+/* ===== kaki METI (model metiires.or.id, diperbaiki): hijau dalam, aksen biru langit dan lime ===== */
+.jm-kaki{display:block;padding:0;background:linear-gradient(160deg,var(--brand),color-mix(in srgb,var(--brand) 82%,var(--meti-cyan)));color:var(--on-brand);font-size:14px}
+.jm-kaki-isi{max-width:var(--maks);margin:0 auto;padding:40px var(--gut) 28px;display:grid;gap:32px 28px;grid-template-columns:minmax(0,1.5fr) repeat(3,minmax(0,1fr)) minmax(0,1.6fr)}
+.jm-kaki-merek{display:flex;align-items:center;gap:12px}.jm-kaki-merek strong{display:block;font:700 20px/1.1 var(--display)}.jm-kaki-merek span:not(.jm-kaki-logo){display:block;font-size:13px;opacity:.9;margin-top:3px}
+.jm-kaki-logo{display:grid;place-items:center;width:56px;height:56px;border-radius:14px;background:var(--on-brand);flex:none}.jm-kaki .jm-kaki-logo img{width:40px;height:38px}
+.jm-kaki-stat{list-style:none;margin:18px 0 0;padding:0;display:flex;flex-wrap:wrap;gap:8px}
+.jm-kaki-stat li{min-width:92px;padding:10px 14px;border-radius:12px;background:color-mix(in srgb,var(--on-brand) 10%,transparent);border:1px solid color-mix(in srgb,var(--on-brand) 18%,transparent);display:grid;gap:2px;cursor:help}
+.jm-kaki-stat b{font:700 22px/1 var(--display);color:var(--meti-lime)}.jm-kaki-stat span{font-size:12px;opacity:.9}
+.jm-kaki-sos{display:flex;gap:10px;margin-top:18px}
+.jm-kaki-sos a{display:grid;place-items:center;width:44px;height:44px;border-radius:50%;background:color-mix(in srgb,var(--on-brand) 12%,transparent);color:var(--on-brand);border:1px solid color-mix(in srgb,var(--on-brand) 20%,transparent);transition:background .15s}
+.jm-kaki-sos a:hover{background:var(--meti-lime);color:var(--brand)}
+.jm-kaki-kol h2{margin:0 0 14px;font:700 12px/1 var(--font);letter-spacing:.12em;text-transform:uppercase;color:var(--meti-lime)}
+.jm-kaki-kol ul{list-style:none;margin:0;padding:0;display:grid;gap:4px}
+.jm-kaki-kol a{color:var(--on-brand);text-decoration:none;opacity:.92}
+.jm-kaki-kol>ul>li>a:not(.jm-kaki-kartu){display:inline-flex;align-items:center;gap:8px;min-height:36px}
+.jm-kaki-kol a:hover{opacity:1;text-decoration:underline;text-underline-offset:3px}
+.jm-kaki-kunci{display:inline-flex;opacity:.75}
+.jm-kaki-kartu{display:flex!important;gap:12px;align-items:flex-start;padding:10px 12px;border-radius:12px;background:color-mix(in srgb,var(--on-brand) 8%,transparent);border:1px solid color-mix(in srgb,var(--on-brand) 14%,transparent);line-height:1.4;overflow-wrap:anywhere}
+.jm-kaki-kartu:hover{background:color-mix(in srgb,var(--on-brand) 14%,transparent);text-decoration:none!important}
+.jm-kaki-kartu small{display:block;font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--meti-lime);margin-bottom:2px}
+.jm-kaki-ik{display:grid;place-items:center;width:34px;height:34px;border-radius:10px;background:color-mix(in srgb,var(--meti-cyan) 28%,transparent);flex:none}
+.jm-kaki-bawah{max-width:var(--maks);margin:0 auto;padding:16px var(--gut) 22px;display:flex;flex-wrap:wrap;gap:12px 24px;align-items:center;border-top:1px solid color-mix(in srgb,var(--on-brand) 16%,transparent);font-size:13px}
+.jm-kaki-bawah p{margin:0;opacity:.9}.jm-kaki-bawah a{color:var(--on-brand);opacity:.92}
+.jm-kaki-atas{margin-left:auto;display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:0 16px;border-radius:999px;border:1px solid color-mix(in srgb,var(--on-brand) 30%,transparent);background:none;color:var(--on-brand);font:600 13px/1 var(--font);cursor:pointer}
+.jm-kaki-atas:hover{background:var(--meti-lime);color:var(--brand);border-color:var(--meti-lime)}
+.jm-kaki :focus-visible{outline:2px solid var(--meti-lime);outline-offset:2px}
+@media (max-width:1100px){.jm-kaki-isi{grid-template-columns:repeat(2,minmax(0,1fr))}.jm-kaki-k1,.jm-kaki-hub{grid-column:1/-1}}
+@media (max-width:600px){.jm-kaki-isi{grid-template-columns:1fr;padding-top:32px}.jm-kaki-atas{margin-left:0}}

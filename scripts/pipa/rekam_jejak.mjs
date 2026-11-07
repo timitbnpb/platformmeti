@@ -349,9 +349,12 @@ export function cocokPenulis(o, kandidat) {
 }
 async function langkahOpenAlex() {
   const g = bacaJson(path.join(REK, 'gabung.json'), null); const f = path.join(REK, 'openalex.json'); const simpan = bacaJson(f, { orang: {}, dicari: {}, tinjau: [] });
-  const kunci = process.env.OPENALEX_KEY ? { api_key: process.env.OPENALEX_KEY } : {};
+  let kk = process.env.OPENALEX_KEY; if (!kk && fs.existsSync(path.join(ROOT, '.dev.vars'))) kk = (fs.readFileSync(path.join(ROOT, '.dev.vars'), 'utf8').match(/^OPENALEX_KEY=(.+)$/m) || [])[1]?.trim().replace(/^["']|["']$/g, '');
+  const kunci = kk ? { api_key: kk } : {}; // kunci tidak pernah dicetak
   const oa = async (p, q) => { const r = await http('https://api.openalex.org' + p + '?' + new URLSearchParams({ ...q, ...kunci })); if (r.status !== 200) throw new Error('openalex ' + r.status); return JSON.parse(r.teks); };
-  const SEL = 'id,display_name,orcid,works_count,cited_by_count,summary_stats,topics,affiliations,last_known_institutions';
+  const SEL = 'id,display_name,orcid,works_count,cited_by_count,summary_stats,topics,affiliations,last_known_institutions,counts_by_year';
+  const ENERGI = /(energy|power|solar|photovolt|wind|geotherm|biomass|bioenergy|hydro|renewable|electric|grid|battery|hydrogen|fuel|carbon|climate)/i;
+  const ringkasKarya = (k) => ({ judul: k.title, tahun: k.publication_year, sitasi: k.cited_by_count, doi: k.doi || null });
   for (const o of g.orang.filter(akademisi)) {
     if (simpan.dicari[o.orang_id]) continue;
     try {
@@ -360,10 +363,11 @@ async function langkahOpenAlex() {
       if (h.ambigu) { simpan.tinjau.push({ orang_id: o.orang_id, nama: o.nama, alasan: 'openalex-ambigu' }); continue; }
       if (!h.cocok) { if (h.lemah.length) simpan.tinjau.push({ orang_id: o.orang_id, nama: o.nama, alasan: 'openalex-nama-sama-bukti-lemah', kandidat: h.lemah }); continue; }
       const a = h.cocok; const aid = a.id.split('/').pop();
-      const w = await oa('/works', { filter: 'authorships.author.id:' + aid, per_page: '100', sort: 'cited_by_count:desc', select: 'id,authorships,funders' });
+      const w = await oa('/works', { filter: 'authorships.author.id:' + aid, per_page: '100', sort: 'cited_by_count:desc', select: 'id,title,publication_year,cited_by_count,doi,authorships,funders' });
+      const baru = await oa('/works', { filter: 'authorships.author.id:' + aid, per_page: '5', sort: 'publication_date:desc', select: 'id,title,publication_year,cited_by_count,doi' });
       const ko = new Map(), dana = new Map();
       for (const k of w.results || []) { for (const s of k.authorships || []) { const id = s.author?.id?.split('/').pop(); if (id && id !== aid) { const x = ko.get(id) || { nama: s.author.display_name, openalex_id: id, karya_bersama: 0 }; x.karya_bersama++; ko.set(id, x); } } for (const gr of k.funders || []) { const n = gr.display_name || gr.funder_display_name; if (n) dana.set(n, (dana.get(n) || 0) + 1); } }
-      simpan.orang[o.orang_id] = { openalex_id: aid, orcid: (a.orcid || '').split('/').pop() || null, karya: a.works_count || 0, sitasi: a.cited_by_count || 0, h_index: a.summary_stats?.h_index ?? null, i10_index: a.summary_stats?.i10_index ?? null, topik: (a.topics || []).slice(0, 6).map((t) => t.display_name), ko_penulis: [...ko.values()].sort((x, y) => y.karya_bersama - x.karya_bersama || (x.openalex_id < y.openalex_id ? -1 : 1)).slice(0, 8), pendana: [...dana].sort((x, y) => y[1] - x[1] || (x[0] < y[0] ? -1 : 1)).slice(0, 5).map(([nama, karya]) => ({ nama, karya })), sumber_url: 'https://openalex.org/authors/' + aid };
+      simpan.orang[o.orang_id] = { openalex_id: aid, orcid: (a.orcid || '').split('/').pop() || null, karya: a.works_count || 0, sitasi: a.cited_by_count || 0, h_index: a.summary_stats?.h_index ?? null, i10_index: a.summary_stats?.i10_index ?? null, topik: (a.topics || []).slice(0, 6).map((t) => t.display_name), topik_energi: (a.topics || []).map((t) => t.display_name).filter((t) => ENERGI.test(t)).slice(0, 6), karya_teratas: (w.results || []).slice(0, 5).map(ringkasKarya), karya_terbaru: (baru.results || []).map(ringkasKarya), per_tahun: (a.counts_by_year || []).slice(0, 10).map((y) => ({ tahun: y.year, karya: y.works_count, sitasi: y.cited_by_count })).sort((x, y) => x.tahun - y.tahun), ko_penulis: [...ko.values()].sort((x, y) => y.karya_bersama - x.karya_bersama || (x.openalex_id < y.openalex_id ? -1 : 1)).slice(0, 8), pendana: [...dana].sort((x, y) => y[1] - x[1] || (x[0] < y[0] ? -1 : 1)).slice(0, 5).map(([nama, karya]) => ({ nama, karya })), sumber_url: 'https://openalex.org/authors/' + aid };
     } catch (e) { gagal('openalex', e.message); if (e instanceof Berhenti) break; }
   }
   tulisJson(f, simpan); console.error('openalex cocok:', Object.keys(simpan.orang).length);

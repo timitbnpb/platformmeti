@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="referrer" content="no-referrer">
+<title data-i18n="pj.title">Pelacak Proyek Energi Terbarukan | Direktori METI</title>
+<link rel="icon" href="/img/logo-meti-tanda.png" type="image/png">
+<link rel="preload" href="/fonts/inter-400.woff2" as="font" type="font/woff2" crossorigin>
+<script src="/tema.js"></script>
+<link rel="stylesheet" href="/inti/tema.css">
+<link rel="stylesheet" href="/inti/kepala.css">
+<link rel="stylesheet" href="/inti/gaya.css">
+<link rel="stylesheet" href="/inti/jm.css">
+<link rel="stylesheet" href="/proyek.css">
+</head>
+<body data-halaman="proyek">
+<header class="top" id="kepala"></header>
+<main class="jm-halaman" id="isi">
+  <section class="jm-hero" aria-labelledby="judul">
+    <h1 id="judul" data-i18n="pj.judul">Pelacak proyek energi terbarukan</h1>
+    <p data-i18n="pj.lead">Proyek pembangkit dan program transisi energi nasional, lengkap dengan status, target COD, lokasi, dan sumber tiap angka.</p>
+    <div id="pjAngka" class="jm-pj-angka"></div>
+    <p id="pjSumber" class="jm-pj-sumber"></p>
+  </section>
+
+  <section class="jm-kartu" aria-labelledby="hPeta">
+    <h2 id="hPeta" data-i18n="pj.peta.judul">Peta proyek</h2>
+    <div class="jm-pj-saring" id="pjSaring" role="group" data-i18n-attr="aria-label:pj.saring">
+      <label class="jm-medan"><span class="jm-label" data-i18n="pj.f.cari">Cari nama atau pemilik</span><input class="jm-isian" id="fq" type="search" autocomplete="off"></label>
+      <label class="jm-medan"><span class="jm-label" data-i18n="pj.f.tek">Teknologi</span><select class="jm-pilih" id="ftek"></select></label>
+      <label class="jm-medan"><span class="jm-label" data-i18n="pj.f.status">Status</span><select class="jm-pilih" id="fst"></select></label>
+      <label class="jm-medan"><span class="jm-label" data-i18n="pj.f.program">Program</span><select class="jm-pilih" id="fprog"></select></label>
+      <label class="jm-medan"><span class="jm-label" data-i18n="pj.f.provinsi">Provinsi</span><select class="jm-pilih" id="fprov"></select></label>
+      <button type="button" class="jm-tbl" id="freset" data-i18n="jm.kosong.reset">Hapus filter</button>
+    </div>
+    <p class="jm-bantu" id="pjHasil" role="status"></p>
+    <div class="jm-pj-peta"><div id="pjPeta" class="jm-pj-kanvas" role="region" data-i18n-attr="aria-label:pj.peta.judul"></div></div>
+    <ul class="jm-pj-legenda" id="pjLegenda"></ul>
+    <p class="jm-bantu" id="pjPresisi"></p>
+  </section>
+
+  <section class="jm-kartu" aria-labelledby="hCorong">
+    <h2 id="hCorong" data-i18n="pj.corong.judul">Corong status</h2>
+    <div id="pjCorong"></div>
+  </section>
+
+  <section class="jm-kartu" aria-labelledby="hTelat">
+    <h2 id="hTelat" data-i18n="pj.telat.judul">Terlambat dari target COD</h2>
+    <p class="jm-bantu" id="pjTelatKet"></p>
+    <div id="pjTelat"></div>
+  </section>
+
+  <section class="jm-kartu" aria-labelledby="hDaftar">
+    <h2 id="hDaftar" data-i18n="pj.daftar.judul">Daftar proyek</h2>
+    <div id="pjDaftar"></div>
+  </section>
+
+  <section class="jm-kartu" aria-labelledby="hProg">
+    <h2 id="hProg" data-i18n="pj.prog.judul">Program nasional</h2>
+    <div id="pjProg" class="jm-pj-prog"></div>
+  </section>
+</main>
+<dialog class="jm-dlg jm-pj-dlg" id="pjProfil" aria-labelledby="pjProfilJudul"></dialog>
+<footer class="jm-kaki" id="kaki"></footer>
+<script type="module" src="/proyek.js"></script>
+</body>
+</html>

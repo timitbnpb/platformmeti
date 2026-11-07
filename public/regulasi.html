@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title data-i18n="reg.title">Regulasi energi terbarukan | Direktori METI</title>
+<meta name="description" content="Daftar dan linimasa regulasi energi terbarukan Indonesia dengan status, rantai perubahan, dan tautan ke naskah resmi BPK." data-i18n-attr="content:reg.deskripsi">
+<meta name="theme-color" content="#0A5C47">
+<link rel="icon" href="/img/logo-meti-tanda.png" type="image/png">
+<link rel="preload" href="/fonts/inter-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/inti/tema.css">
+<link rel="stylesheet" href="/inti/kepala.css">
+<link rel="stylesheet" href="/inti/gaya.css">
+<link rel="stylesheet" href="/inti/jm.css">
+<link rel="stylesheet" href="/publik.css">
+<script src="/tema.js"></script>
+</head>
+<body data-halaman="regulasi">
+<header class="top" id="kepala"></header>
+<div id="pita"></div>
+<main class="jm-halaman">
+  <div class="jm-judul">
+    <h1 data-i18n="reg.judul">Regulasi</h1>
+    <p data-i18n="reg.pengantar">Aturan yang mengikat proyek dan pelaku energi terbarukan, dari undang-undang sampai peraturan daerah, dengan rantai perubahan dan pencabutannya.</p>
+  </div>
+  <div id="ruu"></div>
+  <section class="jm-kartu" aria-labelledby="reg-h">
+    <h2 id="reg-h" class="sr" data-i18n="reg.daftar">Daftar regulasi</h2>
+    <div class="jm-saring" id="saring"></div>
+    <div class="jm-alat">
+      <div class="jm-tab" role="tablist" id="tampil"></div>
+      <p class="jm-hitung" id="hitung" role="status"></p>
+    </div>
+    <div id="isi"></div>
+    <div class="jm-hal" id="hal"></div>
+    <p class="jm-sumber" id="sumber"></p>
+  </section>
+</main>
+<dialog class="jm-lembar" id="lembar" aria-labelledby="lembar-j"></dialog>
+<footer class="jm-kaki" id="kaki"></footer>
+<script type="module" src="/regulasi.js"></script>
+</body>
+</html>

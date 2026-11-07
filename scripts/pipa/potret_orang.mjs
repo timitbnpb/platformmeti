@@ -30,7 +30,7 @@ export function bagi(orang, tinjau = []) {
   for (const [lapis, kolom] of Object.entries(KOLOM_LAPIS)) {
     const baris = orang.map((o) => { const r = { ...o, perlu_tinjau: tj.get(o.orang_id) || [] }; return Object.fromEntries(kolom.filter((k) => r[k] !== undefined && r[k] !== null && !(Array.isArray(r[k]) && !r[k].length && k === 'perlu_tinjau')).map((k) => [k, r[k]])); });
     const json = JSON.stringify({ lapis, dibangun_pada: BANGUN, jumlah: baris.length, orang: baris });
-    if (lapis !== 'pengurus') for (const re of POLA) assert.ok(!re.test(json.replace(/https?:\/\/[^"\s]+/g, '')), `pola pribadi di lapis ${lapis}: ${re}`);
+    if (lapis !== 'pengurus') for (const re of POLA) assert.ok(!re.test(json.replace(/https?:\/\/[^"\s]+/g, '').replace(/"(doi|orcid|openalex_id)":"[^"]*"/g, '""') /* pengenal publik, bukan telepon */), `pola pribadi di lapis ${lapis}: ${re}`);
     assert.ok(Buffer.byteLength(json) <= MAKS, `lapis ${lapis} > 2 MB: pecah per kelompok`);
     hasil[lapis] = json;
   }

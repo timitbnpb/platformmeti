@@ -21,17 +21,18 @@
 <div id="pita"></div>
 <section class="ak-kepala">
   <div class="ak-kepala-isi">
-    <h1 data-i18n="dir.judul">Direktori METI</h1>
+    <p class="ak-eyebrow">Masyarakat Energi Terbarukan Indonesia</p>
+    <h1 data-i18n="dir.judul">Direktori Jaringan METI</h1>
     <div class="ak-cari-besar"><label class="ak-cari"><span class="sr">Cari di seluruh direktori</span>
       <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
-      <input id="akCari" type="search" autocomplete="off" placeholder="Cari orang, lembaga, kampus, inovasi, dokumen, wilayah…" aria-controls="akCariPanel"><kbd class="ak-kbd" aria-hidden="true">/</kbd></label>
+      <input id="akCari" type="search" autocomplete="off" placeholder="Cari orang, lembaga, kampus, inovasi, dokumen, wilayah…" aria-controls="akCariPanel"><span class="ak-kbds" aria-hidden="true"><kbd class="ak-kbd">/</kbd><kbd class="ak-kbd">&#8984;K</kbd></span></label>
       <div id="akCariPanel" class="ak-cr" hidden></div></div>
     <div id="akAngka" class="ak-ringkas" aria-label="Ringkasan direktori"></div>
   </div>
   <div class="ak-kepala-nav">
   <div class="ak-tabwrap"><button type="button" class="ak-tabpanah" data-d="-1" aria-label="Geser tab ke kiri"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m15 6-6 6 6 6"/></svg></button><nav id="akTampil" class="ak-seg ak-tampil" role="group" aria-label="Tampilan" hidden></nav><button type="button" class="ak-tabpanah" data-d="1" aria-label="Geser tab ke kanan"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg></button></div>
   <nav id="akSubTab" class="ak-seg ak-subtab" role="group" aria-label="Sub-tampilan" hidden></nav>
-  <div id="akPkSeg" class="ak-seg" role="group" aria-label="Jenis pakar" hidden><button type="button" data-v="akademisi" aria-pressed="true"><svg class="ak-ikon" viewBox="0 0 24 24" aria-hidden="true"><path d="m2 9 10-5 10 5-10 5z"/><path d="M6 11v5c2 2 10 2 12 0v-5"/></svg>Akademisi</button><button type="button" data-v="tokoh" aria-pressed="false"><svg class="ak-ikon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20c0-3.6 2.9-6 6.5-6s6.5 2.4 6.5 6M18 4l1 2 2 .3-1.5 1.4.4 2L18 8.800 16.100 9.700l.4-2L15 6.300l2-.3z"/></svg>Tokoh publik</button></div>
+  <div id="akPkSeg" class="ak-seg ak-kelompok" role="group" aria-label="Kelompok orang" hidden><button type="button" data-v="profesional" aria-pressed="true"><svg class="ak-ikon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="3.5"/><path d="M4 21c0-4.4 3.6-7 8-7s8 2.6 8 7"/></svg>Profesional</button><button type="button" data-v="praktisi" aria-pressed="false"><svg class="ak-ikon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16v12H4zM9 7V5h6v2"/></svg>Praktisi</button><button type="button" data-v="akademisi" aria-pressed="false"><svg class="ak-ikon" viewBox="0 0 24 24" aria-hidden="true"><path d="m2 9 10-5 10 5-10 5z"/><path d="M6 11v5c2 2 10 2 12 0v-5"/></svg>Akademisi dan pakar</button><button type="button" data-v="think-tank-peneliti" aria-pressed="false"><svg class="ak-ikon" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18h6M10 21h4M12 3a6 6 0 0 0-3.5 10.9c.6.5 1 1.2 1 2.1h5c0-.9.4-1.6 1-2.1A6 6 0 0 0 12 3z"/></svg>Think tank</button><button type="button" data-v="tokoh-publik" aria-pressed="false"><svg class="ak-ikon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20c0-3.6 2.9-6 6.5-6s6.5 2.4 6.5 6M18 4l1 2 2 .3-1.5 1.4.4 2L18 8.8 16.1 9.7l.4-2L15 6.3l2-.3z"/></svg>Tokoh publik</button><button type="button" data-v="aktivis-tokoh-daerah" aria-pressed="false"><svg class="ak-ikon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>Aktivis dan tokoh daerah</button></div>
   </div>
 </section>
 
@@ -102,6 +103,8 @@
   </section>
 
   <section id="akv-lembaga" class="ak-tampilan" hidden></section>
+  <section id="akv-proyek" class="ak-tampilan" hidden></section>
+  <section id="akv-regulasi" class="ak-tampilan" hidden></section>
   <section id="akv-inovasi" class="ak-tampilan" hidden></section>
   <section id="akv-sistem_data" class="ak-tampilan" hidden></section>
   <section id="akv-tokoh" class="ak-tampilan" hidden></section>

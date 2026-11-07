@@ -11,7 +11,8 @@
     const n = String(nama || "").trim();
     if (!n) return "belum";
     if (lembaga && lembaga.kategori) {
-      if (lembaga.kategori === "pemerintah") return lembaga.kab || /^(pemerintah|dinas)/i.test(n) ? "daerah" : (lembaga.skala === "nasional" || lembaga.skala === "pusat" ? "pusat" : (DAERAH.test(n) ? "daerah" : "pusat"));
+      if (lembaga.kategori === "pemda") return "daerah";
+      if (lembaga.kategori === "kementerian-lembaga") return "pusat";
       if (lembaga.kategori === "bumn") return "pusat";
       return "nonpem";
     }
@@ -50,16 +51,17 @@
   const SEKTOR = {
     surya: K("solar", "photovoltaic", "pv\\b", "surya", "fotovoltaik", "plts"),
     bayu: K("wind (power|energy|turbine|farm)", "bayu", "angin", "pltb"),
-    air: K("hydropower", "hydroelectric", "micro-?hydro", "mini-?hydro", "pembangkit listrik tenaga air", "plta", "pltmh"),
+    hidro: K("hydropower", "hydroelectric", "micro-?hydro", "mini-?hydro", "pembangkit listrik tenaga air", "plta", "pltmh"),
     "panas-bumi": K("geothermal", "panas bumi", "pltp"),
     bioenergi: K("biomass", "biofuel", "biodiesel", "bioethanol", "biogas", "bioenergy", "biomassa", "bioenergi", "bahan bakar nabati", "pltbm"),
+    karbon: K("carbon", "ccs", "ccus", "emission", "karbon", "emisi", "net zero"),
     laut: K("ocean energy", "tidal", "wave energy", "ocean thermal", "otec", "energi laut", "arus laut"),
     hidrogen: K("hydrogen", "hidrogen", "fuel cell", "electroly[sz]er", "ammonia"),
     penyimpanan: K("battery", "batteries", "energy storage", "baterai", "penyimpanan energi", "pumped storage"),
     jaringan: K("smart grid", "microgrid", "mini-?grid", "transmission", "grid integration", "power system", "jaringan listrik", "transmisi"),
     efisiensi: K("energy efficiency", "energy saving", "demand response", "efisiensi energi", "konservasi energi"),
-    "kendaraan-listrik": K("electric vehicle", "electric mobility", "charging station", "kendaraan listrik", "motor listrik", "spklu"),
-    "sampah-energi": K("waste-to-energy", "waste to energy", "refuse-derived", "landfill gas", "sampah jadi energi", "psel"),
+    elektrifikasi: K("electric vehicle", "electric mobility", "charging station", "kendaraan listrik", "motor listrik", "spklu"),
+    "biomassa-sampah": K("waste-to-energy", "waste to energy", "refuse-derived", "landfill gas", "sampah jadi energi", "psel"),
   };
   const FASE = {
     riset: [K("model", "simulation", "experiment", "prototype", "material", "efficiency of", "optimi[sz]ation", "eksperimen", "purwarupa", "simulasi"), "Teknologi dan riset"],

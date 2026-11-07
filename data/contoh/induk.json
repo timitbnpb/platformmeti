@@ -7,7 +7,7 @@
  "sektor": [
   "surya",
   "bayu",
-  "air",
+  "hidro",
   "panas-bumi",
   "bioenergi",
   "laut",
@@ -15,10 +15,10 @@
   "penyimpanan",
   "jaringan",
   "efisiensi",
-  "kendaraan-listrik",
-  "sampah-energi",
+  "elektrifikasi",
+  "biomassa-sampah",
   "nuklir",
-  "ccs"
+  "karbon"
  ],
  "orang": [
   [
@@ -71,7 +71,7 @@
    "Citra Contoh (contoh)",
    "Universitas Contoh Sumatera",
    [
-    "air",
+    "hidro",
     "jaringan"
    ],
    18,
@@ -116,7 +116,7 @@
    "Politeknik Contoh Energi",
    [
     "bioenergi",
-    "sampah-energi"
+    "biomassa-sampah"
    ],
    32,
    48,
@@ -206,7 +206,7 @@
    "Indah Contoh (contoh)",
    "Universitas Contoh Timur",
    [
-    "kendaraan-listrik",
+    "elektrifikasi",
     "penyimpanan"
    ],
    29,
@@ -275,7 +275,7 @@
    "Lukman Contoh (contoh)",
    "Institut Contoh Teknologi",
    [
-    "air"
+    "hidro"
    ],
    19,
    111,

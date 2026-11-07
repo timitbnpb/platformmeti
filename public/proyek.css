@@ -1,0 +1,87 @@
+/* /proyek: hanya token tema.css. Kelas .jm-pj-* (baru). */
+.jm-pj-angka{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
+.jm-pj-kt{display:grid;gap:4px;align-content:start;padding:14px 16px;border-radius:var(--r);background:var(--card);color:var(--ink);min-width:0}
+.jm-pj-kt>span{display:flex;flex-wrap:wrap;align-items:center;gap:6px;font:600 var(--t-label)/1.3 var(--font);color:var(--ink2);text-transform:uppercase;letter-spacing:.04em}
+.jm-pj-kt>b{font:700 var(--t-angka)/1.1 var(--display);color:var(--head)}
+.jm-pj-kt small{color:var(--ink2);font-size:var(--t-kecil)}
+.jm-pj-kt ul{list-style:none;margin:0;padding:0;display:grid;gap:2px;font-size:14px}
+.jm-pj-kt li{display:flex;justify-content:space-between;gap:8px}
+.jm-pj-kt li span{overflow-wrap:anywhere}
+.jm-pj-sumber{font-size:var(--t-kecil)}
+
+.jm-pj-saring{display:grid;gap:10px;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));align-items:end;margin-bottom:8px}
+.jm-pj-peta{position:relative;border:1px solid var(--line);border-radius:var(--r);overflow:hidden;margin-top:10px}
+.jm-pj-kanvas{height:min(62vh,560px);min-height:320px;background:var(--surface)}
+.jm-pj-legenda{list-style:none;margin:10px 0 4px;padding:0;display:flex;flex-wrap:wrap;gap:6px 16px;font-size:13px}
+.jm-pj-titik{display:inline-block;width:12px;height:12px;border-radius:50%;margin-right:6px;vertical-align:-1px;background:var(--tc,var(--ink2));border:1px solid var(--paper)}
+.jm-pj-t-surya{--tc:var(--data4)}.jm-pj-t-bayu{--tc:var(--data3)}.jm-pj-t-hidro{--tc:var(--data5)}
+.jm-pj-t-panas-bumi{--tc:var(--warn)}.jm-pj-t-bioenergi{--tc:var(--data2)}.jm-pj-t-biomassa-sampah{--tc:var(--data1)}
+.jm-pj-t-penyimpanan{--tc:var(--ink2)}.jm-pj-t-nuklir{--tc:var(--bad)}.jm-pj-t-lain{--tc:var(--ink2)}
+
+.jm-pj-corong{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+.jm-pj-corong li{display:grid;grid-template-columns:minmax(80px,120px) minmax(0,1fr) 44px 84px;gap:10px;align-items:center}
+.jm-pj-bar{height:22px;border-radius:var(--r-sm);background:var(--surface);overflow:hidden}
+.jm-pj-bar i{display:block;height:100%;width:var(--w,0%);min-width:2px;background:var(--accent-isi);border-radius:var(--r-sm)}
+.jm-pj-corong b{text-align:right}
+.jm-pj-corong small{color:var(--ink2)}
+
+.jm-pj-urut{all:unset;cursor:pointer;display:inline-flex;align-items:center;gap:4px;min-height:24px}
+.jm-pj-urut:focus-visible{outline:2px solid var(--on-brand);outline-offset:2px}
+th[aria-sort="ascending"] .jm-pj-urut::after{content:"\25B2";font-size:9px}
+th[aria-sort="descending"] .jm-pj-urut::after{content:"\25BC";font-size:9px}
+.jm-pj-tabel td{overflow-wrap:anywhere}
+.jm-pj-tabel td:first-child{min-width:180px}
+.jm-pj-maps{display:inline-grid;place-items:center;min-width:var(--target);min-height:var(--target);color:var(--accent)}
+.jm-pj-maps:hover{color:var(--brand2)}
+
+.jm-pj-prog{display:grid;gap:12px;grid-template-columns:repeat(auto-fill,minmax(250px,1fr))}
+.jm-pj-pk{display:grid;gap:8px;align-content:start;padding:14px;border:1px solid var(--line);border-radius:var(--r);background:var(--surface)}
+.jm-pj-pk h3{font:600 16px/1.3 var(--display);color:var(--head);overflow-wrap:anywhere}
+.jm-pj-pk dl{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin:0}
+.jm-pj-pk dt{font-size:var(--t-label);color:var(--ink2);text-transform:uppercase}
+.jm-pj-pk dd{margin:0;font:700 17px/1.2 var(--display);color:var(--head)}
+.jm-pj-pil{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:6px;font-size:13px}
+.jm-pj-pil li{padding:2px 10px;border-radius:var(--r-pil);background:var(--info-bg);color:var(--ink)}
+.jm-pj-pk .jm-tbl{justify-self:start}
+
+/* profil */
+.jm-pj-dlg{width:min(760px,calc(100vw - 24px));max-height:calc(100vh - 24px);overflow:auto;padding:0}
+.jm-pj-dlg>*{margin-left:20px;margin-right:20px}
+.jm-pj-dkepala{display:flex;justify-content:space-between;gap:12px;align-items:flex-start;position:sticky;top:0;margin:0!important;padding:16px 20px;background:var(--card);border-bottom:1px solid var(--line);z-index:2}
+.jm-pj-dkepala h2{overflow-wrap:anywhere}
+.jm-pj-dpil{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin-top:12px;margin-bottom:8px}
+.jm-pj-laci{border:1px solid var(--line);border-radius:var(--r-sm);margin-top:10px;margin-bottom:10px;background:var(--card)}
+.jm-pj-laci summary{cursor:pointer;min-height:var(--target);padding:0 14px;display:flex;align-items:center;font:600 15px/1.3 var(--display);color:var(--head)}
+.jm-pj-laci-isi{padding:2px 14px 14px;display:grid;gap:10px}
+.jm-pj-laci-isi h3{font:600 14px/1.3 var(--display);color:var(--head)}
+.jm-pj-dl{display:grid;gap:8px;margin:0}
+.jm-pj-dl>div{display:grid;gap:2px}
+.jm-pj-dl dt{font:600 var(--t-label)/1.3 var(--font);color:var(--ink2);text-transform:uppercase;letter-spacing:.04em}
+.jm-pj-dl dd{margin:0;overflow-wrap:anywhere}
+@media (min-width:600px){.jm-pj-dl>div{grid-template-columns:150px minmax(0,1fr);gap:12px}}
+.jm-pj-nilai{list-style:none;margin:0;padding:0;display:grid;gap:6px}
+.jm-pj-nilai li{overflow-wrap:anywhere}
+.jm-pj-nilai small{display:block;color:var(--ink2);font-size:var(--t-kecil)}
+.jm-pj-ref{margin-left:4px;padding:0 5px;border-radius:var(--r-pil);background:var(--info-bg);color:var(--info);font-size:11px}
+.jm-pj-mini{height:220px;border:1px solid var(--line);border-radius:var(--r-sm);overflow:hidden;background:var(--surface)}
+.jm-pj-penanda{width:18px;height:18px;border-radius:50%;background:var(--accent-isi);border:3px solid var(--paper);box-shadow:var(--shadow)}
+.jm-pj-penanda.kira{opacity:.6;border-style:dashed;width:26px;height:26px}
+.jm-pj-garis{list-style:none;margin:0;padding:0 0 0 14px;border-left:3px solid var(--line);display:grid;gap:10px}
+.jm-pj-garis li{display:grid;gap:2px;position:relative}
+.jm-pj-garis li::before{content:"";position:absolute;left:-22px;top:5px;width:11px;height:11px;border-radius:50%;background:var(--card);border:3px solid var(--accent-isi)}
+.jm-pj-garis li.ok::before{background:var(--ok)}
+.jm-pj-garis span{color:var(--ink2);font-size:14px}
+
+/* tabel menjadi kartu di layar sempit */
+@media (max-width:767px){
+  .jm-pj-corong li{grid-template-columns:minmax(70px,100px) minmax(0,1fr) 36px}
+  .jm-pj-corong small{display:none}
+  .jm-pj-tabel thead{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+  .jm-pj-tabel,.jm-pj-tabel tbody,.jm-pj-tabel tr,.jm-pj-tabel td{display:block;width:100%}
+  .jm-pj-tabel tr{padding:10px 12px;border-top:1px solid var(--line-cell)}
+  .jm-pj-tabel td{border:0!important;padding:3px 0;background:none!important;display:flex;gap:10px;justify-content:space-between;text-align:right}
+  .jm-pj-tabel td:first-child{min-width:0;text-align:left;font-weight:600}
+  .jm-pj-tabel td::before{content:attr(data-label);flex:none;color:var(--ink2);font-size:var(--t-kecil);text-align:left}
+  .jm-pj-tabel td:first-child::before{display:none}
+  .jm-gulir{border:0}
+}

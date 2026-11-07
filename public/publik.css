@@ -1,0 +1,92 @@
+/* Halaman publik statis: beranda, regulasi, kalender. Hanya token tema.css, kelas .jm-*. */
+.jm-judul{display:grid;gap:6px}
+.jm-judul p{color:var(--ink2);max-width:70ch}
+.jm-sumber{font-size:var(--t-kecil);color:var(--ink2)}
+.jm-kisi{display:grid;gap:var(--gap);grid-template-columns:repeat(auto-fill,minmax(210px,1fr))}
+.jm-baris-kecil{display:flex;flex-wrap:wrap;gap:6px;align-items:center}
+.jm-pil-est{background:var(--surface);color:var(--ink2);border:1px solid var(--line)}
+
+/* kotak cari + bilah saringan */
+.jm-cari{position:relative;display:block}
+.jm-cari .jm-ik{position:absolute;left:12px;top:50%;translate:0 -50%;color:var(--ink2);pointer-events:none}
+.jm-cari input{padding-left:40px}
+.jm-saring{display:grid;gap:8px;grid-template-columns:repeat(2,minmax(0,1fr));margin-bottom:12px}
+.jm-saring .jm-cari{grid-column:1/-1}
+@media (min-width:900px){.jm-saring{grid-template-columns:minmax(0,2fr) repeat(5,minmax(0,1fr)) auto}.jm-saring .jm-cari{grid-column:auto}}
+.jm-alat{display:flex;flex-wrap:wrap;gap:8px;align-items:center;justify-content:space-between;margin-bottom:8px}
+.jm-alat .jm-tab{border-bottom:0}
+.jm-hitung{font-size:14px;color:var(--ink2)}
+
+/* daftar regulasi dan acara */
+.jm-daftar{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+.jm-baris{display:grid;gap:4px;width:100%;padding:12px 14px;text-align:left;border:1px solid var(--line);border-radius:var(--r-sm);background:var(--card);color:var(--ink);font:inherit;cursor:pointer}
+.jm-baris:hover{border-color:var(--accent)}
+.jm-baris-no{font:700 13px/1.3 var(--display);color:var(--accent)}
+.jm-baris-judul{font-weight:500}
+.jm-baris-meta{display:flex;flex-wrap:wrap;gap:6px 12px;align-items:center;font-size:var(--t-kecil);color:var(--ink2)}
+.jm-sorot{border:2px solid var(--sorot);background:var(--soft-hijau);display:grid;gap:8px}
+.jm-sorot h2{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+
+/* linimasa */
+.jm-linimasa{display:grid;gap:8px}
+.jm-tahun{border:1px solid var(--line);border-radius:var(--r-sm);background:var(--card)}
+.jm-tahun summary{display:flex;flex-wrap:wrap;gap:8px;align-items:center;min-height:var(--target);padding:6px 14px;cursor:pointer;font:700 16px/1 var(--display);color:var(--head)}
+.jm-tahun ul{list-style:none;margin:0;padding:0 14px 12px;display:grid;gap:6px}
+.jm-tahun li{display:flex;flex-wrap:wrap;gap:8px;align-items:baseline}
+.jm-tahun li button{border:0;background:none;padding:2px 0;color:var(--accent);font:inherit;text-align:left;cursor:pointer;text-decoration:underline;text-underline-offset:3px}
+.jm-tanda{display:inline-flex;align-items:center;min-height:22px;padding:0 8px;border-radius:var(--r-pil);font:600 11px/1 var(--font);white-space:nowrap}
+.jm-tanda-terbit{background:var(--info-bg);color:var(--info)}
+.jm-tanda-mengubah{background:var(--warn-bg);color:var(--warn)}
+.jm-tanda-mencabut{background:var(--bad-bg);color:var(--bad)}
+
+/* lembar profil */
+dialog.jm-lembar{width:min(640px,100vw);max-height:100dvh;height:100dvh;margin:0 0 0 auto;padding:20px;border:0;border-left:1px solid var(--line);background:var(--card);color:var(--ink);box-shadow:var(--shadow-lg);overflow-y:auto}
+dialog.jm-lembar::backdrop{background:rgb(11 23 38/.55)}
+.jm-lembar-isi{display:grid;gap:14px}
+.jm-lembar-kepala{display:flex;justify-content:space-between;gap:12px;align-items:flex-start}
+.jm-lembar h3{font-size:15px;margin-bottom:6px}
+.jm-dl{display:grid;gap:6px 12px;grid-template-columns:minmax(90px,max-content) minmax(0,1fr);margin:0;font-size:14px}
+.jm-dl dt{color:var(--ink2);font-weight:600}
+.jm-dl dd{margin:0;overflow-wrap:anywhere}
+.jm-rantai{list-style:none;margin:0;padding:0;display:grid;gap:6px}
+.jm-rantai li{display:flex;flex-wrap:wrap;gap:6px;align-items:center}
+.jm-rantai button,.jm-lembar a{color:var(--accent)}
+.jm-rantai button{border:0;background:none;padding:0;font:inherit;cursor:pointer;text-decoration:underline;text-underline-offset:3px;text-align:left}
+.jm-posisi{padding:12px;border-radius:var(--r-sm);background:var(--soft-hijau)}
+
+/* kartu angka dan jalur masuk */
+.jm-angka{display:grid;gap:4px;align-content:start}
+.jm-angka b{font:700 var(--t-angka)/1.1 var(--display);color:var(--head)}
+.jm-angka span{font-weight:600}
+.jm-angka small{color:var(--ink2);font-size:var(--t-kecil)}
+.jm-jalur{display:grid;gap:4px;padding:16px;border:1px solid var(--line);border-radius:var(--r);background:var(--card);color:var(--ink);text-decoration:none;box-shadow:var(--shadow)}
+.jm-jalur:hover{border-color:var(--accent)}
+.jm-jalur strong{font:600 16px/1.3 var(--display);color:var(--head)}
+.jm-jalur span{color:var(--ink2);font-size:14px}
+.jm-jalur .jm-ik{color:var(--accent)}
+.jm-dua{display:grid;gap:var(--gap)}
+@media (min-width:900px){.jm-dua{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}}
+.jm-hero-cari{max-width:640px}
+.jm-hero-cari input{min-height:52px;border-radius:var(--r-pil);border:0}
+.jm-hasil{position:relative;margin-top:8px;display:grid;gap:10px;max-width:640px;padding:12px;border-radius:var(--r);background:var(--card);color:var(--ink)}
+.jm-hasil h3{font-size:13px;color:var(--ink2);margin-bottom:4px}
+.jm-hasil ul{list-style:none;margin:0;padding:0;display:grid}
+.jm-hasil a{display:block;padding:8px 6px;border-radius:var(--r-sm);color:var(--ink);text-decoration:none}
+.jm-hasil a:hover{background:var(--surface)}
+.jm-hasil small{display:block;color:var(--ink2)}
+.jm-hero .jm-sumber{color:var(--on-brand)}
+
+/* kalender */
+.jm-bulan{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:4px}
+.jm-bulan-nama{font:700 12px/1 var(--display);text-align:center;color:var(--ink2);padding:6px 0}
+.jm-hari{min-height:84px;padding:4px;border:1px solid var(--line-cell);border-radius:var(--r-sm);background:var(--card);display:grid;align-content:start;gap:2px;min-width:0}
+.jm-hari-luar{background:var(--surface);opacity:.6}
+.jm-hari>b{font-size:12px;color:var(--ink2)}
+.jm-hari a{display:block;background:var(--info-bg);color:var(--info);text-decoration:none;border-radius:6px;padding:2px 4px;font:600 11px/1.25 var(--font);text-align:left;cursor:pointer;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;min-width:0}
+@media (max-width:639px){.jm-bulan{display:none}}
+.jm-bulan-tampil{display:none}
+@media (min-width:640px){.jm-bulan-tampil{display:block}}
+.jm-nav-bulan{display:flex;align-items:center;gap:8px}
+.jm-nav-bulan strong{min-width:9ch;text-align:center;font:600 16px/1 var(--display)}
+.jm-acara{display:grid;gap:4px;padding:12px 14px;border:1px solid var(--line);border-radius:var(--r-sm);background:var(--card)}
+.jm-acara-tgl{font:700 13px/1.3 var(--display);color:var(--accent)}

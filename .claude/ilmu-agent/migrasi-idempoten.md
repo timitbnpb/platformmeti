@@ -54,3 +54,5 @@ Daftar periksa, urut, tiap butir lapor LOLOS atau TEMUAN dengan berkas:baris:
 ## Kasus
 
 Belum ada kasus. Tambahkan lewat ilmu.mjs kasus.
+- 2026-11-07 · Rebuild tabel SQLite via CREATE _cad AS SELECT: (1) DROP TABLE IF EXISTS _cad_x di awal menghapus cadangan yang tinggal satu-satunya bila berkas putus setelah DROP induk lalu dijalankan ulang; cara tahu: putuskan berkas di antara DROP akun dan CREATE akun, jalankan ulang, cek _cad_akun. (2) DROP TABLE + INSERT id eksplisit mereset sqlite_sequence ke max(id) (AUTOINCREMENT); cara tahu: bandingkan sqlite_sequence sebelum dan sesudah.
+- 2026-11-07 · Cadangan yang dibuat sekali (IF NOT EXISTS) aman terhadap putus, tetapi basi bila tabel asal masih bisa ditulis selama jeda: rerun menimpa tulisan jeda dengan cadangan lama. Cara tahu: putuskan setelah DROP tabel pertama tetapi sebelum DROP induk, tulis baris lewat tabel yang masih ada, jalankan ulang, cek baris itu.

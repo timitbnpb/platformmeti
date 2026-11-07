@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title data-i18n="kal.title">Kalender ekosistem energi terbarukan | Direktori METI</title>
+<meta name="description" content="Agenda METI dan acara ekosistem energi terbarukan Indonesia: seminar, konferensi, audiensi, dan terbitan regulasi." data-i18n-attr="content:kal.deskripsi">
+<meta name="theme-color" content="#0A5C47">
+<link rel="icon" href="/img/logo-meti-tanda.png" type="image/png">
+<link rel="preload" href="/fonts/inter-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/inti/tema.css">
+<link rel="stylesheet" href="/inti/kepala.css">
+<link rel="stylesheet" href="/inti/gaya.css">
+<link rel="stylesheet" href="/inti/jm.css">
+<link rel="stylesheet" href="/publik.css">
+<script src="/tema.js"></script>
+</head>
+<body data-halaman="kalender">
+<header class="top" id="kepala"></header>
+<div id="pita"></div>
+<main class="jm-halaman">
+  <div class="jm-judul">
+    <h1 data-i18n="kal.judul">Kalender</h1>
+    <p data-i18n="kal.pengantar">Agenda METI dan acara ekosistem energi terbarukan. Yang tampil hanya judul, tanggal, dan mitra penyelenggara.</p>
+  </div>
+  <section class="jm-kartu" aria-labelledby="kal-h">
+    <h2 id="kal-h" class="sr" data-i18n="kal.agenda">Agenda</h2>
+    <div class="jm-alat">
+      <div class="jm-tab" role="tablist" id="tampil"></div>
+      <select class="jm-pilih" id="jenis" data-i18n-attr="aria-label:kal.semua"></select>
+      <p class="jm-hitung" id="hitung" role="status"></p>
+    </div>
+    <div class="jm-alat" id="navbulan"></div>
+    <div id="grid"></div>
+    <div id="isi"></div>
+    <p class="jm-sumber" id="sumber"></p>
+  </section>
+</main>
+<footer class="jm-kaki" id="kaki"></footer>
+<script type="module" src="/kalender.js"></script>
+</body>
+</html>

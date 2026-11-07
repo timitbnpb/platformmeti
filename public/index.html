@@ -4,26 +4,45 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title data-i18n="beranda.title">Direktori METI | Ekosistem energi terbarukan Indonesia</title>
-<meta name="description" content="Platform Direktori METI sedang disiapkan: sensus perusahaan, lembaga, dan proyek energi terbarukan Indonesia dengan sumber dan tanggal di setiap angka." data-i18n-attr="content:beranda.deskripsi">
-<meta name="theme-color" content="#122B4A">
+<meta name="description" content="Direktori METI: proyek, organisasi, tokoh, dan regulasi energi terbarukan Indonesia, dengan sumber dan tanggal di setiap angka." data-i18n-attr="content:beranda.deskripsi">
+<meta name="theme-color" content="#0A5C47">
 <link rel="icon" href="/img/logo-meti-tanda.png" type="image/png">
 <link rel="preload" href="/fonts/inter-400.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="/inti/tema.css">
 <link rel="stylesheet" href="/inti/kepala.css">
 <link rel="stylesheet" href="/inti/gaya.css">
 <link rel="stylesheet" href="/inti/jm.css">
+<link rel="stylesheet" href="/publik.css">
 <script src="/tema.js"></script>
 </head>
-<body>
+<body data-halaman="beranda">
 <header class="top" id="kepala"></header>
 <div id="pita"></div>
-<div class="jm-halaman">
+<main class="jm-halaman">
   <section class="jm-hero" aria-labelledby="judul">
-    <h1 id="judul" data-i18n="beranda.judul">Peta ekosistem energi terbarukan Indonesia</h1>
-    <p data-i18n="beranda.pengantar">Platform ini sedang disiapkan. Sensus perusahaan, lembaga, dan proyek energi terbarukan akan hadir bertahap, dengan sumber dan tanggal di setiap angka.</p>
-    <a class="jm-tbl jm-tbl-utama" href="/masuk" data-i18n="beranda.masuk">Masuk untuk anggota dan pengurus</a>
+    <h1 id="judul" data-i18n="beranda.judul">Direktori METI</h1>
+    <p data-i18n="beranda.pengantar">Proyek, organisasi, tokoh, dan regulasi energi terbarukan Indonesia di satu tempat, dengan sumber dan tanggal di setiap angka.</p>
+    <div class="jm-hero-cari">
+      <label class="jm-cari"><span class="sr" data-i18n="beranda.cari">Cari proyek, organisasi, tokoh, atau regulasi</span><svg class="jm-ik" width="20" height="20" aria-hidden="true" focusable="false"><use href="/img/ikon.svg#i-cari"/></svg>
+        <input class="jm-isian" type="search" id="cari" autocomplete="off" data-i18n-attr="placeholder:beranda.cari" placeholder="Cari proyek, organisasi, tokoh, atau regulasi"></label>
+      <div class="jm-hasil" id="hasil" role="region" aria-live="polite" hidden></div>
+    </div>
   </section>
-</div>
+  <section aria-labelledby="angka-h" class="jm-dua-baris">
+    <h2 id="angka-h" data-i18n="beranda.angka">Kondisi sekarang</h2>
+    <div class="jm-kisi" id="kartu"></div>
+    <details class="jm-sumber"><summary data-i18n="beranda.cara">Cara menghitung</summary><p data-i18n="beranda.cara_isi">Semua angka dihitung dari baris data yang punya sumber publik. Jumlah proyek, organisasi, tokoh, dan regulasi adalah hitungan baris. Kapasitas menjumlah nilai pertama tiap proyek (MW dan MWp dicampur), rencana maupun terpasang, sehingga berlabel EST. Tidak ada angka yang ditebak.</p></details>
+    <p class="jm-sumber" id="sumber"></p>
+  </section>
+  <section aria-labelledby="jalur-h">
+    <h2 id="jalur-h" data-i18n="beranda.jalur">Jelajahi</h2>
+    <div class="jm-kisi" id="jalur"></div>
+  </section>
+  <div class="jm-dua">
+    <section class="jm-kartu" aria-labelledby="berita-h"><h2 id="berita-h" data-i18n="beranda.berita">Berita terbaru</h2><div id="berita"></div></section>
+    <section class="jm-kartu" aria-labelledby="proyek-h"><h2 id="proyek-h" data-i18n="beranda.proyek">Proyek terbaru di katalog</h2><div id="proyek"></div></section>
+  </div>
+</main>
 <footer class="jm-kaki" id="kaki"></footer>
 <script type="module" src="/beranda.js"></script>
 </body>

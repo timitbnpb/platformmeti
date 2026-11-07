@@ -15,16 +15,16 @@ test("konstanta tak lagi memuat istilah kebencanaan atau merek asal", () => {
   }
 });
 
-test("delapan tab, tanpa Donasi; Jejak isu jadi sub-tab Riset", () => {
+test("sepuluh tab (Proyek dan Regulasi baru), tanpa Donasi; Jejak isu jadi sub-tab Riset", () => {
   const tabs = JS.match(/const TABS = \[([^\]]*)\]/)[1].split(",").map((s) => s.trim().replace(/"/g, ""));
-  assert.deepEqual(tabs, ["pakar", "lembaga", "wilayah", "inovasi", "riset", "sistem_data", "pendanaan", "pustaka"]);
+  assert.deepEqual(tabs, ["pakar", "lembaga", "proyek", "regulasi", "wilayah", "inovasi", "riset", "sistem_data", "pendanaan", "pustaka"]);
   assert.match(JS, /\["jejak-isu", "Jejak isu", "kejadian"\]/);
 });
 
-test("SEKTOR di layar = 14 kunci ALG 2.1 = SEKTOR_SAH Worker", () => {
-  const blok = JS.slice(JS.indexOf("const SEKTOR = {"), JS.indexOf("const SEKTOR_TERKAIT"));
+test("SEKTOR di layar = 19 kode K16 (13 teknologi + 6 lintas bidang) = SEKTOR_SAH Worker", () => {
+  const blok = JS.slice(JS.indexOf("const SEKTOR = {"), JS.indexOf("const SEKTOR_GRUP"));
   const kunci = [...blok.matchAll(/^\s+"?([a-z-]+)"?: \[/gm)].map((m) => m[1]);
-  assert.equal(kunci.length, 14);
+  assert.equal(kunci.length, 19);
   assert.deepEqual(new Set(kunci), SEKTOR_SAH);
 });
 

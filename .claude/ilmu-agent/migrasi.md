@@ -58,3 +58,5 @@ Berkas terkait yang kamu baca tetapi tidak kamu miliki: `public/taksonomi.js` (h
 
 Belum ada kasus. Tambahkan lewat ilmu.mjs kasus.
 - 2026-11-07 · D1 melarang PRAGMA integrity_check (SQLITE_AUTH); uji pakai foreign_key_check saja. Menghapus kolom dummy dengan regex meninggalkan koma menggantung sebelum ')' - jalankan migrasi nyata, jangan percaya baca mata.
+- 2026-11-07 · DROP induk menjalankan CASCADE walau PRAGMA foreign_keys=OFF (tak berlaku dalam transaksi): bangun ulang induk WAJIB cadangkan dan bangun ulang anaknya juga (0007). Kolom baru idempoten lewat CREATE TABLE _cad AS SELECT t.*, NULL AS kolom (nama ganda jadi kolom:1, nama asli menang di rerun).
+- 2026-11-07 · Bangun ulang tabel: cadangan _cad_* pakai CREATE TABLE IF NOT EXISTS (jangan DROP di awal, putus di tengah = data hilang) dan pulihkan sqlite_sequence = max(lama, kini). IF NOT EXISTS pada CREATE TABLE AS tidak meresolusi SELECT, jadi aman walau tabel asal sudah hilang.
