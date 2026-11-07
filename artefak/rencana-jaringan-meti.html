@@ -75,7 +75,7 @@ a{color:var(--aksi)}
     <div class="merek">METI · IRES</div>
     <h1>Rencana Platform Jaringan METI</h1>
     <p class="lead">Direktori jaringan energi terbarukan Indonesia: kode Direktori Jaringan Kebencanaan diporting, isi dan cara penyajian ala 1001startup.id, gaya visual METI Midnight Energy, berjalan di Cloudflare.</p>
-    <span class="pita">Draf perencanaan 7 Nov 2026, belum dibangun</span>
+    <span class="pita">F0 tayang 7 Nov 2026: platformmeti.timitbnpb.workers.dev</span>
     <nav class="tab" aria-label="Bagian">
       <a href="#grand-design">Grand Design</a>
       <a href="#design-system">Design System</a>
@@ -97,8 +97,8 @@ a{color:var(--aksi)}
   </div>
   <div class="kartu"><h2>Tiga sumber digabung</h2><div class="gulir"><table>
     <tr><th>Sumber</th><th>Diambil</th><th>Tidak diambil</th></tr>
-    <tr><td>Direktori Jaringan Kebencanaan</td><td>Seluruh kode: 9 tab, pencarian global, profil berkartu, graf Terhubung, peta MapLibre + panel tarik, daftar pendek + ekspor, koreksi, riwayat, dummy, pipeline OpenAlex, Worker berpenjaga</td><td>Isi kebencanaan, data R2 BNPB, id Cloudflare, merek</td></tr>
-    <tr><td>1001startup.id</td><td>Isi dan cara penyajian: sensus berhitungan, rantai pasok, investor, kuadran, cerita data, Jawaban singkat, Cara menghitung, Cara mengutip, skor keyakinan, label EST</td><td>Gaya visual, teks, estimasi, logo, panen otomatis (robots.txt melarang crawler AI)</td></tr>
+    <tr><td>Direktori Jaringan Kebencanaan</td><td>Seluruh kode: 9 tab, pencarian global, profil berkartu, graf Terhubung, peta MapLibre + panel tarik, daftar pendek + ekspor, koreksi, riwayat, pipeline OpenAlex, Worker berpenjaga</td><td>Isi kebencanaan, data R2 BNPB, id Cloudflare, merek</td></tr>
+    <tr><td>1001startup.id</td><td>Isi dan cara penyajian: sensus berhitungan, rantai pasok, investor, kuadran, cerita data, Jawaban singkat, Cara menghitung, Cara mengutip, skor keyakinan, label EST</td><td>Gaya visual, teks, estimasi, logo. Fakta dipanen terbatas dengan atribusi (llms.txt mengizinkan; R13: 89 entitas, 508 ikatan)</td></tr>
     <tr><td>neraca-papua</td><td>Skema entitas, fakta, ikatan; tiap baris wajib sumber, tanggal periksa, tingkat bukti</td><td>HTML tunggal 1,6 MB, render sinkron</td></tr>
   </table></div></div>
   <div class="kartu"><h2>Enam pilar</h2><div class="gulir"><table>
@@ -165,7 +165,7 @@ a{color:var(--aksi)}
     <tr><th>Kelompok</th><th>Tiket</th><th>Isi</th><th>Fase</th></tr>
     <tr><td>A Fondasi</td><td>A01-A05</td><td>Armada agent, kerangka repo, sumber daya Cloudflare, util, router, CSP</td><td>F0</td></tr>
     <tr><td>B Login dan RLS</td><td>B01-B07</td><td>Akun, PBKDF2, sesi, hak.js, admin akun, halaman masuk, jejak</td><td>F0</td></tr>
-    <tr><td>C Porting</td><td>C01-C07</td><td>Token METI, layar direktori, konstanta domain, Worker, dummy, i18n, gerbang</td><td>F0</td></tr>
+    <tr><td>C Porting</td><td>C01-C07</td><td>Token METI, layar direktori, konstanta domain, Worker, data contoh, i18n, gerbang (tanpa tombol dummy, K15)</td><td>F0</td></tr>
     <tr><td>D Data</td><td>D01-D13</td><td>Skema kurasi, penjaga unggah, OpenAlex, OSM, Ember/IRENA/WB, regulasi, seed METI, graf, daftar tolak, potret, skor</td><td>F1</td></tr>
     <tr><td>E Sensus</td><td>E01-E06</td><td>Beranda, sensus, profil, peta, metode, koreksi</td><td>F1</td></tr>
     <tr><td>F Rantai dan cerita</td><td>F01-F10</td><td>Rantai pasok, pembiaya, BUMN, data center, desa, wilayah, kebijakan, cerita data, riwayat, sinkron situs METI</td><td>F2</td></tr>
@@ -182,14 +182,14 @@ a{color:var(--aksi)}
     <li>Berdiri sendiri atau satu akun dengan metiires.or.id?<span>Bawaan: sendiri, situs METI hanya dibaca.</span></li>
     <li>Apa yang terlihat tanpa login?<span>Bawaan: lembaga, proyek, regulasi, wilayah, cerita; orang hanya nama dan jabatan.</span></li>
     <li>Palet deck METI atau emerald situs METI?<span>Bawaan: Midnight Energy.</span></li>
-    <li>Akun Cloudflare siapa?<span>Bawaan: akun lu dulu.</span></li>
+    <li>Akun Cloudflare siapa?<span>Diputus: akun Cloudflare tim IT BNPB (Timitbnpb), pindah ke METI sebelum rilis resmi.</span></li>
     <li>Perlu peran Ketua METI Wilayah per provinsi?<span>Bawaan: ya.</span></li>
     <li>Penyedia surel aktivasi?<span>Bawaan: admin salin tautan manual.</span></li>
     <li>Anggota daftar sendiri?<span>Bawaan: tidak sampai F3.</span></li>
     <li>Boleh pakai data 1.800+ anggota dari Sekretariat?<span>Bawaan: belum.</span></li>
     <li>Pengurus SK 0008 tampil publik?<span>Bawaan: nama dan jabatan saja.</span></li>
     <li>Cakupan sektor?<span>Bawaan: EBT + penyimpanan, jaringan, efisiensi, kendaraan listrik, sampah, hidrogen.</span></li>
-    <li>Data 1001startup.id?<span>Bawaan: tanpa panen, minta izin pengelolanya.</span></li>
+    <li>Data 1001startup.id?<span>Diputus: panen fakta terbatas dengan atribusi; izin tertulis sebelum tampil publik.</span></li>
     <li>Terjemahan Inggris ditinjau siapa?<span>Bawaan: ditandai perlu tinjau.</span></li>
     <li>Logo boleh disimpan?<span>Bawaan: dari situs resmi entitas, hapus atas permintaan.</span></li>
     <li>Skor dan kuadran belum diuji boleh publik?<span>Bawaan: boleh dengan pil Hipotesis.</span></li>
