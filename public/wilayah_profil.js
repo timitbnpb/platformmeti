@@ -219,9 +219,10 @@ export async function profilProvinsi(p, data, $) {
   const K = kartu({ seksi, sumberDari, namaBersih, peringkat, UKUR, fmt, satuan, kos, juta, hlHtml, aksiHtml });
   document.title = t("wl.profil_title", { nama: p.nama }); TGL = data.dibangun_pada;
   try { for (const r of (await muatData("regulasi.json")).baris) REG.set(r.id, r); } catch (e) { /* tautan sumber saja */ }
-  let d = null;
+  let d = null, cap = null;
+  try { cap = await muatData("rued_capaian.json"); } catch (e) { /* kartu capaian disembunyikan */ }
   try { d = await muatData("wilayah/" + encodeURIComponent(p.kode) + ".json"); } catch (e) { /* bagian tambahan disembunyikan */ }
-  $("profil-isi").innerHTML = kepala(data, p) + [ringkasan(p), kelistrikan(p), potensi(p), rued(p), K.petaSeksi(p), proyek(p), K.organisasi(p), '<div id="wp-meti"></div>', pakar(p, d), regulasi(p), K.emisi(p, d), berita(p, d), K.banding(data, p), await terkaitHtml("provinsi", String(p.kode))].join("");
+  $("profil-isi").innerHTML = kepala(data, p) + [ringkasan(p), kelistrikan(p), potensi(p), rued(p), K.capaian(p, cap), K.petaSeksi(p), proyek(p), K.organisasi(p), '<div id="wp-meti"></div>', pakar(p, d), regulasi(p), K.emisi(p, d), berita(p, d), K.banding(data, p), await terkaitHtml("provinsi", String(p.kode))].join("");
   $("cara").innerHTML = `<p>${esc(t("wl.cara_profil"))}</p>`;
   $("profil-isi").querySelector(".jm-wp-chips")?.insertAdjacentHTML("afterend", `<p>${tombolIkuti({ jenis: "provinsi", id: p.kode, nama: p.nama })}</p>`);
   pasangIkuti($("profil-isi"));

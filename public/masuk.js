@@ -1,7 +1,8 @@
 /* /masuk, /aktivasi, /ganti-sandi (JM-B06). Satu skrip, cabang menurut <body data-halaman>. */
 import { t, gantiBahasa, bahasa, angka, tanggal } from "/i18n.js";
 import { SOSMED, sosmedHtml } from "/inti/sosmed.js";
-import { api, galatTeks, amanKe, pesanHtml, nanti } from "/inti/umum.js";
+import { api, galatTeks, amanKe, pesanHtml, nanti, esc } from "/inti/umum.js";
+import { IKON_TEK } from "/inti/ikon_tek.js";
 import { mulaiHalaman } from "/inti/kepala.js";
 
 const saya = await mulaiHalaman();
@@ -17,7 +18,7 @@ const MIN = 12, MAKS = 128;
 const MI = "https://metiires.or.id";
 // kerangka bersama tiga halaman akun: logo + bahasa, panggung kanan, kaki tipis (teks lewat data-i18n)
 document.querySelector(".jm-ig-isi").insertAdjacentHTML("afterbegin", `<a href="${MI}" class="jm-ig-logo" aria-label="METI"><img src="/img/logo/meti-vertikal-611.png" alt="METI" width="611" height="835"></a>`);
-$("atas").innerHTML = `<div class="jm-ig-bahasa" role="group" aria-label="${t("masuk.bahasa")}"><button type="button" data-b="id" aria-pressed="${bahasa() === "id"}">ID</button><button type="button" data-b="en" aria-pressed="${bahasa() === "en"}">EN</button></div>`;
+$("atas").innerHTML = `<div class="jm-ig-bahasa" role="group" aria-label="${t("masuk.bahasa")}"><button type="button" data-b="id" aria-pressed="${bahasa() === "id"}"><img src="/img/bendera/id.svg" alt="" width="18" height="18">ID</button><button type="button" data-b="en" aria-pressed="${bahasa() === "en"}"><img src="/img/bendera/gb.svg" alt="" width="18" height="18">EN</button></div>`;
 $("atas").addEventListener("click", (e) => {
   const b = e.target.closest("button[data-b]"); if (!b) return;
   for (const x of $("atas").querySelectorAll("button[data-b]")) x.setAttribute("aria-pressed", String(x === b));
@@ -25,14 +26,40 @@ $("atas").addEventListener("click", (e) => {
 });
 const POTRET = { tgl: "2026-11-07", proyek: 548, organisasi: 363, orang: 550 }; // potret public/data/*.json; tampil dengan tanggal
 const MITRA = [["pln-indonesia-power", "PLN Indonesia Power"], ["pertamina-nre", "Pertamina NRE"], ["medco-energi", "Medco Energi"], ["pge", "Pertamina Geothermal Energy"], ["brin", "BRIN"], ["esdm", "Kementerian ESDM"]];
+/* satu pita per teknologi: [berkas, ikon IKON_TEK, kunci label, kunci lokasi, pencipta, lisensi, kunci judul kredit] (sama dengan img/beranda/KREDIT.md) */
+const PITA = [
+  ["surya-cirata", "surya", "beranda.tek.surya", "beranda.foto.surya", "indonesiagoid", "beranda.foto.lis.pd"],
+  ["bayu-sidrap", "bayu", "beranda.tek.bayu", "beranda.foto.bayu", "USAID Indonesia", "beranda.foto.lis.pd"],
+  ["hidro-saguling", "hidro", "beranda.tek.hidro", "beranda.foto.hidro", "NFarras", "CC BY-SA 4.0"],
+  ["panas-bumi-sibayak", "panas-bumi", "beranda.tek.panas-bumi", "beranda.foto.panas-bumi", "Kenrick95", "CC BY-SA 3.0"],
+  ["bioenergi-sawit", "bioenergi", "beranda.tek.bioenergi", "beranda.foto.bioenergi", "Ojiribeka Chidera", "CC BY-SA 4.0"],
+  ["bioetanol-tebu", "bioenergi", "masuk.tek.etanol", "masuk.foto.etanol", "N.V. Photografisch Atelier Kurkdjian (KITLV)", "beranda.foto.lis.pd"],
+  ["biomassa-bantargebang", "biomassa-sampah", "beranda.tek.biomassa-sampah", "beranda.foto.biomassa-sampah", "Kuncoro Widyo Rumpoko", "CC BY-SA 4.0"],
+  ["sampah-psel", "biomassa-sampah", "beranda.prog.wte", "masuk.foto.psel", "O'Dea", "CC BY-SA 4.0"],
+  ["penyimpanan-baterai", "penyimpanan", "beranda.tek.penyimpanan", "beranda.foto.cr.penyimpanan", "Kecko", "CC BY 2.0"],
+  ["hidrogen-spbu", "hidrogen", "pj.tek.hidrogen", "masuk.foto.hidrogen", "Ogidya", "CC BY-SA 4.0"],
+];
+const pitaHtml = () => PITA.map(([f, ik, lab, lok, pencipta, lis], i) => {
+  const lisensi = lis.startsWith("beranda") ? t(lis) : lis;
+  return `<div class="jm-pg-pita"><img src="/img/beranda/${f}.webp" alt="" width="800" height="600" loading="${i < 3 ? "eager" : "lazy"}" decoding="async"><span class="jm-pg-pil">${IKON_TEK[ik]}<span>${esc(t(lab))}</span><small>${esc(t(lok))}</small></span><button type="button" class="jm-pg-info" aria-expanded="false" aria-controls="kr-${i}" aria-label="${esc(t("tn.kredit.judul"))}">i</button><p class="jm-pg-kredit" id="kr-${i}" hidden>${esc(t("tn.kredit.baris", { judul: t(lok), pencipta, lisensi }))}</p></div>`;
+}).join("");
 $("panggung").className += " jm-batik jm-batik-rata";
-$("panggung").innerHTML = `<img class="jm-pg-foto" src="/img/beranda/surya-cirata.webp" alt="" width="1600" height="1067" loading="eager">
-<p class="jm-pg-ket"><b data-i18n="masuk.struk_judul">${t("masuk.struk_judul")}</b> <span data-i18n="masuk.struk_sub">${t("masuk.struk_sub")}</span></p>
+$("panggung").innerHTML = `<div class="jm-pg-pitas">${pitaHtml()}</div>
 <div class="jm-pg-lapis"><blockquote class="jm-pg-kutip" data-i18n="masuk.kutipan">${t("masuk.kutipan")}</blockquote>
 <dl class="jm-pg-stat">${[["proyek", "masuk.stat_proyek"], ["organisasi", "masuk.stat_org"], ["orang", "masuk.stat_orang"]].map(([k, l]) => `<div><dd>${angka(POTRET[k])}</dd><dt data-i18n="${l}">${t(l)}</dt></div>`).join("")}</dl>
 <div class="jm-pg-mitra"><span class="jm-pg-tumpuk">${MITRA.map(([f, n]) => `<img src="/img/logo/${f}.png" alt="${n}" title="${n}" width="40" height="40" loading="lazy">`).join("")}</span><span data-i18n="masuk.mitra">${t("masuk.mitra")}</span></div>
 <p class="jm-pg-sumber">${t("masuk.stat_sumber", { tanggal: tanggal(POTRET.tgl) })}</p></div>`;
 $("kaki-akun").innerHTML = `<nav><a href="${MI}/about" target="_blank" rel="noopener noreferrer" data-i18n="masuk.k_tentang">${t("masuk.k_tentang")}</a><a href="${MI}/policy/membership" target="_blank" rel="noopener noreferrer" data-i18n="masuk.k_privasi">${t("masuk.k_privasi")}</a><a href="${MI}" target="_blank" rel="noopener noreferrer" data-i18n="masuk.k_kontak">${t("masuk.k_kontak")}</a></nav><div class="jm-ig-sosial">${sosmedHtml(SOSMED, 18)}</div><small>&copy; 2026 METI</small>`;
+
+// titik info kredit foto: satu popover terbuka; klik di luar atau Escape menutup
+const tutupKredit = () => { for (const b of $("panggung").querySelectorAll(".jm-pg-info[aria-expanded=true]")) { b.setAttribute("aria-expanded", "false"); b.nextElementSibling.hidden = true; b.closest(".jm-pg-pita").classList.remove("buka"); } };
+$("panggung").addEventListener("click", (e) => {
+  const b = e.target.closest(".jm-pg-info"); const buka = b && b.getAttribute("aria-expanded") !== "true";
+  tutupKredit();
+  if (buka) { b.setAttribute("aria-expanded", "true"); b.nextElementSibling.hidden = false; b.closest(".jm-pg-pita").classList.add("buka"); }
+});
+document.addEventListener("click", (e) => { if (!e.target.closest("#panggung")) tutupKredit(); });
+document.addEventListener("keydown", (e) => { if (e.key === "Escape") tutupKredit(); });
 
 // pesan: ikon + teks + tombol tutup; galat di /masuk menyarankan "Lupa sandi?"
 const IKX = '<svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true" focusable="false"><path d="M6 6l12 12M18 6L6 18"/></svg>';

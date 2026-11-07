@@ -612,3 +612,11 @@ a.jm-wp-op:hover{color:var(--accent)}
 .jm-wl-legenda{overflow:hidden;max-height:calc(100% - 28px)}
 .jm-wl-rp-s span{min-width:0}.jm-wl-lg-s{max-width:100%;white-space:normal}
 .jm-wl-ajak{color:var(--accent);font-weight:600}
+
+/* Kartu Capaian RUED di profil provinsi */
+.jm-wp-cap-p{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 10px}
+.jm-wp-fakta{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin:0 0 12px}
+.jm-wp-fk{display:grid;gap:2px;padding:10px 12px;border:1px solid var(--line);border-radius:var(--r-lg);background:var(--card)}
+.jm-wp-fk dt{color:var(--ink2);font-size:var(--t-kecil)}
+.jm-wp-fk dd{margin:0;font-weight:700;font-variant-numeric:tabular-nums}
+.jm-wp-cap-g{width:100%;max-width:320px;height:auto;color:var(--ink)}

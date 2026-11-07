@@ -1,0 +1,216 @@
+{
+  "catatan": "Masukan kurasi tangan untuk /kuadran. Hanya fakta yang punya URL sumber dan tanggal periksa. Tanpa sumber = tidak ditulis (skor null), bukan nol. Label: Hipotesis.",
+  "diperiksa": "2026-11-08",
+  "sertakan_id": [
+    "su_ed074ff5",
+    "p_978ca76d57",
+    "p_bd4e2d9bd2",
+    "p_c9b8bffbec",
+    "ix_arko",
+    "ix_keen",
+    "ix_toba"
+  ],
+  "entitas_tambahan": [
+    {
+      "id": "k_pln-epi",
+      "nama": "PT PLN Energi Primer Indonesia",
+      "kategori": "bumn",
+      "alias": [
+        "pln energi primer indonesia",
+        "pln epi"
+      ],
+      "peran": [
+        "pemasok energi primer"
+      ]
+    },
+    {
+      "id": "k_pln-nr",
+      "nama": "PT PLN Nusantara Renewables",
+      "kategori": "bumn",
+      "alias": [
+        "pln nusantara renewables"
+      ],
+      "peran": [
+        "pengembang"
+      ]
+    },
+    {
+      "id": "k_geodipa",
+      "nama": "PT Geo Dipa Energi (Persero)",
+      "kategori": "bumn",
+      "alias": [
+        "geo dipa energi",
+        "geo dipa",
+        "geo dipa energi gde"
+      ],
+      "peran": [
+        "pengembang",
+        "IPP"
+      ]
+    }
+  ],
+  "alias": {
+    "su_ed074ff5": [
+      "pln",
+      "perusahaan listrik negara"
+    ],
+    "p_5a2e7d0c63": [
+      "indonesia power",
+      "pln ip"
+    ],
+    "p_ff7a390a42": [
+      "pembangkitan jawa bali",
+      "pjb",
+      "pln pjb",
+      "pln nusantara power"
+    ],
+    "p_dda1e51dae": [
+      "pertamina geothermal energy",
+      "pge"
+    ],
+    "p_b1c52ad7b0": [
+      "pertamina"
+    ],
+    "p_10e0dde689": [
+      "pertamina nre",
+      "pertamina new renewable energy"
+    ],
+    "p_978ca76d57": [
+      "mind id",
+      "mineral industri indonesia"
+    ],
+    "p_bd4e2d9bd2": [
+      "inalum",
+      "indonesia asahan aluminium"
+    ],
+    "p_bdd0f2d140": [
+      "barito renewables",
+      "barito renewables energy"
+    ],
+    "p_9de27fd5b9": [
+      "medco energi",
+      "medco energi internasional"
+    ],
+    "p_7a803f3b71": [
+      "star energy geothermal",
+      "star energy"
+    ],
+    "p_45c7d8a27f": [
+      "masdar",
+      "masdar clean energy"
+    ]
+  },
+  "kepemilikan": [
+    {
+      "induk": "su_ed074ff5",
+      "anak": "p_ff7a390a42",
+      "persen": 99.99,
+      "judul": "PLN Nusantara Power, struktur grup: PT PLN (Persero) 99,99 persen, YPK PLN 0,01 persen",
+      "url": "https://plnnusantarapower.co.id/about-us/group-structure",
+      "tanggal": "2026-11-08"
+    },
+    {
+      "induk": "su_ed074ff5",
+      "anak": "p_5a2e7d0c63",
+      "persen": 100,
+      "judul": "Global Energy Monitor Wiki, profil pemilik PLN Indonesia Power (OpenSanctions mencatat 99,99 persen: angka berbeda antarsumber)",
+      "url": "https://www.gem.wiki/E100000003758",
+      "tanggal": "2026-11-08"
+    },
+    {
+      "induk": "p_ff7a390a42",
+      "anak": "k_pln-nr",
+      "persen": 100,
+      "judul": "Global Energy Monitor Wiki, profil PT PLN Nusantara Renewables",
+      "url": "https://www.gem.wiki/E100001001091",
+      "tanggal": "2026-11-08"
+    },
+    {
+      "induk": "su_ed074ff5",
+      "anak": "k_pln-epi",
+      "persen": null,
+      "judul": "Jakarta Post: PLN Energi Primer Indonesia ialah sub-holding hasil restrukturisasi PLN (persen tidak diterbitkan di sumber ini)",
+      "url": "https://www.thejakartapost.com/opinion/2022/10/05/analysis-pln-restructuring-paves-way-for-subsidiary-privatization",
+      "tanggal": "2026-11-08"
+    },
+    {
+      "induk": "x_ppi",
+      "anak": "p_dda1e51dae",
+      "persen": 68.848,
+      "judul": "Kabarbursa: PT Pertamina Power Indonesia memegang 28,57 miliar saham PGEO atau sekitar 68,848 persen",
+      "url": "https://www.kabarbursa.com/ekonomi-hijau/potensi-saham-pgeo-di-tengah-transisi-energi-bersih",
+      "tanggal": "2026-11-08"
+    },
+    {
+      "induk": "x_masdar",
+      "anak": "p_dda1e51dae",
+      "persen": 14.964,
+      "judul": "Kabarbursa: Masdar Indonesia Solar Holdings RSC Limited sekitar 14,964 persen saham PGEO",
+      "url": "https://www.kabarbursa.com/ekonomi-hijau/potensi-saham-pgeo-di-tengah-transisi-energi-bersih",
+      "tanggal": "2026-11-08"
+    },
+    {
+      "induk": "x_pedeve",
+      "anak": "p_dda1e51dae",
+      "persen": 5.971,
+      "judul": "Kabarbursa: PT Pertamina Pedeve Indonesia sekitar 5,971 persen saham PGEO",
+      "url": "https://www.kabarbursa.com/ekonomi-hijau/potensi-saham-pgeo-di-tengah-transisi-energi-bersih",
+      "tanggal": "2026-11-08"
+    },
+    {
+      "induk": "x_brpt",
+      "anak": "p_bdd0f2d140",
+      "persen": 64.67,
+      "judul": "Bareksa: struktur pemegang saham BREN per 31 Maret 2026, PT Barito Pacific Tbk 64,67 persen",
+      "url": "https://www.bareksa.com/berita/saham/2026-04-09/struktur-pemegang-saham-bren-maret-2026-free-float-masih-rendah",
+      "tanggal": "2026-04-09"
+    },
+    {
+      "induk": "x_greenera",
+      "anak": "p_bdd0f2d140",
+      "persen": 22.93,
+      "judul": "Bareksa: Green Era Energy Pte Ltd 22,93 persen BREN per Maret 2026 (Bisnis mencatat 22,01 persen pada 2025: angka berbeda antarsumber)",
+      "url": "https://www.bareksa.com/berita/saham/2026-04-09/struktur-pemegang-saham-bren-maret-2026-free-float-masih-rendah",
+      "tanggal": "2026-04-09"
+    }
+  ],
+  "simpul_luar": {
+    "x_ppi": {
+      "nama": "PT Pertamina Power Indonesia",
+      "kategori": "bumn"
+    },
+    "x_masdar": {
+      "nama": "Masdar Indonesia Solar Holdings RSC Limited",
+      "kategori": "internasional"
+    },
+    "x_pedeve": {
+      "nama": "PT Pertamina Pedeve Indonesia",
+      "kategori": "bumn"
+    },
+    "x_brpt": {
+      "nama": "PT Barito Pacific Tbk",
+      "kategori": "swasta"
+    },
+    "x_greenera": {
+      "nama": "Green Era Energy Pte Ltd",
+      "kategori": "swasta"
+    }
+  },
+  "aliran": {
+    "ix_keen": {
+      "tahun": 2024,
+      "satuan": "USD juta",
+      "total": 37.87,
+      "lini": [
+        {
+          "kunci": "konsesi_plta",
+          "nilai": 14
+        }
+      ],
+      "sumber_url": "organisasi"
+    }
+  },
+  "kategori": {
+    "p_dda1e51dae": "bumn"
+  }
+}

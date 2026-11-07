@@ -79,7 +79,7 @@ function gambarDaftar() {
   S.hal = Math.min(S.hal, Math.max(1, Math.ceil(rows.length / HAL)));
   const potong = rows.slice((S.hal - 1) * HAL, S.hal * HAL);
   const th = (k, kelas = "", uk = "") => uk ? `<th class="${kelas}" aria-sort="${S.uk === uk ? (S.ua > 0 ? "ascending" : "descending") : "none"}"><button type="button" class="jm-urut" data-uk="${uk}">${esc(t(k))}</button></th>` : `<th class="${kelas}">${esc(t(k))}</th>`;
-  document.getElementById("isi").innerHTML = potong.length ? `<div class="jm-gulir"><table class="jm-tabel jm-tabel-tetap" data-urut="tidak"><thead><tr>${th("td.col.no", "jm-no")}${th("td.col.tender", "", "judul")}${th("td.col.tek", "", "tek")}${th("td.col.prov", "", "prov")}${th("td.col.tahap", "", "tahap")}${th("td.col.tanggal", "", "tanggal")}${th("td.col.mw", "", "mw")}${th("td.col.aksi")}</tr></thead><tbody>${potong.map((r, i) => barisHtml(r, (S.hal - 1) * HAL + i)).join("")}</tbody></table></div>`
+  document.getElementById("isi").innerHTML = potong.length ? `<div class="jm-gulir"><table class="jm-tabel jm-td-tabel" data-urut="tidak"><thead><tr>${th("td.col.no", "jm-no")}${th("td.col.tender", "", "judul")}${th("td.col.tek", "", "tek")}${th("td.col.prov", "", "prov")}${th("td.col.tahap", "", "tahap")}${th("td.col.tanggal", "", "tanggal")}${th("td.col.mw", "", "mw")}${th("td.col.aksi")}</tr></thead><tbody>${potong.map((r, i) => barisHtml(r, (S.hal - 1) * HAL + i)).join("")}</tbody></table></div>`
     : kosongHtml("jm.kosong.cocok", { data: "reset", kunci: "jm.kosong.reset" });
   document.getElementById("hal").innerHTML = paginasiHtml({ hal: S.hal, total: rows.length, per: HAL, satuan: "jm.pag.u.tender" });
   document.getElementById("hitung").textContent = t("td.hitung", { n: angka(rows.length), c: angka(D.baris.length) });
@@ -94,12 +94,12 @@ function gambarKaki() {
 }
 
 function gambarKepala() {
-  const mw = D.baris.reduce((u, r) => u + (r.rencana_mw || 0), 0), terbaru = D.baris.map((r) => r.tanggal).filter(Boolean).sort().at(-1);
+  const mw = D.baris.reduce((u, r) => u + (r.rencana_mw || 0), 0), terbaru = Math.max(...D.baris.map((r) => r.tahun || 0));
   khUbin("khUbin", [
     { ikon: "palu", nilai: angka(D.baris.length), label: t("td.kh.jumlah") },
     { ikon: "grafik", nilai: angka(mw), satuan: t("td.mw"), label: t("td.kh.mw") },
     { ikon: "lokasi", nilai: angka(new Set(D.baris.map((r) => r.provinsi).filter(Boolean)).size), label: t("td.kh.prov") },
-    { ikon: "kalender", nilai: terbaru ? tanggal(terbaru) : "-", label: t("td.kh.terbaru") },
+    { ikon: "kalender", nilai: terbaru ? String(terbaru) : "-", label: t("td.kh.terbaru") },
   ]);
 }
 

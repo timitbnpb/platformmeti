@@ -7,3 +7,6 @@
 .jm-td-cat{display:grid;gap:6px;margin:0;padding:12px 16px;border:1px solid var(--line);border-radius:var(--r);background:var(--surface);color:var(--ink2);font-size:var(--t-kecil)}
 .jm-td-cat ul{margin:0;padding-left:18px;display:grid;gap:4px}
 .jm-td-cat b{color:var(--head)}
+.jm-td-tabel{table-layout:auto}
+.jm-td-tabel td.jm-id-sel{min-width:260px}
+.jm-td-tabel .jm-id b,.jm-td-tabel .jm-id small{white-space:normal;overflow:visible;text-overflow:clip}

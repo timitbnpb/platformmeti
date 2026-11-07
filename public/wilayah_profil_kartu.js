@@ -186,5 +186,21 @@ export function kartu(H) {
       lebih.textContent = buka ? lebih.dataset.sedikit : lebih.dataset.semua;
     });
   }
-  return { organisasi, petaSeksi, bukaPeta, emisi, banding, pasang };
+
+  /* Kartu "Capaian RUED": target bauran 2025 dibanding realisasi pangsa kapasitas EBT; selalu Hipotesis (ukuran berbeda). Data: /data/rued_capaian.json. */
+  function capaian(p, C) {
+    const c = C?.baris.find((x) => x.kode === p.kode);
+    if (!c) return "";
+    const ST = { tercapai: "jm-pil-ok", "di-jalur": "jm-pil-warn", tertinggal: "jm-pil-bad" };
+    const pil = c.status ? `<span class="jm-pil ${ST[c.status]}">${esc(t("wp.cap.st." + c.status))}</span>` : "";
+    const hip = `<span class="jm-pil jm-pil-warn" title="${esc(t("wp.cap.hip_tip"))}">${esc(t("wp.cap.hip"))}</span>`;
+    const fakta = [["wp.cap.target", c.target_2025_persen == null ? null : num(c.target_2025_persen, 1) + "%"], ["wp.cap.akhir", c.target_akhir ? t("wp.cap.akhir_isi", { p: num(c.target_akhir.persen, 1), th: c.target_akhir.tahun }) : null], ["wp.cap.real", c.realisasi_persen == null ? null : num(c.realisasi_persen, 1) + "%"], ["wp.cap.selisih", c.selisih_poin == null ? null : (c.selisih_poin > 0 ? "+" : "") + num(c.selisih_poin, 1) + " " + t("wp.cap.poin")]]
+      .map(([k, v]) => `<div class="jm-wp-fk"><dt>${esc(t(k))}</dt><dd>${v == null ? `<span title="${esc(c.alasan_kosong || t("wp.cap.kosong"))}" tabindex="0">-</span>` : esc(v)}</dd></div>`).join("");
+    const kol = c.target_2025_persen != null && c.realisasi_persen != null ? (() => { const m = Math.max(c.target_2025_persen, c.realisasi_persen, 1), h = (v) => Math.max(2, v / m * 90);
+      return `<svg viewBox="0 0 200 130" class="jm-wp-cap-g" role="img" aria-label="${esc(t("wp.cap.grafik"))}"><line x1="10" x2="190" y1="105" y2="105" stroke="currentColor" opacity=".25"/><rect x="40" y="${105 - h(c.target_2025_persen)}" width="45" height="${h(c.target_2025_persen)}" rx="4" fill="var(--data5, #7a8aa0)"/><rect x="115" y="${105 - h(c.realisasi_persen)}" width="45" height="${h(c.realisasi_persen)}" rx="4" fill="var(--brand)"/><text x="62" y="${100 - h(c.target_2025_persen)}" text-anchor="middle" font-size="11" font-weight="700" fill="currentColor">${esc(num(c.target_2025_persen, 1))}</text><text x="137" y="${100 - h(c.realisasi_persen)}" text-anchor="middle" font-size="11" font-weight="700" fill="currentColor">${esc(num(c.realisasi_persen, 1))}</text><text x="62" y="122" text-anchor="middle" font-size="10" fill="currentColor">${esc(t("wp.cap.g_target"))}</text><text x="137" y="122" text-anchor="middle" font-size="10" fill="currentColor">${esc(t("wp.cap.g_real"))}</text></svg>`; })() : "";
+    const tautan = [c.url_pdf && `<a href="${esc(c.url_pdf)}" target="_blank" rel="noopener noreferrer">${esc(t("wp.cap.perda", { perda: c.perda }))}</a>`, c.realisasi_sumber_url && `<a href="${esc(c.realisasi_sumber_url)}" target="_blank" rel="noopener noreferrer">${esc(t("wp.cap.stat"))}</a>`].filter(Boolean).join(" | ");
+    const j = c.status ? t("wp.cap.j", { nama: p.nama, status: t("wp.cap.st." + c.status).toLocaleLowerCase(), r: num(c.rasio_persen, 0) }) : t("wp.cap.j0", { nama: p.nama });
+    return seksi({ id: "capaian-rued", ikon: "grafik", topik: t("wp.cap.ey"), judulHtml: esc(j), aksiHtml: aksiHtml(), isiHtml: `<p class="jm-wp-cap-p">${pil} ${hip}</p><dl class="jm-wp-fakta">${fakta}</dl>${kol}`, kakiHtml: `<p class="jm-bantu">${esc(C.metode)}</p><p class="jm-bantu">${tautan}</p>` });
+  }
+  return { organisasi, petaSeksi, bukaPeta, emisi, banding, pasang, capaian };
 }

@@ -126,3 +126,27 @@
 
 /* tab di /peluang: panel Peta dan Hitung memakai jarak antarblok yang sama */
 #panelPeta,#panelHitung{display:grid;gap:var(--gap);min-width:0}
+
+/* tab PLTS atap (plts_atap.js) */
+.jm-pa{display:grid;gap:var(--gap);min-width:0}
+.jm-pa-alat{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:var(--gap)}
+.jm-pa-angka{display:flex;align-items:center;gap:8px;min-height:var(--target);padding:0 12px;border:1px solid var(--line-ctl);border-radius:var(--r-pil);background:var(--card);color:var(--accent)}
+.jm-pa-angka input{flex:1;min-width:0;min-height:var(--target);border:0;background:transparent;color:var(--ink);font:400 var(--t-body)/1 var(--font)}
+.jm-pa-angka input:focus-visible{outline:2px solid var(--fokus);outline-offset:2px}
+.jm-pa-ubin{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:var(--gap)}
+.jm-pa-ub{display:grid;gap:4px;align-content:start;min-width:0;padding:16px;border:1px solid var(--line);border-radius:var(--r);background:var(--card)}
+.jm-pa-nilai{margin:0;font:700 var(--t-h2)/var(--lh-judul) var(--display);color:var(--head);font-variant-numeric:tabular-nums;overflow-wrap:anywhere}
+.jm-pa-lbl{margin:0;display:flex;flex-wrap:wrap;align-items:center;gap:6px;color:var(--ink2);font:600 var(--t-kecil)/var(--lh-rapat) var(--font)}
+.jm-pa-ub small{color:var(--ink2);font-size:var(--t-kecil)}
+.jm-pa-war{display:flex;align-items:flex-start;gap:8px;margin:0;padding:10px 14px;border-radius:var(--r-sm);background:var(--warn-bg);color:var(--warn)}
+.jm-pa-war .jm-ik{flex:none;margin-top:2px}
+.jm-pa-cara,.jm-pa-bag{padding:16px 20px;border:1px solid var(--line);border-radius:var(--r);background:var(--card);min-width:0}
+.jm-pa-cara summary{display:flex;align-items:center;gap:8px;min-height:var(--target);cursor:pointer;font:700 var(--t-h3)/var(--lh-judul) var(--display);color:var(--head)}
+.jm-pa-cara ol,.jm-pa-butir{margin:8px 0 0;padding-left:20px;display:grid;gap:8px;color:var(--ink2);line-height:var(--lh-isi)}
+.jm-pa-bag{display:grid;gap:10px}
+.jm-pa-bag h3{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin:0;font:700 var(--t-h3)/var(--lh-judul) var(--display);color:var(--head)}
+.jm-pa-bag p{margin:0}
+@media (max-width:1023px){.jm-pa-alat,.jm-pa-ubin{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:639px){.jm-pa-alat,.jm-pa-ubin{grid-template-columns:minmax(0,1fr)}}
+.jm-pa-ub .jm-kpi-ik{position:static;float:none;justify-self:start;margin:0}
+.jm-pa-ub .jm-pa-nilai{order:1}.jm-pa-ub .jm-pa-lbl{order:2}.jm-pa-ub small{order:3}

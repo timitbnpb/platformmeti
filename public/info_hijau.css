@@ -1,0 +1,34 @@
+/* Halaman informasi biaya, keuangan, dan pasar hijau. Token tema.css saja. */
+.ih-svg{width:100%;height:auto;display:block}
+.ih-svg text{font-family:var(--font);font-size:var(--t-kecil);fill:var(--ink2)}
+.ih-grid{stroke:var(--line);stroke-width:1}
+.ih-ref{stroke:var(--warn);stroke-width:1.5;stroke-dasharray:6 4}
+.ih-svg .ih-lbl-ref{fill:var(--warn);font-weight:600}
+.ih-svg .ih-lbl-s,.ih-svg .ih-lbl-b{fill:var(--ink)}
+.ih-bar{fill:currentColor}
+.ih-bar:hover,.ih-bar:focus-visible{opacity:.78;outline:none}
+.ih-gr{fill:none;stroke:currentColor;stroke-width:2.25;stroke-linejoin:round}
+.ih-tk{fill:currentColor;stroke:var(--card);stroke-width:1.5}
+.ih-tk:focus-visible{outline:none;stroke:var(--fokus);stroke-width:3}
+.ih-g .ih-lbl-s{fill:currentColor}
+.ih-sorot .ih-lbl-b{font-weight:700}
+.ih-leg{display:flex;flex-wrap:wrap;gap:6px 18px;list-style:none;margin:0 0 10px;padding:0;font:400 var(--t-kecil)/var(--lh-rapat) var(--font);color:var(--ink2)}
+.ih-leg li{display:inline-flex;align-items:center;gap:6px;white-space:nowrap}
+.ih-sw{display:inline-block;width:12px;height:12px;border-radius:3px;background:currentColor}
+.ih-detail{margin-top:8px}
+.ih-bagan{margin-top:4px}
+.ih-tabel{margin-top:16px}
+.ih-s1{color:var(--tp-surya)}.ih-s2{color:var(--tp-bayu)}.ih-s3{color:var(--tp-hidro)}.ih-s4{color:var(--tp-panas)}.ih-s5{color:var(--tp-bio)}.ih-s6{color:var(--tp-simpan)}.ih-s7{color:var(--tp-hidrogen)}
+.ih-ebt{color:var(--accent-isi)}.ih-fosil{color:var(--tp-karbon)}.ih-lain{color:var(--tp-jaringan)}
+.ih-id{color:var(--brand2)}.ih-lawan{color:var(--data3)}.ih-netral{color:var(--data5)}
+.ih-celah{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));list-style:none;margin:0;padding:0}
+.ih-celah-k{display:flex;gap:12px;align-items:flex-start;padding:14px;border:1px solid var(--line);border-radius:var(--r);background:var(--card)}
+.ih-celah-k h3{margin:0 0 4px;font:600 var(--t-body)/var(--lh-rapat) var(--font);color:var(--ink)}
+.ih-celah-k p{margin:0 0 6px;font:400 var(--t-kecil)/var(--lh-isi) var(--font);color:var(--ink2)}
+.ih-tautan{font:600 var(--t-kecil)/1 var(--font);color:var(--accent);text-decoration:none;overflow-wrap:anywhere}
+.ih-tautan:hover{text-decoration:none;color:var(--brand2)}
+.ih-tautan-pil{display:inline-flex;align-items:center;gap:6px;min-height:var(--target);padding:0 14px;border-radius:var(--r-pil);background:var(--soft-hijau);color:var(--accent);font:600 var(--t-tombol)/1 var(--font);text-decoration:none}
+.ih-catatan{margin:10px 0 0}
+.ih-baris-id td{font-weight:700}
+.ih-dua{display:grid;gap:16px;grid-template-columns:minmax(0,1fr)}
+@media (min-width:900px){.ih-dua{grid-template-columns:repeat(2,minmax(0,1fr))}}

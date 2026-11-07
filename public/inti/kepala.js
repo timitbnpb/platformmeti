@@ -24,22 +24,23 @@ const TAB = [
   { href: "/", kunci: "nav.beranda", ikon: "beranda", hak: null },
   { kunci: "nav.insight", ikon: "insight", hak: null, grup: [
     { href: "/insight", kunci: "nav.insight_ringkasan", ikon: "kajian" }, { href: "/insight#tren", kunci: "nav.sub.tren", ikon: "linimasa" },
-    { href: "/rantai", kunci: "nav.rantai", ikon: "rantai" }, { href: "/asean", kunci: "nav.asean", ikon: "asean" }, { href: "/jejaring", kunci: "nav.jejaring", ikon: "tautan" }] },
+    { href: "/rapor", kunci: "nav.rapor", ikon: "presentasi" }, { href: "/rantai", kunci: "nav.rantai", ikon: "rantai" }, { href: "/asean", kunci: "nav.asean", ikon: "asean" }, { href: "/jejaring", kunci: "nav.jejaring", ikon: "tautan" }, { href: "/metode", kunci: "nav.sub.metode", ikon: "metode" }] },
   { kunci: "nav.wilayah", ikon: "wilayah", hak: null, grup: [
     { href: "/wilayah", kunci: "nav.wilayah_peta", ikon: "peta" }, { href: "/proyek", kunci: "nav.proyek", ikon: "proyek" },
     { href: "/program", kunci: "nav.program", ikon: "bintang" }, { href: "/peluang", kunci: "nav.peluang", ikon: "kompas" },
+    { href: "/tender", kunci: "nav.tender", ikon: "palu" },
     { href: "/indeks", kunci: "nav.indeks", ikon: "grafik" }] },
   { kunci: "nav.direktori", ikon: "direktori", hak: "masuk", grup: [
     { href: "/direktori?tampil=pakar", kunci: "nav.d_orang", ikon: "orang" }, { href: "/direktori?tampil=lembaga", kunci: "nav.d_org", ikon: "gedung" },
     { href: "/direktori?tampil=inovasi", kunci: "nav.d_inovasi", ikon: "tek-surya" }, { href: "/sektor", kunci: "nav.d_sektor", ikon: "analisis" }] },
   { kunci: "nav.pustaka", ikon: "buku", hak: null, grup: [
-    { href: "/regulasi", kunci: "nav.regulasi", ikon: "regulasi" }, { href: "/pustaka", kunci: "nav.dokumen", ikon: "pdf" }] },
+    { href: "/regulasi", kunci: "nav.regulasi", ikon: "regulasi" }, { href: "/pustaka", kunci: "nav.dokumen", ikon: "pdf" }, { href: "/dokumen-data", kunci: "nav.dokumen_data", ikon: "tabel" }] },
   { kunci: "nav.media", ikon: "kamera", hak: null, grup: [
     { href: "/berita", kunci: "nav.berita", ikon: "berita" }, { href: "/siaran-pers", kunci: "nav.siaran", ikon: "siaran" },
     { href: "/galeri", kunci: "nav.foto", ikon: "gambar" },
     { href: "/kalender", kunci: "nav.acara", ikon: "kalender" }] },
   { kunci: "nav.tentang", ikon: "perisai", hak: null, grup: [
-    { href: "/tentang", kunci: "nav.tentang_ringkas", ikon: "info" }, { href: "/meti-wilayah", kunci: "nav.meti_wilayah", ikon: "lokasi" }, { href: "/metode", kunci: "nav.sub.metode", ikon: "metode" }] },
+    { href: "/tentang", kunci: "nav.tentang_ringkas", ikon: "info" }, { href: "/meti-wilayah", kunci: "nav.meti_wilayah", ikon: "lokasi" }] },
 ];
 
 const BENDERA = {
@@ -131,12 +132,11 @@ function kakiHtml() {
   const kontak = KONTAK.map(([k, v, ik, u]) => `<li><span class="jm-kaki-ik">${SVG(ik, 16)}</span><span><small data-i18n="${k}">${t(k)}</small><a href="${u}"${u.startsWith("http") ? ' target="_blank" rel="noopener noreferrer"' : ""}>${v}</a></span></li>`).join("");
   return `<div class="jm-kaki-isi jm-wadah">
     <div class="jm-kaki-k1"><div class="jm-kaki-merek"><span class="jm-kaki-logo"><img src="/img/logo-meti-tanda.png" width="40" height="38" alt=""></span><div><strong>METI</strong><span data-i18n="jm.kaki_org_pendek">${t("jm.kaki_org_pendek")}</span></div></div>
-      <ul class="jm-kaki-stat" id="kakiStat"><li title="${t("jm.kaki.sumber_berdiri")}" data-i18n-attr="title:jm.kaki.sumber_berdiri"><i>${ikon("kalender", 18)}</i><b>1999</b><span data-i18n="jm.kaki.berdiri">${t("jm.kaki.berdiri")}</span></li></ul>
-      <div class="jm-kaki-sos">${sosmedHtml()}</div></div>
+      <ul class="jm-kaki-stat" id="kakiStat"><li title="${t("jm.kaki.sumber_berdiri")}" data-i18n-attr="title:jm.kaki.sumber_berdiri"><i>${ikon("kalender", 18)}</i><b>1999</b><span data-i18n="jm.kaki.berdiri">${t("jm.kaki.berdiri")}</span></li></ul></div>
     ${kol}
   </div>
   <div class="jm-kaki-kontak jm-wadah">
-    <nav class="jm-kaki-kol jm-kaki-hub" aria-labelledby="jm-kaki-hubungi"><h2 id="jm-kaki-hubungi" data-i18n="jm.kaki.hubungi">${t("jm.kaki.hubungi")}</h2><ul>${kontak}<li class="jm-kaki-lgli"><a class="jm-tbl jm-kaki-lg" href="/langganan">${SVG(IK.surel, 16)}<span data-i18n="jm.kaki.langganan">${t("jm.kaki.langganan")}</span></a></li></ul></nav>
+    <nav class="jm-kaki-kol jm-kaki-hub" aria-labelledby="jm-kaki-hubungi"><h2 id="jm-kaki-hubungi" data-i18n="jm.kaki.hubungi">${t("jm.kaki.hubungi")}</h2><ul>${kontak}<li class="jm-kaki-lgli"><a class="jm-tbl jm-kaki-lg" href="/langganan">${SVG(IK.surel, 16)}<span data-i18n="jm.kaki.langganan">${t("jm.kaki.langganan")}</span></a><div class="jm-kaki-sos">${sosmedHtml()}</div></li></ul></nav>
   </div>
   <div class="jm-kaki-bawah jm-wadah"><p>&copy; 2026 METI</p><a href="${MI}/policy/membership" target="_blank" rel="noopener noreferrer" data-i18n="jm.kaki.kebijakan">${t("jm.kaki.kebijakan")}</a>
     <button type="button" class="jm-kaki-atas" id="kakiAtas" aria-label="${t("jm.kaki.atas")}" title="${t("jm.kaki.atas")}" data-i18n-attr="aria-label:jm.kaki.atas;title:jm.kaki.atas">${SVG(IK.atas, 16)}</button></div>`;

@@ -65,7 +65,8 @@ function pencar(proyek, org) {
       <span class="jm-pm-v"><b>${esc(angka(d.bangun + d.rencana))}</b> <small>MW</small></span>
       <span class="jm-pm-pil">${d.bangun ? `<span class="jm-pil-st jm-st-beroperasi">${ikonStatus("beroperasi").replace('class="jm-ikt"', 'class="jm-ikt jm-ikt-s"')}<span>${esc(t("beranda.ds.pengembang.bangun", { n: angka(d.bangun) }))}</span></span>` : ""}${d.rencana ? `<span class="jm-pil-st jm-st-rencana">${ikon("kalender", 14)}<span>${esc(t("beranda.ds.pengembang.rencana", { n: angka(d.rencana) }))}</span></span>` : ""}</span></li>`;
   }).join("");
-  const svg = `<ol class="jm-pm-daftar" aria-label="${esc(t("beranda.ds.pengembang.aria"))}">${baris}</ol>`;
+  const leg = `<div class="jm-pm-leg"><b>${esc(t("beranda.ds.pengembang.st"))}</b><span class="jm-pil-st jm-st-beroperasi" title="${esc(t("beranda.ds.pengembang.bangun_t"))}">${ikonStatus("beroperasi").replace('class="jm-ikt"', 'class="jm-ikt jm-ikt-s"')}<span>${esc(t("beranda.ds.pengembang.bangun_l"))}</span></span><span class="jm-pil-st jm-st-rencana" title="${esc(t("beranda.ds.pengembang.rencana_t"))}">${ikon("kalender", 14)}<span>${esc(t("beranda.ds.pengembang.rencana_l"))}</span></span></div>`;
+  const svg = leg + `<ol class="jm-pm-daftar" aria-label="${esc(t("beranda.ds.pengembang.aria"))}">${baris}</ol>`;
   const total = jml(semua, (d) => d.bangun + d.rencana), bumn = jml(semua.filter((d) => BUMN.test(d.k)), (d) => d.bangun + d.rencana);
   return { n: semua.length, pangsa: total ? (bumn / total) * 100 : 0, pipa: jml(semua, (d) => d.rencana + (d.bangun)), svg };
 }

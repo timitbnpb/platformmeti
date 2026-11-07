@@ -44,7 +44,7 @@ function gambarTabel() {
     const tinjau = r.perlu_tinjau ? ` <span class="jm-pil jm-pil-warn" title="${esc(t("dd.tinjau_tip"))}">${esc(t("dd.tinjau"))}</span>` : "";
     return `<tr>${tab.kolom.map((c) => sel(d, tab, c, r)).join("")}<td data-label="${esc(t("dd.hlm"))}">${hlm}${tinjau}</td></tr>`;
   }).join("");
-  $("ddTabel").innerHTML = `${tab.catatan ? `<p class="dd-cat">${esc(tab.catatan)} ${esc(t("dd.satuan", { s: tab.satuan }))}</p>` : ""}<div class="jm-gulir"><table class="jm-tabel" data-urut="tidak"><thead><tr>${kepala}</tr></thead><tbody>${badan || `<tr><td colspan="${tab.kolom.length + 1}">${esc(t("dd.tak_ada"))}</td></tr>`}</tbody></table></div>${paginasiHtml({ hal: per, total, per: PER, satuan: "dd.u.baris" })}`;
+  $("ddTabel").innerHTML = `${tab.catatan ? `<p class="dd-cat">${esc(tab.catatan)} ${esc(t("dd.satuan", { s: tab.satuan }))}</p>` : ""}<div class="jm-gulir"><table class="jm-tabel" data-urut="tidak"><thead><tr>${kepala}</tr></thead><tbody>${badan || `<tr><td colspan="${tab.kolom.length + 1}">${esc(t("dd.tak_ada"))}</td></tr>`}</tbody></table></div>${paginasiHtml({ hal: per, total, per: PER, satuan: "dd.satuan_baris" })}`;
 }
 
 function gambarDok() {

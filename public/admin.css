@@ -226,3 +226,36 @@ li.jm-ber-kosong{justify-content:center;color:var(--ink2);border-style:dashed}
 .sta-cara{display:grid;gap:8px;margin:0;padding-left:18px;color:var(--ink);line-height:var(--lh-isi)}
 .sta-lama{margin-top:20px}
 .sta-lama .jm-adm-sub{margin-top:0}
+
+/* tab Persetujuan anggota (8 Nov 2026) */
+.pd-seg{display:grid!important;grid-auto-flow:column;grid-auto-columns:1fr;width:100%;margin-bottom:12px}
+.pd-seg>button{justify-content:center;text-align:center}
+.pd-n{display:inline-grid;place-items:center;min-width:22px;padding:0 6px;border-radius:var(--r-pil);background:var(--line-cell);color:var(--head);font:600 var(--t-label)/1.6 var(--font)}
+.pd-n:empty{display:none}
+dialog.jm-dlg.pd-dlg{width:min(980px,calc(100vw - 24px));max-height:calc(100dvh - 24px);overflow:auto;padding:0}
+.pd-dlg-isi{display:grid;gap:18px;padding:20px}
+.pd-dlg-kepala{display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:14px;align-items:center}
+.pd-dlg-kepala h2{margin:0;font:700 var(--t-h2)/var(--lh-judul) var(--display);color:var(--head);overflow-wrap:anywhere}
+.pd-dlg-kepala p{margin:4px 0 0}
+.pd-foto{width:72px;height:72px;border-radius:var(--r);object-fit:cover;background:var(--soft-hijau)}
+.pd-foto-ik{display:grid;place-items:center;color:var(--accent)}
+.pd-dlg-kolom{display:grid;gap:20px;grid-template-columns:minmax(0,1fr)}
+@media (min-width:860px){.pd-dlg-kolom{grid-template-columns:minmax(0,3fr) minmax(0,2fr)}}
+.pd-dlg-isi h3{margin:0 0 8px;font:700 var(--t-h3)/var(--lh-rapat) var(--display);color:var(--head)}
+.pd-dl{display:grid;gap:10px;margin:0}
+.pd-dl>div{display:grid;gap:2px}
+.pd-dl dt{font-size:var(--t-kecil);color:var(--ink2)}
+.pd-dl dd{margin:0;color:var(--ink);overflow-wrap:anywhere;line-height:var(--lh-isi)}
+.pd-tek{display:flex;flex-wrap:wrap;gap:6px}
+.pd-besar{display:flex;flex-wrap:wrap;align-items:center;gap:8px 12px;margin:0 0 10px;font:700 var(--t-h2)/var(--lh-judul) var(--display);color:var(--head)}
+.pd-bukti{display:grid;gap:8px;margin:0;padding:0;list-style:none}
+.pd-bukti li{display:flex;flex-wrap:wrap;align-items:center;gap:8px;padding:10px 12px;border:1px solid var(--line-cell);border-radius:var(--r-sm)}
+.pd-bukti li>svg{color:var(--accent)}
+.pd-putus{display:grid;gap:12px;padding-top:14px;border-top:1px solid var(--line)}
+.pd-aksi{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:10px}
+.pd-tautan{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:8px}
+.pd-atur{display:grid;gap:14px}
+.pd-atur-kisi{display:grid;gap:14px;grid-template-columns:minmax(0,1fr)}
+@media (min-width:700px){.pd-atur-kisi{grid-template-columns:repeat(3,minmax(0,1fr))}}
+.dft-info{display:flex;align-items:flex-start;gap:8px;margin:0;font-size:var(--t-kecil);line-height:var(--lh-isi);color:var(--ink2)}
+.dft-info svg{flex:none;margin-top:2px;color:var(--accent)}

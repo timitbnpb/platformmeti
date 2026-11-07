@@ -10,7 +10,7 @@ const $ = (id) => document.getElementById(id);
 const param = new URLSearchParams(location.search).get("prov");
 const REG = new Map();
 let data = null, geo = null, metrik = "terpasang", peta = null, petaSiap = false, tek = "semua";
-const PEL = new Map(); let PELMETA = null;
+const PEL = new Map(), CAP = new Map(); let PELMETA = null, CAPTGL = null;
 const TEKS = ["surya", "bayu", "hidro", "mikrohidro", "panas_bumi", "bioenergi", "laut"], TEKIK = { panas_bumi: "panas-bumi", mikrohidro: "hidro", semua: "jaringan" };
 const daftarTek = () => (tek === "semua" ? TEKS : [tek]);
 const jumlah = (a) => (a.length ? a.reduce((x, y) => x + y, 0) : null);
@@ -21,6 +21,7 @@ const METRIK = {
   ebt: { ambil: (p) => jumlah(daftarTek().map((k) => PEL.get(p.kode)?.potensi[k]?.mw).filter((v) => v != null)), satuan: "MW", d: 0, sumber: sumberEbt, kedua: ["terpasang", "proyek"] },
   sisa: { ambil: (p) => jumlah(daftarTek().map((k) => { const b = PEL.get(p.kode), a = b?.potensi[k]?.mw, c = b?.terpasang?.[k]?.mw; return a != null && c != null ? Math.max(0, a - c) : null; }).filter((v) => v != null)), satuan: "MW", d: 0, sumber: sumberEbt, kedua: ["ebt", "terpasang"] },
   proyek: { ambil: (p) => p.jumlah_proyek, satuan: "", d: 0, sumber: () => null, kedua: ["terpasang", "ebt"] },
+  capaian: { ambil: (p) => CAP.get(p.kode)?.rasio_persen ?? null, satuan: "%", d: 0, sumber: (p) => (CAP.has(p.kode) ? { sumber: t("wl.sumber_capaian"), tanggal: CAPTGL } : null), kedua: ["terpasang", "rued"] },
   rued: { ambil: (p) => (p.rued.perda ? 1 : null), satuan: "", d: 0, sumber: (p) => (p.rued.perda ? { sumber: t("wl.sumber_rued"), url: p.rued.url, tanggal: p.rued.tanggal } : null), kedua: ["terpasang", "proyek"] },
 };
 const nilaiTeks = (m, p) => {
@@ -245,6 +246,7 @@ async function mulai() {
   try { data = await muatData("wilayah.json"); } catch (e) { tampilGalat($(param ? "profil-isi" : "kartu"), mulai); if (param) { $("daftar").hidden = true; $("profil").hidden = false; } return; }
   try { for (const r of (await muatData("regulasi.json")).baris) REG.set(r.id, r); } catch (e) { /* tanpa naskah: tautan sumber saja */ }
   try { const pl = await muatData("peluang.json"); PELMETA = pl.meta.diperbarui; for (const b of pl.baris) PEL.set(b.kode, b); } catch (e) { /* tanpa peluang: segmen EBT kosong */ }
+  try { const cp = await muatData("rued_capaian.json"); CAPTGL = cp.dibangun_pada; for (const b of cp.baris) CAP.set(b.kode, b); } catch (e) { /* tanpa capaian: segmen kosong */ }
   if (!param) pasangAksi(["aksi-urut"]);
   gambar();
   saatBahasa(gambar);

@@ -21,14 +21,14 @@ const ik = (n, u = 14) => `<svg class="jm-ik" width="${u}" height="${u}" aria-hi
 const tahunDari = (b) => (b.tgl_pelantikan || "").slice(0, 4);
 const cacah = (n) => (typeof n === "number" ? angka(n) : n ? t("mw.kurang10") : "");
 /* kartu info provinsi: dipakai tooltip peta dan kartu ponsel */
-export function isiKartu(b) {
-  const kos = `<span class="mw-kos">${esc(t("mw.belum_dicantum"))}</span>`;
-  const baris = [["orang", b.ketua ? `${esc(t("mw.ketua"))}: <b>${esc(b.ketua)}</b>` : kos], ["lokasi", b.sekretariat ? esc(b.sekretariat) : kos], ["tahun", tahunDari(b) ? esc(t("mw.tahun", { tahun: tahunDari(b) })) : kos]];
+export function isiKartu(b, tautan) {
+  const baris = [["orang", b.ketua && `${esc(t("mw.ketua"))}: <b>${esc(b.ketua)}</b>`], ["lokasi", b.sekretariat && esc(b.sekretariat)], ["tahun", tahunDari(b) && esc(t("mw.tahun", { tahun: tahunDari(b) }))]].filter((x) => x[1]);
   const ang = [["orang", cacah(b.individu), t("mw.u.individu")], ["direktori", cacah(b.organisasi), t("mw.u.organisasi")]].filter((x) => x[1]);
-  return `<header>${lambang(b.kode, 36)}<div><strong>${esc(b.nama)}</strong>${pilStatus(b.status)}</div></header>
-    <ul class="mw-info">${baris.map(([i, v]) => `<li>${ik(i)}<span>${v}</span></li>`).join("")}</ul>
-    ${ang.length ? `<p class="mw-cacah">${ang.map(([i, v, l]) => `<span title="${esc(l)}">${ik(i)}<b>${esc(v)}</b> ${esc(l)}</span>`).join("")}</p>` : ""}
-    <p class="mw-ajak">${ik("panah-kanan")}${esc(t("mw.klik_profil"))}</p>`;
+  const aj = `${ik("tautan", 16)}${esc(t("mw.buka_profil"))}`;
+  return `<header>${lambang(b.kode, 48)}<strong>${esc(b.nama)}</strong>${pilStatus(b.status)}</header>
+    ${baris.length ? `<ul class="mw-info">${baris.map(([i, v]) => `<li>${ik(i)}<span>${v}</span></li>`).join("")}</ul>` : `<p class="mw-kos">${esc(t("mw.belum_semua"))}</p>`}
+    ${ang.length ? `<div class="mw-cacah">${ang.map(([i, v, l]) => `<span>${ik(i, 18)}<b>${esc(v)}</b><small>${esc(l)}</small></span>`).join("")}</div>` : ""}
+    ${tautan ? `<a class="mw-ajak" href="/meti-wilayah/${esc(b.kode)}">${aj}</a>` : `<p class="mw-ajak">${aj}</p>`}`;
 }
 export const namaWilayah = (nama) => t("mw.nama", { prov: nama });
 export const tgl = (s) => (s ? tanggal(s, { gaya: "panjang" }) : "");
@@ -93,7 +93,7 @@ async function petaSvg() {
   const svg = $("peta").querySelector("svg"), dasar = $("penuh");
   const buka = (pa) => {
     if (!pa) return;
-    if (innerWidth < 900) { const b = S.baris.find((v) => v.kode === pa.dataset.k), k = $("kartu-peta"); k.innerHTML = isiKartu(b) + `<a class="jm-tbl jm-tbl-utama" href="/meti-wilayah/${esc(b.kode)}">${ik("panah-kanan")}${esc(t("mw.lihat"))}</a>`; k.hidden = false; return; }
+    if (innerWidth < 900) { const b = S.baris.find((v) => v.kode === pa.dataset.k), k = $("kartu-peta"); k.innerHTML = isiKartu(b, true); k.hidden = false; return; }
     location.assign("/meti-wilayah/" + encodeURIComponent(pa.dataset.k));
   };
   $("peta").addEventListener("click", (e) => { const z = e.target.closest("button[data-z]"); if (z) atur(z.dataset.z === "perbesar" ? 1.6 : 0); });
@@ -137,7 +137,7 @@ function kartu() {
 
 function catatan() {
   const v = S.ap.versi_angka;
-  $("catatan").innerHTML = `<p>${esc(t("mw.catatan_isi"))}</p><div class="jm-gulir"><table class="jm-tabel"><thead><tr><th>${esc(t("mw.c.sumber"))}</th><th>${esc(t("mw.c.tanggal"))}</th><th class="jm-num">${esc(t("mw.st.berdiri"))}</th><th class="jm-num">${esc(t("mw.st.segera"))}</th><th class="jm-num">${esc(t("mw.st.rencana"))}</th></tr></thead><tbody>${v.map((x) => `<tr><td data-label="${esc(t("mw.c.sumber"))}">${esc(x.sumber)}</td><td data-label="${esc(t("mw.c.tanggal"))}">${esc(tgl(x.tanggal))}</td><td class="jm-num" data-label="${esc(t("mw.st.berdiri"))}">${esc(x.berdiri ?? "-")}</td><td class="jm-num" data-label="${esc(t("mw.st.segera"))}">${esc(x.segera ?? "-")}</td><td class="jm-num" data-label="${esc(t("mw.st.rencana"))}">${esc(x.rencana ?? "-")}</td></tr>`).join("")}</tbody></table></div><p class="jm-bantu">${esc(t("mw.catatan_kaki"))}</p>`;
+  if ($("catatan")) $("catatan").innerHTML = `<p>${esc(t("mw.catatan_isi"))}</p><div class="jm-gulir"><table class="jm-tabel"><thead><tr><th>${esc(t("mw.c.sumber"))}</th><th>${esc(t("mw.c.tanggal"))}</th><th class="jm-num">${esc(t("mw.st.berdiri"))}</th><th class="jm-num">${esc(t("mw.st.segera"))}</th><th class="jm-num">${esc(t("mw.st.rencana"))}</th></tr></thead><tbody>${v.map((x) => `<tr><td data-label="${esc(t("mw.c.sumber"))}">${esc(x.sumber)}</td><td data-label="${esc(t("mw.c.tanggal"))}">${esc(tgl(x.tanggal))}</td><td class="jm-num" data-label="${esc(t("mw.st.berdiri"))}">${esc(x.berdiri ?? "-")}</td><td class="jm-num" data-label="${esc(t("mw.st.segera"))}">${esc(x.segera ?? "-")}</td><td class="jm-num" data-label="${esc(t("mw.st.rencana"))}">${esc(x.rencana ?? "-")}</td></tr>`).join("")}</tbody></table></div><p class="jm-bantu">${esc(t("mw.catatan_kaki"))}</p>`;
 }
 
 function gambarDaftar() { kepala(); legenda(); kartu(); catatan(); warnai(); }

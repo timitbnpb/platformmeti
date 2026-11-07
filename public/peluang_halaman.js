@@ -1,4 +1,4 @@
-/* /peluang: dua tab, Peta peluang (peluang.js) dan Hitung kelayakan (kelayakan.js), dimuat malas saat tab pertama dibuka.
+/* /peluang: tiga tab, Peta peluang (peluang.js), Hitung kelayakan (kelayakan.js), dan PLTS atap (plts_atap.js), dimuat malas saat tab pertama dibuka.
    Tombol Hitung di panel provinsi (event jm:hitung dari peluang.js) membuka tab Hitung untuk provinsi itu. Alamat lama /kelayakan dialihkan ke #hitung. */
 import { mulaiHalaman } from "/inti/kepala.js";
 import { tabHalaman } from "/inti/tab_halaman.js";
@@ -9,6 +9,7 @@ const tab = tabHalaman("tabHal", {
   tab: [
     { k: "peta", ikon: "peta", teks: "pel.tab.peta", panel: "panelPeta", muat: () => import("/peluang.js") },
     { k: "hitung", ikon: "kalkulator", teks: "pel.tab.hitung", panel: "panelHitung", muat: () => import("/kelayakan.js") },
+    { k: "plts-atap", ikon: "tek-surya", teks: "pel.tab.plts", panel: "panelPlts", muat: () => import("/plts_atap.js") },
   ],
 });
 document.addEventListener("jm:hitung", (e) => {

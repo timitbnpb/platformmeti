@@ -1,0 +1,28 @@
+/* /pelacak: segmen teknologi, linimasa, sel tabel. Selebihnya memakai kelas bersama (.jm-ex, .jm-tabel, .jm-an-*, .jm-tk-*). Warna hanya dari token. */
+.pl-kh{align-items:stretch}
+.pl-kh .jm-kh-ubin{align-content:center}
+.pl-seg{margin:0 0 20px;gap:0;border-bottom:1px solid var(--line)}
+.pl-seg button{flex:1 1 0;justify-content:center;align-items:center;gap:4px;padding:0 6px;min-width:max-content;text-align:center;font-size:var(--t-kecil)}
+.pl-seg button svg{flex:none;width:16px;height:16px}
+#plIsi{display:grid;gap:20px}
+#plIsi>.jm-ex{margin:0}
+.pl-no{width:56px;text-align:center}
+.pl-tabel .jm-tabel td.pl-no{color:var(--ink2)}
+.pl-nm{display:flex;align-items:center;gap:10px;min-width:0}
+.pl-lg{flex:none;display:grid;place-items:center;width:32px;height:32px;color:var(--ink2)}
+.pl-lg img{max-width:100%;max-height:32px;object-fit:contain}
+.pl-sub{margin:16px 0 8px;font:600 var(--t-body)/var(--lh-rapat) var(--font);color:var(--head)}
+.pl-sub:first-child{margin-top:0}
+.pl-ket{display:block;margin-top:4px;font:400 var(--t-kecil)/var(--lh-rapat) var(--font);color:var(--ink2)}
+.pl-lini{display:grid;gap:0;margin:0;padding:0;list-style:none;border-left:2px solid var(--line)}
+.pl-th{position:relative;padding:0 0 18px 20px}
+.pl-th::before{content:"";position:absolute;left:-7px;top:6px;width:12px;height:12px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 3px var(--card)}
+.pl-th h3{margin:0 0 8px;font:700 var(--t-h3)/var(--lh-rapat) var(--font);color:var(--head)}
+.pl-th ul{display:grid;gap:10px;margin:0;padding:0;list-style:none}
+.pl-th li{display:flex;align-items:flex-start;gap:10px}
+.pl-jn{flex:none;min-width:74px;justify-content:center}
+.pl-lt{display:grid;gap:2px;min-width:0;overflow-wrap:anywhere}
+.pl-lt small{font:400 var(--t-kecil)/var(--lh-rapat) var(--font);color:var(--ink2)}
+.pl-jn-target{color:var(--brand)}
+@media (max-width:760px){.pl-seg{justify-content:flex-start}.pl-th li{flex-direction:column;gap:4px}}
+@media (max-width:639px){.pl-kh .jm-kh-ubin .jm-kh-ub:last-child:nth-child(odd){grid-column:1/-1}}

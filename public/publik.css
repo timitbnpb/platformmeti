@@ -602,3 +602,7 @@ a.jm-foto:focus-visible{outline:3px solid var(--fokus)}
 .jm-akses .jm-ik,.jm-akses-ik{color:currentColor}
 .jm-akses .jm-akses-kiri h2{font-size:var(--t-h1)}
 .jm-kpi-lab span:first-child{overflow:visible;text-overflow:clip;white-space:normal;min-width:0}
+
+.jm-pm-leg{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:8px 12px;padding:10px 0 12px;border-bottom:1px solid var(--line);font-size:var(--t-label)}
+.jm-pm-leg b{font-weight:600}
+.jm-pm-leg .jm-pil-st{--tk:var(--sk);min-height:22px;padding:2px 9px;font-size:var(--t-label)}

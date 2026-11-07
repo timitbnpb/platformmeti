@@ -24,7 +24,7 @@ export function bangun(seed, posisi, tanggalBangun = TGL) {
   for (const k of seed.baris || []) {
     if (!sah(k) || (k.tenggat && !/^\d{4}-\d{2}-\d{2}$/.test(k.tenggat))) { ditolak++; continue; }
     const { posisi_ref, ...isi } = k;
-    baris.push({ ...isi, tenggat: k.tenggat || null, posisi_meti: posisi_ref ? { ringkas: k.posisi_ringkas || null, tanggal: '2026-09-08', sumber: 'Audiensi/RDPU Komisi XII DPR RI, 8 Sep 2026', butir: posisi } : null });
+    baris.push({ ...isi, tenggat: k.tenggat || null, posisi_meti: posisi_ref ? { ringkas: k.posisi_ringkas || null, tanggal: '2026-09-08', sumber: 'Audiensi/RDPU Komisi XII DPR RI, 8 Sep 2026', butir: process.env.METI_POSISI_PUBLIK === '1' ? posisi : [] } : null });
   }
   baris.sort((a, b) => (a.tenggat || '9').localeCompare(b.tenggat || '9') || a.id.localeCompare(b.id));
   return { lapis: 'publik', dibangun_pada: tanggalBangun, jumlah: baris.length, baris,

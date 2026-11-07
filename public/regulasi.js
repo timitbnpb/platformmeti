@@ -9,6 +9,7 @@ import { paginasiHtml, sorotHalaman } from "/inti/paginasi.js";
 import { tautOrg } from "/inti/tautan.js";
 import { aksiHtml, hlHtml } from "/inti/aksi_ex.js";
 import { penerbitHtml, penerbitDari } from "/penerbit.js";
+import { tabHalaman } from "/inti/tab_halaman.js";
 import { lapisAnggota, anggotaDl, muat, label, urlAman, norm, namaRegulasi, kelasStatus, SINGKAT } from "/publik.js";
 
 const HAL = 25;
@@ -305,6 +306,11 @@ function gambarSemua() {
 
 async function main() {
   await mulaiHalaman();
+  /* dua tab: Daftar (isi halaman ini, sudah dimuat main) dan Konsultasi (konsultasi.js, dimuat malas) */
+  tabHalaman("tabHal", { label: "reg.tab", tab: [
+    { k: "daftar", ikon: "daftar2", teks: "reg.tab.daftar", panel: "panelDaftar", muat: async () => {} },
+    { k: "konsultasi", ikon: "palu", teks: "reg.tab.konsultasi", panel: "panelKonsultasi", muat: () => import("/konsultasi.js") },
+  ] });
   document.getElementById("daftar-reg").innerHTML = exHtml({ id: "ex-reg", ikon: "regulasi", topik: t("reg.ex.ey.daftar"), judulHtml: "", subHtml: " ", aksiHtml: " ",
     isiHtml: `<div class="jm-saring" id="saring"></div><div class="jm-alat"><div class="jm-tab" role="tablist" id="tampil"></div><p class="jm-hitung sr" id="hitung" role="status"></p></div><div id="isi"></div><div class="jm-hal" id="hal"></div>` });
   const idAwal = bacaUrl();

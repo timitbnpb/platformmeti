@@ -41,6 +41,8 @@ export function geserPanel(el, { kunci = "", batas = el.parentElement } = {}) {
     reset.hidden = false;
     return { x, y, w: lebar };
   }
+  // sisi kanan dihitung dari posisi nyata (panel yang awalnya menempel kanan lewat CSS juga): pegangan selalu di sisi yang menghadap peta
+  const cekSisi = () => { const b = kotak(), r = el.getBoundingClientRect(); const k = r.width > 0 && r.left - b.left + r.width / 2 > b.width / 2; el.classList.toggle("sisi-kanan", k); return k; };
   function simpanSaatIni() { const b = kotak(), r = el.getBoundingClientRect(); simpan({ x: r.left - b.left, y: r.top - b.top, w: r.width, h: el.style.height ? r.height : 0 }); }
   function kembali() { el.setAttribute("style", awal.style); el.classList.remove("sisi-kanan"); reset.hidden = true; simpan(null); sebar(); }
   reset.addEventListener("click", (e) => { e.preventDefault(); e.stopPropagation(); kembali(); });
@@ -74,7 +76,7 @@ export function geserPanel(el, { kunci = "", batas = el.parentElement } = {}) {
   let rs = null;
   pegangan.addEventListener("pointerdown", (e) => {
     const b = kotak(), r = el.getBoundingClientRect();
-    rs = { id: e.pointerId, px: e.clientX, x: r.left - b.left, y: r.top - b.top, w: r.width, kanan: el.classList.contains("sisi-kanan") };
+    rs = { id: e.pointerId, px: e.clientX, x: r.left - b.left, y: r.top - b.top, w: r.width, kanan: cekSisi() };
     pegangan.setPointerCapture(e.pointerId); el.classList.add("menggeser"); e.preventDefault();
   });
   pegangan.addEventListener("pointermove", (e) => {
@@ -88,7 +90,7 @@ export function geserPanel(el, { kunci = "", batas = el.parentElement } = {}) {
   let ss = null;
   sudut.addEventListener("pointerdown", (e) => {
     const b = kotak(), r = el.getBoundingClientRect();
-    ss = { id: e.pointerId, px: e.clientX, py: e.clientY, x: r.left - b.left, y: r.top - b.top, w: r.width, h: r.height, kanan: el.classList.contains("sisi-kanan") };
+    ss = { id: e.pointerId, px: e.clientX, py: e.clientY, x: r.left - b.left, y: r.top - b.top, w: r.width, h: r.height, kanan: cekSisi() };
     sudut.setPointerCapture(e.pointerId); el.classList.add("menggeser"); e.preventDefault();
   });
   sudut.addEventListener("pointermove", (e) => {
@@ -108,7 +110,8 @@ export function geserPanel(el, { kunci = "", batas = el.parentElement } = {}) {
     pasang(r.left - b.left + d[0], r.top - b.top + d[1], r.width); simpanSaatIni(); sebar();
   });
 
+  requestAnimationFrame(cekSisi);
   try { const v = JSON.parse(localStorage.getItem(KEY) || "null"); if (v && Number.isFinite(v.x)) pasang(v.x, v.y, v.w, v.h); } catch (e) { /* abaikan */ }
-  addEventListener("resize", () => { if (el.style.left) { const b = kotak(), r = el.getBoundingClientRect(); pasang(r.left - b.left, r.top - b.top, r.width); } });
+  addEventListener("resize", () => { cekSisi(); if (el.style.left) { const b = kotak(), r = el.getBoundingClientRect(); pasang(r.left - b.left, r.top - b.top, r.width); } });
   return { kembali, gerak };
 }

@@ -36,7 +36,7 @@ function dataGrafik(r) {
 }
 function grafikSvg(g) {
   const maks = Math.max(1, ...g.kol.map((k) => k.v)), W = 360, H = 190, dasar = 150, lebar = Math.min(48, (W - 20) / g.kol.length - 10), langkah = (W - 20) / g.kol.length;
-  const batang = g.kol.map((k, i) => { const h = Math.max(1, k.v / maks * 120), x = 10 + i * langkah + (langkah - lebar) / 2; return `<rect x="${x}" y="${dasar - h}" width="${lebar}" height="${h}" rx="4" class="rp-b"/><text x="${x + lebar / 2}" y="${dasar - h - 5}" text-anchor="middle" class="rp-bv">${esc(num(k.v, k.v % 1 ? 1 : 0))}</text><text x="${x + lebar / 2}" y="${dasar + 16}" text-anchor="middle" class="rp-bl">${esc(k.label.length > 11 ? k.label.slice(0, 10) + "." : k.label)}</text>`; }).join("");
+  const batang = g.kol.map((k, i) => { const h = Math.max(1, k.v / maks * 120), x = 10 + i * langkah + (langkah - lebar) / 2; return `<rect x="${x}" y="${dasar - h}" width="${lebar}" height="${h}" rx="4" class="rp-b"/><text x="${x + lebar / 2}" y="${dasar - h - 5}" text-anchor="middle" class="rp-bv" font-size="11">${esc(num(k.v, k.v % 1 ? 1 : 0))}</text><text x="${x + lebar / 2}" y="${dasar + 16}" text-anchor="middle" class="rp-bl" font-size="10">${esc(k.label.length > 11 ? k.label.slice(0, 10) + "." : k.label)}</text>`; }).join("");
   return `<svg viewBox="0 0 ${W} ${H}" class="rp-grafik" role="img" aria-label="${esc(g.judul)}"><line x1="6" x2="${W - 6}" y1="${dasar}" y2="${dasar}" class="rp-sumbu"/>${batang}</svg>`;
 }
 

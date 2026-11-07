@@ -1280,7 +1280,7 @@ h4{margin:0 0 2px;font-size:8px;letter-spacing:normal;text-transform:none;color:
   /* ---- daftar ---- */
   const lbMs = () => { MSG.lb = {st: LB.fs, f: ["prov", "skala", "bidang"], h: () => { LB.hal = 1; }, g: () => { saringLb(); gambarLb(false); }, lab: (f, v) => f === "prov" ? provT(v) : f === "skala" ? (SKALA_L[v] || kapital(v)) : kapital(String(v))}; };
   const LB = {katSet: new Set(), q: "", fs: {prov: new Set(), skala: new Set(), bidang: new Set()}, kat: "", sub: "", sensor: false, hal: 1}, LPER = 24;
-  let lbArr = [], lbMap = new Map(), lbCabang = new Map(), lbHasil = [], ltok = 0, lbSub = "peta", dpl = new Set();
+  let lbArr = [], lbMap = new Map(), lbCabang = new Map(), lbHasil = [], ltok = 0, lbSub = "sensus", dpl = new Set();
   const DPL_KEY = "ak-dpl";
   const bacaDpl = () => { try { return new Set(JSON.parse(localStorage.getItem(DPL_KEY)) || []); } catch (e) { return new Set(); } };
   const RE_NAMA = [];   // pola nama lembaga -> sektor; diisi dari data METI bila perlu
@@ -1994,7 +1994,7 @@ h4{margin:0 0 2px;font-size:8px;letter-spacing:normal;text-transform:none;color:
   const muatMapLib = () => import("/inti/maplibre.js").then(m => m.muatMapLibre());
 
   /* ---- tab Lembaga: tiga sub-tampilan, dibangun saat dibuka ---- */
-  const SUBL = {peta: ["akLbPeta", bangunPeta], daftar: ["akLbDaftar", bangunDaftarLb], proyek: ["akLbProyek", bangunProyek]}, subLBangun = {};
+  const SUBL = {sensus: ["akLbSensus", el => import("/sensus_org.js").then(m => m.bangunSensus(el))], peta: ["akLbPeta", bangunPeta], daftar: ["akLbDaftar", bangunDaftarLb], proyek: ["akLbProyek", bangunProyek]}, subLBangun = {};
   function taruhSeg(v) { const seg = $("akLS"), isi = $("akLbPeta")?.querySelector(".ak-ptaisi"); if (!seg) return; $("akv-lembaga").classList.toggle("ak-lbpeta", v === "peta"); }
   function subLb(v) {
     if (v === "analisa" || v === "proyek") v = "daftar";
@@ -2005,7 +2005,7 @@ h4{margin:0 0 2px;font-size:8px;letter-spacing:normal;text-transform:none;color:
   }
   function bangunLembaga(p, d) {
     indeksLb(d); Object.keys(subLBangun).forEach(k => delete subLBangun[k]); pjSiap = false; Object.assign(LB, {katSet: new Set(), q: "", fs: {prov: new Set(), skala: new Set(), bidang: new Set()}, kat: "", sub: "", sensor: false, hal: 1}); lbMs(); PT.map?.remove(); Object.assign(PT, {map: null, siap: false, pins: new Map(), mode: "pin"}); tutupDrawerAman(); Object.assign(PJ, {q: "", prov: "", donor: "", sektor: "", hal: 1});
-    p.innerHTML = `${segHtml("akLS", "Sub-tampilan lembaga", [["peta", "Peta", IKON_PIN], ["daftar", "Daftar", IK_GEDUNG]])}<div id="akLbPeta" class="ak-tampilan"></div><div id="akLbDaftar" class="ak-tampilan" hidden></div><div id="akLbAnalisa" class="ak-tampilan" hidden></div><div id="akLbProyek" class="ak-tampilan" hidden></div>`;
+    p.innerHTML = `${segHtml("akLS", "Sub-tampilan lembaga", [["sensus", "Sensus", IK_BAR], ["peta", "Peta", IKON_PIN], ["daftar", "Daftar", IK_GEDUNG]])}<div id="akLbSensus" class="ak-tampilan"></div><div id="akLbPeta" class="ak-tampilan" hidden></div><div id="akLbDaftar" class="ak-tampilan" hidden></div><div id="akLbAnalisa" class="ak-tampilan" hidden></div><div id="akLbProyek" class="ak-tampilan" hidden></div>`;
     $("akLS").addEventListener("click", e => { const b = e.target.closest("button[data-v]"); if (b) subLb(b.dataset.v); });
     subLb(lbSub);
   }
@@ -2614,7 +2614,7 @@ h4{margin:0 0 2px;font-size:8px;letter-spacing:normal;text-transform:none;color:
     const l = (x.lembaga_id && lbMap.get(x.lembaga_id)) || lbArr.find(y => namaLb(y).includes(nrm(donorBaku(x.nama)))), w = JENIS_PN[x.jenis_pendana] || "var(--ink2)", ids = new Set(strs(x.proyek_ids)), pr = pdArr.filter(y => ids.has(y.id));
     bukaSheet("detail", `<div class="ak-dkepala"><div class="ak-dk-atas">${lgoIkon(logoOrg(donorBaku(x.nama), l?.id || x.lembaga_id), IK_UANG, w).replace('class="ak-lgo"', 'class="ak-lgo ak-lgo-b"')}<div class="ak-nama"><h2 id="akSJudul">${esc(donorBaku(x.nama))}</h2><p>${l ? `<button type="button" class="ak-pk" data-lb="${esc(l.id)}">${esc(t("dir.pn.profil"))}</button>` : ""}</p></div></div><div class="ak-pil">${pilStatus(x.jenis_pendana, w)}<span class="ak-izin" data-st="background:var(--ink2)">#${angka(x.peringkat)}</span></div></div>`, () =>
       `<section class="ak-dbagian"><div class="ak-disi"><h3>${esc(t("dir.pn.portofolio"))}</h3><dl class="ak-lbr"><div><dt>${esc(t("dir.pn.kol.proyek"))}</dt><dd>${angka(x.jumlah_proyek)}</dd></div><div><dt>${esc(t("dir.pn.kol.mw"))}</dt><dd>${esc(mwTeks(x))}${x.mw_n ? ` (${angka(x.mw_n)} ${esc(t("dir.pn.proyek_mw"))})` : ""}</dd></div><div><dt>${esc(t("dir.pn.kol.nilai"))}</dt><dd>${x.nilai_usd ? esc(t("dir.pn.min") + " " + usdR(x.nilai_usd)) + ` (${angka(x.nilai_n)} ${esc(t("dir.pn.proyek_nilai"))})` : esc(t("dir.pn.belum"))}</dd></div></dl></div></section>`
-      + `<section class="ak-dbagian"><div class="ak-disi"><h3>${esc(t("dir.pn.proyek_dibiayai"))}</h3>${pr.length ? gridProyek(pr.map(dariDana)) : `<p class="ak-khampa">${esc(t("dir.pn.belum"))}</p>`}</div></section>`);
+      + `<section class="ak-dbagian"><div class="ak-disi"><h3>${esc(t("dir.pn.proyek_didanai"))}</h3>${pr.length ? gridProyek(pr.map(dariDana)) : `<p class="ak-khampa">${esc(t("dir.pn.belum"))}</p>`}</div></section>`);
     $("akSheet").dataset.k = "";
   }
   async function bangunDana(p, d) {

@@ -1,0 +1,287 @@
+/* /pelacak?tek=<id>: satu cetakan halaman untuk 14 teknologi (FITUR-200 N01-N16). Data = potret statis /data/*.json; bagian tanpa isi tidak dirender.
+   Turunan (jumlah, rerata) berpil EST. INP: segmen teknologi dan tabel menyalakan chrome seketika, isi berat menyusul lewat nanti(). */
+import { mulaiHalaman } from "/inti/kepala.js";
+import { t, ada, tanggal, bahasa } from "/i18n.js";
+import { esc, nanti, ikon, hantuHtml, fotoBerita } from "/inti/umum.js";
+import { exHtml, terkaitHtml, lihatSemuaHtml } from "/inti/komponen.js";
+import { tautProvinsi, tautOrg } from "/inti/tautan.js";
+import { aksiHtml, hlHtml } from "/inti/aksi_ex.js";
+import { sumberLipat, ubinHtml, batangHtml, pasangBar, pil, num, amanUrl, tampilGalat, saatBahasa } from "/analisis.js";
+import { kolom } from "/grafik.js";
+import { pilStatus } from "/inti/ikon_tek.js";
+import { namaMedia, logoLokal } from "/inti/nama_media.js";
+import { logoOrgSatu } from "/inti/logo_org.js";
+import { namaProyek } from "/inti/nama_proyek.js";
+import { muat, namaRegulasi, kelasStatus, label } from "/publik.js";
+import { TEK, TEK_AWAL, tekById, saring, ikonPelacak } from "/pelacak_cfg.js";
+import { tabelHtml, pasangTabel, gambarSemua } from "/pelacak_tabel.js";
+import { industriHtml, logoHtml } from "/pelacak_industri.js";
+
+const $ = (id) => document.getElementById(id);
+const BATAS_LINI = 8;
+let cfg, D = {}, X = {}, isi, indSiap = false, lini = false;
+const jumlah = (a) => a.reduce((s, x) => s + (x || 0), 0);
+const nm = () => t("pl.tek." + cfg.id);
+const kap = (p) => Number(p.kapasitas?.[0]?.nilai) || 0;
+const cod = (p) => { const a = (p.cod_target || []).map((c) => c.nilai).filter(Number.isFinite); return a.length ? Math.min(...a) : null; };
+const src = (kunci, tgl, url) => sumberLipat([{ sumber: t(kunci), url, tanggal: tgl }]);
+const urut = (a, z) => String(z).localeCompare(String(a));
+const bagian = (id, ik, kunci, { judulHtml, sub, isiHtml, sumber = "", kakiHtml = "" }) =>
+  isiHtml ? exHtml({ id, ikon: ik, topik: t(`pl.s.${kunci}.ey`), judulHtml, subHtml: sub || "", aksiHtml: aksiHtml({ csv: false }) + sumber, isiHtml, kakiHtml }) : "";
+
+/* ---------- olah ---------- */
+
+function olah() {
+  const S = saring(cfg, D);
+  const tren = cfg.tren ? D.tren.baris.filter((r) => cfg.tren.includes(r.teknologi)) : [];
+  const thn = new Map(); for (const r of tren) thn.set(r.tahun, (thn.get(r.tahun) || 0) + (r.kapasitas_mw || 0));
+  S.tren = [...thn].sort((a, z) => a[0] - z[0]).filter(([y]) => y >= 2011);
+  const per = new Map(); for (const r of S.ruptl) { const y = r.cod_tahun?.[0]; if (y) per.set(y, (per.get(y) || 0) + (r.kapasitas_mw || 0)); }
+  S.perTahun = [...per].sort((a, z) => a[0] - z[0]);
+  S.ruptlMw = jumlah(S.ruptl.map((r) => r.kapasitas_mw));
+  S.mw = jumlah(S.proyek.map(kap));
+  S.atap = cfg.atap ? D.atap : null;
+  return S;
+}
+
+/* ---------- kepala ---------- */
+
+function gambarKepala(S) {
+  document.title = t("pl.title", { nama: nm() });
+  $("judul").textContent = nm();
+  $("jawab").textContent = t("pl.lead." + cfg.id);
+  const kand = [
+    S.atap && { ikon: "analisis", nilai: num(S.atap.total.jumlah_mw), satuan: "MW", label: t("pl.u.kuota"), href: "#pl-angka", turunan: false },
+    S.ruptlMw && { ikon: "rantai", nilai: num(S.ruptlMw), satuan: "MW", label: t("pl.u.ruptl"), href: "#pl-angka", turunan: true },
+    S.proyek.length && { ikon: "proyek", nilai: num(S.proyek.length), satuan: S.mw ? `${num(S.mw)} MW` : "", label: t("pl.u.proyek"), href: "#pl-proyek", turunan: false },
+    cfg.wkp && D.wkp?.baris?.length && { ikon: "peta", nilai: num(D.wkp.baris.length), satuan: "", label: t("pl.u.wkp"), href: "#pl-wkp", turunan: false },
+    S.reg.length && { ikon: "regulasi", nilai: num(S.reg.length), satuan: "", label: t("pl.u.reg"), href: "#pl-reg", turunan: false },
+    S.ber.length && { ikon: "berita", nilai: num(S.ber.length), satuan: "", label: t("pl.u.berita"), href: "#pl-berita", turunan: false },
+  ].filter(Boolean);
+  while (kand.length < 3) kand.push({ ikon: "linimasa", nilai: "2025-2060", satuan: "", label: t("pl.u.lini"), href: "#pl-lini", turunan: false }, { ikon: "gedung", nilai: cfg.ind ? t("pl.u.ya") : t("pl.u.belum"), satuan: "", label: t("pl.u.industri"), href: "#pl-industri", turunan: false });
+  $("ubin").innerHTML = ubinHtml(kand.slice(0, 3));
+}
+
+/* ---------- bagian ---------- */
+
+function sAngka(S) {
+  let g = "", sumber = [], j;
+  if (S.tren.length >= 3) {
+    g += `<h3 class="jm-tk-sub">${esc(t("pl.g.tren"))}</h3>${kolom(S.tren.map(([y, v]) => ({ label: String(y), v, tip: `${y}: ${num(v)} MW` })), { label: t("pl.g.tren") })}`;
+    sumber.push({ sumber: D.tren.sumber?.[0]?.judul, url: D.tren.sumber?.[0]?.url, tanggal: D.tren.dibangun_pada });
+  }
+  if (S.perTahun.length) {
+    g += `<h3 class="jm-tk-sub">${esc(t("pl.g.ruptl"))}</h3>${kolom(S.perTahun.map(([y, v]) => ({ label: String(y), v, tip: `${y}: ${num(v)} MW` })), { label: t("pl.g.ruptl") })}`;
+    sumber.push({ sumber: D.rup.sumber?.[0]?.judul, url: D.rup.sumber?.[0]?.url, tanggal: D.rup.meta.diperbarui });
+    const puncak = S.perTahun.reduce((m, x) => (x[1] > m[1] ? x : m));
+    j = hlHtml("pl.s.angka.j.ruptl", num(S.ruptlMw), { tahun: puncak[0], n: S.ruptl.length });
+  }
+  if (S.atap) {
+    const per = Object.entries(S.atap.total.per_tahun).map(([y, v]) => ({ label: y, v, tip: `${y}: ${num(v)} MW` }));
+    g += `<h3 class="jm-tk-sub">${esc(t("pl.g.atap"))}</h3>${kolom(per, { label: t("pl.g.atap") })}`;
+    sumber.push({ sumber: D.atap.sumber[0]?.judul, halaman: S.atap.total.halaman, url: D.atap.sumber[0]?.url, tanggal: D.atap.meta.diperbarui });
+    j = hlHtml("pl.s.angka.j.atap", num(S.atap.total.jumlah_mw), {});
+  }
+  if (S.proyek.length) {
+    const st = new Map(); for (const p of S.proyek) { const k = p.status?.[0]?.nilai || "tidak-diketahui"; st.set(k, (st.get(k) || 0) + 1); }
+    const baris = [...st].sort((a, z) => z[1] - a[1]).map(([k, n]) => ({ label: label("pj.st.", k), labelHtml: pilStatus(k), bagian: [{ nilai: n, kelas: "jm-an-b1" }], teks: num(n) }));
+    g += `<h3 class="jm-tk-sub">${esc(t("pl.g.status"))}</h3>${batangHtml(baris, { maks: Math.max(...baris.map((b) => b.bagian[0].nilai)), label: t("pl.g.status") })}`;
+    sumber.push({ sumber: t("pl.src.proyek"), tanggal: D.proyek_tgl });
+    j ||= hlHtml(S.mw ? "pl.s.angka.j.proyek" : "pl.s.angka.j.proyek0", num(S.proyek.length), { mw: num(S.mw), nama: nm() });
+  }
+  if (!g) return exHtml({ id: "pl-angka", ikon: "analisis", topik: t("pl.s.angka.ey"), judulHtml: esc(t("pl.s.angka.j.nol", { nama: nm() })), subHtml: esc(t("pl.s.angka.sub.nol")), isiHtml: `<p class="jm-bantu">${esc(t("pl.butuh.ket"))} <span class="jm-pil jm-pil-warn">${esc(t("pl.butuh"))}</span></p>` });
+  return bagian("pl-angka", "analisis", "angka", { judulHtml: j, sub: `${esc(t("pl.s.angka.sub"))} ${pil("an.est")}`, isiHtml: g, sumber: sumberLipat(sumber) });
+}
+
+function selNama(p) {
+  const k = p.kapasitas?.[0], fid = (p.berita_ids || []).find((b) => fotoBerita(D.foto, b)), foto = fid ? fotoBerita(D.foto, fid) : "";
+  const ubin = foto ? `<span class="jm-tk-pt"><img src="${esc(foto)}" alt="" width="64" height="48" loading="lazy" decoding="async" referrerpolicy="no-referrer"></span>`
+    : `<span class="jm-tk-pt jm-tk-pt-k jm-tek-${esc(cfg.warna)}">${ikonPelacak(cfg.id)}<b>${k ? esc(num(k.nilai, 0)) : "-"}</b>${k ? `<small>${esc(k.satuan)}</small>` : ""}</span>`;
+  const pem = p.pihak?.pemilik?.[0]?.nilai;
+  return `<span class="jm-tk-pj">${ubin}<span class="jm-tk-pj-t"><a href="/p/${esc(p.id)}">${esc(namaProyek(p))}</a>${pem ? `<small>${tautOrg(pem)}</small>` : ""}</span></span>`;
+}
+function sProyek(S) {
+  if (!S.proyek.length) return "";
+  return bagian("pl-proyek", "proyek", "proyek", {
+    judulHtml: hlHtml(S.mw ? "pl.s.proyek.j" : "pl.s.proyek.j0", num(S.proyek.length), { mw: num(S.mw) }), sub: esc(t("pl.s.proyek.sub")),
+    isiHtml: tabelHtml("tb-proyek", { urut: "kap", arah: -1, satuan: "jm.pag.u.proyek", baris: S.proyek, kolom: [
+      { k: "nama", j: "tk.c.nama", u: (p) => namaProyek(p), sel: selNama },
+      { k: "prov", j: "tk.c.prov", u: (p) => p.lokasi?.provinsi, sel: (p) => (p.lokasi?.provinsi ? tautProvinsi(p.lokasi.provinsi) : `<span class="jm-tk-redup">${esc(t("tk.lokasi_belum"))}</span>`) },
+      { k: "kap", j: "tk.c.kap", u: kap, desc: 1, kelas: "jm-num", sel: (p) => (p.kapasitas?.[0] ? `${esc(num(p.kapasitas[0].nilai, 1))} ${esc(p.kapasitas[0].satuan)}` : "-") },
+      { k: "st", j: "tk.c.status", u: (p) => p.status?.[0]?.nilai, kelas: "jm-tengah", sel: (p) => pilStatus(p.status?.[0]?.nilai || "tidak-diketahui") },
+      { k: "cod", j: "tk.c.cod", u: cod, kelas: "jm-num", sel: (p) => cod(p) ?? "-" },
+    ] }), sumber: src("pl.src.proyek", D.proyek_tgl),
+  });
+}
+
+/* N01: per waduk, luas genangan belum dipanen */
+const WADUK = /cirata|jatigede|jatiluhur|saguling|gajah mungkur|karangkates|tembesi|singkarak|batam|kedung ombo|wonogiri/i;
+function sWaduk(S) {
+  if (!cfg.waduk || !S.proyek.length) return "";
+  const g = new Map();
+  for (const p of S.proyek) { const k = (p.nama.match(WADUK)?.[0] || p.nama).replace(/^./, (c) => c.toUpperCase()); const o = g.get(k) || { waduk: k, n: 0, mw: 0, prov: p.lokasi?.provinsi, st: p.status?.[0]?.nilai }; o.n++; o.mw += kap(p); g.set(k, o); }
+  const baris = [...g.values()];
+  return bagian("pl-waduk", "peta", "waduk", {
+    judulHtml: hlHtml("pl.s.waduk.j", num(baris.length), { mw: num(jumlah(baris.map((b) => b.mw))) }), sub: esc(t("pl.s.waduk.sub")),
+    isiHtml: tabelHtml("tb-waduk", { urut: "mw", arah: -1, satuan: "pl.u.waduk", baris, kolom: [
+      { k: "waduk", j: "pl.c.waduk", u: (b) => b.waduk, sel: (b) => esc(b.waduk) },
+      { k: "prov", j: "tk.c.prov", u: (b) => b.prov, sel: (b) => (b.prov ? tautProvinsi(b.prov) : "-") },
+      { k: "n", j: "pl.c.proyek_n", u: (b) => b.n, kelas: "jm-num", sel: (b) => esc(num(b.n)) },
+      { k: "mw", j: "pl.c.mw", u: (b) => b.mw, desc: 1, kelas: "jm-num", sel: (b) => esc(num(b.mw, 1)) },
+      { k: "luas", j: "pl.c.luas", u: () => 0, kelas: "jm-tengah", sel: () => `<span class="jm-pil jm-pil-warn">${esc(t("pl.butuh"))}</span>` },
+    ] }), sumber: src("pl.src.proyek", D.proyek_tgl),
+  });
+}
+
+function sWkp() {
+  if (!cfg.wkp || !D.wkp?.baris?.length) return "";
+  return bagian("pl-wkp", "peta", "wkp", {
+    judulHtml: hlHtml("tk.s.wkp.j", num(D.wkp.baris.length), {}), sub: esc(t("tk.s.wkp.sub")),
+    isiHtml: tabelHtml("tb-wkp", { urut: "rencana", arah: -1, satuan: "pl.u.wkp", baris: D.wkp.baris, kolom: [
+      { k: "nama", j: "tk.c.wkp", u: (w) => w.nama, sel: (w) => esc(w.nama) },
+      { k: "prov", j: "tk.c.prov", u: (w) => w.provinsi, sel: (w) => tautProvinsi(w.provinsi) },
+      { k: "st", j: "tk.c.status", u: (w) => w.status, kelas: "jm-tengah", sel: (w) => esc(label("tk.wkp.", w.status)) },
+      { k: "ter", j: "tk.c.terpasang", u: (w) => w.terpasang_mw, desc: 1, kelas: "jm-num", sel: (w) => (w.terpasang_mw == null ? "-" : esc(num(w.terpasang_mw, 1))) },
+      { k: "rencana", j: "tk.c.rencana", u: (w) => w.rencana_mw, desc: 1, kelas: "jm-num", sel: (w) => (w.rencana_mw == null ? "-" : esc(num(w.rencana_mw))) },
+    ] }), sumber: src("tk.src.wkp", D.wkp.meta.diperbarui),
+  });
+}
+
+function sKuotaAtap(S) {
+  if (!S.atap?.baris?.length) return "";
+  const nama = new Map(D.atap.regional.map((r) => [r.kode, r.nama]));
+  return bagian("pl-kuota", "tabel", "kuota", {
+    judulHtml: hlHtml("pl.s.kuota.j", num(D.atap.baris.length), {}), sub: esc(t("pl.s.kuota.sub")),
+    isiHtml: tabelHtml("tb-kuota", { urut: "tahun", arah: 1, satuan: "pl.u.baris", baris: D.atap.baris, kolom: [
+      { k: "reg", j: "pl.c.regional", u: (r) => nama.get(r.regional), sel: (r) => esc(nama.get(r.regional) || r.regional) },
+      { k: "tahun", j: "pl.c.tahun", u: (r) => r.tahun, kelas: "jm-num", sel: (r) => esc(r.tahun) },
+      { k: "kuota", j: "pl.c.kuota", u: (r) => r.kuota_mw, desc: 1, kelas: "jm-num", sel: (r) => (r.kuota_mw == null ? "-" : esc(num(r.kuota_mw))) },
+      { k: "real", j: "pl.c.realisasi", u: (r) => r.realisasi_mw, desc: 1, kelas: "jm-num", sel: (r) => (r.realisasi_mw == null ? `<span class="jm-pil jm-pil-warn">${esc(t("pl.butuh"))}</span>` : esc(num(r.realisasi_mw))) },
+    ] }), sumber: sumberLipat([{ sumber: D.atap.sumber[0]?.judul, url: D.atap.sumber[0]?.url, tanggal: D.atap.meta.diperbarui }]),
+  });
+}
+
+function sPemain(S) {
+  if (!S.org.length) return "";
+  const nilai = (o) => (logoOrgSatu(o.id, o.nama, o.logo)?.startsWith("/img/logo/org/") ? 0 : 1);
+  const daftar = [...S.org].sort((a, z) => nilai(a) - nilai(z) || a.nama.localeCompare(z.nama)).slice(0, 12);
+  const kartu = daftar.map((o) => `<li><a href="/o/${esc(o.id)}"><span class="jm-tk-lg">${logoHtml(o.id, o.nama, o.logo)}</span><strong>${esc(o.singkatan || o.nama)}</strong><small>${esc(o.kategori?.label || "")}</small></a></li>`).join("");
+  return bagian("pl-pemain", "direktori", "pemain", {
+    judulHtml: hlHtml("tk.s.pemain.j", num(S.org.length), { nama: nm() }), sub: esc(t("tk.s.pemain.sub", { n: daftar.length })),
+    isiHtml: `<ul class="jm-tk-pemain">${kartu}</ul>`, sumber: src("tk.src.org", D.org_tgl),
+  });
+}
+
+function sReg(S) {
+  if (!S.reg.length) return "";
+  const baris = [...S.reg].sort((a, z) => urut(a.tanggal_ditetapkan, z.tanggal_ditetapkan));
+  return bagian("pl-reg", "regulasi", "reg", {
+    judulHtml: hlHtml("tk.s.reg.j", num(baris.length), {}), sub: esc(t("pl.s.reg.sub")),
+    isiHtml: tabelHtml("tb-reg", { urut: "tgl", arah: -1, satuan: "jm.pag.u.regulasi", baris, kolom: [
+      { k: "reg", j: "tk.c.regulasi", u: (r) => namaRegulasi(r), sel: (r) => `<a href="/regulasi?id=${encodeURIComponent(r.id)}">${esc(namaRegulasi(r))}</a>` },
+      { k: "tentang", j: "tk.c.tentang", u: (r) => r.judul, sel: (r) => esc(r.judul) },
+      { k: "st", j: "tk.c.status", u: (r) => r.status, kelas: "jm-tengah", sel: (r) => `<span class="jm-pil ${kelasStatus(r.status)}">${esc(label("reg.status.", r.status))}</span>` },
+      { k: "tgl", j: "tk.c.tanggal", u: (r) => r.tanggal_ditetapkan, desc: 1, kelas: "jm-num", sel: (r) => esc(tanggal(r.tanggal_ditetapkan)) },
+    ] }), sumber: src("tk.src.reg", D.reg_tgl),
+  });
+}
+
+function sBerita(S) {
+  if (!S.ber.length) return "";
+  const ber = [...S.ber].sort((a, z) => urut(a.terbit, z.terbit));
+  const kartu = ber.slice(0, 6).map((b) => {
+    const f = fotoBerita(D.foto, b.id), u = amanUrl(b.url), lg = logoLokal(b.media);
+    return `<li><a href="${esc(u || "#")}" target="_blank" rel="noopener noreferrer">${f ? `<img class="jm-tk-brt-f" src="${esc(f)}" alt="" loading="lazy" decoding="async" referrerpolicy="no-referrer">` : `<span class="jm-tk-brt-k">${ikon("berita", 32)}</span>`}<span class="jm-tk-brt-t">${esc(b.judul)}</span><small class="jm-tk-media">${lg ? `<img src="${esc(lg)}" width="16" height="16" alt="" loading="lazy" decoding="async" data-galat="hapus">` : ""}<span>${esc(namaMedia(b.media))}, ${esc(tanggal(String(b.terbit).slice(0, 10)))}</span></small></a></li>`;
+  }).join("");
+  return bagian("pl-berita", "berita", "berita", {
+    judulHtml: hlHtml("tk.s.berita.j", num(ber.length), { nama: nm() }), sub: esc(t("tk.s.berita.sub")),
+    isiHtml: `<ul class="jm-tk-berita">${kartu}</ul>`, sumber: src("tk.src.berita", D.ber_tgl),
+    kakiHtml: lihatSemuaHtml("/berita", t("tk.lihat.berita"), num(ber.length)),
+  });
+}
+
+/* ---------- linimasa 2025-2060 (N16): target resmi, pipeline RUPTL, aturan, proyek kunci ---------- */
+
+const SATUAN_TARGET = (u) => (/persen/.test(u) ? "%" : /_mw$/.test(u) ? " MW" : /twh/.test(u) ? " TWh" : "");
+function peristiwa(S) {
+  const e = [], sumberT = new Map(D.target.sumber.map((s) => [s.id, s]));
+  for (const x of D.target.target) {
+    if (!x.tahun_target || x.tahun_target < 2025 || /dicabut/.test(x.catatan || "")) continue;
+    const s = sumberT.get(x.dokumen), v = x.maks != null ? `${num(x.min, 1)}-${num(x.maks, 1)}` : (x.min != null ? num(x.min, x.min % 1 ? 1 : 0) : "-");
+    e.push({ y: x.tahun_target, jenis: "target", teks: `${ada("pl.tgt." + x.ukuran) ? t("pl.tgt." + x.ukuran) : x.ukuran}: ${v}${SATUAN_TARGET(x.ukuran)}`, sumber: s?.judul, url: s?.url, hal: x.halaman });
+  }
+  for (const [y, mw] of S.perTahun) e.push({ y, jenis: "ruptl", teks: t("pl.lini.ruptl", { mw: num(mw), n: S.ruptl.filter((r) => r.cod_tahun?.[0] === y).length }), sumber: D.rup.sumber[0]?.judul, url: D.rup.sumber[0]?.url });
+  if (S.atap) for (const [y, mw] of Object.entries(S.atap.total.per_tahun)) e.push({ y: +y, jenis: "ruptl", teks: t("pl.lini.atap", { mw: num(mw) }), sumber: D.atap.sumber[0]?.judul, url: D.atap.sumber[0]?.url, hal: S.atap.total.halaman });
+  for (const r of S.reg) if (r.tanggal_ditetapkan >= "2025") e.push({ y: +r.tanggal_ditetapkan.slice(0, 4), jenis: "aturan", teks: `${namaRegulasi(r)}: ${r.judul}`, sumber: namaRegulasi(r), url: r.url_sumber });
+  for (const p of [...S.proyek].filter((p) => cod(p) >= 2025).sort((a, z) => kap(z) - kap(a)).slice(0, 8)) e.push({ y: cod(p), jenis: "proyek", teks: `${namaProyek(p)}${p.kapasitas?.[0] ? ` (${num(p.kapasitas[0].nilai, 0)} ${p.kapasitas[0].satuan})` : ""}`, href: "/p/" + p.id, sumber: t("pl.src.proyek") });
+  return e.sort((a, z) => a.y - z.y);
+}
+function sLini(S) {
+  const e = peristiwa(S), th = new Map(); for (const x of e) (th.get(x.y) || th.set(x.y, []).get(x.y)).push(x);
+  const grup = [...th].map(([y, a]) => `<li class="pl-th"${lini || [...th.keys()].indexOf(y) < BATAS_LINI ? "" : " data-lebih hidden"}><h3>${y}</h3><ul>${a.map((x) => {
+    const u = amanUrl(x.url), s = x.sumber ? (u ? `<a href="${esc(u)}" target="_blank" rel="noopener noreferrer">${esc(x.sumber)}</a>` : esc(x.sumber)) : "";
+    return `<li><span class="jm-pil pl-jn pl-jn-${x.jenis}">${esc(t("pl.jn." + x.jenis))}</span><span class="pl-lt">${x.href ? `<a href="${esc(x.href)}">${esc(x.teks)}</a>` : esc(x.teks)}${s ? `<small>${s}${x.hal ? `, ${esc(x.hal)}` : ""}</small>` : ""}</span></li>`;
+  }).join("")}</ul></li>`).join("");
+  const n = th.size, lebih = n > BATAS_LINI ? `<p class="jm-tk-lebih"><button type="button" data-lini aria-expanded="${lini}">${esc(t(lini ? "tk.lebih_sedikit" : "tk.lebih", { n }))}</button></p>` : "";
+  const adaTek = S.perTahun.length || S.atap;
+  return bagian("pl-lini", "linimasa", "lini", {
+    judulHtml: hlHtml("pl.s.lini.j", num(e.length), { a: e[0]?.y ?? 2025, z: e.at(-1)?.y ?? 2060 }), sub: `${esc(t(adaTek ? "pl.s.lini.sub" : "pl.s.lini.sub0"))}`,
+    isiHtml: `<ol class="pl-lini">${grup}</ol>${lebih}`,
+    sumber: sumberLipat([{ sumber: D.target.sumber[0]?.judul, url: D.target.sumber[0]?.url, tanggal: D.target.meta.diperbarui }, D.rup.sumber[0] && { sumber: D.rup.sumber[0]?.judul, url: D.rup.sumber[0]?.url, tanggal: D.rup.meta.diperbarui }]),
+  });
+}
+
+/* ---------- rakit ---------- */
+
+function gambarIsi() {
+  const S = olah(); gambarKepala(S);
+  isi.innerHTML = [sAngka(S), sProyek(S), sWaduk(S), sWkp(), sKuotaAtap(S), sPemain(S), sReg(S), sBerita(S), sLini(S), `<div id="plIndustri"></div>`].join("");
+  pasangBar(isi); gambarSemua(isi);
+  indSiap = false; industri();
+  const kodeT = cfg.ruptl || (cfg.id === "hidrogen" ? "hidrogen" : null);
+  if (kodeT) terkaitHtml("teknologi", kodeT).then((h) => { if (h && isi.isConnected && !isi.querySelector(".jm-terkait")) isi.insertAdjacentHTML("beforeend", h); }).catch(() => {});
+}
+async function industri() {
+  if (!cfg.ind) { $("plIndustri").innerHTML = industriHtml(cfg, X); pasangBar(isi); gambarSemua($("plIndustri")); return; }
+  const mine = cfg.id, ambil = (n) => muat(n).catch(() => null);
+  [X.RT, X.TK, X.PT] = await Promise.all([ambil("rantai_plts"), ambil("tkdn"), ambil("penyedia_teknologi")]);
+  X.PROY = D.proyek.map((p) => ({ id: p.id })); X.BER = D.berita;
+  if (mine !== cfg.id || !$("plIndustri")) return;
+  $("plIndustri").innerHTML = industriHtml(cfg, X); pasangBar(isi); gambarSemua($("plIndustri"));
+}
+function segmen() {
+  $("plSeg").innerHTML = TEK.map((k) => `<button type="button" role="tab" data-tek="${k.id}" aria-selected="${k.id === cfg.id}">${ikonPelacak(k.id)}<span>${esc(t("pl.tek.s." + k.id))}</span></button>`).join("");
+}
+function pilih(id) {
+  cfg = tekById(id);
+  for (const b of $("plSeg").children) b.setAttribute("aria-selected", String(b.dataset.tek === id));
+  try { const u = new URL(location.href); u.searchParams.set("tek", id); history.replaceState(null, "", u); } catch (e) {}
+  nanti(gambarIsi);
+}
+
+/* ---------- mulai ---------- */
+
+await mulaiHalaman();
+isi = $("plIsi");
+cfg = tekById(new URLSearchParams(location.search).get("tek")) || tekById(TEK_AWAL);
+segmen();
+isi.innerHTML = hantuHtml(6);
+const ambil = (n) => muat(n).catch(() => null);
+const [proyek, ruptl, reg, org, ber, foto, wkp, atap, target, tren] = await Promise.all(["proyek", "ruptl", "regulasi", "organisasi", "berita", "berita_foto", "wkp", "plts_atap", "target", "kapasitas_tren"].map(ambil));
+if (!proyek || !target) { isi.innerHTML = ""; tampilGalat(isi, () => location.reload()); } else {
+  D = { proyek: proyek.baris, proyek_tgl: proyek.dibangun_pada, ruptl, reg: reg?.baris || [], reg_tgl: reg?.dibangun_pada, org: org?.baris || [], org_tgl: org?.dibangun_pada, berita: ber?.baris || [], ber_tgl: ber?.dibangun_pada, foto, wkp, atap, target, tren: tren || { baris: [] } };
+  D.rup = ruptl || { baris: [], sumber: [], meta: {} }; D.ruptl = D.rup.baris;
+  gambarIsi();
+  pasangTabel(isi);
+  $("plSeg").addEventListener("click", (e) => { const b = e.target.closest("button[data-tek]"); if (b && b.dataset.tek !== cfg.id) pilih(b.dataset.tek); });
+  saatBahasa(() => { segmen(); gambarIsi(); });
+  isi.addEventListener("error", (e) => { const im = e.target; if (im.tagName === "IMG" && im.dataset.lg) im.replaceWith(Object.assign(document.createElement("span"), { innerHTML: ikon("direktori", 22) }).firstChild); }, true);
+  isi.addEventListener("click", (e) => {
+    const b = e.target.closest("button[data-lini]");
+    if (!b) return;
+    lini = b.getAttribute("aria-expanded") !== "true";
+    b.setAttribute("aria-expanded", String(lini));
+    b.textContent = t(lini ? "tk.lebih_sedikit" : "tk.lebih", { n: isi.querySelectorAll(".pl-th").length });
+    nanti(() => { for (const r of isi.querySelectorAll(".pl-th[data-lebih]")) r.hidden = !lini; });
+  });
+}
