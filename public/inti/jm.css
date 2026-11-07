@@ -611,7 +611,7 @@ main>:is(section,div,article)+:is(section,div,article){margin-top:max(24px,var(-
 @media (max-width:760px){
   .jm-saring{grid-template-columns:minmax(0,1fr)!important}
   .jm-saring>*{grid-column:1/-1!important;justify-self:stretch!important}
-  .jm-cari input,.jm-pil-pilih select,.jm-saring select,.jm-saring input,select,textarea,input:not([type=checkbox],[type=radio],[type=range],[type=file]){font-size:16px}
+  .jm-cari input,.jm-pil-pilih select,.jm-saring select,.jm-saring input,select,textarea,input:not([type=checkbox],[type=radio],[type=range],[type=file]){font-size:var(--t-masukan)}
   .jm-sumber-b{position:relative}
   .jm-sumber-b::after{content:"";position:absolute;inset:-10px}
   .jm-aksi-b,.jm-bagi.kecil .jm-bagi-b{width:44px;height:44px}
@@ -634,3 +634,9 @@ main>:is(section,div,article)+:is(section,div,article){margin-top:max(24px,var(-
   .maplibregl-ctrl-group button{width:44px;height:44px}
 }
 @media (max-width:760px){.jm-pk-sel .jm-pk-nm{display:inline-flex;align-items:center;min-height:44px}}
+/* panel geser: pegangan tepi di dalam panel (bukan -4px) agar tidak memicu gulir datar, lebih lebar agar mudah ditarik (pemilik 8 Nov 2026) */
+.jm-geser{overflow-x:hidden!important;overflow-y:auto}
+.jm-geser>.jm-geser-pegangan{right:0;width:14px;z-index:4}
+.jm-geser.sisi-kanan>.jm-geser-pegangan{left:0;right:auto}
+.jm-geser>.jm-geser-pegangan::after{opacity:.55;left:6px;height:40px;margin-top:-20px;width:3px}
+.jm-geser:hover>.jm-geser-pegangan::after{opacity:.9;background:var(--accent)}
