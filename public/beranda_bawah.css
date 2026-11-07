@@ -198,3 +198,7 @@
 .jm-bb-pp-g::before{content:"";position:absolute;left:50%;top:8px;width:36px;height:3px;margin-left:-18px;border-radius:2px;background:var(--line-ctl)}
 .jm-bb-pp-g .jm-geser-reset{position:absolute;right:6px;top:-2px;margin:0}
 @media (max-width:899px){.jm-bb-pp-g{display:none}}
+
+.jm-bb-prog-semua{display:flex;align-items:center;justify-content:center;gap:8px;min-height:var(--target);margin:8px 8px 4px;border:1px solid var(--line);border-radius:var(--r-pil);background:var(--card);color:var(--accent);text-decoration:none;font:600 var(--t-tombol)/var(--lh-rapat) var(--font)}
+.jm-bb-prog-semua:hover{border-color:var(--accent)}
+.jm-bb-prog-semua:focus-visible{outline:2px solid var(--fokus);outline-offset:2px}

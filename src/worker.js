@@ -13,6 +13,9 @@ import { rute as ruteMetiWilayah, namaProvinsi } from "./meti_wilayah.js";
 import { rute as rutePesan } from "./pesan.js";
 import { rute as ruteProfilAkun } from "./profil_akun.js";
 import { rute as ruteKta } from "./kta.js";
+import { rute as ruteIkuti } from "./ikuti.js";
+import { rute as rutePortal } from "./portal.js";
+import { rute as ruteWilayahKelola } from "./wilayah_kelola.js";
 import * as hak from "./hak.js";
 import { halamanProfil } from "./profil.js";
 import { halamanSiaran } from "./siaran.js";
@@ -34,7 +37,7 @@ const rutePemilik = {
 };
 
 // Tabel rute dikompilasi sekali: { metode, bagian[], fn }.
-const DAFTAR = Object.entries({ ...ruteSesi, ...ruteAkun, ...ruteAgenda, ...ruteEvent, ...ruteDirektori, ...ruteFoto, ...ruteAdmin, ...ruteLangganan, ...ruteKelayakan, ...rutePustaka, ...ruteKta, ...ruteMetiWilayah, ...rutePesan, ...ruteProfilAkun, ...rutePemilik }).map(([k, fn]) => {
+const DAFTAR = Object.entries({ ...ruteSesi, ...ruteAkun, ...ruteAgenda, ...ruteEvent, ...ruteDirektori, ...ruteFoto, ...ruteAdmin, ...ruteLangganan, ...ruteKelayakan, ...rutePustaka, ...ruteKta, ...ruteMetiWilayah, ...rutePesan, ...ruteProfilAkun, ...ruteIkuti, ...rutePortal, ...ruteWilayahKelola, ...rutePemilik }).map(([k, fn]) => {
   const [metode, jalur] = k.split(" ");
   return { metode, bagian: jalur.split("/").slice(1), fn };
 });
@@ -181,6 +184,7 @@ async function halaman(req, env, url, akun) {
     return (await halamanSiaran(req, env, url, m[1])) ?? TIDAK_ADA();
   }
   // /meti-wilayah/<kode BPS>: halaman yang sama dengan /meti-wilayah, judul diisi dari katalog (SSR judul); kode tak dikenal = 404.
+  if ((m = path.match(/^\/meti-wilayah\/(\d{2})\/kelola$/)) && namaProvinsi(m[1])) return halamanPrivat(await env.ASSETS.fetch(new Request(new URL("/meti-wilayah-kelola", url), req)));
   if ((m = path.match(/^\/meti-wilayah\/([^/]+)$/))) {
     const nama = namaProvinsi(m[1]);
     if (!nama) return TIDAK_ADA();
@@ -207,7 +211,23 @@ async function halaman(req, env, url, akun) {
     const html = (await res.text()).replace(/<title>[^<]*<\/title>/, () => `<title>${nama} | Direktori METI</title>`);
     return new Response(html, { status: 200, headers: { "content-type": "text/html; charset=utf-8", "cache-control": "public, max-age=300" } });
   }
+  if ((m = path.match(/^\/program\/([a-z0-9-]{1,40})$/)) && (req.method === "GET" || req.method === "HEAD")) return halamanProgram(req, env, url, m[1]);
   return env.ASSETS.fetch(req);
+}
+
+// /program/<kode>: cangkang /program, <title> diisi dari potret program_analisis (SSR judul); kode tak dikenal = 404.
+export async function halamanProgram(req, env, url, kode) {
+  let nama = null;
+  try {
+    const r = await env.ASSETS.fetch(new Request(new URL("/data/program_analisis.json", url)));
+    nama = r.ok ? ((await r.json()).baris || []).find((g) => g.kode === kode)?.nama?.id : null;
+  } catch { nama = null; }
+  if (!nama) return TIDAK_ADA();
+  const res = await env.ASSETS.fetch(new Request(new URL("/program", url), req));
+  if (!res.ok || req.method === "HEAD") return res;
+  const aman = nama.replace(/[<>&"]/g, "").slice(0, 140);
+  const html = (await res.text()).replace(/<title[^>]*>[^<]*<\/title>/, () => `<title>${aman} | Program energi METI</title>`);
+  return new Response(html, { status: 200, headers: { "content-type": "text/html; charset=utf-8", "cache-control": "public, max-age=300" } });
 }
 
 async function api(req, env, ctx, url) {

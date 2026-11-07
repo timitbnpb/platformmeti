@@ -532,7 +532,7 @@ function gambarProg() {
     const punyaKap = tot && g.kapasitas_mw;
     const isi = tot ? `<div class="jm-pj-pk-bar">${barTumpuk(per, tot)}</div>${legTitik(per)}` : dasarKosong(g);
     const kaki = (tot ? t("pj.prog.lihat", { n: num(tot) }) : t(nreg ? "pj.prog.reg" : "pj.prog.buka")).replace(/\s*\u2192\s*$/, "");
-    return `<a class="jm-pj-pk jm-pj-pg-${i % 5}" href="#program-${esc(g.id)}"><div class="jm-pj-pk-gb">${IMG_PROG[g.id] ? `<img src="${IMG_PROG[g.id]}" alt="" width="800" height="450" loading="lazy" decoding="async">` : ""}<span class="jm-pj-pk-ik">${ikProg(g.id)}</span><h3>${esc(g.nama)}</h3></div>
+    return `<a class="jm-pj-pk jm-pj-pg-${i % 5}" href="/program/${esc(g.id)}"><div class="jm-pj-pk-gb">${IMG_PROG[g.id] ? `<img src="${IMG_PROG[g.id]}" alt="" width="800" height="450" loading="lazy" decoding="async">` : ""}<span class="jm-pj-pk-ik">${ikProg(g.id)}</span><h3>${esc(g.nama)}</h3></div>
       <div class="jm-pj-pk-isi"><p class="jm-pj-pk-desk">${esc(g.ringkas || "")}</p>
       <dl class="jm-pj-pk-stat"><div><dt>${esc(t("pj.prog.proyek"))}</dt><dd>${num(tot)}</dd></div><div><dt>${esc(t("pj.c.kap"))}</dt><dd${punyaKap ? "" : ` class="jm-pj-redup" title="${esc(t("pj.prog.belum.ket"))}"`}>${punyaKap ? kapKecil(g.kapasitas_mw, sat) : "-"}</dd></div><div><dt>${esc(t("pj.rel.reg"))}</dt><dd${nreg ? "" : ' class="jm-pj-redup"'}>${nreg ? num(nreg) : "-"}</dd></div></dl>
       ${isi}<span class="jm-pj-link">${esc(kaki)} <span aria-hidden="true">\u2192</span></span></div></a>`;

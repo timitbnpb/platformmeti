@@ -1,7 +1,7 @@
 /* Bagian beranda di bawah lipatan: sensus per teknologi, halaman lain, cara data dibuat, akses data.
    Dirender saat mendekati layar (IntersectionObserver); angka dari public/data/*.json. */
 import { t, ada, angka, tanggal } from "/i18n.js";
-import { esc, hantuHtml, nanti } from "/inti/umum.js";
+import { esc, hantuHtml, nanti, ikon } from "/inti/umum.js";
 import { IKON_TEK } from "/inti/ikon_tek.js";
 import { aksiHtml } from "/inti/aksi_ex.js";
 import { sumberHtml, exHtml } from "/inti/komponen.js";
@@ -155,7 +155,7 @@ async function siapPeta() {
   }
   info.querySelector(".jm-bb-pp-g").setAttribute("aria-label", t("jm.geser.label"));
   info.querySelector(".jm-bb-pp-r").innerHTML = `<button type="button" class="jm-bb-pp-t" aria-expanded="${panelBuka}"><span>${esc(t("beranda.peta.tabel"))}</span><i aria-hidden="true"></i></button><div class="jm-bb-pp-b"${panelBuka ? "" : " hidden"}>
-    <div class="jm-bb-prog-w"><ul class="jm-bb-prog-l">${baris}</ul></div></div>`;
+    <div class="jm-bb-prog-w"><ul class="jm-bb-prog-l">${baris}</ul></div><a class="jm-bb-prog-semua" href="/program">${ikon("proyek", 16)}<span>${esc(t("pg.beranda.semua"))}</span></a></div>`;
   if (!info.dataset.pasang) {
     info.dataset.pasang = "1";
     info.addEventListener("click", (e) => {

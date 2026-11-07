@@ -1,0 +1,4921 @@
+{
+ "meta": {
+  "diperbarui": "2026-11-08",
+  "catatan": "Sumber tulisan: berita media nasional dan rilis kementerian yang ditautkan pada tiap butir; ringkasan diparafrase. Tingkat bukti diturunkan dari host sumber. Posisi METI hanya dari arsip non-rahasia."
+ },
+ "program": [
+  {
+   "kode": "plts-100gw",
+   "program_id": "plts-100gw",
+   "nama": [
+    "PLTS 100 GW (desa dan koperasi)",
+    "Solar 100 GW (villages and cooperatives)"
+   ],
+   "ikon": "surya",
+   "gambar": "surya-cirata",
+   "tahap": "rencana",
+   "tahap_ket": [
+    "Payung hukum (Perpres) masih disusun; tahap awal sekitar 17 GW disetujui Presiden, proyek percontohan koperasi sudah dibangun.",
+    "The legal basis (presidential regulation) is still being drafted; a first phase of about 17 GW is approved, and cooperative pilot plants are under construction."
+   ],
+   "ringkasan": [
+    "Program membangun PLTS hingga 100 GW pada 2029. Sekitar 80 GW dirancang lewat Koperasi Desa/Kelurahan Merah Putih dan sisanya oleh PLN dan swasta. Tahap awal sekitar 17 GW disetujui, dengan 13 GW diprioritaskan lebih dulu.",
+    "The program targets up to 100 GW of solar by 2029. About 80 GW is designed through Merah Putih village and urban cooperatives, with the rest built by PLN and private developers. A first phase of about 17 GW is approved, of which 13 GW is prioritized."
+   ],
+   "dasar_hukum": [
+    {
+     "reg": "perpres-112-2022",
+     "nama": "Perpres 112/2022",
+     "ket": [
+      "Percepatan energi terbarukan untuk tenaga listrik; sedang direvisi (izin prakarsa turun Februari 2026).",
+      "Renewable acceleration for power supply; under revision (initiative permit issued February 2026)."
+     ]
+    },
+    {
+     "reg": "permen-esdm-2-2024",
+     "nama": "Permen ESDM 2/2024",
+     "ket": [
+      "Aturan PLTS atap yang terhubung jaringan PLN.",
+      "Rules for grid-connected rooftop solar."
+     ]
+    },
+    {
+     "reg": null,
+     "nama": "Rancangan Perpres PLTS 100 GWp",
+     "ket": [
+      "Belum terbit per pencarian terakhir; target 100 GW belum tercantum di RUKN dan RUPTL menurut pengamat.",
+      "Not issued as of the last check; analysts note the 100 GW target is not yet in RUKN or RUPTL."
+     ]
+    }
+   ],
+   "target": [
+    {
+     "label": [
+      "Kapasitas PLTS nasional",
+      "National solar capacity"
+     ],
+     "angka": "100",
+     "satuan": "GW",
+     "tahun": 2029,
+     "url": "https://industri.kontan.co.id/news/pemerintah-susun-perpres-demi-kawal-ambisi-prabowo-capai-target-kapasitas-plts-100-gw",
+     "tgl": "2026-09"
+    },
+    {
+     "label": [
+      "Tahap pertama disetujui",
+      "First phase approved"
+     ],
+     "angka": "17",
+     "satuan": "GW",
+     "tahun": 2026,
+     "url": "https://www.kabarbursa.com/makro/tahap-pertama-plts-100-gw-disetujui-presiden-akan-lakukan-groundbreaking",
+     "tgl": "2026-08"
+    },
+    {
+     "label": [
+      "Melalui koperasi desa/kelurahan",
+      "Through village/urban cooperatives"
+     ],
+     "angka": "80",
+     "satuan": "GW",
+     "tahun": 2029,
+     "url": "https://www.metrotvnews.com/read/kpLCQBdz-program-plts-100-gw-bisa-hidupkan-ekonomi-80000-desa-di-indonesia",
+     "tgl": "2026-08"
+    }
+   ],
+   "tonggak": [
+    {
+     "tgl": "2026-04",
+     "t": [
+      "Pemerintah menargetkan 17 GW PLTS dibangun pada 2026.",
+      "Government targets 17 GW of solar built in 2026."
+     ],
+     "url": "https://katadata.co.id/ekonomi-hijau/energi-baru/69e78d49c9d51/pemerintah-targetkan-bangun-17-gw-plts-tahun-ini"
+    },
+    {
+     "tgl": "2026-06",
+     "t": [
+      "PLTS koperasi Pulau Sembur, Batam, mencapai progres sekitar 80 persen.",
+      "The Pulau Sembur (Batam) cooperative solar plant reaches about 80 percent progress."
+     ],
+     "url": "https://www.investortrust.id/business/107048/pertamina-dan-kemenkop-percepat-plts-koperasi-desa-merah-putih-di-batam-progres-80"
+    },
+    {
+     "tgl": "2026-08",
+     "t": [
+      "Tahap pertama disetujui Presiden; groundbreaking disiapkan.",
+      "First phase approved by the President; groundbreaking prepared."
+     ],
+     "url": "https://www.kabarbursa.com/makro/tahap-pertama-plts-100-gw-disetujui-presiden-akan-lakukan-groundbreaking"
+    },
+    {
+     "tgl": "2026-09-24",
+     "t": [
+      "Harmonisasi Raperpres PLTS 100 GWp berjalan; METI dilibatkan dalam diskusi.",
+      "Harmonization of the draft 100 GWp regulation under way; METI joins the discussion."
+     ],
+     "url": "https://katadata.co.id/ekonomi-hijau/energi-baru/6aaa40b388eda/pemerintah-dikejar-waktu-susun-perpres-plts-100-gwp-sejauh-mana-progresnya"
+    },
+    {
+     "tgl": "2029",
+     "t": [
+      "Tenggat target 100 GW.",
+      "Deadline of the 100 GW target."
+     ],
+     "url": "https://industri.kontan.co.id/news/pemerintah-susun-perpres-demi-kawal-ambisi-prabowo-capai-target-kapasitas-plts-100-gw",
+     "perkiraan": true
+    }
+   ],
+   "realisasi": [
+    {
+     "label": [
+      "PLTS koperasi Pulau Sembur, Batam",
+      "Pulau Sembur cooperative solar plant, Batam"
+     ],
+     "nilai": [
+      "sekitar 80 persen selesai",
+      "about 80 percent complete"
+     ],
+     "per": "2026-06",
+     "url": "https://www.investortrust.id/business/107048/pertamina-dan-kemenkop-percepat-plts-koperasi-desa-merah-putih-di-batam-progres-80"
+    }
+   ],
+   "proyek": {
+    "program_ids": [
+     "plts-100gw"
+    ]
+   },
+   "pelaksana": [
+    {
+     "kel": "regulator",
+     "org": "l_7278e0528a",
+     "nama": "Kementerian ESDM",
+     "peran": [
+      "Menyusun Perpres dan regulasi turunan",
+      "Drafts the regulation and implementing rules"
+     ],
+     "orang": "o_191f303dc1"
+    },
+    {
+     "kel": "regulator",
+     "org": null,
+     "nama": "Kementerian Koperasi",
+     "peran": [
+      "Pembina koperasi desa/kelurahan Merah Putih",
+      "Supervises Merah Putih cooperatives"
+     ]
+    },
+    {
+     "kel": "regulator",
+     "org": null,
+     "nama": "Kementerian Pekerjaan Umum",
+     "peran": [
+      "Lahan dan waduk untuk PLTS terapung",
+      "Land and reservoirs for floating solar"
+     ]
+    },
+    {
+     "kel": "pelaksana",
+     "org": "su_ed074ff5",
+     "nama": "PLN",
+     "peran": [
+      "Pembeli listrik dan pelaksana proyek",
+      "Offtaker and project executor"
+     ],
+     "orang": "o_5497a8db00"
+    },
+    {
+     "kel": "pelaksana",
+     "org": "p_10e0dde689",
+     "nama": "Pertamina NRE",
+     "peran": [
+      "Pengembang PLTS koperasi (Batam)",
+      "Developer of the Batam cooperative plant"
+     ],
+     "orang": "o_2c9573f328"
+    },
+    {
+     "kel": "pendana",
+     "org": "l_43f00f6a72",
+     "nama": "Danantara",
+     "peran": [
+      "Pendanaan dan pengembangan melalui BUMN",
+      "Funding and development through SOEs"
+     ]
+    },
+    {
+     "kel": "pengembang",
+     "org": null,
+     "nama": "Pengembang swasta (IPP)",
+     "peran": [
+      "Membangun sisa kapasitas di luar jalur koperasi",
+      "Build capacity outside the cooperative track"
+     ]
+    },
+    {
+     "kel": "pemda",
+     "org": null,
+     "nama": "Pemerintah daerah",
+     "peran": [
+      "Perizinan dan penyediaan lahan",
+      "Permits and land provision"
+     ]
+    },
+    {
+     "kel": "masyarakat",
+     "org": null,
+     "nama": "Koperasi Desa/Kelurahan Merah Putih",
+     "peran": [
+      "Pemilik dan pengelola PLTS tingkat desa",
+      "Owners and operators of village-level solar"
+     ]
+    },
+    {
+     "kel": "masyarakat",
+     "org": null,
+     "nama": "IESR",
+     "peran": [
+      "Kajian model pengelolaan PLTS desa",
+      "Analysis of village solar ownership models"
+     ]
+    }
+   ],
+   "pendanaan": [
+    {
+     "label": [
+      "Rancangan Perpres menyiapkan hingga 24.000 hektare lahan",
+      "The draft regulation prepares up to 24,000 hectares of land"
+     ],
+     "nilai": [
+      "24.000 ha",
+      "24,000 ha"
+     ],
+     "url": "https://investortrust.id/business/104743/kejar-target-plts-100-gw-pemerintah-siapkan-perpres-hingga-24000-hektare-lahan",
+     "tgl": "2026-08"
+    }
+   ],
+   "pendanaan_catatan": [
+    "Nilai investasi total belum ditemukan pada sumber resmi.",
+    "A total investment figure was not found in official sources."
+   ],
+   "isu": [
+    {
+     "jenis": "regulasi",
+     "tingkat": "tinggi",
+     "j": [
+      "Payung hukum belum terbit",
+      "Legal basis not yet issued"
+     ],
+     "u": [
+      "Perpres belum terbit dan target 100 GW belum masuk RUKN dan RUPTL, sehingga dasar pengadaan dan pembelian listrik belum jelas.",
+      "The regulation is not issued and the 100 GW target is not in RUKN or RUPTL, so procurement and offtake rules remain unclear."
+     ],
+     "url": "https://www.bloombergtechnoz.com/detail-news/116941/plts-100-gw-tak-ada-di-rukn-dasar-hukum-dinilai-belum-jelas/2"
+    },
+    {
+     "jenis": "lahan",
+     "tingkat": "tinggi",
+     "j": [
+      "Kebutuhan lahan besar",
+      "Large land requirement"
+     ],
+     "u": [
+      "Draf Perpres menyiapkan hingga 24.000 hektare lahan; kepastian hukum bendungan dan waduk untuk PLTS terapung menjadi permintaan METI.",
+      "The draft prepares up to 24,000 hectares; legal certainty for dams and reservoirs used for floating solar is a METI request."
+     ],
+     "url": "https://investortrust.id/business/104743/kejar-target-plts-100-gw-pemerintah-siapkan-perpres-hingga-24000-hektare-lahan"
+    },
+    {
+     "jenis": "teknis",
+     "tingkat": "sedang",
+     "j": [
+      "Jaringan dan intermiten",
+      "Grid and intermittency"
+     ],
+     "u": [
+      "Tambahan puluhan gigawatt surya memerlukan penyimpanan dan penguatan jaringan; PLN merencanakan PLTS dan BESS bersamaan.",
+      "Tens of gigawatts of solar need storage and grid reinforcement; PLN plans solar and BESS together."
+     ],
+     "url": "https://industri.kontan.co.id/news/plts-dan-bess-bakal-jadi-andalan-pln-capai-target-ruptl-hingga-dedieselisasi"
+    },
+    {
+     "jenis": "sosial",
+     "tingkat": "sedang",
+     "j": [
+      "Model pengelolaan oleh koperasi",
+      "Cooperative operating model"
+     ],
+     "u": [
+      "IESR memetakan tiga model pengelolaan PLTS desa; kapasitas teknis dan pendanaan koperasi menjadi penentu keberlanjutan.",
+      "IESR maps three village solar ownership models; cooperative technical capacity and financing decide sustainability."
+     ],
+     "url": "https://investortrust.id/business/104842/iesr-ungkap-tiga-model-pengelolaan-plts-untuk-desa-indonesia"
+    },
+    {
+     "jenis": "tarif",
+     "tingkat": "sedang",
+     "j": [
+      "Harga dan kontrak pembelian",
+      "Price and offtake contracts"
+     ],
+     "u": [
+      "Skema harga untuk PLTS koperasi dan kewajiban PLN membeli belum ditetapkan.",
+      "The price scheme for cooperative solar and PLN's purchase obligation are not yet set."
+     ],
+     "url": "https://www.kabarbursa.com/ekonomi-hijau/target-plts-100-gw-prabowo-dipertanyakan-apa-hambatannya.md"
+    }
+   ],
+   "berita": {
+    "re": "plts 100|100 gw|100 gwp|koperasi desa merah putih|kdkmp",
+    "luar": [
+     {
+      "judul": "Pemerintah susun Perpres demi kawal ambisi Prabowo capai target kapasitas PLTS 100 GW",
+      "url": "https://industri.kontan.co.id/news/pemerintah-susun-perpres-demi-kawal-ambisi-prabowo-capai-target-kapasitas-plts-100-gw",
+      "media": "Kontan",
+      "tgl": "2026-09"
+     },
+     {
+      "judul": "Govt prioritizes 13 GW solar rollout in initial phase of 100 GW target",
+      "url": "https://www.petromindo.com/news/article/govt-prioritizes-13-gw-solar-rollout-in-initial-phase-of-100-gw-target",
+      "media": "Petromindo",
+      "tgl": "2026-08"
+     }
+    ]
+   },
+   "posisi_meti": [
+    {
+     "t": [
+      "METI mengawal Raperpres PLTS 100 GWp, termasuk pengadaan bersama PU, ESDM, dan PLN.",
+      "METI follows the draft 100 GWp regulation, including joint procurement by Public Works, ESDM, and PLN."
+     ],
+     "sumber": "Materi audiensi MPR RI, 5 Okt 2026"
+    },
+    {
+     "t": [
+      "METI meminta kepastian hukum pemanfaatan bendungan (UU 17/2019 pasal 57) untuk PLTS terapung.",
+      "METI asks for legal certainty on dam use (Law 17/2019 article 57) for floating solar."
+     ],
+     "sumber": "Materi audiensi MPR RI, 5 Okt 2026"
+    },
+    {
+     "t": [
+      "METI mencatat tiga horizon target 100 GW yang beredar (30 GW tahun ini, 2029, 2034) dan mengusulkan satu rujukan resmi.",
+      "METI notes three circulating horizons for the 100 GW target (30 GW this year, 2029, 2034) and proposes one official reference."
+     ],
+     "sumber": "Materi audiensi MPR RI, 5 Okt 2026"
+    }
+   ],
+   "indikator": [
+    [
+     "Terbitnya Perpres PLTS 100 GWp",
+     "Issuance of the 100 GWp regulation"
+    ],
+    [
+     "Kapasitas PLTS yang dibangun per tahun (GW)",
+     "Solar capacity built per year (GW)"
+    ],
+    [
+     "Jumlah koperasi dengan PLTS beroperasi",
+     "Cooperatives with operating solar plants"
+    ],
+    [
+     "Skema harga dan kontrak pembelian PLN",
+     "Price scheme and PLN offtake contracts"
+    ]
+   ]
+  },
+  {
+   "kode": "wte",
+   "program_id": "wte",
+   "nama": [
+    "Sampah menjadi energi (PSEL/WtE)",
+    "Waste to energy (PSEL/WtE)"
+   ],
+   "ikon": "biomassa-sampah",
+   "gambar": "sampah-psel",
+   "tahap": "konstruksi",
+   "tahap_ket": [
+    "Tahap I sudah konstruksi (Denpasar mulai Juli 2026); tahap II menetapkan 8 mitra dengan surat penunjukan bersyarat pada 20 Juli 2026.",
+    "Phase I is under construction (Denpasar began July 2026); phase II named 8 partners with conditional letters of award on 20 July 2026."
+   ],
+   "ringkasan": [
+    "Danantara bersama Denera membangun pembangkit listrik berbasis sampah di kota prioritas lewat tender mitra. Tahap I memilih mitra untuk Denpasar, Bogor, Bekasi, dan Yogyakarta; tahap II memilih 8 mitra di 8 lokasi. Tiga proyek PSEL ditetapkan sebagai PSN pada Juni 2026.",
+    "Danantara and Denera build waste-fired power plants in priority cities through partner tenders. Phase I chose partners for Denpasar, Bogor, Bekasi, and Yogyakarta; phase II chose 8 partners at 8 locations. Three PSEL projects became national strategic projects in June 2026."
+   ],
+   "dasar_hukum": [
+    {
+     "reg": "perpres-109-2025",
+     "nama": "Perpres 109/2025",
+     "ket": [
+      "Penanganan sampah perkotaan melalui pengolahan sampah menjadi energi terbarukan.",
+      "Urban waste handling through waste-to-renewable-energy processing."
+     ]
+    },
+    {
+     "reg": "perpres-35-2018",
+     "nama": "Perpres 35/2018",
+     "ket": [
+      "Dicabut; digantikan Perpres 109/2025.",
+      "Revoked; replaced by Perpres 109/2025."
+     ]
+    }
+   ],
+   "target": [
+    {
+     "label": [
+      "Kota prioritas PSEL",
+      "Priority PSEL cities"
+     ],
+     "angka": "25",
+     "satuan": "kota",
+     "tahun": 2026,
+     "url": "https://www.metrotvnews.com/read/NG9CznxJ-danantara-buka-tender-proyek-waste-to-energy-untuk-25-kota",
+     "tgl": "2026-04"
+    }
+   ],
+   "tonggak": [
+    {
+     "tgl": "2026-04-10",
+     "t": [
+      "Danantara membuka tender PSEL jilid dua untuk puluhan kota.",
+      "Danantara opens the second PSEL tender round for dozens of cities."
+     ],
+     "url": "https://pasardana.id/news/2026/4/10/danantara-buka-tender-proyek-pengolahan-sampah-jadi-listrik-jilid-dua-di-25-kota"
+    },
+    {
+     "tgl": "2026-06",
+     "t": [
+      "Tiga proyek PSEL ditetapkan sebagai Proyek Strategis Nasional (surat keterangan KPPIP).",
+      "Three PSEL projects designated national strategic projects (KPPIP certificate)."
+     ],
+     "url": "https://listrikindonesia.com/detail/20414/wow-tiga-proyek-pengolah-sampah-jadi-listrik-resmi-masuk-psn-ini-lokasinya"
+    },
+    {
+     "tgl": "2026-07-01",
+     "t": [
+      "Konstruksi PSEL Denpasar dimulai; Bekasi dan Bogor menyusul.",
+      "Construction of the Denpasar PSEL begins; Bekasi and Bogor follow."
+     ],
+     "url": "https://biofuelsdigest.com/danantara-to-tender-six-waste-to-energy-projects-in-indonesia/",
+     "perkiraan": true
+    },
+    {
+     "tgl": "2026-07-20",
+     "t": [
+      "Danantara menyerahkan CLoA kepada 8 mitra terpilih PSEL tahap II.",
+      "Danantara hands Conditional Letters of Award to 8 selected phase II partners."
+     ],
+     "url": "https://www.metrotvnews.com/read/kpLCQ0E8-danantara-investment-management-serahkan-cloa-ke-8-mitra-terpilih-psel-tahap-kedua"
+    }
+   ],
+   "realisasi": [
+    {
+     "label": [
+      "Mitra terpilih tahap II",
+      "Phase II selected partners"
+     ],
+     "nilai": [
+      "8 mitra di 8 lokasi",
+      "8 partners at 8 locations"
+     ],
+     "per": "2026-07-20",
+     "url": "https://www.metrotvnews.com/read/kpLCQ0E8-danantara-investment-management-serahkan-cloa-ke-8-mitra-terpilih-psel-tahap-kedua"
+    }
+   ],
+   "proyek": {
+    "program_ids": [
+     "wte"
+    ]
+   },
+   "pelaksana": [
+    {
+     "kel": "regulator",
+     "org": "l_7278e0528a",
+     "nama": "Kementerian ESDM",
+     "peran": [
+      "Harga dan pembelian listrik",
+      "Electricity price and purchase"
+     ]
+    },
+    {
+     "kel": "regulator",
+     "org": null,
+     "nama": "Kementerian Lingkungan Hidup",
+     "peran": [
+      "Pengelolaan sampah dan perizinan lingkungan",
+      "Waste management and environmental permits"
+     ]
+    },
+    {
+     "kel": "pelaksana",
+     "org": "l_43f00f6a72",
+     "nama": "Danantara",
+     "peran": [
+      "Pengarah dan investor",
+      "Steering and investor"
+     ]
+    },
+    {
+     "kel": "pelaksana",
+     "org": "p_0ed65b38b8",
+     "nama": "Denera",
+     "peran": [
+      "Pelaksana unit WtE Danantara",
+      "Danantara WtE implementing unit"
+     ],
+     "orang": "o_053924d842"
+    },
+    {
+     "kel": "pengembang",
+     "org": null,
+     "nama": "Zhejiang Weiming",
+     "peran": [
+      "Mitra Denpasar dan Bogor (tahap I)",
+      "Partner for Denpasar and Bogor (phase I)"
+     ]
+    },
+    {
+     "kel": "pengembang",
+     "org": null,
+     "nama": "Wangneng Environment",
+     "peran": [
+      "Mitra Bekasi (tahap I)",
+      "Partner for Bekasi (phase I)"
+     ]
+    },
+    {
+     "kel": "pengembang",
+     "org": null,
+     "nama": "Chandra Waste Energy",
+     "peran": [
+      "Konsorsium Serang Raya (tahap II)",
+      "Serang Raya consortium (phase II)"
+     ]
+    },
+    {
+     "kel": "pengembang",
+     "org": "p_b1c52ad7b0",
+     "nama": "Pertamina",
+     "peran": [
+      "Mitra terpilih tahap II",
+      "Selected phase II partner"
+     ]
+    },
+    {
+     "kel": "pemda",
+     "org": null,
+     "nama": "Pemerintah kota/kabupaten",
+     "peran": [
+      "Penyedia sampah dan lahan, penerima layanan",
+      "Waste and land supplier, service recipient"
+     ]
+    },
+    {
+     "kel": "pelaksana",
+     "org": "su_ed074ff5",
+     "nama": "PLN",
+     "peran": [
+      "Pembeli listrik",
+      "Electricity buyer"
+     ]
+    },
+    {
+     "kel": "masyarakat",
+     "org": null,
+     "nama": "Warga sekitar TPA",
+     "peran": [
+      "Penerima dampak lingkungan dan sosial",
+      "Recipients of environmental and social impact"
+     ]
+    }
+   ],
+   "pendanaan": [],
+   "pendanaan_catatan": [
+    "Nilai investasi per proyek belum ditemukan pada sumber resmi.",
+    "Per-project investment values were not found in official sources."
+   ],
+   "isu": [
+    {
+     "jenis": "tarif",
+     "tingkat": "tinggi",
+     "j": [
+      "Tarif listrik dan tipping fee",
+      "Power tariff and tipping fee"
+     ],
+     "u": [
+      "Keekonomian PSEL bergantung pada harga beli listrik dan biaya layanan pengolahan sampah dari pemda.",
+      "PSEL economics depend on the electricity purchase price and the processing fee paid by local governments."
+     ],
+     "url": "https://listrikindonesia.com/detail/20458/investasi-psel-makin-menarik-investor-mulai-berdatangan"
+    },
+    {
+     "jenis": "teknis",
+     "tingkat": "sedang",
+     "j": [
+      "Mutu dan pasokan sampah",
+      "Waste quality and supply"
+     ],
+     "u": [
+      "Sampah perkotaan bercampur dan basah sehingga memerlukan pemilahan dan jaminan pasokan minimum.",
+      "Mixed, wet urban waste requires sorting and a guaranteed minimum supply."
+     ],
+     "url": "https://listrikindonesia.com/detail/20458/investasi-psel-makin-menarik-investor-mulai-berdatangan"
+    },
+    {
+     "jenis": "sosial",
+     "tingkat": "sedang",
+     "j": [
+      "Penerimaan warga dan emisi",
+      "Community acceptance and emissions"
+     ],
+     "u": [
+      "Lokasi dekat TPA memerlukan konsultasi warga dan pemantauan emisi.",
+      "Sites near landfills require community consultation and emissions monitoring."
+     ],
+     "url": "https://www.metrotvnews.com/read/b2lC6nWD-raksasa-iwaste-to-energyi-dunia-berebut-proyek-psel-indonesia"
+    },
+    {
+     "jenis": "regulasi",
+     "tingkat": "rendah",
+     "j": [
+      "Jumlah lokasi berbeda antar sumber",
+      "Number of locations differs between sources"
+     ],
+     "u": [
+      "Berita menyebut 14 hingga 25 lokasi; daftar resmi final perlu dirujuk dari Danantara.",
+      "Reports cite 14 to 25 locations; the final official list should be taken from Danantara."
+     ],
+     "url": "https://biofuelsdigest.com/?p=1000459"
+    }
+   ],
+   "berita": {
+    "re": "sampah|psel|waste",
+    "luar": [
+     {
+      "judul": "Danantara tetapkan 8 mitra untuk proyek PSEL tahap 2",
+      "url": "https://www.metrotvnews.com/read/NQAC0a1W-danantara-tetapkan-8-mitra-terpilih-untuk-proyek-psel-tahap-2",
+      "media": "Metro TV",
+      "tgl": "2026-07"
+     },
+     {
+      "judul": "Danantara umumkan 8 pemenang tender PSEL",
+      "url": "https://www.kabarbursa.com/ekonomi-hijau/danantara-umumkan-8-pemenang-tender-psel-anak-usaha-chandra-asri-tpia-masuk-daftar",
+      "media": "Kabar Bursa",
+      "tgl": "2026-07"
+     }
+    ]
+   },
+   "posisi_meti": [
+    {
+     "t": [
+      "METI mencatat WtE sebagai target program pemerintah di luar Perpres 109/2025 dan memuatnya dalam usulan peta jalan.",
+      "METI records WtE as a government program target and includes it in its roadmap proposal."
+     ],
+     "sumber": "Aspirasi METI untuk RDPU Komisi XII, 8 Sep 2026"
+    },
+    {
+     "t": [
+      "Komite PMO Waste to Energy dalam struktur METI 2026 sampai 2028 belum terisi.",
+      "The Waste to Energy PMO in METI's 2026 to 2028 structure is not yet staffed."
+     ],
+     "sumber": "SK 0008/SK/METI/VIII/2026"
+    }
+   ],
+   "indikator": [
+    [
+     "Jumlah proyek PSEL yang mencapai penutupan pendanaan",
+     "PSEL projects reaching financial close"
+    ],
+    [
+     "MW PSEL beroperasi (COD)",
+     "PSEL MW in operation (COD)"
+    ],
+    [
+     "Tarif listrik PSEL yang ditetapkan",
+     "Set PSEL power tariff"
+    ],
+    [
+     "Volume sampah terolah per hari (ton)",
+     "Waste processed per day (tons)"
+    ]
+   ]
+  },
+  {
+   "kode": "dedieselisasi",
+   "program_id": null,
+   "nama": [
+    "Dedieselisasi PLTD",
+    "PLTD de-dieselization"
+   ],
+   "ikon": "surya",
+   "gambar": "surya-cirata",
+   "tahap": "lelang",
+   "tahap_ket": [
+    "PLN menyiapkan 21 proyek semester I 2026; roadmap 5 sampai 10 tahun masih disusun.",
+    "PLN prepares 21 projects in the first half of 2026; a 5 to 10 year roadmap is still being drafted."
+   ],
+   "ringkasan": [
+    "Program mengganti pembangkit diesel (PLTD) dengan PLTS dan baterai. PLN mencatat 2.396 unit PLTD di 741 lokasi dengan kapasitas 1.076 MW, diganti sekitar 3,21 GWp PLTS dan 9,03 GWh BESS.",
+    "The program replaces diesel plants (PLTD) with solar and batteries. PLN counts 2,396 PLTD units at 741 sites totaling 1,076 MW, to be replaced by about 3.21 GWp of solar and 9.03 GWh of BESS."
+   ],
+   "dasar_hukum": [
+    {
+     "reg": "perpres-112-2022",
+     "nama": "Perpres 112/2022",
+     "ket": [
+      "Mengatur pembangkit terbarukan menggantikan PLTD.",
+      "Provides for renewables to replace diesel plants."
+     ]
+    },
+    {
+     "reg": null,
+     "nama": "RUPTL 2025-2034",
+     "ket": [
+      "Memuat target PLTS dan BESS untuk dedieselisasi; nomor Kepmen belum ditautkan.",
+      "Contains solar and BESS targets for de-dieselization; the ministerial decree number is not linked yet."
+     ]
+    }
+   ],
+   "target": [
+    {
+     "label": [
+      "PLTD diganti",
+      "PLTD replaced"
+     ],
+     "angka": "1.076",
+     "satuan": "MW",
+     "tahun": null,
+     "url": "https://industri.kontan.co.id/news/harga-bbm-melonjak-pln-akan-kebut-dedieselisasi-ubah-1076-mw-pltd-di-741-lokasi",
+     "tgl": "2026-04"
+    },
+    {
+     "label": [
+      "Pengganti PLTS",
+      "Solar replacement"
+     ],
+     "angka": "3,21",
+     "satuan": "GWp",
+     "tahun": null,
+     "url": "https://industri.kontan.co.id/news/harga-bbm-melonjak-pln-akan-kebut-dedieselisasi-ubah-1076-mw-pltd-di-741-lokasi",
+     "tgl": "2026-04"
+    },
+    {
+     "label": [
+      "Pengganti BESS",
+      "BESS replacement"
+     ],
+     "angka": "9,03",
+     "satuan": "GWh",
+     "tahun": null,
+     "url": "https://industri.kontan.co.id/news/harga-bbm-melonjak-pln-akan-kebut-dedieselisasi-ubah-1076-mw-pltd-di-741-lokasi",
+     "tgl": "2026-04"
+    }
+   ],
+   "tonggak": [
+    {
+     "tgl": "2022",
+     "t": [
+      "PLN membuka konversi hingga 250 MW PLTD ke PLTS dan baterai.",
+      "PLN opens conversion of up to 250 MW of PLTD to solar and batteries."
+     ],
+     "url": "https://www.antaranews.com/berita/5524365/pln-akan-eliminasi-2139-mesin-pembangkit-listrik-tenaga-diesel",
+     "perkiraan": true
+    },
+    {
+     "tgl": "2026-03-17",
+     "t": [
+      "Pemerintah mengumumkan lokasi PLTD yang akan dinonaktifkan dan diganti PLTS.",
+      "Government announces PLTD sites to be retired and replaced by solar."
+     ],
+     "url": "https://www.cnbcindonesia.com/news/20260317075155-4-719665/ri-bakal-suntik-mati-pembangkit-bbm-diganti-ke-plts-ini-lokasinya"
+    },
+    {
+     "tgl": "2026-04",
+     "t": [
+      "PLN menyebut 2.396 unit PLTD di 741 lokasi dan menyiapkan 21 proyek semester I.",
+      "PLN cites 2,396 PLTD units at 741 sites and prepares 21 first-half projects."
+     ],
+     "url": "https://industri.kontan.co.id/news/harga-bbm-melonjak-pln-akan-kebut-dedieselisasi-ubah-1076-mw-pltd-di-741-lokasi"
+    }
+   ],
+   "realisasi": [
+    {
+     "label": [
+      "Proyek siap dieksekusi semester I 2026",
+      "Projects ready to execute in H1 2026"
+     ],
+     "nilai": [
+      "21 proyek PLTS dan PLTS+BESS",
+      "21 solar and solar+BESS projects"
+     ],
+     "per": "2026-04",
+     "url": "https://industri.kontan.co.id/news/plts-dan-bess-bakal-jadi-andalan-pln-capai-target-ruptl-hingga-dedieselisasi"
+    }
+   ],
+   "proyek": {
+    "nama_re": "dedieselisasi|pltd"
+   },
+   "pelaksana": [
+    {
+     "kel": "regulator",
+     "org": "l_7278e0528a",
+     "nama": "Kementerian ESDM",
+     "peran": [
+      "Kebijakan dan percepatan program",
+      "Policy and acceleration"
+     ]
+    },
+    {
+     "kel": "pelaksana",
+     "org": "su_ed074ff5",
+     "nama": "PLN",
+     "peran": [
+      "Pemilik PLTD dan pelaksana konversi",
+      "Owner of PLTD and conversion executor"
+     ]
+    },
+    {
+     "kel": "pelaksana",
+     "org": "p_5a2e7d0c63",
+     "nama": "PLN Indonesia Power",
+     "peran": [
+      "Anak usaha pembangkit",
+      "Generation subsidiary"
+     ]
+    },
+    {
+     "kel": "pengembang",
+     "org": null,
+     "nama": "PLN EPI",
+     "peran": [
+      "Pilot biomassa Karimun, model untuk sekitar 200 lokasi",
+      "Karimun biomass pilot, model for about 200 sites"
+     ]
+    },
+    {
+     "kel": "pemda",
+     "org": null,
+     "nama": "Pemda kepulauan dan wilayah 3T",
+     "peran": [
+      "Lokasi sistem terisolasi",
+      "Isolated-system locations"
+     ]
+    },
+    {
+     "kel": "masyarakat",
+     "org": null,
+     "nama": "IESR",
+     "peran": [
+      "Kajian penghematan biaya listrik",
+      "Analysis of electricity cost savings"
+     ]
+    }
+   ],
+   "pendanaan": [],
+   "pendanaan_catatan": [
+    "Total investasi belum ditemukan; kajian media menyebut potensi penghematan biaya listrik hingga Rp64 triliun (Kompas, April 2026).",
+    "Total investment not found; a media report cites potential electricity cost savings up to Rp64 trillion (Kompas, April 2026)."
+   ],
+   "isu": [
+    {
+     "jenis": "teknis",
+     "tingkat": "sedang",
+     "j": [
+      "Target nasional berbeda antar sumber",
+      "National targets differ between sources"
+     ],
+     "u": [
+      "Berita menyebut 13 GW PLTD dihentikan, 17 GW atau 30 GWp PLTS tahun ini; angka PLN berbeda (1,076 GW).",
+      "Reports cite 13 GW of PLTD retired and 17 GW or 30 GWp of solar this year; PLN's figure differs (1.076 GW)."
+     ],
+     "url": "https://katadata.co.id/amp/berita/energi/69d3a102dd649/pemerintah-mulai-konversi-pltd-ke-plts-targetkan-bisa-kurangi-impor-bbm/"
+    },
+    {
+     "jenis": "pendanaan",
+     "tingkat": "sedang",
+     "j": [
+      "Biaya baterai dan model bisnis",
+      "Battery cost and business model"
+     ],
+     "u": [
+      "BESS 9 GWh memerlukan pendanaan besar; model bisnis dan kontrak jangka panjang perlu dirumuskan.",
+      "9 GWh of BESS needs large funding; business models and long-term contracts must be set."
+     ],
+     "url": "https://industri.kontan.co.id/news/plts-dan-bess-bakal-jadi-andalan-pln-capai-target-ruptl-hingga-dedieselisasi"
+    },
+    {
+     "jenis": "teknis",
+     "tingkat": "sedang",
+     "j": [
+      "Pelajaran dedieselisasi sebelumnya",
+      "Lessons from earlier de-dieselization"
+     ],
+     "u": [
+      "Lelang 250 MW pada 2022 realisasinya lambat; pengamat meminta program PLTS 100 GW tidak mengulang pola tersebut.",
+      "The 2022 tender of 250 MW progressed slowly; analysts ask the 100 GW solar program not to repeat the pattern."
+     ],
+     "url": "https://www.bloombergtechnoz.com/detail-news/119476/konversi-pltd-buat-plts-100-gw-diminta-tak-ulangi-dedieselisasi/2"
+    },
+    {
+     "jenis": "regulasi",
+     "tingkat": "rendah",
+     "j": [
+      "Roadmap belum final",
+      "Roadmap not final"
+     ],
+     "u": [
+      "Program berjangka 5 sampai 10 tahun dan peta jalan baru akan disusun.",
+      "The program runs 5 to 10 years and the roadmap is yet to be drafted."
+     ],
+     "url": "https://industri.kontan.co.id/news/harga-bbm-melonjak-pln-akan-kebut-dedieselisasi-ubah-1076-mw-pltd-di-741-lokasi"
+    }
+   ],
+   "berita": {
+    "re": "dedies|pltd|diesel",
+    "luar": [
+     {
+      "judul": "RI bakal suntik mati pembangkit BBM, diganti ke PLTS: ini lokasinya",
+      "url": "https://www.cnbcindonesia.com/news/20260317075155-4-719665/ri-bakal-suntik-mati-pembangkit-bbm-diganti-ke-plts-ini-lokasinya",
+      "media": "CNBC Indonesia",
+      "tgl": "2026-03-17"
+     },
+     {
+      "judul": "ESDM percepat program dedieselisasi, lebih 30 lokasi disiapkan",
+      "url": "https://investortrust.id/business/97128/esdm-percepat-program-dedieselisasi-lebih-30-lokasi-disiapkan",
+      "media": "Investortrust",
+      "tgl": "2026-04"
+     }
+    ]
+   },
+   "posisi_meti": [
+    {
+     "t": [
+      "METI mengusulkan listrik desa, dedieselisasi, dan daerah 3T masuk bab off-grid RUU EBET dengan perizinan yang mudah.",
+      "METI proposes rural power, de-dieselization, and remote regions in the off-grid chapter of the EBET bill with simple permitting."
+     ],
+     "sumber": "Aspirasi METI untuk RDPU Komisi XII, 8 Sep 2026"
+    },
+    {
+     "t": [
+      "Komisi XII meminta METI mendalami keberlanjutan off-grid: aset hibah pemda hanya bertahan sekitar 5 tahun dari usia teknis 15 sampai 20 tahun.",
+      "Commission XII asked METI to examine off-grid sustainability: local-government grant assets last about 5 years against a 15 to 20 year technical life."
+     ],
+     "sumber": "Kesimpulan audiensi Komisi XII, 8 Sep 2026"
+    }
+   ],
+   "indikator": [
+    [
+     "Jumlah lokasi PLTD yang dimatikan",
+     "PLTD sites retired"
+    ],
+    [
+     "MW PLTS dan MWh BESS terpasang di lokasi eks-PLTD",
+     "MW solar and MWh BESS installed at former PLTD sites"
+    ],
+    [
+     "Konsumsi solar PLN (kiloliter)",
+     "PLN diesel consumption (kiloliters)"
+    ],
+    [
+     "Terbitnya peta jalan dedieselisasi",
+     "Issuance of the de-dieselization roadmap"
+    ]
+   ]
+  },
+  {
+   "kode": "b50",
+   "program_id": "b50",
+   "nama": [
+    "Biodiesel B40/B50",
+    "Biodiesel B40/B50"
+   ],
+   "ikon": "bioenergi",
+   "gambar": "bioenergi-sawit",
+   "tahap": "berjalan",
+   "tahap_ket": [
+    "B40 berlaku sejak 1 Januari 2025; B50 berlaku sejak 1 Juli 2026 dengan masa transisi tiga bulan, penyaluran penuh ditargetkan 1 Oktober 2026.",
+    "B40 applied from 1 January 2025; B50 applies from 1 July 2026 with a three-month transition, full distribution targeted for 1 October 2026."
+   ],
+   "ringkasan": [
+    "Mandatori campuran biodiesel berbasis sawit (FAME) pada solar. B40 berlaku 2025 dan B50 ditetapkan lewat Kepmen ESDM 257.K/EK.01/MEM.E/2026 mulai 1 Juli 2026. Distribusi B50 mencapai sekitar 67 persen pada pertengahan Juli 2026.",
+    "A mandatory palm-based biodiesel (FAME) blend in diesel. B40 applied in 2025 and B50 was set by ESDM Decree 257.K/EK.01/MEM.E/2026 from 1 July 2026. B50 distribution reached about 67 percent by mid-July 2026."
+   ],
+   "dasar_hukum": [
+    {
+     "reg": "kepmen-esdm-257-k-ek-01-mem-e-2026",
+     "nama": "Kepmen ESDM 257.K/EK.01/MEM.E/2026",
+     "ket": [
+      "Penetapan mandatori B50 mulai 1 Juli 2026 (ditandatangani 17 Juni 2026).",
+      "Sets the B50 mandate from 1 July 2026 (signed 17 June 2026)."
+     ]
+    },
+    {
+     "reg": "permen-esdm-24-2021",
+     "nama": "Permen ESDM 24/2021",
+     "ket": [
+      "Penyediaan dan pemanfaatan biodiesel dalam kerangka pembiayaan BPDP.",
+      "Biodiesel supply and use under the BPDP financing framework."
+     ]
+    },
+    {
+     "reg": "perpres-40-2023",
+     "nama": "Perpres 40/2023",
+     "ket": [
+      "Percepatan swasembada gula dan penyediaan bioetanol.",
+      "Sugar self-sufficiency and bioethanol supply acceleration."
+     ]
+    }
+   ],
+   "target": [
+    {
+     "label": [
+      "Campuran biodiesel dalam solar",
+      "Biodiesel share in diesel"
+     ],
+     "angka": "50",
+     "satuan": "persen",
+     "tahun": 2026,
+     "url": "https://finance.detik.com/energi/d-8554850/b50-mulai-berlaku-hari-ini-diresmikan-prabowo-awal-juli",
+     "tgl": "2026-07"
+    },
+    {
+     "label": [
+      "Alokasi biodiesel 2026 (Kepmen 439.K/2025)",
+      "2026 biodiesel allocation (Decree 439.K/2025)"
+     ],
+     "angka": "15,65",
+     "satuan": "juta kL",
+     "tahun": 2026,
+     "url": "https://www.esdm.go.id/id/media-center/arsip-berita/pemerintah-tetapkan-alokasi-biodiesel-tahun-2026-sebesar-1565-juta-kl",
+     "tgl": "2025-12"
+    },
+    {
+     "label": [
+      "Penyaluran B50 penuh di seluruh SPBU",
+      "Full B50 distribution at all stations"
+     ],
+     "angka": "100",
+     "satuan": "persen",
+     "tahun": 2026,
+     "url": "https://www.jawapos.com/energi/2607200274/kementerian-esdm-targetkan-penyaluran-biodiesel-b50-capai-100-persen-pada-oktober-2026",
+     "tgl": "2026-10-01"
+    }
+   ],
+   "tonggak": [
+    {
+     "tgl": "2025-01-01",
+     "t": [
+      "B40 berlaku nasional.",
+      "B40 takes effect nationwide."
+     ],
+     "url": "https://www.esdm.go.id/en/media-center/news-archives/wujudkan-ketahanan-energi-dan-kurangi-impor-menteri-esdm-mandatori-b40-berlaku-1-januari-2025"
+    },
+    {
+     "tgl": "2026-04-21",
+     "t": [
+      "Uji jalan B50 di Lembang melibatkan 9 jenis kendaraan.",
+      "B50 road test in Lembang covers 9 vehicle types."
+     ],
+     "url": "https://ekonomi.bisnis.com/read/20260617/44/1981331/bbm-baru-meluncur-1-juli-esdm-pastikan-tak-ada-kendala-dalam-uji-coba-b50"
+    },
+    {
+     "tgl": "2026-06-17",
+     "t": [
+      "Menteri ESDM menandatangani Kepmen 257.K/2026 tentang B50.",
+      "Energy Minister signs Decree 257.K/2026 on B50."
+     ],
+     "url": "https://finance.detik.com/energi/d-8554850/b50-mulai-berlaku-hari-ini-diresmikan-prabowo-awal-juli"
+    },
+    {
+     "tgl": "2026-07-01",
+     "t": [
+      "B50 mulai berlaku; transisi tiga bulan bagi badan usaha.",
+      "B50 takes effect; three-month transition for operators."
+     ],
+     "url": "https://listrikindonesia.com/detail/20468/b50-berlaku-1-juli-pengusaha-diminta-bersiap-transisi"
+    },
+    {
+     "tgl": "2026-10-01",
+     "t": [
+      "Target penyaluran B50 penuh.",
+      "Target for full B50 distribution."
+     ],
+     "url": "https://www.jawapos.com/energi/2607200274/kementerian-esdm-targetkan-penyaluran-biodiesel-b50-capai-100-persen-pada-oktober-2026",
+     "perkiraan": true
+    }
+   ],
+   "realisasi": [
+    {
+     "label": [
+      "Distribusi B50",
+      "B50 distribution"
+     ],
+     "nilai": [
+      "sekitar 67 persen",
+      "about 67 percent"
+     ],
+     "per": "2026-07",
+     "url": "https://www.jawapos.com/energi/2607200274/kementerian-esdm-targetkan-penyaluran-biodiesel-b50-capai-100-persen-pada-oktober-2026"
+    },
+    {
+     "label": [
+      "Alokasi biodiesel 2026",
+      "2026 biodiesel allocation"
+     ],
+     "nilai": [
+      "15,65 juta kL (PSO 7,45 juta kL)",
+      "15.65 million kL (PSO 7.45 million kL)"
+     ],
+     "per": "2025-12",
+     "url": "https://www.esdm.go.id/id/media-center/arsip-berita/pemerintah-tetapkan-alokasi-biodiesel-tahun-2026-sebesar-1565-juta-kl"
+    }
+   ],
+   "proyek": {},
+   "pelaksana": [
+    {
+     "kel": "regulator",
+     "org": "l_7278e0528a",
+     "nama": "Kementerian ESDM",
+     "peran": [
+      "Menetapkan mandatori dan alokasi",
+      "Sets mandate and allocation"
+     ],
+     "orang": "o_191f303dc1"
+    },
+    {
+     "kel": "regulator",
+     "org": "l_7278e0528a",
+     "nama": "Ditjen EBTKE",
+     "peran": [
+      "Pelaksana teknis dan pemantauan distribusi",
+      "Technical lead and distribution monitoring"
+     ],
+     "orang": "o_a20f1f55d4"
+    },
+    {
+     "kel": "pelaksana",
+     "org": "p_476a6bf2fb",
+     "nama": "Pertamina Patra Niaga",
+     "peran": [
+      "Pencampuran dan penyaluran",
+      "Blending and distribution"
+     ]
+    },
+    {
+     "kel": "pengembang",
+     "org": "p_f9b341c0f2",
+     "nama": "Wilmar Bioenergi Indonesia",
+     "peran": [
+      "Produsen biodiesel besar",
+      "Large biodiesel producer"
+     ]
+    },
+    {
+     "kel": "pengembang",
+     "org": "l_d3dadc789e",
+     "nama": "APROBI",
+     "peran": [
+      "Asosiasi produsen biofuel",
+      "Biofuel producers association"
+     ]
+    },
+    {
+     "kel": "pendana",
+     "org": null,
+     "nama": "BPDP",
+     "peran": [
+      "Dana pungutan ekspor sawit untuk selisih harga",
+      "Palm export levy fund covering the price gap"
+     ]
+    },
+    {
+     "kel": "regulator",
+     "org": "l_7c9f6d4654",
+     "nama": "Kementerian Pertanian",
+     "peran": [
+      "Pasokan sawit",
+      "Palm supply"
+     ]
+    },
+    {
+     "kel": "masyarakat",
+     "org": null,
+     "nama": "Petani sawit",
+     "peran": [
+      "Pemasok bahan baku",
+      "Feedstock suppliers"
+     ]
+    }
+   ],
+   "pendanaan": [
+    {
+     "label": [
+      "Perkiraan hemat devisa dan lapangan kerja (klaim ESDM)",
+      "ESDM estimate of foreign exchange savings and jobs"
+     ],
+     "nilai": [
+      "Rp157 triliun; 2,2 juta tenaga kerja",
+      "Rp157 trillion; 2.2 million jobs"
+     ],
+     "url": "https://investortrust.id/business/105428/esdm-siap-terapkan-b50-1-juli-2026-hemat-devisa-rp-157-triliun-dan-serap-2-2-juta-tenaga-kerja",
+     "tgl": "2026-06"
+    }
+   ],
+   "isu": [
+    {
+     "jenis": "teknis",
+     "tingkat": "sedang",
+     "j": [
+      "Kapasitas produksi dan pasokan FAME",
+      "FAME production capacity and supply"
+     ],
+     "u": [
+      "Kebutuhan FAME untuk 2026 disebut sekitar 19,73 juta kL, melampaui alokasi 15,65 juta kL; Menteri menyebut ada kendala produksi.",
+      "FAME demand for 2026 is cited at about 19.73 million kL, above the 15.65 million kL allocation; the Minister acknowledged production constraints."
+     ],
+     "url": "https://ekonomi.bisnis.com/read/20260410/44/1965722/bahlil-pastikan-b50-diterapkan-mulai-1-juli-2026-meski-ada-kendala-produksi"
+    },
+    {
+     "jenis": "pendanaan",
+     "tingkat": "tinggi",
+     "j": [
+      "Selisih harga dan dana BPDP",
+      "Price gap and BPDP funds"
+     ],
+     "u": [
+      "Insentif biodiesel dibiayai dana sawit; kenaikan volume memperbesar kebutuhan dana.",
+      "Biodiesel incentives are funded from palm funds; higher volume enlarges the funding need."
+     ],
+     "url": "https://investortrust.id/business/105428/esdm-siap-terapkan-b50-1-juli-2026-hemat-devisa-rp-157-triliun-dan-serap-2-2-juta-tenaga-kerja"
+    },
+    {
+     "jenis": "teknis",
+     "tingkat": "sedang",
+     "j": [
+      "Kesesuaian mesin dan mutu",
+      "Engine compatibility and quality"
+     ],
+     "u": [
+      "Uji jalan dilakukan pada berbagai kendaraan dan alat berat; hasil uji dilaporkan 60 sampai 70 persen pada April 2026.",
+      "Road tests cover various vehicles and heavy equipment; results were reported 60 to 70 percent complete in April 2026."
+     ],
+     "url": "https://ekonomi.bisnis.com/read/20260410/44/1965722/bahlil-pastikan-b50-diterapkan-mulai-1-juli-2026-meski-ada-kendala-produksi"
+    },
+    {
+     "jenis": "sosial",
+     "tingkat": "sedang",
+     "j": [
+      "Persaingan pangan dan lahan sawit",
+      "Food and palm land competition"
+     ],
+     "u": [
+      "Peningkatan serapan sawit untuk energi memunculkan kekhawatiran harga minyak goreng dan ekspansi lahan.",
+      "Higher palm uptake for energy raises concern over cooking-oil prices and land expansion."
+     ],
+     "url": "https://industri.kontan.co.id/news/batas-waktu-mandat-biofuel-ditetapkan-pengguna-biodiesel-beralih-ke-b50-pada-2028"
+    }
+   ],
+   "berita": {
+    "re": "b50|b40|biodiesel|biosolar",
+    "luar": [
+     {
+      "judul": "Kementerian ESDM targetkan penyaluran biodiesel B50 capai 100 persen pada Oktober 2026",
+      "url": "https://www.jawapos.com/energi/2607200274/kementerian-esdm-targetkan-penyaluran-biodiesel-b50-capai-100-persen-pada-oktober-2026",
+      "media": "Jawa Pos",
+      "tgl": "2026-07"
+     },
+     {
+      "judul": "B50 mulai berlaku hari ini, diresmikan Prabowo awal Juli",
+      "url": "https://finance.detik.com/energi/d-8554850/b50-mulai-berlaku-hari-ini-diresmikan-prabowo-awal-juli",
+      "media": "detikFinance",
+      "tgl": "2026-06"
+     }
+    ]
+   },
+   "posisi_meti": [
+    {
+     "t": [
+      "METI menuntut payung hukum harga biofuel dan menempatkan B50 pada 2030 sebagai rujukan target program dalam usulan peta jalan.",
+      "METI asks for a legal basis for biofuel pricing and uses B50 by 2030 as a program target reference in its roadmap proposal."
+     ],
+     "sumber": "Aspirasi METI untuk RDPU Komisi XII, 8 Sep 2026"
+    },
+    {
+     "t": [
+      "Komisi XII diminta METI mendalami posisi bioenergi sebagai satu klaster.",
+      "Commission XII asked METI to examine bioenergy as a single cluster."
+     ],
+     "sumber": "Kesimpulan audiensi Komisi XII, 8 Sep 2026"
+    }
+   ],
+   "indikator": [
+    [
+     "Persentase SPBU menyalurkan B50",
+     "Share of stations distributing B50"
+    ],
+    [
+     "Realisasi volume biodiesel terhadap alokasi (juta kL)",
+     "Biodiesel volume against allocation (million kL)"
+    ],
+    [
+     "Dana BPDP yang terpakai",
+     "BPDP funds used"
+    ],
+    [
+     "Impor solar (kiloliter)",
+     "Diesel imports (kiloliters)"
+    ]
+   ]
+  },
+  {
+   "kode": "e20",
+   "program_id": "e20",
+   "nama": [
+    "Bioetanol E10/E20",
+    "Bioethanol E10/E20"
+   ],
+   "ikon": "bioenergi",
+   "gambar": "bioetanol-tebu",
+   "tahap": "rencana",
+   "tahap_ket": [
+    "Mandatori E10 ditargetkan 2027; E20 menunggu kesiapan industri etanol. Kajian mandatori hampir rampung.",
+    "E10 mandate targeted for 2027; E20 awaits ethanol industry readiness. The mandate study is nearly complete."
+   ],
+   "ringkasan": [
+    "Pencampuran etanol pada bensin. Pemerintah memprioritaskan E10 mulai 2027 dan E20 sesudah industri etanol siap. Pasokan etanol dalam negeri masih jauh dari kebutuhan; pabrik tebu di Merauke dan singkong sedang disiapkan.",
+    "Blending ethanol into gasoline. The government prioritizes E10 from 2027 and E20 once the ethanol industry is ready. Domestic ethanol supply is far below need; sugarcane (Merauke) and cassava plants are being prepared."
+   ],
+   "dasar_hukum": [
+    {
+     "reg": "perpres-40-2023",
+     "nama": "Perpres 40/2023",
+     "ket": [
+      "Percepatan swasembada gula dan penyediaan bioetanol sebagai bahan bakar nabati.",
+      "Sugar self-sufficiency and bioethanol supply as biofuel."
+     ]
+    },
+    {
+     "reg": "keppres-15-2024",
+     "nama": "Keppres 15/2024",
+     "ket": [
+      "Satgas swasembada gula dan bioetanol di Merauke.",
+      "Task force for sugar and bioethanol in Merauke."
+     ]
+    },
+    {
+     "reg": null,
+     "nama": "Regulasi mandatori E10",
+     "ket": [
+      "Belum terbit; kajian disusun sejak 2025.",
+      "Not issued; study drafted since 2025."
+     ]
+    }
+   ],
+   "target": [
+    {
+     "label": [
+      "Mandatori etanol dalam bensin",
+      "Ethanol mandate in gasoline"
+     ],
+     "angka": "10",
+     "satuan": "persen",
+     "tahun": 2027,
+     "url": "https://kabar24.bisnis.com/read/20260728/15/1991787/bahlil-pemerintah-fokus-terapkan-e10-hingga-2027-e20-menunggu-kesiapan-industri-etanol",
+     "tgl": "2026-07-28"
+    },
+    {
+     "label": [
+      "Kebutuhan etanol E10 (estimasi Oktober 2025)",
+      "E10 ethanol need (October 2025 estimate)"
+     ],
+     "angka": "1,4",
+     "satuan": "juta kL",
+     "tahun": 2027,
+     "url": "https://ekonomi.bisnis.com/read/20251024/44/1923128/mandatori-e10-mulai-2027-bahlil-butuh-etanol-14-juta-kiloliter",
+     "tgl": "2025-10-24"
+    },
+    {
+     "label": [
+      "Target E20 (rujukan METI)",
+      "E20 target (METI reference)"
+     ],
+     "angka": "20",
+     "satuan": "persen",
+     "tahun": 2030,
+     "url": "https://www.metrotvnews.com/read/kM6C4o2y-bahlil-program-bbm-etanol-dimulai-bertahap-pada-2027",
+     "tgl": "2026-07"
+    }
+   ],
+   "tonggak": [
+    {
+     "tgl": "2025-10-21",
+     "t": [
+      "Menteri ESDM menargetkan mandatori etanol 10 persen mulai 2027.",
+      "The Energy Minister targets a 10 percent ethanol mandate from 2027."
+     ],
+     "url": "https://ekonomi.bisnis.com/read/20251021/44/1922135/bahlil-targetkan-mandatori-etanol-10-yang-aman-mulai-2027"
+    },
+    {
+     "tgl": "2025-12-15",
+     "t": [
+      "Menteri melapor ke Presiden bahwa bensin etanol berjalan pada 2027.",
+      "The Minister reports to the President that ethanol gasoline starts in 2027."
+     ],
+     "url": "https://www.cnbcindonesia.com/news/20251215171214-4-694387/lapor-ke-prabowo-bahlil-sebut-bbm-bensin-dari-etanol-jalan-di-2027/amp"
+    },
+    {
+     "tgl": "2026-07-21",
+     "t": [
+      "Menteri menegaskan E10 mulai 2027 dan menyiapkan lompatan ke E20.",
+      "The Minister reaffirms E10 from 2027 and prepares a step to E20."
+     ],
+     "url": "https://ekonomi.bisnis.com/read/20260721/44/1989572/menteri-esdm-bahlil-bidik-e10-mulai-2027-dan-siapkan-lompatan-ke-e20"
+    },
+    {
+     "tgl": "2026-07-28",
+     "t": [
+      "Pemerintah fokus pada E10; E20 menunggu kesiapan industri etanol.",
+      "The government focuses on E10; E20 awaits industry readiness."
+     ],
+     "url": "https://kabar24.bisnis.com/read/20260728/15/1991787/bahlil-pemerintah-fokus-terapkan-e10-hingga-2027-e20-menunggu-kesiapan-industri-etanol"
+    }
+   ],
+   "realisasi": [],
+   "proyek": {},
+   "pelaksana": [
+    {
+     "kel": "regulator",
+     "org": "l_7278e0528a",
+     "nama": "Kementerian ESDM",
+     "peran": [
+      "Regulasi mandatori dan peta jalan",
+      "Mandate regulation and roadmap"
+     ],
+     "orang": "o_191f303dc1"
+    },
+    {
+     "kel": "regulator",
+     "org": "l_7c9f6d4654",
+     "nama": "Kementerian Pertanian",
+     "peran": [
+      "Pasokan tebu dan singkong",
+      "Sugarcane and cassava supply"
+     ]
+    },
+    {
+     "kel": "pelaksana",
+     "org": "p_476a6bf2fb",
+     "nama": "Pertamina Patra Niaga",
+     "peran": [
+      "Pencampuran dan penyaluran bensin",
+      "Gasoline blending and distribution"
+     ]
+    },
+    {
+     "kel": "pengembang",
+     "org": null,
+     "nama": "Pabrik etanol tebu Merauke",
+     "peran": [
+      "Pasokan etanol dari kawasan swasembada gula",
+      "Ethanol supply from the sugar self-sufficiency area"
+     ]
+    },
+    {
+     "kel": "pemda",
+     "org": null,
+     "nama": "Pemerintah Papua Selatan (Merauke)",
+     "peran": [
+      "Lahan dan satgas daerah",
+      "Land and regional task force"
+     ]
+    },
+    {
+     "kel": "masyarakat",
+     "org": null,
+     "nama": "Petani tebu dan singkong",
+     "peran": [
+      "Pemasok bahan baku",
+      "Feedstock suppliers"
+     ]
+    }
+   ],
+   "pendanaan": [],
+   "pendanaan_catatan": [
+    "Nilai investasi pabrik etanol belum ditemukan pada sumber resmi.",
+    "Ethanol plant investment values were not found in official sources."
+   ],
+   "isu": [
+    {
+     "jenis": "teknis",
+     "tingkat": "tinggi",
+     "j": [
+      "Defisit pasokan etanol",
+      "Ethanol supply deficit"
+     ],
+     "u": [
+      "Kontan menilai E10 penuh membutuhkan sekitar 4 juta kL etanol per tahun sehingga impor sulit dihindari; estimasi ESDM Oktober 2025 adalah 1,4 juta kL.",
+      "Kontan estimates full E10 needs about 4 million kL of ethanol per year, making imports hard to avoid; the ESDM estimate in October 2025 was 1.4 million kL."
+     ],
+     "url": "https://industri.kontan.co.id/news/pemerintah-mantap-terapkan-e10-di-2027-tapi-masih-defisit-etanol-35-juta-kiloliter"
+    },
+    {
+     "jenis": "regulasi",
+     "tingkat": "sedang",
+     "j": [
+      "Jadwal bergeser",
+      "Schedule slips"
+     ],
+     "u": [
+      "Pernyataan menyebut E10 paling lambat 2028; peta jalan dan regulasi belum terbit.",
+      "Statements say E10 at the latest in 2028; the roadmap and regulation are not issued."
+     ],
+     "url": "https://investortrust.id/business/90846/bahlil-pastikan-mandatori-e10-paling-lambat-jalan-2028"
+    },
+    {
+     "jenis": "lahan",
+     "tingkat": "sedang",
+     "j": [
+      "Lahan tebu Merauke",
+      "Merauke sugarcane land"
+     ],
+     "u": [
+      "Perluasan kebun tebu memerlukan lahan besar dan menyangkut masyarakat adat.",
+      "Expanding cane plantations needs large land areas and involves indigenous communities."
+     ],
+     "url": "https://ekonomi.bisnis.com/read/20251021/44/1922135/bahlil-targetkan-mandatori-etanol-10-yang-aman-mulai-2027"
+    },
+    {
+     "jenis": "tarif",
+     "tingkat": "sedang",
+     "j": [
+      "Cukai etanol dan harga",
+      "Ethanol excise and price"
+     ],
+     "u": [
+      "METI meminta pembebasan cukai etanol dan insentif yang berlaku umum.",
+      "METI asks for an ethanol excise exemption and generally applicable incentives."
+     ],
+     "url": "https://www.metrotvnews.com/read/kM6C4o2y-bahlil-program-bbm-etanol-dimulai-bertahap-pada-2027"
+    }
+   ],
+   "berita": {
+    "re": "etanol|bioetanol|e10|e20",
+    "luar": [
+     {
+      "judul": "Bahlil: pemerintah fokus terapkan E10 hingga 2027, E20 menunggu kesiapan industri etanol",
+      "url": "https://kabar24.bisnis.com/read/20260728/15/1991787/bahlil-pemerintah-fokus-terapkan-e10-hingga-2027-e20-menunggu-kesiapan-industri-etanol",
+      "media": "Bisnis.com",
+      "tgl": "2026-07-28"
+     },
+     {
+      "judul": "Pemerintah mantap terapkan E10 di 2027 tapi masih defisit etanol",
+      "url": "https://industri.kontan.co.id/news/pemerintah-mantap-terapkan-e10-di-2027-tapi-masih-defisit-etanol-35-juta-kiloliter",
+      "media": "Kontan",
+      "tgl": "2026"
+     }
+    ]
+   },
+   "posisi_meti": [
+    {
+     "t": [
+      "METI menempatkan E20 pada 2030 dalam usulan target program, dan meminta insentif umum serta pembebasan cukai etanol.",
+      "METI places E20 by 2030 in its program target proposal and asks for general incentives and an ethanol excise exemption."
+     ],
+     "sumber": "Aspirasi METI untuk RDPU Komisi XII, 8 Sep 2026"
+    }
+   ],
+   "indikator": [
+    [
+     "Terbitnya regulasi dan peta jalan E10",
+     "Issuance of the E10 regulation and roadmap"
+    ],
+    [
+     "Kapasitas pabrik etanol (kL per tahun)",
+     "Ethanol plant capacity (kL per year)"
+    ],
+    [
+     "Volume etanol impor (kL)",
+     "Imported ethanol volume (kL)"
+    ],
+    [
+     "Luas kebun tebu Merauke (ha)",
+     "Merauke sugarcane area (ha)"
+    ]
+   ]
+  },
+  {
+   "kode": "ruptl",
+   "program_id": "ruptl",
+   "nama": [
+    "RUPTL 2025-2034 (EBT)",
+    "RUPTL 2025-2034 (renewables)"
+   ],
+   "ikon": "jaringan",
+   "gambar": "hidro-saguling",
+   "tahap": "konstruksi",
+   "tahap_ket": [
+    "Dokumen berlaku sejak Mei 2025; proyek di dalamnya berada pada tahap rencana hingga konstruksi, dengan PLN menyatakan ribuan proyek mulai berjalan.",
+    "The plan applies since May 2025; its projects range from planning to construction, with PLN stating thousands of projects have started."
+   ],
+   "ringkasan": [
+    "Rencana penambahan pembangkit PLN 2025 sampai 2034 sebesar sekitar 69,5 GW, dengan sekitar 76 persen dari energi terbarukan dan penyimpanan (EBT 42,6 GW, penyimpanan 10,3 GW). Sekitar 73 persen investasi ditargetkan dari swasta.",
+    "PLN's generation plan for 2025 to 2034 adds about 69.5 GW, with about 76 percent from renewables and storage (renewables 42.6 GW, storage 10.3 GW). About 73 percent of investment is targeted from the private sector."
+   ],
+   "dasar_hukum": [
+    {
+     "reg": "uu-30-2009",
+     "nama": "UU 30/2009",
+     "ket": [
+      "Ketenagalistrikan; dasar penyusunan RUPTL.",
+      "Electricity law; basis of the RUPTL."
+     ]
+    },
+    {
+     "reg": "perpres-22-2017",
+     "nama": "Perpres 22/2017",
+     "ket": [
+      "Rencana Umum Energi Nasional (RUEN).",
+      "National Energy General Plan (RUEN)."
+     ]
+    },
+    {
+     "reg": "pp-40-2025",
+     "nama": "PP 40/2025",
+     "ket": [
+      "Kebijakan Energi Nasional.",
+      "National Energy Policy."
+     ]
+    },
+    {
+     "reg": null,
+     "nama": "Kepmen ESDM pengesahan RUPTL PLN 2025-2034",
+     "ket": [
+      "Nomor Kepmen belum ditautkan; materi paparan ada di situs Ditjen Gatrik.",
+      "Decree number not linked yet; presentation materials are on the Ditjen Gatrik site."
+     ]
+    }
+   ],
+   "target": [
+    {
+     "label": [
+      "Tambahan kapasitas 2025-2034",
+      "Capacity addition 2025-2034"
+     ],
+     "angka": "69,5",
+     "satuan": "GW",
+     "tahun": 2034,
+     "url": "https://www.idxchannel.com/economics/ruptl-2025-2034-diluncurkan-kapasitas-pembangkit-listrik-bakal-ditambah-695-gw/all",
+     "tgl": "2025-05"
+    },
+    {
+     "label": [
+      "Porsi EBT dan penyimpanan",
+      "Renewables and storage share"
+     ],
+     "angka": "76",
+     "satuan": "persen",
+     "tahun": 2034,
+     "url": "https://www.goodnewsfromindonesia.id/short/76-pembangkit-listrik-baru-ditargetkan-bakal-berasal-dari-energi-hijau",
+     "tgl": "2025-05"
+    },
+    {
+     "label": [
+      "Tambahan PLTS dalam RUPTL",
+      "Solar addition in RUPTL"
+     ],
+     "angka": "17,1",
+     "satuan": "GW",
+     "tahun": 2034,
+     "url": "https://industri.kontan.co.id/news/plts-dan-bess-bakal-jadi-andalan-pln-capai-target-ruptl-hingga-dedieselisasi",
+     "tgl": "2026-04"
+    },
+    {
+     "label": [
+      "Kebutuhan investasi PLN",
+      "PLN investment need"
+     ],
+     "angka": "3.000",
+     "satuan": "Rp triliun",
+     "tahun": 2034,
+     "url": "https://www.metrotvnews.com/read/N9nC2ZMO-pln-butuh-rp3-000-triliun-buat-kebut-transisi-energi",
+     "tgl": "2025-05"
+    }
+   ],
+   "tonggak": [
+    {
+     "tgl": "2025-05-26",
+     "t": [
+      "Menteri ESDM mengumumkan RUPTL 2025-2034 dengan tambahan 69,5 GW.",
+      "The Energy Minister announces the 2025-2034 RUPTL with 69.5 GW additions."
+     ],
+     "url": "https://www.hukumonline.com/berita/a/bahlil-resmi-umumkan-ruptl-tahun-2025-2034-lt68344d6f0dc8a"
+    },
+    {
+     "tgl": "2025-09",
+     "t": [
+      "Pusat data AI dan kendaraan listrik disebut sebagai pendorong permintaan listrik.",
+      "AI data centers and electric vehicles are cited as demand drivers."
+     ],
+     "url": "https://ekonomi.bisnis.com/read/20250911/44/1910612/pusat-data-ai-hingga-ev-bakal-kerek-permintaan-listrik-di-ri"
+    },
+    {
+     "tgl": "2026-04",
+     "t": [
+      "PLN menyebut PLTS dan BESS sebagai andalan mencapai target RUPTL.",
+      "PLN names solar and BESS as the main way to meet RUPTL targets."
+     ],
+     "url": "https://industri.kontan.co.id/news/plts-dan-bess-bakal-jadi-andalan-pln-capai-target-ruptl-hingga-dedieselisasi"
+    },
+    {
+     "tgl": "2026",
+     "t": [
+      "PLN melaporkan ribuan proyek kelistrikan RUPTL mulai berjalan.",
+      "PLN reports thousands of RUPTL electricity projects have started."
+     ],
+     "url": "https://listrikindonesia.com/detail/20542/pln-kebut-ruptl-2025-2034-ribuan-proyek-kelistrikan-mulai-berjalan",
+     "perkiraan": true
+    }
+   ],
+   "realisasi": [],
+   "proyek": {
+    "program_ids": [
+     "ruptl"
+    ]
+   },
+   "pelaksana": [
+    {
+     "kel": "regulator",
+     "org": "l_7278e0528a",
+     "nama": "Kementerian ESDM",
+     "peran": [
+      "Mengesahkan RUPTL",
+      "Approves the RUPTL"
+     ],
+     "orang": "o_191f303dc1"
+    },
+    {
+     "kel": "pelaksana",
+     "org": "su_ed074ff5",
+     "nama": "PLN",
+     "peran": [
+      "Penyusun RUPTL dan pembeli listrik",
+      "RUPTL author and electricity buyer"
+     ],
+     "orang": "o_5497a8db00"
+    },
+    {
+     "kel": "pelaksana",
+     "org": "p_5a2e7d0c63",
+     "nama": "PLN Indonesia Power",
+     "peran": [
+      "Pembangkit anak usaha PLN",
+      "PLN generation subsidiary"
+     ]
+    },
+    {
+     "kel": "pelaksana",
+     "org": "p_ff7a390a42",
+     "nama": "PLN Nusantara Power",
+     "peran": [
+      "Pembangkit anak usaha PLN",
+      "PLN generation subsidiary"
+     ]
+    },
+    {
+     "kel": "pengembang",
+     "org": null,
+     "nama": "Pengembang swasta (IPP)",
+     "peran": [
+      "Sekitar 73 persen investasi pembangkit",
+      "About 73 percent of generation investment"
+     ]
+    },
+    {
+     "kel": "pengembang",
+     "org": "p_9de27fd5b9",
+     "nama": "Medco Energi",
+     "peran": [
+      "Pengembang IPP",
+      "IPP developer"
+     ]
+    },
+    {
+     "kel": "pendana",
+     "org": "l_43f00f6a72",
+     "nama": "Danantara",
+     "peran": [
+      "Pendanaan BUMN",
+      "SOE funding"
+     ]
+    },
+    {
+     "kel": "pendana",
+     "org": "l_7b43a2574c",
+     "nama": "Kementerian Keuangan",
+     "peran": [
+      "Dukungan fiskal dan jaminan",
+      "Fiscal support and guarantees"
+     ]
+    },
+    {
+     "kel": "masyarakat",
+     "org": "l_41bf1f0b41",
+     "nama": "METI",
+     "peran": [
+      "Advokasi percepatan dan kepastian PPA",
+      "Advocacy for acceleration and PPA certainty"
+     ],
+     "orang": "o_2c9573f328"
+    }
+   ],
+   "pendanaan": [
+    {
+     "label": [
+      "Kebutuhan investasi PLN hingga 2034",
+      "PLN investment need to 2034"
+     ],
+     "nilai": [
+      "sekitar Rp3.000 triliun",
+      "about Rp3,000 trillion"
+     ],
+     "url": "https://www.metrotvnews.com/read/N9nC2ZMO-pln-butuh-rp3-000-triliun-buat-kebut-transisi-energi",
+     "tgl": "2025-05"
+    }
+   ],
+   "isu": [
+    {
+     "jenis": "tarif",
+     "tingkat": "tinggi",
+     "j": [
+      "PPA belum tersedia untuk portofolio besar",
+      "PPAs missing for a large portfolio"
+     ],
+     "u": [
+      "METI mencatat portofolio sekitar 2,2 GW tertahan karena PPA belum ada, sehingga tidak bankable.",
+      "METI notes a portfolio of about 2.2 GW is stalled because PPAs are not in place, so it is not bankable."
+     ],
+     "url": "https://www.metrotvnews.com/read/KvJCLWvV-pemerintah-bidik-73-investasi-pembangkit-listrik-di-ruptl-2025-2034-dari-swasta"
+    },
+    {
+     "jenis": "regulasi",
+     "tingkat": "sedang",
+     "j": [
+      "PLTU baru masih direncanakan",
+      "New coal still planned"
+     ],
+     "u": [
+      "RUPTL masih menambah sekitar 6,3 GW PLTU batu bara hingga 2034.",
+      "The RUPTL still adds about 6.3 GW of coal plants through 2034."
+     ],
+     "url": "https://ekonomi.bisnis.com/read/20250526/44/1880107/ri-masih-tambah-63-gigawatt-pltu-batu-bara-hingga-2034"
+    },
+    {
+     "jenis": "teknis",
+     "tingkat": "sedang",
+     "j": [
+      "Jaringan dan penyimpanan",
+      "Grid and storage"
+     ],
+     "u": [
+      "Tambahan EBT intermiten memerlukan penguatan transmisi dan penyimpanan sekitar 10 GW.",
+      "Added variable renewables need transmission reinforcement and about 10 GW of storage."
+     ],
+     "url": "https://www.cnbcindonesia.com/news/20250602151149-4-637862/gak-cuma-pembangkit-ri-bakal-bangun-jaringan-listrik-super/amp"
+    },
+    {
+     "jenis": "pendanaan",
+     "tingkat": "sedang",
+     "j": [
+      "Ketergantungan pada investasi swasta",
+      "Reliance on private investment"
+     ],
+     "u": [
+      "Target 73 persen investasi swasta bergantung pada kepastian harga, lahan, dan perizinan.",
+      "The 73 percent private investment target depends on price, land, and permit certainty."
+     ],
+     "url": "https://www.metrotvnews.com/read/KvJCLWvV-pemerintah-bidik-73-investasi-pembangkit-listrik-di-ruptl-2025-2034-dari-swasta"
+    }
+   ],
+   "berita": {
+    "re": "ruptl",
+    "luar": [
+     {
+      "judul": "PLN kebut RUPTL 2025-2034, ribuan proyek kelistrikan mulai berjalan",
+      "url": "https://listrikindonesia.com/detail/20542/pln-kebut-ruptl-2025-2034-ribuan-proyek-kelistrikan-mulai-berjalan",
+      "media": "Listrik Indonesia",
+      "tgl": "2026"
+     },
+     {
+      "judul": "Bahlil resmi umumkan RUPTL tahun 2025-2034",
+      "url": "https://www.hukumonline.com/berita/a/bahlil-resmi-umumkan-ruptl-tahun-2025-2034-lt68344d6f0dc8a",
+      "media": "Hukumonline",
+      "tgl": "2025-05"
+     }
+    ]
+   },
+   "posisi_meti": [
+    {
+     "t": [
+      "METI menilai bankability bergantung pada PPA dan offtake; mengusulkan offtake menjadi kewajiban badan usaha, prioritas dispatch, dan batas curtailment.",
+      "METI says bankability depends on PPAs and offtake; it proposes offtake as an obligation of the utility, priority dispatch, and curtailment limits."
+     ],
+     "sumber": "Aspirasi METI untuk RDPU Komisi XII, 8 Sep 2026"
+    },
+    {
+     "t": [
+      "Indikator pantau METI: jeda lelang ke PPA maksimal 12 bulan dan data curtailment bulanan.",
+      "METI monitoring indicators: tender-to-PPA gap of at most 12 months and monthly curtailment data."
+     ],
+     "sumber": "Kajian EBT METI, Okt 2026"
+    }
+   ],
+   "indikator": [
+    [
+     "Tambahan kapasitas EBT per tahun (GW)",
+     "Renewable capacity added per year (GW)"
+    ],
+    [
+     "Lama proses dari lelang ke PPA (bulan)",
+     "Time from tender to PPA (months)"
+    ],
+    [
+     "Curtailment EBT bulanan",
+     "Monthly renewable curtailment"
+    ],
+    [
+     "Porsi investasi swasta terealisasi",
+     "Realized private investment share"
+    ]
+   ]
+  },
+  {
+   "kode": "psn",
+   "program_id": "psn",
+   "nama": [
+    "Proyek Strategis Nasional energi",
+    "Energy national strategic projects"
+   ],
+   "ikon": "jaringan",
+   "gambar": "panas-bumi-sibayak",
+   "tahap": "konstruksi",
+   "tahap_ket": [
+    "Daftar PSN 2025-2029 telah ditetapkan; proyek energi berada pada tahap rencana hingga konstruksi.",
+    "The 2025-2029 PSN list is set; energy projects range from planning to construction."
+   ],
+   "ringkasan": [
+    "Proyek energi yang diberi status Proyek Strategis Nasional, yang membuka percepatan perizinan dan dukungan KPPIP. Contoh terbaru: tiga proyek PSEL ditetapkan PSN pada Juni 2026 dan interkoneksi HVDC Sumatera-Jawa tercatat sebagai proyek prioritas.",
+    "Energy projects given national strategic project status, which opens permit acceleration and KPPIP support. Recent examples: three PSEL projects became PSN in June 2026 and the Sumatra-Java HVDC interconnection is listed as a priority project."
+   ],
+   "dasar_hukum": [
+    {
+     "reg": "inpres-14-2025",
+     "nama": "Inpres 14/2025",
+     "ket": [
+      "Percepatan kawasan swasembada pangan, energi, dan air.",
+      "Acceleration of food, energy, and water self-sufficiency areas."
+     ]
+    },
+    {
+     "reg": null,
+     "nama": "Perpres 12/2025 (77 PSN 2025-2029)",
+     "ket": [
+      "Disebut media sebagai dasar daftar PSN; belum ada dalam basis regulasi platform.",
+      "Cited by media as the PSN list basis; not yet in the platform regulation base."
+     ]
+    },
+    {
+     "reg": null,
+     "nama": "Perpres 117/2025 (RKP 2026)",
+     "ket": [
+      "Dikutip kajian untuk daftar PSN 2026 (219 PSN, kluster energi 21 proyek).",
+      "Cited for the 2026 PSN list (219 PSN, 21 energy projects)."
+     ]
+    }
+   ],
+   "target": [
+    {
+     "label": [
+      "PSN dalam RKP 2026",
+      "PSN in the 2026 plan"
+     ],
+     "angka": "219",
+     "satuan": "proyek",
+     "tahun": 2026,
+     "url": "https://www.cnnindonesia.com/ekonomi/20250703181238-532-1246636/pemerintah-siapkan-219-psn-di-2026",
+     "tgl": "2025-07"
+    },
+    {
+     "label": [
+      "Proyek kluster energi",
+      "Energy cluster projects"
+     ],
+     "angka": "21",
+     "satuan": "proyek",
+     "tahun": 2026,
+     "url": "https://www.cnnindonesia.com/ekonomi/20250703181238-532-1246636/pemerintah-siapkan-219-psn-di-2026",
+     "tgl": "2025-07"
+    },
+    {
+     "label": [
+      "PSN periode 2025-2029",
+      "PSN for 2025-2029"
+     ],
+     "angka": "77",
+     "satuan": "proyek",
+     "tahun": 2029,
+     "url": "https://ekonomi.bisnis.com/read/20250303/45/1844346/prabowo-tetapkan-77-psn-periode-2025-2029-ini-daftar-lengkapnya",
+     "tgl": "2025-03"
+    }
+   ],
+   "tonggak": [
+    {
+     "tgl": "2025-01-20",
+     "t": [
+      "Presiden meresmikan 26 proyek pembangkit senilai Rp72 triliun.",
+      "The President inaugurates 26 power projects worth Rp72 trillion."
+     ],
+     "url": "https://katadata.co.id/amp/berita/nasional/678e06200b23b/prabowo-resmikan-26-proyek-pembangkit-listrik-senilai-rp-72-t-ini-daftarnya/"
+    },
+    {
+     "tgl": "2025-03",
+     "t": [
+      "Presiden menetapkan 77 PSN periode 2025-2029.",
+      "The President sets 77 PSN for 2025-2029."
+     ],
+     "url": "https://ekonomi.bisnis.com/read/20250303/45/1844346/prabowo-tetapkan-77-psn-periode-2025-2029-ini-daftar-lengkapnya"
+    },
+    {
+     "tgl": "2026-06",
+     "t": [
+      "Tiga proyek PSEL resmi masuk PSN lewat surat keterangan KPPIP.",
+      "Three PSEL projects enter the PSN list through KPPIP certificates."
+     ],
+     "url": "https://listrikindonesia.com/detail/20414/wow-tiga-proyek-pengolah-sampah-jadi-listrik-resmi-masuk-psn-ini-lokasinya"
+    }
+   ],
+   "realisasi": [],
+   "proyek": {
+    "program_ids": [
+     "psn"
+    ]
+   },
+   "pelaksana": [
+    {
+     "kel": "regulator",
+     "org": null,
+     "nama": "Kemenko Perekonomian / KPPIP",
+     "peran": [
+      "Penetapan dan percepatan PSN",
+      "PSN designation and acceleration"
+     ]
+    },
+    {
+     "kel": "regulator",
+     "org": "l_7278e0528a",
+     "nama": "Kementerian ESDM",
+     "peran": [
+      "Pengusul proyek energi",
+      "Energy project proposer"
+     ]
+    },
+    {
+     "kel": "pelaksana",
+     "org": "su_ed074ff5",
+     "nama": "PLN",
+     "peran": [
+      "Pelaksana pembangkit dan transmisi",
+      "Power and transmission executor"
+     ]
+    },
+    {
+     "kel": "pelaksana",
+     "org": "l_43f00f6a72",
+     "nama": "Danantara",
+     "peran": [
+      "Pendanaan dan pelaksana PSEL",
+      "PSEL funding and execution"
+     ]
+    },
+    {
+     "kel": "pendana",
+     "org": "p_a235c21f23",
+     "nama": "Sarana Multi Infrastruktur",
+     "peran": [
+      "Pembiayaan infrastruktur",
+      "Infrastructure financing"
+     ]
+    },
+    {
+     "kel": "pemda",
+     "org": null,
+     "nama": "Pemerintah daerah lokasi PSN",
+     "peran": [
+      "Lahan dan perizinan daerah",
+      "Land and local permits"
+     ]
+    },
+    {
+     "kel": "masyarakat",
+     "org": null,
+     "nama": "Warga terdampak",
+     "peran": [
+      "Pembebasan lahan dan dampak sosial",
+      "Land acquisition and social impact"
+     ]
+    }
+   ],
+   "pendanaan": [
+    {
+     "label": [
+      "Nilai 26 proyek pembangkit yang diresmikan Januari 2025",
+      "Value of 26 power projects inaugurated January 2025"
+     ],
+     "nilai": [
+      "Rp72 triliun",
+      "Rp72 trillion"
+     ],
+     "url": "https://kabar24.bisnis.com/read/20250120/15/1832966/prabowo-akan-resmikan-26-proyek-pembangkit-listrik-ini-daftarnya",
+     "tgl": "2025-01"
+    }
+   ],
+   "isu": [
+    {
+     "jenis": "regulasi",
+     "tingkat": "sedang",
+     "j": [
+      "Dasar hukum daftar PSN tidak seragam",
+      "PSN list legal basis not uniform"
+     ],
+     "u": [
+      "Media merujuk Perpres 12/2025, Perpres 117/2025, dan Permenko 7/2021; daftar energi 2026 yang lengkap belum ditemukan.",
+      "Media cite Perpres 12/2025, Perpres 117/2025, and Permenko 7/2021; a full 2026 energy list was not found."
+     ],
+     "url": "https://justisio.com/blog/identifikasi-dan-prioritas-proyek-strategis-nasional"
+    },
+    {
+     "jenis": "lahan",
+     "tingkat": "sedang",
+     "j": [
+      "Pembebasan lahan",
+      "Land acquisition"
+     ],
+     "u": [
+      "METI mengusulkan lahan proyek strategis menjadi beban Pemerintah Pusat.",
+      "METI proposes that land for strategic projects be a central-government burden."
+     ],
+     "url": "https://www.metrotvnews.com/read/KvJCLWvV-pemerintah-bidik-73-investasi-pembangkit-listrik-di-ruptl-2025-2034-dari-swasta"
+    },
+    {
+     "jenis": "pendanaan",
+     "tingkat": "rendah",
+     "j": [
+      "VGF hanya untuk proyek strategis yang layak",
+      "VGF only for viable strategic projects"
+     ],
+     "u": [
+      "METI mengusulkan dukungan kelayakan (VGF) terbatas pada selisih proyek strategis.",
+      "METI proposes viability gap funding limited to the gap of strategic projects."
+     ],
+     "url": "https://www.cnbcindonesia.com/news/20260205161013-4-708547/siap-siap-pemerintah-mau-tetapkan-batas-atas-bawah-tarif-listrik-ebt/amp"
+    }
+   ],
+   "berita": {
+    "re": "strategis nasional|psn",
+    "luar": [
+     {
+      "judul": "Tiga proyek pengolah sampah jadi listrik resmi masuk PSN, ini lokasinya",
+      "url": "https://listrikindonesia.com/detail/20414/wow-tiga-proyek-pengolah-sampah-jadi-listrik-resmi-masuk-psn-ini-lokasinya",
+      "media": "Listrik Indonesia",
+      "tgl": "2026-06"
+     },
+     {
+      "judul": "Prabowo tetapkan 77 PSN periode 2025-2029",
+      "url": "https://ekonomi.bisnis.com/read/20250303/45/1844346/prabowo-tetapkan-77-psn-periode-2025-2029-ini-daftar-lengkapnya",
+      "media": "Bisnis.com",
+      "tgl": "2025-03"
+     }
+    ]
+   },
+   "posisi_meti": [
+    {
+     "t": [
+      "METI mengusulkan VGF hanya menutup selisih proyek strategis yang layak, FiT untuk proyek kecil, dan lelang untuk proyek besar.",
+      "METI proposes VGF cover only the gap of viable strategic projects, FiT for small projects, and tenders for large ones."
+     ],
+     "sumber": "Aspirasi METI untuk RDPU Komisi XII, 8 Sep 2026"
+    },
+    {
+     "t": [
+      "METI mengusulkan lahan proyek strategis nasional menjadi beban Pemerintah Pusat (pasal 45 RUU EBET).",
+      "METI proposes land for national strategic projects be a central-government burden (article 45 of the EBET bill)."
+     ],
+     "sumber": "Aspirasi METI untuk RDPU Komisi XII, 8 Sep 2026"
+    }
+   ],
+   "indikator": [
+    [
+     "Jumlah PSN energi menurut daftar resmi terbaru",
+     "Number of energy PSN in the latest official list"
+    ],
+    [
+     "PSN energi yang mencapai konstruksi",
+     "Energy PSN reaching construction"
+    ],
+    [
+     "Waktu perizinan PSN energi (bulan)",
+     "Energy PSN permit time (months)"
+    ]
+   ]
+  },
+  {
+   "kode": "jetp",
+   "program_id": "jetp",
+   "nama": [
+    "JETP Indonesia",
+    "Indonesia JETP"
+   ],
+   "ikon": "jaringan",
+   "gambar": "bayu-sidrap",
+   "tahap": "konstruksi",
+   "tahap_ket": [
+    "Fase kedua implementasi dimulai Januari 2026 dengan JETP Delivery Unit; pencairan berjalan lebih lambat dari kebutuhan.",
+    "The second implementation phase began in January 2026 with the JETP Delivery Unit; disbursement is slower than needed."
+   ],
+   "ringkasan": [
+    "Kemitraan pendanaan transisi energi berkeadilan antara Indonesia dan mitra internasional. Komitmen awal sekitar US$20 miliar naik menjadi sekitar US$21,4 miliar pada Februari 2026 dan sekitar US$21,8 miliar dengan tambahan US$400 juta. Realisasi dilaporkan sekitar US$3,4 miliar hingga Januari 2026, sebagian besar berupa pinjaman komersial.",
+    "A just energy transition financing partnership between Indonesia and international partners. The initial commitment of about US$20 billion rose to about US$21.4 billion in February 2026 and about US$21.8 billion with an extra US$400 million. Disbursement was reported at about US$3.4 billion by January 2026, mostly commercial loans."
+   ],
+   "dasar_hukum": [
+    {
+     "reg": "uu-16-2016",
+     "nama": "UU 16/2016",
+     "ket": [
+      "Pengesahan Perjanjian Paris, konsiderans transisi energi.",
+      "Ratification of the Paris Agreement, basis of the transition."
+     ]
+    },
+    {
+     "reg": "perpres-110-2025",
+     "nama": "Perpres 110/2025",
+     "ket": [
+      "Nilai ekonomi karbon dan pengendalian emisi GRK.",
+      "Carbon economic value and GHG emissions control."
+     ]
+    },
+    {
+     "reg": null,
+     "nama": "Joint Statement JETP (Nov 2022) dan CIPP",
+     "ket": [
+      "Dokumen kemitraan, bukan peraturan; tidak ada di basis regulasi.",
+      "Partnership documents, not regulations; not in the regulation base."
+     ]
+    }
+   ],
+   "target": [
+    {
+     "label": [
+      "Komitmen pendanaan (Feb 2026)",
+      "Funding commitment (Feb 2026)"
+     ],
+     "angka": "21,4",
+     "satuan": "US$ miliar",
+     "tahun": 2026,
+     "url": "https://investortrust.id/esg/113579/why-bottlenecks-and-fiscal-realism-are-slowing-a-landmark-214-billion-clean-energy-transition",
+     "tgl": "2026-02"
+    },
+    {
+     "label": [
+      "Komitmen dengan tambahan",
+      "Commitment with top-up"
+     ],
+     "angka": "21,8",
+     "satuan": "US$ miliar",
+     "tahun": 2026,
+     "url": "https://www.petromindo.com/news/article/indonesia-secures-additional-400-million-for-jetp-projects",
+     "tgl": "2026"
+    },
+    {
+     "label": [
+      "Kebutuhan investasi sampai 2030",
+      "Investment need to 2030"
+     ],
+     "angka": "66,9",
+     "satuan": "US$ miliar",
+     "tahun": 2030,
+     "url": "https://www.thejakartapost.com/opinion/2026/03/07/the-worlds-largest-climate-finance-deal-was-built-to-flounder",
+     "tgl": "2026-03"
+    }
+   ],
+   "tonggak": [
+    {
+     "tgl": "2022-11",
+     "t": [
+      "JETP Indonesia diumumkan di KTT G20 Bali.",
+      "Indonesia JETP announced at the G20 Bali summit."
+     ],
+     "url": "https://www.thejakartapost.com/opinion/2026/03/07/the-worlds-largest-climate-finance-deal-was-built-to-flounder",
+     "perkiraan": true
+    },
+    {
+     "tgl": "2025-12",
+     "t": [
+      "Pemerintah membatalkan pensiun dini PLTU Cirebon-1 yang menjadi kasus uji transisi batu bara.",
+      "Government cancels early retirement of Cirebon-1, the coal exit test case."
+     ],
+     "url": "https://ekonomi.bisnis.com/read/20251205/9/1934499/pltu-cirebon-1-batal-disuntik-mati-pemerintah-cari-pengganti"
+    },
+    {
+     "tgl": "2026-01",
+     "t": [
+      "Fase kedua dimulai dengan JETP Delivery Unit; realisasi sekitar US$3,4 miliar.",
+      "Phase two begins with the JETP Delivery Unit; disbursement about US$3.4 billion."
+     ],
+     "url": "https://www.merdeka.com/uang/read/8078535/menko-airlangga-sebut-realisasi-pendanaan-jetp-capai-usd34-miliar"
+    },
+    {
+     "tgl": "2026-02",
+     "t": [
+      "Komitmen disebut mencapai US$21,4 miliar.",
+      "Commitment reported at US$21.4 billion."
+     ],
+     "url": "https://investortrust.id/esg/113579/why-bottlenecks-and-fiscal-realism-are-slowing-a-landmark-214-billion-clean-energy-transition"
+    },
+    {
+     "tgl": "2026-06",
+     "t": [
+      "Komitmen untuk 54 proyek transisi energi dilaporkan; pemanfaatan dana dinilai lambat.",
+      "Commitments for 54 energy transition projects reported; fund use is seen as slow."
+     ],
+     "url": "https://insight.kontan.co.id/news/54-proyek-transisi-energi-meraih-komitmen-jetp"
+    }
+   ],
+   "realisasi": [
+    {
+     "label": [
+      "Pendanaan terealisasi",
+      "Funding disbursed"
+     ],
+     "nilai": [
+      "sekitar US$3,4 miliar",
+      "about US$3.4 billion"
+     ],
+     "per": "2026-01",
+     "url": "https://www.merdeka.com/uang/read/8078535/menko-airlangga-sebut-realisasi-pendanaan-jetp-capai-usd34-miliar"
+    }
+   ],
+   "proyek": {
+    "program_ids": [
+     "jetp"
+    ]
+   },
+   "pelaksana": [
+    {
+     "kel": "regulator",
+     "org": null,
+     "nama": "Kemenko Perekonomian",
+     "peran": [
+      "Koordinator JETP di pemerintah",
+      "Government coordinator of JETP"
+     ],
+     "orang": "o_ffa553a552"
+    },
+    {
+     "kel": "regulator",
+     "org": "l_7278e0528a",
+     "nama": "Kementerian ESDM",
+     "peran": [
+      "Kebijakan sektor dan daftar proyek",
+      "Sector policy and project list"
+     ]
+    },
+    {
+     "kel": "pelaksana",
+     "org": null,
+     "nama": "JETP Delivery Unit",
+     "peran": [
+      "Pengelola implementasi fase kedua (didanai Jerman)",
+      "Phase two implementation unit (funded by Germany)"
+     ]
+    },
+    {
+     "kel": "pelaksana",
+     "org": "su_ed074ff5",
+     "nama": "PLN",
+     "peran": [
+      "Penerima dan pelaksana proyek",
+      "Recipient and project executor"
+     ]
+    },
+    {
+     "kel": "pendana",
+     "org": null,
+     "nama": "International Partners Group (IPG)",
+     "peran": [
+      "Pendanaan sekitar US$10 miliar awal",
+      "About US$10 billion initial funding"
+     ]
+    },
+    {
+     "kel": "pendana",
+     "org": null,
+     "nama": "GFANZ",
+     "peran": [
+      "Pendanaan lembaga keuangan sekitar US$10 miliar awal",
+      "About US$10 billion initial financial-institution funding"
+     ]
+    },
+    {
+     "kel": "pendana",
+     "org": "l_18a9ec31f4",
+     "nama": "World Bank Indonesia",
+     "peran": [
+      "Mitra pembiayaan dan teknis",
+      "Financing and technical partner"
+     ]
+    },
+    {
+     "kel": "masyarakat",
+     "org": null,
+     "nama": "Serikat pekerja dan masyarakat sekitar PLTU",
+     "peran": [
+      "Terdampak pensiun dini; belum ada regulasi pekerja",
+      "Affected by early retirement; no worker regulation yet"
+     ]
+    }
+   ],
+   "pendanaan": [
+    {
+     "label": [
+      "Komitmen",
+      "Commitment"
+     ],
+     "nilai": [
+      "US$21,8 miliar",
+      "US$21.8 billion"
+     ],
+     "url": "https://www.petromindo.com/news/article/indonesia-secures-additional-400-million-for-jetp-projects",
+     "tgl": "2026"
+    },
+    {
+     "label": [
+      "Terealisasi hingga Januari 2026",
+      "Disbursed through January 2026"
+     ],
+     "nilai": [
+      "US$3,4 miliar",
+      "US$3.4 billion"
+     ],
+     "url": "https://www.merdeka.com/uang/read/8078535/menko-airlangga-sebut-realisasi-pendanaan-jetp-capai-usd34-miliar",
+     "tgl": "2026-01"
+    }
+   ],
+   "isu": [
+    {
+     "jenis": "pendanaan",
+     "tingkat": "tinggi",
+     "j": [
+      "Pinjaman komersial mendominasi",
+      "Commercial loans dominate"
+     ],
+     "u": [
+      "Sebagian besar pendanaan berupa pinjaman berharga komersial, sehingga menambah beban dan memperlambat pemanfaatan.",
+      "Most funding is commercial-priced loans, adding burden and slowing uptake."
+     ],
+     "url": "https://industri.kontan.co.id/news/transisi-energi-tertunda-skema-jetp-masih-bergantung-di-pinjaman-komersial"
+    },
+    {
+     "jenis": "regulasi",
+     "tingkat": "tinggi",
+     "j": [
+      "Pensiun dini PLTU batal",
+      "Early coal retirement cancelled"
+     ],
+     "u": [
+      "Pembatalan Cirebon-1 pada Desember 2025 mengurangi bobot kasus uji; Duta Besar Jerman menyebut batu bara harus pergi agar dana mengalir.",
+      "Cancelling Cirebon-1 in December 2025 weakened the test case; Germany's ambassador said coal must go for climate funds to flow."
+     ],
+     "url": "https://www.thejakartapost.com/business/2026/02/18/coal-must-go-for-climate-funds-to-flow-german-ambassador-says"
+    },
+    {
+     "jenis": "pendanaan",
+     "tingkat": "sedang",
+     "j": [
+      "Kesenjangan komitmen dan kebutuhan",
+      "Gap between commitment and need"
+     ],
+     "u": [
+      "Kebutuhan investasi sampai 2030 sekitar US$66,9 miliar, jauh di atas komitmen sekitar US$20 miliar.",
+      "Investment need to 2030 is about US$66.9 billion, far above the commitment of about US$20 billion."
+     ],
+     "url": "https://www.thejakartapost.com/opinion/2026/03/07/the-worlds-largest-climate-finance-deal-was-built-to-flounder"
+    },
+    {
+     "jenis": "sosial",
+     "tingkat": "sedang",
+     "j": [
+      "Perlindungan pekerja terdampak",
+      "Protection for affected workers"
+     ],
+     "u": [
+      "Belum ada regulasi khusus pekerja terdampak pensiun dini PLTU (Mongabay, Maret 2026).",
+      "No specific regulation exists for workers affected by early coal retirement (Mongabay, March 2026)."
+     ],
+     "url": "https://mongabay.co.id/2026/03/05/belum-ada-regulasi-khusus-pekerja-terdampak-pensiun-dini-pltu/"
+    }
+   ],
+   "berita": {
+    "re": "jetp|transisi energi berkeadilan",
+    "luar": [
+     {
+      "judul": "Menko Airlangga sebut realisasi pendanaan JETP capai USD3,4 miliar",
+      "url": "https://www.merdeka.com/uang/read/8078535/menko-airlangga-sebut-realisasi-pendanaan-jetp-capai-usd34-miliar",
+      "media": "Merdeka",
+      "tgl": "2026-01"
+     },
+     {
+      "judul": "54 proyek transisi energi meraih komitmen JETP",
+      "url": "https://insight.kontan.co.id/news/54-proyek-transisi-energi-meraih-komitmen-jetp",
+      "media": "Kontan",
+      "tgl": "2026"
+     }
+    ]
+   },
+   "posisi_meti": [
+    {
+     "t": [
+      "METI mengusulkan pasal pensiun dini PLTU berkeadilan (pasal 6A) dan menjadikan UU 16/2016 sebagai konsiderans RUU EBET.",
+      "METI proposes a just early coal retirement article (6A) and Law 16/2016 as a recital of the EBET bill."
+     ],
+     "sumber": "Rekomendasi METI untuk RUU EBET dan RUU Ketenagalistrikan, Des 2025"
+    }
+   ],
+   "indikator": [
+    [
+     "Pendanaan JETP yang dicairkan (US$ miliar)",
+     "JETP funding disbursed (US$ billion)"
+    ],
+    [
+     "Porsi hibah dan pinjaman lunak",
+     "Share of grants and concessional loans"
+    ],
+    [
+     "Jumlah proyek dengan komitmen dan penutupan pendanaan",
+     "Projects with commitments and financial close"
+    ],
+    [
+     "Capaian PLTU yang dipensiunkan",
+     "Coal plants retired"
+    ]
+   ]
+  },
+  {
+   "kode": "pensiun-dini-pltu",
+   "program_id": null,
+   "nama": [
+    "Pensiun dini PLTU",
+    "Early coal plant retirement"
+   ],
+   "ikon": "jaringan",
+   "gambar": null,
+   "tahap": "rencana",
+   "tahap_ket": [
+    "Kasus uji Cirebon-1 dibatalkan Desember 2025; ESDM mengidentifikasi 15 PLTU kandidat pada Februari 2026.",
+    "The Cirebon-1 test case was cancelled in December 2025; ESDM identified 15 candidate plants in February 2026."
+   ],
+   "ringkasan": [
+    "Program menghentikan operasi PLTU batu bara lebih awal dari umur teknisnya lewat skema pendanaan transisi. PLTU Cirebon-1 sempat menjadi kasus uji pertama tetapi dibatalkan pada Desember 2025; pemerintah mencari PLTU lain dan ESDM mengidentifikasi 15 kandidat.",
+    "The program ends coal plant operation earlier than technical life using transition financing. Cirebon-1 was the first test case but was cancelled in December 2025; the government is looking for other plants and ESDM identified 15 candidates."
+   ],
+   "dasar_hukum": [
+    {
+     "reg": "perpres-112-2022",
+     "nama": "Perpres 112/2022",
+     "ket": [
+      "Memuat ketentuan percepatan pengakhiran operasi PLTU.",
+      "Contains provisions for early termination of coal plant operation."
+     ]
+    },
+    {
+     "reg": "perpres-110-2025",
+     "nama": "Perpres 110/2025",
+     "ket": [
+      "Instrumen nilai ekonomi karbon dan pengendalian emisi.",
+      "Carbon pricing instruments and emission control."
+     ]
+    }
+   ],
+   "target": [
+    {
+     "label": [
+      "PLTU kandidat pensiun dini (identifikasi ESDM)",
+      "Early retirement candidates (ESDM identification)"
+     ],
+     "angka": "15",
+     "satuan": "PLTU",
+     "tahun": 2026,
+     "url": "https://ekonomi.bisnis.com/read/20260203/44/1949836/esdm-identifikasi-15-pltu-yang-berpotensi-dipensiunkan-dini",
+     "tgl": "2026-02-03"
+    }
+   ],
+   "tonggak": [
+    {
+     "tgl": "2023",
+     "t": [
+      "Pensiun dini PLTU Cirebon-1 ditetapkan sebagai proyek percontohan pertama.",
+      "Early retirement of Cirebon-1 set as the first pilot."
+     ],
+     "url": "https://katadata.co.id/happyfajrian/berita/6572ee699e84d/pltu-cirebon-1-pembangkit-batu-bara-pertama-ri-yang-pensiun-dini",
+     "perkiraan": true
+    },
+    {
+     "tgl": "2025-12-05",
+     "t": [
+      "Pemerintah membatalkan pensiun dini Cirebon-1 dan mencari pengganti.",
+      "Government cancels Cirebon-1 early retirement and seeks a replacement."
+     ],
+     "url": "https://ekonomi.bisnis.com/read/20251205/9/1934499/pltu-cirebon-1-batal-disuntik-mati-pemerintah-cari-pengganti"
+    },
+    {
+     "tgl": "2026-02-03",
+     "t": [
+      "ESDM mengidentifikasi 15 PLTU yang berpotensi dipensiunkan dini.",
+      "ESDM identifies 15 plants that could retire early."
+     ],
+     "url": "https://ekonomi.bisnis.com/read/20260203/44/1949836/esdm-identifikasi-15-pltu-yang-berpotensi-dipensiunkan-dini"
+    },
+    {
+     "tgl": "2026-03-05",
+     "t": [
+      "Belum ada regulasi khusus bagi pekerja terdampak.",
+      "No specific regulation exists for affected workers."
+     ],
+     "url": "https://mongabay.co.id/2026/03/05/belum-ada-regulasi-khusus-pekerja-terdampak-pensiun-dini-pltu/"
+    }
+   ],
+   "realisasi": [],
+   "proyek": {},
+   "pelaksana": [
+    {
+     "kel": "regulator",
+     "org": "l_7278e0528a",
+     "nama": "Kementerian ESDM",
+     "peran": [
+      "Identifikasi kandidat PLTU",
+      "Candidate plant identification"
+     ]
+    },
+    {
+     "kel": "regulator",
+     "org": null,
+     "nama": "Kemenko Perekonomian",
+     "peran": [
+      "Koordinasi keputusan pembatalan dan JETP",
+      "Cancellation decision and JETP coordination"
+     ]
+    },
+    {
+     "kel": "pelaksana",
+     "org": "su_ed074ff5",
+     "nama": "PLN",
+     "peran": [
+      "Pemilik PLTU milik negara",
+      "State-owned coal plant owner"
+     ]
+    },
+    {
+     "kel": "pendana",
+     "org": "l_43f00f6a72",
+     "nama": "Danantara",
+     "peran": [
+      "Peran transisi PLTU ke terbarukan untuk aset PLN",
+      "Role in converting PLN coal assets to renewables"
+     ]
+    },
+    {
+     "kel": "pendana",
+     "org": null,
+     "nama": "Asian Development Bank (ETM)",
+     "peran": [
+      "Mekanisme transisi energi Cirebon-1",
+      "Cirebon-1 energy transition mechanism"
+     ]
+    },
+    {
+     "kel": "masyarakat",
+     "org": null,
+     "nama": "IEEFA, IESR, Rhizoma",
+     "peran": [
+      "Kajian biaya dan kritik pembatalan",
+      "Cost studies and criticism of the cancellation"
+     ]
+    },
+    {
+     "kel": "masyarakat",
+     "org": null,
+     "nama": "Pekerja dan warga sekitar PLTU",
+     "peran": [
+      "Terdampak ekonomi dan lingkungan",
+      "Economically and environmentally affected"
+     ]
+    }
+   ],
+   "pendanaan": [
+    {
+     "label": [
+      "Kebutuhan pendanaan pensiun dini Cirebon-1 dan Pelabuhan Ratu (estimasi lama)",
+      "Funding need to retire Cirebon-1 and Pelabuhan Ratu (earlier estimate)"
+     ],
+     "nilai": [
+      "Rp18 triliun",
+      "Rp18 trillion"
+     ],
+     "url": "https://listrikindonesia.com/detail/11848/suntik-mati-pltu-cirebon-1-dan-pltu-pelabuhan-ratu-membutuhkan-dana-rp18-triliun",
+     "tgl": "2023"
+    }
+   ],
+   "isu": [
+    {
+     "jenis": "pendanaan",
+     "tingkat": "tinggi",
+     "j": [
+      "Biaya kompensasi dan pengganti",
+      "Compensation and replacement cost"
+     ],
+     "u": [
+      "Pensiun dini Cirebon-1 diperkirakan butuh sekitar US$1,3 miliar; sumber pendanaan menjadi sebab utama kebuntuan.",
+      "Retiring Cirebon-1 was estimated to need about US$1.3 billion; funding source was a main cause of the deadlock."
+     ],
+     "url": "https://insight.kontan.co.id/news/pensiun-dini-pltu-cirebon-butuh-us-13-miliar"
+    },
+    {
+     "jenis": "regulasi",
+     "tingkat": "tinggi",
+     "j": [
+      "Keputusan sepihak dan kurang partisipasi",
+      "One-sided decision and limited participation"
+     ],
+     "u": [
+      "Kompas menilai pembatalan diambil tanpa partisipasi publik yang memadai; pemerintah menyebut teknologi PLTU masih canggih.",
+      "Kompas judged the cancellation was taken without adequate public participation; the government said the plant's technology is still modern."
+     ],
+     "url": "https://lestari.kompas.com/read/2026/02/06/100935486/batalnya-pensiun-dini-pltu-cirebon-1transisi-energi-layu-sebelum-berkembang?page=3"
+    },
+    {
+     "jenis": "sosial",
+     "tingkat": "tinggi",
+     "j": [
+      "Nasib pekerja dan warga",
+      "Workers and residents"
+     ],
+     "u": [
+      "Tidak ada regulasi khusus pekerja terdampak.",
+      "No specific regulation covers affected workers."
+     ],
+     "url": "https://mongabay.co.id/2026/03/05/belum-ada-regulasi-khusus-pekerja-terdampak-pensiun-dini-pltu/"
+    },
+    {
+     "jenis": "tarif",
+     "tingkat": "sedang",
+     "j": [
+      "Biaya PLTU tua meningkat",
+      "Rising cost of old plants"
+     ],
+     "u": [
+      "IEEFA mencatat biaya pembangkitan naik 48 persen dan menilai PLTU tua perlu segera dipensiunkan.",
+      "IEEFA notes generation cost rose 48 percent and says old plants should retire soon."
+     ],
+     "url": "https://www.kabarbursa.com/ekonomi-hijau/ieefa-biaya-pltu-naik-pensiun-dini-harus-dipercepat.md"
+    }
+   ],
+   "berita": {
+    "re": "pensiun dini|pltu",
+    "luar": [
+     {
+      "judul": "Indonesia backs away from coal exit test case amid financial and political pushback",
+      "url": "https://news.mongabay.com/2026/01/indonesia-backs-away-from-coal-exit-test-case-amid-financial-and-political-pushback/",
+      "media": "Mongabay",
+      "tgl": "2026-01"
+     },
+     {
+      "judul": "ESDM identifikasi 15 PLTU yang berpotensi dipensiunkan dini",
+      "url": "https://ekonomi.bisnis.com/read/20260203/44/1949836/esdm-identifikasi-15-pltu-yang-berpotensi-dipensiunkan-dini",
+      "media": "Bisnis.com",
+      "tgl": "2026-02-03"
+     }
+    ]
+   },
+   "posisi_meti": [
+    {
+     "t": [
+      "METI mengusulkan pensiun dini PLTU berkeadilan (pasal 6A) dan larangan PLTU baru di luar RUPTL.",
+      "METI proposes just early coal retirement (article 6A) and a ban on new coal plants outside the RUPTL."
+     ],
+     "sumber": "Rekomendasi METI untuk RUU EBET dan RUU Ketenagalistrikan, Des 2025"
+    }
+   ],
+   "indikator": [
+    [
+     "Daftar resmi PLTU yang dipensiunkan beserta tahun",
+     "Official list of plants to retire with years"
+    ],
+    [
+     "Skema pendanaan dan perlindungan pekerja yang ditetapkan",
+     "Funding scheme and worker protection set"
+    ],
+    [
+     "Kapasitas PLTU yang berhenti beroperasi (MW)",
+     "Coal capacity retired (MW)"
+    ]
+   ]
+  },
+  {
+   "kode": "panas-bumi",
+   "program_id": null,
+   "nama": [
+    "Panas bumi (lelang WKP)",
+    "Geothermal (WKP auctions)"
+   ],
+   "ikon": "panas-bumi",
+   "gambar": "panas-bumi-sibayak",
+   "tahap": "lelang",
+   "tahap_ket": [
+    "Lelang WKP dan PSPE terus berjalan; satu pemenang ditetapkan Januari 2026 dan penawaran 14 WKP dibuka.",
+    "WKP and PSPE auctions continue; one winner was set in January 2026 and an offer of 14 WKP opened."
+   ],
+   "ringkasan": [
+    "Pemerintah melelang Wilayah Kerja Panas Bumi (WKP) dan Penugasan Survei Pendahuluan dan Eksplorasi (PSPE), dengan jaminan tarif 10 tahun pada tiga WKP prioritas 2026. Ormat ditetapkan pemenang WKP Telaga Ranu (Halmahera) lewat Kepmen 8.K/EK.04/MEM.E/2026.",
+    "The government auctions geothermal working areas (WKP) and preliminary survey and exploration assignments (PSPE), with a 10-year tariff guarantee on three priority 2026 WKP. Ormat was named winner of the Telaga Ranu WKP (Halmahera) under Decree 8.K/EK.04/MEM.E/2026."
+   ],
+   "dasar_hukum": [
+    {
+     "reg": "uu-21-2014",
+     "nama": "UU 21/2014",
+     "ket": [
+      "Panas bumi; dasar pelelangan WKP.",
+      "Geothermal law; basis for WKP tenders."
+     ]
+    },
+    {
+     "reg": "pp-7-2017",
+     "nama": "PP 7/2017",
+     "ket": [
+      "Panas bumi untuk pemanfaatan tidak langsung.",
+      "Geothermal for indirect use."
+     ]
+    },
+    {
+     "reg": "pp-28-2016",
+     "nama": "PP 28/2016",
+     "ket": [
+      "Bonus produksi panas bumi.",
+      "Geothermal production bonus."
+     ]
+    },
+    {
+     "reg": "permen-esdm-17-2014",
+     "nama": "Permen ESDM 17/2014",
+     "ket": [
+      "Pembelian tenaga listrik dari PLTP.",
+      "Electricity purchase from geothermal plants."
+     ]
+    }
+   ],
+   "target": [
+    {
+     "label": [
+      "Potensi WKP yang dilelang (14 WKP)",
+      "Potential of auctioned WKP (14 areas)"
+     ],
+     "angka": "732",
+     "satuan": "MW",
+     "tahun": 2026,
+     "url": "https://www.bloombergtechnoz.com/detail-news/119021/kementerian-esdm-buka-lelang-14-wkp-baru-panas-bumi",
+     "tgl": "2026"
+    },
+    {
+     "label": [
+      "Tiga WKP prioritas 2026",
+      "Three priority 2026 WKP"
+     ],
+     "angka": "130",
+     "satuan": "MW",
+     "tahun": 2026,
+     "url": "https://listrikindonesia.com/detail/18933/tiga-wilayah-panas-bumi-segera-dilelang",
+     "tgl": "2026"
+    },
+    {
+     "label": [
+      "Target investasi 2026",
+      "2026 investment target"
+     ],
+     "angka": "1,1",
+     "satuan": "US$ miliar",
+     "tahun": 2026,
+     "url": "https://listrikindonesia.com/detail/20959/investasi-panas-bumi-dibidik-us11-miliar-pada-2026",
+     "tgl": "2026"
+    },
+    {
+     "label": [
+      "Target PNBP panas bumi 2026",
+      "2026 geothermal non-tax revenue target"
+     ],
+     "angka": "2,6",
+     "satuan": "Rp triliun",
+     "tahun": 2026,
+     "url": "https://listrikindonesia.com/detail/20959/investasi-panas-bumi-dibidik-us11-miliar-pada-2026",
+     "tgl": "2026"
+    }
+   ],
+   "tonggak": [
+    {
+     "tgl": "2025-09-17",
+     "t": [
+      "Menteri ESDM mengumumkan lelang 10 wilayah panas bumi (3 WKP dan 7 PSPE).",
+      "The Minister announces the auction of 10 geothermal areas (3 WKP and 7 PSPE)."
+     ],
+     "url": "https://www.cnbcindonesia.com/news/20250917184934-4-667921/bahlil-lelang-10-wilayah-panas-bumi-ri-tahun-2025-ini-daftarnya"
+    },
+    {
+     "tgl": "2026-01-08",
+     "t": [
+      "Kepmen 8.K/EK.04/MEM.E/2026 menetapkan Ormat Geothermal pemenang WKP Telaga Ranu.",
+      "Decree 8.K/EK.04/MEM.E/2026 names Ormat Geothermal winner of the Telaga Ranu WKP."
+     ],
+     "url": "https://industri.kontan.co.id/news/kementerian-esdm-tetapkan-ormat-geothermal-pemenang-wk-panas-bumi-di-halmahera"
+    },
+    {
+     "tgl": "2026",
+     "t": [
+      "ESDM membuka lelang 14 WKP baru lebih cepat dari rencana RUPTL.",
+      "ESDM opens 14 new WKP auctions ahead of the RUPTL schedule."
+     ],
+     "url": "https://achmadnurhidayat.id/esdm-percepat-lelang-14-wkp-panas-bumi",
+     "perkiraan": true
+    },
+    {
+     "tgl": "2026-11-04",
+     "t": [
+      "PGE disebut berminat pada 14 ladang panas bumi yang dibuka.",
+      "PGE reported interested in the 14 geothermal fields opened."
+     ],
+     "url": "https://cnbcindonesia.com/market/20261104171831-17-782359/14-ladang-panas-bumi-dibuka-pgeo-mau-masuk"
+    }
+   ],
+   "realisasi": [
+    {
+     "label": [
+      "Pemenang WKP Telaga Ranu",
+      "Telaga Ranu WKP winner"
+     ],
+     "nilai": [
+      "Ormat Geothermal Indonesia",
+      "Ormat Geothermal Indonesia"
+     ],
+     "per": "2026-01-08",
+     "url": "https://industri.kontan.co.id/news/kementerian-esdm-tetapkan-ormat-geothermal-pemenang-wk-panas-bumi-di-halmahera"
+    }
+   ],
+   "proyek": {
+    "teknologi": [
+     "panas-bumi"
+    ]
+   },
+   "pelaksana": [
+    {
+     "kel": "regulator",
+     "org": "l_7278e0528a",
+     "nama": "Kementerian ESDM",
+     "peran": [
+      "Penetapan WKP dan pemenang lelang",
+      "WKP designation and auction winners"
+     ],
+     "orang": "o_a20f1f55d4"
+    },
+    {
+     "kel": "pelaksana",
+     "org": "p_dda1e51dae",
+     "nama": "Pertamina Geothermal Energy",
+     "peran": [
+      "Operator terbesar dan peserta lelang",
+      "Largest operator and bidder"
+     ]
+    },
+    {
+     "kel": "pelaksana",
+     "org": "su_ed074ff5",
+     "nama": "PLN",
+     "peran": [
+      "Pembeli listrik",
+      "Electricity buyer"
+     ]
+    },
+    {
+     "kel": "pengembang",
+     "org": "p_7a803f3b71",
+     "nama": "Star Energy Geothermal",
+     "peran": [
+      "Operator panas bumi",
+      "Geothermal operator"
+     ]
+    },
+    {
+     "kel": "pengembang",
+     "org": "p_9de27fd5b9",
+     "nama": "Medco Energi",
+     "peran": [
+      "Peserta lelang",
+      "Auction bidder"
+     ]
+    },
+    {
+     "kel": "pengembang",
+     "org": null,
+     "nama": "Ormat Geothermal Indonesia",
+     "peran": [
+      "Pemenang WKP Telaga Ranu",
+      "Telaga Ranu WKP winner"
+     ]
+    },
+    {
+     "kel": "pendana",
+     "org": "p_a235c21f23",
+     "nama": "Sarana Multi Infrastruktur",
+     "peran": [
+      "Pembiayaan eksplorasi dan pendanaan panas bumi",
+      "Exploration and geothermal financing"
+     ]
+    },
+    {
+     "kel": "pemda",
+     "org": null,
+     "nama": "Pemda Maluku Utara dan daerah WKP",
+     "peran": [
+      "Perizinan daerah dan bagi hasil",
+      "Local permits and revenue sharing"
+     ]
+    },
+    {
+     "kel": "masyarakat",
+     "org": null,
+     "nama": "Celios dan masyarakat sekitar",
+     "peran": [
+      "Celios menolak keputusan pemenang Telaga Ranu",
+      "Celios rejects the Telaga Ranu winner decision"
+     ]
+    }
+   ],
+   "pendanaan": [
+    {
+     "label": [
+      "Target investasi panas bumi 2026",
+      "2026 geothermal investment target"
+     ],
+     "nilai": [
+      "US$1,1 miliar",
+      "US$1.1 billion"
+     ],
+     "url": "https://listrikindonesia.com/detail/20959/investasi-panas-bumi-dibidik-us11-miliar-pada-2026",
+     "tgl": "2026"
+    }
+   ],
+   "isu": [
+    {
+     "jenis": "tarif",
+     "tingkat": "sedang",
+     "j": [
+      "Harga listrik panas bumi",
+      "Geothermal electricity price"
+     ],
+     "u": [
+      "Pemerintah menawarkan kepastian tarif 10 tahun pada tiga WKP; METI meminta PJBL tarif tunggal dan penghapusan harga patokan tertinggi.",
+      "The government offers 10-year tariff certainty on three WKP; METI asks for a single-tariff PPA and removal of the price ceiling."
+     ],
+     "url": "https://www.kabarbursa.com/ekonomi-hijau/panas-bumi-masuk-fase-ekspansi-esdm-tawarkan-tiga-wkp-dengan-tarif-10-tahun"
+    },
+    {
+     "jenis": "sosial",
+     "tingkat": "sedang",
+     "j": [
+      "Penolakan keputusan pemenang",
+      "Rejection of winner decision"
+     ],
+     "u": [
+      "Celios menolak keputusan Menteri ESDM tentang pemenang WKP Telaga Ranu; status izin pelaksana akhir diberitakan berbeda.",
+      "Celios rejects the Minister's decision on the Telaga Ranu winner; media differ on the final permit holder."
+     ],
+     "url": "https://industri.kontan.co.id/news/kementerian-esdm-tetapkan-ormat-geothermal-pemenang-wk-panas-bumi-di-halmahera"
+    },
+    {
+     "jenis": "teknis",
+     "tingkat": "tinggi",
+     "j": [
+      "Risiko eksplorasi",
+      "Exploration risk"
+     ],
+     "u": [
+      "Biaya eksplorasi tinggi dan hasil pengeboran tidak pasti; METI mengusulkan peran BRIN dan Kemdiktisaintek serta pendanaan eksplorasi.",
+      "Exploration cost is high and drilling results uncertain; METI proposes roles for BRIN and the science ministry plus exploration funding."
+     ],
+     "url": "https://www.kabarbursa.com/ekonomi-hijau/panas-bumi-masuk-fase-ekspansi-esdm-tawarkan-tiga-wkp-dengan-tarif-10-tahun"
+    },
+    {
+     "jenis": "lahan",
+     "tingkat": "sedang",
+     "j": [
+      "Wilayah hutan dan konservasi",
+      "Forest and conservation areas"
+     ],
+     "u": [
+      "Banyak WKP berada di kawasan hutan sehingga memerlukan izin kehutanan.",
+      "Many WKP sit in forest areas and need forestry permits."
+     ],
+     "url": "https://listrikindonesia.com/detail/18933/tiga-wilayah-panas-bumi-segera-dilelang"
+    }
+   ],
+   "berita": {
+    "re": "panas bumi|wkp|geothermal|pltp",
+    "luar": [
+     {
+      "judul": "Kementerian ESDM tetapkan Ormat Geothermal pemenang WK panas bumi di Halmahera",
+      "url": "https://industri.kontan.co.id/news/kementerian-esdm-tetapkan-ormat-geothermal-pemenang-wk-panas-bumi-di-halmahera",
+      "media": "Kontan",
+      "tgl": "2026-01"
+     },
+     {
+      "judul": "Panas bumi masuk fase ekspansi, ESDM tawarkan tiga WKP dengan tarif 10 tahun",
+      "url": "https://www.kabarbursa.com/ekonomi-hijau/panas-bumi-masuk-fase-ekspansi-esdm-tawarkan-tiga-wkp-dengan-tarif-10-tahun",
+      "media": "Kabar Bursa",
+      "tgl": "2026"
+     }
+    ]
+   },
+   "posisi_meti": [
+    {
+     "t": [
+      "METI mengusulkan PJBL panas bumi bertarif tunggal, penghapusan Harga Patokan Tertinggi, dan IUPTLS untuk panas bumi.",
+      "METI proposes single-tariff geothermal PPAs, removal of the price ceiling, and a limited electricity operating permit for geothermal."
+     ],
+     "sumber": "Aspirasi METI untuk RDPU Komisi XII, 8 Sep 2026"
+    },
+    {
+     "t": [
+      "Usulan target dalam UU: panas bumi 4,5 GW (2030) dan sekitar 8 GW (2034).",
+      "Proposed in-law targets: geothermal 4.5 GW (2030) and about 8 GW (2034)."
+     ],
+     "sumber": "Bahan advokasi METI, Sep 2026"
+    }
+   ],
+   "indikator": [
+    [
+     "Pemenang lelang yang mencapai PPA dan penutupan pendanaan",
+     "Auction winners reaching PPA and financial close"
+    ],
+    [
+     "Kapasitas PLTP terpasang (MW)",
+     "Installed geothermal capacity (MW)"
+    ],
+    [
+     "Jumlah WKP yang dilelang dan laku",
+     "WKP auctioned and awarded"
+    ],
+    [
+     "Realisasi investasi panas bumi (US$ miliar)",
+     "Geothermal investment realized (US$ billion)"
+    ]
+   ]
+  },
+  {
+   "kode": "plts-atap",
+   "program_id": null,
+   "nama": [
+    "PLTS atap",
+    "Rooftop solar"
+   ],
+   "ikon": "surya",
+   "gambar": "surya-cirata",
+   "tahap": "berjalan",
+   "tahap_ket": [
+    "Berjalan dengan kuota per tahun di bawah Permen ESDM 2/2024; kuota nasional 2026 sebesar 1.065 MW.",
+    "Operating under annual quotas in ESDM Regulation 2/2024; the 2026 national quota is 1,065 MW."
+   ],
+   "ringkasan": [
+    "Pelanggan PLN memasang PLTS atap yang terhubung jaringan di bawah kuota tahunan sistem ketenagalistrikan. Kuota nasional 901 MW (2024), 1.004 MW (2025), dan 1.065 MW (2026). Realisasi sampai Mei 2025 baru 445 MW dari sekitar 10.600 pelanggan.",
+    "PLN customers install grid-connected rooftop solar under annual quotas per power system. The national quota is 901 MW (2024), 1,004 MW (2025), and 1,065 MW (2026). Installed capacity through May 2025 was only 445 MW from about 10,600 customers."
+   ],
+   "dasar_hukum": [
+    {
+     "reg": "permen-esdm-2-2024",
+     "nama": "Permen ESDM 2/2024",
+     "ket": [
+      "PLTS atap terhubung jaringan pemegang IUPTLU; kuota dievaluasi tahunan.",
+      "Grid-connected rooftop solar for utility licensees; quotas reviewed annually."
+     ]
+    },
+    {
+     "reg": "permen-esdm-26-2021",
+     "nama": "Permen ESDM 26/2021",
+     "ket": [
+      "Dicabut oleh Permen 2/2024.",
+      "Revoked by Regulation 2/2024."
+     ]
+    }
+   ],
+   "target": [
+    {
+     "label": [
+      "Kuota nasional 2026",
+      "2026 national quota"
+     ],
+     "angka": "1.065",
+     "satuan": "MW",
+     "tahun": 2026,
+     "url": "https://ekonomi.bisnis.com/read/20240604/44/1771106/kuota-plts-atap-resmi-diketok-bauran-ebt-diharapkan-melesat",
+     "tgl": "2026"
+    },
+    {
+     "label": [
+      "Kuota nasional 2025",
+      "2025 national quota"
+     ],
+     "angka": "1.004",
+     "satuan": "MW",
+     "tahun": 2025,
+     "url": "https://ekonomi.bisnis.com/read/20240604/44/1771106/kuota-plts-atap-resmi-diketok-bauran-ebt-diharapkan-melesat",
+     "tgl": "2025"
+    }
+   ],
+   "tonggak": [
+    {
+     "tgl": "2024-02",
+     "t": [
+      "Permen ESDM 2/2024 disahkan dengan sistem kuota.",
+      "ESDM Regulation 2/2024 issued with a quota system."
+     ],
+     "url": "https://lestari.kompas.com/read/2024/02/25/110000086/revisi-plts-atap-disahkan-ada-aturan-kuota"
+    },
+    {
+     "tgl": "2024-06",
+     "t": [
+      "Kuota PLTS atap 2024 sampai 2028 ditetapkan.",
+      "Rooftop solar quotas for 2024 to 2028 are set."
+     ],
+     "url": "https://ekonomi.bisnis.com/read/20240604/44/1771106/kuota-plts-atap-resmi-diketok-bauran-ebt-diharapkan-melesat"
+    },
+    {
+     "tgl": "2024-08",
+     "t": [
+      "Sisa kuota 2024 tinggal 90 MW dari 901 MW.",
+      "Only 90 MW of the 901 MW 2024 quota remained."
+     ],
+     "url": "https://ekonomi.bisnis.com/read/20240824/44/1793742/laris-manis-kuota-plts-atap-tahun-ini-hampir-habis"
+    },
+    {
+     "tgl": "2025-06",
+     "t": [
+      "ESDM melaporkan realisasi 445 MW dari 10.632 pelanggan sampai Mei 2025.",
+      "ESDM reports 445 MW from 10,632 customers through May 2025."
+     ],
+     "url": "https://insight.kontan.co.id/news/rapor-setahun-permen-esdm-plts-atap-iklim-usaha-dinilai-jadi-lebih-pasti"
+    },
+    {
+     "tgl": "2026",
+     "t": [
+      "PLN mengusulkan tambahan kuota 229 MW.",
+      "PLN proposes an extra 229 MW of quota."
+     ],
+     "url": "https://katadata.co.id/amp/ekonomi-hijau/energi-baru/6a561cff17b08/pln-usulkan-penambahan-229-mw-kuota-plts-atap",
+     "perkiraan": true
+    }
+   ],
+   "realisasi": [
+    {
+     "label": [
+      "PLTS atap terpasang",
+      "Installed rooftop solar"
+     ],
+     "nilai": [
+      "445 MW dari 10.632 pelanggan",
+      "445 MW from 10,632 customers"
+     ],
+     "per": "2025-05",
+     "url": "https://insight.kontan.co.id/news/rapor-setahun-permen-esdm-plts-atap-iklim-usaha-dinilai-jadi-lebih-pasti"
+    }
+   ],
+   "proyek": {},
+   "pelaksana": [
+    {
+     "kel": "regulator",
+     "org": "l_7278e0528a",
+     "nama": "Kementerian ESDM",
+     "peran": [
+      "Menetapkan kuota dan aturan",
+      "Sets quotas and rules"
+     ]
+    },
+    {
+     "kel": "pelaksana",
+     "org": "su_ed074ff5",
+     "nama": "PLN",
+     "peran": [
+      "Pengelola permohonan dan jaringan",
+      "Application and grid manager"
+     ]
+    },
+    {
+     "kel": "pengembang",
+     "org": "l_dd90c88f59",
+     "nama": "AESI",
+     "peran": [
+      "Asosiasi industri surya",
+      "Solar industry association"
+     ]
+    },
+    {
+     "kel": "masyarakat",
+     "org": null,
+     "nama": "Pelanggan rumah tangga, bisnis, dan industri",
+     "peran": [
+      "Pemasang PLTS atap",
+      "Rooftop solar installers"
+     ]
+    }
+   ],
+   "pendanaan": [],
+   "pendanaan_catatan": [
+    "Pendanaan dilakukan sendiri oleh pelanggan; tidak ada anggaran program yang ditemukan.",
+    "Customers self-finance; no program budget was found."
+   ],
+   "isu": [
+    {
+     "jenis": "regulasi",
+     "tingkat": "sedang",
+     "j": [
+      "Kuota dan penerimaan",
+      "Quota and uptake"
+     ],
+     "u": [
+      "Pada 2024 permintaan sempat melampaui kuota; ESDM kemudian menyebut kendala lambatnya pemasangan.",
+      "In 2024 demand exceeded the quota; ESDM later cited slow installation as a constraint."
+     ],
+     "url": "https://ekonomi.bisnis.com/read/20240824/44/1793742/laris-manis-kuota-plts-atap-tahun-ini-hampir-habis"
+    },
+    {
+     "jenis": "tarif",
+     "tingkat": "sedang",
+     "j": [
+      "Tidak ada ekspor listrik berbayar",
+      "No paid export"
+     ],
+     "u": [
+      "Aturan 2024 tidak lagi memberi kompensasi ekspor sehingga keekonomian bergantung pada konsumsi sendiri.",
+      "The 2024 rule gives no export compensation, so economics depend on self-consumption."
+     ],
+     "url": "https://insight.kontan.co.id/news/rapor-setahun-permen-esdm-plts-atap-iklim-usaha-dinilai-jadi-lebih-pasti"
+    },
+    {
+     "jenis": "teknis",
+     "tingkat": "rendah",
+     "j": [
+      "Data realisasi terbaru tidak terbuka",
+      "Latest installed data not public"
+     ],
+     "u": [
+      "Realisasi 2026 dan pelanggan belum ditemukan pada sumber resmi yang boleh diambil.",
+      "2026 installed capacity and customer data were not found in official sources that may be harvested."
+     ],
+     "url": "https://ekonomi.bisnis.com/read/20240729/44/1786005/kian-melesat-plts-atap-di-bawah-aturan-main-baru"
+    }
+   ],
+   "berita": {
+    "re": "plts atap|atap surya|rooftop",
+    "luar": [
+     {
+      "judul": "PLN usulkan penambahan 229 MW kuota PLTS atap",
+      "url": "https://katadata.co.id/amp/ekonomi-hijau/energi-baru/6a561cff17b08/pln-usulkan-penambahan-229-mw-kuota-plts-atap",
+      "media": "Katadata",
+      "tgl": "2026"
+     },
+     {
+      "judul": "Rapor setahun Permen ESDM PLTS atap, iklim usaha dinilai jadi lebih pasti",
+      "url": "https://insight.kontan.co.id/news/rapor-setahun-permen-esdm-plts-atap-iklim-usaha-dinilai-jadi-lebih-pasti",
+      "media": "Kontan",
+      "tgl": "2025"
+     }
+    ]
+   },
+   "posisi_meti": [
+    {
+     "t": [
+      "METI belum memiliki posisi khusus PLTS atap dalam arsip non-rahasia yang dibaca; PMO Solar PV 100 GW METI mencakup PLTS atap.",
+      "No dedicated METI rooftop position was found in the non-confidential archive read; METI's Solar PV 100 GW PMO covers rooftop solar."
+     ],
+     "sumber": "SK 0008/SK/METI/VIII/2026"
+    }
+   ],
+   "indikator": [
+    [
+     "Realisasi kapasitas PLTS atap per tahun (MW)",
+     "Rooftop solar installed per year (MW)"
+    ],
+    [
+     "Kuota terpakai per sistem",
+     "Quota used per system"
+    ],
+    [
+     "Jumlah pelanggan PLTS atap",
+     "Number of rooftop solar customers"
+    ]
+   ]
+  },
+  {
+   "kode": "kendaraan-listrik",
+   "program_id": null,
+   "nama": [
+    "Kendaraan listrik dan SPKLU",
+    "Electric vehicles and charging"
+   ],
+   "ikon": "penyimpanan",
+   "gambar": "penyimpanan-baterai",
+   "tahap": "berjalan",
+   "tahap_ket": [
+    "Program berjalan: sekitar 4.892 SPKLU per Mei 2026; insentif PPN DTP masih dievaluasi.",
+    "Program is running: about 4,892 public chargers as of May 2026; the VAT incentive is still under review."
+   ],
+   "ringkasan": [
+    "Percepatan kendaraan listrik berbasis baterai lewat insentif fiskal, kewajiban TKDN, dan pembangunan stasiun pengisian (SPKLU). ESDM mencatat sekitar 4.892 SPKLU per Mei 2026 dengan target sekitar 62 ribu unit pada 2030, dan sekitar 274 ribu kendaraan listrik berbasis baterai hingga 2025.",
+    "Acceleration of battery electric vehicles through fiscal incentives, local content rules, and public charging (SPKLU). ESDM counted about 4,892 SPKLU in May 2026 against a target of about 62 thousand by 2030, and about 274 thousand battery EVs through 2025."
+   ],
+   "dasar_hukum": [
+    {
+     "reg": "perpres-55-2019",
+     "nama": "Perpres 55/2019",
+     "ket": [
+      "Percepatan program kendaraan bermotor listrik berbasis baterai.",
+      "Acceleration of the battery electric vehicle program."
+     ]
+    },
+    {
+     "reg": "perpres-79-2023",
+     "nama": "Perpres 79/2023",
+     "ket": [
+      "Perubahan Perpres 55/2019.",
+      "Amendment of Perpres 55/2019."
+     ]
+    },
+    {
+     "reg": "permen-esdm-1-2023",
+     "nama": "Permen ESDM 1/2023",
+     "ket": [
+      "Infrastruktur pengisian listrik kendaraan bermotor listrik.",
+      "Charging infrastructure for electric vehicles."
+     ]
+    },
+    {
+     "reg": "permen-kemenkeu-12-2025",
+     "nama": "PMK 12/2025",
+     "ket": [
+      "PPN atas kendaraan bermotor listrik berbasis baterai roda empat tertentu.",
+      "VAT on certain four-wheel battery electric vehicles."
+     ]
+    }
+   ],
+   "target": [
+    {
+     "label": [
+      "SPKLU nasional 2030",
+      "National SPKLU in 2030"
+     ],
+     "angka": "62.000",
+     "satuan": "unit",
+     "tahun": 2030,
+     "url": "https://www.jawapos.com/energi/2605110427/esdm-patok-target-fantastis-jumlah-spklu-62-ribu-hingga-2030-saat-ini-baru-4892-unit",
+     "tgl": "2026-05"
+    },
+    {
+     "label": [
+      "Rasio SPKLU terhadap kendaraan",
+      "Charger to vehicle ratio"
+     ],
+     "angka": "1:10",
+     "satuan": "hingga 1:12",
+     "tahun": null,
+     "url": "https://infopublik.id/kategori/nusantara/991845/perkuat-infrastruktur-kendaraan-listrik-pln-uid-jatim-tambah-75-spklu",
+     "tgl": "2026"
+    }
+   ],
+   "tonggak": [
+    {
+     "tgl": "2025",
+     "t": [
+      "Kendaraan listrik berbasis baterai disebut mencapai sekitar 274 ribu unit.",
+      "Battery EVs reported at about 274 thousand units."
+     ],
+     "url": "https://www.cnnindonesia.com/ekonomi/20260203131144-85-1324022/kendaraan-listrik-tembus-274-ribu-esdm-kebut-infrastruktur",
+     "perkiraan": true
+    },
+    {
+     "tgl": "2026-02",
+     "t": [
+      "PLN menyebut mobil listrik tembus 103 ribu dan pelanggan home charging sekitar 92 ribu.",
+      "PLN reports electric cars passing 103 thousand and about 92 thousand home-charging customers."
+     ],
+     "url": "https://lestari.kompas.com/mulai-dari-kamu/artikel/2026/02/06/101427086/jumlah-mobil-listrik-tembus-103000-pln-perkuat-infrastruktur-ev-di-iims-2026",
+     "perkiraan": true
+    },
+    {
+     "tgl": "2026-05",
+     "t": [
+      "ESDM mencatat 4.892 SPKLU.",
+      "ESDM records 4,892 SPKLU."
+     ],
+     "url": "https://otodriver.com/berita/2026/jumlah-spklu-di-seluruh-indonesia-saat-ini-4892-unit-jumeecgfnit"
+    },
+    {
+     "tgl": "2026-07",
+     "t": [
+      "Insentif PPN DTP masih dievaluasi; pembebasan PKB dan BBNKB daerah diinstruksikan.",
+      "The national VAT incentive is under review; regional vehicle tax waivers are instructed."
+     ],
+     "url": "https://techno.viva.co.id/otomotif/31104-niat-beli-mobil-listrik-intip-dilema-pajak-dan-realita-antre-spklu-juli-2026"
+    }
+   ],
+   "realisasi": [
+    {
+     "label": [
+      "SPKLU",
+      "Public chargers"
+     ],
+     "nilai": [
+      "4.892 unit",
+      "4,892 units"
+     ],
+     "per": "2026-05",
+     "url": "https://www.jawapos.com/energi/2605110427/esdm-patok-target-fantastis-jumlah-spklu-62-ribu-hingga-2030-saat-ini-baru-4892-unit"
+    },
+    {
+     "label": [
+      "Kendaraan listrik berbasis baterai",
+      "Battery electric vehicles"
+     ],
+     "nilai": [
+      "sekitar 274 ribu unit",
+      "about 274 thousand units"
+     ],
+     "per": "2025",
+     "url": "https://www.cnnindonesia.com/ekonomi/20260203131144-85-1324022/kendaraan-listrik-tembus-274-ribu-esdm-kebut-infrastruktur"
+    }
+   ],
+   "proyek": {},
+   "pelaksana": [
+    {
+     "kel": "regulator",
+     "org": "l_7278e0528a",
+     "nama": "Kementerian ESDM",
+     "peran": [
+      "Infrastruktur pengisian",
+      "Charging infrastructure"
+     ]
+    },
+    {
+     "kel": "regulator",
+     "org": "l_7b43a2574c",
+     "nama": "Kementerian Keuangan",
+     "peran": [
+      "Insentif PPN dan PPnBM",
+      "VAT and luxury tax incentives"
+     ]
+    },
+    {
+     "kel": "regulator",
+     "org": "l_05301f48a5",
+     "nama": "Kementerian Investasi dan Hilirisasi/BKPM",
+     "peran": [
+      "Investasi pabrik kendaraan dan baterai",
+      "EV and battery plant investment"
+     ],
+     "orang": "o_a203f6bf28"
+    },
+    {
+     "kel": "pelaksana",
+     "org": "su_ed074ff5",
+     "nama": "PLN",
+     "peran": [
+      "Operator SPKLU terbesar dan home charging",
+      "Largest charger operator and home charging"
+     ]
+    },
+    {
+     "kel": "pelaksana",
+     "org": "p_c9b8bffbec",
+     "nama": "Indonesia Battery Corporation",
+     "peran": [
+      "Ekosistem baterai kendaraan listrik",
+      "EV battery ecosystem"
+     ]
+    },
+    {
+     "kel": "pengembang",
+     "org": "p_b1c52ad7b0",
+     "nama": "Pertamina",
+     "peran": [
+      "SPKLU dan SPBKLU",
+      "Chargers and battery swap"
+     ]
+    },
+    {
+     "kel": "pengembang",
+     "org": null,
+     "nama": "Operator SPKLU swasta",
+     "peran": [
+      "Perluasan jaringan pengisian",
+      "Charging network expansion"
+     ]
+    },
+    {
+     "kel": "pemda",
+     "org": null,
+     "nama": "Pemerintah provinsi",
+     "peran": [
+      "Insentif pajak daerah dan perda kendaraan listrik",
+      "Regional tax incentives and EV ordinances"
+     ]
+    },
+    {
+     "kel": "masyarakat",
+     "org": null,
+     "nama": "Pengguna kendaraan listrik",
+     "peran": [
+      "Konsumen",
+      "Consumers"
+     ]
+    }
+   ],
+   "pendanaan": [],
+   "pendanaan_catatan": [
+    "Nilai investasi infrastruktur pengisian belum ditemukan pada sumber resmi.",
+    "Charging infrastructure investment was not found in official sources."
+   ],
+   "isu": [
+    {
+     "jenis": "tarif",
+     "tingkat": "sedang",
+     "j": [
+      "Kepastian insentif fiskal",
+      "Fiscal incentive certainty"
+     ],
+     "u": [
+      "PPN DTP masih dievaluasi pada Juli 2026; besaran dan periode belum terkonfirmasi.",
+      "The VAT incentive was still under review in July 2026; amount and period are unconfirmed."
+     ],
+     "url": "https://techno.viva.co.id/otomotif/31104-niat-beli-mobil-listrik-intip-dilema-pajak-dan-realita-antre-spklu-juli-2026"
+    },
+    {
+     "jenis": "teknis",
+     "tingkat": "sedang",
+     "j": [
+      "Celah jumlah SPKLU",
+      "Charger gap"
+     ],
+     "u": [
+      "Jumlah 4.892 unit jauh dari target 62 ribu pada 2030; antrean SPKLU dilaporkan pada musim mudik.",
+      "4,892 units is far from the 62 thousand target for 2030; queues were reported in holiday seasons."
+     ],
+     "url": "https://www.jawapos.com/energi/2605110427/esdm-patok-target-fantastis-jumlah-spklu-62-ribu-hingga-2030-saat-ini-baru-4892-unit"
+    },
+    {
+     "jenis": "teknis",
+     "tingkat": "rendah",
+     "j": [
+      "Angka kendaraan berbeda antar sumber",
+      "Vehicle counts differ across sources"
+     ],
+     "u": [
+      "Sumber menyebut 103 ribu mobil listrik (PLN) dan 274 ribu kendaraan listrik berbasis baterai (ESDM) karena cakupan jenis kendaraan berbeda.",
+      "Sources cite 103 thousand electric cars (PLN) and 274 thousand battery EVs (ESDM) because vehicle coverage differs."
+     ],
+     "url": "https://lestari.kompas.com/mulai-dari-kamu/artikel/2026/02/06/101427086/jumlah-mobil-listrik-tembus-103000-pln-perkuat-infrastruktur-ev-di-iims-2026"
+    },
+    {
+     "jenis": "pendanaan",
+     "tingkat": "rendah",
+     "j": [
+      "Keekonomian SPKLU",
+      "Charger economics"
+     ],
+     "u": [
+      "Insentif daerah diharapkan mendorong investasi SPKLU swasta.",
+      "Regional incentives are expected to spur private charger investment."
+     ],
+     "url": "https://www.metrotvnews.com/read/kewCjgj5-insentif-daerah-dorong-investasi-spklu-swasta"
+    }
+   ],
+   "berita": {
+    "re": "kendaraan listrik|spklu|mobil listrik",
+    "luar": [
+     {
+      "judul": "Jumlah SPKLU di seluruh Indonesia saat ini 4.892 unit",
+      "url": "https://otodriver.com/berita/2026/jumlah-spklu-di-seluruh-indonesia-saat-ini-4892-unit-jumeecgfnit",
+      "media": "Otodriver",
+      "tgl": "2026-05"
+     },
+     {
+      "judul": "Kendaraan listrik tembus 274 ribu, ESDM kebut infrastruktur",
+      "url": "https://www.cnnindonesia.com/ekonomi/20260203131144-85-1324022/kendaraan-listrik-tembus-274-ribu-esdm-kebut-infrastruktur",
+      "media": "CNN Indonesia",
+      "tgl": "2026-02-03"
+     }
+    ]
+   },
+   "posisi_meti": [
+    {
+     "t": [
+      "Posisi METI dalam arsip non-rahasia yang dibaca belum membahas kendaraan listrik; PMO Green Charging Station METI belum terisi.",
+      "The non-confidential archive read has no METI position on EVs; METI's Green Charging Station PMO is not yet staffed."
+     ],
+     "sumber": "SK 0008/SK/METI/VIII/2026"
+    }
+   ],
+   "indikator": [
+    [
+     "Jumlah SPKLU dan rasio terhadap kendaraan",
+     "Number of chargers and ratio to vehicles"
+    ],
+    [
+     "Penjualan kendaraan listrik per tahun",
+     "Annual EV sales"
+    ],
+    [
+     "Status insentif PPN DTP",
+     "Status of the VAT incentive"
+    ],
+    [
+     "Beban puncak listrik dari pengisian",
+     "Peak electricity load from charging"
+    ]
+   ]
+  },
+  {
+   "kode": "hidrogen-hijau",
+   "program_id": null,
+   "nama": [
+    "Hidrogen hijau",
+    "Green hydrogen"
+   ],
+   "ikon": "hidrogen",
+   "gambar": null,
+   "tahap": "rencana",
+   "tahap_ket": [
+    "Strategi dan peta jalan nasional ada; 93 inisiatif terpetakan, baru proyek percontohan kecil yang berjalan.",
+    "A national strategy and roadmap exist; 93 initiatives are mapped, with only small pilots running."
+   ],
+   "ringkasan": [
+    "Pengembangan hidrogen hijau dan amonia untuk industri, transportasi, dan ekspor. Pemerintah memetakan 93 inisiatif senilai sekitar Rp32 triliun. Proyek berjalan masih skala percontohan, seperti 20 kg per hari di Plaju dan hidrogen dari panas bumi di Ulubelu.",
+    "Development of green hydrogen and ammonia for industry, transport, and export. The government maps 93 initiatives worth about Rp32 trillion. Running projects are pilots, such as 20 kg per day at Plaju and geothermal hydrogen at Ulubelu."
+   ],
+   "dasar_hukum": [
+    {
+     "reg": null,
+     "nama": "Strategi Hidrogen Nasional",
+     "ket": [
+      "Dokumen kebijakan ESDM; bukan peraturan sehingga tidak ada di basis regulasi.",
+      "An ESDM policy document, not a regulation, so it is not in the regulation base."
+     ]
+    },
+    {
+     "reg": "perpres-110-2025",
+     "nama": "Perpres 110/2025",
+     "ket": [
+      "Instrumen nilai ekonomi karbon yang relevan bagi hidrogen rendah karbon.",
+      "Carbon pricing instruments relevant to low-carbon hydrogen."
+     ]
+    }
+   ],
+   "target": [
+    {
+     "label": [
+      "Inisiatif ekosistem hidrogen terpetakan",
+      "Mapped hydrogen ecosystem initiatives"
+     ],
+     "angka": "93",
+     "satuan": "inisiatif",
+     "tahun": 2026,
+     "url": "https://investortrust.id/business/110179/pemerintah-kembangkan-93-proyek-hidrogen-senilai-rp-32-triliun",
+     "tgl": "2026-07"
+    },
+    {
+     "label": [
+      "Nilai inisiatif",
+      "Initiative value"
+     ],
+     "angka": "32",
+     "satuan": "Rp triliun",
+     "tahun": 2026,
+     "url": "https://investortrust.id/business/110179/pemerintah-kembangkan-93-proyek-hidrogen-senilai-rp-32-triliun",
+     "tgl": "2026-07"
+    }
+   ],
+   "tonggak": [
+    {
+     "tgl": "2026-02",
+     "t": [
+      "PGE memproduksi hidrogen hijau berbasis panas bumi di Ulubelu.",
+      "PGE produces geothermal-based green hydrogen at Ulubelu."
+     ],
+     "url": "https://economy.okezone.com/read/2026/02/28/320/3204275/kembangkan-green-hydrogen-ri-percepat-transisi-energi-bersih"
+    },
+    {
+     "tgl": "2026-07-21",
+     "t": [
+      "Global Hydrogen Ecosystem Summit (GHES) 2026 dibuka Menteri ESDM di Jakarta.",
+      "Global Hydrogen Ecosystem Summit 2026 opens in Jakarta."
+     ],
+     "url": "https://www.metrotvnews.com/read/KdZCAxDr-ghes-2026-pln-perkuat-pengembangan-ekosistem-hidrogen-nasional-untuk-dukung-swasembada-energi"
+    },
+    {
+     "tgl": "2026-07",
+     "t": [
+      "PLN EPI dan eFuels SEA menandatangani MoU rantai pasok hidrogen Indonesia-Singapura.",
+      "PLN EPI and eFuels SEA sign an MoU on an Indonesia-Singapore hydrogen supply chain."
+     ],
+     "url": "https://listrikindonesia.com/detail/20681/mou-di-ghes-pln-epi-gandeng-efuels-sea-pte-ltd-sasar-pasar-ekspor-hidrogen"
+    }
+   ],
+   "realisasi": [
+    {
+     "label": [
+      "Pilot hidrogen surya Pertamina di Plaju",
+      "Pertamina solar hydrogen pilot at Plaju"
+     ],
+     "nilai": [
+      "20 kg per hari",
+      "20 kg per day"
+     ],
+     "per": "2026-07",
+     "url": "https://listrikindonesia.com/detail/20678/pertamina-serius-garap-hidrogen-sejumlah-proyek-tengah-dikembangkan"
+    }
+   ],
+   "proyek": {
+    "teknologi": [
+     "hidrogen"
+    ]
+   },
+   "pelaksana": [
+    {
+     "kel": "regulator",
+     "org": "l_7278e0528a",
+     "nama": "Kementerian ESDM",
+     "peran": [
+      "Strategi dan peta jalan hidrogen",
+      "Hydrogen strategy and roadmap"
+     ]
+    },
+    {
+     "kel": "pelaksana",
+     "org": "p_b1c52ad7b0",
+     "nama": "Pertamina",
+     "peran": [
+      "Pilot hidrogen dan amonia hijau",
+      "Hydrogen and green ammonia pilots"
+     ]
+    },
+    {
+     "kel": "pelaksana",
+     "org": "p_dda1e51dae",
+     "nama": "Pertamina Geothermal Energy",
+     "peran": [
+      "Hidrogen hijau Ulubelu",
+      "Ulubelu green hydrogen"
+     ]
+    },
+    {
+     "kel": "pelaksana",
+     "org": "su_ed074ff5",
+     "nama": "PLN dan PLN EPI",
+     "peran": [
+      "Ekosistem hidrogen untuk industri dan e-SAF",
+      "Hydrogen ecosystem for industry and e-SAF"
+     ]
+    },
+    {
+     "kel": "pengembang",
+     "org": null,
+     "nama": "Pupuk Indonesia",
+     "peran": [
+      "Amonia hijau di Maluku bersama Pertamina",
+      "Green ammonia in Maluku with Pertamina"
+     ]
+    },
+    {
+     "kel": "pengembang",
+     "org": null,
+     "nama": "eFuels SEA (Singapura)",
+     "peran": [
+      "Calon pembeli lintas batas",
+      "Prospective cross-border buyer"
+     ]
+    },
+    {
+     "kel": "masyarakat",
+     "org": null,
+     "nama": "IESR",
+     "peran": [
+      "Menilai pasar belum terbentuk",
+      "Assesses that the market is not yet formed"
+     ]
+    }
+   ],
+   "pendanaan": [
+    {
+     "label": [
+      "Nilai 93 inisiatif hidrogen",
+      "Value of 93 hydrogen initiatives"
+     ],
+     "nilai": [
+      "sekitar Rp32 triliun",
+      "about Rp32 trillion"
+     ],
+     "url": "https://investortrust.id/business/110179/pemerintah-kembangkan-93-proyek-hidrogen-senilai-rp-32-triliun",
+     "tgl": "2026-07"
+    }
+   ],
+   "isu": [
+    {
+     "jenis": "regulasi",
+     "tingkat": "tinggi",
+     "j": [
+      "Regulasi pembentuk pasar terbatas",
+      "Few market-creating rules"
+     ],
+     "u": [
+      "Strategi ada, tetapi regulasi turunan yang menciptakan permintaan masih terbatas menurut IESR.",
+      "A strategy exists but rules that create demand are still limited according to IESR."
+     ],
+     "url": "https://listrikindonesia.com/detail/19462/iesr-hidrogen-energi-baru-yang-masih-menunggu-pasar"
+    },
+    {
+     "jenis": "tarif",
+     "tingkat": "tinggi",
+     "j": [
+      "Biaya produksi dan harga",
+      "Production cost and price"
+     ],
+     "u": [
+      "Pasar belum menyerap hidrogen hijau pada harga produksi; skala masih puluhan kilogram per hari.",
+      "The market does not yet absorb green hydrogen at production cost; scale is tens of kilograms per day."
+     ],
+     "url": "https://listrikindonesia.com/detail/19462/iesr-hidrogen-energi-baru-yang-masih-menunggu-pasar"
+    },
+    {
+     "jenis": "pendanaan",
+     "tingkat": "sedang",
+     "j": [
+      "Pernyataan seremonial lebih banyak dari produksi komersial",
+      "Ceremonial statements outnumber commercial output"
+     ],
+     "u": [
+      "Sebagian besar kabar berupa MoU dan forum; angka kapasitas belum menunjukkan produksi komersial.",
+      "Most news is MoUs and forums; capacity figures do not yet show commercial production."
+     ],
+     "url": "https://www.metrotvnews.com/read/KdZCAxDr-ghes-2026-pln-perkuat-pengembangan-ekosistem-hidrogen-nasional-untuk-dukung-swasembada-energi"
+    }
+   ],
+   "berita": {
+    "re": "hidrogen|amonia",
+    "luar": [
+     {
+      "judul": "Pemerintah kembangkan 93 proyek hidrogen senilai Rp32 triliun",
+      "url": "https://investortrust.id/business/110179/pemerintah-kembangkan-93-proyek-hidrogen-senilai-rp-32-triliun",
+      "media": "Investortrust",
+      "tgl": "2026-07"
+     },
+     {
+      "judul": "Pertamina serius garap hidrogen, sejumlah proyek tengah dikembangkan",
+      "url": "https://listrikindonesia.com/detail/20678/pertamina-serius-garap-hidrogen-sejumlah-proyek-tengah-dikembangkan",
+      "media": "Listrik Indonesia",
+      "tgl": "2026-07"
+     }
+    ]
+   },
+   "posisi_meti": [
+    {
+     "t": [
+      "METI membentuk PMO Green Hydrogen dan Ammonia dalam struktur 2026 sampai 2028; belum ada posisi tertulis non-rahasia.",
+      "METI formed a Green Hydrogen and Ammonia PMO in its 2026 to 2028 structure; no non-confidential written position yet."
+     ],
+     "sumber": "SK 0008/SK/METI/VIII/2026"
+    }
+   ],
+   "indikator": [
+    [
+     "Kapasitas elektroliser terpasang (MW)",
+     "Installed electrolyzer capacity (MW)"
+    ],
+    [
+     "Produksi hidrogen hijau (ton per tahun)",
+     "Green hydrogen output (tons per year)"
+    ],
+    [
+     "Kontrak pembelian hidrogen atau amonia",
+     "Hydrogen or ammonia offtake contracts"
+    ],
+    [
+     "Terbitnya regulasi insentif atau mandat",
+     "Issuance of incentive or mandate rules"
+    ]
+   ]
+  },
+  {
+   "kode": "nuklir",
+   "program_id": null,
+   "nama": [
+    "Nuklir (PLTN)",
+    "Nuclear power (PLTN)"
+   ],
+   "ikon": "nuklir",
+   "gambar": "nuklir-siwabessy",
+   "tahap": "rencana",
+   "tahap_ket": [
+    "Tahap kajian kelayakan dan penetapan tapak; tender menunggu tapak, organisasi pelaksana (NEPIO) masih menunggu Perpres.",
+    "At feasibility and siting stage; the tender awaits a site and the implementing organization (NEPIO) awaits a presidential regulation."
+   ],
+   "ringkasan": [
+    "RUPTL 2025-2034 memuat PLTN awal sekitar 500 MW untuk 2032 sampai 2034, terbagi sistem Sumatera dan Kalimantan. Lokasi yang paling sering disebut adalah Bangka Tengah dan Bengkayang (Kalimantan Barat) dari puluhan kandidat tapak.",
+    "The 2025-2034 RUPTL includes an initial PLTN of about 500 MW for 2032 to 2034, split between the Sumatra and Kalimantan systems. The most cited sites are Central Bangka and Bengkayang (West Kalimantan) among dozens of candidates."
+   ],
+   "dasar_hukum": [
+    {
+     "reg": "uu-10-1997",
+     "nama": "UU 10/1997",
+     "ket": [
+      "Ketenaganukliran.",
+      "Nuclear energy law."
+     ]
+    },
+    {
+     "reg": "pp-2-2014",
+     "nama": "PP 2/2014",
+     "ket": [
+      "Perizinan instalasi nuklir dan pemanfaatan bahan nuklir.",
+      "Licensing of nuclear installations and materials."
+     ]
+    },
+    {
+     "reg": "pp-54-2012",
+     "nama": "PP 54/2012",
+     "ket": [
+      "Keselamatan dan keamanan instalasi nuklir.",
+      "Safety and security of nuclear installations."
+     ]
+    },
+    {
+     "reg": "perpres-46-2013",
+     "nama": "Perpres 46/2013",
+     "ket": [
+      "Badan Tenaga Nuklir Nasional (kini dilebur BRIN).",
+      "National Nuclear Energy Agency (now merged into BRIN)."
+     ]
+    },
+    {
+     "reg": null,
+     "nama": "Perpres NEPIO",
+     "ket": [
+      "Dilaporkan menunggu tanda tangan Presiden; status akhir belum terkonfirmasi.",
+      "Reported awaiting presidential signature; final status unconfirmed."
+     ]
+    }
+   ],
+   "target": [
+    {
+     "label": [
+      "Kapasitas PLTN awal",
+      "Initial PLTN capacity"
+     ],
+     "angka": "500",
+     "satuan": "MW",
+     "tahun": 2032,
+     "url": "https://listrikindonesia.com/detail/18684/kalimantan-barat-bakal-dibangun-pltn-kapan-mulai-beroperasi",
+     "tgl": "2026"
+    },
+    {
+     "label": [
+      "Rencana PLTN jangka panjang",
+      "Longer-term PLTN plan"
+     ],
+     "angka": "7",
+     "satuan": "GW",
+     "tahun": 2040,
+     "url": "https://finance.detik.com/energi/d-8084689/ri-siap-bangun-pltn-7-gw-hingga-2040-2-wilayah-jadi-lokasi-awal",
+     "tgl": "2025"
+    }
+   ],
+   "tonggak": [
+    {
+     "tgl": "2025",
+     "t": [
+      "Direktur PLN menyampaikan rencana PLTN 7 GW hingga 2034 sampai 2040.",
+      "PLN's president director outlines a 7 GW PLTN plan through 2034 to 2040."
+     ],
+     "url": "https://finance.detik.com/energi/d-8084691/dirut-pln-beberkan-rencana-pembangunan-pltn-7-gw-hingga-2034-di-ri",
+     "perkiraan": true
+    },
+    {
+     "tgl": "2026-02-16",
+     "t": [
+      "Mongabay menyoroti biaya dan risiko, meminta proyek PLTN ditimbang ulang.",
+      "Mongabay highlights cost and risk and asks for the PLTN projects to be reconsidered."
+     ],
+     "url": "https://mongabay.co.id/2026/02/16/lebih-mahal-dan-berisiko-timbang-ulang-proyek-pltn/"
+    },
+    {
+     "tgl": "2026-06",
+     "t": [
+      "Kerja sama dengan Jepang dilaporkan untuk mengejar PLTN 2032.",
+      "Cooperation with Japan reported to pursue a 2032 PLTN."
+     ],
+     "url": "https://journalarta.com/news/2026/06/21/percepatan-energi-nuklir-indonesia-gandeng-jepang-target-pltn-2032/"
+    },
+    {
+     "tgl": "2026",
+     "t": [
+      "Tender PLTN menunggu penetapan tapak; ESDM mengkaji tambahan kandidat lokasi.",
+      "The PLTN tender awaits siting; ESDM reviews additional candidate locations."
+     ],
+     "url": "https://katadata.co.id/berita/energi/6ada3a8dbc6b3/tender-pltn-tunggu-penetapan-tapak-esdm-kaji-tambahan-kandidat-lokasi",
+     "perkiraan": true
+    }
+   ],
+   "realisasi": [],
+   "proyek": {
+    "teknologi": [
+     "nuklir"
+    ]
+   },
+   "pelaksana": [
+    {
+     "kel": "regulator",
+     "org": "l_7278e0528a",
+     "nama": "Kementerian ESDM",
+     "peran": [
+      "Penetapan tapak dan tiga gugus tugas lokasi",
+      "Siting and three site task forces"
+     ]
+    },
+    {
+     "kel": "regulator",
+     "org": null,
+     "nama": "Bapeten",
+     "peran": [
+      "Pengawas izin dan keselamatan nuklir",
+      "Nuclear licensing and safety regulator"
+     ]
+    },
+    {
+     "kel": "regulator",
+     "org": null,
+     "nama": "Dewan Energi Nasional",
+     "peran": [
+      "Perencanaan nasional dan target awal",
+      "National planning and initial target"
+     ]
+    },
+    {
+     "kel": "pelaksana",
+     "org": "p_5a2e7d0c63",
+     "nama": "PLN Indonesia Power",
+     "peran": [
+      "Pelaksana proyek Kalimantan",
+      "Kalimantan project executor"
+     ]
+    },
+    {
+     "kel": "pelaksana",
+     "org": "p_ff7a390a42",
+     "nama": "PLN Nusantara Power",
+     "peran": [
+      "Pelaksana proyek Bangka",
+      "Bangka project executor"
+     ]
+    },
+    {
+     "kel": "pengembang",
+     "org": "l_973f60de15",
+     "nama": "BRIN",
+     "peran": [
+      "Riset dan reaktor eksperimental",
+      "Research and experimental reactors"
+     ]
+    },
+    {
+     "kel": "pengembang",
+     "org": null,
+     "nama": "Mitra asing (Jepang dan lainnya)",
+     "peran": [
+      "Teknologi dan pendanaan potensial",
+      "Potential technology and financing"
+     ]
+    },
+    {
+     "kel": "pemda",
+     "org": null,
+     "nama": "Pemda Bangka Belitung dan Kalimantan Barat",
+     "peran": [
+      "Tapak dan penerimaan daerah",
+      "Siting and local acceptance"
+     ]
+    },
+    {
+     "kel": "masyarakat",
+     "org": null,
+     "nama": "Kelompok masyarakat sipil lokal",
+     "peran": [
+      "Penolakan di kedua wilayah kandidat",
+      "Opposition in both candidate regions"
+     ]
+    }
+   ],
+   "pendanaan": [],
+   "pendanaan_catatan": [
+    "Nilai investasi PLTN belum ditemukan pada sumber resmi.",
+    "PLTN investment value was not found in official sources."
+   ],
+   "isu": [
+    {
+     "jenis": "sosial",
+     "tingkat": "tinggi",
+     "j": [
+      "Penolakan masyarakat",
+      "Community opposition"
+     ],
+     "u": [
+      "Kelompok sipil di Bangka Belitung dan Kalimantan Barat menolak rencana tapak.",
+      "Civil groups in Bangka Belitung and West Kalimantan oppose the siting plans."
+     ],
+     "url": "https://mongabay.co.id/2026/02/16/lebih-mahal-dan-berisiko-timbang-ulang-proyek-pltn/"
+    },
+    {
+     "jenis": "pendanaan",
+     "tingkat": "tinggi",
+     "j": [
+      "Biaya dan risiko",
+      "Cost and risk"
+     ],
+     "u": [
+      "Kajian menilai PLTN lebih mahal dan berisiko dibanding alternatif lain.",
+      "Analyses judge PLTN costlier and riskier than alternatives."
+     ],
+     "url": "https://mongabay.co.id/2026/02/16/lebih-mahal-dan-berisiko-timbang-ulang-proyek-pltn/"
+    },
+    {
+     "jenis": "regulasi",
+     "tingkat": "sedang",
+     "j": [
+      "Kelembagaan NEPIO",
+      "NEPIO institution"
+     ],
+     "u": [
+      "Perpres badan pelaksana NEPIO dilaporkan menunggu tanda tangan; belum terkonfirmasi.",
+      "The NEPIO implementing body regulation was reported awaiting signature; unconfirmed."
+     ],
+     "url": "https://katadata.co.id/amp/ekonomi-hijau/energi-baru/6968bccbe5f7d/menuju-pltn-komersial-pertama-progres-dan-deretan-mitra-asing/"
+    },
+    {
+     "jenis": "teknis",
+     "tingkat": "sedang",
+     "j": [
+      "Penetapan tapak",
+      "Site selection"
+     ],
+     "u": [
+      "Jumlah kandidat tapak disebut 28 sampai 29; tender menunggu penetapan tapak.",
+      "Candidate sites are cited at 28 to 29; the tender awaits site selection."
+     ],
+     "url": "https://katadata.co.id/berita/energi/6ada3a8dbc6b3/tender-pltn-tunggu-penetapan-tapak-esdm-kaji-tambahan-kandidat-lokasi"
+    }
+   ],
+   "berita": {
+    "re": "nuklir|pltn",
+    "luar": [
+     {
+      "judul": "Lebih mahal dan berisiko, timbang ulang proyek PLTN",
+      "url": "https://mongabay.co.id/2026/02/16/lebih-mahal-dan-berisiko-timbang-ulang-proyek-pltn/",
+      "media": "Mongabay",
+      "tgl": "2026-02-16"
+     },
+     {
+      "judul": "Tender PLTN tunggu penetapan tapak, ESDM kaji tambahan kandidat lokasi",
+      "url": "https://katadata.co.id/berita/energi/6ada3a8dbc6b3/tender-pltn-tunggu-penetapan-tapak-esdm-kaji-tambahan-kandidat-lokasi",
+      "media": "Katadata",
+      "tgl": "2026"
+     }
+    ]
+   },
+   "posisi_meti": [
+    {
+     "t": [
+      "METI membentuk PMO Nuclear dalam struktur 2026 sampai 2028; PMO ini belum terisi dan belum ada posisi tertulis non-rahasia.",
+      "METI formed a Nuclear PMO in its 2026 to 2028 structure; it is not yet staffed and has no non-confidential written position."
+     ],
+     "sumber": "SK 0008/SK/METI/VIII/2026"
+    }
+   ],
+   "indikator": [
+    [
+     "Penetapan tapak dan penerbitan Perpres NEPIO",
+     "Site selection and NEPIO regulation issued"
+    ],
+    [
+     "Izin tapak dari Bapeten",
+     "Site permit from Bapeten"
+    ],
+    [
+     "Tender dan pemenang teknologi",
+     "Tender and technology winner"
+    ],
+    [
+     "Hasil konsultasi publik di daerah kandidat",
+     "Public consultation results in candidate regions"
+    ]
+   ]
+  },
+  {
+   "kode": "co-firing",
+   "program_id": null,
+   "nama": [
+    "Co-firing biomassa PLTU",
+    "Biomass co-firing at coal plants"
+   ],
+   "ikon": "bioenergi",
+   "gambar": "biomassa-bantargebang",
+   "tahap": "berjalan",
+   "tahap_ket": [
+    "Berjalan di 52 PLTU; realisasi 2026 sekitar 1,4 juta ton hingga akhir Agustus dari target 3,65 juta ton.",
+    "Running at 52 coal plants; about 1.4 million tons realized through late August 2026 against a 3.65 million ton target."
+   ],
+   "ringkasan": [
+    "PLN mencampur biomassa dengan batu bara di PLTU. PLN EPI menargetkan pasokan 3,65 juta ton pada 2026 untuk 52 PLTU, naik dari 2,35 juta ton pada 2025, dan porsi biomassa sekitar 5 persen. Pasokan biomassa dan biaya menjadi kendala utama.",
+    "PLN blends biomass with coal at coal plants. PLN EPI targets 3.65 million tons of supply in 2026 for 52 plants, up from 2.35 million tons in 2025, with a biomass share of about 5 percent. Biomass supply and cost are the main constraints."
+   ],
+   "dasar_hukum": [
+    {
+     "reg": "permen-esdm-12-2023",
+     "nama": "Permen ESDM 12/2023",
+     "ket": [
+      "Pemanfaatan biomassa sebagai campuran bahan bakar PLTU.",
+      "Biomass use as a fuel blend at coal plants."
+     ]
+    }
+   ],
+   "target": [
+    {
+     "label": [
+      "Pasokan biomassa 2026",
+      "2026 biomass supply"
+     ],
+     "angka": "3,65",
+     "satuan": "juta ton",
+     "tahun": 2026,
+     "url": "https://investortrust.id/business/110828/pln-epi-targetkan-pasokan-biomassa-3-65-juta-ton-pada-2026-percepat-co-firing-di-52-pltu",
+     "tgl": "2026"
+    },
+    {
+     "label": [
+      "Pasokan biomassa 2027",
+      "2027 biomass supply"
+     ],
+     "angka": "4,07",
+     "satuan": "juta ton",
+     "tahun": 2027,
+     "url": "https://industri.kontan.co.id/news/pln-epi-targetkan-pasokan-biomassa-co-firing-naik-jadi-407-juta-ton-pada-2027",
+     "tgl": "2026"
+    },
+    {
+     "label": [
+      "Porsi biomassa nasional",
+      "National biomass share"
+     ],
+     "angka": "5",
+     "satuan": "persen",
+     "tahun": 2026,
+     "url": "https://industri.kontan.co.id/news/pln-epi-kejar-target-porsi-biomassa-5-untuk-campuran-batubara-pltu",
+     "tgl": "2026"
+    }
+   ],
+   "tonggak": [
+    {
+     "tgl": "2025",
+     "t": [
+      "Pasokan biomassa mencapai 2,35 juta ton (data PLN EPI).",
+      "Biomass supply reached 2.35 million tons (PLN EPI data)."
+     ],
+     "url": "https://www.rctiplus.com/news/detail/okezone/5466770/pln-epi-targetkan-pasok-3-65-juta-ton-biomassa-ke-52-pltu-di-2026",
+     "perkiraan": true
+    },
+    {
+     "tgl": "2026-01-15",
+     "t": [
+      "PLN mengakui realisasi pemanfaatan biomassa masih di bawah target.",
+      "PLN admits biomass use is still below target."
+     ],
+     "url": "https://ekonomi.republika.co.id/berita/t8wbqq416/pln-akui-realisasi-pemanfaatan-biomassa-masih-di-bawah-target"
+    },
+    {
+     "tgl": "2026-03-11",
+     "t": [
+      "PLN EPI meminta skema DMO untuk mengamankan pasokan PLTU.",
+      "PLN EPI asks for a DMO scheme to secure plant supply."
+     ],
+     "url": "https://ekonomi.bisnis.com/read/20260311/44/1959732/pln-epi-minta-skema-dmo-untuk-amankan-pasokan-pltu"
+    },
+    {
+     "tgl": "2026-08-26",
+     "t": [
+      "Realisasi co-firing sekitar 1,4 juta ton.",
+      "Co-firing realization about 1.4 million tons."
+     ],
+     "url": "https://insight.kontan.co.id/news/pln-kebut-biomassa-co-firing-pltu-masif"
+    },
+    {
+     "tgl": "2026-09-25",
+     "t": [
+      "PLN EPI membidik potensi 60,6 juta ton biomassa.",
+      "PLN EPI eyes a 60.6 million ton biomass potential."
+     ],
+     "url": "https://ekonomi.bisnis.com/read/20260925/44/2007159/pln-epi-bidik-potensi-606-juta-ton-biomassa"
+    }
+   ],
+   "realisasi": [
+    {
+     "label": [
+      "Biomassa untuk co-firing, Juni 2026",
+      "Co-firing biomass, June 2026"
+     ],
+     "nilai": [
+      "932.906 ton",
+      "932,906 tons"
+     ],
+     "per": "2026-06",
+     "url": "https://www.rctiplus.com/news/detail/okezone/5466770/pln-epi-targetkan-pasok-3-65-juta-ton-biomassa-ke-52-pltu-di-2026"
+    },
+    {
+     "label": [
+      "Hingga 26 Agustus 2026",
+      "Through 26 August 2026"
+     ],
+     "nilai": [
+      "sekitar 1,4 juta ton (sekitar 38 persen target)",
+      "about 1.4 million tons (about 38 percent of target)"
+     ],
+     "per": "2026-08-26",
+     "url": "https://insight.kontan.co.id/news/pln-kebut-biomassa-co-firing-pltu-masif"
+    }
+   ],
+   "proyek": {},
+   "pelaksana": [
+    {
+     "kel": "regulator",
+     "org": "l_7278e0528a",
+     "nama": "Kementerian ESDM",
+     "peran": [
+      "Regulasi co-firing",
+      "Co-firing regulation"
+     ]
+    },
+    {
+     "kel": "pelaksana",
+     "org": "su_ed074ff5",
+     "nama": "PLN",
+     "peran": [
+      "Pemilik PLTU",
+      "Plant owner"
+     ]
+    },
+    {
+     "kel": "pelaksana",
+     "org": null,
+     "nama": "PLN EPI",
+     "peran": [
+      "Pengadaan biomassa",
+      "Biomass procurement"
+     ]
+    },
+    {
+     "kel": "pelaksana",
+     "org": "p_ff7a390a42",
+     "nama": "PLN Nusantara Power",
+     "peran": [
+      "Pengelola PLTU",
+      "Plant operator"
+     ]
+    },
+    {
+     "kel": "pengembang",
+     "org": null,
+     "nama": "Pemasok biomassa dan BUMDes",
+     "peran": [
+      "Rantai pasok pelet dan serbuk kayu",
+      "Pellet and sawdust supply chain"
+     ]
+    },
+    {
+     "kel": "pemda",
+     "org": null,
+     "nama": "Kemendes PDT dan pemda",
+     "peran": [
+      "Menggandeng BUMDes dalam rantai pasok",
+      "Bring village enterprises into the supply chain"
+     ]
+    },
+    {
+     "kel": "masyarakat",
+     "org": null,
+     "nama": "Petani hutan tanaman energi",
+     "peran": [
+      "Pemasok bahan baku tanpa deforestasi",
+      "Feedstock suppliers without deforestation"
+     ]
+    }
+   ],
+   "pendanaan": [],
+   "pendanaan_catatan": [
+    "Nilai investasi dan subsidi co-firing belum ditemukan pada sumber resmi.",
+    "Co-firing investment and subsidy values were not found in official sources."
+   ],
+   "isu": [
+    {
+     "jenis": "teknis",
+     "tingkat": "tinggi",
+     "j": [
+      "Pasokan dan standar biomassa",
+      "Biomass supply and standards"
+     ],
+     "u": [
+      "Standardisasi biomassa dan efisiensi rantai pasok disebut kunci keberhasilan; realisasi 2025 di bawah target.",
+      "Biomass standardization and supply chain efficiency are called keys; 2025 realization was below target."
+     ],
+     "url": "https://rri.co.id/jakarta/ekonomi/bisnis/2603333/standardisasi-biomassa-dan-rantai-pasok-jadi-kunci-keberhasilan-co-firing-pltu"
+    },
+    {
+     "jenis": "tarif",
+     "tingkat": "sedang",
+     "j": [
+      "Biaya dan insentif",
+      "Cost and incentives"
+     ],
+     "u": [
+      "Pemerintah menyebut kendala pasokan dan biaya dalam program co-firing.",
+      "The government cites supply and cost hurdles in the co-firing program."
+     ],
+     "url": "https://www.petromindo.com/news/article/govt-cites-supply-cost-hurdles-in-coal-plant-biomass-co-firing-program"
+    },
+    {
+     "jenis": "sosial",
+     "tingkat": "sedang",
+     "j": [
+      "Risiko deforestasi dan emisi",
+      "Deforestation and emissions risk"
+     ],
+     "u": [
+      "Pasokan biomassa wajib berasal dari sumber tanpa deforestasi; PLN EPI memperluas ekosistem biomassa tanpa deforestasi.",
+      "Biomass must come from non-deforestation sources; PLN EPI expands a deforestation-free biomass ecosystem."
+     ],
+     "url": "https://listrikindonesia.com/detail/21139/pln-epi-perluas-ekosistem-biomassa-tanpa-deforestasi"
+    },
+    {
+     "jenis": "regulasi",
+     "tingkat": "rendah",
+     "j": [
+      "Perpanjangan umur PLTU",
+      "Extending coal plant life"
+     ],
+     "u": [
+      "Co-firing dikritik karena dapat memperpanjang operasi PLTU; METI mengaitkannya dengan pensiun dini berkeadilan.",
+      "Co-firing is criticized for possibly extending plant life; METI links it to just early retirement."
+     ],
+     "url": "https://www.rctiplus.com/news/detail/ekonomi/5438009/90-persen-pembangkit-listrik-energi-fosil--ini-syarat-biomassa-di-ri-berhasil"
+    }
+   ],
+   "berita": {
+    "re": "co-?firing|biomassa",
+    "luar": [
+     {
+      "judul": "PLN kebut biomassa, co-firing PLTU masif",
+      "url": "https://insight.kontan.co.id/news/pln-kebut-biomassa-co-firing-pltu-masif",
+      "media": "Kontan",
+      "tgl": "2026"
+     },
+     {
+      "judul": "PLN EPI targetkan pasokan biomassa 3,65 juta ton pada 2026, percepat co-firing di 52 PLTU",
+      "url": "https://investortrust.id/business/110828/pln-epi-targetkan-pasokan-biomassa-3-65-juta-ton-pada-2026-percepat-co-firing-di-52-pltu",
+      "media": "Investortrust",
+      "tgl": "2026"
+     }
+    ]
+   },
+   "posisi_meti": [
+    {
+     "t": [
+      "METI membentuk PMO Bioenergy for Power; bioenergi diusulkan disatukan sebagai satu klaster dalam RUU EBET.",
+      "METI formed a Bioenergy for Power PMO; bioenergy is proposed as a single cluster in the EBET bill."
+     ],
+     "sumber": "SK 0008/SK/METI/VIII/2026; Kesimpulan audiensi Komisi XII"
+    }
+   ],
+   "indikator": [
+    [
+     "Pasokan biomassa (juta ton) terhadap target",
+     "Biomass supply (million tons) against target"
+    ],
+    [
+     "Porsi biomassa dalam bauran bahan bakar PLTU",
+     "Biomass share in plant fuel mix"
+    ],
+    [
+     "Jumlah PLTU yang menjalankan co-firing",
+     "Plants running co-firing"
+    ],
+    [
+     "Harga biomassa terkirim",
+     "Delivered biomass price"
+    ]
+   ]
+  },
+  {
+   "kode": "super-grid",
+   "program_id": null,
+   "nama": [
+    "Interkoneksi dan super grid",
+    "Interconnection and super grid"
+   ],
+   "ikon": "jaringan",
+   "gambar": null,
+   "tahap": "rencana",
+   "tahap_ket": [
+    "Tahap persiapan dan kajian; PLN menyelesaikan kajian jaringan hijau Jawa-Sumatera dan proyek HVDC tercatat KPPIP berstatus ditunda.",
+    "At preparation and study stage; PLN is finishing a Java-Sumatra green grid study and the HVDC project is listed by KPPIP as postponed."
+   ],
+   "ringkasan": [
+    "RUPTL 2025-2034 merencanakan Green Super Grid sepanjang 47.758 kms untuk menyalurkan listrik terbarukan antarpulau. Proyek prioritas adalah interkoneksi HVDC Sumatera-Jawa 3.000 MW; rute Sumatera-Batam-Bintan dan Sumatera-Kalimantan menyusul.",
+    "The 2025-2034 RUPTL plans a 47,758 kms Green Super Grid to move renewable power between islands. The priority is the 3,000 MW HVDC Sumatra-Java interconnection; Sumatra-Batam-Bintan and Sumatra-Kalimantan routes follow."
+   ],
+   "dasar_hukum": [
+    {
+     "reg": "uu-30-2009",
+     "nama": "UU 30/2009",
+     "ket": [
+      "Ketenagalistrikan.",
+      "Electricity law."
+     ]
+    },
+    {
+     "reg": "permen-esdm-11-2021",
+     "nama": "Permen ESDM 11/2021",
+     "ket": [
+      "Pelaksanaan usaha ketenagalistrikan, termasuk pemanfaatan jaringan.",
+      "Electricity business, including grid use."
+     ]
+    },
+    {
+     "reg": "perpres-77-2008",
+     "nama": "Perpres 77/2008",
+     "ket": [
+      "Pengesahan MoU ASEAN Power Grid.",
+      "Ratification of the ASEAN Power Grid MoU."
+     ]
+    }
+   ],
+   "target": [
+    {
+     "label": [
+      "Green Super Grid dalam RUPTL",
+      "Green Super Grid in RUPTL"
+     ],
+     "angka": "47.758",
+     "satuan": "kms",
+     "tahun": 2034,
+     "url": "https://investortrust.id/esg/68230/pln-siap-bangun-green-super-grid-sepanjang-47758-kms",
+     "tgl": "2025"
+    },
+    {
+     "label": [
+      "Kapasitas HVDC Sumatera-Jawa",
+      "Sumatra-Java HVDC capacity"
+     ],
+     "angka": "3.000",
+     "satuan": "MW",
+     "tahun": null,
+     "url": "https://kppip.go.id/en/priority-projects/electricity/high-voltage-direct-current-hvdc/",
+     "tgl": "2026"
+    }
+   ],
+   "tonggak": [
+    {
+     "tgl": "2025-06-02",
+     "t": [
+      "Pemerintah menyebut rencana jaringan listrik super bersama RUPTL.",
+      "Government cites super grid plans alongside the RUPTL."
+     ],
+     "url": "https://www.cnbcindonesia.com/news/20250602151149-4-637862/gak-cuma-pembangkit-ri-bakal-bangun-jaringan-listrik-super/amp"
+    },
+    {
+     "tgl": "2026-04",
+     "t": [
+      "PLN dan pemerintah menyiapkan supergrid Jawa-Sumatera; Dirut menekankan kolaborasi lintas sektor.",
+      "PLN and government prepare the Java-Sumatra supergrid; the PLN president stresses cross-sector collaboration."
+     ],
+     "url": "https://ekonomi.republika.co.id/berita/tdtqlc522/dirut-pln-tekankan-kolaborasi-lintas-sektor-perkuat-ketahanan-energi"
+    },
+    {
+     "tgl": "2026",
+     "t": [
+      "PLN segera merampungkan kajian jaringan listrik hijau Jawa-Sumatera.",
+      "PLN is about to finish the Java-Sumatra green grid study."
+     ],
+     "url": "https://katadata.co.id/ekonomi-hijau/energi-baru/69f0a4601beb9/pln-segera-rampungkan-kajian-jaringan-listrik-hijau-jawa-sumatra",
+     "perkiraan": true
+    }
+   ],
+   "realisasi": [],
+   "proyek": {
+    "nama_re": "transmisi|interkoneksi|hvdc|gardu"
+   },
+   "pelaksana": [
+    {
+     "kel": "regulator",
+     "org": "l_7278e0528a",
+     "nama": "Kementerian ESDM",
+     "peran": [
+      "Rencana ketenagalistrikan",
+      "Electricity planning"
+     ]
+    },
+    {
+     "kel": "regulator",
+     "org": null,
+     "nama": "KPPIP",
+     "peran": [
+      "Mencatat HVDC sebagai proyek prioritas",
+      "Lists HVDC as a priority project"
+     ]
+    },
+    {
+     "kel": "pelaksana",
+     "org": "su_ed074ff5",
+     "nama": "PLN",
+     "peran": [
+      "Pembangun dan pemilik transmisi",
+      "Transmission builder and owner"
+     ],
+     "orang": "o_5497a8db00"
+    },
+    {
+     "kel": "pendana",
+     "org": "l_43f00f6a72",
+     "nama": "Danantara",
+     "peran": [
+      "Pendanaan infrastruktur strategis",
+      "Strategic infrastructure funding"
+     ]
+    },
+    {
+     "kel": "pendana",
+     "org": null,
+     "nama": "Lembaga pembiayaan internasional",
+     "peran": [
+      "Pembiayaan HVDC (kebutuhan investasi besar)",
+      "HVDC financing (large investment need)"
+     ]
+    },
+    {
+     "kel": "pengembang",
+     "org": null,
+     "nama": "Pengembang EBT di Sumatera",
+     "peran": [
+      "Sumber listrik yang disalurkan ke Jawa",
+      "Sources of power exported to Java"
+     ]
+    },
+    {
+     "kel": "masyarakat",
+     "org": null,
+     "nama": "Warga jalur transmisi",
+     "peran": [
+      "Pembebasan lahan dan ruang bebas",
+      "Land acquisition and right-of-way"
+     ]
+    }
+   ],
+   "pendanaan": [
+    {
+     "label": [
+      "Kebutuhan investasi HVDC yang dikutip media",
+      "HVDC investment need cited by media"
+     ],
+     "nilai": [
+      "hingga US$500 miliar",
+      "up to US$500 billion"
+     ],
+     "url": "https://wartaekonomi.co.id/read608635/bidik-investasi-usd-500-miliar-ri-pacu-infrastruktur-hvdc-sebagai-backbone-transisi-energi",
+     "tgl": "2026"
+    }
+   ],
+   "isu": [
+    {
+     "jenis": "pendanaan",
+     "tingkat": "tinggi",
+     "j": [
+      "Biaya sangat besar",
+      "Very high cost"
+     ],
+     "u": [
+      "Kebutuhan investasi HVDC dikutip hingga ratusan miliar dolar; sumber pendanaan belum ditetapkan.",
+      "HVDC investment need is cited at hundreds of billions of dollars; the funding source is not set."
+     ],
+     "url": "https://wartaekonomi.co.id/read608635/bidik-investasi-usd-500-miliar-ri-pacu-infrastruktur-hvdc-sebagai-backbone-transisi-energi"
+    },
+    {
+     "jenis": "regulasi",
+     "tingkat": "sedang",
+     "j": [
+      "Jadwal tidak konsisten",
+      "Inconsistent schedule"
+     ],
+     "u": [
+      "Lembar KPPIP menyebut status konstruksi ditunda, sedangkan sumber lain menyebut operasi 2029 atau 2033.",
+      "The KPPIP sheet lists construction as postponed while other sources cite operation in 2029 or 2033."
+     ],
+     "url": "https://kppip.go.id/en/priority-projects/electricity/high-voltage-direct-current-hvdc/"
+    },
+    {
+     "jenis": "teknis",
+     "tingkat": "sedang",
+     "j": [
+      "Teknologi HVDC dan kapasitas industri",
+      "HVDC technology and industry capacity"
+     ],
+     "u": [
+      "Kabel bawah laut dan stasiun konverter memerlukan teknologi dan pemasok yang belum tersedia di dalam negeri.",
+      "Subsea cables and converter stations need technology and suppliers not yet available domestically."
+     ],
+     "url": "https://listrikindonesia.com/detail/19080/teknologi-hvdc-jadi-solusi-hubungkan-transmisi-jawa-dan-sumatra"
+    },
+    {
+     "jenis": "lahan",
+     "tingkat": "sedang",
+     "j": [
+      "Lahan dan ruang bebas jalur",
+      "Land and right-of-way"
+     ],
+     "u": [
+      "Jaringan sepanjang puluhan ribu kms memerlukan pembebasan lahan dan izin lintas daerah.",
+      "A network of tens of thousands of kms requires land acquisition and cross-regional permits."
+     ],
+     "url": "https://investortrust.id/esg/68230/pln-siap-bangun-green-super-grid-sepanjang-47758-kms"
+    }
+   ],
+   "berita": {
+    "re": "transmisi|super ?grid|interkoneksi|hvdc",
+    "luar": [
+     {
+      "judul": "PLN segera rampungkan kajian jaringan listrik hijau Jawa-Sumatra",
+      "url": "https://katadata.co.id/ekonomi-hijau/energi-baru/69f0a4601beb9/pln-segera-rampungkan-kajian-jaringan-listrik-hijau-jawa-sumatra",
+      "media": "Katadata",
+      "tgl": "2026"
+     },
+     {
+      "judul": "Interkoneksi Sumatra-Jawa jadi proyek prioritas energi",
+      "url": "https://investortrust.id/business/100710/interkoneksi-sumatra-jawa-jadi-proyek-prioritas-energi",
+      "media": "Investortrust",
+      "tgl": "2026"
+     }
+    ]
+   },
+   "posisi_meti": [
+    {
+     "t": [
+      "METI mengusulkan pemanfaatan bersama jaringan (power wheeling); Komisi XII menyebutnya celah yang paling sering disorot dan meminta METI mendalami konsep serta tahapannya.",
+      "METI proposes shared grid use (power wheeling); Commission XII called it the most-noted gap and asked METI to detail the concept and stages."
+     ],
+     "sumber": "Kesimpulan audiensi Komisi XII, 8 Sep 2026"
+    }
+   ],
+   "indikator": [
+    [
+     "Keputusan investasi akhir HVDC Sumatera-Jawa",
+     "Final investment decision on Sumatra-Java HVDC"
+    ],
+    [
+     "Panjang transmisi baru (kms) terhadap RUPTL",
+     "New transmission (kms) against RUPTL"
+    ],
+    [
+     "Curtailment EBT akibat keterbatasan jaringan",
+     "Renewable curtailment from grid limits"
+    ],
+    [
+     "Terbitnya aturan pemanfaatan bersama jaringan",
+     "Issuance of shared grid use rules"
+    ]
+   ]
+  }
+ ]
+}
