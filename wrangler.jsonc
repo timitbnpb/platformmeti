@@ -19,6 +19,8 @@
   "ai": { "binding": "AI" },
   "triggers": { "crons": ["0 18 * * *"] },
   "observability": { "enabled": true },
+  // Domain publik (zona metiires.or.id di Cloudflare sejak 7 Nov 2026); workers.dev tetap hidup sebagai cadangan.
+  "routes": [{ "pattern": "direktori.metiires.or.id", "custom_domain": true }],
   // Pratinjau: `--env pratinjau` (Worker platformmeti-pratinjau). Binding D1/AI tidak diwarisi, wajib ditulis ulang.
   "env": {
     "pratinjau": {
