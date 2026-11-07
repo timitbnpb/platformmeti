@@ -372,7 +372,7 @@ function pasang(el, daftar) {
   el.innerHTML = daftar.map((c) => `<article class="jm-kartu jm-ins-kartu" id="ins-${esc(c.id)}" data-id="${esc(c.id)}" data-belum="1">${hantuHtml(3)}</article>`).join("");
   const isi = (a) => { const c = peta.get(a.dataset.id); if (c && a.dataset.belum) { a.innerHTML = isiKartu(c); delete a.dataset.belum; } };
   if (!("IntersectionObserver" in window)) { el.querySelectorAll("article").forEach(isi); return; }
-  tinjau ??= new IntersectionObserver((es) => es.forEach((e) => { if (e.isIntersecting) { tinjau.unobserve(e.target); isi(e.target); } }), { rootMargin: "400px 0px" });
+  tinjau ??= new IntersectionObserver((es) => es.forEach((e) => { if (e.isIntersecting) { tinjau.unobserve(e.target); e.target._isi?.(); } }), { rootMargin: "400px 0px" });
   el.querySelectorAll("article").forEach((a) => { a._isi = () => isi(a); tinjau.observe(a); });
 }
 

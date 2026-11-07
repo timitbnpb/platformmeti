@@ -223,8 +223,8 @@ const pasarPil = (p) => `<span class="jm-pil jm-an-pasar"><i class="jm-an-sw ${K
 function saringRender() {
   $("saring").innerHTML = cariHtml({ id: "cari", label: t("rt.cari") }) +
     pilihHtml({ id: "f-pasar", ikon: "jenis", label: t("rt.f_pasar"), nilai: fPasar, opsi: [["", t("rt.f_pasar") + ": " + t("rt.semua")], ["lokal", t("rt.pasar.lokal")], ["ekspor", t("rt.pasar.ekspor")], ["keduanya", t("rt.pasar.keduanya")]] }) +
-    pilihHtml({ id: "f-apamsi", ikon: "status", label: t("rt.f_apamsi"), nilai: fApamsi, opsi: [["", t("rt.f_apamsi") + ": " + t("rt.semua")], ["ya", t("rt.ya")], ["tidak", t("rt.tidak")]] }) +
-    pilihHtml({ id: "urut", ikon: "tabel", label: t("rt.urut"), nilai: urut.k, opsi: [["mwp", t("rt.urut") + ": " + t("rt.col.mwp")], ["nama", t("rt.urut") + ": " + t("rt.col.nama")], ["tkdn", t("rt.urut") + ": " + t("rt.col.tkdn")]] }) +
+    pilihHtml({ id: "f-apamsi", ikon: "status", label: t("rt.f_apamsi"), nilai: fApamsi, opsi: [["", t("rt.col.apamsi") + ": " + t("rt.semua")], ["ya", t("rt.ya")], ["tidak", t("rt.tidak")]] }) +
+    pilihHtml({ id: "urut", ikon: "tabel", label: t("rt.urut"), nilai: urut.k, opsi: [["mwp", t("rt.urut") + ": " + t("rt.urut_mwp")], ["nama", t("rt.urut") + ": " + t("rt.urut_nama")], ["tkdn", t("rt.urut") + ": TKDN"]] }) +
     hapusHtml({ id: "hapus", label: t("jm.kosong.reset") }) + hitungHtml({ id: "hitung", teks: "" });
   $("cari").value = cari;
 }

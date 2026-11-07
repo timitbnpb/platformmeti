@@ -32,7 +32,7 @@ function jawab() {
 function kartu() {
   const i = idn();
   $("kartu").innerHTML = ["bauran", "kapasitas", "akses"].map((m) => kartuHtml({
-    ikon: { bauran: "analisis", kapasitas: "tabel", akses: "status" }[m], judul: t("as.m." + m), nilai: num(nilaiN(i, m), M[m].d), satuan: M[m].satuan,
+    ikon: { bauran: "analisis", kapasitas: "tabel", akses: "status" }[m], judul: t("as.k." + m), nilai: num(nilaiN(i, m), M[m].d), satuan: M[m].satuan,
     penyebut: t("as.peringkat", { r: peringkat(m), n: urutan(m).length }) + " | " + t("as.tahun", { tahun: i[M[m].nilai].tahun }), sumber: sumber(m),
   })).join("");
 }
@@ -52,15 +52,19 @@ function tren() {
   const m = metrik, seri = d.baris.filter((n) => n[M[m].tren].length > 1);
   const th = seri.flatMap((n) => n[M[m].tren].map((p) => p.tahun)), t0 = Math.min(...th), t1 = Math.max(...th);
   const ymaks = Math.max(...seri.flatMap((n) => n[M[m].tren].map((p) => p.nilai))) * 1.08;
-  const W = 680, H = 300, L = 56, R = 70, T = 12, B = 28;
+  const W = Math.max(320, Math.round($("grafik-tren").clientWidth || 680)), H = W < 500 ? 260 : 300, L = 56, R = 76, T = 12, B = 28;
   const x = (a) => L + ((a - t0) / (t1 - t0)) * (W - L - R), y = (v) => T + (1 - v / ymaks) * (H - T - B);
   const kisi = [0, 1, 2, 3, 4].map((i) => ymaks * i / 4);
   const grid = kisi.map((v) => `<line class="jm-an-grid" x1="${L}" x2="${W - R}" y1="${y(v).toFixed(1)}" y2="${y(v).toFixed(1)}"/><text class="jm-an-lbl" x="${L - 6}" y="${(y(v) + 4).toFixed(1)}" text-anchor="end">${esc(num(v, M[m].d))}</text>`).join("");
   const sb = [t0, Math.round((t0 + t1) / 2), t1].map((a) => `<text class="jm-an-lbl" x="${x(a).toFixed(1)}" y="${H - 8}" text-anchor="middle">${a}</text>`).join("");
+  // label ujung: urut menurut y, geser ke bawah minimal 14px dari label sebelumnya, garis penuntun tipis ke ujung garis
+  const LX = W - R + 16, ly = new Map();
+  let prev = -1e9;
+  for (const n of [...seri].sort((a, b) => y(a[M[m].tren].at(-1).nilai) - y(b[M[m].tren].at(-1).nilai))) { const v = Math.max(y(n[M[m].tren].at(-1).nilai), prev + 14); ly.set(n.iso3, v); prev = v; }
   const garis = [...seri].sort((a, b) => (a.iso3 === "IDN") - (b.iso3 === "IDN") || (a.iso3 === pilih) - (b.iso3 === pilih)).map((n) => {
     const s = n[M[m].tren], id = n.iso3 === "IDN", a = s[s.length - 1], pts = s.map((p) => x(p.tahun).toFixed(1) + "," + y(p.nilai).toFixed(1)).join(" ");
     const titik = s.map((p) => `<circle class="jm-an-titik-tren" cx="${x(p.tahun).toFixed(1)}" cy="${y(p.nilai).toFixed(1)}" r="7"><title>${esc(n.nama)}, ${p.tahun}: ${esc(num(p.nilai, M[m].d))} ${esc(M[m].satuan)}</title></circle>`).join("");
-    return `<g class="jm-an-gars${id ? " jm-an-sorot" : ""}${n.iso3 === pilih ? " jm-an-pilih" : ""}" data-iso="${n.iso3}"><polyline points="${pts}"/><polyline class="jm-an-tangkap" points="${pts}"/><text class="jm-an-lbl" x="${(x(a.tahun) + 5).toFixed(1)}" y="${(y(a.nilai) + 4).toFixed(1)}">${esc(n.iso3)}</text>${titik}</g>`;
+    return `<g class="jm-an-gars${id ? " jm-an-sorot" : ""}${n.iso3 === pilih ? " jm-an-pilih" : ""}" data-iso="${n.iso3}"><polyline points="${pts}"/><polyline class="jm-an-tangkap" points="${pts}"/><polyline class="jm-an-penuntun" points="${x(a.tahun).toFixed(1)},${y(a.nilai).toFixed(1)} ${(LX - 4).toFixed(1)},${ly.get(n.iso3).toFixed(1)}"/><text class="jm-an-lbl" x="${LX}" y="${(ly.get(n.iso3) + 4).toFixed(1)}">${esc(n.iso3)}</text>${titik}</g>`;
   }).join("");
   const si = idn()[M[m].tren], pa = si[0], pb = si[si.length - 1];
   $("temuan-tren").innerHTML = temuanHtml(t("as.t.tren", { metrik: t("as.m." + m), a: num(pa.nilai, M[m].d) + " " + M[m].satuan, ta: pa.tahun, b: num(pb.nilai, M[m].d) + " " + M[m].satuan, tb: pb.tahun }));

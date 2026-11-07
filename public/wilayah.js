@@ -47,7 +47,7 @@ function kartu() {
 function urutan() {
   const m = metrik, B = [...data.baris].sort((a, b) => (METRIK[m].ambil(b) ?? -1) - (METRIK[m].ambil(a) ?? -1) || a.nama.localeCompare(b.nama));
   $("urutan").innerHTML = `<div class="jm-gulir"><table class="jm-tabel"><thead><tr><th>#</th><th>${esc(t("wl.col.prov"))}</th><th>${esc(t("wl.m." + m))}</th><th>${esc(t("wl.col.rued"))}</th></tr></thead><tbody>${B.map((p, i) =>
-    `<tr><td data-label="#">${i + 1}</td><td data-label="${esc(t("wl.col.prov"))}"><a href="/wilayah?prov=${esc(p.kode)}">${esc(p.nama)}</a></td><td data-label="${esc(t("wl.m." + m))}" class="jm-num">${esc(nilaiTeks(m, p))}</td><td data-label="${esc(t("wl.col.rued"))}">${esc(p.rued.perda ? t("wl.rued_ada", { perda: p.rued.perda }) : t("an.belum_tersedia"))}</td></tr>`).join("")}</tbody></table></div>${sumberHtml(ciriSumber(m))}`;
+    `<tr><td data-label="#">${i + 1}</td><td data-label="${esc(t("wl.col.prov"))}"><a href="/wilayah?prov=${esc(p.kode)}">${esc(p.nama)}</a></td><td data-label="${esc(t("wl.col.nilai"))}" class="jm-num">${esc(nilaiTeks(m, p))}</td><td data-label="${esc(t("wl.col.rued"))}">${esc(p.rued.perda ? t("wl.rued_ada", { perda: p.rued.perda }) : t("an.belum_tersedia"))}</td></tr>`).join("")}</tbody></table></div>${sumberHtml(ciriSumber(m))}`;
 }
 
 function legenda() {
@@ -137,18 +137,28 @@ function tabelTek(p) {
   const pt = p.per_teknologi_mw || {};
   const pot = (k) => (k === "panas-bumi" && p.potensi_panas_bumi ? num(p.potensi_panas_bumi.nilai, 0) + " MW" : t("an.belum_tersedia"));
   return `<div class="jm-gulir"><table class="jm-tabel"><thead><tr><th>${esc(t("wl.col.tek"))}</th><th>${esc(t("wl.col.terpasang"))}</th><th>${esc(t("wl.col.potensi"))}</th></tr></thead><tbody>${TEK.map((k) =>
-    `<tr><td data-label="${esc(t("wl.col.tek"))}">${esc(teksTek(k))}</td><td data-label="${esc(t("wl.col.terpasang"))}" class="jm-num">${esc(pt[k] === undefined ? t("an.tanpa_data") : num(pt[k], 2) + " MW")}</td><td data-label="${esc(t("wl.col.potensi"))}">${esc(pot(k))}</td></tr>`).join("")}</tbody></table></div>`;
+    `<tr><td data-label="${esc(t("wl.col.tek"))}">${esc(teksTek(k))}</td><td data-label="${esc(t("wl.col.terpasang"))}" class="jm-num">${esc(pt[k] === undefined ? t("an.tanpa_data") : num(pt[k], 2) + " MW")}</td><td data-label="${esc(t("wl.col.potensi"))}" class="jm-num">${esc(pot(k))}</td></tr>`).join("")}</tbody></table></div>`;
 }
 
 function blokRued(p) {
   const r = p.rued;
-  if (!r.perda) return `<p>${esc(t("wl.rued_tidak"))}</p><small class="jm-an-sumber">${esc(r.alasan || "")} ${esc(t("an.diperiksa", { tanggal: tanggal(r.tanggal) }))}</small>`;
+  if (!r.perda) return `<p class="jm-bantu">${esc(r.alasan || "")}</p>${sumberLipat([{ sumber: t("wl.sumber_rued"), tanggal: r.tanggal }])}`;
   const kand = (r.kandidat || []).map((k) => `<li>${esc(t("wl.rued_kand", { tahun: k.tahun, persen: num(k.persen, 2) }))}</li>`).join("");
   const u = amanUrl(r.url);
   return `<p><strong>${esc(t("wl.rued_target"))}:</strong> ${esc(r.target_ebt_persen === null ? t("an.belum_tersedia") : num(r.target_ebt_persen, 2) + "%")}</p>
     <p>${u ? `<a href="${esc(u)}" target="_blank" rel="noopener noreferrer">${esc(t("wl.rued_ada", { perda: r.perda }))}</a>` : esc(t("wl.rued_ada", { perda: r.perda }))}</p>
     ${kand ? `<p>${pil("an.hipotesis")} ${esc(t("wl.rued_kand_judul"))}</p><ul>${kand}</ul>` : ""}
-    <small class="jm-an-sumber">${esc(t("an.diperiksa", { tanggal: tanggal(r.tanggal) }))}</small>`;
+    ${sumberLipat([{ sumber: t("wl.sumber_rued"), url: r.url, tanggal: r.tanggal }])}`;
+}
+
+function visualProfil(p) {
+  const urut = [...data.baris].filter((x) => x.terpasang_mw).sort((a, b) => b.terpasang_mw.nilai - a.terpasang_mw.nilai), i = urut.findIndex((x) => x.kode === p.kode);
+  if (i < 0) return "";
+  const med = urut[Math.floor(urut.length / 2)].terpasang_mw.nilai, mw = (v) => num(v, 0) + " MW";
+  return heroVisual({ angka: `${i + 1}/${urut.length}`, label: t("wl.vis.peringkat"), rows: [
+    { label: p.nama, nilai: p.terpasang_mw.nilai, teks: mw(p.terpasang_mw.nilai), kelas: "jm-hv-b1" },
+    { label: urut[0].nama, nilai: urut[0].terpasang_mw.nilai, teks: mw(urut[0].terpasang_mw.nilai), kelas: "jm-hv-b2" },
+    { label: t("wl.vis.median"), nilai: med, teks: mw(med), kelas: "jm-hv-b3" }] });
 }
 
 function profil(p) {
@@ -157,20 +167,21 @@ function profil(p) {
   const batang = pot ? batangHtml([
     { label: t("wl.bar.terpasang"), bagian: [{ nilai: pb ?? 0, kelas: "jm-an-b1" }], teks: num(pb ?? 0, 1) + " MW" },
     { label: t("wl.bar.potensi"), bagian: [{ nilai: pot.nilai, kelas: "jm-an-b2" }], teks: num(pot.nilai, 0) + " MW" },
-  ], { label: t("wl.bar.label"), ref: pot.nilai }) : `<p>${esc(t("an.belum_tersedia"))}</p>`;
+  ], { label: t("wl.bar.label") }) : `<p>${esc(t("an.belum_tersedia"))}</p>`;
   const proy = p.proyek.length ? `<div class="jm-gulir"><table class="jm-tabel"><thead><tr><th>${esc(t("wl.col.proyek"))}</th><th>${esc(t("wl.col.tek"))}</th><th>${esc(t("wl.col.kap"))}</th><th>${esc(t("wl.col.status"))}</th></tr></thead><tbody>${p.proyek.map((x) =>
     `<tr><td data-label="${esc(t("wl.col.proyek"))}">${esc(x.nama)}</td><td data-label="${esc(t("wl.col.tek"))}">${esc(teksTek(x.teknologi))}</td><td data-label="${esc(t("wl.col.kap"))}" class="jm-num">${esc(x.mw === null ? t("an.tanpa_data") : num(x.mw, 1) + " " + x.satuan)}</td><td data-label="${esc(t("wl.col.status"))}">${esc(teksStatus(x.status))}</td></tr>`).join("")}</tbody></table></div>` : `<p>${esc(t("wl.proyek_kosong"))}</p>`;
   const perda = p.perda.length ? `<ul class="jm-an-daftar">${p.perda.map((x) => `<li>${amanUrl(x.url) ? `<a href="${esc(x.url)}" target="_blank" rel="noopener noreferrer">` : "<span>"}${esc(t("wl.perda_item", { nomor: x.nomor, tahun: x.tahun }))}${amanUrl(x.url) ? "</a>" : "</span>"} ${esc(x.judul)}</li>`).join("")}</ul>` : `<p>${esc(t("wl.perda_kosong"))}</p>`;
   const orgs = p.organisasi.length ? `<ul class="jm-an-daftar">${p.organisasi.map((o) => `<li>${esc(o.nama)}${o.kategori ? ` <small>${esc(o.kategori)}</small>` : ""}</li>`).join("")}</ul>` : `<p>${esc(t("wl.org_kosong"))}</p>`;
   const pakar = p.pakar.length ? `<ul class="jm-an-daftar">${p.pakar.map((o) => `<li>${esc(o.nama)} <small>${esc(o.jabatan || "")}, ${esc(o.organisasi || "")}</small></li>`).join("")}</ul>` : `<p>${esc(t("wl.pakar_kosong"))}</p>`;
   $("profil-isi").innerHTML = `
-    <section class="jm-hero"><h1>${esc(p.nama)}</h1><p class="jm-an-label">${esc(t("an.jawaban"))}</p>
-      <p>${esc(t("wl.profil_jawab", { nama: p.nama, mw: p.terpasang_mw ? num(p.terpasang_mw.nilai, 1) : "-", tahun: p.terpasang_mw?.tahun ?? "-", n: p.jumlah_proyek, pot: pot ? num(pot.nilai, 0) : "-" }))}</p></section>
+    <section class="jm-hero jm-an-hero2"><div><h1>${esc(p.nama)}</h1><p class="jm-an-label">${esc(t("an.jawaban"))}</p>
+      <p>${esc(t("wl.profil_jawab", { nama: p.nama, mw: p.terpasang_mw ? num(p.terpasang_mw.nilai, 1) : "-", tahun: p.terpasang_mw?.tahun ?? "-", n: p.jumlah_proyek, pot: pot ? num(pot.nilai, 0) : "-" }))}</p></div>
+      <aside class="jm-an-visual" id="visual">${visualProfil(p)}</aside></section>
     <section class="jm-an-kartu-baris">
-      ${kartuHtml({ judul: t("wl.k.terpasang1"), nilai: p.terpasang_mw ? num(p.terpasang_mw.nilai, 2) : "-", satuan: "MW", sumber: sumberHtml(p.terpasang_mw) })}
-      ${kartuHtml({ judul: t("wl.m.rasio"), nilai: p.rasio_elektrifikasi ? num(p.rasio_elektrifikasi.nilai, 2) : "-", satuan: "%", sumber: sumberHtml(p.rasio_elektrifikasi) })}
-      ${kartuHtml({ judul: t("wl.m.panasbumi"), nilai: pot ? num(pot.nilai, 0) : "-", satuan: "MW", sumber: sumberHtml(pot) })}
-      ${kartuHtml({ judul: t("wl.k.proyek1"), nilai: num(p.jumlah_proyek), satuan: t("wl.proyek_sat"), sumber: sumberHtml({ sumber: t("wl.sumber_proyek"), tanggal: data.dibangun_pada }) })}
+      ${kartuHtml({ ikon: "analisis", judul: t("wl.k.terpasang1"), nilai: p.terpasang_mw ? num(p.terpasang_mw.nilai, 2) : "-", satuan: "MW", sumber: sumberHtml(p.terpasang_mw) })}
+      ${kartuHtml({ ikon: "status", judul: t("wl.m.rasio"), nilai: p.rasio_elektrifikasi ? num(p.rasio_elektrifikasi.nilai, 2) : "-", satuan: "%", sumber: sumberHtml(p.rasio_elektrifikasi) })}
+      ${kartuHtml({ ikon: "peta", judul: t("wl.m.panasbumi"), nilai: pot ? num(pot.nilai, 0) : "-", satuan: "MW", sumber: sumberHtml(pot) })}
+      ${kartuHtml({ ikon: "proyek", judul: t("wl.k.proyek1"), nilai: num(p.jumlah_proyek), satuan: t("wl.proyek_sat"), sumber: sumberHtml({ sumber: t("wl.sumber_proyek"), tanggal: data.dibangun_pada }) })}
     </section>
     <section class="jm-kartu jm-an-wadah"><header class="jm-an-kepala"><div><h2>${esc(t("wl.pot_vs"))}</h2>${pot ? `<p class="jm-temuan">${temuanHtml(t("wl.t.pot", { a: num(pb ?? 0, 1), b: num(pot.nilai, 0), persen: num(((pb ?? 0) / pot.nilai) * 100, 1) }))}</p>` : ""}</div></header>${batang}${sumberHtml(pot)}<h3>${esc(t("wl.per_tek"))}</h3>${tabelTek(p)}${sumberHtml(p.terpasang_mw)}
       <p class="jm-bantu">${esc(Object.values(p.potensi_lain)[0]?.alasan || "")}</p></section>

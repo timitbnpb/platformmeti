@@ -66,7 +66,7 @@ export function batangHtml(baris, { maks, ref, label, aksi } = {}) {
     const garis = ref ? `<u class="jm-bar-garis" data-ref="${((ref / M) * 100).toFixed(2)}"></u>` : "";
     const seg = b.bagian.map((p) => `<i class="${p.kelas}" data-w="${(Math.max(0, (p.nilai || 0) / M) * 100).toFixed(2)}"></i>`).join("");
     const dalam = `<span class="jm-bar-lbl">${esc(b.label)}</span><span class="jm-bar-trek">${seg}${garis}</span><b class="jm-bar-val">${esc(b.teks)}</b>`;
-    const kelas = `jm-bar-b${b.sorot ? " jm-an-sorot" : ""}`;
+    const kelas = `${aksi ? "jm-bar-x" : "jm-bar-b"}${b.sorot ? " jm-an-sorot" : ""}`;
     return aksi ? `<li class="${kelas}"><button type="button" class="jm-bar-aksi" data-id="${esc(b.id)}" aria-pressed="${b.pilih ? "true" : "false"}" title="${esc(b.label + ": " + b.teks)}">${dalam}</button></li>`
       : `<li class="${kelas}" title="${esc(b.label + ": " + b.teks)}">${dalam}</li>`;
   }).join("");
