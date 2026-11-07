@@ -37,7 +37,7 @@ export function kolomSvg({ kategori, seri, satuan, el, ref, label }) {
     const bag = seri.map((s) => { const v = c.nilai[s.k] || 0; if (!v) return ""; const y0 = y(dasar), y1 = y(dasar + v); dasar += v; return `<rect class="ih-bar ${s.kelas}" x="${(cx - bw / 2).toFixed(1)}" y="${y1.toFixed(1)}" width="${bw.toFixed(1)}" height="${Math.max(0.5, y0 - y1).toFixed(1)}" tabindex="0" data-tip="${tip(c.tip || c.label)}"><title>${tip(c.tip || c.label)}</title></rect>`; }).join("");
     return bag + (i % langkah === 0 ? `<text class="ih-lbl" x="${cx.toFixed(1)}" y="${H - 8}" text-anchor="middle">${esc(c.label)}</text>` : "");
   }).join("");
-  const garisRef = ref ? `<line class="ih-ref" x1="${L}" x2="${W - R}" y1="${y(ref.nilai).toFixed(1)}" y2="${y(ref.nilai).toFixed(1)}"/><text class="ih-lbl ih-lbl-ref" x="${W - R}" y="${(y(ref.nilai) - 5).toFixed(1)}" text-anchor="end">${esc(ref.label)}</text>` : "";
+  const garisRef = ref ? `<line class="ih-ref" x1="${L}" x2="${W - R}" y1="${y(ref.nilai).toFixed(1)}" y2="${y(ref.nilai).toFixed(1)}"/><text class="ih-lbl ih-lbl-ref" x="${L + 6}" y="${(y(ref.nilai) - 5).toFixed(1)}" text-anchor="start">${esc(ref.label)}</text>` : "";
   return `<svg class="ih-svg" viewBox="0 0 ${W} ${H}" role="img" aria-label="${esc(label || satuan)}" focusable="false"><text class="ih-lbl" x="${L}" y="9">${esc(satuan)}</text>${grid}${batang}${garisRef}</svg>`;
 }
 
@@ -63,7 +63,7 @@ export function garisSvg({ seri, satuan, el, label, xTick }) {
 export function batangSvg({ baris, seri, satuan, el, label, d = 0 }) {
   const W = lebar(el), rh = 30, L = W < 520 ? 118 : 190, R = 64, T = 22, H = T + baris.length * rh + 4;
   const maks = Math.max(...baris.map((b) => b.bagian.reduce((a, p) => a + p.nilai, 0))), { atas, tick } = skala(maks);
-  const x = (v) => L + (v / atas) * (W - L - R), pot = (s) => (s.length > (W < 520 ? 17 : 29) ? s.slice(0, W < 520 ? 16 : 28) + "…" : s);
+  const x = (v) => L + (v / atas) * (W - L - R), pot = (s) => (s.length > (W < 520 ? 17 : 24) ? s.slice(0, W < 520 ? 16 : 23) + "…" : s);
   const grid = tick.map((v) => `<line class="ih-grid" x1="${x(v).toFixed(1)}" x2="${x(v).toFixed(1)}" y1="${T - 4}" y2="${H - 2}"/><text class="ih-lbl" x="${x(v).toFixed(1)}" y="10" text-anchor="middle">${esc(n1(v, dec(atas)))}</text>`).join("");
   const isi = baris.map((b, i) => {
     const y0 = T + i * rh; let dasar = 0; const tot = b.bagian.reduce((a, p) => a + p.nilai, 0);

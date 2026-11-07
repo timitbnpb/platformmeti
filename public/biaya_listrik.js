@@ -10,7 +10,7 @@ import { kolomSvg, garisSvg, batangSvg, legendaHtml, detailHtml, pasangDetail, t
 const $ = (id) => document.getElementById(id);
 const TEK = ["surya", "bayu-darat", "bayu-laut", "air", "panas-bumi", "bioenergi", "surya-termal"];
 const KLS = { surya: "ih-s1", "bayu-darat": "ih-s2", "bayu-laut": "ih-s7", air: "ih-s3", "panas-bumi": "ih-s4", bioenergi: "ih-s5", "surya-termal": "ih-s6" };
-let d = null, banding = "surya";
+let d = null, banding = "bayu-darat";
 const nm = (k) => t("ih.tek." + k), nn = (r) => t("ih.neg." + r.iso3);
 const src = (...id) => sumberLipat(id.map((i) => { const s = d.sumber.find((x) => x.id === i); return { sumber: s.penerbit, halaman: s.judul, url: s.url, tanggal: d.dibangun_pada }; }));
 const dunia = (tek) => d.lcoe.filter((r) => r.iso3 === "WLD" && r.teknologi === tek).sort((a, b) => a.tahun - b.tahun);

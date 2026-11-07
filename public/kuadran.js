@@ -70,8 +70,8 @@ function alat() {
   $("kqAlat").innerHTML = `
     <div class="kq-grup"><h2 class="kq-h">${esc(k("alat.pasangan"))}</h2><div class="kq-seg kq-seg5">${D.pasangan.map((_, i) => chip("pasang", i, k("p." + i), S.pasang === i, ikon(IKON_PASANG[i], 16))).join("")}</div></div>
     <div class="kq-grup"><h2 class="kq-h">${esc(k("alat.bebas"))}</h2><div class="kq-seg kq-seg2">
-      <label class="jm-pil-pilih">${ikon("tabel", 18)}<select data-aksi="sumbu" data-sb="x" aria-label="${esc(k("alat.x"))}">${opsi(S.x)}</select></label>
-      <label class="jm-pil-pilih">${ikon("grafik", 18)}<select data-aksi="sumbu" data-sb="y" aria-label="${esc(k("alat.y"))}">${opsi(S.y)}</select></label></div></div>
+      <label class="jm-pil-pilih">${ikon("tabel", 18)}<select data-asli data-aksi="sumbu" data-sb="x" aria-label="${esc(k("alat.x"))}">${opsi(S.x)}</select></label>
+      <label class="jm-pil-pilih">${ikon("grafik", 18)}<select data-asli data-aksi="sumbu" data-sb="y" aria-label="${esc(k("alat.y"))}">${opsi(S.y)}</select></label></div></div>
     <div class="kq-grup"><h2 class="kq-h">${esc(k("alat.sektor"))}</h2><div class="kq-seg kq-seg5">${chip("sek", "", k("alat.semua"), !S.sek, "", D.entitas.length)}${SEKTOR.filter((s) => D.entitas.some((e) => e.kategori === s)).map((s) => chip("sek", s, k("sek." + s), S.sek === s, "", D.entitas.filter((e) => e.kategori === s).length)).join("")}</div></div>
     <div class="kq-grup"><h2 class="kq-h">${esc(k("alat.tek"))}</h2><div class="kq-seg kq-seg5">${chip("tek", "", k("teknologi.semua"), !S.tek, "", D.entitas.length)}${teks.map((x) => chip("tek", x, t("tk.nama." + x), S.tek === x, ikonTek(x), D.entitas.filter((e) => e.teknologi.includes(x)).length)).join("")}</div></div>`;
 }
@@ -89,7 +89,7 @@ function titik() {
 }
 function plot() {
   const bungkus = $("kqPlotBungkus"), W = Math.max(300, Math.round(bungkus.clientWidth || 360)), kecil = W < 600;
-  const H = kecil ? Math.round(W * 1.15) : Math.min(600, Math.round(W * 0.62));
+  const H = kecil ? Math.round(W * 1.15) : Math.min(780, Math.round(W * 0.86));
   const ml = 30, mr = 10, mt = 24, mb = 30, LW = kecil ? 46 : 64, LH = kecil ? 58 : 60;
   const px0 = ml + LW, px1 = W - mr, py0 = mt, py1 = H - mb - LH, pw = px1 - px0, ph = py1 - py0;
   const { z, cx, cy } = S.v, dxw = 5.6 / z, dyw = 5.6 / z * (ph / pw) * (kecil ? 0.72 : 1.1);
@@ -251,7 +251,7 @@ function tabel() {
   const kolom = [["nama", k("tabel.pemain")], ["sektor", k("tabel.sektor")], ...UK.map((u) => [u, k("us." + u)])];
   const th = kolom.map(([kc, nm]) => `<th scope="col" aria-sort="${S.urut.k === kc ? (S.urut.arah < 0 ? "descending" : "ascending") : "none"}"><button type="button" class="kq-th${S.urut.k === kc ? " on" : ""}" data-aksi="urut" data-v="${kc}" title="${esc(k("tabel.urut", { k: nm }))}"><span>${esc(nm)}</span>${SVG_PANAH}</button></th>`).join("");
   const tr = baris.map((e) => `<tr><td data-label="${esc(k("tabel.pemain"))}"><button type="button" class="kq-nm" data-aksi="buka" data-v="${esc(e.id)}" aria-label="${esc(k("tabel.buka", { nama: e.nama }))}">${logoMini(e)}<span>${esc(ringkas(e.nama))}</span></button></td>
-    <td data-label="${esc(k("tabel.sektor"))}" class="jm-tengah">${esc(k("sek." + e.kategori))}</td>${UK.map((u) => { const s = e.skor[u]; return `<td data-label="${esc(k("us." + u))}" class="jm-tengah">${s.skor == null ? `<span class="kq-tanpa-s" title="${esc(k("kartu.tanpa"))}">-</span>` : `${pilSkor(u, s)}<span class="kq-rank">#${s.peringkat}</span>`}</td>`; }).join("")}</tr>`).join("");
+    <td data-label="${esc(k("tabel.sektor"))}" class="jm-tengah">${esc(k("sek." + e.kategori))}</td>${UK.map((u) => { const s = e.skor[u]; return `<td data-label="${esc(k("us." + u))}" class="jm-tengah">${s.skor == null ? `<span class="kq-tanpa-s" title="${esc(k("kartu.tanpa"))}">-</span>` : `<div class="kq-cel">${pilSkor(u, s)}<span class="kq-rank">#${s.peringkat}</span></div>`}</td>`; }).join("")}</tr>`).join("");
   $("kqTabel").innerHTML = `<div class="kq-bag-kepala"><h2 class="kq-h2">${esc(k("tabel.judul"))}</h2><label class="jm-cari">${ikon("cari", 18)}<input type="search" id="kqCari" value="${esc(S.q)}" placeholder="${esc(k("tabel.cari"))}" aria-label="${esc(k("tabel.cari"))}" autocomplete="off"></label></div>
     <div class="jm-gulir"><table class="jm-tabel kq-tabel"><thead><tr>${th}</tr></thead><tbody>${tr || `<tr><td colspan="${kolom.length}">${esc(k("tabel.kosong"))}</td></tr>`}</tbody></table></div>${paginasiHtml({ hal, total: a.length, per: PER })}`;
   S.hal = hal;

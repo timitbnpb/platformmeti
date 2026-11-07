@@ -17,6 +17,7 @@
   --ok-bg:#E2F3EC; --warn-bg:#FBEBDD; --bad-bg:#FBE7E5; --info-bg:#E3F3FA;
   --fokus:#1E7FA8; --kemajuan:0; --h:0%; --w:0%; --tk:var(--accent); --sk:var(--ink2); /* warna teknologi bawaan; pil/batang menimpanya per elemen */
   --shadow:0 2px 14px rgb(10 60 45/.08); --shadow-lg:0 8px 28px rgb(10 60 45/.16);
+ --lg-diamond:#BFE6F7; --lg-platinum:#CBD5E1; --lg-ruby:#F4B6C0; --lg-gold:#F3D27A; --lg-silver:#DDE3E8; --lg-bronze:#E3B48C; --lg-ink:#1B2623;
   --pendar:0 0 0 1px rgb(74 169 224/.35),0 8px 28px rgb(74 169 224/.18);
   /* batik kawung (jm.css .jm-batik): pola, pudar ke bawah, warna, kepekatan */
   --batik-pola:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40'%3E%3Cg fill='none' stroke='black' stroke-width='1.6'%3E%3Cellipse cx='20' cy='10' rx='6' ry='10'/%3E%3Cellipse cx='20' cy='30' rx='6' ry='10'/%3E%3Cellipse cx='10' cy='20' rx='10' ry='6'/%3E%3Cellipse cx='30' cy='20' rx='10' ry='6'/%3E%3C/g%3E%3Ccircle cx='20' cy='20' r='2' fill='black'/%3E%3C/svg%3E"); --batik-pudar:linear-gradient(180deg,rgb(0 0 0) 0%,rgb(0 0 0 / .85) 35%,rgb(0 0 0 / 0) 78%); --batik:currentColor; --batik-op:.1;
@@ -52,6 +53,7 @@
 
   --tp-surya:#F2B632; --tp-bayu:#5BB8EC; --tp-hidro:#6E9FE0; --tp-panas:#F2955A; --tp-bio:#8BC34A; --tp-sampah:#C9A06A; --tp-simpan:#A98BEB; --tp-nuklir:#FF8A80; --tp-hidrogen:#4FD3D3; --tp-jaringan:#94A3B8;
   --tp-kebijakan:#4FD3AD; --tp-industri:#CE93D8; --tp-biaya:#E6C04A; --tp-adil:#F48FB1; --tp-karbon:#A7BDB4; --tp-listrik:#4FC3F7; --tp-efisiensi:#81C784;
+  --lg-diamond:#1F5F80; --lg-platinum:#44566B; --lg-ruby:#7A2C3C; --lg-gold:#7A5C12; --lg-silver:#4D5A62; --lg-bronze:#7A4A24; --lg-ink:#FFFFFF;
   color-scheme:dark;
 }}
 :root[data-theme="dark"]{
@@ -69,5 +71,6 @@
 
   --tp-surya:#F2B632; --tp-bayu:#5BB8EC; --tp-hidro:#6E9FE0; --tp-panas:#F2955A; --tp-bio:#8BC34A; --tp-sampah:#C9A06A; --tp-simpan:#A98BEB; --tp-nuklir:#FF8A80; --tp-hidrogen:#4FD3D3; --tp-jaringan:#94A3B8;
   --tp-kebijakan:#4FD3AD; --tp-industri:#CE93D8; --tp-biaya:#E6C04A; --tp-adil:#F48FB1; --tp-karbon:#A7BDB4; --tp-listrik:#4FC3F7; --tp-efisiensi:#81C784;
+  --lg-diamond:#1F5F80; --lg-platinum:#44566B; --lg-ruby:#7A2C3C; --lg-gold:#7A5C12; --lg-silver:#4D5A62; --lg-bronze:#7A4A24; --lg-ink:#FFFFFF;
   color-scheme:dark;
 }

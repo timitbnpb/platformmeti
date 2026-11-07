@@ -1,1 +1,103 @@
-{"catatan":"Kerangka paket sponsorship acara METI. Admin mengisi paket, manfaat, dan berkas proposal; tanpa angka karangan. Kosong = halaman menampilkan ajakan menghubungi sekretariat.","proposal_url":null,"kontak":{"nama":"Sekretariat METI","surel":"meti.ires@gmail.com"},"acara":[{"id":"golf","nama":"Turnamen golf METI","event":"meti-challenge-trophy-golf-2026","paket":[]},{"id":"sarasehan","nama":"Sarasehan METI","event":null,"paket":[]},{"id":"award","nama":"METI Award","event":null,"paket":[]},{"id":"indoebtke","nama":"IndoEBTKE ConEx","event":"indoebtke-conex-2026","situs":"https://www.indoebtke.com","paket":[{"nama":"Diamond","harga":"Rp 3.000.000.000 (belum termasuk PPN 11%)","manfaat":["Booth 72 m2, listrik 16 A","Pembicara Plenary Hari 1","Klip TVC 3 menit di layar konferensi","5 undangan elektronik pembukaan, 5 delegate pass","Logo di gerbang, loket registrasi, baliho, 12 spanduk gantung, 20 T-banner, situs, e-flyer","Kesempatan bicara di podcast dan sebutan di liputan berita"]},{"nama":"Platinum","harga":"Rp 1.000.000.000 (belum termasuk PPN 11%)","manfaat":["Booth 36 m2, listrik 8 A","Pembicara Plenary Hari 2","Klip TVC 2,5 menit","4 undangan pembukaan, 4 delegate pass","Logo di gerbang, loket registrasi, baliho, 6 spanduk gantung, 12 T-banner, situs, e-flyer","Kesempatan bicara di podcast dan sebutan di liputan berita"]},{"nama":"Ruby","harga":"Rp 750.000.000 (belum termasuk PPN 11%)","manfaat":["Booth 27 m2, listrik 6 A","Pembicara sesi Breakout","Klip TVC 2 menit","3 undangan pembukaan, 3 delegate pass","Logo di gerbang, loket registrasi, baliho, 4 spanduk gantung, 8 T-banner, situs, e-flyer"]},{"nama":"Gold","harga":"Rp 500.000.000 (belum termasuk PPN 11%)","manfaat":["Booth 18 m2, listrik 4 A","Pembicara sesi Breakout","Klip TVC 90 detik","3 undangan pembukaan, 3 delegate pass","Logo di gerbang, loket registrasi, baliho, 3 spanduk gantung, 4 T-banner, situs, e-flyer"]},{"nama":"Silver","harga":"Rp 250.000.000 (belum termasuk PPN 11%)","manfaat":["Booth 9 m2, listrik 2 A","Klip TVC 60 detik","2 undangan pembukaan, 2 delegate pass","Logo di gerbang, loket registrasi, baliho, 2 spanduk gantung, 2 T-banner, situs, e-flyer"]},{"nama":"Bronze","harga":"Rp 100.000.000 (belum termasuk PPN 11%)","manfaat":["Klip TVC 30 detik","1 undangan pembukaan, 1 delegate pass","Logo di gerbang, loket registrasi, baliho, 1 spanduk gantung, 1 T-banner, situs, e-flyer"]}],"sumber_paket":"Marketing Proposal Deck IndoEBTKE ConEx 2026 (PDF, Juni 2026); penyelenggara EO. Perlu persetujuan pemilik sebelum tayang.","tersedia":true}]}
+{
+  "catatan": "Kerangka paket sponsorship acara METI. Admin mengisi paket, manfaat, dan berkas proposal; tanpa angka karangan. Kosong = halaman menampilkan ajakan menghubungi sekretariat.",
+  "proposal_url": null,
+  "kontak": {
+    "nama": "Sekretariat METI",
+    "surel": "meti.ires@gmail.com"
+  },
+  "acara": [
+    {
+      "id": "golf",
+      "nama": "Turnamen golf METI",
+      "event": "meti-challenge-trophy-golf-2026",
+      "paket": []
+    },
+    {
+      "id": "sarasehan",
+      "nama": "Sarasehan METI",
+      "event": null,
+      "paket": []
+    },
+    {
+      "id": "award",
+      "nama": "METI Award",
+      "event": null,
+      "paket": []
+    },
+    {
+      "id": "indoebtke",
+      "nama": "IndoEBTKE ConEx",
+      "event": "indoebtke-conex-2026",
+      "situs": "https://www.indoebtke.com",
+      "paket": [
+        {
+          "nama": "Diamond",
+          "harga": "Rp 3.000.000.000 (belum termasuk PPN 11%)",
+          "manfaat": [
+            "Booth 72 m2, listrik 16 A",
+            "Pembicara Plenary Hari 1",
+            "Klip TVC 3 menit",
+            "5 undangan dan 5 delegate pass",
+            "Branding: 12 spanduk, 20 T-banner, logo di situs",
+            "Podcast dan liputan berita"
+          ]
+        },
+        {
+          "nama": "Platinum",
+          "harga": "Rp 1.000.000.000 (belum termasuk PPN 11%)",
+          "manfaat": [
+            "Booth 36 m2, listrik 8 A",
+            "Pembicara Plenary Hari 2",
+            "Klip TVC 2,5 menit",
+            "4 undangan dan 4 delegate pass",
+            "Branding: 6 spanduk, 12 T-banner, logo di situs",
+            "Podcast dan liputan berita"
+          ]
+        },
+        {
+          "nama": "Ruby",
+          "harga": "Rp 750.000.000 (belum termasuk PPN 11%)",
+          "manfaat": [
+            "Booth 27 m2, listrik 6 A",
+            "Pembicara sesi Breakout",
+            "Klip TVC 2 menit",
+            "3 undangan dan 3 delegate pass",
+            "Branding: 4 spanduk, 8 T-banner, logo di situs"
+          ]
+        },
+        {
+          "nama": "Gold",
+          "harga": "Rp 500.000.000 (belum termasuk PPN 11%)",
+          "manfaat": [
+            "Booth 18 m2, listrik 4 A",
+            "Pembicara sesi Breakout",
+            "Klip TVC 90 detik",
+            "3 undangan dan 3 delegate pass",
+            "Branding: 3 spanduk, 4 T-banner, logo di situs"
+          ]
+        },
+        {
+          "nama": "Silver",
+          "harga": "Rp 250.000.000 (belum termasuk PPN 11%)",
+          "manfaat": [
+            "Booth 9 m2, listrik 2 A",
+            "Klip TVC 60 detik",
+            "2 undangan dan 2 delegate pass",
+            "Branding: 2 spanduk, 2 T-banner, logo di situs"
+          ]
+        },
+        {
+          "nama": "Bronze",
+          "harga": "Rp 100.000.000 (belum termasuk PPN 11%)",
+          "manfaat": [
+            "Klip TVC 30 detik",
+            "1 undangan dan 1 delegate pass",
+            "Branding: 1 spanduk, 1 T-banner, logo di situs"
+          ]
+        }
+      ],
+      "sumber_paket": "Marketing Proposal Deck IndoEBTKE ConEx 2026 (PDF, Juni 2026); penyelenggara EO. Perlu persetujuan pemilik sebelum tayang.",
+      "tersedia": true
+    }
+  ]
+}

@@ -3,6 +3,7 @@
    adalah tombol "tampilkan semua" proyek; chrome (aria-expanded) berubah seketika, baris menyusul lewat nanti(). */
 import { mulaiHalaman } from "/inti/kepala.js";
 import { t, ada, tanggal } from "/i18n.js";
+import { navLokal, pasangLokal } from "/inti/paginasi.js";
 import { esc, nanti, ikon, hantuHtml, fotoBerita } from "/inti/umum.js";
 import { exHtml, terkaitHtml, lihatSemuaHtml } from "/inti/komponen.js";
 import { tautProvinsi, tautOrg } from "/inti/tautan.js";
@@ -138,9 +139,9 @@ function sProyek(D) {
       : `<span class="jm-tk-pt jm-tk-pt-k jm-tek-${esc(KODE)}">${ikonTek(KODE)}<b>${k ? esc(num(k.nilai, 0)) : "-"}</b>${k ? `<small>${esc(k.satuan)}</small>` : ""}</span>`;
     const nama = `<span class="jm-tk-pj">${ubin}<span class="jm-tk-pj-t"><a href="/p/${esc(p.id)}">${esc(namaProyek(p))}</a>${pem ? `<small>${tautOrg(pem)}</small>` : ""}</span></span>`;
     const lok = p.lokasi?.provinsi ? tautProvinsi(p.lokasi.provinsi) : `<span class="jm-tk-redup">${esc(t("tk.lokasi_belum"))}</span>`;
-    return `<tr${i >= BATAS_PROYEK ? " data-lebih hidden" : ""}>${sel("tk.c.nama", nama)}${sel("tk.c.prov", lok)}${sel("tk.c.kap", k ? `${esc(num(k.nilai, 1))} ${esc(k.satuan)}` : "-", "jm-num")}${sel("tk.c.status", pilStatus(p.status?.[0]?.nilai || "tidak-diketahui"), "jm-tengah")}${sel("tk.c.cod", cod(p) ?? "-", "jm-num")}</tr>`;
+    return `<tr${i >= BATAS_PROYEK ? " hidden" : ""}>${sel("tk.c.nama", nama)}${sel("tk.c.prov", lok)}${sel("tk.c.kap", k ? `${esc(num(k.nilai, 1))} ${esc(k.satuan)}` : "-", "jm-num")}${sel("tk.c.status", pilStatus(p.status?.[0]?.nilai || "tidak-diketahui"), "jm-tengah")}${sel("tk.c.cod", cod(p) ?? "-", "jm-num")}</tr>`;
   }).join("");
-  const lebih = urutP.length > BATAS_PROYEK ? `<p class="jm-tk-lebih"><button type="button" data-lebih="${urutP.length}" aria-expanded="false">${esc(t("tk.lebih", { n: urutP.length }))}</button></p>` : "";
+  const lebih = navLokal({ total: urutP.length, per: BATAS_PROYEK, satuan: "jm.pag.u.proyek" });
   return bagian("tk-proyek", "proyek", "proyek", {
     judulHtml: hlHtml("tk.s.proyek.j", num(urutP.length), { mw: num(jumlah(D.proyek.map(kapProyek))) }), sub: esc(t("tk.s.proyek.sub")),
     isiHtml: tabel(["tk.c.nama", "tk.c.prov", "tk.c.kap", "tk.c.status", "tk.c.cod"], baris) + lebih,
@@ -269,14 +270,6 @@ if (!C) {
       const im = e.target;
       if (im.tagName === "IMG" && im.dataset.lg) im.replaceWith(Object.assign(document.createElement("span"), { innerHTML: ikon("direktori", 32) }).firstChild);
     }, true);
-    isi.addEventListener("click", (e) => {
-      const b = e.target.closest("button[data-lebih]");
-      if (!b) return;
-      const buka = b.getAttribute("aria-expanded") !== "true";
-      b.setAttribute("aria-expanded", String(buka));
-      b.textContent = t(buka ? "tk.lebih_sedikit" : "tk.lebih", { n: b.dataset.lebih });
-      const tabel = b.closest(".jm-ex-bd").querySelector("tbody");
-      nanti(() => { for (const r of tabel.querySelectorAll("tr[data-lebih]")) r.hidden = !buka; });
-    });
+    pasangLokal(isi, (w) => w.closest(".jm-ex-bd").querySelectorAll("tbody tr"));
   }
 }

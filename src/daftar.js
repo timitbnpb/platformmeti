@@ -28,9 +28,23 @@ export function tipeBerkas(b) {
   return null;
 }
 
+// Tarif resmi bawaan (public/data/keanggotaan.json, bersumber metiires.or.id/membership); admin menimpa lewat pengaturan.
+let TARIF = null;
+async function tarifBawaan(env, req) {
+  if (TARIF) return TARIF;
+  try {
+    const r = await env.ASSETS.fetch(new Request(new URL("/data/keanggotaan.json", req.url)));
+    const d = r.ok ? await r.json() : null;
+    if (Array.isArray(d?.kategori)) return (TARIF = Object.fromEntries(d.kategori.map((k) => [k.kode, k.iuran_awal])));
+  } catch { /* tanpa tarif bawaan: iuran kosong */ }
+  return {};
+}
+const ALIAS_JENIS = { organisasi: "ngo", mahasiswa: "pelajar", perorangan: "individu" }; // kategori lama -> 6 kategori resmi
+export const JENIS_BADAN = ["ngo", "usaha_kecil", "usaha_besar", "utama"];
+
 // Validasi formulir -> { ok, d } | { ok: false }. Tanpa NIK/KTP/keuangan: kolom lain di luar daftar ini diabaikan.
 export function periksaForm(b) {
-  const jenis = hak.JENIS_DAFTAR.includes(b.jenis) ? b.jenis : null;
+  const jenis0 = ALIAS_JENIS[b.jenis] ?? b.jenis, jenis = hak.JENIS_DAFTAR.includes(jenis0) ? jenis0 : null;
   const nama = teks(b.nama, 2, 120), surel = typeof b.surel === "string" ? b.surel.trim().toLowerCase() : "";
   const hp = typeof b.hp === "string" ? b.hp.replace(/[\s().-]/g, "") : "";
   const prov = b.prov == null || b.prov === "" ? null : String(b.prov);
@@ -48,7 +62,7 @@ export function periksaForm(b) {
   if (b.setuju !== true || rinci.alasan === undefined || rinci.alasan === null) return { ok: false };
   if (kepakaran.length > 8 || kepakaran.some((k) => !KEPAKARAN.includes(k))) return { ok: false };
   if ([organisasi, kota, rinci.gelar, rinci.jabatan, rinci.pendidikan, rinci.pengalaman, rinci.tautan, rinci.badan_nama, rinci.badan_sektor, rinci.badan_alamat, rinci.badan_situs, rinci.pj_nama, rinci.pj_kontak].includes(undefined)) return { ok: false };
-  if (jenis === "organisasi" && (!rinci.badan_nama || !rinci.pj_nama || !rinci.pj_kontak)) return { ok: false };
+  if (JENIS_BADAN.includes(jenis) && (!rinci.badan_nama || !rinci.pj_nama || !rinci.pj_kontak)) return { ok: false };
   for (const k of Object.keys(rinci)) if (rinci[k] === null || rinci[k] === undefined) delete rinci[k];
   return { ok: true, d: { jenis, nama, surel, hp, organisasi, kota, prov, rinci } };
 }
@@ -83,7 +97,7 @@ export const rute = {
     if (!v.ok) return gagal("masukan_salah", 422);
     if (await laju(env, req, "daftar", 5)) return gagal("laju_terlampaui");
     const token = acak(32);
-    await hak.pendaftaranBaru(env, v.d, await sha(token), await ipHash(env, req).catch(() => null));
+    await hak.pendaftaranBaru(env, v.d, await sha(token), await ipHash(env, req).catch(() => null), (await tarifBawaan(env, req))[v.d.jenis] ?? null);
     return json({ token }, 201, PRIVAT);
   },
 

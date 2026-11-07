@@ -1,7 +1,7 @@
 // Gerbang: paginasi hanya lewat paginasiHtml (public/inti/paginasi.js); tidak ada "Halaman sebelumnya" / "Halaman n / m" buatan sendiri.
 import test from "node:test";
 import assert from "node:assert/strict";
-import { readdirSync, readFileSync } from "node:fs";
+import { readdirSync, readFileSync, statSync } from "node:fs";
 
 const akar = new URL("../public/", import.meta.url).pathname;
 const JS = readdirSync(akar).filter((f) => f.endsWith(".js"));
@@ -27,4 +27,26 @@ test("paginasiHtml: satu halaman = teks saja; banyak halaman = strip dengan nomo
   const { nomorHalaman } = m;
   assert.deepEqual(nomorHalaman(1, 1), [1]);
   assert.ok(nomorHalaman(9, 18).length <= 7);
+});
+
+// Tombol "Tampilkan n lagi / lebih banyak / lebih sedikit" DILARANG (pemilik): daftar panjang wajib paginasi bernomor.
+const semuaJs = (d) => readdirSync(d).flatMap((f) => (statSync(d + f).isDirectory() ? semuaJs(d + f + "/") : f.endsWith(".js") ? [d + f] : []));
+const TOMBOL = /Tampilkan\b[^"]*\b(lagi|lebih banyak|lebih sedikit)\b|Show\b[^"]*\b(more|fewer|less)\b/i;
+const PENGECUALIAN = new Set(["event.js"]); // TODO: hapus pengecualian ini setelah agen event.js selesai migrasi paginasi.
+
+test("paginasi: tidak ada tombol 'Tampilkan lagi/lebih banyak/lebih sedikit' (kunci i18n maupun teks tertanam)", () => {
+  const kunci = new Set();
+  for (const b of ["id", "en"]) {
+    const kamus = JSON.parse(readFileSync(akar + `i18n/${b}.json`, "utf8"));
+    for (const [k, v] of Object.entries(kamus)) if (typeof v === "string" && TOMBOL.test(v)) kunci.add(k);
+  }
+  const salah = [];
+  for (const f of semuaJs(akar)) {
+    const nama = f.slice(akar.length);
+    if (PENGECUALIAN.has(nama)) continue;
+    const s = readFileSync(f, "utf8");
+    if (TOMBOL.test(s.replace(/\/\*[\s\S]*?\*\/|^\s*\/\/.*$/gm, ""))) salah.push(`${nama}: teks tombol 'tampilkan lagi' tertanam`);
+    for (const k of kunci) if (s.includes(`"${k}"`)) salah.push(`${nama}: kunci ${k} bernilai 'tampilkan lagi'`);
+  }
+  assert.deepEqual(salah, []);
 });

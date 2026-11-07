@@ -1,6 +1,7 @@
 /* /pemda: paket informasi pemerintah daerah. Data statis /data/paket_pemda.json (dibangun scripts/pipa/paket_pemda.mjs), teks di /data/teks_pemda.json. */
 import { mulaiHalaman } from "/inti/kepala.js";
 import { esc, hantuHtml } from "/inti/umum.js";
+import { pilihHtml } from "/inti/komponen.js";
 import { muatData, tampilGalat, batangHtml, pasangBar, ubinHtml } from "/analisis.js";
 import { muatTeks, tt, num, tgl, persen, tautan, url, seksi, catatan, narasi, sumber, butuhDaftar, tabel, petaHtml, pasangPeta, lambang, labelPil, saatBahasa } from "/info_kerangka.js";
 
@@ -78,10 +79,10 @@ function lembarIsi(p) {
   <p class="jm-bantu">${esc(tt("lembar.kaki", { tanggal: tgl(d.dibangun_pada) }))}${r ? ` ${tautan(r.url, tt("lembar.perda_tautan"))}` : ""}</p>`;
 }
 function bagLembar() {
-  const opsi = d.provinsi.map((p) => `<option value="${p.kode}"${p.kode === pilihKode ? " selected" : ""}>${esc(p.nama)}</option>`).join("");
+  const pilih = pilihHtml({ id: "pilih-prov", ikon: "lokasi", label: tt("tabel.provinsi"), opsi: d.provinsi.map((p) => [p.kode, p.nama]), nilai: pilihKode });
   $("s-lembar").innerHTML = seksi({
     id: "lembar", ik: "buku", kelas: "inf-cetak", topik: tt("lembar.topik"), judul: tt("lembar.judul", { n: d.jumlah }), sub: tt("lembar.sub"), turunan: false,
-    isi: `${narasi(tt("lembar.narasi"))}<div class="inf-sel"><label class="jm-pil-pilih"><select id="pilih-prov" aria-label="${esc(tt("tabel.provinsi"))}">${opsi}</select></label><button type="button" class="jm-tbl" id="cetak">${esc(tt("lembar.cetak"))}</button></div><article class="inf-lembar" id="lembar-isi" aria-live="polite">${lembarIsi(d.provinsi.find((p) => p.kode === pilihKode))}</article>`,
+    isi: `${narasi(tt("lembar.narasi"))}<div class="inf-sel">${pilih}<button type="button" class="jm-tbl" id="cetak">${esc(tt("lembar.cetak"))}</button></div><article class="inf-lembar" id="lembar-isi" aria-live="polite">${lembarIsi(d.provinsi.find((p) => p.kode === pilihKode))}</article>`,
   });
   $("pilih-prov").addEventListener("change", (e) => pilihProv(e.target.value, false));
   $("cetak").addEventListener("click", () => {

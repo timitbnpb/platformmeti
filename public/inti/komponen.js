@@ -2,6 +2,7 @@
    Contoh filter: `<div class="jm-saring">${cariHtml({id:"q",label:t("reg.cari")})}${pilihHtml({id:"jenis",ikon:"jenis",label:t("reg.jenis"),opsi:[["","Semua"],["uu","UU"]]})}${hapusHtml({id:"hapus",label:t("jm.hapus_filter")})}${hitungHtml({id:"hitung",teks:"430 dari 430"})}</div>` */
 import { t, tanggal } from "/i18n.js";
 import { esc, ikon, judulHuruf } from "/inti/umum.js";
+import { paginasiHtml } from "/inti/paginasi.js";
 import { kabar } from "/inti/aksi_ex.js";
 import { urlMutlak, tautanBagi } from "/inti/bagi.js";
 export { urlMutlak, tautanBagi };
@@ -257,7 +258,7 @@ const TERKAIT_URUT = [
   ["siaran", "siaran"],
   ["berita", "berita"],
 ];
-const TERKAIT_TAMPIL = 6;
+const TERKAIT_TAMPIL = 10;
 const KLS_STATUS = { berlaku: "jm-pil-ok", diubah: "jm-pil-warn", dicabut: "jm-pil-bad" };
 /* satu butir: ikon/logo kecil, label pendek, satu baris judul (elipsis, title penuh), meta (tanggal, status) */
 function butirTerkait(j, x, ik, bangun, rinci) {
@@ -275,8 +276,8 @@ export async function terkaitHtml(jenis, id, { kecuali = [] } = {}) {
   const grup = TERKAIT_URUT.filter(([j]) => h[j]?.length && !kecuali.includes(j)).map(([j, ik]) => {
     const isi = j === "berita" ? h[j] : [...new Set(h[j])];
     const butir = isi.map((x, i) => butirTerkait(j, x, ik, bangun, rinci).replace('class="jm-tr', i >= TERKAIT_TAMPIL ? 'hidden class="jm-tr' : 'class="jm-tr'));
-    const lagi = isi.length - TERKAIT_TAMPIL;
-    return `<div class="jm-terkait-grup"><h3>${ikon(ik, 18)}<span>${esc(t("terkait." + j))}</span><b>${isi.length}</b></h3><ul>${butir.join("")}</ul>${lagi > 0 ? `<button type="button" class="jm-tbl jm-tbl-kecil jm-tr-semua" data-jm-semua aria-expanded="false" data-ringkas="${esc(t("terkait.ringkas"))}">${ikon("daftar2", 16)}<span>${esc(t("terkait.semua", { n: isi.length }))}</span></button>` : ""}</div>`;
+    const nav = isi.length > TERKAIT_TAMPIL ? paginasiHtml({ hal: 1, total: isi.length, per: TERKAIT_TAMPIL }) : "";
+    return `<div class="jm-terkait-grup" data-jm-total="${isi.length}"><h3>${ikon(ik, 18)}<span>${esc(t("terkait." + j))}</span><b>${isi.length}</b></h3><ul>${butir.join("")}</ul>${nav}</div>`;
   });
   if (!grup.length) return "";
   return exHtml({
@@ -293,11 +294,10 @@ export async function terkaitHtml(jenis, id, { kecuali = [] } = {}) {
 if (typeof document !== "undefined" && !window.__jmSemua) {
   window.__jmSemua = true;
   document.addEventListener("click", (e) => {
-    const b = e.target.closest("[data-jm-semua]");
-    if (!b) return;
-    const buka = b.getAttribute("aria-expanded") !== "true";
-    b.setAttribute("aria-expanded", String(buka));
-    const lbl = b.querySelector("span"); b.dataset.semua ??= lbl.textContent; lbl.textContent = buka ? b.dataset.ringkas : b.dataset.semua;
-    b.previousElementSibling.querySelectorAll("li.jm-tr").forEach((li, i) => { if (i >= TERKAIT_TAMPIL) li.hidden = !buka; });
+    const b = e.target.closest(".jm-terkait-grup [data-hal]");
+    if (!b || b.disabled) return;
+    const g = b.closest(".jm-terkait-grup"), hal = +b.dataset.hal;
+    g.querySelectorAll("li.jm-tr").forEach((li, i) => { li.hidden = i < (hal - 1) * TERKAIT_TAMPIL || i >= hal * TERKAIT_TAMPIL; });
+    g.querySelector(".jm-pag").outerHTML = paginasiHtml({ hal, total: +g.dataset.jmTotal, per: TERKAIT_TAMPIL });
   });
 }

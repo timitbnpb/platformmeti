@@ -2,6 +2,7 @@
    Turunan (jumlah, rerata) berpil EST. INP: segmen teknologi dan tabel menyalakan chrome seketika, isi berat menyusul lewat nanti(). */
 import { mulaiHalaman } from "/inti/kepala.js";
 import { t, ada, tanggal, bahasa } from "/i18n.js";
+import { navLokal, pasangLokal } from "/inti/paginasi.js";
 import { esc, nanti, ikon, hantuHtml, fotoBerita } from "/inti/umum.js";
 import { exHtml, terkaitHtml, lihatSemuaHtml } from "/inti/komponen.js";
 import { tautProvinsi, tautOrg } from "/inti/tautan.js";
@@ -19,7 +20,7 @@ import { industriHtml, logoHtml } from "/pelacak_industri.js";
 
 const $ = (id) => document.getElementById(id);
 const BATAS_LINI = 8;
-let cfg, D = {}, X = {}, isi, indSiap = false, lini = false;
+let cfg, D = {}, X = {}, isi, indSiap = false;
 const jumlah = (a) => a.reduce((s, x) => s + (x || 0), 0);
 const nm = () => t("pl.tek." + cfg.id);
 const kap = (p) => Number(p.kapasitas?.[0]?.nilai) || 0;
@@ -218,11 +219,11 @@ function peristiwa(S) {
 }
 function sLini(S) {
   const e = peristiwa(S), th = new Map(); for (const x of e) (th.get(x.y) || th.set(x.y, []).get(x.y)).push(x);
-  const grup = [...th].map(([y, a]) => `<li class="pl-th"${lini || [...th.keys()].indexOf(y) < BATAS_LINI ? "" : " data-lebih hidden"}><h3>${y}</h3><ul>${a.map((x) => {
+  const grup = [...th].map(([y, a]) => `<li class="pl-th"${[...th.keys()].indexOf(y) < BATAS_LINI ? "" : " hidden"}><h3>${y}</h3><ul>${a.map((x) => {
     const u = amanUrl(x.url), s = x.sumber ? (u ? `<a href="${esc(u)}" target="_blank" rel="noopener noreferrer">${esc(x.sumber)}</a>` : esc(x.sumber)) : "";
     return `<li><span class="jm-pil pl-jn pl-jn-${x.jenis}">${esc(t("pl.jn." + x.jenis))}</span><span class="pl-lt">${x.href ? `<a href="${esc(x.href)}">${esc(x.teks)}</a>` : esc(x.teks)}${s ? `<small>${s}${x.hal ? `, ${esc(x.hal)}` : ""}</small>` : ""}</span></li>`;
   }).join("")}</ul></li>`).join("");
-  const n = th.size, lebih = n > BATAS_LINI ? `<p class="jm-tk-lebih"><button type="button" data-lini aria-expanded="${lini}">${esc(t(lini ? "tk.lebih_sedikit" : "tk.lebih", { n }))}</button></p>` : "";
+  const lebih = navLokal({ total: th.size, per: BATAS_LINI, satuan: "pl.pag.u.tahun" });
   const adaTek = S.perTahun.length || S.atap;
   return bagian("pl-lini", "linimasa", "lini", {
     judulHtml: hlHtml("pl.s.lini.j", num(e.length), { a: e[0]?.y ?? 2025, z: e.at(-1)?.y ?? 2060 }), sub: `${esc(t(adaTek ? "pl.s.lini.sub" : "pl.s.lini.sub0"))}`,
@@ -276,12 +277,5 @@ if (!proyek || !target) { isi.innerHTML = ""; tampilGalat(isi, () => location.re
   $("plSeg").addEventListener("click", (e) => { const b = e.target.closest("button[data-tek]"); if (b && b.dataset.tek !== cfg.id) pilih(b.dataset.tek); });
   saatBahasa(() => { segmen(); gambarIsi(); });
   isi.addEventListener("error", (e) => { const im = e.target; if (im.tagName === "IMG" && im.dataset.lg) im.replaceWith(Object.assign(document.createElement("span"), { innerHTML: ikon("direktori", 22) }).firstChild); }, true);
-  isi.addEventListener("click", (e) => {
-    const b = e.target.closest("button[data-lini]");
-    if (!b) return;
-    lini = b.getAttribute("aria-expanded") !== "true";
-    b.setAttribute("aria-expanded", String(lini));
-    b.textContent = t(lini ? "tk.lebih_sedikit" : "tk.lebih", { n: isi.querySelectorAll(".pl-th").length });
-    nanti(() => { for (const r of isi.querySelectorAll(".pl-th[data-lebih]")) r.hidden = !lini; });
-  });
+  pasangLokal(isi, () => isi.querySelectorAll(".pl-th"));
 }

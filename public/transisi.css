@@ -68,3 +68,8 @@
 .jm-tr-celah li{display:flex;gap:10px;align-items:flex-start;padding:10px 12px;border-radius:var(--r-sm);background:var(--warn-bg);color:var(--ink);font:400 var(--t-body)/var(--lh-rapat) var(--font)}
 .jm-tr-celah .jm-ik{flex:none;margin-top:2px;color:var(--warn)}
 .jm-tr-cara li{padding-left:14px;border-left:3px solid var(--accent-isi);font:400 var(--t-body)/var(--lh-isi) var(--font)}
+@media (max-width:639px){
+  .jm-kh-ubin[data-n="3"] .jm-kh-ub:nth-child(3){grid-column:1/-1}
+  .jm-tr-tb .jm-tabel:has(td[data-label]) td{grid-template-columns:minmax(104px,42%) minmax(0,1fr);width:auto}
+  .jm-tr-tb .jm-tabel:has(td[data-label]) td::before{overflow-wrap:anywhere;white-space:normal}
+}

@@ -75,3 +75,4 @@
   body.inf-cetak-lembar .top,body.inf-cetak-lembar .jm-kaki,body.inf-cetak-lembar .jm-kh,body.inf-cetak-lembar .jm-ex:not(.inf-cetak),body.inf-cetak-lembar .jm-ex-aksi,body.inf-cetak-lembar .inf-sel,body.inf-cetak-lembar .jm-aksi{display:none!important}
   body.inf-cetak-lembar .inf-cetak{border:0;box-shadow:none}
 }
+.inf-isi .jm-ex-j{text-align:left}

@@ -44,9 +44,14 @@ export const jamTeks = (b) => b.jam || "";
 export const tglRentang = (b) => (b.akhir > b.tanggal ? `${tanggal(b.tanggal)} - ${tanggal(b.akhir)}` : tanggal(b.tanggal));
 
 /* ---------- poster ---------- */
+const FOTO = [[/surya|plts|solar|dre\b|atap/i, "surya-cirata"], [/panas bumi|geotherm/i, "panas-bumi-sibayak"], [/hidro|plta|bendungan/i, "hidro-saguling"], [/bayu|angin|wind|cop\d*|iklim|climate/i, "bayu-sidrap"],
+  [/bioenergi|biomass|sawit|biofuel/i, "bioenergi-sawit"], [/etanol|tebu/i, "bioetanol-tebu"], [/sampah|psel|waste/i, "sampah-psel"], [/hidrogen|hydrogen/i, "hidrogen-spbu"], [/nuklir|nuclear/i, "nuklir-menara"], [/baterai|simpan|storage/i, "penyimpanan-baterai"]];
+const FOTO_UMUM = ["surya-cirata", "bayu-sidrap", "hidro-saguling", "panas-bumi-sibayak", "penyimpanan-baterai"];
+/** Foto teknologi untuk acara tanpa poster, dipilih dari kata kunci judul; selainnya deterministik dari slug. */
+export const fotoAcara = (b) => (FOTO.find(([r]) => r.test(b.judulTampil || b.judul))?.[1]) || FOTO_UMUM[[...String(b.slug)].reduce((h, c) => h + c.charCodeAt(0), 0) % FOTO_UMUM.length];
 export const posterHtml = (b, kelas = "") => (b.poster
   ? `<img class="ev-poster ${kelas}" src="${esc(b.poster.file)}" alt="" loading="lazy" decoding="async">`
-  : `<span class="ev-poster ev-ph ev-g-${esc(b.jenis)} ${kelas}">${ikon(IKON_JENIS[b.jenis] || "kalender", 40)}<b>${esc(b.judulTampil.split(/[\s:,]+/).filter(Boolean).slice(0, 3).join(" "))}</b></span>`);
+  : `<span class="ev-poster ev-ph ev-g-${esc(b.jenis)} ${kelas}"><img class="ev-ph-foto" src="/img/beranda/${fotoAcara(b)}.webp" alt="" loading="lazy" decoding="async"></span>`);
 export const pilJenis = (j) => `<span class="ev-pil ev-t-${esc(j)}">${esc(label("kal.jenis.", j))}</span>`;
 export const pilStatus = (b) => (selesai(b) ? `<span class="ev-pil ev-selesai">${ikon("centang", 14)}${esc(t("ev.selesai"))}</span>` : "");
 

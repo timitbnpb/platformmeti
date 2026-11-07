@@ -108,5 +108,5 @@ test("kunci kamus transisi: id dan en setara dan tak kosong", () => {
   assert.ok(kunci.length > 200);
   for (const k of kunci) assert.ok(en[k], k);
   const kode = readFileSync(new URL("../public/transisi.js", import.meta.url), "utf8");
-  for (const m of kode.matchAll(/\bt\("(tr\.[\w.]+)"/g)) assert.ok(m[1] in id, m[1]);
+  for (const m of kode.matchAll(/\bt\("(tr\.[\w.]+)"/g)) if (!/[._]$/.test(m[1])) assert.ok(m[1] in id, m[1]);
 });

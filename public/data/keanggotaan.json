@@ -1,0 +1,329 @@
+{
+ "lapis": "publik",
+ "sumber": {
+  "judul": "Keanggotaan METI: Pilih Jenis Keanggotaan",
+  "url": "https://metiires.or.id/membership",
+  "penerbit": "Masyarakat Energi Terbarukan Indonesia",
+  "diambil": "2026-11-08",
+  "tarif_ditetapkan": "2026-07-01",
+  "tempat": "Jakarta",
+  "catatan": "Iuran awal dan kapasitas perwakilan dari tabel pilihan di halaman membership. Iuran tahunan dari data terstruktur (harga per tahun) halaman yang sama. Deskripsi kategori selain Organisasi NGO dan teks manfaat disusun ulang ringkas dari halaman itu. Tarif bawaan; admin dapat mengubah besaran di pengaturan."
+ },
+ "kategori": [
+  {
+   "kode": "pelajar",
+   "no": 1,
+   "nama": {
+    "id": "Pelajar",
+    "en": "Student"
+   },
+   "perwakilan": 1,
+   "iuran_awal": 100000,
+   "iuran_tahunan": null,
+   "rekomendasi": false,
+   "organisasi": false,
+   "deskripsi": {
+    "id": "Untuk pelajar dan mahasiswa yang ingin belajar, memperluas wawasan, dan membangun jejaring di bidang energi terbarukan.",
+    "en": "For students who want to learn, broaden their insight, and build a network in renewable energy."
+   },
+   "hak_wakil": {
+    "id": "Representasi resmi untuk 1 orang pada pertemuan atau kegiatan METI",
+    "en": "Official representation for 1 person at METI meetings and activities"
+   },
+   "manfaat": [
+    "pleno",
+    "seminar",
+    "wawasan",
+    "ecard",
+    "grup"
+   ]
+  },
+  {
+   "kode": "individu",
+   "no": 2,
+   "nama": {
+    "id": "Individu",
+    "en": "Individual"
+   },
+   "perwakilan": 1,
+   "iuran_awal": 450000,
+   "iuran_tahunan": 350000,
+   "rekomendasi": false,
+   "organisasi": false,
+   "deskripsi": {
+    "id": "Untuk profesional, praktisi, akademisi, dan peneliti yang ingin berkontribusi pada transisi energi.",
+    "en": "For professionals, practitioners, academics, and researchers who want to contribute to the energy transition."
+   },
+   "hak_wakil": {
+    "id": "Representasi resmi untuk 1 orang pada pertemuan atau kegiatan METI",
+    "en": "Official representation for 1 person at METI meetings and activities"
+   },
+   "manfaat": [
+    "pleno",
+    "seminar",
+    "wawasan",
+    "ecard",
+    "grup"
+   ]
+  },
+  {
+   "kode": "ngo",
+   "no": 3,
+   "nama": {
+    "id": "Organisasi NGO",
+    "en": "NGO organization"
+   },
+   "perwakilan": 2,
+   "iuran_awal": 1600000,
+   "iuran_tahunan": 600000,
+   "rekomendasi": true,
+   "organisasi": true,
+   "deskripsi": {
+    "id": "Untuk organisasi nirlaba yang berfokus pada kolaborasi gerakan serta advokasi lingkungan dan energi bersih.",
+    "en": "For non-profit organizations focused on movement collaboration and environmental and clean energy advocacy."
+   },
+   "hak_wakil": {
+    "id": "Hak mengirimkan 2 perwakilan pada setiap pertemuan atau kegiatan METI",
+    "en": "Right to send 2 representatives to every METI meeting or activity"
+   },
+   "manfaat": [
+    "pleno",
+    "seminar",
+    "wawasan",
+    "logo",
+    "ecard",
+    "grup"
+   ]
+  },
+  {
+   "kode": "usaha_kecil",
+   "no": 4,
+   "nama": {
+    "id": "Perusahaan Skala Kecil",
+    "en": "Small company"
+   },
+   "perwakilan": 5,
+   "iuran_awal": 25000000,
+   "iuran_tahunan": 2000000,
+   "rekomendasi": false,
+   "organisasi": true,
+   "deskripsi": {
+    "id": "Untuk perusahaan skala kecil yang ingin terhubung dengan jejaring bisnis dan kebijakan energi terbarukan.",
+    "en": "For small companies that want to connect with the renewable energy business and policy network."
+   },
+   "hak_wakil": {
+    "id": "Hak mengirimkan hingga 4 perwakilan pada setiap pertemuan atau kegiatan resmi METI",
+    "en": "Right to send up to 4 representatives to every official METI meeting or activity"
+   },
+   "manfaat": [
+    "pleno",
+    "forum",
+    "seminar",
+    "wawasan",
+    "branding",
+    "logo",
+    "berita",
+    "ecard",
+    "grup",
+    "wagkhusus"
+   ]
+  },
+  {
+   "kode": "usaha_besar",
+   "no": 5,
+   "nama": {
+    "id": "Perusahaan Skala Besar",
+    "en": "Large company"
+   },
+   "perwakilan": 5,
+   "iuran_awal": 50000000,
+   "iuran_tahunan": 2500000,
+   "rekomendasi": false,
+   "organisasi": true,
+   "deskripsi": {
+    "id": "Untuk perusahaan skala besar yang ingin berperan dalam forum dan kemitraan energi bersih nasional.",
+    "en": "For large companies that want a role in national clean energy forums and partnerships."
+   },
+   "hak_wakil": {
+    "id": "Hak mengirimkan hingga 4 perwakilan pada setiap pertemuan atau kegiatan resmi METI",
+    "en": "Right to send up to 4 representatives to every official METI meeting or activity"
+   },
+   "manfaat": [
+    "pleno",
+    "forum",
+    "seminar",
+    "wawasan",
+    "branding",
+    "logo",
+    "berita",
+    "ecard",
+    "grup",
+    "wagkhusus"
+   ]
+  },
+  {
+   "kode": "utama",
+   "no": 6,
+   "nama": {
+    "id": "Utama (Charter Member)",
+    "en": "Main (Charter Member)"
+   },
+   "perwakilan": 20,
+   "iuran_awal": 175000000,
+   "iuran_tahunan": 5000000,
+   "rekomendasi": false,
+   "organisasi": true,
+   "deskripsi": {
+    "id": "Untuk institusi pendukung utama METI dengan peran strategis, termasuk kesempatan masuk kepengurusan.",
+    "en": "For METI's principal institutional supporters with a strategic role, including a chance to join the leadership."
+   },
+   "hak_wakil": {
+    "id": "Hak mengirimkan hingga 8 perwakilan pada setiap pertemuan atau kegiatan resmi METI",
+    "en": "Right to send up to 8 representatives to every official METI meeting or activity"
+   },
+   "manfaat": [
+    "pleno",
+    "seminar",
+    "wawasan",
+    "branding",
+    "logo",
+    "berita",
+    "pengurus",
+    "hybrid",
+    "ecard",
+    "grup",
+    "wagkhusus"
+   ]
+  }
+ ],
+ "manfaat": [
+  {
+   "kunci": "pleno",
+   "teks": {
+    "id": "Undangan ke pleno tahunan dan agenda relevan lainnya",
+    "en": "Invitation to the annual plenary meeting and other relevant agendas"
+   }
+  },
+  {
+   "kunci": "seminar",
+   "teks": {
+    "id": "Harga khusus Seminar atau FGD METI",
+    "en": "Special rate for METI seminars and FGDs"
+   }
+  },
+  {
+   "kunci": "wawasan",
+   "teks": {
+    "id": "Wawasan, tren teknologi, dan jejaring informasi atau kemitraan",
+    "en": "Insights, technology trends, and information or partnership networks"
+   }
+  },
+  {
+   "kunci": "ecard",
+   "teks": {
+    "id": "E-Card dan surat pernyataan keanggotaan soft copy",
+    "en": "E-Card and a soft copy membership statement"
+   }
+  },
+  {
+   "kunci": "grup",
+   "teks": {
+    "id": "Akses WhatsApp Group atau Telegram METI",
+    "en": "Access to the METI WhatsApp Group or Telegram"
+   }
+  },
+  {
+   "kunci": "logo",
+   "teks": {
+    "id": "Nama dan logo organisasi ditayangkan di situs resmi METI",
+    "en": "Organization name and logo shown on the official METI website"
+   }
+  },
+  {
+   "kunci": "forum",
+   "teks": {
+    "id": "Terlibat dalam Forum Komunikasi Energi Bersih",
+    "en": "Participation in the Clean Energy Communication Forum"
+   }
+  },
+  {
+   "kunci": "berita",
+   "teks": {
+    "id": "Kesempatan memuat berita atau artikel di WAG dan situs METI",
+    "en": "Chance to publish news or articles in the WAG and on the METI website"
+   }
+  },
+  {
+   "kunci": "branding",
+   "teks": {
+    "id": "Publikasi nama dan logo di sekretariat dan kegiatan relevan",
+    "en": "Name and logo displayed at the secretariat and relevant events"
+   }
+  },
+  {
+   "kunci": "wagkhusus",
+   "teks": {
+    "id": "Akses WAG atau kanal komunikasi forum khusus",
+    "en": "Access to a dedicated forum WAG or communication channel"
+   }
+  },
+  {
+   "kunci": "pengurus",
+   "teks": {
+    "id": "Kesempatan strategis diikutsertakan dalam kepengurusan METI",
+    "en": "Strategic opportunity to be included in METI's leadership"
+   }
+  },
+  {
+   "kunci": "hybrid",
+   "teks": {
+    "id": "Kesempatan melaksanakan acara hybrid dari kantor Sekretariat METI",
+    "en": "Chance to hold hybrid events from the METI Secretariat office"
+   }
+  }
+ ],
+ "dokumen": [
+  {
+   "kunci": "iuran",
+   "judul": {
+    "id": "Iuran Anggota METI 2026",
+    "en": "METI Membership Dues 2026"
+   },
+   "deskripsi": {
+    "id": "Daftar resmi iuran awal, iuran tahunan, dan kapasitas perwakilan sejak 1 Juli 2026.",
+    "en": "Official list of initial dues, annual dues, and representative capacity since 1 July 2026."
+   },
+   "url": "https://metiires.or.id/documents/membership/iuran-anggota-meti-2026.pdf",
+   "ukuran": 302189,
+   "diubah": "2026-07-27"
+  },
+  {
+   "kunci": "formulir",
+   "judul": {
+    "id": "Formulir Keanggotaan",
+    "en": "Membership Form"
+   },
+   "deskripsi": {
+    "id": "Formulir aplikasi atau perpanjangan keanggotaan beserta informasi pengiriman dan pembayaran.",
+    "en": "Application or renewal form with submission and payment information."
+   },
+   "url": "https://metiires.or.id/documents/membership/application-for-membership-2026.pdf",
+   "ukuran": 142583,
+   "diubah": "2026-07-27"
+  },
+  {
+   "kunci": "manfaat",
+   "judul": {
+    "id": "Manfaat Keanggotaan",
+    "en": "Membership Benefits"
+   },
+   "deskripsi": {
+    "id": "Rincian manfaat resmi untuk kategori Utama, Perusahaan, NGO, Individu, dan Pelajar.",
+    "en": "Official benefit details for the Main, Company, NGO, Individual, and Student categories."
+   },
+   "url": "https://metiires.or.id/documents/membership/manfaat-anggota-meti-2026.pdf",
+   "ukuran": 1713789,
+   "diubah": "2026-07-27"
+  }
+ ]
+}

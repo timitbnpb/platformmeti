@@ -1,6 +1,7 @@
 /* Kartu profil provinsi yang dipisah dari wilayah_profil.js: organisasi, peta proyek, emisi, perbandingan.
    Pemakaian: const K = kartu(H); H = pembantu milik wilayah_profil.js (seksi, sumberDari, namaBersih, peringkat, UKUR, fmt, satuan, kos, juta, hlHtml, aksiHtml).
    Teks selalu dari t(); tidak ada rumus baru (hanya pengelompokan dan format). */
+import { navLokal, pasangLokal } from "/inti/paginasi.js";
 import { esc, ikon } from "/inti/umum.js";
 import { t } from "/i18n.js";
 import { num } from "/analisis.js";
@@ -131,7 +132,7 @@ export function kartu(H) {
   const emisiBaris = (x, i, mx, ada) => {
     const j = jenisEmisi(x), nm = nmEmisi(x.nama), pk = ada.get(nm.toLowerCase()), v = juta(x.emisi);
     const sub = [x.kota ? `<span class="jm-we-s" title="${esc(t("we.kota_ket"))}">${ikon("lokasi", 12)}${esc(x.kota)}</span>` : "", bahan(x) ? `<span class="jm-we-s">${esc(bahan(x))}</span>` : "", x.mw != null ? `<span class="jm-we-s">${esc(num(x.mw, 0))} MW</span>` : ""].join("");
-    return `<li class="jm-we-r jm-we-${j}"${i >= 10 ? " hidden data-lebih" : ""}><span class="jm-we-no">${i + 1}</span><span class="jm-we-ik" title="${esc(t("we.j." + j))}">${IKON_E[j]}</span><div class="jm-we-nm"><b>${pk ? tautProyek(pk.id, nm) : esc(nm)}</b><span class="jm-we-sub">${sub}</span></div><div class="jm-we-v"><span class="jm-we-bar" aria-hidden="true"><i data-w="${((x.emisi / mx) * 100).toFixed(1)}"></i></span><b class="jm-we-n">${esc(v)}<small> tCO2e</small></b></div></li>`;
+    return `<li class="jm-we-r jm-we-${j}"${i >= 10 ? " hidden" : ""}><span class="jm-we-no">${i + 1}</span><span class="jm-we-ik" title="${esc(t("we.j." + j))}">${IKON_E[j]}</span><div class="jm-we-nm"><b>${pk ? tautProyek(pk.id, nm) : esc(nm)}</b><span class="jm-we-sub">${sub}</span></div><div class="jm-we-v"><span class="jm-we-bar" aria-hidden="true"><i data-w="${((x.emisi / mx) * 100).toFixed(1)}"></i></span><b class="jm-we-n">${esc(v)}<small> tCO2e</small></b></div></li>`;
   };
   function emisi(p, d) {
     const e = d?.emisi; if (!e) return "";
@@ -140,7 +141,7 @@ export function kartu(H) {
     const grup = new Map();
     for (const x of L) grup.set(jenisEmisi(x), (grup.get(jenisEmisi(x)) || 0) + (x.emisi || 0));
     const ubin = [...grup].sort((a, b) => b[1] - a[1]).map(([j, v]) => `<li class="jm-we-u jm-we-${j}"><span class="jm-we-ik">${IKON_E[j]}</span><span class="jm-we-ut"><span>${esc(t("we.j." + j))}</span><b>${esc(juta(v))}</b><small>${esc(num((v / tot) * 100, 0))}%</small></span></li>`).join("");
-    const lebih = L.length > 10, tombol = lebih ? `<button type="button" class="jm-tbl jm-we-lebih" data-we-lebih data-semua="${esc(t("we.semua", { n: num(L.length) }))}" data-sedikit="${esc(t("we.sedikit"))}">${esc(t("we.semua", { n: num(L.length) }))}</button>` : "";
+    const tombol = navLokal({ total: L.length, per: 10, satuan: "jm.pag.u.pembangkit" });
     const leg = [...grup.keys()].map((j) => `<span class="jm-we-lg jm-we-${j}"><i></i>${esc(t("we.j." + j))}</span>`).join("");
     return seksi({ id: "emisi", ikon: "analisis", topik: t("wp.ey.emisi"), judulHtml: hlHtml("wp.j.emisi", t("wp.emisi.nilai", { n: juta(e.total_tco2e) }), { nama: p.nama, n: num(e.jumlah), tahun: e.tahun }), aksiHtml: aksiHtml() + sumberDari({ sumber: e.sumber, url: e.url, tahun: e.tahun, tanggal: e.tanggal }), isiHtml: `<ul class="jm-we-ubin" aria-label="${esc(t("we.ringkas"))}">${ubin}</ul><ol class="jm-we" aria-label="${esc(t("wp.emisi.grafik"))}">${L.map((x, i) => emisiBaris(x, i, mx, ada)).join("")}</ol><div class="jm-we-kaki">${tombol}<span class="jm-we-kunci">${leg}</span></div>`, kakiHtml: `<p class="jm-bantu">${esc(t("wp.cat.emisi"))}</p>` });
   }
@@ -179,12 +180,7 @@ export function kartu(H) {
       sel?.addEventListener("change", () => tampil(sel.value));
       akar.querySelector(".jm-wp-ringkas")?.addEventListener("click", (e) => { const k = e.target.closest("[data-kota]")?.dataset.kota; if (!k || !sel) return; sel.value = sel.value === k ? "" : k; tampil(sel.value); });
     }
-    const lebih = akar.querySelector("[data-we-lebih]");
-    lebih?.addEventListener("click", () => {
-      const buka = lebih.dataset.buka !== "1"; lebih.dataset.buka = buka ? "1" : "0";
-      for (const li of akar.querySelectorAll("[data-lebih]")) li.hidden = !buka;
-      lebih.textContent = buka ? lebih.dataset.sedikit : lebih.dataset.semua;
-    });
+    pasangLokal(akar, () => akar.querySelectorAll(".jm-we-r"));
   }
 
   /* Kartu "Capaian RUED": target bauran 2025 dibanding realisasi pangsa kapasitas EBT; selalu Hipotesis (ukuran berbeda). Data: /data/rued_capaian.json. */

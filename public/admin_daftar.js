@@ -8,8 +8,8 @@ import { pilTek } from "/inti/ikon_tek.js";
 import { PROV } from "/inti/prov_singkat.js";
 import { pasangTabel } from "/admin_tabel.js";
 
-const STATUS = ["menunggu", "disetujui", "ditolak"], JENIS = ["individu", "organisasi", "mahasiswa"];
-const KUNCI_ATUR = ["iuran_individu", "iuran_organisasi", "iuran_mahasiswa", "rekening_bank", "rekening_nomor", "rekening_nama", "rekening_catatan"];
+const STATUS = ["menunggu", "disetujui", "ditolak"], JENIS = ["pelajar", "individu", "ngo", "usaha_kecil", "usaha_besar", "utama"];
+const KUNCI_ATUR = ["iuran_pelajar", "iuran_individu", "iuran_ngo", "iuran_usaha_kecil", "iuran_usaha_besar", "iuran_utama", "rekening_bank", "rekening_nomor", "rekening_nama", "rekening_catatan"];
 const PIL_BAYAR = { belum: "jm-pil-bad", menunggu: "jm-pil-warn", lunas: "jm-pil-ok" };
 const PIL_BUKTI = { menunggu: "jm-pil-warn", diterima: "jm-pil-ok", ditolak: "jm-pil-bad" };
 
@@ -139,9 +139,10 @@ export function panelPersetujuan(panel, { boleh = false } = {}) {
     const kotak = panel.querySelector("#pdAtur");
     let d;
     try { d = await api("/api/admin/pengaturan-daftar"); } catch (e) { kotak.innerHTML = keadaan(e.kode || "umum"); return; }
-    const f = (k, maks, mode) => `<div class="jm-medan"><label for="at_${k}">${esc(t("pd.at." + k))}</label><input class="jm-isian" id="at_${k}" name="${k}" maxlength="${maks}" value="${esc(d[k] || "")}"${mode ? ` inputmode="${mode}"` : ""}></div>`;
+    const bawaan = await fetch("/data/keanggotaan.json").then((r) => r.json()).catch(() => ({ kategori: [] }));
+    const f = (k, maks, mode) => `<div class="jm-medan"><label for="at_${k}">${esc(t("pd.at." + k))}</label><input class="jm-isian" id="at_${k}" name="${k}" maxlength="${maks}" value="${esc(d[k] || "")}"${mode ? ` inputmode="${mode}"` : ""}${bawaan.kategori.find((x) => "iuran_" + x.kode === k) ? ` placeholder="${esc(t("pd.at.bawaan", { n: angka(bawaan.kategori.find((x) => "iuran_" + x.kode === k).iuran_awal) }))}"` : ""}></div>`;
     kotak.innerHTML = `<form class="pd-atur" id="pdAturForm" novalidate><p class="jm-bantu">${esc(t("pd.atur.d"))}</p>
-      <div class="pd-atur-kisi">${f("iuran_individu", 9, "numeric")}${f("iuran_organisasi", 9, "numeric")}${f("iuran_mahasiswa", 9, "numeric")}${f("rekening_bank", 80)}${f("rekening_nomor", 40, "numeric")}${f("rekening_nama", 120)}</div>${f("rekening_catatan", 300)}
+      <div class="pd-atur-kisi">${JENIS.map((j) => f("iuran_" + j, 9, "numeric")).join("")}${f("rekening_bank", 80)}${f("rekening_nomor", 40, "numeric")}${f("rekening_nama", 120)}</div>${f("rekening_catatan", 300)}
       <div id="pdAturPesan" aria-live="polite"></div><div class="pd-aksi"><button type="submit" class="jm-tbl jm-tbl-utama">${ikon("centang", 18)}<span>${esc(t("pd.at.simpan"))}</span></button></div></form>`;
     kotak.querySelector("form").addEventListener("submit", async (e) => {
       e.preventDefault();

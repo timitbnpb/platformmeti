@@ -5,7 +5,7 @@ import { khUbin } from "/inti/kh.js";
 import { t, angka, tanggal } from "/i18n.js";
 import { judulHuruf, esc, nanti, debounce, hantuHtml, kosongHtml, galatHtml, ikon } from "/inti/umum.js";
 import { cariHtml, pilihHtml, hapusHtml, exHtml, sumberHtml, unduhRegHtml, terkaitHtml, bagikanHtml } from "/inti/komponen.js";
-import { paginasiHtml, sorotHalaman } from "/inti/paginasi.js";
+import { paginasiHtml, sorotHalaman, navLokal, pasangLokal } from "/inti/paginasi.js";
 import { tautOrg } from "/inti/tautan.js";
 import { aksiHtml, hlHtml } from "/inti/aksi_ex.js";
 import { penerbitHtml, penerbitDari } from "/penerbit.js";
@@ -102,7 +102,7 @@ function itemHtml(r, tersembunyi) {
   };
   const rel = (r.ikatan || []).filter((x) => x.jenis === "mengubah" || x.jenis === "mencabut").map(chip).join("");
   const [hr, bln] = r.tanggal_ditetapkan ? tanggal(r.tanggal_ditetapkan).split(" ") : [];
-  return `<li class="jm-lm-item jm-lm-s-${esc(warnaStatus[r.status] || "ok")}" data-id="${esc(r.id)}"${tersembunyi ? " hidden data-lebih" : ""}>
+  return `<li class="jm-lm-item jm-lm-s-${esc(warnaStatus[r.status] || "ok")}" data-id="${esc(r.id)}"${tersembunyi ? " hidden" : ""}>
     <span class="jm-lm-tgl">${hr ? `<b>${esc(hr)}</b><small>${esc(bln || "")}</small>` : "-"}</span>
     <span class="jm-lm-jn jm-jn-${esc(r.jenis)}">${esc(SINGKAT[r.jenis] || label("reg.jenis.", r.jenis))}</span><b class="jm-lm-no">${esc(`${r.nomor}/${r.tahun}`)}</b>
     <span class="jm-lm-judul"><span class="jm-lm-j2" title="${esc(r.judul)}">${esc(r.judul)}</span>${rel ? `<span class="jm-tl-rel">${rel}</span>` : ""}</span>
@@ -140,7 +140,7 @@ function gambarLinimasa(rows) {
   document.getElementById("isi").innerHTML = (tahun.some(Boolean) ? grafikTahun(per) : "") + `<div class="jm-lm">${tahun.map((y) => {
     const rs = per.get(y), ub = jml(rs, "mengubah"), cb = jml(rs, "mencabut");
     return `<section class="jm-lm-tahun" id="th-${y}" aria-label="${y || "-"}"><button type="button" class="jm-lm-th" data-lipat aria-expanded="true" aria-label="${esc(t("reg.tl.lipat"))} ${y || "-"}"><h3>${y || "-"}</h3><span class="jm-lm-pils">${chipN("terbit", rs.length)}${chipN("mengubah", ub)}${chipN("mencabut", cb)}</span>${ikon("panah-kanan", 18)}</button>
-      <ol class="jm-lm-daftar">${rs.map((r, i) => itemHtml(r, i >= MAKS_TAHUN)).join("")}</ol>${rs.length > MAKS_TAHUN ? `<button type="button" class="jm-tbl jm-tbl-kecil jm-tl-lebih" data-lebih="${rs.length - MAKS_TAHUN}">${esc(t("reg.tl.lebih", { n: angka(rs.length - MAKS_TAHUN) }))}</button>` : ""}</section>`;
+      <ol class="jm-lm-daftar">${rs.map((r, i) => itemHtml(r, i >= MAKS_TAHUN)).join("")}</ol>${navLokal({ total: rs.length, per: MAKS_TAHUN, satuan: "jm.pag.u.regulasi" })}</section>`;
   }).join("")}</div>`;
   pasangTinggi(document.getElementById("isi"));
 }
@@ -334,13 +334,13 @@ async function main() {
     for (const x of document.querySelectorAll("#tampil button")) x.setAttribute("aria-selected", String(x === b)); // chrome urgent
     tunda();
   });
+  pasangLokal(document.getElementById("isi"), (w) => w.previousElementSibling.children);
   const bukaDari = (e) => { if (e.target.closest("a")) return; const b = e.target.closest("[data-id]"); if (b) bukaProfil(b.dataset.id); };
   document.getElementById("isi").addEventListener("keydown", (e) => { const k = e.target.closest?.("[data-th]"); if (k && (e.key === "Enter" || e.key === " ")) { e.preventDefault(); k.dispatchEvent(new MouseEvent("click", { bubbles: true })); } });
   document.getElementById("isi").addEventListener("click", (e) => {
     const ub = e.target.closest("button[data-uk]"); if (ub) { const k = ub.dataset.uk; S.ua = S.uk === k ? -S.ua : 1; S.uk = k; S.hal = 1; tunda(); return; }
     const lp = e.target.closest("[data-lipat]"); if (lp) { const buka = lp.getAttribute("aria-expanded") !== "true", sc = lp.closest(".jm-lm-tahun"); lp.setAttribute("aria-expanded", String(buka)); sc.classList.toggle("jm-lm-tutup", !buka); return; }
     const gk = e.target.closest("[data-th]"); if (gk) { const sc = document.getElementById("th-" + gk.dataset.th); if (sc) { sc.classList.remove("jm-lm-tutup"); sc.querySelector("[data-lipat]").setAttribute("aria-expanded", "true"); sc.scrollIntoView({ block: "start", behavior: "smooth" }); } return; }
-    const lb = e.target.closest("[data-lebih]:not(li)"); if (lb) { lb.closest(".jm-lm-tahun").querySelectorAll("li[data-lebih]").forEach((x) => { x.hidden = false; }); lb.remove(); return; }
     bukaDari(e); if (e.target.closest("[data-aksi=reset]")) document.querySelector("#saring [data-aksi=reset]").click(); });
   document.getElementById("hal").addEventListener("click", (e) => {
     const b = e.target.closest("[data-hal]"); if (!b) return;

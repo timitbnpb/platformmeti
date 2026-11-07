@@ -24,7 +24,7 @@ const TAB = [
   { href: "/", kunci: "nav.beranda", ikon: "beranda", hak: null },
   { kunci: "nav.insight", ikon: "insight", hak: null, grup: [
     { href: "/insight", kunci: "nav.insight_ringkasan", ikon: "kajian" }, { href: "/insight#tren", kunci: "nav.sub.tren", ikon: "linimasa" },
-    { href: "/rapor", kunci: "nav.rapor", ikon: "presentasi" }, { href: "/pelacak", kunci: "nav.pelacak", ikon: "tingkat" }, { href: "/rantai", kunci: "nav.rantai", ikon: "rantai" }, { href: "/asean", kunci: "nav.asean", ikon: "asean" }, { href: "/jejaring", kunci: "nav.jejaring", ikon: "tautan" }, { href: "/metode", kunci: "nav.sub.metode", ikon: "metode" }] },
+    { href: "/rapor", kunci: "nav.rapor", ikon: "presentasi" }, { href: "/pelacak", kunci: "nav.pelacak", ikon: "tingkat" }, { href: "/rantai", kunci: "nav.rantai", ikon: "rantai" }, { href: "/asean", kunci: "nav.asean", ikon: "asean" }, { href: "/jejaring", kunci: "nav.jejaring", ikon: "tautan" }, { href: "/kuadran", kunci: "nav.kuadran", ikon: "status" }, { href: "/metode", kunci: "nav.sub.metode", ikon: "metode" }] },
   { kunci: "nav.wilayah", ikon: "wilayah", hak: null, grup: [
     { href: "/wilayah", kunci: "nav.wilayah_peta", ikon: "peta" }, { href: "/proyek", kunci: "nav.proyek", ikon: "proyek" },
     { href: "/program", kunci: "nav.program", ikon: "bintang" }, { href: "/peluang", kunci: "nav.peluang", ikon: "kompas" },

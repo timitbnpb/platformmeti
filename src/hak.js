@@ -1748,8 +1748,8 @@ export async function lalinAdmin(env, akun, r = "7h", sekarang = Date.now()) {
 }
 
 /* ========================= Pendaftaran anggota mandiri (0021) ========================= */
-export const JENIS_DAFTAR = ["individu", "organisasi", "mahasiswa"];
-export const KUNCI_ATUR_DAFTAR = ["iuran_individu", "iuran_organisasi", "iuran_mahasiswa", "rekening_bank", "rekening_nomor", "rekening_nama", "rekening_catatan"];
+export const JENIS_DAFTAR = ["pelajar", "individu", "ngo", "usaha_kecil", "usaha_besar", "utama"];
+export const KUNCI_ATUR_DAFTAR = ["iuran_pelajar", "iuran_individu", "iuran_ngo", "iuran_usaha_kecil", "iuran_usaha_besar", "iuran_utama", "rekening_bank", "rekening_nomor", "rekening_nama", "rekening_catatan"];
 const gerbangPend = (akun) => { const i = boleh(akun?.peran, "ubah", "pendaftaran", undefined, akun); if (!i.ok) throw tolak(i.alasan); };
 const KOLOM_LIST_DAFTAR = "id, jenis, status, nama, organisasi, kota, prov, bayar, tanpa_lunas, iuran, dibuat, diputus_pada";
 const jejakPend = (env, siapa, peran, aksi, id, ke, kondisi = "") =>
@@ -1777,10 +1777,10 @@ export async function pengaturanDaftarSimpan(env, akun, nilai) {
 }
 
 // Publik; nilai sudah divalidasi rute. Surel yang sudah jadi akun atau sudah menunggu = konflik.
-export async function pendaftaranBaru(env, d, tokenHash, ipHash = null) {
+export async function pendaftaranBaru(env, d, tokenHash, ipHash = null, iuranBawaan = null) {
   const ada = await env.DB.prepare("SELECT 1 AS x FROM akun WHERE surel = ?").bind(d.surel).first();
   if (ada) throw mk("konflik", 409, "surel sudah terdaftar");
-  const at = await pengaturanDaftarBaca(env), iuran = /^\d+$/.test(at["iuran_" + d.jenis]) ? Number(at["iuran_" + d.jenis]) : null;
+  const at = await pengaturanDaftarBaca(env), iuran = /^\d+$/.test(at["iuran_" + d.jenis]) ? Number(at["iuran_" + d.jenis]) : Number.isInteger(iuranBawaan) ? iuranBawaan : null;
   try {
     const r = await env.DB.batch([
       env.DB.prepare("INSERT INTO pendaftaran (token_hash, jenis, nama, surel, hp, organisasi, kota, prov, rinci, setuju_pdp, iuran) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, 1, ?)")

@@ -3,7 +3,7 @@
 CREATE TABLE IF NOT EXISTS pendaftaran (
   id INTEGER PRIMARY KEY AUTOINCREMENT,
   token_hash TEXT NOT NULL UNIQUE CHECK (length(token_hash) = 64),
-  jenis TEXT NOT NULL CHECK (jenis IN ('individu','organisasi','mahasiswa')),
+  jenis TEXT NOT NULL CHECK (jenis IN ('pelajar','individu','ngo','usaha_kecil','usaha_besar','utama')),
   status TEXT NOT NULL DEFAULT 'menunggu' CHECK (status IN ('menunggu','disetujui','ditolak')),
   nama TEXT NOT NULL CHECK (length(nama) BETWEEN 2 AND 120),
   surel TEXT NOT NULL COLLATE NOCASE CHECK (length(surel) BETWEEN 5 AND 120 AND surel GLOB '*?@?*.?*' AND surel NOT GLOB '* *'),
@@ -41,9 +41,9 @@ CREATE TABLE IF NOT EXISTS pendaftaran_bukti (
 );
 CREATE INDEX IF NOT EXISTS pendaftaran_bukti_p ON pendaftaran_bukti (pendaftaran_id, status);
 
--- Pengaturan diisi admin di /admin (besaran iuran, rekening tujuan); TIDAK ditulis di repo publik.
+-- Pengaturan diisi admin di /admin (iuran awal per kategori, rekening tujuan); TIDAK ditulis di repo publik. Kosong = tarif resmi bawaan public/data/keanggotaan.json.
 CREATE TABLE IF NOT EXISTS pengaturan_daftar (
-  kunci TEXT PRIMARY KEY CHECK (kunci IN ('iuran_individu','iuran_organisasi','iuran_mahasiswa','rekening_bank','rekening_nomor','rekening_nama','rekening_catatan')),
+  kunci TEXT PRIMARY KEY CHECK (kunci IN ('iuran_pelajar','iuran_individu','iuran_ngo','iuran_usaha_kecil','iuran_usaha_besar','iuran_utama','rekening_bank','rekening_nomor','rekening_nama','rekening_catatan')),
   nilai TEXT NOT NULL CHECK (length(nilai) <= 300),
   diubah INTEGER NOT NULL DEFAULT (unixepoch()),
   diubah_oleh INTEGER REFERENCES akun(id) ON DELETE SET NULL

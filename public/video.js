@@ -1,4 +1,5 @@
 /* /video: banner kanal resmi, video unggulan tersemat (youtube-nocookie), segmen Video METI / IndoEBTKE ConEx / Video ekosistem, playlist per seri, filter. */
+import { paginasiHtml, sorotHalaman } from "/inti/paginasi.js";
 import { khUbin } from "/inti/kh.js";
 import { t, angka, tanggal } from "/i18n.js";
 import { esc, nanti, ikon, hantuHtml, kosongHtml, galatHtml } from "/inti/umum.js";
@@ -7,7 +8,8 @@ import { hlHtml } from "/inti/aksi_ex.js";
 import { pemutarHtml, pasangPemutar, TOPIK, durasiTeks } from "/event_umum.js";
 import { muatVideo, SEGMEN, kartuVideo, SERI } from "/video_umum.js";
 
-const S = { seg: "meti", seri: "", tahun: "", topik: "", tampil: 24 };
+const PER = 24;
+const S = { seg: "meti", seri: "", tahun: "", topik: "", hal: 1 };
 let D = null;
 const IK_SEG = { meti: "video", conex: "kalender-bintang", eko: "tautan" };
 const YT = { meti: "https://www.youtube.com/@metiires", conex: "https://www.youtube.com/@IndoEBTKEConEx" };
@@ -42,7 +44,8 @@ function saring() {
 function kisiIsi() {
   const rows = saring();
   if (!rows.length) return kosongHtml("vid.kosong");
-  const tampil = rows.slice(0, S.tampil);
+  S.hal = Math.min(S.hal, Math.max(1, Math.ceil(rows.length / PER)));
+  const tampil = rows.slice((S.hal - 1) * PER, S.hal * PER);
   let isi;
   if (S.seri) isi = `<ul class="vid-kisi">${tampil.map(kartuVideo).join("")}</ul>`;
   else {
@@ -50,7 +53,7 @@ function kisiIsi() {
     for (const v of tampil) (g.get(v.seri) || g.set(v.seri, []).get(v.seri)).push(v);
     isi = [...g].map(([s, r]) => `<section class="vid-playlist"><h3>${ikon("daftar2", 18)}<span>${esc(t("vid.seri." + s))}</span><em>${esc(angka(rows.filter((v) => v.seri === s).length))}</em></h3><ul class="vid-kisi">${r.map(kartuVideo).join("")}</ul></section>`).join("");
   }
-  return isi + (rows.length > tampil.length ? `<div class="ev-lagi"><button type="button" class="jm-tbl" data-lagi>${esc(t("ev.lagi", { n: angka(rows.length - tampil.length) }))}</button></div>` : "");
+  return isi + paginasiHtml({ hal: S.hal, total: rows.length, per: PER, satuan: "jm.pag.u.video" });
 }
 function kisiHtml() {
   const d = dalamSeg(), seri = [...new Set(d.map((v) => v.seri))], tahun = [...new Set(d.map((v) => v.tanggal.slice(0, 4)))].sort().reverse(), topik = TOPIK.map(([k, , ik]) => [k, t("ev.topik." + k), ik]).filter(([k]) => d.some((v) => v.topik.includes(k)));
@@ -61,9 +64,14 @@ function gambar() {
   document.getElementById("isiVideo").innerHTML = tabHtml() + bannerHtml() + unggulanHtml() + kisiHtml();
   ubin();
 }
+function tulisUrl() {
+  const u = new URLSearchParams(); if (S.seg !== "meti") u.set("seg", S.seg); if (S.hal > 1) u.set("hal", S.hal);
+  history.replaceState(null, "", location.pathname + (u.size ? "?" + u : "") + "#video");
+}
 async function main() {
   const isi = document.getElementById("isiVideo"), p = new URLSearchParams(location.search);
   if (SEGMEN.includes(p.get("seg"))) S.seg = p.get("seg");
+  S.hal = Math.max(1, +p.get("hal") || 1);
   pasangPemutar();
   const mulai = async () => {
     isi.innerHTML = hantuHtml(5);
@@ -76,16 +84,16 @@ async function main() {
     let b;
     if (q("[data-aksi=ulang]")) mulai();
     else if ((b = q("[data-seg]"))) {
-      S.seg = b.dataset.seg; S.seri = ""; S.tahun = ""; S.topik = ""; S.tampil = 24;
+      S.seg = b.dataset.seg; S.seri = ""; S.tahun = ""; S.topik = ""; S.hal = 1;
       for (const x of isi.querySelectorAll("[data-seg]")) { x.setAttribute("aria-selected", String(x === b)); x.tabIndex = x === b ? 0 : -1; } // chrome urgent
-      history.replaceState(null, "", (S.seg === "meti" ? location.pathname : `${location.pathname}?seg=${S.seg}`) + "#video");
+      tulisUrl();
       nanti(() => { gambar(); });
-    } else if (q("[data-lagi]")) { S.tampil += 24; nanti(() => { document.getElementById("vidIsi").innerHTML = kisiIsi(); }); }
+    } else if ((b = q("#vidIsi [data-hal]"))) { if (!b.disabled) { S.hal = +b.dataset.hal; sorotHalaman(b, S.hal); tulisUrl(); nanti(() => { document.getElementById("vidIsi").innerHTML = kisiIsi(); }); } }
   });
   isi.addEventListener("change", (e) => {
     const k = { vSeri: "seri", vTahun: "tahun", vTopik: "topik" }[e.target.id];
     if (!k) return;
-    S[k] = e.target.value; S.tampil = 24; nanti(() => { document.getElementById("vidIsi").innerHTML = kisiIsi(); });
+    S[k] = e.target.value; S.hal = 1; tulisUrl(); nanti(() => { document.getElementById("vidIsi").innerHTML = kisiIsi(); });
   });
   document.addEventListener("jm:bahasa", () => D && nanti(gambar));
 }

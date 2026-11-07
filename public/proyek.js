@@ -203,7 +203,7 @@ function terapkan() {
   $("pjHasil").innerHTML = ikon("peta", 16) + `<span>${esc(t("pj.hasil", { n: num(tampil.length), total: num(SEMUA.length), mw: num(jumlahMW(tampil), 0) }))}</span>`;
   for (const x of document.querySelectorAll("#pjStatus [data-st]")) x.setAttribute("aria-pressed", String(x.dataset.st === F.st));
   for (const x of document.querySelectorAll("#pjProgBar [data-pg]")) x.setAttribute("aria-pressed", String(x.dataset.pg === F.prog));
-  nanti(() => { if (v !== versi) return; kepalaTabel(); gambarCorong(); gambarLegenda(); kePeta(); PN.n = 40; gambarPanel(); TT.hal = 1; TD.hal = 1; gambarTelat(); gambarDaftar(); });
+  nanti(() => { if (v !== versi) return; kepalaTabel(); gambarCorong(); gambarLegenda(); kePeta(); PN.hal = 1; gambarPanel(); TT.hal = 1; TD.hal = 1; gambarTelat(); gambarDaftar(); });
 }
 
 /* ---------- corong ---------- */
@@ -503,15 +503,16 @@ $("pjLegenda").addEventListener("click", (e) => {
 if (innerWidth < 1000) { $("pjLapis").open = false; $("pjDrawer").open = false; } else $("pjDrawer").open = true;
 
 /* panel samping: daftar proyek yang tampil di peta; klik baris menerbangkan peta dan membuka kartu */
-const PN = { n: 40 };
+const PN = { hal: 1, per: 40 };
 function gambarPanel() {
   const rows = tampil.slice().sort((a, b) => (b.kap ?? -1) - (a.kap ?? -1) || a.nama.localeCompare(b.nama)), el = $("pjPanel");
   if (!rows.length) { el.innerHTML = `<div class="jm-kosong">${ikon("info", 32)}<p>${esc(t("jm.kosong.cocok"))}</p></div>`; return; }
-  el.innerHTML = `<ul class="jm-pj-pl">${rows.slice(0, PN.n).map((r) => `<li><button type="button" class="jm-pj-pr" data-id="${esc(r.id)}" title="${esc(r.nama)}"><span class="jm-pj-pr-n">${esc(r.nama)}</span><span class="jm-pj-pr-k">${selKap(r)}</span><span class="jm-pj-pr-m">${selTek(r)}<small>${esc(r.prov || "-")}${r.ada ? "" : " (" + esc(t("pj.presisi.tak")) + ")"}</small></span></button></li>`).join("")}</ul>` +
-    (rows.length > PN.n ? `<button type="button" class="jm-tbl jm-tbl-kecil" data-lagi="1">${esc(t("pj.lagi"))}</button>` : "");
+  el.innerHTML = `<ul class="jm-pj-pl">${rows.slice((PN.hal - 1) * PN.per, PN.hal * PN.per).map((r) => `<li><button type="button" class="jm-pj-pr" data-id="${esc(r.id)}" title="${esc(r.nama)}"><span class="jm-pj-pr-n">${esc(r.nama)}</span><span class="jm-pj-pr-k">${selKap(r)}</span><span class="jm-pj-pr-m">${selTek(r)}<small>${esc(r.prov || "-")}${r.ada ? "" : " (" + esc(t("pj.presisi.tak")) + ")"}</small></span></button></li>`).join("")}</ul>` +
+    paginasiHtml({ hal: PN.hal, total: rows.length, per: PN.per, satuan: "jm.pag.u.proyek" });
 }
 $("pjPanel").addEventListener("click", (e) => {
-  if (e.target.closest("[data-lagi]")) { PN.n += 40; nanti(gambarPanel); return; }
+  const l = e.target.closest("[data-hal]");
+  if (l) { if (!l.disabled) { PN.hal = +l.dataset.hal; sorotHalaman(l, PN.hal); nanti(gambarPanel); } return; }
   const b = e.target.closest("[data-id]");
   if (!b) return;
   for (const x of $("pjPanel").querySelectorAll("[aria-current]")) x.removeAttribute("aria-current");

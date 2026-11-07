@@ -165,3 +165,5 @@ th[aria-sort="ascending"] .kq-urut-ik{transform:rotate(180deg)}
 /* kepala: teks di atas, lima ubin selebar kepala (sisi kanan tidak kosong) */
 .kq-kh{grid-template-columns:minmax(0,1fr)!important}
 .kq-kh .jm-kh-ubin{grid-template-columns:repeat(auto-fit,minmax(150px,1fr))!important}
+.kq-cel{display:inline-flex;align-items:center;gap:6px;min-width:0}
+.kq-cel .kq-rank{margin-left:0}

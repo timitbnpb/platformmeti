@@ -3,6 +3,7 @@
    INP: chrome filter (cari, tahap) berubah seketika, kartu menyusul lewat nanti(); peta dan tabel panjang dibuat sesudah bingkai tercat. */
 import { mulaiHalaman } from "/inti/kepala.js";
 import { t, ada, angka, tanggal, bahasa } from "/i18n.js";
+import { navLokal, pasangLokal } from "/inti/paginasi.js";
 import { esc, nanti, ikon, hantuHtml } from "/inti/umum.js";
 import { exHtml, sumberHtml, pilihHtml, cariHtml, hapusHtml, hitungHtml, unduhRegHtml, lihatSemuaHtml } from "/inti/komponen.js";
 import { aksiHtml, hlHtml } from "/inti/aksi_ex.js";
@@ -176,8 +177,8 @@ function sProyek(g) {
   const pr = g.proyek_ringkas;
   if (!g.proyek.length) return exHtml({ id: "pg-proyek", ikon: "proyek", topik: t("pg.s.proyek.ey"), judulHtml: esc(t("pg.s.proyek.j0")), subHtml: esc(t("pg.s.proyek.sub0")), aksiHtml: aksiHtml({}), isiHtml: `<p class="jm-pg-kosong">${esc(t("pg.proyek.kosong"))}</p>` });
   const urut = [...g.proyek].sort((a, z) => (z.kap ?? -1) - (a.kap ?? -1) || a.nama.localeCompare(z.nama));
-  const baris = urut.map((r, i) => `<tr${i >= BATAS_PROYEK ? " data-lebih hidden" : ""}>${sel("pg.c.nama", `<a href="/p/${esc(r.id)}">${esc(r.nama)}</a>`)}${sel("pg.c.tek", r.tek ? pilTek(r.tek) : "-", "jm-tengah")}${sel("pg.c.prov", esc(r.prov || "-"), "jm-tengah")}${sel("pg.c.kap", kapTeks(r), "jm-tengah")}${sel("pg.c.status", pilStatus(r.st), "jm-tengah")}</tr>`).join("");
-  const lebih = urut.length > BATAS_PROYEK ? `<p class="jm-pg-lebih"><button type="button" data-lebih="${urut.length}" aria-expanded="false">${esc(t("pg.lebih", { n: num(urut.length) }))}</button></p>` : "";
+  const baris = urut.map((r, i) => `<tr${i >= BATAS_PROYEK ? " hidden" : ""}>${sel("pg.c.nama", `<a href="/p/${esc(r.id)}">${esc(r.nama)}</a>`)}${sel("pg.c.tek", r.tek ? pilTek(r.tek) : "-", "jm-tengah")}${sel("pg.c.prov", esc(r.prov || "-"), "jm-tengah")}${sel("pg.c.kap", kapTeks(r), "jm-tengah")}${sel("pg.c.status", pilStatus(r.st), "jm-tengah")}</tr>`).join("");
+  const lebih = navLokal({ total: urut.length, per: BATAS_PROYEK, satuan: "jm.pag.u.proyek" });
   return bagian("pg-proyek", "tabel", "proyek", {
     judulHtml: hlHtml("pg.s.proyek.j", num(pr.jumlah), { mw: num(pr.kapasitas_mw) }), sub: esc(t("pg.s.proyek.sub")),
     isiHtml: tabel(["pg.c.nama", "pg.c.tek", "pg.c.prov", "pg.c.kap", "pg.c.status"], baris) + lebih, csv: true,
@@ -365,14 +366,6 @@ if (!D) { isi.innerHTML = ""; tampilGalat(isi, () => location.reload()); } else 
       const im = e.target;
       if (im.tagName === "IMG" && im.dataset.lg) im.replaceWith(Object.assign(document.createElement("span"), { innerHTML: ikon("direktori", 22) }).firstChild);
     }, true);
-    isi.addEventListener("click", (e) => {
-      const b = e.target.closest("button[data-lebih]");
-      if (!b) return;
-      const buka = b.getAttribute("aria-expanded") !== "true";
-      b.setAttribute("aria-expanded", String(buka));
-      b.textContent = t(buka ? "pg.lebih_sedikit" : "pg.lebih", { n: num(Number(b.dataset.lebih)) });
-      const tbody = b.closest(".jm-ex-bd").querySelector("tbody");
-      nanti(() => { for (const r of tbody.querySelectorAll("tr[data-lebih]")) r.hidden = !buka; });
-    });
+    pasangLokal(isi, (w) => w.closest(".jm-ex-bd").querySelectorAll("tbody tr"));
   }
 }

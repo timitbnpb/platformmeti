@@ -36,3 +36,20 @@ export function sorotHalaman(tombol, n) {
   const nav = tombol.closest(".jm-pag"); if (!nav) return;
   for (const b of nav.querySelectorAll(".jm-pag-b")) { const mati = b.dataset.hal === String(n); b.classList.toggle("on", mati && !b.textContent.includes("‹") && !b.textContent.includes("›")); if (b.classList.contains("on")) b.setAttribute("aria-current", "page"); else b.removeAttribute("aria-current"); }
 }
+
+/* Paginasi di sisi layar untuk baris yang sudah ada di DOM (tabel/daftar statis): baris di luar halaman diberi hidden.
+   navLokal() menaruh strip di bawah daftar; pasangLokal(akar, ambilBaris) memasang satu pendengar klik. Tidak ada tombol "tampilkan lagi". */
+export function navLokal({ total, per, satuan, hal = 1 }) {
+  return total > per ? `<div class="jm-pag-lokal" data-total="${total}" data-per="${per}"${satuan ? ` data-satuan="${satuan}"` : ""}>${paginasiHtml({ hal, total, per, satuan })}</div>` : "";
+}
+export function pasangLokal(akar, ambilBaris) {
+  akar.addEventListener("click", (e) => {
+    const b = e.target.closest(".jm-pag-lokal [data-hal]"); if (!b || b.disabled) return;
+    const w = b.closest(".jm-pag-lokal"), hal = +b.dataset.hal, per = +w.dataset.per, total = +w.dataset.total;
+    sorotHalaman(b, hal);
+    setTimeout(() => {
+      ambilBaris(w).forEach((r, i) => { r.hidden = i < (hal - 1) * per || i >= hal * per; });
+      w.innerHTML = paginasiHtml({ hal, total, per, satuan: w.dataset.satuan || undefined });
+    }, 0);
+  });
+}

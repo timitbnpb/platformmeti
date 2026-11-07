@@ -2,6 +2,7 @@
    Dirender saat mendekati layar (IntersectionObserver); angka dari public/data/*.json. */
 import { t, ada, angka, tanggal } from "/i18n.js";
 import { esc, hantuHtml, nanti, ikon } from "/inti/umum.js";
+import { paginasiHtml, sorotHalaman } from "/inti/paginasi.js";
 import { IKON_TEK } from "/inti/ikon_tek.js";
 import { aksiHtml } from "/inti/aksi_ex.js";
 import { sumberHtml, exHtml } from "/inti/komponen.js";
@@ -285,16 +286,16 @@ async function karbon() {
     const namaProv = {}; for (const w of wil.baris) namaProv[w.kode] = w.nama;
     const rows = top.map((x, i) => ({ x, i, kp: kodeProv(x) }));
     const KOL = { no: (r) => r.i, nama: (r) => r.x.nama.toLowerCase(), prov: (r) => namaProv[r.kp] || "", mw: (r) => r.x.kapasitas_mw, mt: (r) => r.x.emisi_tco2e };
-    const sc = { k: "no", asc: true }, tampil = { buka: false }, SEL = 8;
+    const sc = { k: "no", asc: true }, tampil = { hal: 1 }, SEL = 10;
     const barisT = (r, n) => { const { x, i, kp } = r, bk = BAHAN.has(bahan(x)) ? bahan(x) : "lain", pid = x.organisasi_ids?.[0], nm = esc(pendek(x.nama, 34));
-      return `<tr data-i="${i}"${n >= SEL && !tampil.buka ? " hidden" : ""}><td class="jm-bb-tn">${i + 1}</td><td><span class="jm-id">${pid ? `<a href="/p/${esc(pid)}">${nm}</a>` : `<b>${nm}</b>`}<span class="jm-bb-pk jm-bb-f-${bk}">${IKON_TEK[BK_IK[bk]].replace('class="jm-ikt"', 'class="jm-ikt jm-ikt-s"')}<span>${esc(label("beranda.karbon.j.", bk))}</span></span></span></td><td class="jm-bb-tp">${kp ? `<img src="/img/provinsi/${esc(kp)}.png" width="18" height="18" alt="" loading="lazy" decoding="async">` : ""}<span>${esc(namaProv[kp] || "-")}</span></td><td class="jm-num">${esc(angka(x.kapasitas_mw))}</td><td class="jm-num"><b>${esc(angka(x.emisi_tco2e / 1e6, { desimal: 1 }))}</b></td></tr>`; };
-    const isiBody = () => [...rows].sort((p, q) => { const a = KOL[sc.k](p), b = KOL[sc.k](q); return (a < b ? -1 : a > b ? 1 : 0) * (sc.asc ? 1 : -1); }).map(barisT).join("");
+      return `<tr data-i="${i}"><td class="jm-bb-tn">${i + 1}</td><td><span class="jm-id">${pid ? `<a href="/p/${esc(pid)}">${nm}</a>` : `<b>${nm}</b>`}<span class="jm-bb-pk jm-bb-f-${bk}">${IKON_TEK[BK_IK[bk]].replace('class="jm-ikt"', 'class="jm-ikt jm-ikt-s"')}<span>${esc(label("beranda.karbon.j.", bk))}</span></span></span></td><td class="jm-bb-tp">${kp ? `<img src="/img/provinsi/${esc(kp)}.png" width="18" height="18" alt="" loading="lazy" decoding="async">` : ""}<span>${esc(namaProv[kp] || "-")}</span></td><td class="jm-num">${esc(angka(x.kapasitas_mw))}</td><td class="jm-num"><b>${esc(angka(x.emisi_tco2e / 1e6, { desimal: 1 }))}</b></td></tr>`; };
+    const isiBody = () => [...rows].sort((p, q) => { const a = KOL[sc.k](p), b = KOL[sc.k](q); return (a < b ? -1 : a > b ? 1 : 0) * (sc.asc ? 1 : -1); }).slice((tampil.hal - 1) * SEL, tampil.hal * SEL).map(barisT).join("");
     const kepala = [["no", "c.no", ""], ["nama", "c.nama", ""], ["prov", "c.prov", ""], ["mw", "c.mw", "jm-num"], ["mt", "c.mt", "jm-num"]].map(([k, c]) => `<th scope="col" aria-sort="${sc.k === k ? (sc.asc ? "ascending" : "descending") : "none"}"><button type="button" class="jm-urut" data-k="${k}">${esc(t("beranda.karbon." + c))}</button></th>`).join("");
     const fakta = (n, l, est) => `<div><b>${esc(n)}</b><span>${esc(t(l))}${est ? ' <span class="jm-pil jm-pil-est">EST</span>' : ""}</span></div>`;
     const jenisAda = [...new Set(top.map(bahan))].filter((b) => BAHAN.has(b));
     const isi = `<div class="jm-bb-karbon-g"><div class="jm-bb-kol">
       <h4 class="jm-bb-h4">${esc(t("beranda.karbon.tabel"))}</h4><div class="jm-gulir jm-bb-tabel"><table class="jm-tabel"><thead><tr>${kepala}</tr></thead><tbody>${isiBody()}</tbody></table></div>
-      <button type="button" class="jm-bb-lebih-t" aria-expanded="false" data-buka="${esc(t("beranda.karbon.lainnya", { n: angka(top.length - SEL) }))}" data-tutup="${esc(t("beranda.karbon.ringkas"))}">${esc(t("beranda.karbon.lainnya", { n: angka(top.length - SEL) }))}</button></div>
+      <div class="jm-bb-pag">${paginasiHtml({ hal: 1, total: top.length, per: SEL, satuan: "jm.pag.u.proyek" })}</div></div>
       <div class="jm-bb-kol jm-bb-kanan"><div class="jm-bb-kpi"><div class="jm-bb-kpi-b"><b>${esc(angka(pct, { desimal: 0 }))}%</b><span>${esc(t("beranda.karbon.wawasan", { n: angka(top.length), total: angka(p.length) }))}</span></div><div class="jm-bb-kpi-f">${fakta(angka(p.length), "beranda.karbon.l.n")}${fakta(angka(jml(p, (x) => x.kapasitas_mw) / 1000, { desimal: 1 }), "beranda.karbon.l.gw")}${fakta(angka(tot / 1e6, { desimal: 1 }), "beranda.karbon.l.mt", 1)}</div></div>
       <div class="jm-bb-sc-w">${svg}<div class="jm-bb-tip" hidden></div></div>
       <div class="jm-bb-leg" role="list">${jenisAda.map((b) => `<span role="listitem"><i class="jm-bb-f-${b}"></i>${esc(label("beranda.karbon.j.", b))}</span>`).join("")}<span role="listitem"><i class="jm-bb-sc-abu"></i>${esc(t("beranda.karbon.leg.lain", { n: angka(p.length - 14) }))}</span><small>${esc(t("beranda.karbon.leg.label"))}</small></div></div></div>`;
@@ -309,8 +310,8 @@ async function karbon() {
     const buka = (g) => { const id = g?.dataset.p; if (id) location.href = "/p/" + encodeURIComponent(id); };
     el.onkeydown = (e) => { if (e.key === "Enter") buka(e.target.closest?.(".jm-bb-sc-g")); };
     el.onclick = (e) => {
-      const b = e.target.closest(".jm-bb-lebih-t");
-      if (b) { tampil.buka = b.getAttribute("aria-expanded") !== "true"; b.setAttribute("aria-expanded", String(tampil.buka)); b.textContent = tampil.buka ? b.dataset.tutup : b.dataset.buka; nanti(gambarUlang); return; }
+      const b = e.target.closest(".jm-bb-pag [data-hal]");
+      if (b) { if (!b.disabled) { tampil.hal = +b.dataset.hal; sorotHalaman(b, tampil.hal); nanti(() => { gambarUlang(); el.querySelector(".jm-bb-pag").innerHTML = paginasiHtml({ hal: tampil.hal, total: top.length, per: SEL, satuan: "jm.pag.u.proyek" }); }); } return; }
       const u = e.target.closest(".jm-urut"); if (u) { const k = u.dataset.k; sc.asc = sc.k === k ? !sc.asc : k !== "mw" && k !== "mt"; sc.k = k; u.closest("tr").querySelectorAll("th").forEach((th) => th.setAttribute("aria-sort", th === u.parentNode ? (sc.asc ? "ascending" : "descending") : "none")); nanti(gambarUlang); return; }
       buka(e.target.closest(".jm-bb-sc-g"));
     };

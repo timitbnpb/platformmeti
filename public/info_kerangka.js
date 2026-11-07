@@ -58,14 +58,14 @@ export function tabel(akar, { kolom, baris, per = 10, satuan = "jm.pag.u.data", 
   };
   const gambar = () => {
     const a = susun(), mulai = (st.hal - 1) * per;
-    const th = `<th class="jm-tengah" data-urut="tidak">${esc(tt("tabel.no"))}</th>` + kolom.map((c) => `<th aria-sort="${st.k === c.k ? (st.arah > 0 ? "ascending" : "descending") : "none"}"><button type="button" class="jm-urut" data-k="${esc(c.k)}">${esc(c.label)}</button></th>`).join("");
+    const th = `<th class="jm-tengah" data-urut="tidak">${esc(tt("tabel.no"))}</th>` + kolom.map((c) => `<th aria-sort="${st.k === c.k ? (st.arah > 0 ? "ascending" : "descending") : "none"}"><button type="button" class="jm-urut" data-kol="${esc(c.k)}">${esc(c.label)}</button></th>`).join("");
     const tr = a.slice(mulai, mulai + per).map((r, i) => `<tr><td class="jm-tengah" data-label="${esc(tt("tabel.no"))}">${num(mulai + i + 1)}</td>${kolom.map((c) => `<td data-label="${esc(c.label)}"${c.num ? ' class="jm-num"' : c.tengah ? ' class="jm-tengah"' : ""}>${c.f ? c.f(r) : esc(c.v(r) ?? "-")}</td>`).join("")}</tr>`).join("");
     akar.innerHTML = `<div class="jm-gulir"><table class="jm-tabel" data-urut="tidak" aria-label="${esc(label)}"><thead><tr>${th}</tr></thead><tbody>${tr}</tbody></table></div>${paginasiHtml({ hal: st.hal, total: a.length, per, satuan })}`;
   };
   akar.addEventListener("click", (e) => {
     const u = e.target.closest(".jm-urut"), h = e.target.closest("[data-hal]");
     if (u) {
-      const k = u.dataset.k; st.arah = st.k === k ? -st.arah : 1; st.k = k; st.hal = 1;
+      const k = u.dataset.kol; st.arah = st.k === k ? -st.arah : 1; st.k = k; st.hal = 1;
       for (const th of akar.querySelectorAll("th[aria-sort]")) th.setAttribute("aria-sort", th === u.parentElement ? (st.arah > 0 ? "ascending" : "descending") : "none");
       nanti(gambar);
     } else if (h && !h.disabled) {
@@ -115,3 +115,17 @@ export const lambang = (kode, ukuran = 18) => `<img class="inf-lb-kecil" src="/i
 /** Tooltip batang dipasang lewat title oleh analisis.js; di sini hanya pembantu bobot persen. */
 export const persen = (v, d = 1) => (v == null ? "-" : `${num(v, d)}%`);
 export const saatBahasa = (fn) => document.addEventListener("jm:bahasa", fn);
+
+/** Grafik garis satu seri dengan tooltip tiap titik (<title>) dan garis acuan putus-putus. titik: [{x, y, teks}]; ref: [{y, teks}]. */
+export function garisSvg({ titik, ref = [], lebar = 640, tinggi = 260, label = "" }) {
+  const W = Math.max(300, Math.round(lebar)), H = tinggi, L = 44, R = 16, T = 14, B = 28;
+  const xs = titik.map((p) => p.x), x0 = Math.min(...xs), x1 = Math.max(...xs);
+  const ym = Math.max(...titik.map((p) => p.y), ...ref.map((r) => r.y)) * 1.12 || 1;
+  const x = (v) => L + ((v - x0) / (x1 - x0 || 1)) * (W - L - R), y = (v) => T + (1 - v / ym) * (H - T - B);
+  const grid = [0, 1, 2, 3, 4].map((i) => { const v = (ym * i) / 4; return `<line class="gr" x1="${L}" x2="${W - R}" y1="${y(v).toFixed(1)}" y2="${y(v).toFixed(1)}"/><text x="${L - 6}" y="${(y(v) + 4).toFixed(1)}" text-anchor="end">${esc(num(v, 0))}</text>`; }).join("");
+  const sb = [x0, Math.round((x0 + x1) / 2), x1].map((v) => `<text x="${x(v).toFixed(1)}" y="${H - 8}" text-anchor="middle">${v}</text>`).join("");
+  const garis = `<polyline class="g g1" points="${titik.map((p) => `${x(p.x).toFixed(1)},${y(p.y).toFixed(1)}`).join(" ")}"/>`;
+  const titikEl = titik.map((p) => `<circle class="t1" cx="${x(p.x).toFixed(1)}" cy="${y(p.y).toFixed(1)}" r="5"><title>${esc(p.teks)}</title></circle>`).join("");
+  const acuan = ref.map((r) => `<line class="ref" x1="${L}" x2="${W - R}" y1="${y(r.y).toFixed(1)}" y2="${y(r.y).toFixed(1)}"><title>${esc(r.teks)}</title></line><text x="${W - R}" y="${(y(r.y) - 5).toFixed(1)}" text-anchor="end">${esc(r.teks)}</text>`).join("");
+  return `<svg class="inf-garis" viewBox="0 0 ${W} ${H}" role="img" aria-label="${esc(label)}" focusable="false">${grid}${sb}${acuan}${garis}${titikEl}</svg>`;
+}

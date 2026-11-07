@@ -95,7 +95,7 @@ function garisTip(labels, seri, { d = 0, satuan = "", label = "" } = {}) {
   const f = (v) => num(v, d);
   let g = [0, 1 / 3, 2 / 3, 1].map((q) => `<line class="jm-gf-grid" x1="${Lk}" x2="${W - Rk}" y1="${Y(mx * q).toFixed(1)}" y2="${Y(mx * q).toFixed(1)}"/><text class="jm-gf-t2" x="${Lk - 6}" y="${(Y(mx * q) + 4).toFixed(1)}" text-anchor="end" font-size="${fs - 1}">${esc(f(mx * q))}</text>`).join("");
   const langkah = Math.max(1, Math.ceil(n / (M ? 5 : 8)));
-  g += labels.map((l, i) => (i % langkah === 0 || i === n - 1 ? `<text class="jm-gf-t2" x="${X(i).toFixed(1)}" y="${B + 16}" text-anchor="${i === n - 1 ? "end" : "middle"}" font-size="${fs}">${esc(l)}</text>` : "")).join("");
+  g += labels.map((l, i) => ((i % langkah === 0 && n - 1 - i >= langkah) || i === n - 1 ? `<text class="jm-gf-t2" x="${X(i).toFixed(1)}" y="${B + 16}" text-anchor="${i === n - 1 ? "end" : "middle"}" font-size="${fs}">${esc(l)}</text>` : "")).join("");
   const ujung = [];
   for (const s of [...seri].sort((a, b) => !!a.sorot - !!b.sorot)) {
     const p = s.v.map((v, i) => (v == null ? null : [X(i), Y(v), v, i])).filter(Boolean);
@@ -143,8 +143,8 @@ function olah() {
     const g = tg(c.target_id), dok = g.dokumen.startsWith("ruptl") ? "RUPTL" : g.dokumen.startsWith("rukn") ? "RUKN" : "KEN";
     const proksi = typeof c.per_tahun_mw === "object";
     const per = proksi ? c.per_tahun_mw.dasar : c.per_tahun_mw;
-    const awal = c.tahun_awal ?? T.meta.tahun_dasar;
-    return { id: c.target_id, nama: `${dok} ${g.tahun_target}`, jenis: g.ukuran.includes("bauran") ? "bauran" : "kapasitas", awal, akhir: g.tahun_target, per, lo: proksi ? c.per_tahun_mw.tinggi : null, hi: proksi ? c.per_tahun_mw.rendah : null, kali: per / T.meta.laju_historis_mw_per_tahun_2015_2024, proksi, doc: g.dokumen, halaman: g.halaman };
+    const awal = c.tahun_awal ?? T.meta.tahun_dasar, akhir = g.tahun_target ?? c.tahun_target;
+    return { id: c.target_id, nama: `${dok} ${akhir}`, jenis: g.ukuran.includes("bauran") ? "bauran" : "kapasitas", awal, akhir, per, lo: proksi ? c.per_tahun_mw.tinggi : null, hi: proksi ? c.per_tahun_mw.rendah : null, kali: per / T.meta.laju_historis_mw_per_tahun_2015_2024, proksi, doc: g.dokumen, halaman: g.halaman };
   }).sort((a, b) => a.akhir - b.akhir || a.nama.localeCompare(b.nama));
   D.tambah = H.tambahanTahunan(T.kapasitas_ebt);
   D.laju = H.lajuRata(T.kapasitas_ebt);
@@ -152,7 +152,7 @@ function olah() {
   D.rukn = tg("rukn-2025-pembangkitan").seri;
   D.real = Object.fromEntries(T.realisasi.pembangkitan_ebt_persen.map((r) => [r.tahun, r.nilai]));
   D.sis = D.tr.sistem.map((s) => ({
-    ...s, n0: s.beban_puncak_neto_mw[0], n9: s.beban_puncak_neto_mw[9], cagr: H.cagr(s.beban_puncak_neto_mw[0], s.beban_puncak_neto_mw[9], 9),
+    ...s, nama_penuh: s.nama, nama: s.id === "sumatera" ? "Sumatera" : s.nama, n0: s.beban_puncak_neto_mw[0], n9: s.beban_puncak_neto_mw[9], cagr: H.cagr(s.beban_puncak_neto_mw[0], s.beban_puncak_neto_mw[9], 9),
     rm0: s.reserve_margin_persen[0], rm9: s.reserve_margin_persen[9], ebt0: s.bauran_ebt_persen[0], ebt9: s.bauran_ebt_persen[9], bb9: s.bauran_batubara_persen[9],
     e0: H.intensitasEmisi(s, 0), e9: H.intensitasEmisi(s, 9),
   }));
@@ -164,7 +164,8 @@ function olah() {
 function tCelah() {
   const r = D.celahBaris, utama = r.find((x) => x.id === "ruptl-2034-kapasitas");
   const lbl = (x) => `${x.nama} ${t("tr.jenis." + x.jenis)}${x.proksi ? " " + t("tr.proksi") : ""}`;
-  const chart = batang(r.map((x) => ({ label: lbl(x), v: x.per, teks: `${mw(x.per)} MW`, sorot: x === utama })), { ref: D.target.meta.laju_historis_mw_per_tahun_2015_2024, teksRef: t("tr.celah.laju", { mw: num(D.target.meta.laju_historis_mw_per_tahun_2015_2024) }), label: t("tr.celah.grafik") });
+  const pendek = (x) => x.nama;
+  const chart = batang(r.map((x) => ({ label: pendek(x), v: x.per, teks: mw(x.per), sorot: x === utama })), { ref: D.target.meta.laju_historis_mw_per_tahun_2015_2024, teksRef: num(D.target.meta.laju_historis_mw_per_tahun_2015_2024), label: t("tr.celah.grafik") });
   const tab = daftarTabel("celah", [
     { k: "n", l: "tr.c.target", v: (x) => lbl(x), f: (x) => esc(lbl(x)) },
     { k: "p", l: "tr.c.periode", v: (x) => x.akhir, f: (x) => `${x.awal}-${x.akhir}`, num: true },
@@ -175,7 +176,7 @@ function tCelah() {
   ], r, 6);
   return ex("celah", "kompas", "celah", {
     judul: hlHtml("tr.celah.judul", num(utama.per), { kali: num(utama.kali, 1) }) + EST(),
-    isi: chart + `<p class="jm-bantu">${esc(t("tr.celah.catatan"))}</p>` + tab, sumber: srcTarget("ruptl-2025", "target.json celah") + srcTarget("rukn-2025", "Tabel 8 hlm 177"), csv: true,
+    isi: chart + `<p class="jm-bantu">${esc(t("tr.celah.laju", { mw: num(D.target.meta.laju_historis_mw_per_tahun_2015_2024) }))} ${esc(t("tr.celah.catatan"))}</p>` + tab, sumber: srcTarget("ruptl-2025", "target.json celah") + srcTarget("rukn-2025", "Tabel 8 hlm 177"), csv: true,
     kaki: lihatSemuaHtml("/program", t("tr.lihat.program")),
   });
 }
@@ -311,7 +312,7 @@ function panelSistem() {
   const s = D.sisById[ST.sistem], el = $("trPanel");
   if (!el || !s) return;
   const baris = (k, v) => `<div><dt>${esc(t(k))}</dt><dd>${v}</dd></div>`;
-  el.innerHTML = `<h3 class="jm-tr-ph">${ikon("peta", 16)}<span>${esc(s.nama)}</span></h3><div class="jm-tr-pb"><dl>
+  el.innerHTML = `<h3 class="jm-tr-ph">${ikon("peta", 16)}<span>${esc(s.nama_penuh)}</span></h3><div class="jm-tr-pb"><dl>
     ${baris("tr.p.puncak", `${mw(s.n0)} - ${mw(s.n9)} MW`)}${baris("tr.p.cagr", pct(s.cagr))}${baris("tr.p.rm", `${pct(s.rm0)} - ${pct(s.rm9)}`)}
     ${baris("tr.p.ebt", `${pct(s.ebt0, 0)} - ${pct(s.ebt9, 0)}`)}${baris("tr.p.batubara", `${pct(s.bauran_batubara_persen[0], 0)} - ${pct(s.bb9, 0)}`)}
     ${baris("tr.p.emisi", s.e0 == null ? "-" : `${num(s.e0, 2)} - ${num(s.e9, 2)}`)}</dl><p class="jm-bantu">${esc(t("tr.p.sumber", { tabel: s.tabel_ruptl }))}</p></div>`;
@@ -335,7 +336,7 @@ function tSistem() {
 }
 function tBeban() {
   const b = D.tr.beban_puncak_nasional.baris, a = b[0], z = b.at(-1);
-  const items = b.map((x) => ({ label: String(x.tahun), v: x.beban_puncak_mw, sorot: x === z, tip: `${x.tahun}: ${num(x.beban_puncak_mw)} MW${x === z ? " (" + t("tr.sd_okt") + ")" : ""}` }));
+  const items = rapikan(b.map((x) => ({ label: String(x.tahun), v: x.beban_puncak_mw / 1000, sorot: x === z, tip: `${x.tahun}: ${num(x.beban_puncak_mw)} MW${x === z ? " (" + t("tr.sd_okt") + ")" : ""}` })));
   const w = D.stat.wilayah_pln;
   const tab = daftarTabel("wilayah", [
     { k: "n", l: "tr.c.wilayah", v: (x) => x.nama, f: (x) => esc(x.nama) },
@@ -345,7 +346,7 @@ function tBeban() {
   ], w, 8);
   return ex("beban", "analisis", "beban", {
     judul: hlHtml("tr.beban.judul", num(H.cagr(a.beban_puncak_mw, z.beban_puncak_mw, 9), 1) + "%", { a: num(a.beban_puncak_mw), z: num(z.beban_puncak_mw) }) + EST(),
-    isi: kolom(items, { label: t("tr.beban.grafik") }) + `<p class="jm-bantu">${esc(t("tr.beban.catatan"))}</p>` + tab,
+    isi: `<p class="jm-bantu">${esc(t("tr.beban.unit"))}</p>` + kolom(items, { d: 1, label: t("tr.beban.grafik") }) + `<p class="jm-bantu">${esc(t("tr.beban.catatan"))}</p>` + tab,
     sumber: srcRuptl("Tabel 4.48") + srcStat(), csv: true,
   });
 }
@@ -378,11 +379,11 @@ function tKapasitas() {
 function tVre() {
   const r = H.serapVre(D.ruptl.baris, D.tr.sistem), tot = (k) => jml(r.map((x) => x[k]));
   const nm = { sum: t("tr.reg.sum"), jmb: t("tr.reg.jmb"), kal: t("tr.reg.kal"), smpnt: t("tr.reg.smpnt") };
-  const chart = dumbbell(r.map((x) => ({ label: nm[x.regional], a: x.vre_mw, b: x.bess_mw, tekA: `${mw(x.vre_mw)} MW`, tekB: `${mw(x.bess_mw)} MW` })), { kepA: t("tr.vre.a"), kepB: t("tr.vre.b"), label: t("tr.vre.grafik") });
+  const chart = dumbbell(r.map((x) => ({ label: nm[x.regional], a: x.vre_mw, b: x.bess_mw, tekA: mw(x.vre_mw), tekB: mw(x.bess_mw) })), { kepA: t("tr.vre.a"), kepB: t("tr.vre.b"), label: t("tr.vre.grafik") });
   const iesr = D.tr.pembanding_iesr.find((a) => a.id === "ieto-005");
   return ex("vre", "tek-listrik", "vre", {
     judul: hlHtml("tr.vre.judul", mw(tot("bess_mw")) + " MW", { vre: mw(tot("vre_mw")) }),
-    isi: chart + `<p class="jm-bantu">${esc(t("tr.vre.catatan"))}</p>` + (iesr ? `<p class="jm-tr-fakta">${ikon("info", 16)}<span>${esc(t("tr.vre.iesr", { v: iesr.nilai, y: iesr.tahun_data }))}</span></p>` : ""),
+    isi: `<p class="jm-bantu">${esc(t("tr.vre.unit"))}</p>` + chart + `<p class="jm-bantu">${esc(t("tr.vre.catatan"))}</p>` + (iesr ? `<p class="jm-tr-fakta">${ikon("info", 16)}<span>${esc(t("tr.vre.iesr", { v: iesr.nilai, y: iesr.tahun_data }))}</span></p>` : ""),
     sumber: sumberLipat([{ sumber: D.ruptl.sumber[0].judul, url: D.ruptl.sumber[0].url, tahun: D.ruptl.sumber[0].tahun, tanggal: D.ruptl.meta.diperbarui }]) + srcIesr(),
   });
 }
@@ -392,24 +393,26 @@ const srcIesr = () => { const s = D.tr.sumber[1]; return sumberLipat([{ sumber: 
 const bursa = () => D.karbon.baris.filter((b) => b.kelompok === "bursa_karbon").sort((a, z) => a.periode.localeCompare(z.periode));
 const BLN = (p) => { const [y, m] = p.split("-"); return tanggal(`${y}-${m}-01`).replace(/^1 /, ""); };
 const BM = {
-  volume: { f: (b) => b.volume_tco2e, d: 0, fmt: (v) => `${num(v)} tCO2e` },
-  nilai: { f: (b) => b.nilai_idr / 1e6, d: 1, fmt: (v) => `Rp${num(v, 1)} ${t("tr.juta")}` },
-  harga: { f: (b) => b.harga_rata_idr_per_tco2e, d: 0, fmt: (v) => rp(v) },
+  volume: { f: (b) => b.volume_tco2e / 1000, d: 1, tip: (b) => `${num(b.volume_tco2e)} tCO2e` },
+  nilai: { f: (b) => b.nilai_idr / 1e9, d: 1, tip: (b) => `Rp${num(b.nilai_idr / 1e6, 1)} ${t("tr.juta")}` },
+  harga: { f: (b) => b.harga_rata_idr_per_tco2e / 1000, d: 1, tip: (b) => rp(b.harga_rata_idr_per_tco2e) },
 };
+/* label sumbu kolom: kosongkan label yang bertabrakan dengan label terakhir (grafik.js menampilkan tiap langkah dan yang terakhir) */
+const rapikan = (items) => { const n = items.length, lk = Math.max(1, Math.ceil(n / (innerWidth < 640 ? 6 : 10))); return items.map((x, i) => (i % lk === 0 && i !== n - 1 && n - 1 - i < lk ? { ...x, label: "" } : x)); };
+const itemsBursa = (b) => { const m = BM[ST.bursa]; return rapikan(b.map((x) => ({ label: BLN(x.periode), v: m.f(x), sorot: x === b.at(-1), tip: `${BLN(x.periode)}: ${m.tip(x)}` }))); };
 function tBursa() {
   const b = bursa(), z = b.at(-1), m = BM[ST.bursa];
-  const items = b.map((x) => ({ label: BLN(x.periode), v: m.f(x), sorot: x === z, tip: `${BLN(x.periode)}: ${m.fmt(m.f(x))}` }));
   const tab = daftarTabel("bursa", [
     { k: "p", l: "tr.c.periode_b", v: (x) => x.periode, f: (x) => esc(BLN(x.periode)) },
     { k: "v", l: "tr.c.volume", v: (x) => x.volume_tco2e, f: (x) => mw(x.volume_tco2e), num: true },
-    { k: "n", l: "tr.c.nilai", v: (x) => x.nilai_idr, f: (x) => rp(x.nilai_idr), num: true },
+    { k: "n", l: "tr.c.nilai_idr", v: (x) => x.nilai_idr, f: (x) => rp(x.nilai_idr), num: true },
     { k: "h", l: "tr.c.harga", v: (x) => x.harga_rata_idr_per_tco2e, f: (x) => rp(x.harga_rata_idr_per_tco2e), num: true, est: true },
     { k: "f", l: "tr.c.frekuensi", v: (x) => x.frekuensi, f: (x) => mw(x.frekuensi), num: true },
     { k: "t", l: "tr.c.peserta", v: (x) => x.peserta, f: (x) => mw(x.peserta), num: true },
   ], [...b].reverse(), 7);
   return ex("bursa", "kartu", "bursa", {
     judul: hlHtml("tr.bursa.judul", num(z.volume_ytd_tco2e), { bln: BLN(z.periode), nilai: num(z.nilai_ytd_idr / 1e9, 2), harga: rp(z.harga_rata_idr_per_tco2e) }),
-    isi: seg("bursa", [["volume", "tr.b.volume", "grafik"], ["nilai", "tr.b.nilai", "kartu"], ["harga", "tr.b.harga", "tahun"]], ST.bursa) + `<div id="trBursa">${kolom(items, { d: m.d, label: t("tr.bursa.grafik") })}</div><p class="jm-bantu">${esc(t("tr.bursa.catatan"))}</p>` + tab,
+    isi: seg("bursa", [["volume", "tr.b.volume", "grafik"], ["nilai", "tr.b.nilai", "kartu"], ["harga", "tr.b.harga", "tahun"]], ST.bursa) + `<p class="jm-bantu" id="trBursaUnit">${esc(t("tr.b.unit_" + ST.bursa))}</p><div id="trBursa">${kolom(itemsBursa(b), { d: m.d, label: t("tr.bursa.grafik") })}</div><p class="jm-bantu">${esc(t("tr.bursa.catatan"))}</p>` + tab,
     sumber: srcKarbon("s-idxcarbon"), csv: true,
   });
 }
@@ -418,7 +421,7 @@ function tEmisi() {
   const chart = dumbbell(s.map((x) => ({ label: x.nama, a: x.e0, b: x.e9 ?? 0, tekA: num(x.e0, 2), tekB: num(x.e9 ?? 0, 2) })), { kepA: "2025", kepB: "2034", d: 2, label: t("tr.emisi.grafik") });
   return ex("emisi", "kajian", "emisi", {
     judul: hlHtml("tr.emisi.judul", num(top.e0, 2), { sistem: top.nama }) + EST(),
-    isi: chart + `<p class="jm-bantu">${esc(t("tr.emisi.catatan"))}</p>`, sumber: srcRuptl("Tabel 5.82-5.122, baris Emisi GRK dan Produksi"),
+    isi: chart + `<p class="jm-bantu">${esc(t("tr.emisi.catatan"))}</p>`, sumber: srcRuptl("Tabel 5.82-5.122 (Emisi GRK, Produksi)"),
   });
 }
 function tSrn() {
@@ -441,7 +444,7 @@ function tSrn() {
 function tKredit() {
   const p = D.kp.baris, dit = jml(p.map((x) => x.kredit.diterbitkan)), pen = jml(p.map((x) => x.kredit.dipensiunkan));
   const tek = [...new Set(p.map((x) => x.teknologi))].map((k) => { const a = p.filter((x) => x.teknologi === k); return { k, a: jml(a.map((x) => x.kredit.dipensiunkan)), b: jml(a.map((x) => x.kredit.diterbitkan)) }; }).sort((x, z) => z.b - x.b);
-  const chart = dumbbell(tek.map((x) => ({ label: t("tr.tk." + x.k), a: x.a / 1e6, b: x.b / 1e6, tekA: `${num(x.a / 1e6, 2)} ${t("tr.juta")}`, tekB: `${num(x.b / 1e6, 2)} ${t("tr.juta")}` })), { kepA: t("tr.kr.pensiun"), kepB: t("tr.kr.terbit"), d: 1, label: t("tr.kr.grafik") });
+  const chart = dumbbell(tek.map((x) => ({ label: t("tr.tk." + x.k), a: x.a / 1e6, b: x.b / 1e6, tekA: num(x.a / 1e6, 2), tekB: num(x.b / 1e6, 2) })), { kepA: t("tr.kr.pensiun"), kepB: t("tr.kr.terbit"), d: 1, label: t("tr.kr.grafik") });
   const tab = daftarTabel("kredit", [
     { k: "n", l: "tr.c.proyek", v: (x) => x.nama, f: (x) => `<a href="${esc(x.sumber_url)}" target="_blank" rel="noopener noreferrer">${esc(x.nama)}</a>` },
     { k: "r", l: "tr.c.registri", v: (x) => x.registri, f: (x) => esc(x.registri) },
@@ -454,7 +457,7 @@ function tKredit() {
   ], p, 8);
   return ex("kredit", "bintang", "kredit", {
     judul: hlHtml("tr.kr.judul", num(dit / 1e6, 1), { n: p.length, pen: num(pen / 1e6, 1) }),
-    isi: chart + `<p class="jm-bantu">${esc(t("tr.kr.catatan"))}</p>` + tab,
+    isi: `<p class="jm-bantu">${esc(t("tr.kr.unit"))}</p>` + chart + `<p class="jm-bantu">${esc(t("tr.kr.catatan"))}</p>` + tab,
     sumber: sumberLipat(D.kp.sumber.map((s) => ({ sumber: s.judul, url: s.url, tahun: s.tahun, tanggal: D.kp.dibangun_pada }))), csv: true,
   });
 }
@@ -487,7 +490,7 @@ function gambar() {
     { ikon: "kartu", nilai: num(b.harga_rata_idr_per_tco2e), satuan: "Rp/tCO2e", label: t("tr.u3", { bln: BLN(b.periode) }) },
   ] });
   TB.clear();
-  $("isi").innerHTML = `<nav class="jm-tr-nav" aria-label="${esc(t("tr.nav"))}">${tabTautan([{ href: "#target", ikon: "analisis", label: t("tr.g.target") }, { href: "#sistem", ikon: "rantai", label: t("tr.g.sistem") }, { href: "#karbon", ikon: "tek-bio", label: t("tr.g.karbon") }])}</nav>
+  $("isi").innerHTML = `<nav class="jm-tr-nav" aria-label="${esc(t("tr.nav"))}">${tabTautan([{ href: "#target", ikon: "analisis", label: t("tr.n.target") }, { href: "#sistem", ikon: "rantai", label: t("tr.n.sistem") }, { href: "#karbon", ikon: "tek-bio", label: t("tr.n.karbon") }])}</nav>
     <div id="target">${grup("target", "analisis", "target", [tCelah(), tTambah(), tSkenario(), tRukn(), tDekomp(), tPapan()])}</div>
     <div id="sistem">${grup("sistem", "rantai", "sistem", [tPeta(), tSistem(), tBeban(), tKapasitas(), tVre()])}</div>
     <div id="karbon">${grup("karbon", "tek-bio", "karbon", [tBursa(), tEmisi(), tSrn(), tKredit()])}</div>
@@ -506,7 +509,7 @@ function pasang() {
       for (const x of sg.parentElement.children) x.setAttribute("aria-selected", String(x === sg));
       ST[kunci] = sg.dataset.v;
       nanti(() => {
-        if (kunci === "bursa") { const b = bursa(), m = BM[ST.bursa]; tulis("trBursa", kolom(b.map((x) => ({ label: BLN(x.periode), v: m.f(x), sorot: x === b.at(-1), tip: `${BLN(x.periode)}: ${m.fmt(m.f(x))}` })), { d: m.d, label: t("tr.bursa.grafik") })); return; }
+        if (kunci === "bursa") { tulis("trBursa", kolom(itemsBursa(bursa()), { d: BM[ST.bursa].d, label: t("tr.bursa.grafik") })); $("trBursaUnit").textContent = t("tr.b.unit_" + ST.bursa); return; }
         const tmp = document.createElement("div"); tmp.innerHTML = tPeta();
         $("peta").querySelector(".jm-ex-j").innerHTML = tmp.querySelector(".jm-ex-j").innerHTML;
         $("trSkala").innerHTML = tmp.querySelector("#trSkala").innerHTML;

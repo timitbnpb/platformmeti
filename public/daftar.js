@@ -1,6 +1,6 @@
 /* /daftar (terbuka untuk tamu): formulir bertahap pendaftaran anggota. /daftar/lacak/<token>: status, iuran, rekening, unggah bukti.
    Tanpa NIK/KTP dan data keuangan. Token dikirim di BADAN permintaan. Teks lewat kamus i18n. */
-import { t, angka, tanggalDariUnix } from "/i18n.js";
+import { t, angka, tanggal, tanggalDariUnix, bahasa } from "/i18n.js";
 import { api, galatTeks, esc, pesanHtml, ikon } from "/inti/umum.js";
 import { mulaiHalaman } from "/inti/kepala.js";
 import { pilihHtml } from "/inti/komponen.js";
@@ -11,7 +11,13 @@ import { IKON_TEK } from "/inti/ikon_tek.js";
 await mulaiHalaman();
 const $ = (id) => document.getElementById(id);
 const isi = $("dft-isi");
-const JENIS = [["individu", "orang"], ["organisasi", "gedung"], ["mahasiswa", "wisuda"]];
+// Tarif resmi bersumber (public/data/keanggotaan.json): 6 kategori, manfaat, dokumen.
+const D = await fetch("/data/keanggotaan.json").then((r) => (r.ok ? r.json() : null)).catch(() => null) || { kategori: [], manfaat: [], dokumen: [], sumber: {} };
+const KAT = D.kategori, kat = (k) => KAT.find((x) => x.kode === k);
+const L = (o) => (o && (o[bahasa()] ?? o.id)) || "";
+const IK_LANGKAH = ["topik", "ubah", "kartu", "unduh", "perisai"];
+const ukuran = (b) => (b >= 1048576 ? angka(b / 1048576, { desimal: 1 }) + " MB" : angka(Math.round(b / 1024)) + " KB");
+const centang = '<svg class="dft-cek" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>';
 const TEK = ["surya", "bayu", "hidro", "panas-bumi", "bioenergi", "biomassa-sampah", "nuklir", "penyimpanan"];
 const SEKTOR = Array.from({ length: 14 }, (_, i) => i + 1);
 const RE_SUREL = /^[^\s@]{1,64}@[^\s@.]+(\.[^\s@.]+)+$/;
@@ -24,7 +30,7 @@ const pesan = (jenis, teks) => { const p = $("dft-pesan"); if (p) p.innerHTML = 
 const rupiah = (n) => "Rp " + angka(n);
 
 /* ======================================== formulir bertahap ======================================== */
-const S = { langkah: 1, jenis: "individu", kepakaran: new Set() };
+const S = { langkah: 1, jenis: "ngo", kepakaran: new Set() };
 const LANGKAH = ["dft.l1", "dft.l2", "dft.l3", "dft.l4"];
 
 function bentuk() {
@@ -33,7 +39,7 @@ function bentuk() {
   <form class="dft-form" id="dft-form" novalidate>
     <div id="dft-pesan" aria-live="polite"></div>
     <fieldset class="dft-set" data-langkah="1"><legend ${tx("dft.l1.j")}>${esc(t("dft.l1.j"))}</legend>
-      <div class="dft-jenis">${JENIS.map(([k, ik], i) => `<label class="dft-ubin"><input type="radio" name="jenis" value="${k}"${i === 0 ? " checked" : ""}>${ikon(ik, 24)}<span class="dft-ubin-teks"><b ${tx("dft.jenis." + k)}>${esc(t("dft.jenis." + k))}</b><small ${tx("dft.jenis." + k + ".d")}>${esc(t("dft.jenis." + k + ".d"))}</small></span></label>`).join("")}</div>
+      <div class="dft-jenis">${KAT.map((k) => `<label class="dft-ubin"><input type="radio" name="jenis" value="${k.kode}"${k.kode === S.jenis ? " checked" : ""}><span class="dft-no">${esc(String(k.no).padStart(2, "0"))}</span><span class="dft-ubin-teks"><b>${esc(L(k.nama))}</b><small>${esc(t("dft.orang", { n: k.perwakilan }))}, ${esc(rupiah(k.iuran_awal))}</small></span></label>`).join("")}</div>
     </fieldset>
     <fieldset class="dft-set" data-langkah="2" hidden><legend ${tx("dft.l2.j")}>${esc(t("dft.l2.j"))}</legend>
       <div class="dft-dua">${medan("nama", "dft.nama", { auto: "name", perlu: true })}${medan("gelar", "dft.gelar", { maks: 40 })}</div>
@@ -73,12 +79,12 @@ function bentuk() {
   $("dft-lanjut").addEventListener("click", () => { if (valid(S.langkah)) ke(S.langkah + 1); });
   $("dft-balik").addEventListener("click", () => ke(S.langkah - 1));
   f.addEventListener("submit", (e) => { e.preventDefault(); if (valid(4)) kirim(); });
-  org(); ke(1);
+  org(); ke(1); S.siap = true;
 }
 function org() {
-  $("dft-org").hidden = S.jenis !== "organisasi";
+  $("dft-org").hidden = !kat(S.jenis)?.organisasi;
   const lab = document.querySelector('label[for="organisasi"]');
-  const kunci = S.jenis === "mahasiswa" ? "dft.kampus" : "dft.organisasi";
+  const kunci = S.jenis === "pelajar" ? "dft.kampus" : "dft.organisasi";
   lab.textContent = t(kunci); lab.setAttribute("data-i18n", kunci);
 }
 function mw() {
@@ -94,7 +100,7 @@ function ke(n) {
   $("dft-lanjut").hidden = S.langkah === 4;
   $("dft-kirim").hidden = S.langkah !== 4;
   pesan("galat", "");
-  isi.querySelector(".dft-langkah").scrollIntoView({ block: "nearest" });
+  if (S.siap) isi.querySelector(".dft-langkah").scrollIntoView({ block: "nearest" });
 }
 const nilai = (id) => ($(id)?.value || "").trim();
 function valid(n) {
@@ -103,7 +109,7 @@ function valid(n) {
     if (nilai("nama").length < 2) salah = "dft.salah.nama";
     else if (!RE_SUREL.test(nilai("surel"))) salah = "dft.salah.surel";
     else if (!/^\+?\d{6,18}$/.test(nilai("hp").replace(/[\s().-]/g, ""))) salah = "dft.salah.hp";
-  } else if (n === 3 && S.jenis === "organisasi" && (!nilai("badan_nama") || !nilai("pj_nama") || !nilai("pj_kontak"))) salah = "dft.salah.org";
+  } else if (n === 3 && kat(S.jenis)?.organisasi && (!nilai("badan_nama") || !nilai("pj_nama") || !nilai("pj_kontak"))) salah = "dft.salah.org";
   else if (n === 4) {
     if (nilai("alasan").length < 10) salah = "dft.salah.alasan";
     else if (!$("setuju").checked) salah = "dft.salah.setuju";
@@ -119,7 +125,7 @@ async function kirim() {
   const badan = { jenis: S.jenis, nama: nilai("nama"), gelar: nol(nilai("gelar")), surel: nilai("surel"), hp: nilai("hp"), jabatan: nol(nilai("jabatan")), organisasi: nol(nilai("organisasi")), kota: nol(nilai("kota")),
     prov: nol($("prov").value), pendidikan: nol(nilai("pendidikan")), kepakaran: [...isi.querySelectorAll('input[name="kepakaran"]:checked')].map((x) => x.value), pengalaman: nol(nilai("pengalaman")), tautan: nol(nilai("tautan")),
     alasan: nilai("alasan"), setuju: true, situs_web: $("situs_web").value };
-  if (S.jenis === "organisasi") Object.assign(badan, { badan_nama: nilai("badan_nama"), badan_sektor: nol($("badan_sektor").value), badan_situs: nol(nilai("badan_situs")), badan_alamat: nol(nilai("badan_alamat")), pj_nama: nilai("pj_nama"), pj_kontak: nilai("pj_kontak") });
+  if (kat(S.jenis)?.organisasi) Object.assign(badan, { badan_nama: nilai("badan_nama"), badan_sektor: nol($("badan_sektor").value), badan_situs: nol(nilai("badan_situs")), badan_alamat: nol(nilai("badan_alamat")), pj_nama: nilai("pj_nama"), pj_kontak: nilai("pj_kontak") });
   try {
     const { token } = await api("/api/daftar", { metode: "POST", badan });
     const berkas = $("foto").files[0];
@@ -155,7 +161,7 @@ async function lacak(token) {
       <p class="dft-kecil"><span ${tx("dft.dibuat")}>${esc(t("dft.dibuat"))}</span> ${esc(tanggalDariUnix(p.dibuat))}</p></section>
     <section class="dft-blok"><h2>${ikon("kartu", 20)}<span ${tx("dft.iuran")}>${esc(t("dft.iuran"))}</span></h2>
       <p class="dft-besar">${p.iuran ? esc(rupiah(p.iuran)) : esc(t("dft.iuran.kosong"))} ${pil("dft.bayar." + p.bayar, by)}</p>
-      <p class="dft-kecil">${esc(t("dft.jenis." + p.jenis))}</p>
+      <p class="dft-kecil">${esc(L(kat(p.jenis)?.nama))}${kat(p.jenis)?.iuran_tahunan ? `, ${esc(t("dft.tahunan.nilai", { n: rupiah(kat(p.jenis).iuran_tahunan) }))}` : ""}</p>
       ${p.status === "ditolak" ? "" : rek}
       ${bisaBayar ? `<div id="dft-pesan" aria-live="polite"></div>${unggahHtml({ id: "bukti", terima: "image/jpeg,image/png,image/webp,application/pdf", maks: 5 * 1024 * 1024, bantu: t("dft.bukti.bantu", { n: d.bukti_maks }), ikon: "unduh" })}
         <div class="dft-aksi"><button type="button" class="jm-tbl jm-tbl-utama" id="dft-unggah" disabled>${ikon("unduh", 18)}<span ${tx("dft.bukti.kirim")}>${esc(t("dft.bukti.kirim"))}</span></button>${d.online ? `<button type="button" class="jm-tbl" id="dft-online">${ikon("kartu", 18)}<span ${tx("dft.online")}>${esc(t("dft.online"))}</span></button>` : ""}</div>` : ""}
@@ -186,5 +192,71 @@ async function lacak(token) {
   });
 }
 
+/* ======================================== halaman pilih kategori ======================================== */
+const KUNCI_LANDING = { atas: "dft-atas", bawah: "dft-bawah" };
+const P = { kat: "ngo" };
+const rupiahKat = (n) => (n == null ? "-" : rupiah(n));
+function detail(k) {
+  const ada = new Set(k.manfaat), daftar = [L(k.hak_wakil), ...D.manfaat.filter((m) => ada.has(m.kunci)).map((m) => L(m))];
+  return `<article class="dft-detail" aria-label="${esc(L(k.nama))}">
+    <header>${k.rekomendasi ? `<span class="jm-pil jm-pil-ok">${esc(t("dft.rek"))}</span>` : ""}<h3>${esc(L(k.nama))}</h3><p>${esc(L(k.deskripsi))}</p></header>
+    <div class="dft-harga"><small>${esc(t("dft.awal"))}</small><b>${esc(rupiah(k.iuran_awal))}</b>${k.iuran_tahunan ? `<span>${esc(t("dft.tahunan.nilai", { n: rupiah(k.iuran_tahunan) }))}</span>` : ""}</div>
+    <h4>${esc(t("dft.dapat"))}</h4>
+    <ul class="dft-dapat">${daftar.map((x) => `<li>${centang}<span>${esc(x)}</span></li>`).join("")}</ul>
+    <p class="dft-cocok">${ikon("orang", 18)}<span><b>${esc(t("dft.cocok"))}</b> ${esc(t("dft.orang", { n: k.perwakilan }))}</span></p>
+    <p class="dft-kecil">${esc(t("dft.cocok.d"))}</p>
+    <button type="button" class="jm-tbl jm-tbl-utama" data-daftar="${esc(k.kode)}">${ikon("centang", 18)}<span>${esc(t("dft.daftar"))}</span></button></article>`;
+}
+function pilih() {
+  const sel = kat(P.kat);
+  return `<section class="dft-bagian" aria-labelledby="dft-pilih-j"><header class="dft-bagian-kepala"><p class="jm-kh-ey">${ikon("kartu", 16)}<span ${tx("dft.pilih.ey")}>${esc(t("dft.pilih.ey"))}</span></p><h2 id="dft-pilih-j" ${tx("dft.pilih.j")}>${esc(t("dft.pilih.j"))}</h2><p ${tx("dft.pilih.d")}>${esc(t("dft.pilih.d"))}</p></header>
+    <div class="dft-pilih"><ul class="dft-kat">${KAT.map((k) => `<li><button type="button" class="dft-kartu-kat" data-kat="${esc(k.kode)}" aria-expanded="${k.kode === P.kat}" aria-controls="dft-panel"><span class="dft-no">${esc(String(k.no).padStart(2, "0"))}</span>
+        <span class="dft-kat-teks"><b>${esc(L(k.nama))}</b><small>${ikon("orang", 14)}${esc(t("dft.orang", { n: k.perwakilan }))}</small></span>
+        <span class="dft-kat-harga">${k.rekomendasi ? `<span class="jm-pil jm-pil-ok">${esc(t("dft.rek"))}</span>` : ""}<b>${esc(rupiah(k.iuran_awal))}</b><small>${esc(t("dft.awal"))}</small></span></button>
+        <div class="dft-akor">${k.kode === P.kat ? detail(k) : ""}</div></li>`).join("")}</ul>
+      <div class="dft-panel" id="dft-panel" aria-live="polite">${sel ? detail(sel) : ""}</div></div></section>`;
+}
+function banding() {
+  const baris = [
+    { j: t("dft.awal"), v: (k) => k.iuran_awal, tampil: (k) => rupiah(k.iuran_awal) },
+    { j: t("dft.tahunan"), v: (k) => k.iuran_tahunan ?? 0, tampil: (k) => rupiahKat(k.iuran_tahunan) },
+    { j: t("dft.paket"), v: (k) => k.perwakilan, tampil: (k) => t("dft.orang", { n: k.perwakilan }) },
+    ...D.manfaat.map((m) => ({ j: L(m), v: (k) => (k.manfaat.includes(m.kunci) ? 1 : 0), cek: true }))];
+  return `<section class="dft-bagian" aria-labelledby="dft-banding-j"><header class="dft-bagian-kepala"><p class="jm-kh-ey">${ikon("tabel", 16)}<span ${tx("dft.banding.ey")}>${esc(t("dft.banding.ey"))}</span></p><h2 id="dft-banding-j" ${tx("dft.banding.j")}>${esc(t("dft.banding.j"))}</h2><p ${tx("dft.banding.d")}>${esc(t("dft.banding.d"))}</p></header>
+    <div class="jm-gulir"><table class="jm-tabel dft-tabel"><thead><tr><th scope="col">${esc(t("dft.banding.manfaat"))}</th>${KAT.map((k) => `<th scope="col" class="jm-tengah">${esc(L(k.nama))}</th>`).join("")}</tr></thead>
+    <tbody>${baris.map((b) => `<tr><th scope="row" data-l="${esc(t("dft.banding.manfaat"))}">${esc(b.j)}</th>${KAT.map((k) => `<td class="jm-tengah" data-l="${esc(L(k.nama))}" data-urut="${b.v(k)}">${b.cek ? (b.v(k) ? `${centang}<span class="sr">${esc(t("dft.ya"))}</span>` : `<span class="dft-tidak" aria-hidden="true">-</span><span class="sr">${esc(t("dft.tidak"))}</span>`) : esc(b.tampil(k))}</td>`).join("")}</tr>`).join("")}</tbody></table></div></section>`;
+}
+function alur() {
+  return `<section class="dft-bagian" aria-labelledby="dft-alur-j"><header class="dft-bagian-kepala"><p class="jm-kh-ey">${ikon("linimasa", 16)}<span ${tx("dft.alur.ey")}>${esc(t("dft.alur.ey"))}</span></p><h2 id="dft-alur-j" ${tx("dft.alur.j")}>${esc(t("dft.alur.j"))}</h2><p ${tx("dft.alur.d")}>${esc(t("dft.alur.d"))}</p></header>
+    <ol class="dft-alur">${[1, 2, 3, 4, 5].map((i) => `<li><span class="dft-alur-ik">${ikon(IK_LANGKAH[i - 1], 22)}<b>${i}</b></span><h3>${esc(t("dft.alur." + i))}</h3><p>${esc(t("dft.alur." + i + ".d"))}</p></li>`).join("")}</ol></section>`;
+}
+function dokumen() {
+  if (!D.dokumen.length) return "";
+  return `<section class="dft-bagian dft-gelap" aria-labelledby="dft-dok-j"><header class="dft-bagian-kepala"><p class="jm-kh-ey">${ikon("pdf", 16)}<span ${tx("dft.dok.ey")}>${esc(t("dft.dok.ey"))}</span></p><h2 id="dft-dok-j" ${tx("dft.dok.j")}>${esc(t("dft.dok.j"))}</h2><p ${tx("dft.dok.d")}>${esc(t("dft.dok.d"))}</p></header>
+    <ul class="dft-dok">${D.dokumen.map((d) => `<li><span class="dft-dok-ik">${ikon("pdf", 26)}</span><h3>${esc(L(d.judul))}</h3><p>${esc(L(d.deskripsi))}</p><small>${esc(t("dft.dok.meta", { ukuran: ukuran(d.ukuran), tgl: tanggal(d.diubah) }))}</small>
+      <a class="jm-tbl" href="${esc(d.url)}" target="_blank" rel="noopener noreferrer">${ikon("unduh", 16)}<span>${esc(t("dft.dok.buka"))}</span></a></li>`).join("")}</ul></section>`;
+}
+function kepalaTarif() {
+  const s = D.sumber || {};
+  $("dft-tarif").innerHTML = `<span>${esc(t("dft.tarif"))}</span><button type="button" class="dft-dot" id="dft-dot" aria-expanded="false" aria-controls="dft-sumber" aria-label="${esc(t("dft.tarif.sumber_label"))}">${ikon("info", 16)}</button>
+    <span class="dft-sumber" id="dft-sumber" hidden>${esc(t("dft.tarif.sumber"))} <a href="${esc(s.url || "https://metiires.or.id/membership")}" target="_blank" rel="noopener noreferrer">metiires.or.id/membership</a></span>`;
+  $("dft-dot").addEventListener("click", (e) => { const b = e.currentTarget, buka = b.getAttribute("aria-expanded") !== "true"; b.setAttribute("aria-expanded", String(buka)); $("dft-sumber").hidden = !buka; });
+}
+function landing() {
+  kepalaTarif();
+  $(KUNCI_LANDING.atas).innerHTML = pilih();
+  $(KUNCI_LANDING.bawah).innerHTML = banding() + alur() + dokumen();
+  document.addEventListener("click", (e) => {
+    const k = e.target.closest("[data-kat]");
+    if (k && P.kat !== k.dataset.kat) { P.kat = k.dataset.kat; $(KUNCI_LANDING.atas).innerHTML = pilih(); $(KUNCI_LANDING.atas).querySelector(`[data-kat="${P.kat}"]`)?.focus({ preventScroll: true }); return; }
+    const d = e.target.closest("[data-daftar]");
+    if (d) {
+      S.jenis = d.dataset.daftar;
+      const r = isi.querySelector(`input[name="jenis"][value="${S.jenis}"]`); if (r) r.checked = true;
+      org(); isi.hidden = false; ke(2); isi.scrollIntoView({ block: "start" });
+    }
+  });
+}
+
 const m = RE_LACAK.exec(location.pathname);
-if (m) lacak(m[1]); else bentuk();
+if (m) { $("dft-tarif").hidden = true; lacak(m[1]); } else { bentuk(); isi.hidden = true; landing(); }

@@ -4,6 +4,7 @@ import assert from "node:assert/strict";
 import { buatEnv, minta } from "./_bantu.mjs";
 import worker from "../src/worker.js";
 import { sha, acak } from "../src/util.js";
+import { readFileSync } from "node:fs";
 import { tandaMidtrans, tipeBerkas, periksaForm } from "../src/daftar.js";
 
 const R2 = new Map();
@@ -41,7 +42,8 @@ let ip = 0;
 const daftar = (o, opsi = {}) => panggil("/api/daftar", "POST", null, FORM(o), { ip: `198.51.100.${++ip}`, ...opsi });
 
 before(async () => {
-  ({ env: E, tutup } = await buatEnv({ tambahan: { BERKAS } }));
+  const ASSETS = { fetch: async (req) => new URL(req.url).pathname === "/data/keanggotaan.json" ? new Response(readFileSync("public/data/keanggotaan.json")) : new Response("aset", { status: 200 }) };
+  ({ env: E, tutup } = await buatEnv({ tambahan: { BERKAS, ASSETS } }));
   for (const p of ["anggota", "pengurus", "admin"]) await masuk(p);
 });
 after(async () => { await tutup?.(); });
@@ -102,7 +104,7 @@ test("pengaturan iuran dan rekening: admin saja, tampil di lacak, tidak di repo"
   assert.equal(o.status, 200);
   assert.equal((await panggil("/api/admin/pengaturan-daftar", "PUT", "admin", { iuran_individu: "lima ribu" })).status, 422);
   const j = await panggil("/api/daftar/lacak", "POST", null, { token });
-  assert.equal(j.rekening.nomor, "1234567890"); assert.equal(j.pendaftaran.iuran, null, "iuran ditetapkan saat daftar, pendaftar lama belum");
+  assert.equal(j.rekening.nomor, "1234567890"); assert.equal(j.pendaftaran.iuran, 450000, "iuran ditetapkan saat daftar: tarif resmi bawaan, pendaftar lama tak berubah");
   const b = await daftar({ surel: "iuran@contoh.id" });
   assert.equal((await panggil("/api/daftar/lacak", "POST", null, { token: b.token })).pendaftaran.iuran, 250000);
 });
@@ -213,4 +215,29 @@ test("Midtrans: tanpa secret 503 (tombol tidak tampil); webhook verifikasi SHA51
     assert.equal((await E.DB.prepare("SELECT bayar FROM pendaftaran WHERE id = ?").bind(pid).first()).bayar, "lunas");
     assert.equal((await E.DB.prepare("SELECT status FROM pembayaran_online WHERE order_id = ?").bind(order).first()).status, "lunas");
   } finally { globalThis.fetch = asli; delete E.MIDTRANS_SERVER_KEY; }
+});
+
+test("6 kategori resmi: tarif bawaan dari keanggotaan.json, kategori lama dipetakan, badan wajib untuk kategori organisasi", async () => {
+  const d = JSON.parse(readFileSync("public/data/keanggotaan.json", "utf8"));
+  assert.deepEqual(d.kategori.map((k) => [k.kode, k.iuran_awal, k.perwakilan]), [["pelajar", 100000, 1], ["individu", 450000, 1], ["ngo", 1600000, 2], ["usaha_kecil", 25000000, 5], ["usaha_besar", 50000000, 5], ["utama", 175000000, 20]]);
+  assert.deepEqual(d.kategori.map((k) => k.iuran_tahunan), [null, 350000, 600000, 2000000, 2500000, 5000000]);
+  assert.equal(d.kategori.filter((k) => k.rekomendasi).map((k) => k.kode).join(), "ngo");
+  assert.equal(d.sumber.tarif_ditetapkan, "2026-07-01"); assert.match(d.sumber.url, /^https:\/\/metiires\.or\.id\//); assert.equal(d.dokumen.length, 3);
+  const badan = { badan_nama: "PT Contoh", pj_nama: "Siti", pj_kontak: "081200000009" };
+  const hasil = {};
+  for (const [jenis, ekstra] of [["utama", badan], ["mahasiswa", {}], ["organisasi", badan], ["usaha_kecil", badan]]) {
+    const r = await daftar({ jenis, surel: `${jenis}@contoh.id`, ...ekstra });
+    assert.equal(r.status, 201, jenis);
+    hasil[jenis] = await E.DB.prepare("SELECT jenis, iuran FROM pendaftaran WHERE surel = ?").bind(`${jenis}@contoh.id`).first();
+  }
+  assert.deepEqual(hasil.utama, { jenis: "utama", iuran: 175000000 });
+  assert.deepEqual(hasil.mahasiswa, { jenis: "pelajar", iuran: 100000 });
+  assert.deepEqual(hasil.organisasi, { jenis: "ngo", iuran: 1600000 });
+  assert.equal((await daftar({ jenis: "usaha_besar", surel: "besar@contoh.id" })).status, 422, "kategori badan tanpa data badan");
+  await panggil("/api/admin/pengaturan-daftar", "PUT", "admin", { iuran_utama: "1" });
+  assert.equal((await panggil("/api/admin/pengaturan-daftar", "PUT", "admin", { iuran_ngo: "500000" })).status, 200);
+  await daftar({ jenis: "ngo", surel: "ngo2@contoh.id", ...badan });
+  assert.equal((await E.DB.prepare("SELECT iuran FROM pendaftaran WHERE surel = 'ngo2@contoh.id'").first()).iuran, 500000, "pengaturan admin menimpa tarif resmi");
+  const dok = await worker.fetch(minta("/data/keanggotaan.json", { origin: null }), E, CTX);
+  assert.equal(dok.status, 200, "data tarif terbuka untuk halaman /daftar");
 });

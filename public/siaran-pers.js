@@ -4,12 +4,13 @@ import { khUbin } from "/inti/kh.js";
 import { t, angka, tanggal } from "/i18n.js";
 import { esc, nanti, debounce, hantuHtml, galatHtml, ikon } from "/inti/umum.js";
 import { cariHtml, pilihHtml, hapusHtml, hitungHtml, exHtml, sumberHtml } from "/inti/komponen.js";
+import { paginasiHtml, sorotHalaman } from "/inti/paginasi.js";
 import { aksiHtml } from "/inti/aksi_ex.js";
 import { norm } from "/publik.js";
 import { JENIS, IKON_JENIS, muatSiaran, kartuHtml, topikLabel, pasangGalatFoto } from "/siaran_umum.js";
 
-const LANJUT = 12;
-const S = { jenis: "siaran_pers", q: "", tahun: "", topik: "", media: "", n: LANJUT };
+const PER = 12;
+const S = { jenis: "siaran_pers", q: "", tahun: "", topik: "", media: "", hal: 1 };
 let D = null;
 
 const barisJenis = () => D.baris.filter((r) => r.jenis === S.jenis);
@@ -49,17 +50,18 @@ function gambarIsi() {
   document.getElementById("f-hitung").textContent = t("sp.hitung", { n: angka(rows.length), total: angka(total) });
   const el = document.getElementById("daftar");
   if (!rows.length) { el.innerHTML = `<p class="sp-kosong">${esc(t(total ? "sp.kosong" : "sp.kosong_jenis"))}</p>`; return; }
-  const potong = rows.slice(0, S.n);
+  S.hal = Math.min(S.hal, Math.max(1, Math.ceil(rows.length / PER)));
+  const potong = rows.slice((S.hal - 1) * PER, S.hal * PER);
   el.innerHTML = `<ul class="sp-kisi">${potong.map((r) => kartuHtml(r, D.foto)).join("")}</ul>`
-    + (rows.length > S.n ? `<div class="sp-lagi-w"><button type="button" class="jm-tbl" data-aksi="lagi">${esc(t("sp.lagi", { n: angka(Math.min(LANJUT, rows.length - S.n)) }))}</button></div>` : "");
+    + paginasiHtml({ hal: S.hal, total: rows.length, per: PER, satuan: "jm.pag.u.dokumen" });
 }
 function tulisUrl() {
   const u = new URL(location.href);
-  for (const k of ["jenis", "q", "tahun", "topik", "media"]) { const v = S[k]; !v || (k === "jenis" && v === "siaran_pers") ? u.searchParams.delete(k) : u.searchParams.set(k, v); }
+  for (const k of ["jenis", "q", "tahun", "topik", "media", "hal"]) { const v = S[k]; !v || (k === "hal" && v <= 1) || (k === "jenis" && v === "siaran_pers") ? u.searchParams.delete(k) : u.searchParams.set(k, v); }
   history.replaceState(null, "", u);
 }
 /** Chrome sinkron, daftar berat sesudah satu bingkai tercat. */
-function ubah(sinkron) { S.n = LANJUT; sinkron && sinkron(); aturSaring(); tulisUrl(); nanti(gambarIsi); }
+function ubah(sinkron) { S.hal = 1; sinkron && sinkron(); aturSaring(); tulisUrl(); nanti(gambarIsi); }
 
 (async () => {
   await mulaiHalaman();
@@ -73,10 +75,10 @@ function ubah(sinkron) { S.n = LANJUT; sinkron && sinkron(); aturSaring(); tulis
   khUbin("khUbin", JENIS.map((j) => ({ ikon: IKON_JENIS[j], nilai: angka(n(j)), label: t("sp.jenis." + j) })));
   document.querySelector("#ex-sp .jm-ex-aksi").innerHTML = aksiHtml({ csv: false }) + sumberHtml(`${esc(t("sp.sumber"))} ${esc(tanggal(D.dibangun))}.`);
   const p = new URLSearchParams(location.search);
-  for (const k of Object.keys(S)) if (p.has(k) && k !== "n") S[k] = p.get(k);
+  for (const k of Object.keys(S)) if (p.has(k)) S[k] = k === "hal" ? Math.max(1, +p.get(k) || 1) : p.get(k);
   if (!JENIS.includes(S.jenis)) S.jenis = "siaran_pers";
   gambarTab(); gambarSaring(); gambarIsi();
-  document.getElementById("daftar").addEventListener("click", (e) => { if (e.target.closest("[data-aksi=lagi]")) { S.n += LANJUT; nanti(gambarIsi); } });
+  document.getElementById("daftar").addEventListener("click", (e) => { const l = e.target.closest("[data-hal]"); if (l && !l.disabled) { S.hal = +l.dataset.hal; sorotHalaman(l, S.hal); tulisUrl(); nanti(gambarIsi); } });
   document.getElementById("tab").addEventListener("click", (e) => {
     const b = e.target.closest("[data-tab]"); if (!b || b.dataset.tab === S.jenis) return;
     ubah(() => { S.jenis = b.dataset.tab; S.tahun = S.topik = S.media = ""; gambarTab(); gambarSaring(); });
