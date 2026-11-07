@@ -1,4 +1,6 @@
 #!/usr/bin/env node
+/* aturan pemilik: tanpa em dash dan titik tengah di teks tayang */
+const bersihTanda = (s) => s.replace(/\s*\u2014\s*/g, ", ").replace(/\s*\u00b7\s*/g, ", ");
 // Potret per lapis dari SELURUH data-panen lokal -> data-panen/potret/{publik,anggota,pengurus}/<benda>.json.
 // Bentuk: docs/perencanaan/SKEMA-POTRET.md. Tidak mengunggah (itu unggah_potret.mjs, dijalankan koordinator).
 //   node scripts/pipa/potret.mjs            bangun (gagal bila pemindai data pribadi / ukuran > 2 MB melanggar)
@@ -345,7 +347,7 @@ export function bangun(masukan = {}) {
     const pihak = {}; for (const k of ['pemilik', 'epc', 'pembeli']) { const v = bagiNilai(p[k], 'publik').map((x) => bersih({ nilai: x.nilai, organisasi_id: orgPerNama(x.nilai), catatan: x.catatan, sumber_id: x.sumber_id })); if (v.length) pihak[k] = v; }
     const prog = unik([...(p.programs || []), p.program, ...(sumber.some((s) => s.jenis === 'ruptl') ? ['ruptl'] : []), ...(p.teknologi === 'biomassa-sampah' && /sampah|pltsa|waste|wte/i.test(namaPub[0].nilai) ? ['wte'] : [])]).sort();
     const lok = p.sumber_lokasi;
-    proyekPub.push(bersih({ id: p.id, nama: namaPub[0].nilai, nama_lain: unik(namaPub.slice(1).map((x) => x.nilai)), teknologi: p.teknologi, program_ids: prog, lokasi: bersih({ provinsi: p.provinsi, kabupaten_kota: p.kabupaten_kota, lat: p.lat, lng: p.lng, presisi: p.presisi_lokasi, sumber: lok && bersih({ jenis: lok.jenis, url: lok.url, lisensi: lok.lisensi, catatan: lok.catatan }) }), kapasitas: bagiNilai(p.kapasitas, 'publik'), status: bagiNilai(p.status, 'publik'), cod_target: bagiNilai(p.cod_target, 'publik'), cod_aktual: bagiNilai(p.cod_aktual, 'publik'), nilai_investasi: bagiNilai(p.nilai_investasi, 'publik'), pihak, regulasi_ids: unik(prog.flatMap((x) => progReg[x] || [])), tingkat_bukti: p.tingkat_bukti, sumber }));
+    proyekPub.push(bersih({ id: p.id, nama: judulHuruf(namaPub[0].nilai), nama_lain: unik(namaPub.slice(1).map((x) => x.nilai)), teknologi: p.teknologi, program_ids: prog, lokasi: bersih({ provinsi: p.provinsi, kabupaten_kota: p.kabupaten_kota, lat: p.lat, lng: p.lng, presisi: p.presisi_lokasi, sumber: lok && bersih({ jenis: lok.jenis, url: lok.url, lisensi: lok.lisensi, catatan: lok.catatan }) }), kapasitas: bagiNilai(p.kapasitas, 'publik'), status: bagiNilai(p.status, 'publik'), cod_target: bagiNilai(p.cod_target, 'publik'), cod_aktual: bagiNilai(p.cod_aktual, 'publik'), nilai_investasi: bagiNilai(p.nilai_investasi, 'publik'), pihak, regulasi_ids: unik(prog.flatMap((x) => progReg[x] || [])), tingkat_bukti: p.tingkat_bukti, sumber }));
     for (const [lap, kol] of [[proyekAng, KOL_ANGGOTA], [proyekPen, KOL_PENGURUS]]) { const d = { id: p.id }; for (const k of kol) { const v = bagiNilai(p[k], 'publik'); if (v.length) d[k] = v; } if (lap === proyekAng && Object.keys(dariMateri).length) d.dari_materi = dariMateri; if (lap === proyekPen && konflikPer.has(p.id)) d.konflik = konflikPer.get(p.id).map((k) => bersih({ jenis: k.jenis, nama: k.nama, kapasitas_a: k.kapasitas_a, kapasitas_b: k.kapasitas_b, sumber_id: k.sumber_id })); if (Object.keys(d).length > 1) lap.push(d); }
     void delta;
   }
@@ -353,12 +355,12 @@ export function bangun(masukan = {}) {
   const ket = (v) => (v == null ? [] : [{ nilai: v }]);
   for (const w of M('wb', 'proyek/tambahan_worldbank.jsonl')) {
     if (w.publik === false || !adaUrl(w.sumber_url)) continue; tanggalMax.push(w.tanggal_ambil);
-    proyekPub.push(bersih({ id: w.id, nama: w.nama, teknologi: w.teknologi, asal: 'worldbank', lokasi: bersih({ provinsi: w.provinsi }), status: [{ nilai: w.status, status_asli: w.status_asli }], nilai_investasi: w.nilai_komitmen_usd != null ? [{ nilai: w.nilai_komitmen_usd, satuan: 'USD', catatan: ('komitmen ' + (w.instrumen || '')).trim() }] : [], pihak: bersih({ peminjam: w.peminjam ? [{ nilai: w.peminjam, organisasi_id: orgPerNama(w.peminjam) }] : [], pelaksana: w.lembaga_pelaksana ? [{ nilai: w.lembaga_pelaksana, organisasi_id: orgPerNama(w.lembaga_pelaksana) }] : [] }), waktu: bersih({ persetujuan: w.tanggal_persetujuan, penutupan: w.tanggal_penutupan }), tingkat_bukti: w.tingkat_bukti, sumber: [bersih({ id: 'wb', jenis: w.sumber_jenis, url: w.sumber_url, tingkat_bukti: w.tingkat_bukti, tanggal: w.tanggal_ambil, lisensi: w.lisensi })] }));
+    proyekPub.push(bersih({ id: w.id, nama: judulHuruf(w.nama), teknologi: w.teknologi, asal: 'worldbank', lokasi: bersih({ provinsi: w.provinsi }), status: [{ nilai: w.status, status_asli: w.status_asli }], nilai_investasi: w.nilai_komitmen_usd != null ? [{ nilai: w.nilai_komitmen_usd, satuan: 'USD', catatan: ('komitmen ' + (w.instrumen || '')).trim() }] : [], pihak: bersih({ peminjam: w.peminjam ? [{ nilai: w.peminjam, organisasi_id: orgPerNama(w.peminjam) }] : [], pelaksana: w.lembaga_pelaksana ? [{ nilai: w.lembaga_pelaksana, organisasi_id: orgPerNama(w.lembaga_pelaksana) }] : [] }), waktu: bersih({ persetujuan: w.tanggal_persetujuan, penutupan: w.tanggal_penutupan }), tingkat_bukti: w.tingkat_bukti, sumber: [bersih({ id: 'wb', jenis: w.sumber_jenis, url: w.sumber_url, tingkat_bukti: w.tingkat_bukti, tanggal: w.tanggal_ambil, lisensi: w.lisensi })] }));
     proyekAng.push(bersih({ id: w.id, pemberi_dana: ket(w.pemberi_dana) }));
   }
   for (const w of M('wkp', 'proyek/tambahan_wkp_jica.jsonl')) {
     if (w.publik === false || !adaUrl(w.sumber_url)) continue; tanggalMax.push(w.tanggal_ambil);
-    proyekPub.push(bersih({ id: w.id, nama: w.nama, teknologi: w.teknologi, asal: w.jenis_wilayah ? 'wkp' : 'jica', lokasi: bersih({ provinsi: w.provinsi }), kapasitas: w.kapasitas ? [w.kapasitas] : [], status: [{ nilai: w.status, status_asli: w.status_asli }], nilai_investasi: w.nilai_komitmen_yen_juta != null ? [{ nilai: w.nilai_komitmen_yen_juta, satuan: 'JPY juta', catatan: w.bunga }] : [], pihak: bersih({ pemilik: w.pemenang ? [{ nilai: w.pemenang, organisasi_id: orgPerNama(w.pemenang) }] : [], pelaksana: w.instansi_pelaksana && !/tidak disebut/.test(w.instansi_pelaksana) ? [{ nilai: w.instansi_pelaksana }] : [] }), waktu: bersih({ persetujuan: w.tanggal_persetujuan }), tingkat_bukti: w.tingkat_bukti, sumber: [w.sumber_url, ...(w.sumber_pendukung || [])].filter(adaUrl).map((u, i) => bersih({ id: 'wkp' + i, jenis: i ? 'pendukung' : 'utama', url: u, tingkat_bukti: w.tingkat_bukti, tanggal: w.tanggal_ambil })) }));
+    proyekPub.push(bersih({ id: w.id, nama: judulHuruf(w.nama), teknologi: w.teknologi, asal: w.jenis_wilayah ? 'wkp' : 'jica', lokasi: bersih({ provinsi: w.provinsi }), kapasitas: w.kapasitas ? [w.kapasitas] : [], status: [{ nilai: w.status, status_asli: w.status_asli }], nilai_investasi: w.nilai_komitmen_yen_juta != null ? [{ nilai: w.nilai_komitmen_yen_juta, satuan: 'JPY juta', catatan: w.bunga }] : [], pihak: bersih({ pemilik: w.pemenang ? [{ nilai: w.pemenang, organisasi_id: orgPerNama(w.pemenang) }] : [], pelaksana: w.instansi_pelaksana && !/tidak disebut/.test(w.instansi_pelaksana) ? [{ nilai: w.instansi_pelaksana }] : [] }), waktu: bersih({ persetujuan: w.tanggal_persetujuan }), tingkat_bukti: w.tingkat_bukti, sumber: [w.sumber_url, ...(w.sumber_pendukung || [])].filter(adaUrl).map((u, i) => bersih({ id: 'wkp' + i, jenis: i ? 'pendukung' : 'utama', url: u, tingkat_bukti: w.tingkat_bukti, tanggal: w.tanggal_ambil })) }));
     proyekAng.push(bersih({ id: w.id, pemberi_dana: ket(w.pemberi_dana), pihak_terlibat: ket(w.catatan) }));
   }
   const pubProyekIds = new Set(proyekPub.map((p) => p.id));
@@ -600,12 +602,13 @@ export function bangun(masukan = {}) {
 
 // ---------- tulis + gerbang ----------
 export function tulisBerkas(dir, lapis, nama, baris, dibangun, ekstra = {}) {
-  const tulis = (n, obj) => { const s = JSON.stringify(obj); fs.writeFileSync(path.join(dir, n), s); return s; };
+  const tulis = (n, obj) => { const s = bersihTanda(JSON.stringify(obj)); fs.writeFileSync(path.join(dir, n), s); return s; };
   const amplop = (b) => ({ lapis, dibangun_pada: dibangun, jumlah: b.length, ...ekstra, baris: b });
   let s = JSON.stringify(amplop(baris)); const hasil = [];
+  s = bersihTanda(s);
   if (Buffer.byteLength(s) <= MAKS) { fs.writeFileSync(path.join(dir, nama + '.json'), s); return [{ berkas: nama + '.json', byte: Buffer.byteLength(s), isi: s }]; }
   const n = Math.ceil(Buffer.byteLength(s) / (MAKS * 0.8)); const per = Math.ceil(baris.length / n); const bagian = [];
-  for (let i = 0; i < n; i++) { const f = `${nama}.${i + 1}.json`; const t = JSON.stringify(amplop(baris.slice(i * per, (i + 1) * per))); fs.writeFileSync(path.join(dir, f), t); bagian.push(f); hasil.push({ berkas: f, byte: Buffer.byteLength(t), isi: t }); }
+  for (let i = 0; i < n; i++) { const f = `${nama}.${i + 1}.json`; const t = bersihTanda(JSON.stringify(amplop(baris.slice(i * per, (i + 1) * per)))); fs.writeFileSync(path.join(dir, f), t); bagian.push(f); hasil.push({ berkas: f, byte: Buffer.byteLength(t), isi: t }); }
   const idx = JSON.stringify({ lapis, dibangun_pada: dibangun, jumlah: baris.length, bagian }); fs.writeFileSync(path.join(dir, nama + '.json'), idx); hasil.push({ berkas: nama + '.json', byte: idx.length, isi: idx });
   return hasil;
 }
