@@ -21,19 +21,27 @@
 <header class="top" id="kepala"></header>
 <div id="pita"></div>
 <div class="jm-halaman">
-  <section class="jm-kh jm-kh-satu" aria-labelledby="judul"><div class="jm-kh-teks">
-    <p class="jm-kh-ey"><svg class="jm-ik" width="16" height="16" aria-hidden="true" focusable="false"><use href="/img/ikon.svg#i-orang"/></svg><span data-i18n="pf.eyebrow">Profil saya</span></p>
-    <div class="pf-kepala">
-      <span class="pf-foto pf-foto-besar" id="pfFotoKepala" aria-hidden="true"></span>
-      <div class="pf-kepala-teks">
+  <section class="jm-kh jm-kh-satu ps-kh" aria-labelledby="judul">
+    <div class="ps-sampul"><img id="psSampul" alt="" width="1200" height="300" decoding="async"><button type="button" class="jm-tbl jm-tbl-kecil ps-sampul-ganti" data-aksi="ganti-sampul"><svg class="jm-ik" width="16" height="16" aria-hidden="true" focusable="false"><use href="/img/ikon.svg#i-kamera"/></svg><span data-i18n="pf.sampul.ganti">Ganti sampul</span></button></div>
+    <div class="ps-ident">
+      <button type="button" class="pf-foto ps-foto" id="pfFotoKepala" data-aksi="ganti-foto" data-i18n-attr="aria-label:pf.foto.ganti" aria-label="Ganti foto"></button>
+      <input class="sr" type="file" id="fBerkasFoto" accept="image/png,image/jpeg,image/webp" tabindex="-1" aria-hidden="true">
+      <div class="ps-ident-teks">
+        <p class="jm-kh-ey"><svg class="jm-ik" width="16" height="16" aria-hidden="true" focusable="false"><use href="/img/ikon.svg#i-orang"/></svg><span data-i18n="pf.eyebrow">Profil saya</span></p>
         <h1 id="judul" data-i18n="pf.judul">Profil saya</h1>
-        <p class="jm-kh-lead" id="pfSub" data-i18n="pf.lead">Atur data diri, riwayat, foto, dan siapa yang boleh melihatnya.</p>
+        <p class="ps-headline" id="pfSub"></p>
+        <p class="ps-meta" id="pfMeta"></p>
         <div class="pf-lencana" id="pfLencana"></div>
+        <div class="ps-aksi" id="pfAksi"></div>
       </div>
     </div>
-  </div></section>
-  <div class="pf-tab" role="tablist" id="pfTab" data-i18n-attr="aria-label:pf.tab.label" aria-label="Bagian profil"></div>
-  <div id="pfPanel" class="pf-panel" role="tabpanel" aria-live="polite"><div class="jm-hantu" role="status"><i></i><i></i><i></i></div></div>
+  </section>
+  <div id="pfPesan" aria-live="polite"></div>
+  <div class="ps-kolom">
+    <div class="ps-utama" id="pfPanel"><div class="jm-hantu" role="status"><i></i><i></i><i></i></div></div>
+    <aside class="ps-samping" id="pfSamping" data-i18n-attr="aria-label:pf.samping.label" aria-label="Ringkasan profil"></aside>
+  </div>
+  <dialog class="jm-dlg ps-dlg" id="psDlg" aria-labelledby="psDlgJ"></dialog>
 </div>
 <footer class="jm-kaki" id="kaki"></footer>
 <script type="module" src="/profil-saya.js"></script>
