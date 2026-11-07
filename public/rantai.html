@@ -20,31 +20,35 @@
 <main class="jm-halaman jm-wadah jm-an">
 <section class="jm-kh" aria-labelledby="judul">
   <div class="jm-kh-teks">
-    <h1 id="judul" data-i18n="rt.judul">Pasokan modul surya untuk PLTS 100 GWp</h1>
+    <h1 id="judul" data-i18n="rt.judul">Rantai pasok modul surya</h1>
     <p id="jawab" class="jm-kh-lead"></p>
   </div>
   <div class="jm-kh-ubin" id="ubin" aria-live="polite"></div>
 </section>
 <section id="kartu" class="jm-an-kartu-baris" aria-label="Ringkasan" data-i18n-attr="aria-label:an.ringkasan"></section>
-<section class="jm-kartu jm-an-wadah" aria-labelledby="h-keb">
-  <header class="jm-an-kepala">
-    <div><h2 id="h-keb" data-i18n="rt.kebutuhan">Kebutuhan program dan kapasitas pabrikan per tahun</h2><p class="jm-temuan" id="temuan-keb"></p></div>
-    <div class="jm-tab" role="tablist" aria-label="Horizon" data-i18n-attr="aria-label:rt.horizon">
+<section class="jm-ex" aria-labelledby="h-keb">
+  <header class="jm-ex-hd"><div class="jm-ex-teks"><span class="jm-ex-ey"><svg class="jm-ik" width="14" height="14" aria-hidden="true" focusable="false"><use href="/img/ikon.svg#i-proyek"/></svg><span data-i18n="an.ey.keb">keb</span></span><h2 class="jm-ex-j" id="temuan-keb"></h2><p class="jm-ex-sub" id="h-keb" data-i18n="rt.kebutuhan">Kebutuhan program dan kapasitas pabrikan per tahun</p></div><div class="jm-ex-aksi" id="aksi-keb"><!-- aksiHtml({csv,png,pdf,bagi}) --></div></header>
+  <div class="jm-ex-bd">
+  <div class="jm-tab" role="tablist" aria-label="Horizon" data-i18n-attr="aria-label:rt.horizon">
       <button type="button" role="tab" data-h="5" aria-selected="false" data-i18n="rt.h5">5 tahun</button>
       <button type="button" role="tab" data-h="8" aria-selected="false" data-i18n="rt.h8">8 tahun</button>
       <button type="button" role="tab" data-h="10" aria-selected="true" data-i18n="rt.h10">10 tahun</button>
     </div>
-  </header>
+
   <div id="grafik-keb"></div>
+</div>
 </section>
-<section class="jm-kartu jm-an-wadah" aria-labelledby="h-tkdn">
-  <header class="jm-an-kepala"><div><h2 id="h-tkdn" data-i18n="rt.tkdn">Sebaran TKDN pabrikan</h2><p class="jm-temuan" id="temuan-tkdn"></p></div></header>
+<section class="jm-ex" aria-labelledby="h-tkdn">
+  <header class="jm-ex-hd"><div class="jm-ex-teks"><span class="jm-ex-ey"><svg class="jm-ik" width="14" height="14" aria-hidden="true" focusable="false"><use href="/img/ikon.svg#i-analisis"/></svg><span data-i18n="an.ey.tkdn">tkdn</span></span><h2 class="jm-ex-j" id="temuan-tkdn"></h2><p class="jm-ex-sub" id="h-tkdn" data-i18n="rt.tkdn">Sebaran TKDN pabrikan</p></div><div class="jm-ex-aksi" id="aksi-tkdn"><!-- aksiHtml({csv,png,pdf,bagi}) --></div></header>
+  <div class="jm-ex-bd">
+
   <div id="grafik-tkdn"></div>
+</div>
 </section>
-<section class="jm-kartu jm-an-wadah" aria-labelledby="h-peta">
-  <header class="jm-an-kepala">
-    <div><h2 id="h-peta" data-i18n="rt.peta">Lokasi pabrik modul</h2><p class="jm-temuan" id="temuan-peta"></p></div>
-    <div class="jm-an-chip">
+<section class="jm-ex" aria-labelledby="h-peta">
+  <header class="jm-ex-hd"><div class="jm-ex-teks"><span class="jm-ex-ey"><svg class="jm-ik" width="14" height="14" aria-hidden="true" focusable="false"><use href="/img/ikon.svg#i-peta"/></svg><span data-i18n="an.ey.peta">peta</span></span><h2 class="jm-ex-j" id="temuan-peta"></h2><p class="jm-ex-sub" id="h-peta" data-i18n="rt.peta">Lokasi pabrik modul</p></div><div class="jm-ex-aksi" id="aksi-peta"><!-- aksiHtml({csv,png,pdf,bagi}) --></div></header>
+  <div class="jm-ex-bd">
+  <div class="jm-an-chip">
       <div class="jm-tab" id="seg-pasar" role="tablist" aria-label="Pasar" data-i18n-attr="aria-label:rt.f_pasar">
         <button type="button" role="tab" data-p="" aria-selected="true" data-i18n="rt.semua">Semua</button>
         <button type="button" role="tab" data-p="lokal" aria-selected="false" data-i18n="rt.pasar.lokal">Lokal</button>
@@ -57,7 +61,7 @@
         <button type="button" role="tab" data-a="tidak" aria-selected="false" data-i18n="rt.apamsi_tidak">Bukan anggota</button>
       </div>
     </div>
-  </header>
+
   <div class="jm-peta-grid">
     <div class="jm-peta-bingkai">
       <div id="peta-pabrik" class="jm-an-peta" role="region" aria-label="Peta" data-i18n-attr="aria-label:rt.peta_label"></div>
@@ -68,18 +72,25 @@
   <p class="jm-an-kunci" id="legenda-peta"></p>
   <div id="tabel-kota"></div>
   <div id="sumber-peta"></div>
+</div>
 </section>
-<section class="jm-kartu jm-an-wadah" aria-labelledby="h-tabel">
-  <header class="jm-an-kepala"><div><h2 id="h-tabel" data-i18n="rt.tabel">Daftar pabrikan modul surya</h2><p class="jm-temuan" id="temuan-tabel"></p></div></header>
+<section class="jm-ex" aria-labelledby="h-tabel">
+  <header class="jm-ex-hd"><div class="jm-ex-teks"><span class="jm-ex-ey"><svg class="jm-ik" width="14" height="14" aria-hidden="true" focusable="false"><use href="/img/ikon.svg#i-tabel"/></svg><span data-i18n="an.ey.tabel">tabel</span></span><h2 class="jm-ex-j" id="temuan-tabel"></h2><p class="jm-ex-sub" id="h-tabel" data-i18n="rt.tabel">Daftar pabrikan modul surya</p></div><div class="jm-ex-aksi" id="aksi-tabel"><!-- aksiHtml({csv,png,pdf,bagi}) --></div></header>
+  <div class="jm-ex-bd">
+
   <div class="jm-saring" id="saring"></div>
   <div id="tabel"></div>
+</div>
 </section>
-<section class="jm-kartu jm-an-wadah" aria-labelledby="h-cara">
-  <details open><summary id="h-cara" data-i18n="an.cara">Cara menghitung</summary><div class="jm-an-cara" id="cara"></div></details>
+<section class="jm-ex" aria-labelledby="h-cara">
+  <header class="jm-ex-hd"><div class="jm-ex-teks"><span class="jm-ex-ey"><svg class="jm-ik" width="14" height="14" aria-hidden="true" focusable="false"><use href="/img/ikon.svg#i-metode"/></svg><span data-i18n="an.ey.metode">Metode</span></span>
+    <h2 class="jm-ex-j" id="h-cara" data-i18n="an.cara">Cara menghitung</h2></div></header>
+  <div class="jm-ex-bd jm-an-cara" id="cara"></div>
 </section>
-<section class="jm-kartu jm-an-wadah" aria-labelledby="h-kutip">
-  <h2 id="h-kutip" data-i18n="an.kutip">Cara mengutip</h2>
-  <p id="kutip"></p>
+<section class="jm-ex" aria-labelledby="h-kutip">
+  <header class="jm-ex-hd"><div class="jm-ex-teks"><span class="jm-ex-ey"><svg class="jm-ik" width="14" height="14" aria-hidden="true" focusable="false"><use href="/img/ikon.svg#i-tautan"/></svg><span data-i18n="an.ey.kutip">Kutipan</span></span>
+    <h2 class="jm-ex-j" id="h-kutip" data-i18n="an.kutip">Cara mengutip</h2></div></header>
+  <div class="jm-ex-bd"><p id="kutip"></p></div>
 </section>
 </main>
 <footer class="jm-kaki" id="kaki"></footer>

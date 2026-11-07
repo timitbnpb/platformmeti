@@ -5,7 +5,7 @@ import { esc, nanti, debounce, hantuHtml, galatHtml, ikon } from "/inti/umum.js"
 import { mulaiHalaman } from "/inti/kepala.js";
 import { muatMapLibre } from "/inti/maplibre.js";
 import { lapisAnggota, anggotaDl } from "/publik.js";
-import { sumberHtml } from "/inti/komponen.js";
+import { sumberHtml, exHtml } from "/inti/komponen.js";
 import { ikonTek } from "/inti/ikon_tek.js";
 
 const $ = (id) => document.getElementById(id);
@@ -14,7 +14,7 @@ const TAHAP = ["rencana", "izin", "pendanaan", "konstruksi", "beroperasi"];
 const URUT_ST = [...TAHAP, "dibatalkan"];
 const TIDAK = "tidak-diketahui";
 const TEK_WARNA = { surya: "--data4", bayu: "--data3", hidro: "--data5", "panas-bumi": "--warn", bioenergi: "--data2", "biomassa-sampah": "--data1", penyimpanan: "--ink2", nuklir: "--bad" };
-const BATAS = 50;
+const BATAS = 15;
 const PIN = '<svg class="jm-ik" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>';
 
 const lab = (awal, k) => (ada(awal + k) ? t(awal + k) : k || "-");
@@ -84,6 +84,38 @@ const sumberRingkas = (r) => {
   return sumberHtml(`${u ? `<a href="${esc(u)}" target="_blank" rel="noopener noreferrer">${nama}</a>` : nama}, ${tgl}${s.lisensi ? `<br>${esc(s.lisensi)}` : ""}`);
 };
 
+/* ---------- kepala seksi bersama (exHtml). Isi tetap dari HTML; kepala dibangun ulang tiap bahasa/filter ---------- */
+const hl = (n) => `<span class="jm-hl">${esc(n)}</span>`;
+const bgCsv = (k) => `<button type="button" class="jm-tbl jm-tbl-kecil" data-csv="${k}">${ikon("tabel", 16)}<span>${esc(t("pj.csv"))}</span></button>`;
+const estPil = () => `<span class="jm-pil jm-pil-est">${esc(t("pj.est"))}</span>`;
+function ex(id, d) {
+  const m = $(id);
+  if (!m.dataset.siap) {
+    const isi = m.querySelector(".jm-pj-isi"), tmp = document.createElement("div");
+    tmp.innerHTML = exHtml({ ...d, isiHtml: "" });
+    m.replaceChildren(tmp.firstElementChild);
+    m.querySelector(".jm-ex-bd").append(...isi.childNodes);
+    m.dataset.siap = "1";
+  }
+  const tmp = document.createElement("div");
+  tmp.innerHTML = exHtml({ ...d, isiHtml: "" });
+  m.querySelector(".jm-ex-hd").replaceWith(tmp.querySelector(".jm-ex-hd"));
+}
+function kepalaSeksi() {
+  const n = SEMUA.length, st = hitung(SEMUA, (r) => r.st), dok = dokSumber();
+  ex("exGb", { ikon: "analisis", topik: t("pj.ex.gb"), judulHtml: `${hl(num(n))} ${esc(t("pj.ex.gb.1"))} ${hl(num(st.beroperasi || 0))} ${esc(t("pj.ex.gb.2"))}`, subHtml: esc(t("pj.ex.gb.s")), aksiHtml: sumberHtml(`${esc(t("pj.sumber", { tgl: tanggal(DATA.dibangun_pada, { gaya: "panjang" }), dok }))}<br>${esc(t("pj.sumber.rinci"))}`) });
+  ex("exPeta", { ikon: "peta", topik: t("pj.ex.peta"), judulHtml: `${hl(num(SEMUA.filter((r) => r.ada).length))} ${esc(t("pj.ex.peta.j", { total: num(n) }))}`, subHtml: esc(t("pj.ex.peta.s")) });
+  ex("exProg", { ikon: "topik", topik: t("pj.ex.prog"), judulHtml: `${hl(num(PROG.baris.length))} ${esc(t("pj.ex.prog.j"))}`, subHtml: esc(t("pj.ex.prog.s", { n: num(PROG.baris.filter((g) => g.jumlah_proyek).length) })) });
+  kepalaTabel();
+}
+function kepalaTabel() {
+  const mw = jumlahMW(tampil), telat = tampil.filter((r) => r.telat).length, cr = hitung(tampil, (r) => r.st);
+  ex("exTahap", { ikon: "status", topik: t("pj.ex.tahap"), judulHtml: `${hl(num(cr.konstruksi || 0))} ${esc(t("pj.ex.tahap.j"))}`, subHtml: esc(t("pj.ex.tahap.s")) });
+  ex("exTelat", { ikon: "kalender", topik: t("pj.ex.telat"), judulHtml: `${hl(num(telat))} ${esc(t("pj.ex.telat.j"))}`, subHtml: esc(t("pj.telat.ket", { tahun: TAHUN })), aksiHtml: bgCsv("telat") });
+  ex("exDaftar", { ikon: "tabel", topik: t("pj.ex.daftar"), judulHtml: `${hl(num(tampil.length))} ${esc(t("pj.ex.daftar.j"))}`, subHtml: `${esc(t("pj.ex.daftar.s", { mw: num(mw, 0) }))} ${estPil()}`, aksiHtml: bgCsv("daftar") });
+}
+const dokSumber = () => [...new Set(SEMUA.flatMap((r) => (r.p.sumber || []).map((s) => String(s.jenis || s.dokumen).toUpperCase())))].slice(0, 4).join(", ");
+
 /* ---------- hero: kartu KPI, batang status, batang program ---------- */
 const progNamaPendek = (id) => (ada("pj.pn." + id) ? t("pj.pn." + id) : progNama(id));
 const IKON_K = ["proyek", "analisis", "status", "jenis", "kalender"];
@@ -99,9 +131,7 @@ function gambarHero() {
     + kpi(2, labSt("konstruksi"), num(st.konstruksi || 0), "", persen(st.konstruksi))
     + kpi(3, labSt("beroperasi"), num(st.beroperasi || 0), "", persen(st.beroperasi))
     + kpi(4, t("pj.k.telat"), num(telat), "", t("pj.k.telat.ket", { tahun: TAHUN }));
-  const dok = [...new Set(SEMUA.flatMap((r) => (r.p.sumber || []).map((s) => String(s.jenis || s.dokumen).toUpperCase())))].slice(0, 4).join(", ");
-  $("pjSumber").innerHTML = sumberHtml(`${esc(t("pj.sumber", { tgl: tanggal(DATA.dibangun_pada, { gaya: "panjang" }), dok }))}<br>${esc(t("pj.sumber.rinci"))}`);
-  segarHero();
+  segarHero(); kepalaSeksi();
 }
 function segarHero() {
   const n = SEMUA.length, st = hitung(SEMUA, (r) => r.st), ada1 = URUT_ST.concat(TIDAK).filter((k) => st[k]);
@@ -129,7 +159,7 @@ let tampil = SEMUA, versi = 0;
 function isiPilihan() {
   const opsi = (sel, daftar, kunci, nm) => {
     const cur = F[kunci];
-    $(sel).innerHTML = `<option value="">${esc(t(nm))}: ${esc(t("pj.f.semua"))}</option>` + daftar.map(([v, l, n]) => `<option value="${esc(v)}">${esc(l)} (${num(n)})</option>`).join("");
+    $(sel).innerHTML = `<option value="">${esc(t(nm))}</option>` + daftar.map(([v, l, n]) => `<option value="${esc(v)}">${esc(l)} (${num(n)})</option>`).join("");
     $(sel).value = cur;
   };
   const ct = hitung(SEMUA, (r) => r.tek), cs = hitung(SEMUA, (r) => r.st), cp = hitung(SEMUA, (r) => r.prog), cv = hitung(SEMUA, (r) => r.prov || "_");
@@ -147,7 +177,7 @@ function terapkan() {
   $("pjHasil").textContent = t("pj.hasil", { n: num(tampil.length), total: num(SEMUA.length), mw: num(jumlahMW(tampil), 0) });
   for (const x of document.querySelectorAll("#pjStatus [data-st]")) x.setAttribute("aria-pressed", String(x.dataset.st === F.st));
   for (const x of document.querySelectorAll("#pjProgBar [data-pg]")) x.setAttribute("aria-pressed", String(x.dataset.pg === F.prog));
-  nanti(() => { if (v !== versi) return; gambarCorong(); gambarLegenda(); kePeta(); PN.n = 40; gambarPanel(); TT.n = BATAS; TD.n = BATAS; gambarTelat(); gambarDaftar(); });
+  nanti(() => { if (v !== versi) return; kepalaTabel(); gambarCorong(); gambarLegenda(); kePeta(); PN.n = 40; gambarPanel(); TT.n = BATAS; TD.n = BATAS; gambarTelat(); gambarDaftar(); });
 }
 
 /* ---------- corong ---------- */
@@ -202,7 +232,6 @@ function gambarTabel(T, fokus) {
 }
 const gambarDaftar = () => gambarTabel(TD);
 const gambarTelat = () => {
-  $("pjTelatKet").textContent = t("pj.telat.ket", { tahun: TAHUN });
   gambarTabel(TT);
 };
 for (const T of [TD, TT]) {
@@ -216,6 +245,19 @@ for (const T of [TD, TT]) {
     } else if (l) { T.n += BATAS; l.setAttribute("aria-busy", "true"); nanti(() => gambarTabel(T)); }
   });
 }
+
+const esCsv = (v) => { v = String(v ?? ""); return /[",\n]/.test(v) ? `"${v.replace(/"/g, '""')}"` : v; };
+document.addEventListener("click", (e) => {
+  const b = e.target.closest("[data-csv]");
+  if (!b) return;
+  const T = b.dataset.csv === "telat" ? TT : TD, rows = T.baris().slice().sort(bandingkan(T.k, T.arah));
+  const kop = [t("pj.c.nama"), t("pj.c.tek"), t("pj.c.kap") + " (MW)", t("pj.c.prov"), t("pj.c.status"), t("pj.c.cod"), t("pj.c.telat"), t("pj.c.sumber")];
+  const baris = rows.map((r) => [r.nama, r.tek ? labTek(r.tek) : "", r.kap ?? "", r.prov, labSt(r.st), r.cod ?? "", r.telat || "", ((r.p.sumber || [])[0] || {}).url || ""]);
+  const blob = new Blob(["\ufeff" + [kop, ...baris].map((x) => x.map(esCsv).join(",")).join("\r\n")], { type: "text/csv;charset=utf-8" });
+  const a = document.createElement("a");
+  a.href = URL.createObjectURL(blob); a.download = `proyek-${b.dataset.csv}-${DATA.dibangun_pada || ""}.csv`; a.click();
+  setTimeout(() => URL.revokeObjectURL(a.href), 4000);
+});
 
 /* ---------- peta (gaya direktori: kluster satu warna merek berangka, titik per teknologi mulai zoom 8, kartu popup) ---------- */
 let peta = null, petaSiap = false, popup = null, idLabel = null;
@@ -294,7 +336,7 @@ function sorotPeta(r) {
 }
 function bukaPeta() {
   muatMapLibre().then(() => {
-    peta = new maplibregl.Map({ container: "pjPeta", style: gaya(), bounds: [[94, -11.5], [141.5, 6.5]], fitBoundsOptions: { padding: { top: 56, bottom: 36, left: 12, right: $("pjDrawer").open ? 352 : 12 } }, minZoom: 3, maxZoom: 16, dragRotate: false, pitchWithRotate: false, attributionControl: { compact: true } });
+    peta = new maplibregl.Map({ container: "pjPeta", style: gaya(), bounds: [[94, -11.5], [141.5, 6.5]], fitBoundsOptions: { padding: { top: 56, bottom: 36, left: $("pjLapis").open && innerWidth >= 1000 ? 284 : 12, right: $("pjDrawer").open && innerWidth >= 1000 ? 352 : 12 } }, minZoom: 3, maxZoom: 16, dragRotate: false, pitchWithRotate: false, attributionControl: { compact: true } });
     peta.addControl(new maplibregl.NavigationControl({ showCompass: false }), "bottom-right");
     peta.on("style.load", () => { rapikanPeta(peta); pasangLapisan(); pasangBatas(); petaSiap = true; });
     peta.addControl(new maplibregl.ScaleControl({ unit: "metric", maxWidth: 90 }), "bottom-left");
@@ -318,7 +360,7 @@ function bukaPeta() {
     new MutationObserver(ganti).observe(document.documentElement, { attributes: true, attributeFilter: ["data-theme"] });
     matchMedia("(prefers-color-scheme: dark)").addEventListener("change", ganti);
     peta.once("idle", () => { kePeta(); const a = $("pjPeta").querySelector(".maplibregl-ctrl-attrib"); if (a) { a.classList.remove("maplibregl-compact-show"); a.removeAttribute("open"); } });
-  }).catch(() => { $("pjPeta").innerHTML = `<div class="jm-galat" role="alert"><p>${esc(t("pj.peta.galat"))}</p></div>`; });
+  }).catch((e) => { console.error("peta", e); $("pjPeta").innerHTML = `<div class="jm-galat" role="alert"><p>${esc(t("pj.peta.galat"))}</p></div>`; });
 }
 function kePeta(fit = true) {
   const n = tampil.filter((r) => r.ada), pasti = n.filter((r) => r.p.lokasi.presisi === "titik_persis").length;

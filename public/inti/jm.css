@@ -148,8 +148,8 @@ th[aria-sort="descending"] .jm-urut::after{opacity:1;clip-path:polygon(0 0,100% 
    <section class="jm-ex"> > header.jm-ex-hd (span.jm-ex-ey topik, h2/h3.jm-ex-j judul satu kalimat dengan <span class="jm-hl">angka</span>,
    p.jm-ex-sub nama metrik + pil EST, div.jm-ex-aksi kanan atas: kontrol + sumberHtml) > div.jm-ex-bd isi > footer.jm-ex-ft catatan.
    Helper: exHtml() di inti/komponen.js. */
-.jm-ex{background:var(--card);border:1px solid var(--line);border-radius:var(--r-lg);box-shadow:var(--shadow);overflow:hidden;min-width:0}
-.jm-ex>.jm-ex-hd{position:relative;display:grid;grid-template-columns:minmax(0,1fr) auto;gap:6px 16px;align-items:start;padding:18px 22px 14px;background:linear-gradient(180deg,var(--surface),color-mix(in srgb,var(--surface) 40%,var(--card)));border-bottom:1px solid var(--line)}
+.jm-ex{background:var(--card);border:1px solid var(--line);border-radius:var(--r-lg);box-shadow:var(--shadow);min-width:0}
+.jm-ex>.jm-ex-hd{border-radius:var(--r-lg) var(--r-lg) 0 0;position:relative;display:grid;grid-template-columns:minmax(0,1fr) auto;gap:6px 16px;align-items:start;padding:18px 22px 14px;background:linear-gradient(180deg,var(--surface),color-mix(in srgb,var(--surface) 40%,var(--card)));border-bottom:1px solid var(--line)}
 .jm-ex>.jm-ex-hd>.jm-ex-teks{min-width:0}
 .jm-ex .jm-ex-ey{display:inline-flex;align-items:center;gap:6px;margin-bottom:8px;padding:3px 10px;border-radius:var(--r-pil);background:var(--soft-hijau);color:var(--accent);font:800 10.5px/1.3 var(--font);letter-spacing:.08em;text-transform:uppercase}
 .jm-ex .jm-ex-ey .jm-ik{width:14px;height:14px}
@@ -161,3 +161,56 @@ th[aria-sort="descending"] .jm-urut::after{opacity:1;clip-path:polygon(0 0,100% 
 .jm-ex>.jm-ex-ft{display:flex;flex-wrap:wrap;justify-content:space-between;gap:6px 16px;padding:10px 22px 14px;border-top:1px solid var(--line);font-size:12px;color:var(--ink2)}
 .jm-ex>.jm-ex-ft:empty{display:none}
 @media (max-width:599px){.jm-ex>.jm-ex-hd{grid-template-columns:1fr}.jm-ex .jm-ex-aksi{justify-content:flex-start}.jm-ex>.jm-ex-hd,.jm-ex>.jm-ex-bd,.jm-ex>.jm-ex-ft{padding-left:16px;padding-right:16px}}
+
+/* AKSI kepala seksi (inti/aksi_ex.js): ikon 24px dalam tombol bulat 36px */
+.jm-aksi{display:inline-flex;align-items:center;gap:6px}
+.jm-aksi-b{display:inline-grid;place-items:center;width:36px;height:36px;padding:0;border:1px solid var(--line);border-radius:50%;background:var(--card);color:var(--ink2);cursor:pointer}
+.jm-aksi-b .jm-ik{width:24px;height:24px}
+.jm-aksi-b:hover,.jm-aksi-b[aria-expanded="true"]{color:var(--accent);border-color:var(--accent);background:var(--soft-hijau)}
+.jm-aksi-b:focus-visible,.jm-aksi-mi:focus-visible{outline:2px solid var(--fokus);outline-offset:2px}
+.jm-aksi-b[hidden]{display:none}
+.jm-aksi-b:disabled{opacity:.5;cursor:progress}
+.jm-aksi-menu{position:fixed;z-index:60;display:grid;min-width:190px;padding:6px;background:var(--paper);border:1px solid var(--line);border-radius:var(--r-sm);box-shadow:var(--shadow-lg)}
+.jm-aksi-mi{display:block;width:100%;min-height:40px;padding:0 12px;border:0;border-radius:var(--r-sm);background:none;color:var(--ink);font:600 14px/1 var(--font);text-align:left;cursor:pointer}
+.jm-aksi-mi:hover{background:var(--soft-hijau);color:var(--accent)}
+.jm-aksi-kabar{position:fixed;z-index:70;left:50%;bottom:24px;transform:translateX(-50%);margin:0;padding:10px 18px;border-radius:var(--r-pil);background:var(--brand);color:var(--on-brand);font:600 14px/1.2 var(--font);opacity:0;pointer-events:none}
+.jm-aksi-kabar.tampil{opacity:1}
+.jm-ex-ey,.jm-ex-aksi{min-width:0}
+
+/* PNG: salinan seksi + strip logo/sumber/tanggal */
+.jm-snap{background:var(--paper);color:var(--ink);font-family:var(--font);padding:20px;box-sizing:border-box;display:grid;gap:12px}
+.jm-snap-kaki{display:flex;align-items:center;gap:12px;border-top:1px solid var(--line);padding-top:12px;font-size:13px;color:var(--ink2)}
+.jm-snap-kaki p{margin:0;line-height:1.45}
+.jm-snap-kaki b{color:var(--head)}
+
+/* PDF: hanya seksi terpilih yang tercetak */
+.jm-cetak-kop,.jm-cetak-kaki{display:none}
+@media print{
+  @page{size:A4;margin:16mm 12mm 18mm}
+  .jm-cetak-sembunyi,.jm-ex-aksi,.jm-aksi-menu,.jm-aksi-kabar,dialog:not([open]){display:none!important}
+  .jm-cetak-kop{display:flex;align-items:center;gap:10px;padding:0 0 10px;margin-bottom:10px;border-bottom:2px solid var(--meti-lime);font:700 15px/1 var(--display);color:var(--head)}
+  .jm-cetak-kaki{display:block;margin-top:12px;padding-top:8px;border-top:1px solid var(--line);font-size:11px;color:var(--ink2)}
+  .jm-ex.jm-cetak-aktif{overflow:visible;box-shadow:none;border:0}
+  .jm-ex.jm-cetak-aktif tr,.jm-ex.jm-cetak-aktif li{break-inside:avoid}
+  body{background:none}
+}
+
+/* TABEL kerapian bersama: kolom # bulat, identitas 2 baris, angka kanan, strip untuk nilai kosong, batang kecil */
+.jm-tabel-tetap{table-layout:fixed}
+.jm-tabel .jm-no{width:56px;padding-inline:6px;text-align:center}
+.jm-rank{display:inline-grid;place-items:center;width:28px;height:28px;border-radius:50%;background:var(--soft-hijau);color:var(--accent);font:700 12.5px/1 var(--font)}
+.jm-rank-top{background:var(--brand);color:var(--on-brand)}
+.jm-tabel td.jm-id-sel{overflow:hidden}
+.jm-tabel .jm-id{display:flex;align-items:center;gap:10px;min-width:0}
+.jm-tabel .jm-id>span{display:block;min-width:0}
+.jm-tabel .jm-id b,.jm-tabel .jm-id small{display:block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.jm-tabel .jm-id img{flex:none;width:32px;height:32px;object-fit:contain;border-radius:var(--r-sm);background:var(--card)}
+.jm-strip{color:var(--ink2);cursor:help}
+.jm-nbar{display:flex;align-items:center;justify-content:flex-end;gap:10px}
+.jm-nbar svg{flex:1;min-width:30px;max-width:120px;height:8px}
+.jm-nbar-l{fill:var(--surface)}.jm-nbar-i{fill:var(--accent)}
+.jm-tabel td.jm-id-sel button{display:block;max-width:100%;text-align:left}
+@media (max-width:767px){.jm-tabel-tetap{table-layout:auto}.jm-tabel td.jm-no{display:none!important}.jm-tabel td.jm-num{text-align:left}}
+
+/* regulasi: lebar kolom tabel tetap */
+.jm-reg-tabel th:nth-child(2){width:42%}.jm-reg-tabel th:nth-child(3){width:26%}.jm-reg-tabel th:nth-child(4){width:130px}.jm-reg-tabel th:nth-child(5){width:110px}

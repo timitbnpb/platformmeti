@@ -45,9 +45,13 @@ function hero(f) {
 
 const pita = (m) => `<section class="tn-kredit" aria-label="${esc(t("tn.mitra.kerja"))}"><div class="wrap"><p>${esc(t("tn.mitra.judul_n", { judul: t("tn.mitra.kerja"), n: m.mitra.length }))}</p></div>${jalur(m.mitra, tbl)}</section>`;
 
-function mengapa() {
+function mengapa(f) {
+  const st = [["kalender", "1999", t("tn.stat.berdiri")], ["tautan", angka(f.anggota), t("tn.stat.anggota")], ["orang", angka(f.pengurus), t("tn.stat.pengurus")]];
   return `<section class="seksi kertas" aria-labelledby="tn-mengapa">${bandL("tn-mengapa", "/img/tentang/hidro.webp", "50% 50%", t("tn.mengapa.h2"), t("tn.mengapa.lead"))}
-  <div class="wrap tn-dua"><article class="kartu"><h3>${esc(t("tn.meti.judul"))}</h3><p>${esc(t("tn.meti.isi"))}</p></article><article class="kartu"><h3>${esc(t("tn.dir.judul"))}</h3><p>${esc(t("tn.dir.isi"))}</p></article></div></section>`;
+  <div class="wrap tn-dua"><article class="kartu tn-fitur"><header><img src="/img/logo-meti-tanda.png" alt="" width="48" height="48"><h3>${esc(t("tn.meti.judul"))}</h3></header><p>${esc(t("tn.meti.lead"))}</p>
+    <dl class="tn-mini">${st.map(([ik, n, l]) => `<div>${ikon(ik, 20)}<dd>${esc(n)}</dd><dt>${esc(l)}</dt></div>`).join("")}</dl><a class="tn-lanjut tn-bawah" href="#tim">${esc(t("tn.meti.link"))}</a></article>
+  <article class="kartu tn-fitur"><header><span class="tn-bulat">${ikon("direktori", 24)}</span><h3>${esc(t("tn.dir.judul"))}</h3></header>
+    <ul class="tn-cek">${[1, 2, 3, 4].map((n) => `<li>${ikon("centang", 18)}<span>${esc(t("tn.dir.b" + n))}</span></li>`).join("")}</ul><a class="tn-lanjut tn-bawah" href="/metode">${esc(t("tn.dir.link"))}</a></article></div></section>`;
 }
 
 function struktur(p) {
@@ -95,7 +99,7 @@ const isi = document.getElementById("isi");
 try {
   const [p, m, k, r] = await Promise.all([muat("pengurus-meti"), muat("mitra-meti"), muat("tentang-kredit"), muat("ringkas")]);
   const nama = new Set([...Object.values(p.unit).flat(), ...p.bidang.flatMap((b) => b.anggota)].map((o) => o.nama));
-  isi.innerHTML = hero({ pengurus: nama.size, mitra: m.asosiasi.length, proyek: r.hitung.proyek }) + pita(m) + mengapa() + struktur(p) + mitra(m) + metode() + kontak() + faq(k);
+  isi.innerHTML = hero({ pengurus: nama.size, mitra: m.asosiasi.length, proyek: r.hitung.proyek }) + pita(m) + mengapa({ pengurus: nama.size, anggota: m.anggota.length }) + struktur(p) + mitra(m) + metode() + kontak() + faq(k);
 } catch (e) {
   isi.innerHTML = `<p class="wrap tn-galat jm-galat" role="alert">${esc(t("tn.galat"))}</p>`;
 }

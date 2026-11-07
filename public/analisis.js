@@ -62,7 +62,7 @@ export function heroVisual({ angka: a, label, rows, ref, teksRef, turunan = true
 }
 
 /* Temuan utama di kepala wadah: kalimat besar dari data + pil EST bila turunan. */
-export const temuanHtml = (teks, turunan = true) => `${esc(teks)}${turunan ? " " + pil("an.est") : ""}`;
+export const temuanHtml = (teks, turunan = true) => `${esc(teks).replace(/(\d[\d.,]*(?:\s?(?:%|GWp|GW|MW))?)/, '<span class="jm-hl">$1</span>')}${turunan ? " " + pil("an.est") : ""}`;
 
 /* Batang horizontal HTML. baris: [{label, bagian:[{nilai, kelas}], teks, sorot, id}]; ref = nilai garis putus-putus; aksi = batang bisa diklik.
    Lebar lewat data-w; panggil pasangBar(akar) sesudah innerHTML (CSSOM, tanpa atribut style). */

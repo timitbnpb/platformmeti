@@ -27,3 +27,10 @@ export function batangMendatar(xs, aksi) {
     return `<li>${aksi && kunci ? `<button type="button" class="brt-bb-r" data-${aksi}="${esc(kunci)}">${isi}</button>` : `<div class="brt-bb-r">${isi}</div>`}</li>`;
   }).join("")}</ul>`;
 }
+
+/** Jumlah berita dalam jendela yang sama dengan volumeSvg. */
+export function jumlahJendela(rows, mode, akhirIso) {
+  const akhir = hariKe(akhirIso), langkah = mode === "minggu" ? 7 : 1, n = mode === "minggu" ? 14 : 30;
+  const mulai = (mode === "minggu" ? awalMinggu(akhir) : akhir) - (n - 1) * langkah;
+  return rows.filter((r) => hariKe(r.terbit) >= mulai && hariKe(r.terbit) < mulai + n * langkah).length;
+}

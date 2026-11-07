@@ -1,14 +1,15 @@
 import { mulaiHalaman } from "/inti/kepala.js";
 import { t, angka, tanggal } from "/i18n.js";
 import { esc, nanti, debounce, hantuHtml, galatHtml, ikon } from "/inti/umum.js";
-import { cariHtml, pilihHtml, hapusHtml, hitungHtml } from "/inti/komponen.js";
-import { volumeSvg, batangMendatar } from "/berita_grafik.js";
+import { cariHtml, pilihHtml, hapusHtml, hitungHtml, exHtml, sumberHtml } from "/inti/komponen.js";
+import { aksiHtml, hlHtml } from "/inti/aksi_ex.js";
+import { volumeSvg, batangMendatar, jumlahJendela } from "/berita_grafik.js";
 import { muat, label, urlAman, norm } from "/publik.js";
 
 const LANJUT = 30;
 const HARI = 86400000;
 const S = { mode: "hari", tab: "berita", q: "", tek: "", media: "", periode: "", bahasa: "", n: LANJUT };
-let B = null, V = null, FOTO = {}, ORG = new Map(), SEKARANG = Date.now();
+let DIBANGUN = "", B = null, V = null, FOTO = {}, ORG = new Map(), SEKARANG = Date.now();
 
 const umur = (iso) => (SEKARANG - Date.parse(iso)) / HARI;
 const tek = (k) => label("brt.tek.", k);
@@ -51,12 +52,17 @@ function gambarTab() {
 }
 function gambarRingkas() {
   const ak = B[0].terbit;
-  document.getElementById("mode").innerHTML = ["hari", "minggu"].map((m) => `<button type="button" class="brt-chip" data-mode="${m}" aria-pressed="${S.mode === m}">${esc(t("brt.g.per_" + m))}</button>`).join("");
-  document.getElementById("vol-h").textContent = t("brt.g.volume_" + S.mode);
-  document.getElementById("volume").innerHTML = volumeSvg(B, S.mode, ak);
   const c = (f) => { const m = new Map(); for (const r of B) for (const k of f(r)) m.set(k, (m.get(k) || 0) + 1); return [...m].sort((a, b) => b[1] - a[1]); };
-  document.getElementById("sebaran").innerHTML = batangMendatar(c((r) => r.kepakaran || []).slice(0, 8).map(([k, v]) => [tek(k), v, k]), "topik");
-  document.getElementById("media-top").innerHTML = batangMendatar(c((r) => [r.media]).slice(0, 8).map(([k, v]) => [k, v, k]), "media");
+  const tekTop = c((r) => r.kepakaran || []).slice(0, 8), medTop = c((r) => [r.media]).slice(0, 8);
+  const est = `<span class="jm-pil jm-pil-est">${esc(t("an.est"))}</span>`;
+  const sumber = sumberHtml(`${esc(t("brt.sumber"))} ${esc(tanggal(DIBANGUN))}.`);
+  const ex = (o) => exHtml({ tingkat: "h2", aksiHtml: aksiHtml({ csv: false }) + sumber, ...o });
+  const mode = `<span class="brt-mode" id="mode">${["hari", "minggu"].map((m) => `<button type="button" class="brt-chip" data-mode="${m}" aria-pressed="${S.mode === m}">${esc(t("brt.g.per_" + m))}</button>`).join("")}</span>`;
+  document.getElementById("ringkasan").innerHTML =
+    ex({ id: "ex-volume", ikon: "berita", topik: t("brt.ex.vol.ey"), judulHtml: hlHtml("brt.ex.vol.j", angka(jumlahJendela(B, S.mode, ak)), { rentang: t("brt.ex.r_" + S.mode) }),
+      subHtml: `${esc(t("brt.ex.vol.sub", { unit: t("brt.ex.u_" + S.mode), n: angka(B.length) }))}${mode}`, isiHtml: volumeSvg(B, S.mode, ak) }).replace('class="jm-ex"', 'class="jm-ex brt-lebar"')
+    + ex({ id: "ex-teknologi", ikon: "topik", topik: t("brt.ex.tek.ey"), judulHtml: hlHtml("brt.ex.tek.j", tek(tekTop[0][0])), subHtml: `${esc(t("brt.ex.tek.sub"))} ${est}`, isiHtml: batangMendatar(tekTop.map(([k, v]) => [tek(k), v, k]), "topik") })
+    + ex({ id: "ex-media", ikon: "jenis", topik: t("brt.ex.med.ey"), judulHtml: hlHtml("brt.ex.med.j", medTop[0][0]), subHtml: esc(t("brt.ex.med.sub")), isiHtml: batangMendatar(medTop.map(([k, v]) => [k, v, k]), "media") });
 }
 function gambarAngka() {
   const item = (v, k) => `<div><dd>${angka(v)}</dd><dt>${esc(t(k))}</dt></div>`;
@@ -111,6 +117,7 @@ function itemVideo(r) {
 function gambarIsi() {
   const rows = saring();
   document.getElementById("f-hitung").textContent = t("brt.hitung", { n: angka(rows.length), total: angka(baris().length) });
+  document.querySelector("#ex-semua .jm-ex-j").innerHTML = hlHtml("brt.ex.semua.j", angka(rows.length), { total: angka(baris().length), jenis: t("brt.tab." + S.tab).toLowerCase() });
   const el = document.getElementById("isi");
   if (!rows.length) { el.innerHTML = `<p class="brt-lead">${esc(t("brt.kosong"))}</p>`; return; }
   const potong = rows.slice(0, S.n);
@@ -148,7 +155,8 @@ async function mulai() {
     SEKARANG = Date.now();
     B = b.baris.map((r) => ({ ...r, _cari: norm(`${r.judul} ${r.media}`) })).sort((x, y) => y.terbit.localeCompare(x.terbit));
     V = v.baris.map((r) => ({ ...r, _cari: norm(`${r.judul} ${r.kanal}`) })).sort((x, y) => y.terbit.localeCompare(x.terbit));
-    document.getElementById("sumber").textContent = `${t("brt.sumber")} ${tanggal(b.dibangun_pada)}.`;
+    DIBANGUN = b.dibangun_pada;
+    document.querySelector("#semua .jm-ex-aksi").innerHTML = aksiHtml({ csv: false }) + sumberHtml(`${esc(t("brt.sumber"))} ${esc(tanggal(DIBANGUN))}.`);
   } catch { document.getElementById("isi").innerHTML = galatHtml(); return; }
   const p = new URLSearchParams(location.search);
   for (const k of Object.keys(S)) if (p.has(k) && k !== "n") S[k] = p.get(k);
@@ -159,6 +167,8 @@ async function mulai() {
 
 (async () => {
   await mulaiHalaman();
+  document.getElementById("semua").innerHTML = exHtml({ id: "ex-semua", ikon: "berita", topik: t("brt.ex.semua.ey"), judulHtml: "", subHtml: esc(t("brt.ex.semua.sub")),
+    isiHtml: `<div class="jm-tab" role="tablist" id="tab"></div><div class="jm-saring" id="saring"></div><div id="isi" role="tabpanel"></div>`, aksiHtml: " " });
   document.getElementById("isi").addEventListener("click", (e) => {
     if (e.target.closest("[data-aksi=ulang]")) return mulai();
     if (e.target.closest("[data-aksi=lagi]")) { S.n += LANJUT; return nanti(gambarIsi); }
@@ -168,12 +178,12 @@ async function mulai() {
     const b = e.target.closest("[data-tab]"); if (!b || b.dataset.tab === S.tab) return;
     ubah(() => { S.tab = b.dataset.tab; S.media = ""; if (S.tab === "video") { S.tek = ""; S.bahasa = ""; } gambarTab(); gambarSaring(); });
   });
-  document.getElementById("mode").addEventListener("click", (e) => { const b = e.target.closest("[data-mode]"); if (!b) return; S.mode = b.dataset.mode; for (const x of e.currentTarget.children) x.setAttribute("aria-pressed", String(x === b)); nanti(gambarRingkas); });
+  document.getElementById("ringkasan").addEventListener("click", (e) => { const b = e.target.closest("[data-mode]"); if (!b) return; S.mode = b.dataset.mode; for (const x of b.parentElement.children) x.setAttribute("aria-pressed", String(x === b)); nanti(gambarRingkas); });
   document.querySelector("main").addEventListener("click", (e) => {
     if (e.target.closest("#isi, #saring, #tab")) return;
     const k = e.target.closest("[data-topik],[data-media],[data-lihat]"); if (!k) return;
     ubah(() => { S.tab = "berita"; if (k.dataset.lihat) S.tek = k.dataset.lihat; else if (k.dataset.topik) S.tek = k.dataset.topik; else S.media = k.dataset.media; gambarTab(); gambarSaring(); });
-    document.getElementById("s02-h").scrollIntoView({ block: "start" });
+    document.getElementById("ex-semua").scrollIntoView({ block: "start" });
   });
   addEventListener("error", (e) => { if (e.target.tagName === "IMG" && e.target.closest(".brt-sampul")) e.target.remove(); }, true);
   const cariTunda = debounce(() => ubah(() => {}), 120);

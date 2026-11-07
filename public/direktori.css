@@ -2632,3 +2632,46 @@ button.ak-r[data-kh][aria-pressed="true"]{border-color:var(--w0,var(--brand2));b
 .ak-kchips button small{color:var(--ink2);font-weight:600}
 .ak-kchips .ak-kdot{width:9px;height:9px;border-radius:50%;flex:none}
 .ak-kchips button[aria-pressed="true"]{border-color:var(--brand);background:color-mix(in srgb,var(--brand) 12%,var(--card))}
+
+/* kotak cari utama direktori: satu baris flex, ikon, teks, dan pintasan sejajar tengah (pemilik 7 Nov 2026) */
+.ak-cari-besar{width:min(880px,100%)}
+.ak-cari-besar .ak-cari{display:flex;align-items:center;gap:12px;height:56px;padding:0 10px 0 20px;background:var(--card);border:1px solid var(--line);border-radius:var(--r-pil);box-shadow:var(--shadow-lg)}
+.ak-cari-besar .ak-cari:focus-within{border-color:var(--accent);box-shadow:0 0 0 4px color-mix(in srgb,var(--accent) 22%,transparent),var(--shadow-lg)}
+.ak-cari-besar .ak-cari>svg{position:static;transform:none;flex:none;width:20px;height:20px;stroke:var(--accent)}
+.ak-cari-besar .ak-cari input{flex:1;min-width:0;height:100%;padding:0;border:0;background:transparent;box-shadow:none;outline:0;font:500 16px/1 var(--font);color:var(--ink)}
+.ak-cari-besar .ak-cari input::placeholder{color:var(--ink2)}
+.ak-cari-besar .ak-kbds{display:flex;gap:6px;flex:none}
+.ak-cari-besar .ak-kbd{position:static;transform:none;display:inline-grid;place-items:center;min-width:28px;height:28px;padding:0 8px;border-radius:8px;font:600 12px/1 var(--font)}
+@media (max-width:600px){.ak-cari-besar .ak-cari{height:48px;padding-left:14px}.ak-cari-besar .ak-kbds{display:none}}
+/* semua deretan pilihan di kepala direktori (kelompok, sub-tab, Peta/Daftar) juga ujung ke ujung, satu baris */
+.ak-kepala-nav>.ak-seg.ak-subtab,.ak-kepala-nav>.ak-seg.ak-kelompok,.ak-kepala-nav>.ak-seg[data-hero-view]{display:grid!important;grid-auto-flow:column;grid-auto-columns:1fr;width:100%!important;justify-self:stretch;flex-wrap:nowrap!important}
+.ak-kepala-nav>.ak-seg.ak-subtab button,.ak-kepala-nav>.ak-seg.ak-kelompok button,.ak-kepala-nav>.ak-seg[data-hero-view] button{width:100%;flex:none!important;justify-content:center}
+@media (max-width:767px){.ak-kepala-nav>.ak-seg.ak-subtab,.ak-kepala-nav>.ak-seg.ak-kelompok{grid-auto-flow:row;grid-template-columns:repeat(2,minmax(0,1fr))}}
+
+/* peta: kisi chip melayang di dalam kanvas, kolom sama lebar */
+.ak-ptaisi > .ak-kchips{position:absolute;z-index:8;top:60px;left:12px;right:56px;margin:0;grid-template-columns:repeat(8,minmax(0,1fr));gap:5px;pointer-events:none}
+.ak-ptaisi > .ak-kchips button{pointer-events:auto;box-shadow:var(--shadow);background:color-mix(in srgb,var(--card) 94%,transparent);backdrop-filter:blur(8px)}
+.ak-kchips button small{background:var(--surface);border-radius:999px;padding:0 6px;font-size:10.5px;line-height:16px}
+.ak-kchips button[aria-pressed="true"] small{background:var(--brand);color:var(--on-brand)}
+@media (max-width:1100px){.ak-ptaisi > .ak-kchips{grid-template-columns:repeat(4,minmax(0,1fr))}}
+@media (max-width:600px){.ak-ptaisi > .ak-kchips{grid-template-columns:repeat(2,minmax(0,1fr));top:56px;right:12px}}
+/* panel kiri: kotak lapisan kosong disembunyikan; daftar provinsi */
+.ak-ptlayer:not(:has(> button:not([hidden]))){display:none!important}
+.ak-sdp-l{display:grid;gap:2px}
+.ak-sdp{all:unset;box-sizing:border-box;display:grid;grid-template-columns:22px minmax(0,1fr) auto;align-items:center;gap:10px;padding:7px 8px;border-radius:10px;cursor:pointer}
+.ak-sdp:hover,.ak-sdp:focus-visible{background:var(--surface)}
+.ak-sdp-n{display:grid;gap:4px;min-width:0}.ak-sdp-n b{font-size:13px;font-weight:700;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.ak-sdp-bar,.ak-tw-bar{display:flex;height:5px;border-radius:99px;overflow:hidden;background:var(--line)}.ak-sdp-bar i,.ak-tw-bar i{display:block;height:100%}
+.ak-sdp em{font-style:normal;font-weight:800;font-size:12.5px;font-variant-numeric:tabular-nums}
+.ak-sdp .ak-lw{width:22px;height:22px;object-fit:contain}
+/* kartu hover provinsi */
+#akTip:has(.ak-tipw2){width:320px;max-width:320px}
+.ak-tipw2{gap:10px}
+.ak-tw-h{display:grid;grid-template-columns:auto minmax(0,1fr) auto;align-items:center;gap:8px}.ak-tw-h b{font-size:14px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.ak-tw-h .ak-lw{width:32px;height:32px;object-fit:contain}.ak-tw-l{font-size:11px;font-weight:700;color:var(--brand2)}
+.ak-tw-u{display:grid;grid-auto-flow:column;grid-auto-columns:1fr;gap:6px}.ak-tw-u div{background:var(--surface);border-radius:10px;padding:6px 8px;display:grid}.ak-tw-u b{font-size:17px;line-height:1.1}.ak-tw-u small{font-size:10.5px;color:var(--ink2)}
+.ak-tw-leg{display:flex;flex-wrap:wrap;gap:4px 10px;font-size:11px;color:var(--ink2)}.ak-tw-leg i{display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:4px}
+.ak-tw-t small{display:block;font-size:10px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--ink2);margin-bottom:4px}
+.ak-tw-r{display:grid;grid-template-columns:auto minmax(0,1fr) auto;align-items:center;gap:7px;padding:3px 0}.ak-tw-r b{font-size:12px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.ak-tw-r em{font-style:normal;font-size:10px;font-weight:700;color:var(--ink2);background:var(--surface);border-radius:99px;padding:1px 7px;white-space:nowrap}
+/* gelembung klaster: warna brand, angka putih */
+.ak-pinklaster{background:var(--brand)!important;border-color:var(--paper)!important;color:var(--on-brand)!important}.ak-pinklaster b{color:var(--on-brand)!important}

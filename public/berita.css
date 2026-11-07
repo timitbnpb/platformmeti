@@ -129,3 +129,7 @@ button.brt-bb-r:hover .brt-bb-n{color:var(--accent);text-decoration:underline}
 .brt-card-h .brt-judul{min-height:0}
 .brt-sisi{align-content:stretch;grid-auto-rows:1fr}
 .brt-lead-k,.brt-lead-k .brt-card{height:100%}
+
+/* ringkasan: tiga seksi .jm-ex */
+.brt-grid>.jm-ex{align-self:start}
+.jm-ex-sub .brt-mode{margin-left:6px}

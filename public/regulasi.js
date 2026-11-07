@@ -1,7 +1,8 @@
 import { mulaiHalaman } from "/inti/kepala.js";
 import { t, angka, tanggal } from "/i18n.js";
 import { esc, nanti, debounce, hantuHtml, kosongHtml, galatHtml, ikon } from "/inti/umum.js";
-import { cariHtml, pilihHtml, hapusHtml } from "/inti/komponen.js";
+import { cariHtml, pilihHtml, hapusHtml, exHtml, sumberHtml } from "/inti/komponen.js";
+import { aksiHtml, hlHtml } from "/inti/aksi_ex.js";
 import { lapisAnggota, anggotaDl, muat, label, urlAman, norm, namaRegulasi, kelasStatus, SINGKAT } from "/publik.js";
 
 const HAL = 25;
@@ -49,16 +50,22 @@ function gambarSaring() {
 }
 
 const pil = (r) => `<span class="jm-pil ${kelasStatus(r.status)}">${esc(label("reg.status.", r.status))}</span>`;
-function barisHtml(r) {
-  return `<li><button type="button" class="jm-baris" data-id="${esc(r.id)}"><span class="jm-baris-no">${esc(namaRegulasi(r))}</span><span class="jm-baris-judul">${esc(r.judul)}</span>
-    <span class="jm-baris-meta">${pil(r)}<span>${esc(r.instansi_penerbit || "-")}</span><span>${esc(tanggal(r.tanggal_ditetapkan))}</span></span></button></li>`;
+const strip = () => `<span class="jm-strip" title="${esc(t("jm.belum"))}">-</span>`;
+function barisHtml(r, i) {
+  const no = i + 1, top = no <= 3 && S.hal === 1;
+  return `<tr><td class="jm-no" data-label="${esc(t("reg.col.no"))}"><span class="jm-rank${top ? " jm-rank-top" : ""}">${no}</span></td>
+    <td class="jm-id-sel" data-label="${esc(t("reg.col.aturan"))}"><span class="jm-id"><span><button type="button" data-id="${esc(r.id)}"><b>${esc(namaRegulasi(r))}</b></button><small title="${esc(r.judul)}">${esc(r.judul)}</small></span></span></td>
+    <td class="jm-id-sel" data-label="${esc(t("reg.col.penerbit"))}">${r.instansi_penerbit ? esc(r.instansi_penerbit) : strip()}</td>
+    <td class="jm-num" data-label="${esc(t("reg.col.tanggal"))}">${r.tanggal_ditetapkan ? esc(tanggal(r.tanggal_ditetapkan)) : strip()}</td>
+    <td class="jm-tengah" data-label="${esc(t("reg.col.status"))}">${pil(r)}</td></tr>`;
 }
 
 function gambarDaftar(rows) {
   const maks = Math.max(1, Math.ceil(rows.length / HAL));
   S.hal = Math.min(S.hal, maks);
   const potong = rows.slice((S.hal - 1) * HAL, S.hal * HAL);
-  document.getElementById("isi").innerHTML = potong.length ? `<ul class="jm-daftar">${potong.map(barisHtml).join("")}</ul>` : kosongHtml("jm.kosong.cocok", { data: "reset", kunci: "jm.kosong.reset" });
+  const th = (k, kelas = "") => `<th class="${kelas}">${esc(t(k))}</th>`;
+  document.getElementById("isi").innerHTML = potong.length ? `<div class="jm-gulir"><table class="jm-tabel jm-tabel-tetap jm-reg-tabel"><thead><tr>${th("reg.col.no", "jm-no")}${th("reg.col.aturan")}${th("reg.col.penerbit")}${th("reg.col.tanggal")}${th("reg.col.status")}</tr></thead><tbody>${potong.map((r, i) => barisHtml(r, (S.hal - 1) * HAL + i)).join("")}</tbody></table></div>` : kosongHtml("jm.kosong.cocok", { data: "reset", kunci: "jm.kosong.reset" });
   document.getElementById("hal").innerHTML = maks > 1 ? `<button type="button" class="jm-tbl jm-tbl-kecil" data-hal="-1"${S.hal <= 1 ? " disabled" : ""}>${esc(t("jm.sebelumnya"))}</button><span>${esc(t("jm.hal", { n: angka(S.hal) }))} / ${angka(maks)}</span><button type="button" class="jm-tbl jm-tbl-kecil" data-hal="1"${S.hal >= maks ? " disabled" : ""}>${esc(t("jm.berikutnya"))}</button>` : "";
 }
 
@@ -94,6 +101,11 @@ function gambarIsi() {
   const rows = saring();
   document.getElementById("hapus") && (document.getElementById("hapus").hidden = !adaFilter());
   document.getElementById("hitung").textContent = t("reg.hitung", { n: angka(rows.length), total: angka(D.baris.length) });
+  const ex = document.getElementById("ex-reg"), tl = S.tampil === "linimasa";
+  ex.querySelector(".jm-ex-ey").lastChild.textContent = t("reg.ex.ey." + S.tampil);
+  ex.querySelector(".jm-ex-j").innerHTML = hlHtml("reg.ex.j", angka(rows.length), { total: angka(D.baris.length) });
+  ex.querySelector(".jm-ex-sub").textContent = t("reg.ex.sub." + S.tampil);
+  ex.querySelector("[data-jm-aksi=csv]")?.toggleAttribute("hidden", tl);
   (S.tampil === "linimasa" ? gambarLinimasa : gambarDaftar)(rows);
 }
 
@@ -113,8 +125,8 @@ async function gambarRuu() {
       sumber = `<span class="jm-sumber">${esc(t("reg.ruu.sumber", { tanggal: tanggal(k.tanggal), mitra: k.mitra }))}</span> <span class="jm-pil jm-pil-warn">${esc(t("reg.ruu.belum"))}</span>`;
     } catch (e) { el.innerHTML = ""; return; }
   }
-  el.innerHTML = `<section class="jm-kartu jm-sorot" aria-labelledby="ruu-j"><h2 id="ruu-j">${esc(t("reg.ruu.judul"))} <span class="jm-pil">${esc(t("reg.ruu.label"))}</span></h2>
-    <p>${esc(baris ? baris.judul : t("reg.ruu.nama"))}</p><p><strong>${esc(t("reg.ruu.tahap_label"))}:</strong> ${esc(tahap)}</p><p>${sumber}</p></section>`;
+  el.innerHTML = exHtml({ id: "ex-ruu", ikon: "regulasi", topik: t("reg.ruu.label"), judulHtml: hlHtml("reg.ex.ruu.j", tahap), subHtml: esc(baris ? baris.judul : t("reg.ruu.nama")),
+    aksiHtml: aksiHtml({ csv: false }), isiHtml: `<p><strong>${esc(t("reg.ruu.tahap_label"))}:</strong> ${esc(tahap)}</p><p>${sumber}</p>` });
 }
 
 /* ---------- lembar profil ---------- */
@@ -171,11 +183,13 @@ async function muatData() {
 }
 function gambarSemua() {
   gambarSaring(); gambarIsi(); gambarRuu();
-  document.getElementById("sumber").textContent = t("reg.sumber", { tanggal: tanggal(D.diambil) });
+  document.querySelector("#ex-reg .jm-ex-aksi").innerHTML = aksiHtml({ csv: true }) + sumberHtml(esc(t("reg.sumber", { tanggal: tanggal(D.diambil) })));
 }
 
 async function main() {
   await mulaiHalaman();
+  document.getElementById("daftar-reg").innerHTML = exHtml({ id: "ex-reg", ikon: "regulasi", topik: t("reg.ex.ey.daftar"), judulHtml: "", subHtml: " ", aksiHtml: " ",
+    isiHtml: `<div class="jm-saring" id="saring"></div><div class="jm-alat"><div class="jm-tab" role="tablist" id="tampil"></div><p class="jm-hitung" id="hitung" role="status"></p></div><div id="isi"></div><div class="jm-hal" id="hal"></div>` });
   const idAwal = bacaUrl();
   const mulai = async () => { if (await muatData()) { gambarSemua(); if (idAwal && D.byId.has(idAwal)) bukaProfil(idAwal); } };
   await mulai();

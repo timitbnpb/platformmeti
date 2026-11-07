@@ -1,6 +1,5 @@
 /* /wilayah: peta koroplet 38 provinsi + profil provinsi (?prov=XX). Data statis /data/wilayah.json. */
 import { mulaiHalaman } from "/inti/kepala.js";
-import { muatMapLibre } from "/inti/maplibre.js";
 import { nanti, esc, hantuHtml } from "/inti/umum.js";
 import { t, tanggal } from "/i18n.js";
 import { muatData, tampilGalat, sumberHtml, sumberLipat, kartuHtml, batangHtml, pasangBar, temuanHtml, heroVisual, ubinHtml, pil, teksTek, teksStatus, num, saatBahasa, amanUrl } from "/analisis.js";
@@ -10,14 +9,22 @@ const param = new URLSearchParams(location.search).get("prov");
 let data = null, geo = null, metrik = "terpasang", peta = null, petaSiap = false;
 
 const METRIK = {
-  terpasang: { ambil: (p) => p.terpasang_mw?.nilai ?? null, satuan: "MW", d: 1, sumber: (p) => p.terpasang_mw },
-  rasio: { ambil: (p) => p.rasio_elektrifikasi?.nilai ?? null, satuan: "%", d: 2, sumber: (p) => p.rasio_elektrifikasi },
-  panasbumi: { ambil: (p) => p.potensi_panas_bumi?.nilai ?? null, satuan: "MW", d: 0, sumber: (p) => p.potensi_panas_bumi },
-  proyek: { ambil: (p) => p.jumlah_proyek, satuan: "", d: 0, sumber: () => null },
+  terpasang: { ambil: (p) => p.terpasang_mw?.nilai ?? null, satuan: "MW", d: 1, sumber: (p) => p.terpasang_mw, kedua: ["proyek", "panasbumi"] },
+  panasbumi: { ambil: (p) => p.potensi_panas_bumi?.nilai ?? null, satuan: "MW", d: 0, sumber: (p) => p.potensi_panas_bumi, kedua: ["terpasang", "proyek"] },
+  proyek: { ambil: (p) => p.jumlah_proyek, satuan: "", d: 0, sumber: () => null, kedua: ["terpasang", "panasbumi"] },
+  rued: { ambil: (p) => (p.rued.perda ? 1 : null), satuan: "", d: 0, sumber: (p) => (p.rued.perda ? { sumber: t("wl.sumber_rued"), url: p.rued.url, tanggal: p.rued.tanggal } : null), kedua: ["terpasang", "proyek"] },
 };
-const nilaiTeks = (m, p) => { const v = METRIK[m].ambil(p); return v === null ? t("an.tanpa_data") : `${num(v, METRIK[m].d)}${METRIK[m].satuan ? " " + METRIK[m].satuan : ""}`; };
+const nilaiTeks = (m, p) => {
+  if (m === "rued") return p.rued.perda ? t("wl.rued_ada", { perda: p.rued.perda }) : t("an.tanpa_data");
+  const v = METRIK[m].ambil(p);
+  return v === null ? t("an.tanpa_data") : `${num(v, METRIK[m].d)}${METRIK[m].satuan ? " " + METRIK[m].satuan : ""}`;
+};
 const ciriSumber = (m) => { const s = data.baris.map(METRIK[m].sumber).find(Boolean); return s || { sumber: t("wl.sumber_proyek"), tahun: null, tanggal: data.dibangun_pada }; };
-const warna = (v) => getComputedStyle(document.documentElement).getPropertyValue(v).trim();
+const urutM = (m) => [...data.baris].sort((a, b) => (METRIK[m].ambil(b) ?? -1) - (METRIK[m].ambil(a) ?? -1) || a.nama.localeCompare(b.nama));
+const berdata = (m) => data.baris.filter((p) => METRIK[m].ambil(p) !== null);
+const peringkat = (m, p) => urutM(m).findIndex((x) => x.kode === p.kode) + 1;
+const hlHtml = (kunci, v, sorot) => esc(t(kunci, { ...v, hl: "\u0001" + sorot + "\u0002" })).replace("\u0001", '<span class="jm-hl">').replace("\u0002", "</span>");
+const lambang = (p, u = 24) => `<img class="jm-wl-lb" src="/img/provinsi/${esc(p.kode)}.png" width="${u}" height="${u}" alt="" loading="lazy" decoding="async">`;
 
 /* ---------- daftar ---------- */
 
@@ -42,78 +49,121 @@ function kartu() {
     kartuHtml({ ikon: "regulasi", judul: t("wl.k.rued"), nilai: num(B.filter((p) => p.rued.perda).length), satuan: t("wl.prov_sat"), penyebut: t("wl.sub_prov", { n: B.filter((p) => p.rued.perda).length, total: B.length }), sumber: sumberHtml({ sumber: t("wl.sumber_rued"), tanggal: B.find((p) => p.rued.tanggal)?.rued.tanggal }) });
 }
 
+/* kelas 5 tingkat berdasar kuantil; "rued" hanya ada/tidak. Kelas tanpa anggota tidak masuk legenda. */
+function kelasPeta(m) {
+  const B = data.baris, v = berdata(m).map(METRIK[m].ambil).sort((a, b) => a - b), kelas = new Map();
+  const q = (f) => v[Math.min(v.length - 1, Math.floor(f * v.length))], pem = m === "rued" ? [] : [q(0.2), q(0.4), q(0.6), q(0.8)];
+  for (const p of B) { const x = METRIK[m].ambil(p); kelas.set(p.kode, x === null ? -1 : m === "rued" ? 4 : pem.filter((b) => x >= b).length); }
+  const rentang = [];
+  for (let k = 0; k < 5; k++) { const a = B.filter((p) => kelas.get(p.kode) === k).map(METRIK[m].ambil); if (a.length) rentang.push({ k, min: Math.min(...a), max: Math.max(...a), n: a.length }); }
+  return { kelas, rentang };
+}
+
 function urutan() {
-  const m = metrik, B = [...data.baris].sort((a, b) => (METRIK[m].ambil(b) ?? -1) - (METRIK[m].ambil(a) ?? -1) || a.nama.localeCompare(b.nama));
-  $("urutan").innerHTML = `<div class="jm-gulir"><table class="jm-tabel"><thead><tr><th>#</th><th>${esc(t("wl.col.prov"))}</th><th>${esc(t("wl.m." + m))}</th><th>${esc(t("wl.col.rued"))}</th></tr></thead><tbody>${B.map((p, i) =>
-    `<tr><td data-label="#">${i + 1}</td><td data-label="${esc(t("wl.col.prov"))}"><a href="/wilayah?prov=${esc(p.kode)}">${esc(p.nama)}</a></td><td data-label="${esc(t("wl.col.nilai"))}" class="jm-num">${esc(nilaiTeks(m, p))}</td><td data-label="${esc(t("wl.col.rued"))}">${esc(p.rued.perda ? t("wl.rued_ada", { perda: p.rued.perda }) : t("an.belum_tersedia"))}</td></tr>`).join("")}</tbody></table></div>${sumberHtml(ciriSumber(m))}`;
+  const m = metrik, B = urutM(m), maks = Math.max(1, ...B.map((p) => METRIK[m].ambil(p) ?? 0));
+  const th = (k, s = "") => `<th class="${s}">${esc(t(k))}</th>`;
+  const rued = (p) => {
+    if (!p.rued.perda) return `<span class="jm-wl-kos" title="${esc(t("wl.rued_belum"))}">-</span>`;
+    const isi = esc(t("wl.rued_ada", { perda: p.rued.perda })), u = amanUrl(p.rued.url);
+    return u ? `<a class="jm-pil jm-wl-perda" href="${esc(u)}" target="_blank" rel="noopener noreferrer">${isi}</a>` : `<span class="jm-pil jm-wl-perda">${isi}</span>`;
+  };
+  $("urutan").innerHTML = `<div class="jm-gulir"><table class="jm-tabel jm-wl-tabel"><colgroup><col class="jm-wl-c1"><col><col class="jm-wl-c3"><col class="jm-wl-c4"></colgroup><thead><tr><th>#</th>${th("wl.col.prov")}<th>${esc(t("wl.m." + m))}</th>${th("wl.col.rued")}</tr></thead><tbody>${B.map((p, i) => {
+    const v = METRIK[m].ambil(p), lbl = (k) => esc(t(k));
+    return `<tr data-href="/wilayah?prov=${esc(p.kode)}"><td data-label="#"><span class="jm-wl-no">${i + 1}</span></td><td data-label="${lbl("wl.col.prov")}"><a class="jm-wl-nama" href="/wilayah?prov=${esc(p.kode)}">${lambang(p)}<span>${esc(p.nama)}</span></a></td><td data-label="${esc(t("wl.col.nilai"))}" class="jm-num"><span class="jm-wl-nil"><span class="jm-wl-mb" aria-hidden="true"><i data-w="${v === null ? 0 : ((v / maks) * 100).toFixed(1)}"></i></span><b>${esc(nilaiTeks(m, p))}</b></span></td><td data-label="${lbl("wl.col.rued")}" class="jm-tengah">${rued(p)}</td></tr>`;
+  }).join("")}</tbody></table></div>`;
+  pasangBar($("urutan"));
 }
 
 function legenda() {
-  const m = metrik, v = data.baris.map(METRIK[m].ambil).filter((x) => x !== null);
-  $("legenda").innerHTML = `<span class="jm-bantu">${esc(t("wl.legenda", { min: num(Math.min(...v), METRIK[m].d), max: num(Math.max(...v), METRIK[m].d) }))}</span><span class="jm-an-ramp" aria-hidden="true"></span><span class="jm-bantu"><i class="jm-an-kosong" aria-hidden="true"></i> ${esc(t("an.tanpa_data"))}</span>`;
-  $("peta-info").innerHTML = sumberHtml(ciriSumber(m));
-  const urutM = [...data.baris].filter((p) => METRIK[m].ambil(p) !== null).sort((a, b) => METRIK[m].ambil(b) - METRIK[m].ambil(a));
-  $("temuan-peta").innerHTML = temuanHtml(t("wl.t.peta", { nama: urutM[0].nama, metrik: t("wl.m." + m), nilai: nilaiTeks(m, urutM[0]) }), false);
-  $("temuan-urut").innerHTML = temuanHtml(t("wl.t.urut", { a: urutM[0].nama, b: urutM[1].nama, c: urutM[2].nama, n: urutM.length }), false);
+  const m = metrik, { rentang } = kelasPeta(m), s = ciriSumber(m), kosong = data.baris.length - berdata(m).length;
+  const fmt = (v) => num(v, METRIK[m].d);
+  $("legenda").innerHTML = `<p class="jm-wl-lg-j">${esc(t("wl.m." + m))}</p><ul>${rentang.map((r) => `<li><i class="jm-wl-k${r.k}" aria-hidden="true"></i>${esc(m === "rued" ? t("wl.lg.ada") : r.min === r.max ? fmt(r.min) : `${fmt(r.min)} - ${fmt(r.max)}`)}</li>`).join("")}${kosong ? `<li><i class="jm-wl-sw-kos" aria-hidden="true"></i>${esc(t("an.tanpa_data"))}</li>` : ""}</ul><span class="jm-wl-lg-s">${sumberHtml(s)}</span>`;
+  const tp = urutM(m)[0], tgt = METRIK[m].ambil(tp);
+  const sumP = berdata(m).reduce((a, p) => a + METRIK[m].ambil(p), 0), top10 = urutM(m).slice(0, 10).reduce((a, p) => a + (METRIK[m].ambil(p) ?? 0), 0);
+  $("j-peta").innerHTML = m === "rued" ? hlHtml("wl.j.rued", { n: data.baris.length }, num(berdata(m).length)) : hlHtml("wl.j.peta", { mj: t("wl.mj." + m), nilai: nilaiTeks(m, tp) }, tp.nama);
+  $("sub-peta").innerHTML = `${esc(t("wl.sub.peta", { metrik: t("wl.m." + m), n: berdata(m).length, total: data.baris.length }))} ${pil("an.est")}`;
+  $("j-urut").innerHTML = m === "rued" ? hlHtml("wl.j.rued", { n: data.baris.length }, num(berdata(m).length)) : hlHtml("wl.j.urut", { mj: t("wl.mj." + m) }, num((top10 / sumP) * 100, 0) + "%");
+  $("sub-urut").innerHTML = `${esc(t("wl.sub.urut", { metrik: t("wl.m." + m) }))} ${pil("an.est")}`;
+  $("aksi-urut").innerHTML = $("aksi-peta").innerHTML = sumberHtml(s); // ponytail: tempat aksiHtml({csv,png,pdf,bagi}) dari /inti/aksi_ex.js bila sudah ada
 }
 
-/* ---------- peta ---------- */
+/* ---------- peta (SVG: tiap provinsi satu jalur yang bisa difokus) ---------- */
 
-function gaya() {
-  const m = metrik, v = data.baris.map(METRIK[m].ambil).filter((x) => x !== null), maks = Math.max(1, ...v);
-  const pasangan = [], kosong = [];
-  for (const p of data.baris) {
-    const x = METRIK[m].ambil(p);
-    if (x === null) kosong.push(p.kode); else pasangan.push(p.kode, +(0.18 + 0.82 * Math.sqrt(x / maks)).toFixed(3));
+const W = 1000, H = 337, BAT = [[88, 6.5], [141.5, -11.5]];
+const jalur = (g) => {
+  const X = (lng) => ((lng - BAT[0][0]) / (BAT[1][0] - BAT[0][0])) * W, Y = (lat) => ((BAT[0][1] - lat) / (BAT[0][1] - BAT[1][1])) * H;
+  let d = "";
+  for (const poli of g.type === "Polygon" ? [g.coordinates] : g.coordinates) for (const ring of poli.slice(0, 1)) {
+    let px = Infinity, py = Infinity, s = "", n = 0;
+    for (const [lng, lat] of ring) { const x = X(lng), y = Y(lat); if (Math.hypot(x - px, y - py) < 0.8) continue; s += (n++ ? "L" : "M") + x.toFixed(1) + " " + y.toFixed(1); px = x; py = y; }
+    if (n > 3) d += s + "Z";
   }
-  return {
-    isi: kosong.length ? ["match", ["get", "kode"], kosong, warna("--line"), warna("--accent-isi")] : warna("--accent-isi"),
-    buram: ["match", ["get", "kode"], ...(kosong.length ? [kosong, 1] : []), ...pasangan, 0.1],
-  };
+  return d;
+};
+
+function tampilTip(p, x, y) {
+  const m = metrik, tip = $("tip"), kd = METRIK[m].kedua.map((k) => `<li><span>${esc(t("wl.m." + k))}</span><b>${esc(nilaiTeks(k, p))}</b></li>`).join("");
+  const rk = METRIK[m].ambil(p) === null ? esc(t("an.tanpa_data")) : esc(t("wl.peringkat", { r: peringkat(m, p), n: data.baris.length }));
+  tip.innerHTML = `<header>${lambang(p, 36)}<div><strong>${esc(p.nama)}</strong><small>${rk}</small></div></header><p><span>${esc(t("wl.m." + m))}</span><b>${esc(nilaiTeks(m, p))}</b></p><ul>${kd}</ul>`;
+  tip.hidden = false;
+  const b = $("peta").parentElement.getBoundingClientRect(), tw = tip.offsetWidth, th = tip.offsetHeight;
+  tip.style.left = Math.max(8, Math.min(b.width - tw - 8, x + 14)) + "px";
+  tip.style.top = Math.max(8, Math.min(b.height - th - 8, y + 14)) + "px";
 }
 
 function warnai() {
-  if (!petaSiap) return;
-  const g = gaya();
-  peta.setPaintProperty("prov-isi", "fill-color", g.isi);
-  peta.setPaintProperty("prov-isi", "fill-opacity", g.buram);
-  peta.setPaintProperty("prov-garis", "line-color", warna("--paper"));
-  peta.setPaintProperty("latar", "background-color", warna("--surface"));
+  const svg = $("peta").querySelector("svg");
+  if (!svg) return;
+  const { kelas } = kelasPeta(metrik);
+  for (const pa of svg.querySelectorAll("path[data-k]")) {
+    const p = data.baris.find((x) => x.kode === pa.dataset.k), k = kelas.get(pa.dataset.k);
+    pa.setAttribute("class", "jm-wl-p " + (k < 0 ? "jm-wl-kos-p" : "jm-wl-k" + k));
+    pa.setAttribute("aria-label", `${p.nama}: ${t("wl.m." + metrik)}, ${nilaiTeks(metrik, p)}`);
+  }
+  const g = svg.querySelector(".jm-wl-lbl"), ns = "http://www.w3.org/2000/svg";
+  g.replaceChildren();
+  const dipakai = [];
+  for (const p of urutM(metrik).slice(0, metrik === "rued" ? 0 : 5)) {
+    const bb = svg.querySelector(`path[data-k="${p.kode}"]`).getBBox(), cx = bb.x + bb.width / 2, cy = bb.y + bb.height / 2;
+    const teks = `${p.nama} ${nilaiTeks(metrik, p)}`, lw = teks.length * 6.6 + 10;
+    let ly = cy + 34 * (cy < 230 ? -1 : 1), lx = Math.max(4, Math.min(W - lw - 4, cx - lw / 2));
+    for (let i = 0; i < 12 && dipakai.some((r) => Math.abs(r.y - ly) < 18 && lx < r.x + r.w && lx + lw > r.x); i++) ly += 20;
+    dipakai.push({ x: lx, y: ly, w: lw });
+    const ln = document.createElementNS(ns, "line"); ln.setAttribute("class", "jm-wl-gl"); ln.setAttribute("x1", cx.toFixed(1)); ln.setAttribute("y1", cy.toFixed(1)); ln.setAttribute("x2", (lx + lw / 2).toFixed(1)); ln.setAttribute("y2", (ly + (ly < cy ? 4 : -12)).toFixed(1));
+    const bg = document.createElementNS(ns, "rect"); bg.setAttribute("class", "jm-wl-lr"); bg.setAttribute("x", lx); bg.setAttribute("y", ly - 12); bg.setAttribute("width", lw); bg.setAttribute("height", 18); bg.setAttribute("rx", 9);
+    const tx = document.createElementNS(ns, "text"); tx.setAttribute("class", "jm-wl-lt"); tx.setAttribute("x", lx + lw / 2); tx.setAttribute("y", ly + 1); tx.setAttribute("text-anchor", "middle"); tx.textContent = teks;
+    g.append(ln, bg, tx);
+  }
 }
 
 async function bukaPeta() {
-  try {
-    geo = await (await fetch("/geo/provinsi.json", { credentials: "same-origin" })).json();
-    await muatMapLibre();
-  } catch (e) { $("peta").innerHTML = `<p class="jm-bantu">${esc(t("wl.peta_gagal"))}</p>`; return; }
-  const g = gaya();
-  peta = new maplibregl.Map({
-    container: "peta", attributionControl: false, dragRotate: false, pitchWithRotate: false, cooperativeGestures: true, locale: { "CooperativeGesturesHandler.WindowsHelpText": t("wl.gesture.win"), "CooperativeGesturesHandler.MacHelpText": t("wl.gesture.mac"), "CooperativeGesturesHandler.MobileHelpText": t("wl.gesture.mobile") },
-    style: { version: 8, sources: { prov: { type: "geojson", data: geo } }, layers: [
-      { id: "latar", type: "background", paint: { "background-color": warna("--surface") } },
-      { id: "prov-isi", type: "fill", source: "prov", paint: { "fill-color": g.isi, "fill-opacity": g.buram } },
-      { id: "prov-garis", type: "line", source: "prov", paint: { "line-color": warna("--paper"), "line-width": 0.8 } },
-    ] },
-    bounds: [[94.5, -11.5], [141.5, 6.5]], fitBoundsOptions: { padding: 8 },
-  });
+  try { geo = await (await fetch("/geo/provinsi.json", { credentials: "same-origin" })).json(); }
+  catch (e) { $("peta").innerHTML = `<p class="jm-bantu">${esc(t("wl.peta_gagal"))}</p>`; return; }
   const nama = new Map(data.baris.map((p) => [p.kode, p]));
-  const info = new maplibregl.Popup({ closeButton: false, closeOnClick: false, offset: 8 });
-  peta.on("load", () => { petaSiap = true; });
-  peta.on("mousemove", "prov-isi", (e) => {
-    const p = nama.get(e.features[0]?.properties.kode);
-    if (!p) return;
-    peta.getCanvas().classList.add("jm-an-tunjuk");
-    info.setLngLat(e.lngLat).setHTML(`<strong>${esc(p.nama)}</strong><br>${esc(t("wl.m." + metrik))}: ${esc(nilaiTeks(metrik, p))}`).addTo(peta);
+  const paths = geo.features.filter((f) => nama.has(f.properties.kode)).map((f) => `<path tabindex="0" role="link" data-k="${esc(f.properties.kode)}" d="${jalur(f.geometry)}"/>`).join("");
+  $("peta").innerHTML = `<svg class="jm-wl-svg" viewBox="0 0 ${W} ${H}" focusable="false"><defs><pattern id="wl-hatch" width="7" height="7" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width="7" height="7" class="jm-wl-hb"/><line x1="0" y1="0" x2="0" y2="7" class="jm-wl-hg"/></pattern></defs><g class="jm-wl-prov">${paths}</g><path class="jm-wl-sorot" d="" aria-hidden="true"/><g class="jm-wl-lbl" aria-hidden="true"></g></svg>`;
+  const svg = $("peta").querySelector("svg"), sorot = svg.querySelector(".jm-wl-sorot"), tip = $("tip");
+  const naik = (pa) => sorot.setAttribute("d", pa ? pa.getAttribute("d") : "");
+  const bingkai = () => $("peta").parentElement.getBoundingClientRect();
+  svg.addEventListener("mousemove", (e) => {
+    const pa = e.target.closest("path[data-k]");
+    if (!pa) { naik(null); tip.hidden = true; return; }
+    naik(pa); const b = bingkai(); tampilTip(nama.get(pa.dataset.k), e.clientX - b.left, e.clientY - b.top);
   });
-  peta.on("mouseleave", "prov-isi", () => { peta.getCanvas().classList.remove("jm-an-tunjuk"); info.remove(); });
-  peta.on("click", "prov-isi", (e) => { const k = e.features[0]?.properties.kode; if (k) location.assign(`/wilayah?prov=${encodeURIComponent(k)}`); });
-  // peta tidak boleh tertinggal saat tema berganti (ranjau R10 §8.15)
-  new MutationObserver(warnai).observe(document.documentElement, { attributes: true, attributeFilter: ["data-theme"] });
-  matchMedia("(prefers-color-scheme: dark)").addEventListener("change", warnai);
+  svg.addEventListener("mouseover", (e) => { const pa = e.target.closest("path[data-k]"); if (pa && e.isTrusted === false) { naik(pa); const bb = pa.getBoundingClientRect(), b = bingkai(); tampilTip(nama.get(pa.dataset.k), bb.left - b.left + bb.width / 2, bb.top - b.top + bb.height / 2); } });
+  svg.addEventListener("mouseleave", () => { naik(null); tip.hidden = true; });
+  svg.addEventListener("focusin", (e) => { const pa = e.target.closest("path[data-k]"); if (!pa) return; naik(pa); const bb = pa.getBoundingClientRect(), b = bingkai(); tampilTip(nama.get(pa.dataset.k), bb.left - b.left + bb.width / 2, bb.top - b.top + bb.height / 2); });
+  svg.addEventListener("focusout", () => { naik(null); tip.hidden = true; });
+  const buka = (pa) => pa && location.assign(`/wilayah?prov=${encodeURIComponent(pa.dataset.k)}`);
+  svg.addEventListener("click", (e) => buka(e.target.closest("path[data-k]")));
+  svg.addEventListener("keydown", (e) => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); buka(e.target.closest("path[data-k]")); } });
+  petaSiap = true;
+  warnai();
 }
 
 function pasangSakelar() {
-  document.querySelector(".jm-tab").addEventListener("click", (e) => {
+  $("urutan").addEventListener("click", (e) => { const tr = e.target.closest("tr[data-href]"); if (tr && !e.target.closest("a")) location.assign(tr.dataset.href); });
+  document.querySelector(".jm-wl-seg").addEventListener("click", (e) => {
     const b = e.target.closest("button[data-m]");
     if (!b || b.dataset.m === metrik) return;
     for (const x of b.parentElement.children) x.setAttribute("aria-selected", String(x === b)); // chrome urgent
@@ -172,7 +222,7 @@ function profil(p) {
   const orgs = p.organisasi.length ? `<ul class="jm-an-daftar">${p.organisasi.map((o) => `<li>${esc(o.nama)}${o.kategori ? ` <small>${esc(o.kategori)}</small>` : ""}</li>`).join("")}</ul>` : `<p>${esc(t("wl.org_kosong"))}</p>`;
   const pakar = p.pakar.length ? `<ul class="jm-an-daftar">${p.pakar.map((o) => `<li>${esc(o.nama)} <small>${esc(o.jabatan || "")}, ${esc(o.organisasi || "")}</small></li>`).join("")}</ul>` : `<p>${esc(t("wl.pakar_kosong"))}</p>`;
   $("profil-isi").innerHTML = `
-    <section class="jm-hero jm-an-hero2"><div><h1>${esc(p.nama)}</h1><p class="jm-an-label">${esc(t("an.jawaban"))}</p>
+    <section class="jm-hero jm-an-hero2"><div><h1 class="jm-wl-h1">${lambang(p, 64)}<span>${esc(p.nama)}</span></h1><p class="jm-an-label">${esc(t("an.jawaban"))}</p>
       <p>${esc(t("wl.profil_jawab", { nama: p.nama, mw: p.terpasang_mw ? num(p.terpasang_mw.nilai, 1) : "-", tahun: p.terpasang_mw?.tahun ?? "-", n: p.jumlah_proyek, pot: pot ? num(pot.nilai, 0) : "-" }))}</p></div>
       <aside class="jm-an-visual" id="visual">${visualProfil(p)}</aside></section>
     <section class="jm-an-kartu-baris">

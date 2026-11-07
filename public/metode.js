@@ -2,6 +2,8 @@
 import { mulaiHalaman } from "/inti/kepala.js";
 import { esc } from "/inti/umum.js";
 import { t, tanggal } from "/i18n.js";
+import { exHtml, sumberHtml } from "/inti/komponen.js";
+import { aksiHtml, hlHtml } from "/inti/aksi_ex.js";
 import { muatData, saatBahasa } from "/analisis.js";
 
 const $ = (id) => document.getElementById(id);
@@ -15,8 +17,12 @@ let tgl = "", target = 100;
 function gambar() {
   const tahun = Number(tgl.slice(0, 4)) || "";
   $("jawab").textContent = t("met.jawab", { n: DAFTAR.length, tanggal: tanggal(tgl) });
-  $("umum").innerHTML = ["ins.cara1", "ins.cara2", "ins.cara3", "ins.cara4"].map((k) => `<p>${esc(t(k))}</p>`).join("");
-  $("kartu").innerHTML = DAFTAR.map(([id, k]) => `<article class="jm-kartu jm-met" id="metode-${id}"><h3>${esc(t("ins.mt." + id))}</h3><p>${esc(t("ins." + k + ".cara", { tahun, target }))}</p><p><a href="/insight#ins-${id}">${esc(t("met.lihat"))}</a></p></article>`).join("");
+  const sumber = sumberHtml(esc(t("met.jawab", { n: DAFTAR.length, tanggal: tanggal(tgl) })));
+  const ex = (o) => exHtml({ aksiHtml: aksiHtml({ csv: false }) + sumber, ...o });
+  $("umum-w").innerHTML = ex({ id: "ex-umum", ikon: "metode", topik: t("met.ex.umum.ey"), judulHtml: hlHtml("met.ex.umum.j", 4), subHtml: esc(t("met.ex.umum.sub")),
+    isiHtml: `<div class="jm-an-cara">${["ins.cara1", "ins.cara2", "ins.cara3", "ins.cara4"].map((k) => `<p>${esc(t(k))}</p>`).join("")}</div>` });
+  $("kartu-w").innerHTML = ex({ id: "ex-kartu", ikon: "analisis", topik: t("met.ex.kartu.ey"), judulHtml: hlHtml("met.ex.kartu.j", DAFTAR.length), subHtml: esc(t("met.ex.kartu.sub")),
+    isiHtml: `<div class="jm-met-daftar">${DAFTAR.map(([id, k]) => `<article class="jm-kartu jm-met" id="metode-${id}"><h3>${esc(t("ins.mt." + id))}</h3><p>${esc(t("ins." + k + ".cara", { tahun, target }))}</p><p><a href="/insight#ins-${id}">${esc(t("met.lihat"))}</a></p></article>`).join("")}</div>` });
   $("kutip").textContent = t("ins.kutip", { tanggal: tanggal(tgl, { gaya: "panjang" }) });
   if (location.hash) document.getElementById(decodeURIComponent(location.hash.slice(1)))?.scrollIntoView();
 }

@@ -9,6 +9,9 @@ export const aksiHtml = ({ csv = false, png = true, pdf = true, bagi = true } = 
   `<span class="jm-aksi" role="group" aria-label="${esc(t("aksi.grup"))}">${[["bagi", bagi], ["png", png], ["pdf", pdf], ["csv", csv]].filter((x) => x[1])
     .map(([k]) => `<button type="button" class="jm-aksi-b" data-jm-aksi="${k}" aria-label="${esc(t("aksi." + k))}" title="${esc(t("aksi." + k))}"${k === "bagi" ? ' aria-haspopup="menu" aria-expanded="false"' : ""}>${ikon(TOMBOL[k], 24)}</button>`).join("")}</span>`;
 
+/** Judul satu kalimat: kunci kamus memakai {hl} untuk angka/nama kunci, dibungkus <span class="jm-hl">. */
+export const hlHtml = (kunci, hl, param = {}) => esc(t(kunci, { ...param, hl: "\u0001" })).replace("\u0001", `<span class="jm-hl">${esc(hl)}</span>`);
+
 let seq = 0;
 const idSeksi = (ex) => ex.id || (ex.id = "ex-" + (++seq));
 const judul = (ex) => ex.querySelector(".jm-ex-j")?.textContent.trim() ?? document.title;
@@ -16,7 +19,7 @@ const tautan = (ex) => `${location.origin}${location.pathname}#${idSeksi(ex)}`;
 const hariIni = () => tanggal(new Date().toISOString().slice(0, 10));
 const sumberTeks = (ex) => ex.querySelector(".jm-sumber-isi")?.textContent.trim().replace(/\s+/g, " ") ?? "";
 
-function kabar(teks) {
+export function kabar(teks) {
   let el = document.getElementById("jm-aksi-kabar");
   if (!el) { el = document.createElement("p"); el.id = "jm-aksi-kabar"; el.className = "jm-aksi-kabar"; el.setAttribute("role", "status"); document.body.append(el); }
   el.textContent = teks; el.classList.add("tampil");
@@ -90,6 +93,9 @@ export async function unduhPng(ex) {
 /* ---- CSV: baris/kolom yang tampak, UTF-8 BOM, pemisah ';' (Excel Indonesia) ---- */
 const sel = (c) => `"${c.innerText.replace(/\s+/g, " ").trim().replace(/"/g, '""')}"`;
 export function unduhCsv(ex) {
+  const d = {};
+  ex.dispatchEvent(new CustomEvent("jm:csv", { detail: d })); // seksi tanpa tabel (mis. kalender) mengisi d.baris = [[sel, ...], ...]
+  if (d.baris) return unduhBlob(new Blob(["\uFEFF" + d.baris.map((r) => r.map((c) => `"${String(c ?? "").replace(/"/g, '""')}"`).join(";")).join("\r\n") + "\r\n"], { type: "text/csv;charset=utf-8" }), `meti-${idSeksi(ex)}.csv`);
   const tb = ex.querySelector("table.jm-tabel");
   if (!tb) throw new Error("csv");
   const baris = [...tb.rows].filter((r) => r.offsetParent !== null);
