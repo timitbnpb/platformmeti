@@ -679,6 +679,9 @@ Kolom Hak memakai lambang di kepala. "Fase" hanya ditulis bila bukan F0.
 | `POST /api/direktori/ringkasan` `{sektor, prov}` | LOGIN | sintesis dari abstrak 30 riset teratas; `sektor` dari `SEKTOR`; cache R2 `ringkasan/<sektor>-<prov|nasional>.json` TTL 30 hari; laju `ringkasan-ai` |
 | `GET /api/direktori/terdekat?lat&lon&n` | LOGIN | pakar terdekat (haversine, ALG §10) dari `induk.json`; `n` maks 20 |
 | `GET /api/direktori/lembaga/terdekat?lat&lon&kategori&sektor&n` | LOGIN | dari `potret/anggota/lembaga.json`; `kategori` dari `KATEGORI` |
+| `GET /api/direktori/kampus` | LOGIN | R2 `potret/anggota/kampus.json` |
+| `GET /api/direktori/kontak` | PG, KR, AD, SA | R2 `potret/pengurus/kontak.json` (lapis pengurus); anggota 403 |
+| `GET /api/direktori/keahlian/:id` | LOGIN | `id` `^A\d{4,12}$`; proksi OpenAlex host tetap (CSP: klien tidak memanggil OpenAlex langsung); sesi dicek sebelum cache |
 | `GET /api/gambar/logo/:id` | PB | R2 `gambar/logo/<16..64 hex>.<png|jpg|jpeg|webp>`; `public, max-age=604800, immutable`; SVG tidak diterima |
 | `GET /api/gambar/foto/:id` | LOGIN | R2 `gambar/foto/`; dipakai hanya bila C-04 mengizinkan foto (bawaan: tidak ada foto orang, KPV §3.1); `private` |
 

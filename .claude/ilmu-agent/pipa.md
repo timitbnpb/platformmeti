@@ -56,3 +56,5 @@ Milikmu: `scripts/panen/**`, `scripts/pipa/**`, `scripts/direktori/**`, `scripts
 ## Kasus
 
 Belum ada kasus. Tambahkan lewat ilmu.mjs kasus.
+- 2026-11-07 · Google News robots.txt (agen *) Disallow: / dengan Allow hanya /topics/ dll; /rss/search TERLARANG. poskokarhutla mengabaikannya. berita.mjs mengecek robots dan berhenti (exit 2) sampai pemilik memutuskan; tahu dengan: node scripts/panen/berita.mjs.
+- 2026-11-07 · Dedup nama berbasis rasio min-token melebur Tangerang ke Tangerang Selatan dan menggabung unit PLTP sesumber; pakai Jaccard dan jangan gabung baris sesumber. Tahu dari selftest panen_proyek.mjs.

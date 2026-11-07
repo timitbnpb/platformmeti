@@ -83,6 +83,28 @@ Singkatan: KP = KEPUTUSAN-METI, GD = GRAND-DESIGN, R1..R9 = riset/, DT = DESAIN-
 | JM-F08 | Cerita data `/cerita` (Jawaban singkat, Cara menghitung, Cara mengutip, beku) | layar | F2 | M | belum |
 | JM-F09 | Riwayat dengan METI + agenda METI Wilayah | worker+layar | F2 | M | belum |
 | JM-F10 | Sinkron berita dan acara dari API metiires.or.id | pipa | F2 | S | belum |
+| JM-P01 | Data proyek ke `entitas`/`fakta`/`ikatan` (K17): impor `data-panen/proyek` + program + COD target/aktual | pipa | F1 | M | belum |
+| JM-P02 | Pelacak proyek `/proyek` (peta klaster per teknologi/status, saringan program/provinsi, funnel status, daftar terlambat COD) | layar | F1 | L | belum |
+| JM-P03 | Profil proyek `/p/<id>` (garis waktu PPA-COD, pihak, pendana, regulasi, berita) ID/EN; ikon Google Maps per proyek (`google.com/maps/search/?api=1&query=lat,lng`, label presisi lokasi bila bukan titik persis) juga di kartu daftar `/proyek` | layar | F1 | L | belum |
+| JM-P04 | Profil perusahaan (direksi dengan foto beratribusi, proyek, rantai, kontak korporat: alamat, telepon, surel umum, ikon Maps kantor) + profil orang (riwayat jabatan, `pernah-birokrasi` netral) | layar | F1 | L | belum |
+| JM-P05 | Rantai pasok PLTS 100 GW: kebutuhan per tahun vs kapasitas pabrikan lokal/ekspor/TKDN | layar+pipa | F2 | M | belum |
+| JM-P06 | Regulasi terhubung ke proyek (ikatan `diatur_oleh`/`terhambat_oleh` bersumber) | pipa+layar | F2 | M | belum |
+| JM-P07 | Rapor Transisi Energi kuartalan (beku, tautan kutip, PDF) | layar+pipa | F2 | M | belum |
+| JM-P08 | Bagian Pengurus METI (Dewan Pembina, Pengurus Harian, Bidang, METI Institute, Wilayah) dengan foto resmi, di `/organisasi/meti` dan `/tentang#pengurus` | pipa+layar | F1 | M | belum |
+| JM-Q01 | Potensi vs realisasi per provinsi (potensi teknis ESDM, terpasang, target RUED) | pipa+layar | F2 | M | belum |
+| JM-Q02 | Indeks kesiapan investasi provinsi (regulasi daerah, jaringan, lahan, RUED; metode terbuka) | pipa+layar | F3 | L | belum |
+| JM-Q03 | Pelacak tarif dan harga (PPA per teknologi, hasil lelang, BPP per sistem) | pipa+layar | F2 | M | belum |
+| JM-Q04 | Pemantau pengadaan (lelang PLN, IPP, LPSE) sebagai papan peluang | pipa+layar | F3 | M | belum |
+| JM-Q05 | Linimasa regulasi (status RUU EBET, aturan baru, dampak ke proyek terhubung) | pipa+layar | F2 | M | belum |
+| JM-Q06 | Pencari narasumber per kepakaran K16 (media, DPR) | layar | F2 | S | belum |
+| JM-Q07 | Pelacak rotasi jabatan (perubahan direksi/komisaris dari RUPS/keterbukaan IDX) + notifikasi | pipa+worker | F3 | M | belum |
+| JM-Q08 | Ikuti proyek/perusahaan/provinsi + ringkasan mingguan surel | worker+layar | F3 | M | belum |
+| JM-Q09 | Kalender ekosistem (acara, rapat Komisi XII, tenggat lelang dan regulasi) | pipa+layar | F2 | M | belum |
+| JM-Q10 | Lapangan kerja hijau per provinsi (dari data proyek bersumber) | pipa+layar | F2 | S | belum |
+| JM-Q11 | Kalkulator manfaat per proyek (emisi dihindari, kerja, devisa; cara hitung terbuka, label EST) | layar | F2 | M | belum |
+| JM-Q12 | Pelacak dana iklim (JETP, ADB, WB, green sukuk/bond sampai ke proyek) | pipa+layar | F3 | L | belum |
+| JM-Q13 | Isu sosial dan lingkungan per proyek (lahan, AMDAL, keluhan; sumber media, hak jawab) | pipa+layar | F3 | M | belum |
+| JM-Q14 | Perbandingan ASEAN (Ember, IRENA) | pipa+layar | F2 | S | belum |
 | JM-G01 | Klaim profil oleh entitas | worker+layar | F3 | M | belum |
 | JM-G02 | Daftar mandiri + verifikasi Sekretariat (C-09) | worker+layar | F3 | M | belum |
 | JM-G03 | API terbuka baca potret publik | worker | F3 | S | belum |

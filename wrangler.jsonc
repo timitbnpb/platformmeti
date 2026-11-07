@@ -18,5 +18,14 @@
   // "r2_buckets": [{ "binding": "BERKAS", "bucket_name": "jaringan-meti" }],
   "ai": { "binding": "AI" },
   "triggers": { "crons": ["0 18 * * *"] },
-  "observability": { "enabled": true }
+  "observability": { "enabled": true },
+  // Pratinjau: `--env pratinjau` (Worker platformmeti-pratinjau). Binding D1/AI tidak diwarisi, wajib ditulis ulang.
+  "env": {
+    "pratinjau": {
+      "d1_databases": [
+        { "binding": "DB", "database_name": "jaringan-meti-pratinjau", "database_id": "4aca1930-b82c-46f5-a66f-4b66d44477b5", "migrations_dir": "migrations" }
+      ],
+      "ai": { "binding": "AI" }
+    }
+  }
 }
