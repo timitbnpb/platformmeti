@@ -463,3 +463,11 @@ main>:is(section,div,article)+:is(section,div,article){margin-top:max(24px,var(-
 .pc-n{flex:none;color:var(--ink2);font-weight:400;font-variant-numeric:tabular-nums}
 .pc-cek{flex:none;opacity:0;color:var(--accent)}
 .pc-opsi[aria-selected="true"] .pc-cek{opacity:1}
+
+/* Tombol bagikan bersama (komponen.js bagikanHtml): ikon polos, tanpa garis luar; fokus keyboard tetap terlihat. */
+.jm-bagi{display:inline-flex;align-items:center;gap:2px}
+.jm-bagi-b{display:inline-flex;align-items:center;justify-content:center;width:44px;height:44px;padding:0;border:0;background:none;color:var(--ink2);cursor:pointer;border-radius:var(--r-sm);transition:color .15s,transform .15s}
+.jm-bagi-b:hover{color:var(--accent)}
+.jm-bagi-b:active{transform:scale(.94)}
+.jm-bagi-b:focus-visible{outline:2px solid var(--fokus);outline-offset:2px}
+.jm-bagi.kecil .jm-bagi-b{width:36px;height:36px}

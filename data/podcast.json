@@ -1,0 +1,13 @@
+{
+ "catatan": "Podcast METI diisi admin. Podcast ekosistem: tautan keluar saja, tanpa salin sampul.",
+ "meti": [],
+ "ekosistem": [
+  {
+   "id": "iesr-bicara-energi",
+   "nama": "IESR Bicara Energi",
+   "penyelenggara": "Institute for Essential Services Reform (IESR)",
+   "tautan": "https://iesr.or.id",
+   "tema": "energi terbarukan, transisi energi"
+  }
+ ]
+}

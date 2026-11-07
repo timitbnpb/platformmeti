@@ -9,11 +9,14 @@ import { fileURLToPath } from 'node:url';
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '../..');
 export const UA = 'METI-Network-research/0.1 (+https://platformmeti.timitbnpb.workers.dev)';
 export const HOST = 'https://overpass.private.coffee/api/interpreter';
-// Ubin 3x4 derajat (satu kueri per ubin; kueri satu pulau besar kena 502/504 di gateway). S,W,N,E.
+// Ubin 6x8 derajat tanpa ubin laut murni (satu kueri per ubin; server publik lambat, 85 dtk untuk kueri kecil). S,W,N,E.
 export const WILAYAH = {};
-for (let s = -11; s < 6; s += 3) for (let w = 95; w < 141; w += 4) WILAYAH[`u_${s}_${w}`] = [s, w, Math.min(s + 3, 6), w + 4];
+for (let s = -11; s < 6; s += 6) for (let w = 95; w < 141; w += 8) {
+  if ((s === -11 && w === 95) || (s === 1 && w === 135)) continue;
+  WILAYAH[`u_${s}_${w}`] = [s, w, s + 6, Math.min(w + 8, 141.1)];
+}
 const VOLT = '^((1[5-9]|[2-9][0-9])[0-9]{4}|[0-9]{7,})'; // >= 150000 V
-export const kueri = (b) => `[out:json][timeout:100];(way["power"="line"]["voltage"~"${VOLT}"](${b.join(',')});way["power"="substation"]["voltage"~"${VOLT}"](${b.join(',')});node["power"="substation"]["voltage"~"${VOLT}"](${b.join(',')}););out geom tags;`;
+export const kueri = (b) => `[out:json][timeout:280];(way["power"="line"]["voltage"~"${VOLT}"](${b.join(',')});way["power"="substation"]["voltage"~"${VOLT}"](${b.join(',')});node["power"="substation"]["voltage"~"${VOLT}"](${b.join(',')}););out geom tags;`;
 
 export const tegMax = (v) => Math.max(0, ...String(v || '').split(';').map((x) => parseInt(x, 10)).filter(Number.isFinite));
 const bulat = (x, d = 4) => Math.round(x * 10 ** d) / 10 ** d;
@@ -66,18 +69,24 @@ export function panjangKm(c) {
   let s = 0; for (let i = 1; i < c.length; i++) { const dy = (c[i][1] - c[i - 1][1]) * 111.19, dx = (c[i][0] - c[i - 1][0]) * 111.19 * Math.cos((c[i][1] * Math.PI) / 180); s += Math.hypot(dx, dy); } return s;
 }
 
+const tidur = (ms) => new Promise((r) => setTimeout(r, ms));
+async function tarik(b) { // sekali coba; kembalikan teks JSON atau null
+  const r = await fetch(HOST, { method: 'POST', headers: { 'User-Agent': UA, 'Content-Type': 'application/x-www-form-urlencoded' }, body: 'data=' + encodeURIComponent(kueri(b)), signal: AbortSignal.timeout(330000) }).catch((e) => ({ ok: false, status: String(e) }));
+  if (r.ok) { const t = await r.text(); JSON.parse(t); return t; }
+  console.log('gagal', b.join(','), r.status); if (r.status === 403) process.exit(2);
+  await tidur(r.status === 429 ? 60000 : 20000); return null;
+}
+// Ubin gagal dua kali -> dibelah empat (sampai sisi < 1,5 derajat); hasil tiap ubin disimpan sendiri.
+async function ubin(dir, b, minSisi = 1.5) {
+  const f = path.join(dir, `u_${b.join('_')}.json`); if (fs.existsSync(f)) return;
+  for (let k = 0; k < 2; k++) { const t = await tarik(b); if (t) { fs.writeFileSync(f, t); console.log('ok', b.join(','), t.length); await tidur(6000); return; } }
+  const [s, w, n, e] = b; if (Math.min(n - s, e - w) / 2 < minSisi) { console.log('menyerah', b.join(',')); return; }
+  const ms = (s + n) / 2, mw = (w + e) / 2;
+  for (const q of [[s, w, ms, mw], [s, mw, ms, e], [ms, w, n, mw], [ms, mw, n, e]]) await ubin(dir, q, minSisi);
+}
 async function ambil(dir) {
   fs.mkdirSync(dir, { recursive: true });
-  for (const [nama, b] of Object.entries(WILAYAH)) {
-    const f = path.join(dir, nama + '.json'); if (fs.existsSync(f) && fs.statSync(f).size > 1000) { console.log('lewati', nama); continue; }
-    for (let k = 0; k < 2; k++) {
-      const r = await fetch(HOST, { method: 'POST', headers: { 'User-Agent': UA, 'Content-Type': 'application/x-www-form-urlencoded' }, body: 'data=' + encodeURIComponent(kueri(b)), signal: AbortSignal.timeout(150000) }).catch((e) => ({ ok: false, status: String(e) }));
-      if (r.ok) { const t = await r.text(); JSON.parse(t); fs.writeFileSync(f, t); console.log('ok', nama, t.length); break; }
-      console.log('gagal', nama, r.status); if (r.status === 403) process.exit(2);
-      await new Promise((s) => setTimeout(s, r.status === 429 ? 60000 : 30000));
-    }
-    await new Promise((s) => setTimeout(s, 6000));
-  }
+  for (const b of Object.values(WILAYAH)) await ubin(dir, b);
 }
 if (process.argv[1] === fileURLToPath(import.meta.url)) {
   const [cmd, dir, tgl] = process.argv.slice(2);

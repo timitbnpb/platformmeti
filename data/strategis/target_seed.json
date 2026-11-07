@@ -1,0 +1,487 @@
+{
+ "sumber": [
+  {
+   "id": "ken-pp-40-2025",
+   "judul": "PP 40/2025 tentang Kebijakan Energi Nasional",
+   "penerbit": "Pemerintah RI",
+   "tahun": 2025,
+   "url": "https://peraturan.bpk.go.id/Details/328789"
+  },
+  {
+   "id": "ken-pp-79-2014",
+   "judul": "PP 79/2014 tentang Kebijakan Energi Nasional (dicabut oleh PP 40/2025)",
+   "penerbit": "Pemerintah RI",
+   "tahun": 2014,
+   "url": "https://peraturan.bpk.go.id/Details/5523"
+  },
+  {
+   "id": "rukn-2025",
+   "judul": "RUKN, Kepmen ESDM 85.K/TL.01/MEM.L/2025",
+   "penerbit": "Kementerian ESDM",
+   "tahun": 2025,
+   "url": "https://gatrik.esdm.go.id/gatrik/gatrik-api//storage/migrasi/download_index/files/28dd4-rukn.pdf"
+  },
+  {
+   "id": "ruptl-2025",
+   "judul": "RUPTL PT PLN (Persero) 2025-2034 (ringkasan di public/data/pustaka.json, hlm 5)",
+   "penerbit": "PT PLN (Persero); disahkan Kementerian ESDM",
+   "tahun": 2025,
+   "url": "https://gatrik.esdm.go.id/gatrik/gatrik-api//storage/migrasi/download_index/files/b967d-ruptl-pln-2025-2034-pub-.pdf"
+  },
+  {
+   "id": "stat-2024",
+   "judul": "Statistik Ketenagalistrikan Tahun 2024",
+   "penerbit": "Ditjen Ketenagalistrikan, Kementerian ESDM",
+   "tahun": 2024,
+   "url": "https://gatrik.esdm.go.id/gatrik/gatrik-api//storage/migrasi/download_index/files/91fa8-buku-statistik-ketenagalistrikan-2024.pdf"
+  },
+  {
+   "id": "stat-2020",
+   "judul": "Statistik Ketenagalistrikan Tahun 2020",
+   "penerbit": "Ditjen Ketenagalistrikan, Kementerian ESDM",
+   "tahun": 2020,
+   "url": "https://gatrik.esdm.go.id/gatrik/gatrik-api//storage/migrasi/download_index/files/ccf8b-8f7e7-20211110-statistik-2020-rev03.pdf"
+  },
+  {
+   "id": "lakin-djk-2025",
+   "judul": "Laporan Kinerja Ditjen Ketenagalistrikan Tahun 2025",
+   "penerbit": "Ditjen Ketenagalistrikan, Kementerian ESDM",
+   "tahun": 2025,
+   "url": "https://gatrik.esdm.go.id/gatrik/gatrik-api//storage/migrasi/download_index/files/d35ab-laporan-kinerja-direktorat-jenderal-ketenagalistrikan-tahun-2025-published-tte-_compressed-1-.pdf"
+  },
+  {
+   "id": "owid-energi",
+   "judul": "Energy dataset (Our World in Data; bersumber Ember Yearly Electricity Data dan Energy Institute Statistical Review)",
+   "penerbit": "Our World in Data (CC BY 4.0)",
+   "tahun": 2024,
+   "url": "https://github.com/owid/energy-data"
+  }
+ ],
+ "target": [
+  {
+   "id": "ken-2025-ebt-primer",
+   "dokumen": "ken-pp-79-2014",
+   "ukuran": "bauran_energi_primer_ebt_persen",
+   "tahun_target": 2025,
+   "min": 23,
+   "maks": null,
+   "catatan": "paling sedikit 23 persen (sepanjang keekonomiannya terpenuhi); dicabut oleh PP 40/2025",
+   "halaman": "Pasal 9 huruf f butir 1 (hlm 8)"
+  },
+  {
+   "id": "ken-2050-ebt-primer-lama",
+   "dokumen": "ken-pp-79-2014",
+   "ukuran": "bauran_energi_primer_ebt_persen",
+   "tahun_target": 2050,
+   "min": 31,
+   "maks": null,
+   "catatan": "paling sedikit 31 persen; dicabut oleh PP 40/2025",
+   "halaman": "Pasal 9 huruf f butir 1 (hlm 8)"
+  },
+  {
+   "id": "ken-2030-ebt-primer",
+   "dokumen": "ken-pp-40-2025",
+   "ukuran": "bauran_energi_primer_ebt_persen",
+   "tahun_target": 2030,
+   "min": 19,
+   "maks": 23,
+   "catatan": "energi primer 368-454 juta TOE; EBT = energi baru + energi terbarukan (teks pindaian terbaca 1,9olo = 19 persen)",
+   "halaman": "Pasal 10 huruf a butir 1 (hlm 16)"
+  },
+  {
+   "id": "ken-2040-ebt-primer",
+   "dokumen": "ken-pp-40-2025",
+   "ukuran": "bauran_energi_primer_ebt_persen",
+   "tahun_target": 2040,
+   "min": 36,
+   "maks": 40,
+   "catatan": "energi primer 468-596 juta TOE",
+   "halaman": "Pasal 10 huruf a butir 2 (hlm 16)"
+  },
+  {
+   "id": "ken-2050-ebt-primer",
+   "dokumen": "ken-pp-40-2025",
+   "ukuran": "bauran_energi_primer_ebt_persen",
+   "tahun_target": 2050,
+   "min": 53,
+   "maks": 55,
+   "catatan": "energi primer 595-712 juta TOE",
+   "halaman": "Pasal 10 huruf a butir 3 (hlm 16)"
+  },
+  {
+   "id": "ken-2060-ebt-primer",
+   "dokumen": "ken-pp-40-2025",
+   "ukuran": "bauran_energi_primer_ebt_persen",
+   "tahun_target": 2060,
+   "min": 70,
+   "maks": 72,
+   "catatan": "energi primer 665-775 juta TOE; sasaran NZE 2060",
+   "halaman": "Pasal 10 huruf a butir 4 (hlm 17)"
+  },
+  {
+   "id": "rukn-2025-pembangkitan",
+   "dokumen": "rukn-2025",
+   "ukuran": "bauran_pembangkitan_ebt_persen",
+   "seri": {
+    "2025": 15.9,
+    "2026": 16.4,
+    "2027": 17.3,
+    "2028": 19.1,
+    "2029": 19.7,
+    "2030": 21.0,
+    "2031": 23.9,
+    "2032": 26.0,
+    "2033": 29.4,
+    "2034": 29.4,
+    "2035": 30.1,
+    "2036": 31.7,
+    "2037": 33.5,
+    "2038": 35.8,
+    "2039": 38.1,
+    "2040": 41.3,
+    "2041": 44.1,
+    "2042": 47.1,
+    "2043": 49.4,
+    "2044": 51.6,
+    "2045": 53.6,
+    "2046": 56.3,
+    "2047": 58.7,
+    "2048": 60.9,
+    "2049": 62.9,
+    "2050": 64.7,
+    "2051": 66.0,
+    "2052": 66.0,
+    "2053": 66.1,
+    "2054": 66.2,
+    "2055": 68.3,
+    "2056": 69.4,
+    "2057": 70.6,
+    "2058": 71.6,
+    "2059": 72.9,
+    "2060": 73.6
+   },
+   "catatan": "target porsi energi baru dan terbarukan dalam produksi listrik nasional; acuan RUPTL/IUPTLS; EBT melampaui fosil mulai 2044 (51,6 persen)",
+   "halaman": "Tabel 8 hlm 177; teks hlm 136"
+  },
+  {
+   "id": "ruptl-2034-bauran",
+   "dokumen": "ruptl-2025",
+   "ukuran": "bauran_pembangkitan_ebt_persen",
+   "tahun_target": 2034,
+   "min": 34.3,
+   "maks": null,
+   "catatan": "target bauran EBT pembangkitan 2034 menurut RUPTL PLN (RUKN Tabel 8 menetapkan 29,4 persen untuk 2034)",
+   "halaman": "hlm 5"
+  },
+  {
+   "id": "ruptl-2034-kapasitas",
+   "dokumen": "ruptl-2025",
+   "ukuran": "tambahan_kapasitas_ebt_mw",
+   "tahun_awal": 2025,
+   "tahun_target": 2034,
+   "min": 42569,
+   "maks": null,
+   "catatan": "tambahan EBT 42.569 MW dari total 69.512 MW (storage 10.256 MW, fosil 16.687 MW); 76 persen EBET menurut Lakin DJK 2025 (hitungan storage dihitung terpisah)",
+   "halaman": "hlm 5"
+  },
+  {
+   "id": "rukn-2060-kapasitas",
+   "dokumen": "rukn-2025",
+   "ukuran": "kapasitas_terbarukan_mw",
+   "tahun_target": 2060,
+   "min": 281300,
+   "maks": null,
+   "catatan": "daya mampu neto total 2060 sekitar 443 GW. Terbarukan = VRE (PLTS 108,7 + PLTB 73,5 + PLTAL 1,4 GW) + PLTA 70,5 + PLTP 22,7 + PLTBio 4,5 GW = 281,3 GW (dihitung); di luar itu energi baru (PLTN 35, NH3 8,4, H2 25,3, waste heat 0,9 GW) dan fosil + CCS",
+   "halaman": "hlm 134"
+  },
+  {
+   "id": "rukn-2060-produksi",
+   "dokumen": "rukn-2025",
+   "ukuran": "produksi_listrik_twh",
+   "tahun_target": 2060,
+   "min": 1947,
+   "maks": null,
+   "catatan": "proyeksi produksi tenaga listrik 2060",
+   "halaman": "butir 7 hlm 8"
+  },
+  {
+   "id": "ndc-2030",
+   "dokumen": "rukn-2025",
+   "ukuran": "penurunan_emisi_persen",
+   "tahun_target": 2030,
+   "min": 31.89,
+   "maks": 43.2,
+   "catatan": "E-NDC 2022: 31,89 persen dengan kemampuan sendiri, 43,20 persen dengan dukungan internasional dari BAU; sektor energi 358 juta ton CO2e (12,5 persen) atau 446 juta ton (15,5 persen). Dikutip dari RUKN; Second NDC belum dipanen (dokumen tidak terbaca)",
+   "halaman": "RUKN hlm 89"
+  }
+ ],
+ "kebutuhan_listrik_twh": {
+  "dokumen": "ken-pp-40-2025",
+  "halaman": "Pasal 9 butir 12 (hlm 15-16)",
+  "tanpa_captive": {
+   "2030": [
+    544,
+    806
+   ],
+   "2040": [
+    855,
+    1240
+   ],
+   "2050": [
+    1240,
+    1593
+   ]
+  },
+  "dengan_captive": {
+   "2030": [
+    699,
+    983
+   ],
+   "2040": [
+    1064,
+    1538
+   ],
+   "2050": [
+    1502,
+    2026
+   ],
+   "2060": [
+    1498,
+    1769
+   ]
+  },
+  "rukn_2060_twh": 1947
+ },
+ "realisasi": {
+  "pembangkitan_ebt_persen_ember": [
+   {
+    "tahun": 2015,
+    "nilai": 13.795,
+    "twh": 33.56,
+    "total_twh": 243.28
+   },
+   {
+    "tahun": 2016,
+    "nilai": 15.368,
+    "twh": 39.58,
+    "total_twh": 257.55
+   },
+   {
+    "tahun": 2017,
+    "nilai": 16.247,
+    "twh": 43.19,
+    "total_twh": 265.83
+   },
+   {
+    "tahun": 2018,
+    "nilai": 17.048,
+    "twh": 48.38,
+    "total_twh": 283.79
+   },
+   {
+    "tahun": 2019,
+    "nilai": 16.26,
+    "twh": 48.04,
+    "total_twh": 295.44
+   },
+   {
+    "tahun": 2020,
+    "nilai": 18.124,
+    "twh": 52.89,
+    "total_twh": 291.82
+   },
+   {
+    "tahun": 2021,
+    "nilai": 18.167,
+    "twh": 56.2,
+    "total_twh": 309.36
+   },
+   {
+    "tahun": 2022,
+    "nilai": 19.611,
+    "twh": 65.41,
+    "total_twh": 333.54
+   },
+   {
+    "tahun": 2023,
+    "nilai": 18.597,
+    "twh": 65.2,
+    "total_twh": 350.6
+   },
+   {
+    "tahun": 2024,
+    "nilai": 18.09,
+    "twh": 67.21,
+    "total_twh": 371.54
+   }
+  ],
+  "energi_primer_ebt_persen_ei": [
+   {
+    "tahun": 2015,
+    "nilai": 4.003
+   },
+   {
+    "tahun": 2016,
+    "nilai": 5.81
+   },
+   {
+    "tahun": 2017,
+    "nilai": 5.518
+   },
+   {
+    "tahun": 2018,
+    "nilai": 8.029
+   },
+   {
+    "tahun": 2019,
+    "nilai": 8.613
+   },
+   {
+    "tahun": 2020,
+    "nilai": 10.644
+   },
+   {
+    "tahun": 2021,
+    "nilai": 11.076
+   },
+   {
+    "tahun": 2022,
+    "nilai": 10.208
+   },
+   {
+    "tahun": 2023,
+    "nilai": 10.695
+   },
+   {
+    "tahun": 2024,
+    "nilai": 10.954
+   }
+  ],
+  "bauran_primer_pembangkit_pln_ebt_persen": [
+   {
+    "tahun": 2020,
+    "nilai": 13.83
+   },
+   {
+    "tahun": 2021,
+    "nilai": 13.5
+   },
+   {
+    "tahun": 2022,
+    "nilai": 13.95
+   },
+   {
+    "tahun": 2023,
+    "nilai": 12.99
+   },
+   {
+    "tahun": 2024,
+    "nilai": 13.0
+   }
+  ]
+ },
+ "kapasitas_ebt_mw": {
+  "2015": {
+   "hidro": 5307.45,
+   "panas_bumi": 1438.3,
+   "surya": 33.36,
+   "bayu": 1.46,
+   "bioenergi": 1741.66,
+   "sumber_id": "stat-2020",
+   "halaman": "Tabel 3 hlm 11-12; hidro=PLTA+PLTM+PLTMH, bioenergi=PLTBg+PLTBm+PLTBn+PLTSa, hybrid dan PLTS Atap tak dipisah"
+  },
+  "2016": {
+   "hidro": 5650.86,
+   "panas_bumi": 1533.3,
+   "surya": 43.12,
+   "bayu": 1.46,
+   "bioenergi": 1783.1,
+   "sumber_id": "stat-2020",
+   "halaman": "Tabel 3 hlm 11-12; hidro=PLTA+PLTM+PLTMH, bioenergi=PLTBg+PLTBm+PLTBn+PLTSa, hybrid dan PLTS Atap tak dipisah"
+  },
+  "2017": {
+   "hidro": 5687.9,
+   "panas_bumi": 1808.3,
+   "surya": 50.9,
+   "bayu": 1.46,
+   "bioenergi": 1856.81,
+   "sumber_id": "stat-2020",
+   "halaman": "Tabel 3 hlm 11-12; hidro=PLTA+PLTM+PLTMH, bioenergi=PLTBg+PLTBm+PLTBn+PLTSa, hybrid dan PLTS Atap tak dipisah"
+  },
+  "2018": {
+   "hidro": 5772.14,
+   "panas_bumi": 1948.3,
+   "surya": 60.19,
+   "bayu": 143.51,
+   "bioenergi": 1882.81,
+   "sumber_id": "stat-2020",
+   "halaman": "Tabel 3 hlm 11-12; hidro=PLTA+PLTM+PLTMH, bioenergi=PLTBg+PLTBm+PLTBn+PLTSa, hybrid dan PLTS Atap tak dipisah"
+  },
+  "2019": {
+   "hidro": 5976.02,
+   "panas_bumi": 2130.7,
+   "surya": 145.81,
+   "bayu": 154.31,
+   "bioenergi": 1891.61,
+   "sumber_id": "stat-2020",
+   "halaman": "Tabel 3 hlm 11-12; hidro=PLTA+PLTM+PLTMH, bioenergi=PLTBg+PLTBm+PLTBn+PLTSa, hybrid dan PLTS Atap tak dipisah"
+  },
+  "2020": {
+   "hidro": 6121,
+   "panas_bumi": 2131,
+   "surya": 151,
+   "bayu": 154,
+   "bioenergi": 1901,
+   "sumber_id": "stat-2024",
+   "halaman": "Tabel 21 hlm 21; hidro=PLTA/M; PLTS termasuk PLTS Atap; PLTGB (30 MW 2022, 250 MW 2023, 450 MW 2024) tidak dihitung"
+  },
+  "2021": {
+   "hidro": 6602,
+   "panas_bumi": 2286,
+   "surya": 205,
+   "bayu": 154,
+   "bioenergi": 2284,
+   "sumber_id": "stat-2024",
+   "halaman": "Tabel 21 hlm 21; hidro=PLTA/M; PLTS termasuk PLTS Atap; PLTGB (30 MW 2022, 250 MW 2023, 450 MW 2024) tidak dihitung"
+  },
+  "2022": {
+   "hidro": 6689,
+   "panas_bumi": 2360,
+   "surya": 283,
+   "bayu": 154,
+   "bioenergi": 3099,
+   "sumber_id": "stat-2024",
+   "halaman": "Tabel 21 hlm 21; hidro=PLTA/M; PLTS termasuk PLTS Atap; PLTGB (30 MW 2022, 250 MW 2023, 450 MW 2024) tidak dihitung"
+  },
+  "2023": {
+   "hidro": 6570,
+   "panas_bumi": 2597.51,
+   "surya": 600,
+   "bayu": 152,
+   "bioenergi": 3393,
+   "sumber_id": "stat-2024",
+   "halaman": "Tabel 21 hlm 21; hidro=PLTA/M; PLTS termasuk PLTS Atap; PLTGB (30 MW 2022, 250 MW 2023, 450 MW 2024) tidak dihitung"
+  },
+  "2024": {
+   "hidro": 7056,
+   "panas_bumi": 2638.76,
+   "surya": 909,
+   "bayu": 152,
+   "bioenergi": 3100,
+   "sumber_id": "stat-2024",
+   "halaman": "Tabel 21 hlm 21; hidro=PLTA/M; PLTS termasuk PLTS Atap; PLTGB (30 MW 2022, 250 MW 2023, 450 MW 2024) tidak dihitung"
+  }
+ },
+ "kapasitas_ebt_gw_esdm": {
+  "2020": 10.46,
+  "2021": 11.53,
+  "2022": 12.6,
+  "2023": 13.32,
+  "2024": 14.44,
+  "dokumen": "lakin-djk-2025",
+  "halaman": "Tabel 3 (Rencana Strategis ESDM 2025-2029)"
+ },
+ "rencana_ruptl_ebt": {
+  "sumber": "ruptl-2025"
+ }
+}

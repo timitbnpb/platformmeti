@@ -1,0 +1,39 @@
+{
+ "_catatan": "Kandidat penggabungan hasil pemeriksaan nama (2026-11-08). TIDAK digabung otomatis; antrean peninjauan kurator. Yakin = nama/singkatan sama persis atau rebrand; ragu = perlu bukti kepemilikan.",
+ "organisasi": {
+  "yakin": [
+   ["su_1490e681", "su_f4ad4493", "JPEN = Jateng Petro Energi (nama sama, urutan beda)"],
+   ["tk_7ffb6866", "p_79b7fffa25", "PT Adyawinsa Electrical and Power / & Power"],
+   ["p_636350291c", "p_d7ba891819", "Trina Solar / Trina"],
+   ["p_18be3c85ca", "p_9a9db35b05", "Sembcorp / Sembcorp Industries"],
+   ["p_236f2f34ab", "su_6936d259", "PT Xurya Daya Indonesia / Xurya"],
+   ["p_6998264f50", "p_a3b5b106e6", "PT Pertamina Power Indonesia = Pertamina NRE (rebrand); juga am_779f50d3 dan p_10e0dde689"],
+   ["p_8d3a80214c", "p_bf4b697021", "PT Sky Indonesia / PT Sky Energi Indonesia"]
+  ],
+  "ragu": [
+   ["p_27ae5a4203", "p_951796c62f", "PT Medco Power Indonesia vs 'Medco' (grup?) vs p_9de27fd5b9 Medco Energi Internasional Tbk"],
+   ["ix_keen", "p_e1fe7ea1ca", "PT Kencana Energi Lestari Tbk vs 'Kencana'"],
+   ["p_f08388e8a5", "su_37d9308c", "Bti vs BTI Energy"],
+   ["p_8bbc07a18e", "su_928a2fa6", "Huawei Digital Power vs Huawei Indonesia (entitas berbeda dalam grup)"]
+  ],
+  "bukan_gabung_tapi_induk_anak": ["PLN (su_ed074ff5) vs PLN Indonesia Power/Nusantara Power/Icon Plus/EPI/Enjiniring", "Adaro vs Adaro Green", "SRE Indonesia vs SRE ITS (cabang kampus)"]
+ },
+ "proyek": {
+  "yakin": [
+   ["pj_0081", "pj_0082", "Jatiluhur (180 vs 186 MW, titik < 3 km)"],
+   ["pj_0112", "pj_0113", "Wlingi (53,62 vs 54 MW)"],
+   ["pj_0066", "pj_0197", "Batang Toru 510 MW"],
+   ["pj_0239", "pj_0241", "Wayang Windu; pj_0240 (FTP2) kemungkinan unit/tahap sama"],
+   ["pj_0194", "pj_0196", "Asahan III (174 vs 87 MW: beda tahap?)"],
+   ["pj_0342", "pj_0343", "PLTS Karangkates ganda (133 vs 100 MW)"],
+   ["pj_0002", "pj_0003", "PLTB Banten (100 vs 180 MW)"]
+  ],
+  "ragu": [
+   ["pj_0233", "pjb_013", "Patuha vs PLTP Patuha Unit 2"],
+   ["pj_0265", "pj_0266", "Muara Laboh 168 vs FTP2 140 MW"],
+   ["pj_0242", "pj_0244", "Dieng 60 vs PLTP Dieng FTP2 345 MW"],
+   ["pj_0230", "pj_0235", "Gunung Salak: pj_0230/0231 vs unit pj_0235/0236 (tumpang tindih unit?)"],
+   ["pj_0057", "pj_0058", "'PLTM ta) Sumbagut' nama terpotong dua baris; perlu dibaca ulang dari RUPTL"]
+  ]
+ }
+}

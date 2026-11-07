@@ -387,6 +387,13 @@ export function bangun(masukan = {}) {
     return { pub: bersih(pub), intr: bersih(intr) };
   };
   const orgPubRows = [], orgAng = [], orgPen = [];
+  { // kantor pusat hasil panen (data/direktori/lokasi_org.json): hanya mengisi organisasi yang provinsinya belum terbaca
+    const fl = path.join(ROOT, 'data/direktori/lokasi_org.json');
+    if (fs.existsSync(fl)) for (const [id, h] of Object.entries(JSON.parse(fs.readFileSync(fl, 'utf8')).baris || {})) {
+      const o = org.get(alias.get(id) || id); if (!o || provinsiDari(o.lokasi?.provinsi)) continue;
+      o.lokasi = bersih({ ...(o.lokasi || {}), kota: h.kota, provinsi: h.provinsi, alamat: h.alamat, sumber_url: h.sumber_url, tingkat_bukti: h.tingkat_bukti });
+    }
+  }
   { // titik peta: kampus dulu (ormawa meminjam), lalu sisanya
     for (const o of org.values()) if (o.kategori === 'perguruan-tinggi') o.lokasi = titikLokasi(o);
     const kampus = new Map([...org.values()].filter((o) => o.kategori === 'perguruan-tinggi' && o.lokasi?.lat != null).map((o) => [norm(o.nama), o]));

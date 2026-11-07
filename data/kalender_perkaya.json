@@ -1,0 +1,509 @@
+{
+ "sumber": "kalender-perkaya",
+ "diambil": "2026-11-08",
+ "lisensi": "Fakta dan parafrase dengan atribusi. Gambar hanya yang hak-nya tercatat milik METI; foto Antara tidak dipakai (hanya tautan berita). Tanpa kontak pribadi.",
+ "perkaya": [
+  {
+   "cocok": {
+    "tanggal": "2026-08-05",
+    "judul_awal": "Indonesia Hydropower Summit"
+   },
+   "deskripsi": "Forum yang membahas percepatan PLTA sebagai penopang keandalan sistem listrik dan transisi energi, dengan sorotan potensi hidro lebih dari 95 GW yang baru terpakai sekitar 6,7 GW. Bagian dari rangkaian Road to IndoEBTKE ConEx ke-12.",
+   "lokasi": {
+    "tempat": "Auditorium PT PLN (Persero)",
+    "kota": "Jakarta",
+    "lat": null,
+    "lon": null
+   },
+   "penyelenggara": [
+    "METI",
+    "IA ITB"
+   ],
+   "mitra": [
+    "PLN",
+    "Danantara Indonesia",
+    "PT Arkora Hydro Tbk (sponsor)",
+    "PT Poso Energy (sponsor)"
+   ],
+   "organisasi_ids": [
+    "l_41bf1f0b41",
+    "su_ed074ff5",
+    "ix_arko"
+   ],
+   "keterbukaan": null,
+   "daftar_url": null,
+   "gambar": {
+    "file": "img/acara/indonesia-hydropower-summit-2026.webp",
+    "hak": "Gambar berita METI (metiires.or.id); hak METI, izin diperlukan untuk tayang ulang",
+    "url_sumber": "https://metiires.or.id/news/indonesia-hydropower-summit-2026-dorong-akselerasi-16-gw-energi-hidro-sebagai-pilar-keandalan-sistem-kelistrikan-indonesia-2"
+   },
+   "instagram": [
+    "https://www.instagram.com/metiires/"
+   ],
+   "youtube": null,
+   "sumber": [
+    {
+     "url": "https://api.metiires.or.id/api/news/indonesia-hydropower-summit-2026-dorong-akselerasi-16-gw-energi-hidro-sebagai-pilar-keandalan-sistem-kelistrikan-indonesia-2",
+     "label": "situs-meti",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "kata-pihak"
+    }
+   ],
+   "slug": "indonesia-hydropower-summit-2026"
+  },
+  {
+   "cocok": {
+    "tanggal": "2026-08-25",
+    "judul_awal": "Peluncuran Program PLTS 100 GWp"
+   },
+   "deskripsi": "Peluncuran pengembangan PLTS Gilimanuk, Jembrana, bagian dari program PLTS hingga 1.000 MWp di Bali yang dilengkapi baterai penyimpan skala besar (BESS). Pemprov Bali menyiapkan lahan negara tidak produktif, termasuk 321 hektare di Gilimanuk.",
+   "lokasi": {
+    "tempat": "Gilimanuk",
+    "kota": "Kabupaten Jembrana, Bali",
+    "lat": -8.1619976,
+    "lon": 114.4373961,
+    "presisi": "wilayah (titik pusat Gilimanuk, bukan lokasi tapak)",
+    "sumber_koordinat": "OpenStreetMap Nominatim"
+   },
+   "penyelenggara": [
+    "PT PLN (Persero)",
+    "Pemprov Bali"
+   ],
+   "mitra": [],
+   "organisasi_ids": [
+    "su_ed074ff5"
+   ],
+   "keterbukaan": null,
+   "daftar_url": null,
+   "instagram": [],
+   "youtube": null,
+   "sumber": [
+    {
+     "url": "https://www.antaranews.com/berita/5710863/pemprov-bali-siapkan-lahan-negara-nonproduktif-dukung-plts-1000-mwp",
+     "label": "media",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "cuplikan"
+    },
+    {
+     "url": "https://www.antaranews.com/berita/5710943/pln-optimalkan-plts-bali-untuk-mengurangi-ketergantungan-bbm-impor",
+     "label": "media",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "cuplikan"
+    }
+   ],
+   "slug": "peluncuran-plts-100-gwp-gilimanuk-2026",
+   "berita": [
+    {
+     "url": "https://www.antaranews.com/berita/5710863/pemprov-bali-siapkan-lahan-negara-nonproduktif-dukung-plts-1000-mwp",
+     "label": "Antara"
+    }
+   ]
+  },
+  {
+   "cocok": {
+    "tanggal": "2026-09-02",
+    "judul_awal": "IndoEBTKE ConEx"
+   },
+   "deskripsi": "Forum dan pameran tahunan energi baru, terbarukan, dan konservasi energi untuk mempercepat transisi energi Indonesia yang bersih, inklusif, dan rendah karbon. Digelar 2-4 September 2026 di Jakarta; METI termasuk penyelenggara.",
+   "lokasi": {
+    "tempat": "Convention Grand Ballroom, JIExpo Kemayoran",
+    "kota": "Jakarta",
+    "lat": -6.1448357,
+    "lon": 106.8486625,
+    "presisi": "gedung"
+   },
+   "penyelenggara": [
+    "METI",
+    "MASKEEI"
+   ],
+   "mitra": [
+    "Kementerian ESDM (dukungan)"
+   ],
+   "organisasi_ids": [
+    "l_41bf1f0b41",
+    "l_7278e0528a",
+    "l_38ba1d6f56"
+   ],
+   "keterbukaan": null,
+   "daftar_url": null,
+   "instagram": [],
+   "youtube": "https://www.youtube.com/@IndoEBTKEConEx",
+   "sumber": [
+    {
+     "url": "https://www.antaranews.com/berita/5718273/meti-dorong-investasi-proyek-energi-bersih-lewat-indoebtke",
+     "label": "media",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "cuplikan"
+    },
+    {
+     "url": "https://www.antaranews.com/berita/5474726/kementerian-esdm-indoebtke-conex-2026-dorong-energi-bersih-di-asean",
+     "label": "media",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "cuplikan"
+    },
+    {
+     "url": "https://www.indoebtke.com",
+     "label": "situs-penyelenggara",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "kata-pihak"
+    }
+   ],
+   "slug": "indoebtke-conex-2026",
+   "berita": [
+    {
+     "url": "https://www.antaranews.com/berita/5718273/meti-dorong-investasi-proyek-energi-bersih-lewat-indoebtke",
+     "label": "Antara"
+    }
+   ],
+   "tema": "Indonesia Renewable Energy Acceleration: Executing Strategic Projects, Unlocking Investment, Building Resilience",
+   "situs": "https://www.indoebtke.com",
+   "video_ids": [
+    "pXIMU2_5JyA",
+    "aKD7g13DvwY",
+    "Y-LfJ00sORQ",
+    "2CRX-X8Vk44"
+   ],
+   "seri": "conex"
+  },
+  {
+   "cocok": {
+    "tanggal": "2026-09-08",
+    "judul_awal": "Audiensi/RDPU"
+   },
+   "deskripsi": "Rapat pembahasan RUU EBET bersama Komisi XII DPR RI; METI menyampaikan masukan, di antaranya usul badan khusus (BPP EBT) untuk mengawal proyek energi terbarukan dari perencanaan hingga beroperasi.",
+   "lokasi": {
+    "tempat": null,
+    "kota": "Jakarta",
+    "lat": null,
+    "lon": null
+   },
+   "penyelenggara": [
+    "Komisi XII DPR RI"
+   ],
+   "mitra": [
+    "METI"
+   ],
+   "organisasi_ids": [
+    "l_774a8755e8",
+    "l_41bf1f0b41"
+   ],
+   "keterbukaan": null,
+   "daftar_url": null,
+   "instagram": [],
+   "youtube": null,
+   "sumber": [
+    {
+     "url": "https://www.antaranews.com/berita/5731868/meti-usulkan-badan-khusus-kawal-realisasi-proyek-energi-terbarukan",
+     "label": "media",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "cuplikan"
+    }
+   ],
+   "slug": "rdpu-ruu-ebet-komisi-xii-2026",
+   "berita": [
+    {
+     "url": "https://www.antaranews.com/berita/5731868/meti-usulkan-badan-khusus-kawal-realisasi-proyek-energi-terbarukan",
+     "label": "Antara"
+    }
+   ]
+  },
+  {
+   "cocok": {
+    "tanggal": "2026-09-24",
+    "judul_awal": "Panel"
+   },
+   "deskripsi": "Panel METI dalam Enlit Asia 2026, konferensi dan pameran energi ASEAN yang digelar 22-24 September 2026 (di kalender METI disebut bersama MKI Electricity Connect 2026).",
+   "lokasi": {
+    "tempat": "Indonesia Convention Exhibition (ICE) BSD City",
+    "kota": "Tangerang, Banten",
+    "lat": -6.300681,
+    "lon": 106.6365721,
+    "presisi": "gedung",
+    "sumber_koordinat": "OpenStreetMap Nominatim"
+   },
+   "penyelenggara": [
+    "Clarion Events (Energy)"
+   ],
+   "mitra": [],
+   "organisasi_ids": [],
+   "keterbukaan": "umum",
+   "keterbukaan_catatan": "acara dagang; tiket/pendaftaran lewat situs Enlit Asia, tarif tidak diperiksa",
+   "daftar_url": "https://www.enlit-asia.com/",
+   "gambar": null,
+   "gambar_catatan": "og:image situs Enlit adalah foto sponsor 2025, bukan poster edisi ini; tidak diunduh",
+   "instagram": [
+    "https://www.instagram.com/enlit_asia"
+   ],
+   "youtube": "https://www.youtube.com/channel/UCoxQUCaSYjac4dp4nQqijFg",
+   "sumber": [
+    {
+     "url": "https://www.enlit-asia.com/",
+     "label": "situs-penyelenggara",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "kata-pihak"
+    }
+   ],
+   "slug": "panel-meti-enlit-asia-2026"
+  },
+  {
+   "cocok": {
+    "tanggal": "2026-10-22",
+    "judul_awal": "Courtesy call"
+   },
+   "deskripsi": "Pengurus Harian METI bertemu Utusan Khusus Presiden Bidang Iklim dan Energi, Hashim Djojohadikusumo, memperkenalkan kepengurusan 2026-2028 dan menyampaikan 22 usulan strategis RUU EBET serta inisiatif PLTS 100 GWp, bioenergi, dan waste-to-energy.",
+   "lokasi": {
+    "tempat": null,
+    "kota": "Jakarta",
+    "lat": null,
+    "lon": null
+   },
+   "penyelenggara": [
+    "METI"
+   ],
+   "mitra": [
+    "Utusan Khusus Presiden Bidang Iklim dan Energi"
+   ],
+   "organisasi_ids": [
+    "l_41bf1f0b41"
+   ],
+   "keterbukaan": "undangan",
+   "daftar_url": null,
+   "tanggal_catatan": "artikel METI terbit 27 Okt 2026 tanpa tanggal pertemuan; tanggal 22 Okt di kalender tidak terkonfirmasi sumber ini",
+   "gambar": {
+    "file": "img/acara/courtesy-call-utusan-khusus-presiden-2026.webp",
+    "hak": "Foto berita METI; hak METI, izin diperlukan",
+    "url_sumber": "https://metiires.or.id/news/courtesy-meeting-pengurus-harian-meti-dengan-utusan-khusus-presiden-bidang-iklim-dan-energi-bapak-hashim-djojohadikusumo"
+   },
+   "instagram": [
+    "https://www.instagram.com/metiires/"
+   ],
+   "youtube": null,
+   "sumber": [
+    {
+     "url": "https://api.metiires.or.id/api/news/courtesy-meeting-pengurus-harian-meti-dengan-utusan-khusus-presiden-bidang-iklim-dan-energi-bapak-hashim-djojohadikusumo",
+     "label": "situs-meti",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "kata-pihak"
+    }
+   ],
+   "slug": "courtesy-call-utusan-khusus-presiden-2026"
+  },
+  {
+   "cocok": {
+    "tanggal": "2026-10-28",
+    "judul_awal": "Sarasehan Nasional"
+   },
+   "deskripsi": "Sarasehan Executive Business Forum TV Muhammadiyah bertema membuka jalan masyarakat ke ekonomi energi terbarukan. Ketua Umum METI memaparkan tiga peluang kolaborasi dengan Muhammadiyah: PLTS atap dan efisiensi energi, koperasi energi desa/pulau, serta pelatihan tenaga kerja hijau.",
+   "lokasi": {
+    "tempat": "Gedung Dakwah Muhammadiyah",
+    "kota": "Jakarta",
+    "lat": -6.185116,
+    "lon": 106.8347759,
+    "presisi": "perkiraan (titik PP Muhammadiyah, Jl. Menteng Raya 62)",
+    "sumber_koordinat": "OpenStreetMap Nominatim"
+   },
+   "penyelenggara": [
+    "TV Muhammadiyah"
+   ],
+   "mitra": [
+    "METI (pembicara)"
+   ],
+   "organisasi_ids": [
+    "l_41bf1f0b41"
+   ],
+   "keterbukaan": null,
+   "daftar_url": null,
+   "gambar": {
+    "file": "img/acara/sarasehan-executive-business-forum-2026.webp",
+    "hak": "Foto berita METI; hak METI, izin diperlukan",
+    "url_sumber": "https://metiires.or.id/news/meti-dorong-peluang-ekonomi-energi-terbarukan-yang-melibatkan-masyarakat"
+   },
+   "instagram": [
+    "https://www.instagram.com/metiires/"
+   ],
+   "youtube": null,
+   "sumber": [
+    {
+     "url": "https://api.metiires.or.id/api/news/meti-dorong-peluang-ekonomi-energi-terbarukan-yang-melibatkan-masyarakat",
+     "label": "situs-meti",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "kata-pihak"
+    }
+   ],
+   "slug": "sarasehan-executive-business-forum-2026"
+  },
+  {
+   "cocok": {
+    "tanggal": "2026-11-09",
+    "judul_awal": "COP31"
+   },
+   "deskripsi": "KLH/BPLH menyiapkan Paviliun Indonesia di COP31 Antalya, Turki, dengan lima kegiatan: sesi dialog, pertemuan bilateral dan penandatanganan MoU, koneksi karbon, pameran digital, dan siniar. Salah satu topik utama: transisi energi bersih dan industrialisasi hijau.",
+   "lokasi": {
+    "tempat": null,
+    "kota": "Antalya, Turki",
+    "lat": null,
+    "lon": null
+   },
+   "penyelenggara": [
+    "UNFCCC (konferensi)",
+    "KLH/BPLH (Paviliun Indonesia)"
+   ],
+   "mitra": [],
+   "organisasi_ids": [],
+   "keterbukaan": null,
+   "daftar_url": null,
+   "instagram": [],
+   "youtube": null,
+   "sumber": [
+    {
+     "url": "https://www.antaranews.com/berita/5831215/klh-usung-paviliun-indonesia-di-cop31-turki-sebagai-rumah-solusi-iklim",
+     "label": "media",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "cuplikan"
+    }
+   ],
+   "slug": "cop31-antalya-2026",
+   "berita": [
+    {
+     "url": "https://www.antaranews.com/berita/5831215/klh-usung-paviliun-indonesia-di-cop31-turki-sebagai-rumah-solusi-iklim",
+     "label": "Antara"
+    }
+   ]
+  },
+  {
+   "cocok": {
+    "tanggal": "2026-06-30",
+    "judul_awal": "Bincang Energi"
+   },
+   "slug": "bincang-energi-100-gwp-plts-2026",
+   "video_ids": [
+    "GK4WEAJWWKE"
+   ],
+   "deskripsi": "Bincang Energi METI bersama RESD tentang jalan menuju 100 GW PLTS dan pembangunan ekosistem listrik desa. Rekaman tersedia di kanal YouTube METI.",
+   "penyelenggara": [
+    "METI",
+    "RESD"
+   ],
+   "sumber": [
+    {
+     "url": "https://www.youtube.com/watch?v=GK4WEAJWWKE",
+     "label": "kanal-resmi",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "primer"
+    }
+   ]
+  }
+ ],
+ "kandidat": [
+  {
+   "kandidat_id": "kd_golf_meti_2026",
+   "tanda": "kandidat-mendatang",
+   "judul": "The 1st METI Challenge Trophy Golf Tournament 2026",
+   "jenis": "seminar",
+   "tanggal": "2026-11-22",
+   "tanggal_catatan": "API METI: mulai 2026-11-22T14:00Z, selesai 2026-11-23T06:00Z (22 Nov 21:00 sampai 23 Nov 13:00 WIB); jam janggal untuk golf, tanggal pasti perlu konfirmasi panitia",
+   "deskripsi": "Turnamen golf perdana METI untuk silaturahmi dan jejaring pemangku kepentingan energi, infrastruktur, keuangan, dan industri; bertema Together for a Renewable Future. Kapasitas 216 peserta.",
+   "lokasi": {
+    "tempat": "Emeralda Golf Club, Cimanggis Boulevard",
+    "kota": "Depok",
+    "lat": null,
+    "lon": null
+   },
+   "penyelenggara": [
+    "METI"
+   ],
+   "organisasi_ids": [
+    "l_41bf1f0b41"
+   ],
+   "keterbukaan": "umum",
+   "keterbukaan_catatan": "accessLevel=public, requiresMembership=false; pendaftaran dibuka 2026-10-23, ditutup 2026-11-17T17:59Z",
+   "daftar_url": null,
+   "daftar_catatan": "registrationUrl kosong di API; pendaftaran lewat platform metiires.or.id",
+   "gambar": {
+    "file": "img/acara/meti-challenge-trophy-golf-2026.webp",
+    "hak": "Banner acara METI; hak METI, izin diperlukan",
+    "url_sumber": "https://api.metiires.or.id/api/events"
+   },
+   "instagram": [
+    "https://www.instagram.com/metiires/"
+   ],
+   "youtube": null,
+   "sumber": [
+    {
+     "url": "https://api.metiires.or.id/api/events",
+     "label": "situs-meti",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "kata-pihak"
+    }
+   ],
+   "slug": "meti-challenge-trophy-golf-2026",
+   "kapasitas": 216,
+   "tema": "Together for a Renewable Future"
+  },
+  {
+   "kandidat_id": "kd_enlit_asia_2027",
+   "tanda": "kandidat-ekosistem",
+   "judul": "Enlit Asia 2027",
+   "jenis": "konferensi",
+   "tanggal": "2027-09-28",
+   "tanggal_catatan": "28-30 September 2027",
+   "deskripsi": "Konferensi dan pameran energi ASEAN untuk profesional ketenagalistrikan dan transisi energi; edisi 2027 di BITEC, Bangkok (bukan Indonesia).",
+   "lokasi": {
+    "tempat": "BITEC",
+    "kota": "Bangkok, Thailand",
+    "lat": null,
+    "lon": null
+   },
+   "penyelenggara": [
+    "Clarion Events (Energy)"
+   ],
+   "organisasi_ids": [],
+   "keterbukaan": "umum",
+   "daftar_url": "https://www.enlit-asia.com/",
+   "gambar": null,
+   "instagram": [
+    "https://www.instagram.com/enlit_asia"
+   ],
+   "youtube": "https://www.youtube.com/channel/UCoxQUCaSYjac4dp4nQqijFg",
+   "sumber": [
+    {
+     "url": "https://www.enlit-asia.com/",
+     "label": "situs-penyelenggara",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "kata-pihak"
+    }
+   ],
+   "slug": "enlit-asia-2027"
+  },
+  {
+   "kandidat_id": "kd_munas_meti_viii_2022",
+   "slug": "munas-meti-viii-2022",
+   "tanda": "kandidat-lalu",
+   "judul": "Musyawarah Nasional (METI) VIII",
+   "jenis": "konferensi",
+   "tanggal": "2022-06-22",
+   "tanggal_catatan": "tanggal sama dengan unggahan rekaman di kanal YouTube METI",
+   "deskripsi": "Musyawarah Nasional ke-8 Masyarakat Energi Terbarukan Indonesia. Rekaman tersedia di kanal YouTube METI.",
+   "penyelenggara": [
+    "METI"
+   ],
+   "organisasi_ids": [
+    "l_41bf1f0b41"
+   ],
+   "keterbukaan": "undangan",
+   "video_ids": [
+    "n6a5q4YXRsA",
+    "NFc0tbnscUU"
+   ],
+   "youtube": "https://www.youtube.com/@metiires",
+   "sumber": [
+    {
+     "url": "https://www.youtube.com/watch?v=n6a5q4YXRsA",
+     "label": "kanal-resmi",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "primer"
+    }
+   ]
+  }
+ ]
+}

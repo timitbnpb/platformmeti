@@ -1,0 +1,65 @@
+{
+ "_catatan": "Kantor pusat organisasi hasil scripts/pipa/lokasi_org.mjs. Dibaca potret.mjs; tidak menimpa lokasi yang sudah ada. presisi dihitung potret dari kota/provinsi.",
+ "baris": {
+  "p_7a87f28a47": {
+   "nama": "PT Andalan Mutu Energi",
+   "kota": "Kota Bandung",
+   "provinsi": "Jawa Barat",
+   "alamat": "Jl. Palem Raya No.6-8, Soekarno-Hatta, Bandung 40286",
+   "sumber_url": "https://andalanmutuenergi.com/",
+   "jenis": "situs-resmi",
+   "tingkat_bukti": "situs-sendiri",
+   "tanggal": "2026-11-07"
+  },
+  "p_a6ae037cc5": {
+   "nama": "PT Surya Energi Indotama",
+   "kota": "Kota Bandung",
+   "provinsi": "Jawa Barat",
+   "alamat": "Jl. Soekarno Hatta No.439 RT 001 RW 004, Kelurahan Kebonlega, Kecamatan Bojongloa Kidul, Kota Bandung, Jawa Barat 40235",
+   "sumber_url": "https://suryaenergi.co.id/",
+   "jenis": "situs-resmi",
+   "tingkat_bukti": "situs-sendiri",
+   "tanggal": "2026-11-07"
+  },
+  "p_b390d1f2e3": {
+   "nama": "Altiora",
+   "kota": "Jakarta",
+   "provinsi": "DKI Jakarta",
+   "alamat": "Maspion Plaza, Jl Gunung Sahari Raya Lt 3A Unit 1, Pademangan Barat, Jakarta Utara, Jakarta 14420",
+   "sumber_url": "https://altiora.id/",
+   "jenis": "situs-resmi",
+   "tingkat_bukti": "situs-sendiri",
+   "tanggal": "2026-11-07"
+  },
+  "p_f339701ed9": {
+   "nama": "PT Syntek Otomasi Indonesia",
+   "kota": "Jakarta",
+   "provinsi": "DKI Jakarta",
+   "alamat": "Jl. Mampang Prapatan Raya No.17, Blok G-H, Lt.2, Jakarta Selatan 12790",
+   "sumber_url": "https://syntek.co.id/",
+   "jenis": "situs-resmi",
+   "tingkat_bukti": "situs-sendiri",
+   "tanggal": "2026-11-07"
+  },
+  "su_3a7bc78b": {
+   "nama": "Rebricks",
+   "kota": "Jakarta",
+   "provinsi": "DKI Jakarta",
+   "alamat": "Jl. Ciputat raya no.79, Pondok Pinang, Jakarta Selatan",
+   "sumber_url": "https://rebricks.id/",
+   "jenis": "situs-resmi",
+   "tingkat_bukti": "situs-sendiri",
+   "tanggal": "2026-11-07"
+  },
+  "su_e9dd6c8f": {
+   "nama": "Waste4Change",
+   "kota": "Kota Bekasi",
+   "provinsi": "Jawa Barat",
+   "alamat": "Jl. Alun Alun Utara, RT.002/RW.001,",
+   "sumber_url": "https://waste4change.com/",
+   "jenis": "situs-resmi",
+   "tingkat_bukti": "situs-sendiri",
+   "tanggal": "2026-11-07"
+  }
+ }
+}

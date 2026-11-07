@@ -65,7 +65,7 @@ export function bangunHki(anggota, direktori, adm2) {
     const k = norm(a.nama) + '|' + a.perusahaan; if (ada.has(k)) continue; ada.add(k);
     const pk = pusatKab(a.kab, a.provinsi, adm2);
     baris.push({
-      id: 'ki_' + norm(a.nama).slice(0, 24) + '_' + norm(a.perusahaan).slice(0, 8), jenis: 'kawasan-industri', nama: a.nama, provinsi: a.provinsi, kabupaten_kota: a.kab,
+      id: 'ki_' + norm(a.nama).slice(0, 24) + '_' + norm(a.perusahaan).slice(0, 18), jenis: 'kawasan-industri', nama: a.nama, provinsi: a.provinsi, kabupaten_kota: a.kab,
       lat: pk ? +pk.lat.toFixed(4) : null, lng: pk ? +pk.lng.toFixed(4) : null, presisi: pk ? 'pusat kabupaten/kota (geoBoundaries), bukan lokasi kawasan' : null,
       sektor: 'kawasan industri (serbaguna)', status: 'anggota HKI', pengelola: a.perusahaan, luas_ha: a.luas_ha, luas_perlu_tinjau: a.luas_ha > 20000 ? true : undefined,
       sumber_id: 'hki-anggota', tahun: 2026, url: 'https://hki-industrialestate.com/hki-member/', tingkat_bukti: 'resmi',
@@ -73,7 +73,7 @@ export function bangunHki(anggota, direktori, adm2) {
   }
   const dikenal = new Set(anggota.map((a) => norm(a.nama)));
   for (const d of direktori) {
-    const k = norm(d.nama); if (!k || dikenal.has(k) || [...dikenal].some((x) => x.length > 5 && (x.includes(k) || k.includes(x)))) continue; dikenal.add(k);
+    const k = norm(d.nama); if (!k || /kek|kawasan ekonomi khusus/i.test(d.nama) || dikenal.has(k) || [...dikenal].some((x) => x.length > 5 && (x.includes(k) || k.includes(x)))) continue; dikenal.add(k);
     baris.push({ id: 'ki_' + k.slice(0, 24) + '_dir', jenis: 'kawasan-industri', nama: d.nama, provinsi: d.provinsi, kabupaten_kota: null, lat: null, lng: null, presisi: null, sektor: 'kawasan industri (serbaguna)', status: 'tercantum di direktori HKI', pengelola: null, luas_ha: null, sumber_id: 'hki-anggota', tahun: 2026, url: 'https://hki-industrialestate.com/hki-member/', tingkat_bukti: 'resmi' });
   }
   return baris.sort((a, b) => a.id.localeCompare(b.id));

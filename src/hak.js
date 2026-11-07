@@ -534,11 +534,133 @@ export async function jejakDaftar(env, akun, { tabel, baris, hal = 1 } = {}) {
   return { baris: r.results.map((x) => ({ id: x.id, waktu: x.kapan, akun_id: x.siapa, akun_nama: x.akun_nama ?? null, peran: x.peran, aksi: x.aksi, entitas: x.tabel, entitas_id: x.baris_id, tabel: x.tabel, baris_id: x.baris_id, ringkas: ringkas(x.ke) })), total: t.results[0].n };
 }
 
+/* ========================= Pustaka 0012: profil unduh + log dokumen_unduh ========================= */
+// Semua akun yang masuk boleh mengunduh; log hanya ditulis lewat pustakaCatat (satu batch), dibaca Admin lewat pustakaRekap.
+export const TUJUAN_PUSTAKA = ["riset", "kebijakan", "bisnis", "media", "lainnya"];
+const gerbangMasuk = (akun) => { if (!akun || peranEfektif(akun) === "publik") throw tolak("pustaka: wajib masuk"); };
+
+// { instansi, telepon, pernah, tujuan } milik akun sendiri; null bila migrasi 0012 belum diterapkan.
+export async function pustakaProfil(env, akun) {
+  gerbangMasuk(akun);
+  return tanpaTabel(async () => {
+    const [p, u] = await env.DB.batch([
+      env.DB.prepare("SELECT instansi, telepon FROM akun_profil WHERE akun_id = ?").bind(akun.id),
+      env.DB.prepare("SELECT tujuan FROM dokumen_unduh WHERE akun_id = ? ORDER BY id DESC LIMIT 1").bind(akun.id),
+    ]);
+    return { instansi: p.results[0]?.instansi ?? null, telepon: p.results[0]?.telepon ?? null, pernah: u.results.length > 0, tujuan: u.results[0]?.tujuan ?? null };
+  });
+}
+// Agregat saja (tanpa siapa): { dokumen_id: jumlah }, boleh dibaca semua akun masuk.
+export async function pustakaJumlah(env, akun) {
+  gerbangMasuk(akun);
+  return tanpaTabel(async () => Object.fromEntries((await env.DB.prepare("SELECT dokumen_id, COUNT(*) AS n FROM dokumen_unduh GROUP BY dokumen_id").all()).results.map((r) => [r.dokumen_id, r.n])));
+}
+// Satu batch: profil (hanya kolom yang masih kosong) + baris log.
+export async function pustakaCatat(env, akun, { dokumenId, berkasId, tujuan, via, instansi = null, telepon = null }) {
+  gerbangMasuk(akun);
+  const s = [];
+  if (instansi || telepon) {
+    s.push(env.DB.prepare("INSERT INTO akun_profil (akun_id, instansi, telepon) VALUES (?1, ?2, ?3) ON CONFLICT (akun_id) DO UPDATE SET instansi = COALESCE(instansi, ?2), telepon = COALESCE(telepon, ?3), diubah = unixepoch()")
+      .bind(akun.id, instansi, telepon));
+  }
+  s.push(env.DB.prepare("INSERT INTO dokumen_unduh (akun_id, dokumen_id, berkas_id, tujuan, via) VALUES (?, ?, ?, ?, ?)").bind(akun.id, dokumenId, berkasId, tujuan, via));
+  return tanpaTabel(async () => {
+    try { await env.DB.batch(s); } catch (e) { throw terjemah(e); }
+    return true;
+  });
+}
+// Admin: rekap per dokumen + daftar terbaru (nama, surel, instansi, telepon dari akun/profil).
+export async function pustakaRekap(env, akun, hal = 1) {
+  gerbangAdm(akun);
+  const h = Math.min(Math.max(Number(hal) || 1, 1), 10000);
+  return tanpaTabel(async () => {
+    const [rek, daf, tot] = await env.DB.batch([
+      env.DB.prepare("SELECT dokumen_id, COUNT(*) AS n, COUNT(DISTINCT akun_id) AS akun, MAX(waktu) AS terakhir FROM dokumen_unduh GROUP BY dokumen_id ORDER BY n DESC, dokumen_id LIMIT 200"),
+      env.DB.prepare("SELECT u.id, u.waktu, u.dokumen_id, u.berkas_id, u.tujuan, u.via, u.akun_id, a.nama, a.surel, p.instansi, p.telepon FROM dokumen_unduh u LEFT JOIN akun a ON a.id = u.akun_id LEFT JOIN akun_profil p ON p.akun_id = u.akun_id ORDER BY u.id DESC LIMIT ? OFFSET ?")
+        .bind(HALAMAN_ADM, (h - 1) * HALAMAN_ADM),
+      env.DB.prepare("SELECT COUNT(*) AS n FROM dokumen_unduh"),
+    ]);
+    return { rekap: rek.results, daftar: daf.results, total: tot.results[0].n, hal: h };
+  });
+}
+
+/* ========================= Langganan newsletter 0014 ========================= */
+// Publik (tamu) boleh mendaftar dan berhenti; daftar dan CSV hanya admin. Hasil null = migrasi 0014 belum diterapkan (rute membalas 503).
+// Tidak pernah mengembalikan apakah suatu surel sudah terdaftar kepada pemanggil publik.
+export const MINAT_LANGGANAN = ["kebijakan", "proyek", "acara", "kajian", "lowongan"];
+const jejakLg = (aksi, kunciSql) =>
+  `INSERT INTO jejak (siapa, peran, aksi, tabel, baris_id, ke, ip_hash) SELECT ?, ?, '${aksi}', 'langganan', CAST(id AS TEXT), ?, ? FROM langganan WHERE ${kunciSql} = ? AND changes() > 0`;
+export async function langgananDaftar(env, akun, d) {
+  return tanpaTabel(async () => {
+    const peran = akun?.peran ?? "publik", ke = JSON.stringify({ ringkas: "langganan newsletter" });
+    try {
+      const [u] = await env.DB.batch([
+        // surel sudah ada dan aktif: tidak diubah (data milik orang lain tak boleh ditimpa lewat formulir publik). Berhenti: diaktifkan lagi.
+        env.DB.prepare("INSERT INTO langganan (surel, nama, instansi, minat, token_berhenti, akun_id) VALUES (?1, ?2, ?3, ?4, ?5, ?6) " +
+          "ON CONFLICT (surel) DO UPDATE SET status = 'aktif', nama = excluded.nama, instansi = excluded.instansi, minat = excluded.minat, token_berhenti = excluded.token_berhenti, " +
+          "setuju_pada = unixepoch(), diubah = unixepoch(), akun_id = COALESCE(langganan.akun_id, excluded.akun_id) WHERE langganan.status = 'berhenti'")
+          .bind(d.surel, d.nama, d.instansi ?? null, JSON.stringify(d.minat), d.token, akun?.id ?? null),
+        env.DB.prepare(jejakLg("gabung", "surel")).bind(akun?.id ?? null, peran, ke, ip16(d.ipHash), d.surel),
+      ]);
+      return { baru: u.meta.changes > 0 };
+    } catch (e) { throw terjemah(e); }
+  });
+}
+// Berhenti lewat token (tautan) atau lewat akun masuk (surel akun). Idempoten: sudah berhenti tetap { ada: true }.
+export async function langgananBerhenti(env, akun, token, ipHash = null) {
+  const lewatAkun = token == null;
+  if (lewatAkun ? !akun?.surel : !/^[0-9a-f]{64}$/.test(String(token))) return { ada: false };
+  const kolom = lewatAkun ? "surel" : "token_berhenti", nilai = lewatAkun ? String(akun.surel).trim().toLowerCase() : token;
+  const peran = akun?.peran ?? "publik", ke = JSON.stringify({ ringkas: "berhenti langganan" });
+  return tanpaTabel(async () => {
+    try {
+      const [u, , s] = await env.DB.batch([
+        env.DB.prepare(`UPDATE langganan SET status = 'berhenti', diubah = unixepoch() WHERE ${kolom} = ? AND status = 'aktif'`).bind(nilai),
+        env.DB.prepare(jejakLg("cabut", kolom)).bind(akun?.id ?? null, peran, ke, ip16(ipHash), nilai),
+        env.DB.prepare(`SELECT 1 AS x FROM langganan WHERE ${kolom} = ?`).bind(nilai),
+      ]);
+      return { ada: u.meta.changes > 0 || s.results.length > 0 };
+    } catch (e) { throw terjemah(e); }
+  });
+}
+// Status langganan akun yang masuk (untuk mengisi formulir dan tombol berhenti). Tanpa token.
+export async function langgananSaya(env, akun) {
+  if (!akun?.surel) return { terdaftar: false };
+  return tanpaTabel(async () => {
+    const r = await env.DB.prepare("SELECT status, minat, instansi FROM langganan WHERE surel = ?").bind(String(akun.surel).trim().toLowerCase()).first();
+    if (!r) return { terdaftar: false };
+    let minat = []; try { minat = JSON.parse(r.minat); } catch { /* minat rusak = kosong */ }
+    return { terdaftar: true, aktif: r.status === "aktif", minat, instansi: r.instansi };
+  });
+}
+const BATAS_CSV = 20000;
+export async function langgananAdmin(env, akun, { hal = 1, status, csv = false } = {}) {
+  gerbangAdm(akun);
+  if (status && !["aktif", "berhenti"].includes(status)) throw salah("status tidak sah");
+  const h = Math.min(Math.max(Number(hal) || 1, 1), 10000);
+  const w = status ? " WHERE status = ?" : "", b = status ? [status] : [];
+  const kolom = "id, surel, nama, instansi, minat, status, setuju_pada, dibuat, diubah, akun_id";
+  return tanpaTabel(async () => {
+    const ambil = csv
+      ? env.DB.prepare(`SELECT ${kolom} FROM langganan${w} ORDER BY id LIMIT ?`).bind(...b, BATAS_CSV)
+      : env.DB.prepare(`SELECT ${kolom} FROM langganan${w} ORDER BY id DESC LIMIT ? OFFSET ?`).bind(...b, HALAMAN_ADM, (h - 1) * HALAMAN_ADM);
+    const [r, t, m] = await env.DB.batch([ambil,
+      env.DB.prepare("SELECT COALESCE(SUM(status = 'aktif'), 0) AS aktif, COALESCE(SUM(status = 'berhenti'), 0) AS berhenti FROM langganan"),
+      env.DB.prepare("SELECT j.value AS minat, COUNT(*) AS n FROM langganan l, json_each(l.minat) j WHERE l.status = 'aktif' GROUP BY j.value")]);
+    const perMinat = Object.fromEntries(MINAT_LANGGANAN.map((k) => [k, 0]));
+    for (const x of m.results) if (x.minat in perMinat) perMinat[x.minat] = x.n;
+    const baris = r.results.map((x) => { let minat = []; try { minat = JSON.parse(x.minat); } catch { /* kosong */ } return { ...x, minat }; });
+    if (csv) await env.DB.prepare("INSERT INTO jejak (siapa, peran, aksi, tabel, baris_id, ke) VALUES (?, ?, 'kirim', 'langganan', 'csv', ?)")
+      .bind(akun.id, akun.peran, JSON.stringify({ ringkas: "unduh csv langganan, " + baris.length + " baris" })).run();
+    return { baris, aktif: t.results[0].aktif, berhenti: t.results[0].berhenti, total: t.results[0].aktif + t.results[0].berhenti, per_minat: perMinat };
+  });
+}
+
 /* ========================================= sistem (tanpa peran) =================================== */
 const BATCH = (env, s) => env.DB.batch(s);
 const ip16 = (v) => (v && String(v).length === 16 ? String(v) : null);
 const LEBAR = { "masuk-ip": 900, "masuk-surel": 900, "masuk-log": 60, aktivasi: 3600, "ganti-sandi": 3600, koreksi: 3600, "keluar-data": 3600,
-  cari: 60, "riset-ai": 3600, "ringkasan-ai": 3600, kurasi: 3600, impor: 3600 };
+  cari: 60, unduh: 3600, "riset-ai": 3600, "ringkasan-ai": 3600, kurasi: 3600, impor: 3600 };
 
 export async function cariAkunUntukMasuk(env, surel) {
   if (typeof surel !== "string") return null;

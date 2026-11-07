@@ -12,6 +12,8 @@ export const KATALOG = {
   konflik: [409, "Konflik data."],
   terlalu_besar: [413, "Badan permintaan terlalu besar."],
   masukan_salah: [422, "Masukan tidak sah."],
+  persetujuan_wajib: [422, "Pilih tujuan penggunaan dan setujui ketentuan unduh."],
+  berkas_belum_ada: [404, "Berkas belum tersedia."],
   sumber_wajib: [422, "Fakta dan ikatan wajib bersumber."],
   laju_terlampaui: [429, "Terlalu sering. Coba lagi nanti."],
   server: [500, "Terjadi kesalahan di server."],

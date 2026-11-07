@@ -5,7 +5,9 @@ import { rute as ruteAgenda } from "./agenda.js";
 import { rute as ruteDirektori } from "./direktori.js";
 import { rute as ruteFoto } from "./foto_berita.js";
 import { rute as ruteAdmin } from "./admin.js";
+import { rute as ruteLangganan } from "./langganan.js";
 import { rute as ruteKelayakan } from "./kelayakan.js";
+import { rute as rutePustaka } from "./pustaka.js";
 import * as hak from "./hak.js";
 import { halamanProfil } from "./profil.js";
 import { gagal, json, PRIVAT, sha } from "./util.js";
@@ -26,7 +28,7 @@ const rutePemilik = {
 };
 
 // Tabel rute dikompilasi sekali: { metode, bagian[], fn }.
-const DAFTAR = Object.entries({ ...ruteSesi, ...ruteAkun, ...ruteAgenda, ...ruteDirektori, ...ruteFoto, ...ruteAdmin, ...ruteKelayakan, ...rutePemilik }).map(([k, fn]) => {
+const DAFTAR = Object.entries({ ...ruteSesi, ...ruteAkun, ...ruteAgenda, ...ruteDirektori, ...ruteFoto, ...ruteAdmin, ...ruteLangganan, ...ruteKelayakan, ...rutePustaka, ...rutePemilik }).map(([k, fn]) => {
   const [metode, jalur] = k.split(" ");
   return { metode, bagian: jalur.split("/").slice(1), fn };
 });
@@ -66,8 +68,9 @@ async function icsSah(env, t) {
 }
 
 // Seluruh situs di balik login (KEPUTUSAN 7 Nov 2026): hanya alur masuk, aset yang dibutuhkannya, dan API masuk yang terbuka.
-const PUBLIK = /^\/((masuk|aktivasi|ganti-sandi|404)(\.html)?|masuk\.js|tema\.js|404\.js|favicon[^/]*|robots\.txt)$|^\/inti\/[^/]+\.(css|js)$|^\/i18n\/|^\/img\/(logo|ikon)[^/]*$|^\/fonts\//;
-const API_PUBLIK = new Set(["/api/masuk", "/api/keluar", "/api/status", "/api/aktivasi", "/api/saya"]);
+const PUBLIK = /^\/((masuk|aktivasi|ganti-sandi|404)(\.html)?|masuk\.js|tema\.js|i18n\.js|404\.js|langganan(\.html|\.js|\.css)?|berhenti|favicon[^/]*|robots\.txt)$|^\/inti\/[^/]+\.(css|js)$|^\/i18n\/|^\/img\/(logo|ikon)[^/]*$|^\/fonts\//;
+// /api/langganan(/berhenti): ajakan publik newsletter (K19 turunan); rute lain di langganan.js tetap menagih sesi lewat perlu().
+const API_PUBLIK = new Set(["/api/masuk", "/api/keluar", "/api/status", "/api/aktivasi", "/api/saya", "/api/langganan", "/api/langganan/berhenti"]);
 
 const TULIS = new Set(["POST", "PATCH", "PUT", "DELETE"]);
 const RE_TOKEN = /^[0-9a-f]{64}$/;
@@ -146,6 +149,8 @@ async function halaman(req, env, url, akun) {
   if ((m = path.match(/^\/([op])\/([^/]+)$/)) && (req.method === "GET" || req.method === "HEAD")) {
     return (await halamanProfil(req, env, url, m[1], m[2])) ?? TIDAK_ADA();
   }
+  // Tautan berhenti newsletter (terbuka, bertoken di query): halaman yang sama dengan /langganan, mode dipilih skrip dari jalurnya.
+  if (path === "/berhenti") return halamanPrivat(await env.ASSETS.fetch(new Request(new URL("/langganan", url), { method: req.method })));
   if ((m = path.match(/^\/wilayah\/([^/]+)$/))) {
     if (!/^\d{2}$/.test(m[1])) return TIDAK_ADA();
     return env.ASSETS.fetch(new Request(new URL("/wilayah", url), req));
