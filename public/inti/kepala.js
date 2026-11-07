@@ -28,7 +28,7 @@ const TAB = [
   { kunci: "nav.wilayah", ikon: "wilayah", hak: null, grup: [
     { href: "/wilayah", kunci: "nav.wilayah_peta", ikon: "peta" }, { href: "/proyek", kunci: "nav.proyek", ikon: "proyek" },
     { href: "/program", kunci: "nav.program", ikon: "bintang" }, { href: "/peluang", kunci: "nav.peluang", ikon: "kompas" },
-    { href: "/kelayakan", kunci: "nav.kelayakan", ikon: "kalkulator" }, { href: "/indeks", kunci: "nav.indeks", ikon: "grafik" }] },
+    { href: "/indeks", kunci: "nav.indeks", ikon: "grafik" }] },
   { kunci: "nav.direktori", ikon: "direktori", hak: "masuk", grup: [
     { href: "/direktori?tampil=pakar", kunci: "nav.d_orang", ikon: "orang" }, { href: "/direktori?tampil=lembaga", kunci: "nav.d_org", ikon: "gedung" },
     { href: "/direktori?tampil=inovasi", kunci: "nav.d_inovasi", ikon: "tek-surya" }] },
@@ -36,7 +36,7 @@ const TAB = [
     { href: "/regulasi", kunci: "nav.regulasi", ikon: "regulasi" }, { href: "/pustaka", kunci: "nav.dokumen", ikon: "pdf" }] },
   { kunci: "nav.media", ikon: "kamera", hak: null, grup: [
     { href: "/berita", kunci: "nav.berita", ikon: "berita" }, { href: "/siaran-pers", kunci: "nav.siaran", ikon: "siaran" },
-    { href: "/galeri", kunci: "nav.foto", ikon: "gambar" }, { href: "/video", kunci: "nav.video", ikon: "video" }, { href: "/podcast", kunci: "nav.podcast", ikon: "mikrofon" },
+    { href: "/galeri", kunci: "nav.foto", ikon: "gambar" },
     { href: "/kalender", kunci: "nav.acara", ikon: "kalender" }] },
   { kunci: "nav.tentang", ikon: "perisai", hak: null, grup: [
     { href: "/tentang", kunci: "nav.tentang_ringkas", ikon: "info" }, { href: "/meti-wilayah", kunci: "nav.meti_wilayah", ikon: "lokasi" }, { href: "/metode", kunci: "nav.sub.metode", ikon: "metode" }] },

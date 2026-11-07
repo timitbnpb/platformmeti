@@ -1,5 +1,4 @@
 /* /galeri (Foto): karusel 3 foto terbaru, kisi masonry, lightbox berketerangan (acara, tanggal, tautan liputan). Hanya foto berhak METI (data/galeri.json). */
-import { mulaiHalaman } from "/inti/kepala.js";
 import { khUbin } from "/inti/kh.js";
 import { t, angka, tanggal } from "/i18n.js";
 import { esc, nanti, ikon, hantuHtml, kosongHtml, galatHtml } from "/inti/umum.js";
@@ -89,7 +88,6 @@ function gambar() {
 }
 
 async function main() {
-  await mulaiHalaman();
   const isi = document.getElementById("isi"), p = new URLSearchParams(location.search);
   const mulai = async () => {
     isi.innerHTML = hantuHtml(5);

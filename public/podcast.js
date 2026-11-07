@@ -1,5 +1,4 @@
 /* /podcast: kartu besar berwarna bergantian. Podcast METI diisi admin lewat data/podcast.json; podcast ekosistem hanya tautan keluar (tanpa salin sampul). */
-import { mulaiHalaman } from "/inti/kepala.js";
 import { khUbin } from "/inti/kh.js";
 import { t, angka, tanggal } from "/i18n.js";
 import { esc, ikon, hantuHtml, kosongHtml, galatHtml } from "/inti/umum.js";
@@ -16,13 +15,12 @@ function gambar(D) {
   const meti = (D.meti || []).map((e, i) => kartu({ nama: e.program || t("pod.meti") }, i, e)).join("");
   const eko = (D.ekosistem || []).map((p, i) => kartu(p, i + (D.meti || []).length)).join("");
   khUbin("khUbin", [{ ikon: "mikrofon", nilai: angka((D.meti || []).length), label: t("pod.n.meti") }, { ikon: "tautan", nilai: angka((D.ekosistem || []).length), label: t("pod.n.eko") }]);
-  document.getElementById("isi").innerHTML =
+  document.getElementById("isiPodcast").innerHTML =
     exHtml({ id: "pod-meti", ikon: "mikrofon", topik: t("pod.meti.ey"), judulHtml: esc(t("pod.meti.j")), subHtml: esc(t("pod.meti.sub")), isiHtml: meti ? `<ul class="pod-daftar">${meti}</ul>` : kosongHtml("pod.meti.kosong") })
     + exHtml({ id: "pod-eko", ikon: "tautan", topik: t("pod.eko.ey"), judulHtml: esc(t("pod.eko.j")), subHtml: esc(t("pod.eko.sub")), isiHtml: eko ? `<ul class="pod-daftar">${eko}</ul><p class="jm-bantu">${esc(t("pod.eko.catatan"))}</p>` : kosongHtml("pod.eko.kosong") });
 }
 async function main() {
-  await mulaiHalaman();
-  const isi = document.getElementById("isi");
+  const isi = document.getElementById("isiPodcast");
   isi.innerHTML = hantuHtml(4);
   let D;
   try { D = await muat("podcast"); } catch { isi.innerHTML = galatHtml("layanan"); return; }

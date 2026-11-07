@@ -641,3 +641,5 @@ main>:is(section,div,article)+:is(section,div,article){margin-top:max(24px,var(-
 .jm-geser>.jm-geser-pegangan::after{opacity:.55;left:6px;height:40px;margin-top:-20px;width:3px}
 .jm-geser:hover>.jm-geser-pegangan::after{opacity:.9;background:var(--accent)}
 @media (max-width:760px){.jj-chip{min-height:44px}}
+/* tab halaman gabungan (inti/tab_halaman.js): di HP tiap tab sama lebar, isi rata tengah */
+.jm-tab-rata>button{flex:1 1 0;justify-content:center;padding-inline:8px}

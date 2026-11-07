@@ -1,5 +1,4 @@
 /* /video: banner kanal resmi, video unggulan tersemat (youtube-nocookie), segmen Video METI / IndoEBTKE ConEx / Video ekosistem, playlist per seri, filter. */
-import { mulaiHalaman } from "/inti/kepala.js";
 import { khUbin } from "/inti/kh.js";
 import { t, angka, tanggal } from "/i18n.js";
 import { esc, nanti, ikon, hantuHtml, kosongHtml, galatHtml } from "/inti/umum.js";
@@ -59,12 +58,11 @@ function kisiHtml() {
   return exHtml({ id: "vid-kisi", ikon: "daftar2", topik: t("vid.kisi.ey"), judulHtml: hlHtml("vid.kisi.j", angka(d.length)), subHtml: esc(t("vid.kisi.sub")), aksiHtml: saringHtml, isiHtml: `<div id="vidIsi">${kisiIsi()}</div>` });
 }
 function gambar() {
-  document.getElementById("isi").innerHTML = tabHtml() + bannerHtml() + unggulanHtml() + kisiHtml();
+  document.getElementById("isiVideo").innerHTML = tabHtml() + bannerHtml() + unggulanHtml() + kisiHtml();
   ubin();
 }
 async function main() {
-  await mulaiHalaman();
-  const isi = document.getElementById("isi"), p = new URLSearchParams(location.search);
+  const isi = document.getElementById("isiVideo"), p = new URLSearchParams(location.search);
   if (SEGMEN.includes(p.get("seg"))) S.seg = p.get("seg");
   pasangPemutar();
   const mulai = async () => {
@@ -80,7 +78,7 @@ async function main() {
     else if ((b = q("[data-seg]"))) {
       S.seg = b.dataset.seg; S.seri = ""; S.tahun = ""; S.topik = ""; S.tampil = 24;
       for (const x of isi.querySelectorAll("[data-seg]")) { x.setAttribute("aria-selected", String(x === b)); x.tabIndex = x === b ? 0 : -1; } // chrome urgent
-      history.replaceState(null, "", S.seg === "meti" ? location.pathname : `${location.pathname}?seg=${S.seg}`);
+      history.replaceState(null, "", (S.seg === "meti" ? location.pathname : `${location.pathname}?seg=${S.seg}`) + "#video");
       nanti(() => { gambar(); });
     } else if (q("[data-lagi]")) { S.tampil += 24; nanti(() => { document.getElementById("vidIsi").innerHTML = kisiIsi(); }); }
   });

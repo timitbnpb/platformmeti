@@ -1,4 +1,3 @@
-import { mulaiHalaman } from "/inti/kepala.js";
 import { khUbin } from "/inti/kh.js";
 import { t, ada, angka, tanggal } from "/i18n.js";
 import { esc, nanti, ikon, hantuHtml, kosongHtml, galatHtml, api } from "/inti/umum.js";
@@ -350,8 +349,8 @@ function pasangPop() {
 /* CSV seksi kalender (hook jm:csv dari inti/aksi_ex.js): acara yang tampil menurut filter */
 const csvBaris = () => [[t("kal.pop.tanggal"), "s/d", "Judul", t("kal.pop.jenis"), t("kal.pop.mitra"), t("kal.pop.sumber"), "URL"], ...ROWS.slice().sort((a, c) => a.tanggal.localeCompare(c.tanggal)).map((b) => [b.tanggal, b.akhir, b.judul, label("kal.jenis.", b.jenis), mitraTeks(b), sumberTeks(b.sumber, FMT), urlB(b)])];
 
-async function main() {
-  const saya = await mulaiHalaman();
+/** Dipanggil kalender_halaman.js saat tab Kalender pertama dibuka; saya = hasil mulaiHalaman(). */
+export async function pasang(saya) {
   bacaUrl();
   KINI = new Date().toISOString().slice(0, 10);
   const isi = document.getElementById("isi");
@@ -390,4 +389,3 @@ async function main() {
   HP.addEventListener("change", () => D && nanti(() => { gambarIsi(); }));
   document.addEventListener("jm:bahasa", () => D && nanti(() => { gambarKepala(); gambarIsi(); }));
 }
-main();

@@ -1,26 +1,19 @@
-/* /event: kepala + ubin, agenda mendatang (karusel), bulan berjalan (kartu poster), agenda sebelumnya (daftar horizontal, filter), kemitraan dan sponsor.
+/* Tab Daftar mendatang dan Arsip di /kalender: agenda mendatang (karusel), bulan berjalan (kartu poster), agenda sebelumnya (daftar horizontal, filter), kemitraan dan sponsor.
    INP: kontrol (panah, bulan, filter) berubah seketika; kisi dirender ulang lewat nanti(). */
-import { mulaiHalaman } from "/inti/kepala.js";
-import { khUbin } from "/inti/kh.js";
 import { t, angka, tanggal } from "/i18n.js";
-import { esc, nanti, ikon, hantuHtml, kosongHtml, galatHtml, api } from "/inti/umum.js";
+import { esc, nanti, ikon, hantuHtml, kosongHtml, galatHtml } from "/inti/umum.js";
 import { pilihHtml, exHtml } from "/inti/komponen.js";
 import { hlHtml } from "/inti/aksi_ex.js";
 import { muat, label, urlAman } from "/publik.js";
 import { muatAcara, mendatang, lalu, hariIni, hariKe, namaBulan, geserBulan, urlEvent, urlMutlak, posterHtml, pilJenis, pilStatus, lokasiTeks, jamTeks, tglRentang, JENIS_ACARA, IKON_JENIS, pasangSalin } from "/event_umum.js";
 
 const S = { bulan: "", tahun: "", jenis: "", tampil: 8, slide: 0 };
-let SEMUA = [], KINI = "", TERDAFTAR = null, MITRA = null, WAKTU = 0;
+const AKAR = () => document.getElementById("isiEvent");
+let MODE = "depan", AWAL = null, SEMUA = [], KINI = "", MITRA = null, WAKTU = 0;
 
 const tglBesar = (b) => { const d = b.tanggal, rg = b.akhir > d; return `<span class="ev-tgl"><b>${rg ? `${+d.slice(8)}-${+b.akhir.slice(8)}` : +d.slice(8)}</b><span>${esc(tanggal(d).split(" ")[1])} ${esc(d.slice(0, 4))}</span><small>${esc(t("kal.hari." + hariKe(d)))}</small></span>`; };
 const meta = (ik, teks) => (teks ? `<li>${ikon(ik, 16)}<span>${esc(teks)}</span></li>` : "");
 const metaAcara = (b) => `<ul class="ev-meta">${meta("tahun", tglRentang(b))}${meta("jejak", jamTeks(b))}${meta("lokasi", lokasiTeks(b))}</ul>`;
-
-/* ---------- kepala ---------- */
-function gambarUbin() {
-  const peserta = TERDAFTAR === null ? "-" : angka(Object.values(TERDAFTAR).reduce((a, b) => a + b, 0));
-  khUbin("khUbin", [{ ikon: "kalender-bintang", nilai: angka(mendatang(SEMUA, KINI).length), label: t("ev.n.depan") }, { ikon: "jejak", nilai: angka(lalu(SEMUA, KINI).length), label: t("ev.n.lalu") }, { ikon: "orang", nilai: peserta, label: t("ev.n.peserta") }]);
-}
 
 /* ---------- 1. karusel mendatang ---------- */
 function slideHtml(b, i, n) {
@@ -114,21 +107,18 @@ function mitraHtml() {
 }
 
 function gambar() {
-  document.getElementById("isi").innerHTML = karuselHtml() + bulanHtml() + laluHtml() + mitraHtml();
-  gambarUbin();
+  AKAR().innerHTML = MODE === "lalu" ? laluHtml() : karuselHtml() + bulanHtml() + mitraHtml();
   nanti(() => { aturSlide(S.slide); mulaiOtomatis(); });
 }
 
 async function main() {
-  await mulaiHalaman();
   KINI = hariIni();
   S.bulan = KINI.slice(0, 7);
-  const isi = document.getElementById("isi");
+  const isi = AKAR();
   const mulai = async () => {
     isi.innerHTML = hantuHtml(5);
     try { SEMUA = await muatAcara(); } catch { isi.innerHTML = galatHtml("layanan"); return; }
     muat("event_mitra").then((d) => { MITRA = d; if (SEMUA.length) nanti(gambar); }, () => {});
-    api("/api/event").then((d) => { TERDAFTAR = d.terdaftar || {}; gambarUbin(); }, () => {});
     gambar();
   };
   pasangSalin();
@@ -148,4 +138,10 @@ async function main() {
   });
   document.addEventListener("jm:bahasa", () => SEMUA.length && nanti(gambar));
 }
-main();
+/** Dipanggil kalender_halaman.js: "depan" (daftar mendatang) atau "lalu" (arsip); data dimuat sekali. */
+export function tampil(mode) {
+  MODE = mode;
+  if (!AWAL) AWAL = main();
+  else if (SEMUA.length) nanti(gambar);
+  return AWAL;
+}

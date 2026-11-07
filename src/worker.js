@@ -132,6 +132,8 @@ const TERKUNCI = [
 const NAMA_TEKNOLOGI = { surya: "Energi surya", bayu: "Energi bayu", hidro: "Hidro", "panas-bumi": "Panas bumi", bioenergi: "Bioenergi", "biomassa-sampah": "Sampah menjadi energi", sampah: "Sampah menjadi energi", penyimpanan: "Penyimpanan energi", hidrogen: "Hidrogen", nuklir: "Nuklir" };
 const TIDAK_ADA = () => new Response("Tidak ditemukan", { status: 404, headers: { "content-type": "text/plain; charset=utf-8" } });
 const LANGSUNG_404 = /^\/(direktori|admin)\.html$/;
+// Halaman yang digabung (Peluang+Kelayakan, Kalender+Event, Galeri+Video+Podcast): tautan lama dialihkan 301 ke tab barunya, query dipertahankan.
+const ALIH_GABUNG = { "/kelayakan": "/peluang#hitung", "/event": "/kalender#daftar", "/video": "/galeri#video", "/podcast": "/galeri#podcast" };
 
 function halamanPrivat(res) {
   const r = new Response(res.body, res);
@@ -167,6 +169,10 @@ async function halaman(req, env, url, akun) {
     }
     if (path === "/kalender.ics") return gagal("belum_masuk", 401, PRIVAT);
     return new Response(null, { status: 302, headers: { location: "/masuk?ke=" + encodeURIComponent(path + url.search), ...PRIVAT } });
+  }
+  if (ALIH_GABUNG[path] && (req.method === "GET" || req.method === "HEAD")) {
+    const [ke, hash] = ALIH_GABUNG[path].split("#");
+    return new Response(null, { status: 301, headers: { location: ke + url.search + "#" + hash } });
   }
   for (const k of TERKUNCI) {
     if (!k.re.test(path)) continue;

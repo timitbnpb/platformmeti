@@ -1,9 +1,8 @@
-/* /kelayakan: kalkulator kelayakan lokasi EBT. Peta koroplet sumber daya mengikuti teknologi; panel kontrol dan hasil mengambang di dalam peta.
+/* Tab Hitung kelayakan di /peluang (dimuat malas oleh peluang_halaman.js): kalkulator kelayakan lokasi EBT. Peta koroplet sumber daya mengikuti teknologi; panel kontrol dan hasil mengambang di dalam peta.
    Hover provinsi = kartu tooltip berlambang; klik provinsi/titik atau pemilih provinsi = hitung (hasil di panel). Tautan dalam: ?lat=&lon=&tek=
    INP: pilihan teknologi mengubah chrome (aria-pressed) seketika; warna peta, legenda, dan hitung menyusul lewat nanti(). */
 import { t, angka, tanggal } from "/i18n.js";
 import { esc, ikon, nanti } from "/inti/umum.js";
-import { mulaiHalaman } from "/inti/kepala.js";
 import { muatMapLibre } from "/inti/maplibre.js";
 import { rapikanPeta, pasangBatas, geoProvinsi, BATAS_ID } from "/inti/peta_indonesia.js";
 import { ikonTek } from "/inti/ikon_tek.js";
@@ -18,7 +17,7 @@ const IKON_PADA = { plts: "surya", terapung: "surya", pltb: "bayu", mikrohidro: 
 const SD = { plts: { k: "surya", u: "surya.u", dari: "atlas" }, terapung: { k: "surya", u: "surya.u", dari: "atlas" }, pltb: { k: "bayu", u: "mw", dari: "bayu" }, mikrohidro: { k: "mh", u: "mw", dari: "mikrohidro" } };
 const ambil = (u) => fetch(u).then((r) => (r.ok ? r.json() : null)).catch(() => null);
 const q = new URLSearchParams(location.search);
-const S = { lat: q.has("lat") ? Number(q.get("lat")) : null, lon: q.has("lon") ? Number(q.get("lon")) : null, tek: TEKNOLOGI.includes(q.get("tek")) ? q.get("tek") : "plts" };
+const S = { prov: q.get("prov") || "", lat: q.has("lat") ? Number(q.get("lat")) : null, lon: q.has("lon") ? Number(q.get("lon")) : null, tek: TEKNOLOGI.includes(q.get("tek")) ? q.get("tek") : "plts" };
 let peta = null, penanda = null, petaSiap = false, GEO = null, PEL = null, ATLAS = null, PROV = [];
 let NILAI = new Map(), RENTANG = [0, 1];
 const warna = (v) => getComputedStyle(document.documentElement).getPropertyValue(v).trim() || "gray";
@@ -155,7 +154,6 @@ function bukaPeta() {
 }
 
 (async () => {
-  await mulaiHalaman();
   [GEO, PEL, ATLAS, PROV] = await Promise.all([geoProvinsi(), ambil("/data/peluang.json"), ambil("/data/potensi_atlas.json"), daftarProvinsi()]);
   if (GEO) GEO = { ...GEO, features: GEO.features.map((f) => ({ ...f, properties: { ...f.properties, kode: String(f.properties.kode) } })) };
   hitungNilai();
@@ -164,4 +162,7 @@ function bukaPeta() {
   else { $("klKontrol").open = false; $("klPanel").open = false; }
   bukaPeta();
   jalan();
+  /* dari tab Peta peluang (tombol Hitung) atau tautan ?prov= */
+  document.addEventListener("jm:hitung", (e) => { if (e.detail?.tek && e.detail.tek !== S.tek) $("klKontrolIsi").querySelector(`[data-tek="${e.detail.tek}"]`)?.click(); pilihProv(String(e.detail?.kode || ""), true); });
+  if (S.prov && !Number.isFinite(S.lat)) pilihProv(S.prov, false);
 })();

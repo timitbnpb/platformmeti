@@ -1,9 +1,8 @@
-/* /peluang: celah potensi EBT per provinsi, peringkat, proyek terbuka untuk swasta, kalkulator tersemat (gelombang 3 butir H).
+/* /peluang: celah potensi EBT per provinsi, peringkat, proyek terbuka untuk swasta, tombol Hitung membuka tab Hitung kelayakan (kelayakan.js).
    Data = potret statis /data/*.json. Celah = potensi RUEN (2015) dikurangi terpasang HEESI (2025): indikasi (EST), bukan potensi teknis terbaru.
    INP: segmen teknologi berubah seketika (aria-pressed); peta, tabel, kartu menyusul lewat nanti(). */
 import { t, angka, tanggal } from "/i18n.js";
 import { esc, nanti, ikon, hantuHtml, galatHtml } from "/inti/umum.js";
-import { mulaiHalaman } from "/inti/kepala.js";
 import { khUbin } from "/inti/kh.js";
 import { muatMapLibre } from "/inti/maplibre.js";
 import { rapikanPeta, pasangBatas, geoProvinsi, BATAS_ID } from "/inti/peta_indonesia.js";
@@ -12,21 +11,18 @@ import { aksiHtml } from "/inti/aksi_ex.js";
 import { ikonTek, pilTek, pilTekTaut } from "/inti/ikon_tek.js";
 import { geserPanel } from "/inti/panel_geser.js";
 import { PROV } from "/penerbit.js";
-import { bukaKelayakan, daftarProvinsi, TEKNOLOGI } from "/inti/kelayakan.js";
 
 const $ = (id) => document.getElementById(id);
 const N = (n, d = 0) => angka(n, { desimal: d });
 const TEK = ["surya", "bayu", "hidro", "panas-bumi", "bioenergi"];
 const DK = (k) => k.replace("-", "_"); // kunci data peluang.json
 const KALK = { surya: "plts", bayu: "pltb", hidro: "mikrohidro", "panas-bumi": "plts", bioenergi: "plts" };
-const IK_KALK = { plts: "surya", terapung: "surya", pltb: "bayu", mikrohidro: "hidro" };
 const BATAS_KARTU = 12;
 const ambil = (u) => fetch(u, { credentials: "same-origin" }).then((r) => { if (!r.ok) throw new Error(u); return r.json(); });
 const lambang = (kode, u = 20) => `<img src="/img/provinsi/${esc(kode)}.png" width="${u}" height="${u}" alt="" loading="lazy" decoding="async">`;
 const labTek = (k) => t("pj.tek." + k);
 const urlAman = (u) => (/^https?:\/\//i.test(u || "") ? u : "");
 
-await mulaiHalaman();
 const isi = $("pelIsi");
 isi.innerHTML = hantuHtml(6);
 
@@ -103,7 +99,6 @@ function kerangka() {
     </div>` })}</div>
   <div id="exTabel">${exHtml({ id: "", ikon: "tabel", topik: "", judulHtml: "", isiHtml: `<div id="pelTabel"></div>` })}</div>
   <div id="exProyek">${exHtml({ id: "", ikon: "proyek", topik: "", judulHtml: "", isiHtml: `<div class="jm-saring" id="pelSaring" role="group" aria-label="${esc(t("pel.saring"))}"></div><div id="pelKartu"></div>` })}</div>
-  <div id="exKalk">${exHtml({ id: "pelKalkEx", ikon: "analisis", topik: "", judulHtml: "", isiHtml: `<div class="jm-pel-kalk-alat" id="pelKalkAlat"></div><div id="pelKalk" aria-live="polite"></div>` })}</div>
   <div id="exMetode"></div>`;
   document.querySelector(".jm-pel-penuh").prepend($("pelSeg")); /* filter teknologi melayang di atas peta */
 }
@@ -123,7 +118,6 @@ function judulSemua() {
   kepala("exTabel", { ikon: "tabel", topik: t("pel.ex.tabel"), judulHtml: `${hl(N(baris.length))} ${esc(t("pel.ex.tabel.j"))} ${hl(N(total) + " MW")}`, subHtml: `${esc(t("pel.ex.tabel.s"))} ${estPil()}`, aksiHtml: aksiHtml({ csv: true }) + srcPeluang() });
   const p = daftarProyek();
   kepala("exProyek", { ikon: "proyek", topik: t("pel.ex.proyek"), judulHtml: `${hl(N(p.length))} ${esc(t("pel.ex.proyek.j"))} ${hl(N(p.reduce((a, r) => a + (r.mw ?? 0), 0)) + " MW")}`, subHtml: esc(t("pel.ex.proyek.s")), aksiHtml: aksiHtml({ csv: true }) + sumberHtml(`${esc(t("pel.sumber.proyek"))}<br>${esc(t("pel.sumber.ruptl"))}<br>${esc(t("pel.sumber.tgl", { tgl: tglData() }))}<br>${esc(PEL.meta.definisi_tanpa_pengembang)}`) });
-  kepala("exKalk", { ikon: "analisis", topik: t("pel.ex.kalk"), judulHtml: esc(t("pel.ex.kalk.j")), subHtml: `${esc(t("pel.ex.kalk.s"))} ${hipPil()}`, aksiHtml: "" });
 }
 
 /* ---------- hero ---------- */
@@ -235,7 +229,7 @@ function panelProv() {
     ${sub("tabel", t("pel.panel.harga", { f: N(F, 2) }), `<table class="jm-pel-ht"><thead><tr><th>${esc(t("pel.c.tek"))}</th><th class="jm-num">${esc(t("pel.panel.satuan"))}</th></tr></thead><tbody>${harga}</tbody></table><p class="jm-bantu">${esc(t("pel.panel.harga.k"))} ${estPil()}</p>`)}
     <button type="button" class="jm-tbl jm-tbl-utama" id="pelHitung">${ikon("analisis", 16)}<span>${esc(t("pel.hitung"))}</span></button>`;
   for (const i of el.querySelectorAll(".jm-pel-bt")) i.style.setProperty("--w", i.dataset.w + "%");
-  $("pelHitung").addEventListener("click", () => { kalkProv(b.kode, KALK[tek] || "plts"); $("pelKalkEx").scrollIntoView({ behavior: matchMedia("(prefers-reduced-motion:reduce)").matches ? "auto" : "smooth", block: "start" }); });
+  $("pelHitung").addEventListener("click", () => document.dispatchEvent(new CustomEvent("jm:hitung", { detail: { kode: b.kode, tek: KALK[tek] || "plts" } }))); /* halaman /peluang membuka tab Hitung kelayakan */
 }
 function pilihProv(kode, dariPeta) {
   S.prov = String(kode);
@@ -302,26 +296,6 @@ function kartuProyek() {
 }
 $("pelIsi").addEventListener("click", (e) => { if (e.target.closest("#pelLagi")) { nKartu += BATAS_KARTU; e.target.closest("#pelLagi").setAttribute("aria-busy", "true"); nanti(kartuProyek); } });
 
-/* ---------- kalkulator ---------- */
-let provKalk = [];
-const K = { kode: "", tek: "plts" };
-function alatKalk() {
-  $("pelKalkAlat").innerHTML = `<div class="jm-kl-tek" role="group" aria-label="${esc(t("kl.tek"))}">${TEKNOLOGI.map((k) => `<button type="button" class="jm-kl-tb" data-ktek="${k}" aria-pressed="${k === K.tek}">${ikonTek(IK_KALK[k])}<span>${esc(t("kl.tek." + k))}</span></button>`).join("")}</div>
-    <label class="jm-pil-pilih jm-kl-prov">${ikon("peta", 18)}<span class="sr">${esc(t("kl.provinsi"))}</span><select data-ikon="peta" id="pelKProv"><option value="">${esc(t("kl.provinsi.pilih"))}</option>${provKalk.map((p) => `<option value="${p.kode}" data-ikon="prov:${p.kode}"${p.kode === K.kode ? " selected" : ""}>${esc(p.nama)}</option>`).join("")}</select></label>`;
-}
-function jalanKalk() {
-  const p = provKalk.find((x) => x.kode === K.kode);
-  bukaKelayakan({ lat: p ? p.lat : NaN, lon: p ? p.lon : NaN, tek: K.tek, wadah: $("pelKalk") });
-}
-function kalkProv(kode, tek) { K.kode = kode; K.tek = tek; alatKalk(); jalanKalk(); }
-$("pelIsi").addEventListener("click", (e) => {
-  const b = e.target.closest("[data-ktek]"); if (!b) return;
-  K.tek = b.dataset.ktek;
-  for (const x of $("pelKalkAlat").querySelectorAll("[data-ktek]")) x.setAttribute("aria-pressed", String(x === b));
-  if (K.kode) jalanKalk();
-});
-$("pelIsi").addEventListener("change", (e) => { if (e.target.id !== "pelKProv") return; K.kode = e.target.value; if (K.kode && PER_KODE.has(K.kode)) pilihProv(K.kode); jalanKalk(); });
-
 /* ---------- metode ---------- */
 function isiMetode() {
   const src = PEL.sumber.map((s) => (urlAman(s.url) ? `<a href="${esc(s.url)}" target="_blank" rel="noopener noreferrer">${esc(s.judul)}</a>` : esc(s.judul))).join("<br>");
@@ -342,14 +316,13 @@ function semua() {
   geserPanel($("pelLapis"), { kunci: "lapis" }); geserPanel($("pelPanel"), { kunci: "panel" });
   for (const id of ["pelLapis", "pelPanel"]) { $(id).addEventListener("toggle", () => nanti(pasKan)); $(id).addEventListener("jm:geser", () => nanti(pasKan)); }
   if (innerWidth < 1000) { $("pelLapis").open = false; $("pelPanel").open = false; }
-  isiMetode(); alatKalk(); jalanKalk();
+  isiMetode();
   bukaPeta();
   segarkanTek();
 }
 const pasKan = () => { if (peta && !S.prov) peta.fitBounds(BATAS_ID, { padding: padPanel(), duration: 300 }); };
 GEO = await geoProvinsi();
 if (!GEO) { isi.innerHTML = `<div class="jm-kartu">${galatHtml("jaringan")}</div>`; isi.querySelector("[data-aksi=ulang]").addEventListener("click", () => location.reload()); throw new Error("geo"); }
-provKalk = await daftarProvinsi();
 semua();
 const q = new URLSearchParams(location.search);
 if (PER_KODE.has(q.get("prov"))) pilihProv(q.get("prov"));

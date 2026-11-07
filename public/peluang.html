@@ -26,10 +26,22 @@
     <h1 id="judul" data-i18n="pel.judul">Peluang energi terbarukan per provinsi</h1>
     <p class="jm-kh-lead" data-i18n="pel.lead">Di mana potensi masih jauh dari termanfaatkan, proyek apa yang belum punya pengembang, dan berapa harga patokannya. Setiap angka bersumber dan bertanggal.</p>
   </div><div class="jm-kh-ubin" id="pelAngka" aria-live="polite"></div></section>
-  <div class="jm-pel-seg" id="pelSeg" role="group" data-i18n-attr="aria-label:pel.seg"></div>
-  <div id="pelIsi"></div>
+  <div id="tabHal"></div>
+  <div id="panelPeta">
+    <div class="jm-pel-seg" id="pelSeg" role="group" data-i18n-attr="aria-label:pel.seg"></div>
+    <div id="pelIsi"></div>
+  </div>
+  <div id="panelHitung" hidden>
+    <p class="jm-bantu" data-i18n="kl.lead">Klik satu titik di peta atau pilih provinsi, lalu pilih teknologi. Hasilnya perkiraan awal berdasarkan data iklim NASA POWER, bukan studi kelayakan.</p>
+    <section class="jm-kl-petaw jm-pel-penuh" aria-label="Lokasi" data-i18n-attr="aria-label:kl.peta">
+      <div id="klPeta" class="jm-pel-kanvas" role="application" data-i18n-attr="aria-label:kl.peta.petunjuk"></div>
+      <div id="klTip" class="jm-pel-tip" role="status" hidden></div>
+      <details class="jm-pel-lapis jm-kl-lapis" id="klKontrol" open><summary><span data-i18n="kl.kontrol">Teknologi dan lokasi</span></summary><div class="jm-kl-kp" id="klKontrolIsi"></div></details>
+      <details class="jm-pel-panel jm-kl-panel" id="klPanel" open><summary id="klPanelJ"><span data-i18n="kl.pandu">Panduan</span></summary><div id="kelayakanHasil" class="jm-pel-panel-isi" aria-live="polite"></div></details>
+    </section>
+  </div>
 </main>
 <footer class="jm-kaki" id="kaki"></footer>
-<script type="module" src="/peluang.js"></script>
+<script type="module" src="/peluang_halaman.js"></script>
 </body>
 </html>
