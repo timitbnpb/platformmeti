@@ -5,3 +5,4 @@
 .jm-adm-jejak pre{margin:6px 0 0;padding:8px;border-radius:var(--r-sm);background:var(--surface);font:12px/1.4 ui-monospace,Menlo,monospace;white-space:pre-wrap;word-break:break-all;max-width:100%}
 .jm-adm-jejak summary{cursor:pointer;color:var(--accent);min-height:24px}
 .jm-adm-status{min-height:24px}
+@media (min-width:768px){.jm-bar.jm-adm-jejak{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}}

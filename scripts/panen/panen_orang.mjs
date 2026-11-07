@@ -47,7 +47,7 @@ export function saring(rec) {
 }
 
 // ---------- normalisasi nama ----------
-const GELAR = /\b(prof|dr|drs|dra|ir|h|hj|kh|dipl|ing|se|sh|st|mt|mm|mba|msc|ma|map|mh|mkn|sip|ssi|ssos|spd|sag|sk|sm|mpd|phd|llm|ak|ca|cfa|mbus|meng|mp|msi|mtp|msi|ssn|stp|sstp|mse|ssi|mcom|cpa|bsc|bba|mpa|mem|s1|s2|s3|\.)\b/gi;
+const GELAR = /\b(prof|drg|komjen|pol|dr|drs|dra|ir|h|hj|kh|dipl|ing|se|sh|st|mt|mm|mba|msc|ma|map|mh|mkn|sip|ssi|ssos|spd|sag|sk|sm|mpd|phd|llm|ak|ca|cfa|mbus|meng|mp|msi|mtp|msi|ssn|stp|sstp|mse|ssi|mcom|cpa|bsc|bba|mpa|mem|s1|s2|s3|\.)\b/gi;
 export function kunciNama(nama) {
   return nama.normalize('NFKD').replace(/[̀-ͯ]/g, '').toLowerCase()
     .replace(/,.*$/, '') // gelar belakang setelah koma
@@ -56,7 +56,7 @@ export function kunciNama(nama) {
 export function pisahGelar(raw) {
   const t = raw.replace(/\s+/g, ' ').trim();
   const [nama, ...sisa] = t.split(',');
-  const dep = (nama.match(/^((?:(?:Prof|Dr|Drs|Dra|Ir|H|Hj|KH|Ing)\.?\s+)+)/i) || [])[1] || '';
+  const dep = (nama.match(/^((?:(?:Prof|Dr|Drs|Dra|drg|Ir|H|Hj|KH|Ing|Eng)\.?\s+)+)/i) || [])[1] || '';
   const bersih = nama.slice(dep.length).trim();
   const gelar = (dep.trim() + (sisa.length ? ', ' + sisa.join(',').trim() : '')).replace(/^,\s*/, '').trim();
   return { nama: bersih, gelar: gelar || undefined };
@@ -178,6 +178,7 @@ function bangun() {
       periode_selesai: r.selesai ?? r.periode_selesai ?? null, status: r.status || 'tidak-diketahui', jenis: r.jenis, sektor: r.sektor,
       sumber_url: r.sumber_url, tanggal_sumber: r.tanggal_sumber || null, tanggal_ambil: r.tanggal_ambil || HARI_INI };
     if (r.fraksi) rec.fraksi = r.fraksi;
+    if (r.catatan) rec.catatan = r.catatan;
     for (const k of Object.keys(rec)) if (rec[k] === undefined) delete rec[k];
     if (r.tolak) { tolak.push({ nama, alasan: r.tolak, sumber_url: r.sumber_url, tanggal_ambil: HARI_INI }); return; }
     const s = saring(rec);
@@ -199,39 +200,46 @@ function bangun() {
       if (o.nama !== nama && kunciNama(o.nama) === kn) { /* variasi penulisan, sama */ }
     }
     jabatan.push({ orang_id: id, jabatan: rec.jabatan, organisasi: rec.organisasi, mulai: rec.periode_mulai, selesai: rec.periode_selesai,
-      status: rec.status, jenis: rec.jenis, fraksi: rec.fraksi, sumber_url: rec.sumber_url, tanggal_sumber: rec.tanggal_sumber, tanggal_ambil: rec.tanggal_ambil });
+      status: rec.status, jenis: rec.jenis, fraksi: rec.fraksi, catatan: rec.catatan, sumber_url: rec.sumber_url, tanggal_sumber: rec.tanggal_sumber, tanggal_ambil: rec.tanggal_ambil });
   };
 
-  // 1) seed hasil baca halaman resmi
-  if (fs.existsSync(SEED)) for (const f of fs.readdirSync(SEED).filter((x) => x.endsWith('.jsonl')).sort()) for (const r of baca(path.join(SEED, f))) masuk(r, f);
-
-  // 2) guidebook DPR
-  if (fs.existsSync(PDF_TXT)) {
-    const sumber = 'lokal:guidebook-komisi-xii-dpr-2024-2029-update-2025-11-10';
-    const isi = fs.readFileSync(PDF_TXT, 'utf8');
-    const urutPimp = [];
-    for (const m of urai_dpr(isi)) {
-      let jb = 'Anggota Komisi XII DPR RI';
-      if (m.pimpinan) {
-        const kolom = m.rolAtas;
-        jb = 'Pimpinan Komisi XII DPR RI';
-        if (kolom.length) { const idx = urai_dpr(isi).filter((x) => x.pimpinan).indexOf(m); }
-      }
-      masuk({ nama: m.nama_mentah, jabatan: jb, organisasi: 'DPR RI Komisi XII', mulai: '2024-10', selesai: null, status: 'menjabat',
-        jenis: 'anggota-dpr', sektor: 'energi', fraksi: m.fraksi || undefined, sumber_url: sumber, tanggal_sumber: '2025-11-10' }, 'dpr');
+  // seed/*.json = hasil baca halaman resmi: {sumber_url, tanggal_sumber, organisasi, jenis, sektor, status, mulai, selesai, baris:[{n,j,o,m,s,st,je,sk,c,x,one,fr}]}
+  // Baris tolak (x = alasan: terpidana korupsi / meninggal) masuk daftar-tolak-calon.jsonl, BUKAN berkas utama (KP D14).
+  const tinjau = [];
+  const tolakKurator = [];
+  for (const f of fs.existsSync(SEED) ? fs.readdirSync(SEED).filter((x) => x.endsWith('.json')).sort() : []) {
+    const S = JSON.parse(fs.readFileSync(path.join(SEED, f), 'utf8'));
+    for (const b of S.baris) {
+      if (b.x) { tolakKurator.push({ nama: pisahGelar(b.n).nama, alasan: b.x, sumber_url: b.u ?? S.sumber_url, tanggal_ambil: HARI_INI }); continue; }
+      const before = tolak.length;
+      masuk({ nama: b.n, jabatan: b.j, organisasi: b.o ?? S.organisasi, mulai: b.m ?? S.mulai, selesai: b.s ?? S.selesai, status: b.st ?? S.status,
+        jenis: b.je ?? S.jenis, sektor: b.sk ?? S.sektor, fraksi: b.fr, boleh_satu_kata: b.one, catatan: b.c, sumber_url: b.u ?? S.sumber_url,
+        tanggal_sumber: S.tanggal_sumber }, f);
+      if (tolak.length > before) tinjau.push(...tolak.splice(before));
     }
   }
 
-  // 3) entitas.jsonl lokal: orang tanpa jabatan di berkas itu, tidak dimasukkan (hanya nama). Dicatat untuk laporan.
-  const tanpaJabatan = baca(LOKAL).filter((e) => e.jenis === 'orang').length;
+  // entitas.jsonl lokal (orang dari SK METI): tanpa jabatan di berkas itu, hanya dipakai untuk mencocokkan.
+  const lokalOrang = baca(LOKAL).filter((e) => e.jenis === 'orang').map((e) => kunciNama(e.nama));
+  const kunciAda = new Set([...orang.values()].map((o) => kunciNama(o.nama)));
+  const cocokLokal = lokalOrang.filter((k) => kunciAda.has(k)).length;
 
+  // konflik nama: kunci beda tapi token pertama + terakhir sama (mis. "Daniel K. F. Tampubolon" vs "Daniel Tampubolon") atau jarak sunting <= 2
+  const lev = (a, b) => { const d = Array.from({ length: a.length + 1 }, (_, i) => [i, ...Array(b.length).fill(0)]); for (let j = 1; j <= b.length; j++) d[0][j] = j;
+    for (let i = 1; i <= a.length; i++) for (let j = 1; j <= b.length; j++) d[i][j] = Math.min(d[i - 1][j] + 1, d[i][j - 1] + 1, d[i - 1][j - 1] + (a[i - 1] === b[j - 1] ? 0 : 1)); return d[a.length][b.length]; };
   const rows = [...orang.values()];
+  for (let i = 0; i < rows.length; i++) for (let j = i + 1; j < rows.length; j++) {
+    const a = kunciNama(rows[i].nama), b = kunciNama(rows[j].nama); const ta = a.split(' '), tb = b.split(' ');
+    if ((ta[0] === tb[0] && ta.at(-1) === tb.at(-1)) || (ta[0] === tb[0] && ta[1] && tb[1] && lev(ta[1], tb[1]) <= 1) || lev(a, b) <= 2) konflik.push({ a: rows[i].nama, b: rows[j].nama, org_a: rows[i].organisasi_terkini, org_b: rows[j].organisasi_terkini, catatan: 'ditandai, belum digabung' });
+  }
+
   fs.mkdirSync(OUT, { recursive: true });
-  const lama = baca(path.join(OUT, 'daftar-tolak-calon.jsonl')).filter((x) => x.manual); // butir tolak manual dipertahankan
   tulis(path.join(OUT, 'orang.jsonl'), rows);
   tulis(path.join(OUT, 'jabatan.jsonl'), jabatan);
-  tulis(path.join(OUT, 'daftar-tolak-calon.jsonl'), [...lama, ...tolak]);
-  console.log(JSON.stringify({ orang: rows.length, jabatan: jabatan.length, tolak: tolak.length + lama.length, entitas_orang_tanpa_jabatan: tanpaJabatan }));
+  tulis(path.join(OUT, 'daftar-tolak-calon.jsonl'), tolakKurator);
+  tulis(path.join(OUT, 'perlu-tinjau.jsonl'), tinjau);
+  tulis(path.join(OUT, 'konflik-nama.jsonl'), konflik);
+  console.log(JSON.stringify({ orang: rows.length, jabatan: jabatan.length, tolak_kurator: tolakKurator.length, perlu_tinjau: tinjau.length, konflik_nama: konflik.length, entitas_lokal_orang: lokalOrang.length, entitas_lokal_cocok: cocokLokal }));
 }
 
 // ---------- main ----------
@@ -244,6 +252,23 @@ else if (arg('ambil')) {
     try { f = await ambil(u); } catch (e) { console.error('GAGAL', u, e.cause?.code || e.message); }
     if (f) { const t = teks(fs.readFileSync(f, 'utf8')); console.log(`### ${u} (${t.length} huruf)\n` + t.slice(0, +arg('maks') || 6000)); }
   }
+} else if (process.argv.includes('--statistik')) {
+  const o = baca(path.join(OUT, 'orang.jsonl')), j = baca(path.join(OUT, 'jabatan.jsonl'));
+  const hitung = (rows, k) => rows.reduce((m, r) => (m[r[k] ?? '(kosong)'] = (m[r[k] ?? '(kosong)'] || 0) + 1, m), {});
+  const isi = (rows, ks) => Object.fromEntries(ks.map((k) => [k, Math.round(100 * rows.filter((r) => r[k] != null && r[k] !== '').length / rows.length) + '%']));
+  console.log(JSON.stringify({ orang: o.length, jabatan: j.length, orang_status: hitung(o, 'status'), jabatan_status: hitung(j, 'status'), jabatan_per_organisasi: hitung(j, 'organisasi'),
+    jabatan_per_jenis: hitung(j, 'jenis'), isi_orang: isi(o, ['nama', 'gelar', 'jenis', 'sektor', 'jabatan_terkini', 'organisasi_terkini', 'sumber_url', 'tanggal_sumber', 'tanggal_ambil']),
+    isi_jabatan: isi(j, ['jabatan', 'organisasi', 'mulai', 'selesai', 'status', 'sumber_url', 'tanggal_sumber', 'fraksi']) }, null, 1));
+} else if (process.argv.includes('--adu')) { // adu baris ke teks halaman resmi di raw/: nama (case-insensitive) + kata kunci jabatan
+  const o = new Map(baca(path.join(OUT, 'orang.jsonl')).map((x) => [x.orang_id, x])); const j = baca(path.join(OUT, 'jabatan.jsonl'));
+  const sampel = ['Eniya Listiani Dewi', 'Rizal Calvary Marimbo', 'Ahmad Yani', 'Norman Ginting', 'Abdul Musawir Yahya', 'Priatin Hadi Wijaya', 'Fuad Bawazier', 'Komang Parmita'];
+  let ok = 0, n = 0;
+  for (const r of j) { const p = o.get(r.orang_id); if (!sampel.includes(p.nama) || !r.sumber_url.startsWith('http')) continue;
+    const f = path.join(RAW, slug(r.sumber_url) + '.html'); if (!fs.existsSync(f)) { console.log('TANPA-RAW', p.nama, r.sumber_url); continue; }
+    const t = teks(fs.readFileSync(f, 'utf8')).toLowerCase(); const namaOk = t.includes(p.nama.toLowerCase());
+    const kata = r.jabatan.toLowerCase().replace(/[(),]/g, ' ').split(/\s+/).filter((w) => w.length > 3 && !/ditjen|yang/.test(w)); const jabOk = kata.filter((w) => t.includes(w)).length / kata.length;
+    n++; if (namaOk && jabOk >= 0.6) ok++; console.log(namaOk && jabOk >= 0.6 ? 'COCOK' : 'BEDA ', p.nama, '|', r.jabatan, '|', r.organisasi, '|', Math.round(jabOk * 100) + '%', r.sumber_url.slice(0, 70)); }
+  console.log(`adu: ${ok}/${n} cocok`);
 } else if (process.argv.includes('--dpr')) {
   for (const m of urai_dpr(fs.readFileSync(PDF_TXT, 'utf8'))) console.log([m.fraksi, m.pimpinan ? 'PIMP' : '', m.nama_mentah, '|', m.kolDapil, '|', m.rolAtas.join(' / ')].join(' ; '));
 } else if (arg('tautan')) { // --tautan=URL[ --cari=regex]: daftar href dari raw/

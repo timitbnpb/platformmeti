@@ -236,7 +236,7 @@ async function ringkasan(req, env, ctx, p) {
 // Logo: PB (dimuat <img>), R2 gambar/logo/<16..64 hex>.<png|jpg|jpeg|webp>; SVG tidak diterima (KPV).
 const KUNCI_LOGO = /^[a-f0-9]{16,64}\.(png|jpg|jpeg|webp)$/, TIPE = { png: "image/png", jpg: "image/jpeg", jpeg: "image/jpeg", webp: "image/webp" };
 async function logo(req, env, ctx, p) {
-  const m = KUNCI_LOGO.exec(p.params.id);
+  const m = String(p.params.id).match(KUNCI_LOGO);
   if (!m || !env.BERKAS) throw new Galat("tidak_ditemukan");
   const o = await env.BERKAS.get(`gambar/logo/${p.params.id}`);
   if (!o) throw new Galat("tidak_ditemukan");
