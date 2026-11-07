@@ -13,6 +13,7 @@ const JENIS = ["seminar", "konferensi", "audiensi", "lokakarya", "regulasi", "te
 const HP = matchMedia("(max-width:639px)");
 const S = { tampil: "bulan", jenis: "", bulan: "" }; // bulan = "YYYY-MM"
 let D = null, KINI = "", ROWS = [], OPENER = null;
+let LIBUR = new Map(); // "YYYY-MM-DD" -> { nama, singkat, jenis } dari SKB 3 Menteri (data/libur.json); tidak ikut ekspor .ics, Google Calendar, atau CSV
 let BUKTI = new Map(); // kegiatan_ref -> { ada_notulensi, jumlah_foto }; kosong untuk publik
 
 const MAKS_LANE = 3;
@@ -90,6 +91,15 @@ function mingguDari(ym) {
   const jml = new Date(Date.UTC(+ym.slice(0, 4), +ym.slice(5), 0)).getUTCDate();
   const n = Math.ceil((hariKe(ym + "-01") + jml) / 7);
   return Array.from({ length: n }, (_, w) => Array.from({ length: 7 }, (_, i) => iso(mulai + (w * 7 + i) * 864e5)));
+}
+const IK_LIBUR = { libur_nasional: "bintang", cuti_bersama: "tahun" };
+const kelasLibur = (h) => (LIBUR.has(h) ? ` ${LIBUR.get(h).jenis === "cuti_bersama" ? "kal-cuti" : "kal-libur"}` : "");
+/** Legenda kecil dan daftar "Libur bulan ini" di bawah kalender; daftar disembunyikan bila bulan itu tanpa libur. */
+function liburHtml() {
+  const ada = [...LIBUR].filter(([h]) => h.startsWith(S.bulan)).sort(([a], [c]) => a.localeCompare(c));
+  const leg = `<ul class="kal-ket" aria-label="${esc(t("kal.libur.legenda"))}"><li><i class="kal-ket-akhir"></i><span>${esc(t("kal.libur.akhir"))}</span></li><li><i class="kal-ket-libur"></i><span>${esc(t("kal.libur.nasional"))}</span></li><li><i class="kal-ket-cuti"></i><span>${esc(t("kal.libur.cuti"))}</span></li></ul>`;
+  if (!ada.length) return leg;
+  return leg + `<section class="jm-kartu kal-libur-daftar" aria-labelledby="kalLiburJ"><h3 id="kalLiburJ">${ikon("kalender", 18)}<span>${esc(t("kal.libur.bulan"))}</span></h3><ul>${ada.map(([h, l]) => `<li class="${l.jenis === "cuti_bersama" ? "kal-cuti" : "kal-libur"}">${ikon(IK_LIBUR[l.jenis], 18)}<b>${esc(tanggal(h, { gaya: "panjang" }))}</b><span>${esc(l.nama)}</span><em>${esc(t("kal.libur." + (l.jenis === "cuti_bersama" ? "cuti" : "nasional")))}</em></li>`).join("")}</ul></section>`;
 }
 const kepalaHari = (kelas) => [0, 1, 2, 3, 4, 5, 6].map((i) => `<div class="${kelas}${i > 4 ? " kal-akhir" : ""}">${esc(t("kal.hari." + i))}</div>`).join("");
 
@@ -231,7 +241,7 @@ function bulanHtml(rows) {
       const kls = `kal-ev ${sg.b.akhir > sg.b.tanggal ? "kal-ev-bar" : "kal-ev-satu"} kal-t-${esc(sg.b.jenis)} kal-k${sg.k} kal-s${sg.n} kal-l${l}${sg.kiri ? " kal-pot-k" : ""}${sg.kanan ? " kal-pot-n" : ""}`;
       out += `<button type="button" class="${kls}" data-acara="${esc(sg.b.id)}" title="${esc(sg.b.judul)}"><i></i><span>${esc(sg.b.judul)}</span></button>`;
     }
-    const sel = mg.map((h, i) => `<div class="kal-hr${bulanDari(h) !== S.bulan ? " kal-luar" : ""}${i > 4 ? " kal-akhir" : ""}${h === KINI ? " kal-kini" : ""} kal-k${i + 1}" data-hari="${h}"><button type="button" data-hari="${h}" aria-label="${esc(tanggal(h))}"><b>${+h.slice(8)}</b></button></div>`).join("");
+    const sel = mg.map((h, i) => `<div class="kal-hr${bulanDari(h) !== S.bulan ? " kal-luar" : ""}${i > 4 ? " kal-akhir" : ""}${kelasLibur(h)}${h === KINI ? " kal-kini" : ""} kal-k${i + 1}" data-hari="${h}"${LIBUR.has(h) ? ` title="${esc(LIBUR.get(h).nama)}"` : ""}><button type="button" data-hari="${h}" aria-label="${esc(tanggal(h) + (LIBUR.has(h) ? ", " + LIBUR.get(h).nama : ""))}"><b>${+h.slice(8)}</b></button>${LIBUR.has(h) ? `<span class="kal-lbl">${esc(LIBUR.get(h).singkat)}</span>` : ""}</div>`).join("");
     const lain = mg.map((h, i) => (lebih[i + 1] ? `<button type="button" class="kal-lain kal-k${i + 1}" data-hari="${h}">${esc(t("kal.lainnya", { n: lebih[i + 1] }))}</button>` : "")).join("");
     return `<div class="kal-minggu">${sel}${out}${lain}</div>`;
   }).join("");
@@ -249,7 +259,8 @@ function gambarIsi() {
   const rows = acaraDari(D.baris.filter((b) => !S.jenis || b.jenis === S.jenis));
   const v = efektif();
   ROWS = rows;
-  document.getElementById("isi").innerHTML = (v === "bulan" ? bulanHtml(rows) : HP.matches ? pekanHtml(rows) : "") + agendaHtml(rows);
+  const atas = v === "bulan" ? bulanHtml(rows) : HP.matches ? pekanHtml(rows) : "";
+  document.getElementById("isi").innerHTML = atas + (atas ? liburHtml() : "") + agendaHtml(rows);
 }
 
 /* ---------- popup acara / hari (dialog modal; di HP jadi lembar bawah lewat CSS) ---------- */
@@ -266,7 +277,7 @@ const IK_JENIS_G = IKON_JENIS;
 function mitraHtml(b) {
   return namaPenyelenggara(b).map((n) => {
     const r = rinci("org", n);
-    return r ? `<a class="kal-org" href="${esc(r.href)}">${r.logo ? `<img src="${esc(r.logo)}" alt="" width="24" height="24" loading="lazy" decoding="async" data-galat="hapus">` : ""}<span>${esc(r.nama)}</span></a>` : `<span class="kal-org"><span>${esc(n)}</span></span>`;
+    return r ? `<a class="kal-org" href="${esc(r.href)}">${r.logo ? `<img src="${esc(r.logo)}" alt="" width="24" height="24" loading="lazy" decoding="async" data-galat="hapus">` : ikon("gedung", 16)}<span>${esc(r.nama)}</span></a>` : `<span class="kal-org"><span>${esc(n)}</span></span>`;
   }).join("");
 }
 function sumberHtmlPop(b) {
@@ -274,7 +285,7 @@ function sumberHtmlPop(b) {
     const n = namaSumber(s, nmSumber);
     if (!n) return "";
     const ket = esc(n) + (s.tanggal ? `, ${esc(FMT.diambil(s.tanggal))}` : "");
-    return s.url && urlAman(s.url) ? `<a href="${esc(s.url)}" target="_blank" rel="noopener noreferrer">${ket}</a>` : `<span>${ket}</span>`;
+    return s.url && urlAman(s.url) ? `<a class="kal-taut" href="${esc(s.url)}" target="_blank" rel="noopener noreferrer">${ikon("tautan", 16)}<span>${ket}</span></a>` : `<span>${ket}</span>`;
   }).filter(Boolean).join("<br>");
 }
 function kartuTerkait(x) {
@@ -287,11 +298,11 @@ function bukaAcara(id, opener) {
   if (!b) return;
   const u = urlB(b), hari = Math.round((utc(b.akhir) - utc(b.tanggal)) / 864e5) + 1, lok = lokasiTeks(b.lokasi), peta = petaUrl(b.lokasi), g = gambarAcara(b);
   const f = (ik, k, v) => (v ? `<li>${ikon(ik, 20)}<span><small>${esc(t(k))}</small>${v}</span></li>` : "");
-  const kontak = b.daftar_url && urlAman(b.daftar_url) ? `<a href="${esc(b.daftar_url)}" target="_blank" rel="noopener noreferrer">${esc(t("kal.pop.daftar"))}</a>` : b.situs && urlAman(b.situs) ? `<a href="${esc(b.situs)}" target="_blank" rel="noopener noreferrer">${esc(t("kal.pop.situs"))}</a>` : "";
+  const kontak = b.daftar_url && urlAman(b.daftar_url) ? `<a class="kal-taut" href="${esc(b.daftar_url)}" target="_blank" rel="noopener noreferrer">${ikon("tautan", 16)}<span>${esc(t("kal.pop.daftar"))}</span></a>` : b.situs && urlAman(b.situs) ? `<a class="kal-taut" href="${esc(b.situs)}" target="_blank" rel="noopener noreferrer">${ikon("tautan", 16)}<span>${esc(t("kal.pop.situs"))}</span></a>` : "";
   const terkait = D.baris.filter((x) => x.id !== b.id && x.jenis === b.jenis).sort((p, q) => Math.abs(utc(p.tanggal) - utc(b.tanggal)) - Math.abs(utc(q.tanggal) - utc(b.tanggal))).slice(0, 3).map((x) => acaraDari([x])[0]);
   const url = `${location.origin}/kalender#acara-${b.id}`, bagi = tautanBagi(url, b.judul);
   const tglTeks = tglRentang(b);
-  tampilPop(`<div class="kal-pop-isi"><div class="kal-pop-ban kal-g-${esc(b.jenis)}">${g ? `<img src="${esc(g)}" alt="" decoding="async" data-galat="hapus">` : ""}<span class="kal-pop-ik">${ikon(IK_JENIS_G[b.jenis] || "kalender", 56)}</span>${tutupX()}</div>
+  tampilPop(`<div class="kal-pop-isi"><div class="kal-pop-ban kal-g-${esc(b.jenis)}${g.startsWith("/img/acara/") ? " kal-ban-p" : ""}">${g ? (g.startsWith("/img/acara/") ? `<img class="kal-ban-blur" src="${esc(g)}" alt="" aria-hidden="true" decoding="async" data-galat="hapus"><img class="kal-ban-poster" src="${esc(g)}" alt="" decoding="async" data-galat="hapus">` : `<img src="${esc(g)}" alt="" decoding="async" data-galat="hapus">`) : ""}<span class="kal-pop-ik">${ikon(IK_JENIS_G[b.jenis] || "kalender", 56)}</span>${tutupX()}</div>
     <div class="kal-pop-kep">${pilJenis(b.jenis)}<h2 id="kalPopJ">${esc(b.judul)}</h2>
       <p class="kal-pop-sub"><span>${ikon("kalender", 18)}<span>${esc(tglTeks)}</span></span>${lok ? `<span>${ikon("lokasi", 18)}<span>${esc(lok)}</span></span>` : ""}</p></div>
     <div class="kal-pop-bd"><div class="kal-pop-kiri">${b.deskripsi ? `<p class="kal-pop-desk">${esc(b.deskripsi)}</p>` : ""}
@@ -356,7 +367,7 @@ export async function pasang(saya) {
   const isi = document.getElementById("isi");
   const mulai = async () => {
     isi.innerHTML = hantuHtml(5);
-    try { [D] = await Promise.all([muat("kalender"), siapTautan("org")]); } catch (e) { isi.innerHTML = galatHtml("layanan"); return; }
+    try { [D] = await Promise.all([muat("kalender"), siapTautan("org")]); LIBUR = await muat("libur").then((l) => new Map(l.baris.sort((a, c) => (a.jenis === "libur_nasional" ? 1 : 0) - (c.jenis === "libur_nasional" ? 1 : 0)).map((b) => [b.tanggal, b])), () => new Map()); } catch (e) { isi.innerHTML = galatHtml("layanan"); return; }
     const deep = /^#acara-(.+)$/.exec(location.hash)?.[1], tuju = deep && D.baris.find((b) => b.id === deep);
     if (tuju) S.bulan = bulanDari(tuju.tanggal);
     else if (!S.bulan) { const kini = KINI.slice(0, 7); S.bulan = D.baris.some((b) => bulanDari(b.tanggal) === kini) ? kini : bulanDari(D.baris.filter((b) => b.tanggal <= KINI).pop()?.tanggal || D.baris[D.baris.length - 1].tanggal); }

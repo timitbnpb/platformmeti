@@ -1,7 +1,7 @@
 {
  "dibangun": "2026-11-08",
  "calon": 297,
- "bersumber": 120,
+ "bersumber": 129,
  "tanpa_sumber": [
   "Mitsubishi Corporation",
   "JERA",
@@ -24,7 +24,6 @@
   "Goldwind",
   "Sun Cable",
   "Gentari",
-  "Keppel",
   "Shell",
   "BP",
   "Equinor",
@@ -38,22 +37,15 @@
   "LG Energy Solution",
   "BYD",
   "Samsung SDI",
-  "SK On",
   "Tesla",
   "Fluence Energy",
-  "Wartsila",
   "Nordex",
   "Siemens Gamesa",
   "Suzlon",
-  "Siemens Energy",
-  "GE Vernova",
-  "Hitachi Energy",
-  "ABB",
   "Schneider Electric",
   "Huawei Digital Power",
   "SMA Solar Technology",
   "Fuji Electric",
-  "Mitsubishi Heavy Industries",
   "Ansaldo Energia",
   "Andritz",
   "Voith",
@@ -160,7 +152,6 @@
   "Linde",
   "Thyssenkrupp",
   "Yara",
-  "Mitsubishi Power",
   "Sinopec",
   "Petronas",
   "Tenaga Nasional Berhad",
@@ -576,6 +567,24 @@
      "tb": "kajian",
      "jenis": "gem",
      "ket": "GEM Global Solar Power Tracker (2026-02), pemilik/operator proyek Riau Solar and Storage Power Plant"
+    }
+   ]
+  },
+  {
+   "nama": "Keppel",
+   "jumlah_bukti": 1,
+   "jenis": [
+    "berita"
+   ],
+   "proyek_ids": [],
+   "org_ids": [],
+   "bukti": [
+    {
+     "url": "https://www.antaranews.com/berita/3239045/pertamina-nre-keppel-infrastructure-chevron-eksplorasi-hidrogen-hijau",
+     "tanggal": "2022-11-12",
+     "tb": "media",
+     "jenis": "berita",
+     "ket": "judul berita Antara (pencarian)"
     }
    ]
   },
@@ -1268,8 +1277,9 @@
   },
   {
    "nama": "Chevron",
-   "jumlah_bukti": 2,
+   "jumlah_bukti": 3,
    "jenis": [
+    "berita",
     "proyek"
    ],
    "proyek_ids": [
@@ -1278,6 +1288,13 @@
    ],
    "org_ids": [],
    "bukti": [
+    {
+     "url": "https://www.antaranews.com/berita/3239045/pertamina-nre-keppel-infrastructure-chevron-eksplorasi-hidrogen-hijau",
+     "tanggal": "2022-11-12",
+     "tb": "media",
+     "jenis": "berita",
+     "ket": "judul berita Antara (pencarian)"
+    },
     {
      "url": "https://en.wikipedia.org/wiki/List_of_power_stations_in_Indonesia",
      "tanggal": "2026-11-07",
@@ -1563,6 +1580,81 @@
    ]
   },
   {
+   "nama": "SK On",
+   "jumlah_bukti": 1,
+   "jenis": [
+    "berita"
+   ],
+   "proyek_ids": [],
+   "org_ids": [],
+   "bukti": [
+    {
+     "url": "https://www.antaranews.com/berita/5410850/sk-innovation-es-akan-mendukung-pengembangan-wirausahawan-muda-di-bidang-energi-dan-lingkungan-di-indonesia",
+     "tanggal": "2026-02-11",
+     "tb": "media",
+     "jenis": "berita",
+     "ket": "judul berita Antara (pencarian)"
+    }
+   ]
+  },
+  {
+   "nama": "Wartsila",
+   "jumlah_bukti": 4,
+   "jenis": [
+    "berita"
+   ],
+   "proyek_ids": [],
+   "org_ids": [],
+   "bukti": [
+    {
+     "url": "https://www.antaranews.com/berita/5272437/pln-indonesia-power-dan-wartsila-perkuat-keandalan-pembangkit-melalui-penandatanganan-suplemen-kontrak",
+     "tanggal": "2025-11-28",
+     "tb": "media",
+     "jenis": "berita",
+     "ket": "judul berita Antara (pencarian)"
+    },
+    {
+     "url": "https://www.antaranews.com/berita/4819545/wartsila-dan-itb-latih-mahasiswa-soal-stabilitas-sistem-kelistrikan",
+     "tanggal": "2025-05-07",
+     "tb": "media",
+     "jenis": "berita",
+     "ket": "judul berita Antara (pencarian)"
+    },
+    {
+     "url": "https://www.antaranews.com/berita/4338563/wartsila-sebut-ri-butuh-sumber-daya-berbasis-gas-demi-kebutuhan-energi",
+     "tanggal": "2024-09-17",
+     "tb": "media",
+     "jenis": "berita",
+     "ket": "judul berita Antara (pencarian)"
+    },
+    {
+     "url": "https://www.antaranews.com/berita/3850125/wartsila-pasok-genset-untuk-dua-pembangkit-listrik-di-indonesia",
+     "tanggal": "2023-12-01",
+     "tb": "media",
+     "jenis": "berita",
+     "ket": "judul berita Antara (pencarian)"
+    }
+   ]
+  },
+  {
+   "nama": "Siemens Energy",
+   "jumlah_bukti": 1,
+   "jenis": [
+    "berita"
+   ],
+   "proyek_ids": [],
+   "org_ids": [],
+   "bukti": [
+    {
+     "url": "https://www.antaranews.com/berita/4263891/pertamina-siemens-energy-siap-wujudkan-transisi-energi-berkelanjutan",
+     "tanggal": "2024-08-15",
+     "tb": "media",
+     "jenis": "berita",
+     "ket": "judul berita Antara (pencarian)"
+    }
+   ]
+  },
+  {
    "nama": "Siemens",
    "jumlah_bukti": 1,
    "jenis": [
@@ -1584,6 +1676,81 @@
    ]
   },
   {
+   "nama": "GE Vernova",
+   "jumlah_bukti": 1,
+   "jenis": [
+    "berita"
+   ],
+   "proyek_ids": [],
+   "org_ids": [],
+   "bukti": [
+    {
+     "url": "https://www.antaranews.com/berita/4109436/ge-vernova-fokus-bisnis-kelistrikan-dan-dekarbonisasi-di-indonesia",
+     "tanggal": "2024-05-17",
+     "tb": "media",
+     "jenis": "berita",
+     "ket": "judul berita Antara (pencarian)"
+    }
+   ]
+  },
+  {
+   "nama": "Hitachi Energy",
+   "jumlah_bukti": 2,
+   "jenis": [
+    "berita"
+   ],
+   "proyek_ids": [],
+   "org_ids": [],
+   "bukti": [
+    {
+     "url": "https://www.antaranews.com/berita/3595632/kementerian-esdm-hitachi-teken-loi-pengembangan-teknologi-energi-hijau",
+     "tanggal": "2023-06-19",
+     "tb": "media",
+     "jenis": "berita",
+     "ket": "judul berita Antara (pencarian)"
+    },
+    {
+     "url": "https://www.antaranews.com/berita/3358935/bertemu-ceo-hitachi-energy-menteri-esdm-jelaskan-transisi-energi-ri",
+     "tanggal": "2023-01-20",
+     "tb": "media",
+     "jenis": "berita",
+     "ket": "judul berita Antara (pencarian)"
+    }
+   ]
+  },
+  {
+   "nama": "ABB",
+   "jumlah_bukti": 3,
+   "jenis": [
+    "berita"
+   ],
+   "proyek_ids": [],
+   "org_ids": [],
+   "bukti": [
+    {
+     "url": "https://www.antaranews.com/berita/5316109/barito-group-abb-modernisasi-pltpb-wayang-windu-perkuat-suplai-energi",
+     "tanggal": "2025-12-21",
+     "tb": "media",
+     "jenis": "berita",
+     "ket": "judul berita Antara (pencarian)"
+    },
+    {
+     "url": "https://www.antaranews.com/berita/4689005/abb-soroti-kompleksitas-transisi-energi-di-indonesia",
+     "tanggal": "2025-03-05",
+     "tb": "media",
+     "jenis": "berita",
+     "ket": "judul berita Antara (pencarian)"
+    },
+    {
+     "url": "https://www.antaranews.com/berita/4688285/abb-bauran-ebt-indonesia-bergantung-pada-solusi-efisiensi-energi",
+     "tanggal": "2025-03-04",
+     "tb": "media",
+     "jenis": "berita",
+     "ket": "judul berita Antara (pencarian)"
+    }
+   ]
+  },
+  {
    "nama": "Toshiba",
    "jumlah_bukti": 2,
    "jenis": [
@@ -1598,6 +1765,31 @@
      "tb": "media",
      "jenis": "berita",
      "ket": "judul berita antaranews.com"
+    }
+   ]
+  },
+  {
+   "nama": "Mitsubishi Heavy Industries",
+   "jumlah_bukti": 2,
+   "jenis": [
+    "berita"
+   ],
+   "proyek_ids": [],
+   "org_ids": [],
+   "bukti": [
+    {
+     "url": "https://www.antaranews.com/berita/3306823/mitsubishi-power-terima-pesanan-pltp-55-mw-dari-pertamina",
+     "tanggal": "2022-12-15",
+     "tb": "media",
+     "jenis": "berita",
+     "ket": "judul berita Antara (pencarian)"
+    },
+    {
+     "url": "https://www.antaranews.com/berita/2693689/mitsubishi-heavy-industries-dan-itb-dorong-dekarbonisasi",
+     "tanggal": "2022-02-09",
+     "tb": "media",
+     "jenis": "berita",
+     "ket": "judul berita Antara (pencarian)"
     }
    ]
   },
@@ -3794,6 +3986,24 @@
      "tb": "resmi",
      "jenis": "karbon",
      "ket": "proyek karbon Gold Standard: 42 MWp Bundled Solar Photovoltaic Power project in Indonesia"
+    }
+   ]
+  },
+  {
+   "nama": "Mitsubishi Power",
+   "jumlah_bukti": 1,
+   "jenis": [
+    "berita"
+   ],
+   "proyek_ids": [],
+   "org_ids": [],
+   "bukti": [
+    {
+     "url": "https://www.antaranews.com/berita/3306823/mitsubishi-power-terima-pesanan-pltp-55-mw-dari-pertamina",
+     "tanggal": "2022-12-15",
+     "tb": "media",
+     "jenis": "berita",
+     "ket": "judul berita Antara (pencarian)"
     }
    ]
   },

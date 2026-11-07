@@ -1,0 +1,428 @@
+{
+ "meta": {
+  "judul": "Hari libur nasional dan cuti bersama 2026 dan 2027",
+  "penerbit": "Menteri Agama, Menteri Ketenagakerjaan, dan MenPAN-RB (SKB 3 Menteri), diumumkan di kemenkopmk.go.id",
+  "tanggal_periksa": "2026-11-08",
+  "catatan": "Transkripsi dari PDF SKB (pindaian). Tanggal 1 Ramadan, Idul Fitri, dan Idul Adha 1448 H ditetapkan tersendiri oleh Menteri Agama (Diktum KEDUA SKB 2027); periksa ulang bila ada SKB perubahan.",
+  "skb": {
+   "2026": {
+    "nomor": "Nomor 1497 Tahun 2025, Nomor 2 Tahun 2025, Nomor 5 Tahun 2025",
+    "url": "https://www.kemenkopmk.go.id/sites/default/files/pengumuman/2025-09/SKB%20Libur%20Nasional%20dan%20Cuti%20Bersama%20Tahun%202026.pdf"
+   },
+   "2027": {
+    "nomor": "Nomor 1205 Tahun 2026, Nomor 3 Tahun 2026, Nomor 2 Tahun 2026",
+    "url": "https://www.kemenkopmk.go.id/sites/default/files/pengumuman/2026-09/SKB%20Libur%20Nasional%20dan%20Cuti%20Bersama%20Tahun%202027.pdf"
+   }
+  }
+ },
+ "baris": [
+  {
+   "tanggal": "2026-01-01",
+   "nama": "Tahun Baru 2026 Masehi",
+   "singkat": "Tahun Baru",
+   "jenis": "libur_nasional",
+   "sumber_url": "https://www.kemenkopmk.go.id/sites/default/files/pengumuman/2025-09/SKB%20Libur%20Nasional%20dan%20Cuti%20Bersama%20Tahun%202026.pdf",
+   "tanggal_periksa": "2026-11-08"
+  },
+  {
+   "tanggal": "2026-01-16",
+   "nama": "Isra Mikraj Nabi Muhammad S.A.W.",
+   "singkat": "Isra Mikraj",
+   "jenis": "libur_nasional",
+   "sumber_url": "https://www.kemenkopmk.go.id/sites/default/files/pengumuman/2025-09/SKB%20Libur%20Nasional%20dan%20Cuti%20Bersama%20Tahun%202026.pdf",
+   "tanggal_periksa": "2026-11-08"
+  },
+  {
+   "tanggal": "2026-02-16",
+   "nama": "Tahun Baru Imlek 2577 Kongzili",
+   "singkat": "Cuti Imlek",
+   "jenis": "cuti_bersama",
+   "sumber_url": "https://www.kemenkopmk.go.id/sites/default/files/pengumuman/2025-09/SKB%20Libur%20Nasional%20dan%20Cuti%20Bersama%20Tahun%202026.pdf",
+   "tanggal_periksa": "2026-11-08"
+  },
+  {
+   "tanggal": "2026-02-17",
+   "nama": "Tahun Baru Imlek 2577 Kongzili",
+   "singkat": "Imlek",
+   "jenis": "libur_nasional",
+   "sumber_url": "https://www.kemenkopmk.go.id/sites/default/files/pengumuman/2025-09/SKB%20Libur%20Nasional%20dan%20Cuti%20Bersama%20Tahun%202026.pdf",
+   "tanggal_periksa": "2026-11-08"
+  },
+  {
+   "tanggal": "2026-03-18",
+   "nama": "Hari Suci Nyepi (Tahun Baru Saka 1948)",
+   "singkat": "Cuti Nyepi",
+   "jenis": "cuti_bersama",
+   "sumber_url": "https://www.kemenkopmk.go.id/sites/default/files/pengumuman/2025-09/SKB%20Libur%20Nasional%20dan%20Cuti%20Bersama%20Tahun%202026.pdf",
+   "tanggal_periksa": "2026-11-08"
+  },
+  {
+   "tanggal": "2026-03-19",
+   "nama": "Hari Suci Nyepi (Tahun Baru Saka 1948)",
+   "singkat": "Nyepi",
+   "jenis": "libur_nasional",
+   "sumber_url": "https://www.kemenkopmk.go.id/sites/default/files/pengumuman/2025-09/SKB%20Libur%20Nasional%20dan%20Cuti%20Bersama%20Tahun%202026.pdf",
+   "tanggal_periksa": "2026-11-08"
+  },
+  {
+   "tanggal": "2026-03-20",
+   "nama": "Idul Fitri 1447 Hijriah",
+   "singkat": "Cuti Idul Fitri",
+   "jenis": "cuti_bersama",
+   "sumber_url": "https://www.kemenkopmk.go.id/sites/default/files/pengumuman/2025-09/SKB%20Libur%20Nasional%20dan%20Cuti%20Bersama%20Tahun%202026.pdf",
+   "tanggal_periksa": "2026-11-08"
+  },
+  {
+   "tanggal": "2026-03-21",
+   "nama": "Idul Fitri 1447 Hijriah",
+   "singkat": "Idul Fitri",
+   "jenis": "libur_nasional",
+   "sumber_url": "https://www.kemenkopmk.go.id/sites/default/files/pengumuman/2025-09/SKB%20Libur%20Nasional%20dan%20Cuti%20Bersama%20Tahun%202026.pdf",
+   "tanggal_periksa": "2026-11-08"
+  },
+  {
+   "tanggal": "2026-03-22",
+   "nama": "Idul Fitri 1447 Hijriah",
+   "singkat": "Idul Fitri",
+   "jenis": "libur_nasional",
+   "sumber_url": "https://www.kemenkopmk.go.id/sites/default/files/pengumuman/2025-09/SKB%20Libur%20Nasional%20dan%20Cuti%20Bersama%20Tahun%202026.pdf",
+   "tanggal_periksa": "2026-11-08"
+  },
+  {
+   "tanggal": "2026-03-23",
+   "nama": "Idul Fitri 1447 Hijriah",
+   "singkat": "Cuti Idul Fitri",
+   "jenis": "cuti_bersama",
+   "sumber_url": "https://www.kemenkopmk.go.id/sites/default/files/pengumuman/2025-09/SKB%20Libur%20Nasional%20dan%20Cuti%20Bersama%20Tahun%202026.pdf",
+   "tanggal_periksa": "2026-11-08"
+  },
+  {
+   "tanggal": "2026-03-24",
+   "nama": "Idul Fitri 1447 Hijriah",
+   "singkat": "Cuti Idul Fitri",
+   "jenis": "cuti_bersama",
+   "sumber_url": "https://www.kemenkopmk.go.id/sites/default/files/pengumuman/2025-09/SKB%20Libur%20Nasional%20dan%20Cuti%20Bersama%20Tahun%202026.pdf",
+   "tanggal_periksa": "2026-11-08"
+  },
+  {
+   "tanggal": "2026-04-03",
+   "nama": "Wafat Yesus Kristus",
+   "singkat": "Wafat Yesus",
+   "jenis": "libur_nasional",
+   "sumber_url": "https://www.kemenkopmk.go.id/sites/default/files/pengumuman/2025-09/SKB%20Libur%20Nasional%20dan%20Cuti%20Bersama%20Tahun%202026.pdf",
+   "tanggal_periksa": "2026-11-08"
+  },
+  {
+   "tanggal": "2026-04-05",
+   "nama": "Kebangkitan Yesus Kristus (Paskah)",
+   "singkat": "Paskah",
+   "jenis": "libur_nasional",
+   "sumber_url": "https://www.kemenkopmk.go.id/sites/default/files/pengumuman/2025-09/SKB%20Libur%20Nasional%20dan%20Cuti%20Bersama%20Tahun%202026.pdf",
+   "tanggal_periksa": "2026-11-08"
+  },
+  {
+   "tanggal": "2026-05-01",
+   "nama": "Hari Buruh Internasional",
+   "singkat": "Hari Buruh",
+   "jenis": "libur_nasional",
+   "sumber_url": "https://www.kemenkopmk.go.id/sites/default/files/pengumuman/2025-09/SKB%20Libur%20Nasional%20dan%20Cuti%20Bersama%20Tahun%202026.pdf",
+   "tanggal_periksa": "2026-11-08"
+  },
+  {
+   "tanggal": "2026-05-14",
+   "nama": "Kenaikan Yesus Kristus",
+   "singkat": "Kenaikan Yesus",
+   "jenis": "libur_nasional",
+   "sumber_url": "https://www.kemenkopmk.go.id/sites/default/files/pengumuman/2025-09/SKB%20Libur%20Nasional%20dan%20Cuti%20Bersama%20Tahun%202026.pdf",
+   "tanggal_periksa": "2026-11-08"
+  },
+  {
+   "tanggal": "2026-05-15",
+   "nama": "Kenaikan Yesus Kristus",
+   "singkat": "Cuti Kenaikan",
+   "jenis": "cuti_bersama",
+   "sumber_url": "https://www.kemenkopmk.go.id/sites/default/files/pengumuman/2025-09/SKB%20Libur%20Nasional%20dan%20Cuti%20Bersama%20Tahun%202026.pdf",
+   "tanggal_periksa": "2026-11-08"
+  },
+  {
+   "tanggal": "2026-05-27",
+   "nama": "Idul Adha 1447 Hijriah",
+   "singkat": "Idul Adha",
+   "jenis": "libur_nasional",
+   "sumber_url": "https://www.kemenkopmk.go.id/sites/default/files/pengumuman/2025-09/SKB%20Libur%20Nasional%20dan%20Cuti%20Bersama%20Tahun%202026.pdf",
+   "tanggal_periksa": "2026-11-08"
+  },
+  {
+   "tanggal": "2026-05-28",
+   "nama": "Idul Adha 1447 Hijriah",
+   "singkat": "Cuti Idul Adha",
+   "jenis": "cuti_bersama",
+   "sumber_url": "https://www.kemenkopmk.go.id/sites/default/files/pengumuman/2025-09/SKB%20Libur%20Nasional%20dan%20Cuti%20Bersama%20Tahun%202026.pdf",
+   "tanggal_periksa": "2026-11-08"
+  },
+  {
+   "tanggal": "2026-05-31",
+   "nama": "Hari Raya Waisak 2570 BE",
+   "singkat": "Waisak",
+   "jenis": "libur_nasional",
+   "sumber_url": "https://www.kemenkopmk.go.id/sites/default/files/pengumuman/2025-09/SKB%20Libur%20Nasional%20dan%20Cuti%20Bersama%20Tahun%202026.pdf",
+   "tanggal_periksa": "2026-11-08"
+  },
+  {
+   "tanggal": "2026-06-01",
+   "nama": "Hari Lahir Pancasila",
+   "singkat": "Pancasila",
+   "jenis": "libur_nasional",
+   "sumber_url": "https://www.kemenkopmk.go.id/sites/default/files/pengumuman/2025-09/SKB%20Libur%20Nasional%20dan%20Cuti%20Bersama%20Tahun%202026.pdf",
+   "tanggal_periksa": "2026-11-08"
+  },
+  {
+   "tanggal": "2026-06-16",
+   "nama": "1 Muharam Tahun Baru Islam 1448 Hijriah",
+   "singkat": "1 Muharam",
+   "jenis": "libur_nasional",
+   "sumber_url": "https://www.kemenkopmk.go.id/sites/default/files/pengumuman/2025-09/SKB%20Libur%20Nasional%20dan%20Cuti%20Bersama%20Tahun%202026.pdf",
+   "tanggal_periksa": "2026-11-08"
+  },
+  {
+   "tanggal": "2026-08-17",
+   "nama": "Proklamasi Kemerdekaan",
+   "singkat": "Kemerdekaan",
+   "jenis": "libur_nasional",
+   "sumber_url": "https://www.kemenkopmk.go.id/sites/default/files/pengumuman/2025-09/SKB%20Libur%20Nasional%20dan%20Cuti%20Bersama%20Tahun%202026.pdf",
+   "tanggal_periksa": "2026-11-08"
+  },
+  {
+   "tanggal": "2026-08-25",
+   "nama": "Maulid Nabi Muhammad S.A.W.",
+   "singkat": "Maulid Nabi",
+   "jenis": "libur_nasional",
+   "sumber_url": "https://www.kemenkopmk.go.id/sites/default/files/pengumuman/2025-09/SKB%20Libur%20Nasional%20dan%20Cuti%20Bersama%20Tahun%202026.pdf",
+   "tanggal_periksa": "2026-11-08"
+  },
+  {
+   "tanggal": "2026-12-24",
+   "nama": "Kelahiran Yesus Kristus",
+   "singkat": "Cuti Natal",
+   "jenis": "cuti_bersama",
+   "sumber_url": "https://www.kemenkopmk.go.id/sites/default/files/pengumuman/2025-09/SKB%20Libur%20Nasional%20dan%20Cuti%20Bersama%20Tahun%202026.pdf",
+   "tanggal_periksa": "2026-11-08"
+  },
+  {
+   "tanggal": "2026-12-25",
+   "nama": "Kelahiran Yesus Kristus",
+   "singkat": "Natal",
+   "jenis": "libur_nasional",
+   "sumber_url": "https://www.kemenkopmk.go.id/sites/default/files/pengumuman/2025-09/SKB%20Libur%20Nasional%20dan%20Cuti%20Bersama%20Tahun%202026.pdf",
+   "tanggal_periksa": "2026-11-08"
+  },
+  {
+   "tanggal": "2027-01-01",
+   "nama": "Tahun Baru 2027 Masehi",
+   "singkat": "Tahun Baru",
+   "jenis": "libur_nasional",
+   "sumber_url": "https://www.kemenkopmk.go.id/sites/default/files/pengumuman/2026-09/SKB%20Libur%20Nasional%20dan%20Cuti%20Bersama%20Tahun%202027.pdf",
+   "tanggal_periksa": "2026-11-08"
+  },
+  {
+   "tanggal": "2027-01-05",
+   "nama": "Isra Mikraj Nabi Muhammad S.A.W. 1448 Hijriah",
+   "singkat": "Isra Mikraj",
+   "jenis": "libur_nasional",
+   "sumber_url": "https://www.kemenkopmk.go.id/sites/default/files/pengumuman/2026-09/SKB%20Libur%20Nasional%20dan%20Cuti%20Bersama%20Tahun%202027.pdf",
+   "tanggal_periksa": "2026-11-08"
+  },
+  {
+   "tanggal": "2027-02-05",
+   "nama": "Tahun Baru Imlek 2578 Kongzili",
+   "singkat": "Cuti Imlek",
+   "jenis": "cuti_bersama",
+   "sumber_url": "https://www.kemenkopmk.go.id/sites/default/files/pengumuman/2026-09/SKB%20Libur%20Nasional%20dan%20Cuti%20Bersama%20Tahun%202027.pdf",
+   "tanggal_periksa": "2026-11-08"
+  },
+  {
+   "tanggal": "2027-02-06",
+   "nama": "Tahun Baru Imlek 2578 Kongzili",
+   "singkat": "Imlek",
+   "jenis": "libur_nasional",
+   "sumber_url": "https://www.kemenkopmk.go.id/sites/default/files/pengumuman/2026-09/SKB%20Libur%20Nasional%20dan%20Cuti%20Bersama%20Tahun%202027.pdf",
+   "tanggal_periksa": "2026-11-08"
+  },
+  {
+   "tanggal": "2027-03-08",
+   "nama": "Hari Suci Nyepi (Tahun Baru Saka 1949)",
+   "singkat": "Nyepi",
+   "jenis": "libur_nasional",
+   "sumber_url": "https://www.kemenkopmk.go.id/sites/default/files/pengumuman/2026-09/SKB%20Libur%20Nasional%20dan%20Cuti%20Bersama%20Tahun%202027.pdf",
+   "tanggal_periksa": "2026-11-08"
+  },
+  {
+   "tanggal": "2027-03-09",
+   "nama": "Idul Fitri 1448 Hijriah",
+   "singkat": "Cuti Idul Fitri",
+   "jenis": "cuti_bersama",
+   "sumber_url": "https://www.kemenkopmk.go.id/sites/default/files/pengumuman/2026-09/SKB%20Libur%20Nasional%20dan%20Cuti%20Bersama%20Tahun%202027.pdf",
+   "tanggal_periksa": "2026-11-08"
+  },
+  {
+   "tanggal": "2027-03-10",
+   "nama": "Idul Fitri 1448 Hijriah",
+   "singkat": "Idul Fitri",
+   "jenis": "libur_nasional",
+   "sumber_url": "https://www.kemenkopmk.go.id/sites/default/files/pengumuman/2026-09/SKB%20Libur%20Nasional%20dan%20Cuti%20Bersama%20Tahun%202027.pdf",
+   "tanggal_periksa": "2026-11-08"
+  },
+  {
+   "tanggal": "2027-03-11",
+   "nama": "Idul Fitri 1448 Hijriah",
+   "singkat": "Idul Fitri",
+   "jenis": "libur_nasional",
+   "sumber_url": "https://www.kemenkopmk.go.id/sites/default/files/pengumuman/2026-09/SKB%20Libur%20Nasional%20dan%20Cuti%20Bersama%20Tahun%202027.pdf",
+   "tanggal_periksa": "2026-11-08"
+  },
+  {
+   "tanggal": "2027-03-12",
+   "nama": "Idul Fitri 1448 Hijriah",
+   "singkat": "Cuti Idul Fitri",
+   "jenis": "cuti_bersama",
+   "sumber_url": "https://www.kemenkopmk.go.id/sites/default/files/pengumuman/2026-09/SKB%20Libur%20Nasional%20dan%20Cuti%20Bersama%20Tahun%202027.pdf",
+   "tanggal_periksa": "2026-11-08"
+  },
+  {
+   "tanggal": "2027-03-15",
+   "nama": "Idul Fitri 1448 Hijriah",
+   "singkat": "Cuti Idul Fitri",
+   "jenis": "cuti_bersama",
+   "sumber_url": "https://www.kemenkopmk.go.id/sites/default/files/pengumuman/2026-09/SKB%20Libur%20Nasional%20dan%20Cuti%20Bersama%20Tahun%202027.pdf",
+   "tanggal_periksa": "2026-11-08"
+  },
+  {
+   "tanggal": "2027-03-25",
+   "nama": "Wafat Yesus Kristus",
+   "singkat": "Cuti Wafat Yesus",
+   "jenis": "cuti_bersama",
+   "sumber_url": "https://www.kemenkopmk.go.id/sites/default/files/pengumuman/2026-09/SKB%20Libur%20Nasional%20dan%20Cuti%20Bersama%20Tahun%202027.pdf",
+   "tanggal_periksa": "2026-11-08"
+  },
+  {
+   "tanggal": "2027-03-26",
+   "nama": "Wafat Yesus Kristus",
+   "singkat": "Wafat Yesus",
+   "jenis": "libur_nasional",
+   "sumber_url": "https://www.kemenkopmk.go.id/sites/default/files/pengumuman/2026-09/SKB%20Libur%20Nasional%20dan%20Cuti%20Bersama%20Tahun%202027.pdf",
+   "tanggal_periksa": "2026-11-08"
+  },
+  {
+   "tanggal": "2027-03-28",
+   "nama": "Kebangkitan Yesus Kristus (Paskah)",
+   "singkat": "Paskah",
+   "jenis": "libur_nasional",
+   "sumber_url": "https://www.kemenkopmk.go.id/sites/default/files/pengumuman/2026-09/SKB%20Libur%20Nasional%20dan%20Cuti%20Bersama%20Tahun%202027.pdf",
+   "tanggal_periksa": "2026-11-08"
+  },
+  {
+   "tanggal": "2027-05-01",
+   "nama": "Hari Buruh Internasional",
+   "singkat": "Hari Buruh",
+   "jenis": "libur_nasional",
+   "sumber_url": "https://www.kemenkopmk.go.id/sites/default/files/pengumuman/2026-09/SKB%20Libur%20Nasional%20dan%20Cuti%20Bersama%20Tahun%202027.pdf",
+   "tanggal_periksa": "2026-11-08"
+  },
+  {
+   "tanggal": "2027-05-06",
+   "nama": "Kenaikan Yesus Kristus",
+   "singkat": "Kenaikan Yesus",
+   "jenis": "libur_nasional",
+   "sumber_url": "https://www.kemenkopmk.go.id/sites/default/files/pengumuman/2026-09/SKB%20Libur%20Nasional%20dan%20Cuti%20Bersama%20Tahun%202027.pdf",
+   "tanggal_periksa": "2026-11-08"
+  },
+  {
+   "tanggal": "2027-05-17",
+   "nama": "Idul Adha 1448 Hijriah",
+   "singkat": "Idul Adha",
+   "jenis": "libur_nasional",
+   "sumber_url": "https://www.kemenkopmk.go.id/sites/default/files/pengumuman/2026-09/SKB%20Libur%20Nasional%20dan%20Cuti%20Bersama%20Tahun%202027.pdf",
+   "tanggal_periksa": "2026-11-08"
+  },
+  {
+   "tanggal": "2027-05-18",
+   "nama": "Idul Adha 1448 Hijriah",
+   "singkat": "Cuti Idul Adha",
+   "jenis": "cuti_bersama",
+   "sumber_url": "https://www.kemenkopmk.go.id/sites/default/files/pengumuman/2026-09/SKB%20Libur%20Nasional%20dan%20Cuti%20Bersama%20Tahun%202027.pdf",
+   "tanggal_periksa": "2026-11-08"
+  },
+  {
+   "tanggal": "2027-05-19",
+   "nama": "Hari Raya Waisak 2571 BE",
+   "singkat": "Cuti Waisak",
+   "jenis": "cuti_bersama",
+   "sumber_url": "https://www.kemenkopmk.go.id/sites/default/files/pengumuman/2026-09/SKB%20Libur%20Nasional%20dan%20Cuti%20Bersama%20Tahun%202027.pdf",
+   "tanggal_periksa": "2026-11-08"
+  },
+  {
+   "tanggal": "2027-05-20",
+   "nama": "Hari Raya Waisak 2571 BE",
+   "singkat": "Waisak",
+   "jenis": "libur_nasional",
+   "sumber_url": "https://www.kemenkopmk.go.id/sites/default/files/pengumuman/2026-09/SKB%20Libur%20Nasional%20dan%20Cuti%20Bersama%20Tahun%202027.pdf",
+   "tanggal_periksa": "2026-11-08"
+  },
+  {
+   "tanggal": "2027-06-01",
+   "nama": "Hari Lahir Pancasila",
+   "singkat": "Pancasila",
+   "jenis": "libur_nasional",
+   "sumber_url": "https://www.kemenkopmk.go.id/sites/default/files/pengumuman/2026-09/SKB%20Libur%20Nasional%20dan%20Cuti%20Bersama%20Tahun%202027.pdf",
+   "tanggal_periksa": "2026-11-08"
+  },
+  {
+   "tanggal": "2027-06-06",
+   "nama": "1 Muharam Tahun Baru Islam 1449 Hijriah",
+   "singkat": "1 Muharam",
+   "jenis": "libur_nasional",
+   "sumber_url": "https://www.kemenkopmk.go.id/sites/default/files/pengumuman/2026-09/SKB%20Libur%20Nasional%20dan%20Cuti%20Bersama%20Tahun%202027.pdf",
+   "tanggal_periksa": "2026-11-08"
+  },
+  {
+   "tanggal": "2027-08-15",
+   "nama": "Maulid Nabi Muhammad S.A.W.",
+   "singkat": "Maulid Nabi",
+   "jenis": "libur_nasional",
+   "sumber_url": "https://www.kemenkopmk.go.id/sites/default/files/pengumuman/2026-09/SKB%20Libur%20Nasional%20dan%20Cuti%20Bersama%20Tahun%202027.pdf",
+   "tanggal_periksa": "2026-11-08"
+  },
+  {
+   "tanggal": "2027-08-17",
+   "nama": "Proklamasi Kemerdekaan",
+   "singkat": "Kemerdekaan",
+   "jenis": "libur_nasional",
+   "sumber_url": "https://www.kemenkopmk.go.id/sites/default/files/pengumuman/2026-09/SKB%20Libur%20Nasional%20dan%20Cuti%20Bersama%20Tahun%202027.pdf",
+   "tanggal_periksa": "2026-11-08"
+  },
+  {
+   "tanggal": "2027-12-24",
+   "nama": "Kelahiran Yesus Kristus",
+   "singkat": "Cuti Natal",
+   "jenis": "cuti_bersama",
+   "sumber_url": "https://www.kemenkopmk.go.id/sites/default/files/pengumuman/2026-09/SKB%20Libur%20Nasional%20dan%20Cuti%20Bersama%20Tahun%202027.pdf",
+   "tanggal_periksa": "2026-11-08"
+  },
+  {
+   "tanggal": "2027-12-25",
+   "nama": "Kelahiran Yesus Kristus",
+   "singkat": "Natal",
+   "jenis": "libur_nasional",
+   "sumber_url": "https://www.kemenkopmk.go.id/sites/default/files/pengumuman/2026-09/SKB%20Libur%20Nasional%20dan%20Cuti%20Bersama%20Tahun%202027.pdf",
+   "tanggal_periksa": "2026-11-08"
+  },
+  {
+   "tanggal": "2027-12-26",
+   "nama": "Isra Mikraj Nabi Muhammad S.A.W. 1449 Hijriah",
+   "singkat": "Isra Mikraj",
+   "jenis": "libur_nasional",
+   "sumber_url": "https://www.kemenkopmk.go.id/sites/default/files/pengumuman/2026-09/SKB%20Libur%20Nasional%20dan%20Cuti%20Bersama%20Tahun%202027.pdf",
+   "tanggal_periksa": "2026-11-08"
+  }
+ ]
+}

@@ -39,6 +39,10 @@ function korpus() {
   for (const b of J('public/data/regulasi.json').baris) add([b.judul, b.ringkasan].join(' ; '), b.url_sumber, b.tanggal_ambil, 'resmi', 'regulasi', 'regulasi: ' + b.judul);
   for (const b of J('public/data/tkdn.json').baris) add([b.produsen, b.merk].join(' ; '), b.sumber_url, b.tanggal, 'resmi', 'tkdn', 'sertifikat TKDN Kemenperin: ' + b.produsen);
   for (const b of J('public/data/video.json').baris) add(b.judul, b.url, b.tanggal_ambil, 'media', 'video', 'video ' + b.kanal);
+  const af = path.join(D, 'antara.json'); const KONTEKS_ID = /(indonesia|pertamina|\bpln\b|esdm|\bri\b|\bitb\b|barito|nusantara|jakarta|batam|jawa|sumatera|kalimantan|sulawesi|papua|bali)/i;
+  if (fs.existsSync(af)) for (const rows of Object.values(JSON.parse(fs.readFileSync(af, 'utf8')).baris)) for (const r of rows) if (KONTEKS_ID.test(r.judul)) add(r.judul, r.url, r.tanggal, 'media', 'berita', 'judul berita Antara (pencarian)');
+  const wf = path.join(D, 'wiki.json');
+  if (fs.existsSync(wf)) for (const [h, tx] of Object.entries(JSON.parse(fs.readFileSync(wf, 'utf8')).halaman)) if (tx) for (const par of tx.split(/\n\n+/)) if (par.length > 40) add(par.replace(/\[\[(?:[^|\]]*\|)?([^\]]*)\]\]/g, '$1'), 'https://en.wikipedia.org/wiki/' + h, TGL, 'media', 'wikipedia', 'Wikipedia (CC BY-SA), artikel ' + h.replace(/_/g, ' ') + ', tentang Indonesia');
   const proyek = J('public/data/proyek.json').baris; const peta = new Map();
   for (const p of proyek) for (const s of p.sumber || []) if (/gem\.wiki/.test(s.url || '')) peta.set(s.url, p.id);
   for (const f of fs.readdirSync(path.join(ROOT, 'data/gem'))) {
@@ -150,6 +154,21 @@ async function cmdAntara() {
   fs.writeFileSync(f, JSON.stringify(lama, null, 1) + '\n');
 }
 
+// ---------- wiki: artikel Wikipedia tentang energi Indonesia lewat /wiki/Judul?action=raw (jalur yang dibolehkan robots.txt) ----------
+const HALAMAN_WIKI = ['Geothermal_power_in_Indonesia', 'Wind_power_in_Indonesia', 'Solar_power_in_Indonesia', 'Renewable_energy_in_Indonesia', 'Electricity_sector_in_Indonesia', 'Energy_in_Indonesia', 'Hydroelectric_power_in_Indonesia', 'Just_Energy_Transition_Partnership', 'Cirata_Floating_Solar_Power_Station', 'Sidrap_Wind_Farm', 'Sarulla_Geothermal_Power_Station', 'Wayang_Windu_Geothermal_Power_Station', 'Salak_Geothermal_Power_Station', 'Darajat_Geothermal_Power_Station', 'Dieng_Geothermal_Power_Station', 'Patuha_Geothermal_Power_Station', 'Muara_Laboh_Geothermal_Power_Station', 'Rantau_Dedap_Geothermal_Power_Station', 'Sorik_Marapi_Geothermal_Power_Station', 'List_of_power_stations_in_Indonesia', 'Coal_in_Indonesia', 'Nuclear_power_in_Indonesia', 'Batang_Toru_Hydroelectric_Power_Plant', 'Upper_Cisokan_Pumped_Storage_Power_Station', 'Indonesia_Morowali_Industrial_Park', 'Indonesia_Battery_Corporation', 'Biofuel_in_Indonesia', 'Electric_vehicle_industry_in_Indonesia', 'Perusahaan_Listrik_Negara', 'Pertamina', 'Pertamina_Geothermal_Energy', 'Medco_Energi', 'Star_Energy_Geothermal', 'Hydrogen_economy', 'Asia_Pacific_Economic_Cooperation', 'Nickel_industry_in_Indonesia', 'Energy_policy_of_Indonesia', 'Indonesia_Power', 'Pembangkitan_Jawa-Bali'];
+async function cmdWiki() {
+  const f = path.join(D, 'wiki.json'); const lama = fs.existsSync(f) ? JSON.parse(fs.readFileSync(f, 'utf8')) : { halaman: {} };
+  if (!(await bolehRobots('https://en.wikipedia.org/wiki/X?action=raw'))) { console.error('robots melarang'); return; }
+  for (const h of HALAMAN_WIKI) {
+    if (lama.halaman[h] !== undefined) continue; const u = 'https://en.wikipedia.org/wiki/' + h + '?action=raw';
+    try { const res = await fetch(u, { headers: { 'User-Agent': UA }, signal: AbortSignal.timeout(25000) }); await sleep(GAP);
+      if (res.status === 403 || res.status === 429) { console.error('berhenti HTTP', res.status); break; }
+      lama.halaman[h] = res.ok ? (await res.text()).replace(/\{\{[^{}]*\}\}/g, ' ').slice(0, 300000) : null; console.error(h, res.status);
+    } catch (e) { console.error(h, e.message); }
+    fs.writeFileSync(f, JSON.stringify(lama)); }
+  fs.writeFileSync(f, JSON.stringify(lama));
+}
+
 // ---------- bangun ----------
 function cmdBangun() {
   const b = JSON.parse(fs.readFileSync(path.join(D, 'bukti.json'), 'utf8')); const calon = new Map(parseCalon().map((c) => [c.nama, c]));
@@ -181,4 +200,4 @@ function selftest() {
   console.log('selftest ok');
 }
 const cmd = process.argv[2];
-if (cmd === '--selftest') selftest(); else if (cmd === 'bukti') cmdBukti(); else if (cmd === 'situs') await cmdSitus(); else if (cmd === 'antara') await cmdAntara(); else if (cmd === 'bangun') cmdBangun(); else console.log('pakai: bukti | situs | bangun | --selftest');
+if (cmd === '--selftest') selftest(); else if (cmd === 'bukti') cmdBukti(); else if (cmd === 'situs') await cmdSitus(); else if (cmd === 'wiki') await cmdWiki(); else if (cmd === 'antara') await cmdAntara(); else if (cmd === 'bangun') cmdBangun(); else console.log('pakai: bukti | situs | bangun | --selftest');

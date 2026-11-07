@@ -215,8 +215,8 @@ dialog.jm-dlg-lebar{width:min(920px,calc(100vw - 24px));max-height:calc(100dvh -
 .kal-bk-notulen :is(ul,ol){padding-left:22px}
 
 /* ---- popup acara v3: lebar 880, banner bergambar, dua kolom (pemilik 8 Nov 2026) ---- */
-.kal-pop{width:min(880px,92vw)}
-.kal-pop .kal-pop-ban{position:relative;display:grid;place-items:center;aspect-ratio:16/6;overflow:hidden;background:linear-gradient(135deg,var(--brand),var(--accent))}
+.kal-pop{width:min(1080px,94vw)}
+.kal-pop .kal-pop-ban{position:relative;display:grid;place-items:center;aspect-ratio:16/5;overflow:hidden;background:linear-gradient(135deg,var(--brand),var(--accent))}
 .kal-pop-ban img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
 .kal-pop-ban:has(img) .kal-pop-ik{display:none}
 .kal-pop-ban .kal-pop-ik{width:96px;height:96px;border-radius:50%;background:color-mix(in srgb,var(--on-brand) 18%,transparent);color:var(--on-brand);box-shadow:none}
@@ -224,20 +224,23 @@ dialog.jm-dlg-lebar{width:min(920px,calc(100vw - 24px));max-height:calc(100dvh -
 .kal-pop-sub{display:flex;flex-wrap:wrap;gap:8px 24px;margin:0;color:var(--ink2);font:500 var(--t-body)/var(--lh-rapat) var(--font)}
 .kal-pop-sub>span{display:inline-flex;align-items:center;gap:8px;min-width:0}
 .kal-pop-sub .jm-ik{flex:none;color:var(--accent)}
-.kal-pop .kal-pop-bd{grid-template-columns:minmax(0,1.5fr) minmax(280px,1fr);gap:28px;align-items:start;padding:20px 28px 28px}
+.kal-pop .kal-pop-bd{grid-template-columns:minmax(0,1fr) 340px;gap:28px;align-items:start;padding:20px 28px 28px}
 .kal-pop-kiri{display:grid;gap:22px;min-width:0}
 .kal-pop-kiri section{display:grid;gap:12px}
 .kal-pop-kiri h3{margin:0}
 .kal-pop .kal-pop-desk{text-align:justify;hyphens:auto;overflow-wrap:anywhere}
 .kal-pop-kanan{display:grid;gap:16px;min-width:0;padding:18px;border:1px solid var(--line);border-radius:var(--r);background:var(--surface)}
 .kal-pop-kanan .kal-pop-meta li>span{overflow-wrap:anywhere}
-.kal-pop-kanan .kal-pop-meta a{color:var(--accent);font-weight:600}
+.kal-pop-kanan .kal-pop-meta a{color:var(--accent);font-weight:600;text-decoration:none}
+.kal-taut,.kal-org{display:inline-flex;align-items:center;gap:6px}
+.kal-taut .jm-ik,.kal-org .jm-ik{flex:none}
 .kal-peta{display:inline-flex;align-items:center;gap:6px;margin-left:6px}
 .kal-peta .jm-ik{flex:none}
 .kal-org{display:flex;align-items:center;gap:8px;margin:0 0 6px}
 .kal-org img{flex:none;width:24px;height:24px;object-fit:contain;border-radius:var(--r-sm);background:var(--card)}
-.kal-pop .kal-pop-aksi{grid-template-columns:1fr}
-.kal-pop .kal-pop-aksi .jm-tbl{width:100%;min-height:44px;justify-content:center;white-space:normal;text-align:center;line-height:var(--lh-rapat)}
+.kal-pop .kal-pop-aksi{grid-template-columns:repeat(2,minmax(0,1fr))}
+.kal-pop .kal-bagi{order:9;grid-column:1/-1}
+.kal-pop .kal-pop-aksi .jm-tbl{width:100%;padding:6px 8px;gap:6px;min-height:44px;justify-content:center;white-space:normal;text-align:center;line-height:var(--lh-rapat)}
 .kal-pop-aksi .jm-tbl .jm-ik{flex:none}
 .kal-bagi{display:flex;justify-content:space-between;gap:8px}
 .kal-bagi[hidden]{display:none}
@@ -263,3 +266,28 @@ dialog.jm-dlg-lebar{width:min(920px,calc(100vw - 24px));max-height:calc(100dvh -
 .kal-legenda .kal-titik{height:auto}.kal-legenda .kal-titik i{width:10px;height:10px}
 .kal-legenda svg{width:16px;height:16px;color:var(--ink2)}
 .kal-legenda{justify-content:center;border:0;background:none;padding:4px 0 12px}
+
+/* poster asli tampil utuh (contain) di atas latar blur poster yang sama; foto tema tetap cover */
+.kal-pop .kal-ban-p{aspect-ratio:auto;height:clamp(240px,38vw,420px)}
+.kal-ban-blur{position:absolute;inset:-24px;width:calc(100% + 48px);height:calc(100% + 48px);object-fit:cover;filter:blur(24px) brightness(.8)}
+.kal-pop-ban .kal-ban-poster{position:relative;inset:auto;width:100%;height:100%;object-fit:contain}
+.kal-ban-p:has(img) .kal-pop-x{z-index:2}
+/* libur nasional, cuti bersama, dan akhir pekan (SKB 3 Menteri, data/libur.json) */
+.kal-hn.kal-akhir{color:color-mix(in srgb,var(--bad) 65%,var(--ink2))}
+.kal-hr.kal-akhir{background:color-mix(in srgb,var(--ink2) 8%,transparent)}
+.kal-hr.kal-libur{background:var(--bad-bg)}
+.kal-hr.kal-cuti{background:var(--warn-bg)}
+.kal-lbl{display:inline-block;max-width:calc(100% - 34px);margin-left:4px;vertical-align:middle;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font:600 var(--t-kecil)/1 var(--font)}
+.kal-libur .kal-lbl,.kal-libur-daftar li.kal-libur>svg{color:var(--bad)}
+.kal-cuti .kal-lbl,.kal-libur-daftar li.kal-cuti>svg{color:var(--warn)}
+.kal-ket{display:flex;flex-wrap:wrap;justify-content:center;gap:8px 24px;margin:14px 0;padding:0;list-style:none;font:500 var(--t-kecil)/1.2 var(--font);color:var(--ink2)}
+.kal-ket li{display:inline-flex;align-items:center;gap:8px}
+.kal-ket i{width:14px;height:14px;border:1px solid var(--line-cell);border-radius:4px}
+.kal-ket-akhir{background:color-mix(in srgb,var(--ink2) 14%,transparent)}.kal-ket-libur{background:var(--bad-bg)}.kal-ket-cuti{background:var(--warn-bg)}
+.kal-libur-daftar{display:grid;gap:10px;margin-bottom:var(--gap)}
+.kal-libur-daftar h3{display:flex;align-items:center;gap:8px;margin:0;font:700 var(--t-body)/var(--lh-rapat) var(--display);color:var(--head)}
+.kal-libur-daftar ul{display:grid;gap:6px;margin:0;padding:0;list-style:none}
+.kal-libur-daftar li{display:grid;grid-template-columns:18px minmax(120px,190px) minmax(0,1fr) auto;gap:10px;align-items:center;padding:8px 12px;border-radius:var(--r-sm);font:500 var(--t-body)/var(--lh-rapat) var(--font)}
+.kal-libur-daftar li.kal-libur{background:var(--bad-bg)}.kal-libur-daftar li.kal-cuti{background:var(--warn-bg)}
+.kal-libur-daftar em{font-style:normal;font:600 var(--t-kecil)/1 var(--font);color:var(--ink2)}
+@media (max-width:759px){.kal-libur-daftar li{grid-template-columns:18px minmax(0,1fr);}.kal-libur-daftar li em{grid-column:2}}
