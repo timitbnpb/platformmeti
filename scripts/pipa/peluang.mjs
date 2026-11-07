@@ -3,7 +3,7 @@
 //   node scripts/pipa/peluang.mjs [--cek]   (--cek: gagal bila berkas di disk beda dari hasil bangun)
 // Masukan: data/peluang/ruen_potensi.json (RUEN Lamp. I), data/peluang/harga_patokan.json (Perpres 112/2022),
 //   public/data/wilayah.json (HEESI 2025: terpasang + potensi panas bumi), public/data/proyek.json (proyek rencana).
-// Angka tanpa sumber TIDAK diisi: null + catatan celah. BPP belum ada (Kepmen tidak terjangkau panen otomatis).
+// Angka tanpa sumber TIDAK diisi: null + catatan celah. BPP: data/peluang/bpp.json (transkripsi Kepmen ESDM; tahun BPP terbaru yang ada di berkas).
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -42,13 +42,37 @@ const SUMBER = [
   { id: 'ruen', judul: 'Rencana Umum Energi Nasional (Perpres 22/2017), Lampiran I: Tabel 37, 40, 42, 44, 46, 48', penerbit: 'Pemerintah RI (Sekretariat Negara/DEN)', tahun: 2017, url: 'https://peraturan.bpk.go.id/Details/68772', catatan: 'Angka potensi tahun data 2015, 34 provinsi sebelum pemekaran Papua.' },
   { id: 'heesi2025', judul: 'Handbook of Energy and Economic Statistics of Indonesia 2025: Tabel 6.4.9 (kapasitas terpasang) dan 6.5.1 (potensi panas bumi)', penerbit: 'Kementerian ESDM', tahun: 2025, url: 'https://www.esdm.go.id/assets/media/content/content-handbook-of-energy-and-economic-statistics-of-indonesia-2025.pdf' },
   { id: 'perpres112', judul: 'Perpres 112/2022 tentang Percepatan Pengembangan Energi Terbarukan untuk Penyediaan Tenaga Listrik, Lampiran I dan II', penerbit: 'Pemerintah RI (Sekretariat Negara)', tahun: 2022, url: 'https://peraturan.bpk.go.id/Details/225308' },
+  { id: 'kepmen-bpp', judul: 'Kepmen ESDM Besaran BPP Pembangkitan PT PLN (Persero): 1404 K/20/MEM/2017 (BPP 2016), 1772 K/20/MEM/2018 (BPP 2017), 55 K/20/MEM/2019 (BPP 2018), 169.K/HK.02/MEM.M/2021 (BPP 2020); transkripsi di data/peluang/bpp.json', penerbit: 'Kementerian ESDM', tahun: 2021, url: 'https://jdih.esdm.go.id/' },
   { id: 'proyek-meti', judul: 'Direktori proyek EBT METI (public/data/proyek.json; sumber per proyek di berkasnya)', penerbit: 'Jaringan METI', tahun: 2026, url: 'https://platformmeti.timitbnpb.workers.dev/data/proyek.json' },
 ];
 
-export function bangun({ ruen, harga, wilayah, proyek }) {
+// BPP per provinsi dari bpp.json: nilai = sistem utama provinsi pada tahun terbaru; sistem[] = semua sistem yang menyentuh provinsi; riwayat = sistem utama per tahun.
+function bppProvinsi(bpp, kode) {
+  const kosong = (alasan) => ({ nilai_rp_kwh: null, nilai_sen_usd: null, tahun_bpp: null, kepmen: null, sistem_utama: null, sistem: [], riwayat: [], alasan_null: alasan, sumber_id: null });
+  if (!bpp) return kosong('data/peluang/bpp.json tidak dimuat');
+  const utama = bpp.utama_provinsi[kode];
+  if (!utama) return kosong('provinsi tidak dipetakan ke sistem BPP');
+  const tahun = Object.keys(bpp.tahun).map(Number).sort((a, b) => a - b);
+  const cari = (th, kunci) => bpp.tahun[th].baris.find((r) => r.kunci === kunci);
+  const riwayat = [];
+  for (const th of tahun) { const r = cari(th, utama); if (r) riwayat.push({ tahun: th, kepmen: bpp.tahun[th].kepmen, nilai_rp_kwh: r.rp_kwh, nilai_sen_usd: r.sen_usd_kwh, nasional_rp_kwh: bpp.tahun[th].nasional.rp_kwh }); }
+  const akhir = riwayat[riwayat.length - 1];
+  if (!akhir) return kosong('sistem utama tak ada di Kepmen manapun');
+  const sistem = [];
+  for (const [kunci, s] of Object.entries(bpp.sistem)) {
+    if (s.tingkat === 'agregat' || !s.provinsi.includes(kode)) continue;
+    const r = cari(akhir.tahun, kunci);
+    if (r) sistem.push({ kunci, nama: s.nama, tingkat: s.tingkat, rp_kwh: r.rp_kwh, sen_usd: r.sen_usd_kwh });
+  }
+  return { nilai_rp_kwh: akhir.nilai_rp_kwh, nilai_sen_usd: akhir.nilai_sen_usd, tahun_bpp: akhir.tahun, kepmen: akhir.kepmen, nasional_rp_kwh: akhir.nasional_rp_kwh,
+    sistem_utama: { kunci: utama, nama: bpp.sistem[utama].nama }, sistem, riwayat: riwayat.reverse(), sumber_id: 'kepmen-bpp',
+    catatan: `BPP pembangkitan sistem utama provinsi, BPP tahun ${akhir.tahun} (Kepmen ESDM ${akhir.kepmen}); bukan BPP tersambung/tegangan. Sistem kecil terisolasi dan "sub sistem kecil lainnya" tercantum di sistem[]` };
+}
+
+export function bangun({ ruen, harga, wilayah, proyek, bpp }) {
   const baris = wilayah.baris;
   const kodeNama = Object.fromEntries(baris.map((b) => [b.kode, b.nama]));
-  const celah = new Set(['bpp']);
+  const celah = new Set(bpp ? [] : ['bpp']);
   // ---- potensi
   const pot = Object.fromEntries(baris.map((b) => [b.kode, {}]));
   const isi = (kode, tek, o) => { pot[kode][tek] = { mw: null, tahun: 2015, sumber_id: 'ruen', ...o }; };
@@ -119,7 +143,7 @@ export function bangun({ ruen, harga, wilayah, proyek }) {
     return {
       kode: b.kode, nama: b.nama,
       potensi: pot[b.kode], terpasang: t, rasio_pemanfaatan: rasio,
-      bpp: { rp_per_kwh: null, sistem: null, tahun: null, sumber_id: null, catatan: 'Kepmen ESDM BPP pembangkitan terbaru belum terambil (jdih.esdm.go.id menolak klien otomatis); isi manual dari Kepmen resmi' },
+      bpp: bppProvinsi(bpp, b.kode),
       faktor_lokasi: { F, wilayah: wil, sumber_id: 'perpres112', catatan: 'F pulau kecil/Mentawai lebih tinggi; tidak dipetakan' },
       proyek: { rencana: x.rencana, rencana_tanpa_pengembang: x.rencana_tanpa_pengembang, mw_rencana_tanpa_pengembang: bulat(x.mw_rencana_tanpa_pengembang, 1), sumber_id: 'proyek-meti' },
     };
@@ -130,7 +154,7 @@ export function bangun({ ruen, harga, wilayah, proyek }) {
       jumlah: hasil.length,
       proyek_tanpa_provinsi: tanpaProv,
       definisi_tanpa_pengembang: 'status proyek "rencana" dan tidak ada pemilik, atau pemilik hanya label generik "IPP" (RUPTL); proyek tanpa provinsi atau tanpa status tidak dihitung',
-      catatan: 'Potensi RUEN bertahun data 2015 (34 provinsi); hidro RUEN per kelompok wilayah (null per provinsi bila kelompok); Papua/Papua Barat induk tidak dibagi ke provinsi pemekaran. Terpasang dan rasio dari HEESI 2025. BPP belum tersedia (null). Mikrohidro terpasang tidak dipisah dari hidro. Laut: potensi praktis RUEN, tanpa terpasang.',
+      catatan: 'Potensi RUEN bertahun data 2015 (34 provinsi); hidro RUEN per kelompok wilayah (null per provinsi bila kelompok); Papua/Papua Barat induk tidak dibagi ke provinsi pemekaran. Terpasang dan rasio dari HEESI 2025. BPP: Kepmen ESDM terbaru yang ada di berkas = BPP 2020 (Kepmen 169.K/2021); BPP 2021 ke atas belum terambil. Mikrohidro terpasang tidak dipisah dari hidro. Laut: potensi praktis RUEN, tanpa terpasang.',
       celah: [...celah],
     },
     sumber: SUMBER,
@@ -142,7 +166,7 @@ export function bangun({ ruen, harga, wilayah, proyek }) {
 if (process.argv[1] === fileURLToPath(import.meta.url)) {
   const out = JSON.stringify(bangun({
     ruen: baca('data/peluang/ruen_potensi.json'), harga: baca('data/peluang/harga_patokan.json'),
-    wilayah: baca('public/data/wilayah.json'), proyek: baca('public/data/proyek.json'),
+    wilayah: baca('public/data/wilayah.json'), proyek: baca('public/data/proyek.json'), bpp: baca('data/peluang/bpp.json'),
   }), null, 1) + '\n';
   if (process.argv.includes('--cek')) {
     if (!fs.existsSync(KELUAR) || fs.readFileSync(KELUAR, 'utf8') !== out) { console.error('peluang.json basi: jalankan node scripts/pipa/peluang.mjs'); process.exit(1); }

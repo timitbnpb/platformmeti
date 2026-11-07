@@ -4,10 +4,8 @@
   "jumlah": 38,
   "proyek_tanpa_provinsi": 95,
   "definisi_tanpa_pengembang": "status proyek \"rencana\" dan tidak ada pemilik, atau pemilik hanya label generik \"IPP\" (RUPTL); proyek tanpa provinsi atau tanpa status tidak dihitung",
-  "catatan": "Potensi RUEN bertahun data 2015 (34 provinsi); hidro RUEN per kelompok wilayah (null per provinsi bila kelompok); Papua/Papua Barat induk tidak dibagi ke provinsi pemekaran. Terpasang dan rasio dari HEESI 2025. BPP belum tersedia (null). Mikrohidro terpasang tidak dipisah dari hidro. Laut: potensi praktis RUEN, tanpa terpasang.",
-  "celah": [
-   "bpp"
-  ]
+  "catatan": "Potensi RUEN bertahun data 2015 (34 provinsi); hidro RUEN per kelompok wilayah (null per provinsi bila kelompok); Papua/Papua Barat induk tidak dibagi ke provinsi pemekaran. Terpasang dan rasio dari HEESI 2025. BPP: Kepmen ESDM terbaru yang ada di berkas = BPP 2020 (Kepmen 169.K/2021); BPP 2021 ke atas belum terambil. Mikrohidro terpasang tidak dipisah dari hidro. Laut: potensi praktis RUEN, tanpa terpasang.",
+  "celah": []
  },
  "sumber": [
   {
@@ -31,6 +29,13 @@
    "penerbit": "Pemerintah RI (Sekretariat Negara)",
    "tahun": 2022,
    "url": "https://peraturan.bpk.go.id/Details/225308"
+  },
+  {
+   "id": "kepmen-bpp",
+   "judul": "Kepmen ESDM Besaran BPP Pembangkitan PT PLN (Persero): 1404 K/20/MEM/2017 (BPP 2016), 1772 K/20/MEM/2018 (BPP 2017), 55 K/20/MEM/2019 (BPP 2018), 169.K/HK.02/MEM.M/2021 (BPP 2020); transkripsi di data/peluang/bpp.json",
+   "penerbit": "Kementerian ESDM",
+   "tahun": 2021,
+   "url": "https://jdih.esdm.go.id/"
   },
   {
    "id": "proyek-meti",
@@ -507,11 +512,77 @@
     }
    },
    "bpp": {
-    "rp_per_kwh": null,
-    "sistem": null,
-    "tahun": null,
-    "sumber_id": null,
-    "catatan": "Kepmen ESDM BPP pembangkitan terbaru belum terambil (jdih.esdm.go.id menolak klien otomatis); isi manual dari Kepmen resmi"
+    "nilai_rp_kwh": 1349.72,
+    "nilai_sen_usd": 9.26,
+    "tahun_bpp": 2020,
+    "kepmen": "169.K/HK.02/MEM.M/2021",
+    "nasional_rp_kwh": 1027.7,
+    "sistem_utama": {
+     "kunci": "aceh",
+     "nama": "Aceh"
+    },
+    "sistem": [
+     {
+      "kunci": "aceh",
+      "nama": "Aceh",
+      "tingkat": "sistem",
+      "rp_kwh": 1349.72,
+      "sen_usd": 9.26
+     },
+     {
+      "kunci": "weh",
+      "nama": "Pulau Weh",
+      "tingkat": "sub",
+      "rp_kwh": 1995.8,
+      "sen_usd": 13.7
+     },
+     {
+      "kunci": "simeulue",
+      "nama": "Pulau Simeulue",
+      "tingkat": "sub",
+      "rp_kwh": 2148.71,
+      "sen_usd": 14.75
+     },
+     {
+      "kunci": "kecil-sumatera",
+      "nama": "Sub sistem kepulauan kecil lainnya (Sumatera)",
+      "tingkat": "generik",
+      "rp_kwh": 2805.5,
+      "sen_usd": 19.25
+     }
+    ],
+    "riwayat": [
+     {
+      "tahun": 2020,
+      "kepmen": "169.K/HK.02/MEM.M/2021",
+      "nilai_rp_kwh": 1349.72,
+      "nilai_sen_usd": 9.26,
+      "nasional_rp_kwh": 1027.7
+     },
+     {
+      "tahun": 2018,
+      "kepmen": "55 K/20/MEM/2019",
+      "nilai_rp_kwh": 1673,
+      "nilai_sen_usd": 11.74,
+      "nasional_rp_kwh": 1119
+     },
+     {
+      "tahun": 2017,
+      "kepmen": "1772 K/20/MEM/2018",
+      "nilai_rp_kwh": 1491,
+      "nilai_sen_usd": 11.14,
+      "nasional_rp_kwh": 1025
+     },
+     {
+      "tahun": 2016,
+      "kepmen": "1404 K/20/MEM/2017",
+      "nilai_rp_kwh": 1383,
+      "nilai_sen_usd": 10.39,
+      "nasional_rp_kwh": 983
+     }
+    ],
+    "sumber_id": "kepmen-bpp",
+    "catatan": "BPP pembangkitan sistem utama provinsi, BPP tahun 2020 (Kepmen ESDM 169.K/HK.02/MEM.M/2021); bukan BPP tersambung/tegangan. Sistem kecil terisolasi dan \"sub sistem kecil lainnya\" tercantum di sistem[]"
    },
    "faktor_lokasi": {
     "F": 1.1,
@@ -645,11 +716,70 @@
     }
    },
    "bpp": {
-    "rp_per_kwh": null,
-    "sistem": null,
-    "tahun": null,
-    "sumber_id": null,
-    "catatan": "Kepmen ESDM BPP pembangkitan terbaru belum terambil (jdih.esdm.go.id menolak klien otomatis); isi manual dari Kepmen resmi"
+    "nilai_rp_kwh": 1247.24,
+    "nilai_sen_usd": 8.56,
+    "tahun_bpp": 2020,
+    "kepmen": "169.K/HK.02/MEM.M/2021",
+    "nasional_rp_kwh": 1027.7,
+    "sistem_utama": {
+     "kunci": "sumut",
+     "nama": "Sumatera Utara"
+    },
+    "sistem": [
+     {
+      "kunci": "sumut",
+      "nama": "Sumatera Utara",
+      "tingkat": "sistem",
+      "rp_kwh": 1247.24,
+      "sen_usd": 8.56
+     },
+     {
+      "kunci": "nias",
+      "nama": "Nias",
+      "tingkat": "sub",
+      "rp_kwh": 2805.5,
+      "sen_usd": 19.25
+     },
+     {
+      "kunci": "kecil-sumatera",
+      "nama": "Sub sistem kepulauan kecil lainnya (Sumatera)",
+      "tingkat": "generik",
+      "rp_kwh": 2805.5,
+      "sen_usd": 19.25
+     }
+    ],
+    "riwayat": [
+     {
+      "tahun": 2020,
+      "kepmen": "169.K/HK.02/MEM.M/2021",
+      "nilai_rp_kwh": 1247.24,
+      "nilai_sen_usd": 8.56,
+      "nasional_rp_kwh": 1027.7
+     },
+     {
+      "tahun": 2018,
+      "kepmen": "55 K/20/MEM/2019",
+      "nilai_rp_kwh": 1451,
+      "nilai_sen_usd": 10.18,
+      "nasional_rp_kwh": 1119
+     },
+     {
+      "tahun": 2017,
+      "kepmen": "1772 K/20/MEM/2018",
+      "nilai_rp_kwh": 1308,
+      "nilai_sen_usd": 9.77,
+      "nasional_rp_kwh": 1025
+     },
+     {
+      "tahun": 2016,
+      "kepmen": "1404 K/20/MEM/2017",
+      "nilai_rp_kwh": 1235,
+      "nilai_sen_usd": 9.28,
+      "nasional_rp_kwh": 983
+     }
+    ],
+    "sumber_id": "kepmen-bpp",
+    "catatan": "BPP pembangkitan sistem utama provinsi, BPP tahun 2020 (Kepmen ESDM 169.K/HK.02/MEM.M/2021); bukan BPP tersambung/tegangan. Sistem kecil terisolasi dan \"sub sistem kecil lainnya\" tercantum di sistem[]"
    },
    "faktor_lokasi": {
     "F": 1.1,
@@ -785,11 +915,70 @@
     }
    },
    "bpp": {
-    "rp_per_kwh": null,
-    "sistem": null,
-    "tahun": null,
-    "sumber_id": null,
-    "catatan": "Kepmen ESDM BPP pembangkitan terbaru belum terambil (jdih.esdm.go.id menolak klien otomatis); isi manual dari Kepmen resmi"
+    "nilai_rp_kwh": 995.58,
+    "nilai_sen_usd": 6.83,
+    "tahun_bpp": 2020,
+    "kepmen": "169.K/HK.02/MEM.M/2021",
+    "nasional_rp_kwh": 1027.7,
+    "sistem_utama": {
+     "kunci": "sumbar",
+     "nama": "Sumatera Barat"
+    },
+    "sistem": [
+     {
+      "kunci": "sumbar",
+      "nama": "Sumatera Barat",
+      "tingkat": "sistem",
+      "rp_kwh": 995.58,
+      "sen_usd": 6.83
+     },
+     {
+      "kunci": "mentawai",
+      "nama": "Kepulauan Mentawai",
+      "tingkat": "sub",
+      "rp_kwh": 2319.63,
+      "sen_usd": 15.92
+     },
+     {
+      "kunci": "kecil-sumatera",
+      "nama": "Sub sistem kepulauan kecil lainnya (Sumatera)",
+      "tingkat": "generik",
+      "rp_kwh": 2805.5,
+      "sen_usd": 19.25
+     }
+    ],
+    "riwayat": [
+     {
+      "tahun": 2020,
+      "kepmen": "169.K/HK.02/MEM.M/2021",
+      "nilai_rp_kwh": 995.58,
+      "nilai_sen_usd": 6.83,
+      "nasional_rp_kwh": 1027.7
+     },
+     {
+      "tahun": 2018,
+      "kepmen": "55 K/20/MEM/2019",
+      "nilai_rp_kwh": 1058,
+      "nilai_sen_usd": 7.43,
+      "nasional_rp_kwh": 1119
+     },
+     {
+      "tahun": 2017,
+      "kepmen": "1772 K/20/MEM/2018",
+      "nilai_rp_kwh": 971,
+      "nilai_sen_usd": 7.25,
+      "nasional_rp_kwh": 1025
+     },
+     {
+      "tahun": 2016,
+      "kepmen": "1404 K/20/MEM/2017",
+      "nilai_rp_kwh": 1074,
+      "nilai_sen_usd": 8.07,
+      "nasional_rp_kwh": 983
+     }
+    ],
+    "sumber_id": "kepmen-bpp",
+    "catatan": "BPP pembangkitan sistem utama provinsi, BPP tahun 2020 (Kepmen ESDM 169.K/HK.02/MEM.M/2021); bukan BPP tersambung/tegangan. Sistem kecil terisolasi dan \"sub sistem kecil lainnya\" tercantum di sistem[]"
    },
    "faktor_lokasi": {
     "F": 1.1,
@@ -925,11 +1114,63 @@
     }
    },
    "bpp": {
-    "rp_per_kwh": null,
-    "sistem": null,
-    "tahun": null,
-    "sumber_id": null,
-    "catatan": "Kepmen ESDM BPP pembangkitan terbaru belum terambil (jdih.esdm.go.id menolak klien otomatis); isi manual dari Kepmen resmi"
+    "nilai_rp_kwh": 1374.43,
+    "nilai_sen_usd": 9.43,
+    "tahun_bpp": 2020,
+    "kepmen": "169.K/HK.02/MEM.M/2021",
+    "nasional_rp_kwh": 1027.7,
+    "sistem_utama": {
+     "kunci": "riau",
+     "nama": "Riau (2016: gabungan Riau dan Kepulauan Riau)"
+    },
+    "sistem": [
+     {
+      "kunci": "riau",
+      "nama": "Riau (2016: gabungan Riau dan Kepulauan Riau)",
+      "tingkat": "sistem",
+      "rp_kwh": 1374.43,
+      "sen_usd": 9.43
+     },
+     {
+      "kunci": "kecil-sumatera",
+      "nama": "Sub sistem kepulauan kecil lainnya (Sumatera)",
+      "tingkat": "generik",
+      "rp_kwh": 2805.5,
+      "sen_usd": 19.25
+     }
+    ],
+    "riwayat": [
+     {
+      "tahun": 2020,
+      "kepmen": "169.K/HK.02/MEM.M/2021",
+      "nilai_rp_kwh": 1374.43,
+      "nilai_sen_usd": 9.43,
+      "nasional_rp_kwh": 1027.7
+     },
+     {
+      "tahun": 2018,
+      "kepmen": "55 K/20/MEM/2019",
+      "nilai_rp_kwh": 1655,
+      "nilai_sen_usd": 11.61,
+      "nasional_rp_kwh": 1119
+     },
+     {
+      "tahun": 2017,
+      "kepmen": "1772 K/20/MEM/2018",
+      "nilai_rp_kwh": 1470,
+      "nilai_sen_usd": 10.98,
+      "nasional_rp_kwh": 1025
+     },
+     {
+      "tahun": 2016,
+      "kepmen": "1404 K/20/MEM/2017",
+      "nilai_rp_kwh": 1349,
+      "nilai_sen_usd": 10.14,
+      "nasional_rp_kwh": 983
+     }
+    ],
+    "sumber_id": "kepmen-bpp",
+    "catatan": "BPP pembangkitan sistem utama provinsi, BPP tahun 2020 (Kepmen ESDM 169.K/HK.02/MEM.M/2021); bukan BPP tersambung/tegangan. Sistem kecil terisolasi dan \"sub sistem kecil lainnya\" tercantum di sistem[]"
    },
    "faktor_lokasi": {
     "F": 1.1,
@@ -1065,11 +1306,63 @@
     }
    },
    "bpp": {
-    "rp_per_kwh": null,
-    "sistem": null,
-    "tahun": null,
-    "sumber_id": null,
-    "catatan": "Kepmen ESDM BPP pembangkitan terbaru belum terambil (jdih.esdm.go.id menolak klien otomatis); isi manual dari Kepmen resmi"
+    "nilai_rp_kwh": 1038.29,
+    "nilai_sen_usd": 7.13,
+    "tahun_bpp": 2020,
+    "kepmen": "169.K/HK.02/MEM.M/2021",
+    "nasional_rp_kwh": 1027.7,
+    "sistem_utama": {
+     "kunci": "s2jb",
+     "nama": "Sumatera Selatan, Jambi, Bengkulu (S2JB)"
+    },
+    "sistem": [
+     {
+      "kunci": "s2jb",
+      "nama": "Sumatera Selatan, Jambi, Bengkulu (S2JB)",
+      "tingkat": "sistem",
+      "rp_kwh": 1038.29,
+      "sen_usd": 7.13
+     },
+     {
+      "kunci": "kecil-sumatera",
+      "nama": "Sub sistem kepulauan kecil lainnya (Sumatera)",
+      "tingkat": "generik",
+      "rp_kwh": 2805.5,
+      "sen_usd": 19.25
+     }
+    ],
+    "riwayat": [
+     {
+      "tahun": 2020,
+      "kepmen": "169.K/HK.02/MEM.M/2021",
+      "nilai_rp_kwh": 1038.29,
+      "nilai_sen_usd": 7.13,
+      "nasional_rp_kwh": 1027.7
+     },
+     {
+      "tahun": 2018,
+      "kepmen": "55 K/20/MEM/2019",
+      "nilai_rp_kwh": 1061,
+      "nilai_sen_usd": 7.45,
+      "nasional_rp_kwh": 1119
+     },
+     {
+      "tahun": 2017,
+      "kepmen": "1772 K/20/MEM/2018",
+      "nilai_rp_kwh": 961,
+      "nilai_sen_usd": 7.18,
+      "nasional_rp_kwh": 1025
+     },
+     {
+      "tahun": 2016,
+      "kepmen": "1404 K/20/MEM/2017",
+      "nilai_rp_kwh": 1046,
+      "nilai_sen_usd": 7.86,
+      "nasional_rp_kwh": 983
+     }
+    ],
+    "sumber_id": "kepmen-bpp",
+    "catatan": "BPP pembangkitan sistem utama provinsi, BPP tahun 2020 (Kepmen ESDM 169.K/HK.02/MEM.M/2021); bukan BPP tersambung/tegangan. Sistem kecil terisolasi dan \"sub sistem kecil lainnya\" tercantum di sistem[]"
    },
    "faktor_lokasi": {
     "F": 1.1,
@@ -1205,11 +1498,63 @@
     }
    },
    "bpp": {
-    "rp_per_kwh": null,
-    "sistem": null,
-    "tahun": null,
-    "sumber_id": null,
-    "catatan": "Kepmen ESDM BPP pembangkitan terbaru belum terambil (jdih.esdm.go.id menolak klien otomatis); isi manual dari Kepmen resmi"
+    "nilai_rp_kwh": 1038.29,
+    "nilai_sen_usd": 7.13,
+    "tahun_bpp": 2020,
+    "kepmen": "169.K/HK.02/MEM.M/2021",
+    "nasional_rp_kwh": 1027.7,
+    "sistem_utama": {
+     "kunci": "s2jb",
+     "nama": "Sumatera Selatan, Jambi, Bengkulu (S2JB)"
+    },
+    "sistem": [
+     {
+      "kunci": "s2jb",
+      "nama": "Sumatera Selatan, Jambi, Bengkulu (S2JB)",
+      "tingkat": "sistem",
+      "rp_kwh": 1038.29,
+      "sen_usd": 7.13
+     },
+     {
+      "kunci": "kecil-sumatera",
+      "nama": "Sub sistem kepulauan kecil lainnya (Sumatera)",
+      "tingkat": "generik",
+      "rp_kwh": 2805.5,
+      "sen_usd": 19.25
+     }
+    ],
+    "riwayat": [
+     {
+      "tahun": 2020,
+      "kepmen": "169.K/HK.02/MEM.M/2021",
+      "nilai_rp_kwh": 1038.29,
+      "nilai_sen_usd": 7.13,
+      "nasional_rp_kwh": 1027.7
+     },
+     {
+      "tahun": 2018,
+      "kepmen": "55 K/20/MEM/2019",
+      "nilai_rp_kwh": 1061,
+      "nilai_sen_usd": 7.45,
+      "nasional_rp_kwh": 1119
+     },
+     {
+      "tahun": 2017,
+      "kepmen": "1772 K/20/MEM/2018",
+      "nilai_rp_kwh": 961,
+      "nilai_sen_usd": 7.18,
+      "nasional_rp_kwh": 1025
+     },
+     {
+      "tahun": 2016,
+      "kepmen": "1404 K/20/MEM/2017",
+      "nilai_rp_kwh": 1046,
+      "nilai_sen_usd": 7.86,
+      "nasional_rp_kwh": 983
+     }
+    ],
+    "sumber_id": "kepmen-bpp",
+    "catatan": "BPP pembangkitan sistem utama provinsi, BPP tahun 2020 (Kepmen ESDM 169.K/HK.02/MEM.M/2021); bukan BPP tersambung/tegangan. Sistem kecil terisolasi dan \"sub sistem kecil lainnya\" tercantum di sistem[]"
    },
    "faktor_lokasi": {
     "F": 1.1,
@@ -1345,11 +1690,70 @@
     }
    },
    "bpp": {
-    "rp_per_kwh": null,
-    "sistem": null,
-    "tahun": null,
-    "sumber_id": null,
-    "catatan": "Kepmen ESDM BPP pembangkitan terbaru belum terambil (jdih.esdm.go.id menolak klien otomatis); isi manual dari Kepmen resmi"
+    "nilai_rp_kwh": 1038.29,
+    "nilai_sen_usd": 7.13,
+    "tahun_bpp": 2020,
+    "kepmen": "169.K/HK.02/MEM.M/2021",
+    "nasional_rp_kwh": 1027.7,
+    "sistem_utama": {
+     "kunci": "s2jb",
+     "nama": "Sumatera Selatan, Jambi, Bengkulu (S2JB)"
+    },
+    "sistem": [
+     {
+      "kunci": "s2jb",
+      "nama": "Sumatera Selatan, Jambi, Bengkulu (S2JB)",
+      "tingkat": "sistem",
+      "rp_kwh": 1038.29,
+      "sen_usd": 7.13
+     },
+     {
+      "kunci": "enggano",
+      "nama": "Pulau Enggano",
+      "tingkat": "sub",
+      "rp_kwh": 2805.5,
+      "sen_usd": 19.25
+     },
+     {
+      "kunci": "kecil-sumatera",
+      "nama": "Sub sistem kepulauan kecil lainnya (Sumatera)",
+      "tingkat": "generik",
+      "rp_kwh": 2805.5,
+      "sen_usd": 19.25
+     }
+    ],
+    "riwayat": [
+     {
+      "tahun": 2020,
+      "kepmen": "169.K/HK.02/MEM.M/2021",
+      "nilai_rp_kwh": 1038.29,
+      "nilai_sen_usd": 7.13,
+      "nasional_rp_kwh": 1027.7
+     },
+     {
+      "tahun": 2018,
+      "kepmen": "55 K/20/MEM/2019",
+      "nilai_rp_kwh": 1061,
+      "nilai_sen_usd": 7.45,
+      "nasional_rp_kwh": 1119
+     },
+     {
+      "tahun": 2017,
+      "kepmen": "1772 K/20/MEM/2018",
+      "nilai_rp_kwh": 961,
+      "nilai_sen_usd": 7.18,
+      "nasional_rp_kwh": 1025
+     },
+     {
+      "tahun": 2016,
+      "kepmen": "1404 K/20/MEM/2017",
+      "nilai_rp_kwh": 1046,
+      "nilai_sen_usd": 7.86,
+      "nasional_rp_kwh": 983
+     }
+    ],
+    "sumber_id": "kepmen-bpp",
+    "catatan": "BPP pembangkitan sistem utama provinsi, BPP tahun 2020 (Kepmen ESDM 169.K/HK.02/MEM.M/2021); bukan BPP tersambung/tegangan. Sistem kecil terisolasi dan \"sub sistem kecil lainnya\" tercantum di sistem[]"
    },
    "faktor_lokasi": {
     "F": 1.1,
@@ -1487,11 +1891,63 @@
     }
    },
    "bpp": {
-    "rp_per_kwh": null,
-    "sistem": null,
-    "tahun": null,
-    "sumber_id": null,
-    "catatan": "Kepmen ESDM BPP pembangkitan terbaru belum terambil (jdih.esdm.go.id menolak klien otomatis); isi manual dari Kepmen resmi"
+    "nilai_rp_kwh": 995.98,
+    "nilai_sen_usd": 6.83,
+    "tahun_bpp": 2020,
+    "kepmen": "169.K/HK.02/MEM.M/2021",
+    "nasional_rp_kwh": 1027.7,
+    "sistem_utama": {
+     "kunci": "lampung",
+     "nama": "Lampung"
+    },
+    "sistem": [
+     {
+      "kunci": "lampung",
+      "nama": "Lampung",
+      "tingkat": "sistem",
+      "rp_kwh": 995.98,
+      "sen_usd": 6.83
+     },
+     {
+      "kunci": "kecil-sumatera",
+      "nama": "Sub sistem kepulauan kecil lainnya (Sumatera)",
+      "tingkat": "generik",
+      "rp_kwh": 2805.5,
+      "sen_usd": 19.25
+     }
+    ],
+    "riwayat": [
+     {
+      "tahun": 2020,
+      "kepmen": "169.K/HK.02/MEM.M/2021",
+      "nilai_rp_kwh": 995.98,
+      "nilai_sen_usd": 6.83,
+      "nasional_rp_kwh": 1027.7
+     },
+     {
+      "tahun": 2018,
+      "kepmen": "55 K/20/MEM/2019",
+      "nilai_rp_kwh": 1039,
+      "nilai_sen_usd": 7.29,
+      "nasional_rp_kwh": 1119
+     },
+     {
+      "tahun": 2017,
+      "kepmen": "1772 K/20/MEM/2018",
+      "nilai_rp_kwh": 936,
+      "nilai_sen_usd": 6.99,
+      "nasional_rp_kwh": 1025
+     },
+     {
+      "tahun": 2016,
+      "kepmen": "1404 K/20/MEM/2017",
+      "nilai_rp_kwh": 1034,
+      "nilai_sen_usd": 7.77,
+      "nasional_rp_kwh": 983
+     }
+    ],
+    "sumber_id": "kepmen-bpp",
+    "catatan": "BPP pembangkitan sistem utama provinsi, BPP tahun 2020 (Kepmen ESDM 169.K/HK.02/MEM.M/2021); bukan BPP tersambung/tegangan. Sistem kecil terisolasi dan \"sub sistem kecil lainnya\" tercantum di sistem[]"
    },
    "faktor_lokasi": {
     "F": 1.1,
@@ -1625,11 +2081,70 @@
     }
    },
    "bpp": {
-    "rp_per_kwh": null,
-    "sistem": null,
-    "tahun": null,
-    "sumber_id": null,
-    "catatan": "Kepmen ESDM BPP pembangkitan terbaru belum terambil (jdih.esdm.go.id menolak klien otomatis); isi manual dari Kepmen resmi"
+    "nilai_rp_kwh": 2006.52,
+    "nilai_sen_usd": 13.77,
+    "tahun_bpp": 2020,
+    "kepmen": "169.K/HK.02/MEM.M/2021",
+    "nasional_rp_kwh": 1027.7,
+    "sistem_utama": {
+     "kunci": "bangka",
+     "nama": "Bangka"
+    },
+    "sistem": [
+     {
+      "kunci": "bangka",
+      "nama": "Bangka",
+      "tingkat": "sistem",
+      "rp_kwh": 2006.52,
+      "sen_usd": 13.77
+     },
+     {
+      "kunci": "belitung",
+      "nama": "Belitung",
+      "tingkat": "sistem",
+      "rp_kwh": 1962.01,
+      "sen_usd": 13.46
+     },
+     {
+      "kunci": "kecil-sumatera",
+      "nama": "Sub sistem kepulauan kecil lainnya (Sumatera)",
+      "tingkat": "generik",
+      "rp_kwh": 2805.5,
+      "sen_usd": 19.25
+     }
+    ],
+    "riwayat": [
+     {
+      "tahun": 2020,
+      "kepmen": "169.K/HK.02/MEM.M/2021",
+      "nilai_rp_kwh": 2006.52,
+      "nilai_sen_usd": 13.77,
+      "nasional_rp_kwh": 1027.7
+     },
+     {
+      "tahun": 2018,
+      "kepmen": "55 K/20/MEM/2019",
+      "nilai_rp_kwh": 2681,
+      "nilai_sen_usd": 18.82,
+      "nasional_rp_kwh": 1119
+     },
+     {
+      "tahun": 2017,
+      "kepmen": "1772 K/20/MEM/2018",
+      "nilai_rp_kwh": 2247,
+      "nilai_sen_usd": 16.79,
+      "nasional_rp_kwh": 1025
+     },
+     {
+      "tahun": 2016,
+      "kepmen": "1404 K/20/MEM/2017",
+      "nilai_rp_kwh": 1817,
+      "nilai_sen_usd": 13.66,
+      "nasional_rp_kwh": 983
+     }
+    ],
+    "sumber_id": "kepmen-bpp",
+    "catatan": "BPP pembangkitan sistem utama provinsi, BPP tahun 2020 (Kepmen ESDM 169.K/HK.02/MEM.M/2021); bukan BPP tersambung/tegangan. Sistem kecil terisolasi dan \"sub sistem kecil lainnya\" tercantum di sistem[]"
    },
    "faktor_lokasi": {
     "F": 1.1,
@@ -1765,11 +2280,84 @@
     }
    },
    "bpp": {
-    "rp_per_kwh": null,
-    "sistem": null,
-    "tahun": null,
-    "sumber_id": null,
-    "catatan": "Kepmen ESDM BPP pembangkitan terbaru belum terambil (jdih.esdm.go.id menolak klien otomatis); isi manual dari Kepmen resmi"
+    "nilai_rp_kwh": 1833.55,
+    "nilai_sen_usd": 12.58,
+    "tahun_bpp": 2020,
+    "kepmen": "169.K/HK.02/MEM.M/2021",
+    "nasional_rp_kwh": 1027.7,
+    "sistem_utama": {
+     "kunci": "bintan",
+     "nama": "Bintan"
+    },
+    "sistem": [
+     {
+      "kunci": "bintan",
+      "nama": "Bintan",
+      "tingkat": "sub",
+      "rp_kwh": 1833.55,
+      "sen_usd": 12.58
+     },
+     {
+      "kunci": "karimun",
+      "nama": "Tanjung Balai Karimun",
+      "tingkat": "sub",
+      "rp_kwh": 1544.96,
+      "sen_usd": 10.6
+     },
+     {
+      "kunci": "natuna",
+      "nama": "Natuna",
+      "tingkat": "sub",
+      "rp_kwh": 1972.24,
+      "sen_usd": 13.53
+     },
+     {
+      "kunci": "anambas",
+      "nama": "Anambas",
+      "tingkat": "sub",
+      "rp_kwh": 1994.58,
+      "sen_usd": 13.69
+     },
+     {
+      "kunci": "kecil-sumatera",
+      "nama": "Sub sistem kepulauan kecil lainnya (Sumatera)",
+      "tingkat": "generik",
+      "rp_kwh": 2805.5,
+      "sen_usd": 19.25
+     }
+    ],
+    "riwayat": [
+     {
+      "tahun": 2020,
+      "kepmen": "169.K/HK.02/MEM.M/2021",
+      "nilai_rp_kwh": 1833.55,
+      "nilai_sen_usd": 12.58,
+      "nasional_rp_kwh": 1027.7
+     },
+     {
+      "tahun": 2018,
+      "kepmen": "55 K/20/MEM/2019",
+      "nilai_rp_kwh": 1786,
+      "nilai_sen_usd": 12.53,
+      "nasional_rp_kwh": 1119
+     },
+     {
+      "tahun": 2017,
+      "kepmen": "1772 K/20/MEM/2018",
+      "nilai_rp_kwh": 2052,
+      "nilai_sen_usd": 15.34,
+      "nasional_rp_kwh": 1025
+     },
+     {
+      "tahun": 2016,
+      "kepmen": "1404 K/20/MEM/2017",
+      "nilai_rp_kwh": 1583,
+      "nilai_sen_usd": 11.9,
+      "nasional_rp_kwh": 983
+     }
+    ],
+    "sumber_id": "kepmen-bpp",
+    "catatan": "BPP pembangkitan sistem utama provinsi, BPP tahun 2020 (Kepmen ESDM 169.K/HK.02/MEM.M/2021); bukan BPP tersambung/tegangan. Sistem kecil terisolasi dan \"sub sistem kecil lainnya\" tercantum di sistem[]"
    },
    "faktor_lokasi": {
     "F": 1.2,
@@ -1903,11 +2491,70 @@
     }
    },
    "bpp": {
-    "rp_per_kwh": null,
-    "sistem": null,
-    "tahun": null,
-    "sumber_id": null,
-    "catatan": "Kepmen ESDM BPP pembangkitan terbaru belum terambil (jdih.esdm.go.id menolak klien otomatis); isi manual dari Kepmen resmi"
+    "nilai_rp_kwh": 908.15,
+    "nilai_sen_usd": 6.23,
+    "tahun_bpp": 2020,
+    "kepmen": "169.K/HK.02/MEM.M/2021",
+    "nasional_rp_kwh": 1027.7,
+    "sistem_utama": {
+     "kunci": "dki",
+     "nama": "DKI Jakarta"
+    },
+    "sistem": [
+     {
+      "kunci": "dki",
+      "nama": "DKI Jakarta",
+      "tingkat": "sistem",
+      "rp_kwh": 908.15,
+      "sen_usd": 6.23
+     },
+     {
+      "kunci": "seribu",
+      "nama": "Kepulauan Seribu",
+      "tingkat": "sub",
+      "rp_kwh": 848.71,
+      "sen_usd": 5.82
+     },
+     {
+      "kunci": "kecil-jb",
+      "nama": "Sub sistem kecil lainnya (Jawa Bali)",
+      "tingkat": "generik",
+      "rp_kwh": 2805.5,
+      "sen_usd": 19.25
+     }
+    ],
+    "riwayat": [
+     {
+      "tahun": 2020,
+      "kepmen": "169.K/HK.02/MEM.M/2021",
+      "nilai_rp_kwh": 908.15,
+      "nilai_sen_usd": 6.23,
+      "nasional_rp_kwh": 1027.7
+     },
+     {
+      "tahun": 2018,
+      "kepmen": "55 K/20/MEM/2019",
+      "nilai_rp_kwh": 985,
+      "nilai_sen_usd": 6.91,
+      "nasional_rp_kwh": 1119
+     },
+     {
+      "tahun": 2017,
+      "kepmen": "1772 K/20/MEM/2018",
+      "nilai_rp_kwh": 911,
+      "nilai_sen_usd": 6.81,
+      "nasional_rp_kwh": 1025
+     },
+     {
+      "tahun": 2016,
+      "kepmen": "1404 K/20/MEM/2017",
+      "nilai_rp_kwh": 867,
+      "nilai_sen_usd": 6.51,
+      "nasional_rp_kwh": 983
+     }
+    ],
+    "sumber_id": "kepmen-bpp",
+    "catatan": "BPP pembangkitan sistem utama provinsi, BPP tahun 2020 (Kepmen ESDM 169.K/HK.02/MEM.M/2021); bukan BPP tersambung/tegangan. Sistem kecil terisolasi dan \"sub sistem kecil lainnya\" tercantum di sistem[]"
    },
    "faktor_lokasi": {
     "F": 1,
@@ -2043,11 +2690,63 @@
     }
    },
    "bpp": {
-    "rp_per_kwh": null,
-    "sistem": null,
-    "tahun": null,
-    "sumber_id": null,
-    "catatan": "Kepmen ESDM BPP pembangkitan terbaru belum terambil (jdih.esdm.go.id menolak klien otomatis); isi manual dari Kepmen resmi"
+    "nilai_rp_kwh": 907.93,
+    "nilai_sen_usd": 6.23,
+    "tahun_bpp": 2020,
+    "kepmen": "169.K/HK.02/MEM.M/2021",
+    "nasional_rp_kwh": 1027.7,
+    "sistem_utama": {
+     "kunci": "jabar",
+     "nama": "Jawa Barat"
+    },
+    "sistem": [
+     {
+      "kunci": "jabar",
+      "nama": "Jawa Barat",
+      "tingkat": "sistem",
+      "rp_kwh": 907.93,
+      "sen_usd": 6.23
+     },
+     {
+      "kunci": "kecil-jb",
+      "nama": "Sub sistem kecil lainnya (Jawa Bali)",
+      "tingkat": "generik",
+      "rp_kwh": 2805.5,
+      "sen_usd": 19.25
+     }
+    ],
+    "riwayat": [
+     {
+      "tahun": 2020,
+      "kepmen": "169.K/HK.02/MEM.M/2021",
+      "nilai_rp_kwh": 907.93,
+      "nilai_sen_usd": 6.23,
+      "nasional_rp_kwh": 1027.7
+     },
+     {
+      "tahun": 2018,
+      "kepmen": "55 K/20/MEM/2019",
+      "nilai_rp_kwh": 984,
+      "nilai_sen_usd": 6.91,
+      "nasional_rp_kwh": 1119
+     },
+     {
+      "tahun": 2017,
+      "kepmen": "1772 K/20/MEM/2018",
+      "nilai_rp_kwh": 911,
+      "nilai_sen_usd": 6.81,
+      "nasional_rp_kwh": 1025
+     },
+     {
+      "tahun": 2016,
+      "kepmen": "1404 K/20/MEM/2017",
+      "nilai_rp_kwh": 866,
+      "nilai_sen_usd": 6.51,
+      "nasional_rp_kwh": 983
+     }
+    ],
+    "sumber_id": "kepmen-bpp",
+    "catatan": "BPP pembangkitan sistem utama provinsi, BPP tahun 2020 (Kepmen ESDM 169.K/HK.02/MEM.M/2021); bukan BPP tersambung/tegangan. Sistem kecil terisolasi dan \"sub sistem kecil lainnya\" tercantum di sistem[]"
    },
    "faktor_lokasi": {
     "F": 1,
@@ -2181,11 +2880,70 @@
     }
    },
    "bpp": {
-    "rp_per_kwh": null,
-    "sistem": null,
-    "tahun": null,
-    "sumber_id": null,
-    "catatan": "Kepmen ESDM BPP pembangkitan terbaru belum terambil (jdih.esdm.go.id menolak klien otomatis); isi manual dari Kepmen resmi"
+    "nilai_rp_kwh": 907.77,
+    "nilai_sen_usd": 6.23,
+    "tahun_bpp": 2020,
+    "kepmen": "169.K/HK.02/MEM.M/2021",
+    "nasional_rp_kwh": 1027.7,
+    "sistem_utama": {
+     "kunci": "jateng",
+     "nama": "Jawa Tengah (Jawa Tengah dan DI Yogyakarta, satu sistem Jawa Bali)"
+    },
+    "sistem": [
+     {
+      "kunci": "jateng",
+      "nama": "Jawa Tengah (Jawa Tengah dan DI Yogyakarta, satu sistem Jawa Bali)",
+      "tingkat": "sistem",
+      "rp_kwh": 907.77,
+      "sen_usd": 6.23
+     },
+     {
+      "kunci": "karimun-jawa",
+      "nama": "Karimun Jawa",
+      "tingkat": "sub",
+      "rp_kwh": 2805.5,
+      "sen_usd": 19.25
+     },
+     {
+      "kunci": "kecil-jb",
+      "nama": "Sub sistem kecil lainnya (Jawa Bali)",
+      "tingkat": "generik",
+      "rp_kwh": 2805.5,
+      "sen_usd": 19.25
+     }
+    ],
+    "riwayat": [
+     {
+      "tahun": 2020,
+      "kepmen": "169.K/HK.02/MEM.M/2021",
+      "nilai_rp_kwh": 907.77,
+      "nilai_sen_usd": 6.23,
+      "nasional_rp_kwh": 1027.7
+     },
+     {
+      "tahun": 2018,
+      "kepmen": "55 K/20/MEM/2019",
+      "nilai_rp_kwh": 984,
+      "nilai_sen_usd": 6.91,
+      "nasional_rp_kwh": 1119
+     },
+     {
+      "tahun": 2017,
+      "kepmen": "1772 K/20/MEM/2018",
+      "nilai_rp_kwh": 911,
+      "nilai_sen_usd": 6.81,
+      "nasional_rp_kwh": 1025
+     },
+     {
+      "tahun": 2016,
+      "kepmen": "1404 K/20/MEM/2017",
+      "nilai_rp_kwh": 868,
+      "nilai_sen_usd": 6.52,
+      "nasional_rp_kwh": 983
+     }
+    ],
+    "sumber_id": "kepmen-bpp",
+    "catatan": "BPP pembangkitan sistem utama provinsi, BPP tahun 2020 (Kepmen ESDM 169.K/HK.02/MEM.M/2021); bukan BPP tersambung/tegangan. Sistem kecil terisolasi dan \"sub sistem kecil lainnya\" tercantum di sistem[]"
    },
    "faktor_lokasi": {
     "F": 1,
@@ -2319,11 +3077,63 @@
     }
    },
    "bpp": {
-    "rp_per_kwh": null,
-    "sistem": null,
-    "tahun": null,
-    "sumber_id": null,
-    "catatan": "Kepmen ESDM BPP pembangkitan terbaru belum terambil (jdih.esdm.go.id menolak klien otomatis); isi manual dari Kepmen resmi"
+    "nilai_rp_kwh": 907.77,
+    "nilai_sen_usd": 6.23,
+    "tahun_bpp": 2020,
+    "kepmen": "169.K/HK.02/MEM.M/2021",
+    "nasional_rp_kwh": 1027.7,
+    "sistem_utama": {
+     "kunci": "jateng",
+     "nama": "Jawa Tengah (Jawa Tengah dan DI Yogyakarta, satu sistem Jawa Bali)"
+    },
+    "sistem": [
+     {
+      "kunci": "jateng",
+      "nama": "Jawa Tengah (Jawa Tengah dan DI Yogyakarta, satu sistem Jawa Bali)",
+      "tingkat": "sistem",
+      "rp_kwh": 907.77,
+      "sen_usd": 6.23
+     },
+     {
+      "kunci": "kecil-jb",
+      "nama": "Sub sistem kecil lainnya (Jawa Bali)",
+      "tingkat": "generik",
+      "rp_kwh": 2805.5,
+      "sen_usd": 19.25
+     }
+    ],
+    "riwayat": [
+     {
+      "tahun": 2020,
+      "kepmen": "169.K/HK.02/MEM.M/2021",
+      "nilai_rp_kwh": 907.77,
+      "nilai_sen_usd": 6.23,
+      "nasional_rp_kwh": 1027.7
+     },
+     {
+      "tahun": 2018,
+      "kepmen": "55 K/20/MEM/2019",
+      "nilai_rp_kwh": 984,
+      "nilai_sen_usd": 6.91,
+      "nasional_rp_kwh": 1119
+     },
+     {
+      "tahun": 2017,
+      "kepmen": "1772 K/20/MEM/2018",
+      "nilai_rp_kwh": 911,
+      "nilai_sen_usd": 6.81,
+      "nasional_rp_kwh": 1025
+     },
+     {
+      "tahun": 2016,
+      "kepmen": "1404 K/20/MEM/2017",
+      "nilai_rp_kwh": 868,
+      "nilai_sen_usd": 6.52,
+      "nasional_rp_kwh": 983
+     }
+    ],
+    "sumber_id": "kepmen-bpp",
+    "catatan": "BPP pembangkitan sistem utama provinsi, BPP tahun 2020 (Kepmen ESDM 169.K/HK.02/MEM.M/2021); bukan BPP tersambung/tegangan. Sistem kecil terisolasi dan \"sub sistem kecil lainnya\" tercantum di sistem[]"
    },
    "faktor_lokasi": {
     "F": 1,
@@ -2457,11 +3267,84 @@
     }
    },
    "bpp": {
-    "rp_per_kwh": null,
-    "sistem": null,
-    "tahun": null,
-    "sumber_id": null,
-    "catatan": "Kepmen ESDM BPP pembangkitan terbaru belum terambil (jdih.esdm.go.id menolak klien otomatis); isi manual dari Kepmen resmi"
+    "nilai_rp_kwh": 911.59,
+    "nilai_sen_usd": 6.26,
+    "tahun_bpp": 2020,
+    "kepmen": "169.K/HK.02/MEM.M/2021",
+    "nasional_rp_kwh": 1027.7,
+    "sistem_utama": {
+     "kunci": "jatim",
+     "nama": "Jawa Timur"
+    },
+    "sistem": [
+     {
+      "kunci": "jatim",
+      "nama": "Jawa Timur",
+      "tingkat": "sistem",
+      "rp_kwh": 911.59,
+      "sen_usd": 6.26
+     },
+     {
+      "kunci": "madura",
+      "nama": "Madura Isolated",
+      "tingkat": "sub",
+      "rp_kwh": 2052.8,
+      "sen_usd": 14.09
+     },
+     {
+      "kunci": "bawean",
+      "nama": "Bawean",
+      "tingkat": "sub",
+      "rp_kwh": 2805.5,
+      "sen_usd": 19.25
+     },
+     {
+      "kunci": "gili-ketapang",
+      "nama": "Gili Ketapang",
+      "tingkat": "sub",
+      "rp_kwh": 2136.16,
+      "sen_usd": 14.66
+     },
+     {
+      "kunci": "kecil-jb",
+      "nama": "Sub sistem kecil lainnya (Jawa Bali)",
+      "tingkat": "generik",
+      "rp_kwh": 2805.5,
+      "sen_usd": 19.25
+     }
+    ],
+    "riwayat": [
+     {
+      "tahun": 2020,
+      "kepmen": "169.K/HK.02/MEM.M/2021",
+      "nilai_rp_kwh": 911.59,
+      "nilai_sen_usd": 6.26,
+      "nasional_rp_kwh": 1027.7
+     },
+     {
+      "tahun": 2018,
+      "kepmen": "55 K/20/MEM/2019",
+      "nilai_rp_kwh": 989,
+      "nilai_sen_usd": 6.94,
+      "nasional_rp_kwh": 1119
+     },
+     {
+      "tahun": 2017,
+      "kepmen": "1772 K/20/MEM/2018",
+      "nilai_rp_kwh": 914,
+      "nilai_sen_usd": 6.83,
+      "nasional_rp_kwh": 1025
+     },
+     {
+      "tahun": 2016,
+      "kepmen": "1404 K/20/MEM/2017",
+      "nilai_rp_kwh": 870,
+      "nilai_sen_usd": 6.54,
+      "nasional_rp_kwh": 983
+     }
+    ],
+    "sumber_id": "kepmen-bpp",
+    "catatan": "BPP pembangkitan sistem utama provinsi, BPP tahun 2020 (Kepmen ESDM 169.K/HK.02/MEM.M/2021); bukan BPP tersambung/tegangan. Sistem kecil terisolasi dan \"sub sistem kecil lainnya\" tercantum di sistem[]"
    },
    "faktor_lokasi": {
     "F": 1,
@@ -2595,11 +3478,70 @@
     }
    },
    "bpp": {
-    "rp_per_kwh": null,
-    "sistem": null,
-    "tahun": null,
-    "sumber_id": null,
-    "catatan": "Kepmen ESDM BPP pembangkitan terbaru belum terambil (jdih.esdm.go.id menolak klien otomatis); isi manual dari Kepmen resmi"
+    "nilai_rp_kwh": 907.75,
+    "nilai_sen_usd": 6.23,
+    "tahun_bpp": 2020,
+    "kepmen": "169.K/HK.02/MEM.M/2021",
+    "nasional_rp_kwh": 1027.7,
+    "sistem_utama": {
+     "kunci": "banten",
+     "nama": "Banten"
+    },
+    "sistem": [
+     {
+      "kunci": "banten",
+      "nama": "Banten",
+      "tingkat": "sistem",
+      "rp_kwh": 907.75,
+      "sen_usd": 6.23
+     },
+     {
+      "kunci": "pulau-panjang",
+      "nama": "Pulau Panjang",
+      "tingkat": "sub",
+      "rp_kwh": 2805.5,
+      "sen_usd": 19.25
+     },
+     {
+      "kunci": "kecil-jb",
+      "nama": "Sub sistem kecil lainnya (Jawa Bali)",
+      "tingkat": "generik",
+      "rp_kwh": 2805.5,
+      "sen_usd": 19.25
+     }
+    ],
+    "riwayat": [
+     {
+      "tahun": 2020,
+      "kepmen": "169.K/HK.02/MEM.M/2021",
+      "nilai_rp_kwh": 907.75,
+      "nilai_sen_usd": 6.23,
+      "nasional_rp_kwh": 1027.7
+     },
+     {
+      "tahun": 2018,
+      "kepmen": "55 K/20/MEM/2019",
+      "nilai_rp_kwh": 985,
+      "nilai_sen_usd": 6.91,
+      "nasional_rp_kwh": 1119
+     },
+     {
+      "tahun": 2017,
+      "kepmen": "1772 K/20/MEM/2018",
+      "nilai_rp_kwh": 911,
+      "nilai_sen_usd": 6.81,
+      "nasional_rp_kwh": 1025
+     },
+     {
+      "tahun": 2016,
+      "kepmen": "1404 K/20/MEM/2017",
+      "nilai_rp_kwh": 866,
+      "nilai_sen_usd": 6.51,
+      "nasional_rp_kwh": 983
+     }
+    ],
+    "sumber_id": "kepmen-bpp",
+    "catatan": "BPP pembangkitan sistem utama provinsi, BPP tahun 2020 (Kepmen ESDM 169.K/HK.02/MEM.M/2021); bukan BPP tersambung/tegangan. Sistem kecil terisolasi dan \"sub sistem kecil lainnya\" tercantum di sistem[]"
    },
    "faktor_lokasi": {
     "F": 1,
@@ -2737,11 +3679,70 @@
     }
    },
    "bpp": {
-    "rp_per_kwh": null,
-    "sistem": null,
-    "tahun": null,
-    "sumber_id": null,
-    "catatan": "Kepmen ESDM BPP pembangkitan terbaru belum terambil (jdih.esdm.go.id menolak klien otomatis); isi manual dari Kepmen resmi"
+    "nilai_rp_kwh": 908.03,
+    "nilai_sen_usd": 6.23,
+    "tahun_bpp": 2020,
+    "kepmen": "169.K/HK.02/MEM.M/2021",
+    "nasional_rp_kwh": 1027.7,
+    "sistem_utama": {
+     "kunci": "bali",
+     "nama": "Bali"
+    },
+    "sistem": [
+     {
+      "kunci": "bali",
+      "nama": "Bali",
+      "tingkat": "sistem",
+      "rp_kwh": 908.03,
+      "sen_usd": 6.23
+     },
+     {
+      "kunci": "tiga-nusa",
+      "nama": "Tiga Nusa (Nusa Penida, Nusa Lembongan, Nusa Ceningan)",
+      "tingkat": "sub",
+      "rp_kwh": 1935.97,
+      "sen_usd": 13.29
+     },
+     {
+      "kunci": "kecil-jb",
+      "nama": "Sub sistem kecil lainnya (Jawa Bali)",
+      "tingkat": "generik",
+      "rp_kwh": 2805.5,
+      "sen_usd": 19.25
+     }
+    ],
+    "riwayat": [
+     {
+      "tahun": 2020,
+      "kepmen": "169.K/HK.02/MEM.M/2021",
+      "nilai_rp_kwh": 908.03,
+      "nilai_sen_usd": 6.23,
+      "nasional_rp_kwh": 1027.7
+     },
+     {
+      "tahun": 2018,
+      "kepmen": "55 K/20/MEM/2019",
+      "nilai_rp_kwh": 985,
+      "nilai_sen_usd": 6.91,
+      "nasional_rp_kwh": 1119
+     },
+     {
+      "tahun": 2017,
+      "kepmen": "1772 K/20/MEM/2018",
+      "nilai_rp_kwh": 911,
+      "nilai_sen_usd": 6.81,
+      "nasional_rp_kwh": 1025
+     },
+     {
+      "tahun": 2016,
+      "kepmen": "1404 K/20/MEM/2017",
+      "nilai_rp_kwh": 881,
+      "nilai_sen_usd": 6.62,
+      "nasional_rp_kwh": 983
+     }
+    ],
+    "sumber_id": "kepmen-bpp",
+    "catatan": "BPP pembangkitan sistem utama provinsi, BPP tahun 2020 (Kepmen ESDM 169.K/HK.02/MEM.M/2021); bukan BPP tersambung/tegangan. Sistem kecil terisolasi dan \"sub sistem kecil lainnya\" tercantum di sistem[]"
    },
    "faktor_lokasi": {
     "F": 1,
@@ -2879,11 +3880,70 @@
     }
    },
    "bpp": {
-    "rp_per_kwh": null,
-    "sistem": null,
-    "tahun": null,
-    "sumber_id": null,
-    "catatan": "Kepmen ESDM BPP pembangkitan terbaru belum terambil (jdih.esdm.go.id menolak klien otomatis); isi manual dari Kepmen resmi"
+    "nilai_rp_kwh": 1715.65,
+    "nilai_sen_usd": 11.77,
+    "tahun_bpp": 2020,
+    "kepmen": "169.K/HK.02/MEM.M/2021",
+    "nasional_rp_kwh": 1027.7,
+    "sistem_utama": {
+     "kunci": "lombok",
+     "nama": "Lombok"
+    },
+    "sistem": [
+     {
+      "kunci": "tambora",
+      "nama": "Tambora (Bima dan Sumbawa)",
+      "tingkat": "sub",
+      "rp_kwh": 1841.12,
+      "sen_usd": 12.63
+     },
+     {
+      "kunci": "lombok",
+      "nama": "Lombok",
+      "tingkat": "sistem",
+      "rp_kwh": 1715.65,
+      "sen_usd": 11.77
+     },
+     {
+      "kunci": "kecil-nt",
+      "nama": "Sub sistem kecil lainnya (Nusa Tenggara)",
+      "tingkat": "generik",
+      "rp_kwh": 2805.5,
+      "sen_usd": 19.25
+     }
+    ],
+    "riwayat": [
+     {
+      "tahun": 2020,
+      "kepmen": "169.K/HK.02/MEM.M/2021",
+      "nilai_rp_kwh": 1715.65,
+      "nilai_sen_usd": 11.77,
+      "nasional_rp_kwh": 1027.7
+     },
+     {
+      "tahun": 2018,
+      "kepmen": "55 K/20/MEM/2019",
+      "nilai_rp_kwh": 2044,
+      "nilai_sen_usd": 14.35,
+      "nasional_rp_kwh": 1119
+     },
+     {
+      "tahun": 2017,
+      "kepmen": "1772 K/20/MEM/2018",
+      "nilai_rp_kwh": 1861,
+      "nilai_sen_usd": 13.9,
+      "nasional_rp_kwh": 1025
+     },
+     {
+      "tahun": 2016,
+      "kepmen": "1404 K/20/MEM/2017",
+      "nilai_rp_kwh": 1629,
+      "nilai_sen_usd": 12.24,
+      "nasional_rp_kwh": 983
+     }
+    ],
+    "sumber_id": "kepmen-bpp",
+    "catatan": "BPP pembangkitan sistem utama provinsi, BPP tahun 2020 (Kepmen ESDM 169.K/HK.02/MEM.M/2021); bukan BPP tersambung/tegangan. Sistem kecil terisolasi dan \"sub sistem kecil lainnya\" tercantum di sistem[]"
    },
    "faktor_lokasi": {
     "F": 1.2,
@@ -3021,11 +4081,84 @@
     }
    },
    "bpp": {
-    "rp_per_kwh": null,
-    "sistem": null,
-    "tahun": null,
-    "sumber_id": null,
-    "catatan": "Kepmen ESDM BPP pembangkitan terbaru belum terambil (jdih.esdm.go.id menolak klien otomatis); isi manual dari Kepmen resmi"
+    "nilai_rp_kwh": 2067.93,
+    "nilai_sen_usd": 14.19,
+    "tahun_bpp": 2020,
+    "kepmen": "169.K/HK.02/MEM.M/2021",
+    "nasional_rp_kwh": 1027.7,
+    "sistem_utama": {
+     "kunci": "timor",
+     "nama": "Timor"
+    },
+    "sistem": [
+     {
+      "kunci": "sumba",
+      "nama": "Sumba",
+      "tingkat": "sub",
+      "rp_kwh": 2147.66,
+      "sen_usd": 14.74
+     },
+     {
+      "kunci": "timor",
+      "nama": "Timor",
+      "tingkat": "sistem",
+      "rp_kwh": 2067.93,
+      "sen_usd": 14.19
+     },
+     {
+      "kunci": "flores-barat",
+      "nama": "Flores Bagian Barat",
+      "tingkat": "sub",
+      "rp_kwh": 1634.5,
+      "sen_usd": 11.22
+     },
+     {
+      "kunci": "flores-timur",
+      "nama": "Flores Bagian Timur",
+      "tingkat": "sub",
+      "rp_kwh": 1856.59,
+      "sen_usd": 12.74
+     },
+     {
+      "kunci": "kecil-nt",
+      "nama": "Sub sistem kecil lainnya (Nusa Tenggara)",
+      "tingkat": "generik",
+      "rp_kwh": 2805.5,
+      "sen_usd": 19.25
+     }
+    ],
+    "riwayat": [
+     {
+      "tahun": 2020,
+      "kepmen": "169.K/HK.02/MEM.M/2021",
+      "nilai_rp_kwh": 2067.93,
+      "nilai_sen_usd": 14.19,
+      "nasional_rp_kwh": 1027.7
+     },
+     {
+      "tahun": 2018,
+      "kepmen": "55 K/20/MEM/2019",
+      "nilai_rp_kwh": 2588,
+      "nilai_sen_usd": 18.17,
+      "nasional_rp_kwh": 1119
+     },
+     {
+      "tahun": 2017,
+      "kepmen": "1772 K/20/MEM/2018",
+      "nilai_rp_kwh": 2421,
+      "nilai_sen_usd": 18.09,
+      "nasional_rp_kwh": 1025
+     },
+     {
+      "tahun": 2016,
+      "kepmen": "1404 K/20/MEM/2017",
+      "nilai_rp_kwh": 2226,
+      "nilai_sen_usd": 16.73,
+      "nasional_rp_kwh": 983
+     }
+    ],
+    "sumber_id": "kepmen-bpp",
+    "catatan": "BPP pembangkitan sistem utama provinsi, BPP tahun 2020 (Kepmen ESDM 169.K/HK.02/MEM.M/2021); bukan BPP tersambung/tegangan. Sistem kecil terisolasi dan \"sub sistem kecil lainnya\" tercantum di sistem[]"
    },
    "faktor_lokasi": {
     "F": 1.2,
@@ -3159,11 +4292,63 @@
     }
    },
    "bpp": {
-    "rp_per_kwh": null,
-    "sistem": null,
-    "tahun": null,
-    "sumber_id": null,
-    "catatan": "Kepmen ESDM BPP pembangkitan terbaru belum terambil (jdih.esdm.go.id menolak klien otomatis); isi manual dari Kepmen resmi"
+    "nilai_rp_kwh": 1539.19,
+    "nilai_sen_usd": 10.56,
+    "tahun_bpp": 2020,
+    "kepmen": "169.K/HK.02/MEM.M/2021",
+    "nasional_rp_kwh": 1027.7,
+    "sistem_utama": {
+     "kunci": "kalbar",
+     "nama": "Kalimantan Barat"
+    },
+    "sistem": [
+     {
+      "kunci": "kalbar",
+      "nama": "Kalimantan Barat",
+      "tingkat": "sistem",
+      "rp_kwh": 1539.19,
+      "sen_usd": 10.56
+     },
+     {
+      "kunci": "kecil-kal",
+      "nama": "Sub sistem kecil lainnya (Kalimantan)",
+      "tingkat": "generik",
+      "rp_kwh": 2805.5,
+      "sen_usd": 19.25
+     }
+    ],
+    "riwayat": [
+     {
+      "tahun": 2020,
+      "kepmen": "169.K/HK.02/MEM.M/2021",
+      "nilai_rp_kwh": 1539.19,
+      "nilai_sen_usd": 10.56,
+      "nasional_rp_kwh": 1027.7
+     },
+     {
+      "tahun": 2018,
+      "kepmen": "55 K/20/MEM/2019",
+      "nilai_rp_kwh": 1525,
+      "nilai_sen_usd": 10.7,
+      "nasional_rp_kwh": 1119
+     },
+     {
+      "tahun": 2017,
+      "kepmen": "1772 K/20/MEM/2018",
+      "nilai_rp_kwh": 1692,
+      "nilai_sen_usd": 12.64,
+      "nasional_rp_kwh": 1025
+     },
+     {
+      "tahun": 2016,
+      "kepmen": "1404 K/20/MEM/2017",
+      "nilai_rp_kwh": 1655,
+      "nilai_sen_usd": 12.43,
+      "nasional_rp_kwh": 983
+     }
+    ],
+    "sumber_id": "kepmen-bpp",
+    "catatan": "BPP pembangkitan sistem utama provinsi, BPP tahun 2020 (Kepmen ESDM 169.K/HK.02/MEM.M/2021); bukan BPP tersambung/tegangan. Sistem kecil terisolasi dan \"sub sistem kecil lainnya\" tercantum di sistem[]"
    },
    "faktor_lokasi": {
     "F": 1.1,
@@ -3299,11 +4484,63 @@
     }
    },
    "bpp": {
-    "rp_per_kwh": null,
-    "sistem": null,
-    "tahun": null,
-    "sumber_id": null,
-    "catatan": "Kepmen ESDM BPP pembangkitan terbaru belum terambil (jdih.esdm.go.id menolak klien otomatis); isi manual dari Kepmen resmi"
+    "nilai_rp_kwh": 1244.07,
+    "nilai_sen_usd": 8.54,
+    "tahun_bpp": 2020,
+    "kepmen": "169.K/HK.02/MEM.M/2021",
+    "nasional_rp_kwh": 1027.7,
+    "sistem_utama": {
+     "kunci": "kalselteng",
+     "nama": "Kalimantan Selatan dan Tengah"
+    },
+    "sistem": [
+     {
+      "kunci": "kalselteng",
+      "nama": "Kalimantan Selatan dan Tengah",
+      "tingkat": "sistem",
+      "rp_kwh": 1244.07,
+      "sen_usd": 8.54
+     },
+     {
+      "kunci": "kecil-kal",
+      "nama": "Sub sistem kecil lainnya (Kalimantan)",
+      "tingkat": "generik",
+      "rp_kwh": 2805.5,
+      "sen_usd": 19.25
+     }
+    ],
+    "riwayat": [
+     {
+      "tahun": 2020,
+      "kepmen": "169.K/HK.02/MEM.M/2021",
+      "nilai_rp_kwh": 1244.07,
+      "nilai_sen_usd": 8.54,
+      "nasional_rp_kwh": 1027.7
+     },
+     {
+      "tahun": 2018,
+      "kepmen": "55 K/20/MEM/2019",
+      "nilai_rp_kwh": 1682,
+      "nilai_sen_usd": 11.8,
+      "nasional_rp_kwh": 1119
+     },
+     {
+      "tahun": 2017,
+      "kepmen": "1772 K/20/MEM/2018",
+      "nilai_rp_kwh": 1149,
+      "nilai_sen_usd": 8.58,
+      "nasional_rp_kwh": 1025
+     },
+     {
+      "tahun": 2016,
+      "kepmen": "1404 K/20/MEM/2017",
+      "nilai_rp_kwh": 1203,
+      "nilai_sen_usd": 9.04,
+      "nasional_rp_kwh": 983
+     }
+    ],
+    "sumber_id": "kepmen-bpp",
+    "catatan": "BPP pembangkitan sistem utama provinsi, BPP tahun 2020 (Kepmen ESDM 169.K/HK.02/MEM.M/2021); bukan BPP tersambung/tegangan. Sistem kecil terisolasi dan \"sub sistem kecil lainnya\" tercantum di sistem[]"
    },
    "faktor_lokasi": {
     "F": 1.1,
@@ -3439,11 +4676,63 @@
     }
    },
    "bpp": {
-    "rp_per_kwh": null,
-    "sistem": null,
-    "tahun": null,
-    "sumber_id": null,
-    "catatan": "Kepmen ESDM BPP pembangkitan terbaru belum terambil (jdih.esdm.go.id menolak klien otomatis); isi manual dari Kepmen resmi"
+    "nilai_rp_kwh": 1244.07,
+    "nilai_sen_usd": 8.54,
+    "tahun_bpp": 2020,
+    "kepmen": "169.K/HK.02/MEM.M/2021",
+    "nasional_rp_kwh": 1027.7,
+    "sistem_utama": {
+     "kunci": "kalselteng",
+     "nama": "Kalimantan Selatan dan Tengah"
+    },
+    "sistem": [
+     {
+      "kunci": "kalselteng",
+      "nama": "Kalimantan Selatan dan Tengah",
+      "tingkat": "sistem",
+      "rp_kwh": 1244.07,
+      "sen_usd": 8.54
+     },
+     {
+      "kunci": "kecil-kal",
+      "nama": "Sub sistem kecil lainnya (Kalimantan)",
+      "tingkat": "generik",
+      "rp_kwh": 2805.5,
+      "sen_usd": 19.25
+     }
+    ],
+    "riwayat": [
+     {
+      "tahun": 2020,
+      "kepmen": "169.K/HK.02/MEM.M/2021",
+      "nilai_rp_kwh": 1244.07,
+      "nilai_sen_usd": 8.54,
+      "nasional_rp_kwh": 1027.7
+     },
+     {
+      "tahun": 2018,
+      "kepmen": "55 K/20/MEM/2019",
+      "nilai_rp_kwh": 1682,
+      "nilai_sen_usd": 11.8,
+      "nasional_rp_kwh": 1119
+     },
+     {
+      "tahun": 2017,
+      "kepmen": "1772 K/20/MEM/2018",
+      "nilai_rp_kwh": 1149,
+      "nilai_sen_usd": 8.58,
+      "nasional_rp_kwh": 1025
+     },
+     {
+      "tahun": 2016,
+      "kepmen": "1404 K/20/MEM/2017",
+      "nilai_rp_kwh": 1203,
+      "nilai_sen_usd": 9.04,
+      "nasional_rp_kwh": 983
+     }
+    ],
+    "sumber_id": "kepmen-bpp",
+    "catatan": "BPP pembangkitan sistem utama provinsi, BPP tahun 2020 (Kepmen ESDM 169.K/HK.02/MEM.M/2021); bukan BPP tersambung/tegangan. Sistem kecil terisolasi dan \"sub sistem kecil lainnya\" tercantum di sistem[]"
    },
    "faktor_lokasi": {
     "F": 1.1,
@@ -3581,11 +4870,63 @@
     }
    },
    "bpp": {
-    "rp_per_kwh": null,
-    "sistem": null,
-    "tahun": null,
-    "sumber_id": null,
-    "catatan": "Kepmen ESDM BPP pembangkitan terbaru belum terambil (jdih.esdm.go.id menolak klien otomatis); isi manual dari Kepmen resmi"
+    "nilai_rp_kwh": 1321.11,
+    "nilai_sen_usd": 9.07,
+    "tahun_bpp": 2020,
+    "kepmen": "169.K/HK.02/MEM.M/2021",
+    "nasional_rp_kwh": 1027.7,
+    "sistem_utama": {
+     "kunci": "kaltimra",
+     "nama": "Kalimantan Timur dan Utara"
+    },
+    "sistem": [
+     {
+      "kunci": "kaltimra",
+      "nama": "Kalimantan Timur dan Utara",
+      "tingkat": "sistem",
+      "rp_kwh": 1321.11,
+      "sen_usd": 9.07
+     },
+     {
+      "kunci": "kecil-kal",
+      "nama": "Sub sistem kecil lainnya (Kalimantan)",
+      "tingkat": "generik",
+      "rp_kwh": 2805.5,
+      "sen_usd": 19.25
+     }
+    ],
+    "riwayat": [
+     {
+      "tahun": 2020,
+      "kepmen": "169.K/HK.02/MEM.M/2021",
+      "nilai_rp_kwh": 1321.11,
+      "nilai_sen_usd": 9.07,
+      "nasional_rp_kwh": 1027.7
+     },
+     {
+      "tahun": 2018,
+      "kepmen": "55 K/20/MEM/2019",
+      "nilai_rp_kwh": 1507,
+      "nilai_sen_usd": 10.58,
+      "nasional_rp_kwh": 1119
+     },
+     {
+      "tahun": 2017,
+      "kepmen": "1772 K/20/MEM/2018",
+      "nilai_rp_kwh": 1481,
+      "nilai_sen_usd": 11.07,
+      "nasional_rp_kwh": 1025
+     },
+     {
+      "tahun": 2016,
+      "kepmen": "1404 K/20/MEM/2017",
+      "nilai_rp_kwh": 1357,
+      "nilai_sen_usd": 10.2,
+      "nasional_rp_kwh": 983
+     }
+    ],
+    "sumber_id": "kepmen-bpp",
+    "catatan": "BPP pembangkitan sistem utama provinsi, BPP tahun 2020 (Kepmen ESDM 169.K/HK.02/MEM.M/2021); bukan BPP tersambung/tegangan. Sistem kecil terisolasi dan \"sub sistem kecil lainnya\" tercantum di sistem[]"
    },
    "faktor_lokasi": {
     "F": 1.1,
@@ -3721,11 +5062,63 @@
     }
    },
    "bpp": {
-    "rp_per_kwh": null,
-    "sistem": null,
-    "tahun": null,
-    "sumber_id": null,
-    "catatan": "Kepmen ESDM BPP pembangkitan terbaru belum terambil (jdih.esdm.go.id menolak klien otomatis); isi manual dari Kepmen resmi"
+    "nilai_rp_kwh": 1321.11,
+    "nilai_sen_usd": 9.07,
+    "tahun_bpp": 2020,
+    "kepmen": "169.K/HK.02/MEM.M/2021",
+    "nasional_rp_kwh": 1027.7,
+    "sistem_utama": {
+     "kunci": "kaltimra",
+     "nama": "Kalimantan Timur dan Utara"
+    },
+    "sistem": [
+     {
+      "kunci": "kaltimra",
+      "nama": "Kalimantan Timur dan Utara",
+      "tingkat": "sistem",
+      "rp_kwh": 1321.11,
+      "sen_usd": 9.07
+     },
+     {
+      "kunci": "kecil-kal",
+      "nama": "Sub sistem kecil lainnya (Kalimantan)",
+      "tingkat": "generik",
+      "rp_kwh": 2805.5,
+      "sen_usd": 19.25
+     }
+    ],
+    "riwayat": [
+     {
+      "tahun": 2020,
+      "kepmen": "169.K/HK.02/MEM.M/2021",
+      "nilai_rp_kwh": 1321.11,
+      "nilai_sen_usd": 9.07,
+      "nasional_rp_kwh": 1027.7
+     },
+     {
+      "tahun": 2018,
+      "kepmen": "55 K/20/MEM/2019",
+      "nilai_rp_kwh": 1507,
+      "nilai_sen_usd": 10.58,
+      "nasional_rp_kwh": 1119
+     },
+     {
+      "tahun": 2017,
+      "kepmen": "1772 K/20/MEM/2018",
+      "nilai_rp_kwh": 1481,
+      "nilai_sen_usd": 11.07,
+      "nasional_rp_kwh": 1025
+     },
+     {
+      "tahun": 2016,
+      "kepmen": "1404 K/20/MEM/2017",
+      "nilai_rp_kwh": 1357,
+      "nilai_sen_usd": 10.2,
+      "nasional_rp_kwh": 983
+     }
+    ],
+    "sumber_id": "kepmen-bpp",
+    "catatan": "BPP pembangkitan sistem utama provinsi, BPP tahun 2020 (Kepmen ESDM 169.K/HK.02/MEM.M/2021); bukan BPP tersambung/tegangan. Sistem kecil terisolasi dan \"sub sistem kecil lainnya\" tercantum di sistem[]"
    },
    "faktor_lokasi": {
     "F": 1.1,
@@ -3861,11 +5254,70 @@
     }
    },
    "bpp": {
-    "rp_per_kwh": null,
-    "sistem": null,
-    "tahun": null,
-    "sumber_id": null,
-    "catatan": "Kepmen ESDM BPP pembangkitan terbaru belum terambil (jdih.esdm.go.id menolak klien otomatis); isi manual dari Kepmen resmi"
+    "nilai_rp_kwh": 1540.41,
+    "nilai_sen_usd": 10.57,
+    "tahun_bpp": 2020,
+    "kepmen": "169.K/HK.02/MEM.M/2021",
+    "nasional_rp_kwh": 1027.7,
+    "sistem_utama": {
+     "kunci": "sulbagut",
+     "nama": "Sulawesi Bagian Utara (Manado, Gorontalo, Kotamobagu)"
+    },
+    "sistem": [
+     {
+      "kunci": "sulbagut",
+      "nama": "Sulawesi Bagian Utara (Manado, Gorontalo, Kotamobagu)",
+      "tingkat": "sistem",
+      "rp_kwh": 1540.41,
+      "sen_usd": 10.57
+     },
+     {
+      "kunci": "tahuna",
+      "nama": "Tahuna",
+      "tingkat": "sub",
+      "rp_kwh": 2192.08,
+      "sen_usd": 15.04
+     },
+     {
+      "kunci": "kecil-sulawesi",
+      "nama": "Sub sistem kecil lainnya (Sulawesi)",
+      "tingkat": "generik",
+      "rp_kwh": 2805.5,
+      "sen_usd": 19.25
+     }
+    ],
+    "riwayat": [
+     {
+      "tahun": 2020,
+      "kepmen": "169.K/HK.02/MEM.M/2021",
+      "nilai_rp_kwh": 1540.41,
+      "nilai_sen_usd": 10.57,
+      "nasional_rp_kwh": 1027.7
+     },
+     {
+      "tahun": 2018,
+      "kepmen": "55 K/20/MEM/2019",
+      "nilai_rp_kwh": 1918,
+      "nilai_sen_usd": 13.46,
+      "nasional_rp_kwh": 1119
+     },
+     {
+      "tahun": 2017,
+      "kepmen": "1772 K/20/MEM/2018",
+      "nilai_rp_kwh": 1739,
+      "nilai_sen_usd": 13,
+      "nasional_rp_kwh": 1025
+     },
+     {
+      "tahun": 2016,
+      "kepmen": "1404 K/20/MEM/2017",
+      "nilai_rp_kwh": 1669,
+      "nilai_sen_usd": 12.54,
+      "nasional_rp_kwh": 983
+     }
+    ],
+    "sumber_id": "kepmen-bpp",
+    "catatan": "BPP pembangkitan sistem utama provinsi, BPP tahun 2020 (Kepmen ESDM 169.K/HK.02/MEM.M/2021); bukan BPP tersambung/tegangan. Sistem kecil terisolasi dan \"sub sistem kecil lainnya\" tercantum di sistem[]"
    },
    "faktor_lokasi": {
     "F": 1.1,
@@ -4001,11 +5453,77 @@
     }
    },
    "bpp": {
-    "rp_per_kwh": null,
-    "sistem": null,
-    "tahun": null,
-    "sumber_id": null,
-    "catatan": "Kepmen ESDM BPP pembangkitan terbaru belum terambil (jdih.esdm.go.id menolak klien otomatis); isi manual dari Kepmen resmi"
+    "nilai_rp_kwh": 1090.58,
+    "nilai_sen_usd": 7.48,
+    "tahun_bpp": 2020,
+    "kepmen": "169.K/HK.02/MEM.M/2021",
+    "nasional_rp_kwh": 1027.7,
+    "sistem_utama": {
+     "kunci": "palu",
+     "nama": "Palu (Poso; grid Sulbagsel)"
+    },
+    "sistem": [
+     {
+      "kunci": "tolitoli",
+      "nama": "Toli-Toli",
+      "tingkat": "sub",
+      "rp_kwh": 1914.9,
+      "sen_usd": 13.14
+     },
+     {
+      "kunci": "palu",
+      "nama": "Palu (Poso; grid Sulbagsel)",
+      "tingkat": "sistem",
+      "rp_kwh": 1090.58,
+      "sen_usd": 7.48
+     },
+     {
+      "kunci": "luwuk",
+      "nama": "Luwuk",
+      "tingkat": "sub",
+      "rp_kwh": 1664.79,
+      "sen_usd": 11.42
+     },
+     {
+      "kunci": "kecil-sulawesi",
+      "nama": "Sub sistem kecil lainnya (Sulawesi)",
+      "tingkat": "generik",
+      "rp_kwh": 2805.5,
+      "sen_usd": 19.25
+     }
+    ],
+    "riwayat": [
+     {
+      "tahun": 2020,
+      "kepmen": "169.K/HK.02/MEM.M/2021",
+      "nilai_rp_kwh": 1090.58,
+      "nilai_sen_usd": 7.48,
+      "nasional_rp_kwh": 1027.7
+     },
+     {
+      "tahun": 2018,
+      "kepmen": "55 K/20/MEM/2019",
+      "nilai_rp_kwh": 1171,
+      "nilai_sen_usd": 8.22,
+      "nasional_rp_kwh": 1119
+     },
+     {
+      "tahun": 2017,
+      "kepmen": "1772 K/20/MEM/2018",
+      "nilai_rp_kwh": 1130,
+      "nilai_sen_usd": 8.44,
+      "nasional_rp_kwh": 1025
+     },
+     {
+      "tahun": 2016,
+      "kepmen": "1404 K/20/MEM/2017",
+      "nilai_rp_kwh": 1016,
+      "nilai_sen_usd": 7.63,
+      "nasional_rp_kwh": 983
+     }
+    ],
+    "sumber_id": "kepmen-bpp",
+    "catatan": "BPP pembangkitan sistem utama provinsi, BPP tahun 2020 (Kepmen ESDM 169.K/HK.02/MEM.M/2021); bukan BPP tersambung/tegangan. Sistem kecil terisolasi dan \"sub sistem kecil lainnya\" tercantum di sistem[]"
    },
    "faktor_lokasi": {
     "F": 1.1,
@@ -4141,11 +5659,70 @@
     }
    },
    "bpp": {
-    "rp_per_kwh": null,
-    "sistem": null,
-    "tahun": null,
-    "sumber_id": null,
-    "catatan": "Kepmen ESDM BPP pembangkitan terbaru belum terambil (jdih.esdm.go.id menolak klien otomatis); isi manual dari Kepmen resmi"
+    "nilai_rp_kwh": 959.02,
+    "nilai_sen_usd": 6.58,
+    "tahun_bpp": 2020,
+    "kepmen": "169.K/HK.02/MEM.M/2021",
+    "nasional_rp_kwh": 1027.7,
+    "sistem_utama": {
+     "kunci": "sulbagsel",
+     "nama": "Sulawesi Bagian Selatan (Sulawesi Selatan dan Sulawesi Barat)"
+    },
+    "sistem": [
+     {
+      "kunci": "sulbagsel",
+      "nama": "Sulawesi Bagian Selatan (Sulawesi Selatan dan Sulawesi Barat)",
+      "tingkat": "sistem",
+      "rp_kwh": 959.02,
+      "sen_usd": 6.58
+     },
+     {
+      "kunci": "selayar",
+      "nama": "Selayar",
+      "tingkat": "sub",
+      "rp_kwh": 2411.58,
+      "sen_usd": 16.55
+     },
+     {
+      "kunci": "kecil-sulawesi",
+      "nama": "Sub sistem kecil lainnya (Sulawesi)",
+      "tingkat": "generik",
+      "rp_kwh": 2805.5,
+      "sen_usd": 19.25
+     }
+    ],
+    "riwayat": [
+     {
+      "tahun": 2020,
+      "kepmen": "169.K/HK.02/MEM.M/2021",
+      "nilai_rp_kwh": 959.02,
+      "nilai_sen_usd": 6.58,
+      "nasional_rp_kwh": 1027.7
+     },
+     {
+      "tahun": 2018,
+      "kepmen": "55 K/20/MEM/2019",
+      "nilai_rp_kwh": 1175,
+      "nilai_sen_usd": 8.25,
+      "nasional_rp_kwh": 1119
+     },
+     {
+      "tahun": 2017,
+      "kepmen": "1772 K/20/MEM/2018",
+      "nilai_rp_kwh": 974,
+      "nilai_sen_usd": 7.28,
+      "nasional_rp_kwh": 1025
+     },
+     {
+      "tahun": 2016,
+      "kepmen": "1404 K/20/MEM/2017",
+      "nilai_rp_kwh": 1016,
+      "nilai_sen_usd": 7.63,
+      "nasional_rp_kwh": 983
+     }
+    ],
+    "sumber_id": "kepmen-bpp",
+    "catatan": "BPP pembangkitan sistem utama provinsi, BPP tahun 2020 (Kepmen ESDM 169.K/HK.02/MEM.M/2021); bukan BPP tersambung/tegangan. Sistem kecil terisolasi dan \"sub sistem kecil lainnya\" tercantum di sistem[]"
    },
    "faktor_lokasi": {
     "F": 1.1,
@@ -4281,11 +5858,70 @@
     }
    },
    "bpp": {
-    "rp_per_kwh": null,
-    "sistem": null,
-    "tahun": null,
-    "sumber_id": null,
-    "catatan": "Kepmen ESDM BPP pembangkitan terbaru belum terambil (jdih.esdm.go.id menolak klien otomatis); isi manual dari Kepmen resmi"
+    "nilai_rp_kwh": 1059.86,
+    "nilai_sen_usd": 7.27,
+    "tahun_bpp": 2020,
+    "kepmen": "169.K/HK.02/MEM.M/2021",
+    "nasional_rp_kwh": 1027.7,
+    "sistem_utama": {
+     "kunci": "kendari",
+     "nama": "Kendari"
+    },
+    "sistem": [
+     {
+      "kunci": "kendari",
+      "nama": "Kendari",
+      "tingkat": "sistem",
+      "rp_kwh": 1059.86,
+      "sen_usd": 7.27
+     },
+     {
+      "kunci": "baubau",
+      "nama": "Bau-Bau",
+      "tingkat": "sub",
+      "rp_kwh": 1570.47,
+      "sen_usd": 10.78
+     },
+     {
+      "kunci": "kecil-sulawesi",
+      "nama": "Sub sistem kecil lainnya (Sulawesi)",
+      "tingkat": "generik",
+      "rp_kwh": 2805.5,
+      "sen_usd": 19.25
+     }
+    ],
+    "riwayat": [
+     {
+      "tahun": 2020,
+      "kepmen": "169.K/HK.02/MEM.M/2021",
+      "nilai_rp_kwh": 1059.86,
+      "nilai_sen_usd": 7.27,
+      "nasional_rp_kwh": 1027.7
+     },
+     {
+      "tahun": 2018,
+      "kepmen": "55 K/20/MEM/2019",
+      "nilai_rp_kwh": 2321,
+      "nilai_sen_usd": 16.29,
+      "nasional_rp_kwh": 1119
+     },
+     {
+      "tahun": 2017,
+      "kepmen": "1772 K/20/MEM/2018",
+      "nilai_rp_kwh": 1925,
+      "nilai_sen_usd": 14.38,
+      "nasional_rp_kwh": 1025
+     },
+     {
+      "tahun": 2016,
+      "kepmen": "1404 K/20/MEM/2017",
+      "nilai_rp_kwh": 1801,
+      "nilai_sen_usd": 13.53,
+      "nasional_rp_kwh": 983
+     }
+    ],
+    "sumber_id": "kepmen-bpp",
+    "catatan": "BPP pembangkitan sistem utama provinsi, BPP tahun 2020 (Kepmen ESDM 169.K/HK.02/MEM.M/2021); bukan BPP tersambung/tegangan. Sistem kecil terisolasi dan \"sub sistem kecil lainnya\" tercantum di sistem[]"
    },
    "faktor_lokasi": {
     "F": 1.1,
@@ -4419,11 +6055,63 @@
     }
    },
    "bpp": {
-    "rp_per_kwh": null,
-    "sistem": null,
-    "tahun": null,
-    "sumber_id": null,
-    "catatan": "Kepmen ESDM BPP pembangkitan terbaru belum terambil (jdih.esdm.go.id menolak klien otomatis); isi manual dari Kepmen resmi"
+    "nilai_rp_kwh": 1540.41,
+    "nilai_sen_usd": 10.57,
+    "tahun_bpp": 2020,
+    "kepmen": "169.K/HK.02/MEM.M/2021",
+    "nasional_rp_kwh": 1027.7,
+    "sistem_utama": {
+     "kunci": "sulbagut",
+     "nama": "Sulawesi Bagian Utara (Manado, Gorontalo, Kotamobagu)"
+    },
+    "sistem": [
+     {
+      "kunci": "sulbagut",
+      "nama": "Sulawesi Bagian Utara (Manado, Gorontalo, Kotamobagu)",
+      "tingkat": "sistem",
+      "rp_kwh": 1540.41,
+      "sen_usd": 10.57
+     },
+     {
+      "kunci": "kecil-sulawesi",
+      "nama": "Sub sistem kecil lainnya (Sulawesi)",
+      "tingkat": "generik",
+      "rp_kwh": 2805.5,
+      "sen_usd": 19.25
+     }
+    ],
+    "riwayat": [
+     {
+      "tahun": 2020,
+      "kepmen": "169.K/HK.02/MEM.M/2021",
+      "nilai_rp_kwh": 1540.41,
+      "nilai_sen_usd": 10.57,
+      "nasional_rp_kwh": 1027.7
+     },
+     {
+      "tahun": 2018,
+      "kepmen": "55 K/20/MEM/2019",
+      "nilai_rp_kwh": 1918,
+      "nilai_sen_usd": 13.46,
+      "nasional_rp_kwh": 1119
+     },
+     {
+      "tahun": 2017,
+      "kepmen": "1772 K/20/MEM/2018",
+      "nilai_rp_kwh": 1739,
+      "nilai_sen_usd": 13,
+      "nasional_rp_kwh": 1025
+     },
+     {
+      "tahun": 2016,
+      "kepmen": "1404 K/20/MEM/2017",
+      "nilai_rp_kwh": 1669,
+      "nilai_sen_usd": 12.54,
+      "nasional_rp_kwh": 983
+     }
+    ],
+    "sumber_id": "kepmen-bpp",
+    "catatan": "BPP pembangkitan sistem utama provinsi, BPP tahun 2020 (Kepmen ESDM 169.K/HK.02/MEM.M/2021); bukan BPP tersambung/tegangan. Sistem kecil terisolasi dan \"sub sistem kecil lainnya\" tercantum di sistem[]"
    },
    "faktor_lokasi": {
     "F": 1.1,
@@ -4557,11 +6245,63 @@
     }
    },
    "bpp": {
-    "rp_per_kwh": null,
-    "sistem": null,
-    "tahun": null,
-    "sumber_id": null,
-    "catatan": "Kepmen ESDM BPP pembangkitan terbaru belum terambil (jdih.esdm.go.id menolak klien otomatis); isi manual dari Kepmen resmi"
+    "nilai_rp_kwh": 959.02,
+    "nilai_sen_usd": 6.58,
+    "tahun_bpp": 2020,
+    "kepmen": "169.K/HK.02/MEM.M/2021",
+    "nasional_rp_kwh": 1027.7,
+    "sistem_utama": {
+     "kunci": "sulbagsel",
+     "nama": "Sulawesi Bagian Selatan (Sulawesi Selatan dan Sulawesi Barat)"
+    },
+    "sistem": [
+     {
+      "kunci": "sulbagsel",
+      "nama": "Sulawesi Bagian Selatan (Sulawesi Selatan dan Sulawesi Barat)",
+      "tingkat": "sistem",
+      "rp_kwh": 959.02,
+      "sen_usd": 6.58
+     },
+     {
+      "kunci": "kecil-sulawesi",
+      "nama": "Sub sistem kecil lainnya (Sulawesi)",
+      "tingkat": "generik",
+      "rp_kwh": 2805.5,
+      "sen_usd": 19.25
+     }
+    ],
+    "riwayat": [
+     {
+      "tahun": 2020,
+      "kepmen": "169.K/HK.02/MEM.M/2021",
+      "nilai_rp_kwh": 959.02,
+      "nilai_sen_usd": 6.58,
+      "nasional_rp_kwh": 1027.7
+     },
+     {
+      "tahun": 2018,
+      "kepmen": "55 K/20/MEM/2019",
+      "nilai_rp_kwh": 1175,
+      "nilai_sen_usd": 8.25,
+      "nasional_rp_kwh": 1119
+     },
+     {
+      "tahun": 2017,
+      "kepmen": "1772 K/20/MEM/2018",
+      "nilai_rp_kwh": 974,
+      "nilai_sen_usd": 7.28,
+      "nasional_rp_kwh": 1025
+     },
+     {
+      "tahun": 2016,
+      "kepmen": "1404 K/20/MEM/2017",
+      "nilai_rp_kwh": 1016,
+      "nilai_sen_usd": 7.63,
+      "nasional_rp_kwh": 983
+     }
+    ],
+    "sumber_id": "kepmen-bpp",
+    "catatan": "BPP pembangkitan sistem utama provinsi, BPP tahun 2020 (Kepmen ESDM 169.K/HK.02/MEM.M/2021); bukan BPP tersambung/tegangan. Sistem kecil terisolasi dan \"sub sistem kecil lainnya\" tercantum di sistem[]"
    },
    "faktor_lokasi": {
     "F": 1.1,
@@ -4695,11 +6435,105 @@
     }
    },
    "bpp": {
-    "rp_per_kwh": null,
-    "sistem": null,
-    "tahun": null,
-    "sumber_id": null,
-    "catatan": "Kepmen ESDM BPP pembangkitan terbaru belum terambil (jdih.esdm.go.id menolak klien otomatis); isi manual dari Kepmen resmi"
+    "nilai_rp_kwh": 2413.34,
+    "nilai_sen_usd": 16.56,
+    "tahun_bpp": 2020,
+    "kepmen": "169.K/HK.02/MEM.M/2021",
+    "nasional_rp_kwh": 1027.7,
+    "sistem_utama": {
+     "kunci": "ambon",
+     "nama": "Ambon"
+    },
+    "sistem": [
+     {
+      "kunci": "ambon",
+      "nama": "Ambon",
+      "tingkat": "sistem",
+      "rp_kwh": 2413.34,
+      "sen_usd": 16.56
+     },
+     {
+      "kunci": "seram",
+      "nama": "Seram",
+      "tingkat": "sub",
+      "rp_kwh": 2168.81,
+      "sen_usd": 14.88
+     },
+     {
+      "kunci": "saparua",
+      "nama": "Saparua",
+      "tingkat": "sub",
+      "rp_kwh": 2503.68,
+      "sen_usd": 17.18
+     },
+     {
+      "kunci": "buru",
+      "nama": "Buru",
+      "tingkat": "sub",
+      "rp_kwh": 2351.91,
+      "sen_usd": 16.14
+     },
+     {
+      "kunci": "tual",
+      "nama": "Tual",
+      "tingkat": "sub",
+      "rp_kwh": 1283.31,
+      "sen_usd": 8.81
+     },
+     {
+      "kunci": "dobo",
+      "nama": "Dobo",
+      "tingkat": "sub",
+      "rp_kwh": 2215.93,
+      "sen_usd": 15.21
+     },
+     {
+      "kunci": "saumlaki",
+      "nama": "Saumlaki",
+      "tingkat": "sub",
+      "rp_kwh": 2383.69,
+      "sen_usd": 16.36
+     },
+     {
+      "kunci": "kecil-papua",
+      "nama": "Sub sistem kecil lainnya (Maluku dan Papua)",
+      "tingkat": "generik",
+      "rp_kwh": 2805.5,
+      "sen_usd": 19.25
+     }
+    ],
+    "riwayat": [
+     {
+      "tahun": 2020,
+      "kepmen": "169.K/HK.02/MEM.M/2021",
+      "nilai_rp_kwh": 2413.34,
+      "nilai_sen_usd": 16.56,
+      "nasional_rp_kwh": 1027.7
+     },
+     {
+      "tahun": 2018,
+      "kepmen": "55 K/20/MEM/2019",
+      "nilai_rp_kwh": 3010,
+      "nilai_sen_usd": 21.13,
+      "nasional_rp_kwh": 1119
+     },
+     {
+      "tahun": 2017,
+      "kepmen": "1772 K/20/MEM/2018",
+      "nilai_rp_kwh": 2677,
+      "nilai_sen_usd": 20,
+      "nasional_rp_kwh": 1025
+     },
+     {
+      "tahun": 2016,
+      "kepmen": "1404 K/20/MEM/2017",
+      "nilai_rp_kwh": 1680,
+      "nilai_sen_usd": 12.62,
+      "nasional_rp_kwh": 983
+     }
+    ],
+    "sumber_id": "kepmen-bpp",
+    "catatan": "BPP pembangkitan sistem utama provinsi, BPP tahun 2020 (Kepmen ESDM 169.K/HK.02/MEM.M/2021); bukan BPP tersambung/tegangan. Sistem kecil terisolasi dan \"sub sistem kecil lainnya\" tercantum di sistem[]"
    },
    "faktor_lokasi": {
     "F": 1.25,
@@ -4833,11 +6667,91 @@
     }
    },
    "bpp": {
-    "rp_per_kwh": null,
-    "sistem": null,
-    "tahun": null,
-    "sumber_id": null,
-    "catatan": "Kepmen ESDM BPP pembangkitan terbaru belum terambil (jdih.esdm.go.id menolak klien otomatis); isi manual dari Kepmen resmi"
+    "nilai_rp_kwh": 2199.09,
+    "nilai_sen_usd": 15.09,
+    "tahun_bpp": 2020,
+    "kepmen": "169.K/HK.02/MEM.M/2021",
+    "nasional_rp_kwh": 1027.7,
+    "sistem_utama": {
+     "kunci": "ternate",
+     "nama": "Ternate-Tidore"
+    },
+    "sistem": [
+     {
+      "kunci": "ternate",
+      "nama": "Ternate-Tidore",
+      "tingkat": "sistem",
+      "rp_kwh": 2199.09,
+      "sen_usd": 15.09
+     },
+     {
+      "kunci": "sanana",
+      "nama": "Sanana",
+      "tingkat": "sub",
+      "rp_kwh": 2108.79,
+      "sen_usd": 14.47
+     },
+     {
+      "kunci": "bacan",
+      "nama": "Bacan",
+      "tingkat": "sub",
+      "rp_kwh": 2297.16,
+      "sen_usd": 15.76
+     },
+     {
+      "kunci": "halmahera",
+      "nama": "Halmahera (Tobelo, Malifut, Jailolo, Sofifi, Maba)",
+      "tingkat": "sub",
+      "rp_kwh": 2316.73,
+      "sen_usd": 15.9
+     },
+     {
+      "kunci": "daruba",
+      "nama": "Daruba",
+      "tingkat": "sub",
+      "rp_kwh": 2600.3,
+      "sen_usd": 17.84
+     },
+     {
+      "kunci": "kecil-papua",
+      "nama": "Sub sistem kecil lainnya (Maluku dan Papua)",
+      "tingkat": "generik",
+      "rp_kwh": 2805.5,
+      "sen_usd": 19.25
+     }
+    ],
+    "riwayat": [
+     {
+      "tahun": 2020,
+      "kepmen": "169.K/HK.02/MEM.M/2021",
+      "nilai_rp_kwh": 2199.09,
+      "nilai_sen_usd": 15.09,
+      "nasional_rp_kwh": 1027.7
+     },
+     {
+      "tahun": 2018,
+      "kepmen": "55 K/20/MEM/2019",
+      "nilai_rp_kwh": 2299,
+      "nilai_sen_usd": 16.13,
+      "nasional_rp_kwh": 1119
+     },
+     {
+      "tahun": 2017,
+      "kepmen": "1772 K/20/MEM/2018",
+      "nilai_rp_kwh": 2677,
+      "nilai_sen_usd": 20,
+      "nasional_rp_kwh": 1025
+     },
+     {
+      "tahun": 2016,
+      "kepmen": "1404 K/20/MEM/2017",
+      "nilai_rp_kwh": 1971,
+      "nilai_sen_usd": 14.81,
+      "nasional_rp_kwh": 983
+     }
+    ],
+    "sumber_id": "kepmen-bpp",
+    "catatan": "BPP pembangkitan sistem utama provinsi, BPP tahun 2020 (Kepmen ESDM 169.K/HK.02/MEM.M/2021); bukan BPP tersambung/tegangan. Sistem kecil terisolasi dan \"sub sistem kecil lainnya\" tercantum di sistem[]"
    },
    "faktor_lokasi": {
     "F": 1.25,
@@ -4981,11 +6895,84 @@
     }
    },
    "bpp": {
-    "rp_per_kwh": null,
-    "sistem": null,
-    "tahun": null,
-    "sumber_id": null,
-    "catatan": "Kepmen ESDM BPP pembangkitan terbaru belum terambil (jdih.esdm.go.id menolak klien otomatis); isi manual dari Kepmen resmi"
+    "nilai_rp_kwh": 1800.36,
+    "nilai_sen_usd": 12.35,
+    "tahun_bpp": 2020,
+    "kepmen": "169.K/HK.02/MEM.M/2021",
+    "nasional_rp_kwh": 1027.7,
+    "sistem_utama": {
+     "kunci": "jayapura",
+     "nama": "Jayapura"
+    },
+    "sistem": [
+     {
+      "kunci": "jayapura",
+      "nama": "Jayapura",
+      "tingkat": "sistem",
+      "rp_kwh": 1800.36,
+      "sen_usd": 12.35
+     },
+     {
+      "kunci": "sarmi",
+      "nama": "Sarmi",
+      "tingkat": "sub",
+      "rp_kwh": 2508.87,
+      "sen_usd": 17.22
+     },
+     {
+      "kunci": "biak",
+      "nama": "Biak",
+      "tingkat": "sub",
+      "rp_kwh": 1961.93,
+      "sen_usd": 13.46
+     },
+     {
+      "kunci": "serui",
+      "nama": "Serui",
+      "tingkat": "sub",
+      "rp_kwh": 2250.53,
+      "sen_usd": 15.44
+     },
+     {
+      "kunci": "kecil-papua",
+      "nama": "Sub sistem kecil lainnya (Maluku dan Papua)",
+      "tingkat": "generik",
+      "rp_kwh": 2805.5,
+      "sen_usd": 19.25
+     }
+    ],
+    "riwayat": [
+     {
+      "tahun": 2020,
+      "kepmen": "169.K/HK.02/MEM.M/2021",
+      "nilai_rp_kwh": 1800.36,
+      "nilai_sen_usd": 12.35,
+      "nasional_rp_kwh": 1027.7
+     },
+     {
+      "tahun": 2018,
+      "kepmen": "55 K/20/MEM/2019",
+      "nilai_rp_kwh": 2162,
+      "nilai_sen_usd": 15.17,
+      "nasional_rp_kwh": 1119
+     },
+     {
+      "tahun": 2017,
+      "kepmen": "1772 K/20/MEM/2018",
+      "nilai_rp_kwh": 1844,
+      "nilai_sen_usd": 13.78,
+      "nasional_rp_kwh": 1025
+     },
+     {
+      "tahun": 2016,
+      "kepmen": "1404 K/20/MEM/2017",
+      "nilai_rp_kwh": 1959,
+      "nilai_sen_usd": 14.72,
+      "nasional_rp_kwh": 983
+     }
+    ],
+    "sumber_id": "kepmen-bpp",
+    "catatan": "BPP pembangkitan sistem utama provinsi, BPP tahun 2020 (Kepmen ESDM 169.K/HK.02/MEM.M/2021); bukan BPP tersambung/tegangan. Sistem kecil terisolasi dan \"sub sistem kecil lainnya\" tercantum di sistem[]"
    },
    "faktor_lokasi": {
     "F": 1.5,
@@ -5129,11 +7116,84 @@
     }
    },
    "bpp": {
-    "rp_per_kwh": null,
-    "sistem": null,
-    "tahun": null,
-    "sumber_id": null,
-    "catatan": "Kepmen ESDM BPP pembangkitan terbaru belum terambil (jdih.esdm.go.id menolak klien otomatis); isi manual dari Kepmen resmi"
+    "nilai_rp_kwh": 1602.29,
+    "nilai_sen_usd": 11,
+    "tahun_bpp": 2020,
+    "kepmen": "169.K/HK.02/MEM.M/2021",
+    "nasional_rp_kwh": 1027.7,
+    "sistem_utama": {
+     "kunci": "manokwari",
+     "nama": "Manokwari"
+    },
+    "sistem": [
+     {
+      "kunci": "manokwari",
+      "nama": "Manokwari",
+      "tingkat": "sistem",
+      "rp_kwh": 1602.29,
+      "sen_usd": 11
+     },
+     {
+      "kunci": "fakfak",
+      "nama": "Fak Fak",
+      "tingkat": "sub",
+      "rp_kwh": 2054.03,
+      "sen_usd": 14.1
+     },
+     {
+      "kunci": "kaimana",
+      "nama": "Kaimana",
+      "tingkat": "sub",
+      "rp_kwh": 2225.73,
+      "sen_usd": 15.27
+     },
+     {
+      "kunci": "bintuni",
+      "nama": "Bintuni",
+      "tingkat": "sub",
+      "rp_kwh": 2403.14,
+      "sen_usd": 16.49
+     },
+     {
+      "kunci": "kecil-papua",
+      "nama": "Sub sistem kecil lainnya (Maluku dan Papua)",
+      "tingkat": "generik",
+      "rp_kwh": 2805.5,
+      "sen_usd": 19.25
+     }
+    ],
+    "riwayat": [
+     {
+      "tahun": 2020,
+      "kepmen": "169.K/HK.02/MEM.M/2021",
+      "nilai_rp_kwh": 1602.29,
+      "nilai_sen_usd": 11,
+      "nasional_rp_kwh": 1027.7
+     },
+     {
+      "tahun": 2018,
+      "kepmen": "55 K/20/MEM/2019",
+      "nilai_rp_kwh": 2018,
+      "nilai_sen_usd": 14.17,
+      "nasional_rp_kwh": 1119
+     },
+     {
+      "tahun": 2017,
+      "kepmen": "1772 K/20/MEM/2018",
+      "nilai_rp_kwh": 1978,
+      "nilai_sen_usd": 14.78,
+      "nasional_rp_kwh": 1025
+     },
+     {
+      "tahun": 2016,
+      "kepmen": "1404 K/20/MEM/2017",
+      "nilai_rp_kwh": 1760,
+      "nilai_sen_usd": 13.23,
+      "nasional_rp_kwh": 983
+     }
+    ],
+    "sumber_id": "kepmen-bpp",
+    "catatan": "BPP pembangkitan sistem utama provinsi, BPP tahun 2020 (Kepmen ESDM 169.K/HK.02/MEM.M/2021); bukan BPP tersambung/tegangan. Sistem kecil terisolasi dan \"sub sistem kecil lainnya\" tercantum di sistem[]"
    },
    "faktor_lokasi": {
     "F": 1.5,
@@ -5277,11 +7337,70 @@
     }
    },
    "bpp": {
-    "rp_per_kwh": null,
-    "sistem": null,
-    "tahun": null,
-    "sumber_id": null,
-    "catatan": "Kepmen ESDM BPP pembangkitan terbaru belum terambil (jdih.esdm.go.id menolak klien otomatis); isi manual dari Kepmen resmi"
+    "nilai_rp_kwh": 2349.75,
+    "nilai_sen_usd": 16.12,
+    "tahun_bpp": 2020,
+    "kepmen": "169.K/HK.02/MEM.M/2021",
+    "nasional_rp_kwh": 1027.7,
+    "sistem_utama": {
+     "kunci": "merauke",
+     "nama": "Merauke"
+    },
+    "sistem": [
+     {
+      "kunci": "merauke",
+      "nama": "Merauke",
+      "tingkat": "sistem",
+      "rp_kwh": 2349.75,
+      "sen_usd": 16.12
+     },
+     {
+      "kunci": "tanah-merah",
+      "nama": "Tanah Merah",
+      "tingkat": "sub",
+      "rp_kwh": 2400.62,
+      "sen_usd": 16.47
+     },
+     {
+      "kunci": "kecil-papua",
+      "nama": "Sub sistem kecil lainnya (Maluku dan Papua)",
+      "tingkat": "generik",
+      "rp_kwh": 2805.5,
+      "sen_usd": 19.25
+     }
+    ],
+    "riwayat": [
+     {
+      "tahun": 2020,
+      "kepmen": "169.K/HK.02/MEM.M/2021",
+      "nilai_rp_kwh": 2349.75,
+      "nilai_sen_usd": 16.12,
+      "nasional_rp_kwh": 1027.7
+     },
+     {
+      "tahun": 2018,
+      "kepmen": "55 K/20/MEM/2019",
+      "nilai_rp_kwh": 2593,
+      "nilai_sen_usd": 18.2,
+      "nasional_rp_kwh": 1119
+     },
+     {
+      "tahun": 2017,
+      "kepmen": "1772 K/20/MEM/2018",
+      "nilai_rp_kwh": 2059,
+      "nilai_sen_usd": 15.39,
+      "nasional_rp_kwh": 1025
+     },
+     {
+      "tahun": 2016,
+      "kepmen": "1404 K/20/MEM/2017",
+      "nilai_rp_kwh": 1704,
+      "nilai_sen_usd": 12.8,
+      "nasional_rp_kwh": 983
+     }
+    ],
+    "sumber_id": "kepmen-bpp",
+    "catatan": "BPP pembangkitan sistem utama provinsi, BPP tahun 2020 (Kepmen ESDM 169.K/HK.02/MEM.M/2021); bukan BPP tersambung/tegangan. Sistem kecil terisolasi dan \"sub sistem kecil lainnya\" tercantum di sistem[]"
    },
    "faktor_lokasi": {
     "F": 1.5,
@@ -5425,11 +7544,70 @@
     }
    },
    "bpp": {
-    "rp_per_kwh": null,
-    "sistem": null,
-    "tahun": null,
-    "sumber_id": null,
-    "catatan": "Kepmen ESDM BPP pembangkitan terbaru belum terambil (jdih.esdm.go.id menolak klien otomatis); isi manual dari Kepmen resmi"
+    "nilai_rp_kwh": 2109.64,
+    "nilai_sen_usd": 14.48,
+    "tahun_bpp": 2020,
+    "kepmen": "169.K/HK.02/MEM.M/2021",
+    "nasional_rp_kwh": 1027.7,
+    "sistem_utama": {
+     "kunci": "nabire",
+     "nama": "Nabire"
+    },
+    "sistem": [
+     {
+      "kunci": "nabire",
+      "nama": "Nabire",
+      "tingkat": "sistem",
+      "rp_kwh": 2109.64,
+      "sen_usd": 14.48
+     },
+     {
+      "kunci": "timika",
+      "nama": "Timika",
+      "tingkat": "sub",
+      "rp_kwh": 1962.06,
+      "sen_usd": 13.46
+     },
+     {
+      "kunci": "kecil-papua",
+      "nama": "Sub sistem kecil lainnya (Maluku dan Papua)",
+      "tingkat": "generik",
+      "rp_kwh": 2805.5,
+      "sen_usd": 19.25
+     }
+    ],
+    "riwayat": [
+     {
+      "tahun": 2020,
+      "kepmen": "169.K/HK.02/MEM.M/2021",
+      "nilai_rp_kwh": 2109.64,
+      "nilai_sen_usd": 14.48,
+      "nasional_rp_kwh": 1027.7
+     },
+     {
+      "tahun": 2018,
+      "kepmen": "55 K/20/MEM/2019",
+      "nilai_rp_kwh": 2191,
+      "nilai_sen_usd": 15.38,
+      "nasional_rp_kwh": 1119
+     },
+     {
+      "tahun": 2017,
+      "kepmen": "1772 K/20/MEM/2018",
+      "nilai_rp_kwh": 1849,
+      "nilai_sen_usd": 13.81,
+      "nasional_rp_kwh": 1025
+     },
+     {
+      "tahun": 2016,
+      "kepmen": "1404 K/20/MEM/2017",
+      "nilai_rp_kwh": 1604,
+      "nilai_sen_usd": 12.06,
+      "nasional_rp_kwh": 983
+     }
+    ],
+    "sumber_id": "kepmen-bpp",
+    "catatan": "BPP pembangkitan sistem utama provinsi, BPP tahun 2020 (Kepmen ESDM 169.K/HK.02/MEM.M/2021); bukan BPP tersambung/tegangan. Sistem kecil terisolasi dan \"sub sistem kecil lainnya\" tercantum di sistem[]"
    },
    "faktor_lokasi": {
     "F": 1.5,
@@ -5573,11 +7751,63 @@
     }
    },
    "bpp": {
-    "rp_per_kwh": null,
-    "sistem": null,
-    "tahun": null,
-    "sumber_id": null,
-    "catatan": "Kepmen ESDM BPP pembangkitan terbaru belum terambil (jdih.esdm.go.id menolak klien otomatis); isi manual dari Kepmen resmi"
+    "nilai_rp_kwh": 2805.5,
+    "nilai_sen_usd": 19.25,
+    "tahun_bpp": 2020,
+    "kepmen": "169.K/HK.02/MEM.M/2021",
+    "nasional_rp_kwh": 1027.7,
+    "sistem_utama": {
+     "kunci": "wamena",
+     "nama": "Wamena"
+    },
+    "sistem": [
+     {
+      "kunci": "wamena",
+      "nama": "Wamena",
+      "tingkat": "sistem",
+      "rp_kwh": 2805.5,
+      "sen_usd": 19.25
+     },
+     {
+      "kunci": "kecil-papua",
+      "nama": "Sub sistem kecil lainnya (Maluku dan Papua)",
+      "tingkat": "generik",
+      "rp_kwh": 2805.5,
+      "sen_usd": 19.25
+     }
+    ],
+    "riwayat": [
+     {
+      "tahun": 2020,
+      "kepmen": "169.K/HK.02/MEM.M/2021",
+      "nilai_rp_kwh": 2805.5,
+      "nilai_sen_usd": 19.25,
+      "nasional_rp_kwh": 1027.7
+     },
+     {
+      "tahun": 2018,
+      "kepmen": "55 K/20/MEM/2019",
+      "nilai_rp_kwh": 3041,
+      "nilai_sen_usd": 21.34,
+      "nasional_rp_kwh": 1119
+     },
+     {
+      "tahun": 2017,
+      "kepmen": "1772 K/20/MEM/2018",
+      "nilai_rp_kwh": 2677,
+      "nilai_sen_usd": 20,
+      "nasional_rp_kwh": 1025
+     },
+     {
+      "tahun": 2016,
+      "kepmen": "1404 K/20/MEM/2017",
+      "nilai_rp_kwh": 2332,
+      "nilai_sen_usd": 17.52,
+      "nasional_rp_kwh": 983
+     }
+    ],
+    "sumber_id": "kepmen-bpp",
+    "catatan": "BPP pembangkitan sistem utama provinsi, BPP tahun 2020 (Kepmen ESDM 169.K/HK.02/MEM.M/2021); bukan BPP tersambung/tegangan. Sistem kecil terisolasi dan \"sub sistem kecil lainnya\" tercantum di sistem[]"
    },
    "faktor_lokasi": {
     "F": 1.5,
@@ -5721,11 +7951,77 @@
     }
    },
    "bpp": {
-    "rp_per_kwh": null,
-    "sistem": null,
-    "tahun": null,
-    "sumber_id": null,
-    "catatan": "Kepmen ESDM BPP pembangkitan terbaru belum terambil (jdih.esdm.go.id menolak klien otomatis); isi manual dari Kepmen resmi"
+    "nilai_rp_kwh": 1491.05,
+    "nilai_sen_usd": 10.23,
+    "tahun_bpp": 2020,
+    "kepmen": "169.K/HK.02/MEM.M/2021",
+    "nasional_rp_kwh": 1027.7,
+    "sistem_utama": {
+     "kunci": "sorong",
+     "nama": "Sorong"
+    },
+    "sistem": [
+     {
+      "kunci": "sorong",
+      "nama": "Sorong",
+      "tingkat": "sistem",
+      "rp_kwh": 1491.05,
+      "sen_usd": 10.23
+     },
+     {
+      "kunci": "teminabuan",
+      "nama": "Teminabuan",
+      "tingkat": "sub",
+      "rp_kwh": 2805.5,
+      "sen_usd": 19.25
+     },
+     {
+      "kunci": "raja-ampat",
+      "nama": "Raja Ampat",
+      "tingkat": "sub",
+      "rp_kwh": 2805.5,
+      "sen_usd": 19.25
+     },
+     {
+      "kunci": "kecil-papua",
+      "nama": "Sub sistem kecil lainnya (Maluku dan Papua)",
+      "tingkat": "generik",
+      "rp_kwh": 2805.5,
+      "sen_usd": 19.25
+     }
+    ],
+    "riwayat": [
+     {
+      "tahun": 2020,
+      "kepmen": "169.K/HK.02/MEM.M/2021",
+      "nilai_rp_kwh": 1491.05,
+      "nilai_sen_usd": 10.23,
+      "nasional_rp_kwh": 1027.7
+     },
+     {
+      "tahun": 2018,
+      "kepmen": "55 K/20/MEM/2019",
+      "nilai_rp_kwh": 1465,
+      "nilai_sen_usd": 10.28,
+      "nasional_rp_kwh": 1119
+     },
+     {
+      "tahun": 2017,
+      "kepmen": "1772 K/20/MEM/2018",
+      "nilai_rp_kwh": 1753,
+      "nilai_sen_usd": 13.1,
+      "nasional_rp_kwh": 1025
+     },
+     {
+      "tahun": 2016,
+      "kepmen": "1404 K/20/MEM/2017",
+      "nilai_rp_kwh": 1305,
+      "nilai_sen_usd": 9.81,
+      "nasional_rp_kwh": 983
+     }
+    ],
+    "sumber_id": "kepmen-bpp",
+    "catatan": "BPP pembangkitan sistem utama provinsi, BPP tahun 2020 (Kepmen ESDM 169.K/HK.02/MEM.M/2021); bukan BPP tersambung/tegangan. Sistem kecil terisolasi dan \"sub sistem kecil lainnya\" tercantum di sistem[]"
    },
    "faktor_lokasi": {
     "F": 1.5,

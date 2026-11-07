@@ -29,8 +29,7 @@ test('tiap angka berisi punya sumber_id terdaftar; tiap teknologi hadir', () => 
       }
     }
     assert.ok(id.has(b.faktor_lokasi.sumber_id) && b.faktor_lokasi.F >= 1);
-    assert.equal(b.bpp.rp_per_kwh, null); // celah diakui, bukan dikarang
-    assert.ok(b.bpp.catatan);
+    assert.ok(b.bpp.nilai_rp_kwh != null ? id.has(b.bpp.sumber_id) : b.bpp.alasan_null); // BPP bersumber atau alasan null
   }
 });
 
@@ -61,6 +60,6 @@ test('harga patokan: tiap teknologi berbunyi, laut null; berkas = hasil bangun (
   const h = P.harga_patokan.teknologi;
   for (const t of ['hidro', 'surya', 'bayu', 'bioenergi', 'panas_bumi']) assert.ok(h[t].tingkat.length >= 3);
   assert.equal(h.laut, null);
-  const ulang = bangun({ ruen: RUEN, harga: baca('data/peluang/harga_patokan.json'), wilayah: W, proyek: PR });
+  const ulang = bangun({ ruen: RUEN, harga: baca('data/peluang/harga_patokan.json'), wilayah: W, proyek: PR, bpp: baca('data/peluang/bpp.json') });
   assert.equal(JSON.stringify(ulang, null, 1) + '\n', fs.readFileSync(new URL('../public/data/peluang.json', import.meta.url), 'utf8'));
 });

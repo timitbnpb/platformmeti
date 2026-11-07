@@ -1,0 +1,1193 @@
+{
+ "_catatan": "Transkripsi Kepmen ESDM Besaran BPP Pembangkitan PT PLN (Persero). Tahun = tahun BPP (bukan tahun terbit). Hasil OCR (Apple Vision) untuk berkas pindai, dicek silang: BPP Rp/kWh dibagi kurs rata-rata BI harus sama dengan sen USD/kWh (tests/bpp.test.mjs). Kepmen 7424/2016 ternyata harga batubara mulut tambang, 18.K/2022 iuran batubara: bukan BPP, tidak dipakai. BPP 2015, 2019, dan 2021 ke atas tidak ada di berkas yang diterima.",
+ "sistem": {
+  "aceh": {
+   "nama": "Aceh",
+   "provinsi": [
+    "11"
+   ],
+   "tingkat": "sistem"
+  },
+  "weh": {
+   "nama": "Pulau Weh",
+   "provinsi": [
+    "11"
+   ],
+   "tingkat": "sub"
+  },
+  "simeulue": {
+   "nama": "Pulau Simeulue",
+   "provinsi": [
+    "11"
+   ],
+   "tingkat": "sub"
+  },
+  "sumut": {
+   "nama": "Sumatera Utara",
+   "provinsi": [
+    "12"
+   ],
+   "tingkat": "sistem"
+  },
+  "nias": {
+   "nama": "Nias",
+   "provinsi": [
+    "12"
+   ],
+   "tingkat": "sub"
+  },
+  "sumbar": {
+   "nama": "Sumatera Barat",
+   "provinsi": [
+    "13"
+   ],
+   "tingkat": "sistem"
+  },
+  "mentawai": {
+   "nama": "Kepulauan Mentawai",
+   "provinsi": [
+    "13"
+   ],
+   "tingkat": "sub"
+  },
+  "riau": {
+   "nama": "Riau (2016: gabungan Riau dan Kepulauan Riau)",
+   "provinsi": [
+    "14"
+   ],
+   "tingkat": "sistem"
+  },
+  "bintan": {
+   "nama": "Bintan",
+   "provinsi": [
+    "21"
+   ],
+   "tingkat": "sub"
+  },
+  "karimun": {
+   "nama": "Tanjung Balai Karimun",
+   "provinsi": [
+    "21"
+   ],
+   "tingkat": "sub"
+  },
+  "natuna": {
+   "nama": "Natuna",
+   "provinsi": [
+    "21"
+   ],
+   "tingkat": "sub"
+  },
+  "anambas": {
+   "nama": "Anambas",
+   "provinsi": [
+    "21"
+   ],
+   "tingkat": "sub"
+  },
+  "s2jb": {
+   "nama": "Sumatera Selatan, Jambi, Bengkulu (S2JB)",
+   "provinsi": [
+    "15",
+    "16",
+    "17"
+   ],
+   "tingkat": "sistem"
+  },
+  "enggano": {
+   "nama": "Pulau Enggano",
+   "provinsi": [
+    "17"
+   ],
+   "tingkat": "sub"
+  },
+  "lampung": {
+   "nama": "Lampung",
+   "provinsi": [
+    "18"
+   ],
+   "tingkat": "sistem"
+  },
+  "bangka": {
+   "nama": "Bangka",
+   "provinsi": [
+    "19"
+   ],
+   "tingkat": "sistem"
+  },
+  "belitung": {
+   "nama": "Belitung",
+   "provinsi": [
+    "19"
+   ],
+   "tingkat": "sistem"
+  },
+  "kecil-sumatera": {
+   "nama": "Sub sistem kepulauan kecil lainnya (Sumatera)",
+   "provinsi": [
+    "11",
+    "12",
+    "13",
+    "14",
+    "15",
+    "16",
+    "17",
+    "18",
+    "19",
+    "21"
+   ],
+   "tingkat": "generik"
+  },
+  "dki": {
+   "nama": "DKI Jakarta",
+   "provinsi": [
+    "31"
+   ],
+   "tingkat": "sistem"
+  },
+  "seribu": {
+   "nama": "Kepulauan Seribu",
+   "provinsi": [
+    "31"
+   ],
+   "tingkat": "sub"
+  },
+  "banten": {
+   "nama": "Banten",
+   "provinsi": [
+    "36"
+   ],
+   "tingkat": "sistem"
+  },
+  "pulau-panjang": {
+   "nama": "Pulau Panjang",
+   "provinsi": [
+    "36"
+   ],
+   "tingkat": "sub"
+  },
+  "jabar": {
+   "nama": "Jawa Barat",
+   "provinsi": [
+    "32"
+   ],
+   "tingkat": "sistem"
+  },
+  "jateng": {
+   "nama": "Jawa Tengah (Jawa Tengah dan DI Yogyakarta, satu sistem Jawa Bali)",
+   "provinsi": [
+    "33",
+    "34"
+   ],
+   "tingkat": "sistem"
+  },
+  "karimun-jawa": {
+   "nama": "Karimun Jawa",
+   "provinsi": [
+    "33"
+   ],
+   "tingkat": "sub"
+  },
+  "jatim": {
+   "nama": "Jawa Timur",
+   "provinsi": [
+    "35"
+   ],
+   "tingkat": "sistem"
+  },
+  "madura": {
+   "nama": "Madura Isolated",
+   "provinsi": [
+    "35"
+   ],
+   "tingkat": "sub"
+  },
+  "bawean": {
+   "nama": "Bawean",
+   "provinsi": [
+    "35"
+   ],
+   "tingkat": "sub"
+  },
+  "gili-ketapang": {
+   "nama": "Gili Ketapang",
+   "provinsi": [
+    "35"
+   ],
+   "tingkat": "sub"
+  },
+  "bali": {
+   "nama": "Bali",
+   "provinsi": [
+    "51"
+   ],
+   "tingkat": "sistem"
+  },
+  "tiga-nusa": {
+   "nama": "Tiga Nusa (Nusa Penida, Nusa Lembongan, Nusa Ceningan)",
+   "provinsi": [
+    "51"
+   ],
+   "tingkat": "sub"
+  },
+  "kecil-jb": {
+   "nama": "Sub sistem kecil lainnya (Jawa Bali)",
+   "provinsi": [
+    "31",
+    "32",
+    "33",
+    "34",
+    "35",
+    "36",
+    "51"
+   ],
+   "tingkat": "generik"
+  },
+  "kalbar": {
+   "nama": "Kalimantan Barat",
+   "provinsi": [
+    "61"
+   ],
+   "tingkat": "sistem"
+  },
+  "kalselteng": {
+   "nama": "Kalimantan Selatan dan Tengah",
+   "provinsi": [
+    "62",
+    "63"
+   ],
+   "tingkat": "sistem"
+  },
+  "kaltimra": {
+   "nama": "Kalimantan Timur dan Utara",
+   "provinsi": [
+    "64",
+    "65"
+   ],
+   "tingkat": "sistem"
+  },
+  "kecil-kal": {
+   "nama": "Sub sistem kecil lainnya (Kalimantan)",
+   "provinsi": [
+    "61",
+    "62",
+    "63",
+    "64",
+    "65"
+   ],
+   "tingkat": "generik"
+  },
+  "sulbagut": {
+   "nama": "Sulawesi Bagian Utara (Manado, Gorontalo, Kotamobagu)",
+   "provinsi": [
+    "71",
+    "75"
+   ],
+   "tingkat": "sistem"
+  },
+  "tolitoli": {
+   "nama": "Toli-Toli",
+   "provinsi": [
+    "72"
+   ],
+   "tingkat": "sub"
+  },
+  "tahuna": {
+   "nama": "Tahuna",
+   "provinsi": [
+    "71"
+   ],
+   "tingkat": "sub"
+  },
+  "palu": {
+   "nama": "Palu (Poso; grid Sulbagsel)",
+   "provinsi": [
+    "72"
+   ],
+   "tingkat": "sistem"
+  },
+  "luwuk": {
+   "nama": "Luwuk",
+   "provinsi": [
+    "72"
+   ],
+   "tingkat": "sub"
+  },
+  "sulbagsel": {
+   "nama": "Sulawesi Bagian Selatan (Sulawesi Selatan dan Sulawesi Barat)",
+   "provinsi": [
+    "73",
+    "76"
+   ],
+   "tingkat": "sistem"
+  },
+  "kendari": {
+   "nama": "Kendari",
+   "provinsi": [
+    "74"
+   ],
+   "tingkat": "sistem"
+  },
+  "baubau": {
+   "nama": "Bau-Bau",
+   "provinsi": [
+    "74"
+   ],
+   "tingkat": "sub"
+  },
+  "selayar": {
+   "nama": "Selayar",
+   "provinsi": [
+    "73"
+   ],
+   "tingkat": "sub"
+  },
+  "kecil-sulawesi": {
+   "nama": "Sub sistem kecil lainnya (Sulawesi)",
+   "provinsi": [
+    "71",
+    "72",
+    "73",
+    "74",
+    "75",
+    "76"
+   ],
+   "tingkat": "generik"
+  },
+  "tambora": {
+   "nama": "Tambora (Bima dan Sumbawa)",
+   "provinsi": [
+    "52"
+   ],
+   "tingkat": "sub"
+  },
+  "bima": {
+   "nama": "Bima",
+   "provinsi": [
+    "52"
+   ],
+   "tingkat": "sub"
+  },
+  "sumbawa": {
+   "nama": "Sumbawa",
+   "provinsi": [
+    "52"
+   ],
+   "tingkat": "sub"
+  },
+  "lombok": {
+   "nama": "Lombok",
+   "provinsi": [
+    "52"
+   ],
+   "tingkat": "sistem"
+  },
+  "sumba": {
+   "nama": "Sumba",
+   "provinsi": [
+    "53"
+   ],
+   "tingkat": "sub"
+  },
+  "timor": {
+   "nama": "Timor",
+   "provinsi": [
+    "53"
+   ],
+   "tingkat": "sistem"
+  },
+  "flores-barat": {
+   "nama": "Flores Bagian Barat",
+   "provinsi": [
+    "53"
+   ],
+   "tingkat": "sub"
+  },
+  "flores-timur": {
+   "nama": "Flores Bagian Timur",
+   "provinsi": [
+    "53"
+   ],
+   "tingkat": "sub"
+  },
+  "kecil-nt": {
+   "nama": "Sub sistem kecil lainnya (Nusa Tenggara)",
+   "provinsi": [
+    "52",
+    "53"
+   ],
+   "tingkat": "generik"
+  },
+  "ambon": {
+   "nama": "Ambon",
+   "provinsi": [
+    "81"
+   ],
+   "tingkat": "sistem"
+  },
+  "seram": {
+   "nama": "Seram",
+   "provinsi": [
+    "81"
+   ],
+   "tingkat": "sub"
+  },
+  "saparua": {
+   "nama": "Saparua",
+   "provinsi": [
+    "81"
+   ],
+   "tingkat": "sub"
+  },
+  "buru": {
+   "nama": "Buru",
+   "provinsi": [
+    "81"
+   ],
+   "tingkat": "sub"
+  },
+  "ternate": {
+   "nama": "Ternate-Tidore",
+   "provinsi": [
+    "82"
+   ],
+   "tingkat": "sistem"
+  },
+  "sanana": {
+   "nama": "Sanana",
+   "provinsi": [
+    "82"
+   ],
+   "tingkat": "sub"
+  },
+  "bacan": {
+   "nama": "Bacan",
+   "provinsi": [
+    "82"
+   ],
+   "tingkat": "sub"
+  },
+  "halmahera": {
+   "nama": "Halmahera (Tobelo, Malifut, Jailolo, Sofifi, Maba)",
+   "provinsi": [
+    "82"
+   ],
+   "tingkat": "sub"
+  },
+  "daruba": {
+   "nama": "Daruba",
+   "provinsi": [
+    "82"
+   ],
+   "tingkat": "sub"
+  },
+  "tual": {
+   "nama": "Tual",
+   "provinsi": [
+    "81"
+   ],
+   "tingkat": "sub"
+  },
+  "dobo": {
+   "nama": "Dobo",
+   "provinsi": [
+    "81"
+   ],
+   "tingkat": "sub"
+  },
+  "saumlaki": {
+   "nama": "Saumlaki",
+   "provinsi": [
+    "81"
+   ],
+   "tingkat": "sub"
+  },
+  "jayapura": {
+   "nama": "Jayapura",
+   "provinsi": [
+    "91"
+   ],
+   "tingkat": "sistem"
+  },
+  "sarmi": {
+   "nama": "Sarmi",
+   "provinsi": [
+    "91"
+   ],
+   "tingkat": "sub"
+  },
+  "biak": {
+   "nama": "Biak",
+   "provinsi": [
+    "91"
+   ],
+   "tingkat": "sub"
+  },
+  "serui": {
+   "nama": "Serui",
+   "provinsi": [
+    "91"
+   ],
+   "tingkat": "sub"
+  },
+  "nabire": {
+   "nama": "Nabire",
+   "provinsi": [
+    "94"
+   ],
+   "tingkat": "sistem"
+  },
+  "wamena": {
+   "nama": "Wamena",
+   "provinsi": [
+    "95"
+   ],
+   "tingkat": "sistem"
+  },
+  "timika": {
+   "nama": "Timika",
+   "provinsi": [
+    "94"
+   ],
+   "tingkat": "sub"
+  },
+  "merauke": {
+   "nama": "Merauke",
+   "provinsi": [
+    "93"
+   ],
+   "tingkat": "sistem"
+  },
+  "tanah-merah": {
+   "nama": "Tanah Merah",
+   "provinsi": [
+    "93"
+   ],
+   "tingkat": "sub"
+  },
+  "manokwari": {
+   "nama": "Manokwari",
+   "provinsi": [
+    "92"
+   ],
+   "tingkat": "sistem"
+  },
+  "sorong": {
+   "nama": "Sorong",
+   "provinsi": [
+    "96"
+   ],
+   "tingkat": "sistem"
+  },
+  "teminabuan": {
+   "nama": "Teminabuan",
+   "provinsi": [
+    "96"
+   ],
+   "tingkat": "sub"
+  },
+  "fakfak": {
+   "nama": "Fak Fak",
+   "provinsi": [
+    "92"
+   ],
+   "tingkat": "sub"
+  },
+  "kaimana": {
+   "nama": "Kaimana",
+   "provinsi": [
+    "92"
+   ],
+   "tingkat": "sub"
+  },
+  "bintuni": {
+   "nama": "Bintuni",
+   "provinsi": [
+    "92"
+   ],
+   "tingkat": "sub"
+  },
+  "raja-ampat": {
+   "nama": "Raja Ampat",
+   "provinsi": [
+    "96"
+   ],
+   "tingkat": "sub"
+  },
+  "kecil-papua": {
+   "nama": "Sub sistem kecil lainnya (Maluku dan Papua)",
+   "provinsi": [
+    "81",
+    "82",
+    "91",
+    "92",
+    "93",
+    "94",
+    "95",
+    "96"
+   ],
+   "tingkat": "generik"
+  },
+  "agg-sumatera": {
+   "nama": "Agregat Sumatera",
+   "provinsi": [
+    "11",
+    "12",
+    "13",
+    "14",
+    "15",
+    "16",
+    "17",
+    "18",
+    "19",
+    "21"
+   ],
+   "tingkat": "agregat"
+  },
+  "agg-jawabali": {
+   "nama": "Agregat Jawa Bali",
+   "provinsi": [
+    "31",
+    "32",
+    "33",
+    "34",
+    "35",
+    "36",
+    "51"
+   ],
+   "tingkat": "agregat"
+  },
+  "agg-kalimantan": {
+   "nama": "Agregat Kalimantan",
+   "provinsi": [
+    "61",
+    "62",
+    "63",
+    "64",
+    "65"
+   ],
+   "tingkat": "agregat"
+  },
+  "agg-sulnt": {
+   "nama": "Agregat Sulawesi dan Nusa Tenggara",
+   "provinsi": [
+    "52",
+    "53",
+    "71",
+    "72",
+    "73",
+    "74",
+    "75",
+    "76"
+   ],
+   "tingkat": "agregat"
+  },
+  "agg-suluttenggo": {
+   "nama": "Agregat Sulawesi Utara, Tengah, Gorontalo",
+   "provinsi": [
+    "71",
+    "72",
+    "75"
+   ],
+   "tingkat": "agregat"
+  },
+  "agg-sulselrabar": {
+   "nama": "Agregat Sulawesi Selatan, Tenggara, Barat",
+   "provinsi": [
+    "73",
+    "74",
+    "76"
+   ],
+   "tingkat": "agregat"
+  },
+  "agg-ntb": {
+   "nama": "Agregat Nusa Tenggara Barat",
+   "provinsi": [
+    "52"
+   ],
+   "tingkat": "agregat"
+  },
+  "agg-ntt": {
+   "nama": "Agregat Nusa Tenggara Timur",
+   "provinsi": [
+    "53"
+   ],
+   "tingkat": "agregat"
+  },
+  "agg-malukupapua": {
+   "nama": "Agregat Maluku dan Papua",
+   "provinsi": [
+    "81",
+    "82",
+    "91",
+    "92",
+    "93",
+    "94",
+    "95",
+    "96"
+   ],
+   "tingkat": "agregat"
+  },
+  "agg-malukumalut": {
+   "nama": "Agregat Maluku dan Maluku Utara",
+   "provinsi": [
+    "81",
+    "82"
+   ],
+   "tingkat": "agregat"
+  },
+  "agg-papua": {
+   "nama": "Agregat Papua dan Papua Barat",
+   "provinsi": [
+    "91",
+    "92",
+    "93",
+    "94",
+    "95",
+    "96"
+   ],
+   "tingkat": "agregat"
+  }
+ },
+ "utama_provinsi": {
+  "11": "aceh",
+  "12": "sumut",
+  "13": "sumbar",
+  "14": "riau",
+  "15": "s2jb",
+  "16": "s2jb",
+  "17": "s2jb",
+  "18": "lampung",
+  "19": "bangka",
+  "21": "bintan",
+  "31": "dki",
+  "32": "jabar",
+  "33": "jateng",
+  "34": "jateng",
+  "35": "jatim",
+  "36": "banten",
+  "51": "bali",
+  "52": "lombok",
+  "53": "timor",
+  "61": "kalbar",
+  "62": "kalselteng",
+  "63": "kalselteng",
+  "64": "kaltimra",
+  "65": "kaltimra",
+  "71": "sulbagut",
+  "72": "palu",
+  "73": "sulbagsel",
+  "74": "kendari",
+  "75": "sulbagut",
+  "76": "sulbagsel",
+  "81": "ambon",
+  "82": "ternate",
+  "91": "jayapura",
+  "92": "manokwari",
+  "93": "merauke",
+  "94": "nabire",
+  "95": "wamena",
+  "96": "sorong"
+ },
+ "tahun": {
+  "2016": {
+   "kepmen": "1404 K/20/MEM/2017",
+   "tanggal_penetapan": "2017-03-27",
+   "berlaku": "1 April 2017 s.d. 31 Maret 2018",
+   "kurs_rp_usd": 13307,
+   "halaman": "Lampiran hlm 5-8",
+   "berkas": "Kepmen-esdm-1404-Th2017.pdf",
+   "metode": "ocr",
+   "nasional": {
+    "rp_kwh": 983,
+    "sen_usd_kwh": 7.39
+   },
+   "baris": [
+    { "kunci": "agg-sumatera", "rp_kwh": 1194, "sen_usd_kwh": 8.98 },
+    { "kunci": "aceh", "rp_kwh": 1383, "sen_usd_kwh": 10.39 },
+    { "kunci": "weh", "rp_kwh": 1733, "sen_usd_kwh": 13.02 },
+    { "kunci": "simeulue", "rp_kwh": 1817, "sen_usd_kwh": 13.65 },
+    { "kunci": "sumut", "rp_kwh": 1235, "sen_usd_kwh": 9.28 },
+    { "kunci": "nias", "rp_kwh": 2049, "sen_usd_kwh": 15.4 },
+    { "kunci": "sumbar", "rp_kwh": 1074, "sen_usd_kwh": 8.07 },
+    { "kunci": "mentawai", "rp_kwh": 2096, "sen_usd_kwh": 15.75 },
+    { "kunci": "riau", "rp_kwh": 1349, "sen_usd_kwh": 10.14 },
+    { "kunci": "bintan", "rp_kwh": 1583, "sen_usd_kwh": 11.9 },
+    { "kunci": "karimun", "rp_kwh": 1706, "sen_usd_kwh": 12.82 },
+    { "kunci": "natuna", "rp_kwh": 2089, "sen_usd_kwh": 15.7 },
+    { "kunci": "anambas", "rp_kwh": 2149, "sen_usd_kwh": 16.15 },
+    { "kunci": "s2jb", "rp_kwh": 1046, "sen_usd_kwh": 7.86 },
+    { "kunci": "enggano", "rp_kwh": 2322, "sen_usd_kwh": 17.45 },
+    { "kunci": "lampung", "rp_kwh": 1034, "sen_usd_kwh": 7.77 },
+    { "kunci": "bangka", "rp_kwh": 1817, "sen_usd_kwh": 13.66 },
+    { "kunci": "belitung", "rp_kwh": 1619, "sen_usd_kwh": 12.17 },
+    { "kunci": "kecil-sumatera", "rp_kwh": 2096, "sen_usd_kwh": 15.75 },
+    { "kunci": "agg-jawabali", "rp_kwh": 868, "sen_usd_kwh": 6.52 },
+    { "kunci": "dki", "rp_kwh": 867, "sen_usd_kwh": 6.51 },
+    { "kunci": "seribu", "rp_kwh": 2332, "sen_usd_kwh": 17.52 },
+    { "kunci": "banten", "rp_kwh": 866, "sen_usd_kwh": 6.51 },
+    { "kunci": "pulau-panjang", "rp_kwh": 2332, "sen_usd_kwh": 17.52 },
+    { "kunci": "jabar", "rp_kwh": 866, "sen_usd_kwh": 6.51 },
+    { "kunci": "jateng", "rp_kwh": 868, "sen_usd_kwh": 6.52 },
+    { "kunci": "karimun-jawa", "rp_kwh": 2332, "sen_usd_kwh": 17.52 },
+    { "kunci": "jatim", "rp_kwh": 870, "sen_usd_kwh": 6.54 },
+    { "kunci": "madura", "rp_kwh": 2332, "sen_usd_kwh": 17.52 },
+    { "kunci": "bawean", "rp_kwh": 1964, "sen_usd_kwh": 14.76 },
+    { "kunci": "gili-ketapang", "rp_kwh": 2332, "sen_usd_kwh": 17.52 },
+    { "kunci": "bali", "rp_kwh": 881, "sen_usd_kwh": 6.62 },
+    { "kunci": "tiga-nusa", "rp_kwh": 1745, "sen_usd_kwh": 13.11 },
+    { "kunci": "kecil-jb", "rp_kwh": 2332, "sen_usd_kwh": 17.52 },
+    { "kunci": "agg-kalimantan", "rp_kwh": 1373, "sen_usd_kwh": 10.31 },
+    { "kunci": "kalbar", "rp_kwh": 1655, "sen_usd_kwh": 12.43 },
+    { "kunci": "kalselteng", "rp_kwh": 1203, "sen_usd_kwh": 9.04 },
+    { "kunci": "kaltimra", "rp_kwh": 1357, "sen_usd_kwh": 10.2 },
+    { "kunci": "kecil-kal", "rp_kwh": 2332, "sen_usd_kwh": 17.52 },
+    { "kunci": "agg-sulnt", "rp_kwh": 1421, "sen_usd_kwh": 10.68 },
+    { "kunci": "agg-suluttenggo", "rp_kwh": 1696, "sen_usd_kwh": 12.75 },
+    { "kunci": "sulbagut", "rp_kwh": 1669, "sen_usd_kwh": 12.54 },
+    { "kunci": "tolitoli", "rp_kwh": 2026, "sen_usd_kwh": 15.22 },
+    { "kunci": "tahuna", "rp_kwh": 2332, "sen_usd_kwh": 17.52 },
+    { "kunci": "palu", "rp_kwh": 1016, "sen_usd_kwh": 7.63 },
+    { "kunci": "luwuk", "rp_kwh": 1759, "sen_usd_kwh": 13.22 },
+    { "kunci": "agg-sulselrabar", "rp_kwh": 1078, "sen_usd_kwh": 8.1 },
+    { "kunci": "sulbagsel", "rp_kwh": 1016, "sen_usd_kwh": 7.63 },
+    { "kunci": "kendari", "rp_kwh": 1801, "sen_usd_kwh": 13.53 },
+    { "kunci": "baubau", "rp_kwh": 2137, "sen_usd_kwh": 16.06 },
+    { "kunci": "selayar", "rp_kwh": 2114, "sen_usd_kwh": 15.88 },
+    { "kunci": "agg-ntb", "rp_kwh": 1821, "sen_usd_kwh": 13.68 },
+    { "kunci": "bima", "rp_kwh": 1880, "sen_usd_kwh": 14.12 },
+    { "kunci": "lombok", "rp_kwh": 1629, "sen_usd_kwh": 12.24 },
+    { "kunci": "sumbawa", "rp_kwh": 1978, "sen_usd_kwh": 14.87 },
+    { "kunci": "agg-ntt", "rp_kwh": 2332, "sen_usd_kwh": 17.52 },
+    { "kunci": "sumba", "rp_kwh": 1887, "sen_usd_kwh": 14.18 },
+    { "kunci": "timor", "rp_kwh": 2226, "sen_usd_kwh": 16.73 },
+    { "kunci": "flores-barat", "rp_kwh": 1751, "sen_usd_kwh": 13.16 },
+    { "kunci": "flores-timur", "rp_kwh": 2070, "sen_usd_kwh": 15.55 },
+    { "kunci": "kecil-nt", "rp_kwh": 2332, "sen_usd_kwh": 17.52 },
+    { "kunci": "agg-malukupapua", "rp_kwh": 2008, "sen_usd_kwh": 15.09 },
+    { "kunci": "agg-malukumalut", "rp_kwh": 2305, "sen_usd_kwh": 17.32 },
+    { "kunci": "ambon", "rp_kwh": 1680, "sen_usd_kwh": 12.62 },
+    { "kunci": "seram", "rp_kwh": 2330, "sen_usd_kwh": 17.51 },
+    { "kunci": "saparua", "rp_kwh": 1626, "sen_usd_kwh": 12.22 },
+    { "kunci": "buru", "rp_kwh": 1728, "sen_usd_kwh": 12.98 },
+    { "kunci": "ternate", "rp_kwh": 1971, "sen_usd_kwh": 14.81 },
+    { "kunci": "sanana", "rp_kwh": 1811, "sen_usd_kwh": 13.61 },
+    { "kunci": "bacan", "rp_kwh": 1811, "sen_usd_kwh": 13.61 },
+    { "kunci": "halmahera", "rp_kwh": 1685, "sen_usd_kwh": 12.67 },
+    { "kunci": "daruba", "rp_kwh": 1587, "sen_usd_kwh": 11.93 },
+    { "kunci": "tual", "rp_kwh": 1657, "sen_usd_kwh": 12.45 },
+    { "kunci": "dobo", "rp_kwh": 2063, "sen_usd_kwh": 15.5 },
+    { "kunci": "saumlaki", "rp_kwh": 1686, "sen_usd_kwh": 12.67 },
+    { "kunci": "agg-papua", "rp_kwh": 1802, "sen_usd_kwh": 13.54 },
+    { "kunci": "jayapura", "rp_kwh": 1959, "sen_usd_kwh": 14.72 },
+    { "kunci": "sarmi", "rp_kwh": 2332, "sen_usd_kwh": 17.52 },
+    { "kunci": "biak", "rp_kwh": 1753, "sen_usd_kwh": 13.17 },
+    { "kunci": "serui", "rp_kwh": 1778, "sen_usd_kwh": 13.36 },
+    { "kunci": "nabire", "rp_kwh": 1604, "sen_usd_kwh": 12.06 },
+    { "kunci": "wamena", "rp_kwh": 2332, "sen_usd_kwh": 17.52 },
+    { "kunci": "timika", "rp_kwh": 1786, "sen_usd_kwh": 13.42 },
+    { "kunci": "merauke", "rp_kwh": 1704, "sen_usd_kwh": 12.8 },
+    { "kunci": "tanah-merah", "rp_kwh": 1704, "sen_usd_kwh": 12.8 },
+    { "kunci": "manokwari", "rp_kwh": 1760, "sen_usd_kwh": 13.23 },
+    { "kunci": "sorong", "rp_kwh": 1305, "sen_usd_kwh": 9.81 },
+    { "kunci": "teminabuan", "rp_kwh": 2332, "sen_usd_kwh": 17.52 },
+    { "kunci": "fakfak", "rp_kwh": 2332, "sen_usd_kwh": 17.52 },
+    { "kunci": "kaimana", "rp_kwh": 2332, "sen_usd_kwh": 17.52 },
+    { "kunci": "bintuni", "rp_kwh": 2332, "sen_usd_kwh": 17.52 },
+    { "kunci": "raja-ampat", "rp_kwh": 2332, "sen_usd_kwh": 17.52 },
+    { "kunci": "kecil-papua", "rp_kwh": 2332, "sen_usd_kwh": 17.52 }
+   ]
+  },
+  "2017": {
+   "kepmen": "1772 K/20/MEM/2018",
+   "tanggal_penetapan": "2018-03-29",
+   "berlaku": "1 April 2018 s.d. 31 Maret 2019",
+   "kurs_rp_usd": 13383,
+   "halaman": "Lampiran hlm 5-7",
+   "berkas": "Kepmen-esdm-1772-Thn 2018.pdf",
+   "metode": "teks",
+   "nasional": {
+    "rp_kwh": 1025,
+    "sen_usd_kwh": 7.66
+   },
+   "baris": [
+    { "kunci": "aceh", "rp_kwh": 1491, "sen_usd_kwh": 11.14 },
+    { "kunci": "weh", "rp_kwh": 1818, "sen_usd_kwh": 13.58 },
+    { "kunci": "simeulue", "rp_kwh": 1602, "sen_usd_kwh": 11.97 },
+    { "kunci": "sumut", "rp_kwh": 1308, "sen_usd_kwh": 9.77 },
+    { "kunci": "nias", "rp_kwh": 2677, "sen_usd_kwh": 20 },
+    { "kunci": "sumbar", "rp_kwh": 971, "sen_usd_kwh": 7.25 },
+    { "kunci": "mentawai", "rp_kwh": 2583, "sen_usd_kwh": 19.3 },
+    { "kunci": "riau", "rp_kwh": 1470, "sen_usd_kwh": 10.98 },
+    { "kunci": "bintan", "rp_kwh": 2052, "sen_usd_kwh": 15.34 },
+    { "kunci": "karimun", "rp_kwh": 1682, "sen_usd_kwh": 12.57 },
+    { "kunci": "natuna", "rp_kwh": 2060, "sen_usd_kwh": 15.39 },
+    { "kunci": "anambas", "rp_kwh": 2677, "sen_usd_kwh": 20 },
+    { "kunci": "s2jb", "rp_kwh": 961, "sen_usd_kwh": 7.18 },
+    { "kunci": "enggano", "rp_kwh": 2677, "sen_usd_kwh": 20 },
+    { "kunci": "lampung", "rp_kwh": 936, "sen_usd_kwh": 6.99 },
+    { "kunci": "bangka", "rp_kwh": 2247, "sen_usd_kwh": 16.79 },
+    { "kunci": "belitung", "rp_kwh": 1887, "sen_usd_kwh": 14.1 },
+    { "kunci": "kecil-sumatera", "rp_kwh": 2677, "sen_usd_kwh": 20 },
+    { "kunci": "dki", "rp_kwh": 911, "sen_usd_kwh": 6.81 },
+    { "kunci": "seribu", "rp_kwh": 2677, "sen_usd_kwh": 20 },
+    { "kunci": "banten", "rp_kwh": 911, "sen_usd_kwh": 6.81 },
+    { "kunci": "pulau-panjang", "rp_kwh": 2677, "sen_usd_kwh": 20 },
+    { "kunci": "jabar", "rp_kwh": 911, "sen_usd_kwh": 6.81 },
+    { "kunci": "jateng", "rp_kwh": 911, "sen_usd_kwh": 6.81 },
+    { "kunci": "karimun-jawa", "rp_kwh": 2677, "sen_usd_kwh": 20 },
+    { "kunci": "jatim", "rp_kwh": 914, "sen_usd_kwh": 6.83 },
+    { "kunci": "madura", "rp_kwh": 2677, "sen_usd_kwh": 20 },
+    { "kunci": "bawean", "rp_kwh": 1699, "sen_usd_kwh": 12.69 },
+    { "kunci": "gili-ketapang", "rp_kwh": 2677, "sen_usd_kwh": 20 },
+    { "kunci": "bali", "rp_kwh": 911, "sen_usd_kwh": 6.81 },
+    { "kunci": "tiga-nusa", "rp_kwh": 2425, "sen_usd_kwh": 18.12 },
+    { "kunci": "kecil-jb", "rp_kwh": 2677, "sen_usd_kwh": 20 },
+    { "kunci": "kalbar", "rp_kwh": 1692, "sen_usd_kwh": 12.64 },
+    { "kunci": "kalselteng", "rp_kwh": 1149, "sen_usd_kwh": 8.58 },
+    { "kunci": "kaltimra", "rp_kwh": 1481, "sen_usd_kwh": 11.07 },
+    { "kunci": "kecil-kal", "rp_kwh": 2677, "sen_usd_kwh": 20 },
+    { "kunci": "sulbagut", "rp_kwh": 1739, "sen_usd_kwh": 13 },
+    { "kunci": "tolitoli", "rp_kwh": 2225, "sen_usd_kwh": 16.62 },
+    { "kunci": "tahuna", "rp_kwh": 2564, "sen_usd_kwh": 19.15 },
+    { "kunci": "palu", "rp_kwh": 1130, "sen_usd_kwh": 8.44 },
+    { "kunci": "luwuk", "rp_kwh": 2099, "sen_usd_kwh": 15.69 },
+    { "kunci": "sulbagsel", "rp_kwh": 974, "sen_usd_kwh": 7.28 },
+    { "kunci": "kendari", "rp_kwh": 1925, "sen_usd_kwh": 14.38 },
+    { "kunci": "baubau", "rp_kwh": 2169, "sen_usd_kwh": 16.21 },
+    { "kunci": "selayar", "rp_kwh": 2043, "sen_usd_kwh": 15.26 },
+    { "kunci": "kecil-sulawesi", "rp_kwh": 2677, "sen_usd_kwh": 20 },
+    { "kunci": "tambora", "rp_kwh": 2239, "sen_usd_kwh": 16.73 },
+    { "kunci": "lombok", "rp_kwh": 1861, "sen_usd_kwh": 13.9 },
+    { "kunci": "sumba", "rp_kwh": 2275, "sen_usd_kwh": 17 },
+    { "kunci": "timor", "rp_kwh": 2421, "sen_usd_kwh": 18.09 },
+    { "kunci": "flores-barat", "rp_kwh": 2372, "sen_usd_kwh": 17.72 },
+    { "kunci": "flores-timur", "rp_kwh": 2207, "sen_usd_kwh": 16.49 },
+    { "kunci": "kecil-nt", "rp_kwh": 2677, "sen_usd_kwh": 20 },
+    { "kunci": "ambon", "rp_kwh": 2677, "sen_usd_kwh": 20 },
+    { "kunci": "seram", "rp_kwh": 2677, "sen_usd_kwh": 20 },
+    { "kunci": "saparua", "rp_kwh": 2221, "sen_usd_kwh": 16.59 },
+    { "kunci": "buru", "rp_kwh": 2206, "sen_usd_kwh": 16.48 },
+    { "kunci": "ternate", "rp_kwh": 2677, "sen_usd_kwh": 20 },
+    { "kunci": "sanana", "rp_kwh": 1871, "sen_usd_kwh": 13.98 },
+    { "kunci": "bacan", "rp_kwh": 1885, "sen_usd_kwh": 14.08 },
+    { "kunci": "halmahera", "rp_kwh": 2677, "sen_usd_kwh": 20 },
+    { "kunci": "daruba", "rp_kwh": 2677, "sen_usd_kwh": 20 },
+    { "kunci": "tual", "rp_kwh": 2677, "sen_usd_kwh": 20 },
+    { "kunci": "dobo", "rp_kwh": 2677, "sen_usd_kwh": 20 },
+    { "kunci": "saumlaki", "rp_kwh": 2239, "sen_usd_kwh": 16.73 },
+    { "kunci": "jayapura", "rp_kwh": 1844, "sen_usd_kwh": 13.78 },
+    { "kunci": "sarmi", "rp_kwh": 1871, "sen_usd_kwh": 13.98 },
+    { "kunci": "biak", "rp_kwh": 2139, "sen_usd_kwh": 15.99 },
+    { "kunci": "serui", "rp_kwh": 1976, "sen_usd_kwh": 14.77 },
+    { "kunci": "nabire", "rp_kwh": 1849, "sen_usd_kwh": 13.81 },
+    { "kunci": "wamena", "rp_kwh": 2677, "sen_usd_kwh": 20 },
+    { "kunci": "timika", "rp_kwh": 2210, "sen_usd_kwh": 16.51 },
+    { "kunci": "merauke", "rp_kwh": 2059, "sen_usd_kwh": 15.39 },
+    { "kunci": "tanah-merah", "rp_kwh": 1915, "sen_usd_kwh": 14.31 },
+    { "kunci": "manokwari", "rp_kwh": 1978, "sen_usd_kwh": 14.78 },
+    { "kunci": "sorong", "rp_kwh": 1753, "sen_usd_kwh": 13.1 },
+    { "kunci": "teminabuan", "rp_kwh": 1868, "sen_usd_kwh": 13.96 },
+    { "kunci": "fakfak", "rp_kwh": 2677, "sen_usd_kwh": 20 },
+    { "kunci": "kaimana", "rp_kwh": 2677, "sen_usd_kwh": 20 },
+    { "kunci": "bintuni", "rp_kwh": 2677, "sen_usd_kwh": 20 },
+    { "kunci": "raja-ampat", "rp_kwh": 2677, "sen_usd_kwh": 20 },
+    { "kunci": "kecil-papua", "rp_kwh": 2677, "sen_usd_kwh": 20 }
+   ]
+  },
+  "2018": {
+   "kepmen": "55 K/20/MEM/2019",
+   "tanggal_penetapan": "2019-03-29",
+   "berlaku": "1 April 2019 s.d. 31 Maret 2020",
+   "kurs_rp_usd": 14246,
+   "halaman": "Lampiran hlm 5-7",
+   "berkas": "Kepmen-esdm-55-Thn 2019.pdf",
+   "metode": "ocr",
+   "nasional": {
+    "rp_kwh": 1119,
+    "sen_usd_kwh": 7.86
+   },
+   "baris": [
+    { "kunci": "aceh", "rp_kwh": 1673, "sen_usd_kwh": 11.74 },
+    { "kunci": "weh", "rp_kwh": 2303, "sen_usd_kwh": 16.16 },
+    { "kunci": "simeulue", "rp_kwh": 2650, "sen_usd_kwh": 18.6 },
+    { "kunci": "sumut", "rp_kwh": 1451, "sen_usd_kwh": 10.18 },
+    { "kunci": "nias", "rp_kwh": 3041, "sen_usd_kwh": 21.34 },
+    { "kunci": "sumbar", "rp_kwh": 1058, "sen_usd_kwh": 7.43 },
+    { "kunci": "mentawai", "rp_kwh": 3041, "sen_usd_kwh": 21.34 },
+    { "kunci": "riau", "rp_kwh": 1655, "sen_usd_kwh": 11.61 },
+    { "kunci": "bintan", "rp_kwh": 1786, "sen_usd_kwh": 12.53 },
+    { "kunci": "karimun", "rp_kwh": 2110, "sen_usd_kwh": 14.81 },
+    { "kunci": "natuna", "rp_kwh": 2239, "sen_usd_kwh": 15.71 },
+    { "kunci": "anambas", "rp_kwh": 2267, "sen_usd_kwh": 15.91 },
+    { "kunci": "s2jb", "rp_kwh": 1061, "sen_usd_kwh": 7.45 },
+    { "kunci": "enggano", "rp_kwh": 3041, "sen_usd_kwh": 21.34 },
+    { "kunci": "lampung", "rp_kwh": 1039, "sen_usd_kwh": 7.29 },
+    { "kunci": "bangka", "rp_kwh": 2681, "sen_usd_kwh": 18.82 },
+    { "kunci": "belitung", "rp_kwh": 1799, "sen_usd_kwh": 12.63 },
+    { "kunci": "kecil-sumatera", "rp_kwh": 3041, "sen_usd_kwh": 21.34 },
+    { "kunci": "dki", "rp_kwh": 985, "sen_usd_kwh": 6.91 },
+    { "kunci": "seribu", "rp_kwh": 1164, "sen_usd_kwh": 8.17 },
+    { "kunci": "banten", "rp_kwh": 985, "sen_usd_kwh": 6.91 },
+    { "kunci": "pulau-panjang", "rp_kwh": 3041, "sen_usd_kwh": 21.34 },
+    { "kunci": "jabar", "rp_kwh": 984, "sen_usd_kwh": 6.91 },
+    { "kunci": "jateng", "rp_kwh": 984, "sen_usd_kwh": 6.91 },
+    { "kunci": "karimun-jawa", "rp_kwh": 3041, "sen_usd_kwh": 21.34 },
+    { "kunci": "jatim", "rp_kwh": 989, "sen_usd_kwh": 6.94 },
+    { "kunci": "madura", "rp_kwh": 3041, "sen_usd_kwh": 21.34 },
+    { "kunci": "bawean", "rp_kwh": 3041, "sen_usd_kwh": 21.34 },
+    { "kunci": "gili-ketapang", "rp_kwh": 3041, "sen_usd_kwh": 21.34 },
+    { "kunci": "bali", "rp_kwh": 985, "sen_usd_kwh": 6.91 },
+    { "kunci": "tiga-nusa", "rp_kwh": 2762, "sen_usd_kwh": 19.39 },
+    { "kunci": "kecil-jb", "rp_kwh": 3041, "sen_usd_kwh": 21.34 },
+    { "kunci": "tambora", "rp_kwh": 2733, "sen_usd_kwh": 19.18 },
+    { "kunci": "lombok", "rp_kwh": 2044, "sen_usd_kwh": 14.35 },
+    { "kunci": "sumba", "rp_kwh": 2964, "sen_usd_kwh": 20.81 },
+    { "kunci": "timor", "rp_kwh": 2588, "sen_usd_kwh": 18.17 },
+    { "kunci": "flores-barat", "rp_kwh": 2504, "sen_usd_kwh": 17.58 },
+    { "kunci": "flores-timur", "rp_kwh": 3031, "sen_usd_kwh": 21.28 },
+    { "kunci": "kecil-nt", "rp_kwh": 3041, "sen_usd_kwh": 21.34 },
+    { "kunci": "kalbar", "rp_kwh": 1525, "sen_usd_kwh": 10.7 },
+    { "kunci": "kalselteng", "rp_kwh": 1682, "sen_usd_kwh": 11.8 },
+    { "kunci": "kaltimra", "rp_kwh": 1507, "sen_usd_kwh": 10.58 },
+    { "kunci": "kecil-kal", "rp_kwh": 3041, "sen_usd_kwh": 21.34 },
+    { "kunci": "sulbagut", "rp_kwh": 1918, "sen_usd_kwh": 13.46 },
+    { "kunci": "tolitoli", "rp_kwh": 2894, "sen_usd_kwh": 20.32 },
+    { "kunci": "tahuna", "rp_kwh": 2929, "sen_usd_kwh": 20.56 },
+    { "kunci": "palu", "rp_kwh": 1171, "sen_usd_kwh": 8.22 },
+    { "kunci": "luwuk", "rp_kwh": 2403, "sen_usd_kwh": 16.87 },
+    { "kunci": "sulbagsel", "rp_kwh": 1175, "sen_usd_kwh": 8.25 },
+    { "kunci": "kendari", "rp_kwh": 2321, "sen_usd_kwh": 16.29 },
+    { "kunci": "baubau", "rp_kwh": 2369, "sen_usd_kwh": 16.63 },
+    { "kunci": "selayar", "rp_kwh": 2445, "sen_usd_kwh": 17.16 },
+    { "kunci": "kecil-sulawesi", "rp_kwh": 2994, "sen_usd_kwh": 21.02 },
+    { "kunci": "ambon", "rp_kwh": 3010, "sen_usd_kwh": 21.13 },
+    { "kunci": "seram", "rp_kwh": 2971, "sen_usd_kwh": 20.85 },
+    { "kunci": "saparua", "rp_kwh": 2993, "sen_usd_kwh": 21.01 },
+    { "kunci": "buru", "rp_kwh": 3019, "sen_usd_kwh": 21.19 },
+    { "kunci": "ternate", "rp_kwh": 2299, "sen_usd_kwh": 16.13 },
+    { "kunci": "sanana", "rp_kwh": 2486, "sen_usd_kwh": 17.45 },
+    { "kunci": "bacan", "rp_kwh": 2674, "sen_usd_kwh": 18.77 },
+    { "kunci": "halmahera", "rp_kwh": 2963, "sen_usd_kwh": 20.8 },
+    { "kunci": "daruba", "rp_kwh": 3041, "sen_usd_kwh": 21.34 },
+    { "kunci": "tual", "rp_kwh": 3041, "sen_usd_kwh": 21.34 },
+    { "kunci": "dobo", "rp_kwh": 3041, "sen_usd_kwh": 21.34 },
+    { "kunci": "saumlaki", "rp_kwh": 2384, "sen_usd_kwh": 16.74 },
+    { "kunci": "jayapura", "rp_kwh": 2162, "sen_usd_kwh": 15.17 },
+    { "kunci": "sarmi", "rp_kwh": 3041, "sen_usd_kwh": 21.34 },
+    { "kunci": "biak", "rp_kwh": 2389, "sen_usd_kwh": 16.77 },
+    { "kunci": "serui", "rp_kwh": 2882, "sen_usd_kwh": 20.23 },
+    { "kunci": "nabire", "rp_kwh": 2191, "sen_usd_kwh": 15.38 },
+    { "kunci": "wamena", "rp_kwh": 3041, "sen_usd_kwh": 21.34 },
+    { "kunci": "timika", "rp_kwh": 2736, "sen_usd_kwh": 19.21 },
+    { "kunci": "merauke", "rp_kwh": 2593, "sen_usd_kwh": 18.2 },
+    { "kunci": "tanah-merah", "rp_kwh": 3041, "sen_usd_kwh": 21.34 },
+    { "kunci": "manokwari", "rp_kwh": 2018, "sen_usd_kwh": 14.17 },
+    { "kunci": "sorong", "rp_kwh": 1465, "sen_usd_kwh": 10.28 },
+    { "kunci": "teminabuan", "rp_kwh": 2783, "sen_usd_kwh": 19.53 },
+    { "kunci": "fakfak", "rp_kwh": 2483, "sen_usd_kwh": 17.43 },
+    { "kunci": "kaimana", "rp_kwh": 3041, "sen_usd_kwh": 21.34 },
+    { "kunci": "bintuni", "rp_kwh": 1812, "sen_usd_kwh": 12.72 },
+    { "kunci": "raja-ampat", "rp_kwh": 3041, "sen_usd_kwh": 21.34 },
+    { "kunci": "kecil-papua", "rp_kwh": 3041, "sen_usd_kwh": 21.34 }
+   ]
+  },
+  "2020": {
+   "kepmen": "169.K/HK.02/MEM.M/2021",
+   "tanggal_penetapan": "2021-09-08",
+   "berlaku": "sampai 31 Maret 2022",
+   "kurs_rp_usd": 14572,
+   "halaman": "Lampiran hlm 6-8",
+   "berkas": "Kepmen No. 169.K.HK.02.MEM.M.2021.pdf",
+   "metode": "ocr",
+   "nasional": {
+    "rp_kwh": 1027.7,
+    "sen_usd_kwh": 7.05
+   },
+   "baris": [
+    { "kunci": "aceh", "rp_kwh": 1349.72, "sen_usd_kwh": 9.26 },
+    { "kunci": "weh", "rp_kwh": 1995.8, "sen_usd_kwh": 13.7 },
+    { "kunci": "simeulue", "rp_kwh": 2148.71, "sen_usd_kwh": 14.75 },
+    { "kunci": "sumut", "rp_kwh": 1247.24, "sen_usd_kwh": 8.56 },
+    { "kunci": "nias", "rp_kwh": 2805.5, "sen_usd_kwh": 19.25 },
+    { "kunci": "sumbar", "rp_kwh": 995.58, "sen_usd_kwh": 6.83 },
+    { "kunci": "mentawai", "rp_kwh": 2319.63, "sen_usd_kwh": 15.92 },
+    { "kunci": "riau", "rp_kwh": 1374.43, "sen_usd_kwh": 9.43 },
+    { "kunci": "bintan", "rp_kwh": 1833.55, "sen_usd_kwh": 12.58 },
+    { "kunci": "karimun", "rp_kwh": 1544.96, "sen_usd_kwh": 10.6 },
+    { "kunci": "natuna", "rp_kwh": 1972.24, "sen_usd_kwh": 13.53 },
+    { "kunci": "anambas", "rp_kwh": 1994.58, "sen_usd_kwh": 13.69 },
+    { "kunci": "s2jb", "rp_kwh": 1038.29, "sen_usd_kwh": 7.13 },
+    { "kunci": "enggano", "rp_kwh": 2805.5, "sen_usd_kwh": 19.25 },
+    { "kunci": "lampung", "rp_kwh": 995.98, "sen_usd_kwh": 6.83 },
+    { "kunci": "bangka", "rp_kwh": 2006.52, "sen_usd_kwh": 13.77 },
+    { "kunci": "belitung", "rp_kwh": 1962.01, "sen_usd_kwh": 13.46 },
+    { "kunci": "kecil-sumatera", "rp_kwh": 2805.5, "sen_usd_kwh": 19.25 },
+    { "kunci": "dki", "rp_kwh": 908.15, "sen_usd_kwh": 6.23 },
+    { "kunci": "seribu", "rp_kwh": 848.71, "sen_usd_kwh": 5.82 },
+    { "kunci": "banten", "rp_kwh": 907.75, "sen_usd_kwh": 6.23 },
+    { "kunci": "pulau-panjang", "rp_kwh": 2805.5, "sen_usd_kwh": 19.25 },
+    { "kunci": "jabar", "rp_kwh": 907.93, "sen_usd_kwh": 6.23 },
+    { "kunci": "jateng", "rp_kwh": 907.77, "sen_usd_kwh": 6.23 },
+    { "kunci": "karimun-jawa", "rp_kwh": 2805.5, "sen_usd_kwh": 19.25 },
+    { "kunci": "jatim", "rp_kwh": 911.59, "sen_usd_kwh": 6.26 },
+    { "kunci": "madura", "rp_kwh": 2052.8, "sen_usd_kwh": 14.09 },
+    { "kunci": "bawean", "rp_kwh": 2805.5, "sen_usd_kwh": 19.25 },
+    { "kunci": "gili-ketapang", "rp_kwh": 2136.16, "sen_usd_kwh": 14.66 },
+    { "kunci": "bali", "rp_kwh": 908.03, "sen_usd_kwh": 6.23 },
+    { "kunci": "tiga-nusa", "rp_kwh": 1935.97, "sen_usd_kwh": 13.29 },
+    { "kunci": "kecil-jb", "rp_kwh": 2805.5, "sen_usd_kwh": 19.25 },
+    { "kunci": "kalbar", "rp_kwh": 1539.19, "sen_usd_kwh": 10.56 },
+    { "kunci": "kalselteng", "rp_kwh": 1244.07, "sen_usd_kwh": 8.54 },
+    { "kunci": "kaltimra", "rp_kwh": 1321.11, "sen_usd_kwh": 9.07 },
+    { "kunci": "kecil-kal", "rp_kwh": 2805.5, "sen_usd_kwh": 19.25 },
+    { "kunci": "sulbagut", "rp_kwh": 1540.41, "sen_usd_kwh": 10.57 },
+    { "kunci": "tolitoli", "rp_kwh": 1914.9, "sen_usd_kwh": 13.14 },
+    { "kunci": "tahuna", "rp_kwh": 2192.08, "sen_usd_kwh": 15.04 },
+    { "kunci": "palu", "rp_kwh": 1090.58, "sen_usd_kwh": 7.48 },
+    { "kunci": "luwuk", "rp_kwh": 1664.79, "sen_usd_kwh": 11.42 },
+    { "kunci": "sulbagsel", "rp_kwh": 959.02, "sen_usd_kwh": 6.58 },
+    { "kunci": "kendari", "rp_kwh": 1059.86, "sen_usd_kwh": 7.27 },
+    { "kunci": "baubau", "rp_kwh": 1570.47, "sen_usd_kwh": 10.78 },
+    { "kunci": "selayar", "rp_kwh": 2411.58, "sen_usd_kwh": 16.55 },
+    { "kunci": "kecil-sulawesi", "rp_kwh": 2805.5, "sen_usd_kwh": 19.25 },
+    { "kunci": "tambora", "rp_kwh": 1841.12, "sen_usd_kwh": 12.63 },
+    { "kunci": "lombok", "rp_kwh": 1715.65, "sen_usd_kwh": 11.77 },
+    { "kunci": "sumba", "rp_kwh": 2147.66, "sen_usd_kwh": 14.74 },
+    { "kunci": "timor", "rp_kwh": 2067.93, "sen_usd_kwh": 14.19 },
+    { "kunci": "flores-barat", "rp_kwh": 1634.5, "sen_usd_kwh": 11.22 },
+    { "kunci": "flores-timur", "rp_kwh": 1856.59, "sen_usd_kwh": 12.74 },
+    { "kunci": "kecil-nt", "rp_kwh": 2805.5, "sen_usd_kwh": 19.25 },
+    { "kunci": "ambon", "rp_kwh": 2413.34, "sen_usd_kwh": 16.56 },
+    { "kunci": "seram", "rp_kwh": 2168.81, "sen_usd_kwh": 14.88 },
+    { "kunci": "saparua", "rp_kwh": 2503.68, "sen_usd_kwh": 17.18 },
+    { "kunci": "buru", "rp_kwh": 2351.91, "sen_usd_kwh": 16.14 },
+    { "kunci": "ternate", "rp_kwh": 2199.09, "sen_usd_kwh": 15.09 },
+    { "kunci": "sanana", "rp_kwh": 2108.79, "sen_usd_kwh": 14.47 },
+    { "kunci": "bacan", "rp_kwh": 2297.16, "sen_usd_kwh": 15.76 },
+    { "kunci": "halmahera", "rp_kwh": 2316.73, "sen_usd_kwh": 15.9 },
+    { "kunci": "daruba", "rp_kwh": 2600.3, "sen_usd_kwh": 17.84 },
+    { "kunci": "tual", "rp_kwh": 1283.31, "sen_usd_kwh": 8.81 },
+    { "kunci": "dobo", "rp_kwh": 2215.93, "sen_usd_kwh": 15.21 },
+    { "kunci": "saumlaki", "rp_kwh": 2383.69, "sen_usd_kwh": 16.36 },
+    { "kunci": "jayapura", "rp_kwh": 1800.36, "sen_usd_kwh": 12.35 },
+    { "kunci": "sarmi", "rp_kwh": 2508.87, "sen_usd_kwh": 17.22 },
+    { "kunci": "biak", "rp_kwh": 1961.93, "sen_usd_kwh": 13.46 },
+    { "kunci": "serui", "rp_kwh": 2250.53, "sen_usd_kwh": 15.44 },
+    { "kunci": "nabire", "rp_kwh": 2109.64, "sen_usd_kwh": 14.48 },
+    { "kunci": "wamena", "rp_kwh": 2805.5, "sen_usd_kwh": 19.25 },
+    { "kunci": "timika", "rp_kwh": 1962.06, "sen_usd_kwh": 13.46 },
+    { "kunci": "merauke", "rp_kwh": 2349.75, "sen_usd_kwh": 16.12 },
+    { "kunci": "tanah-merah", "rp_kwh": 2400.62, "sen_usd_kwh": 16.47 },
+    { "kunci": "manokwari", "rp_kwh": 1602.29, "sen_usd_kwh": 11 },
+    { "kunci": "sorong", "rp_kwh": 1491.05, "sen_usd_kwh": 10.23 },
+    { "kunci": "teminabuan", "rp_kwh": 2805.5, "sen_usd_kwh": 19.25 },
+    { "kunci": "fakfak", "rp_kwh": 2054.03, "sen_usd_kwh": 14.1 },
+    { "kunci": "kaimana", "rp_kwh": 2225.73, "sen_usd_kwh": 15.27 },
+    { "kunci": "bintuni", "rp_kwh": 2403.14, "sen_usd_kwh": 16.49 },
+    { "kunci": "raja-ampat", "rp_kwh": 2805.5, "sen_usd_kwh": 19.25 },
+    { "kunci": "kecil-papua", "rp_kwh": 2805.5, "sen_usd_kwh": 19.25 }
+   ]
+  }
+ }
+}

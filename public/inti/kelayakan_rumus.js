@@ -116,7 +116,7 @@ export function bppDari(baris) {
   const b = baris?.bpp ?? baris?.bpp_rp_kwh ?? baris?.biaya_pokok;
   if (typeof b === "number" && Number.isFinite(b) && b > 0) return b;
   if (b && typeof b === "object") {
-    for (const k of ["rp_per_kwh", "rp_kwh", "nilai", "rupiah", "bpp"]) { const v = Number(b[k]); if (Number.isFinite(v) && v > 0) return v; }
+    for (const k of ["nilai_rp_kwh", "rp_per_kwh", "rp_kwh", "nilai", "rupiah", "bpp"]) { const v = Number(b[k]); if (Number.isFinite(v) && v > 0) return v; }
   }
   return null;
 }
