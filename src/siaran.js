@@ -1,5 +1,6 @@
 // siaran.js: /siaran-pers/<id>. Cangkang statis (public/siaran-pers-rinci.html) + judul, deskripsi, og:* per artikel disuntik di server
 // supaya pratinjau tautan terbaca. Bacaan atas JSON statis, tanpa D1. Semua nilai di-escape. Id tak dikenal = null (404).
+import { halamanHtml } from "./util.js";
 const RE_ID = /^[A-Za-z0-9_-]{2,60}$/;
 const SITUS = "Direktori METI";
 const esc = (s) => String(s ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]);
@@ -34,5 +35,5 @@ export async function halamanSiaran(req, env, url, id) {
   ].filter(Boolean).join("\n");
   // fungsi pengganti: tanda $ dalam judul tidak ditafsirkan sebagai pola
   const html = (await cangkang.text()).replace(/<title>[^<]*<\/title>/, () => `<title>${esc(judul)}</title>`).replace(/<meta name="description"[^>]*>/, () => "").replace("<!--meta-->", () => tag);
-  return new Response(html, { status: 200, headers: { "content-type": "text/html; charset=utf-8", "cache-control": "public, max-age=300" } });
+  return halamanHtml(html, cangkang);
 }

@@ -1,14 +1,19 @@
 /* Pembantu bersama tab admin baru (koreksi, audit, kesehatan, statistik, konten beranda). */
 import { t, angka } from "/i18n.js";
 import { esc, ikon, galatHtml } from "/inti/umum.js";
-import { khFaktaHtml } from "/inti/kh.js";
+import { khSisi } from "/inti/kh.js";
 
 const simpan = {};
 /** Muat /data/<nama>.json sekali. */
 export const data = (nama) => (simpan[nama] ||= fetch(`/data/${nama}.json`).then((r) => { if (!r.ok) throw new Error(nama); return r.json(); }).catch((e) => { delete simpan[nama]; throw e; }));
 
-/** Kepala tab standar (.jm-kh) dengan ikon; kunci i18n awalan + .ey/.j/.d. */
-export const kepalaTab = (ik, ey, j, d) => `<section class="jm-kh jm-kh-tab"><div class="jm-kh-teks"><p class="jm-kh-ey">${ikon(ik, 16)}<span>${esc(t(ey))}</span></p><h2>${esc(t(j))}</h2><p class="jm-kh-lead">${esc(t(d))}</p></div><div class="jm-kh-sisi">${khFaktaHtml([{ ikon: ik, label: t("kh.bagian"), nilai: t(j) }, { ikon: "perisai", label: t("kh.akses"), nilai: t("admin.eyebrow") }, { ikon: "jejak", label: t("kh.jejak"), nilai: t("kh.jejak_isi") }])}</div></section>`;
+/** Kepala tab standar (.jm-kh): sisi kanan = ubin angka nyata tab itu, dipasang lewat ubinKepala() setelah data datang. */
+export const kepalaTab = (ik, ey, j, d) => `<section class="jm-kh jm-kh-satu jm-kh-tab"><div class="jm-kh-teks"><p class="jm-kh-ey">${ikon(ik, 16)}<span>${esc(t(ey))}</span></p><h2>${esc(t(j))}</h2><p class="jm-kh-lead">${esc(t(d))}</p></div></section>`;
+/** Pasang ubin angka [{ikon, nilai, label}] di kepala tab; nilai angka diformat angka(). */
+export const ubinKepala = (panel, items) => {
+  const kh = panel.querySelector(".jm-kh-tab");
+  if (kh) khSisi(kh, { ubin: items.map((u) => ({ ...u, nilai: typeof u.nilai === "number" ? angka(u.nilai) : u.nilai })) });
+};
 
 /** Galat 503 fitur_belum_aktif tampil sebagai keadaan rapi, bukan alarm. */
 export const keadaan = (kode) => (kode === "fitur_belum_aktif"

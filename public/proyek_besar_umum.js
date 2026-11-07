@@ -42,7 +42,7 @@ export function pasangTabel(el, kolom, rows, S, kosongKunci = "jm.kosong.cocok")
     const urut = rows.slice().sort(bandingkan(S.k, S.arah));
     if (!urut.length) { el.innerHTML = `<div class="jm-kosong">${ikon("info", 32)}<p>${esc(t(kosongKunci))}</p></div>`; return; }
     S.hal = Math.min(Math.max(1, S.hal || 1), Math.ceil(urut.length / BATAS));
-    const kepala = kolom.map(([k, kt, , kls]) => `<th scope="col"${kls && kls.includes("jm-num") ? ' class="jm-num"' : ""}${k ? ` aria-sort="${S.k === k ? (S.arah > 0 ? "ascending" : "descending") : "none"}"` : ""}>${k ? `<button type="button" class="jm-urut" data-u="${k}">${esc(t(kt))}</button>` : esc(t(kt))}</th>`).join("");
+    const kepala = kolom.map(([k, kt, , kls], i) => `<th scope="col" class="${[kls && kls.includes("jm-num") ? "jm-num" : "", ...String(kls || "").split(" ").filter((x) => x.startsWith("pb-c-")), k ? "pb-c-" + k : "pb-c-n"].filter(Boolean).join(" ")}"${k ? ` aria-sort="${S.k === k ? (S.arah > 0 ? "ascending" : "descending") : "none"}"` : ""}>${k ? `<button type="button" class="jm-urut" data-u="${k}">${esc(t(kt))}</button>` : esc(t(kt))}</th>`).join("");
     const dari = (S.hal - 1) * BATAS;
     const badan = urut.slice(dari, dari + BATAS).map((r) => `<tr>${kolom.map(([, kt, f, kls]) => `<td data-label="${esc(t(kt))}"${kls ? ` class="${kls}"` : ""}>${f(r)}</td>`).join("")}</tr>`).join("");
     el.innerHTML = `<div class="jm-gulir"><table class="jm-tabel pb-tabel"><thead><tr>${kepala}</tr></thead><tbody>${badan}</tbody></table></div>${paginasiHtml({ hal: S.hal, total: urut.length, per: BATAS, satuan: "jm.pag.u.proyek" })}`;

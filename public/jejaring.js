@@ -6,6 +6,7 @@ import { t, angka, ada } from "/i18n.js";
 import { esc, ikon, hantuHtml, nanti } from "/inti/umum.js";
 import { cariHtml, hitungHtml } from "/inti/komponen.js";
 import { grafJejaring, bangun } from "/inti/tautan.js";
+import { geserPanel } from "/inti/panel_geser.js";
 
 const JENIS = ["org", "pendana", "proyek", "provinsi", "regulasi", "orang"];
 const IKON = { org: "direktori", pendana: "analisis", proyek: "proyek", provinsi: "wilayah", regulasi: "regulasi", orang: "orang" };
@@ -66,8 +67,9 @@ function gambarGraf() {
 }
 
 function gambarPanel() {
-  const el = document.getElementById("jjPanel"), n = S.pilih;
-  if (!n) { el.innerHTML = `<p class="jm-bantu">${ikon("info", 16)} ${esc(t("jj.pilih"))}</p>`; return; }
+  const el = document.getElementById("jjPanelIsi"), n = S.pilih;
+  document.getElementById("jjPanel").hidden = !n; /* panel muncul saat simpul diklik */
+  if (!n) { el.innerHTML = ""; return; }
   const [j, id] = kunciTaut(n);
   const grup = new Map();
   for (const m of tetangga.get(n.k) || []) { if (!grup.has(m.n.j)) grup.set(m.n.j, []); grup.get(m.n.j).push(m); }
@@ -115,7 +117,8 @@ async function mulai() {
     e.preventDefault(); S.pilih = G.per.get(k); gambarPanel();
     if (document.querySelector(`#jjKanvas .jj-n[data-k="${CSS.escape(k)}"]`)) sorotPilih(); else tundaGraf(); // simpul sudah tampil: cukup sorot, tanpa tata ulang
   };
-  for (const id of ["jjKanvas", "jjPanel"]) { const el = document.getElementById(id); el.addEventListener("click", pilih); el.addEventListener("keydown", pilih); }
+  geserPanel(document.getElementById("jjPanel"), { kunci: "panel", batas: document.querySelector(".jj-kisi") });
+  for (const id of ["jjKanvas", "jjPanelIsi"]) { const el = document.getElementById(id); el.addEventListener("click", pilih); el.addEventListener("keydown", pilih); }
   document.addEventListener("jm:bahasa", () => { gambarSaring(); semua(); });
 }
 mulaiHalaman().then(mulai);

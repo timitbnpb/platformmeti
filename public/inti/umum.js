@@ -1,7 +1,8 @@
 /* Pembantu bersama layar: esc, nanti, debounce, api, keadaan komponen (DS §6.0). */
 import { t, ada } from "/i18n.js";
 
-export const esc = (s) => String(s ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]);
+/* en/em dash dari data JSON dinormalkan jadi "-" di satu tempat (pemilik 8 Nov 2026) */
+export const esc = (s) => String(s ?? "").replace(/[\u2013\u2014]/g, "-").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]);
 
 /** Foto berita lewat Worker (tanpa host luar di CSP): peta = berita_foto.json, kosong bila id tak punya foto. */
 export const fotoBerita = (peta, id) => (peta && peta[id] ? "/api/foto-berita/" + encodeURIComponent(id) : "");

@@ -1,0 +1,2840 @@
+{
+ "id": "hidrogen",
+ "versi": 1,
+ "diperbarui": "2026-11-08",
+ "judul": {
+  "id": "Hidrogen dan amonia hijau",
+  "en": "Green hydrogen and ammonia"
+ },
+ "lead": {
+  "id": "Pilot PLN dan Pertamina sudah jalan di skala ratusan ton, tetapi pasar domestik, standar, dan insentif belum terbentuk, dan dunia sedang memilah proyek yang layak.",
+  "en": "PLN and Pertamina pilots run at hundreds of tonnes, but the domestic market, standards and incentives are not yet formed, and the world is sorting viable projects."
+ },
+ "kunci": [
+  {
+   "label": {
+    "id": "Produksi hidrogen hijau PLN (22 GHP)",
+    "en": "PLN green hydrogen production (22 GHP)"
+   },
+   "nilai": 203,
+   "d": 0,
+   "satuan": {
+    "id": "ton per tahun",
+    "en": "tonnes a year"
+   },
+   "sumber": "hrs",
+   "est": false
+  },
+  {
+   "label": {
+    "id": "Permintaan hidrogen Indonesia (2024)",
+    "en": "Indonesia hydrogen demand (2024)"
+   },
+   "nilai": 4,
+   "d": 0,
+   "satuan": {
+    "id": "juta ton per tahun",
+    "en": "million tonnes a year"
+   },
+   "sumber": "dpr",
+   "est": false
+  },
+  {
+   "label": {
+    "id": "Biaya hidrogen dari PLTS (batas bawah)",
+    "en": "Hydrogen cost from solar (lower bound)"
+   },
+   "nilai": 4.3,
+   "d": 1,
+   "satuan": {
+    "id": "USD per kg",
+    "en": "USD per kg"
+   },
+   "sumber": "dpr",
+   "est": false
+  },
+  {
+   "label": {
+    "id": "Pilot Pertamina Ulubelu",
+    "en": "Pertamina Ulubelu pilot"
+   },
+   "nilai": 100,
+   "d": 0,
+   "satuan": {
+    "id": "kg per hari",
+    "en": "kg a day"
+   },
+   "sumber": "ulu",
+   "est": false
+  },
+  {
+   "label": {
+    "id": "NEOM, Arab Saudi (kemampuan produksi)",
+    "en": "NEOM, Saudi Arabia (production capability)"
+   },
+   "nilai": 600,
+   "d": 0,
+   "satuan": {
+    "id": "ton per hari",
+    "en": "tonnes a day"
+   },
+   "sumber": "neomceo",
+   "est": false
+  }
+ ],
+ "penting": [
+  {
+   "id": "PLN memiliki 22 pabrik hidrogen hijau (sekitar 203 ton per tahun), sekitar 0,005 persen dari permintaan 4 juta ton.",
+   "en": "PLN has 22 green hydrogen plants (about 203 tonnes a year), about 0.005 percent of the 4 million tonne demand."
+  },
+  {
+   "id": "DPR mencatat belum ada insentif fiskal, standar sertifikasi, atau kewajiban pemanfaatan; biaya produksi USD 4,3 sampai 8,3 per kg.",
+   "en": "The DPR notes no fiscal incentive, certification standard or use mandate; production cost is USD 4.3 to 8.3 per kg."
+  },
+  {
+   "id": "Di luar negeri proyek dengan pembeli dekat (Kuqa, NEOM) maju; yang tanpa pembeli dibatalkan (Townsville, Fortescue).",
+   "en": "Abroad, projects with nearby buyers (Kuqa, NEOM) advance; those without buyers are cancelled (Townsville, Fortescue)."
+  }
+ ],
+ "posisi": {
+  "id": "Indonesia adalah pasar hidrogen terbesar di Asia Tenggara (35 persen permintaan kawasan) tetapi produksi hijaunya masih skala demonstrasi.",
+  "en": "Indonesia is the largest hydrogen market in Southeast Asia (35 percent of regional demand) but its green production is still demonstration scale."
+ },
+ "sumber": {
+  "ed": {
+   "judul": "Ringkasan editorial METI (penjelasan umum; bukan kutipan pasal)",
+   "penerbit": "METI",
+   "tanggal": "2026-11-08",
+   "tahun": 2026,
+   "bukti": "editorial"
+  },
+  "proyek": {
+   "judul": "Direktori METI: proyek (public/data/proyek.json, RUPTL 2025-2034, GEM, OSM, media)",
+   "penerbit": "METI",
+   "url": "https://platformmeti.timitbnpb.workers.dev",
+   "tanggal": "2026-11-07",
+   "tahun": 2026,
+   "bukti": "via-pihak-ketiga"
+  },
+  "regul": {
+   "judul": "Basis regulasi METI (public/data/regulasi.json, naskah BPK JDIH)",
+   "penerbit": "BPK JDIH, METI",
+   "url": "https://peraturan.bpk.go.id/",
+   "tanggal": "2026-11-07",
+   "tahun": 2026,
+   "bukti": "resmi"
+  },
+  "pendanaan": {
+   "judul": "Basis pendanaan METI (public/data/pendanaan.json: skema dan proyek pendana)",
+   "penerbit": "METI, ADB, World Bank, AIIB dan lain-lain",
+   "url": "https://www.adb.org/projects",
+   "tanggal": "2026-11-08",
+   "tahun": 2026,
+   "bukti": "via-pihak-ketiga"
+  },
+  "ruuebet": {
+   "judul": "Pelacak RUU EBET di arsip METI (public/data/kebijakan_info.json; situs DPR melarang perayap sehingga tahap bukan dari DPR)",
+   "penerbit": "METI, Liputan6",
+   "url": "https://www.liputan6.com/bisnis/read/6312024/meti-minta-ruu-ebet-segera-disahkan",
+   "tanggal": "2026-09-08",
+   "tahun": 2026,
+   "bukti": "media"
+  },
+  "dpr": {
+   "judul": "DPR RI Pusat Analisis, Info Singkat: Membangun ekosistem hidrogen hijau di Indonesia (Okt 2025; RHAN 2025, LCOH USD 4,3 sampai 8,3 per kg, permintaan 4 Mtpa pada 2024)",
+   "penerbit": "DPR RI",
+   "url": "https://berkas.dpr.go.id/pusaka/files/info_singkat/Info%20Singkat-XVII-19-I-P3DI-Oktober-2025-245.pdf",
+   "tanggal": "2025-10-01",
+   "tahun": 2025,
+   "bukti": "resmi"
+  },
+  "mc": {
+   "judul": "Green hydrogen plant pertama di Indonesia resmi beroperasi (Muara Karang, 9 Okt 2023; 51 ton per tahun; PLTS ditambah REC dari PLTP Kamojang)",
+   "penerbit": "Kementerian ESDM",
+   "url": "https://esdm.go.id/en/media-center/news-archives/green-hydrogen-plant-pertama-di-indonesia-resmi-beroperasi",
+   "tanggal": "2023-10-11",
+   "tahun": 2023,
+   "bukti": "resmi"
+  },
+  "mcantara": {
+   "judul": "Pertama di Indonesia, PLN produksi green hydrogen 100 persen dari EBT kapasitas 51 ton per tahun",
+   "penerbit": "Antara Babel",
+   "url": "https://babel.antaranews.com/berita/373428/pertama-di-indonesia-pln-produksi-green-hydrogen-100-persen-dari-ebt-kapasitas-51-ton-per-tahun",
+   "tanggal": "2023-10-10",
+   "tahun": 2023,
+   "bukti": "media"
+  },
+  "ghp21": {
+   "judul": "PLN resmikan 21 unit green hydrogen plant (sekitar 191 sampai 199 ton per tahun menurut judul dan ringkasan berbeda)",
+   "penerbit": "Listrik Indonesia",
+   "url": "https://listrikindonesia.com/detail/11939/pln-resmikan-21-unit-green-hydrogen-plant-memiliki-kapasitas-191-ton",
+   "tanggal": "2023-11-22",
+   "tahun": 2023,
+   "bukti": "media"
+  },
+  "hrs": {
+   "judul": "Indonesia's first: PLN launches green hydrogen refueling station (Senayan; 203 ton per tahun dari 22 GHP, 128 ton untuk transportasi)",
+   "penerbit": "Indonesia Business Post",
+   "url": "https://indonesiabusinesspost.com/2178/business-and-investment/indonesias-first-pln-launches-green-hydrogen-refueling-station",
+   "tanggal": "2026-11-08",
+   "tahun": 2026,
+   "bukti": "media"
+  },
+  "hrsrri": {
+   "judul": "RI launches first hydrogen refueling station, eyes green future",
+   "penerbit": "RRI",
+   "url": "https://rri.co.id/en/national/1478128/ri-launches-first-hydrogen-refueling-station-eyes-green-future",
+   "tanggal": "2026-11-08",
+   "tahun": 2026,
+   "bukti": "media"
+  },
+  "ulu": {
+   "judul": "Proyek pilot plant green hydrogen di Ulubelu dimulai (groundbreaking 9 Sep 2025; 100 kg per hari; sekitar USD 3 juta; target operasi 2026)",
+   "penerbit": "Listrik Indonesia",
+   "url": "https://listrikindonesia.com/detail/17800/proyek-pilot-plant-green-hydrogen-di-ulubelu-dimulai",
+   "tanggal": "2025-09-09",
+   "tahun": 2025,
+   "bukti": "media"
+  },
+  "ghes": {
+   "judul": "GHES 2026 buka peluang investasi hidrogen nasional (Strategi Hidrogen Nasional diluncurkan Desember 2023)",
+   "penerbit": "Listrik Indonesia",
+   "url": "https://listrikindonesia.com/detail/19181/ghes-2026-buka-peluang-investasi-hidrogen-nasional",
+   "tanggal": "2026-01-01",
+   "tahun": 2026,
+   "bukti": "media"
+  },
+  "ibp": {
+   "judul": "Government outlines hydrogen adoption plan through 2060 (target 9,9 Mtpa pada 2060 menurut data ESDM; angka lain 11,7 juta ton dalam draf peta jalan)",
+   "penerbit": "Indonesia Business Post",
+   "url": "https://indonesiabusinesspost.com/1952/Politics/government-outlines-hydrogen-adoption-plan-through-2060",
+   "tanggal": "2026-11-08",
+   "tahun": 2026,
+   "bukti": "media"
+  },
+  "neom": {
+   "judul": "Construction completed on USD 8.5bn Neom hydrogen project (komisioning, operasi komersial 2027)",
+   "penerbit": "MEED",
+   "url": "https://guest.meed.com/acwa-completes-construction-of-85bn-hydrogen-project/",
+   "tanggal": "2026-08-01",
+   "tahun": 2026,
+   "bukti": "media"
+  },
+  "neom80": {
+   "judul": "Saudi Arabia's NEOM green hydrogen project hits 80 percent completion (Jun 2025)",
+   "penerbit": "Solar Quarter",
+   "url": "https://solarquarter.com/2025/06/03/saudi-arabias-neom-green-hydrogen-project-hits-80-completion-paving-the-way-for-worlds-largest-carbon-free-fuel-facility-by-2026/",
+   "tanggal": "2025-06-03",
+   "tahun": 2025,
+   "bukti": "media"
+  },
+  "neomceo": {
+   "judul": "World's largest green hydrogen plant on track for 2026 launch in Saudi Arabia, CEO says (sekitar 600 ton per hari)",
+   "penerbit": "Arab News",
+   "url": "https://www.arabnews.com/node/2579284/amp",
+   "tanggal": "2026-11-08",
+   "tahun": 2026,
+   "bukti": "media"
+  },
+  "kuqa": {
+   "judul": "China's Sinopec says world-leading green hydrogen project will take longer than expected to ramp up (Kuqa, 260 MW, 20.000 ton per tahun)",
+   "penerbit": "South China Morning Post",
+   "url": "https://www.scmp.com/business/article/3247148/chinas-sinopec-says-world-leading-green-hydrogen-project-will-take-longer-expected-ramp",
+   "tanggal": "2024-01-01",
+   "tahun": 2024,
+   "bukti": "media"
+  },
+  "kuqa2": {
+   "judul": "Sinopec Xinjiang Kuqa green hydrogen pilot project, China (konstruksi Des 2021, operasi 30 Agu 2023)",
+   "penerbit": "Engineering News",
+   "url": "https://www.engineeringnews.co.za/article/sinopec-xinjiang-kuqa-green-hydrogen-pilot-project-china-2023-05-05",
+   "tanggal": "2023-05-05",
+   "tahun": 2023,
+   "bukti": "media"
+  },
+  "fh2r": {
+   "judul": "Fukushima Hydrogen Energy Research Field (ringkasan Wikipedia: PLTS 10 MW, hingga 1.200 Nm3 per jam, diresmikan 2020)",
+   "penerbit": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Fukushima_Hydrogen_Energy_Research_Field",
+   "tanggal": "2026-11-08",
+   "tahun": 2026,
+   "bukti": "via-pihak-ketiga",
+   "lisensi": "CC BY-SA 4.0"
+  },
+  "bp": {
+   "judul": "BP backs out of 26 GW green hydrogen plan in Australia (28 Jul 2025; Fortescue batalkan PEM50 Gladstone dan proyek AS)",
+   "penerbit": "pv magazine",
+   "url": "https://www.pv-magazine.com/2025/07/28/bp-backs-out-of-26-gw-green-hydrogen-plan-in-australia/",
+   "tanggal": "2025-07-28",
+   "tahun": 2025,
+   "bukti": "media"
+  },
+  "fort": {
+   "judul": "Cancelled post-FID: Fortescue abandons two green hydrogen projects it had previously signed off on",
+   "penerbit": "Hydrogen Insight",
+   "url": "https://www.hydrogeninsight.com/production/fortescue-abandons-two-green-hydrogen-projects-which-had-both-passed-a-final-investment-decision/2-1-1849742",
+   "tanggal": "2025-07-01",
+   "tahun": 2025,
+   "bukti": "media"
+  },
+  "fort2": {
+   "judul": "Fortescue pulls plug on Queensland green hydrogen plant but insists real zero target still on track",
+   "penerbit": "RenewEconomy",
+   "url": "https://reneweconomy.com.au/fortescue-pulls-plug-on-queensland-green-hydrogen-plant-but-insists-real-zero-target-still-on-track/",
+   "tanggal": "2025-07-01",
+   "tahun": 2025,
+   "bukti": "media"
+  },
+  "tville": {
+   "judul": "No customers: plans for Townsville hydrogen project scrapped after failing to find buyers",
+   "penerbit": "Pulse",
+   "url": "https://www.pulse.bot/energy/news/no-customers-plans-for-townsville-hydrogen-project-scrapped-after-failing-to-find-buyers-for-the-pro-89c9063f-bdd1-4bad-87a8-2561f74d05d4/",
+   "tanggal": "2026-11-08",
+   "tahun": 2026,
+   "bukti": "media"
+  },
+  "repay": {
+   "judul": "Albanese government tells Fortescue to repay hydrogen grant for dumped Gladstone project",
+   "penerbit": "BD Times",
+   "url": "https://www.bdtimes.com.au/business/energy/hand-it-back-albanese-government-tells-fortescue-to-repay-hydrogen-grant-for-dumped-gladstone-project-c-19468162",
+   "tanggal": "2026-11-08",
+   "tahun": 2026,
+   "bukti": "media"
+  }
+ },
+ "bab": {
+  "2": {
+   "tipe": "faq",
+   "sumber": [
+    "ed",
+    "dpr",
+    "hrs",
+    "ulu",
+    "mc"
+   ],
+   "butir": [
+    {
+     "t": {
+      "id": "Apa itu hidrogen hijau?",
+      "en": "What is green hydrogen?"
+     },
+     "j": {
+      "id": "Hidrogen yang dibuat dengan elektrolisis air memakai listrik terbarukan. Hidrogen abu-abu dibuat dari gas alam dan melepas CO2; hidrogen biru menambah penangkapan karbon.",
+      "en": "Hydrogen made by electrolysing water with renewable power. Grey hydrogen comes from natural gas and releases CO2; blue hydrogen adds carbon capture."
+     }
+    },
+    {
+     "t": {
+      "id": "Sudah ada hidrogen hijau di Indonesia?",
+      "en": "Is there green hydrogen in Indonesia yet?"
+     },
+     "j": {
+      "id": "Ya, kecil. PLN mengoperasikan 22 pabrik hidrogen hijau (GHP) dengan total sekitar 203 ton per tahun; yang pertama di Muara Karang (51 ton per tahun, 9 Oktober 2023).",
+      "en": "Yes, small. PLN runs 22 green hydrogen plants (GHP) with about 203 tonnes a year in total; the first at Muara Karang (51 tonnes a year, 9 October 2023)."
+     }
+    },
+    {
+     "t": {
+      "id": "Berapa permintaan hidrogen Indonesia?",
+      "en": "How much hydrogen does Indonesia use?"
+     },
+     "j": {
+      "id": "Sekitar 4 juta ton per tahun pada 2024 menurut DPR; produksi hijau PLN sekitar 0.0051 persen dari itu (hitung sendiri).",
+      "en": "About 4 million tonnes a year in 2024 per the DPR; PLN green output is about 0.0051 percent of that (own calculation)."
+     }
+    },
+    {
+     "t": {
+      "id": "Berapa biaya hidrogen hijau?",
+      "en": "How much does green hydrogen cost?"
+     },
+     "j": {
+      "id": "DPR mencatat biaya dari PLTS sekitar USD 4,3 sampai 8,3 per kg, diperkirakan turun ke sekitar USD 2 per kg sebelum 2040.",
+      "en": "The DPR records a cost from solar of about USD 4.3 to 8.3 per kg, expected to fall to about USD 2 per kg before 2040."
+     }
+    },
+    {
+     "t": {
+      "id": "Apa rencana pemerintah?",
+      "en": "What is the government plan?"
+     },
+     "j": {
+      "id": "Strategi Hidrogen Nasional diluncurkan Desember 2023, dan Roadmap Hidrogen dan Amonia Nasional (RHAN) 2025 membagi tiga tahap: inisiasi 2025-2030, integrasi 2031-2044, akselerasi 2045-2060.",
+      "en": "The National Hydrogen Strategy was launched in December 2023, and the 2025 National Hydrogen and Ammonia Roadmap (RHAN) has three stages: initiation 2025-2030, integration 2031-2044, acceleration 2045-2060."
+     }
+    },
+    {
+     "t": {
+      "id": "Apa itu pilot Ulubelu?",
+      "en": "What is the Ulubelu pilot?"
+     },
+     "j": {
+      "id": "Pilot Pertamina Geothermal di PLTP Ulubelu, Lampung: groundbreaking 9 September 2025, 100 kg per hari, sekitar USD 3 juta, target operasi 2026.",
+      "en": "A Pertamina Geothermal pilot at the Ulubelu geothermal plant, Lampung: groundbreaking 9 September 2025, 100 kg a day, about USD 3 million, operation targeted for 2026."
+     }
+    },
+    {
+     "t": {
+      "id": "Apakah ada stasiun pengisian hidrogen?",
+      "en": "Is there a hydrogen refuelling station?"
+     },
+     "j": {
+      "id": "Ya, stasiun pertama PLN di Senayan, Jakarta, dipasok dari GHP PLN.",
+      "en": "Yes, PLN's first station in Senayan, Jakarta, supplied from PLN GHPs."
+     }
+    },
+    {
+     "t": {
+      "id": "Kenapa proyek hidrogen dibatalkan di luar negeri?",
+      "en": "Why are hydrogen projects cancelled abroad?"
+     },
+     "j": {
+      "id": "Contoh Australia: Fortescue membatalkan dua proyek pada Juli 2025, BP keluar dari hub 26 GW, dan proyek Townsville dihentikan karena tidak menemukan pembeli. Lihat bab 40.",
+      "en": "Australian examples: Fortescue cancelled two projects in July 2025, BP exited a 26 GW hub, and the Townsville project was scrapped for lack of buyers. See chapter 40."
+     }
+    }
+   ]
+  },
+  "3": {
+   "tipe": "glosarium",
+   "sumber": [
+    "ed"
+   ],
+   "butir": [
+    {
+     "istilah": {
+      "id": "Hidrogen hijau",
+      "en": "Hidrogen hijau"
+     },
+     "arti": {
+      "id": "Hidrogen dari elektrolisis memakai listrik terbarukan.",
+      "en": "Hydrogen from electrolysis using renewable power."
+     }
+    },
+    {
+     "istilah": {
+      "id": "Hidrogen abu-abu / biru",
+      "en": "Hidrogen abu-abu / biru"
+     },
+     "arti": {
+      "id": "Dari gas alam tanpa / dengan penangkapan karbon.",
+      "en": "From natural gas without / with carbon capture."
+     }
+    },
+    {
+     "istilah": {
+      "id": "Elektroliser",
+      "en": "Elektroliser"
+     },
+     "arti": {
+      "id": "Alat pemecah air menjadi hidrogen dan oksigen (PEM, alkali, AEM).",
+      "en": "Device splitting water into hydrogen and oxygen (PEM, alkaline, AEM)."
+     }
+    },
+    {
+     "istilah": {
+      "id": "GHP",
+      "en": "GHP"
+     },
+     "arti": {
+      "id": "Green hydrogen plant milik PLN.",
+      "en": "PLN green hydrogen plant."
+     }
+    },
+    {
+     "istilah": {
+      "id": "HRS / SPBH",
+      "en": "HRS / SPBH"
+     },
+     "arti": {
+      "id": "Stasiun pengisian hidrogen.",
+      "en": "Hydrogen refuelling station."
+     }
+    },
+    {
+     "istilah": {
+      "id": "Amonia hijau",
+      "en": "Amonia hijau"
+     },
+     "arti": {
+      "id": "Amonia dari hidrogen hijau, pembawa hidrogen dan pupuk.",
+      "en": "Ammonia made from green hydrogen, a carrier and fertiliser."
+     }
+    },
+    {
+     "istilah": {
+      "id": "LCOH",
+      "en": "LCOH"
+     },
+     "arti": {
+      "id": "Biaya hidrogen rata-rata per kilogram selama umur proyek.",
+      "en": "Levelized cost of hydrogen per kilogram over the project life."
+     }
+    },
+    {
+     "istilah": {
+      "id": "REC",
+      "en": "REC"
+     },
+     "arti": {
+      "id": "Sertifikat energi terbarukan yang menjadi dasar klaim listrik hijau.",
+      "en": "Renewable energy certificate underpinning a green power claim."
+     }
+    },
+    {
+     "istilah": {
+      "id": "RHAN",
+      "en": "RHAN"
+     },
+     "arti": {
+      "id": "Roadmap Hidrogen dan Amonia Nasional 2025.",
+      "en": "National Hydrogen and Ammonia Roadmap 2025."
+     }
+    },
+    {
+     "istilah": {
+      "id": "Co-firing hidrogen",
+      "en": "Co-firing hidrogen"
+     },
+     "arti": {
+      "id": "Mencampur hidrogen dengan gas di PLTG.",
+      "en": "Blending hydrogen with gas in gas turbines."
+     }
+    },
+    {
+     "istilah": {
+      "id": "Nm3",
+      "en": "Nm3"
+     },
+     "arti": {
+      "id": "Normal meter kubik, satuan volume gas.",
+      "en": "Normal cubic metre, a gas volume unit."
+     }
+    },
+    {
+     "istilah": {
+      "id": "LHV",
+      "en": "LHV"
+     },
+     "arti": {
+      "id": "Nilai kalor bawah; hidrogen sekitar 33,3 kWh per kg.",
+      "en": "Lower heating value; hydrogen is about 33.3 kWh per kg."
+     }
+    },
+    {
+     "istilah": {
+      "id": "Offtaker",
+      "en": "Offtaker"
+     },
+     "arti": {
+      "id": "Pembeli yang menandatangani kontrak pembelian jangka panjang.",
+      "en": "Buyer signing a long-term purchase contract."
+     }
+    },
+    {
+     "istilah": {
+      "id": "FID",
+      "en": "FID"
+     },
+     "arti": {
+      "id": "Keputusan investasi akhir.",
+      "en": "Final investment decision."
+     }
+    },
+    {
+     "istilah": {
+      "id": "CCS",
+      "en": "CCS"
+     },
+     "arti": {
+      "id": "Penangkapan dan penyimpanan karbon.",
+      "en": "Carbon capture and storage."
+     }
+    }
+   ]
+  },
+  "4": {
+   "tipe": "teks",
+   "sumber": [
+    "dpr",
+    "mc",
+    "hrs"
+   ],
+   "paragraf": [
+    {
+     "id": "Hidrogen penting untuk sektor yang sulit dilistrikkan langsung: kilang, pupuk, baja, dan transportasi berat. Permintaan Indonesia sekitar 4 juta ton per tahun menurut DPR, hampir seluruhnya hidrogen yang belum hijau.",
+     "en": "Hydrogen matters for sectors hard to electrify directly: refineries, fertiliser, steel and heavy transport. Indonesian demand is about 4 million tonnes a year per the DPR, almost all of it not yet green."
+    },
+    {
+     "id": "Pasokan hijau Indonesia baru dimulai: PLN memulai dengan 51 ton per tahun di Muara Karang dan kini memiliki jaringan 22 GHP dengan sekitar 203 ton per tahun serta stasiun pengisian Senayan.",
+     "en": "Indonesian green supply has just begun: PLN began with 51 tonnes a year at Muara Karang and now has a network of 22 GHP with about 203 tonnes a year and the Senayan refuelling station."
+    },
+    {
+     "id": "Kunci ekonomi hidrogen hijau adalah harga listrik terbarukan dan pembeli jangka panjang; keduanya terbukti menentukan proyek di luar negeri.",
+     "en": "The keys to green hydrogen economics are renewable power price and long-term buyers; both proved decisive in projects abroad."
+    }
+   ]
+  },
+  "5": {
+   "tipe": "rumus",
+   "sumber": [
+    "ed",
+    "dpr",
+    "neomceo"
+   ],
+   "rumus": [
+    {
+     "id": "Energi dalam hidrogen (kWh) = massa (kg) x 33,3 kWh per kg (nilai kalor bawah)",
+     "en": "Energy in hydrogen (kWh) = mass (kg) x 33.3 kWh per kg (lower heating value)"
+    },
+    {
+     "id": "Biaya listrik per kg = konsumsi elektroliser (kWh per kg) x harga listrik",
+     "en": "Electricity cost per kg = electrolyser consumption (kWh per kg) x power price"
+    },
+    {
+     "id": "LCOH = (biaya modal tahunan + biaya operasi + biaya listrik) / kg per tahun",
+     "en": "LCOH = (annualised capital + operating + electricity cost) / kg per year"
+    }
+   ],
+   "contoh": [
+    {
+     "id": "PLN 203 ton per tahun setara sekitar 6.8 GWh energi hidrogen; NEOM 600 ton per hari setara sekitar 20 GWh per hari atau 7.3 TWh per tahun bila penuh (EST, hitung sendiri).",
+     "en": "PLN's 203 tonnes a year equals about 6.8 GWh of hydrogen energy; NEOM at 600 tonnes a day is about 20 GWh a day or 7.3 TWh a year at full output (EST, own calculation)."
+    },
+    {
+     "id": "Ulubelu 100 kg per hari berarti sekitar 36.5 ton per tahun bila beroperasi penuh (EST).",
+     "en": "Ulubelu at 100 kg a day is about 36.5 tonnes a year at full operation (EST)."
+    },
+    {
+     "id": "Dengan asumsi hipotesis konsumsi 50 kWh per kg dan listrik 5 sen USD per kWh, komponen listrik sekitar USD 2.5 per kg; sisanya modal dan operasi menjelaskan LCOH USD 4,3 sampai 8,3 yang dicatat DPR (EST, konsumsi 50 kWh per kg adalah asumsi).",
+     "en": "Assuming a hypothetical 50 kWh per kg and power at 5 US cents per kWh, the electricity component is about USD 2.5 per kg; capital and operations explain the USD 4.3 to 8.3 LCOH the DPR records (EST, 50 kWh per kg is an assumption)."
+    }
+   ]
+  },
+  "6": {
+   "tipe": "langkah",
+   "sumber": [
+    "ed",
+    "mc",
+    "hrs",
+    "ulu"
+   ],
+   "butir": [
+    {
+     "judul": {
+      "id": "Listrik terbarukan",
+      "en": "Renewable electricity"
+     },
+     "isi": {
+      "id": "PLN memakai PLTS di PLTGU Muara Karang dan sertifikat REC dari PLTP Kamojang; Pertamina memakai PLTP Ulubelu.",
+      "en": "PLN uses solar at the Muara Karang combined-cycle plant and RECs from the Kamojang geothermal plant; Pertamina uses the Ulubelu geothermal plant."
+     },
+     "pelaku": {
+      "id": "PLN, Pertamina Geothermal",
+      "en": "PLN, Pertamina Geothermal"
+     }
+    },
+    {
+     "judul": {
+      "id": "Elektrolisis",
+      "en": "Electrolysis"
+     },
+     "isi": {
+      "id": "Elektroliser memecah air; pilot Ulubelu memakai elektroliser anion exchange membrane (AEM).",
+      "en": "Electrolysers split water; the Ulubelu pilot uses an anion exchange membrane (AEM) electrolyser."
+     },
+     "pelaku": {
+      "id": "Pengembang, penyedia teknologi",
+      "en": "Developer, technology provider"
+     }
+    },
+    {
+     "judul": {
+      "id": "Kompresi dan penyimpanan",
+      "en": "Compression and storage"
+     },
+     "isi": {
+      "id": "Penyimpanan dan transportasi masih terbatas menurut DPR.",
+      "en": "Storage and transport are still limited per the DPR."
+     },
+     "pelaku": {
+      "id": "Pelaku logistik gas",
+      "en": "Gas logistics players"
+     }
+    },
+    {
+     "judul": {
+      "id": "Pemakai",
+      "en": "Users"
+     },
+     "isi": {
+      "id": "Pendingin generator pembangkit, kendaraan sel bahan bakar lewat stasiun Senayan, industri, dan co-firing pembangkit.",
+      "en": "Power plant generator cooling, fuel cell vehicles via the Senayan station, industry and plant co-firing."
+     },
+     "pelaku": {
+      "id": "PLN, industri, transportasi",
+      "en": "PLN, industry, transport"
+     }
+    },
+    {
+     "judul": {
+      "id": "Amonia dan ekspor",
+      "en": "Ammonia and export"
+     },
+     "isi": {
+      "id": "Jalur pembawa untuk ekspor dan pupuk; belum ada proyek Indonesia yang bersumber.",
+      "en": "A carrier route for export and fertiliser; no sourced Indonesian project yet."
+     },
+     "pelaku": {
+      "id": "Belum ada",
+      "en": "None yet"
+     }
+    }
+   ]
+  },
+  "7": {
+   "tipe": "grafik",
+   "jenis": "kolom",
+   "sumber": [
+    "mc",
+    "ghp21",
+    "hrs"
+   ],
+   "label": {
+    "id": "Kapasitas produksi hidrogen hijau PLN",
+    "en": "PLN green hydrogen production capacity"
+   },
+   "satuan": {
+    "id": "ton per tahun",
+    "en": "tonnes a year"
+   },
+   "d": 0,
+   "seri": [
+    {
+     "nama": {
+      "id": "Ton per tahun",
+      "en": "Tonnes a year"
+     },
+     "sorot": true,
+     "titik": [
+      [
+       "Okt 2023 (Muara Karang)",
+       51
+      ],
+      [
+       "Nov 2023 (21 GHP)",
+       199
+      ],
+      [
+       "Jaringan 22 GHP",
+       203
+      ]
+     ]
+    }
+   ],
+   "catatan": {
+    "id": "Sumber memberi 191 sampai 199 ton untuk 21 GHP; 199 dipakai di grafik. Angka 203 ton untuk 22 GHP dari Indonesia Business Post.",
+    "en": "Sources give 191 to 199 tonnes for 21 GHP; 199 is used in the chart. The 203 tonnes for 22 GHP is from Indonesia Business Post."
+   }
+  },
+  "8": {
+   "tipe": "tabel",
+   "per": 8,
+   "sumber": [
+    "mc",
+    "ghp21",
+    "hrs",
+    "ulu"
+   ],
+   "catatan": {
+    "id": "Lokasi bernama yang ditemukan; daftar lengkap 22 GHP tidak ditemukan.",
+    "en": "Named locations found; the full list of 22 GHP was not found."
+   },
+   "kolom": [
+    {
+     "k": "lok",
+     "l": {
+      "id": "Lokasi",
+      "en": "Location"
+     }
+    },
+    {
+     "k": "pel",
+     "l": {
+      "id": "Pelaksana",
+      "en": "Operator"
+     }
+    },
+    {
+     "k": "f",
+     "l": {
+      "id": "Fakta",
+      "en": "Fact"
+     }
+    }
+   ],
+   "baris": [
+    {
+     "lok": "Muara Karang, Jakarta",
+     "pel": "PLN",
+     "f": {
+      "id": "GHP pertama, 51 ton per tahun, 9 Oktober 2023",
+      "en": "First GHP, 51 tonnes a year, 9 October 2023"
+     }
+    },
+    {
+     "lok": {
+      "id": "Berbagai pembangkit PLN",
+      "en": "Various PLN plants"
+     },
+     "pel": "PLN",
+     "f": {
+      "id": "21 GHP diresmikan November 2023, sekitar 191 sampai 199 ton per tahun",
+      "en": "21 GHP inaugurated November 2023, about 191 to 199 tonnes a year"
+     }
+    },
+    {
+     "lok": "Kamojang, Jawa Barat",
+     "pel": "PLN",
+     "f": {
+      "id": "GHP tambahan; jaringan menjadi sekitar 203 ton per tahun",
+      "en": "Additional GHP; the network reaches about 203 tonnes a year"
+     }
+    },
+    {
+     "lok": "Senayan, Jakarta",
+     "pel": "PLN",
+     "f": {
+      "id": "Stasiun pengisian hidrogen pertama",
+      "en": "First hydrogen refuelling station"
+     }
+    },
+    {
+     "lok": "Ulubelu, Lampung",
+     "pel": "Pertamina Geothermal",
+     "f": {
+      "id": "Pilot 100 kg per hari, groundbreaking 9 September 2025",
+      "en": "Pilot of 100 kg a day, groundbreaking 9 September 2025"
+     }
+    }
+   ]
+  },
+  "11": {
+   "tipe": "teks",
+   "sumber": [
+    "dpr",
+    "hrs"
+   ],
+   "paragraf": [
+    {
+     "id": "Pasar hidrogen Indonesia besar tetapi belum hijau: permintaan sekitar 4 juta ton per tahun (35 persen dari Asia Tenggara) menurut DPR, dibanding produksi hijau PLN sekitar 203 ton per tahun (0.0051 persen, EST).",
+     "en": "The Indonesian hydrogen market is large but not green: demand of about 4 million tonnes a year (35 percent of Southeast Asia) per the DPR, versus PLN green production of about 203 tonnes a year (0.0051 percent, EST)."
+    },
+    {
+     "id": "Dari 203 ton, 128 ton dialokasikan untuk transportasi menurut Indonesia Business Post; sisanya untuk pendingin generator dan kebutuhan internal PLN. DPR mencatat belum ada kewajiban pemanfaatan hidrogen hijau di sektor tertentu sehingga pasar domestik belum berkembang.",
+     "en": "Of the 203 tonnes, 128 are allocated to transport per Indonesia Business Post; the rest is for generator cooling and PLN internal needs. The DPR notes there is no mandatory use of green hydrogen in any sector so the domestic market has not developed."
+    }
+   ]
+  },
+  "12": {
+   "tipe": "tabel",
+   "per": 8,
+   "sumber": [
+    "dpr",
+    "ghes",
+    "regul"
+   ],
+   "catatan": {
+    "id": "Belum ditemukan undang-undang atau peraturan presiden khusus hidrogen; yang ada adalah dokumen strategi dan peta jalan.",
+    "en": "No hydrogen-specific law or presidential regulation was found; what exists are strategy and roadmap documents."
+   },
+   "kolom": [
+    {
+     "k": "dok",
+     "l": {
+      "id": "Dokumen",
+      "en": "Document"
+     }
+    },
+    {
+     "k": "isi",
+     "l": {
+      "id": "Isi",
+      "en": "Content"
+     }
+    },
+    {
+     "k": "st",
+     "l": {
+      "id": "Status",
+      "en": "Status"
+     }
+    }
+   ],
+   "baris": [
+    {
+     "dok": {
+      "id": "Strategi Hidrogen Nasional",
+      "en": "National Hydrogen Strategy"
+     },
+     "isi": {
+      "id": "Diluncurkan Desember 2023 sebagai panduan percepatan",
+      "en": "Launched December 2023 as an acceleration guide"
+     },
+     "st": {
+      "id": "berlaku sebagai strategi",
+      "en": "in force as strategy"
+     }
+    },
+    {
+     "dok": "RHAN 2025",
+     "isi": {
+      "id": "Tiga tahap: 2025-2030, 2031-2044, 2045-2060; empat sektor (industri, transportasi, pembangkit, gas)",
+      "en": "Three stages: 2025-2030, 2031-2044, 2045-2060; four sectors (industry, transport, power, gas)"
+     },
+     "st": {
+      "id": "peta jalan",
+      "en": "roadmap"
+     }
+    },
+    {
+     "dok": {
+      "id": "Standar sertifikasi hidrogen",
+      "en": "Hydrogen certification standard"
+     },
+     "isi": {
+      "id": "Belum ada menurut DPR Oktober 2025",
+      "en": "Not yet in place per DPR October 2025"
+     },
+     "st": {
+      "id": "belum ada",
+      "en": "not yet"
+     }
+    },
+    {
+     "dok": {
+      "id": "Insentif fiskal hidrogen",
+      "en": "Hydrogen fiscal incentive"
+     },
+     "isi": {
+      "id": "Belum ada menurut DPR Oktober 2025",
+      "en": "Not yet in place per DPR October 2025"
+     },
+     "st": {
+      "id": "belum ada",
+      "en": "not yet"
+     }
+    }
+   ]
+  },
+  "13": {
+   "tipe": "linimasa",
+   "sumber": [
+    "mc",
+    "ghp21",
+    "ghes",
+    "ulu",
+    "bp",
+    "dpr",
+    "kuqa2",
+    "neom"
+   ],
+   "butir": [
+    {
+     "tanggal": "2020-01-01",
+     "judul": {
+      "id": "Fukushima FH2R diresmikan (tahun saja)",
+      "en": "Fukushima FH2R inaugurated (year only)"
+     },
+     "url": "https://en.wikipedia.org/wiki/Fukushima_Hydrogen_Energy_Research_Field"
+    },
+    {
+     "tanggal": "2023-08-30",
+     "judul": {
+      "id": "Kuqa Sinopec 260 MW beroperasi",
+      "en": "Sinopec Kuqa 260 MW in operation"
+     },
+     "url": "https://www.engineeringnews.co.za/article/sinopec-xinjiang-kuqa-green-hydrogen-pilot-project-china-2023-05-05"
+    },
+    {
+     "tanggal": "2023-10-09",
+     "judul": {
+      "id": "GHP pertama PLN di Muara Karang diresmikan",
+      "en": "PLN first GHP at Muara Karang inaugurated"
+     },
+     "url": "https://esdm.go.id/en/media-center/news-archives/green-hydrogen-plant-pertama-di-indonesia-resmi-beroperasi"
+    },
+    {
+     "tanggal": "2023-11-22",
+     "judul": {
+      "id": "21 GHP PLN diresmikan",
+      "en": "21 PLN GHP inaugurated"
+     },
+     "url": "https://listrikindonesia.com/detail/11939/pln-resmikan-21-unit-green-hydrogen-plant-memiliki-kapasitas-191-ton"
+    },
+    {
+     "tanggal": "2023-12-01",
+     "judul": {
+      "id": "Strategi Hidrogen Nasional diluncurkan (bulan saja)",
+      "en": "National Hydrogen Strategy launched (month only)"
+     },
+     "url": "https://listrikindonesia.com/detail/19181/ghes-2026-buka-peluang-investasi-hidrogen-nasional"
+    },
+    {
+     "tanggal": "2025-07-28",
+     "judul": {
+      "id": "BP keluar dari hub 26 GW; Fortescue batalkan PEM50",
+      "en": "BP exits the 26 GW hub; Fortescue cancels PEM50"
+     },
+     "url": "https://www.pv-magazine.com/2025/07/28/bp-backs-out-of-26-gw-green-hydrogen-plan-in-australia/"
+    },
+    {
+     "tanggal": "2025-09-09",
+     "judul": {
+      "id": "Groundbreaking pilot Ulubelu",
+      "en": "Groundbreaking of the Ulubelu pilot"
+     },
+     "url": "https://listrikindonesia.com/detail/17800/proyek-pilot-plant-green-hydrogen-di-ulubelu-dimulai"
+    },
+    {
+     "tanggal": "2025-10-01",
+     "judul": {
+      "id": "DPR menerbitkan Info Singkat tentang ekosistem hidrogen hijau (bulan saja)",
+      "en": "DPR publishes brief on the green hydrogen ecosystem (month only)"
+     },
+     "url": "https://berkas.dpr.go.id/pusaka/files/info_singkat/Info%20Singkat-XVII-19-I-P3DI-Oktober-2025-245.pdf"
+    },
+    {
+     "tanggal": "2027-01-01",
+     "judul": {
+      "id": "Target operasi komersial NEOM (tahun saja)",
+      "en": "NEOM commercial operation target (year only)"
+     },
+     "url": "https://guest.meed.com/acwa-completes-construction-of-85bn-hydrogen-project/"
+    }
+   ]
+  },
+  "14": {
+   "tipe": "teks",
+   "sumber": [
+    "dpr"
+   ],
+   "paragraf": [
+    {
+     "id": "Temuan DPR Oktober 2025: belum ada insentif fiskal hidrogen, belum ada standar sertifikasi, dan belum ada kewajiban pemanfaatan di sektor tertentu; ketiganya disebut sebagai penyebab minat investor rendah. Karena itu bab ini tidak memuat kewajiban atau sanksi.",
+     "en": "DPR finding of October 2025: there is no hydrogen fiscal incentive, no certification standard and no mandatory use in any sector; all three are named as reasons for low investor interest. This chapter therefore carries no obligations or penalties."
+    },
+    {
+     "id": "Rekomendasi DPR: memperkuat regulasi dan insentif fiskal, menetapkan target konsumsi hidrogen hijau untuk industri dan transportasi berat, dan membangun proyek dekat sumber energi dan pasar.",
+     "en": "DPR recommendations: strengthen regulation and fiscal incentives, set green hydrogen consumption targets for industry and heavy transport, and build projects close to energy sources and markets."
+    }
+   ]
+  },
+  "16": {
+   "tipe": "teks",
+   "sumber": [
+    "dpr",
+    "ruuebet"
+   ],
+   "paragraf": [
+    {
+     "id": "DPR meminta Komisi XII menuntaskan RUU EBET dan mengawasi pelaksanaan RHAN. RUU EBET berada pada tahap pembahasan menurut arsip METI 8 September 2026 (tahap belum dicek ke situs DPR).",
+     "en": "The DPR asks Commission XII to finish RUU EBET and oversee RHAN implementation. RUU EBET is in deliberation per the METI archive of 8 September 2026 (stage not checked against the DPR site)."
+    },
+    {
+     "id": "Masukan yang layak diajukan lewat forum Konsultasi: definisi hidrogen hijau yang tidak bergantung hanya pada REC, standar sertifikasi, dan jalur insentif.",
+     "en": "Inputs worth submitting through the Consultation forum: a definition of green hydrogen not relying only on RECs, a certification standard and an incentive route."
+    }
+   ]
+  },
+  "17": {
+   "tipe": "teks",
+   "sumber": [
+    "ulu",
+    "dpr",
+    "kuqa",
+    "fh2r",
+    "neomceo"
+   ],
+   "paragraf": [
+    {
+     "id": "Elektroliser: pilot Ulubelu memakai AEM; Fortescue memakai PEM pada proyek PEM50 yang dibatalkan; Kuqa (Sinopec) berskala 260 MW; FH2R di Fukushima memakai PLTS 10 MW dan menghasilkan hingga 1.200 Nm3 per jam.",
+     "en": "Electrolysers: the Ulubelu pilot uses AEM; Fortescue used PEM in its cancelled PEM50 project; Kuqa (Sinopec) is 260 MW; FH2R in Fukushima uses a 10 MW solar plant and makes up to 1,200 Nm3 an hour."
+    },
+    {
+     "id": "Skala: NEOM menargetkan sekitar 600 ton per hari. Kuqa menunjukkan risiko ramp-up: laporan menyebut sekitar 35 persen dari output harapan pada 12 bulan pertama dan target 20.000 ton per tahun tertunda hingga 2025.",
+     "en": "Scale: NEOM targets about 600 tonnes a day. Kuqa shows ramp-up risk: reports cite about 35 percent of expected output in the first 12 months and the 20,000 tonnes a year target delayed to 2025."
+    }
+   ]
+  },
+  "19": {
+   "tipe": "tabel",
+   "per": 6,
+   "sumber": [
+    "dpr"
+   ],
+   "catatan": {
+    "id": "Satu-satunya angka biaya hidrogen bersumber di bab ini; biaya modal elektroliser dan listrik Indonesia belum bersumber.",
+    "en": "The only sourced hydrogen cost figure in this chapter; electrolyser capital cost and Indonesian power price are not yet sourced."
+   },
+   "kolom": [
+    {
+     "k": "k",
+     "l": {
+      "id": "Keterangan",
+      "en": "Description"
+     }
+    },
+    {
+     "k": "v",
+     "l": {
+      "id": "USD per kg",
+      "en": "USD per kg"
+     }
+    }
+   ],
+   "baris": [
+    {
+     "k": {
+      "id": "Biaya hidrogen dari PLTS saat ini, batas bawah",
+      "en": "Hydrogen cost from solar today, lower bound"
+     },
+     "v": "4,3"
+    },
+    {
+     "k": {
+      "id": "Biaya hidrogen dari PLTS saat ini, batas atas",
+      "en": "Hydrogen cost from solar today, upper bound"
+     },
+     "v": "8,3"
+    },
+    {
+     "k": {
+      "id": "Perkiraan sebelum 2040",
+      "en": "Expected before 2040"
+     },
+     "v": {
+      "id": "sekitar 2",
+      "en": "about 2"
+     }
+    }
+   ]
+  },
+  "20": {
+   "tipe": "tabel",
+   "per": 8,
+   "sumber": [
+    "hrs",
+    "ulu",
+    "kuqa",
+    "neomceo",
+    "fh2r",
+    "bp"
+   ],
+   "catatan": {
+    "id": "Proyek terpilih sebagai pembanding, bukan peringkat negara.",
+    "en": "Selected projects as comparators, not a country ranking."
+   },
+   "kolom": [
+    {
+     "k": "n",
+     "l": {
+      "id": "Negara",
+      "en": "Country"
+     }
+    },
+    {
+     "k": "f",
+     "l": {
+      "id": "Proyek dan fakta",
+      "en": "Project and fact"
+     }
+    },
+    {
+     "k": "h",
+     "l": {
+      "id": "Catatan",
+      "en": "Note"
+     }
+    }
+   ],
+   "baris": [
+    {
+     "n": "Indonesia",
+     "f": {
+      "id": "PLN 22 GHP sekitar 203 ton per tahun; pilot Ulubelu 100 kg per hari",
+      "en": "PLN 22 GHP about 203 tonnes a year; Ulubelu pilot 100 kg a day"
+     },
+     "h": {
+      "id": "Skala kecil, pasar belum ada",
+      "en": "Small scale, no market yet"
+     }
+    },
+    {
+     "n": {
+      "id": "Tiongkok",
+      "en": "China"
+     },
+     "f": {
+      "id": "Kuqa 260 MW, rencana 20.000 ton per tahun, hidrogen ke kilang Tahe",
+      "en": "Kuqa 260 MW, plan of 20,000 tonnes a year, hydrogen to the Tahe refinery"
+     },
+     "h": {
+      "id": "Pembeli ada (kilang) tetapi ramp-up lambat",
+      "en": "Buyer exists (refinery) but ramp-up is slow"
+     }
+    },
+    {
+     "n": {
+      "id": "Arab Saudi",
+      "en": "Saudi Arabia"
+     },
+     "f": {
+      "id": "NEOM sekitar 600 ton per hari, USD 8,4 sampai 8,5 miliar, komisioning 2026-2027",
+      "en": "NEOM about 600 tonnes a day, USD 8.4 to 8.5 billion, commissioning 2026-2027"
+     },
+     "h": {
+      "id": "Skala terbesar, menunggu operasi komersial",
+      "en": "Largest scale, awaiting commercial operation"
+     }
+    },
+    {
+     "n": {
+      "id": "Jepang",
+      "en": "Japan"
+     },
+     "f": {
+      "id": "FH2R Fukushima, PLTS 10 MW, hingga 1.200 Nm3 per jam, 2020",
+      "en": "FH2R Fukushima, 10 MW solar, up to 1,200 Nm3 an hour, 2020"
+     },
+     "h": {
+      "id": "Demonstrasi riset",
+      "en": "Research demonstration"
+     }
+    },
+    {
+     "n": "Australia",
+     "f": {
+      "id": "BP keluar dari hub 26 GW; Fortescue batalkan PEM50 dan proyek AS (Juli 2025)",
+      "en": "BP exits the 26 GW hub; Fortescue cancels PEM50 and a US project (July 2025)"
+     },
+     "h": {
+      "id": "Pembatalan massal setelah ekspektasi tinggi",
+      "en": "Mass cancellations after high expectations"
+     }
+    }
+   ]
+  },
+  "21": {
+   "tipe": "teks",
+   "sumber": [
+    "kuqa",
+    "neomceo",
+    "bp",
+    "tville"
+   ],
+   "paragraf": [
+    {
+     "id": "Dua proyek yang maju (Kuqa dan NEOM) sama-sama memiliki pembeli atau pemilik yang jelas: Kuqa memasok kilang Tahe yang mengganti hidrogen gas alam; NEOM dibiayai konsorsium dengan kontrak penjualan amonia. Dua negara berhasil, namun keduanya masih dalam ramp-up atau komisioning.",
+     "en": "Two projects that advanced (Kuqa and NEOM) both have a clear buyer or sponsor: Kuqa feeds the Tahe refinery replacing gas-based hydrogen; NEOM is funded by a consortium with ammonia sales contracts. Two successes, yet both are still ramping or commissioning."
+    },
+    {
+     "id": "Kegagalan Australia punya pola sama dari sisi sebaliknya: pembeli tidak ada (Townsville dihentikan karena tidak menemukan pembeli) dan strategi perusahaan berubah (BP).",
+     "en": "The Australian failures share the same pattern from the other side: no buyers (Townsville was scrapped for lack of buyers) and changing corporate strategy (BP)."
+    }
+   ]
+  },
+  "22": {
+   "tipe": "teks",
+   "sumber": [
+    "dpr",
+    "hrs",
+    "kuqa",
+    "neomceo"
+   ],
+   "paragraf": [
+    {
+     "id": "Produksi hijau Indonesia (203 ton per tahun) sekitar 1 persen dari rencana Kuqa (20.000 ton) dan jauh di bawah sehari NEOM (600 ton), namun Indonesia adalah pasar hidrogen terbesar di Asia Tenggara (35 persen dari permintaan kawasan menurut DPR).",
+     "en": "Indonesian green production (203 tonnes a year) is about 1 percent of the Kuqa plan (20,000 tonnes) and far below one NEOM day (600 tonnes), yet Indonesia is the largest hydrogen market in Southeast Asia (35 percent of regional demand per the DPR)."
+    },
+    {
+     "id": "Analisis METI (Hipotesis): keunggulan Indonesia ada pada permintaan besar yang sudah ada (pupuk, kilang) dan sumber panas bumi yang stabil, bukan pada skala elektroliser saat ini.",
+     "en": "METI analysis (Hypothesis): Indonesia's edge is its existing large demand (fertiliser, refineries) and stable geothermal power, not its current electrolyser scale."
+    }
+   ]
+  },
+  "23": {
+   "tipe": "teks",
+   "sumber": [
+    "ghes",
+    "ibp"
+   ],
+   "paragraf": [
+    {
+     "id": "Kerja sama internasional dalam sumber yang dibaca terbatas pada undangan investasi: Indonesia Business Post mengutip data ESDM tentang target investasi hidrogen hijau sekitar USD 25,2 miliar sampai 2060, dan forum GHES 2026 membuka peluang investasi nasional.",
+     "en": "International cooperation in the sources read is limited to investment invitations: Indonesia Business Post cites ESDM data on a green hydrogen investment target of about USD 25.2 billion to 2060, and the GHES 2026 forum opens national investment opportunities."
+    },
+    {
+     "id": "Perjanjian pembelian ekspor atau kesepakatan antarpemerintah untuk amonia hijau tidak ditemukan.",
+     "en": "Export purchase agreements or government-to-government deals for green ammonia were not found."
+    }
+   ]
+  },
+  "24": {
+   "tipe": "tabel",
+   "per": 8,
+   "sumber": [
+    "pendanaan"
+   ],
+   "catatan": {
+    "id": "Skema dan proyek pendana yang namanya menyebut hidrogen di basis METI.",
+    "en": "Funder schemes and projects whose names mention hydrogen in the METI base."
+   },
+   "kolom": [
+    {
+     "k": "nama",
+     "l": {
+      "id": "Skema atau proyek",
+      "en": "Scheme or project"
+     },
+     "url": "u"
+    },
+    {
+     "k": "pem",
+     "l": {
+      "id": "Pemberi",
+      "en": "Provider"
+     }
+    },
+    {
+     "k": "jenis",
+     "l": {
+      "id": "Jenis",
+      "en": "Type"
+     }
+    }
+   ],
+   "baris": [
+    {
+     "nama": "RDEL - Energy Transition and Hydrogen Policy",
+     "pem": "UK - Foreign, Commonwealth Development Office (FCDO)",
+     "jenis": {
+      "id": "proyek",
+      "en": "project"
+     },
+     "u": "https://d-portal.org/ctrack.html#view=act&aid=GB-GOV-1-400399-405"
+    },
+    {
+     "nama": "Establishment of hydrogen mobility ecosystem in West Java, Indonesia",
+     "pem": "Office for Government Policy Coordination",
+     "jenis": {
+      "id": "proyek",
+      "en": "project"
+     },
+     "u": "https://d-portal.org/ctrack.html#view=act&aid=KR-GOV-120-1480000_2026_005"
+    },
+    {
+     "nama": "Study into green hydrogen location mapping in West Java",
+     "pem": "Netherlands Enterprise Agency",
+     "jenis": {
+      "id": "proyek",
+      "en": "project"
+     },
+     "u": "https://d-portal.org/ctrack.html#view=act&aid=NL-KVK-27378529-CERF24ID4I"
+    },
+    {
+     "nama": "World Hydrogen Summit 2024 tickets Indonesian delegation",
+     "pem": "Netherlands Enterprise Agency",
+     "jenis": {
+      "id": "proyek",
+      "en": "project"
+     },
+     "u": "https://d-portal.org/ctrack.html#view=act&aid=NL-KVK-27378529-CERF24NL2O"
+    },
+    {
+     "nama": "Advice on Green Hydrogen Location Mapping study Indonesia",
+     "pem": "Netherlands Enterprise Agency",
+     "jenis": {
+      "id": "proyek",
+      "en": "project"
+     },
+     "u": "https://d-portal.org/ctrack.html#view=act&aid=NL-KVK-27378529-CERF25ID2O"
+    }
+   ]
+  },
+  "25": {
+   "tipe": "rumus",
+   "sumber": [
+    "dpr",
+    "ulu",
+    "neom"
+   ],
+   "rumus": [
+    {
+     "id": "Pendapatan = produksi (kg) x harga jual (USD per kg)",
+     "en": "Revenue = production (kg) x selling price (USD per kg)"
+    },
+    {
+     "id": "Margin = harga jual - LCOH; margin negatif berarti perlu subsidi atau kewajiban pembeli",
+     "en": "Margin = selling price - LCOH; a negative margin means subsidy or a buyer mandate is needed"
+    }
+   ],
+   "contoh": [
+    {
+     "id": "Pilot Ulubelu bernilai sekitar USD 3 juta untuk 100 kg per hari (sekitar USD 82 ribu per kg per hari kapasitas, EST), sehingga sifatnya demonstrasi, bukan bisnis.",
+     "en": "The Ulubelu pilot is about USD 3 million for 100 kg a day (about USD 82 thousand per kg-a-day of capacity, EST), so it is a demonstration, not a business."
+    },
+    {
+     "id": "Dengan LCOH USD 4,3 sampai 8,3 per kg, hidrogen hijau baru kompetitif bila pembeli membayar premi hijau atau ada kewajiban; harga jual hidrogen abu-abu domestik belum bersumber.",
+     "en": "With an LCOH of USD 4.3 to 8.3 per kg, green hydrogen is competitive only if buyers pay a green premium or there is a mandate; the domestic grey hydrogen price is not yet sourced."
+    }
+   ]
+  },
+  "26": {
+   "tipe": "tabel",
+   "per": 8,
+   "sumber": [
+    "neom",
+    "bp",
+    "fort",
+    "ulu"
+   ],
+   "catatan": {
+    "id": "Nilai dari pemberitaan; bukan audit.",
+    "en": "Values from press; not audited."
+   },
+   "kolom": [
+    {
+     "k": "p",
+     "l": {
+      "id": "Proyek",
+      "en": "Project"
+     }
+    },
+    {
+     "k": "n",
+     "l": {
+      "id": "Nilai",
+      "en": "Value"
+     }
+    },
+    {
+     "k": "k",
+     "l": {
+      "id": "Keterangan",
+      "en": "Note"
+     }
+    }
+   ],
+   "baris": [
+    {
+     "p": "NEOM Green Hydrogen",
+     "n": "USD 8,4 sampai 8,5 miliar",
+     "k": {
+      "id": "Konstruksi selesai, komisioning, operasi komersial 2027",
+      "en": "Construction complete, commissioning, commercial operation 2027"
+     }
+    },
+    {
+     "p": {
+      "id": "Australian Renewable Energy Hub",
+      "en": "Australian Renewable Energy Hub"
+     },
+     "n": {
+      "id": "Sekitar USD 55 miliar (perkiraan hub)",
+      "en": "About USD 55 billion (hub estimate)"
+     },
+     "k": {
+      "id": "BP (63,57 persen) keluar Juli 2025",
+      "en": "BP (63.57 percent) exits July 2025"
+     }
+    },
+    {
+     "p": {
+      "id": "Fortescue PEM50 dan proyek AS",
+      "en": "Fortescue PEM50 and US project"
+     },
+     "n": {
+      "id": "Penghapusan buku sekitar USD 150 juta",
+      "en": "Write-down of about USD 150 million"
+     },
+     "k": {
+      "id": "Dibatalkan Juli 2025",
+      "en": "Cancelled July 2025"
+     }
+    },
+    {
+     "p": {
+      "id": "Pilot Ulubelu",
+      "en": "Ulubelu pilot"
+     },
+     "n": "USD 3 juta",
+     "k": {
+      "id": "100 kg per hari, target 2026",
+      "en": "100 kg a day, 2026 target"
+     }
+    }
+   ]
+  },
+  "27": {
+   "tipe": "teks",
+   "sumber": [
+    "mc",
+    "dpr",
+    "ed"
+   ],
+   "paragraf": [
+    {
+     "id": "Klaim hijau PLN bersandar pada listrik surya di lokasi ditambah REC dari PLTP Kamojang (ESDM, 2023). REC adalah sertifikat, bukan listrik fisik ke elektroliser; definisi hidrogen hijau yang ketat perlu mempertimbangkan ketepatan waktu dan lokasi.",
+     "en": "PLN's green claim rests on on-site solar power plus RECs from the Kamojang geothermal plant (ESDM, 2023). RECs are certificates, not physical power to the electrolyser; a strict definition of green hydrogen should consider time and location matching."
+    },
+    {
+     "id": "Analisis METI (Hipotesis): tanpa standar sertifikasi nasional (DPR, Oktober 2025), klaim hijau dapat berbeda-beda antar proyek; standar perlu hadir sebelum ekspor.",
+     "en": "METI analysis (Hypothesis): without a national certification standard (DPR, October 2025), green claims may differ between projects; a standard is needed before exports."
+    },
+    {
+     "id": "Risiko keselamatan, air, dan hak masyarakat sekitar proyek hidrogen Indonesia belum bersumber di bab ini.",
+     "en": "Safety, water and community-rights risks around Indonesian hydrogen projects are not sourced in this chapter."
+    }
+   ]
+  },
+  "28": {
+   "tipe": "teks",
+   "sumber": [
+    "dpr",
+    "ulu"
+   ],
+   "paragraf": [
+    {
+     "id": "DPR mencatat keterbatasan teknologi dan SDM lokal dan merekomendasikan pelatihan dan sertifikasi. Pertamina menyebut pilot Ulubelu dapat menciptakan lapangan kerja (judul CNN Indonesia), tetapi jumlahnya tidak ditemukan.",
+     "en": "The DPR notes limited local technology and human resources and recommends training and certification. Pertamina said the Ulubelu pilot can create jobs (CNN Indonesia headline), but the number was not found."
+    }
+   ]
+  },
+  "29": {
+   "tipe": "teks",
+   "sumber": [
+    "dpr",
+    "mc",
+    "fort2",
+    "repay",
+    "neom"
+   ],
+   "paragraf": [
+    {
+     "id": "Seberapa hijau: pendukung (ESDM, PLN) menyebut produksi PLN 100 persen hijau; kritik menekankan perlunya standar dan menilai klaim berbasis REC rawan. Kedua sisi menyepakati bahwa sertifikasi belum ada.",
+     "en": "How green: supporters (ESDM, PLN) call PLN production 100 percent green; critics stress the need for standards and see REC-based claims as fragile. Both sides agree certification does not yet exist."
+    },
+    {
+     "id": "Hype dan koreksi: Fortescue menyatakan target nol bersih tetap berjalan meski proyeknya dibatalkan, sementara pemerintah Australia dilaporkan meminta hibah proyek Gladstone dikembalikan. NEOM tetap berlanjut meski jadwalnya bergeser dari 2026 ke 2027.",
+     "en": "Hype and correction: Fortescue says its real zero target stays on track despite cancelling projects, while the Australian government was reported to ask for the Gladstone grant to be repaid. NEOM continues although its schedule slipped from 2026 to 2027."
+    }
+   ]
+  },
+  "30": {
+   "tipe": "tabel",
+   "per": 8,
+   "sumber": [
+    "dpr",
+    "ibp",
+    "ghes"
+   ],
+   "catatan": {
+    "id": "Dua angka permintaan 2060 berbeda antar sumber (9,9 dan 11,7 juta ton); keduanya dimuat tanpa memilih.",
+    "en": "Two 2060 demand numbers differ between sources (9.9 and 11.7 million tonnes); both are carried without choosing."
+   },
+   "kolom": [
+    {
+     "k": "d",
+     "l": {
+      "id": "Target",
+      "en": "Target"
+     }
+    },
+    {
+     "k": "v",
+     "l": {
+      "id": "Nilai",
+      "en": "Value"
+     },
+     "num": true,
+     "d": 1
+    },
+    {
+     "k": "sat",
+     "l": {
+      "id": "Satuan",
+      "en": "Unit"
+     }
+    }
+   ],
+   "baris": [
+    {
+     "d": {
+      "id": "Produksi hidrogen hijau 2030 (proyeksi IEA, dikutip DPR)",
+      "en": "Green hydrogen production 2030 (IEA projection cited by DPR)"
+     },
+     "v": 0.48,
+     "sat": {
+      "id": "juta ton",
+      "en": "million tonnes"
+     }
+    },
+    {
+     "d": {
+      "id": "Co-firing hidrogen 60 persen di PLTG, 2045",
+      "en": "Hydrogen co-firing 60 percent in gas turbines, 2045"
+     },
+     "v": 60,
+     "sat": {
+      "id": "persen",
+      "en": "percent"
+     }
+    },
+    {
+     "d": {
+      "id": "Pembangkit hidrogen murni 2060",
+      "en": "Pure hydrogen power 2060"
+     },
+     "v": 25.3,
+     "sat": "GW"
+    },
+    {
+     "d": {
+      "id": "Permintaan 2060 menurut Indonesia Business Post (data ESDM)",
+      "en": "2060 demand per Indonesia Business Post (ESDM data)"
+     },
+     "v": 9.9,
+     "sat": {
+      "id": "juta ton per tahun",
+      "en": "million tonnes a year"
+     }
+    },
+    {
+     "d": {
+      "id": "Permintaan 2060 menurut draf peta jalan (Listrik Indonesia)",
+      "en": "2060 demand per roadmap draft (Listrik Indonesia)"
+     },
+     "v": 11.7,
+     "sat": {
+      "id": "juta ton per tahun",
+      "en": "million tonnes a year"
+     }
+    }
+   ]
+  },
+  "31": {
+   "tipe": "teks",
+   "sumber": [
+    "ed",
+    "dpr",
+    "tville"
+   ],
+   "paragraf": [
+    {
+     "id": "Analisis METI (Hipotesis): Pengembang: mulai dari pembeli yang sudah ada (pupuk, kilang, pendingin pembangkit) dan kontrak jangka panjang sebelum membangun elektroliser; proyek Townsville gagal karena tidak ada pembeli. Investor: tunggu standar sertifikasi dan kewajiban pemanfaatan. Pemda: lahan dan air dekat PLTP dan PLTS lebih menarik daripada ekspor jauh. Akademisi: elektrolisis AEM, penyimpanan, dan LCOH lokal.",
+     "en": "METI analysis (Hypothesis): Developers: start with existing buyers (fertiliser, refineries, plant cooling) and long-term contracts before building electrolysers; the Townsville project failed for lack of buyers. Investors: wait for a certification standard and a use mandate. Local government: land and water near geothermal and solar plants are more attractive than distant export. Academics: AEM electrolysis, storage and local LCOH."
+    }
+   ]
+  },
+  "32": {
+   "tipe": "teks",
+   "sumber": [
+    "ulu",
+    "dpr",
+    "neom",
+    "ruuebet"
+   ],
+   "paragraf": [
+    {
+     "id": "Yang perlu dipantau: (1) operasi pilot Ulubelu pada 2026; (2) standar sertifikasi dan insentif fiskal hidrogen; (3) pembahasan RUU EBET; (4) operasi komersial NEOM 2027 sebagai ujian skala; (5) pembatalan atau FID baru di Australia dan Asia.",
+     "en": "To watch: (1) Ulubelu pilot operation in 2026; (2) certification standard and hydrogen fiscal incentives; (3) RUU EBET deliberation; (4) NEOM commercial operation in 2027 as a scale test; (5) new cancellations or FIDs in Australia and Asia."
+    }
+   ]
+  },
+  "38": {
+   "tipe": "teks",
+   "sumber": [
+    "ed"
+   ],
+   "paragraf": [
+    {
+     "id": "Metode: data Indonesia dari ESDM, PLN, DPR, dan berita yang ditautkan; kasus luar negeri dari berita industri dan ringkasan Wikipedia; turunan fisika memakai 33,3 kWh per kg (nilai kalor bawah hidrogen). Beberapa laporan teknis (IESR, Tenggara) berbentuk PDF gambar yang tidak terbaca otomatis dan tidak dikutip isinya. Sintesis berlabel Analisis METI (Hipotesis). Batas: angka kapasitas PLN berbeda antar sumber (191, 199, 203 ton); biaya elektroliser dan harga listrik Indonesia belum bersumber; basis proyek METI belum memuat proyek hidrogen.",
+     "en": "Method: Indonesian data from ESDM, PLN, DPR and linked news; foreign cases from industry news and Wikipedia summaries; physics derivations use 33.3 kWh per kg (lower heating value of hydrogen). Some technical reports (IESR, Tenggara) are image PDFs not readable automatically and their content is not quoted. Synthesis is labelled METI analysis (Hypothesis). Limits: PLN capacity figures differ between sources (191, 199, 203 tonnes); electrolyser cost and Indonesian power price are not sourced; the METI project base has no hydrogen projects yet."
+    }
+   ]
+  },
+  "39": {
+   "tipe": "kasus",
+   "sumber": [
+    "mc",
+    "hrs",
+    "kuqa",
+    "neom",
+    "fh2r"
+   ],
+   "catatan": {
+    "id": "Biaya yang tidak ditemukan sengaja dikosongkan. Keberhasilan di bidang ini relatif: hampir semua proyek masih skala demonstrasi atau menuju operasi.",
+    "en": "Costs not found are deliberately blank. Success in this field is relative: nearly all projects remain at demonstration scale or heading to operation."
+   },
+   "butir": [
+    {
+     "negara": "ID",
+     "id": "plnghp",
+     "nama": "Jaringan green hydrogen plant PLN",
+     "jenis": "berhasil",
+     "lokasi": {
+      "id": "Jakarta, Jawa Barat, dan pembangkit PLN lain",
+      "en": "Jakarta, West Java and other PLN plants"
+     },
+     "profil": [
+      {
+       "label": {
+        "id": "GHP pertama",
+        "en": "First GHP"
+       },
+       "nilai": 51,
+       "satuan": {
+        "id": "ton per tahun (Muara Karang)",
+        "en": "tonnes a year (Muara Karang)"
+       }
+      },
+      {
+       "label": {
+        "id": "Jaringan",
+        "en": "Network"
+       },
+       "nilai": 203,
+       "satuan": {
+        "id": "ton per tahun (22 GHP)",
+        "en": "tonnes a year (22 GHP)"
+       }
+      },
+      {
+       "label": {
+        "id": "Pelaksana",
+        "en": "Operator"
+       },
+       "nilai": "PLN"
+      }
+     ],
+     "tindakan": [
+      {
+       "id": "Memasang elektroliser kecil di pembangkit PLN yang ada, memakai PLTS di lokasi ditambah REC dari PLTP Kamojang.",
+       "en": "Installing small electrolysers at existing PLN plants, using on-site solar plus RECs from the Kamojang geothermal plant."
+      },
+      {
+       "id": "Menambah 21 GHP dalam sebulan setelah yang pertama, lalu stasiun pengisian Senayan.",
+       "en": "Adding 21 GHP within a month of the first, then the Senayan refuelling station."
+      }
+     ],
+     "sebab": [
+      {
+       "id": "Pemakai internal sendiri (pendingin generator) sehingga ada permintaan awal tanpa pembeli luar.",
+       "en": "Own internal users (generator cooling) give initial demand without external buyers."
+      },
+      {
+       "id": "Memakai lahan, listrik, dan air pembangkit yang sudah ada.",
+       "en": "Uses the land, power and water of existing plants."
+      }
+     ],
+     "angka": [
+      {
+       "label": {
+        "id": "GHP pertama",
+        "en": "First GHP"
+       },
+       "nilai": 51,
+       "d": 0,
+       "satuan": {
+        "id": "ton per tahun",
+        "en": "tonnes a year"
+       },
+       "sumber": "mc",
+       "est": false
+      },
+      {
+       "label": {
+        "id": "Jaringan 22 GHP",
+        "en": "22-GHP network"
+       },
+       "nilai": 203,
+       "d": 0,
+       "satuan": {
+        "id": "ton per tahun",
+        "en": "tonnes a year"
+       },
+       "sumber": "hrs",
+       "est": false
+      }
+     ],
+     "pelajaran": [
+      {
+       "id": "Memulai dari pemakai sendiri menghindari masalah pembeli, tetapi skala 203 ton per tahun jauh dari permintaan 4 juta ton.",
+       "en": "Starting from own users avoids the buyer problem, but 203 tonnes a year is far from a 4 million tonne demand."
+      }
+     ],
+     "faktor": {
+      "lahan": true,
+      "pengelola_om": true,
+      "jaringan": true
+     },
+     "sumber": [
+      "mc",
+      "mcantara",
+      "ghp21",
+      "hrs"
+     ],
+     "hak_jawab": true
+    },
+    {
+     "negara": "ID",
+     "id": "senayan",
+     "nama": "Stasiun pengisian hidrogen Senayan",
+     "jenis": "berhasil",
+     "lokasi": {
+      "id": "Senayan, Jakarta",
+      "en": "Senayan, Jakarta"
+     },
+     "profil": [
+      {
+       "label": {
+        "id": "Pasokan",
+        "en": "Supply"
+       },
+       "nilai": {
+        "id": "Dari GHP PLN",
+        "en": "From PLN GHPs"
+       }
+      },
+      {
+       "label": {
+        "id": "Alokasi transportasi",
+        "en": "Transport allocation"
+       },
+       "nilai": 128,
+       "satuan": {
+        "id": "ton per tahun dari 203",
+        "en": "tonnes a year of 203"
+       }
+      }
+     ],
+     "tindakan": [
+      {
+       "id": "Membuka stasiun pengisian hidrogen pertama Indonesia yang dipasok dari jaringan GHP PLN.",
+       "en": "Opening Indonesia's first hydrogen refuelling station supplied from the PLN GHP network."
+      }
+     ],
+     "sebab": [
+      {
+       "id": "Pasokan hijau milik sendiri dan lokasi di kota besar untuk demonstrasi kendaraan sel bahan bakar.",
+       "en": "Own green supply and a big-city location for fuel cell vehicle demonstration."
+      }
+     ],
+     "angka": [
+      {
+       "label": {
+        "id": "Alokasi transportasi",
+        "en": "Transport allocation"
+       },
+       "nilai": 128,
+       "d": 0,
+       "satuan": {
+        "id": "ton per tahun",
+        "en": "tonnes a year"
+       },
+       "sumber": "hrs",
+       "est": false
+      }
+     ],
+     "tanda_bahaya": [
+      {
+       "id": "Jumlah kendaraan pengguna tidak ditemukan di sumber.",
+       "en": "The number of user vehicles was not found in the sources."
+      }
+     ],
+     "pelajaran": [
+      {
+       "id": "Infrastruktur pengisian lebih dulu dari armada adalah risiko; pantau pemakaian riilnya.",
+       "en": "Refuelling infrastructure ahead of fleet is a risk; monitor actual usage."
+      }
+     ],
+     "faktor": {
+      "pengelola_om": true
+     },
+     "sumber": [
+      "hrs",
+      "hrsrri"
+     ],
+     "hak_jawab": true
+    },
+    {
+     "negara": "CN",
+     "id": "kuqa",
+     "nama": "Sinopec Kuqa (Tiongkok)",
+     "jenis": "berhasil",
+     "lokasi": {
+      "id": "Xinjiang, Tiongkok",
+      "en": "Xinjiang, China"
+     },
+     "profil": [
+      {
+       "label": {
+        "id": "Elektroliser",
+        "en": "Electrolysers"
+       },
+       "nilai": 260,
+       "satuan": "MW"
+      },
+      {
+       "label": {
+        "id": "Rencana",
+        "en": "Plan"
+       },
+       "nilai": 20000,
+       "satuan": {
+        "id": "ton per tahun",
+        "en": "tonnes a year"
+       }
+      },
+      {
+       "label": {
+        "id": "Operasi",
+        "en": "Operation"
+       },
+       "nilai": "2023-08-30"
+      }
+     ],
+     "tindakan": [
+      {
+       "id": "Konstruksi dimulai Desember 2021; dioperasikan 30 Agustus 2023; hidrogen dipasok ke kilang Tahe menggantikan hidrogen berbasis gas alam.",
+       "en": "Construction began in December 2021; operated 30 August 2023; hydrogen supplied to the Tahe refinery replacing gas-based hydrogen."
+      }
+     ],
+     "sebab": [
+      {
+       "id": "Pembeli dalam jarak dekat (kilang) dan listrik surya skala besar.",
+       "en": "A nearby buyer (refinery) and large-scale solar power."
+      }
+     ],
+     "angka": [
+      {
+       "label": {
+        "id": "Elektroliser",
+        "en": "Electrolysers"
+       },
+       "nilai": 260,
+       "d": 0,
+       "satuan": "MW",
+       "sumber": "kuqa",
+       "est": false
+      },
+      {
+       "label": {
+        "id": "Output 12 bulan pertama dibanding harapan (laporan)",
+        "en": "First 12 months output vs expected (report)"
+       },
+       "nilai": 35,
+       "d": 0,
+       "satuan": {
+        "id": "persen",
+        "en": "percent"
+       },
+       "sumber": "kuqa",
+       "est": false
+      }
+     ],
+     "tanda_bahaya": [
+      {
+       "id": "Ramp-up lebih lambat dari rencana; target 20.000 ton per tahun tertunda hingga 2025.",
+       "en": "Ramp-up slower than planned; the 20,000 tonnes a year target was delayed to 2025."
+      }
+     ],
+     "pelajaran": [
+      {
+       "id": "Pembeli dekat membuat skala 260 MW layak dibangun, tetapi ramp-up bisa jauh lebih lambat daripada rencana.",
+       "en": "A nearby buyer makes 260 MW buildable, but ramp-up can be far slower than planned."
+      }
+     ],
+     "faktor": {
+      "jaringan": true,
+      "pendanaan": true,
+      "kepastian_kebijakan": true
+     },
+     "sumber": [
+      "kuqa",
+      "kuqa2"
+     ],
+     "hak_jawab": true
+    },
+    {
+     "negara": "SA",
+     "id": "neomcase",
+     "nama": "NEOM Green Hydrogen (Arab Saudi)",
+     "jenis": "berhasil",
+     "lokasi": {
+      "id": "Oxagon, NEOM",
+      "en": "Oxagon, NEOM"
+     },
+     "profil": [
+      {
+       "label": {
+        "id": "Output",
+        "en": "Output"
+       },
+       "nilai": 600,
+       "satuan": {
+        "id": "ton hidrogen per hari",
+        "en": "tonnes of hydrogen a day"
+       }
+      },
+      {
+       "label": {
+        "id": "Biaya",
+        "en": "Cost"
+       },
+       "nilai": {
+        "id": "USD 8,4 sampai 8,5 miliar",
+        "en": "USD 8.4 to 8.5 billion"
+       }
+      },
+      {
+       "label": {
+        "id": "Status",
+        "en": "Status"
+       },
+       "nilai": {
+        "id": "Konstruksi selesai, komisioning, operasi komersial 2027",
+        "en": "Construction complete, commissioning, commercial operation 2027"
+       }
+      }
+     ],
+     "tindakan": [
+      {
+       "id": "Membangun skala besar dengan konsorsium dan kontrak penjualan amonia (TotalEnergies 70.000 ton per tahun dari 2030 dalam satu laporan).",
+       "en": "Building at large scale with a consortium and ammonia sales contracts (TotalEnergies 70,000 tonnes a year from 2030 in one report)."
+      }
+     ],
+     "sebab": [
+      {
+       "id": "Pendanaan konsorsium kuat dan lahan surya-angin murah; kontrak penjualan sedang difinalkan.",
+       "en": "Strong consortium funding and cheap solar-wind land; sales contracts being finalised."
+      }
+     ],
+     "angka": [
+      {
+       "label": {
+        "id": "Kemampuan produksi",
+        "en": "Production capability"
+       },
+       "nilai": 600,
+       "d": 0,
+       "satuan": {
+        "id": "ton per hari",
+        "en": "tonnes a day"
+       },
+       "sumber": "neomceo",
+       "est": false
+      },
+      {
+       "label": {
+        "id": "Kemajuan konstruksi Juni 2025",
+        "en": "Construction progress June 2025"
+       },
+       "nilai": 80,
+       "d": 0,
+       "satuan": {
+        "id": "persen",
+        "en": "percent"
+       },
+       "sumber": "neom80",
+       "est": false
+      }
+     ],
+     "tanda_bahaya": [
+      {
+       "id": "Jadwal bergeser dari awal 2026 ke 2027; kontrak pembeli akhir belum jelas di semua laporan.",
+       "en": "Schedule moved from 2026 to 2027; final buyer contracts are not clear in all reports."
+      }
+     ],
+     "pelajaran": [
+      {
+       "id": "Skala besar dapat dibangun bila sponsor dan modal kuat; bukti ekonomi baru ada setelah operasi komersial.",
+       "en": "Large scale can be built when sponsor and capital are strong; economic proof only comes after commercial operation."
+      }
+     ],
+     "faktor": {
+      "pendanaan": true,
+      "lahan": true,
+      "kepastian_kebijakan": true
+     },
+     "sumber": [
+      "neom",
+      "neom80",
+      "neomceo"
+     ],
+     "hak_jawab": true
+    },
+    {
+     "negara": "JP",
+     "id": "fh2r",
+     "nama": "Fukushima Hydrogen Energy Research Field (Jepang)",
+     "jenis": "berhasil",
+     "lokasi": {
+      "id": "Namie, Fukushima",
+      "en": "Namie, Fukushima"
+     },
+     "profil": [
+      {
+       "label": {
+        "id": "PLTS",
+        "en": "Solar"
+       },
+       "nilai": 10,
+       "satuan": "MW"
+      },
+      {
+       "label": {
+        "id": "Output",
+        "en": "Output"
+       },
+       "nilai": 1200,
+       "satuan": "Nm3/jam"
+      },
+      {
+       "label": {
+        "id": "Diresmikan",
+        "en": "Inaugurated"
+       },
+       "nilai": "2020"
+      }
+     ],
+     "tindakan": [
+      {
+       "id": "Konsorsium NEDO, Toshiba, Tohoku Electric, dan Iwatani membangun demonstrasi elektrolisis bertenaga surya.",
+       "en": "A consortium of NEDO, Toshiba, Tohoku Electric and Iwatani built a solar-powered electrolysis demonstration."
+      }
+     ],
+     "sebab": [
+      {
+       "id": "Konsorsium negara dan industri dengan mandat riset, bukan model bisnis.",
+       "en": "A state and industry consortium with a research mandate, not a business model."
+      }
+     ],
+     "angka": [
+      {
+       "label": {
+        "id": "Output maksimum",
+        "en": "Maximum output"
+       },
+       "nilai": 1200,
+       "d": 0,
+       "satuan": "Nm3/jam",
+       "sumber": "fh2r",
+       "est": false
+      }
+     ],
+     "pelajaran": [
+      {
+       "id": "Demonstrasi riset membangun kompetensi tetapi tidak membuktikan ekonomi komersial.",
+       "en": "Research demonstrations build competence but do not prove commercial economics."
+      }
+     ],
+     "faktor": {
+      "pendanaan": true,
+      "kepastian_kebijakan": true
+     },
+     "sumber": [
+      "fh2r"
+     ],
+     "hak_jawab": true
+    }
+   ]
+  },
+  "40": {
+   "tipe": "kasus",
+   "sumber": [
+    "dpr",
+    "bp",
+    "fort",
+    "tville"
+   ],
+   "catatan": {
+    "id": "Hak jawab: pihak yang disebut dapat mengirim koreksi atau tanggapan lewat formulir koreksi platform; tanggapan akan dimuat berdampingan.",
+    "en": "Right of reply: named parties can send a correction or response through the platform correction form; responses will be published alongside."
+   },
+   "butir": [
+    {
+     "negara": "ID",
+     "id": "pasarhijau",
+     "nama": "Pasar hidrogen hijau domestik belum terbentuk",
+     "jenis": "mundur",
+     "lokasi": {
+      "id": "Nasional",
+      "en": "National"
+     },
+     "profil": [
+      {
+       "label": {
+        "id": "Permintaan 2024",
+        "en": "2024 demand"
+       },
+       "nilai": 4,
+       "satuan": {
+        "id": "juta ton per tahun",
+        "en": "million tonnes a year"
+       }
+      },
+      {
+       "label": {
+        "id": "Produksi hijau PLN",
+        "en": "PLN green production"
+       },
+       "nilai": 203,
+       "satuan": {
+        "id": "ton per tahun",
+        "en": "tonnes a year"
+       }
+      }
+     ],
+     "kronologi": [
+      {
+       "tanggal": "2023-12-01",
+       "teks": {
+        "id": "Strategi Hidrogen Nasional diluncurkan (bulan saja).",
+        "en": "National Hydrogen Strategy launched (month only)."
+       }
+      },
+      {
+       "tanggal": "2025-10-01",
+       "teks": {
+        "id": "DPR mencatat belum ada insentif fiskal, standar sertifikasi, atau kewajiban pemanfaatan (bulan saja).",
+        "en": "The DPR notes no fiscal incentive, certification standard or use mandate (month only)."
+       }
+      }
+     ],
+     "sebab": [
+      {
+       "id": "Biaya produksi tinggi (USD 4,3 sampai 8,3 per kg).",
+       "en": "High production cost (USD 4.3 to 8.3 per kg)."
+      },
+      {
+       "id": "Tidak ada kewajiban pemanfaatan sehingga tidak ada pembeli jangka panjang.",
+       "en": "No use mandate so no long-term buyers."
+      },
+      {
+       "id": "Infrastruktur penyimpanan dan distribusi belum memadai.",
+       "en": "Storage and distribution infrastructure is inadequate."
+      }
+     ],
+     "terdampak": {
+      "id": "Pengembang dan investor yang menunggu kepastian; ini belum proyek gagal, melainkan pasar yang tertahan.",
+      "en": "Developers and investors waiting for certainty; this is not yet a failed project but a stalled market."
+     },
+     "seharusnya": {
+      "id": "Menetapkan kewajiban pemanfaatan awal (pupuk, kilang), standar sertifikasi, dan insentif sebelum membangun proyek besar.",
+      "en": "Set an initial use mandate (fertiliser, refineries), a certification standard and incentives before building large projects."
+     },
+     "tanda_bahaya": [
+      {
+       "id": "Rencana besar tanpa pembeli kontrak.",
+       "en": "Large plans without contracted buyers."
+      }
+     ],
+     "angka": [
+      {
+       "label": {
+        "id": "Pangsa produksi hijau PLN terhadap permintaan (hitung sendiri)",
+        "en": "PLN green share of demand (own calculation)"
+       },
+       "nilai": 0.0051,
+       "d": 4,
+       "satuan": {
+        "id": "persen",
+        "en": "percent"
+       },
+       "sumber": "dpr",
+       "est": true
+      }
+     ],
+     "faktor": {
+      "ppa_tarif": true,
+      "kepastian_kebijakan": true,
+      "pendanaan": true
+     },
+     "sumber": [
+      "dpr",
+      "hrs"
+     ],
+     "hak_jawab": true
+    },
+    {
+     "negara": "AU",
+     "id": "fortescue",
+     "nama": "Fortescue membatalkan PEM50 Gladstone dan proyek AS",
+     "jenis": "dibatalkan",
+     "lokasi": {
+      "id": "Gladstone, Queensland dan Arizona",
+      "en": "Gladstone, Queensland and Arizona"
+     },
+     "profil": [
+      {
+       "label": {
+        "id": "Ukuran PEM50",
+        "en": "PEM50 size"
+       },
+       "nilai": 50,
+       "satuan": "MW"
+      },
+      {
+       "label": {
+        "id": "Penghapusan buku",
+        "en": "Write-down"
+       },
+       "nilai": 150,
+       "satuan": {
+        "id": "juta USD",
+        "en": "million USD"
+       }
+      }
+     ],
+     "kronologi": [
+      {
+       "tanggal": "2025-07-28",
+       "teks": {
+        "id": "Fortescue membatalkan dua proyek yang sudah melewati keputusan investasi akhir setelah tinjauan rinci.",
+        "en": "Fortescue cancels two projects that had passed final investment decision after a detailed review."
+       }
+      }
+     ],
+     "sebab": [
+      {
+       "id": "Tinjauan rinci perusahaan; laporan juga mengaitkannya dengan perubahan iklim kebijakan energi terbarukan di AS.",
+       "en": "A detailed company review; reports also link it to changed renewable policy climate in the US."
+      }
+     ],
+     "terdampak": {
+      "id": "Karyawan dan pemasok; pemerintah Australia dilaporkan meminta hibah proyek Gladstone dikembalikan. Fortescue menyatakan target nol bersih nyata tetap berjalan.",
+      "en": "Employees and suppliers; the Australian government was reported to ask for the Gladstone grant to be repaid. Fortescue says its real zero target stays on track."
+     },
+     "seharusnya": {
+      "id": "Menyelesaikan kontrak pembeli sebelum FID dan menahan persetujuan hibah penuh sampai pembeli terikat.",
+      "en": "Complete buyer contracts before FID and hold full grant approval until buyers are bound."
+     },
+     "tanda_bahaya": [
+      {
+       "id": "Pembatalan setelah FID.",
+       "en": "Cancellation after FID."
+      }
+     ],
+     "angka": [
+      {
+       "label": {
+        "id": "Perkiraan penghapusan buku",
+        "en": "Expected write-down"
+       },
+       "nilai": 150,
+       "d": 0,
+       "satuan": {
+        "id": "juta USD",
+        "en": "million USD"
+       },
+       "sumber": "fort2",
+       "est": false
+      }
+     ],
+     "faktor": {
+      "ppa_tarif": true,
+      "pendanaan": true,
+      "kepastian_kebijakan": true
+     },
+     "sumber": [
+      "fort",
+      "fort2",
+      "repay",
+      "bp"
+     ],
+     "hak_jawab": true
+    },
+    {
+     "negara": "AU",
+     "id": "bparea",
+     "nama": "BP keluar dari Australian Renewable Energy Hub",
+     "jenis": "mundur",
+     "lokasi": {
+      "id": "Pilbara, Australia Barat",
+      "en": "Pilbara, Western Australia"
+     },
+     "profil": [
+      {
+       "label": {
+        "id": "Rencana",
+        "en": "Plan"
+       },
+       "nilai": 26,
+       "satuan": {
+        "id": "GW surya dan angin",
+        "en": "GW solar and wind"
+       }
+      },
+      {
+       "label": {
+        "id": "Saham BP",
+        "en": "BP stake"
+       },
+       "nilai": 63.57,
+       "satuan": {
+        "id": "persen",
+        "en": "percent"
+       }
+      }
+     ],
+     "kronologi": [
+      {
+       "tanggal": "2025-07-28",
+       "teks": {
+        "id": "BP keluar sebagai operator dan pemegang saham; InterContinental Energy (sekitar 26 persen) mengambil alih operasi.",
+        "en": "BP exits as operator and equity holder; InterContinental Energy (about 26 percent) takes over operations."
+       }
+      }
+     ],
+     "sebab": [
+      {
+       "id": "BP menyatakan proyek tidak lagi sejalan dengan strateginya setelah mengalihkan fokus ke hulu migas dan hilir.",
+       "en": "BP said the project no longer aligns with its strategy after refocusing on upstream oil and gas and downstream."
+      }
+     ],
+     "terdampak": {
+      "id": "Mitra InterContinental Energy dan CWP Global yang tetap ada; hub berstatus berlanjut dengan operator baru.",
+      "en": "Remaining partners InterContinental Energy and CWP Global; the hub continues under a new operator."
+     },
+     "seharusnya": {
+      "id": "Struktur kepemilikan dengan pengganti operator yang jelas bila sponsor utama berubah strategi.",
+      "en": "An ownership structure with a clear operator successor if the lead sponsor changes strategy."
+     },
+     "tanda_bahaya": [
+      {
+       "id": "Sponsor besar mengubah prioritas strategi korporat.",
+       "en": "A large sponsor changes corporate strategic priorities."
+      }
+     ],
+     "angka": [
+      {
+       "label": {
+        "id": "Perkiraan nilai hub",
+        "en": "Estimated hub value"
+       },
+       "nilai": 55,
+       "d": 0,
+       "satuan": {
+        "id": "miliar USD",
+        "en": "billion USD"
+       },
+       "sumber": "bp",
+       "est": false
+      }
+     ],
+     "faktor": {
+      "pendanaan": true
+     },
+     "sumber": [
+      "bp"
+     ],
+     "hak_jawab": true
+    },
+    {
+     "negara": "AU",
+     "id": "townsville",
+     "nama": "Proyek hidrogen Townsville dihentikan",
+     "jenis": "dibatalkan",
+     "lokasi": {
+      "id": "Townsville, Queensland",
+      "en": "Townsville, Queensland"
+     },
+     "profil": [
+      {
+       "label": {
+        "id": "Alasan di judul sumber",
+        "en": "Reason in the source headline"
+       },
+       "nilai": {
+        "id": "Tidak ada pembeli",
+        "en": "No customers"
+       }
+      }
+     ],
+     "kronologi": [
+      {
+       "tanggal": "2025-07-01",
+       "teks": {
+        "id": "Rencana dihentikan setelah gagal menemukan pembeli produk (menurut judul sumber).",
+        "en": "Plans scrapped after failing to find buyers for the product (per the source headline)."
+       }
+      }
+     ],
+     "sebab": [
+      {
+       "id": "Tidak ada pembeli kontrak untuk hidrogen yang dihasilkan.",
+       "en": "No contracted buyers for the hydrogen produced."
+      }
+     ],
+     "terdampak": {
+      "id": "Pengembang dan pemerintah negara bagian; rincian lain tidak dapat dibaca karena halaman sumber tidak dapat diambil otomatis.",
+      "en": "The developer and state government; other details could not be read because the source page could not be fetched automatically."
+     },
+     "seharusnya": {
+      "id": "Pembeli jangka panjang sebelum pembangunan.",
+      "en": "Long-term buyers before construction."
+     },
+     "tanda_bahaya": [
+      {
+       "id": "Proyek maju tanpa kontrak penjualan.",
+       "en": "Project advances without a sales contract."
+      }
+     ],
+     "faktor": {
+      "ppa_tarif": true
+     },
+     "sumber": [
+      "tville"
+     ],
+     "hak_jawab": true
+    },
+    {
+     "negara": "CN",
+     "id": "kuqarampup",
+     "nama": "Kuqa: ramp-up jauh di bawah rencana",
+     "jenis": "mundur",
+     "lokasi": {
+      "id": "Xinjiang, Tiongkok",
+      "en": "Xinjiang, China"
+     },
+     "profil": [
+      {
+       "label": {
+        "id": "Rencana",
+        "en": "Plan"
+       },
+       "nilai": 20000,
+       "satuan": {
+        "id": "ton per tahun",
+        "en": "tonnes a year"
+       }
+      }
+     ],
+     "kronologi": [
+      {
+       "tanggal": "2024-01-11",
+       "teks": {
+        "id": "S&P menyebut produksi 20.000 ton per tahun tertunda hingga 2025.",
+        "en": "S&P says 20,000 tonnes a year production is delayed to 2025."
+       }
+      }
+     ],
+     "sebab": [
+      {
+       "id": "Output meningkat bertahap mengikuti perluasan kilang Tahe, pembeli satu-satunya.",
+       "en": "Output rises in steps with the Tahe refinery expansion, the only buyer."
+      },
+      {
+       "id": "Laporan menyebut sekitar 35 persen dari output harapan pada 12 bulan pertama.",
+       "en": "Reports cite about 35 percent of expected output in the first 12 months."
+      }
+     ],
+     "terdampak": {
+      "id": "Sinopec dan klaim skala terbesar di dunia; tanggapan Sinopec dimuat sebagian dalam laporan SCMP.",
+      "en": "Sinopec and its world-largest claim; Sinopec's response is partly carried in the SCMP report."
+     },
+     "seharusnya": {
+      "id": "Menyelaraskan jadwal elektroliser dengan kesiapan pembeli.",
+      "en": "Align the electrolyser schedule with buyer readiness."
+     },
+     "tanda_bahaya": [
+      {
+       "id": "Satu pembeli menentukan seluruh penyerapan.",
+       "en": "A single buyer determines all offtake."
+      }
+     ],
+     "angka": [
+      {
+       "label": {
+        "id": "Output 12 bulan pertama dibanding harapan",
+        "en": "First 12 months output vs expected"
+       },
+       "nilai": 35,
+       "d": 0,
+       "satuan": {
+        "id": "persen",
+        "en": "percent"
+       },
+       "sumber": "kuqa",
+       "est": false
+      }
+     ],
+     "faktor": {
+      "ppa_tarif": true
+     },
+     "sumber": [
+      "kuqa",
+      "kuqa2"
+     ],
+     "hak_jawab": true
+    }
+   ]
+  },
+  "41": {
+   "tipe": "pola",
+   "sumber": [
+    "ed"
+   ],
+   "catatan": {
+    "id": "Sel dibangun dari bendera faktor tiap kasus; pemetaan faktor ke kasus adalah analisis METI (Hipotesis) atas fakta di bab 39 dan 40.",
+    "en": "Cells are built from each case factor flags; mapping factors to cases is METI analysis (Hypothesis) on facts in chapters 39 and 40."
+   },
+   "faktor": [
+    {
+     "k": "lahan",
+     "l": {
+      "id": "Lahan dan lokasi siap",
+      "en": "Land and site ready"
+     }
+    },
+    {
+     "k": "perizinan",
+     "l": {
+      "id": "Perizinan jelas",
+      "en": "Permitting clear"
+     }
+    },
+    {
+     "k": "ppa_tarif",
+     "l": {
+      "id": "PPA dan tarif disepakati",
+      "en": "PPA and tariff agreed"
+     }
+    },
+    {
+     "k": "pendanaan",
+     "l": {
+      "id": "Pendanaan dan penjaminan",
+      "en": "Financing and guarantees"
+     }
+    },
+    {
+     "k": "jaringan",
+     "l": {
+      "id": "Jaringan, offtaker, dan interkoneksi",
+      "en": "Grid, offtaker and interconnection"
+     }
+    },
+    {
+     "k": "pengelola_om",
+     "l": {
+      "id": "Pengelola dan O&M",
+      "en": "Operator and O&M"
+     }
+    },
+    {
+     "k": "sosial",
+     "l": {
+      "id": "Dukungan masyarakat dan safeguard",
+      "en": "Community support and safeguards"
+     }
+    },
+    {
+     "k": "kepastian_kebijakan",
+     "l": {
+      "id": "Kepastian kebijakan",
+      "en": "Policy certainty"
+     }
+    }
+   ]
+  },
+  "42": {
+   "tipe": "periksa",
+   "sumber": [
+    "ed"
+   ],
+   "peran": [
+    {
+     "k": "pengembang",
+     "l": {
+      "id": "Pengembang",
+      "en": "Developer"
+     }
+    },
+    {
+     "k": "investor",
+     "l": {
+      "id": "Investor",
+      "en": "Investor"
+     }
+    },
+    {
+     "k": "pemda",
+     "l": {
+      "id": "Pemerintah daerah",
+      "en": "Local government"
+     }
+    },
+    {
+     "k": "pusat",
+     "l": {
+      "id": "Pemerintah pusat",
+      "en": "Central government"
+     }
+    },
+    {
+     "k": "pln",
+     "l": {
+      "id": "PLN",
+      "en": "PLN"
+     }
+    },
+    {
+     "k": "meti",
+     "l": {
+      "id": "METI",
+      "en": "METI"
+     }
+    }
+   ],
+   "tahap": [
+    {
+     "k": "lokasi",
+     "l": {
+      "id": "Penyaringan lokasi",
+      "en": "Site screening"
+     }
+    },
+    {
+     "k": "izin",
+     "l": {
+      "id": "Perizinan",
+      "en": "Permitting"
+     }
+    },
+    {
+     "k": "ppa",
+     "l": {
+      "id": "PPA",
+      "en": "PPA"
+     }
+    },
+    {
+     "k": "dana",
+     "l": {
+      "id": "Pendanaan",
+      "en": "Financing"
+     }
+    },
+    {
+     "k": "bangun",
+     "l": {
+      "id": "Konstruksi",
+      "en": "Construction"
+     }
+    },
+    {
+     "k": "operasi",
+     "l": {
+      "id": "Operasi",
+      "en": "Operation"
+     }
+    }
+   ],
+   "butir": [
+    {
+     "peran": "pengembang",
+     "tahap": "lokasi",
+     "teks": {
+      "id": "Mulai dari pembeli yang sudah ada dan dekat (kilang, pupuk, pendingin pembangkit) sebelum memilih lokasi elektroliser (Kuqa, PLN).",
+      "en": "Start from existing nearby buyers (refinery, fertiliser, plant cooling) before siting electrolysers (Kuqa, PLN)."
+     },
+     "dasar": "kuqa"
+    },
+    {
+     "peran": "pengembang",
+     "tahap": "ppa",
+     "teks": {
+      "id": "Dapatkan kontrak pembelian jangka panjang sebelum FID (Townsville, Fortescue).",
+      "en": "Secure long-term purchase contracts before FID (Townsville, Fortescue)."
+     },
+     "dasar": "tville"
+    },
+    {
+     "peran": "pengembang",
+     "tahap": "bangun",
+     "teks": {
+      "id": "Rencanakan ramp-up bertahap yang sejalan dengan pembeli (Kuqa 35 persen pada tahun pertama).",
+      "en": "Plan a staged ramp-up aligned with the buyer (Kuqa 35 percent in year one)."
+     },
+     "dasar": "kuqa"
+    },
+    {
+     "peran": "pengembang",
+     "tahap": "operasi",
+     "teks": {
+      "id": "Dokumentasikan metode klaim hijau (fisik atau REC) agar dapat diaudit.",
+      "en": "Document the green claim method (physical or REC) so it can be audited."
+     },
+     "dasar": "mc"
+    },
+    {
+     "peran": "investor",
+     "tahap": "dana",
+     "teks": {
+      "id": "Tunda komitmen besar sampai standar sertifikasi, insentif, dan kewajiban pemanfaatan jelas.",
+      "en": "Defer large commitments until the certification standard, incentives and use mandate are clear."
+     },
+     "dasar": "dpr"
+    },
+    {
+     "peran": "pemda",
+     "tahap": "lokasi",
+     "teks": {
+      "id": "Tawarkan lahan dan air dekat PLTP atau PLTS dan dekat pembeli industri.",
+      "en": "Offer land and water near geothermal or solar plants and near industrial buyers."
+     },
+     "dasar": "dpr"
+    },
+    {
+     "peran": "pusat",
+     "tahap": "ppa",
+     "teks": {
+      "id": "Tetapkan kewajiban pemanfaatan awal dan standar sertifikasi hidrogen hijau.",
+      "en": "Set an initial use mandate and a green hydrogen certification standard."
+     },
+     "dasar": "dpr"
+    },
+    {
+     "peran": "pusat",
+     "tahap": "dana",
+     "teks": {
+      "id": "Kaitkan hibah dengan kontrak pembeli terikat, bukan hanya studi (Gladstone).",
+      "en": "Tie grants to binding buyer contracts, not only studies (Gladstone)."
+     },
+     "dasar": "repay"
+    },
+    {
+     "peran": "pln",
+     "tahap": "operasi",
+     "teks": {
+      "id": "Publikasikan pemakaian riil hidrogen PLN (pendingin, kendaraan) dan perbarui angka kapasitas yang berbeda antar sumber.",
+      "en": "Publish PLN's actual hydrogen use (cooling, vehicles) and reconcile capacity figures that differ between sources."
+     },
+     "dasar": "ghp21"
+    },
+    {
+     "peran": "meti",
+     "tahap": "operasi",
+     "teks": {
+      "id": "Pantau pilot Ulubelu dan NEOM 2027, serta beri hak jawab pada pihak yang disebut.",
+      "en": "Monitor the Ulubelu pilot and NEOM 2027, and give named parties a right of reply."
+     },
+     "dasar": "ulu"
+    }
+   ]
+  }
+ }
+}

@@ -37,7 +37,7 @@ for (const f of readdirSync(AKAR).filter((n) => n.endsWith(".html") && !n.starts
 
 // Sisi kanan kepala tidak boleh kosong (aturan pemilik, 8 Nov 2026): tiap .jm-kh membawa ubin angka, gambar, atau kartu fakta
 // (statis di HTML, atau dipasang skrip halaman lewat inti/kh.js). Pengecualian wajib beralasan.
-const ISI_SISI = /jm-kh-(ubin|gambar|fakta|sisi)|data-kh-tautan|kta-kh-kanan|khSisi|khUbin|khGambarHtml|khFaktaHtml/;
+const ISI_SISI = /jm-kh-(ubin|gambar|fakta|sisi)"|jm-kh-(ubin|gambar|fakta|sisi)[ "]|data-kh-tautan|kta-kh-kanan|\b(khSisi|khUbin|khGambarHtml|khFaktaHtml|khUbinHtml)\(/;
 const KECUALI_SISI = new Map([
   ["metode.html", "halaman teks panjang, lead selebar 68% kepala; belum ada data angka (ditinjau ulang bila ditambah)"],
 ]);

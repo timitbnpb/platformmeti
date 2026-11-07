@@ -2,10 +2,11 @@
    /bukti/:bid (lihat dan putus bukti iuran), /pengaturan-daftar (iuran dan rekening, admin). Hak ditegakkan di server. */
 import { t, angka, tanggalDariUnix } from "/i18n.js";
 import { esc, api, nanti, hantuHtml, kosongHtml, galatTeks, ikon, pesanHtml } from "/inti/umum.js";
-import { kepalaTab, keadaan, aman } from "/admin_umum.js";
+import { kepalaTab, ubinKepala, keadaan, aman } from "/admin_umum.js";
 import { pilihHtml } from "/inti/komponen.js";
 import { pilTek } from "/inti/ikon_tek.js";
 import { PROV } from "/inti/prov_singkat.js";
+import { uangHtml } from "/inti/uang.js";
 import { pasangTabel } from "/admin_tabel.js";
 
 const STATUS = ["menunggu", "disetujui", "ditolak"], JENIS = ["pelajar", "individu", "ngo", "usaha_kecil", "usaha_besar", "utama"];
@@ -55,6 +56,7 @@ export function panelPersetujuan(panel, { boleh = false } = {}) {
       }
       S.hitung = d.hitung || {};
       for (const el of panel.querySelectorAll("[data-n]")) el.textContent = angka(S.hitung[el.dataset.n] || 0);
+      ubinKepala(panel, STATUS.map((x, i) => ({ ikon: ["lonceng", "centang", "silang"][i], nilai: S.hitung[x] || 0, label: t("pd.st." + x) })));
       nanti(() => gambar(baris));
     } catch (e) { if (e.name !== "AbortError") isi.innerHTML = keadaan(e.kode || "umum"); }
   }
@@ -65,7 +67,7 @@ export function panelPersetujuan(panel, { boleh = false } = {}) {
       { k: "prov", judul: t("pd.c.lokasi"), nilai: (r) => r.prov || "", tampil: (r) => esc([r.kota, PROV[r.prov]?.[1]].filter(Boolean).join(", ") || "-") },
       { k: "bayar", judul: t("pd.c.bayar"), nilai: (r) => r.bayar, tampil: bayarPil },
       { k: "dibuat", judul: t("pd.c.dibuat"), num: true, nilai: (r) => r.dibuat, tampil: (r) => esc(tanggalDariUnix(r.dibuat)) },
-      { k: "aksi", judul: t("pd.c.aksi"), nilai: () => 0, tampil: (r) => `<button type="button" class="jm-tbl" data-rincian="${r.id}">${ikon("info", 16)}<span>${esc(t("pd.rincian"))}</span></button>` }] });
+      { k: "aksi", urut: false, judul: t("pd.c.aksi"), nilai: () => 0, tampil: (r) => `<button type="button" class="jm-tbl" data-rincian="${r.id}">${ikon("info", 16)}<span>${esc(t("pd.rincian"))}</span></button>` }] });
   }
 
   /* ---------- rincian di pop-up besar ---------- */
@@ -96,7 +98,7 @@ export function panelPersetujuan(panel, { boleh = false } = {}) {
       <div class="pd-dlg-kolom">
         <section><h3>${esc(t("pd.data"))}</h3><dl class="pd-dl">${baris2("dft.surel", esc(d.surel))}${baris2("dft.hp", esc(d.hp))}${baris2("dft.jabatan", esc(r.jabatan))}${baris2("dft.organisasi", esc(d.organisasi))}${baris2("dft.kota", esc([d.kota, p?.[0]].filter(Boolean).join(", ")))}${baris2("dft.pendidikan", esc(r.pendidikan))}
           ${(r.kepakaran || []).length ? `<div><dt>${esc(t("dft.kepakaran"))}</dt><dd class="pd-tek">${r.kepakaran.map(pilTek).join(" ")}</dd></div>` : ""}${baris2("dft.pengalaman", esc(r.pengalaman))}${baris2("dft.tautan", tautan(r.tautan))}${baris2("dft.alasan", esc(r.alasan))}${baris2("pd.dibuat", esc(tanggalDariUnix(d.dibuat)))}</dl>${org}</section>
-        <section><h3>${esc(t("pd.iuran"))}</h3><p class="pd-besar">${d.iuran ? esc("Rp " + angka(d.iuran)) : esc(t("pd.iuran.kosong"))} <span class="jm-pil ${PIL_BAYAR[d.bayar]}">${esc(t("pd.bayar." + d.bayar))}</span>${d.status === "disetujui" && d.tanpa_lunas ? ` <span class="jm-pil jm-pil-warn">${esc(t("pd.tanpa_lunas"))}</span>` : ""}</p>${bukti}<div id="pdBuktiPesan" aria-live="polite"></div></section></div>
+        <section><h3>${esc(t("pd.iuran"))}</h3><p class="pd-besar">${d.iuran ? uangHtml("Rp", angka(d.iuran)) : esc(t("pd.iuran.kosong"))} <span class="jm-pil ${PIL_BAYAR[d.bayar]}">${esc(t("pd.bayar." + d.bayar))}</span>${d.status === "disetujui" && d.tanpa_lunas ? ` <span class="jm-pil jm-pil-warn">${esc(t("pd.tanpa_lunas"))}</span>` : ""}</p>${bukti}<div id="pdBuktiPesan" aria-live="polite"></div></section></div>
       ${aksi}</div>`;
   }
 
@@ -140,7 +142,8 @@ export function panelPersetujuan(panel, { boleh = false } = {}) {
     let d;
     try { d = await api("/api/admin/pengaturan-daftar"); } catch (e) { kotak.innerHTML = keadaan(e.kode || "umum"); return; }
     const bawaan = await fetch("/data/keanggotaan.json").then((r) => r.json()).catch(() => ({ kategori: [] }));
-    const f = (k, maks, mode) => `<div class="jm-medan"><label for="at_${k}">${esc(t("pd.at." + k))}</label><input class="jm-isian" id="at_${k}" name="${k}" maxlength="${maks}" value="${esc(d[k] || "")}"${mode ? ` inputmode="${mode}"` : ""}${bawaan.kategori.find((x) => "iuran_" + x.kode === k) ? ` placeholder="${esc(t("pd.at.bawaan", { n: angka(bawaan.kategori.find((x) => "iuran_" + x.kode === k).iuran_awal) }))}"` : ""}></div>`;
+    const rp = (k, h) => (k.startsWith("iuran_") ? `<span class="pd-uang"><span class="pd-uang-s">Rp</span>${h}</span>` : h);
+    const f = (k, maks, mode) => `<div class="jm-medan"><label for="at_${k}">${esc(t("pd.at." + k))}</label>${rp(k, `<input class="jm-isian${k.startsWith("iuran_") ? " pd-uang-n" : ""}" id="at_${k}" name="${k}" maxlength="${maks}" value="${esc(d[k] || "")}"${mode ? ` inputmode="${mode}"` : ""}${bawaan.kategori.find((x) => "iuran_" + x.kode === k) ? ` placeholder="${esc(t("pd.at.bawaan", { n: angka(bawaan.kategori.find((x) => "iuran_" + x.kode === k).iuran_awal) }))}"` : ""}>`)}</div>`;
     kotak.innerHTML = `<form class="pd-atur" id="pdAturForm" novalidate><p class="jm-bantu">${esc(t("pd.atur.d"))}</p>
       <div class="pd-atur-kisi">${JENIS.map((j) => f("iuran_" + j, 9, "numeric")).join("")}${f("rekening_bank", 80)}${f("rekening_nomor", 40, "numeric")}${f("rekening_nama", 120)}</div>${f("rekening_catatan", 300)}
       <div id="pdAturPesan" aria-live="polite"></div><div class="pd-aksi"><button type="submit" class="jm-tbl jm-tbl-utama">${ikon("centang", 18)}<span>${esc(t("pd.at.simpan"))}</span></button></div></form>`;

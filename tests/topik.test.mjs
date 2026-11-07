@@ -23,7 +23,7 @@ test("ui.json: 42 bab dalam 11 kelompok, semua teks id+en dengan parameter sama"
   assert.equal(Object.keys(ui.bab).length, 42);
   for (const [n, b] of Object.entries(ui.bab)) { assert.ok(ui.grup[b.g], `bab ${n}: kelompok`); dua(b.j, `bab ${n}`); }
   for (const [k, v] of Object.entries(ui.s)) { dua(v, `s.${k}`); assert.equal(param(v.en), param(v.id), `parameter ${k}`); }
-  assert.equal(ID_TOPIK.length, 14);
+  assert.equal(ID_TOPIK.length, 16);
   for (const [id, t] of Object.entries(ui.topik)) { dua(t.nama, id); dua(t.ket, id); }
   assert.doesNotMatch(readFileSync(D + "ui.json", "utf8"), DILARANG);
 });

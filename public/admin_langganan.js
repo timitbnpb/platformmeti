@@ -8,9 +8,9 @@ const MINAT = ["kebijakan", "proyek", "acara", "kajian", "lowongan"];
 
 export function panelLangganan(panel) {
   const S = { status: "", hal: 1, ctl: null };
-  panel.innerHTML = `<p class="jm-bantu">${esc(t("adm.lg.catatan"))}</p>
+  panel.innerHTML = `<header class="jm-adm-bhd"><div><h3>${esc(t("adm.lg.j"))}</h3><p class="jm-bantu">${esc(t("adm.lg.catatan"))}</p></div></header>
     <div class="jm-bar jm-adm-bar1"><select data-ikon="status" class="jm-pilih" id="lgStatus" aria-label="${esc(t("adm.lg.k.status"))}"><option value="">${esc(t("adm.lg.semua"))}</option><option value="aktif">${esc(t("adm.lg.aktif"))}</option><option value="berhenti">${esc(t("adm.lg.berhenti"))}</option></select>
-    <a class="jm-tbl" id="lgCsv" href="/api/admin/langganan?format=csv" download>${esc(t("adm.lg.csv"))}</a></div>
+    <a class="jm-tbl" id="lgCsv" href="/api/admin/langganan?format=csv" download>${ikon("csv", 18)}${esc(t("adm.lg.csv"))}</a></div>
     <div id="lgIsi" aria-live="polite"></div>`;
   const isi = panel.querySelector("#lgIsi");
   panel.addEventListener("change", (e) => { if (e.target.id === "lgStatus") { S.status = e.target.value; S.hal = 1; muat(); } });

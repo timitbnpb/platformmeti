@@ -37,3 +37,14 @@ test("id tak dikenal atau tak sah = 404", async () => {
   assert.equal((await ambil("/p/tidak-ada-xyz")).status, 404);
   assert.equal((await ambil("/o/a%3Cb")).status, 404);
 });
+
+test("halaman rakitan Worker memuat header keamanan dan private, no-store", async () => {
+  for (const path of ["/o/" + org[0].id, "/p/" + pro[0].id]) {
+    const r = await ambil(path);
+    assert.equal(r.status, 200);
+    assert.match(r.headers.get("content-security-policy") || "", /default-src 'self'/, path);
+    assert.equal(r.headers.get("x-frame-options"), "DENY", path);
+    assert.ok(r.headers.get("strict-transport-security"), path);
+    assert.equal(r.headers.get("cache-control"), "private, no-store", path);
+  }
+});

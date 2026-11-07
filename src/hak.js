@@ -1524,7 +1524,7 @@ export function matriksHak(akun) {
 /* ========================= Ikuti + Portal pembaruan 0019 ========================= */
 // ikuti: preferensi pribadi akun (akun_id selalu dari sesi), tanpa jejak (log audit hanya tulisan kurasi, R11 2.16). Portal: klaim organisasi dan ajuan
 // dikurasi admin; tiap tulis = batch([tulis, jejak]); jejak memuat jenis/id saja, bukan isi. Hasil null = migrasi 0019 belum diterapkan (rute membalas 503).
-export const JENIS_IKUTI = ["proyek", "organisasi", "provinsi", "regulasi", "tender"];
+export const JENIS_IKUTI = ["proyek", "organisasi", "provinsi", "regulasi", "tender", "topik"];
 export const JENIS_AJUAN = ["profil", "proyek_baru", "proyek_status"];
 const RE_REF_IKUTI = /^[A-Za-z0-9_.:-]{1,80}$/, RE_ID_ORG = /^[A-Za-z0-9_-]{2,60}$/;
 const TABEL_ORG = { klaim: "org_klaim", ajuan: "org_ajuan", wilayah: "wilayah_ajuan" };
@@ -1548,6 +1548,11 @@ export async function ikutiSet(env, akun, jenis, ref, ikut) {
   sahIkuti(jenis, ref);
   return tanpaTabel(async () => {
     try {
+      // Mengikuti dokumen konsultasi: hanya yang terbit (staf konsultasi_putus boleh semua).
+      if (ikut && jenis === "regulasi" && ref.startsWith("kons:") && !kBoleh(akun, "ubah", "konsultasi_putus")) {
+        const d = await env.DB.prepare("SELECT 1 AS x FROM kons_dokumen WHERE id = ? AND status = 'terbit'").bind(ref.slice(5)).first();
+        if (!d) return { ubah: 0 };
+      }
       const r = await (ikut
         ? env.DB.prepare("INSERT INTO ikuti (akun_id, jenis, ref) VALUES (?, ?, ?) ON CONFLICT DO NOTHING")
         : env.DB.prepare("DELETE FROM ikuti WHERE akun_id = ? AND jenis = ? AND ref = ?")).bind(akun.id, jenis, ref).run();
@@ -2243,8 +2248,9 @@ export async function konsDukung(env, akun, uid, ya) {
   gKons(akun);
   const id = sahId(uid);
   return tanpaTabel(async () => {
-    const u = await env.DB.prepare("SELECT jenis, status, tersembunyi FROM kons_utas WHERE id = ?").bind(id).first();
+    const u = await env.DB.prepare("SELECT u.jenis, u.status, u.tersembunyi, k.status AS dok FROM kons_utas u JOIN kons_dokumen k ON k.id = u.dokumen_id WHERE u.id = ?").bind(id).first();
     if (!u || u.tersembunyi || u.status === "ditarik" || !USULAN_UTAS.includes(u.jenis)) return { ada: false };
+    if (u.dok !== "terbit" && !kBoleh(akun, "ubah", "konsultasi_putus")) return { ada: false };   // dokumen draf/arsip hanya untuk staf
     await lajuKons(env, akun, BATAS_DUKUNG_JAM);
     await env.DB.batch([
       ya ? env.DB.prepare("INSERT INTO kons_dukung (utas_id, akun_id) VALUES (?, ?) ON CONFLICT DO NOTHING").bind(id, akun.id)

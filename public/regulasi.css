@@ -32,13 +32,55 @@ dialog#lembar::backdrop,dialog#pasang::backdrop{background:color-mix(in srgb,var
 .jm-rg-apa{padding:14px 16px;border-left:4px solid var(--accent);border-radius:var(--r-sm);background:var(--soft-hijau)}
 .jm-rg-apa p+p{margin-top:8px!important}
 @media (max-width:760px){dialog#lembar,dialog#pasang{width:100vw;max-height:92dvh;margin:auto 0 0;border-radius:var(--r-lg) var(--r-lg) 0 0}.jm-rg-dua{grid-template-columns:1fr}.jm-rg-tengah{justify-self:center}}
-/* pasangan di pelacak: ringkasan singkat + tombol */
-.jm-pk-ub2{cursor:pointer;transition:border-color .15s,box-shadow .15s}
-.jm-pk-ub2:hover{border-color:var(--accent);box-shadow:var(--shadow)}
-.jm-pk-ub2>.jm-pk-ring{grid-column:1/-1;margin:0;padding-top:10px;border-top:1px dashed var(--line);font-size:var(--t-tombol);line-height:var(--lh-isi);color:var(--ink2);text-align:justify;hyphens:auto}
-.jm-pk-lihat{grid-column:1/-1;justify-self:end;display:inline-flex;align-items:center;gap:8px;min-height:var(--target);padding:0 16px;border:1px solid var(--accent);border-radius:var(--r-pil);background:var(--card);color:var(--accent);font:600 var(--t-tombol)/1 var(--font);cursor:pointer}
-.jm-pk-lihat:hover{background:var(--soft-hijau)}
-.jm-pk-lihat .jm-ik{stroke:currentColor;fill:none}
+/* pelacak kebijakan: aturan terbaru, pasangan mengubah/mencabut, stepper pembahasan */
+.jm-rg-ex .jm-ex-bd{display:block}
+.jm-rg-nm{all:unset;cursor:pointer;font:700 var(--t-body)/var(--lh-rapat) var(--display);color:var(--head);text-decoration:none}
+.jm-rg-nm:hover{color:var(--accent)}
+.jm-rg-nm:focus-visible{outline:2px solid var(--fokus);outline-offset:2px}
+.jm-rg-jd{display:block;color:var(--ink);font-size:var(--t-tombol);line-height:var(--lh-rapat)}
+.jm-rg-meta{display:flex;flex-wrap:wrap;align-items:center;gap:6px 8px;min-width:0}
+.jm-rg-chip{display:inline-flex;align-items:center;gap:6px;min-height:24px;padding:0 10px;border-radius:var(--r-pil);background:var(--surface);color:var(--ink2);font:500 var(--t-kecil)/1 var(--font);text-decoration:none}
+.jm-rg-chip .jm-ik{flex:none;stroke:currentColor;fill:none}
+a.jm-rg-chip:hover{color:var(--accent)}
+.jm-rg-chip-warn{background:var(--warn-bg);color:var(--warn)}
+.jm-rg-baru-daftar,.jm-rg-ubah,.jm-rg-bahas{list-style:none;margin:0;padding:0;display:grid;gap:12px}
+.jm-rg-baru-daftar{grid-template-columns:repeat(auto-fill,minmax(300px,1fr))}
+.jm-rg-baru{display:grid;gap:6px;align-content:start;min-width:0;padding:14px 16px;border:1px solid var(--line);border-radius:var(--r);background:var(--card);cursor:pointer;transition:border-color .15s,box-shadow .15s}
+.jm-rg-baru:hover,.jm-rg-psg:hover{border-color:var(--accent);box-shadow:var(--shadow)}
+.jm-rg-baru-a{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.jm-rg-baru-a .jm-reg-iks{margin-left:auto}
+.jm-rg-psg{display:grid;gap:10px;min-width:0;padding:14px 16px;border:1px solid var(--line);border-radius:var(--r);background:var(--card);cursor:pointer;transition:border-color .15s,box-shadow .15s}
+.jm-rg-sisi{display:grid;grid-template-columns:auto minmax(0,1fr) auto;align-items:start;gap:12px;min-width:0}
+.jm-rg-sisi:not(:has(.jm-pen)){grid-template-columns:minmax(0,1fr) auto}
+.jm-rg-sisi-t{display:grid;gap:4px;min-width:0}
+.jm-rg-lama{opacity:.72;padding-top:2px}
+.jm-rg-lama .jm-rg-nm,.jm-rg-lama .jm-rg-jd{text-decoration:line-through;text-decoration-thickness:1px;text-decoration-color:var(--ink2)}
+.jm-rg-hub{position:relative;display:flex;align-items:center;min-height:32px;padding-left:15px}
+.jm-rg-hub::before{content:"";position:absolute;left:15px;top:-10px;bottom:-10px;width:2px;background:var(--line)}
+.jm-rg-hub-p{position:relative;gap:6px;min-height:28px;padding:0 12px;border:2px solid var(--card)}
+.jm-rg-hub-p .jm-ik{stroke:currentColor;fill:none}
+.jm-rg-psg-mencabut .jm-rg-hub::before{background:var(--bad)}
+.jm-rg-psg-mengubah .jm-rg-hub::before{background:var(--warn)}
+.jm-rg-ring{margin:0;padding-top:10px;border-top:1px solid var(--line);color:var(--ink2);font-size:var(--t-tombol);line-height:var(--lh-isi)}
+.jm-rg-lihat{display:inline-flex;align-items:center;gap:6px;color:var(--accent);font:600 var(--t-tombol)/1 var(--font)}
+.jm-rg-lihat .jm-ik{stroke:currentColor;fill:none}
+.jm-rg-bh{display:grid;gap:14px;min-width:0;padding:16px 18px;border:1px solid var(--line);border-radius:var(--r);background:var(--card)}
+.jm-rg-bh-a{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.jm-rg-ruu{display:inline-flex;align-items:center;min-height:24px;padding:0 10px;border-radius:6px;background:var(--brand);color:var(--on-brand);font:700 var(--t-label)/1 var(--display)}
+.jm-rg-langkah{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(5,minmax(0,1fr))}
+.jm-rg-l{position:relative;display:grid;justify-items:center;align-content:start;gap:6px;padding:0 2px;text-align:center;color:var(--ink2)}
+.jm-rg-l::before{content:"";position:absolute;top:19px;right:50%;width:100%;height:2px;background:var(--line)}
+.jm-rg-l:first-child::before{display:none}
+.jm-rg-l-lalu::before,.jm-rg-l-kini::before{background:var(--ok)}
+.jm-rg-l-o{position:relative;z-index:1;display:grid;place-items:center;width:40px;height:40px;border-radius:50%;border:2px solid var(--line);background:var(--card)}
+.jm-rg-l-o .jm-ik{stroke:currentColor;fill:none}
+.jm-rg-l-lalu .jm-rg-l-o{background:var(--ok);border-color:var(--ok);color:var(--on-accent)}
+.jm-rg-l-kini .jm-rg-l-o{border-color:var(--accent);background:var(--soft-hijau);color:var(--accent);box-shadow:0 0 0 4px var(--soft-hijau)}
+.jm-rg-l-t{font:500 var(--t-kecil)/var(--lh-rapat) var(--font)}
+.jm-rg-l-kini .jm-rg-l-t{color:var(--head);font-weight:700}
+.jm-rg-l:not(.jm-rg-l-lalu):not(.jm-rg-l-kini){opacity:.65}
+.jm-rg-ikut{margin-left:auto}
+@media (max-width:640px){.jm-rg-baru-daftar{grid-template-columns:1fr}.jm-rg-l-o{width:36px;height:36px}.jm-rg-l::before{top:17px}.jm-rg-l:not(.jm-rg-l-kini) .jm-rg-l-t{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}.jm-rg-l-kini .jm-rg-l-t{white-space:nowrap}.jm-rg-ikut{margin-left:0}.jm-rg-sisi{grid-template-columns:minmax(0,1fr) auto}.jm-rg-sisi .jm-pen{display:none}}
 
 /* lembar rinci: kepala satu baris + dua kolom */
 dialog#lembar{width:min(1100px,95vw)}

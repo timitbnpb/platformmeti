@@ -4,17 +4,14 @@ import { tombolKoreksi } from "/inti/koreksi.js";
 import { tombolIkuti, pasangIkuti } from "/inti/ikuti.js";
 import { muatPembaruan } from "/inti/pembaruan.js";
 import { hantuHtml } from "/inti/umum.js";
-import { khUbinHtml, khGambarHtml, khFaktaHtml } from "/inti/kh.js";
 import { terkaitHtml } from "/inti/komponen.js";
 import { muatSensus } from "/inti/org_sensus.js";
 import { ringkasHtml, pasangRingkas } from "/o_ringkas.js";
-import { t, angka, esc, ikon, muat, norm, urlAman, hlHtml, pilTek, idJalur, provHtml, lambang, inisial, barisProyek, kapTeks, kepalaHtml, metaItem, statHtml, seksi, tabel, td, tabelProyek, tabelBerita, tabelRegulasi, tabelSumber, kartuProgram, petaTitik, galatHtml, pasangLogoCadangan, ringkasTgl } from "/profil.js";
+import { gabungProyek, saringTerkait, bagProyek, bagBerita, bagPengurus, bagRelasi, navLoncat } from "/o_bagian.js";
+import { t, angka, esc, muat, norm, hlHtml, idJalur, barisProyek, seksi, tabelRegulasi, kartuProgram, petaTitik, galatHtml, pasangLogoCadangan, ringkasTgl } from "/profil.js";
 
 const akar = document.getElementById("profil");
-const MAKS_REL = 60;
 
-const avatar = (o) => (o.logo ? `<img class="pf-logo" src="${esc(o.logo)}" data-ini="${esc(inisial(o.nama))}" alt="" width="88" height="88" decoding="async">` : `<span class="pf-av">${esc(inisial(o.nama))}</span>`);
-const orgLink = (o) => `<a class="pf-nm" href="/o/${esc(o.id)}">${esc(o.nama)}</a>`;
 
 function relasi(o, semua) {
   const urutId = new Map(semua.map((x) => [x.id, x])), namaKe = new Map(semua.map((x) => [norm(x.nama), x]));
@@ -31,13 +28,6 @@ function relasi(o, semua) {
   return baris;
 }
 
-function tabelRelasi(baris) {
-  if (!baris.length) return "";
-  const tampil = baris.slice(0, MAKS_REL * 2);
-  const html = tabel([["pf.c.peran"], ["pf.c.organisasi"], ["pf.c.kategori"]], tampil.map((r) => `<tr>${td("pf.c.peran", `<span class="jm-pil">${esc(t("pf.peran." + r.peran))}</span>`)}${td("pf.c.organisasi", r.x ? orgLink(r.x) : esc(r.teks))}${td("pf.c.kategori", esc(r.x?.kategori?.label || "-"))}</tr>`).join(""), "pf-tabel-rel");
-  return html + (baris.length > tampil.length ? `<p class="jm-bantu">${esc(t("pf.lagi", { n: angka(baris.length - tampil.length) }))}</p>` : "");
-}
-
 function tabelProgram(prog, rows) {
   const ag = new Map();
   for (const r of rows) for (const g of r.program) { const a = ag.get(g) || { n: 0, kap: 0 }; a.n++; a.kap += r.kap ?? 0; ag.set(g, a); }
@@ -45,26 +35,12 @@ function tabelProgram(prog, rows) {
   return { n: daftar.length, html: kartuProgram(daftar.map((g) => ({ g, stat: [t("pf.prog.proyek", { n: angka(ag.get(g.id).n) }), ag.get(g.id).kap ? angka(ag.get(g.id).kap) + " MW" : ""].filter(Boolean).join(", ") }))) };
 }
 
-const KEL_PENGURUS = (j) => (/komisaris|commissioner|dewan pengawas|supervisory/i.test(j || "") ? "komisaris" : /\b(direktur|director|direksi|ceo|cfo|coo|cto)\b/i.test(j || "") && !/jenderal|general/i.test(j || "") ? "direksi" : "pimpinan");
-const fotoAman = (u) => (typeof u === "string" && /^\/img\/(orang|pengurus)\/[\w.-]+\.webp$/.test(u) ? u : "");
-function kartuOrang(p) {
-  const f = fotoAman(p.foto), url = urlAman(p.sumber_url), ini = esc(inisial(p.nama.replace(/^((dr|ir|prof|drs|h|hj)\.?\s+)+/i, "")));
-  const wajah = `<span class="pf-orang-f">${f ? `<img src="${esc(f)}" alt="" width="64" height="64" loading="lazy" decoding="async" data-ini="${ini}">` : ini}</span>`;
-  const nama = url ? `<a class="pf-orang-n" href="${esc(url)}" target="_blank" rel="noopener noreferrer">${esc(p.nama)}</a>` : `<b class="pf-orang-n">${esc(p.nama)}</b>`;
-  return `<li class="pf-orang-k">${wajah}<span class="pf-orang-t">${nama}<span class="pf-orang-j">${esc(p.jabatan || "-")}</span><span class="jm-pil pf-orang-g">${esc(t("pf.kel." + KEL_PENGURUS(p.jabatan)))}</span></span></li>`;
-}
-function tabelPengurus(daftar) {
-  if (!daftar.length) return "";
-  const urut = ["direksi", "komisaris", "pimpinan"], u = daftar.map((p, i) => ({ p, i, k: urut.indexOf(KEL_PENGURUS(p.jabatan)) })).sort((a, b) => a.k - b.k || a.i - b.i);
-  return `<ul class="pf-orang">${u.map((x) => kartuOrang(x.p)).join("")}</ul>`;
-}
-
 async function mulai() {
   akar.innerHTML = hantuHtml(6);
   const id = idJalur();
-  let org, proyek, prog, reg, ber, orang, mitra, foto;
+  let org, proyek, prog, reg, berT, orang, mitra, foto;
   try {
-    [org, proyek, prog, reg, ber, orang, mitra, foto] = await Promise.all(["organisasi", "proyek", "program", "regulasi", "berita", "orang", "mitra-meti"].map(muat).concat(muat("berita_foto").catch(() => ({}))));
+    [org, proyek, prog, reg, berT, orang, mitra, foto] = await Promise.all(["organisasi", "proyek", "program", "regulasi", "berita", "orang", "mitra-meti"].map(muat).concat(muat("berita_foto").catch(() => ({}))));
   } catch { akar.innerHTML = galatHtml("pf.galat"); return; }
   const o = org.baris.find((x) => x.id === id);
   if (!o) { akar.innerHTML = galatHtml("pf.o.tak"); return; }
@@ -78,33 +54,36 @@ async function mulai() {
 
   const ids = new Set(rows.flatMap((r) => r.p.regulasi_ids || []));
   const regs = reg.baris.filter((x) => ids.has(x.id) || (x.instansi_penerbit && norm(x.instansi_penerbit) === norm(o.nama)));
-  const beritas = ber.baris.filter((x) => (x.organisasi_ids || []).includes(id) || (o.berita_ids || []).includes(x.id));
+  const beritas = berT.baris.filter((x) => (x.organisasi_ids || []).includes(id) || (o.berita_ids || []).includes(x.id));
   const p0 = new Map();
-  for (const p of o.pengurus || []) p0.set(p.orang_id || p.nama, { nama: p.nama, jabatan: p.jabatan, foto: p.foto, sumber_url: p.sumber_url });
-  for (const p of orang.baris) if (p.organisasi_id === id && !p0.has(p.id)) p0.set(p.id, { nama: [p.gelar, p.nama].filter(Boolean).join(" "), jabatan: p.jabatan_terkini });
+  const orangId = new Map(orang.baris.map((p) => [p.id, p]));
+  for (const p of o.pengurus || []) { const q = orangId.get(p.orang_id) || {}; p0.set(p.orang_id || p.nama, { nama: p.nama, gelar: q.gelar, jabatan: p.jabatan, jenis: q.jenis, foto: p.foto || q.foto || (q.id ? `/img/orang/${q.id}.webp` : ""), sumber_url: p.sumber_url }); }
+  for (const p of orang.baris) if (p.organisasi_id === id && !p0.has(p.id)) p0.set(p.id, { nama: p.nama, gelar: p.gelar, jabatan: p.jabatan_terkini, jenis: p.jenis, foto: p.foto || `/img/orang/${p.id}.webp`, sumber_url: "" });
   const pengurus = [...p0.values()];
   const rel = relasi(o, org.baris), progT = tabelProgram(prog.baris, rows);
   const anggotaMeti = o.meti || new Set((org.baris.find((x) => x.id === "l_41bf1f0b41")?.anggota || []).map((a) => a.organisasi_id)).has(id) || (mitra.anggota || []).some((a) => norm(o.nama).includes(norm(a.nama)));
 
   const S = await muatSensus();
   const sumberRingkas = esc(t("pf.sumber_data", { tanggal: ringkasTgl(o.diperiksa || org.dibangun_pada) }));
-  const proyekSek = rows.length ? seksi({ id: "proyek", ik: "proyek", topik: t("pf.ey.proyek"), judulHtml: hlHtml("pf.j.proyek", angka(rows.length), { n: angka(nProv) }),
-    isiHtml: (rows.some((r) => r.ada) ? `<div class="pf-peta" id="pfPeta" role="img" aria-label="${esc(t("pf.peta"))}"></div><p class="jm-bantu pf-peta-ket">${esc(t("pj.presisi.ket", { pasti: angka(rows.filter((r) => r.presisi === "titik_persis").length), kira: angka(rows.filter((r) => r.ada && r.presisi !== "titik_persis").length), tanpa: angka(rows.filter((r) => !r.ada).length) }))}</p>` : "") + tabelProyek(rows), csv: true, sumber: sumberRingkas }) : "";
+  const tampilProyek = gabungProyek(rows);
+  const pro = bagProyek({ rows: tampilProyek, semua: rows.length, nProv, sumber: sumberRingkas });
+  const ber = bagBerita({ daftar: beritas, foto: foto || {}, sumber: esc(t("pf.sumber_data", { tanggal: ringkasTgl(berT.dibangun_pada) })) });
+  const pen = bagPengurus({ daftar: pengurus, sumber: esc(t("pf.sumber_data", { tanggal: ringkasTgl(orang.dibangun_pada) })) });
+  const rl = bagRelasi({ o, rel, sumber: sumberRingkas, S });
 
-  const terkait = await terkaitHtml("org", id);
+  const terkait = await terkaitHtml("org", id, { kecuali: ["proyek", "berita", "regulasi", "orang", "program"] });
   akar.innerHTML = `<div class="oj">${ringkasHtml({ ...o, meti: anggotaMeti }, S, { tombolIkuti, tombolKoreksi })}</div>`
-    + `<div class="pf-bagian">${proyekSek}`
-    + seksi({ id: "program", ik: "regulasi", topik: t("pf.ey.program"), judulHtml: hlHtml("pf.j.program", angka(progT.n)), isiHtml: progT.html, csv: false, sumber: sumberRingkas })
+    + `<div class="pf-bagian oj-bag">${pro.html}`
+    + seksi({ id: "program", ik: "analisis", topik: t("pf.ey.program"), judulHtml: hlHtml("pf.j.program", angka(progT.n)), isiHtml: progT.html, csv: false, sumber: sumberRingkas })
     + seksi({ id: "regulasi", ik: "regulasi", topik: t("pf.ey.regulasi"), judulHtml: hlHtml("pf.j.regulasi", angka(regs.length)), isiHtml: tabelRegulasi(regs), csv: true, sumber: esc(t("pf.sumber_data", { tanggal: ringkasTgl(reg.dibangun_pada) })) })
-    + seksi({ id: "berita", ik: "berita", topik: t("pf.ey.berita"), judulHtml: hlHtml("pf.j.berita", angka(beritas.length)), isiHtml: tabelBerita(beritas, foto), csv: false, sumber: esc(t("pf.sumber_data", { tanggal: ringkasTgl(ber.dibangun_pada) })) })
-    + seksi({ id: "pengurus", ik: "orang", topik: t("pf.ey.pengurus"), judulHtml: hlHtml("pf.j.pengurus", angka(pengurus.length)), isiHtml: tabelPengurus(pengurus), csv: false, sumber: esc(t("pf.sumber_data", { tanggal: ringkasTgl(orang.dibangun_pada) })) })
-    + seksi({ id: "relasi", ik: "direktori", topik: t("pf.ey.relasi"), judulHtml: esc(t("pf.j.relasi")), isiHtml: tabelRelasi(rel), csv: true, sumber: sumberRingkas })
-    + terkait
+    + ber.html + pen.html + rl.html + terkait
     + `</div>`;
   pasangRingkas(akar, o);
+  pro.pasang(akar); ber.pasang(akar); pen.pasang(akar); rl.pasang(akar);
   pasangIkuti(akar); muatPembaruan("organisasi", id, akar.querySelector(".pf-bagian"));
   pasangLogoCadangan(akar);
-  akar.querySelectorAll(".pf-orang-f img").forEach((im) => im.addEventListener("error", () => im.replaceWith(document.createTextNode(im.dataset.ini || "")), { once: true }));
-  petaTitik(document.getElementById("pfPeta"), rows);
+  petaTitik(document.getElementById("pfPeta"), tampilProyek, {});
+  saringTerkait(akar, new Set(rel.map((r) => r.x?.id).filter(Boolean)));
+  navLoncat(akar);
 }
 mulaiHalaman().then(mulai);

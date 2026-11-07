@@ -141,21 +141,51 @@ export function kartu(H) {
   };
   const bahan = (x) => String(x.jenis || "").split(",").map((s) => s.trim()).filter(Boolean).map((s) => (BB[s] ? t("we.bb." + BB[s]) : s)).join(", ");
   const nmEmisi = (n) => namaBaku(String(n).replace(/\s+(power station|power plant|plant)$/i, "")).nama;
-  const emisiBaris = (x, i, ada) => {
-    const j = jenisEmisi(x), nm = nmEmisi(x.nama), pk = ada.get(nm.toLowerCase()), v = juta(x.emisi);
-    return `<li class="jm-we-r jm-we-${j}"${i >= 10 ? " hidden" : ""}><span class="jm-we-no">${i + 1}</span><span class="jm-we-ik" title="${esc(t("we.j." + j))}">${IKON_E[j]}</span><div class="jm-we-nm"><b>${pk ? tautProyek(pk.id, nm) : esc(nm)}</b><span class="jm-we-sub">${x.kota ? `<span class="jm-we-s" title="${esc(t("we.kota_ket"))}">${ikon("lokasi", 12)}${esc(x.kota)}</span>` : ""}${bahan(x) ? `<span class="jm-we-s">${IKON_E[j]}${esc(bahan(x))}</span>` : ""}</span></div><span class="jm-we-mw">${x.mw != null ? `${esc(num(x.mw, 0))}<small> MW</small>` : `<span class="jm-wp-kos" title="${esc(t("wp.kos"))}">-</span>`}</span><b class="jm-we-n">${esc(v)}<small> tCO2e</small></b></li>`;
+  /* donat: potongan berbentuk cincin (isi, bukan goresan) supaya sorotan hover dari tip_grafik tidak mengubah tebal */
+  const titik = (r, a) => [(60 + r * Math.sin(a)).toFixed(2), (60 - r * Math.cos(a)).toFixed(2)];
+  const cincin = (a0, a1) => {
+    const R = 54, r = 34, besar = a1 - a0 > Math.PI ? 1 : 0, [x0, y0] = titik(R, a0), [x1, y1] = titik(R, a1), [x2, y2] = titik(r, a1), [x3, y3] = titik(r, a0);
+    return `M${x0} ${y0}A${R} ${R} 0 ${besar} 1 ${x1} ${y1}L${x2} ${y2}A${r} ${r} 0 ${besar} 0 ${x3} ${y3}Z`;
   };
+  const ubinE = (ik, label, nilai, sub, kls = "") => `<li class="jm-wp-eu ${kls}"><span class="jm-wp-eu-i">${ik}</span><span class="jm-wp-eu-t"><small>${esc(label)}</small><b>${nilai}</b><em>${sub}</em></span></li>`;
+  const sat = (v, s) => `${esc(v)}<small> ${esc(s)}</small>`;
   function emisi(p, d) {
-    const e = d?.emisi; if (!e) return "";
-    const L = e.pembangkit, tot = L.reduce((s, x) => s + (x.emisi || 0), 0) || 1;
+    const e = d?.emisi; if (!e?.pembangkit?.length) return "";
+    const L = [...e.pembangkit].sort((a, b) => (b.emisi || 0) - (a.emisi || 0)), tot = L.reduce((x, y) => x + (y.emisi || 0), 0) || 1;
     const ada = new Map(p.proyek.map((x) => [namaBersih(x).toLowerCase(), x]));
     const grup = new Map();
-    for (const x of L) grup.set(jenisEmisi(x), (grup.get(jenisEmisi(x)) || 0) + (x.emisi || 0));
-    /* ubin total + per jenis; kelompok "lain" (tak bermakna) tidak dibuat ubin sendiri */
-    const jenisUbin = [...grup].filter(([j]) => j !== "lain").sort((a, b) => b[1] - a[1]);
-    const ubin = `<li class="jm-we-u jm-we-tot"><span class="jm-we-ik">${IKON_E.lain}</span><span class="jm-we-ut"><span>${esc(t("we.total"))}</span><b>${esc(juta(e.total_tco2e))}</b><small>tCO2e, ${esc(e.tahun)}</small></span></li>` + (jenisUbin.length > 0 && grup.size > 1 ? jenisUbin.map(([j, v]) => `<li class="jm-we-u jm-we-${j}"><span class="jm-we-ik">${IKON_E[j]}</span><span class="jm-we-ut"><span>${esc(t("we.j." + j))}</span><b>${esc(juta(v))}</b><small>${esc(num((v / tot) * 100, 0))}%</small></span></li>`).join("") : "");
+    for (const x of L) { const j = jenisEmisi(x), g = grup.get(j) || { v: 0, n: 0 }; g.v += x.emisi || 0; g.n++; grup.set(j, g); }
+    const jenis = [...grup].filter(([, g]) => g.v > 0).sort((a, b) => b[1].v - a[1].v);
+    const mw = L.reduce((x, y) => x + (y.mw || 0), 0), top = L[0];
+    const srcTh = `${e.sumber}, ${e.tahun}`;
+    const ubin = ubinE(IKON_E.lain, t("we.total"), sat(juta(e.total_tco2e), "tCO2e"), esc(String(e.tahun)), "jm-wp-ej-total")
+      + ubinE(IKON_E.industri, t("wp.em.u.pemb"), esc(num(L.length)), esc(t("wp.em.u.pemb.sub", { n: num(L.filter((x) => x.emisi > 0).length) })))
+      + ubinE(IKON_E.batubara, t("wp.em.u.kap"), mw > 0 ? sat(num(mw, 0), "MW") : kos(t("wp.em.kosong.mw")), esc(t("wp.em.u.kap.sub")))
+      + ubinE(IKON_E[jenisEmisi(top)], t("wp.em.u.top"), esc(nmEmisi(top.nama)), top.emisi > 0 ? esc(t("wp.em.u.top.sub", { p: num(((top.emisi || 0) / tot) * 100, 0) })) : "", "jm-wp-eu-nm");
+    /* donat menurut jenis utama */
+    let sudut = 0;
+    const iris = jenis.map(([j, g]) => {
+      const a0 = sudut, a1 = a0 + Math.min((g.v / tot) * 2 * Math.PI, 2 * Math.PI - 0.0001); sudut = a1;
+      const tip = t("wp.em.tip.jenis", { jenis: t("we.j." + j), emisi: juta(g.v), p: num((g.v / tot) * 100, 0), n: num(g.n) });
+      return `<path class="jm-wp-ej-${j}" d="${cincin(a0, a1)}" data-tip="${esc(tip)}" tabindex="0"/>`;
+    }).join("");
+    const donat = `<figure class="jm-wp-ed"><svg class="jm-gf jm-wp-ed-s" viewBox="0 0 120 120" role="img" aria-label="${esc(t("wp.em.donat"))}">${iris}<text x="60" y="58" text-anchor="middle" class="jm-wp-ed-n">${esc(juta(e.total_tco2e))}</text><text x="60" y="73" text-anchor="middle" class="jm-wp-ed-u">tCO2e</text></svg>`
+      + `<figcaption><b>${esc(t("wp.em.donat"))}</b><ul>${jenis.map(([j, g]) => `<li class="jm-wp-ej-${j}"><i></i><span>${esc(t("we.j." + j))}</span><b>${esc(num((g.v / tot) * 100, 0))}%</b></li>`).join("")}</ul></figcaption></figure>`;
+    /* batang horizontal interaktif per pembangkit */
+    const mks = Math.max(...L.map((x) => x.emisi || 0), 1);
+    const baris = L.map((x, i) => {
+      const j = jenisEmisi(x), nm = nmEmisi(x.nama), pk = ada.get(nm.toLowerCase()), ok = x.emisi > 0, okMw = x.mw > 0;
+      const tip = t("wp.em.tip", { nama: nm, bb: bahan(x) || t("we.j." + j), mw: okMw ? t("wp.em.tip.mw", { mw: num(x.mw, 0) }) : t("wp.em.tip.mw0"), emisi: ok ? t("wp.em.tip.e", { emisi: num(x.emisi, 0), p: num((x.emisi / tot) * 100, 1) }) : t("wp.em.tip.nol"), sumber: e.sumber, tahun: x.tahun || e.tahun });
+      return `<li class="jm-wp-ej-${j}${ok ? "" : " jm-wp-eb-nol"}" data-tip="${esc(tip)}" tabindex="0"${i >= 10 ? " hidden" : ""}><span class="jm-wp-eb-no">${i + 1}</span>`
+        + `<span class="jm-wp-eb-nm"><span class="jm-wp-eb-ik" title="${esc(t("we.j." + j))}">${IKON_E[j]}</span><span class="jm-wp-eb-tx"><b>${pk ? tautProyek(pk.id, nm) : esc(nm)}</b>${bahan(x) ? `<small>${esc(bahan(x))}</small>` : ""}</span></span>`
+        + `<span class="jm-wp-eb-tr"><i${ok ? ` data-w="${((x.emisi / mks) * 100).toFixed(2)}"` : ""}></i></span>`
+        + `<span class="jm-wp-eb-mw">${okMw ? `${esc(num(x.mw, 0))}<small> MW</small>` : kos(t("wp.em.kosong.mw"))}</span>`
+        + `<b class="jm-wp-eb-n">${ok ? `${esc(juta(x.emisi))}<small> tCO2e</small>` : kos(t("wp.em.kosong.emisi"))}</b></li>`;
+    }).join("");
+    const kepala = `<div class="jm-wp-eb-kp" aria-hidden="true"><span>#</span><span>${esc(t("wp.col.nama"))}</span><span>${esc(t("wp.em.kol.emisi"))}</span><span>MW</span><span>tCO2e</span></div>`;
     const tombol = L.length > 10 ? navLokal({ total: L.length, per: 10, satuan: "jm.pag.u.pembangkit" }) : "";
-    return seksi({ id: "emisi", ikon: "analisis", topik: t("wp.ey.emisi"), judulHtml: hlHtml("wp.j.emisi", t("wp.emisi.nilai", { n: juta(e.total_tco2e) }), { nama: p.nama, n: num(e.jumlah), tahun: e.tahun }), aksiHtml: aksiHtml() + sumberDari({ sumber: e.sumber, url: e.url, tahun: e.tahun, tanggal: e.tanggal }), isiHtml: `<ul class="jm-we-ubin" aria-label="${esc(t("we.ringkas"))}">${ubin}</ul><ol class="jm-we" aria-label="${esc(t("wp.emisi.grafik"))}">${L.map((x, i) => emisiBaris(x, i, ada)).join("")}</ol>${tombol ? `<div class="jm-we-kaki">${tombol}</div>` : ""}`, kakiHtml: `<p>${esc(t("wp.cat.emisi"))}</p>` });
+    return seksi({ id: "emisi", ikon: "analisis", topik: t("wp.ey.emisi"), judulHtml: hlHtml("wp.j.emisi", t("wp.emisi.nilai", { n: juta(e.total_tco2e) }), { nama: p.nama, n: num(e.jumlah), tahun: e.tahun }), aksiHtml: aksiHtml() + sumberDari({ sumber: e.sumber, url: e.url, tahun: e.tahun, tanggal: e.tanggal }),
+      isiHtml: `<div class="jm-wp-em"><ul class="jm-wp-eus" aria-label="${esc(t("we.ringkas"))}">${ubin}</ul>${donat}</div>${kepala}<ul class="jm-an-batang jm-wp-eb" aria-label="${esc(t("wp.emisi.grafik"))}">${baris}</ul>${tombol ? `<div class="jm-we-kaki">${tombol}</div>` : ""}`, kakiHtml: `<p>${esc(t("wp.cat.emisi"))}</p>` });
   }
 
   /* ============ perbandingan ============ */
@@ -192,7 +222,7 @@ export function kartu(H) {
       for (const x of seg.children) { x.classList.toggle("on", x === b); x.setAttribute("aria-pressed", String(x === b)); }
       for (const li of org.children) li.hidden = !!b.dataset.kota && li.dataset.kota !== b.dataset.kota;
     });
-    pasangLokal(akar, () => akar.querySelectorAll(".jm-we-r"));
+    pasangLokal(akar, () => akar.querySelectorAll(".jm-wp-eb>li"));
   }
 
   /* Kartu "Capaian RUED": target bauran 2025 dibanding realisasi pangsa kapasitas EBT; selalu Hipotesis (ukuran berbeda). Data: /data/rued_capaian.json. */

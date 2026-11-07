@@ -314,8 +314,11 @@ dialog.gal-dlg::backdrop{background:rgb(4 14 11/.82)}
 .sos-med{position:relative;display:grid;place-items:center;width:100%;aspect-ratio:4/3;padding:0;border:0;overflow:hidden;background:linear-gradient(135deg,var(--accent),var(--head));color:var(--on-brand);cursor:pointer}
 .sos-med img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
 .sos-med:focus-visible{outline:2px solid var(--fokus);outline-offset:-2px}
-.sos-logo{position:absolute;top:10px;left:10px;display:grid;place-items:center;width:32px;height:32px;border-radius:var(--r-sm);background:rgb(4 25 18/.7);color:var(--on-brand)}
-.sos-main{position:relative;display:grid;place-items:center;color:var(--on-brand);filter:drop-shadow(0 2px 6px rgb(0 0 0/.5))}
+.sos-logo{position:absolute;top:10px;left:10px;z-index:2;display:inline-flex;align-items:center;gap:6px;height:28px;padding:0 10px 0 8px;border-radius:999px;background:rgb(4 25 18/.78);color:var(--on-brand);font-size:var(--t-label);font-weight:600;white-space:nowrap;backdrop-filter:blur(4px)}
+.sos-youtube .sos-logo{background:var(--sos-youtube)}.sos-instagram .sos-logo{background:var(--sos-instagram)}.sos-facebook .sos-logo{background:var(--sos-facebook)}.sos-linkedin .sos-logo{background:var(--sos-linkedin)}
+.sos-main{position:absolute;inset:0;z-index:1;display:grid;place-items:center;color:var(--on-brand);filter:drop-shadow(0 2px 8px rgb(0 0 0/.6))}
+.sos-main svg{width:56px;height:56px;padding:12px;border-radius:50%;background:rgb(4 25 18/.55);transition:transform .2s,background .2s}
+.sos-med:hover .sos-main svg{transform:scale(1.08);background:var(--sos-youtube)}
 .sos-ik-besar{position:relative;background:rgb(255 255 255/.2)}
 .sos-isi{display:grid;gap:6px;padding:12px 14px 14px}
 .sos-isi p{margin:0;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;overflow-wrap:anywhere}
@@ -324,3 +327,78 @@ dialog.gal-dlg::backdrop{background:rgb(4 14 11/.82)}
 .sos-tinggi .sos-embed{aspect-ratio:auto;min-height:480px}
 @media (max-width:900px){.sos-profil{grid-template-columns:repeat(2,minmax(0,1fr))}.sos-feed{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media (max-width:560px){.sos-seg button:not([aria-selected=true]) span{display:none}.sos-profil,.sos-feed{grid-template-columns:minmax(0,1fr)}}
+
+.ev-lok{display:inline-flex;align-items:center;gap:8px;min-width:0;color:var(--accent);font-weight:600;text-decoration:none;border-radius:var(--r-sm)}
+.ev-lok:hover,.ev-lok:focus-visible{color:var(--brand)}
+.ev-lok .jm-ik:last-child{flex:none;opacity:.7}
+
+/* ---- rapi 8 Nov: karusel kartu fakta, matriks sponsor, daftar sebelumnya ---- */
+.ev-slide-teks{align-content:stretch;grid-template-rows:auto 1fr auto;gap:16px;padding:28px 32px;justify-items:stretch}
+.ev-pils{display:flex;flex-wrap:wrap;gap:8px}
+.ev-hitung-pil{background:var(--accent);color:var(--on-accent)}
+.ev-fakta{list-style:none;margin:0;padding:0;display:grid;align-content:center;border:1px solid var(--line);border-radius:var(--r);background:var(--surface)}
+.ev-fk{display:flex;align-items:center;gap:14px;min-height:56px;padding:10px 16px;min-width:0}
+.ev-fk+.ev-fk{border-top:1px solid var(--line)}
+.ev-fk-ik{display:grid;place-items:center;flex:none;width:36px;height:36px;border-radius:50%;background:var(--akun-isi);color:var(--accent)}
+.ev-fk-t{display:grid;gap:2px;min-width:0}
+.ev-fk-t small{color:var(--ink2);font:600 var(--t-label)/1.2 var(--font)}
+.ev-fk-t b{color:var(--head);font:600 var(--t-body)/var(--lh-rapat) var(--font);overflow-wrap:anywhere}
+.ev-fk .ev-lok{font:600 var(--t-body)/var(--lh-rapat) var(--font);min-height:var(--target,44px)}
+.ev-slide-aksi{flex-wrap:nowrap}.ev-slide-aksi .jm-tbl{flex:1 1 0;justify-content:center;white-space:nowrap}
+.ev-kar-nav{gap:18px}
+
+/* sponsor */
+.ev-harga{padding:14px 2px 12px;gap:14px;align-items:stretch}
+.ev-paket{border-top:4px solid var(--line);transition:box-shadow .2s}
+.ev-lg-diamond{border-top-color:var(--lg-diamond)}.ev-lg-diamond .ev-lg-ik{background:var(--lg-diamond)}.ev-lg-platinum{border-top-color:var(--lg-platinum)}.ev-lg-platinum .ev-lg-ik{background:var(--lg-platinum)}.ev-lg-ruby{border-top-color:var(--lg-ruby)}.ev-lg-ruby .ev-lg-ik{background:var(--lg-ruby)}.ev-lg-gold{border-top-color:var(--lg-gold)}.ev-lg-gold .ev-lg-ik{background:var(--lg-gold)}.ev-lg-silver{border-top-color:var(--lg-silver)}.ev-lg-silver .ev-lg-ik{background:var(--lg-silver)}.ev-lg-bronze{border-top-color:var(--lg-bronze)}.ev-lg-bronze .ev-lg-ik{background:var(--lg-bronze)}
+.ev-sorot{border-color:var(--accent);box-shadow:var(--shadow-lg);outline:2px solid var(--accent);outline-offset:-1px}
+.ev-lg-diamond .ev-paket-kep,.ev-lg-platinum .ev-paket-kep,.ev-lg-ruby .ev-paket-kep,.ev-lg-gold .ev-paket-kep,.ev-lg-silver .ev-paket-kep,.ev-lg-bronze .ev-paket-kep{background:linear-gradient(150deg,var(--brand),var(--brand2))}
+.ev-paket-kep{color:var(--on-brand);justify-items:stretch;text-align:left;gap:6px;padding:44px 16px 16px}
+.ev-paket-kep h4{gap:10px;font:700 var(--t-h3)/1 var(--display)}
+.ev-lg-ik{display:grid;place-items:center;flex:none;width:38px;height:38px;border-radius:50%;color:var(--lg-ink)}
+.ev-paket-h{margin:6px 0 0;font:700 var(--t-h1)/1 var(--display)}
+.ev-paket-h .jm-uang-s{color:var(--on-brand);opacity:.8;font:600 var(--t-body)/1 var(--font)}
+.ev-paket-kep small{font:400 var(--t-kecil)/var(--lh-rapat) var(--font);opacity:.85;white-space:nowrap}
+.ev-pita-top{top:12px;left:16px}
+.ev-paket-man{padding:0;gap:0;flex:none}
+.ev-bf{display:flex;align-items:center;gap:12px;height:76px;padding:0 16px;border-top:1px solid var(--line)}
+.ev-bf:first-child{border-top:0}
+.ev-bf-ik{display:grid;place-items:center;flex:none;width:36px;height:36px;border-radius:50%;background:var(--akun-isi);color:var(--accent)}
+.ev-bf-t{display:grid;gap:3px;min-width:0;flex:1}
+.ev-bf-t small{color:var(--ink2);font:600 var(--t-label)/1.2 var(--font);white-space:nowrap}
+.ev-bf-t b{color:var(--head);font:700 var(--t-h3)/1.1 var(--display);white-space:nowrap;font-variant-numeric:tabular-nums}
+.ev-bf-t b span{font:600 var(--t-kecil)/1 var(--font);color:var(--ink2)}
+.ev-bf-t em{font:400 var(--t-kecil)/1.2 var(--font);color:var(--ink2);font-style:normal;white-space:nowrap}
+.ev-bf-nol{color:var(--ink2)!important;opacity:.55;font-weight:400!important}
+.ev-denah{flex:none}.ev-denah-b{fill:none;stroke:var(--line-ctl);stroke-dasharray:3 3}.ev-denah-i{fill:var(--accent);fill-opacity:.85}
+.ev-tiket{display:flex;gap:2px;color:var(--accent)}
+.ev-paket-btn{margin:auto 16px 16px;margin-top:16px;justify-content:center;min-height:var(--target,44px)}
+.ev-paket-man{border-top:0}
+
+/* sebelumnya */
+.ev-grup h3{display:flex;align-items:center;gap:12px;padding:10px 14px;border:0;border-radius:var(--r);background:linear-gradient(120deg,var(--brand),var(--brand2));color:var(--on-brand);font:700 var(--t-h2)/1.2 var(--display)}
+.ev-grup h3 b{flex:1;min-width:0;font:inherit}
+.ev-grup-ik{display:grid;place-items:center;width:32px;height:32px;border-radius:50%;background:rgb(255 255 255/.16)}
+.ev-grup h3>span:last-child{padding:0 12px;height:28px;background:var(--card);color:var(--brand);font:700 var(--t-kecil)/1 var(--font);white-space:nowrap}
+.ev-lalu{grid-template-columns:168px minmax(0,1fr);grid-template-areas:"p i";align-items:stretch;gap:16px;padding:12px;min-height:144px}
+.ev-lalu-p{min-height:120px}
+.ev-lalu-isi{align-content:start;gap:8px}
+.ev-lalu-kep{display:flex;align-items:flex-start;justify-content:space-between;gap:12px}
+.ev-lalu-aksi{display:flex;gap:8px;flex:none}
+.ev-lalu-isi h4{flex:1;min-width:0;font:700 var(--t-h3)/var(--lh-rapat) var(--display)}
+.ev-meta-baris .ev-pil+.ev-pil{margin-left:6px}
+.ev-meta-baris li:first-child{display:flex;gap:0}
+.ev-sampul{position:absolute;inset:0;gap:2px;align-content:center;padding:8px}
+.ev-sampul b{font:700 var(--t-display)/1 var(--display);max-width:none}
+.ev-sampul>span{position:relative;z-index:1;font:600 var(--t-kecil)/1.2 var(--font)}
+.ev-sampul .jm-ik{position:relative;z-index:1;margin-top:8px;width:22px;height:22px}
+.ev-sampul::after{display:none}
+@media (max-width:639px){
+  .ev-slide-teks{padding:20px;grid-template-rows:auto;gap:14px}.ev-slide-aksi{flex-wrap:wrap}
+  .ev-lalu{grid-template-columns:1fr;grid-template-areas:"p" "i"}.ev-lalu-p{min-height:96px;aspect-ratio:auto;height:96px}
+  .ev-harga{grid-auto-columns:82%;scroll-snap-type:x mandatory}
+}
+.ev-fakta{grid-auto-rows:1fr}
+.ev-bf-t{align-content:center}
+.ev-lalu{min-height:0}.ev-lalu-p{min-height:104px}.ev-lalu-isi{align-content:center}
+@media (max-width:999px){.ev-slide-teks{align-content:start}}

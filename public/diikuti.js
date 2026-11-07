@@ -12,7 +12,7 @@ await mulaiHalaman();
 const akar = document.getElementById("isi");
 const IK = { proyek: "proyek", organisasi: "direktori", provinsi: "wilayah", regulasi: "regulasi", tender: "peluang" };
 const BERKAS = { proyek: "proyek", organisasi: "organisasi", regulasi: "regulasi" };
-const tautan = (jenis, ref) => (jenis === "proyek" ? "/p/" : jenis === "organisasi" ? "/o/" : jenis === "provinsi" ? "/wilayah/" : jenis === "regulasi" ? "/regulasi?id=" : "") + (jenis === "tender" ? "/proyek#tender" : encodeURIComponent(ref));
+const tautan = (jenis, ref) => (jenis === "proyek" ? "/p/" : jenis === "organisasi" ? "/o/" : jenis === "provinsi" ? "/wilayah/" : jenis === "regulasi" ? "/regulasi?id=" : jenis === "topik" ? "/topik?id=" : "") + (jenis === "tender" ? "/proyek#tender" : encodeURIComponent(ref));
 const muatData = (n) => fetch(`/data/${n}.json`).then((r) => r.json()).then((d) => new Map(d.baris.map((x) => [x.id, x]))).catch(() => new Map());
 
 let NAMA = {};
@@ -33,6 +33,7 @@ const tgl = (u) => `<span data-urut="${u}">${esc(tanggal(tanggalDariUnix(u)))}</
 function barisRingkasan(x) {
   const apa = x.tipe === "portal" ? esc(t("dk.portal." + x.jenis_ajuan))
     : x.tipe === "koreksi" ? esc(t("dk.koreksi", { kolom: t("kor.k." + x.kolom) }))
+      : x.tipe === "topik" ? esc(t("dk.topik_baru", { judul: x.judul || x.ref }))
       : x.tipe === "konsultasi" ? esc(t("dk.kons." + x.sub))
       : x.tipe === "regulasi" ? esc(t("dk.regulasi_baru", { judul: x.judul }))
         : `<a href="${/^https?:\/\//i.test(x.url) ? esc(x.url) : "#"}" target="_blank" rel="noopener noreferrer">${esc(x.judul)}</a>${x.media ? ` <small>${esc(x.media)}</small>` : ""}`;

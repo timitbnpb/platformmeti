@@ -340,3 +340,14 @@ test("ekstrakDocx: teks paragraf dari DOCX (zip tanpa kompresi) lalu dipecah ke 
   assert.equal(h[1].teks, "Setiap orang & badan usaha wajib patuh.");
   await assert.rejects(ekstrakDocx(new Uint8Array(40)));
 });
+
+test("dukung dan ikuti dokumen non-terbit: anggota 404/diam, staf boleh", async () => {
+  await q("UPDATE kons_dokumen SET status = 'draf' WHERE id = 'masukan-meti-ruu-ebet'").run();
+  try {
+    assert.equal((await panggil("POST", `/api/konsultasi/utas/${UBAH}/dukung`, { peran: "anggota2", badan: {} })).status, 404, "draf: anggota tak bisa mendukung");
+    assert.equal((await panggil("POST", `/api/konsultasi/utas/${UBAH}/dukung`, { peran: "pengurus", badan: {} })).status, 200, "staf boleh");
+    await q("DELETE FROM ikuti WHERE ref = 'kons:masukan-meti-ruu-ebet'").run();
+    await panggil("POST", "/api/ikuti", { peran: "anggota2", badan: { jenis: "regulasi", ref: "kons:masukan-meti-ruu-ebet" } });
+    assert.equal(await satu("SELECT 1 AS x FROM ikuti WHERE ref = 'kons:masukan-meti-ruu-ebet'"), null, "draf tidak bisa diikuti anggota");
+  } finally { await q("UPDATE kons_dokumen SET status = 'terbit' WHERE id = 'masukan-meti-ruu-ebet'").run(); }
+});

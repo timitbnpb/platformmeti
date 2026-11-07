@@ -1,0 +1,2019 @@
+{
+ "id": "energi-laut",
+ "versi": 1,
+ "diperbarui": "2026-11-08",
+ "judul": {
+  "id": "Energi laut",
+  "en": "Ocean energy"
+ },
+ "lead": {
+  "id": "Arus laut, gelombang, dan panas laut (OTEC): potensi praktis 63 GW, belum ada kapasitas terpasang, proyek pertama 40 MW ditargetkan 2028, dan pelajaran dari MeyGen dan Sihwa.",
+  "en": "Tidal, wave and ocean thermal energy (OTEC): 63 GW practical potential, no installed capacity yet, a first 40 MW project targeted for 2028, and lessons from MeyGen and Sihwa."
+ },
+ "kunci": [
+  {
+   "label": {
+    "id": "Potensi praktis energi laut",
+    "en": "Practical ocean energy potential"
+   },
+   "nilai": 63,
+   "d": 0,
+   "satuan": {
+    "id": "GW",
+    "en": "GW"
+   },
+   "sumber": "pot63",
+   "est": false
+  },
+  {
+   "label": {
+    "id": "Potensi praktis arus laut",
+    "en": "Practical tidal current potential"
+   },
+   "nilai": 20.01,
+   "d": 2,
+   "satuan": {
+    "id": "GW",
+    "en": "GW"
+   },
+   "sumber": "pot63",
+   "est": false
+  },
+  {
+   "label": {
+    "id": "Potensi panas laut (OTEC, PPPGL)",
+    "en": "Ocean thermal potential (OTEC, PPPGL)"
+   },
+   "nilai": 41,
+   "d": 0,
+   "satuan": {
+    "id": "GW",
+    "en": "GW"
+   },
+   "sumber": "otec17",
+   "est": false
+  },
+  {
+   "label": {
+    "id": "PLTAL pertama, target operasi 2028",
+    "en": "First tidal plant, operation target 2028"
+   },
+   "nilai": 40,
+   "d": 0,
+   "satuan": {
+    "id": "MW",
+    "en": "MW"
+   },
+   "sumber": "jp28",
+   "est": false
+  },
+  {
+   "label": {
+    "id": "Pendanaan publik asing tercatat (2019)",
+    "en": "Recorded foreign public finance (2019)"
+   },
+   "nilai": 0.74,
+   "d": 2,
+   "satuan": {
+    "id": "juta USD",
+    "en": "USD million"
+   },
+   "sumber": "pubfin",
+   "est": false
+  }
+ ],
+ "penting": [
+  {
+   "id": "Potensi praktis energi laut 63 GW (arus 20,01 GW, panas laut 41 GW), tetapi kapasitas terpasang masih nol.",
+   "en": "Practical ocean energy potential is 63 GW (currents 20.01 GW, thermal 41 GW), yet installed capacity is still zero."
+  },
+  {
+   "id": "PLTAL pertama 40 MW di NTT dan NTB senilai sekitar USD 220 juta ditargetkan beroperasi 2028 dan masih pra-konstruksi.",
+   "en": "The first 40 MW tidal plant in NTT and NTB, worth about USD 220 million, is targeted for 2028 and still pre-construction."
+  },
+  {
+   "id": "Pembanding: Sihwa 254 MW memakai bendung yang ada, sedangkan MeyGen 6 MW bertahan dengan dukungan harga tetap.",
+   "en": "Comparisons: Sihwa at 254 MW reuses an existing dam, while MeyGen at 6 MW survives on fixed-price support."
+  }
+ ],
+ "posisi": {
+  "id": "Indonesia punya potensi arus laut yang besar tetapi belum memiliki satu pun pembangkit energi laut, sementara Korea sudah mengoperasikan 254 MW sejak 2011 atau 2012.",
+  "en": "Indonesia has large tidal potential but not a single ocean energy plant, while Korea has operated 254 MW since 2011 or 2012."
+ },
+ "sumber": {
+  "ed": {
+   "judul": "Ringkasan editorial METI (penjelasan umum dan definisi; bukan kutipan pasal)",
+   "penerbit": "METI",
+   "tanggal": "2026-11-08",
+   "tahun": 2026,
+   "bukti": "editorial"
+  },
+  "pubfin": {
+   "judul": "IRENA Public Finance Database dan OECD DAC, penerima Indonesia, juta USD 2023 (public/data/keuangan_hijau.json)",
+   "penerbit": "IRENA dan OECD",
+   "url": "https://pxweb.irena.org/pxweb/en/IRENASTAT/IRENASTAT__Finance/",
+   "tanggal": "2026-11-08",
+   "tahun": 2026,
+   "bukti": "resmi",
+   "lisensi": "IRENA: bebas dipakai dengan atribusi"
+  },
+  "pot63": {
+   "judul": "Kementerian ESDM Paparkan Peluang Implementasi Energi Laut, Simak Rinciannya (potensi praktis 63 GW: arus 20,01 GW, gelombang 1,99 GW, panas laut 41 GW; studi 2022; angka dari ringkasan hasil pencarian)",
+   "penerbit": "Investortrust",
+   "url": "https://investortrust.id/esg/11088/kementerian-esdm-paparkan-peluang-implementasi-energi-laut-simak-rinciannya",
+   "tanggal": "2026-11-08",
+   "tahun": 2022,
+   "bukti": "media"
+  },
+  "esdm_arus": {
+   "judul": "Energi Arus Laut Sangat Potensial Dikembangkan di Indonesia (kecepatan arus 0,6 sampai 3,5 m/s; di atas 2 m/s di Selat Pantar, Lombok, Toyapakeh, Larantuka, Alas, Molo, Sunda, Boleng; dari ringkasan hasil pencarian)",
+   "penerbit": "Kementerian ESDM",
+   "url": "https://www.esdm.go.id/en/media-center/news-archives/energi-arus-laut-sangat-potensial-dikembangkan-di-indonesia",
+   "tanggal": "2026-11-08",
+   "tahun": 2018,
+   "bukti": "resmi"
+  },
+  "pantar": {
+   "judul": "ESDM Lirik Selat Pantar NTT untuk Pengembangan Pembangkit Listrik Tenaga Arus Laut (20 Okt 2020; hanya judul dibaca)",
+   "penerbit": "Kementerian ESDM",
+   "url": "https://www.esdm.go.id/id/berita-unit/direktorat-jenderal-ebtke/esdm-lirik-selat-pantar-ntt-untuk-pengembangan-pembangkit-listrik-tenaga-arus-laut-1",
+   "tanggal": "2026-11-08",
+   "tahun": 2020,
+   "bukti": "resmi"
+  },
+  "lar18": {
+   "judul": "Tinjau Lokasi Pembangunan Pembangkit Arus Laut di Selat Larantuka (1 Apr 2018; kunjungan Menteri ESDM 31 Mar 2018)",
+   "penerbit": "Kementerian ESDM",
+   "url": "https://www.esdm.go.id/en/media-center/news-archives/tinjau-lokasi-pembangunan-pembangkit-arus-laut-di-selat-larantuka-menteri-esdm-pertama-di-indonesia-terbesar-di-dunia",
+   "tanggal": "2026-11-08",
+   "tahun": 2018,
+   "bukti": "resmi"
+  },
+  "bis18": {
+   "judul": "Proyek Pembangkit Arus Laut di Larantuka, Flores Segera Direalisasikan (1 Apr 2018; hanya judul dibaca)",
+   "penerbit": "Bisnis.com",
+   "url": "https://ekonomi.bisnis.com/read/20180401/44/778722/proyek-pembangkit-arus-laut-di-larantuka-flores-segera-direalisasikan",
+   "tanggal": "2026-11-08",
+   "tahun": 2018,
+   "bukti": "media"
+  },
+  "rup22": {
+   "judul": "Kementerian ESDM Ungkap Rencana Pembangkit Listrik Energi Laut (PLTAL Selat Alas 10 MW dan Selat Lombok 10 MW dalam daftar potensi RUPTL, bersama Selat Bali dan Larantuka; dari ringkasan hasil pencarian)",
+   "penerbit": "Listrik Indonesia",
+   "url": "https://listrikindonesia.com/detail/14190/kementerian-esdm-ungkap-rencana-pembangkit-listrik-energi-laut",
+   "tanggal": "2026-11-08",
+   "tahun": 2022,
+   "bukti": "media"
+  },
+  "jp28": {
+   "judul": "RI to start operating first ocean power plant in 2028 (16 Jun 2025; siaran Kementerian ESDM 16 Jun 2025)",
+   "penerbit": "The Jakarta Post",
+   "url": "https://www.thejakartapost.com/business/2025/06/16/ri-to-start-operating-first-ocean-power-plant-in-2028.html",
+   "tanggal": "2026-11-08",
+   "tahun": 2025,
+   "bukti": "media"
+  },
+  "otec17": {
+   "judul": "Menakjubkan, Potensi Energi Panas Laut Indonesia Terbesar di Dunia (26 Sep 2017; PPPGL meneliti 17 lokasi, total 41 GW; dari ringkasan hasil pencarian)",
+   "penerbit": "Good News from Indonesia",
+   "url": "https://www.goodnewsfromindonesia.id/2017/09/26/menakjubkan-potensi-energi-panas-laut-indonesia-terbesar-di-dunia",
+   "tanggal": "2026-11-08",
+   "tahun": 2017,
+   "bukti": "media"
+  },
+  "tud": {
+   "judul": "Upscaling scenarios for ocean thermal energy conversion with technological learning in Indonesia (hingga 45 GW; 22 persen kebutuhan nasional pada 2050; dari ringkasan hasil pencarian)",
+   "penerbit": "TU Delft (jurnal Renewable and Sustainable Energy Reviews, 2022)",
+   "url": "https://research.tudelft.nl/en/publications/upscaling-scenarios-for-ocean-thermal-energy-conversion-with-tech",
+   "tanggal": "2026-11-08",
+   "tahun": 2022,
+   "bukti": "kajian"
+  },
+  "mey_wiki": {
+   "judul": "MeyGen (Phase 1A: 4 x 1,5 MW; keluaran bersih 10,2 GWh pada 2023; kumulatif 51 GWh Mar 2023; tapak berizin hingga 398 MW; tambahan 9 MW CfD AR6 Sep 2024; dari ringkasan hasil pencarian)",
+   "penerbit": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/MeyGen",
+   "tanggal": "2026-11-08",
+   "tahun": 2025,
+   "bukti": "via-pihak-ketiga",
+   "lisensi": "CC BY-SA 4.0"
+  },
+  "mey_ops": {
+   "judul": "Record-breaking MeyGen enters 25-year operations phase",
+   "penerbit": "Offshore Energy",
+   "url": "https://offshore-energy.biz/?p=42434",
+   "tanggal": "2026-11-08",
+   "tahun": 2022,
+   "bukti": "media"
+  },
+  "kwater": {
+   "judul": "Sihwa Tidal Power Plant (254 MW: 10 turbin x 25,4 MW, 8 pintu air; 552,7 GWh per tahun; biaya USD 355,1 juta menurut K-water)",
+   "penerbit": "K-water (Korea Water Resources Corporation)",
+   "url": "https://www.kwater.or.kr/eng/busi/project03Page.do?s_mid=1192",
+   "tanggal": "2026-11-08",
+   "tahun": 2024,
+   "bukti": "resmi"
+  },
+  "sihwa_wiki": {
+   "judul": "Sihwa Lake Tidal Power Station (biaya USD 560 juta dan operasi 2012 menurut Wikipedia; berbeda dengan K-water)",
+   "penerbit": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Sihwa_Lake_Tidal_Power_Station",
+   "tanggal": "2026-11-08",
+   "tahun": 2025,
+   "bukti": "via-pihak-ketiga",
+   "lisensi": "CC BY-SA 4.0"
+  },
+  "tethys": {
+   "judul": "Sihwa Tidal Power Plant (konstruksi selesai 2011, operasi mulai Agustus 2011 menurut entri ini)",
+   "penerbit": "Tethys, Pacific Northwest National Laboratory",
+   "url": "https://tethys.pnnl.gov/project-sites/sihwa-tidal-power-plant",
+   "tanggal": "2026-11-08",
+   "tahun": 2024,
+   "bukti": "kajian"
+  }
+ },
+ "bab": {
+  "2": {
+   "tipe": "faq",
+   "sumber": [
+    "pot63",
+    "jp28",
+    "esdm_arus"
+   ],
+   "butir": [
+    {
+     "t": {
+      "id": "Apa saja jenis energi laut?",
+      "en": "What types of ocean energy are there?"
+     },
+     "j": {
+      "id": "Arus pasang surut (tidal stream), gelombang, dan panas laut (OTEC). Studi 2022 yang dikutip ESDM menaksir potensi praktis 63 GW: arus 20,01 GW, gelombang 1,99 GW, panas laut 41 GW.",
+      "en": "Tidal stream, waves and ocean thermal energy (OTEC). A 2022 study cited by the ministry puts practical potential at 63 GW: currents 20.01 GW, waves 1.99 GW, thermal 41 GW."
+     }
+    },
+    {
+     "t": {
+      "id": "Apakah sudah ada pembangkit laut komersial di Indonesia?",
+      "en": "Is there a commercial ocean plant in Indonesia?"
+     },
+     "j": {
+      "id": "Belum. Kementerian ESDM menyatakan pembangkit arus laut pertama (40 MW, dua fase 20 MW di NTT dan NTB) ditargetkan beroperasi 2028 dan masih tahap pra-konstruksi (16 Jun 2025).",
+      "en": "Not yet. The Energy Ministry says the first tidal plant (40 MW, two 20 MW phases in NTT and NTB) is targeted for 2028 and is still pre-construction (16 Jun 2025)."
+     }
+    },
+    {
+     "t": {
+      "id": "Di mana arusnya cukup kuat?",
+      "en": "Where are currents strong enough?"
+     },
+     "j": {
+      "id": "ESDM menyebut kecepatan 0,6 sampai 3,5 m/s dan lebih dari 2 m/s di Selat Pantar, Lombok, Toyapakeh, Larantuka, Alas, Molo, Sunda, dan Boleng.",
+      "en": "The ministry cites speeds of 0.6 to 3.5 m/s and above 2 m/s in the Pantar, Lombok, Toyapakeh, Larantuka, Alas, Molo, Sunda and Boleng straits."
+     }
+    },
+    {
+     "t": {
+      "id": "Berapa nilai proyek 40 MW itu?",
+      "en": "What is the 40 MW project worth?"
+     },
+     "j": {
+      "id": "Sekitar USD 220 juta menurut siaran ESDM (via Jakarta Post).",
+      "en": "About USD 220 million per the ministry statement (via the Jakarta Post)."
+     }
+    },
+    {
+     "t": {
+      "id": "Siapa mitranya?",
+      "en": "Who are the partners?"
+     },
+     "j": {
+      "id": "SBS Indonesia (kontraktor lokal), Tidal Bridge (Belanda), Nova Innovation (Skotlandia), dan Pertamina Power Indonesia.",
+      "en": "SBS Indonesia (local contractor), Tidal Bridge (Netherlands), Nova Innovation (Scotland) and Pertamina Power Indonesia."
+     }
+    },
+    {
+     "t": {
+      "id": "Apa itu OTEC?",
+      "en": "What is OTEC?"
+     },
+     "j": {
+      "id": "Pembangkit yang memanfaatkan selisih suhu air laut permukaan dan dalam; PPPGL menyebut 41 GW di 17 lokasi (2017).",
+      "en": "Plants that use the temperature gap between surface and deep seawater; PPPGL cites 41 GW at 17 sites (2017)."
+     }
+    },
+    {
+     "t": {
+      "id": "Seberapa besar PLTAL terbesar di dunia?",
+      "en": "How large are the largest ocean plants?"
+     },
+     "j": {
+      "id": "Sihwa Korea 254 MW (bendung pasang surut) dan MeyGen Skotlandia fase 1A 6 MW (aliran arus).",
+      "en": "Sihwa in Korea at 254 MW (tidal barrage) and MeyGen in Scotland phase 1A at 6 MW (stream)."
+     }
+    }
+   ]
+  },
+  "3": {
+   "tipe": "glosarium",
+   "sumber": [
+    "ed",
+    "pot63"
+   ],
+   "butir": [
+    {
+     "istilah": {
+      "id": "PLTAL",
+      "en": "Tidal/ocean current plant"
+     },
+     "arti": {
+      "id": "Pembangkit listrik tenaga arus laut.",
+      "en": "Ocean current power plant."
+     }
+    },
+    {
+     "istilah": {
+      "id": "Tidal stream",
+      "en": "Tidal stream"
+     },
+     "arti": {
+      "id": "Turbin bawah air yang memanfaatkan aliran pasang surut, mirip kincir angin bawah laut.",
+      "en": "Underwater turbines using tidal flow, like underwater wind turbines."
+     }
+    },
+    {
+     "istilah": {
+      "id": "Tidal barrage",
+      "en": "Tidal barrage"
+     },
+     "arti": {
+      "id": "Bendung yang menahan air pasang dan mengalirkannya lewat turbin (contoh Sihwa).",
+      "en": "A dam that holds tidal water and passes it through turbines (e.g. Sihwa)."
+     }
+    },
+    {
+     "istilah": {
+      "id": "OTEC",
+      "en": "OTEC"
+     },
+     "arti": {
+      "id": "Ocean thermal energy conversion; memanfaatkan beda suhu laut permukaan dan dalam.",
+      "en": "Ocean thermal energy conversion; uses the temperature difference between surface and deep water."
+     }
+    },
+    {
+     "istilah": {
+      "id": "Delta T",
+      "en": "Delta T"
+     },
+     "arti": {
+      "id": "Selisih suhu air permukaan dan dalam; makin besar makin efisien OTEC.",
+      "en": "Temperature difference between surface and deep water; larger means more efficient OTEC."
+     }
+    },
+    {
+     "istilah": {
+      "id": "Potensi teoretis, teknis, praktis",
+      "en": "Theoretical, technical, practical potential"
+     },
+     "arti": {
+      "id": "Tiga tingkat potensi; angka praktis paling kecil karena memperhitungkan kendala.",
+      "en": "Three potential levels; the practical figure is smallest because it counts constraints."
+     }
+    },
+    {
+     "istilah": {
+      "id": "CfD",
+      "en": "CfD"
+     },
+     "arti": {
+      "id": "Contract for Difference, skema harga tetap Inggris; MeyGen mendapat 9 MW pada AR6 (Sep 2024).",
+      "en": "Contract for Difference, the UK fixed-price scheme; MeyGen won 9 MW in AR6 (Sep 2024)."
+     }
+    },
+    {
+     "istilah": {
+      "id": "Faktor kapasitas",
+      "en": "Capacity factor"
+     },
+     "arti": {
+      "id": "Produksi tahunan dibagi produksi maksimum teoretis.",
+      "en": "Annual output divided by theoretical maximum output."
+     }
+    }
+   ]
+  },
+  "4": {
+   "tipe": "teks",
+   "sumber": [
+    "pot63",
+    "jp28",
+    "ed"
+   ],
+   "paragraf": [
+    {
+     "id": "Indonesia kepulauan dengan banyak selat berarus deras; ESDM sudah lama menyebut potensi arus laut besar. Kelebihan arus pasang surut: dapat diprediksi berbulan-bulan sebelumnya, berbeda dengan angin dan surya.",
+     "en": "Indonesia is an archipelago with many fast straits; the ministry has long cited large tidal potential. A merit of tidal flow: it is predictable months ahead, unlike wind and solar."
+    },
+    {
+     "id": "Namun potensi besar belum menjadi kapasitas: kapasitas terpasang nol, proyek 40 MW masih pra-konstruksi, dan basis IRENA/OECD hanya mencatat satu aliran dana publik asing ke energi laut Indonesia, USD 0,74 juta pada 2019.",
+     "en": "But large potential has not become capacity: installed capacity is zero, the 40 MW project is pre-construction, and the IRENA/OECD database records only one foreign public finance flow to Indonesian marine energy, USD 0.74 million in 2019."
+    }
+   ]
+  },
+  "5": {
+   "tipe": "rumus",
+   "sumber": [
+    "ed",
+    "lar18",
+    "mey_wiki",
+    "kwater"
+   ],
+   "rumus": [
+    {
+     "id": "Daya turbin arus (W) = 0,5 x kerapatan air x luas sapuan rotor x kecepatan pangkat tiga x koefisien daya",
+     "en": "Tidal turbine power (W) = 0.5 x water density x rotor swept area x speed cubed x power coefficient"
+    },
+    {
+     "id": "Efisiensi Carnot OTEC = 1 - suhu air dalam / suhu air permukaan (dalam kelvin)",
+     "en": "OTEC Carnot efficiency = 1 - deep-water temperature / surface temperature (in kelvin)"
+    },
+    {
+     "id": "Faktor kapasitas = Produksi tahunan (GWh) / (Daya MW x 8,76)",
+     "en": "Capacity factor = Annual output (GWh) / (Power MW x 8.76)"
+    }
+   ],
+   "contoh": [
+    {
+     "id": "Contoh: rotor berdiameter 16 m (turbin Open-Centre yang disebut sumber) pada arus 3 m/s, kerapatan 1.025 kg per m3, Cp 0,4: sekitar 1,112878 MW per turbin (EST; nilai Cp adalah asumsi METI untuk ilustrasi).",
+     "en": "Example: a 16 m diameter rotor (the Open-Centre turbine named in sources) in a 3 m/s current, density 1,025 kg per m3, Cp 0.4: about 1.112878 MW per turbine (EST; the Cp value is a METI assumption for illustration)."
+    },
+    {
+     "id": "OTEC 26 C (299,15 K) dengan air dalam 5 C (278,15 K): 1 - 278,15 / 299,15 = sekitar 7 persen batas teoretis (EST; nilai suhu adalah contoh umum, bukan data lokasi).",
+     "en": "OTEC with 26 C (299.15 K) surface and 5 C (278.15 K) deep water: 1 - 278.15 / 299.15 = about 7 percent theoretical limit (EST; temperatures are a generic example, not site data)."
+    },
+    {
+     "id": "MeyGen fase 1A: 10,2 GWh / (6 MW x 8,76) = sekitar 19,4 persen (EST, tahun 2023). Sihwa: 552,7 GWh / (254 MW x 8,76) = sekitar 24,8 persen (EST).",
+     "en": "MeyGen phase 1A: 10.2 GWh / (6 MW x 8.76) = about 19.4 percent (EST, 2023). Sihwa: 552.7 GWh / (254 MW x 8.76) = about 24.8 percent (EST)."
+    }
+   ]
+  },
+  "6": {
+   "tipe": "langkah",
+   "sumber": [
+    "ed",
+    "jp28",
+    "lar18"
+   ],
+   "butir": [
+    {
+     "judul": {
+      "id": "Survei sumber daya",
+      "en": "Resource survey"
+     },
+     "isi": {
+      "id": "Pengukuran kecepatan arus, kedalaman, dan suhu di selat atau perairan calon.",
+      "en": "Measuring current speed, depth and temperature in candidate straits or waters."
+     },
+     "pelaku": {
+      "id": "Lembaga riset, pengembang",
+      "en": "Research bodies, developers"
+     }
+    },
+    {
+     "judul": {
+      "id": "Studi kelayakan dan jaringan",
+      "en": "Feasibility and grid studies"
+     },
+     "isi": {
+      "id": "Contoh Larantuka: pra-FS PUPR 2017 dan MoU studi dengan PLN 22 Feb 2018.",
+      "en": "Larantuka example: PUPR pre-FS in 2017 and a study MoU with PLN on 22 Feb 2018."
+     },
+     "pelaku": {
+      "id": "Pengembang, PLN",
+      "en": "Developer, PLN"
+     }
+    },
+    {
+     "judul": {
+      "id": "Pengadaan turbin dan struktur laut",
+      "en": "Turbine and marine structure procurement"
+     },
+     "isi": {
+      "id": "Mitra teknologi luar (Belanda, Skotlandia) dan kontraktor lokal.",
+      "en": "Foreign technology partners (Netherlands, Scotland) and a local contractor."
+     },
+     "pelaku": {
+      "id": "Pengembang, kontraktor",
+      "en": "Developer, contractor"
+     }
+    },
+    {
+     "judul": {
+      "id": "Instalasi dan interkoneksi",
+      "en": "Installation and interconnection"
+     },
+     "isi": {
+      "id": "Pemasangan di dasar laut, kabel bawah laut, dan sambungan ke jaringan.",
+      "en": "Seabed installation, subsea cable and grid connection."
+     },
+     "pelaku": {
+      "id": "Kontraktor, PLN",
+      "en": "Contractor, PLN"
+     }
+    },
+    {
+     "judul": {
+      "id": "Operasi 25 tahun",
+      "en": "25-year operation"
+     },
+     "isi": {
+      "id": "MeyGen fase 1A memasuki fase operasi 25 tahun.",
+      "en": "MeyGen phase 1A entered a 25-year operations phase."
+     },
+     "pelaku": {
+      "id": "Operator",
+      "en": "Operator"
+     }
+    }
+   ]
+  },
+  "7": {
+   "tipe": "grafik",
+   "jenis": "kolom",
+   "sumber": [
+    "pot63"
+   ],
+   "label": {
+    "id": "Potensi praktis energi laut Indonesia (studi 2022)",
+    "en": "Practical ocean energy potential in Indonesia (2022 study)"
+   },
+   "satuan": "GW",
+   "d": 2,
+   "seri": [
+    {
+     "nama": {
+      "id": "Potensi praktis",
+      "en": "Practical potential"
+     },
+     "sorot": true,
+     "titik": [
+      [
+       "Arus laut",
+       20.01
+      ],
+      [
+       "Gelombang",
+       1.99
+      ],
+      [
+       "Panas laut",
+       41
+      ]
+     ]
+    }
+   ],
+   "catatan": {
+    "id": "Total 63 GW menurut ringkasan hasil pencarian atas sumber ESDM; angka lain untuk panas laut jauh berbeda (lihat bab 29).",
+    "en": "63 GW in total per a search summary of an Energy Ministry source; other thermal estimates differ widely (see chapter 29)."
+   }
+  },
+  "8": {
+   "tipe": "tabel",
+   "per": 10,
+   "sumber": [
+    "esdm_arus",
+    "rup22",
+    "pantar",
+    "lar18"
+   ],
+   "kolom": [
+    {
+     "k": "selat",
+     "l": {
+      "id": "Selat",
+      "en": "Strait"
+     }
+    },
+    {
+     "k": "catatan",
+     "l": {
+      "id": "Catatan menurut sumber",
+      "en": "Note per source"
+     }
+    }
+   ],
+   "baris": [
+    {
+     "selat": "Larantuka",
+     "catatan": {
+      "id": "Daftar potensi RUPTL 10 MW; proyek jembatan arus 20 sampai 30 MW (2018); dasar proyek 20 MW NTT (2025); rata-rata arus diasumsikan 3,5 m/s",
+      "en": "RUPTL potential list 10 MW; tidal bridge project 20 to 30 MW (2018); basis of the 20 MW NTT phase (2025); mean current assumed 3.5 m/s"
+     }
+    },
+    {
+     "selat": "Alas",
+     "catatan": {
+      "id": "Daftar potensi RUPTL 10 MW (pemutakhiran ESDM 2022); arus di atas 2 m/s",
+      "en": "RUPTL potential list 10 MW (2022 ministry update); currents above 2 m/s"
+     }
+    },
+    {
+     "selat": "Lombok",
+     "catatan": {
+      "id": "Daftar potensi RUPTL 10 MW; arus di atas 2 m/s",
+      "en": "RUPTL potential list 10 MW; currents above 2 m/s"
+     }
+    },
+    {
+     "selat": "Bali",
+     "catatan": {
+      "id": "Termasuk daftar potensi RUPTL (ukuran tidak disebut tegas)",
+      "en": "In the RUPTL potential list (size not clearly stated)"
+     }
+    },
+    {
+     "selat": "Pantar",
+     "catatan": {
+      "id": "Dilirik ESDM untuk PLTAL (Okt 2020); arus di atas 2 m/s",
+      "en": "Eyed by the ministry for tidal plants (Oct 2020); currents above 2 m/s"
+     }
+    },
+    {
+     "selat": {
+      "id": "Toyapakeh, Molo, Sunda, Boleng",
+      "en": "Toyapakeh, Molo, Sunda, Boleng"
+     },
+     "catatan": {
+      "id": "Arus di atas 2 m/s menurut ESDM",
+      "en": "Currents above 2 m/s per the ministry"
+     }
+    }
+   ],
+   "catatan": {
+    "id": "Pembagian per provinsi tidak ditemukan di sumber yang dibaca sehingga tidak ditampilkan; nilai 40 MW proyek 2025 terbagi 20 MW NTT dan 20 MW NTB.",
+    "en": "A per-province split was not found in the sources read so is not shown; the 2025 40 MW project is split 20 MW NTT and 20 MW NTB."
+   }
+  },
+  "9": {
+   "tipe": "tabel",
+   "per": 8,
+   "sumber": [
+    "jp28",
+    "lar18",
+    "mey_ops"
+   ],
+   "kolom": [
+    {
+     "k": "nama",
+     "l": {
+      "id": "Pelaku",
+      "en": "Actor"
+     }
+    },
+    {
+     "k": "peran",
+     "l": {
+      "id": "Peran",
+      "en": "Role"
+     }
+    },
+    {
+     "k": "rujuk",
+     "l": {
+      "id": "Dasar",
+      "en": "Basis"
+     }
+    }
+   ],
+   "baris": [
+    {
+     "nama": "Kementerian ESDM (Ditjen EBTKE)",
+     "peran": {
+      "id": "Penyusun kebijakan dan juru bicara proyek 40 MW",
+      "en": "Policy maker and spokesperson of the 40 MW project"
+     },
+     "rujuk": "Jakarta Post, 16 Jun 2025"
+    },
+    {
+     "nama": "Tidal Bridge (Belanda)",
+     "peran": {
+      "id": "Mitra teknologi; membentuk Tidal Bridge Indonesia bersama PJB (2018)",
+      "en": "Technology partner; formed Tidal Bridge Indonesia with PJB (2018)"
+     },
+     "rujuk": "ESDM, 1 Apr 2018"
+    },
+    {
+     "nama": "PT PJB",
+     "peran": {
+      "id": "Mitra usaha patungan Larantuka (2018)",
+      "en": "Joint venture partner in Larantuka (2018)"
+     },
+     "rujuk": "ESDM, 1 Apr 2018"
+    },
+    {
+     "nama": "Nova Innovation (Skotlandia)",
+     "peran": {
+      "id": "Mitra teknologi proyek 2025",
+      "en": "Technology partner of the 2025 project"
+     },
+     "rujuk": "Jakarta Post, 16 Jun 2025"
+    },
+    {
+     "nama": "SBS Indonesia",
+     "peran": {
+      "id": "Kontraktor lokal",
+      "en": "Local contractor"
+     },
+     "rujuk": "Jakarta Post, 16 Jun 2025"
+    },
+    {
+     "nama": "Pertamina Power Indonesia",
+     "peran": {
+      "id": "Mitra, lengan listrik Pertamina",
+      "en": "Partner, Pertamina's electricity arm"
+     },
+     "rujuk": "Jakarta Post, 16 Jun 2025"
+    },
+    {
+     "nama": "PUPR dan PLN",
+     "peran": {
+      "id": "Pra-FS jembatan (2017) dan MoU studi jaringan (2018) di Larantuka",
+      "en": "Bridge pre-FS (2017) and a grid study MoU (2018) at Larantuka"
+     },
+     "rujuk": "ESDM, 1 Apr 2018"
+    }
+   ]
+  },
+  "10": {
+   "tipe": "tabel",
+   "per": 8,
+   "sumber": [
+    "jp28",
+    "lar18",
+    "mey_wiki",
+    "kwater",
+    "mey_ops"
+   ],
+   "kolom": [
+    {
+     "k": "nama",
+     "l": {
+      "id": "Proyek",
+      "en": "Project"
+     }
+    },
+    {
+     "k": "negara",
+     "l": {
+      "id": "Negara",
+      "en": "Country"
+     }
+    },
+    {
+     "k": "ukuran",
+     "l": {
+      "id": "Ukuran",
+      "en": "Size"
+     }
+    },
+    {
+     "k": "status",
+     "l": {
+      "id": "Status",
+      "en": "Status"
+     }
+    }
+   ],
+   "baris": [
+    {
+     "nama": "PLTAL NTT dan NTB (Tidal Bridge, Nova Innovation, SBS, Pertamina Power)",
+     "negara": "Indonesia",
+     "ukuran": {
+      "id": "40 MW (2 x 20 MW); sekitar USD 220 juta",
+      "en": "40 MW (2 x 20 MW); about USD 220 million"
+     },
+     "status": {
+      "id": "Pra-konstruksi; operasi ditargetkan 2028; ada di RUPTL 2025-2034",
+      "en": "Pre-construction; operation targeted for 2028; in RUPTL 2025-2034"
+     }
+    },
+    {
+     "nama": "Jembatan Pancasila-Palmerah dan PLTAL Larantuka (rencana 2018)",
+     "negara": "Indonesia",
+     "ukuran": {
+      "id": "20 MW disebut Menteri; jembatan sekitar 810 m",
+      "en": "20 MW cited by the Minister; bridge about 810 m"
+     },
+     "status": {
+      "id": "Studi kelayakan 2018; kelanjutan menjadi proyek 2025 tidak dijelaskan sumber",
+      "en": "Feasibility studies in 2018; how it continues into the 2025 project is not explained by sources"
+     }
+    },
+    {
+     "nama": "MeyGen fase 1A",
+     "negara": {
+      "id": "Skotlandia",
+      "en": "Scotland"
+     },
+     "ukuran": {
+      "id": "4 x 1,5 MW = 6 MW",
+      "en": "4 x 1.5 MW = 6 MW"
+     },
+     "status": {
+      "id": "Operasi 25 tahun; 10,2 GWh pada 2023",
+      "en": "25-year operations; 10.2 GWh in 2023"
+     }
+    },
+    {
+     "nama": "Sihwa Lake",
+     "negara": {
+      "id": "Korea Selatan",
+      "en": "South Korea"
+     },
+     "ukuran": {
+      "id": "254 MW (10 x 25,4 MW)",
+      "en": "254 MW (10 x 25.4 MW)"
+     },
+     "status": {
+      "id": "Beroperasi sejak 2011 atau 2012 (sumber berbeda); 552,7 GWh per tahun",
+      "en": "Operating since 2011 or 2012 (sources differ); 552.7 GWh a year"
+     }
+    }
+   ]
+  },
+  "11": {
+   "tipe": "teks",
+   "sumber": [
+    "rup22",
+    "jp28"
+   ],
+   "paragraf": [
+    {
+     "id": "Pasar dalam negeri belum terbentuk. PLTAL Selat Alas 10 MW, Selat Lombok 10 MW, Selat Bali, dan Selat Larantuka masuk daftar potensi RUPTL menurut pemutakhiran ESDM 2022; RUPTL 2025-2034 mencantumkan proyek 40 MW (Jakarta Post, 16 Jun 2025).",
+     "en": "The domestic market has not formed. Alas 10 MW, Lombok 10 MW, Bali and Larantuka tidal plants were on the RUPTL potential list per a 2022 ministry update; RUPTL 2025-2034 lists the 40 MW project (Jakarta Post, 16 Jun 2025)."
+    },
+    {
+     "id": "Tarif dan skema pembelian listrik arus laut tidak ditemukan di sumber yang dibaca.",
+     "en": "The tariff and power purchase scheme for tidal power were not found in the sources read."
+    }
+   ]
+  },
+  "12": {
+   "tipe": "tabel",
+   "per": 6,
+   "sumber": [
+    "ed"
+   ],
+   "kolom": [
+    {
+     "k": "nama",
+     "l": {
+      "id": "Peraturan",
+      "en": "Regulation"
+     },
+     "url": "url"
+    },
+    {
+     "k": "judul",
+     "l": {
+      "id": "Tentang",
+      "en": "Subject"
+     }
+    },
+    {
+     "k": "status",
+     "l": {
+      "id": "Status",
+      "en": "Status"
+     }
+    },
+    {
+     "k": "tanggal",
+     "l": {
+      "id": "Ditetapkan",
+      "en": "Enacted"
+     }
+    },
+    {
+     "k": "ringkas",
+     "l": {
+      "id": "Relevansi untuk topik ini",
+      "en": "Relevance to this topic"
+     }
+    }
+   ],
+   "baris": [
+    {
+     "nama": "UU 30/2009",
+     "judul": "Ketenagalistrikan",
+     "status": "diubah",
+     "tanggal": "2009-09-23",
+     "ringkas": {
+      "id": "Dasar usaha ketenagalistrikan termasuk sumber energi primer terbarukan.",
+      "en": "Basis of the electricity business including renewable primary energy."
+     },
+     "url": "https://peraturan.bpk.go.id/Details/38767"
+    },
+    {
+     "nama": "Perpres 112/2022",
+     "judul": "Percepatan Pengembangan Energi Terbarukan untuk Penyediaan Tenaga Listrik",
+     "status": "berlaku",
+     "tanggal": "2022-09-13",
+     "ringkas": {
+      "id": "Percepatan energi terbarukan untuk tenaga listrik; mengatur harga patokan dan penugasan PLN.",
+      "en": "Acceleration of renewable power; sets benchmark prices and PLN assignments."
+     },
+     "url": "https://peraturan.bpk.go.id/Details/225308"
+    },
+    {
+     "nama": "PP 40/2025",
+     "judul": "Kebijakan Energi Nasional",
+     "status": "berlaku",
+     "tanggal": "2025-09-15",
+     "ringkas": {
+      "id": "Kebijakan Energi Nasional 2025.",
+      "en": "National Energy Policy 2025."
+     },
+     "url": "https://peraturan.bpk.go.id/Details/328789"
+    }
+   ],
+   "catatan": {
+    "id": "Basis regulasi METI tidak memuat aturan khusus energi laut; izin ruang laut dan lingkungan tidak dibahas sumber yang dibaca.",
+    "en": "The METI regulation base has no ocean-energy-specific rule; marine spatial and environmental permits were not covered in the sources read."
+   }
+  },
+  "13": {
+   "tipe": "linimasa",
+   "sumber": [
+    "lar18",
+    "pantar",
+    "jp28",
+    "mey_wiki",
+    "kwater",
+    "tethys",
+    "ed"
+   ],
+   "butir": [
+    {
+     "tanggal": "2011-08-01",
+     "judul": {
+      "id": "Sihwa mulai beroperasi (Agu 2011 menurut Tethys; Wikipedia menyebut 2012)",
+      "en": "Sihwa starts operating (Aug 2011 per Tethys; Wikipedia says 2012)"
+     },
+     "url": "https://tethys.pnnl.gov/project-sites/sihwa-tidal-power-plant"
+    },
+    {
+     "tanggal": "2016-04-01",
+     "judul": {
+      "id": "Head of Agreement Larantuka ditandatangani di Belanda (Apr 2016)",
+      "en": "Larantuka Head of Agreement signed in the Netherlands (Apr 2016)"
+     },
+     "url": "https://www.esdm.go.id/en/media-center/news-archives/tinjau-lokasi-pembangunan-pembangkit-arus-laut-di-selat-larantuka-menteri-esdm-pertama-di-indonesia-terbesar-di-dunia"
+    },
+    {
+     "tanggal": "2018-02-22",
+     "judul": {
+      "id": "MoU PLN dan Tidal Bridge BV untuk studi kelayakan dan jaringan",
+      "en": "MoU between PLN and Tidal Bridge BV for feasibility and grid studies"
+     },
+     "url": "https://www.esdm.go.id/en/media-center/news-archives/tinjau-lokasi-pembangunan-pembangkit-arus-laut-di-selat-larantuka-menteri-esdm-pertama-di-indonesia-terbesar-di-dunia"
+    },
+    {
+     "tanggal": "2018-03-31",
+     "judul": {
+      "id": "Menteri ESDM meninjau lokasi Larantuka",
+      "en": "Energy Minister visits the Larantuka site"
+     },
+     "url": "https://www.esdm.go.id/en/media-center/news-archives/tinjau-lokasi-pembangunan-pembangkit-arus-laut-di-selat-larantuka-menteri-esdm-pertama-di-indonesia-terbesar-di-dunia"
+    },
+    {
+     "tanggal": "2020-10-20",
+     "judul": {
+      "id": "ESDM melirik Selat Pantar untuk PLTAL (judul)",
+      "en": "Energy Ministry eyes the Pantar strait for tidal power (headline)"
+     },
+     "url": "https://www.esdm.go.id/id/berita-unit/direktorat-jenderal-ebtke/esdm-lirik-selat-pantar-ntt-untuk-pengembangan-pembangkit-listrik-tenaga-arus-laut-1"
+    },
+    {
+     "tanggal": "2024-09-30",
+     "judul": {
+      "id": "MeyGen mendapat tambahan 9 MW pada CfD AR6 (Sep 2024)",
+      "en": "MeyGen wins an extra 9 MW in CfD AR6 (Sep 2024)"
+     },
+     "url": "https://en.wikipedia.org/wiki/MeyGen"
+    },
+    {
+     "tanggal": "2025-06-16",
+     "judul": {
+      "id": "ESDM: PLTAL pertama 40 MW ditargetkan beroperasi 2028",
+      "en": "Energy Ministry: first 40 MW tidal plant targeted for 2028"
+     },
+     "url": "https://www.thejakartapost.com/business/2025/06/16/ri-to-start-operating-first-ocean-power-plant-in-2028.html"
+    },
+    {
+     "tanggal": "2028-01-01",
+     "judul": {
+      "id": "Tahun target operasi PLTAL pertama (tahun 2028; tanggal tepat tidak ada)",
+      "en": "Year of the first tidal plant operation target (year 2028; exact date not given)"
+     }
+    }
+   ]
+  },
+  "17": {
+   "tipe": "teks",
+   "sumber": [
+    "mey_wiki",
+    "mey_ops",
+    "kwater",
+    "esdm_arus"
+   ],
+   "paragraf": [
+    {
+     "id": "Aliran pasang surut: MeyGen fase 1A di Skotlandia memakai empat turbin 1,5 MW dari Atlantis dan ANDRITZ Hammerfest, kini fase operasi 25 tahun; tapaknya berizin hingga 398 MW. Turbin Open-Centre berdiameter 16 m disebut mampu 2 MW pada arus 2 sampai 5 m/s (ESDM).",
+     "en": "Tidal stream: MeyGen phase 1A in Scotland uses four 1.5 MW turbines from Atlantis and ANDRITZ Hammerfest and is now in a 25-year operations phase; its site is consented up to 398 MW. A 16 m diameter Open-Centre turbine is said to reach 2 MW in 2 to 5 m/s currents (ministry)."
+    },
+    {
+     "id": "Bendung pasang surut: Sihwa memakai 10 turbin 25,4 MW pada bendung yang sudah ada (K-water). Tingkat kematangan (TRL) tidak ditemukan di sumber; sengaja tidak diisi.",
+     "en": "Tidal barrage: Sihwa uses ten 25.4 MW turbines in an existing dam (K-water). TRL was not found in the sources and is deliberately left blank."
+    }
+   ]
+  },
+  "18": {
+   "tipe": "teks",
+   "sumber": [
+    "otec17",
+    "tud"
+   ],
+   "paragraf": [
+    {
+     "id": "Riset: PPPGL meneliti OTEC di 17 lokasi dengan total 41 GW (2017), dan studi TU Delft menaksir hingga 45 GW dengan 22 persen kebutuhan nasional pada 2050. Paten, startup, dan prototipe Indonesia tidak ditemukan di sumber yang dibaca.",
+     "en": "Research: PPPGL studied OTEC at 17 sites totalling 41 GW (2017), and a TU Delft study estimates up to 45 GW covering 22 percent of national demand in 2050. Indonesian patents, start-ups and prototypes were not found in the sources read."
+    }
+   ]
+  },
+  "19": {
+   "tipe": "tabel",
+   "per": 6,
+   "sumber": [
+    "jp28",
+    "kwater",
+    "sihwa_wiki"
+   ],
+   "kolom": [
+    {
+     "k": "item",
+     "l": {
+      "id": "Ukuran biaya",
+      "en": "Cost measure"
+     }
+    },
+    {
+     "k": "nilai",
+     "l": {
+      "id": "Nilai",
+      "en": "Value"
+     }
+    },
+    {
+     "k": "catatan",
+     "l": {
+      "id": "Catatan",
+      "en": "Note"
+     }
+    }
+   ],
+   "baris": [
+    {
+     "item": {
+      "id": "PLTAL NTT dan NTB, 40 MW",
+      "en": "NTT and NTB tidal plants, 40 MW"
+     },
+     "nilai": "USD 220 juta",
+     "catatan": {
+      "id": "Sekitar USD 5,5 juta per MW (EST; belum termasuk biaya pembiayaan)",
+      "en": "About USD 5.5 million per MW (EST; excludes financing cost)"
+     }
+    },
+    {
+     "item": {
+      "id": "Sihwa 254 MW menurut K-water",
+      "en": "Sihwa 254 MW per K-water"
+     },
+     "nilai": "USD 355,1 juta",
+     "catatan": {
+      "id": "Sekitar USD 1,4 juta per MW (EST)",
+      "en": "About USD 1.4 million per MW (EST)"
+     }
+    },
+    {
+     "item": {
+      "id": "Sihwa 254 MW menurut Wikipedia",
+      "en": "Sihwa 254 MW per Wikipedia"
+     },
+     "nilai": "USD 560 juta",
+     "catatan": {
+      "id": "Tidak sama dengan K-water; sumber tidak merekonsiliasi",
+      "en": "Differs from K-water; the sources do not reconcile it"
+     }
+    }
+   ],
+   "catatan": {
+    "id": "Bendung yang memakai struktur eksisting (Sihwa) jauh lebih murah per MW daripada proyek arus pertama; ini perbandingan EST bukan kurva belajar. Kurva belajar biaya energi laut tidak ada di sumber.",
+    "en": "A barrage using existing structures (Sihwa) is far cheaper per MW than the first stream project; this is an EST comparison, not a learning curve. No ocean energy cost learning curve is in the sources."
+   }
+  },
+  "20": {
+   "tipe": "tabel",
+   "per": 6,
+   "sumber": [
+    "mey_wiki",
+    "kwater",
+    "jp28",
+    "tud"
+   ],
+   "kolom": [
+    {
+     "k": "negara",
+     "l": {
+      "id": "Negara dan proyek",
+      "en": "Country and project"
+     }
+    },
+    {
+     "k": "tipe",
+     "l": {
+      "id": "Tipe",
+      "en": "Type"
+     }
+    },
+    {
+     "k": "kapasitas",
+     "l": {
+      "id": "Kapasitas",
+      "en": "Capacity"
+     }
+    },
+    {
+     "k": "hasil",
+     "l": {
+      "id": "Hasil atau status",
+      "en": "Result or status"
+     }
+    }
+   ],
+   "baris": [
+    {
+     "negara": {
+      "id": "Korea Selatan: Sihwa",
+      "en": "South Korea: Sihwa"
+     },
+     "tipe": "Barrage",
+     "kapasitas": "254 MW",
+     "hasil": {
+      "id": "552,7 GWh per tahun; faktor kapasitas EST 24,8 persen",
+      "en": "552.7 GWh a year; EST capacity factor 24.8 percent"
+     }
+    },
+    {
+     "negara": {
+      "id": "Skotlandia: MeyGen",
+      "en": "Scotland: MeyGen"
+     },
+     "tipe": "Tidal stream",
+     "kapasitas": "6 MW",
+     "hasil": {
+      "id": "10,2 GWh pada 2023; tapak berizin 398 MW; CfD 9 MW",
+      "en": "10.2 GWh in 2023; site consented to 398 MW; 9 MW CfD"
+     }
+    },
+    {
+     "negara": "Indonesia",
+     "tipe": "Tidal stream",
+     "kapasitas": "0 MW",
+     "hasil": {
+      "id": "40 MW ditargetkan 2028; praktis 20 GW arus",
+      "en": "40 MW targeted for 2028; practical potential 20 GW of current"
+     }
+    }
+   ],
+   "catatan": {
+    "id": "Negara lain (Prancis, Kanada, Tiongkok, India, ASEAN) tidak dibaca dan tidak ditampilkan.",
+    "en": "Other countries (France, Canada, China, India, ASEAN) were not read and are not shown."
+   }
+  },
+  "21": {
+   "tipe": "teks",
+   "sumber": [
+    "ed",
+    "mey_wiki",
+    "kwater",
+    "lar18",
+    "jp28"
+   ],
+   "paragraf": [
+    {
+     "id": "Analisis METI (Hipotesis): keberhasilan di luar negeri bertumpu pada struktur yang sudah ada (bendung Sihwa) atau pendanaan harga tetap berjangka (CfD Inggris untuk MeyGen); Indonesia belum memiliki keduanya untuk energi laut.",
+     "en": "METI analysis (Hypothesis): success abroad rests on existing structures (the Sihwa dam) or long-term fixed-price support (UK CfD for MeyGen); Indonesia has neither for ocean energy yet."
+    },
+    {
+     "id": "Analisis METI (Hipotesis): rencana Larantuka 2018 dan proyek 2025 berbagi mitra (Tidal Bridge) tetapi tujuh tahun pemisah tanpa pembangkit menunjukkan jalur studi ke investasi masih panjang.",
+     "en": "METI analysis (Hypothesis): the 2018 Larantuka plan and the 2025 project share a partner (Tidal Bridge), but seven years without a plant show the path from study to investment is long."
+    }
+   ]
+  },
+  "22": {
+   "tipe": "teks",
+   "sumber": [
+    "pot63",
+    "pubfin"
+   ],
+   "paragraf": [
+    {
+     "id": "Potensi praktis 63 GW dibanding kapasitas terpasang nol dan pendanaan publik asing yang tercatat hanya USD 0,74 juta (2019). Pembanding peringkat dunia tidak ditemukan di sumber.",
+     "en": "A practical potential of 63 GW against zero installed capacity and recorded foreign public finance of only USD 0.74 million (2019). A global ranking comparison was not found in the sources."
+    }
+   ]
+  },
+  "23": {
+   "tipe": "teks",
+   "sumber": [
+    "jp28",
+    "lar18",
+    "mey_wiki"
+   ],
+   "paragraf": [
+    {
+     "id": "Kerja sama teknologi dengan Belanda (Tidal Bridge, Head of Agreement April 2016) dan Skotlandia (Nova Innovation, 2025). Pengalaman Skotlandia (MeyGen) dan Korea (Sihwa) adalah rujukan operasi.",
+     "en": "Technology cooperation with the Netherlands (Tidal Bridge, Head of Agreement April 2016) and Scotland (Nova Innovation, 2025). Scottish (MeyGen) and Korean (Sihwa) experience are operating references."
+    }
+   ]
+  },
+  "24": {
+   "tipe": "teks",
+   "sumber": [
+    "jp28",
+    "pubfin",
+    "mey_wiki"
+   ],
+   "paragraf": [
+    {
+     "id": "Proyek 40 MW senilai sekitar USD 220 juta; sumber dana (ekuitas, pinjaman, hibah) tidak disebut. Satu-satunya aliran publik asing tercatat: USD 0,74 juta (2019, IRENA/OECD). Pembanding: CfD Inggris AR6 memberi MeyGen 9 MW tambahan untuk penyerahan 2028 sampai 2029.",
+     "en": "The 40 MW project is worth about USD 220 million; the funding sources (equity, debt, grants) are not stated. The only recorded foreign public flow: USD 0.74 million (2019, IRENA/OECD). Comparison: the UK AR6 CfD gave MeyGen an extra 9 MW for delivery in 2028 to 2029."
+    }
+   ]
+  },
+  "25": {
+   "tipe": "rumus",
+   "sumber": [
+    "jp28",
+    "ed"
+   ],
+   "rumus": [
+    {
+     "id": "Biaya per MW = Nilai proyek / Kapasitas",
+     "en": "Cost per MW = Project value / Capacity"
+    },
+    {
+     "id": "Produksi tahunan (GWh) = Daya (MW) x 8,76 x Faktor kapasitas",
+     "en": "Annual output (GWh) = Power (MW) x 8.76 x Capacity factor"
+    }
+   ],
+   "contoh": [
+    {
+     "id": "USD 220 juta / 40 MW = USD 5,5 juta per MW (EST). Dengan faktor kapasitas 20 persen (asumsi METI memakai MeyGen EST 19,4 persen sebagai acuan): 40 x 8,76 x 0,2 = sekitar 70 GWh per tahun (EST; belum ada tarif untuk menghitung pendapatan).",
+     "en": "USD 220 million / 40 MW = USD 5.5 million per MW (EST). With a 20 percent capacity factor (METI assumption, MeyGen EST 19.4 percent as reference): 40 x 8.76 x 0.2 = about 70 GWh a year (EST; no tariff is available to compute revenue)."
+    }
+   ]
+  },
+  "29": {
+   "tipe": "teks",
+   "sumber": [
+    "otec17",
+    "tud",
+    "pot63",
+    "kwater",
+    "sihwa_wiki"
+   ],
+   "paragraf": [
+    {
+     "id": "Taksiran potensi sangat berbeda: panas laut 41 GW (PPPGL 2017, ESDM 2022), hingga 45 GW dengan 22 persen kebutuhan 2050 (TU Delft), dan studi lain 103,2 GW praktis atau 289,73 GW untuk seluruh ZEE (ringkasan hasil pencarian atas kajian lain). Perbedaan metode, bukan fakta tunggal.",
+     "en": "Potential estimates differ widely: ocean thermal 41 GW (PPPGL 2017, ministry 2022), up to 45 GW covering 22 percent of 2050 demand (TU Delft), and other studies 103.2 GW practical or 289.73 GW for the whole EEZ (search summary of other studies). These are method differences, not one fact."
+    },
+    {
+     "id": "Biaya Sihwa berbeda: USD 355,1 juta (K-water) versus USD 560 juta (Wikipedia). Tahun mulai operasi berbeda: 2011 (Tethys) versus 2012 (Wikipedia). Sumber tidak merekonsiliasi.",
+     "en": "Sihwa cost differs: USD 355.1 million (K-water) versus USD 560 million (Wikipedia). Start year differs: 2011 (Tethys) versus 2012 (Wikipedia). The sources do not reconcile."
+    }
+   ]
+  },
+  "30": {
+   "tipe": "tabel",
+   "per": 6,
+   "sumber": [
+    "jp28",
+    "pot63",
+    "tud"
+   ],
+   "kolom": [
+    {
+     "k": "item",
+     "l": {
+      "id": "Sasaran atau proyeksi",
+      "en": "Target or projection"
+     }
+    },
+    {
+     "k": "nilai",
+     "l": {
+      "id": "Nilai",
+      "en": "Value"
+     }
+    },
+    {
+     "k": "tahun",
+     "l": {
+      "id": "Tahun",
+      "en": "Year"
+     }
+    }
+   ],
+   "baris": [
+    {
+     "item": {
+      "id": "PLTAL pertama (dua fase)",
+      "en": "First tidal plant (two phases)"
+     },
+     "nilai": "40 MW",
+     "tahun": "2028"
+    },
+    {
+     "item": {
+      "id": "OTEC hingga 45 GW (22 persen kebutuhan nasional)",
+      "en": "OTEC up to 45 GW (22 percent of national demand)"
+     },
+     "nilai": {
+      "id": "skenario TU Delft",
+      "en": "TU Delft scenario"
+     },
+     "tahun": "2050"
+    },
+    {
+     "item": {
+      "id": "Potensi praktis total",
+      "en": "Total practical potential"
+     },
+     "nilai": "63 GW",
+     "tahun": {
+      "id": "studi 2022",
+      "en": "2022 study"
+     }
+    }
+   ],
+   "catatan": {
+    "id": "Proyeksi resmi energi laut untuk 2045 dan 2060 tidak ditemukan.",
+    "en": "No official ocean energy projection for 2045 and 2060 was found."
+   }
+  },
+  "31": {
+   "tipe": "teks",
+   "sumber": [
+    "ed"
+   ],
+   "paragraf": [
+    {
+     "id": "Analisis METI (Hipotesis): pengembang dan pemasok: peluang awal pada survei arus, struktur laut, kabel bawah laut, dan O&M kapal; kandungan lokal (TKDN) dapat menjadi pembeda.",
+     "en": "METI analysis (Hypothesis): developers and suppliers: early opportunities are in current surveys, marine structures, subsea cable and vessel O&M; local content can be a differentiator."
+    },
+    {
+     "id": "Analisis METI (Hipotesis): akademisi dan pemda NTT/NTB: data arus terbuka dan lokasi pelabuhan pendukung; investor: tunggu kepastian tarif dan skema jual-beli sebelum modal besar.",
+     "en": "METI analysis (Hypothesis): academics and NTT/NTB local governments: open current data and supporting port sites; investors: wait for tariff and offtake certainty before large capital."
+    }
+   ]
+  },
+  "32": {
+   "tipe": "teks",
+   "sumber": [
+    "jp28",
+    "lar18"
+   ],
+   "paragraf": [
+    {
+     "id": "Keputusan investasi akhir dan awal konstruksi proyek 40 MW (siaran ESDM menyebut konstruksi segera dimulai).",
+     "en": "The final investment decision and construction start of the 40 MW project (the ministry says construction will begin soon)."
+    },
+    {
+     "id": "Skema tarif atau pembelian khusus arus laut, dan kejelasan hubungan proyek Larantuka 2018 dengan proyek 2025.",
+     "en": "A tariff or offtake scheme specific to tidal power, and clarity on how the 2018 Larantuka project relates to the 2025 project."
+    }
+   ]
+  },
+  "36": {
+   "tipe": "tabel",
+   "per": 6,
+   "sumber": [
+    "jp28",
+    "kwater",
+    "tud"
+   ],
+   "kolom": [
+    {
+     "k": "judul",
+     "l": {
+      "id": "Dokumen",
+      "en": "Document"
+     },
+     "url": "url"
+    },
+    {
+     "k": "penerbit",
+     "l": {
+      "id": "Penerbit",
+      "en": "Publisher"
+     }
+    },
+    {
+     "k": "mengapa",
+     "l": {
+      "id": "Mengapa dibaca",
+      "en": "Why read it"
+     }
+    }
+   ],
+   "baris": [
+    {
+     "judul": "RI to start operating first ocean power plant in 2028",
+     "penerbit": "The Jakarta Post",
+     "url": "https://www.thejakartapost.com/business/2025/06/16/ri-to-start-operating-first-ocean-power-plant-in-2028.html",
+     "mengapa": {
+      "id": "Status proyek 40 MW",
+      "en": "Status of the 40 MW project"
+     }
+    },
+    {
+     "judul": "Sihwa Tidal Power Plant",
+     "penerbit": "K-water",
+     "url": "https://www.kwater.or.kr/eng/busi/project03Page.do?s_mid=1192",
+     "mengapa": {
+      "id": "Spesifikasi bendung pasang surut terbesar",
+      "en": "Specifications of the largest tidal barrage"
+     }
+    },
+    {
+     "judul": "Upscaling scenarios for OTEC in Indonesia",
+     "penerbit": "TU Delft",
+     "url": "https://research.tudelft.nl/en/publications/upscaling-scenarios-for-ocean-thermal-energy-conversion-with-tech",
+     "mengapa": {
+      "id": "Skenario OTEC Indonesia",
+      "en": "OTEC scenarios for Indonesia"
+     }
+    }
+   ]
+  },
+  "38": {
+   "tipe": "teks",
+   "sumber": [
+    "ed",
+    "pot63",
+    "jp28"
+   ],
+   "paragraf": [
+    {
+     "id": "Sumber: siaran ESDM (Larantuka 2018), Jakarta Post (2025), K-water, Tethys, dan ringkasan hasil pencarian atas laporan lain, dibaca 8 Nov 2026. Banyak angka dari ringkasan hasil pencarian karena halaman tidak dibaca penuh; ditandai di daftar sumber.",
+     "en": "Sources: Energy Ministry releases (Larantuka 2018), the Jakarta Post (2025), K-water, Tethys and search summaries of other reports, read on 8 Nov 2026. Many figures come from search summaries because pages were not read in full; they are flagged in the source list."
+    },
+    {
+     "id": "Batas: tidak ada data lokasi terukur per provinsi, tarif, atau izin laut. Naskah ini belum terdaftar di cetakan topik (id energi-laut belum ada di ui.json). EST berarti hitung sendiri; Hipotesis berarti sintesis METI.",
+     "en": "Limits: no measured location data per province, tariff or marine permit. This text is not yet registered in the topic printer (the energi-laut id is not in ui.json). EST means self-derived; Hypothesis means METI synthesis."
+    }
+   ]
+  },
+  "39": {
+   "tipe": "kasus",
+   "sumber": [
+    "mey_wiki",
+    "mey_ops",
+    "kwater",
+    "tethys",
+    "sihwa_wiki"
+   ],
+   "catatan": {
+    "id": "Tidak ada pembangkit energi laut berhasil di Indonesia; dua kasus luar negeri dari sumber yang dibaca.",
+    "en": "There is no successful ocean energy plant in Indonesia; two foreign cases from the sources read."
+   },
+   "butir": [
+    {
+     "id": "meygen",
+     "nama": "MeyGen fase 1A, Pentland Firth",
+     "jenis": "berhasil",
+     "negara": "GB",
+     "lokasi": {
+      "id": "Skotlandia",
+      "en": "Scotland"
+     },
+     "profil": [
+      {
+       "label": {
+        "id": "Kapasitas",
+        "en": "Capacity"
+       },
+       "nilai": 6,
+       "satuan": "MW"
+      },
+      {
+       "label": {
+        "id": "Turbin",
+        "en": "Turbines"
+       },
+       "nilai": "4 x 1,5 MW (Atlantis dan ANDRITZ Hammerfest)"
+      },
+      {
+       "label": {
+        "id": "Tapak berizin",
+        "en": "Consented site"
+       },
+       "nilai": 398,
+       "satuan": "MW"
+      }
+     ],
+     "tindakan": [
+      {
+       "id": "Membangun array aliran pasang surut komersial pertama dan masuk fase operasi 25 tahun; memenangkan 9 MW pada CfD AR6 (Sep 2024).",
+       "en": "Built the first commercial tidal stream array, entered a 25-year operations phase and won 9 MW in CfD AR6 (Sep 2024)."
+      }
+     ],
+     "sebab": [
+      {
+       "id": "Tapak dengan izin besar dan dukungan harga tetap berjangka (CfD); detail teknis tidak ada di sumber yang dibaca.",
+       "en": "A site with large consent and long-term fixed-price support (CfD); technical detail is not in the sources read."
+      }
+     ],
+     "angka": [
+      {
+       "label": {
+        "id": "Keluaran bersih 2023",
+        "en": "Net output 2023"
+       },
+       "nilai": 10.2,
+       "d": 1,
+       "satuan": "GWh",
+       "sumber": "mey_wiki",
+       "est": false
+      },
+      {
+       "label": {
+        "id": "Faktor kapasitas 2023",
+        "en": "Capacity factor 2023"
+       },
+       "nilai": 19.4,
+       "d": 1,
+       "satuan": "persen (EST)",
+       "sumber": "mey_wiki",
+       "est": true
+      }
+     ],
+     "pelajaran": [
+      {
+       "id": "Skala kecil dapat bertahan bertahun-tahun bila ada pembeli harga tetap; skala komersial masih jauh dari 398 MW.",
+       "en": "A small scale can survive for years with a fixed-price buyer; commercial scale is still far from 398 MW."
+      }
+     ],
+     "kronologi": [
+      {
+       "tanggal": "2022-01-01",
+       "teks": {
+        "id": "Fase 1A memasuki fase operasi 25 tahun (judul Offshore Energy).",
+        "en": "Phase 1A enters its 25-year operations phase (Offshore Energy headline)."
+       }
+      },
+      {
+       "tanggal": "2024-09-30",
+       "teks": {
+        "id": "Menang 9 MW pada CfD AR6 (Sep 2024).",
+        "en": "Wins 9 MW in CfD AR6 (Sep 2024)."
+       }
+      }
+     ],
+     "faktor": {
+      "dukungan_harga": true,
+      "struktur_eksisting": false,
+      "sumber_daya_terukur": true,
+      "mitra_teknologi": true
+     },
+     "sumber": [
+      "mey_wiki",
+      "mey_ops"
+     ]
+    },
+    {
+     "id": "sihwa",
+     "nama": "Sihwa Lake Tidal Power Station",
+     "jenis": "berhasil",
+     "negara": "KR",
+     "lokasi": {
+      "id": "Korea Selatan",
+      "en": "South Korea"
+     },
+     "profil": [
+      {
+       "label": {
+        "id": "Kapasitas",
+        "en": "Capacity"
+       },
+       "nilai": 254,
+       "satuan": "MW"
+      },
+      {
+       "label": {
+        "id": "Turbin",
+        "en": "Turbines"
+       },
+       "nilai": "10 x 25,4 MW, 8 pintu air"
+      },
+      {
+       "label": {
+        "id": "Operator",
+        "en": "Operator"
+       },
+       "nilai": "K-water"
+      }
+     ],
+     "tindakan": [
+      {
+       "id": "Memasang turbin pada bendung yang sudah ada sehingga tidak perlu membangun bendung baru.",
+       "en": "Installed turbines in an existing dam so no new dam was needed."
+      }
+     ],
+     "sebab": [
+      {
+       "id": "Memakai struktur eksisting; ringkasan sumber tidak memuat latar penyebab lain. Sumber menyebut biaya berbeda (USD 355,1 juta K-water; USD 560 juta Wikipedia).",
+       "en": "Used existing structure; the sources give no other cause. Sources cite differing costs (USD 355.1 million K-water; USD 560 million Wikipedia)."
+      }
+     ],
+     "angka": [
+      {
+       "label": {
+        "id": "Produksi tahunan",
+        "en": "Annual output"
+       },
+       "nilai": 552.7,
+       "d": 1,
+       "satuan": "GWh",
+       "sumber": "kwater",
+       "est": false
+      },
+      {
+       "label": {
+        "id": "Faktor kapasitas",
+        "en": "Capacity factor"
+       },
+       "nilai": 24.8,
+       "d": 1,
+       "satuan": "persen (EST)",
+       "sumber": "kwater",
+       "est": true
+      }
+     ],
+     "pelajaran": [
+      {
+       "id": "Pemanfaatan struktur eksisting menurunkan biaya per MW secara tajam dibanding proyek arus baru.",
+       "en": "Reusing existing structures cuts cost per MW sharply compared with a new stream project."
+      }
+     ],
+     "kronologi": [
+      {
+       "tanggal": "2011-08-01",
+       "teks": {
+        "id": "Mulai operasi Agu 2011 menurut Tethys (Wikipedia: 2012).",
+        "en": "Starts operating Aug 2011 per Tethys (Wikipedia: 2012)."
+       }
+      }
+     ],
+     "faktor": {
+      "dukungan_harga": false,
+      "struktur_eksisting": true,
+      "sumber_daya_terukur": true,
+      "mitra_teknologi": true
+     },
+     "sumber": [
+      "kwater",
+      "tethys",
+      "sihwa_wiki"
+     ]
+    }
+   ]
+  },
+  "40": {
+   "tipe": "kasus",
+   "sumber": [
+    "lar18",
+    "bis18",
+    "jp28"
+   ],
+   "catatan": {
+    "id": "Hak jawab: pihak yang disebut dapat mengirim koreksi lewat formulir koreksi platform. Satu kasus; kegagalan energi laut luar negeri tidak dibaca. Larantuka tidak dinyatakan batal oleh sumber, hanya belum terbangun.",
+    "en": "Right of reply: named parties can send corrections through the platform correction form. One case; foreign ocean energy failures were not read. Larantuka is not declared cancelled by any source, only not built."
+   },
+   "butir": [
+    {
+     "id": "larantuka",
+     "nama": "PLTAL Selat Larantuka (rencana 2018)",
+     "jenis": "mundur",
+     "negara": "ID",
+     "lokasi": {
+      "id": "Flores Timur, NTT",
+      "en": "East Flores, NTT"
+     },
+     "sebab": [
+      {
+       "id": "Sumber tidak menyebut penyebab tertunda. Fakta: 2018 masih tahap studi kelayakan; 2025 ESDM menyatakan proyek 40 MW di NTT dan NTB pra-konstruksi dengan operasi 2028.",
+       "en": "Sources do not give the reason for the delay. Facts: in 2018 it was still at the feasibility stage; in 2025 the ministry says a 40 MW project in NTT and NTB is pre-construction with operation in 2028."
+      }
+     ],
+     "angka": [
+      {
+       "label": {
+        "id": "Kapasitas yang disebut Menteri (2018)",
+        "en": "Capacity cited by the Minister (2018)"
+       },
+       "nilai": 20,
+       "d": 0,
+       "satuan": "MW",
+       "sumber": "lar18",
+       "est": false
+      },
+      {
+       "label": {
+        "id": "Kapasitas proyek 2025",
+        "en": "Capacity of the 2025 project"
+       },
+       "nilai": 40,
+       "d": 0,
+       "satuan": "MW",
+       "sumber": "jp28",
+       "est": false
+      }
+     ],
+     "pelajaran": [],
+     "kronologi": [
+      {
+       "tanggal": "2016-04-01",
+       "teks": {
+        "id": "Head of Agreement di Belanda (Apr 2016).",
+        "en": "Head of Agreement in the Netherlands (Apr 2016)."
+       }
+      },
+      {
+       "tanggal": "2018-02-22",
+       "teks": {
+        "id": "MoU PLN dan Tidal Bridge BV.",
+        "en": "PLN and Tidal Bridge BV MoU."
+       }
+      },
+      {
+       "tanggal": "2018-03-31",
+       "teks": {
+        "id": "Menteri ESDM meninjau lokasi.",
+        "en": "Energy Minister visits the site."
+       }
+      },
+      {
+       "tanggal": "2025-06-16",
+       "teks": {
+        "id": "ESDM: operasi PLTAL pertama ditargetkan 2028.",
+        "en": "Ministry: first tidal plant operation targeted for 2028."
+       }
+      }
+     ],
+     "terdampak": {
+      "id": "Masyarakat Flores Timur yang menunggu listrik dan jembatan terpadu, serta pengembang.",
+      "en": "East Flores residents awaiting power and an integrated bridge, and developers."
+     },
+     "seharusnya": {
+      "id": "Analisis METI (Hipotesis): umumkan tonggak dan penyebab tertunda secara terbuka, serta tetapkan skema tarif sebelum fase konstruksi.",
+      "en": "METI analysis (Hypothesis): publish milestones and reasons for delay openly, and set a tariff scheme before the construction phase."
+     },
+     "tanda_bahaya": [
+      {
+       "id": "Target \"segera direalisasikan\" (2018) tanpa jadwal konstruksi",
+       "en": "A \"soon to be realised\" claim (2018) without a construction schedule"
+      },
+      {
+       "id": "Tidak ada tarif atau skema pembelian",
+       "en": "No tariff or offtake scheme"
+      }
+     ],
+     "faktor": {
+      "dukungan_harga": false,
+      "struktur_eksisting": false,
+      "sumber_daya_terukur": false,
+      "mitra_teknologi": true
+     },
+     "sumber": [
+      "lar18",
+      "bis18",
+      "jp28"
+     ],
+     "hak_jawab": true
+    }
+   ]
+  },
+  "41": {
+   "tipe": "pola",
+   "sumber": [
+    "ed"
+   ],
+   "catatan": {
+    "id": "Sel dibangun dari bendera faktor tiap kasus; pemetaan adalah analisis METI (Hipotesis) atas fakta di bab 39 dan 40.",
+    "en": "Cells are built from case factor flags; the mapping is METI analysis (Hypothesis) of facts in chapters 39 and 40."
+   },
+   "faktor": [
+    {
+     "k": "dukungan_harga",
+     "l": {
+      "id": "Dukungan harga tetap berjangka",
+      "en": "Long-term fixed-price support"
+     }
+    },
+    {
+     "k": "struktur_eksisting",
+     "l": {
+      "id": "Memakai struktur yang sudah ada",
+      "en": "Uses existing structure"
+     }
+    },
+    {
+     "k": "sumber_daya_terukur",
+     "l": {
+      "id": "Sumber daya terukur di lokasi",
+      "en": "Measured resource at site"
+     }
+    },
+    {
+     "k": "mitra_teknologi",
+     "l": {
+      "id": "Mitra teknologi berpengalaman",
+      "en": "Experienced technology partner"
+     }
+    }
+   ]
+  },
+  "42": {
+   "tipe": "periksa",
+   "sumber": [
+    "ed"
+   ],
+   "peran": [
+    {
+     "k": "pengembang",
+     "l": {
+      "id": "Pengembang",
+      "en": "Developer"
+     }
+    },
+    {
+     "k": "investor",
+     "l": {
+      "id": "Investor",
+      "en": "Investor"
+     }
+    },
+    {
+     "k": "pemda",
+     "l": {
+      "id": "Pemerintah daerah",
+      "en": "Local government"
+     }
+    },
+    {
+     "k": "pusat",
+     "l": {
+      "id": "Pemerintah pusat",
+      "en": "Central government"
+     }
+    },
+    {
+     "k": "pln",
+     "l": {
+      "id": "PLN",
+      "en": "PLN"
+     }
+    },
+    {
+     "k": "meti",
+     "l": {
+      "id": "METI",
+      "en": "METI"
+     }
+    }
+   ],
+   "tahap": [
+    {
+     "k": "lokasi",
+     "l": {
+      "id": "Penyaringan lokasi",
+      "en": "Site screening"
+     }
+    },
+    {
+     "k": "izin",
+     "l": {
+      "id": "Perizinan",
+      "en": "Permitting"
+     }
+    },
+    {
+     "k": "ppa",
+     "l": {
+      "id": "PPA",
+      "en": "PPA"
+     }
+    },
+    {
+     "k": "dana",
+     "l": {
+      "id": "Pendanaan",
+      "en": "Financing"
+     }
+    },
+    {
+     "k": "bangun",
+     "l": {
+      "id": "Konstruksi",
+      "en": "Construction"
+     }
+    },
+    {
+     "k": "operasi",
+     "l": {
+      "id": "Operasi",
+      "en": "Operation"
+     }
+    }
+   ],
+   "butir": [
+    {
+     "peran": "pengembang",
+     "tahap": "lokasi",
+     "teks": {
+      "id": "Ukur kecepatan arus di lokasi sendiri; angka rata-rata 3,5 m/s Larantuka adalah asumsi studi, bukan jaminan.",
+      "en": "Measure current speed at your own site; the 3.5 m/s Larantuka mean is a study assumption, not a guarantee."
+     },
+     "dasar": "lar18"
+    },
+    {
+     "peran": "pengembang",
+     "tahap": "bangun",
+     "teks": {
+      "id": "Pertimbangkan struktur eksisting (jembatan, bendung) untuk menekan biaya (Sihwa, Larantuka).",
+      "en": "Consider existing structures (bridges, dams) to cut cost (Sihwa, Larantuka)."
+     },
+     "dasar": "kwater"
+    },
+    {
+     "peran": "investor",
+     "tahap": "dana",
+     "teks": {
+      "id": "Minta kejelasan tarif atau CfD sebelum komit; proyek pembanding bergantung pada dukungan harga tetap.",
+      "en": "Ask for tariff or CfD clarity before committing; comparable projects depend on fixed-price support."
+     },
+     "dasar": "mey_wiki"
+    },
+    {
+     "peran": "pemda",
+     "tahap": "lokasi",
+     "teks": {
+      "id": "Siapkan data pelabuhan, kabel, dan koordinasi ruang laut di NTT dan NTB.",
+      "en": "Prepare port, cable and marine spatial coordination in NTT and NTB."
+     },
+     "dasar": "jp28"
+    },
+    {
+     "peran": "pusat",
+     "tahap": "ppa",
+     "teks": {
+      "id": "Tetapkan skema tarif khusus energi laut dan jelaskan statusnya di RUPTL.",
+      "en": "Set a tariff scheme for ocean energy and clarify its status in RUPTL."
+     },
+     "dasar": "rup22"
+    },
+    {
+     "peran": "pln",
+     "tahap": "ppa",
+     "teks": {
+      "id": "Jelaskan kewajiban beli dan titik sambung untuk proyek 40 MW.",
+      "en": "Clarify the purchase obligation and connection point for the 40 MW project."
+     },
+     "dasar": "jp28"
+    },
+    {
+     "peran": "meti",
+     "tahap": "operasi",
+     "teks": {
+      "id": "Pantau tonggak proyek 2028 dan beri ruang hak jawab bagi pihak yang disebut.",
+      "en": "Track milestones of the 2028 project and give named parties a right of reply."
+     },
+     "dasar": "jp28"
+    }
+   ]
+  }
+ }
+}

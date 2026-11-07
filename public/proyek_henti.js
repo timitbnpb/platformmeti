@@ -43,10 +43,10 @@ $("pbIsi").innerHTML = kotak + tahunEx + besarEx;
 pasangTabel($("phTahun"), [["tahun", "ph.c.tahun", (r) => String(r.tahun), "jm-tengah"], ["jumlah", "pb.c.proyek", (r) => num(r.jumlah), "jm-num"], ["mw", "pj.c.kap", (r) => `${num(r.mw)} <span class="jm-pj-sat">MW</span>`, "jm-num"]],
   B.per_tahun, { k: "tahun", arah: -1, hal: 1, turun: ["tahun", "jumlah", "mw"] });
 pasangTabel($("phBesar"), [
-  ["nama", "pj.c.nama", selNamaProyek], ["tek", "pj.c.tek", (r) => pilTek(r.tek), "jm-tengah"], ["prov", "pj.c.prov", (r) => selProv(r.prov)], ["jenis", "ph.c.jenis", jenisPil, "jm-tengah"],
+  ["nama", "pj.c.nama", (r) => selNamaProyek(r) + (r.prov ? `<div class="pb-prov">${selProv(r.prov)}</div>` : "")], ["tek", "pj.c.tek", (r) => pilTek(r.tek), "jm-tengah"], ["jenis", "ph.c.jenis", jenisPil, "jm-tengah"],
   ["mw", "pj.c.kap", (r) => (r.mw === null ? "-" : `${num(r.mw)} <span class="jm-pj-sat">${esc(r.sat)}</span>`), "jm-num"],
-  ["tanggal", "ph.c.tanggal", tanggalSel, "jm-tengah"], [null, "ph.c.bukti", bukti], [null, "pj.c.sumber", sumberSel, "jm-tengah"],
-  [null, "ph.c.koreksi", (r) => tombolKoreksi({ entitas: "proyek", id: r.id, nama: r.nama }), "jm-tengah"],
+  ["tanggal", "ph.c.tanggal", tanggalSel, "jm-tengah"], [null, "ph.c.bukti", bukti, "pb-c-bukti"], [null, "pj.c.sumber", sumberSel, "jm-tengah"],
+  [null, "ph.c.koreksi", (r) => tombolKoreksi({ entitas: "proyek", id: r.id, nama: r.nama }), "jm-tengah pb-c-koreksi"],
 ], rows, { k: "mw", arah: -1, hal: 1, turun: ["mw"] });
 
 $("ph-besar").addEventListener("jm:csv", (e) => {

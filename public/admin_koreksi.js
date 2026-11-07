@@ -4,7 +4,7 @@ import { t, ada, tanggal, tanggalDariUnix, jam } from "/i18n.js";
 import { esc, api, nanti, hantuHtml, kosongHtml, galatTeks, ikon, pesanHtml } from "/inti/umum.js";
 import { logoOrgSatu } from "/inti/logo_org.js";
 import { paginasiHtml, sorotHalaman } from "/inti/paginasi.js";
-import { data, kepalaTab, keadaan, aman, detik } from "/admin_umum.js";
+import { data, kepalaTab, ubinKepala, keadaan, aman, detik } from "/admin_umum.js";
 import { nilaiKolom, labelKolom } from "/inti/koreksi.js";
 
 const STATUS = ["baru", "setuju", "tolak"];
@@ -44,7 +44,11 @@ export function panelKoreksi(panel) {
     else if (a === "batal") dlg.close();
   });
   dlg.addEventListener("submit", kirim);
-  muat();
+  muat(); muatRingkas();
+  async function muatRingkas() {
+    const n = await Promise.all(STATUS.map((x) => api(`/api/admin/koreksi?status=${x}&hal=1`).then((d) => d.total ?? (d.baris || []).length).catch(() => 0)));
+    ubinKepala(panel, STATUS.map((x, i) => ({ ikon: ["lonceng", "centang", "silang"][i], nilai: n[i], label: t("kor.k." + x) })));
+  }
 
   async function muat() {
     if (S.ctl) S.ctl.abort();
@@ -117,6 +121,8 @@ export function panelAudit(panel) {
     S.ctl = new AbortController();
     $("aDaftar").innerHTML = hantuHtml(5);
     try { const d = await api(`/api/admin/jejak?jenis=${encodeURIComponent(S.jenis)}&hal=${S.hal}`, { signal: S.ctl.signal }); S.baris = d.baris || []; S.galat = null; } catch (e) { if (e.name === "AbortError") return; S.galat = e.kode || "umum"; S.baris = []; }
+    const b = S.baris;
+    ubinKepala(panel, [{ ikon: "jejak", nilai: b.length >= 50 ? "50+" : b.length, label: t("aud.k.n") }, { ikon: "orang", nilai: new Set(b.map((r) => r.akun_nama ?? r.akun ?? r.akun_id)).size, label: t("aud.k.akun") }, { ikon: "ubah", nilai: new Set(b.map((r) => r.aksi)).size, label: t("aud.k.aksi") }]);
     nanti(gambar);
   }
   function gambar() {

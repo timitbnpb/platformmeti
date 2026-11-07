@@ -1,4 +1,4 @@
-/* /daftar (terbuka untuk tamu): formulir bertahap pendaftaran anggota. /daftar/lacak/<token>: status, iuran, rekening, unggah bukti.
+/* /daftar (terbuka untuk tamu): formulir bertahap pendaftaran anggota. /daftar/lacak#<token>: status, iuran, rekening, unggah bukti.
    Tanpa NIK/KTP dan data keuangan. Token dikirim di BADAN permintaan. Teks lewat kamus i18n. */
 import { t, angka, tanggal, tanggalDariUnix, bahasa } from "/i18n.js";
 import { api, galatTeks, esc, pesanHtml, ikon } from "/inti/umum.js";
@@ -21,7 +21,7 @@ const centang = '<svg class="dft-cek" viewBox="0 0 24 24" width="18" height="18"
 const TEK = ["surya", "bayu", "hidro", "panas-bumi", "bioenergi", "biomassa-sampah", "nuklir", "penyimpanan"];
 const SEKTOR = Array.from({ length: 14 }, (_, i) => i + 1);
 const RE_SUREL = /^[^\s@]{1,64}@[^\s@.]+(\.[^\s@.]+)+$/;
-const RE_LACAK = /^\/daftar\/lacak\/([0-9a-f]{64})$/;
+const RE_LACAK = /^[0-9a-f]{64}$/;
 const tx = (k) => `data-i18n="${k}"`;
 const medan = (id, kunci, { tipe = "text", maks = 120, auto = "off", perlu = false, mode = "" } = {}) =>
   `<div class="jm-medan jm-ambang"><input class="jm-isian" id="${id}" name="${id}" type="${tipe}" maxlength="${maks}" autocomplete="${auto}" placeholder=" "${mode ? ` inputmode="${mode}"` : ""}${perlu ? " required" : ""}><label for="${id}" ${tx(kunci)}>${esc(t(kunci))}</label></div>`;
@@ -130,7 +130,7 @@ async function kirim() {
     const { token } = await api("/api/daftar", { metode: "POST", badan });
     const berkas = $("foto").files[0];
     if (berkas) { const fd = new FormData(); fd.set("token", token); fd.set("berkas", berkas); await fetch("/api/daftar/foto", { method: "POST", credentials: "same-origin", headers: { "x-pb": "1" }, body: fd }).catch(() => {}); }
-    location.assign("/daftar/lacak/" + token);
+    location.assign("/daftar/lacak#" + token);
   } catch (e) {
     pesan("galat", galatTeks(e.kode || "umum"));
     tombol.disabled = false; lbl.textContent = t("dft.kirim");
@@ -258,5 +258,5 @@ function landing() {
   });
 }
 
-const m = RE_LACAK.exec(location.pathname);
-if (m) { $("dft-tarif").hidden = true; lacak(m[1]); } else { bentuk(); isi.hidden = true; landing(); }
+const m = location.pathname === "/daftar/lacak" ? RE_LACAK.exec(location.hash.slice(1)) : null;
+if (m) { $("dft-tarif").hidden = true; lacak(m[0]); } else { bentuk(); isi.hidden = true; landing(); }

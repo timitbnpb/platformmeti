@@ -1,7 +1,9 @@
 /* /admin: tab KTA (migrasi 0017). Daftar anggota (basis R2) digabung dengan status KTA; terbitkan, setujui klaim, perpanjang, cabut,
    masa berlaku massal, ekspor CSV. Hanya admin. Server: /api/admin/kta*, /api/admin/anggota-meti. */
 import { paginasiHtml, sorotHalaman } from "/inti/paginasi.js";
-import { t, angka, tanggal } from "/i18n.js";
+import { t, ada, angka, tanggal } from "/i18n.js";
+import { namaBaku } from "/inti/nama_baku.js";
+import { cariHtml } from "/inti/komponen.js";
 import { esc, api, nanti, debounce, hantuHtml, kosongHtml, galatHtml, galatTeks, ikon, pesanHtml } from "/inti/umum.js";
 
 const BARIS = 50;
@@ -12,6 +14,8 @@ const NADA = { belum: "", tertunda: "jm-pil-warn", aktif: "jm-pil-ok", kedaluwar
 const URUT_RANK = { tertunda: 0, kedaluwarsa: 1, belum: 2, aktif: 3, dicabut: 4 };
 const labelJenis = (j) => t("kta.jenis." + j.replace(/ /g, "-"));
 const opsiJenis = (pilih, semua) => (semua ? `<option value="">${esc(t("adm.kta.f.jenis_semua"))}</option>` : "") + JENIS.map((j) => `<option value="${j}"${j === pilih ? " selected" : ""}>${esc(labelJenis(j))}</option>`).join("");
+const bakuNama = (n) => namaBaku(n || "").nama.replace(/\b(PT|CV|UD)\.(?=\s)/gi, (m, k) => k.toUpperCase());
+const pilJenis = (j) => (j ? `<span class="jm-pil${j === "utama" ? " jm-pil-ok" : ""}">${esc(ada("adm.anggota.jenis." + j) ? t("adm.anggota.jenis." + j) : j)}</span>` : "-");
 const akhirTahun = (th) => `${th}-12-31`;
 
 export function panelKta(panel) {
@@ -19,12 +23,11 @@ export function panelKta(panel) {
   panel.innerHTML = `<p class="jm-bantu">${esc(t("adm.kta.catatan"))}</p>
     <div id="kRingkas"></div>
     <div class="jm-bar jm-adm-bar1">
-      <div class="jm-medan"><label class="sr" for="kCari">${esc(t("adm.kta.cari"))}</label><input class="jm-isian" id="kCari" type="search" autocomplete="off" placeholder="${esc(t("adm.kta.cari"))}"></div>
+      ${cariHtml({ id: "kCari", label: t("adm.kta.cari") })}
       <select data-ikon="status" class="jm-pilih" id="kStatus" aria-label="${esc(t("adm.kta.f.status"))}"><option value="">${esc(t("adm.kta.f.semua"))}</option>${STATUS.map((s) => `<option value="${s}">${esc(t("adm.kta.status." + s))}</option>`).join("")}</select>
       <button type="button" class="jm-tbl" data-k="massal">${ikon("kalender", 18)}${esc(t("adm.kta.massal"))}</button>
       <a class="jm-tbl" href="/api/admin/kta?format=csv" download>${ikon("csv", 18)}${esc(t("adm.kta.csv"))}</a>
     </div>
-    <p class="jm-bantu" id="kHitung" aria-live="polite"></p>
     <div id="kIsi" aria-live="polite"></div>
     <div id="kPesan" aria-live="polite"></div>
     <dialog class="jm-dlg" id="kDlg" aria-labelledby="kDlgJudul"></dialog>`;
@@ -43,8 +46,8 @@ export function panelKta(panel) {
   }
   function gabung(anggota, kta) {
     const peta = new Map(kta.map((k) => [k.anggota_id, k]));
-    S.baris = anggota.map((a) => { const k = peta.get(a.id) || null; peta.delete(a.id); return { id: a.id, nama: a.nama || "", instansi: a.instansi || "", jenisAng: a.jenis || "", kta: k, st: k ? k.status_ef : "belum" }; });
-    for (const k of peta.values()) S.baris.push({ id: k.anggota_id, nama: k.nama_cetak, instansi: k.instansi || "", jenisAng: "", kta: k, st: k.status_ef }); // anggota sudah tak ada di basis
+    S.baris = anggota.map((a) => { const k = peta.get(a.id) || null; peta.delete(a.id); return { id: a.id, nama: bakuNama(a.nama), instansi: a.instansi || "", jenisAng: a.jenis || "", kta: k, st: k ? k.status_ef : "belum" }; });
+    for (const k of peta.values()) S.baris.push({ id: k.anggota_id, nama: bakuNama(k.nama_cetak), instansi: k.instansi || "", jenisAng: "", kta: k, st: k.status_ef }); // anggota sudah tak ada di basis
   }
   function saring() {
     const q = S.cari.trim().toLowerCase();
@@ -58,7 +61,6 @@ export function panelKta(panel) {
       .map(([k, n]) => `<li><b>${esc(angka(n))}</b><span>${esc(t(k))}</span></li>`).join("")}</ul>`;
     const n = S.saring.length, maks = Math.max(1, Math.ceil(n / BARIS));
     S.hal = Math.min(S.hal, maks);
-    $("kHitung").textContent = t("adm.kta.n", { n: angka(n) });
     if (!n) { $("kIsi").innerHTML = kosongHtml("adm.kta.kosong"); return; }
     const th = (kunci, k) => (k
       ? `<th scope="col" aria-sort="${S.urut === k ? (S.arah > 0 ? "ascending" : "descending") : "none"}"><button type="button" class="jm-adm-urut" data-k="urut" data-u="${k}">${esc(t(kunci))}</button></th>`
@@ -73,8 +75,8 @@ export function panelKta(panel) {
         : r.st === "tertunda" ? aksi("setujui", "adm.kta.a.setujui", "centang") + aksi("tolak", "adm.kta.a.tolak", "silang")
         : aksi("perpanjang", "adm.kta.a.perpanjang", "kalender") + aksi("cabut", "adm.kta.a.cabut", "blokir");
       return `<tr><td ${L("adm.kta.k.nama")}><strong>${esc(r.nama)}</strong>${r.instansi ? `<br><small>${esc(r.instansi)}</small>` : ""}</td>
-        ${ada.sumber ? `<td ${L("adm.kta.k.sumber")}>${esc(r.jenisAng || "-")}</td>` : ""}${ada.nomor ? `<td ${L("adm.kta.k.nomor")}>${esc(k?.nomor_kta || "-")}</td>` : ""}
-        ${ada.jenis ? `<td ${L("adm.kta.k.jenis")}>${k ? esc(labelJenis(k.jenis)) : "-"}</td>` : ""}
+        ${ada.sumber ? `<td ${L("adm.kta.k.sumber")}>${pilJenis(r.jenisAng)}</td>` : ""}${ada.nomor ? `<td ${L("adm.kta.k.nomor")}>${esc(k?.nomor_kta || "-")}</td>` : ""}
+        ${ada.jenis ? `<td ${L("adm.kta.k.jenis")}>${k ? `<span class="jm-pil">${esc(labelJenis(k.jenis))}</span>` : "-"}</td>` : ""}
         <td ${L("adm.kta.k.status")}><span class="jm-pil ${NADA[r.st]}">${esc(t("adm.kta.status." + r.st))}</span></td>
         ${ada.berlaku ? `<td ${L("adm.kta.k.berlaku")}>${k?.berlaku_sampai ? esc(tanggal(k.berlaku_sampai)) : "-"}</td>` : ""}
         ${ada.akun ? `<td ${L("adm.kta.k.akun")}>${esc(k?.akun_surel || "-")}</td>` : ""}

@@ -52,9 +52,10 @@ function daftarLogo() {
   const org = new Map(JSON.parse(fs.readFileSync(path.join(ROOT, 'public/data/organisasi.json'), 'utf8')).baris.map((o) => [o.id, o]));
   const situs = fs.existsSync(OUT) ? JSON.parse(fs.readFileSync(OUT, 'utf8')) : {};
   const sudah = new Set(fs.readdirSync(path.join(ROOT, 'public/img/logo/org')).map((f) => f.replace(/\.png$/, '')));
+  const tolak = new Set(fs.existsSync(path.join(ROOT, 'data/rantai/logo_tolak.json')) ? Object.keys(JSON.parse(fs.readFileSync(path.join(ROOT, 'data/rantai/logo_tolak.json'), 'utf8'))) : []); // logo hasil panen yang salah (ditinjau tangan)
   const ada = new Map();
   for (const t of JSON.parse(fs.readFileSync(path.join(ROOT, 'public/data/rantai_pasok.json'), 'utf8')).teknologi) for (const k of t.komponen) for (const p of k.pemasok) {
-    if (sudah.has(p.id) || sudah.has(p.org_id) || ada.has(p.id)) continue;
+    if (sudah.has(p.id) || sudah.has(p.org_id) || ada.has(p.id) || tolak.has(p.id)) continue;
     ada.set(p.id, { id: p.id, nama: p.nama, situs: p.situs || org.get(p.org_id)?.situs || situs[norm(p.nama)]?.situs || null });
   }
   const l = [...ada.values()]; fs.mkdirSync(path.join(ROOT, 'data-panen/rantai'), { recursive: true });

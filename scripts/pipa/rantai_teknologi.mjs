@@ -19,7 +19,7 @@ export const norm = (s) => String(s || '').toLowerCase().replace(/\([^)]*\)/g, '
 export const idTk = (nama) => 'tk_' + crypto.createHash('sha1').update(norm(nama)).digest('hex').slice(0, 8); // sama dengan potret.mjs
 
 // [teknologi, komponen, pola produk]. Urutan = prioritas; satu sertifikat dapat memenuhi beberapa aturan.
-const BUKAN = /pendingin|air conditioner|kendaraan|mobil|ambulan|karoseri|obat|treatment|scavenger|inhibitor|antiscalant|kimia|chemical|ipal|septik|septic|grease|videotron|semen|mortar|pelumas|ventilator|syringe|kompor|aspal|container sampah|incinerator|insinerator|klem|topi|rantai conveyor|cultivator|sampah|simulator|pembelajaran|ayam|kompos|burner|akumulator|aki\b|forging|hot rolled|seal|hanger/i;
+const BUKAN = /pendingin|air conditioner|kendaraan|mobil|ambulan|karoseri|obat|treatment|scavenger|inhibitor|antiscalant|kimia|chemical|ipal|septik|septic|grease|videotron|semen|mortar|pelumas|ventilator|syringe|kompor|aspal|container sampah|incinerator|insinerator|klem|topi|rantai conveyor|cultivator|sampah|serat optik|fiber|optic|drop core|telepon|coaxial|koaksial|keamanan|simulator|pembelajaran|ayam|kompos|burner|akumulator|aki\b|forging|hot rolled|seal|hanger/i;
 export const ATURAN = [
   ['bayu', 'bilah', /bilah.*(turbin|angin)|wind turbine blade/i], ['bayu', 'menara', /(menara|tower).*(angin|wind|turbin)|wind tower/i], ['bayu', 'nacelle', /nacelle/i],
   ['bayu', 'gearbox_generator', /turbin angin|wind turbine|generator.*angin|pltb/i],
@@ -27,16 +27,19 @@ export const ATURAN = [
   ['hidro', 'generator', /generator (sinkron|hidro|mikro)|micro hydro generator|synchronous generator|alternator/i], ['hidro', 'pipa_pesat', /penstock|pipa pesat/i],
   ['panas_bumi', 'turbin_uap', /turbin uap|steam turbine/i], ['panas_bumi', 'pipa_uap', /pipa.*(panas bumi|geothermal|uap)|steam (pipe|line)/i], ['panas_bumi', 'kepala_sumur', /wellhead|x-?mas tree|kepala sumur/i],
   ['bioenergi', 'digester', /digester|biodigester|biogas(?!tron)/i], ['bioenergi', 'boiler_gasifier', /\bboiler\b|gasifi|ketel uap|steam generator|tungku biomassa/i],
-  ['baterai', 'sel', /sel baterai|battery cell|\bcell\b/i], ['baterai', 'pack', /bater|battery|lifepo4|lithium|\bbess\b/i], ['baterai', 'bms_pcs', /\bbms\b|battery management|power conversion|\bpcs\b/i],
+  ['baterai', 'sel', /sel baterai|battery cell|\bcell\b/i], ['baterai', 'pack', /^(bater[ae]i|batterai|battery|lithium|lifepo4|bess)/i], ['baterai', 'bms_pcs', /\bbms\b|battery management|power conversion|\bpcs\b/i],
   ['hidrogen', 'elektroliser', /elektroli[sz]er|electroly[sz]er/i], ['hidrogen', 'tangki_tekan', /pressure vessel|bejana tekan|tangki (hidrogen|bertekanan)|hydrogen (tank|cylinder)|tabung gas/i],
-  ['jaringan', 'inverter', /^inverter\b/i], ['jaringan', 'panel_tr', /panel (listrik|distribusi|tegangan|lv|mv|hubung)|switchgear|\bpanel\b.*(tr|lvmdp|mdp)/i],
+  ['jaringan', 'inverter', /^inverter\b/i], ['jaringan', 'panel_tr', /panel (listrik|distribusi|tegangan|lv|mv|hubung)|switchgear|\bpanel\b.*(lvmdp|mdp|phb)/i],
   ['jaringan', 'trafo', /^transformator|trafo (distribusi|daya)|transformator \(trafo\)|power transformer/i], ['jaringan', 'kabel', /^kabel|\bcable\b|konduktor|conductor|twisted|acsr|aaac|nyy|nym/i],
 ];
 const SYARAT_ENERGI = { baterai: /lithium|lifepo|lfp|\bion\b|bess|energy storage|storage|penyimpan|pack|cell|sel baterai/i }; // aki asam-timbal dsb. tidak dihitung sebagai penyimpan energi
 
 // Komponen berproduk umum (bejana tekan, wellhead migas, boiler uap) ditandai relevansi 'umum': sertifikat tidak menyebut teknologi energinya.
 const UMUM_KOMP = new Set(['hidrogen/tangki_tekan', 'panas_bumi/kepala_sumur', 'bioenergi/boiler_gasifier']);
+// Perusahaan yang sertifikatnya alat peraga pendidikan, bukan komponen pembangkit (ditinjau tangan).
+const SINGKIR = new Set(['protel multi energy']);
 export function klasifikasi(r) {
+  if (SINGKIR.has(norm(r.perusahaan))) return [];
   const produk = String(r.produk || (r.spesifikasi || []).slice(0, 1).join(' ')).replace(/&amp;/g, '&'); // produk kosong: spesifikasi pertama
   if (!produk || BUKAN.test(produk + ' ' + (r.kelompok_barang || ''))) return [];
   const nama = [produk, r.tipe].filter(Boolean).join(' ');

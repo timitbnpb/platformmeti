@@ -22,8 +22,7 @@ try { D = await muatPotret(); } catch (e) {
 const TIER = ["beroperasi", "ppa", "ruptl", "est"];
 const IK = { beroperasi: "centang", ppa: "pdf", ruptl: "regulasi", est: "analisis" };
 const sel = {
-  nama: ["nama", "pj.c.nama", selNamaProyek], tek: ["tek", "pj.c.tek", (r) => pilTek(r.tek), "jm-tengah"], prov: ["prov", "pj.c.prov", (r) => selProv(r.prov)],
-  pem: ["pemilik", "pj.c.pemilik", selPemilik], mw: ["mw", "pj.c.kap", (r) => `${num(r.mw)} <span class="jm-pj-sat">${esc(r.sat)}</span>`, "jm-num"],
+  nama: ["nama", "pj.c.nama", (r) => selNamaProyek(r) + (r.prov ? `<div class="pb-prov">${selProv(r.prov)}</div>` : "")], /* provinsi di baris kedua */ tek: ["tek", "pj.c.tek", (r) => pilTek(r.tek), "jm-tengah"],   pem: ["pemilik", "pj.c.pemilik", selPemilik], mw: ["mw", "pj.c.kap", (r) => `${num(r.mw)} <span class="jm-pj-sat">${esc(r.sat)}</span>`, "jm-num"],
   st: ["status", "pj.c.status", (r) => pilStatus(r.status), "jm-tengah"], cod: ["cod", "pj.c.cod", (r) => (r.cod ?? "-"), "jm-tengah"],
   thn: ["tahun_operasi", "pb.c.tahun_operasi", (r) => (r.tahun_operasi ?? "-"), "jm-tengah"],
   kon: ["kerja_kon", "pb.c.kerja_kon", (r) => (r.kerja ? `${num(r.kerja.konstruksi)} <span class="jm-pj-sat">${esc(t("pb.u.tahun_orang"))}</span> ${estPil()}` : "-"), "jm-num"],
@@ -31,10 +30,10 @@ const sel = {
   src: [null, "pj.c.sumber", selSumber, "jm-tengah"],
 };
 const KOLOM = {
-  beroperasi: [sel.nama, sel.tek, sel.prov, sel.pem, sel.mw, sel.thn, sel.om, sel.src],
-  ppa: [sel.nama, sel.tek, sel.prov, sel.pem, sel.mw, sel.cod, sel.kon, sel.src],
-  ruptl: [sel.nama, sel.tek, sel.prov, sel.pem, sel.mw, sel.st, sel.cod, sel.kon, sel.src],
-  est: [sel.nama, sel.tek, sel.prov, sel.pem, sel.mw, sel.st, sel.cod, sel.kon, sel.src],
+  beroperasi: [sel.nama, sel.tek, sel.pem, sel.mw, sel.thn, sel.om, sel.src],
+  ppa: [sel.nama, sel.tek, sel.pem, sel.mw, sel.cod, sel.kon, sel.src],
+  ruptl: [sel.nama, sel.tek, sel.pem, sel.mw, sel.st, sel.cod, sel.kon, sel.src],
+  est: [sel.nama, sel.tek, sel.pem, sel.mw, sel.st, sel.cod, sel.kon, sel.src],
 };
 for (const k of TIER) for (const r of D.besar[k]) { r.kerja_kon = r.kerja ? r.kerja.konstruksi : null; r.kerja_om = r.kerja ? r.kerja.om : null; }
 

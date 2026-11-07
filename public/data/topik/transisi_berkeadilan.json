@@ -1,0 +1,2361 @@
+{
+ "id": "transisi-berkeadilan",
+ "versi": 1,
+ "diperbarui": "2026-11-08",
+ "judul": {
+  "id": "Transisi berkeadilan",
+  "en": "Just transition"
+ },
+ "lead": {
+  "id": "JETP dan CIPP, pensiun dini PLTU Cirebon-1 lewat ETM ADB, pekerja dan daerah batu bara terdampak, serta pelajaran Afrika Selatan dan Ruhr: angka, pembatalan, dan celah.",
+  "en": "JETP and CIPP, early retirement of the Cirebon-1 plant through ADB's ETM, affected coal workers and regions, and lessons from South Africa and the Ruhr: figures, cancellation and gaps."
+ },
+ "kunci": [
+  {
+   "label": {
+    "id": "Komitmen JETP Indonesia (2026)",
+    "en": "JETP Indonesia pledges (2026)"
+   },
+   "nilai": 21.4,
+   "d": 1,
+   "satuan": {
+    "id": "miliar USD",
+    "en": "USD billion"
+   },
+   "sumber": "jp_rusak",
+   "est": false
+  },
+  {
+   "label": {
+    "id": "Kebutuhan investasi jalur listrik 2030 (CIPP)",
+    "en": "Power pathway investment need 2030 (CIPP)"
+   },
+   "nilai": 97.1,
+   "d": 1,
+   "satuan": {
+    "id": "miliar USD",
+    "en": "USD billion"
+   },
+   "sumber": "cpi",
+   "est": false
+  },
+  {
+   "label": {
+    "id": "Pensiun dini PLTU yang dibiayai JETP",
+    "en": "Coal retirement financed by JETP"
+   },
+   "nilai": 1.7,
+   "d": 1,
+   "satuan": {
+    "id": "GW",
+    "en": "GW"
+   },
+   "sumber": "cpi",
+   "est": false
+  },
+  {
+   "label": {
+    "id": "Kebutuhan dukungan pekerja (hitungan IESR)",
+    "en": "Worker support need (IESR calculation)"
+   },
+   "nilai": 38.4,
+   "d": 1,
+   "satuan": {
+    "id": "triliun Rp",
+    "en": "IDR trillion"
+   },
+   "sumber": "iesr_pekerja",
+   "est": false
+  },
+  {
+   "label": {
+    "id": "Cirebon-1: pensiun dini dibatalkan (Des 2025)",
+    "en": "Cirebon-1: early retirement cancelled (Dec 2025)"
+   },
+   "nilai": 660,
+   "d": 0,
+   "satuan": {
+    "id": "MW",
+    "en": "MW"
+   },
+   "sumber": "batal",
+   "est": false
+  }
+ ],
+ "penting": [
+  {
+   "id": "JETP menjanjikan USD 21,4 miliar tetapi hanya 2,6 persen berupa hibah; USD 3,1 miliar disetujui dan belum ada PLTU yang dipensiunkan (Jun 2026).",
+   "en": "JETP pledges USD 21.4 billion but only 2.6 percent is grants; USD 3.1 billion is approved and no coal plant has been retired (Jun 2026)."
+  },
+  {
+   "id": "Pensiun dini Cirebon-1 (660 MW) dibatalkan 5 Des 2025 karena penalti PPA dan biaya pengganti sekitar Rp190 triliun.",
+   "en": "Cirebon-1 (660 MW) early retirement was cancelled on 5 Dec 2025 over PPA penalties and replacement of about IDR 190 trillion."
+  },
+  {
+   "id": "Belum ada pemetaan menyeluruh pekerja dan daerah terdampak; Ruhr menunjukkan transisi butuh kesepakatan sosial dan dana panjang.",
+   "en": "There is no comprehensive mapping of affected workers and regions; the Ruhr shows transition needs a social agreement and long funding."
+  }
+ ],
+ "posisi": {
+  "id": "Indonesia menunda pensiun PLTU sementara Jerman menutup tambang terakhirnya pada 2018 dengan kesepakatan sosial 2007; jaraknya terletak pada kesepakatan, bukan hanya dana.",
+  "en": "Indonesia has delayed coal plant retirement while Germany closed its last mine in 2018 under a 2007 social agreement; the gap lies in the agreement, not only in funds."
+ },
+ "sumber": {
+  "ed": {
+   "judul": "Ringkasan editorial METI (penjelasan umum dan definisi; bukan kutipan pasal)",
+   "penerbit": "METI",
+   "tanggal": "2026-11-08",
+   "tahun": 2026,
+   "bukti": "editorial"
+  },
+  "portal": {
+   "judul": "JETP Indonesia Portfolio (public/data/jetp_cipp.json)",
+   "penerbit": "Sekretariat JETP Indonesia",
+   "url": "https://jetp-id.org/portfolio-sub/index",
+   "tanggal": "2026-11-08",
+   "tahun": 2026,
+   "bukti": "resmi"
+  },
+  "cpi": {
+   "judul": "Highlights from Indonesia's JETP Comprehensive Investment and Policy Plan (CIPP diluncurkan 21 Nov 2023)",
+   "penerbit": "Climate Policy Initiative",
+   "url": "https://www.climatepolicyinitiative.org/highlights-from-indonesias-jetp-comprehensive-investment-and-policy-plan/",
+   "tanggal": "2026-11-08",
+   "tahun": 2023,
+   "bukti": "kajian"
+  },
+  "reuters": {
+   "judul": "Indonesia publishes energy transition plan for G7 funding (puncak emisi 250 Mt, EBT 44 persen, pensiun dini 1,7 GW hingga 2040; dari ringkasan hasil pencarian)",
+   "penerbit": "Reuters via ThePrint",
+   "url": "https://theprint.in/environment/indonesia-publishes-energy-transition-plan-for-g7-funding/1827060/",
+   "tanggal": "2026-11-08",
+   "tahun": 2023,
+   "bukti": "media"
+  },
+  "kat_pensiun": {
+   "judul": "JETP Fasilitasi Pensiun Dini PLTU 1,7 GW, Di Bawah Target Jokowi (hanya judul dan ringkasan hasil pencarian dibaca)",
+   "penerbit": "Katadata",
+   "url": "https://katadata.co.id/amp/ekonomi-hijau/energi-baru/6544bc957fdfa/jetp-fasilitasi-pensiun-dini-pltu-1-7-gw-di-bawah-target-jokowi",
+   "tanggal": "2026-11-08",
+   "tahun": 2023,
+   "bukti": "media"
+  },
+  "adb": {
+   "judul": "New agreement aims to retire Indonesia's 660 MW coal plant almost 7 years early (3 Des 2023)",
+   "penerbit": "Asian Development Bank",
+   "url": "https://www.adb.org/news/new-agreement-aims-retire-indonesia-660-mw-coal-plant-almost-7-years-early",
+   "tanggal": "2026-11-08",
+   "tahun": 2023,
+   "bukti": "resmi"
+  },
+  "adb_tunda": {
+   "judul": "ADB moves back funding timeline for first coal plant shutdown (13 Des 2024; hanya judul dibaca)",
+   "penerbit": "The Jakarta Post",
+   "url": "https://www.thejakartapost.com/business/2024/12/13/adb-moves-back-funding-timeline-for-first-coal-plant-shutdown",
+   "tanggal": "2026-11-08",
+   "tahun": 2024,
+   "bukti": "media"
+  },
+  "batal": {
+   "judul": "Airlangga confirms Cirebon-1 early retirement canceled, ADB funds to be shifted (5 Des 2025)",
+   "penerbit": "Petromindo",
+   "url": "https://www.petromindo.com/news/article/airlangga-confirms-cirebon-1-early-retirement-canceled-adb-funds-to-be-shifted",
+   "tanggal": "2026-11-08",
+   "tahun": 2025,
+   "bukti": "media"
+  },
+  "jp_rusak": {
+   "judul": "The broken promise of coal transition finance (2 Jun 2026; artikel The Conversation, penulis Daley dan Lawrie)",
+   "penerbit": "The Jakarta Post / The Conversation",
+   "url": "https://www.thejakartapost.com/opinion/2026/06/05/the-broken-promise-of-coal-transition-finance",
+   "tanggal": "2026-11-08",
+   "tahun": 2026,
+   "bukti": "kajian"
+  },
+  "ieefa": {
+   "judul": "Building credibility in Indonesia's energy transition (Feb 2026; sekitar USD 3,1 miliar disetujui atau 14,5 persen dari USD 21,4 miliar; dari ringkasan hasil pencarian)",
+   "penerbit": "IEEFA",
+   "url": "https://ieefa.org/sites/default/files/2026-02/IEEFA%20Briefing%20Note_Building%20credibility%20in%20Indonesia%27s%20energy%20transition_February2026.pdf",
+   "tanggal": "2026-11-08",
+   "tahun": 2026,
+   "bukti": "kajian"
+  },
+  "iesr_pekerja": {
+   "judul": "Butuh Rp 38,4 Triliun untuk Pekerja Batu Bara Terdampak Transisi Energi (1 Mei 2024; hitungan IESR)",
+   "penerbit": "Kompas.com",
+   "url": "https://lestari.kompas.com/read/2024/05/01/120000486/butuh-rp-38-4-triliun-untuk-pekerja-batu-bara-terdampak-transisi-energi",
+   "tanggal": "2026-11-08",
+   "tahun": 2024,
+   "bukti": "media"
+  },
+  "bappenas": {
+   "judul": "Bappenas Singgung Dampak Pensiun PLTU terhadap Ekonomi Daerah (19 Mei 2023)",
+   "penerbit": "Republika",
+   "url": "https://ekonomi.republika.co.id/berita/ruwpyi349/bappenas-singgung-dampak-pensiun-pltu-terhadap-ekonomi-daerah",
+   "tanggal": "2026-11-08",
+   "tahun": 2023,
+   "bukti": "media"
+  },
+  "eco_buruh": {
+   "judul": "Indonesia's first early coal retirement raises concerns over labour rights and environmental damage compensation (setidaknya 14.000 pekerja kehilangan mata pencaharian di Cirebon-1 dan Pelabuhan Ratu; dari ringkasan hasil pencarian)",
+   "penerbit": "Eco-Business",
+   "url": "https://www.eco-business.com/zh-hans/news/indonesias-first-early-coal-retirement-raises-concerns-over-labour-rights-and-environmental-damage-compensation-bahasa-indonesia/",
+   "tanggal": "2026-11-08",
+   "tahun": 2023,
+   "bukti": "media"
+  },
+  "green_net": {
+   "judul": "Menakar Dampak Pemensiunan Dini PLTU Batubara (sekitar 4.666 pekerja langsung di PLTU Langkat, Cilacap, Probolinggo; dari ringkasan hasil pencarian)",
+   "penerbit": "Green Network Asia",
+   "url": "https://greennetwork.id/?p=5425",
+   "tanggal": "2026-11-08",
+   "tahun": 2023,
+   "bukti": "kajian"
+  },
+  "koaksi": {
+   "judul": "Koaksi Indonesia Dorong Kemenaker Lindungi Pekerja Terdampak Transisi Energi (belum ada pemetaan menyeluruh pekerja PLTU dan tambang; dari ringkasan hasil pencarian)",
+   "penerbit": "Katadata",
+   "url": "https://katadata.co.id/amp/ekonomi-hijau/investasi-hijau/68ec8835418e4/koaksi-indonesia-dorong-kemenaker-lindungi-pekerja-terdampak-transisi-energi",
+   "tanggal": "2026-11-08",
+   "tahun": 2025,
+   "bukti": "media"
+  },
+  "kabar": {
+   "judul": "Efisiensi Energi Tekan Emisi 30 Juta Ton (target puncak emisi sektor energi 2035; EBT 70 sampai 72 persen pada 2060)",
+   "penerbit": "KabarBursa",
+   "url": "https://www.kabarbursa.com/carbon-trading/efisiensi-energi-tekan-emisi-30-juta-ton-jadi-andalan-capai-nze-2060.md",
+   "tanggal": "2026-11-08",
+   "tahun": 2026,
+   "bukti": "media"
+  },
+  "sa_us": {
+   "judul": "South Africa confirms US withdrawal of $1.5bn Just Energy Transition Partnership pledge (6 Mar 2025)",
+   "penerbit": "Engineering News",
+   "url": "https://www.engineeringnews.co.za/article/south-africa-confirms-us-withdrawl-of-15bn-just-energy-transition-partnership-pledge-2025-03-06",
+   "tanggal": "2026-11-08",
+   "tahun": 2025,
+   "bukti": "media"
+  },
+  "sa_ipg": {
+   "judul": "International partners group backs SA's just energy transition as US cuts R1bn funding (24 Mar 2025; dana hibah JET-IP USD 820 juta sebelum AS menarik USD 56 juta; dari ringkasan hasil pencarian)",
+   "penerbit": "Business Report (IOL)",
+   "url": "https://iol.co.za/business-report/2025-03-24-international-partners-group-backs-sas-just-energy-transition-as-us-cuts-r1bn-funding/",
+   "tanggal": "2026-11-08",
+   "tahun": 2025,
+   "bukti": "media"
+  },
+  "ruhr_cew": {
+   "judul": "Germany bids farewell to domestic hard coal mining (20 Des 2018)",
+   "penerbit": "Clean Energy Wire",
+   "url": "https://www.cleanenergywire.org/news/germany-bids-farewell-domestic-hard-coal-mining",
+   "tanggal": "2026-11-08",
+   "tahun": 2018,
+   "bukti": "media"
+  },
+  "ruhr_wri": {
+   "judul": "Germany: The Ruhr Region's Pivot from Coal Mining to a Hub of Green Industry and Expertise",
+   "penerbit": "World Resources Institute",
+   "url": "https://www.wri.org/just-transitions/germany-ruhr-region",
+   "tanggal": "2026-11-08",
+   "tahun": 2024,
+   "bukti": "kajian"
+  },
+  "hashim": {
+   "judul": "Airlangga confirms Cirebon-1 early retirement canceled (pernyataan Utusan Khusus Presiden Hashim Djojohadikusumo sepekan sebelumnya)",
+   "penerbit": "Petromindo",
+   "url": "https://www.petromindo.com/news/article/airlangga-confirms-cirebon-1-early-retirement-canceled-adb-funds-to-be-shifted",
+   "tanggal": "2026-11-08",
+   "tahun": 2025,
+   "bukti": "media"
+  }
+ },
+ "bab": {
+  "2": {
+   "tipe": "faq",
+   "sumber": [
+    "cpi",
+    "jp_rusak",
+    "batal"
+   ],
+   "butir": [
+    {
+     "t": {
+      "id": "Apa itu JETP Indonesia?",
+      "en": "What is the Indonesia JETP?"
+     },
+     "j": {
+      "id": "Kemitraan transisi energi berkeadilan senilai USD 20 miliar dari kelompok mitra internasional (IPG); Jakarta Post/The Conversation (2 Jun 2026) menyebut total komitmen USD 21,4 miliar.",
+      "en": "A just energy transition partnership of USD 20 billion from an international partners group (IPG); the Jakarta Post/The Conversation (2 Jun 2026) puts total pledges at USD 21.4 billion."
+     }
+    },
+    {
+     "t": {
+      "id": "Apa itu CIPP?",
+      "en": "What is the CIPP?"
+     },
+     "j": {
+      "id": "Comprehensive Investment and Policy Plan, diluncurkan 21 Nov 2023: kebutuhan USD 97,1 miliar untuk jalur sektor listrik, termasuk USD 66,9 miliar untuk lebih dari 400 proyek prioritas (CPI).",
+      "en": "The Comprehensive Investment and Policy Plan, launched 21 Nov 2023: USD 97.1 billion needed for the power sector pathway, including USD 66.9 billion for over 400 priority projects (CPI)."
+     }
+    },
+    {
+     "t": {
+      "id": "Apa target emisinya?",
+      "en": "What is the emission target?"
+     },
+     "j": {
+      "id": "Emisi sektor listrik puncak maksimum 250 Mt pada 2030, EBT 44 persen pembangkitan 2030, dan nol bersih 2050 (CPI).",
+      "en": "Power sector emissions peak at no more than 250 Mt by 2030, renewables at 44 percent of generation by 2030 and net zero by 2050 (CPI)."
+     }
+    },
+    {
+     "t": {
+      "id": "Berapa PLTU yang dipensiunkan JETP?",
+      "en": "How much coal does JETP retire?"
+     },
+     "j": {
+      "id": "Dana JETP mencakup 1,7 GW pensiun dini, turun dari usulan awal 5,5 GW (CPI).",
+      "en": "JETP funds cover 1.7 GW of early retirement, down from an initial 5.5 GW proposal (CPI)."
+     }
+    },
+    {
+     "t": {
+      "id": "Bagaimana nasib Cirebon-1?",
+      "en": "What happened to Cirebon-1?"
+     },
+     "j": {
+      "id": "Pada 5 Des 2025 Menko Perekonomian Airlangga Hartarto mengonfirmasi pembatalan pensiun dini PLTU 660 MW ini; pendanaan ADB akan dialihkan ke PLTU lain yang lebih tua.",
+      "en": "On 5 Dec 2025 Coordinating Minister Airlangga Hartarto confirmed cancellation of this 660 MW plant's early retirement; ADB funds will go to another, older plant."
+     }
+    },
+    {
+     "t": {
+      "id": "Berapa dana yang sudah cair?",
+      "en": "How much has been disbursed?"
+     },
+     "j": {
+      "id": "Berbeda antarsumber: sekitar USD 1,1 miliar publik hingga awal 2025 (The Conversation) sampai USD 3,5 miliar bila AZEC dihitung (laporan Feb 2026); IEEFA mencatat USD 3,1 miliar disetujui (14,5 persen).",
+      "en": "It differs by source: about USD 1.1 billion public by early 2025 (The Conversation) to USD 3.5 billion if AZEC is counted (Feb 2026 report); IEEFA records USD 3.1 billion approved (14.5 percent)."
+     }
+    },
+    {
+     "t": {
+      "id": "Siapa pekerja yang terdampak?",
+      "en": "Which workers are affected?"
+     },
+     "j": {
+      "id": "Sekitar 4.666 pekerja langsung di tiga PLTU (Langkat, Cilacap, Probolinggo) dan setidaknya 14.000 di Cirebon-1 dan Pelabuhan Ratu menurut kajian; belum ada pemetaan menyeluruh (Koaksi).",
+      "en": "About 4,666 direct workers at three plants (Langkat, Cilacap, Probolinggo) and at least 14,000 at Cirebon-1 and Pelabuhan Ratu per studies; there is no comprehensive mapping (Koaksi)."
+     }
+    }
+   ]
+  },
+  "3": {
+   "tipe": "glosarium",
+   "sumber": [
+    "ed",
+    "cpi",
+    "adb"
+   ],
+   "butir": [
+    {
+     "istilah": {
+      "id": "JETP",
+      "en": "JETP"
+     },
+     "arti": {
+      "id": "Just Energy Transition Partnership, kemitraan pendanaan transisi dengan mitra internasional.",
+      "en": "Just Energy Transition Partnership, a transition financing partnership with international partners."
+     }
+    },
+    {
+     "istilah": {
+      "id": "CIPP",
+      "en": "CIPP"
+     },
+     "arti": {
+      "id": "Rencana investasi dan kebijakan JETP Indonesia, 21 Nov 2023.",
+      "en": "The JETP Indonesia investment and policy plan, 21 Nov 2023."
+     }
+    },
+    {
+     "istilah": {
+      "id": "IPG",
+      "en": "IPG"
+     },
+     "arti": {
+      "id": "International Partners Group; penyedia sekitar separuh pembiayaan JETP.",
+      "en": "International Partners Group; provides about half of JETP financing."
+     }
+    },
+    {
+     "istilah": {
+      "id": "ETM",
+      "en": "ETM"
+     },
+     "arti": {
+      "id": "Energy Transition Mechanism ADB: modal konsesional dan komersial untuk memensiunkan atau mengalihfungsikan PLTU.",
+      "en": "ADB's Energy Transition Mechanism: concessional and commercial capital to retire or repurpose coal plants."
+     }
+    },
+    {
+     "istilah": {
+      "id": "Pensiun dini",
+      "en": "Early retirement"
+     },
+     "arti": {
+      "id": "Menghentikan PLTU sebelum akhir kontrak PPA; Cirebon-1 semula direncanakan Des 2035 bukan Jul 2042.",
+      "en": "Stopping a coal plant before its PPA ends; Cirebon-1 was to stop Dec 2035 instead of Jul 2042."
+     }
+    },
+    {
+     "istilah": {
+      "id": "Phase-down",
+      "en": "Phase-down"
+     },
+     "arti": {
+      "id": "Menghentikan PLTU saat kontrak PPA berakhir; pilihan yang disukai PLN.",
+      "en": "Retiring plants when PPAs end; the option PLN favours."
+     }
+    },
+    {
+     "istilah": {
+      "id": "Transisi berkeadilan",
+      "en": "Just transition"
+     },
+     "arti": {
+      "id": "Transisi yang menjaga pekerja, masyarakat, dan daerah terdampak; CIPP menambahkan Standard 9 untuk diversifikasi ekonomi.",
+      "en": "A transition that protects affected workers, communities and regions; the CIPP adds Standard 9 for economic diversification."
+     }
+    },
+    {
+     "istilah": {
+      "id": "AZEC",
+      "en": "AZEC"
+     },
+     "arti": {
+      "id": "Asia Zero Emission Community, kerangka lain yang sering dihitung bersama JETP dalam angka pencairan.",
+      "en": "Asia Zero Emission Community, another framework often counted with JETP in disbursement figures."
+     }
+    },
+    {
+     "istilah": {
+      "id": "Dana bagi hasil",
+      "en": "Revenue-sharing funds"
+     },
+     "arti": {
+      "id": "Transfer pusat ke daerah penghasil sumber daya; Bappenas mengingatkan pendapatan daerah batu bara terancam.",
+      "en": "Central transfers to resource-producing regions; Bappenas warns coal regions' revenue is at risk."
+     }
+    }
+   ]
+  },
+  "4": {
+   "tipe": "teks",
+   "sumber": [
+    "cpi",
+    "bappenas",
+    "jp_rusak"
+   ],
+   "paragraf": [
+    {
+     "id": "Batu bara masih menopang listrik, pekerjaan, dan pendapatan daerah. Pensiun PLTU tanpa pengganti pekerjaan dan pendapatan memindahkan beban ke pekerja dan kabupaten; Bappenas mengingatkan hal itu dapat menaikkan kemiskinan di daerah penghasil batu bara (19 Mei 2023).",
+     "en": "Coal still underpins power, jobs and regional revenue. Retiring plants without replacement jobs and revenue shifts the burden to workers and districts; Bappenas warned it could raise poverty in coal-producing regions (19 May 2023)."
+    },
+    {
+     "id": "JETP dirancang menjembatani hal itu: pendanaan internasional untuk pensiun dini dan dukungan pekerja. Pada praktiknya hanya 2,6 persen dari USD 21,4 miliar berupa hibah bebas bunga; selebihnya pinjaman yang harus dibayar (The Conversation).",
+     "en": "JETP was designed to bridge it: international finance for early retirement and worker support. In practice only 2.6 percent of the USD 21.4 billion is interest-free grants; the rest is loans to be repaid (The Conversation)."
+    }
+   ]
+  },
+  "5": {
+   "tipe": "rumus",
+   "sumber": [
+    "batal",
+    "jp_rusak",
+    "ed"
+   ],
+   "rumus": [
+    {
+     "id": "Beban percepatan per tahun = Kompensasi PPA / Tahun dipercepat",
+     "en": "Acceleration burden per year = PPA compensation / Years accelerated"
+    },
+    {
+     "id": "Biaya penggantian per MW = Biaya penggantian total / Kapasitas pengganti",
+     "en": "Replacement cost per MW = Total replacement cost / Replacement capacity"
+    },
+    {
+     "id": "Porsi hibah (USD) = Porsi hibah (persen) x Total komitmen",
+     "en": "Grant amount (USD) = Grant share (percent) x Total pledges"
+    }
+   ],
+   "contoh": [
+    {
+     "id": "Cirebon-1: kompensasi sekitar Rp60 triliun untuk mempercepat lima tahun = sekitar Rp12 triliun per tahun dipercepat (EST; angka PLN dikutip Airlangga).",
+     "en": "Cirebon-1: about IDR 60 trillion of compensation for five years of acceleration = about IDR 12 trillion per year (EST; PLN figure quoted by Airlangga)."
+    },
+    {
+     "id": "Pengganti: sekitar Rp130 triliun untuk sedikitnya 3.600 MW surya dan baterai = sekitar Rp36,1 miliar per MW (EST), atau sekitar 5,5 MW pengganti per 1 MW batu bara 660 MW (EST).",
+     "en": "Replacement: about IDR 130 trillion for at least 3,600 MW of solar plus storage = about IDR 36.1 billion per MW (EST), or about 5.5 MW of replacement per MW of the 660 MW coal plant (EST)."
+    },
+    {
+     "id": "Hibah: 2,6 persen x USD 21,4 miliar = sekitar USD 0,56 miliar (EST).",
+     "en": "Grants: 2.6 percent x USD 21.4 billion = about USD 0.56 billion (EST)."
+    }
+   ]
+  },
+  "6": {
+   "tipe": "langkah",
+   "sumber": [
+    "ed",
+    "adb",
+    "cpi"
+   ],
+   "butir": [
+    {
+     "judul": {
+      "id": "Pemilik dan pembeli listrik",
+      "en": "Plant owner and offtaker"
+     },
+     "isi": {
+      "id": "Pemilik PLTU (contoh PT Cirebon Electric Power) dan PLN sebagai pembeli menegosiasikan akhir PPA.",
+      "en": "The plant owner (e.g. PT Cirebon Electric Power) and PLN as buyer negotiate the end of the PPA."
+     },
+     "pelaku": {
+      "id": "IPP, PLN",
+      "en": "IPP, PLN"
+     }
+    },
+    {
+     "judul": {
+      "id": "Pembiaya transisi",
+      "en": "Transition financiers"
+     },
+     "isi": {
+      "id": "ADB lewat ETM, INA, dan mitra IPG menyediakan modal konsesional dan komersial.",
+      "en": "ADB through ETM, INA and IPG partners provide concessional and commercial capital."
+     },
+     "pelaku": {
+      "id": "ADB, INA, IPG",
+      "en": "ADB, INA, IPG"
+     }
+    },
+    {
+     "judul": {
+      "id": "Pemerintah pusat",
+      "en": "Central government"
+     },
+     "isi": {
+      "id": "Menetapkan kebijakan, jaminan, dan perlindungan pekerja; jaminan pemerintah atas dana IPG dapat memerlukan hingga USD 8,4 miliar dana cadangan (CPI).",
+      "en": "Sets policy, guarantees and worker protection; government guarantees of IPG funds could require up to USD 8.4 billion of set-asides (CPI)."
+     },
+     "pelaku": {
+      "id": "Kemenko Perekonomian, Kemenkeu, ESDM",
+      "en": "Economic Coordinating Ministry, Finance, Energy"
+     }
+    },
+    {
+     "judul": {
+      "id": "Daerah dan pekerja",
+      "en": "Regions and workers"
+     },
+     "isi": {
+      "id": "Bappenas menyorot pendapatan daerah penghasil; belum ada pemetaan pekerja menyeluruh.",
+      "en": "Bappenas highlights producing-region revenue; no comprehensive worker mapping exists."
+     },
+     "pelaku": {
+      "id": "Pemda, Kemnaker, serikat pekerja",
+      "en": "Local governments, Manpower Ministry, unions"
+     }
+    }
+   ]
+  },
+  "7": {
+   "tipe": "grafik",
+   "jenis": "kolom",
+   "sumber": [
+    "jp_rusak",
+    "ieefa"
+   ],
+   "label": {
+    "id": "JETP Indonesia: komitmen, disetujui, dan tersalur",
+    "en": "JETP Indonesia: pledged, approved and disbursed"
+   },
+   "satuan": "miliar USD",
+   "d": 1,
+   "seri": [
+    {
+     "nama": {
+      "id": "Nilai",
+      "en": "Value"
+     },
+     "sorot": true,
+     "titik": [
+      [
+       "Komitmen (2026)",
+       21.4
+      ],
+      [
+       "Disetujui (IEEFA, Feb 2026)",
+       3.1
+      ],
+      [
+       "Tersalur publik (awal 2025)",
+       1.1
+      ]
+     ]
+    }
+   ],
+   "catatan": {
+    "id": "Angka tersalur berbeda menurut sumber (USD 1,1 miliar sampai USD 3,5 miliar bila AZEC dihitung); kolom ini memakai angka publik awal 2025 dari The Conversation.",
+    "en": "The disbursed figure differs by source (USD 1.1 billion to USD 3.5 billion if AZEC is counted); this column uses the early-2025 public figure from The Conversation."
+   }
+  },
+  "8": {
+   "tipe": "tabel",
+   "per": 8,
+   "sumber": [
+    "green_net",
+    "eco_buruh",
+    "bappenas"
+   ],
+   "kolom": [
+    {
+     "k": "wilayah",
+     "l": {
+      "id": "PLTU atau wilayah",
+      "en": "Plant or region"
+     }
+    },
+    {
+     "k": "pekerja",
+     "l": {
+      "id": "Pekerja terdampak menurut sumber",
+      "en": "Affected workers per source"
+     }
+    },
+    {
+     "k": "catatan",
+     "l": {
+      "id": "Catatan",
+      "en": "Note"
+     }
+    }
+   ],
+   "baris": [
+    {
+     "wilayah": "Langkat, Cilacap, Probolinggo",
+     "pekerja": {
+      "id": "sekitar 4.666 pekerja langsung (tetap dan tidak tetap)",
+      "en": "about 4,666 direct workers (permanent and non-permanent)"
+     },
+     "catatan": {
+      "id": "Kajian Green Network Asia; tiga PLTU",
+      "en": "Green Network Asia study; three plants"
+     }
+    },
+    {
+     "wilayah": "Cirebon-1 dan Pelabuhan Ratu",
+     "pekerja": {
+      "id": "setidaknya 14.000 kehilangan mata pencaharian",
+      "en": "at least 14,000 lose livelihoods"
+     },
+     "catatan": {
+      "id": "Eco-Business; rujukan dasar tidak terbaca penuh",
+      "en": "Eco-Business; the underlying basis was not read in full"
+     }
+    },
+    {
+     "wilayah": {
+      "id": "Provinsi dan kabupaten kaya batu bara",
+      "en": "Coal-rich provinces and districts"
+     },
+     "pekerja": {
+      "id": "tidak ada angka",
+      "en": "no figure"
+     },
+     "catatan": {
+      "id": "Bappenas: pendapatan daerah terancam, kemiskinan dapat naik; provinsi tidak disebut",
+      "en": "Bappenas: regional revenue at risk, poverty could rise; provinces not named"
+     }
+    }
+   ],
+   "catatan": {
+    "id": "Pekerja tambang per provinsi (Kalimantan Timur, Sumatera Selatan) dan porsi dana bagi hasil tidak ditemukan di sumber yang dibaca; sengaja tidak diisi.",
+    "en": "Mine workers per province (East Kalimantan, South Sumatra) and the revenue-sharing share were not found in the sources read; deliberately left blank."
+   }
+  },
+  "9": {
+   "tipe": "tabel",
+   "per": 8,
+   "sumber": [
+    "cpi",
+    "adb",
+    "batal",
+    "iesr_pekerja",
+    "koaksi"
+   ],
+   "kolom": [
+    {
+     "k": "nama",
+     "l": {
+      "id": "Pelaku",
+      "en": "Actor"
+     }
+    },
+    {
+     "k": "peran",
+     "l": {
+      "id": "Peran",
+      "en": "Role"
+     }
+    },
+    {
+     "k": "rujuk",
+     "l": {
+      "id": "Dasar",
+      "en": "Basis"
+     }
+    }
+   ],
+   "baris": [
+    {
+     "nama": {
+      "id": "Sekretariat JETP Indonesia",
+      "en": "JETP Indonesia Secretariat"
+     },
+     "peran": {
+      "id": "Menyusun CIPP; pimpinan Edo Mahendra menyebut CIPP sebagai proposal investasi dengan peta jalan",
+      "en": "Prepared the CIPP; its head Edo Mahendra calls it an investment proposal with a roadmap"
+     },
+     "rujuk": "CPI; Katadata, 2023"
+    },
+    {
+     "nama": "Asian Development Bank",
+     "peran": {
+      "id": "Mengelola ETM dan kerangka Cirebon-1",
+      "en": "Runs ETM and the Cirebon-1 framework"
+     },
+     "rujuk": "ADB, 3 Des 2023"
+    },
+    {
+     "nama": "PT PLN (Persero)",
+     "peran": {
+      "id": "Pembeli listrik; merekomendasikan pembatalan Cirebon-1 karena penalti PPA",
+      "en": "Offtaker; recommended cancelling Cirebon-1 because of PPA penalties"
+     },
+     "rujuk": "Petromindo, 5 Des 2025"
+    },
+    {
+     "nama": "Indonesia Investment Authority (INA)",
+     "peran": {
+      "id": "Penandatangan kerangka ETM Cirebon-1",
+      "en": "Signatory to the Cirebon-1 ETM framework"
+     },
+     "rujuk": "ADB, 3 Des 2023"
+    },
+    {
+     "nama": "Bappenas",
+     "peran": {
+      "id": "Mengingatkan dampak pensiun PLTU pada pendapatan daerah",
+      "en": "Warned of the impact of plant retirement on regional revenue"
+     },
+     "rujuk": "Republika, 19 Mei 2023"
+    },
+    {
+     "nama": "IESR dan Koaksi Indonesia",
+     "peran": {
+      "id": "Menghitung biaya pekerja; mendorong pemetaan pekerja",
+      "en": "Costed worker support; push for worker mapping"
+     },
+     "rujuk": "Kompas, 1 Mei 2024; Katadata"
+    }
+   ]
+  },
+  "10": {
+   "tipe": "tabel",
+   "per": 10,
+   "sumber": [
+    "portal"
+   ],
+   "kolom": [
+    {
+     "k": "nama",
+     "l": {
+      "id": "Proyek atau program JETP",
+      "en": "JETP project or programme"
+     }
+    },
+    {
+     "k": "tek",
+     "l": {
+      "id": "Teknologi",
+      "en": "Technology"
+     }
+    },
+    {
+     "k": "mw",
+     "l": {
+      "id": "MW",
+      "en": "MW"
+     },
+     "num": true,
+     "d": 0
+    },
+    {
+     "k": "status",
+     "l": {
+      "id": "Status",
+      "en": "Status"
+     }
+    }
+   ],
+   "baris": [
+    {
+     "nama": "Muara Laboh Geothermal Power Plant",
+     "tek": "panas-bumi",
+     "mw": 83,
+     "status": {
+      "id": "Disetujui untuk pembiayaan JETP",
+      "en": "Approved for JETP financing"
+     }
+    },
+    {
+     "nama": "Saguling Floating Solar PV Power Plant",
+     "tek": "surya",
+     "mw": 60,
+     "status": {
+      "id": "Disetujui untuk pembiayaan JETP",
+      "en": "Approved for JETP financing"
+     }
+    },
+    {
+     "nama": "MRT Jakarta North–South Line",
+     "tek": "-",
+     "mw": 0,
+     "status": {
+      "id": "Disetujui untuk pembiayaan JETP",
+      "en": "Approved for JETP financing"
+     }
+    },
+    {
+     "nama": "MRT Jakarta East–West Line",
+     "tek": "-",
+     "mw": 0,
+     "status": {
+      "id": "Disetujui untuk pembiayaan JETP",
+      "en": "Approved for JETP financing"
+     }
+    },
+    {
+     "nama": "IKI-Flex JETP Support Package",
+     "tek": "-",
+     "mw": 0,
+     "status": {
+      "id": "Disetujui untuk pembiayaan JETP",
+      "en": "Approved for JETP financing"
+     }
+    },
+    {
+     "nama": "Grant for Patuha Unit-2 Geothermal Power Generation Project",
+     "tek": "panas-bumi",
+     "mw": 0,
+     "status": {
+      "id": "Disetujui untuk pembiayaan JETP",
+      "en": "Approved for JETP financing"
+     }
+    },
+    {
+     "nama": "European Fund for Sustainable Development Plus (EFSD+) for energy project preparation",
+     "tek": "-",
+     "mw": 0,
+     "status": {
+      "id": "Disetujui untuk pembiayaan JETP",
+      "en": "Approved for JETP financing"
+     }
+    },
+    {
+     "nama": "Results Based Loan Accelerating Indonesia Clean Energy Transition (RBL AICET)",
+     "tek": "-",
+     "mw": 0,
+     "status": {
+      "id": "Disetujui untuk pembiayaan JETP",
+      "en": "Approved for JETP financing"
+     }
+    }
+   ],
+   "catatan": {
+    "id": "Dari portofolio Sekretariat JETP (public/data/jetp_cipp.json). Kapasitas MW Muara Laboh adalah tambahan 83 MW; Saguling 60 MW. Nol berarti bukan proyek pembangkit atau tak disebut. Tidak ada PLTU yang dipensiunkan dalam portofolio ini.",
+    "en": "From the JETP Secretariat portfolio (public/data/jetp_cipp.json). Muara Laboh MW is an 83 MW addition; Saguling is 60 MW. Zero means not a generation project or not stated. No retired coal plant appears in this portfolio."
+   }
+  },
+  "12": {
+   "tipe": "tabel",
+   "per": 6,
+   "sumber": [
+    "ed"
+   ],
+   "kolom": [
+    {
+     "k": "nama",
+     "l": {
+      "id": "Peraturan",
+      "en": "Regulation"
+     },
+     "url": "url"
+    },
+    {
+     "k": "judul",
+     "l": {
+      "id": "Tentang",
+      "en": "Subject"
+     }
+    },
+    {
+     "k": "status",
+     "l": {
+      "id": "Status",
+      "en": "Status"
+     }
+    },
+    {
+     "k": "tanggal",
+     "l": {
+      "id": "Ditetapkan",
+      "en": "Enacted"
+     }
+    },
+    {
+     "k": "ringkas",
+     "l": {
+      "id": "Relevansi untuk topik ini",
+      "en": "Relevance to this topic"
+     }
+    }
+   ],
+   "baris": [
+    {
+     "nama": "Perpres 112/2022",
+     "judul": "Percepatan Pengembangan Energi Terbarukan untuk Penyediaan Tenaga Listrik",
+     "status": "berlaku",
+     "tanggal": "2022-09-13",
+     "ringkas": {
+      "id": "Percepatan energi terbarukan; mencakup penghentian PLTU bertahap (basis regulasi METI).",
+      "en": "Acceleration of renewables; covers phased coal plant retirement (METI regulation base)."
+     },
+     "url": "https://peraturan.bpk.go.id/Details/225308"
+    },
+    {
+     "nama": "PP 40/2025",
+     "judul": "Kebijakan Energi Nasional",
+     "status": "berlaku",
+     "tanggal": "2025-09-15",
+     "ringkas": {
+      "id": "Kebijakan Energi Nasional 2025; arah transisi sampai 2060.",
+      "en": "National Energy Policy 2025; transition direction to 2060."
+     },
+     "url": "https://peraturan.bpk.go.id/Details/328789"
+    },
+    {
+     "nama": "Perpres 110/2025",
+     "judul": "Penyelenggaraan Instrumen Nilai Ekonomi Karbon dan Pengendalian Emisi Gas Rumah Kaca Nasional",
+     "status": "berlaku",
+     "tanggal": "2025-10-10",
+     "ringkas": {
+      "id": "Instrumen nilai ekonomi karbon; menggantikan Perpres 98/2021.",
+      "en": "Carbon pricing instruments; replaces Perpres 98/2021."
+     },
+     "url": "https://peraturan.bpk.go.id/Details/334733"
+    },
+    {
+     "nama": "UU 16/2016",
+     "judul": "Pengesahan Paris Agreement To The United Nations Framework Convention On Climate Change (Persetujuan Paris Atas Konve...",
+     "status": "berlaku",
+     "tanggal": "2016-10-24",
+     "ringkas": {
+      "id": "Pengesahan Persetujuan Paris.",
+      "en": "Ratification of the Paris Agreement."
+     },
+     "url": "https://peraturan.bpk.go.id/Details/37573"
+    }
+   ],
+   "catatan": {
+    "id": "Peraturan khusus perlindungan pekerja transisi tidak ditemukan di basis regulasi repo.",
+    "en": "No specific just-transition worker protection regulation was found in the repo regulation base."
+   }
+  },
+  "13": {
+   "tipe": "linimasa",
+   "sumber": [
+    "cpi",
+    "adb",
+    "batal",
+    "sa_us",
+    "ruhr_cew",
+    "jp_rusak",
+    "adb_tunda"
+   ],
+   "butir": [
+    {
+     "tanggal": "2018-12-21",
+     "judul": {
+      "id": "Tambang batu bara keras terakhir Jerman (Prosper Haniel, Bottrop) ditutup",
+      "en": "Germany's last hard coal mine (Prosper Haniel, Bottrop) closes"
+     },
+     "url": "https://www.cleanenergywire.org/news/germany-bids-farewell-domestic-hard-coal-mining"
+    },
+    {
+     "tanggal": "2022-11-14",
+     "judul": {
+      "id": "Indonesia dan ADB meluncurkan kesepakatan pensiun PLTU pertama (judul Al Jazeera)",
+      "en": "Indonesia and ADB launch the first coal plant retirement deal (Al Jazeera headline)"
+     },
+     "url": "https://www.aljazeera.com/economy/2022/11/14/indonesia-adb-launch-first-coal-power-plant-retirement-deal"
+    },
+    {
+     "tanggal": "2023-11-21",
+     "judul": {
+      "id": "CIPP JETP Indonesia diluncurkan",
+      "en": "JETP Indonesia CIPP launched"
+     },
+     "url": "https://www.climatepolicyinitiative.org/highlights-from-indonesias-jetp-comprehensive-investment-and-policy-plan/"
+    },
+    {
+     "tanggal": "2023-12-03",
+     "judul": {
+      "id": "ADB dan mitra menandatangani kerangka pensiun dini Cirebon-1 di COP28",
+      "en": "ADB and partners sign the Cirebon-1 early retirement framework at COP28"
+     },
+     "url": "https://www.adb.org/news/new-agreement-aims-retire-indonesia-660-mw-coal-plant-almost-7-years-early"
+    },
+    {
+     "tanggal": "2024-12-13",
+     "judul": {
+      "id": "ADB menggeser jadwal pendanaan penutupan PLTU pertama (judul)",
+      "en": "ADB pushes back the funding timeline for the first coal plant shutdown (headline)"
+     },
+     "url": "https://www.thejakartapost.com/business/2024/12/13/adb-moves-back-funding-timeline-for-first-coal-plant-shutdown"
+    },
+    {
+     "tanggal": "2025-03-06",
+     "judul": {
+      "id": "Afrika Selatan mengonfirmasi AS menarik komitmen JETP USD 1,5 miliar",
+      "en": "South Africa confirms the US withdrew its USD 1.5 billion JETP pledge"
+     },
+     "url": "https://www.engineeringnews.co.za/article/south-africa-confirms-us-withdrawl-of-15bn-just-energy-transition-partnership-pledge-2025-03-06"
+    },
+    {
+     "tanggal": "2025-12-05",
+     "judul": {
+      "id": "Airlangga mengonfirmasi pembatalan pensiun dini Cirebon-1",
+      "en": "Airlangga confirms cancellation of Cirebon-1 early retirement"
+     },
+     "url": "https://www.petromindo.com/news/article/airlangga-confirms-cirebon-1-early-retirement-canceled-adb-funds-to-be-shifted"
+    },
+    {
+     "tanggal": "2026-06-02",
+     "judul": {
+      "id": "The Conversation: JETP belum memensiunkan satu PLTU pun",
+      "en": "The Conversation: JETP has not retired a single plant"
+     },
+     "url": "https://www.thejakartapost.com/opinion/2026/06/05/the-broken-promise-of-coal-transition-finance"
+    }
+   ]
+  },
+  "14": {
+   "tipe": "teks",
+   "sumber": [
+    "cpi",
+    "jp_rusak"
+   ],
+   "paragraf": [
+    {
+     "id": "Insentif: hibah IPG sekitar USD 200 juta untuk kegiatan transisi berkeadilan (pengembangan kapasitas, studi, percontohan) dan Standard 9 CIPP untuk diversifikasi ekonomi (CPI). Kewajiban: tidak ada kewajiban pekerja khusus dalam sumber yang dibaca.",
+     "en": "Incentives: an IPG grant of about USD 200 million for just transition activities (capacity building, studies, pilots) and CIPP Standard 9 for economic diversification (CPI). Obligations: no specific worker obligations in the sources read."
+    },
+    {
+     "id": "Sebagian besar dana berupa pinjaman berharga komersial; Indonesia dapat membayar dua kali, sekali menutup PLTU dan sekali membeli listrik pengganti (The Conversation).",
+     "en": "Most funds are commercially priced loans; Indonesia may pay twice, once to close coal plants and again to buy replacement power (The Conversation)."
+    }
+   ]
+  },
+  "15": {
+   "tipe": "langkah",
+   "sumber": [
+    "adb",
+    "batal"
+   ],
+   "butir": [
+    {
+     "judul": {
+      "id": "Nota kerangka",
+      "en": "Framework agreement"
+     },
+     "isi": {
+      "id": "ADB, PLN, PT CEP, dan INA menandatangani kerangka tidak mengikat pada 3 Des 2023.",
+      "en": "ADB, PLN, PT CEP and INA signed a non-binding framework on 3 Dec 2023."
+     },
+     "pelaku": {
+      "id": "ADB, PLN, IPP, INA",
+      "en": "ADB, PLN, IPP, INA"
+     }
+    },
+    {
+     "judul": {
+      "id": "Uji tuntas",
+      "en": "Due diligence"
+     },
+     "isi": {
+      "id": "Kajian lingkungan, sosial, dan transisi berkeadilan serta dampak teknis dan finansial pada jaringan PLN.",
+      "en": "Environmental, social and just transition reviews and the technical and financial impact on PLN's grid."
+     },
+     "pelaku": {
+      "id": "ADB, PLN",
+      "en": "ADB, PLN"
+     }
+    },
+    {
+     "judul": {
+      "id": "Finalisasi pembiayaan",
+      "en": "Financing finalisation"
+     },
+     "isi": {
+      "id": "Target paruh pertama 2024; ADB melewatkan target kesepakatan akhir 2024.",
+      "en": "Targeted for H1 2024; ADB missed its end-2024 deal target."
+     },
+     "pelaku": {
+      "id": "ADB, mitra",
+      "en": "ADB, partners"
+     }
+    },
+    {
+     "judul": {
+      "id": "Hasil",
+      "en": "Outcome"
+     },
+     "isi": {
+      "id": "Dibatalkan 5 Des 2025; dana ETM akan dialihkan ke PLTU lain.",
+      "en": "Cancelled 5 Dec 2025; ETM funds to be redirected to another plant."
+     },
+     "pelaku": {
+      "id": "Pemerintah RI",
+      "en": "Government of Indonesia"
+     }
+    }
+   ]
+  },
+  "17": {
+   "tipe": "teks",
+   "sumber": [
+    "adb",
+    "cpi"
+   ],
+   "paragraf": [
+    {
+     "id": "Mekanisme pembiayaan: ETM ADB memakai modal konsesional dan komersial untuk memensiunkan atau mengalihfungsikan PLTU; CIPP mencantumkan jalur sektor listrik dengan 14.000 km sirkuit transmisi (hingga USD 19,7 miliar), 16,1 GW terbarukan terkendali (hingga USD 49,2 miliar), dan 40,4 GW terbarukan variabel (hingga USD 25,7 miliar) pada 2030.",
+     "en": "Financing mechanism: ADB's ETM uses concessional and commercial capital to retire or repurpose coal plants; the CIPP lists a power sector pathway with 14,000 km of transmission circuits (up to USD 19.7 billion), 16.1 GW of dispatchable renewables (up to USD 49.2 billion) and 40.4 GW of variable renewables (up to USD 25.7 billion) by 2030."
+    }
+   ]
+  },
+  "20": {
+   "tipe": "tabel",
+   "per": 6,
+   "sumber": [
+    "cpi",
+    "jp_rusak",
+    "sa_us",
+    "sa_ipg",
+    "ruhr_wri",
+    "ruhr_cew"
+   ],
+   "kolom": [
+    {
+     "k": "negara",
+     "l": {
+      "id": "Negara dan skema",
+      "en": "Country and scheme"
+     }
+    },
+    {
+     "k": "dana",
+     "l": {
+      "id": "Dana",
+      "en": "Funds"
+     }
+    },
+    {
+     "k": "hasil",
+     "l": {
+      "id": "Hasil atau status",
+      "en": "Result or status"
+     }
+    },
+    {
+     "k": "catatan",
+     "l": {
+      "id": "Catatan",
+      "en": "Note"
+     }
+    }
+   ],
+   "baris": [
+    {
+     "negara": "Indonesia: JETP",
+     "dana": {
+      "id": "USD 21,4 miliar komitmen; 2,6 persen hibah",
+      "en": "USD 21.4 billion pledged; 2.6 percent grants"
+     },
+     "hasil": {
+      "id": "Tidak ada PLTU dipensiunkan hingga Jun 2026",
+      "en": "No plant retired as of Jun 2026"
+     },
+     "catatan": {
+      "id": "Cirebon-1 dibatalkan Des 2025",
+      "en": "Cirebon-1 cancelled Dec 2025"
+     }
+    },
+    {
+     "negara": {
+      "id": "Afrika Selatan: JETP",
+      "en": "South Africa: JETP"
+     },
+     "dana": {
+      "id": "USD 8,5 miliar (2021); AS menarik komitmen (2025)",
+      "en": "USD 8.5 billion (2021); US withdrew pledge (2025)"
+     },
+     "hasil": {
+      "id": "Mitra lain tetap berkomitmen; hibah JET-IP USD 820 juta sebelum penarikan AS USD 56 juta",
+      "en": "Other partners remain committed; JET-IP grants of USD 820 million before the US withdrew USD 56 million"
+     },
+     "catatan": {
+      "id": "Pencairan terkini tidak ditemukan",
+      "en": "Latest disbursement not found"
+     }
+    },
+    {
+     "negara": "Jerman: Ruhr",
+     "dana": {
+      "id": "Subsidi hingga EUR 337 miliar 1970 sampai 2016 (FOS via Clean Energy Wire)",
+      "en": "Subsidies up to EUR 337 billion 1970 to 2016 (FOS via Clean Energy Wire)"
+     },
+     "hasil": {
+      "id": "Tambang terakhir tutup 2018; pekerja 479.000 (1955) menjadi 3.371 (2018)",
+      "en": "Last mine closed 2018; workers from 479,000 (1955) to 3,371 (2018)"
+     },
+     "catatan": {
+      "id": "Pengangguran kota-kota Ruhr masih sekitar dua kali rata-rata nasional (2018)",
+      "en": "Ruhr cities' unemployment still about double the national average (2018)"
+     }
+    }
+   ],
+   "catatan": {
+    "id": "Vietnam dan Senegal (JETP lain) tidak dibaca.",
+    "en": "Vietnam and Senegal (other JETPs) were not read."
+   }
+  },
+  "21": {
+   "tipe": "teks",
+   "sumber": [
+    "ruhr_wri",
+    "ruhr_cew",
+    "jp_rusak",
+    "ed"
+   ],
+   "paragraf": [
+    {
+     "id": "WRI menyimpulkan pelajaran Ruhr: kemitraan sosial kuat, pendekatan menyeluruh melampaui pelatihan ulang, investasi multi-level berkelanjutan, membangun dari aset yang ada, menghindari penguncian, dan mendukung semua perusahaan dan distrik. Perlawanan awal terhadap penurunan batu bara menaikkan biaya transisi.",
+     "en": "WRI's Ruhr lessons: strong social partnership, a holistic approach beyond retraining, sustained multi-level investment, building on existing assets, avoiding lock-in and supporting all firms and districts. Early resistance to coal decline raised transition costs."
+    },
+    {
+     "id": "Analisis METI (Hipotesis): Indonesia memulai dari sisi pembiayaan (JETP) tanpa pemetaan pekerja dan daerah, urutan terbalik dibanding Ruhr yang memulai dari kesepakatan sosial tripartit 2007.",
+     "en": "METI analysis (Hypothesis): Indonesia started on the financing side (JETP) without mapping workers and regions, the reverse order of the Ruhr, which began from a tripartite social agreement in 2007."
+    }
+   ]
+  },
+  "23": {
+   "tipe": "teks",
+   "sumber": [
+    "jp_rusak",
+    "sa_us",
+    "kat_pensiun"
+   ],
+   "paragraf": [
+    {
+     "id": "JETP didukung AS, Inggris, Jepang, dan Uni Eropa (The Conversation); AS menarik diri dari JETP Afrika Selatan pada 2025 dan, menurut utusan iklim Indonesia, belum mencairkan dolar pun (kutipan The Conversation). Katadata menyebut target pensiun 1,7 GW di bawah target Presiden Jokowi.",
+     "en": "JETP is backed by the US, UK, Japan and the EU (The Conversation); the US withdrew from South Africa's JETP in 2025 and, per Indonesia's climate envoy, had not disbursed a dollar (quoted by The Conversation). Katadata notes the 1.7 GW retirement target is below President Jokowi's target."
+    }
+   ]
+  },
+  "24": {
+   "tipe": "tabel",
+   "per": 8,
+   "sumber": [
+    "jp_rusak",
+    "ieefa",
+    "cpi",
+    "iesr_pekerja"
+   ],
+   "kolom": [
+    {
+     "k": "item",
+     "l": {
+      "id": "Ukuran",
+      "en": "Measure"
+     }
+    },
+    {
+     "k": "nilai",
+     "l": {
+      "id": "Nilai",
+      "en": "Value"
+     }
+    },
+    {
+     "k": "sumber",
+     "l": {
+      "id": "Sumber",
+      "en": "Source"
+     }
+    }
+   ],
+   "baris": [
+    {
+     "item": {
+      "id": "Kebutuhan investasi jalur listrik 2030",
+      "en": "Power pathway investment need 2030"
+     },
+     "nilai": "USD 97,1 miliar",
+     "sumber": "CPI"
+    },
+    {
+     "item": {
+      "id": "Celah pembiayaan setelah paket JETP",
+      "en": "Financing gap after the JETP package"
+     },
+     "nilai": {
+      "id": "sekitar 70 persen",
+      "en": "about 70 percent"
+     },
+     "sumber": "CPI"
+    },
+    {
+     "item": {
+      "id": "Pensiun dini dan penghentian bertahap (IFA 2)",
+      "en": "Early retirement and managed phase-out (IFA 2)"
+     },
+     "nilai": {
+      "id": "hingga USD 2,4 miliar",
+      "en": "up to USD 2.4 billion"
+     },
+     "sumber": "CPI"
+    },
+    {
+     "item": {
+      "id": "Hibah transisi berkeadilan IPG",
+      "en": "IPG just transition grant"
+     },
+     "nilai": {
+      "id": "sekitar USD 200 juta",
+      "en": "about USD 200 million"
+     },
+     "sumber": "CPI"
+    },
+    {
+     "item": {
+      "id": "Kompensasi dan pelatihan pekerja (hitungan IESR)",
+      "en": "Worker compensation and training (IESR calculation)"
+     },
+     "nilai": "Rp38,4 triliun (USD 2,4 miliar)",
+     "sumber": "Kompas, 1 Mei 2024"
+    },
+    {
+     "item": {
+      "id": "Komitmen JETP total (2026)",
+      "en": "Total JETP pledges (2026)"
+     },
+     "nilai": "USD 21,4 miliar",
+     "sumber": "The Conversation"
+    },
+    {
+     "item": {
+      "id": "Disetujui (Feb 2026)",
+      "en": "Approved (Feb 2026)"
+     },
+     "nilai": {
+      "id": "USD 3,1 miliar (14,5 persen)",
+      "en": "USD 3.1 billion (14.5 percent)"
+     },
+     "sumber": "IEEFA"
+    }
+   ]
+  },
+  "25": {
+   "tipe": "rumus",
+   "sumber": [
+    "batal",
+    "ed"
+   ],
+   "rumus": [
+    {
+     "id": "Ongkos penghentian lebih awal = Kompensasi PPA + Biaya pengganti kapasitas - Biaya yang dihindari",
+     "en": "Cost of earlier retirement = PPA compensation + Capacity replacement cost - Avoided cost"
+    }
+   ],
+   "contoh": [
+    {
+     "id": "Cirebon-1: kompensasi sekitar Rp60 triliun ditambah penggantian sekitar Rp130 triliun = sekitar Rp190 triliun sebelum biaya yang dihindari (EST; biaya bahan bakar dan emisi terhindar tidak dihitung di sumber).",
+     "en": "Cirebon-1: about IDR 60 trillion of compensation plus about IDR 130 trillion of replacement = about IDR 190 trillion before avoided costs (EST; avoided fuel and emission costs are not computed in the source)."
+    }
+   ]
+  },
+  "27": {
+   "tipe": "teks",
+   "sumber": [
+    "eco_buruh",
+    "bappenas",
+    "cpi"
+   ],
+   "paragraf": [
+    {
+     "id": "Kekhawatiran hak buruh dan kompensasi kerusakan lingkungan menyertai pensiun pertama (Eco-Business, judul). Standard 9 CIPP ditambahkan untuk diversifikasi ekonomi, dan kerangka transisi berkeadilan membangun dari pengamanan yang ada seperti AMDAL dan rencana pembebasan lahan (CPI).",
+     "en": "Concerns over labour rights and environmental compensation accompanied the first retirement (Eco-Business headline). CIPP Standard 9 was added for economic diversification, and the just transition framework builds on existing safeguards such as environmental impact assessments and land acquisition plans (CPI)."
+    }
+   ]
+  },
+  "28": {
+   "tipe": "teks",
+   "sumber": [
+    "iesr_pekerja",
+    "koaksi",
+    "green_net"
+   ],
+   "paragraf": [
+    {
+     "id": "Estimasi IESR: Rp38,4 triliun (USD 2,4 miliar) untuk kompensasi dan pelatihan pekerja batu bara terdampak; jumlah pekerja dan metodologi tidak dirinci di artikel. Koaksi menyatakan belum ada pemetaan holistik pekerja PLTU dan tambang. Kajian lain menyebut sekitar 4.666 pekerja langsung di tiga PLTU.",
+     "en": "IESR estimate: IDR 38.4 trillion (USD 2.4 billion) for compensation and training of affected coal workers; worker numbers and methodology are not detailed in the article. Koaksi says there is no holistic mapping of power plant and mining workers. Another study cites about 4,666 direct workers at three plants."
+    },
+    {
+     "id": "Pelatihan dan sertifikasi green jobs: Kompas (13 Okt 2025) melaporkan Menteri Ketenagakerjaan perlu memetakan green jobs (judul).",
+     "en": "Training and green-jobs certification: Kompas (13 Oct 2025) reported the Manpower Minister needs to map green jobs (headline)."
+    }
+   ]
+  },
+  "29": {
+   "tipe": "teks",
+   "sumber": [
+    "hashim",
+    "batal",
+    "jp_rusak"
+   ],
+   "paragraf": [
+    {
+     "id": "Satu sisi: Utusan Khusus Presiden Hashim Djojohadikusumo menyatakan Indonesia tidak akan menghentikan batu bara (sepekan sebelum 5 Des 2025), dan PLN memilih phase-down di akhir PPA. Sisi lain: The Conversation menilai JETP belum memensiunkan satu PLTU pun dan membebani Indonesia membayar dua kali.",
+     "en": "One side: the President's Special Envoy Hashim Djojohadikusumo said Indonesia will not phase out coal (the week before 5 Dec 2025), and PLN prefers phase-down at PPA end. The other: The Conversation says JETP has not retired a single plant and burdens Indonesia with paying twice."
+    },
+    {
+     "id": "Perdebatan Cirebon-1: pemerintah menilai pabrik berteknologi superkritikal lebih bersih dan umurnya panjang; ADB menekankan menutup pabrik yang lebih tua dan lebih kotor. Airlangga menyatakan pencarian pabrik yang lebih tua dengan dampak lingkungan lebih besar.",
+     "en": "The Cirebon-1 debate: the government sees the supercritical plant as cleaner with a long remaining life, and Airlangga said an older plant with a larger environmental impact is being sought as the replacement."
+    }
+   ]
+  },
+  "30": {
+   "tipe": "tabel",
+   "per": 8,
+   "sumber": [
+    "cpi",
+    "reuters",
+    "kabar"
+   ],
+   "kolom": [
+    {
+     "k": "item",
+     "l": {
+      "id": "Sasaran",
+      "en": "Target"
+     }
+    },
+    {
+     "k": "nilai",
+     "l": {
+      "id": "Nilai",
+      "en": "Value"
+     }
+    },
+    {
+     "k": "tahun",
+     "l": {
+      "id": "Tahun",
+      "en": "Year"
+     }
+    }
+   ],
+   "baris": [
+    {
+     "item": {
+      "id": "Emisi sektor listrik (puncak maksimum)",
+      "en": "Power sector emissions (maximum peak)"
+     },
+     "nilai": "250 Mt",
+     "tahun": "2030"
+    },
+    {
+     "item": {
+      "id": "Pangsa EBT pembangkitan",
+      "en": "Renewable share of generation"
+     },
+     "nilai": {
+      "id": "44 persen",
+      "en": "44 percent"
+     },
+     "tahun": "2030"
+    },
+    {
+     "item": {
+      "id": "Pensiun dini dibiayai JETP",
+      "en": "Early retirement financed by JETP"
+     },
+     "nilai": "1,7 GW",
+     "tahun": {
+      "id": "hingga 2040 (Reuters)",
+      "en": "to 2040 (Reuters)"
+     }
+    },
+    {
+     "item": {
+      "id": "Pensiun dimulai (menurut Katadata)",
+      "en": "Retirement starts (per Katadata)"
+     },
+     "nilai": "-",
+     "tahun": "2035"
+    },
+    {
+     "item": {
+      "id": "Sektor listrik nol bersih",
+      "en": "Power sector net zero"
+     },
+     "nilai": "-",
+     "tahun": "2050"
+    },
+    {
+     "item": {
+      "id": "EBT dalam bauran energi",
+      "en": "Renewables in the energy mix"
+     },
+     "nilai": {
+      "id": "70 sampai 72 persen",
+      "en": "70 to 72 percent"
+     },
+     "tahun": "2060"
+    }
+   ],
+   "catatan": {
+    "id": "CIPP 2023 hanya mencakup emisi listrik terhubung jaringan; pembangkit captive tidak termasuk.",
+    "en": "The 2023 CIPP covers only grid-connected power emissions; captive power is excluded."
+   }
+  },
+  "31": {
+   "tipe": "teks",
+   "sumber": [
+    "ed"
+   ],
+   "paragraf": [
+    {
+     "id": "Analisis METI (Hipotesis): pengembang dan investor: portofolio JETP yang disetujui (Muara Laboh, Saguling) menunjukkan jalur pendanaan nyata bagi proyek terbarukan siap bangun, bukan bagi pensiun PLTU.",
+     "en": "METI analysis (Hypothesis): developers and investors: the approved JETP portfolio (Muara Laboh, Saguling) shows a real funding path for shovel-ready renewable projects, not for coal retirement."
+    },
+    {
+     "id": "Analisis METI (Hipotesis): pemda dan akademisi: pemetaan pekerja dan pendapatan daerah penghasil adalah celah yang bisa diisi; pelatihan sertifikasi pekerja PLTU menjadi peluang lembaga pelatihan.",
+     "en": "METI analysis (Hypothesis): local governments and academics: mapping workers and producing-region revenue is a gap that can be filled; certification training for plant workers is an opportunity for training bodies."
+    }
+   ]
+  },
+  "32": {
+   "tipe": "teks",
+   "sumber": [
+    "batal",
+    "ieefa"
+   ],
+   "paragraf": [
+    {
+     "id": "PLTU pengganti Cirebon-1 dalam jalur ETM dan daftar kandidat PLN.",
+     "en": "The replacement for Cirebon-1 in the ETM pipeline and PLN's candidate list."
+    },
+    {
+     "id": "Angka disetujui dan tersalur JETP berikutnya dari IEEFA, Sekretariat JETP, dan pemerintah.",
+     "en": "Next JETP approved and disbursed figures from IEEFA, the Secretariat and the government."
+    },
+    {
+     "id": "Pemetaan pekerja oleh Kementerian Ketenagakerjaan dan pembaruan CIPP.",
+     "en": "Worker mapping by the Manpower Ministry and any CIPP update."
+    }
+   ]
+  },
+  "36": {
+   "tipe": "tabel",
+   "per": 6,
+   "sumber": [
+    "cpi",
+    "jp_rusak",
+    "ruhr_wri"
+   ],
+   "kolom": [
+    {
+     "k": "judul",
+     "l": {
+      "id": "Dokumen",
+      "en": "Document"
+     },
+     "url": "url"
+    },
+    {
+     "k": "penerbit",
+     "l": {
+      "id": "Penerbit",
+      "en": "Publisher"
+     }
+    },
+    {
+     "k": "mengapa",
+     "l": {
+      "id": "Mengapa dibaca",
+      "en": "Why read it"
+     }
+    }
+   ],
+   "baris": [
+    {
+     "judul": "Highlights from Indonesia's JETP CIPP",
+     "penerbit": "Climate Policy Initiative",
+     "url": "https://www.climatepolicyinitiative.org/highlights-from-indonesias-jetp-comprehensive-investment-and-policy-plan/",
+     "mengapa": {
+      "id": "Ringkasan angka CIPP",
+      "en": "Summary of CIPP figures"
+     }
+    },
+    {
+     "judul": "The broken promise of coal transition finance",
+     "penerbit": "The Jakarta Post / The Conversation",
+     "url": "https://www.thejakartapost.com/opinion/2026/06/05/the-broken-promise-of-coal-transition-finance",
+     "mengapa": {
+      "id": "Kritik atas pencairan JETP",
+      "en": "Critique of JETP disbursement"
+     }
+    },
+    {
+     "judul": "Germany: The Ruhr Region's pivot",
+     "penerbit": "WRI",
+     "url": "https://www.wri.org/just-transitions/germany-ruhr-region",
+     "mengapa": {
+      "id": "Pelajaran transisi pekerja",
+      "en": "Worker transition lessons"
+     }
+    }
+   ]
+  },
+  "38": {
+   "tipe": "teks",
+   "sumber": [
+    "ed",
+    "cpi",
+    "jp_rusak"
+   ],
+   "paragraf": [
+    {
+     "id": "Sumber: CPI, ADB, Petromindo, Kompas, Republika, Clean Energy Wire, WRI, dan ringkasan hasil pencarian atas laporan lain, dibaca 8 Nov 2026. Tabel proyek JETP dari berkas repo jetp_cipp.json. Halaman IEEFA menolak baca penuh (403) sehingga angkanya dari ringkasan hasil pencarian.",
+     "en": "Sources: CPI, ADB, Petromindo, Kompas, Republika, Clean Energy Wire, WRI and search summaries of other reports, read on 8 Nov 2026. The JETP project table comes from the repo file jetp_cipp.json. The IEEFA page refused a full read (403) so its figures come from search summaries."
+    },
+    {
+     "id": "Batas: tidak ada data pekerja tambang per provinsi, tidak ada dashboard JETP terkini, dan hasil akhir Afrika Selatan tidak dibaca. EST berarti hitung sendiri; Hipotesis berarti sintesis METI.",
+     "en": "Limits: no mine worker data per province, no current JETP dashboard and no South Africa end results read. EST means self-derived; Hypothesis means METI synthesis."
+    }
+   ]
+  },
+  "39": {
+   "tipe": "kasus",
+   "sumber": [
+    "ruhr_cew",
+    "ruhr_wri"
+   ],
+   "catatan": {
+    "id": "Satu kasus berhasil yang bersumber (Ruhr). Tidak ada pensiun PLTU berhasil di Indonesia; Afrika Selatan dimasukkan sebagai kasus mundur di bab 40.",
+    "en": "One sourced success (the Ruhr). There is no successful coal plant retirement in Indonesia; South Africa is covered as a setback in chapter 40."
+   },
+   "butir": [
+    {
+     "id": "ruhr",
+     "nama": "Penutupan tambang batu bara keras Ruhr",
+     "jenis": "berhasil",
+     "negara": "DE",
+     "lokasi": {
+      "id": "Ruhr, Nordrhein-Westfalen, Jerman",
+      "en": "Ruhr, North Rhine-Westphalia, Germany"
+     },
+     "profil": [
+      {
+       "label": {
+        "id": "Tambang terakhir",
+        "en": "Last mine"
+       },
+       "nilai": "Prosper Haniel, Bottrop, ditutup 21 Des 2018"
+      },
+      {
+       "label": {
+        "id": "Kesepakatan sosial",
+        "en": "Social agreement"
+       },
+       "nilai": "Kesepakatan tripartit 2007"
+      }
+     ],
+     "tindakan": [
+      {
+       "id": "Pemerintah negara bagian, industri, dan serikat menyepakati penutupan bertahap 2007 dengan pensiun dini bagi penambang, pelatihan ulang, dan alih tugas.",
+       "en": "The state government, industry and unions agreed a phased closure in 2007 with early retirement for miners, retraining and transfers."
+      }
+     ],
+     "sebab": [
+      {
+       "id": "Kemitraan sosial yang kuat, pendekatan menyeluruh melampaui pelatihan ulang, investasi publik berlapis, dan membangun dari aset yang ada (WRI).",
+       "en": "Strong social partnership, a holistic approach beyond retraining, layered public investment and building on existing assets (WRI)."
+      }
+     ],
+     "angka": [
+      {
+       "label": {
+        "id": "Pekerja tambang 1955",
+        "en": "Mine workers 1955"
+       },
+       "nilai": 479000,
+       "d": 0,
+       "satuan": "orang",
+       "sumber": "ruhr_wri",
+       "est": false
+      },
+      {
+       "label": {
+        "id": "Pekerja tambang 2018",
+        "en": "Mine workers 2018"
+       },
+       "nilai": 3371,
+       "d": 0,
+       "satuan": "orang",
+       "sumber": "ruhr_wri",
+       "est": false
+      },
+      {
+       "label": {
+        "id": "Subsidi 1970 sampai 2016 (hingga)",
+        "en": "Subsidies 1970 to 2016 (up to)"
+       },
+       "nilai": 337,
+       "d": 0,
+       "satuan": "miliar EUR",
+       "sumber": "ruhr_cew",
+       "est": false
+      }
+     ],
+     "pelajaran": [
+      {
+       "id": "Transisi tuntas dalam satu generasi bila ada kesepakatan sosial dan dana panjang; hasil tidak merata: pengangguran Duisburg, Essen, Gelsenkirchen, dan Dortmund masih sekitar dua kali rata-rata nasional (2018).",
+       "en": "A transition can be completed within a generation with a social agreement and long funding; results are uneven: unemployment in Duisburg, Essen, Gelsenkirchen and Dortmund was still about double the national average (2018)."
+      }
+     ],
+     "kronologi": [
+      {
+       "tanggal": "2007-01-01",
+       "teks": {
+        "id": "Kesepakatan tripartit menetapkan akhir 2018 (tahun 2007).",
+        "en": "A tripartite deal sets the 2018 end date (year 2007)."
+       }
+      },
+      {
+       "tanggal": "2018-12-21",
+       "teks": {
+        "id": "Tambang terakhir ditutup.",
+        "en": "The last mine closes."
+       }
+      }
+     ],
+     "faktor": {
+      "kesepakatan_sosial": true,
+      "pendanaan_panjang": true,
+      "pemetaan_pekerja": true,
+      "kepastian_kebijakan": true
+     },
+     "sumber": [
+      "ruhr_wri",
+      "ruhr_cew"
+     ]
+    }
+   ]
+  },
+  "40": {
+   "tipe": "kasus",
+   "sumber": [
+    "adb",
+    "batal",
+    "adb_tunda",
+    "jp_rusak",
+    "ieefa",
+    "sa_us",
+    "sa_ipg"
+   ],
+   "catatan": {
+    "id": "Hak jawab: pihak yang disebut (ADB, PLN, Kemenko Perekonomian, Sekretariat JETP) dapat mengirim koreksi lewat formulir koreksi platform.",
+    "en": "Right of reply: named parties (ADB, PLN, the Economic Coordinating Ministry, the JETP Secretariat) can send corrections through the platform correction form."
+   },
+   "butir": [
+    {
+     "id": "cirebon1",
+     "nama": "Pensiun dini PLTU Cirebon-1 (ETM ADB)",
+     "jenis": "dibatalkan",
+     "negara": "ID",
+     "lokasi": {
+      "id": "Cirebon, Jawa Barat",
+      "en": "Cirebon, West Java"
+     },
+     "profil": [
+      {
+       "label": {
+        "id": "Kapasitas",
+        "en": "Capacity"
+       },
+       "nilai": 660,
+       "satuan": "MW"
+      },
+      {
+       "label": {
+        "id": "Beroperasi sejak",
+        "en": "Operating since"
+       },
+       "nilai": 2012
+      },
+      {
+       "label": {
+        "id": "PPA berakhir semula",
+        "en": "Original PPA end"
+       },
+       "nilai": "Jul 2042"
+      },
+      {
+       "label": {
+        "id": "PPA berakhir direncanakan",
+        "en": "Planned PPA end"
+       },
+       "nilai": "Des 2035"
+      }
+     ],
+     "sebab": [
+      {
+       "id": "PLN merekomendasikan pembatalan karena penalti PPA tinggi dan investasi pengganti besar; pemerintah menilai pabrik superkritikal lebih bersih dan umurnya masih panjang (Petromindo, 5 Des 2025).",
+       "en": "PLN recommended cancellation because of high PPA penalties and large replacement investment; the government sees the supercritical plant as cleaner with a long remaining life (Petromindo, 5 Dec 2025)."
+      }
+     ],
+     "angka": [
+      {
+       "label": {
+        "id": "Kompensasi bila dipercepat lima tahun",
+        "en": "Compensation for five years of acceleration"
+       },
+       "nilai": 60,
+       "d": 0,
+       "satuan": "triliun Rp",
+       "sumber": "batal",
+       "est": false
+      },
+      {
+       "label": {
+        "id": "Pengganti surya dan baterai (minimum)",
+        "en": "Solar and storage replacement (minimum)"
+       },
+       "nilai": 3600,
+       "d": 0,
+       "satuan": "MW",
+       "sumber": "batal",
+       "est": false
+      },
+      {
+       "label": {
+        "id": "Biaya pengganti total",
+        "en": "Total replacement cost"
+       },
+       "nilai": 130,
+       "d": 0,
+       "satuan": "triliun Rp",
+       "sumber": "batal",
+       "est": false
+      }
+     ],
+     "pelajaran": [],
+     "kronologi": [
+      {
+       "tanggal": "2022-11-14",
+       "teks": {
+        "id": "Indonesia dan ADB meluncurkan kesepakatan pensiun PLTU pertama.",
+        "en": "Indonesia and ADB launch the first coal retirement deal."
+       }
+      },
+      {
+       "tanggal": "2023-12-03",
+       "teks": {
+        "id": "Kerangka tidak mengikat ditandatangani di COP28.",
+        "en": "Non-binding framework signed at COP28."
+       }
+      },
+      {
+       "tanggal": "2024-12-13",
+       "teks": {
+        "id": "ADB menggeser jadwal pendanaan (judul).",
+        "en": "ADB pushes back the funding timeline (headline)."
+       }
+      },
+      {
+       "tanggal": "2025-12-05",
+       "teks": {
+        "id": "Pembatalan dikonfirmasi; dana dialihkan.",
+        "en": "Cancellation confirmed; funds redirected."
+       }
+      }
+     ],
+     "terdampak": {
+      "id": "Pekerja PLTU (setidaknya 14.000 lapangan kerja terkait Cirebon-1 dan Pelabuhan Ratu menurut satu kajian), PLN, dan pembiaya ETM.",
+      "en": "Plant workers (at least 14,000 livelihoods linked to Cirebon-1 and Pelabuhan Ratu per one study), PLN and ETM financiers."
+     },
+     "seharusnya": {
+      "id": "Analisis METI (Hipotesis): selesaikan perhitungan penalti PPA dan biaya pengganti sebelum meluncurkan kesepakatan publik, serta libatkan pekerja sejak kerangka.",
+      "en": "METI analysis (Hypothesis): complete the PPA penalty and replacement cost calculation before a public launch, and involve workers from the framework stage."
+     },
+     "tanda_bahaya": [
+      {
+       "id": "Target penutupan keuangan bergeser dari akhir 2024",
+       "en": "The financial close target slipping from end-2024"
+      },
+      {
+       "id": "Penalti PPA belum dihitung terbuka",
+       "en": "PPA penalties not openly costed"
+      }
+     ],
+     "faktor": {
+      "kesepakatan_sosial": false,
+      "pendanaan_panjang": false,
+      "pemetaan_pekerja": false,
+      "kepastian_kebijakan": false
+     },
+     "sumber": [
+      "adb",
+      "batal",
+      "adb_tunda",
+      "eco_buruh"
+     ],
+     "hak_jawab": true
+    },
+    {
+     "id": "jetp-id",
+     "nama": "Pencairan JETP Indonesia lambat",
+     "jenis": "mundur",
+     "negara": "ID",
+     "lokasi": {
+      "id": "Nasional",
+      "en": "National"
+     },
+     "sebab": [
+      {
+       "id": "Sekretariat JETP menyebut tantangan utama adalah terbatasnya proyek siap dibiayai; kritik menunjuk dominasi pinjaman (hanya 2,6 persen hibah) dan sekitar 50 paket pendanaan dengan akuntansi berbeda (The Conversation; IEEFA).",
+       "en": "The JETP Secretariat cites the main challenge as few projects ready for financing; critics point to loan dominance (only 2.6 percent grants) and about 50 funding packages with different accounting (The Conversation; IEEFA)."
+      }
+     ],
+     "angka": [
+      {
+       "label": {
+        "id": "Komitmen",
+        "en": "Pledged"
+       },
+       "nilai": 21.4,
+       "d": 1,
+       "satuan": "miliar USD",
+       "sumber": "jp_rusak",
+       "est": false
+      },
+      {
+       "label": {
+        "id": "Disetujui (Feb 2026)",
+        "en": "Approved (Feb 2026)"
+       },
+       "nilai": 3.1,
+       "d": 1,
+       "satuan": "miliar USD",
+       "sumber": "ieefa",
+       "est": false
+      },
+      {
+       "label": {
+        "id": "Tersalur publik awal 2025",
+        "en": "Public disbursed early 2025"
+       },
+       "nilai": 1.1,
+       "d": 1,
+       "satuan": "miliar USD",
+       "sumber": "jp_rusak",
+       "est": false
+      }
+     ],
+     "pelajaran": [],
+     "kronologi": [
+      {
+       "tanggal": "2023-11-21",
+       "teks": {
+        "id": "CIPP diluncurkan.",
+        "en": "CIPP launched."
+       }
+      },
+      {
+       "tanggal": "2025-12-05",
+       "teks": {
+        "id": "Cirebon-1 dibatalkan.",
+        "en": "Cirebon-1 cancelled."
+       }
+      },
+      {
+       "tanggal": "2026-06-02",
+       "teks": {
+        "id": "The Conversation: belum ada PLTU dipensiunkan.",
+        "en": "The Conversation: no plant retired yet."
+       }
+      }
+     ],
+     "terdampak": {
+      "id": "Pengembang yang menunggu pendanaan dan pekerja yang menunggu program transisi.",
+      "en": "Developers awaiting finance and workers awaiting transition programmes."
+     },
+     "seharusnya": {
+      "id": "Analisis METI (Hipotesis): siapkan lumbung proyek siap dibiayai dan satu kerangka akuntansi pendanaan sebelum mengumumkan angka komitmen.",
+      "en": "METI analysis (Hypothesis): build a pipeline of financeable projects and one funding accounting framework before announcing pledge figures."
+     },
+     "tanda_bahaya": [
+      {
+       "id": "Selisih besar antara komitmen dan persetujuan",
+       "en": "A large gap between pledges and approvals"
+      },
+      {
+       "id": "Banyak paket dengan instrumen berbeda",
+       "en": "Many packages with different instruments"
+      }
+     ],
+     "faktor": {
+      "kesepakatan_sosial": false,
+      "pendanaan_panjang": false,
+      "pemetaan_pekerja": false,
+      "kepastian_kebijakan": false
+     },
+     "sumber": [
+      "jp_rusak",
+      "ieefa"
+     ],
+     "hak_jawab": true
+    },
+    {
+     "id": "sa-as",
+     "nama": "JETP Afrika Selatan: AS menarik diri",
+     "jenis": "mundur",
+     "negara": "ZA",
+     "lokasi": {
+      "id": "Afrika Selatan",
+      "en": "South Africa"
+     },
+     "sebab": [
+      {
+       "id": "AS memberitahu penarikan pada 28 Feb 2025 mengacu pada perintah eksekutif Januari dan Februari 2025; komitmen turun dari USD 13,8 miliar menjadi USD 12,8 miliar dan hibah USD 56 juta dibatalkan (Engineering News; Business Report).",
+       "en": "The US gave notice of withdrawal on 28 Feb 2025 citing January and February 2025 executive orders; pledges fell from USD 13.8 billion to USD 12.8 billion and USD 56 million of grants were cancelled (Engineering News; Business Report)."
+      }
+     ],
+     "angka": [
+      {
+       "label": {
+        "id": "Komitmen awal 2021",
+        "en": "Initial pledge 2021"
+       },
+       "nilai": 8.5,
+       "d": 1,
+       "satuan": "miliar USD",
+       "sumber": "sa_us",
+       "est": false
+      },
+      {
+       "label": {
+        "id": "Hibah JET-IP sebelum penarikan",
+        "en": "JET-IP grants before the withdrawal"
+       },
+       "nilai": 820,
+       "d": 0,
+       "satuan": "juta USD",
+       "sumber": "sa_ipg",
+       "est": false
+      }
+     ],
+     "pelajaran": [],
+     "kronologi": [
+      {
+       "tanggal": "2025-02-28",
+       "teks": {
+        "id": "Kedutaan AS menyampaikan penarikan.",
+        "en": "The US embassy gives notice of withdrawal."
+       }
+      },
+      {
+       "tanggal": "2025-03-06",
+       "teks": {
+        "id": "Afrika Selatan mengonfirmasi penarikan USD 1,5 miliar.",
+        "en": "South Africa confirms the USD 1.5 billion withdrawal."
+       }
+      }
+     ],
+     "terdampak": {
+      "id": "Proyek hibah yang dibatalkan dan pemerintah daerah seperti Kouga yang kini mencari pendanaan lain.",
+      "en": "Cancelled grant projects and municipalities like Kouga now seeking other funding."
+     },
+     "seharusnya": {
+      "id": "Analisis METI (Hipotesis): diversifikasi mitra dan hindari ketergantungan pada satu pemberi komitmen utama.",
+      "en": "METI analysis (Hypothesis): diversify partners and avoid dependence on one major pledger."
+     },
+     "tanda_bahaya": [
+      {
+       "id": "Satu mitra memegang porsi besar komitmen",
+       "en": "One partner holding a large share of pledges"
+      },
+      {
+       "id": "Perubahan pemerintahan mitra",
+       "en": "A change of government in the partner country"
+      }
+     ],
+     "faktor": {
+      "kesepakatan_sosial": true,
+      "pendanaan_panjang": false,
+      "pemetaan_pekerja": false,
+      "kepastian_kebijakan": false
+     },
+     "sumber": [
+      "sa_us",
+      "sa_ipg"
+     ],
+     "hak_jawab": true
+    }
+   ]
+  },
+  "41": {
+   "tipe": "pola",
+   "sumber": [
+    "ed"
+   ],
+   "catatan": {
+    "id": "Sel dibangun dari bendera faktor tiap kasus; pemetaan adalah analisis METI (Hipotesis) atas fakta di bab 39 dan 40.",
+    "en": "Cells are built from case factor flags; the mapping is METI analysis (Hypothesis) of facts in chapters 39 and 40."
+   },
+   "faktor": [
+    {
+     "k": "kesepakatan_sosial",
+     "l": {
+      "id": "Kesepakatan sosial dengan pekerja",
+      "en": "Social agreement with workers"
+     }
+    },
+    {
+     "k": "pendanaan_panjang",
+     "l": {
+      "id": "Pendanaan panjang dan pasti",
+      "en": "Long, certain funding"
+     }
+    },
+    {
+     "k": "pemetaan_pekerja",
+     "l": {
+      "id": "Pemetaan pekerja dan daerah",
+      "en": "Mapping of workers and regions"
+     }
+    },
+    {
+     "k": "kepastian_kebijakan",
+     "l": {
+      "id": "Kepastian kebijakan dan hitungan biaya",
+      "en": "Policy certainty and costing"
+     }
+    }
+   ]
+  },
+  "42": {
+   "tipe": "periksa",
+   "sumber": [
+    "ed"
+   ],
+   "peran": [
+    {
+     "k": "pengembang",
+     "l": {
+      "id": "Pengembang dan pemilik PLTU",
+      "en": "Developers and plant owners"
+     }
+    },
+    {
+     "k": "investor",
+     "l": {
+      "id": "Investor dan pembiaya",
+      "en": "Investors and financiers"
+     }
+    },
+    {
+     "k": "pemda",
+     "l": {
+      "id": "Pemerintah daerah",
+      "en": "Local government"
+     }
+    },
+    {
+     "k": "pusat",
+     "l": {
+      "id": "Pemerintah pusat",
+      "en": "Central government"
+     }
+    },
+    {
+     "k": "pln",
+     "l": {
+      "id": "PLN",
+      "en": "PLN"
+     }
+    },
+    {
+     "k": "meti",
+     "l": {
+      "id": "METI",
+      "en": "METI"
+     }
+    }
+   ],
+   "tahap": [
+    {
+     "k": "lokasi",
+     "l": {
+      "id": "Pemetaan",
+      "en": "Mapping"
+     }
+    },
+    {
+     "k": "izin",
+     "l": {
+      "id": "Persiapan kebijakan",
+      "en": "Policy preparation"
+     }
+    },
+    {
+     "k": "ppa",
+     "l": {
+      "id": "Kesepakatan PPA",
+      "en": "PPA agreement"
+     }
+    },
+    {
+     "k": "dana",
+     "l": {
+      "id": "Pendanaan",
+      "en": "Financing"
+     }
+    },
+    {
+     "k": "bangun",
+     "l": {
+      "id": "Pelaksanaan",
+      "en": "Implementation"
+     }
+    },
+    {
+     "k": "operasi",
+     "l": {
+      "id": "Pemantauan",
+      "en": "Monitoring"
+     }
+    }
+   ],
+   "butir": [
+    {
+     "peran": "pusat",
+     "tahap": "lokasi",
+     "teks": {
+      "id": "Petakan pekerja PLTU dan tambang serta pendapatan daerah per kabupaten sebelum mengumumkan target pensiun.",
+      "en": "Map power plant and mine workers and regional revenue per district before announcing retirement targets."
+     },
+     "dasar": "koaksi"
+    },
+    {
+     "peran": "pusat",
+     "tahap": "izin",
+     "teks": {
+      "id": "Hitung terbuka penalti PPA dan biaya pengganti, bukan hanya biaya penutupan.",
+      "en": "Cost PPA penalties and replacement openly, not just closure cost."
+     },
+     "dasar": "batal"
+    },
+    {
+     "peran": "pusat",
+     "tahap": "dana",
+     "teks": {
+      "id": "Susun satu kerangka akuntansi untuk semua paket pendanaan dan siapkan lumbung proyek siap dibiayai.",
+      "en": "Set one accounting framework for all funding packages and build a pipeline of financeable projects."
+     },
+     "dasar": "jp_rusak"
+    },
+    {
+     "peran": "pln",
+     "tahap": "ppa",
+     "teks": {
+      "id": "Bahas opsi phase-down di akhir PPA dan pensiun dini dengan angka kompensasi terbuka.",
+      "en": "Discuss phase-down at PPA end and early retirement with open compensation figures."
+     },
+     "dasar": "batal"
+    },
+    {
+     "peran": "pengembang",
+     "tahap": "ppa",
+     "teks": {
+      "id": "Libatkan pekerja dan serikat sejak kerangka kesepakatan, bukan setelah.",
+      "en": "Involve workers and unions from the framework stage, not after."
+     },
+     "dasar": "eco_buruh"
+    },
+    {
+     "peran": "investor",
+     "tahap": "dana",
+     "teks": {
+      "id": "Cek porsi hibah dan pinjaman; hanya 2,6 persen komitmen JETP berupa hibah bebas bunga.",
+      "en": "Check the grant and loan split; only 2.6 percent of JETP pledges are interest-free grants."
+     },
+     "dasar": "jp_rusak"
+    },
+    {
+     "peran": "pemda",
+     "tahap": "lokasi",
+     "teks": {
+      "id": "Siapkan rencana diversifikasi ekonomi daerah penghasil sebelum penutupan (Standard 9).",
+      "en": "Prepare an economic diversification plan for producing regions before closure (Standard 9)."
+     },
+     "dasar": "cpi"
+    },
+    {
+     "peran": "pemda",
+     "tahap": "operasi",
+     "teks": {
+      "id": "Pantau pengangguran dan pendapatan daerah setelah penutupan; Ruhr masih punya pengangguran dua kali rata-rata satu generasi kemudian.",
+      "en": "Monitor unemployment and regional revenue after closure; the Ruhr still had double-average unemployment a generation later."
+     },
+     "dasar": "ruhr_cew"
+    },
+    {
+     "peran": "meti",
+     "tahap": "operasi",
+     "teks": {
+      "id": "Pantau angka disetujui dan tersalur JETP dan beri ruang hak jawab bagi pihak yang disebut.",
+      "en": "Track JETP approved and disbursed figures and give named parties a right of reply."
+     },
+     "dasar": "ieefa"
+    }
+   ]
+  }
+ }
+}

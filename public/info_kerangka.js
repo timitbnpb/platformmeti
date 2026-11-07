@@ -59,7 +59,7 @@ export function tabel(akar, { kolom, baris, per = 10, satuan = "jm.pag.u.data", 
   const gambar = () => {
     const a = susun(), mulai = (st.hal - 1) * per;
     const th = `<th class="jm-tengah" data-urut="tidak">${esc(tt("tabel.no"))}</th>` + kolom.map((c) => `<th aria-sort="${st.k === c.k ? (st.arah > 0 ? "ascending" : "descending") : "none"}"><button type="button" class="jm-urut" data-kol="${esc(c.k)}">${esc(c.label)}</button></th>`).join("");
-    const tr = a.slice(mulai, mulai + per).map((r, i) => `<tr><td class="jm-tengah" data-label="${esc(tt("tabel.no"))}">${num(mulai + i + 1)}</td>${kolom.map((c) => `<td data-label="${esc(c.label)}"${c.num ? ' class="jm-num"' : c.tengah ? ' class="jm-tengah"' : ""}>${c.f ? c.f(r) : esc(c.v(r) ?? "-")}</td>`).join("")}</tr>`).join("");
+    const tr = a.slice(mulai, mulai + per).map((r, i) => `<tr><td class="jm-tengah" data-label="${esc(tt("tabel.no"))}">${num(mulai + i + 1)}</td>${kolom.map((c) => `<td data-label="${esc(c.label)}"${c.num ? ' class="jm-num"' : c.tengah ? ' class="jm-tengah"' : ""}><span>${c.f ? c.f(r) : esc(c.v(r) ?? "-")}</span></td>`).join("")}</tr>`).join("");
     akar.innerHTML = `<div class="jm-gulir"><table class="jm-tabel" data-urut="tidak" aria-label="${esc(label)}"><thead><tr>${th}</tr></thead><tbody>${tr}</tbody></table></div>${paginasiHtml({ hal: st.hal, total: a.length, per, satuan })}`;
   };
   akar.addEventListener("click", (e) => {

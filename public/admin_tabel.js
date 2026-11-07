@@ -16,7 +16,7 @@ export function pasangTabel(el, { kolom, baris, per = 10, kosong = "sta.kosong",
       return ((x === null) - (y === null)) || (typeof x === "number" && typeof y === "number" ? x - y : String(x).localeCompare(String(y), "id", { numeric: true })) * S.arah;
     });
     const dari = (S.hal - 1) * per, tampil = isi.slice(dari, dari + per);
-    el.innerHTML = `<div class="jm-gulir"><table class="jm-tabel" data-urut-terpasang="1"><thead><tr>${kolom.map((x) => `<th scope="col"${x.num ? ' class="jm-num"' : ""} aria-sort="${S.k === x.k ? (S.arah > 0 ? "ascending" : "descending") : "none"}"><button type="button" class="jm-urut" data-u="${esc(x.k)}">${esc(x.judul)}</button></th>`).join("")}</tr></thead>
+    el.innerHTML = `<div class="jm-gulir"><table class="jm-tabel" data-urut-terpasang="1"><thead><tr>${kolom.map((x) => `<th scope="col"${x.num ? ' class="jm-num"' : ""} ${x.urut === false ? ' data-urut="tidak"' : ` aria-sort="${S.k === x.k ? (S.arah > 0 ? "ascending" : "descending") : "none"}"`}>${x.urut === false ? esc(x.judul) : `<button type="button" class="jm-urut" data-u="${esc(x.k)}">${esc(x.judul)}</button>`}</th>`).join("")}</tr></thead>
       <tbody>${tampil.map((r) => `<tr>${kolom.map((x) => `<td${x.num ? ' class="jm-num"' : ""} data-l="${esc(x.judul)}">${x.tampil ? x.tampil(r) : esc(r[x.k])}</td>`).join("")}</tr>`).join("")}</tbody></table></div>
       ${paginasiHtml({ hal: S.hal, total: baris.length, per, satuan })}`;
   };

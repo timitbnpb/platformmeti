@@ -5,8 +5,9 @@ import { esc, nanti, ikon, hantuHtml, kosongHtml, galatHtml } from "/inti/umum.j
 import { pilihHtml, exHtml } from "/inti/komponen.js";
 import { hlHtml } from "/inti/aksi_ex.js";
 import { muat, label, urlAman } from "/publik.js";
+import { uangHtml } from "/inti/uang.js";
 import { paginasiHtml, sorotHalaman } from "/inti/paginasi.js";
-import { muatAcara, mendatang, lalu, hariIni, hariKe, namaBulan, geserBulan, urlEvent, urlMutlak, posterHtml, pilJenis, pilStatus, lokasiTeks, jamTeks, tglRentang, JENIS_ACARA, IKON_JENIS, pasangSalin, unduhIcs } from "/event_umum.js";
+import { muatAcara, mendatang, lalu, hariIni, hariKe, utc, namaBulan, geserBulan, urlEvent, urlMutlak, posterHtml, pilJenis, pilStatus, lokasiTeks, jamTeks, tglRentang, JENIS_ACARA, IKON_JENIS, pasangSalin, unduhIcs } from "/event_umum.js";
 
 const S = { bulan: "", tahun: "", jenis: "", hal: Math.max(1, Number(new URLSearchParams(location.search).get("hal")) || 1), slide: 0, mitra: "" };
 const PER = 8;
@@ -14,8 +15,18 @@ const AKAR = () => document.getElementById("isiEvent");
 let MODE = "depan", AWAL = null, SEMUA = [], KINI = "", MITRA = null, WAKTU = 0;
 
 const tglBesar = (b) => { const d = b.tanggal, rg = b.akhir > d; return `<span class="ev-tgl"><b>${rg ? `${+d.slice(8)}-${+b.akhir.slice(8)}` : +d.slice(8)}</b><span>${esc(tanggal(d).split(" ")[1])} ${esc(d.slice(0, 4))}</span><small>${esc(t("kal.hari." + hariKe(d)))}</small></span>`; };
-const meta = (ik, teks) => (teks ? `<li>${ikon(ik, 16)}<span>${esc(teks)}</span></li>` : "");
-const metaAcara = (b) => `<ul class="ev-meta">${meta("tahun", tglRentang(b))}${meta("jejak", jamTeks(b))}${meta("lokasi", lokasiTeks(b))}</ul>`;
+/** Lokasi bisa diklik: membuka Google Maps pada tab baru. */
+const metaLokasi = (b) => { const l = lokasiTeks(b); return l ? `<li><a class="ev-lok" href="https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(l)}" target="_blank" rel="noopener noreferrer" title="${esc(t("ev.peta_buka"))}">${ikon("lokasi", 16)}<span>${esc(l)}</span>${ikon("tautan", 14)}</a></li>` : ""; };
+/** Kartu fakta: ikon, label kecil, nilai. Lokasi = tautan peta. */
+const fakta = (ik, label, isiHtml) => (isiHtml ? `<li class="ev-fk"><span class="ev-fk-ik">${ikon(ik, 20)}</span><span class="ev-fk-t"><small>${esc(label)}</small>${isiHtml}</span></li>` : "");
+const faktaLokasi = (b) => { const l = lokasiTeks(b); return l ? `<a class="ev-lok" href="https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(l)}" target="_blank" rel="noopener noreferrer" title="${esc(t("ev.peta_buka"))}"><span>${esc(l)}</span>${ikon("tautan", 14)}</a>` : ""; };
+const faktaAcara = (b) => { const pen = (b.daftarPen || []).join(", "); return `<ul class="ev-fakta">${fakta("kalender", t("ev.fakta.tanggal"), `<b>${esc(tglRentang(b))}</b>`)}${fakta("jam", t("ev.fakta.jam"), jamTeks(b) ? `<b>${esc(jamTeks(b))}</b>` : "")}${fakta("lokasi", t("ev.fakta.lokasi"), faktaLokasi(b))}${fakta("gedung", t("ev.fakta.penyelenggara"), pen ? `<b>${esc(pen)}</b>` : "")}</ul>`; };
+/** Pil hitung mundur memakai hariIni() WIB (KINI). */
+function pilHitung(b) {
+  const d = Math.round((utc(b.tanggal) - utc(KINI)) / 864e5);
+  const k = d <= 0 ? (b.tanggal <= KINI && b.akhir >= KINI && d < 0 ? "ev.hitung.jalan" : "ev.hitung.hari") : d === 1 ? "ev.hitung.besok" : "";
+  return `<span class="ev-pil ev-hitung-pil">${ikon("jam", 14)}${esc(k ? t(k) : t("ev.hitung.n", { n: angka(d) }))}</span>`;
+}
 
 /* ---------- 1. karusel mendatang ---------- */
 const tglKotak = (b) => { const d = b.tanggal, rg = b.akhir > d; return `<span class="ev-tgl"><b>${rg ? `${+d.slice(8)}-${+b.akhir.slice(8)}` : +d.slice(8)}</b><span>${esc(tanggal(d).split(" ")[1])} ${esc(d.slice(0, 4))}</span></span>`; };
@@ -24,7 +35,7 @@ const posterUtuh = (b) => (b.poster ? `<img class="ev-lat" src="${esc(b.poster.f
 function slideHtml(b, i, n) {
   const u = esc(urlEvent(b));
   return `<article class="ev-slide" data-i="${i}" role="group" aria-roledescription="${esc(t("ev.slide"))}" aria-label="${esc(t("ev.slide_n", { n: i + 1, total: n }))}">
-    <div class="ev-slide-teks"><div class="ev-slide-atas">${tglKotak(b)}<div class="ev-slide-judul">${pilJenis(b.jenis)}<h3 class="ev-slide-j">${esc(b.judulTampil)}</h3></div></div>${metaAcara(b)}
+    <div class="ev-slide-teks"><div class="ev-slide-atas">${tglKotak(b)}<div class="ev-slide-judul"><div class="ev-pils">${pilJenis(b.jenis)}${pilHitung(b)}</div><h3 class="ev-slide-j">${esc(b.judulTampil)}</h3></div></div>${faktaAcara(b)}
     <div class="ev-slide-aksi"><a class="jm-tbl jm-tbl-utama" href="${u}">${ikon("info", 18)}<span>${esc(t("ev.selengkapnya"))}</span></a><button type="button" class="jm-tbl" data-ics="${esc(b.slug)}">${ikon("kalender", 18)}<span>${esc(t("ev.kalender"))}</span></button></div></div>
     <a class="ev-slide-poster" href="${u}" tabindex="-1" aria-hidden="true">${posterUtuh(b)}</a></article>`;
 }
@@ -86,13 +97,15 @@ function baruLalu() {
   const L = lalu(SEMUA, KINI), tahun = [...new Set(L.map((b) => b.tanggal.slice(0, 4)))].sort().reverse();
   return { L, tahun };
 }
+const metaL = (ik, teks) => (teks ? `<li>${ikon(ik, 16)}<span>${esc(teks)}</span></li>` : "");
+/** Tanpa poster: tanggal besar bergradien brand + ikon jenis (bukan foto stok berulang). */
+const sampulLalu = (b) => (b.poster ? posterUtuh(b) : `<span class="ev-poster ev-ph ev-g-${esc(b.jenis)} ev-sampul"><b>${esc(String(+b.tanggal.slice(8)))}</b><span>${esc(tanggal(b.tanggal).split(" ")[1])} ${esc(b.tanggal.slice(0, 4))}</span>${ikon(IKON_JENIS[b.jenis] || "jenis", 22)}</span>`);
 function kartuLaluHtml(b) {
-  const u = esc(urlEvent(b));
-  return `<li class="ev-lalu"><a class="ev-lalu-p" href="${u}" tabindex="-1" aria-hidden="true">${posterUtuh(b)}</a>
-    <div class="ev-lalu-isi"><h4><a href="${u}">${esc(b.judulTampil)}</a></h4>
-    <ul class="ev-meta ev-meta-baris">${pilStatus(b) ? `<li>${pilStatus(b)}</li>` : ""}${meta("tahun", tglRentang(b))}${meta("jejak", jamTeks(b))}${meta("lokasi", lokasiTeks(b))}${meta(IKON_JENIS[b.jenis] || "jenis", label("kal.jenis.", b.jenis))}</ul>
-    ${b.deskripsi ? `<p>${esc(b.deskripsi)}</p>` : ""}</div>
-    <div class="ev-lalu-kaki"><button type="button" class="jm-tbl jm-tbl-kecil" data-salin="${esc(urlMutlak(b))}">${ikon("bagikan", 16)}<span>${esc(t("ev.bagikan"))}</span></button><a class="jm-tbl jm-tbl-kecil jm-tbl-utama" href="${u}"><span>${esc(t("ev.selengkapnya"))}</span>${ikon("panah-kanan", 16)}</a></div></li>`;
+  const u = esc(urlEvent(b)), lok = lokasiTeks(b);
+  return `<li class="ev-lalu"><a class="ev-lalu-p" href="${u}" tabindex="-1" aria-hidden="true">${sampulLalu(b)}</a>
+    <div class="ev-lalu-isi"><div class="ev-lalu-kep"><h4><a href="${u}">${esc(b.judulTampil)}</a></h4><div class="ev-lalu-aksi"><button type="button" class="ev-bulat" data-salin="${esc(urlMutlak(b))}" aria-label="${esc(t("ev.bagikan"))}" title="${esc(t("ev.bagikan"))}">${ikon("bagikan", 18)}</button><a class="ev-bulat" href="${u}" aria-label="${esc(t("ev.selengkapnya"))}" title="${esc(t("ev.selengkapnya"))}">${ikon("panah-kanan", 18)}</a></div></div>
+    <ul class="ev-meta ev-meta-baris"><li>${pilStatus(b)}${pilJenis(b.jenis)}</li>${metaL("kalender", tglRentang(b))}${metaL("jam", jamTeks(b))}${lok ? metaLokasi(b) : ""}</ul>
+    ${b.deskripsi ? `<p>${esc(b.deskripsi)}</p>` : ""}</div></li>`;
 }
 function laluIsi() {
   const { L } = baruLalu();
@@ -101,7 +114,7 @@ function laluIsi() {
   S.hal = Math.min(Math.max(1, S.hal), jml);
   const tampil = rows.slice((S.hal - 1) * PER, S.hal * PER), g = new Map();
   for (const b of tampil) { const ym = b.tanggal.slice(0, 7); (g.get(ym) || g.set(ym, []).get(ym)).push(b); }
-  const isi = [...g].map(([ym, r]) => `<section class="ev-grup"><h3>${esc(namaBulan(ym))} ${esc(ym.slice(0, 4))}<span>${esc(angka(r.length))}</span></h3><ul class="ev-daftar">${r.map(kartuLaluHtml).join("")}</ul></section>`).join("");
+  const isi = [...g].map(([ym, r]) => `<section class="ev-grup"><h3><span class="ev-grup-ik">${ikon("kalender", 20)}</span><b>${esc(namaBulan(ym))} ${esc(ym.slice(0, 4))}</b><span>${esc(t("ev.grup.n", { n: angka(r.length) }))}</span></h3><ul class="ev-daftar">${r.map(kartuLaluHtml).join("")}</ul></section>`).join("");
   return (rows.length ? isi : kosongHtml("ev.lalu.kosong")) + paginasiHtml({ hal: S.hal, total: rows.length, per: PER, satuan: "ev.pag.u" });
 }
 function laluHtml() {
@@ -114,20 +127,28 @@ function laluHtml() {
 const IKON_MITRA = { golf: "lokasi", sarasehan: "kajian", award: "wisuda", indoebtke: "gedung" };
 const FOTO_MITRA = { golf: "bayu-sidrap", sarasehan: "hidro-saguling", award: "nuklir-menara", indoebtke: "surya-cirata" };
 const LOGAM = ["diamond", "platinum", "ruby", "gold", "silver", "bronze"];
-/** "Rp 3.000.000.000 (belum termasuk PPN 11%)" -> { besar: "Rp 3 M", rinci: "Rp 3.000.000.000, belum termasuk PPN 11%" } */
-function hargaTeks(h) {
-  const n = Number(((/Rp\s*([\d.]+)/.exec(h || "") || [])[1] || "").replaceAll(".", ""));
-  const besar = !n ? h : n >= 1e9 ? t("ev.mitra.harga_m", { n: angka(n / 1e9) }) : t("ev.mitra.harga_jt", { n: angka(n / 1e6) });
-  return { besar, rinci: (h || "").replace(/\s*\((.*)\)\s*$/, ", $1") };
+const IKON_LG = { diamond: "berlian", platinum: "mahkota", ruby: "bintang", gold: "piala", silver: "medali", bronze: "lencana" };
+const harga = (h) => { const n = Number(((/Rp\s*([\d.]+)/.exec(h || "") || [])[1] || "").replaceAll(".", "")); return { n, ppn: ((/\((.*)\)\s*$/.exec(h || "")) || [])[1] || "" }; };
+/** Teks manfaat dari data dipilah ke baris pembanding yang sama untuk semua tingkat. */
+function ciriPaket(manfaat) {
+  const m = manfaat || [], cari = (re) => { for (const x of m) { const r = re.exec(x); if (r) return r; } return null; };
+  const bo = cari(/Booth\s*([\d,.]+)\s*m2(?:,\s*listrik\s*([\d,.]+)\s*A)?/i), pe = cari(/Pembicara\s+(.+)/i), tv = cari(/TVC\s+(.+)/i), un = cari(/(\d+)\s+undangan/i), br = cari(/(\d+)\s+spanduk,\s*(\d+)\s+T-banner/i);
+  return { m2: bo && Number(bo[1].replace(",", ".")), a: bo && bo[2], pembicara: pe && pe[1], tvc: tv && tv[1], pass: un && Number(un[1]), spanduk: br && br[1], tbanner: br && br[2], podcast: m.some((x) => /podcast/i.test(x)) };
 }
-const subjek = (id) => `mailto:${(MITRA.kontak || {}).surel || ""}?subject=${encodeURIComponent(t("ev.mitra.subjek") + " " + t("ev.mitra.acara." + id))}`;
+const KAL_ROW = (ik, label, nilaiHtml, subHtml = "", visHtml = "") => `<li class="ev-bf"><span class="ev-bf-ik">${ikon(ik, 20)}</span><span class="ev-bf-t"><small>${esc(label)}</small>${nilaiHtml}${subHtml}</span>${visHtml}</li>`;
+const angkaSatuan = (teks) => { const r = /^([\d.,]+)\s*(.*)$/.exec(teks || ""); return r ? `<b>${esc(r[1])}<span> ${esc(r[2])}</span></b>` : `<b>${esc(teks)}</b>`; };
+/** Skema denah: kotak 72 m2 (tingkat tertinggi) sebagai bingkai, booth tingkat ini proporsional di dalamnya. */
+const denahSvg = (m2) => { const w = Math.max(6, Math.round(40 * Math.sqrt(m2 / 72))); return `<svg class="ev-denah" viewBox="0 0 44 44" width="44" height="44" aria-hidden="true"><rect class="ev-denah-b" x="2" y="2" width="40" height="40" rx="3"/><rect class="ev-denah-i" x="${2 + (40 - w) / 2}" y="${2 + (40 - w) / 2}" width="${w}" height="${w}" rx="2"/></svg>`; };
 function kartuPaket(p, i, id) {
-  const nm = String(p.nama).toLowerCase(), lg = LOGAM.includes(nm) ? nm : "silver", h = hargaTeks(p.harga);
-  return `<li class="ev-paket ev-lg-${lg}">${i === 0 ? `<span class="ev-pita-top">${esc(t("ev.mitra.lengkap"))}</span>` : ""}
-    <div class="ev-paket-kep"><h4>${ikon(i < 2 ? "bintang" : "perisai", 20)}<span>${esc(p.nama)}</span></h4><p class="ev-paket-h">${esc(h.besar)}</p><small>${esc(h.rinci)}</small></div>
-    <ul class="ev-paket-man">${(p.manfaat || []).map((m) => `<li>${ikon("centang", 16)}<span>${esc(m)}</span></li>`).join("")}</ul>
+  const nm = String(p.nama).toLowerCase(), lg = LOGAM.includes(nm) ? nm : "silver", h = harga(p.harga), c = ciriPaket(p.manfaat), nol = `<b class="ev-bf-nol">-</b>`;
+  const nilaiHarga = h.n ? uangHtml("Rp", t(h.n >= 1e9 ? "ev.sp.m" : "ev.sp.jt", { n: angka(h.n >= 1e9 ? h.n / 1e9 : h.n / 1e6) }), p.harga) : esc(p.harga || "");
+  const tiket = c.pass ? `<span class="ev-tiket" aria-hidden="true">${ikon("tiket", 16).repeat(Math.min(c.pass, 5))}</span>` : "";
+  return `<li class="ev-paket ev-lg-${lg}${i === 0 ? " ev-sorot" : ""}">${i === 0 ? `<span class="ev-pita-top">${esc(t("ev.mitra.lengkap"))}</span>` : ""}
+    <div class="ev-paket-kep"><h4><span class="ev-lg-ik">${ikon(IKON_LG[lg] || "lencana", 22)}</span><span>${esc(p.nama)}</span></h4><div class="ev-paket-h">${nilaiHarga}</div>${h.ppn ? `<small>${esc(h.ppn)}</small>` : ""}</div>
+    <ul class="ev-paket-man">${KAL_ROW("denah", t("ev.sp.booth"), c.m2 ? `<b>${esc(t("ev.sp.m2", { n: angka(c.m2) }))}</b>` : nol, "", c.m2 ? denahSvg(c.m2) : "")}${KAL_ROW("petir", t("ev.sp.listrik"), c.a ? `<b>${esc(t("ev.sp.a", { n: c.a }))}</b>` : nol)}${KAL_ROW("mikrofon", t("ev.sp.pembicara"), c.pembicara ? `<b>${esc(c.pembicara)}</b>` : nol)}${KAL_ROW("putar", t("ev.sp.tvc"), c.tvc ? angkaSatuan(c.tvc) : nol)}${KAL_ROW("tiket", t("ev.sp.undangan"), c.pass ? `<b>${esc(angka(c.pass))} + ${esc(angka(c.pass))}</b>` : nol, tiket)}${KAL_ROW("bendera", t("ev.sp.branding"), c.spanduk ? `<b>${esc(t("ev.sp.spanduk", { n: c.spanduk }))}</b>` : nol, c.tbanner ? `<em>${esc(t("ev.sp.tbanner", { n: c.tbanner }))}</em>` : "")}${KAL_ROW("siaran", t("ev.sp.podcast"), c.podcast ? `<b>${esc(t("ev.sp.termasuk"))}</b>` : nol)}</ul>
     <a class="jm-tbl ev-paket-btn${i === 0 ? " jm-tbl-utama" : ""}" href="${esc(subjek(id))}">${ikon("surel", 16)}<span>${esc(t("ev.mitra.ajukan"))}</span></a></li>`;
 }
+const subjek = (id) => `mailto:${(MITRA.kontak || {}).surel || ""}?subject=${encodeURIComponent(t("ev.mitra.subjek") + " " + t("ev.mitra.acara." + id))}`;
 function panelMitra(a) {
   const ev = a.event && SEMUA.find((b) => b.slug === a.event), nama = t("ev.mitra.acara." + a.id);
   const lihat = ev ? `<a class="jm-tbl" href="${esc(urlEvent(ev))}">${ikon("kalender-bintang", 18)}<span>${esc(t("ev.mitra.lihat_acara"))}</span></a>` : "";

@@ -81,7 +81,7 @@ a.jm-sk-pil{text-decoration:none}
 .jm-sk-bt li{display:grid;grid-template-columns:minmax(150px,26%) minmax(0,1fr) 96px;align-items:center;gap:12px}
 .jm-sk-bt-l{display:flex;align-items:center;gap:10px;min-width:0;font-weight:600;color:var(--head)}
 .jm-sk-bt svg{display:block;width:100%;height:16px;border-radius:8px;overflow:hidden}
-.jm-sk-trek{fill:var(--soft-hijau)}
+.jm-sk-trek{fill:none}.jm-sk-bt svg{border-left:1px solid var(--line-ctl);border-radius:0}
 .jm-sk-isi{fill:var(--accent)}
 .jm-sk-bt li:hover .jm-sk-isi{fill:var(--data1)}
 .jm-sk-bt b{text-align:right;font-variant-numeric:tabular-nums;color:var(--head)}

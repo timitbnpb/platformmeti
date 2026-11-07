@@ -3,7 +3,7 @@ import { t, angka, tanggal, tanggalDariUnix, jam } from "/i18n.js";
 import { esc, api, nanti, hantuHtml, kosongHtml } from "/inti/umum.js";
 import { exHtml } from "/inti/komponen.js";
 import { paginasiHtml, sorotHalaman } from "/inti/paginasi.js";
-import { data, kepalaTab, keadaan, detik } from "/admin_umum.js";
+import { data, kepalaTab, ubinKepala, keadaan, detik } from "/admin_umum.js";
 
 const HAL = 50;
 const tgl = (w) => { const d = detik(w); return Number.isFinite(d) ? `<span data-urut="${d}">${esc(tanggal(tanggalDariUnix(d)))}<small>${esc(jam(d))}</small></span>` : "-"; };
@@ -32,6 +32,7 @@ export function panelPustaka(panel) {
     isi.innerHTML = hantuHtml(5);
     let d;
     try { [d] = await Promise.all([api(`/api/admin/pustaka/unduhan?hal=${S.hal}`, { signal: S.ctl.signal }), judulDok()]); } catch (e) { if (e.name !== "AbortError") isi.innerHTML = keadaan(e.kode || "umum"); return; }
+    ubinKepala(panel, [{ ikon: "unduh", nilai: d.total, label: t("adm.pu.k.total") }, { ikon: "pdf", nilai: d.rekap.length, label: t("adm.pu.k.dok") }, { ikon: "orang", nilai: d.rekap.reduce((x, r) => x + (r.akun || 0), 0), label: t("adm.pu.k.akun") }]);
     nanti(() => {
       const rekap = d.rekap.length ? `<div class="jm-gulir"><table class="jm-tabel"><thead><tr><th scope="col">${esc(t("adm.pu.c.dok"))}</th><th scope="col">${esc(t("adm.pu.c.unduhan"))}</th><th scope="col">${esc(t("adm.pu.c.akun"))}</th><th scope="col">${esc(t("adm.pu.c.terakhir"))}</th></tr></thead><tbody>${
         d.rekap.map((r) => `<tr><td data-label="${esc(t("adm.pu.c.dok"))}">${dok(r.dokumen_id)}</td><td class="jm-num" data-label="${esc(t("adm.pu.c.unduhan"))}">${esc(angka(r.n))}</td><td class="jm-num" data-label="${esc(t("adm.pu.c.akun"))}">${esc(angka(r.akun))}</td><td data-label="${esc(t("adm.pu.c.terakhir"))}">${tgl(r.terakhir)}</td></tr>`).join("")}</tbody></table></div>` : kosongHtml("adm.pu.kosong");

@@ -15,6 +15,7 @@ import { geserPanel } from "/inti/panel_geser.js";
 import { aksiHtml } from "/inti/aksi_ex.js";
 import { pasangKeputusan } from "/proyek_keputusan.js";
 import { pasangTender } from "/proyek_tender.js";
+import { segmenProgram, pasangProgram } from "/program_kartu.js";
 import { peristiwaPopupHtml } from "/peristiwa_komitmen.js";
 
 const $ = (id) => document.getElementById(id);
@@ -132,7 +133,7 @@ function ex(id, d) {
 function kepalaSeksi() {
   const dok = dokSumber();
   if ($("exGb")) ex("exGb", { ikon: "analisis", topik: t("pj.ex.gb"), judulHtml: esc(t("pj.ex.gb.j")), subHtml: esc(t("pj.ex.gb.s")), aksiHtml: aksiHtml() + sumberHtml(`${esc(t("pj.sumber", { tgl: tanggal(DATA.dibangun_pada, { gaya: "panjang" }), dok }))}<br>${esc(t("pj.sumber.rinci"))}`) });
-  ex("exProg", { ikon: "topik", topik: t("pj.ex.prog"), judulHtml: `${hl(num(PROG.baris.length))} ${esc(t("pj.ex.prog.j"))}`, subHtml: esc(t("pj.ex.prog.s", { n: num(PROG.baris.filter((g) => g.jumlah_proyek).length) })), aksiHtml: aksiHtml() });
+  ex("exProg", { ikon: "topik", topik: t("pj.ex.prog"), judulHtml: `${hl(num(ANAL ? ANAL.length : PROG.baris.length))} ${esc(t("pj.ex.prog.j"))}`, subHtml: esc(t("pj.ex.prog.s")), aksiHtml: aksiHtml() });
   kepalaTabel();
 }
 function kepalaTabel() {
@@ -541,42 +542,17 @@ function tekBaris(id) {
   const c = hitung(SEMUA.filter((r) => r.prog.includes(id) && r.tek), (r) => r.tek), ks = Object.keys(c).sort((a, b) => c[b] - c[a]);
   return ks.length ? `<ul class="jm-pj-pk-tek">${ks.map((k) => `<li>${pilTek(k)}<b>${num(c[k])}</b></li>`).join("")}</ul>` : "";
 }
-/* program tanpa proyek: blok warna lembut berisi angka/dasar hukum, bukan kotak putus-putus */
-function dasarKosong(g) {
-  const al = (g.alokasi_bbn || []).filter((x) => x.jenis === "alokasi" && x.total_kl).sort((a, b) => b.tahun - a.tahun)[0];
-  const nreg = (g.regulasi_ids || []).length;
-  if (al) return `<div class="jm-pj-blok"><b>${esc(t("pj.alokasi", { tahun: al.tahun, n: num(al.total_kl / 1e6, 1) }))}</b><span>${esc(t("pj.dasar"))}: ${esc(al.dasar_hukum)}</span></div>`;
-  return `<div class="jm-pj-blok"><b>${esc(t("pj.prog.nreg", { n: num(nreg) }))}</b><span data-reg="${esc(g.id)}">${esc(t("pj.dasar"))}: ${esc(g.ringkas || "")}</span></div>`;
-}
-const legTitik = (per) => `<ul class="jm-pj-leg2">${ST_BAR.filter((k) => per[k]).map((k) => `<li><span class="jm-pj-s-${k}" aria-hidden="true"></span><b>${num(per[k])}</b> ${esc(labSt(k).toLowerCase())}</li>`).join("")}</ul>`;
-/* kartu penutup kisi program (pemilik 8 Nov 2026: 8 kartu biar simetris): tautan ke analisis semua program */
-const kartuSemuaProg = () => `<a class="jm-pj-pk jm-pj-pk-semua" href="/program"><div class="jm-pj-pk-gb"><img src="${IMG("panas-bumi-sibayak")}" alt="" width="800" height="450" loading="lazy" decoding="async"><span class="jm-pj-pk-ik">${ikon("daftar2", 20)}</span><h3>${esc(t("pj.prog.semua"))}</h3></div>
-  <div class="jm-pj-pk-isi"><p class="jm-pj-pk-desk">${esc(t("pj.prog.semua_ket"))}</p>${lihatSemuaHtml("", t("pj.prog.semua_buka"))}</div></a>`;
-function gambarProg() {
-  $("pjProg").innerHTML = PROG.baris.map((g, i) => {
-    const rows = SEMUA.filter((r) => r.prog.includes(g.id)), per = g.per_status || {}, tot = g.jumlah_proyek || 0, nreg = (g.regulasi_ids || []).length, sat = satuanProg(rows);
-    const punyaKap = tot && g.kapasitas_mw;
-    const isi = tot ? legTitik(per) : dasarKosong(g); /* tanpa batang progres tumpuk (aturan pemilik) */
-    const kaki = (tot ? t("pj.prog.lihat", { n: num(tot) }) : t(nreg ? "pj.prog.reg" : "pj.prog.buka"));
-    return `<a class="jm-pj-pk jm-pj-pg-${i % 5}" href="/program/${esc(g.id)}"><div class="jm-pj-pk-gb">${IMG_PROG[g.id] ? `<img src="${IMG_PROG[g.id]}" alt="" width="800" height="450" loading="lazy" decoding="async">` : ""}<span class="jm-pj-pk-ik">${ikProg(g.id)}</span><h3>${esc(g.nama)}</h3></div>
-      <div class="jm-pj-pk-isi"><p class="jm-pj-pk-desk">${esc(g.ringkas || "")}</p>
-      <dl class="jm-pj-pk-stat"><div><dt>${esc(t("pj.prog.proyek"))}</dt><dd>${num(tot)}</dd></div><div><dt>${esc(t("pj.c.kap"))}</dt><dd${punyaKap ? "" : ` class="jm-pj-redup" title="${esc(t("pj.prog.belum.ket"))}"`}>${punyaKap ? kapKecil(g.kapasitas_mw, sat) : "-"}</dd></div><div><dt>${esc(t("pj.rel.reg"))}</dt><dd${nreg ? "" : ' class="jm-pj-redup"'}>${nreg ? num(nreg) : "-"}</dd></div></dl>
-      ${isi}${lihatSemuaHtml("", kaki)}</div></a>`;
-  }).join("") + kartuSemuaProg();
-  for (const i of $("pjProg").querySelectorAll("i[data-w]")) i.style.width = i.dataset.w + "%";
-  isiDasar();
-}
-async function isiDasar() {
-  const els = [...$("pjProg").querySelectorAll("[data-reg]")];
-  if (!els.length) return;
-  try {
-    const rg = await lazy("/data/regulasi.json");
-    for (const el of els) {
-      const g = PROG.baris.find((x) => x.id === el.dataset.reg), ids = new Set(g.regulasi_ids || []);
-      const x = rg.baris.find((r) => ids.has(r.id));
-      if (x) el.textContent = `${t("pj.dasar")}: ${regPil(x)} ${x.judul}`;
-    }
-  } catch (e) { /* tetap tampil ringkasan */ }
+/* kisi program nasional: 16 program (program_analisis.json, memuat 7 program nasional program.json dengan kode sama), kartu bersama program_kartu.js */
+let ANAL = null;
+async function gambarProg() {
+  const wadah = $("pjProg");
+  wadah.innerHTML = hantuHtml(3);
+  try { ANAL = ANAL || (await lazy("/data/program_analisis.json")).baris; } catch (e) { wadah.innerHTML = galatHtml("jaringan"); wadah.querySelector("[data-aksi=ulang]")?.addEventListener("click", () => location.reload()); return; }
+  kepalaSeksi();
+  const baris = [...ANAL].sort((a, z) => a.urut - z.urut);
+  wadah.className = "";
+  wadah.innerHTML = `${segmenProgram(baris)}<div class="jm-pk-grid"></div>`;
+  pasangProgram(wadah, baris, nanti);
 }
 /* ---------- profil: lembar dari kanan (gaya lembar direktori), tautan dalam #id ---------- */
 const dlg = $("pjProfil");

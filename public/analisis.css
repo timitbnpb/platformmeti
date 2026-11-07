@@ -42,7 +42,7 @@
 .jm-an-bt{display:flex;justify-content:space-between;gap:12px;font-size:var(--t-body)}
 .jm-an-bt b{font-weight:600;white-space:nowrap}
 .jm-an-br svg{width:100%;height:12px;display:block}
-.jm-an-trek{fill:var(--surface)}
+.jm-an-trek{fill:none}.jm-an-br svg{border-left:1px solid var(--line-ctl)} /* tanpa trek penuh (aturan pemilik) */
 .jm-an-b1{fill:var(--data1);background:var(--data1)}
 .jm-an-b2{fill:var(--data3);background:var(--data3)}
 .jm-an-b3{fill:var(--warn);background:var(--warn)}
@@ -744,3 +744,95 @@ main.jm-an .jm-ex>.jm-ex-hd>.jm-ex-teks>.jm-ex-sub{grid-row:2}
 .jm-wp-v b,.jm-wp-v small{display:inline;white-space:nowrap}
 .jm-wp-bd td.jm-num{white-space:nowrap}
 .jm-ex-j .jm-pil{vertical-align:middle;margin-left:6px}
+/* pop-up provinsi peta wilayah: kepala rata tengah (pemilik 8 Nov 2026) */
+.jm-wl-tip header{flex-direction:column;justify-content:center;text-align:center;gap:6px}
+.jm-wl-tip header>div{display:grid;justify-items:center}
+/* ---------- profil provinsi: pakar, regulasi daerah, emisi pembangkit (wilayah_pakar.js, wilayah_profil.js, wilayah_profil_kartu.js) ---------- */
+.jm-wp-ubs{list-style:none;margin:0 0 20px;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+.jm-wp-ub{display:flex;align-items:center;gap:12px;min-width:0;padding:14px 16px;border:1px solid var(--line);border-radius:var(--r);background:var(--card)}
+.jm-wp-ub>.jm-ik{flex:none;box-sizing:border-box;width:42px;height:42px;padding:10px;border-radius:50%;background:var(--info-bg);color:var(--accent);stroke:currentColor;fill:none}
+.jm-wp-ub>span{display:grid;gap:2px;min-width:0}
+.jm-wp-ub small,.jm-wp-ub em{color:var(--ink2);font-size:var(--t-kecil);font-style:normal}
+.jm-wp-ub b{font:700 var(--t-h3)/var(--lh-rapat) var(--display);color:var(--head);overflow-wrap:anywhere;font-variant-numeric:tabular-nums}
+.jm-wp-pk{table-layout:fixed;width:100%}
+.jm-wp-pk th:nth-child(1){width:29%}.jm-wp-pk th:nth-child(2){width:27%}.jm-wp-pk th:nth-child(3){width:34%}.jm-wp-pk th:nth-child(4){width:10%}
+.jm-wp-pk-r{cursor:pointer}
+.jm-wp-pk-nm{display:flex;align-items:center;gap:12px;min-width:0}
+.jm-wp-pk-nm a{font-weight:600;color:var(--head);text-decoration:none;overflow-wrap:anywhere}
+.jm-wp-pk-r:hover .jm-wp-pk-nm a{color:var(--accent)}
+.jm-wp-av{flex:none;box-sizing:border-box;width:40px;height:40px;border-radius:50%;object-fit:cover;background:var(--info-bg)}
+.jm-wp-av-sil{display:inline-grid;place-items:center;color:var(--ink2);stroke:currentColor;fill:none}
+.jm-wp-ki{display:flex;align-items:center;gap:10px;min-width:0;overflow-wrap:anywhere}
+.jm-wp-lg{flex:none;display:grid;place-items:center;box-sizing:border-box;width:32px;height:32px;border:1px solid var(--line);border-radius:var(--r-sm);background:var(--card);color:var(--accent);overflow:hidden;stroke:currentColor;fill:none}
+.jm-wp-lg img{width:100%;height:100%;object-fit:contain;padding:2px;box-sizing:border-box}
+.jm-wp-tps{display:flex;flex-wrap:wrap;gap:6px}
+.jm-wp-sisa{display:inline-flex;align-items:center;padding:3px 10px;border-radius:var(--r-pil);background:var(--surface);color:var(--ink2);font:600 var(--t-kecil)/var(--lh-rapat) var(--font);cursor:help}
+.jm-wp-h{display:inline-flex;align-items:center;gap:6px;padding:4px 12px;border-radius:var(--r-pil);background:color-mix(in srgb,var(--tk) 14%,var(--card));color:var(--tk);font:700 var(--t-kecil)/var(--lh-rapat) var(--font);font-variant-numeric:tabular-nums}
+.jm-wp-h .jm-ik{stroke:currentColor;fill:none}
+.jm-wp-h-a{--tk:var(--ok)}.jm-wp-h-b{--tk:var(--data5)}.jm-wp-h-c{--tk:var(--ink2)}
+.jm-wp-pk-pag{margin-top:4px}
+/* peraturan daerah: kartu seragam */
+.jm-wp-rks{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:16px}
+.jm-wp-rk{display:grid;grid-template-rows:auto auto 1fr auto;gap:10px;min-width:0;padding:16px 18px;border:1px solid var(--line);border-radius:var(--r);background:var(--card);transition:border-color .15s,box-shadow .15s}
+.jm-wp-rk:hover{border-color:var(--accent);box-shadow:var(--shadow)}
+.jm-wp-rk-a{display:flex;flex-wrap:wrap;align-items:center;gap:8px}
+.jm-wp-rk-a .jm-reg-iks{margin-left:auto}
+.jm-wp-rk-st{gap:5px}
+.jm-wp-rk-th{display:inline-flex;align-items:center;gap:6px;min-height:24px;padding:0 10px;border-radius:var(--r-pil);background:var(--surface);color:var(--ink2);font:600 var(--t-kecil)/1 var(--font);font-variant-numeric:tabular-nums}
+.jm-wp-rk-th .jm-ik,.jm-wp-rk-a .jm-ik{stroke:currentColor;fill:none}
+.jm-wp-rk-n{font:700 var(--t-h3)/var(--lh-rapat) var(--display);color:var(--head)}
+.jm-wp-rk-n a{color:inherit;text-decoration:none}.jm-wp-rk-n a:hover{color:var(--accent)}
+.jm-wp-rk-j{color:var(--ink);font-size:var(--t-tombol);line-height:var(--lh-isi);overflow-wrap:anywhere}
+.jm-wp-rk-p{display:flex;align-items:center;gap:8px;padding-top:10px;border-top:1px solid var(--line);color:var(--ink2);font-size:var(--t-kecil)}
+.jm-wp-rk-p .jm-wl-lb{width:24px;height:24px}
+/* emisi pembangkit: ubin + donat sebaris, batang horizontal per pembangkit */
+.jm-wp-ej-batubara{--sk:var(--ink)}.jm-wp-ej-gas{--sk:var(--data3)}.jm-wp-ej-minyak{--sk:var(--warn)}.jm-wp-ej-industri{--sk:var(--data5)}.jm-wp-ej-tekstil{--sk:var(--data1)}.jm-wp-ej-lain{--sk:var(--data2)}.jm-wp-ej-total{--sk:var(--bad)}
+.jm-wp-em{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);gap:16px;margin-bottom:20px;align-items:stretch}
+.jm-wp-eus{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.jm-wp-eu{display:flex;align-items:center;gap:12px;min-width:0;padding:14px 16px;border:1px solid var(--line);border-left:4px solid var(--sk);border-radius:var(--r);background:var(--card)}
+.jm-wp-eu:nth-child(1){--sk:var(--bad)}.jm-wp-eu:nth-child(2){--sk:var(--data3)}.jm-wp-eu:nth-child(3){--sk:var(--data5)}.jm-wp-eu:nth-child(4){--sk:var(--warn)}
+.jm-wp-eu-i{flex:none;display:grid;place-items:center;width:42px;height:42px;border-radius:50%;background:var(--info-bg);color:var(--sk)}
+.jm-wp-eu-i .jm-ik{stroke:currentColor;fill:none}
+.jm-wp-eu-t{display:grid;gap:2px;min-width:0}
+.jm-wp-eu-t small,.jm-wp-eu-t em{color:var(--ink2);font-size:var(--t-kecil);font-style:normal}
+.jm-wp-eu-t b{font:700 var(--t-h2)/var(--lh-rapat) var(--display);color:var(--head);font-variant-numeric:tabular-nums;overflow-wrap:anywhere}
+.jm-wp-eu-t b small{font:500 var(--t-kecil)/1 var(--font)}
+.jm-wp-eu-nm .jm-wp-eu-t b{font-size:var(--t-h3)}
+.jm-wp-ed{margin:0;display:flex;align-items:center;gap:20px;min-width:0;padding:16px 20px;border:1px solid var(--line);border-radius:var(--r);background:var(--card)}
+.jm-wp-ed-s{flex:none;width:168px;height:168px;overflow:visible}
+.jm-wp-ed-s path{fill:var(--sk);cursor:pointer;transition:opacity .15s}
+.jm-wp-ed-n{font:700 var(--t-body)/1 var(--display);fill:var(--head)}.jm-wp-ed-u{font:500 var(--t-label)/1 var(--font);fill:var(--ink2)}
+.jm-wp-ed figcaption{display:grid;gap:10px;min-width:0;flex:1;color:var(--ink2);font-size:var(--t-kecil)}
+.jm-wp-ed figcaption>b{color:var(--head);font-size:var(--t-tombol)}
+.jm-wp-ed ul{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+.jm-wp-ed li{display:grid;grid-template-columns:12px minmax(0,1fr) auto;align-items:center;gap:10px;color:var(--ink);font-size:var(--t-tombol)}
+.jm-wp-ed li i{width:12px;height:12px;border-radius:50%;background:var(--sk)}
+.jm-wp-ed li b{font-variant-numeric:tabular-nums}
+.jm-wp-eb-kp,.jm-wp-eb>li{display:grid;grid-template-columns:36px minmax(190px,1.1fr) minmax(140px,2fr) 84px 150px;align-items:center;gap:14px}
+.jm-wp-eb-kp{padding:8px 16px;margin-bottom:6px;border-radius:var(--r);background:linear-gradient(90deg,var(--brand),var(--brand2));color:var(--on-brand);font:600 var(--t-kecil)/var(--lh-rapat) var(--font);text-align:center}
+.jm-wp-eb{max-width:none;margin:0;gap:8px}
+.jm-wp-eb>li{padding:10px 16px;border:1px solid var(--line);border-radius:var(--r);background:var(--card);cursor:default;transition:border-color .15s,box-shadow .15s}
+.jm-wp-eb>li[hidden]{display:none}
+.jm-wp-eb>li:hover{border-color:var(--sk);box-shadow:var(--shadow)}
+.jm-wp-eb-no{display:grid;place-items:center;width:28px;height:28px;border-radius:50%;background:var(--info-bg);color:var(--ink2);font:600 var(--t-kecil)/1 var(--font);font-variant-numeric:tabular-nums}
+.jm-wp-eb-nm{display:flex;align-items:center;gap:10px;min-width:0}
+.jm-wp-eb-ik{flex:none;display:grid;place-items:center;width:34px;height:34px;border-radius:50%;background:color-mix(in srgb,var(--sk) 14%,var(--card));color:var(--sk)}
+.jm-wp-eb-ik .jm-ik{stroke:currentColor;fill:none}
+.jm-wp-eb-tx{display:grid;gap:2px;min-width:0}
+.jm-wp-eb-tx b{font-size:var(--t-body);line-height:var(--lh-rapat);overflow-wrap:anywhere}
+.jm-wp-eb-tx small{color:var(--ink2);font-size:var(--t-kecil)}
+.jm-wp-eb-tr{display:block;height:18px;border-left:1px solid var(--line-ctl)}
+.jm-wp-eb-tr i{display:block;height:100%;width:0;min-width:3px;border-radius:0 9px 9px 0;background:var(--sk)}
+.jm-wp-eb-nol .jm-wp-eb-tr i{display:none}
+.jm-wp-eb-nol .jm-wp-eb-tx b{color:var(--ink2)}
+.jm-wp-eb-mw,.jm-wp-eb-n{text-align:right;white-space:nowrap;font-variant-numeric:tabular-nums}
+.jm-wp-eb-mw small,.jm-wp-eb-n small{color:var(--ink2);font-weight:400;font-size:var(--t-kecil)}
+@media (max-width:1000px){.jm-wp-ubs{grid-template-columns:repeat(2,minmax(0,1fr))}.jm-wp-em{grid-template-columns:minmax(0,1fr)}}
+@media (max-width:640px){
+  .jm-wp-ubs,.jm-wp-eus{grid-template-columns:minmax(0,1fr)}
+  .jm-wp-ed{flex-direction:column;align-items:stretch}.jm-wp-ed-s{align-self:center}
+  .jm-wp-eb-kp{display:none}
+  .jm-wp-eb>li{grid-template-columns:28px minmax(0,1fr) auto;gap:8px 12px}
+  .jm-wp-eb-nm{grid-column:2}.jm-wp-eb-n{grid-column:3;grid-row:1}
+  .jm-wp-eb-tr{grid-column:2/4;grid-row:2}.jm-wp-eb-mw{grid-column:2/4;grid-row:3;text-align:left}
+}

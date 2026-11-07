@@ -145,3 +145,25 @@ export function perlu(p, himpunan) {
   if (himpunan && !himpunan.includes(p.akun.peran)) throw new Galat("dilarang");
   return p.akun;
 }
+
+// Header keamanan global; HARUS sama dengan blok "/*" di public/_headers (dijaga tests/gerbang-headers.test.mjs).
+export const HEADER_KEAMANAN = {
+  "strict-transport-security": "max-age=31536000; includeSubDomains",
+  "x-content-type-options": "nosniff",
+  "x-frame-options": "DENY",
+  "referrer-policy": "strict-origin-when-cross-origin",
+  "permissions-policy": "camera=(), microphone=(), geolocation=(), payment=(), usb=()",
+  "cross-origin-opener-policy": "same-origin",
+  "content-security-policy": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data: blob: https://tiles.openfreemap.org https://i.ytimg.com; font-src 'self'; connect-src 'self' https://tiles.openfreemap.org; worker-src blob:; frame-src https://www.youtube-nocookie.com https://www.instagram.com https://www.linkedin.com; child-src blob:; frame-ancestors 'none'; base-uri 'none'; form-action 'self'; object-src 'none'; upgrade-insecure-requests",
+};
+
+// Halaman HTML rakitan Worker: salin header aset asal (bila ada), pastikan header keamanan terpasang, dan jangan di-cache bersama (situs di balik login).
+export function halamanHtml(html, cangkang, status = 200) {
+  const h = new Headers(cangkang?.headers);
+  for (const k of ["content-length", "content-encoding", "etag", "last-modified"]) h.delete(k);
+  for (const [k, v] of Object.entries(HEADER_KEAMANAN)) if (!h.has(k)) h.set(k, v);
+  h.set("content-type", "text/html; charset=utf-8");
+  h.set("cache-control", "private, no-store");
+  h.set("vary", "Cookie");
+  return new Response(html, { status, headers: h });
+}

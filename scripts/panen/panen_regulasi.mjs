@@ -112,14 +112,15 @@ async function ambil(pth) {
   }
   return null;
 }
-const rawCari = (k, p) => path.join(RAW, 'cari', `${k.replace(/\W+/g, '_')}_p${p}.html`);
+const TAHUN = ((process.argv.find((x) => x.startsWith('--tahun=')) || '').slice(8).split(',').filter(Boolean));   // mis. --tahun=2025,2026: sisir peraturan baru lewat filter tahun situs
+const rawCari = (k, p, th) => path.join(RAW, 'cari', `${k.replace(/\W+/g, '_')}${th ? '_t' + th : ''}_p${p}.html`);
 async function cari() {
-  for (const k of KATA) {
+  for (const th of TAHUN.length ? TAHUN : [null]) for (const k of KATA) {
     for (let p = 1; p <= MAX_PAGES; p++) {
-      const f = rawCari(k, p);
+      const f = rawCari(k, p, th);
       let html = fs.existsSync(f) ? fs.readFileSync(f, 'utf8') : null;
       if (!html) {
-        html = await ambil(`/Search?tentang=${encodeURIComponent(k)}&p=${p}`);
+        html = await ambil(`/Search?tentang=${encodeURIComponent(k)}${th ? '&tahun=' + th : ''}&p=${p}`);
         if (!html) break;
         tulis(f, html);
       }

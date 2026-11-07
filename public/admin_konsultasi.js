@@ -18,7 +18,7 @@ export function panelKonsultasi(el) {
     nanti(gambar);
   }
   function gambar() {
-    host.innerHTML = `<p class="jm-bantu">${esc(t("kf.ad.bantu"))}</p><div class="jm-aksi"><button type="button" class="jm-tbl jm-tbl-utama" data-kelola="">${ikon("tambah", 16)}<span>${esc(t("kf.dokumen_baru"))}</span></button></div>`
+    host.innerHTML = `<header class="jm-adm-bhd"><div><h3>${esc(t("kf.ad.j"))}</h3><p class="jm-bantu">${esc(t("kf.ad.bantu"))}</p></div><button type="button" class="jm-tbl jm-tbl-utama" data-kelola="">${ikon("tambah", 16)}<span>${esc(t("kf.dokumen_baru"))}</span></button></header>`
       + (S.baris.length ? `<div class="jm-gulir"><table class="jm-tabel"><thead><tr>${["dok", "jenis", "status", "bagian", "usulan", "tenggat", "aksi"].map((k) => `<th scope="col">${esc(t("kf.ad.k." + k))}</th>`).join("")}</tr></thead><tbody>${S.baris.map((r) => `<tr>
         <td data-l="${esc(t("kf.ad.k.dok"))}"><strong>${esc(r.judul)}</strong></td><td data-l="${esc(t("kf.ad.k.jenis"))}">${esc(t("kons.jenis." + r.jenis))}</td>
         <td data-l="${esc(t("kf.ad.k.status"))}"><span class="jm-pil ${r.status === "terbit" ? "jm-pil-ok" : "jm-pil-warn"}">${esc(t("kf.status_dok." + r.status))}</span></td>

@@ -119,14 +119,17 @@ export function rencanaHit({ ua, cf, ip, bahasa, dest, referer, host, utm, jalur
 }
 
 /* ---------------- sisi Worker: dipanggil dari worker.js lewat ctx.waitUntil, setelah respons dikirim ---------------- */
+// ponytail: sampel bot per isolat (1 dari 10, hitung menyimpang antar isolat); naikkan jadi penghitung D1 bila statistik bot harus tepat.
+let cacahBot = 0;
 export async function catatHit(env, req, status, kini = Date.now()) {
   const url = new URL(req.url);
-  if (!halamanDihitung(req.method, url.pathname)) return false;
+  if (status !== 200 || !halamanDihitung(req.method, url.pathname)) return false;   // 3xx/4xx/5xx (gerbang masuk, 404) tidak menulis D1
   const ua = req.headers.get("user-agent") || "", ip = req.headers.get("cf-connecting-ip") || "", cf = req.cf || {};
   const rentang = await hak.lalinRentang(env, kini, cidrKe);
   const r = rencanaHit({ ua, cf, ip, bahasa: req.headers.get("accept-language"), dest: req.headers.get("sec-fetch-dest"), referer: req.headers.get("referer"),
     host: url.hostname, utm: url.searchParams.get("utm_source"), jalur: jalurBersih(url.pathname), status, rentang, kini });
   if (!r) return false;
+  if (r.jenis !== "manusia" && ++cacahBot % (Number(env.SAMPEL_BOT) || 10) !== 0) return false;
   let tamu = null;
   if (r.jenis === "manusia") {
     const h = (await sha((await hak.lalinGaram(env, r.tgl)) + "|" + ip + "|" + ua)).slice(0, 16);

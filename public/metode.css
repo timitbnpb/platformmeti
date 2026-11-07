@@ -116,3 +116,4 @@
   .met-akor>summary{flex-wrap:wrap}
 }
 .met-isi .mak,.met-isi .mak-tabel-blok{min-width:0;max-width:100%;overflow-x:auto}.met-isi .mak-tabel-blok .jm-tabel{min-width:640px}
+.met-isi .jm-sejajar,.met-isi .jm-ex,.met-isi .jm-ex-bd,.met-isi .mak-tabel-blok>div,.met-isi .jm-gulir{min-width:0;max-width:100%}.met-isi .jm-gulir{overflow-x:auto}

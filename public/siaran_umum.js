@@ -3,6 +3,7 @@ import { t, tanggal } from "/i18n.js";
 import { esc, ikon, fotoBerita } from "/inti/umum.js";
 import { bagikanHtml } from "/inti/komponen.js";
 import { muat, label } from "/publik.js";
+import { logoLokal } from "/inti/nama_media.js";
 
 export const JENIS = ["siaran_pers", "liputan_media", "liputan_kegiatan"];
 export const IKON_JENIS = { siaran_pers: "siaran", liputan_media: "berita", liputan_kegiatan: "kalender" };
@@ -19,7 +20,10 @@ export async function muatSiaran() {
 
 export const urlFoto = (r, foto) => r.foto || fotoBerita(foto, r.id);
 /** Sampul cadangan bila tanpa foto atau foto gagal dimuat: logo plus nama media di atas gradasi. */
-export const cadanganHtml = (r) => `<span class="sp-cadangan"><img src="/img/logo-meti-tanda.png" width="40" height="38" alt="" loading="lazy"><b>${esc(r.media)}</b></span>`;
+export const cadanganHtml = (r) => {
+  const lg = r.jenis === "siaran_pers" ? "/img/logo-meti-tanda.png" : logoLokal(r.url_sumber || r.media);
+  return `<span class="sp-cadangan"><span class="sp-cad-lg">${lg ? `<img src="${esc(lg)}" alt="" width="40" height="40" loading="lazy" data-galat="hapus">` : ""}<span class="sp-cad-ik">${ikon(IKON_JENIS[r.jenis] || "berita", 24)}</span></span><b>${esc(r.media)}</b></span>`;
+};
 export const sampulHtml = (r, foto, kelas = "sp-foto") => {
   const u = urlFoto(r, foto);
   return `<span class="${kelas}">${u ? `<img class="sp-img" src="${esc(u)}" alt="" loading="lazy" decoding="async">` : cadanganHtml(r)}</span>`;

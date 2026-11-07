@@ -21,7 +21,7 @@ export function panelEvent(el) {
   }
   function rangka() {
     const kini = hariIni();
-    host.innerHTML = `<p class="jm-bantu">${esc(t("adm.event.bantu"))}</p><div class="jm-gulir"><table class="jm-tabel"><thead><tr>${["acara", "tgl", "status", "terdaftar", "kuota", "batas", "aksi"].map((k) => `<th scope="col">${esc(t("adm.event.k." + k))}</th>`).join("")}</tr></thead><tbody>${S.acara.map((b) => {
+    host.innerHTML = `<header class="jm-adm-bhd"><div><h3>${esc(t("adm.event.j"))}</h3><p class="jm-bantu">${esc(t("adm.event.bantu"))}</p></div></header><div class="jm-gulir"><table class="jm-tabel"><thead><tr>${["acara", "tgl", "status", "terdaftar", "kuota", "batas", "aksi"].map((k) => `<th scope="col">${esc(t("adm.event.k." + k))}</th>`).join("")}</tr></thead><tbody>${S.acara.map((b) => {
       const a = S.api.atur[b.slug], n = S.api.terdaftar[b.slug] || 0, lalu = b.akhir < kini;
       return `<tr><td data-l="${esc(t("adm.event.k.acara"))}"><a href="${esc(urlEvent(b))}"><strong>${esc(b.judulTampil)}</strong></a></td><td class="jm-nowrap" data-l="${esc(t("adm.event.k.tgl"))}">${esc(tanggal(b.tanggal))}</td>
         <td data-l="${esc(t("adm.event.k.status"))}"><span class="jm-pil ${lalu ? "" : a && a.terbuka ? "jm-pil-ok" : "jm-pil-warn"}">${esc(t(lalu ? "ev.selesai" : a && a.terbuka ? "adm.event.buka" : "adm.event.tutup"))}</span></td>

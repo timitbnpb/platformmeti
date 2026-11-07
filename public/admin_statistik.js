@@ -2,7 +2,7 @@
    Tanpa data pribadi: pengunjung = hash bergaram harian, tanpa IP; kata cari yang menyerupai surel/nomor disamarkan. */
 import { t, ada, angka, tanggal, tanggalDariUnix, bahasa } from "/i18n.js";
 import { esc, api, nanti, hantuHtml, kosongHtml, ikon } from "/inti/umum.js";
-import { kepalaTab, keadaan } from "/admin_umum.js";
+import { kepalaTab, ubinKepala, keadaan } from "/admin_umum.js";
 import { exHtml } from "/inti/komponen.js";
 import { pasangTabel } from "/admin_tabel.js";
 
@@ -84,6 +84,7 @@ export function panelStatistik(panel) {
   function gambar(d) {
     const dim = d.dim || {}, seri = d.seri || [];
     const jumlah = (k) => (d.rentang === "24j" ? d.total24[k] : seri.reduce((s, x) => s + (x[k] || 0), 0));
+    ubinKepala(panel, [{ ikon: "orang", nilai: d.online, label: t("lal.kini.satuan") }, { ikon: "orang", nilai: jumlah("orang"), label: t("lal.u.orang") }, { ikon: "info", nilai: jumlah("ai_jawab"), label: t("lal.u.ai_jawab") }]);
     const sekarang = `<section class="jm-adm-kartu sta-kini"><header class="jm-adm-kh">${ikon("orang", 20)}<h3>${esc(t("lal.kini"))}</h3></header><div class="jm-adm-isi"><p class="jm-kh-angka"><b>${esc(angka(d.online))}</b><span>${esc(t("lal.kini.satuan"))}</span></p><div id="lKini"></div></div></section>`;
     const kartu = `<div class="jm-adm-dua">${kartuTotal("lal.t24", "linimasa", d.total24, t("lal.t24.sub"))}${kartuTotal("lal.tsemua", "kalender", d.sejak, t("lal.tsemua.sub", { tgl: tanggal(d.mulai) }))}</div>`;
     const ubin = [["orang", "orang", jumlah("orang")], ["tampilan", "berita", d.rentang === "24j" ? null : jumlah("tampilan")], ["ai_jawab", "info", jumlah("ai_jawab")], ["klik_ai", "tautan", jumlah("klik_ai")], ["ai_crawl", "analisis", jumlah("ai_crawl")], ["mesin_cari", "cari", jumlah("mesin_cari")]]
@@ -95,11 +96,7 @@ export function panelStatistik(panel) {
       <h3 class="jm-adm-sub">${ikon("analisis", 20)}${esc(t("lal.ubin"))}</h3><ul class="sta-ubin">${ubin}</ul>
       ${grafikIsi}
       ${sumber ? `<p class="jm-bantu">${esc(sumber)}</p>` : ""}
-      <div class="jm-adm-dua">${tabelKartu("lHal", "lal.t.halaman", "berita")}${tabelKartu("lRuj", "lal.t.rujukan", "tautan")}</div>
-      <div class="jm-adm-dua">${tabelKartu("lKan", "lal.t.kanal", "topik")}${tabelKartu("lNeg", "lal.t.negara", "wilayah")}</div>
-      <div class="jm-adm-dua">${tabelKartu("lPer", "lal.t.perangkat", "laptop")}${tabelKartu("lAgen", "lal.t.agen", "info")}</div>
-      <div class="jm-adm-dua">${tabelKartu("lAih", "lal.t.ai_halaman", "berita")}${tabelKartu("lBot", "lal.t.jalur_bot", "direktori")}</div>
-      ${tabelKartu("lCr", "lal.t.crawler", "analisis")}${tabelKartu("lTak", "lal.t.tak", "blokir")}
+      <div class="sta-masonry">${[["lHal", "lal.t.halaman", "berita"], ["lRuj", "lal.t.rujukan", "tautan"], ["lKan", "lal.t.kanal", "topik"], ["lNeg", "lal.t.negara", "wilayah"], ["lPer", "lal.t.perangkat", "laptop"], ["lAgen", "lal.t.agen", "info"], ["lAih", "lal.t.ai_halaman", "berita"], ["lBot", "lal.t.jalur_bot", "direktori"], ["lCr", "lal.t.crawler", "analisis"], ["lTak", "lal.t.tak", "blokir"]].map((x) => tabelKartu(...x)).join("")}</div>
       ${exHtml({ ikon: "metode", topik: t("sta.ey"), tingkat: "h3", judulHtml: esc(t("lal.cara")), subHtml: esc(t("lal.cara.sub")), isiHtml: `<ul class="sta-cara">${[1, 2, 3, 4, 5, 6].map((i) => `<li>${esc(t("lal.cara." + i))}</li>`).join("")}</ul><p class="jm-bantu">${esc(d.rentang_ip.operator ? t("lal.ip.ada", { n: d.rentang_ip.operator, tgl: tanggalDariUnix(d.rentang_ip.diambil) }) : t("lal.ip.kosong"))}</p>` })}`;
     const q = (id) => lalin.querySelector("#" + id);
     const lihat = (id, kolomK, daftar, fn, per = 10) => pasangTabel(q(id), { kolom: kolom2(kolomK, fn), baris: daftar || [], per, satuan: "jm.pag.u.data" });
@@ -132,7 +129,7 @@ export function panelStatistik(panel) {
       const h = d.harian || [];
       const titik = (k) => h.map((p) => ({ label: tanggal(p.tanggal), v: p[k] || 0 }));
       isi.innerHTML = `<div class="jm-adm-dua">${kartuGrafik("sta.halaman", "berita", titik("halaman"), "sta-g1")}${kartuGrafik("sta.cari", "cari", titik("cari"), "sta-g2")}</div>
-        <div class="jm-adm-dua">${tabelKartu("sHal", "sta.top_halaman", "berita")}${tabelKartu("sCari", "sta.top_cari", "cari")}</div>`;
+        <div class="sta-masonry">${tabelKartu("sHal", "sta.top_halaman", "berita")}${tabelKartu("sCari", "sta.top_cari", "cari")}</div>`;
       const baris = (a, f) => (a || []).map((r) => [f(r.kunci), r.jumlah]);
       pasangTabel(isi.querySelector("#sHal"), { kolom: kolom2("sta.c.halaman"), baris: baris(d.halaman, String), per: 10, satuan: "jm.pag.u.data" });
       pasangTabel(isi.querySelector("#sCari"), { kolom: kolom2("sta.c.kata"), baris: baris(d.cari, (k) => samar(String(k))), per: 10, satuan: "jm.pag.u.data" });

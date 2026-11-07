@@ -167,7 +167,7 @@ function badanRapor(r) {
   const regs = r.regulasi.map((x) => x).sort((a, z) => ENERGI_UMUM.test(a.judul) - ENERGI_UMUM.test(z.judul));
   const grafik = th && r.kapasitas_baru?.length ? `<section class="rp-bag rp-graf"><h2 class="rp-h2">${ikon("grafik", 20)}<span>${esc(g.judul)}</span></h2>${grafikSvg(g)}</section>` : "";
   return `<article class="rp-rapor" id="rpRapor">${kartuBanding(r)}${grafik}
-    <div class="rp-dua">${daftarKartu("rp.reg_baru", "regulasi", regs, kartuReg, r.regulasi.length > 6 ? `<a class="jm-tbl jm-tbl-kecil rp-lainnya" href="/regulasi">${ikon("regulasi", 16)}<span>${esc(t("rp.semua_reg"))}</span></a>` : "")}${daftarKartu("rp.berita_atas", "berita", r.berita, kartuBerita)}</div>
+    <div class="rp-dua${regs.length ? "" : " rp-dua-1"}">${regs.length ? daftarKartu("rp.reg_baru", "regulasi", regs, kartuReg, r.regulasi.length > 6 ? `<a class="jm-tbl jm-tbl-kecil rp-lainnya" href="/regulasi">${ikon("regulasi", 16)}<span>${esc(t("rp.semua_reg"))}</span></a>` : "") : ""}${daftarKartu("rp.berita_atas", "berita", r.berita, kartuBerita)}</div>
     ${bagian1(r.bagian)}${bagian2(r.bagian)}${bagian3(r.bagian)}${bagian4(r.bagian)}${kutipHtml(r, nama)}</article>`;
 }
 
@@ -216,7 +216,7 @@ async function tampil(jenis, periode) {
   const isi = $("isi");
   isi.innerHTML = hantuHtml(6);
   try { S.r = await muatData(`rapor/${periode}.json`); await referensi(); } catch (e) { return tampilGalat(isi, () => tampil(jenis, periode)); }
-  khUbin("ubin", ubinData(S.r));
+  khUbin("ubin", ubinData(S.r).filter((u) => u.nilai !== "-")); /* ubin tanpa nilai disembunyikan */
   TB.clear();
   kepala(S.r, jenis, periode);
   isi.innerHTML = badanRapor(S.r) + arsipHtml();

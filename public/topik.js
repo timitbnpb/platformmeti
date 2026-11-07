@@ -13,7 +13,7 @@ import * as B from "/topik_bab.js";
 import * as KB from "/topik_karbon.js";
 
 /* tombol Ikuti topik menunggu jenis "topik" di src/hak.js (JENIS_IKUTI) dan CHECK migrasi ikuti; nyalakan setelah backend siap */
-const IKUTI_TOPIK = false;
+const IKUTI_TOPIK = true;
 const $ = (id) => document.getElementById(id);
 const berkas = (id) => id.replace(/-/g, "_");
 const KONTEKS = {};

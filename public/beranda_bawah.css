@@ -191,7 +191,8 @@
 
 @media (max-width:899px){
 .jm-bb-peta-g{height:auto;display:flex;flex-direction:column}
-.jm-bb-peta-g #petaEl,#petaKartu .jm-peta{position:relative;inset:auto;height:auto;aspect-ratio:100/45;min-height:0}
+.jm-bb-peta-g #petaEl,#petaKartu .jm-peta{position:relative;inset:auto;height:auto;aspect-ratio:100/60;min-height:0}
+@media (max-width:599px){.jm-bb-peta-g #petaEl,#petaKartu .jm-peta{aspect-ratio:1/1}}
 .jm-bb-peta-g>.jm-bb-leg-peta{position:static;width:auto;max-width:none;order:2;border-width:0 0 1px;border-radius:0;box-shadow:none;background:var(--card);backdrop-filter:none}
 #petaInfo.jm-peta-info{position:static;order:3;width:auto;max-height:none;border:0;border-radius:0;box-shadow:none;background:var(--card);backdrop-filter:none}
 }
@@ -210,3 +211,7 @@
 .jm-bb-prog-semua{display:flex;align-items:center;justify-content:center;gap:8px;min-height:var(--target);margin:8px 8px 4px;border:1px solid var(--line);border-radius:var(--r-pil);background:var(--card);color:var(--accent);text-decoration:none;font:600 var(--t-tombol)/var(--lh-rapat) var(--font)}
 .jm-bb-prog-semua:hover{border-color:var(--accent)}
 .jm-bb-prog-semua:focus-visible{outline:2px solid var(--fokus);outline-offset:2px}
+@media (max-width:640px){
+.jm-bb-tabel td:nth-child(2){min-width:96px}.jm-bb-tabel th,.jm-bb-tabel td{padding-inline:4px}
+.jm-bb-sc-w{overflow-x:auto}.jm-bb-sc{min-width:540px}
+}

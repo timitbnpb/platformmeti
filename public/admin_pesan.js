@@ -13,7 +13,7 @@ export function panelPesan(panel) {
   if (!document.querySelector('link[href="/pesan.css"]')) document.head.insertAdjacentHTML("beforeend", '<link rel="stylesheet" href="/pesan.css">');
   const S = { status: "", topik: "", hal: 1, id: null, ctl: null, galat: "" };
   const opsi = (daftar, awalan, semua) => `<option value="">${esc(t(semua))}</option>` + daftar.map((v) => `<option value="${v}">${esc(t(awalan + v))}</option>`).join("");
-  panel.innerHTML = `<p class="jm-bantu">${esc(t("adm.ps.catatan"))}</p>
+  panel.innerHTML = `<header class="jm-adm-bhd"><div><h3>${esc(t("adm.ps.j"))}</h3><p class="jm-bantu">${esc(t("adm.ps.catatan"))}</p></div></header>
     <div class="jm-bar jm-adm-bar1"><select data-ikon="status" class="jm-pilih" id="psfStatus" aria-label="${esc(t("adm.ps.f.status"))}">${opsi(STATUS, "ps.status.", "adm.ps.semua_status")}</select>
     <select data-ikon="topik" class="jm-pilih" id="psfTopik" aria-label="${esc(t("adm.ps.f.topik"))}">${opsi(TOPIK, "ps.topik.", "adm.ps.semua_topik")}</select></div>
     <div class="ps-adm"><div class="ps-adm-daf" id="psaDaf" aria-live="polite"></div><div class="ps-adm-utas" id="psaUtas"><p class="jm-bantu">${esc(t("adm.ps.pilih"))}</p></div></div>`;
@@ -72,6 +72,7 @@ export function panelPesan(panel) {
   }
   function gambarDaftar(d) {
     const hal = Math.max(1, Math.ceil(d.total / 50));
+    panel.querySelector(".ps-adm").classList.toggle("jm-adm-satu", !d.baris.length); // tanpa percakapan: satu keadaan kosong penuh lebar, tanpa panel kanan
     daf.innerHTML = `<p class="jm-bantu">${esc(t("adm.ps.ringkas", { total: angka(d.total), belum: angka(d.belum) }))}</p>` + (d.baris.length
       ? `<ul class="ps-daftar">${d.baris.map((u) => `<li><button type="button" class="ps-utas${u.dibaca_admin ? "" : " belum"}${u.id === S.id ? " aktif" : ""}" data-utas="${esc(u.id)}"><span class="ps-utas-a"><b>${esc(u.nama || u.surel || "-")}</b><span class="ps-pil ps-pil-${esc(u.status)}">${esc(t("ps.status." + u.status))}</span></span><span class="ps-g-meta"><span>${esc(t("ps.topik." + u.topik))}</span><span>${esc(waktu(u.diubah))}</span></span><span class="ps-utas-t">${esc(u.terakhir_dari === "admin" ? t("adm.ps.anda") + ": " : "")}${esc(u.terakhir || "")}</span></button></li>`).join("")}</ul>`
       : kosongHtml("adm.ps.kosong"))

@@ -1,0 +1,3034 @@
+{
+ "id": "penyimpanan",
+ "versi": 1,
+ "diperbarui": "2026-11-08",
+ "judul": {
+  "id": "Penyimpanan dan baterai",
+  "en": "Storage and batteries"
+ },
+ "lead": {
+  "id": "BESS, PLTA pompa, dan ekosistem baterai nikel: pipeline besar di RUPTL, pabrik sel pertama sudah berdiri, dan keselamatan menjadi syarat utama.",
+  "en": "BESS, pumped hydro and the nickel battery ecosystem: a large RUPTL pipeline, the first cell factory standing, and safety as the main condition."
+ },
+ "kunci": [
+  {
+   "label": {
+    "id": "Penyimpanan bernama dalam RUPTL 2025-2034",
+    "en": "Named storage in RUPTL 2025-2034"
+   },
+   "nilai": 6641,
+   "d": 0,
+   "satuan": {
+    "id": "MW (BESS dan PLTA pompa)",
+    "en": "MW (BESS and pumped hydro)"
+   },
+   "sumber": "ruptl",
+   "est": false
+  },
+  {
+   "label": {
+    "id": "Di antaranya PLTA pompa",
+    "en": "Of which pumped hydro"
+   },
+   "nilai": 2983,
+   "d": 0,
+   "satuan": {
+    "id": "MW (Cisokan, Matenggeng, Grindulu)",
+    "en": "MW (Cisokan, Matenggeng, Grindulu)"
+   },
+   "sumber": "ruptl",
+   "est": true
+  },
+  {
+   "label": {
+    "id": "Pabrik sel baterai HLI Green Power",
+    "en": "HLI Green Power cell factory"
+   },
+   "nilai": 10,
+   "d": 0,
+   "satuan": {
+    "id": "GWh per tahun",
+    "en": "GWh a year"
+   },
+   "sumber": "hliauto",
+   "est": false
+  },
+  {
+   "label": {
+    "id": "Penyimpanan baterai California (Nov 2025)",
+    "en": "California battery storage (Nov 2025)"
+   },
+   "nilai": 16942,
+   "d": 0,
+   "satuan": "MW",
+   "sumber": "cec2",
+   "est": false
+  },
+  {
+   "label": {
+    "id": "Target COD Upper Cisokan menurut laporan 2026",
+    "en": "Upper Cisokan COD target per 2026 report"
+   },
+   "nilai": 2030,
+   "d": 0,
+   "satuan": {
+    "id": "tahun",
+    "en": "year"
+   },
+   "sumber": "petro",
+   "est": false
+  }
+ ],
+ "penting": [
+  {
+   "id": "RUPTL 2025-2034 memuat 6641 MW penyimpanan (sekitar 2983 MW PLTA pompa), tetapi belum ada yang beroperasi di basis METI.",
+   "en": "The 2025-2034 RUPTL lists 6641 MW of storage (about 2983 MW pumped hydro) but none is operating in the METI base."
+  },
+  {
+   "id": "Pabrik sel HLI Green Power 10 GWh per tahun sudah berdiri dan proyek CATL, Antam, IBC dimulai; LG keluar dari paket lain pada April 2025.",
+   "en": "The 10 GWh a year HLI Green Power cell factory stands and the CATL, Antam, IBC project has begun; LG exited another package in April 2025."
+  },
+  {
+   "id": "Nilai baterai ada pada layanan jaringan, dan kebakaran Moss Landing 2025 menunjukkan keselamatan tidak boleh ditawar.",
+   "en": "Battery value lies in grid services, and the 2025 Moss Landing fire shows safety is non-negotiable."
+  }
+ ],
+ "posisi": {
+  "id": "Indonesia unggul di rantai sel tetapi tertinggal jauh di penyimpanan jaringan: 6.641 MW rencana dibanding 16.942 MW yang sudah dipasang California.",
+  "en": "Indonesia leads in the cell chain but lags far in grid storage: 6,641 MW planned versus 16,942 MW already installed in California."
+ },
+ "sumber": {
+  "ed": {
+   "judul": "Ringkasan editorial METI (penjelasan umum; bukan kutipan pasal)",
+   "penerbit": "METI",
+   "tanggal": "2026-11-08",
+   "tahun": 2026,
+   "bukti": "editorial"
+  },
+  "proyek": {
+   "judul": "Direktori METI: proyek (public/data/proyek.json, RUPTL 2025-2034, GEM, OSM, media)",
+   "penerbit": "METI",
+   "url": "https://platformmeti.timitbnpb.workers.dev",
+   "tanggal": "2026-11-07",
+   "tahun": 2026,
+   "bukti": "via-pihak-ketiga"
+  },
+  "ruptl": {
+   "judul": "RUPTL PT PLN (Persero) 2025-2034, lampiran Kepmen ESDM 188.K/TL.03/MEM.L/2025 (diolah repo: public/data/ruptl.json)",
+   "penerbit": "PLN, ESDM",
+   "url": "https://gatrik.esdm.go.id/gatrik/gatrik-api//storage/migrasi/download_index/files/b967d-ruptl-pln-2025-2034-pub-.pdf",
+   "tanggal": "2025-05-26",
+   "tahun": 2025,
+   "bukti": "resmi"
+  },
+  "regul": {
+   "judul": "Basis regulasi METI (public/data/regulasi.json, naskah BPK JDIH)",
+   "penerbit": "BPK JDIH, METI",
+   "url": "https://peraturan.bpk.go.id/",
+   "tanggal": "2026-11-07",
+   "tahun": 2026,
+   "bukti": "resmi"
+  },
+  "pendanaan": {
+   "judul": "Basis pendanaan METI (public/data/pendanaan.json: skema dan proyek pendana)",
+   "penerbit": "METI, ADB, World Bank, AIIB dan lain-lain",
+   "url": "https://www.adb.org/projects",
+   "tanggal": "2026-11-08",
+   "tahun": 2026,
+   "bukti": "via-pihak-ketiga"
+  },
+  "ruuebet": {
+   "judul": "Pelacak RUU EBET di arsip METI (public/data/kebijakan_info.json; situs DPR melarang perayap sehingga tahap bukan dari DPR)",
+   "penerbit": "METI, Liputan6",
+   "url": "https://www.liputan6.com/bisnis/read/6312024/meti-minta-ruu-ebet-segera-disahkan",
+   "tanggal": "2026-09-08",
+   "tahun": 2026,
+   "bukti": "media"
+  },
+  "petro": {
+   "judul": "PLNE reports progress on 1,040 MW Upper Cisokan pumped storage project (COD 2030 menurut laporan 2026)",
+   "penerbit": "Petromindo",
+   "url": "https://www.petromindo.com/news/article/plne-reports-progress-on-1-040-mw-upper-cisokan-pumped-storage-project",
+   "tanggal": "2025-12-01",
+   "tahun": 2025,
+   "bukti": "media"
+  },
+  "aiib": {
+   "judul": "AIIB, Project Implementation Monitoring Report: Development of Pumped Storage Hydropower in Java Bali System No.1 (Maret 2023)",
+   "penerbit": "AIIB",
+   "url": "https://www.aiib.org/en/projects/details/2023/_download/indonesia/AIIB_PIMR_SBF_Indonesia_P000512_Development_of_Pumped_Storage_Hydropower_in_Java_Bali_System_No1_March_2023_Public_Version.pdf",
+   "tanggal": "2023-03-01",
+   "tahun": 2023,
+   "bukti": "resmi"
+  },
+  "bisnis24": {
+   "judul": "Kejar operasi proyek PLTA raksasa di Jawa Barat, PLN koordinasi isu TKDN (24 Jul 2024)",
+   "penerbit": "Bisnis.com",
+   "url": "https://ekonomi.bisnis.com/read/20240724/44/1784945/kejar-operasi-proyek-plta-raksasa-di-jawa-barat-pln-koordinasi-isu-tkdn",
+   "tanggal": "2024-07-24",
+   "tahun": 2024,
+   "bukti": "media"
+  },
+  "iea74": {
+   "judul": "IEA forecasts 74 GW increase in global pumped-storage hydropower capacity (6 Nov 2026)",
+   "penerbit": "Trend.az",
+   "url": "https://www.trend.az/world/4243656.html",
+   "tanggal": "2026-11-06",
+   "tahun": 2026,
+   "bukti": "media"
+  },
+  "seawater": {
+   "judul": "PLN studies 1 GW seawater pumped storage project despite rising BESS competition",
+   "penerbit": "Petromindo",
+   "url": "https://www.petromindo.com/news/article/pln-studies-1-gw-seawater-pumped-storage-project-despite-rising-bess-competition",
+   "tanggal": "2026-08-01",
+   "tahun": 2026,
+   "bukti": "media"
+  },
+  "ibc": {
+   "judul": "Indonesia government launching 5MW pilot BESS (PLN dan Indonesia Battery Corporation; IBC didirikan Pertamina, Antam, Inalum, PLN)",
+   "penerbit": "Energy-Storage.news",
+   "url": "https://www.energy-storage.news/indonesia-government-launching-5mw-pilot-bess",
+   "tanggal": "2026-11-08",
+   "tahun": 2026,
+   "bukti": "media"
+  },
+  "ikn": {
+   "judul": "PLTS IKN 50 MW resmi beroperasi (BESS 14,2 MWh; diresmikan 20 Jan 2025)",
+   "penerbit": "Listrik Indonesia",
+   "url": "https://listrikindonesia.com/detail/15447/plts-50-mw-resmi-beroperasi-di-ikn",
+   "tanggal": "2025-01-20",
+   "tahun": 2025,
+   "bukti": "media"
+  },
+  "hlitempo": {
+   "judul": "Jokowi opens Southeast Asia's largest EV battery factory in Karawang (3 Jul 2024)",
+   "penerbit": "Tempo",
+   "url": "https://en.tempo.co/amp/1886890/indonesias-jokowi-opens-southeast-asias-largest-ev-battery-factory-in-karawang",
+   "tanggal": "2024-07-03",
+   "tahun": 2024,
+   "bukti": "media"
+  },
+  "hliauto": {
+   "judul": "Hyundai and LG open battery cell plant in Indonesia (10 GWh per tahun; usaha patungan Hyundai, LG Energy Solution, IBC)",
+   "penerbit": "Just Auto",
+   "url": "https://www.just-auto.com/news/hyundai-lg-open-battery-cell-plant-in-indonesia",
+   "tanggal": "2024-07-03",
+   "tahun": 2024,
+   "bukti": "media"
+  },
+  "hlijp": {
+   "judul": "Indonesia bets on Southeast Asia's first battery plant to become EV hub",
+   "penerbit": "The Jakarta Post",
+   "url": "https://www.thejakartapost.com/business/2024/10/27/indonesia-bets-on-southeast-asias-first-battery-plant-to-become-ev-hub",
+   "tanggal": "2024-10-27",
+   "tahun": 2024,
+   "bukti": "media"
+  },
+  "dragon": {
+   "judul": "Prabowo groundbreaking mega proyek baterai listrik CATL, Antam, IBC (29 Jun 2025; proyek Dragon, 6,9 GWh tahap I)",
+   "penerbit": "Bisnis.com",
+   "url": "https://ekonomi.bisnis.com/read/20250629/44/1888778/prabowo-groundbreaking-mega-proyek-baterai-listrik-catl-antam-antm-ibc",
+   "tanggal": "2025-06-29",
+   "tahun": 2025,
+   "bukti": "media"
+  },
+  "dragon2": {
+   "judul": "CATL breaks ground on USD 5.9 billion new battery plant in Indonesia",
+   "penerbit": "Reccessary",
+   "url": "https://reccessary.com/en/news/catl-breaks-ground-new-battery-plant-indonesia",
+   "tanggal": "2025-06-29",
+   "tahun": 2025,
+   "bukti": "media"
+  },
+  "lgjp": {
+   "judul": "Govt says China's Huayou to replace LGES in EV battery project (24 Apr 2025)",
+   "penerbit": "The Jakarta Post",
+   "url": "https://www.thejakartapost.com/business/2025/04/24/govt-says-chinas-huayou-to-replace-lges-in-ev-battery-project",
+   "tanggal": "2025-04-24",
+   "tahun": 2025,
+   "bukti": "media"
+  },
+  "lgscmp": {
+   "judul": "Huayou may step in as South Korea's LG abandons USD 8.45 billion Indonesia EV battery investment",
+   "penerbit": "South China Morning Post",
+   "url": "https://www.scmp.com/business/companies/article/3309683/huayou-may-step-south-koreas-lg-abandons-us845-bn-indonesia-ev-battery-investment",
+   "tanggal": "2025-04-24",
+   "tahun": 2025,
+   "bukti": "media"
+  },
+  "lgpet": {
+   "judul": "Huayou takes over Indonesia's USD 9.8 billion battery project from LG",
+   "penerbit": "Petromindo",
+   "url": "https://petromindo.com/news/article/huayou-takes-over-indonesia-s-9-8-billion-battery-project-from-lg",
+   "tanggal": "2025-04-24",
+   "tahun": 2025,
+   "bukti": "media"
+  },
+  "hprwiki": {
+   "judul": "Hornsdale Power Reserve (ringkasan Wikipedia: 100 MW / 129 MWh sejak 1 Des 2017, ekspansi 150 MW / 193,5 MWh pada 2 Sep 2020)",
+   "penerbit": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Hornsdale_Power_Reserve",
+   "tanggal": "2026-11-08",
+   "tahun": 2026,
+   "bukti": "via-pihak-ketiga",
+   "lisensi": "CC BY-SA 4.0"
+  },
+  "hpraurecon": {
+   "judul": "Aurecon, Hornsdale Power Reserve Impact Study year 2 (biaya jaringan turun sekitar A$116 juta pada 2019)",
+   "penerbit": "Aurecon via Hornsdale Power Reserve",
+   "url": "https://hornsdalepowerreserve.com.au/2020/06/29/hpr-enabling-significant-cost-savings/",
+   "tanggal": "2020-06-29",
+   "tahun": 2020,
+   "bukti": "kajian"
+  },
+  "vbb": {
+   "judul": "Victorian Big Battery (ringkasan Wikipedia: 300 MW / 450 MWh, kebakaran Megapack 30 Jul 2021 saat uji)",
+   "penerbit": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Victorian_Big_Battery",
+   "tanggal": "2026-11-08",
+   "tahun": 2026,
+   "bukti": "via-pihak-ketiga",
+   "lisensi": "CC BY-SA 4.0"
+  },
+  "ml": {
+   "judul": "Moss Landing Power Plant (ringkasan Wikipedia: fase 1 300 MW / 1.200 MWh terbakar 16 Jan 2025, sekitar 1.200 warga dievakuasi, penyebab belum ditetapkan)",
+   "penerbit": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Moss_Landing_Power_Plant",
+   "tanggal": "2026-11-08",
+   "tahun": 2026,
+   "bukti": "via-pihak-ketiga",
+   "lisensi": "CC BY-SA 4.0"
+  },
+  "mlnews": {
+   "judul": "Fire rages at Vistra battery storage facility in Moss Landing (16 Jan 2025)",
+   "penerbit": "Cal Coast News",
+   "url": "https://calcoastnews.com/2025/01/fire-rages-at-vistra-battery-storage-facility-in-moss-landing/",
+   "tanggal": "2025-01-16",
+   "tahun": 2025,
+   "bukti": "media"
+  },
+  "cec": {
+   "judul": "California Energy Commission, California energy storage system survey (500 MW pada 2018 menjadi lebih dari 16.900 MW pada pertengahan 2025)",
+   "penerbit": "California Energy Commission",
+   "url": "https://www.energy.ca.gov/data-reports/energy-almanac/california-electricity-data/california-energy-storage-system-survey",
+   "tanggal": "2025-11-01",
+   "tahun": 2025,
+   "bukti": "resmi"
+  },
+  "cec2": {
+   "judul": "California reaches 16,942 MW of battery storage available (Nov 2025)",
+   "penerbit": "T&D World",
+   "url": "https://tdworld.com/distributed-energy-resources/energy-storage/news/55331203/california-reaches-16942-mw-of-battery-storage-available",
+   "tanggal": "2025-11-13",
+   "tahun": 2025,
+   "bukti": "media"
+  },
+  "korea": {
+   "judul": "Korea's ESS fires: batteries not to blame but industry takes hit anyway (sekitar 30 kebakaran ESS dilaporkan setahun)",
+   "penerbit": "Energy-Storage.news",
+   "url": "https://www.energy-storage.news/koreas-ess-fires-batteries-not-to-blame-but-industry-takes-hit-anyway/",
+   "tanggal": "2026-11-08",
+   "tahun": 2026,
+   "bukti": "media"
+  }
+ },
+ "bab": {
+  "2": {
+   "tipe": "faq",
+   "sumber": [
+    "ed",
+    "ruptl",
+    "hliauto",
+    "hprwiki"
+   ],
+   "butir": [
+    {
+     "t": {
+      "id": "Apa itu BESS?",
+      "en": "What is a BESS?"
+     },
+     "j": {
+      "id": "Battery energy storage system: baterai skala jaringan (kebanyakan lithium-ion) yang mengisi saat listrik murah atau melimpah dan mengalirkan saat dibutuhkan. Dinyatakan dalam MW (daya) dan MWh (energi).",
+      "en": "Battery energy storage system: grid-scale batteries (mostly lithium-ion) that charge when power is cheap or abundant and discharge when needed. Rated in MW (power) and MWh (energy)."
+     }
+    },
+    {
+     "t": {
+      "id": "Berapa banyak penyimpanan yang direncanakan PLN?",
+      "en": "How much storage does PLN plan?"
+     },
+     "j": {
+      "id": "RUPTL 2025-2034 memuat 50 proyek penyimpanan bernama dengan total 6641 MW: sekitar 3658 MW BESS dan 2983 MW PLTA pompa (hitung sendiri dari tabel RUPTL).",
+      "en": "The 2025-2034 RUPTL lists 50 named storage projects totalling 6641 MW: about 3658 MW of BESS and 2983 MW of pumped hydro (own calculation from the RUPTL tables)."
+     }
+    },
+    {
+     "t": {
+      "id": "Apa itu IBC?",
+      "en": "What is IBC?"
+     },
+     "j": {
+      "id": "Indonesia Battery Corporation, usaha patungan BUMN (Pertamina, Antam, Inalum, PLN) yang menjadi mitra Hyundai dan LG di HLI Green Power dan mitra CATL dan Antam di proyek Dragon.",
+      "en": "Indonesia Battery Corporation, a state-owned joint venture (Pertamina, Antam, Inalum, PLN) that is partner to Hyundai and LG in HLI Green Power and to CATL and Antam in the Dragon project."
+     }
+    },
+    {
+     "t": {
+      "id": "Apakah ada pabrik sel baterai di Indonesia?",
+      "en": "Is there a battery cell factory in Indonesia?"
+     },
+     "j": {
+      "id": "Ya. HLI Green Power di Karawang berkapasitas 10 GWh per tahun diresmikan 3 Juli 2024; proyek CATL, Antam, dan IBC dengan 6,9 GWh tahap I dimulai pembangunannya 29 Juni 2025.",
+      "en": "Yes. HLI Green Power in Karawang with 10 GWh a year was inaugurated on 3 July 2024; the CATL, Antam and IBC project with 6.9 GWh in phase I broke ground on 29 June 2025."
+     }
+    },
+    {
+     "t": {
+      "id": "Apa beda BESS dan PLTA pompa?",
+      "en": "What is the difference between BESS and pumped hydro?"
+     },
+     "j": {
+      "id": "BESS cepat dibangun dan merespons dalam milidetik, untuk durasi pendek; PLTA pompa lambat dan padat modal, tahan puluhan tahun, untuk durasi panjang.",
+      "en": "BESS is fast to build and responds in milliseconds, for short durations; pumped hydro is slow and capital-heavy, lasts decades, for long durations."
+     }
+    },
+    {
+     "t": {
+      "id": "Apakah baterai aman dari kebakaran?",
+      "en": "Are batteries safe from fire?"
+     },
+     "j": {
+      "id": "Risiko nyata: Moss Landing (California) terbakar pada 16 Januari 2025 dan Victorian Big Battery (Australia) terbakar saat uji pada 2021. Standar keselamatan dan jarak dari permukiman menentukan.",
+      "en": "The risk is real: Moss Landing (California) burned on 16 January 2025 and the Victorian Big Battery (Australia) caught fire during testing in 2021. Safety standards and distance from settlements matter."
+     }
+    },
+    {
+     "t": {
+      "id": "Apa yang terjadi dengan LG di Indonesia?",
+      "en": "What happened to LG in Indonesia?"
+     },
+     "j": {
+      "id": "LG Energy Solution keluar dari proyek ekosistem baterai bernilai sekitar USD 8,45 miliar pada April 2025; pemerintah menyatakan Huayou akan menggantikan. Lihat bab 40.",
+      "en": "LG Energy Solution exited a battery ecosystem project worth about USD 8.45 billion in April 2025; government said Huayou would replace it. See chapter 40."
+     }
+    },
+    {
+     "t": {
+      "id": "Kapan Upper Cisokan beroperasi?",
+      "en": "When will Upper Cisokan operate?"
+     },
+     "j": {
+      "id": "Laporan 2026 menyebut COD 2030; laporan lain sebelumnya menyebut 2025, 2027, atau 2028. Lihat bab 40.",
+      "en": "A 2026 report states COD 2030; earlier reports said 2025, 2027 or 2028. See chapter 40."
+     }
+    }
+   ]
+  },
+  "3": {
+   "tipe": "glosarium",
+   "sumber": [
+    "ed"
+   ],
+   "butir": [
+    {
+     "istilah": {
+      "id": "BESS",
+      "en": "BESS"
+     },
+     "arti": {
+      "id": "Sistem penyimpanan energi baterai.",
+      "en": "Battery energy storage system."
+     }
+    },
+    {
+     "istilah": {
+      "id": "MW dan MWh",
+      "en": "MW dan MWh"
+     },
+     "arti": {
+      "id": "MW adalah daya sesaat; MWh adalah energi yang tersimpan. Durasi = MWh dibagi MW.",
+      "en": "MW is instantaneous power; MWh is stored energy. Duration = MWh divided by MW."
+     }
+    },
+    {
+     "istilah": {
+      "id": "PLTA pompa (PSH)",
+      "en": "PLTA pompa (PSH)"
+     },
+     "arti": {
+      "id": "Pumped storage hydropower: menyimpan energi sebagai air di waduk atas.",
+      "en": "Pumped storage hydropower: stores energy as water in an upper reservoir."
+     }
+    },
+    {
+     "istilah": {
+      "id": "IBC",
+      "en": "IBC"
+     },
+     "arti": {
+      "id": "Indonesia Battery Corporation.",
+      "en": "Indonesia Battery Corporation."
+     }
+    },
+    {
+     "istilah": {
+      "id": "Sel baterai",
+      "en": "Sel baterai"
+     },
+     "arti": {
+      "id": "Unit elektrokimia terkecil; dirakit menjadi modul dan paket.",
+      "en": "Smallest electrochemical unit; assembled into modules and packs."
+     }
+    },
+    {
+     "istilah": {
+      "id": "Katoda / anoda",
+      "en": "Katoda / anoda"
+     },
+     "arti": {
+      "id": "Elektroda baterai; katoda memakai nikel, kobalt, mangan atau besi fosfat.",
+      "en": "Battery electrodes; the cathode uses nickel, cobalt, manganese or iron phosphate."
+     }
+    },
+    {
+     "istilah": {
+      "id": "Round-trip efficiency",
+      "en": "Round-trip efficiency"
+     },
+     "arti": {
+      "id": "Rasio energi keluar terhadap energi masuk dalam satu siklus.",
+      "en": "Ratio of energy out to energy in over one cycle."
+     }
+    },
+    {
+     "istilah": {
+      "id": "FCAS",
+      "en": "FCAS"
+     },
+     "arti": {
+      "id": "Frequency control ancillary services, jasa pengendalian frekuensi.",
+      "en": "Frequency control ancillary services."
+     }
+    },
+    {
+     "istilah": {
+      "id": "Thermal runaway",
+      "en": "Thermal runaway"
+     },
+     "arti": {
+      "id": "Reaksi panas berantai di sel baterai yang memicu kebakaran.",
+      "en": "Self-heating chain reaction in a cell that triggers fire."
+     }
+    },
+    {
+     "istilah": {
+      "id": "BMS",
+      "en": "BMS"
+     },
+     "arti": {
+      "id": "Battery management system.",
+      "en": "Battery management system."
+     }
+    },
+    {
+     "istilah": {
+      "id": "Arbitrase energi",
+      "en": "Arbitrase energi"
+     },
+     "arti": {
+      "id": "Membeli listrik saat murah dan menjual saat mahal.",
+      "en": "Buying power when cheap and selling when expensive."
+     }
+    },
+    {
+     "istilah": {
+      "id": "Daur ulang baterai",
+      "en": "Daur ulang baterai"
+     },
+     "arti": {
+      "id": "Pemulihan nikel, kobalt, dan lithium dari baterai bekas.",
+      "en": "Recovery of nickel, cobalt and lithium from used batteries."
+     }
+    },
+    {
+     "istilah": {
+      "id": "Hilirisasi",
+      "en": "Hilirisasi"
+     },
+     "arti": {
+      "id": "Peningkatan nilai tambah komoditas (nikel) di dalam negeri.",
+      "en": "Domestic value addition on a commodity (nickel)."
+     }
+    },
+    {
+     "istilah": {
+      "id": "RE Base",
+      "en": "RE Base"
+     },
+     "arti": {
+      "id": "Skenario RUPTL yang menjadi dasar tahun COD pada tabel.",
+      "en": "The RUPTL scenario used for COD years in the tables."
+     }
+    },
+    {
+     "istilah": {
+      "id": "ESMP",
+      "en": "ESMP"
+     },
+     "arti": {
+      "id": "Rencana pengelolaan lingkungan dan sosial.",
+      "en": "Environmental and social management plan."
+     }
+    },
+    {
+     "istilah": {
+      "id": "SLO",
+      "en": "SLO"
+     },
+     "arti": {
+      "id": "Sertifikat Laik Operasi.",
+      "en": "Operation worthiness certificate."
+     }
+    }
+   ]
+  },
+  "4": {
+   "tipe": "teks",
+   "sumber": [
+    "hprwiki",
+    "iea74",
+    "ruptl"
+   ],
+   "paragraf": [
+    {
+     "id": "Penyimpanan membuat listrik surya dan bayu dapat dipakai saat tak ada matahari dan angin, dan menjaga frekuensi jaringan. Hornsdale di Australia Selatan menunjukkan responsnya sekitar 100 milidetik dibanding 6.000 milidetik pada layanan frekuensi konvensional.",
+     "en": "Storage lets solar and wind power be used when sun and wind are absent and keeps grid frequency stable. Hornsdale in South Australia showed a response of about 100 milliseconds versus 6,000 milliseconds for conventional frequency services."
+    },
+    {
+     "id": "Indonesia merencanakan 6641 MW penyimpanan dalam RUPTL 2025-2034, tetapi di basis METI belum ada yang berstatus beroperasi: pipeline besar, realisasi baru dimulai.",
+     "en": "Indonesia plans 6641 MW of storage in the 2025-2034 RUPTL, but none is marked operating in the METI base: a large pipeline with delivery only starting."
+    },
+    {
+     "id": "Topik ini juga mencakup ekosistem baterai nikel (IBC, HLI Green Power, proyek CATL) karena sel baterai Indonesia dipasarkan terutama ke kendaraan listrik, dan BESS jaringan memakai teknologi yang sama.",
+     "en": "This topic also covers the nickel battery ecosystem (IBC, HLI Green Power, the CATL project) because Indonesian cells are mainly marketed to electric vehicles and grid BESS uses the same technology."
+    }
+   ]
+  },
+  "5": {
+   "tipe": "rumus",
+   "sumber": [
+    "hprwiki",
+    "hliauto",
+    "ed"
+   ],
+   "rumus": [
+    {
+     "id": "Durasi (jam) = kapasitas energi (MWh) / daya (MW)",
+     "en": "Duration (hours) = energy capacity (MWh) / power (MW)"
+    },
+    {
+     "id": "Energi keluar (MWh) = energi masuk (MWh) x efisiensi round-trip",
+     "en": "Energy out (MWh) = energy in (MWh) x round-trip efficiency"
+    },
+    {
+     "id": "Pendapatan arbitrase = energi keluar x harga jual - energi masuk x harga beli",
+     "en": "Arbitrage revenue = energy out x sell price - energy in x buy price"
+    }
+   ],
+   "contoh": [
+    {
+     "id": "Hornsdale awal 100 MW / 129 MWh berdurasi 1,29 jam; setelah ekspansi 150 MW / 193,5 MWh juga 1,29 jam (EST, hitung sendiri).",
+     "en": "Original Hornsdale at 100 MW / 129 MWh lasts 1.29 hours; after expansion 150 MW / 193.5 MWh it is also 1.29 hours (EST, own calculation)."
+    },
+    {
+     "id": "Pabrik HLI 10 GWh per tahun disebut cukup untuk lebih dari 150.000 kendaraan listrik; itu setara sekitar 66.7 kWh per kendaraan (EST, hitung sendiri dari angka pemberitaan).",
+     "en": "The 10 GWh a year HLI plant is described as enough for over 150,000 electric vehicles; that is about 66.7 kWh per vehicle (EST, own calculation from press figures)."
+    },
+    {
+     "id": "Analisis METI (Hipotesis): durasi 2 jam cocok untuk menggeser surya ke malam di sistem kecil; untuk Jawa-Bali durasi lebih panjang dari PLTA pompa tetap dibutuhkan.",
+     "en": "METI analysis (Hypothesis): two-hour duration suits shifting solar to evening in small systems; for Java-Bali longer duration from pumped hydro is still needed."
+    }
+   ]
+  },
+  "6": {
+   "tipe": "langkah",
+   "sumber": [
+    "ibc",
+    "hliauto",
+    "dragon",
+    "dragon2"
+   ],
+   "butir": [
+    {
+     "judul": {
+      "id": "Penambangan dan pengolahan nikel",
+      "en": "Nickel mining and processing"
+     },
+     "isi": {
+      "id": "Nikel Halmahera Timur diolah menjadi bahan baterai dalam proyek Dragon.",
+      "en": "East Halmahera nickel is processed into battery materials in the Dragon project."
+     },
+     "pelaku": {
+      "id": "Antam, CBL (CATL/Brunp/Lygend)",
+      "en": "Antam, CBL (CATL/Brunp/Lygend)"
+     }
+    },
+    {
+     "judul": {
+      "id": "Bahan katoda dan prekursor",
+      "en": "Cathode and precursor materials"
+     },
+     "isi": {
+      "id": "Peleburan dan pembuatan bahan baterai sebelum sel.",
+      "en": "Smelting and battery materials production before cells."
+     },
+     "pelaku": {
+      "id": "Mitra Tiongkok, BUMN",
+      "en": "Chinese partners, SOEs"
+     }
+    },
+    {
+     "judul": {
+      "id": "Sel dan paket baterai",
+      "en": "Cells and packs"
+     },
+     "isi": {
+      "id": "Pabrik sel Karawang: HLI Green Power 10 GWh dan proyek CATL 6,9 GWh tahap I.",
+      "en": "Karawang cell plants: HLI Green Power 10 GWh and the CATL project 6.9 GWh in phase I."
+     },
+     "pelaku": {
+      "id": "Hyundai, LG, IBC, CATL",
+      "en": "Hyundai, LG, IBC, CATL"
+     }
+    },
+    {
+     "judul": {
+      "id": "Integrasi: kendaraan dan BESS",
+      "en": "Integration: vehicles and BESS"
+     },
+     "isi": {
+      "id": "Sel masuk ke kendaraan listrik dan integrator BESS untuk jaringan PLN.",
+      "en": "Cells go into EVs and BESS integrators for the PLN grid."
+     },
+     "pelaku": {
+      "id": "Pabrikan otomotif, integrator, PLN",
+      "en": "Automakers, integrators, PLN"
+     }
+    },
+    {
+     "judul": {
+      "id": "Interkoneksi dan operasi",
+      "en": "Interconnection and operation"
+     },
+     "isi": {
+      "id": "PLN menempatkan BESS di sistem yang butuh penstabil atau pergeseran surya (contoh BESS 14,2 MWh di PLTS IKN).",
+      "en": "PLN places BESS in systems needing stabilisation or solar shifting (example: 14.2 MWh BESS at the IKN solar plant)."
+     },
+     "pelaku": {
+      "id": "PLN, pengembang",
+      "en": "PLN, developers"
+     }
+    },
+    {
+     "judul": {
+      "id": "Daur ulang",
+      "en": "Recycling"
+     },
+     "isi": {
+      "id": "Proyek Dragon mencakup daur ulang baterai.",
+      "en": "The Dragon project includes battery recycling."
+     },
+     "pelaku": {
+      "id": "Pengolah, pemerintah",
+      "en": "Recyclers, government"
+     }
+    }
+   ]
+  },
+  "7": {
+   "tipe": "grafik",
+   "jenis": "kolom",
+   "sumber": [
+    "ruptl"
+   ],
+   "label": {
+    "id": "Penyimpanan RUPTL 2025-2034 menurut tahun COD (skenario RE Base)",
+    "en": "RUPTL 2025-2034 storage by COD year (RE Base scenario)"
+   },
+   "satuan": "MW",
+   "d": 0,
+   "seri": [
+    {
+     "nama": {
+      "id": "MW per tahun COD",
+      "en": "MW per COD year"
+     },
+     "sorot": true,
+     "titik": [
+      [
+       "2025",
+       15
+      ],
+      [
+       "2026",
+       77
+      ],
+      [
+       "2027",
+       234
+      ],
+      [
+       "2028",
+       1395
+      ],
+      [
+       "2029",
+       393
+      ],
+      [
+       "2030",
+       450
+      ],
+      [
+       "2031",
+       5
+      ],
+      [
+       "2032",
+       1069
+      ],
+      [
+       "2033",
+       1350
+      ],
+      [
+       "2034",
+       100
+      ],
+      [
+       "2029,2031",
+       905
+      ],
+      [
+       "2026,2027",
+       75
+      ],
+      [
+       "2029,2030",
+       150
+      ],
+      [
+       "2029,2034",
+       250
+      ],
+      [
+       "2027,2028,2029,2030,2031",
+       10
+      ],
+      [
+       "2028,2029,2031,2032",
+       95
+      ],
+      [
+       "2026,2030",
+       8
+      ],
+      [
+       "2030,2033",
+       13
+      ],
+      [
+       "2026,2028",
+       3
+      ],
+      [
+       "2026,2031,2033",
+       45
+      ]
+     ]
+    }
+   ],
+   "catatan": {
+    "id": "Hanya proyek yang tahun CODnya terbaca di RUPTL; sebagian baris tanpa tahun tidak ikut.",
+    "en": "Only projects whose COD year is readable in the RUPTL; rows without a year are excluded."
+   }
+  },
+  "8": {
+   "tipe": "tabel",
+   "per": 10,
+   "sumber": [
+    "ruptl"
+   ],
+   "catatan": {
+    "id": "Penyimpanan bernama RUPTL 2025-2034 menurut provinsi (BESS dan PLTA pompa).",
+    "en": "Named RUPTL 2025-2034 storage by province (BESS and pumped hydro)."
+   },
+   "kolom": [
+    {
+     "k": "prov",
+     "l": {
+      "id": "Provinsi",
+      "en": "Province"
+     }
+    },
+    {
+     "k": "n",
+     "l": {
+      "id": "Proyek",
+      "en": "Projects"
+     },
+     "num": true,
+     "d": 0
+    },
+    {
+     "k": "mw",
+     "l": {
+      "id": "Kapasitas (MW)",
+      "en": "Capacity (MW)"
+     },
+     "num": true,
+     "d": 0
+    }
+   ],
+   "baris": [
+    {
+     "prov": "Jawa Barat",
+     "n": 5,
+     "mw": 1540
+    },
+    {
+     "prov": "Jawa Tengah",
+     "n": 2,
+     "mw": 1193
+    },
+    {
+     "prov": "Jawa Timur",
+     "n": 1,
+     "mw": 1000
+    },
+    {
+     "prov": "Sumatera Utara",
+     "n": 2,
+     "mw": 955
+    },
+    {
+     "prov": "Lampung",
+     "n": 4,
+     "mw": 375
+    },
+    {
+     "prov": "Aceh",
+     "n": 2,
+     "mw": 250
+    },
+    {
+     "prov": "Kalimantan Utara",
+     "n": 1,
+     "mw": 240
+    },
+    {
+     "prov": "Kalimantan Barat",
+     "n": 2,
+     "mw": 225
+    },
+    {
+     "prov": "Kalimantan Timur",
+     "n": 3,
+     "mw": 225
+    },
+    {
+     "prov": "Banten",
+     "n": 2,
+     "mw": 200
+    },
+    {
+     "prov": "Kalimantan Tengah",
+     "n": 2,
+     "mw": 125
+    },
+    {
+     "prov": "Sulawesi Tenggara",
+     "n": 1,
+     "mw": 95
+    },
+    {
+     "prov": "Nusa Tenggara Timur",
+     "n": 7,
+     "mw": 69
+    },
+    {
+     "prov": "Sumatera Selatan",
+     "n": 1,
+     "mw": 50
+    },
+    {
+     "prov": "Maluku Utara",
+     "n": 4,
+     "mw": 34
+    },
+    {
+     "prov": "Maluku",
+     "n": 3,
+     "mw": 18
+    },
+    {
+     "prov": "Nusa Tenggara Barat",
+     "n": 1,
+     "mw": 13
+    },
+    {
+     "prov": "Sulawesi Selatan",
+     "n": 2,
+     "mw": 10
+    }
+   ]
+  },
+  "11": {
+   "tipe": "teks",
+   "sumber": [
+    "ruptl",
+    "ikn",
+    "ibc",
+    "proyek"
+   ],
+   "paragraf": [
+    {
+     "id": "Pasar domestik BESS pada dasarnya adalah pesanan PLN: 50 proyek dalam RUPTL (3658 MW BESS), dan di basis METI 0 proyek penyimpanan berstatus beroperasi (2 di antaranya konstruksi, yaitu tahap Cisokan).",
+     "en": "The domestic BESS market is essentially PLN orders: 50 projects in the RUPTL (3658 MW BESS), and in the METI base 0 storage projects are operating (2 are under construction, the Cisokan phases)."
+    },
+    {
+     "id": "Contoh BESS beroperasi di luar basis proyek: 14,2 MWh di PLTS IKN 50 MW (diresmikan 20 Januari 2025) dan pilot 5 MW antara PLN dan IBC.",
+     "en": "Examples of operating BESS outside the project base: 14.2 MWh at the 50 MW IKN solar plant (inaugurated 20 January 2025) and a 5 MW pilot between PLN and IBC."
+    }
+   ]
+  },
+  "12": {
+   "tipe": "tabel",
+   "per": 8,
+   "sumber": [
+    "regul",
+    "ruptl"
+   ],
+   "kolom": [
+    {
+     "k": "dok",
+     "l": {
+      "id": "Peraturan",
+      "en": "Regulation"
+     },
+     "url": "u"
+    },
+    {
+     "k": "ttg",
+     "l": {
+      "id": "Tentang",
+      "en": "About"
+     }
+    },
+    {
+     "k": "st",
+     "l": {
+      "id": "Status",
+      "en": "Status"
+     }
+    }
+   ],
+   "baris": [
+    {
+     "dok": "Perpres 55/2019",
+     "ttg": {
+      "id": "Percepatan program kendaraan bermotor listrik berbasis baterai (dasar ekosistem baterai)",
+      "en": "Accelerating the battery electric vehicle programme (basis of the battery ecosystem)"
+     },
+     "st": "diubah",
+     "u": "https://peraturan.bpk.go.id/Details/116973"
+    },
+    {
+     "dok": "Perpres 79/2023",
+     "ttg": {
+      "id": "Perubahan Perpres 55/2019",
+      "en": "Amendment of Perpres 55/2019"
+     },
+     "st": "berlaku",
+     "u": "https://peraturan.bpk.go.id/Details/273447"
+    },
+    {
+     "dok": "Permen LHK 12/2021",
+     "ttg": {
+      "id": "Baku mutu emisi daur ulang baterai lithium",
+      "en": "Emission standards for lithium battery recycling"
+     },
+     "st": "berlaku",
+     "u": "https://peraturan.bpk.go.id/Details/235331"
+    },
+    {
+     "dok": "Permen 100/2020",
+     "ttg": {
+      "id": "Impor baterai lithium tidak baru sebagai bahan baku (dicabut)",
+      "en": "Import of non-new lithium batteries as raw material (revoked)"
+     },
+     "st": "dicabut",
+     "u": "https://peraturan.bpk.go.id/Details/160462"
+    },
+    {
+     "dok": "Permenperin 6/2022",
+     "ttg": {
+      "id": "Spesifikasi, peta jalan, dan penghitungan TKDN kendaraan bermotor listrik",
+      "en": "Specifications, roadmap and local content calculation for electric vehicles"
+     },
+     "st": "berlaku",
+     "u": "https://peraturan.bpk.go.id/Details/227541"
+    },
+    {
+     "dok": "RUPTL 2025-2034",
+     "ttg": {
+      "id": "Rencana penyimpanan PLN (BESS dan PLTA pompa) sebagai dasar pengadaan",
+      "en": "PLN storage plan (BESS and pumped hydro) as procurement basis"
+     },
+     "st": "berlaku",
+     "u": "https://gatrik.esdm.go.id/gatrik/gatrik-api//storage/migrasi/download_index/files/b967d-ruptl-pln-2025-2034-pub-.pdf"
+    }
+   ]
+  },
+  "13": {
+   "tipe": "linimasa",
+   "sumber": [
+    "hprwiki",
+    "vbb",
+    "hlitempo",
+    "ml",
+    "lgjp",
+    "dragon",
+    "ruptl",
+    "petro"
+   ],
+   "butir": [
+    {
+     "tanggal": "2017-12-01",
+     "judul": {
+      "id": "Hornsdale tersambung ke jaringan (100 MW / 129 MWh)",
+      "en": "Hornsdale connects to the grid (100 MW / 129 MWh)"
+     },
+     "url": "https://en.wikipedia.org/wiki/Hornsdale_Power_Reserve"
+    },
+    {
+     "tanggal": "2020-09-02",
+     "judul": {
+      "id": "Ekspansi Hornsdale beroperasi (150 MW / 193,5 MWh)",
+      "en": "Hornsdale expansion operational (150 MW / 193.5 MWh)"
+     },
+     "url": "https://en.wikipedia.org/wiki/Hornsdale_Power_Reserve"
+    },
+    {
+     "tanggal": "2021-07-30",
+     "judul": {
+      "id": "Megapack terbakar saat uji Victorian Big Battery",
+      "en": "Megapack fire during Victorian Big Battery testing"
+     },
+     "url": "https://en.wikipedia.org/wiki/Victorian_Big_Battery"
+    },
+    {
+     "tanggal": "2024-07-03",
+     "judul": {
+      "id": "HLI Green Power diresmikan di Karawang",
+      "en": "HLI Green Power inaugurated in Karawang"
+     },
+     "url": "https://en.tempo.co/amp/1886890/indonesias-jokowi-opens-southeast-asias-largest-ev-battery-factory-in-karawang"
+    },
+    {
+     "tanggal": "2025-01-16",
+     "judul": {
+      "id": "Kebakaran fase 1 Moss Landing",
+      "en": "Moss Landing phase 1 fire"
+     },
+     "url": "https://en.wikipedia.org/wiki/Moss_Landing_Power_Plant"
+    },
+    {
+     "tanggal": "2025-04-24",
+     "judul": {
+      "id": "LG keluar, pemerintah menyebut Huayou pengganti",
+      "en": "LG exits, government names Huayou replacement"
+     },
+     "url": "https://www.thejakartapost.com/business/2025/04/24/govt-says-chinas-huayou-to-replace-lges-in-ev-battery-project"
+    },
+    {
+     "tanggal": "2025-05-26",
+     "judul": {
+      "id": "RUPTL 2025-2034 disahkan lewat Kepmen ESDM 188.K",
+      "en": "RUPTL 2025-2034 approved through Energy Ministry Decree 188.K"
+     },
+     "url": "https://gatrik.esdm.go.id/gatrik/gatrik-api//storage/migrasi/download_index/files/b967d-ruptl-pln-2025-2034-pub-.pdf"
+    },
+    {
+     "tanggal": "2025-06-29",
+     "judul": {
+      "id": "Groundbreaking proyek Dragon CATL, Antam, IBC",
+      "en": "Groundbreaking of the CATL, Antam, IBC Dragon project"
+     },
+     "url": "https://ekonomi.bisnis.com/read/20250629/44/1888778/prabowo-groundbreaking-mega-proyek-baterai-listrik-catl-antam-antm-ibc"
+    },
+    {
+     "tanggal": "2030-01-01",
+     "judul": {
+      "id": "Target COD Upper Cisokan menurut laporan 2026 (tahun saja)",
+      "en": "Upper Cisokan COD target per a 2026 report (year only)"
+     },
+     "url": "https://www.petromindo.com/news/article/plne-reports-progress-on-1-040-mw-upper-cisokan-pumped-storage-project"
+    }
+   ]
+  },
+  "14": {
+   "tipe": "teks",
+   "sumber": [
+    "regul",
+    "dragon",
+    "ruptl"
+   ],
+   "paragraf": [
+    {
+     "id": "Dasar kebijakan ekosistem baterai adalah program kendaraan listrik berbasis baterai (Perpres 55/2019 dan perubahannya 79/2023), kewajiban TKDN, dan agenda hilirisasi; Bahlil menyebut proyek Dragon sebagai yang pertama dari 18 proyek hilirisasi prioritas.",
+     "en": "The policy basis of the battery ecosystem is the battery electric vehicle programme (Perpres 55/2019 and amendment 79/2023), local content rules and the downstreaming agenda; Bahlil called the Dragon project the first of 18 priority downstreaming projects."
+    },
+    {
+     "id": "Untuk BESS jaringan, insentif utama adalah pembelian oleh PLN lewat RUPTL; insentif fiskal khusus penyimpanan tidak ditemukan di sumber yang dibaca. Standar emisi daur ulang baterai ada di Permen LHK 12/2021.",
+     "en": "For grid BESS the main incentive is PLN procurement through the RUPTL; no storage-specific fiscal incentive was found in the sources read. Battery recycling emission standards sit in Environment Ministry Reg. 12/2021."
+    }
+   ]
+  },
+  "15": {
+   "tipe": "langkah",
+   "sumber": [
+    "ed",
+    "ml",
+    "ruptl"
+   ],
+   "catatan": {
+    "id": "Ringkasan alur umum; durasi dan biaya belum bersumber sehingga sengaja tidak dicantumkan.",
+    "en": "General flow summary; durations and costs are not sourced and are deliberately omitted."
+   },
+   "butir": [
+    {
+     "judul": {
+      "id": "Penentuan lokasi dan studi interkoneksi",
+      "en": "Siting and interconnection study"
+     },
+     "isi": {
+      "id": "Pilih gardu induk atau PLTS yang butuh penyimpanan dan jauhkan dari permukiman.",
+      "en": "Choose a substation or solar plant needing storage and keep clear of settlements."
+     },
+     "pelaku": {
+      "id": "Pengembang, PLN",
+      "en": "Developer, PLN"
+     }
+    },
+    {
+     "judul": {
+      "id": "Perizinan dan persetujuan lingkungan",
+      "en": "Permits and environmental approval"
+     },
+     "isi": {
+      "id": "Izin berusaha, lingkungan, dan rencana keselamatan kebakaran.",
+      "en": "Business and environmental permits and a fire safety plan."
+     },
+     "pelaku": {
+      "id": "Pengembang, pemda",
+      "en": "Developer, local government"
+     }
+    },
+    {
+     "judul": {
+      "id": "Kontrak dengan PLN",
+      "en": "Contract with PLN"
+     },
+     "isi": {
+      "id": "Perjanjian layanan penyimpanan atau jual beli energi sesuai RUPTL.",
+      "en": "Storage service or energy sale agreement per RUPTL."
+     },
+     "pelaku": {
+      "id": "PLN, pengembang",
+      "en": "PLN, developer"
+     }
+    },
+    {
+     "judul": {
+      "id": "Pengadaan dan konstruksi",
+      "en": "Procurement and construction"
+     },
+     "isi": {
+      "id": "Pilih sel, integrator, dan sistem pemadam; uji bertahap (kasus Victorian Big Battery terbakar saat uji).",
+      "en": "Choose cells, integrator and suppression; staged testing (Victorian Big Battery caught fire during testing)."
+     },
+     "pelaku": {
+      "id": "Kontraktor EPC",
+      "en": "EPC contractor"
+     }
+    },
+    {
+     "judul": {
+      "id": "SLO dan operasi",
+      "en": "SLO and operation"
+     },
+     "isi": {
+      "id": "Sertifikat laik operasi, pemantauan suhu, dan rencana darurat.",
+      "en": "Operation certificate, temperature monitoring and emergency plan."
+     },
+     "pelaku": {
+      "id": "Operator",
+      "en": "Operator"
+     }
+    }
+   ]
+  },
+  "16": {
+   "tipe": "teks",
+   "sumber": [
+    "ruuebet",
+    "ml"
+   ],
+   "paragraf": [
+    {
+     "id": "RUU EBET sedang dibahas (arsip METI 8 September 2026; tahap belum dicek ke situs DPR). Standar keselamatan penyimpanan menjadi isu legislasi di tempat lain: California mengadopsi standar dan undang-undang baru setelah Moss Landing.",
+     "en": "RUU EBET is under deliberation (METI archive 8 September 2026; stage not checked against the DPR site). Storage safety standards became a legislative issue elsewhere: California adopted new standards and legislation after Moss Landing."
+    },
+    {
+     "id": "Masukan yang layak diajukan lewat forum Konsultasi: standar keselamatan BESS, definisi penyimpanan sebagai layanan jaringan, dan tarif layanan frekuensi.",
+     "en": "Inputs worth submitting through the Consultation forum: BESS safety standards, defining storage as a grid service and tariffs for frequency services."
+    }
+   ]
+  },
+  "17": {
+   "tipe": "teks",
+   "sumber": [
+    "iea74",
+    "hprwiki",
+    "seawater",
+    "dragon",
+    "hliauto"
+   ],
+   "paragraf": [
+    {
+     "id": "PLTA pompa tumbuh lagi: IEA memperkirakan tambahan sekitar 74 GW kapasitas dunia. PLN dilaporkan mengkaji PLTA pompa air laut 1 GW (Puger), sementara persaingan BESS menguat.",
+     "en": "Pumped hydro is growing again: the IEA forecasts about 74 GW of added global capacity. PLN is reported to study a 1 GW seawater pumped hydro (Puger) while BESS competition strengthens."
+    },
+    {
+     "id": "Respons cepat baterai adalah inovasi terbukti: Hornsdale merespons dalam sekitar 100 milidetik dan memberi layanan frekuensi. Di sisi sel, pabrik Karawang berkapasitas 10 GWh dan 6,9 GWh tahap I menambah kemampuan produksi lokal.",
+     "en": "Fast battery response is a proven innovation: Hornsdale responds in about 100 milliseconds and delivers frequency services. On cells, Karawang plants of 10 GWh and 6.9 GWh in phase I add local production ability."
+    },
+    {
+     "id": "Jenis kimia sel (LFP, NMC, natrium-ion) dan biayanya belum bersumber di bab ini.",
+     "en": "Cell chemistries (LFP, NMC, sodium-ion) and their cost are not sourced in this chapter."
+    }
+   ]
+  },
+  "19": {
+   "tipe": "tabel",
+   "per": 6,
+   "sumber": [
+    "hprwiki"
+   ],
+   "catatan": {
+    "id": "Satu-satunya data biaya penyimpanan bersumber di bab ini; angka biaya Hornsdale awal bertentangan di sumber (A$90 juta atau A$172 juta). Biaya BESS Indonesia belum bersumber.",
+    "en": "The only sourced storage cost data in this chapter; the original Hornsdale cost conflicts in the source (A$90 million or A$172 million). Indonesian BESS cost is not sourced."
+   },
+   "kolom": [
+    {
+     "k": "p",
+     "l": {
+      "id": "Proyek",
+      "en": "Project"
+     }
+    },
+    {
+     "k": "b",
+     "l": {
+      "id": "Biaya (juta A$)",
+      "en": "Cost (A$ million)"
+     },
+     "num": true,
+     "d": 0
+    },
+    {
+     "k": "e",
+     "l": {
+      "id": "Energi (MWh)",
+      "en": "Energy (MWh)"
+     },
+     "num": true,
+     "d": 1
+    },
+    {
+     "k": "u",
+     "l": {
+      "id": "Biaya per MWh (juta A$, EST)",
+      "en": "Cost per MWh (A$ million, EST)"
+     },
+     "num": true,
+     "d": 2
+    }
+   ],
+   "baris": [
+    {
+     "p": {
+      "id": "Hornsdale awal (angka latar)",
+      "en": "Hornsdale original (background figure)"
+     },
+     "b": 90,
+     "e": 129,
+     "u": 0.7
+    },
+    {
+     "p": {
+      "id": "Hornsdale awal (angka kotak info)",
+      "en": "Hornsdale original (infobox figure)"
+     },
+     "b": 172,
+     "e": 129,
+     "u": 1.33
+    },
+    {
+     "p": {
+      "id": "Ekspansi Hornsdale 2020",
+      "en": "Hornsdale expansion 2020"
+     },
+     "b": 82,
+     "e": 64.5,
+     "u": 1.27
+    }
+   ]
+  },
+  "20": {
+   "tipe": "tabel",
+   "per": 8,
+   "sumber": [
+    "hprwiki",
+    "cec",
+    "cec2",
+    "korea",
+    "ruptl"
+   ],
+   "catatan": {
+    "id": "Pembanding terpilih; bukan peringkat lengkap.",
+    "en": "Selected comparators; not a full ranking."
+   },
+   "kolom": [
+    {
+     "k": "n",
+     "l": {
+      "id": "Wilayah",
+      "en": "Region"
+     }
+    },
+    {
+     "k": "f",
+     "l": {
+      "id": "Fakta kunci",
+      "en": "Key fact"
+     }
+    },
+    {
+     "k": "h",
+     "l": {
+      "id": "Pelajaran",
+      "en": "Lesson"
+     }
+    }
+   ],
+   "baris": [
+    {
+     "n": {
+      "id": "Australia Selatan",
+      "en": "South Australia"
+     },
+     "f": {
+      "id": "Hornsdale 150 MW / 193,5 MWh; biaya layanan frekuensi turun 91 persen pada 2019",
+      "en": "Hornsdale 150 MW / 193.5 MWh; frequency service cost fell 91 percent in 2019"
+     },
+     "h": {
+      "id": "Penyimpanan paling bernilai sebagai layanan jaringan",
+      "en": "Storage is most valuable as a grid service"
+     }
+    },
+    {
+     "n": "California",
+     "f": {
+      "id": "500 MW pada 2018 menjadi 16.942 MW pada November 2025",
+      "en": "500 MW in 2018 to 16,942 MW in November 2025"
+     },
+     "h": {
+      "id": "Skala dibangun oleh penyimpanan di jam malam",
+      "en": "Scale built by evening-hour storage"
+     }
+    },
+    {
+     "n": {
+      "id": "Korea Selatan",
+      "en": "South Korea"
+     },
+     "f": {
+      "id": "Sekitar 30 kebakaran ESS dilaporkan dalam satu tahun",
+      "en": "About 30 ESS fires reported in one year"
+     },
+     "h": {
+      "id": "Keselamatan dapat menghentikan pasar",
+      "en": "Safety can halt a market"
+     }
+    },
+    {
+     "n": "Indonesia",
+     "f": {
+      "id": "50 proyek 6641 MW di RUPTL, belum ada yang beroperasi di basis",
+      "en": "50 projects 6641 MW in RUPTL, none operating in the base"
+     },
+     "h": {
+      "id": "Pipeline belum menjadi realisasi",
+      "en": "Pipeline is not yet delivery"
+     }
+    }
+   ]
+  },
+  "21": {
+   "tipe": "teks",
+   "sumber": [
+    "hprwiki",
+    "hpraurecon",
+    "cec",
+    "cec2",
+    "ml"
+   ],
+   "paragraf": [
+    {
+     "id": "Australia Selatan dan California menunjukkan dua jalur sukses: layanan frekuensi dengan pasar yang mengganjar kecepatan (Hornsdale menekan biaya jaringan sekitar A$116 juta pada 2019 menurut Aurecon), dan pergeseran surya ke malam dalam skala puluhan GW.",
+     "en": "South Australia and California show two success paths: frequency services in a market that rewards speed (Hornsdale cut grid costs by about A$116 million in 2019 per Aurecon), and shifting solar to evening at tens of GW."
+    },
+    {
+     "id": "Pelajaran gagalnya adalah keselamatan: kebakaran Moss Landing (2025) dan Victorian Big Battery (2021) memaksa aturan dan jeda uji. Indonesia sebaiknya menetapkan standar jarak, pemadam, dan uji bertahap sebelum memperbanyak BESS.",
+     "en": "The failure lesson is safety: the Moss Landing (2025) and Victorian Big Battery (2021) fires forced rules and testing pauses. Indonesia should set distance, suppression and staged-testing standards before scaling BESS."
+    }
+   ]
+  },
+  "22": {
+   "tipe": "teks",
+   "sumber": [
+    "ruptl",
+    "cec2",
+    "proyek"
+   ],
+   "paragraf": [
+    {
+     "id": "Indonesia merencanakan 6641 MW penyimpanan pada 2025-2034 sedangkan California sudah memiliki 16.942 MW baterai pada November 2025; dalam basis METI belum ada proyek penyimpanan yang berstatus beroperasi.",
+     "en": "Indonesia plans 6641 MW of storage over 2025-2034 while California already has 16,942 MW of batteries by November 2025; no storage project in the METI base is marked operating."
+    },
+    {
+     "id": "Pada rantai nilai sel, Indonesia lebih maju: sudah memiliki pabrik sel 10 GWh (Karawang) dan membangun yang kedua.",
+     "en": "On the cell value chain Indonesia is ahead: it already has a 10 GWh cell factory (Karawang) and is building a second."
+    }
+   ]
+  },
+  "23": {
+   "tipe": "teks",
+   "sumber": [
+    "aiib",
+    "hliauto",
+    "dragon",
+    "lgjp"
+   ],
+   "paragraf": [
+    {
+     "id": "Kerja sama internasional bersifat industri dan pendanaan: Korea (Hyundai dan LG Energy Solution di HLI), Tiongkok (CATL, Brunp, Lygend, Huayou), dan pinjaman AIIB serta Bank Dunia untuk Upper Cisokan.",
+     "en": "International cooperation is industrial and financial: Korea (Hyundai and LG Energy Solution in HLI), China (CATL, Brunp, Lygend, Huayou), and AIIB and World Bank loans for Upper Cisokan."
+    },
+    {
+     "id": "Analisis METI (Hipotesis): perpindahan dari mitra Korea ke Tiongkok pada paket sekitar USD 8,45 miliar menunjukkan Indonesia menukar pemasok teknologi untuk mempertahankan peta jalan; pertanyaan terbuka adalah transfer teknologi dan TKDN.",
+     "en": "METI analysis (Hypothesis): the shift from a Korean to a Chinese partner on a package of about USD 8.45 billion shows Indonesia swapping technology suppliers to keep its roadmap; open questions are technology transfer and local content."
+    }
+   ]
+  },
+  "24": {
+   "tipe": "tabel",
+   "per": 8,
+   "sumber": [
+    "pendanaan"
+   ],
+   "catatan": {
+    "id": "Skema dan proyek pendana yang namanya menyebut baterai atau penyimpanan di basis METI.",
+    "en": "Funder schemes and projects whose names mention batteries or storage in the METI base."
+   },
+   "kolom": [
+    {
+     "k": "nama",
+     "l": {
+      "id": "Skema atau proyek",
+      "en": "Scheme or project"
+     },
+     "url": "u"
+    },
+    {
+     "k": "pem",
+     "l": {
+      "id": "Pemberi",
+      "en": "Provider"
+     }
+    },
+    {
+     "k": "jenis",
+     "l": {
+      "id": "Jenis",
+      "en": "Type"
+     }
+    }
+   ],
+   "baris": [
+    {
+     "nama": "Development of Pumped Storage Hydropower in Java Bali System (the Project)",
+     "pem": "Asian Infrastructure Investment Bank",
+     "jenis": {
+      "id": "proyek",
+      "en": "project"
+     },
+     "u": "https://www.aiib.org/en/projects/details/2022/approved/Indonesia-Development-of-Pumped-Storage-Hydropower-in-Java-Bali-System.html"
+    },
+    {
+     "nama": "PLTS berbasis baterai di 10 lokasi terisolasi (investasi)",
+     "jenis": {
+      "id": "proyek",
+      "en": "project"
+     },
+     "u": "https://economy.okezone.com/read/2026/09/22/320/3243554/investasi-rp3-3-triliun-plts-berbasis-baterai-dikembangkan-di-10-lokasi-terisolasi"
+    },
+    {
+     "nama": "Pumped Storage Technical Assistance Project",
+     "pem": "World Bank (IBRD/IDA)",
+     "jenis": {
+      "id": "proyek",
+      "en": "project"
+     },
+     "u": "https://projects.worldbank.org/en/projects-operations/project-detail/P112158"
+    },
+    {
+     "nama": "Development of Pumped Storage Hydropower in Java Bali System Project",
+     "pem": "World Bank (IBRD/IDA)",
+     "jenis": {
+      "id": "proyek",
+      "en": "project"
+     },
+     "u": "https://projects.worldbank.org/en/projects-operations/project-detail/P172256"
+    },
+    {
+     "nama": "Matenggeng Hydropower Pumped Storage Project",
+     "pem": "World Bank (IBRD/IDA)",
+     "jenis": {
+      "id": "proyek",
+      "en": "project"
+     },
+     "u": "https://projects.worldbank.org/en/projects-operations/project-detail/P178779"
+    }
+   ]
+  },
+  "25": {
+   "tipe": "rumus",
+   "sumber": [
+    "hpraurecon",
+    "hprwiki",
+    "ed"
+   ],
+   "rumus": [
+    {
+     "id": "Pendapatan proyek = jasa kapasitas + jasa frekuensi + arbitrase energi",
+     "en": "Project revenue = capacity service + frequency service + energy arbitrage"
+    },
+    {
+     "id": "Manfaat sistem = penghematan biaya layanan frekuensi dan biaya kurtailmen yang dihindari",
+     "en": "System benefit = frequency service cost savings plus avoided curtailment cost"
+    }
+   ],
+   "contoh": [
+    {
+     "id": "Hornsdale: biaya layanan frekuensi turun dari A$470 per MWh menjadi A$40 per MWh (turun 91 persen) pada 2019, dengan penghematan jaringan sekitar A$116 juta (Aurecon, via Wikipedia).",
+     "en": "Hornsdale: frequency service cost fell from A$470 per MWh to A$40 per MWh (down 91 percent) in 2019, with grid savings of about A$116 million (Aurecon, via Wikipedia)."
+    },
+    {
+     "id": "Di Indonesia pasar layanan frekuensi dan kapasitas untuk BESS belum terbentuk; pendapatan bergantung kontrak PLN. Angka ekonomi proyek Indonesia belum bersumber.",
+     "en": "In Indonesia a frequency and capacity service market for BESS is not formed; revenue depends on PLN contracts. Indonesian project economics are not yet sourced."
+    }
+   ]
+  },
+  "26": {
+   "tipe": "tabel",
+   "per": 8,
+   "sumber": [
+    "dragon2",
+    "lgscmp",
+    "hlitempo",
+    "ml"
+   ],
+   "catatan": {
+    "id": "Nilai dari pemberitaan yang kadang berbeda antar media; bukan audit.",
+    "en": "Values from press that sometimes differ between outlets; not audited."
+   },
+   "kolom": [
+    {
+     "k": "p",
+     "l": {
+      "id": "Proyek",
+      "en": "Project"
+     }
+    },
+    {
+     "k": "n",
+     "l": {
+      "id": "Nilai",
+      "en": "Value"
+     }
+    },
+    {
+     "k": "k",
+     "l": {
+      "id": "Keterangan",
+      "en": "Note"
+     }
+    }
+   ],
+   "baris": [
+    {
+     "p": {
+      "id": "Proyek Dragon CATL, Antam, IBC",
+      "en": "CATL, Antam, IBC Dragon project"
+     },
+     "n": "USD 5,9 sampai 6 miliar",
+     "k": {
+      "id": "Groundbreaking 29 Juni 2025; Karawang 6,9 GWh tahap I",
+      "en": "Groundbreaking 29 June 2025; Karawang 6.9 GWh phase I"
+     }
+    },
+    {
+     "p": {
+      "id": "Paket proyek yang ditinggalkan LG",
+      "en": "Package LG abandoned"
+     },
+     "n": {
+      "id": "Sekitar USD 8,45 miliar",
+      "en": "About USD 8.45 billion"
+     },
+     "k": {
+      "id": "SCMP; sumber lain menyebut USD 9,8 miliar",
+      "en": "SCMP; other sources say USD 9.8 billion"
+     }
+    },
+    {
+     "p": "HLI Green Power",
+     "n": {
+      "id": "USD 1,1 miliar (sumber lain USD 3,1 miliar dari Tempo)",
+      "en": "USD 1.1 billion (Tempo reports USD 3.1 billion)"
+     },
+     "k": {
+      "id": "10 GWh per tahun; diresmikan 3 Juli 2024",
+      "en": "10 GWh a year; inaugurated 3 July 2024"
+     }
+    },
+    {
+     "p": "Moss Landing (kebakaran)",
+     "n": {
+      "id": "Penghapusan buku USD 400 juta (Vistra)",
+      "en": "USD 400 million write-off (Vistra)"
+     },
+     "k": {
+      "id": "Menurut ringkasan Wikipedia",
+      "en": "Per Wikipedia summary"
+     }
+    }
+   ]
+  },
+  "27": {
+   "tipe": "teks",
+   "sumber": [
+    "ml",
+    "dragon",
+    "ml"
+   ],
+   "paragraf": [
+    {
+     "id": "Dampak kebakaran Moss Landing: sekitar 1.200 warga dievakuasi; sampel udara permukaan tidak menemukan hidrogen fluorida, tetapi peneliti melaporkan kadar nikel, magnesium, dan kobalt yang sangat meningkat di sekitar lokasi.",
+     "en": "Moss Landing fire impacts: about 1,200 residents evacuated; ground air samples found no hydrogen fluoride, but researchers reported sharply elevated nickel, magnesium and cobalt near the site."
+    },
+    {
+     "id": "Rantai pasok baterai Indonesia membawa isu tambang nikel di Halmahera Timur, peleburan, dan limbah; proyek Dragon juga mencakup daur ulang. Dampak lingkungan dan sosial tambang belum bersumber di bab ini dan perlu ditambah.",
+     "en": "The Indonesian battery supply chain brings issues of nickel mining in East Halmahera, smelting and waste; the Dragon project also includes recycling. Environmental and social impacts of mining are not sourced in this chapter and need to be added."
+    }
+   ]
+  },
+  "29": {
+   "tipe": "teks",
+   "sumber": [
+    "korea",
+    "ml",
+    "lgjp",
+    "hpraurecon",
+    "dragon"
+   ],
+   "paragraf": [
+    {
+     "id": "Keselamatan: pendukung menunjuk bahwa studi Korea menyimpulkan baterai bukan penyebab satu-satunya kebakaran ESS (judul laporan), tetapi industri tetap terpukul; Moss Landing penyebabnya belum ditetapkan.",
+     "en": "Safety: supporters point out Korean investigations concluded batteries were not the sole cause of ESS fires (report headline) yet the industry took a hit; the Moss Landing cause is still undetermined."
+    },
+    {
+     "id": "Industrialisasi: pemerintah menyebut pergantian investor lazim dalam proyek besar dan peta jalan tetap; kritik menyoroti ketergantungan pada mitra asing dan keberanian mundur LG yang menyebut kondisi pasar dan lingkungan investasi.",
+     "en": "Industrialisation: government says changing investors is common in large projects and the roadmap stays; critics note dependence on foreign partners and LG's willingness to exit citing market conditions and investment climate."
+    }
+   ]
+  },
+  "30": {
+   "tipe": "tabel",
+   "per": 8,
+   "sumber": [
+    "ruptl",
+    "iea74",
+    "cec",
+    "petro",
+    "dragon"
+   ],
+   "catatan": {
+    "id": "Target adalah rencana dan sering bergeser.",
+    "en": "Targets are plans and often slip."
+   },
+   "kolom": [
+    {
+     "k": "d",
+     "l": {
+      "id": "Rencana",
+      "en": "Plan"
+     }
+    },
+    {
+     "k": "v",
+     "l": {
+      "id": "Nilai",
+      "en": "Value"
+     },
+     "num": true,
+     "d": 0
+    },
+    {
+     "k": "sat",
+     "l": {
+      "id": "Satuan",
+      "en": "Unit"
+     }
+    }
+   ],
+   "baris": [
+    {
+     "d": {
+      "id": "RUPTL 2025-2034: penyimpanan bernama",
+      "en": "RUPTL 2025-2034: named storage"
+     },
+     "v": 6641,
+     "sat": "MW"
+    },
+    {
+     "d": {
+      "id": "Dunia: tambahan PLTA pompa (perkiraan IEA)",
+      "en": "World: added pumped hydro (IEA forecast)"
+     },
+     "v": 74000,
+     "sat": "MW"
+    },
+    {
+     "d": {
+      "id": "California: kebutuhan baterai pada 2045 (proyeksi negara bagian)",
+      "en": "California: battery need by 2045 (state projection)"
+     },
+     "v": 52000,
+     "sat": "MW"
+    },
+    {
+     "d": {
+      "id": "Upper Cisokan: target COD menurut laporan 2026",
+      "en": "Upper Cisokan: COD target per 2026 report"
+     },
+     "v": 2030,
+     "sat": {
+      "id": "tahun",
+      "en": "year"
+     }
+    }
+   ]
+  },
+  "31": {
+   "tipe": "teks",
+   "sumber": [
+    "ed",
+    "ml",
+    "ruptl"
+   ],
+   "paragraf": [
+    {
+     "id": "Analisis METI (Hipotesis): Pengembang: nilai BESS ada pada layanan jaringan yang dikontrakkan, bukan pada arbitrase. Pemasok: prioritaskan sertifikasi keselamatan dan rencana pemadam sebelum menawarkan harga. PLN: tetapkan jenis layanan (frekuensi, geser surya, kapasitas) di tender. Pemda: tentukan jarak aman dan rencana darurat. Akademisi: data degradasi sel di iklim tropis masih langka.",
+     "en": "METI analysis (Hypothesis): Developers: BESS value lies in contracted grid services, not arbitrage. Suppliers: put safety certification and suppression plans before price. PLN: specify the service (frequency, solar shifting, capacity) in tenders. Local government: define safe distance and emergency plans. Academics: cell degradation data in tropical climates is scarce."
+    }
+   ]
+  },
+  "32": {
+   "tipe": "teks",
+   "sumber": [
+    "petro",
+    "dragon",
+    "lgjp",
+    "ruptl",
+    "ml"
+   ],
+   "paragraf": [
+    {
+     "id": "Yang perlu dipantau: (1) COD Upper Cisokan; (2) produksi pertama proyek Dragon di Karawang (laporan Juni 2026 menyebut pabrik selesai, belum terverifikasi); (3) penjelasan tentang pengganti LG di paket proyek; (4) BESS pertama RUPTL yang beroperasi; (5) hasil penyelidikan penyebab Moss Landing.",
+     "en": "To watch: (1) Upper Cisokan COD; (2) first production of the Dragon project in Karawang (a June 2026 report says the plant is complete, unverified); (3) details of LG's replacement in the package; (4) the first RUPTL BESS in operation; (5) the Moss Landing cause investigation."
+    }
+   ]
+  },
+  "38": {
+   "tipe": "teks",
+   "sumber": [
+    "ed"
+   ],
+   "paragraf": [
+    {
+     "id": "Metode: proyek dan MW dari tabel RUPTL yang diolah repo (dihitung ulang, ditandai EST), kasus luar negeri dari ringkasan Wikipedia dan berita yang ditautkan, dan kebijakan dari basis regulasi METI. Beberapa halaman (Energy-Storage.news, Bisnis, ADB) memblokir pengambilan otomatis; isinya hanya dipakai lewat ringkasan pencarian dan ditandai tingkat bukti media. Sintesis berlabel Analisis METI (Hipotesis). Batas: biaya BESS Indonesia, tarif, dan tenaga kerja belum ditemukan; status produksi proyek Dragon belum terverifikasi.",
+     "en": "Method: projects and MW from RUPTL tables processed by the repo (recomputed, marked EST), foreign cases from linked Wikipedia summaries and news, and policy from the METI regulation base. Some pages (Energy-Storage.news, Bisnis, ADB) block automated fetching; their content was used only through search summaries and marked media evidence level. Synthesis is labelled METI analysis (Hypothesis). Limits: Indonesian BESS cost, tariffs and employment were not found; production status of the Dragon project is unverified."
+    }
+   ]
+  },
+  "39": {
+   "tipe": "kasus",
+   "sumber": [
+    "hliauto",
+    "ikn",
+    "dragon",
+    "hprwiki",
+    "cec"
+   ],
+   "catatan": {
+    "id": "Biaya Indonesia yang tidak ditemukan sengaja dikosongkan. Proyek Dragon baru pada tahap awal dan belum terbukti berproduksi; ia dimuat sebagai pola struktur kemitraan.",
+    "en": "Indonesian costs not found are deliberately blank. The Dragon project is at an early stage and not yet proven in production; it is included as a partnership-structure pattern."
+   },
+   "butir": [
+    {
+     "negara": "ID",
+     "id": "hli",
+     "nama": "HLI Green Power (Karawang)",
+     "jenis": "berhasil",
+     "lokasi": {
+      "id": "Karawang, Jawa Barat",
+      "en": "Karawang, West Java"
+     },
+     "profil": [
+      {
+       "label": {
+        "id": "Kapasitas sel",
+        "en": "Cell capacity"
+       },
+       "nilai": 10,
+       "satuan": {
+        "id": "GWh per tahun",
+        "en": "GWh a year"
+       }
+      },
+      {
+       "label": {
+        "id": "Pemilik",
+        "en": "Owners"
+       },
+       "nilai": {
+        "id": "Hyundai, LG Energy Solution, IBC",
+        "en": "Hyundai, LG Energy Solution, IBC"
+       }
+      },
+      {
+       "label": {
+        "id": "Diresmikan",
+        "en": "Inaugurated"
+       },
+       "nilai": "2024-07-03"
+      }
+     ],
+     "tindakan": [
+      {
+       "id": "Usaha patungan dimulai September 2021, produksi uji akhir 2022, produksi sel pada kuartal II 2024.",
+       "en": "Joint venture started September 2021, trial production late 2022, cell production in Q2 2024."
+      }
+     ],
+     "sebab": [
+      {
+       "id": "Mitra teknologi (LG) dan pembeli yang sudah ada (pabrik mobil Hyundai di Indonesia memakai sel untuk Kona Electric).",
+       "en": "A technology partner (LG) and an existing buyer (Hyundai's Indonesian car plant uses cells for the Kona Electric)."
+      },
+      {
+       "id": "IBC sebagai mitra BUMN yang menjangkau rantai nikel.",
+       "en": "IBC as a state partner reaching the nickel chain."
+      }
+     ],
+     "angka": [
+      {
+       "label": {
+        "id": "Kapasitas sel",
+        "en": "Cell capacity"
+       },
+       "nilai": 10,
+       "d": 0,
+       "satuan": {
+        "id": "GWh per tahun",
+        "en": "GWh a year"
+       },
+       "sumber": "hliauto",
+       "est": false
+      }
+     ],
+     "pelajaran": [
+      {
+       "id": "Pabrik sel bekerja ketika mitra teknologi dan pembeli akhir sudah di lokasi; investasi dilaporkan USD 1,1 miliar atau USD 3,1 miliar tergantung media.",
+       "en": "A cell factory works when the technology partner and end buyer are already on site; investment is reported at USD 1.1 billion or USD 3.1 billion depending on the outlet."
+      }
+     ],
+     "faktor": {
+      "ppa_tarif": true,
+      "pendanaan": true,
+      "kepastian_kebijakan": true
+     },
+     "sumber": [
+      "hlitempo",
+      "hliauto",
+      "hlijp"
+     ],
+     "hak_jawab": true
+    },
+    {
+     "negara": "ID",
+     "id": "iknbess",
+     "nama": "PLTS IKN 50 MW dengan BESS 14,2 MWh",
+     "jenis": "berhasil",
+     "lokasi": {
+      "id": "Ibu Kota Nusantara",
+      "en": "Nusantara Capital"
+     },
+     "profil": [
+      {
+       "label": {
+        "id": "PLTS",
+        "en": "Solar"
+       },
+       "nilai": 50,
+       "satuan": "MW"
+      },
+      {
+       "label": "BESS",
+       "nilai": 14.2,
+       "satuan": "MWh"
+      },
+      {
+       "label": {
+        "id": "Diresmikan",
+        "en": "Inaugurated"
+       },
+       "nilai": "2025-01-20"
+      }
+     ],
+     "tindakan": [
+      {
+       "id": "PLTS dipasangkan dengan baterai sejak awal untuk menstabilkan pasokan.",
+       "en": "Solar paired with a battery from the start to stabilise supply."
+      }
+     ],
+     "sebab": [
+      {
+       "id": "Sumber yang dibaca tidak merinci faktor keberhasilan selain bahwa proyek beroperasi.",
+       "en": "The source read gives no further success factor beyond the project operating."
+      }
+     ],
+     "angka": [
+      {
+       "label": "BESS",
+       "nilai": 14.2,
+       "d": 1,
+       "satuan": "MWh",
+       "sumber": "ikn",
+       "est": false
+      }
+     ],
+     "pelajaran": [
+      {
+       "id": "Penyimpanan kecil yang dipasang bersama PLTS adalah titik awal praktis bagi sistem baru.",
+       "en": "Small storage installed with the solar plant is a practical starting point for a new system."
+      }
+     ],
+     "faktor": {
+      "jaringan": true
+     },
+     "sumber": [
+      "ikn"
+     ],
+     "hak_jawab": true
+    },
+    {
+     "negara": "ID",
+     "id": "dragon",
+     "nama": "Proyek Dragon: CATL, Antam, IBC",
+     "jenis": "berhasil",
+     "lokasi": {
+      "id": "Halmahera Timur dan Karawang",
+      "en": "East Halmahera and Karawang"
+     },
+     "profil": [
+      {
+       "label": {
+        "id": "Nilai",
+        "en": "Value"
+       },
+       "nilai": {
+        "id": "USD 5,9 sampai 6 miliar",
+        "en": "USD 5.9 to 6 billion"
+       }
+      },
+      {
+       "label": {
+        "id": "Sel tahap I",
+        "en": "Phase I cells"
+       },
+       "nilai": 6.9,
+       "satuan": "GWh"
+      },
+      {
+       "label": {
+        "id": "Groundbreaking",
+        "en": "Groundbreaking"
+       },
+       "nilai": "2025-06-29"
+      }
+     ],
+     "tindakan": [
+      {
+       "id": "Mengintegrasikan tambang nikel, bahan baterai, sel, dan daur ulang dalam satu konsorsium.",
+       "en": "Integrating nickel mining, battery materials, cells and recycling in one consortium."
+      }
+     ],
+     "sebab": [
+      {
+       "id": "Struktur hulu-hilir terintegrasi dengan mitra yang sudah mengendalikan bahan baku (Antam) dan teknologi (CATL).",
+       "en": "An integrated upstream-downstream structure with partners already controlling raw material (Antam) and technology (CATL)."
+      }
+     ],
+     "angka": [
+      {
+       "label": {
+        "id": "Sel tahap I",
+        "en": "Phase I cells"
+       },
+       "nilai": 6.9,
+       "d": 1,
+       "satuan": "GWh",
+       "sumber": "dragon",
+       "est": false
+      }
+     ],
+     "tanda_bahaya": [
+      {
+       "id": "Status produksi belum terverifikasi; laporan tunggal Juni 2026 menyebut pabrik Karawang selesai.",
+       "en": "Production status is unverified; a single June 2026 report says the Karawang plant is complete."
+      }
+     ],
+     "pelajaran": [
+      {
+       "id": "Struktur terintegrasi mengurangi risiko pasokan bahan, tetapi bukti keberhasilan baru muncul setelah produksi.",
+       "en": "An integrated structure reduces material supply risk, but proof of success only appears after production."
+      }
+     ],
+     "faktor": {
+      "kepastian_kebijakan": true,
+      "pendanaan": true
+     },
+     "sumber": [
+      "dragon",
+      "dragon2"
+     ],
+     "hak_jawab": true
+    },
+    {
+     "negara": "AU",
+     "id": "hornsdale",
+     "nama": "Hornsdale Power Reserve (Australia)",
+     "jenis": "berhasil",
+     "lokasi": {
+      "id": "Australia Selatan",
+      "en": "South Australia"
+     },
+     "profil": [
+      {
+       "label": {
+        "id": "Kapasitas",
+        "en": "Capacity"
+       },
+       "nilai": {
+        "id": "150 MW / 193,5 MWh",
+        "en": "150 MW / 193.5 MWh"
+       }
+      },
+      {
+       "label": {
+        "id": "Pemilik",
+        "en": "Owner"
+       },
+       "nilai": "Neoen"
+      },
+      {
+       "label": {
+        "id": "Tersambung",
+        "en": "Connected"
+       },
+       "nilai": "2017-12-01"
+      }
+     ],
+     "tindakan": [
+      {
+       "id": "Dibangun Tesla pada 2017 (100 MW / 129 MWh), diperluas 50 MW / 64,5 MWh pada 2020.",
+       "en": "Built by Tesla in 2017 (100 MW / 129 MWh), expanded by 50 MW / 64.5 MWh in 2020."
+      }
+     ],
+     "sebab": [
+      {
+       "id": "Menjual layanan frekuensi dalam pasar yang menghargai kecepatan (respons sekitar 100 milidetik).",
+       "en": "Sells frequency services in a market that rewards speed (about 100 millisecond response)."
+      },
+      {
+       "id": "Pembiayaan campuran: hibah pemerintah negara bagian, ARENA, dan pinjaman CEFC pada ekspansi.",
+       "en": "Mixed financing: state government grant, ARENA and CEFC loans on the expansion."
+      }
+     ],
+     "angka": [
+      {
+       "label": {
+        "id": "Penghematan jaringan 2019",
+        "en": "Grid savings 2019"
+       },
+       "nilai": 116,
+       "d": 0,
+       "satuan": {
+        "id": "juta A$",
+        "en": "A$ million"
+       },
+       "sumber": "hpraurecon",
+       "est": false
+      },
+      {
+       "label": {
+        "id": "Penurunan biaya layanan frekuensi",
+        "en": "Fall in frequency service cost"
+       },
+       "nilai": 91,
+       "d": 0,
+       "satuan": {
+        "id": "persen",
+        "en": "percent"
+       },
+       "sumber": "hprwiki",
+       "est": false
+      }
+     ],
+     "pelajaran": [
+      {
+       "id": "Penyimpanan tampil pertama kali sebagai layanan jaringan; arbitrase hanya pelengkap.",
+       "en": "Storage first shone as a grid service; arbitrage was only a complement."
+      }
+     ],
+     "faktor": {
+      "ppa_tarif": true,
+      "pendanaan": true,
+      "jaringan": true,
+      "kepastian_kebijakan": true
+     },
+     "sumber": [
+      "hprwiki",
+      "hpraurecon"
+     ],
+     "hak_jawab": true
+    },
+    {
+     "negara": "US",
+     "id": "california",
+     "nama": "Baterai California (AS)",
+     "jenis": "berhasil",
+     "lokasi": {
+      "id": "California",
+      "en": "California"
+     },
+     "profil": [
+      {
+       "label": {
+        "id": "2018",
+        "en": "2018"
+       },
+       "nilai": 500,
+       "satuan": "MW"
+      },
+      {
+       "label": {
+        "id": "November 2025",
+        "en": "November 2025"
+       },
+       "nilai": 16942,
+       "satuan": "MW"
+      }
+     ],
+     "tindakan": [
+      {
+       "id": "Baterai mengisi pada jam surya murah dan mengalir pada malam hari.",
+       "en": "Batteries charge in cheap solar hours and discharge in the evening."
+      }
+     ],
+     "sebab": [
+      {
+       "id": "Kebijakan pengadaan penyimpanan negara bagian dan melimpahnya surya siang.",
+       "en": "State storage procurement policy and abundant daytime solar."
+      }
+     ],
+     "angka": [
+      {
+       "label": {
+        "id": "Pertumbuhan 2018 ke pertengahan 2025",
+        "en": "Growth 2018 to mid-2025"
+       },
+       "nilai": {
+        "id": "500 menjadi lebih dari 16.900 MW",
+        "en": "500 to over 16,900 MW"
+       },
+       "d": 0,
+       "satuan": "",
+       "sumber": "cec",
+       "est": false
+      }
+     ],
+     "tanda_bahaya": [
+      {
+       "id": "Kebakaran Moss Landing 2025 mendorong standar keselamatan baru.",
+       "en": "The 2025 Moss Landing fire prompted new safety standards."
+      }
+     ],
+     "pelajaran": [
+      {
+       "id": "Skala puluhan GW bisa dicapai dalam tujuh tahun, tetapi keselamatan harus berjalan sejajar.",
+       "en": "Tens of GW can be reached in seven years, but safety must keep pace."
+      }
+     ],
+     "faktor": {
+      "kepastian_kebijakan": true,
+      "ppa_tarif": true
+     },
+     "sumber": [
+      "cec",
+      "cec2"
+     ],
+     "hak_jawab": true
+    }
+   ]
+  },
+  "40": {
+   "tipe": "kasus",
+   "sumber": [
+    "lgjp",
+    "petro",
+    "ml",
+    "vbb",
+    "korea"
+   ],
+   "catatan": {
+    "id": "Hak jawab: pihak yang disebut dapat mengirim koreksi atau tanggapan lewat formulir koreksi platform; tanggapan akan dimuat berdampingan.",
+    "en": "Right of reply: named parties can send a correction or response through the platform correction form; responses will be published alongside."
+   },
+   "butir": [
+    {
+     "negara": "ID",
+     "id": "lgexit",
+     "nama": "LG keluar dari paket baterai Indonesia",
+     "jenis": "mundur",
+     "lokasi": {
+      "id": "Indonesia",
+      "en": "Indonesia"
+     },
+     "profil": [
+      {
+       "label": {
+        "id": "Nilai paket",
+        "en": "Package value"
+       },
+       "nilai": {
+        "id": "Sekitar USD 8,45 miliar (sumber lain USD 9,8 miliar)",
+        "en": "About USD 8.45 billion (other sources USD 9.8 billion)"
+       }
+      },
+      {
+       "label": {
+        "id": "Pengganti",
+        "en": "Replacement"
+       },
+       "nilai": "Huayou"
+      }
+     ],
+     "kronologi": [
+      {
+       "tanggal": "2025-04-24",
+       "teks": {
+        "id": "Pemerintah menyatakan Huayou akan menggantikan LG; LG menyebut kondisi pasar dan lingkungan investasi.",
+        "en": "Government says Huayou will replace LG; LG cited market conditions and the investment environment."
+       }
+      }
+     ],
+     "sebab": [
+      {
+       "id": "LG menyebut kondisi pasar dan lingkungan investasi.",
+       "en": "LG cited market conditions and the investment environment."
+      },
+      {
+       "id": "Huayou sendiri berhati-hati: partisipasinya bergantung pada syarat dan kolaborasi seluruh rantai pasok.",
+       "en": "Huayou itself was cautious: participation depends on terms and collaboration across the whole supply chain."
+      }
+     ],
+     "terdampak": {
+      "id": "Peta jalan hilirisasi baterai dan mitra Indonesia; pemerintah (Bahlil) menyebut pergantian investor lazim dan rencana tidak berubah. Tanggapan LG selain pernyataan awal tidak dimuat.",
+      "en": "The battery downstreaming roadmap and Indonesian partners; government (Bahlil) says changing investors is common and plans do not change. LG responses beyond its initial statement are not carried."
+     },
+     "seharusnya": {
+      "id": "Struktur komitmen bersyarat dan mitra cadangan sejak awal paket, serta publikasi syarat yang menentukan keluar masuk investor.",
+      "en": "Conditional commitment structures and standby partners from the package start, plus publishing the terms that govern investor entry and exit."
+     },
+     "tanda_bahaya": [
+      {
+       "id": "Investor besar menyatakan kondisi pasar tidak mendukung.",
+       "en": "A major investor says market conditions do not support the project."
+      }
+     ],
+     "angka": [
+      {
+       "label": {
+        "id": "Nilai paket menurut SCMP",
+        "en": "Package value per SCMP"
+       },
+       "nilai": 8.45,
+       "d": 2,
+       "satuan": {
+        "id": "miliar USD",
+        "en": "billion USD"
+       },
+       "sumber": "lgscmp",
+       "est": false
+      }
+     ],
+     "faktor": {
+      "pendanaan": true,
+      "kepastian_kebijakan": true
+     },
+     "sumber": [
+      "lgjp",
+      "lgscmp",
+      "lgpet"
+     ],
+     "hak_jawab": true
+    },
+    {
+     "negara": "ID",
+     "id": "cisokan",
+     "nama": "Upper Cisokan pumped storage (1.040 MW)",
+     "jenis": "mundur",
+     "lokasi": {
+      "id": "Bandung Barat dan Cianjur, Jawa Barat",
+      "en": "West Bandung and Cianjur, West Java"
+     },
+     "profil": [
+      {
+       "label": {
+        "id": "Kapasitas",
+        "en": "Capacity"
+       },
+       "nilai": 1040,
+       "satuan": "MW"
+      },
+      {
+       "label": {
+        "id": "Pendana",
+        "en": "Lenders"
+       },
+       "nilai": {
+        "id": "AIIB dan Bank Dunia",
+        "en": "AIIB and World Bank"
+       }
+      }
+     ],
+     "kronologi": [
+      {
+       "tanggal": "2023-03-01",
+       "teks": {
+        "id": "AIIB mencatat ESMP kontraktor di jalur kritis dan jalan akses longsor.",
+        "en": "AIIB notes the contractor ESMP on the critical path and landslides on the access road."
+       }
+      },
+      {
+       "tanggal": "2024-07-24",
+       "teks": {
+        "id": "Bisnis melaporkan target 2028 dan isu TKDN.",
+        "en": "Bisnis reports a 2028 target and TKDN issues."
+       }
+      },
+      {
+       "tanggal": "2026-05-01",
+       "teks": {
+        "id": "Laporan 2026 menyebut COD 2030.",
+        "en": "A 2026 report states COD 2030."
+       }
+      }
+     ],
+     "sebab": [
+      {
+       "id": "ESMP pemberi pinjaman di jalur kritis; jalan akses longsor; isu TKDN.",
+       "en": "Lender ESMP on the critical path; access road landslides; TKDN issues."
+      }
+     ],
+     "terdampak": {
+      "id": "Sistem Jawa-Bali yang menunggu penyimpanan skala besar. Lihat juga topik Hidro.",
+      "en": "The Java-Bali system awaiting large-scale storage. See also the Hydro topic."
+     },
+     "seharusnya": {
+      "id": "Menyelesaikan syarat sosial-lingkungan dan akses sebelum kontrak mengikat.",
+      "en": "Complete social-environmental conditions and access before binding contracts."
+     },
+     "tanda_bahaya": [
+      {
+       "id": "Target COD bergeser beberapa kali.",
+       "en": "COD target moves several times."
+      }
+     ],
+     "angka": [
+      {
+       "label": {
+        "id": "Target COD terbaru",
+        "en": "Latest COD target"
+       },
+       "nilai": 2030,
+       "d": 0,
+       "satuan": {
+        "id": "tahun",
+        "en": "year"
+       },
+       "sumber": "petro",
+       "est": false
+      }
+     ],
+     "faktor": {
+      "sosial": true,
+      "kepastian_kebijakan": true
+     },
+     "sumber": [
+      "aiib",
+      "bisnis24",
+      "petro"
+     ],
+     "hak_jawab": true
+    },
+    {
+     "negara": "US",
+     "id": "mosslanding",
+     "nama": "Kebakaran Moss Landing (California)",
+     "jenis": "gagal",
+     "lokasi": {
+      "id": "Monterey County, California",
+      "en": "Monterey County, California"
+     },
+     "profil": [
+      {
+       "label": {
+        "id": "Fasilitas",
+        "en": "Facility"
+       },
+       "nilai": {
+        "id": "Fase 1: 300 MW / 1.200 MWh",
+        "en": "Phase 1: 300 MW / 1,200 MWh"
+       }
+      },
+      {
+       "label": {
+        "id": "Pemilik",
+        "en": "Owner"
+       },
+       "nilai": "Vistra"
+      }
+     ],
+     "kronologi": [
+      {
+       "tanggal": "2021-09-01",
+       "teks": {
+        "id": "Insiden suhu tinggi tanpa api akibat selang pendingin bocor (bulan saja).",
+        "en": "High-temperature incident without fire due to a leaking cooling hose (month only)."
+       }
+      },
+      {
+       "tanggal": "2025-01-16",
+       "teks": {
+        "id": "Kebakaran fase 1; sekitar 80 persen bagian baterai terbakar; sekitar 1.200 warga dievakuasi; sistem pemadam tidak memadamkan api.",
+        "en": "Phase 1 fire; roughly 80 percent of the battery section burned; about 1,200 residents evacuated; suppression did not extinguish the fire."
+       }
+      }
+     ],
+     "sebab": [
+      {
+       "id": "Penyebab belum ditetapkan.",
+       "en": "The cause remains undetermined."
+      },
+      {
+       "id": "Insiden suhu tinggi sebelumnya (2021 dan 2022) menjadi pola peringatan.",
+       "en": "Earlier high-temperature incidents (2021 and 2022) formed a warning pattern."
+      }
+     ],
+     "terdampak": {
+      "id": "Warga yang dievakuasi dan ekosistem sekitar (kadar nikel, magnesium, kobalt meningkat); Vistra menghapus buku USD 400 juta menurut Wikipedia.",
+      "en": "Evacuated residents and the surrounding ecosystem (elevated nickel, magnesium, cobalt); Vistra wrote off USD 400 million per Wikipedia."
+     },
+     "seharusnya": {
+      "id": "Menanggapi insiden suhu berulang sebagai tanda bahaya dan menguji sistem pemadam untuk skala ruang baterai.",
+      "en": "Treat repeated high-temperature incidents as a warning sign and test suppression at battery-room scale."
+     },
+     "tanda_bahaya": [
+      {
+       "id": "Insiden suhu tinggi berulang tanpa api.",
+       "en": "Repeated high-temperature incidents without fire."
+      }
+     ],
+     "angka": [
+      {
+       "label": {
+        "id": "Warga dievakuasi",
+        "en": "Residents evacuated"
+       },
+       "nilai": 1200,
+       "d": 0,
+       "satuan": "",
+       "sumber": "ml",
+       "est": false
+      }
+     ],
+     "faktor": {
+      "sosial": true,
+      "pengelola_om": true
+     },
+     "sumber": [
+      "ml",
+      "mlnews"
+     ],
+     "hak_jawab": true
+    },
+    {
+     "negara": "AU",
+     "id": "vbb",
+     "nama": "Kebakaran Victorian Big Battery (Australia)",
+     "jenis": "mundur",
+     "lokasi": {
+      "id": "Victoria, Australia",
+      "en": "Victoria, Australia"
+     },
+     "profil": [
+      {
+       "label": {
+        "id": "Kapasitas",
+        "en": "Capacity"
+       },
+       "nilai": {
+        "id": "300 MW / 450 MWh",
+        "en": "300 MW / 450 MWh"
+       }
+      },
+      {
+       "label": {
+        "id": "Pemilik",
+        "en": "Owner"
+       },
+       "nilai": "HMC Capital"
+      }
+     ],
+     "kronologi": [
+      {
+       "tanggal": "2021-07-30",
+       "teks": {
+        "id": "Megapack terbakar saat uji awal dan menghancurkan dua unit.",
+        "en": "A Megapack caught fire in initial testing and destroyed two units."
+       }
+      },
+      {
+       "tanggal": "2021-12-08",
+       "teks": {
+        "id": "Mulai beroperasi setelah uji dilanjutkan akhir September 2021.",
+        "en": "Began operating after testing resumed in late September 2021."
+       }
+      }
+     ],
+     "sebab": [
+      {
+       "id": "Kebocoran fluida pendingin menyebabkan korsleting sel dan thermal runaway.",
+       "en": "A cooling-fluid leak short-circuited cells and caused thermal runaway."
+      }
+     ],
+     "terdampak": {
+      "id": "Jadwal operasi bergeser sekitar dua bulan lebih; tidak ada korban disebut di sumber.",
+      "en": "The operation schedule slipped by about two months or more; no casualties are mentioned in the source."
+     },
+     "seharusnya": {
+      "id": "Uji bertahap dengan isolasi unit dan pemantauan kebocoran pendingin.",
+      "en": "Staged testing with unit isolation and coolant leak monitoring."
+     },
+     "tanda_bahaya": [
+      {
+       "id": "Kebocoran pendingin pada tahap uji.",
+       "en": "Coolant leak during commissioning."
+      }
+     ],
+     "angka": [
+      {
+       "label": {
+        "id": "Selang kebakaran ke operasi",
+        "en": "From fire to operation"
+       },
+       "nilai": 131,
+       "d": 0,
+       "satuan": {
+        "id": "hari",
+        "en": "days"
+       },
+       "sumber": "vbb",
+       "est": true
+      }
+     ],
+     "faktor": {
+      "pengelola_om": true
+     },
+     "sumber": [
+      "vbb"
+     ],
+     "hak_jawab": true
+    },
+    {
+     "negara": "KR",
+     "id": "korea",
+     "nama": "Kebakaran ESS Korea Selatan",
+     "jenis": "mati",
+     "lokasi": {
+      "id": "Korea Selatan",
+      "en": "South Korea"
+     },
+     "profil": [
+      {
+       "label": {
+        "id": "Jumlah kebakaran dilaporkan",
+        "en": "Fires reported"
+       },
+       "nilai": {
+        "id": "Sekitar 30 dalam satu tahun",
+        "en": "About 30 in one year"
+       }
+      }
+     ],
+     "kronologi": [
+      {
+       "tanggal": "2019-01-01",
+       "teks": {
+        "id": "Tahun pasti tidak dikonfirmasi di ringkasan yang dibaca; dimuat sebagai gelombang kebakaran yang memukul industri.",
+        "en": "The exact year is not confirmed in the summary read; carried as a fire wave that hit the industry."
+       }
+      }
+     ],
+     "sebab": [
+      {
+       "id": "Judul laporan menyebut baterai bukan satu-satunya penyebab; rincian penyebab tidak dapat dibaca karena halaman memblokir pengambilan otomatis.",
+       "en": "The report headline says batteries were not to blame alone; cause details could not be read because the page blocks automated fetching."
+      }
+     ],
+     "terdampak": {
+      "id": "Industri ESS Korea Selatan terpukul walau baterai tidak disalahkan sepenuhnya. Judul \"mati\" dipakai terbatas pada gelombang pasar yang terhenti sementara.",
+      "en": "The Korean ESS industry took a hit even though batteries were not fully blamed. The label \"dead\" is used loosely for a market wave that stalled temporarily."
+     },
+     "seharusnya": {
+      "id": "Standar instalasi, pemantauan, dan investigasi independen sebelum pasar diperluas.",
+      "en": "Installation standards, monitoring and independent investigation before the market scales."
+     },
+     "tanda_bahaya": [
+      {
+       "id": "Kebakaran berulang di banyak lokasi.",
+       "en": "Repeated fires at many sites."
+      }
+     ],
+     "faktor": {
+      "kepastian_kebijakan": true
+     },
+     "sumber": [
+      "korea"
+     ],
+     "hak_jawab": true
+    }
+   ]
+  },
+  "41": {
+   "tipe": "pola",
+   "sumber": [
+    "ed"
+   ],
+   "catatan": {
+    "id": "Sel dibangun dari bendera faktor tiap kasus; pemetaan faktor ke kasus adalah analisis METI (Hipotesis) atas fakta di bab 39 dan 40.",
+    "en": "Cells are built from each case factor flags; mapping factors to cases is METI analysis (Hypothesis) on facts in chapters 39 and 40."
+   },
+   "faktor": [
+    {
+     "k": "lahan",
+     "l": {
+      "id": "Lahan dan lokasi siap",
+      "en": "Land and site ready"
+     }
+    },
+    {
+     "k": "perizinan",
+     "l": {
+      "id": "Perizinan jelas",
+      "en": "Permitting clear"
+     }
+    },
+    {
+     "k": "ppa_tarif",
+     "l": {
+      "id": "PPA dan tarif disepakati",
+      "en": "PPA and tariff agreed"
+     }
+    },
+    {
+     "k": "pendanaan",
+     "l": {
+      "id": "Pendanaan dan penjaminan",
+      "en": "Financing and guarantees"
+     }
+    },
+    {
+     "k": "jaringan",
+     "l": {
+      "id": "Jaringan, offtaker, dan interkoneksi",
+      "en": "Grid, offtaker and interconnection"
+     }
+    },
+    {
+     "k": "pengelola_om",
+     "l": {
+      "id": "Pengelola dan O&M",
+      "en": "Operator and O&M"
+     }
+    },
+    {
+     "k": "sosial",
+     "l": {
+      "id": "Dukungan masyarakat dan safeguard",
+      "en": "Community support and safeguards"
+     }
+    },
+    {
+     "k": "kepastian_kebijakan",
+     "l": {
+      "id": "Kepastian kebijakan",
+      "en": "Policy certainty"
+     }
+    }
+   ]
+  },
+  "42": {
+   "tipe": "periksa",
+   "sumber": [
+    "ed"
+   ],
+   "peran": [
+    {
+     "k": "pengembang",
+     "l": {
+      "id": "Pengembang",
+      "en": "Developer"
+     }
+    },
+    {
+     "k": "investor",
+     "l": {
+      "id": "Investor",
+      "en": "Investor"
+     }
+    },
+    {
+     "k": "pemda",
+     "l": {
+      "id": "Pemerintah daerah",
+      "en": "Local government"
+     }
+    },
+    {
+     "k": "pusat",
+     "l": {
+      "id": "Pemerintah pusat",
+      "en": "Central government"
+     }
+    },
+    {
+     "k": "pln",
+     "l": {
+      "id": "PLN",
+      "en": "PLN"
+     }
+    },
+    {
+     "k": "meti",
+     "l": {
+      "id": "METI",
+      "en": "METI"
+     }
+    }
+   ],
+   "tahap": [
+    {
+     "k": "lokasi",
+     "l": {
+      "id": "Penyaringan lokasi",
+      "en": "Site screening"
+     }
+    },
+    {
+     "k": "izin",
+     "l": {
+      "id": "Perizinan",
+      "en": "Permitting"
+     }
+    },
+    {
+     "k": "ppa",
+     "l": {
+      "id": "PPA",
+      "en": "PPA"
+     }
+    },
+    {
+     "k": "dana",
+     "l": {
+      "id": "Pendanaan",
+      "en": "Financing"
+     }
+    },
+    {
+     "k": "bangun",
+     "l": {
+      "id": "Konstruksi",
+      "en": "Construction"
+     }
+    },
+    {
+     "k": "operasi",
+     "l": {
+      "id": "Operasi",
+      "en": "Operation"
+     }
+    }
+   ],
+   "butir": [
+    {
+     "peran": "pengembang",
+     "tahap": "lokasi",
+     "teks": {
+      "id": "Tetapkan jarak aman dari permukiman dan rencana evakuasi sebelum memilih lokasi BESS (Moss Landing).",
+      "en": "Set safe distance from settlements and an evacuation plan before choosing a BESS site (Moss Landing)."
+     },
+     "dasar": "ml"
+    },
+    {
+     "peran": "pengembang",
+     "tahap": "ppa",
+     "teks": {
+      "id": "Kontrakkan layanan jaringan (frekuensi, geser surya), bukan hanya arbitrase (Hornsdale).",
+      "en": "Contract grid services (frequency, solar shifting), not only arbitrage (Hornsdale)."
+     },
+     "dasar": "hpraurecon"
+    },
+    {
+     "peran": "pengembang",
+     "tahap": "bangun",
+     "teks": {
+      "id": "Uji bertahap dengan isolasi unit dan pemantauan kebocoran pendingin (Victorian Big Battery).",
+      "en": "Commission in stages with unit isolation and coolant leak monitoring (Victorian Big Battery)."
+     },
+     "dasar": "vbb"
+    },
+    {
+     "peran": "pengembang",
+     "tahap": "operasi",
+     "teks": {
+      "id": "Tanggapi insiden suhu tinggi berulang sebagai tanda bahaya (Moss Landing 2021, 2022).",
+      "en": "Treat repeated high-temperature incidents as a warning (Moss Landing 2021, 2022)."
+     },
+     "dasar": "ml"
+    },
+    {
+     "peran": "investor",
+     "tahap": "dana",
+     "teks": {
+      "id": "Siapkan mitra cadangan dan syarat keluar dalam paket investasi besar (kasus LG).",
+      "en": "Prepare standby partners and exit terms in large investment packages (LG case)."
+     },
+     "dasar": "lgjp"
+    },
+    {
+     "peran": "pemda",
+     "tahap": "izin",
+     "teks": {
+      "id": "Siapkan rencana darurat dan komunikasi risiko bagi warga sekitar BESS.",
+      "en": "Prepare emergency plans and risk communication for residents near BESS."
+     },
+     "dasar": "ml"
+    },
+    {
+     "peran": "pusat",
+     "tahap": "ppa",
+     "teks": {
+      "id": "Tetapkan standar keselamatan BESS nasional dan jenis layanan jaringan yang dibayar.",
+      "en": "Set national BESS safety standards and the grid services that are paid for."
+     },
+     "dasar": "korea"
+    },
+    {
+     "peran": "pusat",
+     "tahap": "bangun",
+     "teks": {
+      "id": "Pastikan syarat sosial-lingkungan PLTA pompa selesai sebelum kontrak mengikat (Cisokan).",
+      "en": "Make sure social-environmental conditions for pumped hydro are complete before binding contracts (Cisokan)."
+     },
+     "dasar": "aiib"
+    },
+    {
+     "peran": "pln",
+     "tahap": "ppa",
+     "teks": {
+      "id": "Tentukan layanan yang dibeli (frekuensi, kapasitas) dalam tender dan umumkan jadwal COD realistis.",
+      "en": "Specify the services bought (frequency, capacity) in tenders and publish realistic COD schedules."
+     },
+     "dasar": "petro"
+    },
+    {
+     "peran": "pln",
+     "tahap": "operasi",
+     "teks": {
+      "id": "Mulai dengan BESS di PLTS yang sudah ada (contoh IKN) untuk membangun pengalaman operasi.",
+      "en": "Start with BESS at existing solar plants (IKN example) to build operating experience."
+     },
+     "dasar": "ikn"
+    },
+    {
+     "peran": "meti",
+     "tahap": "operasi",
+     "teks": {
+      "id": "Pantau produksi Dragon dan BESS RUPTL pertama, serta beri hak jawab pada pihak yang disebut.",
+      "en": "Monitor Dragon production and the first RUPTL BESS, and give named parties a right of reply."
+     },
+     "dasar": "dragon"
+    }
+   ]
+  }
+ }
+}

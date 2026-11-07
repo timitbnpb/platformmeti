@@ -15,6 +15,7 @@ import { fileURLToPath } from 'node:url';
 import { bangunSitemap } from './sitemap.mjs';
 import { terapkan as terapkanMetiWilayah } from './meti_wilayah_orang.mjs';
 import { gabung as gabungFoto, muat as muatFoto } from './foto_orang_gabung.mjs';
+import { gabung as gabungPakar, muatPakar } from './pakar_orang.mjs';
 import { normWilayah } from '../panen/panen_proyek.mjs';
 import { bangunKonteks, perkaya } from '../panen/berita_wilayah.mjs';
 import { bangunOrang, orangDari, bangunLembaga, lembagaDari } from '../panen/berita_kenal.mjs';
@@ -609,6 +610,7 @@ export function bangun(masukan = {}) {
   }
   { const f = path.join(ROOT, 'data/meti_wilayah.json'); if (fs.existsSync(f)) console.log('orang meti_wilayah:', terapkanMetiWilayah(orangOut.publik, JSON.parse(fs.readFileSync(f, 'utf8')))); }
   try { const m = muatFoto(); console.log('orang foto pengurus METI diisi:', gabungFoto(orangOut.publik, m.pengurus, m.berkas, m.ada)); } catch (e) { console.error('foto_orang_gabung dilewati:', e.message); }
+  try { console.log('orang akademik OpenAlex diisi:', gabungPakar(orangOut.publik, muatPakar(), process.env.TANGGAL_BANGUN || '2026-11-08')); } catch (e) { console.error('pakar_orang dilewati:', e.message); }
   const orangPubSet = new Set(orangOut.publik.map((o) => o.id));
   for (const o of organisasi.publik) { o.pengurus = (o.pengurus || []).filter((x) => orangPubSet.has(x.orang_id)); if (!o.pengurus.length) delete o.pengurus; }
   for (const b of beritaPub) if (b.orang_ids) { b.orang_ids = b.orang_ids.filter((i) => orangPubSet.has(i)); if (!b.orang_ids.length) delete b.orang_ids; }

@@ -3,7 +3,7 @@
 import { t, tanggal, tanggalDariUnix } from "/i18n.js";
 import { esc, api, nanti, hantuHtml, kosongHtml, galatTeks, ikon, pesanHtml } from "/inti/umum.js";
 import { paginasiHtml, sorotHalaman } from "/inti/paginasi.js";
-import { kepalaTab, keadaan, aman } from "/admin_umum.js";
+import { kepalaTab, ubinKepala, keadaan, aman } from "/admin_umum.js";
 import { namaProvinsi } from "/profil_tampil.js";
 
 const TIPE = ["ajuan", "klaim", "wilayah"], STATUS = ["baru", "setuju", "tolak"];
@@ -27,7 +27,7 @@ export function panelPortal(panel) {
     <dialog class="jm-dlg" id="pTinjau" aria-labelledby="pTinjauJ"></dialog>`;
   const $ = (i) => panel.querySelector("#" + i), dlg = $("pTinjau");
   panel.addEventListener("change", (e) => {
-    if (e.target.id === "pTipe") { S.tipe = e.target.value; S.hal = 1; muat(); } else if (e.target.id === "pStatus") { S.status = e.target.value; S.hal = 1; muat(); }
+    if (e.target.id === "pTipe") { S.tipe = e.target.value; S.hal = 1; muat(); muatRingkas(); } else if (e.target.id === "pStatus") { S.status = e.target.value; S.hal = 1; muat(); }
   });
   panel.addEventListener("click", async (e) => {
     const b = e.target.closest("button"); if (!b) return;
@@ -49,10 +49,15 @@ export function panelPortal(panel) {
     const tbl = e.target.querySelector("button[type=submit]"), catatan = dlg.querySelector("#pCatatan").value.trim();
     if (S.pilih.aksi === "tolak" && !catatan) { dlg.querySelector("#pPesan").innerHTML = pesanHtml("galat", t("ap.catatan_wajib")); return; }
     tbl.disabled = true;
-    try { await api(`/api/admin/portal/${S.tipe}/${encodeURIComponent(S.pilih.id)}`, { metode: "POST", badan: { aksi: S.pilih.aksi, catatan } }); dlg.close(); muat(); }
+    try { await api(`/api/admin/portal/${S.tipe}/${encodeURIComponent(S.pilih.id)}`, { metode: "POST", badan: { aksi: S.pilih.aksi, catatan } }); dlg.close(); muat(); muatRingkas(); }
     catch (er) { tbl.disabled = false; dlg.querySelector("#pPesan").innerHTML = pesanHtml("galat", er.status === 409 ? t("kor.sudah_diputus") : galatTeks(er.kode || "umum")); }
   });
-  muat(); muatWil();
+  muat(); muatWil(); muatRingkas();
+  /* ubin kepala: jumlah per status untuk jenis yang sedang dibuka */
+  async function muatRingkas() {
+    const n = await Promise.all(STATUS.map((x) => api(`/api/admin/portal?tipe=${S.tipe}&status=${x}&hal=1`).then((d) => d.total ?? (d.baris || []).length).catch(() => 0)));
+    ubinKepala(panel, STATUS.map((x, i) => ({ ikon: ["lonceng", "centang", "silang"][i], nilai: n[i], label: t("ap.k." + x) })));
+  }
 
   function tinjau(aksi, id) {
     S.pilih = { aksi, id };

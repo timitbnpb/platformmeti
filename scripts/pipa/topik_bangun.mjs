@@ -25,6 +25,8 @@ const TOPIK = [
   { id: "nuklir", ikon: "nuklir", foto: "/img/beranda/nuklir-menara.webp", kep: ["nuklir"], tek: ["nuklir"], reg: ["nuklir"], kata: /nuklir|\bsmr\b|reaktor|bapeten|thorcon/i },
   { id: "transisi-berkeadilan", ikon: "transisi-adil", foto: "", kep: ["transisi-adil"], tek: [], reg: [], kata: /transisi berkeadilan|transisi yang adil|just energy|jetp|pensiun dini|phase.?out|pltu/i, regKata: /transisi energi|pensiun dini|percepatan pengembangan energi terbarukan/i, regTolak: /remisi/i },
   { id: "pembiayaan-hijau", ikon: "pembiayaan", foto: "", kep: ["pembiayaan"], tek: [], reg: ["insentif", "harga"], kata: /obligasi hijau|sukuk hijau|pembiayaan hijau|green bond|jetp|pendanaan|investasi hijau|blended/i },
+  { id: "energi-laut", ikon: "laut", foto: "", kep: ["laut"], tek: ["laut"], reg: [], kata: /energi laut|arus laut|gelombang laut|pasang surut|otec|ocean energy|tidal|wave energy/i },
+  { id: "sampah-energi", ikon: "biomassa-sampah", foto: "", kep: ["sampah", "biomassa-sampah"], tek: ["biomassa-sampah"], reg: [], kata: /psel|pltsa|sampah jadi energi|waste.to.energy|pengolahan sampah/i },
 ];
 
 const proyek = baca("proyek").baris, org = baca("organisasi").baris, reg = baca("regulasi").baris, inov = baca("inovasi").inovasi;

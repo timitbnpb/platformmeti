@@ -2,6 +2,7 @@
 import { t, angka, tanggal } from "/i18n.js";
 import { esc, galatHtml, ikon } from "/inti/umum.js";
 import { sumberHtml as sumberIkon } from "/inti/komponen.js";
+import "/inti/tip_grafik.js";
 import { aksiHtml } from "/inti/aksi_ex.js";
 
 export const amanUrl = (u) => (/^https?:\/\//.test(u || "") ? u : null);
@@ -72,7 +73,7 @@ export function batangHtml(baris, { maks, ref, label, aksi, satuan = "", sumbu: 
   const tot = (b) => b.bagian.reduce((s, x) => s + (x.nilai || 0), 0);
   const mentah = (maks || Math.max(1, ref || 0, ...baris.map(tot))) / 4, mag = 10 ** Math.floor(Math.log10(mentah));
   const langkah = sumbuMaks ? sumbuMaks / 4 : [1, 2, 2.5, 5, 10].find((k) => k * mag >= mentah - 1e-9) * mag, M = langkah * 4; // sumbu: batas sumbu eksplisit (opsional)
-  const sumbu = `<li class="jm-bar-ax${aksi ? " jm-bar-ax-x" : ""}" aria-hidden="true"><span></span><span class="jm-bar-axis">${[0, 1, 2, 3, 4].map((k) => `<span data-p="${k * 25}" class="${k === 0 ? "jm-ax-a" : k === 4 ? "jm-ax-z" : ""}">${esc(num(langkah * k, 0) + (satuan ? " " + satuan : ""))}</span>`).join("")}</span></li>`;
+  const sumbu = `<li class="jm-bar-ax${aksi ? " jm-bar-ax-x" : ""}" aria-hidden="true"><span></span><span class="jm-bar-axis">${[0, 1, 2, 3, 4].map((k) => `<span data-p="${k * 25}" class="${k === 0 ? "jm-ax-a" : k === 4 ? "jm-ax-z" : ""}">${esc(num(langkah * k, langkah >= 1 ? 0 : 2) + (satuan ? " " + satuan : ""))}</span>`).join("")}</span></li>`;
   const isi = baris.map((b) => {
     const garis = ref ? `<u class="jm-bar-garis" data-ref="${((ref / M) * 100).toFixed(2)}"></u>` : "";
     const seg = b.bagian.map((p) => `<i class="${p.kelas}" data-w="${(Math.max(0, (p.nilai || 0) / M) * 100).toFixed(2)}"></i>`).join("");

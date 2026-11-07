@@ -71,10 +71,10 @@ export function bangun({ plts, tkdn, peny, rantai = { pemasok: [] }, ruptl = { b
     const k = T[c.teknologi]?.komponen.find((q) => q.id === c.komponen); if (!k) continue;
     taruh(c.teknologi, c.komponen, { id: x.id, org_id: x.org_id, nama: x.nama, kota: x.kota, provinsi: x.provinsi, mwp: null, tkdn: c.tkdn, sumber: 'rantai', jenis: x.jenis, kapasitas: c.kapasitas ?? null, satuan: c.satuan ?? null, relevansi: c.relevansi || null, produk: c.produk || [], pasar: x.pasar || null, situs: x.situs || null, induk: x.induk || null, catatan: c.catatan || x.catatan || null, sumber_url: x.sumber[0]?.url || null, tingkat_bukti: x.sumber[0]?.tingkat_bukti || null, tanggal_periksa: x.tanggal_periksa });
   }
-  const logoDari = (p) => [p.id, p.org_id, indukLogo[p.id]].find((i) => i && adaLogo(i)) || null;
+  const logoDari = (p) => [p.id, p.org_id].find((i) => i && adaLogo(i)) || null; // logo induk disimpan di berkas bernama id anak usaha; catatan di logo_induk
   const kebut = kebutuhan(ruptl);
   const keluar = Object.values(T).map((t) => {
-    for (const k of t.komponen) { k.pemasok = k.pemasok.filter(dalamNegeri).map((p) => ({ ...p, org_id: p.org_id && adaOrg(p.org_id) ? p.org_id : null, logo: logoDari(p) })); k.pemasok.sort((a, b) => (b.mwp ?? 0) - (a.mwp ?? 0) || (b.tkdn ?? 0) - (a.tkdn ?? 0) || a.nama.localeCompare(b.nama)); }
+    for (const k of t.komponen) { k.pemasok = k.pemasok.filter(dalamNegeri).map((p) => ({ ...p, org_id: p.org_id && adaOrg(p.org_id) ? p.org_id : null, logo: logoDari(p), ...(indukLogo[p.id] && logoDari(p) ? { logo_induk: indukLogo[p.id] } : {}) })); k.pemasok.sort((a, b) => (b.mwp ?? 0) - (a.mwp ?? 0) || (b.tkdn ?? 0) - (a.tkdn ?? 0) || a.nama.localeCompare(b.nama)); }
     const uniq = new Set(t.komponen.flatMap((k) => k.pemasok.map((p) => p.id)));
     return { id: t.id, kebutuhan: kebut[t.id] || null, tipis: uniq.size < 5, pemasok_unik: uniq.size, celah: t.komponen.filter((k) => !k.pemasok.length).map((k) => k.id), komponen: t.komponen };
   });

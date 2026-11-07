@@ -1,5 +1,5 @@
 /* /masuk, /aktivasi, /ganti-sandi (JM-B06). Satu skrip, cabang menurut <body data-halaman>. */
-import { t, gantiBahasa, bahasa, angka, tanggal } from "/i18n.js";
+import { t, gantiBahasa, bahasa } from "/i18n.js";
 import { SOSMED, sosmedHtml } from "/inti/sosmed.js";
 import { api, galatTeks, amanKe, pesanHtml, nanti, esc } from "/inti/umum.js";
 import { IKON_TEK } from "/inti/ikon_tek.js";
@@ -24,8 +24,6 @@ $("atas").addEventListener("click", (e) => {
   for (const x of $("atas").querySelectorAll("button[data-b]")) x.setAttribute("aria-pressed", String(x === b));
   nanti(() => gantiBahasa(b.dataset.b, { masuk: saya.masuk }));
 });
-const POTRET = { tgl: "2026-11-08", proyek: 548, organisasi: 529, orang: 550 }; // potret public/data/*.json; tampil dengan tanggal
-const MITRA = [["pln", "PLN"], ["indonesia-power", "PLN Indonesia Power"], ["pertamina-power-indonesia", "Pertamina Power Indonesia"], ["medcoenergi", "Medco Energi"], ["brin", "BRIN"], ["esdm2", "Kementerian ESDM"], ["ebtke", "EBTKE"]];
 /* satu pita per teknologi: [berkas, ikon IKON_TEK, kunci label, kunci lokasi, pencipta, lisensi, kunci judul kredit] (sama dengan img/beranda/KREDIT.md) */
 const PITA = [
   ["surya-cirata", "surya", "beranda.tek.surya", "beranda.foto.surya", "indonesiagoid", "beranda.foto.lis.pd"],
@@ -39,10 +37,7 @@ const pitaHtml = () => PITA.map(([f, ik, lab, lok, pencipta, lis], i) => {
   return `<div class="jm-pg-pita"><img src="/img/beranda/${f}.webp" alt="" width="800" height="600" loading="eager" decoding="async"><span class="jm-pg-pil">${IKON_TEK[ik]}<span>${esc(t(lab))}</span><small>${esc(t(lok))}</small></span><button type="button" class="jm-pg-info" aria-expanded="false" aria-controls="kr-${i}" aria-label="${esc(t("tn.kredit.judul"))}">i</button><p class="jm-pg-kredit" id="kr-${i}" hidden>${esc(t("tn.kredit.baris", { judul: t(lok), pencipta, lisensi }))}</p></div>`;
 }).join("");
 $("panggung").innerHTML = `<div class="jm-pg-pitas">${pitaHtml()}</div>
-<div class="jm-pg-lapis"><blockquote class="jm-pg-kutip" data-i18n="masuk.kutipan">${t("masuk.kutipan")}</blockquote>
-<dl class="jm-pg-stat">${[["proyek", "masuk.stat_proyek"], ["organisasi", "masuk.stat_org"], ["orang", "masuk.stat_orang"]].map(([k, l]) => `<div><dd>${angka(POTRET[k])}</dd><dt data-i18n="${l}">${t(l)}</dt></div>`).join("")}</dl>
-<div class="jm-pg-mitra"><span data-i18n="masuk.mitra">${t("masuk.mitra")}</span><span class="jm-pg-jalan"><span class="jm-pg-trek">${[...MITRA, ...MITRA].map(([f, n]) => `<img src="/img/mitra/${f}.webp" alt="${n}" title="${n}" width="40" height="40" data-galat="hapus">`).join("")}</span></span></div>
-<p class="jm-pg-sumber">${t("masuk.stat_sumber", { tanggal: tanggal(POTRET.tgl) })}</p></div>`;
+`;
 $("kaki-akun").innerHTML = `<nav><a href="${MI}/about" target="_blank" rel="noopener noreferrer" data-i18n="masuk.k_tentang">${t("masuk.k_tentang")}</a><a href="${MI}/policy/membership" target="_blank" rel="noopener noreferrer" data-i18n="masuk.k_privasi">${t("masuk.k_privasi")}</a><a href="${MI}" target="_blank" rel="noopener noreferrer" data-i18n="masuk.k_kontak">${t("masuk.k_kontak")}</a></nav><div class="jm-ig-sosial">${sosmedHtml(SOSMED, 18)}</div><small>&copy; 2026 METI</small>`;
 
 // titik info kredit foto: satu popover terbuka; klik di luar atau Escape menutup
@@ -129,6 +124,17 @@ async function kirimForm(fn) {
 }
 
 if (halaman === "masuk") {
+  // persetujuan kebijakan privasi: diingat per peramban; tombol Masuk dan Google tampak nonaktif sampai dicentang
+  const setuju = $("setuju"), KS = "meti_privasi";
+  try { setuju.checked = localStorage.getItem(KS) === "1"; } catch (e) {}
+  const segarkan = () => {
+    for (const b of document.querySelectorAll("#kirim, .jm-tbl-google")) b.setAttribute("aria-disabled", String(!setuju.checked));
+    try { setuju.checked ? localStorage.setItem(KS, "1") : localStorage.removeItem(KS); } catch (e) {}
+    if (setuju.checked) pesan.innerHTML = "";
+  };
+  setuju.addEventListener("change", segarkan);
+  document.addEventListener("click", (e) => { if (!setuju.checked && e.target.closest(".jm-tbl-google")) { e.preventDefault(); tampilPesan("galat", t("masuk.setuju_perlu")); } });
+  segarkan();
   if (saya.masuk) {
     form.hidden = true;
     $("sudah").hidden = false;
@@ -136,6 +142,7 @@ if (halaman === "masuk") {
   }
   form.addEventListener("submit", (e) => {
     e.preventDefault();
+    if (!setuju.checked) return tampilPesan("galat", t("masuk.setuju_perlu"));
     const surel = $("surel").value.trim();
     const sandi = $("sandi").value;
     if (!surel || !sandi) return tampilPesan("galat", t("masuk.kosong"));

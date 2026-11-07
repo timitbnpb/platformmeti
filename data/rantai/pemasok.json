@@ -4,61 +4,109 @@
  "sumber": "tkdn.kemenperin.go.id/sertifikat (pencarian publik per kata kunci) + seed bersumber",
  "pemasok": [
   {
-   "id": "tk_c3a6d5e4",
-   "org_id": "tk_c3a6d5e4",
-   "nama": "CV Protel Multi Energy",
+   "id": "tk_5bedca66",
+   "org_id": null,
+   "nama": "CV SK JAYA",
    "jenis": "pabrikan",
-   "kota": "Bandung",
-   "provinsi": "Jawa Barat",
+   "kota": "Sidoarjo",
+   "provinsi": "Jawa Timur",
    "situs": null,
    "pasar": null,
    "anggota": [],
    "komponen": [
     {
-     "teknologi": "hidro",
-     "komponen": "turbin_hidro",
+     "teknologi": "jaringan",
+     "komponen": "panel_tr",
      "relevansi": "langsung",
      "produk": [
-      "Turbin Crossflow D150 Bo 250mm, pipa 10 inch"
+      "PANEL LISTRIK TEGANGAN RENDAH (TR)"
      ],
-     "tkdn": 38,
+     "tkdn": 30.8,
      "kapasitas": null,
      "satuan": null
     }
    ],
    "sumber": [
     {
-     "url": "https://tkdn.kemenperin.go.id/sertifikat?q=crossflow",
+     "url": "https://tkdn.kemenperin.go.id/sertifikat?q=kabel%20kontrol&page=2",
      "jenis": "sertifikat-tkdn",
      "tingkat_bukti": "resmi",
      "tanggal": "2026-11-08"
     },
     {
-     "url": "https://tkdn.kemenperin.go.id/sertifikat?q=electrolyzer",
+     "url": "https://tkdn.kemenperin.go.id/sertifikat?q=panel%20lvmdp",
+     "jenis": "sertifikat-tkdn",
+     "tingkat_bukti": "resmi",
+     "tanggal": "2026-11-08"
+    }
+   ],
+   "tanggal_periksa": "2026-11-08"
+  },
+  {
+   "id": "tk_ab4af39b",
+   "org_id": null,
+   "nama": "CV. Amel Sukses Energy",
+   "jenis": "pabrikan",
+   "kota": "Bekasi",
+   "provinsi": "Jawa Barat",
+   "situs": null,
+   "pasar": null,
+   "anggota": [],
+   "komponen": [
+    {
+     "teknologi": "baterai",
+     "komponen": "pack",
+     "relevansi": "langsung",
+     "produk": [
+      "Baterai Lithium"
+     ],
+     "tkdn": 36.44,
+     "kapasitas": null,
+     "satuan": null
+    }
+   ],
+   "sumber": [
+    {
+     "url": "https://tkdn.kemenperin.go.id/sertifikat?q=battery%20pack%20lifepo4&page=4",
+     "jenis": "sertifikat-tkdn",
+     "tingkat_bukti": "resmi",
+     "tanggal": "2026-11-08"
+    }
+   ],
+   "tanggal_periksa": "2026-11-08"
+  },
+  {
+   "id": "tk_5e6a9a31",
+   "org_id": null,
+   "nama": "PT ABB SAKTI INDUSTRI",
+   "jenis": "pabrikan",
+   "kota": "Tangerang",
+   "provinsi": "Banten",
+   "situs": null,
+   "pasar": null,
+   "anggota": [],
+   "komponen": [
+    {
+     "teknologi": "jaringan",
+     "komponen": "panel_tr",
+     "relevansi": "langsung",
+     "produk": [
+      "Panel Listrik Tegangan Menengah (TM) (1000-35000 volt)"
+     ],
+     "tkdn": 39.63,
+     "kapasitas": null,
+     "satuan": null
+    }
+   ],
+   "sumber": [
+    {
+     "url": "https://tkdn.kemenperin.go.id/sertifikat?q=abb&page=2",
      "jenis": "sertifikat-tkdn",
      "tingkat_bukti": "resmi",
      "tanggal": "2026-11-08"
     },
     {
-     "url": "https://tkdn.kemenperin.go.id/sertifikat?q=generator%20sinkron",
-     "jenis": "sertifikat-tkdn",
-     "tingkat_bukti": "resmi",
-     "tanggal": "2026-11-08"
-    },
-    {
-     "url": "https://tkdn.kemenperin.go.id/sertifikat?q=turbin%20air",
-     "jenis": "sertifikat-tkdn",
-     "tingkat_bukti": "resmi",
-     "tanggal": "2026-11-08"
-    },
-    {
-     "url": "https://tkdn.kemenperin.go.id/sertifikat?q=turbin%20uap",
-     "jenis": "sertifikat-tkdn",
-     "tingkat_bukti": "resmi",
-     "tanggal": "2026-11-08"
-    },
-    {
-     "url": "https://tkdn.kemenperin.go.id/sertifikat?q=wind%20turbine",
+     "url": "https://tkdn.kemenperin.go.id/sertifikat?q=abb&page=3",
      "jenis": "sertifikat-tkdn",
      "tingkat_bukti": "resmi",
      "tanggal": "2026-11-08"
@@ -102,6 +150,12 @@
    ],
    "sumber": [
     {
+     "url": "https://tkdn.kemenperin.go.id/sertifikat?q=baterai%20lifepo4%20lithium&page=2",
+     "jenis": "sertifikat-tkdn",
+     "tingkat_bukti": "resmi",
+     "tanggal": "2026-11-08"
+    },
+    {
      "url": "https://tkdn.kemenperin.go.id/sertifikat?q=baterai%20lithium&page=8",
      "jenis": "sertifikat-tkdn",
      "tingkat_bukti": "resmi",
@@ -115,6 +169,12 @@
     },
     {
      "url": "https://tkdn.kemenperin.go.id/sertifikat?q=inverter&page=5",
+     "jenis": "sertifikat-tkdn",
+     "tingkat_bukti": "resmi",
+     "tanggal": "2026-11-08"
+    },
+    {
+     "url": "https://tkdn.kemenperin.go.id/sertifikat?q=inverter&page=7",
      "jenis": "sertifikat-tkdn",
      "tingkat_bukti": "resmi",
      "tanggal": "2026-11-08"
@@ -162,13 +222,46 @@
    "tanggal_periksa": "2026-11-08"
   },
   {
+   "id": "tk_839d549c",
+   "org_id": null,
+   "nama": "PT Alum Central Mandiri Lestari",
+   "jenis": "pabrikan",
+   "kota": "Tangerang",
+   "provinsi": "Banten",
+   "situs": null,
+   "pasar": null,
+   "anggota": [],
+   "komponen": [
+    {
+     "teknologi": "jaringan",
+     "komponen": "kabel",
+     "relevansi": "langsung",
+     "produk": [
+      "Kabel Listrik"
+     ],
+     "tkdn": 96.66,
+     "kapasitas": null,
+     "satuan": null
+    }
+   ],
+   "sumber": [
+    {
+     "url": "https://tkdn.kemenperin.go.id/sertifikat?q=kabel%20nfa2x&page=4",
+     "jenis": "sertifikat-tkdn",
+     "tingkat_bukti": "resmi",
+     "tanggal": "2026-11-08"
+    }
+   ],
+   "tanggal_periksa": "2026-11-08"
+  },
+  {
    "id": "tk_6761b5ce",
    "org_id": null,
    "nama": "PT Amtra Electric",
    "jenis": "pabrikan",
    "kota": "Tangerang",
    "provinsi": "Banten",
-   "situs": null,
+   "situs": "https://www.amtra.co.id",
    "pasar": null,
    "anggota": [],
    "komponen": [
@@ -256,6 +349,12 @@
      "jenis": "sertifikat-tkdn",
      "tingkat_bukti": "resmi",
      "tanggal": "2026-11-08"
+    },
+    {
+     "url": "https://tkdn.kemenperin.go.id/sertifikat?q=bess",
+     "jenis": "sertifikat-tkdn",
+     "tingkat_bukti": "resmi",
+     "tanggal": "2026-11-08"
     }
    ],
    "tanggal_periksa": "2026-11-08"
@@ -267,10 +366,21 @@
    "jenis": "pabrikan",
    "kota": "Jakarta Barat",
    "provinsi": "DKI Jakarta",
-   "situs": null,
+   "situs": "https://www.asata.com",
    "pasar": null,
    "anggota": [],
    "komponen": [
+    {
+     "teknologi": "jaringan",
+     "komponen": "panel_tr",
+     "relevansi": "langsung",
+     "produk": [
+      "Panel Listrik Tegangan Menengah (TM) (1000 - 35000 volt)"
+     ],
+     "tkdn": 73.24,
+     "kapasitas": null,
+     "satuan": null
+    },
     {
      "teknologi": "jaringan",
      "komponen": "trafo",
@@ -284,6 +394,12 @@
     }
    ],
    "sumber": [
+    {
+     "url": "https://tkdn.kemenperin.go.id/sertifikat?q=kabel%20tegangan%20menengah&page=8",
+     "jenis": "sertifikat-tkdn",
+     "tingkat_bukti": "resmi",
+     "tanggal": "2026-11-08"
+    },
     {
      "url": "https://tkdn.kemenperin.go.id/sertifikat?q=transformator&page=10",
      "jenis": "sertifikat-tkdn",
@@ -303,7 +419,31 @@
      "tanggal": "2026-11-08"
     },
     {
+     "url": "https://tkdn.kemenperin.go.id/sertifikat?q=transformator%20250%20kva&page=3",
+     "jenis": "sertifikat-tkdn",
+     "tingkat_bukti": "resmi",
+     "tanggal": "2026-11-08"
+    },
+    {
+     "url": "https://tkdn.kemenperin.go.id/sertifikat?q=transformator%20250%20kva&page=4",
+     "jenis": "sertifikat-tkdn",
+     "tingkat_bukti": "resmi",
+     "tanggal": "2026-11-08"
+    },
+    {
      "url": "https://tkdn.kemenperin.go.id/sertifikat?q=transformator&page=6",
+     "jenis": "sertifikat-tkdn",
+     "tingkat_bukti": "resmi",
+     "tanggal": "2026-11-08"
+    },
+    {
+     "url": "https://tkdn.kemenperin.go.id/sertifikat?q=transformator%20630%20kva&page=3",
+     "jenis": "sertifikat-tkdn",
+     "tingkat_bukti": "resmi",
+     "tanggal": "2026-11-08"
+    },
+    {
+     "url": "https://tkdn.kemenperin.go.id/sertifikat?q=transformator%20630%20kva&page=4",
      "jenis": "sertifikat-tkdn",
      "tingkat_bukti": "resmi",
      "tanggal": "2026-11-08"
@@ -319,6 +459,24 @@
      "jenis": "sertifikat-tkdn",
      "tingkat_bukti": "resmi",
      "tanggal": "2026-11-08"
+    },
+    {
+     "url": "https://tkdn.kemenperin.go.id/sertifikat?q=transformator%20dry%20type&page=2",
+     "jenis": "sertifikat-tkdn",
+     "tingkat_bukti": "resmi",
+     "tanggal": "2026-11-08"
+    },
+    {
+     "url": "https://tkdn.kemenperin.go.id/sertifikat?q=transformator%20dry%20type&page=3",
+     "jenis": "sertifikat-tkdn",
+     "tingkat_bukti": "resmi",
+     "tanggal": "2026-11-08"
+    },
+    {
+     "url": "https://tkdn.kemenperin.go.id/sertifikat?q=transformator%20dry%20type&page=4",
+     "jenis": "sertifikat-tkdn",
+     "tingkat_bukti": "resmi",
+     "tanggal": "2026-11-08"
     }
    ],
    "tanggal_periksa": "2026-11-08"
@@ -330,7 +488,7 @@
    "jenis": "pabrikan",
    "kota": "Mojokerto",
    "provinsi": "Jawa Timur",
-   "situs": null,
+   "situs": "https://www.bambangdjaja.com",
    "pasar": null,
    "anggota": [],
    "komponen": [
@@ -379,6 +537,12 @@
      "tanggal": "2026-11-08"
     },
     {
+     "url": "https://tkdn.kemenperin.go.id/sertifikat?q=transformator%20250%20kva&page=4",
+     "jenis": "sertifikat-tkdn",
+     "tingkat_bukti": "resmi",
+     "tanggal": "2026-11-08"
+    },
+    {
      "url": "https://tkdn.kemenperin.go.id/sertifikat?q=transformator&page=4",
      "jenis": "sertifikat-tkdn",
      "tingkat_bukti": "resmi",
@@ -395,8 +559,65 @@
      "jenis": "sertifikat-tkdn",
      "tingkat_bukti": "resmi",
      "tanggal": "2026-11-08"
+    },
+    {
+     "url": "https://tkdn.kemenperin.go.id/sertifikat?q=transformator%20dry%20type&page=4",
+     "jenis": "sertifikat-tkdn",
+     "tingkat_bukti": "resmi",
+     "tanggal": "2026-11-08"
     }
    ],
+   "tanggal_periksa": "2026-11-08"
+  },
+  {
+   "id": "tk_d47735bc",
+   "org_id": null,
+   "nama": "PT Barata Indonesia (Persero)",
+   "jenis": "pabrikan",
+   "kota": "Gresik",
+   "provinsi": "Jawa Timur",
+   "situs": "https://www.barata.id",
+   "pasar": null,
+   "anggota": [],
+   "komponen": [
+    {
+     "produk": [
+      "komponen PLTMH Genyem 09 (portofolio)"
+     ],
+     "tkdn": null,
+     "kapasitas": null,
+     "satuan": null,
+     "teknologi": "hidro",
+     "komponen": "turbin_hidro",
+     "relevansi": "langsung"
+    },
+    {
+     "produk": [
+      "LP Outer Casing pembangkit listrik (portofolio)"
+     ],
+     "tkdn": null,
+     "kapasitas": null,
+     "satuan": null,
+     "teknologi": "panas_bumi",
+     "komponen": "turbin_uap",
+     "relevansi": "umum"
+    }
+   ],
+   "sumber": [
+    {
+     "url": "https://www.barata.id/id/industri-komponen-permesinan/",
+     "jenis": "situs-sendiri",
+     "tingkat_bukti": "kata-pihak",
+     "tanggal": "2026-11-08"
+    },
+    {
+     "url": "https://www.barata.id",
+     "jenis": "situs-sendiri",
+     "tingkat_bukti": "kata-pihak",
+     "tanggal": "2026-11-08"
+    }
+   ],
+   "catatan": "BUMN pengecoran dan permesinan; kapasitas foundry hingga 12.800 ton/tahun (seluruh produk, bukan khusus pembangkit). Portofolio komponen pembangkit: casing turbin uap LP dan proyek PLTMH Genyem 09; tidak disebut khusus panas bumi.",
    "tanggal_periksa": "2026-11-08"
   },
   {
@@ -439,7 +660,7 @@
    "jenis": "pabrikan",
    "kota": "Bogor",
    "provinsi": "Jawa Barat",
-   "situs": null,
+   "situs": "https://www.benvors.co.id",
    "pasar": null,
    "anggota": [],
    "komponen": [
@@ -458,6 +679,39 @@
    "sumber": [
     {
      "url": "https://tkdn.kemenperin.go.id/sertifikat?q=wellhead&page=3",
+     "jenis": "sertifikat-tkdn",
+     "tingkat_bukti": "resmi",
+     "tanggal": "2026-11-08"
+    }
+   ],
+   "tanggal_periksa": "2026-11-08"
+  },
+  {
+   "id": "tk_4457ac8e",
+   "org_id": null,
+   "nama": "PT Berkah Cipta Persada",
+   "jenis": "pabrikan",
+   "kota": "Bekasi",
+   "provinsi": "Jawa Barat",
+   "situs": null,
+   "pasar": null,
+   "anggota": [],
+   "komponen": [
+    {
+     "teknologi": "jaringan",
+     "komponen": "panel_tr",
+     "relevansi": "langsung",
+     "produk": [
+      "Panel Listrik"
+     ],
+     "tkdn": 29.09,
+     "kapasitas": null,
+     "satuan": null
+    }
+   ],
+   "sumber": [
+    {
+     "url": "https://tkdn.kemenperin.go.id/sertifikat?q=siemens&page=2",
      "jenis": "sertifikat-tkdn",
      "tingkat_bukti": "resmi",
      "tanggal": "2026-11-08"
@@ -517,7 +771,7 @@
    "jenis": "pabrikan",
    "kota": "Jakarta Selatan",
    "provinsi": "DKI Jakarta",
-   "situs": null,
+   "situs": "https://www.bimaecopower.com",
    "pasar": null,
    "anggota": [],
    "komponen": [
@@ -539,6 +793,30 @@
    "sumber": [
     {
      "url": "https://tkdn.kemenperin.go.id/sertifikat?q=battery%20energy%20storage",
+     "jenis": "sertifikat-tkdn",
+     "tingkat_bukti": "resmi",
+     "tanggal": "2026-11-08"
+    },
+    {
+     "url": "https://tkdn.kemenperin.go.id/sertifikat?q=battery%20pack%20lifepo4",
+     "jenis": "sertifikat-tkdn",
+     "tingkat_bukti": "resmi",
+     "tanggal": "2026-11-08"
+    },
+    {
+     "url": "https://tkdn.kemenperin.go.id/sertifikat?q=battery%20pack%20lifepo4&page=2",
+     "jenis": "sertifikat-tkdn",
+     "tingkat_bukti": "resmi",
+     "tanggal": "2026-11-08"
+    },
+    {
+     "url": "https://tkdn.kemenperin.go.id/sertifikat?q=bess",
+     "jenis": "sertifikat-tkdn",
+     "tingkat_bukti": "resmi",
+     "tanggal": "2026-11-08"
+    },
+    {
+     "url": "https://tkdn.kemenperin.go.id/sertifikat?q=ess%20lithium&page=4",
      "jenis": "sertifikat-tkdn",
      "tingkat_bukti": "resmi",
      "tanggal": "2026-11-08"
@@ -749,6 +1027,39 @@
    "tanggal_periksa": "2026-11-08"
   },
   {
+   "id": "tk_39a5a2ec",
+   "org_id": null,
+   "nama": "PT Citra Sanxing Indonesia",
+   "jenis": "pabrikan",
+   "kota": "Serang",
+   "provinsi": "Banten",
+   "situs": null,
+   "pasar": null,
+   "anggota": [],
+   "komponen": [
+    {
+     "teknologi": "jaringan",
+     "komponen": "panel_tr",
+     "relevansi": "langsung",
+     "produk": [
+      "PANEL LISTRIK TEGANGAN MENENGAH (TM) (1000-35000VOLT)"
+     ],
+     "tkdn": 43.36,
+     "kapasitas": null,
+     "satuan": null
+    }
+   ],
+   "sumber": [
+    {
+     "url": "https://tkdn.kemenperin.go.id/sertifikat?q=transformator%20630%20kva&page=4",
+     "jenis": "sertifikat-tkdn",
+     "tingkat_bukti": "resmi",
+     "tanggal": "2026-11-08"
+    }
+   ],
+   "tanggal_periksa": "2026-11-08"
+  },
+  {
    "id": "tk_5c8f6a0f",
    "org_id": null,
    "nama": "PT Comeca Indonesia",
@@ -788,13 +1099,52 @@
    "tanggal_periksa": "2026-11-08"
   },
   {
+   "id": "tk_7fcae250",
+   "org_id": null,
+   "nama": "PT DHARMA CONTROLCABLE INDONESIA",
+   "jenis": "pabrikan",
+   "kota": "Bekasi",
+   "provinsi": "Jawa Barat",
+   "situs": null,
+   "pasar": null,
+   "anggota": [],
+   "komponen": [
+    {
+     "teknologi": "baterai",
+     "komponen": "pack",
+     "relevansi": "langsung",
+     "produk": [
+      "BATTERY PACK"
+     ],
+     "tkdn": 51.68,
+     "kapasitas": null,
+     "satuan": null
+    }
+   ],
+   "sumber": [
+    {
+     "url": "https://tkdn.kemenperin.go.id/sertifikat?q=battery%20pack%20lifepo4&page=2",
+     "jenis": "sertifikat-tkdn",
+     "tingkat_bukti": "resmi",
+     "tanggal": "2026-11-08"
+    },
+    {
+     "url": "https://tkdn.kemenperin.go.id/sertifikat?q=battery%20pack%20lifepo4&page=3",
+     "jenis": "sertifikat-tkdn",
+     "tingkat_bukti": "resmi",
+     "tanggal": "2026-11-08"
+    }
+   ],
+   "tanggal_periksa": "2026-11-08"
+  },
+  {
    "id": "tk_d5ea193b",
    "org_id": null,
    "nama": "PT Duta Listrik Graha Prima",
    "jenis": "pabrikan",
    "kota": "Tangerang",
    "provinsi": "Banten",
-   "situs": null,
+   "situs": "https://www.dutalistrik.com",
    "pasar": null,
    "anggota": [],
    "komponen": [
@@ -803,9 +1153,10 @@
      "komponen": "panel_tr",
      "relevansi": "langsung",
      "produk": [
-      "Panel Listrik Tegangan Menengah"
+      "Panel Listrik Tegangan Menengah",
+      "Panel Listrik Tegangan Rendah Prisma Schneider Electric"
      ],
-     "tkdn": 43.07,
+     "tkdn": 53.56,
      "kapasitas": null,
      "satuan": null
     }
@@ -813,6 +1164,12 @@
    "sumber": [
     {
      "url": "https://tkdn.kemenperin.go.id/sertifikat?q=kabel%20tegangan%20menengah&page=4",
+     "jenis": "sertifikat-tkdn",
+     "tingkat_bukti": "resmi",
+     "tanggal": "2026-11-08"
+    },
+    {
+     "url": "https://tkdn.kemenperin.go.id/sertifikat?q=schneider&page=3",
      "jenis": "sertifikat-tkdn",
      "tingkat_bukti": "resmi",
      "tanggal": "2026-11-08"
@@ -827,7 +1184,7 @@
    "jenis": "pabrikan",
    "kota": "Bogor",
    "provinsi": "Jawa Barat",
-   "situs": null,
+   "situs": "https://www.dwidajayatama.com",
    "pasar": null,
    "anggota": [],
    "komponen": [
@@ -857,6 +1214,12 @@
    "sumber": [
     {
      "url": "https://tkdn.kemenperin.go.id/sertifikat?q=crossflow",
+     "jenis": "sertifikat-tkdn",
+     "tingkat_bukti": "resmi",
+     "tanggal": "2026-11-08"
+    },
+    {
+     "url": "https://tkdn.kemenperin.go.id/sertifikat?q=turbin",
      "jenis": "sertifikat-tkdn",
      "tingkat_bukti": "resmi",
      "tanggal": "2026-11-08"
@@ -916,7 +1279,7 @@
    "jenis": "pabrikan",
    "kota": "Bekasi",
    "provinsi": "Jawa Barat",
-   "situs": null,
+   "situs": "https://www.ejjv.co.id",
    "pasar": null,
    "anggota": [],
    "komponen": [
@@ -1040,7 +1403,7 @@
    "jenis": "pabrikan",
    "kota": "Bogor",
    "provinsi": "Jawa Barat",
-   "situs": null,
+   "situs": "https://www.elsewedyelectric.com",
    "pasar": null,
    "anggota": [],
    "komponen": [
@@ -1062,6 +1425,12 @@
      "jenis": "sertifikat-tkdn",
      "tingkat_bukti": "resmi",
      "tanggal": "2026-11-08"
+    },
+    {
+     "url": "https://tkdn.kemenperin.go.id/sertifikat?q=transformator%20daya%2060%20mva&page=2",
+     "jenis": "sertifikat-tkdn",
+     "tingkat_bukti": "resmi",
+     "tanggal": "2026-11-08"
     }
    ],
    "tanggal_periksa": "2026-11-08"
@@ -1073,7 +1442,7 @@
    "jenis": "pabrikan",
    "kota": "Karawang",
    "provinsi": "Jawa Barat",
-   "situs": null,
+   "situs": "https://www.enviconekatama.com",
    "pasar": null,
    "anggota": [],
    "komponen": [
@@ -1196,7 +1565,7 @@
    "jenis": "pabrikan",
    "kota": "Bekasi",
    "provinsi": "Jawa Barat",
-   "situs": null,
+   "situs": "https://www.fajarmitrahutama.co.id",
    "pasar": null,
    "anggota": [],
    "komponen": [
@@ -1229,7 +1598,7 @@
    "jenis": "pabrikan",
    "kota": "Bogor",
    "provinsi": "Jawa Barat",
-   "situs": null,
+   "situs": "https://gasprosentraco.com",
    "pasar": null,
    "anggota": [],
    "komponen": [
@@ -1301,6 +1670,72 @@
    "tanggal_periksa": "2026-11-08"
   },
   {
+   "id": "tk_4a3d1d23",
+   "org_id": null,
+   "nama": "PT Gotion Green Energy Solutions Indonesia",
+   "jenis": "pabrikan",
+   "kota": "Bogor",
+   "provinsi": "Jawa Barat",
+   "situs": null,
+   "pasar": null,
+   "anggota": [],
+   "komponen": [
+    {
+     "teknologi": "baterai",
+     "komponen": "pack",
+     "relevansi": "langsung",
+     "produk": [
+      "Battery Pack"
+     ],
+     "tkdn": 21.06,
+     "kapasitas": null,
+     "satuan": null
+    }
+   ],
+   "sumber": [
+    {
+     "url": "https://tkdn.kemenperin.go.id/sertifikat?q=battery%20pack%20lifepo4&page=4",
+     "jenis": "sertifikat-tkdn",
+     "tingkat_bukti": "resmi",
+     "tanggal": "2026-11-08"
+    }
+   ],
+   "tanggal_periksa": "2026-11-08"
+  },
+  {
+   "id": "tk_c38b402f",
+   "org_id": "tk_c38b402f",
+   "nama": "PT Grand Sains",
+   "jenis": "pabrikan",
+   "kota": "Tangerang Selatan",
+   "provinsi": "Banten",
+   "situs": null,
+   "pasar": null,
+   "anggota": [],
+   "komponen": [
+    {
+     "teknologi": "baterai",
+     "komponen": "sel",
+     "relevansi": "langsung",
+     "produk": [
+      "Terdiri dari : Baterei 9V + soket + kabel, Baling-baling kecil, Model Motor listrik, Dinam"
+     ],
+     "tkdn": 40,
+     "kapasitas": null,
+     "satuan": null
+    }
+   ],
+   "sumber": [
+    {
+     "url": "https://tkdn.kemenperin.go.id/sertifikat?q=kabel%20tembaga&page=4",
+     "jenis": "sertifikat-tkdn",
+     "tingkat_bukti": "resmi",
+     "tanggal": "2026-11-08"
+    }
+   ],
+   "tanggal_periksa": "2026-11-08"
+  },
+  {
    "id": "tk_6b2ac57e",
    "org_id": null,
    "nama": "PT Green Teknologi Powerindo",
@@ -1316,8 +1751,8 @@
      "komponen": "pack",
      "relevansi": "langsung",
      "produk": [
-      "Baterai Energi Storage System",
-      "Lithium Battery untuk Base Transceiver Station (BTS)"
+      "Lithium Battery untuk Base Transceiver Station (BTS)",
+      "Baterai Energi Storage System"
      ],
      "tkdn": 52.01,
      "kapasitas": null,
@@ -1326,6 +1761,12 @@
    ],
    "sumber": [
     {
+     "url": "https://tkdn.kemenperin.go.id/sertifikat?q=ess%20lithium&page=4",
+     "jenis": "sertifikat-tkdn",
+     "tingkat_bukti": "resmi",
+     "tanggal": "2026-11-08"
+    },
+    {
      "url": "https://tkdn.kemenperin.go.id/sertifikat?q=lifepo4&page=4",
      "jenis": "sertifikat-tkdn",
      "tingkat_bukti": "resmi",
@@ -1333,6 +1774,12 @@
     },
     {
      "url": "https://tkdn.kemenperin.go.id/sertifikat?q=pack%20baterai",
+     "jenis": "sertifikat-tkdn",
+     "tingkat_bukti": "resmi",
+     "tanggal": "2026-11-08"
+    },
+    {
+     "url": "https://tkdn.kemenperin.go.id/sertifikat?q=sky%20energi&page=3",
      "jenis": "sertifikat-tkdn",
      "tingkat_bukti": "resmi",
      "tanggal": "2026-11-08"
@@ -1347,7 +1794,7 @@
    "jenis": "pabrikan",
    "kota": "Tangerang",
    "provinsi": "Banten",
-   "situs": null,
+   "situs": "https://gridtech.co.id",
    "pasar": null,
    "anggota": [],
    "komponen": [
@@ -1380,7 +1827,7 @@
    "jenis": "pabrikan",
    "kota": "Bekasi",
    "provinsi": "Jawa Barat",
-   "situs": null,
+   "situs": "https://www.guna.id",
    "pasar": null,
    "anggota": [],
    "komponen": [
@@ -1413,7 +1860,7 @@
    "jenis": "pabrikan",
    "kota": "Bandung",
    "provinsi": "Jawa Barat",
-   "situs": null,
+   "situs": "https://www.hariff.co.id",
    "pasar": null,
    "anggota": [],
    "komponen": [
@@ -1430,6 +1877,12 @@
     }
    ],
    "sumber": [
+    {
+     "url": "https://tkdn.kemenperin.go.id/sertifikat?q=ess%20lithium&page=3",
+     "jenis": "sertifikat-tkdn",
+     "tingkat_bukti": "resmi",
+     "tanggal": "2026-11-08"
+    },
     {
      "url": "https://tkdn.kemenperin.go.id/sertifikat?q=lifepo4",
      "jenis": "sertifikat-tkdn",
@@ -1547,6 +2000,45 @@
    "tanggal_periksa": "2026-11-08"
   },
   {
+   "id": "tk_5a08fdb2",
+   "org_id": null,
+   "nama": "PT IKAPRINDO REKAYASA TEKNIK",
+   "jenis": "pabrikan",
+   "kota": "Tangerang",
+   "provinsi": "Banten",
+   "situs": null,
+   "pasar": null,
+   "anggota": [],
+   "komponen": [
+    {
+     "teknologi": "jaringan",
+     "komponen": "panel_tr",
+     "relevansi": "langsung",
+     "produk": [
+      "Panel LVMDP (Panel Hubung Bagi Tegangan Rendah)"
+     ],
+     "tkdn": 49.06,
+     "kapasitas": null,
+     "satuan": null
+    }
+   ],
+   "sumber": [
+    {
+     "url": "https://tkdn.kemenperin.go.id/sertifikat?q=panel%20lvmdp",
+     "jenis": "sertifikat-tkdn",
+     "tingkat_bukti": "resmi",
+     "tanggal": "2026-11-08"
+    },
+    {
+     "url": "https://tkdn.kemenperin.go.id/sertifikat?q=panel%20mdp",
+     "jenis": "sertifikat-tkdn",
+     "tingkat_bukti": "resmi",
+     "tanggal": "2026-11-08"
+    }
+   ],
+   "tanggal_periksa": "2026-11-08"
+  },
+  {
    "id": "tk_ac531297",
    "org_id": "tk_ac531297",
    "nama": "PT INDO ENERGI ELEKTRIK",
@@ -1591,6 +2083,12 @@
     },
     {
      "url": "https://tkdn.kemenperin.go.id/sertifikat?q=baterai%20lithium&page=8",
+     "jenis": "sertifikat-tkdn",
+     "tingkat_bukti": "resmi",
+     "tanggal": "2026-11-08"
+    },
+    {
+     "url": "https://tkdn.kemenperin.go.id/sertifikat?q=ess%20lithium&page=3",
      "jenis": "sertifikat-tkdn",
      "tingkat_bukti": "resmi",
      "tanggal": "2026-11-08"
@@ -1641,7 +2139,7 @@
    "jenis": "pabrikan",
    "kota": "Tangerang",
    "provinsi": "Banten",
-   "situs": null,
+   "situs": "https://www.indosun.co.id",
    "pasar": null,
    "anggota": [],
    "komponen": [
@@ -1658,6 +2156,18 @@
     }
    ],
    "sumber": [
+    {
+     "url": "https://tkdn.kemenperin.go.id/sertifikat?q=baterai%20lifepo4%20lithium",
+     "jenis": "sertifikat-tkdn",
+     "tingkat_bukti": "resmi",
+     "tanggal": "2026-11-08"
+    },
+    {
+     "url": "https://tkdn.kemenperin.go.id/sertifikat?q=baterai%20lifepo4%20lithium&page=2",
+     "jenis": "sertifikat-tkdn",
+     "tingkat_bukti": "resmi",
+     "tanggal": "2026-11-08"
+    },
     {
      "url": "https://tkdn.kemenperin.go.id/sertifikat?q=baterai%20lithium&page=4",
      "jenis": "sertifikat-tkdn",
@@ -1704,13 +2214,52 @@
    "tanggal_periksa": "2026-11-08"
   },
   {
+   "id": "tk_fd8db66f",
+   "org_id": null,
+   "nama": "PT Ines",
+   "jenis": "pabrikan",
+   "kota": "Tangerang",
+   "provinsi": "Banten",
+   "situs": null,
+   "pasar": null,
+   "anggota": [],
+   "komponen": [
+    {
+     "teknologi": "jaringan",
+     "komponen": "panel_tr",
+     "relevansi": "langsung",
+     "produk": [
+      "Panel Listrik Tegangan Rendah"
+     ],
+     "tkdn": 36.92,
+     "kapasitas": null,
+     "satuan": null
+    }
+   ],
+   "sumber": [
+    {
+     "url": "https://tkdn.kemenperin.go.id/sertifikat?q=kabel%20kontrol",
+     "jenis": "sertifikat-tkdn",
+     "tingkat_bukti": "resmi",
+     "tanggal": "2026-11-08"
+    },
+    {
+     "url": "https://tkdn.kemenperin.go.id/sertifikat?q=panel%20lvmdp",
+     "jenis": "sertifikat-tkdn",
+     "tingkat_bukti": "resmi",
+     "tanggal": "2026-11-08"
+    }
+   ],
+   "tanggal_periksa": "2026-11-08"
+  },
+  {
    "id": "tk_466d9597",
    "org_id": null,
    "nama": "PT Inti Persada Prima",
    "jenis": "pabrikan",
    "kota": "Bogor",
    "provinsi": "Jawa Barat",
-   "situs": null,
+   "situs": "https://www.intipersada.id",
    "pasar": null,
    "anggota": [],
    "komponen": [
@@ -1737,13 +2286,46 @@
    "tanggal_periksa": "2026-11-08"
   },
   {
+   "id": "tk_963b9c53",
+   "org_id": null,
+   "nama": "PT Intimuara Electrindo",
+   "jenis": "pabrikan",
+   "kota": "Tangerang",
+   "provinsi": "Banten",
+   "situs": null,
+   "pasar": null,
+   "anggota": [],
+   "komponen": [
+    {
+     "teknologi": "jaringan",
+     "komponen": "panel_tr",
+     "relevansi": "langsung",
+     "produk": [
+      "PANEL LISTRIK TEGANGAN RENDAH (TR) KURANG DARI 1000 VOLT"
+     ],
+     "tkdn": 66.59,
+     "kapasitas": null,
+     "satuan": null
+    }
+   ],
+   "sumber": [
+    {
+     "url": "https://tkdn.kemenperin.go.id/sertifikat?q=schneider&page=3",
+     "jenis": "sertifikat-tkdn",
+     "tingkat_bukti": "resmi",
+     "tanggal": "2026-11-08"
+    }
+   ],
+   "tanggal_periksa": "2026-11-08"
+  },
+  {
    "id": "tk_76d2b66f",
    "org_id": null,
    "nama": "PT Issyam Maju Bersama",
    "jenis": "pabrikan",
    "kota": "Bekasi",
    "provinsi": "Jawa Barat",
-   "situs": null,
+   "situs": "https://www.issyam.com",
    "pasar": null,
    "anggota": [],
    "komponen": [
@@ -1762,6 +2344,39 @@
    "sumber": [
     {
      "url": "https://tkdn.kemenperin.go.id/sertifikat?q=inverter&page=5",
+     "jenis": "sertifikat-tkdn",
+     "tingkat_bukti": "resmi",
+     "tanggal": "2026-11-08"
+    }
+   ],
+   "tanggal_periksa": "2026-11-08"
+  },
+  {
+   "id": "tk_804dc1e7",
+   "org_id": null,
+   "nama": "PT Istech Utama",
+   "jenis": "pabrikan",
+   "kota": "Jakarta Timur",
+   "provinsi": "DKI Jakarta",
+   "situs": null,
+   "pasar": null,
+   "anggota": [],
+   "komponen": [
+    {
+     "teknologi": "jaringan",
+     "komponen": "panel_tr",
+     "relevansi": "langsung",
+     "produk": [
+      "Panel Listrik"
+     ],
+     "tkdn": 35.83,
+     "kapasitas": null,
+     "satuan": null
+    }
+   ],
+   "sumber": [
+    {
+     "url": "https://tkdn.kemenperin.go.id/sertifikat?q=panel%20lvmdp",
      "jenis": "sertifikat-tkdn",
      "tingkat_bukti": "resmi",
      "tanggal": "2026-11-08"
@@ -1794,6 +2409,24 @@
     }
    ],
    "sumber": [
+    {
+     "url": "https://tkdn.kemenperin.go.id/sertifikat?q=jembo",
+     "jenis": "sertifikat-tkdn",
+     "tingkat_bukti": "resmi",
+     "tanggal": "2026-11-08"
+    },
+    {
+     "url": "https://tkdn.kemenperin.go.id/sertifikat?q=jembo&page=2",
+     "jenis": "sertifikat-tkdn",
+     "tingkat_bukti": "resmi",
+     "tanggal": "2026-11-08"
+    },
+    {
+     "url": "https://tkdn.kemenperin.go.id/sertifikat?q=jembo&page=3",
+     "jenis": "sertifikat-tkdn",
+     "tingkat_bukti": "resmi",
+     "tanggal": "2026-11-08"
+    },
     {
      "url": "https://tkdn.kemenperin.go.id/sertifikat?q=kabel%20twisted",
      "jenis": "sertifikat-tkdn",
@@ -1829,7 +2462,7 @@
    "jenis": "pabrikan",
    "kota": "Indramayu",
    "provinsi": "Jawa Barat",
-   "situs": null,
+   "situs": "https://www.jlmvalve.com",
    "pasar": null,
    "anggota": [],
    "komponen": [
@@ -1862,7 +2495,7 @@
    "jenis": "pabrikan",
    "kota": "Jakarta Timur",
    "provinsi": "DKI Jakarta",
-   "situs": null,
+   "situs": "https://www.kabelindo.co.id",
    "pasar": null,
    "anggota": [],
    "komponen": [
@@ -1912,6 +2545,30 @@
     },
     {
      "url": "https://tkdn.kemenperin.go.id/sertifikat?q=kabel&page=9",
+     "jenis": "sertifikat-tkdn",
+     "tingkat_bukti": "resmi",
+     "tanggal": "2026-11-08"
+    },
+    {
+     "url": "https://tkdn.kemenperin.go.id/sertifikat?q=kabel%20nfa2x&page=3",
+     "jenis": "sertifikat-tkdn",
+     "tingkat_bukti": "resmi",
+     "tanggal": "2026-11-08"
+    },
+    {
+     "url": "https://tkdn.kemenperin.go.id/sertifikat?q=kabelindo",
+     "jenis": "sertifikat-tkdn",
+     "tingkat_bukti": "resmi",
+     "tanggal": "2026-11-08"
+    },
+    {
+     "url": "https://tkdn.kemenperin.go.id/sertifikat?q=kabelindo&page=2",
+     "jenis": "sertifikat-tkdn",
+     "tingkat_bukti": "resmi",
+     "tanggal": "2026-11-08"
+    },
+    {
+     "url": "https://tkdn.kemenperin.go.id/sertifikat?q=kabelindo&page=3",
      "jenis": "sertifikat-tkdn",
      "tingkat_bukti": "resmi",
      "tanggal": "2026-11-08"
@@ -1973,7 +2630,7 @@
    "jenis": "pabrikan",
    "kota": "Bekasi",
    "provinsi": "Jawa Barat",
-   "situs": null,
+   "situs": "https://www.karyamega.com",
    "pasar": null,
    "anggota": [],
    "komponen": [
@@ -1982,14 +2639,21 @@
      "komponen": "kabel",
      "relevansi": "langsung",
      "produk": [
+      "Kabel Aluminium",
       "Kabel Kawat Tanah"
      ],
-     "tkdn": 35.83,
+     "tkdn": 96.51,
      "kapasitas": null,
      "satuan": null
     }
    ],
    "sumber": [
+    {
+     "url": "https://tkdn.kemenperin.go.id/sertifikat?q=kabel%20aluminium",
+     "jenis": "sertifikat-tkdn",
+     "tingkat_bukti": "resmi",
+     "tanggal": "2026-11-08"
+    },
     {
      "url": "https://tkdn.kemenperin.go.id/sertifikat?q=kabel%20tanah",
      "jenis": "sertifikat-tkdn",
@@ -2060,7 +2724,73 @@
    ],
    "sumber": [
     {
+     "url": "https://tkdn.kemenperin.go.id/sertifikat?q=kabel%20acsr&page=3",
+     "jenis": "sertifikat-tkdn",
+     "tingkat_bukti": "resmi",
+     "tanggal": "2026-11-08"
+    },
+    {
+     "url": "https://tkdn.kemenperin.go.id/sertifikat?q=kabel%20aluminium",
+     "jenis": "sertifikat-tkdn",
+     "tingkat_bukti": "resmi",
+     "tanggal": "2026-11-08"
+    },
+    {
+     "url": "https://tkdn.kemenperin.go.id/sertifikat?q=kabel%20aluminium&page=2",
+     "jenis": "sertifikat-tkdn",
+     "tingkat_bukti": "resmi",
+     "tanggal": "2026-11-08"
+    },
+    {
+     "url": "https://tkdn.kemenperin.go.id/sertifikat?q=kabel%20aluminium&page=3",
+     "jenis": "sertifikat-tkdn",
+     "tingkat_bukti": "resmi",
+     "tanggal": "2026-11-08"
+    },
+    {
+     "url": "https://tkdn.kemenperin.go.id/sertifikat?q=kabel%20nfa2x&page=4",
+     "jenis": "sertifikat-tkdn",
+     "tingkat_bukti": "resmi",
+     "tanggal": "2026-11-08"
+    },
+    {
      "url": "https://tkdn.kemenperin.go.id/sertifikat?q=kabel%20tegangan%20menengah",
+     "jenis": "sertifikat-tkdn",
+     "tingkat_bukti": "resmi",
+     "tanggal": "2026-11-08"
+    },
+    {
+     "url": "https://tkdn.kemenperin.go.id/sertifikat?q=kabel%20tegangan%20menengah&page=7",
+     "jenis": "sertifikat-tkdn",
+     "tingkat_bukti": "resmi",
+     "tanggal": "2026-11-08"
+    },
+    {
+     "url": "https://tkdn.kemenperin.go.id/sertifikat?q=kabel%20tegangan%20menengah&page=8",
+     "jenis": "sertifikat-tkdn",
+     "tingkat_bukti": "resmi",
+     "tanggal": "2026-11-08"
+    },
+    {
+     "url": "https://tkdn.kemenperin.go.id/sertifikat?q=kabel%20tembaga",
+     "jenis": "sertifikat-tkdn",
+     "tingkat_bukti": "resmi",
+     "tanggal": "2026-11-08"
+    },
+    {
+     "url": "https://tkdn.kemenperin.go.id/sertifikat?q=kabel%20tembaga&page=2",
+     "jenis": "sertifikat-tkdn",
+     "tingkat_bukti": "resmi",
+     "tanggal": "2026-11-08"
+    },
+    {
+     "url": "https://tkdn.kemenperin.go.id/sertifikat?q=kabel%20tembaga&page=3",
+     "jenis": "sertifikat-tkdn",
+     "tingkat_bukti": "resmi",
+     "tanggal": "2026-11-08"
+    },
+    {
+     "url": "https://tkdn.kemenperin.go.id/sertifikat?q=kabel%20tembaga&page=4",
      "jenis": "sertifikat-tkdn",
      "tingkat_bukti": "resmi",
      "tanggal": "2026-11-08"
@@ -2085,6 +2815,40 @@
     }
    ],
    "catatan": "Alamat kantor Jl. Raya Bekasi Km 23.1, Cakung; lokasi pabrik tidak dirinci. Didirikan 19 Januari 1972 sebagai PT Kabelmetal Indonesia.",
+   "tanggal_periksa": "2026-11-08"
+  },
+  {
+   "id": "tk_8b4608c0",
+   "org_id": null,
+   "nama": "PT Kreasindo Bangun Persada",
+   "jenis": "pabrikan",
+   "kota": "Bekasi",
+   "provinsi": "Jawa Barat",
+   "situs": null,
+   "pasar": null,
+   "anggota": [],
+   "komponen": [
+    {
+     "teknologi": "jaringan",
+     "komponen": "kabel",
+     "relevansi": "langsung",
+     "produk": [
+      "Lampu LED 40 Watt DC, Battery Lithium 12 V 50 Ah, Kabel NYYHY 2 x 2.5 mm 450 - 750 V, Casi",
+      "Lampu LED 40 Watt DC, Battery Lithium 12 V 50 Ah, Kabel NYYHY 2x2.5 mm 450-750 V, Casing M"
+     ],
+     "tkdn": 40,
+     "kapasitas": null,
+     "satuan": null
+    }
+   ],
+   "sumber": [
+    {
+     "url": "https://tkdn.kemenperin.go.id/sertifikat?q=kabel%20nyy&page=2",
+     "jenis": "sertifikat-tkdn",
+     "tingkat_bukti": "resmi",
+     "tanggal": "2026-11-08"
+    }
+   ],
    "tanggal_periksa": "2026-11-08"
   },
   {
@@ -2193,13 +2957,70 @@
    "tanggal_periksa": "2026-11-08"
   },
   {
+   "id": "tk_721b9b69",
+   "org_id": null,
+   "nama": "PT LUCKY LIGHT GLOBALINDO",
+   "jenis": "pabrikan",
+   "kota": "Bogor",
+   "provinsi": "Jawa Barat",
+   "situs": null,
+   "pasar": null,
+   "anggota": [],
+   "komponen": [
+    {
+     "teknologi": "jaringan",
+     "komponen": "trafo",
+     "relevansi": "langsung",
+     "produk": [
+      "Transformator"
+     ],
+     "tkdn": 49.53,
+     "kapasitas": null,
+     "satuan": null
+    }
+   ],
+   "sumber": [
+    {
+     "url": "https://tkdn.kemenperin.go.id/sertifikat?q=transformator%20100%20kva",
+     "jenis": "sertifikat-tkdn",
+     "tingkat_bukti": "resmi",
+     "tanggal": "2026-11-08"
+    },
+    {
+     "url": "https://tkdn.kemenperin.go.id/sertifikat?q=transformator%20100%20kva&page=3",
+     "jenis": "sertifikat-tkdn",
+     "tingkat_bukti": "resmi",
+     "tanggal": "2026-11-08"
+    },
+    {
+     "url": "https://tkdn.kemenperin.go.id/sertifikat?q=transformator%20250%20kva",
+     "jenis": "sertifikat-tkdn",
+     "tingkat_bukti": "resmi",
+     "tanggal": "2026-11-08"
+    },
+    {
+     "url": "https://tkdn.kemenperin.go.id/sertifikat?q=transformator%20630%20kva",
+     "jenis": "sertifikat-tkdn",
+     "tingkat_bukti": "resmi",
+     "tanggal": "2026-11-08"
+    },
+    {
+     "url": "https://tkdn.kemenperin.go.id/sertifikat?q=transformator%20630%20kva&page=2",
+     "jenis": "sertifikat-tkdn",
+     "tingkat_bukti": "resmi",
+     "tanggal": "2026-11-08"
+    }
+   ],
+   "tanggal_periksa": "2026-11-08"
+  },
+  {
    "id": "tk_1d3a597d",
    "org_id": null,
    "nama": "PT MAGNAKABEL NUSANTARA",
    "jenis": "pabrikan",
    "kota": "Bogor",
    "provinsi": "Jawa Barat",
-   "situs": null,
+   "situs": "https://www.magnakabelnusantara.co.id",
    "pasar": null,
    "anggota": [],
    "komponen": [
@@ -2251,6 +3072,30 @@
      "jenis": "sertifikat-tkdn",
      "tingkat_bukti": "resmi",
      "tanggal": "2026-11-08"
+    },
+    {
+     "url": "https://tkdn.kemenperin.go.id/sertifikat?q=kabel%20acsr&page=2",
+     "jenis": "sertifikat-tkdn",
+     "tingkat_bukti": "resmi",
+     "tanggal": "2026-11-08"
+    },
+    {
+     "url": "https://tkdn.kemenperin.go.id/sertifikat?q=kabel%20nfa2x&page=2",
+     "jenis": "sertifikat-tkdn",
+     "tingkat_bukti": "resmi",
+     "tanggal": "2026-11-08"
+    },
+    {
+     "url": "https://tkdn.kemenperin.go.id/sertifikat?q=kabel%20nfa2x&page=3",
+     "jenis": "sertifikat-tkdn",
+     "tingkat_bukti": "resmi",
+     "tanggal": "2026-11-08"
+    },
+    {
+     "url": "https://tkdn.kemenperin.go.id/sertifikat?q=kabel%20nyy&page=3",
+     "jenis": "sertifikat-tkdn",
+     "tingkat_bukti": "resmi",
+     "tanggal": "2026-11-08"
     }
    ],
    "tanggal_periksa": "2026-11-08"
@@ -2262,7 +3107,7 @@
    "jenis": "pabrikan",
    "kota": "Medan",
    "provinsi": "Sumatera Utara",
-   "situs": null,
+   "situs": "https://www.maximadayaindonesia.co.id",
    "pasar": null,
    "anggota": [],
    "komponen": [
@@ -2271,7 +3116,8 @@
      "komponen": "trafo",
      "relevansi": "langsung",
      "produk": [
-      "Transformator (Trafo) Distribusi"
+      "Transformator (Trafo) Distribusi",
+      "Transformator Distribusi"
      ],
      "tkdn": 76.61,
      "kapasitas": null,
@@ -2287,6 +3133,18 @@
     },
     {
      "url": "https://tkdn.kemenperin.go.id/sertifikat?q=trafo%20distribusi&page=6",
+     "jenis": "sertifikat-tkdn",
+     "tingkat_bukti": "resmi",
+     "tanggal": "2026-11-08"
+    },
+    {
+     "url": "https://tkdn.kemenperin.go.id/sertifikat?q=transformator%20100%20kva&page=4",
+     "jenis": "sertifikat-tkdn",
+     "tingkat_bukti": "resmi",
+     "tanggal": "2026-11-08"
+    },
+    {
+     "url": "https://tkdn.kemenperin.go.id/sertifikat?q=transformator%20250%20kva&page=3",
      "jenis": "sertifikat-tkdn",
      "tingkat_bukti": "resmi",
      "tanggal": "2026-11-08"
@@ -2332,6 +3190,42 @@
    ],
    "sumber": [
     {
+     "url": "https://tkdn.kemenperin.go.id/sertifikat?q=kabel%20acsr",
+     "jenis": "sertifikat-tkdn",
+     "tingkat_bukti": "resmi",
+     "tanggal": "2026-11-08"
+    },
+    {
+     "url": "https://tkdn.kemenperin.go.id/sertifikat?q=kabel%20acsr&page=3",
+     "jenis": "sertifikat-tkdn",
+     "tingkat_bukti": "resmi",
+     "tanggal": "2026-11-08"
+    },
+    {
+     "url": "https://tkdn.kemenperin.go.id/sertifikat?q=kabel%20nfa2x",
+     "jenis": "sertifikat-tkdn",
+     "tingkat_bukti": "resmi",
+     "tanggal": "2026-11-08"
+    },
+    {
+     "url": "https://tkdn.kemenperin.go.id/sertifikat?q=kabel%20nfa2x&page=2",
+     "jenis": "sertifikat-tkdn",
+     "tingkat_bukti": "resmi",
+     "tanggal": "2026-11-08"
+    },
+    {
+     "url": "https://tkdn.kemenperin.go.id/sertifikat?q=kabel%20nym&page=3",
+     "jenis": "sertifikat-tkdn",
+     "tingkat_bukti": "resmi",
+     "tanggal": "2026-11-08"
+    },
+    {
+     "url": "https://tkdn.kemenperin.go.id/sertifikat?q=kabel%20nyy&page=2",
+     "jenis": "sertifikat-tkdn",
+     "tingkat_bukti": "resmi",
+     "tanggal": "2026-11-08"
+    },
+    {
      "url": "https://tkdn.kemenperin.go.id/sertifikat?q=kabel%20tanah",
      "jenis": "sertifikat-tkdn",
      "tingkat_bukti": "resmi",
@@ -2353,13 +3247,46 @@
    "tanggal_periksa": "2026-11-08"
   },
   {
+   "id": "tk_5db3fa82",
+   "org_id": null,
+   "nama": "PT Metro Abdibina Sentosa",
+   "jenis": "pabrikan",
+   "kota": "Surabaya",
+   "provinsi": "Jawa Timur",
+   "situs": null,
+   "pasar": null,
+   "anggota": [],
+   "komponen": [
+    {
+     "teknologi": "jaringan",
+     "komponen": "panel_tr",
+     "relevansi": "langsung",
+     "produk": [
+      "Panel Listrik Tegangan Rendah (TR) (kurang dari 1000 volt)"
+     ],
+     "tkdn": 52.56,
+     "kapasitas": null,
+     "satuan": null
+    }
+   ],
+   "sumber": [
+    {
+     "url": "https://tkdn.kemenperin.go.id/sertifikat?q=panel%20lvmdp",
+     "jenis": "sertifikat-tkdn",
+     "tingkat_bukti": "resmi",
+     "tanggal": "2026-11-08"
+    }
+   ],
+   "tanggal_periksa": "2026-11-08"
+  },
+  {
    "id": "tk_0931efe8",
    "org_id": "tk_0931efe8",
    "nama": "PT Microvision Indonesia",
    "jenis": "pabrikan",
    "kota": "Jakarta Pusat",
    "provinsi": "DKI Jakarta",
-   "situs": null,
+   "situs": "https://www.microvision.co.id",
    "pasar": null,
    "anggota": [],
    "komponen": [
@@ -2392,7 +3319,7 @@
    "jenis": "pabrikan",
    "kota": "Balikpapan",
    "provinsi": "Kalimantan Timur",
-   "situs": null,
+   "situs": "https://mulia.co.id",
    "pasar": null,
    "anggota": [],
    "komponen": [
@@ -2460,13 +3387,72 @@
    "tanggal_periksa": "2026-11-08"
   },
   {
+   "id": "tk_ad410cc7",
+   "org_id": null,
+   "nama": "PT MULTI KENCANA NIAGATAMA",
+   "jenis": "pabrikan",
+   "kota": "Serang",
+   "provinsi": "Banten",
+   "situs": null,
+   "pasar": null,
+   "anggota": [],
+   "komponen": [
+    {
+     "teknologi": "jaringan",
+     "komponen": "kabel",
+     "relevansi": "langsung",
+     "produk": [
+      "Kabel Listrik Konduktor Transmisi High Voltage",
+      "KABEL LISTRIK",
+      "Kabel Listrik Medium Voltage Non Armoured"
+     ],
+     "tkdn": 97.83,
+     "kapasitas": null,
+     "satuan": null
+    }
+   ],
+   "sumber": [
+    {
+     "url": "https://tkdn.kemenperin.go.id/sertifikat?q=kabel%20acsr",
+     "jenis": "sertifikat-tkdn",
+     "tingkat_bukti": "resmi",
+     "tanggal": "2026-11-08"
+    },
+    {
+     "url": "https://tkdn.kemenperin.go.id/sertifikat?q=kabel%20nfa2x",
+     "jenis": "sertifikat-tkdn",
+     "tingkat_bukti": "resmi",
+     "tanggal": "2026-11-08"
+    },
+    {
+     "url": "https://tkdn.kemenperin.go.id/sertifikat?q=kabel%20nfa2x&page=2",
+     "jenis": "sertifikat-tkdn",
+     "tingkat_bukti": "resmi",
+     "tanggal": "2026-11-08"
+    },
+    {
+     "url": "https://tkdn.kemenperin.go.id/sertifikat?q=kabel%20nym&page=4",
+     "jenis": "sertifikat-tkdn",
+     "tingkat_bukti": "resmi",
+     "tanggal": "2026-11-08"
+    },
+    {
+     "url": "https://tkdn.kemenperin.go.id/sertifikat?q=kabel%20nyy&page=2",
+     "jenis": "sertifikat-tkdn",
+     "tingkat_bukti": "resmi",
+     "tanggal": "2026-11-08"
+    }
+   ],
+   "tanggal_periksa": "2026-11-08"
+  },
+  {
    "id": "tk_66af1944",
    "org_id": null,
    "nama": "PT Mulya Utama Mandiri Sentosa",
    "jenis": "pabrikan",
    "kota": "Sidoarjo",
    "provinsi": "Jawa Timur",
-   "situs": null,
+   "situs": "https://www.mulya.id",
    "pasar": null,
    "anggota": [],
    "komponen": [
@@ -2505,7 +3491,7 @@
    "jenis": "pabrikan",
    "kota": "Serang",
    "provinsi": "Banten",
-   "situs": null,
+   "situs": "https://www.newasia.co.id",
    "pasar": null,
    "anggota": [],
    "komponen": [
@@ -2532,13 +3518,46 @@
    "tanggal_periksa": "2026-11-08"
   },
   {
+   "id": "tk_e75e9a06",
+   "org_id": null,
+   "nama": "PT NOBI PUTRA ANGKASA",
+   "jenis": "pabrikan",
+   "kota": "Karawang",
+   "provinsi": "Jawa Barat",
+   "situs": null,
+   "pasar": null,
+   "anggota": [],
+   "komponen": [
+    {
+     "teknologi": "jaringan",
+     "komponen": "panel_tr",
+     "relevansi": "langsung",
+     "produk": [
+      "Panel LV MCC SIVACON S8"
+     ],
+     "tkdn": 43.89,
+     "kapasitas": null,
+     "satuan": null
+    }
+   ],
+   "sumber": [
+    {
+     "url": "https://tkdn.kemenperin.go.id/sertifikat?q=panel%20lvmdp",
+     "jenis": "sertifikat-tkdn",
+     "tingkat_bukti": "resmi",
+     "tanggal": "2026-11-08"
+    }
+   ],
+   "tanggal_periksa": "2026-11-08"
+  },
+  {
    "id": "tk_a9b414d9",
    "org_id": null,
    "nama": "PT Nurinda",
    "jenis": "pabrikan",
    "kota": "Tangerang",
    "provinsi": "Banten",
-   "situs": null,
+   "situs": "https://nurinda.co.id",
    "pasar": null,
    "anggota": [],
    "komponen": [
@@ -2588,6 +3607,94 @@
     },
     {
      "url": "https://tkdn.kemenperin.go.id/sertifikat?q=panel%20listrik&page=8",
+     "jenis": "sertifikat-tkdn",
+     "tingkat_bukti": "resmi",
+     "tanggal": "2026-11-08"
+    }
+   ],
+   "tanggal_periksa": "2026-11-08"
+  },
+  {
+   "id": "tk_a4f79ebd",
+   "org_id": null,
+   "nama": "PT NUSANTARA ELECTRIC",
+   "jenis": "pabrikan",
+   "kota": "Tangerang",
+   "provinsi": "Banten",
+   "situs": null,
+   "pasar": null,
+   "anggota": [],
+   "komponen": [
+    {
+     "teknologi": "jaringan",
+     "komponen": "kabel",
+     "relevansi": "langsung",
+     "produk": [
+      "Kabel Listrik",
+      "KABEL LISTRIK"
+     ],
+     "tkdn": 98.97,
+     "kapasitas": null,
+     "satuan": null
+    }
+   ],
+   "sumber": [
+    {
+     "url": "https://tkdn.kemenperin.go.id/sertifikat?q=kabel%20acsr",
+     "jenis": "sertifikat-tkdn",
+     "tingkat_bukti": "resmi",
+     "tanggal": "2026-11-08"
+    },
+    {
+     "url": "https://tkdn.kemenperin.go.id/sertifikat?q=kabel%20acsr&page=2",
+     "jenis": "sertifikat-tkdn",
+     "tingkat_bukti": "resmi",
+     "tanggal": "2026-11-08"
+    },
+    {
+     "url": "https://tkdn.kemenperin.go.id/sertifikat?q=kabel%20acsr&page=4",
+     "jenis": "sertifikat-tkdn",
+     "tingkat_bukti": "resmi",
+     "tanggal": "2026-11-08"
+    },
+    {
+     "url": "https://tkdn.kemenperin.go.id/sertifikat?q=kabel%20nfa2x",
+     "jenis": "sertifikat-tkdn",
+     "tingkat_bukti": "resmi",
+     "tanggal": "2026-11-08"
+    },
+    {
+     "url": "https://tkdn.kemenperin.go.id/sertifikat?q=kabel%20nfa2x&page=2",
+     "jenis": "sertifikat-tkdn",
+     "tingkat_bukti": "resmi",
+     "tanggal": "2026-11-08"
+    },
+    {
+     "url": "https://tkdn.kemenperin.go.id/sertifikat?q=kabel%20nym",
+     "jenis": "sertifikat-tkdn",
+     "tingkat_bukti": "resmi",
+     "tanggal": "2026-11-08"
+    },
+    {
+     "url": "https://tkdn.kemenperin.go.id/sertifikat?q=kabel%20nym&page=2",
+     "jenis": "sertifikat-tkdn",
+     "tingkat_bukti": "resmi",
+     "tanggal": "2026-11-08"
+    },
+    {
+     "url": "https://tkdn.kemenperin.go.id/sertifikat?q=kabel%20nym&page=3",
+     "jenis": "sertifikat-tkdn",
+     "tingkat_bukti": "resmi",
+     "tanggal": "2026-11-08"
+    },
+    {
+     "url": "https://tkdn.kemenperin.go.id/sertifikat?q=kabel%20nyy",
+     "jenis": "sertifikat-tkdn",
+     "tingkat_bukti": "resmi",
+     "tanggal": "2026-11-08"
+    },
+    {
+     "url": "https://tkdn.kemenperin.go.id/sertifikat?q=kabel%20nyy&page=2",
      "jenis": "sertifikat-tkdn",
      "tingkat_bukti": "resmi",
      "tanggal": "2026-11-08"
@@ -2703,6 +3810,24 @@
      "jenis": "sertifikat-tkdn",
      "tingkat_bukti": "resmi",
      "tanggal": "2026-11-08"
+    },
+    {
+     "url": "https://tkdn.kemenperin.go.id/sertifikat?q=panel%20mdp&page=2",
+     "jenis": "sertifikat-tkdn",
+     "tingkat_bukti": "resmi",
+     "tanggal": "2026-11-08"
+    },
+    {
+     "url": "https://tkdn.kemenperin.go.id/sertifikat?q=panel%20mdp&page=3",
+     "jenis": "sertifikat-tkdn",
+     "tingkat_bukti": "resmi",
+     "tanggal": "2026-11-08"
+    },
+    {
+     "url": "https://tkdn.kemenperin.go.id/sertifikat?q=panel%20mdp&page=4",
+     "jenis": "sertifikat-tkdn",
+     "tingkat_bukti": "resmi",
+     "tanggal": "2026-11-08"
     }
    ],
    "tanggal_periksa": "2026-11-08"
@@ -2714,7 +3839,7 @@
    "jenis": "pabrikan",
    "kota": "Bandung",
    "provinsi": "Jawa Barat",
-   "situs": null,
+   "situs": "https://www.pindad.com",
    "pasar": null,
    "anggota": [],
    "komponen": [
@@ -2731,6 +3856,12 @@
     }
    ],
    "sumber": [
+    {
+     "url": "https://tkdn.kemenperin.go.id/sertifikat?q=pindad",
+     "jenis": "sertifikat-tkdn",
+     "tingkat_bukti": "resmi",
+     "tanggal": "2026-11-08"
+    },
     {
      "url": "https://tkdn.kemenperin.go.id/sertifikat?q=tabung%20gas",
      "jenis": "sertifikat-tkdn",
@@ -2772,6 +3903,36 @@
      "tanggal": "2026-11-08"
     },
     {
+     "url": "https://tkdn.kemenperin.go.id/sertifikat?q=pltb",
+     "jenis": "sertifikat-tkdn",
+     "tingkat_bukti": "resmi",
+     "tanggal": "2026-11-08"
+    },
+    {
+     "url": "https://tkdn.kemenperin.go.id/sertifikat?q=pltp",
+     "jenis": "sertifikat-tkdn",
+     "tingkat_bukti": "resmi",
+     "tanggal": "2026-11-08"
+    },
+    {
+     "url": "https://tkdn.kemenperin.go.id/sertifikat?q=plts&page=2",
+     "jenis": "sertifikat-tkdn",
+     "tingkat_bukti": "resmi",
+     "tanggal": "2026-11-08"
+    },
+    {
+     "url": "https://tkdn.kemenperin.go.id/sertifikat?q=turbin",
+     "jenis": "sertifikat-tkdn",
+     "tingkat_bukti": "resmi",
+     "tanggal": "2026-11-08"
+    },
+    {
+     "url": "https://tkdn.kemenperin.go.id/sertifikat?q=turbin&page=2",
+     "jenis": "sertifikat-tkdn",
+     "tingkat_bukti": "resmi",
+     "tanggal": "2026-11-08"
+    },
+    {
      "url": "https://tkdn.kemenperin.go.id/sertifikat?q=turbin%20air",
      "jenis": "sertifikat-tkdn",
      "tingkat_bukti": "resmi",
@@ -2805,7 +3966,7 @@
    "jenis": "pabrikan",
    "kota": "Tangerang",
    "provinsi": "Banten",
-   "situs": null,
+   "situs": "https://www.powerindo.co.id",
    "pasar": null,
    "anggota": [],
    "komponen": [
@@ -2896,6 +4057,39 @@
    "tanggal_periksa": "2026-11-08"
   },
   {
+   "id": "tk_3d0d18aa",
+   "org_id": null,
+   "nama": "PT PRABHA WIRADEWATA",
+   "jenis": "pabrikan",
+   "kota": "Sidoarjo",
+   "provinsi": "Jawa Timur",
+   "situs": null,
+   "pasar": null,
+   "anggota": [],
+   "komponen": [
+    {
+     "teknologi": "jaringan",
+     "komponen": "kabel",
+     "relevansi": "langsung",
+     "produk": [
+      "Kabel Fleksibel Tegangan Rendah"
+     ],
+     "tkdn": 86.15,
+     "kapasitas": null,
+     "satuan": null
+    }
+   ],
+   "sumber": [
+    {
+     "url": "https://tkdn.kemenperin.go.id/sertifikat?q=kabel%20fleksibel",
+     "jenis": "sertifikat-tkdn",
+     "tingkat_bukti": "resmi",
+     "tanggal": "2026-11-08"
+    }
+   ],
+   "tanggal_periksa": "2026-11-08"
+  },
+  {
    "id": "tk_081d9c23",
    "org_id": null,
    "nama": "PT Prakarsalanggeng Majubersama",
@@ -2941,7 +4135,7 @@
    "jenis": "pabrikan",
    "kota": "Tangerang",
    "provinsi": "Banten",
-   "situs": null,
+   "situs": "https://www.aditya.co.id",
    "pasar": null,
    "anggota": [],
    "komponen": [
@@ -2958,6 +4152,12 @@
     }
    ],
    "sumber": [
+    {
+     "url": "https://tkdn.kemenperin.go.id/sertifikat?q=baterai%20lifepo4%20lithium",
+     "jenis": "sertifikat-tkdn",
+     "tingkat_bukti": "resmi",
+     "tanggal": "2026-11-08"
+    },
     {
      "url": "https://tkdn.kemenperin.go.id/sertifikat?q=baterai%20lithium&page=6",
      "jenis": "sertifikat-tkdn",
@@ -3013,7 +4213,7 @@
    "jenis": "pabrikan",
    "kota": "Jakarta Utara",
    "provinsi": "DKI Jakarta",
-   "situs": null,
+   "situs": "https://www.primalayan.co.id",
    "pasar": null,
    "anggota": [],
    "komponen": [
@@ -3046,7 +4246,7 @@
    "jenis": "pabrikan",
    "kota": "Tangerang",
    "provinsi": "Banten",
-   "situs": null,
+   "situs": "https://www.promatcon.co.id",
    "pasar": null,
    "anggota": [],
    "komponen": [
@@ -3079,13 +4279,46 @@
    "tanggal_periksa": "2026-11-08"
   },
   {
+   "id": "tk_06906b1b",
+   "org_id": null,
+   "nama": "PT PRYSMIAN CABLES INDONESIA",
+   "jenis": "pabrikan",
+   "kota": "Karawang",
+   "provinsi": "Jawa Barat",
+   "situs": null,
+   "pasar": null,
+   "anggota": [],
+   "komponen": [
+    {
+     "teknologi": "jaringan",
+     "komponen": "kabel",
+     "relevansi": "langsung",
+     "produk": [
+      "Kabel Listrik"
+     ],
+     "tkdn": 96.92,
+     "kapasitas": null,
+     "satuan": null
+    }
+   ],
+   "sumber": [
+    {
+     "url": "https://tkdn.kemenperin.go.id/sertifikat?q=kabel%20nfa2x&page=4",
+     "jenis": "sertifikat-tkdn",
+     "tingkat_bukti": "resmi",
+     "tanggal": "2026-11-08"
+    }
+   ],
+   "tanggal_periksa": "2026-11-08"
+  },
+  {
    "id": "tk_2755c2e8",
    "org_id": null,
    "nama": "PT Puspetindo",
    "jenis": "pabrikan",
    "kota": "Gresik",
    "provinsi": "Jawa Timur",
-   "situs": null,
+   "situs": "https://www.puspetindo.com",
    "pasar": null,
    "anggota": [],
    "komponen": [
@@ -3118,7 +4351,7 @@
    "jenis": "pabrikan",
    "kota": "Medan",
    "provinsi": "Sumatera Utara",
-   "situs": null,
+   "situs": "https://www.rahmatkurniaabadi.com",
    "pasar": null,
    "anggota": [],
    "komponen": [
@@ -3169,7 +4402,7 @@
    "jenis": "pabrikan",
    "kota": "Tangerang",
    "provinsi": "Banten",
-   "situs": null,
+   "situs": "https://www.retrodayaengineering.com",
    "pasar": null,
    "anggota": [],
    "komponen": [
@@ -3236,7 +4469,7 @@
    "jenis": "pabrikan",
    "kota": "Bogor",
    "provinsi": "Jawa Barat",
-   "situs": null,
+   "situs": "https://www.sankeindo.co.id",
    "pasar": null,
    "anggota": [],
    "komponen": [
@@ -3245,6 +4478,7 @@
      "komponen": "pack",
      "relevansi": "langsung",
      "produk": [
+      "Battery PLX Lithium LiFePo4 51,2V",
       "Lithium Battery untuk Base Transceiver Station (BTS)"
      ],
      "tkdn": 51.13,
@@ -3253,6 +4487,24 @@
     }
    ],
    "sumber": [
+    {
+     "url": "https://tkdn.kemenperin.go.id/sertifikat?q=battery%20pack%20lifepo4",
+     "jenis": "sertifikat-tkdn",
+     "tingkat_bukti": "resmi",
+     "tanggal": "2026-11-08"
+    },
+    {
+     "url": "https://tkdn.kemenperin.go.id/sertifikat?q=battery%20pack%20lifepo4&page=3",
+     "jenis": "sertifikat-tkdn",
+     "tingkat_bukti": "resmi",
+     "tanggal": "2026-11-08"
+    },
+    {
+     "url": "https://tkdn.kemenperin.go.id/sertifikat?q=ess%20lithium&page=4",
+     "jenis": "sertifikat-tkdn",
+     "tingkat_bukti": "resmi",
+     "tanggal": "2026-11-08"
+    },
     {
      "url": "https://tkdn.kemenperin.go.id/sertifikat?q=lifepo4",
      "jenis": "sertifikat-tkdn",
@@ -3299,6 +4551,12 @@
      "tanggal": "2026-11-08"
     },
     {
+     "url": "https://tkdn.kemenperin.go.id/sertifikat?q=ess%20lithium&page=4",
+     "jenis": "sertifikat-tkdn",
+     "tingkat_bukti": "resmi",
+     "tanggal": "2026-11-08"
+    },
+    {
      "url": "https://tkdn.kemenperin.go.id/sertifikat?q=lifepo4",
      "jenis": "sertifikat-tkdn",
      "tingkat_bukti": "resmi",
@@ -3320,7 +4578,7 @@
    "jenis": "pabrikan",
    "kota": "Sidoarjo",
    "provinsi": "Jawa Timur",
-   "situs": null,
+   "situs": "https://www.solusindo.id",
    "pasar": null,
    "anggota": [],
    "komponen": [
@@ -3338,7 +4596,80 @@
    ],
    "sumber": [
     {
+     "url": "https://tkdn.kemenperin.go.id/sertifikat?q=battery%20pack%20lifepo4&page=3",
+     "jenis": "sertifikat-tkdn",
+     "tingkat_bukti": "resmi",
+     "tanggal": "2026-11-08"
+    },
+    {
      "url": "https://tkdn.kemenperin.go.id/sertifikat?q=pack%20baterai",
+     "jenis": "sertifikat-tkdn",
+     "tingkat_bukti": "resmi",
+     "tanggal": "2026-11-08"
+    }
+   ],
+   "tanggal_periksa": "2026-11-08"
+  },
+  {
+   "id": "tk_c4b929ac",
+   "org_id": null,
+   "nama": "PT Sasamu Energy Perkasa",
+   "jenis": "pabrikan",
+   "kota": "Bogor",
+   "provinsi": "Jawa Barat",
+   "situs": null,
+   "pasar": null,
+   "anggota": [],
+   "komponen": [
+    {
+     "teknologi": "baterai",
+     "komponen": "pack",
+     "relevansi": "langsung",
+     "produk": [
+      "Battery Pack"
+     ],
+     "tkdn": 40.41,
+     "kapasitas": null,
+     "satuan": null
+    }
+   ],
+   "sumber": [
+    {
+     "url": "https://tkdn.kemenperin.go.id/sertifikat?q=battery%20pack%20lifepo4&page=3",
+     "jenis": "sertifikat-tkdn",
+     "tingkat_bukti": "resmi",
+     "tanggal": "2026-11-08"
+    }
+   ],
+   "tanggal_periksa": "2026-11-08"
+  },
+  {
+   "id": "tk_315b8cbf",
+   "org_id": null,
+   "nama": "PT Selecindo Prima Energi",
+   "jenis": "pabrikan",
+   "kota": "Deli Serdang",
+   "provinsi": "Sumatera Utara",
+   "situs": null,
+   "pasar": null,
+   "anggota": [],
+   "komponen": [
+    {
+     "teknologi": "jaringan",
+     "komponen": "kabel",
+     "relevansi": "langsung",
+     "produk": [
+      "Semiconductor Coated Insulator Plastic Top Ties",
+      "Semiconductor Coated Insulator Plastic Ties"
+     ],
+     "tkdn": 85,
+     "kapasitas": null,
+     "satuan": null
+    }
+   ],
+   "sumber": [
+    {
+     "url": "https://tkdn.kemenperin.go.id/sertifikat?q=sky%20energi",
      "jenis": "sertifikat-tkdn",
      "tingkat_bukti": "resmi",
      "tanggal": "2026-11-08"
@@ -3353,7 +4684,7 @@
    "jenis": "pabrikan",
    "kota": "Bekasi",
    "provinsi": "Jawa Barat",
-   "situs": null,
+   "situs": "https://www.sentramitra.co.id",
    "pasar": null,
    "anggota": [],
    "komponen": [
@@ -3385,6 +4716,24 @@
     },
     {
      "url": "https://tkdn.kemenperin.go.id/sertifikat?q=baterai%20lithium&page=8",
+     "jenis": "sertifikat-tkdn",
+     "tingkat_bukti": "resmi",
+     "tanggal": "2026-11-08"
+    },
+    {
+     "url": "https://tkdn.kemenperin.go.id/sertifikat?q=battery%20pack%20lifepo4",
+     "jenis": "sertifikat-tkdn",
+     "tingkat_bukti": "resmi",
+     "tanggal": "2026-11-08"
+    },
+    {
+     "url": "https://tkdn.kemenperin.go.id/sertifikat?q=battery%20pack%20lifepo4&page=2",
+     "jenis": "sertifikat-tkdn",
+     "tingkat_bukti": "resmi",
+     "tanggal": "2026-11-08"
+    },
+    {
+     "url": "https://tkdn.kemenperin.go.id/sertifikat?q=ess%20lithium&page=4",
      "jenis": "sertifikat-tkdn",
      "tingkat_bukti": "resmi",
      "tanggal": "2026-11-08"
@@ -3423,7 +4772,7 @@
    "jenis": "pabrikan",
    "kota": "Jakarta Timur",
    "provinsi": "DKI Jakarta",
-   "situs": null,
+   "situs": "https://www.siemens.co.id",
    "pasar": null,
    "anggota": [],
    "komponen": [
@@ -3432,16 +4781,49 @@
      "komponen": "panel_tr",
      "relevansi": "langsung",
      "produk": [
+      "Panel Listrik Tegangan Menengah (TM) (1000-35000 volt)",
+      "Panel Listrik Low Voltage Tipe Sivacon S8",
+      "Panel Listrik Medium Voltage",
       "MV Switchgear AIS - Simoprime A4"
      ],
-     "tkdn": 20.85,
+     "tkdn": 50.69,
      "kapasitas": null,
      "satuan": null
     }
    ],
    "sumber": [
     {
+     "url": "https://tkdn.kemenperin.go.id/sertifikat?q=siemens",
+     "jenis": "sertifikat-tkdn",
+     "tingkat_bukti": "resmi",
+     "tanggal": "2026-11-08"
+    },
+    {
+     "url": "https://tkdn.kemenperin.go.id/sertifikat?q=siemens&page=2",
+     "jenis": "sertifikat-tkdn",
+     "tingkat_bukti": "resmi",
+     "tanggal": "2026-11-08"
+    },
+    {
      "url": "https://tkdn.kemenperin.go.id/sertifikat?q=switchgear&page=2",
+     "jenis": "sertifikat-tkdn",
+     "tingkat_bukti": "resmi",
+     "tanggal": "2026-11-08"
+    },
+    {
+     "url": "https://tkdn.kemenperin.go.id/sertifikat?q=transformator%20250%20kva&page=2",
+     "jenis": "sertifikat-tkdn",
+     "tingkat_bukti": "resmi",
+     "tanggal": "2026-11-08"
+    },
+    {
+     "url": "https://tkdn.kemenperin.go.id/sertifikat?q=transformator%20250%20kva&page=3",
+     "jenis": "sertifikat-tkdn",
+     "tingkat_bukti": "resmi",
+     "tanggal": "2026-11-08"
+    },
+    {
+     "url": "https://tkdn.kemenperin.go.id/sertifikat?q=transformator%20630%20kva&page=4",
      "jenis": "sertifikat-tkdn",
      "tingkat_bukti": "resmi",
      "tanggal": "2026-11-08"
@@ -3456,7 +4838,7 @@
    "jenis": "pabrikan",
    "kota": "Bekasi",
    "provinsi": "Jawa Barat",
-   "situs": null,
+   "situs": "https://www.sintra.co.id",
    "pasar": null,
    "anggota": [],
    "komponen": [
@@ -3491,6 +4873,18 @@
      "jenis": "sertifikat-tkdn",
      "tingkat_bukti": "resmi",
      "tanggal": "2026-11-08"
+    },
+    {
+     "url": "https://tkdn.kemenperin.go.id/sertifikat?q=transformator%20daya%2060%20mva&page=2",
+     "jenis": "sertifikat-tkdn",
+     "tingkat_bukti": "resmi",
+     "tanggal": "2026-11-08"
+    },
+    {
+     "url": "https://tkdn.kemenperin.go.id/sertifikat?q=transformator%20dry%20type&page=3",
+     "jenis": "sertifikat-tkdn",
+     "tingkat_bukti": "resmi",
+     "tanggal": "2026-11-08"
     }
    ],
    "tanggal_periksa": "2026-11-08"
@@ -3502,7 +4896,7 @@
    "jenis": "pabrikan",
    "kota": "Bekasi",
    "provinsi": "Jawa Barat",
-   "situs": null,
+   "situs": "https://www.skmetalindo.com",
    "pasar": null,
    "anggota": [],
    "komponen": [
@@ -3547,7 +4941,7 @@
    "jenis": "pabrikan",
    "kota": "Serang",
    "provinsi": "Banten",
-   "situs": null,
+   "situs": "https://www.sumberkabel.com",
    "pasar": null,
    "anggota": [],
    "komponen": [
@@ -3618,7 +5012,7 @@
    "jenis": "pabrikan",
    "kota": "Tangerang",
    "provinsi": "Banten",
-   "situs": null,
+   "situs": "https://sumiindo.co.id",
    "pasar": null,
    "anggota": [],
    "komponen": [
@@ -3653,6 +5047,75 @@
      "jenis": "sertifikat-tkdn",
      "tingkat_bukti": "resmi",
      "tanggal": "2026-11-08"
+    },
+    {
+     "url": "https://tkdn.kemenperin.go.id/sertifikat?q=kabel%20acsr&page=2",
+     "jenis": "sertifikat-tkdn",
+     "tingkat_bukti": "resmi",
+     "tanggal": "2026-11-08"
+    },
+    {
+     "url": "https://tkdn.kemenperin.go.id/sertifikat?q=sumi%20indo%20kabel",
+     "jenis": "sertifikat-tkdn",
+     "tingkat_bukti": "resmi",
+     "tanggal": "2026-11-08"
+    },
+    {
+     "url": "https://tkdn.kemenperin.go.id/sertifikat?q=sumi%20indo%20kabel&page=2",
+     "jenis": "sertifikat-tkdn",
+     "tingkat_bukti": "resmi",
+     "tanggal": "2026-11-08"
+    },
+    {
+     "url": "https://tkdn.kemenperin.go.id/sertifikat?q=sumi%20indo%20kabel&page=3",
+     "jenis": "sertifikat-tkdn",
+     "tingkat_bukti": "resmi",
+     "tanggal": "2026-11-08"
+    }
+   ],
+   "tanggal_periksa": "2026-11-08"
+  },
+  {
+   "id": "tk_4654e8c5",
+   "org_id": null,
+   "nama": "PT SUPREME CABLE MANUFACTURING & COMMERCE Tbk",
+   "jenis": "pabrikan",
+   "kota": "Jakarta Barat",
+   "provinsi": "DKI Jakarta",
+   "situs": null,
+   "pasar": null,
+   "anggota": [],
+   "komponen": [
+    {
+     "teknologi": "jaringan",
+     "komponen": "kabel",
+     "relevansi": "langsung",
+     "produk": [
+      "Kabel Listrik"
+     ],
+     "tkdn": 99.89,
+     "kapasitas": null,
+     "satuan": null
+    }
+   ],
+   "sumber": [
+    {
+     "url": "https://tkdn.kemenperin.go.id/sertifikat?q=supreme%20cable",
+     "jenis": "sertifikat-tkdn",
+     "tingkat_bukti": "resmi",
+     "tanggal": "2026-11-08"
+    },
+    {
+     "url": "https://tkdn.kemenperin.go.id/sertifikat?q=supreme%20cable&page=2",
+     "jenis": "sertifikat-tkdn",
+     "tingkat_bukti": "resmi",
+     "tanggal": "2026-11-08"
+    },
+    {
+     "url": "https://tkdn.kemenperin.go.id/sertifikat?q=supreme%20cable&page=3",
+     "jenis": "sertifikat-tkdn",
+     "tingkat_bukti": "resmi",
+     "tanggal": "2026-11-08"
     }
    ],
    "tanggal_periksa": "2026-11-08"
@@ -3664,7 +5127,7 @@
    "jenis": "pabrikan",
    "kota": "Bekasi",
    "provinsi": "Jawa Barat",
-   "situs": null,
+   "situs": "https://www.suryamaxindustries.com",
    "pasar": null,
    "anggota": [],
    "komponen": [
@@ -3697,6 +5160,52 @@
    "tanggal_periksa": "2026-11-08"
   },
   {
+   "id": "p_26cfc39c2a",
+   "org_id": "p_26cfc39c2a",
+   "nama": "PT SURYA UTAMA PUTRA",
+   "jenis": "pabrikan",
+   "kota": "Bandung",
+   "provinsi": "Jawa Barat",
+   "situs": "https://www.suryautamaputra.co.id",
+   "pasar": null,
+   "anggota": [],
+   "komponen": [
+    {
+     "teknologi": "baterai",
+     "komponen": "pack",
+     "relevansi": "langsung",
+     "produk": [
+      "Batterai Lithium LiFepo4",
+      "Lithium Battery Pack"
+     ],
+     "tkdn": 38.1,
+     "kapasitas": null,
+     "satuan": null
+    }
+   ],
+   "sumber": [
+    {
+     "url": "https://tkdn.kemenperin.go.id/sertifikat?q=baterai%20lifepo4%20lithium&page=2",
+     "jenis": "sertifikat-tkdn",
+     "tingkat_bukti": "resmi",
+     "tanggal": "2026-11-08"
+    },
+    {
+     "url": "https://tkdn.kemenperin.go.id/sertifikat?q=battery%20pack%20lifepo4",
+     "jenis": "sertifikat-tkdn",
+     "tingkat_bukti": "resmi",
+     "tanggal": "2026-11-08"
+    },
+    {
+     "url": "https://tkdn.kemenperin.go.id/sertifikat?q=battery%20pack%20lifepo4&page=4",
+     "jenis": "sertifikat-tkdn",
+     "tingkat_bukti": "resmi",
+     "tanggal": "2026-11-08"
+    }
+   ],
+   "tanggal_periksa": "2026-11-08"
+  },
+  {
    "id": "tk_7cbb270d",
    "org_id": null,
    "nama": "PT Suryakabel Cemerlang",
@@ -3713,7 +5222,8 @@
      "relevansi": "langsung",
      "produk": [
       "Kabel Listrik",
-      "Kabel Listrik Konduktor Distribusi Medium Voltage"
+      "Kabel Listrik Konduktor Distribusi Medium Voltage",
+      "Kabel"
      ],
      "tkdn": 99.88,
      "kapasitas": null,
@@ -3770,6 +5280,72 @@
      "tanggal": "2026-11-08"
     },
     {
+     "url": "https://tkdn.kemenperin.go.id/sertifikat?q=kabel%20acsr",
+     "jenis": "sertifikat-tkdn",
+     "tingkat_bukti": "resmi",
+     "tanggal": "2026-11-08"
+    },
+    {
+     "url": "https://tkdn.kemenperin.go.id/sertifikat?q=kabel%20acsr&page=2",
+     "jenis": "sertifikat-tkdn",
+     "tingkat_bukti": "resmi",
+     "tanggal": "2026-11-08"
+    },
+    {
+     "url": "https://tkdn.kemenperin.go.id/sertifikat?q=kabel%20acsr&page=3",
+     "jenis": "sertifikat-tkdn",
+     "tingkat_bukti": "resmi",
+     "tanggal": "2026-11-08"
+    },
+    {
+     "url": "https://tkdn.kemenperin.go.id/sertifikat?q=kabel%20acsr&page=4",
+     "jenis": "sertifikat-tkdn",
+     "tingkat_bukti": "resmi",
+     "tanggal": "2026-11-08"
+    },
+    {
+     "url": "https://tkdn.kemenperin.go.id/sertifikat?q=kabel%20nfa2x",
+     "jenis": "sertifikat-tkdn",
+     "tingkat_bukti": "resmi",
+     "tanggal": "2026-11-08"
+    },
+    {
+     "url": "https://tkdn.kemenperin.go.id/sertifikat?q=kabel%20nym",
+     "jenis": "sertifikat-tkdn",
+     "tingkat_bukti": "resmi",
+     "tanggal": "2026-11-08"
+    },
+    {
+     "url": "https://tkdn.kemenperin.go.id/sertifikat?q=kabel%20nym&page=2",
+     "jenis": "sertifikat-tkdn",
+     "tingkat_bukti": "resmi",
+     "tanggal": "2026-11-08"
+    },
+    {
+     "url": "https://tkdn.kemenperin.go.id/sertifikat?q=kabel%20nym&page=3",
+     "jenis": "sertifikat-tkdn",
+     "tingkat_bukti": "resmi",
+     "tanggal": "2026-11-08"
+    },
+    {
+     "url": "https://tkdn.kemenperin.go.id/sertifikat?q=kabel%20nyy",
+     "jenis": "sertifikat-tkdn",
+     "tingkat_bukti": "resmi",
+     "tanggal": "2026-11-08"
+    },
+    {
+     "url": "https://tkdn.kemenperin.go.id/sertifikat?q=kabel%20nyy&page=3",
+     "jenis": "sertifikat-tkdn",
+     "tingkat_bukti": "resmi",
+     "tanggal": "2026-11-08"
+    },
+    {
+     "url": "https://tkdn.kemenperin.go.id/sertifikat?q=kabel%20nyy&page=4",
+     "jenis": "sertifikat-tkdn",
+     "tingkat_bukti": "resmi",
+     "tanggal": "2026-11-08"
+    },
+    {
      "url": "https://tkdn.kemenperin.go.id/sertifikat?q=konduktor&page=3",
      "jenis": "sertifikat-tkdn",
      "tingkat_bukti": "resmi",
@@ -3791,7 +5367,7 @@
    "jenis": "pabrikan",
    "kota": "Bogor",
    "provinsi": "Jawa Barat",
-   "situs": null,
+   "situs": "https://www.sutrakabel.com",
    "pasar": null,
    "anggota": [],
    "komponen": [
@@ -3874,6 +5450,90 @@
      "tanggal": "2026-11-08"
     },
     {
+     "url": "https://tkdn.kemenperin.go.id/sertifikat?q=kabel%20acsr",
+     "jenis": "sertifikat-tkdn",
+     "tingkat_bukti": "resmi",
+     "tanggal": "2026-11-08"
+    },
+    {
+     "url": "https://tkdn.kemenperin.go.id/sertifikat?q=kabel%20acsr&page=2",
+     "jenis": "sertifikat-tkdn",
+     "tingkat_bukti": "resmi",
+     "tanggal": "2026-11-08"
+    },
+    {
+     "url": "https://tkdn.kemenperin.go.id/sertifikat?q=kabel%20acsr&page=3",
+     "jenis": "sertifikat-tkdn",
+     "tingkat_bukti": "resmi",
+     "tanggal": "2026-11-08"
+    },
+    {
+     "url": "https://tkdn.kemenperin.go.id/sertifikat?q=kabel%20acsr&page=4",
+     "jenis": "sertifikat-tkdn",
+     "tingkat_bukti": "resmi",
+     "tanggal": "2026-11-08"
+    },
+    {
+     "url": "https://tkdn.kemenperin.go.id/sertifikat?q=kabel%20nfa2x",
+     "jenis": "sertifikat-tkdn",
+     "tingkat_bukti": "resmi",
+     "tanggal": "2026-11-08"
+    },
+    {
+     "url": "https://tkdn.kemenperin.go.id/sertifikat?q=kabel%20nfa2x&page=2",
+     "jenis": "sertifikat-tkdn",
+     "tingkat_bukti": "resmi",
+     "tanggal": "2026-11-08"
+    },
+    {
+     "url": "https://tkdn.kemenperin.go.id/sertifikat?q=kabel%20nym",
+     "jenis": "sertifikat-tkdn",
+     "tingkat_bukti": "resmi",
+     "tanggal": "2026-11-08"
+    },
+    {
+     "url": "https://tkdn.kemenperin.go.id/sertifikat?q=kabel%20nym&page=2",
+     "jenis": "sertifikat-tkdn",
+     "tingkat_bukti": "resmi",
+     "tanggal": "2026-11-08"
+    },
+    {
+     "url": "https://tkdn.kemenperin.go.id/sertifikat?q=kabel%20nym&page=3",
+     "jenis": "sertifikat-tkdn",
+     "tingkat_bukti": "resmi",
+     "tanggal": "2026-11-08"
+    },
+    {
+     "url": "https://tkdn.kemenperin.go.id/sertifikat?q=kabel%20nym&page=4",
+     "jenis": "sertifikat-tkdn",
+     "tingkat_bukti": "resmi",
+     "tanggal": "2026-11-08"
+    },
+    {
+     "url": "https://tkdn.kemenperin.go.id/sertifikat?q=kabel%20nyy",
+     "jenis": "sertifikat-tkdn",
+     "tingkat_bukti": "resmi",
+     "tanggal": "2026-11-08"
+    },
+    {
+     "url": "https://tkdn.kemenperin.go.id/sertifikat?q=kabel%20nyy&page=2",
+     "jenis": "sertifikat-tkdn",
+     "tingkat_bukti": "resmi",
+     "tanggal": "2026-11-08"
+    },
+    {
+     "url": "https://tkdn.kemenperin.go.id/sertifikat?q=kabel%20nyy&page=3",
+     "jenis": "sertifikat-tkdn",
+     "tingkat_bukti": "resmi",
+     "tanggal": "2026-11-08"
+    },
+    {
+     "url": "https://tkdn.kemenperin.go.id/sertifikat?q=kabel%20nyy&page=4",
+     "jenis": "sertifikat-tkdn",
+     "tingkat_bukti": "resmi",
+     "tanggal": "2026-11-08"
+    },
+    {
      "url": "https://tkdn.kemenperin.go.id/sertifikat?q=konduktor&page=3",
      "jenis": "sertifikat-tkdn",
      "tingkat_bukti": "resmi",
@@ -3881,6 +5541,24 @@
     },
     {
      "url": "https://tkdn.kemenperin.go.id/sertifikat?q=konduktor&page=4",
+     "jenis": "sertifikat-tkdn",
+     "tingkat_bukti": "resmi",
+     "tanggal": "2026-11-08"
+    },
+    {
+     "url": "https://tkdn.kemenperin.go.id/sertifikat?q=pltb",
+     "jenis": "sertifikat-tkdn",
+     "tingkat_bukti": "resmi",
+     "tanggal": "2026-11-08"
+    },
+    {
+     "url": "https://tkdn.kemenperin.go.id/sertifikat?q=pltp",
+     "jenis": "sertifikat-tkdn",
+     "tingkat_bukti": "resmi",
+     "tanggal": "2026-11-08"
+    },
+    {
+     "url": "https://tkdn.kemenperin.go.id/sertifikat?q=plts",
      "jenis": "sertifikat-tkdn",
      "tingkat_bukti": "resmi",
      "tanggal": "2026-11-08"
@@ -3934,7 +5612,7 @@
    "jenis": "pabrikan",
    "kota": "Tangerang",
    "provinsi": "Banten",
-   "situs": null,
+   "situs": "https://www.symphoselectric.com",
    "pasar": null,
    "anggota": [],
    "komponen": [
@@ -3955,6 +5633,7 @@
      "relevansi": "langsung",
      "produk": [
       "Transformator (Trafo) Distribusi",
+      "TRANSFORMATOR",
       "Transformator Distribusi",
       "Transformator"
      ],
@@ -3964,6 +5643,18 @@
     }
    ],
    "sumber": [
+    {
+     "url": "https://tkdn.kemenperin.go.id/sertifikat?q=cast%20resin",
+     "jenis": "sertifikat-tkdn",
+     "tingkat_bukti": "resmi",
+     "tanggal": "2026-11-08"
+    },
+    {
+     "url": "https://tkdn.kemenperin.go.id/sertifikat?q=cast%20resin&page=2",
+     "jenis": "sertifikat-tkdn",
+     "tingkat_bukti": "resmi",
+     "tanggal": "2026-11-08"
+    },
     {
      "url": "https://tkdn.kemenperin.go.id/sertifikat?q=mccb&page=2",
      "jenis": "sertifikat-tkdn",
@@ -3978,6 +5669,24 @@
     },
     {
      "url": "https://tkdn.kemenperin.go.id/sertifikat?q=panel%20listrik&page=8",
+     "jenis": "sertifikat-tkdn",
+     "tingkat_bukti": "resmi",
+     "tanggal": "2026-11-08"
+    },
+    {
+     "url": "https://tkdn.kemenperin.go.id/sertifikat?q=trafo%201600%20kva",
+     "jenis": "sertifikat-tkdn",
+     "tingkat_bukti": "resmi",
+     "tanggal": "2026-11-08"
+    },
+    {
+     "url": "https://tkdn.kemenperin.go.id/sertifikat?q=trafo%201600%20kva&page=2",
+     "jenis": "sertifikat-tkdn",
+     "tingkat_bukti": "resmi",
+     "tanggal": "2026-11-08"
+    },
+    {
+     "url": "https://tkdn.kemenperin.go.id/sertifikat?q=trafo%201600%20kva&page=3",
      "jenis": "sertifikat-tkdn",
      "tingkat_bukti": "resmi",
      "tanggal": "2026-11-08"
@@ -4055,6 +5764,30 @@
      "tanggal": "2026-11-08"
     },
     {
+     "url": "https://tkdn.kemenperin.go.id/sertifikat?q=transformator%20100%20kva",
+     "jenis": "sertifikat-tkdn",
+     "tingkat_bukti": "resmi",
+     "tanggal": "2026-11-08"
+    },
+    {
+     "url": "https://tkdn.kemenperin.go.id/sertifikat?q=transformator%20100%20kva&page=2",
+     "jenis": "sertifikat-tkdn",
+     "tingkat_bukti": "resmi",
+     "tanggal": "2026-11-08"
+    },
+    {
+     "url": "https://tkdn.kemenperin.go.id/sertifikat?q=transformator%20100%20kva&page=3",
+     "jenis": "sertifikat-tkdn",
+     "tingkat_bukti": "resmi",
+     "tanggal": "2026-11-08"
+    },
+    {
+     "url": "https://tkdn.kemenperin.go.id/sertifikat?q=transformator%20100%20kva&page=4",
+     "jenis": "sertifikat-tkdn",
+     "tingkat_bukti": "resmi",
+     "tanggal": "2026-11-08"
+    },
+    {
      "url": "https://tkdn.kemenperin.go.id/sertifikat?q=transformator&page=11",
      "jenis": "sertifikat-tkdn",
      "tingkat_bukti": "resmi",
@@ -4068,6 +5801,30 @@
     },
     {
      "url": "https://tkdn.kemenperin.go.id/sertifikat?q=transformator&page=2",
+     "jenis": "sertifikat-tkdn",
+     "tingkat_bukti": "resmi",
+     "tanggal": "2026-11-08"
+    },
+    {
+     "url": "https://tkdn.kemenperin.go.id/sertifikat?q=transformator%20250%20kva",
+     "jenis": "sertifikat-tkdn",
+     "tingkat_bukti": "resmi",
+     "tanggal": "2026-11-08"
+    },
+    {
+     "url": "https://tkdn.kemenperin.go.id/sertifikat?q=transformator%20250%20kva&page=2",
+     "jenis": "sertifikat-tkdn",
+     "tingkat_bukti": "resmi",
+     "tanggal": "2026-11-08"
+    },
+    {
+     "url": "https://tkdn.kemenperin.go.id/sertifikat?q=transformator%20250%20kva&page=3",
+     "jenis": "sertifikat-tkdn",
+     "tingkat_bukti": "resmi",
+     "tanggal": "2026-11-08"
+    },
+    {
+     "url": "https://tkdn.kemenperin.go.id/sertifikat?q=transformator%20250%20kva&page=4",
      "jenis": "sertifikat-tkdn",
      "tingkat_bukti": "resmi",
      "tanggal": "2026-11-08"
@@ -4097,6 +5854,30 @@
      "tanggal": "2026-11-08"
     },
     {
+     "url": "https://tkdn.kemenperin.go.id/sertifikat?q=transformator%20630%20kva",
+     "jenis": "sertifikat-tkdn",
+     "tingkat_bukti": "resmi",
+     "tanggal": "2026-11-08"
+    },
+    {
+     "url": "https://tkdn.kemenperin.go.id/sertifikat?q=transformator%20630%20kva&page=2",
+     "jenis": "sertifikat-tkdn",
+     "tingkat_bukti": "resmi",
+     "tanggal": "2026-11-08"
+    },
+    {
+     "url": "https://tkdn.kemenperin.go.id/sertifikat?q=transformator%20630%20kva&page=3",
+     "jenis": "sertifikat-tkdn",
+     "tingkat_bukti": "resmi",
+     "tanggal": "2026-11-08"
+    },
+    {
+     "url": "https://tkdn.kemenperin.go.id/sertifikat?q=transformator%20630%20kva&page=4",
+     "jenis": "sertifikat-tkdn",
+     "tingkat_bukti": "resmi",
+     "tanggal": "2026-11-08"
+    },
+    {
      "url": "https://tkdn.kemenperin.go.id/sertifikat?q=transformator&page=7",
      "jenis": "sertifikat-tkdn",
      "tingkat_bukti": "resmi",
@@ -4113,6 +5894,69 @@
      "jenis": "sertifikat-tkdn",
      "tingkat_bukti": "resmi",
      "tanggal": "2026-11-08"
+    },
+    {
+     "url": "https://tkdn.kemenperin.go.id/sertifikat?q=transformator%20daya%2060%20mva&page=3",
+     "jenis": "sertifikat-tkdn",
+     "tingkat_bukti": "resmi",
+     "tanggal": "2026-11-08"
+    },
+    {
+     "url": "https://tkdn.kemenperin.go.id/sertifikat?q=transformator%20dry%20type",
+     "jenis": "sertifikat-tkdn",
+     "tingkat_bukti": "resmi",
+     "tanggal": "2026-11-08"
+    },
+    {
+     "url": "https://tkdn.kemenperin.go.id/sertifikat?q=transformator%20dry%20type&page=2",
+     "jenis": "sertifikat-tkdn",
+     "tingkat_bukti": "resmi",
+     "tanggal": "2026-11-08"
+    },
+    {
+     "url": "https://tkdn.kemenperin.go.id/sertifikat?q=transformator%20dry%20type&page=3",
+     "jenis": "sertifikat-tkdn",
+     "tingkat_bukti": "resmi",
+     "tanggal": "2026-11-08"
+    },
+    {
+     "url": "https://tkdn.kemenperin.go.id/sertifikat?q=transformator%20dry%20type&page=4",
+     "jenis": "sertifikat-tkdn",
+     "tingkat_bukti": "resmi",
+     "tanggal": "2026-11-08"
+    }
+   ],
+   "tanggal_periksa": "2026-11-08"
+  },
+  {
+   "id": "tk_4cd8251d",
+   "org_id": null,
+   "nama": "PT Tigris Primordia Kencana",
+   "jenis": "pabrikan",
+   "kota": "Bandung",
+   "provinsi": "Jawa Barat",
+   "situs": null,
+   "pasar": null,
+   "anggota": [],
+   "komponen": [
+    {
+     "teknologi": "jaringan",
+     "komponen": "panel_tr",
+     "relevansi": "langsung",
+     "produk": [
+      "PANEL LISTRIK LVMDP INCLUDE ATS"
+     ],
+     "tkdn": 25.31,
+     "kapasitas": null,
+     "satuan": null
+    }
+   ],
+   "sumber": [
+    {
+     "url": "https://tkdn.kemenperin.go.id/sertifikat?q=panel%20lvmdp",
+     "jenis": "sertifikat-tkdn",
+     "tingkat_bukti": "resmi",
+     "tanggal": "2026-11-08"
     }
    ],
    "tanggal_periksa": "2026-11-08"
@@ -4124,7 +5968,7 @@
    "jenis": "pabrikan",
    "kota": "Bekasi",
    "provinsi": "Jawa Barat",
-   "situs": null,
+   "situs": "https://www.tirtasuryacipta.com",
    "pasar": null,
    "anggota": [],
    "komponen": [
@@ -4157,7 +6001,7 @@
    "jenis": "pabrikan",
    "kota": "Tangerang",
    "provinsi": "Banten",
-   "situs": null,
+   "situs": "https://www.trafoindopowerindonesia.com",
    "pasar": null,
    "anggota": [],
    "komponen": [
@@ -4185,6 +6029,18 @@
      "jenis": "sertifikat-tkdn",
      "tingkat_bukti": "resmi",
      "tanggal": "2026-11-08"
+    },
+    {
+     "url": "https://tkdn.kemenperin.go.id/sertifikat?q=transformator%20daya%2060%20mva",
+     "jenis": "sertifikat-tkdn",
+     "tingkat_bukti": "resmi",
+     "tanggal": "2026-11-08"
+    },
+    {
+     "url": "https://tkdn.kemenperin.go.id/sertifikat?q=transformator%20daya%2060%20mva&page=2",
+     "jenis": "sertifikat-tkdn",
+     "tingkat_bukti": "resmi",
+     "tanggal": "2026-11-08"
     }
    ],
    "tanggal_periksa": "2026-11-08"
@@ -4207,6 +6063,7 @@
      "produk": [
       "Transformator (Trafo) Distribusi",
       "Transformator Distribusi",
+      "Transformator Oil",
       "Transformator (Trafo) Instrumen Current Transformer (CT)/ Potential Transformer (PT)"
      ],
      "tkdn": 81.44,
@@ -4215,6 +6072,24 @@
     }
    ],
    "sumber": [
+    {
+     "url": "https://tkdn.kemenperin.go.id/sertifikat?q=cast%20resin",
+     "jenis": "sertifikat-tkdn",
+     "tingkat_bukti": "resmi",
+     "tanggal": "2026-11-08"
+    },
+    {
+     "url": "https://tkdn.kemenperin.go.id/sertifikat?q=cast%20resin&page=2",
+     "jenis": "sertifikat-tkdn",
+     "tingkat_bukti": "resmi",
+     "tanggal": "2026-11-08"
+    },
+    {
+     "url": "https://tkdn.kemenperin.go.id/sertifikat?q=trafo%201600%20kva&page=2",
+     "jenis": "sertifikat-tkdn",
+     "tingkat_bukti": "resmi",
+     "tanggal": "2026-11-08"
+    },
     {
      "url": "https://tkdn.kemenperin.go.id/sertifikat?q=trafo%20daya&page=4",
      "jenis": "sertifikat-tkdn",
@@ -4252,6 +6127,36 @@
      "tanggal": "2026-11-08"
     },
     {
+     "url": "https://tkdn.kemenperin.go.id/sertifikat?q=trafo%20unindo",
+     "jenis": "sertifikat-tkdn",
+     "tingkat_bukti": "resmi",
+     "tanggal": "2026-11-08"
+    },
+    {
+     "url": "https://tkdn.kemenperin.go.id/sertifikat?q=trafo%20unindo&page=2",
+     "jenis": "sertifikat-tkdn",
+     "tingkat_bukti": "resmi",
+     "tanggal": "2026-11-08"
+    },
+    {
+     "url": "https://tkdn.kemenperin.go.id/sertifikat?q=trafo%20unindo&page=3",
+     "jenis": "sertifikat-tkdn",
+     "tingkat_bukti": "resmi",
+     "tanggal": "2026-11-08"
+    },
+    {
+     "url": "https://tkdn.kemenperin.go.id/sertifikat?q=transformator%20100%20kva&page=2",
+     "jenis": "sertifikat-tkdn",
+     "tingkat_bukti": "resmi",
+     "tanggal": "2026-11-08"
+    },
+    {
+     "url": "https://tkdn.kemenperin.go.id/sertifikat?q=transformator%20100%20kva&page=3",
+     "jenis": "sertifikat-tkdn",
+     "tingkat_bukti": "resmi",
+     "tanggal": "2026-11-08"
+    },
+    {
      "url": "https://tkdn.kemenperin.go.id/sertifikat?q=transformator&page=11",
      "jenis": "sertifikat-tkdn",
      "tingkat_bukti": "resmi",
@@ -4265,6 +6170,12 @@
     },
     {
      "url": "https://tkdn.kemenperin.go.id/sertifikat?q=transformator&page=2",
+     "jenis": "sertifikat-tkdn",
+     "tingkat_bukti": "resmi",
+     "tanggal": "2026-11-08"
+    },
+    {
+     "url": "https://tkdn.kemenperin.go.id/sertifikat?q=transformator%20250%20kva&page=4",
      "jenis": "sertifikat-tkdn",
      "tingkat_bukti": "resmi",
      "tanggal": "2026-11-08"
@@ -4289,6 +6200,12 @@
     },
     {
      "url": "https://tkdn.kemenperin.go.id/sertifikat?q=transformator&page=6",
+     "jenis": "sertifikat-tkdn",
+     "tingkat_bukti": "resmi",
+     "tanggal": "2026-11-08"
+    },
+    {
+     "url": "https://tkdn.kemenperin.go.id/sertifikat?q=transformator%20630%20kva&page=4",
      "jenis": "sertifikat-tkdn",
      "tingkat_bukti": "resmi",
      "tanggal": "2026-11-08"
@@ -4348,7 +6265,7 @@
    "jenis": "pabrikan",
    "kota": "Sidoarjo",
    "provinsi": "Jawa Timur",
-   "situs": null,
+   "situs": "https://www.trimitrabuanaengineering.com",
    "pasar": null,
    "anggota": [],
    "komponen": [
@@ -4367,6 +6284,12 @@
    "sumber": [
     {
      "url": "https://tkdn.kemenperin.go.id/sertifikat?q=battery%20energy%20storage",
+     "jenis": "sertifikat-tkdn",
+     "tingkat_bukti": "resmi",
+     "tanggal": "2026-11-08"
+    },
+    {
+     "url": "https://tkdn.kemenperin.go.id/sertifikat?q=bess",
      "jenis": "sertifikat-tkdn",
      "tingkat_bukti": "resmi",
      "tanggal": "2026-11-08"
@@ -4390,6 +6313,7 @@
      "komponen": "panel_tr",
      "relevansi": "langsung",
      "produk": [
+      "Panel Listrik Tegangan Menengah (TM)",
       "Panel Listrik Tegangan Rendah (TR)"
      ],
      "tkdn": 100,
@@ -4411,6 +6335,12 @@
     }
    ],
    "sumber": [
+    {
+     "url": "https://tkdn.kemenperin.go.id/sertifikat?q=kabel%20tegangan%20menengah&page=8",
+     "jenis": "sertifikat-tkdn",
+     "tingkat_bukti": "resmi",
+     "tanggal": "2026-11-08"
+    },
     {
      "url": "https://tkdn.kemenperin.go.id/sertifikat?q=mccb",
      "jenis": "sertifikat-tkdn",
@@ -4496,6 +6426,12 @@
      "tanggal": "2026-11-08"
     },
     {
+     "url": "https://tkdn.kemenperin.go.id/sertifikat?q=transformator%20100%20kva&page=4",
+     "jenis": "sertifikat-tkdn",
+     "tingkat_bukti": "resmi",
+     "tanggal": "2026-11-08"
+    },
+    {
      "url": "https://tkdn.kemenperin.go.id/sertifikat?q=transformator&page=11",
      "jenis": "sertifikat-tkdn",
      "tingkat_bukti": "resmi",
@@ -4503,6 +6439,12 @@
     },
     {
      "url": "https://tkdn.kemenperin.go.id/sertifikat?q=transformator&page=2",
+     "jenis": "sertifikat-tkdn",
+     "tingkat_bukti": "resmi",
+     "tanggal": "2026-11-08"
+    },
+    {
+     "url": "https://tkdn.kemenperin.go.id/sertifikat?q=transformator%20250%20kva&page=3",
      "jenis": "sertifikat-tkdn",
      "tingkat_bukti": "resmi",
      "tanggal": "2026-11-08"
@@ -4532,6 +6474,12 @@
      "tanggal": "2026-11-08"
     },
     {
+     "url": "https://tkdn.kemenperin.go.id/sertifikat?q=transformator%20630%20kva&page=3",
+     "jenis": "sertifikat-tkdn",
+     "tingkat_bukti": "resmi",
+     "tanggal": "2026-11-08"
+    },
+    {
      "url": "https://tkdn.kemenperin.go.id/sertifikat?q=transformator&page=7",
      "jenis": "sertifikat-tkdn",
      "tingkat_bukti": "resmi",
@@ -4548,6 +6496,24 @@
      "jenis": "sertifikat-tkdn",
      "tingkat_bukti": "resmi",
      "tanggal": "2026-11-08"
+    },
+    {
+     "url": "https://tkdn.kemenperin.go.id/sertifikat?q=transformator%20dry%20type&page=2",
+     "jenis": "sertifikat-tkdn",
+     "tingkat_bukti": "resmi",
+     "tanggal": "2026-11-08"
+    },
+    {
+     "url": "https://tkdn.kemenperin.go.id/sertifikat?q=transformator%20dry%20type&page=3",
+     "jenis": "sertifikat-tkdn",
+     "tingkat_bukti": "resmi",
+     "tanggal": "2026-11-08"
+    },
+    {
+     "url": "https://tkdn.kemenperin.go.id/sertifikat?q=transformator%20dry%20type&page=4",
+     "jenis": "sertifikat-tkdn",
+     "tingkat_bukti": "resmi",
+     "tanggal": "2026-11-08"
     }
    ],
    "tanggal_periksa": "2026-11-08"
@@ -4559,7 +6525,7 @@
    "jenis": "pabrikan",
    "kota": "Sumedang",
    "provinsi": "Jawa Barat",
-   "situs": null,
+   "situs": "https://www.tritunggalswarna.co.id",
    "pasar": null,
    "anggota": [],
    "komponen": [
@@ -4689,6 +6655,18 @@
      "jenis": "sertifikat-tkdn",
      "tingkat_bukti": "resmi",
      "tanggal": "2026-11-08"
+    },
+    {
+     "url": "https://tkdn.kemenperin.go.id/sertifikat?q=trafo%20unindo",
+     "jenis": "sertifikat-tkdn",
+     "tingkat_bukti": "resmi",
+     "tanggal": "2026-11-08"
+    },
+    {
+     "url": "https://tkdn.kemenperin.go.id/sertifikat?q=transformator%20daya%2060%20mva",
+     "jenis": "sertifikat-tkdn",
+     "tingkat_bukti": "resmi",
+     "tanggal": "2026-11-08"
     }
    ],
    "tanggal_periksa": "2026-11-08"
@@ -4738,6 +6716,24 @@
      "tanggal": "2026-11-08"
     },
     {
+     "url": "https://tkdn.kemenperin.go.id/sertifikat?q=voksel",
+     "jenis": "sertifikat-tkdn",
+     "tingkat_bukti": "resmi",
+     "tanggal": "2026-11-08"
+    },
+    {
+     "url": "https://tkdn.kemenperin.go.id/sertifikat?q=voksel&page=2",
+     "jenis": "sertifikat-tkdn",
+     "tingkat_bukti": "resmi",
+     "tanggal": "2026-11-08"
+    },
+    {
+     "url": "https://tkdn.kemenperin.go.id/sertifikat?q=voksel&page=3",
+     "jenis": "sertifikat-tkdn",
+     "tingkat_bukti": "resmi",
+     "tanggal": "2026-11-08"
+    },
+    {
      "url": "https://www.voksel.co.id",
      "jenis": "situs-sendiri",
      "tingkat_bukti": "kata-pihak",
@@ -4754,7 +6750,7 @@
    "jenis": "pabrikan",
    "kota": "Bekasi",
    "provinsi": "Jawa Barat",
-   "situs": null,
+   "situs": "https://www.walsinlippo.co.id",
    "pasar": null,
    "anggota": [],
    "komponen": [
@@ -4803,14 +6799,27 @@
      "komponen": "kabel",
      "relevansi": "langsung",
      "produk": [
+      "Kabel Instrumentasi dan Kontrol",
       "Kabel Tahan Api"
      ],
-     "tkdn": 90.13,
+     "tkdn": 98.57,
      "kapasitas": null,
      "satuan": null
     }
    ],
    "sumber": [
+    {
+     "url": "https://tkdn.kemenperin.go.id/sertifikat?q=kabel%20kontrol&page=3",
+     "jenis": "sertifikat-tkdn",
+     "tingkat_bukti": "resmi",
+     "tanggal": "2026-11-08"
+    },
+    {
+     "url": "https://tkdn.kemenperin.go.id/sertifikat?q=kabel%20tahan%20api",
+     "jenis": "sertifikat-tkdn",
+     "tingkat_bukti": "resmi",
+     "tanggal": "2026-11-08"
+    },
     {
      "url": "https://tkdn.kemenperin.go.id/sertifikat?q=kabel%20tanah",
      "jenis": "sertifikat-tkdn",
@@ -4827,7 +6836,7 @@
    "jenis": "pabrikan",
    "kota": "Cimahi",
    "provinsi": "Jawa Barat",
-   "situs": null,
+   "situs": "https://www.wiraky.co.id",
    "pasar": null,
    "anggota": [],
    "komponen": [
@@ -4885,6 +6894,39 @@
    "tanggal_periksa": "2026-11-08"
   },
   {
+   "id": "tk_686f3f37",
+   "org_id": null,
+   "nama": "PT Wmpower Electric Asia",
+   "jenis": "pabrikan",
+   "kota": "Pasuruan",
+   "provinsi": "Jawa Timur",
+   "situs": null,
+   "pasar": null,
+   "anggota": [],
+   "komponen": [
+    {
+     "teknologi": "jaringan",
+     "komponen": "trafo",
+     "relevansi": "langsung",
+     "produk": [
+      "Transformator Distribusi"
+     ],
+     "tkdn": 49.05,
+     "kapasitas": null,
+     "satuan": null
+    }
+   ],
+   "sumber": [
+    {
+     "url": "https://tkdn.kemenperin.go.id/sertifikat?q=transformator%20250%20kva&page=4",
+     "jenis": "sertifikat-tkdn",
+     "tingkat_bukti": "resmi",
+     "tanggal": "2026-11-08"
+    }
+   ],
+   "tanggal_periksa": "2026-11-08"
+  },
+  {
    "id": "tk_ebd4209d",
    "org_id": null,
    "nama": "PT XD SAKTI INDONESIA",
@@ -4913,6 +6955,18 @@
      "jenis": "sertifikat-tkdn",
      "tingkat_bukti": "resmi",
      "tanggal": "2026-11-08"
+    },
+    {
+     "url": "https://tkdn.kemenperin.go.id/sertifikat?q=transformator%20daya%2060%20mva&page=2",
+     "jenis": "sertifikat-tkdn",
+     "tingkat_bukti": "resmi",
+     "tanggal": "2026-11-08"
+    },
+    {
+     "url": "https://tkdn.kemenperin.go.id/sertifikat?q=transformator%20daya%2060%20mva&page=3",
+     "jenis": "sertifikat-tkdn",
+     "tingkat_bukti": "resmi",
+     "tanggal": "2026-11-08"
     }
    ],
    "tanggal_periksa": "2026-11-08"
@@ -4924,7 +6978,7 @@
    "jenis": "pabrikan",
    "kota": "Karawang",
    "provinsi": "Jawa Barat",
-   "situs": null,
+   "situs": "https://www.zttcable.co.id",
    "pasar": null,
    "anggota": [],
    "komponen": [

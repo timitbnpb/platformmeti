@@ -4,7 +4,7 @@
 import { t, tanggalDariUnix } from "/i18n.js";
 import { esc, api, nanti, debounce, hantuHtml, galatTeks, pesanHtml, ikon, kosongHtml } from "/inti/umum.js";
 import { cariHtml, pilihHtml, hitungHtml } from "/inti/komponen.js";
-import { kepalaTab, keadaan } from "/admin_umum.js";
+import { kepalaTab, ubinKepala, keadaan } from "/admin_umum.js";
 
 const STATUS = ["berdiri", "segera", "rencana", "belum"];
 const TAHAP = ["diajukan", "ditinjau", "sk_terbit", "pelantikan", "berdiri"];
@@ -36,8 +36,8 @@ export async function panelMetiWilayah(el) {
     wilJadi = kat.provinsi.map((p) => ({ kode_prov: p.kode, status: "belum", ...per.get(p.kode) }));
     const jum = (st) => wilJadi.filter((w) => w.status === st).length;
     const ajuan = D.ajuan.length ? D.ajuan.map(ajuanHtml).join("") : `<div class="jm-kosong">${ikon("daftar", 32)}<p><strong>${esc(t("adm.mw.ajuan_kosong"))}</strong></p><p class="jm-bantu">${esc(t("adm.mw.ajuan_kosong_d"))}</p></div>`;
-    host.innerHTML = `<div class="jm-adm-tiles">${tile("centang", jum("berdiri"), "adm.mw.t.berdiri", "jm-tile-ok")}${tile("daftar", D.ajuan.length, "adm.mw.t.ajuan", "jm-tile-warn")}${tile("blokir", jum("belum"), "adm.mw.t.belum", "jm-tile-mati")}</div>
-      <section class="jm-adm-kartu"><header class="jm-adm-kh">${ikon("daftar", 20)}<h3>${esc(t("adm.mw.ajuan"))}</h3><span class="jm-hitung">${esc(String(D.ajuan.length))}</span></header><div class="jm-adm-isi">${ajuan}</div></section>
+    ubinKepala(el, [{ ikon: "centang", nilai: jum("berdiri"), label: t("adm.mw.t.berdiri") }, { ikon: "daftar", nilai: D.ajuan.length, label: t("adm.mw.t.ajuan") }, { ikon: "blokir", nilai: jum("belum"), label: t("adm.mw.t.belum") }]);
+    host.innerHTML = `<section class="jm-adm-kartu"><header class="jm-adm-kh">${ikon("daftar", 20)}<h3>${esc(t("adm.mw.ajuan"))}</h3><span class="jm-hitung">${esc(String(D.ajuan.length))}</span></header><div class="jm-adm-isi">${ajuan}</div></section>
       <section class="jm-adm-kartu"><header class="jm-adm-kh">${ikon("wilayah", 20)}<h3>${esc(t("adm.mw.wilayah"))}</h3>${hitungHtml({ id: "mwHitung", teks: "" })}</header>
         <div class="jm-adm-isi"><div class="jm-saring jm-ag-bar">${cariHtml({ id: "mwCari", label: t("adm.mw.cari") })}
           ${pilihHtml({ id: "mwSt", ikon: "status", label: t("adm.mw.f.saring"), opsi: [["", t("adm.mw.semua_status")], ...STATUS.map((v) => [v, t("mw.st." + v)])], nilai: saringSt })}</div>

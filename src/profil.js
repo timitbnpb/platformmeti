@@ -1,5 +1,6 @@
 // profil.js: /o/<id> dan /p/<id>, cangkang statis (public/o.html, p.html) + judul, deskripsi, og:* per entitas disuntik di server
 // supaya pratinjau tautan terbaca. Bacaan publik atas JSON statis (lapis publik), tanpa D1. Semua nilai di-escape.
+import { halamanHtml } from "./util.js";
 import { namaProyek } from "../public/inti/nama_proyek.js";
 
 const RE_ID = /^[A-Za-z0-9_-]{2,60}$/;
@@ -44,5 +45,5 @@ export async function halamanProfil(req, env, url, jenis, id) {
   ].join("\n");
   // fungsi pengganti: tanda $ dalam nama tidak ditafsirkan sebagai pola
   const html = (await cangkang.text()).replace(/<title>[^<]*<\/title>/, () => `<title>${esc(judul)}</title>`).replace("<!--meta-->", () => tag);
-  return new Response(html, { status: 200, headers: { "content-type": "text/html; charset=utf-8", "cache-control": "public, max-age=300" } });
+  return halamanHtml(html, cangkang);
 }

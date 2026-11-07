@@ -85,3 +85,8 @@ test("H5 CSP: frame-src hanya youtube-nocookie, Instagram, dan LinkedIn (sematan
   assert.deepEqual([...csp["frame-src"]].sort(), ["https://www.instagram.com", "https://www.linkedin.com", "https://www.youtube-nocookie.com"]);
   assert.ok(!Object.values(csp).flat().some((s) => /^https:\/\/(www\.)?youtube\.com$/.test(s)));
 });
+
+test("H-bersama HEADER_KEAMANAN (halaman rakitan Worker) sama dengan blok /* di _headers", async () => {
+  const { HEADER_KEAMANAN } = await import("../src/util.js");
+  assert.deepEqual(HEADER_KEAMANAN, Object.fromEntries(Object.entries(H["/*"]).map(([k, v]) => [k.toLowerCase(), v])));
+});

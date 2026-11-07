@@ -18,7 +18,7 @@
 .jm-hal-pf .jm-isian:focus-visible{outline:2px solid var(--fokus);outline-offset:1px}
 .pf-bio-isi{min-height:104px;padding:10px 12px;resize:vertical}
 .pf-bar{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
-.pf-lepas{border:0;background:none;color:var(--accent);font:600 var(--t-kecil)/1 var(--font);text-decoration:underline;cursor:pointer}
+.pf-lepas{border:0;background:none;color:var(--accent);font:600 var(--t-kecil)/1 var(--font);text-decoration:none;cursor:pointer}
 .pf-taut{display:inline-flex;align-items:center;gap:8px;color:var(--accent);font:600 var(--t-body)/var(--lh-rapat) var(--font);text-decoration:none;overflow-wrap:anywhere}
 .pf-taut:hover{text-decoration:underline}
 .pf-taut-kecil{font-size:var(--t-kecil)}

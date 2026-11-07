@@ -6,7 +6,7 @@ import { khUbin } from "/inti/kh.js";
 import { t, angka, tanggal, tanggalSah } from "/i18n.js";
 import { esc, api, nanti, debounce, kosongHtml, galatHtml, ikon, pesanHtml } from "/inti/umum.js";
 import { cariHtml, pilihHtml, hapusHtml, hitungHtml, terkaitHtml } from "/inti/komponen.js";
-import { kabar } from "/inti/aksi_ex.js";
+import { kabar, aksiHtml, hlHtml } from "/inti/aksi_ex.js";
 import { logoUrl, PROV } from "/penerbit.js";
 import { logoOrgSatu } from "/inti/logo_org.js";
 import { IKON_TEK } from "/inti/ikon_tek.js";
@@ -31,7 +31,7 @@ const kodeProv = (n) => { const m = /^Pemerintah Provinsi (.+)$/i.exec(n); retur
 /* logo penerbit: peta nama baku -> berkas lokal; selain itu resolver bersama (logo_org, provinsi, kab/kota); tanpa logo = monogram berwarna */
 const PEN_LOGO = [[/\(METI\)|^Masyarakat Energi Terbarukan/i, "/img/logo/meti.png"], [/^Direktorat Jenderal EBTKE/i, "/img/logo/ebtke.png"], [/^Kementerian (ESDM|Energi dan Sumber Daya Mineral)/i, "/img/logo/esdm.png"],
   [/\bPLN\b/i, "/img/logo/pln.png"], [/^BRIN/i, "/img/logo/brin.png"], [/^Kementerian Keuangan$/i, "/img/logo/kemenkeu.png"], [/CELIOS/i, "/img/logo/org/l_488614e2c7.png"], [/Purnomo Yusgiantoro/i, "/img/logo/org/l_cac38cb0a4.png"],
-  [/Surya Energi Indotama/i, "/img/logo/org/p_a6ae037cc5.png"], [/Badan Koordinasi Penanaman Modal/i, "/img/logo/bkpm.png"], [/Lingkungan Hidup dan Kehutanan/i, "/img/logo/kemenhut.png"]];
+  [/Surya Energi Indotama/i, "/img/logo/org/p_a6ae037cc5.png"], [/Badan Koordinasi Penanaman Modal/i, "/img/logo/bkpm.png"], [/Lingkungan Hidup dan Kehutanan/i, "/img/logo/kemenhut.png"], [/Bappenas|Perencanaan Pembangunan Nasional/i, "/img/logo/bappenas.webp"]];
 const logoPen = (n) => { const m = PEN_LOGO.find(([re]) => re.test(String(n))); const u = m ? m[1] : (logoOrgSatu(null, n) || logoUrl(n)); return u.endsWith("gedung.svg") ? "" : u; };
 const ikonPen = (n) => (kodeProv(n) ? "prov:" + kodeProv(n) : logoPen(n) ? "img:" + logoPen(n) : "direktori");
 const inisialPen = (n) => { const s = ringkasPen(n).replace(/\([^)]*\)/g, " "), k = s.split(/\s+/).filter((w) => /^[A-Za-z]/.test(w)); return (k.length > 1 && s.length > 8 ? k.slice(0, 2).map((w) => w[0]).join("") : (k[0] || "?").slice(0, 3)).toUpperCase(); };
@@ -56,7 +56,7 @@ function grupPen(n) {
 }
 const GRUP_URUT = ["pusat", "daerah", "bumn", "riset", "lain"];
 const ikonTopik = (k) => (IKON_TEK[k] ? "tek:" + k : "topik");
-const pilTopik = (k) => `<span class="jm-pil pu-topik pu-t-${esc(k)}">${IKON_TEK[k] || ikon("topik", 14)}<span>${esc(labelTopik(k))}</span></span>`;
+const pilTopik = (k) => `<span class="jm-pil pu-topik pu-t-${esc(k)}" title="${esc(labelTopik(k))}">${IKON_TEK[k] || ikon("topik", 14)}<span>${esc(labelTopik(k))}</span></span>`;
 const pilJenis = (d, k = "") => `<span class="jm-pil pu-jenis pu-j-${esc(d.jenis)} ${k}">${ikon(IKON_JENIS[d.jenis] || "buku", 14)}<span>${esc(labelJenis(d.jenis))}</span></span>`;
 const logoImg = (n, ukuran, kelas = "") => (logoPen(n)
   ? `<img class="jm-pen-lg pu-lb ${kelas}" src="${esc(logoPen(n))}" width="${ukuran}" height="${ukuran}" alt="" loading="lazy" decoding="async">`
@@ -149,7 +149,8 @@ function kartuHtml(d) {
       ${d.penerbit ? `<span class="pu-lencana" title="${atr(d.penerbit)}">${logoImg(d.penerbit, 32)}</span>` : ""}${pilJenis(d, "pu-pojok")}</button>
     <div class="pu-badan"><h3><button type="button" data-buka="${esc(d.id)}">${esc(d.judul)}</button></h3>
       ${penBaris(d)}
-      <p class="pu-meta"><span class="pu-m" title="${esc(t("pu.i.terbit"))}">${ikon("tahun", 14)}<span>${esc(d.tahun || "-")}</span></span>${top ? pilTopik(top) : ""}<span class="pu-m pu-n" title="${esc(t("pu.diunduh", { n: angka(d.n) }))}">${ikon("unduh", 14)}<span>${esc(angka(d.n))}</span></span></p>
+      <p class="pu-meta"><span class="pu-m" title="${esc(t("pu.i.terbit"))}">${ikon("tahun", 14)}<span>${esc(d.tahun || "-")}</span></span><span class="pu-m pu-n" title="${esc(t("pu.diunduh", { n: angka(d.n) }))}">${ikon("unduh", 14)}<span>${esc(angka(d.n))}</span></span></p>
+      ${top ? `<p class="pu-meta pu-topik-baris">${pilTopik(top)}</p>` : ""}
       <p class="pu-ring">${esc(d.ringkasan || "")}</p></div>
     <footer class="pu-kaki"><button type="button" class="pu-lanjut" data-buka="${esc(d.id)}" aria-label="${b}">${esc(t("pu.selengkapnya"))}${ikon("panah-kanan", 16)}</button><span class="pu-m">${dok}</span></footer></article>`;
 }
@@ -157,6 +158,7 @@ function gambarKisi() {
   const baris = DAFTAR = saring();
   const jumlah = Math.max(1, Math.ceil(baris.length / PER));
   if (S.hal > jumlah) S.hal = jumlah;
+  document.getElementById("puJ").innerHTML = hlHtml("pu.ex.j", angka(baris.length));
   document.getElementById("hitung").textContent = t("pu.hitung", { n: angka(baris.length), total: angka(D.docs.length) });
   document.getElementById("hapus").hidden = !adaFilter();
   const isi = document.getElementById("isi"), hal = document.getElementById("lagi");
@@ -368,6 +370,7 @@ function pasang() {
   const isi = document.getElementById("isi");
   bacaUrl();
   try { await muat(); } catch (e) { isi.innerHTML = galatHtml(e.kode || "umum"); isi.addEventListener("click", (x) => { if (x.target.closest("[data-aksi=ulang]")) location.reload(); }); return; }
+  document.getElementById("puAksi").innerHTML = aksiHtml();
   ubin(); gambarSaring(); gambarKisi(); pasang();
   if (S.id && D.byId.has(S.id)) bukaDetail(S.id);
 })();

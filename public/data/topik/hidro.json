@@ -1,0 +1,3753 @@
+{
+ "id": "hidro",
+ "versi": 1,
+ "diperbarui": "2026-11-08",
+ "judul": {
+  "id": "Hidro",
+  "en": "Hydro"
+ },
+ "lead": {
+  "id": "PLTA, PLTM, PLTMH, dan PLTA pompa: sumber terbarukan terbesar Indonesia, fleksibel, tetapi paling bergantung pada lahan, sosial, dan jadwal.",
+  "en": "Large and small hydro and pumped storage: Indonesia's largest renewable, flexible, but most dependent on land, community and schedule."
+ },
+ "kunci": [
+  {
+   "label": {
+    "id": "Kapasitas PLTA terpasang Indonesia (2025)",
+    "en": "Indonesia installed hydropower capacity (2025)"
+   },
+   "nilai": 7587.47,
+   "d": 0,
+   "satuan": {
+    "id": "MW",
+    "en": "MW"
+   },
+   "sumber": "kap",
+   "est": false
+  },
+  {
+   "label": {
+    "id": "Porsi hidro dalam listrik Indonesia (2024)",
+    "en": "Hydro share of Indonesia electricity (2024)"
+   },
+   "nilai": 7.34,
+   "d": 2,
+   "satuan": {
+    "id": "persen",
+    "en": "percent"
+   },
+   "sumber": "owid",
+   "est": false
+  },
+  {
+   "label": {
+    "id": "Pembangkitan PLTA Indonesia (2024)",
+    "en": "Indonesia hydropower generation (2024)"
+   },
+   "nilai": 27290,
+   "d": 0,
+   "satuan": {
+    "id": "GWh",
+    "en": "GWh"
+   },
+   "sumber": "kap",
+   "est": false
+  },
+  {
+   "label": {
+    "id": "PLTA dan PLTM dalam RUPTL 2025-2034",
+    "en": "Hydro in PLN RUPTL 2025-2034"
+   },
+   "nilai": 3972.83,
+   "d": 0,
+   "satuan": {
+    "id": "MW (112 proyek bernama)",
+    "en": "MW (112 named projects)"
+   },
+   "sumber": "ruptl",
+   "est": false
+  },
+  {
+   "label": {
+    "id": "Pumped storage Upper Cisokan",
+    "en": "Upper Cisokan pumped storage"
+   },
+   "nilai": 1040,
+   "d": 0,
+   "satuan": {
+    "id": "MW",
+    "en": "MW"
+   },
+   "sumber": "petro",
+   "est": false
+  }
+ ],
+ "penting": [
+  {
+   "id": "Hidro menyumbang 7,34 persen listrik 2024 dan nilai uniknya adalah fleksibilitas puncak serta penyimpanan.",
+   "en": "Hydro supplies 7.34 percent of 2024 electricity and its unique value is peaking flexibility and storage."
+  },
+  {
+   "id": "Proyek besar sering bergeser: Jatigede sembilan tahun dari pengisian waduk ke sinkronisasi, Cisokan dari 2025 ke 2030.",
+   "en": "Large projects often slip: Jatigede took nine years from impoundment to synchronisation, Cisokan moved from 2025 to 2030."
+  },
+  {
+   "id": "PLTMH desa mati karena pemeliharaan, bukan karena teknologi.",
+   "en": "Village micro-hydro dies from maintenance gaps, not technology."
+  }
+ ],
+ "posisi": {
+  "id": "Porsi hidro 7.34 persen berada di tengah-bawah ASEAN, jauh di bawah Laos, Myanmar, dan Vietnam.",
+  "en": "A hydro share of 7.34 percent is mid-to-low in ASEAN, far below Laos, Myanmar and Vietnam."
+ },
+ "sumber": {
+  "ed": {
+   "judul": "Ringkasan editorial METI (penjelasan umum; bukan kutipan pasal)",
+   "penerbit": "METI",
+   "tanggal": "2026-11-08",
+   "tahun": 2026,
+   "bukti": "editorial"
+  },
+  "kap": {
+   "judul": "IRENA, kapasitas terpasang dan pembangkitan Indonesia (diolah repo: public/data/kapasitas_tren.json)",
+   "penerbit": "IRENA",
+   "url": "https://www.irena.org/Data",
+   "tanggal": "2026-11-08",
+   "tahun": 2026,
+   "bukti": "resmi",
+   "lisensi": "IRENA data terbuka"
+  },
+  "owid": {
+   "judul": "Our World in Data energy-data, memuat Ember Yearly Electricity Data (public/data/asean_energi.json)",
+   "penerbit": "Ember via Our World in Data",
+   "url": "https://github.com/owid/energy-data",
+   "tanggal": "2026-11-08",
+   "tahun": 2026,
+   "bukti": "via-pihak-ketiga",
+   "lisensi": "CC BY 4.0"
+  },
+  "lcoe": {
+   "judul": "IRENA LCOE global via Our World in Data (public/data/biaya_listrik.json)",
+   "penerbit": "IRENA via Our World in Data",
+   "url": "https://ourworldindata.org/grapher/levelized-cost-of-energy",
+   "tanggal": "2026-11-08",
+   "tahun": 2026,
+   "bukti": "via-pihak-ketiga",
+   "lisensi": "CC BY 4.0"
+  },
+  "proyek": {
+   "judul": "Direktori METI: proyek (public/data/proyek.json, RUPTL 2025-2034, GEM, OSM, media)",
+   "penerbit": "METI",
+   "url": "https://platformmeti.timitbnpb.workers.dev",
+   "tanggal": "2026-11-07",
+   "tahun": 2026,
+   "bukti": "via-pihak-ketiga"
+  },
+  "ruptl": {
+   "judul": "RUPTL PT PLN (Persero) 2025-2034, lampiran Kepmen ESDM 188.K/TL.03/MEM.L/2025 (diolah repo: public/data/ruptl.json)",
+   "penerbit": "PLN, ESDM",
+   "url": "https://gatrik.esdm.go.id/gatrik/gatrik-api//storage/migrasi/download_index/files/b967d-ruptl-pln-2025-2034-pub-.pdf",
+   "tanggal": "2025-05-26",
+   "tahun": 2025,
+   "bukti": "resmi"
+  },
+  "regul": {
+   "judul": "Basis regulasi METI (public/data/regulasi.json, naskah BPK JDIH)",
+   "penerbit": "BPK JDIH, METI",
+   "url": "https://peraturan.bpk.go.id/",
+   "tanggal": "2026-11-07",
+   "tahun": 2026,
+   "bukti": "resmi"
+  },
+  "pendanaan": {
+   "judul": "Basis pendanaan METI (public/data/pendanaan.json: skema dan proyek pendana)",
+   "penerbit": "METI, ADB, World Bank, AIIB dan lain-lain",
+   "url": "https://www.adb.org/projects",
+   "tanggal": "2026-11-08",
+   "tahun": 2026,
+   "bukti": "via-pihak-ketiga"
+  },
+  "perpres112": {
+   "judul": "Perpres 112/2022 tentang Percepatan Pengembangan Energi Terbarukan untuk Penyediaan Tenaga Listrik",
+   "penerbit": "BPK JDIH",
+   "url": "https://peraturan.bpk.go.id/Details/225308",
+   "tanggal": "2022-09-13",
+   "tahun": 2022,
+   "bukti": "resmi"
+  },
+  "ruuebet": {
+   "judul": "Pelacak RUU EBET di arsip METI (public/data/kebijakan_info.json; situs DPR melarang perayap sehingga tahap bukan dari DPR)",
+   "penerbit": "METI, Liputan6",
+   "url": "https://www.liputan6.com/bisnis/read/6312024/meti-minta-ruu-ebet-segera-disahkan",
+   "tanggal": "2026-09-08",
+   "tahun": 2026,
+   "bukti": "media"
+  },
+  "dak": {
+   "judul": "Kemenkeu DJPK, Bidang Infrastruktur Energi Terbarukan (DAK-IET)",
+   "penerbit": "Kemenkeu DJPK",
+   "url": "https://djpk.kemenkeu.go.id/wp-content/uploads/2024/04/Bidang-Infrastruktur-Energi-Terbarukan-IET.pdf",
+   "tanggal": "2024-04-01",
+   "tahun": 2024,
+   "bukti": "resmi"
+  },
+  "jetp": {
+   "judul": "Platform JETP Indonesia dan CIPP (public/data/jetp_cipp.json)",
+   "penerbit": "JETP Secretariat, METI",
+   "url": "https://platformmeti.timitbnpb.workers.dev",
+   "tanggal": "2026-11-07",
+   "tahun": 2026,
+   "bukti": "via-pihak-ketiga"
+  },
+  "petro": {
+   "judul": "PLNE reports progress on 1,040 MW Upper Cisokan pumped storage project (COD 2030 menurut laporan 2026)",
+   "penerbit": "Petromindo",
+   "url": "https://www.petromindo.com/news/article/plne-reports-progress-on-1-040-mw-upper-cisokan-pumped-storage-project",
+   "tanggal": "2025-12-01",
+   "tahun": 2025,
+   "bukti": "media"
+  },
+  "rricis": {
+   "judul": "Indonesia Speeds Up Pumped-Storage Power Project in West Java",
+   "penerbit": "RRI",
+   "url": "https://rri.co.id/en/national/2445058/indonesia-speeds-up-pumped-storage-power-project-in-west-java",
+   "tanggal": "2026-11-08",
+   "tahun": 2026,
+   "bukti": "media"
+  },
+  "bisnis24": {
+   "judul": "Kejar operasi proyek PLTA raksasa di Jawa Barat, PLN koordinasi isu TKDN (24 Jul 2024)",
+   "penerbit": "Bisnis.com",
+   "url": "https://ekonomi.bisnis.com/read/20240724/44/1784945/kejar-operasi-proyek-plta-raksasa-di-jawa-barat-pln-koordinasi-isu-tkdn",
+   "tanggal": "2024-07-24",
+   "tahun": 2024,
+   "bukti": "media"
+  },
+  "aiib": {
+   "judul": "AIIB, Project Implementation Monitoring Report: Development of Pumped Storage Hydropower in Java Bali System No.1 (Maret 2023; ESMP di jalur kritis, jalan akses longsor)",
+   "penerbit": "AIIB",
+   "url": "https://www.aiib.org/en/projects/details/2023/_download/indonesia/AIIB_PIMR_SBF_Indonesia_P000512_Development_of_Pumped_Storage_Hydropower_in_Java_Bali_System_No1_March_2023_Public_Version.pdf",
+   "tanggal": "2023-03-01",
+   "tahun": 2023,
+   "bukti": "resmi"
+  },
+  "enerdata": {
+   "judul": "Indonesia lends US$380m to PT PLN for 1 GW hydro pumped storage project",
+   "penerbit": "Enerdata",
+   "url": "https://www.enerdata.net/publications/daily-energy-news/indonesia-lends-us380m-pt-pln-1-gw-hydro-pumped-storage-project.html",
+   "tanggal": "2026-11-08",
+   "tahun": 2026,
+   "bukti": "media"
+  },
+  "seawater": {
+   "judul": "PLN studies 1 GW seawater pumped storage project despite rising BESS competition",
+   "penerbit": "Petromindo",
+   "url": "https://www.petromindo.com/news/article/pln-studies-1-gw-seawater-pumped-storage-project-despite-rising-bess-competition",
+   "tanggal": "2026-08-01",
+   "tahun": 2026,
+   "bukti": "media"
+  },
+  "iea74": {
+   "judul": "IEA forecasts 74 GW increase in global pumped-storage hydropower capacity (6 Nov 2026)",
+   "penerbit": "Trend.az",
+   "url": "https://www.trend.az/world/4243656.html",
+   "tanggal": "2026-11-06",
+   "tahun": 2026,
+   "bukti": "media"
+  },
+  "jgsync": {
+   "judul": "PLN berhasil tuntaskan proyek pembangunan PLTA Jatigede 2 x 55 MW; sinkronisasi pertama 11 Mei 2024",
+   "penerbit": "Bisnis.com",
+   "url": "https://ekonomi.bisnis.com/read/20240516/44/1766113/pln-berhasil-tuntaskan-proyek-pembangunan-plta-jatigede-2",
+   "tanggal": "2024-05-16",
+   "tahun": 2024,
+   "bukti": "media"
+  },
+  "jgslo": {
+   "judul": "PLN bakal operasikan PLTA Jatigede 110 MW (SLO diperoleh Juni 2024)",
+   "penerbit": "CNBC Indonesia",
+   "url": "https://www.cnbcindonesia.com/news/20240905094121-4-569296/tambah-pasokan-listrik-ebt-pln-bakal-operasikan-plta-jatigede-110-mw",
+   "tanggal": "2024-09-05",
+   "tahun": 2024,
+   "bukti": "media"
+  },
+  "jg2019": {
+   "judul": "Operation of 110MW Jatigede hydropower dam delayed to 2020 (13 Des 2019)",
+   "penerbit": "The Jakarta Post",
+   "url": "https://www.thejakartapost.com/news/2019/12/13/operation-of-110mw-jatigede-hydropower-dam-delayed-to-2020",
+   "tanggal": "2019-12-13",
+   "tahun": 2019,
+   "bukti": "media"
+  },
+  "jg2021": {
+   "judul": "Dikebut! Progres pembangunan PLTA Jatigede capai 85 persen (4 Apr 2021)",
+   "penerbit": "Bisnis.com",
+   "url": "https://ekonomi.bisnis.com/read/20210404/44/1376352/dikebut-progres-pembangunan-plta-jatigede-capai-85-persen",
+   "tanggal": "2021-04-04",
+   "tahun": 2021,
+   "bukti": "media"
+  },
+  "jgwiki": {
+   "judul": "Jatigede Dam (ringkasan Wikipedia: 110 MW, pengisian 31 Agu 2015, sekitar 70.000 warga direlokasi)",
+   "penerbit": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Jatigede_Dam",
+   "tanggal": "2026-11-08",
+   "tahun": 2026,
+   "bukti": "via-pihak-ketiga",
+   "lisensi": "CC BY-SA 4.0"
+  },
+  "btboc": {
+   "judul": "Bank of China to review funding of dam in orangutan habitat in Sumatra",
+   "penerbit": "Eco-Business",
+   "url": "https://www.eco-business.com/news/bank-of-china-to-review-funding-of-dam-in-orangutan-habitat-in-sumatra/",
+   "tanggal": "2019-03-14",
+   "tahun": 2019,
+   "bukti": "media"
+  },
+  "btjp": {
+   "judul": "Bank of China to evaluate Batang Toru hydropower plant project (14 Mar 2019)",
+   "penerbit": "The Jakarta Post",
+   "url": "https://www.thejakartapost.com/news/2019/03/14/bank-of-china-to-evaluate-batang-toru-hydropower-plant-project",
+   "tanggal": "2019-03-14",
+   "tahun": 2019,
+   "bukti": "media"
+  },
+  "btbhr": {
+   "judul": "Indonesia: environmental and social concerns over Batang Toru hydropower project",
+   "penerbit": "Business and Human Rights Resource Centre",
+   "url": "https://business-humanrights.org/en/latest-news/indonesia-environmental-and-social-concerns-over-batang-toru-hydropower-project/",
+   "tanggal": "2026-11-08",
+   "tahun": 2026,
+   "bukti": "kajian"
+  },
+  "btcgs": {
+   "judul": "A China-backed dam in Indonesia tests the limits of compliance (kredit Eximbank USD 1,251 miliar, perjanjian Maret 2023; saham SDIC Power 2021)",
+   "penerbit": "China Global South Project",
+   "url": "https://chinaglobalsouth.com/analysis/china-indonesia-hydropower-controversy/",
+   "tanggal": "2026-11-08",
+   "tahun": 2026,
+   "bukti": "kajian"
+  },
+  "kybn": {
+   "judul": "Indonesia's Kayan hydropower project forges ahead despite setbacks, director says (14 Jun 2024)",
+   "penerbit": "BenarNews",
+   "url": "https://www.benarnews.org/english/news/indonesian/dam-setbacks-06142024161105.html",
+   "tanggal": "2024-06-14",
+   "tahun": 2024,
+   "bukti": "media"
+  },
+  "kybhr": {
+   "judul": "Indonesia: Kayan Cascade hydropower project advances amid partner exits, environmental and displacement concerns",
+   "penerbit": "Business and Human Rights Resource Centre",
+   "url": "https://business-humanrights.org/en/latest-news/indonesia-kayan-cascade-hydropower-project-advances-amid-partner-exits-environmental-displacement-concerns",
+   "tanggal": "2026-11-08",
+   "tahun": 2026,
+   "bukti": "kajian"
+  },
+  "kyjp": {
+   "judul": "Kayan hydropower project forges ahead despite setbacks, director says (16 Jun 2024)",
+   "penerbit": "The Jakarta Post",
+   "url": "https://www.thejakartapost.com/indonesia/2024/06/16/kayan-hydropower-project-forges-ahead-despite-setbacks-director-says",
+   "tanggal": "2024-06-16",
+   "tahun": 2024,
+   "bukti": "media"
+  },
+  "kymin": {
+   "judul": "Eight-year dam delay hinders Indonesia's move away from coal",
+   "penerbit": "Mining.com",
+   "url": "https://www.mining.com/web/eight-year-dam-delay-hinders-indonesias-move-away-from-coal/",
+   "tanggal": "2026-11-08",
+   "tahun": 2026,
+   "bukti": "media"
+  },
+  "katadata20": {
+   "judul": "Terkendala sumber daya manusia, beberapa pembangkit listrik EBT rusak (sekitar 5 persen dari 719 PLTMH dan PLTS desa)",
+   "penerbit": "Katadata",
+   "url": "https://katadata.co.id/amp/berita/energi/5e9a558d01a63/terkendala-sumber-daya-manusia-beberapa-pembangkit-listrik-ebt-rusak",
+   "tanggal": "2020-04-17",
+   "tahun": 2020,
+   "bukti": "media"
+  },
+  "detikbpk": {
+   "judul": "BPK temukan pembangkit EBT Rp467 M kondisinya rusak (12 Des 2017)",
+   "penerbit": "detikFinance",
+   "url": "https://finance.detik.com/energi/d-3766759/bpk-temukan-pembangkit-ebt-rp-467-m-kondisinya-rusak",
+   "tanggal": "2017-12-12",
+   "tahun": 2017,
+   "bukti": "media"
+  },
+  "meratus": {
+   "judul": "Asa mikro hidro warga Pegunungan Meratus menanti aksi pemerintah (1 Mar 2026)",
+   "penerbit": "Mongabay Indonesia",
+   "url": "https://mongabay.co.id/2026/03/01/asa-mikro-hidro-warga-pegunungan-meratus-menanti-aksi-pemerintah/",
+   "tanggal": "2026-03-01",
+   "tahun": 2026,
+   "bukti": "media"
+  },
+  "mongntb": {
+   "judul": "Menilik kondisi pembangkit energi terbarukan di Nusa Tenggara Barat (19 Apr 2020)",
+   "penerbit": "Mongabay Indonesia",
+   "url": "https://mongabay.co.id/2020/04/19/menilik-kondisi-pembangkit-energi-terbarukan-di-nusa-tenggara-barat/",
+   "tanggal": "2020-04-19",
+   "tahun": 2020,
+   "bukti": "media"
+  },
+  "cmundip": {
+   "judul": "Eksistensi PLTMH Cinta Mekar dalam pemberdayaan masyarakat (Gema Teknologi, Undip)",
+   "penerbit": "Universitas Diponegoro",
+   "url": "https://ejournal.undip.ac.id/index.php/gema_teknologi/article/download/19154/13328",
+   "tanggal": "2026-11-08",
+   "tahun": 2026,
+   "bukti": "kajian"
+  },
+  "cmashden": {
+   "judul": "Ashden Awards, IBEKA: Cinta Mekar grid-connected mikrohidro (dipasang 2005, sekitar USD 180.000)",
+   "penerbit": "Ashden",
+   "url": "https://ashden.org/awards/winners/ibeka/",
+   "tanggal": "2026-11-08",
+   "tahun": 2026,
+   "bukti": "kajian"
+  },
+  "cmwwf": {
+   "judul": "Cinta Mekar adopts community-based microhydro power plant management system",
+   "penerbit": "WWF Indonesia",
+   "url": "https://wwf.id/en/blog/cinta-mekar-adopts-community-based-microhydro-power-plant-management-system",
+   "tanggal": "2026-11-08",
+   "tahun": 2026,
+   "bukti": "media"
+  },
+  "posobis": {
+   "judul": "Kebut bauran EBT, Jokowi resmikan PLTA Poso dan Malea 605 MW (25 Feb 2022)",
+   "penerbit": "Bisnis.com",
+   "url": "https://ekonomi.bisnis.com/read/20220225/44/1504782/kebut-bauran-ebt-jokowi-resmikan-plta-poso-dan-malea-605-mw",
+   "tanggal": "2022-02-25",
+   "tahun": 2022,
+   "bukti": "media"
+  },
+  "posoesdm": {
+   "judul": "Presiden Joko Widodo resmikan PLTA di Kabupaten Poso",
+   "penerbit": "ESDM",
+   "url": "https://esdm.go.id/id/media-center/arsip-berita/presiden-joko-widodo-resmikan-plta-di-kabupaten-poso",
+   "tanggal": "2022-02-25",
+   "tahun": 2022,
+   "bukti": "resmi"
+  },
+  "posopeak": {
+   "judul": "PLN: PLTA Poso jadi pembangkit peaker di Sulawesi (25 Feb 2022)",
+   "penerbit": "Republika",
+   "url": "https://ekonomi.republika.co.id/berita/r7v1qc423/pln-plta-poso-jadi-pembangkit-peaker-di-sulawesi",
+   "tanggal": "2022-02-25",
+   "tahun": 2022,
+   "bukti": "media"
+  },
+  "cirata": {
+   "judul": "Cirata Dam (ringkasan Wikipedia: 1.008 MW)",
+   "penerbit": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Cirata_Dam",
+   "tanggal": "2026-11-08",
+   "tahun": 2026,
+   "bukti": "via-pihak-ketiga",
+   "lisensi": "CC BY-SA 4.0"
+  },
+  "saguling": {
+   "judul": "Saguling Dam (ringkasan Wikipedia: 700 MW)",
+   "penerbit": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Saguling_Dam",
+   "tanggal": "2026-11-08",
+   "tahun": 2026,
+   "bukti": "via-pihak-ketiga",
+   "lisensi": "CC BY-SA 4.0"
+  },
+  "jatiluhur": {
+   "judul": "Jatiluhur Dam (ringkasan Wikipedia: PLTA 186,5 MW)",
+   "penerbit": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Jatiluhur_Dam",
+   "tanggal": "2026-11-08",
+   "tahun": 2026,
+   "bukti": "via-pihak-ketiga",
+   "lisensi": "CC BY-SA 4.0"
+  },
+  "masdar": {
+   "judul": "Masdar: President of Indonesia inaugurates floating solar plant at Cirata (9 Nov 2023)",
+   "penerbit": "Masdar",
+   "url": "https://masdar.ae/en/news/newsroom/president-of-indonesia-inaugurates-floating-solar-plant",
+   "tanggal": "2023-11-09",
+   "tahun": 2023,
+   "bukti": "media"
+  },
+  "itaipu": {
+   "judul": "Itaipu Dam (ringkasan Wikipedia: 14 GW, 103,1 TWh pada 2016, sekitar 10.000 keluarga dipindahkan)",
+   "penerbit": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Itaipu_Dam",
+   "tanggal": "2026-11-08",
+   "tahun": 2026,
+   "bukti": "via-pihak-ketiga",
+   "lisensi": "CC BY-SA 4.0"
+  },
+  "xaya": {
+   "judul": "Xayaburi Dam (ringkasan Wikipedia: 1.285 MW, operasi Okt 2019, 95 persen ke EGAT Thailand)",
+   "penerbit": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Xayaburi_Dam",
+   "tanggal": "2026-11-08",
+   "tahun": 2026,
+   "bukti": "via-pihak-ketiga",
+   "lisensi": "CC BY-SA 4.0"
+  },
+  "tgd": {
+   "judul": "Three Gorges Dam (ringkasan Wikipedia: 22.500 MW, penuh operasi 2012, 1,13 sampai 1,4 juta orang dipindahkan)",
+   "penerbit": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Three_Gorges_Dam",
+   "tanggal": "2026-11-08",
+   "tahun": 2026,
+   "bukti": "via-pihak-ketiga",
+   "lisensi": "CC BY-SA 4.0"
+  },
+  "myit": {
+   "judul": "Myitsone Dam (ringkasan Wikipedia: 6.000 MW direncanakan, ditangguhkan 30 Sep 2011, sekitar 11.800 orang direlokasi)",
+   "penerbit": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Myitsone_Dam",
+   "tanggal": "2026-11-08",
+   "tahun": 2026,
+   "bukti": "via-pihak-ketiga",
+   "lisensi": "CC BY-SA 4.0"
+  }
+ },
+ "bab": {
+  "2": {
+   "tipe": "faq",
+   "sumber": [
+    "ed",
+    "kap",
+    "owid",
+    "proyek"
+   ],
+   "butir": [
+    {
+     "t": {
+      "id": "Berapa kapasitas PLTA Indonesia?",
+      "en": "How much hydropower capacity does Indonesia have?"
+     },
+     "j": {
+      "id": "7587.47 MW pada 2025 menurut IRENA, naik dari 4202.11 MW pada 2000.",
+      "en": "7587.47 MW in 2025 per IRENA, up from 4202.11 MW in 2000."
+     }
+    },
+    {
+     "t": {
+      "id": "Berapa porsi hidro di listrik Indonesia?",
+      "en": "What share of Indonesian electricity is hydro?"
+     },
+     "j": {
+      "id": "7.34 persen pada 2024 menurut Ember; batubara masih 61.48 persen.",
+      "en": "7.34 percent in 2024 per Ember; coal is still 61.48 percent."
+     }
+    },
+    {
+     "t": {
+      "id": "Apa beda PLTA, PLTM, dan PLTMH?",
+      "en": "What is the difference between PLTA, PLTM and PLTMH?"
+     },
+     "j": {
+      "id": "Pembagian umum menurut ukuran: PLTMH (mikrohidro) kecil, biasanya di bawah 1 MW untuk desa; PLTM (minihidro) sekitar 1 sampai 10 MW; PLTA di atas itu. Batas pastinya berbeda antar peraturan.",
+      "en": "A common split by size: PLTMH (micro-hydro) small, usually below 1 MW for villages; PLTM (mini-hydro) about 1 to 10 MW; PLTA above that. Exact thresholds differ between regulations."
+     }
+    },
+    {
+     "t": {
+      "id": "Apa itu pumped storage?",
+      "en": "What is pumped storage?"
+     },
+     "j": {
+      "id": "PLTA pompa memindahkan air ke waduk atas saat listrik murah, lalu mengalirkannya turun untuk membangkitkan listrik saat beban puncak. Ia berfungsi seperti baterai raksasa. Contoh Indonesia: Upper Cisokan 1.040 MW.",
+      "en": "Pumped storage lifts water to an upper reservoir when power is cheap and releases it to generate at peak. It works like a giant battery. Indonesian example: Upper Cisokan, 1,040 MW."
+     }
+    },
+    {
+     "t": {
+      "id": "Berapa proyek hidro di basis METI?",
+      "en": "How many hydro projects are in the METI database?"
+     },
+     "j": {
+      "id": "182 proyek dengan total 23934 MW (rencana, konstruksi, dan beroperasi); 37 berstatus beroperasi.",
+      "en": "182 projects totalling 23934 MW (planned, under construction and operating); 37 are operating."
+     }
+    },
+    {
+     "t": {
+      "id": "Siapa membeli listrik PLTA swasta?",
+      "en": "Who buys power from private hydro?"
+     },
+     "j": {
+      "id": "Umumnya PLN lewat perjanjian jual beli tenaga listrik (PJBL). Poso Energy, misalnya, menandatangani PJBL ekspansi pada 2017 dan berfungsi sebagai pembangkit peaker.",
+      "en": "Usually PLN through a power purchase agreement (PPA). Poso Energy, for example, signed an expansion PPA in 2017 and serves as a peaker plant."
+     }
+    },
+    {
+     "t": {
+      "id": "Kenapa Batang Toru kontroversial?",
+      "en": "Why is Batang Toru controversial?"
+     },
+     "j": {
+      "id": "Lokasinya di habitat orangutan Tapanuli dan sejumlah bank meninjau ulang pendanaan. Lihat bab 40.",
+      "en": "It sits in Tapanuli orangutan habitat and several banks reviewed funding. See chapter 40."
+     }
+    },
+    {
+     "t": {
+      "id": "Kenapa banyak PLTMH desa mati?",
+      "en": "Why do many village micro-hydros die?"
+     },
+     "j": {
+      "id": "Sumber menyebut kurangnya pemeliharaan, pengelola yang tidak siap, dan dana desa yang tidak cukup untuk perbaikan. Lihat bab 40.",
+      "en": "Sources cite lack of maintenance, unprepared operators and village funds too small for repairs. See chapter 40."
+     }
+    }
+   ]
+  },
+  "3": {
+   "tipe": "glosarium",
+   "sumber": [
+    "ed"
+   ],
+   "butir": [
+    {
+     "istilah": {
+      "id": "PLTA",
+      "en": "PLTA"
+     },
+     "arti": {
+      "id": "Pembangkit Listrik Tenaga Air.",
+      "en": "Hydropower plant."
+     }
+    },
+    {
+     "istilah": {
+      "id": "PLTM / PLTMH",
+      "en": "PLTM / PLTMH"
+     },
+     "arti": {
+      "id": "Pembangkit listrik minihidro / mikrohidro.",
+      "en": "Mini-hydro / micro-hydro power plant."
+     }
+    },
+    {
+     "istilah": {
+      "id": "Head",
+      "en": "Head"
+     },
+     "arti": {
+      "id": "Tinggi jatuh air dari muka air atas ke turbin (meter).",
+      "en": "Height water falls from upper level to the turbine (metres)."
+     }
+    },
+    {
+     "istilah": {
+      "id": "Debit",
+      "en": "Debit"
+     },
+     "arti": {
+      "id": "Volume air per detik yang melewati turbin (meter kubik per detik).",
+      "en": "Water volume per second through the turbine (cubic metres per second)."
+     }
+    },
+    {
+     "istilah": {
+      "id": "Run-of-river",
+      "en": "Run-of-river"
+     },
+     "arti": {
+      "id": "PLTA aliran sungai tanpa waduk besar; produksi mengikuti debit musiman.",
+      "en": "River-flow plant without a large reservoir; output follows seasonal flow."
+     }
+    },
+    {
+     "istilah": {
+      "id": "Waduk",
+      "en": "Waduk"
+     },
+     "arti": {
+      "id": "Tampungan air di belakang bendungan yang menyimpan energi dan meratakan debit.",
+      "en": "Reservoir behind a dam that stores energy and smooths flow."
+     }
+    },
+    {
+     "istilah": {
+      "id": "Pumped storage",
+      "en": "Pumped storage"
+     },
+     "arti": {
+      "id": "PLTA pompa: memompa air ke atas saat listrik murah dan membangkitkan saat puncak.",
+      "en": "Pumped hydro: pumps water uphill when power is cheap and generates at peak."
+     }
+    },
+    {
+     "istilah": {
+      "id": "Peaker",
+      "en": "Peaker"
+     },
+     "arti": {
+      "id": "Pembangkit yang dijalankan untuk beban puncak.",
+      "en": "Plant dispatched for peak load."
+     }
+    },
+    {
+     "istilah": {
+      "id": "Faktor kapasitas",
+      "en": "Faktor kapasitas"
+     },
+     "arti": {
+      "id": "Produksi aktual dibagi produksi bila beroperasi penuh sepanjang tahun.",
+      "en": "Actual output divided by output at full power all year."
+     }
+    },
+    {
+     "istilah": {
+      "id": "PJBL / PPA",
+      "en": "PJBL / PPA"
+     },
+     "arti": {
+      "id": "Perjanjian jual beli tenaga listrik.",
+      "en": "Power purchase agreement."
+     }
+    },
+    {
+     "istilah": {
+      "id": "AMDAL",
+      "en": "AMDAL"
+     },
+     "arti": {
+      "id": "Analisis mengenai dampak lingkungan.",
+      "en": "Environmental impact assessment."
+     }
+    },
+    {
+     "istilah": {
+      "id": "ESMP",
+      "en": "ESMP"
+     },
+     "arti": {
+      "id": "Rencana pengelolaan lingkungan dan sosial yang disyaratkan pemberi pinjaman.",
+      "en": "Environmental and social management plan required by lenders."
+     }
+    },
+    {
+     "istilah": {
+      "id": "FPIC",
+      "en": "FPIC"
+     },
+     "arti": {
+      "id": "Persetujuan atas dasar informasi di awal tanpa paksaan dari masyarakat terdampak.",
+      "en": "Free, prior and informed consent of affected communities."
+     }
+    },
+    {
+     "istilah": {
+      "id": "SLO",
+      "en": "SLO"
+     },
+     "arti": {
+      "id": "Sertifikat Laik Operasi pembangkit.",
+      "en": "Plant operation worthiness certificate."
+     }
+    },
+    {
+     "istilah": {
+      "id": "DAS",
+      "en": "DAS"
+     },
+     "arti": {
+      "id": "Daerah aliran sungai.",
+      "en": "River basin."
+     }
+    },
+    {
+     "istilah": {
+      "id": "DAK-IET",
+      "en": "DAK-IET"
+     },
+     "arti": {
+      "id": "Dana Alokasi Khusus bidang infrastruktur energi terbarukan.",
+      "en": "Special allocation fund for renewable energy infrastructure."
+     }
+    }
+   ]
+  },
+  "4": {
+   "tipe": "teks",
+   "sumber": [
+    "kap",
+    "owid",
+    "rricis"
+   ],
+   "paragraf": [
+    {
+     "id": "PLTA mengubah energi potensial air yang jatuh menjadi listrik lewat turbin dan generator. Ia merupakan sumber terbarukan terbesar Indonesia: 7,34 persen listrik 2024 menurut Ember, di depan surya dan bayu.",
+     "en": "Hydropower turns the potential energy of falling water into electricity through turbines and generators. It is Indonesia's largest renewable source: 7.34 percent of 2024 electricity per Ember, ahead of solar and wind."
+    },
+    {
+     "id": "Nilai khasnya adalah fleksibilitas: PLTA berwaduk dapat dinyalakan dalam menit untuk beban puncak, dan PLTA pompa menyimpan energi. PLN menggambarkan Upper Cisokan sebagai penjaga kestabilan pasokan di tengah naiknya surya dan bayu.",
+     "en": "Its distinct value is flexibility: reservoir plants can start within minutes for peak load and pumped storage stores energy. PLN describes Upper Cisokan as protecting supply stability as solar and wind grow."
+    },
+    {
+     "id": "Biayanya tertanam di depan (sipil, bendungan, relokasi) dan risikonya geologi, hidrologi, dan sosial. Karena itu cerita sukses dan gagal hidro sering ditentukan jauh sebelum turbin dipasang.",
+     "en": "Costs are front-loaded (civil works, dam, resettlement) and risks are geological, hydrological and social. Success and failure are often decided long before turbines are installed."
+    }
+   ]
+  },
+  "5": {
+   "tipe": "rumus",
+   "sumber": [
+    "ed",
+    "lcoe"
+   ],
+   "rumus": [
+    {
+     "id": "Daya (W) = efisiensi x massa jenis air (1000 kg/m3) x percepatan gravitasi (9,81 m/s2) x debit Q (m3/s) x head H (m)",
+     "en": "Power (W) = efficiency x water density (1000 kg/m3) x gravity (9.81 m/s2) x flow Q (m3/s) x head H (m)"
+    },
+    {
+     "id": "Energi tahunan (kWh) = daya (kW) x 8.760 jam x faktor kapasitas",
+     "en": "Annual energy (kWh) = power (kW) x 8,760 hours x capacity factor"
+    }
+   ],
+   "contoh": [
+    {
+     "id": "PLTA contoh: head 100 m, debit 10 m3/s, efisiensi 85 persen menghasilkan sekitar 8.34 MW. Dengan faktor kapasitas 50 persen, energi tahunan sekitar 36.5 GWh (EST, angka ilustrasi hitung sendiri).",
+     "en": "Example plant: 100 m head, 10 m3/s flow, 85 percent efficiency gives about 8.34 MW. At a 50 percent capacity factor, annual energy is about 36.5 GWh (EST, illustrative own calculation)."
+    },
+    {
+     "id": "PLTMH desa: head 20 m, debit 0,4 m3/s, efisiensi 60 persen menghasilkan sekitar 47 kW (EST, angka ilustrasi).",
+     "en": "Village micro-hydro: 20 m head, 0.4 m3/s flow, 60 percent efficiency gives about 47 kW (EST, illustrative)."
+    },
+    {
+     "id": "Analisis METI (Hipotesis): debit sungai musiman paling sering menjadi sumber kesalahan studi kelayakan; data debit multitahun lebih penting daripada head.",
+     "en": "METI analysis (Hypothesis): seasonal river flow is the most common source of feasibility errors; multi-year flow records matter more than head."
+    }
+   ]
+  },
+  "6": {
+   "tipe": "langkah",
+   "sumber": [
+    "ed",
+    "aiib",
+    "posoesdm"
+   ],
+   "butir": [
+    {
+     "judul": {
+      "id": "Data hidrologi dan studi awal",
+      "en": "Hydrology data and pre-study"
+     },
+     "isi": {
+      "id": "Pengukuran debit multitahun, pemetaan topografi, dan penilaian geologi menentukan lokasi bendung dan terowongan.",
+      "en": "Multi-year flow records, topographic mapping and geological assessment fix the weir and tunnel sites."
+     },
+     "pelaku": {
+      "id": "Pengembang, konsultan, BBWS/BWS",
+      "en": "Developer, consultants, river basin authority"
+     }
+    },
+    {
+     "judul": {
+      "id": "Izin lingkungan dan sosial",
+      "en": "Environmental and social permits"
+     },
+     "isi": {
+      "id": "AMDAL, pembebasan lahan, dan rencana relokasi; pemberi pinjaman internasional mensyaratkan ESMP yang dapat menjadi jalur kritis jadwal.",
+      "en": "EIA, land acquisition and resettlement plans; international lenders require an ESMP that can become the schedule critical path."
+     },
+     "pelaku": {
+      "id": "Pengembang, pemda, KLH",
+      "en": "Developer, local government, environment ministry"
+     }
+    },
+    {
+     "judul": {
+      "id": "PJBL dan pembiayaan",
+      "en": "PPA and financing"
+     },
+     "isi": {
+      "id": "PLN sebagai pembeli utama; pinjaman proyek dari bank pembangunan atau komersial.",
+      "en": "PLN as main buyer; project loans from development or commercial banks."
+     },
+     "pelaku": {
+      "id": "PLN, pendana",
+      "en": "PLN, lenders"
+     }
+    },
+    {
+     "judul": {
+      "id": "Konstruksi sipil dan elektromekanik",
+      "en": "Civil and electromechanical construction"
+     },
+     "isi": {
+      "id": "Bendungan, terowongan, rumah pembangkit, turbin, generator; sering bertahun-tahun dengan risiko geologi.",
+      "en": "Dam, tunnels, powerhouse, turbines, generators; often years with geological risk."
+     },
+     "pelaku": {
+      "id": "Kontraktor EPC",
+      "en": "EPC contractor"
+     }
+    },
+    {
+     "judul": {
+      "id": "Uji, SLO, dan COD",
+      "en": "Testing, SLO and COD"
+     },
+     "isi": {
+      "id": "Uji pembebanan, reliability run, SLO, lalu operasi komersial (contoh Jatigede: sinkronisasi 11 Mei 2024, SLO Juni 2024).",
+      "en": "Load tests, reliability run, SLO, then commercial operation (Jatigede example: first sync 11 May 2024, SLO June 2024)."
+     },
+     "pelaku": {
+      "id": "Pengembang/PLN",
+      "en": "Developer/PLN"
+     }
+    },
+    {
+     "judul": {
+      "id": "Operasi, pemeliharaan, dan DAS",
+      "en": "Operation, maintenance and basin management"
+     },
+     "isi": {
+      "id": "Pengelola terlatih, anggaran O&M, dan pengelolaan sedimen serta daerah tangkapan air.",
+      "en": "Trained operator, O&M budget, and sediment and catchment management."
+     },
+     "pelaku": {
+      "id": "Operator, pemda, komunitas",
+      "en": "Operator, local government, community"
+     }
+    }
+   ]
+  },
+  "7": {
+   "tipe": "grafik",
+   "jenis": "kolom",
+   "sumber": [
+    "kap"
+   ],
+   "label": {
+    "id": "Kapasitas PLTA terpasang Indonesia",
+    "en": "Indonesia installed hydropower capacity"
+   },
+   "satuan": "MW",
+   "d": 0,
+   "seri": [
+    {
+     "nama": {
+      "id": "Kapasitas (MW)",
+      "en": "Capacity (MW)"
+     },
+     "sorot": true,
+     "titik": [
+      [
+       "2010",
+       3741.61
+      ],
+      [
+       "2011",
+       3953.73
+      ],
+      [
+       "2012",
+       4156.52
+      ],
+      [
+       "2013",
+       5177.68
+      ],
+      [
+       "2014",
+       5242.7
+      ],
+      [
+       "2015",
+       5322.46
+      ],
+      [
+       "2016",
+       5666.3
+      ],
+      [
+       "2017",
+       5703.34
+      ],
+      [
+       "2018",
+       5772.15
+      ],
+      [
+       "2019",
+       5976.03
+      ],
+      [
+       "2020",
+       6120.88
+      ],
+      [
+       "2021",
+       6601.75
+      ],
+      [
+       "2022",
+       6689.02
+      ],
+      [
+       "2023",
+       6569.64
+      ],
+      [
+       "2024",
+       7052.47
+      ],
+      [
+       "2025",
+       7587.47
+      ]
+     ]
+    }
+   ]
+  },
+  "8": {
+   "tipe": "tabel",
+   "per": 10,
+   "sumber": [
+    "proyek"
+   ],
+   "catatan": {
+    "id": "Titik dan agregat per provinsi dari basis proyek METI (rencana, konstruksi, operasi); bukan lokasi bendungan tepat.",
+    "en": "Province aggregates from the METI project base (planned, construction, operating); not exact dam locations."
+   },
+   "kolom": [
+    {
+     "k": "prov",
+     "l": {
+      "id": "Provinsi",
+      "en": "Province"
+     }
+    },
+    {
+     "k": "n",
+     "l": {
+      "id": "Jumlah proyek",
+      "en": "Projects"
+     },
+     "num": true,
+     "d": 0
+    },
+    {
+     "k": "mw",
+     "l": {
+      "id": "Kapasitas (MW)",
+      "en": "Capacity (MW)"
+     },
+     "num": true,
+     "d": 0
+    },
+    {
+     "k": "op",
+     "l": {
+      "id": "Beroperasi",
+      "en": "Operating"
+     },
+     "num": true,
+     "d": 0
+    }
+   ],
+   "baris": [
+    {
+     "prov": "Kalimantan Utara",
+     "n": 7,
+     "mw": 10376,
+     "op": 0
+    },
+    {
+     "prov": "Jawa Barat",
+     "n": 18,
+     "mw": 2883,
+     "op": 4
+    },
+    {
+     "prov": "Sumatera Utara",
+     "n": 21,
+     "mw": 2087,
+     "op": 8
+    },
+    {
+     "prov": "Sulawesi Selatan",
+     "n": 13,
+     "mw": 1869,
+     "op": 4
+    },
+    {
+     "prov": "Sulawesi Tengah",
+     "n": 13,
+     "mw": 1222,
+     "op": 3
+    },
+    {
+     "prov": "Sulawesi Tenggara",
+     "n": 6,
+     "mw": 655,
+     "op": 0
+    },
+    {
+     "prov": "Jambi",
+     "n": 3,
+     "mw": 637,
+     "op": 0
+    },
+    {
+     "prov": "Bengkulu",
+     "n": 6,
+     "mw": 469,
+     "op": 1
+    },
+    {
+     "prov": "Jawa Timur",
+     "n": 10,
+     "mw": 462,
+     "op": 3
+    },
+    {
+     "prov": "Aceh",
+     "n": 3,
+     "mw": 453,
+     "op": 0
+    },
+    {
+     "prov": "Jawa Tengah",
+     "n": 9,
+     "mw": 410,
+     "op": 1
+    },
+    {
+     "prov": "Sumatera Barat",
+     "n": 8,
+     "mw": 314,
+     "op": 2
+    },
+    {
+     "prov": "Kalimantan Timur",
+     "n": 4,
+     "mw": 226,
+     "op": 0
+    },
+    {
+     "prov": "Sulawesi Barat",
+     "n": 2,
+     "mw": 194,
+     "op": 0
+    },
+    {
+     "prov": "Lampung",
+     "n": 4,
+     "mw": 177,
+     "op": 2
+    },
+    {
+     "prov": "Riau",
+     "n": 1,
+     "mw": 114,
+     "op": 1
+    },
+    {
+     "prov": "Kalimantan Barat",
+     "n": 3,
+     "mw": 112,
+     "op": 0
+    },
+    {
+     "prov": "Sumatera Selatan",
+     "n": 2,
+     "mw": 98,
+     "op": 0
+    },
+    {
+     "prov": "Sulawesi Utara",
+     "n": 3,
+     "mw": 80,
+     "op": 1
+    },
+    {
+     "prov": "Maluku",
+     "n": 4,
+     "mw": 76,
+     "op": 0
+    },
+    {
+     "prov": "Kalimantan Selatan",
+     "n": 1,
+     "mw": 30,
+     "op": 1
+    },
+    {
+     "prov": "Banten",
+     "n": 6,
+     "mw": 26,
+     "op": 0
+    },
+    {
+     "prov": "Gorontalo",
+     "n": 2,
+     "mw": 12,
+     "op": 0
+    },
+    {
+     "prov": "Nusa Tenggara Timur",
+     "n": 3,
+     "mw": 7,
+     "op": 0
+    },
+    {
+     "prov": "Nusa Tenggara Barat",
+     "n": 3,
+     "mw": 4,
+     "op": 0
+    },
+    {
+     "prov": "Bali",
+     "n": 1,
+     "mw": 1,
+     "op": 0
+    }
+   ]
+  },
+  "11": {
+   "tipe": "teks",
+   "sumber": [
+    "posobis",
+    "posopeak",
+    "ruptl",
+    "kap"
+   ],
+   "paragraf": [
+    {
+     "id": "Pasar hidro Indonesia adalah pasar pembeli tunggal: PLN membeli dari pembangkitnya sendiri dan dari IPP. Contoh IPP besar adalah Poso Energy (515 MW) dan Malea Energy (90 MW), diresmikan bersama pada 25 Februari 2022.",
+     "en": "The Indonesian hydro market is single-buyer: PLN buys from its own plants and from IPPs. Large IPP examples are Poso Energy (515 MW) and Malea Energy (90 MW), inaugurated together on 25 February 2022."
+    },
+    {
+     "id": "RUPTL 2025-2034 memuat 112 proyek hidro bernama (3972.83 MW) dan 50 proyek penyimpanan (6641.234 MW), termasuk PLTA pompa; tahun COD memakai skenario RE Base.",
+     "en": "The 2025-2034 RUPTL lists 112 named hydro projects (3972.83 MW) and 50 storage projects (6641.234 MW), including pumped storage; COD years follow the RE Base scenario."
+    }
+   ]
+  },
+  "12": {
+   "tipe": "tabel",
+   "per": 8,
+   "sumber": [
+    "regul",
+    "perpres112",
+    "dak"
+   ],
+   "kolom": [
+    {
+     "k": "dok",
+     "l": {
+      "id": "Peraturan",
+      "en": "Regulation"
+     },
+     "url": "u"
+    },
+    {
+     "k": "ttg",
+     "l": {
+      "id": "Tentang",
+      "en": "About"
+     }
+    },
+    {
+     "k": "st",
+     "l": {
+      "id": "Status",
+      "en": "Status"
+     }
+    }
+   ],
+   "baris": [
+    {
+     "dok": "Perpres 112/2022",
+     "ttg": {
+      "id": "Percepatan pengembangan energi terbarukan untuk penyediaan tenaga listrik, memuat harga patokan dan pembelian oleh PLN",
+      "en": "Accelerating renewable power, with benchmark prices and PLN purchase"
+     },
+     "st": "berlaku",
+     "u": "https://peraturan.bpk.go.id/Details/225308"
+    },
+    {
+     "dok": "Permen ESDM 19/2015",
+     "ttg": {
+      "id": "Pembelian tenaga listrik dari PLTA kapasitas kecil (dicabut)",
+      "en": "Power purchase from small hydro (revoked)"
+     },
+     "st": "dicabut",
+     "u": "https://peraturan.bpk.go.id/Details/142563"
+    },
+    {
+     "dok": "Permen ESDM 12/2014",
+     "ttg": {
+      "id": "Pembelian tenaga listrik dari PLTA oleh PLN (dicabut)",
+      "en": "Purchase of hydro power by PLN (revoked)"
+     },
+     "st": "dicabut",
+     "u": "https://peraturan.bpk.go.id/Details/142564"
+    },
+    {
+     "dok": "Perda 16/2019",
+     "ttg": {
+      "id": "Tata kelola PLTMH berbasis masyarakat",
+      "en": "Community-based micro-hydro governance"
+     },
+     "st": "berlaku",
+     "u": "https://peraturan.bpk.go.id/Details/120470"
+    },
+    {
+     "dok": "Permen PUPR 09/PRT/M/2017",
+     "ttg": {
+      "id": "Pemilihan badan usaha mitra pemanfaatan BMN untuk infrastruktur",
+      "en": "Selecting business partners for use of state property in infrastructure"
+     },
+     "st": "berlaku",
+     "u": "https://peraturan.bpk.go.id/Details/159770"
+    },
+    {
+     "dok": "Permen PUPR 09/PRT/M/2016",
+     "ttg": {
+      "id": "Kerja sama pemerintah dan badan usaha dalam infrastruktur sumber daya air",
+      "en": "Government-business cooperation in water resources infrastructure"
+     },
+     "st": "berlaku",
+     "u": "https://peraturan.bpk.go.id/Details/104458"
+    },
+    {
+     "dok": "DAK-IET",
+     "ttg": {
+      "id": "Dana Alokasi Khusus bidang infrastruktur energi terbarukan untuk daerah",
+      "en": "Special allocation fund for local renewable energy infrastructure"
+     },
+     "st": "tahunan",
+     "u": "https://djpk.kemenkeu.go.id/wp-content/uploads/2024/04/Bidang-Infrastruktur-Energi-Terbarukan-IET.pdf"
+    }
+   ]
+  },
+  "13": {
+   "tipe": "linimasa",
+   "sumber": [
+    "posobis",
+    "jgwiki",
+    "btboc",
+    "btcgs",
+    "jgsync",
+    "kybn",
+    "petro",
+    "perpres112"
+   ],
+   "butir": [
+    {
+     "tanggal": "2012-12-01",
+     "judul": {
+      "id": "PLTA Poso tahap 1 (3 x 65 MW) beroperasi",
+      "en": "Poso hydro phase 1 (3 x 65 MW) in operation"
+     },
+     "url": "https://ekonomi.bisnis.com/read/20220225/44/1504782/kebut-bauran-ebt-jokowi-resmikan-plta-poso-dan-malea-605-mw"
+    },
+    {
+     "tanggal": "2015-08-31",
+     "judul": {
+      "id": "Waduk Jatigede mulai diisi",
+      "en": "Jatigede reservoir impoundment begins"
+     },
+     "url": "https://en.wikipedia.org/wiki/Jatigede_Dam"
+    },
+    {
+     "tanggal": "2019-03-14",
+     "judul": {
+      "id": "Bank of China meninjau pendanaan Batang Toru",
+      "en": "Bank of China reviews Batang Toru funding"
+     },
+     "url": "https://www.eco-business.com/news/bank-of-china-to-review-funding-of-dam-in-orangutan-habitat-in-sumatra/"
+    },
+    {
+     "tanggal": "2022-02-25",
+     "judul": {
+      "id": "PLTA Poso dan Malea (605 MW) diresmikan",
+      "en": "Poso and Malea hydro (605 MW) inaugurated"
+     },
+     "url": "https://ekonomi.bisnis.com/read/20220225/44/1504782/kebut-bauran-ebt-jokowi-resmikan-plta-poso-dan-malea-605-mw"
+    },
+    {
+     "tanggal": "2022-09-13",
+     "judul": {
+      "id": "Perpres 112/2022 ditetapkan",
+      "en": "Presidential Regulation 112/2022 issued"
+     },
+     "url": "https://peraturan.bpk.go.id/Details/225308"
+    },
+    {
+     "tanggal": "2023-03-01",
+     "judul": {
+      "id": "Perjanjian kredit sindikasi Eximbank untuk Batang Toru (USD 1,251 miliar)",
+      "en": "Eximbank syndicated loan agreement for Batang Toru (USD 1.251 billion)"
+     },
+     "url": "https://chinaglobalsouth.com/analysis/china-indonesia-hydropower-controversy/"
+    },
+    {
+     "tanggal": "2024-05-11",
+     "judul": {
+      "id": "Sinkronisasi pertama PLTA Jatigede 2 x 55 MW",
+      "en": "First synchronisation of Jatigede 2 x 55 MW"
+     },
+     "url": "https://ekonomi.bisnis.com/read/20240516/44/1766113/pln-berhasil-tuntaskan-proyek-pembangunan-plta-jatigede-2"
+    },
+    {
+     "tanggal": "2024-06-14",
+     "judul": {
+      "id": "Kayan Hydro Energy: mitra mundur, pembangunan berlanjut",
+      "en": "Kayan Hydro Energy: partners exit, construction continues"
+     },
+     "url": "https://www.benarnews.org/english/news/indonesian/dam-setbacks-06142024161105.html"
+    },
+    {
+     "tanggal": "2030-01-01",
+     "judul": {
+      "id": "Target COD Upper Cisokan menurut laporan 2026 (tahun saja)",
+      "en": "Upper Cisokan COD target per 2026 report (year only)"
+     },
+     "url": "https://www.petromindo.com/news/article/plne-reports-progress-on-1-040-mw-upper-cisokan-pumped-storage-project"
+    }
+   ]
+  },
+  "14": {
+   "tipe": "teks",
+   "sumber": [
+    "perpres112",
+    "dak",
+    "posopeak",
+    "ed"
+   ],
+   "paragraf": [
+    {
+     "id": "Kewajiban dan insentif hidro terutama datang dari tiga pintu: harga patokan dan pembelian oleh PLN (Perpres 112/2022), dana daerah untuk PLTMH (DAK Infrastruktur Energi Terbarukan), dan kewajiban lingkungan dan sosial (AMDAL, ESMP pemberi pinjaman). Besaran tarif per jenis PLTA perlu dibaca langsung di lampiran Perpres; belum dikutip di sini.",
+     "en": "Obligations and incentives for hydro come mainly through three doors: benchmark prices and PLN purchase (Presidential Regulation 112/2022), regional funds for micro-hydro (renewable energy infrastructure DAK), and environmental and social duties (EIA, lender ESMP). Tariff levels by plant type must be read in the regulation annex and are not quoted here."
+    },
+    {
+     "id": "Analisis METI (Hipotesis): status peaker seperti Poso menunjukkan nilai kapasitas dan fleksibilitas dapat dinegosiasikan, bukan hanya harga per kWh.",
+     "en": "METI analysis (Hypothesis): peaker status as at Poso shows capacity and flexibility value can be negotiated, not only a per-kWh price."
+    }
+   ]
+  },
+  "15": {
+   "tipe": "langkah",
+   "sumber": [
+    "ed",
+    "aiib",
+    "jgslo"
+   ],
+   "catatan": {
+    "id": "Ringkasan alur umum; durasi dan biaya belum bersumber sehingga sengaja tidak dicantumkan.",
+    "en": "General flow summary; durations and costs are not sourced and are deliberately omitted."
+   },
+   "butir": [
+    {
+     "judul": {
+      "id": "Studi awal dan pemilihan lokasi",
+      "en": "Pre-study and site selection"
+     },
+     "isi": {
+      "id": "Cek debit, head, kawasan hutan, lahan adat, dan jarak ke jaringan.",
+      "en": "Check flow, head, forest estate, customary land and grid distance."
+     },
+     "pelaku": {
+      "id": "Pengembang",
+      "en": "Developer"
+     }
+    },
+    {
+     "judul": {
+      "id": "Perizinan berusaha dan lingkungan",
+      "en": "Business and environmental permits"
+     },
+     "isi": {
+      "id": "Izin lewat sistem perizinan terintegrasi, persetujuan lingkungan, dan izin penggunaan sumber daya air.",
+      "en": "Permits through the integrated licensing system, environmental approval and water-use permit."
+     },
+     "pelaku": {
+      "id": "Pengembang, pemerintah pusat/daerah",
+      "en": "Developer, central/local government"
+     }
+    },
+    {
+     "judul": {
+      "id": "Negosiasi PJBL",
+      "en": "PPA negotiation"
+     },
+     "isi": {
+      "id": "Harga, kapasitas, dan peran (baseload atau peaker) dengan PLN.",
+      "en": "Price, capacity and role (baseload or peaker) with PLN."
+     },
+     "pelaku": {
+      "id": "Pengembang, PLN",
+      "en": "Developer, PLN"
+     }
+    },
+    {
+     "judul": {
+      "id": "Financial close dan konstruksi",
+      "en": "Financial close and construction"
+     },
+     "isi": {
+      "id": "Pemenuhan syarat pemberi pinjaman, termasuk ESMP dan jalan akses.",
+      "en": "Meeting lender conditions, including ESMP and access roads."
+     },
+     "pelaku": {
+      "id": "Pengembang, pendana",
+      "en": "Developer, lenders"
+     }
+    },
+    {
+     "judul": {
+      "id": "SLO dan COD",
+      "en": "SLO and COD"
+     },
+     "isi": {
+      "id": "Sertifikat laik operasi sebelum operasi komersial.",
+      "en": "Operation worthiness certificate before commercial operation."
+     },
+     "pelaku": {
+      "id": "Pengembang, lembaga inspeksi",
+      "en": "Developer, inspection body"
+     }
+    }
+   ]
+  },
+  "16": {
+   "tipe": "teks",
+   "sumber": [
+    "ruuebet"
+   ],
+   "paragraf": [
+    {
+     "id": "RUU Energi Baru dan Energi Terbarukan (RUU EBET) berada pada tahap pembahasan menurut arsip METI per 8 September 2026 (audiensi 22 substansi pokok dengan Komisi XII DPR RI). Tahap ini belum dicek ke situs DPR karena situs tersebut melarang perayap.",
+     "en": "The New and Renewable Energy Bill (RUU EBET) is in the deliberation stage per METI archive as of 8 September 2026 (hearing on 22 core substances with House Commission XII). The stage has not been checked against the DPR site, which blocks crawlers."
+    },
+    {
+     "id": "Forum Konsultasi platform ini memuat RUU tersebut; posisi METI untuk hidro (khususnya PLTA pompa dan tata kelola PLTMH komunitas) bisa diajukan lewat sana.",
+     "en": "The platform Consultation forum carries this bill; METI positions on hydro (especially pumped storage and community micro-hydro governance) can be submitted there."
+    }
+   ]
+  },
+  "17": {
+   "tipe": "teks",
+   "sumber": [
+    "iea74",
+    "seawater",
+    "masdar"
+   ],
+   "paragraf": [
+    {
+     "id": "Penyimpanan hidro tumbuh paling cepat: IEA memperkirakan tambahan sekitar 74 GW kapasitas PLTA pompa dunia (ringkasan berita 6 November 2026).",
+     "en": "Pumped storage grows fastest: the IEA forecasts about 74 GW of added global pumped-storage capacity (news summary, 6 November 2026)."
+    },
+    {
+     "id": "Di Indonesia, PLN dilaporkan mengkaji PLTA pompa air laut 1 GW (Puger) sementara BESS makin bersaing; per Agustus 2026 lokasi itu belum masuk RUPTL 2025-2034.",
+     "en": "In Indonesia PLN is reported to study a 1 GW seawater pumped-storage plant (Puger) while BESS competition rises; as of August 2026 it is not in the 2025-2034 RUPTL."
+    },
+    {
+     "id": "Hibrida hidro-surya terapung juga berkembang: PLTS terapung Cirata (Masdar, diresmikan 9 November 2023) memanfaatkan waduk dan transmisi PLTA yang sudah ada.",
+     "en": "Hydro-floating solar hybrids are also growing: the Cirata floating solar plant (Masdar, inaugurated 9 November 2023) reuses an existing reservoir and hydro transmission."
+    }
+   ]
+  },
+  "19": {
+   "tipe": "grafik",
+   "jenis": "garis",
+   "sumber": [
+    "lcoe"
+   ],
+   "label": {
+    "id": "LCOE hidro rata-rata global (sen USD 2025 per kWh)",
+    "en": "Global average hydro LCOE (US cents 2025 per kWh)"
+   },
+   "satuan": "sen/kWh",
+   "d": 2,
+   "seri": [
+    {
+     "nama": {
+      "id": "Hidro, dunia",
+      "en": "Hydro, world"
+     },
+     "sorot": true,
+     "titik": [
+      [
+       "2010",
+       4.37
+      ],
+      [
+       "2011",
+       4.13
+      ],
+      [
+       "2012",
+       4.14
+      ],
+      [
+       "2013",
+       4.7
+      ],
+      [
+       "2014",
+       3.73
+      ],
+      [
+       "2015",
+       4.14
+      ],
+      [
+       "2016",
+       5.44
+      ],
+      [
+       "2017",
+       5.61
+      ],
+      [
+       "2018",
+       4.63
+      ],
+      [
+       "2019",
+       4.8
+      ],
+      [
+       "2020",
+       5.15
+      ],
+      [
+       "2021",
+       5.65
+      ],
+      [
+       "2022",
+       6.78
+      ],
+      [
+       "2023",
+       5.79
+      ],
+      [
+       "2024",
+       5.65
+      ],
+      [
+       "2025",
+       6.17
+      ]
+     ]
+    }
+   ],
+   "catatan": {
+    "id": "Berbeda dengan surya, biaya hidro tidak turun mengikuti kurva belajar; hidro adalah teknologi matang dengan biaya spesifik lokasi.",
+    "en": "Unlike solar, hydro cost has not fallen along a learning curve; hydro is mature and site-specific."
+   }
+  },
+  "20": {
+   "tipe": "tabel",
+   "per": 10,
+   "sumber": [
+    "owid"
+   ],
+   "catatan": {
+    "id": "Porsi hidro dalam pembangkitan listrik 2024 (Ember via Our World in Data).",
+    "en": "Hydro share of 2024 electricity generation (Ember via Our World in Data)."
+   },
+   "kolom": [
+    {
+     "k": "n",
+     "l": {
+      "id": "Negara",
+      "en": "Country"
+     }
+    },
+    {
+     "k": "v",
+     "l": {
+      "id": "Porsi hidro (persen)",
+      "en": "Hydro share (percent)"
+     },
+     "num": true,
+     "d": 2
+    },
+    {
+     "k": "ebt",
+     "l": {
+      "id": "Total EBT (persen)",
+      "en": "Total renewables (percent)"
+     },
+     "num": true,
+     "d": 1
+    },
+    {
+     "k": "ci",
+     "l": {
+      "id": "Intensitas karbon (gCO2 per kWh)",
+      "en": "Carbon intensity (gCO2 per kWh)"
+     },
+     "num": true,
+     "d": 0
+    }
+   ],
+   "baris": [
+    {
+     "n": "Lao PDR",
+     "v": 76.47,
+     "ebt": 76.72,
+     "ci": 232.08
+    },
+    {
+     "n": "Myanmar",
+     "v": 46.06,
+     "ebt": 47.86,
+     "ci": 502.99
+    },
+    {
+     "n": "Viet Nam",
+     "v": 33.02,
+     "ebt": 45.42,
+     "ci": 460.73
+    },
+    {
+     "n": "Cambodia",
+     "v": 29.9,
+     "ebt": 40.88,
+     "ci": 498.87
+    },
+    {
+     "n": "Malaysia",
+     "v": 17.52,
+     "ebt": 20.65,
+     "ci": 601.97
+    },
+    {
+     "n": "Philippines",
+     "v": 10.31,
+     "ebt": 23.31,
+     "ci": 588.29
+    },
+    {
+     "n": "Indonesia",
+     "v": 7.34,
+     "ebt": 18.09,
+     "ci": 680.25
+    },
+    {
+     "n": "Thailand",
+     "v": 4.05,
+     "ebt": 16.57,
+     "ci": 545.74
+    },
+    {
+     "n": "Singapore",
+     "v": 0,
+     "ebt": 5.49,
+     "ci": 497.09
+    },
+    {
+     "n": "Brunei Darussalam",
+     "v": 0,
+     "ebt": 0.18,
+     "ci": 892.09
+    }
+   ]
+  },
+  "21": {
+   "tipe": "teks",
+   "sumber": [
+    "xaya",
+    "itaipu",
+    "tgd",
+    "owid",
+    "ed"
+   ],
+   "paragraf": [
+    {
+     "id": "Tiga model besar: Brasil dan Paraguay membangun Itaipu (14 GW) lewat perjanjian binasional 1973; Laos membangun bendungan Mekong untuk ekspor (Xayaburi menjual sekitar 95 persen ke EGAT Thailand) sehingga porsi hidro listrik Laos 76,47 persen; Tiongkok membangun Three Gorges (22,5 GW) dengan perpindahan 1,13 sampai 1,4 juta orang.",
+     "en": "Three large models: Brazil and Paraguay built Itaipu (14 GW) under a 1973 binational treaty; Laos builds Mekong dams for export (Xayaburi sells about 95 percent to Thailand EGAT), so hydro is 76.47 percent of Laos electricity; China built Three Gorges (22.5 GW) displacing 1.13 to 1.4 million people."
+    },
+    {
+     "id": "Analisis METI (Hipotesis): keberhasilan teknis di ketiganya didahului kerangka kelembagaan yang kuat (perjanjian, pembeli pasti, pendanaan negara); beban sosial dan lintas batas dibayar belakangan. Indonesia berskala lebih kecil dan banyak sungai di pulau terpisah, sehingga model kaskade sedang (seperti Citarum) lebih relevan daripada bendungan raksasa.",
+     "en": "METI analysis (Hypothesis): technical success in all three followed a strong institutional frame (treaty, firm buyer, state funding); social and cross-border costs were paid later. Indonesia is smaller with many rivers on separate islands, so medium cascades (like Citarum) are more relevant than mega-dams."
+    }
+   ]
+  },
+  "22": {
+   "tipe": "teks",
+   "sumber": [
+    "owid",
+    "kap"
+   ],
+   "paragraf": [
+    {
+     "id": "Porsi hidro Indonesia 7.34 persen berada di tengah-bawah ASEAN: jauh di bawah Laos (76,47), Myanmar (46,06), Vietnam (33,02), Kamboja (29,90), dan Malaysia (17,52), tetapi di atas Thailand (4,05).",
+     "en": "Indonesia's hydro share of 7.34 percent is mid-to-low in ASEAN: far below Laos (76.47), Myanmar (46.06), Vietnam (33.02), Cambodia (29.90) and Malaysia (17.52), but above Thailand (4.05)."
+    },
+    {
+     "id": "Rank dalam tabel: 7 dari 10. Total EBT Indonesia 18.09 persen.",
+     "en": "Rank in the table: 7 of 10. Indonesia's total renewable share is 18.09 percent."
+    }
+   ]
+  },
+  "23": {
+   "tipe": "teks",
+   "sumber": [
+    "aiib",
+    "enerdata",
+    "btcgs",
+    "jetp"
+   ],
+   "paragraf": [
+    {
+     "id": "Kerja sama internasional hidro Indonesia paling jelas pada pembiayaan: Upper Cisokan memakai pinjaman AIIB dan Bank Dunia (satu laporan menyebut pinjaman Kemenkeu USD 380 juta untuk PLN), sedangkan Batang Toru memakai kredit sindikasi bank Tiongkok dipimpin Eximbank (USD 1,251 miliar, perjanjian Maret 2023).",
+     "en": "International cooperation in Indonesian hydro is clearest in financing: Upper Cisokan uses AIIB and World Bank loans (one report cites a USD 380 million Finance Ministry loan to PLN), while Batang Toru uses a Chinese syndicated loan led by Eximbank (USD 1.251 billion, agreement March 2023)."
+    },
+    {
+     "id": "Pendanaan multilateral membawa syarat lingkungan dan sosial yang ketat; pendanaan bilateral Tiongkok cenderung diperiksa lewat tekanan pemegang kepentingan, seperti kasus peninjauan Bank of China 2019.",
+     "en": "Multilateral funding brings strict environmental and social conditions; Chinese bilateral funding tends to be scrutinised through stakeholder pressure, as in the 2019 Bank of China review."
+    }
+   ]
+  },
+  "24": {
+   "tipe": "tabel",
+   "per": 8,
+   "sumber": [
+    "pendanaan"
+   ],
+   "catatan": {
+    "id": "Skema dan proyek pendana yang menyebut hidro di basis METI; nilai untuk seluruh program, bukan hanya hidro.",
+    "en": "Schemes and funder projects naming hydro in the METI base; values are for whole programmes, not hydro alone."
+   },
+   "kolom": [
+    {
+     "k": "nama",
+     "l": {
+      "id": "Skema atau proyek",
+      "en": "Scheme or project"
+     },
+     "url": "u"
+    },
+    {
+     "k": "pem",
+     "l": {
+      "id": "Pemberi",
+      "en": "Provider"
+     }
+    },
+    {
+     "k": "jenis",
+     "l": {
+      "id": "Jenis",
+      "en": "Type"
+     }
+    }
+   ],
+   "baris": [
+    {
+     "nama": "Pembiayaan energi AIIB",
+     "pem": "Asian Infrastructure Investment Bank",
+     "jenis": {
+      "id": "skema",
+      "en": "scheme"
+     },
+     "u": "https://www.aiib.org/"
+    },
+    {
+     "nama": "Pinjaman luar negeri lewat Green Book",
+     "pem": "Kementerian PPN/Bappenas",
+     "jenis": {
+      "id": "skema",
+      "en": "scheme"
+     },
+     "u": "https://www.bappenas.go.id/"
+    },
+    {
+     "nama": "Pinjaman ODA JICA",
+     "pem": "Japan International Cooperation Agency",
+     "jenis": {
+      "id": "skema",
+      "en": "scheme"
+     },
+     "u": "https://www.jica.go.jp/indonesia/"
+    },
+    {
+     "nama": "ASEAN Catalytic Green Finance Facility",
+     "pem": "Asian Development Bank",
+     "jenis": {
+      "id": "skema",
+      "en": "scheme"
+     },
+     "u": "https://www.adb.org/"
+    },
+    {
+     "nama": "SDG Indonesia One",
+     "pem": "PT Sarana Multi Infrastruktur",
+     "jenis": {
+      "id": "skema",
+      "en": "scheme"
+     },
+     "u": "https://www.ptsmi.co.id/"
+    },
+    {
+     "nama": "Obligasi dan sukuk hijau korporasi",
+     "pem": "Otoritas Jasa Keuangan",
+     "jenis": {
+      "id": "skema",
+      "en": "scheme"
+     },
+     "u": "https://www.ojk.go.id/"
+    },
+    {
+     "nama": "Development of Pumped Storage Hydropower in Java Bali System (the Project)",
+     "pem": "Asian Infrastructure Investment Bank",
+     "jenis": {
+      "id": "proyek",
+      "en": "project"
+     },
+     "u": "https://www.aiib.org/en/projects/details/2022/approved/Indonesia-Development-of-Pumped-Storage-Hydropower-in-Java-Bali-System.html"
+    },
+    {
+     "nama": "*Salido Kecil Mini Hydropower Plant",
+     "jenis": {
+      "id": "proyek",
+      "en": "project"
+     },
+     "u": "https://assurance-platform.goldstandard.org/project-documents/GS423"
+    },
+    {
+     "nama": "Mobuya Mini Hydro Power Plant 3 x 1000 kW North Sulawesi, Indonesia",
+     "jenis": {
+      "id": "proyek",
+      "en": "project"
+     },
+     "u": "https://registry.verra.org/app/projectDetail/VCS/238"
+    },
+    {
+     "nama": "50 MW Sipansihaporas Hydro Power Plant, North Sumatra",
+     "jenis": {
+      "id": "proyek",
+      "en": "project"
+     },
+     "u": "https://registry.verra.org/app/projectDetail/VCS/486"
+    }
+   ]
+  },
+  "25": {
+   "tipe": "rumus",
+   "sumber": [
+    "ed",
+    "lcoe"
+   ],
+   "rumus": [
+    {
+     "id": "Pendapatan tahunan = energi tahunan (kWh) x tarif (per kWh)",
+     "en": "Annual revenue = annual energy (kWh) x tariff (per kWh)"
+    },
+    {
+     "id": "LCOE = (biaya modal tahunan + biaya O&M tahunan) / energi tahunan",
+     "en": "LCOE = (annualised capital cost + annual O&M cost) / annual energy"
+    }
+   ],
+   "contoh": [
+    {
+     "id": "Untuk PLTA contoh 8.34 MW dengan 36.5 GWh per tahun, setiap perubahan tarif 1 sen USD per kWh mengubah pendapatan sekitar USD 365 ribu per tahun (EST, hitung sendiri; tanpa asumsi tarif karena tarif PJBL tidak dipublikasikan).",
+     "en": "For the 8.34 MW example plant with 36.5 GWh per year, each 1 US cent per kWh tariff change shifts revenue by about USD 365 thousand per year (EST, own calculation; no tariff assumed because PPA tariffs are not published)."
+    },
+    {
+     "id": "LCOE hidro dunia 2025 sekitar 6,17 sen USD per kWh (IRENA via OWID); biaya lokasi Indonesia berbeda dan belum bersumber.",
+     "en": "Global hydro LCOE in 2025 is about 6.17 US cents per kWh (IRENA via OWID); Indonesian site costs differ and are not yet sourced."
+    }
+   ]
+  },
+  "26": {
+   "tipe": "tabel",
+   "per": 8,
+   "sumber": [
+    "kybn",
+    "btcgs",
+    "enerdata",
+    "tgd",
+    "xaya"
+   ],
+   "catatan": {
+    "id": "Angka dari pemberitaan dan ringkasan; bukan nilai kontrak final.",
+    "en": "Figures from news and summaries; not final contract values."
+   },
+   "kolom": [
+    {
+     "k": "p",
+     "l": {
+      "id": "Proyek",
+      "en": "Project"
+     }
+    },
+    {
+     "k": "n",
+     "l": {
+      "id": "Nilai",
+      "en": "Value"
+     }
+    },
+    {
+     "k": "k",
+     "l": {
+      "id": "Keterangan",
+      "en": "Note"
+     }
+    }
+   ],
+   "baris": [
+    {
+     "p": "Kayan Cascade",
+     "n": {
+      "id": "USD 17,8 miliar (Rp 291 triliun)",
+      "en": "USD 17.8 billion (IDR 291 trillion)"
+     },
+     "k": {
+      "id": "Lima bendungan, hingga 9.000 MW; PowerChina dan Sumitomo mundur",
+      "en": "Five dams, up to 9,000 MW; PowerChina and Sumitomo withdrew"
+     }
+    },
+    {
+     "p": "Batang Toru (NSHE)",
+     "n": {
+      "id": "Kredit USD 1,251 miliar",
+      "en": "Loan USD 1.251 billion"
+     },
+     "k": {
+      "id": "510 MW; Eximbank memimpin; SDIC Power membeli saham 2021",
+      "en": "510 MW; Eximbank leads; SDIC Power bought shares in 2021"
+     }
+    },
+    {
+     "p": "Upper Cisokan",
+     "n": {
+      "id": "Pinjaman Kemenkeu USD 380 juta untuk PLN",
+      "en": "Finance Ministry loan USD 380 million to PLN"
+     },
+     "k": {
+      "id": "1.040 MW; juga pinjaman AIIB dan Bank Dunia",
+      "en": "1,040 MW; also AIIB and World Bank loans"
+     }
+    },
+    {
+     "p": "Xayaburi",
+     "n": {
+      "id": "Sekitar USD 3,5 miliar",
+      "en": "About USD 3.5 billion"
+     },
+     "k": {
+      "id": "1.285 MW; pengembang CH. Karnchang",
+      "en": "1,285 MW; developer CH. Karnchang"
+     }
+    }
+   ]
+  },
+  "27": {
+   "tipe": "teks",
+   "sumber": [
+    "jgwiki",
+    "tgd",
+    "itaipu",
+    "myit",
+    "btbhr",
+    "kybhr",
+    "aiib"
+   ],
+   "paragraf": [
+    {
+     "id": "Dampak sosial hidro terbesar adalah perpindahan penduduk: Jatigede sekitar 70.000 orang (lima kecamatan, 30 desa; warga menyebut ganti rugi terlalu rendah), Three Gorges 1,13 sampai 1,4 juta orang, Itaipu sekitar 10.000 keluarga, Myitsone sekitar 11.800 orang di 47 desa.",
+     "en": "The largest social impact of hydro is displacement: Jatigede about 70,000 people (five districts, 30 villages; residents said compensation was too low), Three Gorges 1.13 to 1.4 million, Itaipu about 10,000 families, Myitsone about 11,800 people in 47 villages."
+    },
+    {
+     "id": "Dampak lingkungan: waduk Three Gorges diperkirakan melepas 359.000 ton CO2 dan 3.810 ton metana per tahun, dan menahan sedimen; Batang Toru terkait habitat satu-satunya orangutan Tapanuli; Kayan terkait desa Long Lejuh dan Long Pelban.",
+     "en": "Environmental impact: the Three Gorges reservoir is estimated to emit 359,000 t CO2 and 3,810 t methane a year and traps sediment; Batang Toru concerns the only habitat of the Tapanuli orangutan; Kayan concerns Long Lejuh and Long Pelban villages."
+    },
+    {
+     "id": "Pelajaran safeguard: ESMP pemberi pinjaman AIIB untuk Cisokan tercatat berada di jalur kritis jadwal pada Maret 2023, artinya kepatuhan sosial yang telat menunda pekerjaan fisik.",
+     "en": "Safeguard lesson: the AIIB lender ESMP for Cisokan was on the schedule critical path in March 2023, meaning late social compliance delays physical works."
+    }
+   ]
+  },
+  "28": {
+   "tipe": "teks",
+   "sumber": [
+    "katadata20",
+    "detikbpk",
+    "meratus"
+   ],
+   "paragraf": [
+    {
+     "id": "Kebutuhan tenaga kerja hidro mencakup sipil bendungan, geoteknik, elektromekanik, dan operator terlatih. Untuk PLTMH desa, kesenjangan terbesar bukan pembangunan tetapi pemeliharaan: ESDM sendiri mengakui sebagian pembangkit EBT desa rusak karena SDM pengelola belum siap (sekitar 5 persen dari 719 PLTMH dan PLTS desa menurut Katadata 2020).",
+     "en": "Hydro labour needs span dam civil works, geotechnics, electromechanics and trained operators. For village micro-hydro the largest gap is maintenance, not construction: the Energy Ministry itself acknowledged some village renewable plants broke because operators were unprepared (about 5 percent of 719 village micro-hydro and solar plants per Katadata 2020)."
+    },
+    {
+     "id": "Pelatihan teknisi desa dan skema honor pengelola adalah celah yang bisa diisi LSP, kampus, dan anggota METI; belum ada angka lowongan yang bersumber untuk bab ini.",
+     "en": "Village technician training and operator stipends are a gap that certification bodies, universities and METI members can fill; no sourced vacancy figures exist for this chapter yet."
+    }
+   ]
+  },
+  "29": {
+   "tipe": "teks",
+   "sumber": [
+    "btbhr",
+    "btcgs",
+    "posopeak",
+    "rricis",
+    "kybn"
+   ],
+   "paragraf": [
+    {
+     "id": "Sisi kritik: organisasi masyarakat sipil menilai Batang Toru mengancam habitat tunggal orangutan Tapanuli dan menyoroti jejak pendanaan Tiongkok; pada Kayan, kelompok sipil menyoroti pemindahan desa dan lingkungan.",
+     "en": "Critics: civil society groups say Batang Toru threatens the sole habitat of the Tapanuli orangutan and highlight Chinese funding; on Kayan they point to village displacement and environmental risk."
+    },
+    {
+     "id": "Sisi pendukung: PLN dan pemerintah menekankan nilai PLTA sebagai pembangkit puncak dan penstabil jaringan di tengah naiknya surya dan bayu (Poso sebagai peaker, Cisokan untuk stabilitas). Tanggapan pengembang Batang Toru dan Kayan belum kami muat; pihak yang disebut dapat mengirim hak jawab.",
+     "en": "Supporters: PLN and government stress hydro as peaker and grid stabiliser as solar and wind rise (Poso as peaker, Cisokan for stability). Responses from the Batang Toru and Kayan developers are not yet carried; named parties can send a right of reply."
+    }
+   ]
+  },
+  "30": {
+   "tipe": "tabel",
+   "per": 8,
+   "sumber": [
+    "ruptl",
+    "petro",
+    "kybn"
+   ],
+   "catatan": {
+    "id": "Target COD memakai skenario RE Base RUPTL; jadwal proyek besar sering bergeser (lihat bab 40).",
+    "en": "COD targets use the RUPTL RE Base scenario; large project schedules often slip (see chapter 40)."
+   },
+   "kolom": [
+    {
+     "k": "d",
+     "l": {
+      "id": "Dokumen dan ukuran",
+      "en": "Document and measure"
+     }
+    },
+    {
+     "k": "v",
+     "l": {
+      "id": "Nilai",
+      "en": "Value"
+     },
+     "num": true,
+     "d": 0
+    },
+    {
+     "k": "sat",
+     "l": {
+      "id": "Satuan",
+      "en": "Unit"
+     }
+    }
+   ],
+   "baris": [
+    {
+     "d": {
+      "id": "RUPTL 2025-2034, hidro bernama",
+      "en": "RUPTL 2025-2034, named hydro"
+     },
+     "v": 3972.83,
+     "sat": "MW"
+    },
+    {
+     "d": {
+      "id": "RUPTL 2025-2034, penyimpanan (termasuk PLTA pompa)",
+      "en": "RUPTL 2025-2034, storage (incl. pumped hydro)"
+     },
+     "v": 6641.234,
+     "sat": "MW"
+    },
+    {
+     "d": {
+      "id": "Upper Cisokan, target COD menurut laporan 2026",
+      "en": "Upper Cisokan, COD target per 2026 report"
+     },
+     "v": 2030,
+     "sat": {
+      "id": "tahun",
+      "en": "year"
+     }
+    },
+    {
+     "d": {
+      "id": "Kayan Cascade, rencana penuh",
+      "en": "Kayan Cascade, full plan"
+     },
+     "v": 9000,
+     "sat": "MW"
+    }
+   ]
+  },
+  "31": {
+   "tipe": "teks",
+   "sumber": [
+    "ed",
+    "posobis",
+    "dak",
+    "aiib"
+   ],
+   "paragraf": [
+    {
+     "id": "Analisis METI (Hipotesis): Pengembang: kaskade sedang dan peaker (Poso) lebih layak dibiayai daripada megaproyek bersyarat. Investor: syarat safeguard internasional memberi disiplin tetapi menambah waktu. Pemda: PLTMH komunitas hanya hidup bila pemeliharaan dianggarkan sejak awal. Akademisi: data debit dan sedimen terbuka masih langka.",
+     "en": "METI analysis (Hypothesis): Developers: medium cascades and peakers (Poso) are easier to finance than conditional mega-projects. Investors: international safeguards impose discipline but add time. Local government: community micro-hydro survives only if maintenance is budgeted from the start. Academics: open flow and sediment data remain scarce."
+    }
+   ]
+  },
+  "32": {
+   "tipe": "teks",
+   "sumber": [
+    "petro",
+    "iea74",
+    "ruuebet",
+    "kybn",
+    "ruptl"
+   ],
+   "paragraf": [
+    {
+     "id": "Yang perlu dipantau: (1) COD Upper Cisokan dan realisasi pencairan pinjaman AIIB/Bank Dunia; (2) pembahasan RUU EBET; (3) mitra baru dan izin Kayan Cascade; (4) kenaikan pumped storage dibanding BESS dalam revisi RUPTL; (5) status operasi komersial Jatigede.",
+     "en": "To watch: (1) Upper Cisokan COD and AIIB/World Bank loan disbursement; (2) RUU EBET deliberation; (3) new partners and permits for Kayan Cascade; (4) pumped storage versus BESS in RUPTL revisions; (5) commercial operation status of Jatigede."
+    }
+   ]
+  },
+  "38": {
+   "tipe": "teks",
+   "sumber": [
+    "ed"
+   ],
+   "paragraf": [
+    {
+     "id": "Metode: angka kapasitas dari IRENA, porsi listrik dari Ember via Our World in Data, proyek dari basis METI, kasus dari berita dan ringkasan Wikipedia yang ditautkan. Kasus yang menyebut pihak diberi ruang hak jawab. Sintesis berlabel Analisis METI (Hipotesis). Batas: tarif PJBL, biaya spesifik lokasi, dan keadaan operasi terbaru banyak yang tidak dipublikasikan; sumber berita belum tentu mutakhir per 8 November 2026.",
+     "en": "Method: capacity figures from IRENA, electricity shares from Ember via Our World in Data, projects from the METI base, cases from linked news and Wikipedia summaries. Cases naming parties carry a right of reply. Synthesis is labelled METI analysis (Hypothesis). Limits: PPA tariffs, site-specific costs and latest operating status are often unpublished; news sources may not be current as of 8 November 2026."
+    }
+   ]
+  },
+  "39": {
+   "tipe": "kasus",
+   "sumber": [
+    "posobis",
+    "cmashden",
+    "cirata",
+    "itaipu",
+    "xaya",
+    "tgd"
+   ],
+   "catatan": {
+    "id": "Biaya, tarif, dan faktor kapasitas yang tidak ditemukan di sumber sengaja dikosongkan. Kasus luar negeri membawa catatan sosial karena keberhasilan teknis tidak sama dengan keberhasilan sosial.",
+    "en": "Costs, tariffs and capacity factors not found in sources are deliberately blank. Foreign cases carry social notes because technical success is not social success."
+   },
+   "butir": [
+    {
+     "negara": "ID",
+     "id": "poso",
+     "nama": "PLTA Poso Energy dan Malea",
+     "jenis": "berhasil",
+     "lokasi": {
+      "id": "Sulawesi Tengah dan Sulawesi Selatan",
+      "en": "Central and South Sulawesi"
+     },
+     "profil": [
+      {
+       "label": {
+        "id": "Kapasitas Poso",
+        "en": "Poso capacity"
+       },
+       "nilai": 515,
+       "satuan": "MW"
+      },
+      {
+       "label": {
+        "id": "Kapasitas Malea",
+        "en": "Malea capacity"
+       },
+       "nilai": 90,
+       "satuan": "MW"
+      },
+      {
+       "label": {
+        "id": "Pemilik",
+        "en": "Owner"
+       },
+       "nilai": {
+        "id": "Grup Kalla (swasta nasional)",
+        "en": "Kalla Group (national private)"
+       }
+      },
+      {
+       "label": {
+        "id": "Peran",
+        "en": "Role"
+       },
+       "nilai": {
+        "id": "Pembangkit peaker untuk sistem Sulawesi",
+        "en": "Peaker plant for the Sulawesi system"
+       }
+      }
+     ],
+     "tindakan": [
+      {
+       "id": "Tahap 1 tiga unit 65 MW beroperasi sejak Desember 2012; ekspansi 4 x 30 MW dan 4 x 50 MW selesai Desember 2021.",
+       "en": "Phase 1 of three 65 MW units operating since December 2012; expansion of 4 x 30 MW and 4 x 50 MW completed December 2021."
+      },
+      {
+       "id": "PJBL ekspansi ditandatangani 2017 dan mengubah fungsi menjadi peaker.",
+       "en": "The expansion PPA was signed in 2017 and changed the role to peaker."
+      }
+     ],
+     "sebab": [
+      {
+       "id": "Dibangun bertahap sehingga tahap awal sudah menghasilkan pendapatan sebelum ekspansi.",
+       "en": "Built in phases so the first phase already earned revenue before expansion."
+      },
+      {
+       "id": "Peran peaker memberi PLN nilai kapasitas yang jelas di sistem Sulawesi.",
+       "en": "The peaker role gives PLN a clear capacity value in the Sulawesi system."
+      },
+      {
+       "id": "Diresmikan Presiden bersama Malea pada 25 Februari 2022.",
+       "en": "Inaugurated by the President with Malea on 25 February 2022."
+      }
+     ],
+     "angka": [
+      {
+       "label": {
+        "id": "Kapasitas Poso",
+        "en": "Poso capacity"
+       },
+       "nilai": 515,
+       "d": 0,
+       "satuan": "MW",
+       "sumber": "posobis",
+       "est": false
+      },
+      {
+       "label": {
+        "id": "Poso dan Malea gabungan",
+        "en": "Poso and Malea combined"
+       },
+       "nilai": 605,
+       "d": 0,
+       "satuan": "MW",
+       "sumber": "posobis",
+       "est": false
+      }
+     ],
+     "pelajaran": [
+      {
+       "id": "Ekspansi bertahap dengan PJBL jelas menurunkan risiko dibanding satu proyek raksasa.",
+       "en": "Phased expansion with a clear PPA lowers risk compared with one giant project."
+      },
+      {
+       "id": "Peran peaker adalah proposisi nilai yang dapat dinegosiasikan.",
+       "en": "A peaker role is a negotiable value proposition."
+      }
+     ],
+     "faktor": {
+      "ppa_tarif": true,
+      "jaringan": true,
+      "pengelola_om": true
+     },
+     "sumber": [
+      "posobis",
+      "posoesdm",
+      "posopeak"
+     ],
+     "hak_jawab": true
+    },
+    {
+     "negara": "ID",
+     "id": "citarum",
+     "nama": "Kaskade Citarum: Saguling, Cirata, Jatiluhur",
+     "jenis": "berhasil",
+     "lokasi": {
+      "id": "Jawa Barat",
+      "en": "West Java"
+     },
+     "profil": [
+      {
+       "label": {
+        "id": "Saguling",
+        "en": "Saguling"
+       },
+       "nilai": 700,
+       "satuan": "MW"
+      },
+      {
+       "label": {
+        "id": "Cirata",
+        "en": "Cirata"
+       },
+       "nilai": 1008,
+       "satuan": "MW"
+      },
+      {
+       "label": {
+        "id": "Jatiluhur",
+        "en": "Jatiluhur"
+       },
+       "nilai": 186.5,
+       "satuan": "MW"
+      }
+     ],
+     "tindakan": [
+      {
+       "id": "Tiga waduk serbaguna berurutan di Sungai Citarum menyalurkan listrik ke sistem Jawa-Bali.",
+       "en": "Three consecutive multipurpose reservoirs on the Citarum feed the Java-Bali system."
+      },
+      {
+       "id": "Waduk Cirata kemudian menampung PLTS terapung 192 MWp (Masdar, 2023).",
+       "en": "The Cirata reservoir later hosts a 192 MWp floating solar plant (Masdar, 2023)."
+      }
+     ],
+     "sebab": [
+      {
+       "id": "Waduk serbaguna (irigasi, air baku, listrik) membagi biaya bendungan.",
+       "en": "Multipurpose reservoirs (irrigation, raw water, power) share dam costs."
+      },
+      {
+       "id": "Dekat pusat beban Jawa dan transmisi 500 kV yang sudah ada, sehingga hibrida surya terapung bisa menumpang.",
+       "en": "Close to the Java load centre and existing 500 kV transmission, so floating solar hybrids can piggyback."
+      }
+     ],
+     "angka": [
+      {
+       "label": {
+        "id": "Cirata",
+        "en": "Cirata"
+       },
+       "nilai": 1008,
+       "d": 0,
+       "satuan": "MW",
+       "sumber": "cirata",
+       "est": false
+      },
+      {
+       "label": {
+        "id": "Saguling",
+        "en": "Saguling"
+       },
+       "nilai": 700,
+       "d": 0,
+       "satuan": "MW",
+       "sumber": "saguling",
+       "est": false
+      },
+      {
+       "label": {
+        "id": "Jatiluhur",
+        "en": "Jatiluhur"
+       },
+       "nilai": 186.5,
+       "d": 1,
+       "satuan": "MW",
+       "sumber": "jatiluhur",
+       "est": false
+      }
+     ],
+     "pelajaran": [
+      {
+       "id": "Pembangkit lama berumur panjang dan bernilai tambah bila waduknya dipakai ulang.",
+       "en": "Old plants last long and add value when their reservoirs are reused."
+      }
+     ],
+     "faktor": {
+      "jaringan": true,
+      "pengelola_om": true
+     },
+     "sumber": [
+      "cirata",
+      "saguling",
+      "jatiluhur",
+      "masdar"
+     ],
+     "hak_jawab": true
+    },
+    {
+     "negara": "ID",
+     "id": "cintamekar",
+     "nama": "PLTMH Cinta Mekar (Subang)",
+     "jenis": "berhasil",
+     "lokasi": {
+      "id": "Kabupaten Subang, Jawa Barat",
+      "en": "Subang Regency, West Java"
+     },
+     "profil": [
+      {
+       "label": {
+        "id": "Kapasitas",
+        "en": "Capacity"
+       },
+       "nilai": 120,
+       "satuan": "kW"
+      },
+      {
+       "label": {
+        "id": "Pendamping",
+        "en": "Facilitator"
+       },
+       "nilai": {
+        "id": "Yayasan IBEKA",
+        "en": "IBEKA Foundation"
+       }
+      },
+      {
+       "label": {
+        "id": "Pengelola",
+        "en": "Operator"
+       },
+       "nilai": {
+        "id": "Koperasi desa dan investor",
+        "en": "Village cooperative and investor"
+       }
+      }
+     ],
+     "tindakan": [
+      {
+       "id": "Dipasang pada 2005 dengan biaya sekitar USD 180.000 sebagai skema tersambung jaringan pertama IBEKA.",
+       "en": "Installed in 2005 for about USD 180,000 as IBEKA's first grid-connected scheme."
+      },
+      {
+       "id": "Hasil dibagi antara koperasi desa dan investor setelah biaya operasi.",
+       "en": "Proceeds are shared between the village cooperative and the investor after operating costs."
+      }
+     ],
+     "sebab": [
+      {
+       "id": "Pengelolaan oleh koperasi desa dengan pembagian hasil yang jelas.",
+       "en": "Management by a village cooperative with clear revenue sharing."
+      },
+      {
+       "id": "Advokasi IBEKA disebut ikut mendorong aturan pembelian listrik mikrohidro oleh PLN.",
+       "en": "IBEKA advocacy is cited as helping shape rules for PLN to buy micro-hydro power."
+      }
+     ],
+     "angka": [
+      {
+       "label": {
+        "id": "Kapasitas umum dikutip",
+        "en": "Commonly cited capacity"
+       },
+       "nilai": 120,
+       "d": 0,
+       "satuan": "kW",
+       "sumber": "cmundip",
+       "est": false
+      },
+      {
+       "label": {
+        "id": "Biaya pasang (2005)",
+        "en": "Installation cost (2005)"
+       },
+       "nilai": 180000,
+       "d": 0,
+       "satuan": "USD",
+       "sumber": "cmashden",
+       "est": false
+      }
+     ],
+     "pelajaran": [
+      {
+       "id": "Model usaha desa tersambung jaringan lebih tahan daripada pembangkit hibah tanpa pendapatan.",
+       "en": "A grid-connected village business model lasts longer than a grant-funded plant with no revenue."
+      },
+      {
+       "id": "Sumber lain mencatat kapasitas berbeda (116 sampai 156 kW); angka 120 kW paling umum dikutip.",
+       "en": "Other sources record different capacity (116 to 156 kW); 120 kW is the most commonly cited."
+      }
+     ],
+     "faktor": {
+      "ppa_tarif": true,
+      "sosial": true,
+      "pengelola_om": true
+     },
+     "sumber": [
+      "cmundip",
+      "cmashden",
+      "cmwwf"
+     ],
+     "hak_jawab": true
+    },
+    {
+     "negara": "BR",
+     "id": "itaipu",
+     "nama": "Itaipu (Brasil dan Paraguay)",
+     "jenis": "berhasil",
+     "lokasi": {
+      "id": "Sungai Parana, perbatasan Brasil dan Paraguay",
+      "en": "Parana River, Brazil-Paraguay border"
+     },
+     "profil": [
+      {
+       "label": {
+        "id": "Kapasitas",
+        "en": "Capacity"
+       },
+       "nilai": 14000,
+       "satuan": "MW"
+      },
+      {
+       "label": {
+        "id": "Unit",
+        "en": "Units"
+       },
+       "nilai": {
+        "id": "20 x 700 MW",
+        "en": "20 x 700 MW"
+       }
+      },
+      {
+       "label": {
+        "id": "Unit pertama",
+        "en": "First unit"
+       },
+       "nilai": "1984"
+      }
+     ],
+     "tindakan": [
+      {
+       "id": "Brasil dan Paraguay menandatangani Perjanjian Itaipu pada 26 April 1973 dan membentuk entitas binasional pada 1974.",
+       "en": "Brazil and Paraguay signed the Itaipu Treaty on 26 April 1973 and created the binational entity in 1974."
+      }
+     ],
+     "sebab": [
+      {
+       "id": "Kerangka perjanjian dua negara dan pembeli pasti.",
+       "en": "A two-country treaty framework and a firm buyer."
+      },
+      {
+       "id": "Produksi Paraguay melebihi bebannya sehingga sebagian besar diekspor ke Brasil.",
+       "en": "Paraguay's generation exceeds its load so most is exported to Brazil."
+      }
+     ],
+     "angka": [
+      {
+       "label": {
+        "id": "Rekor produksi tahunan (2016)",
+        "en": "Record annual output (2016)"
+       },
+       "nilai": 103.1,
+       "d": 1,
+       "satuan": "TWh",
+       "sumber": "itaipu",
+       "est": false
+      }
+     ],
+     "terdampak": {
+      "id": "Sekitar 10.000 keluarga dipindahkan dan Air Terjun Guaira terendam waduk.",
+      "en": "About 10,000 families were displaced and the Guaira Falls were flooded by the reservoir."
+     },
+     "tanda_bahaya": [
+      {
+       "id": "Relokasi besar tanpa kesepakatan sebelumnya menjadi beban sosial jangka panjang.",
+       "en": "Large resettlement without prior agreement becomes a long-term social burden."
+      }
+     ],
+     "pelajaran": [
+      {
+       "id": "Kerangka kelembagaan dan pembeli pasti membuat proyek raksasa dapat dibiayai, namun biaya sosialnya ikut raksasa.",
+       "en": "Institutional frame and a firm buyer make giant projects financeable, but social cost is giant too."
+      }
+     ],
+     "faktor": {
+      "kepastian_kebijakan": true,
+      "ppa_tarif": true
+     },
+     "sumber": [
+      "itaipu"
+     ],
+     "hak_jawab": true
+    },
+    {
+     "negara": "LA",
+     "id": "xayaburi",
+     "nama": "Xayaburi (Laos)",
+     "jenis": "berhasil",
+     "lokasi": {
+      "id": "Sungai Mekong, Laos",
+      "en": "Mekong River, Laos"
+     },
+     "profil": [
+      {
+       "label": {
+        "id": "Kapasitas",
+        "en": "Capacity"
+       },
+       "nilai": 1285,
+       "satuan": "MW"
+      },
+      {
+       "label": {
+        "id": "Operasi komersial",
+        "en": "Commercial operation"
+       },
+       "nilai": "2019-10"
+      },
+      {
+       "label": {
+        "id": "Pengembang",
+        "en": "Developer"
+       },
+       "nilai": "CH. Karnchang"
+      }
+     ],
+     "tindakan": [
+      {
+       "id": "Dibangun sebagai proyek ekspor listrik: sekitar 95 persen dijual ke EGAT Thailand.",
+       "en": "Built as a power export project: about 95 percent sold to Thailand EGAT."
+      },
+      {
+       "id": "Konsultasi lintas negara di bawah Mekong River Commission berakhir tanpa konsensus pada April 2011 dan pekerjaan dilanjutkan Juni 2011.",
+       "en": "Cross-border consultation under the Mekong River Commission ended without consensus in April 2011 and work resumed in June 2011."
+      }
+     ],
+     "sebab": [
+      {
+       "id": "Pembeli pasti di Thailand dan kontraktor pengembang yang sama.",
+       "en": "A firm buyer in Thailand and a developer-affiliated contractor."
+      }
+     ],
+     "angka": [
+      {
+       "label": {
+        "id": "Biaya sekitar",
+        "en": "Cost about"
+       },
+       "nilai": 3.5,
+       "d": 1,
+       "satuan": {
+        "id": "miliar USD",
+        "en": "billion USD"
+       },
+       "sumber": "xaya",
+       "est": false
+      }
+     ],
+     "terdampak": {
+      "id": "Pakar WorldFish menyebut belum ada lorong ikan sukses di bendungan tropis sebesar ini; MRC meragukan waduk berfungsi jangka panjang karena sedimen.",
+      "en": "A WorldFish expert said no successful fish passage exists on a tropical dam this size; the MRC doubted long-term reservoir function because of silt."
+     },
+     "tanda_bahaya": [
+      {
+       "id": "Konsultasi lintas batas tanpa konsensus tetapi proyek tetap jalan.",
+       "en": "Cross-border consultation without consensus but the project proceeds."
+      }
+     ],
+     "pelajaran": [
+      {
+       "id": "Model ekspor berhasil secara komersial; risiko ekologis sungai lintas negara tetap terbuka.",
+       "en": "The export model is commercially successful; ecological risk on a transboundary river remains open."
+      }
+     ],
+     "faktor": {
+      "ppa_tarif": true,
+      "jaringan": true,
+      "pendanaan": true
+     },
+     "sumber": [
+      "xaya"
+     ],
+     "hak_jawab": true
+    },
+    {
+     "negara": "CN",
+     "id": "tgd",
+     "nama": "Three Gorges (Tiongkok)",
+     "jenis": "berhasil",
+     "lokasi": {
+      "id": "Sungai Yangtze, Hubei",
+      "en": "Yangtze River, Hubei"
+     },
+     "profil": [
+      {
+       "label": {
+        "id": "Kapasitas",
+        "en": "Capacity"
+       },
+       "nilai": 22500,
+       "satuan": "MW"
+      },
+      {
+       "label": {
+        "id": "Operasi penuh",
+        "en": "Fully operational"
+       },
+       "nilai": "2012"
+      }
+     ],
+     "tindakan": [
+      {
+       "id": "Proyek negara dengan pengendalian banjir, pelayaran, dan listrik.",
+       "en": "A state project combining flood control, navigation and power."
+      }
+     ],
+     "sebab": [
+      {
+       "id": "Pendanaan dan keputusan negara terpusat.",
+       "en": "Centralised state funding and decision."
+      }
+     ],
+     "angka": [
+      {
+       "label": {
+        "id": "Warga dipindahkan (rentang perkiraan)",
+        "en": "People displaced (estimate range)"
+       },
+       "nilai": {
+        "id": "1,13 sampai 1,4 juta",
+        "en": "1.13 to 1.4 million"
+       },
+       "d": 0,
+       "satuan": "",
+       "sumber": "tgd",
+       "est": false
+      }
+     ],
+     "terdampak": {
+      "id": "Perpindahan jutaan warga, longsor di tepi waduk, sedimen tertahan, dan punahnya lumba-lumba baiji.",
+      "en": "Millions displaced, reservoir-bank landslides, trapped sediment and extinction of the baiji dolphin."
+     },
+     "tanda_bahaya": [
+      {
+       "id": "Gempa terpicu waduk dan longsor berulang di tepi.",
+       "en": "Reservoir-induced seismicity and repeated bank landslides."
+      }
+     ],
+     "pelajaran": [
+      {
+       "id": "Skala terbesar di dunia memperlihatkan biaya sosial dan ekologis yang terukur dan berjangka panjang.",
+       "en": "The world's largest scale shows measurable, long-lived social and ecological costs."
+      }
+     ],
+     "faktor": {
+      "kepastian_kebijakan": true,
+      "pendanaan": true
+     },
+     "sumber": [
+      "tgd"
+     ],
+     "hak_jawab": true
+    }
+   ]
+  },
+  "40": {
+   "tipe": "kasus",
+   "sumber": [
+    "btcgs",
+    "kybn",
+    "jgsync",
+    "katadata20",
+    "petro",
+    "myit"
+   ],
+   "catatan": {
+    "id": "Hak jawab: pihak yang disebut dapat mengirim koreksi atau tanggapan lewat formulir koreksi platform; tanggapan akan dimuat berdampingan.",
+    "en": "Right of reply: named parties can send a correction or response through the platform correction form; responses will be published alongside."
+   },
+   "butir": [
+    {
+     "negara": "ID",
+     "id": "batangtoru",
+     "nama": "PLTA Batang Toru (510 MW)",
+     "jenis": "mundur",
+     "lokasi": {
+      "id": "Tapanuli, Sumatera Utara",
+      "en": "Tapanuli, North Sumatra"
+     },
+     "profil": [
+      {
+       "label": {
+        "id": "Kapasitas",
+        "en": "Capacity"
+       },
+       "nilai": 510,
+       "satuan": "MW"
+      },
+      {
+       "label": {
+        "id": "Pengembang",
+        "en": "Developer"
+       },
+       "nilai": "PT North Sumatera Hydro Energy (NSHE)"
+      }
+     ],
+     "kronologi": [
+      {
+       "tanggal": "2017-09-01",
+       "teks": {
+        "id": "NSHE menandatangani kredit sindikasi dengan Bank of China, Eximbank, dan bank lain.",
+        "en": "NSHE signs a syndicated loan with Bank of China, Eximbank and other lenders."
+       }
+      },
+      {
+       "tanggal": "2019-03-14",
+       "teks": {
+        "id": "Bank of China menyatakan akan meninjau pendanaan setelah protes habitat orangutan.",
+        "en": "Bank of China says it will review funding after habitat protests."
+       }
+      },
+      {
+       "tanggal": "2021-01-01",
+       "teks": {
+        "id": "Saham Zhefu dijual ke SDIC Power (tahun saja).",
+        "en": "Zhefu shares sold to SDIC Power (year only)."
+       }
+      },
+      {
+       "tanggal": "2023-03-01",
+       "teks": {
+        "id": "Perjanjian kredit USD 1,251 miliar dipimpin Eximbank.",
+        "en": "USD 1.251 billion loan agreement led by Eximbank."
+       }
+      }
+     ],
+     "sebab": [
+      {
+       "id": "Lokasi proyek berada di habitat satu-satunya populasi orangutan Tapanuli.",
+       "en": "The site lies in the only habitat of the Tapanuli orangutan."
+      },
+      {
+       "id": "Tekanan publik membuat bank pemberi kredit meninjau ulang dan sebagian mundur.",
+       "en": "Public pressure led lenders to review and partly withdraw."
+      }
+     ],
+     "terdampak": {
+      "id": "Populasi orangutan Tapanuli dan warga di sekitar lokasi; sumber juga menyebut kekhawatiran atas keselamatan aktivis yang menggugat.",
+      "en": "The Tapanuli orangutan population and nearby residents; sources also cite concern for the safety of an activist who sued."
+     },
+     "seharusnya": {
+      "id": "Penilaian habitat independen dan FPIC dipublikasikan sebelum financial close, serta koridor satwa dalam desain.",
+      "en": "An independent habitat assessment and FPIC published before financial close, and wildlife corridors in the design."
+     },
+     "tanda_bahaya": [
+      {
+       "id": "Proyek di habitat spesies kritis.",
+       "en": "Project in critical species habitat."
+      },
+      {
+       "id": "Pemberi kredit utama menyatakan peninjauan.",
+       "en": "A main lender announces a review."
+      }
+     ],
+     "angka": [
+      {
+       "label": {
+        "id": "Kredit sindikasi Eximbank",
+        "en": "Eximbank syndicated loan"
+       },
+       "nilai": 1.251,
+       "d": 3,
+       "satuan": {
+        "id": "miliar USD",
+        "en": "billion USD"
+       },
+       "sumber": "btcgs",
+       "est": false
+      }
+     ],
+     "faktor": {
+      "sosial": true,
+      "pendanaan": true
+     },
+     "sumber": [
+      "btboc",
+      "btjp",
+      "btbhr",
+      "btcgs"
+     ],
+     "hak_jawab": true
+    },
+    {
+     "negara": "ID",
+     "id": "kayan",
+     "nama": "Kayan Cascade (hingga 9.000 MW)",
+     "jenis": "mundur",
+     "lokasi": {
+      "id": "Kalimantan Utara",
+      "en": "North Kalimantan"
+     },
+     "profil": [
+      {
+       "label": {
+        "id": "Rencana",
+        "en": "Plan"
+       },
+       "nilai": {
+        "id": "Lima bendungan, hingga 9.000 MW",
+        "en": "Five dams, up to 9,000 MW"
+       }
+      },
+      {
+       "label": {
+        "id": "Pengembang",
+        "en": "Developer"
+       },
+       "nilai": "PT Kayan Hydro Energy"
+      }
+     ],
+     "kronologi": [
+      {
+       "tanggal": "2024-06-14",
+       "teks": {
+        "id": "Direktur menyatakan pembangunan berlanjut setelah PowerChina dan Sumitomo mundur; mencari mitra baru; PLTA pertama sedang dibangun dekat Long Peso.",
+        "en": "The director says construction continues after PowerChina and Sumitomo withdrew; seeking new partners; first plant under construction near Long Peso."
+       }
+      }
+     ],
+     "sebab": [
+      {
+       "id": "Mitra investor mundur.",
+       "en": "Investor partners withdrew."
+      },
+      {
+       "id": "Pembebasan lahan menjadi hambatan utama.",
+       "en": "Land acquisition was a major hurdle."
+      },
+      {
+       "id": "Kementerian ESDM menyebut proyek bukan proyek strategis nasional, bertentangan dengan klaim sebelumnya.",
+       "en": "The Energy Ministry said it is not a national strategic project, contradicting earlier claims."
+      }
+     ],
+     "terdampak": {
+      "id": "Desa Long Lejuh dan Long Pelban terkait perpindahan; lingkungan Sungai Kayan.",
+      "en": "Long Lejuh and Long Pelban villages face displacement; Kayan River environment."
+     },
+     "seharusnya": {
+      "id": "Kepastian status proyek (strategis atau bukan) dan skema pembiayaan tahap pertama yang lebih kecil sebelum mengumumkan kapasitas penuh.",
+      "en": "Clarity on project status (strategic or not) and a smaller first-phase financing before announcing full capacity."
+     },
+     "tanda_bahaya": [
+      {
+       "id": "Mitra utama mundur.",
+       "en": "Key partners exit."
+      },
+      {
+       "id": "Pernyataan pemerintah tidak seragam.",
+       "en": "Government statements are inconsistent."
+      }
+     ],
+     "angka": [
+      {
+       "label": {
+        "id": "Nilai investasi dilaporkan",
+        "en": "Reported investment"
+       },
+       "nilai": 17.8,
+       "d": 1,
+       "satuan": {
+        "id": "miliar USD",
+        "en": "billion USD"
+       },
+       "sumber": "kybhr",
+       "est": false
+      }
+     ],
+     "faktor": {
+      "pendanaan": true,
+      "lahan": true,
+      "sosial": true,
+      "kepastian_kebijakan": true
+     },
+     "sumber": [
+      "kybn",
+      "kybhr",
+      "kyjp",
+      "kymin"
+     ],
+     "hak_jawab": true
+    },
+    {
+     "negara": "ID",
+     "id": "jatigede",
+     "nama": "PLTA Jatigede (2 x 55 MW)",
+     "jenis": "mundur",
+     "lokasi": {
+      "id": "Sumedang, Jawa Barat",
+      "en": "Sumedang, West Java"
+     },
+     "profil": [
+      {
+       "label": {
+        "id": "Kapasitas",
+        "en": "Capacity"
+       },
+       "nilai": 110,
+       "satuan": "MW"
+      },
+      {
+       "label": {
+        "id": "Waduk mulai diisi",
+        "en": "Reservoir filling began"
+       },
+       "nilai": "2015-08-31"
+      }
+     ],
+     "kronologi": [
+      {
+       "tanggal": "2015-08-31",
+       "teks": {
+        "id": "Pengisian waduk dimulai.",
+        "en": "Reservoir impoundment begins."
+       }
+      },
+      {
+       "tanggal": "2019-12-13",
+       "teks": {
+        "id": "Laporan menyebut operasi PLTA tertunda ke 2020; progres 73 persen.",
+        "en": "Report says plant operation delayed to 2020; 73 percent progress."
+       }
+      },
+      {
+       "tanggal": "2021-04-04",
+       "teks": {
+        "id": "Progres dilaporkan 85 persen.",
+        "en": "Progress reported at 85 percent."
+       }
+      },
+      {
+       "tanggal": "2024-05-11",
+       "teks": {
+        "id": "Sinkronisasi pertama; SLO diperoleh Juni 2024.",
+        "en": "First synchronisation; SLO obtained June 2024."
+       }
+      }
+     ],
+     "sebab": [
+      {
+       "id": "Sumber yang dibaca tidak menyebut satu penyebab tunggal; yang tercatat adalah jadwal operasi yang bergeser dari 2019-2020 menjadi 2024, sembilan tahun setelah waduk terisi.",
+       "en": "The sources read name no single cause; what is recorded is the operation schedule shifting from 2019-2020 to 2024, nine years after the reservoir filled."
+      }
+     ],
+     "terdampak": {
+      "id": "Sekitar 70.000 warga direlokasi untuk waduk dan menyatakan ganti rugi terlalu rendah; listrik dari waduk tertunda bagi sistem.",
+      "en": "About 70,000 residents were relocated for the reservoir and said compensation was too low; power from the reservoir was delayed for the system."
+     },
+     "seharusnya": {
+      "id": "Menjadwalkan unit pembangkit bersamaan dengan bendungan sejak awal agar aset waduk tidak lama menganggur.",
+      "en": "Schedule the power unit together with the dam from the start so the reservoir asset is not idle for long."
+     },
+     "tanda_bahaya": [
+      {
+       "id": "Progres berulang dilaporkan hampir selesai namun operasi bergeser.",
+       "en": "Progress repeatedly reported near complete while operation slips."
+      }
+     ],
+     "angka": [
+      {
+       "label": {
+        "id": "Selang waduk terisi hingga sinkronisasi",
+        "en": "Gap from impoundment to synchronisation"
+       },
+       "nilai": 9,
+       "d": 0,
+       "satuan": {
+        "id": "tahun",
+        "en": "years"
+       },
+       "sumber": "jgsync",
+       "est": true
+      }
+     ],
+     "faktor": {},
+     "sumber": [
+      "jgsync",
+      "jgslo",
+      "jg2019",
+      "jg2021",
+      "jgwiki"
+     ],
+     "hak_jawab": true
+    },
+    {
+     "negara": "ID",
+     "id": "pltmhmati",
+     "nama": "PLTMH desa yang mati",
+     "jenis": "mati",
+     "lokasi": {
+      "id": "Berbagai provinsi (Kalimantan Selatan, Nusa Tenggara Barat, dan lain-lain)",
+      "en": "Various provinces (South Kalimantan, West Nusa Tenggara and others)"
+     },
+     "profil": [
+      {
+       "label": {
+        "id": "Cakupan bukti",
+        "en": "Evidence scope"
+       },
+       "nilai": {
+        "id": "Laporan BPK 2017, Katadata 2020, Mongabay 2020 dan 2026",
+        "en": "BPK report 2017, Katadata 2020, Mongabay 2020 and 2026"
+       }
+      }
+     ],
+     "kronologi": [
+      {
+       "tanggal": "2017-12-12",
+       "teks": {
+        "id": "BPK menemukan pembangkit EBT senilai Rp467 miliar dalam kondisi rusak.",
+        "en": "BPK finds renewable plants worth IDR 467 billion in damaged condition."
+       }
+      },
+      {
+       "tanggal": "2020-04-17",
+       "teks": {
+        "id": "ESDM menyebut sekitar 5 persen dari 719 PLTMH dan PLTS desa rusak dan menjalankan revitalisasi.",
+        "en": "The Energy Ministry says about 5 percent of 719 village micro-hydro and solar plants are broken and runs revitalisation."
+       }
+      },
+      {
+       "tanggal": "2026-03-01",
+       "teks": {
+        "id": "Warga Meratus tidak mampu memperbaiki karena dana desa habis dan belum ada bendung permanen.",
+        "en": "Meratus residents cannot repair because village funds ran out and there is no permanent weir."
+       }
+      }
+     ],
+     "sebab": [
+      {
+       "id": "Tidak ada pemeliharaan dan anggaran perbaikan.",
+       "en": "No maintenance and repair budget."
+      },
+      {
+       "id": "Pengelola belum siap.",
+       "en": "Operators were unprepared."
+      },
+      {
+       "id": "Bendung sementara mudah rusak oleh banjir.",
+       "en": "Temporary weirs are easily damaged by floods."
+      }
+     ],
+     "terdampak": {
+      "id": "Warga desa yang kembali tanpa listrik; anggaran hibah yang terbuang.",
+      "en": "Villagers back without power; wasted grant budgets."
+     },
+     "seharusnya": {
+      "id": "Serah terima hanya bersama pengelola terlatih, rencana keuangan O&M, dan bendung permanen.",
+      "en": "Hand over only with a trained operator, an O&M financial plan and a permanent weir."
+     },
+     "tanda_bahaya": [
+      {
+       "id": "Pembangkit hibah tanpa iuran pelanggan.",
+       "en": "Grant-funded plant without customer fees."
+      },
+      {
+       "id": "Alih aset ke daerah tanpa anggaran pemeliharaan.",
+       "en": "Asset transfer to local government without maintenance budget."
+      }
+     ],
+     "angka": [
+      {
+       "label": {
+        "id": "Nilai pembangkit EBT rusak temuan BPK",
+        "en": "Value of damaged plants found by BPK"
+       },
+       "nilai": 467,
+       "d": 0,
+       "satuan": {
+        "id": "miliar rupiah",
+        "en": "billion rupiah"
+       },
+       "sumber": "detikbpk",
+       "est": false
+      }
+     ],
+     "faktor": {
+      "pengelola_om": true,
+      "pendanaan": true
+     },
+     "sumber": [
+      "detikbpk",
+      "katadata20",
+      "meratus",
+      "mongntb"
+     ],
+     "hak_jawab": true
+    },
+    {
+     "negara": "ID",
+     "id": "cisokan",
+     "nama": "Upper Cisokan pumped storage (1.040 MW)",
+     "jenis": "mundur",
+     "lokasi": {
+      "id": "Bandung Barat dan Cianjur, Jawa Barat",
+      "en": "West Bandung and Cianjur, West Java"
+     },
+     "profil": [
+      {
+       "label": {
+        "id": "Kapasitas",
+        "en": "Capacity"
+       },
+       "nilai": 1040,
+       "satuan": "MW"
+      },
+      {
+       "label": {
+        "id": "Pendana",
+        "en": "Lenders"
+       },
+       "nilai": {
+        "id": "AIIB dan Bank Dunia",
+        "en": "AIIB and World Bank"
+       }
+      }
+     ],
+     "kronologi": [
+      {
+       "tanggal": "2023-03-01",
+       "teks": {
+        "id": "AIIB mencatat ESMP kontraktor di jalur kritis dan jalan akses ke bendung atas perlu diperbaiki karena longsor.",
+        "en": "AIIB notes the contractor ESMP is on the critical path and the upper dam access road needs repair due to landslides."
+       }
+      },
+      {
+       "tanggal": "2024-07-24",
+       "teks": {
+        "id": "Bisnis melaporkan target 2028 dan koordinasi isu TKDN.",
+        "en": "Bisnis reports a 2028 target and TKDN coordination."
+       }
+      },
+      {
+       "tanggal": "2026-05-01",
+       "teks": {
+        "id": "Laporan 2026 menyebut COD 2030; proyek disebut dikembangkan sejak 1986.",
+        "en": "A 2026 report states COD 2030; the project is described as developed since 1986."
+       }
+      }
+     ],
+     "sebab": [
+      {
+       "id": "Syarat safeguard pemberi pinjaman di jalur kritis.",
+       "en": "Lender safeguard conditions on the critical path."
+      },
+      {
+       "id": "Jalan akses terkena longsor.",
+       "en": "Landslide damage to the access road."
+      },
+      {
+       "id": "Isu TKDN perlu dikoordinasikan.",
+       "en": "TKDN issues needed coordination."
+      }
+     ],
+     "terdampak": {
+      "id": "Sistem Jawa-Bali yang menunggu penyimpanan skala besar; warga sekitar (posko aduan PLN dibangun).",
+      "en": "The Java-Bali system awaiting large-scale storage; nearby residents (PLN built a complaints post)."
+     },
+     "seharusnya": {
+      "id": "Menyelesaikan ESMP dan akses sebelum kontrak mengikat, serta menetapkan TKDN di dokumen tender.",
+      "en": "Complete the ESMP and access before binding contracts, and fix TKDN in tender documents."
+     },
+     "tanda_bahaya": [
+      {
+       "id": "Target COD bergeser beberapa kali: 2025, 2027, 2028, 2030 menurut laporan berbeda.",
+       "en": "COD target moves several times: 2025, 2027, 2028, 2030 per different reports."
+      }
+     ],
+     "angka": [
+      {
+       "label": {
+        "id": "Target COD terbaru yang ditemukan",
+        "en": "Latest COD target found"
+       },
+       "nilai": 2030,
+       "d": 0,
+       "satuan": {
+        "id": "tahun",
+        "en": "year"
+       },
+       "sumber": "petro",
+       "est": false
+      }
+     ],
+     "faktor": {
+      "sosial": true,
+      "kepastian_kebijakan": true
+     },
+     "sumber": [
+      "aiib",
+      "bisnis24",
+      "petro",
+      "rricis",
+      "enerdata"
+     ],
+     "hak_jawab": true
+    },
+    {
+     "negara": "MM",
+     "id": "myitsone",
+     "nama": "Myitsone (Myanmar)",
+     "jenis": "mangkrak",
+     "lokasi": {
+      "id": "Sungai Irrawaddy, Myanmar",
+      "en": "Irrawaddy River, Myanmar"
+     },
+     "profil": [
+      {
+       "label": {
+        "id": "Rencana",
+        "en": "Plan"
+       },
+       "nilai": 6000,
+       "satuan": "MW"
+      },
+      {
+       "label": {
+        "id": "Pengembang",
+        "en": "Developer"
+       },
+       "nilai": {
+        "id": "Usaha patungan China Power Investment, Kementerian Listrik Myanmar, Asia World",
+        "en": "Joint venture of China Power Investment, Myanmar Ministry of Electric Power, Asia World"
+       }
+      }
+     ],
+     "kronologi": [
+      {
+       "tanggal": "2009-01-01",
+       "teks": {
+        "id": "Konstruksi dimulai (tahun saja).",
+        "en": "Construction begins (year only)."
+       }
+      },
+      {
+       "tanggal": "2011-09-30",
+       "teks": {
+        "id": "Presiden Thein Sein menangguhkan proyek untuk menghormati kehendak rakyat.",
+        "en": "President Thein Sein suspends the project to respect the people's will."
+       }
+      }
+     ],
+     "sebab": [
+      {
+       "id": "Penolakan atas dampak lingkungan, risiko gempa, dan pembagian listrik yang timpang antara Myanmar dan Tiongkok.",
+       "en": "Opposition over environmental impact, earthquake risk and the uneven electricity split between Myanmar and China."
+      }
+     ],
+     "terdampak": {
+      "id": "Sekitar 11.800 orang di 47 desa direncanakan pindah; investor menanggung penangguhan.",
+      "en": "About 11,800 people in 47 villages were to be relocated; investors bear the suspension."
+     },
+     "seharusnya": {
+      "id": "Konsultasi publik dan skema pembagian listrik disepakati sebelum konstruksi.",
+      "en": "Public consultation and an electricity-sharing scheme agreed before construction."
+     },
+     "tanda_bahaya": [
+      {
+       "id": "Pembagian manfaat yang dianggap timpang.",
+       "en": "Benefit sharing seen as unequal."
+      }
+     ],
+     "angka": [
+      {
+       "label": {
+        "id": "Kapasitas rencana",
+        "en": "Planned capacity"
+       },
+       "nilai": 6000,
+       "d": 0,
+       "satuan": "MW",
+       "sumber": "myit",
+       "est": false
+      }
+     ],
+     "faktor": {
+      "sosial": true,
+      "kepastian_kebijakan": true
+     },
+     "sumber": [
+      "myit"
+     ],
+     "hak_jawab": true
+    }
+   ]
+  },
+  "41": {
+   "tipe": "pola",
+   "sumber": [
+    "ed"
+   ],
+   "catatan": {
+    "id": "Sel dibangun dari bendera faktor tiap kasus; pemetaan faktor ke kasus adalah analisis METI (Hipotesis) atas fakta di bab 39 dan 40.",
+    "en": "Cells are built from each case factor flags; mapping factors to cases is METI analysis (Hypothesis) on facts in chapters 39 and 40."
+   },
+   "faktor": [
+    {
+     "k": "lahan",
+     "l": {
+      "id": "Lahan dan lokasi siap",
+      "en": "Land and site ready"
+     }
+    },
+    {
+     "k": "perizinan",
+     "l": {
+      "id": "Perizinan jelas",
+      "en": "Permitting clear"
+     }
+    },
+    {
+     "k": "ppa_tarif",
+     "l": {
+      "id": "PPA dan tarif disepakati",
+      "en": "PPA and tariff agreed"
+     }
+    },
+    {
+     "k": "pendanaan",
+     "l": {
+      "id": "Pendanaan dan penjaminan",
+      "en": "Financing and guarantees"
+     }
+    },
+    {
+     "k": "jaringan",
+     "l": {
+      "id": "Jaringan, offtaker, dan interkoneksi",
+      "en": "Grid, offtaker and interconnection"
+     }
+    },
+    {
+     "k": "pengelola_om",
+     "l": {
+      "id": "Pengelola dan O&M",
+      "en": "Operator and O&M"
+     }
+    },
+    {
+     "k": "sosial",
+     "l": {
+      "id": "Dukungan masyarakat dan safeguard",
+      "en": "Community support and safeguards"
+     }
+    },
+    {
+     "k": "kepastian_kebijakan",
+     "l": {
+      "id": "Kepastian kebijakan",
+      "en": "Policy certainty"
+     }
+    }
+   ]
+  },
+  "42": {
+   "tipe": "periksa",
+   "sumber": [
+    "ed"
+   ],
+   "peran": [
+    {
+     "k": "pengembang",
+     "l": {
+      "id": "Pengembang",
+      "en": "Developer"
+     }
+    },
+    {
+     "k": "investor",
+     "l": {
+      "id": "Investor",
+      "en": "Investor"
+     }
+    },
+    {
+     "k": "pemda",
+     "l": {
+      "id": "Pemerintah daerah",
+      "en": "Local government"
+     }
+    },
+    {
+     "k": "pusat",
+     "l": {
+      "id": "Pemerintah pusat",
+      "en": "Central government"
+     }
+    },
+    {
+     "k": "pln",
+     "l": {
+      "id": "PLN",
+      "en": "PLN"
+     }
+    },
+    {
+     "k": "meti",
+     "l": {
+      "id": "METI",
+      "en": "METI"
+     }
+    }
+   ],
+   "tahap": [
+    {
+     "k": "lokasi",
+     "l": {
+      "id": "Penyaringan lokasi",
+      "en": "Site screening"
+     }
+    },
+    {
+     "k": "izin",
+     "l": {
+      "id": "Perizinan",
+      "en": "Permitting"
+     }
+    },
+    {
+     "k": "ppa",
+     "l": {
+      "id": "PPA",
+      "en": "PPA"
+     }
+    },
+    {
+     "k": "dana",
+     "l": {
+      "id": "Pendanaan",
+      "en": "Financing"
+     }
+    },
+    {
+     "k": "bangun",
+     "l": {
+      "id": "Konstruksi",
+      "en": "Construction"
+     }
+    },
+    {
+     "k": "operasi",
+     "l": {
+      "id": "Operasi",
+      "en": "Operation"
+     }
+    }
+   ],
+   "butir": [
+    {
+     "peran": "pengembang",
+     "tahap": "lokasi",
+     "teks": {
+      "id": "Cek keberadaan habitat spesies kritis dan lahan adat sebelum memilih lokasi (kasus Batang Toru).",
+      "en": "Check for critical species habitat and customary land before choosing a site (Batang Toru case)."
+     },
+     "dasar": "btbhr"
+    },
+    {
+     "peran": "pengembang",
+     "tahap": "izin",
+     "teks": {
+      "id": "Siapkan ESMP dan rencana akses lebih dulu; ESMP pemberi pinjaman dapat menjadi jalur kritis (Cisokan).",
+      "en": "Prepare the ESMP and access plan first; a lender ESMP can become the critical path (Cisokan)."
+     },
+     "dasar": "aiib"
+    },
+    {
+     "peran": "pengembang",
+     "tahap": "ppa",
+     "teks": {
+      "id": "Negosiasikan peran peaker atau baseload dan pembayaran kapasitas dalam PJBL (Poso).",
+      "en": "Negotiate peaker or baseload role and capacity payment in the PPA (Poso)."
+     },
+     "dasar": "posopeak"
+    },
+    {
+     "peran": "pengembang",
+     "tahap": "bangun",
+     "teks": {
+      "id": "Bangun bertahap bila memungkinkan agar tahap awal berpendapatan (Poso).",
+      "en": "Build in phases where possible so early phases earn revenue (Poso)."
+     },
+     "dasar": "posobis"
+    },
+    {
+     "peran": "investor",
+     "tahap": "dana",
+     "teks": {
+      "id": "Pastikan mitra utama terikat sebelum mengumumkan kapasitas penuh (Kayan).",
+      "en": "Make sure key partners are committed before announcing full capacity (Kayan)."
+     },
+     "dasar": "kybn"
+    },
+    {
+     "peran": "investor",
+     "tahap": "ppa",
+     "teks": {
+      "id": "Tinjau konsultasi lintas batas dan risiko reputasi pemberi kredit (Xayaburi, Batang Toru).",
+      "en": "Review cross-border consultation and lender reputational risk (Xayaburi, Batang Toru)."
+     },
+     "dasar": "btjp"
+    },
+    {
+     "peran": "pemda",
+     "tahap": "lokasi",
+     "teks": {
+      "id": "Siapkan rencana relokasi dan ganti rugi yang diterima warga sebelum pengisian waduk (Jatigede).",
+      "en": "Prepare a resettlement and compensation plan acceptable to residents before reservoir filling (Jatigede)."
+     },
+     "dasar": "jgwiki"
+    },
+    {
+     "peran": "pemda",
+     "tahap": "operasi",
+     "teks": {
+      "id": "Anggarkan pemeliharaan PLTMH sebelum menerima alih aset (BPK 2017, Meratus 2026).",
+      "en": "Budget micro-hydro maintenance before accepting asset transfer (BPK 2017, Meratus 2026)."
+     },
+     "dasar": "detikbpk"
+    },
+    {
+     "peran": "pusat",
+     "tahap": "ppa",
+     "teks": {
+      "id": "Selaraskan status proyek strategis dengan pernyataan resmi agar investor tidak menerima sinyal ganda (Kayan).",
+      "en": "Align strategic project status with official statements so investors do not get mixed signals (Kayan)."
+     },
+     "dasar": "kybn"
+    },
+    {
+     "peran": "pusat",
+     "tahap": "bangun",
+     "teks": {
+      "id": "Jadwalkan unit pembangkit bersama bendungan agar aset waduk tidak menganggur (Jatigede).",
+      "en": "Schedule the power unit with the dam so reservoir assets do not sit idle (Jatigede)."
+     },
+     "dasar": "jgsync"
+    },
+    {
+     "peran": "pln",
+     "tahap": "ppa",
+     "teks": {
+      "id": "Tetapkan kebutuhan sistem (peaker, penyimpanan) sebelum tender dan masukkan ke RUPTL.",
+      "en": "Fix system needs (peaker, storage) before tendering and include them in the RUPTL."
+     },
+     "dasar": "ruptl"
+    },
+    {
+     "peran": "pln",
+     "tahap": "operasi",
+     "teks": {
+      "id": "Publikasikan jadwal COD yang realistis; Cisokan bergeser dari 2025 sampai 2030.",
+      "en": "Publish realistic COD schedules; Cisokan moved from 2025 to 2030."
+     },
+     "dasar": "petro"
+    },
+    {
+     "peran": "meti",
+     "tahap": "operasi",
+     "teks": {
+      "id": "Pantau PLTMH desa yang diserahterimakan dan beri ruang hak jawab bagi pihak yang disebut.",
+      "en": "Monitor handed-over village micro-hydro and give named parties a right of reply."
+     },
+     "dasar": "meratus"
+    }
+   ]
+  }
+ }
+}

@@ -1,13 +1,16 @@
 #!/usr/bin/env node
-// Satu sumber angka ringkas: hitung ulang public/data/ringkas.json (hitung.*) dari berkas data yang tayang,
-// lalu samakan angka cadangan di halaman masuk (masuk.js, dibaca tamu yang belum bisa membuka /data).
+// Satu sumber angka ringkas: hitung ulang public/data/ringkas.json (hitung.* DAN kartu.*) dari berkas data yang tayang.
 // Pemilik 8 Nov 2026: proyek tampil 548 / 410 / 397 di tiga tempat. Jalankan sesudah tiap perubahan data.
 import fs from "node:fs";
 const baca = (f) => JSON.parse(fs.readFileSync(`public/data/${f}.json`, "utf8"));
-const n = (f) => { const d = baca(f); return (Array.isArray(d) ? d : d.baris || []).length; };
+const baris = (f) => { const d = baca(f); return Array.isArray(d) ? d : d.baris || []; };
 const r = baca("ringkas");
-r.hitung = { ...r.hitung, proyek: n("proyek"), organisasi: n("organisasi"), orang: n("orang"), regulasi: n("regulasi"), berita: n("berita") };
+const reg = baris("regulasi"), berlaku = reg.filter((x) => x.status === "berlaku").length;
+r.hitung = { ...r.hitung, proyek: baris("proyek").length, organisasi: baris("organisasi").length, orang: baris("orang").length, regulasi: reg.length, berita: baris("berita").length };
+const nilai = { proyek: r.hitung.proyek, organisasi: r.hitung.organisasi, orang: r.hitung.orang, regulasi: berlaku };
+for (const k of r.kartu) {
+  if (k.kode in nilai) k.nilai = nilai[k.kode];
+  if (k.kode === "regulasi") k.catatan = `dari ${reg.length} aturan tercatat`;
+}
 fs.writeFileSync("public/data/ringkas.json", JSON.stringify(r));
-const p = "public/masuk.js", m = fs.readFileSync(p, "utf8");
-fs.writeFileSync(p, m.replace(/const POTRET = \{[^}]*\}/, `const POTRET = { tgl: "${r.dibangun_pada || ""}", proyek: ${r.hitung.proyek}, organisasi: ${r.hitung.organisasi}, orang: ${r.hitung.orang} }`));
-console.log("ringkas", r.hitung);
+console.log("ringkas", r.hitung, r.kartu.map((k) => `${k.kode}=${k.nilai}`).join(" "));

@@ -55,7 +55,8 @@ export function panelAgenda(el, saya) {
   }
 
   const blokTgl = (iso) => { const [h, ...sisa] = tanggal(iso).split(" "); return `<span class="jm-ag-tgl"><b>${esc(h)}</b><small>${esc(sisa.join(" "))}</small></span>`; };
-  const ikonStatus = (ok, ik, teks) => `<span class="jm-ag-st${ok ? " jm-ag-ok" : ""}" title="${esc(teks)}">${ikon(ik, 20)}<span class="sr">${esc(teks)}</span></span>`;
+  /* status jelas: pil hijau berikon + teks pendek bila ada, pil abu bila belum; tooltip memuat keterangan lengkap */
+  const ikonStatus = (ok, ik, teks, pendek) => `<span class="jm-pil ${ok ? "jm-pil-ok" : "jm-pil-mati"} jm-ag-st" title="${esc(teks)}">${ikon(ik, 14)}<span>${esc(pendek)}</span><span class="sr">${esc(teks)}</span></span>`;
 
   function isiTabel() {
     const d = $("agDaftar");
@@ -66,15 +67,15 @@ export function panelAgenda(el, saya) {
     baris.sort((a, c) => S.arah * (S.urut === "judul" ? a.judul.localeCompare(c.judul) : a.tanggal.localeCompare(c.tanggal)));
     $("agHitung").textContent = t("adm.agenda.n", { n: angka(baris.length) });
     if (!baris.length) { d.innerHTML = kosongHtml("jm.kosong.cocok"); return; }
-    const th = (k, urut) => `<th scope="col"${urut ? ` aria-sort="${S.urut === urut ? (S.arah > 0 ? "ascending" : "descending") : "none"}"` : ""}>${urut ? `<button type="button" class="jm-adm-urut" data-m="urut" data-k="${urut}">${esc(t("adm.agenda.k." + k))}</button>` : esc(t("adm.agenda.k." + k))}</th>`;
+    const th = (k, urut) => `<th scope="col"${urut ? "" : " data-urut=tidak"}${urut ? ` aria-sort="${S.urut === urut ? (S.arah > 0 ? "ascending" : "descending") : "none"}"` : ""}>${urut ? `<button type="button" class="jm-adm-urut" data-m="urut" data-k="${urut}">${esc(t("adm.agenda.k." + k))}</button>` : esc(t("adm.agenda.k." + k))}</th>`;
     d.innerHTML = `<div class="jm-gulir"><table class="jm-tabel jm-ag-tabel"><thead><tr>${th("tgl", "tgl")}${th("judul", "judul")}${th("jenis")}${th("foto")}${th("notulen")}</tr></thead><tbody>${baris.map((b) => {
       const x = S.bukti.get(b.id), n = x ? x.jumlah_foto || 0 : 0, nt = !!(x && x.ada_notulensi);
       return `<tr class="jm-ag-baris" data-ref="${esc(b.id)}" tabindex="0">
         <td class="jm-nowrap" data-l="${esc(t("adm.agenda.k.tgl"))}">${blokTgl(b.tanggal)}</td>
         <td data-l="${esc(t("adm.agenda.k.judul"))}"><button type="button" class="jm-adm-nm" data-m="buka" data-ref="${esc(b.id)}"><strong>${esc(b.judul)}</strong></button>${b.mitra ? `<small class="jm-ag-mitra">${esc(b.mitra)}</small>` : ""}</td>
         <td data-l="${esc(t("adm.agenda.k.jenis"))}"><span class="jm-pil">${esc(label(b.jenis))}</span></td>
-        <td class="jm-ag-c" data-l="${esc(t("adm.agenda.k.foto"))}">${ikonStatus(n > 0, "gambar", n ? t("adm.agenda.foto_n", { n: angka(n) }) : t("adm.agenda.foto_nol"))}</td>
-        <td class="jm-ag-c" data-l="${esc(t("adm.agenda.k.notulen"))}">${ikonStatus(nt, "daftar", t(nt ? "adm.agenda.notulen_ada" : "adm.agenda.notulen_belum"))}</td></tr>`;
+        <td class="jm-ag-c" data-l="${esc(t("adm.agenda.k.foto"))}">${ikonStatus(n > 0, "gambar", n ? t("adm.agenda.foto_n", { n: angka(n) }) : t("adm.agenda.foto_nol"), n ? angka(n) : t("adm.agenda.st_belum"))}</td>
+        <td class="jm-ag-c" data-l="${esc(t("adm.agenda.k.notulen"))}">${ikonStatus(nt, "daftar", t(nt ? "adm.agenda.notulen_ada" : "adm.agenda.notulen_belum"), t(nt ? "adm.agenda.st_ada" : "adm.agenda.st_belum"))}</td></tr>`;
     }).join("")}</tbody></table></div>`;
   }
 

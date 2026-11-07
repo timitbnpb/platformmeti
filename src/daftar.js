@@ -69,7 +69,9 @@ export function periksaForm(b) {
 
 // Berkas dari FormData { token, berkas }; ukuran dan tipe DICEK dari byte.
 async function bacaUnggah(req, maks) {
-  if (Number(req.headers.get("content-length")) > maks + 4096) throw new hak.Galat("terlalu_besar"); // ponytail: tanpa header, batas ditegakkan pada ukuran berkas setelah urai
+  const cl = req.headers.get("content-length");
+  if (!/^\d{1,10}$/.test(cl ?? "")) throw new hak.Galat("masukan_salah", 411);   // tanpa Content-Length (chunked) ditolak sebelum diurai
+  if (Number(cl) > maks + 4096) throw new hak.Galat("terlalu_besar");
   let f;
   try { f = await req.formData(); } catch { throw new hak.Galat("masukan_salah"); }
   const token = f.get("token"), berkas = f.get("berkas");
@@ -81,6 +83,7 @@ async function laju(env, req, nama, maks, tokenHash) {
   if ((await hak.sistem.catatLaju(env, "koreksi:" + nama + "-ip-" + ip)) > maks) return true;
   return tokenHash ? (await hak.sistem.catatLaju(env, "koreksi:" + nama + "-tk-" + tokenHash.slice(0, 24))) > maks : false;
 }
+const lajuToken = async (env, nama, maks, tokenHash) => (await hak.sistem.catatLaju(env, "koreksi:" + nama + "-tk-" + tokenHash.slice(0, 24))) > maks;
 const hexTanda = async (teksIsi) => [...new Uint8Array(await crypto.subtle.digest("SHA-512", new TextEncoder().encode(teksIsi)))].map((x) => x.toString(16).padStart(2, "0")).join("");
 const samaTetap = (a, b) => { if (a.length !== b.length) return false; let d = 0; for (let i = 0; i < a.length; i++) d |= a.charCodeAt(i) ^ b.charCodeAt(i); return d === 0; };
 
@@ -97,18 +100,25 @@ export const rute = {
     if (!v.ok) return gagal("masukan_salah", 422);
     if (await laju(env, req, "daftar", 5)) return gagal("laju_terlampaui");
     const token = acak(32);
-    await hak.pendaftaranBaru(env, v.d, await sha(token), await ipHash(env, req).catch(() => null), (await tarifBawaan(env, req))[v.d.jenis] ?? null);
+    try {
+      await hak.pendaftaranBaru(env, v.d, await sha(token), await ipHash(env, req).catch(() => null), (await tarifBawaan(env, req))[v.d.jenis] ?? null);
+    } catch (e) {
+      // Surel sudah terdaftar: balasan seragam 201 dengan token palsu (tidak membocorkan keberadaan akun; tidak ada baris tersimpan).
+      if (e?.kode === "konflik") return json({ token }, 201, PRIVAT);
+      throw e;
+    }
     return json({ token }, 201, PRIVAT);
   },
 
   // Foto/logo opsional: gambar <= 2 MB, ke R2 privat; FormData { token, berkas }.
   "POST /api/daftar/foto": async (req, env) => {
     if (!env.BERKAS) return gagal("layanan");
+    if (await laju(env, req, "dfoto", 6)) return gagal("laju_terlampaui");   // per IP SEBELUM formData
     const { token, badan } = await bacaUnggah(req, MAKS_FOTO);
     const t = tipeBerkas(badan);
     if (!t || t[0] === "application/pdf") return gagal("masukan_salah", 422);
     const th = await sha(token);
-    if (await laju(env, req, "dfoto", 6, th)) return gagal("laju_terlampaui");
+    if (await lajuToken(env, "dfoto", 6, th)) return gagal("laju_terlampaui");
     const kunci = `daftar/foto/${acak(16)}.${t[1]}`;
     await env.BERKAS.put(kunci, badan, { httpMetadata: { contentType: t[0] } });
     if (!(await hak.pendaftaranFotoSet(env, th, kunci))) { await env.BERKAS.delete(kunci).catch(() => {}); return gagal("tidak_ditemukan"); }
@@ -130,11 +140,12 @@ export const rute = {
   // Bukti transfer: JPEG/PNG/WEBP/PDF <= 5 MB (dicek dari byte), R2 privat, maks 3 menunggu, laju per IP dan per token.
   "POST /api/daftar/bukti": async (req, env) => {
     if (!env.BERKAS) return gagal("layanan");
+    if (await laju(env, req, "dbukti", 8)) return gagal("laju_terlampaui");   // per IP SEBELUM formData
     const { token, badan } = await bacaUnggah(req, MAKS_BUKTI);
     const t = tipeBerkas(badan);
     if (!t) return gagal("masukan_salah", 422);
     const th = await sha(token);
-    if (await laju(env, req, "dbukti", 8, th)) return gagal("laju_terlampaui");
+    if (await lajuToken(env, "dbukti", 8, th)) return gagal("laju_terlampaui");
     const ada = await hak.pendaftaranLacak(env, th);
     if (!ada) return gagal("tidak_ditemukan");
     const kunci = `daftar/bukti/${acak(16)}.${t[1]}`;

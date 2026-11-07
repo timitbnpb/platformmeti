@@ -1,0 +1,9 @@
+/* /jejaring: graf selebar wadah dan setinggi isi; panel simpul melayang, muncul saat simpul diklik (panel_geser.js). Token tema.css saja. */
+.jj-kisi{position:relative;display:block}
+.jj-kanvas{height:clamp(520px,78vh,780px)}
+.jj-svg{width:100%;height:100%;max-height:none}
+.jj-panel{position:absolute;z-index:3;top:12px;right:12px;width:min(340px,calc(100% - 24px));max-height:calc(100% - 24px);display:flex;flex-direction:column;padding:0;overflow:hidden;box-shadow:var(--shadow-lg);background:color-mix(in srgb,var(--card) 96%,transparent)}
+.jj-panel[hidden]{display:none}
+.jj-panel-hd{flex:none;display:flex;align-items:center;gap:8px;min-height:40px;padding:0 14px;border-bottom:1px solid var(--line);font:700 var(--t-label)/1 var(--font);color:var(--head)}
+.jj-panel-isi{flex:1;min-height:0;overflow:auto;padding:14px 16px 16px}
+@media (max-width:899px){.jj-kanvas{height:clamp(420px,70vh,640px)}.jj-panel{top:auto;bottom:12px;max-height:60%}}

@@ -297,7 +297,7 @@ button.brt-an-k:focus-visible,.brt-an-dlg button:focus-visible{outline:2px solid
 .brt-peta{width:100vw;margin-inline:calc(50% - 50vw);border-radius:0;border-inline:0}
 .brt-fl{left:var(--tepi)}.brt-fr{right:var(--tepi)}
 /* cadangan favicon di sampul 16:9: kecil di tengah di atas latar lembut, tidak diregangkan */
-.brt-sampul{background:var(--surface)}
+.brt-sampul{background:linear-gradient(135deg,var(--soft-hijau),var(--soft-biru))}
 .brt-sampul img.brt-fv{position:absolute;inset:0;margin:auto;width:48px!important;height:48px!important;object-fit:contain!important;border-radius:var(--r-sm)}
 
 /* Lihat semua: tombol ikon panah SVG + jumlah sebagai pil kecil; kepala bergambar diberi gradasi di kanan agar aksi terbaca */

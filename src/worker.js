@@ -24,7 +24,7 @@ import { catatHit, perbaruiRentang } from "./lalin.js";
 import * as hak from "./hak.js";
 import { halamanProfil } from "./profil.js";
 import { halamanSiaran } from "./siaran.js";
-import { gagal, json, PRIVAT, sha } from "./util.js";
+import { gagal, halamanHtml, json, PRIVAT, sha } from "./util.js";
 
 const rutePemilik = {
   // Publik; satu SELECT 1 lewat hak.js.
@@ -82,7 +82,7 @@ async function icsSah(env, t) {
 }
 
 // Seluruh situs di balik login (KEPUTUSAN 7 Nov 2026): hanya alur masuk, aset yang dibutuhkannya, dan API masuk yang terbuka.
-const PUBLIK = /^\/((masuk|aktivasi|ganti-sandi|404)(\.html)?|masuk\.js|kta_v\.js|kta\.css|tema\.js|i18n\.js|404\.js|langganan(\.html|\.js|\.css)?|daftar(\.html|\.js|\.css)?|daftar\/lacak\/[0-9a-f]{64}|berhenti|favicon[^/]*|robots\.txt)$|^\/inti\/[^/]+\.(css|js)$|^\/i18n\/|^\/img\/(logo|ikon)[^/]*$|^\/img\/logo\/meti(-vertikal-611)?\.png$|^\/img\/logo\/(org|mitra)\/[a-z0-9._-]+\.(png|webp|svg|jpg)$|^\/img\/mitra\/[a-z0-9._-]+\.(png|webp|svg|jpg)$|^\/img\/bendera\/(id|gb|us)\.svg$|^\/img\/beranda\/[^/]+\.webp$|^\/fonts\/|^\/kta\/v\/\d{1,9}\.[0-9a-f]{32}$|^\/data\/keanggotaan\.json$/;
+const PUBLIK = /^\/((masuk|aktivasi|ganti-sandi|404)(\.html)?|masuk\.js|kta_v\.js|kta\.css|tema\.js|i18n\.js|404\.js|langganan(\.html|\.js|\.css)?|daftar(\.html|\.js|\.css)?|daftar\/lacak(\/[0-9a-f]{64})?|berhenti|favicon[^/]*|robots\.txt)$|^\/inti\/[^/]+\.(css|js)$|^\/i18n\/|^\/img\/(logo|ikon)[^/]*$|^\/img\/logo\/meti(-vertikal-611)?\.png$|^\/img\/logo\/(org|mitra)\/[a-z0-9._-]+\.(png|webp|svg|jpg)$|^\/img\/mitra\/[a-z0-9._-]+\.(png|webp|svg|jpg)$|^\/img\/bendera\/(id|gb|us)\.svg$|^\/img\/beranda\/[^/]+\.webp$|^\/fonts\/|^\/kta\/v\/\d{1,9}\.[0-9a-f]{32}$|^\/data\/keanggotaan\.json$/;
 // /api/langganan(/berhenti): ajakan publik newsletter (K19 turunan); rute lain di langganan.js tetap menagih sesi lewat perlu().
 const API_PUBLIK = new Set(["/api/masuk", "/api/masuk/google", "/api/masuk/google/kembali", "/api/keluar", "/api/status", "/api/aktivasi", "/api/saya", "/api/langganan", "/api/langganan/berhenti",
   // Pendaftaran anggota mandiri (8 Nov 2026): tamu boleh mendaftar, melacak lewat token (di badan), dan mengunggah bukti iuran.
@@ -164,7 +164,7 @@ async function halamanVideo(req, env, url, id) {
   }
   const aman = (judul || "").replace(/[<>&"]/g, "").slice(0, 140);
   const html = (await res.text()).replace(/<title>[^<]*<\/title>/, () => `<title>${aman ? aman + " | Video METI" : "Video | Direktori METI"}</title>`);
-  return new Response(html, { status: 200, headers: { "content-type": "text/html; charset=utf-8", "cache-control": "public, max-age=300" } });
+  return halamanHtml(html, res);
 }
 
 async function halaman(req, env, url, akun) {
@@ -191,7 +191,9 @@ async function halaman(req, env, url, akun) {
     return (await halamanProfil(req, env, url, m[1], m[2])) ?? TIDAK_ADA();
   }
   // Tautan berhenti newsletter (terbuka, bertoken di query): halaman yang sama dengan /langganan, mode dipilih skrip dari jalurnya.
-  if (/^\/daftar\/lacak\/[0-9a-f]{64}$/.test(path)) return halamanPrivat(await env.ASSETS.fetch(new Request(new URL("/daftar", url), { method: req.method })));
+  // Token lacak hidup di fragmen (/daftar/lacak#<token>), tidak pernah dikirim ke server. Rute lama bertoken di jalur dialihkan ke versi fragmen.
+  if (path === "/daftar/lacak") return halamanPrivat(await env.ASSETS.fetch(new Request(new URL("/daftar", url), { method: req.method })));
+  if ((m = path.match(/^\/daftar\/lacak\/([0-9a-f]{64})$/))) return new Response(null, { status: 302, headers: { location: "/daftar/lacak#" + m[1], "referrer-policy": "no-referrer", ...PRIVAT } });
   if (path === "/berhenti") return halamanPrivat(await env.ASSETS.fetch(new Request(new URL("/langganan", url), { method: req.method })));
   if (/^\/kta\/v\/\d{1,9}\.[0-9a-f]{32}$/.test(path) && (req.method === "GET" || req.method === "HEAD")) return halamanPrivat(await env.ASSETS.fetch(new Request(new URL("/kta_v", url), { method: req.method })));
   if ((m = path.match(/^\/siaran-pers\/([^/]+)$/)) && (req.method === "GET" || req.method === "HEAD")) {
@@ -206,7 +208,7 @@ async function halaman(req, env, url, akun) {
     if (!res.ok || req.method === "HEAD") return res;
     const esc = nama.replace(/[&<>"']/g, (c) => `&#${c.charCodeAt(0)};`);
     const html = (await res.text()).replace(/<title[^>]*>[^<]*<\/title>/, () => `<title>METI Wilayah ${esc} | Direktori METI</title>`);
-    return halamanPrivat(new Response(html, { status: 200, headers: { "content-type": "text/html; charset=utf-8" } }));
+    return halamanPrivat(halamanHtml(html, res));
   }
   if ((m = path.match(/^\/wilayah\/([^/]+)$/))) {
     if (!/^\d{2}$/.test(m[1])) return TIDAK_ADA();
@@ -223,7 +225,7 @@ async function halaman(req, env, url, akun) {
     const res = await env.ASSETS.fetch(new Request(new URL("/teknologi", url), req));
     if (!res.ok || req.method === "HEAD") return res;
     const html = (await res.text()).replace(/<title>[^<]*<\/title>/, () => `<title>${nama} | Direktori METI</title>`);
-    return new Response(html, { status: 200, headers: { "content-type": "text/html; charset=utf-8", "cache-control": "public, max-age=300" } });
+    return halamanHtml(html, res);
   }
   if ((m = path.match(/^\/program\/([a-z0-9-]{1,40})$/)) && (req.method === "GET" || req.method === "HEAD")) return halamanProgram(req, env, url, m[1]);
   return env.ASSETS.fetch(req);
@@ -241,7 +243,7 @@ export async function halamanProgram(req, env, url, kode) {
   if (!res.ok || req.method === "HEAD") return res;
   const aman = nama.replace(/[<>&"]/g, "").slice(0, 140);
   const html = (await res.text()).replace(/<title[^>]*>[^<]*<\/title>/, () => `<title>${aman} | Program energi METI</title>`);
-  return new Response(html, { status: 200, headers: { "content-type": "text/html; charset=utf-8", "cache-control": "public, max-age=300" } });
+  return halamanHtml(html, res);
 }
 
 async function api(req, env, ctx, url) {

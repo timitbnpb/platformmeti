@@ -170,3 +170,5 @@ body[data-halaman="program"]{overflow-x:clip}
 .jm-pg-lebih button:hover{color:var(--accent);border-color:var(--accent)}
 .jm-pg-lebih button:focus-visible{outline:2px solid var(--fokus);outline-offset:2px}
 .jm-pg-cara{margin:0;padding-left:20px;display:grid;gap:8px}
+
+.jm-pg-kh .jm-kh-lead{text-align:left;hyphens:manual}

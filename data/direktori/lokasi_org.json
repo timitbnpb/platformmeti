@@ -160,6 +160,16 @@
    "jenis": "situs-resmi",
    "tingkat_bukti": "situs-sendiri",
    "tanggal": "2026-11-07"
+  },
+  "l_pjci_asosiasi": {
+   "nama": "Indonesia Smart Grid Association (PJCI)",
+   "kota": "Jakarta",
+   "provinsi": "DKI Jakarta",
+   "alamat": "Plaza Asia. Zone A. 21st Floor, Jl. Jenderal Sudirman No.Kav. 59, RT.5/RW.3, Senayan, Kec. Kby. Baru, Kota Jakarta Selatan, Daerah Khusus Ibukota Jakarta 12190",
+   "sumber_url": "https://pjci.or.id/",
+   "jenis": "situs-resmi",
+   "tingkat_bukti": "situs-sendiri",
+   "tanggal": "2026-11-07"
   }
  }
 }

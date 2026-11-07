@@ -28,10 +28,12 @@ const panggil = async (jalur, metode, peran, badan, opsi = {}) => {
   const t = res.headers.get("content-type")?.includes("json") ? await res.text() : "";
   return { status: res.status, res, ...(t ? JSON.parse(t) : {}) };
 };
-const unggah = async (jalur, token, byte, { ip = "203.0.113.50", nama = "bukti.png" } = {}) => {
+const unggah = async (jalur, token, byte, { ip = "203.0.113.50", nama = "bukti.png", tanpaCL = false } = {}) => {
   const fd = new FormData(); fd.set("token", token); fd.set("berkas", new Blob([byte]), nama);
-  const req = new Request("https://uji.test" + jalur, { method: "POST", body: fd, headers: { "x-pb": "1", origin: "https://uji.test", "cf-connecting-ip": ip } });
-  const res = await worker.fetch(req, E, CTX);
+  const mentah = new Response(fd), isi = new Uint8Array(await mentah.arrayBuffer());   // klien nyata mengirim Content-Length
+  const h = { "x-pb": "1", origin: "https://uji.test", "cf-connecting-ip": ip, "content-type": mentah.headers.get("content-type") };
+  if (!tanpaCL) h["content-length"] = String(isi.length);
+  const res = await worker.fetch(new Request("https://uji.test" + jalur, { method: "POST", body: isi, headers: h }), E, CTX);
   return { status: res.status, ...(await res.json().catch(() => ({}))) };
 };
 const PNG = new Uint8Array([0x89, 0x50, 0x4e, 0x47, 0x0d, 0x0a, 0x1a, 0x0a, 1, 2, 3, 4]);
@@ -55,7 +57,9 @@ test("matriks: pendaftaran hanya pengurus, admin, super", async () => {
 });
 
 test("halaman /daftar dan /daftar/lacak/<token> terbuka tanpa login; API admin tetap tertutup", async () => {
-  for (const j of ["/daftar", "/daftar.js", "/daftar/lacak/" + "a".repeat(64)]) {
+  const al = await worker.fetch(minta("/daftar/lacak/" + "a".repeat(64), { origin: null }), E, CTX);
+  assert.equal(al.status, 302); assert.equal(al.headers.get("location"), "/daftar/lacak#" + "a".repeat(64));
+  for (const j of ["/daftar", "/daftar.js", "/daftar/lacak"]) {
     const r = await worker.fetch(minta(j, { origin: null }), E, CTX);
     assert.equal(r.status, 200, j);
   }
@@ -86,7 +90,7 @@ test("pendaftaran sah: token sekali tampil, hanya hash disimpan, HP/surel tak bo
   const baris = await E.DB.prepare("SELECT * FROM pendaftaran WHERE surel = 'budi@contoh.id'").first(); id = baris.id;
   assert.equal(baris.token_hash, await sha(token)); assert.ok(!JSON.stringify(baris).includes(token));
   assert.equal(baris.status, "menunggu"); assert.equal(baris.bayar, "belum");
-  assert.equal((await daftar({ surel: "budi@contoh.id" })).status, 409, "surel menunggu ganda");
+  assert.equal((await daftar({ surel: "budi@contoh.id" })).status, 201, "surel menunggu ganda: balasan seragam");
   const j = await panggil("/api/daftar/lacak", "POST", null, { token });
   assert.equal(j.status, 200); assert.equal(j.pendaftaran.status, "menunggu");
   const teks = JSON.stringify(j); assert.ok(!teks.includes("0812") && !teks.includes("budi@contoh.id") && !teks.includes(await sha(token)));
@@ -182,7 +186,7 @@ test("setujui tanpa lunas diberi tanda; surel yang sudah jadi akun = 409; tolak 
   assert.equal((await panggil(`/api/admin/pendaftaran/${cid}/tolak`, "POST", "admin", { catatan: "tidak memenuhi syarat" })).status, 200);
   const lc = await panggil("/api/daftar/lacak", "POST", null, { token: c.token });
   assert.equal(lc.pendaftaran.status, "ditolak"); assert.equal(lc.pendaftaran.catatan, "tidak memenuhi syarat");
-  assert.equal((await daftar({ surel: "admin@uji.test" })).status, 409, "surel akun yang ada");
+  assert.equal((await daftar({ surel: "admin@uji.test" })).status, 201, "surel akun yang ada: seragam, tanpa baris baru");
   assert.equal((await daftar({ surel: "tolakini@contoh.id" })).status, 201, "setelah ditolak boleh mendaftar lagi");
 });
 
@@ -240,4 +244,12 @@ test("6 kategori resmi: tarif bawaan dari keanggotaan.json, kategori lama dipeta
   assert.equal((await E.DB.prepare("SELECT iuran FROM pendaftaran WHERE surel = 'ngo2@contoh.id'").first()).iuran, 500000, "pengaturan admin menimpa tarif resmi");
   const dok = await worker.fetch(minta("/data/keanggotaan.json", { origin: null }), E, CTX);
   assert.equal(dok.status, 200, "data tarif terbuka untuk halaman /daftar");
+});
+
+test("unggah tanpa Content-Length ditolak 411; laju IP dihitung sebelum badan diurai", async () => {
+  const token = (await daftar({ surel: "cl@contoh.id" })).token;
+  assert.equal((await unggah("/api/daftar/bukti", token, PNG, { ip: "203.0.113.90", tanpaCL: true })).status, 411);
+  let n429 = 0;
+  for (let i = 0; i < 10; i++) if ((await unggah("/api/daftar/bukti", "x", PNG, { ip: "203.0.113.91" })).status === 429) n429++;
+  assert.ok(n429 > 0, "token tak sah pun menghabiskan jatah IP");
 });

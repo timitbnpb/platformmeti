@@ -206,7 +206,14 @@ async function ambil(url, { coba = 2 } = {}) {
     await tidur(5000);
   }
 }
-export const urlGdelt = (q) => 'https://api.gdeltproject.org/api/v2/doc/doc?' + new URLSearchParams({ query: q, mode: 'ArtList', format: 'json', maxrecords: '250', timespan: '3m' });
+// jendela = [awal, akhir] 'YYYYMMDDHHMMSS' untuk bulan lampau (GDELT DOC menerima start/enddatetime; timespan bawaan 3 bulan)
+export const urlGdelt = (q, jendela) => 'https://api.gdeltproject.org/api/v2/doc/doc?' + new URLSearchParams({ query: q, mode: 'ArtList', format: 'json', maxrecords: '250', ...(jendela ? { startdatetime: jendela[0], enddatetime: jendela[1] } : { timespan: '3m' }) });
+/** Jendela bulanan [awal, akhir] dari `dari` (Date) mundur `n` bulan, mulai dari bulan sebelum 3 bulan terakhir; urutan terbaru dulu. */
+export function jendelaBulan(n, dari = new Date()) {
+  const f = (d) => d.toISOString().replace(/[-:T]/g, '').slice(0, 14), out = [];
+  for (let i = 3; i <= n; i++) { const a = new Date(Date.UTC(dari.getUTCFullYear(), dari.getUTCMonth() - i, 1)), b = new Date(Date.UTC(dari.getUTCFullYear(), dari.getUTCMonth() - i + 1, 1) - 1000); out.push([f(a), f(b)]); }
+  return out;
+}
 export const urlRss = (q, ed) => 'https://news.google.com/rss/search?' + new URLSearchParams({ q: `${q} when:90d`, ...EDISI[ed] });
 
 export function muatOrang(jalur = join(AKAR, 'data-panen/orang/orang.jsonl')) {
@@ -219,6 +226,7 @@ export const daftarKueri = () => [...Object.entries(KUERI), ...KUERI_LEMBAGA].fl
 // Bawaan: GDELT lalu RSS langsung. Google News hanya lewat --sumber=google dan tetap ditolak selama robots.txt-nya melarang.
 async function main() {
   const uji = process.argv.includes('--uji');
+  const mundurHari = (+(process.argv.find((a) => a.startsWith('--mundur=')) || '--mundur=0').slice(9)) * 31;   // retensi mengikuti cakupan
   const pilih = (process.argv.find((a) => a.startsWith('--sumber=')) || '--sumber=gdelt,rss').slice(9).split(',');
   const hari = new Date().toISOString().slice(0, 10);
   const cocokOrang = bangunPencocok(muatOrang());
@@ -242,13 +250,23 @@ async function main() {
         catch (e) { gagal.push(`google ${kode}:${ed} ${e.message}`); if (/^403/.test(e.message)) break; }
       }
     }
-    if (pilih.includes('gdelt')) {
+    if (pilih.includes('gdelt') && !process.argv.includes('--hanya-mundur')) {
       let beruntun = 0; const mulai = Date.now();   // anggaran waktu: GDELT sering membatasi laju; jangan menggantung berjam-jam
       for (const [kode, ed, terms] of daftarKueri()) {
         if (Date.now() - mulai > ANGGARAN_GDELT_MS) { gagal.push('gdelt: anggaran waktu habis'); break; }
         if (beruntun >= 6) { gagal.push('gdelt: dihentikan setelah 6 kegagalan beruntun'); break; }
         try { catat(uraiGdelt(await ambil(urlGdelt(kueriGdelt(terms, ed)), { coba: 2 })), { kueri: `${kode}:${ed}`, sumber_panen: 'gdelt' }); beruntun = 0; }
         catch (e) { beruntun++; gagal.push(`gdelt ${kode}:${ed} ${e.message}`); }
+      }
+    }
+    const mundur = mundurHari / 31;
+    if (pilih.includes('gdelt') && mundur > 3) {
+      let beruntun = 0, henti = false;
+      for (const j of jendelaBulan(mundur)) { if (henti || beruntun >= 6) break;
+        for (const [kode, ed, terms] of daftarKueri()) {
+          try { catat(uraiGdelt(await ambil(urlGdelt(kueriGdelt(terms, ed), j), { coba: 2 })), { kueri: `${kode}:${ed}:${j[0].slice(0, 6)}`, sumber_panen: 'gdelt' }); beruntun = 0; }
+          catch (e) { beruntun++; gagal.push(`gdelt ${kode}:${ed}:${j[0].slice(0, 6)} ${e.message}`); if (/^403/.test(e.message)) { henti = true; break; } if (beruntun >= 6) break; }
+        }
       }
     }
     if (pilih.includes('rss')) {
@@ -268,7 +286,7 @@ async function main() {
   // Arsip bergulir: baris baru lebih dulu, lalu berkas lama (GDELT sering 429; panen parsial tidak boleh menghapus arsip). Batas 120 hari.
   const jalurArsip = join(AKAR, 'data-panen/berita/berita.jsonl');
   const lama = !uji && existsSync(jalurArsip) ? readFileSync(jalurArsip, 'utf-8').split('\n').filter(Boolean).map((l) => JSON.parse(l)) : [];
-  const batas = new Date(Date.now() - 120 * 864e5).toISOString();
+  const batas = new Date(Date.now() - (mundurHari || 120) * 864e5).toISOString();
   const hasil = dedup([...baris, ...lama.filter((a) => a.terbit >= batas)]).sort((a, b) => b.terbit.localeCompare(a.terbit));
   const per = {}; for (const a of hasil) for (const k of a.kepakaran) per[k] = (per[k] || 0) + 1;
   const media = {}; for (const a of hasil) media[a.media || '?'] = (media[a.media || '?'] || 0) + 1;

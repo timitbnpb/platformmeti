@@ -428,7 +428,8 @@ a.jm-foto:focus-visible{outline:3px solid var(--fokus)}
 .jm-jalur-t{display:grid;gap:2px;min-width:0}
 .jm-jalur-h{display:flex;align-items:baseline;gap:8px;min-width:0}
 .jm-jalur strong{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font:700 var(--t-h3)/var(--lh-judul) var(--display);color:var(--head)}
-.jm-jalur-ket{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-size:var(--t-tombol);color:var(--ink2)}
+.jm-jalur-k2{display:flex;align-items:center;gap:8px;min-width:0}
+.jm-jalur-ket{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-size:var(--t-tombol);color:var(--ink2)}
 .jm-jalur-n{margin-left:auto;flex:none;font:700 var(--t-h3)/var(--lh-judul) var(--display);color:var(--tk);font-variant-numeric:tabular-nums;white-space:nowrap}
 .jm-jalur-n small{margin-left:4px;font:600 var(--t-label) var(--font);color:var(--ink2)}
 .jm-jalur-kunci{flex:none;align-self:center;gap:4px;min-height:20px;padding:0 8px;font-size:var(--t-label);background:var(--surface);color:var(--ink2)}
@@ -531,8 +532,8 @@ a.jm-foto:focus-visible{outline:3px solid var(--fokus)}
 
 /* ===== beranda: exhibit Pelaku (satu baris per jenis: ikon, angka, logo unik + sisa) ===== */
 .jm-pel{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:minmax(0,1fr);gap:10px;align-items:stretch}
-@media (min-width:700px){.jm-pel{grid-template-columns:repeat(2,minmax(0,1fr))}}
-@media (min-width:1000px){.jm-pel{grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}}
+@media (min-width:900px){.jm-pel{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (min-width:1180px){.jm-pel{grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}}
 .jm-pel li{display:flex;min-width:0}
 .jm-pel-k{--tk:var(--accent);flex:1;display:grid;grid-template-columns:44px minmax(0,auto) minmax(0,1fr);align-items:center;column-gap:12px;min-width:0;padding:12px 14px;border:1px solid var(--line);border-left:4px solid var(--tk);border-radius:var(--r);background:var(--card);color:var(--ink);text-decoration:none;transition:transform .15s,box-shadow .15s}
 .jm-pel-k:hover{transform:translateY(-2px);box-shadow:var(--shadow)}
@@ -559,6 +560,7 @@ a.jm-foto:focus-visible{outline:3px solid var(--fokus)}
 .jm-pel-ex>.jm-ex-hd>.jm-ex-teks>.jm-ex-sub,:is(#petaKartu,#karbon)>.jm-ex>.jm-ex-hd>.jm-ex-teks>.jm-ex-sub{grid-column:1 / -1;grid-row:2}
 }
 .jm-pel-ex .jm-ex-aksi .jm-lihat{margin-left:0}
+@media (max-width:520px){.jm-pel-k{grid-template-columns:44px minmax(0,1fr)}.jm-pel-lg,.jm-pel-nm{grid-column:2;justify-self:start;justify-content:flex-start;padding:8px 0 0 8px}.jm-pel-nm{padding-left:0}}
 
 /* ===== ubin proyek (ikon teknologi + MW; foto berita menutup bila ada) ===== */
 .jm-pt-k{grid-auto-flow:row;gap:0;align-content:center;justify-items:center;background:color-mix(in srgb,var(--tk,var(--ink2)) 14%,var(--card));color:var(--tk,var(--ink2))}

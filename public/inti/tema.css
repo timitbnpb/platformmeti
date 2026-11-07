@@ -1,6 +1,6 @@
 /* Token METI (hijau, biru langit, lime dari logo) (DS §2). Satu-satunya berkas CSS yang boleh berisi hex (gerbang-token-meti).
    Dua blok gelap (@media dan [data-theme="dark"]) WAJIB identik (gerbang-tema-kembar). */
-:root{
+:root{--sos-youtube:#c4302b;--sos-instagram:#c13584;--sos-facebook:#1877f2;--sos-linkedin:#0a66c2;
   --meti-navy:#0A5C47; --meti-petrol:#1E7FA8; --meti-teal:#12896B;
   --meti-cyan:#4AA9E0; --meti-lime:#9DC94F; --meti-cloud:#F2F8F5; --meti-oranye:#C55A11;
 

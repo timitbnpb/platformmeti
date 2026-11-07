@@ -2,11 +2,11 @@
 .jm-pel-halaman{display:grid;grid-template-columns:minmax(0,1fr);gap:var(--gap);padding-block:20px 64px;align-content:start}
 .jm-pel-halaman>*{min-width:0}
 .jm-pel-seg{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:8px}
-.jm-pel-penuh{position:relative;height:max(560px,75vh);border:1px solid var(--line);border-radius:var(--r);background:var(--surface);overflow:hidden}
+.jm-pel-penuh{position:relative;height:max(560px,75vh);border:0;border-radius:0 0 var(--r-lg) var(--r-lg);background:var(--surface);overflow:clip}
 .jm-pel-kanvas{position:absolute;inset:0;width:100%;height:100%}
 .jm-pel-lapis,.jm-pel-panel{position:absolute;z-index:3;border:1px solid var(--line);border-radius:16px;background:color-mix(in srgb,var(--card) 94%,transparent);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);box-shadow:var(--shadow);font-size:var(--t-kecil)}
-.jm-pel-lapis{top:76px;left:12px;width:min(248px,calc(100% - 24px))}
-.jm-pel-panel{top:76px;right:12px;width:min(340px,calc(100% - 24px));max-height:calc(100% - 90px);display:flex;flex-direction:column;overflow:hidden}
+.jm-pel-lapis{top:12px;left:12px;width:min(248px,calc(100% - 24px))}
+.jm-pel-panel{top:12px;right:12px;width:min(340px,calc(100% - 24px));max-height:calc(100% - 24px);display:flex;flex-direction:column;overflow:hidden}
 .jm-pel-panel:not([open]),.jm-pel-lapis:not([open]){width:auto}
 .jm-pel-lapis summary,.jm-pel-panel summary{cursor:pointer;min-height:40px;padding:0 14px;display:flex;align-items:center;gap:10px;font:700 var(--t-label)/1 var(--font);letter-spacing:normal;text-transform:none;color:var(--head);list-style:none}
 .jm-pel-panel summary{flex:none}
@@ -16,10 +16,6 @@
 .jm-pel-panel[open] summary{border-bottom:1px solid var(--line)}
 .jm-pel-lapis summary:focus-visible,.jm-pel-panel summary:focus-visible{outline:2px solid var(--fokus);outline-offset:-2px}
 #pelLegenda{padding:4px 14px 12px}
-.jm-pel-grad{height:12px;border-radius:var(--r-pil);background:linear-gradient(90deg,color-mix(in srgb,var(--accent-isi) 12%,transparent),var(--accent-isi))}
-.jm-pel-grad-n{display:flex;justify-content:space-between;margin-top:4px;color:var(--ink2);font-variant-numeric:tabular-nums}
-.jm-pel-nodata{display:flex;align-items:center;gap:8px;margin:8px 0 4px;color:var(--ink2)}
-.jm-pel-nodata i{width:16px;height:12px;border-radius:3px;border:1px solid var(--line-ctl);background:color-mix(in srgb,var(--accent-isi) 5%,transparent)}
 .jm-pel-panel-isi{flex:1;min-height:0;overflow:auto;padding:12px 14px 14px;display:grid;gap:8px;align-content:start}
 .jm-pel-panel-isi h4{margin:6px 0 0;font:700 var(--t-label)/var(--lh-rapat) var(--font);letter-spacing:normal;text-transform:none;color:var(--ink2)}
 .jm-pel-p{margin:0;font:400 var(--t-tombol)/var(--lh-isi) var(--font);color:var(--ink)}
@@ -39,41 +35,27 @@
 .jm-pel-tabel td.jm-pel-celah{font-weight:700;color:var(--head)}
 .jm-pel-cat{margin-top:10px}
 .jm-pel-kartu{list-style:none;margin:12px 0 0;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,280px),1fr));gap:12px}
-.jm-pel-k{display:grid;gap:8px;align-content:start;padding:14px;border:1px solid var(--line);border-radius:var(--r);background:var(--card)}
-.jm-pel-k-a{display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap}
-.jm-pel-k-s{font:400 var(--t-label)/var(--lh-rapat) var(--font);color:var(--ink2)}
-.jm-pel-k-n{font:700 var(--t-body)/var(--lh-rapat) var(--display);color:var(--head);overflow-wrap:anywhere}
-.jm-pel-k-n a{color:inherit;text-decoration:none}
-.jm-pel-k-n a:hover{color:var(--accent);text-decoration:underline}
-.jm-pel-k dl{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:6px 12px;margin:0}
-.jm-pel-k dt{font:600 var(--t-label)/var(--lh-rapat) var(--font);color:var(--ink2)}
-.jm-pel-k dd{margin:0;font:600 var(--t-tombol)/var(--lh-rapat) var(--font);color:var(--ink);font-variant-numeric:tabular-nums}
-.jm-pel-k-pr{grid-column:1/-1}
-.jm-pel-k-pr dd{display:flex;align-items:center;gap:6px}
-.jm-pel-k-pr img{border-radius:50%;flex:none}
+.jm-pel-pk{display:grid;gap:8px;align-content:start;padding:14px;border:1px solid var(--line);border-radius:var(--r);background:var(--card)}
+.jm-pel-pk-a{display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap}
+.jm-pel-pk-s{font:400 var(--t-label)/var(--lh-rapat) var(--font);color:var(--ink2)}
+.jm-pel-pk-n{font:700 var(--t-body)/var(--lh-rapat) var(--display);color:var(--head);overflow-wrap:anywhere}
+.jm-pel-pk-n a{color:inherit;text-decoration:none}
+.jm-pel-pk-n a:hover{color:var(--accent);text-decoration:underline}
+.jm-pel-pk dl{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:6px 12px;margin:0}
+.jm-pel-pk dt{font:600 var(--t-label)/var(--lh-rapat) var(--font);color:var(--ink2)}
+.jm-pel-pk dd{margin:0;font:600 var(--t-tombol)/var(--lh-rapat) var(--font);color:var(--ink);font-variant-numeric:tabular-nums}
+.jm-pel-pk-pr{grid-column:1/-1}
+.jm-pel-pk-pr dd{display:flex;align-items:center;gap:6px}
+.jm-pel-pk-pr img{border-radius:50%;flex:none}
 .jm-pel-kalk-alat{display:grid;gap:12px;grid-template-columns:minmax(0,1fr) minmax(220px,320px);align-items:center;margin-bottom:var(--gap)}
 @media (max-width:999px){
-  .jm-pel-seg{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .jm-pel-seg{grid-template-columns:repeat(3,minmax(0,1fr));position:static!important}
   .jm-pel-penuh{height:clamp(480px,calc(100vh - var(--top)),680px)}
   .jm-pel-lapis{top:auto;bottom:40px}
   .jm-pel-panel{top:auto;bottom:12px;max-height:55%}
   .jm-pel-kalk-alat{grid-template-columns:minmax(0,1fr)}
 }
 @media (max-width:600px){.jm-pel-kalk-alat .jm-kl-tek{grid-template-columns:repeat(2,minmax(0,1fr))}}
-@media (min-width:768px){.jm-pel-tabel td:first-child{min-width:170px}}
-.jm-pel-tabel th{white-space:normal}
-@media (min-width:768px){#pelTabel .jm-gulir{max-height:620px;overflow-y:auto}#pelTabel .jm-tabel thead th{position:sticky;top:0;z-index:2}}
-@media (max-width:767px){.jm-pel-tabel.jm-tabel td[data-label]{grid-template-columns:120px minmax(0,1fr);align-items:start}.jm-pel-tabel.jm-tabel td[data-label]::before{overflow-wrap:anywhere}}
-
-/* filter teknologi: bilah kaca ujung ke ujung di atas peta */
-.jm-pel-penuh>.jm-pel-seg{position:absolute;z-index:5;top:0;left:0;right:0;padding:10px 12px;border-bottom:1px solid var(--line);background:color-mix(in srgb,var(--card) 86%,transparent);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px)}
-@media (max-width:999px){.jm-pel-penuh>.jm-pel-seg{display:flex;overflow-x:auto;scrollbar-width:none}.jm-pel-penuh>.jm-pel-seg .jm-kl-tb{flex:none}}
-
-/* peta selebar layar; bilah dan panel rata ke tepi konten */
-.jm-pel-penuh{width:100vw;margin-inline:calc(50% - 50vw);border-radius:0;border-inline:0}
-.jm-pel-penuh>.jm-pel-seg{padding-inline:var(--tepi)}
-.jm-pel-lapis{left:var(--tepi)}.jm-pel-panel{right:var(--tepi)}
-
 /* tooltip kartu di peta */
 .jm-pel-tip{position:absolute;z-index:6;width:260px;padding:12px 14px;border:1px solid var(--line);border-radius:var(--r);background:var(--card);box-shadow:var(--shadow-lg);pointer-events:none;display:grid;gap:8px}
 .jm-pel-tip[hidden]{display:none}
@@ -112,15 +94,6 @@
 .jm-pel-ht th.jm-num,.jm-pel-ht td.jm-num{text-align:right;font-variant-numeric:tabular-nums}
 .jm-pel-ht td{padding:5px 0;border-top:1px solid var(--line)}
 
-/* Cara menghitung: nomor di kolom kiri, teks menggantung rata */
-.jm-pel-cara{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:12px;counter-reset:cara}
-.jm-pel-cara>li{counter-increment:cara;display:grid;grid-template-columns:32px minmax(0,1fr);gap:12px;align-items:start;padding:14px 16px;border:1px solid var(--line);border-radius:var(--r-sm);background:var(--surface);line-height:var(--lh-isi)}
-.jm-pel-cara>li::before{content:counter(cara);display:grid;place-items:center;width:32px;height:32px;border-radius:50%;background:var(--soft-hijau);color:var(--accent);font:700 var(--t-kecil)/1 var(--font)}
-.jm-pel-celahk{margin-top:16px;padding:14px 16px;border:1px solid var(--line);border-radius:var(--r-sm);background:var(--card)}
-.jm-pel-celahk h3{display:flex;align-items:center;gap:8px;margin:0 0 8px;font:700 var(--t-h3)/var(--lh-rapat) var(--display);color:var(--head)}
-.jm-pel-celahk h3 svg{flex:none;color:var(--accent)}
-.jm-pel-celahk ul{margin:0;padding-left:20px;display:grid;gap:6px;color:var(--ink)}
-.jm-pel-kutip{display:flex;align-items:center;flex-wrap:wrap;gap:8px;margin:14px 0 0;color:var(--ink2);font-size:var(--t-kecil)}
 #pelIsi{display:grid;gap:24px;min-width:0}
 @media (max-width:760px){#pelIsi{grid-template-columns:minmax(0,1fr)}}
 
@@ -138,7 +111,6 @@
 .jm-pa-nilai{margin:0;font:700 var(--t-h2)/var(--lh-judul) var(--display);color:var(--head);font-variant-numeric:tabular-nums;overflow-wrap:anywhere}
 .jm-pa-lbl{margin:0;display:flex;flex-wrap:wrap;align-items:center;gap:6px;color:var(--ink2);font:600 var(--t-kecil)/var(--lh-rapat) var(--font)}
 .jm-pa-ub small{color:var(--ink2);font-size:var(--t-kecil)}
-.jm-pa-war{display:flex;align-items:flex-start;gap:8px;margin:0;padding:10px 14px;border-radius:var(--r-sm);background:var(--warn-bg);color:var(--warn)}
 .jm-pa-war .jm-ik{flex:none;margin-top:2px}
 .jm-pa-cara,.jm-pa-bag{padding:16px 20px;border:1px solid var(--line);border-radius:var(--r);background:var(--card);min-width:0}
 .jm-pa-cara summary{display:flex;align-items:center;gap:8px;min-height:var(--target);cursor:pointer;font:700 var(--t-h3)/var(--lh-judul) var(--display);color:var(--head)}
@@ -150,3 +122,110 @@
 @media (max-width:639px){.jm-pa-alat,.jm-pa-ubin{grid-template-columns:minmax(0,1fr)}}
 .jm-pa-ub .jm-kpi-ik{position:static;float:none;justify-self:start;margin:0}
 .jm-pa-ub .jm-pa-nilai{order:1}.jm-pa-ub .jm-pa-lbl{order:2}.jm-pa-ub small{order:3}
+
+/* panel provinsi belum dipilih: lima celah terbesar, dapat diklik */
+.jm-pel-top{list-style:none;margin:0;padding:0;display:grid;gap:6px}
+.jm-pel-top button{display:grid;grid-template-columns:24px 20px minmax(0,1fr) auto;align-items:center;gap:8px;width:100%;min-height:var(--target);padding:0 10px;border:1px solid var(--line);border-radius:var(--r-sm);background:var(--card);color:var(--ink);font:600 var(--t-tombol)/1 var(--font);text-align:left;cursor:pointer}
+.jm-pel-top button:hover{border-color:var(--accent)}
+.jm-pel-top button:focus-visible{outline:2px solid var(--fokus);outline-offset:2px}
+.jm-pel-top-n{display:grid;place-items:center;width:24px;height:24px;border-radius:50%;background:var(--soft-hijau);color:var(--accent);font:700 var(--t-label)/1 var(--font)}
+.jm-pel-top-p{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.jm-pel-top b{font-variant-numeric:tabular-nums;color:var(--accent)}
+
+/* peta, kepala, dan segmen satu wadah exhibit */
+#exPeta>.jm-ex-bd{padding:0}
+#exPeta .jm-pel-seg{position:sticky;top:var(--top,0px);z-index:6;padding:12px 22px;border-bottom:1px solid var(--line);background:var(--card)}
+.jm-pel-seg .jm-kl-tb[aria-pressed="true"]{border-color:var(--brand);background:var(--brand);color:var(--on-brand)}
+.jm-pel-seg .jm-kl-tb[aria-pressed="true"] .jm-ikt,.jm-pel-seg .jm-kl-tb[aria-pressed="true"] .jm-ik{color:var(--on-brand)}
+@media (max-width:599px){#exPeta .jm-pel-seg{padding:10px 16px}}
+
+/* legenda kuantil */
+.jm-pel-kuantil{list-style:none;margin:0;padding:4px 14px 12px;display:grid;gap:6px}
+.jm-pel-kuantil li{display:flex;align-items:center;gap:10px;font-variant-numeric:tabular-nums;color:var(--ink)}
+.jm-pel-kuantil li>span:first-of-type{flex:1;min-width:0}
+.jm-pel-kuantil i{flex:none;width:22px;height:14px;border-radius:4px;border:1px solid var(--line-ctl)}
+.jm-pel-k0{background:color-mix(in srgb,var(--accent-isi) 20%,var(--card))}.jm-pel-k1{background:color-mix(in srgb,var(--accent-isi) 38%,var(--card))}.jm-pel-k2{background:color-mix(in srgb,var(--accent-isi) 56%,var(--card))}.jm-pel-k3{background:color-mix(in srgb,var(--accent-isi) 74%,var(--card))}.jm-pel-k4{background:color-mix(in srgb,var(--accent-isi) 92%,var(--card))}
+.jm-pel-kuantil .jm-pel-nd{background:color-mix(in srgb,var(--accent-isi) 5%,var(--card))}
+
+/* tab halaman: ujung ke ujung, aktif pil hijau tua, tanpa scrollbar */
+#tabHal.jm-tab{display:grid!important;grid-auto-flow:column;grid-auto-columns:1fr;grid-template-columns:none!important;gap:4px;padding:6px;overflow:visible!important;border:1px solid var(--line);border-radius:var(--r-pil);background:var(--card)}
+#tabHal.jm-tab>button{justify-content:center;min-height:44px;margin:0;padding:0 12px;border:0;border-radius:var(--r-pil);white-space:nowrap}
+#tabHal.jm-tab>button[aria-selected="true"]{background:var(--brand);color:var(--on-brand)}
+#tabHal.jm-tab>button[aria-selected="true"] svg{color:var(--on-brand)}
+@media (max-width:599px){#tabHal.jm-tab>button span{font-size:var(--t-kecil)}#tabHal.jm-tab>button{padding:0 6px;gap:4px}}
+
+/* teknologi: warna --tp-* */
+.jm-pel-halaman .jm-tek-surya{--tk:var(--tp-surya)}.jm-pel-halaman .jm-tek-bayu{--tk:var(--tp-bayu)}.jm-pel-halaman .jm-tek-hidro{--tk:var(--tp-hidro)}.jm-pel-halaman .jm-tek-panas-bumi{--tk:var(--tp-panas)}.jm-pel-halaman .jm-tek-bioenergi{--tk:var(--tp-bio)}
+
+/* tabel peringkat: kolom seimbang, tanpa gulir dalam */
+.jm-pel-sr{margin-bottom:12px}
+.jm-pel-tabel{table-layout:fixed}
+.jm-pel-tabel th{white-space:normal;padding:10px 8px;vertical-align:middle}
+.jm-pel-tabel th small{display:block;margin-top:2px;font:400 var(--t-label)/1 var(--font);color:var(--on-brand);opacity:.8}
+.jm-pel-tabel td{padding:10px 8px}
+.jm-pel-c-prov{width:22%}.jm-pel-c-tek{width:14%}.jm-pel-c-pot,.jm-pel-c-ter{width:9%}.jm-pel-c-rasio{width:9%}.jm-pel-c-celah{width:10%}.jm-pel-c-harga{width:15%}.jm-pel-c-tb{width:12%}
+.jm-pel-tabel td.jm-num,.jm-pel-tabel td.jm-tengah{width:auto}
+.jm-pel-tabel td:first-child .jm-pel-pj{min-width:0}.jm-pel-tabel td:first-child a{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.jm-pel-ulang a{opacity:.5}
+.jm-pel-tabel td.jm-pel-celah{font-weight:800;color:var(--accent);font-size:var(--t-body)}
+.jm-pel-rh,.jm-pel-tbx{display:grid;gap:3px;justify-items:end}
+.jm-pel-rh b,.jm-pel-tbx b{font-weight:600}
+.jm-pel-tbx small{color:var(--ink2)}
+.jm-pel-rb{position:relative;display:block;width:100%;max-width:90px;height:5px;border-radius:var(--r-pil);background:var(--line)}
+.jm-pel-rb::after{content:"";position:absolute;top:0;bottom:0;left:var(--a,0%);width:max(4px,calc(var(--b,0%) - var(--a,0%)));border-radius:var(--r-pil);background:var(--accent)}
+.jm-pel-tabel th .jm-urut{justify-content:center}
+@media (max-width:767px){.jm-pel-tabel.jm-tabel td[data-label]{grid-template-columns:130px minmax(0,1fr);align-items:center}.jm-pel-tabel.jm-tabel td.jm-num[data-label]{text-align:left}.jm-pel-rh,.jm-pel-tbx{justify-items:start}.jm-pel-rb{max-width:140px}}
+
+/* Cara menghitung: kartu sama tinggi, rata kiri */
+.jm-pel-lgd{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;align-items:stretch}
+.jm-pel-lg{display:flex;flex-direction:column;align-items:flex-start;gap:10px;padding:18px;border:1px solid var(--line);border-radius:var(--r-lg);background:var(--card);text-align:left;hyphens:manual}
+.jm-pel-lg *{text-align:left;hyphens:manual}
+.jm-pel-lg h3{margin:0;font:700 var(--t-h3)/var(--lh-rapat) var(--display);color:var(--head)}
+.jm-pel-lg p{margin:0;flex:1;font:400 var(--t-body)/var(--lh-isi) var(--font);color:var(--ink2)}
+.jm-pel-lg code{display:block;width:100%;box-sizing:border-box;padding:10px 12px;border:1px solid var(--line);border-radius:var(--r-sm);background:var(--surface);color:var(--head);font:600 var(--t-tombol)/var(--lh-isi) ui-monospace,SFMono-Regular,Menlo,monospace;overflow-wrap:anywhere}
+.jm-pel-lg-ik{display:grid;place-items:center;width:44px;height:44px;border-radius:12px;background:color-mix(in srgb,var(--tk) 16%,var(--card));color:var(--tk)}
+.jm-pel-lg-surya{--tk:var(--tp-surya)}.jm-pel-lg-bayu{--tk:var(--tp-bayu)}.jm-pel-lg-hidro{--tk:var(--tp-hidro)}.jm-pel-lg-bio{--tk:var(--tp-bio)}
+.jm-pel-celahk{margin-top:24px;padding:16px 18px;border:1px solid var(--line);border-radius:var(--r-lg);background:var(--card)}
+.jm-pel-celahk h3{display:flex;align-items:center;gap:8px;margin:0 0 12px;font:700 var(--t-h3)/var(--lh-rapat) var(--display);color:var(--head)}
+.jm-pel-celahk h3 svg{flex:none;color:var(--accent)}
+.jm-pel-celahk ul{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px 24px}
+.jm-pel-celahk li{display:flex;align-items:flex-start;gap:10px;line-height:var(--lh-isi);color:var(--ink);text-align:left}
+.jm-pel-celahk li svg{flex:none;margin-top:3px;color:var(--warn)}
+.jm-pel-kutip{display:flex;align-items:center;flex-wrap:wrap;gap:8px 12px;margin:24px 0 0;padding:12px 16px;border:1px solid var(--line);border-radius:var(--r-lg);background:var(--surface);color:var(--ink2);font-size:var(--t-tombol)}
+.jm-pel-kutip>span:not(.jm-sumber){flex:1 1 240px;min-width:0}
+@media (max-width:760px){.jm-pel-lgd,.jm-pel-celahk ul{grid-template-columns:minmax(0,1fr)}}
+
+/* PLTS atap: semua di wadah exhibit */
+.jm-pa{gap:24px}
+#paEx1 .jm-pa-kp{grid-column:1/-1;margin-top:8px}
+#paEx1 .jm-pa-alat{margin:0}
+.jm-pa-f{display:grid;gap:6px;min-width:0}
+.jm-pa-fl{display:flex;align-items:center;gap:6px;font:600 var(--t-label)/var(--lh-rapat) var(--font);color:var(--ink2)}
+.jm-pa-fl svg{flex:none;color:var(--accent)}
+.jm-pa-angka{background:var(--card)}
+.jm-pa-rp{flex:none;font:600 var(--t-tombol)/1 var(--font);color:var(--ink2)}
+.jm-pa-angka input{text-align:right;font-variant-numeric:tabular-nums}
+.jm-pa-ub{grid-template-columns:44px minmax(0,1fr);align-items:center;gap:12px;height:100%;box-sizing:border-box}
+.jm-pa-ub .jm-kpi-ik{width:44px;height:44px;display:grid;place-items:center;border-radius:12px;background:var(--soft-hijau);color:var(--accent)}
+.jm-pa-ub-t{display:grid;gap:4px;min-width:0}
+.jm-pa-ub .jm-pa-lbl{flex-wrap:nowrap;justify-content:space-between}
+.jm-pa-ub .jm-pa-lbl>span:first-child{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.jm-pa-ub .jm-pa-lbl .jm-pil{flex:none;min-height:20px;padding:0 6px;font-size:var(--t-label)}
+.jm-pa-ub .jm-pa-nilai{order:0;font-size:var(--t-h3);overflow-wrap:anywhere}
+.jm-pa-nilai small{font:600 var(--t-kecil)/1 var(--font);color:var(--ink2)}
+.jm-pa-ub .jm-pa-sub{order:0;color:var(--ink2);font-size:var(--t-kecil);line-height:var(--lh-rapat)}
+.jm-pa-ubin{align-items:stretch}
+.jm-pa-wars{display:grid;gap:12px;margin-top:24px}
+.jm-pa-war{display:flex;background:var(--warn-bg);color:var(--warn);margin:0;align-items:flex-start;gap:10px;padding:12px 16px;border:1px solid var(--warn);line-height:var(--lh-isi)}
+.jm-pa-war .jm-ik{flex:none;margin-top:2px}
+.jm-pa-langkah{list-style:none;margin:0;padding:0;display:grid;gap:12px}
+.jm-pa-lg{display:grid;grid-template-columns:32px minmax(0,1fr);gap:12px;align-items:start;padding:14px 16px;border:1px solid var(--line);border-radius:var(--r-sm);background:var(--card);text-align:left}
+.jm-pa-lg-n{display:grid;place-items:center;width:32px;height:32px;border-radius:50%;background:var(--soft-hijau);color:var(--accent);font:700 var(--t-kecil)/1 var(--font)}
+.jm-pa-lg p{margin:0;line-height:var(--lh-isi);color:var(--ink2);text-align:left}
+.jm-pa-lg p.jm-pa-lg-r{display:flex;align-items:center;gap:8px;margin-bottom:6px;color:var(--accent)}
+.jm-pa-lg code{padding:3px 8px;border-radius:var(--r-sm);background:var(--surface);color:var(--head);font:600 var(--t-tombol)/var(--lh-isi) ui-monospace,SFMono-Regular,Menlo,monospace}
+.jm-pa-tab .jm-pa-grup th{background:var(--soft-hijau);color:var(--head);text-align:left;padding:8px 16px;font-weight:700}
+.jm-pa-as{width:100%;max-width:120px;min-height:36px;box-sizing:border-box;padding:0 10px;border:1px solid var(--line-ctl);border-radius:var(--r-sm);background:var(--card);color:var(--ink);text-align:right;font:400 var(--t-body)/1 var(--font);font-variant-numeric:tabular-nums}
+.jm-pa-as:focus-visible{outline:2px solid var(--fokus);outline-offset:2px}
+.jm-pa-celah{margin:6px 0 0;padding-left:18px}
+@media (max-width:767px){.jm-pa-tab .jm-pa-grup th{display:block}}

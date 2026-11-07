@@ -20,6 +20,7 @@ const REGULASI = [{ id: "uu-1-2026", judul: "UU baru", tanggal_ditetapkan: iso(3
 const ASSETS = { fetch: async (req) => {
   const n = new URL(req.url).pathname;
   const baris = n === "/data/berita.json" ? BERITA : n === "/data/regulasi.json" ? REGULASI : null;
+  if (n === "/data/topik/surya.json") return new Response(JSON.stringify({ id: "surya", diperbarui: iso(2).slice(0, 10), judul: { id: "Surya" } }));
   return baris ? new Response(JSON.stringify({ baris })) : new Response("x", { status: 404 });
 } };
 async function masuk(nama, peran = "anggota") {
@@ -61,6 +62,9 @@ test("validasi: jenis, ref, provinsi 2 digit", async () => {
   for (const b of [{ jenis: "orang", ref: "x1" }, { jenis: "proyek", ref: "a b" }, { jenis: "proyek", ref: "" }, { jenis: "provinsi", ref: "abc" }, { jenis: "proyek" }])
     assert.equal((await minta("/api/ikuti", { metode: "POST", json: b, nama: "ani" })).status, 422, JSON.stringify(b));
   assert.equal((await minta("/api/ikuti", { metode: "POST", json: { jenis: "provinsi", ref: "32" }, nama: "ani" })).status, 201);
+  assert.equal((await minta("/api/ikuti", { metode: "POST", json: { jenis: "topik", ref: "surya" }, nama: "ani" })).status, 201, "topik");
+  const rm = await ringkasanMingguan(E, { id: akunId.ani, peran: "anggota" }, Date.now());
+  assert.ok(rm.item.some((x) => x.tipe === "topik" && x.ref === "surya"), "ringkasan topik");
 });
 
 test("batas 200 per akun (trigger)", async () => {

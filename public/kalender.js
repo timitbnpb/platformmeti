@@ -5,7 +5,7 @@ import { pilihHtml, exHtml, sumberHtml } from "/inti/komponen.js";
 import { tautOrg, siapTautan, rinci } from "/inti/tautan.js";
 import { tautanBagi } from "/inti/bagi.js";
 import { lokasiTeks, petaUrl, sumberDaftar, namaSumber, sumberTeks, namaPenyelenggara, gambarAcara } from "/kalender_fmt.js";
-import { fotoAcara } from "/event_umum.js";
+import { fotoAcara, hariIni } from "/event_umum.js";
 import { aksiHtml, hlHtml } from "/inti/aksi_ex.js";
 import { muat, label, urlAman } from "/publik.js";
 
@@ -363,7 +363,7 @@ const csvBaris = () => [[t("kal.pop.tanggal"), "s/d", "Judul", t("kal.pop.jenis"
 /** Dipanggil kalender_halaman.js saat tab Kalender pertama dibuka; saya = hasil mulaiHalaman(). */
 export async function pasang(saya) {
   bacaUrl();
-  KINI = new Date().toISOString().slice(0, 10);
+  KINI = hariIni();
   const isi = document.getElementById("isi");
   const mulai = async () => {
     isi.innerHTML = hantuHtml(5);

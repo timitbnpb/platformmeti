@@ -2,6 +2,7 @@
    garis rata-rata putus-putus, batang berlabel ujung, garis dengan label langsung) dan dirapikan ala konsultan: satu warna sorot (token METI), abu untuk konteks,
    tanpa legenda, tanpa kotak sumbu. Gaya ada di /grafik.css. Semua fungsi mengembalikan string SVG; judul <title> jadi tooltip dan teks alternatif. */
 import { esc } from "/inti/umum.js";
+import "/inti/tip_grafik.js";
 import { angka } from "/i18n.js";
 
 const fmt = (n, d = 0) => angka(n, { desimal: d });

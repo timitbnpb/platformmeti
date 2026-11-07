@@ -1,7 +1,6 @@
 /* Kepala situs terang bersama (DS §5): latar putih, garis tipis, aktif = pil hijau lembut; gelap = permukaan gelap hijau. Hanya token. */
 header.top{position:fixed;inset:0 0 auto 0;z-index:50;height:var(--top);display:flex;align-items:center;gap:8px;padding:0 max(8px,env(safe-area-inset-right)) 0 max(8px,env(safe-area-inset-left));
   background:var(--paper);color:var(--ink);border-bottom:1px solid var(--line)}
-header.top::after{content:"";position:absolute;left:0;bottom:0;width:48px;height:2px;background:var(--accent-isi)}
 .jm-merek{display:flex;align-items:center;gap:10px;min-height:var(--target);color:var(--head);text-decoration:none;font:600 var(--t-h3)/1 var(--display);white-space:nowrap}
 .jm-merek img{width:40px;height:40px;display:block}
 .iconbtn{display:inline-flex;align-items:center;justify-content:center;width:var(--target);height:var(--target);padding:0;border:0;background:none;color:var(--ink2);cursor:pointer;border-radius:var(--r-sm);text-decoration:none}
@@ -164,3 +163,20 @@ dialog.jm-cari::backdrop{background:color-mix(in srgb,var(--ink) 45%,transparent
 @media (max-width:760px){.jm-bulat{width:44px;height:44px;min-width:44px}.jm-sisi{gap:4px}}
 /* seluler: pencarian global layar penuh */
 @media (max-width:600px){dialog.jm-cari{width:100vw;max-width:100vw;height:100dvh;max-height:100dvh;margin:0;border:0;border-radius:0}.jm-cari-pintas{grid-template-columns:repeat(2,minmax(0,1fr))}.jm-cari-kaki{display:none}.jm-cari-chip{min-height:40px}.jm-cari-atas .iconbtn,.jm-cari-atas button{min-width:44px;min-height:44px}.jm-cari .jm-cari-isi{font-size:var(--t-masukan)}}
+
+/* navbar premium (pemilik 8 Nov 2026): 64px, isi mengikuti --maks, menu di tengah, item seragam pas isi, ikon kanan 40px */
+:root{--top:64px}
+body header.top{gap:12px;padding-inline:var(--tepi)}
+.jm-sisi{gap:8px}
+.jm-bulat,.jm-sisi .iconbtn{width:40px;height:40px;min-width:40px}
+.jm-sisi .iconbtn.jm-akun{width:auto;padding:0 12px}
+@media (min-width:1200px){
+  nav.tabs,nav.tabs.buka{display:flex;flex:1 1 auto;justify-content:center;width:auto;margin-inline:auto;gap:4px}
+  nav.tabs>a,nav.tabs .jm-grup-tbl{justify-content:center;width:auto!important;min-height:40px;padding:0 14px!important;gap:8px;font-size:var(--t-body);transition:background .15s,color .15s}
+  nav.tabs>.jm-grup{display:flex;flex:none}
+  nav.tabs>.jm-grup>.jm-grup-tbl{flex:none;width:auto!important}
+  nav.tabs>a .jm-ik,nav.tabs .jm-grup-tbl .jm-ik{display:block}
+  .jm-caret{width:14px;height:14px;margin-left:0}
+}
+/* 1200-1439: ikon menu disembunyikan, merek tinggal logo agar muat */
+@media (min-width:1200px) and (max-width:1439px){nav.tabs>a .jm-ik,nav.tabs .jm-grup-tbl .jm-ik:not(.jm-caret){display:none}nav.tabs>a,nav.tabs .jm-grup-tbl{padding:0 12px!important;font-size:var(--t-tombol)}nav.tabs{gap:2px}}

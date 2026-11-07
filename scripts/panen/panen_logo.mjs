@@ -2,8 +2,8 @@
 // Logo organisasi -> public/img/logo/org/<org_id>.png. Dapat dilanjutkan (checkpoint data-panen/logo/status.json).
 //   node scripts/panen/panen_logo.mjs [--maks N] [--hanya=id1,id2] [--ulang] [--tanpa-wikidata]
 //   node scripts/panen/panen_logo.mjs --tetap=<org_id>=<url gambar logo di situs resmi>   (ganti logo yang salah, mis. favicon terpotong)
-// Urutan per organisasi dengan situs: (a) apple-touch-icon/icon >= 96, (b) <img> logo di kepala halaman,
-// (c) og:image yang mirip logo (rasio 0,5-2, <= 400 KB), (d) favicon >= 64. Tanpa situs / gagal: Wikidata P154 (logo) lewat Commons.
+// Urutan per organisasi dengan situs: (a) apple-touch-icon/icon >= 96, (b) <img> logo di kepala halaman (og:image dilarang: foto),
+// (c) favicon >= 64. Tanpa situs / gagal: Wikidata P154 (logo) lewat Commons.
 // Sopan: robots.txt dihormati (kecuali API Wikimedia, sesuai kebijakan Wikimedia), UA METI, jeda >= 2 dtk per host, timeout 8 dtk,
 // tanpa login/formulir/CAPTCHA, gagal = dilewati. SVG dirasterkan (tanpa skrip yang lolos). Keluaran PNG <= 40 KB, 64-256 px.
 // Perlu paket `sharp` (sudah terpasang sebagai dependensi wrangler) dan `sips`/`ffmpeg` hanya untuk ICO bukan-PNG.
@@ -14,7 +14,7 @@ import { fileURLToPath } from 'node:url';
 import { UA, robotsBolehkan, norm } from './berita.mjs';
 
 const AKAR = fileURLToPath(new URL('../..', import.meta.url));
-const POTRET = AKAR + 'data-panen/potret/', DIR_CP = AKAR + 'data-panen/logo/', KELUAR = AKAR + 'public/img/logo/org/';
+const POTRET = AKAR + 'data-panen/potret/', DIR_CP = AKAR + 'data-panen/logo/', KELUAR = process.env.LOGO_KELUAR || AKAR + 'public/img/logo/org/';
 const CP = DIR_CP + 'status.json', JSONL = DIR_CP + 'logo.jsonl', SUMBER_MD = AKAR + 'public/img/logo/SUMBER.md';
 const arg = (k) => (process.argv.find((a) => a.startsWith(k + '=')) || '').slice(k.length + 1);
 const MAKS = +(process.argv[process.argv.indexOf('--maks') + 1]) || 1e9, HANYA = arg('--hanya') ? new Set(arg('--hanya').split(',')) : null;
@@ -105,8 +105,7 @@ function calon(html, dasar) {
     if (/logo/i.test(ciri) && !/sprite|partner|client|sponsor|mitra|footer-?logo|banner|slider|facebook|twitter|instagram|youtube|whatsapp/i.test(ciri)) out.push(['logo-header', mutlak(s, dasar), {}]);
     if (out.filter((x) => x[0] === 'logo-header').length >= 3) break;
   }
-  const og = [/<meta[^>]+property=["']og:image(?::secure_url)?["'][^>]*content=["']([^"']+)/i, /<meta[^>]+content=["']([^"']+)["'][^>]+property=["']og:image/i].map((r) => (html.match(r) || [])[1]).find(Boolean);
-  if (og) out.push(['og-image', mutlak(og, dasar), { rasio: true, mentahMaks: 400 * 1024 }]);
+  // og:image TIDAK dipakai: hampir selalu foto/banner, bukan logo.
   for (const t of tags.filter((t) => /icon/i.test(atr(t, 'rel') || '') && !/apple/i.test(atr(t, 'rel') || ''))) out.push(['favicon', mutlak(atr(t, 'href'), dasar), {}]);
   out.push(['favicon', mutlak('/favicon.ico', dasar), {}]);
   return out.filter((x) => x[1]).filter((x, i, l) => l.findIndex((y) => y[1] === x[1]) === i);

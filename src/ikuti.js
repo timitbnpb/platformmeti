@@ -40,6 +40,15 @@ export async function ringkasanMingguan(env, akun, kini = Date.now()) {
       if (cocok) item.push({ tipe: "berita", jenis: cocok[0], ref: cocok[1], judul: b.judul, url: b.url, media: b.media, waktu: Math.floor(Date.parse(b.terbit) / 1000) });
     }
   }
+  // Topik: butir bila tanggal "diperbarui" berkas topik jatuh dalam 7 hari (hanya topik yang diikuti dibaca).
+  for (const id of ikut("topik")) {
+    if (!/^[a-z0-9-]{1,40}$/.test(id)) continue;
+    try {
+      const r = await env.ASSETS.fetch(new Request(`https://aset.internal/data/topik/${id}.json`));
+      const t = r.ok ? await r.json() : null;
+      if (t?.diperbarui >= sejakIso.slice(0, 10)) item.push({ tipe: "topik", jenis: "topik", ref: id, judul: t.judul?.id, waktu: Math.floor(Date.parse(t.diperbarui) / 1000) });
+    } catch { /* abaikan */ }
+  }
   if (reg.size || pro.size) {
     const tgl = sejakIso.slice(0, 10);
     for (const r of await muatBaris(env, "regulasi")) {

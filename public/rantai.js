@@ -13,7 +13,7 @@ const temuan = (tx, ...r) => temuanHtml(String(tx).replace(/[.\s]+$/, ""), ...r)
 const $ = (id) => document.getElementById(id);
 const KELAS = { lokal: "jm-an-b1", ekspor: "jm-an-b2", keduanya: "jm-an-b4" };
 const WARNA = { lokal: "--data1", ekspor: "--data3", keduanya: "--data4" };
-let d = null, dp = null, tek = "surya", fProv = "", fKomp = "", horizon = 10, urut = { k: "mwp", arah: -1 }, cari = "", fPasar = "", fApamsi = "", fBin = null;
+let d = null, dp = null, tek = "surya", fProv = "", fKomp = "", horizon = 10, urut = { k: "mwp", arah: -1 }, cari = new URLSearchParams(location.search).get("cari") || "", fPasar = "", fApamsi = "", fBin = null;
 let mPasar = "", mApamsi = "", sel = null, urutKota = { k: "mwp", arah: -1 };
 let halK = 1, hal = 1, balaiPer = 10, tkdnDat = null, popIdx = -1, daftarKini = [];
 let peta = null, petaSiap = false, grup = [], markah = [];

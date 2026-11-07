@@ -57,7 +57,7 @@ const tunggu = [];
 const CTX = { waitUntil: (p) => tunggu.push(p) };
 const ambil = async (jalur, ua, { ip = "203.0.113.9", header = {}, cookie } = {}) => {
   const req = minta(jalur, { ip, origin: null, cookie, header: { "user-agent": ua, ...header } });
-  const res = await worker.fetch(req, E, CTX);
+  const res = await worker.fetch(req, { ...E, SAMPEL_BOT: "1" }, CTX);
   await Promise.all(tunggu.splice(0));
   return res;
 };
@@ -73,15 +73,17 @@ before(async () => {
 });
 after(async () => { await tutup?.(); });
 
-test("bot menabrak halaman terkunci: dihitung per jalur sebelum gerbang, tetap 302", async () => {
-  const res = await ambil("/direktori", "Mozilla/5.0 (compatible; GPTBot/1.2; +https://openai.com/gptbot)");
-  assert.equal(res.status, 302);
+test("bot: halaman 200 dihitung per jalur; gerbang masuk 302 tidak menulis D1", async () => {
+  const GPT = "Mozilla/5.0 (compatible; GPTBot/1.2; +https://openai.com/gptbot)";
+  assert.equal((await ambil("/direktori", GPT)).status, 302);
+  assert.equal(await n("jenis", "ai_crawl"), 0, "302 tidak dicatat");
+  await ambil("/masuk", GPT);
   assert.equal(await n("jenis", "ai_crawl"), 1);
-  assert.equal(await n("jalur_bot", "/direktori"), 1);
+  assert.equal(await n("jalur_bot", "/masuk"), 1);
   assert.equal(await n("perayap", "ai_crawl|GPTBot|tak terverifikasi"), 1);
-  await ambil("/proyek", "Mozilla/5.0 (compatible; Googlebot/2.1)");
+  await ambil("/masuk", "Mozilla/5.0 (compatible; Googlebot/2.1)");
   assert.equal(await n("jenis", "mesin_cari"), 1);
-  await ambil("/", "Mozilla/5.0 Claude-User/1.0");
+  await ambil("/masuk", "Mozilla/5.0 Claude-User/1.0");
   assert.equal(await n("ai_agen", "Claude|tak terverifikasi"), 1);
   assert.equal(await n("jenis", "ai_jawab"), 1);
 });

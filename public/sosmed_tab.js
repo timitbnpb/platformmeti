@@ -30,7 +30,7 @@ const segmenHtml = (aktif) => `<div class="jm-tab jm-tab-rata sos-seg" role="tab
 
 function kartuHtml(p, i) {
   const gb = p.platform === "youtube" ? thumbUrl(p.uid, "hqdefault") : p.gambar && /^sosmed\/[\w.-]+$/.test(p.gambar) ? "/api/sosmed/gambar?k=" + encodeURIComponent(p.gambar) : "";
-  const isi = `${gb ? `<img src="${esc(gb)}" alt="" loading="lazy" decoding="async" width="320" height="240">` : ""}<span class="sos-logo">${svgSosmed(p.platform, 18)}</span>${p.platform === "youtube" ? `<span class="sos-main">${ikon("putar", 40)}</span>` : ""}${gb ? "" : `<span class="sos-ik sos-ik-besar">${svgSosmed(p.platform, 36)}</span>`}`;
+  const isi = `${gb ? `<img src="${esc(gb)}" alt="" loading="lazy" decoding="async" width="320" height="240">` : ""}<span class="sos-logo">${svgSosmed(p.platform, 16)}<span>${esc((NAMA[p.platform] || "").replace(" METI", ""))}</span></span>${p.platform === "youtube" ? `<span class="sos-main">${ikon("putar", 40)}</span>` : ""}${gb ? "" : `<span class="sos-ik sos-ik-besar">${svgSosmed(p.platform, 36)}</span>`}`;
   const label = esc(t("sos.buka", { judul: p.judul }));
   const media = p.platform === "instagram" || p.platform === "facebook"
     ? `<a class="sos-med" href="${esc(p.url)}" target="_blank" rel="noopener noreferrer" aria-label="${label}">${isi}</a>`

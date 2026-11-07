@@ -254,7 +254,8 @@ await mulaiHalaman();
 isi = $("tkIsi");
 if (!C) {
   $("judul").textContent = t("tk.tak_dikenal");
-  isi.innerHTML = `<div class="jm-kartu"><p>${esc(t("tk.tak_dikenal.ket"))}</p><ul class="jm-tk-stat">${SEMUA.map((k) => `<li><a class="jm-pil" href="/teknologi/${esc(k)}">${esc(t("tk.nama." + k))}</a></li>`).join("")}</ul></div>`;
+  $("jawab").textContent = t("tk.tak_dikenal.ket"); $("ubin").hidden = true; /* hero tidak kosong; daftar teknologi sebagai ubin */
+  isi.innerHTML = `<div class="jm-tk-pilih">${SEMUA.map((k) => `<a class="jm-tk-pilih-a" href="/teknologi/${esc(k)}">${ikonTek(k)}<span>${esc(t("tk.nama." + k))}</span></a>`).join("")}</div>`;
 } else {
   isi.innerHTML = hantuHtml(6);
   const ambil = (n) => muat(n).catch(() => null);

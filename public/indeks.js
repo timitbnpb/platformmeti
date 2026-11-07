@@ -186,9 +186,9 @@ function metode() {
   return `<div class="ix-metode"><p>${esc(t("ix.m.ringkas"))} ${pil("ix.hipotesis")}</p>
     <p class="jm-bantu">${esc(t("ix.m.versi", { v: S.d.versi, tgl: tanggal(S.d.tanggal, { gaya: "panjang" }) }))}</p>
     <h3>${esc(t("ix.m.h.prov"))}</h3><p>${esc(t("ix.m.rumus.prov"))}</p><p class="jm-bantu">${esc(t("ix.m.min", { p: num(m.min_lengkap * 100) }))}</p>
-    <div class="jm-gulir"><table class="jm-tabel" data-urut="tidak"><thead><tr>${["ix.m.c.komp", "ix.p.bobot", "ix.m.c.norma", "ix.m.c.sumber"].map((k) => `<th>${esc(t(k))}</th>`).join("")}</tr></thead><tbody>${tbl}</tbody></table></div>
+    <div class="jm-gulir"><table class="jm-tabel"><thead><tr>${["ix.m.c.komp", "ix.p.bobot", "ix.m.c.norma", "ix.m.c.sumber"].map((k) => `<th>${esc(t(k))}</th>`).join("")}</tr></thead><tbody>${tbl}</tbody></table></div>
     <h3>${esc(t("ix.m.h.proy"))}</h3><p>${esc(t("ix.m.rumus.proyek"))}</p>
-    <div class="jm-gulir"><table class="jm-tabel" data-urut="tidak"><thead><tr>${["ix.p.sinyal", "ix.p.bobot"].map((k) => `<th>${esc(t(k))}</th>`).join("")}</tr></thead><tbody>${tblP}</tbody></table></div>
+    <div class="jm-gulir"><table class="jm-tabel"><thead><tr>${["ix.p.sinyal", "ix.p.bobot"].map((k) => `<th>${esc(t(k))}</th>`).join("")}</tr></thead><tbody>${tblP}</tbody></table></div>
     <h3>${esc(t("ix.m.h.batas"))}</h3><ul>${[1, 2, 3, 4].map((i) => `<li>${esc(t("ix.m.lim." + i))}</li>`).join("")}</ul>
     <button type="button" class="ix-unduh" id="ixUnduh">${ikon("unduh", 18)}<span>${esc(t("ix.m.unduh"))}</span></button></div>`;
 }

@@ -2,7 +2,7 @@
    Isi = daftar berurutan. sorotan: [{jenis, id}] (proyek, organisasi, berita); lainnya: [id]. Urut: seret atau tombol naik/turun. */
 import { t } from "/i18n.js";
 import { esc, api, nanti, hantuHtml, ikon, pesanHtml, galatTeks } from "/inti/umum.js";
-import { data, kepalaTab, keadaan } from "/admin_umum.js";
+import { data, kepalaTab, ubinKepala, keadaan } from "/admin_umum.js";
 import { exHtml } from "/inti/komponen.js";
 
 const SEKSI = [["sorotan", "daftar"], ["berita_pilihan", "berita"], ["agenda", "kalender"], ["program", "regulasi"]];
@@ -47,7 +47,9 @@ export async function panelBeranda(panel) {
       <div class="jm-aksi"><button type="button" class="jm-tbl jm-tbl-utama" data-simpan="${k}">${ikon("centang", 18)}${esc(t("jm.simpan"))}</button><span data-pesan="${k}" role="status"></span></div>` }).replace("<section ", `<section data-k="${k}" `)).join("")}</div>`;
     for (const [k] of SEKSI) daftar(k);
   }
+  const ubin = () => ubinKepala(panel, SEKSI.map(([k, ik]) => ({ ikon: ik, nilai: K[k].length, label: t("ber.s." + k) })));
   function daftar(k) {
+    ubin();
     const ol = isi.querySelector(`[data-daftar="${k}"]`); if (!ol) return;
     ol.innerHTML = K[k].length ? K[k].map((tok, i) => { const f = info(k, tok); return `<li draggable="true" data-i="${i}"><span class="jm-ber-pegang" aria-hidden="true">${ikon("daftar2", 16)}</span><span class="jm-ber-teks"><b>${esc(f.label)}</b>${f.sub ? `<small>${esc(f.sub)}</small>` : ""}</span>${jenisTeks(k, f)}
       <button type="button" class="jm-tbl jm-tbl-kecil" data-gerak="-1" data-i="${i}" ${i === 0 ? "disabled" : ""} aria-label="${esc(t("ber.naik"))}">${ikon("panah-kiri", 16)}</button><button type="button" class="jm-tbl jm-tbl-kecil" data-gerak="1" data-i="${i}" ${i === K[k].length - 1 ? "disabled" : ""} aria-label="${esc(t("ber.turun"))}">${ikon("panah-kanan", 16)}</button>

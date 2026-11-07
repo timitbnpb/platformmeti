@@ -111,8 +111,7 @@ async function petaSvg() {
 /* ---------- legenda dan filter (satu keadaan) ---------- */
 function legenda() {
   const n = (s) => S.ap.hitung[s];
-  $("legenda").innerHTML = STATUS.map((s) => `<button type="button" class="mw-lg" data-s="${s}" aria-pressed="${S.filter === s}"><i class="mw-sw mw-s-${s}" aria-hidden="true"></i><span>${esc(t("mw.st." + s))}</span><b>${angka(n(s))}</b></button>`).join("")
-    + `<p class="jm-bantu">${esc(t("mw.legenda_bantu"))}</p>`;
+  $("legenda").innerHTML = STATUS.map((s) => `<button type="button" class="mw-lg" data-s="${s}"${n(s) ? "" : " data-nol"} aria-pressed="${S.filter === s}"><i class="mw-sw mw-s-${s}" aria-hidden="true">${ik(IKON_PIL[s], 14)}</i><span>${esc(t("mw.st." + s))}</span><b class="mw-n">${angka(n(s))}</b></button>`).join("");
   $("saring").innerHTML = [["", t("mw.semua"), S.baris.length], ...STATUS.map((s) => [s, t("mw.st." + s), n(s)])]
     .filter(([v, , c]) => c > 0 || v === S.filter)
     .map(([v, l, c]) => `<button type="button" class="mw-chip" data-s="${v}" aria-pressed="${S.filter === v}">${ik(v ? IKON_PIL[v] : "daftar")}${esc(l)}<small>${angka(c)}</small></button>`).join("");
@@ -129,7 +128,7 @@ function kartu() {
     const kos = `<span class="mw-kos">${esc(t("mw.belum_dicantum"))}</span>`;
     const th = tahunDari(b);
     const kaki = b.status === "belum" ? `${ik("tambah")}${esc(t("mw.daftar_tombol"))}` : `${esc(t("mw.lihat"))}${ik("panah-kanan")}`;
-    return `<article class="mw-kartu mw-k-${b.status}"><header>${lambang(b.kode, 40)}<div><h3>${esc(b.nama)}</h3>${pilStatus(b.status)}</div></header>
+    return `<article class="mw-kartu mw-k-${b.status}"><header>${lambang(b.kode, 40)}<h3 title="${esc(b.nama)}">${esc(b.nama)}</h3>${pilStatus(b.status)}</header>
       <ul class="mw-info"><li>${ik("orang")}<span>${b.ketua ? esc(b.ketua) : `<span class="mw-kos">${esc(t("mw.ketua_belum"))}</span>`}</span></li>${b.sekretariat ? `<li>${ik("lokasi")}<span>${esc(b.sekretariat)}</span></li>` : ""}${th ? `<li>${ik("tahun")}<span>${esc(t("mw.tahun", { tahun: th }))}</span></li>` : ""}</ul>
       <a class="mw-kaki${b.status === "belum" ? " jm-tbl jm-tbl-utama" : ""}" href="/meti-wilayah/${esc(b.kode)}${b.status === "belum" ? "#ajukan" : ""}">${kaki}</a></article>`;
   }).join("") || `<p class="jm-bantu">${esc(t("mw.kosong"))}</p>`;
@@ -156,6 +155,9 @@ function pasangFilter() {
   $("saring").addEventListener("click", klik);
   let td; $("cari").addEventListener("input", () => { clearTimeout(td); td = setTimeout(kartu, 120); });
   $("legenda").addEventListener("click", klik);
+  const bt = document.querySelector("#panel .mw-info-btn");
+  bt.addEventListener("click", (e) => e.preventDefault()); // jangan melipat panel
+  bt.addEventListener("pointerdown", (e) => e.stopPropagation());
 }
 
 async function mulai() {

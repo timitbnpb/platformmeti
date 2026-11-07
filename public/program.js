@@ -12,6 +12,7 @@ import { ikonTek, ikonStatus, pilStatus, pilTek } from "/inti/ikon_tek.js";
 import { logoOrgSatu } from "/inti/logo_org.js";
 import { muat, urlAman, kelasStatus, norm } from "/publik.js";
 import { muatMapLibre } from "/inti/maplibre.js";
+import { kartuProgram, pilTahap, teratas, berat, angkaTampil } from "/program_kartu.js";
 import { geserPanel } from "/inti/panel_geser.js";
 
 const $ = (id) => document.getElementById(id);
@@ -33,12 +34,6 @@ let peta = null, popup = null;
 const L = (x) => (x && (x[bahasa()] ?? x.id)) || "";
 const num = (n, d = 0) => angka(n, { desimal: d });
 const kecil = (svg) => svg.replace('class="jm-ikt"', 'class="jm-ikt jm-ikt-s"');
-/* "100", "1.076", "3,21" ditulis format Indonesia di data; tampil mengikuti bahasa. Nilai bukan angka (rasio) apa adanya. */
-function angkaTampil(s) {
-  if (!/^[\d.,]+$/.test(String(s))) return String(s);
-  const n = Number(String(s).replace(/\./g, "").replace(",", "."));
-  return Number.isFinite(n) ? num(n, Number.isInteger(n) ? 0 : String(s).split(",")[1].length) : String(s);
-}
 function tglTampil(s) {
   s = String(s || "");
   if (/^\d{4}-\d{2}-\d{2}$/.test(s)) return tanggal(s);
@@ -50,11 +45,8 @@ const sumberIkon = (u, tgl, bukti) => {
   const url = urlAman(u);
   return url ? sumberHtml(`${esc(host(url))}, ${esc(tglTampil(tgl))}, ${esc(t("pg.bukti." + bukti))} <a href="${esc(url)}" target="_blank" rel="noopener noreferrer">${esc(t("pg.sumber.buka"))}</a>`, t("pg.sumber")) : "";
 };
-const pilTahap = (k) => `<span class="jm-pil-st jm-st-${ST_IK[k]}">${kecil(ikonStatus(ST_IK[k]))}<span>${esc(t("pg.tahap." + k))}</span></span>`;
 const pilSev = (k) => `<span class="jm-pg-sev jm-pg-sev-${k}">${ikon(k === "tinggi" ? "peringatan" : "info", 14)}<span>${esc(t("pg.tingkat." + k))}</span></span>`;
 const pilJenis = (k) => `<span class="jm-pg-jenis">${ikon(IK_ISU[k], 14)}<span>${esc(t("pg.isu." + k))}</span></span>`;
-const teratas = (g) => [...g.isu].sort((a, z) => BOBOT[a.tingkat] - BOBOT[z.tingkat])[0] || null;
-const berat = (g) => g.isu.filter((x) => x.tingkat === "tinggi").length;
 const kelasTgl = (s) => { const n = String(s).length === 4 ? s + "-12-31" : String(s).length === 7 ? s + "-28" : String(s); return n > HARI_INI ? "depan" : "lalu"; };
 const tabel = (kunci, baris, kelas = "") => `<div class="jm-gulir"><table class="jm-tabel${kelas}"><thead><tr>${kunci.map((k) => `<th scope="col">${esc(t(k))}</th>`).join("")}</tr></thead><tbody>${baris}</tbody></table></div>`;
 const sel = (k, v, kelas = "") => `<td data-label="${esc(t(k))}"${kelas ? ` class="${kelas}"` : ""}>${v}</td>`;
@@ -63,18 +55,6 @@ const bagian = (id, ik, kunci, { judulHtml, sub, isiHtml, csv = false }) =>
 const kapTeks = (r) => (r.kap == null ? "-" : `${num(r.kap, r.kap % 1 ? 1 : 0)} ${esc(r.sat || "MW")}`);
 
 /* ---------- indeks ---------- */
-
-const kartuIndeks = (g) => {
-  const tg = g.target[0], tt = teratas(g), nb = berat(g);
-  const img = g.gambar ? `<img src="/img/beranda/${esc(g.gambar)}.webp" alt="" width="800" height="450" loading="lazy" decoding="async">` : "";
-  return `<a class="jm-pg-kartu" href="/program/${esc(g.kode)}"><div class="jm-pg-gb">${img}<span class="jm-pg-ik">${ikonTek(g.ikon)}</span>${pilTahap(g.tahap)}<h3>${esc(L(g.nama))}</h3></div>
-    <div class="jm-pg-isi"><p class="jm-pg-desk">${esc(L(g.ringkasan))}</p>
-    <dl class="jm-pg-stat"><div><dt>${esc(t("pg.c.target"))}</dt><dd>${tg ? `${esc(angkaTampil(tg.angka))} <small>${esc(L(tg.satuan))}</small>` : "-"}</dd></div>
-    <div><dt>${esc(t("pg.u.proyek"))}</dt><dd>${g.proyek_ringkas.jumlah ? num(g.proyek_ringkas.jumlah) : "-"}</dd></div>
-    <div><dt>${esc(t("pg.u.isu"))}</dt><dd>${nb ? num(nb) : "-"}</dd></div></dl>
-    ${tt ? `<p class="jm-pg-teratas">${pilSev(tt.tingkat)}<span>${esc(L(tt.judul))}</span></p>` : ""}
-    ${lihatSemuaHtml("", t("pg.buka"))}</div></a>`;
-};
 
 function gambarIndeks() {
   document.title = t("pg.title");
@@ -94,13 +74,13 @@ function gambarIndeks() {
   const saring = `<div class="jm-saring" role="group" aria-label="${esc(t("pg.f.grup"))}">${cariHtml({ id: "pgQ", label: t("pg.cari") })}${pilihHtml({ id: "pgT", ikon: "status", label: t("pg.f.tahap"), opsi: [["", t("pg.f.semua")], ...TAHAP.map((k) => [k, t("pg.tahap." + k), "st:" + ST_IK[k], cacah(k)])] })}${hapusHtml({ id: "pgHapus", label: t("jm.kosong.reset") })}${hitungHtml({ id: "pgHitung", teks: "" })}</div>`;
   $("pgIsi").innerHTML = exHtml({
     id: "pgDaftar", ikon: "proyek", topik: t("pg.s.daftar.ey"), judulHtml: hlHtml("pg.s.daftar.j", num(semua.length), { tinggi: num(nBerat) }), subHtml: esc(t("pg.s.daftar.sub")),
-    aksiHtml: aksiHtml({}), isiHtml: `${saring}<div class="jm-pg-grid" id="pgGrid"></div>`,
+    aksiHtml: aksiHtml({}), isiHtml: `${saring}<div class="jm-pk-grid" id="pgGrid"></div>`,
   });
   const q = $("pgQ"), tp = $("pgT"), hapus = $("pgHapus"), hitung = $("pgHitung");
   const isi = () => {
     const kata = norm(q.value.trim());
     const f = semua.filter((g) => (!tp.value || g.tahap === tp.value) && (!kata || norm(`${L(g.nama)} ${L(g.ringkasan)}`).includes(kata)));
-    $("pgGrid").innerHTML = f.length ? f.map(kartuIndeks).join("") : `<p class="jm-pg-kosong">${esc(t("jm.kosong.cocok"))}</p>`;
+    $("pgGrid").innerHTML = f.length ? f.map(kartuProgram).join("") : `<p class="jm-pg-kosong">${esc(t("jm.kosong.cocok"))}</p>`;
     hitung.textContent = t("pg.hasil", { n: num(f.length) });
   };
   const ubah = () => { hapus.hidden = !q.value && !tp.value; nanti(isi); };

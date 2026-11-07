@@ -110,3 +110,6 @@ a.rp-kt-j:hover,a.rp-kt-j:focus-visible{color:var(--accent)}
   .jm-gulir{overflow:visible}
 }
 .rp-t th.rp-no-k{color:inherit}
+/* tanpa regulasi baru: berita memakai lebar penuh dalam dua kolom kartu */
+.rp-dua-1{grid-template-columns:minmax(0,1fr)}
+@media (min-width:760px){.rp-dua-1 .rp-kts{grid-template-columns:repeat(2,minmax(0,1fr))}}

@@ -5,7 +5,6 @@
 .pb-kotak h2{display:flex;align-items:center;gap:8px;font-size:var(--t-h3);margin:0;color:var(--ink)}
 .pb-kotak ul{margin:0;padding-left:20px;display:grid;gap:6px;color:var(--ink)}
 .pb-kotak p{margin:0;color:var(--ink2)}
-@media (min-width:768px){.pb-tabel{min-width:1100px}.pb-tabel .jm-pj-provsel{white-space:nowrap}}
 .pb-tabel td.jm-num,.pb-tabel th.jm-num{text-align:right}
 .pb-pem{display:flex;align-items:flex-start;gap:8px;min-width:0}
 .pb-pem-t{display:grid;gap:2px;min-width:0}
@@ -26,5 +25,17 @@
 .mak-tabel-blok h3{margin:0;font-size:var(--t-h3)}
 @media (max-width:767px){.pb-kotak{padding:14px 16px}}
 .pb-tabel .jm-pj-nm{display:inline;white-space:normal;overflow:visible;text-overflow:clip;max-width:none;width:auto}
-@media (min-width:768px){.pb-tabel td:first-child{min-width:200px}}
 .pb-tabel .jm-pil{white-space:normal;text-align:left}
+/* tabel selebar wadah, tak pernah terpotong: kolom bernilai tetap, kolom nama menyerap sisa */
+.pb-tabel th{white-space:normal}
+.pb-tabel .pb-prov{margin-top:2px;font-size:var(--t-kecil);color:var(--ink2)}
+.pb-tabel .pb-prov a{font-weight:400}
+.pb-tabel .pb-pem-t>span{overflow-wrap:anywhere}
+@media (min-width:768px){
+  .pb-tabel{table-layout:fixed;min-width:0}
+  .pb-tabel td.jm-tengah,.pb-tabel td.jm-num{width:auto;white-space:normal}
+  .pb-tabel .pb-c-tek{width:116px}.pb-tabel .pb-c-pemilik{width:21%}.pb-tabel .pb-c-mw{width:104px}
+  .pb-tabel .pb-c-status{width:116px}.pb-tabel .pb-c-cod,.pb-tabel .pb-c-tahun_operasi{width:88px}
+  .pb-tabel .pb-c-kerja_kon,.pb-tabel .pb-c-kerja_om{width:152px}.pb-tabel .pb-c-koreksi{width:136px}.pb-tabel .pb-c-n{width:96px}.pb-tabel .pb-c-bukti{width:15%}.pb-tabel .pb-c-jenis,.pb-tabel .pb-c-tanggal{width:112px}
+  .pb-tabel td{padding-inline:10px}
+}

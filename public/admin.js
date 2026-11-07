@@ -89,8 +89,11 @@ function jalan() {
         </div>
         <div class="jm-tab jm-adm-alt" id="subTab" role="tablist" aria-label="${esc(t("adm.m.sub"))}"${subHtml(menuDari(tab)) ? "" : " hidden"}>${subHtml(menuDari(tab))}</div>
       </div>
-      <section class="jm-kartu" id="panel" role="tabpanel" aria-labelledby="tab-${tab}"></section>
+      <section class="jm-adm-panel" id="panel" role="tabpanel" aria-labelledby="tab-${tab}"></section>
       <div class="jm-adm-status" id="status" aria-live="polite"></div>`;
+    // kolom Aksi tidak bisa diurutkan: tandai sebelum pengurut global (inti/komponen.js, 60 ms) memasang tombol urut
+    const aksiTh = new Set(["admin.k.aksi", "pd.c.aksi", "kf.ad.k.aksi", "adm.event.k.aksi", "adm.kta.k.aksi", "adm.anggota.k.aksi", "adm.mw.c.aksi", "kam.k.aksi"].map((k) => t(k)));
+    new MutationObserver(() => { for (const th of $("panel").querySelectorAll("th:not([data-urut])")) if (aksiTh.has(th.textContent.trim())) th.dataset.urut = "tidak"; }).observe($("panel"), { childList: true, subtree: true });
     $("panel").addEventListener("click", klikPanel);
     $("panel").addEventListener("click", klikKe);
     $("panel").addEventListener("input", inputPanel);
@@ -103,17 +106,20 @@ function jalan() {
     lencanaTab();
   }
 
-  // lencana jumlah pesan belum dibaca di tab Pesan; tab Pesan memberi kabar lewat peristiwa "pesan-belum"
-  let belumPesan = 0;
+  // angka di tab Pesan (belum dibalas, dari peristiwa "pesan-belum") dan Langganan (baru 7 hari, dari ringkasan); 0 tampil redup
+  const hitungTab = { pesan: 0, langganan: 0 };
   function lencanaTab() {
-    const b = document.getElementById("tab-pesan");
-    if (!b) return;
-    b.querySelector(".ps-lencana")?.remove();
-    if (belumPesan > 0) b.insertAdjacentHTML("beforeend", `<span class="ps-lencana ps-lencana-tab">${teksLencana(belumPesan)}</span>`);
+    for (const [k, n] of Object.entries(hitungTab)) {
+      const b = document.getElementById("tab-" + k);
+      if (!b) continue;
+      b.querySelector(".jm-adm-n")?.remove();
+      b.insertAdjacentHTML("beforeend", `<b class="jm-adm-n${n ? "" : " jm-adm-n0"}">${esc(teksLencana(n))}</b>`);
+    }
   }
   if (adm) {
-    document.addEventListener("pesan-belum", (e) => { belumPesan = e.detail; lencanaTab(); });
-    api("/api/admin/pesan-belum").then((d) => { belumPesan = d.belum || 0; lencanaTab(); document.dispatchEvent(new CustomEvent("pesan-belum", { detail: belumPesan })); }).catch(() => {});
+    document.addEventListener("pesan-belum", (e) => { hitungTab.pesan = e.detail; lencanaTab(); });
+    api("/api/admin/pesan-belum").then((d) => { hitungTab.pesan = d.belum || 0; lencanaTab(); document.dispatchEvent(new CustomEvent("pesan-belum", { detail: hitungTab.pesan })); }).catch(() => {});
+    api("/api/admin/ringkas").then((d) => { hitungTab.langganan = d.antrean?.langganan || 0; lencanaTab(); }).catch(() => {});
   }
 
   // Chrome urgent: penanda menu dan sub-tab berubah seketika; isi panel menyusul lewat nanti().
@@ -173,7 +179,7 @@ function jalan() {
 
   function panelAkun() {
     $("panel").innerHTML = `
-      <div class="jm-bar">
+      <div class="jm-bar jm-adm-bar1">
         <div class="jm-medan"><label class="sr" for="aCari">${esc(t("admin.cari"))}</label>
           <input class="jm-isian" id="aCari" type="search" autocomplete="off" placeholder="${esc(t("admin.cari"))}" value="${esc(A.cari)}"></div>
         <select data-ikon="orang" class="jm-pilih" id="aPeran" aria-label="${esc(t("admin.f.peran"))}">${opsi(PERAN, "peran.", A.peran, "admin.f.semua_peran")}</select>

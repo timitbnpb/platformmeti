@@ -47,3 +47,11 @@
 .jm-ex>.jm-ex-ft:has(.jm-lihat){padding-top:12px}
 @media (max-width:760px){.jm-tk-nama{min-height:44px}.jm-tk-nama a,a.jm-tk-nama{min-height:44px;display:inline-flex;align-items:center}}
 @media (max-width:760px){.jm-taut{display:inline-flex;align-items:center;min-height:44px}}
+
+/* teknologi tak dikenal: ubin pilihan rata */
+.jm-tk-pilih{display:grid;grid-template-columns:minmax(0,1fr);gap:12px}
+@media (min-width:640px){.jm-tk-pilih{grid-template-columns:repeat(3,minmax(0,1fr))}}
+.jm-tk-pilih-a svg{flex:none;width:28px;height:28px}
+.jm-tk-pilih-a{display:flex;align-items:center;justify-content:center;gap:10px;min-height:var(--target);padding:14px 16px;border:1px solid var(--line);border-radius:var(--r);background:var(--card);color:var(--ink);font:600 var(--t-body)/1.2 var(--font);text-decoration:none}
+.jm-tk-pilih-a:hover{border-color:var(--accent);color:var(--accent)}
+.jm-tk-pilih-a:focus-visible{outline:2px solid var(--fokus);outline-offset:2px}

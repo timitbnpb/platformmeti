@@ -3,7 +3,7 @@
 import { t, angka, tanggal } from "/i18n.js";
 import { esc, nanti, hantuHtml, kosongHtml, ikon } from "/inti/umum.js";
 import { LOGO_ORG, LOGO_NAMA } from "/inti/logo_org.js";
-import { data, kepalaTab, keadaan } from "/admin_umum.js";
+import { data, kepalaTab, ubinKepala, keadaan } from "/admin_umum.js";
 import { exHtml } from "/inti/komponen.js";
 import { tombolKoreksi } from "/inti/koreksi.js";
 
@@ -60,6 +60,8 @@ export async function panelKesehatan(panel) {
   });
 
   function gambar() {
+    const jml = MASALAH.reduce((x, [k]) => x + M[k].length, 0);
+    ubinKepala(panel, [{ ikon: "peringatan", nilai: jml, label: t("keh.k.total") }, { ikon: "tabel", nilai: MASALAH.filter(([k]) => M[k].length).length, label: t("keh.k.jenis") }, { ikon: "centang", nilai: MASALAH.filter(([k]) => !M[k].length).length, label: t("keh.k.bersih") }]);
     badan.innerHTML = `<p class="jm-bantu">${esc(t("keh.sumber", { tanggal: tanggal(String(M.__tgl || "").slice(0, 10)) }))}</p>
       <div class="jm-adm-ubin" role="group" aria-label="${esc(t("keh.ubin"))}">${MASALAH.map(([k, ik]) => `<button type="button" class="jm-adm-s jm-adm-u${M[k].length ? "" : " jm-adm-nol"}" data-masalah="${k}" aria-pressed="${k === pilih}"><span class="jm-kpi-ik">${ikon(ik, 18)}</span><strong>${esc(angka(M[k].length))}</strong><small>${esc(t("keh.m." + k))}</small></button>`).join("")}</div>
       <div id="hTabel" aria-live="polite"></div>`;

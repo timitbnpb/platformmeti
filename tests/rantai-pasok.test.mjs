@@ -14,7 +14,7 @@ test('celah = komponen tanpa pemasok; tipis = kurang dari 5 pemasok unik; tidak 
     assert.deepEqual(t.celah, t.komponen.filter((k) => !k.pemasok.length).map((k) => k.id));
     assert.equal(t.tipis, t.pemasok_unik < 5);
   }
-  assert.equal(j.teknologi.find((t) => t.id === 'bayu').pemasok_unik, 0);
+  assert.equal(j.teknologi.find((t) => t.id === 'bayu').pemasok_unik, 1); // PT Kenertec Power System (menara), dari data tayang
 });
 test('bangun: pemasok luar negeri (tanpa provinsi) dibuang, urut kapasitas', () => {
   const peny = { dibangun_pada: '2026-01-01', baris: [] };

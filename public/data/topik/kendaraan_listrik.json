@@ -1,0 +1,2825 @@
+{
+ "id": "kendaraan-listrik",
+ "versi": 1,
+ "diperbarui": "2026-11-08",
+ "judul": {
+  "id": "Kendaraan listrik dan SPKLU",
+  "en": "Electric vehicles and chargers"
+ },
+ "lead": {
+  "id": "Penjualan mobil listrik naik cepat dari 10.000 unit (2022) dan SPKLU PLN lebih dari 4.500 unit, tetapi insentif berubah tiap tahun dan ekosistem baterai masih diuji.",
+  "en": "Electric car sales rose fast from 10,000 units (2022) and PLN chargers exceed 4,500 units, but incentives change yearly and the battery ecosystem is still being tested."
+ },
+ "kunci": [
+  {
+   "label": {
+    "id": "SPKLU PLN roda empat (Maret 2025)",
+    "en": "PLN four-wheel charging stations (March 2025)"
+   },
+   "nilai": 3772,
+   "d": 0,
+   "satuan": {
+    "id": "unit di 2.515 lokasi",
+    "en": "units at 2,515 locations"
+   },
+   "sumber": "oto",
+   "est": false
+  },
+  {
+   "label": {
+    "id": "SPKLU disiagakan saat Nataru 2025",
+    "en": "Stations on standby for Christmas-New Year 2025"
+   },
+   "nilai": 4516,
+   "d": 0,
+   "satuan": {
+    "id": "unit di 2.935 titik",
+    "en": "units at 2,935 points"
+   },
+   "sumber": "nataru",
+   "est": false
+  },
+  {
+   "label": {
+    "id": "Penjualan grosir mobil listrik 2024",
+    "en": "Wholesale electric car sales 2024"
+   },
+   "nilai": 43000,
+   "d": 0,
+   "satuan": {
+    "id": "unit",
+    "en": "units"
+   },
+   "sumber": "kontanev",
+   "est": false
+  },
+  {
+   "label": {
+    "id": "PPN ditanggung pemerintah untuk TKDN minimal 40 persen (2025)",
+    "en": "Government-borne VAT for local content of at least 40 percent (2025)"
+   },
+   "nilai": 10,
+   "d": 0,
+   "satuan": {
+    "id": "persen",
+    "en": "percent"
+   },
+   "sumber": "pmk",
+   "est": false
+  },
+  {
+   "label": {
+    "id": "Kapasitas rencana enam perusahaan CBU yang wajib produksi lokal 1:1",
+    "en": "Planned capacity of six CBU firms obliged to produce locally 1:1"
+   },
+   "nilai": 305000,
+   "d": 0,
+   "satuan": {
+    "id": "unit per tahun",
+    "en": "units a year"
+   },
+   "sumber": "cbu",
+   "est": false
+  }
+ ],
+ "penting": [
+  {
+   "id": "Insentif impor utuh berakhir 31 Desember 2025 dan digantikan kewajiban produksi lokal 1:1 pada 2026 sampai 2027.",
+   "en": "Import incentives ended on 31 December 2025 and are replaced by a 1:1 local production obligation in 2026 to 2027."
+  },
+  {
+   "id": "SPKLU PLN tumbuh dari 3.772 unit (Maret 2025) ke 4.516 (Nataru 2025), namun Papua hanya 27 unit dan Jawa 2.667.",
+   "en": "PLN chargers grew from 3,772 units (March 2025) to 4,516 (Christmas-New Year 2025), yet Papua has only 27 and Java 2,667."
+  },
+  {
+   "id": "Manfaat iklim bergantung pada jaringan listrik yang masih sekitar 680 gCO2 per kWh.",
+   "en": "The climate benefit depends on a grid still at about 680 gCO2 per kWh."
+  }
+ ],
+ "posisi": {
+  "id": "Indonesia berada di tahap awal adopsi: jauh di bawah Norwegia (88,9 persen kendaraan plug-in) dan Tiongkok (hampir separuh penjualan), dan di sekitar kelompok atas Asia Tenggara (pangsa kawasan 9 persen pada 2024).",
+  "en": "Indonesia is at an early stage of adoption: far below Norway (88.9 percent plug-in) and China (almost half of sales), and around the upper group of Southeast Asia (regional share 9 percent in 2024)."
+ },
+ "sumber": {
+  "ed": {
+   "judul": "Ringkasan editorial METI (penjelasan umum; bukan kutipan pasal)",
+   "penerbit": "METI",
+   "tanggal": "2026-11-08",
+   "tahun": 2026,
+   "bukti": "editorial"
+  },
+  "owid": {
+   "judul": "Our World in Data energy-data, memuat Ember Yearly Electricity Data (public/data/asean_energi.json)",
+   "penerbit": "Ember via Our World in Data",
+   "url": "https://github.com/owid/energy-data",
+   "tanggal": "2026-11-08",
+   "tahun": 2026,
+   "bukti": "via-pihak-ketiga",
+   "lisensi": "CC BY 4.0"
+  },
+  "proyek": {
+   "judul": "Direktori METI: proyek (public/data/proyek.json, RUPTL 2025-2034, GEM, OSM, media)",
+   "penerbit": "METI",
+   "url": "https://platformmeti.timitbnpb.workers.dev",
+   "tanggal": "2026-11-07",
+   "tahun": 2026,
+   "bukti": "via-pihak-ketiga"
+  },
+  "regul": {
+   "judul": "Basis regulasi METI (public/data/regulasi.json, naskah BPK JDIH)",
+   "penerbit": "BPK JDIH, METI",
+   "url": "https://peraturan.bpk.go.id/",
+   "tanggal": "2026-11-07",
+   "tahun": 2026,
+   "bukti": "resmi"
+  },
+  "pendanaan": {
+   "judul": "Basis pendanaan METI (public/data/pendanaan.json: skema dan proyek pendana)",
+   "penerbit": "METI, ADB, World Bank, AIIB dan lain-lain",
+   "url": "https://www.adb.org/projects",
+   "tanggal": "2026-11-08",
+   "tahun": 2026,
+   "bukti": "via-pihak-ketiga"
+  },
+  "ruuebet": {
+   "judul": "Pelacak RUU EBET di arsip METI (public/data/kebijakan_info.json; situs DPR melarang perayap sehingga tahap bukan dari DPR)",
+   "penerbit": "METI, Liputan6",
+   "url": "https://www.liputan6.com/bisnis/read/6312024/meti-minta-ruu-ebet-segera-disahkan",
+   "tanggal": "2026-09-08",
+   "tahun": 2026,
+   "bukti": "media"
+  },
+  "oto": {
+   "judul": "Berapa jumlah ideal SPKLU di Indonesia untuk akselerasi elektrifikasi nasional (Mei 2025; data PLN Maret 2025: 3.772 SPKLU roda empat di 2.515 lokasi)",
+   "penerbit": "Otodriver",
+   "url": "https://otodriver.com/berita/2025/berapa-jumlah-ideal-spklu-di-indonesia-untuk-akselerasi-elektrifikasi-nasional-ini-jawaban-ahlinya-berebidgnya",
+   "tanggal": "2025-05-03",
+   "tahun": 2025,
+   "bukti": "media"
+  },
+  "nataru": {
+   "judul": "PLN siagakan 4.516 SPKLU di 2.935 titik selama libur Nataru (24 Des 2025)",
+   "penerbit": "Bisnis.com",
+   "url": "https://ekonomi.bisnis.com/read/20251224/44/1939435/pln-siagakan-4516-spklu-di-2935-titik-selama-libur-nataru",
+   "tanggal": "2025-12-24",
+   "tahun": 2025,
+   "bukti": "media"
+  },
+  "mesin": {
+   "judul": "Sepanjang 2025, PLN hadirkan 4.655 mesin SPKLU",
+   "penerbit": "BCA Sekuritas (kutipan berita)",
+   "url": "https://bcasekuritas.co.id/latest-news/news/sepanjang-2025-pln-hadirkan-4655-mesin-spklu",
+   "tanggal": "2026-01-01",
+   "tahun": 2026,
+   "bukti": "media"
+  },
+  "kontanev": {
+   "judul": "Pembangunan SPKLU kejar laju mobil listrik (penjualan mobil listrik 2022 sekitar 10.000, 2023 17.000, 2024 43.000 unit)",
+   "penerbit": "Kontan",
+   "url": "https://insight.kontan.co.id/news/pembangunan-spklu-kejar-laju-mobil-listrik",
+   "tanggal": "2025-04-01",
+   "tahun": 2025,
+   "bukti": "media"
+  },
+  "bakrie": {
+   "judul": "Incentives removed: will the exponential rate of EV sales halt? (penjualan grosir BEV 2025 sebesar 103.931 unit menurut Gaikindo; belum diverifikasi ke rilis Gaikindo)",
+   "penerbit": "Bakrie Brothers",
+   "url": "https://bakrie-brothers.com/announcements/incentives-removed-will-the-exponential-rate-of-ev-sales-halt/",
+   "tanggal": "2026-01-01",
+   "tahun": 2026,
+   "bukti": "media"
+  },
+  "cbu": {
+   "judul": "Industry Ministry to end CBU electric vehicle incentives in 2026 (enam perusahaan, kapasitas rencana 305.000 unit, investasi Rp15,52 triliun, produksi lokal 1:1 pada 2026 sampai 2027, TKDN 40 naik ke 60 persen)",
+   "penerbit": "Jakarta Globe",
+   "url": "https://jakartaglobe.id/news/industry-ministry-to-end-cbu-electric-vehicle-incentives-in-2026",
+   "tanggal": "2025-09-01",
+   "tahun": 2025,
+   "bukti": "media"
+  },
+  "cbujp": {
+   "judul": "Analysis: RI to end CBU EV import incentives, domestic manufacturing boost (27 Sep 2025)",
+   "penerbit": "The Jakarta Post",
+   "url": "https://www.thejakartapost.com/opinion/2025/09/27/analysis-ri-to-end-cbu-ev-import-incentives-domestic-manufacturing-boost.html",
+   "tanggal": "2025-09-27",
+   "tahun": 2025,
+   "bukti": "media"
+  },
+  "pmk": {
+   "judul": "PMK baru: pemerintah tanggung PPN mobil listrik dan PPnBM mobil hybrid (PMK 12/2025: PPN DTP 10 persen untuk TKDN minimal 40 persen, berlaku 4 Feb 2025, masa pajak Jan sampai Des 2025)",
+   "penerbit": "DDTC News",
+   "url": "https://news.ddtc.co.id/berita/nasional/1808696/pmk-baru-pemerintah-tanggung-ppn-mobil-listrik-dan-ppnbm-mobil-hybrid",
+   "tanggal": "2025-02-04",
+   "tahun": 2025,
+   "bukti": "media"
+  },
+  "motor23": {
+   "judul": "Menperin: serapan subsidi motor listrik 2023 capai 11 ribu unit (kuota 200 ribu)",
+   "penerbit": "Antara",
+   "url": "https://www.antaranews.com/berita/3898152/menperin-serapan-subsidi-motor-listrik-2023-capai-11-ribu-unit",
+   "tanggal": "2024-01-01",
+   "tahun": 2024,
+   "bukti": "media"
+  },
+  "motor23b": {
+   "judul": "Disediakan Rp1,4 triliun, subsidi motor listrik cuma terserap Rp80,7 miliar di 2023",
+   "penerbit": "Emitennews",
+   "url": "https://www.emitennews.com/news/disediakan-rp14-triliun-subsidi-motor-listrik-cuma-terserap-rp807-miliar-di-2023",
+   "tanggal": "2024-01-01",
+   "tahun": 2024,
+   "bukti": "media"
+  },
+  "motor23c": {
+   "judul": "Realisasi subsidi motor listrik baru satu persen (3 Agu 2023)",
+   "penerbit": "Republika",
+   "url": "https://ekonomi.republika.co.id/berita/ryt2vr502/realisasi-subsidi-motor-listrik-baru-satu-persen",
+   "tanggal": "2023-08-03",
+   "tahun": 2023,
+   "bukti": "media"
+  },
+  "motor24": {
+   "judul": "Kemenperin: subsidi motor listrik sudah tersalurkan 30.083 unit (60,1 persen target 2024)",
+   "penerbit": "Antara",
+   "url": "https://www.antaranews.com/berita/4125147/kemenperin-subsidi-motor-listrik-sudah-tersalurkan-30083-unit",
+   "tanggal": "2024-12-01",
+   "tahun": 2024,
+   "bukti": "media"
+  },
+  "iea": {
+   "judul": "IEA, Global EV Outlook 2025, ringkasan eksekutif (2024: lebih dari 17 juta mobil listrik; Tiongkok lebih dari 11 juta; Asia Tenggara 9 persen pangsa)",
+   "penerbit": "IEA",
+   "url": "https://www.iea.org/reports/global-ev-outlook-2025/executive-summary",
+   "tanggal": "2025-05-01",
+   "tahun": 2025,
+   "bukti": "resmi"
+  },
+  "norway": {
+   "judul": "Plug-in electric vehicles in Norway (ringkasan Wikipedia: pangsa plug-in 88,9 persen pada 2024; bebas PPN 25 persen, pajak pembelian, tol)",
+   "penerbit": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Plug-in_electric_vehicles_in_Norway",
+   "tanggal": "2026-11-08",
+   "tahun": 2026,
+   "bukti": "via-pihak-ketiga",
+   "lisensi": "CC BY-SA 4.0"
+  },
+  "thstar": {
+   "judul": "Analysis: China's intense EV rivalry tests Thailand's local production goals (5 Jul 2025)",
+   "penerbit": "The Star / Reuters",
+   "url": "https://www.thestar.com.my/aseanplus/aseanplus-news/2025/07/05/analysis---china039s-intense-ev-rivalry-tests-thailand039s-local-production-goals",
+   "tanggal": "2025-07-05",
+   "tahun": 2025,
+   "bukti": "media"
+  },
+  "thnation": {
+   "judul": "China's intense EV rivalry tests Thailand's local production goals",
+   "penerbit": "The Nation Thailand",
+   "url": "https://nationthailand.com/blogs/business/automobile/40052190",
+   "tanggal": "2025-07-05",
+   "tahun": 2025,
+   "bukti": "media"
+  },
+  "hlitempo": {
+   "judul": "Jokowi opens Southeast Asia's largest EV battery factory in Karawang (3 Jul 2024)",
+   "penerbit": "Tempo",
+   "url": "https://en.tempo.co/amp/1886890/indonesias-jokowi-opens-southeast-asias-largest-ev-battery-factory-in-karawang",
+   "tanggal": "2024-07-03",
+   "tahun": 2024,
+   "bukti": "media"
+  },
+  "hliauto": {
+   "judul": "Hyundai and LG open battery cell plant in Indonesia (10 GWh per tahun; sel untuk Kona Electric)",
+   "penerbit": "Just Auto",
+   "url": "https://www.just-auto.com/news/hyundai-lg-open-battery-cell-plant-in-indonesia",
+   "tanggal": "2024-07-03",
+   "tahun": 2024,
+   "bukti": "media"
+  },
+  "lgjp": {
+   "judul": "Govt says China's Huayou to replace LGES in EV battery project (24 Apr 2025)",
+   "penerbit": "The Jakarta Post",
+   "url": "https://www.thejakartapost.com/business/2025/04/24/govt-says-chinas-huayou-to-replace-lges-in-ev-battery-project",
+   "tanggal": "2025-04-24",
+   "tahun": 2025,
+   "bukti": "media"
+  },
+  "lgscmp": {
+   "judul": "Huayou may step in as South Korea's LG abandons USD 8.45 billion Indonesia EV battery investment",
+   "penerbit": "South China Morning Post",
+   "url": "https://www.scmp.com/business/companies/article/3309683/huayou-may-step-south-koreas-lg-abandons-us845-bn-indonesia-ev-battery-investment",
+   "tanggal": "2025-04-24",
+   "tahun": 2025,
+   "bukti": "media"
+  },
+  "jagorawi": {
+   "judul": "PLN dan HVT luncurkan SPKLU ultra fast charging di Tol Jagorawi",
+   "penerbit": "Listrik Indonesia",
+   "url": "https://listrikindonesia.com/detail/18339/pln-dan-hvt-luncurkan-spklu-ultra-fast-charging-di-tol-jagorawi-waktu-isi-daya-kini-lebih-singkat",
+   "tanggal": "2025-10-01",
+   "tahun": 2025,
+   "bukti": "media"
+  },
+  "waralaba": {
+   "judul": "PLN dan swasta dorong SPKLU muncul di lokasi strategis",
+   "penerbit": "Listrik Indonesia",
+   "url": "https://listrikindonesia.com/detail/17344/pln-dan-swasta-dorong-spklu-muncul-di-lokasi-strategis",
+   "tanggal": "2025-08-01",
+   "tahun": 2025,
+   "bukti": "media"
+  }
+ },
+ "bab": {
+  "2": {
+   "tipe": "faq",
+   "sumber": [
+    "ed",
+    "oto",
+    "pmk",
+    "cbu",
+    "kontanev"
+   ],
+   "butir": [
+    {
+     "t": {
+      "id": "Berapa banyak SPKLU di Indonesia?",
+      "en": "How many public chargers does Indonesia have?"
+     },
+     "j": {
+      "id": "Data PLN Maret 2025: 3.772 SPKLU roda empat di 2.515 lokasi (Jawa 2.667 unit); saat libur Nataru 2025 PLN menyiagakan 4.516 SPKLU di 2.935 titik.",
+      "en": "PLN data for March 2025: 3,772 four-wheel stations at 2,515 locations (Java 2,667); for the 2025 Christmas-New Year holiday PLN put 4,516 stations at 2,935 points on standby."
+     }
+    },
+    {
+     "t": {
+      "id": "Berapa penjualan mobil listrik?",
+      "en": "How many electric cars are sold?"
+     },
+     "j": {
+      "id": "Sekitar 10.000 unit pada 2022, 17.000 pada 2023, dan 43.000 pada 2024 menurut pemberitaan Kontan; satu sumber mengutip Gaikindo 103.931 unit grosir BEV pada 2025 (belum diverifikasi).",
+      "en": "About 10,000 units in 2022, 17,000 in 2023 and 43,000 in 2024 per Kontan; one source citing Gaikindo gives 103,931 wholesale BEV units in 2025 (unverified)."
+     }
+    },
+    {
+     "t": {
+      "id": "Apa insentif pembelian mobil listrik?",
+      "en": "What incentives exist for buying an electric car?"
+     },
+     "j": {
+      "id": "Pada 2025: PPN ditanggung pemerintah 10 persen untuk mobil listrik dengan TKDN minimal 40 persen (PMK 12/2025, berlaku 4 Februari 2025 untuk masa pajak Januari sampai Desember 2025). Status 2026 belum terkonfirmasi.",
+      "en": "In 2025: 10 percent of VAT borne by government for electric cars with at least 40 percent local content (PMK 12/2025, effective 4 February 2025 for tax periods January to December 2025). 2026 status is unconfirmed."
+     }
+    },
+    {
+     "t": {
+      "id": "Apakah mobil listrik impor masih berinsentif?",
+      "en": "Do imported electric cars still get incentives?"
+     },
+     "j": {
+      "id": "Tidak. Insentif impor utuh (CBU) berakhir 31 Desember 2025 dan produsen penerima wajib memproduksi lokal 1:1 pada 2026 sampai 2027.",
+      "en": "No. Incentives for fully built imports (CBU) ended on 31 December 2025 and recipient makers must produce locally 1:1 in 2026 to 2027."
+     }
+    },
+    {
+     "t": {
+      "id": "Bagaimana dengan motor listrik?",
+      "en": "What about electric motorcycles?"
+     },
+     "j": {
+      "id": "Bantuan Rp7 juta per unit berlaku satu KTP satu unit sejak 19 September 2023, tetapi serapan 2023 hanya sekitar 11.532 dari kuota 200.000 unit; 2024 tersalur 30.083 unit atau 60,1 persen dari target.",
+      "en": "The IDR 7 million aid applies one ID per unit since 19 September 2023, but 2023 uptake was only about 11,532 of a 200,000 quota; 2024 reached 30,083 units or 60.1 percent of target."
+     }
+    },
+    {
+     "t": {
+      "id": "Siapa memproduksi baterai kendaraan listrik di Indonesia?",
+      "en": "Who makes EV batteries in Indonesia?"
+     },
+     "j": {
+      "id": "HLI Green Power (Hyundai, LG, IBC) di Karawang dengan 10 GWh per tahun sejak Juli 2024; proyek CATL, Antam, IBC menyusul. Lihat topik Penyimpanan.",
+      "en": "HLI Green Power (Hyundai, LG, IBC) in Karawang with 10 GWh a year since July 2024; the CATL, Antam, IBC project follows. See the Storage topic."
+     }
+    },
+    {
+     "t": {
+      "id": "Seberapa hijau mobil listrik di Indonesia?",
+      "en": "How green is an electric car in Indonesia?"
+     },
+     "j": {
+      "id": "Bergantung pada jaringan: intensitas 680.25 gCO2 per kWh pada 2024 berarti mobil listrik 15 kWh per 100 km menghasilkan sekitar 102 gCO2 per km dibanding sekitar 193 untuk mobil bensin 12 km per liter (EST, asumsi hipotesis). Lihat bab 27.",
+      "en": "It depends on the grid: 680.25 gCO2 per kWh in 2024 means a 15 kWh per 100 km electric car emits about 102 gCO2 per km versus about 193 for a 12 km per litre petrol car (EST, hypothetical assumptions). See chapter 27."
+     }
+    },
+    {
+     "t": {
+      "id": "Kenapa subsidi motor listrik sepi?",
+      "en": "Why did the electric motorcycle subsidy lag?"
+     },
+     "j": {
+      "id": "Menperin menyebut kemampuan baterai dan lamanya pengisian sebagai salah satu penyebab. Lihat bab 40.",
+      "en": "The Industry Minister cited battery capability and charging time as one cause. See chapter 40."
+     }
+    }
+   ]
+  },
+  "3": {
+   "tipe": "glosarium",
+   "sumber": [
+    "ed"
+   ],
+   "butir": [
+    {
+     "istilah": {
+      "id": "KBLBB",
+      "en": "KBLBB"
+     },
+     "arti": {
+      "id": "Kendaraan bermotor listrik berbasis baterai (BEV).",
+      "en": "Battery electric vehicle (BEV)."
+     }
+    },
+    {
+     "istilah": {
+      "id": "SPKLU",
+      "en": "SPKLU"
+     },
+     "arti": {
+      "id": "Stasiun pengisian kendaraan listrik umum.",
+      "en": "Public electric vehicle charging station."
+     }
+    },
+    {
+     "istilah": {
+      "id": "SPBKLU",
+      "en": "SPBKLU"
+     },
+     "arti": {
+      "id": "Stasiun penukaran baterai kendaraan listrik umum (swap).",
+      "en": "Public battery swap station."
+     }
+    },
+    {
+     "istilah": {
+      "id": "CBU / CKD",
+      "en": "CBU / CKD"
+     },
+     "arti": {
+      "id": "Completely built-up (utuh) / completely knocked-down (terurai lengkap).",
+      "en": "Completely built-up / completely knocked-down."
+     }
+    },
+    {
+     "istilah": {
+      "id": "TKDN",
+      "en": "TKDN"
+     },
+     "arti": {
+      "id": "Tingkat komponen dalam negeri.",
+      "en": "Local content level."
+     }
+    },
+    {
+     "istilah": {
+      "id": "PPN DTP",
+      "en": "PPN DTP"
+     },
+     "arti": {
+      "id": "PPN ditanggung pemerintah.",
+      "en": "VAT borne by government."
+     }
+    },
+    {
+     "istilah": {
+      "id": "PPnBM",
+      "en": "PPnBM"
+     },
+     "arti": {
+      "id": "Pajak penjualan atas barang mewah.",
+      "en": "Luxury goods sales tax."
+     }
+    },
+    {
+     "istilah": {
+      "id": "BEV / PHEV / HEV",
+      "en": "BEV / PHEV / HEV"
+     },
+     "arti": {
+      "id": "Mobil baterai penuh / hibrida colok / hibrida.",
+      "en": "Battery-only / plug-in hybrid / hybrid cars."
+     }
+    },
+    {
+     "istilah": {
+      "id": "Pengisian cepat (DC)",
+      "en": "Pengisian cepat (DC)"
+     },
+     "arti": {
+      "id": "Pengisian arus searah berdaya tinggi, puluhan menit.",
+      "en": "High-power direct-current charging, tens of minutes."
+     }
+    },
+    {
+     "istilah": {
+      "id": "Pengisian lambat (AC)",
+      "en": "Pengisian lambat (AC)"
+     },
+     "arti": {
+      "id": "Pengisian arus bolak-balik, beberapa jam, umumnya di rumah.",
+      "en": "Alternating-current charging, several hours, usually at home."
+     }
+    },
+    {
+     "istilah": {
+      "id": "kWh per 100 km",
+      "en": "kWh per 100 km"
+     },
+     "arti": {
+      "id": "Konsumsi energi kendaraan listrik.",
+      "en": "Electric vehicle energy consumption."
+     }
+    },
+    {
+     "istilah": {
+      "id": "Intensitas karbon jaringan",
+      "en": "Intensitas karbon jaringan"
+     },
+     "arti": {
+      "id": "gCO2 per kWh listrik jaringan.",
+      "en": "gCO2 per kWh of grid electricity."
+     }
+    },
+    {
+     "istilah": {
+      "id": "Konversi motor",
+      "en": "Konversi motor"
+     },
+     "arti": {
+      "id": "Mengganti mesin bakar sepeda motor menjadi penggerak listrik.",
+      "en": "Replacing a motorcycle combustion engine with an electric drive."
+     }
+    },
+    {
+     "istilah": {
+      "id": "Gaikindo",
+      "en": "Gaikindo"
+     },
+     "arti": {
+      "id": "Asosiasi Industri Automotif Indonesia.",
+      "en": "Indonesian Automotive Industry Association."
+     }
+    },
+    {
+     "istilah": {
+      "id": "EV 3.0 (Thailand)",
+      "en": "EV 3.0 (Thailand)"
+     },
+     "arti": {
+      "id": "Program insentif Thailand yang mewajibkan produksi lokal.",
+      "en": "Thai incentive programme requiring local production."
+     }
+    }
+   ]
+  },
+  "4": {
+   "tipe": "teks",
+   "sumber": [
+    "iea",
+    "oto",
+    "kontanev"
+   ],
+   "paragraf": [
+    {
+     "id": "Kendaraan listrik menggeser konsumsi bahan bakar impor menjadi listrik dan menaikkan permintaan listrik, penyimpanan, dan pengisian. Dunia menjual lebih dari 17 juta mobil listrik pada 2024 (lebih dari 20 persen penjualan) menurut IEA.",
+     "en": "Electric vehicles shift imported fuel use to electricity and raise demand for power, storage and charging. The world sold over 17 million electric cars in 2024 (over 20 percent of sales) per the IEA."
+    },
+    {
+     "id": "Indonesia masih awal: penjualan mobil listrik naik dari sekitar 10.000 unit (2022) ke 43.000 (2024), dan pemerintah menargetkan 2 juta mobil listrik pada 2030.",
+     "en": "Indonesia is early: electric car sales rose from about 10,000 units (2022) to 43,000 (2024), and government targets 2 million electric cars by 2030."
+    },
+    {
+     "id": "Untuk METI, kendaraan listrik relevan karena beban pengisian dapat dipasangkan dengan surya, dan ekosistem baterainya bertemu dengan topik Penyimpanan.",
+     "en": "For METI, electric vehicles matter because charging load can be paired with solar and the battery ecosystem meets the Storage topic."
+    }
+   ]
+  },
+  "5": {
+   "tipe": "rumus",
+   "sumber": [
+    "owid",
+    "oto",
+    "ed"
+   ],
+   "rumus": [
+    {
+     "id": "Emisi per km (g) = konsumsi (kWh per km) x intensitas jaringan (gCO2 per kWh)",
+     "en": "Emissions per km (g) = consumption (kWh per km) x grid intensity (gCO2 per kWh)"
+    },
+    {
+     "id": "Rasio SPKLU = jumlah kendaraan listrik / jumlah SPKLU",
+     "en": "Charger ratio = number of electric vehicles / number of chargers"
+    },
+    {
+     "id": "Biaya listrik per km = konsumsi (kWh per km) x tarif (Rp per kWh)",
+     "en": "Electricity cost per km = consumption (kWh per km) x tariff (IDR per kWh)"
+    }
+   ],
+   "contoh": [
+    {
+     "id": "Intensitas jaringan Indonesia 680.25 gCO2 per kWh (2024). Mobil listrik 15 kWh per 100 km menghasilkan sekitar 102 gCO2 per km. Mobil bensin 12 km per liter dengan 2,31 kg CO2 per liter menghasilkan sekitar 193 gCO2 per km (EST; konsumsi 15 kWh per 100 km dan 12 km per liter adalah asumsi hipotesis).",
+     "en": "Indonesian grid intensity is 680.25 gCO2 per kWh (2024). A 15 kWh per 100 km electric car emits about 102 gCO2 per km. A 12 km per litre petrol car at 2.31 kg CO2 per litre emits about 193 gCO2 per km (EST; 15 kWh per 100 km and 12 km per litre are hypothetical assumptions)."
+    },
+    {
+     "id": "Jakarta memiliki rasio sekitar satu SPKLU untuk 20 kendaraan listrik, sedangkan PLN dikabarkan menargetkan 1:5 di area publik pada 2030 dan Tiongkok disebut mencapai sekitar 1:1 (pernyataan pelaku industri dalam Otodriver).",
+     "en": "Jakarta has roughly one charger for 20 electric vehicles, while PLN is reportedly targeting 1:5 in public areas by 2030 and China is said to reach about 1:1 (industry statements in Otodriver)."
+    }
+   ]
+  },
+  "6": {
+   "tipe": "langkah",
+   "sumber": [
+    "ed",
+    "cbu",
+    "hliauto",
+    "oto"
+   ],
+   "butir": [
+    {
+     "judul": {
+      "id": "Bahan baterai dan sel",
+      "en": "Battery materials and cells"
+     },
+     "isi": {
+      "id": "Nikel, katoda, dan sel dari Karawang (HLI Green Power 10 GWh per tahun).",
+      "en": "Nickel, cathode and cells from Karawang (HLI Green Power 10 GWh a year)."
+     },
+     "pelaku": {
+      "id": "IBC, Hyundai, LG, CATL, Antam",
+      "en": "IBC, Hyundai, LG, CATL, Antam"
+     }
+    },
+    {
+     "judul": {
+      "id": "Perakitan kendaraan",
+      "en": "Vehicle assembly"
+     },
+     "isi": {
+      "id": "Enam perusahaan penerima insentif CBU merencanakan 305.000 unit per tahun dengan investasi Rp15,52 triliun.",
+      "en": "Six CBU-incentive firms plan 305,000 units a year with IDR 15.52 trillion investment."
+     },
+     "pelaku": {
+      "id": "BYD, Geely, VinFast, Xpeng, GWM, Citroen/AION/Maxus",
+      "en": "BYD, Geely, VinFast, Xpeng, GWM, Citroen/AION/Maxus"
+     }
+    },
+    {
+     "judul": {
+      "id": "Distribusi dan pembiayaan",
+      "en": "Distribution and financing"
+     },
+     "isi": {
+      "id": "Dealer, pembiayaan, dan insentif PPN DTP bagi TKDN minimal 40 persen.",
+      "en": "Dealers, financing and VAT-borne incentives for local content of at least 40 percent."
+     },
+     "pelaku": {
+      "id": "Dealer, lembaga keuangan, DJP",
+      "en": "Dealers, financiers, tax office"
+     }
+    },
+    {
+     "judul": {
+      "id": "Pengisian",
+      "en": "Charging"
+     },
+     "isi": {
+      "id": "PLN mengoperasikan SPKLU, rumah tangga memakai home charging (33.086 unit terintegrasi), dan ada SPBKLU penukaran baterai (2.240 unit).",
+      "en": "PLN operates public chargers, households use home charging (33,086 integrated units), and there are battery swap stations (2,240 units)."
+     },
+     "pelaku": {
+      "id": "PLN, swasta, pengguna",
+      "en": "PLN, private operators, users"
+     }
+    },
+    {
+     "judul": {
+      "id": "Daur ulang dan akhir usia",
+      "en": "Recycling and end of life"
+     },
+     "isi": {
+      "id": "Baku mutu emisi daur ulang baterai lithium diatur Permen LHK 12/2021.",
+      "en": "Emission standards for lithium battery recycling are in Environment Ministry Reg. 12/2021."
+     },
+     "pelaku": {
+      "id": "Pengolah, KLH",
+      "en": "Recyclers, Environment Ministry"
+     }
+    }
+   ]
+  },
+  "7": {
+   "tipe": "grafik",
+   "jenis": "kolom",
+   "sumber": [
+    "kontanev",
+    "bakrie"
+   ],
+   "label": {
+    "id": "Penjualan grosir mobil listrik Indonesia",
+    "en": "Indonesia wholesale electric car sales"
+   },
+   "satuan": {
+    "id": "unit",
+    "en": "units"
+   },
+   "d": 0,
+   "seri": [
+    {
+     "nama": {
+      "id": "Unit",
+      "en": "Units"
+     },
+     "sorot": true,
+     "titik": [
+      [
+       "2022",
+       10000
+      ],
+      [
+       "2023",
+       17000
+      ],
+      [
+       "2024",
+       43000
+      ],
+      [
+       "2025 (belum diverifikasi)",
+       103931
+      ]
+     ]
+    }
+   ],
+   "catatan": {
+    "id": "Angka 2022 sampai 2024 dibulatkan dalam pemberitaan; angka 2025 dari satu sumber yang mengutip Gaikindo dan belum diverifikasi ke rilis Gaikindo.",
+    "en": "Figures for 2022 to 2024 are rounded in press; the 2025 figure is from one source citing Gaikindo and unverified against a Gaikindo release."
+   }
+  },
+  "8": {
+   "tipe": "tabel",
+   "per": 8,
+   "sumber": [
+    "oto"
+   ],
+   "catatan": {
+    "id": "SPKLU roda empat milik PLN per wilayah, Maret 2025.",
+    "en": "PLN four-wheel public chargers by region, March 2025."
+   },
+   "kolom": [
+    {
+     "k": "w",
+     "l": {
+      "id": "Wilayah",
+      "en": "Region"
+     }
+    },
+    {
+     "k": "u",
+     "l": {
+      "id": "Unit SPKLU",
+      "en": "Charger units"
+     },
+     "num": true,
+     "d": 0
+    },
+    {
+     "k": "l",
+     "l": {
+      "id": "Lokasi",
+      "en": "Locations"
+     },
+     "num": true,
+     "d": 0
+    }
+   ],
+   "baris": [
+    {
+     "w": "Jawa",
+     "u": 2667,
+     "l": 1645
+    },
+    {
+     "w": "Sumatera",
+     "u": 442,
+     "l": 364
+    },
+    {
+     "w": "Bali dan Nusa Tenggara",
+     "u": 246,
+     "l": 167
+    },
+    {
+     "w": "Kalimantan",
+     "u": 217,
+     "l": 170
+    },
+    {
+     "w": "Sulawesi",
+     "u": 148,
+     "l": 125
+    },
+    {
+     "w": "Papua",
+     "u": 27,
+     "l": 19
+    },
+    {
+     "w": "Maluku",
+     "u": 25,
+     "l": 25
+    }
+   ]
+  },
+  "11": {
+   "tipe": "teks",
+   "sumber": [
+    "kontanev",
+    "oto",
+    "nataru",
+    "mesin",
+    "motor24"
+   ],
+   "paragraf": [
+    {
+     "id": "Penjualan mobil listrik 43.000 unit pada 2024 dan penjualan bulanan Maret 2025 mencapai 16.400 unit (Gaikindo via Otodriver). Pengisian: 3.772 SPKLU mobil, 9.956 SPKLU motor, 2.240 swap station, dan 33.086 home charging terintegrasi PLN (Maret 2025); PLN menambah 4.655 mesin SPKLU sepanjang 2025 menurut kutipan berita.",
+     "en": "Electric car sales were 43,000 units in 2024 and March 2025 monthly sales reached 16,400 units (Gaikindo via Otodriver). Charging: 3,772 car chargers, 9,956 motorcycle chargers, 2,240 swap stations and 33,086 PLN-integrated home chargers (March 2025); PLN added 4,655 charger machines through 2025 per a news excerpt."
+    },
+    {
+     "id": "Motor listrik bersubsidi: 30.083 unit tersalurkan pada 2024 (60,1 persen target).",
+     "en": "Subsidised electric motorcycles: 30,083 units were delivered in 2024 (60.1 percent of target)."
+    }
+   ]
+  },
+  "12": {
+   "tipe": "tabel",
+   "per": 8,
+   "sumber": [
+    "regul",
+    "pmk"
+   ],
+   "kolom": [
+    {
+     "k": "dok",
+     "l": {
+      "id": "Peraturan",
+      "en": "Regulation"
+     },
+     "url": "u"
+    },
+    {
+     "k": "ttg",
+     "l": {
+      "id": "Tentang",
+      "en": "About"
+     }
+    },
+    {
+     "k": "st",
+     "l": {
+      "id": "Status",
+      "en": "Status"
+     }
+    }
+   ],
+   "baris": [
+    {
+     "dok": "Perpres 55/2019",
+     "ttg": {
+      "id": "Percepatan program kendaraan bermotor listrik berbasis baterai untuk transportasi jalan",
+      "en": "Accelerating the battery electric vehicle programme for road transport"
+     },
+     "st": "diubah",
+     "u": "https://peraturan.bpk.go.id/Details/116973"
+    },
+    {
+     "dok": "Perpres 79/2023",
+     "ttg": {
+      "id": "Perubahan atas Perpres 55/2019",
+      "en": "Amendment of Perpres 55/2019"
+     },
+     "st": "berlaku",
+     "u": "https://peraturan.bpk.go.id/Details/273447"
+    },
+    {
+     "dok": "PMK 12/2025",
+     "ttg": {
+      "id": "PPN ditanggung pemerintah atas mobil listrik roda empat dan bus listrik tertentu (2025)",
+      "en": "Government-borne VAT on certain electric cars and buses (2025)"
+     },
+     "st": "berlaku",
+     "u": "https://peraturan.bpk.go.id/Details/313577"
+    },
+    {
+     "dok": "Permenperin 6/2022",
+     "ttg": {
+      "id": "Spesifikasi, peta jalan, dan penghitungan TKDN kendaraan bermotor listrik",
+      "en": "Specifications, roadmap and local content calculation for electric vehicles"
+     },
+     "st": "berlaku",
+     "u": "https://peraturan.bpk.go.id/Details/227541"
+    },
+    {
+     "dok": "Permen ESDM 1/2023",
+     "ttg": {
+      "id": "Penyediaan infrastruktur pengisian listrik untuk kendaraan listrik",
+      "en": "Provision of charging infrastructure for electric vehicles"
+     },
+     "st": "berlaku",
+     "u": "https://peraturan.bpk.go.id/Details/252409"
+    },
+    {
+     "dok": "Permenperin 6/2023",
+     "ttg": {
+      "id": "Bantuan pemerintah untuk pembelian kendaraan listrik roda dua (diubah)",
+      "en": "Government aid for buying electric two-wheelers (amended)"
+     },
+     "st": "diubah",
+     "u": "https://peraturan.bpk.go.id/Details/254545"
+    },
+    {
+     "dok": "Inpres 7/2022",
+     "ttg": {
+      "id": "Penggunaan kendaraan listrik sebagai kendaraan dinas",
+      "en": "Use of electric vehicles as official vehicles"
+     },
+     "st": "berlaku",
+     "u": "https://peraturan.bpk.go.id/Details/225262"
+    },
+    {
+     "dok": "PMK 9/2024",
+     "ttg": {
+      "id": "PPnBM atas impor dan penyerahan kendaraan listrik tertentu",
+      "en": "Luxury sales tax on import and delivery of certain electric vehicles"
+     },
+     "st": "berlaku",
+     "u": "https://peraturan.bpk.go.id/Details/279857"
+    }
+   ]
+  },
+  "13": {
+   "tipe": "linimasa",
+   "sumber": [
+    "regul",
+    "motor23",
+    "hlitempo",
+    "pmk",
+    "cbu",
+    "lgjp"
+   ],
+   "butir": [
+    {
+     "tanggal": "2019-01-01",
+     "judul": {
+      "id": "Perpres 55/2019 tentang percepatan KBLBB (tahun saja)",
+      "en": "Perpres 55/2019 on accelerating BEV (year only)"
+     },
+     "url": "https://peraturan.bpk.go.id/"
+    },
+    {
+     "tanggal": "2023-09-19",
+     "judul": {
+      "id": "Bantuan motor listrik berubah menjadi satu KTP satu unit",
+      "en": "Motorcycle aid changes to one ID one unit"
+     },
+     "url": "https://www.antaranews.com/berita/3898152/menperin-serapan-subsidi-motor-listrik-2023-capai-11-ribu-unit"
+    },
+    {
+     "tanggal": "2024-07-03",
+     "judul": {
+      "id": "HLI Green Power diresmikan",
+      "en": "HLI Green Power inaugurated"
+     },
+     "url": "https://en.tempo.co/amp/1886890/indonesias-jokowi-opens-southeast-asias-largest-ev-battery-factory-in-karawang"
+    },
+    {
+     "tanggal": "2025-02-04",
+     "judul": {
+      "id": "PMK 12/2025 berlaku untuk masa pajak Januari sampai Desember 2025",
+      "en": "PMK 12/2025 takes effect for tax periods January to December 2025"
+     },
+     "url": "https://news.ddtc.co.id/berita/nasional/1808696/pmk-baru-pemerintah-tanggung-ppn-mobil-listrik-dan-ppnbm-mobil-hybrid"
+    },
+    {
+     "tanggal": "2025-04-24",
+     "judul": {
+      "id": "LG keluar dari paket baterai, Huayou disebut pengganti",
+      "en": "LG exits battery package, Huayou named replacement"
+     },
+     "url": "https://www.thejakartapost.com/business/2025/04/24/govt-says-chinas-huayou-to-replace-lges-in-ev-battery-project"
+    },
+    {
+     "tanggal": "2025-12-31",
+     "judul": {
+      "id": "Insentif impor CBU berakhir",
+      "en": "CBU import incentives end"
+     },
+     "url": "https://jakartaglobe.id/news/industry-ministry-to-end-cbu-electric-vehicle-incentives-in-2026"
+    },
+    {
+     "tanggal": "2026-01-01",
+     "judul": {
+      "id": "Kewajiban produksi lokal 1:1 berlaku",
+      "en": "The 1:1 local production obligation begins"
+     },
+     "url": "https://jakartaglobe.id/news/industry-ministry-to-end-cbu-electric-vehicle-incentives-in-2026"
+    },
+    {
+     "tanggal": "2027-12-31",
+     "judul": {
+      "id": "Akhir periode kewajiban 1:1",
+      "en": "End of the 1:1 obligation period"
+     },
+     "url": "https://jakartaglobe.id/news/industry-ministry-to-end-cbu-electric-vehicle-incentives-in-2026"
+    }
+   ]
+  },
+  "14": {
+   "tipe": "teks",
+   "sumber": [
+    "pmk",
+    "cbu",
+    "motor23",
+    "motor24"
+   ],
+   "paragraf": [
+    {
+     "id": "Insentif mobil: PPN DTP 10 persen untuk TKDN minimal 40 persen (bus listrik 5 persen untuk TKDN 20 sampai kurang dari 40 persen) pada 2025; faktur pajak wajib bertuliskan PPN ditanggung pemerintah sesuai PMK 12/2025. PPnBM DTP 3 persen berlaku untuk mobil hibrida tertentu.",
+     "en": "Car incentives: VAT borne by government at 10 percent for local content of at least 40 percent (electric buses 5 percent for 20 to under 40 percent) in 2025; invoices must state VAT borne by government per PMK 12/2025. Luxury-tax relief of 3 percent applies to certain hybrid cars."
+    },
+    {
+     "id": "Kewajiban penerima insentif impor CBU: produksi lokal setara jumlah impor (1:1) pada 1 Januari 2026 sampai 31 Desember 2027, dengan TKDN 40 persen yang naik bertahap ke 60 persen.",
+     "en": "Obligation of CBU import incentive recipients: local production equal to imports (1:1) from 1 January 2026 to 31 December 2027, with local content of 40 percent rising gradually to 60 percent."
+    },
+    {
+     "id": "Motor listrik: bantuan Rp7 juta per unit, satu KTP satu unit sejak 19 September 2023.",
+     "en": "Electric motorcycles: aid of IDR 7 million per unit, one ID one unit since 19 September 2023."
+    }
+   ]
+  },
+  "15": {
+   "tipe": "langkah",
+   "sumber": [
+    "ed",
+    "waralaba",
+    "oto"
+   ],
+   "catatan": {
+    "id": "Ringkasan alur umum untuk pengelola SPKLU; biaya, durasi, dan detail izin belum bersumber.",
+    "en": "General flow for charger operators; costs, durations and permit details are not sourced."
+   },
+   "butir": [
+    {
+     "judul": {
+      "id": "Pilih lokasi dan mitra PLN",
+      "en": "Choose a site and PLN partner"
+     },
+     "isi": {
+      "id": "Lokasi strategis (jalan tol, pusat belanja) dan pola kemitraan atau waralaba dengan PLN yang disarankan pelaku industri.",
+      "en": "Strategic sites (toll roads, malls) and a partnership or franchise pattern with PLN suggested by industry."
+     },
+     "pelaku": {
+      "id": "Pengelola, PLN",
+      "en": "Operator, PLN"
+     }
+    },
+    {
+     "judul": {
+      "id": "Penyambungan daya dan izin",
+      "en": "Power connection and permits"
+     },
+     "isi": {
+      "id": "Daya dari PLN dan izin usaha penyediaan infrastruktur pengisian menurut Permen ESDM 1/2023.",
+      "en": "Power from PLN and business permit for charging infrastructure under Energy Ministry Reg. 1/2023."
+     },
+     "pelaku": {
+      "id": "Pengelola, PLN, ESDM",
+      "en": "Operator, PLN, Energy Ministry"
+     }
+    },
+    {
+     "judul": {
+      "id": "Pilih teknologi pengisian",
+      "en": "Choose charging technology"
+     },
+     "isi": {
+      "id": "Pengisian cepat DC di koridor jalan dan AC di tujuan; contoh SPKLU ultra fast di Tol Jagorawi.",
+      "en": "DC fast charging on corridors and AC at destinations; example: ultra-fast chargers on the Jagorawi toll road."
+     },
+     "pelaku": {
+      "id": "Pengelola",
+      "en": "Operator"
+     }
+    },
+    {
+     "judul": {
+      "id": "Operasi dan pembayaran",
+      "en": "Operation and payment"
+     },
+     "isi": {
+      "id": "Integrasi aplikasi pembayaran dan pemeliharaan, termasuk ketersediaan saat arus mudik.",
+      "en": "Payment app integration and maintenance, including availability during holiday peaks."
+     },
+     "pelaku": {
+      "id": "Pengelola, PLN",
+      "en": "Operator, PLN"
+     }
+    }
+   ]
+  },
+  "16": {
+   "tipe": "teks",
+   "sumber": [
+    "pmk",
+    "ruuebet"
+   ],
+   "paragraf": [
+    {
+     "id": "PMK 12/2025 hanya berlaku untuk masa pajak 2025; status insentif PPN DTP mobil listrik untuk 2026 tidak dapat dikonfirmasi dari sumber yang dibaca, sehingga perlu dicek ke Kemenkeu atau DJP sebelum dipakai dalam rencana bisnis.",
+     "en": "PMK 12/2025 applies only to 2025 tax periods; the 2026 status of the electric car VAT incentive could not be confirmed from the sources read, so it must be checked with the Finance Ministry or tax office before business planning."
+    },
+    {
+     "id": "RUU EBET berada pada tahap pembahasan menurut arsip METI 8 September 2026; forum Konsultasi dapat dipakai untuk masukan tentang pengisian dan kendaraan listrik.",
+     "en": "RUU EBET is in deliberation per the METI archive of 8 September 2026; the Consultation forum can be used for input on charging and electric vehicles."
+    }
+   ]
+  },
+  "17": {
+   "tipe": "teks",
+   "sumber": [
+    "iea",
+    "oto",
+    "jagorawi",
+    "hliauto"
+   ],
+   "paragraf": [
+    {
+     "id": "IEA mencatat penjualan mobil listrik Asia Tenggara naik hampir 50 persen pada 2024 dengan pangsa 9 persen, dan satu dari empat mobil terjual pada 2030 akan listrik. Teknologi pengisian bergerak ke arah ultra cepat (contoh SPKLU di Tol Jagorawi) dan penukaran baterai (2.240 swap station di Indonesia pada Maret 2025).",
+     "en": "The IEA records Southeast Asian electric car sales rising almost 50 percent in 2024 with a 9 percent share, and one in four cars sold in 2030 being electric. Charging technology is moving toward ultra-fast (example: Jagorawi toll road chargers) and battery swapping (2,240 swap stations in Indonesia in March 2025)."
+    },
+    {
+     "id": "Produksi lokal sel (10 GWh per tahun di Karawang) memungkinkan Kona Electric dirakit dengan sel Indonesia.",
+     "en": "Local cell production (10 GWh a year in Karawang) allows the Kona Electric to be built with Indonesian cells."
+    }
+   ]
+  },
+  "20": {
+   "tipe": "tabel",
+   "per": 8,
+   "sumber": [
+    "iea",
+    "norway",
+    "thstar",
+    "cbu",
+    "kontanev"
+   ],
+   "catatan": {
+    "id": "Pembanding terpilih; metrik tidak seragam antar negara.",
+    "en": "Selected comparators; metrics are not uniform across countries."
+   },
+   "kolom": [
+    {
+     "k": "n",
+     "l": {
+      "id": "Negara atau wilayah",
+      "en": "Country or region"
+     }
+    },
+    {
+     "k": "f",
+     "l": {
+      "id": "Fakta kunci",
+      "en": "Key fact"
+     }
+    },
+    {
+     "k": "h",
+     "l": {
+      "id": "Pendorong",
+      "en": "Driver"
+     }
+    }
+   ],
+   "baris": [
+    {
+     "n": {
+      "id": "Norwegia",
+      "en": "Norway"
+     },
+     "f": {
+      "id": "Pangsa kendaraan plug-in 88,9 persen pada 2024",
+      "en": "Plug-in share 88.9 percent in 2024"
+     },
+     "h": {
+      "id": "Bebas PPN 25 persen, bebas pajak pembelian, bebas tol",
+      "en": "25 percent VAT exemption, purchase tax exemption, toll exemption"
+     }
+    },
+    {
+     "n": {
+      "id": "Tiongkok",
+      "en": "China"
+     },
+     "f": {
+      "id": "Lebih dari 11 juta mobil listrik pada 2024, hampir separuh penjualan",
+      "en": "Over 11 million electric cars in 2024, almost half of sales"
+     },
+     "h": {
+      "id": "Industri dan rantai pasok domestik",
+      "en": "Domestic industry and supply chain"
+     }
+    },
+    {
+     "n": {
+      "id": "Asia Tenggara",
+      "en": "Southeast Asia"
+     },
+     "f": {
+      "id": "Pangsa 9 persen pada 2024, naik hampir 50 persen",
+      "en": "9 percent share in 2024, up almost 50 percent"
+     },
+     "h": {
+      "id": "Thailand dan Vietnam lebih tinggi",
+      "en": "Thailand and Viet Nam higher"
+     }
+    },
+    {
+     "n": "Thailand",
+     "f": {
+      "id": "Merek Tiongkok lebih dari 70 persen pasar EV; subsidi hingga THB 150.000 per unit dengan produksi 1,5:1",
+      "en": "Chinese brands over 70 percent of the EV market; subsidy up to THB 150,000 per unit with 1.5:1 production"
+     },
+     "h": {
+      "id": "Program EV 3.0",
+      "en": "EV 3.0 programme"
+     }
+    },
+    {
+     "n": "Indonesia",
+     "f": {
+      "id": "43.000 unit grosir pada 2024; insentif CBU berakhir 2025 dengan produksi lokal 1:1",
+      "en": "43,000 wholesale units in 2024; CBU incentives end 2025 with 1:1 local production"
+     },
+     "h": {
+      "id": "PPN DTP TKDN 40 persen",
+      "en": "VAT relief at 40 percent local content"
+     }
+    }
+   ]
+  },
+  "21": {
+   "tipe": "teks",
+   "sumber": [
+    "norway",
+    "iea",
+    "thstar",
+    "thnation"
+   ],
+   "paragraf": [
+    {
+     "id": "Norwegia berhasil lewat paket fiskal yang membuat mobil listrik lebih murah daripada mobil bensin (bebas PPN 25 persen, bebas pajak pembelian, tol, dan biaya lain) selama bertahun-tahun, dengan target semua penjualan baru nol emisi pada 2025. Tiongkok berhasil lewat industri dan rantai pasok: lebih dari 11 juta mobil listrik pada 2024.",
+     "en": "Norway succeeded through a fiscal package making electric cars cheaper than petrol cars (25 percent VAT exemption, purchase tax, tolls and other fees) over many years, with a goal of all new sales zero-emission by 2025. China succeeded through industry and supply chain: over 11 million electric cars in 2024."
+    },
+    {
+     "id": "Thailand menunjukkan sisi lain: insentif EV 3.0 menarik merek Tiongkok yang mendominasi (lebih dari 70 persen), lalu perang harga dan kelebihan pasokan, dan Neta gagal memenuhi komitmen produksi sebelum induknya bangkrut pada Juni 2025.",
+     "en": "Thailand shows the other side: EV 3.0 incentives drew Chinese brands that dominate (over 70 percent), then a price war and oversupply, and Neta missed its production commitment before its parent went bankrupt in June 2025."
+    }
+   ]
+  },
+  "22": {
+   "tipe": "teks",
+   "sumber": [
+    "iea",
+    "bakrie",
+    "kontanev"
+   ],
+   "paragraf": [
+    {
+     "id": "Asia Tenggara berpangsa 9 persen mobil listrik pada 2024 (IEA); satu sumber menyebut pangsa mobil listrik nasional Indonesia sekitar 15 persen pada November 2025 (belum diverifikasi, tahun berbeda), sehingga Indonesia berada di kelompok atas kawasan tetapi jauh di bawah Tiongkok dan Norwegia.",
+     "en": "Southeast Asia had a 9 percent electric car share in 2024 (IEA); one source puts Indonesia's national share at about 15 percent in November 2025 (unverified, different year), placing Indonesia in the upper group of the region but far below China and Norway."
+    },
+    {
+     "id": "Perbandingan dengan Thailand dan Vietnam yang lebih tinggi menurut IEA tidak dapat dikuantifikasi karena angkanya tidak diberikan.",
+     "en": "The comparison with Thailand and Viet Nam, said by the IEA to be higher, cannot be quantified because no figures are given."
+    }
+   ]
+  },
+  "23": {
+   "tipe": "teks",
+   "sumber": [
+    "cbu",
+    "hliauto",
+    "lgscmp"
+   ],
+   "paragraf": [
+    {
+     "id": "Kerja sama pabrikan bersifat investasi: enam perusahaan CBU (BYD, Geely, VinFast, Xpeng, GWM, Citroen/AION/Maxus) berkomitmen produksi lokal; Hyundai dan LG membangun sel; LG keluar dari paket lain dan CATL masuk lewat proyek baterai.",
+     "en": "Maker cooperation is investment-based: six CBU firms (BYD, Geely, VinFast, Xpeng, GWM, Citroen/AION/Maxus) commit to local production; Hyundai and LG built cells; LG exited another package and CATL entered through a battery project."
+    },
+    {
+     "id": "Perjanjian perdagangan atau standar pengisian bersama lintas ASEAN tidak ditemukan di sumber yang dibaca.",
+     "en": "ASEAN-wide trade agreements or shared charging standards were not found in the sources read."
+    }
+   ]
+  },
+  "24": {
+   "tipe": "tabel",
+   "per": 8,
+   "sumber": [
+    "pendanaan"
+   ],
+   "catatan": {
+    "id": "Skema dan proyek pendana yang menyebut kendaraan atau elektrifikasi di basis METI.",
+    "en": "Funder schemes and projects naming vehicles or electrification in the METI base."
+   },
+   "kolom": [
+    {
+     "k": "nama",
+     "l": {
+      "id": "Skema atau proyek",
+      "en": "Scheme or project"
+     },
+     "url": "u"
+    },
+    {
+     "k": "pem",
+     "l": {
+      "id": "Pemberi",
+      "en": "Provider"
+     }
+    },
+    {
+     "k": "jenis",
+     "l": {
+      "id": "Jenis",
+      "en": "Type"
+     }
+    }
+   ],
+   "baris": [
+    {
+     "nama": "Pinjaman luar negeri lewat Green Book",
+     "pem": "Kementerian PPN/Bappenas",
+     "jenis": {
+      "id": "skema",
+      "en": "scheme"
+     },
+     "u": "https://www.bappenas.go.id/"
+    },
+    {
+     "nama": "PLTS berbasis baterai di 10 lokasi terisolasi (investasi)",
+     "jenis": {
+      "id": "proyek",
+      "en": "project"
+     },
+     "u": "https://economy.okezone.com/read/2026/09/22/320/3243554/investasi-rp3-3-triliun-plts-berbasis-baterai-dikembangkan-di-10-lokasi-terisolasi"
+    },
+    {
+     "nama": "Energy Policy Consulting Projects(Establishment of Indonesia e-vehicle Master Plan Using Solar Power Utilization)",
+     "pem": "Office for Government Policy Coordination",
+     "jenis": {
+      "id": "proyek",
+      "en": "project"
+     },
+     "u": "https://d-portal.org/ctrack.html#view=act&aid=KR-GOV-100-1450000_2021_038"
+    },
+    {
+     "nama": "Installation of solar charged e-vehicle system in Indonesia",
+     "pem": "Office for Government Policy Coordination",
+     "jenis": {
+      "id": "proyek",
+      "en": "project"
+     },
+     "u": "https://d-portal.org/ctrack.html#view=act&aid=KR-GOV-100-1450000_2022_007"
+    },
+    {
+     "nama": "Enhancing Readiness for the Transition to Electric Vehicles in Indonesia (ENTREV)",
+     "pem": "Global Environment Facility",
+     "jenis": {
+      "id": "proyek",
+      "en": "project"
+     },
+     "u": "https://d-portal.org/ctrack.html#view=act&aid=XI-BRIDGE-6385676864-10641"
+    }
+   ]
+  },
+  "25": {
+   "tipe": "rumus",
+   "sumber": [
+    "pmk",
+    "ed"
+   ],
+   "rumus": [
+    {
+     "id": "Penghematan pembeli = harga jual x tarif PPN DTP",
+     "en": "Buyer saving = selling price x VAT-borne rate"
+    },
+    {
+     "id": "Biaya total kepemilikan = harga + biaya energi + perawatan - nilai jual kembali",
+     "en": "Total cost of ownership = price + energy cost + maintenance - resale value"
+    }
+   ],
+   "contoh": [
+    {
+     "id": "Untuk mobil listrik berharga Rp400 juta (angka ilustrasi), PPN DTP 10 persen dari harga jual setara penghematan sekitar Rp40 juta (EST, harga adalah hipotesis).",
+     "en": "For an electric car priced at IDR 400 million (illustrative), VAT borne at 10 percent of selling price equals a saving of about IDR 40 million (EST, price is a hypothesis)."
+    },
+    {
+     "id": "Biaya total kepemilikan belum dapat dihitung dengan sumber karena tarif SPKLU, harga mobil, dan nilai jual kembali tidak ditemukan dalam sumber yang dibaca.",
+     "en": "Total cost of ownership cannot yet be computed from sources because charger tariffs, car prices and resale values were not found in the sources read."
+    }
+   ]
+  },
+  "26": {
+   "tipe": "tabel",
+   "per": 8,
+   "sumber": [
+    "cbu",
+    "hlitempo",
+    "lgscmp"
+   ],
+   "catatan": {
+    "id": "Nilai dari pemberitaan; bukan audit.",
+    "en": "Values from press; not audited."
+   },
+   "kolom": [
+    {
+     "k": "p",
+     "l": {
+      "id": "Hal",
+      "en": "Item"
+     }
+    },
+    {
+     "k": "n",
+     "l": {
+      "id": "Nilai",
+      "en": "Value"
+     }
+    },
+    {
+     "k": "k",
+     "l": {
+      "id": "Keterangan",
+      "en": "Note"
+     }
+    }
+   ],
+   "baris": [
+    {
+     "p": {
+      "id": "Enam perusahaan penerima insentif CBU",
+      "en": "Six CBU incentive recipients"
+     },
+     "n": "Rp15,52 triliun",
+     "k": {
+      "id": "Kapasitas rencana 305.000 unit per tahun",
+      "en": "Planned capacity 305,000 units a year"
+     }
+    },
+    {
+     "p": "HLI Green Power",
+     "n": {
+      "id": "USD 1,1 miliar atau USD 3,1 miliar (Tempo)",
+      "en": "USD 1.1 billion or USD 3.1 billion (Tempo)"
+     },
+     "k": {
+      "id": "10 GWh per tahun; Juli 2024",
+      "en": "10 GWh a year; July 2024"
+     }
+    },
+    {
+     "p": {
+      "id": "Paket baterai yang ditinggalkan LG",
+      "en": "Battery package LG abandoned"
+     },
+     "n": {
+      "id": "Sekitar USD 8,45 miliar",
+      "en": "About USD 8.45 billion"
+     },
+     "k": {
+      "id": "Huayou disebut pengganti, April 2025",
+      "en": "Huayou named replacement, April 2025"
+     }
+    }
+   ]
+  },
+  "27": {
+   "tipe": "teks",
+   "sumber": [
+    "owid",
+    "ed",
+    "regul"
+   ],
+   "paragraf": [
+    {
+     "id": "Manfaat iklim kendaraan listrik di Indonesia bergantung pada jaringan yang masih 680.25 gCO2 per kWh: dengan asumsi hipotesis, mobil listrik sekitar 102 gCO2 per km berbanding sekitar 193 untuk mobil bensin (EST). Manfaat meningkat bila pengisian memakai surya atau jaringan yang makin hijau.",
+     "en": "The climate benefit of electric vehicles in Indonesia depends on a grid still at 680.25 gCO2 per kWh: under hypothetical assumptions an electric car emits about 102 gCO2 per km versus about 193 for a petrol car (EST). The benefit rises as charging uses solar or a greener grid."
+    },
+    {
+     "id": "Analisis METI (Hipotesis): sepeda motor listrik (mayoritas kendaraan Indonesia) memberi manfaat per kilometer lebih besar daripada mobil, tetapi serapan subsidinya rendah; prioritas kebijakan mungkin perlu bergeser ke sana.",
+     "en": "METI analysis (Hypothesis): electric motorcycles (most of Indonesia's vehicles) give a larger per-kilometre benefit than cars, but subsidy uptake was low; policy priority may need to shift there."
+    },
+    {
+     "id": "Daur ulang baterai diatur baku mutu emisi Permen LHK 12/2021; dampak tambang nikel pada ekosistem baterai belum bersumber di bab ini.",
+     "en": "Battery recycling emissions are governed by Environment Ministry Reg. 12/2021; nickel mining impacts of the battery ecosystem are not sourced in this chapter."
+    }
+   ]
+  },
+  "29": {
+   "tipe": "teks",
+   "sumber": [
+    "cbujp",
+    "cbu",
+    "motor23",
+    "thstar"
+   ],
+   "paragraf": [
+    {
+     "id": "Insentif: pendukung penghentian insentif impor menyebut perlunya mendorong manufaktur domestik; kekhawatirannya adalah laju penjualan melambat saat harga naik. Satu sumber mempertanyakan apakah penjualan tetap tumbuh eksponensial setelah insentif dicabut.",
+     "en": "Incentives: supporters of ending import incentives say domestic manufacturing must be encouraged; the worry is that sales slow when prices rise. One source questions whether sales keep growing exponentially after incentives are removed."
+    },
+    {
+     "id": "Motor listrik: Menperin menyebut daya baterai dan lama pengisian sebagai penyebab rendahnya serapan subsidi 2023; pihak lain menilai syarat penyaluran sebelum disederhanakan terlalu rumit. Tanggapan pelaku industri atas kritik ini belum kami muat.",
+     "en": "Electric motorcycles: the Industry Minister cited battery capability and charging time for low 2023 subsidy uptake; others see pre-simplification eligibility rules as too complex. Industry responses to this critique are not yet carried."
+    },
+    {
+     "id": "Thailand: pendukung EV 3.0 menyebut produksi lokal tumbuh; pengamat menyebut perang harga dan Neta yang gagal memenuhi kuota produksi.",
+     "en": "Thailand: EV 3.0 supporters say local production grew; observers point to the price war and Neta missing its production quota."
+    }
+   ]
+  },
+  "30": {
+   "tipe": "tabel",
+   "per": 8,
+   "sumber": [
+    "oto",
+    "cbu",
+    "iea"
+   ],
+   "catatan": {
+    "id": "Target adalah rencana; target 60.000 unit 2025 dilampaui pada penjualan grosir menurut sumber yang belum diverifikasi.",
+    "en": "Targets are plans; the 60,000-unit 2025 target was exceeded in wholesale sales per an unverified source."
+   },
+   "kolom": [
+    {
+     "k": "d",
+     "l": {
+      "id": "Target atau jadwal",
+      "en": "Target or schedule"
+     }
+    },
+    {
+     "k": "v",
+     "l": {
+      "id": "Nilai",
+      "en": "Value"
+     },
+     "num": true,
+     "d": 0
+    },
+    {
+     "k": "sat",
+     "l": {
+      "id": "Satuan",
+      "en": "Unit"
+     }
+    }
+   ],
+   "baris": [
+    {
+     "d": {
+      "id": "Target pemerintah mobil listrik 2025",
+      "en": "Government electric car target 2025"
+     },
+     "v": 60000,
+     "sat": {
+      "id": "unit",
+      "en": "units"
+     }
+    },
+    {
+     "d": {
+      "id": "Target pemerintah mobil listrik 2030",
+      "en": "Government electric car target 2030"
+     },
+     "v": 2000000,
+     "sat": {
+      "id": "unit",
+      "en": "units"
+     }
+    },
+    {
+     "d": {
+      "id": "Target rasio PLN di area publik 2030 (satu SPKLU untuk lima kendaraan)",
+      "en": "PLN public-area ratio target 2030 (one charger per five vehicles)"
+     },
+     "v": 5,
+     "sat": {
+      "id": "kendaraan per SPKLU",
+      "en": "vehicles per charger"
+     }
+    },
+    {
+     "d": {
+      "id": "TKDN produksi lokal: awal 2026 sampai tujuan",
+      "en": "Local-production TKDN: from early 2026 to goal"
+     },
+     "v": 60,
+     "sat": {
+      "id": "persen (dari 40)",
+      "en": "percent (from 40)"
+     }
+    },
+    {
+     "d": {
+      "id": "Asia Tenggara: porsi mobil baru listrik pada 2030 (IEA)",
+      "en": "Southeast Asia: electric share of new cars by 2030 (IEA)"
+     },
+     "v": 25,
+     "sat": {
+      "id": "persen",
+      "en": "percent"
+     }
+    }
+   ]
+  },
+  "31": {
+   "tipe": "teks",
+   "sumber": [
+    "ed",
+    "oto",
+    "waralaba"
+   ],
+   "paragraf": [
+    {
+     "id": "Analisis METI (Hipotesis): Pengembang: surya atap atau PLTS di lokasi pengisian mengurangi biaya energi dan jejak karbon SPKLU. Investor: SPKLU di luar Jawa (Papua 27 unit) kekurangan pemakai, jadi bergantung pada kemitraan PLN. Pemda: tetapkan pengadaan kendaraan dinas listrik (Inpres 7/2022) dan izin SPKLU. Akademisi: ukur utilisasi SPKLU dan umur baterai tropis.",
+     "en": "METI analysis (Hypothesis): Developers: rooftop or on-site solar at charging sites cuts charger energy cost and carbon. Investors: chargers outside Java (Papua 27 units) lack users, so depend on PLN partnership. Local government: set electric official-vehicle procurement (Inpres 7/2022) and charger permits. Academics: measure charger utilisation and tropical battery life."
+    }
+   ]
+  },
+  "32": {
+   "tipe": "teks",
+   "sumber": [
+    "pmk",
+    "cbu",
+    "oto",
+    "lgjp"
+   ],
+   "paragraf": [
+    {
+     "id": "Yang perlu dipantau: (1) status PPN DTP mobil listrik 2026; (2) realisasi produksi lokal 1:1 enam perusahaan; (3) penjualan setelah insentif CBU berakhir; (4) rasio SPKLU terhadap kendaraan, terutama di luar Jawa; (5) kelanjutan paket baterai setelah LG keluar.",
+     "en": "To watch: (1) 2026 VAT-borne status for electric cars; (2) actual 1:1 local production by the six firms; (3) sales after CBU incentives end; (4) charger-to-vehicle ratio, especially outside Java; (5) continuation of the battery package after LG exit."
+    }
+   ]
+  },
+  "38": {
+   "tipe": "teks",
+   "sumber": [
+    "ed"
+   ],
+   "paragraf": [
+    {
+     "id": "Metode: SPKLU dari data PLN yang dikutip Otodriver dan Bisnis, penjualan dari Kontan dan satu sumber yang mengutip Gaikindo, kebijakan dari basis regulasi METI, DDTC, dan Jakarta Globe, perbandingan negara dari IEA dan ringkasan Wikipedia. Beberapa halaman (Bisnis, Kontan) memblokir pengambilan otomatis sehingga hanya judul dan ringkasan pencarian dipakai. Sintesis berlabel Analisis METI (Hipotesis). Batas: angka penjualan 2025 belum diverifikasi ke Gaikindo, status insentif 2026 tidak terkonfirmasi, tarif SPKLU dan harga mobil tidak ditemukan.",
+     "en": "Method: chargers from PLN data quoted by Otodriver and Bisnis, sales from Kontan and one source citing Gaikindo, policy from the METI regulation base, DDTC and Jakarta Globe, country comparison from the IEA and Wikipedia summaries. Some pages (Bisnis, Kontan) block automated fetching so only headlines and search summaries were used. Synthesis is labelled METI analysis (Hypothesis). Limits: 2025 sales are not verified against Gaikindo, the 2026 incentive status is unconfirmed, charger tariffs and car prices were not found."
+    }
+   ]
+  },
+  "39": {
+   "tipe": "kasus",
+   "sumber": [
+    "oto",
+    "hliauto",
+    "cbu",
+    "norway",
+    "iea"
+   ],
+   "catatan": {
+    "id": "Biaya yang tidak ditemukan sengaja dikosongkan. Keberhasilan Indonesia di sini bersifat tahap awal dan relatif.",
+    "en": "Costs not found are deliberately blank. Indonesia's success here is early-stage and relative."
+   },
+   "butir": [
+    {
+     "negara": "ID",
+     "id": "spklupln",
+     "nama": "Jaringan SPKLU PLN",
+     "jenis": "berhasil",
+     "lokasi": {
+      "id": "Nasional, terutama Jawa",
+      "en": "National, mostly Java"
+     },
+     "profil": [
+      {
+       "label": {
+        "id": "Maret 2025",
+        "en": "March 2025"
+       },
+       "nilai": 3772,
+       "satuan": {
+        "id": "unit di 2.515 lokasi",
+        "en": "units at 2,515 locations"
+       }
+      },
+      {
+       "label": {
+        "id": "Nataru 2025",
+        "en": "Christmas-New Year 2025"
+       },
+       "nilai": 4516,
+       "satuan": {
+        "id": "unit di 2.935 titik",
+        "en": "units at 2,935 points"
+       }
+      },
+      {
+       "label": {
+        "id": "Pelaksana",
+        "en": "Operator"
+       },
+       "nilai": {
+        "id": "PLN dan mitra swasta",
+        "en": "PLN and private partners"
+       }
+      }
+     ],
+     "tindakan": [
+      {
+       "id": "PLN menambah SPKLU bertahap dan menyiapkan SPKLU mudik; juga SPKLU motor, swap station, dan home charging.",
+       "en": "PLN added chargers in stages and prepared holiday chargers; also motorcycle chargers, swap stations and home charging."
+      }
+     ],
+     "sebab": [
+      {
+       "id": "PLN sebagai pemilik jaringan listrik dan lokasi sendiri (SPBU, kantor) mempercepat penyebaran.",
+       "en": "PLN as grid owner with its own sites speeds up roll-out."
+      },
+      {
+       "id": "Pola kemitraan atau waralaba disarankan industri untuk mempercepat.",
+       "en": "A partnership or franchise pattern is suggested by industry to speed things up."
+      }
+     ],
+     "angka": [
+      {
+       "label": {
+        "id": "SPKLU roda empat Maret 2025",
+        "en": "Four-wheel chargers March 2025"
+       },
+       "nilai": 3772,
+       "d": 0,
+       "satuan": {
+        "id": "unit",
+        "en": "units"
+       },
+       "sumber": "oto",
+       "est": false
+      },
+      {
+       "label": {
+        "id": "Nataru 2025",
+        "en": "Christmas-New Year 2025"
+       },
+       "nilai": 4516,
+       "d": 0,
+       "satuan": {
+        "id": "unit",
+        "en": "units"
+       },
+       "sumber": "nataru",
+       "est": false
+      }
+     ],
+     "tanda_bahaya": [
+      {
+       "id": "Ketimpangan wilayah: Papua 27 unit dan Maluku 25 unit dibanding Jawa 2.667.",
+       "en": "Regional imbalance: Papua 27 units and Maluku 25 versus Java 2,667."
+      }
+     ],
+     "pelajaran": [
+      {
+       "id": "Jaringan pengisian tumbuh lebih cepat bila pemilik jaringan listrik memimpin, tetapi pemerataan wilayah butuh skema khusus.",
+       "en": "Charging networks grow faster when the grid owner leads, but regional balance needs a specific scheme."
+      }
+     ],
+     "faktor": {
+      "pengelola_om": true,
+      "jaringan": true
+     },
+     "sumber": [
+      "oto",
+      "nataru",
+      "mesin"
+     ],
+     "hak_jawab": true
+    },
+    {
+     "negara": "ID",
+     "id": "hlikona",
+     "nama": "Ekosistem sel Hyundai dan LG untuk Kona Electric",
+     "jenis": "berhasil",
+     "lokasi": {
+      "id": "Karawang, Jawa Barat",
+      "en": "Karawang, West Java"
+     },
+     "profil": [
+      {
+       "label": {
+        "id": "Sel",
+        "en": "Cells"
+       },
+       "nilai": 10,
+       "satuan": {
+        "id": "GWh per tahun",
+        "en": "GWh a year"
+       }
+      },
+      {
+       "label": {
+        "id": "Diresmikan",
+        "en": "Inaugurated"
+       },
+       "nilai": "2024-07-03"
+      }
+     ],
+     "tindakan": [
+      {
+       "id": "Pabrik sel HLI Green Power memasok pabrik mobil Hyundai di Indonesia untuk Kona Electric.",
+       "en": "The HLI Green Power cell plant supplies Hyundai's car plant in Indonesia for the Kona Electric."
+      }
+     ],
+     "sebab": [
+      {
+       "id": "Pembeli sel dan pabrikan sudah berada di lokasi yang sama.",
+       "en": "The cell buyer and carmaker are in the same location."
+      }
+     ],
+     "angka": [
+      {
+       "label": {
+        "id": "Kapasitas sel",
+        "en": "Cell capacity"
+       },
+       "nilai": 10,
+       "d": 0,
+       "satuan": {
+        "id": "GWh per tahun",
+        "en": "GWh a year"
+       },
+       "sumber": "hliauto",
+       "est": false
+      }
+     ],
+     "pelajaran": [
+      {
+       "id": "Rantai sel hingga kendaraan di satu lokasi mengurangi risiko pembeli; lihat topik Penyimpanan.",
+       "en": "A cell-to-vehicle chain in one location lowers buyer risk; see the Storage topic."
+      }
+     ],
+     "faktor": {
+      "ppa_tarif": true,
+      "pendanaan": true
+     },
+     "sumber": [
+      "hliauto",
+      "hlitempo"
+     ],
+     "hak_jawab": true
+    },
+    {
+     "negara": "ID",
+     "id": "cbulokal",
+     "nama": "Insentif CBU yang dikaitkan produksi lokal 1:1",
+     "jenis": "berhasil",
+     "lokasi": {
+      "id": "Nasional",
+      "en": "National"
+     },
+     "profil": [
+      {
+       "label": {
+        "id": "Penerima",
+        "en": "Recipients"
+       },
+       "nilai": 6
+      },
+      {
+       "label": {
+        "id": "Kapasitas rencana",
+        "en": "Planned capacity"
+       },
+       "nilai": 305000,
+       "satuan": {
+        "id": "unit per tahun",
+        "en": "units a year"
+       }
+      },
+      {
+       "label": {
+        "id": "Investasi",
+        "en": "Investment"
+       },
+       "nilai": 15.52,
+       "satuan": {
+        "id": "triliun rupiah",
+        "en": "trillion rupiah"
+       }
+      }
+     ],
+     "tindakan": [
+      {
+       "id": "Insentif impor utuh hingga 31 Desember 2025 diganti kewajiban produksi lokal setara impor (1:1) pada 2026 sampai 2027 dengan TKDN naik dari 40 ke 60 persen.",
+       "en": "Import incentives through 31 December 2025 are replaced by an obligation to produce locally equal to imports (1:1) in 2026 to 2027 with local content rising from 40 to 60 percent."
+      }
+     ],
+     "sebab": [
+      {
+       "id": "Insentif dibuat bersyarat pada komitmen produksi, bukan hibah tanpa syarat.",
+       "en": "The incentive was made conditional on production commitments, not an unconditional grant."
+      }
+     ],
+     "angka": [
+      {
+       "label": {
+        "id": "Investasi komitmen",
+        "en": "Committed investment"
+       },
+       "nilai": 15.52,
+       "d": 2,
+       "satuan": {
+        "id": "triliun rupiah",
+        "en": "trillion rupiah"
+       },
+       "sumber": "cbu",
+       "est": false
+      }
+     ],
+     "tanda_bahaya": [
+      {
+       "id": "Komitmen belum terbukti sampai produksi 2026-2027; Thailand menunjukkan risiko perusahaan gagal memenuhi kuota (Neta).",
+       "en": "Commitments are unproven until 2026-2027 production; Thailand shows the risk of firms missing quotas (Neta)."
+      }
+     ],
+     "pelajaran": [
+      {
+       "id": "Insentif bersyarat produksi menarik investasi; ujiannya adalah penegakan kewajiban 1:1.",
+       "en": "Production-conditional incentives attract investment; the test is enforcement of the 1:1 obligation."
+      }
+     ],
+     "faktor": {
+      "kepastian_kebijakan": true,
+      "pendanaan": true
+     },
+     "sumber": [
+      "cbu",
+      "cbujp"
+     ],
+     "hak_jawab": true
+    },
+    {
+     "negara": "NO",
+     "id": "norwegia",
+     "nama": "Norwegia: pangsa kendaraan plug-in 88,9 persen",
+     "jenis": "berhasil",
+     "lokasi": {
+      "id": "Norwegia",
+      "en": "Norway"
+     },
+     "profil": [
+      {
+       "label": {
+        "id": "Pangsa 2024",
+        "en": "2024 share"
+       },
+       "nilai": 88.9,
+       "satuan": {
+        "id": "persen kendaraan plug-in",
+        "en": "percent plug-in vehicles"
+       }
+      },
+      {
+       "label": {
+        "id": "Target",
+        "en": "Goal"
+       },
+       "nilai": {
+        "id": "Semua penjualan baru nol emisi pada 2025",
+        "en": "All new sales zero-emission by 2025"
+       }
+      }
+     ],
+     "tindakan": [
+      {
+       "id": "Pembebasan PPN 25 persen, pajak pembelian, tol, dan biaya jalan; jalur bus dan pengisian publik.",
+       "en": "Exemption from 25 percent VAT, purchase tax, tolls and road fees; bus lanes and public charging."
+      }
+     ],
+     "sebab": [
+      {
+       "id": "Insentif fiskal besar dan konsisten selama bertahun-tahun yang membuat mobil listrik lebih murah.",
+       "en": "Large, consistent fiscal incentives over many years that made electric cars cheaper."
+      }
+     ],
+     "angka": [
+      {
+       "label": {
+        "id": "Pangsa plug-in 2024",
+        "en": "Plug-in share 2024"
+       },
+       "nilai": 88.9,
+       "d": 1,
+       "satuan": {
+        "id": "persen",
+        "en": "percent"
+       },
+       "sumber": "norway",
+       "est": false
+      },
+      {
+       "label": {
+        "id": "Titik pengisian publik 2019",
+        "en": "Public charging points 2019"
+       },
+       "nilai": 13687,
+       "d": 0,
+       "satuan": "",
+       "sumber": "norway",
+       "est": false
+      }
+     ],
+     "pelajaran": [
+      {
+       "id": "Insentif konsisten dan pengisian publik yang luas lebih penting daripada besaran satu kali; sebagian insentif dikurangi bertahap sejak 2018.",
+       "en": "Consistent incentives and broad public charging matter more than one-off size; some incentives were phased down gradually from 2018."
+      }
+     ],
+     "faktor": {
+      "kepastian_kebijakan": true,
+      "ppa_tarif": true,
+      "jaringan": true
+     },
+     "sumber": [
+      "norway"
+     ],
+     "hak_jawab": true
+    },
+    {
+     "negara": "CN",
+     "id": "tiongkok",
+     "nama": "Tiongkok: lebih dari 11 juta mobil listrik pada 2024",
+     "jenis": "berhasil",
+     "lokasi": {
+      "id": "Tiongkok",
+      "en": "China"
+     },
+     "profil": [
+      {
+       "label": {
+        "id": "Penjualan 2024",
+        "en": "2024 sales"
+       },
+       "nilai": 11,
+       "satuan": {
+        "id": "juta mobil listrik (lebih dari)",
+        "en": "million electric cars (over)"
+       }
+      },
+      {
+       "label": {
+        "id": "Pangsa",
+        "en": "Share"
+       },
+       "nilai": {
+        "id": "Hampir separuh penjualan mobil",
+        "en": "Almost half of car sales"
+       }
+      }
+     ],
+     "tindakan": [
+      {
+       "id": "Industri baterai dan kendaraan domestik bersama kebijakan permintaan.",
+       "en": "A domestic battery and vehicle industry together with demand policy."
+      }
+     ],
+     "sebab": [
+      {
+       "id": "Skala industri dan rantai pasok domestik; IEA memperkirakan sekitar 60 persen penjualan pada 2025.",
+       "en": "Industrial scale and domestic supply chain; the IEA projects about 60 percent of sales in 2025."
+      }
+     ],
+     "angka": [
+      {
+       "label": {
+        "id": "Mobil listrik 2024",
+        "en": "Electric cars 2024"
+       },
+       "nilai": 11,
+       "d": 0,
+       "satuan": {
+        "id": "juta (lebih dari)",
+        "en": "million (over)"
+       },
+       "sumber": "iea",
+       "est": false
+      }
+     ],
+     "tanda_bahaya": [
+      {
+       "id": "Perang harga dan kelebihan kapasitas merembet ke pasar lain (Thailand).",
+       "en": "Price war and overcapacity spill over to other markets (Thailand)."
+      }
+     ],
+     "pelajaran": [
+      {
+       "id": "Skala industri menurunkan harga, namun pasar tujuan ekspor menanggung limpahan persaingan.",
+       "en": "Industrial scale lowers prices, but export destination markets bear the competitive spillover."
+      }
+     ],
+     "faktor": {
+      "pendanaan": true,
+      "kepastian_kebijakan": true
+     },
+     "sumber": [
+      "iea",
+      "thstar"
+     ],
+     "hak_jawab": true
+    }
+   ]
+  },
+  "40": {
+   "tipe": "kasus",
+   "sumber": [
+    "motor23",
+    "lgjp",
+    "thstar",
+    "oto"
+   ],
+   "catatan": {
+    "id": "Hak jawab: pihak yang disebut dapat mengirim koreksi atau tanggapan lewat formulir koreksi platform; tanggapan akan dimuat berdampingan.",
+    "en": "Right of reply: named parties can send a correction or response through the platform correction form; responses will be published alongside."
+   },
+   "butir": [
+    {
+     "negara": "ID",
+     "id": "motorsubsidi",
+     "nama": "Subsidi motor listrik: serapan rendah",
+     "jenis": "mundur",
+     "lokasi": {
+      "id": "Nasional",
+      "en": "National"
+     },
+     "profil": [
+      {
+       "label": {
+        "id": "Kuota 2023",
+        "en": "2023 quota"
+       },
+       "nilai": 200000,
+       "satuan": {
+        "id": "unit",
+        "en": "units"
+       }
+      },
+      {
+       "label": {
+        "id": "Anggaran",
+        "en": "Budget"
+       },
+       "nilai": 1.4,
+       "satuan": {
+        "id": "triliun rupiah",
+        "en": "trillion rupiah"
+       }
+      }
+     ],
+     "kronologi": [
+      {
+       "tanggal": "2023-08-03",
+       "teks": {
+        "id": "Republika: realisasi subsidi motor listrik baru sekitar satu persen.",
+        "en": "Republika: electric motorcycle subsidy uptake only about one percent."
+       }
+      },
+      {
+       "tanggal": "2023-09-19",
+       "teks": {
+        "id": "Syarat disederhanakan: satu KTP satu unit.",
+        "en": "Rules simplified: one ID one unit."
+       }
+      },
+      {
+       "tanggal": "2024-12-01",
+       "teks": {
+        "id": "Tersalur 30.083 unit atau 60,1 persen dari target 2024 (bulan saja).",
+        "en": "30,083 units delivered, 60.1 percent of the 2024 target (month only)."
+       }
+      }
+     ],
+     "sebab": [
+      {
+       "id": "Menperin menyebut kemampuan baterai dan lamanya pengisian.",
+       "en": "The Industry Minister cited battery capability and charging time."
+      },
+      {
+       "id": "Syarat penyaluran awal yang rumit sebelum diubah menjadi satu KTP satu unit.",
+       "en": "Complex eligibility rules before changing to one ID one unit."
+      }
+     ],
+     "terdampak": {
+      "id": "Produsen motor listrik dan calon pembeli; anggaran Rp1,4 triliun hanya terserap sekitar Rp80,7 miliar pada 2023 menurut Emitennews. Angka serapan 2023 berbeda antar sumber (11.532 unit menurut Menperin, 4.148 menurut SISAPIRa pertengahan November).",
+      "en": "Electric motorcycle makers and buyers; of the IDR 1.4 trillion budget only about IDR 80.7 billion was absorbed in 2023 per Emitennews. 2023 uptake figures differ between sources (11,532 units per the Minister, 4,148 per SISAPIRa in mid-November)."
+     },
+     "seharusnya": {
+      "id": "Menguji kesiapan baterai dan stasiun penukaran serta menyederhanakan syarat sebelum menetapkan kuota 200.000 unit.",
+      "en": "Test battery readiness and swap stations and simplify rules before setting a 200,000 unit quota."
+     },
+     "tanda_bahaya": [
+      {
+       "id": "Serapan satu persen setelah beberapa bulan.",
+       "en": "One percent uptake after several months."
+      }
+     ],
+     "angka": [
+      {
+       "label": {
+        "id": "Serapan 2023 menurut Menperin",
+        "en": "2023 uptake per the Minister"
+       },
+       "nilai": 11532,
+       "d": 0,
+       "satuan": {
+        "id": "unit",
+        "en": "units"
+       },
+       "sumber": "motor23",
+       "est": false
+      },
+      {
+       "label": {
+        "id": "Serapan anggaran 2023",
+        "en": "2023 budget absorbed"
+       },
+       "nilai": 80.7,
+       "d": 1,
+       "satuan": {
+        "id": "miliar rupiah",
+        "en": "billion rupiah"
+       },
+       "sumber": "motor23b",
+       "est": false
+      }
+     ],
+     "faktor": {
+      "kepastian_kebijakan": true,
+      "pengelola_om": true
+     },
+     "sumber": [
+      "motor23",
+      "motor23b",
+      "motor23c",
+      "motor24"
+     ],
+     "hak_jawab": true
+    },
+    {
+     "negara": "ID",
+     "id": "lgev",
+     "nama": "LG keluar dari paket baterai kendaraan listrik",
+     "jenis": "mundur",
+     "lokasi": {
+      "id": "Indonesia",
+      "en": "Indonesia"
+     },
+     "profil": [
+      {
+       "label": {
+        "id": "Paket",
+        "en": "Package"
+       },
+       "nilai": {
+        "id": "Sekitar USD 8,45 miliar",
+        "en": "About USD 8.45 billion"
+       }
+      }
+     ],
+     "kronologi": [
+      {
+       "tanggal": "2025-04-24",
+       "teks": {
+        "id": "Pemerintah menyatakan Huayou menggantikan LG; LG menyebut kondisi pasar dan lingkungan investasi.",
+        "en": "Government says Huayou replaces LG; LG cited market conditions and the investment environment."
+       }
+      }
+     ],
+     "sebab": [
+      {
+       "id": "LG menyebut kondisi pasar dan lingkungan investasi.",
+       "en": "LG cited market conditions and the investment environment."
+      }
+     ],
+     "terdampak": {
+      "id": "Peta jalan baterai kendaraan listrik; pemerintah menyatakan pergantian investor lazim dan rencana tidak berubah. Detail lengkap di topik Penyimpanan.",
+      "en": "The EV battery roadmap; government says changing investors is common and plans do not change. Full detail is in the Storage topic."
+     },
+     "seharusnya": {
+      "id": "Mitra cadangan dan syarat keluar yang jelas pada paket besar.",
+      "en": "Standby partners and clear exit terms in large packages."
+     },
+     "tanda_bahaya": [
+      {
+       "id": "Investor besar menyatakan kondisi pasar tidak mendukung.",
+       "en": "A major investor says market conditions do not support the project."
+      }
+     ],
+     "angka": [
+      {
+       "label": {
+        "id": "Nilai paket menurut SCMP",
+        "en": "Package value per SCMP"
+       },
+       "nilai": 8.45,
+       "d": 2,
+       "satuan": {
+        "id": "miliar USD",
+        "en": "billion USD"
+       },
+       "sumber": "lgscmp",
+       "est": false
+      }
+     ],
+     "faktor": {
+      "pendanaan": true,
+      "kepastian_kebijakan": true
+     },
+     "sumber": [
+      "lgjp",
+      "lgscmp"
+     ],
+     "hak_jawab": true
+    },
+    {
+     "negara": "TH",
+     "id": "neta",
+     "nama": "Thailand EV 3.0: Neta dan perang harga",
+     "jenis": "gagal",
+     "lokasi": {
+      "id": "Thailand",
+      "en": "Thailand"
+     },
+     "profil": [
+      {
+       "label": {
+        "id": "Subsidi",
+        "en": "Subsidy"
+       },
+       "nilai": {
+        "id": "Hingga THB 150.000 per unit",
+        "en": "Up to THB 150,000 per unit"
+       }
+      },
+      {
+       "label": {
+        "id": "Syarat produksi",
+        "en": "Production condition"
+       },
+       "nilai": {
+        "id": "1,5 kendaraan lokal per kendaraan impor",
+        "en": "1.5 local vehicles per imported vehicle"
+       }
+      }
+     ],
+     "kronologi": [
+      {
+       "tanggal": "2025-06-20",
+       "teks": {
+        "id": "Induk Neta, Zhejiang Hozon, memasuki proses kebangkrutan.",
+        "en": "Neta's parent, Zhejiang Hozon, enters bankruptcy proceedings."
+       }
+      }
+     ],
+     "sebab": [
+      {
+       "id": "Neta memproduksi sekitar 4.000 unit dari 19.000 yang diwajibkan; pangsa pasar turun dari sekitar 12 persen (2023) menjadi 4 persen.",
+       "en": "Neta produced about 4,000 units of 19,000 required; share fell from about 12 percent (2023) to 4 percent."
+      },
+      {
+       "id": "Perang harga: beberapa merek memotong harga lebih dari 20 persen.",
+       "en": "Price war: some brands cut prices by over 20 percent."
+      }
+     ],
+     "terdampak": {
+      "id": "Pembeli Neta dan pemasok Thailand. Dewan Investasi Thailand menyatakan masalah Neta berasal dari keuangan induknya dan tidak berdampak jangka panjang pada industri EV Thailand; pendapat itu dimuat berdampingan.",
+      "en": "Neta buyers and Thai suppliers. Thailand's Board of Investment said Neta's problems came from its parent's finances and would not affect the Thai EV industry long-term; that view is carried alongside."
+     },
+     "seharusnya": {
+      "id": "Pemantauan komitmen produksi setiap dua bulan dan rencana kompensasi, seperti usulan Kementerian Thailand.",
+      "en": "Bimonthly monitoring of production commitments and compensatory plans, as proposed by the Thai ministry."
+     },
+     "tanda_bahaya": [
+      {
+       "id": "Produksi jauh di bawah komitmen.",
+       "en": "Production far below commitment."
+      },
+      {
+       "id": "Merek Tiongkok menguasai lebih dari 70 persen pasar.",
+       "en": "Chinese brands hold over 70 percent of the market."
+      }
+     ],
+     "angka": [
+      {
+       "label": {
+        "id": "Produksi Neta vs wajib",
+        "en": "Neta output vs required"
+       },
+       "nilai": {
+        "id": "4.000 dari 19.000",
+        "en": "4,000 of 19,000"
+       },
+       "d": 0,
+       "satuan": {
+        "id": "unit",
+        "en": "units"
+       },
+       "sumber": "thstar",
+       "est": false
+      }
+     ],
+     "faktor": {
+      "kepastian_kebijakan": true,
+      "pendanaan": true
+     },
+     "sumber": [
+      "thstar",
+      "thnation"
+     ],
+     "hak_jawab": true
+    },
+    {
+     "negara": "ID",
+     "id": "spkluimbang",
+     "nama": "Ketimpangan SPKLU antarwilayah",
+     "jenis": "mundur",
+     "lokasi": {
+      "id": "Luar Jawa, terutama Papua dan Maluku",
+      "en": "Outside Java, especially Papua and Maluku"
+     },
+     "profil": [
+      {
+       "label": {
+        "id": "Papua",
+        "en": "Papua"
+       },
+       "nilai": 27,
+       "satuan": {
+        "id": "unit",
+        "en": "units"
+       }
+      },
+      {
+       "label": {
+        "id": "Maluku",
+        "en": "Maluku"
+       },
+       "nilai": 25,
+       "satuan": {
+        "id": "unit",
+        "en": "units"
+       }
+      },
+      {
+       "label": {
+        "id": "Jawa",
+        "en": "Java"
+       },
+       "nilai": 2667,
+       "satuan": {
+        "id": "unit",
+        "en": "units"
+       }
+      }
+     ],
+     "kronologi": [
+      {
+       "tanggal": "2025-05-03",
+       "teks": {
+        "id": "Otodriver memuat data PLN Maret 2025: Jakarta sekitar 1:20, pelaku industri menyebut 2030 terlalu lama dan menyarankan waralaba.",
+        "en": "Otodriver carries PLN March 2025 data: Jakarta about 1:20, an industry voice calls 2030 too slow and suggests franchising."
+       }
+      }
+     ],
+     "sebab": [
+      {
+       "id": "Sebaran SPKLU mengikuti kepadatan kendaraan dan pelanggan, sehingga wilayah timur tertinggal (analisis dari data, bukan pernyataan sumber).",
+       "en": "Charger distribution follows vehicle and customer density, so eastern regions lag (analysis from data, not a source statement)."
+      }
+     ],
+     "terdampak": {
+      "id": "Calon pengguna di luar Jawa. Kasus ini adalah kesenjangan data sebaran, bukan proyek gagal; PLN belum memberi tanggapan dalam sumber yang dibaca.",
+      "en": "Prospective users outside Java. This case is a distribution data gap, not a failed project; PLN has not given a response in the sources read."
+     },
+     "seharusnya": {
+      "id": "Skema khusus wilayah (kemitraan, subsidi lokasi) dan target rasio per wilayah.",
+      "en": "Region-specific schemes (partnerships, site subsidy) and per-region ratio targets."
+     },
+     "tanda_bahaya": [
+      {
+       "id": "Rasio 1:20 di kota yang paling padat.",
+       "en": "A 1:20 ratio in the densest city."
+      }
+     ],
+     "angka": [
+      {
+       "label": {
+        "id": "Papua dibanding Jawa",
+        "en": "Papua versus Java"
+       },
+       "nilai": 27,
+       "d": 0,
+       "satuan": {
+        "id": "unit dari 3.772",
+        "en": "units of 3,772"
+       },
+       "sumber": "oto",
+       "est": false
+      }
+     ],
+     "faktor": {
+      "jaringan": true,
+      "pendanaan": true
+     },
+     "sumber": [
+      "oto"
+     ],
+     "hak_jawab": true
+    }
+   ]
+  },
+  "41": {
+   "tipe": "pola",
+   "sumber": [
+    "ed"
+   ],
+   "catatan": {
+    "id": "Sel dibangun dari bendera faktor tiap kasus; pemetaan faktor ke kasus adalah analisis METI (Hipotesis) atas fakta di bab 39 dan 40.",
+    "en": "Cells are built from each case factor flags; mapping factors to cases is METI analysis (Hypothesis) on facts in chapters 39 and 40."
+   },
+   "faktor": [
+    {
+     "k": "lahan",
+     "l": {
+      "id": "Lahan dan lokasi siap",
+      "en": "Land and site ready"
+     }
+    },
+    {
+     "k": "perizinan",
+     "l": {
+      "id": "Perizinan jelas",
+      "en": "Permitting clear"
+     }
+    },
+    {
+     "k": "ppa_tarif",
+     "l": {
+      "id": "PPA dan tarif disepakati",
+      "en": "PPA and tariff agreed"
+     }
+    },
+    {
+     "k": "pendanaan",
+     "l": {
+      "id": "Pendanaan dan penjaminan",
+      "en": "Financing and guarantees"
+     }
+    },
+    {
+     "k": "jaringan",
+     "l": {
+      "id": "Jaringan, offtaker, dan interkoneksi",
+      "en": "Grid, offtaker and interconnection"
+     }
+    },
+    {
+     "k": "pengelola_om",
+     "l": {
+      "id": "Pengelola dan O&M",
+      "en": "Operator and O&M"
+     }
+    },
+    {
+     "k": "sosial",
+     "l": {
+      "id": "Dukungan masyarakat dan safeguard",
+      "en": "Community support and safeguards"
+     }
+    },
+    {
+     "k": "kepastian_kebijakan",
+     "l": {
+      "id": "Kepastian kebijakan",
+      "en": "Policy certainty"
+     }
+    }
+   ]
+  },
+  "42": {
+   "tipe": "periksa",
+   "sumber": [
+    "ed"
+   ],
+   "peran": [
+    {
+     "k": "pengembang",
+     "l": {
+      "id": "Pengembang",
+      "en": "Developer"
+     }
+    },
+    {
+     "k": "investor",
+     "l": {
+      "id": "Investor",
+      "en": "Investor"
+     }
+    },
+    {
+     "k": "pemda",
+     "l": {
+      "id": "Pemerintah daerah",
+      "en": "Local government"
+     }
+    },
+    {
+     "k": "pusat",
+     "l": {
+      "id": "Pemerintah pusat",
+      "en": "Central government"
+     }
+    },
+    {
+     "k": "pln",
+     "l": {
+      "id": "PLN",
+      "en": "PLN"
+     }
+    },
+    {
+     "k": "meti",
+     "l": {
+      "id": "METI",
+      "en": "METI"
+     }
+    }
+   ],
+   "tahap": [
+    {
+     "k": "lokasi",
+     "l": {
+      "id": "Penyaringan lokasi",
+      "en": "Site screening"
+     }
+    },
+    {
+     "k": "izin",
+     "l": {
+      "id": "Perizinan",
+      "en": "Permitting"
+     }
+    },
+    {
+     "k": "ppa",
+     "l": {
+      "id": "PPA",
+      "en": "PPA"
+     }
+    },
+    {
+     "k": "dana",
+     "l": {
+      "id": "Pendanaan",
+      "en": "Financing"
+     }
+    },
+    {
+     "k": "bangun",
+     "l": {
+      "id": "Konstruksi",
+      "en": "Construction"
+     }
+    },
+    {
+     "k": "operasi",
+     "l": {
+      "id": "Operasi",
+      "en": "Operation"
+     }
+    }
+   ],
+   "butir": [
+    {
+     "peran": "pengembang",
+     "tahap": "lokasi",
+     "teks": {
+      "id": "Tempatkan SPKLU di koridor padat dan tujuan dengan PLTS di lokasi bila memungkinkan; uji utilisasi sebelum memperluas ke daerah sepi.",
+      "en": "Place chargers on busy corridors and at destinations with on-site solar where possible; test utilisation before expanding to quiet areas."
+     },
+     "dasar": "oto"
+    },
+    {
+     "peran": "pengembang",
+     "tahap": "izin",
+     "teks": {
+      "id": "Ikuti Permen ESDM 1/2023 untuk infrastruktur pengisian dan gunakan pola kemitraan PLN.",
+      "en": "Follow Energy Ministry Reg. 1/2023 for charging infrastructure and use the PLN partnership pattern."
+     },
+     "dasar": "waralaba"
+    },
+    {
+     "peran": "pengembang",
+     "tahap": "operasi",
+     "teks": {
+      "id": "Pastikan ketersediaan SPKLU pada arus mudik.",
+      "en": "Ensure charger availability during holiday peaks."
+     },
+     "dasar": "nataru"
+    },
+    {
+     "peran": "investor",
+     "tahap": "dana",
+     "teks": {
+      "id": "Periksa penegakan kewajiban produksi 1:1 dan risiko kuota yang tidak terpenuhi (Neta).",
+      "en": "Check enforcement of the 1:1 production obligation and the risk of missed quotas (Neta)."
+     },
+     "dasar": "thstar"
+    },
+    {
+     "peran": "investor",
+     "tahap": "ppa",
+     "teks": {
+      "id": "Jangan mengandalkan insentif PPN DTP yang berlaku satu tahun fiskal.",
+      "en": "Do not rely on a VAT-borne incentive that lasts one fiscal year."
+     },
+     "dasar": "pmk"
+    },
+    {
+     "peran": "pemda",
+     "tahap": "lokasi",
+     "teks": {
+      "id": "Tetapkan lahan SPKLU dan pengadaan kendaraan dinas listrik (Inpres 7/2022).",
+      "en": "Designate charger sites and procure electric official vehicles (Inpres 7/2022)."
+     },
+     "dasar": "oto"
+    },
+    {
+     "peran": "pusat",
+     "tahap": "ppa",
+     "teks": {
+      "id": "Umumkan kelanjutan insentif tahun berikutnya lebih awal agar pasar tidak menunggu.",
+      "en": "Announce next-year incentive continuity earlier so the market does not wait."
+     },
+     "dasar": "pmk"
+    },
+    {
+     "peran": "pusat",
+     "tahap": "bangun",
+     "teks": {
+      "id": "Pantau komitmen produksi lokal setiap dua bulan (usulan Thailand).",
+      "en": "Monitor local production commitments every two months (Thai proposal)."
+     },
+     "dasar": "thstar"
+    },
+    {
+     "peran": "pusat",
+     "tahap": "izin",
+     "teks": {
+      "id": "Uji kesiapan baterai dan swap station sebelum menetapkan kuota bantuan motor.",
+      "en": "Test battery readiness and swap stations before setting motorcycle aid quotas."
+     },
+     "dasar": "motor23"
+    },
+    {
+     "peran": "pln",
+     "tahap": "operasi",
+     "teks": {
+      "id": "Publikasikan utilisasi dan rasio SPKLU per wilayah, termasuk Papua dan Maluku.",
+      "en": "Publish charger utilisation and ratio per region, including Papua and Maluku."
+     },
+     "dasar": "oto"
+    },
+    {
+     "peran": "meti",
+     "tahap": "operasi",
+     "teks": {
+      "id": "Pantau penjualan setelah insentif CBU berakhir, dan beri hak jawab pada pihak yang disebut.",
+      "en": "Monitor sales after CBU incentives end, and give named parties a right of reply."
+     },
+     "dasar": "cbu"
+    }
+   ]
+  }
+ }
+}

@@ -3,13 +3,14 @@
    Cabut perlu dua klik (tombol berubah jadi "Yakin?" selama 4 detik). Semua nilai di-escape. */
 import { t, angka, tanggal, tanggalDariUnix, jam, ada } from "/i18n.js";
 import { esc, api, nanti, hantuHtml, ikon, pesanHtml, galatTeks } from "/inti/umum.js";
-import { kepalaTab, keadaan } from "/admin_umum.js";
+import { kepalaTab, ubinKepala, keadaan } from "/admin_umum.js";
 import { pasangTabel } from "/admin_tabel.js";
 
 const kapan = (u) => (u ? `<span class="jm-nowrap">${esc(tanggal(tanggalDariUnix(u)))}<small>${esc(jam(u))}</small></span>` : "-");
 const nama = () => { try { return new Intl.DisplayNames([document.documentElement.lang || "id"], { type: "region" }); } catch { return null; } };
 const labelPeran = (p) => (ada("peran." + p) ? t("peran." + p) : p);
 const slugKode = (k) => (k === "-" ? "nol" : k.replace(/[^A-Za-z]+/g, "_"));
+const ubinGagal = (n, k) => `<li><div class="jm-hi-u${n ? " jm-hi-aktif" : " jm-adm-nol"}"><span class="jm-hi-ang"><strong>${esc(angka(n))}</strong></span><span class="jm-hi-lbl">${esc(t(k))}</span></div></li>`;
 const kartu = (id, ik, judul, sub, isiHtml) => `<section class="jm-adm-kartu" id="${id}"><header class="jm-adm-kh">${ikon(ik, 20)}<h3>${esc(judul)}</h3></header><div class="jm-adm-isi">${sub ? `<p class="jm-bantu">${esc(sub)}</p>` : ""}${isiHtml}</div></section>`;
 
 export function panelKeamanan(panel, saya) {
@@ -21,11 +22,15 @@ export function panelKeamanan(panel, saya) {
   const super_ = saya.peran === "super";
   let sesi = [];
 
+  const kini = { sesi: 0, akun: 0, gagal: 0 };
+  const ubinSesi = () => { kini.sesi = sesi.length; kini.akun = new Set(sesi.map((x) => x.akun_id)).size; ubinKepala(panel, [{ ikon: "kunci", nilai: kini.sesi, label: t("kam.k.sesi") }, { ikon: "orang", nilai: kini.akun, label: t("kam.k.akun_aktif") }, { ikon: "peringatan", nilai: kini.gagal, label: t("kam.gagal.total") }]); };
+
   /* ---------- sesi aktif ---------- */
   async function muatSesi() {
     let d;
     try { d = await api("/api/admin/keamanan/sesi"); } catch (e) { $("kamSesiIsi").innerHTML = keadaan(e.kode || "umum"); return; }
     sesi = d.baris || [];
+    ubinSesi();
     nanti(gambarSesi);
   }
   function gambarSesi() {
@@ -46,7 +51,7 @@ export function panelKeamanan(panel, saya) {
         { k: "lokasi", judul: t("kam.k.lokasi"), nilai: (s) => [s.kota, s.negara].filter(Boolean).join(", "), tampil: (s) => esc([s.kota, s.wilayah, s.negara && negara ? negara.of(s.negara) : s.negara].filter(Boolean).join(", ") || "-") },
         { k: "dibuat", judul: t("kam.k.mulai"), num: true, tampil: (s) => kapan(s.dibuat) },
         { k: "aktif", judul: t("kam.k.aktif"), num: true, tampil: (s) => kapan(s.aktif) },
-        { k: "aksi", judul: t("admin.k.aksi"), nilai: (s) => (s.ini ? 0 : 1), tampil: (s) => (s.ini ? `<span class="jm-pil jm-pil-ok">${esc(t("kam.ini"))}</span>`
+        { k: "aksi", urut: false, judul: t("admin.k.aksi"), nilai: (s) => (s.ini ? 0 : 1), tampil: (s) => (s.ini ? `<span class="jm-pil jm-pil-ok">${esc(t("kam.ini"))}</span>`
           : boleh(s) ? `<div class="jm-sel-aksi"><button type="button" class="jm-tbl jm-tbl-kecil jm-tbl-bahaya" data-kam="cabut" data-sid="${esc(s.sid)}">${ikon("blokir", 16)}<span>${esc(t("kam.cabut"))}</span></button>${milikSaya.has(s.akun_id) ? "" : `<button type="button" class="jm-tbl jm-tbl-kecil" data-kam="semua" data-id="${esc(s.akun_id)}">${ikon("keluar", 16)}<span>${esc(t("kam.cabut_semua"))}</span></button>`}</div>` : "-") },
       ],
     });
@@ -56,11 +61,12 @@ export function panelKeamanan(panel, saya) {
   async function muatGagal() {
     let d;
     try { d = await api("/api/admin/keamanan/gagal"); } catch (e) { $("kamGagalIsi").innerHTML = keadaan(e.kode || "umum"); return; }
+    kini.gagal = d.total || 0; ubinSesi();
     nanti(() => {
       const el = $("kamGagalIsi");
       if (!el) return;
       const wadah = document.createElement("div");
-      el.innerHTML = `<ul class="jm-hi-daftar"><li><div class="jm-hi-u"><strong>${esc(angka(d.total))}</strong><span>${esc(t("kam.gagal.total"))}</span></div></li><li><div class="jm-hi-u"><strong>${esc(angka(d.ip_unik))}</strong><span>${esc(t("kam.gagal.ip"))}</span></div></li></ul>`;
+      el.innerHTML = `<ul class="jm-hi-grid jm-hi-g2">${ubinGagal(d.total, "kam.gagal.total")}${ubinGagal(d.ip_unik, "kam.gagal.ip")}</ul>`;
       el.append(wadah);
       pasangTabel(wadah, {
         per: 10, satuan: "kam.satuan.gagal", kosong: "kam.gagal.kosong", awal: { k: "waktu", arah: -1 }, baris: d.baris,

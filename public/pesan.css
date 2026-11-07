@@ -8,7 +8,9 @@
 .ps-fab .ps-lencana{position:absolute;top:-6px;right:-2px;border:2px solid var(--paper)}
 /* tumpuk di atas FAB rel "Di halaman ini" (muncul di bawah 1440px bila halaman punya rel) */
 @media (max-width:1439px){.jm-ada-rel .ps-fab{bottom:calc(76px + env(safe-area-inset-bottom,0px))}.jm-ada-rel .ps-pn{bottom:calc(136px + env(safe-area-inset-bottom,0px))}}
-@media (max-width:640px){.ps-fab{width:48px;padding:0;justify-content:center}.ps-fab .ps-fab-l{display:none}}
+/* bulat ikon di pojok; label hanya saat hover/fokus di layar lebar */
+.ps-fab{width:48px;padding:0;justify-content:center;right:max(12px,env(safe-area-inset-right,0px));bottom:calc(12px + env(safe-area-inset-bottom,0px))}.ps-fab .ps-fab-l{display:none}
+@media (min-width:1024px){.ps-fab:is(:hover,:focus-visible){width:auto;padding:0 18px 0 14px}.ps-fab:is(:hover,:focus-visible) .ps-fab-l{display:inline}}
 .ps-pn{position:fixed;right:max(16px,env(safe-area-inset-right,0px));bottom:calc(76px + env(safe-area-inset-bottom,0px));z-index:42;display:flex;flex-direction:column;width:min(400px,calc(100vw - 32px));max-height:min(70dvh,calc(100dvh - var(--top) - 100px));background:var(--card);color:var(--ink);border:1px solid var(--line);border-radius:var(--r-lg);box-shadow:var(--shadow-lg);overflow:hidden}
 .ps-pn[hidden]{display:none}
 .ps-kep{display:flex;align-items:center;gap:8px;padding:12px 12px 12px 16px;background:var(--brand);color:var(--on-brand)}

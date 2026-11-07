@@ -261,3 +261,13 @@ img.pu-lb{object-fit:contain}
 .pu-sampul:has(img.pu-lanskap){background:var(--paper)}
 .pu-blur{position:absolute;inset:-12%;width:124%!important;height:124%!important;object-fit:cover!important;filter:blur(18px) saturate(1.1);opacity:.85}
 .pu-sampul img.pu-lanskap{position:relative;z-index:1}
+/* wadah exhibit + topik satu baris penuh (label tidak terpotong) */
+.pu-ex{margin:0 0 24px}
+.pu-ex .jm-ex-bd{display:grid;gap:16px;padding:16px}
+.pu-ex .pu-saring{margin:0}
+.pu-ex .pu-kisi{margin:0}
+.pu-ex .pu-lagi:empty{display:none}
+.pu-kisi .pu-meta.pu-topik-baris{flex-wrap:wrap}
+.pu-kisi .pu-topik-baris .pu-topik{max-width:100%;white-space:normal;line-height:1.25;padding-block:4px}
+.pu-kisi .pu-topik-baris .pu-topik>span{white-space:normal;overflow:visible;text-overflow:clip}
+.pu-ex .pu-lagi{margin:0}.pu-ex .pu-lagi .jm-pag{margin:0}

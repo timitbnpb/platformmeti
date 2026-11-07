@@ -19,7 +19,7 @@ const LAMBANG = { "Ditjen EBTKE ESDM": ["/img/logo/ebtke.png", "Ditjen EBTKE"], 
 const LOGO_ASOS = { AESI: "/img/logo/aesi.png", APROBI: "/img/logo/aprobi.png", API: "/img/logo/api-inaga.png", APAMSI: "/img/logo/apamsi.png" };
 
 const inisial = (n) => String(n).replace(/[^\p{L} ]/gu, "").split(/\s+/).filter((w) => w.length > 1).slice(0, 2).map((w) => w[0]).join("").toUpperCase() || "?";
-const avatar = (o, besar) => o.foto ? `<img class="tn-av${besar ? " besar" : ""}" src="${esc(o.foto)}" alt="" width="${besar ? 96 : 48}" height="${besar ? 96 : 48}" loading="lazy">` : `<span class="tn-av tn-ini${besar ? " besar" : ""}" aria-hidden="true">${esc(inisial(o.nama))}</span>`;
+const avatar = (o, besar) => o.foto ? `<img class="tn-av${besar ? " besar" : ""}" src="${esc(o.foto)}" alt="" width="${besar ? 96 : 48}" height="${besar ? 96 : 48}" loading="lazy">` : `<span class="tn-av tn-ini tn-w${(inisial(o.nama).charCodeAt(0) || 0) % 5}${besar ? " besar" : ""}" aria-hidden="true">${esc(inisial(o.nama))}</span>`;
 const PERS = new Map();
 const slug = (n) => String(n).toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, "").replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
 /* kepala bagian standar: eyebrow berikon, judul, lead */
@@ -33,38 +33,44 @@ const orang = (o, ukuran = "") => {
     if (o.kosong || !o.nama) return `<li class="tn-kp tn-kp-kosong"><span class="tn-kp-b"><span class="tn-kp-f" aria-hidden="true">${ikon("orang", 36)}</span><span class="tn-kp-n"><b>${esc(t("tn.lowong"))}</b><small>${esc(o.jabatan)}</small></span></span></li>`;
     const k = o.orang_id || slug(o.nama); PERS.set(k, o);
     const f = o.foto ? `<img src="${esc(o.foto)}" alt="" width="360" height="360" loading="lazy">` : `<span class="tn-kp-ini" aria-hidden="true">${esc(inisial(o.nama))}</span>`;
-    return `<li class="tn-kp"><button type="button" class="tn-kp-b" data-p="${esc(k)}" aria-label="${esc(t("tn.p.buka", { nama: o.nama }))}"><span class="tn-kp-f">${f}</span><span class="tn-kp-n"><b title="${esc(o.nama)}">${esc(o.nama)}</b><small title="${esc(o.jabatan)}">${esc(o.jabatan)}</small></span></button></li>`;
+    return `<li class="tn-kp"><button type="button" class="tn-kp-b" data-p="${esc(k)}" aria-label="${esc(t("tn.p.buka", { nama: o.nama }))}"><span class="tn-kp-f jm-batik tn-latar">${f}</span><span class="tn-kp-n"><b title="${esc(o.nama)}">${esc(o.nama)}</b><small title="${esc(o.jabatan)}">${esc(o.jabatan)}</small></span></button></li>`;
   }
   if (o.kosong || !o.nama) return `<li class="tn-fk tn-fk-kosong ${ukuran}"><span class="tn-fk-bg" aria-hidden="true">${ikon("orang", 36)}</span><span class="tn-fk-t"><b>${esc(t("tn.lowong"))}</b><small>${esc(o.jabatan)}</small></span></li>`;
   const k = o.orang_id || slug(o.nama); PERS.set(k, o);
   const bg = o.foto ? `<img src="${esc(o.foto)}" alt="" width="360" height="360" loading="lazy">` : `<span class="tn-fk-ini" aria-hidden="true">${esc(inisial(o.nama))}</span>`;
   const kls = o.foto ? (/-b\.webp$/.test(o.foto) ? "tn-fk-pt jm-batik" : "tn-fk-ft") : "tn-fk-nf jm-batik";
-  return `<li class="tn-fk ${kls} ${ukuran}"><button type="button" class="tn-fk-b" data-p="${esc(k)}" aria-label="${esc(t("tn.p.buka", { nama: o.nama }))}"><span class="tn-fk-bg">${bg}</span><span class="tn-fk-t"><b>${esc(o.nama)}</b><small>${esc(o.jabatan)}</small></span></button></li>`;
+  return `<li class="tn-fk tn-latar ${kls} ${ukuran}"><button type="button" class="tn-fk-b" data-p="${esc(k)}" aria-label="${esc(t("tn.p.buka", { nama: o.nama }))}"><span class="tn-fk-bg">${bg}</span><span class="tn-fk-t"><b>${esc(o.nama)}</b><small>${esc(o.jabatan)}</small></span></button></li>`;
 };
-const ul = (a, uk) => `<ul class="tn-fkg">${a.map((o) => orang(o, uk)).join("")}</ul>`;
+const ada = (o) => o.nama && !o.kosong;
+/* posisi lowong tidak jadi kartu: catatan kecil "Jabatan: lowong" di bawah daftar */
+const catatLowong = (a) => a.filter((o) => !ada(o)).map((o) => `<p class="tn-lowong">${ikon("info", 14)}<span>${esc(o.jabatan)}: ${esc(t("tn.lowong").toLowerCase())}</span></p>`).join("");
+const ul = (a, uk) => `<ul class="tn-fkg">${a.filter(ada).map((o) => orang(o, uk)).join("")}</ul>${catatLowong(a)}`;
 /* kepala unit seragam: ikon, nama, pil jumlah; rata tengah, pita aksen di bawah */
 const nOrang = (a) => a.filter((o) => o.nama && !o.kosong).length;
 const kepalaGrup = (ik, judul, a) => `<h4 title="${esc(judul)}">${ikon(ik, 16)}<span>${esc(judul)}</span>${a ? `<em class="tn-n">${angka(nOrang(a))}</em>` : ""}</h4>`;
-const kelompok = (judul, a, { ik = "orang", besar = "", ekstra = "" } = {}) => `<section class="tn-grp ${ekstra}" data-n="${Math.min(5, a.length || 1)}">${kepalaGrup(ik, judul, a)}${ul(a, besar)}</section>`;
+const kelompok = (judul, a, { ik = "orang", besar = "", ekstra = "" } = {}) => `<section class="tn-grp ${ekstra}" data-n="${Math.min(5, a.filter(ada).length || 1)}">${kepalaGrup(ik, judul, a)}${ul(a, besar)}</section>`;
 
 /* kelompok ringkas: kartu pimpinan + deret avatar + tombol "Lihat semua" yang membuka popup berisi seluruh anggota */
 const GR = new Map();
 const PIM = /^(Ketua|Wakil Ketua|Sekretaris|Chief|Vice Chief|Koordinator)\b/;
 function ringkas(judul, a, { ik = "orang", pimpinan = PIM } = {}) {
   /* tiga kartu foto seragam: pimpinan dulu, dilengkapi anggota berfoto bila pimpinan kurang dari tiga */
-  const nyata = a.filter((o) => o.nama && !o.kosong), pim = a.filter((o) => pimpinan.test(o.jabatan || "")).slice(0, 3);
+  const nyata = a.filter(ada), pim = nyata.filter((o) => pimpinan.test(o.jabatan || "")).slice(0, 3);
   for (const o of nyata.filter((x) => x.foto && !pim.includes(x))) { if (pim.length >= 3) break; pim.push(o); }
   const sisa = a.filter((o) => !pim.includes(o)), avat = sisa.filter((o) => o.nama && !o.kosong);
   const id = "g" + GR.size; GR.set(id, { judul, ik, a });
   const lr = pim.length ? `<ul class="tn-lr">${pim.map((o) => orang(o)).join("")}</ul>` : "";
-  const tampil = avat.length > 12 ? avat.slice(0, 11) : avat, lebih = avat.length - tampil.length;
-  const bawah = sisa.length ? `<ul class="tn-av-kisi">${tampil.map((o) => `<li title="${esc(o.nama)}">${avatar(o)}</li>`).join("")}${lebih ? `<li class="tn-plus" aria-label="${esc(TX("tn.anggota_plus", "+{n} anggota", { n: lebih }))}">+${angka(lebih)}</li>` : ""}</ul>
-    <button type="button" class="tn-semua" data-grup="${id}">${ikon("orang", 18)}<span>${esc(TX("tn.lihat_semua", "Lihat semua {n} anggota", { n: nyata.length }))}</span></button>` : "";
-  return `<section class="tn-grp tn-rg" data-n="3">${kepalaGrup(ik, judul, a)}${lr}${bawah}</section>`;
+  /* kotak selebar isinya: n kartu pimpinan (maks 3) berukuran tetap; avatar 56px maks 2 baris lalu "+n" */
+  const n = Math.min(3, Math.max(2, pim.length)), maks = { 2: 10, 3: 16 }[n];
+  const tampil = avat.length > maks ? avat.slice(0, maks - 1) : avat, lebih = avat.length - tampil.length;
+  const bawah = avat.length ? `<ul class="tn-av-kisi">${tampil.map((o) => `<li title="${esc(o.nama)}, ${esc(o.jabatan)}">${avatar(o)}</li>`).join("")}${lebih ? `<li class="tn-plus" title="${esc(TX("tn.anggota_plus", "+{n} anggota", { n: lebih }))}">+${angka(lebih)}</li>` : ""}</ul>
+    ${lebih ? `<button type="button" class="tn-semua" data-grup="${id}">${ikon("orang", 16)}<span>${esc(TX("tn.lihat_semua", "Lihat semua {n} anggota", { n: nyata.length }))}</span></button>` : ""}` : "";
+  return `<section class="tn-grp tn-rg" data-n="${n}">${kepalaGrup(ik, judul, a)}${lr}${catatLowong(a)}${bawah}</section>`;
 }
 
-const kartuLogo = (href, nama, g, extra = "") => `<li><a class="tn-logo" ${extra} href="${esc(href)}" title="${esc(nama)}"><span class="tn-logo-g">${g}</span><span class="tn-logo-n">${esc(nama)}</span></a></li>`;
-const mono = (n) => `<b class="tn-mono" aria-hidden="true">${esc(String(n).replace(/[^\p{L}]/gu, "").slice(0, 4).toUpperCase())}</b>`;
+/* hanya logo yang bergerak: tanpa kartu atau bingkai; nama di title dan aria-label */
+const kartuLogo = (href, nama, g, extra = "") => `<li><a class="tn-logo" ${extra} href="${esc(href)}" title="${esc(nama)}" aria-label="${esc(nama)}">${g}</a></li>`;
+const mono = (n) => `<b class="tn-nama">${esc(n)}</b>`;
 const tbl = (x) => {
   const l = LAMBANG[x.nama], src = l ? l[0] : x.logo;
   return kartuLogo("/direktori?cari=" + encodeURIComponent(x.nama), l ? l[1] : x.nama, src ? `<img src="${esc(src)}" alt="" loading="lazy">` : mono(x.nama), `data-org-nama="${esc(x.nama)}"`);
@@ -85,15 +91,16 @@ function hero(f) {
   const kol = KOLFOTO.map(([k, fl], i) => `<a class="tn-kol" href="/proyek?teknologi=${k}" aria-label="${esc(t("tn.foto.buka", { nama: t("tn.foto." + k) }))}"><img src="/img/beranda/${fl}.webp" alt="" width="1600" height="900" ${i ? 'loading="lazy"' : 'fetchpriority="high"'}><span class="tn-kol-isi">${ikonTek(k)}${esc(t("tn.foto." + k))}</span></a>`).join("");
   const st = [["kalender", 1999, t("tn.stat.berdiri")], ["orang", f.pengurus, t("tn.stat.pengurus")], ["tautan", f.mitra, t("tn.stat.mitra")], ["proyek", f.proyek, t("tn.stat.proyek")]];
   return `<section class="tn-hero" aria-labelledby="tn-judul"><div class="tn-kolom">${kol}</div><div class="tn-wrap tn-hero-isi"><h1 id="tn-judul">${esc(t("tn.judul"))}</h1><p class="tn-lead tn-hero-lead">${esc(t("tn.lead"))}</p>
-    <div class="tn-aksi"><a class="tn-tbl tn-tbl-putih" href="/direktori">${esc(t("tn.cta_direktori"))}</a><a class="tn-tbl tn-tbl-garis" href="${MI}/membership" target="_blank" rel="noopener noreferrer">${esc(t("tn.cta_gabung"))}</a></div>
-    <dl class="tn-angka" aria-label="${esc(t("tn.hero.aria"))}">${st.map(([ik, n, l]) => `<div>${ikon(ik, 20)}<dd>${esc(n === 1999 ? "1999" : angka(Number(n)))}</dd><dt>${esc(l)}</dt></div>`).join("")}</dl></div></section>`;
+    <div class="tn-aksi"><a class="tn-tbl tn-tbl-putih" href="/direktori">${esc(t("tn.cta_direktori"))}</a><a class="tn-tbl tn-tbl-garis" href="${MI}/membership" target="_blank" rel="noopener noreferrer">${esc(t("tn.cta_gabung"))}</a></div></div></section>
+  <div class="tn-pita-angka"><div class="tn-wrap"><dl class="tn-angka" aria-label="${esc(t("tn.hero.aria"))}">${st.map(([ik, n, l]) => `<div><span class="tn-angka-ik">${ikon(ik, 20)}</span><dd>${esc(n === 1999 ? "1999" : angka(Number(n)))}</dd><dt>${esc(l)}</dt></div>`).join("")}</dl></div></div>`;
 }
 
 function tentang(f) {
-  const st = [["kalender", "1999", t("tn.stat.berdiri")], ["tautan", angka(f.anggota), t("tn.stat.anggota")], ["orang", angka(f.pengurus), t("tn.stat.pengurus")]];
-  return `<section class="tn-seksi" id="tentang" aria-labelledby="tn-meti">${kepala("tn-meti", "info", t("tn.ey.tentang"), t("tn.mengapa.h2"), t("tn.mengapa.lead"))}
-  <article class="tn-kartu tn-fitur tn-lebar"><header><span class="tn-bulat"><img src="/img/logo-meti-tanda.png" alt="" width="32" height="32"></span><h3>${esc(t("tn.meti.judul"))}</h3></header>
-    <div class="tn-lebar-isi"><div class="tn-lebar-teks"><p class="tn-isi">${esc(t("tn.meti.isi"))}</p><p class="tn-isi">${esc(t("tn.meti.peran"))}</p>
+  const st = [["kalender", "1999", t("tn.stat.berdiri")], ["orang", angka(f.individu), t("mw.u.individu")], ["direktori", angka(f.organisasi), t("mw.u.organisasi")], ["perisai", angka(f.pengurus), t("tn.stat.pengurus")], ["wilayah", angka(f.wilayah), t("tn.stat.wilayah")], ["tautan", angka(f.asosiasi), t("tn.stat.mitra")]];
+  const pilar = [["tautan", 1], ["regulasi", 2], ["analisis", 3], ["wilayah", 4]];
+  return `<section class="tn-seksi" id="tentang" aria-labelledby="tn-meti">${kepala("tn-meti", "info", t("tn.ey.tentang"), t("tn.mengapa.h2"))}
+  <article class="tn-kartu tn-lebar"><div class="tn-lebar-isi"><div class="tn-lebar-teks"><p class="tn-isi">${esc(t("tn.meti.isi"))}</p><p class="tn-isi">${esc(t("tn.meti.peran"))}</p>
+    <ul class="tn-pilar">${pilar.map(([ik, n]) => `<li><span class="tn-cek-ik">${ikon(ik, 20)}</span><span>${esc(t("tn.pilar." + n))}</span></li>`).join("")}</ul>
     <a class="tn-tbl-hijau" href="#tim">${ikon("orang", 18)}<span>${esc(t("tn.meti.link"))}</span></a></div>
     <dl class="tn-mini">${st.map(([ik, n, l]) => `<div><span class="tn-cek-ik">${ikon(ik, 20)}</span><dd>${esc(n)}</dd><dt>${esc(l)}</dt></div>`).join("")}</dl></div></article></section>`;
 }
@@ -119,11 +126,11 @@ function struktur(p) {
   const U = p.unit, d = U.dewan || [], iPakar = d.findIndex((o) => /Ketua Dewan Pakar/.test(o.jabatan));
   const pengawas = iPakar < 0 ? d : d.slice(0, iPakar), pakar = iPakar < 0 ? [] : d.slice(iPakar);
   const bidang = p.bidang.filter((b) => b.nama);
-  const kb = (b, i) => `<section class="tn-grp" data-n="${Math.min(5, b.anggota.length || 1)}">${kepalaGrup("daftar", t("tn.u.bk", { n: i + 1 }) + ": " + b.nama, b.anggota)}${ul(b.anggota, "kecil")}</section>`;
+  const kb = (b, i) => `<section class="tn-grp" data-n="${Math.min(5, b.anggota.filter(ada).length || 1)}">${kepalaGrup("daftar", t("tn.u.bk", { n: i + 1 }) + ": " + b.nama, b.anggota)}${ul(b.anggota, "kecil")}</section>`;
   const ket = (U.ketum || [])[0];
   const baris2 = [["waketum", "tn.u.waketum", true], ["sekjen", "tn.u.sekjen"], ["bendahara", "tn.u.bendahara"], ["eksekutif", "tn.u.eksekutif", true]].filter(([k]) => U[k]).map(([k, j, s]) => kelompok(t(j), U[k])).join("");
   return `<section class="tn-seksi tn-bagan-bg" id="tim" aria-labelledby="tn-struktur">${kepala("tn-struktur", "orang", t("tn.ey.struktur"), t("tn.struktur.h2"), t("tn.struktur.pengantar", { periode: p.periode }))}
-  <div class="tn-pohon"><div class="tn-r tn-r0">${ringkas(t("tn.u.penasihat"), U.penasihat || [], { ik: "perisai" })}${ringkas(t("tn.u.pengawas"), pengawas, { ik: "perisai" })}${ringkas(t("tn.u.pakar"), pakar, { ik: "insight" })}</div>
+  <div class="tn-pohon"><div class="tn-r tn-r0">${ringkas(t("tn.u.penasihat"), U.penasihat || [], { ik: "kompas" })}${ringkas(t("tn.u.pengawas"), pengawas, { ik: "perisai" })}${ringkas(t("tn.u.pakar"), pakar, { ik: "wisuda" })}</div>
     <div class="tn-konek" aria-hidden="true"></div>
     ${ket ? `<div class="tn-r tn-r1"><section class="tn-grp tn-ketum">${kepalaGrup("orang", t("tn.u.ketum"))}${ul([ket], "besar")}</section></div><div class="tn-konek" aria-hidden="true"></div>` : ""}
     <div class="tn-r tn-r2">${baris2}</div></div>
@@ -157,9 +164,11 @@ function kotakKontak() {
 await mulaiHalaman();
 const isi = document.getElementById("isi");
 try {
-  const [p, m, k, r, pry, rg, br] = await Promise.all([muat("pengurus-meti"), muat("mitra-meti"), muat("tentang-kredit"), muat("ringkas"), muat("proyek"), muat("regulasi"), muat("berita")]);
+  const [p, m, k, r, pry, rg, br, mw] = await Promise.all([muat("pengurus-meti"), muat("mitra-meti"), muat("tentang-kredit"), muat("ringkas"), muat("proyek"), muat("regulasi"), muat("berita"), muat("meti-wilayah").catch(() => ({ provinsi: [], versi_angka: [] }))]);
+  /* angka anggota dan wilayah dari meti-wilayah.json (sama dengan kaki situs) */
+  const prov = mw.provinsi || [], terbaru = [...(mw.versi_angka || [])].sort((x, y) => (y.tanggal || "").localeCompare(x.tanggal || ""))[0];
   const nama = new Set([...Object.values(p.unit).flat(), ...p.bidang.flatMap((b) => b.anggota)].filter((o) => o.nama).map((o) => o.nama));
-  isi.innerHTML = hero({ pengurus: nama.size, mitra: m.asosiasi.length, proyek: r.hitung.proyek }) + `<div class="tn-wrap">` + tentang({ pengurus: nama.size, anggota: m.anggota.length }) + teknologi({ proyek: pry.baris, reg: rg.baris, ber: br.baris }) + struktur(p) + mitra(m) + faq(k) + `</div>`;
+  isi.innerHTML = hero({ pengurus: nama.size, mitra: m.asosiasi.length, proyek: r.hitung.proyek }) + `<div class="tn-wrap">` + tentang({ pengurus: nama.size, individu: prov.reduce((u, x) => u + (x.individu || 0), 0), organisasi: prov.reduce((u, x) => u + (x.organisasi || 0), 0), wilayah: terbaru?.berdiri || 0, asosiasi: m.asosiasi.length }) + teknologi({ proyek: pry.baris, reg: rg.baris, ber: br.baris }) + struktur(p) + mitra(m) + faq(k) + `</div>`;
 } catch (e) {
   isi.innerHTML = `<p class="tn-wrap tn-galat jm-galat" role="alert">${esc(t("tn.galat"))}</p>`;
 }

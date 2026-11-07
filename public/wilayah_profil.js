@@ -12,6 +12,8 @@ import { geoProvinsi, jalurPerProvinsi } from "/inti/peta_indonesia.js";
 import { sumberLipat, amanUrl, muatData, num, pil, pasangBar } from "/analisis.js";
 import { namaProyek } from "/inti/nama_proyek.js";
 import { kartu } from "/wilayah_profil_kartu.js";
+import { pakarHtml, pasangPakar, muatRujukPakar } from "/wilayah_pakar.js";
+import { namaBaku } from "/inti/nama_baku.js";
 
 const ST0 = "tidak" + "-diketahui"; // slug data status, bukan teks layar
 const TEK = ["hidro", "panas-bumi", "surya", "bayu", "bioenergi"];
@@ -21,8 +23,6 @@ let TGL = "", PEL = null, PELTGL = "", DATA = null;
 const kos = (alasan) => `<span class="jm-wp-kos" title="${esc(alasan || t("wp.kos"))}" aria-label="${esc(alasan || t("wp.kos"))}">-</span>`;
 const nilaiAtau = (v, f) => (v == null ? kos() : f(v));
 const median = (a) => { const s = [...a].sort((x, y) => x - y), m = s.length >> 1; return s.length ? (s.length % 2 ? s[m] : (s[m - 1] + s[m]) / 2) : null; };
-/* nama dengan token berulang persis ("Irianto Irianto") ditampilkan sekali */
-const namaRapi = (n) => { const a = String(n).trim().split(/\s+/); return a.length === 2 && a[0].toLowerCase() === a[1].toLowerCase() ? a[0] : String(n); };
 const tautan = (u, teks) => (amanUrl(u) ? `<a href="${esc(u)}" target="_blank" rel="noopener noreferrer">${esc(teks)}</a>` : esc(teks));
 const REG = new Map();
 const tautanReg = (x, teks) => (REG.has(x.id) ? `<a href="/regulasi?id=${encodeURIComponent(x.id)}">${esc(teks)}</a>` : tautan(x.url, teks));
@@ -188,7 +188,7 @@ function rued(p, C) {
   const sub = c?.status ? `<span class="jm-pil ${ST[c.status]}">${esc(t("wp.cap.st." + c.status))}</span> <span class="jm-pil jm-pil-warn" title="${esc(t("wp.cap.hip_tip"))}">${esc(t("wp.cap.hip"))}</span>` : "";
   const j = c?.status ? esc(t("wp.cap.j", { nama: p.nama, status: t("wp.cap.st." + c.status).toLocaleLowerCase(), r: num(c.rasio_persen, 0) })) : r.target_ebt_persen != null ? hlHtml("wp.j.rued_t", num(r.target_ebt_persen, 0) + "%", { nama: p.nama, perda: r.perda }) : hlHtml("wp.j.rued", "Perda " + r.perda, { nama: p.nama });
   const dok = unduhRegHtml({ judul: r.perda, url_sumber: r.url, url_pdf: c?.url_pdf, ...(reg || {}) });
-  const perda = `<div class="jm-wp-pd">${lambang(p, 56)}<div class="jm-wp-pd-t"><b>${esc(t("wl.rued_ada", { perda: r.perda }))}</b><span>${esc(x?.judul || t("wp.ey.rued"))}${th ? `, ${esc(th)}` : ""}</span></div><span class="jm-wp-pd-a">${dok}</span></div>`;
+  const perda = `<div class="jm-wp-pd">${lambang(p, 56)}<div class="jm-wp-pd-t"><b>${esc(t("wl.rued_ada", { perda: r.perda }))}</b><span>${esc(x?.judul ? namaBaku(x.judul).nama : t("wp.ey.rued"))}${th ? `, ${esc(th)}` : ""}</span></div><span class="jm-wp-pd-a">${dok}</span></div>`;
   const ubin = (v, sub2) => `<div class="jm-wp-tg"><b>${v == null ? kos(t("wp.kos.target")) : esc(num(v, 0)) + "%"}</b><span>${esc(sub2)}</span>${v != null && tinjau ? `<em class="jm-pil jm-pil-warn">${esc(t("wp.rued.belum_tinjau"))}</em>` : ""}</div>`;
   const target = `<div class="jm-wp-tgs">${ubin(k2025, t("wp.rued.tahun", { th: 2025 }))}${ubin(akhir?.persen ?? null, t("wp.rued.tahun", { th: akhir?.tahun ?? 2050 }))}</div>`;
   const rows = [{ k: "tgt", label: t("wp.rued.tahun", { th: 2025 }), a: k2025 }, { k: "tgt2", label: t("wp.rued.tahun", { th: akhir?.tahun ?? 2050 }), a: akhir?.persen ?? null }, { k: "real", label: t("wp.cap.real_p", { tahun: c?.realisasi_tahun ?? kj?.tahun ?? "" }), a: porsi }]
@@ -215,29 +215,33 @@ function proyek(p) {
   return seksi({ id: "proyek", ikon: "proyek", topik: t("wp.ey.proyek"), judulHtml: hlHtml("wp.j.proyek", num(A.length), { nama: p.nama, mw: num(mw, 0) }), aksiHtml: aksiHtml({ csv: true }) + sumberDari({ sumber: t("wl.sumber_proyek"), tanggal: "" }), isiHtml: rinci + tb, kakiHtml: `<p class="jm-bantu">${esc(t("wp.cat.proyek"))}</p>` });
 }
 
-/* ---------- 8. pakar ---------- */
-function pakar(p, d) {
-  const x = d?.pakar; if (!x?.daftar?.length) return "";
-  const tb = `<div class="jm-gulir"><table class="jm-tabel"><thead><tr><th>${esc(t("wp.col.nama"))}</th><th>${esc(t("wp.col.inst"))}</th><th>${esc(t("wp.col.topik"))}</th><th class="jm-num">${esc(t("wp.col.h"))}</th></tr></thead><tbody>${x.daftar.map((o) =>
-    `<tr><td data-label="${esc(t("wp.col.nama"))}">${tautan(o.url, namaRapi(o.nama))}</td><td data-label="${esc(t("wp.col.inst"))}">${nilaiAtau(o.institusi, esc)}</td><td data-label="${esc(t("wp.col.topik"))}">${o.topik.length ? esc(o.topik.map((k) => (t("wp.topik." + k) === "wp.topik." + k ? k : t("wp.topik." + k))).join(", ")) : kos()}</td><td data-label="${esc(t("wp.col.h"))}" class="jm-num">${nilaiAtau(o.h, (v) => esc(num(v)))}</td></tr>`).join("")}</tbody></table></div>`;
-  return seksi({ id: "pakar", ikon: "orang", topik: t("wp.ey.pakar"), judulHtml: hlHtml("wp.j.pakar", num(x.jumlah), { nama: p.nama, n: num(x.daftar.length) }), aksiHtml: aksiHtml({ csv: true }) + sumberDari({ sumber: x.sumber, url: x.url, tanggal: x.tanggal }), isiHtml: tb, kakiHtml: `<p class="jm-bantu">${esc(t("wp.cat.pakar"))}</p>` });
-}
+/* ---------- 8. pakar: wilayah_pakar.js ---------- */
+const pakar = (p, d) => pakarHtml(p, d, { seksi, sumberDari, hlHtml, aksiHtml });
 
 /* ---------- 9. regulasi daerah: kartu standar berlogo provinsi, status pil berikon ---------- */
+const JENIS_REG = [[/energi\s+daerah/i, "rued", "kebijakan"], [/gas\s+rumah\s+kaca|\bGRK\b/i, "rad", "karbon"], [/listrik/i, "listrik", "jaringan"]];
+const jenisReg = (j) => JENIS_REG.find(([re]) => re.test(j)) || [null, "perda", "industri"];
 function regulasi(p) {
   if (!p.perda.length) return "";
   const A = [...p.perda].sort((a, b) => (b.tahun || 0) - (a.tahun || 0));
-  const stil = (v) => (!v ? kos() : `<span class="jm-pil ${/berlaku/i.test(v) ? "jm-pil-ok" : /cabut|batal|tidak/i.test(v) ? "jm-pil-bad" : "jm-pil-warn"}">${ikon(/cabut|batal|tidak/i.test(v) ? "blokir" : "status", 14)}<span>${esc(v)}</span></span>`);
-  const kartuR = A.map((x) => `<li class="jm-wp-rg">${lambang(p, 44)}<div class="jm-wp-rg-t"><b>${tautanReg(x, t("wl.perda_item", { nomor: x.nomor, tahun: x.tahun }))}</b><span>${esc(x.judul)}</span><span class="jm-wp-rg-m">${stil(x.status)}<small>${esc(x.tahun ?? "")}</small></span></div><span class="jm-wp-rg-a">${unduhRegHtml({ judul: x.judul, url_sumber: x.url, ...REG.get(x.id) })}</span></li>`).join("");
-  return seksi({ id: "regulasi", ikon: "regulasi", topik: t("wp.ey.reg"), judulHtml: hlHtml("wp.j.reg", num(A.length), { nama: p.nama }), aksiHtml: aksiHtml({ csv: true }) + sumberDari({ sumber: t("wl.sumber_perda"), tanggal: "" }), isiHtml: `<ul class="jm-wp-regs">${kartuR}</ul>` });
+  const stil = (v) => {
+    const k = /cabut|batal/i.test(v) ? "bad" : /berlaku/i.test(v) ? "ok" : "warn", lab = ada("wp.rg.st." + String(v).toLowerCase()) ? t("wp.rg.st." + String(v).toLowerCase()) : String(v).charAt(0).toUpperCase() + String(v).slice(1);
+    return `<span class="jm-pil jm-pil-${k} jm-wp-rk-st">${ikon(k === "bad" ? "blokir" : k === "ok" ? "centang" : "info", 14)}<span>${esc(lab)}</span></span>`;
+  };
+  const kartuR = A.map((x) => {
+    const [, jn, ik] = jenisReg(x.judul), nama = t("wl.perda_item", { nomor: x.nomor, tahun: x.tahun }), judul = namaBaku(x.judul).nama;
+    return `<li class="jm-wp-rk"><div class="jm-wp-rk-a"><span class="jm-pil-tek jm-tek-${ik}">${ikon("regulasi", 14).replace('class="jm-ik"', 'class="jm-ik jm-ikt-s"')}<span>${esc(t("wp.rg.jn." + jn))}</span></span>${x.status ? stil(x.status) : ""}<span class="jm-wp-rk-th">${ikon("kalender", 14)}${esc(x.tahun ?? "-")}</span>${unduhRegHtml({ judul, url_sumber: x.url, ...REG.get(x.id) })}</div>`
+      + `<b class="jm-wp-rk-n">${tautanReg(x, nama)}</b><span class="jm-wp-rk-j">${esc(judul)}</span><span class="jm-wp-rk-p">${lambang(p, 24)}<span>${esc(p.nama)}</span></span></li>`;
+  }).join("");
+  return seksi({ id: "regulasi", ikon: "regulasi", topik: t("wp.ey.reg"), judulHtml: hlHtml("wp.j.reg", num(A.length), { nama: p.nama }), aksiHtml: aksiHtml({ csv: true }) + sumberDari({ sumber: t("wl.sumber_perda"), tanggal: "" }), isiHtml: `<ul class="jm-wp-rks">${kartuR}</ul>` });
 }
 
 /* ---------- 11. berita dan agenda ---------- */
 function berita(p, d) {
   const b = d?.berita || [], k = d?.kalender || [];
   if (!b.length && !k.length) return "";
-  const lb = b.length ? `<ul class="jm-wp-daftar">${b.map((x) => `<li>${tautan(x.url, x.judul)} <small>${esc(x.media)}, ${esc(tanggal(x.terbit))}</small></li>`).join("")}</ul>` : "";
-  const lk = k.length ? `<h3 class="jm-wp-h3">${esc(t("wp.agenda"))}</h3><ul class="jm-wp-daftar">${k.map((x) => `<li>${tautan(x.url, x.judul)} <small>${esc(tanggal(x.tanggal))}</small></li>`).join("")}</ul>` : "";
+  const lb = b.length ? `<ul class="jm-wp-daftar">${b.map((x) => `<li>${tautan(x.url, namaBaku(x.judul).nama)} <small>${esc(x.media)}, ${esc(tanggal(x.terbit))}</small></li>`).join("")}</ul>` : "";
+  const lk = k.length ? `<h3 class="jm-wp-h3">${esc(t("wp.agenda"))}</h3><ul class="jm-wp-daftar">${k.map((x) => `<li>${tautan(x.url, namaBaku(x.judul).nama)} <small>${esc(tanggal(x.tanggal))}</small></li>`).join("")}</ul>` : "";
   return seksi({ id: "berita", ikon: "berita", topik: t("wp.ey.berita"), judulHtml: hlHtml("wp.j.berita", num(b.length + k.length), { nama: p.nama }), aksiHtml: aksiHtml(), isiHtml: lb + lk, kakiHtml: `<p class="jm-bantu">${esc(t("wp.cat.berita"))}</p>` });
 }
 
@@ -261,6 +265,7 @@ export async function profilProvinsi(p, data, $) {
   document.title = t("wl.profil_title", { nama: p.nama }); TGL = data.dibangun_pada; DATA = data;
   try { const pl = await muatData("peluang.json"); PELTGL = pl.meta.diperbarui; PEL = new Map(pl.baris.map((b) => [b.kode, b])); } catch (e) { /* tanpa RUEN: tabel potensi memakai panas bumi saja */ }
   try { for (const r of (await muatData("regulasi.json")).baris) REG.set(r.id, r); } catch (e) { /* tautan sumber saja */ }
+  await muatRujukPakar();
   let d = null, cap = null;
   try { cap = await muatData("rued_capaian.json"); } catch (e) { /* kartu capaian disembunyikan */ }
   try { d = await muatData("wilayah/" + encodeURIComponent(p.kode) + ".json"); } catch (e) { /* bagian tambahan disembunyikan */ }
@@ -270,6 +275,6 @@ export async function profilProvinsi(p, data, $) {
   pasangIkuti($("profil-isi"));
   pasangBar($("profil-isi")); petaMini(p);
   isiMetiWilayah(p);
-  K.pasang($("profil-isi"));
+  K.pasang($("profil-isi")); pasangPakar($("profil-isi"));
   K.bukaPeta(p);
 }

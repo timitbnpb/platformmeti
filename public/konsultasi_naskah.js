@@ -8,7 +8,8 @@ import { tombolIkuti, pasangIkuti } from "/inti/ikuti.js";
 import { segmen, labelBagian, susunRekap } from "/inti/naskah.js";
 
 const HAL = 15, UBAHAN = ["ubah", "coret", "tambah"], USULAN = [...UBAHAN, "butir_baru"];
-const IK = { sorot: "insight", komentar: "berita", ubah: "ubah", coret: "silang", tambah: "tambah", butir_baru: "daftar", umum: "kajian", dukung: "bintang", selesai: "centang", balas: "balik", sembunyi: "blokir", putus: "palu", rekap: "tabel", unduh: "unduh", cetak: "pdf", peserta: "orang" };
+const IK = { setuju: "centang", tanya: "info", usul: "ubah", sorot: "insight", komentar: "berita", ubah: "ubah", coret: "silang", tambah: "tambah", butir_baru: "daftar", umum: "kajian", dukung: "bintang", selesai: "centang", balas: "balik", sembunyi: "blokir", putus: "palu", rekap: "tabel", unduh: "unduh", cetak: "pdf", peserta: "orang" };
+const IK_JENIS = { ruu: "palu", rpp: "regulasi", rperpres: "perisai", rpermen: "gedung", masukan: "surel" };
 const KELAS_STATUS = { terbuka: "", diterima: "jm-pil-ok", ditolak: "jm-pil-bad", digabung: "jm-pil-warn" };
 const inisial = (n) => (String(n || "?").trim().split(/\s+/).slice(0, 2).map((x) => x[0]).join("") || "?").toLocaleUpperCase();
 const kunciLebar = "kf_lebar_panel";
@@ -16,7 +17,7 @@ const simpanLokal = (k, v) => { try { localStorage.setItem(k, v); } catch { /* m
 const bacaLokal = (k) => { try { return localStorage.getItem(k); } catch { return null; } };
 
 export async function bukaDokumen(akar, id, { tutup, bagianAwal = null }) {
-  const S = { id, d: null, mode: "baca", skop: bagianAwal ? { b: bagianAwal } : { b: null }, saring: "semua", urut: "baru", hal: 1, form: null, aktif: null, balas: null, putus: null, sunting: null, rekap: null, pilih: null, laci: false };
+  const S = { id, d: null, mode: "baca", skop: bagianAwal ? { b: bagianAwal } : { b: null }, saring: "semua", urut: "baru", hal: 1, form: null, aktif: null, balas: null, putus: null, sunting: null, rekap: null, pilih: null, laci: false, buka: null, nav: null, q: "", isiBuka: false, pre: "komentar", kunci: 0 };
   akar.innerHTML = hantuHtml(5);
   const kabar = (teks) => { const k = akar.querySelector("#kfKabar"); if (k) { k.textContent = teks || ""; k.hidden = !teks; } };
   const muat = async () => {
@@ -45,40 +46,55 @@ export async function bukaDokumen(akar, id, { tutup, bagianAwal = null }) {
     }
     return h;
   }
-  function bagianHtml(b) {
-    const pilih = S.skop.b === b.id ? " kf-pilih" : "", n = hitung(b.id);
-    const diskusi = `<button type="button" class="jm-tbl jm-tbl-kecil" data-skop="${b.id}" aria-pressed="${S.skop.b === b.id}">${ikon(IK.umum, 16)}<span>${esc(t("kf.diskusi_n", { n: angka(n) }))}</span></button>`;
-    if (b.tingkat === "bab") return `<section class="kf-bag kf-bag-bab" id="b${b.id}" data-b="${b.id}"><h3>${esc(labelBagian(b))}${b.judul ? ": " + esc(b.judul) : ""}</h3></section>`;
-    if (S.d.dokumen.bentuk === "butir") {
-      return `<article class="kf-bag${pilih}" id="b${b.id}" data-b="${b.id}"><div class="kf-bag-kepala"><h3>${esc(b.nomor)}. ${esc(b.judul || "")}</h3>${b.status_asal ? `<span class="jm-pil">${esc(b.status_asal)}</span>` : ""}${diskusi}</div>
-        <p class="kf-teks" data-teks="${b.id}">${teksHtml(b)}</p>
-        <div class="kf-butir"><dl>${b.rujukan ? `<dt>${esc(t("kf.rujukan"))}</dt><dd>${esc(b.rujukan)}</dd>` : ""}${b.alasan ? `<dt>${esc(t("kf.alasan"))}</dt><dd>${esc(b.alasan)}</dd>` : ""}${b.sumber_asal ? `<dt>${esc(t("kf.sumber"))}</dt><dd>${esc(b.sumber_asal)}</dd>` : ""}</dl></div></article>`;
-    }
-    const kepala = b.tingkat === "pasal" ? `<h3>${esc(labelBagian(b))}</h3>` : `<span class="kf-ayat-no">${esc(b.nomor)}</span>`;
-    return `<article class="kf-bag${pilih}" id="b${b.id}" data-b="${b.id}"><div class="kf-bag-kepala">${kepala}${diskusi}</div>${b.teks ? `<p class="kf-teks" data-teks="${b.id}">${teksHtml(b)}</p>` : ""}</article>`;
+  /* penanda jenis tanggapan cepat: dipetakan ke jenis "umum" yang sudah ada, ditandai awalan di isi */
+  const MARKA = /^\[(setuju|tanya|usul)\]\s*/i;
+  const penanda = (u) => (u.isi && u.jenis === "umum" ? (u.isi.match(MARKA)?.[1] || "").toLowerCase() : "");
+  const bersih = (s) => String(s ?? "").replace(MARKA, "");
+  const jn = (u) => penanda(u) || u.jenis;
+  const statusButir = (b) => { const s = String(b.status_asal || "").toLowerCase(); return /priorit/.test(s) ? "prioritas" : /sampai/.test(s) ? "disampaikan" : ""; };
+  const IKS = { prioritas: "peringatan", disampaikan: "centang" };
+  const utasDi = (bid) => S.d.utas.filter((u) => !u.tersembunyi && (bid === "umum" ? u.bagian_id == null : u.bagian_id === bid));
+  const angkaReaksi = (bid) => { const l = utasDi(bid); return { setuju: l.filter((u) => penanda(u) === "setuju").length, usul: l.filter((u) => UBAHAN.includes(u.jenis) || penanda(u) === "usul").length, komentar: l.filter((u) => !UBAHAN.includes(u.jenis) && !["setuju", "usul"].includes(penanda(u)) && u.jenis !== "butir_baru").length + l.filter((u) => u.jenis === "butir_baru").length, nama: [...new Set(l.map((u) => u.nama || t("kf.anggota")))] }; };
+  function terlihat(b) {
+    if (b.tingkat === "bab") return S.saring === "semua" && !S.q;
+    if (S.saring === "prioritas" || S.saring === "disampaikan") { if (statusButir(b) !== S.saring) return false; }
+    else if (S.saring === "diskusi" && !utasDi(b.id).length) return false;
+    if (S.q) { const q = S.q.toLocaleLowerCase(); if (![b.nomor, b.judul, b.teks, b.rujukan].some((x) => String(x || "").toLocaleLowerCase().includes(q))) return false; }
+    return true;
   }
+  const reaksiHtml = (bid) => {
+    const n = angkaReaksi(bid), buka = S.buka === bid;
+    const tb = (j, ik, v) => `<button type="button" class="kf-reaksi" data-skop="${bid}" data-jenis="${j}" aria-expanded="${buka}">${ikon(ik, 16)}<span>${esc(t("kf.r." + j))}</span><b class="${v ? "" : "kf-nol"}">${angka(v)}</b></button>`;
+    return `<footer class="kf-kaki"><div class="kf-reaksi-baris">${tb("setuju", "centang", n.setuju)}${tb("usul", "ubah", n.usul)}${tb("komentar", "berita", n.komentar)}</div>
+      <div class="kf-avatar" aria-label="${esc(t("kf.n_peserta"))}">${n.nama.slice(0, 4).map((x) => `<span class="kf-av" title="${esc(x)}">${esc(inisial(x))}</span>`).join("")}${n.nama.length > 4 ? `<span class="kf-av kf-av-lebih">+${angka(n.nama.length - 4)}</span>` : ""}</div></footer>
+      ${buka ? tanggapHtml(bid) : ""}`;
+  };
+  function bagianHtml(b) {
+    const pilih = S.buka === b.id ? " kf-pilih" : "";
+    if (b.tingkat === "bab") return `<section class="kf-bag kf-bag-bab" id="b${b.id}" data-b="${b.id}"><h3>${esc(labelBagian(b))}${b.judul ? ": " + esc(b.judul) : ""}</h3></section>`;
+    const st = statusButir(b), isButir = S.d.dokumen.bentuk === "butir";
+    const judul = isButir ? b.judul || "" : b.tingkat === "pasal" ? labelBagian(b) + (b.judul ? ": " + b.judul : "") : "";
+    const pilStatus = st ? `<span class="jm-pil kf-st kf-st-${st}">${ikon(IKS[st], 14)}<span>${esc(b.status_asal)}</span></span>` : b.status_asal ? `<span class="jm-pil">${esc(b.status_asal)}</span>` : "";
+    const meta = (ik, k, v) => `<li>${ikon(ik, 16)}<b>${esc(t(k))}</b><span>${esc(v)}</span></li>`;
+    const mt = [b.rujukan && meta("regulasi", "kf.rujukan", b.rujukan), b.sumber_asal && meta("buku", "kf.sumber", b.sumber_asal), b.alasan && meta("info", "kf.alasan", b.alasan)].filter(Boolean).join("");
+    return `<article class="kf-bag${pilih}" id="b${b.id}" data-b="${b.id}"><div class="kf-bag-kepala"><span class="kf-no${b.tingkat === "ayat" ? " kf-no-kecil" : ""}">${esc(b.nomor || "")}</span>${judul ? `<h3>${esc(judul)}</h3>` : ""}${pilStatus}</div>
+      ${b.teks ? `${isButir ? `<p class="kf-label">${esc(t("kf.usulan_meti"))}</p>` : ""}<p class="kf-teks" data-teks="${b.id}">${teksHtml(b)}</p>` : ""}
+      ${mt ? `<ul class="kf-meta-baris">${mt}</ul>` : ""}${reaksiHtml(b.id)}</article>`;
+  }
+  const umumHtml = () => `<article class="kf-bag kf-umum${S.buka === "umum" ? " kf-pilih" : ""}" id="bumum" data-b="umum"><div class="kf-bag-kepala"><span class="kf-no">${ikon("berita", 18)}</span><h3>${esc(t("kf.umum_judul"))}</h3></div><p class="kf-label">${esc(t("kf.umum_bantu"))}</p>${reaksiHtml("umum")}</article>`;
+
+  const urlBagian = (id) => { const u = new URL(location.href); u.searchParams.set("kd", S.id); u.searchParams.set("kb", id); return u.pathname + u.search + u.hash; };
   function daftarIsi() {
-    const hit = new Map();
-    for (const u of S.d.utas) if (!u.tersembunyi && u.bagian_id) hit.set(u.bagian_id, (hit.get(u.bagian_id) || 0) + 1);
     const butir = S.d.dokumen.bentuk === "butir";
-    const baris = S.d.bagian.filter((b) => butir || b.tingkat !== "ayat").map((b) => {
-      const l = butir ? `${b.nomor}. ${b.judul || ""}` : labelBagian(b) + (b.tingkat === "bab" && b.judul ? ": " + b.judul : "");
-      return `<a href="#b${b.id}" data-isi="${b.id}" class="${b.tingkat === "bab" ? "kf-bab" : ""}">${esc(l)}${hit.get(b.id) ? `<span class="kf-n">${angka(hit.get(b.id))}</span>` : ""}</a>`;
+    const baris = S.d.bagian.filter((b) => (butir || b.tingkat !== "ayat") && terlihat(b)).map((b) => {
+      const n = utasDi(b.id).length, st = statusButir(b), cur = S.nav === b.id ? ' aria-current="true"' : "";
+      const l = b.tingkat === "bab" ? labelBagian(b) + (b.judul ? ": " + b.judul : "") : butir ? b.judul || "" : labelBagian(b);
+      return `<a href="${esc(urlBagian(b.id))}" data-isi="${b.id}" title="${esc(l)}"${cur} class="${b.tingkat === "bab" ? "kf-bab" : ""}">${b.tingkat === "bab" ? "" : `<span class="kf-nb">${esc(butir ? b.nomor : b.tingkat === "pasal" ? b.nomor : "")}</span>`}<span class="kf-nj">${esc(l)}</span>${st ? `<i class="kf-titik kf-titik-${st}" aria-hidden="true"></i>` : ""}${n ? `<span class="kf-n">${angka(n)}</span>` : ""}</a>`;
     }).join("");
-    return `<h3>${esc(t("kf.daftar_isi"))}</h3>${baris}`;
+    return `<button type="button" class="kf-isi-tgl" data-m="isi-tgl" aria-expanded="${S.isiBuka}">${ikon("daftar", 16)}<span>${esc(t("kf.daftar_isi"))}</span></button><div class="kf-isi-l"><h3>${esc(t("kf.daftar_isi"))}</h3>${baris}</div>`;
   }
 
   /* ---------- panel ---------- */
-  const semuaUtas = () => {
-    const bm = S.skop.b === "umum" ? (u) => u.bagian_id == null : S.skop.b ? (u) => u.bagian_id === S.skop.b : () => true;
-    let l = S.d.utas.filter(bm);
-    const f = S.saring;
-    if (f === "saya") l = l.filter((u) => u.milik);
-    else if (f === "terbuka") l = l.filter((u) => u.status === "terbuka" && !u.selesai);
-    else if (f === "diterima" || f === "ditolak") l = l.filter((u) => u.status === f);
-    l = l.slice().sort(S.urut === "dukungan" ? (a, b) => b.dukung - a.dukung || b.id - a.id : (a, b) => b.id - a.id);
-    return l;
-  };
   const waktu = (u) => `${tanggal(tanggalDariUnix(u))}, ${jam(u)}`;
   const bisaSunting = (x) => x.milik && x.status !== "ditarik" && Date.now() / 1000 - x.dibuat < S.d.menit_sunting * 60;
   const sebutHtml = (s) => esc(s).replace(/@(\S+)/g, '<span class="kf-sebut">@$1</span>');
@@ -99,11 +115,11 @@ export async function bukaDokumen(akar, id, { tutup, bagianAwal = null }) {
   }
   function utasHtml(u) {
     const usul = USULAN.includes(u.jenis), aktif = S.aktif === u.id ? " kf-aktif" : "", ta = S.sunting === "u" + u.id;
-    const kepala = `<div class="kf-utas-kepala"><span class="kf-av" aria-hidden="true">${esc(inisial(u.nama))}</span><b>${esc(u.nama || t("kf.anggota"))}</b><span>${esc(waktu(u.dibuat))}</span><span class="jm-pil">${ikon(IK[u.jenis], 14)}${esc(t("kf.jenis." + u.jenis))}</span>${usul ? `<span class="jm-pil ${KELAS_STATUS[u.status]}">${esc(t("kf.status." + u.status))}</span>` : ""}${u.selesai ? `<span class="jm-pil jm-pil-ok">${ikon(IK.selesai, 14)}${esc(t("kf.selesai"))}</span>` : ""}${u.tersembunyi ? `<span class="jm-pil jm-pil-warn">${esc(t("kf.tersembunyi"))}</span>` : ""}</div>`;
+    const kepala = `<div class="kf-utas-kepala"><span class="kf-av" aria-hidden="true">${esc(inisial(u.nama))}</span><b>${esc(u.nama || t("kf.anggota"))}</b><span>${esc(waktu(u.dibuat))}</span><span class="jm-pil">${ikon(IK[jn(u)], 14)}${esc(t("kf.jenis." + jn(u)))}</span>${usul ? `<span class="jm-pil ${KELAS_STATUS[u.status]}">${esc(t("kf.status." + u.status))}</span>` : ""}${u.selesai ? `<span class="jm-pil jm-pil-ok">${ikon(IK.selesai, 14)}${esc(t("kf.selesai"))}</span>` : ""}${u.tersembunyi ? `<span class="jm-pil jm-pil-warn">${esc(t("kf.tersembunyi"))}</span>` : ""}</div>`;
     if (u.isi == null) return `<article class="kf-utas" data-u="${u.id}">${kepala}<p class="kf-sembunyi">${esc(t("kf.disembunyikan"))}</p></article>`;
     const ganti = u.teks_ganti ? `<p class="kf-ganti"><b>${esc(t(u.jenis === "tambah" ? (u.sisip === "sebelum" ? "kf.sisip_sebelum" : "kf.sisip_sesudah") : u.jenis === "butir_baru" ? "kf.butir_usul" : "kf.menjadi"))}</b> ${esc(u.teks_ganti)}</p>` : "";
     const kutip = u.kutipan ? `<p class="kf-kutip">${esc(u.kutipan)}</p>` : "";
-    const lokasi = u.bagian_id && S.skop.b !== u.bagian_id ? `<button type="button" class="jm-tbl jm-tbl-kecil" data-skop="${u.bagian_id}">${esc(label.get(u.bagian_id) || "")}</button>` : "";
+    const lokasi = "";
     const aksi = `<div class="kf-aksi"><button type="button" data-m="balas" data-id="${u.id}">${ikon(IK.balas, 16)}<span>${esc(t("kf.balas"))}${u.balasan.length ? " " + angka(u.balasan.length) : ""}</span></button>
       ${usul ? `<button type="button" data-m="dukung" data-id="${u.id}" aria-pressed="${u.saya_dukung}">${ikon(IK.dukung, 16)}<span>${esc(t("kf.dukung"))} ${angka(u.dukung)}</span></button>` : ""}
       ${u.milik || staf() ? `<button type="button" data-m="selesai" data-id="${u.id}" aria-pressed="${u.selesai}">${ikon(IK.selesai, 16)}<span>${esc(t(u.selesai ? "kf.buka_lagi" : "kf.tandai_selesai"))}</span></button>` : ""}
@@ -112,7 +128,7 @@ export async function bukaDokumen(akar, id, { tutup, bagianAwal = null }) {
       ${staf() ? `<button type="button" data-m="sembunyi" data-id="${u.id}" data-ke="${u.tersembunyi ? 0 : 1}">${ikon(IK.sembunyi, 16)}<span>${esc(t(u.tersembunyi ? "kf.tampilkan" : "kf.sembunyikan"))}</span></button>` : ""}</div>`;
     const putusan = u.putusan || u.diputus_nama ? `<p class="jm-bantu">${esc(t("kf.putusan_oleh", { nama: u.diputus_nama || "-" }))}${u.putusan ? ": " + esc(u.putusan) : ""}${u.gabung_ke ? " " + esc(t("kf.digabung_ke", { n: u.gabung_ke })) : ""}</p>` : "";
     return `<article class="kf-utas${aktif}${u.selesai ? " kf-selesai" : ""}" data-u="${u.id}" id="u${u.id}">${kepala}${lokasi}${kutip}${ganti}
-      ${ta ? formHtml("ubah-u", { label: t("kf.isi"), maks: 4000, bawaan: u.isi }) : `<p class="kf-isi-utas">${sebutHtml(u.isi)}</p>`}${putusan}${aksi}
+      ${ta ? formHtml("ubah-u", { label: t("kf.isi"), maks: 4000, bawaan: u.isi }) : `<p class="kf-isi-utas">${sebutHtml(bersih(u.isi))}</p>`}${putusan}${aksi}
       ${S.putus === u.id ? putusHtml(u) : ""}${balasanHtml(u)}${S.balas === u.id ? formHtml("balas", { label: t("kf.balasan_anda") }) : ""}</article>`;
   }
   function composerHtml() {
@@ -127,37 +143,74 @@ export async function bukaDokumen(akar, id, { tutup, bagianAwal = null }) {
       <label>${esc(t(usul ? "kf.alasan_wajib" : "kf.isi"))}<textarea name="isi" maxlength="4000" required></textarea></label><div data-sebut></div><p class="jm-bantu" data-galat role="alert" hidden></p>
       <div class="kf-form-aksi"><button type="button" class="jm-tbl" data-m="batal">${esc(t("jm.batal"))}</button><button type="submit" class="jm-tbl jm-tbl-utama">${esc(t("kf.kirim"))}</button></div></form>`;
   }
-  function panelHtml() {
-    const l = semuaUtas(), awalH = (S.hal - 1) * HAL, tampil = l.slice(awalH, awalH + HAL);
-    const skop = S.skop.b === "umum" ? t("kf.skop_umum") : S.skop.b ? label.get(S.skop.b) || "" : t("kf.skop_semua");
-    return `<div class="kf-lebar" id="kfLebar" role="separator" aria-orientation="vertical" tabindex="0" aria-label="${esc(t("kf.lebarkan"))}"></div>
-      <div class="kf-panel-kepala"><h3>${ikon(IK.umum, 18)}<span>${esc(t("kf.diskusi"))}</span><button type="button" class="jm-tbl jm-tbl-kecil kf-panel-tutup kf-ujung" data-m="laci">${ikon("tutup", 16)}<span>${esc(t("jm.tutup"))}</span></button></h3>
-        <div class="kf-meta"><span class="jm-pil">${esc(skop)}</span>${S.skop.b ? `<button type="button" class="jm-hapus" data-skop="">${ikon("silang", 16)}${esc(t("kf.semua_bagian"))}</button>` : ""}</div>
-        <div class="kf-saring">${pilihHtml({ id: "kfSaring", ikon: "status", label: t("kf.saring"), nilai: S.saring, opsi: ["semua", "saya", "terbuka", "diterima", "ditolak"].map((v) => [v, t("kf.saring." + v)]) })}${pilihHtml({ id: "kfUrut", ikon: "tahun", label: t("kf.urut"), nilai: S.urut, opsi: [["baru", t("kf.urut.baru")], ["dukungan", t("kf.urut.dukungan")]] })}</div>
-        <div class="kf-aksi"><button type="button" class="jm-tbl jm-tbl-kecil" data-baru="umum">${ikon(IK.komentar, 16)}<span>${esc(t(S.skop.b && S.skop.b !== "umum" ? "kf.diskusi_pasal" : "kf.diskusi_umum"))}</span></button><button type="button" class="jm-tbl jm-tbl-kecil" data-baru="butir_baru">${ikon(IK.butir_baru, 16)}<span>${esc(t("kf.usul_butir"))}</span></button></div>
-        <p id="kfKabar" class="jm-bantu" role="status" hidden></p></div>
-      <div class="kf-panel-isi" id="kfIsi">${composerHtml()}${tampil.length ? tampil.map(utasHtml).join("") : kosongHtml("kf.kosong_diskusi")}${paginasiHtml({ hal: S.hal, total: l.length, per: HAL, satuan: "kf.pag_u" })}</div>`;
+  function tanggapHtml(bid) {
+    const l = utasDi(bid).sort((a, b) => b.id - a.id), f = S.form;
+    const komposer = f && (f.bagian_id ?? "umum") === bid ? composerHtml() : "";
+    const pre = S.pre || "komentar";
+    const radio = ["komentar", "setuju", "usul", "tanya"].map((v) => `<label><input type="radio" name="jn" value="${v}"${v === pre ? " checked" : ""}> ${esc(t("kf.t." + v))}</label>`).join("");
+    return `<div class="kf-utas-wadah" id="t${bid}">${komposer}
+      <form class="kf-form kf-cepat" data-form="cepat" data-b="${bid}" novalidate><div class="kf-radio" role="radiogroup" aria-label="${esc(t("kf.jenis_tanggapan"))}">${radio}</div>
+        <textarea name="isi" maxlength="3900" rows="2" placeholder="${esc(t("kf.tulis_ph"))}" aria-label="${esc(t("kf.isi"))}"></textarea><div data-sebut></div><p class="jm-bantu" data-galat role="alert" hidden></p>
+        <div class="kf-form-aksi"><button type="submit" class="jm-tbl jm-tbl-utama jm-tbl-kecil"><span>${esc(t("kf.kirim"))}</span></button></div></form>
+      ${l.length ? l.map(utasHtml).join("") : `<p class="kf-kosong-satu">${esc(t("kf.kosong_satu"))}</p>`}</div>`;
   }
+
   const butir = () => S.d.dokumen.bentuk === "butir";
-  function rangka() {
-    const dk = S.d.dokumen, kosongNaskah = !S.d.bagian.length;
-    const bar = `<div class="kf-bar"><button type="button" class="jm-tbl jm-tbl-kecil" data-m="kembali">${ikon("panah-kiri", 16)}<span>${esc(t("kf.kembali"))}</span></button><h2>${esc(dk.judul)}</h2>
-${tombolIkuti({ jenis: "regulasi", id: "kons:" + dk.id, nama: dk.judul })}
-      <div class="jm-tab jm-tab-rata kf-mode" role="tablist" aria-label="${esc(t("kf.mode"))}">${["baca", "rekap"].map((m) => `<button type="button" role="tab" data-mode="${m}" aria-selected="${S.mode === m}">${ikon(m === "baca" ? "buku" : IK.rekap, 16)}<span>${esc(t("kf.mode." + m))}</span></button>`).join("")}</div></div>`;
-    if (S.mode === "rekap") { akar.innerHTML = bar + `<div id="kfRekap">${hantuHtml(4)}</div>`; pasangIkuti(akar); muatRekap(); return; }
-    const naskah = kosongNaskah ? `<div class="kf-bag">${kosongHtml(butir() ? "kf.kosong_butir" : "kf.naskah_belum")}${staf() ? `<div class="kf-aksi"><button type="button" class="jm-tbl jm-tbl-utama" data-m="kelola">${ikon(IK.unduh, 16)}<span>${esc(t("kf.unggah_naskah"))}</span></button></div>` : ""}</div>` : S.d.bagian.map(bagianHtml).join("");
-    akar.innerHTML = bar + `<div id="kfKabarLuar"></div><div class="kf-baca${S.laci ? " kf-buka" : ""}" id="kfBaca">
-      <nav class="kf-isi" aria-label="${esc(t("kf.daftar_isi"))}">${kosongNaskah ? "" : daftarIsi()}</nav><div class="kf-naskah" id="kfNaskah">${naskah}</div>
-      <aside class="kf-panel" id="kfPanel" aria-label="${esc(t("kf.diskusi"))}">${panelHtml()}</aside>
-      <button type="button" class="kf-tombol-panel" data-m="laci">${ikon(IK.umum, 18)}<span>${esc(t("kf.diskusi_n", { n: angka(S.d.utas.filter((u) => !u.tersembunyi).length) }))}</span></button></div>
-      <div class="kf-menu-sorot" id="kfMenu" role="toolbar" aria-label="${esc(t("kf.menu"))}" hidden>${["komentar", "ubah", "coret", "tambah"].map((j) => `<button type="button" data-pilih="${j}">${ikon(IK[j], 16)}<span>${esc(t("kf.menu." + j))}</span></button>`).join("")}</div>`;
-    pasangIkuti(akar);
-    const pn = akar.querySelector("#kfPanel"), w = Number(bacaLokal(kunciLebar));
-    if (pn && w >= 300 && w <= 760) pn.style.width = w + "px";
-    pasangLebar();
+  function kepalaHtml() {
+    const dk = S.d.dokumen, bag = S.d.bagian.filter((b) => b.tingkat !== "bab");
+    const nama = new Set(); for (const u of S.d.utas) { if (u.tersembunyi) continue; nama.add(u.nama || ""); for (const r of u.balasan) nama.add(r.nama || ""); }
+    const ub = (n, k) => `<li><b class="${n ? "" : "kf-nol"}">${angka(n)}</b><span>${esc(t(k))}</span></li>`;
+    const pil = (ik, v) => `<span class="jm-pil">${ikon(ik, 14)}${esc(v)}</span>`;
+    return `<header class="kf-kepala"><div class="kf-kepala-atas"><button type="button" class="jm-tbl jm-tbl-kecil" data-m="kembali">${ikon("panah-kiri", 16)}<span>${esc(t("kf.kembali"))}</span></button>${tombolIkuti({ jenis: "regulasi", id: "kons:" + dk.id, nama: dk.judul })}</div>
+      <div class="kf-kepala-judul"><span class="kf-ik-besar">${ikon(IK_JENIS[dk.jenis] || "regulasi", 28)}</span><div><h2>${esc(dk.judul)}</h2><div class="kf-meta">${pil("palu", t("kf.jenis_dok." + dk.jenis))}${dk.instansi ? pil("gedung", dk.instansi) : ""}${dk.tenggat ? pil("kalender", `${t("kons.tenggat")}: ${tanggal(dk.tenggat)}`) : ""}</div></div></div>
+      <ul class="kf-ubin">${ub(bag.length, "kf.u.butir")}${ub(bag.filter((b) => statusButir(b) === "prioritas").length, "kf.u.prioritas")}${ub(bag.filter((b) => statusButir(b) === "disampaikan").length, "kf.u.disampaikan")}${ub(S.d.utas.filter((u) => !u.tersembunyi).length, "kf.u.tanggapan")}${ub(nama.size, "kf.u.peserta")}</ul></header>
+      <div class="jm-tab jm-tab-rata kf-mode" role="tablist" aria-label="${esc(t("kf.mode"))}">${["baca", "rekap"].map((m) => `<button type="button" role="tab" data-mode="${m}" aria-selected="${S.mode === m}">${ikon(m === "baca" ? "buku" : IK.rekap, 16)}<span>${esc(t("kf.mode." + m))}</span></button>`).join("")}</div>`;
   }
-  function gambarPanel() { const p = akar.querySelector("#kfPanel"); if (p) { p.innerHTML = panelHtml(); pasangMention(); } }
-  function gambarNaskah() { const el = akar.querySelector("#kfNaskah"); if (el && S.d.bagian.length) el.innerHTML = S.d.bagian.map(bagianHtml).join(""); }
+  function saringHtml() {
+    const hit = { semua: 0, prioritas: 0, disampaikan: 0, diskusi: 0 };
+    for (const b of S.d.bagian) if (b.tingkat !== "bab") { hit.semua++; if (statusButir(b)) hit[statusButir(b)]++; if (utasDi(b.id).length) hit.diskusi++; }
+    return `<div class="kf-alat"><div class="jm-tab jm-tab-rata kf-saring-tab" role="tablist" aria-label="${esc(t("kf.saring"))}">${["semua", "prioritas", "disampaikan", "diskusi"].map((k) => `<button type="button" role="tab" data-saring="${k}" aria-selected="${S.saring === k}"><span>${esc(t("kf.sg." + k))}</span><b>${angka(hit[k])}</b></button>`).join("")}</div>
+      <div class="kf-alat-baris"><label class="kf-cari">${ikon("cari", 16)}<input type="search" id="kfCari" class="jm-isian" value="${esc(S.q)}" placeholder="${esc(t("kf.cari_butir"))}" aria-label="${esc(t("kf.cari_butir"))}"></label>
+      <button type="button" class="jm-tbl" data-baru="butir_baru">${ikon("tambah", 16)}<span>${esc(t("kf.usul_butir"))}</span></button></div></div>`;
+  }
+  function isiNaskah() {
+    const l = S.d.bagian.filter(terlihat);
+    return (l.length ? l.map(bagianHtml).join("") : `<div class="kf-bag">${kosongHtml("kf.tak_ada_butir")}</div>`) + (S.saring === "semua" || S.saring === "diskusi" ? umumHtml() : "");
+  }
+  let pengamat = null;
+  function pasangPengamat() {
+    pengamat?.disconnect();
+    if (!("IntersectionObserver" in window)) return;
+    pengamat = new IntersectionObserver((es) => {
+      if (Date.now() < S.kunci) return;
+      const e = es.filter((x) => x.isIntersecting).sort((a, b) => a.boundingClientRect.top - b.boundingClientRect.top)[0];
+      if (e && e.target.dataset.b !== "umum") tandaiNav(Number(e.target.dataset.b));
+    }, { rootMargin: "-80px 0px -70% 0px" });
+    akar.querySelectorAll(".kf-bag[data-b]").forEach((x) => pengamat.observe(x));
+  }
+  function tandaiNav(bid) {
+    S.nav = bid;
+    for (const a of akar.querySelectorAll(".kf-isi a")) {
+      const on = Number(a.dataset.isi) === bid;
+      if (on) a.setAttribute("aria-current", "true"); else a.removeAttribute("aria-current");
+      if (on && a.offsetParent) { const w = a.closest(".kf-isi-l"); if (w && w.scrollHeight > w.clientHeight) w.scrollTop = a.offsetTop - w.clientHeight / 2; }
+    }
+  }
+  function rangka() {
+    const kosongNaskah = !S.d.bagian.length;
+    if (S.mode === "rekap") { akar.innerHTML = kepalaHtml() + `<div id="kfRekap">${hantuHtml(4)}</div>`; pasangIkuti(akar); muatRekap(); return; }
+    akar.innerHTML = kepalaHtml() + (kosongNaskah ? "" : saringHtml()) + `<div id="kfKabarLuar"></div><p id="kfKabar" class="jm-bantu" role="status" hidden></p><div class="kf-baca" id="kfBaca">
+      <nav class="kf-isi" aria-label="${esc(t("kf.daftar_isi"))}">${kosongNaskah ? "" : daftarIsi()}</nav><div class="kf-naskah" id="kfNaskah">${kosongNaskah ? `<div class="kf-bag">${kosongHtml(butir() ? "kf.kosong_butir" : "kf.naskah_belum")}${staf() ? `<div class="kf-aksi"><button type="button" class="jm-tbl jm-tbl-utama" data-m="kelola">${ikon(IK.unduh, 16)}<span>${esc(t("kf.unggah_naskah"))}</span></button></div>` : ""}</div>` : isiNaskah()}</div></div>
+      <div class="kf-menu-sorot" id="kfMenu" role="toolbar" aria-label="${esc(t("kf.menu"))}" hidden>${["komentar", "ubah", "coret", "tambah"].map((j) => `<button type="button" data-pilih="${j}">${ikon(IK[j], 16)}<span>${esc(t("kf.menu." + j))}</span></button>`).join("")}</div>`;
+    pasangIkuti(akar); pasangPengamat();
+  }
+  /* render ulang naskah + daftar isi (mis. sesudah saring atau kiriman); tanpa menyentuh kepala */
+  function gambarNaskah() {
+    const el = akar.querySelector("#kfNaskah"); if (!el || !S.d.bagian.length) return;
+    el.innerHTML = isiNaskah(); pasangMention(); pasangPengamat();
+    const nv = akar.querySelector(".kf-isi"); if (nv) nv.innerHTML = daftarIsi();
+  }
+  const gambarPanel = gambarNaskah;
 
   /* ---------- rekap ---------- */
   async function muatRekap() {
@@ -212,11 +265,11 @@ ${tombolIkuti({ jenis: "regulasi", id: "kons:" + dk.id, nama: dk.judul })}
   new MutationObserver(() => { if (!akar.isConnected) document.removeEventListener("selectionchange", selChange); }).observe(document.body, { childList: true, subtree: true });
 
   function bukaForm(jenis, ekstra = {}) {
-    S.form = { jenis, ...ekstra }; S.balas = S.putus = S.sunting = null; S.hal = 1;
-    S.laci = true; sembunyiMenu(); getSelection()?.removeAllRanges?.();
-    akar.querySelector("#kfBaca")?.classList.add("kf-buka");
-    gambarPanel();
-    akar.querySelector("#kfIsi textarea")?.focus();
+    S.form = { jenis, ...ekstra }; S.balas = S.putus = S.sunting = null;
+    S.buka = ekstra.bagian_id ?? "umum"; sembunyiMenu(); getSelection()?.removeAllRanges?.();
+    gambarNaskah();
+    const k = akar.querySelector("#b" + S.buka); k?.scrollIntoView({ block: "nearest" });
+    akar.querySelector(`#t${S.buka} form[data-form=baru] textarea`)?.focus();
   }
 
   /* ---------- @sebut ---------- */
@@ -245,21 +298,8 @@ ${tombolIkuti({ jenis: "regulasi", id: "kons:" + dk.id, nama: dk.judul })}
   }
   const idSebut = (teks) => [...sebutDipilih].filter(([n]) => teks.includes("@" + n)).map(([, i]) => i);
 
-  /* ---------- lebar panel ---------- */
-  function pasangLebar() {
-    const h = akar.querySelector("#kfLebar"), baca = akar.querySelector("#kfBaca");
-    if (!h || !baca) return;
-    const atur = (px) => { const w = Math.max(300, Math.min(760, Math.round(px))); akar.querySelector("#kfPanel").style.width = w + "px"; return w; };
-    let mulai = null;
-    h.addEventListener("pointerdown", (e) => { mulai = { x: e.clientX, w: akar.querySelector("#kfPanel").offsetWidth }; h.setPointerCapture(e.pointerId); h.classList.add("kf-tarik"); });
-    h.addEventListener("pointermove", (e) => { if (mulai) requestAnimationFrame(() => atur(mulai.w + (mulai.x - e.clientX))); });
-    const lepas = (e) => { if (!mulai) return; mulai = null; h.classList.remove("kf-tarik"); simpanLokal(kunciLebar, String(akar.querySelector("#kfPanel").offsetWidth)); };
-    h.addEventListener("pointerup", lepas); h.addEventListener("pointercancel", lepas);
-    h.addEventListener("keydown", (e) => { const s = { ArrowLeft: 24, ArrowRight: -24 }[e.key]; if (!s) return; e.preventDefault(); simpanLokal(kunciLebar, String(atur(akar.querySelector("#kfPanel").offsetWidth + s))); });
-  }
-
   /* ---------- aksi ---------- */
-  const segarkan = async (opsi = {}) => { if (await muat()) { S.laci = opsi.laci ?? S.laci; gambarNaskah(); gambarPanel(); const di = akar.querySelector(".kf-isi"); if (di) di.innerHTML = S.d.bagian.length ? daftarIsi() : ""; } };
+  const segarkan = async (opsi = {}) => { if (await muat()) { gambarNaskah(); } };
   const galatForm = (form, e) => { const g = form.querySelector("[data-galat]"); if (g) { g.textContent = galatTeks(e.kode || "umum"); g.hidden = false; } form.querySelectorAll("button").forEach((b) => (b.disabled = false)); };
   const tulis = async (fn, form) => { form?.querySelectorAll("button").forEach((b) => (b.disabled = true)); try { await fn(); return true; } catch (e) { if (form) galatForm(form, e); else kabar(galatTeks(e.kode || "umum")); return false; } };
   const U = (n) => `/api/konsultasi/utas/${n}`, B = (n) => `/api/konsultasi/balasan/${n}`;
@@ -268,19 +308,29 @@ ${tombolIkuti({ jenis: "regulasi", id: "kons:" + dk.id, nama: dk.judul })}
     const c = e.target;
     let el;
     if ((el = c.closest("[data-aksi=ulang]"))) return bukaDokumen(akar, id, { tutup, bagianAwal });
-    if ((el = c.closest("[data-hal]"))) { S.hal = Number(el.dataset.hal); sorotHalaman(el, S.hal); return nanti(() => { gambarPanel(); akar.querySelector("#kfIsi")?.scrollTo?.(0, 0); }); }
     if ((el = c.closest("[data-mode]"))) { S.mode = el.dataset.mode; return nanti(rangka); }
     if ((el = c.closest("[data-pilih]"))) { const p = S.pilih; if (!p) return; return bukaForm(el.dataset.pilih === "komentar" ? "sorot" : el.dataset.pilih, { bagian_id: p.bagian, kutipan: p.kutipan, mulai: p.mulai, akhir: p.akhir }); }
-    if ((el = c.closest("[data-baru]"))) return bukaForm(el.dataset.baru, el.dataset.baru === "umum" && S.skop.b && S.skop.b !== "umum" ? { bagian_id: S.skop.b } : {});
-    if ((el = c.closest("[data-skop]"))) { const v = el.dataset.skop; S.skop = { b: v === "" ? null : v === "umum" ? "umum" : Number(v) }; S.hal = 1; S.laci = true; akar.querySelector("#kfBaca")?.classList.add("kf-buka"); akar.querySelectorAll(".kf-bag").forEach((x) => x.classList.toggle("kf-pilih", Number(x.dataset.b) === S.skop.b)); return nanti(gambarPanel); }
-    if ((el = c.closest("[data-isi]"))) { S.skop = { b: Number(el.dataset.isi) }; akar.querySelectorAll(".kf-isi a").forEach((a) => a.removeAttribute("aria-current")); el.setAttribute("aria-current", "true"); akar.querySelectorAll(".kf-bag").forEach((x) => x.classList.toggle("kf-pilih", Number(x.dataset.b) === S.skop.b)); return nanti(gambarPanel); }
-    if ((el = c.closest("mark[data-u],del[data-u],ins[data-u]"))) { S.aktif = Number(el.dataset.u); S.laci = true; akar.querySelector("#kfBaca")?.classList.add("kf-buka"); const u = S.d.utas.find((x) => x.id === S.aktif); if (u) S.skop = { b: u.bagian_id ?? "umum" }; return nanti(() => { gambarNaskah(); gambarPanel(); akar.querySelector("#u" + S.aktif)?.scrollIntoView({ block: "center" }); }); }
+    if ((el = c.closest("[data-saring]"))) { S.saring = el.dataset.saring; el.parentElement.querySelectorAll("[role=tab]").forEach((x) => x.setAttribute("aria-selected", String(x === el))); return nanti(gambarNaskah); }
+    if ((el = c.closest("[data-baru]"))) return bukaForm(el.dataset.baru, {});
+    if ((el = c.closest("[data-skop]"))) {
+      const v = el.dataset.skop === "umum" ? "umum" : Number(el.dataset.skop), tutupLagi = S.buka === v && (S.pre === el.dataset.jenis || !el.dataset.jenis);
+      S.pre = el.dataset.jenis || S.pre; S.buka = tutupLagi ? null : v; S.form = null;
+      const k = el.closest(".kf-bag"); k?.querySelectorAll(".kf-reaksi").forEach((x) => x.setAttribute("aria-expanded", String(!tutupLagi)));
+      return nanti(() => { gambarNaskah(); if (!tutupLagi) { const ta = akar.querySelector(`#t${v} form[data-form=cepat] textarea`); ta?.focus({ preventScroll: true }); } });
+    }
+    if ((el = c.closest("[data-isi]"))) {
+      e.preventDefault(); const bid = Number(el.dataset.isi), tujuan = akar.querySelector("#b" + bid);
+      S.kunci = Date.now() + 900; tandaiNav(bid); S.isiBuka = false; akar.querySelector(".kf-isi-tgl")?.setAttribute("aria-expanded", "false"); akar.querySelector(".kf-isi")?.classList.remove("kf-isi-buka");
+      history.replaceState(null, "", urlBagian(bid)); // ?kb=, bukan #hash: hash dipakai tab halaman (#konsultasi)
+      return tujuan?.scrollIntoView({ block: "start" });
+    }
+    if ((el = c.closest("mark[data-u],del[data-u],ins[data-u]"))) { S.aktif = Number(el.dataset.u); const u = S.d.utas.find((x) => x.id === S.aktif); S.buka = u ? u.bagian_id ?? "umum" : S.buka; return nanti(() => { gambarNaskah(); akar.querySelector("#u" + S.aktif)?.scrollIntoView({ block: "center" }); }); }
     if ((el = c.closest("[data-sebut-id]"))) return sisipSebut(el);
     const m = c.closest("[data-m]")?.dataset.m, tom = c.closest("[data-m]");
     if (!m) return;
     const nid = Number(tom.dataset.id);
     if (m === "kembali") return tutup();
-    if (m === "laci") { S.laci = !S.laci; return akar.querySelector("#kfBaca")?.classList.toggle("kf-buka", S.laci); }
+    if (m === "isi-tgl") { S.isiBuka = !S.isiBuka; tom.setAttribute("aria-expanded", String(S.isiBuka)); return akar.querySelector(".kf-isi")?.classList.toggle("kf-isi-buka", S.isiBuka); }
     if (m === "batal") { S.form = S.balas = S.putus = S.sunting = null; return gambarPanel(); }
     if (m === "cetak") return print();
     if (m === "kelola") { const { bukaKelola } = await import("/konsultasi_kelola.js"); return bukaKelola(S.d.dokumen, { selesai: () => segarkan() }); }
@@ -296,11 +346,8 @@ ${tombolIkuti({ jenis: "regulasi", id: "kons:" + dk.id, nama: dk.judul })}
     if (m === "tarik-b") { if (!confirm(t("kf.tarik_tanya"))) return; if (await tulis(() => api(B(nid), { metode: "DELETE" }))) segarkan(); return; }
     if (m === "sembunyi" || m === "sembunyi-b") { if (await tulis(() => api((m === "sembunyi" ? U(nid) : B(nid)) + "/sembunyi", { metode: "POST", badan: { sembunyi: tom.dataset.ke === "1" } }))) segarkan(); return; }
   });
-  akar.addEventListener("change", (e) => {
-    if (e.target.id === "kfSaring") { S.saring = e.target.value; S.hal = 1; nanti(gambarPanel); }
-    else if (e.target.id === "kfUrut") { S.urut = e.target.value; S.hal = 1; nanti(gambarPanel); }
-  });
-  akar.addEventListener("keydown", (e) => { if (e.key === "Escape") { sembunyiMenu(); if (S.laci && innerWidth <= 900) { S.laci = false; akar.querySelector("#kfBaca")?.classList.remove("kf-buka"); } } });
+  akar.addEventListener("input", debounce((e) => { if (e.target.id === "kfCari") { S.q = e.target.value.trim(); nanti(gambarNaskah); } }, 150));
+  akar.addEventListener("keydown", (e) => { if (e.key === "Escape") { sembunyiMenu(); if (S.isiBuka) { S.isiBuka = false; akar.querySelector(".kf-isi")?.classList.remove("kf-isi-buka"); } } });
   akar.addEventListener("submit", async (e) => {
     const form = e.target.closest("form[data-form]"); if (!form) return;
     e.preventDefault();
@@ -315,7 +362,14 @@ ${tombolIkuti({ jenis: "regulasi", id: "kons:" + dk.id, nama: dk.judul })}
       if (f.jenis === "butir_baru" && v("kutipan")) badan.kutipan = v("kutipan");
       if (fd.has("teks_ganti")) badan.teks_ganti = v("teks_ganti");
       if (f.jenis === "tambah") badan.sisip = v("sisip");
-      if (await tulis(async () => { const r = await api(`/api/konsultasi/${encodeURIComponent(id)}/utas`, { metode: "POST", badan }); S.aktif = r.id; }, form)) { S.form = null; S.saring = "semua"; S.skop = { b: f.bagian_id ?? (f.jenis === "butir_baru" ? null : "umum") }; await segarkan({ laci: true }); }
+      if (await tulis(async () => { const r = await api(`/api/konsultasi/${encodeURIComponent(id)}/utas`, { metode: "POST", badan }); S.aktif = r.id; }, form)) { S.form = null; S.buka = f.bagian_id ?? "umum"; await segarkan(); }
+    } else if (jenis === "cepat") {
+      const jn2 = v("jn"), bid = form.dataset.b === "umum" ? null : Number(form.dataset.b);
+      if (jn2 !== "setuju" && !wajib("isi")) return;
+      const isi = (["setuju", "usul", "tanya"].includes(jn2) ? `[${jn2}] ` : "") + v("isi");
+      const badan = { jenis: "umum", isi: isi.trim(), sebut: idSebut(v("isi")) };
+      if (bid != null) badan.bagian_id = bid;
+      if (await tulis(async () => { const r = await api(`/api/konsultasi/${encodeURIComponent(id)}/utas`, { metode: "POST", badan }); S.aktif = r.id; }, form)) { S.pre = "komentar"; await segarkan(); }
     } else if (jenis === "balas") {
       if (!wajib("isi")) return;
       if (await tulis(() => api(U(S.balas) + "/balasan", { metode: "POST", badan: { isi: v("isi"), sebut: idSebut(v("isi")) } }), form)) { S.balas = null; await segarkan(); }
@@ -331,5 +385,5 @@ ${tombolIkuti({ jenis: "regulasi", id: "kons:" + dk.id, nama: dk.judul })}
   });
   rangka();
   pasangMention();
-  if (bagianAwal) nanti(() => akar.querySelector("#b" + bagianAwal)?.scrollIntoView({ block: "start" }));
+  if (bagianAwal) nanti(() => { tandaiNav(bagianAwal); akar.querySelector("#b" + bagianAwal)?.scrollIntoView({ block: "start" }); });
 }
