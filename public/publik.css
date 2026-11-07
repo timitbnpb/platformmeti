@@ -517,3 +517,19 @@ a.jm-foto:focus-visible{outline:3px solid var(--fokus)}
 .jm-kpi-n b{font-size:var(--t-angka)}
 .jm-kpi-ctx{grid-area:ctx;min-height:0}
 .jm-kpi-ctx:empty,.jm-kpi-ctx:has(:only-child:empty){display:none}
+/* baris peringkat bergambar: foto merentang dua baris, nama dan pil di kolom kanan selebar sisa ruang */
+.jm-rank-t:has(.jm-rank-th){display:grid;grid-template-columns:72px minmax(0,1fr);grid-template-rows:auto auto;column-gap:14px;row-gap:4px;align-items:center}
+.jm-rank-t:has(.jm-rank-th)>.jm-rank-th{grid-row:1/3;grid-column:1}
+.jm-rank-t:has(.jm-rank-th)>:not(.jm-rank-th){grid-column:2;min-width:0}
+.jm-rank-t:has(.jm-rank-th) strong{font-size:var(--t-body);line-height:var(--lh-rapat)}
+.jm-rank-t:has(.jm-rank-th)>small{justify-self:start}
+.jm-rank .jm-rank-i:has(.jm-rank-th){padding:12px 4px}
+/* pasar lokal vs ekspor: dua ubin angka berikon, bukan batang */
+.jm-ds-pasar{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:4px 0 8px}
+.jm-ds-ps{display:grid;grid-template-columns:auto 1fr auto auto;align-items:baseline;gap:8px;padding:10px 14px;border:1px solid var(--line);border-radius:var(--r-sm);background:var(--surface)}
+.jm-ds-ps .jm-ik{color:var(--accent);align-self:center}
+.jm-ds-ps span{font:600 var(--t-kecil)/1.2 var(--font);color:var(--ink2)}
+.jm-ds-ps b{font:700 var(--t-h3)/1 var(--display);color:var(--head);font-variant-numeric:tabular-nums}
+.jm-ds-ps small{font-size:var(--t-kecil);color:var(--ink2)}
+/* kartu dataset berpasangan sama tinggi, daftar mengisi ruang */
+.jm-ds{display:flex;flex-direction:column}.jm-ds>.jm-ex-bd,.jm-ds .jm-ds-viz{flex:1}
