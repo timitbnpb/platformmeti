@@ -28,8 +28,14 @@ const labelTopik = (k) => t("pu.topik." + k);
 
 /* ---- penerbit: nama ringkas, logo, kelompok ---- */
 const kodeProv = (n) => { const m = /^Pemerintah Provinsi (.+)$/i.exec(n); return m && PROV[m[1].toLowerCase()] ? PROV[m[1].toLowerCase()] : null; };
-const logoPen = (n) => logoOrgSatu(null, n) || logoUrl(n);
-const ikonPen = (n) => (kodeProv(n) ? "prov:" + kodeProv(n) : "img:" + logoPen(n));
+/* logo penerbit: peta nama baku -> berkas lokal; selain itu resolver bersama (logo_org, provinsi, kab/kota); tanpa logo = monogram berwarna */
+const PEN_LOGO = [[/\(METI\)|^Masyarakat Energi Terbarukan/i, "/img/logo/meti.png"], [/^Direktorat Jenderal EBTKE/i, "/img/logo/ebtke.png"], [/^Kementerian (ESDM|Energi dan Sumber Daya Mineral)/i, "/img/logo/esdm.png"],
+  [/\bPLN\b/i, "/img/logo/pln.png"], [/^BRIN/i, "/img/logo/brin.png"], [/^Kementerian Keuangan$/i, "/img/logo/kemenkeu.png"], [/CELIOS/i, "/img/logo/org/l_488614e2c7.png"], [/Purnomo Yusgiantoro/i, "/img/logo/org/l_cac38cb0a4.png"],
+  [/Surya Energi Indotama/i, "/img/logo/org/p_a6ae037cc5.png"], [/Badan Koordinasi Penanaman Modal/i, "/img/logo/bkpm.png"], [/Lingkungan Hidup dan Kehutanan/i, "/img/logo/kemenhut.png"]];
+const logoPen = (n) => { const m = PEN_LOGO.find(([re]) => re.test(String(n))); const u = m ? m[1] : (logoOrgSatu(null, n) || logoUrl(n)); return u.endsWith("gedung.svg") ? "" : u; };
+const ikonPen = (n) => (kodeProv(n) ? "prov:" + kodeProv(n) : logoPen(n) ? "img:" + logoPen(n) : "direktori");
+const inisialPen = (n) => { const s = ringkasPen(n).replace(/\([^)]*\)/g, " "), k = s.split(/\s+/).filter((w) => /^[A-Za-z]/.test(w)); return (k.length > 1 && s.length > 8 ? k.slice(0, 2).map((w) => w[0]).join("") : (k[0] || "?").slice(0, 3)).toUpperCase(); };
+const warnaPen = (n) => [...String(n)].reduce((a, c) => (a * 31 + c.charCodeAt(0)) % 6, 0);
 function ringkasPen(n) {
   const s = String(n || ""), kur = /\(([A-Za-z][A-Za-z0-9 &.-]{1,14})\)\s*$/.exec(s);
   if (kur && !/persero/i.test(kur[1])) return kur[1];
@@ -50,9 +56,11 @@ function grupPen(n) {
 }
 const GRUP_URUT = ["pusat", "daerah", "bumn", "riset", "lain"];
 const ikonTopik = (k) => (IKON_TEK[k] ? "tek:" + k : "topik");
-const pilTopik = (k) => `<span class="jm-pil pu-topik">${IKON_TEK[k] || ikon("topik", 14)}<span>${esc(labelTopik(k))}</span></span>`;
+const pilTopik = (k) => `<span class="jm-pil pu-topik pu-t-${esc(k)}">${IKON_TEK[k] || ikon("topik", 14)}<span>${esc(labelTopik(k))}</span></span>`;
 const pilJenis = (d, k = "") => `<span class="jm-pil pu-jenis pu-j-${esc(d.jenis)} ${k}">${ikon(IKON_JENIS[d.jenis] || "buku", 14)}<span>${esc(labelJenis(d.jenis))}</span></span>`;
-const logoImg = (n, ukuran, kelas = "") => `<img class="jm-pen-lg pu-lb ${kelas}" src="${esc(logoPen(n))}" width="${ukuran}" height="${ukuran}" alt="" loading="lazy" decoding="async">`;
+const logoImg = (n, ukuran, kelas = "") => (logoPen(n)
+  ? `<img class="jm-pen-lg pu-lb ${kelas}" src="${esc(logoPen(n))}" width="${ukuran}" height="${ukuran}" alt="" loading="lazy" decoding="async">`
+  : `<span class="pu-lb pu-mono pu-w${warnaPen(n)} pu-u${ukuran} ${kelas}" aria-hidden="true">${esc(inisialPen(n))}</span>`);
 
 /* tanggal terbit: lengkap bila ada hari, bulan-tahun bila ada bulan, selain itu tahun */
 function tglTerbit(d) {
@@ -114,7 +122,8 @@ function gambarSaring() {
   const penerbit = [...hitung((d) => [d.penerbit])].map(([v, n]) => [v, ringkasPen(v), ikonPen(v), angka(n), grupPen(v), v, n])
     .sort((a, b) => GRUP_URUT.indexOf(a[4]) - GRUP_URUT.indexOf(b[4]) || b[6] - a[6] || a[1].localeCompare(b[1])).map((o) => [o[0], o[1], o[2], o[3], t("pu.grup." + o[4]), o[5]]);
   const p = (id, ik, semua, daftar, nilai) => pilihHtml({ id, ikon: ik, label: t(semua), opsi: [["", t(semua)], ...daftar], nilai });
-  const urut = ["pilihan", "terbaru", "terunduh"].map((v) => [v, t("pu.urut." + v)]);
+  const IKON_URUT = { pilihan: "bintang", terbaru: "kalender", terunduh: "unduh" };
+  const urut = ["pilihan", "terbaru", "terunduh"].map((v) => [v, t("pu.urut." + v), IKON_URUT[v]]);
   document.getElementById("saring").innerHTML = cariHtml({ id: "q", label: t("pu.cari") }) + p("jenis", "jenis", "pu.semua.jenis", jenis, S.jenis) + p("topik", "topik", "pu.semua.topik", topik, S.topik)
     + p("tahun", "tahun", "pu.semua.tahun", tahun, S.tahun) + p("penerbit", "direktori", "pu.semua.penerbit", penerbit, S.penerbit) + pilihHtml({ id: "urut", ikon: "analisis", label: t("pu.urut"), opsi: urut, nilai: S.urut })
     + hapusHtml({ id: "hapus", label: t("jm.kosong.reset") }) + hitungHtml({ id: "hitung", teks: "" });
@@ -127,7 +136,7 @@ function gambarSaring() {
 function sampulHtml(d, kelas = "", ceper = false) {
   const jenisIk = IKON_JENIS[d.jenis] || "buku";
   return d.u.sampul
-    ? `<span class="pu-sampul ${kelas}"><img${d.u.sampul_lanskap ? ' class="pu-lanskap"' : ""} src="${esc(d.u.sampul)}" width="600" height="849" alt="" loading="${ceper ? "eager" : "lazy"}" decoding="async"></span>`
+    ? `<span class="pu-sampul ${kelas}">${d.u.sampul_lanskap ? `<img class="pu-blur" src="${esc(d.u.sampul)}" width="600" height="849" alt="" aria-hidden="true" loading="lazy" decoding="async">` : ""}<img${d.u.sampul_lanskap ? ' class="pu-lanskap"' : ""} src="${esc(d.u.sampul)}" width="600" height="849" alt="" loading="${ceper ? "eager" : "lazy"}" decoding="async"></span>`
     : `<span class="pu-sampul pu-sampul-ik ${kelas}" data-jenis="${esc(d.jenis)}"><span class="pu-sampul-lingkar">${ikon(jenisIk, 34)}</span><b>${esc(labelJenis(d.jenis))}</b>${d.tahun ? `<small>${esc(d.tahun)}</small>` : ""}</span>`;
 }
 const atr = esc; // atribut title (nama lengkap), bukan teks tampak

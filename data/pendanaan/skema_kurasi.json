@@ -1,22 +1,469 @@
 [
-{"id":"sk_gcf","nama":"Green Climate Fund","pemberi":"Green Climate Fund","jenis":"blended","sasaran":["pemerintah","BUMN","lembaga keuangan","swasta"],"sektor":["surya","bayu","panas-bumi","efisiensi"],"uraian":"Dana iklim multilateral yang membiayai mitigasi dan adaptasi lewat hibah, pinjaman lunak, ekuitas, dan jaminan. Proposal diajukan lewat entitas terakreditasi dan disetujui otoritas nasional.","cara":["Hubungi otoritas nasional yang ditunjuk (di Indonesia berada di Kementerian Keuangan) untuk surat tanpa keberatan.","Pilih entitas terakreditasi GCF sebagai pengusul proyek.","Susun konsep lalu proposal pendanaan bersama entitas itu.","Proposal dinilai sekretariat dan diputus Dewan GCF."],"url":"https://www.greenclimate.fund/"},
-{"id":"sk_gef","nama":"Global Environment Facility","pemberi":"Global Environment Facility","jenis":"hibah","sasaran":["pemerintah","lembaga riset","LSM"],"sektor":["bioenergi","efisiensi","karbon"],"uraian":"Hibah lingkungan global yang disalurkan lewat badan pelaksana seperti UNDP, ADB, dan Bank Dunia untuk proyek perubahan iklim dan keanekaragaman hayati.","cara":["Hubungi titik fokus operasional GEF di Indonesia (Kementerian Lingkungan Hidup).","Cari badan pelaksana GEF yang bersedia mengusung proyek.","Susun lembar identifikasi proyek lalu dokumen proyek penuh."],"url":"https://www.thegef.org/"},
-{"id":"sk_bpdlh","nama":"Pendanaan Badan Pengelola Dana Lingkungan Hidup","pemberi":"Badan Pengelola Dana Lingkungan Hidup","jenis":"hibah","iso2":"ID","sasaran":["pemerintah daerah","LSM","masyarakat","lembaga riset"],"sektor":["karbon","bioenergi","biomassa-sampah"],"uraian":"Badan layanan umum yang menghimpun dan menyalurkan dana lingkungan hidup dan dana iklim, termasuk untuk energi terbarukan berbasis masyarakat.","cara":["Pelajari jenis pembiayaan dan syarat di laman resmi lembaga.","Siapkan proposal sesuai format dan ajukan lewat kanal yang diumumkan.","Ikuti verifikasi dan penilaian oleh lembaga."],"url":"https://bpdlh.id/"},
-{"id":"sk_adb_etm","nama":"Energy Transition Mechanism (ADB)","pemberi":"Asian Development Bank","jenis":"blended","sasaran":["BUMN","pemerintah","investor"],"sektor":["transisi-adil","surya","jaringan"],"uraian":"Mekanisme pembiayaan campuran untuk mempensiunkan dini pembangkit batubara dan mengganti dengan energi bersih; di Indonesia dijalankan lewat platform negara bersama PT SMI.","cara":["Koordinasi dengan PT SMI dan Kementerian Keuangan sebagai penyelenggara platform negara.","Ajukan calon proyek yang memenuhi kriteria platform.","Struktur pembiayaan campuran disusun bersama mitra pembiayaan."],"url":"https://www.adb.org/"},
-{"id":"sk_acgf","nama":"ASEAN Catalytic Green Finance Facility","pemberi":"Asian Development Bank","jenis":"blended","sasaran":["pemerintah","BUMN","BUMD"],"sektor":["surya","hidro","jaringan"],"uraian":"Fasilitas ADB untuk menyiapkan dan membiayai proyek hijau di Asia Tenggara dengan hibah persiapan proyek dan pinjaman bersama mitra.","cara":["Ajukan konsep proyek lewat kontak ADB di Indonesia.","Dapatkan dukungan persiapan proyek bila lolos tapis awal.","Lanjut ke pembiayaan lewat pinjaman atau ko-pembiayaan."],"url":"https://www.adb.org/"},
-{"id":"sk_sdg_one","nama":"SDG Indonesia One","pemberi":"PT Sarana Multi Infrastruktur","jenis":"blended","iso2":"ID","sasaran":["pemerintah daerah","BUMN","swasta"],"sektor":["surya","hidro","panas-bumi","pembiayaan"],"uraian":"Platform pembiayaan campuran PT SMI yang menggabungkan dana publik, filantropi, dan swasta untuk infrastruktur berkelanjutan, termasuk energi terbarukan.","cara":["Hubungi PT SMI dengan ringkasan proyek dan struktur pembiayaan yang diusulkan.","Ikuti uji tuntas kelayakan dan penilaian dampak.","Tanda tangani perjanjian pembiayaan."],"url":"https://www.ptsmi.co.id/"},
-{"id":"sk_cif_act","nama":"Accelerating Coal Transition (CIF ACT)","pemberi":"Climate Investment Funds","jenis":"blended","sasaran":["pemerintah","BUMN"],"sektor":["transisi-adil","surya","bayu"],"uraian":"Program Climate Investment Funds untuk percepatan transisi dari batubara, dengan pembiayaan lunak lewat bank pembangunan multilateral.","cara":["Koordinasi dengan Kementerian Keuangan dan bank pembangunan mitra (ADB, Bank Dunia).","Susun rencana investasi sesuai kerangka program.","Proyek dibiayai lewat bank pembangunan multilateral."],"url":"https://www.cif.org/"},
-{"id":"sk_greenbook","nama":"Pinjaman luar negeri lewat Green Book","pemberi":"Kementerian PPN/Bappenas","jenis":"pinjaman lunak","iso2":"ID","sasaran":["kementerian","BUMN","pemerintah daerah"],"sektor":["jaringan","hidro","panas-bumi","elektrifikasi"],"uraian":"Daftar rencana proyek yang layak dibiayai pinjaman luar negeri; proyek harus masuk daftar ini sebelum dibicarakan dengan pemberi pinjaman.","cara":["Instansi pelaksana mengusulkan proyek ke Bappenas.","Proyek dinilai dan masuk daftar rencana pinjaman.","Kementerian Keuangan dan pemberi pinjaman menegosiasikan persyaratan."],"url":"https://www.bappenas.go.id/"},
-{"id":"sk_jica","nama":"Pinjaman ODA JICA","pemberi":"Japan International Cooperation Agency","jenis":"pinjaman lunak","iso2":"JP","negara":"Jepang","sasaran":["pemerintah","BUMN"],"sektor":["panas-bumi","jaringan","hidro"],"uraian":"Pinjaman bantuan pembangunan resmi Jepang bersuku bunga rendah dan tenor panjang untuk infrastruktur, termasuk pembangkit panas bumi dan jaringan listrik.","cara":["Usulan proyek masuk Green Book Bappenas.","Pemerintah mengajukan permintaan resmi ke pemerintah Jepang.","JICA melakukan survei persiapan dan penilaian lalu menyepakati perjanjian pinjaman."],"url":"https://www.jica.go.jp/indonesia/"},
-{"id":"sk_aiib","nama":"Pembiayaan energi AIIB","pemberi":"Asian Infrastructure Investment Bank","jenis":"pinjaman lunak","sasaran":["pemerintah","BUMN","swasta"],"sektor":["jaringan","surya","hidro"],"uraian":"Bank pembangunan multilateral yang membiayai infrastruktur energi berkelanjutan lewat pinjaman berdaulat dan non-berdaulat.","cara":["Hubungi tim AIIB untuk proyek calon.","Lengkapi studi kelayakan, kajian lingkungan, dan sosial.","Dewan memutuskan lalu perjanjian pembiayaan ditandatangani."],"url":"https://www.aiib.org/"},
-{"id":"sk_kfw","nama":"Kerja sama keuangan KfW","pemberi":"KfW Development Bank","jenis":"pinjaman lunak","iso2":"DE","negara":"Jerman","sasaran":["pemerintah","BUMN"],"sektor":["jaringan","efisiensi","bayu"],"uraian":"Pinjaman lunak dan hibah dari kerja sama pembangunan Jerman yang disalurkan lewat KfW, termasuk untuk koridor listrik hijau.","cara":["Usulan proyek disepakati dalam konsultasi pemerintah Indonesia dan Jerman.","KfW menilai kelayakan proyek.","Perjanjian pembiayaan ditandatangani oleh pemerintah dan pelaksana."],"url":"https://www.kfw-entwicklungsbank.de/"},
-{"id":"sk_jetp","nama":"Just Energy Transition Partnership Indonesia","pemberi":"International Partners Group dan GFANZ","jenis":"JETP","sasaran":["BUMN","swasta","pemerintah"],"sektor":["transisi-adil","surya","jaringan"],"nilai":20000000000,"mata_uang":"USD","besaran":"Komitmen awal 20 miliar USD","uraian":"Kemitraan transisi energi berkeadilan: komitmen awal 20 miliar USD dari kelompok mitra internasional dan lembaga keuangan swasta untuk mempercepat pensiun batubara dan energi terbarukan.","cara":["Proyek diusulkan lewat Sekretariat JETP Indonesia.","Proyek dicocokkan dengan Comprehensive Investment and Policy Plan.","Pendanaan disalurkan lewat lembaga keuangan dan bank pembangunan mitra."],"url":"https://jetp-id.org/"},
-{"id":"sk_sukuk_hijau","nama":"Green Sukuk Negara","pemberi":"Kementerian Keuangan (DJPPR)","jenis":"obligasi hijau","iso2":"ID","sasaran":["pemerintah"],"sektor":["pembiayaan","surya","panas-bumi"],"uraian":"Sukuk negara berlabel hijau, diterbitkan sejak 2018 untuk membiayai belanja pemerintah pada proyek hijau; laporan alokasi dan dampak diterbitkan tahunan.","cara":["Instansi yang belanjanya memenuhi kerangka hijau dicatat sebagai proyek yang memenuhi syarat.","Kementerian Keuangan menerbitkan sukuk lalu melaporkan alokasi."],"url":"https://www.djppr.kemenkeu.go.id/"},
-{"id":"sk_efek_hijau","nama":"Obligasi dan sukuk hijau korporasi","pemberi":"Otoritas Jasa Keuangan","jenis":"obligasi hijau","iso2":"ID","sasaran":["BUMN","swasta"],"sektor":["pembiayaan","hidro","surya"],"uraian":"Efek bersifat utang berwawasan lingkungan: perusahaan menerbitkan obligasi atau sukuk dan menggunakan hasilnya untuk kegiatan usaha berwawasan lingkungan, termasuk energi terbarukan.","cara":["Siapkan kerangka penggunaan dana dan tinjauan pihak ketiga.","Ajukan pernyataan pendaftaran penerbitan ke OJK.","Laporkan penggunaan dana secara berkala."],"url":"https://www.ojk.go.id/"},
-{"id":"sk_idxcarbon","nama":"Perdagangan karbon di IDXCarbon","pemberi":"Bursa Efek Indonesia","jenis":"kredit karbon","iso2":"ID","sasaran":["swasta","BUMN"],"sektor":["karbon"],"uraian":"Bursa karbon resmi tempat unit karbon dari proyek terdaftar diperdagangkan; proyek harus tercatat di SRN PPI lebih dulu.","cara":["Daftarkan proyek dan unit karbon di SRN PPI.","Daftar sebagai pengguna jasa bursa karbon.","Perdagangkan unit karbon yang sudah tercatat."],"url":"https://idxcarbon.co.id/"},
-{"id":"sk_karbon_sukarela","nama":"Standar karbon sukarela (Verra dan Gold Standard)","pemberi":"Verra dan Gold Standard","jenis":"kredit karbon","sasaran":["swasta","LSM","pengembang proyek"],"sektor":["karbon","bioenergi","surya"],"uraian":"Standar internasional untuk menerbitkan kredit karbon dari proyek energi terbarukan dan biogas; pendapatan penjualan kredit menjadi sumber pendanaan proyek.","cara":["Pilih standar dan metodologi yang sesuai teknologi proyek.","Dokumen proyek divalidasi lalu didaftarkan.","Pemantauan diverifikasi sebelum kredit diterbitkan."],"url":"https://registry.verra.org/"},
-{"id":"sk_lpdp_riset","nama":"Pendanaan riset LPDP","pemberi":"Lembaga Pengelola Dana Pendidikan","jenis":"dana riset","iso2":"ID","sasaran":["peneliti","perguruan tinggi","lembaga riset"],"sektor":["riset-data"],"uraian":"Dana riset kompetitif dari LPDP, antara lain Riset dan Inovasi untuk Indonesia Maju bersama BRIN dan Dana Abadi Penelitian.","cara":["Pantau pengumuman skema di laman LPDP dan BRIN.","Daftarkan proposal lewat sistem yang ditunjuk pada masa penerimaan.","Proposal dinilai sejawat lalu hasilnya diumumkan."],"url":"https://www.lpdp.kemenkeu.go.id/"},
-{"id":"sk_brin_riset","nama":"Pendanaan riset dan inovasi BRIN","pemberi":"Badan Riset dan Inovasi Nasional","jenis":"dana riset","iso2":"ID","sasaran":["peneliti","perguruan tinggi"],"sektor":["riset-data"],"uraian":"Skema pendanaan riset BRIN lewat organisasi riset dan program kolaborasi dengan perguruan tinggi dan industri.","cara":["Pantau pengumuman di laman BRIN.","Ajukan proposal bersama peneliti BRIN bila skema mensyaratkan kolaborasi.","Ikuti seleksi dan kontrak riset."],"url":"https://www.brin.go.id/"},
-{"id":"sk_bima","nama":"Penelitian dan pengabdian lewat BIMA","pemberi":"Kementerian Pendidikan Tinggi, Sains, dan Teknologi","jenis":"dana riset","iso2":"ID","sasaran":["dosen","perguruan tinggi"],"sektor":["riset-data"],"uraian":"Hibah penelitian dan pengabdian kepada masyarakat untuk dosen, dikelola lewat sistem BIMA.","cara":["Dosen mengunggah proposal di sistem BIMA pada masa pengusulan.","Proposal dinilai reviewer.","Dana cair bertahap setelah kontrak."],"url":"https://bima.kemdiktisaintek.go.id/"},
-{"id":"sk_kedaireka","nama":"Matching Fund Kedaireka","pemberi":"Kementerian Pendidikan Tinggi, Sains, dan Teknologi","jenis":"dana riset","iso2":"ID","sasaran":["perguruan tinggi","industri"],"sektor":["industri","riset-data"],"uraian":"Dana padanan untuk kolaborasi perguruan tinggi dan mitra industri; mitra menyumbang dana sendiri dan pemerintah menambah.","cara":["Cari mitra industri yang bersedia menyumbang dana padanan.","Ajukan proposal bersama lewat platform Kedaireka.","Ikuti seleksi lalu pelaksanaan kolaborasi."],"url":"https://kedaireka.id/"}
+{
+"id": "sk_gcf",
+"nama": "Green Climate Fund",
+"pemberi": "Green Climate Fund",
+"jenis": "blended",
+"sasaran": [
+"pemerintah",
+"BUMN",
+"lembaga keuangan",
+"swasta"
+],
+"sektor": [
+"surya",
+"bayu",
+"panas-bumi",
+"efisiensi"
+],
+"uraian": "Dana iklim multilateral yang membiayai mitigasi dan adaptasi lewat hibah, pinjaman lunak, ekuitas, dan jaminan. Proposal diajukan lewat entitas terakreditasi dan disetujui otoritas nasional.",
+"cara": [
+"Hubungi otoritas nasional yang ditunjuk (di Indonesia berada di Kementerian Keuangan) untuk surat tanpa keberatan.",
+"Pilih entitas terakreditasi GCF sebagai pengusul proyek.",
+"Susun konsep lalu proposal pendanaan bersama entitas itu.",
+"Proposal dinilai sekretariat dan diputus Dewan GCF."
+],
+"url": "https://www.greenclimate.fund/"
+},
+{
+"id": "sk_gef",
+"nama": "Global Environment Facility",
+"pemberi": "Global Environment Facility",
+"jenis": "hibah",
+"sasaran": [
+"pemerintah",
+"lembaga riset",
+"LSM"
+],
+"sektor": [
+"bioenergi",
+"efisiensi",
+"karbon"
+],
+"uraian": "Hibah lingkungan global yang disalurkan lewat badan pelaksana seperti UNDP, ADB, dan Bank Dunia untuk proyek perubahan iklim dan keanekaragaman hayati.",
+"cara": [
+"Hubungi titik fokus operasional GEF di Indonesia (Kementerian Lingkungan Hidup).",
+"Cari badan pelaksana GEF yang bersedia mengusung proyek.",
+"Susun lembar identifikasi proyek lalu dokumen proyek penuh."
+],
+"url": "https://www.thegef.org/"
+},
+{
+"id": "sk_bpdlh",
+"nama": "Pendanaan Badan Pengelola Dana Lingkungan Hidup",
+"pemberi": "Badan Pengelola Dana Lingkungan Hidup",
+"jenis": "hibah",
+"iso2": "ID",
+"sasaran": [
+"pemerintah daerah",
+"LSM",
+"masyarakat",
+"lembaga riset"
+],
+"sektor": [
+"karbon",
+"bioenergi",
+"biomassa-sampah"
+],
+"uraian": "Badan layanan umum yang menghimpun dan menyalurkan dana lingkungan hidup dan dana iklim, termasuk untuk energi terbarukan berbasis masyarakat.",
+"cara": [
+"Pelajari jenis pembiayaan dan syarat di laman resmi lembaga.",
+"Siapkan proposal sesuai format dan ajukan lewat kanal yang diumumkan.",
+"Ikuti verifikasi dan penilaian oleh lembaga."
+],
+"url": "https://bpdlh.id/"
+},
+{
+"id": "sk_adb_etm",
+"nama": "Energy Transition Mechanism (ADB)",
+"pemberi": "Asian Development Bank",
+"jenis": "blended",
+"sasaran": [
+"BUMN",
+"pemerintah",
+"investor"
+],
+"sektor": [
+"transisi-adil",
+"surya",
+"jaringan"
+],
+"uraian": "Mekanisme pembiayaan campuran untuk mempensiunkan dini pembangkit batubara dan mengganti dengan energi bersih; di Indonesia dijalankan lewat platform negara bersama PT SMI.",
+"cara": [
+"Koordinasi dengan PT SMI dan Kementerian Keuangan sebagai penyelenggara platform negara.",
+"Ajukan calon proyek yang memenuhi kriteria platform.",
+"Struktur pembiayaan campuran disusun bersama mitra pembiayaan."
+],
+"url": "https://www.adb.org/"
+},
+{
+"id": "sk_acgf",
+"nama": "ASEAN Catalytic Green Finance Facility",
+"pemberi": "Asian Development Bank",
+"jenis": "blended",
+"sasaran": [
+"pemerintah",
+"BUMN",
+"BUMD"
+],
+"sektor": [
+"surya",
+"hidro",
+"jaringan"
+],
+"uraian": "Fasilitas ADB untuk menyiapkan dan membiayai proyek hijau di Asia Tenggara dengan hibah persiapan proyek dan pinjaman bersama mitra.",
+"cara": [
+"Ajukan konsep proyek lewat kontak ADB di Indonesia.",
+"Dapatkan dukungan persiapan proyek bila lolos tapis awal.",
+"Lanjut ke pembiayaan lewat pinjaman atau ko-pembiayaan."
+],
+"url": "https://www.adb.org/"
+},
+{
+"id": "sk_sdg_one",
+"nama": "SDG Indonesia One",
+"pemberi": "PT Sarana Multi Infrastruktur",
+"jenis": "blended",
+"iso2": "ID",
+"sasaran": [
+"pemerintah daerah",
+"BUMN",
+"swasta"
+],
+"sektor": [
+"surya",
+"hidro",
+"panas-bumi",
+"pembiayaan"
+],
+"uraian": "Platform pembiayaan campuran PT SMI yang menggabungkan dana publik, filantropi, dan swasta untuk infrastruktur berkelanjutan, termasuk energi terbarukan.",
+"cara": [
+"Hubungi PT SMI dengan ringkasan proyek dan struktur pembiayaan yang diusulkan.",
+"Ikuti uji tuntas kelayakan dan penilaian dampak.",
+"Tanda tangani perjanjian pembiayaan."
+],
+"url": "https://www.ptsmi.co.id/"
+},
+{
+"id": "sk_cif_act",
+"nama": "Accelerating Coal Transition (CIF ACT)",
+"pemberi": "Climate Investment Funds",
+"jenis": "blended",
+"sasaran": [
+"pemerintah",
+"BUMN"
+],
+"sektor": [
+"transisi-adil",
+"surya",
+"bayu"
+],
+"uraian": "Program Climate Investment Funds untuk percepatan transisi dari batubara, dengan pembiayaan lunak lewat bank pembangunan multilateral.",
+"cara": [
+"Koordinasi dengan Kementerian Keuangan dan bank pembangunan mitra (ADB, Bank Dunia).",
+"Susun rencana investasi sesuai kerangka program.",
+"Proyek dibiayai lewat bank pembangunan multilateral."
+],
+"url": "https://www.cif.org/"
+},
+{
+"id": "sk_greenbook",
+"nama": "Pinjaman luar negeri lewat Green Book",
+"pemberi": "Kementerian PPN/Bappenas",
+"jenis": "pinjaman lunak",
+"iso2": "ID",
+"sasaran": [
+"kementerian",
+"BUMN",
+"pemerintah daerah"
+],
+"sektor": [
+"jaringan",
+"hidro",
+"panas-bumi",
+"elektrifikasi"
+],
+"uraian": "Daftar rencana proyek yang layak dibiayai pinjaman luar negeri; proyek harus masuk daftar ini sebelum dibicarakan dengan pemberi pinjaman.",
+"cara": [
+"Instansi pelaksana mengusulkan proyek ke Bappenas.",
+"Proyek dinilai dan masuk daftar rencana pinjaman.",
+"Kementerian Keuangan dan pemberi pinjaman menegosiasikan persyaratan."
+],
+"url": "https://www.bappenas.go.id/"
+},
+{
+"id": "sk_jica",
+"nama": "Pinjaman ODA JICA",
+"pemberi": "Japan International Cooperation Agency",
+"jenis": "pinjaman lunak",
+"iso2": "JP",
+"negara": "Jepang",
+"sasaran": [
+"pemerintah",
+"BUMN"
+],
+"sektor": [
+"panas-bumi",
+"jaringan",
+"hidro"
+],
+"uraian": "Pinjaman bantuan pembangunan resmi Jepang bersuku bunga rendah dan tenor panjang untuk infrastruktur, termasuk pembangkit panas bumi dan jaringan listrik.",
+"cara": [
+"Usulan proyek masuk Green Book Bappenas.",
+"Pemerintah mengajukan permintaan resmi ke pemerintah Jepang.",
+"JICA melakukan survei persiapan dan penilaian lalu menyepakati perjanjian pinjaman."
+],
+"url": "https://www.jica.go.jp/indonesia/"
+},
+{
+"id": "sk_aiib",
+"nama": "Pembiayaan energi AIIB",
+"pemberi": "Asian Infrastructure Investment Bank",
+"jenis": "pinjaman lunak",
+"sasaran": [
+"pemerintah",
+"BUMN",
+"swasta"
+],
+"sektor": [
+"jaringan",
+"surya",
+"hidro"
+],
+"uraian": "Bank pembangunan multilateral yang membiayai infrastruktur energi berkelanjutan lewat pinjaman berdaulat dan non-berdaulat.",
+"cara": [
+"Hubungi tim AIIB untuk proyek calon.",
+"Lengkapi studi kelayakan, kajian lingkungan, dan sosial.",
+"Dewan memutuskan lalu perjanjian pembiayaan ditandatangani."
+],
+"url": "https://www.aiib.org/",
+"instrumen_detail": "Pembiayaan berdaulat (sovereign-backed) dan non-berdaulat (nonsovereign-backed)",
+"detail_sumber": [
+"https://www.aiib.org/en/about-aiib/index.html"
+]
+},
+{
+"id": "sk_kfw",
+"nama": "Kerja sama keuangan KfW",
+"pemberi": "KfW Development Bank",
+"jenis": "pinjaman lunak",
+"iso2": "DE",
+"negara": "Jerman",
+"sasaran": [
+"pemerintah",
+"BUMN"
+],
+"sektor": [
+"jaringan",
+"efisiensi",
+"bayu"
+],
+"uraian": "Pinjaman lunak dan hibah dari kerja sama pembangunan Jerman yang disalurkan lewat KfW, termasuk untuk koridor listrik hijau.",
+"cara": [
+"Usulan proyek disepakati dalam konsultasi pemerintah Indonesia dan Jerman.",
+"KfW menilai kelayakan proyek.",
+"Perjanjian pembiayaan ditandatangani oleh pemerintah dan pelaksana."
+],
+"url": "https://www.kfw-entwicklungsbank.de/"
+},
+{
+"id": "sk_jetp",
+"nama": "Just Energy Transition Partnership Indonesia",
+"pemberi": "International Partners Group dan GFANZ",
+"jenis": "JETP",
+"sasaran": [
+"BUMN",
+"swasta",
+"pemerintah"
+],
+"sektor": [
+"transisi-adil",
+"surya",
+"jaringan"
+],
+"nilai": 20000000000,
+"mata_uang": "USD",
+"besaran": "Komitmen awal 20 miliar USD",
+"uraian": "Kemitraan transisi energi berkeadilan: komitmen awal 20 miliar USD dari kelompok mitra internasional dan lembaga keuangan swasta untuk mempercepat pensiun batubara dan energi terbarukan.",
+"cara": [
+"Proyek diusulkan lewat Sekretariat JETP Indonesia.",
+"Proyek dicocokkan dengan Comprehensive Investment and Policy Plan.",
+"Pendanaan disalurkan lewat lembaga keuangan dan bank pembangunan mitra."
+],
+"url": "https://jetp-id.org/"
+},
+{
+"id": "sk_sukuk_hijau",
+"nama": "Green Sukuk Negara",
+"pemberi": "Kementerian Keuangan (DJPPR)",
+"jenis": "obligasi hijau",
+"iso2": "ID",
+"sasaran": [
+"pemerintah"
+],
+"sektor": [
+"pembiayaan",
+"surya",
+"panas-bumi"
+],
+"uraian": "Sukuk negara berlabel hijau, diterbitkan sejak 2018 untuk membiayai belanja pemerintah pada proyek hijau; laporan alokasi dan dampak diterbitkan tahunan.",
+"cara": [
+"Instansi yang belanjanya memenuhi kerangka hijau dicatat sebagai proyek yang memenuhi syarat.",
+"Kementerian Keuangan menerbitkan sukuk lalu melaporkan alokasi."
+],
+"url": "https://www.djppr.kemenkeu.go.id/"
+},
+{
+"id": "sk_efek_hijau",
+"nama": "Obligasi dan sukuk hijau korporasi",
+"pemberi": "Otoritas Jasa Keuangan",
+"jenis": "obligasi hijau",
+"iso2": "ID",
+"sasaran": [
+"BUMN",
+"swasta"
+],
+"sektor": [
+"pembiayaan",
+"hidro",
+"surya"
+],
+"uraian": "Efek bersifat utang berwawasan lingkungan: perusahaan menerbitkan obligasi atau sukuk dan menggunakan hasilnya untuk kegiatan usaha berwawasan lingkungan, termasuk energi terbarukan.",
+"cara": [
+"Siapkan kerangka penggunaan dana dan tinjauan pihak ketiga.",
+"Ajukan pernyataan pendaftaran penerbitan ke OJK.",
+"Laporkan penggunaan dana secara berkala."
+],
+"url": "https://www.ojk.go.id/"
+},
+{
+"id": "sk_idxcarbon",
+"nama": "Perdagangan karbon di IDXCarbon",
+"pemberi": "Bursa Efek Indonesia",
+"jenis": "kredit karbon",
+"iso2": "ID",
+"sasaran": [
+"swasta",
+"BUMN"
+],
+"sektor": [
+"karbon"
+],
+"uraian": "Bursa karbon resmi tempat unit karbon dari proyek terdaftar diperdagangkan; proyek harus tercatat di SRN PPI lebih dulu.",
+"cara": [
+"Daftarkan proyek dan unit karbon di SRN PPI.",
+"Daftar sebagai pengguna jasa bursa karbon.",
+"Perdagangkan unit karbon yang sudah tercatat."
+],
+"url": "https://idxcarbon.co.id/"
+},
+{
+"id": "sk_karbon_sukarela",
+"nama": "Standar karbon sukarela (Verra dan Gold Standard)",
+"pemberi": "Verra dan Gold Standard",
+"jenis": "kredit karbon",
+"sasaran": [
+"swasta",
+"LSM",
+"pengembang proyek"
+],
+"sektor": [
+"karbon",
+"bioenergi",
+"surya"
+],
+"uraian": "Standar internasional untuk menerbitkan kredit karbon dari proyek energi terbarukan dan biogas; pendapatan penjualan kredit menjadi sumber pendanaan proyek.",
+"cara": [
+"Pilih standar dan metodologi yang sesuai teknologi proyek.",
+"Dokumen proyek divalidasi lalu didaftarkan.",
+"Pemantauan diverifikasi sebelum kredit diterbitkan."
+],
+"url": "https://registry.verra.org/"
+},
+{
+"id": "sk_lpdp_riset",
+"nama": "Pendanaan riset LPDP",
+"pemberi": "Lembaga Pengelola Dana Pendidikan",
+"jenis": "dana riset",
+"iso2": "ID",
+"sasaran": [
+"peneliti",
+"perguruan tinggi",
+"lembaga riset"
+],
+"sektor": [
+"riset-data"
+],
+"uraian": "Dana riset kompetitif dari LPDP, antara lain Riset dan Inovasi untuk Indonesia Maju bersama BRIN dan Dana Abadi Penelitian.",
+"cara": [
+"Pantau pengumuman skema di laman LPDP dan BRIN.",
+"Daftarkan proposal lewat sistem yang ditunjuk pada masa penerimaan.",
+"Proposal dinilai sejawat lalu hasilnya diumumkan."
+],
+"url": "https://www.lpdp.kemenkeu.go.id/"
+},
+{
+"id": "sk_brin_riset",
+"nama": "Pendanaan riset dan inovasi BRIN",
+"pemberi": "Badan Riset dan Inovasi Nasional",
+"jenis": "dana riset",
+"iso2": "ID",
+"sasaran": [
+"peneliti",
+"perguruan tinggi"
+],
+"sektor": [
+"riset-data"
+],
+"uraian": "Skema pendanaan riset BRIN lewat organisasi riset dan program kolaborasi dengan perguruan tinggi dan industri.",
+"cara": [
+"Pantau pengumuman di laman BRIN.",
+"Ajukan proposal bersama peneliti BRIN bila skema mensyaratkan kolaborasi.",
+"Ikuti seleksi dan kontrak riset."
+],
+"url": "https://www.brin.go.id/"
+},
+{
+"id": "sk_bima",
+"nama": "Penelitian dan pengabdian lewat BIMA",
+"pemberi": "Kementerian Pendidikan Tinggi, Sains, dan Teknologi",
+"jenis": "dana riset",
+"iso2": "ID",
+"sasaran": [
+"dosen",
+"perguruan tinggi"
+],
+"sektor": [
+"riset-data"
+],
+"uraian": "Hibah penelitian dan pengabdian kepada masyarakat untuk dosen, dikelola lewat sistem BIMA.",
+"cara": [
+"Dosen mengunggah proposal di sistem BIMA pada masa pengusulan.",
+"Proposal dinilai reviewer.",
+"Dana cair bertahap setelah kontrak."
+],
+"url": "https://bima.kemdiktisaintek.go.id/"
+},
+{
+"id": "sk_kedaireka",
+"nama": "Matching Fund Kedaireka",
+"pemberi": "Kementerian Pendidikan Tinggi, Sains, dan Teknologi",
+"jenis": "dana riset",
+"iso2": "ID",
+"sasaran": [
+"perguruan tinggi",
+"industri"
+],
+"sektor": [
+"industri",
+"riset-data"
+],
+"uraian": "Dana padanan untuk kolaborasi perguruan tinggi dan mitra industri; mitra menyumbang dana sendiri dan pemerintah menambah.",
+"cara": [
+"Cari mitra industri yang bersedia menyumbang dana padanan.",
+"Ajukan proposal bersama lewat platform Kedaireka.",
+"Ikuti seleksi lalu pelaksanaan kolaborasi."
+],
+"url": "https://kedaireka.id/"
+}
 ]

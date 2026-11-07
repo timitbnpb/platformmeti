@@ -79,7 +79,7 @@ test("kamus: id dan en sekunci, parameter {x} sama, tanpa em dash, titik tengah,
     for (const [kunci, v] of Object.entries(k.id)) {
       assert.ok(v && k.en[kunci], `${nama}.${kunci} kosong`);
       assert.equal(par(k.en[kunci]), par(v), `${nama}.${kunci} parameter beda`);
-      assert.doesNotMatch(v + k.en[kunci], /[—·→]/, `${nama}.${kunci} karakter terlarang`);
+      assert.doesNotMatch(v + k.en[kunci], /[\u2014\u00b7\u2192]/, `${nama}.${kunci} karakter terlarang`);
     }
     for (const u of Object.keys(UMUM)) assert.ok(u in k.id, `${nama} tanpa ${u}`);
     assert.ok(HALAMAN[nama]);

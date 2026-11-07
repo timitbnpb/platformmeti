@@ -6,6 +6,7 @@ import { t, tanggal, angka } from "/i18n.js";
 import { esc, ikon } from "/inti/umum.js";
 import { sumberHtml } from "/inti/komponen.js";
 import { ikonTek } from "/inti/ikon_tek.js";
+import { namaGelar } from "/inti/nama_baku.js";
 
 const muat = (n) => fetch(`/data/${n}.json`).then((r) => { if (!r.ok) throw new Error(n); return r.json(); });
 const MI = "https://metiires.or.id";
@@ -99,7 +100,9 @@ function teknologi(D) {
 /* SDU: Chief dan Vice Chief jadi pimpinan; PMO di popup, jabatan tanpa awalan "PMO " */
 const sdu = (a) => ringkas(t("tn.u.sdu"), a.map((o) => (o.pmo ? { ...o, jabatan: o.jabatan.replace(/^PMO\s+/, "") } : o)), { ik: "direktori", pimpinan: /^(Chief|Vice Chief)\b/ });
 
+let PERIODE = "";
 function struktur(p) {
+  PERIODE = p.periode || "";
   const U = p.unit, d = U.dewan || [], iPakar = d.findIndex((o) => /Ketua Dewan Pakar/.test(o.jabatan));
   const pengawas = iPakar < 0 ? d : d.slice(0, iPakar), pakar = iPakar < 0 ? [] : d.slice(iPakar);
   const bidang = p.bidang.filter((b) => b.nama);
@@ -112,7 +115,7 @@ function struktur(p) {
     ${ket ? `<div class="tn-r tn-r1"><section class="tn-grp tn-ketum">${kepalaGrup("orang", t("tn.u.ketum"))}${ul([ket], "besar")}</section></div><div class="tn-konek" aria-hidden="true"></div>` : ""}
     <div class="tn-r tn-r2">${baris2}</div></div>
     <h3 class="tn-sub">${ikon("daftar", 18)}<span>${esc(t("tn.u.bidang"))}</span></h3><div class="tn-bidang tn-bk9">${bidang.map(kb).join("")}</div>
-    <h3 class="tn-sub">${ikon("wilayah", 18)}<span>${esc(t("tn.u.unit"))}</span></h3><div class="tn-bidang">${[U.institute && ringkas(t("tn.u.institute"), U.institute), U.wilayah && ringkas(t("tn.u.wilayah"), U.wilayah, { ik: "wilayah" }), U.muda && ringkas(t("tn.u.muda"), U.muda), U.komite && ringkas(t("tn.u.komite"), U.komite), U.staf && ringkas(t("tn.u.staf"), U.staf), U.sdu && sdu(U.sdu)].filter(Boolean).join("")}</div></section>`;
+    <h3 class="tn-sub">${ikon("wilayah", 18)}<span>${esc(t("tn.u.unit"))}</span></h3><div class="tn-bidang tn-unit-k">${[U.institute && ringkas(t("tn.u.institute"), U.institute), U.wilayah && ringkas(t("tn.u.wilayah"), U.wilayah, { ik: "wilayah" }), U.muda && ringkas(t("tn.u.muda"), U.muda), U.komite && ringkas(t("tn.u.komite"), U.komite), U.staf && ringkas(t("tn.u.staf"), U.staf), U.sdu && sdu(U.sdu)].filter(Boolean).join("")}</div></section>`;
 }
 
 function mitra(m) {
@@ -158,24 +161,59 @@ const manusia = (k) => { const s = String(k).replace(/-/g, " "); return s.charAt
 const norm = (n) => String(n).toLowerCase().replace(/\b(dr|ir|prof|drs|drg|mt|msc|mba|ph\.?d|s\.?t|m\.?t|s\.?e|m\.?m)\b\.?/g, "").replace(/[^a-z ]/g, "").replace(/\s+/g, " ").trim();
 let orangP;
 const dataOrang = () => orangP ??= muat("orang").then((d) => d.baris || []).catch(() => []);
-const bag = (judul, isi) => isi ? `<section class="tn-pb"><h4>${esc(judul)}</h4>${isi}</section>` : "";
+/* angka jabatan seragam: "Wakil Ketua Umum 2" dan "... II" sama-sama jadi romawi */
+const ROMAWI = ["", "I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX", "X"];
+const seragam = (j) => String(j || "").replace(/^(Wakil (?:Ketua Umum|Sekretaris Jenderal|Bendahara Umum|Direktur Eksekutif)|Sekretaris Jenderal)\s+(\d{1,2})$/, (m, a, n) => `${a} ${ROMAWI[+n] || n}`);
+const dasarJ = (j) => String(j || "").replace(/\s*\(.*$/, "").trim().toLowerCase();
+const laMETI = (x) => /\bMETI\b|Masyarakat Energi Terbarukan/i.test(x.organisasi || "");
+/* gabung butir ganda (jabatan sama dasar + organisasi sama): nama terpanjang menang, rentang tahun digabung */
+function rekam(a) {
+  const hasil = [];
+  for (const x of a) {
+    const d = hasil.find((y) => norm(y.organisasi || "") === norm(x.organisasi || "") && (dasarJ(y.jabatan) === dasarJ(x.jabatan)));
+    if (!d) { hasil.push({ ...x }); continue; }
+    if (String(x.jabatan).length > String(d.jabatan).length) d.jabatan = x.jabatan;
+    d.mulai = [d.mulai, x.mulai].filter(Boolean).sort()[0] || d.mulai;
+    d.selesai = [d.selesai, x.selesai].filter(Boolean).sort().pop() || d.selesai;
+    d.kini = d.kini || x.kini; d.organisasi_id = d.organisasi_id || x.organisasi_id;
+  }
+  return hasil;
+}
+const logoOrg = (x) => (x.organisasi_id ? `<img class="tn-pl" src="/img/logo/org/${esc(x.organisasi_id)}.png" alt="" width="40" height="40">` : `<span class="tn-pl tn-pl-ik">${ikon("gedung", 18)}</span>`);
 function profil(p, o) {
   o = o || {};
-  const jb = []; const lihat = new Set();
-  for (const x of o.jabatan || []) { const k = (x.jabatan || "") + "|" + norm(x.organisasi || ""); if (!x.jabatan || lihat.has(k)) continue; lihat.add(k); jb.push(x); }
-  const th = (x) => { const m = String(x.mulai || "").slice(0, 4), s = x.kini ? t("tn.p.sekarang") : String(x.selesai || "").slice(0, 4); return m || s ? `${m}${m && s ? " - " : ""}${s}` : ""; };
-  const kini = o.jabatan_terkini || o.organisasi_terkini ? `<p class="tn-kini">${o.organisasi_id ? `<img class="tn-pl" src="/img/logo/org/${esc(o.organisasi_id)}.png" alt="" width="40" height="40">` : ""}<span><b>${esc(o.jabatan_terkini || "")}</b><small>${esc(o.organisasi_terkini || "")}</small></span></p>` : "";
+  /* jabatan METI mengikuti SK (pengurus-meti.json); butir panen METI yang bertentangan disembunyikan */
+  const sk = seragam(p.jabatan);
+  /* butir panen METI periode berjalan digantikan jabatan SK; butir METI periode lama tetap tampil */
+  const jb = rekam(o.jabatan || []).filter((x) => x.jabatan && !(laMETI(x) && (x.kini || Number(String(x.mulai).slice(0, 4)) >= 2025)));
+  const lain = jb.filter((x) => !laMETI(x));
+  const th = (x) => { const m = String(x.mulai || "").slice(0, 4), s = x.kini ? t("tn.p.sekarang") : String(x.selesai || "").slice(0, 4); return m && s ? t("tn.p.sampai", { a: m, b: s }) : m || s; };
+  const metiOrg = (o.organisasi_id && laMETI({ organisasi: o.organisasi_terkini })) ? o.organisasi_id : (jb.find(laMETI) || {}).organisasi_id;
+  const pitaMeti = `<li class="tn-pk-r"><span class="tn-pk-t">${logoOrg({ organisasi_id: metiOrg })}</span><span><b>${esc(sk)}</b><small>${esc(t("tn.p.org_meti"))}${PERIODE ? ", " + esc(t("tn.p.periode_n", { p: PERIODE })) : ""}</small></span></li>`;
+  const urut = [pitaMeti, ...lain.map((x) => `<li class="tn-pk-r"><span class="tn-pk-t">${logoOrg(x)}</span><span><b>${esc(seragam(x.jabatan))}</b><small>${esc(x.organisasi || "")}${th(x) ? ", " + esc(th(x)) : ""}</small></span></li>`)];
+  const skrg = lain.find((x) => x.kini);
+  const kini = skrg ? `<p class="tn-kini">${logoOrg(skrg)}<span>${esc(skrg.organisasi || "")}</span></p>` : "";
   const pend = (o.pendidikan || []).map((x) => `<li>${esc(typeof x === "string" ? x : [x.jenjang, x.institusi, x.tahun].filter(Boolean).join(", "))}</li>`).join("");
-  const tau = (o.tautan || []).filter((x) => http(x.url)).map((x) => `<a href="${esc(x.url)}" target="_blank" rel="noopener noreferrer">${esc(host(x.url))}</a>`).join("");
-  const sum = [...new Set([o.sumber_url, ...jb.map((x) => x.sumber_url)].filter(http))].map((u) => `<a href="${esc(u)}" target="_blank" rel="noopener noreferrer">${esc(host(u))}</a>`).join("");
-  const ada = kini || o.ringkasan || (o.kepakaran || []).length || jb.length || pend || tau;
-  return `<header class="tn-ph">${avatar(p, true)}<div><h3 id="tn-pj">${esc((o.gelar ? o.gelar + " " : "") + p.nama)}</h3><p class="tn-chip">${esc(t("tn.p.meti"))}: ${esc(p.jabatan)}</p></div></header>
-  ${bag(t("tn.p.kini"), kini)}${o.ringkasan ? bag(t("tn.p.ringkas"), `<p>${esc(o.ringkasan)}</p>`) : ""}
-  ${bag(t("tn.p.pakar"), (o.kepakaran || []).length ? `<p class="tn-pil">${o.kepakaran.map((x) => `<span>${esc(manusia(x.kode || x))}</span>`).join("")}</p>` : "")}
-  ${bag(t("tn.p.jejak"), jb.length ? `<ol class="tn-jejak">${jb.map((x) => `<li><b>${esc(x.jabatan)}</b><small>${esc(x.organisasi || "")}${th(x) ? " , " + esc(th(x)) : ""}</small></li>`).join("")}</ol>` : "")}
-  ${bag(t("tn.p.pendidikan"), pend ? `<ul class="tn-pend">${pend}</ul>` : "")}${bag(t("tn.p.tautan"), tau ? `<p class="tn-tau">${tau}</p>` : "")}${bag(t("tn.p.sumber"), sum ? `<p class="tn-tau">${sum}</p>` : "")}
-  ${ada ? "" : `<p class="tn-kosongp">${esc(t("tn.p.kosong"))}</p>`}`;
+  const tautanAda = (o.tautan || []).filter((x) => http(x.url));
+  const tau = [...new Map(tautanAda.map((x) => [x.url, x])).values()].map((x) => `<a class="tn-tbl-tau" href="${esc(x.url)}" target="_blank" rel="noopener noreferrer">${ikon(/linkedin/i.test(x.url) ? "linkedin" : "tautan", 16)}<span>${esc(host(x.url))}</span></a>`).join("");
+  const sudah = new Set(tautanAda.map((x) => x.url));
+  const sum = [...new Set([o.sumber_url, ...jb.map((x) => x.sumber_url)].filter((u) => http(u) && !sudah.has(u)))].map((u) => `<a href="${esc(u)}" target="_blank" rel="noopener noreferrer">${esc(host(u))}</a>`).join(" ");
+  const nama = namaGelar(p.nama, o.gelar);
+  const foto = p.foto ? `<img class="tn-pk-foto" src="${esc(p.foto)}" alt="" width="132" height="132">` : `<span class="tn-pk-foto tn-pk-ini" aria-hidden="true">${esc(inisial(p.nama))}</span>`;
+  const ringkasBasi = /menjabat .+ di METI periode/i.test(o.ringkasan || "");
+  const kiri = [o.ringkasan && !ringkasBasi ? bagI("info", t("tn.p.ringkas"), `<p>${esc(o.ringkasan)}</p>`) : "",
+    (o.kepakaran || []).length ? bagI("insight", t("tn.p.pakar"), `<p class="tn-pil">${o.kepakaran.map((x) => `<span>${esc(manusia(x.kode || x))}</span>`).join("")}</p>`) : "",
+    bagI("jejak", t("tn.p.jejak"), `<ol class="tn-pk-jejak">${urut.join("")}</ol>`),
+    pend ? bagI("buku", t("tn.p.pendidikan"), `<ul class="tn-pend">${pend}</ul>`) : ""].join("");
+  const kanan = `<section class="tn-pk-kartu"><h4>${ikon("orang", 16)}<span>${esc(t("tn.p.di_meti"))}</span></h4><p><b>${esc(sk)}</b>${PERIODE ? `<small>${esc(t("tn.p.periode_n", { p: PERIODE }))}</small>` : ""}</p></section>`
+    + (tau ? `<section class="tn-pk-kartu"><h4>${ikon("tautan", 16)}<span>${esc(t("tn.p.tautan"))}</span></h4><div class="tn-tau">${tau}</div></section>` : "")
+    + (sum ? `<p class="tn-pk-sumber">${sumberHtml(sum, t("tn.p.sumber"))}<span>${esc(t("tn.p.sumber"))}</span></p>` : "");
+  return `<div class="tn-pk-pita jm-batik" aria-hidden="true"></div>
+  <header class="tn-ph tn-pk-kepala">${foto}<div class="tn-pk-nama"><h3 id="tn-pj">${esc(nama)}</h3><p class="tn-chip">${ikon("orang", 16)}<span>${esc(sk)}</span></p>${kini}</div></header>
+  <div class="tn-pk-isi"><div class="tn-pk-kiri">${kiri}</div><aside class="tn-pk-kanan">${kanan}</aside></div>`;
 }
+const bagI = (ik, judul, isi) => `<section class="tn-pb"><h4>${ikon(ik, 18)}<span>${esc(judul)}</span></h4>${isi}</section>`;
+
 /* popup daftar anggota: kotak cari + kisi kartu seragam; klik kartu membuka profil */
 const dd = document.createElement("dialog");
 dd.className = "tn-dlg tn-dlg-daftar"; dd.setAttribute("aria-labelledby", "tn-dd-j");
@@ -206,5 +244,5 @@ async function bukaProfil(k) {
 isi.addEventListener("click", (e) => { const b = e.target.closest("[data-p]"); if (b) bukaProfil(b.dataset.p); });
 dlg.addEventListener("click", (e) => { if (e.target === dlg || e.target.closest("[data-tutup]")) dlg.close(); });
 dlg.addEventListener("close", () => { tokenP++; if (location.hash.startsWith("#pengurus-")) history.replaceState(null, "", location.pathname + location.search); });
-dlg.addEventListener("error", (e) => { if (e.target.classList && e.target.classList.contains("tn-pl")) e.target.hidden = true; }, true);
+dlg.addEventListener("error", (e) => { if (e.target.classList && e.target.classList.contains("tn-pl")) e.target.replaceWith(Object.assign(document.createElement("span"), { className: "tn-pl tn-pl-ik", innerHTML: ikon("gedung", 18) })); }, true);
 if (location.hash.startsWith("#pengurus-")) bukaProfil(decodeURIComponent(location.hash.slice(10)));

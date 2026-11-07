@@ -1,0 +1,2608 @@
+{
+ "meta": {
+  "diperbarui": "2026-11-08",
+  "organisasi_bertaut": 72,
+  "organisasi_publik_bertaut": 72,
+  "tautan": 292,
+  "keterangan": "Tautan organisasi-proyek dari data yang sudah ada; cocok = nama baku persis, alias kurasi, atau id dari sumber. Bukan pernyataan resmi kepemilikan."
+ },
+ "baris": {
+  "in_0b044d6d3e": [
+   {
+    "proyek_id": "gem_hydropower_L100000602139",
+    "peran": "pemilik",
+    "nama_di_sumber": "IGIS Asset Management",
+    "cocok": "id-sumber",
+    "sumber": "proyek.json pihak.pemilik",
+    "sumber_url": "https://www.gem.wiki/Peusangan_4_hydroelectric_plant"
+   }
+  ],
+  "in_12838779f4": [
+   {
+    "proyek_id": "gem_solar_L100000808624",
+    "peran": "pemilik",
+    "nama_di_sumber": "PacificLight Power Pte Ltd",
+    "cocok": "nama-baku",
+    "sumber": "proyek.json pihak.pemilik",
+    "sumber_url": "https://www.gem.wiki/Pulau_Bulan_solar_farm"
+   }
+  ],
+  "in_2180abe49a": [
+   {
+    "proyek_id": "gem_hydropower_L100000602139",
+    "peran": "pemilik",
+    "nama_di_sumber": "Korea South-East Power Co Ltd",
+    "cocok": "alias-kurasi",
+    "sumber": "proyek.json pihak.pemilik",
+    "sumber_url": "https://www.gem.wiki/Peusangan_4_hydroelectric_plant"
+   }
+  ],
+  "in_2acc58947a": [
+   {
+    "proyek_id": "pj_0193",
+    "peran": "pemilik",
+    "nama_di_sumber": "International Finance Corp",
+    "cocok": "nama-baku",
+    "sumber": "Global Energy Monitor hydropower L100000602099 (CC BY 4.0)",
+    "sumber_url": "https://www.gem.wiki/Asahan_1_hydroelectric_plant"
+   }
+  ],
+  "in_2e43564369": [
+   {
+    "proyek_id": "gem_geothermal_L100000700146",
+    "peran": "pemilik",
+    "nama_di_sumber": "Tohoku Electric Power Co Inc",
+    "cocok": "nama-baku",
+    "sumber": "proyek.json pihak.pemilik",
+    "sumber_url": "https://www.gem.wiki/Rantau_Dedep_geothermal_power_plant"
+   }
+  ],
+  "in_3b887e9870": [
+   {
+    "proyek_id": "gem_hydropower_L100000602113",
+    "peran": "pemilik",
+    "nama_di_sumber": "China Gezhouba Group Co Ltd",
+    "cocok": "nama-baku",
+    "sumber": "proyek.json pihak.pemilik",
+    "sumber_url": "https://www.gem.wiki/Karama_hydroelectric_plant"
+   }
+  ],
+  "in_4828a8b867": [
+   {
+    "proyek_id": "pj_0272",
+    "peran": "pemilik",
+    "nama_di_sumber": "KS Orka Renewables Pte Ltd",
+    "cocok": "nama-baku",
+    "sumber": "proyek.json pihak.pemilik",
+    "sumber_url": "https://www.gem.wiki/Sorik_Marapi_geothermal_power_plant"
+   }
+  ],
+  "in_4894dd74a1": [
+   {
+    "proyek_id": "gem_solar_L100000808624",
+    "peran": "pemilik",
+    "nama_di_sumber": "Gallant Venture Ltd",
+    "cocok": "nama-baku",
+    "sumber": "proyek.json pihak.pemilik",
+    "sumber_url": "https://www.gem.wiki/Pulau_Bulan_solar_farm"
+   }
+  ],
+  "in_4f5283b206": [
+   {
+    "proyek_id": "gem_hydropower_L100001045710",
+    "peran": "pemilik",
+    "nama_di_sumber": "Korea Midland Power Co Ltd",
+    "cocok": "alias-kurasi",
+    "sumber": "proyek.json pihak.pemilik",
+    "sumber_url": "https://www.gem.wiki/Semangka_hydroelectric_plant"
+   }
+  ],
+  "in_54c23478f6": [
+   {
+    "proyek_id": "pj_0235",
+    "peran": "pemilik",
+    "nama_di_sumber": "Star Energy Group PLC",
+    "cocok": "nama-baku",
+    "sumber": "proyek.json pihak.pemilik",
+    "sumber_url": "https://www.gem.wiki/Gunung_Salak_geothermal_power_plant"
+   }
+  ],
+  "in_89f1a09a87": [
+   {
+    "proyek_id": "pj_0362",
+    "peran": "pemilik",
+    "nama_di_sumber": "Sunseap Group Pte Ltd",
+    "cocok": "nama-baku",
+    "sumber": "proyek.json pihak.pemilik",
+    "sumber_url": "https://www.gem.wiki/Batam_solar_farm"
+   }
+  ],
+  "in_95da3452e6": [
+   {
+    "proyek_id": "pjb_002",
+    "peran": "pemilik",
+    "nama_di_sumber": "CITICC)",
+    "cocok": "nama-baku+bagian",
+    "sumber": "proyek.json pihak.pemilik",
+    "sumber_url": "https://www.liputan6.com/bisnis/read/8251038/daftar-nama-8-mitra-penggarap-proyek-listrik-dari-sampah-di-indonesia"
+   }
+  ],
+  "in_9a7fdc6930": [
+   {
+    "proyek_id": "pj_0094",
+    "peran": "pemilik",
+    "nama_di_sumber": "Kansai Electric Power Co",
+    "cocok": "nama-baku",
+    "sumber": "proyek.json pihak.pemilik",
+    "sumber_url": "https://www.gem.wiki/Rajamandala_hydroelectric_plant"
+   }
+  ],
+  "in_9b3c77e60e": [
+   {
+    "proyek_id": "gem_hydropower_L100001045710",
+    "peran": "pemilik",
+    "nama_di_sumber": "Posco E&C",
+    "cocok": "id-sumber",
+    "sumber": "proyek.json pihak.pemilik",
+    "sumber_url": "https://www.gem.wiki/Semangka_hydroelectric_plant"
+   }
+  ],
+  "in_9d25098c0a": [
+   {
+    "proyek_id": "pj_0235",
+    "peran": "pemilik",
+    "nama_di_sumber": "Electricity Generating PCL",
+    "cocok": "id-sumber",
+    "sumber": "proyek.json pihak.pemilik",
+    "sumber_url": "https://www.gem.wiki/Gunung_Salak_geothermal_power_plant"
+   }
+  ],
+  "in_c2d500ab0e": [
+   {
+    "proyek_id": "pj_0004",
+    "peran": "pemilik",
+    "nama_di_sumber": "Pace Energy Pvt Ltd",
+    "cocok": "nama-baku",
+    "sumber": "proyek.json pihak.pemilik",
+    "sumber_url": "https://www.gem.wiki/Tanah_Laut_wind_farm"
+   }
+  ],
+  "in_c699a709bf": [
+   {
+    "proyek_id": "gem_geothermal_L100001025604",
+    "peran": "pemilik",
+    "nama_di_sumber": "Ormat Technology Inc",
+    "cocok": "alias-kurasi",
+    "sumber": "proyek.json pihak.pemilik",
+    "sumber_url": "https://www.gem.wiki/Toka_Tindung_geothermal_power_plant"
+   },
+   {
+    "proyek_id": "pj_0246",
+    "peran": "pemilik",
+    "nama_di_sumber": "Ormat Technology Inc",
+    "cocok": "alias-kurasi",
+    "sumber": "proyek.json pihak.pemilik",
+    "sumber_url": "https://www.gem.wiki/Blawan_Ijen_geothermal_project"
+   }
+  ],
+  "in_cd6da9ed54": [
+   {
+    "proyek_id": "pj_0047",
+    "peran": "pemilik",
+    "nama_di_sumber": "Veolia Environmental Services Asia Pte. Ltd (Veolia)",
+    "cocok": "alias-kurasi",
+    "sumber": "proyek.json pihak.pemilik",
+    "sumber_url": "https://www.liputan6.com/bisnis/read/8251038/daftar-nama-8-mitra-penggarap-proyek-listrik-dari-sampah-di-indonesia"
+   }
+  ],
+  "in_d74dc14459": [
+   {
+    "proyek_id": "gem_hydropower_L100000602139",
+    "peran": "pemilik",
+    "nama_di_sumber": "Hyundai Engineering & Construction Co Ltd",
+    "cocok": "nama-baku",
+    "sumber": "proyek.json pihak.pemilik",
+    "sumber_url": "https://www.gem.wiki/Peusangan_4_hydroelectric_plant"
+   }
+  ],
+  "in_ec6d8569f9": [
+   {
+    "proyek_id": "pj_0265",
+    "peran": "pemilik",
+    "nama_di_sumber": "INPEX Corp",
+    "cocok": "nama-baku",
+    "sumber": "proyek.json pihak.pemilik",
+    "sumber_url": "https://www.gem.wiki/Muarah_Laboh_geothermal_plant"
+   }
+  ],
+  "in_fe6aa1aba4": [
+   {
+    "proyek_id": "gem_solar_L100000800820",
+    "peran": "pemilik",
+    "nama_di_sumber": "Solar Philippines",
+    "cocok": "id-sumber",
+    "sumber": "proyek.json pihak.pemilik",
+    "sumber_url": "https://www.gem.wiki/Bali-2_solar_farm"
+   }
+  ],
+  "l_18a9ec31f4": [
+   {
+    "proyek_id": "pj_0286",
+    "peran": "pendana",
+    "nama_di_sumber": "World Bank (IBRD/IDA)",
+    "cocok": "id-sumber",
+    "sumber": "pendanaan.json pw_P178779",
+    "sumber_url": "https://projects.worldbank.org/en/projects-operations/project-detail/P178779"
+   },
+   {
+    "proyek_id": "wb_P003803",
+    "peran": "pendana",
+    "nama_di_sumber": "World Bank (IBRD/IDA)",
+    "cocok": "id-sumber",
+    "sumber": "pendanaan.json pd_wb_P003803",
+    "sumber_url": "https://projects.worldbank.org/en/projects-operations/project-detail/P003803"
+   },
+   {
+    "proyek_id": "wb_P003825",
+    "peran": "pendana",
+    "nama_di_sumber": "World Bank (IBRD/IDA)",
+    "cocok": "id-sumber",
+    "sumber": "pendanaan.json pd_wb_P003825",
+    "sumber_url": "https://projects.worldbank.org/en/projects-operations/project-detail/P003825"
+   },
+   {
+    "proyek_id": "wb_P003826",
+    "peran": "pendana",
+    "nama_di_sumber": "World Bank (IBRD/IDA)",
+    "cocok": "id-sumber",
+    "sumber": "pendanaan.json pd_wb_P003826",
+    "sumber_url": "https://projects.worldbank.org/en/projects-operations/project-detail/P003826"
+   },
+   {
+    "proyek_id": "wb_P003835",
+    "peran": "pendana",
+    "nama_di_sumber": "World Bank (IBRD/IDA)",
+    "cocok": "id-sumber",
+    "sumber": "pendanaan.json pd_wb_P003835",
+    "sumber_url": "https://projects.worldbank.org/en/projects-operations/project-detail/P003835"
+   },
+   {
+    "proyek_id": "wb_P003846",
+    "peran": "pendana",
+    "nama_di_sumber": "World Bank (IBRD/IDA)",
+    "cocok": "id-sumber",
+    "sumber": "pendanaan.json pd_wb_P003846",
+    "sumber_url": "https://projects.worldbank.org/en/projects-operations/project-detail/P003846"
+   },
+   {
+    "proyek_id": "wb_P003910",
+    "peran": "pendana",
+    "nama_di_sumber": "World Bank (IBRD/IDA)",
+    "cocok": "id-sumber",
+    "sumber": "pendanaan.json pd_wb_P003910",
+    "sumber_url": "https://projects.worldbank.org/en/projects-operations/project-detail/P003910"
+   },
+   {
+    "proyek_id": "wb_P003918",
+    "peran": "pendana",
+    "nama_di_sumber": "World Bank (IBRD/IDA)",
+    "cocok": "id-sumber",
+    "sumber": "pendanaan.json pd_wb_P003918",
+    "sumber_url": "https://projects.worldbank.org/en/projects-operations/project-detail/P003918"
+   },
+   {
+    "proyek_id": "wb_P003920",
+    "peran": "pendana",
+    "nama_di_sumber": "World Bank (IBRD/IDA)",
+    "cocok": "id-sumber",
+    "sumber": "pendanaan.json pd_wb_P003920",
+    "sumber_url": "https://projects.worldbank.org/en/projects-operations/project-detail/P003920"
+   },
+   {
+    "proyek_id": "wb_P003975",
+    "peran": "pendana",
+    "nama_di_sumber": "World Bank (IBRD/IDA)",
+    "cocok": "id-sumber",
+    "sumber": "pendanaan.json pd_wb_P003975",
+    "sumber_url": "https://projects.worldbank.org/en/projects-operations/project-detail/P003975"
+   },
+   {
+    "proyek_id": "wb_P003979",
+    "peran": "pendana",
+    "nama_di_sumber": "World Bank (IBRD/IDA)",
+    "cocok": "id-sumber",
+    "sumber": "pendanaan.json pd_wb_P003979",
+    "sumber_url": "https://projects.worldbank.org/en/projects-operations/project-detail/P003979"
+   },
+   {
+    "proyek_id": "wb_P004007",
+    "peran": "pendana",
+    "nama_di_sumber": "World Bank (IBRD/IDA)",
+    "cocok": "id-sumber",
+    "sumber": "pendanaan.json pd_wb_P004007",
+    "sumber_url": "https://projects.worldbank.org/en/projects-operations/project-detail/P004007"
+   },
+   {
+    "proyek_id": "wb_P004021",
+    "peran": "pendana",
+    "nama_di_sumber": "World Bank (IBRD/IDA)",
+    "cocok": "id-sumber",
+    "sumber": "pendanaan.json pd_wb_P004021",
+    "sumber_url": "https://projects.worldbank.org/en/projects-operations/project-detail/P004021"
+   },
+   {
+    "proyek_id": "wb_P035544",
+    "peran": "pendana",
+    "nama_di_sumber": "World Bank (IBRD/IDA)",
+    "cocok": "id-sumber",
+    "sumber": "pendanaan.json pd_wb_P035544",
+    "sumber_url": "https://projects.worldbank.org/en/projects-operations/project-detail/P035544"
+   },
+   {
+    "proyek_id": "wb_P036044",
+    "peran": "pendana",
+    "nama_di_sumber": "World Bank (IBRD/IDA)",
+    "cocok": "id-sumber",
+    "sumber": "pendanaan.json pd_wb_P036044",
+    "sumber_url": "https://projects.worldbank.org/en/projects-operations/project-detail/P036044"
+   },
+   {
+    "proyek_id": "wb_P040524",
+    "peran": "pendana",
+    "nama_di_sumber": "World Bank (IBRD/IDA)",
+    "cocok": "id-sumber",
+    "sumber": "pendanaan.json pd_wb_P040524",
+    "sumber_url": "https://projects.worldbank.org/en/projects-operations/project-detail/P040524"
+   },
+   {
+    "proyek_id": "wb_P042882",
+    "peran": "pendana",
+    "nama_di_sumber": "World Bank (IBRD/IDA)",
+    "cocok": "id-sumber",
+    "sumber": "pendanaan.json pd_wb_P042882",
+    "sumber_url": "https://projects.worldbank.org/en/projects-operations/project-detail/P042882"
+   },
+   {
+    "proyek_id": "wb_P063913",
+    "peran": "pendana",
+    "nama_di_sumber": "World Bank (IBRD/IDA)",
+    "cocok": "id-sumber",
+    "sumber": "pendanaan.json pd_wb_P063913",
+    "sumber_url": "https://projects.worldbank.org/en/projects-operations/project-detail/P063913"
+   },
+   {
+    "proyek_id": "wb_P093047",
+    "peran": "pendana",
+    "nama_di_sumber": "World Bank (IBRD/IDA)",
+    "cocok": "id-sumber",
+    "sumber": "pendanaan.json pw_P093047",
+    "sumber_url": "https://projects.worldbank.org/en/projects-operations/project-detail/P093047"
+   },
+   {
+    "proyek_id": "wb_P112158",
+    "peran": "pendana",
+    "nama_di_sumber": "World Bank (IBRD/IDA)",
+    "cocok": "id-sumber",
+    "sumber": "pendanaan.json pd_wb_P112158",
+    "sumber_url": "https://projects.worldbank.org/en/projects-operations/project-detail/P112158"
+   },
+   {
+    "proyek_id": "wb_P113078",
+    "peran": "pendana",
+    "nama_di_sumber": "World Bank (IBRD/IDA)",
+    "cocok": "id-sumber",
+    "sumber": "pendanaan.json pd_wb_P113078",
+    "sumber_url": "https://projects.worldbank.org/en/projects-operations/project-detail/P113078"
+   },
+   {
+    "proyek_id": "wb_P117323",
+    "peran": "pendana",
+    "nama_di_sumber": "World Bank (IBRD/IDA)",
+    "cocok": "id-sumber",
+    "sumber": "pendanaan.json pd_wb_P117323",
+    "sumber_url": "https://projects.worldbank.org/en/projects-operations/project-detail/P117323"
+   },
+   {
+    "proyek_id": "wb_P123994",
+    "peran": "pendana",
+    "nama_di_sumber": "World Bank (IBRD/IDA)",
+    "cocok": "id-sumber",
+    "sumber": "pendanaan.json pd_wb_P123994",
+    "sumber_url": "https://projects.worldbank.org/en/projects-operations/project-detail/P123994"
+   },
+   {
+    "proyek_id": "wb_P154291",
+    "peran": "pendana",
+    "nama_di_sumber": "World Bank (IBRD/IDA)",
+    "cocok": "id-sumber",
+    "sumber": "pendanaan.json pd_wb_P154291",
+    "sumber_url": "https://projects.worldbank.org/en/projects-operations/project-detail/P154291"
+   },
+   {
+    "proyek_id": "wb_P155047",
+    "peran": "pendana",
+    "nama_di_sumber": "World Bank (IBRD/IDA)",
+    "cocok": "id-sumber",
+    "sumber": "pendanaan.json pd_wb_P155047",
+    "sumber_url": "https://projects.worldbank.org/en/projects-operations/project-detail/P155047"
+   },
+   {
+    "proyek_id": "wb_P161644",
+    "peran": "pendana",
+    "nama_di_sumber": "World Bank (IBRD/IDA)",
+    "cocok": "id-sumber",
+    "sumber": "pendanaan.json pd_wb_P161644",
+    "sumber_url": "https://projects.worldbank.org/en/projects-operations/project-detail/P161644"
+   },
+   {
+    "proyek_id": "wb_P166071",
+    "peran": "pendana",
+    "nama_di_sumber": "World Bank (IBRD/IDA)",
+    "cocok": "id-sumber",
+    "sumber": "pendanaan.json pd_wb_P166071",
+    "sumber_url": "https://projects.worldbank.org/en/projects-operations/project-detail/P166071"
+   },
+   {
+    "proyek_id": "wb_P169259",
+    "peran": "pendana",
+    "nama_di_sumber": "World Bank (IBRD/IDA)",
+    "cocok": "id-sumber",
+    "sumber": "pendanaan.json pd_wb_P169259",
+    "sumber_url": "https://projects.worldbank.org/en/projects-operations/project-detail/P169259"
+   },
+   {
+    "proyek_id": "wb_P171353",
+    "peran": "pendana",
+    "nama_di_sumber": "World Bank (IBRD/IDA)",
+    "cocok": "id-sumber",
+    "sumber": "pendanaan.json pd_wb_P171353",
+    "sumber_url": "https://projects.worldbank.org/en/projects-operations/project-detail/P171353"
+   },
+   {
+    "proyek_id": "wb_P172256",
+    "peran": "pendana",
+    "nama_di_sumber": "World Bank (IBRD/IDA)",
+    "cocok": "id-sumber",
+    "sumber": "pendanaan.json pd_wb_P172256",
+    "sumber_url": "https://projects.worldbank.org/en/projects-operations/project-detail/P172256"
+   },
+   {
+    "proyek_id": "wb_P174350",
+    "peran": "pendana",
+    "nama_di_sumber": "World Bank (IBRD/IDA)",
+    "cocok": "id-sumber",
+    "sumber": "pendanaan.json pd_wb_P174350",
+    "sumber_url": "https://projects.worldbank.org/en/projects-operations/project-detail/P174350"
+   },
+   {
+    "proyek_id": "wb_P178788",
+    "peran": "pendana",
+    "nama_di_sumber": "World Bank (IBRD/IDA)",
+    "cocok": "id-sumber",
+    "sumber": "pendanaan.json pd_wb_P178788",
+    "sumber_url": "https://projects.worldbank.org/en/projects-operations/project-detail/P178788"
+   },
+   {
+    "proyek_id": "wb_P501217",
+    "peran": "pendana",
+    "nama_di_sumber": "World Bank (IBRD/IDA)",
+    "cocok": "id-sumber",
+    "sumber": "pendanaan.json pd_wb_P501217",
+    "sumber_url": "https://projects.worldbank.org/en/projects-operations/project-detail/P501217"
+   }
+  ],
+  "l_43f00f6a72": [
+   {
+    "proyek_id": "pj_0038",
+    "peran": "pemilik",
+    "nama_di_sumber": "Badan Pengelola Investasi Daya Anagata Nusantara (Danantara)",
+    "cocok": "id-sumber",
+    "sumber": "proyek.json pihak.pemilik",
+    "sumber_url": "https://www.thejakartapost.com/business/2026/03/08/danantara-taps-chinese-firms-to-roll-out-waste-to-energy-projects"
+   },
+   {
+    "proyek_id": "pj_0041",
+    "peran": "pemilik",
+    "nama_di_sumber": "Badan Pengelola Investasi Daya Anagata Nusantara (Danantara)",
+    "cocok": "id-sumber",
+    "sumber": "proyek.json pihak.pemilik",
+    "sumber_url": "https://www.jpnn.com/news/kerja-sama-bangun-psel-pemprov-jakarta-gandeng-danantara-indonesia"
+   },
+   {
+    "proyek_id": "pjb_001",
+    "peran": "pemilik",
+    "nama_di_sumber": "Badan Pengelola Investasi Daya Anagata Nusantara (Danantara)",
+    "cocok": "id-sumber",
+    "sumber": "proyek.json pihak.pemilik",
+    "sumber_url": "https://www.cnnindonesia.com/ekonomi/20260917120546-85-1404978/investasi-rp28-t-psel-bogor-raya-1-olah-500-ribu-ton-sampah-setahun"
+   }
+  ],
+  "l_7278e0528a": [
+   {
+    "proyek_id": "wb_P154291",
+    "peran": "pelaksana",
+    "nama_di_sumber": "Ministry of Energy and Mineral Resources",
+    "cocok": "alias-kurasi+bagian",
+    "sumber": "proyek.json pihak.pelaksana",
+    "sumber_url": null
+   },
+   {
+    "proyek_id": "wb_P154846",
+    "peran": "pelaksana",
+    "nama_di_sumber": "Ministry of Energy and Mineral Resources",
+    "cocok": "alias-kurasi",
+    "sumber": "proyek.json pihak.pelaksana",
+    "sumber_url": null
+   },
+   {
+    "proyek_id": "wb_P154846",
+    "peran": "peminjam",
+    "nama_di_sumber": "Ministry of Energy and Mineral Resources",
+    "cocok": "alias-kurasi",
+    "sumber": "proyek.json pihak.peminjam",
+    "sumber_url": null
+   }
+  ],
+  "l_7b43a2574c": [
+   {
+    "proyek_id": "wb_P113078",
+    "peran": "peminjam",
+    "nama_di_sumber": "Ministry of Finance, Republic of Indonesia",
+    "cocok": "alias-kurasi",
+    "sumber": "proyek.json pihak.peminjam",
+    "sumber_url": null
+   },
+   {
+    "proyek_id": "wb_P154291",
+    "peran": "pelaksana",
+    "nama_di_sumber": "Ministry of Finance",
+    "cocok": "alias-kurasi+bagian",
+    "sumber": "proyek.json pihak.pelaksana",
+    "sumber_url": null
+   },
+   {
+    "proyek_id": "wb_P171353",
+    "peran": "peminjam",
+    "nama_di_sumber": "Ministry of Finance",
+    "cocok": "alias-kurasi",
+    "sumber": "proyek.json pihak.peminjam",
+    "sumber_url": null
+   }
+  ],
+  "p_0e6d34a26d": [
+   {
+    "proyek_id": "gem_solar_L100000801313",
+    "peran": "pemilik",
+    "nama_di_sumber": "ACWA Power Co",
+    "cocok": "nama-baku",
+    "sumber": "proyek.json pihak.pemilik",
+    "sumber_url": "https://www.gem.wiki/Saguling_solar_farm"
+   },
+   {
+    "proyek_id": "gem_solar_L100000801387",
+    "peran": "pemilik",
+    "nama_di_sumber": "ACWA Power Co",
+    "cocok": "nama-baku",
+    "sumber": "proyek.json pihak.pemilik",
+    "sumber_url": "https://www.gem.wiki/Singkarak_solar_farm"
+   },
+   {
+    "proyek_id": "pj_0339",
+    "peran": "pemilik",
+    "nama_di_sumber": "ACWA Power",
+    "cocok": "id-sumber",
+    "sumber": "proyek.json pihak.pemilik",
+    "sumber_url": "https://jetp-id.org/portfolio-sub/project/saguling-floating-solar-pv-power-plant"
+   }
+  ],
+  "p_0ed65b38b8": [
+   {
+    "proyek_id": "pj_0038",
+    "peran": "pemilik",
+    "nama_di_sumber": "PT Daya Energi Bersih Nusantara (Denera)",
+    "cocok": "id-sumber",
+    "sumber": "proyek.json pihak.pemilik",
+    "sumber_url": "https://www.liputan6.com/bisnis/read/8245763/psel-denpasar-ditargetkan-beroperasi-akhir-2027-atasi-sampah-di-bali"
+   },
+   {
+    "proyek_id": "pj_0047",
+    "peran": "pemilik",
+    "nama_di_sumber": "PT Daya Energi Bersih Nusantara (Denera)",
+    "cocok": "id-sumber",
+    "sumber": "proyek.json pihak.pemilik",
+    "sumber_url": "https://thejakartapost.com/business/2026/07/14/govt-names-consortia-for-second-batch-of-waste-to-energy-projects"
+   },
+   {
+    "proyek_id": "pj_0050",
+    "peran": "pemilik",
+    "nama_di_sumber": "PT Daya Energi Bersih Nusantara (Denera)",
+    "cocok": "id-sumber",
+    "sumber": "proyek.json pihak.pemilik",
+    "sumber_url": "https://thejakartapost.com/business/2026/07/14/govt-names-consortia-for-second-batch-of-waste-to-energy-projects"
+   },
+   {
+    "proyek_id": "pjb_002",
+    "peran": "pemilik",
+    "nama_di_sumber": "PT Daya Energi Bersih Nusantara (Denera)",
+    "cocok": "id-sumber",
+    "sumber": "proyek.json pihak.pemilik",
+    "sumber_url": "https://www.cnnindonesia.com/ekonomi/20260812211007-92-1391637/danantara-bakal-bangun-psel-rp3-t-tuntaskan-polemik-sampah-diy"
+   },
+   {
+    "proyek_id": "pjb_003",
+    "peran": "pemilik",
+    "nama_di_sumber": "PT Daya Energi Bersih Nusantara (Denera)",
+    "cocok": "id-sumber",
+    "sumber": "proyek.json pihak.pemilik",
+    "sumber_url": "https://www.cnnindonesia.com/ekonomi/20261019165217-85-1417168/denera-kejar-8-pembangkit-listrik-tenaga-sampah-groundbreaking-2027"
+   },
+   {
+    "proyek_id": "pjb_004",
+    "peran": "pemilik",
+    "nama_di_sumber": "PT Daya Energi Bersih Nusantara (Denera)",
+    "cocok": "id-sumber",
+    "sumber": "proyek.json pihak.pemilik",
+    "sumber_url": "https://www.cnnindonesia.com/ekonomi/20261019165217-85-1417168/denera-kejar-8-pembangkit-listrik-tenaga-sampah-groundbreaking-2027"
+   },
+   {
+    "proyek_id": "pjb_005",
+    "peran": "pemilik",
+    "nama_di_sumber": "PT Daya Energi Bersih Nusantara (Denera)",
+    "cocok": "id-sumber",
+    "sumber": "proyek.json pihak.pemilik",
+    "sumber_url": "https://www.cnnindonesia.com/ekonomi/20261019165217-85-1417168/denera-kejar-8-pembangkit-listrik-tenaga-sampah-groundbreaking-2027"
+   },
+   {
+    "proyek_id": "pjb_006",
+    "peran": "pemilik",
+    "nama_di_sumber": "PT Daya Energi Bersih Nusantara (Denera)",
+    "cocok": "id-sumber",
+    "sumber": "proyek.json pihak.pemilik",
+    "sumber_url": "https://www.cnnindonesia.com/ekonomi/20261019165217-85-1417168/denera-kejar-8-pembangkit-listrik-tenaga-sampah-groundbreaking-2027"
+   },
+   {
+    "proyek_id": "pjb_007",
+    "peran": "pemilik",
+    "nama_di_sumber": "PT Daya Energi Bersih Nusantara (Denera)",
+    "cocok": "id-sumber",
+    "sumber": "proyek.json pihak.pemilik",
+    "sumber_url": "https://www.cnnindonesia.com/ekonomi/20261019165217-85-1417168/denera-kejar-8-pembangkit-listrik-tenaga-sampah-groundbreaking-2027"
+   },
+   {
+    "proyek_id": "pjb_008",
+    "peran": "pemilik",
+    "nama_di_sumber": "PT Daya Energi Bersih Nusantara (Denera)",
+    "cocok": "id-sumber",
+    "sumber": "proyek.json pihak.pemilik",
+    "sumber_url": "https://www.cnnindonesia.com/ekonomi/20261019165217-85-1417168/denera-kejar-8-pembangkit-listrik-tenaga-sampah-groundbreaking-2027"
+   }
+  ],
+  "p_15bc360dc3": [
+   {
+    "proyek_id": "wb_P092218",
+    "peran": "pelaksana",
+    "nama_di_sumber": "PT Indonesia Infrastructure Finance",
+    "cocok": "nama-baku+bagian",
+    "sumber": "proyek.json pihak.pelaksana",
+    "sumber_url": null
+   }
+  ],
+  "p_1c9eb202dd": [
+   {
+    "proyek_id": "gem_geothermal_L100000700144",
+    "peran": "pemilik",
+    "nama_di_sumber": "ENGIE SA",
+    "cocok": "nama-baku",
+    "sumber": "proyek.json pihak.pemilik",
+    "sumber_url": "https://www.gem.wiki/Rajabasa_geothermal_power_plant"
+   },
+   {
+    "proyek_id": "gem_geothermal_L100000700146",
+    "peran": "pemilik",
+    "nama_di_sumber": "ENGIE SA",
+    "cocok": "nama-baku",
+    "sumber": "proyek.json pihak.pemilik",
+    "sumber_url": "https://www.gem.wiki/Rantau_Dedep_geothermal_power_plant"
+   },
+   {
+    "proyek_id": "pj_0265",
+    "peran": "pemilik",
+    "nama_di_sumber": "ENGIE SA",
+    "cocok": "nama-baku",
+    "sumber": "proyek.json pihak.pemilik",
+    "sumber_url": "https://www.gem.wiki/Muarah_Laboh_geothermal_plant"
+   }
+  ],
+  "p_27ae5a4203": [
+   {
+    "proyek_id": "gem_solar_L100000800820",
+    "peran": "pemilik",
+    "nama_di_sumber": "PT Medco Power Indonesia",
+    "cocok": "id-sumber",
+    "sumber": "proyek.json pihak.pemilik",
+    "sumber_url": "https://www.gem.wiki/Bali-2_solar_farm"
+   },
+   {
+    "proyek_id": "gem_solar_L100000808624",
+    "peran": "pemilik",
+    "nama_di_sumber": "PT Medco Power Indonesia",
+    "cocok": "id-sumber",
+    "sumber": "proyek.json pihak.pemilik",
+    "sumber_url": "https://www.gem.wiki/Pulau_Bulan_solar_farm"
+   },
+   {
+    "proyek_id": "pj_0246",
+    "peran": "pemilik",
+    "nama_di_sumber": "PT Medco Power Indonesia",
+    "cocok": "id-sumber",
+    "sumber": "proyek.json pihak.pemilik",
+    "sumber_url": "https://www.gem.wiki/Blawan_Ijen_geothermal_project"
+   }
+  ],
+  "p_4322497a63": [
+   {
+    "proyek_id": "gem_geothermal_L100000700146",
+    "peran": "pemilik",
+    "nama_di_sumber": "Marubeni Corp",
+    "cocok": "nama-baku",
+    "sumber": "proyek.json pihak.pemilik",
+    "sumber_url": "https://www.gem.wiki/Rantau_Dedep_geothermal_power_plant"
+   }
+  ],
+  "p_43361f6762": [
+   {
+    "proyek_id": "pjb_011",
+    "peran": "pemilik",
+    "nama_di_sumber": "PT Ace Energy Service",
+    "cocok": "id-sumber",
+    "sumber": "proyek.json pihak.pemilik",
+    "sumber_url": "https://economy.okezone.com/read/2026/09/22/320/3243554/investasi-rp3-3-triliun-plts-berbasis-baterai-dikembangkan-di-10-lokasi-terisolasi"
+   }
+  ],
+  "p_5a2e7d0c63": [
+   {
+    "proyek_id": "gem_hydropower_L100000602142",
+    "peran": "pemilik",
+    "nama_di_sumber": "PT PLN Indonesia Power",
+    "cocok": "id-sumber",
+    "sumber": "proyek.json pihak.pemilik",
+    "sumber_url": "https://www.gem.wiki/Saguling_hydroelectric_plant"
+   },
+   {
+    "proyek_id": "pj_0075",
+    "peran": "pemilik",
+    "nama_di_sumber": "PT PLN Indonesia Power",
+    "cocok": "id-sumber",
+    "sumber": "proyek.json pihak.pemilik",
+    "sumber_url": "https://www.wikidata.org/wiki/Q109442063"
+   },
+   {
+    "proyek_id": "pj_0094",
+    "peran": "pemilik",
+    "nama_di_sumber": "PT PLN Indonesia Power",
+    "cocok": "id-sumber",
+    "sumber": "proyek.json pihak.pemilik",
+    "sumber_url": "https://www.gem.wiki/Rajamandala_hydroelectric_plant"
+   },
+   {
+    "proyek_id": "pj_0095",
+    "peran": "pemilik",
+    "nama_di_sumber": "PT. Indonesia Power",
+    "cocok": "alias-kurasi",
+    "sumber": "proyek.json pihak.pemilik",
+    "sumber_url": "https://en.wikipedia.org/wiki/List_of_power_stations_in_Indonesia"
+   },
+   {
+    "proyek_id": "pj_0096",
+    "peran": "pemilik",
+    "nama_di_sumber": "PT PLN Indonesia Power",
+    "cocok": "id-sumber",
+    "sumber": "proyek.json pihak.pemilik",
+    "sumber_url": "https://www.wikidata.org/wiki/Q109967806"
+   },
+   {
+    "proyek_id": "pj_0097",
+    "peran": "pemilik",
+    "nama_di_sumber": "PT PLN Indonesia Power",
+    "cocok": "id-sumber",
+    "sumber": "proyek.json pihak.pemilik",
+    "sumber_url": "https://www.wikidata.org/wiki/Q12003907"
+   },
+   {
+    "proyek_id": "pj_0099",
+    "peran": "pemilik",
+    "nama_di_sumber": "PT PLN Indonesia Power",
+    "cocok": "id-sumber",
+    "sumber": "proyek.json pihak.pemilik",
+    "sumber_url": "https://www.wikidata.org/wiki/Q48785416"
+   },
+   {
+    "proyek_id": "pj_0100",
+    "peran": "pemilik",
+    "nama_di_sumber": "PT PLN Indonesia Power",
+    "cocok": "id-sumber",
+    "sumber": "proyek.json pihak.pemilik",
+    "sumber_url": "https://www.wikidata.org/wiki/Q97218137"
+   },
+   {
+    "proyek_id": "pj_0101",
+    "peran": "pemilik",
+    "nama_di_sumber": "PT. Indonesia Power",
+    "cocok": "alias-kurasi",
+    "sumber": "proyek.json pihak.pemilik",
+    "sumber_url": "https://en.wikipedia.org/wiki/List_of_power_stations_in_Indonesia"
+   },
+   {
+    "proyek_id": "pj_0109",
+    "peran": "pemilik",
+    "nama_di_sumber": "PT PLN Indonesia Power",
+    "cocok": "id-sumber",
+    "sumber": "proyek.json pihak.pemilik",
+    "sumber_url": "https://www.wikidata.org/wiki/Q25266757"
+   },
+   {
+    "proyek_id": "pj_0139",
+    "peran": "pemilik",
+    "nama_di_sumber": "PT PLN Indonesia Power",
+    "cocok": "id-sumber",
+    "sumber": "proyek.json pihak.pemilik",
+    "sumber_url": "https://www.wikidata.org/wiki/Q25456342"
+   },
+   {
+    "proyek_id": "pj_0219",
+    "peran": "pemilik",
+    "nama_di_sumber": "PT PLN Indonesia Power",
+    "cocok": "id-sumber",
+    "sumber": "proyek.json pihak.pemilik",
+    "sumber_url": "https://www.wikidata.org/wiki/Q12501586"
+   },
+   {
+    "proyek_id": "pj_0228",
+    "peran": "pemilik",
+    "nama_di_sumber": "PT. Indonesia Power",
+    "cocok": "alias-kurasi",
+    "sumber": "proyek.json pihak.pemilik",
+    "sumber_url": "https://en.wikipedia.org/wiki/List_of_power_stations_in_Indonesia"
+   },
+   {
+    "proyek_id": "pj_0230",
+    "peran": "pemilik",
+    "nama_di_sumber": "PT. Indonesia Power",
+    "cocok": "alias-kurasi",
+    "sumber": "proyek.json pihak.pemilik",
+    "sumber_url": "https://en.wikipedia.org/wiki/List_of_power_stations_in_Indonesia"
+   },
+   {
+    "proyek_id": "pj_0232",
+    "peran": "pemilik",
+    "nama_di_sumber": "PT. Indonesia Power",
+    "cocok": "alias-kurasi",
+    "sumber": "proyek.json pihak.pemilik",
+    "sumber_url": "https://en.wikipedia.org/wiki/List_of_power_stations_in_Indonesia"
+   },
+   {
+    "proyek_id": "pj_0259",
+    "peran": "pemilik",
+    "nama_di_sumber": "PT PLN Indonesia Power",
+    "cocok": "id-sumber",
+    "sumber": "proyek.json pihak.pemilik",
+    "sumber_url": "https://www.wikidata.org/wiki/Q25476639"
+   },
+   {
+    "proyek_id": "pj_0339",
+    "peran": "pemilik",
+    "nama_di_sumber": "PLN IP",
+    "cocok": "alias-kurasi",
+    "sumber": "proyek.json pihak.pemilik",
+    "sumber_url": "https://jetp-id.org/portfolio-sub/project/saguling-floating-solar-pv-power-plant"
+   },
+   {
+    "proyek_id": "pjb_011",
+    "peran": "pemilik",
+    "nama_di_sumber": "PT PLN Indonesia Power",
+    "cocok": "id-sumber",
+    "sumber": "proyek.json pihak.pemilik",
+    "sumber_url": "https://economy.okezone.com/read/2026/09/22/320/3243554/investasi-rp3-3-triliun-plts-berbasis-baterai-dikembangkan-di-10-lokasi-terisolasi"
+   }
+  ],
+  "p_7a803f3b71": [
+   {
+    "proyek_id": "gem_geothermal_L100001063273",
+    "peran": "pemilik",
+    "nama_di_sumber": "Star Energy Geothermal",
+    "cocok": "id-sumber",
+    "sumber": "proyek.json pihak.pemilik",
+    "sumber_url": "https://www.gem.wiki/Salak_Binary_geothermal_power_plant"
+   },
+   {
+    "proyek_id": "pj_0228",
+    "peran": "pemilik",
+    "nama_di_sumber": "Star Energy Geothermal",
+    "cocok": "nama-baku",
+    "sumber": "Global Energy Monitor geothermal L100000700037 (CC BY 4.0)",
+    "sumber_url": "https://www.gem.wiki/Darajat_geothermal_power_plant"
+   },
+   {
+    "proyek_id": "pj_0235",
+    "peran": "pemilik",
+    "nama_di_sumber": "Star Energy Geothermal",
+    "cocok": "id-sumber",
+    "sumber": "proyek.json pihak.pemilik",
+    "sumber_url": "https://www.gem.wiki/Gunung_Salak_geothermal_power_plant"
+   },
+   {
+    "proyek_id": "pj_0239",
+    "peran": "pemilik",
+    "nama_di_sumber": "Star Energy Geothermal",
+    "cocok": "id-sumber",
+    "sumber": "proyek.json pihak.pemilik",
+    "sumber_url": "https://www.gem.wiki/Wayang_Windu_geothermal_power_plant"
+   },
+   {
+    "proyek_id": "pj_0240",
+    "peran": "pemilik",
+    "nama_di_sumber": "Star Energy Geothermal",
+    "cocok": "id-sumber",
+    "sumber": "ruptl_pengembang.json (Global Energy Monitor)",
+    "sumber_url": "https://www.gem.wiki/Wayang_Windu_geothermal_power_plant"
+   }
+  ],
+  "p_7b70728bb7": [
+   {
+    "proyek_id": "pj_0233",
+    "peran": "pemilik",
+    "nama_di_sumber": "PT. Geo Dipa Energi (IPP)",
+    "cocok": "id-sumber",
+    "sumber": "proyek.json pihak.pemilik",
+    "sumber_url": "https://en.wikipedia.org/wiki/List_of_power_stations_in_Indonesia"
+   },
+   {
+    "proyek_id": "pj_0242",
+    "peran": "pemilik",
+    "nama_di_sumber": "PT. Geo Dipa Energi (IPP)",
+    "cocok": "id-sumber",
+    "sumber": "proyek.json pihak.pemilik",
+    "sumber_url": "https://en.wikipedia.org/wiki/List_of_power_stations_in_Indonesia"
+   },
+   {
+    "proyek_id": "pjb_013",
+    "peran": "pemilik",
+    "nama_di_sumber": "PT Geo Dipa Energi (Persero)",
+    "cocok": "id-sumber",
+    "sumber": "proyek.json pihak.pemilik",
+    "sumber_url": "https://jabar.jpnn.com/jabar-terkini/32740/raih-satu-juta-jam-kerja-selamat-pltp-patuha-unit-2-torehkan-prestasi-sebelum-beroperasi"
+   },
+   {
+    "proyek_id": "wb_P155047",
+    "peran": "pelaksana",
+    "nama_di_sumber": "PT Geo Dipa Energi",
+    "cocok": "nama-baku+bagian",
+    "sumber": "proyek.json pihak.pelaksana",
+    "sumber_url": null
+   },
+   {
+    "proyek_id": "wb_P161644",
+    "peran": "pelaksana",
+    "nama_di_sumber": "PT Geo Dipa Energi",
+    "cocok": "nama-baku+bagian",
+    "sumber": "proyek.json pihak.pelaksana",
+    "sumber_url": null
+   }
+  ],
+  "p_a235c21f23": [
+   {
+    "proyek_id": "wb_P092218",
+    "peran": "pelaksana",
+    "nama_di_sumber": "PT Sarana Multi Infrastruktur",
+    "cocok": "nama-baku+bagian",
+    "sumber": "proyek.json pihak.pelaksana",
+    "sumber_url": null
+   },
+   {
+    "proyek_id": "wb_P155047",
+    "peran": "pelaksana",
+    "nama_di_sumber": "PT Sarana Multi Infrastruktur (Persero)",
+    "cocok": "nama-baku+bagian",
+    "sumber": "proyek.json pihak.pelaksana",
+    "sumber_url": null
+   },
+   {
+    "proyek_id": "wb_P155047",
+    "peran": "peminjam",
+    "nama_di_sumber": "PT Sarana Multi Infrastruktur (Persero)",
+    "cocok": "id-sumber",
+    "sumber": "proyek.json pihak.peminjam",
+    "sumber_url": null
+   },
+   {
+    "proyek_id": "wb_P161644",
+    "peran": "pelaksana",
+    "nama_di_sumber": "PT Sarana Multi Infrastruktur (Persero)",
+    "cocok": "nama-baku+bagian",
+    "sumber": "proyek.json pihak.pelaksana",
+    "sumber_url": null
+   },
+   {
+    "proyek_id": "wb_P161644",
+    "peran": "peminjam",
+    "nama_di_sumber": "PT Sarana Multi Infrastruktur (Persero)",
+    "cocok": "id-sumber",
+    "sumber": "proyek.json pihak.peminjam",
+    "sumber_url": null
+   },
+   {
+    "proyek_id": "wb_P166071",
+    "peran": "pelaksana",
+    "nama_di_sumber": "PT Sarana Multi Infrastruktur (Persero)",
+    "cocok": "id-sumber",
+    "sumber": "proyek.json pihak.pelaksana",
+    "sumber_url": null
+   }
+  ],
+  "p_a363064837": [
+   {
+    "proyek_id": "gem_hydropower_L100000602139",
+    "peran": "pemilik",
+    "nama_di_sumber": "PT Wijaya Karya (Persero)",
+    "cocok": "id-sumber",
+    "sumber": "proyek.json pihak.pemilik",
+    "sumber_url": "https://www.gem.wiki/Peusangan_4_hydroelectric_plant"
+   }
+  ],
+  "p_b1c52ad7b0": [
+   {
+    "proyek_id": "pj_0229",
+    "peran": "pemilik",
+    "nama_di_sumber": "PT. Pertamina",
+    "cocok": "nama-baku+bagian",
+    "sumber": "proyek.json pihak.pemilik",
+    "sumber_url": "https://en.wikipedia.org/wiki/List_of_power_stations_in_Indonesia"
+   },
+   {
+    "proyek_id": "pj_0257",
+    "peran": "pemilik",
+    "nama_di_sumber": "PT Pertamina (Persero)",
+    "cocok": "id-sumber",
+    "sumber": "proyek.json pihak.pemilik",
+    "sumber_url": "https://www.gem.wiki/Ulumbu_geothermal_power_plant"
+   }
+  ],
+  "p_bd4e2d9bd2": [
+   {
+    "proyek_id": "pj_0214",
+    "peran": "pemilik",
+    "nama_di_sumber": "PT. Inalum",
+    "cocok": "alias-kurasi",
+    "sumber": "proyek.json pihak.pemilik",
+    "sumber_url": "https://en.wikipedia.org/wiki/List_of_power_stations_in_Indonesia"
+   },
+   {
+    "proyek_id": "pj_0216",
+    "peran": "pemilik",
+    "nama_di_sumber": "PT. Inalum",
+    "cocok": "alias-kurasi",
+    "sumber": "proyek.json pihak.pemilik",
+    "sumber_url": "https://en.wikipedia.org/wiki/List_of_power_stations_in_Indonesia"
+   }
+  ],
+  "p_bdd0f2d140": [
+   {
+    "proyek_id": "gem_wind_L100000901313",
+    "peran": "pemilik",
+    "nama_di_sumber": "Barito Renewables",
+    "cocok": "alias-kurasi",
+    "sumber": "proyek.json pihak.pemilik",
+    "sumber_url": "https://www.gem.wiki/Sukabumi_(UPC_Renewables)_wind_farm"
+   },
+   {
+    "proyek_id": "gem_wind_L100000916669",
+    "peran": "pemilik",
+    "nama_di_sumber": "Barito Renewables Energy",
+    "cocok": "id-sumber",
+    "sumber": "proyek.json pihak.pemilik",
+    "sumber_url": "https://www.gem.wiki/Lombok_wind_farm"
+   },
+   {
+    "proyek_id": "pj_0006",
+    "peran": "pemilik",
+    "nama_di_sumber": "Barito Renewables",
+    "cocok": "alias-kurasi",
+    "sumber": "proyek.json pihak.pemilik",
+    "sumber_url": "https://www.gem.wiki/Sidrap_wind_farm"
+   }
+  ],
+  "p_c6c4e478c0": [
+   {
+    "proyek_id": "gem_geothermal_L100000700144",
+    "peran": "pemilik",
+    "nama_di_sumber": "PT Supreme Energy",
+    "cocok": "id-sumber",
+    "sumber": "proyek.json pihak.pemilik",
+    "sumber_url": "https://www.gem.wiki/Rajabasa_geothermal_power_plant"
+   },
+   {
+    "proyek_id": "gem_geothermal_L100000700146",
+    "peran": "pemilik",
+    "nama_di_sumber": "PT Supreme Energy",
+    "cocok": "id-sumber",
+    "sumber": "proyek.json pihak.pemilik",
+    "sumber_url": "https://www.gem.wiki/Rantau_Dedep_geothermal_power_plant"
+   },
+   {
+    "proyek_id": "pj_0265",
+    "peran": "pemilik",
+    "nama_di_sumber": "PT Supreme Energy",
+    "cocok": "id-sumber",
+    "sumber": "proyek.json pihak.pemilik",
+    "sumber_url": "https://www.gem.wiki/Muarah_Laboh_geothermal_plant"
+   }
+  ],
+  "p_cab3e74cce": [
+   {
+    "proyek_id": "gem_hydropower_L100000602115",
+    "peran": "pemilik",
+    "nama_di_sumber": "PT Kayan Hydro Energy",
+    "cocok": "id-sumber",
+    "sumber": "proyek.json pihak.pemilik",
+    "sumber_url": "https://www.gem.wiki/Kayan_1_hydroelectric_plant"
+   },
+   {
+    "proyek_id": "gem_hydropower_L100000602116",
+    "peran": "pemilik",
+    "nama_di_sumber": "PT Kayan Hydro Energy",
+    "cocok": "id-sumber",
+    "sumber": "proyek.json pihak.pemilik",
+    "sumber_url": "https://www.gem.wiki/Kayan_2_hydroelectric_plant"
+   },
+   {
+    "proyek_id": "gem_hydropower_L100000602117",
+    "peran": "pemilik",
+    "nama_di_sumber": "PT Kayan Hydro Energy",
+    "cocok": "id-sumber",
+    "sumber": "proyek.json pihak.pemilik",
+    "sumber_url": "https://www.gem.wiki/Kayan_3_hydroelectric_plant"
+   },
+   {
+    "proyek_id": "gem_hydropower_L100000602118",
+    "peran": "pemilik",
+    "nama_di_sumber": "PT Kayan Hydro Energy",
+    "cocok": "id-sumber",
+    "sumber": "proyek.json pihak.pemilik",
+    "sumber_url": "https://www.gem.wiki/Kayan_4_hydroelectric_plant"
+   },
+   {
+    "proyek_id": "gem_hydropower_L100000602119",
+    "peran": "pemilik",
+    "nama_di_sumber": "PT Kayan Hydro Energy",
+    "cocok": "id-sumber",
+    "sumber": "proyek.json pihak.pemilik",
+    "sumber_url": "https://www.gem.wiki/Kayan_5_hydroelectric_plant"
+   },
+   {
+    "proyek_id": "gem_hydropower_L100000602132",
+    "peran": "pemilik",
+    "nama_di_sumber": "PT Kayan Hydro Energy",
+    "cocok": "id-sumber",
+    "sumber": "proyek.json pihak.pemilik",
+    "sumber_url": "https://www.gem.wiki/Mentarang_hydroelectric_plant"
+   }
+  ],
+  "p_d99d5987f7": [
+   {
+    "proyek_id": "gem_geothermal_L100000700144",
+    "peran": "pemilik",
+    "nama_di_sumber": "Sumitomo Corp",
+    "cocok": "nama-baku",
+    "sumber": "proyek.json pihak.pemilik",
+    "sumber_url": "https://www.gem.wiki/Rajabasa_geothermal_power_plant"
+   },
+   {
+    "proyek_id": "pj_0043",
+    "peran": "pemilik",
+    "nama_di_sumber": "Sumitomo Corporation",
+    "cocok": "id-sumber",
+    "sumber": "proyek.json pihak.pemilik",
+    "sumber_url": "https://www.liputan6.com/bisnis/read/8257484/psel-legok-nangka-mulai-dibangun-olah-2000-ton-sampah"
+   },
+   {
+    "proyek_id": "pj_0265",
+    "peran": "pemilik",
+    "nama_di_sumber": "Sumitomo Corp",
+    "cocok": "nama-baku",
+    "sumber": "proyek.json pihak.pemilik",
+    "sumber_url": "https://www.gem.wiki/Muarah_Laboh_geothermal_plant"
+   }
+  ],
+  "p_dda1e51dae": [
+   {
+    "proyek_id": "pj_0224",
+    "peran": "pemilik",
+    "nama_di_sumber": "Pertamina Geothermal Energy",
+    "cocok": "id-sumber",
+    "sumber": "proyek.json pihak.pemilik",
+    "sumber_url": "https://www.gem.wiki/Hululais_geothermal_power_plant"
+   },
+   {
+    "proyek_id": "pj_0227",
+    "peran": "pemilik",
+    "nama_di_sumber": "Pertamina Geothermal Energy",
+    "cocok": "id-sumber",
+    "sumber": "proyek.json pihak.pemilik",
+    "sumber_url": "https://www.gem.wiki/Sungai_Penuh_geothermal_power_plant"
+   },
+   {
+    "proyek_id": "pj_0232",
+    "peran": "pemilik",
+    "nama_di_sumber": "Pertamina Geothermal Energy",
+    "cocok": "nama-baku",
+    "sumber": "Global Energy Monitor geothermal L100000700072 (CC BY 4.0)",
+    "sumber_url": "https://www.gem.wiki/Kamojang_geothermal_power_plant"
+   },
+   {
+    "proyek_id": "pj_0249",
+    "peran": "pemilik",
+    "nama_di_sumber": "Pertamina Geothermal Energy",
+    "cocok": "nama-baku",
+    "sumber": "Global Energy Monitor geothermal L100000700185 (CC BY 4.0)",
+    "sumber_url": "https://www.gem.wiki/Ulubelu_geothermal_power_plant"
+   },
+   {
+    "proyek_id": "pj_0259",
+    "peran": "pemilik",
+    "nama_di_sumber": "Pertamina Geothermal Energy",
+    "cocok": "nama-baku",
+    "sumber": "Global Energy Monitor geothermal L100000700073 (CC BY 4.0)",
+    "sumber_url": "https://www.gem.wiki/Karaha_geothermal_power_plant"
+   },
+   {
+    "proyek_id": "pj_0260",
+    "peran": "pemilik",
+    "nama_di_sumber": "Pertamina Geothermal Energy",
+    "cocok": "nama-baku",
+    "sumber": "Global Energy Monitor geothermal L100000700205 (CC BY 4.0)",
+    "sumber_url": "https://www.gem.wiki/Lahendong_geothermal_power_plant"
+   },
+   {
+    "proyek_id": "pj_0269",
+    "peran": "pemilik",
+    "nama_di_sumber": "Pertamina Geothermal Energy",
+    "cocok": "id-sumber",
+    "sumber": "proyek.json pihak.pemilik",
+    "sumber_url": "https://www.gem.wiki/Lumut_Balai_geothermal_power_plant"
+   },
+   {
+    "proyek_id": "pj_0270",
+    "peran": "pemilik",
+    "nama_di_sumber": "Pertamina Geothermal Energy",
+    "cocok": "id-sumber",
+    "sumber": "ruptl_pengembang.json (Global Energy Monitor)",
+    "sumber_url": "https://www.gem.wiki/Lumut_Balai_geothermal_power_plant"
+   },
+   {
+    "proyek_id": "pj_0271",
+    "peran": "pemilik",
+    "nama_di_sumber": "Pertamina Geothermal Energy",
+    "cocok": "id-sumber",
+    "sumber": "ruptl_pengembang.json (Global Energy Monitor)",
+    "sumber_url": "https://www.gem.wiki/Lumut_Balai_geothermal_power_plant"
+   },
+   {
+    "proyek_id": "pj_0273",
+    "peran": "pemilik",
+    "nama_di_sumber": "Pertamina Geothermal Energy",
+    "cocok": "nama-baku",
+    "sumber": "Global Energy Monitor geothermal L100000700210 (CC BY 4.0)",
+    "sumber_url": "https://www.gem.wiki/Sibayak_geothermal_power_plant"
+   },
+   {
+    "proyek_id": "wb_P113078",
+    "peran": "pelaksana",
+    "nama_di_sumber": "Pertamina Geothermal Energy",
+    "cocok": "id-sumber",
+    "sumber": "proyek.json pihak.pelaksana",
+    "sumber_url": null
+   }
+  ],
+  "p_ef20787d46": [
+   {
+    "proyek_id": "gem_wind_L100000901004",
+    "peran": "pemilik",
+    "nama_di_sumber": "Vena Energy",
+    "cocok": "id-sumber",
+    "sumber": "proyek.json pihak.pemilik",
+    "sumber_url": "https://www.gem.wiki/Tolo_wind_farm"
+   }
+  ],
+  "p_ff7a390a42": [
+   {
+    "proyek_id": "gem_hydropower_L100001023096",
+    "peran": "pemilik",
+    "nama_di_sumber": "PT PLN Nusantara Power PT",
+    "cocok": "id-sumber",
+    "sumber": "proyek.json pihak.pemilik",
+    "sumber_url": "https://www.gem.wiki/Wlingi-Brantas_hydroelectric_plant"
+   },
+   {
+    "proyek_id": "gem_hydropower_L100001064154",
+    "peran": "pemilik",
+    "nama_di_sumber": "PT Pembangkitan Jawa Bali",
+    "cocok": "alias-kurasi",
+    "sumber": "proyek.json pihak.pemilik",
+    "sumber_url": "https://www.gem.wiki/Tulungagung_hydroelectric_plant"
+   },
+   {
+    "proyek_id": "pj_0066",
+    "peran": "pemilik",
+    "nama_di_sumber": "PT PLN Nusantara Power",
+    "cocok": "id-sumber",
+    "sumber": "proyek.json pihak.pemilik",
+    "sumber_url": "https://www.wikidata.org/wiki/Q56276087"
+   },
+   {
+    "proyek_id": "pj_0072",
+    "peran": "pemilik",
+    "nama_di_sumber": "PT PLN Nusantara Power",
+    "cocok": "id-sumber",
+    "sumber": "proyek.json pihak.pemilik",
+    "sumber_url": "https://www.wikidata.org/wiki/Q17750851"
+   },
+   {
+    "proyek_id": "pj_0080",
+    "peran": "pemilik",
+    "nama_di_sumber": "PT. Pembangkitan Jawa Bali",
+    "cocok": "alias-kurasi",
+    "sumber": "proyek.json pihak.pemilik",
+    "sumber_url": "https://en.wikipedia.org/wiki/List_of_power_stations_in_Indonesia"
+   },
+   {
+    "proyek_id": "pj_0106",
+    "peran": "pemilik",
+    "nama_di_sumber": "PT PLN Nusantara Power",
+    "cocok": "id-sumber",
+    "sumber": "proyek.json pihak.pemilik",
+    "sumber_url": "https://www.wikidata.org/wiki/Q25284228"
+   },
+   {
+    "proyek_id": "pj_0107",
+    "peran": "pemilik",
+    "nama_di_sumber": "PT PLN Nusantara Power",
+    "cocok": "id-sumber",
+    "sumber": "proyek.json pihak.pemilik",
+    "sumber_url": "https://www.wikidata.org/wiki/Q25266749"
+   },
+   {
+    "proyek_id": "pj_0110",
+    "peran": "pemilik",
+    "nama_di_sumber": "PT PLN Nusantara Power",
+    "cocok": "id-sumber",
+    "sumber": "proyek.json pihak.pemilik",
+    "sumber_url": "https://www.wikidata.org/wiki/Q26726100"
+   },
+   {
+    "proyek_id": "pj_0111",
+    "peran": "pemilik",
+    "nama_di_sumber": "PT. Pembangkitan Jawa Bali",
+    "cocok": "alias-kurasi",
+    "sumber": "proyek.json pihak.pemilik",
+    "sumber_url": "https://en.wikipedia.org/wiki/List_of_power_stations_in_Indonesia"
+   },
+   {
+    "proyek_id": "pj_0112",
+    "peran": "pemilik",
+    "nama_di_sumber": "PT PLN Nusantara Power",
+    "cocok": "id-sumber",
+    "sumber": "proyek.json pihak.pemilik",
+    "sumber_url": "https://www.wikidata.org/wiki/Q25294782"
+   },
+   {
+    "proyek_id": "pj_0113",
+    "peran": "pemilik",
+    "nama_di_sumber": "PT. Pembangkitan Jawa Bali",
+    "cocok": "alias-kurasi",
+    "sumber": "proyek.json pihak.pemilik",
+    "sumber_url": "https://en.wikipedia.org/wiki/List_of_power_stations_in_Indonesia"
+   },
+   {
+    "proyek_id": "pj_0193",
+    "peran": "pemilik",
+    "nama_di_sumber": "PT PLN Nusantara Power",
+    "cocok": "id-sumber",
+    "sumber": "proyek.json pihak.pemilik",
+    "sumber_url": "https://www.wikidata.org/wiki/Q31173588"
+   },
+   {
+    "proyek_id": "pj_0334",
+    "peran": "pemilik",
+    "nama_di_sumber": "PT PLN Nusantara Power",
+    "cocok": "id-sumber",
+    "sumber": "proyek.json pihak.pemilik",
+    "sumber_url": "https://www.gem.wiki/Cirata_Reservoir_solar_farm"
+   }
+  ],
+  "pm_00b67x9e389": [
+   {
+    "proyek_id": "gem_hydropower_L100000602141",
+    "peran": "pemilik",
+    "nama_di_sumber": "PT Poso Energy",
+    "cocok": "id-sumber",
+    "sumber": "proyek.json pihak.pemilik",
+    "sumber_url": "https://www.gem.wiki/Poso_3_hydroelectric_plant"
+   },
+   {
+    "proyek_id": "gem_hydropower_L100001045705",
+    "peran": "pemilik",
+    "nama_di_sumber": "PT Poso Energy",
+    "cocok": "id-sumber",
+    "sumber": "proyek.json pihak.pemilik",
+    "sumber_url": "https://www.gem.wiki/Poso_Extension_Stage_2_hydroelectric_plant"
+   },
+   {
+    "proyek_id": "pj_0142",
+    "peran": "pemilik",
+    "nama_di_sumber": "PT Poso Energy",
+    "cocok": "id-sumber",
+    "sumber": "proyek.json pihak.pemilik",
+    "sumber_url": "https://www.gem.wiki/Poso_2_hydroelectric_plant"
+   },
+   {
+    "proyek_id": "pj_0166",
+    "peran": "pemilik",
+    "nama_di_sumber": "PT. Poso Energi (IPP)",
+    "cocok": "id-sumber",
+    "sumber": "proyek.json pihak.pemilik",
+    "sumber_url": "https://en.wikipedia.org/wiki/List_of_power_stations_in_Indonesia"
+   }
+  ],
+  "pm_06e29x94a26": [
+   {
+    "proyek_id": "pj_0273",
+    "peran": "pemilik",
+    "nama_di_sumber": "PT. Dizamatara Powerindo (IPP)",
+    "cocok": "id-sumber",
+    "sumber": "proyek.json pihak.pemilik",
+    "sumber_url": "https://en.wikipedia.org/wiki/List_of_power_stations_in_Indonesia"
+   }
+  ],
+  "pm_0dee6x6ca80": [
+   {
+    "proyek_id": "pj_0004",
+    "peran": "pemilik",
+    "nama_di_sumber": "PT Juvisk Tri Swarna",
+    "cocok": "id-sumber",
+    "sumber": "proyek.json pihak.pemilik",
+    "sumber_url": "https://www.gem.wiki/Tanah_Laut_wind_farm"
+   }
+  ],
+  "pm_0eb31x2e06d": [
+   {
+    "proyek_id": "pj_0243",
+    "peran": "pemilik",
+    "nama_di_sumber": "PT Trinergy Mandiri International",
+    "cocok": "id-sumber",
+    "sumber": "proyek.json pihak.pemilik",
+    "sumber_url": "https://www.gem.wiki/Baturaden_geothermal_power_plant"
+   }
+  ],
+  "pm_129dbx35045": [
+   {
+    "proyek_id": "gem_hydropower_L100000602103",
+    "peran": "pemilik",
+    "nama_di_sumber": "PT Vale Indonesia Tbk",
+    "cocok": "id-sumber",
+    "sumber": "proyek.json pihak.pemilik",
+    "sumber_url": "https://www.gem.wiki/Balambano_hydroelectric_plant"
+   },
+   {
+    "proyek_id": "gem_hydropower_L100000602124",
+    "peran": "pemilik",
+    "nama_di_sumber": "PT Vale Indonesia Tbk",
+    "cocok": "id-sumber",
+    "sumber": "proyek.json pihak.pemilik",
+    "sumber_url": "https://www.gem.wiki/Larona_hydroelectric_plant"
+   },
+   {
+    "proyek_id": "pj_0157",
+    "peran": "pemilik",
+    "nama_di_sumber": "INCO",
+    "cocok": "id-sumber",
+    "sumber": "proyek.json pihak.pemilik",
+    "sumber_url": "https://en.wikipedia.org/wiki/List_of_power_stations_in_Indonesia"
+   },
+   {
+    "proyek_id": "pj_0158",
+    "peran": "pemilik",
+    "nama_di_sumber": "INCO",
+    "cocok": "id-sumber",
+    "sumber": "proyek.json pihak.pemilik",
+    "sumber_url": "https://en.wikipedia.org/wiki/List_of_power_stations_in_Indonesia"
+   },
+   {
+    "proyek_id": "pj_0159",
+    "peran": "pemilik",
+    "nama_di_sumber": "INCO",
+    "cocok": "id-sumber",
+    "sumber": "proyek.json pihak.pemilik",
+    "sumber_url": "https://en.wikipedia.org/wiki/List_of_power_stations_in_Indonesia"
+   }
+  ],
+  "pm_155f6x74c8d": [
+   {
+    "proyek_id": "gem_geothermal_L100000700147",
+    "peran": "pemilik",
+    "nama_di_sumber": "PT Cahaya Anagata Energy",
+    "cocok": "id-sumber",
+    "sumber": "proyek.json pihak.pemilik",
+    "sumber_url": "https://www.gem.wiki/Ratai_geothermal_power_plant"
+   }
+  ],
+  "pm_1c66exc8e3f": [
+   {
+    "proyek_id": "gem_geothermal_L100001025604",
+    "peran": "pemilik",
+    "nama_di_sumber": "PT Archi Indonesia Tbk",
+    "cocok": "id-sumber",
+    "sumber": "proyek.json pihak.pemilik",
+    "sumber_url": "https://www.gem.wiki/Toka_Tindung_geothermal_power_plant"
+   }
+  ],
+  "pm_2bf70x9366e": [
+   {
+    "proyek_id": "pj_0082",
+    "peran": "pemilik",
+    "nama_di_sumber": "PT. Jasa Tirta II",
+    "cocok": "id-sumber",
+    "sumber": "proyek.json pihak.pemilik",
+    "sumber_url": "https://en.wikipedia.org/wiki/List_of_power_stations_in_Indonesia"
+   }
+  ],
+  "pm_36e7ex28051": [
+   {
+    "proyek_id": "gem_geothermal_L100000700209",
+    "peran": "pemilik",
+    "nama_di_sumber": "PT Sintesa Banten Geothermal",
+    "cocok": "id-sumber",
+    "sumber": "proyek.json pihak.pemilik",
+    "sumber_url": "https://www.gem.wiki/Rawa_Dano_geothermal_power_plant"
+   }
+  ],
+  "pm_5b673x00ec8": [
+   {
+    "proyek_id": "gem_hydropower_L100001064159",
+    "peran": "pemilik",
+    "nama_di_sumber": "PT Binsar Natorang Energi",
+    "cocok": "id-sumber",
+    "sumber": "proyek.json pihak.pemilik",
+    "sumber_url": "https://www.gem.wiki/Hasang_hydroelectric_plant"
+   }
+  ],
+  "pm_7493cxb037b": [
+   {
+    "proyek_id": "pj_0054",
+    "peran": "pemilik",
+    "nama_di_sumber": "PT Indo Green Power",
+    "cocok": "id-sumber",
+    "sumber": "proyek.json pihak.pemilik",
+    "sumber_url": "https://www.jpnn.com/news/gubernur-herman-deru-genjot-operasional-psel-palembang-progres-tembus-83"
+   }
+  ],
+  "pm_7bedfx6b888": [
+   {
+    "proyek_id": "pj_0193",
+    "peran": "pemilik",
+    "nama_di_sumber": "PT. Bajradaya Sentranusa (IPP)",
+    "cocok": "id-sumber",
+    "sumber": "proyek.json pihak.pemilik",
+    "sumber_url": "https://en.wikipedia.org/wiki/List_of_power_stations_in_Indonesia"
+   }
+  ],
+  "pm_86f5dx46499": [
+   {
+    "proyek_id": "gem_hydropower_L100000602113",
+    "peran": "pemilik",
+    "nama_di_sumber": "PT Sulbar Group",
+    "cocok": "id-sumber",
+    "sumber": "proyek.json pihak.pemilik",
+    "sumber_url": "https://www.gem.wiki/Karama_hydroelectric_plant"
+   }
+  ],
+  "pm_895aax201f5": [
+   {
+    "proyek_id": "pj_0247",
+    "peran": "pemilik",
+    "nama_di_sumber": "PT Bakrie Power",
+    "cocok": "id-sumber",
+    "sumber": "proyek.json pihak.pemilik",
+    "sumber_url": "https://www.gem.wiki/Ngebel_geothermal_power_plant"
+   }
+  ],
+  "pm_96562xbec1f": [
+   {
+    "proyek_id": "gem_hydropower_L100001045707",
+    "peran": "pemilik",
+    "nama_di_sumber": "PT. Hadji Kalla",
+    "cocok": "id-sumber",
+    "sumber": "proyek.json pihak.pemilik",
+    "sumber_url": "https://www.gem.wiki/Poso_Extension_Stage_1_hydroelectric_plant"
+   }
+  ],
+  "pm_98da7xe7dc6": [
+   {
+    "proyek_id": "gem_solar_L100001080948",
+    "peran": "pemilik",
+    "nama_di_sumber": "Nusantara Embesi Baru Energi",
+    "cocok": "id-sumber",
+    "sumber": "proyek.json pihak.pemilik",
+    "sumber_url": "https://www.gem.wiki/Tembesi_Batam_floating_solar_farm"
+   }
+  ],
+  "pm_a6acex4ed9a": [
+   {
+    "proyek_id": "pj_0243",
+    "peran": "pemilik",
+    "nama_di_sumber": "PT Nirwana Suci Abadi",
+    "cocok": "id-sumber",
+    "sumber": "proyek.json pihak.pemilik",
+    "sumber_url": "https://www.gem.wiki/Baturaden_geothermal_power_plant"
+   }
+  ],
+  "pm_b4424x486f6": [
+   {
+    "proyek_id": "pj_0051",
+    "peran": "pemilik",
+    "nama_di_sumber": "PT Sumber Organik",
+    "cocok": "id-sumber",
+    "sumber": "proyek.json pihak.pemilik",
+    "sumber_url": "https://id.wikipedia.org/wiki/TPA_Benowo"
+   }
+  ],
+  "pm_c1a7cx70be7": [
+   {
+    "proyek_id": "pj_0078",
+    "peran": "pemilik",
+    "nama_di_sumber": "PT Kerinci Merangin Hydro",
+    "cocok": "id-sumber",
+    "sumber": "proyek.json pihak.pemilik",
+    "sumber_url": "https://www.gem.wiki/Kerinci_Merangin_hydroelectric_plant"
+   }
+  ],
+  "pm_cec14xb2c6d": [
+   {
+    "proyek_id": "pj_0217",
+    "peran": "pemilik",
+    "nama_di_sumber": "PT. Wampu Electric Power (IPP)",
+    "cocok": "id-sumber",
+    "sumber": "proyek.json pihak.pemilik",
+    "sumber_url": "https://en.wikipedia.org/wiki/List_of_power_stations_in_Indonesia"
+   }
+  ],
+  "pm_d4696xffa8b": [
+   {
+    "proyek_id": "gem_hydropower_L100000602107",
+    "peran": "pemilik",
+    "nama_di_sumber": "PT Sulawesi Mini Hydro Power",
+    "cocok": "id-sumber",
+    "sumber": "proyek.json pihak.pemilik",
+    "sumber_url": "https://www.gem.wiki/Bonto_Batu_hydroelectric_plant"
+   }
+  ],
+  "pm_d9bfexa6b40": [
+   {
+    "proyek_id": "pj_0161",
+    "peran": "pemilik",
+    "nama_di_sumber": "PT Amera Terrasys Energi",
+    "cocok": "id-sumber",
+    "sumber": "proyek.json pihak.pemilik",
+    "sumber_url": "https://www.gem.wiki/Buttu_Batu_hydroelectric_plant"
+   }
+  ],
+  "pm_ee985x4fcde": [
+   {
+    "proyek_id": "gem_solar_L100000830284",
+    "peran": "pemilik",
+    "nama_di_sumber": "PT Nusantara Sembcorp Solar Energi (NSSE)",
+    "cocok": "id-sumber",
+    "sumber": "proyek.json pihak.pemilik",
+    "sumber_url": "https://www.gem.wiki/Nusantara_Capital_City_Solar_Power_Plant"
+   }
+  ],
+  "pm_f63b1x0858a": [
+   {
+    "proyek_id": "gem_geothermal_L100000700211",
+    "peran": "pemilik",
+    "nama_di_sumber": "PT Sokoria Geothermal Indonesia",
+    "cocok": "id-sumber",
+    "sumber": "proyek.json pihak.pemilik",
+    "sumber_url": "https://www.gem.wiki/Sokoria_geothermal_power_plant"
+   }
+  ],
+  "pm_f8479x13a71": [
+   {
+    "proyek_id": "gem_hydropower_L100000602106",
+    "peran": "pemilik",
+    "nama_di_sumber": "Soma Power Indonesia",
+    "cocok": "id-sumber",
+    "sumber": "proyek.json pihak.pemilik",
+    "sumber_url": "https://www.gem.wiki/Bongka_hydroelectric_plant"
+   }
+  ],
+  "su_ed074ff5": [
+   {
+    "proyek_id": "gem_geothermal_L100000700215",
+    "peran": "pemilik",
+    "nama_di_sumber": "PT PLN (Persero)",
+    "cocok": "id-sumber",
+    "sumber": "proyek.json pihak.pemilik",
+    "sumber_url": "https://www.gem.wiki/Ulumbo_geothermal_power_plant"
+   },
+   {
+    "proyek_id": "gem_geothermal_L100001063268",
+    "peran": "pemilik",
+    "nama_di_sumber": "PT PLN (Persero)",
+    "cocok": "id-sumber",
+    "sumber": "proyek.json pihak.pemilik",
+    "sumber_url": "https://www.gem.wiki/Wapsalit_geothermal_power_plant"
+   },
+   {
+    "proyek_id": "gem_hydropower_L100000602102",
+    "peran": "pemilik",
+    "nama_di_sumber": "PT PLN (Persero)",
+    "cocok": "id-sumber",
+    "sumber": "proyek.json pihak.pemilik",
+    "sumber_url": "https://www.gem.wiki/Bakaru_hydroelectric_plant"
+   },
+   {
+    "proyek_id": "gem_hydropower_L100000602125",
+    "peran": "pemilik",
+    "nama_di_sumber": "PT PLN (Persero)",
+    "cocok": "id-sumber",
+    "sumber": "proyek.json pihak.pemilik",
+    "sumber_url": "https://www.gem.wiki/Lau_Renun_hydroelectric_plant"
+   },
+   {
+    "proyek_id": "gem_hydropower_L100000602128",
+    "peran": "pemilik",
+    "nama_di_sumber": "PT PLN (Persero)",
+    "cocok": "id-sumber",
+    "sumber": "proyek.json pihak.pemilik",
+    "sumber_url": "https://www.gem.wiki/Malea_hydroelectric_plant"
+   },
+   {
+    "proyek_id": "gem_hydropower_L100000602134",
+    "peran": "pemilik",
+    "nama_di_sumber": "PT PLN (Persero)",
+    "cocok": "id-sumber",
+    "sumber": "proyek.json pihak.pemilik",
+    "sumber_url": "https://www.gem.wiki/Musi_hydroelectric_plant"
+   },
+   {
+    "proyek_id": "gem_solar_L100000801313",
+    "peran": "pemilik",
+    "nama_di_sumber": "PT PLN (Persero)",
+    "cocok": "id-sumber",
+    "sumber": "proyek.json pihak.pemilik",
+    "sumber_url": "https://www.gem.wiki/Saguling_solar_farm"
+   },
+   {
+    "proyek_id": "gem_solar_L100000801387",
+    "peran": "pemilik",
+    "nama_di_sumber": "PT PLN (Persero)",
+    "cocok": "id-sumber",
+    "sumber": "proyek.json pihak.pemilik",
+    "sumber_url": "https://www.gem.wiki/Singkarak_solar_farm"
+   },
+   {
+    "proyek_id": "pj_0002",
+    "peran": "pemilik",
+    "nama_di_sumber": "PLN",
+    "cocok": "id-sumber",
+    "sumber": "proyek.json pihak.pemilik",
+    "sumber_url": "https://gatrik.esdm.go.id/gatrik/gatrik-api//storage/migrasi/download_index/files/b967d-ruptl-pln-2025-2034-pub-.pdf#page=830"
+   },
+   {
+    "proyek_id": "pj_0055",
+    "peran": "pemilik",
+    "nama_di_sumber": "PLN",
+    "cocok": "id-sumber",
+    "sumber": "proyek.json pihak.pemilik",
+    "sumber_url": "https://gatrik.esdm.go.id/gatrik/gatrik-api//storage/migrasi/download_index/files/b967d-ruptl-pln-2025-2034-pub-.pdf#page=607"
+   },
+   {
+    "proyek_id": "pj_0056",
+    "peran": "pemilik",
+    "nama_di_sumber": "PLN",
+    "cocok": "id-sumber",
+    "sumber": "proyek.json pihak.pemilik",
+    "sumber_url": "https://gatrik.esdm.go.id/gatrik/gatrik-api//storage/migrasi/download_index/files/b967d-ruptl-pln-2025-2034-pub-.pdf#page=607"
+   },
+   {
+    "proyek_id": "pj_0067",
+    "peran": "pemilik",
+    "nama_di_sumber": "PT. PLN",
+    "cocok": "id-sumber",
+    "sumber": "proyek.json pihak.pemilik",
+    "sumber_url": "https://en.wikipedia.org/wiki/List_of_power_stations_in_Indonesia"
+   },
+   {
+    "proyek_id": "pj_0071",
+    "peran": "pemilik",
+    "nama_di_sumber": "PT. PLN",
+    "cocok": "id-sumber",
+    "sumber": "proyek.json pihak.pemilik",
+    "sumber_url": "https://en.wikipedia.org/wiki/List_of_power_stations_in_Indonesia"
+   },
+   {
+    "proyek_id": "pj_0076",
+    "peran": "pemilik",
+    "nama_di_sumber": "PT. PLN",
+    "cocok": "id-sumber",
+    "sumber": "proyek.json pihak.pemilik",
+    "sumber_url": "https://en.wikipedia.org/wiki/List_of_power_stations_in_Indonesia"
+   },
+   {
+    "proyek_id": "pj_0079",
+    "peran": "pemilik",
+    "nama_di_sumber": "PT PLN (Persero)",
+    "cocok": "id-sumber",
+    "sumber": "proyek.json pihak.pemilik",
+    "sumber_url": "https://www.gem.wiki/Jatigede_hydroelectric_plant"
+   },
+   {
+    "proyek_id": "pj_0081",
+    "peran": "pemilik",
+    "nama_di_sumber": "PT PLN (Persero)",
+    "cocok": "id-sumber",
+    "sumber": "proyek.json pihak.pemilik",
+    "sumber_url": "https://www.gem.wiki/Jatiluhur_hydroelectric_plant"
+   },
+   {
+    "proyek_id": "pj_0114",
+    "peran": "pemilik",
+    "nama_di_sumber": "PLN",
+    "cocok": "id-sumber",
+    "sumber": "proyek.json pihak.pemilik",
+    "sumber_url": "https://gatrik.esdm.go.id/gatrik/gatrik-api//storage/migrasi/download_index/files/b967d-ruptl-pln-2025-2034-pub-.pdf#page=735"
+   },
+   {
+    "proyek_id": "pj_0117",
+    "peran": "pemilik",
+    "nama_di_sumber": "PT. PLN",
+    "cocok": "id-sumber",
+    "sumber": "proyek.json pihak.pemilik",
+    "sumber_url": "https://en.wikipedia.org/wiki/List_of_power_stations_in_Indonesia"
+   },
+   {
+    "proyek_id": "pj_0122",
+    "peran": "pemilik",
+    "nama_di_sumber": "PLN",
+    "cocok": "id-sumber",
+    "sumber": "proyek.json pihak.pemilik",
+    "sumber_url": "https://gatrik.esdm.go.id/gatrik/gatrik-api//storage/migrasi/download_index/files/b967d-ruptl-pln-2025-2034-pub-.pdf#page=803"
+   },
+   {
+    "proyek_id": "pj_0123",
+    "peran": "pemilik",
+    "nama_di_sumber": "PT. PLN",
+    "cocok": "id-sumber",
+    "sumber": "proyek.json pihak.pemilik",
+    "sumber_url": "https://en.wikipedia.org/wiki/List_of_power_stations_in_Indonesia"
+   },
+   {
+    "proyek_id": "pj_0124",
+    "peran": "pemilik",
+    "nama_di_sumber": "PT. PLN",
+    "cocok": "id-sumber",
+    "sumber": "proyek.json pihak.pemilik",
+    "sumber_url": "https://en.wikipedia.org/wiki/List_of_power_stations_in_Indonesia"
+   },
+   {
+    "proyek_id": "pj_0131",
+    "peran": "pemilik",
+    "nama_di_sumber": "PLN",
+    "cocok": "id-sumber",
+    "sumber": "proyek.json pihak.pemilik",
+    "sumber_url": "https://gatrik.esdm.go.id/gatrik/gatrik-api//storage/migrasi/download_index/files/b967d-ruptl-pln-2025-2034-pub-.pdf#page=1077"
+   },
+   {
+    "proyek_id": "pj_0135",
+    "peran": "pemilik",
+    "nama_di_sumber": "PLN",
+    "cocok": "id-sumber",
+    "sumber": "proyek.json pihak.pemilik",
+    "sumber_url": "https://gatrik.esdm.go.id/gatrik/gatrik-api//storage/migrasi/download_index/files/b967d-ruptl-pln-2025-2034-pub-.pdf#page=1177"
+   },
+   {
+    "proyek_id": "pj_0136",
+    "peran": "pemilik",
+    "nama_di_sumber": "PLN",
+    "cocok": "id-sumber",
+    "sumber": "proyek.json pihak.pemilik",
+    "sumber_url": "https://gatrik.esdm.go.id/gatrik/gatrik-api//storage/migrasi/download_index/files/b967d-ruptl-pln-2025-2034-pub-.pdf#page=1177"
+   },
+   {
+    "proyek_id": "pj_0144",
+    "peran": "pemilik",
+    "nama_di_sumber": "PLN",
+    "cocok": "id-sumber",
+    "sumber": "proyek.json pihak.pemilik",
+    "sumber_url": "https://gatrik.esdm.go.id/gatrik/gatrik-api//storage/migrasi/download_index/files/b967d-ruptl-pln-2025-2034-pub-.pdf#page=1121"
+   },
+   {
+    "proyek_id": "pj_0145",
+    "peran": "pemilik",
+    "nama_di_sumber": "PLN",
+    "cocok": "id-sumber",
+    "sumber": "proyek.json pihak.pemilik",
+    "sumber_url": "https://gatrik.esdm.go.id/gatrik/gatrik-api//storage/migrasi/download_index/files/b967d-ruptl-pln-2025-2034-pub-.pdf#page=1122"
+   },
+   {
+    "proyek_id": "pj_0146",
+    "peran": "pemilik",
+    "nama_di_sumber": "PLN",
+    "cocok": "id-sumber",
+    "sumber": "proyek.json pihak.pemilik",
+    "sumber_url": "https://gatrik.esdm.go.id/gatrik/gatrik-api//storage/migrasi/download_index/files/b967d-ruptl-pln-2025-2034-pub-.pdf#page=1121"
+   },
+   {
+    "proyek_id": "pj_0147",
+    "peran": "pemilik",
+    "nama_di_sumber": "PLN",
+    "cocok": "id-sumber",
+    "sumber": "proyek.json pihak.pemilik",
+    "sumber_url": "https://gatrik.esdm.go.id/gatrik/gatrik-api//storage/migrasi/download_index/files/b967d-ruptl-pln-2025-2034-pub-.pdf#page=1121"
+   },
+   {
+    "proyek_id": "pj_0148",
+    "peran": "pemilik",
+    "nama_di_sumber": "PLN",
+    "cocok": "id-sumber",
+    "sumber": "proyek.json pihak.pemilik",
+    "sumber_url": "https://gatrik.esdm.go.id/gatrik/gatrik-api//storage/migrasi/download_index/files/b967d-ruptl-pln-2025-2034-pub-.pdf#page=1121"
+   },
+   {
+    "proyek_id": "pj_0149",
+    "peran": "pemilik",
+    "nama_di_sumber": "PLN",
+    "cocok": "id-sumber",
+    "sumber": "proyek.json pihak.pemilik",
+    "sumber_url": "https://gatrik.esdm.go.id/gatrik/gatrik-api//storage/migrasi/download_index/files/b967d-ruptl-pln-2025-2034-pub-.pdf#page=1122"
+   },
+   {
+    "proyek_id": "pj_0150",
+    "peran": "pemilik",
+    "nama_di_sumber": "PLN",
+    "cocok": "id-sumber",
+    "sumber": "proyek.json pihak.pemilik",
+    "sumber_url": "https://gatrik.esdm.go.id/gatrik/gatrik-api//storage/migrasi/download_index/files/b967d-ruptl-pln-2025-2034-pub-.pdf#page=1121"
+   },
+   {
+    "proyek_id": "pj_0152",
+    "peran": "pemilik",
+    "nama_di_sumber": "PLN",
+    "cocok": "id-sumber",
+    "sumber": "proyek.json pihak.pemilik",
+    "sumber_url": "https://gatrik.esdm.go.id/gatrik/gatrik-api//storage/migrasi/download_index/files/b967d-ruptl-pln-2025-2034-pub-.pdf#page=1122"
+   },
+   {
+    "proyek_id": "pj_0153",
+    "peran": "pemilik",
+    "nama_di_sumber": "PLN",
+    "cocok": "id-sumber",
+    "sumber": "proyek.json pihak.pemilik",
+    "sumber_url": "https://gatrik.esdm.go.id/gatrik/gatrik-api//storage/migrasi/download_index/files/b967d-ruptl-pln-2025-2034-pub-.pdf#page=1144"
+   },
+   {
+    "proyek_id": "pj_0154",
+    "peran": "pemilik",
+    "nama_di_sumber": "PT. PLN",
+    "cocok": "id-sumber",
+    "sumber": "proyek.json pihak.pemilik",
+    "sumber_url": "https://en.wikipedia.org/wiki/List_of_power_stations_in_Indonesia"
+   },
+   {
+    "proyek_id": "pj_0155",
+    "peran": "pemilik",
+    "nama_di_sumber": "PLN",
+    "cocok": "id-sumber",
+    "sumber": "proyek.json pihak.pemilik",
+    "sumber_url": "https://gatrik.esdm.go.id/gatrik/gatrik-api//storage/migrasi/download_index/files/b967d-ruptl-pln-2025-2034-pub-.pdf#page=1055"
+   },
+   {
+    "proyek_id": "pj_0156",
+    "peran": "pemilik",
+    "nama_di_sumber": "PT. PLN",
+    "cocok": "id-sumber",
+    "sumber": "proyek.json pihak.pemilik",
+    "sumber_url": "https://en.wikipedia.org/wiki/List_of_power_stations_in_Indonesia"
+   },
+   {
+    "proyek_id": "pj_0160",
+    "peran": "pemilik",
+    "nama_di_sumber": "PT PLN (Persero)",
+    "cocok": "id-sumber",
+    "sumber": "proyek.json pihak.pemilik",
+    "sumber_url": "https://www.gem.wiki/Bakaru_2_hydroelectric_plant"
+   },
+   {
+    "proyek_id": "pj_0162",
+    "peran": "pemilik",
+    "nama_di_sumber": "PT PLN (Persero)",
+    "cocok": "id-sumber",
+    "sumber": "proyek.json pihak.pemilik",
+    "sumber_url": "https://www.gem.wiki/Pokko_hydroelectric_plant"
+   },
+   {
+    "proyek_id": "pj_0165",
+    "peran": "pemilik",
+    "nama_di_sumber": "PLN",
+    "cocok": "id-sumber",
+    "sumber": "proyek.json pihak.pemilik",
+    "sumber_url": "https://gatrik.esdm.go.id/gatrik/gatrik-api//storage/migrasi/download_index/files/b967d-ruptl-pln-2025-2034-pub-.pdf#page=1016"
+   },
+   {
+    "proyek_id": "pj_0171",
+    "peran": "pemilik",
+    "nama_di_sumber": "PLN",
+    "cocok": "id-sumber",
+    "sumber": "proyek.json pihak.pemilik",
+    "sumber_url": "https://gatrik.esdm.go.id/gatrik/gatrik-api//storage/migrasi/download_index/files/b967d-ruptl-pln-2025-2034-pub-.pdf#page=980"
+   },
+   {
+    "proyek_id": "pj_0172",
+    "peran": "pemilik",
+    "nama_di_sumber": "PLN",
+    "cocok": "id-sumber",
+    "sumber": "proyek.json pihak.pemilik",
+    "sumber_url": "https://gatrik.esdm.go.id/gatrik/gatrik-api//storage/migrasi/download_index/files/b967d-ruptl-pln-2025-2034-pub-.pdf#page=980"
+   },
+   {
+    "proyek_id": "pj_0173",
+    "peran": "pemilik",
+    "nama_di_sumber": "PLN",
+    "cocok": "id-sumber",
+    "sumber": "proyek.json pihak.pemilik",
+    "sumber_url": "https://gatrik.esdm.go.id/gatrik/gatrik-api//storage/migrasi/download_index/files/b967d-ruptl-pln-2025-2034-pub-.pdf#page=980"
+   },
+   {
+    "proyek_id": "pj_0181",
+    "peran": "pemilik",
+    "nama_di_sumber": "PT. PLN",
+    "cocok": "id-sumber",
+    "sumber": "proyek.json pihak.pemilik",
+    "sumber_url": "https://en.wikipedia.org/wiki/List_of_power_stations_in_Indonesia"
+   },
+   {
+    "proyek_id": "pj_0182",
+    "peran": "pemilik",
+    "nama_di_sumber": "PT. PLN",
+    "cocok": "id-sumber",
+    "sumber": "proyek.json pihak.pemilik",
+    "sumber_url": "https://en.wikipedia.org/wiki/List_of_power_stations_in_Indonesia"
+   },
+   {
+    "proyek_id": "pj_0183",
+    "peran": "pemilik",
+    "nama_di_sumber": "PT. PLN",
+    "cocok": "id-sumber",
+    "sumber": "proyek.json pihak.pemilik",
+    "sumber_url": "https://en.wikipedia.org/wiki/List_of_power_stations_in_Indonesia"
+   },
+   {
+    "proyek_id": "pj_0184",
+    "peran": "pemilik",
+    "nama_di_sumber": "PT. PLN",
+    "cocok": "id-sumber",
+    "sumber": "proyek.json pihak.pemilik",
+    "sumber_url": "https://en.wikipedia.org/wiki/List_of_power_stations_in_Indonesia"
+   },
+   {
+    "proyek_id": "pj_0185",
+    "peran": "pemilik",
+    "nama_di_sumber": "PLN",
+    "cocok": "id-sumber",
+    "sumber": "proyek.json pihak.pemilik",
+    "sumber_url": "https://gatrik.esdm.go.id/gatrik/gatrik-api//storage/migrasi/download_index/files/b967d-ruptl-pln-2025-2034-pub-.pdf#page=673"
+   },
+   {
+    "proyek_id": "pj_0190",
+    "peran": "pemilik",
+    "nama_di_sumber": "PT. PLN",
+    "cocok": "id-sumber",
+    "sumber": "proyek.json pihak.pemilik",
+    "sumber_url": "https://en.wikipedia.org/wiki/List_of_power_stations_in_Indonesia"
+   },
+   {
+    "proyek_id": "pj_0194",
+    "peran": "pemilik",
+    "nama_di_sumber": "PT. PLN",
+    "cocok": "id-sumber",
+    "sumber": "proyek.json pihak.pemilik",
+    "sumber_url": "https://en.wikipedia.org/wiki/List_of_power_stations_in_Indonesia"
+   },
+   {
+    "proyek_id": "pj_0195",
+    "peran": "pemilik",
+    "nama_di_sumber": "PT. PLN",
+    "cocok": "id-sumber",
+    "sumber": "proyek.json pihak.pemilik",
+    "sumber_url": "https://en.wikipedia.org/wiki/List_of_power_stations_in_Indonesia"
+   },
+   {
+    "proyek_id": "pj_0196",
+    "peran": "pemilik",
+    "nama_di_sumber": "PLN",
+    "cocok": "id-sumber",
+    "sumber": "proyek.json pihak.pemilik",
+    "sumber_url": "https://gatrik.esdm.go.id/gatrik/gatrik-api//storage/migrasi/download_index/files/b967d-ruptl-pln-2025-2034-pub-.pdf#page=621"
+   },
+   {
+    "proyek_id": "pj_0215",
+    "peran": "pemilik",
+    "nama_di_sumber": "PT. PLN",
+    "cocok": "id-sumber",
+    "sumber": "proyek.json pihak.pemilik",
+    "sumber_url": "https://en.wikipedia.org/wiki/List_of_power_stations_in_Indonesia"
+   },
+   {
+    "proyek_id": "pj_0217",
+    "peran": "pemilik",
+    "nama_di_sumber": "PT PLN (Persero)",
+    "cocok": "alias-kurasi",
+    "sumber": "Global Energy Monitor hydropower L100001045711 (CC BY 4.0)",
+    "sumber_url": "https://www.gem.wiki/Wampu_hydroelectric_plant"
+   },
+   {
+    "proyek_id": "pj_0224",
+    "peran": "pemilik",
+    "nama_di_sumber": "PLN",
+    "cocok": "id-sumber",
+    "sumber": "proyek.json pihak.pemilik",
+    "sumber_url": "https://gatrik.esdm.go.id/gatrik/gatrik-api//storage/migrasi/download_index/files/b967d-ruptl-pln-2025-2034-pub-.pdf#page=709"
+   },
+   {
+    "proyek_id": "pj_0225",
+    "peran": "pemilik",
+    "nama_di_sumber": "PT PLN (Persero)",
+    "cocok": "id-sumber",
+    "sumber": "proyek.json pihak.pemilik",
+    "sumber_url": "https://www.gem.wiki/Kepahiang_geothermal_power_plant"
+   },
+   {
+    "proyek_id": "pj_0238",
+    "peran": "pemilik",
+    "nama_di_sumber": "PT PLN (Persero)",
+    "cocok": "id-sumber",
+    "sumber": "proyek.json pihak.pemilik",
+    "sumber_url": "https://www.gem.wiki/Tangkuban_Perahu_Ciater_geothermal_power_plant"
+   },
+   {
+    "proyek_id": "pj_0249",
+    "peran": "pemilik",
+    "nama_di_sumber": "PT. PLN",
+    "cocok": "id-sumber",
+    "sumber": "proyek.json pihak.pemilik",
+    "sumber_url": "https://en.wikipedia.org/wiki/List_of_power_stations_in_Indonesia"
+   },
+   {
+    "proyek_id": "pj_0250",
+    "peran": "pemilik",
+    "nama_di_sumber": "PT PLN (Persero)",
+    "cocok": "id-sumber",
+    "sumber": "proyek.json pihak.pemilik",
+    "sumber_url": "https://www.gem.wiki/Songa_Wayaua_geothermal_power_plant"
+   },
+   {
+    "proyek_id": "pj_0251",
+    "peran": "pemilik",
+    "nama_di_sumber": "PT PLN (Persero)",
+    "cocok": "id-sumber",
+    "sumber": "proyek.json pihak.pemilik",
+    "sumber_url": "https://www.gem.wiki/Tulehu_geothermal_power_plant"
+   },
+   {
+    "proyek_id": "pj_0252",
+    "peran": "pemilik",
+    "nama_di_sumber": "PT PLN (Persero)",
+    "cocok": "id-sumber",
+    "sumber": "proyek.json pihak.pemilik",
+    "sumber_url": "https://www.gem.wiki/Atadei_geothermal_power_plant"
+   },
+   {
+    "proyek_id": "pj_0253",
+    "peran": "pemilik",
+    "nama_di_sumber": "PT PLN (Persero)",
+    "cocok": "id-sumber",
+    "sumber": "proyek.json pihak.pemilik",
+    "sumber_url": "https://www.gem.wiki/Gunung_Sirung_geothermal_power_plant"
+   },
+   {
+    "proyek_id": "pj_0254",
+    "peran": "pemilik",
+    "nama_di_sumber": "PT PLN (Persero)",
+    "cocok": "id-sumber",
+    "sumber": "proyek.json pihak.pemilik",
+    "sumber_url": "https://www.gem.wiki/Mataloko_geothermal_power_plant"
+   },
+   {
+    "proyek_id": "pj_0255",
+    "peran": "pemilik",
+    "nama_di_sumber": "PT PLN (Persero)",
+    "cocok": "id-sumber",
+    "sumber": "proyek.json pihak.pemilik",
+    "sumber_url": "https://www.gem.wiki/Oka_Ile_Ange_geothermal_power_plant"
+   },
+   {
+    "proyek_id": "pj_0260",
+    "peran": "pemilik",
+    "nama_di_sumber": "PT. PLN",
+    "cocok": "id-sumber",
+    "sumber": "proyek.json pihak.pemilik",
+    "sumber_url": "https://en.wikipedia.org/wiki/List_of_power_stations_in_Indonesia"
+   },
+   {
+    "proyek_id": "pj_0276",
+    "peran": "pemilik",
+    "nama_di_sumber": "PLN",
+    "cocok": "id-sumber",
+    "sumber": "proyek.json pihak.pemilik",
+    "sumber_url": "https://gatrik.esdm.go.id/gatrik/gatrik-api//storage/migrasi/download_index/files/b967d-ruptl-pln-2025-2034-pub-.pdf#page=831"
+   },
+   {
+    "proyek_id": "pj_0277",
+    "peran": "pemilik",
+    "nama_di_sumber": "PLN",
+    "cocok": "id-sumber",
+    "sumber": "proyek.json pihak.pemilik",
+    "sumber_url": "https://gatrik.esdm.go.id/gatrik/gatrik-api//storage/migrasi/download_index/files/b967d-ruptl-pln-2025-2034-pub-.pdf#page=831"
+   },
+   {
+    "proyek_id": "pj_0280",
+    "peran": "pemilik",
+    "nama_di_sumber": "PLN",
+    "cocok": "id-sumber",
+    "sumber": "proyek.json pihak.pemilik",
+    "sumber_url": "https://gatrik.esdm.go.id/gatrik/gatrik-api//storage/migrasi/download_index/files/b967d-ruptl-pln-2025-2034-pub-.pdf#page=1122"
+   },
+   {
+    "proyek_id": "pj_0283",
+    "peran": "pemilik",
+    "nama_di_sumber": "PLN",
+    "cocok": "id-sumber",
+    "sumber": "proyek.json pihak.pemilik",
+    "sumber_url": "https://gatrik.esdm.go.id/gatrik/gatrik-api//storage/migrasi/download_index/files/b967d-ruptl-pln-2025-2034-pub-.pdf#page=851"
+   },
+   {
+    "proyek_id": "pj_0285",
+    "peran": "pemilik",
+    "nama_di_sumber": "PLN",
+    "cocok": "id-sumber",
+    "sumber": "proyek.json pihak.pemilik",
+    "sumber_url": "https://gatrik.esdm.go.id/gatrik/gatrik-api//storage/migrasi/download_index/files/b967d-ruptl-pln-2025-2034-pub-.pdf#page=852"
+   },
+   {
+    "proyek_id": "pj_0286",
+    "peran": "pemilik",
+    "nama_di_sumber": "PT. PLN",
+    "cocok": "id-sumber",
+    "sumber": "proyek.json pihak.pemilik",
+    "sumber_url": "https://en.wikipedia.org/wiki/List_of_power_stations_in_Indonesia"
+   },
+   {
+    "proyek_id": "pj_0287",
+    "peran": "pemilik",
+    "nama_di_sumber": "PLN",
+    "cocok": "id-sumber",
+    "sumber": "proyek.json pihak.pemilik",
+    "sumber_url": "https://gatrik.esdm.go.id/gatrik/gatrik-api//storage/migrasi/download_index/files/b967d-ruptl-pln-2025-2034-pub-.pdf#page=850"
+   },
+   {
+    "proyek_id": "pj_0288",
+    "peran": "pemilik",
+    "nama_di_sumber": "PLN",
+    "cocok": "id-sumber",
+    "sumber": "proyek.json pihak.pemilik",
+    "sumber_url": "https://gatrik.esdm.go.id/gatrik/gatrik-api//storage/migrasi/download_index/files/b967d-ruptl-pln-2025-2034-pub-.pdf#page=850"
+   },
+   {
+    "proyek_id": "pj_0289",
+    "peran": "pemilik",
+    "nama_di_sumber": "PT. PLN",
+    "cocok": "id-sumber",
+    "sumber": "proyek.json pihak.pemilik",
+    "sumber_url": "https://en.wikipedia.org/wiki/List_of_power_stations_in_Indonesia"
+   },
+   {
+    "proyek_id": "pj_0290",
+    "peran": "pemilik",
+    "nama_di_sumber": "PLN",
+    "cocok": "id-sumber",
+    "sumber": "proyek.json pihak.pemilik",
+    "sumber_url": "https://gatrik.esdm.go.id/gatrik/gatrik-api//storage/migrasi/download_index/files/b967d-ruptl-pln-2025-2034-pub-.pdf#page=882"
+   },
+   {
+    "proyek_id": "pj_0291",
+    "peran": "pemilik",
+    "nama_di_sumber": "PLN",
+    "cocok": "id-sumber",
+    "sumber": "proyek.json pihak.pemilik",
+    "sumber_url": "https://gatrik.esdm.go.id/gatrik/gatrik-api//storage/migrasi/download_index/files/b967d-ruptl-pln-2025-2034-pub-.pdf#page=881"
+   },
+   {
+    "proyek_id": "pj_0292",
+    "peran": "pemilik",
+    "nama_di_sumber": "PT. PLN",
+    "cocok": "id-sumber",
+    "sumber": "proyek.json pihak.pemilik",
+    "sumber_url": "https://en.wikipedia.org/wiki/List_of_power_stations_in_Indonesia"
+   },
+   {
+    "proyek_id": "pj_0293",
+    "peran": "pemilik",
+    "nama_di_sumber": "PT. PLN",
+    "cocok": "id-sumber",
+    "sumber": "proyek.json pihak.pemilik",
+    "sumber_url": "https://en.wikipedia.org/wiki/List_of_power_stations_in_Indonesia"
+   },
+   {
+    "proyek_id": "pj_0313",
+    "peran": "pemilik",
+    "nama_di_sumber": "PLN",
+    "cocok": "id-sumber",
+    "sumber": "proyek.json pihak.pemilik",
+    "sumber_url": "https://gatrik.esdm.go.id/gatrik/gatrik-api//storage/migrasi/download_index/files/b967d-ruptl-pln-2025-2034-pub-.pdf#page=1077"
+   },
+   {
+    "proyek_id": "pj_0315",
+    "peran": "pemilik",
+    "nama_di_sumber": "PLN",
+    "cocok": "id-sumber",
+    "sumber": "proyek.json pihak.pemilik",
+    "sumber_url": "https://gatrik.esdm.go.id/gatrik/gatrik-api//storage/migrasi/download_index/files/b967d-ruptl-pln-2025-2034-pub-.pdf#page=1176"
+   },
+   {
+    "proyek_id": "pj_0320",
+    "peran": "pemilik",
+    "nama_di_sumber": "PLN",
+    "cocok": "id-sumber",
+    "sumber": "proyek.json pihak.pemilik",
+    "sumber_url": "https://gatrik.esdm.go.id/gatrik/gatrik-api//storage/migrasi/download_index/files/b967d-ruptl-pln-2025-2034-pub-.pdf#page=1177"
+   },
+   {
+    "proyek_id": "pj_0343",
+    "peran": "pemilik",
+    "nama_di_sumber": "PT PLN (Persero)",
+    "cocok": "id-sumber",
+    "sumber": "proyek.json pihak.pemilik",
+    "sumber_url": "https://www.gem.wiki/Karangkates_floating_solar_farm"
+   },
+   {
+    "proyek_id": "pj_0356",
+    "peran": "pemilik",
+    "nama_di_sumber": "PLN",
+    "cocok": "id-sumber",
+    "sumber": "proyek.json pihak.pemilik",
+    "sumber_url": "https://gatrik.esdm.go.id/gatrik/gatrik-api//storage/migrasi/download_index/files/b967d-ruptl-pln-2025-2034-pub-.pdf#page=803"
+   },
+   {
+    "proyek_id": "pj_0376",
+    "peran": "pemilik",
+    "nama_di_sumber": "PLN",
+    "cocok": "id-sumber",
+    "sumber": "proyek.json pihak.pemilik",
+    "sumber_url": "https://gatrik.esdm.go.id/gatrik/gatrik-api//storage/migrasi/download_index/files/b967d-ruptl-pln-2025-2034-pub-.pdf#page=1177"
+   },
+   {
+    "proyek_id": "pjb_009",
+    "peran": "pemilik",
+    "nama_di_sumber": "PT PLN (Persero)",
+    "cocok": "id-sumber",
+    "sumber": "proyek.json pihak.pemilik",
+    "sumber_url": "https://koran-jakarta.com/2026-09-05/gebrakan-energi-hijau-prabowo-nabire-dapat-alokasi-plts-18-mwp"
+   },
+   {
+    "proyek_id": "pjb_010",
+    "peran": "pemilik",
+    "nama_di_sumber": "PT PLN (Persero)",
+    "cocok": "id-sumber",
+    "sumber": "proyek.json pihak.pemilik",
+    "sumber_url": "https://koran-jakarta.com/2026-09-05/gebrakan-energi-hijau-prabowo-nabire-dapat-alokasi-plts-18-mwp"
+   },
+   {
+    "proyek_id": "pjb_014",
+    "peran": "pemilik",
+    "nama_di_sumber": "PT PLN (Persero)",
+    "cocok": "id-sumber",
+    "sumber": "proyek.json pihak.pemilik",
+    "sumber_url": "https://news.republika.co.id/berita/tls6a92230000/pemkab-serang-dan-pln-targetkan-listrik-24-jam-masuk-pulau-tunda-pada-2027-via-plts"
+   },
+   {
+    "proyek_id": "wb_P112158",
+    "peran": "pelaksana",
+    "nama_di_sumber": "PT Perusahaan Listrik Negara (Persero) (PLN)",
+    "cocok": "alias-kurasi",
+    "sumber": "proyek.json pihak.pelaksana",
+    "sumber_url": null
+   },
+   {
+    "proyek_id": "wb_P117323",
+    "peran": "pelaksana",
+    "nama_di_sumber": "PT PLN",
+    "cocok": "id-sumber",
+    "sumber": "proyek.json pihak.pelaksana",
+    "sumber_url": null
+   },
+   {
+    "proyek_id": "wb_P123994",
+    "peran": "pelaksana",
+    "nama_di_sumber": "PT PLN",
+    "cocok": "id-sumber",
+    "sumber": "proyek.json pihak.pelaksana",
+    "sumber_url": null
+   },
+   {
+    "proyek_id": "wb_P128568",
+    "peran": "pelaksana",
+    "nama_di_sumber": "PT PLN",
+    "cocok": "id-sumber",
+    "sumber": "proyek.json pihak.pelaksana",
+    "sumber_url": null
+   },
+   {
+    "proyek_id": "wb_P169259",
+    "peran": "pelaksana",
+    "nama_di_sumber": "PT PLN (Persero)",
+    "cocok": "id-sumber",
+    "sumber": "proyek.json pihak.pelaksana",
+    "sumber_url": null
+   },
+   {
+    "proyek_id": "wb_P169259",
+    "peran": "peminjam",
+    "nama_di_sumber": "PT PLN (Persero)",
+    "cocok": "id-sumber",
+    "sumber": "proyek.json pihak.peminjam",
+    "sumber_url": null
+   },
+   {
+    "proyek_id": "wb_P172256",
+    "peran": "pelaksana",
+    "nama_di_sumber": "PT Perusahaan Listrik Negara (PLN)",
+    "cocok": "alias-kurasi",
+    "sumber": "proyek.json pihak.pelaksana",
+    "sumber_url": null
+   },
+   {
+    "proyek_id": "wb_P174350",
+    "peran": "pelaksana",
+    "nama_di_sumber": "PT PLN Persero (PLN)",
+    "cocok": "id-sumber",
+    "sumber": "proyek.json pihak.pelaksana",
+    "sumber_url": null
+   },
+   {
+    "proyek_id": "wb_P174350",
+    "peran": "peminjam",
+    "nama_di_sumber": "PT PLN (Persero)",
+    "cocok": "id-sumber",
+    "sumber": "proyek.json pihak.peminjam",
+    "sumber_url": null
+   }
+  ]
+ },
+ "tanpa_padanan": [
+  {
+   "nama": "Republic of Indonesia",
+   "peran": "peminjam",
+   "proyek": 8
+  },
+  {
+   "nama": "ACEN Investments HK Ltd",
+   "peran": "pemilik",
+   "proyek": 2
+  },
+  {
+   "nama": "Coordinating Ministry of Economic Affairs",
+   "peran": "pelaksana",
+   "proyek": 2
+  },
+  {
+   "nama": "AC Energy and Infrastructure Corp",
+   "peran": "pemilik",
+   "proyek": 1
+  },
+  {
+   "nama": "Bumi Biru Indonesia (SUS Indoplas)",
+   "peran": "pemilik",
+   "proyek": 1
+  },
+  {
+   "nama": "Chevron Geothermal Salak Ltd and Dayabumi Salak Pratama Ltd (IPP)",
+   "peran": "pemilik",
+   "proyek": 1
+  },
+  {
+   "nama": "Consortium Everbright Cemerlang Energy (China Everbright Environment, PT Harmoni Development Indonesia, PT Bioregen Enviro Tech)",
+   "peran": "pemilik",
+   "proyek": 1
+  },
+  {
+   "nama": "Consortium Mentari Citra Lestari (Bakrie Power, SUS)",
+   "peran": "pemilik",
+   "proyek": 1
+  },
+  {
+   "nama": "Directorate General of Human Settlements, Ministry of Public Works",
+   "peran": "pelaksana",
+   "proyek": 1
+  },
+  {
+   "nama": "Envision Group",
+   "peran": "pemilik",
+   "proyek": 1
+  },
+  {
+   "nama": "Government of Indonesia",
+   "peran": "peminjam",
+   "proyek": 1
+  },
+  {
+   "nama": "Indocement",
+   "peran": "peminjam",
+   "proyek": 1
+  },
+  {
+   "nama": "Masa Depan Energi Indonesia (PT Chandra Waste Energy, Beijing GeoEnviron Engineering and Tech Inc)",
+   "peran": "pemilik",
+   "proyek": 1
+  },
+  {
+   "nama": "Masdar Clean Energy",
+   "peran": "pemilik",
+   "proyek": 1
+  },
+  {
+   "nama": "MPM-CEVIA Consortium (Mega Power CEVIA)",
+   "peran": "pemilik",
+   "proyek": 1
+  },
+  {
+   "nama": "Nusantara Energi Hijau Consortium (BGE Sentosa Utama)",
+   "peran": "pemilik",
+   "proyek": 1
+  },
+  {
+   "nama": "Oakridge International",
+   "peran": "pemilik",
+   "proyek": 1
+  },
+  {
+   "nama": "PT. Pertamina and Magma Nusantara Ltd. (IPP)",
+   "peran": "pemilik",
+   "proyek": 1
+  },
+  {
+   "nama": "Republic of Indonesia",
+   "peran": "pelaksana",
+   "proyek": 1
+  },
+  {
+   "nama": "Sarulla Operations Ltd",
+   "peran": "pemilik",
+   "proyek": 1
+  },
+  {
+   "nama": "The Republic of Indonesia",
+   "peran": "peminjam",
+   "proyek": 1
+  },
+  {
+   "nama": "Yayasan Transparasi Sumber Daya Ekstraktif (Publish What You Pay Indonesia)",
+   "peran": "peminjam",
+   "proyek": 1
+  },
+  {
+   "nama": "Yayasan Transparasi Sumber Daya Ekstraktif (Publish What You Pay Indonesia)",
+   "peran": "pelaksana",
+   "proyek": 1
+  }
+ ]
+}

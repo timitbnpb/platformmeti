@@ -18,6 +18,7 @@ import { rute as ruteIkuti } from "./ikuti.js";
 import { rute as rutePortal } from "./portal.js";
 import { rute as ruteWilayahKelola } from "./wilayah_kelola.js";
 import { rute as ruteDaftar } from "./daftar.js";
+import { rute as ruteKonsultasi } from "./konsultasi.js";
 import { catatHit, perbaruiRentang } from "./lalin.js";
 import * as hak from "./hak.js";
 import { halamanProfil } from "./profil.js";
@@ -40,7 +41,7 @@ const rutePemilik = {
 };
 
 // Tabel rute dikompilasi sekali: { metode, bagian[], fn }.
-const DAFTAR = Object.entries({ ...ruteSesi, ...ruteAkun, ...ruteAgenda, ...ruteSosmed, ...ruteEvent, ...ruteDirektori, ...ruteFoto, ...ruteAdmin, ...ruteLangganan, ...ruteKelayakan, ...rutePustaka, ...ruteKta, ...ruteMetiWilayah, ...rutePesan, ...ruteProfilAkun, ...ruteIkuti, ...rutePortal, ...ruteWilayahKelola, ...ruteDaftar, ...rutePemilik }).map(([k, fn]) => {
+const DAFTAR = Object.entries({ ...ruteSesi, ...ruteAkun, ...ruteAgenda, ...ruteSosmed, ...ruteEvent, ...ruteDirektori, ...ruteFoto, ...ruteAdmin, ...ruteLangganan, ...ruteKelayakan, ...rutePustaka, ...ruteKta, ...ruteMetiWilayah, ...rutePesan, ...ruteProfilAkun, ...ruteIkuti, ...rutePortal, ...ruteWilayahKelola, ...ruteKonsultasi, ...ruteDaftar, ...rutePemilik }).map(([k, fn]) => {
   const [metode, jalur] = k.split(" ");
   return { metode, bagian: jalur.split("/").slice(1), fn };
 });
@@ -138,7 +139,7 @@ const NAMA_TEKNOLOGI = { surya: "Energi surya", bayu: "Energi bayu", hidro: "Hid
 const TIDAK_ADA = () => new Response("Tidak ditemukan", { status: 404, headers: { "content-type": "text/plain; charset=utf-8" } });
 const LANGSUNG_404 = /^\/(direktori|admin)\.html$/;
 // Halaman yang digabung (Peluang+Kelayakan, Kalender+Event, Galeri+Video+Podcast): tautan lama dialihkan 301 ke tab barunya, query dipertahankan.
-const ALIH_GABUNG = { "/kelayakan": "/peluang#hitung", "/event": "/kalender#daftar", "/video": "/galeri#video", "/podcast": "/galeri#sosmed" };
+const ALIH_GABUNG = { "/kelayakan": "/peluang#hitung", "/event": "/kalender#daftar", "/video": "/galeri#video", "/podcast": "/galeri#sosmed", "/tender": "/proyek#tender" };
 
 function halamanPrivat(res) {
   const r = new Response(res.body, res);

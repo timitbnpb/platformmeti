@@ -1,0 +1,6 @@
+[
+ {"id":"l_09a0eabcbd","nama":"Institut Pertanian Bogor","singkatan":"IPB","alias":["IPB University"],"kota":"Bogor","provinsi":"Jawa Barat","lat":-6.5581,"lng":106.7249,"situs":"https://www.ipb.ac.id"},
+ {"id":"l_60d0957891","nama":"Universitas Diponegoro","singkatan":"Undip","alias":[],"kota":"Semarang","provinsi":"Jawa Tengah","lat":-7.0495,"lng":110.4381,"situs":"https://undip.ac.id"},
+ {"id":"l_e85c3f1dde","nama":"Institut Teknologi Sepuluh Nopember","singkatan":"ITS","alias":[],"kota":"Surabaya","provinsi":"Jawa Timur","lat":-7.2819,"lng":112.7948,"situs":"https://www.its.ac.id"},
+ {"id":"l_e006174e5f","nama":"Politeknik Elektronika Negeri Surabaya","singkatan":"PENS","alias":[],"kota":"Surabaya","provinsi":"Jawa Timur","lat":-7.2757,"lng":112.7943,"situs":"https://www.pens.ac.id"}
+]

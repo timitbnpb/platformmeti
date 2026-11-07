@@ -12,7 +12,7 @@ await mulaiHalaman();
 const akar = document.getElementById("isi");
 const IK = { proyek: "proyek", organisasi: "direktori", provinsi: "wilayah", regulasi: "regulasi", tender: "peluang" };
 const BERKAS = { proyek: "proyek", organisasi: "organisasi", regulasi: "regulasi" };
-const tautan = (jenis, ref) => (jenis === "proyek" ? "/p/" : jenis === "organisasi" ? "/o/" : jenis === "provinsi" ? "/wilayah/" : jenis === "regulasi" ? "/regulasi?id=" : "") + (jenis === "tender" ? "" : encodeURIComponent(ref));
+const tautan = (jenis, ref) => (jenis === "proyek" ? "/p/" : jenis === "organisasi" ? "/o/" : jenis === "provinsi" ? "/wilayah/" : jenis === "regulasi" ? "/regulasi?id=" : "") + (jenis === "tender" ? "/proyek#tender" : encodeURIComponent(ref));
 const muatData = (n) => fetch(`/data/${n}.json`).then((r) => r.json()).then((d) => new Map(d.baris.map((x) => [x.id, x]))).catch(() => new Map());
 
 let NAMA = {};
@@ -27,12 +27,13 @@ function nama(jenis, ref) {
   if (!x) return ref;
   return jenis === "proyek" ? namaProyek(x) : jenis === "regulasi" ? x.judul : x.nama;
 }
-const ent = (jenis, ref) => { const n = esc(nama(jenis, ref)), h = tautan(jenis, ref); return `<span class="jm-ringkas-sel">${h ? `<a href="${esc(h)}">${n}</a>` : `<b>${n}</b>`}<small>${esc(t("dk.j." + jenis))}</small></span>`; };
+const ent = (jenis, ref) => { const kons = ref.startsWith("kons:"), n = esc(kons ? ref.slice(5) : nama(jenis, ref)), h = kons ? "/regulasi?kd=" + encodeURIComponent(ref.slice(5)) + "#konsultasi" : tautan(jenis, ref); return `<span class="jm-ringkas-sel">${h ? `<a href="${esc(h)}">${n}</a>` : `<b>${n}</b>`}<small>${esc(t("dk.j." + jenis))}</small></span>`; };
 const tgl = (u) => `<span data-urut="${u}">${esc(tanggal(tanggalDariUnix(u)))}</span>`;
 
 function barisRingkasan(x) {
   const apa = x.tipe === "portal" ? esc(t("dk.portal." + x.jenis_ajuan))
     : x.tipe === "koreksi" ? esc(t("dk.koreksi", { kolom: t("kor.k." + x.kolom) }))
+      : x.tipe === "konsultasi" ? esc(t("dk.kons." + x.sub))
       : x.tipe === "regulasi" ? esc(t("dk.regulasi_baru", { judul: x.judul }))
         : `<a href="${/^https?:\/\//i.test(x.url) ? esc(x.url) : "#"}" target="_blank" rel="noopener noreferrer">${esc(x.judul)}</a>${x.media ? ` <small>${esc(x.media)}</small>` : ""}`;
   return `<tr><td class="jm-nowrap" data-l="${esc(t("dk.c.tanggal"))}">${tgl(x.waktu)}</td><td data-l="${esc(t("dk.c.entitas"))}">${ent(x.jenis, x.ref)}</td><td data-l="${esc(t("dk.c.pembaruan"))}"><span class="jm-ringkas-sel"><b>${esc(t("dk.tipe." + x.tipe))}</b><span>${apa}</span></span></td></tr>`;

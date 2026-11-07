@@ -197,7 +197,7 @@ const KUNCI_LANDING = { atas: "dft-atas", bawah: "dft-bawah" };
 const P = { kat: "ngo" };
 const rupiahKat = (n) => (n == null ? "-" : rupiah(n));
 function detail(k) {
-  const ada = new Set(k.manfaat), daftar = [L(k.hak_wakil), ...D.manfaat.filter((m) => ada.has(m.kunci)).map((m) => L(m))];
+  const ada = new Set(k.manfaat), daftar = [L(k.hak_wakil), ...D.manfaat.filter((m) => ada.has(m.kunci)).map((m) => L(m.teks))];
   return `<article class="dft-detail" aria-label="${esc(L(k.nama))}">
     <header>${k.rekomendasi ? `<span class="jm-pil jm-pil-ok">${esc(t("dft.rek"))}</span>` : ""}<h3>${esc(L(k.nama))}</h3><p>${esc(L(k.deskripsi))}</p></header>
     <div class="dft-harga"><small>${esc(t("dft.awal"))}</small><b>${esc(rupiah(k.iuran_awal))}</b>${k.iuran_tahunan ? `<span>${esc(t("dft.tahunan.nilai", { n: rupiah(k.iuran_tahunan) }))}</span>` : ""}</div>
@@ -221,7 +221,7 @@ function banding() {
     { j: t("dft.awal"), v: (k) => k.iuran_awal, tampil: (k) => rupiah(k.iuran_awal) },
     { j: t("dft.tahunan"), v: (k) => k.iuran_tahunan ?? 0, tampil: (k) => rupiahKat(k.iuran_tahunan) },
     { j: t("dft.paket"), v: (k) => k.perwakilan, tampil: (k) => t("dft.orang", { n: k.perwakilan }) },
-    ...D.manfaat.map((m) => ({ j: L(m), v: (k) => (k.manfaat.includes(m.kunci) ? 1 : 0), cek: true }))];
+    ...D.manfaat.map((m) => ({ j: L(m.teks), v: (k) => (k.manfaat.includes(m.kunci) ? 1 : 0), cek: true }))];
   return `<section class="dft-bagian" aria-labelledby="dft-banding-j"><header class="dft-bagian-kepala"><p class="jm-kh-ey">${ikon("tabel", 16)}<span ${tx("dft.banding.ey")}>${esc(t("dft.banding.ey"))}</span></p><h2 id="dft-banding-j" ${tx("dft.banding.j")}>${esc(t("dft.banding.j"))}</h2><p ${tx("dft.banding.d")}>${esc(t("dft.banding.d"))}</p></header>
     <div class="jm-gulir"><table class="jm-tabel dft-tabel"><thead><tr><th scope="col">${esc(t("dft.banding.manfaat"))}</th>${KAT.map((k) => `<th scope="col" class="jm-tengah">${esc(L(k.nama))}</th>`).join("")}</tr></thead>
     <tbody>${baris.map((b) => `<tr><th scope="row" data-l="${esc(t("dft.banding.manfaat"))}">${esc(b.j)}</th>${KAT.map((k) => `<td class="jm-tengah" data-l="${esc(L(k.nama))}" data-urut="${b.v(k)}">${b.cek ? (b.v(k) ? `${centang}<span class="sr">${esc(t("dft.ya"))}</span>` : `<span class="dft-tidak" aria-hidden="true">-</span><span class="sr">${esc(t("dft.tidak"))}</span>`) : esc(b.tampil(k))}</td>`).join("")}</tr>`).join("")}</tbody></table></div></section>`;

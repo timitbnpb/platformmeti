@@ -1,0 +1,488 @@
+{
+ "meta": {
+  "diperbarui": "2026-11-08",
+  "wb_dicek": 60,
+  "aiib_dicek": 7,
+  "tertaut": 4,
+  "tanpa_padanan": 63,
+  "adb": "dilewati: adb.org/projects menjawab 403 untuk bot",
+  "keterangan": "Tautan pendana ke proyek.json berdasar kecocokan nama pasti; bukan pernyataan resmi pembiayaan."
+ },
+ "tautan": {
+  "wb_P096677": {
+   "proyek_id": "pj_0260",
+   "pemberi": "World Bank",
+   "nama_pendana": "ID-PCF-Indonesia Lahendong Geothermal Project",
+   "nama_proyek": "Lahendong geothermal",
+   "bukti": "semua kata khas nama proyek ada di judul proyek pendana; provinsi Sulawesi Utara",
+   "sumber_url": "https://projects.worldbank.org/en/projects-operations/project-detail/P096677"
+  },
+  "aiib_proyek-hijaunesia-staple-financing-banyuwangi-100-mw-solar-pv-project": {
+   "proyek_id": "pj_0341",
+   "pemberi": "AIIB",
+   "nama_pendana": "Proyek Hijaunesia Staple Financing – Banyuwangi 100 MW Solar PV Project",
+   "nama_proyek": "PLTS Banyuwangi",
+   "bukti": "semua kata khas nama proyek ada di judul proyek pendana; provinsi Jawa Timur",
+   "sumber_url": "https://www.aiib.org/en/projects/details/2025/proposed/indonesia-proyek-hijaunesia-staple-financing-banyuwangi-100-mw-solar-pv-project.html"
+  },
+  "aiib_proyek-hijaunesia-staple-financing-gajahmungkur-100-mw-floating-solar-": {
+   "proyek_id": "pj_0340",
+   "pemberi": "AIIB",
+   "nama_pendana": "Proyek Hijaunesia Staple Financing – Gajahmungkur 100 MW Floating Solar PV Project",
+   "nama_proyek": "PLTS Terapung Gajah Mungkur",
+   "bukti": "semua kata khas nama proyek ada di judul proyek pendana; provinsi Jawa Tengah",
+   "sumber_url": "https://www.aiib.org/en/projects/details/2025/proposed/indonesia-proyek-hijaunesia-staple-financing-gajahmungkur-100-mw-floating-solar-pv-project.html"
+  },
+  "aiib_proyek-hijaunesia-staple-financing-pasuruan-100-mw-solar-pv-project": {
+   "proyek_id": "pj_0345",
+   "pemberi": "AIIB",
+   "nama_pendana": "Proyek Hijaunesia Staple Financing – Pasuruan 100 MW Solar PV Project",
+   "nama_proyek": "PLTS Pasuruan",
+   "bukti": "semua kata khas nama proyek ada di judul proyek pendana; provinsi Jawa Timur",
+   "sumber_url": "https://www.aiib.org/en/projects/details/2025/approved/indonesia-proyek-hijaunesia-staple-financing-pasuruan-100-mw-solar-pv-project.html"
+  }
+ },
+ "tanpa_padanan": [
+  {
+   "id": "wb_P174350",
+   "nama": "Indonesia Sustainable Least-cost Electrification-1 (ISLE-1) Program",
+   "pemberi": "World Bank",
+   "sumber_url": "https://projects.worldbank.org/en/projects-operations/project-detail/P174350",
+   "alasan": "tidak ada proyek bernama sama di proyek.json"
+  },
+  {
+   "id": "wb_P172256",
+   "nama": "Development of Pumped Storage Hydropower in Java Bali System Project",
+   "pemberi": "World Bank",
+   "sumber_url": "https://projects.worldbank.org/en/projects-operations/project-detail/P172256",
+   "alasan": "tidak ada proyek bernama sama di proyek.json"
+  },
+  {
+   "id": "wb_P172439",
+   "nama": "Indonesia Investment and Trade Reforms DPL",
+   "pemberi": "World Bank",
+   "sumber_url": "https://projects.worldbank.org/en/projects-operations/project-detail/P172439",
+   "alasan": "tidak ada proyek bernama sama di proyek.json"
+  },
+  {
+   "id": "wb_P166071",
+   "nama": "Indonesia Geothermal Resource Risk Mitigation Project (GREM)",
+   "pemberi": "World Bank",
+   "sumber_url": "https://projects.worldbank.org/en/projects-operations/project-detail/P166071",
+   "alasan": "tidak ada proyek bernama sama di proyek.json"
+  },
+  {
+   "id": "wb_P154291",
+   "nama": "Indonesia Energy Sector DPL",
+   "pemberi": "World Bank",
+   "sumber_url": "https://projects.worldbank.org/en/projects-operations/project-detail/P154291",
+   "alasan": "tidak ada proyek bernama sama di proyek.json"
+  },
+  {
+   "id": "wb_P123994",
+   "nama": "Indonesia Second Power Transmission Development Project",
+   "pemberi": "World Bank",
+   "sumber_url": "https://projects.worldbank.org/en/projects-operations/project-detail/P123994",
+   "alasan": "tidak ada proyek bernama sama di proyek.json"
+  },
+  {
+   "id": "wb_P125405",
+   "nama": "National Community  Empowerment Program In Urban Areas For 2012-2015",
+   "pemberi": "World Bank",
+   "sumber_url": "https://projects.worldbank.org/en/projects-operations/project-detail/P125405",
+   "alasan": "tidak ada proyek bernama sama di proyek.json"
+  },
+  {
+   "id": "wb_P128826",
+   "nama": "ID - Partnership for Market Readiness",
+   "pemberi": "World Bank",
+   "sumber_url": "https://projects.worldbank.org/en/projects-operations/project-detail/P128826",
+   "alasan": "tidak ada proyek bernama sama di proyek.json"
+  },
+  {
+   "id": "wb_P130909",
+   "nama": "ID-TF PNPM GREEN Awareness Raising Project in Sumatera",
+   "pemberi": "World Bank",
+   "sumber_url": "https://projects.worldbank.org/en/projects-operations/project-detail/P130909",
+   "alasan": "tidak ada proyek bernama sama di proyek.json"
+  },
+  {
+   "id": "wb_P113078",
+   "nama": "Geothermal Clean Energy Investment Project",
+   "pemberi": "World Bank",
+   "sumber_url": "https://projects.worldbank.org/en/projects-operations/project-detail/P113078",
+   "alasan": "tidak ada proyek bernama sama di proyek.json"
+  },
+  {
+   "id": "wb_P112158",
+   "nama": "Pumped Storage Technical Assistance Project",
+   "pemberi": "World Bank",
+   "sumber_url": "https://projects.worldbank.org/en/projects-operations/project-detail/P112158",
+   "alasan": "tidak ada proyek bernama sama di proyek.json"
+  },
+  {
+   "id": "wb_P117323",
+   "nama": "Indonesia Power Transmission Development Project",
+   "pemberi": "World Bank",
+   "sumber_url": "https://projects.worldbank.org/en/projects-operations/project-detail/P117323",
+   "alasan": "tidak ada proyek bernama sama di proyek.json"
+  },
+  {
+   "id": "wb_P120313",
+   "nama": "Indonesia Climate Change Development Policy Project",
+   "pemberi": "World Bank",
+   "sumber_url": "https://projects.worldbank.org/en/projects-operations/project-detail/P120313",
+   "alasan": "tidak ada proyek bernama sama di proyek.json"
+  },
+  {
+   "id": "wb_P115102",
+   "nama": "Third Infrastructure Development Policy Loan",
+   "pemberi": "World Bank",
+   "sumber_url": "https://projects.worldbank.org/en/projects-operations/project-detail/P115102",
+   "alasan": "tidak ada proyek bernama sama di proyek.json"
+  },
+  {
+   "id": "wb_P092218",
+   "nama": "Indonesia Infrastructure Finance Facility",
+   "pemberi": "World Bank",
+   "sumber_url": "https://projects.worldbank.org/en/projects-operations/project-detail/P092218",
+   "alasan": "tidak ada proyek bernama sama di proyek.json"
+  },
+  {
+   "id": "wb_P115100",
+   "nama": "ID: Geothermal Power Support Program",
+   "pemberi": "World Bank",
+   "sumber_url": "https://projects.worldbank.org/en/projects-operations/project-detail/P115100",
+   "alasan": "tidak ada proyek bernama sama di proyek.json"
+  },
+  {
+   "id": "wb_P115199",
+   "nama": "Public Expenditure Support Facility (DPL-DDO)",
+   "pemberi": "World Bank",
+   "sumber_url": "https://projects.worldbank.org/en/projects-operations/project-detail/P115199",
+   "alasan": "tidak ada proyek bernama sama di proyek.json"
+  },
+  {
+   "id": "wb_P111905",
+   "nama": "Second Infrastructure Development Policy Loan",
+   "pemberi": "World Bank",
+   "sumber_url": "https://projects.worldbank.org/en/projects-operations/project-detail/P111905",
+   "alasan": "tidak ada proyek bernama sama di proyek.json"
+  },
+  {
+   "id": "wb_P107163",
+   "nama": "ID-Infrastructure DPL (IDPL)",
+   "pemberi": "World Bank",
+   "sumber_url": "https://projects.worldbank.org/en/projects-operations/project-detail/P107163",
+   "alasan": "tidak ada proyek bernama sama di proyek.json"
+  },
+  {
+   "id": "wb_P126138",
+   "nama": "ID-TF KDP AND ENVIRONMENT IN SULAWESI (WCS, CARE, OPWAL)",
+   "pemberi": "World Bank",
+   "sumber_url": "https://projects.worldbank.org/en/projects-operations/project-detail/P126138",
+   "alasan": "tidak ada proyek bernama sama di proyek.json"
+  },
+  {
+   "id": "wb_P126137",
+   "nama": "ID-TF KDP AND ENVIRONMENT IN SULAWESI",
+   "pemberi": "World Bank",
+   "sumber_url": "https://projects.worldbank.org/en/projects-operations/project-detail/P126137",
+   "alasan": "tidak ada proyek bernama sama di proyek.json"
+  },
+  {
+   "id": "wb_P076174",
+   "nama": "Initiatives for Local Governance Reform Project",
+   "pemberi": "World Bank",
+   "sumber_url": "https://projects.worldbank.org/en/projects-operations/project-detail/P076174",
+   "alasan": "tidak ada proyek bernama sama di proyek.json"
+  },
+  {
+   "id": "wb_P084860",
+   "nama": "ID-PCF-Indocement Cement",
+   "pemberi": "World Bank",
+   "sumber_url": "https://projects.worldbank.org/en/projects-operations/project-detail/P084860",
+   "alasan": "tidak ada proyek bernama sama di proyek.json"
+  },
+  {
+   "id": "wb_P063913",
+   "nama": "Java-Bali Power Sector Restructuring and Strengthening Project",
+   "pemberi": "World Bank",
+   "sumber_url": "https://projects.worldbank.org/en/projects-operations/project-detail/P063913",
+   "alasan": "tidak ada proyek bernama sama di proyek.json"
+  },
+  {
+   "id": "wb_P076271",
+   "nama": "Private Provision of Infrastructure Technical Assistance Loan",
+   "pemberi": "World Bank",
+   "sumber_url": "https://projects.worldbank.org/en/projects-operations/project-detail/P076271",
+   "alasan": "tidak ada proyek bernama sama di proyek.json"
+  },
+  {
+   "id": "wb_P042944",
+   "nama": "RENEW. EGY SMALL POW",
+   "pemberi": "World Bank",
+   "sumber_url": "https://projects.worldbank.org/en/projects-operations/project-detail/P042944",
+   "alasan": "tidak ada proyek bernama sama di proyek.json"
+  },
+  {
+   "id": "wb_P042882",
+   "nama": "Renewable Energy Small Power (RESP) Project",
+   "pemberi": "World Bank",
+   "sumber_url": "https://projects.worldbank.org/en/projects-operations/project-detail/P042882",
+   "alasan": "tidak ada proyek bernama sama di proyek.json"
+  },
+  {
+   "id": "wb_P035544",
+   "nama": "Solar Home Systems  Project",
+   "pemberi": "World Bank",
+   "sumber_url": "https://projects.worldbank.org/en/projects-operations/project-detail/P035544",
+   "alasan": "tidak ada proyek bernama sama di proyek.json"
+  },
+  {
+   "id": "wb_P004021",
+   "nama": "Second Power Transmission and Distribution Project",
+   "pemberi": "World Bank",
+   "sumber_url": "https://projects.worldbank.org/en/projects-operations/project-detail/P004021",
+   "alasan": "tidak ada proyek bernama sama di proyek.json"
+  },
+  {
+   "id": "wb_P003979",
+   "nama": "Rural Electrification Project (02)",
+   "pemberi": "World Bank",
+   "sumber_url": "https://projects.worldbank.org/en/projects-operations/project-detail/P003979",
+   "alasan": "tidak ada proyek bernama sama di proyek.json"
+  },
+  {
+   "id": "wb_P003910",
+   "nama": "Sumatera and Kalimantan Power Project",
+   "pemberi": "World Bank",
+   "sumber_url": "https://projects.worldbank.org/en/projects-operations/project-detail/P003910",
+   "alasan": "tidak ada proyek bernama sama di proyek.json"
+  },
+  {
+   "id": "wb_P004007",
+   "nama": "Cirata Hydroelectric Phase (02) Project",
+   "pemberi": "World Bank",
+   "sumber_url": "https://projects.worldbank.org/en/projects-operations/project-detail/P004007",
+   "alasan": "tidak ada proyek bernama sama di proyek.json"
+  },
+  {
+   "id": "wb_P003916",
+   "nama": "SURALAYA THERMAL POWER",
+   "pemberi": "World Bank",
+   "sumber_url": "https://projects.worldbank.org/en/projects-operations/project-detail/P003916",
+   "alasan": "tidak ada proyek bernama sama di proyek.json"
+  },
+  {
+   "id": "wb_P003975",
+   "nama": "Power Transmission Project",
+   "pemberi": "World Bank",
+   "sumber_url": "https://projects.worldbank.org/en/projects-operations/project-detail/P003975",
+   "alasan": "tidak ada proyek bernama sama di proyek.json"
+  },
+  {
+   "id": "wb_P003918",
+   "nama": "Rural Electrification Project",
+   "pemberi": "World Bank",
+   "sumber_url": "https://projects.worldbank.org/en/projects-operations/project-detail/P003918",
+   "alasan": "tidak ada proyek bernama sama di proyek.json"
+  },
+  {
+   "id": "wb_P003875",
+   "nama": "Paiton Thermal Power Project",
+   "pemberi": "World Bank",
+   "sumber_url": "https://projects.worldbank.org/en/projects-operations/project-detail/P003875",
+   "alasan": "tidak ada proyek bernama sama di proyek.json"
+  },
+  {
+   "id": "wb_P003920",
+   "nama": "Power Sector Efficiency Project",
+   "pemberi": "World Bank",
+   "sumber_url": "https://projects.worldbank.org/en/projects-operations/project-detail/P003920",
+   "alasan": "tidak ada proyek bernama sama di proyek.json"
+  },
+  {
+   "id": "wb_P003846",
+   "nama": "POWER-SUPPLEMENTAL",
+   "pemberi": "World Bank",
+   "sumber_url": "https://projects.worldbank.org/en/projects-operations/project-detail/P003846",
+   "alasan": "tidak ada proyek bernama sama di proyek.json"
+  },
+  {
+   "id": "wb_P003835",
+   "nama": "Power Project (14)",
+   "pemberi": "World Bank",
+   "sumber_url": "https://projects.worldbank.org/en/projects-operations/project-detail/P003835",
+   "alasan": "tidak ada proyek bernama sama di proyek.json"
+  },
+  {
+   "id": "wb_P003826",
+   "nama": "Power Project (13)",
+   "pemberi": "World Bank",
+   "sumber_url": "https://projects.worldbank.org/en/projects-operations/project-detail/P003826",
+   "alasan": "tidak ada proyek bernama sama di proyek.json"
+  },
+  {
+   "id": "wb_P003825",
+   "nama": "Power Project (12)",
+   "pemberi": "World Bank",
+   "sumber_url": "https://projects.worldbank.org/en/projects-operations/project-detail/P003825",
+   "alasan": "tidak ada proyek bernama sama di proyek.json"
+  },
+  {
+   "id": "wb_P003803",
+   "nama": "Power Project (10)",
+   "pemberi": "World Bank",
+   "sumber_url": "https://projects.worldbank.org/en/projects-operations/project-detail/P003803",
+   "alasan": "tidak ada proyek bernama sama di proyek.json"
+  },
+  {
+   "id": "wb_P163797",
+   "nama": "Citizen Monitoring for Transparency and Accountability of Licensing and Revenue Management in Mining Sector",
+   "pemberi": "World Bank",
+   "sumber_url": "https://projects.worldbank.org/en/projects-operations/project-detail/P163797",
+   "alasan": "tidak ada proyek bernama sama di proyek.json"
+  },
+  {
+   "id": "wb_P099757",
+   "nama": "Geothermal Power Generation Development",
+   "pemberi": "World Bank",
+   "sumber_url": "https://projects.worldbank.org/en/projects-operations/project-detail/P099757",
+   "alasan": "tidak ada proyek bernama sama di proyek.json"
+  },
+  {
+   "id": "wb_P161644",
+   "nama": "ID-Geothermal Energy Upstream Development",
+   "pemberi": "World Bank",
+   "sumber_url": "https://projects.worldbank.org/en/projects-operations/project-detail/P161644",
+   "alasan": "tidak ada proyek bernama sama di proyek.json"
+  },
+  {
+   "id": "wb_P040524",
+   "nama": "Java Power Distribution Project",
+   "pemberi": "World Bank",
+   "sumber_url": "https://projects.worldbank.org/en/projects-operations/project-detail/P040524",
+   "alasan": "tidak ada proyek bernama sama di proyek.json"
+  },
+  {
+   "id": "wb_P178788",
+   "nama": "Indonesia Grid and Renewable Energy Financing Facility (GREFI)",
+   "pemberi": "World Bank",
+   "sumber_url": "https://projects.worldbank.org/en/projects-operations/project-detail/P178788",
+   "alasan": "tidak ada proyek bernama sama di proyek.json"
+  },
+  {
+   "id": "wb_P121003",
+   "nama": "ID - Chiller Energy Efficiency Project",
+   "pemberi": "World Bank",
+   "sumber_url": "https://projects.worldbank.org/en/projects-operations/project-detail/P121003",
+   "alasan": "tidak ada proyek bernama sama di proyek.json"
+  },
+  {
+   "id": "wb_P155047",
+   "nama": "ID-Geothermal Energy Upstream Development",
+   "pemberi": "World Bank",
+   "sumber_url": "https://projects.worldbank.org/en/projects-operations/project-detail/P155047",
+   "alasan": "tidak ada proyek bernama sama di proyek.json"
+  },
+  {
+   "id": "wb_P169259",
+   "nama": "Indonesia Sustainable Least-cost Electrification Technical Assistance (ISLE TA)",
+   "pemberi": "World Bank",
+   "sumber_url": "https://projects.worldbank.org/en/projects-operations/project-detail/P169259",
+   "alasan": "tidak ada proyek bernama sama di proyek.json"
+  },
+  {
+   "id": "wb_P117658",
+   "nama": "Indonesia Carbon Finance Framework for Geothermal Development",
+   "pemberi": "World Bank",
+   "sumber_url": "https://projects.worldbank.org/en/projects-operations/project-detail/P117658",
+   "alasan": "tidak ada proyek bernama sama di proyek.json"
+  },
+  {
+   "id": "wb_P157490",
+   "nama": "Indonesia's Infrastructure Finance Development (IIFD) - RE",
+   "pemberi": "World Bank",
+   "sumber_url": "https://projects.worldbank.org/en/projects-operations/project-detail/P157490",
+   "alasan": "tidak ada proyek bernama sama di proyek.json"
+  },
+  {
+   "id": "wb_P128568",
+   "nama": "ID-Renewable Energy for Electrification Project",
+   "pemberi": "World Bank",
+   "sumber_url": "https://projects.worldbank.org/en/projects-operations/project-detail/P128568",
+   "alasan": "tidak ada proyek bernama sama di proyek.json"
+  },
+  {
+   "id": "wb_P154846",
+   "nama": "Improving Energy Project Delivery",
+   "pemberi": "World Bank",
+   "sumber_url": "https://projects.worldbank.org/en/projects-operations/project-detail/P154846",
+   "alasan": "tidak ada proyek bernama sama di proyek.json"
+  },
+  {
+   "id": "wb_P149389",
+   "nama": "Capacity Building for Smart Grid Investments for Transmission and Dist",
+   "pemberi": "World Bank",
+   "sumber_url": "https://projects.worldbank.org/en/projects-operations/project-detail/P149389",
+   "alasan": "tidak ada proyek bernama sama di proyek.json"
+  },
+  {
+   "id": "wb_P036044",
+   "nama": "Eastern Indonesia Renewable Energy Development Project",
+   "pemberi": "World Bank",
+   "sumber_url": "https://projects.worldbank.org/en/projects-operations/project-detail/P036044",
+   "alasan": "tidak ada proyek bernama sama di proyek.json"
+  },
+  {
+   "id": "wb_P171353",
+   "nama": "Indonesia Energy Transition Development Policy Loan",
+   "pemberi": "World Bank",
+   "sumber_url": "https://projects.worldbank.org/en/projects-operations/project-detail/P171353",
+   "alasan": "tidak ada proyek bernama sama di proyek.json"
+  },
+  {
+   "id": "wb_P501217",
+   "nama": "Indonesia Sustainable Least-cost Electrification-2 (ISLE-2) Operation",
+   "pemberi": "World Bank",
+   "sumber_url": "https://projects.worldbank.org/en/projects-operations/project-detail/P501217",
+   "alasan": "tidak ada proyek bernama sama di proyek.json"
+  },
+  {
+   "id": "wb_P093047",
+   "nama": "Electricity Access for Rural Transformation",
+   "pemberi": "World Bank",
+   "sumber_url": "https://projects.worldbank.org/en/projects-operations/project-detail/P093047",
+   "alasan": "tidak ada proyek bernama sama di proyek.json"
+  },
+  {
+   "id": "aiib_affordable-and-sustainable-energy-transition-program-subprogram-2",
+   "nama": "Affordable and Sustainable Energy Transition Program, Subprogram 2",
+   "pemberi": "AIIB",
+   "sumber_url": "https://www.aiib.org/en/projects/details/2026/proposed/indonesia-affordable-and-sustainable-energy-transition-program-subprogram-2.html",
+   "alasan": "tidak ada proyek bernama sama di proyek.json"
+  },
+  {
+   "id": "aiib_pln-east-java-bali-power-distribution-strengthening-project",
+   "nama": "PLN East Java & Bali Power Distribution Strengthening Project",
+   "pemberi": "AIIB",
+   "sumber_url": "https://www.aiib.org/en/projects/details/2021/approved/Indonesia-PLN-East-Java-Bali-Power-Distribution-Strengthening-Project.html",
+   "alasan": "tidak ada proyek bernama sama di proyek.json"
+  },
+  {
+   "id": "aiib_strengthening-sumatra-power-distribution-results-based-project",
+   "nama": "Strengthening Sumatra Power Distribution Results-Based Project",
+   "pemberi": "AIIB",
+   "sumber_url": "https://www.aiib.org/en/projects/details/2024/proposed/Indonesia-Strengthening-Sumatra-Power-Distribution-Results-Based-Project.html",
+   "alasan": "tidak ada proyek bernama sama di proyek.json"
+  },
+  {
+   "id": "aiib_development-of-pumped-storage-hydropower-in-java-bali-system-the-proje",
+   "nama": "Development of Pumped Storage Hydropower in Java Bali System (the Project)",
+   "pemberi": "AIIB",
+   "sumber_url": "https://www.aiib.org/en/projects/details/2022/approved/Indonesia-Development-of-Pumped-Storage-Hydropower-in-Java-Bali-System.html",
+   "alasan": "tidak ada proyek bernama sama di proyek.json"
+  }
+ ]
+}

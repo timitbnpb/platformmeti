@@ -3,6 +3,7 @@
 // K15: tidak ada jenis data / klausa / kolom `dummy`.
 
 import { Galat } from "./util.js"; // satu kelas galat dengan router (util.js murni, tanpa D1)
+import { bersihTeks } from "../public/inti/naskah.js"; // murni; forum Konsultasi (0024)
 export { Galat };
 const mk = (kode, status, alasan) => Object.assign(new Galat(kode, status), { alasan }); // alasan = untuk uji/log, bukan klien
 const tolak = (pesan) => mk("dilarang", 403, pesan);
@@ -59,6 +60,8 @@ export const MATRIKS = {
   jejak:           ["-", "-", "-", "-", "-", "B", "B"],
   daftar_tolak:    ["-", "-", "-", "-", "-", "-", "B"],
   pendaftaran:     ["-", "-", "T", "-", "-", "T", "T"], // 8 Nov 2026: persetujuan anggota mandiri (setujui/tolak, bukti iuran) oleh pengurus, admin, super
+  konsultasi:      ["-", "T daftar", "T daftar", "T daftar", "T daftar", "T", "T"], // forum Konsultasi: anggota aktif berkomentar/usul/dukung; menyunting hanya miliknya (15 menit, dijaga fungsi); tamu tidak
+  konsultasi_putus: ["-", "-", "T", "T", "-", "T", "T"], // moderasi + keputusan + kelola naskah: pengurus, kurator, admin, super
 };
 export const AKSI = ["baca", "tambah", "ubah", "hapus", "kirim", "cabut", "tinjau", "hapus_keras"];
 
@@ -1463,7 +1466,8 @@ export async function ikutiPerubahan(env, akun, sejak, batas = 60) {
       "SELECT 'koreksi' AS tipe, k.id, k.entitas, k.entitas_id, k.kolom, k.diputus_pada AS waktu FROM koreksi_usul k WHERE k.status = 'setuju' AND k.diputus_pada >= ? AND " +
       "EXISTS (SELECT 1 FROM ikuti i WHERE i.akun_id = ? AND i.jenis = k.entitas AND i.ref = k.entitas_id) ORDER BY k.diputus_pada DESC, k.id DESC LIMIT ?")
       .bind(dari, akun.id, n).all());
-    return [...portal.results, ...(koreksi?.results ?? [])].sort((a, b) => b.waktu - a.waktu).slice(0, n);
+    const kons = (await konsKabar(env, akun, dari, n)) ?? [];
+    return [...portal.results, ...(koreksi?.results ?? []), ...kons].sort((a, b) => b.waktu - a.waktu).slice(0, n);
   });
 }
 
@@ -1919,4 +1923,398 @@ export async function sosmedLinkedin(env, akun, aksi, b) {
   if (aksi === "hapus") return void (await env.DB.prepare("DELETE FROM sosmed_feed WHERE platform = 'linkedin' AND uid = ?").bind(b.uid).run());
   await env.DB.prepare("INSERT INTO sosmed_feed (platform, uid, judul, tanggal, url) VALUES ('linkedin', ?, ?, ?, ?) ON CONFLICT (platform, uid) DO UPDATE SET judul = excluded.judul, tanggal = excluded.tanggal, url = excluded.url")
     .bind(b.uid, b.judul, b.tanggal, b.url).run();
+}
+
+/* ========================= Konsultasi 0024: forum diskusi atas naskah RUU/RPP dan "Masukan METI" ========================= */
+// Hak: jenis data `konsultasi` (anggota aktif ke atas) dan `konsultasi_putus` (pengurus, kurator, admin, super); tamu tidak menyentuh apa pun.
+// Anggota hanya menyunting/menarik miliknya dalam 15 menit; moderasi hanya menyembunyikan (hapus lunak), tidak menghapus. Tiap tulis = batch([tulis, jejak]).
+// Hasil null = migrasi 0024 belum diterapkan (rute membalas 503).
+export const JENIS_UTAS = ["umum", "sorot", "komentar", "ubah", "coret", "tambah", "butir_baru"];
+export const USULAN_UTAS = ["ubah", "coret", "tambah", "butir_baru"];
+export const MENIT_SUNTING = 15;
+const BATAS_TULIS_JAM = 40, BATAS_DUKUNG_JAM = 200, MAKS_BAGIAN = 1500;
+const RE_DOK = /^[a-z0-9-]{2,60}$/;
+const kBoleh = (akun, aksi, jenis) => boleh(akun?.peran, aksi, jenis, undefined, akun).ok;
+const gKons = (akun) => { const r = boleh(akun?.peran, "tambah", "konsultasi", undefined, akun); if (!r.ok) throw tolak(r.alasan); };
+const gPutus = (akun) => { const r = boleh(akun?.peran, "ubah", "konsultasi_putus", undefined, akun); if (!r.ok) throw tolak(r.alasan); };
+const sahId = (v) => { const n = Number(v); if (!Number.isInteger(n) || n < 1 || n > 1e12) throw salah("id tidak sah"); return n; };
+const lajuKons = async (env, akun, batas = BATAS_TULIS_JAM) => { if ((await catatLaju(env, "koreksi:ks" + akun.id, 3600)) > batas) throw mk("laju_terlampaui", 429, "batas laju konsultasi"); };
+const jejKons = (env, akun, aksi, tabel, barisId, ringkas) =>
+  env.DB.prepare("INSERT INTO jejak (siapa, peran, aksi, tabel, baris_id, ke) VALUES (?, ?, ?, ?, COALESCE(?, CAST(last_insert_rowid() AS TEXT)), ?)")
+    .bind(akun.id, akun.peran, aksi, tabel, barisId == null ? null : String(barisId).slice(0, 80), JSON.stringify({ ringkas: String(ringkas).slice(0, 300) }));
+const ts = (v, maks, wajib = true) => {
+  const x = bersihTeks(v, maks + 1);
+  if (x.length > maks) throw salah("teks terlalu panjang");
+  if (wajib && !x) throw salah("teks wajib");
+  return x;
+};
+
+// Daftar dokumen untuk kartu. Staf (putus) juga melihat draf.
+export async function konsDaftar(env, akun) {
+  gKons(akun);
+  const staf = kBoleh(akun, "ubah", "konsultasi_putus");
+  return tanpaTabel(async () => {
+    const d = (await env.DB.prepare(
+      "SELECT d.id, d.judul, d.jenis, d.instansi, d.tahap, d.tenggat, d.sumber_url, d.catatan, d.bentuk, d.status, d.berkas_nama, d.dibuat, d.diubah, " +
+      "(SELECT count(*) FROM kons_bagian b WHERE b.dokumen_id = d.id) AS n_bagian, " +
+      "(SELECT count(*) FROM kons_utas u WHERE u.dokumen_id = d.id AND u.tersembunyi = 0 AND u.status <> 'ditarik' AND u.jenis NOT IN ('ubah','coret','tambah','butir_baru')) AS n_komentar, " +
+      "(SELECT count(*) FROM kons_utas u WHERE u.dokumen_id = d.id AND u.tersembunyi = 0 AND u.status <> 'ditarik' AND u.jenis IN ('ubah','coret','tambah','butir_baru')) AS n_usulan, " +
+      "(SELECT count(*) FROM (SELECT akun_id FROM kons_utas u WHERE u.dokumen_id = d.id AND u.tersembunyi = 0 AND u.status <> 'ditarik' UNION SELECT r.akun_id FROM kons_balasan r JOIN kons_utas u ON u.id = r.utas_id WHERE u.dokumen_id = d.id AND r.tersembunyi = 0 AND r.ditarik = 0)) AS n_peserta, " +
+      "EXISTS (SELECT 1 FROM ikuti i WHERE i.akun_id = ? AND i.jenis = 'regulasi' AND i.ref = 'kons:' || d.id) AS diikuti " +
+      `FROM kons_dokumen d ${staf ? "WHERE d.status <> 'arsip'" : "WHERE d.status = 'terbit'"} ORDER BY (d.tenggat IS NULL), d.tenggat, d.dibuat DESC LIMIT 100`).bind(akun.id).all()).results;
+    const pes = (await env.DB.prepare(
+      "SELECT x.dokumen_id, x.akun_id, a.nama FROM (SELECT u.dokumen_id, u.akun_id, max(u.dibuat) AS t FROM kons_utas u WHERE u.tersembunyi = 0 AND u.status <> 'ditarik' GROUP BY u.dokumen_id, u.akun_id) x " +
+      "JOIN akun a ON a.id = x.akun_id AND a.status = 'aktif' ORDER BY x.t DESC LIMIT 600").all()).results;
+    const per = new Map();
+    for (const p of pes) { const l = per.get(p.dokumen_id) ?? []; if (l.length < 5) l.push({ id: p.akun_id, nama: p.nama }); per.set(p.dokumen_id, l); }
+    return { baris: d.map((x) => ({ ...x, diikuti: !!x.diikuti, peserta: per.get(x.id) ?? [] })), kelola: staf };
+  });
+}
+
+// Satu dokumen lengkap: bagian + utas + balasan + dukungan. Teks komentar yang disembunyikan hanya terbaca staf.
+export async function konsBaca(env, akun, id) {
+  gKons(akun);
+  if (!RE_DOK.test(String(id))) return { ada: false };
+  const staf = kBoleh(akun, "ubah", "konsultasi_putus");
+  return tanpaTabel(async () => {
+    const dok = await env.DB.prepare("SELECT id, judul, jenis, instansi, tahap, tenggat, sumber_url, catatan, bentuk, status, berkas_nama, berkas_tipe, berkas_ukuran, dibuat, diubah FROM kons_dokumen WHERE id = ?").bind(id).first();
+    if (!dok || (dok.status !== "terbit" && !staf)) return { ada: false };
+    const [b, u, r, k, s] = await env.DB.batch([
+      env.DB.prepare("SELECT id, urutan, tingkat, nomor, judul, teks, rujukan, alasan, status_asal, sumber_asal FROM kons_bagian WHERE dokumen_id = ? ORDER BY urutan LIMIT ?").bind(id, MAKS_BAGIAN),
+      env.DB.prepare("SELECT u.id, u.bagian_id, u.jenis, u.kutipan, u.mulai, u.akhir, u.teks_ganti, u.sisip, u.isi, u.akun_id, a.nama, u.status, u.selesai, u.tersembunyi, u.putusan, u.gabung_ke, u.diputus_pada, u.dibuat, u.diubah, " +
+        "(SELECT a2.nama FROM akun a2 WHERE a2.id = u.diputus_oleh) AS diputus_nama FROM kons_utas u LEFT JOIN akun a ON a.id = u.akun_id WHERE u.dokumen_id = ? AND u.status <> 'ditarik' ORDER BY u.id LIMIT 3000").bind(id),
+      env.DB.prepare("SELECT r.id, r.utas_id, r.akun_id, a.nama, r.isi, r.tersembunyi, r.dibuat, r.diubah FROM kons_balasan r JOIN kons_utas u ON u.id = r.utas_id LEFT JOIN akun a ON a.id = r.akun_id WHERE u.dokumen_id = ? AND r.ditarik = 0 ORDER BY r.id LIMIT 8000").bind(id),
+      env.DB.prepare("SELECT k.utas_id, count(*) AS n, max(k.akun_id = ?) AS saya FROM kons_dukung k JOIN kons_utas u ON u.id = k.utas_id WHERE u.dokumen_id = ? GROUP BY k.utas_id").bind(akun.id, id),
+      env.DB.prepare("SELECT EXISTS (SELECT 1 FROM ikuti WHERE akun_id = ? AND jenis = 'regulasi' AND ref = ?) AS diikuti").bind(akun.id, "kons:" + id),
+    ]);
+    const dk = new Map(k.results.map((x) => [x.utas_id, x]));
+    const sembunyi = (x) => (x.tersembunyi && !staf ? { ...x, isi: null, teks_ganti: null, kutipan: null, nama: null } : x);
+    const bal = new Map();
+    for (const x of r.results) { const l = bal.get(x.utas_id) ?? []; l.push(sembunyi({ ...x, tersembunyi: !!x.tersembunyi, milik: x.akun_id === akun.id })); bal.set(x.utas_id, l); }
+    const utas = u.results.map((x) => sembunyi({ ...x, tersembunyi: !!x.tersembunyi, selesai: !!x.selesai, milik: x.akun_id === akun.id, dukung: dk.get(x.id)?.n ?? 0, saya_dukung: !!dk.get(x.id)?.saya, balasan: bal.get(x.id) ?? [] }));
+    return { ada: true, dokumen: dok, bagian: b.results, utas, diikuti: !!s.results[0]?.diikuti, saya: { id: akun.id, putus: staf }, menit_sunting: MENIT_SUNTING };
+  });
+}
+
+// Autocomplete @nama: hanya akun aktif. Minimal 2 huruf; hanya id dan nama.
+export async function konsAnggotaCari(env, akun, q) {
+  gKons(akun);
+  const kata = bersihTeks(q, 40, false).replace(/[\\%_]/g, "\\$&");
+  if (kata.length < 2) return [];
+  return (await tanpaTabel(async () => (await env.DB.prepare("SELECT id, nama FROM akun WHERE status = 'aktif' AND peran <> 'publik' AND nama LIKE ? ESCAPE '\\' ORDER BY nama LIMIT 8").bind(`%${kata}%`).all()).results)) ?? [];
+}
+const sebutSah = async (env, akun, daftar) => {
+  const ids = [...new Set((Array.isArray(daftar) ? daftar : []).map(Number).filter((n) => Number.isInteger(n) && n > 0 && n !== akun.id))].slice(0, 10);
+  if (!ids.length) return [];
+  return (await env.DB.prepare(`SELECT id FROM akun WHERE status = 'aktif' AND id IN (${ids.map(() => "?").join(",")})`).bind(...ids).all()).results.map((x) => x.id);
+};
+
+// Utas baru: diskusi umum (bagian null), per pasal, sorotan/komentar, atau usulan ubah/coret/tambah/butir baru. Kutipan wajib benar-benar ada di teks bagian.
+export async function konsUtasBaru(env, akun, d) {
+  gKons(akun);
+  if (!JENIS_UTAS.includes(d?.jenis)) throw salah("jenis utas tidak sah");
+  const jenis = d.jenis, usul = USULAN_UTAS.includes(jenis);
+  const isi = ts(d.isi, 4000);
+  if (usul && isi.length < 5) throw salah("alasan wajib");
+  return tanpaTabel(async () => {
+    const dok = await env.DB.prepare("SELECT id, status FROM kons_dokumen WHERE id = ?").bind(String(d.dokumen_id)).first();
+    if (!dok || dok.status !== "terbit") return { ada: false };
+    let bagian = null, kutipan = null, mulai = null, akhir = null, ganti = null, sisip = null;
+    if (d.bagian_id != null) {
+      bagian = await env.DB.prepare("SELECT id, teks FROM kons_bagian WHERE id = ? AND dokumen_id = ?").bind(sahId(d.bagian_id), dok.id).first();
+      if (!bagian) throw salah("bagian tidak ada di dokumen ini");
+    }
+    if (["sorot", "komentar", "ubah", "coret", "tambah"].includes(jenis)) {
+      if (!bagian) throw salah("bagian wajib");
+      kutipan = ts(d.kutipan, 1200);
+      mulai = Number.isInteger(d.mulai) ? d.mulai : null; akhir = Number.isInteger(d.akhir) ? d.akhir : null;
+      if (mulai == null || akhir == null || bagian.teks.slice(mulai, akhir) !== kutipan) { // teks bergeser: cari kutipan
+        const i = bagian.teks.indexOf(kutipan);
+        if (i < 0) throw salah("kutipan tidak ada di bagian ini");
+        mulai = i; akhir = i + kutipan.length;
+      }
+    }
+    if (["ubah", "tambah", "butir_baru"].includes(jenis)) ganti = ts(d.teks_ganti, 6000);
+    if (jenis === "tambah") { sisip = d.sisip; if (!["sebelum", "sesudah"].includes(sisip)) throw salah("sisip tidak sah"); }
+    if (jenis === "butir_baru") kutipan = d.kutipan ? ts(d.kutipan, 300, false) || null : null;
+    if (jenis === "umum" && bagian) { kutipan = null; }
+    await lajuKons(env, akun);
+    const sebut = await sebutSah(env, akun, d.sebut);
+    try {
+      const hasil = await env.DB.batch([
+        env.DB.prepare("INSERT INTO kons_utas (dokumen_id, bagian_id, jenis, kutipan, mulai, akhir, teks_ganti, sisip, isi, akun_id) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)")
+          .bind(dok.id, bagian?.id ?? null, jenis, kutipan, mulai, akhir, ganti, sisip, isi, akun.id),
+        jejKons(env, akun, "tambah", "kons_utas", null, `${jenis} pada ${dok.id}, ${isi.length} karakter`),
+        ...sebut.map((a) => env.DB.prepare("INSERT OR IGNORE INTO kons_sebut (utas_id, balasan_id, akun_id) VALUES ((SELECT max(id) FROM kons_utas WHERE akun_id = ?), 0, ?)").bind(akun.id, a)),
+      ]);
+      return { ada: true, id: hasil[0].meta.last_row_id };
+    } catch (e) { throw terjemah(e); }
+  });
+}
+
+// Sunting/tarik milik sendiri: pemilik, status terbuka, dalam 15 menit. Staf tidak menyunting isi orang lain (hanya menyembunyikan).
+const SYARAT_MILIK = "akun_id = ? AND status = 'terbuka' AND dibuat >= unixepoch() - " + MENIT_SUNTING * 60;
+export async function konsUtasUbah(env, akun, uid, d) {
+  gKons(akun);
+  const id = sahId(uid), isi = ts(d?.isi, 4000);
+  return tanpaTabel(async () => {
+    const u = await env.DB.prepare("SELECT jenis FROM kons_utas WHERE id = ?").bind(id).first();
+    if (!u) return { ada: false };
+    const ganti = d.teks_ganti != null && ["ubah", "tambah", "butir_baru"].includes(u.jenis) ? ts(d.teks_ganti, 6000) : null;
+    const [r] = await env.DB.batch([
+      env.DB.prepare(`UPDATE kons_utas SET isi = ?, teks_ganti = COALESCE(?, teks_ganti), diubah = unixepoch() WHERE id = ? AND ${SYARAT_MILIK}`).bind(isi, ganti, id, akun.id),
+      env.DB.prepare("INSERT INTO jejak (siapa, peran, aksi, tabel, baris_id, ke) SELECT ?, ?, 'ubah', 'kons_utas', ?, ? WHERE changes() > 0").bind(akun.id, akun.peran, String(id), JSON.stringify({ ringkas: `sunting ${isi.length} karakter` })),
+    ]);
+    return r.meta.changes ? { ada: true, ubah: true } : { ada: true, ubah: false };
+  });
+}
+export async function konsUtasTarik(env, akun, uid) {
+  gKons(akun);
+  const id = sahId(uid);
+  return tanpaTabel(async () => {
+    const [r] = await env.DB.batch([
+      env.DB.prepare(`UPDATE kons_utas SET status = 'ditarik', diubah = unixepoch() WHERE id = ? AND ${SYARAT_MILIK}`).bind(id, akun.id),
+      env.DB.prepare("INSERT INTO jejak (siapa, peran, aksi, tabel, baris_id, ke) SELECT ?, ?, 'hapus', 'kons_utas', ?, ? WHERE changes() > 0").bind(akun.id, akun.peran, String(id), JSON.stringify({ ringkas: "tarik utas sendiri" })),
+    ]);
+    return { ubah: r.meta.changes > 0 };
+  });
+}
+
+export async function konsBalasBaru(env, akun, uid, d) {
+  gKons(akun);
+  const id = sahId(uid), isi = ts(d?.isi, 2000);
+  return tanpaTabel(async () => {
+    const u = await env.DB.prepare("SELECT u.id, u.status, u.tersembunyi, u.dokumen_id, k.status AS dok FROM kons_utas u JOIN kons_dokumen k ON k.id = u.dokumen_id WHERE u.id = ?").bind(id).first();
+    if (!u || u.dok !== "terbit" || u.status === "ditarik" || (u.tersembunyi && !kBoleh(akun, "ubah", "konsultasi_putus"))) return { ada: false };
+    await lajuKons(env, akun);
+    const sebut = await sebutSah(env, akun, d.sebut);
+    try {
+      const hasil = await env.DB.batch([
+        env.DB.prepare("INSERT INTO kons_balasan (utas_id, akun_id, isi) VALUES (?, ?, ?)").bind(id, akun.id, isi),
+        jejKons(env, akun, "tambah", "kons_balasan", null, `balasan pada utas ${id}, ${isi.length} karakter`),
+        ...sebut.map((a) => env.DB.prepare("INSERT OR IGNORE INTO kons_sebut (utas_id, balasan_id, akun_id) VALUES (?, (SELECT max(id) FROM kons_balasan WHERE akun_id = ?), ?)").bind(id, akun.id, a)),
+      ]);
+      return { ada: true, id: hasil[0].meta.last_row_id };
+    } catch (e) { throw terjemah(e); }
+  });
+}
+export async function konsBalasUbah(env, akun, bid, d) {
+  gKons(akun);
+  const id = sahId(bid), isi = ts(d?.isi, 2000);
+  return tanpaTabel(async () => {
+    const [r] = await env.DB.batch([
+      env.DB.prepare(`UPDATE kons_balasan SET isi = ?, diubah = unixepoch() WHERE id = ? AND akun_id = ? AND ditarik = 0 AND dibuat >= unixepoch() - ${MENIT_SUNTING * 60}`).bind(isi, id, akun.id),
+      env.DB.prepare("INSERT INTO jejak (siapa, peran, aksi, tabel, baris_id, ke) SELECT ?, ?, 'ubah', 'kons_balasan', ?, ? WHERE changes() > 0").bind(akun.id, akun.peran, String(id), JSON.stringify({ ringkas: `sunting ${isi.length} karakter` })),
+    ]);
+    return { ubah: r.meta.changes > 0 };
+  });
+}
+export async function konsBalasTarik(env, akun, bid) {
+  gKons(akun);
+  const id = sahId(bid);
+  return tanpaTabel(async () => {
+    const [r] = await env.DB.batch([
+      env.DB.prepare(`UPDATE kons_balasan SET ditarik = 1, diubah = unixepoch() WHERE id = ? AND akun_id = ? AND ditarik = 0 AND dibuat >= unixepoch() - ${MENIT_SUNTING * 60}`).bind(id, akun.id),
+      env.DB.prepare("INSERT INTO jejak (siapa, peran, aksi, tabel, baris_id, ke) SELECT ?, ?, 'hapus', 'kons_balasan', ?, ? WHERE changes() > 0").bind(akun.id, akun.peran, String(id), JSON.stringify({ ringkas: "tarik balasan sendiri" })),
+    ]);
+    return { ubah: r.meta.changes > 0 };
+  });
+}
+
+// Dukung (+1) hanya pada usulan terbuka; satu suara per akun.
+export async function konsDukung(env, akun, uid, ya) {
+  gKons(akun);
+  const id = sahId(uid);
+  return tanpaTabel(async () => {
+    const u = await env.DB.prepare("SELECT jenis, status, tersembunyi FROM kons_utas WHERE id = ?").bind(id).first();
+    if (!u || u.tersembunyi || u.status === "ditarik" || !USULAN_UTAS.includes(u.jenis)) return { ada: false };
+    await lajuKons(env, akun, BATAS_DUKUNG_JAM);
+    await env.DB.batch([
+      ya ? env.DB.prepare("INSERT INTO kons_dukung (utas_id, akun_id) VALUES (?, ?) ON CONFLICT DO NOTHING").bind(id, akun.id)
+        : env.DB.prepare("DELETE FROM kons_dukung WHERE utas_id = ? AND akun_id = ?").bind(id, akun.id),
+      env.DB.prepare("INSERT INTO jejak (siapa, peran, aksi, tabel, baris_id, ke) VALUES (?, ?, ?, 'kons_utas', ?, ?)").bind(akun.id, akun.peran, ya ? "tambah" : "hapus", String(id), JSON.stringify({ ringkas: ya ? "dukung" : "cabut dukungan" })),
+    ]);
+    const n = (await env.DB.prepare("SELECT count(*) AS n FROM kons_dukung WHERE utas_id = ?").bind(id).first()).n;
+    return { ada: true, dukung: n, saya_dukung: !!ya };
+  });
+}
+
+// Tandai selesai: pembuka utas atau staf.
+export async function konsSelesai(env, akun, uid, selesai) {
+  gKons(akun);
+  const id = sahId(uid), staf = kBoleh(akun, "ubah", "konsultasi_putus");
+  return tanpaTabel(async () => {
+    const [r] = await env.DB.batch([
+      env.DB.prepare(`UPDATE kons_utas SET selesai = ? WHERE id = ? AND status <> 'ditarik'${staf ? "" : " AND akun_id = ?"}`).bind(...(staf ? [selesai ? 1 : 0, id] : [selesai ? 1 : 0, id, akun.id])),
+      env.DB.prepare("INSERT INTO jejak (siapa, peran, aksi, tabel, baris_id, ke) SELECT ?, ?, 'ubah', 'kons_utas', ?, ? WHERE changes() > 0").bind(akun.id, akun.peran, String(id), JSON.stringify({ ringkas: selesai ? "tandai selesai" : "buka kembali" })),
+    ]);
+    return { ubah: r.meta.changes > 0 };
+  });
+}
+
+// Keputusan atas usulan (staf): diterima, ditolak, atau digabung ke usulan lain, dengan catatan. Hanya usulan terbuka; keputusan lama dapat dibuka kembali (aksi "buka").
+export async function konsPutus(env, akun, uid, { aksi, catatan = null, gabungKe = null }) {
+  gPutus(akun);
+  const id = sahId(uid);
+  if (!["diterima", "ditolak", "digabung", "buka"].includes(aksi)) throw salah("aksi tidak sah");
+  const cat = catatan ? ts(catatan, 1000, false) : null;
+  if (aksi !== "buka" && aksi !== "diterima" && !cat) throw salah("catatan wajib untuk menolak atau menggabung");
+  return tanpaTabel(async () => {
+    const u = await env.DB.prepare("SELECT id, jenis, status, dokumen_id, tersembunyi FROM kons_utas WHERE id = ?").bind(id).first();
+    if (!u || !USULAN_UTAS.includes(u.jenis) || u.status === "ditarik") return { ada: false };
+    let gabung = null;
+    if (aksi === "digabung") {
+      gabung = sahId(gabungKe);
+      const t = await env.DB.prepare("SELECT id FROM kons_utas WHERE id = ? AND dokumen_id = ? AND id <> ? AND status = 'diterima'").bind(gabung, u.dokumen_id, id).first();
+      if (!t) throw salah("usulan tujuan gabung harus diterima dan satu dokumen");
+    }
+    const [r] = await env.DB.batch([
+      aksi === "buka"
+        ? env.DB.prepare("UPDATE kons_utas SET status = 'terbuka', putusan = NULL, gabung_ke = NULL, diputus_oleh = NULL, diputus_pada = NULL WHERE id = ? AND status IN ('diterima','ditolak','digabung')").bind(id)
+        : env.DB.prepare("UPDATE kons_utas SET status = ?, putusan = ?, gabung_ke = ?, diputus_oleh = ?, diputus_pada = unixepoch() WHERE id = ? AND status IN ('terbuka','diterima','ditolak','digabung')").bind(aksi, cat, gabung, akun.id, id),
+      env.DB.prepare("INSERT INTO jejak (siapa, peran, aksi, tabel, baris_id, ke) SELECT ?, ?, 'tinjau', 'kons_utas', ?, ? WHERE changes() > 0").bind(akun.id, akun.peran, String(id), JSON.stringify({ ringkas: `${aksi}${gabung ? " ke " + gabung : ""}` })),
+    ]);
+    return { ada: true, ubah: r.meta.changes > 0, dokumen_id: u.dokumen_id };
+  });
+}
+
+// Hapus lunak oleh staf: isi tak tampil bagi anggota, jejak tetap. jenis: utas | balasan.
+export async function konsSembunyi(env, akun, jenis, id, sembunyi) {
+  gPutus(akun);
+  const n = sahId(id), tabel = jenis === "balasan" ? "kons_balasan" : "kons_utas";
+  if (!["utas", "balasan"].includes(jenis)) throw salah("jenis tidak sah");
+  return tanpaTabel(async () => {
+    const [r] = await env.DB.batch([
+      env.DB.prepare(`UPDATE ${tabel} SET tersembunyi = ? WHERE id = ?`).bind(sembunyi ? 1 : 0, n),
+      env.DB.prepare("INSERT INTO jejak (siapa, peran, aksi, tabel, baris_id, ke) SELECT ?, ?, 'ubah', ?, ?, ? WHERE changes() > 0").bind(akun.id, akun.peran, tabel, String(n), JSON.stringify({ ringkas: sembunyi ? "sembunyikan (melanggar)" : "tampilkan kembali" })),
+    ]);
+    return { ubah: r.meta.changes > 0 };
+  });
+}
+
+// Data rekap: semua bagian + usulan DITERIMA (tak tersembunyi), untuk "Rekap posisi METI". Anggota boleh membaca; ekspor dijaga rute (putus).
+export async function konsRekapData(env, akun, id) {
+  gKons(akun);
+  if (!RE_DOK.test(String(id))) return { ada: false };
+  return tanpaTabel(async () => {
+    const dok = await env.DB.prepare("SELECT id, judul, jenis, instansi, tahap, bentuk, status FROM kons_dokumen WHERE id = ?").bind(id).first();
+    if (!dok || (dok.status !== "terbit" && !kBoleh(akun, "ubah", "konsultasi_putus"))) return { ada: false };
+    const [b, u] = await env.DB.batch([
+      env.DB.prepare("SELECT id, urutan, tingkat, nomor, judul, teks, rujukan, alasan, status_asal, sumber_asal FROM kons_bagian WHERE dokumen_id = ? ORDER BY urutan LIMIT ?").bind(id, MAKS_BAGIAN),
+      env.DB.prepare("SELECT u.id, u.bagian_id, u.jenis, u.kutipan, u.mulai, u.akhir, u.teks_ganti, u.sisip, u.isi, a.nama, u.putusan, u.gabung_ke, u.diputus_pada, " +
+        "(SELECT count(*) FROM kons_dukung k WHERE k.utas_id = u.id) AS dukung FROM kons_utas u LEFT JOIN akun a ON a.id = u.akun_id WHERE u.dokumen_id = ? AND u.status = 'diterima' AND u.tersembunyi = 0 ORDER BY u.id LIMIT 3000").bind(id),
+    ]);
+    return { ada: true, dokumen: dok, bagian: b.results, diterima: u.results };
+  });
+}
+
+// Kelola dokumen (staf): buat/ubah metadata, ganti bagian (hanya bila belum ada utas yang bertaut), terbitkan/arsipkan.
+const slug = (s) => bersihTeks(s, 80, false).toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, "").replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "").slice(0, 50) || "dokumen";
+const TAHAP_KONS = ["usul", "pembahasan", "konsultasi", "disahkan"], JENIS_DOK = ["ruu", "rpp", "rperpres", "rpermen", "masukan"];
+export async function konsDokumenSimpan(env, akun, id, d, bagian = null) {
+  gPutus(akun);
+  const judul = ts(d?.judul, 300);
+  if (judul.length < 3) throw salah("judul terlalu pendek");
+  if (!JENIS_DOK.includes(d.jenis)) throw salah("jenis tidak sah");
+  const tahap = d.tahap ?? "konsultasi";
+  if (!TAHAP_KONS.includes(tahap)) throw salah("tahap tidak sah");
+  const tenggat = d.tenggat ? String(d.tenggat) : null;
+  if (tenggat && !/^\d{4}-\d{2}-\d{2}$/.test(tenggat)) throw salah("tenggat tidak sah");
+  const url = d.sumber_url ? String(d.sumber_url).trim() : null;
+  if (url && !/^https:\/\/[^\s<>"]{3,590}$/.test(url)) throw salah("tautan sumber harus https");
+  const bentuk = d.bentuk === "butir" ? "butir" : "naskah";
+  const instansi = d.instansi ? ts(d.instansi, 200, false) || null : null, catatan = d.catatan ? ts(d.catatan, 600, false) || null : null;
+  let baris = null;
+  if (bagian) {
+    if (!Array.isArray(bagian) || bagian.length > MAKS_BAGIAN) throw salah(`maksimal ${MAKS_BAGIAN} bagian`);
+    baris = bagian.map((x, i) => {
+      if (!["bab", "pasal", "ayat", "butir"].includes(x?.tingkat)) throw salah("tingkat bagian tidak sah");
+      return [i, x.tingkat, x.nomor ? ts(x.nomor, 40, false) || null : null, x.judul ? ts(x.judul, 300, false) || null : null, ts(x.teks ?? "", 20000, false),
+        x.rujukan ? ts(x.rujukan, 200, false) || null : null, x.alasan ? ts(x.alasan, 4000, false) || null : null, x.status_asal ? ts(x.status_asal, 120, false) || null : null, x.sumber_asal ? ts(x.sumber_asal, 200, false) || null : null];
+    });
+  }
+  return tanpaTabel(async () => {
+    let dokId = id;
+    try {
+      if (id == null) {
+        const dasar = slug(judul);
+        dokId = dasar;
+        for (let i = 2; await env.DB.prepare("SELECT 1 AS x FROM kons_dokumen WHERE id = ?").bind(dokId).first(); i++) dokId = `${dasar.slice(0, 54)}-${i}`;
+        await env.DB.batch([
+          env.DB.prepare("INSERT INTO kons_dokumen (id, judul, jenis, instansi, tahap, tenggat, sumber_url, catatan, bentuk, oleh) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)").bind(dokId, judul, d.jenis, instansi, tahap, tenggat, url, catatan, bentuk, akun.id),
+          jejKons(env, akun, "tambah", "kons_dokumen", dokId, `dokumen baru ${d.jenis}`),
+        ]);
+      } else {
+        if (!RE_DOK.test(String(id))) throw salah("id tidak sah");
+        const ada = await env.DB.prepare("SELECT 1 AS x FROM kons_dokumen WHERE id = ?").bind(id).first();
+        if (!ada) return { ada: false };
+        await env.DB.batch([
+          env.DB.prepare("UPDATE kons_dokumen SET judul = ?, jenis = ?, instansi = ?, tahap = ?, tenggat = ?, sumber_url = ?, catatan = ?, bentuk = ?, diubah = unixepoch() WHERE id = ?").bind(judul, d.jenis, instansi, tahap, tenggat, url, catatan, bentuk, id),
+          jejKons(env, akun, "ubah", "kons_dokumen", id, "ubah metadata"),
+        ]);
+      }
+      if (baris) {
+        const terpakai = await env.DB.prepare("SELECT count(*) AS n FROM kons_utas WHERE dokumen_id = ? AND bagian_id IS NOT NULL").bind(dokId).first();
+        if (terpakai.n) throw mk("konflik", 409, "bagian sudah punya diskusi, tidak boleh diganti");
+        await env.DB.batch([
+          env.DB.prepare("DELETE FROM kons_bagian WHERE dokumen_id = ?").bind(dokId),
+          ...baris.map((x) => env.DB.prepare("INSERT INTO kons_bagian (dokumen_id, urutan, tingkat, nomor, judul, teks, rujukan, alasan, status_asal, sumber_asal) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)").bind(dokId, ...x)),
+          jejKons(env, akun, "ubah", "kons_bagian", dokId, `ganti ${baris.length} bagian`),
+        ]);
+      }
+      return { ada: true, id: dokId };
+    } catch (e) { throw terjemah(e); }
+  });
+}
+export async function konsDokumenStatus(env, akun, id, status) {
+  gPutus(akun);
+  if (!["draf", "terbit", "arsip"].includes(status) || !RE_DOK.test(String(id))) throw salah("status tidak sah");
+  return tanpaTabel(async () => {
+    const [r] = await env.DB.batch([
+      env.DB.prepare("UPDATE kons_dokumen SET status = ?, diubah = unixepoch() WHERE id = ?").bind(status, id),
+      env.DB.prepare("INSERT INTO jejak (siapa, peran, aksi, tabel, baris_id, ke) SELECT ?, ?, 'ubah', 'kons_dokumen', ?, ? WHERE changes() > 0").bind(akun.id, akun.peran, id, JSON.stringify({ ringkas: "status " + status })),
+    ]);
+    return { ubah: r.meta.changes > 0 };
+  });
+}
+// Berkas asli di R2: metadata disimpan; mengembalikan kunci lama agar rute menghapus objeknya.
+export async function konsBerkasSet(env, akun, id, meta) {
+  gPutus(akun);
+  if (!RE_DOK.test(String(id))) throw salah("id tidak sah");
+  return tanpaTabel(async () => {
+    const lama = await env.DB.prepare("SELECT berkas_kunci FROM kons_dokumen WHERE id = ?").bind(id).first();
+    if (!lama) return { ada: false };
+    try {
+      await env.DB.batch([
+        env.DB.prepare("UPDATE kons_dokumen SET berkas_kunci = ?, berkas_nama = ?, berkas_tipe = ?, berkas_ukuran = ?, diubah = unixepoch() WHERE id = ?").bind(meta.kunci, meta.nama, meta.tipe, meta.ukuran, id),
+        jejKons(env, akun, "ubah", "kons_dokumen", id, "unggah berkas asli " + meta.tipe),
+      ]);
+    } catch (e) { throw terjemah(e); }
+    return { ada: true, lama: lama.berkas_kunci };
+  });
+}
+export async function konsBerkasBaca(env, akun, id) {
+  gPutus(akun);
+  if (!RE_DOK.test(String(id))) return null;
+  return tanpaTabel(async () => (await env.DB.prepare("SELECT berkas_kunci AS kunci, berkas_nama AS nama, berkas_tipe AS tipe FROM kons_dokumen WHERE id = ?").bind(id).first()) ?? null);
+}
+
+// Kabar untuk lonceng (dipanggil ikutiPerubahan): usulan/komentar/balasan baru di dokumen yang diikuti, keputusan, dan sebutan @saya. Waktu dalam detik.
+export async function konsKabar(env, akun, dari, n) {
+  return tanpaTabel(async () => {
+    const ikut = "EXISTS (SELECT 1 FROM ikuti i WHERE i.akun_id = ? AND i.jenis = 'regulasi' AND i.ref = 'kons:' || u.dokumen_id)";
+    const baru = (await env.DB.prepare(
+      `SELECT 'konsultasi' AS tipe, CASE WHEN u.jenis IN ('ubah','coret','tambah','butir_baru') THEN 'usulan' ELSE 'komentar' END AS sub, u.id, u.dokumen_id, u.dibuat AS waktu FROM kons_utas u
+       WHERE u.dibuat >= ? AND u.akun_id <> ? AND u.tersembunyi = 0 AND u.status <> 'ditarik' AND ${ikut} ORDER BY u.dibuat DESC LIMIT ?`).bind(dari, akun.id, akun.id, n).all()).results;
+    const bal = (await env.DB.prepare(
+      `SELECT 'konsultasi' AS tipe, 'balasan' AS sub, r.id, u.dokumen_id, r.dibuat AS waktu FROM kons_balasan r JOIN kons_utas u ON u.id = r.utas_id
+       WHERE r.dibuat >= ? AND r.akun_id <> ? AND r.tersembunyi = 0 AND r.ditarik = 0 AND (u.akun_id = ? OR ${ikut}) ORDER BY r.dibuat DESC LIMIT ?`).bind(dari, akun.id, akun.id, akun.id, n).all()).results;
+    const put = (await env.DB.prepare(
+      `SELECT 'konsultasi' AS tipe, u.status AS sub, u.id, u.dokumen_id, u.diputus_pada AS waktu FROM kons_utas u
+       WHERE u.diputus_pada >= ? AND u.status IN ('diterima','ditolak','digabung') AND u.tersembunyi = 0 AND (u.akun_id = ? OR ${ikut}) ORDER BY u.diputus_pada DESC LIMIT ?`).bind(dari, akun.id, akun.id, n).all()).results;
+    const seb = (await env.DB.prepare(
+      `SELECT 'konsultasi' AS tipe, 'sebut' AS sub, s.utas_id AS id, u.dokumen_id, s.dibuat AS waktu FROM kons_sebut s JOIN kons_utas u ON u.id = s.utas_id
+       WHERE s.akun_id = ? AND s.dibuat >= ? AND u.tersembunyi = 0 ORDER BY s.dibuat DESC LIMIT ?`).bind(akun.id, dari, n).all()).results;
+    return [...baru, ...bal, ...put, ...seb];
+  });
 }

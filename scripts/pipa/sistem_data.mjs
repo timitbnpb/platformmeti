@@ -59,7 +59,7 @@ export function ubah(r, orgs, tgl, cek = {}) {
     id: r.id, nama: r.nama, kepanjangan: r.kep || undefined, pemilik: r.pemilik, lembaga_id: cariOrg(r.org || r.pemilik, orgs),
     uraian: r.uraian, sektor: r.sektor, jenis_data: r.jenis, cakupan: r.cakupan, cakupan_internasional: !!r.intl, frekuensi: r.frek,
     format: r.format, lisensi: r.lisensi, akses: r.akses, portal_url: r.portal, api_url: r.api || undefined, cara_minta: r.cara,
-    dipakai_pantau: !!r.pakai, status: c.terjangkau ? 'hidup' : undefined, robots: c.robots || undefined,
+    ...(r.contoh ? { contoh_ebt: r.contoh } : {}), dipakai_pantau: !!r.pakai, status: c.terjangkau ? 'hidup' : undefined, robots: c.robots || undefined,
     diperiksa: c.terjangkau ? c.tanggal : undefined, diverifikasi: [],
     sumber: [{ url: r.portal, tanggal: tgl }], sumber_url: r.portal, tanggal_periksa: tgl, tingkat_bukti: 'kata-pihak',
   };

@@ -14,6 +14,8 @@ import { PROV } from "/penerbit.js";
 import { geserPanel } from "/inti/panel_geser.js";
 import { aksiHtml } from "/inti/aksi_ex.js";
 import { pasangKeputusan } from "/proyek_keputusan.js";
+import { pasangTender } from "/proyek_tender.js";
+import { peristiwaPopupHtml } from "/peristiwa_komitmen.js";
 
 const $ = (id) => document.getElementById(id);
 const TAHUN = new Date().getFullYear();
@@ -37,6 +39,7 @@ const lambat = {};
 const lazy = (u) => (lambat[u] ??= ambil(u).catch((e) => { delete lambat[u]; throw e; }));
 
 await mulaiHalaman();
+pasangTender();
 const isi = $("isi");
 
 let DATA, PROG;
@@ -412,7 +415,7 @@ function kartuPopup(r) {
   d.className = "jm-pj-pk-kartu";
   d.innerHTML = `<b>${esc(r.nama)}</b><div class="jm-pj-pk-baris">${selTek(r)}${pilSt(r.st)}</div>
     <dl><div><dt>${esc(t("pj.c.kap"))}</dt><dd>${selKap(r)}</dd></div><div><dt>${esc(t("pj.c.prov"))}</dt><dd>${r.prov ? tautProvinsi(r.prov) : "-"}</dd></div><div><dt>${esc(t("pj.c.cod"))}</dt><dd>${selCod(r)}</dd></div></dl>
-    <p class="jm-bantu">${esc(presisiTeks(r))}</p>
+    ${peristiwaPopupHtml(r.id)}<p class="jm-bantu">${esc(presisiTeks(r))}</p>
     <div class="jm-pj-pk-aksi"><a class="jm-tbl jm-tbl-utama jm-tbl-kecil" href="#${esc(r.id)}">${esc(t("pj.pop.profil"))}</a><a class="jm-tbl jm-tbl-kecil" href="${mapsUrl(L.lat, L.lng)}" target="_blank" rel="noopener noreferrer">${PIN}<span>${esc(t("pj.maps.pendek"))}</span></a></div>`;
   return d;
 }

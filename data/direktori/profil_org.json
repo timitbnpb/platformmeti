@@ -3,6 +3,2095 @@
  "diambil": "2026-11-08",
  "lisensi": "fakta pendek berumber; teks sumber tidak disalin",
  "baris": {
+  "l_05301f48a5": {
+   "halaman": {
+    "beranda": "https://www.bkpm.go.id",
+    "investor": "https://bkpm.go.id/id/mengapa-indonesia/pengalaman-investor",
+    "tentang": "https://bkpm.go.id/id/tentang-bkpm/karir",
+    "program": "https://bkpm.go.id/id/info/agenda"
+   },
+   "sumber": [
+    "https://www.bkpm.go.id",
+    "https://bkpm.go.id/id/mengapa-indonesia/pengalaman-investor",
+    "https://bkpm.go.id/id/tentang-bkpm/karir",
+    "https://bkpm.go.id/id/info/agenda"
+   ],
+   "kapasitas": [
+    {
+     "mw": 3600,
+     "jenis": "tercatat",
+     "konteks": "Jelajahi Energi Baru Terbarukan untuk Masa Depan Dari tenaga surya hingga arus laut, lebih dari 3.600 GW potensi energi bersih menanti.",
+     "sumber_url": "https://www.bkpm.go.id"
+    }
+   ],
+   "sosmed": [
+    {
+     "jenis": "facebook",
+     "url": "https://www.facebook.com/bkpmindonesia",
+     "sumber_url": "https://www.bkpm.go.id"
+    },
+    {
+     "jenis": "instagram",
+     "url": "https://www.instagram.com/bkpm_id",
+     "sumber_url": "https://www.bkpm.go.id"
+    },
+    {
+     "jenis": "linkedin",
+     "url": "https://www.linkedin.com/company/indonesia-investment-coordinating-board",
+     "sumber_url": "https://www.bkpm.go.id"
+    },
+    {
+     "jenis": "youtube",
+     "url": "https://www.youtube.com/@KemenInvestasiHilirisasiBKPM",
+     "sumber_url": "https://www.bkpm.go.id"
+    },
+    {
+     "jenis": "twitter",
+     "url": "https://twitter.com/bkpm",
+     "sumber_url": "https://www.bkpm.go.id"
+    },
+    {
+     "jenis": "tiktok",
+     "url": "https://www.tiktok.com/@bkpm_id",
+     "sumber_url": "https://www.bkpm.go.id"
+    }
+   ],
+   "logo_url": "https://bkpm.go.id/assets/frontend/image/logo/Logo_Kementerian_Investasi_BKPM_Warna_Square.png",
+   "tanggal_periksa": "2026-11-07"
+  },
+  "l_060c77568c": {
+   "halaman": {
+    "beranda": "https://www.bpdp.or.id",
+    "kontak": "http://www.bpdp.or.id/contact",
+    "tentang": "http://www.bpdp.or.id/category/tentang-bpdp",
+    "manajemen": "http://www.bpdp.or.id/category/profil-manajemen",
+    "investor": "http://www.bpdp.or.id/annual-report-bpdp-tahun-2025",
+    "program": "http://www.bpdp.or.id/category/kegiatan"
+   },
+   "sumber": [
+    "https://www.bpdp.or.id",
+    "http://www.bpdp.or.id/contact",
+    "http://www.bpdp.or.id/category/tentang-bpdp",
+    "http://www.bpdp.or.id/category/profil-manajemen",
+    "http://www.bpdp.or.id/annual-report-bpdp-tahun-2025",
+    "http://www.bpdp.or.id/category/kegiatan"
+   ],
+   "kontak": {
+    "telepon": [
+     "021 - 84283099"
+    ],
+    "surel": [
+     "info@bpdp.or.id"
+    ],
+    "sumber_url": "https://www.bpdp.or.id"
+   },
+   "sosmed": [
+    {
+     "jenis": "facebook",
+     "url": "https://www.facebook.com/profile.php",
+     "sumber_url": "https://www.bpdp.or.id"
+    },
+    {
+     "jenis": "twitter",
+     "url": "https://x.com/bpdp_id",
+     "sumber_url": "https://www.bpdp.or.id"
+    },
+    {
+     "jenis": "instagram",
+     "url": "https://www.instagram.com/bpdp.id",
+     "sumber_url": "https://www.bpdp.or.id"
+    },
+    {
+     "jenis": "linkedin",
+     "url": "https://www.linkedin.com/company/bpdp",
+     "sumber_url": "https://www.bpdp.or.id"
+    },
+    {
+     "jenis": "youtube",
+     "url": "https://www.youtube.com/channel/UCLOZOzvyF2X0hGgTLNOk3ZQ",
+     "sumber_url": "https://www.bpdp.or.id"
+    }
+   ],
+   "logo_url": "http://www.bpdp.or.id/assets/img/logo.svg",
+   "tanggal_periksa": "2026-11-07"
+  },
+  "l_06d49428ac": {
+   "halaman": {
+    "beranda": "https://aplsi.or.id",
+    "tentang": "https://aplsi.or.id/about-us",
+    "manajemen": "https://aplsi.or.id/organization-structure/",
+    "program": "https://aplsi.or.id/category/aplsi-agenda/",
+    "anggota": "https://aplsi.or.id/category/member/"
+   },
+   "sumber": [
+    "https://aplsi.or.id",
+    "https://aplsi.or.id/about-us",
+    "https://aplsi.or.id/organization-structure/",
+    "https://aplsi.or.id/category/aplsi-agenda/",
+    "https://aplsi.or.id/category/member/"
+   ],
+   "asosiasi": [
+    "APLSI"
+   ],
+   "alamat": {
+    "nilai": "Jl. Jend Sudirman Kav.52-53 Jakarta 12190",
+    "sumber_url": "https://aplsi.or.id"
+   },
+   "kontak": {
+    "telepon": [],
+    "surel": [
+     "sekretariat@aplsi.or.id"
+    ],
+    "sumber_url": "https://aplsi.or.id"
+   },
+   "logo_url": "https://aplsi.or.id/wp-content/uploads/2025/10/aplsi_logo-scaled.jpg",
+   "misi": {
+    "nilai": "Real Steps Toward a Modern Energy Industry Driving Market Reform Advocating for fair and transparent regulations to create a level playing field for IPPs in both conventional and renewable energy.",
+    "sumber_url": "https://aplsi.or.id/about-us"
+   },
+   "tanggal_periksa": "2026-11-07"
+  },
+  "l_06ec0b587e": {
+   "halaman": {
+    "beranda": "https://www.apbi-icma.org",
+    "tentang": "https://www.apbi-icma.org/about-us",
+    "anggota": "https://www.apbi-icma.org/join-member"
+   },
+   "sumber": [
+    "https://www.apbi-icma.org",
+    "https://www.apbi-icma.org/about-us",
+    "https://www.apbi-icma.org/join-member"
+   ],
+   "alamat": {
+    "nilai": "Jl. H.R. Rasuna Said Block X-7 Kav.5, 1st Floor, Suite A, M & N. Jakarta Selatan 12940",
+    "sumber_url": "https://www.apbi-icma.org"
+   },
+   "kontak": {
+    "telepon": [],
+    "surel": [
+     "secretariat@apbi-icma.org",
+     "admin@apbi-icma.org"
+    ],
+    "sumber_url": "https://www.apbi-icma.org"
+   },
+   "sosmed": [
+    {
+     "jenis": "instagram",
+     "url": "https://www.instagram.com/apbi.icma",
+     "sumber_url": "https://www.apbi-icma.org"
+    },
+    {
+     "jenis": "linkedin",
+     "url": "https://www.linkedin.com/company/indonesian-coal-mining-association-apbi-icma",
+     "sumber_url": "https://www.apbi-icma.org"
+    },
+    {
+     "jenis": "youtube",
+     "url": "https://www.youtube.com/@secretariatapbi-icma4317",
+     "sumber_url": "https://www.apbi-icma.org"
+    }
+   ],
+   "logo_url": "https://framerusercontent.com/images/yk7hDlCEZ2qLFb4GIscNmZJh3iQ.png",
+   "tahun_berdiri": {
+    "nilai": 1989,
+    "sumber_url": "https://www.apbi-icma.org/about-us"
+   },
+   "tanggal_periksa": "2026-11-07"
+  },
+  "l_07dd603a7c": {
+   "halaman": {
+    "beranda": "https://www.itb.ac.id",
+    "tentang": "https://itb.ac.id/staf",
+    "kontak": "https://itb.ac.id/kontak",
+    "manajemen": "https://itb.ac.id/struktur-organisasi",
+    "program": "https://itb.ac.id/program-studi"
+   },
+   "sumber": [
+    "https://www.itb.ac.id",
+    "https://itb.ac.id/staf",
+    "https://itb.ac.id/kontak",
+    "https://itb.ac.id/struktur-organisasi",
+    "https://itb.ac.id/program-studi"
+   ],
+   "kontak": {
+    "telepon": [],
+    "surel": [
+     "humas@itb.ac.id",
+     "humas_jatinangor@itb.ac.id"
+    ],
+    "sumber_url": "https://www.itb.ac.id"
+   },
+   "sosmed": [
+    {
+     "jenis": "facebook",
+     "url": "https://www.facebook.com/institutteknologibandung",
+     "sumber_url": "https://www.itb.ac.id"
+    },
+    {
+     "jenis": "instagram",
+     "url": "https://www.instagram.com/itb1920",
+     "sumber_url": "https://www.itb.ac.id"
+    },
+    {
+     "jenis": "twitter",
+     "url": "https://twitter.com/itbofficial",
+     "sumber_url": "https://www.itb.ac.id"
+    },
+    {
+     "jenis": "tiktok",
+     "url": "https://www.tiktok.com/@itbofficial",
+     "sumber_url": "https://www.itb.ac.id"
+    },
+    {
+     "jenis": "youtube",
+     "url": "https://www.youtube.com/user/itbofficial",
+     "sumber_url": "https://www.itb.ac.id"
+    }
+   ],
+   "logo_url": "https://itb.ac.id/images/logo-itb-small.png",
+   "tanggal_periksa": "2026-11-07"
+  },
+  "l_0974f82eba": {
+   "halaman": {
+    "beranda": "https://aspebindo.id",
+    "tentang": "https://aspebindo.id/about-us/",
+    "program": "https://aspebindo.id/news-event/",
+    "anggota": "https://aspebindo.id/members/",
+    "kontak": "https://aspebindo.id/contacts/"
+   },
+   "sumber": [
+    "https://aspebindo.id",
+    "https://aspebindo.id/about-us/",
+    "https://aspebindo.id/news-event/",
+    "https://aspebindo.id/members/",
+    "https://aspebindo.id/contacts/"
+   ],
+   "asosiasi": [
+    "KADIN"
+   ],
+   "kontak": {
+    "telepon": [
+     "+1 800 456 789 123"
+    ],
+    "surel": [
+     "info@aspebindo.id"
+    ],
+    "sumber_url": "https://aspebindo.id"
+   },
+   "sosmed": [
+    {
+     "jenis": "tiktok",
+     "url": "https://www.tiktok.com/@aspebindo",
+     "sumber_url": "https://aspebindo.id"
+    },
+    {
+     "jenis": "youtube",
+     "url": "https://www.youtube.com/channel/UCxb1K_2-9e0UUkkISe_j3gA",
+     "sumber_url": "https://aspebindo.id"
+    },
+    {
+     "jenis": "instagram",
+     "url": "https://www.instagram.com/aspebindo",
+     "sumber_url": "https://aspebindo.id"
+    }
+   ],
+   "logo_url": "http://aspebindo.id/wp-content/uploads/2023/08/Association-Profile-ASPEBINDO-logo-2rev.png",
+   "visi": {
+    "nilai": "ASPEBINDO aims to transform Indonesia into a world-class, environmentally conscious energy producer, ensuring energy sovereignty through strategic enhancement of the supply side.",
+    "sumber_url": "https://aspebindo.id/about-us/"
+   },
+   "tanggal_periksa": "2026-11-07"
+  },
+  "l_0cbcc8e8b6": {
+   "halaman": {
+    "beranda": "https://lpem.org",
+    "tentang": "https://lpem.org/lpem-profile/",
+    "manajemen": "https://lpem.org/board-director-lpem/",
+    "proyek": "https://lpem.org/project-base-scholar-lpem/",
+    "kontak": "https://lpem.org/lpem-contact/",
+    "investor": "https://lpem.org/annual-report-lpem/"
+   },
+   "sumber": [
+    "https://lpem.org",
+    "https://lpem.org/lpem-profile/",
+    "https://lpem.org/board-director-lpem/",
+    "https://lpem.org/project-base-scholar-lpem/",
+    "https://lpem.org/lpem-contact/",
+    "https://lpem.org/annual-report-lpem/"
+   ],
+   "sosmed": [
+    {
+     "jenis": "facebook",
+     "url": "https://www.facebook.com/FEUI.LPEM",
+     "sumber_url": "https://lpem.org"
+    },
+    {
+     "jenis": "instagram",
+     "url": "https://www.instagram.com/lpemfebui",
+     "sumber_url": "https://lpem.org"
+    },
+    {
+     "jenis": "twitter",
+     "url": "https://x.com/LPEM_Official",
+     "sumber_url": "https://lpem.org"
+    },
+    {
+     "jenis": "linkedin",
+     "url": "https://www.linkedin.com/company/lpem",
+     "sumber_url": "https://lpem.org"
+    },
+    {
+     "jenis": "youtube",
+     "url": "https://www.youtube.com/@lpemfebui5888",
+     "sumber_url": "https://lpem.org"
+    }
+   ],
+   "logo_url": "https://lpem.org/wp-content/uploads/2025/02/cropped-TERC-Icon-png-32x32.jpg",
+   "tanggal_periksa": "2026-11-07"
+  },
+  "l_0d81cf4cb1": {
+   "halaman": {
+    "beranda": "https://www.brin.go.id",
+    "program": "https://www.brin.go.id/agenda"
+   },
+   "sumber": [
+    "https://www.brin.go.id",
+    "https://www.brin.go.id/agenda"
+   ],
+   "kontak": {
+    "telepon": [],
+    "surel": [
+     "ppid@brin.go.id"
+    ],
+    "sumber_url": "https://www.brin.go.id"
+   },
+   "sosmed": [
+    {
+     "jenis": "twitter",
+     "url": "https://twitter.com/brin_indonesia",
+     "sumber_url": "https://www.brin.go.id"
+    },
+    {
+     "jenis": "youtube",
+     "url": "https://www.youtube.com/c/BadanRisetdanInovasiNasionalBRIN/featured",
+     "sumber_url": "https://www.brin.go.id"
+    },
+    {
+     "jenis": "instagram",
+     "url": "https://www.instagram.com/brin_indonesia",
+     "sumber_url": "https://www.brin.go.id"
+    },
+    {
+     "jenis": "facebook",
+     "url": "https://www.facebook.com/brin.indonesia",
+     "sumber_url": "https://www.brin.go.id"
+    }
+   ],
+   "logo_url": "https://brin.go.id/images/logo_brin.jpg",
+   "tanggal_periksa": "2026-11-07"
+  },
+  "l_11621e2b6c": {
+   "halaman": {
+    "beranda": "https://ebtke.esdm.go.id"
+   },
+   "sumber": [
+    "https://ebtke.esdm.go.id"
+   ],
+   "asosiasi": [
+    "EBTKE"
+   ],
+   "logo_url": "https://ebtke.esdm.go.id/media/landing/logo-esdm.png",
+   "tanggal_periksa": "2026-11-07"
+  },
+  "l_1192cb8a15": {
+   "halaman": {
+    "beranda": "https://ibeka.or.id"
+   },
+   "sumber": [
+    "https://ibeka.or.id"
+   ],
+   "tahun_berdiri": {
+    "nilai": 1992,
+    "sumber_url": "https://ibeka.or.id"
+   },
+   "alamat": {
+    "nilai": "Jl. Sulaiman No. 18-A, Kelurahan Sukabumi Utara, Kecamatan Kebon Jeruk, JAKARTA BARAT, 11540",
+    "sumber_url": "https://ibeka.or.id"
+   },
+   "kontak": {
+    "telepon": [],
+    "surel": [
+     "info@ibeka.or.id"
+    ],
+    "sumber_url": "https://ibeka.or.id"
+   },
+   "sosmed": [
+    {
+     "jenis": "instagram",
+     "url": "https://www.instagram.com/ibeka.id",
+     "sumber_url": "https://ibeka.or.id"
+    }
+   ],
+   "logo_url": "https://ibeka.or.id/wp-content/uploads/2022/06/cropped-logoIBEKA-512-32x32.png",
+   "tanggal_periksa": "2026-11-07"
+  },
+  "l_15bc6ff298": {
+   "halaman": {
+    "beranda": "https://ebtke.esdm.go.id"
+   },
+   "sumber": [
+    "https://ebtke.esdm.go.id"
+   ],
+   "asosiasi": [
+    "EBTKE"
+   ],
+   "logo_url": "https://ebtke.esdm.go.id/media/landing/logo-esdm.png",
+   "tanggal_periksa": "2026-11-07"
+  },
+  "l_15e21f04fa": {
+   "halaman": {
+    "beranda": "https://www.ojk.go.id",
+    "kontak": "https://www.ojk.go.id/id/Contact.aspx",
+    "program": "https://www.ojk.go.id/id/agenda-kegiatan-v2.aspx"
+   },
+   "sumber": [
+    "https://www.ojk.go.id",
+    "https://www.ojk.go.id/id/Contact.aspx",
+    "https://www.ojk.go.id/id/agenda-kegiatan-v2.aspx"
+   ],
+   "kontak": {
+    "telepon": [],
+    "surel": [
+     "humas@ojk.go.id"
+    ],
+    "sumber_url": "https://www.ojk.go.id"
+   },
+   "sosmed": [
+    {
+     "jenis": "facebook",
+     "url": "https://www.facebook.com/official.ojk",
+     "sumber_url": "https://www.ojk.go.id"
+    },
+    {
+     "jenis": "twitter",
+     "url": "https://twitter.com/OJKINDONESIA",
+     "sumber_url": "https://www.ojk.go.id"
+    },
+    {
+     "jenis": "youtube",
+     "url": "http://www.youtube.com/otoritasjasakeuangan",
+     "sumber_url": "https://www.ojk.go.id"
+    },
+    {
+     "jenis": "instagram",
+     "url": "https://www.instagram.com/ojkindonesia",
+     "sumber_url": "https://www.ojk.go.id"
+    }
+   ],
+   "logo_url": "https://www.ojk.go.id/Style%20Library/ojk/img/favicon.ico",
+   "tanggal_periksa": "2026-11-07"
+  },
+  "l_17c427f563": {
+   "halaman": {
+    "beranda": "https://www.climatepolicyinitiative.org",
+    "tentang": "https://www.climatepolicyinitiative.org/about-cpi/what-we-do/",
+    "kontak": "https://www.climatepolicyinitiative.org/about-cpi/offices/",
+    "keberlanjutan": "https://www.climatepolicyinitiative.org/decarbonization-and-net-zero-goals/",
+    "program": "https://www.climatepolicyinitiative.org/the-programs/amazonia-2030/",
+    "manajemen": "https://www.climatepolicyinitiative.org/the-programs/cities-climate-finance-leadership-alliance/"
+   },
+   "sumber": [
+    "https://www.climatepolicyinitiative.org",
+    "https://www.climatepolicyinitiative.org/about-cpi/what-we-do/",
+    "https://www.climatepolicyinitiative.org/about-cpi/offices/",
+    "https://www.climatepolicyinitiative.org/decarbonization-and-net-zero-goals/",
+    "https://www.climatepolicyinitiative.org/the-programs/amazonia-2030/",
+    "https://www.climatepolicyinitiative.org/the-programs/cities-climate-finance-leadership-alliance/"
+   ],
+   "sosmed": [
+    {
+     "jenis": "linkedin",
+     "url": "https://www.linkedin.com/company/1647140/admin",
+     "sumber_url": "https://www.climatepolicyinitiative.org"
+    },
+    {
+     "jenis": "youtube",
+     "url": "https://www.youtube.com/c/ClimatePolicyInitiativeOrg",
+     "sumber_url": "https://www.climatepolicyinitiative.org"
+    },
+    {
+     "jenis": "instagram",
+     "url": "https://www.instagram.com/climate.policy",
+     "sumber_url": "https://www.climatepolicyinitiative.org"
+    },
+    {
+     "jenis": "twitter",
+     "url": "https://twitter.com/climatepolicy",
+     "sumber_url": "https://www.climatepolicyinitiative.org"
+    }
+   ],
+   "logo_url": "https://www.climatepolicyinitiative.org/wp-content/uploads/2016/09/cropped-CPI-logo-512-32x32.png",
+   "tahun_berdiri": {
+    "nilai": 2009,
+    "sumber_url": "https://www.climatepolicyinitiative.org/about-cpi/what-we-do/"
+   },
+   "kontak": {
+    "telepon": [],
+    "surel": [
+     "media@cpiglobal.org",
+     "secretariat@citiesclimatefinance.org"
+    ],
+    "sumber_url": "https://www.climatepolicyinitiative.org/about-cpi/offices/"
+   },
+   "net_zero": {
+    "tahun": 2025,
+    "konteks": "With rising consumption and expanding capacity, the country is poised to meet increasing demand while advancing its competitiveness in global markets. --> --> Blog Transforming Ind",
+    "sumber_url": "https://www.climatepolicyinitiative.org/decarbonization-and-net-zero-goals/"
+   },
+   "tanggal_periksa": "2026-11-07"
+  },
+  "l_18a9ec31f4": {
+   "halaman": {
+    "beranda": "https://www.worldbank.org/en/country/indonesia"
+   },
+   "sumber": [
+    "https://www.worldbank.org/en/country/indonesia"
+   ],
+   "kontak": {
+    "telepon": [
+     "+62 21 5299 3000"
+    ],
+    "surel": [],
+    "sumber_url": "https://www.worldbank.org/en/country/indonesia"
+   },
+   "sosmed": [
+    {
+     "jenis": "facebook",
+     "url": "https://www.facebook.com/worldbankgroup",
+     "sumber_url": "https://www.worldbank.org/en/country/indonesia"
+    },
+    {
+     "jenis": "twitter",
+     "url": "https://www.x.com/worldbankgroup",
+     "sumber_url": "https://www.worldbank.org/en/country/indonesia"
+    },
+    {
+     "jenis": "youtube",
+     "url": "https://www.youtube.com/@WorldBankGroup",
+     "sumber_url": "https://www.worldbank.org/en/country/indonesia"
+    }
+   ],
+   "logo_url": "https://www.worldbank.org/content/dam/wbr-redesign/logos/wbg-favicon.png",
+   "tanggal_periksa": "2026-11-07"
+  },
+  "l_21d3901823": {
+   "halaman": {
+    "beranda": "https://ebtke.esdm.go.id"
+   },
+   "sumber": [
+    "https://ebtke.esdm.go.id"
+   ],
+   "asosiasi": [
+    "EBTKE"
+   ],
+   "logo_url": "https://ebtke.esdm.go.id/media/landing/logo-esdm.png",
+   "tanggal_periksa": "2026-11-07"
+  },
+  "l_2c27d00604": {
+   "halaman": {
+    "beranda": "https://www.ui.ac.id",
+    "program": "https://www.ui.ac.id/akademik/layanan-program-pendidikan/",
+    "manajemen": "https://www.ui.ac.id/struktur/",
+    "tentang": "https://www.ui.ac.id/tentang-ui/",
+    "keberlanjutan": "https://www.ui.ac.id/universitas-indonesia-perkuat-kolaborasi-maritim-internasional-lewat-sustainablue-conference-2026/"
+   },
+   "sumber": [
+    "https://www.ui.ac.id",
+    "https://www.ui.ac.id/akademik/layanan-program-pendidikan/",
+    "https://www.ui.ac.id/struktur/",
+    "https://www.ui.ac.id/tentang-ui/",
+    "https://www.ui.ac.id/universitas-indonesia-perkuat-kolaborasi-maritim-internasional-lewat-sustainablue-conference-2026/"
+   ],
+   "kontak": {
+    "telepon": [],
+    "surel": [
+     "humas-ui@ui.ac.id"
+    ],
+    "sumber_url": "https://www.ui.ac.id"
+   },
+   "sosmed": [
+    {
+     "jenis": "twitter",
+     "url": "https://twitter.com/univ_indonesia",
+     "sumber_url": "https://www.ui.ac.id"
+    },
+    {
+     "jenis": "youtube",
+     "url": "https://www.youtube.com/channel/UCN7ilwf35POP97PVsweyDsw",
+     "sumber_url": "https://www.ui.ac.id"
+    },
+    {
+     "jenis": "instagram",
+     "url": "https://www.instagram.com/univ_indonesia",
+     "sumber_url": "https://www.ui.ac.id"
+    }
+   ],
+   "logo_url": "https://www.ui.ac.id/wp-content/uploads/2024/01/cropped-Logo-Website-UI-fixx-2-32x32.png",
+   "tanggal_periksa": "2026-11-07"
+  },
+  "l_2f86ba4616": {
+   "halaman": {
+    "beranda": "https://kadin.id",
+    "tentang": "https://kadin.id/tentang-kadin",
+    "manajemen": "https://kadin.id/struktur-organisasi-kadin",
+    "anggota": "https://kadin.id/keanggotaan",
+    "program": "https://kadin.id/ikhtisar-program-kadin"
+   },
+   "sumber": [
+    "https://kadin.id",
+    "https://kadin.id/tentang-kadin",
+    "https://kadin.id/struktur-organisasi-kadin",
+    "https://kadin.id/keanggotaan",
+    "https://kadin.id/ikhtisar-program-kadin"
+   ],
+   "asosiasi": [
+    "KADIN"
+   ],
+   "alamat": {
+    "nilai": "Jl. H. R. Rasuna Said Blok X-5 Kav. 2-3, Kuningan Jakarta 12950",
+    "sumber_url": "https://kadin.id"
+   },
+   "kontak": {
+    "telepon": [],
+    "surel": [
+     "sekretariat@kadin.id",
+     "secretariat@asaki.or.id",
+     "sekretariat@abadi.id"
+    ],
+    "sumber_url": "https://kadin.id"
+   },
+   "sosmed": [
+    {
+     "jenis": "instagram",
+     "url": "https://www.instagram.com/kadin.indonesia.official",
+     "sumber_url": "https://kadin.id"
+    },
+    {
+     "jenis": "facebook",
+     "url": "https://www.facebook.com/kadin.pusat",
+     "sumber_url": "https://kadin.id"
+    },
+    {
+     "jenis": "twitter",
+     "url": "http://www.twitter.com/kadin_indonesia",
+     "sumber_url": "https://kadin.id"
+    },
+    {
+     "jenis": "youtube",
+     "url": "https://www.youtube.com/c/KadinIndonesiaOfficial",
+     "sumber_url": "https://kadin.id"
+    },
+    {
+     "jenis": "tiktok",
+     "url": "http://www.tiktok.com/kadinindonesia",
+     "sumber_url": "https://kadin.id"
+    },
+    {
+     "jenis": "linkedin",
+     "url": "https://www.linkedin.com/company/kadin-indonesia-official",
+     "sumber_url": "https://kadin.id"
+    }
+   ],
+   "logo_url": "https://kadin.id/uploads/legacy/kadin-logo.png",
+   "misi": {
+    "nilai": "Kami Membina dan mengembangkan kemampuan serta kepentingan para pengusaha Indonesia di seluruh sektor usaha, baik milik negara, koperasi, maupun swasta.",
+    "sumber_url": "https://kadin.id/tentang-kadin"
+   },
+   "visi": {
+    "nilai": "Misi Ketua Umum Kadin Indonesia, tugas pokok dan fungsi Kadin, serta Asta Cita Program Pemerintah dalam membangun perekonomian nasional.",
+    "sumber_url": "https://kadin.id/ikhtisar-program-kadin"
+   },
+   "tanggal_periksa": "2026-11-07"
+  },
+  "l_38ba1d6f56": {
+   "halaman": {
+    "beranda": "https://ebtke.esdm.go.id"
+   },
+   "sumber": [
+    "https://ebtke.esdm.go.id"
+   ],
+   "asosiasi": [
+    "EBTKE"
+   ],
+   "logo_url": "https://ebtke.esdm.go.id/media/landing/logo-esdm.png",
+   "tanggal_periksa": "2026-11-07"
+  },
+  "l_3acae54910": {
+   "halaman": {
+    "beranda": "https://www.bps.go.id"
+   },
+   "sumber": [
+    "https://www.bps.go.id"
+   ],
+   "kontak": {
+    "telepon": [
+     "(62-21) 3841195"
+    ],
+    "surel": [],
+    "sumber_url": "https://www.bps.go.id"
+   },
+   "logo_url": "https://www.bps.go.id/logo-bg-white.jpg",
+   "tanggal_periksa": "2026-11-07"
+  },
+  "l_3d20494e0a": {
+   "halaman": {
+    "beranda": "https://www.kehutanan.go.id",
+    "tentang": "https://www.kehutanan.go.id/profile/leader",
+    "manajemen": "https://www.kehutanan.go.id/profile/leader"
+   },
+   "sumber": [
+    "https://www.kehutanan.go.id",
+    "https://www.kehutanan.go.id/profile/leader",
+    "https://www.kehutanan.go.id/profile/leader"
+   ],
+   "kontak": {
+    "telepon": [],
+    "surel": [
+     "ppid@menlhk.go.id"
+    ],
+    "sumber_url": "https://www.kehutanan.go.id"
+   },
+   "sosmed": [
+    {
+     "jenis": "facebook",
+     "url": "https://www.facebook.com/KementerianKehutanan",
+     "sumber_url": "https://www.kehutanan.go.id"
+    },
+    {
+     "jenis": "instagram",
+     "url": "https://www.instagram.com/kemenhut",
+     "sumber_url": "https://www.kehutanan.go.id"
+    },
+    {
+     "jenis": "twitter",
+     "url": "https://twitter.com/@Kemenhut_RI",
+     "sumber_url": "https://www.kehutanan.go.id"
+    },
+    {
+     "jenis": "youtube",
+     "url": "https://youtube.com/@Kemenhut_RI",
+     "sumber_url": "https://www.kehutanan.go.id"
+    }
+   ],
+   "logo_url": "https://www.kehutanan.go.id/images/logo.png",
+   "tanggal_periksa": "2026-11-07"
+  },
+  "l_4164507db1": {
+   "halaman": {
+    "beranda": "https://pse.ugm.ac.id",
+    "tentang": "https://pse.ugm.ac.id/tentang-pse/",
+    "program": "https://pse.ugm.ac.id/tentang-pse/kegiatan/",
+    "kontak": "https://pse.ugm.ac.id/kontak/",
+    "proyek": "https://pse.ugm.ac.id/pse-ugm-bahas-penyempurnaan-pedoman-pengadaan-bersama-direktur-sdm-dan-penunjang-bisnis-pertamina-patra-niaga/"
+   },
+   "sumber": [
+    "https://pse.ugm.ac.id",
+    "https://pse.ugm.ac.id/tentang-pse/",
+    "https://pse.ugm.ac.id/tentang-pse/kegiatan/",
+    "https://pse.ugm.ac.id/kontak/",
+    "https://pse.ugm.ac.id/pse-ugm-bahas-penyempurnaan-pedoman-pengadaan-bersama-direktur-sdm-dan-penunjang-bisnis-pertamina-patra-niaga/"
+   ],
+   "kontak": {
+    "telepon": [
+     "+62-274-6492599",
+     "+62-274-565223",
+     "+62-0274-549429"
+    ],
+    "surel": [
+     "info@ugm.ac.id"
+    ],
+    "sumber_url": "https://pse.ugm.ac.id"
+   },
+   "sosmed": [
+    {
+     "jenis": "instagram",
+     "url": "https://www.instagram.com/username",
+     "sumber_url": "https://pse.ugm.ac.id"
+    },
+    {
+     "jenis": "facebook",
+     "url": "https://www.facebook.com/username",
+     "sumber_url": "https://pse.ugm.ac.id"
+    },
+    {
+     "jenis": "linkedin",
+     "url": "https://www.linkedin.com/company/pusatstudienergiugm",
+     "sumber_url": "https://pse.ugm.ac.id"
+    }
+   ],
+   "tanggal_periksa": "2026-11-07"
+  },
+  "l_41bf1f0b41": {
+   "halaman": {
+    "beranda": "https://metiires.or.id",
+    "anggota": "https://metiires.or.id/membership",
+    "kontak": "https://metiires.or.id/contact",
+    "tentang": "https://metiires.or.id/about"
+   },
+   "sumber": [
+    "https://metiires.or.id",
+    "https://metiires.or.id/membership",
+    "https://metiires.or.id/contact",
+    "https://metiires.or.id/about"
+   ],
+   "tahun_berdiri": {
+    "nilai": 1999,
+    "sumber_url": "https://metiires.or.id"
+   },
+   "asosiasi": [
+    "METI"
+   ],
+   "sosmed": [
+    {
+     "jenis": "instagram",
+     "url": "https://www.instagram.com/metiires",
+     "sumber_url": "https://metiires.or.id"
+    }
+   ],
+   "logo_url": "https://metiires.or.id/icons/favicon/meti.ico",
+   "visi": {
+    "nilai": "Menjadi wahana yang efektif dan terpercaya dalam pengembangan energi terbarukan Indonesia.",
+    "sumber_url": "https://metiires.or.id/about"
+   },
+   "misi": {
+    "nilai": "Berperan aktif dalam advokasi, promosi, dan pengembangan energi terbarukan.",
+    "sumber_url": "https://metiires.or.id/about"
+   },
+   "tanggal_periksa": "2026-11-07"
+  },
+  "l_43f00f6a72": {
+   "halaman": {
+    "beranda": "https://www.danantaraindonesia.com"
+   },
+   "sumber": [
+    "https://www.danantaraindonesia.com"
+   ],
+   "sosmed": [
+    {
+     "jenis": "instagram",
+     "url": "https://www.instagram.com/danantara.indonesia",
+     "sumber_url": "https://www.danantaraindonesia.com"
+    },
+    {
+     "jenis": "linkedin",
+     "url": "https://www.linkedin.com/company/danantaraindonesia",
+     "sumber_url": "https://www.danantaraindonesia.com"
+    }
+   ],
+   "logo_url": "https://www.danantaraindonesia.com/favicon.ico",
+   "tanggal_periksa": "2026-11-07"
+  },
+  "l_4554ebcdbc": {
+   "halaman": {
+    "beranda": "https://indonesien.um.dk"
+   },
+   "sumber": [
+    "https://indonesien.um.dk"
+   ],
+   "kontak": {
+    "telepon": [
+     "+62 (21) 866 55100"
+    ],
+    "surel": [],
+    "sumber_url": "https://indonesien.um.dk"
+   },
+   "logo_url": "https://indonesien.um.dk/media/hnrpmdo5/um-ico.png?rmode=pad&width=180&height=180&format=png&bgcolor=transparent&v=1dc8ba4219ce4e0",
+   "tanggal_periksa": "2026-11-07"
+  },
+  "l_488614e2c7": {
+   "halaman": {
+    "beranda": "https://celios.co.id",
+    "tentang": "https://celios.co.id/about"
+   },
+   "sumber": [
+    "https://celios.co.id",
+    "https://celios.co.id/about"
+   ],
+   "kontak": {
+    "telepon": [],
+    "surel": [
+     "admin@celios.co.id"
+    ],
+    "sumber_url": "https://celios.co.id"
+   },
+   "sosmed": [
+    {
+     "jenis": "instagram",
+     "url": "https://instagram.com/celios_id",
+     "sumber_url": "https://celios.co.id"
+    }
+   ],
+   "logo_url": "https://celios.co.id/favicon.ico?favicon.3pp3paqwuql9z.ico",
+   "tanggal_periksa": "2026-11-07"
+  },
+  "l_5d0062e04b": {
+   "halaman": {
+    "beranda": "https://www.its.ac.id",
+    "tentang": "https://www.its.ac.id/tentang/",
+    "manajemen": "https://www.its.ac.id/tentang/struktur-organisasi/"
+   },
+   "sumber": [
+    "https://www.its.ac.id",
+    "https://www.its.ac.id/tentang/",
+    "https://www.its.ac.id/tentang/struktur-organisasi/"
+   ],
+   "kontak": {
+    "telepon": [
+     "031-5994251-54",
+     "031-5947637",
+     "031-5613922"
+    ],
+    "surel": [
+     "humas@its.ac.id"
+    ],
+    "sumber_url": "https://www.its.ac.id"
+   },
+   "sosmed": [
+    {
+     "jenis": "youtube",
+     "url": "https://www.youtube.com/@itseurekatv",
+     "sumber_url": "https://www.its.ac.id"
+    },
+    {
+     "jenis": "instagram",
+     "url": "https://www.instagram.com/its_campus",
+     "sumber_url": "https://www.its.ac.id"
+    },
+    {
+     "jenis": "twitter",
+     "url": "https://x.com/its_campus",
+     "sumber_url": "https://www.its.ac.id"
+    }
+   ],
+   "logo_url": "https://www.its.ac.id/wp-content/uploads/2026/01/favicon-1.png",
+   "tahun_berdiri": {
+    "nilai": 1957,
+    "sumber_url": "https://www.its.ac.id/tentang/"
+   },
+   "tanggal_periksa": "2026-11-07"
+  },
+  "l_67ed5e1422": {
+   "halaman": {
+    "beranda": "https://apamsi.org",
+    "tentang": "https://apamsi.org/profil/",
+    "manajemen": "https://apamsi.org/struktur-organisasi/"
+   },
+   "sumber": [
+    "https://apamsi.org",
+    "https://apamsi.org/profil/",
+    "https://apamsi.org/struktur-organisasi/"
+   ],
+   "kapasitas": [
+    {
+     "mw": 5900,
+     "jenis": "tercatat",
+     "konteks": "Kapasitas Produksi Memiliki kapasitas produksi sebesar Modul Surya = 5.9 GWp/tahun & Sel Surya = 14.3 GWp/tahun yang mampu memenuhi kebutuhan energi terbarukan skala nasional.",
+     "sumber_url": "https://apamsi.org"
+    }
+   ],
+   "asosiasi": [
+    "APAMSI"
+   ],
+   "alamat": {
+    "nilai": "Jl. Jend. Sudirman Kav. 52-53 Senayan, South Jakarta, Jakarta 12190",
+    "sumber_url": "https://apamsi.org"
+   },
+   "kontak": {
+    "telepon": [],
+    "surel": [
+     "admin@apamsi.com"
+    ],
+    "sumber_url": "https://apamsi.org"
+   },
+   "sosmed": [
+    {
+     "jenis": "youtube",
+     "url": "https://www.youtube.com/channel/UCNWD-c2z6-7vFDTJCDXoRpQ",
+     "sumber_url": "https://apamsi.org"
+    },
+    {
+     "jenis": "instagram",
+     "url": "https://www.instagram.com/apamsi.official",
+     "sumber_url": "https://apamsi.org"
+    }
+   ],
+   "logo_url": "https://apamsi.org/wp-content/uploads/2026/07/fav.png",
+   "tanggal_periksa": "2026-11-07"
+  },
+  "l_69296f786c": {
+   "halaman": {
+    "beranda": "https://ebtke.esdm.go.id"
+   },
+   "sumber": [
+    "https://ebtke.esdm.go.id"
+   ],
+   "asosiasi": [
+    "EBTKE"
+   ],
+   "logo_url": "https://ebtke.esdm.go.id/media/landing/logo-esdm.png",
+   "tanggal_periksa": "2026-11-07"
+  },
+  "l_6a367c9be7": {
+   "halaman": {
+    "beranda": "https://trendasia.org",
+    "tentang": "https://trendasia.org/tentang-kami/",
+    "program": "https://trendasia.org/agenda/",
+    "proyek": "https://trendasia.org/waswas-megaproyek-data-center-ai-jatiluhur-ganggu-pasokan-air/",
+    "manajemen": "https://trendasia.org/indonesia-blackout-mengungkap-masalah-struktural-rantai-pasok-batubara/",
+    "kontak": "https://trendasia.org/hubungi-kami/"
+   },
+   "sumber": [
+    "https://trendasia.org",
+    "https://trendasia.org/tentang-kami/",
+    "https://trendasia.org/agenda/",
+    "https://trendasia.org/waswas-megaproyek-data-center-ai-jatiluhur-ganggu-pasokan-air/",
+    "https://trendasia.org/indonesia-blackout-mengungkap-masalah-struktural-rantai-pasok-batubara/",
+    "https://trendasia.org/hubungi-kami/"
+   ],
+   "sosmed": [
+    {
+     "jenis": "facebook",
+     "url": "https://www.facebook.com/trendasia.org",
+     "sumber_url": "https://trendasia.org"
+    },
+    {
+     "jenis": "tiktok",
+     "url": "https://www.tiktok.com/@trend_asia",
+     "sumber_url": "https://trendasia.org"
+    },
+    {
+     "jenis": "youtube",
+     "url": "https://www.youtube.com/channel/UCkBwASR7l2mYmYSgUxQcBTg",
+     "sumber_url": "https://trendasia.org"
+    },
+    {
+     "jenis": "instagram",
+     "url": "https://www.instagram.com/trend_asia",
+     "sumber_url": "https://trendasia.org"
+    },
+    {
+     "jenis": "twitter",
+     "url": "https://twitter.com/TrendAsia_Org",
+     "sumber_url": "https://trendasia.org"
+    },
+    {
+     "jenis": "linkedin",
+     "url": "https://www.linkedin.com/company/trend-asia",
+     "sumber_url": "https://trendasia.org"
+    }
+   ],
+   "logo_url": "https://trendasia.org/wp-content/uploads/2020/08/cropped-Asset-2-32x32.png",
+   "kapasitas": [
+    {
+     "mw": 120,
+     "jenis": "pipeline",
+     "konteks": "Pada fase awal, gedungnya berkapasitas 120 MW target mulai beroperasi awal 2027.",
+     "sumber_url": "https://trendasia.org/waswas-megaproyek-data-center-ai-jatiluhur-ganggu-pasokan-air/"
+    }
+   ],
+   "tanggal_periksa": "2026-11-07"
+  },
+  "l_7278e0528a": {
+   "halaman": {
+    "beranda": "https://www.esdm.go.id",
+    "tentang": "https://www.esdm.go.id/id/profil/struktur-organisasi",
+    "manajemen": "https://www.esdm.go.id/id/profil/struktur-organisasi",
+    "kontak": "https://www.esdm.go.id/id/profil/lokasi-kontak",
+    "program": "https://www.esdm.go.id/id/kegiatan-dwp-persatuan-kementerian-esdm/berita"
+   },
+   "sumber": [
+    "https://www.esdm.go.id",
+    "https://www.esdm.go.id/id/profil/struktur-organisasi",
+    "https://www.esdm.go.id/id/profil/struktur-organisasi",
+    "https://www.esdm.go.id/id/profil/lokasi-kontak",
+    "https://www.esdm.go.id/id/kegiatan-dwp-persatuan-kementerian-esdm/berita"
+   ],
+   "asosiasi": [
+    "EBTKE"
+   ],
+   "kontak": {
+    "telepon": [
+     "021 3804242"
+    ],
+    "surel": [],
+    "sumber_url": "https://www.esdm.go.id"
+   },
+   "sosmed": [
+    {
+     "jenis": "twitter",
+     "url": "https://twitter.com/KementerianESDM",
+     "sumber_url": "https://www.esdm.go.id"
+    },
+    {
+     "jenis": "instagram",
+     "url": "https://www.instagram.com/kesdm",
+     "sumber_url": "https://www.esdm.go.id"
+    }
+   ],
+   "tanggal_periksa": "2026-11-07"
+  },
+  "l_774a8755e8": {
+   "halaman": {
+    "beranda": "https://www.dpr.go.id",
+    "tentang": "https://www.dpr.go.id/tentang-dpr/kontak-dpr",
+    "kontak": "https://www.dpr.go.id/tentang-dpr/kontak-dpr",
+    "program": "https://www.dpr.go.id/kegiatan-dpr/majalah-bulletin"
+   },
+   "sumber": [
+    "https://www.dpr.go.id",
+    "https://www.dpr.go.id/tentang-dpr/kontak-dpr",
+    "https://www.dpr.go.id/tentang-dpr/kontak-dpr",
+    "https://www.dpr.go.id/kegiatan-dpr/majalah-bulletin"
+   ],
+   "sosmed": [
+    {
+     "jenis": "facebook",
+     "url": "https://www.facebook.com/DPRRI",
+     "sumber_url": "https://www.dpr.go.id"
+    },
+    {
+     "jenis": "instagram",
+     "url": "https://www.instagram.com/dpr_ri",
+     "sumber_url": "https://www.dpr.go.id"
+    },
+    {
+     "jenis": "twitter",
+     "url": "https://twitter.com/dpr_ri",
+     "sumber_url": "https://www.dpr.go.id"
+    },
+    {
+     "jenis": "youtube",
+     "url": "https://www.youtube.com/c/DPRRIOfficial",
+     "sumber_url": "https://www.dpr.go.id"
+    },
+    {
+     "jenis": "tiktok",
+     "url": "https://www.tiktok.com/@dpr_ri",
+     "sumber_url": "https://www.dpr.go.id"
+    }
+   ],
+   "logo_url": "https://statik.dpr.go.id/images/logo.png",
+   "kontak": {
+    "telepon": [],
+    "surel": [
+     "ppid@dpr.go.id"
+    ],
+    "sumber_url": "https://www.dpr.go.id/tentang-dpr/kontak-dpr"
+   },
+   "tanggal_periksa": "2026-11-07"
+  },
+  "l_7b43a2574c": {
+   "halaman": {
+    "beranda": "https://www.kemenkeu.go.id"
+   },
+   "sumber": [
+    "https://www.kemenkeu.go.id"
+   ],
+   "logo_url": "https://media.kemenkeu.go.id/getmedia/dce5d80f-c267-48af-9181-b5db5f3910e6/logo-atas.png?width=1920&height=483&ext=.png",
+   "tanggal_periksa": "2026-11-07"
+  },
+  "l_7c9f6d4654": {
+   "halaman": {
+    "beranda": "https://www.pertanian.go.id",
+    "program": "https://pertanian.go.id/index.php/agenda",
+    "kontak": "https://pertanian.go.id/index.php/contact"
+   },
+   "sumber": [
+    "https://www.pertanian.go.id",
+    "https://pertanian.go.id/index.php/agenda",
+    "https://pertanian.go.id/index.php/contact"
+   ],
+   "sosmed": [
+    {
+     "jenis": "youtube",
+     "url": "https://www.youtube.com/channel/UCXzOJru703AhCJXikZEEmsw",
+     "sumber_url": "https://www.pertanian.go.id"
+    },
+    {
+     "jenis": "facebook",
+     "url": "https://www.facebook.com/kementanRI",
+     "sumber_url": "https://www.pertanian.go.id"
+    },
+    {
+     "jenis": "instagram",
+     "url": "https://instagram.com/kementerianpertanian",
+     "sumber_url": "https://www.pertanian.go.id"
+    },
+    {
+     "jenis": "tiktok",
+     "url": "https://www.tiktok.com/@kementanri",
+     "sumber_url": "https://www.pertanian.go.id"
+    },
+    {
+     "jenis": "twitter",
+     "url": "https://x.com/kementan",
+     "sumber_url": "https://www.pertanian.go.id"
+    }
+   ],
+   "logo_url": "https://www.pertanian.go.id/img/logo.png",
+   "kontak": {
+    "telepon": [
+     "021-7806131"
+    ],
+    "surel": [],
+    "sumber_url": "https://pertanian.go.id/index.php/contact"
+   },
+   "tanggal_periksa": "2026-11-07"
+  },
+  "l_7e5f8d771d": {
+   "halaman": {
+    "beranda": "https://inaga-api.or.id",
+    "kontak": "https://inaga-api.or.id/contactus/",
+    "tentang": "https://inaga-api.or.id/association/aboutus/",
+    "manajemen": "https://inaga-api.or.id/association/theboard/",
+    "anggota": "https://inaga-api.or.id/association/member/",
+    "proyek": "https://inaga-api.or.id/geothermal-business/geothermal-regulations/"
+   },
+   "sumber": [
+    "https://inaga-api.or.id",
+    "https://inaga-api.or.id/contactus/",
+    "https://inaga-api.or.id/association/aboutus/",
+    "https://inaga-api.or.id/association/theboard/",
+    "https://inaga-api.or.id/association/member/",
+    "https://inaga-api.or.id/geothermal-business/geothermal-regulations/"
+   ],
+   "afiliasi": {
+    "nama": [
+     "International Geothermal Association"
+    ],
+    "sumber_url": "https://inaga-api.or.id"
+   },
+   "sosmed": [
+    {
+     "jenis": "twitter",
+     "url": "https://twitter.com/inagaAPI",
+     "sumber_url": "https://inaga-api.or.id"
+    },
+    {
+     "jenis": "facebook",
+     "url": "http://facebook.com/inagaAPI",
+     "sumber_url": "https://inaga-api.or.id"
+    },
+    {
+     "jenis": "linkedin",
+     "url": "https://www.linkedin.com/company/api-inaga",
+     "sumber_url": "https://inaga-api.or.id"
+    },
+    {
+     "jenis": "youtube",
+     "url": "https://www.youtube.com/channel/UCvCgnkocRTO-cr-Qv2VMKZQ",
+     "sumber_url": "https://inaga-api.or.id"
+    },
+    {
+     "jenis": "instagram",
+     "url": "http://instagram.com/inaga.api",
+     "sumber_url": "https://inaga-api.or.id"
+    }
+   ],
+   "alamat": {
+    "nilai": "Jl. Matraman No. 30 E, Kenari, Kec. Senen, Jakarta Pusat - 10320",
+    "sumber_url": "https://inaga-api.or.id/contactus/"
+   },
+   "kontak": {
+    "telepon": [
+     "(021) 29627725"
+    ],
+    "surel": [],
+    "sumber_url": "https://inaga-api.or.id/contactus/"
+   },
+   "kapasitas": [
+    {
+     "mw": 7200,
+     "jenis": "pipeline",
+     "konteks": "Geothermal contribution targeted in the &ldquo;energy mix&rdquo; in 2025 is approximately 7,200 MW where currently only about 2,003.5 MW has been and will soon be COD.",
+     "sumber_url": "https://inaga-api.or.id/association/aboutus/"
+    }
+   ],
+   "misi": {
+    "nilai": "President Messages Current Program President of INAGA THE HISTORY I N A G A - Indonesian Geothermal Association (Asosiasi Panasbumi Indonesia - API) was establish in September 25th, 1991 in Jakarta.",
+    "sumber_url": "https://inaga-api.or.id/association/aboutus/"
+   },
+   "anggota_disebut": [
+    "PT. EDC Indonesia",
+    "PT. Ormat Geothermal Indonesia",
+    "PT. Sintesa Banten Geothermal",
+    "PT. Sejahtera Alam Energy",
+    "PT. Geo Dipa Energi",
+    "PT. Supreme Energy",
+    "PT. Medco Power Indonesia",
+    "PT. Pertamina Geothermal Energy",
+    "PT. Sumbawa Timur Mining",
+    "PT. Sorik Marapi Geothermal Power",
+    "PT Citra Tubindo Tbk",
+    "PT Indonesia Power Kamojang POMU",
+    "PT Kopjasa Keahlian Teknosa",
+    "PT Thermochem Indonesia"
+   ],
+   "tanggal_periksa": "2026-11-07"
+  },
+  "l_7f19189f6d": {
+   "halaman": {
+    "beranda": "https://universitaspertamina.ac.id",
+    "manajemen": "https://universitaspertamina.ac.id/fakultas/perencanaan-infrastruktur",
+    "proyek": "https://universitaspertamina.ac.id/fakultas/ekonomi-dan-bisnis",
+    "tentang": "https://universitaspertamina.ac.id/profile/informasi-akreditasi",
+    "program": "https://universitaspertamina.ac.id/spm/kegiatan"
+   },
+   "sumber": [
+    "https://universitaspertamina.ac.id",
+    "https://universitaspertamina.ac.id/fakultas/perencanaan-infrastruktur",
+    "https://universitaspertamina.ac.id/fakultas/ekonomi-dan-bisnis",
+    "https://universitaspertamina.ac.id/profile/informasi-akreditasi",
+    "https://universitaspertamina.ac.id/spm/kegiatan"
+   ],
+   "kontak": {
+    "telepon": [],
+    "surel": [
+     "info@universitaspertamina.ac.id"
+    ],
+    "sumber_url": "https://universitaspertamina.ac.id"
+   },
+   "sosmed": [
+    {
+     "jenis": "instagram",
+     "url": "https://www.instagram.com/universitaspertamina",
+     "sumber_url": "https://universitaspertamina.ac.id"
+    },
+    {
+     "jenis": "twitter",
+     "url": "https://twitter.com/UnivPertamina",
+     "sumber_url": "https://universitaspertamina.ac.id"
+    },
+    {
+     "jenis": "youtube",
+     "url": "https://www.youtube.com/channel/UCwoZlTkQX9qfyabTfv6F0gg",
+     "sumber_url": "https://universitaspertamina.ac.id"
+    }
+   ],
+   "logo_url": "https://universitaspertamina.ac.id/common/images/favicon.png",
+   "tanggal_periksa": "2026-11-07"
+  },
+  "l_8654fb1ba5": {
+   "halaman": {
+    "beranda": "https://icel.or.id"
+   },
+   "sumber": [
+    "https://icel.or.id"
+   ],
+   "logo_url": "https://icel.or.id/favicon-32x32.png?v=2b",
+   "tanggal_periksa": "2026-11-07"
+  },
+  "l_973f60de15": {
+   "halaman": {
+    "beranda": "https://www.brin.go.id",
+    "program": "https://www.brin.go.id/agenda"
+   },
+   "sumber": [
+    "https://www.brin.go.id",
+    "https://www.brin.go.id/agenda"
+   ],
+   "kontak": {
+    "telepon": [],
+    "surel": [
+     "ppid@brin.go.id"
+    ],
+    "sumber_url": "https://www.brin.go.id"
+   },
+   "sosmed": [
+    {
+     "jenis": "twitter",
+     "url": "https://twitter.com/brin_indonesia",
+     "sumber_url": "https://www.brin.go.id"
+    },
+    {
+     "jenis": "youtube",
+     "url": "https://www.youtube.com/c/BadanRisetdanInovasiNasionalBRIN/featured",
+     "sumber_url": "https://www.brin.go.id"
+    },
+    {
+     "jenis": "instagram",
+     "url": "https://www.instagram.com/brin_indonesia",
+     "sumber_url": "https://www.brin.go.id"
+    },
+    {
+     "jenis": "facebook",
+     "url": "https://www.facebook.com/brin.indonesia",
+     "sumber_url": "https://www.brin.go.id"
+    }
+   ],
+   "logo_url": "https://brin.go.id/images/logo_brin.jpg",
+   "tanggal_periksa": "2026-11-07"
+  },
+  "l_a63f1fe4b8": {
+   "halaman": {
+    "beranda": "https://cerah.or.id",
+    "tentang": "https://cerah.or.id/about",
+    "kontak": "https://cerah.or.id/contact"
+   },
+   "sumber": [
+    "https://cerah.or.id",
+    "https://cerah.or.id/about",
+    "https://cerah.or.id/contact"
+   ],
+   "kapasitas": [
+    {
+     "mw": 100000,
+     "jenis": "tercatat",
+     "konteks": "Through evidence-based narratives and advocacy, we push for national power sector planning documents to become credible roadmaps that incorporate coal-fired power plant (PLTU) phas",
+     "sumber_url": "https://cerah.or.id"
+    }
+   ],
+   "sosmed": [
+    {
+     "jenis": "twitter",
+     "url": "https://twitter.com/CerahID",
+     "sumber_url": "https://cerah.or.id"
+    },
+    {
+     "jenis": "instagram",
+     "url": "https://www.instagram.com/cerah_indonesiaku",
+     "sumber_url": "https://cerah.or.id"
+    },
+    {
+     "jenis": "facebook",
+     "url": "https://www.facebook.com/cerahID",
+     "sumber_url": "https://cerah.or.id"
+    },
+    {
+     "jenis": "youtube",
+     "url": "https://www.youtube.com/channel/UCQX7bRSy-pH73y6X2T8I7DA",
+     "sumber_url": "https://cerah.or.id"
+    },
+    {
+     "jenis": "linkedin",
+     "url": "https://www.linkedin.com/company/indonesiacerah",
+     "sumber_url": "https://cerah.or.id"
+    }
+   ],
+   "kontak": {
+    "telepon": [],
+    "surel": [
+     "info@cerah.or.id"
+    ],
+    "sumber_url": "https://cerah.or.id/contact"
+   },
+   "tanggal_periksa": "2026-11-07"
+  },
+  "l_c455b2f724": {
+   "halaman": {
+    "beranda": "https://jetp-id.org",
+    "proyek": "https://jetp-id.org/portfolio-sub/index",
+    "tentang": "https://jetp-id.org/about",
+    "program": "https://jetp-id.org/events",
+    "kontak": "https://jetp-id.org/contact"
+   },
+   "sumber": [
+    "https://jetp-id.org",
+    "https://jetp-id.org/portfolio-sub/index",
+    "https://jetp-id.org/about",
+    "https://jetp-id.org/events",
+    "https://jetp-id.org/contact"
+   ],
+   "kontak": {
+    "telepon": [],
+    "surel": [
+     "info@jetp-id.org"
+    ],
+    "sumber_url": "https://jetp-id.org"
+   },
+   "logo_url": "https://jetp-id.org/img/asset/YXNzZXRzLzg4MWIyMjUwMjg2YzU3YjFhNTZmMDNhNGMzNTExN2M1LW1pbi5qcGc--w-640-fm-jpg-s-2fda06ede1e4c92f1bf13fd1e065d362.jpg",
+   "kapasitas": [
+    {
+     "mw": 60,
+     "jenis": "tercatat",
+     "konteks": "Saguling Floating Solar PV Power Plant The Saguling floating solar PV plant is a 60 MW (92 MWp) floating solar plant located in West Java.",
+     "sumber_url": "https://jetp-id.org/portfolio-sub/index"
+    }
+   ],
+   "tanggal_periksa": "2026-11-07"
+  },
+  "l_c6d98b8a10": {
+   "halaman": {
+    "beranda": "https://fiskal.kemenkeu.go.id",
+    "tentang": "https://fiskal.kemenkeu.go.id/profil",
+    "manajemen": "https://fiskal.kemenkeu.go.id/profil/struktur-organisasi",
+    "kontak": "https://fiskal.kemenkeu.go.id/profil/lokasi-kontak",
+    "investor": "https://fiskal.kemenkeu.go.id/informasi-publik/investor-relation-unit",
+    "program": "https://fiskal.kemenkeu.go.id/informasi-publik/agenda"
+   },
+   "sumber": [
+    "https://fiskal.kemenkeu.go.id",
+    "https://fiskal.kemenkeu.go.id/profil",
+    "https://fiskal.kemenkeu.go.id/profil/struktur-organisasi",
+    "https://fiskal.kemenkeu.go.id/profil/lokasi-kontak",
+    "https://fiskal.kemenkeu.go.id/informasi-publik/investor-relation-unit",
+    "https://fiskal.kemenkeu.go.id/informasi-publik/agenda"
+   ],
+   "sosmed": [
+    {
+     "jenis": "facebook",
+     "url": "https://www.facebook.com/ditjensef",
+     "sumber_url": "https://fiskal.kemenkeu.go.id"
+    },
+    {
+     "jenis": "twitter",
+     "url": "https://x.com/DitjenSEF",
+     "sumber_url": "https://fiskal.kemenkeu.go.id"
+    },
+    {
+     "jenis": "instagram",
+     "url": "https://www.instagram.com/DitjenSEF",
+     "sumber_url": "https://fiskal.kemenkeu.go.id"
+    },
+    {
+     "jenis": "youtube",
+     "url": "https://www.youtube.com/@DitjenSEF",
+     "sumber_url": "https://fiskal.kemenkeu.go.id"
+    }
+   ],
+   "tanggal_periksa": "2026-11-07"
+  },
+  "l_c7f9927ccc": {
+   "halaman": {
+    "beranda": "https://ipb.ac.id"
+   },
+   "sumber": [
+    "https://ipb.ac.id"
+   ],
+   "sosmed": [
+    {
+     "jenis": "twitter",
+     "url": "https://twitter.com/ipbofficial",
+     "sumber_url": "https://ipb.ac.id"
+    },
+    {
+     "jenis": "facebook",
+     "url": "https://www.facebook.com/ipbuniversity",
+     "sumber_url": "https://ipb.ac.id"
+    },
+    {
+     "jenis": "instagram",
+     "url": "https://www.instagram.com/ipbofficial",
+     "sumber_url": "https://ipb.ac.id"
+    },
+    {
+     "jenis": "youtube",
+     "url": "https://www.youtube.com/channel/UC5tlNLMFpmrY2zUvQSQS-lw",
+     "sumber_url": "https://ipb.ac.id"
+    }
+   ],
+   "logo_url": "https://www.ipb.ac.id/wp-content/uploads/2023/03/cropped-logo_ipb_80-32x32.png",
+   "tanggal_periksa": "2026-11-07"
+  },
+  "l_cac38cb0a4": {
+   "halaman": {
+    "beranda": "https://purnomoyusgiantorocenter.org",
+    "tentang": "https://purnomoyusgiantorocenter.org/about-us/our-profile/",
+    "manajemen": "https://purnomoyusgiantorocenter.org/about-us/our-management/",
+    "program": "https://purnomoyusgiantorocenter.org/event/",
+    "kontak": "https://purnomoyusgiantorocenter.org/contact-us/"
+   },
+   "sumber": [
+    "https://purnomoyusgiantorocenter.org",
+    "https://purnomoyusgiantorocenter.org/about-us/our-profile/",
+    "https://purnomoyusgiantorocenter.org/about-us/our-management/",
+    "https://purnomoyusgiantorocenter.org/event/",
+    "https://purnomoyusgiantorocenter.org/contact-us/"
+   ],
+   "sosmed": [
+    {
+     "jenis": "youtube",
+     "url": "https://youtube.com/@purnomoyusgiantorocenter1766",
+     "sumber_url": "https://purnomoyusgiantorocenter.org"
+    },
+    {
+     "jenis": "instagram",
+     "url": "https://www.instagram.com/purnomoyusgiantorocenter",
+     "sumber_url": "https://purnomoyusgiantorocenter.org"
+    },
+    {
+     "jenis": "twitter",
+     "url": "https://x.com/purnomoycenter",
+     "sumber_url": "https://purnomoyusgiantorocenter.org"
+    },
+    {
+     "jenis": "facebook",
+     "url": "https://www.facebook.com/purnomoyusgiantorocenter",
+     "sumber_url": "https://purnomoyusgiantorocenter.org"
+    },
+    {
+     "jenis": "tiktok",
+     "url": "https://www.tiktok.com/@purnomoyusgiantorocenter",
+     "sumber_url": "https://purnomoyusgiantorocenter.org"
+    }
+   ],
+   "logo_url": "https://purnomoyusgiantorocenter.org/wp-content/uploads/2024/06/cropped-favico-150x150.png",
+   "tahun_berdiri": {
+    "nilai": 2016,
+    "sumber_url": "https://purnomoyusgiantorocenter.org/about-us/our-profile/"
+   },
+   "tanggal_periksa": "2026-11-07"
+  },
+  "l_d3dadc789e": {
+   "halaman": {
+    "beranda": "https://aprobi.or.id",
+    "tentang": "https://www.aprobi.or.id/about-us/",
+    "manajemen": "https://www.aprobi.or.id/about-us/board-of-directors/",
+    "anggota": "https://www.aprobi.or.id/about-us/members/",
+    "program": "https://www.aprobi.or.id/news-events/",
+    "kontak": "https://www.aprobi.or.id/contact-us/"
+   },
+   "sumber": [
+    "https://aprobi.or.id",
+    "https://www.aprobi.or.id/about-us/",
+    "https://www.aprobi.or.id/about-us/board-of-directors/",
+    "https://www.aprobi.or.id/about-us/members/",
+    "https://www.aprobi.or.id/news-events/",
+    "https://www.aprobi.or.id/contact-us/"
+   ],
+   "asosiasi": [
+    "APROBI",
+    "EBTKE",
+    "METI"
+   ],
+   "alamat": {
+    "nilai": "Jl. Kuningan Mulia 9B Kuningan Jakarta 12980",
+    "sumber_url": "https://aprobi.or.id"
+   },
+   "kontak": {
+    "telepon": [],
+    "surel": [
+     "office@aprobi.or.id"
+    ],
+    "sumber_url": "https://aprobi.or.id"
+   },
+   "sosmed": [
+    {
+     "jenis": "facebook",
+     "url": "https://www.facebook.com/Aprobi.id",
+     "sumber_url": "https://aprobi.or.id"
+    },
+    {
+     "jenis": "twitter",
+     "url": "https://twitter.com/aprobi_id",
+     "sumber_url": "https://aprobi.or.id"
+    },
+    {
+     "jenis": "instagram",
+     "url": "https://www.instagram.com/aprobi.id",
+     "sumber_url": "https://aprobi.or.id"
+    },
+    {
+     "jenis": "youtube",
+     "url": "https://www.youtube.com/channel/UC9uG7ugbW0xZOJXd0Dtskiw",
+     "sumber_url": "https://aprobi.or.id"
+    }
+   ],
+   "logo_url": "https://www.aprobi.or.id/wp-content/uploads/logo-aprobi-1600x800-1.jpg",
+   "anggota_disebut": [
+    "PT ADHITYA SERAYAKORITA Work",
+    "PT BATARA ELOK SEMESTA TERPADU Work",
+    "PT CILIANDRA PERKASA Phone",
+    "PT ECO PRIMA ENERGI Work",
+    "PT ENERGI UNGGUL PERSADA Work",
+    "PT INTIBENUA PERKASATAMA Work",
+    "PT JHONLIN AGRO RAYA Work",
+    "PT KUTAI REFINERY NUSANTARA Work",
+    "PT LDC INDONESIA Work",
+    "PT MOLINDO RAYA INDUSTRIAL Work",
+    "PT MULTI NABATI SULAWESI Work",
+    "PT MULTIMAS NABATI ASAHAN Work",
+    "PT MUSIM MAS Work",
+    "PT PADANG RAYA CAKRAWALA Work",
+    "PT PELITA AGUNG AGRINDUSTRI Work",
+    "PT PERMATA HIJAU PALM OLEO Work",
+    "PT SARI DUMAI OLEO Work",
+    "PT SARI DUMAI SEJATI Work",
+    "PT SELAGO MAKMUR PLANTATION Work",
+    "PT SINARMAS BIO ENERGY Work",
+    "PT SMART",
+    "PT SUKAJADI SAWIT MEKAR Work",
+    "PT TUNAS BARU LAMPUNG TBK Work",
+    "PT WAHANA PRIMA SEJATI Phone",
+    "PT WILMAR BIOENERGI INDONESIA Work",
+    "PT WILMAR NABATI INDONESIA Work"
+   ],
+   "net_zero": {
+    "tahun": 2060,
+    "konteks": "Read More 12/02/24 | News, B40 Akan Diberlakukan Tahun Ini, GAIKINDO Buka Suara Read More 05/02/24 | Articles, Upaya Serius Pemerintah Indonesia Net Zero Emissions 2060 Read More 0",
+    "sumber_url": "https://www.aprobi.or.id/news-events/"
+   },
+   "afiliasi": {
+    "nama": [
+     "IEA"
+    ],
+    "sumber_url": "https://www.aprobi.or.id/news-events/"
+   },
+   "tanggal_periksa": "2026-11-07"
+  },
+  "l_d5ae08392c": {
+   "halaman": {
+    "beranda": "https://www.undip.ac.id",
+    "tentang": "https://undip.ac.id/profil-dosen",
+    "proyek": "https://undip.ac.id/fakultas-ekonomika-dan-bisnis-2",
+    "keberlanjutan": "https://undip.ac.id/post/59884/auto-draft-2sweeper-ev-undip-kendaraan-penyapu-jalan-listrik.html",
+    "program": "https://undip.ac.id/post/56149/fisip-undip-selenggarakan-sejumlah-program-summer-course-tahun-2026.html"
+   },
+   "sumber": [
+    "https://www.undip.ac.id",
+    "https://undip.ac.id/profil-dosen",
+    "https://undip.ac.id/fakultas-ekonomika-dan-bisnis-2",
+    "https://undip.ac.id/post/59884/auto-draft-2sweeper-ev-undip-kendaraan-penyapu-jalan-listrik.html",
+    "https://undip.ac.id/post/56149/fisip-undip-selenggarakan-sejumlah-program-summer-course-tahun-2026.html"
+   ],
+   "kontak": {
+    "telepon": [],
+    "surel": [
+     "humas@undip.ac.id",
+     "humas@live.undip.ac.id"
+    ],
+    "sumber_url": "https://www.undip.ac.id"
+   },
+   "sosmed": [
+    {
+     "jenis": "facebook",
+     "url": "https://www.facebook.com/undip.official",
+     "sumber_url": "https://www.undip.ac.id"
+    },
+    {
+     "jenis": "youtube",
+     "url": "https://www.youtube.com/c/UndipTV",
+     "sumber_url": "https://www.undip.ac.id"
+    },
+    {
+     "jenis": "twitter",
+     "url": "https://x.com/undip",
+     "sumber_url": "https://www.undip.ac.id"
+    },
+    {
+     "jenis": "instagram",
+     "url": "https://www.instagram.com/undip.official",
+     "sumber_url": "https://www.undip.ac.id"
+    },
+    {
+     "jenis": "tiktok",
+     "url": "https://www.tiktok.com/@undip.official",
+     "sumber_url": "https://www.undip.ac.id"
+    }
+   ],
+   "logo_url": "https://undip.ac.id/wp-content/uploads/2018/04/Ikon-Undip.png",
+   "tahun_berdiri": {
+    "nilai": 1960,
+    "sumber_url": "https://undip.ac.id/fakultas-ekonomika-dan-bisnis-2"
+   },
+   "tanggal_periksa": "2026-11-07"
+  },
+  "l_dd90c88f59": {
+   "halaman": {
+    "beranda": "https://aesi.or.id",
+    "tentang": "https://aesi.or.id/tentang-kami",
+    "anggota": "https://aesi.or.id/anggota/",
+    "program": "https://aesi.or.id/aesi-menyambut-peluncuran-program-plts-100-gwp/",
+    "kontak": "https://aesi.or.id/kontak-kami/"
+   },
+   "sumber": [
+    "https://aesi.or.id",
+    "https://aesi.or.id/tentang-kami",
+    "https://aesi.or.id/anggota/",
+    "https://aesi.or.id/aesi-menyambut-peluncuran-program-plts-100-gwp/",
+    "https://aesi.or.id/kontak-kami/"
+   ],
+   "tahun_berdiri": {
+    "nilai": 2016,
+    "sumber_url": "https://aesi.or.id"
+   },
+   "kapasitas": [
+    {
+     "mw": 100000,
+     "jenis": "tercatat",
+     "konteks": "Selengkapnya Selengkapnya Selengkapnya Alamat Sekretariat AESI Jatinegara Barat 4 No.6 RT6/RW3, Bali Mester Kecamatan Jatinegara, Jakarta Timur 13310 Indonesia Berita Terbaru AESI ",
+     "sumber_url": "https://aesi.or.id"
+    },
+    {
+     "mw": 5300,
+     "jenis": "tercatat",
+     "konteks": "Paket Awal untuk Tiga Tipologi PLTS Paket awal 5,3 GWp dirancang memanfaatkan tiga tipologi secara bersamaan, yaitu PLTS ground-mounted di lahan terbuka, PLTS atap pada bangunan da",
+     "sumber_url": "https://aesi.or.id/aesi-menyambut-peluncuran-program-plts-100-gwp/"
+    },
+    {
+     "mw": 4670,
+     "jenis": "tercatat",
+     "konteks": "Lebih lanjut, sekitar 4,67 GWp dari paket awal telah berstatus siap tender, termasuk PLTS Jatiluhur, PLTS Cirata, PLTS Jatigede, dan PLTS Madura.",
+     "sumber_url": "https://aesi.or.id/aesi-menyambut-peluncuran-program-plts-100-gwp/"
+    }
+   ],
+   "asosiasi": [
+    "AESI"
+   ],
+   "sosmed": [
+    {
+     "jenis": "instagram",
+     "url": "https://www.instagram.com/aesi_id",
+     "sumber_url": "https://aesi.or.id"
+    },
+    {
+     "jenis": "linkedin",
+     "url": "https://www.linkedin.com/company/asosiasi-energi-surya-indonesia",
+     "sumber_url": "https://aesi.or.id"
+    }
+   ],
+   "logo_url": "https://aesi.or.id/wp-content/uploads/2021/11/1636643539.png",
+   "net_zero": {
+    "tahun": 2060,
+    "konteks": "Seluruh kegiatan diarahkan untuk mendukung target Net Zero Emission Indonesia pada 2060, sekaligus menciptakan sistem energi yang bersih, mandiri, dan inklusif bagi masa depan bang",
+    "sumber_url": "https://aesi.or.id/tentang-kami"
+   },
+   "visi": {
+    "nilai": "Menjadi wahana yang efektif bagi para pemangku kepentingan dalam usaha mewujudkan energi surya sebagai salah satu sumber untuk memenuhi kebutuhan energi nasional secara berkelanjutan.",
+    "sumber_url": "https://aesi.or.id/tentang-kami"
+   },
+   "tanggal_periksa": "2026-11-07"
+  },
+  "l_e0b79e0beb": {
+   "halaman": {
+    "beranda": "https://bsn.go.id",
+    "kontak": "https://bsn.go.id/main/kontak",
+    "program": "https://bsn.go.id/main/berita/agenda"
+   },
+   "sumber": [
+    "https://bsn.go.id",
+    "https://bsn.go.id/main/kontak",
+    "https://bsn.go.id/main/berita/agenda"
+   ],
+   "kontak": {
+    "telepon": [],
+    "surel": [
+     "info@bsn.go.id"
+    ],
+    "sumber_url": "https://bsn.go.id"
+   },
+   "sosmed": [
+    {
+     "jenis": "twitter",
+     "url": "http://twitter.com/BSN_SNI",
+     "sumber_url": "https://bsn.go.id"
+    }
+   ],
+   "logo_url": "https://bsn.go.id/apple-touch-icon.png",
+   "tanggal_periksa": "2026-11-07"
+  },
+  "l_e0cd1f9089": {
+   "halaman": {
+    "beranda": "https://www.bmkg.go.id",
+    "tentang": "https://www.bmkg.go.id/profil",
+    "manajemen": "https://www.bmkg.go.id/profil/organisasi",
+    "program": "https://www.bmkg.go.id/berita/kegiatan",
+    "proyek": "https://www.bmkg.go.id/iklim/proyeksi-perubahan-suhu-udara",
+    "kontak": "https://www.bmkg.go.id/kontak"
+   },
+   "sumber": [
+    "https://www.bmkg.go.id",
+    "https://www.bmkg.go.id/profil",
+    "https://www.bmkg.go.id/profil/organisasi",
+    "https://www.bmkg.go.id/berita/kegiatan",
+    "https://www.bmkg.go.id/iklim/proyeksi-perubahan-suhu-udara",
+    "https://www.bmkg.go.id/kontak"
+   ],
+   "sosmed": [
+    {
+     "jenis": "youtube",
+     "url": "https://www.youtube.com/infoBMKG",
+     "sumber_url": "https://www.bmkg.go.id"
+    },
+    {
+     "jenis": "facebook",
+     "url": "https://www.facebook.com/infoBMKG",
+     "sumber_url": "https://www.bmkg.go.id"
+    },
+    {
+     "jenis": "twitter",
+     "url": "https://x.com/infoBMKG",
+     "sumber_url": "https://www.bmkg.go.id"
+    },
+    {
+     "jenis": "instagram",
+     "url": "https://www.instagram.com/infoBMKG",
+     "sumber_url": "https://www.bmkg.go.id"
+    },
+    {
+     "jenis": "tiktok",
+     "url": "https://www.tiktok.com/@infoBMKG",
+     "sumber_url": "https://www.bmkg.go.id"
+    }
+   ],
+   "logo_url": "https://www.bmkg.go.id/images/icon.png",
+   "tanggal_periksa": "2026-11-07"
+  },
+  "l_e4f0f03487": {
+   "halaman": {
+    "beranda": "https://ebtke.esdm.go.id"
+   },
+   "sumber": [
+    "https://ebtke.esdm.go.id"
+   ],
+   "asosiasi": [
+    "EBTKE"
+   ],
+   "logo_url": "https://ebtke.esdm.go.id/media/landing/logo-esdm.png",
+   "tanggal_periksa": "2026-11-07"
+  },
+  "l_edde12ff1f": {
+   "halaman": {
+    "beranda": "https://bumn.go.id",
+    "tentang": "http://bumn.go.id/profil/landing-page",
+    "program": "http://bumn.go.id/prioritas",
+    "kontak": "http://bumn.go.id/pelayanan/terhubung/kontak"
+   },
+   "sumber": [
+    "https://bumn.go.id",
+    "http://bumn.go.id/profil/landing-page",
+    "http://bumn.go.id/prioritas",
+    "http://bumn.go.id/pelayanan/terhubung/kontak"
+   ],
+   "kontak": {
+    "telepon": [
+     "021 - 2993 5678"
+    ],
+    "surel": [],
+    "sumber_url": "https://bumn.go.id"
+   },
+   "sosmed": [
+    {
+     "jenis": "instagram",
+     "url": "https://www.instagram.com/reel/DfWDOLXp1VC",
+     "sumber_url": "https://bumn.go.id"
+    },
+    {
+     "jenis": "youtube",
+     "url": "https://www.youtube.com/c/KEMENTERIANBUMNRI",
+     "sumber_url": "https://bumn.go.id"
+    },
+    {
+     "jenis": "twitter",
+     "url": "https://x.com/bumn_idn",
+     "sumber_url": "https://bumn.go.id"
+    },
+    {
+     "jenis": "linkedin",
+     "url": "https://www.linkedin.com/company/bpbumn",
+     "sumber_url": "https://bumn.go.id"
+    }
+   ],
+   "tanggal_periksa": "2026-11-07"
+  },
+  "l_f2d9cc6c76": {
+   "halaman": {
+    "beranda": "https://ember-energy.org",
+    "tentang": "https://ember-energy.org/about/",
+    "kontak": "https://ember-energy.org/contact-us/"
+   },
+   "sumber": [
+    "https://ember-energy.org",
+    "https://ember-energy.org/about/",
+    "https://ember-energy.org/contact-us/"
+   ],
+   "sosmed": [
+    {
+     "jenis": "linkedin",
+     "url": "https://www.linkedin.com/company/emberenergyresearch",
+     "sumber_url": "https://ember-energy.org"
+    },
+    {
+     "jenis": "twitter",
+     "url": "https://x.com/ember_energy",
+     "sumber_url": "https://ember-energy.org"
+    },
+    {
+     "jenis": "youtube",
+     "url": "https://www.youtube.com/@Emberenergy",
+     "sumber_url": "https://ember-energy.org"
+    },
+    {
+     "jenis": "instagram",
+     "url": "https://www.instagram.com/emberenergyresearch",
+     "sumber_url": "https://ember-energy.org"
+    }
+   ],
+   "logo_url": "https://ember-energy.org/app/themes/ember-energy/resources/images/favicon.png",
+   "tahun_berdiri": {
+    "nilai": 2020,
+    "sumber_url": "https://ember-energy.org/about/"
+   },
+   "tanggal_periksa": "2026-11-07"
+  },
+  "l_pjci_asosiasi": {
+   "halaman": {
+    "beranda": "https://pjci.or.id",
+    "tentang": "https://pjci.or.id/index.php/about-us/",
+    "kontak": "https://pjci.or.id/index.php/about-us/contact-us/",
+    "anggota": "https://pjci.or.id/index.php/membership/"
+   },
+   "sumber": [
+    "https://pjci.or.id",
+    "https://pjci.or.id/index.php/about-us/",
+    "https://pjci.or.id/index.php/about-us/contact-us/",
+    "https://pjci.or.id/index.php/membership/"
+   ],
+   "alamat": {
+    "nilai": "Jl. Jenderal Sudirman No.Kav. 59, RT.5/RW.3, Senayan, Kec. Kby. Baru, Kota Jakarta Selatan, Daerah Khusus Ibukota Jakarta 12190",
+    "sumber_url": "https://pjci.or.id"
+   },
+   "logo_url": "https://pjci.or.id/wp-content/uploads/2025/07/cropped-logo_pjci-1-32x32.png",
+   "visi": {
+    "nilai": "Misi Board of PJCI Contact Us PJCI To be a trustworthy model in the effort of collaborating enhanced technology in the field of energy and IT towards Smart Indonesia.",
+    "sumber_url": "https://pjci.or.id/index.php/about-us/"
+   },
+   "misi": {
+    "nilai": "Board of PJCI Contact Us PJCI To be a trustworthy model in the effort of collaborating enhanced technology in the field of energy and IT towards Smart Indonesia.",
+    "sumber_url": "https://pjci.or.id/index.php/about-us/"
+   },
+   "tanggal_periksa": "2026-11-07"
+  },
+  "p_039392b6d9": {
+   "halaman": {
+    "beranda": "https://solarkarya.co.id/"
+   },
+   "sumber": [
+    "https://solarkarya.co.id/"
+   ],
+   "tahun_berdiri": {
+    "nilai": 2022,
+    "sumber_url": "https://solarkarya.co.id/"
+   },
+   "kapasitas": [
+    {
+     "mw": 500,
+     "jenis": "tercatat",
+     "konteks": "With the advanced automated and custom production line in Indonesia, the module factory annual capacity is starting from 500 MW with growing capacity for upcoming years.",
+     "sumber_url": "https://solarkarya.co.id/"
+    }
+   ],
+   "kontak": {
+    "telepon": [],
+    "surel": [
+     "sales@solarkarya.co.id",
+     "info@solarkarya.co.id"
+    ],
+    "sumber_url": "https://solarkarya.co.id/"
+   },
+   "logo_url": "https://solarkarya.co.id/wp-content/uploads/2024/05/cropped-SKI-LOGO2-32x32.png",
+   "tanggal_periksa": "2026-11-07"
+  },
   "p_039ffe3689": {
    "halaman": {
     "beranda": "https://www.ptsi.co.id"
@@ -156,6 +2245,65 @@
    "logo_url": "https://sundaya.com/favicon.png",
    "tanggal_periksa": "2026-11-07"
   },
+  "p_14ecd62780": {
+   "halaman": {
+    "beranda": "https://powerbrain.id/",
+    "proyek": "https://powerbrain.id/business"
+   },
+   "sumber": [
+    "https://powerbrain.id/",
+    "https://powerbrain.id/business"
+   ],
+   "sosmed": [
+    {
+     "jenis": "linkedin",
+     "url": "https://www.linkedin.com/company/powerbrain-enegy",
+     "sumber_url": "https://powerbrain.id/"
+    },
+    {
+     "jenis": "instagram",
+     "url": "https://www.instagram.com/powerbrain.id",
+     "sumber_url": "https://powerbrain.id/"
+    }
+   ],
+   "logo_url": "https://powerbrain.id/images/new/logo-green.png",
+   "kapasitas": [
+    {
+     "mw": 62.3,
+     "jenis": "terpasang",
+     "konteks": "Installed Capacity 62.3 MW of solar projects developed & delivered Energy Managed 3320 Tons of refrigeration of energy systems optimized Industrial Customers 46 Industrial & commer",
+     "sumber_url": "https://powerbrain.id/business"
+    }
+   ],
+   "tanggal_periksa": "2026-11-07"
+  },
+  "p_15bc360dc3": {
+   "halaman": {
+    "beranda": "https://iif.co.id",
+    "kontak": "https://iif.co.id/id/client-care/contact-us",
+    "tentang": "https://iif.co.id/en/about/overview"
+   },
+   "sumber": [
+    "https://iif.co.id",
+    "https://iif.co.id/id/client-care/contact-us",
+    "https://iif.co.id/en/about/overview"
+   ],
+   "kontak": {
+    "telepon": [
+     "+622150826600"
+    ],
+    "surel": [
+     "info@iif.co.id"
+    ],
+    "sumber_url": "https://iif.co.id"
+   },
+   "logo_url": "https://iif.co.id/favicon.ico",
+   "tahun_berdiri": {
+    "nilai": 2010,
+    "sumber_url": "https://iif.co.id/en/about/overview"
+   },
+   "tanggal_periksa": "2026-11-07"
+  },
   "p_1848d9c52b": {
    "halaman": {
     "beranda": "https://adhi.co.id",
@@ -209,6 +2357,57 @@
    "tahun_berdiri": {
     "nilai": 1974,
     "sumber_url": "https://adhi.co.id/tentang-adhi/profil-perusahaan/"
+   },
+   "tanggal_periksa": "2026-11-07"
+  },
+  "p_19a0c30f94": {
+   "halaman": {
+    "beranda": "https://www.longi.com",
+    "keberlanjutan": "https://www.longi.com/en/sustainability/",
+    "proyek": "https://www.longi.com/en/sustainability/zero-carbon-panda-project/",
+    "manajemen": "https://www.longi.com/en/sustainability/esg-society-supply-chain/",
+    "tentang": "https://www.longi.com/en/about-longi/",
+    "investor": "https://www.longi.com/en/investor/"
+   },
+   "sumber": [
+    "https://www.longi.com",
+    "https://www.longi.com/en/sustainability/",
+    "https://www.longi.com/en/sustainability/zero-carbon-panda-project/",
+    "https://www.longi.com/en/sustainability/esg-society-supply-chain/",
+    "https://www.longi.com/en/about-longi/",
+    "https://www.longi.com/en/investor/"
+   ],
+   "sosmed": [
+    {
+     "jenis": "twitter",
+     "url": "https://x.com/longi_solar",
+     "sumber_url": "https://www.longi.com"
+    },
+    {
+     "jenis": "facebook",
+     "url": "https://www.facebook.com/LONGiSolar",
+     "sumber_url": "https://www.longi.com"
+    },
+    {
+     "jenis": "youtube",
+     "url": "https://www.youtube.com/channel/UCwyMZZT9OStWV93hdSzNPfw",
+     "sumber_url": "https://www.longi.com"
+    },
+    {
+     "jenis": "linkedin",
+     "url": "https://www.linkedin.com/company/longi-solar/jobs",
+     "sumber_url": "https://www.longi.com"
+    },
+    {
+     "jenis": "instagram",
+     "url": "https://www.instagram.com/longi_solar",
+     "sumber_url": "https://www.longi.com"
+    }
+   ],
+   "logo_url": "https://www.longi.com/_nuxt/img/seoLogo.1ecaaf1.png",
+   "tahun_berdiri": {
+    "nilai": 1994,
+    "sumber_url": "https://www.longi.com/en/sustainability/"
    },
    "tanggal_periksa": "2026-11-07"
   },
@@ -268,6 +2467,34 @@
    "logo_url": "https://www.engie.com/app/uploads/2026/03/favicon-engie-150x150.png",
    "tanggal_periksa": "2026-11-07"
   },
+  "p_1fec9f73f0": {
+   "halaman": {
+    "beranda": "https://www.sankeindo.co.id/",
+    "tentang": "https://www.sankeindo.co.id/about_us.php",
+    "kontak": "https://www.sankeindo.co.id/contact_us.php"
+   },
+   "sumber": [
+    "https://www.sankeindo.co.id/",
+    "https://www.sankeindo.co.id/about_us.php",
+    "https://www.sankeindo.co.id/contact_us.php"
+   ],
+   "sertifikasi": [
+    "ISO 9001"
+   ],
+   "sosmed": [
+    {
+     "jenis": "twitter",
+     "url": "https://twitter.com/sankelux_ups",
+     "sumber_url": "https://www.sankeindo.co.id/"
+    }
+   ],
+   "logo_url": "https://www.sankeindo.co.id/favicon.ico",
+   "tahun_berdiri": {
+    "nilai": 1988,
+    "sumber_url": "https://www.sankeindo.co.id/about_us.php"
+   },
+   "tanggal_periksa": "2026-11-07"
+  },
   "p_236f2f34ab": {
    "halaman": {
     "beranda": "https://xurya.com",
@@ -314,6 +2541,66 @@
     }
    ],
    "logo_url": "https://xurya.com/favicon.ico",
+   "tanggal_periksa": "2026-11-07"
+  },
+  "p_26cfc39c2a": {
+   "halaman": {
+    "beranda": "https://suryautamaputra.co.id/",
+    "tentang": "https://suryautamaputra.co.id/tentang-kita-2/",
+    "manajemen": "https://suryautamaputra.co.id/sistem-manajemen-anti-penyuapan-smap/",
+    "kontak": "https://suryautamaputra.co.id/hubungi-kami/"
+   },
+   "sumber": [
+    "https://suryautamaputra.co.id/",
+    "https://suryautamaputra.co.id/tentang-kita-2/",
+    "https://suryautamaputra.co.id/sistem-manajemen-anti-penyuapan-smap/",
+    "https://suryautamaputra.co.id/hubungi-kami/"
+   ],
+   "tahun_berdiri": {
+    "nilai": 2009,
+    "sumber_url": "https://suryautamaputra.co.id/"
+   },
+   "sertifikasi": [
+    "ISO 9001",
+    "ISO 14001",
+    "ISO 37001"
+   ],
+   "kontak": {
+    "telepon": [],
+    "surel": [
+     "cs.support@suryautamaputra.com"
+    ],
+    "sumber_url": "https://suryautamaputra.co.id/"
+   },
+   "sosmed": [
+    {
+     "jenis": "facebook",
+     "url": "https://www.facebook.com/suryautamaputra.pt",
+     "sumber_url": "https://suryautamaputra.co.id/"
+    },
+    {
+     "jenis": "instagram",
+     "url": "https://www.instagram.com/pt.suryautamaputra",
+     "sumber_url": "https://suryautamaputra.co.id/"
+    },
+    {
+     "jenis": "youtube",
+     "url": "https://www.youtube.com/channel/UCOpSKYtyEsIqjy49MK_rC2A",
+     "sumber_url": "https://suryautamaputra.co.id/"
+    }
+   ],
+   "logo_url": "https://suryautamaputra.co.id/wp-content/uploads/2021/10/Logo-SUP-150x150.png",
+   "kapasitas": [
+    {
+     "mw": 45,
+     "jenis": "tercatat",
+     "konteks": "Surya Utama Putra sudah mencapai 45 MW/tahun.",
+     "sumber_url": "https://suryautamaputra.co.id/tentang-kita-2/"
+    }
+   ],
+   "asosiasi": [
+    "APAMSI"
+   ],
    "tanggal_periksa": "2026-11-07"
   },
   "p_27ae5a4203": {
@@ -367,6 +2654,143 @@
    ],
    "asosiasi": [
     "EBTKE"
+   ],
+   "tanggal_periksa": "2026-11-07"
+  },
+  "p_3bfe6ea3f4": {
+   "halaman": {
+    "beranda": "https://www.musimmas.com",
+    "tentang": "https://www.musimmas.com/about-us/",
+    "keberlanjutan": "https://www.musimmas.com/sustainability/",
+    "manajemen": "https://www.musimmas.com/sustainability/positive-environmental-impacts/fire-prevention-and-management/",
+    "kontak": "https://www.musimmas.com/contact-us/",
+    "proyek": "https://www.musimmas.com/about-us/our-integrated-business/"
+   },
+   "sumber": [
+    "https://www.musimmas.com",
+    "https://www.musimmas.com/about-us/",
+    "https://www.musimmas.com/sustainability/",
+    "https://www.musimmas.com/sustainability/positive-environmental-impacts/fire-prevention-and-management/",
+    "https://www.musimmas.com/contact-us/",
+    "https://www.musimmas.com/about-us/our-integrated-business/"
+   ],
+   "sosmed": [
+    {
+     "jenis": "linkedin",
+     "url": "https://www.linkedin.com/company/musim-mas-group",
+     "sumber_url": "https://www.musimmas.com"
+    },
+    {
+     "jenis": "instagram",
+     "url": "https://www.instagram.com/musimmas_group",
+     "sumber_url": "https://www.musimmas.com"
+    },
+    {
+     "jenis": "youtube",
+     "url": "https://www.youtube.com/channel/UCOPs-aYjd5Vh_lKqj0mgF2A",
+     "sumber_url": "https://www.musimmas.com"
+    },
+    {
+     "jenis": "twitter",
+     "url": "https://x.com/Musimmas_Group",
+     "sumber_url": "https://www.musimmas.com"
+    }
+   ],
+   "logo_url": "https://www.musimmas.com/wp-content/uploads/2024/04/Frame-4191-150x150.jpg",
+   "net_zero": {
+    "tahun": 2024,
+    "konteks": "In 2024, our net-zero target was validated by the Science Based Targets initiative (SBTi), marking a major step toward climate action.",
+    "sumber_url": "https://www.musimmas.com/sustainability/"
+   },
+   "kontak": {
+    "telepon": [
+     "(65) 6576 6500",
+     "(62) 61 6619866",
+     "(91) 40 69045555"
+    ],
+    "surel": [],
+    "sumber_url": "https://www.musimmas.com/contact-us/"
+   },
+   "tanggal_periksa": "2026-11-07"
+  },
+  "p_415a233f4b": {
+   "halaman": {
+    "beranda": "https://wiraky.co.id/",
+    "tentang": "https://wiraky.co.id/index.php/about/",
+    "kontak": "https://wiraky.co.id/index.php/contact/"
+   },
+   "sumber": [
+    "https://wiraky.co.id/",
+    "https://wiraky.co.id/index.php/about/",
+    "https://wiraky.co.id/index.php/contact/"
+   ],
+   "tahun_berdiri": {
+    "nilai": 2003,
+    "sumber_url": "https://wiraky.co.id/"
+   },
+   "kontak": {
+    "telepon": [
+     "+622200190",
+     "+6222142884911"
+    ],
+    "surel": [],
+    "sumber_url": "https://wiraky.co.id/"
+   },
+   "logo_url": "https://wiraky.co.id/wp-content/uploads/2021/07/cropped-favicon-fix-32x32.png",
+   "tanggal_periksa": "2026-11-07"
+  },
+  "p_42ff2c8aad": {
+   "halaman": {
+    "beranda": "https://www.jinkosolar.com",
+    "tentang": "https://www.jinkosolar.com/en/site/aboutus",
+    "keberlanjutan": "https://www.jinkosolar.com/en/site/esg",
+    "manajemen": "https://www.jinkosolar.com/en/site/esg_environment",
+    "kontak": "https://www.jinkosolar.com/en/site/consulting"
+   },
+   "sumber": [
+    "https://www.jinkosolar.com",
+    "https://www.jinkosolar.com/en/site/aboutus",
+    "https://www.jinkosolar.com/en/site/esg",
+    "https://www.jinkosolar.com/en/site/esg_environment",
+    "https://www.jinkosolar.com/en/site/consulting"
+   ],
+   "sosmed": [
+    {
+     "jenis": "facebook",
+     "url": "https://www.facebook.com/jinkosolar",
+     "sumber_url": "https://www.jinkosolar.com"
+    },
+    {
+     "jenis": "linkedin",
+     "url": "https://www.linkedin.com/company/jinko-solar-co--ltd-",
+     "sumber_url": "https://www.jinkosolar.com"
+    },
+    {
+     "jenis": "twitter",
+     "url": "https://twitter.com/jinko_solar",
+     "sumber_url": "https://www.jinkosolar.com"
+    },
+    {
+     "jenis": "instagram",
+     "url": "https://www.instagram.com/jinkosolar_global",
+     "sumber_url": "https://www.jinkosolar.com"
+    },
+    {
+     "jenis": "youtube",
+     "url": "https://www.youtube.com/@JinkoSolarCoLtd",
+     "sumber_url": "https://www.jinkosolar.com"
+    }
+   ],
+   "kapasitas": [
+    {
+     "mw": 400000,
+     "jenis": "tercatat",
+     "konteks": "As of 2026 Q1, JinkoSolar's cumulative module shipments reached approximately 400 GW, ranking No.1 in global module shipments seven times.",
+     "sumber_url": "https://www.jinkosolar.com/en/site/aboutus"
+    }
+   ],
+   "sertifikasi": [
+    "ISO 14001"
    ],
    "tanggal_periksa": "2026-11-07"
   },
@@ -545,6 +2969,117 @@
    "logo_url": "https://pertaminapatraniaga.com/favicon.ico",
    "tanggal_periksa": "2026-11-07"
   },
+  "p_5e8052392f": {
+   "halaman": {
+    "beranda": "https://apollosolarindonesia.com/",
+    "tentang": "https://apollosolarindonesia.com/about",
+    "kontak": "https://apollosolarindonesia.com/contact"
+   },
+   "sumber": [
+    "https://apollosolarindonesia.com/",
+    "https://apollosolarindonesia.com/about",
+    "https://apollosolarindonesia.com/contact"
+   ],
+   "tahun_berdiri": {
+    "nilai": 2022,
+    "sumber_url": "https://apollosolarindonesia.com/"
+   },
+   "kapasitas": [
+    {
+     "mw": 500,
+     "jenis": "tercatat",
+     "konteks": "March 5, 2023 Successful COD Completion Commissioning and debugging of Apollo's 500 MW/year solar panel manufacturing facility in Batam City.",
+     "sumber_url": "https://apollosolarindonesia.com/"
+    },
+    {
+     "mw": 100000,
+     "jenis": "tercatat",
+     "konteks": "Read More September 17, 2026 Indonesia Presents National Solar Module Industry Roadmap in Guangzhou Indonesia’s solar industry roadmap highlights the 100 GWp Solar PV Programme, do",
+     "sumber_url": "https://apollosolarindonesia.com/"
+    },
+    {
+     "mw": 500,
+     "jenis": "pipeline",
+     "konteks": "Further, our planned second phase entails up to 500 MW of high-efficiency solar cells and a 3.0 GW Solar Module manufacturing plant with an Indonesian brand.",
+     "sumber_url": "https://apollosolarindonesia.com/about"
+    }
+   ],
+   "kontak": {
+    "telepon": [],
+    "surel": [
+     "sales@apollosolar.co.id"
+    ],
+    "sumber_url": "https://apollosolarindonesia.com/"
+   },
+   "sosmed": [
+    {
+     "jenis": "linkedin",
+     "url": "https://www.linkedin.com/company/apollo-solar-indonesia",
+     "sumber_url": "https://apollosolarindonesia.com/"
+    }
+   ],
+   "logo_url": "https://apollosolarindonesia.com/apple-touch-icon.png",
+   "tanggal_periksa": "2026-11-07"
+  },
+  "p_636350291c": {
+   "halaman": {
+    "beranda": "https://www.trinasolar.com",
+    "keberlanjutan": "https://www.trinasolar.com/en-glb/development/",
+    "tentang": "https://www.trinasolar.com/en-glb/about-us/",
+    "investor": "https://www.trinasolar.com/en-glb/investor/",
+    "kontak": "https://www.trinasolar.com/en-glb/legal-contacts/"
+   },
+   "sumber": [
+    "https://www.trinasolar.com",
+    "https://www.trinasolar.com/en-glb/development/",
+    "https://www.trinasolar.com/en-glb/about-us/",
+    "https://www.trinasolar.com/en-glb/investor/",
+    "https://www.trinasolar.com/en-glb/legal-contacts/"
+   ],
+   "tahun_berdiri": {
+    "nilai": 1997,
+    "sumber_url": "https://www.trinasolar.com"
+   },
+   "sosmed": [
+    {
+     "jenis": "facebook",
+     "url": "https://www.facebook.com/Trinasolar",
+     "sumber_url": "https://www.trinasolar.com"
+    },
+    {
+     "jenis": "twitter",
+     "url": "https://x.com/TrinaSolarUS",
+     "sumber_url": "https://www.trinasolar.com"
+    },
+    {
+     "jenis": "linkedin",
+     "url": "https://www.linkedin.com/company/trina-solar/posts",
+     "sumber_url": "https://www.trinasolar.com"
+    },
+    {
+     "jenis": "youtube",
+     "url": "https://www.youtube.com/@TrinasolarPV",
+     "sumber_url": "https://www.trinasolar.com"
+    },
+    {
+     "jenis": "instagram",
+     "url": "https://www.instagram.com/trinasolarglobal",
+     "sumber_url": "https://www.trinasolar.com"
+    }
+   ],
+   "karyawan": {
+    "nilai": 25000,
+    "sumber_url": "https://www.trinasolar.com/en-glb/about-us/"
+   },
+   "kontak": {
+    "telepon": [],
+    "surel": [
+     "ir@trinasolar.com"
+    ],
+    "sumber_url": "https://www.trinasolar.com/en-glb/investor/"
+   },
+   "tanggal_periksa": "2026-11-07"
+  },
   "p_6a3903d60a": {
    "halaman": {
     "beranda": "https://holding-perkebunan.com",
@@ -572,6 +3107,164 @@
    "logo_url": "https://holding-perkebunan.com/wp-content/uploads/2026/10/apple-icon-57x57-1.png",
    "tanggal_periksa": "2026-11-07"
   },
+  "p_6d6378747b": {
+   "halaman": {
+    "beranda": "https://en.sungrowpower.com",
+    "keberlanjutan": "https://en.sungrowpower.com/en/sustainability",
+    "tentang": "https://en.sungrowpower.com/en/about-us/brand-story",
+    "proyek": "https://en.sungrowpower.com/en/solutions-businessowners",
+    "investor": "https://en.sungrowpower.com/en/about-us/investor",
+    "kontak": "https://en.sungrowpower.com/en/about-us/contact-us"
+   },
+   "sumber": [
+    "https://en.sungrowpower.com",
+    "https://en.sungrowpower.com/en/sustainability",
+    "https://en.sungrowpower.com/en/about-us/brand-story",
+    "https://en.sungrowpower.com/en/solutions-businessowners",
+    "https://en.sungrowpower.com/en/about-us/investor",
+    "https://en.sungrowpower.com/en/about-us/contact-us"
+   ],
+   "sosmed": [
+    {
+     "jenis": "youtube",
+     "url": "https://www.youtube.com/shorts/42xDI_it26k",
+     "sumber_url": "https://en.sungrowpower.com"
+    },
+    {
+     "jenis": "linkedin",
+     "url": "https://www.linkedin.com/company/sungrow-power-supply-co-ltd/posts",
+     "sumber_url": "https://en.sungrowpower.com"
+    },
+    {
+     "jenis": "instagram",
+     "url": "https://www.instagram.com/sungrow_power",
+     "sumber_url": "https://en.sungrowpower.com"
+    },
+    {
+     "jenis": "facebook",
+     "url": "https://www.facebook.com/CleanPowerForAll",
+     "sumber_url": "https://en.sungrowpower.com"
+    },
+    {
+     "jenis": "twitter",
+     "url": "https://x.com/Sungrow_Power",
+     "sumber_url": "https://en.sungrowpower.com"
+    }
+   ],
+   "logo_url": "https://en.sungrowpower.com/favicon.ico",
+   "tanggal_periksa": "2026-11-07"
+  },
+  "p_6f8075d555": {
+   "halaman": {
+    "beranda": "https://www.wilmar-international.com/",
+    "kontak": "http://www.wilmar-international.com/contact-us",
+    "tentang": "http://www.wilmar-international.com/about-us/corporate-profile",
+    "proyek": "http://www.wilmar-international.com/about-us/integrated-business-model",
+    "manajemen": "http://www.wilmar-international.com/about-us/leadership",
+    "investor": "http://www.wilmar-international.com/about-us/shareholder-base"
+   },
+   "sumber": [
+    "https://www.wilmar-international.com/",
+    "http://www.wilmar-international.com/contact-us",
+    "http://www.wilmar-international.com/about-us/corporate-profile",
+    "http://www.wilmar-international.com/about-us/integrated-business-model",
+    "http://www.wilmar-international.com/about-us/leadership",
+    "http://www.wilmar-international.com/about-us/shareholder-base"
+   ],
+   "kontak": {
+    "telepon": [
+     "(65) 6216 0244"
+    ],
+    "surel": [
+     "info@wilmar.com.sg",
+     "ir@wilmar.com.sg",
+     "media@wilmar.com.sg"
+    ],
+    "sumber_url": "https://www.wilmar-international.com/"
+   },
+   "tahun_berdiri": {
+    "nilai": 1991,
+    "sumber_url": "http://www.wilmar-international.com/about-us/corporate-profile"
+   },
+   "karyawan": {
+    "nilai": 32000,
+    "sumber_url": "http://www.wilmar-international.com/about-us/shareholder-base"
+   },
+   "tanggal_periksa": "2026-11-07"
+  },
+  "p_790960a282": {
+   "halaman": {
+    "beranda": "https://hit-int.com/"
+   },
+   "sumber": [
+    "https://hit-int.com/"
+   ],
+   "kontak": {
+    "telepon": [],
+    "surel": [
+     "info@hit-int.com"
+    ],
+    "sumber_url": "https://hit-int.com/"
+   },
+   "sosmed": [
+    {
+     "jenis": "linkedin",
+     "url": "https://www.linkedin.com/company/the-hit-int",
+     "sumber_url": "https://hit-int.com/"
+    }
+   ],
+   "logo_url": "https://hit-int.com/wp-content/uploads/2025/10/HIT_favico_transparent_black_gradient.png",
+   "tanggal_periksa": "2026-11-07"
+  },
+  "p_79eb048bbd": {
+   "halaman": {
+    "beranda": "https://heliosynar.com/",
+    "tentang": "https://heliosynar.com/about-us/",
+    "proyek": "https://heliosynar.com/projects/",
+    "kontak": "https://heliosynar.com/contact/"
+   },
+   "sumber": [
+    "https://heliosynar.com/",
+    "https://heliosynar.com/about-us/",
+    "https://heliosynar.com/projects/",
+    "https://heliosynar.com/contact/"
+   ],
+   "kontak": {
+    "telepon": [],
+    "surel": [
+     "info@heliosynar.com"
+    ],
+    "sumber_url": "https://heliosynar.com/"
+   },
+   "sosmed": [
+    {
+     "jenis": "instagram",
+     "url": "https://www.instagram.com/heliosynar",
+     "sumber_url": "https://heliosynar.com/"
+    },
+    {
+     "jenis": "linkedin",
+     "url": "https://www.linkedin.com/company/helio-synar-energi",
+     "sumber_url": "https://heliosynar.com/"
+    }
+   ],
+   "logo_url": "https://heliosynar.com/wp-content/uploads/2026/09/spklu-public-ev-electric-vehicle-charging-station-contractor-solar-panel-infrastructurepanel-surya-jakarta-indonesia-helio-synar-energi-helio-logo-opengraph.jpg",
+   "kapasitas": [
+    {
+     "mw": 1.3,
+     "jenis": "tercatat",
+     "konteks": "2021 Pioneering Indonesia's First Hybrid Solar PV Project Together with PLN, Helio delivered Indonesia's first Hybrid Solar PV project in Selayar, integrating a 1.3 MWp Solar PV sy",
+     "sumber_url": "https://heliosynar.com/about-us/"
+    },
+    {
+     "mw": 40,
+     "jenis": "terpasang",
+     "konteks": "With over 150 completed projects and more than 40 MW of installed capacity, we continue to provide reliable EPC and O&M solutions that drive operational efficiency and sustainable ",
+     "sumber_url": "https://heliosynar.com/projects/"
+    }
+   ],
+   "tanggal_periksa": "2026-11-07"
+  },
   "p_7a803f3b71": {
    "halaman": {
     "beranda": "https://www.starenergy.co.id/"
@@ -584,6 +3277,128 @@
     "sumber_url": "https://www.starenergy.co.id/"
    },
    "logo_url": "https://www.starenergy.co.id/content/image/cropped-favicon-180x180.png",
+   "tanggal_periksa": "2026-11-07"
+  },
+  "p_7a87f28a47": {
+   "halaman": {
+    "beranda": "https://andalanmutuenergi.com/",
+    "kontak": "https://andalanmutuenergi.com/hubungi-kami/",
+    "tentang": "https://andalanmutuenergi.com/legalitas-perusahaan/",
+    "proyek": "https://andalanmutuenergi.com/legalitas-perusahaan/"
+   },
+   "sumber": [
+    "https://andalanmutuenergi.com/",
+    "https://andalanmutuenergi.com/hubungi-kami/",
+    "https://andalanmutuenergi.com/legalitas-perusahaan/",
+    "https://andalanmutuenergi.com/legalitas-perusahaan/"
+   ],
+   "sertifikasi": [
+    "ISO 9001",
+    "ISO 14001",
+    "ISO 45001"
+   ],
+   "kontak": {
+    "telepon": [
+     "022-7309261"
+    ],
+    "surel": [
+     "marketing@ptame.co.id"
+    ],
+    "sumber_url": "https://andalanmutuenergi.com/"
+   },
+   "sosmed": [
+    {
+     "jenis": "instagram",
+     "url": "https://www.instagram.com/andalan.mutu.energi",
+     "sumber_url": "https://andalanmutuenergi.com/"
+    },
+    {
+     "jenis": "linkedin",
+     "url": "https://www.linkedin.com/company/andalan-mutu-energi",
+     "sumber_url": "https://andalanmutuenergi.com/"
+    }
+   ],
+   "logo_url": "https://andalanmutuenergi.com/assetsfiles/2018/07/cropped-pages_icon-32x32.png",
+   "tanggal_periksa": "2026-11-07"
+  },
+  "p_856a3ffec8": {
+   "halaman": {
+    "beranda": "https://sunterra.id/"
+   },
+   "sumber": [
+    "https://sunterra.id/"
+   ],
+   "kapasitas": [
+    {
+     "mw": 3,
+     "jenis": "tercatat",
+     "konteks": "Portofolio SUN Terra CBESS (Containerized Battery Energy Storage System) Pertama dan Terbesar di Indonesia Lokasi Jambi Kapasitas BESS 1 MWh Kapasitas PLTS Bulanan 61,740 kWh Jumla",
+     "sumber_url": "https://sunterra.id/"
+    }
+   ],
+   "kontak": {
+    "telepon": [],
+    "surel": [
+     "marketing@lifewithsun.com"
+    ],
+    "sumber_url": "https://sunterra.id/"
+   },
+   "sosmed": [
+    {
+     "jenis": "instagram",
+     "url": "https://www.instagram.com/sunterra.id",
+     "sumber_url": "https://sunterra.id/"
+    },
+    {
+     "jenis": "youtube",
+     "url": "https://www.youtube.com/@sunterraindonesia",
+     "sumber_url": "https://sunterra.id/"
+    }
+   ],
+   "logo_url": "https://sunterra.id/favicon.ico?favicon.f59556a1.ico",
+   "tanggal_periksa": "2026-11-07"
+  },
+  "p_8f492fd02b": {
+   "halaman": {
+    "beranda": "https://distritamaperkasa.com/",
+    "tentang": "https://distritamaperkasa.com/tentang-kami",
+    "kontak": "https://distritamaperkasa.com/contact-us"
+   },
+   "sumber": [
+    "https://distritamaperkasa.com/",
+    "https://distritamaperkasa.com/tentang-kami",
+    "https://distritamaperkasa.com/contact-us"
+   ],
+   "kontak": {
+    "telepon": [],
+    "surel": [
+     "customer.care@distritamaperkasa.com"
+    ],
+    "sumber_url": "https://distritamaperkasa.com/"
+   },
+   "logo_url": "https://distritamaperkasa.com/wp-content/uploads/2024/05/cropped-Logo-IG_DP-32x32.jpg",
+   "tanggal_periksa": "2026-11-07"
+  },
+  "p_93533849b8": {
+   "halaman": {
+    "beranda": "https://www.juraganatapsurya.com/",
+    "tentang": "https://www.juraganatapsurya.com/tentang-kami",
+    "kontak": "https://www.juraganatapsurya.com/kontak-kami"
+   },
+   "sumber": [
+    "https://www.juraganatapsurya.com/",
+    "https://www.juraganatapsurya.com/tentang-kami",
+    "https://www.juraganatapsurya.com/kontak-kami"
+   ],
+   "kontak": {
+    "telepon": [],
+    "surel": [
+     "info@juraganatap.com",
+     "info@solaruv.co.id"
+    ],
+    "sumber_url": "https://www.juraganatapsurya.com/"
+   },
+   "logo_url": "https://api.juraganatapsurya.com//uploads/siteicon_6f8aa6fe81.png",
    "tanggal_periksa": "2026-11-07"
   },
   "p_978ca76d57": {
@@ -644,6 +3459,60 @@
    "logo_url": "https://mind.id/img/icons/apple-icon-57x57.png",
    "tanggal_periksa": "2026-11-07"
   },
+  "p_9d83a082d9": {
+   "halaman": {
+    "beranda": "https://suryanesia.com/en",
+    "proyek": "https://suryanesia.com/en/projects",
+    "tentang": "https://suryanesia.com/en/about",
+    "keberlanjutan": "https://suryanesia.com/en/news/rooftop-solar-for-business-efficiency-and-sustainability"
+   },
+   "sumber": [
+    "https://suryanesia.com/en",
+    "https://suryanesia.com/en/projects",
+    "https://suryanesia.com/en/about",
+    "https://suryanesia.com/en/news/rooftop-solar-for-business-efficiency-and-sustainability"
+   ],
+   "kontak": {
+    "telepon": [],
+    "surel": [
+     "marketing@suryanesia.com"
+    ],
+    "sumber_url": "https://suryanesia.com/en"
+   },
+   "sosmed": [
+    {
+     "jenis": "instagram",
+     "url": "https://www.instagram.com/suryanesia.id",
+     "sumber_url": "https://suryanesia.com/en"
+    },
+    {
+     "jenis": "linkedin",
+     "url": "https://www.linkedin.com/company/suryanesia",
+     "sumber_url": "https://suryanesia.com/en"
+    }
+   ],
+   "logo_url": "https://suryanesia.com/favicon.ico",
+   "kapasitas": [
+    {
+     "mw": 25,
+     "jenis": "tercatat",
+     "konteks": "He has extensive experience in renewable energy engineering, having led the design and installation of &gt;25 MWp in solar projects.",
+     "sumber_url": "https://suryanesia.com/en/about"
+    },
+    {
+     "mw": 178,
+     "jenis": "terpasang",
+     "konteks": "By mid 2025, the total installed capacity of rooftop solar under the Solar as a Service model grew fourfold to reach 643 megawatt peak, a significant increase compared to 178 MWp r",
+     "sumber_url": "https://suryanesia.com/en/news/rooftop-solar-for-business-efficiency-and-sustainability"
+    }
+   ],
+   "net_zero": {
+    "tahun": 2060,
+    "konteks": "Rooftop Solar Solutions for Efficient Businesses How it Works Projects About Us FAQ Media News Articles Get a Quote EN ID Media Coverage Media Coverage Rooftop Solar Power Solution",
+    "sumber_url": "https://suryanesia.com/en/news/rooftop-solar-for-business-efficiency-and-sustainability"
+   },
+   "tanggal_periksa": "2026-11-07"
+  },
   "p_9de27fd5b9": {
    "halaman": {
     "beranda": "https://www.medcoenergi.com",
@@ -674,6 +3543,56 @@
     "sumber_url": "https://www.medcoenergi.com"
    },
    "logo_url": "https://www.medcoenergi.com/apple-touch-icon.png",
+   "tanggal_periksa": "2026-11-07"
+  },
+  "p_a235c21f23": {
+   "halaman": {
+    "beranda": "https://www.ptsmi.co.id",
+    "kontak": "https://www.ptsmi.co.id/contact-us",
+    "proyek": "https://www.ptsmi.co.id/business",
+    "investor": "https://www.ptsmi.co.id/investor-relations",
+    "manajemen": "https://www.ptsmi.co.id/pisp-fund-management-reports",
+    "keberlanjutan": "https://www.ptsmi.co.id/sustainability-bonds"
+   },
+   "sumber": [
+    "https://www.ptsmi.co.id",
+    "https://www.ptsmi.co.id/contact-us",
+    "https://www.ptsmi.co.id/business",
+    "https://www.ptsmi.co.id/investor-relations",
+    "https://www.ptsmi.co.id/pisp-fund-management-reports",
+    "https://www.ptsmi.co.id/sustainability-bonds"
+   ],
+   "sosmed": [
+    {
+     "jenis": "instagram",
+     "url": "https://www.instagram.com/ptsmi_id",
+     "sumber_url": "https://www.ptsmi.co.id"
+    },
+    {
+     "jenis": "facebook",
+     "url": "https://www.facebook.com/ptsmi",
+     "sumber_url": "https://www.ptsmi.co.id"
+    },
+    {
+     "jenis": "youtube",
+     "url": "https://www.youtube.com/@ptsmi_id",
+     "sumber_url": "https://www.ptsmi.co.id"
+    },
+    {
+     "jenis": "linkedin",
+     "url": "https://www.linkedin.com/company/ptsmi",
+     "sumber_url": "https://www.ptsmi.co.id"
+    }
+   ],
+   "logo_url": "https://www.ptsmi.co.id/cfind/thumbs/images/thumb_32_32_contain_logo2.png",
+   "kontak": {
+    "telepon": [],
+    "surel": [
+     "corsec@ptsmi.co.id",
+     "ir@ptsmi.co.id"
+    ],
+    "sumber_url": "https://www.ptsmi.co.id/contact-us"
+   },
    "tanggal_periksa": "2026-11-07"
   },
   "p_a321da2bd5": {
@@ -781,6 +3700,276 @@
    ],
    "tanggal_periksa": "2026-11-07"
   },
+  "p_a583775fbb": {
+   "halaman": {
+    "beranda": "https://deltajaya.id/"
+   },
+   "sumber": [
+    "https://deltajaya.id/"
+   ],
+   "kontak": {
+    "telepon": [
+     "+62318071213"
+    ],
+    "surel": [
+     "mail@deltajaya.id"
+    ],
+    "sumber_url": "https://deltajaya.id/"
+   },
+   "logo_url": "https://deltajaya.id/img/pic-3.png",
+   "tanggal_periksa": "2026-11-07"
+  },
+  "p_a6ae037cc5": {
+   "halaman": {
+    "beranda": "https://suryaenergi.co.id/",
+    "tentang": "https://suryaenergi.co.id/profil-perusahaan/",
+    "proyek": "https://suryaenergi.co.id/profil-perusahaan/",
+    "keberlanjutan": "https://suryaenergi.co.id/health-safety-environment-hse/",
+    "kontak": "https://suryaenergi.co.id/kontak-kami"
+   },
+   "sumber": [
+    "https://suryaenergi.co.id/",
+    "https://suryaenergi.co.id/profil-perusahaan/",
+    "https://suryaenergi.co.id/profil-perusahaan/",
+    "https://suryaenergi.co.id/health-safety-environment-hse/",
+    "https://suryaenergi.co.id/kontak-kami"
+   ],
+   "tahun_berdiri": {
+    "nilai": 2007,
+    "sumber_url": "https://suryaenergi.co.id/"
+   },
+   "kapasitas": [
+    {
+     "mw": 60,
+     "jenis": "tercatat",
+     "konteks": "Ground Mounted Solar Power Industrial Rooftop Solar Power Residential Rooftop Solar Power Solar Power for Telecommunication Solar Street Lighting Lihat Selengkapnya Corporate Exper",
+     "sumber_url": "https://suryaenergi.co.id/"
+    }
+   ],
+   "net_zero": {
+    "tahun": 2060,
+    "konteks": "Dengan pengalaman lebih dari dari 17 tahun di industri panel surya di Indonesia, SEI akan terus berkomitmen menjadi perusahaan energi surya terbaik serta aktif dalam mewujudkan vis",
+    "sumber_url": "https://suryaenergi.co.id/"
+   },
+   "sertifikasi": [
+    "ISO 9001"
+   ],
+   "sosmed": [
+    {
+     "jenis": "facebook",
+     "url": "https://www.facebook.com/PT-Surya-Energi-Indotama-105105538817792",
+     "sumber_url": "https://suryaenergi.co.id/"
+    },
+    {
+     "jenis": "twitter",
+     "url": "https://twitter.com/suryaenergi_",
+     "sumber_url": "https://suryaenergi.co.id/"
+    },
+    {
+     "jenis": "youtube",
+     "url": "https://www.youtube.com/channel/UCu-x-ADJ1QouaxbH1o0f0TQ",
+     "sumber_url": "https://suryaenergi.co.id/"
+    },
+    {
+     "jenis": "instagram",
+     "url": "https://www.instagram.com/suryaenergi",
+     "sumber_url": "https://suryaenergi.co.id/"
+    }
+   ],
+   "logo_url": "https://suryaenergi.co.id/wp-content/uploads/2021/11/fav.png",
+   "kontak": {
+    "telepon": [
+     "+622242830750"
+    ],
+    "surel": [],
+    "sumber_url": "https://suryaenergi.co.id/kontak-kami"
+   },
+   "tanggal_periksa": "2026-11-07"
+  },
+  "p_a6be6e993f": {
+   "halaman": {
+    "beranda": "https://totalenergies.com",
+    "tentang": "https://totalenergies.com/company",
+    "proyek": "https://totalenergies.com/company/strength/integrated-business-model",
+    "keberlanjutan": "https://totalenergies.com/company/ambition/disciplined-sustainable-investments",
+    "investor": "https://totalenergies.com/investors",
+    "kontak": "https://totalenergies.com/info/help-and-contact"
+   },
+   "sumber": [
+    "https://totalenergies.com",
+    "https://totalenergies.com/company",
+    "https://totalenergies.com/company/strength/integrated-business-model",
+    "https://totalenergies.com/company/ambition/disciplined-sustainable-investments",
+    "https://totalenergies.com/investors",
+    "https://totalenergies.com/info/help-and-contact"
+   ],
+   "karyawan": {
+    "nilai": 100000,
+    "sumber_url": "https://totalenergies.com"
+   },
+   "sosmed": [
+    {
+     "jenis": "facebook",
+     "url": "https://www.facebook.com/TotalEnergies",
+     "sumber_url": "https://totalenergies.com"
+    },
+    {
+     "jenis": "twitter",
+     "url": "https://twitter.com/TotalEnergies",
+     "sumber_url": "https://totalenergies.com"
+    },
+    {
+     "jenis": "linkedin",
+     "url": "https://www.linkedin.com/company/totalenergies",
+     "sumber_url": "https://totalenergies.com"
+    },
+    {
+     "jenis": "youtube",
+     "url": "https://www.youtube.com/TotalEnergies",
+     "sumber_url": "https://totalenergies.com"
+    },
+    {
+     "jenis": "instagram",
+     "url": "https://www.instagram.com/totalenergies",
+     "sumber_url": "https://totalenergies.com"
+    }
+   ],
+   "logo_url": "https://totalenergies.com/sites/g/files/nytnzq121/files/images/2021-05/cover-carrousel-logo-2x.png",
+   "tanggal_periksa": "2026-11-07"
+  },
+  "p_a8773dd238": {
+   "halaman": {
+    "beranda": "https://www.inutec.id/",
+    "tentang": "https://www.inutec.id/aboutus",
+    "kontak": "https://www.inutec.id/contactus"
+   },
+   "sumber": [
+    "https://www.inutec.id/",
+    "https://www.inutec.id/aboutus",
+    "https://www.inutec.id/contactus"
+   ],
+   "kontak": {
+    "telepon": [],
+    "surel": [
+     "sales@inutec.id",
+     "contact@inutec.id"
+    ],
+    "sumber_url": "https://www.inutec.id/"
+   },
+   "sosmed": [
+    {
+     "jenis": "instagram",
+     "url": "https://www.instagram.com/inutec.id",
+     "sumber_url": "https://www.inutec.id/"
+    },
+    {
+     "jenis": "linkedin",
+     "url": "https://www.linkedin.com/company/pt-inutec-surya-indonesia",
+     "sumber_url": "https://www.inutec.id/"
+    }
+   ],
+   "logo_url": "https://static.wixstatic.com/media/0a8894_8b9016d13e784f91a73ce7bb09803cd3%7Emv2.png/v1/fill/w_192%2Ch_192%2Clg_1%2Cusm_0.66_1.00_0.01/0a8894_8b9016d13e784f91a73ce7bb09803cd3%7Emv2.png",
+   "tahun_berdiri": {
+    "nilai": 1995,
+    "sumber_url": "https://www.inutec.id/aboutus"
+   },
+   "tanggal_periksa": "2026-11-07"
+  },
+  "p_af0f14186a": {
+   "halaman": {
+    "beranda": "https://www.csisolar.com",
+    "tentang": "https://www.csisolar.com/aboutus/",
+    "keberlanjutan": "https://www.csisolar.com/esg/",
+    "kontak": "https://www.csisolar.com/contactus/",
+    "proyek": "https://www.csisolar.com/successful-projects/"
+   },
+   "sumber": [
+    "https://www.csisolar.com",
+    "https://www.csisolar.com/aboutus/",
+    "https://www.csisolar.com/esg/",
+    "https://www.csisolar.com/contactus/",
+    "https://www.csisolar.com/successful-projects/"
+   ],
+   "sosmed": [
+    {
+     "jenis": "instagram",
+     "url": "https://www.instagram.com/canadiansolar",
+     "sumber_url": "https://www.csisolar.com"
+    },
+    {
+     "jenis": "youtube",
+     "url": "https://www.youtube.com/c/CanadianSolarInc",
+     "sumber_url": "https://www.csisolar.com"
+    },
+    {
+     "jenis": "facebook",
+     "url": "https://www.facebook.com/Canadian.Solar.CSIQ",
+     "sumber_url": "https://www.csisolar.com"
+    },
+    {
+     "jenis": "twitter",
+     "url": "https://twitter.com/Canadian_Solar",
+     "sumber_url": "https://www.csisolar.com"
+    },
+    {
+     "jenis": "linkedin",
+     "url": "https://www.linkedin.com/company/canadian-solar-inc-",
+     "sumber_url": "https://www.csisolar.com"
+    }
+   ],
+   "logo_url": "https://static.csisolar.com/wp-content/uploads/2024/06/20170611/cropped-%E7%BD%91%E9%A1%B5%E9%A1%B6%E9%83%A8%E5%B0%8F%E6%A0%87%E7%AD%BE-800-32x32.png",
+   "tahun_berdiri": {
+    "nilai": 2001,
+    "sumber_url": "https://www.csisolar.com/aboutus/"
+   },
+   "kapasitas": [
+    {
+     "mw": 180000,
+     "jenis": "tercatat",
+     "konteks": "Canadian Solar is one of the most bankable companies in the solar and renewable energy industry, having been publicly listed on the NASDAQ since 2006.Over the past 25 years, Canadi",
+     "sumber_url": "https://www.csisolar.com/aboutus/"
+    },
+    {
+     "mw": 175,
+     "jenis": "terpasang",
+     "konteks": "Solar Rooftop System Capacity / Type 72 kW / Commercial Solar Rooftop Module Type KuMax CS3U-MS Location Kano, Nigeria, Africa Installed Oct., 2019 Canadian Solar's Role Module Sup",
+     "sumber_url": "https://www.csisolar.com/successful-projects/"
+    },
+    {
+     "mw": 1,
+     "jenis": "terpasang",
+     "konteks": "2018 Canadian Solar's Role Module Supplier --> https://www.canadiansolar.com/cs3u-p-commercial-rooftop-south-africa/ --> Project Name Cavaliert 1 MW Rooftop Solar System Capacity /",
+     "sumber_url": "https://www.csisolar.com/successful-projects/"
+    },
+    {
+     "mw": 66,
+     "jenis": "terpasang",
+     "konteks": "2017 Canadian Solar's Role Module Supplier --> https://www.canadiansolar.com/canada-66-mw-solar-plant/ --> Project Name Nanticoke Solar System Capacity / Type 66 MW / Utility Solar",
+     "sumber_url": "https://www.csisolar.com/successful-projects/"
+    }
+   ],
+   "kontak": {
+    "telepon": [],
+    "surel": [
+     "sales.us@cspowertech.com",
+     "sales.us@csestorage.com",
+     "contact_epcube@csisolar.com"
+    ],
+    "sumber_url": "https://www.csisolar.com/aboutus/"
+   },
+   "net_zero": {
+    "tahun": 2050,
+    "konteks": "In 2025, our greenhouse gas emissions reduction targets were validated by the Science Based Targets initiative (SBTi), reinforcing our commitment to achieving net-zero greenhouse g",
+    "sumber_url": "https://www.csisolar.com/esg/"
+   },
+   "sertifikasi": [
+    "ISO 9001",
+    "ISO 14001",
+    "ISO 45001",
+    "ISO 50001"
+   ],
+   "tanggal_periksa": "2026-11-07"
+  },
   "p_b1c52ad7b0": {
    "halaman": {
     "beranda": "https://www.pertamina.com",
@@ -834,6 +4023,135 @@
     }
    ],
    "logo_url": "https://www.pertamina.com/favicon.png",
+   "tanggal_periksa": "2026-11-07"
+  },
+  "p_b331ed2843": {
+   "halaman": {
+    "beranda": "https://www.akuoenergy.com",
+    "manajemen": "https://www.akuoenergy.com/nos-metiers/asset-management",
+    "kontak": "https://www.akuoenergy.com/contactez-nous"
+   },
+   "sumber": [
+    "https://www.akuoenergy.com",
+    "https://www.akuoenergy.com/nos-metiers/asset-management",
+    "https://www.akuoenergy.com/contactez-nous"
+   ],
+   "kapasitas": [
+    {
+     "mw": 47,
+     "jenis": "terpasang",
+     "konteks": "Today, Akuo in Reunion Island means, in operation and under construction: ⚡ 47 MW of installed capacity, 🔋 60 MWh of storage capacity, 🌱 52 000 tonnes of CO₂ emissions avoided ev",
+     "sumber_url": "https://www.akuoenergy.com"
+    }
+   ],
+   "kontak": {
+    "telepon": [
+     "+147660990"
+    ],
+    "surel": [],
+    "sumber_url": "https://www.akuoenergy.com"
+   },
+   "sosmed": [
+    {
+     "jenis": "linkedin",
+     "url": "https://www.linkedin.com/company/akuo-energy",
+     "sumber_url": "https://www.akuoenergy.com"
+    },
+    {
+     "jenis": "youtube",
+     "url": "https://www.youtube.com/@AkuoEnergyGroup",
+     "sumber_url": "https://www.akuoenergy.com"
+    }
+   ],
+   "logo_url": "https://www.akuoenergy.com/themes/custom/frontend/favicon.ico",
+   "tanggal_periksa": "2026-11-07"
+  },
+  "p_b390d1f2e3": {
+   "halaman": {
+    "beranda": "https://altiora.id/",
+    "tentang": "https://altiora.id/about.html",
+    "proyek": "https://altiora.id/projects.html",
+    "kontak": "https://altiora.id/contact.html",
+    "keberlanjutan": "https://altiora.id/blog-3.html"
+   },
+   "sumber": [
+    "https://altiora.id/",
+    "https://altiora.id/about.html",
+    "https://altiora.id/projects.html",
+    "https://altiora.id/contact.html",
+    "https://altiora.id/blog-3.html"
+   ],
+   "kontak": {
+    "telepon": [],
+    "surel": [
+     "info@altiora.id"
+    ],
+    "sumber_url": "https://altiora.id/"
+   },
+   "logo_url": "https://altiora.id/images/icon.png",
+   "sertifikasi": [
+    "ISO 9001",
+    "ISO 14001",
+    "ISO 45001"
+   ],
+   "tanggal_periksa": "2026-11-07"
+  },
+  "p_b4ffda4abc": {
+   "halaman": {
+    "beranda": "https://jembo.co.id/id/",
+    "tentang": "https://jembo.co.id/id/profile/struktur-perusahaan",
+    "proyek": "https://jembo.co.id/id/profile/struktur-perusahaan",
+    "kontak": "https://jembo.co.id/id/kontak",
+    "investor": "https://jembo.co.id/id/investor-relation/kontak-informasi",
+    "manajemen": "https://jembo.co.id/id/investor-relation/kebijakan-manajemen-resiko"
+   },
+   "sumber": [
+    "https://jembo.co.id/id/",
+    "https://jembo.co.id/id/profile/struktur-perusahaan",
+    "https://jembo.co.id/id/profile/struktur-perusahaan",
+    "https://jembo.co.id/id/kontak",
+    "https://jembo.co.id/id/investor-relation/kontak-informasi",
+    "https://jembo.co.id/id/investor-relation/kebijakan-manajemen-resiko"
+   ],
+   "tahun_berdiri": {
+    "nilai": 1973,
+    "sumber_url": "https://jembo.co.id/id/"
+   },
+   "kontak": {
+    "telepon": [
+     "+62215919442",
+     "+62-21 65701511",
+     "+62-21-4585 0660"
+    ],
+    "surel": [
+     "info@jembo.com",
+     "marketing@jembo.com"
+    ],
+    "sumber_url": "https://jembo.co.id/id/"
+   },
+   "sosmed": [
+    {
+     "jenis": "youtube",
+     "url": "https://youtube.com/shorts/v8UnKXZqAxg",
+     "sumber_url": "https://jembo.co.id/id/"
+    },
+    {
+     "jenis": "instagram",
+     "url": "https://www.instagram.com/jembocable",
+     "sumber_url": "https://jembo.co.id/id/"
+    },
+    {
+     "jenis": "facebook",
+     "url": "https://www.facebook.com/jembocable",
+     "sumber_url": "https://jembo.co.id/id/"
+    },
+    {
+     "jenis": "linkedin",
+     "url": "https://www.linkedin.com/company/jembocable",
+     "sumber_url": "https://jembo.co.id/id/"
+    }
+   ],
+   "logo_url": "https://jembo.co.id/assets/images/fav/logo-6.png",
    "tanggal_periksa": "2026-11-07"
   },
   "p_bd4e2d9bd2": {
@@ -933,6 +4251,70 @@
    ],
    "tanggal_periksa": "2026-11-07"
   },
+  "p_c1d3fd4562": {
+   "halaman": {
+    "beranda": "https://quintsolar.co.id/"
+   },
+   "sumber": [
+    "https://quintsolar.co.id/"
+   ],
+   "kontak": {
+    "telepon": [],
+    "surel": [
+     "info@quintsolar.co.id",
+     "sales@quintsolar.org"
+    ],
+    "sumber_url": "https://quintsolar.co.id/"
+   },
+   "sosmed": [
+    {
+     "jenis": "facebook",
+     "url": "https://www.facebook.com/quint.solar",
+     "sumber_url": "https://quintsolar.co.id/"
+    },
+    {
+     "jenis": "instagram",
+     "url": "https://instagram.com/quintsolar.id",
+     "sumber_url": "https://quintsolar.co.id/"
+    },
+    {
+     "jenis": "youtube",
+     "url": "https://www.youtube.com/channel/UCsib7anOqw6h8UwNkCNU-aw",
+     "sumber_url": "https://quintsolar.co.id/"
+    }
+   ],
+   "tanggal_periksa": "2026-11-07"
+  },
+  "p_c6c4e478c0": {
+   "halaman": {
+    "beranda": "https://www.supreme-energy.com",
+    "tentang": "https://www.supreme-energy.com/en/company-structure",
+    "kontak": "https://www.supreme-energy.com/en/contact-us"
+   },
+   "sumber": [
+    "https://www.supreme-energy.com",
+    "https://www.supreme-energy.com/en/company-structure",
+    "https://www.supreme-energy.com/en/contact-us"
+   ],
+   "sosmed": [
+    {
+     "jenis": "youtube",
+     "url": "https://www.youtube.com/results",
+     "sumber_url": "https://www.supreme-energy.com"
+    },
+    {
+     "jenis": "linkedin",
+     "url": "https://www.linkedin.com/company/supreme-energy-muara-laboh",
+     "sumber_url": "https://www.supreme-energy.com"
+    },
+    {
+     "jenis": "instagram",
+     "url": "https://www.instagram.com/supreme.energy.pt",
+     "sumber_url": "https://www.supreme-energy.com"
+    }
+   ],
+   "tanggal_periksa": "2026-11-07"
+  },
   "p_c9b8bffbec": {
    "halaman": {
     "beranda": "https://www.indonesiabatterycorp.com/id",
@@ -971,6 +4353,48 @@
     }
    ],
    "logo_url": "https://www.indonesiabatterycorp.com/images/logo-ibc-mobile.png",
+   "tanggal_periksa": "2026-11-07"
+  },
+  "p_cab3e74cce": {
+   "halaman": {
+    "beranda": "https://kayanhydroenergy.com/"
+   },
+   "sumber": [
+    "https://kayanhydroenergy.com/"
+   ],
+   "tanggal_periksa": "2026-11-07"
+  },
+  "p_cbc53a2908": {
+   "halaman": {
+    "beranda": "https://www.molindo.co.id/",
+    "tentang": "https://molindo.co.id/company/corporate_video",
+    "proyek": "https://molindo.co.id/company/corporate_video",
+    "manajemen": "https://molindo.co.id/company/board_of_commissioners",
+    "investor": "https://molindo.co.id/investor/corporate_governances",
+    "keberlanjutan": "https://molindo.co.id/investor/sustainability"
+   },
+   "sumber": [
+    "https://www.molindo.co.id/",
+    "https://molindo.co.id/company/corporate_video",
+    "https://molindo.co.id/company/corporate_video",
+    "https://molindo.co.id/company/board_of_commissioners",
+    "https://molindo.co.id/investor/corporate_governances",
+    "https://molindo.co.id/investor/sustainability"
+   ],
+   "kontak": {
+    "telepon": [
+     "+622129035431",
+     "+62341426681",
+     "+62341425370"
+    ],
+    "surel": [
+     "info@molindo.co.id",
+     "corsec@molindo.co.id",
+     "info@molindointigas.co.id"
+    ],
+    "sumber_url": "https://www.molindo.co.id/"
+   },
+   "logo_url": "https://molindo.co.id/assets/images/molindo_logo.png",
    "tanggal_periksa": "2026-11-07"
   },
   "p_d3818e1614": {
@@ -1027,6 +4451,174 @@
     "nilai": 4306,
     "sumber_url": "https://indikaenergy.co.id/esg/"
    },
+   "tanggal_periksa": "2026-11-07"
+  },
+  "p_d7c8b1ffff": {
+   "halaman": {
+    "beranda": "https://www.pratiwi.com/",
+    "tentang": "https://www.pratiwi.com/about-us",
+    "manajemen": "https://www.pratiwi.com/management-and-organization",
+    "proyek": "https://www.pratiwi.com/project-management",
+    "kontak": "https://www.pratiwi.com/contact-us"
+   },
+   "sumber": [
+    "https://www.pratiwi.com/",
+    "https://www.pratiwi.com/about-us",
+    "https://www.pratiwi.com/management-and-organization",
+    "https://www.pratiwi.com/project-management",
+    "https://www.pratiwi.com/contact-us"
+   ],
+   "tahun_berdiri": {
+    "nilai": 1995,
+    "sumber_url": "https://www.pratiwi.com/"
+   },
+   "kapasitas": [
+    {
+     "mw": 3,
+     "jenis": "tercatat",
+     "konteks": "Jaringan Gas Rumah Tangga, Probolinggo – Jawa Timur Read more Saat ini proyek PLTS berkapasitas 3 MW yang berlokasi di PT.Badak NGL, Bontang Kalimantan Timur sudah masuk pada tahap",
+     "sumber_url": "https://www.pratiwi.com/"
+    }
+   ],
+   "kontak": {
+    "telepon": [],
+    "surel": [
+     "info@pratiwi.com"
+    ],
+    "sumber_url": "https://www.pratiwi.com/"
+   },
+   "sosmed": [
+    {
+     "jenis": "facebook",
+     "url": "https://www.facebook.com/profile.php",
+     "sumber_url": "https://www.pratiwi.com/"
+    },
+    {
+     "jenis": "instagram",
+     "url": "https://www.instagram.com/pps_idn",
+     "sumber_url": "https://www.pratiwi.com/"
+    },
+    {
+     "jenis": "linkedin",
+     "url": "https://www.linkedin.com/company/pt-pratiwi-putri-sulung-idn",
+     "sumber_url": "https://www.pratiwi.com/"
+    },
+    {
+     "jenis": "tiktok",
+     "url": "https://www.tiktok.com/@pps_idn",
+     "sumber_url": "https://www.pratiwi.com/"
+    }
+   ],
+   "logo_url": "https://cdn.prod.website-files.com/5f14f5ec5a496ba2af7998fa/5f1a815837e38d822242a562_midstream%20gas%20metering%201.png",
+   "tanggal_periksa": "2026-11-07"
+  },
+  "p_d87b6e389c": {
+   "halaman": {
+    "beranda": "https://atapsurya.id/"
+   },
+   "sumber": [
+    "https://atapsurya.id/"
+   ],
+   "tahun_berdiri": {
+    "nilai": 2019,
+    "sumber_url": "https://atapsurya.id/"
+   },
+   "kontak": {
+    "telepon": [],
+    "surel": [
+     "info@atapsurya.com"
+    ],
+    "sumber_url": "https://atapsurya.id/"
+   },
+   "sosmed": [
+    {
+     "jenis": "linkedin",
+     "url": "https://www.linkedin.com/company/atapsurya",
+     "sumber_url": "https://atapsurya.id/"
+    },
+    {
+     "jenis": "instagram",
+     "url": "https://www.instagram.com/atapsurya.id",
+     "sumber_url": "https://atapsurya.id/"
+    },
+    {
+     "jenis": "facebook",
+     "url": "https://www.facebook.com/Atapsurya",
+     "sumber_url": "https://atapsurya.id/"
+    }
+   ],
+   "logo_url": "https://atapsurya.id/wp-content/uploads/2016/10/cropped-logo_atapsurya-copie-32x32.png",
+   "tanggal_periksa": "2026-11-07"
+  },
+  "p_d99d5987f7": {
+   "halaman": {
+    "beranda": "https://www.sumitomocorp.com",
+    "proyek": "https://www.sumitomocorp.com/en/global/business",
+    "keberlanjutan": "https://www.sumitomocorp.com/en/jp/sustainability/",
+    "investor": "https://www.sumitomocorp.com/en/jp/ir/",
+    "kontak": "https://www.sumitomocorp.com/en/global/info/"
+   },
+   "sumber": [
+    "https://www.sumitomocorp.com",
+    "https://www.sumitomocorp.com/en/global/business",
+    "https://www.sumitomocorp.com/en/jp/sustainability/",
+    "https://www.sumitomocorp.com/en/jp/ir/",
+    "https://www.sumitomocorp.com/en/global/info/"
+   ],
+   "sosmed": [
+    {
+     "jenis": "linkedin",
+     "url": "https://www.linkedin.com/company/sumitomocorporation",
+     "sumber_url": "https://www.sumitomocorp.com"
+    },
+    {
+     "jenis": "youtube",
+     "url": "https://www.youtube.com/@sumishoyt",
+     "sumber_url": "https://www.sumitomocorp.com"
+    }
+   ],
+   "logo_url": "http://www.sumitomocorp.com/global/-/media/Images/hq/Common/meta/logo_en.png",
+   "sertifikasi": [
+    "ISO 45001"
+   ],
+   "asosiasi": [
+    "METI"
+   ],
+   "tanggal_periksa": "2026-11-07"
+  },
+  "p_db9a161e69": {
+   "halaman": {
+    "beranda": "https://www.chint.id/",
+    "kontak": "https://www.chint.id/contactor-135935",
+    "tentang": "https://www.chint.id/about"
+   },
+   "sumber": [
+    "https://www.chint.id/",
+    "https://www.chint.id/contactor-135935",
+    "https://www.chint.id/about"
+   ],
+   "tahun_berdiri": {
+    "nilai": 2005,
+    "sumber_url": "https://www.chint.id/"
+   },
+   "sosmed": [
+    {
+     "jenis": "facebook",
+     "url": "https://www.facebook.com/ptchintindonesia",
+     "sumber_url": "https://www.chint.id/"
+    },
+    {
+     "jenis": "instagram",
+     "url": "https://www.instagram.com/chintindonesia",
+     "sumber_url": "https://www.chint.id/"
+    },
+    {
+     "jenis": "youtube",
+     "url": "https://www.youtube.com/channel/UCJ0GOqTn9gydB5a6cPohVyw/featured",
+     "sumber_url": "https://www.chint.id/"
+    }
+   ],
+   "logo_url": "https://www.chint.id/pwa-icon",
    "tanggal_periksa": "2026-11-07"
   },
   "p_dda1e51dae": {
@@ -1249,6 +4841,197 @@
    },
    "tanggal_periksa": "2026-11-07"
   },
+  "p_f05b131e81": {
+   "halaman": {
+    "beranda": "https://www.idnsolar.co.id/",
+    "tentang": "https://www.idnsolar.co.id/about/",
+    "proyek": "https://www.idnsolar.co.id/about/",
+    "kontak": "https://www.idnsolar.co.id/contact-us/"
+   },
+   "sumber": [
+    "https://www.idnsolar.co.id/",
+    "https://www.idnsolar.co.id/about/",
+    "https://www.idnsolar.co.id/about/",
+    "https://www.idnsolar.co.id/contact-us/"
+   ],
+   "tahun_berdiri": {
+    "nilai": 2019,
+    "sumber_url": "https://www.idnsolar.co.id/"
+   },
+   "kapasitas": [
+    {
+     "mw": 1500,
+     "jenis": "tercatat",
+     "konteks": "IDN Solar Tech secara nyata juga telah membangun industri solar di Indonesia, pada akhir 2022 kami telah memiliki fasilitas produksi sel surya + modul surya dengan kapasitas 1,5 GW",
+     "sumber_url": "https://www.idnsolar.co.id/"
+    },
+    {
+     "mw": 2000,
+     "jenis": "tercatat",
+     "konteks": "Pada akhir tahun 2023, kami akan memiliki teknologi sel TOPCon berkapasitas 2 GW.",
+     "sumber_url": "https://www.idnsolar.co.id/"
+    }
+   ],
+   "kontak": {
+    "telepon": [],
+    "surel": [
+     "info@idnsolar.co.id"
+    ],
+    "sumber_url": "https://www.idnsolar.co.id/"
+   },
+   "logo_url": "https://www.idnsolar.co.id/wp-content/uploads/2022/06/Favicon.png",
+   "tanggal_periksa": "2026-11-07"
+  },
+  "p_f339701ed9": {
+   "halaman": {
+    "beranda": "https://syntek.co.id/",
+    "tentang": "https://syntek.co.id/about-us/",
+    "proyek": "https://syntek.co.id/projects/",
+    "kontak": "https://syntek.co.id/contact-us/",
+    "manajemen": "https://syntek.co.id/portfolio-items/microgrid-integration-and-energy-management-system-for-plts-messah-and-plts-papagarang/"
+   },
+   "sumber": [
+    "https://syntek.co.id/",
+    "https://syntek.co.id/about-us/",
+    "https://syntek.co.id/projects/",
+    "https://syntek.co.id/contact-us/",
+    "https://syntek.co.id/portfolio-items/microgrid-integration-and-energy-management-system-for-plts-messah-and-plts-papagarang/"
+   ],
+   "kontak": {
+    "telepon": [],
+    "surel": [
+     "info@syntek.co.id"
+    ],
+    "sumber_url": "https://syntek.co.id/"
+   },
+   "sosmed": [
+    {
+     "jenis": "linkedin",
+     "url": "https://www.linkedin.com/company/syntekotomasi/jobs",
+     "sumber_url": "https://syntek.co.id/"
+    },
+    {
+     "jenis": "youtube",
+     "url": "https://www.youtube.com/channel/UCSlO6Mcyp3Yq4-j7Nz53lOw",
+     "sumber_url": "https://syntek.co.id/"
+    },
+    {
+     "jenis": "instagram",
+     "url": "https://www.instagram.com/syntek.energycontrol",
+     "sumber_url": "https://syntek.co.id/"
+    }
+   ],
+   "logo_url": "https://syntek.co.id/wp-content/uploads/2020/01/cropped-site-icon-32x32.png",
+   "tanggal_periksa": "2026-11-07"
+  },
+  "p_f444338d29": {
+   "halaman": {
+    "beranda": "https://www.synkrona.co.id/",
+    "proyek": "https://www.synkrona.co.id/projects/feasibility-study-and-auction-design-recommendation-for-plns-de-dieselization-program-at-50-sites/"
+   },
+   "sumber": [
+    "https://www.synkrona.co.id/",
+    "https://www.synkrona.co.id/projects/feasibility-study-and-auction-design-recommendation-for-plns-de-dieselization-program-at-50-sites/"
+   ],
+   "kontak": {
+    "telepon": [
+     "622129023131",
+     "02129023131"
+    ],
+    "surel": [
+     "info@synkrona.co.id"
+    ],
+    "sumber_url": "https://www.synkrona.co.id/"
+   },
+   "sosmed": [
+    {
+     "jenis": "linkedin",
+     "url": "https://www.linkedin.com/company/synkrona/jobs",
+     "sumber_url": "https://www.synkrona.co.id/"
+    }
+   ],
+   "logo_url": "https://www.synkrona.co.id/wp-content/uploads/2025/07/cropped-logo-footer-synkrona-scaled-1-32x32.webp",
+   "kapasitas": [
+    {
+     "mw": 2370,
+     "jenis": "terpasang",
+     "konteks": "Indonesia has embarked on a journey toward a more sustainable and energy-efficient future, aiming to convert approximately 5,200 diesel power plants (equivalent to 2.37 GW installe",
+     "sumber_url": "https://www.synkrona.co.id/projects/feasibility-study-and-auction-design-recommendation-for-plns-de-dieselization-program-at-50-sites/"
+    }
+   ],
+   "tanggal_periksa": "2026-11-07"
+  },
+  "p_f9282cbf6b": {
+   "halaman": {
+    "beranda": "https://www.recgroup.com/en",
+    "tentang": "https://www.recgroup.com/en/empowering-warranty",
+    "keberlanjutan": "https://www.recgroup.com/en/sustainability",
+    "manajemen": "https://www.recgroup.com/en/management",
+    "kontak": "https://www.recgroup.com/en/contact"
+   },
+   "sumber": [
+    "https://www.recgroup.com/en",
+    "https://www.recgroup.com/en/empowering-warranty",
+    "https://www.recgroup.com/en/sustainability",
+    "https://www.recgroup.com/en/management",
+    "https://www.recgroup.com/en/contact"
+   ],
+   "sosmed": [
+    {
+     "jenis": "youtube",
+     "url": "https://www.youtube.com/user/RECGroupMedia",
+     "sumber_url": "https://www.recgroup.com/en"
+    },
+    {
+     "jenis": "linkedin",
+     "url": "https://www.linkedin.com/company/rec_",
+     "sumber_url": "https://www.recgroup.com/en"
+    }
+   ],
+   "logo_url": "https://www.recgroup.com/sites/default/files/favicon.ico",
+   "sertifikasi": [
+    "ISO 26000",
+    "ISO 9001",
+    "ISO 14001"
+   ],
+   "tanggal_periksa": "2026-11-07"
+  },
+  "p_fa5d521131": {
+   "halaman": {
+    "beranda": "https://alamenergy.co.id/",
+    "tentang": "https://alamenergy.co.id/about-us/",
+    "proyek": "https://alamenergy.co.id/projects/"
+   },
+   "sumber": [
+    "https://alamenergy.co.id/",
+    "https://alamenergy.co.id/about-us/",
+    "https://alamenergy.co.id/projects/"
+   ],
+   "kapasitas": [
+    {
+     "mw": 1601,
+     "jenis": "terpasang",
+     "konteks": "Member of Shizen Energy Group · Operating in 9 Countries · 1,601 MW Global Capacity SEE OUR PROJECTS Trusted by industrial clients across Indonesia Scroll Down To Explore Why Alam ",
+     "sumber_url": "https://alamenergy.co.id/"
+    }
+   ],
+   "kontak": {
+    "telepon": [],
+    "surel": [
+     "contact@alamenergy.co.id"
+    ],
+    "sumber_url": "https://alamenergy.co.id/"
+   },
+   "sosmed": [
+    {
+     "jenis": "linkedin",
+     "url": "https://www.linkedin.com/company/alamenergy",
+     "sumber_url": "https://alamenergy.co.id/"
+    }
+   ],
+   "logo_url": "https://alamenergy.co.id/wp-content/uploads/2023/01/cropped-Favicon-e1673247639624-32x32.png",
+   "tanggal_periksa": "2026-11-07"
+  },
   "p_ff7a390a42": {
    "halaman": {
     "beranda": "https://plnnusantarapower.co.id",
@@ -1319,6 +5102,1492 @@
     }
    ],
    "logo_url": "https://plnnusantarapower.co.id/images/pln-57.png",
+   "tanggal_periksa": "2026-11-07"
+  },
+  "su_0077ad18": {
+   "halaman": {
+    "beranda": "https://www.koltiva.com",
+    "tentang": "https://www.koltiva.com/about-us",
+    "keberlanjutan": "https://www.koltiva.com/about-us"
+   },
+   "sumber": [
+    "https://www.koltiva.com",
+    "https://www.koltiva.com/about-us",
+    "https://www.koltiva.com/about-us"
+   ],
+   "sosmed": [
+    {
+     "jenis": "linkedin",
+     "url": "https://www.linkedin.com/company/pt-koltiva",
+     "sumber_url": "https://www.koltiva.com"
+    },
+    {
+     "jenis": "instagram",
+     "url": "https://www.instagram.com/koltiva",
+     "sumber_url": "https://www.koltiva.com"
+    },
+    {
+     "jenis": "youtube",
+     "url": "https://www.youtube.com/channel/UCEEMooggYyT1lQHRl-jJReQ",
+     "sumber_url": "https://www.koltiva.com"
+    }
+   ],
+   "logo_url": "https://static.wixstatic.com/media/2b1e78_a5e89ba507f54a39a81ad4368d5fe88b%7Emv2.png/v1/fill/w_192%2Ch_192%2Clg_1%2Cusm_0.66_1.00_0.01/2b1e78_a5e89ba507f54a39a81ad4368d5fe88b%7Emv2.png",
+   "tanggal_periksa": "2026-11-07"
+  },
+  "su_068a017a": {
+   "halaman": {
+    "beranda": "https://katinganmentaya.com",
+    "tentang": "https://katinganmentaya.com/pages/en/about"
+   },
+   "sumber": [
+    "https://katinganmentaya.com",
+    "https://katinganmentaya.com/pages/en/about"
+   ],
+   "sosmed": [
+    {
+     "jenis": "facebook",
+     "url": "https://www.facebook.com/KMPenglish",
+     "sumber_url": "https://katinganmentaya.com"
+    },
+    {
+     "jenis": "twitter",
+     "url": "https://twitter.com/KMPEnglish",
+     "sumber_url": "https://katinganmentaya.com"
+    },
+    {
+     "jenis": "instagram",
+     "url": "https://www.instagram.com/katinganmentayaprojecteng",
+     "sumber_url": "https://katinganmentaya.com"
+    },
+    {
+     "jenis": "youtube",
+     "url": "https://www.youtube.com/@katinganproject",
+     "sumber_url": "https://katinganmentaya.com"
+    }
+   ],
+   "logo_url": "https://katinganmentaya.com/storage/userfiles/images/logo-text.png",
+   "tanggal_periksa": "2026-11-07"
+  },
+  "su_1ffaaeb0": {
+   "halaman": {
+    "beranda": "https://sunenergy.id",
+    "kontak": "https://sunenergy.id/hubungi-kami",
+    "tentang": "https://sunenergy.id/profil-perusahaan",
+    "proyek": "https://sunenergy.id/profil-perusahaan",
+    "manajemen": "https://sunenergy.id/manajemen",
+    "keberlanjutan": "https://sunenergy.id/lingkungan"
+   },
+   "sumber": [
+    "https://sunenergy.id",
+    "https://sunenergy.id/hubungi-kami",
+    "https://sunenergy.id/profil-perusahaan",
+    "https://sunenergy.id/profil-perusahaan",
+    "https://sunenergy.id/manajemen",
+    "https://sunenergy.id/lingkungan"
+   ],
+   "tahun_berdiri": {
+    "nilai": 2016,
+    "sumber_url": "https://sunenergy.id"
+   },
+   "kapasitas": [
+    {
+     "mw": 80,
+     "jenis": "tercatat",
+     "konteks": "Teknologi Teknologi surya dibuat khusus untuk Anda Lihat lebih lanjut Media Media Berita Event Blog Library Artikel Terbaru News 30 Oktober 2026 SUN Pelopori Elektrifikasi Tambang ",
+     "sumber_url": "https://sunenergy.id"
+    },
+    {
+     "mw": 450,
+     "jenis": "tercatat",
+     "konteks": "Berdiri sejak 2016, SUN Energy telah menyelesaikan 400+ proyek PLTS dengan total kapasitas 450 MW di Asia-Pasifik.",
+     "sumber_url": "https://sunenergy.id"
+    },
+    {
+     "mw": 9.8,
+     "jenis": "tercatat",
+     "konteks": "Selengkapnya Get a Quote 2 /11 Proyek Terkemuka Portofolio Utama & Sorotan Tjiwi Kimia Gedung Industrial Tjiwi Kimia, produsen kertas global, memprioritaskan keberlanjutan dengan s",
+     "sumber_url": "https://sunenergy.id"
+    }
+   ],
+   "kontak": {
+    "telepon": [
+     "+61 8 6489 1600"
+    ],
+    "surel": [
+     "marketing@lifewithsun.com"
+    ],
+    "sumber_url": "https://sunenergy.id"
+   },
+   "sosmed": [
+    {
+     "jenis": "youtube",
+     "url": "https://www.youtube.com/channel/UCjmMCTJNHMZjGXSkHbdSYgw",
+     "sumber_url": "https://sunenergy.id"
+    },
+    {
+     "jenis": "instagram",
+     "url": "https://www.instagram.com/reel/DXoggvfj_K6",
+     "sumber_url": "https://sunenergy.id"
+    },
+    {
+     "jenis": "linkedin",
+     "url": "https://www.linkedin.com/company/sunenergyid",
+     "sumber_url": "https://sunenergy.id"
+    },
+    {
+     "jenis": "facebook",
+     "url": "https://www.facebook.com/sunenergyid",
+     "sumber_url": "https://sunenergy.id"
+    }
+   ],
+   "logo_url": "https://sunenergy.id/cfind/source/images/sunenergy_logo_homepage.png",
+   "tanggal_periksa": "2026-11-07"
+  },
+  "su_36ae4a46": {
+   "halaman": {
+    "beranda": "https://www.rekosistem.com"
+   },
+   "sumber": [
+    "https://www.rekosistem.com"
+   ],
+   "logo_url": "https://www.rekosistem.com/favicon.ico",
+   "tanggal_periksa": "2026-11-07"
+  },
+  "su_3722ed3b": {
+   "halaman": {
+    "beranda": "https://www.jejakin.com",
+    "kontak": "https://www.jejakin.com/en/contact-us",
+    "tentang": "https://www.jejakin.com/en/about"
+   },
+   "sumber": [
+    "https://www.jejakin.com",
+    "https://www.jejakin.com/en/contact-us",
+    "https://www.jejakin.com/en/about"
+   ],
+   "sosmed": [
+    {
+     "jenis": "instagram",
+     "url": "https://www.instagram.com/jejak_in",
+     "sumber_url": "https://www.jejakin.com"
+    },
+    {
+     "jenis": "youtube",
+     "url": "https://www.youtube.com/@JejakinOfficial",
+     "sumber_url": "https://www.jejakin.com"
+    },
+    {
+     "jenis": "linkedin",
+     "url": "https://www.linkedin.com/company/jejakin",
+     "sumber_url": "https://www.jejakin.com"
+    },
+    {
+     "jenis": "tiktok",
+     "url": "https://www.tiktok.com/@jejak.in",
+     "sumber_url": "https://www.jejakin.com"
+    }
+   ],
+   "logo_url": "https://cdn.prod.website-files.com/6316f54ef95959ae488c5127/67640369a5ad0fd75bc8cae7_preview.avif",
+   "kontak": {
+    "telepon": [],
+    "surel": [
+     "office@jejakin.com"
+    ],
+    "sumber_url": "https://www.jejakin.com/en/contact-us"
+   },
+   "tahun_berdiri": {
+    "nilai": 2018,
+    "sumber_url": "https://www.jejakin.com/en/about"
+   },
+   "tanggal_periksa": "2026-11-07"
+  },
+  "su_37d9308c": {
+   "halaman": {
+    "beranda": "https://www.btienergy.id",
+    "tentang": "https://www.btienergy.id/tentang-bti/",
+    "proyek": "https://www.btienergy.id/operations-maintenance/",
+    "kontak": "https://www.btienergy.id/hubungi-kami/"
+   },
+   "sumber": [
+    "https://www.btienergy.id",
+    "https://www.btienergy.id/tentang-bti/",
+    "https://www.btienergy.id/operations-maintenance/",
+    "https://www.btienergy.id/hubungi-kami/"
+   ],
+   "sertifikasi": [
+    "ISO 9001"
+   ],
+   "kontak": {
+    "telepon": [],
+    "surel": [
+     "sales@btienergy.id",
+     "admin@btienergy.id"
+    ],
+    "sumber_url": "https://www.btienergy.id"
+   },
+   "sosmed": [
+    {
+     "jenis": "instagram",
+     "url": "https://www.instagram.com/bti.energy",
+     "sumber_url": "https://www.btienergy.id"
+    },
+    {
+     "jenis": "facebook",
+     "url": "https://www.facebook.com/BTI.energy",
+     "sumber_url": "https://www.btienergy.id"
+    }
+   ],
+   "logo_url": "https://www.btienergy.id/wp-content/uploads/2022/10/BTI-Renewable-Energy-favicon-150x150.png.webp",
+   "tahun_berdiri": {
+    "nilai": 2020,
+    "sumber_url": "https://www.btienergy.id/tentang-bti/"
+   },
+   "tanggal_periksa": "2026-11-07"
+  },
+  "su_3a7bc78b": {
+   "halaman": {
+    "beranda": "https://rebricks.id",
+    "tentang": "https://rebricks.id/about",
+    "proyek": "https://rebricks.id/portfolio",
+    "keberlanjutan": "https://rebricks.id/what-we-do/hush-puppies-indonesia-dan-rebricks-berkolaborasi-menciptakan-dampak-sosial-dan-lingkungan-di-bogor",
+    "investor": "https://rebricks.id/what-we-do/rebricks-indonesia-kenalkan-rebricks-sea-di-all-summit-investor-day",
+    "manajemen": "https://rebricks.id/what-we-do/rebricks-indonesia-menangkan-iclif-leadership-energy-awards"
+   },
+   "sumber": [
+    "https://rebricks.id",
+    "https://rebricks.id/about",
+    "https://rebricks.id/portfolio",
+    "https://rebricks.id/what-we-do/hush-puppies-indonesia-dan-rebricks-berkolaborasi-menciptakan-dampak-sosial-dan-lingkungan-di-bogor",
+    "https://rebricks.id/what-we-do/rebricks-indonesia-kenalkan-rebricks-sea-di-all-summit-investor-day",
+    "https://rebricks.id/what-we-do/rebricks-indonesia-menangkan-iclif-leadership-energy-awards"
+   ],
+   "sosmed": [
+    {
+     "jenis": "facebook",
+     "url": "https://www.facebook.com/Rebricks.Indonesia",
+     "sumber_url": "https://rebricks.id"
+    },
+    {
+     "jenis": "instagram",
+     "url": "https://www.instagram.com/rebricks.id",
+     "sumber_url": "https://rebricks.id"
+    }
+   ],
+   "tanggal_periksa": "2026-11-07"
+  },
+  "su_3ef44b44": {
+   "halaman": {
+    "beranda": "https://www.carbonethics.co",
+    "proyek": "https://www.carbonethics.co/nature-based-carbon-project",
+    "tentang": "https://www.carbonethics.co/about-us",
+    "kontak": "https://www.carbonethics.co/contact-us"
+   },
+   "sumber": [
+    "https://www.carbonethics.co",
+    "https://www.carbonethics.co/nature-based-carbon-project",
+    "https://www.carbonethics.co/about-us",
+    "https://www.carbonethics.co/contact-us"
+   ],
+   "kontak": {
+    "telepon": [],
+    "surel": [
+     "hello@carbonethics.co"
+    ],
+    "sumber_url": "https://www.carbonethics.co"
+   },
+   "sosmed": [
+    {
+     "jenis": "linkedin",
+     "url": "https://www.linkedin.com/company/carbonethics",
+     "sumber_url": "https://www.carbonethics.co"
+    },
+    {
+     "jenis": "instagram",
+     "url": "https://www.instagram.com/carbonethics",
+     "sumber_url": "https://www.carbonethics.co"
+    },
+    {
+     "jenis": "youtube",
+     "url": "https://www.youtube.com/channel/UCaHSSCEpnzb8hX2j5gh3vvQ",
+     "sumber_url": "https://www.carbonethics.co"
+    }
+   ],
+   "logo_url": "https://www.carbonethics.co/logo/FaviconNavy.png",
+   "tanggal_periksa": "2026-11-07"
+  },
+  "su_5792666b": {
+   "halaman": {
+    "beranda": "https://www.trucarbon.co",
+    "proyek": "https://www.trucarbon.co/project-development",
+    "keberlanjutan": "https://www.trucarbon.co/pspk-1-2-sustainability-disclosure-2027",
+    "kontak": "https://www.trucarbon.co/get-in-touch"
+   },
+   "sumber": [
+    "https://www.trucarbon.co",
+    "https://www.trucarbon.co/project-development",
+    "https://www.trucarbon.co/pspk-1-2-sustainability-disclosure-2027",
+    "https://www.trucarbon.co/get-in-touch"
+   ],
+   "kontak": {
+    "telepon": [],
+    "surel": [
+     "contact@trucarbon.co"
+    ],
+    "sumber_url": "https://www.trucarbon.co"
+   },
+   "sosmed": [
+    {
+     "jenis": "linkedin",
+     "url": "https://www.linkedin.com/company/trucarbon",
+     "sumber_url": "https://www.trucarbon.co"
+    },
+    {
+     "jenis": "instagram",
+     "url": "https://www.instagram.com/trucarbon.co",
+     "sumber_url": "https://www.trucarbon.co"
+    }
+   ],
+   "logo_url": "https://www.trucarbon.co/wp-content/uploads/2026/03/cropped-Logo-browser-1-32x32.png",
+   "tanggal_periksa": "2026-11-07"
+  },
+  "su_6936d259": {
+   "halaman": {
+    "beranda": "https://xurya.com",
+    "tentang": "https://xurya.com/tentang-kami",
+    "kontak": "https://xurya.com/kontak"
+   },
+   "sumber": [
+    "https://xurya.com",
+    "https://xurya.com/tentang-kami",
+    "https://xurya.com/kontak"
+   ],
+   "sertifikasi": [
+    "ISO 9001",
+    "ISO 14001",
+    "ISO 45001"
+   ],
+   "kontak": {
+    "telepon": [],
+    "surel": [
+     "sales@xurya.com"
+    ],
+    "sumber_url": "https://xurya.com"
+   },
+   "sosmed": [
+    {
+     "jenis": "instagram",
+     "url": "https://www.instagram.com/energixurya",
+     "sumber_url": "https://xurya.com"
+    },
+    {
+     "jenis": "linkedin",
+     "url": "https://www.linkedin.com/company/xurya",
+     "sumber_url": "https://xurya.com"
+    },
+    {
+     "jenis": "youtube",
+     "url": "https://www.youtube.com/channel/UCk9mBxkRfpFM3NIbDmU1Duw/videos",
+     "sumber_url": "https://xurya.com"
+    },
+    {
+     "jenis": "facebook",
+     "url": "https://www.facebook.com/energixurya",
+     "sumber_url": "https://xurya.com"
+    }
+   ],
+   "logo_url": "https://xurya.com/favicon.ico",
+   "tanggal_periksa": "2026-11-07"
+  },
+  "su_6b6c602d": {
+   "halaman": {
+    "beranda": "https://plasticpay.net"
+   },
+   "sumber": [
+    "https://plasticpay.net"
+   ],
+   "kontak": {
+    "telepon": [
+     "+622130030653"
+    ],
+    "surel": [
+     "info@plasticpay.net"
+    ],
+    "sumber_url": "https://plasticpay.net"
+   },
+   "sosmed": [
+    {
+     "jenis": "instagram",
+     "url": "https://instagram.com/plasticpay.tech",
+     "sumber_url": "https://plasticpay.net"
+    },
+    {
+     "jenis": "youtube",
+     "url": "https://www.youtube.com/@plasticpay6212",
+     "sumber_url": "https://plasticpay.net"
+    },
+    {
+     "jenis": "facebook",
+     "url": "https://www.facebook.com/plasticpay.tech",
+     "sumber_url": "https://plasticpay.net"
+    }
+   ],
+   "tanggal_periksa": "2026-11-07"
+  },
+  "su_6c813304": {
+   "halaman": {
+    "beranda": "https://avanieco.com",
+    "tentang": "https://avanieco.com/about-us/",
+    "kontak": "https://avanieco.com/contact-us/"
+   },
+   "sumber": [
+    "https://avanieco.com",
+    "https://avanieco.com/about-us/",
+    "https://avanieco.com/contact-us/"
+   ],
+   "kontak": {
+    "telepon": [
+     "+623619065555",
+     "+622131113811"
+    ],
+    "surel": [
+     "sales@avanieco.com"
+    ],
+    "sumber_url": "https://avanieco.com"
+   },
+   "sosmed": [
+    {
+     "jenis": "instagram",
+     "url": "https://www.instagram.com/reel/DDHYdNlz1DC",
+     "sumber_url": "https://avanieco.com"
+    },
+    {
+     "jenis": "facebook",
+     "url": "https://www.facebook.com/realavanieco",
+     "sumber_url": "https://avanieco.com"
+    },
+    {
+     "jenis": "youtube",
+     "url": "https://www.youtube.com/@Avanieco.",
+     "sumber_url": "https://avanieco.com"
+    }
+   ],
+   "logo_url": "https://avanieco.com/wp-content/uploads/2024/08/cropped-favicon-32x32.png",
+   "tahun_berdiri": {
+    "nilai": 2014,
+    "sumber_url": "https://avanieco.com/about-us/"
+   },
+   "tanggal_periksa": "2026-11-07"
+  },
+  "su_7427270f": {
+   "halaman": {
+    "beranda": "https://www.mariisiulang.id/",
+    "tentang": "https://www.mariisiulang.id/about-us",
+    "kontak": "https://www.mariisiulang.id/contacts"
+   },
+   "sumber": [
+    "https://www.mariisiulang.id/",
+    "https://www.mariisiulang.id/about-us",
+    "https://www.mariisiulang.id/contacts"
+   ],
+   "sosmed": [
+    {
+     "jenis": "instagram",
+     "url": "https://www.instagram.com/miu.mariisiulang",
+     "sumber_url": "https://www.mariisiulang.id/"
+    },
+    {
+     "jenis": "linkedin",
+     "url": "https://linkedin.com/company/mariisiulang",
+     "sumber_url": "https://www.mariisiulang.id/"
+    },
+    {
+     "jenis": "youtube",
+     "url": "https://www.youtube.com/@mariisiulang",
+     "sumber_url": "https://www.mariisiulang.id/"
+    }
+   ],
+   "logo_url": "https://www.mariisiulang.id/web/image/website/1/favicon?unique=74e759f",
+   "tanggal_periksa": "2026-11-07"
+  },
+  "su_79dc2857": {
+   "halaman": {
+    "beranda": "https://bumi-terra.com"
+   },
+   "sumber": [
+    "https://bumi-terra.com"
+   ],
+   "tahun_berdiri": {
+    "nilai": 2022,
+    "sumber_url": "https://bumi-terra.com"
+   },
+   "kontak": {
+    "telepon": [],
+    "surel": [
+     "hello@bumi-terra.com"
+    ],
+    "sumber_url": "https://bumi-terra.com"
+   },
+   "sosmed": [
+    {
+     "jenis": "linkedin",
+     "url": "https://www.linkedin.com/company/bumi-terra-gaia",
+     "sumber_url": "https://bumi-terra.com"
+    },
+    {
+     "jenis": "instagram",
+     "url": "https://www.instagram.com/bumiterragaia",
+     "sumber_url": "https://bumi-terra.com"
+    }
+   ],
+   "logo_url": "https://framerusercontent.com/images/k5233CV15yJWyxFJLtOdu4Cj48.png",
+   "tanggal_periksa": "2026-11-07"
+  },
+  "su_7c14ca47": {
+   "halaman": {
+    "beranda": "https://www.alvaauto.com"
+   },
+   "sumber": [
+    "https://www.alvaauto.com"
+   ],
+   "logo_url": "https://d173s2wcdntqrx.cloudfront.net/logo-alva.png",
+   "tanggal_periksa": "2026-11-07"
+  },
+  "su_7fc9cb39": {
+   "halaman": {
+    "beranda": "https://charged.co.id"
+   },
+   "sumber": [
+    "https://charged.co.id"
+   ],
+   "logo_url": "https://charged.co.id/favicon.ico",
+   "tanggal_periksa": "2026-11-07"
+  },
+  "su_8dbd1a79": {
+   "halaman": {
+    "beranda": "https://www.greenhope.co",
+    "tentang": "https://www.greenhope.co/who-we-are",
+    "kontak": "https://www.greenhope.co/contact-us",
+    "keberlanjutan": "https://www.greenhope.co/blogs/brin-and-greenhope-synergize-research-through-an-environmentally-friendly-approach"
+   },
+   "sumber": [
+    "https://www.greenhope.co",
+    "https://www.greenhope.co/who-we-are",
+    "https://www.greenhope.co/contact-us",
+    "https://www.greenhope.co/blogs/brin-and-greenhope-synergize-research-through-an-environmentally-friendly-approach"
+   ],
+   "sertifikasi": [
+    "ISO 9001",
+    "ISO 14001",
+    "ISO 45001"
+   ],
+   "kontak": {
+    "telepon": [],
+    "surel": [
+     "info@greenhope.co"
+    ],
+    "sumber_url": "https://www.greenhope.co"
+   },
+   "sosmed": [
+    {
+     "jenis": "linkedin",
+     "url": "https://www.linkedin.com/company/greenhope-co",
+     "sumber_url": "https://www.greenhope.co"
+    },
+    {
+     "jenis": "instagram",
+     "url": "http://instagram.com/greenhope.co",
+     "sumber_url": "https://www.greenhope.co"
+    },
+    {
+     "jenis": "facebook",
+     "url": "https://www.facebook.com/greenhope.co",
+     "sumber_url": "https://www.greenhope.co"
+    },
+    {
+     "jenis": "youtube",
+     "url": "https://www.youtube.com/@greenhopeco",
+     "sumber_url": "https://www.greenhope.co"
+    },
+    {
+     "jenis": "tiktok",
+     "url": "https://www.tiktok.com/@greenhope.co",
+     "sumber_url": "https://www.greenhope.co"
+    }
+   ],
+   "logo_url": "https://www.greenhope.co/apple-touch-icon.png",
+   "tanggal_periksa": "2026-11-07"
+  },
+  "su_9d7deee1": {
+   "halaman": {
+    "beranda": "https://magalarva.com",
+    "manajemen": "https://magalarva.com/food-waste-management-services",
+    "tentang": "https://magalarva.com/about-us",
+    "kontak": "https://magalarva.com/contact"
+   },
+   "sumber": [
+    "https://magalarva.com",
+    "https://magalarva.com/food-waste-management-services",
+    "https://magalarva.com/about-us",
+    "https://magalarva.com/contact"
+   ],
+   "kontak": {
+    "telepon": [],
+    "surel": [
+     "info@magalarva.com"
+    ],
+    "sumber_url": "https://magalarva.com"
+   },
+   "sosmed": [
+    {
+     "jenis": "facebook",
+     "url": "https://facebook.com/Magalarva-2182622968483192",
+     "sumber_url": "https://magalarva.com"
+    },
+    {
+     "jenis": "instagram",
+     "url": "http://instagram.com/magalarva",
+     "sumber_url": "https://magalarva.com"
+    },
+    {
+     "jenis": "linkedin",
+     "url": "https://www.linkedin.com/company/magalarva",
+     "sumber_url": "https://magalarva.com"
+    }
+   ],
+   "logo_url": "http://static1.squarespace.com/static/63e4d60772f61139e2a467ae/t/670655859340c003ef61ea14/1728468357421/Magalarva+Logo+%28White%29.png?format=1500w",
+   "tahun_berdiri": {
+    "nilai": 2017,
+    "sumber_url": "https://magalarva.com/about-us"
+   },
+   "tanggal_periksa": "2026-11-07"
+  },
+  "su_9f1ebdc3": {
+   "halaman": {
+    "beranda": "https://www.sirsak.co/",
+    "tentang": "https://www.sirsak.co/about-us",
+    "proyek": "https://www.sirsak.co/our-solutions/business"
+   },
+   "sumber": [
+    "https://www.sirsak.co/",
+    "https://www.sirsak.co/about-us",
+    "https://www.sirsak.co/our-solutions/business"
+   ],
+   "kontak": {
+    "telepon": [],
+    "surel": [
+     "hello@sirsak.co"
+    ],
+    "sumber_url": "https://www.sirsak.co/"
+   },
+   "sosmed": [
+    {
+     "jenis": "youtube",
+     "url": "https://www.youtube.com/@sirsakhub",
+     "sumber_url": "https://www.sirsak.co/"
+    },
+    {
+     "jenis": "instagram",
+     "url": "https://www.instagram.com/sirsak.hub",
+     "sumber_url": "https://www.sirsak.co/"
+    },
+    {
+     "jenis": "linkedin",
+     "url": "https://www.linkedin.com/company/sirsakhub",
+     "sumber_url": "https://www.sirsak.co/"
+    }
+   ],
+   "logo_url": "https://www.sirsak.co/favicon.ico",
+   "tanggal_periksa": "2026-11-07"
+  },
+  "su_a3230f7b": {
+   "halaman": {
+    "beranda": "https://www.carbonxco.com",
+    "tentang": "https://www.carbonxco.com/about/",
+    "kontak": "https://www.carbonxco.com/contact-us/",
+    "proyek": "https://www.carbonxco.com/works/"
+   },
+   "sumber": [
+    "https://www.carbonxco.com",
+    "https://www.carbonxco.com/about/",
+    "https://www.carbonxco.com/contact-us/",
+    "https://www.carbonxco.com/works/"
+   ],
+   "kontak": {
+    "telepon": [],
+    "surel": [
+     "admin@carbonxco.com"
+    ],
+    "sumber_url": "https://www.carbonxco.com"
+   },
+   "sosmed": [
+    {
+     "jenis": "instagram",
+     "url": "https://www.instagram.com/carbonx.id",
+     "sumber_url": "https://www.carbonxco.com"
+    },
+    {
+     "jenis": "linkedin",
+     "url": "https://www.linkedin.com/company/carbonx-investments",
+     "sumber_url": "https://www.carbonxco.com"
+    }
+   ],
+   "logo_url": "https://www.carbonxco.com/favicon.ico",
+   "tanggal_periksa": "2026-11-07"
+  },
+  "su_a8dd3976": {
+   "halaman": {
+    "beranda": "https://waterhub.co.id"
+   },
+   "sumber": [
+    "https://waterhub.co.id"
+   ],
+   "sosmed": [
+    {
+     "jenis": "tiktok",
+     "url": "https://www.tiktok.com/@waterhub.id",
+     "sumber_url": "https://waterhub.co.id"
+    },
+    {
+     "jenis": "instagram",
+     "url": "https://www.instagram.com/waterhub.id",
+     "sumber_url": "https://waterhub.co.id"
+    },
+    {
+     "jenis": "linkedin",
+     "url": "https://www.linkedin.com/company/water-hub-indonesia",
+     "sumber_url": "https://waterhub.co.id"
+    }
+   ],
+   "logo_url": "https://waterhub.co.id/favicon.ico?favicon.14cb3fc5.ico",
+   "tanggal_periksa": "2026-11-07"
+  },
+  "su_a8e68b0e": {
+   "halaman": {
+    "beranda": "https://kepul.id",
+    "kontak": "https://kepul.id/contact"
+   },
+   "sumber": [
+    "https://kepul.id",
+    "https://kepul.id/contact"
+   ],
+   "logo_url": "https://kepul.id/favicon.png",
+   "tanggal_periksa": "2026-11-07"
+  },
+  "su_aa8fe712": {
+   "halaman": {
+    "beranda": "https://www.dashelectric.co",
+    "kontak": "https://www.dashelectric.co/contact",
+    "tentang": "https://www.dashelectric.co/newsroom/information"
+   },
+   "sumber": [
+    "https://www.dashelectric.co",
+    "https://www.dashelectric.co/contact",
+    "https://www.dashelectric.co/newsroom/information"
+   ],
+   "kontak": {
+    "telepon": [],
+    "surel": [
+     "info@dashelectric.co"
+    ],
+    "sumber_url": "https://www.dashelectric.co"
+   },
+   "logo_url": "https://www.dashelectric.co/icon.png?icon.1aod9mn1f-11q.png",
+   "tanggal_periksa": "2026-11-07"
+  },
+  "su_b5ba6b0f": {
+   "halaman": {
+    "beranda": "https://www.sampangan.id",
+    "tentang": "https://www.sampangan.id/about",
+    "proyek": "https://www.sampangan.id/calculator"
+   },
+   "sumber": [
+    "https://www.sampangan.id",
+    "https://www.sampangan.id/about",
+    "https://www.sampangan.id/calculator"
+   ],
+   "sosmed": [
+    {
+     "jenis": "instagram",
+     "url": "https://instagram.com/sampanganid",
+     "sumber_url": "https://www.sampangan.id"
+    },
+    {
+     "jenis": "youtube",
+     "url": "https://youtube.com/@sampanganindonesia6193",
+     "sumber_url": "https://www.sampangan.id"
+    }
+   ],
+   "logo_url": "https://www.sampangan.id/images/logos/logo-white.svg?v=1787020766",
+   "tanggal_periksa": "2026-11-07"
+  },
+  "su_b5ff083b": {
+   "halaman": {
+    "beranda": "https://rideblitz.com",
+    "tentang": "https://rideblitz.com/tentang-kami"
+   },
+   "sumber": [
+    "https://rideblitz.com",
+    "https://rideblitz.com/tentang-kami"
+   ],
+   "kontak": {
+    "telepon": [],
+    "surel": [
+     "contact@blitz.com",
+     "contact@rideblitz.com"
+    ],
+    "sumber_url": "https://rideblitz.com"
+   },
+   "sosmed": [
+    {
+     "jenis": "facebook",
+     "url": "https://www.facebook.com/people/Blitz-Electric-Mobility/100063569271425",
+     "sumber_url": "https://rideblitz.com"
+    },
+    {
+     "jenis": "instagram",
+     "url": "https://www.instagram.com/rideblitz",
+     "sumber_url": "https://rideblitz.com"
+    },
+    {
+     "jenis": "twitter",
+     "url": "https://x.com/BlitzMobility",
+     "sumber_url": "https://rideblitz.com"
+    },
+    {
+     "jenis": "linkedin",
+     "url": "https://www.linkedin.com/company/rideblitz",
+     "sumber_url": "https://rideblitz.com"
+    }
+   ],
+   "logo_url": "https://rideblitz.com/_assets/v11/07a6840898d7474b61c987fbe83904270e3bb523.png",
+   "tanggal_periksa": "2026-11-07"
+  },
+  "su_b631824c": {
+   "halaman": {
+    "beranda": "https://jangjo.com",
+    "tentang": "https://jangjo.com/about-us/"
+   },
+   "sumber": [
+    "https://jangjo.com",
+    "https://jangjo.com/about-us/"
+   ],
+   "sosmed": [
+    {
+     "jenis": "instagram",
+     "url": "https://www.instagram.com/jangjoindonesia",
+     "sumber_url": "https://jangjo.com"
+    },
+    {
+     "jenis": "twitter",
+     "url": "https://x.com/jangjoindonesia",
+     "sumber_url": "https://jangjo.com"
+    },
+    {
+     "jenis": "youtube",
+     "url": "https://www.youtube.com/channel/UCCRU9rNZZB46Z3w7L1FBaGQ",
+     "sumber_url": "https://jangjo.com"
+    },
+    {
+     "jenis": "linkedin",
+     "url": "https://www.linkedin.com/company/jangjo-indonesia",
+     "sumber_url": "https://jangjo.com"
+    },
+    {
+     "jenis": "tiktok",
+     "url": "https://www.tiktok.com/@jangjoindonesia",
+     "sumber_url": "https://jangjo.com"
+    }
+   ],
+   "logo_url": "https://jangjo.com/wp-content/uploads/2021/11/cropped-Logo-Jangjo_logogram-1-32x32.png",
+   "tahun_berdiri": {
+    "nilai": 2012,
+    "sumber_url": "https://jangjo.com/about-us/"
+   },
+   "tanggal_periksa": "2026-11-07"
+  },
+  "su_bd1d6e55": {
+   "halaman": {
+    "beranda": "https://alner.id"
+   },
+   "sumber": [
+    "https://alner.id"
+   ],
+   "logo_url": "https://alner.id/alner.jpg",
+   "tanggal_periksa": "2026-11-07"
+  },
+  "su_c0bfab28": {
+   "halaman": {
+    "beranda": "https://electrum.id",
+    "tentang": "https://electrum.id/id/about-us"
+   },
+   "sumber": [
+    "https://electrum.id",
+    "https://electrum.id/id/about-us"
+   ],
+   "kontak": {
+    "telepon": [],
+    "surel": [
+     "hello@electrum.id"
+    ],
+    "sumber_url": "https://electrum.id"
+   },
+   "sosmed": [
+    {
+     "jenis": "instagram",
+     "url": "https://www.instagram.com/electrum.id",
+     "sumber_url": "https://electrum.id"
+    },
+    {
+     "jenis": "tiktok",
+     "url": "https://www.tiktok.com/@electrum.indonesia",
+     "sumber_url": "https://electrum.id"
+    },
+    {
+     "jenis": "facebook",
+     "url": "https://www.facebook.com/electrum.id",
+     "sumber_url": "https://electrum.id"
+    }
+   ],
+   "logo_url": "https://electrum.id/favicon.svg",
+   "tahun_berdiri": {
+    "nilai": 2022,
+    "sumber_url": "https://electrum.id/id/about-us"
+   },
+   "tanggal_periksa": "2026-11-07"
+  },
+  "su_c0e971fa": {
+   "halaman": {
+    "beranda": "https://www.banyu.farm",
+    "tentang": "https://www.banyu.farm/home-1",
+    "kontak": "https://www.banyu.farm/home-2-1-1"
+   },
+   "sumber": [
+    "https://www.banyu.farm",
+    "https://www.banyu.farm/home-1",
+    "https://www.banyu.farm/home-2-1-1"
+   ],
+   "sosmed": [
+    {
+     "jenis": "linkedin",
+     "url": "https://www.linkedin.com/company/banyu.farm",
+     "sumber_url": "https://www.banyu.farm"
+    }
+   ],
+   "logo_url": "https://static.parastorage.com/client/pfavico.ico",
+   "tanggal_periksa": "2026-11-07"
+  },
+  "su_cd93451b": {
+   "halaman": {
+    "beranda": "https://surplus.id",
+    "tentang": "https://surplus.id/tentang-kami/"
+   },
+   "sumber": [
+    "https://surplus.id",
+    "https://surplus.id/tentang-kami/"
+   ],
+   "kontak": {
+    "telepon": [],
+    "surel": [
+     "cs@surplus.id"
+    ],
+    "sumber_url": "https://surplus.id"
+   },
+   "sosmed": [
+    {
+     "jenis": "youtube",
+     "url": "https://www.youtube.com/@SurplusIndonesia/videos",
+     "sumber_url": "https://surplus.id"
+    },
+    {
+     "jenis": "linkedin",
+     "url": "https://www.linkedin.com/company/surplus-indonesia",
+     "sumber_url": "https://surplus.id"
+    },
+    {
+     "jenis": "instagram",
+     "url": "https://www.instagram.com/surplusindonesia",
+     "sumber_url": "https://surplus.id"
+    },
+    {
+     "jenis": "twitter",
+     "url": "https://twitter.com/surplus_id",
+     "sumber_url": "https://surplus.id"
+    }
+   ],
+   "logo_url": "https://surplus.id/wp-content/uploads/2025/01/surpluslogosquare.jpg",
+   "tanggal_periksa": "2026-11-07"
+  },
+  "su_e10f75a0": {
+   "halaman": {
+    "beranda": "https://starvo.com",
+    "tentang": "https://starvo.com/id/about"
+   },
+   "sumber": [
+    "https://starvo.com",
+    "https://starvo.com/id/about"
+   ],
+   "kontak": {
+    "telepon": [
+     "+622129215000"
+    ],
+    "surel": [
+     "info@starvo.co.id"
+    ],
+    "sumber_url": "https://starvo.com"
+   },
+   "logo_url": "https://starvo.com/favicon.ico",
+   "tanggal_periksa": "2026-11-07"
+  },
+  "su_e15e7d2e": {
+   "halaman": {
+    "beranda": "https://bantubumi.com",
+    "proyek": "https://bantubumi.com/portfolio/portfolio-work-2/"
+   },
+   "sumber": [
+    "https://bantubumi.com",
+    "https://bantubumi.com/portfolio/portfolio-work-2/"
+   ],
+   "sosmed": [
+    {
+     "jenis": "twitter",
+     "url": "https://twitter.com/atiframe",
+     "sumber_url": "https://bantubumi.com"
+    },
+    {
+     "jenis": "instagram",
+     "url": "https://www.instagram.com/ayo.bantubumi",
+     "sumber_url": "https://bantubumi.com"
+    }
+   ],
+   "logo_url": "https://bantubumi.com/wp-content/uploads/2024/11/cropped-IMG-20200607-WA0046-32x32.jpg",
+   "tanggal_periksa": "2026-11-07"
+  },
+  "su_e15ffe3f": {
+   "halaman": {
+    "beranda": "https://duitin.id",
+    "tentang": "https://duitin.id/about-us",
+    "kontak": "https://duitin.id/contact"
+   },
+   "sumber": [
+    "https://duitin.id",
+    "https://duitin.id/about-us",
+    "https://duitin.id/contact"
+   ],
+   "sosmed": [
+    {
+     "jenis": "youtube",
+     "url": "https://www.youtube.com/channel/UCGNd7XnQKcujLsmnH-HUBVA",
+     "sumber_url": "https://duitin.id"
+    },
+    {
+     "jenis": "instagram",
+     "url": "https://www.instagram.com/duitin_id",
+     "sumber_url": "https://duitin.id"
+    }
+   ],
+   "logo_url": "https://duitin.id/duitin/img/icon.jpg",
+   "tanggal_periksa": "2026-11-07"
+  },
+  "su_e4428409": {
+   "halaman": {
+    "beranda": "https://www.solarkita.com",
+    "tentang": "https://www.solarkita.com/id/company/guarantee",
+    "kontak": "https://www.solarkita.com/id/contact-us"
+   },
+   "sumber": [
+    "https://www.solarkita.com",
+    "https://www.solarkita.com/id/company/guarantee",
+    "https://www.solarkita.com/id/contact-us"
+   ],
+   "kontak": {
+    "telepon": [
+     "02127826926"
+    ],
+    "surel": [],
+    "sumber_url": "https://www.solarkita.com"
+   },
+   "sosmed": [
+    {
+     "jenis": "twitter",
+     "url": "https://x.com/solarkitatech",
+     "sumber_url": "https://www.solarkita.com"
+    },
+    {
+     "jenis": "facebook",
+     "url": "https://www.facebook.com/SolarKita",
+     "sumber_url": "https://www.solarkita.com"
+    },
+    {
+     "jenis": "linkedin",
+     "url": "https://www.linkedin.com/company/solarkita",
+     "sumber_url": "https://www.solarkita.com"
+    },
+    {
+     "jenis": "instagram",
+     "url": "https://www.instagram.com/solarkitatech",
+     "sumber_url": "https://www.solarkita.com"
+    },
+    {
+     "jenis": "youtube",
+     "url": "https://www.youtube.com/@solarkitatech",
+     "sumber_url": "https://www.solarkita.com"
+    }
+   ],
+   "logo_url": "https://www.solarkita.com/favicon.ico",
+   "tanggal_periksa": "2026-11-07"
+  },
+  "su_e9dd6c8f": {
+   "halaman": {
+    "beranda": "https://waste4change.com",
+    "manajemen": "https://waste4change.com/service/event-waste-management",
+    "keberlanjutan": "https://waste4change.com/service/circular-sustainability-initiative",
+    "proyek": "https://waste4change.com/jual-sampah-cara-mudah-untuk-bisnis",
+    "tentang": "https://waste4change.com/about",
+    "kontak": "https://waste4change.com/contact"
+   },
+   "sumber": [
+    "https://waste4change.com",
+    "https://waste4change.com/service/event-waste-management",
+    "https://waste4change.com/service/circular-sustainability-initiative",
+    "https://waste4change.com/jual-sampah-cara-mudah-untuk-bisnis",
+    "https://waste4change.com/about",
+    "https://waste4change.com/contact"
+   ],
+   "asosiasi": [
+    "Indonesia Business Council for Sustainable Development"
+   ],
+   "kontak": {
+    "telepon": [],
+    "surel": [
+     "contact@waste4change.com"
+    ],
+    "sumber_url": "https://waste4change.com"
+   },
+   "sosmed": [
+    {
+     "jenis": "instagram",
+     "url": "https://instagram.com/waste4change",
+     "sumber_url": "https://waste4change.com"
+    }
+   ],
+   "logo_url": "https://waste4change.com/2.8.assets/img/favicon/apple-touch-icon.png",
+   "tanggal_periksa": "2026-11-07"
+  },
+  "su_f3feab09": {
+   "halaman": {
+    "beranda": "https://www.swap.id",
+    "tentang": "https://www.swap.id/about"
+   },
+   "sumber": [
+    "https://www.swap.id",
+    "https://www.swap.id/about"
+   ],
+   "kontak": {
+    "telepon": [],
+    "surel": [
+     "marketing@smoot.id"
+    ],
+    "sumber_url": "https://www.swap.id"
+   },
+   "sosmed": [
+    {
+     "jenis": "instagram",
+     "url": "https://www.instagram.com/martabakpecenongan78",
+     "sumber_url": "https://www.swap.id"
+    },
+    {
+     "jenis": "linkedin",
+     "url": "https://www.linkedin.com/company/swap-energy-indonesia/mycompany",
+     "sumber_url": "https://www.swap.id"
+    },
+    {
+     "jenis": "tiktok",
+     "url": "https://www.tiktok.com/@swapindonesia",
+     "sumber_url": "https://www.swap.id"
+    },
+    {
+     "jenis": "youtube",
+     "url": "https://www.youtube.com/channel/UCGGLz9u136QegYz8z-V1KAQ",
+     "sumber_url": "https://www.swap.id"
+    },
+    {
+     "jenis": "facebook",
+     "url": "https://www.facebook.com/SwapEnergi",
+     "sumber_url": "https://www.swap.id"
+    },
+    {
+     "jenis": "twitter",
+     "url": "https://twitter.com/swapenergi",
+     "sumber_url": "https://www.swap.id"
+    }
+   ],
+   "logo_url": "https://static.wixstatic.com/media/dc3d7c_210906a34eff431fae1fec2d75663b80%7Emv2.jpg/v1/fill/w_192%2Ch_192%2Clg_1%2Cusm_0.66_1.00_0.01/dc3d7c_210906a34eff431fae1fec2d75663b80%7Emv2.jpg",
+   "tanggal_periksa": "2026-11-07"
+  },
+  "su_fcd84267": {
+   "halaman": {
+    "beranda": "https://satuplatform.com",
+    "keberlanjutan": "https://satuplatform.com/sustainability-report",
+    "proyek": "https://satuplatform.com/sustainability-report",
+    "manajemen": "https://satuplatform.com/sustainability-report",
+    "tentang": "https://satuplatform.com/konsultan-pengelolaan-karbon"
+   },
+   "sumber": [
+    "https://satuplatform.com",
+    "https://satuplatform.com/sustainability-report",
+    "https://satuplatform.com/sustainability-report",
+    "https://satuplatform.com/sustainability-report",
+    "https://satuplatform.com/konsultan-pengelolaan-karbon"
+   ],
+   "tanggal_periksa": "2026-11-07"
+  },
+  "tk_020f819d": {
+   "halaman": {
+    "beranda": "https://famindoinovasiteknologi.com/",
+    "tentang": "https://famindoinovasiteknologi.com/tentang-kami/",
+    "proyek": "https://famindoinovasiteknologi.com/galeri-project/"
+   },
+   "sumber": [
+    "https://famindoinovasiteknologi.com/",
+    "https://famindoinovasiteknologi.com/tentang-kami/",
+    "https://famindoinovasiteknologi.com/galeri-project/"
+   ],
+   "kontak": {
+    "telepon": [],
+    "surel": [
+     "info@famindoinovasiteknologi.com"
+    ],
+    "sumber_url": "https://famindoinovasiteknologi.com/"
+   },
+   "sosmed": [
+    {
+     "jenis": "instagram",
+     "url": "https://instagram.com/skyro.id",
+     "sumber_url": "https://famindoinovasiteknologi.com/"
+    },
+    {
+     "jenis": "youtube",
+     "url": "https://youtube.com/channel/UCfWDEGn1WTiIrTessptLJ8g",
+     "sumber_url": "https://famindoinovasiteknologi.com/"
+    }
+   ],
+   "logo_url": "https://famindoinovasiteknologi.com/wp-content/uploads/2021/11/Logo-FIT-150x150.png",
+   "tanggal_periksa": "2026-11-07"
+  },
+  "tk_18ad2fe6": {
+   "halaman": {
+    "beranda": "https://pylarsurya.com/",
+    "tentang": "https://pylarsurya.com/about.html",
+    "proyek": "https://pylarsurya.com/project.html",
+    "kontak": "https://pylarsurya.com/contact.html"
+   },
+   "sumber": [
+    "https://pylarsurya.com/",
+    "https://pylarsurya.com/about.html",
+    "https://pylarsurya.com/project.html",
+    "https://pylarsurya.com/contact.html"
+   ],
+   "sosmed": [
+    {
+     "jenis": "instagram",
+     "url": "https://www.instagram.com/pylarsurya",
+     "sumber_url": "https://pylarsurya.com/"
+    }
+   ],
+   "tanggal_periksa": "2026-11-07"
+  },
+  "tk_1fabef51": {
+   "halaman": {
+    "beranda": "https://www.indosun.co.id/",
+    "tentang": "https://www.indosun.co.id/about/",
+    "kontak": "https://www.indosun.co.id/contact-us/"
+   },
+   "sumber": [
+    "https://www.indosun.co.id/",
+    "https://www.indosun.co.id/about/",
+    "https://www.indosun.co.id/contact-us/"
+   ],
+   "kontak": {
+    "telepon": [],
+    "surel": [
+     "info@indosun.co.id"
+    ],
+    "sumber_url": "https://www.indosun.co.id/"
+   },
+   "tanggal_periksa": "2026-11-07"
+  },
+  "tk_65d260f1": {
+   "halaman": {
+    "beranda": "https://wiraky.co.id/",
+    "tentang": "https://wiraky.co.id/index.php/about/",
+    "kontak": "https://wiraky.co.id/index.php/contact/"
+   },
+   "sumber": [
+    "https://wiraky.co.id/",
+    "https://wiraky.co.id/index.php/about/",
+    "https://wiraky.co.id/index.php/contact/"
+   ],
+   "tahun_berdiri": {
+    "nilai": 2003,
+    "sumber_url": "https://wiraky.co.id/"
+   },
+   "kontak": {
+    "telepon": [
+     "+622200190",
+     "+6222142884911"
+    ],
+    "surel": [],
+    "sumber_url": "https://wiraky.co.id/"
+   },
+   "logo_url": "https://wiraky.co.id/wp-content/uploads/2021/07/cropped-favicon-fix-32x32.png",
+   "tanggal_periksa": "2026-11-07"
+  },
+  "tk_7dd282ce": {
+   "halaman": {
+    "beranda": "https://www.nusasolar.com/",
+    "kontak": "https://www.nusasolar.com/contact-us",
+    "proyek": "https://www.nusasolar.com/solar-panels-for-home"
+   },
+   "sumber": [
+    "https://www.nusasolar.com/",
+    "https://www.nusasolar.com/contact-us",
+    "https://www.nusasolar.com/solar-panels-for-home"
+   ],
+   "sosmed": [
+    {
+     "jenis": "facebook",
+     "url": "https://www.facebook.com/nusasolar.id",
+     "sumber_url": "https://www.nusasolar.com/"
+    },
+    {
+     "jenis": "instagram",
+     "url": "https://www.instagram.com/nusasolar_id",
+     "sumber_url": "https://www.nusasolar.com/"
+    }
+   ],
+   "logo_url": "https://static.wixstatic.com/media/3548a9_7d9b63a6a19f405c9e6e5a10335f6940%7Emv2.jpg/v1/fill/w_192%2Ch_192%2Clg_1%2Cusm_0.66_1.00_0.01/3548a9_7d9b63a6a19f405c9e6e5a10335f6940%7Emv2.jpg",
+   "tanggal_periksa": "2026-11-07"
+  },
+  "tk_7ffb6866": {
+   "halaman": {
+    "beranda": "https://adyawinsa.com/"
+   },
+   "sumber": [
+    "https://adyawinsa.com/"
+   ],
+   "tanggal_periksa": "2026-11-07"
+  },
+  "tk_8f1a2d3a": {
+   "halaman": {
+    "beranda": "https://www.usahabaktiperkasa.com/"
+   },
+   "sumber": [
+    "https://www.usahabaktiperkasa.com/"
+   ],
+   "sertifikasi": [
+    "ISO 9001",
+    "ISO 14001",
+    "ISO 45001"
+   ],
+   "kontak": {
+    "telepon": [
+     "60318430016",
+     "60318495950",
+     "60318956551"
+    ],
+    "surel": [],
+    "sumber_url": "https://www.usahabaktiperkasa.com/"
+   },
+   "logo_url": "https://www.usahabaktiperkasa.com/wp-content/uploads/2023/10/favicon-bakti-perkasa-150x150.png.webp",
+   "tanggal_periksa": "2026-11-07"
+  },
+  "tk_9421b538": {
+   "halaman": {
+    "beranda": "https://www.baskara.co.id/",
+    "tentang": "https://www.baskara.co.id/about/",
+    "proyek": "https://www.baskara.co.id/projects/"
+   },
+   "sumber": [
+    "https://www.baskara.co.id/",
+    "https://www.baskara.co.id/about/",
+    "https://www.baskara.co.id/projects/"
+   ],
+   "kontak": {
+    "telepon": [],
+    "surel": [
+     "sales@baskara.co.id"
+    ],
+    "sumber_url": "https://www.baskara.co.id/"
+   },
+   "logo_url": "https://www.baskara.co.id/wp-content/uploads/2025/04/cropped-cropped-Icon-Primary-1-32x32.png",
+   "tanggal_periksa": "2026-11-07"
+  },
+  "tk_c71f99ab": {
+   "halaman": {
+    "beranda": "https://www.tirtasuryacipta.com/",
+    "tentang": "https://www.tirtasuryacipta.com/about",
+    "proyek": "https://www.tirtasuryacipta.com/projects",
+    "kontak": "https://www.tirtasuryacipta.com/contact"
+   },
+   "sumber": [
+    "https://www.tirtasuryacipta.com/",
+    "https://www.tirtasuryacipta.com/about",
+    "https://www.tirtasuryacipta.com/projects",
+    "https://www.tirtasuryacipta.com/contact"
+   ],
+   "kontak": {
+    "telepon": [],
+    "surel": [
+     "admin@tirtasuryacipta.com"
+    ],
+    "sumber_url": "https://www.tirtasuryacipta.com/"
+   },
+   "logo_url": "https://www.tirtasuryacipta.com/icon.png?icon.4ad45629.png",
+   "tanggal_periksa": "2026-11-07"
+  },
+  "tk_d1dcaf67": {
+   "halaman": {
+    "beranda": "https://www.jetspeed.id/",
+    "tentang": "https://www.jetspeed.id/tentang-kami/",
+    "kontak": "https://www.jetspeed.id/contact-us/"
+   },
+   "sumber": [
+    "https://www.jetspeed.id/",
+    "https://www.jetspeed.id/tentang-kami/",
+    "https://www.jetspeed.id/contact-us/"
+   ],
+   "logo_url": "https://www.jetspeed.id/wp-content/uploads/2023/07/WhatsApp-Image-2025-01-23-at-11.32.58-AM-32x32.jpeg",
+   "tanggal_periksa": "2026-11-07"
+  },
+  "tk_da2582fe": {
+   "halaman": {
+    "beranda": "https://dwidajayatama.com/",
+    "tentang": "https://dwidajayatama.com/about"
+   },
+   "sumber": [
+    "https://dwidajayatama.com/",
+    "https://dwidajayatama.com/about"
+   ],
+   "tahun_berdiri": {
+    "nilai": 2006,
+    "sumber_url": "https://dwidajayatama.com/"
+   },
+   "net_zero": {
+    "tahun": 2022,
+    "konteks": "LEARN MORE --> ZERO EMISSION COMPANY From January 2022, Nobili has achieved net-zero carbon emissions by using electricity generated entirely from renewable sources.",
+    "sumber_url": "https://dwidajayatama.com/"
+   },
+   "sertifikasi": [
+    "ISO 9001"
+   ],
+   "kontak": {
+    "telepon": [],
+    "surel": [
+     "info@dwidajayatama.com"
+    ],
+    "sumber_url": "https://dwidajayatama.com/"
+   },
+   "logo_url": "https://dwidajayatama.com/apple-touch-icon.png?v=2",
    "tanggal_periksa": "2026-11-07"
   }
  }

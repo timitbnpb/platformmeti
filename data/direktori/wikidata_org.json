@@ -1,0 +1,2171 @@
+{
+ "meta": {
+  "diperbarui": "2026-11-08",
+  "sumber": "Wikidata (query.wikidata.org)",
+  "lisensi": "CC0 1.0",
+  "ditanya": 525,
+  "cocok": 76,
+  "keterangan": "Padanan pasti: label persis + negara Indonesia atau situs resmi sama; ambigu dilewati. Logo hanya URL Commons + lisensi, berkas tidak disalin."
+ },
+ "baris": {
+  "in_0b044d6d3e": {
+   "qid": "Q115056612",
+   "url": "https://www.wikidata.org/wiki/Q115056612",
+   "cocok": "label+situs-resmi",
+   "situs": "http://www.igisam.com/",
+   "induk": [],
+   "anak_usaha": [],
+   "bursa": [],
+   "kode_bursa": [],
+   "kantor_pusat": [],
+   "logo": {
+    "commons_url": "https://commons.wikimedia.org/wiki/File:IGIS_Asset_Management.png",
+    "lisensi": "Public domain",
+    "lisensi_url": null
+   },
+   "sumber": "Wikidata",
+   "lisensi_data": "CC0 1.0",
+   "tanggal_periksa": "2026-11-08"
+  },
+  "in_0d1892cd4f": {
+   "qid": "Q7164",
+   "url": "https://www.wikidata.org/wiki/Q7164",
+   "cocok": "label+situs-resmi",
+   "tahun_berdiri": 1945,
+   "situs": "https://www.worldbank.org/",
+   "induk": [],
+   "anak_usaha": [
+    {
+     "qid": "Q191384",
+     "nama": "International Bank for Reconstruction and Development"
+    },
+    {
+     "qid": "Q827525",
+     "nama": "International Development Association"
+    }
+   ],
+   "bursa": [],
+   "kode_bursa": [],
+   "kantor_pusat": [
+    {
+     "qid": "Q105153707",
+     "nama": "World Bank Headquarters"
+    }
+   ],
+   "logo": {
+    "commons_url": "https://commons.wikimedia.org/wiki/File:The_World_Bank_logo.svg",
+    "lisensi": "Public domain",
+    "lisensi_url": null
+   },
+   "sumber": "Wikidata",
+   "lisensi_data": "CC0 1.0",
+   "tanggal_periksa": "2026-11-08"
+  },
+  "in_102d767a80": {
+   "qid": "Q2660418",
+   "url": "https://www.wikidata.org/wiki/Q2660418",
+   "cocok": "label+situs-resmi",
+   "tahun_berdiri": 1996,
+   "situs": "http://www.smbc.co.jp/",
+   "induk": [
+    {
+     "qid": "Q2094989",
+     "nama": "Sumitomo Mitsui Financial Group"
+    }
+   ],
+   "anak_usaha": [
+    {
+     "qid": "Q11279163",
+     "nama": "Minato Bank"
+    },
+    {
+     "qid": "Q11656195",
+     "nama": "Kansai Urban Banking Corporation"
+    },
+    {
+     "qid": "Q12474535",
+     "nama": "Bank SMBC Indonesia"
+    },
+    {
+     "qid": "Q17218805",
+     "nama": "SMBC Trust Bank"
+    }
+   ],
+   "bursa": [],
+   "kode_bursa": [],
+   "kantor_pusat": [
+    {
+     "qid": "Q214051",
+     "nama": "Chiyoda"
+    }
+   ],
+   "logo": {
+    "commons_url": "https://commons.wikimedia.org/wiki/File:Smbc_logo.svg",
+    "lisensi": "Public domain",
+    "lisensi_url": null
+   },
+   "sumber": "Wikidata",
+   "lisensi_data": "CC0 1.0",
+   "tanggal_periksa": "2026-11-08"
+  },
+  "in_12838779f4": {
+   "qid": "Q28401590",
+   "url": "https://www.wikidata.org/wiki/Q28401590",
+   "cocok": "label+situs-resmi",
+   "situs": "https://www.pacificlight.com.sg/",
+   "induk": [],
+   "anak_usaha": [],
+   "bursa": [],
+   "kode_bursa": [],
+   "kantor_pusat": [],
+   "sumber": "Wikidata",
+   "lisensi_data": "CC0 1.0",
+   "tanggal_periksa": "2026-11-08"
+  },
+  "in_284d3c9557": {
+   "qid": "Q96721333",
+   "url": "https://www.wikidata.org/wiki/Q96721333",
+   "cocok": "label+negara-Indonesia",
+   "situs": "http://jurnal.ugm.ac.id/khazanah",
+   "induk": [],
+   "anak_usaha": [],
+   "bursa": [],
+   "kode_bursa": [],
+   "kantor_pusat": [],
+   "sumber": "Wikidata",
+   "lisensi_data": "CC0 1.0",
+   "tanggal_periksa": "2026-11-08"
+  },
+  "in_41e3e0c573": {
+   "qid": "Q41230",
+   "url": "https://www.wikidata.org/wiki/Q41230",
+   "cocok": "label+situs-resmi",
+   "tahun_berdiri": 1973,
+   "situs": "http://www.isdb.org/",
+   "induk": [
+    {
+     "qid": "Q47543",
+     "nama": "Organisation of Islamic Cooperation"
+    }
+   ],
+   "anak_usaha": [],
+   "bursa": [],
+   "kode_bursa": [],
+   "kantor_pusat": [
+    {
+     "qid": "Q374365",
+     "nama": "Jeddah"
+    }
+   ],
+   "sumber": "Wikidata",
+   "lisensi_data": "CC0 1.0",
+   "tanggal_periksa": "2026-11-08"
+  },
+  "in_4518545c8a": {
+   "qid": "Q442018",
+   "url": "https://www.wikidata.org/wiki/Q442018",
+   "cocok": "label+situs-resmi",
+   "tahun_berdiri": 1852,
+   "situs": "https://www.andritz.com",
+   "induk": [],
+   "anak_usaha": [
+    {
+     "qid": "Q2251127",
+     "nama": "Andritz Schuler"
+    },
+    {
+     "qid": "Q511944",
+     "nama": "Andritz Hydro"
+    },
+    {
+     "qid": "Q29123346",
+     "nama": "Andritz (Germany)"
+    },
+    {
+     "qid": "Q29123350",
+     "nama": "Andritz (Canada)"
+    },
+    {
+     "qid": "Q30255273",
+     "nama": "Andritz (Finland)"
+    },
+    {
+     "qid": "Q30338449",
+     "nama": "Andritz (United States)"
+    }
+   ],
+   "bursa": [
+    {
+     "qid": "Q698535",
+     "nama": "Wiener Boerse AG"
+    }
+   ],
+   "kode_bursa": [],
+   "kantor_pusat": [
+    {
+     "qid": "Q13298",
+     "nama": "Graz"
+    }
+   ],
+   "logo": {
+    "commons_url": "https://commons.wikimedia.org/wiki/File:Andritz_Logo.svg",
+    "lisensi": "Public domain",
+    "lisensi_url": null
+   },
+   "sumber": "Wikidata",
+   "lisensi_data": "CC0 1.0",
+   "tanggal_periksa": "2026-11-08"
+  },
+  "in_4c35ebc90f": {
+   "qid": "Q1776022",
+   "url": "https://www.wikidata.org/wiki/Q1776022",
+   "cocok": "label+situs-resmi",
+   "tahun_berdiri": 2007,
+   "situs": "https://equinor.ar",
+   "induk": [],
+   "anak_usaha": [
+    {
+     "qid": "Q6028100",
+     "nama": "Industrikraft Midt-Norge"
+    },
+    {
+     "qid": "Q30338265",
+     "nama": "Equinor Canada"
+    }
+   ],
+   "bursa": [
+    {
+     "qid": "Q909158",
+     "nama": "Oslo Stock Exchange"
+    },
+    {
+     "qid": "Q13677",
+     "nama": "New York Stock Exchange"
+    }
+   ],
+   "kode_bursa": [],
+   "kantor_pusat": [
+    {
+     "qid": "Q25416",
+     "nama": "Stavanger"
+    }
+   ],
+   "logo": {
+    "commons_url": "https://commons.wikimedia.org/wiki/File:Equinor.svg",
+    "lisensi": "Public domain",
+    "lisensi_url": null
+   },
+   "sumber": "Wikidata",
+   "lisensi_data": "CC0 1.0",
+   "tanggal_periksa": "2026-11-08"
+  },
+  "in_54c23478f6": {
+   "qid": "Q95364726",
+   "url": "https://www.wikidata.org/wiki/Q95364726",
+   "cocok": "label+negara-Indonesia",
+   "induk": [],
+   "anak_usaha": [],
+   "bursa": [],
+   "kode_bursa": [],
+   "kantor_pusat": [],
+   "sumber": "Wikidata",
+   "lisensi_data": "CC0 1.0",
+   "tanggal_periksa": "2026-11-08"
+  },
+  "in_733c8ba1ad": {
+   "qid": "Q8880",
+   "url": "https://www.wikidata.org/wiki/Q8880",
+   "cocok": "label+situs-resmi",
+   "tahun_berdiri": 1958,
+   "situs": "https://commission.europa.eu/",
+   "induk": [
+    {
+     "qid": "Q458",
+     "nama": "European Union"
+    }
+   ],
+   "anak_usaha": [
+    {
+     "qid": "Q1378038",
+     "nama": "Directorate-General for International Cooperation and Development"
+    },
+    {
+     "qid": "Q1383639",
+     "nama": "European Education and Culture Executive Agency"
+    },
+    {
+     "qid": "Q1501745",
+     "nama": "Directorate-General for Trade"
+    },
+    {
+     "qid": "Q1501749",
+     "nama": "Directorate-General for Taxation and Customs Union"
+    },
+    {
+     "qid": "Q217659",
+     "nama": "Eurostat"
+    },
+    {
+     "qid": "Q5280599",
+     "nama": "Directorate-General for Interpretation"
+    },
+    {
+     "qid": "Q5280602",
+     "nama": "Directorate-General for Maritime Affairs and Fisheries"
+    },
+    {
+     "qid": "Q3304308",
+     "nama": "Directorate-General for Research and Innovation"
+    },
+    {
+     "qid": "Q5280590",
+     "nama": "Directorate-General for Economic and Financial Affairs"
+    },
+    {
+     "qid": "Q5280591",
+     "nama": "Directorate-General for European Neighbourhood and Enlargement Negotiations"
+    },
+    {
+     "qid": "Q5280589",
+     "nama": "Directorate-General for Education, Youth, Sport and Culture"
+    },
+    {
+     "qid": "Q5280598",
+     "nama": "Directorate-General for Justice and Consumers"
+    },
+    {
+     "qid": "Q846996",
+     "nama": "European Structural and Investment Funds"
+    },
+    {
+     "qid": "Q2126290",
+     "nama": "Radio Spectrum Policy Group"
+    },
+    {
+     "qid": "Q596757",
+     "nama": "Directorate-General for Health and Food Safety"
+    },
+    {
+     "qid": "Q15811618",
+     "nama": "Directorate-General for Energy"
+    },
+    {
+     "qid": "Q21977868",
+     "nama": "Consumer, Health and Food Executive Agency"
+    }
+   ],
+   "bursa": [],
+   "kode_bursa": [],
+   "kantor_pusat": [
+    {
+     "qid": "Q239",
+     "nama": "Brussels"
+    }
+   ],
+   "logo": {
+    "commons_url": "https://commons.wikimedia.org/wiki/File:European_Commission.svg",
+    "lisensi": "Public domain",
+    "lisensi_url": null
+   },
+   "sumber": "Wikidata",
+   "lisensi_data": "CC0 1.0",
+   "tanggal_periksa": "2026-11-08"
+  },
+  "in_7d164dcab7": {
+   "qid": "Q1425405",
+   "url": "https://www.wikidata.org/wiki/Q1425405",
+   "cocok": "label+situs-resmi",
+   "tahun_berdiri": 2004,
+   "situs": "https://www.mcc.gov/",
+   "induk": [],
+   "anak_usaha": [],
+   "bursa": [],
+   "kode_bursa": [],
+   "kantor_pusat": [
+    {
+     "qid": "Q61",
+     "nama": "Washington, D.C."
+    }
+   ],
+   "logo": {
+    "commons_url": "https://commons.wikimedia.org/wiki/File:US-MillenniumChallengeCorporation-2008Logo.svg",
+    "lisensi": "Public domain",
+    "lisensi_url": null
+   },
+   "sumber": "Wikidata",
+   "lisensi_data": "CC0 1.0",
+   "tanggal_periksa": "2026-11-08"
+  },
+  "in_8b0d2e98d6": {
+   "qid": "Q1200091",
+   "url": "https://www.wikidata.org/wiki/Q1200091",
+   "cocok": "label+situs-resmi",
+   "tahun_berdiri": 1999,
+   "situs": "https://www.jbic.go.jp/",
+   "induk": [],
+   "anak_usaha": [],
+   "bursa": [],
+   "kode_bursa": [],
+   "kantor_pusat": [
+    {
+     "qid": "Q1332496",
+     "nama": "Ōtemachi"
+    }
+   ],
+   "logo": {
+    "commons_url": "https://commons.wikimedia.org/wiki/File:JBIC_logo.svg",
+    "lisensi": "Public domain",
+    "lisensi_url": null
+   },
+   "sumber": "Wikidata",
+   "lisensi_data": "CC0 1.0",
+   "tanggal_periksa": "2026-11-08"
+  },
+  "in_935a274434": {
+   "qid": "Q3075923",
+   "url": "https://www.wikidata.org/wiki/Q3075923",
+   "cocok": "label+situs-resmi",
+   "tahun_berdiri": 2010,
+   "situs": "http://www.greenclimate.fund/",
+   "induk": [],
+   "anak_usaha": [],
+   "bursa": [],
+   "kode_bursa": [],
+   "kantor_pusat": [
+    {
+     "qid": "Q488965",
+     "nama": "Songdo"
+    }
+   ],
+   "sumber": "Wikidata",
+   "lisensi_data": "CC0 1.0",
+   "tanggal_periksa": "2026-11-08"
+  },
+  "in_95ce4b67bd": {
+   "qid": "Q492581",
+   "url": "https://www.wikidata.org/wiki/Q492581",
+   "cocok": "label+situs-resmi",
+   "tahun_berdiri": 1962,
+   "situs": "https://www.doosanenerbility.com/",
+   "induk": [],
+   "anak_usaha": [],
+   "bursa": [
+    {
+     "qid": "Q495372",
+     "nama": "Korean Stock Exchange"
+    }
+   ],
+   "kode_bursa": [],
+   "kantor_pusat": [
+    {
+     "qid": "Q243327",
+     "nama": "Changwon"
+    }
+   ],
+   "logo": {
+    "commons_url": "https://commons.wikimedia.org/wiki/File:Doosan_logo_(en).png",
+    "lisensi": "Public domain",
+    "lisensi_url": null
+   },
+   "sumber": "Wikidata",
+   "lisensi_data": "CC0 1.0",
+   "tanggal_periksa": "2026-11-08"
+  },
+  "in_977f02422f": {
+   "qid": "Q107530770",
+   "url": "https://www.wikidata.org/wiki/Q107530770",
+   "cocok": "label+situs-resmi",
+   "tahun_berdiri": 2018,
+   "situs": "https://www.hitachienergy.com/",
+   "induk": [
+    {
+     "qid": "Q53238",
+     "nama": "Hitachi"
+    }
+   ],
+   "anak_usaha": [],
+   "bursa": [],
+   "kode_bursa": [],
+   "kantor_pusat": [
+    {
+     "qid": "Q72",
+     "nama": "Zurich"
+    }
+   ],
+   "logo": {
+    "commons_url": "https://commons.wikimedia.org/wiki/File:Hitachi-energy-mark-red.svg",
+    "lisensi": "CC BY-SA 4.0",
+    "lisensi_url": "https://creativecommons.org/licenses/by-sa/4.0"
+   },
+   "sumber": "Wikidata",
+   "lisensi_data": "CC0 1.0",
+   "tanggal_periksa": "2026-11-08"
+  },
+  "in_990f523213": {
+   "qid": "Q17493862",
+   "url": "https://www.wikidata.org/wiki/Q17493862",
+   "cocok": "label+situs-resmi",
+   "tahun_berdiri": 2014,
+   "situs": "https://power.mhi.com/jp",
+   "induk": [],
+   "anak_usaha": [],
+   "bursa": [],
+   "kode_bursa": [],
+   "kantor_pusat": [
+    {
+     "qid": "Q38283",
+     "nama": "Yokohama"
+    }
+   ],
+   "sumber": "Wikidata",
+   "lisensi_data": "CC0 1.0",
+   "tanggal_periksa": "2026-11-08"
+  },
+  "in_b85adbd893": {
+   "qid": "Q7416010",
+   "url": "https://www.wikidata.org/wiki/Q7416010",
+   "cocok": "label+situs-resmi",
+   "situs": "https://ember-climate.org/",
+   "induk": [],
+   "anak_usaha": [],
+   "bursa": [],
+   "kode_bursa": [],
+   "kantor_pusat": [
+    {
+     "qid": "Q84",
+     "nama": "London"
+    }
+   ],
+   "sumber": "Wikidata",
+   "lisensi_data": "CC0 1.0",
+   "tanggal_periksa": "2026-11-08"
+  },
+  "in_c462bee334": {
+   "qid": "Q648280",
+   "url": "https://www.wikidata.org/wiki/Q648280",
+   "cocok": "label+situs-resmi",
+   "tahun_berdiri": 1934,
+   "situs": "https://www.mhi.com",
+   "induk": [
+    {
+     "qid": "Q183275",
+     "nama": "Mitsubishi"
+    }
+   ],
+   "anak_usaha": [
+    {
+     "qid": "Q1939817",
+     "nama": "MSJ Asset Management Company"
+    },
+    {
+     "qid": "Q11357147",
+     "nama": "Mitsubishi Heavy Industries Nagasaki Shipyard & Machinery"
+    },
+    {
+     "qid": "Q29123629",
+     "nama": "Mitsubishi Heavy Industries (Germany)"
+    },
+    {
+     "qid": "Q45106213",
+     "nama": "Mitsubishi Shipbuilding"
+    }
+   ],
+   "bursa": [
+    {
+     "qid": "Q217475",
+     "nama": "Tokyo Stock Exchange"
+    },
+    {
+     "qid": "Q5507703",
+     "nama": "Fukuoka Stock Exchange"
+    }
+   ],
+   "kode_bursa": [],
+   "kantor_pusat": [
+    {
+     "qid": "Q190088",
+     "nama": "Minato"
+    }
+   ],
+   "logo": {
+    "commons_url": "https://commons.wikimedia.org/wiki/File:Mitsubishi_heavyindustries_mhi_logo.svg",
+    "lisensi": "Public domain",
+    "lisensi_url": null
+   },
+   "sumber": "Wikidata",
+   "lisensi_data": "CC0 1.0",
+   "tanggal_periksa": "2026-11-08"
+  },
+  "in_c699a709bf": {
+   "qid": "Q1549511",
+   "url": "https://www.wikidata.org/wiki/Q1549511",
+   "cocok": "label+situs-resmi",
+   "tahun_berdiri": 1994,
+   "situs": "http://www.ormat.com/",
+   "induk": [],
+   "anak_usaha": [],
+   "bursa": [
+    {
+     "qid": "Q82059",
+     "nama": "Nasdaq"
+    },
+    {
+     "qid": "Q1507974",
+     "nama": "Tel Aviv Stock Exchange"
+    },
+    {
+     "qid": "Q13677",
+     "nama": "New York Stock Exchange"
+    }
+   ],
+   "kode_bursa": [],
+   "kantor_pusat": [
+    {
+     "qid": "Q167677",
+     "nama": "Yavne"
+    }
+   ],
+   "sumber": "Wikidata",
+   "lisensi_data": "CC0 1.0",
+   "tanggal_periksa": "2026-11-08"
+  },
+  "in_d74dc14459": {
+   "qid": "Q489809",
+   "url": "https://www.wikidata.org/wiki/Q489809",
+   "cocok": "label+situs-resmi",
+   "tahun_berdiri": 1947,
+   "situs": "http://www.hdec.kr/",
+   "induk": [],
+   "anak_usaha": [],
+   "bursa": [],
+   "kode_bursa": [],
+   "kantor_pusat": [
+    {
+     "qid": "Q8684",
+     "nama": "Seoul"
+    }
+   ],
+   "logo": {
+    "commons_url": "https://commons.wikimedia.org/wiki/File:Hyundai_Engineering_%26_Construction_logo.svg",
+    "lisensi": "Public domain",
+    "lisensi_url": null
+   },
+   "sumber": "Wikidata",
+   "lisensi_data": "CC0 1.0",
+   "tanggal_periksa": "2026-11-08"
+  },
+  "in_e049455716": {
+   "qid": "Q384410",
+   "url": "https://www.wikidata.org/wiki/Q384410",
+   "cocok": "label+situs-resmi",
+   "tahun_berdiri": 1991,
+   "situs": "http://www.thegef.org",
+   "induk": [],
+   "anak_usaha": [],
+   "bursa": [],
+   "kode_bursa": [],
+   "kantor_pusat": [
+    {
+     "qid": "Q61",
+     "nama": "Washington, D.C."
+    }
+   ],
+   "sumber": "Wikidata",
+   "lisensi_data": "CC0 1.0",
+   "tanggal_periksa": "2026-11-08"
+  },
+  "in_eb327fef3a": {
+   "qid": "Q958590",
+   "url": "https://www.wikidata.org/wiki/Q958590",
+   "cocok": "label+situs-resmi",
+   "tahun_berdiri": 1974,
+   "situs": "http://www.jica.go.jp",
+   "induk": [],
+   "anak_usaha": [],
+   "bursa": [],
+   "kode_bursa": [],
+   "kantor_pusat": [
+    {
+     "qid": "Q3347259",
+     "nama": "Nibanchō"
+    }
+   ],
+   "logo": {
+    "commons_url": "https://commons.wikimedia.org/wiki/File:Japan_International_Cooperation_Agency_logo.svg",
+    "lisensi": "Public domain",
+    "lisensi_url": null
+   },
+   "sumber": "Wikidata",
+   "lisensi_data": "CC0 1.0",
+   "tanggal_periksa": "2026-11-08"
+  },
+  "in_ec6d8569f9": {
+   "qid": "Q1654229",
+   "url": "https://www.wikidata.org/wiki/Q1654229",
+   "cocok": "label+situs-resmi",
+   "tahun_berdiri": 2006,
+   "situs": "https://www.inpex.co.jp/",
+   "induk": [],
+   "anak_usaha": [],
+   "bursa": [
+    {
+     "qid": "Q217475",
+     "nama": "Tokyo Stock Exchange"
+    }
+   ],
+   "kode_bursa": [],
+   "kantor_pusat": [
+    {
+     "qid": "Q1490",
+     "nama": "Tokyo"
+    }
+   ],
+   "logo": {
+    "commons_url": "https://commons.wikimedia.org/wiki/File:Inpex_logo.svg",
+    "lisensi": "Public domain",
+    "lisensi_url": null
+   },
+   "sumber": "Wikidata",
+   "lisensi_data": "CC0 1.0",
+   "tanggal_periksa": "2026-11-08"
+  },
+  "in_eeb5d39e3d": {
+   "qid": "Q2852429",
+   "url": "https://www.wikidata.org/wiki/Q2852429",
+   "cocok": "label+situs-resmi",
+   "tahun_berdiri": 1991,
+   "situs": "https://www.ansaldoenergia.com",
+   "induk": [],
+   "anak_usaha": [],
+   "bursa": [],
+   "kode_bursa": [],
+   "kantor_pusat": [
+    {
+     "qid": "Q1449",
+     "nama": "Genoa"
+    }
+   ],
+   "logo": {
+    "commons_url": "https://commons.wikimedia.org/wiki/File:Ansaldo_Energia.svg",
+    "lisensi": "Public domain",
+    "lisensi_url": null
+   },
+   "sumber": "Wikidata",
+   "lisensi_data": "CC0 1.0",
+   "tanggal_periksa": "2026-11-08"
+  },
+  "in_ef86dc676d": {
+   "qid": "Q10874726",
+   "url": "https://www.wikidata.org/wiki/Q10874726",
+   "cocok": "label+situs-resmi",
+   "tahun_berdiri": 1986,
+   "situs": "http://www.lesso.com/",
+   "induk": [],
+   "anak_usaha": [],
+   "bursa": [
+    {
+     "qid": "Q496672",
+     "nama": "Hong Kong Stock Exchange"
+    }
+   ],
+   "kode_bursa": [],
+   "kantor_pusat": [],
+   "sumber": "Wikidata",
+   "lisensi_data": "CC0 1.0",
+   "tanggal_periksa": "2026-11-08"
+  },
+  "in_fe91e3c6a5": {
+   "qid": "Q583268",
+   "url": "https://www.wikidata.org/wiki/Q583268",
+   "cocok": "label+situs-resmi",
+   "tahun_berdiri": 1942,
+   "situs": "http://www.vale.com",
+   "induk": [],
+   "anak_usaha": [
+    {
+     "qid": "Q30343849",
+     "nama": "Vale (United Kingdom)"
+    }
+   ],
+   "bursa": [
+    {
+     "qid": "Q617426",
+     "nama": "Madrid Stock Exchange"
+    },
+    {
+     "qid": "Q796297",
+     "nama": "São Paulo Stock Exchange"
+    },
+    {
+     "qid": "Q13677",
+     "nama": "New York Stock Exchange"
+    }
+   ],
+   "kode_bursa": [],
+   "kantor_pusat": [
+    {
+     "qid": "Q8678",
+     "nama": "Rio de Janeiro"
+    }
+   ],
+   "sumber": "Wikidata",
+   "lisensi_data": "CC0 1.0",
+   "tanggal_periksa": "2026-11-08"
+  },
+  "ix_arko": {
+   "qid": "Q114556741",
+   "url": "https://www.wikidata.org/wiki/Q114556741",
+   "cocok": "label+negara-Indonesia",
+   "induk": [],
+   "anak_usaha": [],
+   "bursa": [
+    {
+     "qid": "Q1661737",
+     "nama": "Indonesia Stock Exchange"
+    }
+   ],
+   "kode_bursa": [],
+   "kantor_pusat": [],
+   "sumber": "Wikidata",
+   "lisensi_data": "CC0 1.0",
+   "tanggal_periksa": "2026-11-08"
+  },
+  "ix_keen": {
+   "qid": "Q96100372",
+   "url": "https://www.wikidata.org/wiki/Q96100372",
+   "cocok": "label+negara-Indonesia",
+   "situs": "http://www.kencanaenergy.co.id",
+   "induk": [],
+   "anak_usaha": [],
+   "bursa": [
+    {
+     "qid": "Q1661737",
+     "nama": "Indonesia Stock Exchange"
+    }
+   ],
+   "kode_bursa": [],
+   "kantor_pusat": [],
+   "sumber": "Wikidata",
+   "lisensi_data": "CC0 1.0",
+   "tanggal_periksa": "2026-11-08"
+  },
+  "ix_toba": {
+   "qid": "Q114556861",
+   "url": "https://www.wikidata.org/wiki/Q114556861",
+   "cocok": "label+negara-Indonesia",
+   "induk": [],
+   "anak_usaha": [],
+   "bursa": [
+    {
+     "qid": "Q1661737",
+     "nama": "Indonesia Stock Exchange"
+    }
+   ],
+   "kode_bursa": [],
+   "kantor_pusat": [],
+   "sumber": "Wikidata",
+   "lisensi_data": "CC0 1.0",
+   "tanggal_periksa": "2026-11-08"
+  },
+  "l_060c77568c": {
+   "qid": "Q122763776",
+   "url": "https://www.wikidata.org/wiki/Q122763776",
+   "cocok": "label+negara-Indonesia",
+   "situs": "https://www.bpdp.or.id",
+   "induk": [
+    {
+     "qid": "Q12490741",
+     "nama": "Ministry of Finance of Indonesia"
+    }
+   ],
+   "anak_usaha": [],
+   "bursa": [],
+   "kode_bursa": [],
+   "kantor_pusat": [],
+   "logo": {
+    "commons_url": "https://commons.wikimedia.org/wiki/File:Logo_BPDP.svg",
+    "lisensi": "Public domain",
+    "lisensi_url": null
+   },
+   "sumber": "Wikidata",
+   "lisensi_data": "CC0 1.0",
+   "tanggal_periksa": "2026-11-08"
+  },
+  "l_09d0bbc3f0": {
+   "qid": "Q12506016",
+   "url": "https://www.wikidata.org/wiki/Q12506016",
+   "cocok": "label+negara-Indonesia",
+   "tahun_berdiri": 2001,
+   "situs": "http://www.del.ac.id",
+   "induk": [],
+   "anak_usaha": [],
+   "bursa": [],
+   "kode_bursa": [],
+   "kantor_pusat": [],
+   "sumber": "Wikidata",
+   "lisensi_data": "CC0 1.0",
+   "tanggal_periksa": "2026-11-08"
+  },
+  "l_15e21f04fa": {
+   "qid": "Q17051470",
+   "url": "https://www.wikidata.org/wiki/Q17051470",
+   "cocok": "label+negara-Indonesia",
+   "situs": "https://ojk.go.id/",
+   "induk": [],
+   "anak_usaha": [],
+   "bursa": [],
+   "kode_bursa": [],
+   "kantor_pusat": [
+    {
+     "qid": "Q3630",
+     "nama": "Jakarta"
+    }
+   ],
+   "logo": {
+    "commons_url": "https://commons.wikimedia.org/wiki/File:OJK-logo-300x91.png",
+    "lisensi": "Public domain",
+    "lisensi_url": null
+   },
+   "sumber": "Wikidata",
+   "lisensi_data": "CC0 1.0",
+   "tanggal_periksa": "2026-11-08"
+  },
+  "l_268f74ec67": {
+   "qid": "Q392739",
+   "url": "https://www.wikidata.org/wiki/Q392739",
+   "cocok": "label+situs-resmi",
+   "tahun_berdiri": 2009,
+   "situs": "https://www.irena.org/",
+   "induk": [],
+   "anak_usaha": [],
+   "bursa": [],
+   "kode_bursa": [],
+   "kantor_pusat": [
+    {
+     "qid": "Q934481",
+     "nama": "Masdar City"
+    }
+   ],
+   "logo": {
+    "commons_url": "https://commons.wikimedia.org/wiki/File:International_Renewable_Energy_Agency_Logo.png",
+    "lisensi": "CC BY-SA 4.0",
+    "lisensi_url": "https://creativecommons.org/licenses/by-sa/4.0"
+   },
+   "sumber": "Wikidata",
+   "lisensi_data": "CC0 1.0",
+   "tanggal_periksa": "2026-11-08"
+  },
+  "l_3acae54910": {
+   "qid": "Q3449895",
+   "url": "https://www.wikidata.org/wiki/Q3449895",
+   "cocok": "label+negara-Indonesia",
+   "situs": "http://www.bps.go.id/id",
+   "induk": [],
+   "anak_usaha": [],
+   "bursa": [],
+   "kode_bursa": [],
+   "kantor_pusat": [
+    {
+     "qid": "Q3630",
+     "nama": "Jakarta"
+    }
+   ],
+   "logo": {
+    "commons_url": "https://commons.wikimedia.org/wiki/File:Lambang_Badan_Pusat_Statistik_(BPS)_Indonesia.svg",
+    "lisensi": "Public domain",
+    "lisensi_url": null
+   },
+   "sumber": "Wikidata",
+   "lisensi_data": "CC0 1.0",
+   "tanggal_periksa": "2026-11-08"
+  },
+  "l_3d20494e0a": {
+   "qid": "Q131386450",
+   "url": "https://www.wikidata.org/wiki/Q131386450",
+   "cocok": "label+negara-Indonesia",
+   "situs": "https://kehutanan.go.id/",
+   "induk": [],
+   "anak_usaha": [],
+   "bursa": [],
+   "kode_bursa": [],
+   "kantor_pusat": [],
+   "logo": {
+    "commons_url": "https://commons.wikimedia.org/wiki/File:Logo_Kementerian_Kehutanan_RI_(2024).png",
+    "lisensi": "Public domain",
+    "lisensi_url": null
+   },
+   "sumber": "Wikidata",
+   "lisensi_data": "CC0 1.0",
+   "tanggal_periksa": "2026-11-08"
+  },
+  "l_43f00f6a72": {
+   "qid": "Q131299051",
+   "url": "https://www.wikidata.org/wiki/Q131299051",
+   "cocok": "label+negara-Indonesia",
+   "tahun_berdiri": 2025,
+   "situs": "https://www.danantaraindonesia.co.id",
+   "induk": [],
+   "anak_usaha": [
+    {
+     "qid": "Q623042",
+     "nama": "Bank Rakyat Indonesia"
+    },
+    {
+     "qid": "Q806639",
+     "nama": "Bank Mandiri"
+    },
+    {
+     "qid": "Q1641044",
+     "nama": "Pertamina"
+    },
+    {
+     "qid": "Q4201636",
+     "nama": "Perusahaan Listrik Negara"
+    },
+    {
+     "qid": "Q2305438",
+     "nama": "Telkom Indonesia"
+    },
+    {
+     "qid": "Q2882611",
+     "nama": "Bank Negara Indonesia"
+    },
+    {
+     "qid": "Q109237452",
+     "nama": "MIND ID"
+    }
+   ],
+   "bursa": [],
+   "kode_bursa": [],
+   "kantor_pusat": [
+    {
+     "qid": "Q10109",
+     "nama": "Central Jakarta"
+    }
+   ],
+   "logo": {
+    "commons_url": "https://commons.wikimedia.org/wiki/File:Danantara_Indonesia.svg",
+    "lisensi": "Public domain",
+    "lisensi_url": null
+   },
+   "sumber": "Wikidata",
+   "lisensi_data": "CC0 1.0",
+   "tanggal_periksa": "2026-11-08"
+  },
+  "l_5bc6d9c59b": {
+   "qid": "Q826700",
+   "url": "https://www.wikidata.org/wiki/Q826700",
+   "cocok": "label+situs-resmi",
+   "tahun_berdiri": 1974,
+   "situs": "https://www.iea.org/",
+   "induk": [],
+   "anak_usaha": [],
+   "bursa": [],
+   "kode_bursa": [],
+   "kantor_pusat": [
+    {
+     "qid": "Q90",
+     "nama": "Paris"
+    }
+   ],
+   "logo": {
+    "commons_url": "https://commons.wikimedia.org/wiki/File:International_Energy_Agency_(IEA)_logo.svg",
+    "lisensi": "Public domain",
+    "lisensi_url": null
+   },
+   "sumber": "Wikidata",
+   "lisensi_data": "CC0 1.0",
+   "tanggal_periksa": "2026-11-08"
+  },
+  "l_6a367c9be7": {
+   "qid": "Q131846281",
+   "url": "https://www.wikidata.org/wiki/Q131846281",
+   "cocok": "label+negara-Indonesia",
+   "situs": "https://trendasia.org/",
+   "induk": [],
+   "anak_usaha": [],
+   "bursa": [],
+   "kode_bursa": [],
+   "kantor_pusat": [
+    {
+     "qid": "Q3630",
+     "nama": "Jakarta"
+    }
+   ],
+   "sumber": "Wikidata",
+   "lisensi_data": "CC0 1.0",
+   "tanggal_periksa": "2026-11-08"
+  },
+  "l_7278e0528a": {
+   "qid": "Q12490739",
+   "url": "https://www.wikidata.org/wiki/Q12490739",
+   "cocok": "label+negara-Indonesia",
+   "situs": "https://www.esdm.go.id/",
+   "induk": [],
+   "anak_usaha": [
+    {
+     "qid": "Q19732705",
+     "nama": "Politeknik Energi dan Mineral Akamigas"
+    },
+    {
+     "qid": "Q56389927",
+     "nama": "Inspectorate General, Ministry of Energy and Mineral Resources"
+    },
+    {
+     "qid": "Q140469903",
+     "nama": "Marine Geological Institute"
+    },
+    {
+     "qid": "Q140469893",
+     "nama": null
+    },
+    {
+     "qid": "Q140469896",
+     "nama": null
+    },
+    {
+     "qid": "Q140469902",
+     "nama": null
+    },
+    {
+     "qid": "Q140469900",
+     "nama": null
+    },
+    {
+     "qid": "Q140469901",
+     "nama": null
+    },
+    {
+     "qid": "Q140469907",
+     "nama": null
+    }
+   ],
+   "bursa": [],
+   "kode_bursa": [],
+   "kantor_pusat": [],
+   "sumber": "Wikidata",
+   "lisensi_data": "CC0 1.0",
+   "tanggal_periksa": "2026-11-08"
+  },
+  "l_7b43a2574c": {
+   "qid": "Q12490741",
+   "url": "https://www.wikidata.org/wiki/Q12490741",
+   "cocok": "label+negara-Indonesia",
+   "situs": "https://www.kemenkeu.go.id/",
+   "induk": [],
+   "anak_usaha": [
+    {
+     "qid": "Q5588923",
+     "nama": "Government Investment Unit of Indonesia"
+    },
+    {
+     "qid": "Q6026203",
+     "nama": "Indonesian State College of Accountancy"
+    },
+    {
+     "qid": "Q12481590",
+     "nama": "Directorate General of Customs and Excise"
+    },
+    {
+     "qid": "Q12481593",
+     "nama": "Directorate General of Fiscal Balance, Ministry of Finance"
+    },
+    {
+     "qid": "Q14917332",
+     "nama": "Directorate General of Treasury, Ministry of Finance"
+    },
+    {
+     "qid": "Q3909179",
+     "nama": "Directorate General of Taxes of Indonesia"
+    },
+    {
+     "qid": "Q19728377",
+     "nama": "Indonesia Endowment Fund for Education"
+    },
+    {
+     "qid": "Q25453405",
+     "nama": "Directorate General of State Assets, Ministry of Finance"
+    },
+    {
+     "qid": "Q122763776",
+     "nama": "Badan Pengelola Dana Perkebunan"
+    },
+    {
+     "qid": "Q131005566",
+     "nama": "Agency for Financial Technology, Information, and Intelligence, Ministry of Finance"
+    },
+    {
+     "qid": "Q131005564",
+     "nama": "Directorate General of Economic and Fiscal Strategy, Ministry of Finance"
+    },
+    {
+     "qid": "Q131005565",
+     "nama": "Directorate General of Financial Sector Stability and Development, Ministry of Finance"
+    },
+    {
+     "qid": "Q65209975",
+     "nama": null
+    },
+    {
+     "qid": "Q97375255",
+     "nama": null
+    },
+    {
+     "qid": "Q140275694",
+     "nama": null
+    }
+   ],
+   "bursa": [],
+   "kode_bursa": [],
+   "kantor_pusat": [
+    {
+     "qid": "Q3630",
+     "nama": "Jakarta"
+    }
+   ],
+   "logo": {
+    "commons_url": "https://commons.wikimedia.org/wiki/File:Seal_of_the_Ministry_of_Finance_of_the_Republic_of_Indonesia.svg",
+    "lisensi": "Public domain",
+    "lisensi_url": null
+   },
+   "sumber": "Wikidata",
+   "lisensi_data": "CC0 1.0",
+   "tanggal_periksa": "2026-11-08"
+  },
+  "l_7c9f6d4654": {
+   "qid": "Q12490751",
+   "url": "https://www.wikidata.org/wiki/Q12490751",
+   "cocok": "label+negara-Indonesia",
+   "situs": "https://www.pertanian.go.id/",
+   "induk": [],
+   "anak_usaha": [
+    {
+     "qid": "Q19943550",
+     "nama": "Ministry of Forestry of Indonesia"
+    },
+    {
+     "qid": "Q141361978",
+     "nama": null
+    },
+    {
+     "qid": "Q141361976",
+     "nama": null
+    },
+    {
+     "qid": "Q141361988",
+     "nama": null
+    }
+   ],
+   "bursa": [],
+   "kode_bursa": [],
+   "kantor_pusat": [],
+   "logo": {
+    "commons_url": "https://commons.wikimedia.org/wiki/File:Logo_Kementerian_Pertanian_Republik_Indonesia.svg",
+    "lisensi": "Public domain",
+    "lisensi_url": null
+   },
+   "sumber": "Wikidata",
+   "lisensi_data": "CC0 1.0",
+   "tanggal_periksa": "2026-11-08"
+  },
+  "l_7f19189f6d": {
+   "qid": "Q25468023",
+   "url": "https://www.wikidata.org/wiki/Q25468023",
+   "cocok": "label+negara-Indonesia",
+   "tahun_berdiri": 2016,
+   "situs": "https://universitaspertamina.ac.id",
+   "induk": [],
+   "anak_usaha": [],
+   "bursa": [],
+   "kode_bursa": [],
+   "kantor_pusat": [],
+   "sumber": "Wikidata",
+   "lisensi_data": "CC0 1.0",
+   "tanggal_periksa": "2026-11-08"
+  },
+  "l_973f60de15": {
+   "qid": "Q97200300",
+   "url": "https://www.wikidata.org/wiki/Q97200300",
+   "cocok": "label+negara-Indonesia",
+   "situs": "http://www.brin.go.id/",
+   "induk": [],
+   "anak_usaha": [
+    {
+     "qid": "Q108741387",
+     "nama": "Aeronautics and Space Research Organization"
+    },
+    {
+     "qid": "Q108741407",
+     "nama": "Earth Sciences Research Organization"
+    },
+    {
+     "qid": "Q108857162",
+     "nama": "Social Sciences and Humanities Research Organization"
+    },
+    {
+     "qid": "Q108857283",
+     "nama": "Life Sciences and Environment Research Organization"
+    },
+    {
+     "qid": "Q108864687",
+     "nama": "Nuclear Power Research Organization-BATAN"
+    },
+    {
+     "qid": "Q109974277",
+     "nama": "Health and Nutrition Research Organization"
+    },
+    {
+     "qid": "Q110682434",
+     "nama": "Food and Agriculture Research Organization"
+    },
+    {
+     "qid": "Q110682439",
+     "nama": "Government Administration, Economy, and Public Welfare Research Organization"
+    },
+    {
+     "qid": "Q110682469",
+     "nama": "Archaeology, Language, and Letters Research Organization"
+    },
+    {
+     "qid": "Q110682474",
+     "nama": "Electronics and Informatics Research Organization"
+    },
+    {
+     "qid": "Q110682475",
+     "nama": "Nanotechnology and Material Research Organization"
+    },
+    {
+     "qid": "Q110682477",
+     "nama": "Energy and Manufacture Research Organization"
+    }
+   ],
+   "bursa": [],
+   "kode_bursa": [],
+   "kantor_pusat": [],
+   "logo": {
+    "commons_url": "https://commons.wikimedia.org/wiki/File:Main_Logo_of_National_Research_and_Innovation_Agency_of_Indonesia.svg",
+    "lisensi": "Public domain",
+    "lisensi_url": null
+   },
+   "sumber": "Wikidata",
+   "lisensi_data": "CC0 1.0",
+   "tanggal_periksa": "2026-11-08"
+  },
+  "l_c6d98b8a10": {
+   "qid": "Q25464094",
+   "url": "https://www.wikidata.org/wiki/Q25464094",
+   "cocok": "label+negara-Indonesia",
+   "induk": [],
+   "anak_usaha": [],
+   "bursa": [],
+   "kode_bursa": [],
+   "kantor_pusat": [],
+   "sumber": "Wikidata",
+   "lisensi_data": "CC0 1.0",
+   "tanggal_periksa": "2026-11-08"
+  },
+  "l_e0cd1f9089": {
+   "qid": "Q2826615",
+   "url": "https://www.wikidata.org/wiki/Q2826615",
+   "cocok": "label+negara-Indonesia",
+   "tahun_berdiri": 1866,
+   "situs": "https://www.bmkg.go.id",
+   "induk": [],
+   "anak_usaha": [],
+   "bursa": [],
+   "kode_bursa": [],
+   "kantor_pusat": [
+    {
+     "qid": "Q3630",
+     "nama": "Jakarta"
+    }
+   ],
+   "logo": {
+    "commons_url": "https://commons.wikimedia.org/wiki/File:Logo_bmg.gif",
+    "lisensi": "Public domain",
+    "lisensi_url": null
+   },
+   "sumber": "Wikidata",
+   "lisensi_data": "CC0 1.0",
+   "tanggal_periksa": "2026-11-08"
+  },
+  "l_edde12ff1f": {
+   "qid": "Q11046844",
+   "url": "https://www.wikidata.org/wiki/Q11046844",
+   "cocok": "label+negara-Indonesia",
+   "situs": "https://www.bumn.go.id/",
+   "induk": [],
+   "anak_usaha": [],
+   "bursa": [],
+   "kode_bursa": [],
+   "kantor_pusat": [],
+   "logo": {
+    "commons_url": "https://commons.wikimedia.org/wiki/File:Emblem_of_Indonesia_and_Logo_of_Ministry_of_State-Owned_Enterprises_of_the_Republic_of_Indonesia_(English_version_2020).svg",
+    "lisensi": "Public domain",
+    "lisensi_url": null
+   },
+   "sumber": "Wikidata",
+   "lisensi_data": "CC0 1.0",
+   "tanggal_periksa": "2026-11-08"
+  },
+  "p_0e6d34a26d": {
+   "qid": "Q20850809",
+   "url": "https://www.wikidata.org/wiki/Q20850809",
+   "cocok": "label+situs-resmi",
+   "tahun_berdiri": 2002,
+   "situs": "http://acwapower.com/",
+   "induk": [],
+   "anak_usaha": [],
+   "bursa": [],
+   "kode_bursa": [],
+   "kantor_pusat": [
+    {
+     "qid": "Q3692",
+     "nama": "Riyadh"
+    }
+   ],
+   "logo": {
+    "commons_url": "https://commons.wikimedia.org/wiki/File:ACWA_Power_logo.png",
+    "lisensi": "CC BY-SA 4.0",
+    "lisensi_url": "https://creativecommons.org/licenses/by-sa/4.0"
+   },
+   "sumber": "Wikidata",
+   "lisensi_data": "CC0 1.0",
+   "tanggal_periksa": "2026-11-08"
+  },
+  "p_15bc360dc3": {
+   "qid": "Q97216864",
+   "url": "https://www.wikidata.org/wiki/Q97216864",
+   "cocok": "label+negara-Indonesia",
+   "induk": [],
+   "anak_usaha": [],
+   "bursa": [],
+   "kode_bursa": [],
+   "kantor_pusat": [],
+   "sumber": "Wikidata",
+   "lisensi_data": "CC0 1.0",
+   "tanggal_periksa": "2026-11-08"
+  },
+  "p_1848d9c52b": {
+   "qid": "Q12470706",
+   "url": "https://www.wikidata.org/wiki/Q12470706",
+   "cocok": "label+negara-Indonesia",
+   "tahun_berdiri": 1960,
+   "situs": "http://www.adhi.co.id",
+   "induk": [],
+   "anak_usaha": [
+    {
+     "qid": "Q114556736",
+     "nama": "Adhi Commuter Properti"
+    }
+   ],
+   "bursa": [
+    {
+     "qid": "Q1661737",
+     "nama": "Indonesia Stock Exchange"
+    }
+   ],
+   "kode_bursa": [],
+   "kantor_pusat": [
+    {
+     "qid": "Q3630",
+     "nama": "Jakarta"
+    }
+   ],
+   "sumber": "Wikidata",
+   "lisensi_data": "CC0 1.0",
+   "tanggal_periksa": "2026-11-08"
+  },
+  "p_19a0c30f94": {
+   "qid": "Q28207127",
+   "url": "https://www.wikidata.org/wiki/Q28207127",
+   "cocok": "label+situs-resmi",
+   "tahun_berdiri": 2000,
+   "situs": "https://www.longi.com/",
+   "induk": [],
+   "anak_usaha": [],
+   "bursa": [
+    {
+     "qid": "Q739514",
+     "nama": "Shanghai Stock Exchange"
+    }
+   ],
+   "kode_bursa": [],
+   "kantor_pusat": [
+    {
+     "qid": "Q62",
+     "nama": "San Francisco"
+    }
+   ],
+   "logo": {
+    "commons_url": "https://commons.wikimedia.org/wiki/File:Longi_Silicon_Materials_logo.png",
+    "lisensi": "Public domain",
+    "lisensi_url": null
+   },
+   "sumber": "Wikidata",
+   "lisensi_data": "CC0 1.0",
+   "tanggal_periksa": "2026-11-08"
+  },
+  "p_1a272e3233": {
+   "qid": "Q139998188",
+   "url": "https://www.wikidata.org/wiki/Q139998188",
+   "cocok": "label+negara-Indonesia",
+   "induk": [],
+   "anak_usaha": [],
+   "bursa": [],
+   "kode_bursa": [],
+   "kantor_pusat": [
+    {
+     "qid": "Q11447",
+     "nama": "Mojokerto"
+    }
+   ],
+   "sumber": "Wikidata",
+   "lisensi_data": "CC0 1.0",
+   "tanggal_periksa": "2026-11-08"
+  },
+  "p_1c9eb202dd": {
+   "qid": "Q13416787",
+   "url": "https://www.wikidata.org/wiki/Q13416787",
+   "cocok": "label+situs-resmi",
+   "tahun_berdiri": 2008,
+   "situs": "https://agence.engie-homeservices.fr/",
+   "induk": [],
+   "anak_usaha": [
+    {
+     "qid": "Q608323",
+     "nama": "Engie Electrabel"
+    },
+    {
+     "qid": "Q691563",
+     "nama": "Nord Stream AG"
+    },
+    {
+     "qid": "Q1106767",
+     "nama": "Engie Cofely"
+    },
+    {
+     "qid": "Q1106769",
+     "nama": "Engie Deutschland"
+    },
+    {
+     "qid": "Q1106772",
+     "nama": "Engie Refrigeration"
+    },
+    {
+     "qid": "Q1666819",
+     "nama": "Engie Energy International"
+    },
+    {
+     "qid": "Q5513089",
+     "nama": "Engie Romania"
+    },
+    {
+     "qid": "Q7831621",
+     "nama": "Tractebel"
+    },
+    {
+     "qid": "Q23011397",
+     "nama": "Engie IT"
+    },
+    {
+     "qid": "Q24934578",
+     "nama": "Compagnie parisienne de chauffage urbain"
+    },
+    {
+     "qid": "Q29113574",
+     "nama": "Engie Resources"
+    },
+    {
+     "qid": "Q89991612",
+     "nama": "Engie Solutions"
+    },
+    {
+     "qid": "Q111363966",
+     "nama": "Geniepoint"
+    }
+   ],
+   "bursa": [
+    {
+     "qid": "Q2385849",
+     "nama": "Euronext Paris"
+    }
+   ],
+   "kode_bursa": [],
+   "kantor_pusat": [
+    {
+     "qid": "Q90",
+     "nama": "Paris"
+    }
+   ],
+   "logo": {
+    "commons_url": "https://commons.wikimedia.org/wiki/File:Logo-engie.svg",
+    "lisensi": "Public domain",
+    "lisensi_url": null
+   },
+   "sumber": "Wikidata",
+   "lisensi_data": "CC0 1.0",
+   "tanggal_periksa": "2026-11-08"
+  },
+  "p_27ae5a4203": {
+   "qid": "Q118574900",
+   "url": "https://www.wikidata.org/wiki/Q118574900",
+   "cocok": "label+negara-Indonesia",
+   "induk": [],
+   "anak_usaha": [],
+   "bursa": [],
+   "kode_bursa": [],
+   "kantor_pusat": [],
+   "sumber": "Wikidata",
+   "lisensi_data": "CC0 1.0",
+   "tanggal_periksa": "2026-11-08"
+  },
+  "p_3bfe6ea3f4": {
+   "qid": "Q18128328",
+   "url": "https://www.wikidata.org/wiki/Q18128328",
+   "cocok": "label+negara-Indonesia",
+   "tahun_berdiri": 1932,
+   "situs": "http://www.musimmas.com/",
+   "induk": [],
+   "anak_usaha": [],
+   "bursa": [],
+   "kode_bursa": [],
+   "kantor_pusat": [],
+   "sumber": "Wikidata",
+   "lisensi_data": "CC0 1.0",
+   "tanggal_periksa": "2026-11-08"
+  },
+  "p_45c7d8a27f": {
+   "qid": "Q1163521",
+   "url": "https://www.wikidata.org/wiki/Q1163521",
+   "cocok": "label+situs-resmi",
+   "tahun_berdiri": 2006,
+   "situs": "http://www.masdar.ae/",
+   "induk": [],
+   "anak_usaha": [],
+   "bursa": [],
+   "kode_bursa": [],
+   "kantor_pusat": [
+    {
+     "qid": "Q1519",
+     "nama": "Abu Dhabi"
+    }
+   ],
+   "logo": {
+    "commons_url": "https://commons.wikimedia.org/wiki/File:MASDAR_Logo.svg",
+    "lisensi": "CC BY-SA 4.0",
+    "lisensi_url": "https://creativecommons.org/licenses/by-sa/4.0"
+   },
+   "sumber": "Wikidata",
+   "lisensi_data": "CC0 1.0",
+   "tanggal_periksa": "2026-11-08"
+  },
+  "p_476a6bf2fb": {
+   "qid": "Q109433850",
+   "url": "https://www.wikidata.org/wiki/Q109433850",
+   "cocok": "label+negara-Indonesia",
+   "induk": [],
+   "anak_usaha": [],
+   "bursa": [],
+   "kode_bursa": [],
+   "kantor_pusat": [],
+   "sumber": "Wikidata",
+   "lisensi_data": "CC0 1.0",
+   "tanggal_periksa": "2026-11-08"
+  },
+  "p_5a2e7d0c63": {
+   "qid": "Q12486500",
+   "url": "https://www.wikidata.org/wiki/Q12486500",
+   "cocok": "label+negara-Indonesia",
+   "situs": "https://www.indonesiapower.co.id",
+   "induk": [],
+   "anak_usaha": [],
+   "bursa": [],
+   "kode_bursa": [],
+   "kantor_pusat": [
+    {
+     "qid": "Q3630",
+     "nama": "Jakarta"
+    }
+   ],
+   "sumber": "Wikidata",
+   "lisensi_data": "CC0 1.0",
+   "tanggal_periksa": "2026-11-08"
+  },
+  "p_636350291c": {
+   "qid": "Q2453426",
+   "url": "https://www.wikidata.org/wiki/Q2453426",
+   "cocok": "label+situs-resmi",
+   "tahun_berdiri": 1997,
+   "situs": "http://www.trinasolar.com/",
+   "induk": [],
+   "anak_usaha": [],
+   "bursa": [
+    {
+     "qid": "Q13677",
+     "nama": "New York Stock Exchange"
+    },
+    {
+     "qid": "Q739514",
+     "nama": "Shanghai Stock Exchange"
+    }
+   ],
+   "kode_bursa": [],
+   "kantor_pusat": [
+    {
+     "qid": "Q57970",
+     "nama": "Changzhou"
+    }
+   ],
+   "logo": {
+    "commons_url": "https://commons.wikimedia.org/wiki/File:Trina_Solar_logo.svg",
+    "lisensi": "Public domain",
+    "lisensi_url": null
+   },
+   "sumber": "Wikidata",
+   "lisensi_data": "CC0 1.0",
+   "tanggal_periksa": "2026-11-08"
+  },
+  "p_6a3903d60a": {
+   "qid": "Q7401975",
+   "url": "https://www.wikidata.org/wiki/Q7401975",
+   "cocok": "label+negara-Indonesia",
+   "induk": [],
+   "anak_usaha": [],
+   "bursa": [],
+   "kode_bursa": [],
+   "kantor_pusat": [
+    {
+     "qid": "Q10114",
+     "nama": "South Jakarta"
+    }
+   ],
+   "sumber": "Wikidata",
+   "lisensi_data": "CC0 1.0",
+   "tanggal_periksa": "2026-11-08"
+  },
+  "p_a235c21f23": {
+   "qid": "Q97219054",
+   "url": "https://www.wikidata.org/wiki/Q97219054",
+   "cocok": "label+negara-Indonesia",
+   "induk": [],
+   "anak_usaha": [],
+   "bursa": [],
+   "kode_bursa": [],
+   "kantor_pusat": [],
+   "sumber": "Wikidata",
+   "lisensi_data": "CC0 1.0",
+   "tanggal_periksa": "2026-11-08"
+  },
+  "p_a321da2bd5": {
+   "qid": "Q12486481",
+   "url": "https://www.wikidata.org/wiki/Q12486481",
+   "cocok": "label+negara-Indonesia",
+   "situs": "http://www.acidatama.co.id",
+   "induk": [],
+   "anak_usaha": [],
+   "bursa": [
+    {
+     "qid": "Q1661737",
+     "nama": "Indonesia Stock Exchange"
+    }
+   ],
+   "kode_bursa": [],
+   "kantor_pusat": [
+    {
+     "qid": "Q3630",
+     "nama": "Jakarta"
+    }
+   ],
+   "sumber": "Wikidata",
+   "lisensi_data": "CC0 1.0",
+   "tanggal_periksa": "2026-11-08"
+  },
+  "p_a363064837": {
+   "qid": "Q11040435",
+   "url": "https://www.wikidata.org/wiki/Q11040435",
+   "cocok": "label+negara-Indonesia",
+   "situs": "http://www.wika.co.id",
+   "induk": [],
+   "anak_usaha": [],
+   "bursa": [
+    {
+     "qid": "Q1661737",
+     "nama": "Indonesia Stock Exchange"
+    }
+   ],
+   "kode_bursa": [],
+   "kantor_pusat": [
+    {
+     "qid": "Q3630",
+     "nama": "Jakarta"
+    }
+   ],
+   "logo": {
+    "commons_url": "https://commons.wikimedia.org/wiki/File:Wijaya_Karya.svg",
+    "lisensi": "Public domain",
+    "lisensi_url": null
+   },
+   "sumber": "Wikidata",
+   "lisensi_data": "CC0 1.0",
+   "tanggal_periksa": "2026-11-08"
+  },
+  "p_a6be6e993f": {
+   "qid": "Q154037",
+   "url": "https://www.wikidata.org/wiki/Q154037",
+   "cocok": "label+situs-resmi",
+   "tahun_berdiri": 1924,
+   "situs": "https://www.totalenergies.com/",
+   "induk": [],
+   "anak_usaha": [
+    {
+     "qid": "Q41463",
+     "nama": "Total E&P"
+    },
+    {
+     "qid": "Q322644",
+     "nama": "Hutchinson SA"
+    },
+    {
+     "qid": "Q645525",
+     "nama": "SunPower"
+    },
+    {
+     "qid": "Q2819394",
+     "nama": "AS 24"
+    },
+    {
+     "qid": "Q1505649",
+     "nama": "Elf Aquitaine"
+    },
+    {
+     "qid": "Q1658505",
+     "nama": "Petrofina"
+    },
+    {
+     "qid": "Q2059978",
+     "nama": "Lampiris"
+    },
+    {
+     "qid": "Q2211570",
+     "nama": "Saft"
+    },
+    {
+     "qid": "Q3029396",
+     "nama": "Total Direct Énergie"
+    },
+    {
+     "qid": "Q4670132",
+     "nama": "Abu Dhabi Gas Industries Limited"
+    },
+    {
+     "qid": "Q4942500",
+     "nama": "Bonny Gas Transport"
+    },
+    {
+     "qid": "Q12007192",
+     "nama": "TotalEnergies EP Norge"
+    },
+    {
+     "qid": "Q16734183",
+     "nama": "Total Petroleum Ghana"
+    },
+    {
+     "qid": "Q29000342",
+     "nama": "TOTAL Deutschland GmbH"
+    },
+    {
+     "qid": "Q30338219",
+     "nama": "Total (United States)"
+    },
+    {
+     "qid": "Q30338217",
+     "nama": "TotalEnergies (in Canada)"
+    },
+    {
+     "qid": "Q34769853",
+     "nama": "fioulmarket"
+    },
+    {
+     "qid": "Q37934148",
+     "nama": "Total Gabon"
+    },
+    {
+     "qid": "Q41568124",
+     "nama": "TotalEnergies Marketing Česká republika"
+    },
+    {
+     "qid": "Q94820486",
+     "nama": "TotalEnergies España"
+    },
+    {
+     "qid": "Q125926156",
+     "nama": "TotalEnergies Italia"
+    }
+   ],
+   "bursa": [
+    {
+     "qid": "Q13677",
+     "nama": "New York Stock Exchange"
+    },
+    {
+     "qid": "Q171240",
+     "nama": "London Stock Exchange"
+    },
+    {
+     "qid": "Q1146518",
+     "nama": "Euronext Brussels"
+    },
+    {
+     "qid": "Q2385849",
+     "nama": "Euronext Paris"
+    }
+   ],
+   "kode_bursa": [],
+   "kantor_pusat": [
+    {
+     "qid": "Q189715",
+     "nama": "Courbevoie"
+    }
+   ],
+   "logo": {
+    "commons_url": "https://commons.wikimedia.org/wiki/File:TotalEnergies_wordmark_(2021-present).svg",
+    "lisensi": "Public domain",
+    "lisensi_url": null
+   },
+   "sumber": "Wikidata",
+   "lisensi_data": "CC0 1.0",
+   "tanggal_periksa": "2026-11-08"
+  },
+  "p_a993b93320": {
+   "qid": "Q114556794",
+   "url": "https://www.wikidata.org/wiki/Q114556794",
+   "cocok": "label+negara-Indonesia",
+   "induk": [],
+   "anak_usaha": [],
+   "bursa": [
+    {
+     "qid": "Q1661737",
+     "nama": "Indonesia Stock Exchange"
+    }
+   ],
+   "kode_bursa": [],
+   "kantor_pusat": [],
+   "sumber": "Wikidata",
+   "lisensi_data": "CC0 1.0",
+   "tanggal_periksa": "2026-11-08"
+  },
+  "p_c9b8bffbec": {
+   "qid": "Q113494967",
+   "url": "https://www.wikidata.org/wiki/Q113494967",
+   "cocok": "label+negara-Indonesia",
+   "situs": "https://www.indonesiabatterycorp.com",
+   "induk": [],
+   "anak_usaha": [],
+   "bursa": [],
+   "kode_bursa": [],
+   "kantor_pusat": [
+    {
+     "qid": "Q3630",
+     "nama": "Jakarta"
+    }
+   ],
+   "sumber": "Wikidata",
+   "lisensi_data": "CC0 1.0",
+   "tanggal_periksa": "2026-11-08"
+  },
+  "p_dda1e51dae": {
+   "qid": "Q109430798",
+   "url": "https://www.wikidata.org/wiki/Q109430798",
+   "cocok": "label+negara-Indonesia",
+   "tahun_berdiri": 2006,
+   "situs": "https://www.pge.pertamina.com/id",
+   "induk": [],
+   "anak_usaha": [],
+   "bursa": [
+    {
+     "qid": "Q1661737",
+     "nama": "Indonesia Stock Exchange"
+    }
+   ],
+   "kode_bursa": [],
+   "kantor_pusat": [
+    {
+     "qid": "Q10109",
+     "nama": "Central Jakarta"
+    }
+   ],
+   "sumber": "Wikidata",
+   "lisensi_data": "CC0 1.0",
+   "tanggal_periksa": "2026-11-08"
+  },
+  "p_e0f3886341": {
+   "qid": "Q133812087",
+   "url": "https://www.wikidata.org/wiki/Q133812087",
+   "cocok": "label+negara-Indonesia",
+   "tahun_berdiri": 2000,
+   "situs": "https://plniconplus.co.id",
+   "induk": [],
+   "anak_usaha": [],
+   "bursa": [],
+   "kode_bursa": [],
+   "kantor_pusat": [],
+   "sumber": "Wikidata",
+   "lisensi_data": "CC0 1.0",
+   "tanggal_periksa": "2026-11-08"
+  },
+  "p_e6a5cc3fbe": {
+   "qid": "Q12522712",
+   "url": "https://www.wikidata.org/wiki/Q12522712",
+   "cocok": "label+negara-Indonesia",
+   "situs": "http://www.tunasbarulampung.com",
+   "induk": [],
+   "anak_usaha": [],
+   "bursa": [
+    {
+     "qid": "Q1661737",
+     "nama": "Indonesia Stock Exchange"
+    }
+   ],
+   "kode_bursa": [],
+   "kantor_pusat": [
+    {
+     "qid": "Q2110",
+     "nama": "Lampung"
+    }
+   ],
+   "sumber": "Wikidata",
+   "lisensi_data": "CC0 1.0",
+   "tanggal_periksa": "2026-11-08"
+  },
+  "p_ef20787d46": {
+   "qid": "Q117748687",
+   "url": "https://www.wikidata.org/wiki/Q117748687",
+   "cocok": "label+situs-resmi",
+   "situs": "https://www.venaenergy.com/",
+   "induk": [],
+   "anak_usaha": [],
+   "bursa": [],
+   "kode_bursa": [],
+   "kantor_pusat": [],
+   "sumber": "Wikidata",
+   "lisensi_data": "CC0 1.0",
+   "tanggal_periksa": "2026-11-08"
+  },
+  "p_ff7a390a42": {
+   "qid": "Q12504353",
+   "url": "https://www.wikidata.org/wiki/Q12504353",
+   "cocok": "label+negara-Indonesia",
+   "tahun_berdiri": 1995,
+   "situs": "https://plnnusantarapower.co.id/",
+   "induk": [],
+   "anak_usaha": [],
+   "bursa": [],
+   "kode_bursa": [],
+   "kantor_pusat": [
+    {
+     "qid": "Q13542006",
+     "nama": "Ketintang"
+    }
+   ],
+   "sumber": "Wikidata",
+   "lisensi_data": "CC0 1.0",
+   "tanggal_periksa": "2026-11-08"
+  },
+  "pm_129dbx35045": {
+   "qid": "Q65212259",
+   "url": "https://www.wikidata.org/wiki/Q65212259",
+   "cocok": "label+negara-Indonesia",
+   "situs": "http://www.vale.com/indonesia",
+   "induk": [],
+   "anak_usaha": [],
+   "bursa": [
+    {
+     "qid": "Q1661737",
+     "nama": "Indonesia Stock Exchange"
+    }
+   ],
+   "kode_bursa": [],
+   "kantor_pusat": [],
+   "sumber": "Wikidata",
+   "lisensi_data": "CC0 1.0",
+   "tanggal_periksa": "2026-11-08"
+  },
+  "pm_1c66exc8e3f": {
+   "qid": "Q114556740",
+   "url": "https://www.wikidata.org/wiki/Q114556740",
+   "cocok": "label+negara-Indonesia",
+   "induk": [],
+   "anak_usaha": [],
+   "bursa": [
+    {
+     "qid": "Q1661737",
+     "nama": "Indonesia Stock Exchange"
+    }
+   ],
+   "kode_bursa": [],
+   "kantor_pusat": [],
+   "sumber": "Wikidata",
+   "lisensi_data": "CC0 1.0",
+   "tanggal_periksa": "2026-11-08"
+  },
+  "pm_2bf70x9366e": {
+   "qid": "Q11212460",
+   "url": "https://www.wikidata.org/wiki/Q11212460",
+   "cocok": "label+negara-Indonesia",
+   "induk": [],
+   "anak_usaha": [],
+   "bursa": [],
+   "kode_bursa": [],
+   "kantor_pusat": [
+    {
+     "qid": "Q10378",
+     "nama": "Purwakarta"
+    }
+   ],
+   "sumber": "Wikidata",
+   "lisensi_data": "CC0 1.0",
+   "tanggal_periksa": "2026-11-08"
+  },
+  "pm_96562xbec1f": {
+   "qid": "Q123003579",
+   "url": "https://www.wikidata.org/wiki/Q123003579",
+   "cocok": "label+negara-Indonesia",
+   "induk": [],
+   "anak_usaha": [],
+   "bursa": [],
+   "kode_bursa": [],
+   "kantor_pusat": [],
+   "sumber": "Wikidata",
+   "lisensi_data": "CC0 1.0",
+   "tanggal_periksa": "2026-11-08"
+  },
+  "su_068a017a": {
+   "qid": "Q114789075",
+   "url": "https://www.wikidata.org/wiki/Q114789075",
+   "cocok": "label+negara-Indonesia",
+   "induk": [],
+   "anak_usaha": [],
+   "bursa": [],
+   "kode_bursa": [],
+   "kantor_pusat": [],
+   "sumber": "Wikidata",
+   "lisensi_data": "CC0 1.0",
+   "tanggal_periksa": "2026-11-08"
+  },
+  "su_c0bfab28": {
+   "qid": "Q121878421",
+   "url": "https://www.wikidata.org/wiki/Q121878421",
+   "cocok": "label+negara-Indonesia",
+   "tahun_berdiri": 2021,
+   "induk": [],
+   "anak_usaha": [],
+   "bursa": [],
+   "kode_bursa": [],
+   "kantor_pusat": [],
+   "sumber": "Wikidata",
+   "lisensi_data": "CC0 1.0",
+   "tanggal_periksa": "2026-11-08"
+  }
+ }
+}

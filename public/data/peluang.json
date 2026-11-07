@@ -4,7 +4,7 @@
   "jumlah": 38,
   "proyek_tanpa_provinsi": 105,
   "definisi_tanpa_pengembang": "status proyek \"rencana\" dan tidak ada pemilik, atau pemilik hanya label generik \"IPP\" (RUPTL); proyek tanpa provinsi atau tanpa status tidak dihitung",
-  "catatan": "Potensi RUEN bertahun data 2015 (34 provinsi); hidro RUEN per kelompok wilayah (null per provinsi bila kelompok); Papua/Papua Barat induk tidak dibagi ke provinsi pemekaran. Terpasang dan rasio dari HEESI 2025. BPP: Kepmen ESDM terbaru yang ada di berkas = BPP 2020 (Kepmen 169.K/2021); BPP 2021 ke atas belum terambil. Mikrohidro terpasang tidak dipisah dari hidro. Laut: potensi praktis RUEN, tanpa terpasang.",
+  "catatan": "Potensi RUEN bertahun data 2015 (34 provinsi); hidro RUEN Tabel 37 memang per kelompok wilayah (14 baris, total 75.091 MW cocok; hanya 7 baris tunggal provinsi): null per provinsi dengan kelompok_mw terisi; angka Papua/Papua Barat induk tampil pada provinsi induk (pra_pemekaran) dan tidak dibagi ke provinsi pemekaran. Terpasang dan rasio dari HEESI 2025. BPP: Kepmen ESDM terbaru yang ada di berkas = BPP 2020 (Kepmen 169.K/2021); BPP 2021 ke atas belum terambil. Mikrohidro terpasang tidak dipisah dari hidro. Laut: potensi praktis RUEN, tanpa terpasang.",
   "celah": []
  },
  "sumber": [
@@ -828,7 +828,11 @@
      "sumber_id": "ruen",
      "halaman": "Tabel 37 (PLTA per wilayah) hlm 69",
      "catatan": "RUEN hanya memberi total kelompok Sumatera Barat, Riau (3607 MW); tidak dipisah per provinsi",
-     "kelompok_mw": 3607
+     "kelompok_mw": 3607,
+     "kelompok": [
+      "Sumatera Barat",
+      "Riau"
+     ]
     },
     "panas_bumi": {
      "mw": 1648,
@@ -1027,7 +1031,11 @@
      "sumber_id": "ruen",
      "halaman": "Tabel 37 (PLTA per wilayah) hlm 69",
      "catatan": "RUEN hanya memberi total kelompok Sumatera Barat, Riau (3607 MW); tidak dipisah per provinsi",
-     "kelompok_mw": 3607
+     "kelompok_mw": 3607,
+     "kelompok": [
+      "Sumatera Barat",
+      "Riau"
+     ]
     },
     "panas_bumi": {
      "mw": 45,
@@ -1219,7 +1227,13 @@
      "sumber_id": "ruen",
      "halaman": "Tabel 37 (PLTA per wilayah) hlm 69",
      "catatan": "RUEN hanya memberi total kelompok Sumatera Selatan, Bengkulu, Jambi, Lampung (3102 MW); tidak dipisah per provinsi",
-     "kelompok_mw": 3102
+     "kelompok_mw": 3102,
+     "kelompok": [
+      "Sumatera Selatan",
+      "Bengkulu",
+      "Jambi",
+      "Lampung"
+     ]
     },
     "panas_bumi": {
      "mw": 779,
@@ -1411,7 +1425,13 @@
      "sumber_id": "ruen",
      "halaman": "Tabel 37 (PLTA per wilayah) hlm 69",
      "catatan": "RUEN hanya memberi total kelompok Sumatera Selatan, Bengkulu, Jambi, Lampung (3102 MW); tidak dipisah per provinsi",
-     "kelompok_mw": 3102
+     "kelompok_mw": 3102,
+     "kelompok": [
+      "Sumatera Selatan",
+      "Bengkulu",
+      "Jambi",
+      "Lampung"
+     ]
     },
     "panas_bumi": {
      "mw": 1450,
@@ -1603,7 +1623,13 @@
      "sumber_id": "ruen",
      "halaman": "Tabel 37 (PLTA per wilayah) hlm 69",
      "catatan": "RUEN hanya memberi total kelompok Sumatera Selatan, Bengkulu, Jambi, Lampung (3102 MW); tidak dipisah per provinsi",
-     "kelompok_mw": 3102
+     "kelompok_mw": 3102,
+     "kelompok": [
+      "Sumatera Selatan",
+      "Bengkulu",
+      "Jambi",
+      "Lampung"
+     ]
     },
     "panas_bumi": {
      "mw": 838,
@@ -1802,7 +1828,13 @@
      "sumber_id": "ruen",
      "halaman": "Tabel 37 (PLTA per wilayah) hlm 69",
      "catatan": "RUEN hanya memberi total kelompok Sumatera Selatan, Bengkulu, Jambi, Lampung (3102 MW); tidak dipisah per provinsi",
-     "kelompok_mw": 3102
+     "kelompok_mw": 3102,
+     "kelompok": [
+      "Sumatera Selatan",
+      "Bengkulu",
+      "Jambi",
+      "Lampung"
+     ]
     },
     "laut": {
      "mw": null,
@@ -1810,7 +1842,11 @@
      "sumber_id": "ruen",
      "halaman": "Tabel 48 (praktis; teknis dan teoritis ikut) hlm 82",
      "catatan": "RUEN hanya memberi total kelompok Jawa Barat, Lampung (2273 MW); tidak dipisah per provinsi",
-     "kelompok_mw": 2273
+     "kelompok_mw": 2273,
+     "kelompok": [
+      "Jawa Barat",
+      "Lampung"
+     ]
     },
     "panas_bumi": {
      "mw": 1732,
@@ -2609,7 +2645,11 @@
      "sumber_id": "ruen",
      "halaman": "Tabel 48 (praktis; teknis dan teoritis ikut) hlm 82",
      "catatan": "RUEN hanya memberi total kelompok Jawa Barat, Lampung (2273 MW); tidak dipisah per provinsi",
-     "kelompok_mw": 2273
+     "kelompok_mw": 2273,
+     "kelompok": [
+      "Jawa Barat",
+      "Lampung"
+     ]
     },
     "panas_bumi": {
      "mw": 4420,
@@ -3590,7 +3630,12 @@
      "sumber_id": "ruen",
      "halaman": "Tabel 37 (PLTA per wilayah) hlm 69",
      "catatan": "RUEN hanya memberi total kelompok Bali, Nusa Tenggara Barat, Nusa Tenggara Timur (624 MW); tidak dipisah per provinsi",
-     "kelompok_mw": 624
+     "kelompok_mw": 624,
+     "kelompok": [
+      "Bali",
+      "Nusa Tenggara Barat",
+      "Nusa Tenggara Timur"
+     ]
     },
     "laut": {
      "mw": 320,
@@ -3791,7 +3836,12 @@
      "sumber_id": "ruen",
      "halaman": "Tabel 37 (PLTA per wilayah) hlm 69",
      "catatan": "RUEN hanya memberi total kelompok Bali, Nusa Tenggara Barat, Nusa Tenggara Timur (624 MW); tidak dipisah per provinsi",
-     "kelompok_mw": 624
+     "kelompok_mw": 624,
+     "kelompok": [
+      "Bali",
+      "Nusa Tenggara Barat",
+      "Nusa Tenggara Timur"
+     ]
     },
     "laut": {
      "mw": 8644,
@@ -3992,7 +4042,12 @@
      "sumber_id": "ruen",
      "halaman": "Tabel 37 (PLTA per wilayah) hlm 69",
      "catatan": "RUEN hanya memberi total kelompok Bali, Nusa Tenggara Barat, Nusa Tenggara Timur (624 MW); tidak dipisah per provinsi",
-     "kelompok_mw": 624
+     "kelompok_mw": 624,
+     "kelompok": [
+      "Bali",
+      "Nusa Tenggara Barat",
+      "Nusa Tenggara Timur"
+     ]
     },
     "laut": {
      "mw": 333,
@@ -4397,7 +4452,12 @@
      "sumber_id": "ruen",
      "halaman": "Tabel 37 (PLTA per wilayah) hlm 69",
      "catatan": "RUEN hanya memberi total kelompok Kalimantan Selatan, Kalimantan Tengah, Kalimantan Timur (16844 MW); tidak dipisah per provinsi",
-     "kelompok_mw": 16844
+     "kelompok_mw": 16844,
+     "kelompok": [
+      "Kalimantan Selatan",
+      "Kalimantan Tengah",
+      "Kalimantan Timur"
+     ]
     },
     "panas_bumi": {
      "mw": 0,
@@ -4589,7 +4649,12 @@
      "sumber_id": "ruen",
      "halaman": "Tabel 37 (PLTA per wilayah) hlm 69",
      "catatan": "RUEN hanya memberi total kelompok Kalimantan Selatan, Kalimantan Tengah, Kalimantan Timur (16844 MW); tidak dipisah per provinsi",
-     "kelompok_mw": 16844
+     "kelompok_mw": 16844,
+     "kelompok": [
+      "Kalimantan Selatan",
+      "Kalimantan Tengah",
+      "Kalimantan Timur"
+     ]
     },
     "panas_bumi": {
      "mw": 50,
@@ -4783,7 +4848,12 @@
      "sumber_id": "ruen",
      "halaman": "Tabel 37 (PLTA per wilayah) hlm 69",
      "catatan": "RUEN hanya memberi total kelompok Kalimantan Selatan, Kalimantan Tengah, Kalimantan Timur (16844 MW); tidak dipisah per provinsi",
-     "kelompok_mw": 16844
+     "kelompok_mw": 16844,
+     "kelompok": [
+      "Kalimantan Selatan",
+      "Kalimantan Tengah",
+      "Kalimantan Timur"
+     ]
     },
     "panas_bumi": {
      "mw": 32,
@@ -5167,7 +5237,11 @@
      "sumber_id": "ruen",
      "halaman": "Tabel 37 (PLTA per wilayah) hlm 69",
      "catatan": "RUEN hanya memberi total kelompok Sulawesi Utara, Sulawesi Tengah (3967 MW); tidak dipisah per provinsi",
-     "kelompok_mw": 3967
+     "kelompok_mw": 3967,
+     "kelompok": [
+      "Sulawesi Utara",
+      "Sulawesi Tengah"
+     ]
     },
     "panas_bumi": {
      "mw": 939,
@@ -5366,7 +5440,11 @@
      "sumber_id": "ruen",
      "halaman": "Tabel 37 (PLTA per wilayah) hlm 69",
      "catatan": "RUEN hanya memberi total kelompok Sulawesi Utara, Sulawesi Tengah (3967 MW); tidak dipisah per provinsi",
-     "kelompok_mw": 3967
+     "kelompok_mw": 3967,
+     "kelompok": [
+      "Sulawesi Utara",
+      "Sulawesi Tengah"
+     ]
     },
     "panas_bumi": {
      "mw": 688,
@@ -5572,7 +5650,11 @@
      "sumber_id": "ruen",
      "halaman": "Tabel 37 (PLTA per wilayah) hlm 69",
      "catatan": "RUEN hanya memberi total kelompok Sulawesi Selatan, Sulawesi Tenggara (6340 MW); tidak dipisah per provinsi",
-     "kelompok_mw": 6340
+     "kelompok_mw": 6340,
+     "kelompok": [
+      "Sulawesi Selatan",
+      "Sulawesi Tenggara"
+     ]
     },
     "panas_bumi": {
      "mw": 525,
@@ -5771,7 +5853,11 @@
      "sumber_id": "ruen",
      "halaman": "Tabel 37 (PLTA per wilayah) hlm 69",
      "catatan": "RUEN hanya memberi total kelompok Sulawesi Selatan, Sulawesi Tenggara (6340 MW); tidak dipisah per provinsi",
-     "kelompok_mw": 6340
+     "kelompok_mw": 6340,
+     "kelompok": [
+      "Sulawesi Selatan",
+      "Sulawesi Tenggara"
+     ]
     },
     "panas_bumi": {
      "mw": 316,
@@ -6771,44 +6857,44 @@
    "nama": "Papua",
    "potensi": {
     "surya": {
-     "mw": null,
+     "mw": 2035,
      "tahun": 2015,
      "sumber_id": "ruen",
+     "pra_pemekaran": true,
      "halaman": "Tabel 44 hlm 77",
-     "catatan": "RUEN 2015 mencatat 2035 MW untuk provinsi induk \"Papua\" sebelum pemekaran; tidak dibagi ke provinsi baru",
-     "induk_mw": 2035
+     "catatan": "data 2015, sebelum pemekaran: RUEN mencatat 2035 MW untuk \"Papua\" (induk); tidak dibagi ke provinsi pemekaran"
     },
     "bayu": {
-     "mw": null,
+     "mw": 1411,
      "tahun": 2015,
      "sumber_id": "ruen",
+     "pra_pemekaran": true,
      "halaman": "Tabel 46 hlm 80",
-     "catatan": "RUEN 2015 mencatat 1411 MW untuk provinsi induk \"Papua\" sebelum pemekaran; tidak dibagi ke provinsi baru",
-     "induk_mw": 1411
+     "catatan": "data 2015, sebelum pemekaran: RUEN mencatat 1411 MW untuk \"Papua\" (induk); tidak dibagi ke provinsi pemekaran"
     },
     "mikrohidro": {
-     "mw": null,
+     "mw": 615,
      "tahun": 2015,
      "sumber_id": "ruen",
+     "pra_pemekaran": true,
      "halaman": "Tabel 40 (minihidro + mikrohidro) hlm 72",
-     "catatan": "RUEN 2015 mencatat 615 MW untuk provinsi induk \"Papua\" sebelum pemekaran; tidak dibagi ke provinsi baru",
-     "induk_mw": 615
+     "catatan": "data 2015, sebelum pemekaran: RUEN mencatat 615 MW untuk \"Papua\" (induk); tidak dibagi ke provinsi pemekaran"
     },
     "bioenergi": {
-     "mw": null,
+     "mw": 96.5,
      "tahun": 2015,
      "sumber_id": "ruen",
+     "pra_pemekaran": true,
      "halaman": "Tabel 42 (biomassa/biofuel + biogas) hlm 74",
-     "catatan": "RUEN 2015 mencatat 96.5 MW untuk provinsi induk \"Papua\" sebelum pemekaran; tidak dibagi ke provinsi baru",
-     "induk_mw": 96.5
+     "catatan": "data 2015, sebelum pemekaran: RUEN mencatat 96.5 MW untuk \"Papua\" (induk); tidak dibagi ke provinsi pemekaran"
     },
     "hidro": {
-     "mw": null,
+     "mw": 22371,
      "tahun": 2015,
      "sumber_id": "ruen",
+     "pra_pemekaran": true,
      "halaman": "Tabel 37 (PLTA per wilayah) hlm 69",
-     "catatan": "RUEN 2015 mencatat 22371 MW untuk provinsi induk \"Papua\" sebelum pemekaran; tidak dibagi ke provinsi baru",
-     "induk_mw": 22371
+     "catatan": "data 2015, sebelum pemekaran: RUEN mencatat 22371 MW untuk \"Papua\" (induk); tidak dibagi ke provinsi pemekaran"
     },
     "panas_bumi": {
      "mw": 0,
@@ -6869,9 +6955,9 @@
    },
    "rasio_pemanfaatan": {
     "hidro": {
-     "persen": null,
-     "penyebut_mw": null,
-     "catatan": "potensi per provinsi tidak tersedia"
+     "persen": 0.1,
+     "penyebut_mw": 22986,
+     "catatan": "terpasang 2025 (HEESI) / potensi 2015 (RUEN): beda tahun, indikasi saja"
     },
     "panas_bumi": {
      "persen": null,
@@ -6879,19 +6965,19 @@
      "catatan": "potensi per provinsi tidak tersedia"
     },
     "surya": {
-     "persen": null,
-     "penyebut_mw": null,
-     "catatan": "potensi per provinsi tidak tersedia"
+     "persen": 0.53,
+     "penyebut_mw": 2035,
+     "catatan": "terpasang 2025 (HEESI) / potensi 2015 (RUEN): beda tahun, indikasi saja"
     },
     "bayu": {
-     "persen": null,
-     "penyebut_mw": null,
-     "catatan": "potensi per provinsi tidak tersedia"
+     "persen": 0,
+     "penyebut_mw": 1411,
+     "catatan": "terpasang 2025 (HEESI) / potensi 2015 (RUEN): beda tahun, indikasi saja"
     },
     "bioenergi": {
-     "persen": null,
-     "penyebut_mw": null,
-     "catatan": "potensi per provinsi tidak tersedia"
+     "persen": 3.73,
+     "penyebut_mw": 96.5,
+     "catatan": "terpasang 2025 (HEESI) / potensi 2015 (RUEN): beda tahun, indikasi saja"
     }
    },
    "bpp": {
@@ -6992,44 +7078,44 @@
    "nama": "Papua Barat",
    "potensi": {
     "surya": {
-     "mw": null,
+     "mw": 6307,
      "tahun": 2015,
      "sumber_id": "ruen",
+     "pra_pemekaran": true,
      "halaman": "Tabel 44 hlm 77",
-     "catatan": "RUEN 2015 mencatat 6307 MW untuk provinsi induk \"Papua Barat\" sebelum pemekaran; tidak dibagi ke provinsi baru",
-     "induk_mw": 6307
+     "catatan": "data 2015, sebelum pemekaran: RUEN mencatat 6307 MW untuk \"Papua Barat\" (induk); tidak dibagi ke provinsi pemekaran"
     },
     "bayu": {
-     "mw": null,
+     "mw": 437,
      "tahun": 2015,
      "sumber_id": "ruen",
+     "pra_pemekaran": true,
      "halaman": "Tabel 46 hlm 80",
-     "catatan": "RUEN 2015 mencatat 437 MW untuk provinsi induk \"Papua Barat\" sebelum pemekaran; tidak dibagi ke provinsi baru",
-     "induk_mw": 437
+     "catatan": "data 2015, sebelum pemekaran: RUEN mencatat 437 MW untuk \"Papua Barat\" (induk); tidak dibagi ke provinsi pemekaran"
     },
     "mikrohidro": {
-     "mw": null,
+     "mw": 3,
      "tahun": 2015,
      "sumber_id": "ruen",
+     "pra_pemekaran": true,
      "halaman": "Tabel 40 (minihidro + mikrohidro) hlm 72",
-     "catatan": "RUEN 2015 mencatat 3 MW untuk provinsi induk \"Papua Barat\" sebelum pemekaran; tidak dibagi ke provinsi baru",
-     "induk_mw": 3
+     "catatan": "data 2015, sebelum pemekaran: RUEN mencatat 3 MW untuk \"Papua Barat\" (induk); tidak dibagi ke provinsi pemekaran"
     },
     "bioenergi": {
-     "mw": null,
+     "mw": 54.9,
      "tahun": 2015,
      "sumber_id": "ruen",
+     "pra_pemekaran": true,
      "halaman": "Tabel 42 (biomassa/biofuel + biogas) hlm 74",
-     "catatan": "RUEN 2015 mencatat 54.9 MW untuk provinsi induk \"Papua Barat\" sebelum pemekaran; tidak dibagi ke provinsi baru",
-     "induk_mw": 54.9
+     "catatan": "data 2015, sebelum pemekaran: RUEN mencatat 54.9 MW untuk \"Papua Barat\" (induk); tidak dibagi ke provinsi pemekaran"
     },
     "laut": {
-     "mw": null,
+     "mw": 391,
      "tahun": 2015,
      "sumber_id": "ruen",
+     "pra_pemekaran": true,
      "halaman": "Tabel 48 (praktis; teknis dan teoritis ikut) hlm 82",
-     "catatan": "RUEN 2015 mencatat 391 MW untuk provinsi induk \"Papua Barat\" sebelum pemekaran; tidak dibagi ke provinsi baru",
-     "induk_mw": 391
+     "catatan": "data 2015, sebelum pemekaran: RUEN mencatat 391 MW untuk \"Papua Barat\" (induk); tidak dibagi ke provinsi pemekaran"
     },
     "panas_bumi": {
      "mw": 50,
@@ -7100,19 +7186,19 @@
      "catatan": "terpasang 2025 / potensi 2025 (HEESI)"
     },
     "surya": {
-     "persen": null,
-     "penyebut_mw": null,
-     "catatan": "potensi per provinsi tidak tersedia"
+     "persen": 0.2,
+     "penyebut_mw": 6307,
+     "catatan": "terpasang 2025 (HEESI) / potensi 2015 (RUEN): beda tahun, indikasi saja"
     },
     "bayu": {
-     "persen": null,
-     "penyebut_mw": null,
-     "catatan": "potensi per provinsi tidak tersedia"
+     "persen": 0,
+     "penyebut_mw": 437,
+     "catatan": "terpasang 2025 (HEESI) / potensi 2015 (RUEN): beda tahun, indikasi saja"
     },
     "bioenergi": {
-     "persen": null,
-     "penyebut_mw": null,
-     "catatan": "potensi per provinsi tidak tersedia"
+     "persen": 1,
+     "penyebut_mw": 54.9,
+     "catatan": "terpasang 2025 (HEESI) / potensi 2015 (RUEN): beda tahun, indikasi saja"
     }
    },
    "bpp": {
@@ -7218,7 +7304,8 @@
      "sumber_id": "ruen",
      "halaman": "Tabel 44 hlm 77",
      "catatan": "RUEN 2015 mencatat 2035 MW untuk provinsi induk \"Papua\" sebelum pemekaran; tidak dibagi ke provinsi baru",
-     "induk_mw": 2035
+     "induk_mw": 2035,
+     "induk_kode": "91"
     },
     "bayu": {
      "mw": null,
@@ -7226,7 +7313,8 @@
      "sumber_id": "ruen",
      "halaman": "Tabel 46 hlm 80",
      "catatan": "RUEN 2015 mencatat 1411 MW untuk provinsi induk \"Papua\" sebelum pemekaran; tidak dibagi ke provinsi baru",
-     "induk_mw": 1411
+     "induk_mw": 1411,
+     "induk_kode": "91"
     },
     "mikrohidro": {
      "mw": null,
@@ -7234,7 +7322,8 @@
      "sumber_id": "ruen",
      "halaman": "Tabel 40 (minihidro + mikrohidro) hlm 72",
      "catatan": "RUEN 2015 mencatat 615 MW untuk provinsi induk \"Papua\" sebelum pemekaran; tidak dibagi ke provinsi baru",
-     "induk_mw": 615
+     "induk_mw": 615,
+     "induk_kode": "91"
     },
     "bioenergi": {
      "mw": null,
@@ -7242,7 +7331,8 @@
      "sumber_id": "ruen",
      "halaman": "Tabel 42 (biomassa/biofuel + biogas) hlm 74",
      "catatan": "RUEN 2015 mencatat 96.5 MW untuk provinsi induk \"Papua\" sebelum pemekaran; tidak dibagi ke provinsi baru",
-     "induk_mw": 96.5
+     "induk_mw": 96.5,
+     "induk_kode": "91"
     },
     "hidro": {
      "mw": null,
@@ -7250,7 +7340,8 @@
      "sumber_id": "ruen",
      "halaman": "Tabel 37 (PLTA per wilayah) hlm 69",
      "catatan": "RUEN 2015 mencatat 22371 MW untuk provinsi induk \"Papua\" sebelum pemekaran; tidak dibagi ke provinsi baru",
-     "induk_mw": 22371
+     "induk_mw": 22371,
+     "induk_kode": "91"
     },
     "panas_bumi": {
      "mw": 0,
@@ -7425,7 +7516,8 @@
      "sumber_id": "ruen",
      "halaman": "Tabel 44 hlm 77",
      "catatan": "RUEN 2015 mencatat 2035 MW untuk provinsi induk \"Papua\" sebelum pemekaran; tidak dibagi ke provinsi baru",
-     "induk_mw": 2035
+     "induk_mw": 2035,
+     "induk_kode": "91"
     },
     "bayu": {
      "mw": null,
@@ -7433,7 +7525,8 @@
      "sumber_id": "ruen",
      "halaman": "Tabel 46 hlm 80",
      "catatan": "RUEN 2015 mencatat 1411 MW untuk provinsi induk \"Papua\" sebelum pemekaran; tidak dibagi ke provinsi baru",
-     "induk_mw": 1411
+     "induk_mw": 1411,
+     "induk_kode": "91"
     },
     "mikrohidro": {
      "mw": null,
@@ -7441,7 +7534,8 @@
      "sumber_id": "ruen",
      "halaman": "Tabel 40 (minihidro + mikrohidro) hlm 72",
      "catatan": "RUEN 2015 mencatat 615 MW untuk provinsi induk \"Papua\" sebelum pemekaran; tidak dibagi ke provinsi baru",
-     "induk_mw": 615
+     "induk_mw": 615,
+     "induk_kode": "91"
     },
     "bioenergi": {
      "mw": null,
@@ -7449,7 +7543,8 @@
      "sumber_id": "ruen",
      "halaman": "Tabel 42 (biomassa/biofuel + biogas) hlm 74",
      "catatan": "RUEN 2015 mencatat 96.5 MW untuk provinsi induk \"Papua\" sebelum pemekaran; tidak dibagi ke provinsi baru",
-     "induk_mw": 96.5
+     "induk_mw": 96.5,
+     "induk_kode": "91"
     },
     "hidro": {
      "mw": null,
@@ -7457,7 +7552,8 @@
      "sumber_id": "ruen",
      "halaman": "Tabel 37 (PLTA per wilayah) hlm 69",
      "catatan": "RUEN 2015 mencatat 22371 MW untuk provinsi induk \"Papua\" sebelum pemekaran; tidak dibagi ke provinsi baru",
-     "induk_mw": 22371
+     "induk_mw": 22371,
+     "induk_kode": "91"
     },
     "panas_bumi": {
      "mw": 0,
@@ -7632,7 +7728,8 @@
      "sumber_id": "ruen",
      "halaman": "Tabel 44 hlm 77",
      "catatan": "RUEN 2015 mencatat 2035 MW untuk provinsi induk \"Papua\" sebelum pemekaran; tidak dibagi ke provinsi baru",
-     "induk_mw": 2035
+     "induk_mw": 2035,
+     "induk_kode": "91"
     },
     "bayu": {
      "mw": null,
@@ -7640,7 +7737,8 @@
      "sumber_id": "ruen",
      "halaman": "Tabel 46 hlm 80",
      "catatan": "RUEN 2015 mencatat 1411 MW untuk provinsi induk \"Papua\" sebelum pemekaran; tidak dibagi ke provinsi baru",
-     "induk_mw": 1411
+     "induk_mw": 1411,
+     "induk_kode": "91"
     },
     "mikrohidro": {
      "mw": null,
@@ -7648,7 +7746,8 @@
      "sumber_id": "ruen",
      "halaman": "Tabel 40 (minihidro + mikrohidro) hlm 72",
      "catatan": "RUEN 2015 mencatat 615 MW untuk provinsi induk \"Papua\" sebelum pemekaran; tidak dibagi ke provinsi baru",
-     "induk_mw": 615
+     "induk_mw": 615,
+     "induk_kode": "91"
     },
     "bioenergi": {
      "mw": null,
@@ -7656,7 +7755,8 @@
      "sumber_id": "ruen",
      "halaman": "Tabel 42 (biomassa/biofuel + biogas) hlm 74",
      "catatan": "RUEN 2015 mencatat 96.5 MW untuk provinsi induk \"Papua\" sebelum pemekaran; tidak dibagi ke provinsi baru",
-     "induk_mw": 96.5
+     "induk_mw": 96.5,
+     "induk_kode": "91"
     },
     "hidro": {
      "mw": null,
@@ -7664,7 +7764,8 @@
      "sumber_id": "ruen",
      "halaman": "Tabel 37 (PLTA per wilayah) hlm 69",
      "catatan": "RUEN 2015 mencatat 22371 MW untuk provinsi induk \"Papua\" sebelum pemekaran; tidak dibagi ke provinsi baru",
-     "induk_mw": 22371
+     "induk_mw": 22371,
+     "induk_kode": "91"
     },
     "panas_bumi": {
      "mw": 0,
@@ -7832,7 +7933,8 @@
      "sumber_id": "ruen",
      "halaman": "Tabel 44 hlm 77",
      "catatan": "RUEN 2015 mencatat 6307 MW untuk provinsi induk \"Papua Barat\" sebelum pemekaran; tidak dibagi ke provinsi baru",
-     "induk_mw": 6307
+     "induk_mw": 6307,
+     "induk_kode": "92"
     },
     "bayu": {
      "mw": null,
@@ -7840,7 +7942,8 @@
      "sumber_id": "ruen",
      "halaman": "Tabel 46 hlm 80",
      "catatan": "RUEN 2015 mencatat 437 MW untuk provinsi induk \"Papua Barat\" sebelum pemekaran; tidak dibagi ke provinsi baru",
-     "induk_mw": 437
+     "induk_mw": 437,
+     "induk_kode": "92"
     },
     "mikrohidro": {
      "mw": null,
@@ -7848,7 +7951,8 @@
      "sumber_id": "ruen",
      "halaman": "Tabel 40 (minihidro + mikrohidro) hlm 72",
      "catatan": "RUEN 2015 mencatat 3 MW untuk provinsi induk \"Papua Barat\" sebelum pemekaran; tidak dibagi ke provinsi baru",
-     "induk_mw": 3
+     "induk_mw": 3,
+     "induk_kode": "92"
     },
     "bioenergi": {
      "mw": null,
@@ -7856,7 +7960,8 @@
      "sumber_id": "ruen",
      "halaman": "Tabel 42 (biomassa/biofuel + biogas) hlm 74",
      "catatan": "RUEN 2015 mencatat 54.9 MW untuk provinsi induk \"Papua Barat\" sebelum pemekaran; tidak dibagi ke provinsi baru",
-     "induk_mw": 54.9
+     "induk_mw": 54.9,
+     "induk_kode": "92"
     },
     "laut": {
      "mw": null,
@@ -7864,7 +7969,8 @@
      "sumber_id": "ruen",
      "halaman": "Tabel 48 (praktis; teknis dan teoritis ikut) hlm 82",
      "catatan": "RUEN 2015 mencatat 391 MW untuk provinsi induk \"Papua Barat\" sebelum pemekaran; tidak dibagi ke provinsi baru",
-     "induk_mw": 391
+     "induk_mw": 391,
+     "induk_kode": "92"
     },
     "panas_bumi": {
      "mw": 50,

@@ -251,3 +251,7 @@ Diambil oleh scripts/panen/panen_logo.mjs (UA METI, robots.txt dihormati, jeda >
 - tk_9421b538 | PT Baskara Prima Sarana | apple-touch-icon | https://www.baskara.co.id/wp-content/uploads/2025/04/cropped-cropped-Icon-Primary-1-192x192.png
 - tk_c71f99ab | PT Tirta Surya Cipta | apple-touch-icon | https://www.tirtasuryacipta.com/icon.png?icon.4ad45629.png
 - tk_d1dcaf67 | PT Jetspeed Mandiri Indonesia | apple-touch-icon | https://www.jetspeed.id/wp-content/uploads/2023/07/WhatsApp-Image-2025-01-23-at-11.32.58-AM.jpeg
+| org/l_09a0eabcbd.png | https://www.ipb.ac.id/wp-content/uploads/2023/03/cropped-logo_ipb_80-192x192.png |
+| org/l_60d0957891.png | https://undip.ac.id/wp-content/uploads/2025/03/Undip-Logo.png |
+| org/l_e85c3f1dde.png | https://www.its.ac.id/wp-content/uploads/2026/01/LOGO-ITS.png (lambang saja, dipotong) |
+| org/l_e006174e5f.png | https://www.pens.ac.id/wp-content/uploads/2018/02/logo1_1-108854_74x74.png |

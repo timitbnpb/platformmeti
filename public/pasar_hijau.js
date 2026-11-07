@@ -1,14 +1,19 @@
 /* /pasar-listrik-hijau: pembangkit swasta (IPP) dari GPPD, proyek METI per wilayah; REC, green tariff, dan RE100 ditandai belum tersedia. Informasi saja. Data statis /data/pasar_hijau.json. */
 import { mulaiHalaman } from "/inti/kepala.js";
-import { nanti, esc, hantuHtml, debounce } from "/inti/umum.js";
-import { t } from "/i18n.js";
+import { nanti, esc, ikon, hantuHtml, debounce } from "/inti/umum.js";
+import { t, tanggal } from "/i18n.js";
 import { exHtml } from "/inti/komponen.js";
 import { aksiHtml, hlHtml } from "/inti/aksi_ex.js";
 import { muatData, tampilGalat, sumberLipat, ubinHtml, pil, num, saatBahasa } from "/analisis.js";
+import { muatKomitmen, statusKm, tahunKm, sektorKm, pilStatusKm, cocokOrg } from "/peristiwa_komitmen.js";
+import { logoOrgSatu } from "/inti/logo_org.js";
+import { namaBaku } from "/inti/nama_baku.js";
 import { batangSvg, legendaHtml, detailHtml, pasangDetail, tabel, celahHtml, n1 } from "/info_hijau.js";
 
 const $ = (id) => document.getElementById(id);
-let d = null;
+let d = null, km = null, orgs = [];
+const ini = (n) => String(n || "?").split(/\s+/).slice(0, 2).map((w) => w[0] || "").join("").toUpperCase();
+const namaKm = (n) => namaBaku(String(n).replace(/,\s*TBK\.?$/i, " Tbk").replace(/^PT\.?\s+/i, "").replace(/,\s*PT$/i, "")).nama;
 const src = (...id) => sumberLipat(id.map((i) => { const s = d.sumber.find((x) => x.id === i); return { sumber: s.penerbit, halaman: s.judul, url: s.url, tanggal: d.dibangun_pada }; }));
 const GRUP = { pln: "ih-fosil", "swasta-atau-lain": "ih-ebt" };
 const jml = (g) => d.pemilik_pembangkit.filter((p) => p.grup === g).reduce((a, p) => a + p.kapasitas_mw, 0);
@@ -34,12 +39,15 @@ function rangka() {
       isiHtml: `${legendaHtml([{ kelas: GRUP["swasta-atau-lain"], label: t("pm.grup.swasta-atau-lain") }, { kelas: GRUP.pln, label: t("pm.grup.pln") }])}<div id="g-ipp" class="ih-bagan"></div>${detailHtml()}<div id="tb-ipp" class="ih-tabel"></div><p class="jm-bantu ih-catatan">${esc(t("pm.n.ipp"))}</p>${src("gppd")}` }),
     ex({ id: "wilayah", ikon: "peta", topik: t("pm.ey.wilayah"), judulHtml: hlHtml("pm.t.wilayah", `${num(top.mw, 0)} MW`, { prov: top.provinsi, n: w.length }), subHtml: esc(t("pm.s.wilayah")), csv: true,
       isiHtml: `${legendaHtml([{ kelas: "ih-ebt", label: t("pm.st.beroperasi") }, { kelas: "ih-s1", label: t("pm.st.konstruksi") }, { kelas: "ih-netral", label: t("pm.st.rencana") }])}<div id="g-wilayah" class="ih-bagan"></div>${detailHtml()}<div id="tb-wilayah" class="ih-tabel"></div><p class="jm-bantu ih-catatan">${esc(t("pm.n.wilayah"))}</p>${src("proyek")}` }),
+    km && ex({ id: "komitmen", ikon: "perisai", topik: t("km.ey"), judulHtml: hlHtml("km.judul", String(km.baris.length), { n: km.meta.sbti, r: km.meta.re100 }), subHtml: esc(t("km.sub")), csv: true,
+      isiHtml: `<div id="tb-komitmen" class="ih-tabel"></div><p class="jm-bantu ih-catatan">${esc(t("km.catatan", { tgl: tanggal(km.dibangun_pada) }))}</p>${sumberLipat(km.sumber.map((s) => ({ sumber: s.penerbit, halaman: s.judul, url: s.url, tahun: s.tahun, tanggal: km.dibangun_pada })))}` }),
     ex({ id: "celah", ikon: "unduh", topik: t("pm.ey.celah"), judulHtml: hlHtml("pm.t.celah", String(d.celah.length)), subHtml: esc(t("pm.s.celah")), isiHtml: celahHtml(d.celah, "pm.celah") }),
-  ].join("");
+  ].filter(Boolean).join("");
   tabelTabel();
 }
 
 function tabelTabel() {
+  tabelKomitmen();
   tabel($("tb-ipp"), { satuan: "ih.u.pemilik", per: 10, urutAwal: 3, kolom: [
     { label: t("pm.c.pemilik"), v: (r) => r.pemilik, f: (r) => esc(r.pemilik === "tanpa-nama" ? t("pm.tanpa_nama") : r.pemilik) },
     { label: `${t("pm.c.grup")} ${t("an.est")}`, v: (r) => r.grup, f: (r) => esc(t("pm.grup." + r.grup)) },
@@ -57,6 +65,19 @@ function tabelTabel() {
   ], baris: d.proyek_wilayah });
 }
 
+function tabelKomitmen() {
+  if (!km || !$("tb-komitmen")) return;
+  const kenal = (r) => cocokOrg(r.nama, orgs);
+  tabel($("tb-komitmen"), { satuan: "km.satuan", per: 10, urutAwal: 4, kolom: [
+    { label: t("km.c.perusahaan"), v: (r) => namaKm(r.nama), f: (r) => { const o = kenal(r), u = logoOrgSatu(o?.id, o?.nama || r.nama, o?.logo), n = esc(namaKm(r.nama)), lg = `<span class="km-lg">${u ? `<img src="${esc(u)}" alt="" loading="lazy" decoding="async" data-ini="${esc(ini(namaKm(r.nama)))}">` : esc(ini(namaKm(r.nama)))}</span>`; return `<span class="km-nama">${lg}${o ? `<a href="/o/${esc(o.id)}" title="${esc(t("km.ke_o"))}">${n}</a>` : `<b>${n}</b>`}</span>`; } },
+    { label: t("km.c.sektor"), v: (r) => sektorKm(r.sektor), f: (r) => esc(sektorKm(r.sektor)) },
+    { label: t("km.c.jenis"), v: (r) => r.registri, f: (r) => `<span class="km-jenis"><span class="jm-pil">${esc(r.registri)}</span>${r.klasifikasi_jangka_pendek ? `<span class="jm-pil">${esc(r.klasifikasi_jangka_pendek)}</span>` : ""}${r.status_net_zero === "Validated Targets" ? `<span class="jm-pil jm-pil-ok">${esc(t("km.netzero"))}</span>` : ""}${r.registri === "RE100" ? `<span class="jm-pil">${esc(t("km.re100_ket"))}</span>` : ""}</span>` },
+    { label: t("km.c.tahun"), num: true, v: (r) => tahunKm(r), f: (r) => (tahunKm(r) ? esc(String(tahunKm(r))) : "-") },
+    { label: t("km.c.status"), v: (r) => statusKm(r), f: (r) => pilStatusKm(r) },
+    { label: t("km.c.sumber"), v: (r) => r.diperbarui_sumber || r.tanggal_periksa, f: (r) => `<a class="km-src" href="${esc(r.sumber_url)}" target="_blank" rel="noopener noreferrer" title="${esc(t("km.sumber_tip", { tgl: tanggal(r.diperbarui_sumber || r.tanggal_periksa) }))}">${ikon("tautan", 14)}<span>${esc(r.registri)}</span></a>` },
+  ], baris: km.baris });
+}
+
 function bagan() {
   const top = d.pemilik_pembangkit.slice(0, 12), nama = (p) => (p.pemilik === "tanpa-nama" ? t("pm.tanpa_nama") : p.pemilik);
   $("g-ipp").innerHTML = batangSvg({ el: $("g-ipp"), d: 0, label: t("pm.s.ipp"), satuan: "MW", seri: [{ k: "swasta-atau-lain", kelas: GRUP["swasta-atau-lain"] }, { k: "pln", kelas: GRUP.pln }],
@@ -70,10 +91,12 @@ async function mulai() {
   await mulaiHalaman();
   $("isi").innerHTML = hantuHtml(3);
   try { d = await muatData("pasar_hijau.json"); } catch (e) { tampilGalat($("isi"), mulai); return; }
+  [km, orgs] = await Promise.all([muatKomitmen(), muatData("organisasi.json").then((o) => o.baris).catch(() => [])]);
   const gambar = () => { ubin(); rangka(); bagan(); };
   gambar();
   saatBahasa(gambar);
   pasangDetail($("isi"));
+  $("isi").addEventListener("error", (e) => { const im = e.target; if (im.tagName === "IMG" && im.dataset.ini !== undefined && im.closest(".km-lg")) im.replaceWith(document.createTextNode(im.dataset.ini)); }, true);
   let w = innerWidth;
   addEventListener("resize", debounce(() => { if (Math.abs(innerWidth - w) > 20) { w = innerWidth; nanti(bagan); } }, 200));
 }

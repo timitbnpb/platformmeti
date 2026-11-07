@@ -1,0 +1,89 @@
+{
+ "sumber": "AIIB, daftar proyek publik",
+ "sumber_url": "https://www.aiib.org/en/projects/list/index.html",
+ "diambil": "2026-11-08",
+ "jumlah_dunia": 501,
+ "jumlah_indonesia": 33,
+ "baris": [
+  {
+   "id": "aiib_proyek-hijaunesia-staple-financing-banyuwangi-100-mw-solar-pv-project",
+   "nama": "Proyek Hijaunesia Staple Financing – Banyuwangi 100 MW Solar PV Project",
+   "sektor": "Energy",
+   "status": "diusulkan",
+   "nilai_usd": 21000000,
+   "nilai_asli": "USD21 million",
+   "sumber_url": "https://www.aiib.org/en/projects/details/2025/proposed/indonesia-proyek-hijaunesia-staple-financing-banyuwangi-100-mw-solar-pv-project.html",
+   "tanggal_periksa": "2026-11-08",
+   "tingkat_bukti": "resmi"
+  },
+  {
+   "id": "aiib_proyek-hijaunesia-staple-financing-gajahmungkur-100-mw-floating-solar-",
+   "nama": "Proyek Hijaunesia Staple Financing – Gajahmungkur 100 MW Floating Solar PV Project",
+   "sektor": "Energy",
+   "status": "diusulkan",
+   "nilai_usd": 21000000,
+   "nilai_asli": "USD21 million",
+   "sumber_url": "https://www.aiib.org/en/projects/details/2025/proposed/indonesia-proyek-hijaunesia-staple-financing-gajahmungkur-100-mw-floating-solar-pv-project.html",
+   "tanggal_periksa": "2026-11-08",
+   "tingkat_bukti": "resmi"
+  },
+  {
+   "id": "aiib_affordable-and-sustainable-energy-transition-program-subprogram-2",
+   "nama": "Affordable and Sustainable Energy Transition Program, Subprogram 2",
+   "sektor": "Energy",
+   "status": "diusulkan",
+   "nilai_usd": 150000000,
+   "nilai_asli": "USD150 million",
+   "sumber_url": "https://www.aiib.org/en/projects/details/2026/proposed/indonesia-affordable-and-sustainable-energy-transition-program-subprogram-2.html",
+   "tanggal_periksa": "2026-11-08",
+   "tingkat_bukti": "resmi"
+  },
+  {
+   "id": "aiib_pln-east-java-bali-power-distribution-strengthening-project",
+   "nama": "PLN East Java & Bali Power Distribution Strengthening Project",
+   "sektor": "Energy",
+   "status": "disetujui",
+   "tahun": 2021,
+   "nilai_usd": 310000000,
+   "nilai_asli": "USD310 million",
+   "sumber_url": "https://www.aiib.org/en/projects/details/2021/approved/Indonesia-PLN-East-Java-Bali-Power-Distribution-Strengthening-Project.html",
+   "tanggal_periksa": "2026-11-08",
+   "tingkat_bukti": "resmi"
+  },
+  {
+   "id": "aiib_proyek-hijaunesia-staple-financing-pasuruan-100-mw-solar-pv-project",
+   "nama": "Proyek Hijaunesia Staple Financing – Pasuruan 100 MW Solar PV Project",
+   "sektor": "Energy",
+   "status": "disetujui",
+   "tahun": 2025,
+   "nilai_usd": 21000000,
+   "nilai_asli": "USD21 million",
+   "sumber_url": "https://www.aiib.org/en/projects/details/2025/approved/indonesia-proyek-hijaunesia-staple-financing-pasuruan-100-mw-solar-pv-project.html",
+   "tanggal_periksa": "2026-11-08",
+   "tingkat_bukti": "resmi"
+  },
+  {
+   "id": "aiib_strengthening-sumatra-power-distribution-results-based-project",
+   "nama": "Strengthening Sumatra Power Distribution Results-Based Project",
+   "sektor": "Energy",
+   "status": "diusulkan",
+   "nilai_usd": 500000000,
+   "nilai_asli": "USD500 million",
+   "sumber_url": "https://www.aiib.org/en/projects/details/2024/proposed/Indonesia-Strengthening-Sumatra-Power-Distribution-Results-Based-Project.html",
+   "tanggal_periksa": "2026-11-08",
+   "tingkat_bukti": "resmi"
+  },
+  {
+   "id": "aiib_development-of-pumped-storage-hydropower-in-java-bali-system-the-proje",
+   "nama": "Development of Pumped Storage Hydropower in Java Bali System (the Project)",
+   "sektor": "Energy",
+   "status": "disetujui",
+   "tahun": 2022,
+   "nilai_usd": 230000000,
+   "nilai_asli": "USD230 million",
+   "sumber_url": "https://www.aiib.org/en/projects/details/2022/approved/Indonesia-Development-of-Pumped-Storage-Hydropower-in-Java-Bali-System.html",
+   "tanggal_periksa": "2026-11-08",
+   "tingkat_bukti": "resmi"
+  }
+ ]
+}

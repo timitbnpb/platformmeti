@@ -179,3 +179,7 @@ h1,h2,h3,.jm-kh h1{letter-spacing:-.015em}
 .jm-kaki-stat li:nth-child(odd){padding-left:0;border-left:0}
 .jm-kaki-stat li:nth-child(even){border-left:1px solid color-mix(in srgb,var(--on-brand) 16%,transparent)}
 .jm-kaki-stat span{overflow:visible;text-overflow:clip;white-space:normal}
+/* ikon sosmed di samping Langganan: aturan tautan kolom kaki tidak boleh menggeser ikon dari tengah bulatan */
+.jm-kaki .jm-kaki-hub .jm-kaki-sos{display:flex;gap:10px;margin:0;flex:none}
+.jm-kaki .jm-kaki-hub .jm-kaki-sos a{display:grid!important;place-items:center;width:40px;height:40px;min-height:0;padding:0!important;gap:0;border-radius:50%;line-height:0}
+.jm-kaki .jm-kaki-hub .jm-kaki-sos a svg{display:block;width:18px;height:18px;margin:0}

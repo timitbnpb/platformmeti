@@ -231,3 +231,33 @@ a.pu-hlm{color:var(--accent)}
 a.pu-hlm:hover{background:var(--soft-hijau);border-color:var(--accent)}
 .pu-ang .pu-hlm{justify-self:start;margin-top:2px}
 @media (max-width:820px){.pu-info{grid-template-columns:repeat(2,minmax(0,1fr))}.pu-aksi{justify-content:flex-start}}
+
+/* warna per topik dan per jenis dari token --tp-* (tema.css); ikon tetap unik per jenis/topik */
+.pu-t-surya{--accent:var(--tp-surya)}.pu-t-bayu{--accent:var(--tp-bayu)}.pu-t-hidro{--accent:var(--tp-hidro)}.pu-t-panas-bumi{--accent:var(--tp-panas)}.pu-t-bioenergi{--accent:var(--tp-bio)}.pu-t-penyimpanan{--accent:var(--tp-simpan)}.pu-t-nuklir{--accent:var(--tp-nuklir)}.pu-t-hidrogen{--accent:var(--tp-hidrogen)}.pu-t-jaringan{--accent:var(--tp-jaringan)}.pu-t-kebijakan{--accent:var(--tp-kebijakan)}.pu-t-industri{--accent:var(--tp-industri)}.pu-t-pembiayaan{--accent:var(--tp-biaya)}.pu-t-transisi-adil{--accent:var(--tp-adil)}.pu-t-karbon{--accent:var(--tp-karbon)}.pu-t-efisiensi{--accent:var(--tp-efisiensi)}.pu-t-riset-data{--accent:var(--tp-listrik)}
+.pu-j-kajian{--accent:var(--tp-hidro)}.pu-j-regulasi{--accent:var(--tp-industri)}.pu-j-laporan{--accent:var(--tp-surya)}.pu-j-panduan{--accent:var(--tp-bio)}.pu-j-paparan-konferensi{--accent:var(--tp-panas)}.pu-j-surat{--accent:var(--tp-bayu)}.pu-j-notulen{--accent:var(--tp-sampah)}.pu-j-proposal{--accent:var(--tp-adil)}.pu-j-ad-art{--accent:var(--tp-karbon)}.pu-j-data{--accent:var(--tp-listrik)}
+.pu-topik,.pu-jenis{background:color-mix(in srgb,var(--accent) 16%,var(--card));color:color-mix(in srgb,var(--accent) 62%,var(--head));border:1px solid color-mix(in srgb,var(--accent) 38%,transparent)}
+.pu-pojok.pu-jenis{background:color-mix(in srgb,var(--accent) 20%,var(--card))}
+/* logo penerbit: bulat putih berbayang; monogram berwarna bila tanpa logo */
+.pu-lb{border-radius:50%;background:var(--card);flex:none}
+img.pu-lb{object-fit:contain}
+.pu-pen-baris img.pu-lb,.pu-pen img.pu-lb{box-shadow:0 0 0 1px var(--line)}
+.pu-mono{display:inline-grid;place-items:center;color:var(--on-accent);font:700 var(--t-label)/1 var(--font);letter-spacing:0;overflow:hidden}
+.pu-w0{background:var(--tp-hidro)}.pu-w1{background:var(--tp-industri)}.pu-w2{background:var(--tp-kebijakan)}.pu-w3{background:var(--tp-panas)}.pu-w4{background:var(--tp-hidrogen)}.pu-w5{background:var(--tp-adil)}
+.pu-u18{width:18px;height:18px;font-size:7px}.pu-u20{width:20px;height:20px;font-size:8px}.pu-u24{width:24px;height:24px;font-size:9px}.pu-u32{width:32px;height:32px;font-size:11px}
+.pu-lencana .pu-mono{width:32px;height:32px}
+/* kartu: baris sejajar antar kartu */
+.pu-kisi .pu-badan h3{min-height:calc(3 * 1.3em);line-height:1.3}
+.pu-kisi .pu-badan h3 button{-webkit-line-clamp:3;line-clamp:3}
+.pu-pen-baris{min-height:20px}
+.pu-kisi .pu-meta{flex-wrap:nowrap;gap:8px;min-width:0}
+.pu-kisi .pu-meta .pu-m{flex:none}
+.pu-kisi .pu-meta .pu-topik{flex:0 1 auto;min-width:0;overflow:hidden}
+.pu-kisi .pu-meta .pu-topik>span{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.pu-kisi .pu-meta .pu-n{margin-left:auto}
+.pu-kisi .pu-ring{min-height:calc(2 * var(--lh-isi) * 1em)}
+.pu-kisi .pu-kaki{margin-top:auto}
+.pu-kisi .pu-badan{padding-bottom:10px}
+/* sampul lanskap: gambar utuh (contain) di atas latar blur gambar yang sama */
+.pu-sampul:has(img.pu-lanskap){background:var(--paper)}
+.pu-blur{position:absolute;inset:-12%;width:124%!important;height:124%!important;object-fit:cover!important;filter:blur(18px) saturate(1.1);opacity:.85}
+.pu-sampul img.pu-lanskap{position:relative;z-index:1}

@@ -5,6 +5,7 @@ import { pilihHtml, exHtml, sumberHtml } from "/inti/komponen.js";
 import { tautOrg, siapTautan, rinci } from "/inti/tautan.js";
 import { tautanBagi } from "/inti/bagi.js";
 import { lokasiTeks, petaUrl, sumberDaftar, namaSumber, sumberTeks, namaPenyelenggara, gambarAcara } from "/kalender_fmt.js";
+import { fotoAcara } from "/event_umum.js";
 import { aksiHtml, hlHtml } from "/inti/aksi_ex.js";
 import { muat, label, urlAman } from "/publik.js";
 
@@ -82,7 +83,7 @@ const nmSumber = (l) => (ada("kal.sumber." + l) ? t("kal.sumber." + l) : "");
 const FMT = { nama: nmSumber, diambil: (d) => t("kal.diambil", { tanggal: tanggal(d) }) };
 const urlB = (b) => urlAman(sumberDaftar(b.sumber)[0]?.url || "");
 const mitraTeks = (b) => namaPenyelenggara(b).join(", ");
-const thumb = (b) => { const g = gambarAcara(b); return g ? `<img class="kal-thumb" src="${esc(g)}" alt="" width="64" height="64" loading="lazy" decoding="async" data-galat="hapus">` : ""; };
+const thumb = (b) => { const g = gambarAcara(b) || `/img/beranda/${fotoAcara({ judul: b.judul, judulTampil: b.judul, slug: b.id })}.webp`; return `<img class="kal-thumb" src="${esc(g)}" alt="" width="200" height="140" loading="lazy" decoding="async" data-galat="hapus">`; };
 const pilJenis = (j) => `<span class="kal-pil kal-t-${esc(j)}">${esc(label("kal.jenis.", j))}</span>`;
 
 /* ---------- kalender ---------- */
@@ -97,9 +98,8 @@ const kelasLibur = (h) => (LIBUR.has(h) ? ` ${LIBUR.get(h).jenis === "cuti_bersa
 /** Legenda kecil dan daftar "Libur bulan ini" di bawah kalender; daftar disembunyikan bila bulan itu tanpa libur. */
 function liburHtml() {
   const ada = [...LIBUR].filter(([h]) => h.startsWith(S.bulan)).sort(([a], [c]) => a.localeCompare(c));
-  const leg = `<ul class="kal-ket" aria-label="${esc(t("kal.libur.legenda"))}"><li><i class="kal-ket-akhir"></i><span>${esc(t("kal.libur.akhir"))}</span></li><li><i class="kal-ket-libur"></i><span>${esc(t("kal.libur.nasional"))}</span></li><li><i class="kal-ket-cuti"></i><span>${esc(t("kal.libur.cuti"))}</span></li></ul>`;
-  if (!ada.length) return leg;
-  return leg + `<section class="jm-kartu kal-libur-daftar" aria-labelledby="kalLiburJ"><h3 id="kalLiburJ">${ikon("kalender", 18)}<span>${esc(t("kal.libur.bulan"))}</span></h3><ul>${ada.map(([h, l]) => `<li class="${l.jenis === "cuti_bersama" ? "kal-cuti" : "kal-libur"}">${ikon(IK_LIBUR[l.jenis], 18)}<b>${esc(tanggal(h, { gaya: "panjang" }))}</b><span>${esc(l.nama)}</span><em>${esc(t("kal.libur." + (l.jenis === "cuti_bersama" ? "cuti" : "nasional")))}</em></li>`).join("")}</ul></section>`;
+  if (!ada.length) return "";
+  return `<section class="jm-kartu kal-libur-daftar" aria-labelledby="kalLiburJ"><h3 id="kalLiburJ">${ikon("kalender", 18)}<span>${esc(t("kal.libur.bulan"))}</span></h3><ul>${ada.map(([h, l]) => `<li class="${l.jenis === "cuti_bersama" ? "kal-cuti" : "kal-libur"}">${ikon(IK_LIBUR[l.jenis], 18)}<b>${esc(tanggal(h, { gaya: "panjang" }))}</b><span>${esc(l.nama)}</span><em>${esc(t("kal.libur." + (l.jenis === "cuti_bersama" ? "cuti" : "nasional")))}</em></li>`).join("")}</ul></section>`;
 }
 const kepalaHari = (kelas) => [0, 1, 2, 3, 4, 5, 6].map((i) => `<div class="${kelas}${i > 4 ? " kal-akhir" : ""}">${esc(t("kal.hari." + i))}</div>`).join("");
 
@@ -121,8 +121,8 @@ function barisHtml(b) {
   const sm = sumberTeks(b.sumber, FMT), mt = mitraTeks(b), th = thumb(b);
   return `<li><button type="button" class="kal-baris${th ? " kal-baris-g" : ""}" id="acara-${esc(b.id)}" data-acara="${esc(b.id)}">${tgl}<span class="kal-isi"><strong>${esc(b.judul)}</strong>
     ${mt ? `<span class="kal-meta">${ikon("orang", 16)}<span>${esc(mt)}</span></span>` : ""}
-    ${sm ? `<span class="kal-meta kal-sumber">${ikon("info", 16)}<span>${esc(sm)}</span></span>` : ""}</span>
-    <span class="kal-sisi">${th}${pilJenis(b.jenis)}</span></button></li>`;
+    ${pilJenis(b.jenis)}</span>
+    <span class="kal-sisi">${th}${sm ? `<span class="kal-info" title="${esc(sm)}" aria-label="${esc(sm)}" role="img">${ikon("info", 16)}</span>` : ""}</span></button></li>`;
 }
 function buktiHtml(b) {
   const x = BUKTI.get(b.id);
@@ -253,7 +253,7 @@ function bulanHtml(rows) {
 /* legenda warna jenis acara di atas kalender bulanan (pemilik 8 Nov 2026) */
 function legendaJenis() {
   const ada = new Set(D.baris.map((b) => b.jenis));
-  return `<ul class="kal-legenda" aria-label="${esc(t("kal.legenda"))}">${JENIS.filter((j) => ada.has(j)).map((j) => `<li><span class="kal-titik"><i class="kal-t-${j}"></i></span>${ikon(IKON_JENIS[j], 16)}<span>${esc(label("kal.jenis.", j))}</span></li>`).join("")}</ul>`;
+  return `<ul class="kal-legenda" aria-label="${esc(t("kal.legenda"))}">${JENIS.filter((j) => ada.has(j)).map((j) => `<li><span class="kal-titik"><i class="kal-t-${j}"></i></span>${ikon(IKON_JENIS[j], 16)}<span>${esc(label("kal.jenis.", j))}</span></li>`).join("")}<li class="kal-lg-sep" aria-hidden="true"></li><li><i class="kal-ket-akhir"></i><span>${esc(t("kal.libur.akhir"))}</span></li><li><i class="kal-ket-libur"></i><span>${esc(t("kal.libur.nasional"))}</span></li><li><i class="kal-ket-cuti"></i><span>${esc(t("kal.libur.cuti"))}</span></li></ul>`;
 }
 function gambarIsi() {
   const rows = acaraDari(D.baris.filter((b) => !S.jenis || b.jenis === S.jenis));

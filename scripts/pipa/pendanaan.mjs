@@ -38,6 +38,7 @@ export function skemaDariKurasi(r, tgl) {
   return {
     id: r.id, jenis_entri: 'skema', nama: r.nama, pemberi: r.pemberi, jenis: r.jenis, sasaran: r.sasaran, sektor: r.sektor, uraian: r.uraian, cara: r.cara,
     ...(r.nilai ? { nilai: r.nilai, mata_uang: r.mata_uang, nilai_usd: r.mata_uang === 'USD' ? r.nilai : undefined } : {}), ...(r.besaran ? { besaran: r.besaran } : {}),
+    ...(r.detail_sumber ? Object.fromEntries(['kelayakan', 'alur', 'dokumen', 'tenor', 'tiket', 'lama_proses', 'kontak_teks', 'kontak_url', 'instrumen_detail', 'detail_sumber', 'pemberi_alias'].filter((f) => r[f] != null).map((f) => [f, r[f]])) : {}),
     ...(r.iso2 ? { iso2: r.iso2 } : {}), ...(r.negara ? { negara: r.negara } : {}), status: 'berjalan', url: r.url, sumber: [{ url: r.url, tanggal: tgl }],
     sumber_url: r.url, tanggal_periksa: tgl, tingkat_bukti: 'kata-pihak', isi_status: 'sebagian',
     isi_catatan: 'Ringkasan dari pengetahuan umum tentang skema; syarat, besaran, dan tenggat terkini ada di laman resmi pemberi.',
@@ -120,6 +121,23 @@ export function jagaNilai(p) {
   return p;
 }
 const wbId = (u) => (String(u || '').match(/\/(P\d{5,7})\b/) || [])[1];
+
+export function proyekDariAiib(a) {
+  return {
+    id: 'pd_' + a.id, jenis_entri: 'proyek', nama: a.nama, pemberi: 'Asian Infrastructure Investment Bank', jenis: '', tahun: a.tahun, status: a.status === 'disetujui' ? 'disetujui' : 'persiapan', sektor: [], prov: [],
+    ...(a.nilai_usd != null ? { nilai_usd: a.nilai_usd, nilai_catatan: `${a.nilai_asli} menurut AIIB (${a.status})` } : {}),
+    url: url(a.sumber_url), sumber: [{ url: a.sumber_url, tanggal: a.tanggal_periksa }], sumber_url: a.sumber_url, tanggal_periksa: a.tanggal_periksa, tingkat_bukti: a.tingkat_bukti, asal: 'aiib',
+  };
+}
+// tautan hasil scripts/pipa/pendana_proyek.mjs: baris AIIB tanpa proyek_id dapat proyek_id; baris Bank Dunia (proyek_id wb_) dapat proyek_terkait_ids
+export function terapkanTautan(proyek, t) {
+  for (const p of proyek) {
+    const k = p.id.replace(/^pd_/, ''), x = t.tautan[k] || t.tautan['wb_' + wbId(p.sumber_url)];
+    if (!x) continue;
+    if (!p.proyek_id) { p.proyek_id = x.proyek_id; p.proyek_kecocokan = 'nama-pasti'; } else if (p.proyek_id !== x.proyek_id) p.proyek_terkait_ids = [x.proyek_id];
+  }
+  return proyek;
+}
 
 export function periksa(b) {
   const g = [];
@@ -208,9 +226,12 @@ export function rakit(tgl) {
   const jetp = jt.baris.filter((j) => j.ebt === true).map((j) => proyekDariJetp(j));
   const obl = ob.baris.filter((o) => !/^Agregat|^Total/.test(o.instrumen) && o.nilai !== undefined).map(proyekDariObligasi);
   const kar = kb.baris.map(proyekDariKarbon);
-  let proyek = [...iati, ...keu, ...jetp, ...obl, ...kar].map(jagaNilai);
+  const fa = path.join(ROOT, 'data/pendanaan/aiib_indonesia.json'), ft = path.join(ROOT, 'data/pendanaan/tautan_proyek.json');
+  const aiib = fs.existsSync(fa) ? baca('data/pendanaan/aiib_indonesia.json').baris.map(proyekDariAiib) : [];
+  let proyek = [...iati, ...keu, ...jetp, ...obl, ...kar, ...aiib].map(jagaNilai);
   for (const p of proyek) for (const k of ['lembaga_id', 'penerima_org_id', 'organisasi_id']) if (p[k] && !orgs.has(p[k])) delete p[k];
   tautkanNama(proyek, baca('public/data/proyek.json').baris);
+  if (fs.existsSync(ft)) terapkanTautan(proyek, baca('data/pendanaan/tautan_proyek.json'));
   proyek = proyek.map((p) => JSON.parse(JSON.stringify(p).replace(/\s*[—–]\s*/g, ' - '))).sort((a, b) => a.id.localeCompare(b.id));
   skema.sort((a, b) => JENIS_SKEMA.indexOf(a.jenis) - JENIS_SKEMA.indexOf(b.jenis) || a.id.localeCompare(b.id));
   const sumber = [...pi.sumber, ...jt.sumber, ...ob.sumber, ...kb.sumber, ...ins.sumber, ...ke.sumber].map(({ id, judul, penerbit, url: u, lisensi }) => ({ id, judul, penerbit, url: u, lisensi }));

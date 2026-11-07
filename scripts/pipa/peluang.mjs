@@ -83,11 +83,14 @@ export function bangun({ ruen, harga, wilayah, proyek, bpp }) {
       const ekstra = r.teknis != null ? { teknis_mw: r.teknis, teoritis_mw: r.teoritis } : {};
       const rujuk = `${t.tabel} hlm ${t.hlm}`;
       if (INDUK[r.nama]) {
-        for (const k of INDUK[r.nama]) isi(k, tek, { halaman: rujuk, catatan: `RUEN 2015 mencatat ${r.nilai} MW untuk provinsi induk "${r.nama}" sebelum pemekaran; tidak dibagi ke provinsi baru`, induk_mw: r.nilai });
+        // angka induk tampil pada provinsi induk (kode pertama), bertanda pra_pemekaran; provinsi pemekaran tetap null (bagi rata dilarang)
+        INDUK[r.nama].forEach((k, i) => i === 0
+          ? isi(k, tek, { mw: r.nilai, pra_pemekaran: true, halaman: rujuk, catatan: `data 2015, sebelum pemekaran: RUEN mencatat ${r.nilai} MW untuk "${r.nama}" (induk); tidak dibagi ke provinsi pemekaran` })
+          : isi(k, tek, { halaman: rujuk, catatan: `RUEN 2015 mencatat ${r.nilai} MW untuk provinsi induk "${r.nama}" sebelum pemekaran; tidak dibagi ke provinsi baru`, induk_mw: r.nilai, induk_kode: INDUK[r.nama][0] }));
       } else if (KEL_BIO[r.nama]) {
         for (const k of KEL_BIO[r.nama]) isi(k, tek, { halaman: rujuk, catatan: `RUEN menggabung ${r.nama} (${r.nilai} MW); tidak dipisah`, kelompok_mw: r.nilai });
       } else if (nama.length > 1) {
-        for (const n of nama) isi(KODE[n], tek, { halaman: rujuk, catatan: `RUEN hanya memberi total kelompok ${nama.join(', ')} (${r.nilai} MW); tidak dipisah per provinsi`, kelompok_mw: r.nilai });
+        for (const n of nama) isi(KODE[n], tek, { halaman: rujuk, catatan: `RUEN hanya memberi total kelompok ${nama.join(', ')} (${r.nilai} MW); tidak dipisah per provinsi`, kelompok_mw: r.nilai, kelompok: nama });
       } else {
         if (!KODE[r.nama]) throw new Error(`nama RUEN tak dikenal: ${r.nama} (${tek})`);
         isi(KODE[r.nama], tek, { mw: r.nilai, halaman: rujuk, ...ekstra });
@@ -154,7 +157,7 @@ export function bangun({ ruen, harga, wilayah, proyek, bpp }) {
       jumlah: hasil.length,
       proyek_tanpa_provinsi: tanpaProv,
       definisi_tanpa_pengembang: 'status proyek "rencana" dan tidak ada pemilik, atau pemilik hanya label generik "IPP" (RUPTL); proyek tanpa provinsi atau tanpa status tidak dihitung',
-      catatan: 'Potensi RUEN bertahun data 2015 (34 provinsi); hidro RUEN per kelompok wilayah (null per provinsi bila kelompok); Papua/Papua Barat induk tidak dibagi ke provinsi pemekaran. Terpasang dan rasio dari HEESI 2025. BPP: Kepmen ESDM terbaru yang ada di berkas = BPP 2020 (Kepmen 169.K/2021); BPP 2021 ke atas belum terambil. Mikrohidro terpasang tidak dipisah dari hidro. Laut: potensi praktis RUEN, tanpa terpasang.',
+      catatan: 'Potensi RUEN bertahun data 2015 (34 provinsi); hidro RUEN Tabel 37 memang per kelompok wilayah (14 baris, total 75.091 MW cocok; hanya 7 baris tunggal provinsi): null per provinsi dengan kelompok_mw terisi; angka Papua/Papua Barat induk tampil pada provinsi induk (pra_pemekaran) dan tidak dibagi ke provinsi pemekaran. Terpasang dan rasio dari HEESI 2025. BPP: Kepmen ESDM terbaru yang ada di berkas = BPP 2020 (Kepmen 169.K/2021); BPP 2021 ke atas belum terambil. Mikrohidro terpasang tidak dipisah dari hidro. Laut: potensi praktis RUEN, tanpa terpasang.',
       celah: [...celah],
     },
     sumber: SUMBER,

@@ -1,0 +1,36 @@
+/* Peristiwa EBT (daftar/linimasa), lencana komitmen iklim, tabel komitmen. Token tema; tanpa progress bar. */
+.pe-alat{display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin-bottom:14px}
+.pe-alat .jm-pil-pilih{flex:0 1 260px;min-width:200px}
+.pe-alat .jm-hitung{margin-left:auto}
+.pe-daftar{list-style:none;margin:0;padding:0;display:grid;gap:0;position:relative}
+.pe-i{display:grid;grid-template-columns:40px minmax(0,1fr);gap:14px;padding:0 0 18px;position:relative}
+.pe-i:not(:last-child)::before{content:"";position:absolute;left:19px;top:40px;bottom:0;border-left:2px solid var(--line-cell)}
+.pe-ik{display:grid;place-items:center;width:40px;height:40px;border-radius:50%;background:var(--soft-hijau);color:var(--accent);border:1px solid var(--line-cell)}
+.pe-peresmian{background:var(--ok-bg);color:var(--ok)}.pe-ppa{background:var(--info-bg);color:var(--info)}.pe-lelang{background:var(--warn-bg);color:var(--warn)}
+.pe-b{min-width:0;display:grid;gap:6px;align-content:start}
+.pe-meta{display:flex;flex-wrap:wrap;align-items:center;gap:6px 8px;color:var(--ink2);font-size:var(--t-kecil)}
+.pe-meta time{font-weight:600;color:var(--ink)}
+.pe-meta .jm-pil{display:inline-flex;align-items:center;gap:4px;white-space:nowrap}
+.pe-j{margin:0;font:600 var(--t-body)/var(--lh-rapat) var(--font);color:var(--ink)}
+.pe-chips{display:flex;flex-wrap:wrap;gap:6px;margin:0}
+.pe-chip{padding:2px 10px;border:1px solid var(--line-cell);border-radius:var(--r-pil);font-size:var(--t-kecil);color:var(--ink2);background:var(--surface)}
+.pe-src{display:inline-flex;align-items:center;gap:6px;justify-self:start;color:var(--accent);font:600 var(--t-kecil)/1 var(--font);text-decoration:none}
+.pe-src:hover,.pe-src:focus-visible{color:var(--brand2)}
+.pe-cat{margin:4px 0 0}
+.pe-pop{display:flex;gap:8px;align-items:flex-start;margin:6px 0;font-size:var(--t-kecil);line-height:var(--lh-rapat);color:var(--ink2)}
+.pe-pop .jm-ik{flex:none;margin-top:1px;color:var(--accent)}
+.pe-pop a{color:var(--ink);font-weight:600;text-decoration:none}
+.pe-pop time{font-weight:600;color:var(--ink)}
+.km-lencana{display:inline-flex;align-items:center;gap:6px;min-height:24px;padding:0 10px;border-radius:var(--r-pil);font:600 var(--t-kecil)/1 var(--font);text-decoration:none;white-space:nowrap;background:var(--ok-bg);color:var(--ok);border:1px solid var(--ok)}
+.km-re100{background:var(--info-bg);color:var(--info);border-color:var(--info)}
+.km-nama{display:inline-flex;align-items:center;gap:10px;min-width:0}
+.km-nama a,.km-nama b{font-weight:600;color:var(--ink);text-decoration:none}
+.km-nama a:hover{color:var(--accent)}
+.km-lg{display:grid;place-items:center;flex:none;width:32px;height:32px;border-radius:var(--r-sm);border:1px solid var(--line-cell);background:var(--on-brand);color:var(--ink2);font:700 var(--t-kecil)/1 var(--font);overflow:hidden}
+.km-lg img{width:26px;height:26px;object-fit:contain}
+.km-jenis{display:inline-flex;flex-wrap:wrap;gap:6px}
+.km-jenis .jm-pil{white-space:nowrap}
+.km-src{display:inline-flex;align-items:center;gap:6px;color:var(--accent);font-weight:600;text-decoration:none}
+.km-src:hover{color:var(--brand2)}
+@media (max-width:599px){.pe-alat .jm-hitung{margin-left:0}.pe-alat .jm-pil-pilih{flex:1 1 100%}}
+.ih-tabel td>.jm-pil{justify-self:start}

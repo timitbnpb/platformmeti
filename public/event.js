@@ -155,7 +155,8 @@ function mitraHtml() {
   const seg = `<div class="ev-seg" id="evSeg" role="tablist" aria-label="${esc(t("ev.mitra.ey"))}">${d.acara.map((x) => `<button type="button" role="tab" data-mitra="${esc(x.id)}" aria-selected="${x.id === a.id}" tabindex="${x.id === a.id ? 0 : -1}">${ikon(IKON_MITRA[x.id] || "bintang", 20)}<span>${esc(t("ev.mitra.acara." + x.id))}</span></button>`).join("")}</div>`;
   const hubungi = k.surel ? `<a class="jm-tbl jm-tbl-utama" href="mailto:${esc(k.surel)}?subject=${encodeURIComponent(t("ev.mitra.subjek"))}">${ikon("surel", 18)}<span>${esc(t("ev.mitra.hubungi"))}</span></a>` : "";
   const proposal = d.proposal_url && urlAman(d.proposal_url) ? `<a class="jm-tbl" href="${esc(d.proposal_url)}" target="_blank" rel="noopener noreferrer">${ikon("unduh", 18)}<span>${esc(t("ev.mitra.unduh"))}</span></a>` : "";
-  const cp = `<aside class="ev-cp"><span class="ev-spons-ik">${ikon("orang", 22)}</span><div class="ev-cp-teks"><small>${esc(t("ev.cp"))}</small><b>${esc(k.nama || t("ev.cp.sekretariat"))}</b>${k.surel ? `<a href="mailto:${esc(k.surel)}">${esc(k.surel)}</a>` : ""}</div><div class="ev-spons-aksi">${hubungi}${proposal}</div></aside>`;
+  const surelA = k.surel ? `<a href="mailto:${esc(k.surel)}">${esc(k.surel)}</a>` : "";
+  const cp = `<aside class="ev-cp"><span class="ev-spons-ik">${ikon("orang", 22)}</span><div class="ev-cp-teks"><small>${esc(t("ev.cp"))}</small><b>${esc(k.nama || t("ev.cp.sekretariat"))}</b>${surelA}</div><div class="ev-spons-aksi">${hubungi}${proposal}</div></aside>`;
   return exHtml({ id: "ev-mitra", ikon: "bintang", topik: t("ev.mitra.ey"), judulHtml: esc(t("ev.mitra.j")), subHtml: esc(t("ev.mitra.sub")), isiHtml: `<div class="ev-mitra-bd">${seg}<div class="ev-mitra-panel" id="evMitraPanel" role="tabpanel">${panelMitra(a)}</div>${cp}</div>` });
 }
 

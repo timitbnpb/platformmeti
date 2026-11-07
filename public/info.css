@@ -76,3 +76,6 @@
   body.inf-cetak-lembar .inf-cetak{border:0;box-shadow:none}
 }
 .inf-isi .jm-ex-j{text-align:left}
+@media (max-width:599px){.jm-kh-ubin:has(.jm-kh-ub:nth-child(3):last-child) .jm-kh-ub:last-child{grid-column:1/-1}}
+.inf-isi>*,.inf-isi .jm-ex,.inf-isi .jm-ex-bd{min-width:0}
+.inf-isi .jm-tab{max-width:100%}

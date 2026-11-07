@@ -1,0 +1,311 @@
+{
+ "_catatan": "Kurasi pemilik proyek tanpa padanan organisasi (scripts/pipa/org_pemilik.mjs). baru = organisasi baru (id deterministik pm_*), alias = entitas SAMA dengan organisasi yang sudah ada, kurator = ambigu atau bukan organisasi, tidak ditambahkan.",
+ "tanggal": "2026-11-08",
+ "baru": [
+  {
+   "id": "pm_00b67x9e389",
+   "nama": "PT Poso Energy",
+   "varian": [
+    "PT Poso Energy",
+    "PT. Poso Energi (IPP)"
+   ],
+   "jenis": "swasta"
+  },
+  {
+   "id": "pm_129dbx35045",
+   "nama": "PT Vale Indonesia Tbk",
+   "varian": [
+    "PT Vale Indonesia Tbk",
+    "INCO"
+   ],
+   "jenis": "swasta",
+   "catatan": "INCO = kode saham PT Vale Indonesia Tbk"
+  },
+  {
+   "id": "pm_add53x42206",
+   "nama": "PT Geo Dipa Energi (Persero)",
+   "varian": [
+    "PT Geo Dipa Energi (Persero)",
+    "PT. Geo Dipa Energi (IPP)",
+    "PT Geo Dipa Energi"
+   ],
+   "jenis": "bumn"
+  },
+  {
+   "id": "pm_d9bfexa6b40",
+   "nama": "PT Amera Terrasys Energi",
+   "varian": [
+    "PT Amera Terrasys Energi"
+   ],
+   "jenis": "swasta"
+  },
+  {
+   "id": "pm_1c66exc8e3f",
+   "nama": "PT Archi Indonesia Tbk",
+   "varian": [
+    "PT Archi Indonesia Tbk"
+   ],
+   "jenis": "swasta"
+  },
+  {
+   "id": "pm_895aax201f5",
+   "nama": "PT Bakrie Power",
+   "varian": [
+    "PT Bakrie Power"
+   ],
+   "jenis": "swasta"
+  },
+  {
+   "id": "pm_5b673x00ec8",
+   "nama": "PT Binsar Natorang Energi",
+   "varian": [
+    "PT Binsar Natorang Energi"
+   ],
+   "jenis": "swasta"
+  },
+  {
+   "id": "pm_155f6x74c8d",
+   "nama": "PT Cahaya Anagata Energy",
+   "varian": [
+    "PT Cahaya Anagata Energy"
+   ],
+   "jenis": "swasta"
+  },
+  {
+   "id": "pm_7493cxb037b",
+   "nama": "PT Indo Green Power",
+   "varian": [
+    "PT Indo Green Power"
+   ],
+   "jenis": "swasta"
+  },
+  {
+   "id": "pm_0dee6x6ca80",
+   "nama": "PT Juvisk Tri Swarna",
+   "varian": [
+    "PT Juvisk Tri Swarna"
+   ],
+   "jenis": "swasta"
+  },
+  {
+   "id": "pm_c1a7cx70be7",
+   "nama": "PT Kerinci Merangin Hydro",
+   "varian": [
+    "PT Kerinci Merangin Hydro"
+   ],
+   "jenis": "swasta"
+  },
+  {
+   "id": "pm_a6acex4ed9a",
+   "nama": "PT Nirwana Suci Abadi",
+   "varian": [
+    "PT Nirwana Suci Abadi"
+   ],
+   "jenis": "swasta"
+  },
+  {
+   "id": "pm_ee985x4fcde",
+   "nama": "PT Nusantara Sembcorp Solar Energi",
+   "varian": [
+    "PT Nusantara Sembcorp Solar Energi (NSSE)"
+   ],
+   "jenis": "swasta"
+  },
+  {
+   "id": "pm_36e7ex28051",
+   "nama": "PT Sintesa Banten Geothermal",
+   "varian": [
+    "PT Sintesa Banten Geothermal"
+   ],
+   "jenis": "swasta"
+  },
+  {
+   "id": "pm_f63b1x0858a",
+   "nama": "PT Sokoria Geothermal Indonesia",
+   "varian": [
+    "PT Sokoria Geothermal Indonesia"
+   ],
+   "jenis": "swasta"
+  },
+  {
+   "id": "pm_d4696xffa8b",
+   "nama": "PT Sulawesi Mini Hydro Power",
+   "varian": [
+    "PT Sulawesi Mini Hydro Power"
+   ],
+   "jenis": "swasta"
+  },
+  {
+   "id": "pm_86f5dx46499",
+   "nama": "PT Sulbar Group",
+   "varian": [
+    "PT Sulbar Group"
+   ],
+   "jenis": "swasta"
+  },
+  {
+   "id": "pm_b4424x486f6",
+   "nama": "PT Sumber Organik",
+   "varian": [
+    "PT Sumber Organik"
+   ],
+   "jenis": "swasta"
+  },
+  {
+   "id": "pm_0eb31x2e06d",
+   "nama": "PT Trinergy Mandiri International",
+   "varian": [
+    "PT Trinergy Mandiri International"
+   ],
+   "jenis": "swasta"
+  },
+  {
+   "id": "pm_7bedfx6b888",
+   "nama": "PT Bajradaya Sentranusa",
+   "varian": [
+    "PT. Bajradaya Sentranusa (IPP)"
+   ],
+   "jenis": "swasta"
+  },
+  {
+   "id": "pm_06e29x94a26",
+   "nama": "PT Dizamatara Powerindo",
+   "varian": [
+    "PT. Dizamatara Powerindo (IPP)"
+   ],
+   "jenis": "swasta"
+  },
+  {
+   "id": "pm_96562xbec1f",
+   "nama": "PT Hadji Kalla",
+   "varian": [
+    "PT. Hadji Kalla"
+   ],
+   "jenis": "swasta"
+  },
+  {
+   "id": "pm_2bf70x9366e",
+   "nama": "PT Jasa Tirta II",
+   "varian": [
+    "PT. Jasa Tirta II"
+   ],
+   "jenis": "bumn",
+   "catatan": "nama menurut sumber"
+  },
+  {
+   "id": "pm_cec14xb2c6d",
+   "nama": "PT Wampu Electric Power",
+   "varian": [
+    "PT. Wampu Electric Power (IPP)"
+   ],
+   "jenis": "swasta"
+  },
+  {
+   "id": "pm_f8479x13a71",
+   "nama": "Soma Power Indonesia",
+   "varian": [
+    "Soma Power Indonesia"
+   ],
+   "jenis": "swasta"
+  },
+  {
+   "id": "pm_98da7xe7dc6",
+   "nama": "Nusantara Embesi Baru Energi",
+   "varian": [
+    "Nusantara Embesi Baru Energi"
+   ],
+   "jenis": "swasta"
+  },
+  {
+   "id": "pm_3b8c3xbc0e0",
+   "nama": "Indocement",
+   "varian": [
+    "Indocement"
+   ],
+   "jenis": "swasta",
+   "catatan": "nama menurut sumber Bank Dunia"
+  }
+ ],
+ "alias": [
+  {
+   "nama": "Ormat Technology Inc",
+   "org_id": "in_c699a709bf",
+   "alasan": "salah eja nama di sumber GEM; Ormat Technologies"
+  },
+  {
+   "nama": "PT. Inalum",
+   "org_id": "p_bd4e2d9bd2",
+   "alasan": "Inalum = PT Indonesia Asahan Aluminium"
+  },
+  {
+   "nama": "Veolia Environmental Services Asia Pte. Ltd (Veolia)",
+   "org_id": "in_cd6da9ed54",
+   "alasan": "sumber menyebut (Veolia) sendiri"
+  },
+  {
+   "nama": "Electricity Generating PCL",
+   "org_id": "in_9d25098c0a",
+   "alasan": "nama lengkap EGCO"
+  },
+  {
+   "nama": "Korea South-East Power Co Ltd",
+   "org_id": "in_2180abe49a",
+   "alasan": "nama lengkap KOEN"
+  },
+  {
+   "nama": "Korea Midland Power Co Ltd",
+   "org_id": "in_4f5283b206",
+   "alasan": "nama lengkap KOMIPO"
+  }
+ ],
+ "kurator": [
+  {
+   "nama": "ACEN Investments HK Ltd",
+   "alasan": "anak usaha ACEN; entitas hukum berbeda dari ACEN Corporation"
+  },
+  {
+   "nama": "AC Energy and Infrastructure Corp",
+   "alasan": "nama lama atau entitas ACEN; belum terverifikasi"
+  },
+  {
+   "nama": "Envision Group",
+   "alasan": "induk Envision Energy; entitas berbeda"
+  },
+  {
+   "nama": "Masdar Clean Energy",
+   "alasan": "belum jelas sama dengan Masdar (Abu Dhabi Future Energy Company)"
+  },
+  {
+   "nama": "Oakridge International",
+   "alasan": "tidak ada keterangan negara atau situs"
+  },
+  {
+   "nama": "Sarulla Operations Ltd",
+   "alasan": "entitas operator konsorsium; negara tidak diketahui"
+  },
+  {
+   "nama": "Chevron Geothermal Salak Ltd and Dayabumi Salak Pratama Ltd (IPP)",
+   "alasan": "dua entitas dalam satu nama"
+  },
+  {
+   "nama": "Republic of Indonesia",
+   "alasan": "pemerintah, bukan organisasi direktori"
+  },
+  {
+   "nama": "Government of Indonesia",
+   "alasan": "pemerintah, bukan organisasi direktori"
+  },
+  {
+   "nama": "The Republic of Indonesia",
+   "alasan": "pemerintah, bukan organisasi direktori"
+  },
+  {
+   "nama": "Coordinating Ministry of Economic Affairs",
+   "alasan": "kementerian: masuk lewat panen_lembaga, nama resmi perlu verifikasi"
+  },
+  {
+   "nama": "Yayasan Transparasi Sumber Daya Ekstraktif (Publish What You Pay Indonesia)",
+   "alasan": "LSM: masuk lewat panen_lembaga"
+  }
+ ]
+}

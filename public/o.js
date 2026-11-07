@@ -101,7 +101,7 @@ async function mulai() {
     + seksi({ id: "relasi", ik: "direktori", topik: t("pf.ey.relasi"), judulHtml: esc(t("pf.j.relasi")), isiHtml: tabelRelasi(rel), csv: true, sumber: sumberRingkas })
     + terkait
     + `</div>`;
-  pasangRingkas(akar);
+  pasangRingkas(akar, o);
   pasangIkuti(akar); muatPembaruan("organisasi", id, akar.querySelector(".pf-bagian"));
   pasangLogoCadangan(akar);
   akar.querySelectorAll(".pf-orang-f img").forEach((im) => im.addEventListener("error", () => im.replaceWith(document.createTextNode(im.dataset.ini || "")), { once: true }));

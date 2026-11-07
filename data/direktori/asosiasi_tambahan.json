@@ -1,0 +1,23 @@
+{
+  "sumber": "situs resmi asosiasi (beranda dibaca sesuai robots.txt)",
+  "diperiksa": "2026-11-08",
+  "baris": [
+    {
+      "id": "l_pjci_asosiasi",
+      "nama": "Indonesia Smart Grid Association (PJCI)",
+      "singkatan": "PJCI",
+      "kategori": "asosiasi",
+      "kepakaran": ["jaringan"],
+      "situs": "https://pjci.or.id",
+      "sumber_url": "https://pjci.or.id/",
+      "tingkat_bukti": "situs-sendiri",
+      "tanggal": "2026-11-08"
+    }
+  ],
+  "tidak_ditemukan": {
+    "MKI": "mki.or.id tidak terjangkau (koneksi gagal) pada 2026-11-08; tidak ada situs resmi lain yang terverifikasi",
+    "APPLTA": "tidak ada situs resmi yang terverifikasi; applta.or.id dan applta.id tidak terjangkau",
+    "AESKI": "tidak ada situs resmi yang terverifikasi; aeski.or.id dan aeski.id tidak terjangkau",
+    "Asosiasi Biogas Indonesia": "tidak ada situs resmi yang terverifikasi; biogas.or.id dan asosiasibiogas.or.id tidak terjangkau"
+  }
+}

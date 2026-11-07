@@ -1,0 +1,46 @@
+/* Tab "Tender dan lelang" di /proyek. Token tema; tanpa progress bar. */
+#pnProyek,#pnTender{display:grid;grid-template-columns:minmax(0,1fr);gap:var(--gap);min-width:0;align-content:start}
+.td-saring{display:grid;gap:12px;margin-bottom:12px}
+.td-seg{display:grid;grid-auto-flow:column;grid-auto-columns:1fr;border:1px solid var(--line);border-radius:var(--r);overflow:hidden}
+.td-seg button{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:var(--target);padding:0 14px;border:0;border-left:1px solid var(--line);background:var(--card);color:var(--ink2);font:600 var(--t-body)/1 var(--font);cursor:pointer;min-width:0;white-space:nowrap}
+.td-seg button:first-child{border-left:0}
+.td-seg button:hover{background:var(--soft-hijau)}
+.td-seg button:focus-visible{outline:2px solid var(--meti-lime);outline-offset:-3px}
+.td-seg button[aria-pressed=true]{background:linear-gradient(90deg,var(--brand),var(--brand2));color:var(--on-brand)}
+.td-seg small{font:600 var(--t-kecil)/1 var(--font);padding:3px 8px;border-radius:var(--r-pil);background:color-mix(in srgb,currentColor 14%,transparent)}
+.td-bar{width:100%}
+.td-hitung{justify-self:start;margin:0 0 8px}
+.td-cat{display:flex;align-items:center;gap:8px;margin:10px 0 0}
+.td-cat .jm-ik{flex:none;color:var(--accent)}
+.td-tabel td{padding:8px 12px;vertical-align:middle}
+.td-tabel th.td-no{color:inherit}
+.td-tabel th.td-no,.td-tabel td.td-no{width:1%;text-align:center;color:var(--ink2);font-variant-numeric:tabular-nums}
+.td-tabel td.td-judul{min-width:280px;width:36%}
+.td-judul b{display:block;font:700 var(--t-body)/var(--lh-rapat) var(--font);color:var(--head);margin-bottom:4px}
+.td-inst{display:flex;align-items:center;flex-wrap:wrap;gap:6px 8px;color:var(--ink2);font-size:var(--t-kecil)}
+.td-lg{display:grid;place-items:center;flex:none;width:22px;height:22px;border-radius:var(--r-sm);border:1px solid var(--line-cell);background:var(--on-brand);color:var(--ink2);overflow:hidden}
+.td-lg img{width:18px;height:18px;object-fit:contain}
+.td-bukti{min-height:20px;padding:0 8px}
+.td-pil{display:inline-flex;align-items:center;gap:6px;white-space:nowrap}
+.td-prov{display:inline-flex;align-items:center;gap:8px;white-space:nowrap}
+.td-lb{flex:none;object-fit:contain}
+.td-tabel td.td-n,.td-tabel th:nth-child(6),.td-tabel th:nth-child(7){white-space:nowrap}
+.td-tabel td.td-n{text-align:right;font-variant-numeric:tabular-nums}
+.td-aksi-b{display:inline-flex;align-items:center;gap:8px;flex-wrap:nowrap;white-space:nowrap}
+.td-ik{display:inline-grid;place-items:center;width:32px;height:32px;border-radius:50%;border:1px solid var(--line-ctl);background:var(--card);color:var(--accent);text-decoration:none}
+.td-ik:hover,.td-ik:focus-visible{border-color:var(--accent);background:var(--soft-hijau)}
+.td-info{position:relative;display:inline-block}
+.td-info>summary{display:grid;place-items:center;width:32px;height:32px;border-radius:50%;border:1px solid var(--line-ctl);background:var(--card);color:var(--ink2);cursor:pointer;list-style:none}
+.td-info>summary::-webkit-details-marker{display:none}
+.td-info>summary:hover,.td-info[open]>summary{color:var(--accent);border-color:var(--accent)}
+.td-pop{position:absolute;z-index:20;right:0;top:calc(100% + 8px);width:min(380px,calc(100vw - 48px));padding:12px 14px;border:1px solid var(--line);border-radius:var(--r);background:var(--card);box-shadow:0 10px 30px color-mix(in srgb,var(--ink) 18%,transparent);font-size:var(--t-kecil);line-height:var(--lh-isi)}
+.td-pop p{margin:0 0 8px}.td-pop ul{margin:0 0 8px;padding-left:18px;display:grid;gap:6px;color:var(--ink2)}
+@media (max-width:767px){
+  .td-seg{grid-auto-flow:row}.td-seg button{border-left:0;border-top:1px solid var(--line)}.td-seg button:first-child{border-top:0}
+  .td-tabel td.td-judul{width:auto;min-width:0}
+  .jm-tabel.td-tabel tbody tr td.td-judul{grid-template-columns:minmax(0,1fr);gap:4px}
+  .jm-tabel.td-tabel tbody tr td.td-judul::before{display:none}
+  .td-tabel td.td-n{text-align:left}
+  .td-tabel td.td-no{text-align:left;width:auto}
+}
+.td-tabel td>:is(.jm-pil-tek,.td-pil,.td-prov,.td-aksi-b){justify-self:start}

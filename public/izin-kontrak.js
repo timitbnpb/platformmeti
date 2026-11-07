@@ -2,6 +2,7 @@
    Data /data/izin_kontrak.json (scripts/pipa/izin_kontrak.mjs); teks /data/teks_izin.json. Hanya informasi. */
 import { mulaiHalaman } from "/inti/kepala.js";
 import { esc, hantuHtml, nanti } from "/inti/umum.js";
+import { pilihHtml } from "/inti/komponen.js";
 import { muatData, tampilGalat, batangHtml, pasangBar, ubinHtml } from "/analisis.js";
 import { muatTeks, tt, L, num, tautan, seksi, catatan, narasi, sumber, butuhDaftar, tabel, labelPil, saatBahasa } from "/info_kerangka.js";
 
@@ -12,9 +13,6 @@ const pasalHtml = (psl) => psl.map((x) => (dok(x.dok) ? `${tautan(dok(x.dok).pdf
 const JENIS = ["semua", "umum", "surya", "hidro", "panas-bumi", "bioenergi"];
 const TINGKAT = ["semua", "tinggi", "sedang", "rendah"];
 const SUM = () => ["p112", "m11", "m2", "uu25"].map((k) => ({ sumber: dok(k).nama, url: dok(k).url, tanggal: d.dibangun_pada }));
-const seg = (nama, daftar, kini, pre, ik) => `<div class="jm-tab" role="tablist" aria-label="${esc(tt("seg." + nama))}">${daftar.map((k) => `<button type="button" role="tab" data-${nama}="${k}" aria-selected="${k === kini}"><svg class="jm-ik" width="18" height="18" aria-hidden="true" focusable="false"><use href="/img/ikon.svg#i-${ik[k]}"/></svg><span>${esc(tt(pre + k))}</span></button>`).join("")}</div>`;
-const IK_JENIS = { semua: "daftar2", umum: "gedung", surya: "tek-surya", hidro: "tek-listrik", "panas-bumi": "tek-panas", bioenergi: "tek-bio" };
-const IK_TK = { semua: "tabel", tinggi: "peringatan", sedang: "info", rendah: "centang" };
 
 function ubin() {
   $("ubin").innerHTML = ubinHtml([
@@ -32,7 +30,7 @@ function bagTanya() {
   const psl = d.tanya.reduce((s, x) => s + x.pasal.length, 0);
   $("s-tanya").innerHTML = seksi({
     id: "tanya", ik: "palu", topik: tt("tanya.topik"), judul: tt("tanya.judul", { n: d.tanya.length, m: psl }), turunan: false, sub: tt("tanya.sub"), csv: false,
-    isi: `${narasi(tt("tanya.narasi"))}${seg("jenis", JENIS, jenis, "jn.", IK_JENIS)}<div id="isi-tanya"></div>${catatan(tt("tanya.catatan"))}${butuhDaftar(d.butuh_unduhan, ["pp28"])}${sumber(SUM())}`,
+    isi: `${narasi(tt("tanya.narasi"))}<div class="inf-sel">${pilihHtml({ id: "pilih-jenis", ikon: "daftar2", label: tt("seg.jenis"), opsi: JENIS.map((k) => [k, tt("jn." + k)]), nilai: jenis })}</div><div id="isi-tanya"></div>${catatan(tt("tanya.catatan"))}${butuhDaftar(d.butuh_unduhan, ["pp28"])}${sumber(SUM())}`,
   });
   isiTanya();
 }
@@ -62,7 +60,7 @@ function bagKlausul() {
   const tinggi = d.klausul.filter((k) => k.risiko_tingkat === "tinggi").length;
   $("s-klausul").innerHTML = seksi({
     id: "klausul", ik: "kunci", topik: tt("kl.topik"), judul: tt("kl.judul", { n: d.klausul.length, k: tinggi }), sub: tt("kl.sub"),
-    isi: `${narasi(tt("kl.narasi"))}${seg("tingkat", TINGKAT, tingkat, "rt.", IK_TK)}<div id="isi-klausul"></div>${catatan(tt("kl.catatan"))}${butuhDaftar(d.butuh_unduhan, ["ppa"])}${sumber(SUM().slice(0, 1))}`,
+    isi: `${narasi(tt("kl.narasi"))}<div class="inf-sel">${pilihHtml({ id: "pilih-tingkat", ikon: "peringatan", label: tt("seg.tingkat"), opsi: TINGKAT.map((k) => [k, tt("rt." + k)]), nilai: tingkat })}</div><div id="isi-klausul"></div>${catatan(tt("kl.catatan"))}${butuhDaftar(d.butuh_unduhan, ["ppa"])}${sumber(SUM().slice(0, 1))}`,
   });
   isiKlausul();
 }
@@ -80,14 +78,9 @@ async function gambar() {
 }
 
 function pasangSegmen() {
-  $("isi").addEventListener("click", (e) => {
-    const b = e.target.closest("[data-jenis],[data-tingkat]");
-    if (!b || !b.closest(".jm-tab")) return;
-    const nama = b.dataset.jenis !== undefined ? "jenis" : "tingkat", nilai = b.dataset[nama];
-    if ((nama === "jenis" ? jenis : tingkat) === nilai) return;
-    for (const x of b.parentElement.children) x.setAttribute("aria-selected", String(x === b));
-    if (nama === "jenis") jenis = nilai; else tingkat = nilai;
-    nanti(nama === "jenis" ? isiTanya : isiKlausul);
+  $("isi").addEventListener("change", (e) => {
+    if (e.target.id === "pilih-jenis" && e.target.value !== jenis) { jenis = e.target.value; nanti(isiTanya); }
+    else if (e.target.id === "pilih-tingkat" && e.target.value !== tingkat) { tingkat = e.target.value; nanti(isiKlausul); }
   });
 }
 

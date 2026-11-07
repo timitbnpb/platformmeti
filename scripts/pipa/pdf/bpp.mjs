@@ -12,24 +12,49 @@ const NOMOR = /^([A-Za-z]|\d{1,2})(\.\d{1,2})*\.?$/; // penomoran baris: a, b.2.
 const MIRIP = /^[\d.,łlI|]+$/; // sel yang mirip angka (OCR menukar 1 dengan ł)
 const rapikan = (s) => s.replace(/[łlI|]/g, '1').replace(/\s+/g, '');
 
-/** Satu halaman OCR -> baris mentah {sistem, rp, cent, tinjau}. Baris wilayah tanpa angka dilewati. */
+const SAMPAH = /^(NO\b|WILAYAH|SISTEM\/|\(Rp|BPP|Keterangan|PRESIDEN|MENTERI|SALINAN|LAMPIRAN|Ditetapkan|Pada tanggal)|Rp\)|^[-\s\d]*$/i;
+const seimbang = (n) => (n.match(/\(/g) || []).length <= (n.match(/\)/g) || []).length;
+const TERBUKA = (n) => !seimbang(n) || /,$/.test(n) || /\b(DAN|dan|IBUKOTA|SULAWESI)$/.test(n); // nama terpotong ke baris OCR berikutnya
+const potongNomor = (teks) => { const k = teks.split(/\s+/); while (k.length > 1 && (NOMOR.test(k[0]) || /^[IVX]+\.$/.test(k[0]))) k.shift(); return k.join(' ').replace(/^[.\s]+/, ''); };
+
+/** Rapikan label hasil OCR: salah baca huruf, singkatan dalam kurung, kurung/koma terpotong. {nama, ragu} (ragu = potongan tak bisa disambung). */
+export function rapikanLabel(mentah) {
+  let nama = String(mentah).replace(/\s+/g, ' ').replace(/-\s*\d+\s*-$/, '').trim();
+  nama = nama.replace(/^T(?=Pulau )/, '').replace(/^br /, '').replace('Selavar', 'Selayar').replace(/\s*\([A-Z0-9]{3,}\)\s*$/, '');
+  nama = nama.replace(/^SUB SISTEM/i, (m) => m.toUpperCase().startsWith('SUB S') ? 'SUBSISTEM' : m).replace(/^DAERAH KHUSUS IBUKOTA( JAKARTA)?$/, 'DKI JAKARTA');
+  nama = nama.replace(/^SUBSISTEM KEPULAUAN KECIL$/, 'Sub sistem kepulauan kecil').replace(/^SUBSISTEM KECIL LAINNYA$/, 'Sub sistem kecil lainnya');
+  let ragu = false;
+  if (!seimbang(nama)) { nama += ')'; ragu = true; }
+  if (/,$/.test(nama)) { nama = nama.slice(0, -1); ragu = true; }
+  return { nama, ragu };
+}
+
+/** Satu halaman OCR -> baris mentah {sistem, rp, cent, tinjau}. Baris wilayah tanpa angka dilewati; nama yang terpotong disambung dengan baris OCR berdampingan. */
 export function barisBpp(teks) {
   const keluar = [];
+  let tunda = '';
   const baris = String(teks).split('\n').map((g) => g.split(/\s{2,}/).map((x) => x.trim()).filter(Boolean));
   for (const sel of baris) {
     // gabung "2.349   ,75" -> "2.349,75"
     for (let i = sel.length - 1; i > 0; i--) if (/^,\d+$/.test(sel[i]) && /^[\d.]+$/.test(sel[i - 1])) { sel.splice(i - 1, 2, sel[i - 1] + sel[i]); }
     let n = 0; while (n < 2 && n < sel.length - 1 && MIRIP.test(sel[sel.length - 1 - n])) n++;
-    if (!n) continue;
+    if (!n) {
+      const g = potongNomor(sel.join(' '));
+      if (!g || SAMPAH.test(g) || !/[A-Za-z]{2}/.test(g)) continue;
+      const akhir = keluar[keluar.length - 1];
+      if (akhir && !akhir.sambung && TERBUKA(akhir.sistem)) { akhir.sistem = `${akhir.sistem} ${g}`; akhir.sambung = TERBUKA(akhir.sistem) || /^\(/.test(g); continue; }
+      if (akhir && akhir.sambung && /^\(|^[A-Z ,()]+$/.test(g)) { akhir.sistem = `${akhir.sistem} ${g}`; akhir.sambung = false; continue; }
+      if (!seimbang(g)) tunda = g; // hanya kurung terbuka; judul wilayah tanpa angka tidak disambung ke baris sesudahnya
+      continue;
+    }
     const angkaSel = sel.slice(sel.length - n), namaSel = sel.slice(0, sel.length - n);
     if (!namaSel.length) continue;
-    let nama = namaSel.join(' ').split(/\s+/);
-    while (nama.length > 1 && NOMOR.test(nama[0])) nama.shift();
-    nama = nama.join(' ').replace(/^[.\s]+/, '');
-    if (!/[A-Za-z]{3}/.test(nama) || /^(NO|WILAYAH|\(Rp|BPP|Keterangan)/i.test(nama)) continue;
+    let nama = potongNomor(namaSel.join(' '));
+    if (!/[A-Za-z]{3}/.test(nama) || /^(NO|WILAYAH|\(Rp|BPP(?! PEMBANGKITAN NASIONAL)|Keterangan)/i.test(nama)) continue; // baris BPP nasional dipertahankan: pembanding selisih di layar
+    if (tunda) { nama = `${tunda} ${nama}`; tunda = ''; }
     const [rpS, cS] = n === 2 ? angkaSel : [angkaSel[0], null];
     const baru = (s) => { if (s == null) return null; const bersih = rapikan(s), v = angkaId(bersih); return Number.isFinite(v) ? v : NaN; };
-    keluar.push({ sistem: nama, rp: baru(rpS), cent: baru(cS), asal: sel.join(' | ') });
+    keluar.push({ sistem: nama, rp: baru(rpS), cent: baru(cS), asal: sel.join(' | '), sambung: false });
   }
   return keluar;
 }
@@ -43,7 +68,8 @@ export function selesaikan(mentah) {
     if (kurs && rpOk && cOk) tinjau = Math.abs(rp / kurs * 100 - cent) / cent > 0.015;
     else if (kurs && rpOk && !cOk) cent = Math.round(rp / kurs * 10000) / 100; // sen diturunkan dari Rp
     else if (kurs && !rpOk && cOk) rp = Math.round(cent * kurs / 100 * 100) / 100;
-    return { sistem: b.sistem, rp: Number.isFinite(rp) ? rp : null, cent: Number.isFinite(cent) ? cent : null, kurs: kurs ? Math.round(kurs) : null, tinjau };
+    const l = rapikanLabel(b.sistem);
+    return { sistem: l.nama, rp: Number.isFinite(rp) ? rp : null, cent: Number.isFinite(cent) ? cent : null, kurs: kurs ? Math.round(kurs) : null, tinjau: tinjau || l.ragu };
   });
 }
 

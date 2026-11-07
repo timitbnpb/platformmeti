@@ -1,59 +1,1642 @@
 [
-{"id":"sd_esdm_geoportal","nama":"Geoportal ESDM (ESDM One Map)","kep":"ESDM One Map Indonesia","pemilik":"Kementerian ESDM","org":"ESDM","uraian":"Peta tematik ESDM: wilayah kerja panas bumi, pembangkit, jaringan transmisi, potensi energi, dan izin usaha.","sektor":["panas-bumi","jaringan","surya","hidro"],"jenis":["peta tematik","wilayah kerja","izin usaha"],"cakupan":"Nasional","intl":false,"frek":"tidak teratur","format":["peta web","WMS/WFS"],"lisensi":"Tidak dinyatakan; lihat ketentuan situs","akses":"terbuka","portal":"https://geoportal.esdm.go.id/","cara":"Dibuka lewat peta web. robots.txt melarang mesin perayap, jadi tidak dipanen otomatis; ambil lapisan secara manual dan catat tanggalnya.","pakai":true},
-{"id":"sd_momi","nama":"MOMI","kep":"Minerba One Map Indonesia","pemilik":"Kementerian ESDM","org":"ESDM","uraian":"Peta wilayah izin usaha pertambangan mineral dan batubara, berguna untuk irisan lahan dengan proyek energi.","sektor":["kebijakan","riset-data"],"jenis":["peta izin tambang","wilayah izin"],"cakupan":"Nasional","intl":false,"frek":"tidak teratur","format":["peta web"],"lisensi":"Tidak dinyatakan; lihat ketentuan situs","akses":"terbuka","portal":"https://momi.minerba.esdm.go.id/","cara":"Peta web; unduhan massal tidak disediakan di halaman publik.","pakai":false},
-{"id":"sd_heesi","nama":"HEESI","kep":"Handbook of Energy and Economic Statistics of Indonesia","pemilik":"Kementerian ESDM","org":"ESDM","uraian":"Buku statistik tahunan: bauran energi, produksi, konsumsi, dan kapasitas pembangkit menurut jenis energi.","sektor":["riset-data","surya","hidro","panas-bumi","bioenergi"],"jenis":["statistik energi","bauran energi","kapasitas pembangkit"],"cakupan":"Nasional","intl":false,"frek":"tahunan","format":["PDF"],"lisensi":"Publikasi pemerintah; kutip dengan atribusi","akses":"terbuka","portal":"https://www.esdm.go.id/id/publikasi/handbook-of-energy-economic-statistics-of-indonesia","cara":"Unduh PDF edisi terbaru; angka tabel disalin manual dengan nomor halaman.","pakai":true},
-{"id":"sd_gatrik","nama":"Statistik Ketenagalistrikan","kep":"Portal Gatrik Ditjen Ketenagalistrikan","pemilik":"Kementerian ESDM","org":"ESDM","uraian":"Statistik ketenagalistrikan, RUPTL, rasio elektrifikasi, dan indeks dokumen ketenagalistrikan.","sektor":["jaringan","elektrifikasi","riset-data"],"jenis":["statistik listrik","rasio elektrifikasi","RUPTL"],"cakupan":"Nasional dan provinsi","intl":false,"frek":"tahunan","format":["PDF","JSON"],"lisensi":"Publikasi pemerintah; kutip dengan atribusi","akses":"api-terbuka","portal":"https://gatrik.esdm.go.id/","api":"https://gatrik.esdm.go.id/gatrik/gatrik-api/api/download-index","cara":"Indeks dokumen tersedia sebagai JSON publik tanpa kunci; API tidak didokumentasikan resmi sehingga bentuknya bisa berubah.","pakai":true},
-{"id":"sd_ebtke","nama":"Portal EBTKE","kep":"Direktorat Jenderal Energi Baru, Terbarukan, dan Konservasi Energi","pemilik":"Kementerian ESDM","org":"ESDM","uraian":"Capaian bauran EBT, potensi, wilayah kerja panas bumi, dan siaran pers Ditjen EBTKE.","sektor":["surya","bayu","hidro","panas-bumi","bioenergi","kebijakan"],"jenis":["capaian EBT","potensi EBT","siaran pers"],"cakupan":"Nasional","intl":false,"frek":"tidak teratur","format":["web","PDF"],"lisensi":"Publikasi pemerintah; kutip dengan atribusi","akses":"terbuka","portal":"https://ebtke.esdm.go.id/","cara":"Aplikasi web satu halaman tanpa API terdokumentasi; ambil angka dari laporan kinerja PDF.","pakai":true},
-{"id":"sd_satudata_esdm","nama":"Satu Data ESDM","pemilik":"Kementerian ESDM","org":"ESDM","uraian":"Portal data sektoral ESDM yang memuat dataset statistik energi dan sumber daya mineral.","sektor":["riset-data"],"jenis":["dataset sektoral","statistik energi"],"cakupan":"Nasional","intl":false,"frek":"tidak teratur","format":["CSV","XLSX"],"lisensi":"Tidak dinyatakan; lihat ketentuan situs","akses":"terbuka","portal":"https://satudata.esdm.go.id/","cara":"Telusuri dataset lewat katalog; periksa tanggal pembaruan tiap dataset sebelum dipakai.","pakai":false},
-{"id":"sd_pln_statistik","nama":"Statistik PLN","pemilik":"PT PLN (Persero)","org":"PLN","uraian":"Statistik tahunan PLN: kapasitas terpasang, produksi, penjualan, jumlah pelanggan, dan susut jaringan.","sektor":["jaringan","elektrifikasi","riset-data"],"jenis":["statistik PLN","kapasitas terpasang","penjualan listrik"],"cakupan":"Nasional dan wilayah usaha","intl":false,"frek":"tahunan","format":["PDF"],"lisensi":"Publikasi perusahaan; kutip dengan atribusi","akses":"terbuka","portal":"https://web.pln.co.id/statics/statistik","cara":"Unduh PDF per tahun; tabel dibaca dengan nomor halaman.","pakai":true},
-{"id":"sd_ruptl","nama":"RUPTL","kep":"Rencana Usaha Penyediaan Tenaga Listrik","pemilik":"PT PLN (Persero)","org":"PLN","uraian":"Rencana 10 tahun penambahan pembangkit, transmisi, dan gardu menurut jenis dan provinsi, disahkan Menteri ESDM.","sektor":["jaringan","surya","hidro","panas-bumi","kebijakan"],"jenis":["rencana pembangkit","rencana transmisi","kebutuhan listrik"],"cakupan":"Nasional dan provinsi","intl":false,"frek":"tiap 1 sampai 2 tahun","format":["PDF"],"lisensi":"Dokumen pemerintah; kutip dengan atribusi","akses":"terbuka","portal":"https://gatrik.esdm.go.id/","cara":"Edisi 2025 sampai 2034 tersedia lewat portal Gatrik; tabel pembangkit berlapis sel sehingga nama proyek wajib dicek manual.","pakai":true},
-{"id":"sd_oss","nama":"OSS RBA","kep":"Online Single Submission, Risk Based Approach","pemilik":"Kementerian Investasi dan Hilirisasi/BKPM","org":"BKPM","uraian":"Sistem perizinan berusaha terintegrasi: NIB, izin usaha, dan izin komersial atau operasional.","sektor":["kebijakan","pembiayaan"],"jenis":["perizinan","NIB","izin usaha"],"cakupan":"Nasional","intl":false,"frek":"waktu nyata","format":["web"],"lisensi":"Tidak berlaku (sistem transaksi)","akses":"login","portal":"https://oss.go.id/","cara":"Pelaku usaha mendaftar untuk mengurus izin; tidak ada data terbuka massal. Dipakai sebagai rujukan jalur izin, bukan sumber data.","pakai":false},
-{"id":"sd_inaproc","nama":"INAPROC (LPSE dan SIRUP)","kep":"Portal Pengadaan Nasional LKPP","pemilik":"LKPP","org":"LKPP","uraian":"Rencana umum pengadaan (SIRUP) dan hasil tender LPSE seluruh instansi, termasuk pengadaan PLTS dan listrik desa.","sektor":["pembiayaan","surya","elektrifikasi"],"jenis":["tender","rencana pengadaan","pemenang tender"],"cakupan":"Nasional","intl":false,"frek":"waktu nyata","format":["web"],"lisensi":"Informasi publik; kutip dengan atribusi","akses":"terbuka","portal":"https://inaproc.id/","cara":"Cari paket per kata kunci; setiap LPSE instansi punya situs sendiri, panen massal tidak disediakan.","pakai":false},
-{"id":"sd_opentender","nama":"Opentender.net","pemilik":"Indonesia Corruption Watch","org":"Indonesia Corruption Watch","uraian":"Data tender pengadaan yang dihimpun dari LPSE dengan penanda risiko, untuk menelusuri pemenang dan nilai kontrak.","sektor":["pembiayaan","riset-data"],"jenis":["tender","pemenang","nilai kontrak"],"cakupan":"Nasional","intl":false,"frek":"berkala","format":["web"],"lisensi":"Tidak dinyatakan; lihat ketentuan situs","akses":"terbuka","portal":"https://opentender.net/","cara":"Telusuri dengan kata kunci energi; verifikasi ke LPSE asal sebelum dikutip.","pakai":false},
-{"id":"sd_idxcarbon","nama":"IDXCarbon","kep":"Bursa Karbon Indonesia","pemilik":"Bursa Efek Indonesia","org":"Bursa Efek Indonesia","uraian":"Bursa karbon resmi: volume, nilai, dan harga unit karbon, serta daftar proyek dan peserta.","sektor":["karbon","pembiayaan"],"jenis":["volume perdagangan","harga karbon","proyek karbon"],"cakupan":"Nasional","intl":false,"frek":"bulanan","format":["PDF","web"],"lisensi":"Publikasi bursa; kutip dengan atribusi","akses":"terbuka","portal":"https://idxcarbon.co.id/","cara":"Laporan bulanan berupa PDF. Periode diambil dari isi PDF, bukan label halaman, karena label bulan pernah keliru.","pakai":true},
-{"id":"sd_srn_ppi","nama":"SRN PPI","kep":"Sistem Registri Nasional Pengendalian Perubahan Iklim","pemilik":"Kementerian Lingkungan Hidup","org":"Kementerian Lingkungan Hidup","uraian":"Registri aksi mitigasi dan adaptasi, serta unit karbon yang tercatat di Indonesia.","sektor":["karbon","kebijakan"],"jenis":["registri karbon","aksi mitigasi","unit karbon"],"cakupan":"Nasional","intl":false,"frek":"waktu nyata","format":["web"],"lisensi":"Tidak dinyatakan; lihat ketentuan situs","akses":"terbuka","portal":"https://srn.menlhk.go.id/","cara":"Data publik dibuka lewat menu registri; unduhan massal tidak ada, catat tanggal ambil.","pakai":true},
-{"id":"sd_sign_smart","nama":"SIGN SMART","kep":"Sistem Inventarisasi Gas Rumah Kaca Nasional","pemilik":"Kementerian Lingkungan Hidup","org":"Kementerian Lingkungan Hidup","uraian":"Inventarisasi emisi gas rumah kaca nasional per sektor, termasuk energi.","sektor":["karbon","kebijakan"],"jenis":["inventarisasi emisi","emisi sektor energi"],"cakupan":"Nasional","intl":false,"frek":"tahunan","format":["web","PDF"],"lisensi":"Tidak dinyatakan; lihat ketentuan situs","akses":"terbuka","portal":"https://signsmart.menlhk.go.id/","cara":"Ringkasan terbuka; data rinci memerlukan akun instansi.","pakai":false},
-{"id":"sd_bps","nama":"BPS","kep":"Badan Pusat Statistik","pemilik":"Badan Pusat Statistik","org":"BPS","uraian":"Statistik resmi: penduduk, ekonomi, listrik rumah tangga, dan indikator wilayah sampai tingkat kabupaten.","sektor":["riset-data","elektrifikasi"],"jenis":["statistik wilayah","penduduk","listrik rumah tangga"],"cakupan":"Nasional sampai kabupaten","intl":false,"frek":"bervariasi","format":["web","XLSX","JSON"],"lisensi":"Publikasi BPS; atribusi diwajibkan","akses":"api-kunci","portal":"https://www.bps.go.id/","api":"https://webapi.bps.go.id/","cara":"Daftar akun gratis untuk mendapat kunci WebAPI; tabel statis juga bisa diunduh tanpa kunci.","pakai":true},
-{"id":"sd_data_go_id","nama":"Satu Data Indonesia","kep":"data.go.id","pemilik":"Kementerian PPN/Bappenas","org":"Bappenas","uraian":"Katalog dataset terbuka lintas kementerian dan pemerintah daerah.","sektor":["riset-data"],"jenis":["katalog dataset","data pemerintah"],"cakupan":"Nasional","intl":false,"frek":"bervariasi","format":["CSV","XLSX","JSON"],"lisensi":"Beragam menurut dataset","akses":"terbuka","portal":"https://data.go.id/","cara":"Cari dataset dengan kata kunci energi; kualitas dan keterbaruan berbeda tiap penerbit.","pakai":false},
-{"id":"sd_kemendes","nama":"Satu Data Kemendes","kep":"SDGs Desa dan Indeks Desa Membangun","pemilik":"Kementerian Desa dan PDT","org":"Kementerian Desa","uraian":"Data desa: indeks desa membangun, akses listrik, dan indikator SDGs desa.","sektor":["elektrifikasi","riset-data","transisi-adil"],"jenis":["indeks desa","akses listrik desa","SDGs desa"],"cakupan":"Desa","intl":false,"frek":"tahunan","format":["web","XLSX"],"lisensi":"Tidak dinyatakan; lihat ketentuan situs","akses":"terbuka","portal":"https://sdgs.kemendesa.go.id/","cara":"Lihat per desa lewat portal; angka tahun berbeda tiap indikator.","pakai":true},
-{"id":"sd_pddikti","nama":"PDDikti","kep":"Pangkalan Data Pendidikan Tinggi","pemilik":"Kementerian Pendidikan Tinggi, Sains, dan Teknologi","org":"Kemdiktisaintek","uraian":"Data perguruan tinggi, program studi, dosen, dan mahasiswa.","sektor":["riset-data"],"jenis":["program studi","perguruan tinggi","dosen"],"cakupan":"Nasional","intl":false,"frek":"semester","format":["web"],"lisensi":"Informasi publik; kutip dengan atribusi","akses":"terbuka","portal":"https://pddikti.kemdiktisaintek.go.id/","cara":"Pencarian publik tanpa akun; dipakai untuk memeriksa program studi energi.","pakai":true},
-{"id":"sd_sinta","nama":"SINTA","kep":"Science and Technology Index","pemilik":"Kementerian Pendidikan Tinggi, Sains, dan Teknologi","org":"Kemdiktisaintek","uraian":"Indeks peneliti, afiliasi, dan publikasi ilmiah Indonesia berikut skor SINTA.","sektor":["riset-data"],"jenis":["profil peneliti","publikasi","skor SINTA"],"cakupan":"Nasional","intl":false,"frek":"waktu nyata","format":["web"],"lisensi":"Tidak dinyatakan; lihat ketentuan situs","akses":"terbuka","portal":"https://sinta.kemdiktisaintek.go.id/","cara":"Dapat dibuka lewat peramban, tetapi server menolak klien otomatis (403); berhenti, jangan dilewati. Gunakan OpenAlex untuk panen.","pakai":false},
-{"id":"sd_tkdn","nama":"TKDN Kemenperin","kep":"Tingkat Komponen Dalam Negeri","pemilik":"Kementerian Perindustrian","org":"Kementerian Perindustrian","uraian":"Daftar sertifikat TKDN produk, termasuk modul surya, baterai, inverter, dan turbin.","sektor":["industri","surya","penyimpanan"],"jenis":["sertifikat TKDN","produk dalam negeri"],"cakupan":"Nasional","intl":false,"frek":"waktu nyata","format":["web"],"lisensi":"Informasi publik; kutip dengan atribusi","akses":"terbuka","portal":"https://tkdn.kemenperin.go.id/","cara":"Pencarian per produsen atau produk; tiap sertifikat punya tanggal terbit dan masa berlaku.","pakai":true},
-{"id":"sd_amdalnet","nama":"AMDALNET","pemilik":"Kementerian Lingkungan Hidup","org":"Kementerian Lingkungan Hidup","uraian":"Sistem penyusunan dan pengumuman dokumen AMDAL, UKL-UPL, dan persetujuan lingkungan.","sektor":["kebijakan","riset-data"],"jenis":["dokumen AMDAL","persetujuan lingkungan"],"cakupan":"Nasional","intl":false,"frek":"waktu nyata","format":["web"],"lisensi":"Informasi publik; kutip dengan atribusi","akses":"terbuka","portal":"https://amdalnet.menlhk.go.id/","cara":"Pengumuman rencana kegiatan terbuka; berkas dokumen penuh perlu akun pemrakarsa.","pakai":true},
-{"id":"sd_jdih_esdm","nama":"JDIH ESDM","kep":"Jaringan Dokumentasi dan Informasi Hukum ESDM","pemilik":"Kementerian ESDM","org":"ESDM","uraian":"Peraturan menteri, keputusan, dan abstrak regulasi sektor energi.","sektor":["kebijakan"],"jenis":["regulasi","keputusan menteri"],"cakupan":"Nasional","intl":false,"frek":"waktu nyata","format":["PDF","web"],"lisensi":"Peraturan perundang-undangan; hanya fakta dan tautan","akses":"terbuka","portal":"https://jdih.esdm.go.id/","cara":"Sebagian berkas hanya abstrak tanpa lampiran tabel; cek nomor dan status berlaku.","pakai":true},
-{"id":"sd_jdih_bpk","nama":"JDIH BPK","kep":"Database Peraturan BPK","pemilik":"Badan Pemeriksa Keuangan","org":"Badan Pemeriksa Keuangan","uraian":"Database peraturan perundang-undangan lengkap dengan status berlaku dan lampiran PDF.","sektor":["kebijakan"],"jenis":["regulasi","status berlaku"],"cakupan":"Nasional","intl":false,"frek":"waktu nyata","format":["PDF","web"],"lisensi":"Peraturan perundang-undangan; hanya fakta dan tautan","akses":"terbuka","portal":"https://peraturan.bpk.go.id/","cara":"Lampiran sering berupa PDF terpisah dari batang tubuh; cari keduanya.","pakai":true},
-{"id":"sd_djppr","nama":"DJPPR Kemenkeu","kep":"Direktorat Jenderal Pengelolaan Pembiayaan dan Risiko","pemilik":"Kementerian Keuangan","org":"Kemenkeu","uraian":"Laporan alokasi dan dampak sukuk hijau, serta data surat berharga negara.","sektor":["pembiayaan","karbon"],"jenis":["sukuk hijau","surat berharga negara"],"cakupan":"Nasional","intl":false,"frek":"tahunan","format":["PDF","web"],"lisensi":"Publikasi pemerintah; kutip dengan atribusi","akses":"terbuka","portal":"https://www.djppr.kemenkeu.go.id/","cara":"Laporan alokasi dan dampak berupa PDF; server kadang memutus unduhan besar.","pakai":true},
-{"id":"sd_bmkg","nama":"BMKG Data Online dan Open API","pemilik":"Badan Meteorologi, Klimatologi, dan Geofisika","org":"BMKG","uraian":"Data cuaca, iklim, radiasi, dan angin dari jaringan stasiun BMKG, berguna untuk kajian PLTS dan PLTB.","sektor":["surya","bayu","riset-data"],"jenis":["cuaca","iklim","radiasi matahari","angin"],"cakupan":"Nasional","intl":false,"frek":"harian","format":["JSON","CSV"],"lisensi":"Ketentuan BMKG; atribusi diwajibkan","akses":"api-terbuka","portal":"https://dataonline.bmkg.go.id/","api":"https://api.bmkg.go.id/","cara":"Open API prakiraan dan gempa terbuka tanpa kunci; data historis stasiun lewat Data Online memerlukan akun gratis.","pakai":false},
-{"id":"sd_ina_geoportal","nama":"Ina-Geoportal","kep":"Portal Satu Peta Badan Informasi Geospasial","pemilik":"Badan Informasi Geospasial","org":"Badan Informasi Geospasial","uraian":"Peta dasar dan tematik nasional: batas wilayah, tutupan lahan, dan jaringan jalan.","sektor":["riset-data","kebijakan"],"jenis":["peta dasar","batas wilayah","tutupan lahan"],"cakupan":"Nasional","intl":false,"frek":"tidak teratur","format":["peta web","WMS/WFS"],"lisensi":"Ketentuan BIG","akses":"terbuka","portal":"https://tanahair.indonesia.go.id/","cara":"Layanan peta terbuka; unduhan data vektor tertentu perlu akun.","pakai":false},
-{"id":"sd_den","nama":"Outlook Energi Indonesia","kep":"Dewan Energi Nasional","pemilik":"Dewan Energi Nasional","org":"Dewan Energi Nasional","uraian":"Proyeksi kebutuhan dan pasokan energi nasional, skenario bauran, dan Rencana Umum Energi Nasional.","sektor":["kebijakan","riset-data"],"jenis":["proyeksi energi","skenario bauran","RUEN"],"cakupan":"Nasional","intl":false,"frek":"tahunan","format":["PDF"],"lisensi":"Publikasi pemerintah; kutip dengan atribusi","akses":"terbuka","portal":"https://den.go.id/","cara":"Unduh PDF dari situs; robots.txt melarang perayap sehingga tidak dipanen otomatis.","pakai":false},
-{"id":"sd_rin_brin","nama":"RIN BRIN","kep":"Repositori Ilmiah Nasional","pemilik":"Badan Riset dan Inovasi Nasional","org":"BRIN","uraian":"Repositori publikasi, data penelitian, dan laporan riset BRIN termasuk bidang energi.","sektor":["riset-data"],"jenis":["publikasi riset","data penelitian"],"cakupan":"Nasional","intl":false,"frek":"waktu nyata","format":["PDF","web"],"lisensi":"Beragam menurut berkas","akses":"terbuka","portal":"https://rin.brin.go.id/","cara":"Telusuri per kata kunci; periksa lisensi tiap berkas.","pakai":false},
-{"id":"sd_garuda","nama":"Garuda","kep":"Garda Rujukan Digital","pemilik":"Kementerian Pendidikan Tinggi, Sains, dan Teknologi","org":"Kemdiktisaintek","uraian":"Indeks artikel jurnal ilmiah Indonesia dari ribuan penerbit.","sektor":["riset-data"],"jenis":["artikel jurnal","indeks publikasi"],"cakupan":"Nasional","intl":false,"frek":"waktu nyata","format":["web"],"lisensi":"Tidak dinyatakan; lihat ketentuan situs","akses":"terbuka","portal":"https://garuda.kemdiktisaintek.go.id/","cara":"Pencarian judul dan penulis; teks lengkap ada di situs jurnal asal.","pakai":false},
-{"id":"sd_sipsn","nama":"SIPSN","kep":"Sistem Informasi Pengelolaan Sampah Nasional","pemilik":"Kementerian Lingkungan Hidup","org":"Kementerian Lingkungan Hidup","uraian":"Timbulan dan pengelolaan sampah kabupaten dan kota, dasar kajian pengolahan sampah menjadi energi.","sektor":["biomassa-sampah","riset-data"],"jenis":["timbulan sampah","pengelolaan sampah"],"cakupan":"Kabupaten dan kota","intl":false,"frek":"tahunan","format":["web"],"lisensi":"Tidak dinyatakan; lihat ketentuan situs","akses":"terbuka","portal":"https://sipsn.menlhk.go.id/","cara":"Pilih tahun dan wilayah; angka diisi pemerintah daerah sehingga kelengkapan bervariasi.","pakai":false},
-{"id":"sd_idx_emiten","nama":"Data emiten IDX","kep":"Laporan keuangan dan keterbukaan informasi emiten","pemilik":"Bursa Efek Indonesia","org":"Bursa Efek Indonesia","uraian":"Laporan keuangan, laporan tahunan, dan keterbukaan informasi perusahaan tercatat, termasuk perusahaan energi.","sektor":["pembiayaan","industri"],"jenis":["laporan keuangan","keterbukaan informasi"],"cakupan":"Perusahaan tercatat","intl":false,"frek":"triwulan","format":["PDF","XLSX"],"lisensi":"Publikasi bursa; kutip dengan atribusi","akses":"terbuka","portal":"https://www.idx.co.id/","cara":"Unduh dokumen per emiten; situs sering memblokir klien otomatis.","pakai":false},
-{"id":"sd_global_solar_atlas","nama":"Global Solar Atlas","pemilik":"ESMAP, Bank Dunia","org":"World Bank","uraian":"Potensi surya (GHI, DNI, PVOUT) dengan resolusi sekitar 250 meter, dihitung oleh Solargis.","sektor":["surya"],"jenis":["radiasi matahari","potensi PV"],"cakupan":"Global","intl":true,"frek":"pembaruan model berkala","format":["GeoTIFF","peta web"],"lisensi":"CC BY 4.0","akses":"terbuka","portal":"https://globalsolaratlas.info/","cara":"Unduh raster per negara dari menu unduh; cantumkan atribusi Solargis dan Bank Dunia.","pakai":true},
-{"id":"sd_global_wind_atlas","nama":"Global Wind Atlas","pemilik":"DTU dan Bank Dunia","org":"World Bank","uraian":"Kecepatan dan kerapatan daya angin pada beberapa ketinggian, resolusi sekitar 250 meter.","sektor":["bayu"],"jenis":["kecepatan angin","kerapatan daya angin"],"cakupan":"Global","intl":true,"frek":"pembaruan model berkala","format":["GeoTIFF","peta web"],"lisensi":"CC BY 4.0","akses":"terbuka","portal":"https://globalwindatlas.info/","cara":"Unduh raster per negara; model mesoskala sehingga tidak menggantikan pengukuran tapak.","pakai":false},
-{"id":"sd_gem","nama":"Global Energy Monitor","pemilik":"Global Energy Monitor","org":"Global Energy Monitor","uraian":"Pelacak pembangkit dan infrastruktur: surya, angin, panas bumi, batubara, gas, dan pipa, lengkap dengan status proyek.","sektor":["surya","bayu","panas-bumi","hidro","riset-data"],"jenis":["pelacak pembangkit","status proyek","kapasitas MW"],"cakupan":"Global","intl":true,"frek":"semi tahunan","format":["XLSX","GeoJSON"],"lisensi":"CC BY 4.0 untuk sebagian pelacak; sebagian CC BY-NC 4.0, cek tiap berkas","akses":"permohonan","portal":"https://globalenergymonitor.org/","cara":"Unduhan memerlukan pengisian formulir singkat; berkas berlisensi NC hanya ditautkan, tidak disalin.","pakai":true},
-{"id":"sd_irenastat","nama":"IRENASTAT","kep":"Statistik Energi Terbarukan IRENA","pemilik":"International Renewable Energy Agency","org":"IRENA","uraian":"Kapasitas dan pembangkitan energi terbarukan per negara dan teknologi, deret waktu panjang.","sektor":["surya","bayu","hidro","panas-bumi","bioenergi","riset-data"],"jenis":["kapasitas terpasang","pembangkitan","tren"],"cakupan":"Global","intl":true,"frek":"tahunan","format":["PxWeb","CSV"],"lisensi":"Atribusi IRENA; lihat ketentuan situs","akses":"api-terbuka","portal":"https://www.irena.org/Data","api":"https://pxweb.irena.org/","cara":"Layanan PxWeb menerima kueri JSON tanpa kunci; angka tahun terakhir bersifat sementara.","pakai":true},
-{"id":"sd_ember","nama":"Ember","kep":"Ember Data Explorer","pemilik":"Ember","org":"Ember","uraian":"Data listrik global dan Indonesia: bauran pembangkitan, intensitas karbon, dan tren bulanan.","sektor":["riset-data","karbon","surya"],"jenis":["bauran listrik","intensitas karbon","pembangkitan bulanan"],"cakupan":"Global dan negara","intl":true,"frek":"bulanan","format":["CSV","API"],"lisensi":"CC BY 4.0","akses":"api-kunci","portal":"https://ember-energy.org/data/","api":"https://api.ember-energy.org/","cara":"Kunci API gratis lewat pendaftaran; berkas CSV juga dapat diunduh dari halaman data. Host berkas melarang perayap.","pakai":true},
-{"id":"sd_climate_trace","nama":"Climate TRACE","pemilik":"Climate TRACE Coalition","org":"Climate TRACE","uraian":"Emisi gas rumah kaca per aset dan sektor, termasuk pembangkit listrik, dari citra satelit dan model.","sektor":["karbon","riset-data"],"jenis":["emisi per aset","emisi sektor listrik"],"cakupan":"Global","intl":true,"frek":"bulanan","format":["CSV","API"],"lisensi":"CC BY 4.0","akses":"api-terbuka","portal":"https://climatetrace.org/","api":"https://api.climatetrace.org/","cara":"API publik tanpa kunci; unduh juga tersedia per negara. Angka berbasis estimasi, bukan pelaporan resmi.","pakai":true},
-{"id":"sd_owid_energi","nama":"Our World in Data: Energy","pemilik":"Our World in Data","org":"Our World in Data","uraian":"Kumpulan data energi global terkurasi: konsumsi, bauran, emisi, dan intensitas.","sektor":["riset-data"],"jenis":["konsumsi energi","bauran listrik","emisi"],"cakupan":"Global","intl":true,"frek":"tahunan","format":["CSV","JSON"],"lisensi":"CC BY 4.0","akses":"terbuka","portal":"https://ourworldindata.org/energy","api":"https://github.com/owid/energy-data","cara":"Unduh berkas CSV dari repositori GitHub; sumber asli tiap kolom tercantum di kamus data.","pakai":false},
-{"id":"sd_energydata","nama":"ENERGYDATA.INFO","pemilik":"Bank Dunia","org":"World Bank","uraian":"Platform data energi Bank Dunia: dataset, peta, dan analitik dari lembaga multilateral.","sektor":["riset-data","elektrifikasi"],"jenis":["dataset energi","akses listrik","peta"],"cakupan":"Global dan negara","intl":true,"frek":"bervariasi","format":["CSV","GeoTIFF","API"],"lisensi":"Beragam menurut dataset","akses":"api-terbuka","portal":"https://energydata.info/","api":"https://energydata.info/api/3/action/package_search","cara":"API katalog CKAN terbuka; unduh sebagian dataset meminta akun gratis.","pakai":false},
-{"id":"sd_nasa_power","nama":"NASA POWER","kep":"Prediction Of Worldwide Energy Resources","pemilik":"NASA","org":"NASA","uraian":"Deret waktu radiasi matahari, suhu, dan angin global sebagai masukan kajian PLTS dan PLTB.","sektor":["surya","bayu","riset-data"],"jenis":["radiasi matahari","suhu","kecepatan angin"],"cakupan":"Global","intl":true,"frek":"harian","format":["JSON","CSV","NetCDF"],"lisensi":"Domain publik NASA; atribusi dianjurkan","akses":"api-terbuka","portal":"https://power.larc.nasa.gov/","api":"https://power.larc.nasa.gov/api/temporal/daily/point","cara":"API titik tanpa kunci; resolusi kasar sehingga cocok untuk penapisan awal, bukan desain akhir.","pakai":false},
-{"id":"sd_osm","nama":"OpenStreetMap","pemilik":"OpenStreetMap Foundation","org":"OpenStreetMap","uraian":"Peta kolaboratif; fasilitas pembangkit dan gardu dipetakan relawan dengan tag power.","sektor":["jaringan","riset-data"],"jenis":["lokasi pembangkit","gardu","jaringan transmisi"],"cakupan":"Global","intl":true,"frek":"waktu nyata","format":["PBF","GeoJSON"],"lisensi":"ODbL 1.0","akses":"api-terbuka","portal":"https://www.openstreetmap.org/","cara":"Ambil ekstrak wilayah dari Geofabrik atau planet.osm; kebijakan Overpass dan Nominatim membatasi penggunaan otomatis. Atribusi dan berbagi-serupa berlaku.","pakai":true},
-{"id":"sd_wb_open_data","nama":"World Bank Open Data","pemilik":"Bank Dunia","org":"World Bank","uraian":"Indikator pembangunan, termasuk akses listrik, konsumsi energi, dan porsi energi terbarukan.","sektor":["riset-data","elektrifikasi"],"jenis":["indikator pembangunan","akses listrik"],"cakupan":"Global","intl":true,"frek":"tahunan","format":["JSON","CSV","XML"],"lisensi":"CC BY 4.0","akses":"api-terbuka","portal":"https://data.worldbank.org/","api":"https://api.worldbank.org/v2/","cara":"API v2 tanpa kunci; tambahkan format=json dan batasi per_page.","pakai":true},
-{"id":"sd_wb_projects","nama":"World Bank Projects and Operations","pemilik":"Bank Dunia","org":"World Bank","uraian":"Daftar proyek pinjaman dan hibah Bank Dunia per negara dan sektor, lengkap dengan komitmen dan status.","sektor":["pembiayaan"],"jenis":["proyek pinjaman","komitmen","status proyek"],"cakupan":"Global","intl":true,"frek":"harian","format":["JSON"],"lisensi":"CC BY 4.0","akses":"api-terbuka","portal":"https://projects.worldbank.org/","api":"https://search.worldbank.org/api/v2/projects","cara":"Saring countrycode_exact=ID dan sektor energi; nilai dalam USD komitmen.","pakai":true},
-{"id":"sd_iati","nama":"IATI Datastore dan d-portal","kep":"International Aid Transparency Initiative","pemilik":"IATI","org":"IATI","uraian":"Laporan aktivitas bantuan pembangunan dari ratusan pemberi, termasuk proyek energi di Indonesia.","sektor":["pembiayaan"],"jenis":["aktivitas bantuan","komitmen donor","penerima"],"cakupan":"Global","intl":true,"frek":"berkala","format":["XML","JSON","CSV"],"lisensi":"Ditetapkan tiap pelapor, umumnya CC BY 4.0","akses":"api-terbuka","portal":"https://d-portal.org/","api":"https://iatidatastore.iatistandard.org/","cara":"d-portal menyediakan kueri publik per negara dan sektor DAC; nilai konversi oleh d-portal, bukan angka asli pelapor.","pakai":true},
-{"id":"sd_openalex","nama":"OpenAlex","pemilik":"OurResearch","org":"OurResearch","uraian":"Indeks terbuka karya ilmiah, penulis, institusi, dan pendana, dasar peta riset energi terbarukan.","sektor":["riset-data"],"jenis":["karya ilmiah","penulis","institusi","pendana"],"cakupan":"Global","intl":true,"frek":"mingguan","format":["JSON"],"lisensi":"CC0","akses":"api-kunci","portal":"https://openalex.org/","api":"https://api.openalex.org/","cara":"Kunci API gratis menaikkan kuota harian; tanpa kunci kuota cepat habis (HTTP 429).","pakai":true},
-{"id":"sd_iea","nama":"IEA Data and Statistics","kep":"International Energy Agency","pemilik":"International Energy Agency","org":"IEA","uraian":"Statistik, proyeksi, dan laporan energi dunia; sebagian bebas, sebagian berbayar.","sektor":["riset-data","kebijakan"],"jenis":["statistik energi dunia","proyeksi","laporan"],"cakupan":"Global","intl":true,"frek":"tahunan","format":["web","CSV","PDF"],"lisensi":"Beragam; sebagian CC BY 4.0, sebagian berbayar","akses":"login","portal":"https://www.iea.org/data-and-statistics","cara":"Data Explorer terbuka untuk sebagian seri; unduhan dan berkas rinci memerlukan akun, sebagian berlangganan.","pakai":false},
-{"id":"sd_wri_gppd","nama":"Global Power Plant Database","pemilik":"World Resources Institute","org":"World Resources Institute","uraian":"Basis data pembangkit seluruh dunia: lokasi, kapasitas, bahan bakar, dan pemilik.","sektor":["jaringan","surya","bayu","hidro","panas-bumi"],"jenis":["lokasi pembangkit","kapasitas","bahan bakar"],"cakupan":"Global","intl":true,"frek":"tidak teratur","format":["CSV"],"lisensi":"CC BY 4.0","akses":"terbuka","portal":"https://datasets.wri.org/dataset/globalpowerplantdatabase","cara":"Unduh CSV tunggal; versi terakhir dirilis 2021 sehingga proyek baru tidak ada.","pakai":true},
-{"id":"sd_geoboundaries","nama":"geoBoundaries","pemilik":"William and Mary geoLab","org":"geoBoundaries","uraian":"Batas administrasi global per negara, dipakai di sini untuk pusat wilayah provinsi dan kabupaten.","sektor":["riset-data"],"jenis":["batas administrasi","pusat wilayah"],"cakupan":"Global","intl":true,"frek":"tidak teratur","format":["GeoJSON","Shapefile"],"lisensi":"ODbL (ADM1), CC BY 3.0 IGO (ADM2), cek tiap tingkat","akses":"api-terbuka","portal":"https://www.geoboundaries.org/","api":"https://www.geoboundaries.org/api/current/gbOpen/IDN/ADM1/","cara":"API mengembalikan tautan unduh; berkas ADM2 Indonesia lebih dari 150 MB.","pakai":true},
-{"id":"sd_wikidata","nama":"Wikidata","pemilik":"Wikimedia Foundation","org":"Wikimedia","uraian":"Basis pengetahuan terstruktur: organisasi, tokoh, dan pembangkit dengan pengenal silang.","sektor":["riset-data"],"jenis":["entitas","pengenal silang"],"cakupan":"Global","intl":true,"frek":"waktu nyata","format":["JSON","RDF"],"lisensi":"CC0","akses":"api-terbuka","portal":"https://www.wikidata.org/","api":"https://www.wikidata.org/w/api.php","cara":"robots.txt membatasi jalur SPARQL dan api.php untuk agen umum; pemakaian otomatis hanya atas keputusan tertulis.","pakai":true},
-{"id":"sd_verra","nama":"Verra Registry","pemilik":"Verra","org":"Verra","uraian":"Registri proyek karbon sukarela VCS: lokasi, metodologi, penerbitan, dan pensiun kredit.","sektor":["karbon"],"jenis":["registri karbon","penerbitan kredit","pensiun kredit"],"cakupan":"Global","intl":true,"frek":"waktu nyata","format":["web","CSV"],"lisensi":"Ketentuan Verra; salinan berlisensi CC BY 4.0 tersedia lewat VROD Berkeley","akses":"terbuka","portal":"https://registry.verra.org/","cara":"Pencarian proyek terbuka; untuk panen massal dipakai berkas bulanan VROD Berkeley Carbon Trading Project.","pakai":true},
-{"id":"sd_gold_standard","nama":"Gold Standard Impact Registry","pemilik":"Gold Standard","org":"Gold Standard","uraian":"Registri proyek karbon Gold Standard, termasuk biogas rumah tangga dan energi terbarukan.","sektor":["karbon","bioenergi"],"jenis":["registri karbon","penerbitan kredit"],"cakupan":"Global","intl":true,"frek":"waktu nyata","format":["web","JSON"],"lisensi":"Ketentuan Gold Standard","akses":"api-terbuka","portal":"https://registry.goldstandard.org/","api":"https://public-api.goldstandard.org/","cara":"Pencarian proyek terbuka tanpa akun; API publik membatasi laju permintaan.","pakai":true},
-{"id":"sd_ren21","nama":"REN21 Global Status Report","pemilik":"REN21","org":"REN21","uraian":"Laporan status global energi terbarukan lengkap dengan lampiran data dan bab kebijakan.","sektor":["kebijakan","riset-data"],"jenis":["laporan global","kebijakan EBT"],"cakupan":"Global","intl":true,"frek":"tahunan","format":["PDF","XLSX"],"lisensi":"Lihat ketentuan situs","akses":"terbuka","portal":"https://www.ren21.net/gsr-2024/","cara":"Unduh laporan dan data pendukung; kutip bab dan halaman.","pakai":false},
-{"id":"sd_bnef","nama":"BloombergNEF","kep":"Bloomberg New Energy Finance","pemilik":"Bloomberg","org":"Bloomberg","uraian":"Data investasi, biaya teknologi, dan harga listrik terbarukan; layanan berlangganan.","sektor":["pembiayaan","riset-data"],"jenis":["investasi EBT","biaya teknologi"],"cakupan":"Global","intl":true,"frek":"harian","format":["terminal","laporan"],"lisensi":"Berlangganan","akses":"tertutup","portal":"https://about.bnef.com/","cara":"Tidak dapat dipakai tanpa langganan; hanya ringkasan siaran pers yang terbuka.","pakai":false},
-{"id":"sd_era5","nama":"Copernicus ERA5","kep":"Reanalisis iklim ERA5","pemilik":"Copernicus, ECMWF","org":"Copernicus","uraian":"Reanalisis cuaca global per jam sejak 1940: angin, suhu, dan radiasi untuk kajian sumber daya.","sektor":["bayu","surya","riset-data"],"jenis":["reanalisis cuaca","angin","radiasi"],"cakupan":"Global","intl":true,"frek":"harian","format":["NetCDF","GRIB"],"lisensi":"Lisensi Copernicus (atribusi)","akses":"api-kunci","portal":"https://cds.climate.copernicus.eu/","cara":"Daftar akun gratis lalu pakai API CDS; antrean unduhan bisa lama.","pakai":false},
-{"id":"sd_ei_review","nama":"Statistical Review of World Energy","pemilik":"Energy Institute","org":"Energy Institute","uraian":"Statistik energi dunia tahunan per negara: produksi, konsumsi, dan emisi.","sektor":["riset-data"],"jenis":["produksi energi","konsumsi energi","emisi"],"cakupan":"Global","intl":true,"frek":"tahunan","format":["XLSX","CSV"],"lisensi":"Atribusi Energy Institute; lihat ketentuan situs","akses":"terbuka","portal":"https://www.energyinst.org/statistical-review","cara":"Unduh berkas data lengkap dari halaman laporan.","pakai":false},
-{"id":"sd_aeds","nama":"ASEAN Energy Database System","kep":"AEDS ASEAN Centre for Energy","pemilik":"ASEAN Centre for Energy","org":"ASEAN Centre for Energy","uraian":"Data energi negara anggota ASEAN: pasokan, permintaan, dan capaian target EBT regional.","sektor":["riset-data","kebijakan"],"jenis":["data energi ASEAN","target regional"],"cakupan":"ASEAN","intl":true,"frek":"tahunan","format":["web","PDF"],"lisensi":"Lihat ketentuan situs","akses":"terbuka","portal":"https://aseanenergy.org/","cara":"Laporan ASEAN Energy Outlook dan basis data tersedia; periksa tahun dasar tiap tabel.","pakai":true},
-{"id":"sd_oecd_crs","nama":"OECD Creditor Reporting System","kep":"Statistik bantuan pembangunan OECD DAC","pemilik":"OECD","org":"OECD","uraian":"Arus bantuan pembangunan resmi per donor, penerima, dan sektor DAC, termasuk energi.","sektor":["pembiayaan"],"jenis":["bantuan pembangunan","arus donor"],"cakupan":"Global","intl":true,"frek":"tahunan","format":["SDMX","CSV"],"lisensi":"Ketentuan OECD; atribusi diwajibkan","akses":"api-terbuka","portal":"https://data-explorer.oecd.org/","api":"https://sdmx.oecd.org/public/rest/","cara":"API SDMX publik tanpa kunci dengan batas laju; nilai dalam USD konstan atau berjalan, cek catatan seri.","pakai":false}
+{
+"id": "sd_esdm_geoportal",
+"nama": "Geoportal ESDM (ESDM One Map)",
+"kep": "ESDM One Map Indonesia",
+"pemilik": "Kementerian ESDM",
+"org": "ESDM",
+"uraian": "Peta tematik ESDM: wilayah kerja panas bumi, pembangkit, jaringan transmisi, potensi energi, dan izin usaha.",
+"sektor": [
+"panas-bumi",
+"jaringan",
+"surya",
+"hidro"
+],
+"jenis": [
+"peta tematik",
+"wilayah kerja",
+"izin usaha"
+],
+"cakupan": "Nasional",
+"intl": false,
+"frek": "tidak teratur",
+"format": [
+"peta web",
+"WMS/WFS"
+],
+"lisensi": "Tidak dinyatakan; lihat ketentuan situs",
+"akses": "terbuka",
+"portal": "https://geoportal.esdm.go.id/",
+"cara": "Dibuka lewat peta web. robots.txt melarang mesin perayap, jadi tidak dipanen otomatis; ambil lapisan secara manual dan catat tanggalnya.",
+"pakai": true
+},
+{
+"id": "sd_momi",
+"nama": "MOMI",
+"kep": "Minerba One Map Indonesia",
+"pemilik": "Kementerian ESDM",
+"org": "ESDM",
+"uraian": "Peta wilayah izin usaha pertambangan mineral dan batubara, berguna untuk irisan lahan dengan proyek energi.",
+"sektor": [
+"kebijakan",
+"riset-data"
+],
+"jenis": [
+"peta izin tambang",
+"wilayah izin"
+],
+"cakupan": "Nasional",
+"intl": false,
+"frek": "tidak teratur",
+"format": [
+"peta web"
+],
+"lisensi": "Tidak dinyatakan; lihat ketentuan situs",
+"akses": "terbuka",
+"portal": "https://momi.minerba.esdm.go.id/",
+"cara": "Peta web; unduhan massal tidak disediakan di halaman publik.",
+"pakai": false
+},
+{
+"id": "sd_heesi",
+"nama": "HEESI",
+"kep": "Handbook of Energy and Economic Statistics of Indonesia",
+"pemilik": "Kementerian ESDM",
+"org": "ESDM",
+"uraian": "Buku statistik tahunan: bauran energi, produksi, konsumsi, dan kapasitas pembangkit menurut jenis energi.",
+"sektor": [
+"riset-data",
+"surya",
+"hidro",
+"panas-bumi",
+"bioenergi"
+],
+"jenis": [
+"statistik energi",
+"bauran energi",
+"kapasitas pembangkit"
+],
+"cakupan": "Nasional",
+"intl": false,
+"frek": "tahunan",
+"format": [
+"PDF"
+],
+"lisensi": "Publikasi pemerintah; kutip dengan atribusi",
+"akses": "terbuka",
+"portal": "https://www.esdm.go.id/id/publikasi/handbook-of-energy-economic-statistics-of-indonesia",
+"cara": "Unduh PDF edisi terbaru; angka tabel disalin manual dengan nomor halaman.",
+"pakai": true
+},
+{
+"id": "sd_gatrik",
+"nama": "Statistik Ketenagalistrikan",
+"kep": "Portal Gatrik Ditjen Ketenagalistrikan",
+"pemilik": "Kementerian ESDM",
+"org": "ESDM",
+"uraian": "Statistik ketenagalistrikan, RUPTL, rasio elektrifikasi, dan indeks dokumen ketenagalistrikan.",
+"sektor": [
+"jaringan",
+"elektrifikasi",
+"riset-data"
+],
+"jenis": [
+"statistik listrik",
+"rasio elektrifikasi",
+"RUPTL"
+],
+"cakupan": "Nasional dan provinsi",
+"intl": false,
+"frek": "tahunan",
+"format": [
+"PDF",
+"JSON"
+],
+"lisensi": "Publikasi pemerintah; kutip dengan atribusi",
+"akses": "api-terbuka",
+"portal": "https://gatrik.esdm.go.id/",
+"api": "https://gatrik.esdm.go.id/gatrik/gatrik-api/api/download-index",
+"cara": "Indeks dokumen tersedia sebagai JSON publik tanpa kunci; API tidak didokumentasikan resmi sehingga bentuknya bisa berubah.",
+"pakai": true,
+"contoh": "Dipakai direktori ini sebagai sumber data listrik desa, emisi provinsi, dan indeks dokumen RUPTL (public/data/desa_listrik.json, emisi_provinsi.json, kelistrikan.json)."
+},
+{
+"id": "sd_ebtke",
+"nama": "Portal EBTKE",
+"kep": "Direktorat Jenderal Energi Baru, Terbarukan, dan Konservasi Energi",
+"pemilik": "Kementerian ESDM",
+"org": "ESDM",
+"uraian": "Capaian bauran EBT, potensi, wilayah kerja panas bumi, dan siaran pers Ditjen EBTKE.",
+"sektor": [
+"surya",
+"bayu",
+"hidro",
+"panas-bumi",
+"bioenergi",
+"kebijakan"
+],
+"jenis": [
+"capaian EBT",
+"potensi EBT",
+"siaran pers"
+],
+"cakupan": "Nasional",
+"intl": false,
+"frek": "tidak teratur",
+"format": [
+"web",
+"PDF"
+],
+"lisensi": "Publikasi pemerintah; kutip dengan atribusi",
+"akses": "terbuka",
+"portal": "https://ebtke.esdm.go.id/",
+"cara": "Aplikasi web satu halaman tanpa API terdokumentasi; ambil angka dari laporan kinerja PDF.",
+"pakai": true
+},
+{
+"id": "sd_satudata_esdm",
+"nama": "Satu Data ESDM",
+"pemilik": "Kementerian ESDM",
+"org": "ESDM",
+"uraian": "Portal data sektoral ESDM yang memuat dataset statistik energi dan sumber daya mineral.",
+"sektor": [
+"riset-data"
+],
+"jenis": [
+"dataset sektoral",
+"statistik energi"
+],
+"cakupan": "Nasional",
+"intl": false,
+"frek": "tidak teratur",
+"format": [
+"CSV",
+"XLSX"
+],
+"lisensi": "Tidak dinyatakan; lihat ketentuan situs",
+"akses": "terbuka",
+"portal": "https://satudata.esdm.go.id/",
+"cara": "Telusuri dataset lewat katalog; periksa tanggal pembaruan tiap dataset sebelum dipakai.",
+"pakai": false
+},
+{
+"id": "sd_pln_statistik",
+"nama": "Statistik PLN",
+"pemilik": "PT PLN (Persero)",
+"org": "PLN",
+"uraian": "Statistik tahunan PLN: kapasitas terpasang, produksi, penjualan, jumlah pelanggan, dan susut jaringan.",
+"sektor": [
+"jaringan",
+"elektrifikasi",
+"riset-data"
+],
+"jenis": [
+"statistik PLN",
+"kapasitas terpasang",
+"penjualan listrik"
+],
+"cakupan": "Nasional dan wilayah usaha",
+"intl": false,
+"frek": "tahunan",
+"format": [
+"PDF"
+],
+"lisensi": "Publikasi perusahaan; kutip dengan atribusi",
+"akses": "terbuka",
+"portal": "https://web.pln.co.id/statics/statistik",
+"cara": "Unduh PDF per tahun; tabel dibaca dengan nomor halaman.",
+"pakai": true
+},
+{
+"id": "sd_ruptl",
+"nama": "RUPTL",
+"kep": "Rencana Usaha Penyediaan Tenaga Listrik",
+"pemilik": "PT PLN (Persero)",
+"org": "PLN",
+"uraian": "Rencana 10 tahun penambahan pembangkit, transmisi, dan gardu menurut jenis dan provinsi, disahkan Menteri ESDM.",
+"sektor": [
+"jaringan",
+"surya",
+"hidro",
+"panas-bumi",
+"kebijakan"
+],
+"jenis": [
+"rencana pembangkit",
+"rencana transmisi",
+"kebutuhan listrik"
+],
+"cakupan": "Nasional dan provinsi",
+"intl": false,
+"frek": "tiap 1 sampai 2 tahun",
+"format": [
+"PDF"
+],
+"lisensi": "Dokumen pemerintah; kutip dengan atribusi",
+"akses": "terbuka",
+"portal": "https://gatrik.esdm.go.id/",
+"cara": "Edisi 2025 sampai 2034 tersedia lewat portal Gatrik; tabel pembangkit berlapis sel sehingga nama proyek wajib dicek manual.",
+"pakai": true
+},
+{
+"id": "sd_oss",
+"nama": "OSS RBA",
+"kep": "Online Single Submission, Risk Based Approach",
+"pemilik": "Kementerian Investasi dan Hilirisasi/BKPM",
+"org": "BKPM",
+"uraian": "Sistem perizinan berusaha terintegrasi: NIB, izin usaha, dan izin komersial atau operasional.",
+"sektor": [
+"kebijakan",
+"pembiayaan"
+],
+"jenis": [
+"perizinan",
+"NIB",
+"izin usaha"
+],
+"cakupan": "Nasional",
+"intl": false,
+"frek": "waktu nyata",
+"format": [
+"web"
+],
+"lisensi": "Tidak berlaku (sistem transaksi)",
+"akses": "login",
+"portal": "https://oss.go.id/",
+"cara": "Pelaku usaha mendaftar untuk mengurus izin; tidak ada data terbuka massal. Dipakai sebagai rujukan jalur izin, bukan sumber data.",
+"pakai": false
+},
+{
+"id": "sd_inaproc",
+"nama": "INAPROC (LPSE dan SIRUP)",
+"kep": "Portal Pengadaan Nasional LKPP",
+"pemilik": "LKPP",
+"org": "LKPP",
+"uraian": "Rencana umum pengadaan (SIRUP) dan hasil tender LPSE seluruh instansi, termasuk pengadaan PLTS dan listrik desa.",
+"sektor": [
+"pembiayaan",
+"surya",
+"elektrifikasi"
+],
+"jenis": [
+"tender",
+"rencana pengadaan",
+"pemenang tender"
+],
+"cakupan": "Nasional",
+"intl": false,
+"frek": "waktu nyata",
+"format": [
+"web"
+],
+"lisensi": "Informasi publik; kutip dengan atribusi",
+"akses": "terbuka",
+"portal": "https://inaproc.id/",
+"cara": "Cari paket per kata kunci; setiap LPSE instansi punya situs sendiri, panen massal tidak disediakan.",
+"pakai": false
+},
+{
+"id": "sd_opentender",
+"nama": "Opentender.net",
+"pemilik": "Indonesia Corruption Watch",
+"org": "Indonesia Corruption Watch",
+"uraian": "Data tender pengadaan yang dihimpun dari LPSE dengan penanda risiko, untuk menelusuri pemenang dan nilai kontrak.",
+"sektor": [
+"pembiayaan",
+"riset-data"
+],
+"jenis": [
+"tender",
+"pemenang",
+"nilai kontrak"
+],
+"cakupan": "Nasional",
+"intl": false,
+"frek": "berkala",
+"format": [
+"web"
+],
+"lisensi": "Tidak dinyatakan; lihat ketentuan situs",
+"akses": "terbuka",
+"portal": "https://opentender.net/",
+"cara": "Telusuri dengan kata kunci energi; verifikasi ke LPSE asal sebelum dikutip.",
+"pakai": false
+},
+{
+"id": "sd_idxcarbon",
+"nama": "IDXCarbon",
+"kep": "Bursa Karbon Indonesia",
+"pemilik": "Bursa Efek Indonesia",
+"org": "Bursa Efek Indonesia",
+"uraian": "Bursa karbon resmi: volume, nilai, dan harga unit karbon, serta daftar proyek dan peserta.",
+"sektor": [
+"karbon",
+"pembiayaan"
+],
+"jenis": [
+"volume perdagangan",
+"harga karbon",
+"proyek karbon"
+],
+"cakupan": "Nasional",
+"intl": false,
+"frek": "bulanan",
+"format": [
+"PDF",
+"web"
+],
+"lisensi": "Publikasi bursa; kutip dengan atribusi",
+"akses": "terbuka",
+"portal": "https://idxcarbon.co.id/",
+"cara": "Laporan bulanan berupa PDF. Periode diambil dari isi PDF, bukan label halaman, karena label bulan pernah keliru.",
+"pakai": true,
+"contoh": "Dipakai direktori ini untuk volume dan nilai perdagangan karbon bulanan (public/data/keuangan.json)."
+},
+{
+"id": "sd_srn_ppi",
+"nama": "SRN PPI",
+"kep": "Sistem Registri Nasional Pengendalian Perubahan Iklim",
+"pemilik": "Kementerian Lingkungan Hidup",
+"org": "Kementerian Lingkungan Hidup",
+"uraian": "Registri aksi mitigasi dan adaptasi, serta unit karbon yang tercatat di Indonesia.",
+"sektor": [
+"karbon",
+"kebijakan"
+],
+"jenis": [
+"registri karbon",
+"aksi mitigasi",
+"unit karbon"
+],
+"cakupan": "Nasional",
+"intl": false,
+"frek": "waktu nyata",
+"format": [
+"web"
+],
+"lisensi": "Tidak dinyatakan; lihat ketentuan situs",
+"akses": "terbuka",
+"portal": "https://srn.menlhk.go.id/",
+"cara": "Data publik dibuka lewat menu registri; unduhan massal tidak ada, catat tanggal ambil.",
+"pakai": true
+},
+{
+"id": "sd_sign_smart",
+"nama": "SIGN SMART",
+"kep": "Sistem Inventarisasi Gas Rumah Kaca Nasional",
+"pemilik": "Kementerian Lingkungan Hidup",
+"org": "Kementerian Lingkungan Hidup",
+"uraian": "Inventarisasi emisi gas rumah kaca nasional per sektor, termasuk energi.",
+"sektor": [
+"karbon",
+"kebijakan"
+],
+"jenis": [
+"inventarisasi emisi",
+"emisi sektor energi"
+],
+"cakupan": "Nasional",
+"intl": false,
+"frek": "tahunan",
+"format": [
+"web",
+"PDF"
+],
+"lisensi": "Tidak dinyatakan; lihat ketentuan situs",
+"akses": "terbuka",
+"portal": "https://signsmart.menlhk.go.id/",
+"cara": "Ringkasan terbuka; data rinci memerlukan akun instansi.",
+"pakai": false
+},
+{
+"id": "sd_bps",
+"nama": "BPS",
+"kep": "Badan Pusat Statistik",
+"pemilik": "Badan Pusat Statistik",
+"org": "BPS",
+"uraian": "Statistik resmi: penduduk, ekonomi, listrik rumah tangga, dan indikator wilayah sampai tingkat kabupaten.",
+"sektor": [
+"riset-data",
+"elektrifikasi"
+],
+"jenis": [
+"statistik wilayah",
+"penduduk",
+"listrik rumah tangga"
+],
+"cakupan": "Nasional sampai kabupaten",
+"intl": false,
+"frek": "bervariasi",
+"format": [
+"web",
+"XLSX",
+"JSON"
+],
+"lisensi": "Publikasi BPS; atribusi diwajibkan",
+"akses": "api-kunci",
+"portal": "https://www.bps.go.id/",
+"api": "https://webapi.bps.go.id/",
+"cara": "Daftar akun gratis untuk mendapat kunci WebAPI; tabel statis juga bisa diunduh tanpa kunci.",
+"pakai": true
+},
+{
+"id": "sd_data_go_id",
+"nama": "Satu Data Indonesia",
+"kep": "data.go.id",
+"pemilik": "Kementerian PPN/Bappenas",
+"org": "Bappenas",
+"uraian": "Katalog dataset terbuka lintas kementerian dan pemerintah daerah.",
+"sektor": [
+"riset-data"
+],
+"jenis": [
+"katalog dataset",
+"data pemerintah"
+],
+"cakupan": "Nasional",
+"intl": false,
+"frek": "bervariasi",
+"format": [
+"CSV",
+"XLSX",
+"JSON"
+],
+"lisensi": "Beragam menurut dataset",
+"akses": "terbuka",
+"portal": "https://data.go.id/",
+"cara": "Cari dataset dengan kata kunci energi; kualitas dan keterbaruan berbeda tiap penerbit.",
+"pakai": false
+},
+{
+"id": "sd_kemendes",
+"nama": "Satu Data Kemendes",
+"kep": "SDGs Desa dan Indeks Desa Membangun",
+"pemilik": "Kementerian Desa dan PDT",
+"org": "Kementerian Desa",
+"uraian": "Data desa: indeks desa membangun, akses listrik, dan indikator SDGs desa.",
+"sektor": [
+"elektrifikasi",
+"riset-data",
+"transisi-adil"
+],
+"jenis": [
+"indeks desa",
+"akses listrik desa",
+"SDGs desa"
+],
+"cakupan": "Desa",
+"intl": false,
+"frek": "tahunan",
+"format": [
+"web",
+"XLSX"
+],
+"lisensi": "Tidak dinyatakan; lihat ketentuan situs",
+"akses": "terbuka",
+"portal": "https://sdgs.kemendesa.go.id/",
+"cara": "Lihat per desa lewat portal; angka tahun berbeda tiap indikator.",
+"pakai": true
+},
+{
+"id": "sd_pddikti",
+"nama": "PDDikti",
+"kep": "Pangkalan Data Pendidikan Tinggi",
+"pemilik": "Kementerian Pendidikan Tinggi, Sains, dan Teknologi",
+"org": "Kemdiktisaintek",
+"uraian": "Data perguruan tinggi, program studi, dosen, dan mahasiswa.",
+"sektor": [
+"riset-data"
+],
+"jenis": [
+"program studi",
+"perguruan tinggi",
+"dosen"
+],
+"cakupan": "Nasional",
+"intl": false,
+"frek": "semester",
+"format": [
+"web"
+],
+"lisensi": "Informasi publik; kutip dengan atribusi",
+"akses": "terbuka",
+"portal": "https://pddikti.kemdiktisaintek.go.id/",
+"cara": "Pencarian publik tanpa akun; dipakai untuk memeriksa program studi energi.",
+"pakai": true
+},
+{
+"id": "sd_sinta",
+"nama": "SINTA",
+"kep": "Science and Technology Index",
+"pemilik": "Kementerian Pendidikan Tinggi, Sains, dan Teknologi",
+"org": "Kemdiktisaintek",
+"uraian": "Indeks peneliti, afiliasi, dan publikasi ilmiah Indonesia berikut skor SINTA.",
+"sektor": [
+"riset-data"
+],
+"jenis": [
+"profil peneliti",
+"publikasi",
+"skor SINTA"
+],
+"cakupan": "Nasional",
+"intl": false,
+"frek": "waktu nyata",
+"format": [
+"web"
+],
+"lisensi": "Tidak dinyatakan; lihat ketentuan situs",
+"akses": "terbuka",
+"portal": "https://sinta.kemdiktisaintek.go.id/",
+"cara": "Dapat dibuka lewat peramban, tetapi server menolak klien otomatis (403); berhenti, jangan dilewati. Gunakan OpenAlex untuk panen.",
+"pakai": false
+},
+{
+"id": "sd_tkdn",
+"nama": "TKDN Kemenperin",
+"kep": "Tingkat Komponen Dalam Negeri",
+"pemilik": "Kementerian Perindustrian",
+"org": "Kementerian Perindustrian",
+"uraian": "Daftar sertifikat TKDN produk, termasuk modul surya, baterai, inverter, dan turbin.",
+"sektor": [
+"industri",
+"surya",
+"penyimpanan"
+],
+"jenis": [
+"sertifikat TKDN",
+"produk dalam negeri"
+],
+"cakupan": "Nasional",
+"intl": false,
+"frek": "waktu nyata",
+"format": [
+"web"
+],
+"lisensi": "Informasi publik; kutip dengan atribusi",
+"akses": "terbuka",
+"portal": "https://tkdn.kemenperin.go.id/",
+"cara": "Pencarian per produsen atau produk; tiap sertifikat punya tanggal terbit dan masa berlaku.",
+"pakai": true,
+"contoh": "Dipakai direktori ini untuk sertifikat TKDN modul surya, baterai, inverter, dan turbin yang menjadi butir inovasi (public/data/inovasi.json)."
+},
+{
+"id": "sd_amdalnet",
+"nama": "AMDALNET",
+"pemilik": "Kementerian Lingkungan Hidup",
+"org": "Kementerian Lingkungan Hidup",
+"uraian": "Sistem penyusunan dan pengumuman dokumen AMDAL, UKL-UPL, dan persetujuan lingkungan.",
+"sektor": [
+"kebijakan",
+"riset-data"
+],
+"jenis": [
+"dokumen AMDAL",
+"persetujuan lingkungan"
+],
+"cakupan": "Nasional",
+"intl": false,
+"frek": "waktu nyata",
+"format": [
+"web"
+],
+"lisensi": "Informasi publik; kutip dengan atribusi",
+"akses": "terbuka",
+"portal": "https://amdalnet.menlhk.go.id/",
+"cara": "Pengumuman rencana kegiatan terbuka; berkas dokumen penuh perlu akun pemrakarsa.",
+"pakai": true,
+"contoh": "Dipakai direktori ini untuk membaca pengumuman AMDAL proyek pembangkit (public/data/amdal.json)."
+},
+{
+"id": "sd_jdih_esdm",
+"nama": "JDIH ESDM",
+"kep": "Jaringan Dokumentasi dan Informasi Hukum ESDM",
+"pemilik": "Kementerian ESDM",
+"org": "ESDM",
+"uraian": "Peraturan menteri, keputusan, dan abstrak regulasi sektor energi.",
+"sektor": [
+"kebijakan"
+],
+"jenis": [
+"regulasi",
+"keputusan menteri"
+],
+"cakupan": "Nasional",
+"intl": false,
+"frek": "waktu nyata",
+"format": [
+"PDF",
+"web"
+],
+"lisensi": "Peraturan perundang-undangan; hanya fakta dan tautan",
+"akses": "terbuka",
+"portal": "https://jdih.esdm.go.id/",
+"cara": "Sebagian berkas hanya abstrak tanpa lampiran tabel; cek nomor dan status berlaku.",
+"pakai": true
+},
+{
+"id": "sd_jdih_bpk",
+"nama": "JDIH BPK",
+"kep": "Database Peraturan BPK",
+"pemilik": "Badan Pemeriksa Keuangan",
+"org": "Badan Pemeriksa Keuangan",
+"uraian": "Database peraturan perundang-undangan lengkap dengan status berlaku dan lampiran PDF.",
+"sektor": [
+"kebijakan"
+],
+"jenis": [
+"regulasi",
+"status berlaku"
+],
+"cakupan": "Nasional",
+"intl": false,
+"frek": "waktu nyata",
+"format": [
+"PDF",
+"web"
+],
+"lisensi": "Peraturan perundang-undangan; hanya fakta dan tautan",
+"akses": "terbuka",
+"portal": "https://peraturan.bpk.go.id/",
+"cara": "Lampiran sering berupa PDF terpisah dari batang tubuh; cari keduanya.",
+"pakai": true
+},
+{
+"id": "sd_djppr",
+"nama": "DJPPR Kemenkeu",
+"kep": "Direktorat Jenderal Pengelolaan Pembiayaan dan Risiko",
+"pemilik": "Kementerian Keuangan",
+"org": "Kemenkeu",
+"uraian": "Laporan alokasi dan dampak sukuk hijau, serta data surat berharga negara.",
+"sektor": [
+"pembiayaan",
+"karbon"
+],
+"jenis": [
+"sukuk hijau",
+"surat berharga negara"
+],
+"cakupan": "Nasional",
+"intl": false,
+"frek": "tahunan",
+"format": [
+"PDF",
+"web"
+],
+"lisensi": "Publikasi pemerintah; kutip dengan atribusi",
+"akses": "terbuka",
+"portal": "https://www.djppr.kemenkeu.go.id/",
+"cara": "Laporan alokasi dan dampak berupa PDF; server kadang memutus unduhan besar.",
+"pakai": true
+},
+{
+"id": "sd_bmkg",
+"nama": "BMKG Data Online dan Open API",
+"pemilik": "Badan Meteorologi, Klimatologi, dan Geofisika",
+"org": "BMKG",
+"uraian": "Data cuaca, iklim, radiasi, dan angin dari jaringan stasiun BMKG, berguna untuk kajian PLTS dan PLTB.",
+"sektor": [
+"surya",
+"bayu",
+"riset-data"
+],
+"jenis": [
+"cuaca",
+"iklim",
+"radiasi matahari",
+"angin"
+],
+"cakupan": "Nasional",
+"intl": false,
+"frek": "harian",
+"format": [
+"JSON",
+"CSV"
+],
+"lisensi": "Ketentuan BMKG; atribusi diwajibkan",
+"akses": "api-terbuka",
+"portal": "https://dataonline.bmkg.go.id/",
+"api": "https://api.bmkg.go.id/",
+"cara": "Open API prakiraan dan gempa terbuka tanpa kunci; data historis stasiun lewat Data Online memerlukan akun gratis.",
+"pakai": false
+},
+{
+"id": "sd_ina_geoportal",
+"nama": "Ina-Geoportal",
+"kep": "Portal Satu Peta Badan Informasi Geospasial",
+"pemilik": "Badan Informasi Geospasial",
+"org": "Badan Informasi Geospasial",
+"uraian": "Peta dasar dan tematik nasional: batas wilayah, tutupan lahan, dan jaringan jalan.",
+"sektor": [
+"riset-data",
+"kebijakan"
+],
+"jenis": [
+"peta dasar",
+"batas wilayah",
+"tutupan lahan"
+],
+"cakupan": "Nasional",
+"intl": false,
+"frek": "tidak teratur",
+"format": [
+"peta web",
+"WMS/WFS"
+],
+"lisensi": "Ketentuan BIG",
+"akses": "terbuka",
+"portal": "https://tanahair.indonesia.go.id/",
+"cara": "Layanan peta terbuka; unduhan data vektor tertentu perlu akun.",
+"pakai": false
+},
+{
+"id": "sd_den",
+"nama": "Outlook Energi Indonesia",
+"kep": "Dewan Energi Nasional",
+"pemilik": "Dewan Energi Nasional",
+"org": "Dewan Energi Nasional",
+"uraian": "Proyeksi kebutuhan dan pasokan energi nasional, skenario bauran, dan Rencana Umum Energi Nasional.",
+"sektor": [
+"kebijakan",
+"riset-data"
+],
+"jenis": [
+"proyeksi energi",
+"skenario bauran",
+"RUEN"
+],
+"cakupan": "Nasional",
+"intl": false,
+"frek": "tahunan",
+"format": [
+"PDF"
+],
+"lisensi": "Publikasi pemerintah; kutip dengan atribusi",
+"akses": "terbuka",
+"portal": "https://den.go.id/",
+"cara": "Unduh PDF dari situs; robots.txt melarang perayap sehingga tidak dipanen otomatis.",
+"pakai": false
+},
+{
+"id": "sd_rin_brin",
+"nama": "RIN BRIN",
+"kep": "Repositori Ilmiah Nasional",
+"pemilik": "Badan Riset dan Inovasi Nasional",
+"org": "BRIN",
+"uraian": "Repositori publikasi, data penelitian, dan laporan riset BRIN termasuk bidang energi.",
+"sektor": [
+"riset-data"
+],
+"jenis": [
+"publikasi riset",
+"data penelitian"
+],
+"cakupan": "Nasional",
+"intl": false,
+"frek": "waktu nyata",
+"format": [
+"PDF",
+"web"
+],
+"lisensi": "Beragam menurut berkas",
+"akses": "terbuka",
+"portal": "https://rin.brin.go.id/",
+"cara": "Telusuri per kata kunci; periksa lisensi tiap berkas.",
+"pakai": false
+},
+{
+"id": "sd_garuda",
+"nama": "Garuda",
+"kep": "Garda Rujukan Digital",
+"pemilik": "Kementerian Pendidikan Tinggi, Sains, dan Teknologi",
+"org": "Kemdiktisaintek",
+"uraian": "Indeks artikel jurnal ilmiah Indonesia dari ribuan penerbit.",
+"sektor": [
+"riset-data"
+],
+"jenis": [
+"artikel jurnal",
+"indeks publikasi"
+],
+"cakupan": "Nasional",
+"intl": false,
+"frek": "waktu nyata",
+"format": [
+"web"
+],
+"lisensi": "Tidak dinyatakan; lihat ketentuan situs",
+"akses": "terbuka",
+"portal": "https://garuda.kemdiktisaintek.go.id/",
+"cara": "Pencarian judul dan penulis; teks lengkap ada di situs jurnal asal.",
+"pakai": false
+},
+{
+"id": "sd_sipsn",
+"nama": "SIPSN",
+"kep": "Sistem Informasi Pengelolaan Sampah Nasional",
+"pemilik": "Kementerian Lingkungan Hidup",
+"org": "Kementerian Lingkungan Hidup",
+"uraian": "Timbulan dan pengelolaan sampah kabupaten dan kota, dasar kajian pengolahan sampah menjadi energi.",
+"sektor": [
+"biomassa-sampah",
+"riset-data"
+],
+"jenis": [
+"timbulan sampah",
+"pengelolaan sampah"
+],
+"cakupan": "Kabupaten dan kota",
+"intl": false,
+"frek": "tahunan",
+"format": [
+"web"
+],
+"lisensi": "Tidak dinyatakan; lihat ketentuan situs",
+"akses": "terbuka",
+"portal": "https://sipsn.menlhk.go.id/",
+"cara": "Pilih tahun dan wilayah; angka diisi pemerintah daerah sehingga kelengkapan bervariasi.",
+"pakai": false
+},
+{
+"id": "sd_idx_emiten",
+"nama": "Data emiten IDX",
+"kep": "Laporan keuangan dan keterbukaan informasi emiten",
+"pemilik": "Bursa Efek Indonesia",
+"org": "Bursa Efek Indonesia",
+"uraian": "Laporan keuangan, laporan tahunan, dan keterbukaan informasi perusahaan tercatat, termasuk perusahaan energi.",
+"sektor": [
+"pembiayaan",
+"industri"
+],
+"jenis": [
+"laporan keuangan",
+"keterbukaan informasi"
+],
+"cakupan": "Perusahaan tercatat",
+"intl": false,
+"frek": "triwulan",
+"format": [
+"PDF",
+"XLSX"
+],
+"lisensi": "Publikasi bursa; kutip dengan atribusi",
+"akses": "terbuka",
+"portal": "https://www.idx.co.id/",
+"cara": "Unduh dokumen per emiten; situs sering memblokir klien otomatis.",
+"pakai": false
+},
+{
+"id": "sd_global_solar_atlas",
+"nama": "Global Solar Atlas",
+"pemilik": "ESMAP, Bank Dunia",
+"org": "World Bank",
+"uraian": "Potensi surya (GHI, DNI, PVOUT) dengan resolusi sekitar 250 meter, dihitung oleh Solargis.",
+"sektor": [
+"surya"
+],
+"jenis": [
+"radiasi matahari",
+"potensi PV"
+],
+"cakupan": "Global",
+"intl": true,
+"frek": "pembaruan model berkala",
+"format": [
+"GeoTIFF",
+"peta web"
+],
+"lisensi": "CC BY 4.0",
+"akses": "terbuka",
+"portal": "https://globalsolaratlas.info/",
+"cara": "Unduh raster per negara dari menu unduh; cantumkan atribusi Solargis dan Bank Dunia.",
+"pakai": true,
+"contoh": "Dipakai direktori ini untuk potensi surya per provinsi (public/data/potensi_atlas.json)."
+},
+{
+"id": "sd_global_wind_atlas",
+"nama": "Global Wind Atlas",
+"pemilik": "DTU dan Bank Dunia",
+"org": "World Bank",
+"uraian": "Kecepatan dan kerapatan daya angin pada beberapa ketinggian, resolusi sekitar 250 meter.",
+"sektor": [
+"bayu"
+],
+"jenis": [
+"kecepatan angin",
+"kerapatan daya angin"
+],
+"cakupan": "Global",
+"intl": true,
+"frek": "pembaruan model berkala",
+"format": [
+"GeoTIFF",
+"peta web"
+],
+"lisensi": "CC BY 4.0",
+"akses": "terbuka",
+"portal": "https://globalwindatlas.info/",
+"cara": "Unduh raster per negara; model mesoskala sehingga tidak menggantikan pengukuran tapak.",
+"pakai": false
+},
+{
+"id": "sd_gem",
+"nama": "Global Energy Monitor",
+"pemilik": "Global Energy Monitor",
+"org": "Global Energy Monitor",
+"uraian": "Pelacak pembangkit dan infrastruktur: surya, angin, panas bumi, batubara, gas, dan pipa, lengkap dengan status proyek.",
+"sektor": [
+"surya",
+"bayu",
+"panas-bumi",
+"hidro",
+"riset-data"
+],
+"jenis": [
+"pelacak pembangkit",
+"status proyek",
+"kapasitas MW"
+],
+"cakupan": "Global",
+"intl": true,
+"frek": "semi tahunan",
+"format": [
+"XLSX",
+"GeoJSON"
+],
+"lisensi": "CC BY 4.0 untuk sebagian pelacak; sebagian CC BY-NC 4.0, cek tiap berkas",
+"akses": "permohonan",
+"portal": "https://globalenergymonitor.org/",
+"cara": "Unduhan memerlukan pengisian formulir singkat; berkas berlisensi NC hanya ditautkan, tidak disalin.",
+"pakai": true,
+"contoh": "Dipakai direktori ini untuk status proyek pembangkit (data/proyek_gem.json); berkas berlisensi NC hanya ditautkan."
+},
+{
+"id": "sd_irenastat",
+"nama": "IRENASTAT",
+"kep": "Statistik Energi Terbarukan IRENA",
+"pemilik": "International Renewable Energy Agency",
+"org": "IRENA",
+"uraian": "Kapasitas dan pembangkitan energi terbarukan per negara dan teknologi, deret waktu panjang.",
+"sektor": [
+"surya",
+"bayu",
+"hidro",
+"panas-bumi",
+"bioenergi",
+"riset-data"
+],
+"jenis": [
+"kapasitas terpasang",
+"pembangkitan",
+"tren"
+],
+"cakupan": "Global",
+"intl": true,
+"frek": "tahunan",
+"format": [
+"PxWeb",
+"CSV"
+],
+"lisensi": "Atribusi IRENA; lihat ketentuan situs",
+"akses": "api-terbuka",
+"portal": "https://www.irena.org/Data",
+"api": "https://pxweb.irena.org/",
+"cara": "Layanan PxWeb menerima kueri JSON tanpa kunci; angka tahun terakhir bersifat sementara.",
+"pakai": true,
+"contoh": "Dipakai direktori ini untuk tren kapasitas terpasang energi terbarukan (public/data/kapasitas_tren.json)."
+},
+{
+"id": "sd_ember",
+"nama": "Ember",
+"kep": "Ember Data Explorer",
+"pemilik": "Ember",
+"org": "Ember",
+"uraian": "Data listrik global dan Indonesia: bauran pembangkitan, intensitas karbon, dan tren bulanan.",
+"sektor": [
+"riset-data",
+"karbon",
+"surya"
+],
+"jenis": [
+"bauran listrik",
+"intensitas karbon",
+"pembangkitan bulanan"
+],
+"cakupan": "Global dan negara",
+"intl": true,
+"frek": "bulanan",
+"format": [
+"CSV",
+"API"
+],
+"lisensi": "CC BY 4.0",
+"akses": "api-kunci",
+"portal": "https://ember-energy.org/data/",
+"api": "https://api.ember-energy.org/",
+"cara": "Kunci API gratis lewat pendaftaran; berkas CSV juga dapat diunduh dari halaman data. Host berkas melarang perayap.",
+"pakai": true,
+"contoh": "Dipakai direktori ini untuk bauran listrik tahunan Indonesia (public/data/ember_bulanan.json)."
+},
+{
+"id": "sd_climate_trace",
+"nama": "Climate TRACE",
+"pemilik": "Climate TRACE Coalition",
+"org": "Climate TRACE",
+"uraian": "Emisi gas rumah kaca per aset dan sektor, termasuk pembangkit listrik, dari citra satelit dan model.",
+"sektor": [
+"karbon",
+"riset-data"
+],
+"jenis": [
+"emisi per aset",
+"emisi sektor listrik"
+],
+"cakupan": "Global",
+"intl": true,
+"frek": "bulanan",
+"format": [
+"CSV",
+"API"
+],
+"lisensi": "CC BY 4.0",
+"akses": "api-terbuka",
+"portal": "https://climatetrace.org/",
+"api": "https://api.climatetrace.org/",
+"cara": "API publik tanpa kunci; unduh juga tersedia per negara. Angka berbasis estimasi, bukan pelaporan resmi.",
+"pakai": true
+},
+{
+"id": "sd_owid_energi",
+"nama": "Our World in Data: Energy",
+"pemilik": "Our World in Data",
+"org": "Our World in Data",
+"uraian": "Kumpulan data energi global terkurasi: konsumsi, bauran, emisi, dan intensitas.",
+"sektor": [
+"riset-data"
+],
+"jenis": [
+"konsumsi energi",
+"bauran listrik",
+"emisi"
+],
+"cakupan": "Global",
+"intl": true,
+"frek": "tahunan",
+"format": [
+"CSV",
+"JSON"
+],
+"lisensi": "CC BY 4.0",
+"akses": "terbuka",
+"portal": "https://ourworldindata.org/energy",
+"api": "https://github.com/owid/energy-data",
+"cara": "Unduh berkas CSV dari repositori GitHub; sumber asli tiap kolom tercantum di kamus data.",
+"pakai": false
+},
+{
+"id": "sd_energydata",
+"nama": "ENERGYDATA.INFO",
+"pemilik": "Bank Dunia",
+"org": "World Bank",
+"uraian": "Platform data energi Bank Dunia: dataset, peta, dan analitik dari lembaga multilateral.",
+"sektor": [
+"riset-data",
+"elektrifikasi"
+],
+"jenis": [
+"dataset energi",
+"akses listrik",
+"peta"
+],
+"cakupan": "Global dan negara",
+"intl": true,
+"frek": "bervariasi",
+"format": [
+"CSV",
+"GeoTIFF",
+"API"
+],
+"lisensi": "Beragam menurut dataset",
+"akses": "api-terbuka",
+"portal": "https://energydata.info/",
+"api": "https://energydata.info/api/3/action/package_search",
+"cara": "API katalog CKAN terbuka; unduh sebagian dataset meminta akun gratis.",
+"pakai": false
+},
+{
+"id": "sd_nasa_power",
+"nama": "NASA POWER",
+"kep": "Prediction Of Worldwide Energy Resources",
+"pemilik": "NASA",
+"org": "NASA",
+"uraian": "Deret waktu radiasi matahari, suhu, dan angin global sebagai masukan kajian PLTS dan PLTB.",
+"sektor": [
+"surya",
+"bayu",
+"riset-data"
+],
+"jenis": [
+"radiasi matahari",
+"suhu",
+"kecepatan angin"
+],
+"cakupan": "Global",
+"intl": true,
+"frek": "harian",
+"format": [
+"JSON",
+"CSV",
+"NetCDF"
+],
+"lisensi": "Domain publik NASA; atribusi dianjurkan",
+"akses": "api-terbuka",
+"portal": "https://power.larc.nasa.gov/",
+"api": "https://power.larc.nasa.gov/api/temporal/daily/point",
+"cara": "API titik tanpa kunci; resolusi kasar sehingga cocok untuk penapisan awal, bukan desain akhir.",
+"pakai": false
+},
+{
+"id": "sd_osm",
+"nama": "OpenStreetMap",
+"pemilik": "OpenStreetMap Foundation",
+"org": "OpenStreetMap",
+"uraian": "Peta kolaboratif; fasilitas pembangkit dan gardu dipetakan relawan dengan tag power.",
+"sektor": [
+"jaringan",
+"riset-data"
+],
+"jenis": [
+"lokasi pembangkit",
+"gardu",
+"jaringan transmisi"
+],
+"cakupan": "Global",
+"intl": true,
+"frek": "waktu nyata",
+"format": [
+"PBF",
+"GeoJSON"
+],
+"lisensi": "ODbL 1.0",
+"akses": "api-terbuka",
+"portal": "https://www.openstreetmap.org/",
+"cara": "Ambil ekstrak wilayah dari Geofabrik atau planet.osm; kebijakan Overpass dan Nominatim membatasi penggunaan otomatis. Atribusi dan berbagi-serupa berlaku.",
+"pakai": true,
+"contoh": "Dipakai direktori ini untuk titik pembangkit per provinsi (public/data/pembangkit_osm.json)."
+},
+{
+"id": "sd_wb_open_data",
+"nama": "World Bank Open Data",
+"pemilik": "Bank Dunia",
+"org": "World Bank",
+"uraian": "Indikator pembangunan, termasuk akses listrik, konsumsi energi, dan porsi energi terbarukan.",
+"sektor": [
+"riset-data",
+"elektrifikasi"
+],
+"jenis": [
+"indikator pembangunan",
+"akses listrik"
+],
+"cakupan": "Global",
+"intl": true,
+"frek": "tahunan",
+"format": [
+"JSON",
+"CSV",
+"XML"
+],
+"lisensi": "CC BY 4.0",
+"akses": "api-terbuka",
+"portal": "https://data.worldbank.org/",
+"api": "https://api.worldbank.org/v2/",
+"cara": "API v2 tanpa kunci; tambahkan format=json dan batasi per_page.",
+"pakai": true
+},
+{
+"id": "sd_wb_projects",
+"nama": "World Bank Projects and Operations",
+"pemilik": "Bank Dunia",
+"org": "World Bank",
+"uraian": "Daftar proyek pinjaman dan hibah Bank Dunia per negara dan sektor, lengkap dengan komitmen dan status.",
+"sektor": [
+"pembiayaan"
+],
+"jenis": [
+"proyek pinjaman",
+"komitmen",
+"status proyek"
+],
+"cakupan": "Global",
+"intl": true,
+"frek": "harian",
+"format": [
+"JSON"
+],
+"lisensi": "CC BY 4.0",
+"akses": "api-terbuka",
+"portal": "https://projects.worldbank.org/",
+"api": "https://search.worldbank.org/api/v2/projects",
+"cara": "Saring countrycode_exact=ID dan sektor energi; nilai dalam USD komitmen.",
+"pakai": true,
+"contoh": "Dipakai direktori ini untuk proyek energi Bank Dunia di Indonesia (public/data/pendanaan.json)."
+},
+{
+"id": "sd_iati",
+"nama": "IATI Datastore dan d-portal",
+"kep": "International Aid Transparency Initiative",
+"pemilik": "IATI",
+"org": "IATI",
+"uraian": "Laporan aktivitas bantuan pembangunan dari ratusan pemberi, termasuk proyek energi di Indonesia.",
+"sektor": [
+"pembiayaan"
+],
+"jenis": [
+"aktivitas bantuan",
+"komitmen donor",
+"penerima"
+],
+"cakupan": "Global",
+"intl": true,
+"frek": "berkala",
+"format": [
+"XML",
+"JSON",
+"CSV"
+],
+"lisensi": "Ditetapkan tiap pelapor, umumnya CC BY 4.0",
+"akses": "api-terbuka",
+"portal": "https://d-portal.org/",
+"api": "https://iatidatastore.iatistandard.org/",
+"cara": "d-portal menyediakan kueri publik per negara dan sektor DAC; nilai konversi oleh d-portal, bukan angka asli pelapor.",
+"pakai": true,
+"contoh": "Dipakai direktori ini untuk aktivitas pendanaan donor sektor energi (public/data/pendanaan_internasional.json)."
+},
+{
+"id": "sd_openalex",
+"nama": "OpenAlex",
+"pemilik": "OurResearch",
+"org": "OurResearch",
+"uraian": "Indeks terbuka karya ilmiah, penulis, institusi, dan pendana, dasar peta riset energi terbarukan.",
+"sektor": [
+"riset-data"
+],
+"jenis": [
+"karya ilmiah",
+"penulis",
+"institusi",
+"pendana"
+],
+"cakupan": "Global",
+"intl": true,
+"frek": "mingguan",
+"format": [
+"JSON"
+],
+"lisensi": "CC0",
+"akses": "api-kunci",
+"portal": "https://openalex.org/",
+"api": "https://api.openalex.org/",
+"cara": "Kunci API gratis menaikkan kuota harian; tanpa kunci kuota cepat habis (HTTP 429).",
+"pakai": true,
+"contoh": "Dipakai direktori ini untuk peta karya dan pakar riset energi terbarukan (public/data/orang.json)."
+},
+{
+"id": "sd_iea",
+"nama": "IEA Data and Statistics",
+"kep": "International Energy Agency",
+"pemilik": "International Energy Agency",
+"org": "IEA",
+"uraian": "Statistik, proyeksi, dan laporan energi dunia; sebagian bebas, sebagian berbayar.",
+"sektor": [
+"riset-data",
+"kebijakan"
+],
+"jenis": [
+"statistik energi dunia",
+"proyeksi",
+"laporan"
+],
+"cakupan": "Global",
+"intl": true,
+"frek": "tahunan",
+"format": [
+"web",
+"CSV",
+"PDF"
+],
+"lisensi": "Beragam; sebagian CC BY 4.0, sebagian berbayar",
+"akses": "login",
+"portal": "https://www.iea.org/data-and-statistics",
+"cara": "Data Explorer terbuka untuk sebagian seri; unduhan dan berkas rinci memerlukan akun, sebagian berlangganan.",
+"pakai": false
+},
+{
+"id": "sd_wri_gppd",
+"nama": "Global Power Plant Database",
+"pemilik": "World Resources Institute",
+"org": "World Resources Institute",
+"uraian": "Basis data pembangkit seluruh dunia: lokasi, kapasitas, bahan bakar, dan pemilik.",
+"sektor": [
+"jaringan",
+"surya",
+"bayu",
+"hidro",
+"panas-bumi"
+],
+"jenis": [
+"lokasi pembangkit",
+"kapasitas",
+"bahan bakar"
+],
+"cakupan": "Global",
+"intl": true,
+"frek": "tidak teratur",
+"format": [
+"CSV"
+],
+"lisensi": "CC BY 4.0",
+"akses": "terbuka",
+"portal": "https://datasets.wri.org/dataset/globalpowerplantdatabase",
+"cara": "Unduh CSV tunggal; versi terakhir dirilis 2021 sehingga proyek baru tidak ada.",
+"pakai": true,
+"contoh": "Dipakai direktori ini untuk lokasi dan kapasitas pembangkit (public/data/gppd.json)."
+},
+{
+"id": "sd_geoboundaries",
+"nama": "geoBoundaries",
+"pemilik": "William and Mary geoLab",
+"org": "geoBoundaries",
+"uraian": "Batas administrasi global per negara, dipakai di sini untuk pusat wilayah provinsi dan kabupaten.",
+"sektor": [
+"riset-data"
+],
+"jenis": [
+"batas administrasi",
+"pusat wilayah"
+],
+"cakupan": "Global",
+"intl": true,
+"frek": "tidak teratur",
+"format": [
+"GeoJSON",
+"Shapefile"
+],
+"lisensi": "ODbL (ADM1), CC BY 3.0 IGO (ADM2), cek tiap tingkat",
+"akses": "api-terbuka",
+"portal": "https://www.geoboundaries.org/",
+"api": "https://www.geoboundaries.org/api/current/gbOpen/IDN/ADM1/",
+"cara": "API mengembalikan tautan unduh; berkas ADM2 Indonesia lebih dari 150 MB.",
+"pakai": true
+},
+{
+"id": "sd_wikidata",
+"nama": "Wikidata",
+"pemilik": "Wikimedia Foundation",
+"org": "Wikimedia",
+"uraian": "Basis pengetahuan terstruktur: organisasi, tokoh, dan pembangkit dengan pengenal silang.",
+"sektor": [
+"riset-data"
+],
+"jenis": [
+"entitas",
+"pengenal silang"
+],
+"cakupan": "Global",
+"intl": true,
+"frek": "waktu nyata",
+"format": [
+"JSON",
+"RDF"
+],
+"lisensi": "CC0",
+"akses": "api-terbuka",
+"portal": "https://www.wikidata.org/",
+"api": "https://www.wikidata.org/w/api.php",
+"cara": "robots.txt membatasi jalur SPARQL dan api.php untuk agen umum; pemakaian otomatis hanya atas keputusan tertulis.",
+"pakai": true
+},
+{
+"id": "sd_verra",
+"nama": "Verra Registry",
+"pemilik": "Verra",
+"org": "Verra",
+"uraian": "Registri proyek karbon sukarela VCS: lokasi, metodologi, penerbitan, dan pensiun kredit.",
+"sektor": [
+"karbon"
+],
+"jenis": [
+"registri karbon",
+"penerbitan kredit",
+"pensiun kredit"
+],
+"cakupan": "Global",
+"intl": true,
+"frek": "waktu nyata",
+"format": [
+"web",
+"CSV"
+],
+"lisensi": "Ketentuan Verra; salinan berlisensi CC BY 4.0 tersedia lewat VROD Berkeley",
+"akses": "terbuka",
+"portal": "https://registry.verra.org/",
+"cara": "Pencarian proyek terbuka; untuk panen massal dipakai berkas bulanan VROD Berkeley Carbon Trading Project.",
+"pakai": true
+},
+{
+"id": "sd_gold_standard",
+"nama": "Gold Standard Impact Registry",
+"pemilik": "Gold Standard",
+"org": "Gold Standard",
+"uraian": "Registri proyek karbon Gold Standard, termasuk biogas rumah tangga dan energi terbarukan.",
+"sektor": [
+"karbon",
+"bioenergi"
+],
+"jenis": [
+"registri karbon",
+"penerbitan kredit"
+],
+"cakupan": "Global",
+"intl": true,
+"frek": "waktu nyata",
+"format": [
+"web",
+"JSON"
+],
+"lisensi": "Ketentuan Gold Standard",
+"akses": "api-terbuka",
+"portal": "https://registry.goldstandard.org/",
+"api": "https://public-api.goldstandard.org/",
+"cara": "Pencarian proyek terbuka tanpa akun; API publik membatasi laju permintaan.",
+"pakai": true
+},
+{
+"id": "sd_ren21",
+"nama": "REN21 Global Status Report",
+"pemilik": "REN21",
+"org": "REN21",
+"uraian": "Laporan status global energi terbarukan lengkap dengan lampiran data dan bab kebijakan.",
+"sektor": [
+"kebijakan",
+"riset-data"
+],
+"jenis": [
+"laporan global",
+"kebijakan EBT"
+],
+"cakupan": "Global",
+"intl": true,
+"frek": "tahunan",
+"format": [
+"PDF",
+"XLSX"
+],
+"lisensi": "Lihat ketentuan situs",
+"akses": "terbuka",
+"portal": "https://www.ren21.net/gsr-2024/",
+"cara": "Unduh laporan dan data pendukung; kutip bab dan halaman.",
+"pakai": false
+},
+{
+"id": "sd_bnef",
+"nama": "BloombergNEF",
+"kep": "Bloomberg New Energy Finance",
+"pemilik": "Bloomberg",
+"org": "Bloomberg",
+"uraian": "Data investasi, biaya teknologi, dan harga listrik terbarukan; layanan berlangganan.",
+"sektor": [
+"pembiayaan",
+"riset-data"
+],
+"jenis": [
+"investasi EBT",
+"biaya teknologi"
+],
+"cakupan": "Global",
+"intl": true,
+"frek": "harian",
+"format": [
+"terminal",
+"laporan"
+],
+"lisensi": "Berlangganan",
+"akses": "tertutup",
+"portal": "https://about.bnef.com/",
+"cara": "Tidak dapat dipakai tanpa langganan; hanya ringkasan siaran pers yang terbuka.",
+"pakai": false
+},
+{
+"id": "sd_era5",
+"nama": "Copernicus ERA5",
+"kep": "Reanalisis iklim ERA5",
+"pemilik": "Copernicus, ECMWF",
+"org": "Copernicus",
+"uraian": "Reanalisis cuaca global per jam sejak 1940: angin, suhu, dan radiasi untuk kajian sumber daya.",
+"sektor": [
+"bayu",
+"surya",
+"riset-data"
+],
+"jenis": [
+"reanalisis cuaca",
+"angin",
+"radiasi"
+],
+"cakupan": "Global",
+"intl": true,
+"frek": "harian",
+"format": [
+"NetCDF",
+"GRIB"
+],
+"lisensi": "Lisensi Copernicus (atribusi)",
+"akses": "api-kunci",
+"portal": "https://cds.climate.copernicus.eu/",
+"cara": "Daftar akun gratis lalu pakai API CDS; antrean unduhan bisa lama.",
+"pakai": false
+},
+{
+"id": "sd_ei_review",
+"nama": "Statistical Review of World Energy",
+"pemilik": "Energy Institute",
+"org": "Energy Institute",
+"uraian": "Statistik energi dunia tahunan per negara: produksi, konsumsi, dan emisi.",
+"sektor": [
+"riset-data"
+],
+"jenis": [
+"produksi energi",
+"konsumsi energi",
+"emisi"
+],
+"cakupan": "Global",
+"intl": true,
+"frek": "tahunan",
+"format": [
+"XLSX",
+"CSV"
+],
+"lisensi": "Atribusi Energy Institute; lihat ketentuan situs",
+"akses": "terbuka",
+"portal": "https://www.energyinst.org/statistical-review",
+"cara": "Unduh berkas data lengkap dari halaman laporan.",
+"pakai": false
+},
+{
+"id": "sd_aeds",
+"nama": "ASEAN Energy Database System",
+"kep": "AEDS ASEAN Centre for Energy",
+"pemilik": "ASEAN Centre for Energy",
+"org": "ASEAN Centre for Energy",
+"uraian": "Data energi negara anggota ASEAN: pasokan, permintaan, dan capaian target EBT regional.",
+"sektor": [
+"riset-data",
+"kebijakan"
+],
+"jenis": [
+"data energi ASEAN",
+"target regional"
+],
+"cakupan": "ASEAN",
+"intl": true,
+"frek": "tahunan",
+"format": [
+"web",
+"PDF"
+],
+"lisensi": "Lihat ketentuan situs",
+"akses": "terbuka",
+"portal": "https://aseanenergy.org/",
+"cara": "Laporan ASEAN Energy Outlook dan basis data tersedia; periksa tahun dasar tiap tabel.",
+"pakai": true
+},
+{
+"id": "sd_oecd_crs",
+"nama": "OECD Creditor Reporting System",
+"kep": "Statistik bantuan pembangunan OECD DAC",
+"pemilik": "OECD",
+"org": "OECD",
+"uraian": "Arus bantuan pembangunan resmi per donor, penerima, dan sektor DAC, termasuk energi.",
+"sektor": [
+"pembiayaan"
+],
+"jenis": [
+"bantuan pembangunan",
+"arus donor"
+],
+"cakupan": "Global",
+"intl": true,
+"frek": "tahunan",
+"format": [
+"SDMX",
+"CSV"
+],
+"lisensi": "Ketentuan OECD; atribusi diwajibkan",
+"akses": "api-terbuka",
+"portal": "https://data-explorer.oecd.org/",
+"api": "https://sdmx.oecd.org/public/rest/",
+"cara": "API SDMX publik tanpa kunci dengan batas laju; nilai dalam USD konstan atau berjalan, cek catatan seri.",
+"pakai": false
+}
 ]

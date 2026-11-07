@@ -29,7 +29,11 @@ const nilaiTeks = (m, p) => {
   const v = METRIK[m].ambil(p);
   return v === null ? t("an.tanpa_data") : `${num(v, METRIK[m].d)}${METRIK[m].satuan ? " " + METRIK[m].satuan : ""}`;
 };
-const ciriSumber = (m) => { const s = data.baris.map(METRIK[m].sumber).find(Boolean); return s || { sumber: t("wl.sumber_proyek"), tahun: null, tanggal: data.dibangun_pada }; };
+/* SATU ikon info di kepala: semua sumber peta + tautan cara menghitung (/metode#peta-wilayah) */
+const infoSumber = () => {
+  const tg = data.dibangun_pada, B = data.baris;
+  return sumberLipat([B.find((p) => p.terpasang_mw)?.terpasang_mw, { sumber: t("wl.src.gabung"), tanggal: PELMETA || tg }, { sumber: t("wl.sumber_proyek"), tanggal: tg }, { sumber: t("wl.sumber_rued"), url: B.find((p) => p.rued.url)?.rued.url, tanggal: B.find((p) => p.rued.tanggal)?.rued.tanggal || tg }, CAP.size && { sumber: t("wl.sumber_capaian"), tanggal: CAPTGL || tg }], `<span><a href="/metode#peta-wilayah">${esc(t("wl.cara_link"))}</a></span>`);
+};
 const urutM = (m) => [...data.baris].sort((a, b) => (METRIK[m].ambil(b) ?? -1) - (METRIK[m].ambil(a) ?? -1) || a.nama.localeCompare(b.nama));
 const berdata = (m) => data.baris.filter((p) => METRIK[m].ambil(p) !== null);
 const peringkat = (m, p) => urutM(m).findIndex((x) => x.kode === p.kode) + 1;
@@ -87,17 +91,19 @@ function urutan() {
 }
 
 function legenda() {
-  const m = metrik, { rentang } = kelasPeta(m), s = ciriSumber(m), kosong = data.baris.length - berdata(m).length;
+  const m = metrik, { rentang } = kelasPeta(m), kosong = data.baris.length - berdata(m).length;
   const fmt = (v) => num(v, METRIK[m].d);
   $("lg-j").textContent = t("wl.m." + m);
-  $("lg-isi").innerHTML = `<div class="jm-wl-rp"><div class="jm-wl-rp-s">${rentang.map((r) => `<span><i class="jm-wl-k${r.k}" aria-hidden="true"></i><small>${esc(m === "rued" ? t("wl.lg.ada") : fmt(r.min))}</small></span>`).join("")}</div>${kosong ? `<span class="jm-wl-rp-k"><i class="jm-wl-sw-kos" aria-hidden="true"></i><small>${esc(t("an.tanpa_data"))}</small></span>` : ""}<span class="jm-wl-lg-s">${sumberHtml(s)}</span></div>`;
+  $("lg-isi").innerHTML = `<div class="jm-wl-rp"><div class="jm-wl-rp-s">${rentang.map((r) => `<span><i class="jm-wl-k${r.k}" aria-hidden="true"></i><small>${esc(m === "rued" ? t("wl.lg.ada") : fmt(r.min))}</small></span>`).join("")}</div>${kosong ? `<span class="jm-wl-rp-k"><i class="jm-wl-sw-kos" aria-hidden="true"></i><small>${esc(t("an.tanpa_data"))}</small></span>` : ""}</div>`;
+  const pra = (m === "ebt" || m === "sisa") && daftarTek().some((k) => PEL.get("91")?.potensi[k]?.pra_pemekaran);
+  $("lg-pita").hidden = !pra; $("lg-pita").textContent = pra ? t("wl.pita.pra") : "";
   const tp = urutM(m)[0], tgt = METRIK[m].ambil(tp);
   const sumP = berdata(m).reduce((a, p) => a + METRIK[m].ambil(p), 0), top10 = urutM(m).slice(0, 10).reduce((a, p) => a + (METRIK[m].ambil(p) ?? 0), 0);
   $("j-peta").innerHTML = m === "rued" ? hlHtml("wl.j.rued", { n: data.baris.length }, num(berdata(m).length)) : hlHtml("wl.j.peta", { mj: t("wl.mj." + m), nilai: nilaiTeks(m, tp) }, tp.nama);
   $("sub-peta").innerHTML = `${esc(t("wl.sub.peta", { metrik: t("wl.m." + m), n: berdata(m).length, total: data.baris.length }))} ${pil("an.est")}`;
   $("j-urut").innerHTML = m === "rued" ? hlHtml("wl.j.rued", { n: data.baris.length }, num(berdata(m).length)) : hlHtml("wl.j.urut", { mj: t("wl.mj." + m) }, num((top10 / sumP) * 100, 0) + "%");
   $("sub-urut").innerHTML = `${esc(t("wl.sub.urut", { metrik: t("wl.m." + m) }))} ${pil("an.est")}`;
-  for (const id of ["aksi-peta", "aksi-urut"]) { const el = $(id); el.querySelector(".jm-sumber")?.remove(); el.insertAdjacentHTML("beforeend", sumberHtml(s)); }
+  for (const id of ["aksi-peta", "aksi-urut"]) { const el = $(id); el.querySelector(".jm-an-src")?.remove(); el.insertAdjacentHTML("beforeend", infoSumber()); }
 }
 
 /* ---------- peta (SVG: tiap provinsi satu jalur yang bisa difokus) ---------- */
@@ -114,10 +120,24 @@ const jalur = (g) => {
   return d;
 };
 
+/* catatan potensi RUEN yang tak bisa dialokasikan per provinsi: kelompok wilayah, induk sebelum pemekaran */
+function catatTip(p) {
+  if (metrik !== "ebt" && metrik !== "sisa") return "";
+  const b = PEL.get(p.kode), baris = [];
+  for (const k of daftarTek()) {
+    const c = b?.potensi[k]; if (!c) continue;
+    const tk = t("wl.tek." + k);
+    if (c.pra_pemekaran) baris.push(t("wl.cat.pra", { tek: tk }));
+    else if (c.mw == null && c.induk_mw != null) baris.push(t("wl.cat.ind", { tek: tk, induk: data.baris.find((x) => x.kode === c.induk_kode)?.nama || "" , mw: num(c.induk_mw, 0) }));
+    else if (c.mw == null && c.kelompok_mw != null) baris.push(t("wl.cat.kel", { tek: tk, mw: num(c.kelompok_mw, 0), grup: (c.kelompok || []).join(", ") || "-" }));
+  }
+  return baris.length ? `<small class="jm-wl-cat">${baris.slice(0, 3).map(esc).join("<br>")}</small>` : "";
+}
+
 function tipHtml(p) {
   const m = metrik, kd = METRIK[m].kedua.map((k) => `<li><span>${esc(t("wl.m." + k))}</span><b>${esc(nilaiTeks(k, p))}</b></li>`).join("");
   const rk = METRIK[m].ambil(p) === null ? esc(t("an.tanpa_data")) : esc(t("wl.peringkat", { r: peringkat(m, p), n: data.baris.length }));
-  return `<header>${lambang(p, 36)}<div><strong>${esc(p.nama)}</strong><small>${rk}</small></div></header><p><span>${esc(t("wl.m." + m))}</span><b>${esc(nilaiTeks(m, p))}</b></p><ul>${kd}</ul><small class="jm-wl-ajak">${esc(t("wl.tip.klik"))}</small>`;
+  return `<header>${lambang(p, 36)}<div><strong>${esc(p.nama)}</strong><small>${rk}</small></div></header><p><span>${esc(t("wl.m." + m))}</span><b>${esc(nilaiTeks(m, p))}</b></p><ul>${kd}</ul>${catatTip(p)}<small class="jm-wl-ajak">${esc(t("wl.tip.klik"))}</small>`;
 }
 
 function tampilTip(p, x, y) {

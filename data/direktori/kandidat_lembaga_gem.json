@@ -2,7 +2,7 @@
  "_catatan": "Pemilik/operator/induk GEM yang belum ada di organisasi.json (nama ternormalisasi + alias). KANDIDAT saja: tinjau kurator sebelum masuk direktori; tidak dimuat potret.",
  "sumber": "Global Energy Monitor (CC BY 4.0)",
  "tanggal": "2026-11-08",
- "jumlah": 371,
+ "jumlah": 326,
  "baris": [
   {
    "nama": "to be determined",
@@ -114,23 +114,6 @@
    ]
   },
   {
-   "nama": "PT Geo Dipa Energi (GDE)",
-   "peran": [
-    "operator",
-    "pemilik"
-   ],
-   "tracker": [
-    "geothermal"
-   ],
-   "jumlah_baris": 21,
-   "kapasitas_pemilik_mw": 870,
-   "contoh_proyek": [
-    "Dieng geothermal power plant",
-    "Patuha geothermal power plant",
-    "Candradimuka geothermal power plant"
-   ]
-  },
-  {
    "nama": "PT Trimegah Bangun Persada Tbk",
    "peran": [
     "induk"
@@ -207,23 +190,6 @@
    ]
   },
   {
-   "nama": "China Shenhua Energy Co Ltd",
-   "peran": [
-    "induk",
-    "pemilik"
-   ],
-   "tracker": [
-    "coal"
-   ],
-   "jumlah_baris": 14,
-   "kapasitas_pemilik_mw": 1400,
-   "contoh_proyek": [
-    "Adaro East Kalimantan power station",
-    "Jawa-7 power station",
-    "Mesuji power station"
-   ]
-  },
-  {
    "nama": "PT Bintang Delapan Group",
    "peran": [
     "induk"
@@ -283,23 +249,6 @@
     "Bangko Tengah power station",
     "Celukan Bawang power station",
     "Jambi-2 power station"
-   ]
-  },
-  {
-   "nama": "Gallant Venture Ltd",
-   "peran": [
-    "induk",
-    "pemilik"
-   ],
-   "tracker": [
-    "coal",
-    "solar"
-   ],
-   "jumlah_baris": 11,
-   "kapasitas_pemilik_mw": 2920,
-   "contoh_proyek": [
-    "Pulau Bulan solar farm",
-    "Gallant Venture power station"
    ]
   },
   {
@@ -435,24 +384,6 @@
    "contoh_proyek": [
     "Ketapang Smelter power station",
     "AlamTri Aluminum Smelter power station"
-   ]
-  },
-  {
-   "nama": "Sumitomo Corp",
-   "peran": [
-    "induk",
-    "pemilik"
-   ],
-   "tracker": [
-    "coal",
-    "geothermal"
-   ],
-   "jumlah_baris": 10,
-   "kapasitas_pemilik_mw": 385,
-   "contoh_proyek": [
-    "Muarah Laboh geothermal plant",
-    "Rajabasa geothermal power plant",
-    "Tanjung Jati B power station"
    ]
   },
   {
@@ -606,20 +537,6 @@
   },
   {
    "nama": "AC Energy and Infrastructure Corp",
-   "peran": [
-    "pemilik"
-   ],
-   "tracker": [
-    "geothermal"
-   ],
-   "jumlah_baris": 7,
-   "kapasitas_pemilik_mw": 378,
-   "contoh_proyek": [
-    "Gunung Salak geothermal power plant"
-   ]
-  },
-  {
-   "nama": "Electricity Generating PCL",
    "peran": [
     "pemilik"
    ],
@@ -813,24 +730,6 @@
    ]
   },
   {
-   "nama": "Marubeni Corp",
-   "peran": [
-    "induk",
-    "pemilik"
-   ],
-   "tracker": [
-    "coal",
-    "geothermal"
-   ],
-   "jumlah_baris": 6,
-   "kapasitas_pemilik_mw": 91,
-   "contoh_proyek": [
-    "Rantau Dedep geothermal power plant",
-    "Cirebon power station",
-    "Paiton-2 power station"
-   ]
-  },
-  {
    "nama": "PT Amman Mineral Internasional Tbk",
    "peran": [
     "induk"
@@ -965,22 +864,6 @@
    ]
   },
   {
-   "nama": "China Gezhouba Group Co Ltd",
-   "peran": [
-    "pemilik"
-   ],
-   "tracker": [
-    "coal",
-    "hydropower"
-   ],
-   "jumlah_baris": 5,
-   "kapasitas_pemilik_mw": 390,
-   "contoh_proyek": [
-    "Karama hydroelectric plant",
-    "Parit Baru power station"
-   ]
-  },
-  {
    "nama": "Ecolab Inc",
    "peran": [
     "induk"
@@ -1023,20 +906,6 @@
    "contoh_proyek": [
     "Sulawesi Labota power station",
     "Sulawesi Mining power station"
-   ]
-  },
-  {
-   "nama": "KS Orka Renewables",
-   "peran": [
-    "operator"
-   ],
-   "tracker": [
-    "geothermal"
-   ],
-   "jumlah_baris": 5,
-   "kapasitas_pemilik_mw": 0,
-   "contoh_proyek": [
-    "Sorik Marapi geothermal power plant"
    ]
   },
   {
@@ -1107,22 +976,6 @@
    "kapasitas_pemilik_mw": 0,
    "contoh_proyek": [
     "Xinxing Ductile Iron Pipes power station"
-   ]
-  },
-  {
-   "nama": "PT Bakrie Power",
-   "peran": [
-    "pemilik"
-   ],
-   "tracker": [
-    "coal",
-    "geothermal"
-   ],
-   "jumlah_baris": 5,
-   "kapasitas_pemilik_mw": 1485,
-   "contoh_proyek": [
-    "Ngebel geothermal power plant",
-    "Tanjung Jati A power station"
    ]
   },
   {
@@ -1544,37 +1397,6 @@
    ]
   },
   {
-   "nama": "PT Poso Energy",
-   "peran": [
-    "pemilik"
-   ],
-   "tracker": [
-    "hydropower"
-   ],
-   "jumlah_baris": 4,
-   "kapasitas_pemilik_mw": 825,
-   "contoh_proyek": [
-    "Poso 2 hydroelectric plant",
-    "Poso 3 hydroelectric plant",
-    "Poso Extension Stage 2 hydroelectric plant"
-   ]
-  },
-  {
-   "nama": "PT Sintesa Banten Geothermal",
-   "peran": [
-    "operator",
-    "pemilik"
-   ],
-   "tracker": [
-    "geothermal"
-   ],
-   "jumlah_baris": 4,
-   "kapasitas_pemilik_mw": 110,
-   "contoh_proyek": [
-    "Rawa Dano geothermal power plant"
-   ]
-  },
-  {
    "nama": "PT Sumber Segara Primadaya",
    "peran": [
     "pemilik"
@@ -1660,23 +1482,6 @@
    "kapasitas_pemilik_mw": 0,
    "contoh_proyek": [
     "Sulawesi Mining power station"
-   ]
-  },
-  {
-   "nama": "Vena Energy",
-   "peran": [
-    "pemilik"
-   ],
-   "tracker": [
-    "solar",
-    "wind"
-   ],
-   "jumlah_baris": 4,
-   "kapasitas_pemilik_mw": 2194,
-   "contoh_proyek": [
-    "Bali-1 solar farm",
-    "Riau (Vena Energy) solar power project",
-    "Tolo wind farm"
    ]
   },
   {
@@ -1793,39 +1598,6 @@
     "Tumbuan Mamuju Atas hydroelectric plant",
     "Tumbuan Mamuju Bawah hydroelectric plant",
     "Mamuju hydroelectric plant"
-   ]
-  },
-  {
-   "nama": "Kansai Electric Power Co",
-   "peran": [
-    "induk",
-    "pemilik"
-   ],
-   "tracker": [
-    "coal",
-    "hydropower"
-   ],
-   "jumlah_baris": 3,
-   "kapasitas_pemilik_mw": 47,
-   "contoh_proyek": [
-    "Rajamandala hydroelectric plant",
-    "Tanjung Jati B power station"
-   ]
-  },
-  {
-   "nama": "Korea South-East Power Co Ltd",
-   "peran": [
-    "pemilik"
-   ],
-   "tracker": [
-    "coal",
-    "hydropower"
-   ],
-   "jumlah_baris": 3,
-   "kapasitas_pemilik_mw": 520,
-   "contoh_proyek": [
-    "Peusangan 4 hydroelectric plant",
-    "Jambi Tebo power station"
    ]
   },
   {
@@ -1954,20 +1726,6 @@
    "kapasitas_pemilik_mw": 1140,
    "contoh_proyek": [
     "Sulawesi Labota power station"
-   ]
-  },
-  {
-   "nama": "PT Juvisk Tri Swarna",
-   "peran": [
-    "pemilik"
-   ],
-   "tracker": [
-    "wind"
-   ],
-   "jumlah_baris": 3,
-   "kapasitas_pemilik_mw": 150,
-   "contoh_proyek": [
-    "Tanah Laut wind farm"
    ]
   },
   {
@@ -2163,21 +1921,6 @@
    ]
   },
   {
-   "nama": "Bharat Heavy Electricals Ltd",
-   "peran": [
-    "induk",
-    "pemilik"
-   ],
-   "tracker": [
-    "coal"
-   ],
-   "jumlah_baris": 2,
-   "kapasitas_pemilik_mw": 200,
-   "contoh_proyek": [
-    "Sulawesi Star power station"
-   ]
-  },
-  {
    "nama": "BlackGold Natural Resources Ltd",
    "peran": [
     "induk"
@@ -2290,20 +2033,6 @@
    ]
   },
   {
-   "nama": "Hangzhou Jinjiang Group Co Ltd",
-   "peran": [
-    "pemilik"
-   ],
-   "tracker": [
-    "coal"
-   ],
-   "jumlah_baris": 2,
-   "kapasitas_pemilik_mw": 75,
-   "contoh_proyek": [
-    "Ketapang Bangun Sarana power station"
-   ]
-  },
-  {
    "nama": "Hangzhou Yande Industrial Co Ltd",
    "peran": [
     "induk"
@@ -2393,20 +2122,6 @@
    ]
   },
   {
-   "nama": "INPEX Corp",
-   "peran": [
-    "pemilik"
-   ],
-   "tracker": [
-    "geothermal"
-   ],
-   "jumlah_baris": 2,
-   "kapasitas_pemilik_mw": 165,
-   "contoh_proyek": [
-    "Muarah Laboh geothermal plant"
-   ]
-  },
-  {
    "nama": "ITOCHU Corp",
    "peran": [
     "induk"
@@ -2418,21 +2133,6 @@
    "kapasitas_pemilik_mw": 0,
    "contoh_proyek": [
     "Central Java Power Project"
-   ]
-  },
-  {
-   "nama": "Korea Midland Power CO LTD (KOMIPO)",
-   "peran": [
-    "pemilik"
-   ],
-   "tracker": [
-    "hydropower"
-   ],
-   "jumlah_baris": 2,
-   "kapasitas_pemilik_mw": 341,
-   "contoh_proyek": [
-    "Muara Juloi hydroelectric plant",
-    "Semangka hydroelectric plant"
    ]
   },
   {
@@ -3211,20 +2911,6 @@
    ]
   },
   {
-   "nama": "PT Nirwana Suci Abadi",
-   "peran": [
-    "pemilik"
-   ],
-   "tracker": [
-    "geothermal"
-   ],
-   "jumlah_baris": 2,
-   "kapasitas_pemilik_mw": 185,
-   "contoh_proyek": [
-    "Baturaden geothermal power plant"
-   ]
-  },
-  {
    "nama": "PT Nusatama Properta Panbil",
    "peran": [
     "induk"
@@ -3437,20 +3123,6 @@
    ]
   },
   {
-   "nama": "PT Sokoria Geothermal Indonesia",
-   "peran": [
-    "operator"
-   ],
-   "tracker": [
-    "geothermal"
-   ],
-   "jumlah_baris": 2,
-   "kapasitas_pemilik_mw": 0,
-   "contoh_proyek": [
-    "Sokoria geothermal power plant"
-   ]
-  },
-  {
    "nama": "PT Star Vyobros",
    "peran": [
     "induk",
@@ -3564,20 +3236,6 @@
    ]
   },
   {
-   "nama": "PT Trinergy Mandiri International",
-   "peran": [
-    "pemilik"
-   ],
-   "tracker": [
-    "geothermal"
-   ],
-   "jumlah_baris": 2,
-   "kapasitas_pemilik_mw": 185,
-   "contoh_proyek": [
-    "Baturaden geothermal power plant"
-   ]
-  },
-  {
    "nama": "PT United Tractors Tbk",
    "peran": [
     "induk"
@@ -3592,21 +3250,6 @@
    ]
   },
   {
-   "nama": "PT Vale Indonesia Tbk",
-   "peran": [
-    "pemilik"
-   ],
-   "tracker": [
-    "hydropower"
-   ],
-   "jumlah_baris": 2,
-   "kapasitas_pemilik_mw": 305,
-   "contoh_proyek": [
-    "Balambano hydroelectric plant",
-    "Larona hydroelectric plant"
-   ]
-  },
-  {
    "nama": "PT Well Harvest Winning Alumina Refinery",
    "peran": [
     "pemilik"
@@ -3618,23 +3261,6 @@
    "kapasitas_pemilik_mw": 60,
    "contoh_proyek": [
     "Ketapang Smelter power station"
-   ]
-  },
-  {
-   "nama": "Sembcorp Industries Ltd",
-   "peran": [
-    "induk",
-    "pemilik"
-   ],
-   "tracker": [
-    "coal",
-    "solar"
-   ],
-   "jumlah_baris": 2,
-   "kapasitas_pemilik_mw": 1000,
-   "contoh_proyek": [
-    "Batam Bintan Karimun solar farm",
-    "Jababeka KIP power station"
    ]
   },
   {
@@ -3721,21 +3347,6 @@
    "contoh_proyek": [
     "Sulawesi Labota power station",
     "Weda Bay power station"
-   ]
-  },
-  {
-   "nama": "Xinyi Glass Holdings Ltd",
-   "peran": [
-    "induk",
-    "pemilik"
-   ],
-   "tracker": [
-    "coal"
-   ],
-   "jumlah_baris": 2,
-   "kapasitas_pemilik_mw": 2500,
-   "contoh_proyek": [
-    "Xinyi Group captive power station"
    ]
   },
   {
@@ -3879,20 +3490,6 @@
    ]
   },
   {
-   "nama": "China Guodian Corp",
-   "peran": [
-    "pemilik"
-   ],
-   "tracker": [
-    "solar"
-   ],
-   "jumlah_baris": 1,
-   "kapasitas_pemilik_mw": 100,
-   "contoh_proyek": [
-    "Java Island floating solar farm"
-   ]
-  },
-  {
    "nama": "China National Petroleum Corp",
    "peran": [
     "induk"
@@ -4005,20 +3602,6 @@
    ]
   },
   {
-   "nama": "Hyundai Engineering & Construction Co Ltd",
-   "peran": [
-    "pemilik"
-   ],
-   "tracker": [
-    "hydropower"
-   ],
-   "jumlah_baris": 1,
-   "kapasitas_pemilik_mw": 120,
-   "contoh_proyek": [
-    "Peusangan 4 hydroelectric plant"
-   ]
-  },
-  {
    "nama": "ib vogt gmbH",
    "peran": [
     "pemilik"
@@ -4030,20 +3613,6 @@
    "kapasitas_pemilik_mw": 3500,
    "contoh_proyek": [
     "Riau Solar and Storage Power Plant"
-   ]
-  },
-  {
-   "nama": "IGIS Asset Management",
-   "peran": [
-    "pemilik"
-   ],
-   "tracker": [
-    "hydropower"
-   ],
-   "jumlah_baris": 1,
-   "kapasitas_pemilik_mw": 120,
-   "contoh_proyek": [
-    "Peusangan 4 hydroelectric plant"
    ]
   },
   {
@@ -4187,20 +3756,6 @@
    ]
   },
   {
-   "nama": "Nusantara Embesi Baru Energi",
-   "peran": [
-    "pemilik"
-   ],
-   "tracker": [
-    "solar"
-   ],
-   "jumlah_baris": 1,
-   "kapasitas_pemilik_mw": 36,
-   "contoh_proyek": [
-    "Tembesi Batam floating solar farm"
-   ]
-  },
-  {
    "nama": "Olympic Group",
    "peran": [
     "induk"
@@ -4243,20 +3798,6 @@
    ]
   },
   {
-   "nama": "Posco E&C",
-   "peran": [
-    "pemilik"
-   ],
-   "tracker": [
-    "hydropower"
-   ],
-   "jumlah_baris": 1,
-   "kapasitas_pemilik_mw": 57,
-   "contoh_proyek": [
-    "Semangka hydroelectric plant"
-   ]
-  },
-  {
    "nama": "Prime Invesco Ltd",
    "peran": [
     "induk"
@@ -4268,20 +3809,6 @@
    "kapasitas_pemilik_mw": 0,
    "contoh_proyek": [
     "Bandung Indosyntec power station"
-   ]
-  },
-  {
-   "nama": "PT Amera Terrasys Energi",
-   "peran": [
-    "pemilik"
-   ],
-   "tracker": [
-    "hydropower"
-   ],
-   "jumlah_baris": 1,
-   "kapasitas_pemilik_mw": 200,
-   "contoh_proyek": [
-    "Buttu Batu hydroelectric plant"
    ]
   },
   {
@@ -4299,20 +3826,6 @@
    ]
   },
   {
-   "nama": "PT Archi Indonesia Tbk",
-   "peran": [
-    "pemilik"
-   ],
-   "tracker": [
-    "geothermal"
-   ],
-   "jumlah_baris": 1,
-   "kapasitas_pemilik_mw": 40,
-   "contoh_proyek": [
-    "Toka Tindung geothermal power plant"
-   ]
-  },
-  {
    "nama": "PT Astra International Tbk",
    "peran": [
     "induk"
@@ -4327,20 +3840,6 @@
    ]
   },
   {
-   "nama": "PT Bajradaya Sentranusa",
-   "peran": [
-    "operator"
-   ],
-   "tracker": [
-    "hydropower"
-   ],
-   "jumlah_baris": 1,
-   "kapasitas_pemilik_mw": 0,
-   "contoh_proyek": [
-    "Asahan 1 hydroelectric plant"
-   ]
-  },
-  {
    "nama": "PT Binatek Energi Terbarukan (BET)",
    "peran": [
     "pemilik"
@@ -4352,34 +3851,6 @@
    "kapasitas_pemilik_mw": 50,
    "contoh_proyek": [
     "Samas wind farm"
-   ]
-  },
-  {
-   "nama": "PT Binsar Natorang Energi",
-   "peran": [
-    "operator"
-   ],
-   "tracker": [
-    "hydropower"
-   ],
-   "jumlah_baris": 1,
-   "kapasitas_pemilik_mw": 0,
-   "contoh_proyek": [
-    "Hasang hydroelectric plant"
-   ]
-  },
-  {
-   "nama": "PT Cahaya Anagata Energy",
-   "peran": [
-    "pemilik"
-   ],
-   "tracker": [
-    "geothermal"
-   ],
-   "jumlah_baris": 1,
-   "kapasitas_pemilik_mw": 55,
-   "contoh_proyek": [
-    "Ratai geothermal power plant"
    ]
   },
   {
@@ -4677,20 +4148,6 @@
    ]
   },
   {
-   "nama": "PT Kerinci Merangin Hydro",
-   "peran": [
-    "pemilik"
-   ],
-   "tracker": [
-    "hydropower"
-   ],
-   "jumlah_baris": 1,
-   "kapasitas_pemilik_mw": 420,
-   "contoh_proyek": [
-    "Kerinci Merangin hydroelectric plant"
-   ]
-  },
-  {
    "nama": "PT Ketenagalistrikan Kalimantan Timur",
    "peran": [
     "induk"
@@ -4730,20 +4187,6 @@
    "kapasitas_pemilik_mw": 250,
    "contoh_proyek": [
     "Weda Bay power station"
-   ]
-  },
-  {
-   "nama": "PT Nusantara Sembcorp Solar Energi (NSSE)",
-   "peran": [
-    "pemilik"
-   ],
-   "tracker": [
-    "solar"
-   ],
-   "jumlah_baris": 1,
-   "kapasitas_pemilik_mw": 50,
-   "contoh_proyek": [
-    "Nusantara Sembcorp Solar Energi (NSSE) Power Plant"
    ]
   },
   {
@@ -4884,34 +4327,6 @@
    "kapasitas_pemilik_mw": 0,
    "contoh_proyek": [
     "Tolo wind farm"
-   ]
-  },
-  {
-   "nama": "PT Sulawesi Mini Hydro Power",
-   "peran": [
-    "pemilik"
-   ],
-   "tracker": [
-    "hydropower"
-   ],
-   "jumlah_baris": 1,
-   "kapasitas_pemilik_mw": 100,
-   "contoh_proyek": [
-    "Bonto Batu hydroelectric plant"
-   ]
-  },
-  {
-   "nama": "PT Sulbar Group",
-   "peran": [
-    "pemilik"
-   ],
-   "tracker": [
-    "hydropower"
-   ],
-   "jumlah_baris": 1,
-   "kapasitas_pemilik_mw": 190,
-   "contoh_proyek": [
-    "Karama hydroelectric plant"
    ]
   },
   {
@@ -5069,20 +4484,6 @@
    ]
   },
   {
-   "nama": "PT. Hadji Kalla",
-   "peran": [
-    "pemilik"
-   ],
-   "tracker": [
-    "hydropower"
-   ],
-   "jumlah_baris": 1,
-   "kapasitas_pemilik_mw": 120,
-   "contoh_proyek": [
-    "Poso Extension Stage 1 hydroelectric plant"
-   ]
-  },
-  {
    "nama": "Qingshan Industrial Co Ltd",
    "peran": [
     "induk"
@@ -5097,20 +4498,6 @@
    ]
   },
   {
-   "nama": "Quantum Power Asia",
-   "peran": [
-    "pemilik"
-   ],
-   "tracker": [
-    "solar"
-   ],
-   "jumlah_baris": 1,
-   "kapasitas_pemilik_mw": 3500,
-   "contoh_proyek": [
-    "Riau Solar and Storage Power Plant"
-   ]
-  },
-  {
    "nama": "Rajamandala Electric Power CO LTD",
    "peran": [
     "operator"
@@ -5122,20 +4509,6 @@
    "kapasitas_pemilik_mw": 0,
    "contoh_proyek": [
     "Rajamandala hydroelectric plant"
-   ]
-  },
-  {
-   "nama": "ReNu Energy Ltd",
-   "peran": [
-    "pemilik"
-   ],
-   "tracker": [
-    "solar"
-   ],
-   "jumlah_baris": 1,
-   "kapasitas_pemilik_mw": 100,
-   "contoh_proyek": [
-    "Riau solar farm"
    ]
   },
   {
@@ -5195,20 +4568,6 @@
    ]
   },
   {
-   "nama": "Solar Philippines",
-   "peran": [
-    "pemilik"
-   ],
-   "tracker": [
-    "solar"
-   ],
-   "jumlah_baris": 1,
-   "kapasitas_pemilik_mw": 25,
-   "contoh_proyek": [
-    "East Bali solar farm"
-   ]
-  },
-  {
    "nama": "Solar PPA Philippines",
    "peran": [
     "pemilik"
@@ -5220,20 +4579,6 @@
    "kapasitas_pemilik_mw": 25,
    "contoh_proyek": [
     "East Bali solar farm"
-   ]
-  },
-  {
-   "nama": "Soma Power Indonesia",
-   "peran": [
-    "pemilik"
-   ],
-   "tracker": [
-    "hydropower"
-   ],
-   "jumlah_baris": 1,
-   "kapasitas_pemilik_mw": 100,
-   "contoh_proyek": [
-    "Bongka hydroelectric plant"
    ]
   },
   {
@@ -5276,20 +4621,6 @@
    "kapasitas_pemilik_mw": 0,
    "contoh_proyek": [
     "PT Tianshan Alumina power station"
-   ]
-  },
-  {
-   "nama": "Tohoku Electric Power Co Inc",
-   "peran": [
-    "pemilik"
-   ],
-   "tracker": [
-    "geothermal"
-   ],
-   "jumlah_baris": 1,
-   "kapasitas_pemilik_mw": 91,
-   "contoh_proyek": [
-    "Rantau Dedep geothermal power plant"
    ]
   },
   {

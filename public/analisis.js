@@ -28,12 +28,12 @@ function sumberBaris(s) {
 }
 
 /* Sumber: ikon info bulat (komponen.js) yang membuka daftar butir sumber bertanggal. */
-export function sumberLipat(daftar) {
+export function sumberLipat(daftar, ekstraHtml = "") {
   const a = daftar.filter(Boolean);
   if (!a.length) return "";
   const tgl = tanggal(a[0].tanggal);
   const label = a.length > 1 ? t("an.sumber_n", { n: a.length, tanggal: tgl }) : t("an.sumber_1", { tanggal: tgl });
-  return `<div class="jm-an-src">${sumberIkon(`<span class="jm-an-srcl">${a.map(sumberBaris).join("")}</span>`, label)}</div>`;
+  return `<div class="jm-an-src">${sumberIkon(`<span class="jm-an-srcl">${a.map(sumberBaris).join("")}${ekstraHtml}</span>`, label)}</div>`;
 }
 export const sumberHtml = (s) => sumberLipat([s]);
 

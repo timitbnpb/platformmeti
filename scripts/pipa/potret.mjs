@@ -14,6 +14,7 @@ import assert from 'node:assert/strict';
 import { fileURLToPath } from 'node:url';
 import { bangunSitemap } from './sitemap.mjs';
 import { terapkan as terapkanMetiWilayah } from './meti_wilayah_orang.mjs';
+import { gabung as gabungFoto, muat as muatFoto } from './foto_orang_gabung.mjs';
 import { normWilayah } from '../panen/panen_proyek.mjs';
 import { bangunKonteks, perkaya } from '../panen/berita_wilayah.mjs';
 import { bangunOrang, orangDari, bangunLembaga, lembagaDari } from '../panen/berita_kenal.mjs';
@@ -216,8 +217,14 @@ export function bangun(masukan = {}) {
   const sumberOrg = (arr) => (arr || []).map((s) => ({ id: s.id, jenis: s.jenis, url: s.url || null, keterangan: s.keterangan || s.judul || null, tingkat_bukti: s.tingkat_bukti, tanggal: s.tanggal_periksa || s.tanggal_ambil }));
   const lembaga = M('lembaga', 'lembaga/lembaga.jsonl'); catatTgl(lembaga);
   for (const l of lembaga) tambahOrg({ id: l.lembaga_id, nama: l.nama, singkatan: l.singkatan, kategori: JENIS_LEMBAGA[l.jenis] || 'kementerian-lembaga', induk: l.induk, kepakaran: l.kepakaran || [], peran_rantai: [], situs: l.situs, tahun_berdiri: l.tahun_berdiri, dasar_hukum: l.dasar_hukum, lokasi: bersih({ alamat: l.kontak?.alamat_kantor, kota: l.kontak?.kota, provinsi: l.kontak?.provinsi, lat: l.kontak?.lat, lng: l.kontak?.lng }), kontak_mentah: l.kontak || {}, sumber: sumberOrg(l.sumber), extra: { pengurus_status: l.pengurus_status, verifikasi: l.verifikasi } });
+  { // asosiasi tambahan terkurasi dengan sumber resmi (data/direktori/asosiasi_tambahan.json)
+    const ft = path.join(ROOT, 'data/direktori/asosiasi_tambahan.json');
+    if (!masukan.perusahaan && fs.existsSync(ft)) for (const b of JSON.parse(fs.readFileSync(ft, 'utf8')).baris || []) if (adaUrl(b.sumber_url)) tambahOrg({ id: b.id, nama: b.nama, singkatan: b.singkatan, kategori: b.kategori, kepakaran: b.kepakaran || [], peran_rantai: [], situs: b.situs, sumber: [{ id: 'situs-resmi', jenis: 'situs-resmi', url: b.sumber_url, keterangan: 'situs resmi asosiasi', tingkat_bukti: b.tingkat_bukti, tanggal: b.tanggal }] });
+  }
   const perusahaan = M('perusahaan', 'perusahaan/perusahaan.jsonl'); catatTgl(perusahaan);
   for (const p of perusahaan) tambahOrg({ id: p.perusahaan_id, nama: p.nama, nama_lain: p.nama_lain, kategori: kategoriPerusahaan(p), induk: p.induk, kepakaran: p.kepakaran || [], peran_rantai: p.peran_rantai || [], situs: p.situs, tahun_berdiri: p.tahun_berdiri, kode_saham: p.kode_saham, lokasi: bersih({ alamat: p.kontak?.alamat_kantor, kota: p.kantor_pusat?.kota || p.kontak?.kota, provinsi: p.kantor_pusat?.provinsi || p.kontak?.provinsi, lat: p.kontak?.lat, lng: p.kontak?.lng }), teknis: bersih({ kapasitas_mwp_tahun: p.kapasitas_mwp_tahun, pasar: p.pasar, apamsi: p.apamsi, tkdn: p.tkdn, bmp: p.bmp, kapasitas_portofolio: p.kapasitas_portofolio }), kontak_mentah: p.kontak || {}, sumber: sumberOrg(p.sumber), asosiasi: p.anggota_asosiasi || [], extra: { pengurus_status: p.pengurus_status, verifikasi: p.verifikasi, situs_keyakinan: p.situs_keyakinan, situs_catatan: p.situs_catatan, kandidat: p.kandidat } });
+  // pemilik proyek yang belum ada di direktori (scripts/pipa/org_pemilik.mjs bangun); tiap baris punya sumber berurl
+  for (const p of (masukan.perusahaan ? [] : M('pemilik_proyek', 'perusahaan/tambahan_pemilik.jsonl'))) { catatTgl([p]); tambahOrg({ id: p.perusahaan_id, nama: p.nama, nama_lain: p.nama_lain, kategori: kategoriPerusahaan(p), kepakaran: p.kepakaran || [], peran_rantai: p.peran_rantai || [], sumber: sumberOrg(p.sumber), extra: {} }); }
   // entitas internasional (scripts/pipa/data_internasional.mjs bangun): hanya yang punya sumber berurl; negara/subjenis/afiliasi/proyek dibawa ke baris publik
   for (const p of (masukan.perusahaan && !masukan.internasional ? [] : M('internasional', 'perusahaan/internasional.jsonl'))) { catatTgl([p]); tambahOrg({ id: p.perusahaan_id, nama: p.nama, nama_lain: p.nama_lain, singkatan: (p.nama_lain || [])[0], kategori: 'internasional', induk: p.induk, kepakaran: p.kepakaran || [], peran_rantai: p.peran_rantai || [], situs: p.situs, lokasi: bersih({ kota: p.kantor_pusat?.kota }), internasional: p.internasional, proyek_ekstra: p.proyek_ids || [], sumber: sumberOrg(p.sumber), extra: {} }); }
   // 1001startup.id (R13/D15): hanya nama, sektor, lokasi, relasi, sumber primer + atribusi; tanpa deskripsi/EST/skor/pegawai/valuasi/pendiri
@@ -501,13 +508,17 @@ export function bangun(masukan = {}) {
   // --- organisasi publik ---
   const organisasi = { publik: [], anggota: orgAng, pengurus: orgPen };
   const proyekPerOrg = new Map(); for (const p of proyekPub) for (const k of ['pemilik', 'epc', 'pembeli']) for (const v of p.pihak?.[k] || []) if (v.organisasi_id) { const s = proyekPerOrg.get(v.organisasi_id) || proyekPerOrg.set(v.organisasi_id, new Set()).get(v.organisasi_id); s.add(p.id); }
+  { // tautan organisasi-proyek turunan (scripts/pipa/tautan_proyek_org.mjs); dasar tiap tautan ada di berkasnya
+    const ft = path.join(ROOT, 'data/direktori/tautan_proyek_org.json');
+    if (fs.existsSync(ft)) for (const [oid, l] of Object.entries(JSON.parse(fs.readFileSync(ft, 'utf8')).baris || {})) for (const e of l) if (proyekPub.some((p) => p.id === e.proyek_id)) { const s = proyekPerOrg.get(oid) || proyekPerOrg.set(oid, new Set()).get(oid); s.add(e.proyek_id); }
+  }
   for (const { o, kk, ang, pen } of orgPubRows) {
     const peng = (pengOrg.get(o.id) || []).filter((x) => true).map((x) => bersih({ ...x }));
     const ke = (keanggotaan.get(o.id) || []).filter((x) => orgPub.has(x.organisasi_id));
     const anggotaPub = []; for (const [dari, l] of keanggotaan) if (orgPub.has(dari)) for (const x of l) if (x.organisasi_id === o.id) anggotaPub.push({ organisasi_id: dari, jenis: 'anggota' });
     organisasi.publik.push(bersih({ id: o.id, nama: o.nama, singkatan: o.singkatan, nama_lain: o.nama_lain, kategori: kat(o.kategori), induk: o.induk, kepakaran: (o.kepakaran || []).slice(0, 3), peran_rantai: o.peran_rantai, lokasi: o.lokasi, situs: o.situs, tahun_berdiri: o.tahun_berdiri, deskripsi: o.deskripsi, kode_saham: o.kode_saham, dasar_hukum: o.dasar_hukum, teknis: o.teknis, via_1001: o.via1001, relasi: relasiPer.get(o.id), keuangan: o.keuangan, kontak: kk.pub, keanggotaan: ke, anggota: anggotaPub, pengurus: peng, internasional: o.internasional, proyek_ids: unik([...(proyekPerOrg.get(o.id) || []), ...(o.proyek_ekstra || []).filter((x) => proyekPub.some((p) => p.id === x))]).sort(), berita_ids: bTerbaru('organisasi', o.id), sumber: o.sumber.filter((s) => adaUrl(s.url)).map(bersih), diperiksa: o.sumber.map((s) => s.tanggal).filter(Boolean).sort().pop() }));
     const a = { ...ang }; // foto pengurus ke lapis anggota
-    const fotos = []; for (const x of pengOrg.get(o.id) || []) { const r = orang.get(x.orang_id); if (r?.foto_pengurus) fotos.push(bersih({ orang_id: x.orang_id, berkas: null, sumber_url: r.foto_pengurus.sumber_url, hak_cipta: r.foto_pengurus.hak_cipta })); }
+    const fotos = []; for (const x of pengOrg.get(o.id) || []) { const r = orang.get(x.orang_id); if (r?.foto_pengurus) fotos.push(bersih({ orang_id: x.orang_id, berkas: null, jabatan: x.jabatan, jabatan_sumber_url: x.sumber_url, sumber_url: r.foto_pengurus.sumber_url, hak_cipta: r.foto_pengurus.hak_cipta })); }
     if (fotos.length) a.pengurus_foto = fotos; else delete a.pengurus_foto;
     if (Object.keys(a).length > 1) orgAng.push(a);
     if (Object.keys(pen).length > 1) orgPen.push(pen);
@@ -515,21 +526,28 @@ export function bangun(masukan = {}) {
   const orgPubSet = new Set(organisasi.publik.map((o) => o.id));
   { // profil lengkap hasil scripts/panen/profil_org.mjs (data/direktori/profil_org.json) + ringkasan disusun dari fakta (tanpa menyalin teks sumber)
     const fp = path.join(ROOT, 'data/direktori/profil_org.json'); const PO = fs.existsSync(fp) ? JSON.parse(fs.readFileSync(fp, 'utf8')).baris || {} : {};
-    const projById = new Map(proyekPub.map((p) => [p.id, p]));
+    const projById = new Map(proyekPub.map((p) => [p.id, p])); let anggotaPeta;
+    const fw = path.join(ROOT, 'data/direktori/wikidata_org.json'); const WD = fs.existsSync(fw) ? JSON.parse(fs.readFileSync(fw, 'utf8')).baris || {} : {}; // Wikidata CC0: butir terpisah, tidak menimpa
     const ft = path.join(ROOT, 'public/data/tkdn.json'); const tkdnPer = new Map();
     if (fs.existsSync(ft)) for (const t of JSON.parse(fs.readFileSync(ft, 'utf8')).baris || []) if (t.produsen_org_id && adaUrl(t.sumber_url)) (tkdnPer.get(t.produsen_org_id) || tkdnPer.set(t.produsen_org_id, []).get(t.produsen_org_id)).push({ produk: t.produk, tkdn_persen: t.tkdn_persen, berlaku_sampai: t.berlaku_sampai, sumber_url: t.sumber_url });
+    const namaUsaha = (n) => { const t = String(n).replace(/\s+(Work|Phone|Email|Website|Mobile)$/i, '').replace(/^PT\.\s*/i, 'PT ').trim(); return /^PT\s+\S+/i.test(t) && t.length < 80 ? judulHuruf(t) : null; };
     for (const o of organisasi.publik) {
-      if (!['swasta', 'bumn', 'internasional', 'keuangan'].includes(o.kategori?.kode)) continue;
+      if (!o.kategori?.kode || ['pemda', 'koperasi', 'ormawa'].includes(o.kategori.kode)) continue;
       const s = PO[o.id] || {}; const pr = (o.proyek_ids || []).map((i) => projById.get(i)).filter(Boolean);
-      const wil = unik(pr.map((p) => p.lokasi?.provinsi)).sort(); const tahun = o.tahun_berdiri || s.tahun_berdiri?.nilai;
+      const wil = unik(pr.map((p) => p.lokasi?.provinsi)).sort(); const tahun = o.tahun_berdiri || s.tahun_berdiri?.nilai || WD[o.id]?.tahun_berdiri;
       const bid = unik((o.kepakaran || []).map((k) => String(k).replace(/-/g, ' '))); const peran = unik(o.peran_rantai || []);
-      const kalimat = [`${o.nama} adalah ${o.kategori.kode === 'bumn' ? 'badan usaha milik negara' : o.kategori.kode === 'internasional' ? 'perusahaan internasional yang beroperasi di Indonesia' : o.kategori.kode === 'keuangan' ? 'lembaga keuangan' : 'perusahaan swasta'}${o.lokasi?.kota ? ` berkantor pusat di ${o.lokasi.kota}` : ''}${tahun ? `, berdiri sejak ${tahun}` : ''}.`];
+      const kalimat = [`${o.nama} adalah ${o.kategori.kode === 'bumn' ? 'badan usaha milik negara' : o.kategori.kode === 'internasional' ? 'perusahaan internasional yang beroperasi di Indonesia' : o.kategori.kode === 'keuangan' ? 'lembaga keuangan' : o.kategori.kode === 'swasta' ? 'perusahaan swasta' : String(o.kategori.label || 'lembaga').toLowerCase()}${o.lokasi?.kota ? ` berkantor pusat di ${o.lokasi.kota}` : ''}${tahun ? `, berdiri sejak ${tahun}` : ''}.`];
       if (bid.length || peran.length) kalimat.push(`Tercatat di direktori ini pada bidang ${bid.join(', ') || 'energi'}${peran.length ? ` dengan peran ${peran.join(', ')}` : ''}.`);
       if (pr.length) kalimat.push(`Terhubung dengan ${pr.length} proyek${wil.length ? ` di ${wil.length} provinsi` : ''}.`);
       if (o.kode_saham) kalimat.push(`Saham tercatat di bursa dengan kode ${o.kode_saham}.`);
       if (s.net_zero) kalimat.push(`Menyebut target net zero ${s.net_zero.tahun} di situs resminya.`);
-      const profil = bersih({ ringkasan: kalimat.join(' '), tahun_berdiri: s.tahun_berdiri, kapasitas: s.kapasitas, net_zero: s.net_zero, sertifikasi: s.sertifikasi, tkdn: tkdnPer.get(o.id), asosiasi: s.asosiasi, karyawan: s.karyawan, sosmed: s.sosmed, halaman: s.halaman, wilayah_operasi: wil, logo_url: s.logo_url, sumber: s.sumber, tanggal_periksa: s.tanggal_periksa });
-      if (!o.tahun_berdiri && s.tahun_berdiri) o.tahun_berdiri = s.tahun_berdiri.nilai;
+      const orgNorm = anggotaPeta ||= new Map(organisasi.publik.map((x) => [norm(x.nama), x.id]));
+      const faAs = path.join(ROOT, 'data/direktori/anggota_asosiasi.json'); const nmAs = o.nama.includes('Produsen Listrik Swasta') && fs.existsSync(faAs) ? JSON.parse(fs.readFileSync(faAs, 'utf8')).baris?.aplsi : null;
+      const angDaftar = unik([...(nmAs?.anggota || []), ...(s.anggota_disebut || []).map(namaUsaha)]).slice(0, 120).map((n) => bersih({ nama: n, organisasi_id: orgNorm.get(norm(n)) !== o.id ? orgNorm.get(norm(n)) : undefined }));
+      const angSumber = nmAs ? nmAs.sumber_url : s.halaman?.anggota;
+      const wd = WD[o.id]; const wdData = wd ? bersih({ url: wd.url, tanggal_periksa: wd.tanggal_periksa, induk: (wd.induk || []).map((x) => x.nama), anak_usaha: (wd.anak_usaha || []).map((x) => x.nama) }) : undefined;
+      const profil = bersih({ anggota: angDaftar.length ? { daftar: angDaftar, sumber_url: angSumber, ...(nmAs ? { tanggal_baca: nmAs.tanggal_baca } : {}) } : undefined, ringkasan: kalimat.join(' '), tahun_berdiri: s.tahun_berdiri || (wd?.tahun_berdiri ? { nilai: Number(String(wd.tahun_berdiri).slice(0, 4)), sumber_url: wd.url } : undefined), wikidata: wdData, visi: s.visi, misi: s.misi, alamat_situs: s.alamat, afiliasi: s.afiliasi, kapasitas: s.kapasitas, net_zero: s.net_zero, sertifikasi: s.sertifikasi, tkdn: tkdnPer.get(o.id), asosiasi: s.asosiasi, karyawan: s.karyawan, sosmed: s.sosmed, halaman: s.halaman, wilayah_operasi: wil, wikidata: WD[o.id], logo_url: s.logo_url, sumber: s.sumber, tanggal_periksa: s.tanggal_periksa });
+      if (!o.tahun_berdiri && s.tahun_berdiri) o.tahun_berdiri = s.tahun_berdiri.nilai; else if (!o.tahun_berdiri && WD[o.id]?.tahun_berdiri) o.tahun_berdiri = WD[o.id].tahun_berdiri; { const w = WD[o.id]; if (w && !o.situs && w.situs) o.situs = w.situs; const kt = w?.kantor_pusat?.[0]?.nama; if (kt && !o.lokasi?.kota) o.lokasi = { ...(o.lokasi || {}), kota: kt }; }
       if (s.kontak && !(o.kontak?.telepon || []).length && !(o.kontak?.surel || []).length) o.kontak = bersih({ telepon: s.kontak.telepon, surel: s.kontak.surel });
       o.profil = profil;
     }
@@ -590,6 +608,7 @@ export function bangun(masukan = {}) {
     if (Object.keys(pen).length > 1) orangOut.pengurus.push(pen);
   }
   { const f = path.join(ROOT, 'data/meti_wilayah.json'); if (fs.existsSync(f)) console.log('orang meti_wilayah:', terapkanMetiWilayah(orangOut.publik, JSON.parse(fs.readFileSync(f, 'utf8')))); }
+  try { const m = muatFoto(); console.log('orang foto pengurus METI diisi:', gabungFoto(orangOut.publik, m.pengurus, m.berkas, m.ada)); } catch (e) { console.error('foto_orang_gabung dilewati:', e.message); }
   const orangPubSet = new Set(orangOut.publik.map((o) => o.id));
   for (const o of organisasi.publik) { o.pengurus = (o.pengurus || []).filter((x) => orangPubSet.has(x.orang_id)); if (!o.pengurus.length) delete o.pengurus; }
   for (const b of beritaPub) if (b.orang_ids) { b.orang_ids = b.orang_ids.filter((i) => orangPubSet.has(i)); if (!b.orang_ids.length) delete b.orang_ids; }

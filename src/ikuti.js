@@ -28,6 +28,7 @@ export async function ringkasanMingguan(env, akun, kini = Date.now()) {
   const item = [];
   for (const x of (await hak.ikutiPerubahan(env, akun, sejak)) ?? []) {
     if (x.tipe === "portal") item.push({ tipe: "portal", jenis: x.proyek_id && pro.has(x.proyek_id) ? "proyek" : "organisasi", ref: x.proyek_id && pro.has(x.proyek_id) ? x.proyek_id : x.organisasi_id, jenis_ajuan: x.jenis, waktu: x.waktu });
+    else if (x.tipe === "konsultasi") item.push({ tipe: "konsultasi", jenis: "regulasi", ref: "kons:" + x.dokumen_id, sub: x.sub, waktu: x.waktu });
     else item.push({ tipe: "koreksi", jenis: x.entitas, ref: x.entitas_id, kolom: x.kolom, waktu: x.waktu });
   }
   if (org.size || pro.size || prov.size) {

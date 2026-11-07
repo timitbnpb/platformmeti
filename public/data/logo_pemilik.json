@@ -1,0 +1,280 @@
+{
+ "Kementerian ESDM": {
+  "logo": "/img/logo/esdm.png"
+ },
+ "Kementerian Keuangan": {
+  "logo": "/img/logo/kemenkeu.png"
+ },
+ "Kementerian Keuangan (DJPPR)": {
+  "logo": "/img/logo/kemenkeu.png"
+ },
+ "PT PLN (Persero)": {
+  "logo": "/img/logo/pln.png"
+ },
+ "Kementerian Investasi dan Hilirisasi/BKPM": {
+  "logo": "/img/logo/bkpm.png"
+ },
+ "Badan Riset dan Inovasi Nasional": {
+  "logo": "/img/logo/brin.png"
+ },
+ "Otoritas Jasa Keuangan": {
+  "logo": "/img/logo/ojk.png"
+ },
+ "Badan Meteorologi, Klimatologi, dan Geofisika": {
+  "logo": "/img/penerbit/bmkg.png"
+ },
+ "Badan Informasi Geospasial": {
+  "logo": "/img/penerbit/big.png"
+ },
+ "Kementerian Perindustrian": {
+  "logo": "/img/penerbit/kemenperin.png"
+ },
+ "ASEAN Centre for Energy": {
+  "logo": "/img/logo/sd/aseanenergy.org.png",
+  "sumber": "https://aseanenergy.org/"
+ },
+ "Bloomberg": {
+  "logo": "/img/logo/sd/bloomberg.com.png",
+  "sumber": "https://bloomberg.com/"
+ },
+ "Badan Pusat Statistik": {
+  "logo": "/img/logo/sd/bps.go.id.png",
+  "sumber": "https://bps.go.id/"
+ },
+ "Climate TRACE Coalition": {
+  "logo": "/img/logo/sd/climatetrace.org.png",
+  "sumber": "https://climatetrace.org/"
+ },
+ "Energy Institute": {
+  "logo": "/img/logo/sd/energyinst.org.png",
+  "sumber": "https://energyinst.org/"
+ },
+ "Ember": {
+  "logo": "/img/logo/sd/ember-energy.org.png",
+  "sumber": "https://ember-energy.org/"
+ },
+ "Bank Dunia": {
+  "logo": "/img/logo/sd/worldbank.org.png",
+  "sumber": "https://worldbank.org/"
+ },
+ "Copernicus, ECMWF": {
+  "logo": "/img/logo/sd/copernicus.eu.png",
+  "sumber": "https://copernicus.eu/"
+ },
+ "Kementerian Pendidikan Tinggi, Sains, dan Teknologi": {
+  "logo": "/img/logo/sd/kemdiktisaintek.go.id.png",
+  "sumber": "https://kemdiktisaintek.go.id/"
+ },
+ "Global Energy Monitor": {
+  "logo": "/img/logo/sd/globalenergymonitor.org.png",
+  "sumber": "https://globalenergymonitor.org/"
+ },
+ "ESMAP, Bank Dunia": {
+  "logo": "/img/logo/sd/esmap.org.png",
+  "sumber": "https://esmap.org/"
+ },
+ "DTU dan Bank Dunia": {
+  "logo": "/img/logo/sd/dtu.dk.ico",
+  "sumber": "https://dtu.dk/"
+ },
+ "Gold Standard": {
+  "logo": "/img/logo/sd/goldstandard.org.png",
+  "sumber": "https://goldstandard.org/"
+ },
+ "IATI": {
+  "logo": "/img/logo/sd/iatistandard.org.png",
+  "sumber": "https://iatistandard.org/"
+ },
+ "Bursa Efek Indonesia": {
+  "logo": "/img/logo/sd/idx.co.id.png",
+  "sumber": "https://idx.co.id/"
+ },
+ "International Energy Agency": {
+  "logo": "/img/logo/sd/iea.org.png",
+  "sumber": "https://iea.org/"
+ },
+ "International Renewable Energy Agency": {
+  "logo": "/img/logo/sd/irena.org.png",
+  "sumber": "https://irena.org/"
+ },
+ "Kementerian Desa dan PDT": {
+  "logo": "/img/logo/sd/kemendesa.go.id.ico",
+  "sumber": "https://kemendesa.go.id/"
+ },
+ "NASA": {
+  "logo": "/img/logo/sd/nasa.gov.png",
+  "sumber": "https://nasa.gov/"
+ },
+ "OECD": {
+  "logo": "/img/logo/sd/oecd.org.png",
+  "sumber": "https://oecd.org/"
+ },
+ "OurResearch": {
+  "logo": "/img/logo/sd/ourresearch.org.png",
+  "sumber": "https://ourresearch.org/"
+ },
+ "Indonesia Corruption Watch": {
+  "logo": "/img/logo/sd/antikorupsi.org.png",
+  "sumber": "https://antikorupsi.org/"
+ },
+ "OpenStreetMap Foundation": {
+  "logo": "/img/logo/sd/openstreetmap.org.png",
+  "sumber": "https://openstreetmap.org/"
+ },
+ "Our World in Data": {
+  "logo": "/img/logo/sd/ourworldindata.org.png",
+  "sumber": "https://ourworldindata.org/"
+ },
+ "REN21": {
+  "logo": "/img/logo/sd/ren21.net.png",
+  "sumber": "https://ren21.net/"
+ },
+ "Wikimedia Foundation": {
+  "logo": "/img/logo/sd/wikimedia.org.png",
+  "sumber": "https://wikimedia.org/"
+ },
+ "World Resources Institute": {
+  "logo": "/img/logo/sd/wri.org.png",
+  "sumber": "https://wri.org/"
+ },
+ "Asian Development Bank": {
+  "logo": "/img/logo/sd/adb.org.png",
+  "sumber": "https://adb.org/"
+ },
+ "World Bank (IBRD/IDA)": {
+  "logo": "/img/logo/sd/worldbank.org.png",
+  "sumber": "https://worldbank.org/"
+ },
+ "World Bank Trust Funds": {
+  "logo": "/img/logo/sd/worldbank.org.png",
+  "sumber": "https://worldbank.org/"
+ },
+ "Federal Ministry for Economic Cooperation and Development (BMZ)": {
+  "logo": "/img/logo/sd/bmz.de.png",
+  "sumber": "https://bmz.de/"
+ },
+ "Netherlands Enterprise Agency": {
+  "logo": "/img/logo/sd/rvo.nl.ico",
+  "sumber": "https://rvo.nl/"
+ },
+ "UK - Foreign, Commonwealth Development Office (FCDO)": {
+  "logo": "/img/logo/sd/gov.uk.png",
+  "sumber": "https://gov.uk/"
+ },
+ "Green Climate Fund": {
+  "logo": "/img/logo/sd/greenclimate.fund.png",
+  "sumber": "https://greenclimate.fund/"
+ },
+ "Australia Aid": {
+  "logo": "/img/logo/sd/dfat.gov.au.png",
+  "sumber": "https://dfat.gov.au/"
+ },
+ "Ministry for Foreign Affairs of Finland": {
+  "logo": "/img/logo/sd/um.fi.png",
+  "sumber": "https://um.fi/"
+ },
+ "Sweden": {
+  "logo": "/img/logo/sd/sida.se.png",
+  "sumber": "https://sida.se/"
+ },
+ "Asian Infrastructure Investment Bank": {
+  "logo": "/img/logo/sd/aiib.org.png",
+  "sumber": "https://aiib.org/"
+ },
+ "Foreign Affairs, Trade and Development Canada (DFATD)": {
+  "logo": "/img/logo/sd/international.gc.ca.ico",
+  "sumber": "https://international.gc.ca/"
+ },
+ "Ministry of Foreign Affairs of the Netherlands": {
+  "logo": "/img/logo/sd/government.nl.png",
+  "sumber": "https://government.nl/"
+ },
+ "Ministry of Foreign Affairs, Denmark": {
+  "logo": "/img/logo/sd/um.dk.png",
+  "sumber": "https://um.dk/"
+ },
+ "DEPARTMENT FOR SCIENCE, INNOVATION AND TECHNOLOGY": {
+  "logo": "/img/logo/sd/gov.uk.png",
+  "sumber": "https://gov.uk/"
+ },
+ "United Nations Development Programme": {
+  "logo": "/img/logo/sd/undp.org.png",
+  "sumber": "https://undp.org/"
+ },
+ "Trade and Development Agency": {
+  "logo": "/img/logo/sd/ustda.gov.png",
+  "sumber": "https://ustda.gov/"
+ },
+ "European Commission - Directorate-General for International Partnerships": {
+  "logo": "/img/logo/sd/ec.europa.eu.png",
+  "sumber": "https://ec.europa.eu/"
+ },
+ "Private Infrastructure Development Group": {
+  "logo": "/img/logo/sd/pidg.org.png",
+  "sumber": "https://pidg.org/"
+ },
+ "Norad - Norwegian Agency for Development Cooperation": {
+  "logo": "/img/logo/sd/norad.no.png",
+  "sumber": "https://norad.no/"
+ },
+ "Islamic Development Bank": {
+  "logo": "/img/logo/sd/isdb.org.png",
+  "sumber": "https://isdb.org/"
+ },
+ "Germany - Federal Foreign Office": {
+  "logo": "/img/logo/sd/auswaertiges-amt.de.png",
+  "sumber": "https://auswaertiges-amt.de/"
+ },
+ "Global Environment Facility": {
+  "logo": "/img/logo/sd/thegef.org.png",
+  "sumber": "https://thegef.org/"
+ },
+ "New Zealand Ministry of Foreign Affairs and Trade": {
+  "logo": "/img/logo/sd/mfat.govt.nz.png",
+  "sumber": "https://mfat.govt.nz/"
+ },
+ "Japan International Cooperation Agency (JICA)": {
+  "logo": "/img/logo/sd/jica.go.jp.png",
+  "sumber": "https://jica.go.jp/"
+ },
+ "Japan International Cooperation Agency": {
+  "logo": "/img/logo/sd/jica.go.jp.png",
+  "sumber": "https://jica.go.jp/"
+ },
+ "AFD": {
+  "logo": "/img/logo/sd/afd.fr.png",
+  "sumber": "https://afd.fr/"
+ },
+ "Millennium Challenge Corporation": {
+  "logo": "/img/logo/sd/mcc.gov.png",
+  "sumber": "https://mcc.gov/"
+ },
+ "Department of Energy": {
+  "logo": "/img/logo/sd/energy.gov.png",
+  "sumber": "https://energy.gov/"
+ },
+ "Department of State": {
+  "logo": "/img/logo/sd/state.gov.png",
+  "sumber": "https://state.gov/"
+ },
+ "Danamart": {
+  "logo": "/img/logo/sd/danamart.id.png",
+  "sumber": "https://danamart.id/"
+ },
+ "KfW Development Bank": {
+  "logo": "/img/logo/sd/kfw-entwicklungsbank.de.png",
+  "sumber": "https://kfw-entwicklungsbank.de/"
+ },
+ "Climate Investment Funds": {
+  "logo": "/img/logo/sd/cif.org.png",
+  "sumber": "https://cif.org/"
+ },
+ "PT Sarana Multi Infrastruktur": {
+  "logo": "/img/logo/sd/ptsmi.co.id.png",
+  "sumber": "https://ptsmi.co.id/"
+ },
+ "Lembaga Pengelola Dana Pendidikan": {
+  "logo": "/img/logo/sd/lpdp.kemenkeu.go.id.png",
+  "sumber": "https://lpdp.kemenkeu.go.id/"
+ }
+}

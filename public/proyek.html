@@ -7,6 +7,8 @@
 <title data-i18n="pj.title">Pelacak Proyek Energi Terbarukan | Direktori METI</title>
 <link rel="icon" href="/img/logo-meti-tanda.png" type="image/png">
 <link rel="preload" href="/fonts/inter-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/peristiwa_komitmen.css">
+<link rel="stylesheet" href="/proyek_tender.css">
 <script src="/tema.js"></script>
 <link rel="stylesheet" href="/inti/tema.css">
 <link rel="stylesheet" href="/inti/kepala.css">
@@ -25,6 +27,8 @@
     <p class="jm-kh-lead" data-i18n="pj.lead">Proyek pembangkit dan program transisi energi nasional, lengkap dengan status, target COD, lokasi, dan sumber tiap angka.</p>
     <div class="jm-kh-aksi"><a class="jm-tbl" href="/proyek-besar.html"><svg class="jm-ik" width="18" height="18" aria-hidden="true" focusable="false"><use href="/img/ikon.svg#i-analisis"/></svg><span data-i18n="pj.ke_besar">Proyek besar</span></a><a class="jm-tbl" href="/proyek-berhenti.html"><svg class="jm-ik" width="18" height="18" aria-hidden="true" focusable="false"><use href="/img/ikon.svg#i-blokir"/></svg><span data-i18n="pj.ke_henti">Proyek berhenti</span></a></div>
   </div><div class="jm-kh-ubin" id="pjAngka" aria-live="polite"></div></section>
+  <div id="pjTab"></div>
+  <div id="pnProyek">
   <section class="jm-pj-penuh" aria-label="Peta proyek" data-i18n-attr="aria-label:pj.peta.judul">
     <div class="jm-saring jm-pj-bilah" id="pjSaring" role="group" data-i18n-attr="aria-label:pj.saring">
       <label class="jm-cari"><svg class="jm-ik" width="18" height="18" aria-hidden="true" focusable="false"><use href="/img/ikon.svg#i-cari2"/></svg><span class="sr" data-i18n="pj.f.cari">Cari proyek</span><input id="fq" type="search" autocomplete="off" data-i18n-attr="placeholder:pj.f.cari"></label>
@@ -61,6 +65,8 @@
   <div id="exProg"><div class="jm-pj-isi">
     <div id="pjProg" class="jm-pj-prog"></div>
   </div></div>
+  </div>
+  <div id="pnTender" hidden></div>
 </main>
 <dialog class="jm-pj-sheet" id="pjProfil" aria-labelledby="pjProfilJudul"></dialog>
 <footer class="jm-kaki" id="kaki"></footer>

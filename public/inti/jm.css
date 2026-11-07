@@ -661,3 +661,20 @@ main>:is(section,div,article)+:is(section,div,article){margin-top:max(24px,var(-
 }
 /* bar saring tanpa chip hitungan "n dari N": pilihan mengisi sampai ujung (pemilik 8 Nov 2026); jumlah tampil di paginasi */
 .jm-saring>.jm-hitung{display:none!important}
+
+/* paginasi rapi (pemilik 8 Nov 2026 "bagusin"): pita penuh lebar, rentang kiri, kontrol kanan; tombol bulat berbingkai, arah berikon (tanpa panah teks) */
+.jm-pag{justify-content:space-between;gap:12px 16px;padding:10px 12px 10px 18px;margin:18px 0 8px;border:1px solid var(--line);border-radius:var(--r-pil);background:var(--surface)}
+.jm-pag-teks{font-size:var(--t-kecil);font-weight:600;color:var(--ink2)}
+.jm-pag-nomor{gap:6px}
+.jm-pag-b{height:38px;min-width:38px;padding:0 12px;border:1px solid var(--line);border-radius:var(--r-pil);background:var(--card);color:var(--ink);font-weight:700;transition:background .15s,border-color .15s,color .15s}
+.jm-pag-b:hover:not(:disabled):not(.on){background:var(--soft-hijau);border-color:var(--accent);color:var(--accent);box-shadow:none}
+.jm-pag-b.on{border-color:transparent}
+.jm-pag-arah{gap:6px;padding:0 14px}
+.jm-pag-arah .jm-ik{flex:none;stroke:currentColor;fill:none}
+.jm-pag-elips{min-width:20px;text-align:center}
+@media (max-width:600px){.jm-pag{border-radius:var(--r-lg);padding:12px}.jm-pag-arah span{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}.jm-pag-arah{padding:0;width:44px}}
+@media (prefers-reduced-motion:reduce){.jm-pag-b{transition:none}}
+/* mata uang: simbol rata kiri, angka rata kanan (pemilik 8 Nov 2026); dipakai lewat uangHtml() di inti/uang.js */
+.jm-uang{display:flex;justify-content:space-between;align-items:baseline;gap:8px;width:100%;font-variant-numeric:tabular-nums}
+.jm-uang-s{color:var(--ink2);font-weight:600}
+.jm-uang-n{text-align:right;white-space:nowrap}

@@ -10,6 +10,16 @@ const BOBOT_BUKTI = { resmi: 1, "situs-sendiri": 0.8, sedang: 0.6, cuplikan: 0.5
 const PERAN_SURAT = /^(info|contact|kontak|humas|sekretariat|secretariat|sekretaris|corsec|corporate|ir|cs|customercare|admin|office|hello|media|ppid|layanan|sales|marketing|support|pr)\b/i;
 
 const mwDari = (p) => { const k = (p.kapasitas || []).find((c) => /^MWp?$/.test(c.satuan) && Number.isFinite(c.nilai)); return k ? k.nilai : 0; };
+/* Sektor dari proyek tertaut: teknologi ber-MW terbesar (jumlah proyek bila MW kosong); bila >1 teknologi dan yang terbesar < 60% jadi "lintas". Tanpa proyek: kepakaran. */
+export const TEK_PROYEK = [...TEK, "nuklir"];
+export function sektorProyek(ps) {
+  const mw = new Map(), n = new Map();
+  for (const p of ps) { if (!TEK_PROYEK.includes(p.teknologi)) continue; mw.set(p.teknologi, (mw.get(p.teknologi) || 0) + mwDari(p)); n.set(p.teknologi, (n.get(p.teknologi) || 0) + 1); }
+  if (!n.size) return "";
+  const pakaiMw = [...mw.values()].some((v) => v > 0), ukur = pakaiMw ? mw : n, total = [...ukur.values()].reduce((a, b) => a + b, 0);
+  const [top, nilai] = [...ukur.entries()].sort((a, b) => b[1] - a[1])[0];
+  return n.size > 1 && nilai / total < 0.6 ? "lintas" : top;
+}
 export const sektorDari = (o) => (o.kepakaran || []).find((k) => TEK.includes(k)) || "lain";
 export const suratPeran = (o) => (o.kontak?.surel || []).filter((e) => PERAN_SURAT.test(String(e).split("@")[0]));
 export const teleponKantor = (o) => (o.kontak?.telepon || []).filter((x) => typeof x === "string" && x.trim());
@@ -34,7 +44,7 @@ export function muatSensus() {
       const ids = new Set([...(o.proyek_ids || []), ...(ke.get(o.id) || [])]), ps = [...ids].map((i) => pr.get(i)).filter(Boolean);
       const prov = new Set(ps.map((p) => p.lokasi?.provinsi).filter(Boolean));
       const yakin = skorYakin(o, ps.length);
-      return { o, id: o.id, nm: o.nama, sek: sektorDari(o), ps, nProy: ps.length, mw: ps.reduce((s, p) => s + mwDari(p), 0), nProv: prov.size, aplsi: aplsi.has(NORM(o.nama)),
+      return { o, id: o.id, nm: o.nama, sek: sektorProyek(ps) || sektorDari(o), ps, nProy: ps.length, mw: ps.reduce((s, p) => s + mwDari(p), 0), nProv: prov.size, aplsi: aplsi.has(NORM(o.nama)),
         anak: (o.keanggotaan || []).some((k) => k.jenis === "bagian_dari") || (!!o.induk && nama.has(NORM(o.induk)) && nama.get(NORM(o.induk)).id !== o.id), yakin };
     });
     baris.sort((a, b) => b.nProy - a.nProy || b.mw - a.mw || b.yakin.skor - a.yakin.skor || a.nm.localeCompare(b.nm));

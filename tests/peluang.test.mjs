@@ -63,3 +63,22 @@ test('harga patokan: tiap teknologi berbunyi, laut null; berkas = hasil bangun (
   const ulang = bangun({ ruen: RUEN, harga: baca('data/peluang/harga_patokan.json'), wilayah: W, proyek: PR, bpp: baca('data/peluang/bpp.json') });
   assert.equal(JSON.stringify(ulang, null, 1) + '\n', fs.readFileSync(new URL('../public/data/peluang.json', import.meta.url), 'utf8'));
 });
+
+test('peluang.json: potensi per teknologi (tunggal + induk Papua + kelompok unik) = total tabel RUEN', async () => {
+  const fs = await import('node:fs');
+  const ruen = JSON.parse(fs.readFileSync(new URL('../data/peluang/ruen_potensi.json', import.meta.url), 'utf8'));
+  const out = JSON.parse(fs.readFileSync(new URL('../public/data/peluang.json', import.meta.url), 'utf8'));
+  for (const tek of ['surya', 'bayu', 'hidro', 'mikrohidro', 'bioenergi', 'laut']) {
+    let s = 0; const kel = new Set();
+    for (const b of out.baris) {
+      const c = b.potensi[tek];
+      if (c.mw != null) s += c.mw;
+      else if (c.kelompok_mw != null) { const k = (c.kelompok || [c.catatan]).join(',') + c.kelompok_mw; if (!kel.has(k)) { kel.add(k); s += c.kelompok_mw; } }
+    }
+    assert.ok(Math.abs(s - ruen.tabel[tek].total) <= 1.5, `${tek}: ${s} vs ${ruen.tabel[tek].total}`);
+  }
+  const papua = out.baris.find((b) => b.kode === '91');
+  assert.equal(papua.potensi.surya.mw, 2035);
+  assert.equal(papua.potensi.surya.pra_pemekaran, true);
+  assert.equal(out.baris.find((b) => b.kode === '93').potensi.surya.mw, null);
+});

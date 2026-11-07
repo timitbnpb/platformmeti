@@ -620,3 +620,20 @@ a.jm-wp-op:hover{color:var(--accent)}
 .jm-wp-fk dt{color:var(--ink2);font-size:var(--t-kecil)}
 .jm-wp-fk dd{margin:0;font-weight:700;font-variant-numeric:tabular-nums}
 .jm-wp-cap-g{width:100%;max-width:320px;height:auto;color:var(--ink)}
+
+/* ---- /wilayah: peta di dalam wadah exhibit, lebar sama dengan kepala (pemilik 8 Nov 2026 "kenapa kontainernya segitu, petanya segitu") ---- */
+.jm-wl-bingkai{width:auto;margin-inline:0;border-radius:0 0 var(--r-lg) var(--r-lg)}
+.jm-ex:has(.jm-wl-bingkai){overflow:hidden}
+.jm-wl-bingkai>.jm-wl-bar{padding-inline:16px}
+.jm-wl-pr{right:16px}.jm-wl-legenda{left:16px}
+.jm-wl-pita{margin:4px 0 0;padding:5px 9px;border-radius:var(--r-sm);background:var(--soft-kuning,color-mix(in srgb,var(--warn,#c28a00) 14%,var(--card)));color:var(--ink);font:600 var(--t-label)/1.3 var(--font);max-width:300px}
+.jm-wl-pita[hidden]{display:none}
+.jm-wl-cat{display:block;color:var(--ink2);font-size:var(--t-label);line-height:1.35;padding:4px 0 0;border-top:1px dashed var(--line)}
+@media (max-width:899px){.jm-wl-pr{right:auto}.jm-wl-legenda{left:auto}}
+/* kepala exhibit: label topik kanan atas, aksi sejajar baris judul di kanan (tanpa baris aksi terpisah) */
+@media (min-width:600px){
+main.jm-an .jm-ex>.jm-ex-hd{padding-top:42px}
+main.jm-an .jm-ex>.jm-ex-hd>.jm-ex-teks>.jm-ex-ey{position:absolute;grid-area:auto;top:12px;right:22px;margin:0}
+main.jm-an .jm-ex>.jm-ex-hd>.jm-ex-aksi{grid-column:2;grid-row:1;align-self:center}
+main.jm-an .jm-ex>.jm-ex-hd>.jm-ex-teks>.jm-ex-sub{grid-row:2}
+}

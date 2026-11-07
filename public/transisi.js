@@ -14,6 +14,7 @@ import { pilStatus } from "/inti/ikon_tek.js";
 import { geoProvinsi, jalurPerProvinsi } from "/inti/peta_indonesia.js";
 import { geserPanel } from "/inti/panel_geser.js";
 import * as H from "/transisi_hitung.js";
+import { pasangLinimasa } from "/peristiwa_komitmen.js";
 
 const $ = (id) => document.getElementById(id);
 const D = {};
@@ -494,7 +495,8 @@ function gambar() {
     <div id="target">${grup("target", "analisis", "target", [tCelah(), tTambah(), tSkenario(), tRukn(), tDekomp(), tPapan()])}</div>
     <div id="sistem">${grup("sistem", "rantai", "sistem", [tPeta(), tSistem(), tBeban(), tKapasitas(), tVre()])}</div>
     <div id="karbon">${grup("karbon", "tek-bio", "karbon", [tBursa(), tEmisi(), tSrn(), tKredit()])}</div>
-    ${tCelahData()}${tCara()}`;
+    <div id="peHost"></div>${tCelahData()}${tCara()}`;
+  pasangLinimasa($("peHost"));
   panelSistem();
   petaSvg().then(() => { if (innerWidth >= 900 && $("trPanel") && !$("trPanel").classList.contains("jm-geser")) geserPanel($("trPanel"), { kunci: "panel", batas: $("trPeta") }); });
 }

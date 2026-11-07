@@ -29,3 +29,18 @@ export function namaBaku(s) {
   }
   return { nama, jenis };
 }
+
+/* namaGelar(nama, gelar): gelar belakang ditempatkan sesudah nama dan dinormalkan ("SE. MSM" -> "S.E., M.S.M."); gelar depan (Dr, Ir, Prof, H, Hj) tetap di depan.
+   Murni, tanpa DOM. Contoh: namaGelar("Yudha Permana Jayadikarta", "SE. MSM") -> "Yudha Permana Jayadikarta, S.E., M.S.M.". */
+const GELAR_DEPAN = { DR: "Dr.", IR: "Ir.", PROF: "Prof.", DRS: "Drs.", DRA: "Dra.", DRG: "drg.", H: "H.", HJ: "Hj." };
+const GELAR_BELAKANG = { MSC: "M.Sc.", PHD: "Ph.D.", MSI: "M.Si.", MBA: "MBA", SKOM: "S.Kom.", MKOM: "M.Kom.", SSOS: "S.Sos.", MSOS: "M.Sos.", SPD: "S.Pd.", MPD: "M.Pd.", SIP: "S.I.P.", MIP: "M.I.P.", CFA: "CFA", CPA: "CPA", IPM: "IPM", IPU: "IPU" };
+const titik = (k) => (GELAR_BELAKANG[k] || (k.length <= 4 ? k.split("").join(".") + "." : k));
+export function namaGelar(nama, gelar) {
+  const depan = [], belakang = [];
+  for (const mentah of String(gelar ?? "").split(/[\s,]+/)) {
+    const k = mentah.replace(/\./g, "").toUpperCase();
+    if (!k) continue;
+    if (GELAR_DEPAN[k]) depan.push(GELAR_DEPAN[k]); else belakang.push(titik(k));
+  }
+  return [...depan, String(nama ?? "").trim()].join(" ") + (belakang.length ? ", " + belakang.join(", ") : "");
+}

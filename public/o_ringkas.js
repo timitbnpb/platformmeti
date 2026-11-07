@@ -4,12 +4,13 @@ import { t, angka, tanggal } from "/i18n.js";
 import { esc, ikon } from "/inti/umum.js";
 import { logoOrg } from "/inti/logo_org.js";
 import { urlAman } from "/publik.js";
+import { lencanaOrg } from "/peristiwa_komitmen.js";
 import { sebanding, domain, sektorDari, suratPeran, teleponKantor, NORM } from "/inti/org_sensus.js";
 
 const dim = (kunci) => `<span class="oj-dim" title="${esc(t(kunci))}" tabindex="0">-</span>`;
 const pilBukti = (b) => (b ? `<span class="oj-pil" title="${esc(t("oj.tip.bukti"))}" tabindex="0">${esc(t("oj.bukti." + b))}</span>` : "");
 const ini = (n) => String(n || "?").replace(/^(PT|CV|Yayasan|Pemerintah|Kementerian)\.?\s+/i, "").split(/\s+/).slice(0, 2).map((w) => w[0] || "").join("");
-const namaSek = (id) => (id === "lain" ? t("so.sek.lain") : t("an.tek." + id));
+const namaSek = (id) => (id === "lain" || id === "lintas" ? t("so.sek." + id) : t("an.tek." + id));
 const logo = (id, nm, l, k = "oj-lg") => { const u = logoOrg(id, nm, l)[0]; return `<span class="${k}">${u ? `<img src="${esc(u)}" alt="" loading="lazy" decoding="async" data-ini="${esc(ini(nm))}">` : esc(ini(nm))}</span>`; };
 const badanHukum = (n) => (/\bTbk\b/i.test(n) ? "tbk" : /\(Persero\)/i.test(n) ? "persero" : (/^(PT|CV|Yayasan|Koperasi)\b/i.exec(n) || [])[1]?.toLowerCase() || "");
 const domSumber = (o) => { const s = (o.sumber || []).find((x) => x.jenis === "situs-resmi") || (o.sumber || [])[0]; return s ? domain(s.url) : ""; };
@@ -38,7 +39,7 @@ function rantaiRingkas(o, S) {
 
 export function ringkasHtml(o, S, { tombolIkuti, tombolKoreksi }) {
   const r = S.per.get(o.id), N = S.baris.length, tgl = tanggal(o.diperiksa || S.tgl), tglP = tanggal(S.tglProyek);
-  const L = o.lokasi || {}, sek = sektorDari(o), url = urlAman(o.situs), bh = badanHukum(o.nama), dSitus = url ? domain(url) : "", dom = domSumber(o);
+  const L = o.lokasi || {}, sek = r.sek, url = urlAman(o.situs), bh = badanHukum(o.nama), dSitus = url ? domain(url) : "", dom = domSumber(o);
   const cocokNama = new Map(S.baris.map((x) => [NORM(x.nm), x]));
   const jawab = t("oj.jawab", { nama: o.nama, kat: (o.kategori?.label || "").toLowerCase(), sek: namaSek(sek).toLowerCase(), kota: L.kota ? t("oj.jawab.kota", { kota: L.kota }) : "", proyek: r.nProy ? t(r.mw ? "oj.jawab.proyek" : "oj.jawab.proyek0", { n: angka(r.nProy), mw: angka(Math.round(r.mw)), v: angka(r.nProv) }) : t("oj.jawab.tanpa"), k: angka(r.rank), N: angka(N) });
   const kutip = `${o.nama}. ${t("oj.kutip.dari", { tgl })}. ${location.origin}/o/${o.id}`;
@@ -46,7 +47,7 @@ export function ringkasHtml(o, S, { tombolIkuti, tombolKoreksi }) {
 
   const fk = [
     fakta(t("oj.f.kategori"), { nilai: esc(o.kategori?.label || ""), dom, ket: t("oj.k.kategori") }),
-    fakta(t("oj.f.sektor"), { nilai: esc(namaSek(sek)), pil: `<span class="oj-pil" title="${esc(t("oj.tip.turunan"))}" tabindex="0">${esc(t("so.pil.est"))}</span>`, ket: t("oj.k.sektor") }),
+    fakta(t("oj.f.sektor"), { nilai: esc(namaSek(sek)), pil: `<span class="oj-pil" title="${esc(t("oj.tip.turunan"))}" tabindex="0">${esc(t("so.pil.est"))}</span>`, ket: t(r.ps.length ? "oj.k.sektor_proyek" : "oj.k.sektor") }),
     fakta(t("oj.f.tahun"), { nilai: o.tahun_berdiri ? esc(o.tahun_berdiri) : "", dom, kosong: "oj.tip.tahun" }),
     fakta(t("oj.f.saham"), { nilai: o.kode_saham ? esc(o.kode_saham) : "", dom, kosong: "oj.tip.saham" }),
     fakta(t("oj.f.proyek"), { nilai: r.nProy ? esc(angka(r.nProy)) : "", satuan: t("oj.sat.proyek"), pil: `<span class="oj-pil" title="${esc(t("so.tip.min"))}" tabindex="0">${esc(t("so.pil.min"))}</span>`, dom: t("oj.s.proyek", { tgl: tglP }), ket: t("oj.k.proyek"), kosong: "so.tip.tanpa_proyek" }),
@@ -105,7 +106,8 @@ export function ringkasHtml(o, S, { tombolIkuti, tombolKoreksi }) {
 }
 
 /* tombol salin kutipan + logo cadangan; dipanggil sekali sesudah innerHTML */
-export function pasangRingkas(akar) {
+export function pasangRingkas(akar, o) {
+  if (o) lencanaOrg(o.nama).then((h) => { if (h) akar.querySelector(".oj-pils")?.insertAdjacentHTML("beforeend", h); });
   akar.addEventListener("error", (e) => { const im = e.target; if (im.tagName === "IMG" && im.dataset.ini !== undefined && im.closest(".oj-lg")) im.replaceWith(document.createTextNode(im.dataset.ini)); }, true);
   akar.querySelector("#ojSalin")?.addEventListener("click", async (e) => {
     const b = e.currentTarget, teks = b.dataset.salin, s = b.querySelector("span");
