@@ -219,7 +219,7 @@
 @media (min-width:900px){.tn-sdu>.tn-daftar{grid-template-columns:repeat(2,minmax(0,1fr))}}
 
 /* bidang kerja: 9 kartu rapi (1 kolom di ponsel, 3 kolom di desktop); unit khusus 2/4 kolom */
-.tn-bk{font:600 12px/1 var(--font);color:var(--ink2)}
+.tn-bk{font:600 var(--t-kecil)/1 var(--font);color:var(--ink2)}
 .tn-bk9{grid-template-columns:1fr}
 @media (min-width:640px){.tn-unitg{grid-template-columns:repeat(2,minmax(0,1fr))}.tn-bk9{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media (min-width:1000px){.tn-bk9{grid-template-columns:repeat(3,minmax(0,1fr))}}

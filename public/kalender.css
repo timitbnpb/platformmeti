@@ -184,17 +184,17 @@ a.kal-ev:hover{background:var(--surface)}
 .kal-bukti{display:flex;flex-wrap:wrap;gap:8px;padding:0 14px 12px}
 dialog.jm-dlg-lebar{width:min(920px,calc(100vw - 24px));max-height:calc(100dvh - 24px);overflow:auto}
 .kal-bk-kepala{display:flex;justify-content:space-between;align-items:start;gap:12px;margin-bottom:12px}
-.kal-bk-kepala h2{font:700 20px/1.25 var(--display);margin:0}
+.kal-bk-kepala h2{font:700 var(--t-h2)/var(--lh-judul) var(--display);margin:0}
 .kal-bk-kisi{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:10px;margin-bottom:16px}
 .kal-bk-kisi figure{margin:0;display:grid;gap:4px;align-content:start}
 .kal-bk-kisi button{display:block;padding:0;border:1px solid var(--line);border-radius:var(--r-sm);background:var(--surface);overflow:hidden;cursor:pointer}
 .kal-bk-kisi button:focus-visible,.kal-bk-penuh button:focus-visible{outline:2px solid var(--fokus);outline-offset:2px}
 .kal-bk-kisi img{display:block;width:100%;aspect-ratio:4/3;object-fit:cover}
-.kal-bk-kisi figcaption{font-size:13px;color:var(--ink2);overflow-wrap:anywhere}
+.kal-bk-kisi figcaption{font-size:var(--t-tombol);color:var(--ink2);overflow-wrap:anywhere}
 .kal-bk-penuh{display:grid;gap:10px;justify-items:start}
 .kal-bk-lihat{display:flex;align-items:center;gap:8px;width:100%}
 .kal-bk-lihat img{flex:1;min-width:0;max-height:70dvh;object-fit:contain;background:var(--surface);border-radius:var(--r-sm)}
 .kal-bk-notulen{display:grid;gap:8px}
-.kal-bk-notulen h3{font:600 15px/1.3 var(--font);margin:0}
+.kal-bk-notulen h3{font:600 var(--t-body)/var(--lh-rapat) var(--font);margin:0}
 .kal-bk-notulen :is(p,ul,ol){margin:0;overflow-wrap:anywhere}
 .kal-bk-notulen :is(ul,ol){padding-left:22px}
