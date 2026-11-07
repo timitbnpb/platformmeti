@@ -1,12 +1,8 @@
 /* Dasar: huruf, reset, tipografi, tombol, isian, kartu, keadaan komponen. Hanya token. */
 @font-face{font-family:"Inter";font-weight:400;font-style:normal;font-display:swap;src:url("/fonts/inter-400.woff2") format("woff2")}
-@font-face{font-family:"Inter";font-weight:400;font-style:normal;font-display:swap;src:url("/fonts/inter-500.woff2") format("woff2")}
+@font-face{font-family:"Inter";font-weight:500;font-style:normal;font-display:swap;src:url("/fonts/inter-500.woff2") format("woff2")}
 @font-face{font-family:"Inter";font-weight:600;font-style:normal;font-display:swap;src:url("/fonts/inter-600.woff2") format("woff2")}
 @font-face{font-family:"Inter";font-weight:700;font-style:normal;font-display:swap;src:url("/fonts/inter-700.woff2") format("woff2")}
-@font-face{font-family:"Poppins";font-weight:400;font-style:normal;font-display:swap;src:local("Poppins Regular"),local("Poppins-Regular"),url("/fonts/poppins-400.woff2") format("woff2")}
-@font-face{font-family:"Poppins";font-weight:400;font-style:normal;font-display:swap;src:local("Poppins Medium"),local("Poppins-Medium"),url("/fonts/poppins-500.woff2") format("woff2")}
-@font-face{font-family:"Poppins";font-weight:600;font-style:normal;font-display:swap;src:local("Poppins SemiBold"),local("Poppins-SemiBold"),url("/fonts/poppins-600.woff2") format("woff2")}
-@font-face{font-family:"Poppins";font-weight:700;font-style:normal;font-display:swap;src:local("Poppins Bold"),local("Poppins-Bold"),url("/fonts/poppins-700.woff2") format("woff2")}
 
 *,*::before,*::after{box-sizing:border-box}
 [hidden]{display:none!important}
@@ -136,3 +132,5 @@ html{overflow-x:clip}
 /* tombol "Langganan newsletter" di kaki situs */
 .jm-kaki .jm-kaki-lg{margin-top:18px;min-height:var(--target);border-color:var(--meti-lime);background:transparent;color:var(--meti-lime)}
 .jm-kaki .jm-kaki-lg:hover{background:var(--meti-lime);color:var(--kaki-bg);border-color:var(--meti-lime)}
+/* judul Inter: rapatkan sedikit supaya tegas dan profesional */
+h1,h2,h3,.jm-kh h1{letter-spacing:-.015em}

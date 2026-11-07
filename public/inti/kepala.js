@@ -8,6 +8,7 @@ import { pasangRel } from "/inti/rel.js";
 import { pasangPilih } from "/inti/pilih.js";
 import { pasangCari } from "/inti/cari_global.js";
 import { catatHalaman } from "/inti/statistik.js";
+import { sosmedHtml } from "/inti/sosmed.js";
 
 export const PITA_DRAF = false; // pemilik 7 Nov 2026: pita draf tidak ditampilkan
 const STAF = ["pengurus", "kurator", "admin", "super"];
@@ -22,7 +23,9 @@ const TAB = [
   { href: "/peluang", kunci: "nav.peluang", ikon: "analisis", hak: null },
   { href: "/wilayah", kunci: "nav.wilayah", ikon: "peta", hak: null },
   { href: "/regulasi", kunci: "nav.regulasi", ikon: "regulasi", hak: null },
-  { href: "/berita", kunci: "nav.berita", ikon: "berita", hak: null },
+  { href: "/pustaka", kunci: "nav.pustaka", ikon: "buku", hak: null },
+  { kunci: "nav.media", ikon: "berita", hak: null, grup: [
+    { href: "/berita", kunci: "nav.berita", ikon: "berita" }, { href: "/siaran-pers", kunci: "nav.siaran", ikon: "siaran" }] },
   { href: "/kalender", kunci: "nav.kalender", ikon: "kalender", hak: null },
   { href: "/direktori", kunci: "nav.direktori", ikon: "direktori", hak: "masuk" },
   { href: "/tentang", kunci: "nav.tentang", ikon: "info", hak: null },
@@ -118,7 +121,7 @@ function kakiHtml() {
   return `<div class="jm-kaki-isi jm-wadah">
     <div class="jm-kaki-k1"><div class="jm-kaki-merek"><span class="jm-kaki-logo"><img src="/img/logo-meti-tanda.png" width="40" height="38" alt=""></span><div><strong>METI</strong><span data-i18n="jm.kaki_org_pendek">${t("jm.kaki_org_pendek")}</span></div></div>
       <ul class="jm-kaki-stat" id="kakiStat"><li title="${t("jm.kaki.sumber_berdiri")}" data-i18n-attr="title:jm.kaki.sumber_berdiri"><b>1999</b><span data-i18n="jm.kaki.berdiri">${t("jm.kaki.berdiri")}</span></li></ul>
-      <div class="jm-kaki-sos"><a href="https://www.linkedin.com/in/meti-ires-b06066a1/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn METI">${SVG(IK.linkedin, 20)}</a><a href="https://www.instagram.com/metiires/" target="_blank" rel="noopener noreferrer" aria-label="Instagram METI">${SVG(IK.instagram, 20)}</a></div>
+      <div class="jm-kaki-sos">${sosmedHtml()}</div>
       <a class="jm-tbl jm-kaki-lg" href="/langganan">${SVG(IK.surel, 16)}<span data-i18n="jm.kaki.langganan">${t("jm.kaki.langganan")}</span></a></div>
     ${kol}
   </div>
@@ -143,6 +146,13 @@ export async function mulaiHalaman() {
   const saya = await ambilSaya();
   await mulaiBahasa(saya.bahasa);
   const kepala = document.getElementById("kepala");
+  /* halaman akun (masuk, aktivasi, ganti sandi) dan tamu: tanpa menu dan kaki, fokus ke formulir */
+  const fokusAkun = /^\/(masuk|aktivasi|ganti-sandi|berhenti|kta\/v\/)/.test(location.pathname) || (saya?.masuk === false && !/^\/langganan/.test(location.pathname));
+  if (fokusAkun) {
+    document.documentElement.classList.add("jm-fokus-akun");
+    kepala?.remove(); document.getElementById("kaki")?.remove(); document.getElementById("pita")?.remove(); document.getElementById("subnav")?.remove();
+    return saya;
+  }
   if (kepala) { gambarKepala(kepala, saya); pasangPenangan(kepala, saya); pasangCari(kepala); }
   if (kepala && diBagianInsight(location.pathname) && !document.getElementById("subnav")) { kepala.insertAdjacentHTML("afterend", subnavHtml(location.pathname, location.hash)); addEventListener("hashchange", () => { const s = document.getElementById("subnav"); if (s) s.outerHTML = subnavHtml(location.pathname, location.hash); }); }
   const pita = document.getElementById("pita");

@@ -20,10 +20,10 @@
   --pendar:0 0 0 1px rgb(74 169 224/.35),0 8px 28px rgb(74 169 224/.18);
   --r:14px; --r-sm:10px; --r-lg:16px; --r-pil:999px;
   --tepi:max(12px,calc((100vw - var(--maks)) / 2 + var(--gut))); --top:60px; --maks:1600px; --gut:16px; --gap:12px; --target:44px;
-  --display:"Poppins",system-ui,sans-serif;
+  --display:"Inter",Arial,system-ui,sans-serif;
   --font:"Inter",Arial,system-ui,sans-serif;
   /* Skala tipografi tunggal (gerbang-tipografi): CSS lain WAJIB memakai token ini, bukan px literal.
-     peran: h1/h2 Poppins 700, h3 Poppins 600, angka Poppins 700, eyebrow Inter 700 label kapital .08em, isi Inter 400 body, bantu Inter 400 kecil, tombol/pil Inter 600 tombol. */
+     peran: h1/h2 Inter 700, h3 Inter 600, angka Inter 700, eyebrow Inter 700 label kapital .08em, isi Inter 400 body, bantu Inter 400 kecil, tombol/pil Inter 600 tombol. */
   --t-display:30px; --t-h1:24px; --t-h2:18px; --t-h3:17px; --t-angka:28px; --t-body:15px; --t-tombol:13px; --t-kecil:12.5px; --t-label:11px;
   --lh-judul:1.2; --lh-rapat:1.35; --lh-isi:1.5; --ls-label:.08em;
   color-scheme:light;
