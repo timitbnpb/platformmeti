@@ -1,0 +1,1882 @@
+{
+ "sumber": "Statistik Ketenagalistrikan Tahun 2024, Ditjen Ketenagalistrikan ESDM (Tabel 22 hlm 22, 35 hlm 43, 37 hlm 45, 42 hlm 52)",
+ "url": "https://gatrik.esdm.go.id/gatrik/gatrik-api//storage/migrasi/download_index/files/91fa8-buku-statistik-ketenagalistrikan-2024.pdf",
+ "tanggal_ambil": "2026-11-07",
+ "tingkat_bukti": "situs-sendiri",
+ "lisensi": "publikasi pemerintah terbuka; hanya angka, atribusi ESDM",
+ "tahun": 2024,
+ "satuan": {
+  "kapasitas_terpasang_mw": "MW (semua pengusaha: PLN + non-PLN)",
+  "produksi_pln_gwh": "GWh (produksi PLN termasuk sewa dan beli IPP, termasuk PLN Batam)",
+  "penjualan_gwh": "GWh",
+  "pelanggan": "jumlah"
+ },
+ "wilayah_pln": [
+  {
+   "id": "aceh",
+   "nama": "Aceh",
+   "provinsi": [
+    "Aceh"
+   ],
+   "penjualan_gwh": 3696.136,
+   "pelanggan": 1791668
+  },
+  {
+   "id": "sumut",
+   "nama": "Sumatera Utara",
+   "provinsi": [
+    "Sumatera Utara"
+   ],
+   "penjualan_gwh": 13234.255,
+   "pelanggan": 4633553
+  },
+  {
+   "id": "sumbar",
+   "nama": "Sumatera Barat",
+   "provinsi": [
+    "Sumatera Barat"
+   ],
+   "penjualan_gwh": 3955.878,
+   "pelanggan": 1761911
+  },
+  {
+   "id": "riau-kepri",
+   "nama": "Riau dan Kepulauan Riau",
+   "provinsi": [
+    "Riau",
+    "Kepulauan Riau"
+   ],
+   "penjualan_gwh": 9891.75,
+   "pelanggan": 3016803
+  },
+  {
+   "id": "s2jb",
+   "nama": "Sumatera Selatan, Jambi, Bengkulu",
+   "provinsi": [
+    "Sumatera Selatan",
+    "Jambi",
+    "Bengkulu"
+   ],
+   "penjualan_gwh": 10266.113,
+   "pelanggan": 4498263
+  },
+  {
+   "id": "babel",
+   "nama": "Kepulauan Bangka Belitung",
+   "provinsi": [
+    "Kepulauan Bangka Belitung"
+   ],
+   "penjualan_gwh": 1593.495,
+   "pelanggan": 579717
+  },
+  {
+   "id": "lampung",
+   "nama": "Lampung",
+   "provinsi": [
+    "Lampung"
+   ],
+   "penjualan_gwh": 5991.849,
+   "pelanggan": 2740560
+  },
+  {
+   "id": "banten",
+   "nama": "Banten",
+   "provinsi": [
+    "Banten"
+   ],
+   "penjualan_gwh": 28396.464,
+   "pelanggan": 4165436
+  },
+  {
+   "id": "dki",
+   "nama": "DKI Jakarta",
+   "provinsi": [
+    "DKI Jakarta"
+   ],
+   "penjualan_gwh": 38198.377,
+   "pelanggan": 5403929
+  },
+  {
+   "id": "jabar",
+   "nama": "Jawa Barat",
+   "provinsi": [
+    "Jawa Barat"
+   ],
+   "penjualan_gwh": 61637.474,
+   "pelanggan": 17563127
+  },
+  {
+   "id": "jateng-diy",
+   "nama": "Jawa Tengah dan DI Yogyakarta",
+   "provinsi": [
+    "Jawa Tengah",
+    "DI Yogyakarta"
+   ],
+   "penjualan_gwh": 34282.613,
+   "pelanggan": 13771232
+  },
+  {
+   "id": "jatim",
+   "nama": "Jawa Timur",
+   "provinsi": [
+    "Jawa Timur"
+   ],
+   "penjualan_gwh": 44311.837,
+   "pelanggan": 14202136
+  },
+  {
+   "id": "bali",
+   "nama": "Bali",
+   "provinsi": [
+    "Bali"
+   ],
+   "penjualan_gwh": 7301.364,
+   "pelanggan": 1796683
+  },
+  {
+   "id": "kalbar",
+   "nama": "Kalimantan Barat",
+   "provinsi": [
+    "Kalimantan Barat"
+   ],
+   "penjualan_gwh": 3559.871,
+   "pelanggan": 1617468
+  },
+  {
+   "id": "kalselteng",
+   "nama": "Kalimantan Selatan dan Tengah",
+   "provinsi": [
+    "Kalimantan Selatan",
+    "Kalimantan Tengah"
+   ],
+   "penjualan_gwh": 5950.923,
+   "pelanggan": 2414503
+  },
+  {
+   "id": "kaltimtara",
+   "nama": "Kalimantan Timur dan Utara",
+   "provinsi": [
+    "Kalimantan Timur",
+    "Kalimantan Utara"
+   ],
+   "penjualan_gwh": 6214.989,
+   "pelanggan": 1588600
+  },
+  {
+   "id": "suluttenggo",
+   "nama": "Sulawesi Utara, Tengah, Gorontalo",
+   "provinsi": [
+    "Sulawesi Utara",
+    "Sulawesi Tengah",
+    "Gorontalo"
+   ],
+   "penjualan_gwh": 4739.747,
+   "pelanggan": 2215307
+  },
+  {
+   "id": "sulselrabar",
+   "nama": "Sulawesi Selatan, Tenggara, Barat",
+   "provinsi": [
+    "Sulawesi Selatan",
+    "Sulawesi Tenggara",
+    "Sulawesi Barat"
+   ],
+   "penjualan_gwh": 10917.521,
+   "pelanggan": 4099518
+  },
+  {
+   "id": "ntb",
+   "nama": "Nusa Tenggara Barat",
+   "provinsi": [
+    "Nusa Tenggara Barat"
+   ],
+   "penjualan_gwh": 2853.13,
+   "pelanggan": 2005554
+  },
+  {
+   "id": "ntt",
+   "nama": "Nusa Tenggara Timur",
+   "provinsi": [
+    "Nusa Tenggara Timur"
+   ],
+   "penjualan_gwh": 1454.141,
+   "pelanggan": 1285297
+  },
+  {
+   "id": "maluku-malut",
+   "nama": "Maluku dan Maluku Utara",
+   "provinsi": [
+    "Maluku",
+    "Maluku Utara"
+   ],
+   "penjualan_gwh": 2026.718,
+   "pelanggan": 840938
+  },
+  {
+   "id": "papua",
+   "nama": "Papua dan Papua Barat (wilayah PLN)",
+   "provinsi": [
+    "Papua",
+    "Papua Barat",
+    "Papua Barat Daya",
+    "Papua Tengah",
+    "Papua Selatan",
+    "Papua Pegunungan"
+   ],
+   "penjualan_gwh": 2156.534,
+   "pelanggan": 885089
+  },
+  {
+   "id": "batam",
+   "nama": "PT PLN Batam",
+   "provinsi": [
+    "Kepulauan Riau"
+   ],
+   "penjualan_gwh": 3588.244,
+   "pelanggan": null
+  }
+ ],
+ "meta": {
+  "catatan": "Penjualan dan pelanggan hanya tersedia per wilayah PLN (gabungan beberapa provinsi), maka berada di wilayah_pln, bukan di tiap provinsi; baris provinsi menunjuk id wilayah_pln. Pelanggan PLN Batam tidak terbit terpisah.",
+  "celah": [
+   "Beban puncak per sistem/provinsi dan BPP per sistem: tidak ada di buku ESDM 2024; web.pln.co.id (Statistik PLN) tidak dapat diakses (DNS tidak ditemukan dari lingkungan panen), RUPTL tidak dipanen. Dibiarkan null.",
+   "Hanya tahun 2024. Buku 2020-2023 tersedia di gatrik (daftar di download-index) tetapi belum diurai."
+  ]
+ },
+ "baris": [
+  {
+   "kode": "11",
+   "provinsi": "Aceh",
+   "kapasitas_terpasang_mw": {
+    "PLTU/MT": 692,
+    "PLTG/GU/MG/MGU": 448,
+    "PLTD": 230,
+    "PLTA/M": 38,
+    "PLTB": 0,
+    "PLT Bio": 17,
+    "PLTP": 0,
+    "PLTS": 1,
+    "PLTGB": 0,
+    "PLT Lain": 0,
+    "total": 1427
+   },
+   "produksi_pln_gwh": {
+    "PLTA": 0,
+    "PLTB": 0,
+    "PLTBg": 0,
+    "PLTBm": 0,
+    "PLTD": 167.64,
+    "PLTG": 0,
+    "PLTGU": 0,
+    "PLTM": 111.78,
+    "PLTMG": 1150.48,
+    "PLTMH": 0.97,
+    "PLTP": 0,
+    "PLTS": 0,
+    "PLTSa": 0,
+    "PLTU": 2515.24,
+    "total": 3946.11
+   },
+   "tahun": 2024,
+   "wilayah_pln": [
+    "aceh"
+   ],
+   "beban_puncak_mw": null,
+   "bpp_rp_per_kwh": null,
+   "sumber_url": "https://gatrik.esdm.go.id/gatrik/gatrik-api//storage/migrasi/download_index/files/91fa8-buku-statistik-ketenagalistrikan-2024.pdf",
+   "tanggal_periksa": "2026-11-07",
+   "tingkat_bukti": "situs-sendiri"
+  },
+  {
+   "kode": "12",
+   "provinsi": "Sumatera Utara",
+   "kapasitas_terpasang_mw": {
+    "PLTU/MT": 1330,
+    "PLTG/GU/MG/MGU": 1147,
+    "PLTD": 176,
+    "PLTA/M": 1399,
+    "PLTB": 0,
+    "PLT Bio": 331,
+    "PLTP": 711,
+    "PLTS": 6,
+    "PLTGB": 0,
+    "PLT Lain": 0,
+    "total": 5099
+   },
+   "produksi_pln_gwh": {
+    "PLTA": 2530.75,
+    "PLTB": 0,
+    "PLTBg": 16.6,
+    "PLTBm": 25.68,
+    "PLTD": 42.42,
+    "PLTG": 53.68,
+    "PLTGU": 4095.63,
+    "PLTM": 961.19,
+    "PLTMG": 183.31,
+    "PLTMH": 313.57,
+    "PLTP": 3077.52,
+    "PLTS": 0,
+    "PLTSa": 0,
+    "PLTU": 5226.96,
+    "total": 16527.3
+   },
+   "tahun": 2024,
+   "wilayah_pln": [
+    "sumut"
+   ],
+   "beban_puncak_mw": null,
+   "bpp_rp_per_kwh": null,
+   "sumber_url": "https://gatrik.esdm.go.id/gatrik/gatrik-api//storage/migrasi/download_index/files/91fa8-buku-statistik-ketenagalistrikan-2024.pdf",
+   "tanggal_periksa": "2026-11-07",
+   "tingkat_bukti": "situs-sendiri"
+  },
+  {
+   "kode": "13",
+   "provinsi": "Sumatera Barat",
+   "kapasitas_terpasang_mw": {
+    "PLTU/MT": 433,
+    "PLTG/GU/MG/MGU": 43,
+    "PLTD": 22,
+    "PLTA/M": 324,
+    "PLTB": 0,
+    "PLT Bio": 71,
+    "PLTP": 89,
+    "PLTS": 2,
+    "PLTGB": 0,
+    "PLT Lain": 0,
+    "total": 983
+   },
+   "produksi_pln_gwh": {
+    "PLTA": 1302.69,
+    "PLTB": 0,
+    "PLTBg": 2.5,
+    "PLTBm": 0,
+    "PLTD": 25.42,
+    "PLTG": 9.55,
+    "PLTGU": 0,
+    "PLTM": 399.98,
+    "PLTMG": 0,
+    "PLTMH": 5.83,
+    "PLTP": 685.83,
+    "PLTS": 0.04,
+    "PLTSa": 0,
+    "PLTU": 2168.53,
+    "total": 4600.37
+   },
+   "tahun": 2024,
+   "wilayah_pln": [
+    "sumbar"
+   ],
+   "beban_puncak_mw": null,
+   "bpp_rp_per_kwh": null,
+   "sumber_url": "https://gatrik.esdm.go.id/gatrik/gatrik-api//storage/migrasi/download_index/files/91fa8-buku-statistik-ketenagalistrikan-2024.pdf",
+   "tanggal_periksa": "2026-11-07",
+   "tingkat_bukti": "situs-sendiri"
+  },
+  {
+   "kode": "14",
+   "provinsi": "Riau",
+   "kapasitas_terpasang_mw": {
+    "PLTU/MT": 1292,
+    "PLTG/GU/MG/MGU": 1035,
+    "PLTD": 173,
+    "PLTA/M": 114,
+    "PLTB": 0,
+    "PLT Bio": 786,
+    "PLTP": 0,
+    "PLTS": 31,
+    "PLTGB": 0,
+    "PLT Lain": 0,
+    "total": 3431
+   },
+   "produksi_pln_gwh": {
+    "PLTA": 753.63,
+    "PLTB": 0,
+    "PLTBg": 17.06,
+    "PLTBm": 0,
+    "PLTD": 304.39,
+    "PLTG": 2484.08,
+    "PLTGU": 1129.34,
+    "PLTM": 0,
+    "PLTMG": 523.46,
+    "PLTMH": 0,
+    "PLTP": 0,
+    "PLTS": 0,
+    "PLTSa": 0,
+    "PLTU": 1302.43,
+    "total": 6514.38
+   },
+   "tahun": 2024,
+   "wilayah_pln": [
+    "riau-kepri"
+   ],
+   "beban_puncak_mw": null,
+   "bpp_rp_per_kwh": null,
+   "sumber_url": "https://gatrik.esdm.go.id/gatrik/gatrik-api//storage/migrasi/download_index/files/91fa8-buku-statistik-ketenagalistrikan-2024.pdf",
+   "tanggal_periksa": "2026-11-07",
+   "tingkat_bukti": "situs-sendiri"
+  },
+  {
+   "kode": "15",
+   "provinsi": "Jambi",
+   "kapasitas_terpasang_mw": {
+    "PLTU/MT": 318,
+    "PLTG/GU/MG/MGU": 282,
+    "PLTD": 44,
+    "PLTA/M": 1,
+    "PLTB": 0,
+    "PLT Bio": 74,
+    "PLTP": 0,
+    "PLTS": 1,
+    "PLTGB": 0,
+    "PLT Lain": 0,
+    "total": 720
+   },
+   "produksi_pln_gwh": {
+    "PLTA": 0,
+    "PLTB": 0,
+    "PLTBg": 0,
+    "PLTBm": 0,
+    "PLTD": 0,
+    "PLTG": 49.03,
+    "PLTGU": 0,
+    "PLTM": 0,
+    "PLTMG": 359.9,
+    "PLTMH": 1.29,
+    "PLTP": 0,
+    "PLTS": 0,
+    "PLTSa": 0,
+    "PLTU": 1718.07,
+    "total": 2128.29
+   },
+   "tahun": 2024,
+   "wilayah_pln": [
+    "s2jb"
+   ],
+   "beban_puncak_mw": null,
+   "bpp_rp_per_kwh": null,
+   "sumber_url": "https://gatrik.esdm.go.id/gatrik/gatrik-api//storage/migrasi/download_index/files/91fa8-buku-statistik-ketenagalistrikan-2024.pdf",
+   "tanggal_periksa": "2026-11-07",
+   "tingkat_bukti": "situs-sendiri"
+  },
+  {
+   "kode": "16",
+   "provinsi": "Sumatera Selatan",
+   "kapasitas_terpasang_mw": {
+    "PLTU/MT": 2293,
+    "PLTG/GU/MG/MGU": 823,
+    "PLTD": 48,
+    "PLTA/M": 21,
+    "PLTB": 0,
+    "PLT Bio": 813,
+    "PLTP": 158,
+    "PLTS": 6,
+    "PLTGB": 0,
+    "PLT Lain": 0,
+    "total": 4163
+   },
+   "produksi_pln_gwh": {
+    "PLTA": 0,
+    "PLTB": 0,
+    "PLTBg": 5.73,
+    "PLTBm": 0,
+    "PLTD": 0.93,
+    "PLTG": 423.64,
+    "PLTGU": 2275.99,
+    "PLTM": 113.43,
+    "PLTMG": 47.15,
+    "PLTMH": 0.7,
+    "PLTP": 919.48,
+    "PLTS": 1.55,
+    "PLTSa": 0,
+    "PLTU": 9644.36,
+    "total": 13432.97
+   },
+   "tahun": 2024,
+   "wilayah_pln": [
+    "s2jb"
+   ],
+   "beban_puncak_mw": null,
+   "bpp_rp_per_kwh": null,
+   "sumber_url": "https://gatrik.esdm.go.id/gatrik/gatrik-api//storage/migrasi/download_index/files/91fa8-buku-statistik-ketenagalistrikan-2024.pdf",
+   "tanggal_periksa": "2026-11-07",
+   "tingkat_bukti": "situs-sendiri"
+  },
+  {
+   "kode": "17",
+   "provinsi": "Bengkulu",
+   "kapasitas_terpasang_mw": {
+    "PLTU/MT": 200,
+    "PLTG/GU/MG/MGU": 0,
+    "PLTD": 49,
+    "PLTA/M": 308,
+    "PLTB": 0,
+    "PLT Bio": 10,
+    "PLTP": 0,
+    "PLTS": 0,
+    "PLTGB": 0,
+    "PLT Lain": 0,
+    "total": 567
+   },
+   "produksi_pln_gwh": {
+    "PLTA": 930.98,
+    "PLTB": 0,
+    "PLTBg": 6.23,
+    "PLTBm": 0,
+    "PLTD": 32.21,
+    "PLTG": 0,
+    "PLTGU": 0,
+    "PLTM": 239.63,
+    "PLTMG": 0,
+    "PLTMH": 5.23,
+    "PLTP": 0,
+    "PLTS": 0,
+    "PLTSa": 0,
+    "PLTU": 1031.34,
+    "total": 2245.61
+   },
+   "tahun": 2024,
+   "wilayah_pln": [
+    "s2jb"
+   ],
+   "beban_puncak_mw": null,
+   "bpp_rp_per_kwh": null,
+   "sumber_url": "https://gatrik.esdm.go.id/gatrik/gatrik-api//storage/migrasi/download_index/files/91fa8-buku-statistik-ketenagalistrikan-2024.pdf",
+   "tanggal_periksa": "2026-11-07",
+   "tingkat_bukti": "situs-sendiri"
+  },
+  {
+   "kode": "18",
+   "provinsi": "Lampung",
+   "kapasitas_terpasang_mw": {
+    "PLTU/MT": 467,
+    "PLTG/GU/MG/MGU": 173,
+    "PLTD": 98,
+    "PLTA/M": 206,
+    "PLTB": 0,
+    "PLT Bio": 61,
+    "PLTP": 229,
+    "PLTS": 5,
+    "PLTGB": 0,
+    "PLT Lain": 0,
+    "total": 1239
+   },
+   "produksi_pln_gwh": {
+    "PLTA": 648.59,
+    "PLTB": 0,
+    "PLTBg": 9.37,
+    "PLTBm": 0,
+    "PLTD": 17.57,
+    "PLTG": 159.59,
+    "PLTGU": 0,
+    "PLTM": 68.53,
+    "PLTMG": 113.16,
+    "PLTMH": 40.32,
+    "PLTP": 1593.7,
+    "PLTS": 0,
+    "PLTSa": 0,
+    "PLTU": 2227.71,
+    "total": 4878.55
+   },
+   "tahun": 2024,
+   "wilayah_pln": [
+    "lampung"
+   ],
+   "beban_puncak_mw": null,
+   "bpp_rp_per_kwh": null,
+   "sumber_url": "https://gatrik.esdm.go.id/gatrik/gatrik-api//storage/migrasi/download_index/files/91fa8-buku-statistik-ketenagalistrikan-2024.pdf",
+   "tanggal_periksa": "2026-11-07",
+   "tingkat_bukti": "situs-sendiri"
+  },
+  {
+   "kode": "19",
+   "provinsi": "Kepulauan Bangka Belitung",
+   "kapasitas_terpasang_mw": {
+    "PLTU/MT": 120,
+    "PLTG/GU/MG/MGU": 100,
+    "PLTD": 145,
+    "PLTA/M": 0,
+    "PLTB": 0,
+    "PLT Bio": 122,
+    "PLTP": 0,
+    "PLTS": 3,
+    "PLTGB": 0,
+    "PLT Lain": 0,
+    "total": 490
+   },
+   "produksi_pln_gwh": {
+    "PLTA": 0,
+    "PLTB": 0,
+    "PLTBg": 32.39,
+    "PLTBm": 40.22,
+    "PLTD": 318.76,
+    "PLTG": 378.31,
+    "PLTGU": 0,
+    "PLTM": 0,
+    "PLTMG": 0,
+    "PLTMH": 0,
+    "PLTP": 0,
+    "PLTS": 0.02,
+    "PLTSa": 0.01,
+    "PLTU": 577.71,
+    "total": 1347.42
+   },
+   "tahun": 2024,
+   "wilayah_pln": [
+    "babel"
+   ],
+   "beban_puncak_mw": null,
+   "bpp_rp_per_kwh": null,
+   "sumber_url": "https://gatrik.esdm.go.id/gatrik/gatrik-api//storage/migrasi/download_index/files/91fa8-buku-statistik-ketenagalistrikan-2024.pdf",
+   "tanggal_periksa": "2026-11-07",
+   "tingkat_bukti": "situs-sendiri"
+  },
+  {
+   "kode": "21",
+   "provinsi": "Kepulauan Riau",
+   "kapasitas_terpasang_mw": {
+    "PLTU/MT": 324,
+    "PLTG/GU/MG/MGU": 665,
+    "PLTD": 329,
+    "PLTA/M": 0,
+    "PLTB": 0,
+    "PLT Bio": 1,
+    "PLTP": 0,
+    "PLTS": 16,
+    "PLTGB": 0,
+    "PLT Lain": 0,
+    "total": 1335
+   },
+   "produksi_pln_gwh": {
+    "PLTA": 0,
+    "PLTB": 0,
+    "PLTBg": 0,
+    "PLTBm": 6.34,
+    "PLTD": 395.06,
+    "PLTG": 279.28,
+    "PLTGU": 2000.03,
+    "PLTM": 0,
+    "PLTMG": 1443.32,
+    "PLTMH": 0,
+    "PLTP": 0,
+    "PLTS": 1.66,
+    "PLTSa": 0,
+    "PLTU": 787.83,
+    "total": 4913.51
+   },
+   "tahun": 2024,
+   "wilayah_pln": [
+    "riau-kepri"
+   ],
+   "beban_puncak_mw": null,
+   "bpp_rp_per_kwh": null,
+   "sumber_url": "https://gatrik.esdm.go.id/gatrik/gatrik-api//storage/migrasi/download_index/files/91fa8-buku-statistik-ketenagalistrikan-2024.pdf",
+   "tanggal_periksa": "2026-11-07",
+   "tingkat_bukti": "situs-sendiri"
+  },
+  {
+   "kode": "31",
+   "provinsi": "DKI Jakarta",
+   "kapasitas_terpasang_mw": {
+    "PLTU/MT": 0,
+    "PLTG/GU/MG/MGU": 5014,
+    "PLTD": 382,
+    "PLTA/M": 0,
+    "PLTB": 0,
+    "PLT Bio": 0,
+    "PLTP": 0,
+    "PLTS": 41,
+    "PLTGB": 0,
+    "PLT Lain": 0,
+    "total": 5437
+   },
+   "produksi_pln_gwh": {
+    "PLTA": 0,
+    "PLTB": 0,
+    "PLTBg": 0,
+    "PLTBm": 0,
+    "PLTD": 1.74,
+    "PLTG": 0,
+    "PLTGU": 17219.44,
+    "PLTM": 0,
+    "PLTMG": 0,
+    "PLTMH": 0,
+    "PLTP": 0,
+    "PLTS": 0.21,
+    "PLTSa": 0,
+    "PLTU": 386.32,
+    "total": 17607.71
+   },
+   "tahun": 2024,
+   "wilayah_pln": [
+    "dki"
+   ],
+   "beban_puncak_mw": null,
+   "bpp_rp_per_kwh": null,
+   "sumber_url": "https://gatrik.esdm.go.id/gatrik/gatrik-api//storage/migrasi/download_index/files/91fa8-buku-statistik-ketenagalistrikan-2024.pdf",
+   "tanggal_periksa": "2026-11-07",
+   "tingkat_bukti": "situs-sendiri"
+  },
+  {
+   "kode": "32",
+   "provinsi": "Jawa Barat",
+   "kapasitas_terpasang_mw": {
+    "PLTU/MT": 4186,
+    "PLTG/GU/MG/MGU": 5856,
+    "PLTD": 226,
+    "PLTA/M": 2285,
+    "PLTB": 0,
+    "PLT Bio": 14,
+    "PLTP": 1231,
+    "PLTS": 350,
+    "PLTGB": 0,
+    "PLT Lain": 0,
+    "total": 14147
+   },
+   "produksi_pln_gwh": {
+    "PLTA": 4462.36,
+    "PLTB": 0,
+    "PLTBg": 0,
+    "PLTBm": 0,
+    "PLTD": 0,
+    "PLTG": 565.54,
+    "PLTGU": 6413.74,
+    "PLTM": 831.91,
+    "PLTMG": 0,
+    "PLTMH": 7.08,
+    "PLTP": 9124.81,
+    "PLTS": 279.37,
+    "PLTSa": 14.49,
+    "PLTU": 22682.91,
+    "total": 44382.21
+   },
+   "tahun": 2024,
+   "wilayah_pln": [
+    "jabar"
+   ],
+   "beban_puncak_mw": null,
+   "bpp_rp_per_kwh": null,
+   "sumber_url": "https://gatrik.esdm.go.id/gatrik/gatrik-api//storage/migrasi/download_index/files/91fa8-buku-statistik-ketenagalistrikan-2024.pdf",
+   "tanggal_periksa": "2026-11-07",
+   "tingkat_bukti": "situs-sendiri"
+  },
+  {
+   "kode": "33",
+   "provinsi": "Jawa Tengah",
+   "kapasitas_terpasang_mw": {
+    "PLTU/MT": 10222,
+    "PLTG/GU/MG/MGU": 2135,
+    "PLTD": 70,
+    "PLTA/M": 372,
+    "PLTB": 0,
+    "PLT Bio": 34,
+    "PLTP": 73,
+    "PLTS": 48,
+    "PLTGB": 0,
+    "PLT Lain": 0,
+    "total": 12954
+   },
+   "produksi_pln_gwh": {
+    "PLTA": 636.42,
+    "PLTB": 0,
+    "PLTBg": 0,
+    "PLTBm": 0,
+    "PLTD": 9.53,
+    "PLTG": 0,
+    "PLTGU": 3862.74,
+    "PLTM": 495.41,
+    "PLTMG": 0,
+    "PLTMH": 25.25,
+    "PLTP": 374.28,
+    "PLTS": 0.17,
+    "PLTSa": 1.37,
+    "PLTU": 65662.99,
+    "total": 71068.16
+   },
+   "tahun": 2024,
+   "wilayah_pln": [
+    "jateng-diy"
+   ],
+   "beban_puncak_mw": null,
+   "bpp_rp_per_kwh": null,
+   "sumber_url": "https://gatrik.esdm.go.id/gatrik/gatrik-api//storage/migrasi/download_index/files/91fa8-buku-statistik-ketenagalistrikan-2024.pdf",
+   "tanggal_periksa": "2026-11-07",
+   "tingkat_bukti": "situs-sendiri"
+  },
+  {
+   "kode": "34",
+   "provinsi": "DI Yogyakarta",
+   "kapasitas_terpasang_mw": {
+    "PLTU/MT": 0,
+    "PLTG/GU/MG/MGU": 0,
+    "PLTD": 7,
+    "PLTA/M": 1,
+    "PLTB": 0,
+    "PLT Bio": 4,
+    "PLTP": 0,
+    "PLTS": 3,
+    "PLTGB": 0,
+    "PLT Lain": 0,
+    "total": 14
+   },
+   "produksi_pln_gwh": {
+    "PLTA": 0,
+    "PLTB": 0,
+    "PLTBg": 0,
+    "PLTBm": 0,
+    "PLTD": 0,
+    "PLTG": 0,
+    "PLTGU": 0,
+    "PLTM": 0,
+    "PLTMG": 0,
+    "PLTMH": 3.64,
+    "PLTP": 0,
+    "PLTS": 0,
+    "PLTSa": 0,
+    "PLTU": 0,
+    "total": 3.64
+   },
+   "tahun": 2024,
+   "wilayah_pln": [
+    "jateng-diy"
+   ],
+   "beban_puncak_mw": null,
+   "bpp_rp_per_kwh": null,
+   "sumber_url": "https://gatrik.esdm.go.id/gatrik/gatrik-api//storage/migrasi/download_index/files/91fa8-buku-statistik-ketenagalistrikan-2024.pdf",
+   "tanggal_periksa": "2026-11-07",
+   "tingkat_bukti": "situs-sendiri"
+  },
+  {
+   "kode": "35",
+   "provinsi": "Jawa Timur",
+   "kapasitas_terpasang_mw": {
+    "PLTU/MT": 6304,
+    "PLTG/GU/MG/MGU": 3661,
+    "PLTD": 163,
+    "PLTA/M": 307,
+    "PLTB": 0,
+    "PLT Bio": 163,
+    "PLTP": 0,
+    "PLTS": 70,
+    "PLTGB": 0,
+    "PLT Lain": 0,
+    "total": 10668
+   },
+   "produksi_pln_gwh": {
+    "PLTA": 745.44,
+    "PLTB": 0,
+    "PLTBg": 0,
+    "PLTBm": 0,
+    "PLTD": 94.17,
+    "PLTG": 0.26,
+    "PLTGU": 7756.33,
+    "PLTM": 293.32,
+    "PLTMG": 19.48,
+    "PLTMH": 18.96,
+    "PLTP": 0,
+    "PLTS": 1.01,
+    "PLTSa": 44.07,
+    "PLTU": 37939.46,
+    "total": 46912.51
+   },
+   "tahun": 2024,
+   "wilayah_pln": [
+    "jatim"
+   ],
+   "beban_puncak_mw": null,
+   "bpp_rp_per_kwh": null,
+   "sumber_url": "https://gatrik.esdm.go.id/gatrik/gatrik-api//storage/migrasi/download_index/files/91fa8-buku-statistik-ketenagalistrikan-2024.pdf",
+   "tanggal_periksa": "2026-11-07",
+   "tingkat_bukti": "situs-sendiri"
+  },
+  {
+   "kode": "36",
+   "provinsi": "Banten",
+   "kapasitas_terpasang_mw": {
+    "PLTU/MT": 9012,
+    "PLTG/GU/MG/MGU": 880,
+    "PLTD": 130,
+    "PLTA/M": 16,
+    "PLTB": 0,
+    "PLT Bio": 0,
+    "PLTP": 0,
+    "PLTS": 39,
+    "PLTGB": 200,
+    "PLT Lain": 18,
+    "total": 10294
+   },
+   "produksi_pln_gwh": {
+    "PLTA": 0,
+    "PLTB": 0,
+    "PLTBg": 0,
+    "PLTBm": 0,
+    "PLTD": 1.15,
+    "PLTG": 0,
+    "PLTGU": 930.52,
+    "PLTM": 68.72,
+    "PLTMG": 0,
+    "PLTMH": 0,
+    "PLTP": 0,
+    "PLTS": 0,
+    "PLTSa": 0,
+    "PLTU": 52289.9,
+    "total": 53290.29
+   },
+   "tahun": 2024,
+   "wilayah_pln": [
+    "banten"
+   ],
+   "beban_puncak_mw": null,
+   "bpp_rp_per_kwh": null,
+   "sumber_url": "https://gatrik.esdm.go.id/gatrik/gatrik-api//storage/migrasi/download_index/files/91fa8-buku-statistik-ketenagalistrikan-2024.pdf",
+   "tanggal_periksa": "2026-11-07",
+   "tingkat_bukti": "situs-sendiri"
+  },
+  {
+   "kode": "51",
+   "provinsi": "Bali",
+   "kapasitas_terpasang_mw": {
+    "PLTU/MT": 380,
+    "PLTG/GU/MG/MGU": 558,
+    "PLTD": 305,
+    "PLTA/M": 3,
+    "PLTB": 1,
+    "PLT Bio": 0,
+    "PLTP": 0,
+    "PLTS": 14,
+    "PLTGB": 0,
+    "PLT Lain": 0,
+    "total": 1262
+   },
+   "produksi_pln_gwh": {
+    "PLTA": 0,
+    "PLTB": 0,
+    "PLTBg": 0,
+    "PLTBm": 0,
+    "PLTD": 250.09,
+    "PLTG": 1089.2,
+    "PLTGU": 0,
+    "PLTM": 7.28,
+    "PLTMG": 1197.87,
+    "PLTMH": 0,
+    "PLTP": 0,
+    "PLTS": 6.01,
+    "PLTSa": 0,
+    "PLTU": 3005.88,
+    "total": 5556.33
+   },
+   "tahun": 2024,
+   "wilayah_pln": [
+    "bali"
+   ],
+   "beban_puncak_mw": null,
+   "bpp_rp_per_kwh": null,
+   "sumber_url": "https://gatrik.esdm.go.id/gatrik/gatrik-api//storage/migrasi/download_index/files/91fa8-buku-statistik-ketenagalistrikan-2024.pdf",
+   "tanggal_periksa": "2026-11-07",
+   "tingkat_bukti": "situs-sendiri"
+  },
+  {
+   "kode": "52",
+   "provinsi": "Nusa Tenggara Barat",
+   "kapasitas_terpasang_mw": {
+    "PLTU/MT": 418,
+    "PLTG/GU/MG/MGU": 741,
+    "PLTD": 214,
+    "PLTA/M": 19,
+    "PLTB": 0,
+    "PLT Bio": 0,
+    "PLTP": 0,
+    "PLTS": 50,
+    "PLTGB": 0,
+    "PLT Lain": 0,
+    "total": 1442
+   },
+   "produksi_pln_gwh": {
+    "PLTA": 0,
+    "PLTB": 0,
+    "PLTBg": 0,
+    "PLTBm": 0,
+    "PLTD": 738.36,
+    "PLTG": 111.94,
+    "PLTGU": 0,
+    "PLTM": 48.74,
+    "PLTMG": 1503.4,
+    "PLTMH": 3.33,
+    "PLTP": 0,
+    "PLTS": 48.42,
+    "PLTSa": 0,
+    "PLTU": 819.91,
+    "total": 3274.09
+   },
+   "tahun": 2024,
+   "wilayah_pln": [
+    "ntb"
+   ],
+   "beban_puncak_mw": null,
+   "bpp_rp_per_kwh": null,
+   "sumber_url": "https://gatrik.esdm.go.id/gatrik/gatrik-api//storage/migrasi/download_index/files/91fa8-buku-statistik-ketenagalistrikan-2024.pdf",
+   "tanggal_periksa": "2026-11-07",
+   "tingkat_bukti": "situs-sendiri"
+  },
+  {
+   "kode": "53",
+   "provinsi": "Nusa Tenggara Timur",
+   "kapasitas_terpasang_mw": {
+    "PLTU/MT": 203,
+    "PLTG/GU/MG/MGU": 119,
+    "PLTD": 262,
+    "PLTA/M": 10,
+    "PLTB": 0,
+    "PLT Bio": 0,
+    "PLTP": 24,
+    "PLTS": 23,
+    "PLTGB": 0,
+    "PLT Lain": 0,
+    "total": 641
+   },
+   "produksi_pln_gwh": {
+    "PLTA": 0,
+    "PLTB": 0,
+    "PLTBg": 0,
+    "PLTBm": 0,
+    "PLTD": 523.74,
+    "PLTG": 0,
+    "PLTGU": 0,
+    "PLTM": 10.75,
+    "PLTMG": 403.45,
+    "PLTMH": 6.95,
+    "PLTP": 115.25,
+    "PLTS": 15.81,
+    "PLTSa": 0,
+    "PLTU": 615.92,
+    "total": 1691.88
+   },
+   "tahun": 2024,
+   "wilayah_pln": [
+    "ntt"
+   ],
+   "beban_puncak_mw": null,
+   "bpp_rp_per_kwh": null,
+   "sumber_url": "https://gatrik.esdm.go.id/gatrik/gatrik-api//storage/migrasi/download_index/files/91fa8-buku-statistik-ketenagalistrikan-2024.pdf",
+   "tanggal_periksa": "2026-11-07",
+   "tingkat_bukti": "situs-sendiri"
+  },
+  {
+   "kode": "61",
+   "provinsi": "Kalimantan Barat",
+   "kapasitas_terpasang_mw": {
+    "PLTU/MT": 392,
+    "PLTG/GU/MG/MGU": 134,
+    "PLTD": 301,
+    "PLTA/M": 6,
+    "PLTB": 0,
+    "PLT Bio": 82,
+    "PLTP": 0,
+    "PLTS": 6,
+    "PLTGB": 0,
+    "PLT Lain": 0,
+    "total": 921
+   },
+   "produksi_pln_gwh": {
+    "PLTA": 932.35,
+    "PLTB": 0,
+    "PLTBg": 3.98,
+    "PLTBm": 105.21,
+    "PLTD": 609.84,
+    "PLTG": 134.63,
+    "PLTGU": 0,
+    "PLTM": 11.7,
+    "PLTMG": 0,
+    "PLTMH": 18,
+    "PLTP": 0,
+    "PLTS": 0.2,
+    "PLTSa": 0,
+    "PLTU": 2368.61,
+    "total": 4184.51
+   },
+   "tahun": 2024,
+   "wilayah_pln": [
+    "kalbar"
+   ],
+   "beban_puncak_mw": null,
+   "bpp_rp_per_kwh": null,
+   "sumber_url": "https://gatrik.esdm.go.id/gatrik/gatrik-api//storage/migrasi/download_index/files/91fa8-buku-statistik-ketenagalistrikan-2024.pdf",
+   "tanggal_periksa": "2026-11-07",
+   "tingkat_bukti": "situs-sendiri"
+  },
+  {
+   "kode": "62",
+   "provinsi": "Kalimantan Tengah",
+   "kapasitas_terpasang_mw": {
+    "PLTU/MT": 389,
+    "PLTG/GU/MG/MGU": 311,
+    "PLTD": 169,
+    "PLTA/M": 1,
+    "PLTB": 0,
+    "PLT Bio": 407,
+    "PLTP": 0,
+    "PLTS": 1,
+    "PLTGB": 0,
+    "PLT Lain": 0,
+    "total": 1278
+   },
+   "produksi_pln_gwh": {
+    "PLTA": 0,
+    "PLTB": 0,
+    "PLTBg": 36.98,
+    "PLTBm": 10.37,
+    "PLTD": 56.04,
+    "PLTG": 0,
+    "PLTGU": 0,
+    "PLTM": 0,
+    "PLTMG": 680.43,
+    "PLTMH": 0,
+    "PLTP": 0,
+    "PLTS": 0,
+    "PLTSa": 0,
+    "PLTU": 1895.85,
+    "total": 2679.67
+   },
+   "tahun": 2024,
+   "wilayah_pln": [
+    "kalselteng"
+   ],
+   "beban_puncak_mw": null,
+   "bpp_rp_per_kwh": null,
+   "sumber_url": "https://gatrik.esdm.go.id/gatrik/gatrik-api//storage/migrasi/download_index/files/91fa8-buku-statistik-ketenagalistrikan-2024.pdf",
+   "tanggal_periksa": "2026-11-07",
+   "tingkat_bukti": "situs-sendiri"
+  },
+  {
+   "kode": "63",
+   "provinsi": "Kalimantan Selatan",
+   "kapasitas_terpasang_mw": {
+    "PLTU/MT": 823,
+    "PLTG/GU/MG/MGU": 22,
+    "PLTD": 126,
+    "PLTA/M": 30,
+    "PLTB": 0,
+    "PLT Bio": 18,
+    "PLTP": 0,
+    "PLTS": 16,
+    "PLTGB": 0,
+    "PLT Lain": 0,
+    "total": 1036
+   },
+   "produksi_pln_gwh": {
+    "PLTA": 0,
+    "PLTB": 0,
+    "PLTBg": 10.85,
+    "PLTBm": 0,
+    "PLTD": 41.53,
+    "PLTG": 1.55,
+    "PLTGU": 0,
+    "PLTM": 148.82,
+    "PLTMG": 0,
+    "PLTMH": 0,
+    "PLTP": 0,
+    "PLTS": 0,
+    "PLTSa": 0,
+    "PLTU": 4022.71,
+    "total": 4225.46
+   },
+   "tahun": 2024,
+   "wilayah_pln": [
+    "kalselteng"
+   ],
+   "beban_puncak_mw": null,
+   "bpp_rp_per_kwh": null,
+   "sumber_url": "https://gatrik.esdm.go.id/gatrik/gatrik-api//storage/migrasi/download_index/files/91fa8-buku-statistik-ketenagalistrikan-2024.pdf",
+   "tanggal_periksa": "2026-11-07",
+   "tingkat_bukti": "situs-sendiri"
+  },
+  {
+   "kode": "64",
+   "provinsi": "Kalimantan Timur",
+   "kapasitas_terpasang_mw": {
+    "PLTU/MT": 968,
+    "PLTG/GU/MG/MGU": 472,
+    "PLTD": 268,
+    "PLTA/M": 0,
+    "PLTB": 0,
+    "PLT Bio": 60,
+    "PLTP": 0,
+    "PLTS": 84,
+    "PLTGB": 0,
+    "PLT Lain": 0,
+    "total": 1853
+   },
+   "produksi_pln_gwh": {
+    "PLTA": 0,
+    "PLTB": 0,
+    "PLTBg": 13.87,
+    "PLTBm": 0.15,
+    "PLTD": 361.58,
+    "PLTG": 548.11,
+    "PLTGU": 755.55,
+    "PLTM": 0,
+    "PLTMG": 101.29,
+    "PLTMH": 0,
+    "PLTP": 0,
+    "PLTS": 10.2,
+    "PLTSa": 0,
+    "PLTU": 4194.73,
+    "total": 5985.47
+   },
+   "tahun": 2024,
+   "wilayah_pln": [
+    "kaltimtara"
+   ],
+   "beban_puncak_mw": null,
+   "bpp_rp_per_kwh": null,
+   "sumber_url": "https://gatrik.esdm.go.id/gatrik/gatrik-api//storage/migrasi/download_index/files/91fa8-buku-statistik-ketenagalistrikan-2024.pdf",
+   "tanggal_periksa": "2026-11-07",
+   "tingkat_bukti": "situs-sendiri"
+  },
+  {
+   "kode": "65",
+   "provinsi": "Kalimantan Utara",
+   "kapasitas_terpasang_mw": {
+    "PLTU/MT": 22,
+    "PLTG/GU/MG/MGU": 97,
+    "PLTD": 166,
+    "PLTA/M": 2,
+    "PLTB": 0,
+    "PLT Bio": 0,
+    "PLTP": 0,
+    "PLTS": 3,
+    "PLTGB": 30,
+    "PLT Lain": 0,
+    "total": 321
+   },
+   "produksi_pln_gwh": {
+    "PLTA": 0,
+    "PLTB": 0,
+    "PLTBg": 0,
+    "PLTBm": 0,
+    "PLTD": 353.89,
+    "PLTG": 0,
+    "PLTGU": 0,
+    "PLTM": 0,
+    "PLTMG": 358.35,
+    "PLTMH": 0,
+    "PLTP": 0,
+    "PLTS": 0.05,
+    "PLTSa": 0,
+    "PLTU": 52.58,
+    "total": 764.87
+   },
+   "tahun": 2024,
+   "wilayah_pln": [
+    "kaltimtara"
+   ],
+   "beban_puncak_mw": null,
+   "bpp_rp_per_kwh": null,
+   "sumber_url": "https://gatrik.esdm.go.id/gatrik/gatrik-api//storage/migrasi/download_index/files/91fa8-buku-statistik-ketenagalistrikan-2024.pdf",
+   "tanggal_periksa": "2026-11-07",
+   "tingkat_bukti": "situs-sendiri"
+  },
+  {
+   "kode": "71",
+   "provinsi": "Sulawesi Utara",
+   "kapasitas_terpasang_mw": {
+    "PLTU/MT": 373,
+    "PLTG/GU/MG/MGU": 0,
+    "PLTD": 140,
+    "PLTA/M": 63,
+    "PLTB": 0,
+    "PLT Bio": 0,
+    "PLTP": 124,
+    "PLTS": 23,
+    "PLTGB": 0,
+    "PLT Lain": 0,
+    "total": 723
+   },
+   "produksi_pln_gwh": {
+    "PLTA": 0,
+    "PLTB": 0,
+    "PLTBg": 0,
+    "PLTBm": 0,
+    "PLTD": 128.5,
+    "PLTG": 0,
+    "PLTGU": 0,
+    "PLTM": 243.5,
+    "PLTMG": 0,
+    "PLTMH": 2.92,
+    "PLTP": 872.34,
+    "PLTS": 32.06,
+    "PLTSa": 0,
+    "PLTU": 1821.15,
+    "total": 3100.47
+   },
+   "tahun": 2024,
+   "wilayah_pln": [
+    "suluttenggo"
+   ],
+   "beban_puncak_mw": null,
+   "bpp_rp_per_kwh": null,
+   "sumber_url": "https://gatrik.esdm.go.id/gatrik/gatrik-api//storage/migrasi/download_index/files/91fa8-buku-statistik-ketenagalistrikan-2024.pdf",
+   "tanggal_periksa": "2026-11-07",
+   "tingkat_bukti": "situs-sendiri"
+  },
+  {
+   "kode": "72",
+   "provinsi": "Sulawesi Tengah",
+   "kapasitas_terpasang_mw": {
+    "PLTU/MT": 5845,
+    "PLTG/GU/MG/MGU": 113,
+    "PLTD": 258,
+    "PLTA/M": 645,
+    "PLTB": 0,
+    "PLT Bio": 3,
+    "PLTP": 0,
+    "PLTS": 1,
+    "PLTGB": 220,
+    "PLT Lain": 0,
+    "total": 7085
+   },
+   "produksi_pln_gwh": {
+    "PLTA": 1802.49,
+    "PLTB": 0,
+    "PLTBg": 0,
+    "PLTBm": 0,
+    "PLTD": 624.49,
+    "PLTG": 0,
+    "PLTGU": 0,
+    "PLTM": 251.1,
+    "PLTMG": 0,
+    "PLTMH": 7.31,
+    "PLTP": 0,
+    "PLTS": 0,
+    "PLTSa": 0,
+    "PLTU": 249.32,
+    "total": 2934.72
+   },
+   "tahun": 2024,
+   "wilayah_pln": [
+    "suluttenggo"
+   ],
+   "beban_puncak_mw": null,
+   "bpp_rp_per_kwh": null,
+   "sumber_url": "https://gatrik.esdm.go.id/gatrik/gatrik-api//storage/migrasi/download_index/files/91fa8-buku-statistik-ketenagalistrikan-2024.pdf",
+   "tanggal_periksa": "2026-11-07",
+   "tingkat_bukti": "situs-sendiri"
+  },
+  {
+   "kode": "73",
+   "provinsi": "Sulawesi Selatan",
+   "kapasitas_terpasang_mw": {
+    "PLTU/MT": 1040,
+    "PLTG/GU/MG/MGU": 454,
+    "PLTD": 156,
+    "PLTA/M": 830,
+    "PLTB": 151,
+    "PLT Bio": 17,
+    "PLTP": 0,
+    "PLTS": 11,
+    "PLTGB": 0,
+    "PLT Lain": 0,
+    "total": 2659
+   },
+   "produksi_pln_gwh": {
+    "PLTA": 1498.26,
+    "PLTB": 465.39,
+    "PLTBg": 0,
+    "PLTBm": 0,
+    "PLTD": 250.83,
+    "PLTG": 81.93,
+    "PLTGU": 1260.39,
+    "PLTM": 370.51,
+    "PLTMG": 0,
+    "PLTMH": 4.31,
+    "PLTP": 0,
+    "PLTS": 2.38,
+    "PLTSa": 0,
+    "PLTU": 5864.52,
+    "total": 9798.53
+   },
+   "tahun": 2024,
+   "wilayah_pln": [
+    "sulselrabar"
+   ],
+   "beban_puncak_mw": null,
+   "bpp_rp_per_kwh": null,
+   "sumber_url": "https://gatrik.esdm.go.id/gatrik/gatrik-api//storage/migrasi/download_index/files/91fa8-buku-statistik-ketenagalistrikan-2024.pdf",
+   "tanggal_periksa": "2026-11-07",
+   "tingkat_bukti": "situs-sendiri"
+  },
+  {
+   "kode": "74",
+   "provinsi": "Sulawesi Tenggara",
+   "kapasitas_terpasang_mw": {
+    "PLTU/MT": 108,
+    "PLTG/GU/MG/MGU": 98,
+    "PLTD": 177,
+    "PLTA/M": 6,
+    "PLTB": 0,
+    "PLT Bio": 0,
+    "PLTP": 0,
+    "PLTS": 3,
+    "PLTGB": 0,
+    "PLT Lain": 0,
+    "total": 391
+   },
+   "produksi_pln_gwh": {
+    "PLTA": 0,
+    "PLTB": 0,
+    "PLTBg": 0,
+    "PLTBm": 0,
+    "PLTD": 132.85,
+    "PLTG": 0,
+    "PLTGU": 0,
+    "PLTM": 12.54,
+    "PLTMG": 405.02,
+    "PLTMH": 17.52,
+    "PLTP": 0,
+    "PLTS": 0.17,
+    "PLTSa": 0,
+    "PLTU": 243.83,
+    "total": 811.95
+   },
+   "tahun": 2024,
+   "wilayah_pln": [
+    "sulselrabar"
+   ],
+   "beban_puncak_mw": null,
+   "bpp_rp_per_kwh": null,
+   "sumber_url": "https://gatrik.esdm.go.id/gatrik/gatrik-api//storage/migrasi/download_index/files/91fa8-buku-statistik-ketenagalistrikan-2024.pdf",
+   "tanggal_periksa": "2026-11-07",
+   "tingkat_bukti": "situs-sendiri"
+  },
+  {
+   "kode": "75",
+   "provinsi": "Gorontalo",
+   "kapasitas_terpasang_mw": {
+    "PLTU/MT": 176,
+    "PLTG/GU/MG/MGU": 100,
+    "PLTD": 25,
+    "PLTA/M": 7,
+    "PLTB": 0,
+    "PLT Bio": 1,
+    "PLTP": 0,
+    "PLTS": 13,
+    "PLTGB": 0,
+    "PLT Lain": 0,
+    "total": 321
+   },
+   "produksi_pln_gwh": {
+    "PLTA": 0,
+    "PLTB": 0,
+    "PLTBg": 0,
+    "PLTBm": 0,
+    "PLTD": 1.55,
+    "PLTG": 179.19,
+    "PLTGU": 0,
+    "PLTM": 15.27,
+    "PLTMG": 0,
+    "PLTMH": 3.51,
+    "PLTP": 0,
+    "PLTS": 22.99,
+    "PLTSa": 0,
+    "PLTU": 740.52,
+    "total": 963.03
+   },
+   "tahun": 2024,
+   "wilayah_pln": [
+    "suluttenggo"
+   ],
+   "beban_puncak_mw": null,
+   "bpp_rp_per_kwh": null,
+   "sumber_url": "https://gatrik.esdm.go.id/gatrik/gatrik-api//storage/migrasi/download_index/files/91fa8-buku-statistik-ketenagalistrikan-2024.pdf",
+   "tanggal_periksa": "2026-11-07",
+   "tingkat_bukti": "situs-sendiri"
+  },
+  {
+   "kode": "76",
+   "provinsi": "Sulawesi Barat",
+   "kapasitas_terpasang_mw": {
+    "PLTU/MT": 0,
+    "PLTG/GU/MG/MGU": 0,
+    "PLTD": 2,
+    "PLTA/M": 8,
+    "PLTB": 0,
+    "PLT Bio": 4,
+    "PLTP": 0,
+    "PLTS": 1,
+    "PLTGB": 0,
+    "PLT Lain": 0,
+    "total": 16
+   },
+   "produksi_pln_gwh": {
+    "PLTA": 0,
+    "PLTB": 0,
+    "PLTBg": 0,
+    "PLTBm": 0,
+    "PLTD": 0,
+    "PLTG": 0,
+    "PLTGU": 0,
+    "PLTM": 0,
+    "PLTMG": 0,
+    "PLTMH": 4.49,
+    "PLTP": 0,
+    "PLTS": 0,
+    "PLTSa": 0,
+    "PLTU": 0,
+    "total": 4.49
+   },
+   "tahun": 2024,
+   "wilayah_pln": [
+    "sulselrabar"
+   ],
+   "beban_puncak_mw": null,
+   "bpp_rp_per_kwh": null,
+   "sumber_url": "https://gatrik.esdm.go.id/gatrik/gatrik-api//storage/migrasi/download_index/files/91fa8-buku-statistik-ketenagalistrikan-2024.pdf",
+   "tanggal_periksa": "2026-11-07",
+   "tingkat_bukti": "situs-sendiri"
+  },
+  {
+   "kode": "81",
+   "provinsi": "Maluku",
+   "kapasitas_terpasang_mw": {
+    "PLTU/MT": 0,
+    "PLTG/GU/MG/MGU": 157,
+    "PLTD": 249,
+    "PLTA/M": 0,
+    "PLTB": 0,
+    "PLT Bio": 0,
+    "PLTP": 0,
+    "PLTS": 3,
+    "PLTGB": 0,
+    "PLT Lain": 0,
+    "total": 409
+   },
+   "produksi_pln_gwh": {
+    "PLTA": 0,
+    "PLTB": 0,
+    "PLTBg": 0,
+    "PLTBm": 0,
+    "PLTD": 381.6,
+    "PLTG": 0,
+    "PLTGU": 0,
+    "PLTM": 0,
+    "PLTMG": 532.92,
+    "PLTMH": 0,
+    "PLTP": 0,
+    "PLTS": 0.04,
+    "PLTSa": 0,
+    "PLTU": 0,
+    "total": 914.56
+   },
+   "tahun": 2024,
+   "wilayah_pln": [
+    "maluku-malut"
+   ],
+   "beban_puncak_mw": null,
+   "bpp_rp_per_kwh": null,
+   "sumber_url": "https://gatrik.esdm.go.id/gatrik/gatrik-api//storage/migrasi/download_index/files/91fa8-buku-statistik-ketenagalistrikan-2024.pdf",
+   "tanggal_periksa": "2026-11-07",
+   "tingkat_bukti": "situs-sendiri"
+  },
+  {
+   "kode": "82",
+   "provinsi": "Maluku Utara",
+   "kapasitas_terpasang_mw": {
+    "PLTU/MT": 5504,
+    "PLTG/GU/MG/MGU": 69,
+    "PLTD": 165,
+    "PLTA/M": 0,
+    "PLTB": 0,
+    "PLT Bio": 0,
+    "PLTP": 0,
+    "PLTS": 6,
+    "PLTGB": 0,
+    "PLT Lain": 0,
+    "total": 5744
+   },
+   "produksi_pln_gwh": {
+    "PLTA": 0,
+    "PLTB": 0,
+    "PLTBg": 0,
+    "PLTBm": 0,
+    "PLTD": 440.02,
+    "PLTG": 40.95,
+    "PLTGU": 0,
+    "PLTM": 0,
+    "PLTMG": 162.8,
+    "PLTMH": 0,
+    "PLTP": 0,
+    "PLTS": 0,
+    "PLTSa": 0,
+    "PLTU": 139.62,
+    "total": 783.39
+   },
+   "tahun": 2024,
+   "wilayah_pln": [
+    "maluku-malut"
+   ],
+   "beban_puncak_mw": null,
+   "bpp_rp_per_kwh": null,
+   "sumber_url": "https://gatrik.esdm.go.id/gatrik/gatrik-api//storage/migrasi/download_index/files/91fa8-buku-statistik-ketenagalistrikan-2024.pdf",
+   "tanggal_periksa": "2026-11-07",
+   "tingkat_bukti": "situs-sendiri"
+  },
+  {
+   "kode": "91",
+   "provinsi": "Papua",
+   "kapasitas_terpasang_mw": {
+    "PLTU/MT": 24,
+    "PLTG/GU/MG/MGU": 260,
+    "PLTD": 106,
+    "PLTA/M": 23,
+    "PLTB": 0,
+    "PLT Bio": 0,
+    "PLTP": 0,
+    "PLTS": 10,
+    "PLTGB": 0,
+    "PLT Lain": 0,
+    "total": 424
+   },
+   "produksi_pln_gwh": {
+    "PLTA": 41.72,
+    "PLTB": 0,
+    "PLTBg": 0,
+    "PLTBm": 0,
+    "PLTD": 121.14,
+    "PLTG": 0,
+    "PLTGU": 0,
+    "PLTM": 0,
+    "PLTMG": 698.83,
+    "PLTMH": 0.05,
+    "PLTP": 0,
+    "PLTS": 0.44,
+    "PLTSa": 0,
+    "PLTU": 53.06,
+    "total": 915.23
+   },
+   "tahun": 2024,
+   "wilayah_pln": [
+    "papua"
+   ],
+   "beban_puncak_mw": null,
+   "bpp_rp_per_kwh": null,
+   "sumber_url": "https://gatrik.esdm.go.id/gatrik/gatrik-api//storage/migrasi/download_index/files/91fa8-buku-statistik-ketenagalistrikan-2024.pdf",
+   "tanggal_periksa": "2026-11-07",
+   "tingkat_bukti": "situs-sendiri"
+  },
+  {
+   "kode": "92",
+   "provinsi": "Papua Barat",
+   "kapasitas_terpasang_mw": {
+    "PLTU/MT": 68,
+    "PLTG/GU/MG/MGU": 24,
+    "PLTD": 71,
+    "PLTA/M": 4,
+    "PLTB": 0,
+    "PLT Bio": 1,
+    "PLTP": 0,
+    "PLTS": 13,
+    "PLTGB": 0,
+    "PLT Lain": 0,
+    "total": 180
+   },
+   "produksi_pln_gwh": {
+    "PLTA": 0,
+    "PLTB": 0,
+    "PLTBg": 0,
+    "PLTBm": 0,
+    "PLTD": 168.3,
+    "PLTG": 0,
+    "PLTGU": 0,
+    "PLTM": 0.92,
+    "PLTMG": 134.14,
+    "PLTMH": 0.37,
+    "PLTP": 0,
+    "PLTS": 0.26,
+    "PLTSa": 0,
+    "PLTU": 0,
+    "total": 304
+   },
+   "tahun": 2024,
+   "wilayah_pln": [
+    "papua"
+   ],
+   "beban_puncak_mw": null,
+   "bpp_rp_per_kwh": null,
+   "sumber_url": "https://gatrik.esdm.go.id/gatrik/gatrik-api//storage/migrasi/download_index/files/91fa8-buku-statistik-ketenagalistrikan-2024.pdf",
+   "tanggal_periksa": "2026-11-07",
+   "tingkat_bukti": "situs-sendiri"
+  },
+  {
+   "kode": "93",
+   "provinsi": "Papua Selatan",
+   "kapasitas_terpasang_mw": {
+    "PLTU/MT": 0,
+    "PLTG/GU/MG/MGU": 45,
+    "PLTD": 31,
+    "PLTA/M": 0,
+    "PLTB": 0,
+    "PLT Bio": 4,
+    "PLTP": 0,
+    "PLTS": 2,
+    "PLTGB": 0,
+    "PLT Lain": 0,
+    "total": 81
+   },
+   "produksi_pln_gwh": {
+    "PLTA": 0,
+    "PLTB": 0,
+    "PLTBg": 0,
+    "PLTBm": 4.27,
+    "PLTD": 62.24,
+    "PLTG": 0,
+    "PLTGU": 0,
+    "PLTM": 0,
+    "PLTMG": 177.64,
+    "PLTMH": 0,
+    "PLTP": 0,
+    "PLTS": 0.81,
+    "PLTSa": 0,
+    "PLTU": 0,
+    "total": 244.96
+   },
+   "tahun": 2024,
+   "wilayah_pln": [
+    "papua"
+   ],
+   "beban_puncak_mw": null,
+   "bpp_rp_per_kwh": null,
+   "sumber_url": "https://gatrik.esdm.go.id/gatrik/gatrik-api//storage/migrasi/download_index/files/91fa8-buku-statistik-ketenagalistrikan-2024.pdf",
+   "tanggal_periksa": "2026-11-07",
+   "tingkat_bukti": "situs-sendiri"
+  },
+  {
+   "kode": "94",
+   "provinsi": "Papua Tengah",
+   "kapasitas_terpasang_mw": {
+    "PLTU/MT": 414,
+    "PLTG/GU/MG/MGU": 43,
+    "PLTD": 260,
+    "PLTA/M": 0,
+    "PLTB": 0,
+    "PLT Bio": 0,
+    "PLTP": 0,
+    "PLTS": 1,
+    "PLTGB": 0,
+    "PLT Lain": 0,
+    "total": 718
+   },
+   "produksi_pln_gwh": {
+    "PLTA": 0,
+    "PLTB": 0,
+    "PLTBg": 0,
+    "PLTBm": 0,
+    "PLTD": 211.79,
+    "PLTG": 0,
+    "PLTGU": 0,
+    "PLTM": 0,
+    "PLTMG": 205.98,
+    "PLTMH": 0,
+    "PLTP": 0,
+    "PLTS": 0.21,
+    "PLTSa": 0,
+    "PLTU": 0,
+    "total": 417.98
+   },
+   "tahun": 2024,
+   "wilayah_pln": [
+    "papua"
+   ],
+   "beban_puncak_mw": null,
+   "bpp_rp_per_kwh": null,
+   "sumber_url": "https://gatrik.esdm.go.id/gatrik/gatrik-api//storage/migrasi/download_index/files/91fa8-buku-statistik-ketenagalistrikan-2024.pdf",
+   "tanggal_periksa": "2026-11-07",
+   "tingkat_bukti": "situs-sendiri"
+  },
+  {
+   "kode": "95",
+   "provinsi": "Papua Pegunungan",
+   "kapasitas_terpasang_mw": {
+    "PLTU/MT": 0,
+    "PLTG/GU/MG/MGU": 0,
+    "PLTD": 13,
+    "PLTA/M": 5,
+    "PLTB": 0,
+    "PLT Bio": 0,
+    "PLTP": 0,
+    "PLTS": 0,
+    "PLTGB": 0,
+    "PLT Lain": 0,
+    "total": 18
+   },
+   "produksi_pln_gwh": {
+    "PLTA": 0,
+    "PLTB": 0,
+    "PLTBg": 0,
+    "PLTBm": 0,
+    "PLTD": 33.49,
+    "PLTG": 0,
+    "PLTGU": 0,
+    "PLTM": 0,
+    "PLTMG": 0,
+    "PLTMH": 19.4,
+    "PLTP": 0,
+    "PLTS": 0.3,
+    "PLTSa": 0,
+    "PLTU": 0,
+    "total": 53.2
+   },
+   "tahun": 2024,
+   "wilayah_pln": [
+    "papua"
+   ],
+   "beban_puncak_mw": null,
+   "bpp_rp_per_kwh": null,
+   "sumber_url": "https://gatrik.esdm.go.id/gatrik/gatrik-api//storage/migrasi/download_index/files/91fa8-buku-statistik-ketenagalistrikan-2024.pdf",
+   "tanggal_periksa": "2026-11-07",
+   "tingkat_bukti": "situs-sendiri"
+  },
+  {
+   "kode": "96",
+   "provinsi": "Papua Barat Daya",
+   "kapasitas_terpasang_mw": {
+    "PLTU/MT": 0,
+    "PLTG/GU/MG/MGU": 86,
+    "PLTD": 63,
+    "PLTA/M": 4,
+    "PLTB": 0,
+    "PLT Bio": 3,
+    "PLTP": 0,
+    "PLTS": 1,
+    "PLTGB": 0,
+    "PLT Lain": 0,
+    "total": 156
+   },
+   "produksi_pln_gwh": {
+    "PLTA": 0,
+    "PLTB": 0,
+    "PLTBg": 0,
+    "PLTBm": 0,
+    "PLTD": 134.22,
+    "PLTG": 0,
+    "PLTGU": 0,
+    "PLTM": 3.42,
+    "PLTMG": 345.76,
+    "PLTMH": 0,
+    "PLTP": 0,
+    "PLTS": 0.57,
+    "PLTSa": 0,
+    "PLTU": 0,
+    "total": 483.96
+   },
+   "tahun": 2024,
+   "wilayah_pln": [
+    "papua"
+   ],
+   "beban_puncak_mw": null,
+   "bpp_rp_per_kwh": null,
+   "sumber_url": "https://gatrik.esdm.go.id/gatrik/gatrik-api//storage/migrasi/download_index/files/91fa8-buku-statistik-ketenagalistrikan-2024.pdf",
+   "tanggal_periksa": "2026-11-07",
+   "tingkat_bukti": "situs-sendiri"
+  }
+ ]
+}

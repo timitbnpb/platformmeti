@@ -30,6 +30,7 @@ function iklim(lat, lon) {
 }
 const dataPeluang = () => sekali("peluang", () => ambil("/data/peluang.json").catch(() => null));
 const dataProyek = () => sekali("proyek", () => ambil("/data/proyek.json").catch(() => null));
+const dataAtlas = () => sekali("atlas", () => ambil("/data/potensi_atlas.json").catch(() => null));
 const dataGeo = () => sekali("geo", () => ambil("/geo/provinsi.json").catch(() => null));
 
 /** [{kode, nama, lat, lon}] gabungan peluang.json (nama) dan provinsi.json (titik di dalam wilayah). */
@@ -147,24 +148,25 @@ export async function bukaKelayakan({ lat, lon, tek = "plts", wadah = document.g
   if (!R.DALAM_INDONESIA(lat, lon)) { wadah.innerHTML = `<div class="jm-kosong">${ikon("peringatan", 32)}<p>${esc(t("kl.luar"))}</p></div>`; return; }
   const token = (wadah._kl = (wadah._kl || 0) + 1);
   wadah.innerHTML = hantuHtml(6);
-  let ik, pel, proyek, geo;
-  try { [ik, pel, proyek, geo] = await Promise.all([iklim(lat, lon), dataPeluang(), dataProyek(), dataGeo()]); }
-  catch (e) {
-    if (token !== wadah._kl) return;
+  /* PLTMH tidak butuh iklim; bila NASA POWER gagal, PLTS jatuh ke PVOUT atlas provinsi (label sumber berbeda) */
+  const [ik0, pel, proyek, geo, atlas] = await Promise.all([tek === "mikrohidro" ? { sw: [], ws: [], rentang: "" } : iklim(lat, lon).catch(() => null), dataPeluang(), dataProyek(), dataGeo(), dataAtlas()]);
+  if (token !== wadah._kl) return;
+  const fitur = geo?.features?.find((f) => R.didalam(lon, lat, f.geometry));
+  const kode = fitur ? String(fitur.properties.kode) : null;
+  const pv = Number(atlas?.baris?.find((b) => String(b.kode) === kode)?.pvout_kwh_per_kwp_tahun);
+  const ik = ik0 || (tek !== "pltb" && pv > 0 ? { sw: Array(12).fill(pv / (365 * R.ASUMSI.plts.pr)), ws: [], rentang: "", cadangan: true } : null);
+  if (!ik) {
     wadah.innerHTML = galatHtml("layanan").replace(/<p>.*?<\/p>/, `<p>${esc(t("kl.galat"))}</p>`);
     wadah.querySelector("[data-aksi=ulang]")?.addEventListener("click", () => bukaKelayakan({ lat, lon, tek, wadah }));
     return;
   }
-  if (token !== wadah._kl) return;
-  const fitur = geo?.features?.find((f) => R.didalam(lon, lat, f.geometry));
-  const kode = fitur ? String(fitur.properties.kode) : null;
   const baris = kode ? pel?.baris?.find((b) => String(b.kode) === kode) : null;
   const s = { lat, lon, tek, iklim: ik, pel, proyek, baris, prov: baris ? { kode, nama: baris.nama } : null, a: awal(tek) };
   const tgl = tanggal(pel?.meta?.diperbarui || proyek?.dibangun_pada || "");
-  const sumber = sumberHtml(`${esc(t("kl.sumber.power"))}. ${esc(ik.rentang)}<br>${esc(t("kl.sumber.peluang"))} (${esc(tgl)})<br>${esc(t("kl.sumber.proyek"))}`);
+  const sumber = sumberHtml(`${esc(tek === "mikrohidro" ? "" : ik.cadangan ? t("kl.sumber.atlas") : t("kl.sumber.power") + ". " + ik.rentang)}<br>${esc(t("kl.sumber.peluang"))} (${esc(tgl)})<br>${esc(t("kl.sumber.proyek"))}`);
   const hip = `<span class="jm-pil jm-pil-warn">${esc(t("kl.hipotesis"))}</span>`;
   const lokasi = `${esc(t("kl.lokasi.isi", { lat: N(lat, 3), lon: N(lon, 3) }))}${s.prov ? `, ${esc(s.prov.nama)}` : `, ${esc(t("kl.lokasi.tanpa"))}`}`;
-  wadah.innerHTML = exHtml({ id: "klHasil", ikon: IKON_PADA[tek] ? "analisis" : "", topik: t(`kl.tek.${tek}`), judulHtml: `${lokasi} ${hip}`, aksiHtml: sumber, isiHtml: `<div id="klKartu"></div>` })
+  wadah.innerHTML = exHtml({ id: "klHasil", ikon: IKON_PADA[tek] ? "analisis" : "", topik: t(`kl.tek.${tek}`), judulHtml: `<span>${lokasi}</span> ${hip}`, aksiHtml: sumber, isiHtml: `${ada("kl.catat." + tek) ? `<p class="jm-bantu">${esc(t("kl.catat." + tek))}</p>` : ""}<div id="klKartu"></div>` })
     + `<div class="jm-kl-dua">`
     + exHtml({ id: "klGrafik", ikon: "analisis", topik: t("kl.grafik"), judulHtml: esc(t("kl.grafik")), subHtml: esc(t("kl.grafik.sub")), isiHtml: `<div id="klGrafikW"></div>`, tingkat: "h3" })
     + exHtml({ id: "klAsumsi", ikon: "ubah", topik: t("kl.asumsi"), judulHtml: esc(t("kl.asumsi")), subHtml: esc(t("kl.asumsi.sub")), isiHtml: formAsumsi(s), tingkat: "h3" })

@@ -46,3 +46,10 @@ test("jarak, titik dalam poligon, BPP toleran, daya mikrohidro", () => {
   assert.equal(K.bppDari({ bpp: 1300 }), 1300);
   dekat(K.dayaMikrohidro(0.5, 20), 68.67, 0.01);
 });
+
+test("skala warna peta: linear, akar, dan tanpa data", () => {
+  assert.equal(K.skala(1450, 1300, 1600), 0.5);
+  assert.equal(K.skala(25, 0, 100, true), 0.5);
+  assert.equal(K.skala(null, 0, 100), -1);
+  assert.equal(K.skala(5, 3, 3), -1);
+});

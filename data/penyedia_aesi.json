@@ -1,0 +1,434 @@
+{
+  "sumber": "AESI, halaman Anggota",
+  "url": "https://aesi.or.id/anggota",
+  "diambil": "2026-11-08",
+  "tingkat_bukti": "kata-pihak",
+  "catatan": "Nama diambil dari atribut title kartu logo (huruf kapital dinormalkan sumber, bukan nama badan hukum resmi). robots.txt: Crawl-Delay 20, hanya satu halaman daftar dibaca; halaman profil per anggota tidak dibaca. Satu anggota dapat muncul di beberapa kategori.",
+  "baris": [
+    {
+      "nama": "Totalenergies",
+      "kategori_aesi": "Developer",
+      "url": "https://aesi.or.id/anggota/totalenergies"
+    },
+    {
+      "nama": "Pt Pertamina Power Indonesia Pertamina Nre",
+      "kategori_aesi": "Developer",
+      "url": "https://aesi.or.id/anggota/pt-pertamina-power-indonesia-pertamina-nre"
+    },
+    {
+      "nama": "Pt Csi Cleantech Solar Indonesia",
+      "kategori_aesi": "Developer",
+      "url": "https://aesi.or.id/anggota/pt-csi-cleantech-solar-indonesia"
+    },
+    {
+      "nama": "Pt Surya Utama Nuansa Sun Energy",
+      "kategori_aesi": "Developer",
+      "url": "https://aesi.or.id/anggota/pt-surya-utama-nuansa-sun-energy"
+    },
+    {
+      "nama": "Pt Surya Mitra Sentral Smsolar",
+      "kategori_aesi": "Developer",
+      "url": "https://aesi.or.id/anggota/pt-surya-mitra-sentral-smsolar/"
+    },
+    {
+      "nama": "Pt Xurya Daya Indonesia",
+      "kategori_aesi": "Developer",
+      "url": "https://aesi.or.id/anggota/pt-xurya-daya-indonesia"
+    },
+    {
+      "nama": "Pt Solarion Energi Alam",
+      "kategori_aesi": "Developer",
+      "url": "https://aesi.or.id/anggota/pt-solarion-energi-alam/"
+    },
+    {
+      "nama": "Pt Investasi Hijau Selaras",
+      "kategori_aesi": "Developer",
+      "url": "https://aesi.or.id/anggota/pt-investasi-hijau-selaras/"
+    },
+    {
+      "nama": "Suryanesia",
+      "kategori_aesi": "Developer",
+      "url": "https://aesi.or.id/anggota/suryanesia/"
+    },
+    {
+      "nama": "Pt Cahaya Power Indonesia",
+      "kategori_aesi": "Developer",
+      "url": "https://aesi.or.id/anggota/pt-cahaya-power-indonesia/"
+    },
+    {
+      "nama": "Becis Pt Symbior Cahaya Indonesia",
+      "kategori_aesi": "Developer",
+      "url": "https://aesi.or.id/anggota/becis-pt-symbior-cahaya-indonesia/"
+    },
+    {
+      "nama": "Pt Empat Mitra Indika Tenaga Surya Emits",
+      "kategori_aesi": "Developer",
+      "url": "https://aesi.or.id/anggota/pt-empat-mitra-indika-tenaga-surya-emits/"
+    },
+    {
+      "nama": "Pt Alam Energy Renewables",
+      "kategori_aesi": "Developer",
+      "url": "https://aesi.or.id/anggota/pt-alam-energy-renewables/"
+    },
+    {
+      "nama": "Pt Krakatau Chandra Energi",
+      "kategori_aesi": "Developer",
+      "url": "https://aesi.or.id/anggota/pt-krakatau-chandra-energi/"
+    },
+    {
+      "nama": "Pt Masdar Mitra Solar Radiance",
+      "kategori_aesi": "Developer",
+      "url": "https://aesi.or.id/anggota/pt-masdar-mitra-solar-radiance/"
+    },
+    {
+      "nama": "Hokuriku Electrical Construction Co Ltd %E5%8C%97%E9%99%B8%E9%9B%Bb%E6%B0%97%E5%B7%A5%E4%Ba%8B%E6%A0%Aa%E5%Bc%8F%E4%Bc%9A%E7%A4%Be",
+      "kategori_aesi": "Developer",
+      "url": "https://aesi.or.id/anggota/hokuriku-electrical-construction-co-ltd-%e5%8c%97%e9%99%b8%e9%9b%bb%e6%b0%97%e5%b7%a5%e4%ba%8b%e6%a0%aa%e5%bc%8f%e4%bc%9a%e7%a4%be/"
+    },
+    {
+      "nama": "Pt Ineco Solar Solutions",
+      "kategori_aesi": "Developer",
+      "url": "https://aesi.or.id/anggota/pt-ineco-solar-solutions/"
+    },
+    {
+      "nama": "Pt Syntek Otomasi Indonesia 2",
+      "kategori_aesi": "Developer",
+      "url": "https://aesi.or.id/anggota/pt-syntek-otomasi-indonesia-2"
+    },
+    {
+      "nama": "Pt Helio Synar Energi",
+      "kategori_aesi": "Developer",
+      "url": "https://aesi.or.id/anggota/pt-helio-synar-energi"
+    },
+    {
+      "nama": "Wpd",
+      "kategori_aesi": "Developer",
+      "url": "https://aesi.or.id/anggota/pt-wpd-energy-indonesia/"
+    },
+    {
+      "nama": "Prodigy Green Energy",
+      "kategori_aesi": "Developer",
+      "url": "https://aesi.or.id/anggota/prodigy-green-energy"
+    },
+    {
+      "nama": "Pt Sumber Energi Surya Nusantara Sesna",
+      "kategori_aesi": "Developer",
+      "url": "https://aesi.or.id/anggota/pt-sumber-energi-surya-nusantara-sesna"
+    },
+    {
+      "nama": "PT Greenvolt Power Indonesia",
+      "kategori_aesi": "Developer",
+      "url": "https://aesi.or.id/anggota/pt-greenvolt-power-indonesia/"
+    },
+    {
+      "nama": "Pt Majesty Enerbion Nusantara",
+      "kategori_aesi": "Developer",
+      "url": "https://aesi.or.id/anggota/pt-majesty-enerbion-nusantara"
+    },
+    {
+      "nama": "Pt Alfa Service Solusi",
+      "kategori_aesi": "Developer",
+      "url": "https://aesi.or.id/anggota/pt-alfa-service-solusi/"
+    },
+    {
+      "nama": "Pt Syntek Otomasi Indonesia 3",
+      "kategori_aesi": "Developer",
+      "url": "https://aesi.or.id/anggota/pt-syntek-otomasi-indonesia-3"
+    },
+    {
+      "nama": "Pt Shine Green Energy Investment Indonesia",
+      "kategori_aesi": "Developer",
+      "url": "https://aesi.or.id/anggota/pt-shine-green-energy-investment-indonesia/"
+    },
+    {
+      "nama": "Pt Terang Wahana Hijau",
+      "kategori_aesi": "EPC",
+      "url": "https://aesi.or.id/anggota/pt-terang-wahana-hijau/"
+    },
+    {
+      "nama": "Pt Prima Khatulistiwa Sinergi",
+      "kategori_aesi": "EPC",
+      "url": "https://aesi.or.id/anggota/pt-prima-khatulistiwa-sinergi/"
+    },
+    {
+      "nama": "Pt Pratiwi Putri Sulung",
+      "kategori_aesi": "EPC",
+      "url": "https://aesi.or.id/anggota/pt-pratiwi-putri-sulung"
+    },
+    {
+      "nama": "Pt Utama Niaga Optimal",
+      "kategori_aesi": "EPC",
+      "url": "https://aesi.or.id/anggota/pt-utama-niaga-optimal/"
+    },
+    {
+      "nama": "Pt Tritama Mitra Lestari",
+      "kategori_aesi": "EPC",
+      "url": "https://aesi.or.id/anggota/pt-tritama-mitra-lestari"
+    },
+    {
+      "nama": "Essens Renewable Indonesia",
+      "kategori_aesi": "EPC",
+      "url": "https://aesi.or.id/anggota/essens-renewable-indonesia/"
+    },
+    {
+      "nama": "Pt Ace Energy Service",
+      "kategori_aesi": "EPC",
+      "url": "https://aesi.or.id/anggota/pt-ace-energy-service/"
+    },
+    {
+      "nama": "Pt Quint Solar Indonesia",
+      "kategori_aesi": "EPC",
+      "url": "https://aesi.or.id/anggota/pt-quint-solar-indonesia/"
+    },
+    {
+      "nama": "Pt Indo Matra Lestari",
+      "kategori_aesi": "EPC",
+      "url": "https://aesi.or.id/anggota/pt-indo-matra-lestari/"
+    },
+    {
+      "nama": "Hexa Multi Energi",
+      "kategori_aesi": "EPC",
+      "url": "https://aesi.or.id/anggota/hexa-multi-energi/"
+    },
+    {
+      "nama": "Pt Bumi Enviro Lestari Bel Solar",
+      "kategori_aesi": "EPC",
+      "url": "https://aesi.or.id/anggota/pt-bumi-enviro-lestari-bel-solar"
+    },
+    {
+      "nama": "Pt Neira Bumi Energi",
+      "kategori_aesi": "EPC",
+      "url": "https://aesi.or.id/anggota/pt-neira-bumi-energi/"
+    },
+    {
+      "nama": "Pt Kusuma Energi Mentari",
+      "kategori_aesi": "EPC",
+      "url": "https://aesi.or.id/anggota/pt-kusuma-energi-mentari"
+    },
+    {
+      "nama": "Pt Atap Surya Nusantara",
+      "kategori_aesi": "EPC",
+      "url": "https://aesi.or.id/anggota/pt-atap-surya-nusantara"
+    },
+    {
+      "nama": "Pt Energi Terbarukan Internasional",
+      "kategori_aesi": "EPC",
+      "url": "https://aesi.or.id/anggota/pt-energi-terbarukan-internasional"
+    },
+    {
+      "nama": "Pt Bumiraya Energi Hijau",
+      "kategori_aesi": "EPC",
+      "url": "https://aesi.or.id/anggota/pt-bumiraya-energi-hijau"
+    },
+    {
+      "nama": "Pt Kencana Dua Sinergi",
+      "kategori_aesi": "EPC",
+      "url": "https://aesi.or.id/anggota/pt-kencana-dua-sinergi/"
+    },
+    {
+      "nama": "Pt Lembaga Energi Indonesia",
+      "kategori_aesi": "EPC",
+      "url": "https://aesi.or.id/anggota/pt-lembaga-energi-indonesia"
+    },
+    {
+      "nama": "Armada Kreatif Indopasifik",
+      "kategori_aesi": "EPC",
+      "url": "https://aesi.or.id/anggota/armada-kreatif-indopasifik/"
+    },
+    {
+      "nama": "Pt Etrama Nusa Energi",
+      "kategori_aesi": "EPC",
+      "url": "https://aesi.or.id/anggota/pt-etrama-nusa-energi"
+    },
+    {
+      "nama": "Pt Surya Energi Indotama",
+      "kategori_aesi": "EPC",
+      "url": "https://aesi.or.id/anggota/pt-surya-energi-indotama/"
+    },
+    {
+      "nama": "Pt Energy Lima Pilar",
+      "kategori_aesi": "EPC",
+      "url": "https://aesi.or.id/anggota/pt-energy-lima-pilar/"
+    },
+    {
+      "nama": "Pt Solar Jaya Energy Indonesia",
+      "kategori_aesi": "EPC",
+      "url": "https://aesi.or.id/anggota/pt-solar-jaya-energy-indonesia/"
+    },
+    {
+      "nama": "Pt Supraco Multi Sarana",
+      "kategori_aesi": "EPC",
+      "url": "https://aesi.or.id/anggota/pt-supraco-multi-sarana"
+    },
+    {
+      "nama": "Pt Solarion Energi Alam",
+      "kategori_aesi": "EPC",
+      "url": "https://aesi.or.id/anggota/pt-solarion-energi-alam"
+    },
+    {
+      "nama": "Pt Prima Perkasa Teknik Indonesia",
+      "kategori_aesi": "EPC",
+      "url": "https://aesi.or.id/anggota/pt-prima-perkasa-teknik-indonesia/"
+    },
+    {
+      "nama": "Pt Deltamas Solusindo",
+      "kategori_aesi": "EPC",
+      "url": "https://aesi.or.id/anggota/pt-deltamas-solusindo/"
+    },
+    {
+      "nama": "Pt Jarwinn Feliciti Hotapea",
+      "kategori_aesi": "EPC",
+      "url": "https://aesi.or.id/anggota/pt-jarwinn-feliciti-hotapea/"
+    },
+    {
+      "nama": "PT Vibrasi Energi Nusantara",
+      "kategori_aesi": "EPC",
+      "url": "https://aesi.or.id/anggota/pt-vibrasi-energi-nusantara-ven-2/"
+    },
+    {
+      "nama": "Pt Delta Jaya Engineering",
+      "kategori_aesi": "Supplier",
+      "url": "https://aesi.or.id/anggota/pt-delta-jaya-engineering/"
+    },
+    {
+      "nama": "Pt Agros Global Indonesia",
+      "kategori_aesi": "Supplier",
+      "url": "https://aesi.or.id/anggota/pt-agros-global-indonesia/"
+    },
+    {
+      "nama": "Inutec Surya Indonesia",
+      "kategori_aesi": "Supplier",
+      "url": "https://aesi.or.id/anggota/inutec-surya-indonesia"
+    },
+    {
+      "nama": "Pt Preformed Line Products Indonesia",
+      "kategori_aesi": "Supplier",
+      "url": "https://aesi.or.id/anggota/pt-preformed-line-products-indonesia/"
+    },
+    {
+      "nama": "Pt Majesty Enerbion Nusantara",
+      "kategori_aesi": "Supplier",
+      "url": "https://aesi.or.id/anggota/pt-majesty-enerbion-nusantara"
+    },
+    {
+      "nama": "Pt Jj Lapp Indonesia",
+      "kategori_aesi": "Supplier",
+      "url": "https://aesi.or.id/anggota/pt-jj-lapp-indonesia"
+    },
+    {
+      "nama": "Pt Syntek Otomasi Indonesia 3",
+      "kategori_aesi": "Supplier",
+      "url": "https://aesi.or.id/anggota/pt-syntek-otomasi-indonesia-3"
+    },
+    {
+      "nama": "Pt Mekanika Elektrika Indocipta",
+      "kategori_aesi": "Supplier",
+      "url": "https://aesi.or.id/anggota/pt-mekanika-elektrika-indocipta/"
+    },
+    {
+      "nama": "Jiangsu Seraphim Solar System Co Ltd",
+      "kategori_aesi": "Instalasi PLTS",
+      "url": "https://aesi.or.id/anggota/jiangsu-seraphim-solar-system-co-ltd"
+    },
+    {
+      "nama": "Pt Pwc Advis Indonesia",
+      "kategori_aesi": "Konsultan",
+      "url": "https://aesi.or.id/anggota/pt-pwc-advis-indonesia/"
+    },
+    {
+      "nama": "Pt Synkrona Enjiniring Nusantara",
+      "kategori_aesi": "Konsultan",
+      "url": "https://aesi.or.id/anggota/pt-synkrona-enjiniring-nusantara/"
+    },
+    {
+      "nama": "Pt Bmt Asia Indonesia",
+      "kategori_aesi": "Konsultan",
+      "url": "https://aesi.or.id/anggota/pt-bmt-asia-indonesia/"
+    },
+    {
+      "nama": "Pt Tricon Mitra Utama Konsultan",
+      "kategori_aesi": "Konsultan",
+      "url": "https://aesi.or.id/anggota/pt-tricon-mitra-utama-konsultan/"
+    },
+    {
+      "nama": "Pt Asuransi Msig Indonesia 2",
+      "kategori_aesi": "Lembaga Inspeksi Teknik",
+      "url": "https://aesi.or.id/anggota/pt-asuransi-msig-indonesia-2"
+    },
+    {
+      "nama": "Pt Andalan Mutu Energi",
+      "kategori_aesi": "Lembaga Inspeksi Teknik",
+      "url": "https://aesi.or.id/anggota/pt-andalan-mutu-energi/"
+    },
+    {
+      "nama": "Pt Pradana Nusa Energi",
+      "kategori_aesi": "Lembaga Inspeksi Teknik",
+      "url": "https://aesi.or.id/anggota/pt-pradana-nusa-energi/"
+    },
+    {
+      "nama": "Pt Eleska Iatki",
+      "kategori_aesi": "Lembaga Sertifikasi Kompetensi Ketenagalistrikan",
+      "url": "https://aesi.or.id/anggota/pt-eleska-iatki/"
+    },
+    {
+      "nama": "Pt Majesty Enerbion Nusantara",
+      "kategori_aesi": "Perdagangan Komoditi",
+      "url": "https://aesi.or.id/anggota/pt-majesty-enerbion-nusantara"
+    },
+    {
+      "nama": "Jiangsu Seraphim Solar System Co Ltd",
+      "kategori_aesi": "Praktisi",
+      "url": "https://aesi.or.id/anggota/jiangsu-seraphim-solar-system-co-ltd"
+    },
+    {
+      "nama": "Pt Wedosolar Indonesia",
+      "kategori_aesi": "Distributor",
+      "url": "https://aesi.or.id/anggota/pt-wedosolar-indonesia"
+    },
+    {
+      "nama": "Pt Muchun Solar Energy Indonesia",
+      "kategori_aesi": "Distributor",
+      "url": "https://aesi.or.id/anggota/pt-muchun-solar-energy-indonesia/"
+    },
+    {
+      "nama": "Pt Distritama Perkasa",
+      "kategori_aesi": "Distributor",
+      "url": "https://aesi.or.id/anggota/pt-distritama-perkasa/"
+    },
+    {
+      "nama": "Pt Primalayan Citra Mandiri",
+      "kategori_aesi": "Distributor",
+      "url": "https://aesi.or.id/anggota/pt-primalayan-citra-mandiri/"
+    },
+    {
+      "nama": "Pt Tianneng Power Indonesia",
+      "kategori_aesi": "BESS",
+      "url": "https://aesi.or.id/anggota/pt-tianneng-power-indonesia/"
+    },
+    {
+      "nama": "Pt Bintan Cellular Indonesia",
+      "kategori_aesi": "Produsen Solar Cell",
+      "url": "https://aesi.or.id/anggota/pt-bintan-cellular-indonesia/"
+    },
+    {
+      "nama": "Pt Syntek Otomasi Indonesia 3",
+      "kategori_aesi": "Otomasi dan Tenaga Listrik",
+      "url": "https://aesi.or.id/anggota/pt-syntek-otomasi-indonesia-3"
+    },
+    {
+      "nama": "Ampotech Pte Ltd",
+      "kategori_aesi": "Otomasi dan Tenaga Listrik",
+      "url": "https://aesi.or.id/anggota/ampotech-pte-ltd/"
+    },
+    {
+      "nama": "Pt Syntek Otomasi Indonesia 3",
+      "kategori_aesi": "Lembaga Keuangan",
+      "url": "https://aesi.or.id/anggota/pt-syntek-otomasi-indonesia-3"
+    },
+    {
+      "nama": "Pt Asuransi Msig Indonesia 2",
+      "kategori_aesi": "Lembaga Keuangan",
+      "url": "https://aesi.or.id/anggota/pt-asuransi-msig-indonesia-2/"
+    }
+  ]
+}

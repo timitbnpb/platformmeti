@@ -21,12 +21,13 @@ const baris = (r) => `<li class="brt-an-b">${tautan(r, esc(r.judul))}<span class
 const sumber = (K0) => sumberHtml(`${esc(t("brt.an.sumber"))} ${esc(tanggal(K0.dibangun))}.`);
 function bagian(K0, { id, ik, ey, judulHtml, sub, isi, cara, hipotesis }) {
   return `<section class="brt-bagian"><div class="jm-wadah">${exHtml({ id, ikon: ik, topik: t(ey), tingkat: "h2", judulHtml, subHtml: `${esc(t(sub))} ${hipotesis ? hip() : est()}`,
-    isiHtml: `${isi}<p class="brt-an-cara">${esc(t(cara))}</p>`, aksiHtml: aksiHtml({ csv: false }) + sumber(K0) })}</div></section>`;
+    isiHtml: isi, aksiHtml: aksiHtml({ csv: false }) + sumberHtml(`${esc(t(cara))}<br>${esc(t("brt.an.sumber"))} ${esc(tanggal(K0.dibangun))}.`) })}</div></section>`;
 }
 /** Grid rata tanpa sel kosong: potong ke jumlah yang habis dibagi kolom (maks 5). */
 const rata = (xs) => { const n = xs.length > 8 ? 8 : xs.length === 7 ? 6 : xs.length, k = n <= 5 ? n : n % 3 === 0 ? 3 : 4; return [xs.slice(0, n), "brt-an-grid brt-an-c" + Math.max(1, k)]; };
 const kartuKosong = (k) => `<p class="brt-lead">${esc(t(k))}</p>`;
-const panah = (s) => (s == null ? "" : `<span class="brt-tr ${s > 0 ? "naik" : s < 0 ? "turun" : ""}">${s > 0 ? "+" : s < 0 ? "-" : ""}${angka(Math.abs(s))}%</span>`);
+const panah = (s, lalu) => (s == null ? "" : `<span class="brt-ubah ${s > 0 ? "naik" : s < 0 ? "turun" : "sama"}">${esc(s === -100 ? t("brt.an.ubah.turun_dari", { n: angka(lalu) }) : s > 0 ? t("brt.an.ubah.naik", { p: angka(s) }) : s < 0 ? t("brt.an.ubah.turun", { p: angka(-s) }) : t("brt.an.ubah.sama"))}</span>`);
+const stat3 = (xs) => `<dl class="brt-an-st">${xs.map(([ik, k, v]) => `<div>${ikon(ik, 16)}<dt>${esc(t(k))}</dt><dd>${angka(v)}</dd></div>`).join("")}</dl>`;
 
 /* 1 */
 function ramai(K0) {
@@ -43,17 +44,23 @@ function ramai(K0) {
 function isu(K0) {
   const [hs, gk] = rata(hitungIsu(K0.B, K0.ak));
   const isi = hs.length ? `<ul class="${gk}">${hs.map((x) => `<li><button type="button" class="brt-an-k brt-an-isu" data-cari="${esc(x.cari)}"><b class="brt-an-n">${esc(t("brt.an.i." + x.id))}</b>
-    <span class="brt-an-v">${angka(x.h7)} ${panah(x.selisih)}</span><span class="brt-meta"><span>${esc(t("brt.an.isu.h24"))} ${angka(x.h24)}</span><span>${esc(t("brt.an.isu.h7"))} ${angka(x.h7)}</span><span>${esc(t("brt.an.isu.lalu", { n: angka(x.lalu) }))}</span></span></button></li>`).join("")}</ul>` : kartuKosong("brt.an.isu.kosong");
+    <span class="brt-an-v">${esc(t("brt.an.v.berita7", { n: angka(x.h7) }))}</span>${panah(x.selisih, x.lalu)}${stat3([["berita", "brt.an.isu.h24", x.h24], ["kalender", "brt.an.isu.h7", x.h7], ["kalender", "brt.an.isu.lalu.h", x.lalu]])}</button></li>`).join("")}</ul>` : kartuKosong("brt.an.isu.kosong");
   return bagian(K0, { id: "ex-an-isu", ik: "topik", ey: "brt.an.isu.ey", judulHtml: hs.length ? hlHtml("brt.an.isu.j", t("brt.an.i." + hs[0].id)) : esc(t("brt.an.isu.ey")), sub: "brt.an.isu.sub", isi, cara: "brt.an.isu.cara" });
 }
 /* 3 */
-const spark = (d) => `<svg class="brt-an-sp" viewBox="0 0 120 32" preserveAspectRatio="none" role="img" aria-label="${esc(d.join(", "))}"><polyline points="${sparkPoin(d)}" fill="none" vector-effect="non-scaling-stroke"/></svg>`;
+const spark = (d, ak) => {
+  const mx = Math.max(1, ...d), n = d.length, w = 120, h = 36, dx = w / Math.max(1, n - 1), tgl = (i) => tanggal(new Date(ak - (n - 1 - i) * HARI).toISOString().slice(0, 10));
+  const pts = sparkPoin(d, w, h), pk = d.indexOf(Math.max(...d));
+  const hover = d.map((v, i) => `<rect x="${(i * dx - dx / 2).toFixed(1)}" y="0" width="${dx.toFixed(1)}" height="${h}" fill="transparent"><title>${esc(tgl(i))}: ${esc(angka(v))}</title></rect>`).join("");
+  return `<svg class="brt-an-sp" viewBox="0 0 ${w} ${h}" preserveAspectRatio="none" role="img" aria-label="${esc(d.join(", "))}"><polygon class="brt-an-ar" points="0,${h} ${pts} ${w},${h}"/><polyline points="${pts}" fill="none" vector-effect="non-scaling-stroke"/>${hover}</svg>
+    <span class="brt-an-sx"><span>${esc(tgl(0))}</span><b>${esc(t("brt.an.tren.puncak", { n: angka(d[pk]), d: tgl(pk) }))}</b><span>${esc(tgl(n - 1))}</span></span>`;
+};
 function tren(K0) {
   const hitung = (f) => { const m = new Map(); for (const r of K0.B) for (const k of f(r)) m.set(k, (m.get(k) || 0) + 1); return [...m].sort((a, b) => b[1] - a[1]).slice(0, 6); };
   const kartu = (jenis, k, nama, ikonHtml) => {
     const cocok = (r) => (jenis === "tek" ? (r.kepakaran || []).includes(k) : r.media === k);
     const d = harian(K0.B, cocok, K0.ak), n = d.reduce((a, b) => a + b, 0);
-    return `<li><button type="button" class="brt-an-k brt-an-tr" data-bukti="${jenis}:${esc(k)}"><span class="brt-an-n">${ikonHtml}<b>${esc(nama)}</b></span>${spark(d)}<span class="brt-meta"><span>${esc(t("brt.an.tren.30", { n: angka(n) }))}</span><span>${esc(t("brt.an.buka"))}</span></span></button></li>`;
+    return `<li><button type="button" class="brt-an-k brt-an-tr" data-bukti="${jenis}:${esc(k)}"><span class="brt-an-n">${ikonHtml}<b>${esc(nama)}</b></span>${spark(d, K0.ak)}<span class="brt-an-ft2"><span>${esc(t("brt.an.tren.30", { n: angka(n) }))}</span><span class="jm-aksi-b" title="${esc(t("brt.an.buka"))}" aria-label="${esc(t("brt.an.buka"))}">${ikon("berita", 18)}</span></span></button></li>`;
   };
   const tk = hitung((r) => r.kepakaran || []), md = hitung((r) => [r.media]);
   const tkH = tk.map(([k]) => kartu("tek", k, label("brt.tek.", k), `<span class="brt-an-ic">${IKT[k] || ikon("tek-listrik", 18)}</span>`)).join(""), mdH = md.map(([k]) => kartu("media", k, k, logo(K0.B.find((r) => r.media === k)))).join("");
@@ -81,7 +88,7 @@ function kebijakan(K0) {
   const [hs, gk] = rata(KEBIJAKAN.map(([id, re, ke]) => ({ id, ke, rows: baru.filter((r) => re.test(r.judul)) })).filter((x) => x.rows.length));
   const total = new Set(hs.flatMap((x) => x.rows.map((r) => r.id))).size;
   const isi = hs.length ? `<ul class="${gk}">${hs.map((x) => `<li class="brt-an-k"><span class="brt-an-n"><b>${esc(t("brt.an.k." + x.id))}</b></span><span class="brt-an-v">${angka(x.rows.length)}</span><ul class="brt-an-list">${x.rows.slice(0, 2).map(baris).join("")}</ul>
-    <a class="brt-an-ln" href="${x.ke}">${esc(t(x.ke === "/regulasi" ? "brt.an.k.regulasi" : "brt.an.k.kalender"))} &rarr;</a></li>`).join("")}</ul>` : kartuKosong("brt.an.keb.kosong");
+    <a class="brt-an-ln jm-aksi-b" href="${x.ke}" title="${esc(t(x.ke === "/regulasi" ? "brt.an.k.regulasi" : "brt.an.k.kalender"))}" aria-label="${esc(t(x.ke === "/regulasi" ? "brt.an.k.regulasi" : "brt.an.k.kalender"))}">${ikon("panah-kanan", 18)}</a></li>`).join("")}</ul>` : kartuKosong("brt.an.keb.kosong");
   return bagian(K0, { id: "ex-an-keb", ik: "regulasi", ey: "brt.an.keb.ey", judulHtml: hlHtml("brt.an.keb.j", angka(total)), sub: "brt.an.keb.sub", isi, cara: "brt.an.keb.cara" });
 }
 /* 7 */
@@ -93,8 +100,7 @@ function dunia(K0) {
   const [hs, gk] = rata(hs0);
   if (!hs0.length) return bagian(K0, { id: "ex-an-dunia", ik: "bahasa", ey: "brt.an.dunia.ey", judulHtml: esc(t("brt.an.dunia.ey")), sub: "brt.an.dunia.sub", isi: kartuKosong("brt.an.dunia.kosong"), cara: "brt.an.dunia.cara" });
   const bdr = (n) => BENDERA_ADA.has(n) ? `<img class="brt-an-bdr" src="/img/bendera/${n}.svg" width="24" height="16" alt="" loading="lazy">` : `<span class="brt-an-bdr brt-an-kode">${esc(n.toUpperCase())}</span>`;
-  const kartu = hs.map((x) => `<li class="brt-an-k"><span class="brt-an-n">${bdr(x.n)}<b>${esc(t("brt.an.n." + x.n))}</b></span><span class="brt-an-v">${angka(x.a)} ${panah(x.selisih)}</span>
-    <span class="brt-meta"><span>${esc(t("brt.an.isu.h7"))}</span><span>${esc(t("brt.an.isu.lalu", { n: angka(x.b) }))}</span><span>${esc(t("brt.an.dunia.total", { n: angka(x.rows.length) }))}</span></span><ul class="brt-an-list">${x.rows.slice(0, 1).map(baris).join("")}</ul></li>`).join("");
+  const kartu = hs.map((x) => `<li class="brt-an-k"><span class="brt-an-n">${bdr(x.n)}<b>${esc(t("brt.an.n." + x.n))}</b></span><span class="brt-an-v">${esc(t("brt.an.v.berita7", { n: angka(x.a) }))}</span>${panah(x.selisih, x.b)}${stat3([["kalender", "brt.an.isu.h7", x.a], ["kalender", "brt.an.isu.lalu.h", x.b], ["berita", "brt.an.dunia.total.h", x.rows.length]])}<ul class="brt-an-list">${x.rows.slice(0, 1).map(baris).join("")}</ul></li>`).join("");
   const n7 = hs0.reduce((a, x) => a + x.a, 0);
   return bagian(K0, { id: "ex-an-dunia", ik: "bahasa", ey: "brt.an.dunia.ey", judulHtml: hlHtml("brt.an.dunia.j", angka(n7)), sub: "brt.an.dunia.sub", isi: `<ul class="${gk}">${kartu}</ul>`, cara: "brt.an.dunia.cara" });
 }

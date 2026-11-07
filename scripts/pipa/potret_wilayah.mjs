@@ -39,7 +39,21 @@ export function cariOrg(org, nama) {
   const o = org.find((x) => { const n = normOrg(x.nama); return n === k || n.startsWith(k) || (n.length >= 12 && k.startsWith(n)); });
   return o ? { id: o.id, nama: o.nama, logo: o.logo || null } : null;
 }
+// Koreksi RUED: teks perda (public/data/rued.json, bukti resmi) menang atas heuristik panen untuk angka target
+// pada perda dan tahun yang SAMA, hanya baris tanpa perlu_tinjau. Riau 2050: panen 44,63 -> teks perda 46,64.
+export function koreksiKandidat(kandidat, ruedBaris) {
+  const k = (kandidat || []).map((x) => ({ ...x }));
+  if (!ruedBaris || ruedBaris.perlu_tinjau || !ruedBaris.target) return k;
+  const t = ruedBaris.target, akhir = t.ebt_akhir;
+  for (const [tahun, persen] of [[2025, t.ebt_2025_persen], [akhir?.tahun, akhir?.persen]]) {
+    if (tahun == null || persen == null) continue;
+    const a = k.find((x) => x.tahun === tahun);
+    if (a) a.persen = persen; else k.push({ tahun, persen });
+  }
+  return k;
+}
 export function bangunWilayah() {
+  const ruedPub = fs.existsSync(path.join(ROOT, 'public/data/rued.json')) ? pub('rued.json').baris : [];
   const prov = jsonl('data-panen/wilayah/provinsi.jsonl');
   const atlas = new Map(jsonl('data-panen/wilayah/atlas.jsonl').map((a) => [String(a.kode), a]));
   const proyek = pub('proyek.json').baris, reg = pub('regulasi.json').baris, org = pub('organisasi.json').baris, orang = pub('orang.json').baris;
@@ -63,7 +77,7 @@ export function bangunWilayah() {
       rasio_elektrifikasi: sm(p.rasio_elektrifikasi),
       potensi_panas_bumi: sm(p.potensi?.['panas-bumi']),
       potensi_lain: Object.fromEntries(Object.entries(p.potensi || {}).filter(([k, v]) => k !== 'panas-bumi' && nilai(v) == null).map(([k, v]) => [k, kosong(v)])),
-      rued: r.perda ? { perda: r.perda, url: r.url_sumber, target_ebt_persen: r.target_ebt_persen ?? null, kandidat: (r.kandidat || []).map((k) => ({ tahun: k.tahun, persen: k.persen })), tanggal: r.tanggal_periksa, catatan_kosong: r.target_ebt_persen == null ? r.ekstraksi || null : null } : { ...kosong(r), perda: null },
+      rued: r.perda ? { perda: r.perda, url: r.url_sumber, target_ebt_persen: r.target_ebt_persen ?? null, kandidat: koreksiKandidat(r.kandidat, ruedPub.find((x) => x.kode === String(p.kode) && x.perda === r.perda)).map((k) => ({ tahun: k.tahun, persen: k.persen })), tanggal: r.tanggal_periksa, catatan_kosong: r.target_ebt_persen == null ? r.ekstraksi || null : null } : { ...kosong(r), perda: null },
       jumlah_proyek: ps.length, proyek: ps,
       perda: (pPerda.get(p.nama) || []).map((x) => ({ id: x.id, nomor: x.nomor, tahun: x.tahun, judul: x.judul, status: x.status, url: x.url_sumber })),
       organisasi: os.map((o) => ({ id: o.id, nama: o.nama, kategori: o.kategori?.label || null, kode: o.kategori?.kode || null, kota: o.lokasi?.kota || null, logo: o.logo || null })),
@@ -170,6 +184,8 @@ export function bangunRantai() {
 function tulis(nama, o) { fs.writeFileSync(path.join(ROOT, 'public/data', nama), JSON.stringify(o) + '\n'); console.log(nama, (JSON.stringify(o).length / 1024).toFixed(0) + ' KB'); }
 
 if (process.argv.includes('--selftest')) {
+  assert.deepEqual(koreksiKandidat([{ tahun: 2025, persen: 31.22 }, { tahun: 2050, persen: 44.63 }], { target: { ebt_2025_persen: 31.22, ebt_akhir: { tahun: 2050, persen: 46.64 } } }), [{ tahun: 2025, persen: 31.22 }, { tahun: 2050, persen: 46.64 }]);
+  assert.deepEqual(koreksiKandidat([{ tahun: 2030, persen: 1 }], { perlu_tinjau: true, target: { ebt_akhir: { tahun: 2030, persen: 9 } } }), [{ tahun: 2030, persen: 1 }]);
   const w = bangunWilayah(), a = bangunAsean(), r = bangunRantai();
   assert.equal(w.jumlah, 38); assert.equal(a.jumlah, 10); assert.equal(r.ringkas.pabrikan, 40);
   assert.ok(r.fasilitas_lain.every((x) => x.sumber.length && x.sumber.every((u) => u.url && u.tanggal && u.tingkat_bukti)), 'fasilitas tanpa sumber');

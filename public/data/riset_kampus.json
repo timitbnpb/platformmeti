@@ -1,0 +1,2370 @@
+{
+ "jenis": "riset_kampus",
+ "sumber": "OpenAlex (api.openalex.org)",
+ "url": "https://openalex.org",
+ "tanggal_ambil": "2026-11-07",
+ "tingkat_bukti": "via-pihak-ketiga",
+ "lisensi": "CC0 (OpenAlex)",
+ "periode": "2019-2026",
+ "topik_kueri": {
+  "surya": "(\"solar energy\" OR \"photovoltaic\" OR \"solar cell\" OR \"solar power\")",
+  "angin": "(\"wind energy\" OR \"wind turbine\" OR \"wind power\")",
+  "panas_bumi": "(\"geothermal\")",
+  "bioenergi": "(\"bioenergy\" OR \"biofuel\" OR \"biodiesel\" OR \"bioethanol\" OR \"biogas\" OR \"biomass energy\")",
+  "hidro": "(\"hydropower\" OR \"micro hydro\" OR \"hydroelectric\")",
+  "hidrogen": "(\"hydrogen production\" OR \"green hydrogen\" OR \"hydrogen energy\" OR \"fuel cell\")",
+  "baterai": "(\"lithium-ion battery\" OR \"energy storage\" OR \"battery energy storage\")",
+  "kebijakan": "(\"energy policy\" OR \"energy transition\" OR \"renewable energy policy\")"
+ },
+ "jumlah_kampus": 25,
+ "baris": [
+  {
+   "openalex_id": "I134635517",
+   "nama": "Bandung Institute of Technology",
+   "ror": "https://ror.org/00apj8t60",
+   "kota": "Bandung",
+   "organisasi_id": [
+    "l_07dd603a7c"
+   ],
+   "karya_energi_2019_sekarang": 1843,
+   "per_topik": {
+    "surya": 516,
+    "angin": 71,
+    "panas_bumi": 383,
+    "bioenergi": 290,
+    "hidro": 82,
+    "hidrogen": 182,
+    "baterai": 365,
+    "kebijakan": 180
+   },
+   "penulis_teratas": [
+    {
+     "nama": "Brian Yuliarto",
+     "orcid": "0000-0003-0662-7923",
+     "openalex": "A5000295188",
+     "karya_energi_2019_sekarang": 85,
+     "usulan_orang_id": []
+    },
+    {
+     "nama": "Nanang Hariyanto",
+     "orcid": "0000-0001-9069-0145",
+     "openalex": "A5034405454",
+     "karya_energi_2019_sekarang": 71,
+     "usulan_orang_id": []
+    },
+    {
+     "nama": "Kevin Marojahan Banjar-Nahor",
+     "orcid": "0000-0002-0085-3797",
+     "openalex": "A5078431232",
+     "karya_energi_2019_sekarang": 50,
+     "usulan_orang_id": []
+    },
+    {
+     "nama": "Hary Devianto",
+     "orcid": "0000-0002-8813-7460",
+     "openalex": "A5081971453",
+     "karya_energi_2019_sekarang": 47,
+     "usulan_orang_id": []
+    },
+    {
+     "nama": "Afriyanti Sumboja",
+     "orcid": "0000-0002-7389-4442",
+     "openalex": "A5009803366",
+     "karya_energi_2019_sekarang": 46,
+     "usulan_orang_id": []
+    },
+    {
+     "nama": "Heru Berian Pratama",
+     "orcid": "0000-0003-0098-177X",
+     "openalex": "A5056120500",
+     "karya_energi_2019_sekarang": 45,
+     "usulan_orang_id": []
+    },
+    {
+     "nama": "Ferry Iskandar",
+     "orcid": "0000-0002-0464-0035",
+     "openalex": "A5075251280",
+     "karya_energi_2019_sekarang": 43,
+     "usulan_orang_id": []
+    },
+    {
+     "nama": "Rahmat Hidayat",
+     "orcid": "0000-0002-3081-4051",
+     "openalex": "A5020858972",
+     "karya_energi_2019_sekarang": 38,
+     "usulan_orang_id": []
+    },
+    {
+     "nama": "Tirto Prakoso",
+     "orcid": "0000-0002-3911-4289",
+     "openalex": "A5073805388",
+     "karya_energi_2019_sekarang": 36,
+     "usulan_orang_id": []
+    },
+    {
+     "nama": "Dzikri Firmansyah Hakam",
+     "orcid": "0000-0002-7234-465X",
+     "openalex": "A5021117384",
+     "karya_energi_2019_sekarang": 34,
+     "usulan_orang_id": []
+    }
+   ],
+   "sumber_url": "https://openalex.org/I134635517",
+   "tanggal_periksa": "2026-11-07",
+   "tingkat_bukti": "via-pihak-ketiga"
+  },
+  {
+   "openalex_id": "I166843116",
+   "nama": "Institut Teknologi Sepuluh Nopember",
+   "ror": "https://ror.org/05kbmmt89",
+   "kota": "Surabaya",
+   "organisasi_id": [
+    "l_5d0062e04b"
+   ],
+   "karya_energi_2019_sekarang": 1678,
+   "per_topik": {
+    "surya": 499,
+    "angin": 179,
+    "panas_bumi": 80,
+    "bioenergi": 461,
+    "hidro": 72,
+    "hidrogen": 206,
+    "baterai": 297,
+    "kebijakan": 73
+   },
+   "penulis_teratas": [
+    {
+     "nama": "Darminto Darminto",
+     "orcid": "0000-0002-6269-9246",
+     "openalex": "A5024039945",
+     "karya_energi_2019_sekarang": 62,
+     "usulan_orang_id": []
+    },
+    {
+     "nama": "Mochamad Ashari",
+     "orcid": "0000-0001-5846-3137",
+     "openalex": "A5044797141",
+     "karya_energi_2019_sekarang": 53,
+     "usulan_orang_id": []
+    },
+    {
+     "nama": "Feby Agung Pamuji",
+     "orcid": "0000-0002-0603-9761",
+     "openalex": "A5041189048",
+     "karya_energi_2019_sekarang": 51,
+     "usulan_orang_id": []
+    },
+    {
+     "nama": "Vita Lystianingrum",
+     "orcid": "0000-0002-7185-0040",
+     "openalex": "A5045626550",
+     "karya_energi_2019_sekarang": 46,
+     "usulan_orang_id": []
+    },
+    {
+     "nama": "Ardyono Priyadi",
+     "orcid": "0000-0002-3809-2831",
+     "openalex": "A5034130467",
+     "karya_energi_2019_sekarang": 43,
+     "usulan_orang_id": []
+    },
+    {
+     "nama": "Lukman Noerochim",
+     "orcid": "0000-0002-3013-4259",
+     "openalex": "A5087719313",
+     "karya_energi_2019_sekarang": 42,
+     "usulan_orang_id": []
+    },
+    {
+     "nama": "Mahfud Mahfud",
+     "orcid": "0000-0001-7740-9670",
+     "openalex": "A5065037430",
+     "karya_energi_2019_sekarang": 39,
+     "usulan_orang_id": []
+    },
+    {
+     "nama": "Dedet Candra Riawan",
+     "orcid": "0000-0002-7680-4625",
+     "openalex": "A5044887636",
+     "karya_energi_2019_sekarang": 38,
+     "usulan_orang_id": []
+    },
+    {
+     "nama": "Didik Prasetyoko",
+     "orcid": "0000-0002-1065-3385",
+     "openalex": "A5002447567",
+     "karya_energi_2019_sekarang": 37,
+     "usulan_orang_id": []
+    },
+    {
+     "nama": "Rony Seto Wibowo",
+     "orcid": "0000-0002-6774-988X",
+     "openalex": "A5070134539",
+     "karya_energi_2019_sekarang": 37,
+     "usulan_orang_id": []
+    }
+   ],
+   "sumber_url": "https://openalex.org/I166843116",
+   "tanggal_periksa": "2026-11-07",
+   "tingkat_bukti": "via-pihak-ketiga"
+  },
+  {
+   "openalex_id": "I29617571",
+   "nama": "University of Indonesia",
+   "ror": "https://ror.org/0116zj450",
+   "kota": "Depok",
+   "organisasi_id": [
+    "l_2c27d00604"
+   ],
+   "karya_energi_2019_sekarang": 1545,
+   "per_topik": {
+    "surya": 402,
+    "angin": 80,
+    "panas_bumi": 218,
+    "bioenergi": 378,
+    "hidro": 61,
+    "hidrogen": 138,
+    "baterai": 270,
+    "kebijakan": 194
+   },
+   "penulis_teratas": [
+    {
+     "nama": "Budi Sudiarto",
+     "orcid": "0000-0002-5446-1780",
+     "openalex": "A5055316141",
+     "karya_energi_2019_sekarang": 51,
+     "usulan_orang_id": []
+    },
+    {
+     "nama": "Akhmad Herman Yuwono",
+     "orcid": "0000-0001-9887-6446",
+     "openalex": "A5110974682",
+     "karya_energi_2019_sekarang": 51,
+     "usulan_orang_id": []
+    },
+    {
+     "nama": "Yunus Daud",
+     "orcid": "0000-0001-7726-0191",
+     "openalex": "A5055422917",
+     "karya_energi_2019_sekarang": 43,
+     "usulan_orang_id": []
+    },
+    {
+     "nama": "Misri Gozan",
+     "orcid": "0000-0001-5663-8642",
+     "openalex": "A5091906368",
+     "karya_energi_2019_sekarang": 42,
+     "usulan_orang_id": []
+    },
+    {
+     "nama": "Nasruddin Nasruddin",
+     "orcid": "0000-0002-5289-0039",
+     "openalex": "A5110719394",
+     "karya_energi_2019_sekarang": 40,
+     "usulan_orang_id": []
+    },
+    {
+     "nama": "Nandy Setiadi Djaya Putra",
+     "orcid": "0000-0003-3010-599X",
+     "openalex": "A5008687009",
+     "karya_energi_2019_sekarang": 39,
+     "usulan_orang_id": []
+    },
+    {
+     "nama": "Bambang Priyono",
+     "orcid": "0009-0003-4285-1057",
+     "openalex": "A5014951924",
+     "karya_energi_2019_sekarang": 37,
+     "usulan_orang_id": []
+    },
+    {
+     "nama": "Achmad Subhan",
+     "orcid": "0000-0002-0774-9220",
+     "openalex": "A5068931662",
+     "karya_energi_2019_sekarang": 36,
+     "usulan_orang_id": []
+    },
+    {
+     "nama": "Widodo Wahyu Purwanto",
+     "orcid": "0000-0002-1799-0093",
+     "openalex": "A5046874377",
+     "karya_energi_2019_sekarang": 35,
+     "usulan_orang_id": []
+    },
+    {
+     "nama": "Nofrijon Sofyan",
+     "orcid": "0000-0001-7814-9022",
+     "openalex": "A5031507137",
+     "karya_energi_2019_sekarang": 34,
+     "usulan_orang_id": []
+    }
+   ],
+   "sumber_url": "https://openalex.org/I29617571",
+   "tanggal_periksa": "2026-11-07",
+   "tingkat_bukti": "via-pihak-ketiga"
+  },
+  {
+   "openalex_id": "I165230279",
+   "nama": "Universitas Gadjah Mada",
+   "ror": "https://ror.org/03ke6d638",
+   "kota": "Yogyakarta",
+   "organisasi_id": [
+    "l_4164507db1"
+   ],
+   "karya_energi_2019_sekarang": 1374,
+   "per_topik": {
+    "surya": 295,
+    "angin": 81,
+    "panas_bumi": 214,
+    "bioenergi": 472,
+    "hidro": 68,
+    "hidrogen": 69,
+    "baterai": 181,
+    "kebijakan": 118
+   },
+   "penulis_teratas": [
+    {
+     "nama": "Sarjiya Sarjiya",
+     "orcid": "0000-0002-3025-295X",
+     "openalex": "A5021548642",
+     "karya_energi_2019_sekarang": 67,
+     "usulan_orang_id": []
+    },
+    {
+     "nama": "Himawan Tri Bayu Murti Petrus",
+     "orcid": "0000-0001-9372-0784",
+     "openalex": "A5047618815",
+     "karya_energi_2019_sekarang": 67,
+     "usulan_orang_id": []
+    },
+    {
+     "nama": "Lesnanto Multa Putranto",
+     "orcid": "0000-0003-0250-9284",
+     "openalex": "A5077406292",
+     "karya_energi_2019_sekarang": 60,
+     "usulan_orang_id": []
+    },
+    {
+     "nama": "Arief Taufik Budiman",
+     "orcid": "0000-0003-4846-8270",
+     "openalex": "A5057132834",
+     "karya_energi_2019_sekarang": 49,
+     "usulan_orang_id": []
+    },
+    {
+     "nama": "Wega Trisunaryanti",
+     "orcid": "0000-0001-5966-9655",
+     "openalex": "A5076329875",
+     "karya_energi_2019_sekarang": 46,
+     "usulan_orang_id": []
+    },
+    {
+     "nama": "Karna Wijaya",
+     "orcid": "0000-0001-8155-0896",
+     "openalex": "A5073403376",
+     "karya_energi_2019_sekarang": 42,
+     "usulan_orang_id": []
+    },
+    {
+     "nama": "Eko Agus Suyono",
+     "orcid": "0000-0002-9208-4541",
+     "openalex": "A5070334728",
+     "karya_energi_2019_sekarang": 38,
+     "usulan_orang_id": []
+    },
+    {
+     "nama": "Sasongko Pramono Hadi",
+     "orcid": "0000-0001-6268-9040",
+     "openalex": "A5051659768",
+     "karya_energi_2019_sekarang": 32,
+     "usulan_orang_id": []
+    },
+    {
+     "nama": "F. Danang Wijaya",
+     "orcid": "0000-0001-8887-6135",
+     "openalex": "A5015090952",
+     "karya_energi_2019_sekarang": 31,
+     "usulan_orang_id": []
+    },
+    {
+     "nama": "Muhammad Akhsin Muflikhun",
+     "orcid": "0000-0001-9915-2116",
+     "openalex": "A5032140853",
+     "karya_energi_2019_sekarang": 31,
+     "usulan_orang_id": []
+    }
+   ],
+   "sumber_url": "https://openalex.org/I165230279",
+   "tanggal_periksa": "2026-11-07",
+   "tingkat_bukti": "via-pihak-ketiga"
+  },
+  {
+   "openalex_id": "I11855966",
+   "nama": "Diponegoro University",
+   "ror": "https://ror.org/056bjta22",
+   "kota": "Semarang",
+   "organisasi_id": [
+    "l_d5ae08392c"
+   ],
+   "karya_energi_2019_sekarang": 1120,
+   "per_topik": {
+    "surya": 257,
+    "angin": 56,
+    "panas_bumi": 122,
+    "bioenergi": 432,
+    "hidro": 51,
+    "hidrogen": 133,
+    "baterai": 99,
+    "kebijakan": 78
+   },
+   "penulis_teratas": [
+    {
+     "nama": "Hadiyanto Hadiyanto",
+     "orcid": "0000-0003-0074-7078",
+     "openalex": "A5087289676",
+     "karya_energi_2019_sekarang": 83,
+     "usulan_orang_id": []
+    },
+    {
+     "nama": "Widayat Widayat",
+     "orcid": "0000-0003-1906-2378",
+     "openalex": "A5082638863",
+     "karya_energi_2019_sekarang": 67,
+     "usulan_orang_id": []
+    },
+    {
+     "nama": "Jaka Windarta",
+     "orcid": "0000-0003-1042-5064",
+     "openalex": "A5085900493",
+     "karya_energi_2019_sekarang": 44,
+     "usulan_orang_id": []
+    },
+    {
+     "nama": "Mochammad Facta",
+     "orcid": "0000-0002-7868-7776",
+     "openalex": "A5018782602",
+     "karya_energi_2019_sekarang": 38,
+     "usulan_orang_id": []
+    },
+    {
+     "nama": "Marcelinus Christwardana",
+     "orcid": "0000-0003-4084-1763",
+     "openalex": "A5023666106",
+     "karya_energi_2019_sekarang": 37,
+     "usulan_orang_id": []
+    },
+    {
+     "nama": "Didi Dwi Anggoro",
+     "orcid": "0000-0002-5359-7782",
+     "openalex": "A5007216337",
+     "karya_energi_2019_sekarang": 33,
+     "usulan_orang_id": []
+    },
+    {
+     "nama": "S. Silviana",
+     "orcid": "0000-0002-8831-0147",
+     "openalex": "A5038829941",
+     "karya_energi_2019_sekarang": 29,
+     "usulan_orang_id": []
+    },
+    {
+     "nama": "Purwanto Purwanto",
+     "orcid": "0000-0002-4289-4714",
+     "openalex": "A5100413555",
+     "karya_energi_2019_sekarang": 29,
+     "usulan_orang_id": []
+    },
+    {
+     "nama": "Luqman Buchori",
+     "orcid": "0000-0001-5138-8031",
+     "openalex": "A5058602517",
+     "karya_energi_2019_sekarang": 27,
+     "usulan_orang_id": []
+    },
+    {
+     "nama": "Susatyo Handoko",
+     "orcid": "0009-0004-3072-3637",
+     "openalex": "A5018838545",
+     "karya_energi_2019_sekarang": 26,
+     "usulan_orang_id": []
+    }
+   ],
+   "sumber_url": "https://openalex.org/I11855966",
+   "tanggal_periksa": "2026-11-07",
+   "tingkat_bukti": "via-pihak-ketiga"
+  },
+  {
+   "openalex_id": "I119896790",
+   "nama": "Sebelas Maret University",
+   "ror": "https://ror.org/021hq5q33",
+   "kota": "Surakarta",
+   "organisasi_id": [],
+   "karya_energi_2019_sekarang": 993,
+   "per_topik": {
+    "surya": 313,
+    "angin": 113,
+    "panas_bumi": 55,
+    "bioenergi": 194,
+    "hidro": 43,
+    "hidrogen": 43,
+    "baterai": 255,
+    "kebijakan": 67
+   },
+   "penulis_teratas": [
+    {
+     "nama": "Zainal Arifin",
+     "orcid": "0000-0002-2091-5828",
+     "openalex": "A5039932104",
+     "karya_energi_2019_sekarang": 95,
+     "usulan_orang_id": []
+    },
+    {
+     "nama": "Singgih Dwi Prasetyo",
+     "orcid": "0000-0001-5391-5819",
+     "openalex": "A5001338746",
+     "karya_energi_2019_sekarang": 79,
+     "usulan_orang_id": []
+    },
+    {
+     "nama": "Agus Purwanto",
+     "orcid": "0000-0002-8044-7835",
+     "openalex": "A5057508003",
+     "karya_energi_2019_sekarang": 74,
+     "usulan_orang_id": []
+    },
+    {
+     "nama": "Dominicus Danardono Dwi Prija Tjahjana",
+     "orcid": null,
+     "openalex": "A5108886758",
+     "karya_energi_2019_sekarang": 55,
+     "usulan_orang_id": []
+    },
+    {
+     "nama": "Hendri Widiyandari",
+     "orcid": "0000-0002-2017-6500",
+     "openalex": "A5017722099",
+     "karya_energi_2019_sekarang": 54,
+     "usulan_orang_id": []
+    },
+    {
+     "nama": "Aditya Rio Prabowo",
+     "orcid": "0000-0001-5217-5943",
+     "openalex": "A5031995281",
+     "karya_energi_2019_sekarang": 52,
+     "usulan_orang_id": []
+    },
+    {
+     "nama": "Cornelius Satria Yudha",
+     "orcid": "0000-0002-7017-3965",
+     "openalex": "A5047777911",
+     "karya_energi_2019_sekarang": 52,
+     "usulan_orang_id": []
+    },
+    {
+     "nama": "Nugroho Agung Pambudi",
+     "orcid": "0000-0001-9496-3710",
+     "openalex": "A5059948608",
+     "karya_energi_2019_sekarang": 43,
+     "usulan_orang_id": []
+    },
+    {
+     "nama": "Agus Supriyanto",
+     "orcid": "0000-0003-4397-2187",
+     "openalex": "A5048044852",
+     "karya_energi_2019_sekarang": 40,
+     "usulan_orang_id": []
+    },
+    {
+     "nama": "Endah Retno Dyartanti",
+     "orcid": "0000-0001-5277-1593",
+     "openalex": "A5012508567",
+     "karya_energi_2019_sekarang": 39,
+     "usulan_orang_id": []
+    }
+   ],
+   "sumber_url": "https://openalex.org/I119896790",
+   "tanggal_periksa": "2026-11-07",
+   "tingkat_bukti": "via-pihak-ketiga"
+  },
+  {
+   "openalex_id": "I102893293",
+   "nama": "State University of Malang",
+   "ror": "https://ror.org/00ypgyy34",
+   "kota": "Malang",
+   "organisasi_id": [],
+   "karya_energi_2019_sekarang": 724,
+   "per_topik": {
+    "surya": 350,
+    "angin": 82,
+    "panas_bumi": 13,
+    "bioenergi": 130,
+    "hidro": 19,
+    "hidrogen": 47,
+    "baterai": 139,
+    "kebijakan": 21
+   },
+   "penulis_teratas": [
+    {
+     "nama": "Markus Diantoro",
+     "orcid": "0000-0001-6666-3702",
+     "openalex": "A5056074820",
+     "karya_energi_2019_sekarang": 134,
+     "usulan_orang_id": []
+    },
+    {
+     "nama": "Nandang Mufti",
+     "orcid": "0000-0002-8260-8495",
+     "openalex": "A5060013022",
+     "karya_energi_2019_sekarang": 63,
+     "usulan_orang_id": []
+    },
+    {
+     "nama": "Langlang Gumilar",
+     "orcid": "0000-0001-8772-2046",
+     "openalex": "A5044089206",
+     "karya_energi_2019_sekarang": 60,
+     "usulan_orang_id": []
+    },
+    {
+     "nama": "Singgih Dwi Prasetyo",
+     "orcid": "0000-0001-5391-5819",
+     "openalex": "A5001338746",
+     "karya_energi_2019_sekarang": 59,
+     "usulan_orang_id": []
+    },
+    {
+     "nama": "Aripriharta Aripriharta",
+     "orcid": "0000-0002-5313-6978",
+     "openalex": "A5000964024",
+     "karya_energi_2019_sekarang": 57,
+     "usulan_orang_id": []
+    },
+    {
+     "nama": "Arif Nur Afandi",
+     "orcid": "0000-0001-9019-810X",
+     "openalex": "A5112441862",
+     "karya_energi_2019_sekarang": 49,
+     "usulan_orang_id": []
+    },
+    {
+     "nama": "Avita Ayu Permanasari",
+     "orcid": "0000-0002-4854-3798",
+     "openalex": "A5062726145",
+     "karya_energi_2019_sekarang": 39,
+     "usulan_orang_id": []
+    },
+    {
+     "nama": "Poppy Puspitasari",
+     "orcid": "0000-0002-6622-0431",
+     "openalex": "A5090959666",
+     "karya_energi_2019_sekarang": 39,
+     "usulan_orang_id": []
+    },
+    {
+     "nama": "Aman Santoso",
+     "orcid": "0000-0001-9603-5686",
+     "openalex": "A5041936788",
+     "karya_energi_2019_sekarang": 35,
+     "usulan_orang_id": []
+    },
+    {
+     "nama": "Yuki Trisnoaji",
+     "orcid": "0009-0002-9522-9205",
+     "openalex": "A5114665409",
+     "karya_energi_2019_sekarang": 35,
+     "usulan_orang_id": []
+    }
+   ],
+   "sumber_url": "https://openalex.org/I102893293",
+   "tanggal_periksa": "2026-11-07",
+   "tingkat_bukti": "via-pihak-ketiga"
+  },
+  {
+   "openalex_id": "I177055848",
+   "nama": "University of Brawijaya",
+   "ror": "https://ror.org/01wk3d929",
+   "kota": "Malang",
+   "organisasi_id": [],
+   "karya_energi_2019_sekarang": 715,
+   "per_topik": {
+    "surya": 142,
+    "angin": 29,
+    "panas_bumi": 40,
+    "bioenergi": 309,
+    "hidro": 38,
+    "hidrogen": 102,
+    "baterai": 44,
+    "kebijakan": 49
+   },
+   "penulis_teratas": [
+    {
+     "nama": "I.N.G. Wardana",
+     "orcid": "0000-0003-3146-9517",
+     "openalex": "A5066272687",
+     "karya_energi_2019_sekarang": 51,
+     "usulan_orang_id": []
+    },
+    {
+     "nama": "Nurkholis Hamidi",
+     "orcid": "0000-0003-2910-2353",
+     "openalex": "A5028792419",
+     "karya_energi_2019_sekarang": 41,
+     "usulan_orang_id": []
+    },
+    {
+     "nama": "Purnami Purnami",
+     "orcid": "0000-0002-3771-7094",
+     "openalex": "A5017858892",
+     "karya_energi_2019_sekarang": 39,
+     "usulan_orang_id": []
+    },
+    {
+     "nama": "Denny Widhiyanuriyawan",
+     "orcid": "0000-0001-5729-4212",
+     "openalex": "A5051284630",
+     "karya_energi_2019_sekarang": 38,
+     "usulan_orang_id": []
+    },
+    {
+     "nama": "Sri Suhartini",
+     "orcid": "0000-0001-9356-9391",
+     "openalex": "A5015045718",
+     "karya_energi_2019_sekarang": 34,
+     "usulan_orang_id": []
+    },
+    {
+     "nama": "Rini Nur Hasanah",
+     "orcid": "0000-0002-6002-6558",
+     "openalex": "A5067087323",
+     "karya_energi_2019_sekarang": 34,
+     "usulan_orang_id": []
+    },
+    {
+     "nama": "Willy Satrio Nugroho",
+     "orcid": "0000-0001-8288-6287",
+     "openalex": "A5050433002",
+     "karya_energi_2019_sekarang": 30,
+     "usulan_orang_id": []
+    },
+    {
+     "nama": "Hadi Suyono",
+     "orcid": "0000-0002-4651-6550",
+     "openalex": "A5025609871",
+     "karya_energi_2019_sekarang": 25,
+     "usulan_orang_id": []
+    },
+    {
+     "nama": "Widya Sari Kusuma Wijayanti",
+     "orcid": "0000-0003-4215-5943",
+     "openalex": "A5069313130",
+     "karya_energi_2019_sekarang": 24,
+     "usulan_orang_id": []
+    },
+    {
+     "nama": "Winarto Winarto",
+     "orcid": "0000-0002-7988-1132",
+     "openalex": "A5101717509",
+     "karya_energi_2019_sekarang": 22,
+     "usulan_orang_id": []
+    }
+   ],
+   "sumber_url": "https://openalex.org/I177055848",
+   "tanggal_periksa": "2026-11-07",
+   "tingkat_bukti": "via-pihak-ketiga"
+  },
+  {
+   "openalex_id": "I254887060",
+   "nama": "Universitas Sumatera Utara",
+   "ror": "https://ror.org/01kknrc90",
+   "kota": "Medan",
+   "organisasi_id": [],
+   "karya_energi_2019_sekarang": 626,
+   "per_topik": {
+    "surya": 180,
+    "angin": 33,
+    "panas_bumi": 22,
+    "bioenergi": 293,
+    "hidro": 22,
+    "hidrogen": 27,
+    "baterai": 70,
+    "kebijakan": 22
+   },
+   "penulis_teratas": [
+    {
+     "nama": "Himsar Ambarita",
+     "orcid": "0000-0002-5692-9164",
+     "openalex": "A5018469427",
+     "karya_energi_2019_sekarang": 53,
+     "usulan_orang_id": []
+    },
+    {
+     "nama": "Renita Manurung",
+     "orcid": "0000-0001-9945-4464",
+     "openalex": "A5027278708",
+     "karya_energi_2019_sekarang": 37,
+     "usulan_orang_id": []
+    },
+    {
+     "nama": "Irvan Irvan",
+     "orcid": "0000-0002-0305-0236",
+     "openalex": "A5086889615",
+     "karya_energi_2019_sekarang": 32,
+     "usulan_orang_id": []
+    },
+    {
+     "nama": "Bambang Trisakti",
+     "orcid": "0000-0002-8453-4653",
+     "openalex": "A5042187872",
+     "karya_energi_2019_sekarang": 30,
+     "usulan_orang_id": []
+    },
+    {
+     "nama": "Rivaldi Sidabutar",
+     "orcid": "0000-0003-1069-9866",
+     "openalex": "A5023046408",
+     "karya_energi_2019_sekarang": 26,
+     "usulan_orang_id": []
+    },
+    {
+     "nama": "Vikram Alexander",
+     "orcid": "0000-0002-3544-8345",
+     "openalex": "A5020928759",
+     "karya_energi_2019_sekarang": 25,
+     "usulan_orang_id": []
+    },
+    {
+     "nama": "Anggara Dwita Burmana",
+     "orcid": "0000-0001-7132-3913",
+     "openalex": "A5021426771",
+     "karya_energi_2019_sekarang": 25,
+     "usulan_orang_id": []
+    },
+    {
+     "nama": "Tulus Burhanuddin Sitorus",
+     "orcid": "0000-0001-5683-3114",
+     "openalex": "A5050698073",
+     "karya_energi_2019_sekarang": 23,
+     "usulan_orang_id": []
+    },
+    {
+     "nama": "Rondang Tambun",
+     "orcid": "0000-0001-6320-7322",
+     "openalex": "A5013519311",
+     "karya_energi_2019_sekarang": 22,
+     "usulan_orang_id": []
+    },
+    {
+     "nama": "Taufiq Bin Nur",
+     "orcid": "0000-0003-1690-9799",
+     "openalex": "A5066701817",
+     "karya_energi_2019_sekarang": 19,
+     "usulan_orang_id": []
+    }
+   ],
+   "sumber_url": "https://openalex.org/I254887060",
+   "tanggal_periksa": "2026-11-07",
+   "tingkat_bukti": "via-pihak-ketiga"
+  },
+  {
+   "openalex_id": "I21881038",
+   "nama": "IPB University",
+   "ror": "https://ror.org/05smgpd89",
+   "kota": "Bogor",
+   "organisasi_id": [
+    "l_c7f9927ccc"
+   ],
+   "karya_energi_2019_sekarang": 580,
+   "per_topik": {
+    "surya": 76,
+    "angin": 17,
+    "panas_bumi": 17,
+    "bioenergi": 376,
+    "hidro": 32,
+    "hidrogen": 41,
+    "baterai": 24,
+    "kebijakan": 41
+   },
+   "penulis_teratas": [
+    {
+     "nama": "Obie Farobie",
+     "orcid": "0000-0002-6159-635X",
+     "openalex": "A5086016076",
+     "karya_energi_2019_sekarang": 50,
+     "usulan_orang_id": []
+    },
+    {
+     "nama": "Edy Hartulistiyoso",
+     "orcid": "0000-0002-5837-1555",
+     "openalex": "A5048020666",
+     "karya_energi_2019_sekarang": 38,
+     "usulan_orang_id": []
+    },
+    {
+     "nama": "Apip Amrullah",
+     "orcid": "0000-0002-7830-4528",
+     "openalex": "A5050033644",
+     "karya_energi_2019_sekarang": 29,
+     "usulan_orang_id": []
+    },
+    {
+     "nama": "Widya Fatrıasarı",
+     "orcid": "0000-0002-5166-9498",
+     "openalex": "A5038499223",
+     "karya_energi_2019_sekarang": 24,
+     "usulan_orang_id": []
+    },
+    {
+     "nama": "Erliza Hambali",
+     "orcid": null,
+     "openalex": "A5112643114",
+     "karya_energi_2019_sekarang": 19,
+     "usulan_orang_id": []
+    },
+    {
+     "nama": "Khaswar Syamsu",
+     "orcid": "0000-0002-5113-8830",
+     "openalex": "A5044093146",
+     "karya_energi_2019_sekarang": 13,
+     "usulan_orang_id": []
+    },
+    {
+     "nama": "Bono Pranoto",
+     "orcid": "0000-0002-2772-6528",
+     "openalex": "A5074519862",
+     "karya_energi_2019_sekarang": 13,
+     "usulan_orang_id": []
+    },
+    {
+     "nama": "Armansyah Halomoan TAMBUNAN",
+     "orcid": "0000-0001-5679-2631",
+     "openalex": "A5003014369",
+     "karya_energi_2019_sekarang": 12,
+     "usulan_orang_id": []
+    },
+    {
+     "nama": "Anja Meryandini",
+     "orcid": "0000-0002-0956-1125",
+     "openalex": "A5086755839",
+     "karya_energi_2019_sekarang": 12,
+     "usulan_orang_id": []
+    },
+    {
+     "nama": "Dwi Andreas Santosa",
+     "orcid": "0000-0002-7310-5909",
+     "openalex": "A5049911694",
+     "karya_energi_2019_sekarang": 11,
+     "usulan_orang_id": []
+    }
+   ],
+   "sumber_url": "https://openalex.org/I21881038",
+   "tanggal_periksa": "2026-11-07",
+   "tingkat_bukti": "via-pihak-ketiga"
+  },
+  {
+   "openalex_id": "I187494767",
+   "nama": "Universitas Syiah Kuala",
+   "ror": "https://ror.org/05v4dza81",
+   "kota": "Banda Aceh",
+   "organisasi_id": [],
+   "karya_energi_2019_sekarang": 503,
+   "per_topik": {
+    "surya": 137,
+    "angin": 38,
+    "panas_bumi": 121,
+    "bioenergi": 143,
+    "hidro": 30,
+    "hidrogen": 16,
+    "baterai": 28,
+    "kebijakan": 19
+   },
+   "penulis_teratas": [
+    {
+     "nama": "Rinaldi Idroes",
+     "orcid": "0000-0003-2264-6358",
+     "openalex": "A5003151497",
+     "karya_energi_2019_sekarang": 62,
+     "usulan_orang_id": []
+    },
+    {
+     "nama": "Husni Husin",
+     "orcid": "0000-0001-8391-119X",
+     "openalex": "A5077323818",
+     "karya_energi_2019_sekarang": 35,
+     "usulan_orang_id": []
+    },
+    {
+     "nama": "Ira Devi Sara",
+     "orcid": "0000-0003-3449-1234",
+     "openalex": "A5046084412",
+     "karya_energi_2019_sekarang": 31,
+     "usulan_orang_id": []
+    },
+    {
+     "nama": "Muhammad Yanis",
+     "orcid": "0000-0002-5773-6487",
+     "openalex": "A5082670640",
+     "karya_energi_2019_sekarang": 27,
+     "usulan_orang_id": []
+    },
+    {
+     "nama": "Ghazi Mauer Idroes",
+     "orcid": "0000-0001-6217-9067",
+     "openalex": "A5040230792",
+     "karya_energi_2019_sekarang": 26,
+     "usulan_orang_id": []
+    },
+    {
+     "nama": "Marwan Marwan",
+     "orcid": "0000-0001-6211-8467",
+     "openalex": "A5101558998",
+     "karya_energi_2019_sekarang": 24,
+     "usulan_orang_id": []
+    },
+    {
+     "nama": "Khairan Khairan",
+     "orcid": "0000-0003-3028-6022",
+     "openalex": "A5001214456",
+     "karya_energi_2019_sekarang": 22,
+     "usulan_orang_id": []
+    },
+    {
+     "nama": "Yuwaldi Away",
+     "orcid": "0000-0001-6798-054X",
+     "openalex": "A5056946778",
+     "karya_energi_2019_sekarang": 21,
+     "usulan_orang_id": []
+    },
+    {
+     "nama": "Mahidin Mahidin",
+     "orcid": "0000-0003-2547-4272",
+     "openalex": "A5020270397",
+     "karya_energi_2019_sekarang": 20,
+     "usulan_orang_id": []
+    },
+    {
+     "nama": "Muliadi Ramli",
+     "orcid": "0000-0003-1564-7088",
+     "openalex": "A5031793673",
+     "karya_energi_2019_sekarang": 17,
+     "usulan_orang_id": []
+    }
+   ],
+   "sumber_url": "https://openalex.org/I187494767",
+   "tanggal_periksa": "2026-11-07",
+   "tingkat_bukti": "via-pihak-ketiga"
+  },
+  {
+   "openalex_id": "I98301867",
+   "nama": "Hasanuddin University",
+   "ror": "https://ror.org/00da1gf19",
+   "kota": "Makassar",
+   "organisasi_id": [],
+   "karya_energi_2019_sekarang": 447,
+   "per_topik": {
+    "surya": 147,
+    "angin": 73,
+    "panas_bumi": 29,
+    "bioenergi": 109,
+    "hidro": 40,
+    "hidrogen": 14,
+    "baterai": 52,
+    "kebijakan": 42
+   },
+   "penulis_teratas": [
+    {
+     "nama": "Indar Chaerah Gunadin",
+     "orcid": "0000-0001-9516-0282",
+     "openalex": "A5043595580",
+     "karya_energi_2019_sekarang": 25,
+     "usulan_orang_id": []
+    },
+    {
+     "nama": "Andi Erwin Eka Putra",
+     "orcid": "0000-0001-8678-0877",
+     "openalex": "A5088069017",
+     "karya_energi_2019_sekarang": 21,
+     "usulan_orang_id": []
+    },
+    {
+     "nama": "Faisal Mahmuddin",
+     "orcid": "0000-0003-4478-1681",
+     "openalex": "A5089272260",
+     "karya_energi_2019_sekarang": 19,
+     "usulan_orang_id": []
+    },
+    {
+     "nama": "Syafaruddin Syafaruddin",
+     "orcid": "0000-0002-9915-7694",
+     "openalex": "A5000285228",
+     "karya_energi_2019_sekarang": 17,
+     "usulan_orang_id": []
+    },
+    {
+     "nama": "Paulina Taba",
+     "orcid": "0000-0001-7327-5505",
+     "openalex": "A5024282007",
+     "karya_energi_2019_sekarang": 17,
+     "usulan_orang_id": []
+    },
+    {
+     "nama": "Novriany Amaliyah",
+     "orcid": "0000-0002-6128-5543",
+     "openalex": "A5027083931",
+     "karya_energi_2019_sekarang": 17,
+     "usulan_orang_id": []
+    },
+    {
+     "nama": "Dahlang Tahir",
+     "orcid": "0000-0002-8241-3604",
+     "openalex": "A5066608699",
+     "karya_energi_2019_sekarang": 16,
+     "usulan_orang_id": []
+    },
+    {
+     "nama": "Ardiaty Arief",
+     "orcid": "0000-0002-1721-3948",
+     "openalex": "A5029316759",
+     "karya_energi_2019_sekarang": 15,
+     "usulan_orang_id": []
+    },
+    {
+     "nama": "Zaenab Muslimin",
+     "orcid": "0000-0003-4818-792X",
+     "openalex": "A5021716765",
+     "karya_energi_2019_sekarang": 14,
+     "usulan_orang_id": []
+    },
+    {
+     "nama": "Sri Mawar Said",
+     "orcid": "0000-0002-4879-4001",
+     "openalex": "A5071901658",
+     "karya_energi_2019_sekarang": 14,
+     "usulan_orang_id": []
+    }
+   ],
+   "sumber_url": "https://openalex.org/I98301867",
+   "tanggal_periksa": "2026-11-07",
+   "tingkat_bukti": "via-pihak-ketiga"
+  },
+  {
+   "openalex_id": "I92961808",
+   "nama": "Riau University",
+   "ror": "https://ror.org/00nk7p507",
+   "kota": "Pekanbaru",
+   "organisasi_id": [],
+   "karya_energi_2019_sekarang": 444,
+   "per_topik": {
+    "surya": 87,
+    "angin": 13,
+    "panas_bumi": 15,
+    "bioenergi": 156,
+    "hidro": 39,
+    "hidrogen": 10,
+    "baterai": 128,
+    "kebijakan": 18
+   },
+   "penulis_teratas": [
+    {
+     "nama": "Erman Taer",
+     "orcid": "0000-0003-4463-8252",
+     "openalex": "A5022260644",
+     "karya_energi_2019_sekarang": 67,
+     "usulan_orang_id": []
+    },
+    {
+     "nama": "Rika Taslim",
+     "orcid": "0000-0003-1946-1299",
+     "openalex": "A5081538310",
+     "karya_energi_2019_sekarang": 51,
+     "usulan_orang_id": []
+    },
+    {
+     "nama": "Apriwandi Apriwandi",
+     "orcid": "0000-0003-3560-5571",
+     "openalex": "A5007339252",
+     "karya_energi_2019_sekarang": 45,
+     "usulan_orang_id": []
+    },
+    {
+     "nama": "Rakhmawati Farma",
+     "orcid": "0000-0003-3761-4009",
+     "openalex": "A5044935339",
+     "karya_energi_2019_sekarang": 44,
+     "usulan_orang_id": []
+    },
+    {
+     "nama": "Zuchra Helwani",
+     "orcid": "0000-0002-5515-1952",
+     "openalex": "A5050639853",
+     "karya_energi_2019_sekarang": 41,
+     "usulan_orang_id": []
+    },
+    {
+     "nama": "Awitdrus Awitdrus",
+     "orcid": "0000-0003-1434-7606",
+     "openalex": "A5052478056",
+     "karya_energi_2019_sekarang": 33,
+     "usulan_orang_id": []
+    },
+    {
+     "nama": "Agustino Agustino",
+     "orcid": "0000-0002-3669-1064",
+     "openalex": "A5065916716",
+     "karya_energi_2019_sekarang": 23,
+     "usulan_orang_id": []
+    },
+    {
+     "nama": "Irma Apriyani",
+     "orcid": "0000-0003-3283-5443",
+     "openalex": "A5079349732",
+     "karya_energi_2019_sekarang": 22,
+     "usulan_orang_id": []
+    },
+    {
+     "nama": "Amun Amri",
+     "orcid": "0000-0001-8896-6405",
+     "openalex": "A5042395019",
+     "karya_energi_2019_sekarang": 19,
+     "usulan_orang_id": []
+    },
+    {
+     "nama": "Sri Rezeki Muria",
+     "orcid": "0000-0003-4940-1174",
+     "openalex": "A5063002134",
+     "karya_energi_2019_sekarang": 18,
+     "usulan_orang_id": []
+    }
+   ],
+   "sumber_url": "https://openalex.org/I92961808",
+   "tanggal_periksa": "2026-11-07",
+   "tingkat_bukti": "via-pihak-ketiga"
+  },
+  {
+   "openalex_id": "I91819753",
+   "nama": "Padjadjaran University",
+   "ror": "https://ror.org/00xqf8t64",
+   "kota": "Bandung",
+   "organisasi_id": [],
+   "karya_energi_2019_sekarang": 427,
+   "per_topik": {
+    "surya": 70,
+    "angin": 7,
+    "panas_bumi": 76,
+    "bioenergi": 141,
+    "hidro": 35,
+    "hidrogen": 25,
+    "baterai": 45,
+    "kebijakan": 53
+   },
+   "penulis_teratas": [
+    {
+     "nama": "Iman Rahayu",
+     "orcid": "0000-0002-7219-3046",
+     "openalex": "A5023324181",
+     "karya_energi_2019_sekarang": 23,
+     "usulan_orang_id": []
+    },
+    {
+     "nama": "Atiek Rostika Noviyanti",
+     "orcid": "0000-0002-2355-7624",
+     "openalex": "A5031971034",
+     "karya_energi_2019_sekarang": 21,
+     "usulan_orang_id": []
+    },
+    {
+     "nama": "Annisa Aprilia",
+     "orcid": "0000-0001-9645-4303",
+     "openalex": "A5037378467",
+     "karya_energi_2019_sekarang": 20,
+     "usulan_orang_id": []
+    },
+    {
+     "nama": "Nova Rachmadona",
+     "orcid": "0000-0002-2661-2764",
+     "openalex": "A5055816872",
+     "karya_energi_2019_sekarang": 19,
+     "usulan_orang_id": []
+    },
+    {
+     "nama": "Lusi Safriani",
+     "orcid": "0000-0002-7562-5959",
+     "openalex": "A5043231661",
+     "karya_energi_2019_sekarang": 18,
+     "usulan_orang_id": []
+    },
+    {
+     "nama": "Efri Mardawati",
+     "orcid": "0000-0003-4981-434X",
+     "openalex": "A5032258690",
+     "karya_energi_2019_sekarang": 16,
+     "usulan_orang_id": []
+    },
+    {
+     "nama": "Sahrul Hidayat",
+     "orcid": "0000-0001-7060-2734",
+     "openalex": "A5059838119",
+     "karya_energi_2019_sekarang": 14,
+     "usulan_orang_id": []
+    },
+    {
+     "nama": "Teguh Husodo",
+     "orcid": "0000-0002-2813-3871",
+     "openalex": "A5006944188",
+     "karya_energi_2019_sekarang": 13,
+     "usulan_orang_id": []
+    },
+    {
+     "nama": "Ellin Harlia",
+     "orcid": "0000-0003-1984-2059",
+     "openalex": "A5017744699",
+     "karya_energi_2019_sekarang": 13,
+     "usulan_orang_id": []
+    },
+    {
+     "nama": "Eulis Tanti Marlina",
+     "orcid": "0000-0003-0410-4942",
+     "openalex": "A5057537112",
+     "karya_energi_2019_sekarang": 13,
+     "usulan_orang_id": []
+    }
+   ],
+   "sumber_url": "https://openalex.org/I91819753",
+   "tanggal_periksa": "2026-11-07",
+   "tingkat_bukti": "via-pihak-ketiga"
+  },
+  {
+   "openalex_id": "I55892964",
+   "nama": "Andalas University",
+   "ror": "https://ror.org/04ded0672",
+   "kota": "Padang",
+   "organisasi_id": [],
+   "karya_energi_2019_sekarang": 425,
+   "per_topik": {
+    "surya": 154,
+    "angin": 35,
+    "panas_bumi": 30,
+    "bioenergi": 112,
+    "hidro": 48,
+    "hidrogen": 20,
+    "baterai": 39,
+    "kebijakan": 23
+   },
+   "penulis_teratas": [
+    {
+     "nama": "Syafii Syafii",
+     "orcid": "0000-0001-6376-003X",
+     "openalex": "A5045128985",
+     "karya_energi_2019_sekarang": 47,
+     "usulan_orang_id": []
+    },
+    {
+     "nama": "Yulia Eka Putri",
+     "orcid": "0000-0003-2610-3780",
+     "openalex": "A5080677595",
+     "karya_energi_2019_sekarang": 15,
+     "usulan_orang_id": []
+    },
+    {
+     "nama": "Dahyunir Dahlan",
+     "orcid": "0009-0006-3563-5614",
+     "openalex": "A5030432325",
+     "karya_energi_2019_sekarang": 14,
+     "usulan_orang_id": []
+    },
+    {
+     "nama": "Refdinal Nazir",
+     "orcid": "0000-0003-4220-0038",
+     "openalex": "A5076375151",
+     "karya_energi_2019_sekarang": 14,
+     "usulan_orang_id": []
+    },
+    {
+     "nama": "Tio Putra Wendari",
+     "orcid": "0000-0002-3600-0905",
+     "openalex": "A5002812991",
+     "karya_energi_2019_sekarang": 13,
+     "usulan_orang_id": []
+    },
+    {
+     "nama": "Syukri Syukri",
+     "orcid": "0000-0001-5078-0170",
+     "openalex": "A5040688898",
+     "karya_energi_2019_sekarang": 13,
+     "usulan_orang_id": []
+    },
+    {
+     "nama": "Muhammad Imran Hamid",
+     "orcid": "0000-0002-1763-3571",
+     "openalex": "A5102759859",
+     "karya_energi_2019_sekarang": 12,
+     "usulan_orang_id": []
+    },
+    {
+     "nama": "Mulda Muldarisnur",
+     "orcid": "0000-0002-0086-8753",
+     "openalex": "A5016094407",
+     "karya_energi_2019_sekarang": 11,
+     "usulan_orang_id": []
+    },
+    {
+     "nama": "Ardian Putra",
+     "orcid": "0000-0001-6992-9625",
+     "openalex": "A5021620833",
+     "karya_energi_2019_sekarang": 11,
+     "usulan_orang_id": []
+    },
+    {
+     "nama": "Pinto Anugrah",
+     "orcid": "0000-0002-1486-9458",
+     "openalex": "A5060538334",
+     "karya_energi_2019_sekarang": 11,
+     "usulan_orang_id": []
+    }
+   ],
+   "sumber_url": "https://openalex.org/I55892964",
+   "tanggal_periksa": "2026-11-07",
+   "tingkat_bukti": "via-pihak-ketiga"
+  },
+  {
+   "openalex_id": "I245308123",
+   "nama": "Universitas Negeri Padang",
+   "ror": "https://ror.org/04jrfgq66",
+   "kota": "Padang",
+   "organisasi_id": [],
+   "karya_energi_2019_sekarang": 407,
+   "per_topik": {
+    "surya": 172,
+    "angin": 25,
+    "panas_bumi": 22,
+    "bioenergi": 99,
+    "hidro": 23,
+    "hidrogen": 32,
+    "baterai": 43,
+    "kebijakan": 20
+   },
+   "penulis_teratas": [
+    {
+     "nama": "Krismadinata Krismadinata",
+     "orcid": "0000-0003-1485-4595",
+     "openalex": "A5017538051",
+     "karya_energi_2019_sekarang": 23,
+     "usulan_orang_id": []
+    },
+    {
+     "nama": "Rahadian Zainul",
+     "orcid": "0000-0002-3740-3597",
+     "openalex": "A5004308749",
+     "karya_energi_2019_sekarang": 20,
+     "usulan_orang_id": []
+    },
+    {
+     "nama": "Hary Sanjaya",
+     "orcid": "0000-0002-1207-3763",
+     "openalex": "A5009770525",
+     "karya_energi_2019_sekarang": 19,
+     "usulan_orang_id": []
+    },
+    {
+     "nama": "Hardeli Hardeli",
+     "orcid": null,
+     "openalex": "A5076133196",
+     "karya_energi_2019_sekarang": 19,
+     "usulan_orang_id": []
+    },
+    {
+     "nama": "Yolli Fernanda",
+     "orcid": "0000-0002-5277-7474",
+     "openalex": "A5051699306",
+     "karya_energi_2019_sekarang": 18,
+     "usulan_orang_id": []
+    },
+    {
+     "nama": "Asnil Asnil",
+     "orcid": "0000-0001-9313-9906",
+     "openalex": "A5080536604",
+     "karya_energi_2019_sekarang": 16,
+     "usulan_orang_id": []
+    },
+    {
+     "nama": "Muldi Yuhendri",
+     "orcid": "0000-0002-2123-2981",
+     "openalex": "A5008738241",
+     "karya_energi_2019_sekarang": 14,
+     "usulan_orang_id": []
+    },
+    {
+     "nama": "Wawan Purwanto",
+     "orcid": "0000-0002-8576-7264",
+     "openalex": "A5051756909",
+     "karya_energi_2019_sekarang": 14,
+     "usulan_orang_id": []
+    },
+    {
+     "nama": "Ali Basrah Pulungan",
+     "orcid": "0000-0002-0257-9402",
+     "openalex": "A5071547801",
+     "karya_energi_2019_sekarang": 14,
+     "usulan_orang_id": []
+    },
+    {
+     "nama": "Remon Lapisa",
+     "orcid": "0000-0003-0919-4641",
+     "openalex": "A5034033213",
+     "karya_energi_2019_sekarang": 12,
+     "usulan_orang_id": []
+    }
+   ],
+   "sumber_url": "https://openalex.org/I245308123",
+   "tanggal_periksa": "2026-11-07",
+   "tingkat_bukti": "via-pihak-ketiga"
+  },
+  {
+   "openalex_id": "I12833781",
+   "nama": "Lampung University",
+   "ror": "https://ror.org/05wtz9f44",
+   "kota": "Bandar Lampung",
+   "organisasi_id": [],
+   "karya_energi_2019_sekarang": 402,
+   "per_topik": {
+    "surya": 93,
+    "angin": 17,
+    "panas_bumi": 77,
+    "bioenergi": 136,
+    "hidro": 15,
+    "hidrogen": 17,
+    "baterai": 35,
+    "kebijakan": 42
+   },
+   "penulis_teratas": [
+    {
+     "nama": "Agus Haryanto",
+     "orcid": "0000-0002-8954-4463",
+     "openalex": "A5003750063",
+     "karya_energi_2019_sekarang": 26,
+     "usulan_orang_id": []
+    },
+    {
+     "nama": "Udin Hasanudin",
+     "orcid": "0000-0002-0535-4866",
+     "openalex": "A5069878969",
+     "karya_energi_2019_sekarang": 25,
+     "usulan_orang_id": []
+    },
+    {
+     "nama": "Ahmad Yonanda",
+     "orcid": "0009-0000-4701-4045",
+     "openalex": "A5054802434",
+     "karya_energi_2019_sekarang": 13,
+     "usulan_orang_id": []
+    },
+    {
+     "nama": "Warji Warji",
+     "orcid": "0000-0003-0723-550X",
+     "openalex": "A5032401321",
+     "karya_energi_2019_sekarang": 12,
+     "usulan_orang_id": []
+    },
+    {
+     "nama": "Wahyu Hidayat",
+     "orcid": "0000-0002-6015-1623",
+     "openalex": "A5073705256",
+     "karya_energi_2019_sekarang": 12,
+     "usulan_orang_id": []
+    },
+    {
+     "nama": "Karyanto Karyanto",
+     "orcid": "0000-0003-0189-4109",
+     "openalex": "A5056901888",
+     "karya_energi_2019_sekarang": 11,
+     "usulan_orang_id": []
+    },
+    {
+     "nama": "Sugeng Triyono",
+     "orcid": "0000-0001-6678-9196",
+     "openalex": "A5020741808",
+     "karya_energi_2019_sekarang": 10,
+     "usulan_orang_id": []
+    },
+    {
+     "nama": "Wasinton Simanjuntak",
+     "orcid": "0000-0001-8152-5084",
+     "openalex": "A5039473237",
+     "karya_energi_2019_sekarang": 10,
+     "usulan_orang_id": []
+    },
+    {
+     "nama": "Heru Wahyudi",
+     "orcid": "0000-0002-4584-8078",
+     "openalex": "A5044077924",
+     "karya_energi_2019_sekarang": 10,
+     "usulan_orang_id": []
+    },
+    {
+     "nama": "Riza Muhida",
+     "orcid": "0000-0003-0165-1465",
+     "openalex": "A5045926481",
+     "karya_energi_2019_sekarang": 10,
+     "usulan_orang_id": []
+    }
+   ],
+   "sumber_url": "https://openalex.org/I12833781",
+   "tanggal_periksa": "2026-11-07",
+   "tingkat_bukti": "via-pihak-ketiga"
+  },
+  {
+   "openalex_id": "I205133468",
+   "nama": "Universitas Airlangga",
+   "ror": "https://ror.org/04ctejd88",
+   "kota": "Surabaya",
+   "organisasi_id": [],
+   "karya_energi_2019_sekarang": 400,
+   "per_topik": {
+    "surya": 147,
+    "angin": 33,
+    "panas_bumi": 10,
+    "bioenergi": 101,
+    "hidro": 8,
+    "hidrogen": 26,
+    "baterai": 81,
+    "kebijakan": 35
+   },
+   "penulis_teratas": [
+    {
+     "nama": "Prisma Megantoro",
+     "orcid": "0000-0001-5898-4522",
+     "openalex": "A5021390654",
+     "karya_energi_2019_sekarang": 33,
+     "usulan_orang_id": []
+    },
+    {
+     "nama": "Herlambang Setiadi",
+     "orcid": "0000-0002-7102-9666",
+     "openalex": "A5082602986",
+     "karya_energi_2019_sekarang": 29,
+     "usulan_orang_id": []
+    },
+    {
+     "nama": "Tahta Amrillah",
+     "orcid": "0000-0002-5333-7980",
+     "openalex": "A5057484227",
+     "karya_energi_2019_sekarang": 28,
+     "usulan_orang_id": []
+    },
+    {
+     "nama": "Lilik Jamilatul Awalin",
+     "orcid": "0000-0003-4543-6994",
+     "openalex": "A5033931352",
+     "karya_energi_2019_sekarang": 23,
+     "usulan_orang_id": []
+    },
+    {
+     "nama": "Handoko Darmokoesoemo",
+     "orcid": "0009-0002-3975-6182",
+     "openalex": "A5078633345",
+     "karya_energi_2019_sekarang": 16,
+     "usulan_orang_id": []
+    },
+    {
+     "nama": "Rezi Delfianti",
+     "orcid": "0000-0002-3923-3851",
+     "openalex": "A5061138669",
+     "karya_energi_2019_sekarang": 15,
+     "usulan_orang_id": []
+    },
+    {
+     "nama": "Aji Akbar Firdaus",
+     "orcid": "0000-0001-5731-6629",
+     "openalex": "A5071937810",
+     "karya_energi_2019_sekarang": 15,
+     "usulan_orang_id": []
+    },
+    {
+     "nama": "Azizan Ahmad",
+     "orcid": "0000-0001-5321-4043",
+     "openalex": "A5024201891",
+     "karya_energi_2019_sekarang": 12,
+     "usulan_orang_id": []
+    },
+    {
+     "nama": "Harsasi Setyawati",
+     "orcid": "0000-0002-5542-3487",
+     "openalex": "A5023034631",
+     "karya_energi_2019_sekarang": 10,
+     "usulan_orang_id": []
+    },
+    {
+     "nama": "Retna Apsari",
+     "orcid": "0000-0002-3597-5938",
+     "openalex": "A5065241651",
+     "karya_energi_2019_sekarang": 10,
+     "usulan_orang_id": []
+    }
+   ],
+   "sumber_url": "https://openalex.org/I205133468",
+   "tanggal_periksa": "2026-11-07",
+   "tingkat_bukti": "via-pihak-ketiga"
+  },
+  {
+   "openalex_id": "I4405261658",
+   "nama": "Politeknik Negeri Malang",
+   "ror": "https://ror.org/05n29k456",
+   "kota": "Kota Malang",
+   "organisasi_id": [],
+   "karya_energi_2019_sekarang": 386,
+   "per_topik": {
+    "surya": 175,
+    "angin": 64,
+    "panas_bumi": 4,
+    "bioenergi": 127,
+    "hidro": 19,
+    "hidrogen": 5,
+    "baterai": 22,
+    "kebijakan": 7
+   },
+   "penulis_teratas": [
+    {
+     "nama": "Mohammad Noor Hidayat",
+     "orcid": "0000-0002-3695-8136",
+     "openalex": "A5027326203",
+     "karya_energi_2019_sekarang": 31,
+     "usulan_orang_id": []
+    },
+    {
+     "nama": "Ferdian Ronilaya",
+     "orcid": "0000-0002-1008-141X",
+     "openalex": "A5027304694",
+     "karya_energi_2019_sekarang": 28,
+     "usulan_orang_id": []
+    },
+    {
+     "nama": "Mochammad Junus",
+     "orcid": "0000-0002-4607-8730",
+     "openalex": "A5086725416",
+     "karya_energi_2019_sekarang": 28,
+     "usulan_orang_id": []
+    },
+    {
+     "nama": "Asrori Asrori",
+     "orcid": "0000-0002-9414-3015",
+     "openalex": "A5062240669",
+     "karya_energi_2019_sekarang": 26,
+     "usulan_orang_id": []
+    },
+    {
+     "nama": "Ratna Ika Putri",
+     "orcid": "0000-0002-6984-3749",
+     "openalex": "A5058805011",
+     "karya_energi_2019_sekarang": 22,
+     "usulan_orang_id": []
+    },
+    {
+     "nama": "Ika Noer Syamsiana",
+     "orcid": "0000-0003-3376-654X",
+     "openalex": "A5022316010",
+     "karya_energi_2019_sekarang": 19,
+     "usulan_orang_id": []
+    },
+    {
+     "nama": "Asalil Mustain",
+     "orcid": "0000-0002-3527-3928",
+     "openalex": "A5040576069",
+     "karya_energi_2019_sekarang": 15,
+     "usulan_orang_id": []
+    },
+    {
+     "nama": "Sugeng Hadi Susilo",
+     "orcid": "0000-0003-3077-2039",
+     "openalex": "A5074107310",
+     "karya_energi_2019_sekarang": 15,
+     "usulan_orang_id": []
+    },
+    {
+     "nama": "Satworo Adiwidodo",
+     "orcid": "0000-0002-4774-6438",
+     "openalex": "A5056750384",
+     "karya_energi_2019_sekarang": 13,
+     "usulan_orang_id": []
+    },
+    {
+     "nama": "Hangga Wicaksono",
+     "orcid": "0000-0003-0570-1597",
+     "openalex": "A5090069510",
+     "karya_energi_2019_sekarang": 13,
+     "usulan_orang_id": []
+    }
+   ],
+   "sumber_url": "https://openalex.org/I4405261658",
+   "tanggal_periksa": "2026-11-07",
+   "tingkat_bukti": "via-pihak-ketiga"
+  },
+  {
+   "openalex_id": "I271888150",
+   "nama": "Sriwijaya University",
+   "ror": "https://ror.org/030bmb197",
+   "kota": "Palembang",
+   "organisasi_id": [],
+   "karya_energi_2019_sekarang": 379,
+   "per_topik": {
+    "surya": 90,
+    "angin": 27,
+    "panas_bumi": 24,
+    "bioenergi": 140,
+    "hidro": 25,
+    "hidrogen": 41,
+    "baterai": 31,
+    "kebijakan": 26
+   },
+   "penulis_teratas": [
+    {
+     "nama": "Dedi Rohendi",
+     "orcid": "0000-0003-0440-7767",
+     "openalex": "A5030649528",
+     "karya_energi_2019_sekarang": 26,
+     "usulan_orang_id": []
+    },
+    {
+     "nama": "Dendy Adanta",
+     "orcid": "0000-0002-5701-8274",
+     "openalex": "A5039844889",
+     "karya_energi_2019_sekarang": 26,
+     "usulan_orang_id": []
+    },
+    {
+     "nama": "Nirwan Syarif",
+     "orcid": "0000-0003-3325-7382",
+     "openalex": "A5027213588",
+     "karya_energi_2019_sekarang": 25,
+     "usulan_orang_id": []
+    },
+    {
+     "nama": "Hasanudin Hasanudin",
+     "orcid": "0000-0003-2153-9163",
+     "openalex": "A5019487955",
+     "karya_energi_2019_sekarang": 23,
+     "usulan_orang_id": []
+    },
+    {
+     "nama": "Susila Arita",
+     "orcid": "0000-0002-4286-9877",
+     "openalex": "A5089131411",
+     "karya_energi_2019_sekarang": 22,
+     "usulan_orang_id": []
+    },
+    {
+     "nama": "Armin Sofijan",
+     "orcid": "0000-0002-8469-6249",
+     "openalex": "A5091619196",
+     "karya_energi_2019_sekarang": 22,
+     "usulan_orang_id": []
+    },
+    {
+     "nama": "Fitri Hadiah",
+     "orcid": "0000-0002-4222-2352",
+     "openalex": "A5050288193",
+     "karya_energi_2019_sekarang": 20,
+     "usulan_orang_id": []
+    },
+    {
+     "nama": "Leily Nurul Komariah",
+     "orcid": "0000-0002-2094-9403",
+     "openalex": "A5031399564",
+     "karya_energi_2019_sekarang": 18,
+     "usulan_orang_id": []
+    },
+    {
+     "nama": "Novia Novia",
+     "orcid": "0000-0002-0046-6076",
+     "openalex": "A5013234324",
+     "karya_energi_2019_sekarang": 17,
+     "usulan_orang_id": []
+    },
+    {
+     "nama": "Addy Rachmat",
+     "orcid": "0000-0003-4161-2794",
+     "openalex": "A5030427668",
+     "karya_energi_2019_sekarang": 17,
+     "usulan_orang_id": []
+    }
+   ],
+   "sumber_url": "https://openalex.org/I271888150",
+   "tanggal_periksa": "2026-11-07",
+   "tingkat_bukti": "via-pihak-ketiga"
+  },
+  {
+   "openalex_id": "I148158369",
+   "nama": "State University of Semarang",
+   "ror": "https://ror.org/02fsk7e17",
+   "kota": "Semarang",
+   "organisasi_id": [],
+   "karya_energi_2019_sekarang": 354,
+   "per_topik": {
+    "surya": 88,
+    "angin": 35,
+    "panas_bumi": 9,
+    "bioenergi": 163,
+    "hidro": 23,
+    "hidrogen": 12,
+    "baterai": 31,
+    "kebijakan": 28
+   },
+   "penulis_teratas": [
+    {
+     "nama": "Ratna Dewi Kusumaningtyas",
+     "orcid": "0000-0002-5887-2536",
+     "openalex": "A5087885006",
+     "karya_energi_2019_sekarang": 24,
+     "usulan_orang_id": []
+    },
+    {
+     "nama": "Megawati Megawati",
+     "orcid": "0000-0001-9742-6216",
+     "openalex": "A5033151750",
+     "karya_energi_2019_sekarang": 19,
+     "usulan_orang_id": []
+    },
+    {
+     "nama": "Zuhriyan Ash Shiddieqy Bahlawan",
+     "orcid": "0000-0003-3872-4402",
+     "openalex": "A5067938926",
+     "karya_energi_2019_sekarang": 19,
+     "usulan_orang_id": []
+    },
+    {
+     "nama": "Astrilia Damayanti",
+     "orcid": "0000-0001-5724-0791",
+     "openalex": "A5040759907",
+     "karya_energi_2019_sekarang": 17,
+     "usulan_orang_id": []
+    },
+    {
+     "nama": "Rizky Ajie Aprilianto",
+     "orcid": "0000-0003-0936-3230",
+     "openalex": "A5046965237",
+     "karya_energi_2019_sekarang": 15,
+     "usulan_orang_id": []
+    },
+    {
+     "nama": "Samsudin Anis",
+     "orcid": "0000-0003-4414-544X",
+     "openalex": "A5067871878",
+     "karya_energi_2019_sekarang": 15,
+     "usulan_orang_id": []
+    },
+    {
+     "nama": "Haniif Prasetiawan",
+     "orcid": "0000-0001-9819-6686",
+     "openalex": "A5019218069",
+     "karya_energi_2019_sekarang": 13,
+     "usulan_orang_id": []
+    },
+    {
+     "nama": "Deni Fajar Fitriyana",
+     "orcid": "0000-0002-5287-6122",
+     "openalex": "A5054951331",
+     "karya_energi_2019_sekarang": 13,
+     "usulan_orang_id": []
+    },
+    {
+     "nama": "Dhoni Hartanto",
+     "orcid": "0000-0003-4127-5361",
+     "openalex": "A5003188075",
+     "karya_energi_2019_sekarang": 12,
+     "usulan_orang_id": []
+    },
+    {
+     "nama": "Putut Marwoto",
+     "orcid": "0000-0001-8926-9441",
+     "openalex": "A5013309193",
+     "karya_energi_2019_sekarang": 10,
+     "usulan_orang_id": []
+    }
+   ],
+   "sumber_url": "https://openalex.org/I148158369",
+   "tanggal_periksa": "2026-11-07",
+   "tingkat_bukti": "via-pihak-ketiga"
+  },
+  {
+   "openalex_id": "I3129486149",
+   "nama": "Universitas Jember",
+   "ror": "https://ror.org/049f0ha78",
+   "kota": "Jember",
+   "organisasi_id": [],
+   "karya_energi_2019_sekarang": 324,
+   "per_topik": {
+    "surya": 78,
+    "angin": 24,
+    "panas_bumi": 25,
+    "bioenergi": 145,
+    "hidro": 9,
+    "hidrogen": 25,
+    "baterai": 22,
+    "kebijakan": 10
+   },
+   "penulis_teratas": [
+    {
+     "nama": "Nasrul Ilminnafik",
+     "orcid": "0000-0001-7310-137X",
+     "openalex": "A5052776392",
+     "karya_energi_2019_sekarang": 33,
+     "usulan_orang_id": []
+    },
+    {
+     "nama": "Sudarti Sudarti",
+     "orcid": "0000-0002-9199-5589",
+     "openalex": "A5038751241",
+     "karya_energi_2019_sekarang": 20,
+     "usulan_orang_id": []
+    },
+    {
+     "nama": "Andi Sanata",
+     "orcid": "0000-0001-5508-8642",
+     "openalex": "A5040794447",
+     "karya_energi_2019_sekarang": 15,
+     "usulan_orang_id": []
+    },
+    {
+     "nama": "Dani Hari Tunggal Prasetiyo",
+     "orcid": "0000-0002-2153-4381",
+     "openalex": "A5021273014",
+     "karya_energi_2019_sekarang": 14,
+     "usulan_orang_id": []
+    },
+    {
+     "nama": "Yushardi Yushardi",
+     "orcid": "0009-0004-9122-484X",
+     "openalex": "A5045967313",
+     "karya_energi_2019_sekarang": 14,
+     "usulan_orang_id": []
+    },
+    {
+     "nama": "Boy Arief Fachri",
+     "orcid": "0000-0002-0279-0670",
+     "openalex": "A5050924471",
+     "karya_energi_2019_sekarang": 12,
+     "usulan_orang_id": []
+    },
+    {
+     "nama": "Endhah Purwandari",
+     "orcid": "0000-0002-4679-8754",
+     "openalex": "A5035348125",
+     "karya_energi_2019_sekarang": 10,
+     "usulan_orang_id": []
+    },
+    {
+     "nama": "Bekti Palupi",
+     "orcid": "0000-0002-6164-5254",
+     "openalex": "A5069625481",
+     "karya_energi_2019_sekarang": 10,
+     "usulan_orang_id": []
+    },
+    {
+     "nama": "Elida Novita",
+     "orcid": "0000-0001-5210-4694",
+     "openalex": "A5072089664",
+     "karya_energi_2019_sekarang": 10,
+     "usulan_orang_id": []
+    },
+    {
+     "nama": "Muh Nurkoyim Kustanto",
+     "orcid": "0000-0002-6632-4265",
+     "openalex": "A5081785709",
+     "karya_energi_2019_sekarang": 10,
+     "usulan_orang_id": []
+    }
+   ],
+   "sumber_url": "https://openalex.org/I3129486149",
+   "tanggal_periksa": "2026-11-07",
+   "tingkat_bukti": "via-pihak-ketiga"
+  },
+  {
+   "openalex_id": "I126826664",
+   "nama": "Udayana University",
+   "ror": "https://ror.org/035qsg823",
+   "kota": "Denpasar",
+   "organisasi_id": [],
+   "karya_energi_2019_sekarang": 317,
+   "per_topik": {
+    "surya": 112,
+    "angin": 26,
+    "panas_bumi": 10,
+    "bioenergi": 108,
+    "hidro": 38,
+    "hidrogen": 9,
+    "baterai": 30,
+    "kebijakan": 12
+   },
+   "penulis_teratas": [
+    {
+     "nama": "I Nyoman Satya Kumara",
+     "orcid": "0000-0003-3840-4169",
+     "openalex": "A5091425892",
+     "karya_energi_2019_sekarang": 36,
+     "usulan_orang_id": []
+    },
+    {
+     "nama": "Ida Ayu Dwi Giriantari",
+     "orcid": "0000-0002-2326-2594",
+     "openalex": "A5039735171",
+     "karya_energi_2019_sekarang": 33,
+     "usulan_orang_id": []
+    },
+    {
+     "nama": "Wayan Gede Ariastina",
+     "orcid": "0000-0002-0901-755X",
+     "openalex": "A5005532500",
+     "karya_energi_2019_sekarang": 29,
+     "usulan_orang_id": []
+    },
+    {
+     "nama": "I Wayan Sukerayasa",
+     "orcid": null,
+     "openalex": "A5033042054",
+     "karya_energi_2019_sekarang": 25,
+     "usulan_orang_id": []
+    },
+    {
+     "nama": "Tjokorda Gde Tirta Nindhia",
+     "orcid": "0000-0003-3261-427X",
+     "openalex": "A5066873071",
+     "karya_energi_2019_sekarang": 23,
+     "usulan_orang_id": [
+      "ot_4c16b3fae4"
+     ]
+    },
+    {
+     "nama": "I Wayan Arta Wijaya",
+     "orcid": null,
+     "openalex": "A5109409538",
+     "karya_energi_2019_sekarang": 18,
+     "usulan_orang_id": []
+    },
+    {
+     "nama": "Lie Jasa",
+     "orcid": "0000-0002-3166-4243",
+     "openalex": "A5089373959",
+     "karya_energi_2019_sekarang": 17,
+     "usulan_orang_id": []
+    },
+    {
+     "nama": "I Wayan Sukerayasa",
+     "orcid": null,
+     "openalex": "A5003939138",
+     "karya_energi_2019_sekarang": 15,
+     "usulan_orang_id": []
+    },
+    {
+     "nama": "Ida Bagus Wayan Gunam",
+     "orcid": "0000-0002-2822-6656",
+     "openalex": "A5021231698",
+     "karya_energi_2019_sekarang": 13,
+     "usulan_orang_id": []
+    },
+    {
+     "nama": "Ngakan Ketut Acwin Dwijendra",
+     "orcid": "0000-0003-0070-4254",
+     "openalex": "A5057433388",
+     "karya_energi_2019_sekarang": 13,
+     "usulan_orang_id": []
+    }
+   ],
+   "sumber_url": "https://openalex.org/I126826664",
+   "tanggal_periksa": "2026-11-07",
+   "tingkat_bukti": "via-pihak-ketiga"
+  },
+  {
+   "openalex_id": "I862893732",
+   "nama": "Telkom University",
+   "ror": "https://ror.org/0004wsx81",
+   "kota": "Bandung",
+   "organisasi_id": [],
+   "karya_energi_2019_sekarang": 317,
+   "per_topik": {
+    "surya": 162,
+    "angin": 18,
+    "panas_bumi": 11,
+    "bioenergi": 39,
+    "hidro": 10,
+    "hidrogen": 35,
+    "baterai": 42,
+    "kebijakan": 27
+   },
+   "penulis_teratas": [
+    {
+     "nama": "Mukhammad Ramdlan Kirom",
+     "orcid": null,
+     "openalex": "A5110820076",
+     "karya_energi_2019_sekarang": 26,
+     "usulan_orang_id": []
+    },
+    {
+     "nama": "Bandiyah Sri Aprillia",
+     "orcid": "0000-0003-4219-6091",
+     "openalex": "A5029729923",
+     "karya_energi_2019_sekarang": 25,
+     "usulan_orang_id": []
+    },
+    {
+     "nama": "Jangkung Raharjo",
+     "orcid": "0000-0001-7082-5583",
+     "openalex": "A5011788027",
+     "karya_energi_2019_sekarang": 20,
+     "usulan_orang_id": []
+    },
+    {
+     "nama": "Kharisma Bani Adam",
+     "orcid": "0000-0002-7296-6416",
+     "openalex": "A5076032102",
+     "karya_energi_2019_sekarang": 15,
+     "usulan_orang_id": []
+    },
+    {
+     "nama": "Amaliyah Rohsari Indah Utami",
+     "orcid": "0000-0002-3077-2285",
+     "openalex": "A5041811010",
+     "karya_energi_2019_sekarang": 14,
+     "usulan_orang_id": []
+    },
+    {
+     "nama": "Sudarmono Sasmono",
+     "orcid": "0000-0001-5655-4844",
+     "openalex": "A5001278148",
+     "karya_energi_2019_sekarang": 13,
+     "usulan_orang_id": []
+    },
+    {
+     "nama": "Desri Kristina Silalahi",
+     "orcid": "0000-0002-2092-306X",
+     "openalex": "A5046066625",
+     "karya_energi_2019_sekarang": 13,
+     "usulan_orang_id": []
+    },
+    {
+     "nama": "Tri Ayodha Ajiwiguna",
+     "orcid": null,
+     "openalex": "A5022835282",
+     "karya_energi_2019_sekarang": 12,
+     "usulan_orang_id": []
+    },
+    {
+     "nama": "Asep Suhendi",
+     "orcid": "0000-0003-3886-2725",
+     "openalex": "A5034085330",
+     "karya_energi_2019_sekarang": 11,
+     "usulan_orang_id": []
+    },
+    {
+     "nama": "Ahmad Qurthobi",
+     "orcid": "0000-0003-3882-2897",
+     "openalex": "A5009305465",
+     "karya_energi_2019_sekarang": 10,
+     "usulan_orang_id": []
+    }
+   ],
+   "sumber_url": "https://openalex.org/I862893732",
+   "tanggal_periksa": "2026-11-07",
+   "tingkat_bukti": "via-pihak-ketiga"
+  },
+  {
+   "openalex_id": "I130218214",
+   "nama": "Indonesia University of Education",
+   "ror": "https://ror.org/044b0xj37",
+   "kota": "Bandung",
+   "organisasi_id": [],
+   "karya_energi_2019_sekarang": 288,
+   "per_topik": {
+    "surya": 104,
+    "angin": 25,
+    "panas_bumi": 19,
+    "bioenergi": 86,
+    "hidro": 9,
+    "hidrogen": 19,
+    "baterai": 32,
+    "kebijakan": 18
+   },
+   "penulis_teratas": [
+    {
+     "nama": "Eka Cahya Prima",
+     "orcid": "0000-0002-7852-5611",
+     "openalex": "A5016574738",
+     "karya_energi_2019_sekarang": 29,
+     "usulan_orang_id": []
+    },
+    {
+     "nama": "Asep Bayu Dani Nandiyanto",
+     "orcid": "0000-0002-9753-1267",
+     "openalex": "A5086473945",
+     "karya_energi_2019_sekarang": 26,
+     "usulan_orang_id": []
+    },
+    {
+     "nama": "Lilik Hasanah",
+     "orcid": "0000-0002-7281-2556",
+     "openalex": "A5065041759",
+     "karya_energi_2019_sekarang": 17,
+     "usulan_orang_id": []
+    },
+    {
+     "nama": "Fitri Khoerunnisa",
+     "orcid": "0000-0002-0198-756X",
+     "openalex": "A5014947317",
+     "karya_energi_2019_sekarang": 14,
+     "usulan_orang_id": []
+    },
+    {
+     "nama": "Heli Siti Halimatul Munawaroh",
+     "orcid": "0000-0002-4028-5747",
+     "openalex": "A5029014226",
+     "karya_energi_2019_sekarang": 14,
+     "usulan_orang_id": []
+    },
+    {
+     "nama": "Roer Eka Pawinanto",
+     "orcid": "0000-0002-8183-1249",
+     "openalex": "A5012310271",
+     "karya_energi_2019_sekarang": 12,
+     "usulan_orang_id": []
+    },
+    {
+     "nama": "Ade Gafar Abdullah",
+     "orcid": "0000-0001-8917-2375",
+     "openalex": "A5039589482",
+     "karya_energi_2019_sekarang": 12,
+     "usulan_orang_id": []
+    },
+    {
+     "nama": "Andhy Setiawan",
+     "orcid": "0000-0002-0922-3644",
+     "openalex": "A5027469713",
+     "karya_energi_2019_sekarang": 11,
+     "usulan_orang_id": []
+    },
+    {
+     "nama": "Endi Suhendi",
+     "orcid": "0000-0001-8256-8537",
+     "openalex": "A5083882455",
+     "karya_energi_2019_sekarang": 11,
+     "usulan_orang_id": []
+    },
+    {
+     "nama": "Dadang Lukman Hakim",
+     "orcid": "0000-0002-7655-518X",
+     "openalex": "A5023081241",
+     "karya_energi_2019_sekarang": 9,
+     "usulan_orang_id": []
+    }
+   ],
+   "sumber_url": "https://openalex.org/I130218214",
+   "tanggal_periksa": "2026-11-07",
+   "tingkat_bukti": "via-pihak-ketiga"
+  }
+ ],
+ "meta": {
+  "catatan": "karya = karya berjudul/abstrak cocok kueri topik dengan >= 1 afiliasi institusi (karya bersama dihitung ke tiap institusi; topik saling tumpang tindih, jangan dijumlahkan). Pencarian kata kunci judul/abstrak berbahasa Inggris. usulan_orang_id = kecocokan NAMA persis ke orang.json: usulan untuk kurator, bukan penggabungan. Penulis = afiliasi X di OpenAlex dan ikut karya energi berafiliasi X; jumlah karya penulis = karya energi (2019+) yang memuat X.",
+  "celah": [
+   "Hanya 25 kampus teratas menurut karya energi; kampus lain dan lembaga riset non-pendidikan (BRIN, LIPI) tidak diambil.",
+   "Tanpa kunci API dan tanpa parameter mailto (tidak ada alamat generik METI ditetapkan); anggaran gratis harian bersama.",
+   "Kueri kata kunci bahasa Inggris saja; karya berbahasa Indonesia terlewat. Tidak memakai klasifikasi topik OpenAlex.",
+   "organisasi_id memetakan kampus ke unit pusat studi di organisasi.json berdasarkan nama kampus pada nama unit; kosong bila tidak ada."
+  ]
+ }
+}

@@ -13,6 +13,7 @@ import { teksLencana } from "/inti/pesan_umum.js";
 import { akunMenuHtml, pasangAkunMenu } from "/inti/akun_menu.js";
 import "/inti/mata_sandi.js";
 import "/inti/galat_gambar.js";
+import "/inti/sejajar.js";
 
 export const PITA_DRAF = false; // pemilik 7 Nov 2026: pita draf tidak ditampilkan
 const STAF = ["pengurus", "kurator", "admin", "super"];

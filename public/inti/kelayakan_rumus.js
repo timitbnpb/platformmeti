@@ -120,3 +120,10 @@ export function bppDari(baris) {
   }
   return null;
 }
+
+/** Skala warna peta 0..1 untuk nilai v di rentang [min, maks]; akar=true meredam provinsi raksasa (sumber daya MW). -1 bila tanpa data. */
+export function skala(v, min, maks, akar = false) {
+  if (!Number.isFinite(v) || !(maks > min)) return -1;
+  const x = Math.min(1, Math.max(0, (v - min) / (maks - min)));
+  return akar ? Math.sqrt(x) : x;
+}

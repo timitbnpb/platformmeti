@@ -1,5 +1,5 @@
-# Bendera negara ASEAN
+# Bendera negara (ASEAN dan negara sumber media berita)
 
 Bendera SVG datar (rasio 4:3) dari paket npm `flag-icons` 7.2.3 (https://github.com/lipis/flag-icons), lisensi MIT. Diunduh 7 Nov 2026 dari cdn.jsdelivr.net/npm/flag-icons@7.2.3/flags/4x3/<iso2>.svg, disimpan lokal (tanpa hotlink). Tidak ada elemen `<script>` di dalamnya.
 
-Berkas: id, vn, ph, th, my, sg, la, kh, mm, bn, tl (Timor-Leste belum ada di data /asean).
+Berkas: ae, au, az, bd, bn, br, ca, cn, de, eg, es, fr, gb, gh, hk, id, il, in, ir, it, jp, ke, kh, kr, la, mm, my, ng, nl, nz, ph, pk, qa, ru, sa, sg, th, tl, tr, tw, tz, us, vn, za (Timor-Leste belum ada di data /asean).

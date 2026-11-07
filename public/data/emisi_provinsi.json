@@ -1,0 +1,45 @@
+{
+ "jenis": "emisi_provinsi",
+ "sumber": "Statistik Ketenagalistrikan Tahun 2024, ESDM Gatrik, Tabel 18 hlm 15",
+ "url": "https://gatrik.esdm.go.id/gatrik/gatrik-api//storage/migrasi/download_index/files/91fa8-buku-statistik-ketenagalistrikan-2024.pdf",
+ "tanggal_ambil": "2026-11-07",
+ "tingkat_bukti": "situs-sendiri",
+ "lisensi": "publikasi pemerintah terbuka; hanya angka, atribusi ESDM",
+ "nasional": {
+  "emisi_energi_per_subsektor": [],
+  "mitigasi_ketenagalistrikan": {
+   "satuan": "juta ton CO2 (capaian tahun n dari perhitungan tahun n-1, per catatan sumber)",
+   "baris": [
+    {
+     "tahun": 2020,
+     "juta_ton_co2": 8.78
+    },
+    {
+     "tahun": 2021,
+     "juta_ton_co2": 10.37
+    },
+    {
+     "tahun": 2022,
+     "juta_ton_co2": 13.83
+    },
+    {
+     "tahun": 2023,
+     "juta_ton_co2": 15.32
+    },
+    {
+     "tahun": 2024,
+     "juta_ton_co2": 16.94
+    }
+   ]
+  }
+ },
+ "provinsi": [],
+ "meta": {
+  "catatan": "provinsi sengaja kosong dan emisi nasional per subsektor kosong: tidak ada sumber emisi yang terbuka dan terjangkau. mitigasi BUKAN emisi dan tidak boleh ditampilkan sebagai emisi.",
+  "celah": [
+   "SIGN SMART KLHK (signsmart.menlhk.go.id): host tidak ter-resolve dari lingkungan panen pada 2026-11-07; coba ulang dari jaringan lain.",
+   "Climate Watch (WRI): /api/ dilarang robots.txt, tidak dipanggil.",
+   "Emisi sektor energi per provinsi dan per subsektor nasional: tidak ada; perlu SIGN SMART atau Laporan Inventarisasi GRK/BUR (KLHK) yang diunduh manual."
+  ]
+ }
+}

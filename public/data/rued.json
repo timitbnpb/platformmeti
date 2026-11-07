@@ -1,0 +1,772 @@
+{
+ "jenis": "rued",
+ "sumber": "Perda RUED provinsi, peraturan.bpk.go.id",
+ "tanggal_ambil": "2026-11-08",
+ "tingkat_bukti": "resmi",
+ "lisensi": "dokumen peraturan (domain publik)",
+ "jumlah": 27,
+ "dengan_target": 21,
+ "baris": [
+  {
+   "kode": "52",
+   "provinsi": "Nusa Tenggara Barat",
+   "perda": "3/2019",
+   "judul": "PEDOMAN PENYUSUNAN RENCANA UMUM ENERGI DAERAH PROVINSI",
+   "perda_id": "perda-b124395-3-2019",
+   "target": null,
+   "kutipan": "tak ada angka persentase: PDF hanya batang tubuh (lampiran RUED-P tidak ikut)",
+   "realisasi": {
+    "tahun": 2024,
+    "ebt_mw": 69,
+    "total_mw": 1442,
+    "pangsa_kapasitas_persen": 4.8,
+    "sumber_url": "https://gatrik.esdm.go.id/gatrik/gatrik-api//storage/migrasi/download_index/files/91fa8-buku-statistik-ketenagalistrikan-2024.pdf",
+    "catatan": "pangsa KAPASITAS terpasang EBT (PLTA+PLTB+PLT bio+PLTP+PLTS) dari Statistik Ketenagalistrikan 2024; bukan bauran energi primer, jadi hanya pembanding kasar"
+   },
+   "selisih_2025_poin": null,
+   "sumber_url": "https://peraturan.bpk.go.id/Details/124395",
+   "url_pdf": "https://peraturan.bpk.go.id/Download/115352/Perda%20Nomor%203%20Tahun%202019%20tentang%20RUED-dikompresi.pdf",
+   "tanggal_periksa": "2026-11-08",
+   "tingkat_bukti": "resmi"
+  },
+  {
+   "kode": "75",
+   "provinsi": "Gorontalo",
+   "perda": "7/2019",
+   "judul": "Rencana Umum Energi Daerah",
+   "perda_id": "perda-b132147-7-2019",
+   "target": {
+    "ebt_2025_persen": 15.4,
+    "ebt_akhir": {
+     "tahun": 2050,
+     "persen": 37.9
+    },
+    "jenis": "lampiran"
+   },
+   "kutipan": "pangsa energi baru terbarukan sebesar 15,4% persen pada tahun 2025 … 37,9% persen pada tahun 2050",
+   "realisasi": {
+    "tahun": 2024,
+    "ebt_mw": 21,
+    "total_mw": 322,
+    "pangsa_kapasitas_persen": 6.5,
+    "sumber_url": "https://gatrik.esdm.go.id/gatrik/gatrik-api//storage/migrasi/download_index/files/91fa8-buku-statistik-ketenagalistrikan-2024.pdf",
+    "catatan": "pangsa KAPASITAS terpasang EBT (PLTA+PLTB+PLT bio+PLTP+PLTS) dari Statistik Ketenagalistrikan 2024; bukan bauran energi primer, jadi hanya pembanding kasar"
+   },
+   "selisih_2025_poin": 8.9,
+   "sumber_url": "https://peraturan.bpk.go.id/Details/132147",
+   "url_pdf": "https://peraturan.bpk.go.id/Download/122940/PERDA%20Gorontalo%20No%207%20th%202019%20ttg%20Rencana%20Umum%20Energi%20Daerah.pdf",
+   "tanggal_periksa": "2026-11-08",
+   "tingkat_bukti": "resmi"
+  },
+  {
+   "kode": "65",
+   "provinsi": "Kalimantan Utara",
+   "perda": "3/2019",
+   "judul": "Rencana Umum Energi Daerah",
+   "perda_id": "perda-b134981-3-2019",
+   "target": null,
+   "kutipan": "tak ada angka persentase: PDF hanya batang tubuh; digantikan Perda 8/2025",
+   "realisasi": {
+    "tahun": 2024,
+    "ebt_mw": 5,
+    "total_mw": 320,
+    "pangsa_kapasitas_persen": 1.6,
+    "sumber_url": "https://gatrik.esdm.go.id/gatrik/gatrik-api//storage/migrasi/download_index/files/91fa8-buku-statistik-ketenagalistrikan-2024.pdf",
+    "catatan": "pangsa KAPASITAS terpasang EBT (PLTA+PLTB+PLT bio+PLTP+PLTS) dari Statistik Ketenagalistrikan 2024; bukan bauran energi primer, jadi hanya pembanding kasar"
+   },
+   "selisih_2025_poin": null,
+   "sumber_url": "https://peraturan.bpk.go.id/Details/134981",
+   "url_pdf": "https://peraturan.bpk.go.id/Download/254568/PERDA-3%20Tahun%202019_1.pdf",
+   "tanggal_periksa": "2026-11-08",
+   "tingkat_bukti": "resmi"
+  },
+  {
+   "kode": "15",
+   "provinsi": "Jambi",
+   "perda": "13/2019",
+   "judul": "RENCANA UMUM ENERGI DAERAH PROVINSI TAHUN 2019-2050",
+   "perda_id": "perda-b138377-13-2019",
+   "target": {
+    "ebt_2025_persen": 24,
+    "ebt_akhir": {
+     "tahun": 2050,
+     "persen": 40
+    },
+    "jenis": "pasal"
+   },
+   "kutipan": "24% (dua puluh empat persen) di tahun 2025 … 40% (empat puluh persen) di tahun 2050",
+   "realisasi": {
+    "tahun": 2024,
+    "ebt_mw": 76,
+    "total_mw": 720,
+    "pangsa_kapasitas_persen": 10.6,
+    "sumber_url": "https://gatrik.esdm.go.id/gatrik/gatrik-api//storage/migrasi/download_index/files/91fa8-buku-statistik-ketenagalistrikan-2024.pdf",
+    "catatan": "pangsa KAPASITAS terpasang EBT (PLTA+PLTB+PLT bio+PLTP+PLTS) dari Statistik Ketenagalistrikan 2024; bukan bauran energi primer, jadi hanya pembanding kasar"
+   },
+   "selisih_2025_poin": 13.4,
+   "sumber_url": "https://peraturan.bpk.go.id/Details/138377",
+   "url_pdf": "https://peraturan.bpk.go.id/Download/129567/8399PERDANo.13Tahun2019.pdf",
+   "tanggal_periksa": "2026-11-08",
+   "tingkat_bukti": "resmi"
+  },
+  {
+   "kode": "72",
+   "provinsi": "Sulawesi Tengah",
+   "perda": "10/2019",
+   "judul": "Rencana Umum Energi Daerah Tahun 2019-2050",
+   "perda_id": "perda-b139262-10-2019",
+   "target": {
+    "ebt_2025_persen": 30.51,
+    "ebt_akhir": {
+     "tahun": 2050,
+     "persen": 42.09
+    },
+    "jenis": "pasal"
+   },
+   "kutipan": "sampai dengan Tahun 2025 sebesar 30,51% … sampai dengan Tahun 2050 sebesar 42,09%",
+   "realisasi": {
+    "tahun": 2024,
+    "ebt_mw": 649,
+    "total_mw": 7085,
+    "pangsa_kapasitas_persen": 9.2,
+    "sumber_url": "https://gatrik.esdm.go.id/gatrik/gatrik-api//storage/migrasi/download_index/files/91fa8-buku-statistik-ketenagalistrikan-2024.pdf",
+    "catatan": "pangsa KAPASITAS terpasang EBT (PLTA+PLTB+PLT bio+PLTP+PLTS) dari Statistik Ketenagalistrikan 2024; bukan bauran energi primer, jadi hanya pembanding kasar"
+   },
+   "selisih_2025_poin": 21.3,
+   "sumber_url": "https://peraturan.bpk.go.id/Details/139262",
+   "url_pdf": "https://peraturan.bpk.go.id/Download/130561/PERDA_NOMOR_10_TAHUN_2019.pdf",
+   "tanggal_periksa": "2026-11-08",
+   "tingkat_bukti": "resmi"
+  },
+  {
+   "kode": "19",
+   "provinsi": "Kepulauan Bangka Belitung",
+   "perda": "13/2019",
+   "judul": "RENCANA UMUM ENERGI DAERAH TAHUN 2019-2050",
+   "perda_id": "perda-b139887-13-2019",
+   "target": {
+    "ebt_2025_persen": 17.21,
+    "ebt_akhir": {
+     "tahun": 2050,
+     "persen": 30.97
+    },
+    "jenis": "pasal"
+   },
+   "kutipan": "ditargetkan mendekati sebesar 17,21% … tahun 2025 dan sebesar 30,97%",
+   "realisasi": {
+    "tahun": 2024,
+    "ebt_mw": 125,
+    "total_mw": 490,
+    "pangsa_kapasitas_persen": 25.5,
+    "sumber_url": "https://gatrik.esdm.go.id/gatrik/gatrik-api//storage/migrasi/download_index/files/91fa8-buku-statistik-ketenagalistrikan-2024.pdf",
+    "catatan": "pangsa KAPASITAS terpasang EBT (PLTA+PLTB+PLT bio+PLTP+PLTS) dari Statistik Ketenagalistrikan 2024; bukan bauran energi primer, jadi hanya pembanding kasar"
+   },
+   "selisih_2025_poin": -8.3,
+   "sumber_url": "https://peraturan.bpk.go.id/Details/139887",
+   "url_pdf": "https://peraturan.bpk.go.id/Download/131254/Perda%20Prov%20Babel%2013-2019.pdf",
+   "tanggal_periksa": "2026-11-08",
+   "tingkat_bukti": "resmi"
+  },
+  {
+   "kode": "34",
+   "provinsi": "DI Yogyakarta",
+   "perda": "6/2020",
+   "judul": "Rencana Umum Energi Daerah Daerah Istimewa Yogyakarta Tahun 2020 – 2050",
+   "perda_id": "perda-b146550-6-2020",
+   "target": null,
+   "kutipan": "tak ada persentase bauran EBT; hanya pasokan EBT lokal (KTOE) di lampiran",
+   "realisasi": {
+    "tahun": 2024,
+    "ebt_mw": 8,
+    "total_mw": 15,
+    "pangsa_kapasitas_persen": 53.3,
+    "sumber_url": "https://gatrik.esdm.go.id/gatrik/gatrik-api//storage/migrasi/download_index/files/91fa8-buku-statistik-ketenagalistrikan-2024.pdf",
+    "catatan": "pangsa KAPASITAS terpasang EBT (PLTA+PLTB+PLT bio+PLTP+PLTS) dari Statistik Ketenagalistrikan 2024; bukan bauran energi primer, jadi hanya pembanding kasar"
+   },
+   "selisih_2025_poin": null,
+   "sumber_url": "https://peraturan.bpk.go.id/Details/146550",
+   "url_pdf": "https://peraturan.bpk.go.id/Download/138377/Perda%20DIY%20No.6%20Tahun%202020%20ttg%20Rencana%20Umum%20Energi%20Daerah%20Daerah%20Istimewa%20Yogyakarta%20Tahun%202020%20%E2%80%93%202050.pdf",
+   "tanggal_periksa": "2026-11-08",
+   "tingkat_bukti": "resmi"
+  },
+  {
+   "kode": "51",
+   "provinsi": "Bali",
+   "perda": "9/2020",
+   "judul": "Rencana Umum Energi Daerah Provinsi Bali Tahun 2020-2050",
+   "perda_id": "perda-b148301-9-2020",
+   "target": {
+    "ebt_2025_persen": 23,
+    "ebt_akhir": {
+     "tahun": 2050,
+     "persen": 31
+    },
+    "jenis": "ruen"
+   },
+   "kutipan": "Pada tahun 2025 peran Energi baru terbarukan paling sedikit 23% … 2050 paling sedikit 31%",
+   "realisasi": {
+    "tahun": 2024,
+    "ebt_mw": 18,
+    "total_mw": 1261,
+    "pangsa_kapasitas_persen": 1.4,
+    "sumber_url": "https://gatrik.esdm.go.id/gatrik/gatrik-api//storage/migrasi/download_index/files/91fa8-buku-statistik-ketenagalistrikan-2024.pdf",
+    "catatan": "pangsa KAPASITAS terpasang EBT (PLTA+PLTB+PLT bio+PLTP+PLTS) dari Statistik Ketenagalistrikan 2024; bukan bauran energi primer, jadi hanya pembanding kasar"
+   },
+   "selisih_2025_poin": 21.6,
+   "sumber_url": "https://peraturan.bpk.go.id/Details/148301",
+   "url_pdf": "https://peraturan.bpk.go.id/Download/252196/Perda-9-Prov-2020.pdf",
+   "tanggal_periksa": "2026-11-08",
+   "tingkat_bukti": "resmi"
+  },
+  {
+   "kode": "17",
+   "provinsi": "Bengkulu",
+   "perda": "7/2019",
+   "judul": "Rencana Umum Energi Daerah Provinsi Bengkulu",
+   "perda_id": "perda-b149415-7-2019",
+   "target": null,
+   "kutipan": "tak ada sasaran persentase EBT daerah di teks (hanya mengutip target nasional)",
+   "realisasi": {
+    "tahun": 2024,
+    "ebt_mw": 318,
+    "total_mw": 567,
+    "pangsa_kapasitas_persen": 56.1,
+    "sumber_url": "https://gatrik.esdm.go.id/gatrik/gatrik-api//storage/migrasi/download_index/files/91fa8-buku-statistik-ketenagalistrikan-2024.pdf",
+    "catatan": "pangsa KAPASITAS terpasang EBT (PLTA+PLTB+PLT bio+PLTP+PLTS) dari Statistik Ketenagalistrikan 2024; bukan bauran energi primer, jadi hanya pembanding kasar"
+   },
+   "selisih_2025_poin": null,
+   "sumber_url": "https://peraturan.bpk.go.id/Details/149415",
+   "url_pdf": "https://peraturan.bpk.go.id/Download/141455/Perda%202019-7%20Rencana%20Umum%20Energi%20Daerah.pdf",
+   "tanggal_periksa": "2026-11-08",
+   "tingkat_bukti": "resmi"
+  },
+  {
+   "kode": "53",
+   "provinsi": "Nusa Tenggara Timur",
+   "perda": "10/2019",
+   "judul": "Pedoman Rencana Umum Energi Daerah Provinsi Nusa Tenggara Timur Tahun 2019-2050",
+   "perda_id": "perda-b168752-10-2019",
+   "target": {
+    "ebt_2025_persen": 24,
+    "ebt_akhir": {
+     "tahun": 2050,
+     "persen": 39
+    },
+    "jenis": "pemodelan"
+   },
+   "kutipan": "pemodelan pasokan energi primer EBT … sebesar 24oh (0,62 MTOE) pada tahun 2025 dan 39o/o (8,30 MTOE) pada tahun 2050",
+   "perlu_tinjau": true,
+   "realisasi": {
+    "tahun": 2024,
+    "ebt_mw": 57,
+    "total_mw": 641,
+    "pangsa_kapasitas_persen": 8.9,
+    "sumber_url": "https://gatrik.esdm.go.id/gatrik/gatrik-api//storage/migrasi/download_index/files/91fa8-buku-statistik-ketenagalistrikan-2024.pdf",
+    "catatan": "pangsa KAPASITAS terpasang EBT (PLTA+PLTB+PLT bio+PLTP+PLTS) dari Statistik Ketenagalistrikan 2024; bukan bauran energi primer, jadi hanya pembanding kasar"
+   },
+   "selisih_2025_poin": 15.1,
+   "sumber_url": "https://peraturan.bpk.go.id/Details/168752",
+   "url_pdf": "https://peraturan.bpk.go.id/Download/161796/Perda%20Nomor%2010%20Tahun%202019%20tentang%20Pedoman%20RUED_compressed.pdf",
+   "tanggal_periksa": "2026-11-08",
+   "tingkat_bukti": "resmi"
+  },
+  {
+   "kode": "63",
+   "provinsi": "Kalimantan Selatan",
+   "perda": "1/2020",
+   "judul": "Rencana Umum Energi Daerah",
+   "perda_id": "perda-b168814-1-2020",
+   "target": null,
+   "kutipan": "tak ada angka persentase: PDF hanya batang tubuh",
+   "realisasi": {
+    "tahun": 2024,
+    "ebt_mw": 64,
+    "total_mw": 1035,
+    "pangsa_kapasitas_persen": 6.2,
+    "sumber_url": "https://gatrik.esdm.go.id/gatrik/gatrik-api//storage/migrasi/download_index/files/91fa8-buku-statistik-ketenagalistrikan-2024.pdf",
+    "catatan": "pangsa KAPASITAS terpasang EBT (PLTA+PLTB+PLT bio+PLTP+PLTS) dari Statistik Ketenagalistrikan 2024; bukan bauran energi primer, jadi hanya pembanding kasar"
+   },
+   "selisih_2025_poin": null,
+   "sumber_url": "https://peraturan.bpk.go.id/Details/168814",
+   "url_pdf": "https://peraturan.bpk.go.id/Download/161881/PERDA%20PROV%20KALSEL%201%20TAHUN%202020%20RENCANA%20UMUM%20ENERGI%20DAERAH.pdf",
+   "tanggal_periksa": "2026-11-08",
+   "tingkat_bukti": "resmi"
+  },
+  {
+   "kode": "76",
+   "provinsi": "Sulawesi Barat",
+   "perda": "2/2021",
+   "judul": "Rencana Umum Energi Daerah",
+   "perda_id": "perda-b171067-2-2021",
+   "target": {
+    "ebt_2025_persen": 23,
+    "ebt_akhir": {
+     "tahun": 2050,
+     "persen": 31
+    },
+    "jenis": "ruen"
+   },
+   "kutipan": "pada tahun 2050 paling sedikit 31 % (tiga puluh satu persen)",
+   "realisasi": {
+    "tahun": 2024,
+    "ebt_mw": 13,
+    "total_mw": 15,
+    "pangsa_kapasitas_persen": 86.7,
+    "sumber_url": "https://gatrik.esdm.go.id/gatrik/gatrik-api//storage/migrasi/download_index/files/91fa8-buku-statistik-ketenagalistrikan-2024.pdf",
+    "catatan": "pangsa KAPASITAS terpasang EBT (PLTA+PLTB+PLT bio+PLTP+PLTS) dari Statistik Ketenagalistrikan 2024; bukan bauran energi primer, jadi hanya pembanding kasar"
+   },
+   "selisih_2025_poin": -63.7,
+   "sumber_url": "https://peraturan.bpk.go.id/Details/171067",
+   "url_pdf": "https://peraturan.bpk.go.id/Download/164229/PERDA%20NOMOR%202%20TAHUN%202021.pdf",
+   "tanggal_periksa": "2026-11-08",
+   "tingkat_bukti": "resmi"
+  },
+  {
+   "kode": "64",
+   "provinsi": "Kalimantan Timur",
+   "perda": "8/2019",
+   "judul": "Rencana Umum Energi Daerah",
+   "perda_id": "perda-b185167-8-2019",
+   "target": {
+    "ebt_2025_persen": 12.39,
+    "ebt_akhir": {
+     "tahun": 2050,
+     "persen": 28.72
+    },
+    "jenis": "pasal"
+   },
+   "kutipan": "ditargetkan mendekati sebesar 12,39% tahun 2025 dan sebesar 28,72% tahun 2050",
+   "realisasi": {
+    "tahun": 2024,
+    "ebt_mw": 144,
+    "total_mw": 1852,
+    "pangsa_kapasitas_persen": 7.8,
+    "sumber_url": "https://gatrik.esdm.go.id/gatrik/gatrik-api//storage/migrasi/download_index/files/91fa8-buku-statistik-ketenagalistrikan-2024.pdf",
+    "catatan": "pangsa KAPASITAS terpasang EBT (PLTA+PLTB+PLT bio+PLTP+PLTS) dari Statistik Ketenagalistrikan 2024; bukan bauran energi primer, jadi hanya pembanding kasar"
+   },
+   "selisih_2025_poin": 4.6,
+   "sumber_url": "https://peraturan.bpk.go.id/Details/185167",
+   "url_pdf": "https://peraturan.bpk.go.id/Download/178625/Perda%20Provinsi%208-2019%20ttg%20Rencana%20Umum%20Energi%20Daerah.pdf",
+   "tanggal_periksa": "2026-11-08",
+   "tingkat_bukti": "resmi"
+  },
+  {
+   "kode": "61",
+   "provinsi": "Kalimantan Barat",
+   "perda": "9/2021",
+   "judul": "RENCANA UMUM ENERGI DAERAH PROVINSI TAHUN 2021-2050",
+   "perda_id": "perda-b205023-9-2021",
+   "target": null,
+   "kutipan": "tak ada angka persentase: PDF hanya batang tubuh",
+   "realisasi": {
+    "tahun": 2024,
+    "ebt_mw": 94,
+    "total_mw": 921,
+    "pangsa_kapasitas_persen": 10.2,
+    "sumber_url": "https://gatrik.esdm.go.id/gatrik/gatrik-api//storage/migrasi/download_index/files/91fa8-buku-statistik-ketenagalistrikan-2024.pdf",
+    "catatan": "pangsa KAPASITAS terpasang EBT (PLTA+PLTB+PLT bio+PLTP+PLTS) dari Statistik Ketenagalistrikan 2024; bukan bauran energi primer, jadi hanya pembanding kasar"
+   },
+   "selisih_2025_poin": null,
+   "sumber_url": "https://peraturan.bpk.go.id/Details/205023",
+   "url_pdf": "https://peraturan.bpk.go.id/Download/274657/Perda%20No%209%20Tahun%202021%20ocr.pdf",
+   "tanggal_periksa": "2026-11-08",
+   "tingkat_bukti": "resmi"
+  },
+  {
+   "kode": "14",
+   "provinsi": "Riau",
+   "perda": "2/2022",
+   "judul": "Rencana Umum Energi Daerah Provinsi Riau",
+   "perda_id": "perda-b216543-2-2022",
+   "target": {
+    "ebt_2025_persen": 31.22,
+    "ebt_akhir": {
+     "tahun": 2050,
+     "persen": 46.64
+    },
+    "jenis": "pasal"
+   },
+   "kutipan": "sebesar 31,22% (tiga puluh satu koma dua puluh dua … sebesar 46,64% (empat puluh enam koma enam puluh empat",
+   "realisasi": {
+    "tahun": 2024,
+    "ebt_mw": 931,
+    "total_mw": 3431,
+    "pangsa_kapasitas_persen": 27.1,
+    "sumber_url": "https://gatrik.esdm.go.id/gatrik/gatrik-api//storage/migrasi/download_index/files/91fa8-buku-statistik-ketenagalistrikan-2024.pdf",
+    "catatan": "pangsa KAPASITAS terpasang EBT (PLTA+PLTB+PLT bio+PLTP+PLTS) dari Statistik Ketenagalistrikan 2024; bukan bauran energi primer, jadi hanya pembanding kasar"
+   },
+   "selisih_2025_poin": 4.1,
+   "sumber_url": "https://peraturan.bpk.go.id/Details/216543",
+   "url_pdf": "https://peraturan.bpk.go.id/Download/210857/1657161128perda-no-2-tahun-2022-salin.pdf",
+   "tanggal_periksa": "2026-11-08",
+   "tingkat_bukti": "resmi"
+  },
+  {
+   "kode": "73",
+   "provinsi": "Sulawesi Selatan",
+   "perda": "2/2022",
+   "judul": "Rencana Umum Energi Daerah",
+   "perda_id": "perda-b219399-2-2022",
+   "target": {
+    "ebt_2025_persen": 20,
+    "ebt_akhir": {
+     "tahun": 2050,
+     "persen": 32
+    },
+    "jenis": "pasal"
+   },
+   "kutipan": "20% (Dua puluh persen) sampai dengan tahun 2025 … 32 % (Tiga puluh dua persen) sampai dengan tahun 2050",
+   "realisasi": {
+    "tahun": 2024,
+    "ebt_mw": 1009,
+    "total_mw": 2659,
+    "pangsa_kapasitas_persen": 37.9,
+    "sumber_url": "https://gatrik.esdm.go.id/gatrik/gatrik-api//storage/migrasi/download_index/files/91fa8-buku-statistik-ketenagalistrikan-2024.pdf",
+    "catatan": "pangsa KAPASITAS terpasang EBT (PLTA+PLTB+PLT bio+PLTP+PLTS) dari Statistik Ketenagalistrikan 2024; bukan bauran energi primer, jadi hanya pembanding kasar"
+   },
+   "selisih_2025_poin": -17.9,
+   "sumber_url": "https://peraturan.bpk.go.id/Details/219399",
+   "url_pdf": "https://peraturan.bpk.go.id/Download/213806/Perda%20Sulsel%20Nomor%202%20Tahun%202022.pdf",
+   "tanggal_periksa": "2026-11-08",
+   "tingkat_bukti": "resmi"
+  },
+  {
+   "kode": "12",
+   "provinsi": "Sumatera Utara",
+   "perda": "4/2022",
+   "judul": "Rencana Umum Energi Daerah Provinsi Sumatera Utara",
+   "perda_id": "perda-b226292-4-2022",
+   "target": {
+    "ebt_2025_persen": 23.98,
+    "ebt_akhir": {
+     "tahun": 2050,
+     "persen": 49.91
+    },
+    "jenis": "lampiran"
+   },
+   "kutipan": "bauran energi baru terbarukan sebesar 23,98% persen di tahun 2025 dan 49,91% pada tahun 2050",
+   "realisasi": {
+    "tahun": 2024,
+    "ebt_mw": 2447,
+    "total_mw": 5100,
+    "pangsa_kapasitas_persen": 48,
+    "sumber_url": "https://gatrik.esdm.go.id/gatrik/gatrik-api//storage/migrasi/download_index/files/91fa8-buku-statistik-ketenagalistrikan-2024.pdf",
+    "catatan": "pangsa KAPASITAS terpasang EBT (PLTA+PLTB+PLT bio+PLTP+PLTS) dari Statistik Ketenagalistrikan 2024; bukan bauran energi primer, jadi hanya pembanding kasar"
+   },
+   "selisih_2025_poin": -24,
+   "sumber_url": "https://peraturan.bpk.go.id/Details/226292",
+   "url_pdf": "https://peraturan.bpk.go.id/Download/220948/Perda%20No.%204%20Tahun%202022.pdf",
+   "tanggal_periksa": "2026-11-08",
+   "tingkat_bukti": "resmi"
+  },
+  {
+   "kode": "81",
+   "provinsi": "Maluku",
+   "perda": "1/2022",
+   "judul": "Rencana Umum Energi Daerah Provinsi Maluku Tahun 2022-2050",
+   "perda_id": "perda-b235396-1-2022",
+   "target": {
+    "ebt_2025_persen": 27.3,
+    "ebt_akhir": {
+     "tahun": 2050,
+     "persen": 43.2
+    },
+    "jenis": "pasal"
+   },
+   "kutipan": "ditargetkan mendekati sebesar 27,3% tahun 2025 dan sebesar 43,2% tahun 2050",
+   "realisasi": {
+    "tahun": 2024,
+    "ebt_mw": 3,
+    "total_mw": 409,
+    "pangsa_kapasitas_persen": 0.7,
+    "sumber_url": "https://gatrik.esdm.go.id/gatrik/gatrik-api//storage/migrasi/download_index/files/91fa8-buku-statistik-ketenagalistrikan-2024.pdf",
+    "catatan": "pangsa KAPASITAS terpasang EBT (PLTA+PLTB+PLT bio+PLTP+PLTS) dari Statistik Ketenagalistrikan 2024; bukan bauran energi primer, jadi hanya pembanding kasar"
+   },
+   "selisih_2025_poin": 26.6,
+   "sumber_url": "https://peraturan.bpk.go.id/Details/235396",
+   "url_pdf": "https://peraturan.bpk.go.id/Download/288773/PERDA%20NO.1%20TAHUN%202022.pdf",
+   "tanggal_periksa": "2026-11-08",
+   "tingkat_bukti": "resmi"
+  },
+  {
+   "kode": "36",
+   "provinsi": "Banten",
+   "perda": "7/2022",
+   "judul": "Rencana Umum Energi Daerah Banten Tahun 2022 - 2050",
+   "perda_id": "perda-b243729-7-2022",
+   "target": {
+    "ebt_2025_persen": 11.2,
+    "ebt_akhir": {
+     "tahun": 2050,
+     "persen": 16.8
+    },
+    "jenis": "pasal"
+   },
+   "kutipan": "bauran energi baru terbarukan minimal 11,2% tahun 2025 dan 16,8% di tahun 2050",
+   "realisasi": {
+    "tahun": 2024,
+    "ebt_mw": 55,
+    "total_mw": 10295,
+    "pangsa_kapasitas_persen": 0.5,
+    "sumber_url": "https://gatrik.esdm.go.id/gatrik/gatrik-api//storage/migrasi/download_index/files/91fa8-buku-statistik-ketenagalistrikan-2024.pdf",
+    "catatan": "pangsa KAPASITAS terpasang EBT (PLTA+PLTB+PLT bio+PLTP+PLTS) dari Statistik Ketenagalistrikan 2024; bukan bauran energi primer, jadi hanya pembanding kasar"
+   },
+   "selisih_2025_poin": 10.7,
+   "sumber_url": "https://peraturan.bpk.go.id/Details/243729",
+   "url_pdf": "https://peraturan.bpk.go.id/Download/329537/2022pd0036007.pdf",
+   "tanggal_periksa": "2026-11-08",
+   "tingkat_bukti": "resmi"
+  },
+  {
+   "kode": "62",
+   "provinsi": "Kalimantan Tengah",
+   "perda": "1/2022",
+   "judul": "Rencana Umum Energi Daerah Provinsi Kalimantan Tengah Tahun 2022-2050",
+   "perda_id": "perda-b250531-1-2022",
+   "target": {
+    "ebt_2025_persen": 17,
+    "ebt_akhir": {
+     "tahun": 2050,
+     "persen": 46
+    },
+    "jenis": "pasal"
+   },
+   "kutipan": "ditargetkan mendekati sebesar 17% pada Tahun 2025 dan sebesar 46% pada Tahun 2050",
+   "realisasi": {
+    "tahun": 2024,
+    "ebt_mw": 409,
+    "total_mw": 1278,
+    "pangsa_kapasitas_persen": 32,
+    "sumber_url": "https://gatrik.esdm.go.id/gatrik/gatrik-api//storage/migrasi/download_index/files/91fa8-buku-statistik-ketenagalistrikan-2024.pdf",
+    "catatan": "pangsa KAPASITAS terpasang EBT (PLTA+PLTB+PLT bio+PLTP+PLTS) dari Statistik Ketenagalistrikan 2024; bukan bauran energi primer, jadi hanya pembanding kasar"
+   },
+   "selisih_2025_poin": -15,
+   "sumber_url": "https://peraturan.bpk.go.id/Details/250531",
+   "url_pdf": "https://peraturan.bpk.go.id/Download/307068/Peraturan%20Daerah%20Kalteng%20No.%201%20Tahun%202022.pdf",
+   "tanggal_periksa": "2026-11-08",
+   "tingkat_bukti": "resmi"
+  },
+  {
+   "kode": "74",
+   "provinsi": "Sulawesi Tenggara",
+   "perda": "2/2021",
+   "judul": "Rencana Umum Energi Daerah Provinsi Sulawesi Tenggara",
+   "perda_id": "perda-b263132-2-2021",
+   "target": {
+    "ebt_2025_persen": 7,
+    "ebt_akhir": {
+     "tahun": 2050,
+     "persen": 36
+    },
+    "jenis": "pasal"
+   },
+   "kutipan": "pangsa energi baru terbarukan sebesar 7% di tahun 2025 dan 36% di tahun 2050",
+   "realisasi": {
+    "tahun": 2024,
+    "ebt_mw": 9,
+    "total_mw": 392,
+    "pangsa_kapasitas_persen": 2.3,
+    "sumber_url": "https://gatrik.esdm.go.id/gatrik/gatrik-api//storage/migrasi/download_index/files/91fa8-buku-statistik-ketenagalistrikan-2024.pdf",
+    "catatan": "pangsa KAPASITAS terpasang EBT (PLTA+PLTB+PLT bio+PLTP+PLTS) dari Statistik Ketenagalistrikan 2024; bukan bauran energi primer, jadi hanya pembanding kasar"
+   },
+   "selisih_2025_poin": 4.7,
+   "sumber_url": "https://peraturan.bpk.go.id/Details/263132",
+   "url_pdf": "https://peraturan.bpk.go.id/Download/320215/PERDA%20NO%202%20TAHUN%202021.pdf",
+   "tanggal_periksa": "2026-11-08",
+   "tingkat_bukti": "resmi"
+  },
+  {
+   "kode": "31",
+   "provinsi": "DKI Jakarta",
+   "perda": "5/2023",
+   "judul": "Rencana Umum Energi Daerah Tahun 2023-2050",
+   "perda_id": "perda-b274973-5-2023",
+   "target": {
+    "ebt_2025_persen": 4.4,
+    "ebt_akhir": {
+     "tahun": 2050,
+     "persen": 7.5
+    },
+    "jenis": "pasal",
+    "catatan": "hanya EBT yang dipakai di dalam provinsi (bukan impor listrik); dengan impor listrik EBT 2050 = 24,4% bauran primer; PLTS min 20 MW (2025) dan 200 MW (2050)",
+    "plts_mw": {
+     "2025": 20,
+     "2050": 200
+    }
+   },
+   "kutipan": "paling sedikit sebesar 0,67 MTOE pada tahun 2025 (4,4% dari total bauran … 2,14 MTOE pada tahun 2050 (7,5% dari total bauran",
+   "realisasi": {
+    "tahun": 2024,
+    "ebt_mw": 41,
+    "total_mw": 5437,
+    "pangsa_kapasitas_persen": 0.8,
+    "sumber_url": "https://gatrik.esdm.go.id/gatrik/gatrik-api//storage/migrasi/download_index/files/91fa8-buku-statistik-ketenagalistrikan-2024.pdf",
+    "catatan": "pangsa KAPASITAS terpasang EBT (PLTA+PLTB+PLT bio+PLTP+PLTS) dari Statistik Ketenagalistrikan 2024; bukan bauran energi primer, jadi hanya pembanding kasar"
+   },
+   "selisih_2025_poin": 3.6,
+   "sumber_url": "https://peraturan.bpk.go.id/Details/274973",
+   "url_pdf": "https://peraturan.bpk.go.id/Download/333441/PERDA%20Prov.%20DKI%20Jakarta%20No.%205%20Th.%202023.pdf",
+   "tanggal_periksa": "2026-11-08",
+   "tingkat_bukti": "resmi"
+  },
+  {
+   "kode": "71",
+   "provinsi": "Sulawesi Utara",
+   "perda": "8/2022",
+   "judul": "Rencana Umum Energi Daerah Tahun 2022-2050",
+   "perda_id": "perda-b301216-8-2022",
+   "target": {
+    "ebt_2025_persen": 38,
+    "ebt_akhir": {
+     "tahun": 2050,
+     "persen": 67
+    },
+    "jenis": "pasal"
+   },
+   "kutipan": "ditargetkan mendekati sebesar 38 % tahun 2025 dan 67 % tahun 2050",
+   "realisasi": {
+    "tahun": 2024,
+    "ebt_mw": 210,
+    "total_mw": 723,
+    "pangsa_kapasitas_persen": 29,
+    "sumber_url": "https://gatrik.esdm.go.id/gatrik/gatrik-api//storage/migrasi/download_index/files/91fa8-buku-statistik-ketenagalistrikan-2024.pdf",
+    "catatan": "pangsa KAPASITAS terpasang EBT (PLTA+PLTB+PLT bio+PLTP+PLTS) dari Statistik Ketenagalistrikan 2024; bukan bauran energi primer, jadi hanya pembanding kasar"
+   },
+   "selisih_2025_poin": 9,
+   "sumber_url": "https://peraturan.bpk.go.id/Details/301216",
+   "url_pdf": "https://peraturan.bpk.go.id/Download/361023/Perda%20No.%208%20Tahun%202022.pdf",
+   "tanggal_periksa": "2026-11-08",
+   "tingkat_bukti": "resmi"
+  },
+  {
+   "kode": "92",
+   "provinsi": "Papua Barat",
+   "perda": "2/2024",
+   "judul": "RENCANA UMUM ENERGI DAERAH PROVINSI PAPUA BARAT TAHUN 2024-2050",
+   "perda_id": "perda-b308381-2-2024",
+   "target": {
+    "ebt_2025_persen": 4,
+    "ebt_akhir": {
+     "tahun": 2050,
+     "persen": 13
+    },
+    "jenis": "lampiran"
+   },
+   "kutipan": "pangsa energi baru terbarukan sebesar 4 % persen di tahun 2025 dan 13% di tahun 2050",
+   "realisasi": {
+    "tahun": 2024,
+    "ebt_mw": 18,
+    "total_mw": 181,
+    "pangsa_kapasitas_persen": 9.9,
+    "sumber_url": "https://gatrik.esdm.go.id/gatrik/gatrik-api//storage/migrasi/download_index/files/91fa8-buku-statistik-ketenagalistrikan-2024.pdf",
+    "catatan": "pangsa KAPASITAS terpasang EBT (PLTA+PLTB+PLT bio+PLTP+PLTS) dari Statistik Ketenagalistrikan 2024; bukan bauran energi primer, jadi hanya pembanding kasar"
+   },
+   "selisih_2025_poin": -5.9,
+   "sumber_url": "https://peraturan.bpk.go.id/Details/308381",
+   "url_pdf": "https://peraturan.bpk.go.id/Download/368831/PERDA%20PROVINSI%20PAPUA%20BARAT%20No%202%20Tahun%202024%20Tentang%20Rencana%20Umum%20Energi%20Daerah.pdf",
+   "tanggal_periksa": "2026-11-08",
+   "tingkat_bukti": "resmi"
+  },
+  {
+   "kode": "18",
+   "provinsi": "Lampung",
+   "perda": "9/2019",
+   "judul": "Rencana Umum Energi Daerah",
+   "perda_id": "perda-b318660-9-2019",
+   "target": {
+    "ebt_2025_persen": 36,
+    "ebt_akhir": {
+     "tahun": 2050,
+     "persen": 47
+    },
+    "jenis": "pasal"
+   },
+   "kutipan": "sebesar 36 Yo tahun 2025 dan sebesar 47 oh",
+   "perlu_tinjau": true,
+   "realisasi": {
+    "tahun": 2024,
+    "ebt_mw": 501,
+    "total_mw": 1239,
+    "pangsa_kapasitas_persen": 40.4,
+    "sumber_url": "https://gatrik.esdm.go.id/gatrik/gatrik-api//storage/migrasi/download_index/files/91fa8-buku-statistik-ketenagalistrikan-2024.pdf",
+    "catatan": "pangsa KAPASITAS terpasang EBT (PLTA+PLTB+PLT bio+PLTP+PLTS) dari Statistik Ketenagalistrikan 2024; bukan bauran energi primer, jadi hanya pembanding kasar"
+   },
+   "selisih_2025_poin": -4.4,
+   "sumber_url": "https://peraturan.bpk.go.id/Details/318660",
+   "url_pdf": "https://peraturan.bpk.go.id/Download/380157/Perda%20Nomor%209%20Tahun%202019.pdf",
+   "tanggal_periksa": "2026-11-08",
+   "tingkat_bukti": "resmi"
+  },
+  {
+   "kode": "35",
+   "provinsi": "Jawa Timur",
+   "perda": "3/2024",
+   "judul": "Perubahan atas Peraturan Daerah Provinsi Jawa Timur Nomor 6 Tahun 2019 tentang Rencana Umum Energi Daerah Provinsi Jawa Timur Tahun 2019-2050",
+   "perda_id": "perda-b321801-3-2024",
+   "target": {
+    "ebt_2025_persen": 12.15,
+    "ebt_akhir": {
+     "tahun": 2050,
+     "persen": 23.76
+    },
+    "jenis": "pasal",
+    "catatan": "Perda 3/2024 mengubah Pasal 6 RUED sebelumnya"
+   },
+   "kutipan": "12,15% (dua belas koma satu lima persen) sampai dengan tahun 2025 … 23,76% (dua puluh tiga koma tujuh enam persen)",
+   "realisasi": {
+    "tahun": 2024,
+    "ebt_mw": 540,
+    "total_mw": 10668,
+    "pangsa_kapasitas_persen": 5.1,
+    "sumber_url": "https://gatrik.esdm.go.id/gatrik/gatrik-api//storage/migrasi/download_index/files/91fa8-buku-statistik-ketenagalistrikan-2024.pdf",
+    "catatan": "pangsa KAPASITAS terpasang EBT (PLTA+PLTB+PLT bio+PLTP+PLTS) dari Statistik Ketenagalistrikan 2024; bukan bauran energi primer, jadi hanya pembanding kasar"
+   },
+   "selisih_2025_poin": 7.1,
+   "sumber_url": "https://peraturan.bpk.go.id/Details/321801",
+   "url_pdf": "https://peraturan.bpk.go.id/Download/383559/Perda%20Prov%20Jawa%20Timur%20Nomor%203%20Tahun%202024.pdf",
+   "tanggal_periksa": "2026-11-08",
+   "tingkat_bukti": "resmi"
+  },
+  {
+   "kode": "65",
+   "provinsi": "Kalimantan Utara",
+   "perda": "8/2025",
+   "judul": "Rencana Umum Energi Daerah Tahun 2025–2034",
+   "perda_id": "perda-b356665-8-2025",
+   "target": {
+    "ebt_2025_persen": 14,
+    "ebt_akhir": {
+     "tahun": 2034,
+     "persen": 25
+    },
+    "jenis": "lampiran",
+    "catatan": "RUED 2025-2034; teks OCR kacau (\"persen di tahun 25% 2034\"): 25% pada 2034 dibaca dari urutan, TINJAU manusia; model lampiran: EBT 47,7% (2030) dan 55,67% (2034)"
+   },
+   "kutipan": "pangsa energi baru terbarukan sebesar 14% persen di tahun 2025",
+   "perlu_tinjau": true,
+   "realisasi": {
+    "tahun": 2024,
+    "ebt_mw": 5,
+    "total_mw": 320,
+    "pangsa_kapasitas_persen": 1.6,
+    "sumber_url": "https://gatrik.esdm.go.id/gatrik/gatrik-api//storage/migrasi/download_index/files/91fa8-buku-statistik-ketenagalistrikan-2024.pdf",
+    "catatan": "pangsa KAPASITAS terpasang EBT (PLTA+PLTB+PLT bio+PLTP+PLTS) dari Statistik Ketenagalistrikan 2024; bukan bauran energi primer, jadi hanya pembanding kasar"
+   },
+   "selisih_2025_poin": 12.4,
+   "sumber_url": "https://peraturan.bpk.go.id/Details/356665",
+   "url_pdf": "https://peraturan.bpk.go.id/Download/420655/Perda%20Provinsi%208-2025.pdf",
+   "tanggal_periksa": "2026-11-08",
+   "tingkat_bukti": "resmi"
+  }
+ ],
+ "meta": {
+  "catatan": "Persentase = target peran/pangsa/bauran EBT dalam bauran energi (umumnya primer) menurut perda. Angka dibaca dari teks PDF dan dikutip; jenis: pasal | lampiran | pemodelan (hasil skenario) | ruen (salinan target nasional 23%/31%). Pembanding realisasi hanya kapasitas terpasang, bukan bauran energi.",
+  "celah": [
+   "6 perda tanpa angka persentase di PDF (lampiran RUED-P tidak ikut atau hanya mengutip target nasional): Nusa Tenggara Barat, Kalimantan Utara, DI Yogyakarta, Bengkulu, Kalimantan Selatan, Kalimantan Barat.",
+   "Kapasitas per teknologi (MW) per provinsi TIDAK diekstrak: tabelnya berupa gambar/tabel lampiran dengan layout tidak seragam; hanya PLTS DKI (20/200 MW) yang tertulis di pasal.",
+   "Perda RUED hanya 26 provinsi + Kaltara 2025 (27 dokumen); provinsi lain belum ada di regulasi.json (termasuk 4 provinsi Papua baru).",
+   "Riau 2050 = 46,64 (teks perda, huruf \"empat puluh enam koma enam puluh empat\"); panen lama memuat 44,63. Dikoreksi di wilayah.json lewat potret_wilayah.mjs (koreksiKandidat memakai rued.json). Kalimantan Utara: rued.json memuat Perda 3/2019 (tanpa angka, digantikan) dan Perda 8/2025 (berlaku, perlu_tinjau); wilayah.json memakai 8/2025.",
+   "Banyak PDF hasil OCR (Riau, NTT, Lampung, Sultra): kolom perlu_tinjau menandai bacaan yang rentan."
+  ]
+ }
+}

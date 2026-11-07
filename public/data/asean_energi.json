@@ -1,0 +1,628 @@
+{
+ "jenis": "asean_energi",
+ "tanggal_ambil": "2026-11-08",
+ "lisensi": "OWID energy-data CC BY 4.0 (memuat Ember); AEO9 kutipan pendek dengan atribusi",
+ "sumber": {
+  "bauran": {
+   "sumber": "Our World in Data energy-data (Ember Yearly Electricity Data)",
+   "url": "https://raw.githubusercontent.com/owid/energy-data/master/owid-energy-data.csv",
+   "lisensi": "CC BY 4.0"
+  },
+  "regional": {
+   "sumber": "ASEAN Centre for Energy, the 9th ASEAN Energy Outlook (AEO9)",
+   "url": "https://aseanenergy.org/publications/the-9th-asean-energy-outlook",
+   "pdf": "https://storage.googleapis.com/aceweb-bucket-261225/pdf/publication/9th%20ASEAN%20Energy%20Outlook__r1OSn51iWBCHG5U0Tlz82cKOeulQJT5o5sLbOJev.pdf",
+   "tingkat_bukti": "resmi",
+   "target": [
+    {
+     "rencana": "APAEC 2016-2025",
+     "ebt_pasokan_energi_primer_persen": 23,
+     "ebt_kapasitas_terpasang_persen": 35,
+     "intensitas_energi_turun_persen_vs_2005": 32,
+     "tahun": 2025,
+     "kutipan": "set a 23% renewable share of total primary energy supply for 2025 … added a 35% renewable share of installed power capacity and a 32% reduction in energy intensity"
+    },
+    {
+     "rencana": "APAEC 2026-2030",
+     "ebt_pasokan_energi_primer_persen": 30,
+     "ebt_kapasitas_terpasang_persen": 45,
+     "intensitas_energi_turun_persen_vs_2005": 40,
+     "tahun": 2030,
+     "kutipan": "a 30% renewable energy share in total primary energy supply, a 45% renewable energy share in installed power capacity and a 40% reduction in energy intensity"
+    }
+   ],
+   "realisasi_2024": {
+    "ebt_pasokan_energi_primer_persen": 14.1,
+    "ebt_kapasitas_terpasang_persen": 33,
+    "kutipan": "Renewables supplied 14.1% of primary energy in 2024 against the 23% target"
+   }
+  }
+ },
+ "jumlah": 10,
+ "baris": [
+  {
+   "iso3": "IDN",
+   "nama": "Indonesia",
+   "bauran_listrik_persen": {
+    "surya": {
+     "tahun": 2024,
+     "nilai": 0.36
+    },
+    "angin": {
+     "tahun": 2024,
+     "nilai": 0.13
+    },
+    "hidro": {
+     "tahun": 2024,
+     "nilai": 7.34
+    },
+    "bioenergi": {
+     "tahun": 2024,
+     "nilai": 5.74
+    },
+    "ebt_lain_termasuk_panas_bumi": {
+     "tahun": 2024,
+     "nilai": 4.51
+    },
+    "ebt_total": {
+     "tahun": 2024,
+     "nilai": 18.09
+    },
+    "batubara": {
+     "tahun": 2024,
+     "nilai": 61.48
+    },
+    "gas": {
+     "tahun": 2024,
+     "nilai": 18.51
+    },
+    "minyak": {
+     "tahun": 2024,
+     "nilai": 1.92
+    },
+    "nuklir": {
+     "tahun": 2024,
+     "nilai": 0
+    }
+   },
+   "pembangkitan_twh": {
+    "tahun": 2024,
+    "nilai": 371.54
+   },
+   "intensitas_karbon_gco2_kwh": {
+    "tahun": 2024,
+    "nilai": 680.25
+   },
+   "kebijakan_kunci": null,
+   "tarif_feed_in_atau_lelang": null,
+   "target_ebt_nasional": null,
+   "sumber_url": "https://github.com/owid/energy-data",
+   "tanggal_periksa": "2026-11-08",
+   "tingkat_bukti": "via-pihak-ketiga"
+  },
+  {
+   "iso3": "VNM",
+   "nama": "Viet Nam",
+   "bauran_listrik_persen": {
+    "surya": {
+     "tahun": 2025,
+     "nilai": 7.43
+    },
+    "angin": {
+     "tahun": 2025,
+     "nilai": 4.64
+    },
+    "hidro": {
+     "tahun": 2025,
+     "nilai": 33.02
+    },
+    "bioenergi": {
+     "tahun": 2025,
+     "nilai": 0.33
+    },
+    "ebt_lain_termasuk_panas_bumi": null,
+    "ebt_total": {
+     "tahun": 2025,
+     "nilai": 45.42
+    },
+    "batubara": {
+     "tahun": 2025,
+     "nilai": 48.14
+    },
+    "gas": {
+     "tahun": 2025,
+     "nilai": 6.24
+    },
+    "minyak": {
+     "tahun": 2025,
+     "nilai": 0.2
+    },
+    "nuklir": {
+     "tahun": 2025,
+     "nilai": 0
+    }
+   },
+   "pembangkitan_twh": {
+    "tahun": 2025,
+    "nilai": 309.99
+   },
+   "intensitas_karbon_gco2_kwh": {
+    "tahun": 2025,
+    "nilai": 460.73
+   },
+   "kebijakan_kunci": null,
+   "tarif_feed_in_atau_lelang": null,
+   "target_ebt_nasional": null,
+   "sumber_url": "https://github.com/owid/energy-data",
+   "tanggal_periksa": "2026-11-08",
+   "tingkat_bukti": "via-pihak-ketiga"
+  },
+  {
+   "iso3": "PHL",
+   "nama": "Philippines",
+   "bauran_listrik_persen": {
+    "surya": {
+     "tahun": 2025,
+     "nilai": 2.44
+    },
+    "angin": {
+     "tahun": 2025,
+     "nilai": 1.19
+    },
+    "hidro": {
+     "tahun": 2025,
+     "nilai": 10.31
+    },
+    "bioenergi": {
+     "tahun": 2025,
+     "nilai": 1.18
+    },
+    "ebt_lain_termasuk_panas_bumi": {
+     "tahun": 2025,
+     "nilai": 8.2
+    },
+    "ebt_total": {
+     "tahun": 2025,
+     "nilai": 23.31
+    },
+    "batubara": {
+     "tahun": 2025,
+     "nilai": 58.67
+    },
+    "gas": {
+     "tahun": 2025,
+     "nilai": 17.26
+    },
+    "minyak": {
+     "tahun": 2025,
+     "nilai": 0.76
+    },
+    "nuklir": {
+     "tahun": 2025,
+     "nilai": 0
+    }
+   },
+   "pembangkitan_twh": {
+    "tahun": 2025,
+    "nilai": 123.12
+   },
+   "intensitas_karbon_gco2_kwh": {
+    "tahun": 2025,
+    "nilai": 588.29
+   },
+   "kebijakan_kunci": null,
+   "tarif_feed_in_atau_lelang": null,
+   "target_ebt_nasional": null,
+   "sumber_url": "https://github.com/owid/energy-data",
+   "tanggal_periksa": "2026-11-08",
+   "tingkat_bukti": "via-pihak-ketiga"
+  },
+  {
+   "iso3": "THA",
+   "nama": "Thailand",
+   "bauran_listrik_persen": {
+    "surya": {
+     "tahun": 2025,
+     "nilai": 5.3
+    },
+    "angin": {
+     "tahun": 2025,
+     "nilai": 1.81
+    },
+    "hidro": {
+     "tahun": 2025,
+     "nilai": 4.05
+    },
+    "bioenergi": {
+     "tahun": 2025,
+     "nilai": 5.41
+    },
+    "ebt_lain_termasuk_panas_bumi": null,
+    "ebt_total": {
+     "tahun": 2025,
+     "nilai": 16.57
+    },
+    "batubara": {
+     "tahun": 2025,
+     "nilai": 17.83
+    },
+    "gas": {
+     "tahun": 2025,
+     "nilai": 65.52
+    },
+    "minyak": {
+     "tahun": 2025,
+     "nilai": 0.07
+    },
+    "nuklir": {
+     "tahun": 2024,
+     "nilai": 0
+    }
+   },
+   "pembangkitan_twh": {
+    "tahun": 2025,
+    "nilai": 188.24
+   },
+   "intensitas_karbon_gco2_kwh": {
+    "tahun": 2025,
+    "nilai": 545.74
+   },
+   "kebijakan_kunci": null,
+   "tarif_feed_in_atau_lelang": null,
+   "target_ebt_nasional": null,
+   "sumber_url": "https://github.com/owid/energy-data",
+   "tanggal_periksa": "2026-11-08",
+   "tingkat_bukti": "via-pihak-ketiga"
+  },
+  {
+   "iso3": "MYS",
+   "nama": "Malaysia",
+   "bauran_listrik_persen": {
+    "surya": {
+     "tahun": 2025,
+     "nilai": 2.24
+    },
+    "angin": {
+     "tahun": 2025,
+     "nilai": 0
+    },
+    "hidro": {
+     "tahun": 2025,
+     "nilai": 17.52
+    },
+    "bioenergi": {
+     "tahun": 2025,
+     "nilai": 0.89
+    },
+    "ebt_lain_termasuk_panas_bumi": null,
+    "ebt_total": {
+     "tahun": 2025,
+     "nilai": 20.65
+    },
+    "batubara": {
+     "tahun": 2025,
+     "nilai": 44.56
+    },
+    "gas": {
+     "tahun": 2025,
+     "nilai": 33.76
+    },
+    "minyak": {
+     "tahun": 2025,
+     "nilai": 1.03
+    },
+    "nuklir": {
+     "tahun": 2024,
+     "nilai": 0
+    }
+   },
+   "pembangkitan_twh": {
+    "tahun": 2025,
+    "nilai": 201.09
+   },
+   "intensitas_karbon_gco2_kwh": {
+    "tahun": 2025,
+    "nilai": 601.97
+   },
+   "kebijakan_kunci": null,
+   "tarif_feed_in_atau_lelang": null,
+   "target_ebt_nasional": null,
+   "sumber_url": "https://github.com/owid/energy-data",
+   "tanggal_periksa": "2026-11-08",
+   "tingkat_bukti": "via-pihak-ketiga"
+  },
+  {
+   "iso3": "SGP",
+   "nama": "Singapore",
+   "bauran_listrik_persen": {
+    "surya": {
+     "tahun": 2025,
+     "nilai": 2.73
+    },
+    "angin": {
+     "tahun": 1999,
+     "nilai": 0
+    },
+    "hidro": {
+     "tahun": 1999,
+     "nilai": 0
+    },
+    "bioenergi": {
+     "tahun": 2025,
+     "nilai": 2.76
+    },
+    "ebt_lain_termasuk_panas_bumi": null,
+    "ebt_total": {
+     "tahun": 2025,
+     "nilai": 5.49
+    },
+    "batubara": {
+     "tahun": 2025,
+     "nilai": 0.95
+    },
+    "gas": {
+     "tahun": 2025,
+     "nilai": 91.12
+    },
+    "minyak": {
+     "tahun": 2025,
+     "nilai": 2.44
+    },
+    "nuklir": {
+     "tahun": 2024,
+     "nilai": 0
+    }
+   },
+   "pembangkitan_twh": {
+    "tahun": 2025,
+    "nilai": 60.15
+   },
+   "intensitas_karbon_gco2_kwh": {
+    "tahun": 2025,
+    "nilai": 497.09
+   },
+   "kebijakan_kunci": null,
+   "tarif_feed_in_atau_lelang": null,
+   "target_ebt_nasional": null,
+   "sumber_url": "https://github.com/owid/energy-data",
+   "tanggal_periksa": "2026-11-08",
+   "tingkat_bukti": "via-pihak-ketiga"
+  },
+  {
+   "iso3": "LAO",
+   "nama": "Lao PDR",
+   "bauran_listrik_persen": {
+    "surya": {
+     "tahun": 2024,
+     "nilai": 0.17
+    },
+    "angin": {
+     "tahun": 2024,
+     "nilai": 0
+    },
+    "hidro": {
+     "tahun": 2024,
+     "nilai": 76.47
+    },
+    "bioenergi": {
+     "tahun": 2024,
+     "nilai": 0.08
+    },
+    "ebt_lain_termasuk_panas_bumi": {
+     "tahun": 2024,
+     "nilai": 0
+    },
+    "ebt_total": {
+     "tahun": 2024,
+     "nilai": 76.72
+    },
+    "batubara": {
+     "tahun": 2024,
+     "nilai": 23.28
+    },
+    "gas": {
+     "tahun": 2024,
+     "nilai": 0
+    },
+    "minyak": {
+     "tahun": 2024,
+     "nilai": 0
+    },
+    "nuklir": {
+     "tahun": 2024,
+     "nilai": 0
+    }
+   },
+   "pembangkitan_twh": {
+    "tahun": 2024,
+    "nilai": 52.31
+   },
+   "intensitas_karbon_gco2_kwh": {
+    "tahun": 2024,
+    "nilai": 232.08
+   },
+   "kebijakan_kunci": null,
+   "tarif_feed_in_atau_lelang": null,
+   "target_ebt_nasional": null,
+   "sumber_url": "https://github.com/owid/energy-data",
+   "tanggal_periksa": "2026-11-08",
+   "tingkat_bukti": "via-pihak-ketiga"
+  },
+  {
+   "iso3": "KHM",
+   "nama": "Cambodia",
+   "bauran_listrik_persen": {
+    "surya": {
+     "tahun": 2025,
+     "nilai": 10.64
+    },
+    "angin": null,
+    "hidro": {
+     "tahun": 2025,
+     "nilai": 29.9
+    },
+    "bioenergi": {
+     "tahun": 2025,
+     "nilai": 0.34
+    },
+    "ebt_lain_termasuk_panas_bumi": null,
+    "ebt_total": {
+     "tahun": 2025,
+     "nilai": 40.88
+    },
+    "batubara": {
+     "tahun": 2025,
+     "nilai": 56.59
+    },
+    "gas": null,
+    "minyak": {
+     "tahun": 2025,
+     "nilai": 2.53
+    },
+    "nuklir": null
+   },
+   "pembangkitan_twh": {
+    "tahun": 2025,
+    "nilai": 17.76
+   },
+   "intensitas_karbon_gco2_kwh": {
+    "tahun": 2025,
+    "nilai": 498.87
+   },
+   "kebijakan_kunci": null,
+   "tarif_feed_in_atau_lelang": null,
+   "target_ebt_nasional": null,
+   "sumber_url": "https://github.com/owid/energy-data",
+   "tanggal_periksa": "2026-11-08",
+   "tingkat_bukti": "via-pihak-ketiga"
+  },
+  {
+   "iso3": "MMR",
+   "nama": "Myanmar",
+   "bauran_listrik_persen": {
+    "surya": {
+     "tahun": 2024,
+     "nilai": 0.55
+    },
+    "angin": {
+     "tahun": 2024,
+     "nilai": 0
+    },
+    "hidro": {
+     "tahun": 2024,
+     "nilai": 46.06
+    },
+    "bioenergi": {
+     "tahun": 2024,
+     "nilai": 1.24
+    },
+    "ebt_lain_termasuk_panas_bumi": {
+     "tahun": 2024,
+     "nilai": 0
+    },
+    "ebt_total": {
+     "tahun": 2024,
+     "nilai": 47.86
+    },
+    "batubara": {
+     "tahun": 2024,
+     "nilai": 5.53
+    },
+    "gas": {
+     "tahun": 2024,
+     "nilai": 46.06
+    },
+    "minyak": {
+     "tahun": 2024,
+     "nilai": 0.55
+    },
+    "nuklir": {
+     "tahun": 2024,
+     "nilai": 0
+    }
+   },
+   "pembangkitan_twh": {
+    "tahun": 2024,
+    "nilai": 21.71
+   },
+   "intensitas_karbon_gco2_kwh": {
+    "tahun": 2024,
+    "nilai": 502.99
+   },
+   "kebijakan_kunci": null,
+   "tarif_feed_in_atau_lelang": null,
+   "target_ebt_nasional": null,
+   "sumber_url": "https://github.com/owid/energy-data",
+   "tanggal_periksa": "2026-11-08",
+   "tingkat_bukti": "via-pihak-ketiga"
+  },
+  {
+   "iso3": "BRN",
+   "nama": "Brunei Darussalam",
+   "bauran_listrik_persen": {
+    "surya": {
+     "tahun": 2024,
+     "nilai": 0.18
+    },
+    "angin": {
+     "tahun": 2024,
+     "nilai": 0
+    },
+    "hidro": {
+     "tahun": 2024,
+     "nilai": 0
+    },
+    "bioenergi": {
+     "tahun": 2024,
+     "nilai": 0
+    },
+    "ebt_lain_termasuk_panas_bumi": {
+     "tahun": 2024,
+     "nilai": 0
+    },
+    "ebt_total": {
+     "tahun": 2024,
+     "nilai": 0.18
+    },
+    "batubara": {
+     "tahun": 2024,
+     "nilai": 19.78
+    },
+    "gas": {
+     "tahun": 2024,
+     "nilai": 79.14
+    },
+    "minyak": {
+     "tahun": 2024,
+     "nilai": 0.9
+    },
+    "nuklir": {
+     "tahun": 2024,
+     "nilai": 0
+    }
+   },
+   "pembangkitan_twh": {
+    "tahun": 2024,
+    "nilai": 5.56
+   },
+   "intensitas_karbon_gco2_kwh": {
+    "tahun": 2024,
+    "nilai": 892.09
+   },
+   "kebijakan_kunci": null,
+   "tarif_feed_in_atau_lelang": null,
+   "target_ebt_nasional": null,
+   "sumber_url": "https://github.com/owid/energy-data",
+   "tanggal_periksa": "2026-11-08",
+   "tingkat_bukti": "via-pihak-ketiga"
+  }
+ ],
+ "meta": {
+  "catatan": "Pelengkap asean.json (kunci iso3 sama). bauran_listrik_persen = persen pembangkitan listrik per sumber, nilai terbaru yang tersedia (tahun ikut tiap nilai); ebt_lain_termasuk_panas_bumi tak dapat dipisah dari OWID.",
+  "celah": [
+   "kebijakan_kunci, tarif_feed_in_atau_lelang, target_ebt_nasional per negara = null: AEO9 tidak memuat tabel target/tarif per negara; sumber tiap negara (kementerian energi, regulator) belum dipanen. Jangan diisi tanpa dokumen.",
+   "Ember files host melarang robots (Disallow /); data Ember diambil lewat OWID energy-data (CC BY 4.0). IRENA kapasitas sudah ada di asean.json (kapasitas_ebt_mw).",
+   "Target regional APAEC dari teks AEO9 (halaman publik ACE), bukan dokumen APAEC asli."
+  ]
+ }
+}
