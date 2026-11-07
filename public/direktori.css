@@ -2833,3 +2833,7 @@ img.ak-foto,.ak-pgr img,.ak-pk-foto img,.ak-pkbtn img.ak-foto,.ak-orang img.ak-f
 .ak-sdleg{justify-content:center;text-align:center}
 .ak-ptn{position:absolute;left:50%;bottom:4px;transform:translateX(-50%);z-index:5;margin:0;padding:3px 10px;border-radius:var(--r-pil);background:var(--card);color:var(--ink);font-size:var(--t-kecil);box-shadow:var(--shadow);pointer-events:none}
 .ak-pinlabel.sembunyi{display:none}.ak-pin:hover,.ak-pin:focus-visible{z-index:5}.ak-pin:hover .ak-pinlabel.sembunyi,.ak-pin:focus-visible .ak-pinlabel.sembunyi{display:block}
+/* tabel provinsi lebih rapat (pemilik 8 Nov 2026) */
+.ak-sdtab tbody th,.ak-sdtab tbody td{height:36px;padding-block:0}
+.ak-sdtab tbody th .ak-sdtab-n{gap:8px}
+.ak-sdtab tbody th img{width:20px;height:20px}
