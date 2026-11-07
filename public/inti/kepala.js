@@ -22,10 +22,12 @@ const TAB = [
   { href: "/", kunci: "nav.beranda", ikon: "beranda", hak: null },
   { kunci: "nav.insight", ikon: "insight", hak: null, grup: [
     { href: "/insight", kunci: "nav.insight_ringkasan", ikon: "insight" }, { href: "/insight#tren", kunci: "nav.sub.tren", ikon: "analisis" },
-    { href: "/rantai", kunci: "nav.rantai", ikon: "rantai" }, { href: "/asean", kunci: "nav.asean", ikon: "asean" }, { href: "/jejaring", kunci: "nav.jejaring", ikon: "rantai" }, { href: "/indeks", kunci: "nav.indeks", ikon: "analisis" }, { href: "/program", kunci: "nav.program", ikon: "proyek" }, { href: "/metode", kunci: "nav.sub.metode", ikon: "metode" }] },
-  { href: "/proyek", kunci: "nav.proyek", ikon: "proyek", hak: null },
-  { href: "/peluang", kunci: "nav.peluang", ikon: "analisis", hak: null },
-  { href: "/wilayah", kunci: "nav.wilayah", ikon: "peta", hak: null },
+    { href: "/rantai", kunci: "nav.rantai", ikon: "rantai" }, { href: "/asean", kunci: "nav.asean", ikon: "asean" }, { href: "/jejaring", kunci: "nav.jejaring", ikon: "rantai" }, { href: "/metode", kunci: "nav.sub.metode", ikon: "metode" }] },
+  /* pemilik 8 Nov 2026: Proyek, Peluang, Wilayah berbasis daerah, digabung satu grup */
+  { kunci: "nav.wilayah", ikon: "peta", hak: null, grup: [
+    { href: "/wilayah", kunci: "nav.wilayah_peta", ikon: "peta" }, { href: "/proyek", kunci: "nav.proyek", ikon: "proyek" },
+    { href: "/program", kunci: "nav.program", ikon: "proyek" }, { href: "/peluang", kunci: "nav.peluang", ikon: "analisis" },
+    { href: "/kelayakan", kunci: "nav.kelayakan", ikon: "analisis" }, { href: "/indeks", kunci: "nav.indeks", ikon: "analisis" }] },
   { href: "/regulasi", kunci: "nav.regulasi", ikon: "regulasi", hak: null },
   { href: "/pustaka", kunci: "nav.pustaka", ikon: "buku", hak: null },
   { kunci: "nav.media", ikon: "berita", hak: null, grup: [
