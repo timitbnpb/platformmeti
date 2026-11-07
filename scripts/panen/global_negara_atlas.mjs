@@ -17,10 +17,11 @@ const J = (f) => JSON.parse(fs.readFileSync(path.join(ROOT, f), 'utf8'));
 export function cocokKabupaten(radar, wilayah, adm2) {
   const prov = new Map(wilayah.map((p) => [p.kode, p.nama]));
   const idx = new Map();
-  for (const x of adm2) { const k = nk(x.asli) + '|' + (x.tipe === 'kota' ? 'kota' : 'kab'); (idx.get(k) || idx.set(k, []).get(k)).push(x); }
+  const mentah = (s) => String(s || '').toLowerCase().replace(/[^a-z0-9]/g, '');
+  for (const x of adm2) for (const k of new Set([nk(x.asli) + '|' + (x.tipe === 'kota' ? 'kota' : 'kab'), 'x|' + nk(x.asli), 'x|' + mentah(x.asli)])) (idx.get(k) || idx.set(k, []).get(k)).push(x);
   const hasil = []; const tak = [];
   for (const b of radar) {
-    const c = idx.get(nk(b.nama) + '|' + (b.jenis === 'kota' ? 'kota' : 'kab')) || [];
+    const c = idx.get(nk(b.nama) + '|' + (b.jenis === 'kota' ? 'kota' : 'kab')) || idx.get('x|' + nk(b.nama)) || idx.get('x|' + mentah(b.nama.replace(/^kabupaten\s+/i, ''))) || []; // adm2 kadang salah jenis (Lima Puluh Kota, Kota Baru)
     const p = nk(prov.get(b.prov));
     const sama = c.filter((x) => nk(x.provinsi) === p);
     const pil = sama.length === 1 ? sama[0] : (c.length === 1 ? c[0] : (c.filter((x) => !x.provinsi).length === 1 && !sama.length ? c.find((x) => !x.provinsi) : null));
