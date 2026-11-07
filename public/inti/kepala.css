@@ -71,13 +71,14 @@ dialog.jm-cari::backdrop{background:color-mix(in srgb,var(--ink) 45%,transparent
 @keyframes jm-cari-latar{from{opacity:0}}
 @media (prefers-reduced-motion:reduce){dialog.jm-cari[open],dialog.jm-cari::backdrop{animation:none}}
 .jm-cari-atas{display:flex;align-items:center;gap:12px;padding:12px 12px 12px 20px;color:var(--accent)}
-.jm-cari .jm-cari-isi{flex:1;width:auto;max-width:none;min-width:0;height:48px;margin:0;padding:0;box-shadow:none;border:0;background:none;color:var(--ink);font:500 20px/1.3 var(--font);outline:none}
+.jm-cari .jm-cari-isi{flex:1;width:auto;max-width:none;min-width:0;height:48px;margin:0;padding:0;box-shadow:none;border:0;background:none;color:var(--ink);font:600 var(--t-h2)/1.3 var(--font);outline:none}
 .jm-cari-isi::placeholder{color:var(--ink2);font-weight:400}
 .jm-cari-isi::-webkit-search-cancel-button{display:none}
 .jm-cari-chips{display:flex;gap:8px;padding:2px 16px 12px;overflow-x:auto;scrollbar-width:none;border-bottom:1px solid var(--line)}
 .jm-cari-chips::-webkit-scrollbar{display:none}
 .jm-cari-chip{flex:none;display:inline-flex;align-items:center;gap:6px;min-height:34px;padding:0 12px;border:1px solid var(--line);border-radius:var(--r-pil);background:var(--surface);color:var(--ink2);font:600 var(--t-tombol)/1 var(--font);cursor:pointer;transition:background .12s,border-color .12s,color .12s}
 .jm-cari-chip:hover{border-color:var(--accent);color:var(--ink)}
+.jm-cari .jm-cari-chip .jm-ik{color:inherit}
 .jm-cari-chip[aria-pressed=true]{background:var(--accent);border-color:var(--accent);color:var(--on-accent)}
 .jm-cari-chip b{font-weight:700;opacity:.8}.jm-cari-chip b:empty{display:none}
 .jm-cari-chip.jm-cari-nol:not([aria-pressed=true]){opacity:.5}
@@ -98,7 +99,7 @@ dialog.jm-cari::backdrop{background:color-mix(in srgb,var(--ink) 45%,transparent
 .jm-cari-pil{display:flex;align-items:center;flex-wrap:wrap;gap:6px}
 .jm-cari-enter{flex:none;display:none;align-items:center;justify-content:center;width:24px;height:24px;border-radius:7px;background:var(--card);border:1px solid var(--line);color:var(--ink2)}
 .jm-cari-baris[aria-selected=true] .jm-cari-enter{display:inline-flex}
-.jm-cari mark{background:none;color:var(--accent);font-weight:800;padding:0}
+.jm-cari mark{background:none;color:var(--accent);font-weight:700;padding:0}
 .jm-cari-info{display:flex;flex-direction:column;align-items:center;gap:10px;margin:0;padding:40px 16px;text-align:center;color:var(--ink2)}
 .jm-cari-lalu{display:flex;align-items:center;gap:10px;width:100%;min-height:40px;padding:6px 10px;border:0;border-radius:10px;background:none;color:var(--ink);font:400 var(--t-body)/1.3 var(--font);text-align:left;cursor:pointer}
 .jm-cari-lalu:hover{background:var(--soft-hijau)}.jm-cari-lalu .jm-ik{color:var(--ink2);flex:none}
@@ -110,7 +111,7 @@ dialog.jm-cari::backdrop{background:color-mix(in srgb,var(--ink) 45%,transparent
 .jm-cari-contoh button:hover{border-color:var(--accent);color:var(--accent)}
 .jm-cari-kaki{display:flex;align-items:center;gap:16px;padding:10px 16px;border-top:1px solid var(--line);background:var(--surface);color:var(--ink2);font:500 var(--t-kecil)/1 var(--font)}
 .jm-cari-kaki span{display:inline-flex;align-items:center;gap:6px}.jm-cari-kaki-k{margin-left:auto}
-.jm-cari kbd{display:inline-flex;align-items:center;justify-content:center;min-width:22px;height:22px;padding:0 6px;border:1px solid var(--line-ctl);border-bottom-width:2px;border-radius:6px;background:var(--card);color:var(--ink);font:600 11px/1 var(--font)}
+.jm-cari kbd{display:inline-flex;align-items:center;justify-content:center;min-width:22px;height:22px;padding:0 6px;border:1px solid var(--line-ctl);border-bottom-width:2px;border-radius:6px;background:var(--card);color:var(--ink);font:600 var(--t-label)/1 var(--font)}
 .jm-cari-chip:focus-visible,.jm-cari-pintas a:focus-visible,.jm-cari-contoh button:focus-visible,.jm-cari-lalu:focus-visible,.jm-cari-semua:focus-visible{outline:2px solid var(--fokus);outline-offset:2px}
 /* menu desktop rata (pemilik 7 Nov): kolom sama lebar, grup Insight ikut sel grid, jarak sama di semua halaman */
 @media (min-width:1200px){

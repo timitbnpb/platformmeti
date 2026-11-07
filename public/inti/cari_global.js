@@ -32,7 +32,7 @@ async function bangun() {
   for (const o of og.baris) { orgIds.add(o.id); tambah("org", o.id, o.nama, o.kategori?.label || "", "/o/" + o.id, o.kode_saham, { logo: true }); }
   for (const p of or.baris) if (p.kelompok?.kode === "tokoh-publik" && orgIds.has(p.organisasi_id)) tambah("orang", p.id, [p.gelar, p.nama].filter(Boolean).join(" "), p.jabatan_terkini || "", "/o/" + p.organisasi_id, p.organisasi_terkini);
   for (const r of rg.baris) tambah("reg", r.id, r.judul, [String(r.jenis || "").toUpperCase(), r.nomor && r.tahun ? `${r.nomor}/${r.tahun}` : r.tahun].filter(Boolean).join(" "), "/regulasi?id=" + encodeURIComponent(r.id), `${r.jenis} ${r.nomor} ${r.tahun}`);
-  for (const b of br.baris) if (httpAman(b.url)) tambah("berita", b.id, b.judul, [b.media, b.terbit ? tanggal(b.terbit) : ""].filter(Boolean).join(", "), b.url, "", { luar: true });
+  for (const b of br.baris) if (httpAman(b.url)) tambah("berita", b.id, b.judul, [b.media, b.terbit ? tanggal(String(b.terbit).slice(0, 10)) : ""].filter(Boolean).join(", "), b.url, "", { luar: true });
   for (const w of wl.baris) tambah("wilayah", w.kode, w.nama, w.identitas?.ibu_kota || "", "/wilayah/" + w.kode, "provinsi", { lambang: w.kode });
   for (const k of pk.baris) tambah("pustaka", k.id, k.judul, [k.penerbit, k.tanggal].filter(Boolean).join(", "), "/pustaka?id=" + encodeURIComponent(k.id), k.jenis);
   for (const g of pg.baris) tambah("program", g.kode, bahasa() === "en" ? g.nama.en || g.nama.id : g.nama.id, "", "/program/" + encodeURIComponent(g.kode), "program nasional");
