@@ -26,7 +26,10 @@ const norm = (s) => String(s || '').toLowerCase().replace(/^provinsi\s+/, '').re
 const mwProyek = (p) => { const k = (p.kapasitas || [])[0]; return k && /^mw$/i.test(k.satuan) && Number.isFinite(k.nilai) ? k.nilai : null; };
 const statusP = (p) => (p.status || [])[0]?.nilai || 'tidak tercatat';
 const urut = (a, f, arah = -1) => [...a].sort((x, y) => (f(x) > f(y) ? arah : f(x) < f(y) ? -arah : 0));
-const pot = (x, n = 120) => (x.length > n ? x.slice(0, n - 3) + '...' : x);
+const KECIL = new Set(['dan', 'di', 'atas', 'yang', 'untuk', 'tentang', 'dengan', 'dari', 'pada', 'ke', 'atau', 'oleh', 'dalam', 'serta']);
+const AKRO = new Set(['ri', 'plts', 'pltb', 'pltp', 'plta', 'pltmh', 'uu', 'pp', 'esdm', 'tkdn', 'bumn', 'pt', 'ebt', 'pln', 'kpbu', 'ppn', 'pph']);
+export const kap = (t) => { const h = String(t || ''); const hr = h.replace(/[^A-Za-z]/g, ''); if (hr.length < 8 || hr !== hr.toUpperCase()) return h; return h.toLowerCase().replace(/[a-z]+/g, (w, i) => (AKRO.has(w) ? w.toUpperCase() : (i > 0 && KECIL.has(w) ? w : w[0].toUpperCase() + w.slice(1)))); };
+const pot = (x, n = 120) => { const k = kap(x); return k.length > n ? k.slice(0, n - 3) + '...' : k; };
 const JENIS = { uu: 'UU', pp: 'PP', perpres: 'Perpres', permen: 'Permen', inpres: 'Inpres', keppres: 'Keppres', perda: 'Perda', lainnya: 'Peraturan' };
 export const namaReg = (r) => `${JENIS[r.jenis] || r.jenis} ${r.nomor}/${r.tahun}`;
 
@@ -126,7 +129,8 @@ export function bab10(id) {
 /* ---------- bab 12 dan 13: regulasi dan linimasa ---------- */
 function regRelevan(id) {
   const K = KONFIG[id], D = data();
-  const khusus = D.reg.filter((r) => (r.topik || []).some((t) => K.regTopik.includes(t)) || (K.regKata.test(r.judul) && !/remisi|retribusi/i.test(r.judul)));
+  const NAS = ['uu', 'pp', 'perpres', 'permen', 'inpres', 'keppres', 'lainnya'];
+  const khusus = D.reg.filter((r) => NAS.includes(r.jenis) && ((r.topik || []).some((t) => K.regTopik.includes(t)) || (K.regKata.test(r.judul) && !/remisi|retribusi/i.test(r.judul))));
   const set = new Set(khusus.map((r) => r.id));
   const umum = D.reg.filter((r) => !set.has(r.id) && ['harga', 'insentif', 'perizinan', 'energi_umum', 'energi_baru_umum', 'perencanaan', 'tkdn', 'karbon'].some((t) => (r.topik || []).includes(t)) && UMUM.test(r.judul) && ['uu', 'pp', 'perpres', 'permen', 'inpres'].includes(r.jenis));
   return { khusus: urut(khusus, (r) => r.tanggal_ditetapkan || ''), umum: urut(umum, (r) => r.tanggal_ditetapkan || '') };
@@ -321,27 +325,96 @@ export function tenagaKerja(id) {
   return { par: P([[`Sertifikasi kompetensi BNSP: ${cocok.length} lembaga sertifikasi profesi (LSP) memuat ${nSkema} skema terkait teknologi ini, antara lain ${nama}. Skema berjenjang dari teknisi, pelaksana, sampai engineer perencana (data prodi_pelatihan, diperiksa 2026).`, `BNSP competency certification: ${cocok.length} professional certification bodies (LSP) list ${nSkema} schemes related to this technology, including ${nama}. Schemes run from technician and installer up to planning engineer (prodi_pelatihan data, checked 2026).`]]), n: cocok.length };
 }
 
+
+/* ---------- contoh pemain bernama dari organisasi.json untuk langkah rantai nilai ---------- */
+export function contohPemain(id, peranRe, n = 3) {
+  const K = KONFIG[id], D = data();
+  return urut(D.org.filter((o) => (o.kepakaran || []).some((k) => K.kep.includes(k)) && (o.peran_rantai || []).some((p) => peranRe.test(p)) && !/\b[A-Z]{2,}( [A-Z]{2,}){2,}\b/.test(o.nama)), (o) => (o.proyek_ids || []).length).slice(0, n).map((o) => o.nama);
+}
+/* aturan: [[regex judul langkah, regex peran, id organisasi aturan?]] */
+export function namaiLangkah(d, nomor, id, aturan) {
+  for (const [jr, pr] of aturan) {
+    const x = d.bab[nomor]?.butir?.find((b) => jr.test(b.judul.id));
+    if (!x) continue;
+    const nm = contohPemain(id, pr, 3);
+    if (nm.length && !x.pelaku.id.includes('basis METI')) { x.pelaku = T(`${x.pelaku.id}; contoh di basis METI: ${nm.join(', ')}`, `${x.pelaku.en}; examples in the METI base: ${nm.join(', ')}`); }
+  }
+}
+
+/* ---------- proyeksi 2030, 2045, 2060 (RUPTL + RUKN, interpolasi EST) ---------- */
+const RUKN_GW = { surya: 108.7, bayu: 73.5, hidro: 70.5, 'panas-bumi': 22.7 };
+export function proyeksi(id) {
+  const K = KONFIG[id], rr = ringkasRuptl(id);
+  const kap = pub('kapasitas_tren').baris.filter((x) => x.taksonomi === K.pot.replace('_', '-')).sort((a, b) => a.tahun - b.tahun);
+  const mw24 = kap.find((x) => x.tahun === 2024).kapasitas_mw;
+  const sd = (th) => rr.per.filter((x) => x.tahun <= th).reduce((s, x) => s + x.mw, 0);
+  const mw30 = Math.round(mw24 + sd(2030)), mw34 = Math.round(mw24 + sd(2034)), mw60 = Math.round(RUKN_GW[id] * 1000);
+  const mw45 = Math.round(mw34 + (mw60 - mw34) * (2045 - 2034) / (2060 - 2034));
+  return { mw24: Math.round(mw24), mw30, mw34, mw45, mw60 };
+}
+export function proyeksiTeks(id) {
+  const p = proyeksi(id), n = KONFIG[id].nama;
+  return P([
+    [`Proyeksi ${n} 2030 (EST): kapasitas 2024 sebesar ${fmt(p.mw24)} MW ditambah proyek RUPTL 2025-2034 yang ber-COD sampai 2030 menjadi sekitar ${fmt(p.mw30)} MW. Ini jadwal rencana, bukan realisasi; sejarah proyek bergeser (bab 40).`, `${n} projection for 2030 (EST): 2024 capacity of ${fmtE(p.mw24)} MW plus RUPTL 2025-2034 projects reaching COD by 2030 gives about ${fmtE(p.mw30)} MW. This is a planned schedule, not delivery; projects have historically slipped (chapter 40).`],
+    [`Proyeksi 2045 (EST, interpolasi lurus antara sekitar ${fmt(p.mw34)} MW pada 2034 menurut RUPTL dan ${fmt(p.mw60)} MW pada 2060 menurut RUKN): sekitar ${fmt(p.mw45)} MW. Tidak ada dokumen resmi yang memberi angka 2045 per teknologi, jadi ini pembacaan METI, bukan target.`, `Projection for 2045 (EST, straight-line interpolation between about ${fmtE(p.mw34)} MW in 2034 per RUPTL and ${fmtE(p.mw60)} MW in 2060 per RUKN): about ${fmtE(p.mw45)} MW. No official document gives a 2045 figure per technology, so this is a METI reading, not a target.`],
+    [`Proyeksi 2060: RUKN (Kepmen ESDM 85.K/2025, hlm 134) memperkirakan ${n} sebesar ${fmt(p.mw60)} MW dalam daya mampu neto total sekitar 443 GW pada skenario sasaran nol emisi bersih 2060.`, `2060 projection: the RUKN (Energy Ministry Decree 85.K/2025, p. 134) projects ${n} at ${fmtE(p.mw60)} MW within total net capacity of about 443 GW in the 2060 net-zero scenario.`],
+  ]);
+}
+
+
+/* ---------- penyelesaian: medan untuk cetakan (deret ubin, bab faq, kat glosarium, mw pemain, peran rantai, koordinat kasus) ---------- */
+const FAQ_BAB = [[/izin|perizinan|ppa|pjbl|lama|berapa lama|slo|wajib/i, 15], [/aturan|regulasi|kuota|tkdn|perpres|permen|insentif/i, 12], [/harga|tarif|biaya|lcoe|modul/i, 11], [/potensi|daerah|provinsi|wilayah|cerah|radiasi/i, 8], [/dana|pendanaan|pembiayaan|bank|skema/i, 24], [/mati|mangkrak|gagal|kontroversial|rusak|tertunda/i, 40], [/program|proyek|berapa kapasitas|pabrik/i, 10], [/target|proyeksi|2030|2060/i, 30], [/teknologi|terapung|lepas pantai|binari|hibrida|baterai/i, 17], [/apa itu|apa beda|apa bedanya|bagaimana|pumped|kurtailmen/i, 4]];
+const KAT = [['satuan', /^(mw|kw|gw|twh|gwh|kwh|mwp|kwp|mwac|pvout|ghi|faktor kapasitas|head|debit|kapasitas|rasio|degradasi|performance|kerapatan)/i], ['aturan', /^(iuptl|slo|tkdn|wkp|pspe|ipb|ruptl|rukn|ruen|amdal|kkpr|dpt|fpic|esmp|rued|perpres|bonus|ppa|pjbl|dak)/i], ['uang', /^(lcoe|fit|cfd|bpp|take-or-pay|ipp|faktor f|tarif|harga|net metering|ekspor-impor|deemed|pisp)/i]];
+export function finalize(d, id) {
+  const K = KONFIG[id], D = data();
+  // (1) deret sparkline ubin
+  const kap_ = pub('kapasitas_tren').baris.filter((x) => x.taksonomi === K.pot.replace('_', '-')).sort((a, b) => a.tahun - b.tahun);
+  const mw = kap_.map((x) => [String(x.tahun), x.kapasitas_mw]).filter((p) => p[0] >= '2010'), gw = kap_.filter((x) => x.pembangkitan_gwh != null && x.tahun >= 2010).map((x) => [String(x.tahun), x.pembangkitan_gwh]);
+  d.kunci.forEach((k, i) => { if (i === 0 && mw.length) k.deret = mw; else if (i === 1 && gw.length > 3) k.deret = gw; });
+  // (2) faq.bab dan (3) glosarium.kat
+  for (const x of d.bab['2']?.butir || []) x.bab ||= (FAQ_BAB.find(([re]) => re.test(x.t.id)) || [null, 4])[1];
+  for (const x of d.bab['3']?.butir || []) x.kat ||= (KAT.find(([, re]) => re.test(x.istilah.id)) || ['teknis'])[0];
+  // (4) pemain: mw
+  const mwPer = new Map();
+  for (const p of D.proyek.filter((q) => K.tek.includes(q.teknologi))) for (const arr of Object.values(p.pihak || {})) for (const y of arr) if (y.organisasi_id) mwPer.set(y.organisasi_id, (mwPer.get(y.organisasi_id) || 0) + (mwProyek(p) || 0));
+  for (const r of d.bab['9']?.baris || []) r.mw = Math.round(mwPer.get(r.id) || 0);
+  if (d.bab['9'] && !d.bab['9'].kolom.some((c) => c.k === 'mw')) d.bab['9'].kolom.push({ k: 'mw', l: T('Kapasitas proyek (MW)', 'Project capacity (MW)'), num: true, d: 0 });
+  // (7) peran rantai per tahap
+  const PERAN = [[/pabrik|manufaktur|turbin|modul|pemasok|peralatan/i, 'manufaktur'], [/epc|konstruksi|sipil/i, 'EPC'], [/pendana|modal|pembiaya|dana/i, 'pendana'], [/operasi|pemelihara/i, 'operator'], [/pembeli|pln|ppa/i, 'IPP'], [/kebijakan|perencana|survei|lelang|penetapan|studi awal|izin/i, 'lembaga'], [/pengembang|pemilik|pengukuran|eksplorasi|lahan/i, 'pengembang']];
+  for (const x of d.bab['6']?.butir || []) x.peran ||= (PERAN.find(([re]) => re.test(x.judul.id)) || [null, 'pengembang'])[1];
+  // (6) kasus: koordinat (pusat wilayah proyek tercatat) bila nama kasus cocok proyek
+  for (const n of ['39', '40']) for (const k of d.bab[n]?.butir || []) {
+    if (k.negara !== 'ID' || k.koordinat) continue;
+    const kata = norm(k.nama).split(' ').filter((w) => w.length >= 5 && !['pltb', 'plts', 'pltp', 'plta', 'wind', 'farm'].includes(w));
+    const p = D.proyek.find((q) => K.tek.includes(q.teknologi) && q.lokasi?.lat != null && kata.some((w) => norm(q.nama).split(' ').includes(w)));
+    if (p) { k.koordinat = [p.lokasi.lat, p.lokasi.lng]; k.koordinat_presisi = p.lokasi.presisi || 'provinsi'; k.id_proyek = p.id; }
+  }
+  return d;
+}
+
 export function pakaiDalam(d, id, SUMBER, opsi = {}) {
   Object.assign(d.sumber, SUMBER_DALAM, {
     d_kap: S('IRENA, kapasitas dan pembangkitan terpasang Indonesia (public/data/kapasitas_tren.json)', 'IRENA', 'https://www.irena.org/Data', '2026-11-08', 'resmi', 'IRENA data terbuka'),
     d_lcoe: S('IRENA LCOE dan harga modul via Our World in Data (public/data/biaya_listrik.json)', 'IRENA via Our World in Data', 'https://ourworldindata.org/grapher/levelized-cost-of-energy', '2026-11-08', 'via-pihak-ketiga', 'CC BY 4.0'),
+    d_target: S('Target KEN (PP 40/2025), RUKN (Kepmen ESDM 85.K/2025), RUPTL 2025-2034 (public/data/target.json, halaman tertera di berkas)', 'Pemerintah RI, ESDM, PLN', 'https://peraturan.bpk.go.id/Details/328789', '2026-11-07', 'resmi'),
     d_lsp: S('Lembaga sertifikasi profesi BNSP dan skema EBT (public/data/prodi_pelatihan.json, situs BNSP)', 'BNSP, METI', 'https://bnsp.go.id/', '2026-11-07', 'resmi'),
     d_inov: S('Basis inovasi METI (public/data/inovasi.json; tiap inovasi membawa sumbernya)', 'METI, kampus, BRIN dan startup', 'https://platformmeti.timitbnpb.workers.dev/direktori', '2026-11-08', 'via-pihak-ketiga'),
     d_ins: S('Basis insentif METI (public/data/insentif.json: PMK 66/2015, PMK 130/2020, Permen ESDM 11/2024, Perpres 112/2022)', 'BPK JDIH, METI', 'https://peraturan.bpk.go.id/Details/146740/pmk-no-66pmk0102015', '2026-11-07', 'resmi'),
     d_rpasok: S('Kebutuhan MW per tahun dari RUPTL 2025-2034 (public/data/rantai_pasok.json)', 'PLN, ESDM', 'https://gatrik.esdm.go.id/', '2026-11-07', 'resmi'),
     d_izin: S('Izin dan kontrak listrik EBT: pasal Permen ESDM 11/2021, 2/2024, Perpres 112/2022 (public/data/izin_kontrak.json, tiap jawaban membawa pasalnya)', 'Pemerintah RI via BPK JDIH', 'https://peraturan.bpk.go.id/Details/225308', '2026-11-07', 'resmi'),
   });
+  d.sumber.ed ||= { judul: 'Ringkasan editorial METI (penjelasan umum dan definisi; bukan kutipan pasal)', penerbit: 'METI', url: 'https://platformmeti.timitbnpb.workers.dev/metode', tanggal: '2026-11-08', tahun: 2026, bukti: 'editorial' };
   d.bab['8'] = bab8(id, d.bab['8']);
   d.bab['9'] = bab9(id);
   d.bab['10'] = bab10(id);
   d.bab['12'] = bab12(id, d.bab['12']);
   d.bab['13'] = linimasaTambah(id, d.bab['13'], 15);
   d.bab['24'] = bab24(id, d.bab['24']);
-  d.bab['18'] = bab18(id, d.bab['18']);
-  d.bab['26'] = bab26Tambah(id, d.bab['26'], 10);
+  { const b18 = bab18(id, d.bab['18']); if (b18.baris.length && !opsi.pertahankan18) d.bab['18'] = b18; }
+  { const b26 = bab26Tambah(id, d.bab['26'], 10); if (b26.baris.length) d.bab['26'] = b26; }
   { const tk = tenagaKerja(id); ke(d, '28', 'teks', 'paragraf', tk.par, ['d_lsp']); }
   ke(d, '14', 'teks', 'paragraf', kewajibanUmum(), ['d_izin', 'd_ins']);
-  d.bab['7'] = bab7Indeks(id, d.bab['7']);
+  if (opsi.bab7Tambah) d.bab['7'].seri.push(...opsi.bab7Tambah()); else d.bab['7'] = bab7Indeks(id, d.bab['7']);
   if (opsi.lcoe) d.bab['19'] = bab19Indeks(id, d.bab['19'], opsi.lcoe);
   if (opsi.owid) { // negara pembanding: Indonesia + 10 negara dari OWID; baris ASEAN lama (opsi.owid.lama) dipetakan dan ditambahkan bila negaranya belum ada
     const t = pembandingOwid(opsi.owid.jenis), ada = new Set(t.baris.map((r) => r.iso2));
@@ -351,6 +424,10 @@ export function pakaiDalam(d, id, SUMBER, opsi = {}) {
     d.bab['20'] = t;
   }
   opsi.isi?.(d, { SUMBER, ke, ambilSumber: (...k) => ambilSumber(d, SUMBER, ...k) });
+  finalize(d, id);
+  const dipakai = JSON.stringify(d.bab) + JSON.stringify(d.kunci);
+  for (const k of Object.keys(SUMBER_DALAM)) if (!dipakai.includes(`"${k}"`)) delete d.sumber[k];
+  for (const k of ['d_kap', 'd_lcoe', 'd_izin', 'd_ins', 'd_inov', 'd_lsp', 'd_rpasok', 'd_target']) if (d.sumber[k] && !dipakai.includes(`"${k}"`)) delete d.sumber[k];
   return d;
 }
 export { baca, pub, norm, urut, S };

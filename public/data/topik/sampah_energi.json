@@ -65,7 +65,69 @@
     "en": "MW"
    },
    "sumber": "kap",
-   "est": false
+   "est": false,
+   "deret": [
+    [
+     2011,
+     13
+    ],
+    [
+     2012,
+     13
+    ],
+    [
+     2013,
+     13
+    ],
+    [
+     2014,
+     18
+    ],
+    [
+     2015,
+     7.83
+    ],
+    [
+     2016,
+     7.83
+    ],
+    [
+     2017,
+     7.83
+    ],
+    [
+     2018,
+     7.83
+    ],
+    [
+     2019,
+     7.83
+    ],
+    [
+     2020,
+     7.83
+    ],
+    [
+     2021,
+     14.23
+    ],
+    [
+     2022,
+     12.23
+    ],
+    [
+     2023,
+     18.24
+    ],
+    [
+     2024,
+     18.24
+    ],
+    [
+     2025,
+     18.24
+    ]
+   ]
   },
   {
    "label": {
@@ -349,6 +411,30 @@
    "tanggal": "2018-08-20",
    "tahun": 2018,
    "bukti": "media"
+  },
+  "eu_wfd": {
+   "judul": "Uni Eropa, Waste Framework Directive 2008/98/EC (hirarki pengelolaan sampah: cegah, guna ulang, daur ulang, pulih energi, buang)",
+   "penerbit": "Uni Eropa",
+   "url": "https://eur-lex.europa.eu/eli/dir/2008/98/oj",
+   "tanggal": "2008-11-19",
+   "tahun": 2008,
+   "bukti": "resmi"
+  },
+  "uu18": {
+   "judul": "UU 18/2008 tentang Pengelolaan Sampah (dasar hukum pengelolaan sampah nasional)",
+   "penerbit": "BPK JDIH",
+   "url": "https://peraturan.bpk.go.id/",
+   "tanggal": "2008-05-07",
+   "tahun": 2008,
+   "bukti": "resmi"
+  },
+  "iea_wte": {
+   "judul": "IEA Bioenergy Task 36, Integrating Energy Recovery into Solid Waste Management (kisaran umum efisiensi dan teknologi WtE)",
+   "penerbit": "IEA Bioenergy",
+   "url": "https://www.ieabioenergy.com/",
+   "tanggal": "2026-11-08",
+   "tahun": 2026,
+   "bukti": "resmi"
   }
  },
  "bab": {
@@ -358,7 +444,15 @@
     "ed",
     "wekdm",
     "ashurst",
-    "kap"
+    "kap",
+    "iea_wte",
+    "eu_wfd",
+    "uu18",
+    "timar",
+    "bogor",
+    "tahap2",
+    "sgnea",
+    "pendanaan"
    ],
    "butir": [
     {
@@ -369,7 +463,8 @@
      "j": {
       "id": "Pengolahan sampah menjadi energi listrik: sampah perkotaan dibakar atau digasifikasi untuk membangkitkan listrik dan mengurangi volume yang masuk TPA.",
       "en": "Waste-to-electricity treatment: municipal waste is incinerated or gasified to generate power and cut the volume going to landfill."
-     }
+     },
+     "bab": 4
     },
     {
      "t": {
@@ -379,7 +474,8 @@
      "j": {
       "id": "Dua: Benowo Surabaya (9 MW, 1.000 ton per hari, COD Mei 2021) dan Putri Cempo Surakarta (5 MW, 545 ton per hari, COD awal 2024), dari 15 proyek di 12 kota prioritas menurut KESDM.",
       "en": "Two: Benowo Surabaya (9 MW, 1,000 tonnes a day, COD May 2021) and Putri Cempo Surakarta (5 MW, 545 tonnes a day, COD early 2024), out of 15 projects in 12 priority cities per KESDM."
-     }
+     },
+     "bab": 10
     },
     {
      "t": {
@@ -389,7 +485,8 @@
      "j": {
       "id": "Harga beli PLN menjadi USD 0,20 per kWh tetap selama 30 tahun (sebelumnya USD 13,35 sen), tipping fee daerah diganti kompensasi negara ke PLN, Danantara memimpin pelaksanaan, dan Perpres 35/2018 dicabut.",
       "en": "PLN's purchase price becomes a fixed USD 0.20 per kWh for 30 years (previously USD 13.35 cents), local tipping fees are replaced by state compensation to PLN, Danantara leads implementation and Perpres 35/2018 is revoked."
-     }
+     },
+     "bab": 19
     },
     {
      "t": {
@@ -399,7 +496,8 @@
      "j": {
       "id": "Biaya per ton sampah yang dibayar pemda kepada operator. Aturan lama membatasi bantuan pusat sampai Rp500.000 per ton; skema baru menghapusnya dari beban daerah.",
       "en": "A per-tonne fee paid by local government to the operator. The old rule capped central assistance at IDR 500,000 per tonne; the new scheme removes it from local budgets."
-     }
+     },
+     "bab": 19
     },
     {
      "t": {
@@ -409,7 +507,8 @@
      "j": {
       "id": "Perpres 109/2025 menetapkan pasokan minimum 1.000 ton per hari per fasilitas menurut ringkasan Ashurst.",
       "en": "Perpres 109/2025 sets a minimum supply of 1,000 tonnes a day per facility per the Ashurst summary."
-     }
+     },
+     "bab": 12
     },
     {
      "t": {
@@ -419,7 +518,8 @@
      "j": {
       "id": "Bali (groundbreaking 8 Juli 2026, Rp3 triliun) dan Bekasi (26 Agustus 2026, 1.500 ton per hari, Rp3 triliun, target operasi pertengahan 2028); pemenang tahap I juga mencakup Bogor Raya dan Yogyakarta.",
       "en": "Bali (groundbreaking 8 July 2026, IDR 3 trillion) and Bekasi (26 August 2026, 1,500 tonnes a day, IDR 3 trillion, operation targeted mid-2028); phase I winners also include Greater Bogor and Yogyakarta."
-     }
+     },
+     "bab": 30
     },
     {
      "t": {
@@ -429,7 +529,8 @@
      "j": {
       "id": "Ombudsman dan KESDM menyebut harga listrik rendah, daerah tak mampu membayar tipping fee, dan kepastian investasi lemah. Lihat bab 40.",
       "en": "The Ombudsman and KESDM cite low electricity price, local governments unable to pay tipping fees and weak investment certainty. See chapter 40."
-     }
+     },
+     "bab": 19
     },
     {
      "t": {
@@ -439,14 +540,93 @@
      "j": {
       "id": "Debatnya nyata: pendukung menyebut pengurangan volume dan listrik; kritik menyebut biaya, emisi, dan ketidakadilan. Kualitas pemilahan dan kadar air sampah sangat menentukan. Lihat bab 29.",
       "en": "The debate is real: supporters cite volume reduction and power; critics cite cost, emissions and unfairness. Sorting quality and moisture decide much. See chapter 29."
-     }
+     },
+     "bab": 19
+    },
+    {
+     "t": {
+      "id": "Apa beda PSEL, PLTSa, dan RDF?",
+      "en": "What is the difference between PSEL, PLTSa and RDF?"
+     },
+     "j": {
+      "id": "PSEL adalah istilah Perpres 109/2025 untuk pengolahan sampah menjadi energi terbarukan; PLTSa adalah istilah lama pembangkit listrik tenaga sampah; RDF (refuse-derived fuel) adalah bahan bakar padat dari sampah terpilah yang dipakai di pabrik semen atau PLTU.",
+      "en": "PSEL is the Perpres 109/2025 term for converting waste into renewable energy; PLTSa is the older term for waste power plants; RDF (refuse-derived fuel) is a solid fuel from sorted waste used in cement kilns or coal plants."
+     },
+     "bab": 12
+    },
+    {
+     "t": {
+      "id": "Berapa listrik dari satu ton sampah?",
+      "en": "How much power does a tonne of waste make?"
+     },
+     "j": {
+      "id": "Fasilitas pembakar massal modern umumnya 400 sampai 600 kWh per ton (kisaran umum, IEA Bioenergy). Benowo 9 MW dari 1.000 ton per hari setara 216 kWh per ton (EST); angkanya lebih rendah karena sampah basah dan teknologi gas TPA.",
+      "en": "Modern mass-burn plants generally make 400 to 600 kWh per tonne (general range, IEA Bioenergy). Benowo's 9 MW from 1,000 tonnes a day equals 216 kWh per tonne (EST); lower because of wet waste and landfill gas technology."
+     },
+     "bab": 5
+    },
+    {
+     "t": {
+      "id": "Apakah PSEL menggantikan daur ulang?",
+      "en": "Does PSEL replace recycling?"
+     },
+     "j": {
+      "id": "Tidak menurut hirarki pengelolaan sampah (Waste Framework Directive Uni Eropa dan UU 18/2008): cegah dan daur ulang didahulukan, pulih energi untuk residu. Kritik menyebut pasokan minimum 1.000 ton per hari dapat mengurangi insentif memilah; lihat bab 29.",
+      "en": "No under the waste hierarchy (EU Waste Framework Directive and Law 18/2008): prevention and recycling come first and energy recovery is for residue. Critics say a 1,000 tonne a day minimum can weaken sorting incentives; see chapter 29."
+     },
+     "bab": 12
+    },
+    {
+     "t": {
+      "id": "Siapa pengembang PSEL tahap I dan II?",
+      "en": "Who are the stage I and II PSEL developers?"
+     },
+     "j": {
+      "id": "Tahap I: Denpasar Raya, Bekasi, Bogor Raya (mitra operator Zhejiang Weiming), dan Yogyakarta, diumumkan Maret 2026; tahap II: delapan konsorsium ditetapkan 21 Juli 2026. Pelaksana: Danantara (BPI Daya Anagata Nusantara).",
+      "en": "Stage I: Denpasar Raya, Bekasi, Bogor Raya (operator partner Zhejiang Weiming) and Yogyakarta, announced March 2026; stage II: eight consortia named 21 July 2026. Implementer: Danantara (BPI Daya Anagata Nusantara)."
+     },
+     "bab": 4
+    },
+    {
+     "t": {
+      "id": "Apakah sampah Indonesia cocok untuk dibakar?",
+      "en": "Is Indonesian waste suitable for burning?"
+     },
+     "j": {
+      "id": "Sampah perkotaan Indonesia banyak organik dan basah sehingga nilai kalornya rendah; kasus Timarpur (Delhi) menunjukkan desain gagal bila nilai kalor nyata hanya 600 sampai 700 kcal per kg dibanding desain 1.460. Pemilahan dan pengeringan menentukan.",
+      "en": "Indonesian municipal waste is largely organic and wet so its calorific value is low; the Timarpur (Delhi) case shows design failure when real value is only 600 to 700 kcal per kg against a design of 1,460. Sorting and drying decide the outcome."
+     },
+     "bab": 4
+    },
+    {
+     "t": {
+      "id": "Apa yang terjadi pada abu dan emisi?",
+      "en": "What happens to ash and emissions?"
+     },
+     "j": {
+      "id": "Abu dasar dan abu terbang termasuk limbah yang harus dikelola (abu terbang sering B3); fasilitas butuh sistem pengendali gas buang. Singapura mengirim abu ke Pulau Semakau yang diproyeksikan penuh 2035, menandakan insinerasi tidak menghapus kebutuhan lahan.",
+      "en": "Bottom and fly ash must be managed (fly ash is often hazardous waste); plants need flue gas controls. Singapore ships ash to Semakau Island, projected full by 2035, showing incineration does not remove land needs."
+     },
+     "bab": 10
+    },
+    {
+     "t": {
+      "id": "Bagaimana PSEL berhubungan dengan kredit karbon?",
+      "en": "How does PSEL relate to carbon credits?"
+     },
+     "j": {
+      "id": "Bila sampah organik dihindarkan dari TPA, metana berkurang. Proyek gas TPA seperti Bantargebang tercatat di basis pendanaan METI sebagai proyek kredit karbon; skema kredit PSEL perlu metodologi khusus.",
+      "en": "Diverting organic waste from landfill cuts methane. Landfill gas projects such as Bantargebang are listed in the METI funding base as carbon credit projects; a PSEL credit scheme needs a specific methodology."
+     },
+     "bab": 10
     }
    ]
   },
   "3": {
    "tipe": "glosarium",
    "sumber": [
-    "ed"
+    "ed",
+    "metro109"
    ],
    "butir": [
     {
@@ -457,7 +637,8 @@
      "arti": {
       "id": "Pengolahan sampah menjadi energi listrik.",
       "en": "Waste-to-electricity treatment."
-     }
+     },
+     "kat": "teknis"
     },
     {
      "istilah": {
@@ -467,7 +648,8 @@
      "arti": {
       "id": "Pembangkit Listrik Tenaga Sampah, istilah lama untuk PSEL.",
       "en": "Waste power plant, the older term for PSEL."
-     }
+     },
+     "kat": "teknis"
     },
     {
      "istilah": {
@@ -477,7 +659,8 @@
      "arti": {
       "id": "Waste-to-energy.",
       "en": "Waste-to-energy."
-     }
+     },
+     "kat": "teknis"
     },
     {
      "istilah": {
@@ -487,7 +670,8 @@
      "arti": {
       "id": "Biaya per ton sampah dari pemda ke operator.",
       "en": "Per-tonne fee from local government to operator."
-     }
+     },
+     "kat": "uang"
     },
     {
      "istilah": {
@@ -497,7 +681,8 @@
      "arti": {
       "id": "Badan Usaha Pengembang dan Pengelola PSEL.",
       "en": "PSEL developer and operator entity."
-     }
+     },
+     "kat": "teknis"
     },
     {
      "istilah": {
@@ -507,7 +692,8 @@
      "arti": {
       "id": "Badan pengelola investasi negara yang memimpin PSEL menurut Perpres 109/2025.",
       "en": "State investment agency leading PSEL under Perpres 109/2025."
-     }
+     },
+     "kat": "uang"
     },
     {
      "istilah": {
@@ -517,7 +703,8 @@
      "arti": {
       "id": "Pengubahan sampah jadi gas sintetis pada suhu tinggi dengan oksigen terbatas.",
       "en": "Converting waste to syngas at high temperature with limited oxygen."
-     }
+     },
+     "kat": "teknis"
     },
     {
      "istilah": {
@@ -527,7 +714,8 @@
      "arti": {
       "id": "Pembakaran sampah langsung untuk uap dan listrik.",
       "en": "Direct burning of waste for steam and power."
-     }
+     },
+     "kat": "teknis"
     },
     {
      "istilah": {
@@ -537,7 +725,8 @@
      "arti": {
       "id": "Refuse-derived fuel, bahan bakar dari sampah terpilah.",
       "en": "Refuse-derived fuel from sorted waste."
-     }
+     },
+     "kat": "teknis"
     },
     {
      "istilah": {
@@ -547,7 +736,8 @@
      "arti": {
       "id": "Energi per kilogram sampah; sampah basah bernilai rendah.",
       "en": "Energy per kilogram of waste; wet waste has a low value."
-     }
+     },
+     "kat": "satuan"
     },
     {
      "istilah": {
@@ -557,7 +747,8 @@
      "arti": {
       "id": "Tempat pemrosesan akhir sampah.",
       "en": "Final waste disposal site (landfill)."
-     }
+     },
+     "kat": "teknis"
     },
     {
      "istilah": {
@@ -567,7 +758,8 @@
      "arti": {
       "id": "Residu insinerasi yang perlu penanganan khusus.",
       "en": "Incineration residues needing special handling."
-     }
+     },
+     "kat": "teknis"
     },
     {
      "istilah": {
@@ -577,7 +769,8 @@
      "arti": {
       "id": "Perjanjian jual beli tenaga listrik dengan PLN.",
       "en": "Power purchase agreement with PLN."
-     }
+     },
+     "kat": "uang"
     },
     {
      "istilah": {
@@ -587,7 +780,8 @@
      "arti": {
       "id": "Pembeli membayar kapasitas yang disepakati walau tidak memakainya.",
       "en": "Buyer pays for agreed capacity even if not used."
-     }
+     },
+     "kat": "uang"
     },
     {
      "istilah": {
@@ -597,7 +791,8 @@
      "arti": {
       "id": "Tanggal operasi komersial.",
       "en": "Commercial operation date."
-     }
+     },
+     "kat": "teknis"
     },
     {
      "istilah": {
@@ -607,7 +802,173 @@
      "arti": {
       "id": "Satu-satunya TPA Singapura di pulau lepas pantai untuk abu insinerasi.",
       "en": "Singapore's only landfill, an offshore island for incineration ash."
-     }
+     },
+     "kat": "teknis"
+    },
+    {
+     "istilah": {
+      "id": "SIPSN",
+      "en": "SIPSN"
+     },
+     "arti": {
+      "id": "Sistem Informasi Pengelolaan Sampah Nasional milik KLH yang memuat timbulan dan komposisi sampah daerah.",
+      "en": "The national waste management information system of the Environment Ministry with generation and composition data."
+     },
+     "kat": "teknis"
+    },
+    {
+     "istilah": {
+      "id": "TPS3R",
+      "en": "TPS3R"
+     },
+     "arti": {
+      "id": "Tempat pengolahan sampah reduce, reuse, recycle di tingkat kawasan.",
+      "en": "Neighbourhood reduce, reuse, recycle waste facility."
+     },
+     "kat": "teknis"
+    },
+    {
+     "istilah": {
+      "id": "TPST",
+      "en": "TPST"
+     },
+     "arti": {
+      "id": "Tempat pengolahan sampah terpadu skala kota.",
+      "en": "City-scale integrated waste processing site."
+     },
+     "kat": "teknis"
+    },
+    {
+     "istilah": {
+      "id": "Timbulan sampah",
+      "en": "Timbulan sampah"
+     },
+     "arti": {
+      "id": "Jumlah sampah yang dihasilkan per hari atau per tahun.",
+      "en": "The amount of waste generated per day or year."
+     },
+     "kat": "teknis"
+    },
+    {
+     "istilah": {
+      "id": "Komposisi sampah",
+      "en": "Komposisi sampah"
+     },
+     "arti": {
+      "id": "Porsi organik, plastik, kertas, kaca, dan logam dalam sampah.",
+      "en": "Shares of organic, plastic, paper, glass and metal in waste."
+     },
+     "kat": "teknis"
+    },
+    {
+     "istilah": {
+      "id": "Landfill gas (LFG)",
+      "en": "Landfill gas (LFG)"
+     },
+     "arti": {
+      "id": "Gas metana dari penguraian sampah di TPA yang dapat ditangkap untuk listrik.",
+      "en": "Methane from decomposing landfill waste that can be captured for power."
+     },
+     "kat": "teknis"
+    },
+    {
+     "istilah": {
+      "id": "Sanitary landfill",
+      "en": "Sanitary landfill"
+     },
+     "arti": {
+      "id": "TPA berlapis kedap dengan pengumpulan lindi dan gas.",
+      "en": "A lined landfill with leachate and gas collection."
+     },
+     "kat": "teknis"
+    },
+    {
+     "istilah": {
+      "id": "Lindi",
+      "en": "Lindi"
+     },
+     "arti": {
+      "id": "Air resapan sampah yang mencemari tanah dan air tanah bila tidak diolah.",
+      "en": "Waste seepage water that pollutes soil and groundwater if untreated."
+     },
+     "kat": "teknis"
+    },
+    {
+     "istilah": {
+      "id": "Pirolisis",
+      "en": "Pirolisis"
+     },
+     "arti": {
+      "id": "Penguraian termal tanpa oksigen menghasilkan minyak, gas, dan arang.",
+      "en": "Thermal decomposition without oxygen giving oil, gas and char."
+     },
+     "kat": "teknis"
+    },
+    {
+     "istilah": {
+      "id": "Kompos dan maggot (BSF)",
+      "en": "Kompos dan maggot (BSF)"
+     },
+     "arti": {
+      "id": "Pengolahan organik hayati yang mengurangi beban PSEL dan TPA.",
+      "en": "Biological organic treatment that reduces PSEL and landfill load."
+     },
+     "kat": "teknis"
+    },
+    {
+     "istilah": {
+      "id": "EPR",
+      "en": "EPR"
+     },
+     "arti": {
+      "id": "Extended producer responsibility, tanggung jawab produsen atas sampah kemasan.",
+      "en": "Extended producer responsibility for packaging waste."
+     },
+     "kat": "teknis"
+    },
+    {
+     "istilah": {
+      "id": "Co-processing",
+      "en": "Co-processing"
+     },
+     "arti": {
+      "id": "Pemakaian RDF sebagai bahan bakar alternatif di tungku semen.",
+      "en": "Using RDF as an alternative fuel in cement kilns."
+     },
+     "kat": "teknis"
+    },
+    {
+     "istilah": {
+      "id": "Jakstranas",
+      "en": "Jakstranas"
+     },
+     "arti": {
+      "id": "Kebijakan dan strategi nasional pengelolaan sampah rumah tangga (Perpres 97/2017).",
+      "en": "The national household waste management policy and strategy (Presidential Reg. 97/2017)."
+     },
+     "kat": "aturan"
+    },
+    {
+     "istilah": {
+      "id": "Kompensasi negara",
+      "en": "Kompensasi negara"
+     },
+     "arti": {
+      "id": "Mekanisme Perpres 109/2025 mengganti tipping fee daerah dengan pembayaran pemerintah ke PLN.",
+      "en": "The Perpres 109/2025 mechanism replacing local tipping fees with government payments to PLN."
+     },
+     "kat": "aturan"
+    },
+    {
+     "istilah": {
+      "id": "Zero waste to landfill",
+      "en": "Zero waste to landfill"
+     },
+     "arti": {
+      "id": "Sasaran tidak ada sampah yang masuk TPA, biasanya lewat daur ulang dan pulih energi.",
+      "en": "A target of no waste to landfill, usually via recycling and energy recovery."
+     },
+     "kat": "teknis"
     }
    ]
   },
@@ -616,7 +977,10 @@
    "sumber": [
     "wekdm",
     "ashurst",
-    "sgnea"
+    "sgnea",
+    "eu_wfd",
+    "uu18",
+    "ed"
    ],
    "paragraf": [
     {
@@ -630,6 +994,14 @@
     {
      "id": "Karena itu PSEL lebih merupakan infrastruktur layanan sampah yang kebetulan menghasilkan listrik, bukan proyek energi murni; kunci keberhasilannya ada pada pasokan sampah, biaya layanan, dan kepatuhan lingkungan.",
      "en": "PSEL is therefore a waste-service infrastructure that happens to produce power, not a pure energy project; its keys are waste supply, service cost and environmental compliance."
+    },
+    {
+     "id": "Hirarki sampah menempatkan pulih energi di bawah cegah dan daur ulang. PSEL dibenarkan terutama untuk residu yang tidak bisa didaur ulang dan sampah kota besar yang lahan TPA-nya habis; bukan sebagai pengganti pemilahan.",
+     "en": "The waste hierarchy places energy recovery below prevention and recycling. PSEL is justified mainly for residue that cannot be recycled and for large cities running out of landfill space, not as a substitute for sorting."
+    },
+    {
+     "id": "Keunikan sektor ini: pendapatan utama bukan listrik tetapi jasa pengelolaan sampah. Itu sebabnya skema tipping fee dan kompensasi negara menentukan layak tidaknya proyek lebih daripada teknologi.",
+     "en": "What is distinctive: the main revenue is waste service, not electricity. That is why tipping fee and state compensation schemes decide viability more than technology."
     }
    ]
   },
@@ -638,7 +1010,10 @@
    "sumber": [
     "wekdm",
     "ashurst",
-    "ed"
+    "ed",
+    "iea_wte",
+    "metro109",
+    "kap"
    ],
    "rumus": [
     {
@@ -648,6 +1023,22 @@
     {
      "id": "Pendapatan listrik tahunan = daya (kW) x 8.760 jam x faktor beban x harga (USD per kWh)",
      "en": "Annual electricity revenue = power (kW) x 8,760 hours x load factor x price (USD per kWh)"
+    },
+    {
+     "id": "Energi sampah (MWh per hari) = ton per hari x nilai kalor (MJ per kg) x 1000 / 3600; listrik = energi x efisiensi netto (umumnya 20 sampai 27 persen)",
+     "en": "Waste energy (MWh per day) = tonnes per day x calorific value (MJ per kg) x 1000 / 3600; electricity = energy x net efficiency (generally 20 to 27 percent)"
+    },
+    {
+     "id": "Pendapatan listrik (USD per tahun) = MW netto x 8.760 jam x faktor beban x 1000 x harga (USD per kWh)",
+     "en": "Electricity revenue (USD per year) = net MW x 8,760 hours x load factor x 1000 x price (USD per kWh)"
+    },
+    {
+     "id": "Emisi metana TPA terhindar (tCO2e) = fraksi organik x sampah (ton) x potensi metana (kg CH4 per ton) x GWP / 1000",
+     "en": "Avoided landfill methane (tCO2e) = organic fraction x waste (t) x methane potential (kg CH4 per t) x GWP / 1000"
+    },
+    {
+     "id": "Umur TPA (tahun) = volume tersisa (m3) / (timbulan masuk per tahun x kepadatan terkompaksi)",
+     "en": "Landfill life (years) = remaining volume (m3) / (annual inflow x compacted density)"
     }
    ],
    "contoh": [
@@ -662,6 +1053,18 @@
     {
      "id": "Analisis METI (Hipotesis): angka listrik per ton gasifikasi tidak otomatis berlaku untuk insinerasi; pengembang harus memakai nilai kalor sampah lokal yang terukur, sebab Timarpur (Delhi) gagal karena selisih nilai kalor.",
      "en": "METI analysis (Hypothesis): gasification kWh per tonne does not automatically apply to incineration; developers must use measured local waste calorific value, because Timarpur (Delhi) failed over a calorific mismatch."
+    },
+    {
+     "id": "Skenario hipotesis 1.000 ton per hari dengan 0.5 MWh per ton memberi 20.8 MW netto; pada faktor beban 85 persen menghasilkan 155 GWh per tahun. Pada USD 0,20 per kWh (Perpres 109/2025) pendapatan listrik sekitar USD 31 juta per tahun (EST; 0.5 MWh per ton adalah asumsi hipotesis).",
+     "en": "Hypothetical 1,000 tonnes a day at 0.5 MWh per tonne gives 20.8 MW net; at an 85 percent load factor that is 155 GWh a year. At USD 0.20 per kWh (Perpres 109/2025) power revenue is about USD 31 million a year (EST; 0.5 MWh per tonne is a hypothetical assumption)."
+    },
+    {
+     "id": "Benowo mencatat 9 MW dari 1.000 ton per hari, atau 216 kWh per ton, kurang dari separuh skenario di atas; perbedaan menunjukkan pentingnya teknologi dan kualitas sampah (EST).",
+     "en": "Benowo records 9 MW from 1,000 tonnes a day, or 216 kWh per tonne, under half the scenario above; the gap shows the importance of technology and waste quality (EST)."
+    },
+    {
+     "id": "Sampah 1.000 ton per hari dengan 55 persen organik dan potensi metana hipotesis 50 kg per ton organik: 27,5 ton metana per hari; pada GWP 27 setara sekitar 742 tCO2e per hari bila dibiarkan di TPA tanpa penangkapan (EST, semua faktor hipotesis).",
+     "en": "1,000 tonnes a day with 55 percent organic and a hypothetical methane potential of 50 kg per tonne of organic gives 27.5 tonnes of methane a day; at GWP 27 about 742 tCO2e a day if left in a landfill without capture (EST, all factors hypothetical)."
     }
    ]
   },
@@ -670,7 +1073,8 @@
    "sumber": [
     "ed",
     "ashurst",
-    "bekasi"
+    "bekasi",
+    "metro109"
    ],
    "butir": [
     {
@@ -685,7 +1089,8 @@
      "pelaku": {
       "id": "Pemda, dinas lingkungan",
       "en": "Local government, environment office"
-     }
+     },
+     "peran": "pemda"
     },
     {
      "judul": {
@@ -699,7 +1104,8 @@
      "pelaku": {
       "id": "KLH",
       "en": "Environment Ministry"
-     }
+     },
+     "peran": "pusat"
     },
     {
      "judul": {
@@ -713,7 +1119,8 @@
      "pelaku": {
       "id": "Danantara, konsorsium",
       "en": "Danantara, consortia"
-     }
+     },
+     "peran": "investor"
     },
     {
      "judul": {
@@ -727,7 +1134,8 @@
      "pelaku": {
       "id": "PLN, BUPP",
       "en": "PLN, BUPP"
-     }
+     },
+     "peran": "pln"
     },
     {
      "judul": {
@@ -741,7 +1149,8 @@
      "pelaku": {
       "id": "Kontraktor, penyedia teknologi",
       "en": "Contractor, technology provider"
-     }
+     },
+     "peran": "pengembang"
     },
     {
      "judul": {
@@ -755,7 +1164,38 @@
      "pelaku": {
       "id": "PLN, pemerintah",
       "en": "PLN, government"
-     }
+     },
+     "peran": "pln"
+    },
+    {
+     "judul": {
+      "id": "Pengelolaan abu dan emisi",
+      "en": "Ash and emissions management"
+     },
+     "isi": {
+      "id": "Abu dasar dimanfaatkan atau ditimbun; abu terbang sebagai B3 dikelola; gas buang dipantau terus-menerus.",
+      "en": "Bottom ash is reused or landfilled; fly ash as hazardous waste is managed; flue gas is monitored continuously."
+     },
+     "pelaku": {
+      "id": "Operator, KLH, laboratorium pemantau",
+      "en": "Operator, Environment Ministry, monitoring laboratories"
+     },
+     "peran": "pusat"
+    },
+    {
+     "judul": {
+      "id": "Pembayaran dan kompensasi",
+      "en": "Payment and compensation"
+     },
+     "isi": {
+      "id": "PLN membeli listrik USD 0,20 per kWh; negara memberi kompensasi ke PLN; pemda menyediakan pasokan minimum.",
+      "en": "PLN buys power at USD 0.20 per kWh; the state compensates PLN; local governments provide minimum supply."
+     },
+     "pelaku": {
+      "id": "PLN, Kemenkeu, Danantara, pemda",
+      "en": "PLN, Finance Ministry, Danantara, local governments"
+     },
+     "peran": "pln"
     }
    ]
   },
@@ -843,8 +1283,8 @@
     }
    ],
    "catatan": {
-    "id": "Seri IRENA mencatat bagian terbarukan dari sampah kota; angka 18,24 MW pada 2025 selaras dengan dua PSEL yang beroperasi (14 MW) ditambah pembangkit kecil lain.",
-    "en": "The IRENA series records the renewable part of municipal waste; 18.24 MW in 2025 is consistent with the two operating PSEL plants (14 MW) plus other small plants."
+    "id": "Kapasitas listrik sampah terbarukan menurut IRENA kecil (18 MW pada 2025) dan belum memuat PSEL baru Danantara yang masih konstruksi.",
+    "en": "Renewable waste power capacity per IRENA is small (18 MW in 2025) and excludes the new Danantara PSEL still under construction."
    }
   },
   "8": {
@@ -863,6 +1303,14 @@
      "l": {
       "id": "Provinsi",
       "en": "Province"
+     },
+     "url": "u"
+    },
+    {
+     "k": "kode",
+     "l": {
+      "id": "Kode BPS",
+      "en": "BPS code"
      }
     },
     {
@@ -898,73 +1346,294 @@
      "prov": "Jawa Barat",
      "n": 6,
      "mw": 2941,
-     "op": 0
+     "op": 0,
+     "kode": "32",
+     "u": "/wilayah?prov=32"
     },
     {
      "prov": "Bali",
      "n": 1,
      "mw": 1200,
-     "op": 0
+     "op": 0,
+     "kode": "51",
+     "u": "/wilayah?prov=51"
     },
     {
      "prov": "Banten",
      "n": 3,
      "mw": 1000,
-     "op": 0
+     "op": 0,
+     "kode": "36",
+     "u": "/wilayah?prov=36"
     },
     {
      "prov": "Jawa Tengah",
      "n": 3,
      "mw": 1000,
-     "op": 0
+     "op": 0,
+     "kode": "33",
+     "u": "/wilayah?prov=33"
     },
     {
      "prov": "DI Yogyakarta",
      "n": 1,
      "mw": 1000,
-     "op": 0
+     "op": 0,
+     "kode": "34",
+     "u": "/wilayah?prov=34"
     },
     {
      "prov": "Sumatera Selatan",
      "n": 1,
      "mw": 18,
-     "op": 0
+     "op": 0,
+     "kode": "16",
+     "u": "/wilayah?prov=16"
     },
     {
      "prov": "Jawa Timur",
      "n": 3,
      "mw": 12,
-     "op": 1
+     "op": 1,
+     "kode": "35",
+     "u": "/wilayah?prov=35"
     },
     {
      "prov": "DKI Jakarta",
      "n": 1,
      "mw": 0,
-     "op": 0
+     "op": 0,
+     "kode": "31",
+     "u": "/wilayah?prov=31"
     },
     {
      "prov": "Sulawesi Selatan",
      "n": 1,
      "mw": 0,
-     "op": 0
+     "op": 0,
+     "kode": "73",
+     "u": "/wilayah?prov=73"
     },
     {
      "prov": "Sulawesi Utara",
      "n": 1,
      "mw": 0,
-     "op": 0
+     "op": 0,
+     "kode": "71",
+     "u": "/wilayah?prov=71"
     },
     {
      "prov": "Sumatera Utara",
      "n": 1,
      "mw": 0,
-     "op": 0
+     "op": 0,
+     "kode": "12",
+     "u": "/wilayah?prov=12"
     },
     {
      "prov": "Lampung",
      "n": 1,
      "mw": 0,
-     "op": 0
+     "op": 0,
+     "kode": "18",
+     "u": "/wilayah?prov=18"
+    }
+   ]
+  },
+  "9": {
+   "tipe": "tabel",
+   "per": 10,
+   "sumber": [
+    "ed",
+    "proyek"
+   ],
+   "catatan": {
+    "id": "Organisasi di basis METI yang berkepakaran pada topik ini atau disebut dalam rantai nilai; klik nama untuk profil. Pihak yang belum punya profil di basis tidak ditampilkan di sini.",
+    "en": "Organisations in the METI base with expertise in this topic or named in the value chain; click a name for the profile. Parties without a profile in the base are not shown here."
+   },
+   "kolom": [
+    {
+     "k": "nama",
+     "l": {
+      "id": "Organisasi",
+      "en": "Organisation"
+     },
+     "url": "u"
+    },
+    {
+     "k": "kategori",
+     "l": {
+      "id": "Kategori",
+      "en": "Category"
+     }
+    },
+    {
+     "k": "peran",
+     "l": {
+      "id": "Peran",
+      "en": "Role"
+     }
+    },
+    {
+     "k": "proyek",
+     "l": {
+      "id": "Proyek di basis",
+      "en": "Projects in base"
+     },
+     "num": true,
+     "d": 0
+    },
+    {
+     "k": "mw",
+     "l": {
+      "id": "Kapasitas proyek (MW)",
+      "en": "Project capacity (MW)"
+     },
+     "num": true,
+     "d": 0
+    }
+   ],
+   "baris": [
+    {
+     "nama": "PLN",
+     "id": "su_ed074ff5",
+     "kategori": "BUMN",
+     "peran": {
+      "id": "Pembeli listrik PSEL",
+      "en": "PSEL power buyer"
+     },
+     "proyek": 93,
+     "u": "/o/su_ed074ff5",
+     "mw": 8039
+    },
+    {
+     "nama": "PT PLN Indonesia Power",
+     "id": "p_5a2e7d0c63",
+     "kategori": "BUMN",
+     "peran": {
+      "id": "Calon pembeli dan mitra",
+      "en": "Prospective buyer and partner"
+     },
+     "proyek": 18,
+     "u": "/o/p_5a2e7d0c63",
+     "mw": 2397
+    },
+    {
+     "nama": "PT Daya Energi Bersih Nusantara (Denera)",
+     "id": "p_0ed65b38b8",
+     "kategori": "BUMN",
+     "peran": {
+      "id": "Pengembang gasifikasi lokal",
+      "en": "Local gasification developer"
+     },
+     "proyek": 10,
+     "u": "/o/p_0ed65b38b8",
+     "mw": 0
+    },
+    {
+     "nama": "Badan Pengelola Investasi Daya Anagata Nusantara",
+     "id": "l_43f00f6a72",
+     "kategori": "Kementerian dan Lembaga Negara",
+     "peran": {
+      "id": "Pelaksana program PSEL nasional",
+      "en": "National PSEL programme implementer"
+     },
+     "proyek": 3,
+     "u": "/o/l_43f00f6a72",
+     "mw": 0
+    },
+    {
+     "nama": "Kementerian Energi dan Sumber Daya Mineral",
+     "id": "l_7278e0528a",
+     "kategori": "Kementerian dan Lembaga Negara",
+     "peran": {
+      "id": "Regulator listrik dan tarif",
+      "en": "Power and tariff regulator"
+     },
+     "proyek": 2,
+     "u": "/o/l_7278e0528a",
+     "mw": 0
+    },
+    {
+     "nama": "Beijing GeoEnviron Engineering",
+     "id": "in_26d40387ce",
+     "kategori": "Perusahaan Internasional di Indonesia",
+     "peran": {
+      "id": "Pengembang teknologi",
+      "en": "Technology developer"
+     },
+     "proyek": 1,
+     "u": "/o/in_26d40387ce",
+     "mw": 0
+    },
+    {
+     "nama": "China Everbright Environment",
+     "id": "in_db9052087b",
+     "kategori": "Perusahaan Internasional di Indonesia",
+     "peran": {
+      "id": "Pengembang PSEL internasional",
+      "en": "International PSEL developer"
+     },
+     "proyek": 1,
+     "u": "/o/in_db9052087b",
+     "mw": 0
+    },
+    {
+     "nama": "CITIC Construction",
+     "id": "in_95da3452e6",
+     "kategori": "Perusahaan Internasional di Indonesia",
+     "peran": {
+      "id": "Kontraktor EPC",
+      "en": "EPC contractor"
+     },
+     "proyek": 1,
+     "u": "/o/in_95da3452e6",
+     "mw": 0
+    },
+    {
+     "nama": "PT Indo Green Power",
+     "id": "pm_7493cxb037b",
+     "kategori": "Swasta",
+     "peran": {
+      "id": "Pengembang energi sampah",
+      "en": "Waste energy developer"
+     },
+     "proyek": 1,
+     "u": "/o/pm_7493cxb037b",
+     "mw": 18
+    },
+    {
+     "nama": "PT Sumber Organik",
+     "id": "pm_b4424x486f6",
+     "kategori": "Swasta",
+     "peran": "pengembang",
+     "proyek": 1,
+     "u": "/o/pm_b4424x486f6",
+     "mw": 12
+    },
+    {
+     "nama": "Veolia",
+     "id": "in_cd6da9ed54",
+     "kategori": "Perusahaan Internasional di Indonesia",
+     "peran": {
+      "id": "Operator internasional",
+      "en": "International operator"
+     },
+     "proyek": 1,
+     "u": "/o/in_cd6da9ed54",
+     "mw": 0
+    },
+    {
+     "nama": "Rebricks",
+     "id": "su_3a7bc78b",
+     "kategori": "Swasta",
+     "peran": {
+      "id": "Pengolah plastik",
+      "en": "Plastic processor"
+     },
+     "proyek": 0,
+     "u": "/o/su_3a7bc78b",
+     "mw": 0
     }
    ]
   },
@@ -974,7 +1643,11 @@
     "kisi",
     "empat",
     "bogor",
-    "tahap2"
+    "tahap2",
+    "metro109",
+    "bali",
+    "bekasi",
+    "katmang"
    ],
    "paragraf": [
     {
@@ -984,6 +1657,18 @@
     {
      "id": "Pemenang tahap I diumumkan Maret 2026 untuk Denpasar Raya, Bekasi, Bogor Raya (Zhejiang Weiming sebagai mitra operator), dan Yogyakarta; tahap II menetapkan delapan konsorsium pada 21 Juli 2026.",
      "en": "Phase I winners were announced in March 2026 for Greater Denpasar, Bekasi, Greater Bogor (Zhejiang Weiming as operator partner) and Yogyakarta; phase II named eight consortia on 21 July 2026."
+    },
+    {
+     "id": "Harga beli: USD 0,20 per kWh tetap 30 tahun, dibanding USD 0,1335 pada aturan lama (selisih sekitar 50 persen, EST dari FAQ). Harga tinggi ini dibayar sebagian lewat kompensasi negara ke PLN.",
+     "en": "Purchase price: USD 0.20 per kWh fixed for 30 years, against USD 0.1335 under the old rule (about 50 percent higher, EST from the FAQ). The premium is partly paid through state compensation to PLN."
+    },
+    {
+     "id": "Skala program: perkiraan investasi Rp91 triliun untuk 33 kota (Danantara); pasokan minimum 1.000 ton per hari per fasilitas; groundbreaking Bali Rp3 triliun dan Bekasi Rp3 triliun dengan 1.500 ton per hari.",
+     "en": "Programme scale: estimated investment of IDR 91 trillion for 33 cities (Danantara); minimum supply of 1,000 tonnes a day per facility; Bali groundbreaking IDR 3 trillion and Bekasi IDR 3 trillion at 1,500 tonnes a day."
+    },
+    {
+     "id": "Rekam jejak: dari 15 proyek di 12 kota hanya dua mencapai COD (Benowo 9 MW dan Putri Cempo 5 MW), total 14 MW dari 1.545 ton per hari kapasitas olah (EST, dijumlahkan dari FAQ).",
+     "en": "Track record: of 15 projects in 12 cities only two reached COD (Benowo 9 MW and Putri Cempo 5 MW), a total of 14 MW from 1,545 tonnes a day (EST, summed from the FAQ)."
     }
    ]
   },
@@ -1026,7 +1711,8 @@
       "en": "Urban waste handling through waste-to-renewable-energy processing"
      },
      "st": "berlaku",
-     "u": "https://peraturan.bpk.go.id/Details/334718"
+     "u": "https://peraturan.bpk.go.id/Details/334718",
+     "id": "perpres-109-2025"
     },
     {
      "dok": "Perpres 35/2018",
@@ -1035,7 +1721,8 @@
       "en": "Accelerating waste-to-electricity plants in 12 cities"
      },
      "st": "dicabut",
-     "u": "https://peraturan.bpk.go.id/Details/73958"
+     "u": "https://peraturan.bpk.go.id/Details/73958",
+     "id": "perpres-35-2018"
     },
     {
      "dok": "Perpres 18/2016",
@@ -1044,7 +1731,8 @@
       "en": "Accelerating waste-based power in Jakarta, Tangerang, Bandung and other cities"
      },
      "st": "dicabut",
-     "u": "https://peraturan.bpk.go.id/Details/39829"
+     "u": "https://peraturan.bpk.go.id/Details/39829",
+     "id": "perpres-18-2016"
     },
     {
      "dok": "UU 18/2008",
@@ -1176,6 +1864,54 @@
       "en": "Target operation of PSEL Bekasi (mid-2028)"
      },
      "url": "https://investortrust.id/business/114145/danantara-mulai-groundbreaking-proyek-psel-bekasi-senilai-rp-3-triliun-target-beroperasi-2028"
+    },
+    {
+     "tanggal": "2016-02-13",
+     "judul": {
+      "id": "Perpres 18/2016: pembangkit sampah untuk tujuh kota",
+      "en": "Perpres 18/2016: waste power for seven cities"
+     },
+     "reg": "perpres-18-2016"
+    },
+    {
+     "tanggal": "2018-04-12",
+     "judul": {
+      "id": "Perpres 35/2018: 12 kota prioritas",
+      "en": "Perpres 35/2018: 12 priority cities"
+     },
+     "reg": "perpres-35-2018"
+    },
+    {
+     "tanggal": "2025-10-10",
+     "judul": {
+      "id": "Perpres 109/2025 menetapkan tarif USD 0,20 per kWh dan peran Danantara",
+      "en": "Perpres 109/2025 sets the USD 0.20 per kWh tariff and the Danantara role"
+     },
+     "reg": "perpres-109-2025"
+    },
+    {
+     "tanggal": "2008-05-07",
+     "judul": {
+      "id": "UU 18/2008 tentang Pengelolaan Sampah disahkan",
+      "en": "Law 18/2008 on Waste Management enacted"
+     },
+     "url": "https://peraturan.bpk.go.id/"
+    },
+    {
+     "tanggal": "2026-03-01",
+     "judul": {
+      "id": "Pemenang tahap I diumumkan (bulan saja)",
+      "en": "Stage I winners announced (month only)"
+     },
+     "url": "https://ekonomi.bisnis.com/read/20260313/44/1960340/danantara-tetapkan-zhejiang-weiming-jadi-mitra-operator-psel-di-bogor-raya"
+    },
+    {
+     "tanggal": "2026-07-21",
+     "judul": {
+      "id": "Delapan konsorsium tahap II ditetapkan",
+      "en": "Eight stage II consortia named"
+     },
+     "url": "https://investortrust.id/business/110165/danantara-tunjuk-8-konsorsium-pengembang-psel-tahap-ii"
     }
    ]
   },
@@ -1185,7 +1921,8 @@
     "ashurst",
     "subs",
     "tenggara",
-    "wekdm"
+    "wekdm",
+    "metro109"
    ],
    "paragraf": [
     {
@@ -1195,6 +1932,14 @@
     {
      "id": "Kewajiban: pemda menjamin pasokan minimum 1.000 ton per hari per fasilitas dan tidak lagi membayar tipping fee. Ashurst mencatat bahwa take-or-pay belum jelas dan tidak ada penalti PPA untuk kekurangan pasokan sampah.",
      "en": "Obligations: local government must guarantee at least 1,000 tonnes a day per facility and no longer pays a tipping fee. Ashurst notes take-or-pay is not clear and there is no PPA penalty for insufficient waste supply."
+    },
+    {
+     "id": "Sanksi dan celah: Perpres 109/2025 belum menjelaskan take-or-pay dan tidak ada penalti PPA bila pasokan sampah kurang (catatan Ashurst). Bagi investor, ini risiko volume; bagi kota, ini ruang untuk memperjanjikan pemilahan yang lebih baik.",
+     "en": "Penalties and gaps: Perpres 109/2025 does not clarify take-or-pay and has no PPA penalty for waste shortfall (Ashurst note). For investors this is volume risk; for cities it is room to contract better sorting."
+    },
+    {
+     "id": "Insentif nonfiskal: AMDAL otomatis disetujui dalam dua bulan dan PPA wajib dalam 10 hari kerja setelah izin prakonstruksi. Insentif fiskal rinci (pajak, bea masuk mesin) belum dikumpulkan di basis ini.",
+     "en": "Non-fiscal incentives: AMDAL is automatically approved within two months and the PPA must follow within 10 working days of pre-construction permits. Detailed fiscal incentives (tax, machinery duty) are not collected in this base yet."
     }
    ]
   },
@@ -1202,11 +1947,13 @@
    "tipe": "langkah",
    "sumber": [
     "ashurst",
-    "metro109"
+    "metro109",
+    "empat",
+    "tahap2"
    ],
    "catatan": {
-    "id": "Urutan menurut ringkasan Ashurst atas Perpres 109/2025; durasi total dan biaya belum bersumber.",
-    "en": "Order per Ashurst's summary of Perpres 109/2025; total duration and cost are not sourced."
+    "id": "Alur menurut Perpres 109/2025 dan pemberitaan Danantara; lama setiap langkah di luar yang tertulis belum bersumber.",
+    "en": "Flow per Perpres 109/2025 and Danantara reporting; the duration of each step beyond what is stated is not yet sourced."
    },
    "butir": [
     {
@@ -1292,6 +2039,48 @@
       "id": "Pengembang",
       "en": "Developer"
      }
+    },
+    {
+     "judul": {
+      "id": "Penetapan kota dan verifikasi kesiapan",
+      "en": "City designation and readiness verification"
+     },
+     "isi": {
+      "id": "Danantara menilai pasokan, lahan, dan kesiapan kota; empat dari tujuh kota siap pada November 2025.",
+      "en": "Danantara assesses supply, land and readiness; four of seven cities were ready in November 2025."
+     },
+     "pelaku": {
+      "id": "Danantara, pemda",
+      "en": "Danantara, local governments"
+     }
+    },
+    {
+     "judul": {
+      "id": "Tender pengembang dan penunjukan konsorsium",
+      "en": "Developer tender and consortium selection"
+     },
+     "isi": {
+      "id": "Tahap I pemenang Maret 2026, tahap II delapan konsorsium Juli 2026.",
+      "en": "Stage I winners March 2026, stage II eight consortia July 2026."
+     },
+     "pelaku": {
+      "id": "Danantara, konsorsium",
+      "en": "Danantara, consortia"
+     }
+    },
+    {
+     "judul": {
+      "id": "AMDAL dan izin prakonstruksi",
+      "en": "AMDAL and pre-construction permits"
+     },
+     "isi": {
+      "id": "AMDAL dipercepat menjadi dua bulan; PPA ditandatangani PLN dalam 10 hari kerja kemudian.",
+      "en": "AMDAL is accelerated to two months; PLN signs the PPA within 10 working days afterwards."
+     },
+     "pelaku": {
+      "id": "Pengembang, KLH, PLN",
+      "en": "Developer, Environment Ministry, PLN"
+     }
     }
    ]
   },
@@ -1317,7 +2106,10 @@
    "sumber": [
     "wekdm",
     "bekasi",
-    "teknologi"
+    "teknologi",
+    "iea_wte",
+    "ed",
+    "pendanaan"
    ],
    "paragraf": [
     {
@@ -1327,6 +2119,38 @@
     {
      "id": "Analisis METI (Hipotesis): pilihan teknologi harus diuji pada sampah Indonesia yang 55 sampai 60 persen organik dan basah; teknologi impor yang dirancang untuk sampah kering terbukti gagal di Delhi dan Addis Ababa (bab 40).",
      "en": "METI analysis (Hypothesis): technology choice must be tested on Indonesian waste that is 55 to 60 percent organic and wet; imported technology designed for dry waste failed in Delhi and Addis Ababa (chapter 40)."
+    },
+    {
+     "id": "1. Pembakar grate bergerak (mass burn) dengan pemulihan panas: teknologi mapan di Jepang dan Singapura; efisiensi listrik netto sekitar 20 sampai 27 persen. Danantara memastikan proyek PSEL memakai teknologi ramah lingkungan.",
+     "en": "1. Moving-grate mass burn with heat recovery: mature in Japan and Singapore; net electrical efficiency about 20 to 27 percent. Danantara states PSEL projects use environmentally friendly technology."
+    },
+    {
+     "id": "2. Fluidized bed: lebih toleran terhadap variasi sampah dan sering dipakai bersama RDF; biaya perawatan lebih tinggi.",
+     "en": "2. Fluidised bed: more tolerant of waste variation and often used with RDF; higher maintenance cost."
+    },
+    {
+     "id": "3. Gasifikasi dan pirolisis: skala menengah, pasar masih menunggu bukti operasi jangka panjang; kasus gagal global banyak.",
+     "en": "3. Gasification and pyrolysis: mid-scale, the market still waits for long-term operating proof; global failures are common."
+    },
+    {
+     "id": "4. Pengering biologis (biodrying) untuk sampah basah: menurunkan kadar air sebelum dibakar atau diolah menjadi RDF; relevan untuk sampah organik Indonesia.",
+     "en": "4. Biodrying for wet waste: lowers moisture before burning or RDF production; relevant to Indonesian organic waste."
+    },
+    {
+     "id": "5. Penangkapan karbon pada PSEL: proyek percontohan Eropa dan Asia Timur; di Indonesia belum ada.",
+     "en": "5. Carbon capture at WtE: pilots in Europe and East Asia; none in Indonesia yet."
+    },
+    {
+     "id": "6. Pencerna anaerob organik terpisah: mengubah sampah organik pasar dan rumah tangga menjadi biogas dan pupuk, mengurangi beban PSEL.",
+     "en": "6. Separate organic anaerobic digestion: turns market and household organics into biogas and fertiliser, easing PSEL load."
+    },
+    {
+     "id": "7. Pengolahan gas TPA: menangkap metana TPA untuk listrik (kasus Bantargebang di basis pendanaan METI).",
+     "en": "7. Landfill gas recovery: capturing landfill methane for power (the Bantargebang case in the METI funding base)."
+    },
+    {
+     "id": "8. Sensor pemantauan emisi daring dan pelaporan publik: jawaban atas kritik transparansi (bab 29).",
+     "en": "8. Online emission monitoring sensors and public reporting: an answer to transparency critique (chapter 29)."
     }
    ]
   },
@@ -1578,7 +2402,8 @@
       "id": "skema",
       "en": "scheme"
      },
-     "u": "https://bpdlh.id/"
+     "u": "https://bpdlh.id/",
+     "id": "sk_bpdlh"
     },
     {
      "nama": "Halmahera Zero-Waste Renewable Energy and Biochar Project",
@@ -1586,16 +2411,18 @@
       "id": "proyek",
       "en": "project"
      },
-     "u": "https://registry.verra.org/app/projectDetail/VCS/4611"
+     "u": "https://registry.verra.org/app/projectDetail/VCS/4611",
+     "id": "pd_vcs_4611"
     },
     {
      "nama": "Rice-straw powered biowaste to energy",
-     "pem": "DEPARTMENT FOR SCIENCE, INNOVATION AND TECHNOLOGY",
+     "pem": "Department For Science, Innovation And Technology",
      "jenis": {
       "id": "proyek",
       "en": "project"
      },
-     "u": "https://d-portal.org/ctrack.html#view=act&aid=GB-GOV-26-ISPF-IUK-2BC54TT-4PCSDLJ-YEKAKXV"
+     "u": "https://d-portal.org/ctrack.html#view=act&aid=GB-GOV-26-ISPF-IUK-2BC54TT-4PCSDLJ-YEKAKXV",
+     "id": "pi_GB_GOV_26_ISPF_IUK_2BC54TT_4PCSDLJ_YEKAKXV"
     },
     {
      "nama": "Processing of waste streams from palm oil plantations",
@@ -1604,7 +2431,8 @@
       "id": "proyek",
       "en": "project"
      },
-     "u": "https://d-portal.org/ctrack.html#view=act&aid=NL-KVK-27378529-DHIF22I049"
+     "u": "https://d-portal.org/ctrack.html#view=act&aid=NL-KVK-27378529-DHIF22I049",
+     "id": "pi_NL_KVK_27378529_DHIF22I049"
     },
     {
      "nama": "Sustainable small scale production of energy from biomass waste products.",
@@ -1613,7 +2441,8 @@
       "id": "proyek",
       "en": "project"
      },
-     "u": "https://d-portal.org/ctrack.html#view=act&aid=SE-0-SE-29-2014-3522-1"
+     "u": "https://d-portal.org/ctrack.html#view=act&aid=SE-0-SE-29-2014-3522-1",
+     "id": "pi_SE_0_SE_29_2014_3522_1"
     },
     {
      "nama": "USAID Sustainable Municipal Solid Waste Management and Partnership (USAID SELARAS)",
@@ -1622,7 +2451,8 @@
       "id": "proyek",
       "en": "project"
      },
-     "u": "https://d-portal.org/ctrack.html#view=act&aid=US-GOV-1-72049723N00001"
+     "u": "https://d-portal.org/ctrack.html#view=act&aid=US-GOV-1-72049723N00001",
+     "id": "pi_US_GOV_1_72049723N00001"
     },
     {
      "nama": "Reverse Trade Mission - Waste-to-Energy Reverse Trade Mission, through Gas Technology Institute",
@@ -1631,7 +2461,8 @@
       "id": "proyek",
       "en": "project"
      },
-     "u": "https://d-portal.org/ctrack.html#view=act&aid=US-GOV-12-1131PL20FIQ31240-131167"
+     "u": "https://d-portal.org/ctrack.html#view=act&aid=US-GOV-12-1131PL20FIQ31240-131167",
+     "id": "pi_US_GOV_12_1131PL20FIQ31240_131167"
     }
    ]
   },
@@ -1791,7 +2622,8 @@
     "ombud",
     "subs",
     "apsn",
-    "wekdm"
+    "wekdm",
+    "tgr"
    ],
    "paragraf": [
     {
@@ -1805,6 +2637,14 @@
     {
      "id": "Teknologi: pendukung menekankan solusi darurat TPA; kritik sipil menekankan emisi dan pilihan pengurangan serta daur ulang.",
      "en": "Technology: supporters stress the landfill emergency; civil-society critics stress emissions and reduction and recycling options."
+    },
+    {
+     "id": "Kesehatan dan keadilan lingkungan: kritik seperti APSN dan GAIA menyebut insinerasi mahal, kotor, dan membebani komunitas sekitar; pendukung menyebut standar emisi modern di Jepang dan Singapura. Data emisi terbuka per fasilitas adalah kunci kepercayaan.",
+     "en": "Health and environmental justice: critics such as APSN and GAIA call incineration costly, dirty and a burden on neighbouring communities; supporters cite modern emission standards in Japan and Singapore. Open emission data per facility is the key to trust."
+    },
+    {
+     "id": "Pemulung dan ekonomi informal: pasokan 1.000 ton per hari dapat menyaingi sektor daur ulang informal; skema transisi pemulung belum ada di naskah kebijakan.",
+     "en": "Waste pickers and the informal economy: a 1,000 tonne a day supply could compete with informal recycling; no waste picker transition scheme exists in the policy text."
     }
    ]
   },
@@ -1896,12 +2736,17 @@
    "sumber": [
     "ed",
     "ashurst",
-    "ombud"
+    "ombud",
+    "kisi"
    ],
    "paragraf": [
     {
      "id": "Analisis METI (Hipotesis): Pengembang: nilai terbesar ada pada perjanjian pasokan sampah dan penanganan residu, bukan mesin. Investor: risiko take-or-pay dan kompensasi PLN harus dibaca di PPA, bukan di Perpres. Pemda: kualitas pemilahan dan jaminan 1.000 ton per hari adalah kewajiban nyata. Akademisi: ukur nilai kalor dan kadar air sampah per kota sebelum memilih teknologi.",
      "en": "METI analysis (Hypothesis): Developers: most value lies in waste supply agreements and residue handling, not machines. Investors: take-or-pay and PLN compensation risk must be read in the PPA, not the Perpres. Local government: sorting quality and the 1,000 tonnes a day guarantee are real obligations. Academics: measure waste calorific value and moisture per city before choosing technology."
+    },
+    {
+     "id": "Per peran: pengembang menyiapkan konsorsium dengan operator berpengalaman dan kontrak pasokan; pemasok mesin dan pengolah gas buang membidik 33 kota; pemda memastikan pemilahan dan lahan; investor menilai risiko volume dan nilai kalor; akademisi mengisi data komposisi sampah per kota.",
+     "en": "By role: developers prepare consortia with experienced operators and supply contracts; machinery and flue gas suppliers target 33 cities; local governments ensure sorting and land; investors assess volume and calorific risk; academics fill city-level composition data."
     }
    ]
   },
@@ -1911,12 +2756,18 @@
     "bali",
     "bekasi",
     "tahap2",
-    "ashurst"
+    "ashurst",
+    "tgr",
+    "ruuebet"
    ],
    "paragraf": [
     {
      "id": "Yang perlu dipantau: (1) aturan turunan Perpres 109/2025 dan rincian kompensasi PLN; (2) apakah Bali memenuhi target akhir 2027 dan Bekasi pertengahan 2028; (3) studi kelayakan tahap II yang ditargetkan selesai pertengahan November 2026; (4) hasil pengujian teknologi pada sampah basah; (5) kepastian pasokan sampah dari pemda.",
      "en": "To watch: (1) implementing rules for Perpres 109/2025 and PLN compensation details; (2) whether Bali meets end-2027 and Bekasi mid-2028; (3) phase II feasibility studies targeted for mid-November 2026; (4) technology performance on wet waste; (5) waste supply certainty from local governments."
+    },
+    {
+     "id": "Daftar pantau: (1) COD Bali akhir 2027 dan Bekasi pertengahan 2028; (2) penetapan tahap II dan III; (3) tahap kompensasi negara di APBN; (4) aturan take-or-pay; (5) hasil uji nilai kalor sampah per kota; (6) data emisi terbuka; (7) kasus Sunter dan Gedebage; (8) status Tangerang dan Tangsel; (9) perkembangan RUU EBET; (10) pendampingan pemulung.",
+     "en": "Watch list: (1) Bali COD end 2027 and Bekasi mid 2028; (2) stage II and III designation; (3) state compensation stage in the budget; (4) take-or-pay rules; (5) per-city waste calorific tests; (6) open emission data; (7) the Sunter and Gedebage cases; (8) status of Tangerang and South Tangerang; (9) RUU EBET progress; (10) waste picker support."
     }
    ]
   },

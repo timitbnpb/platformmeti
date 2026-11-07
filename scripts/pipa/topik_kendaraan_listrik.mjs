@@ -6,6 +6,8 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { validasi } from './topik_surya.mjs';
+import { lengkapi } from './topik_dalam_lib.mjs';
+import { perdalam } from './topik_kendaraan_listrik_dalam.mjs';
 export { validasi };
 const akar = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '../..');
 const ID = 'kendaraan-listrik';
@@ -336,6 +338,8 @@ export function susun() {
     dasarP('pln', 'operasi', 'Publikasikan utilisasi dan rasio SPKLU per wilayah, termasuk Papua dan Maluku.', 'Publish charger utilisation and ratio per region, including Papua and Maluku.', 'oto'),
     dasarP('meti', 'operasi', 'Pantau penjualan setelah insentif CBU berakhir, dan beri hak jawab pada pihak yang disebut.', 'Monitor sales after CBU incentives end, and give named parties a right of reply.', 'cbu'),
   ] };
+  const DERET_KUNCI = perdalam(bab, SUMBER);
+  lengkapi({ kunci, bab }, { deret: DERET_KUNCI });
   return {
     id: ID, versi: 1, diperbarui: TGL,
     judul: T('Kendaraan listrik dan SPKLU', 'Electric vehicles and chargers'),

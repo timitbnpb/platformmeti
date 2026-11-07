@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="referrer" content="no-referrer">
+<title data-i18n="rd2.title">Radar peluang investasi per kabupaten | Direktori METI</title>
+<link rel="icon" href="/img/logo-meti-tanda.png" type="image/png">
+<link rel="preload" href="/fonts/inter-400.woff2" as="font" type="font/woff2" crossorigin>
+<script src="/tema.js"></script>
+<link rel="stylesheet" href="/inti/tema.css">
+<link rel="stylesheet" href="/inti/kepala.css">
+<link rel="stylesheet" href="/inti/gaya.css">
+<link rel="stylesheet" href="/inti/jm.css">
+<link rel="stylesheet" href="/inti/kh.css">
+<link rel="stylesheet" href="/publik.css">
+<link rel="stylesheet" href="/kelayakan.css">
+<link rel="stylesheet" href="/peluang.css">
+<link rel="stylesheet" href="/grafik.css">
+<link rel="stylesheet" href="/radar.css">
+</head>
+<body data-halaman="radar">
+<header class="top" id="kepala"></header>
+<main class="jm-wadah rd2-halaman" id="isi">
+  <section class="jm-kh" aria-labelledby="judul"><div class="jm-kh-teks">
+    <p class="jm-kh-ey"><svg class="jm-ik" width="16" height="16" aria-hidden="true" focusable="false"><use href="/img/ikon.svg#i-berlian"/></svg><span data-i18n="rd2.eyebrow">Radar investasi</span></p>
+    <h1 id="judul" data-i18n="rd2.judul">Radar peluang investasi per kabupaten dan kota</h1>
+    <p class="jm-kh-lead" data-i18n="rd2.lead">Skor 0 sampai 100 untuk 514 kabupaten dan kota dari sumber daya, harga, akses listrik, dan jejak pasar, serta pelacak penggantian PLTD dengan PLTS dan baterai. Setiap skor menunjukkan komponennya.</p>
+  </div><div class="jm-kh-ubin" id="rdAngka" aria-live="polite"></div></section>
+  <div id="tabHal"></div>
+  <div id="panelKab"><div id="rdKabIsi"></div></div>
+  <div id="panelDed" hidden><div id="rdDedIsi"></div></div>
+</main>
+<footer class="jm-kaki" id="kaki"></footer>
+<script type="module" src="/radar.js"></script>
+</body>
+</html>

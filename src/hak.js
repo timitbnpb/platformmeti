@@ -1682,6 +1682,65 @@ export async function orgTerbit(env, akun, jenis, id) {
   });
 }
 
+// Lowongan (0028) -------------------------------------------------------------------------------------------------------------------
+// Dipasang akun yang terhubung ke organisasi (org_klaim 'setuju'); tampil hanya setelah admin menerbitkan. Tautan lamaran = situs organisasi (https).
+export const TEK_KERJA = ["surya", "bayu", "hidro", "panas-bumi", "bioenergi", "biomassa-sampah", "penyimpanan", "hidrogen", "nuklir"];
+export const JENJANG_KERJA = ["magang", "pemula", "menengah", "senior", "pimpinan"];
+const KOL_KERJA = "id, organisasi_id, organisasi_nama, judul, kode_prov, lokasi, teknologi, jenjang, deskripsi, tautan, batas, dibuat";
+
+export async function kerjaTerbit(env, akun) {
+  gerbangMasuk(akun);
+  return tanpaTabel(async () => (await env.DB.prepare(`SELECT ${KOL_KERJA} FROM lowongan WHERE status = 'terbit' AND (batas IS NULL OR batas >= date('now')) ORDER BY id DESC LIMIT 200`).all()).results);
+}
+
+export async function kerjaSaya(env, akun) {
+  gerbangMasuk(akun);
+  return tanpaTabel(async () => (await env.DB.prepare(`SELECT ${KOL_KERJA}, status, catatan_admin FROM lowongan WHERE akun_id = ? ORDER BY id DESC LIMIT 50`).bind(akun.id).all()).results);
+}
+
+export async function kerjaPasang(env, akun, d) {
+  gerbangMasuk(akun);
+  if (!RE_ID_ORG.test(String(d.organisasiId)) || !TEK_KERJA.includes(d.teknologi) || !JENJANG_KERJA.includes(d.jenjang)) throw salah("lowongan tidak sah");
+  return tanpaTabel(async () => {
+    if (!(await orgTerhubung(env, akun, d.organisasiId))) throw tolak("lowongan: akun belum terhubung ke organisasi ini");
+    try {
+      const [r] = await env.DB.batch([
+        env.DB.prepare("INSERT INTO lowongan (akun_id, organisasi_id, organisasi_nama, judul, kode_prov, lokasi, teknologi, jenjang, deskripsi, tautan, batas) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)")
+          .bind(akun.id, d.organisasiId, d.organisasiNama, d.judul, d.kodeProv ?? null, d.lokasi ?? null, d.teknologi, d.jenjang, d.deskripsi ?? null, d.tautan, d.batas ?? null),
+        jejakOrg(env, akun, "lowongan", "lowongan " + d.organisasiId),
+      ]);
+      return { id: r.meta.last_row_id };
+    } catch (e) { throw terjemah(e); }
+  });
+}
+
+export async function kerjaAntrean(env, akun, status, hal = 1) {
+  gerbangAdm(akun);
+  if (!["menunggu", "terbit", "tolak"].includes(status)) throw salah("antrean tidak sah");
+  const h = Math.min(Math.max(Number(hal) || 1, 1), 10000);
+  return tanpaTabel(async () => {
+    const [b, c] = await env.DB.batch([
+      env.DB.prepare(`SELECT t.${KOL_KERJA.split(", ").join(", t.")}, t.status, t.catatan_admin, a.nama AS pengaju FROM lowongan t LEFT JOIN akun a ON a.id = t.akun_id WHERE t.status = ? ORDER BY t.id DESC LIMIT ? OFFSET ?`).bind(status, HALAMAN_ADM, (h - 1) * HALAMAN_ADM),
+      env.DB.prepare("SELECT COUNT(*) AS n FROM lowongan WHERE status = ?").bind(status),
+    ]);
+    return { baris: b.results, total: c.results[0].n };
+  });
+}
+
+// Putus sekali (UPDATE hanya bila masih 'menunggu'); jejak hanya bila UPDATE mengubah baris.
+export async function kerjaPutus(env, akun, id, aksi, catatan) {
+  gerbangAdm(akun);
+  if (!["terbit", "tolak"].includes(aksi) || !RE_ID.test(String(id))) throw salah("putusan tidak sah");
+  return tanpaTabel(async () => {
+    const [u] = await env.DB.batch([
+      env.DB.prepare("UPDATE lowongan SET status = ?, catatan_admin = ?, diputus_pada = ?, diputus_oleh = ? WHERE id = ? AND status = 'menunggu'").bind(aksi, catatan ?? null, kini(), akun.id, Number(id)),
+      env.DB.prepare("INSERT INTO jejak (siapa, peran, aksi, tabel, baris_id, ke) SELECT ?, ?, 'tinjau', 'lowongan', ?, ? WHERE changes() > 0")
+        .bind(akun.id, akun.peran, String(id), JSON.stringify({ ringkas: "lowongan " + aksi })),
+    ]);
+    return { ubah: u.meta.changes };
+  });
+}
+
 // METI Wilayah ----------------------------------------------------------------------------------------------------------------------
 // Pengurus wilayah = akun yang ditautkan admin ke satu provinsi (tabel wilayah_akun). Hanya provinsinya sendiri yang bisa diajukan.
 export const JENIS_WILAYAH = ["sk", "sekretariat", "pengurus", "bidang", "keanggotaan", "kegiatan", "proyek_potensi"];

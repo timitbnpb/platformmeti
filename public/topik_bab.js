@@ -90,9 +90,9 @@ const EMAIL = "meti.ires@gmail.com";
 export function kartuKasus(k) {
   return W.kartuKasus(k, (k, p) => {
     const kron = (k.kronologi || []).length ? `<ol class="jm-tp-linimasa">${k.kronologi.map((x) => `<li><time datetime="${esc(x.tanggal)}">${esc(tanggal(x.tanggal))}</time><span>${esc(tok(x.teks))}</span></li>`).join("")}</ol>` : "";
-    const hak = p.gagal && k.hak_jawab ? `<p class="jm-tp-hak">${ikon("surel", 16)}<span>${esc(u("hak.ket"))} <a href="mailto:${EMAIL}?subject=${encodeURIComponent(u("bagikan.hak") + ": " + k.nama)}">${esc(u("hak.tautan"))}</a></span></p>` : "";
-    return `<article class="jm-tp-kasus ${p.gagal ? "jm-tp-kasus-g" : ""}" id="kasus-${esc(k.id)}">${p.sampul}<div class="jm-tp-kbody"><header><span class="jm-tp-pils">${p.pilJenis}${p.pilNegara}</span><h3>${esc(k.nama)}</h3></header>
-    ${p.profil}${bag("kasus.angka", p.angka)}${bag("kasus.tindakan", daftarUl(k.tindakan))}${bag(p.gagal ? "kasus.sebab_g" : "kasus.sebab_b", daftarUl(k.sebab))}${bag("kasus.kronologi", kron)}${bag("kasus.terdampak", k.terdampak ? `<p>${esc(tok(k.terdampak))}</p>` : "")}${bag("kasus.seharusnya", k.seharusnya ? `<p>${esc(tok(k.seharusnya))}</p>` : "")}${bag("kasus.tanda", daftarUl(k.tanda_bahaya))}${bag("kasus.pelajaran", daftarUl(k.pelajaran))}
+    const hak = p.buruk && k.hak_jawab ? `<p class="jm-tp-hak">${ikon("surel", 16)}<span>${esc(u("hak.ket"))} <a href="mailto:${EMAIL}?subject=${encodeURIComponent(u("bagikan.hak") + ": " + k.nama)}">${esc(u("hak.tautan"))}</a></span></p>` : "";
+    return `<article class="jm-tp-kasus ${p.buruk ? "jm-tp-kasus-g" : ""}" id="kasus-${esc(k.id)}">${p.sampul}<div class="jm-tp-kbody"><header><span class="jm-tp-pils">${p.pilJenis}${p.pilNegara}</span><h3>${esc(k.nama)}</h3></header>
+    ${p.profil}${bag("kasus.angka", p.angka)}${bag("kasus.tindakan", daftarUl(k.tindakan))}${bag(p.buruk ? "kasus.sebab_g" : "kasus.sebab_b", daftarUl(k.sebab))}${bag("kasus.kronologi", kron)}${bag("kasus.terdampak", k.terdampak ? `<p>${esc(tok(k.terdampak))}</p>` : "")}${bag("kasus.seharusnya", k.seharusnya ? `<p>${esc(tok(k.seharusnya))}</p>` : "")}${bag("kasus.tanda", daftarUl(k.tanda_bahaya))}${bag("kasus.pelajaran", daftarUl(k.pelajaran))}
     ${k.dibaca ? `<p class="jm-bantu">${esc(u("kasus.dibaca"))}</p>` : ""}<footer>${sumberHtml(k.sumber || [], k.sumber_tambahan || [])}${hak}</footer></div></article>`;
   });
 }

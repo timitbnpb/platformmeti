@@ -6,7 +6,8 @@ const baca = (f) => JSON.parse(fs.readFileSync(`public/data/${f}.json`, "utf8"))
 const baris = (f) => { const d = baca(f); return Array.isArray(d) ? d : d.baris || []; };
 const r = baca("ringkas");
 const reg = baris("regulasi"), berlaku = reg.filter((x) => x.status === "berlaku").length;
-r.hitung = { ...r.hitung, proyek: baris("proyek").length, organisasi: baris("organisasi").length, orang: baris("orang").length, regulasi: reg.length, berita: baris("berita").length };
+// semua kunci hitung dihitung dari berkas sumbernya (nama berkas = nama kunci); kunci tanpa berkas dibiarkan
+for (const k of Object.keys(r.hitung)) if (fs.existsSync(`public/data/${k}.json`)) r.hitung[k] = baris(k).length;
 const nilai = { proyek: r.hitung.proyek, organisasi: r.hitung.organisasi, orang: r.hitung.orang, regulasi: berlaku };
 for (const k of r.kartu) {
   if (k.kode in nilai) k.nilai = nilai[k.kode];

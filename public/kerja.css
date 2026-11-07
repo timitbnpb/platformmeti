@@ -1,0 +1,67 @@
+/* /kerja: Green jobs. Hanya token tema.css; tanpa hex, tanpa huruf kapital paksa. */
+.kj-halaman{display:grid;gap:24px;align-content:start}
+.kj-halaman #kjIsi{display:grid;gap:24px}
+.kj-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,300px),1fr));gap:20px}
+.kj-grid-lsp{grid-template-columns:repeat(auto-fill,minmax(min(100%,340px),1fr))}
+.kj-kartu,.kj-lsp{display:flex;flex-direction:column;gap:14px;padding:20px;border:1px solid var(--line);border-radius:var(--r-lg);background:var(--card);min-width:0}
+.kj-kartu>header,.kj-lsp>header{display:flex;gap:14px;align-items:flex-start;min-width:0}
+.kj-kartu h3,.kj-lsp h3{margin:0;font:600 var(--t-h3)/1.3 var(--font);overflow-wrap:anywhere}
+.kj-org,.kj-lsp header p{margin:4px 0 0;color:var(--ink2);font:400 var(--t-kecil)/1.4 var(--font)}
+.kj-logo{position:relative;flex:none;display:grid;place-items:center;width:48px;height:48px;border:1px solid var(--line);border-radius:var(--r);background:var(--paper);overflow:hidden}
+.kj-logo img{position:relative;z-index:1;width:44px;height:44px;object-fit:contain;background:var(--card)}
+.kj-logo-ik{position:absolute;color:var(--ink2)}
+.kj-pil{display:flex;flex-wrap:wrap;gap:8px}
+.kj-jj{display:inline-flex;align-items:center;gap:6px;min-height:24px;padding:0 10px;border-radius:var(--r-pil);font:600 var(--t-kecil)/1 var(--font)}
+.kj-jj-magang{color:var(--tp-listrik);background:color-mix(in srgb,var(--tp-listrik) 14%,transparent)}
+.kj-jj-pemula{color:var(--tp-efisiensi);background:color-mix(in srgb,var(--tp-efisiensi) 14%,transparent)}
+.kj-jj-menengah{color:var(--tp-biaya);background:color-mix(in srgb,var(--tp-biaya) 14%,transparent)}
+.kj-jj-senior{color:var(--tp-simpan);background:color-mix(in srgb,var(--tp-simpan) 14%,transparent)}
+.kj-jj-pimpinan{color:var(--tp-adil);background:color-mix(in srgb,var(--tp-adil) 14%,transparent)}
+.kj-meta{display:flex;flex-wrap:wrap;gap:10px 18px;color:var(--ink2);font:400 var(--t-kecil)/1.4 var(--font)}
+.kj-lok,.kj-tgl,.kj-taut{display:inline-flex;align-items:center;gap:6px;min-width:0}
+.kj-lok img{border-radius:4px}
+.kj-kartu>footer,.kj-lsp>footer{display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:space-between;margin-top:auto}
+.kj-alat{display:flex;justify-content:flex-end;margin:12px 0 16px}
+.kj-catatan{display:flex;gap:8px;align-items:flex-start;margin-top:16px}
+.kj-catatan .jm-ik{flex:none;margin-top:2px}
+.kj-segmen{display:grid;gap:12px;margin-bottom:16px}
+.kj-petabagi{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);gap:24px;align-items:start}
+.kj-petaw{position:relative;min-width:0}
+.kj-peta{display:block;width:100%;height:auto}
+.kj-q{stroke:var(--card);stroke-width:.6;fill:color-mix(in srgb,var(--accent) 6%,var(--card))}
+.kj-q1{fill:color-mix(in srgb,var(--accent) 22%,var(--card))}.kj-q2{fill:color-mix(in srgb,var(--accent) 40%,var(--card))}.kj-q3{fill:color-mix(in srgb,var(--accent) 60%,var(--card))}.kj-q4{fill:color-mix(in srgb,var(--accent) 80%,var(--card))}.kj-q5{fill:var(--accent)}
+path.kj-q[data-tip]{cursor:pointer}
+.ih-fokus path.kj-q:not(.ih-on){opacity:.45}
+.kj-lg{display:flex;align-items:center;gap:6px;margin-top:10px;color:var(--ink2);font:400 var(--t-kecil)/1 var(--font)}
+.kj-lg i{display:block;width:28px;height:10px;border-radius:3px}
+.kj-lg span{display:flex}
+.kj-t-total{color:var(--accent)}
+.kj-t-surya{color:var(--tp-surya)}.kj-t-bayu{color:var(--tp-bayu)}.kj-t-hidro{color:var(--tp-hidro)}.kj-t-panas-bumi{color:var(--tp-panas)}.kj-t-bioenergi{color:var(--tp-bio)}.kj-t-biomassa-sampah{color:var(--tp-sampah)}.kj-t-nuklir{color:var(--tp-nuklir)}.kj-t-penyimpanan{color:var(--tp-simpan)}.kj-t-hidrogen{color:var(--tp-hidrogen)}
+.kj-lsp-ik{flex:none;display:grid;place-items:center;width:44px;height:44px;border-radius:var(--r);background:var(--info-bg);color:var(--info)}
+.kj-lsp-lis{display:flex;gap:8px;margin:0;color:var(--ink2);font:400 var(--t-kecil)/1.4 var(--font)}
+.kj-lsp-lis .jm-ik{flex:none;color:var(--ok)}
+.kj-lsp footer small{color:var(--ink2)}
+.kj-sub{margin:24px 0 12px;font:600 var(--t-h3)/1.3 var(--font)}
+.kj-prodi-l{display:grid;gap:12px;margin:0;padding:0;list-style:none}
+.kj-prodi{display:grid;grid-template-columns:28px minmax(0,1fr) auto;gap:14px;align-items:center;padding:14px 16px;border:1px solid var(--line);border-radius:var(--r);background:var(--card)}
+.kj-prodi img{border-radius:6px}
+.kj-prodi b{display:block;font:600 var(--t-body)/1.35 var(--font)}
+.kj-prodi span{display:block;color:var(--ink2);font:400 var(--t-kecil)/1.4 var(--font)}
+.kj-des{margin:0;color:var(--ink2);font:400 var(--t-body)/1.5 var(--font);overflow-wrap:anywhere}
+.kj-taut span{overflow-wrap:anywhere}
+.kj-putus{display:grid;gap:12px}
+.kj-putus-b{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.kj-halaman .jm-form-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px 20px}
+.kj-halaman .jm-form-grid .jm-penuh{grid-column:1 / -1}
+.kj-halaman .jm-medan{display:grid;gap:8px;align-content:start}
+@media (max-width:760px){
+  .kj-halaman .jm-form-grid{grid-template-columns:minmax(0,1fr)}
+  .kj-petabagi{grid-template-columns:minmax(0,1fr)}
+  .kj-prodi{grid-template-columns:28px minmax(0,1fr)}
+  .kj-prodi .jm-tbl{grid-column:1 / -1;justify-content:center}
+  .kj-grid{grid-template-columns:minmax(0,1fr)}
+}
+.kj-halaman .jm-medan .pc{width:100%;max-width:none}
+.kj-lg i.kj-q{border:0}
+.kj-lg i.kj-q1{background:color-mix(in srgb,var(--accent) 22%,var(--card))}.kj-lg i.kj-q2{background:color-mix(in srgb,var(--accent) 40%,var(--card))}.kj-lg i.kj-q3{background:color-mix(in srgb,var(--accent) 60%,var(--card))}.kj-lg i.kj-q4{background:color-mix(in srgb,var(--accent) 80%,var(--card))}.kj-lg i.kj-q5{background:var(--accent)}
+#kjCelah .ih-sorot .ih-bar{color:var(--tp-adil)}

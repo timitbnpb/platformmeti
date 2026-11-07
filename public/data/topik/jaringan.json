@@ -23,7 +23,8 @@
     "en": "kms"
    },
    "sumber": "esdm47",
-   "est": false
+   "est": false,
+   "deret": null
   },
   {
    "label": {
@@ -37,7 +38,8 @@
     "en": "IDR trillion"
    },
    "sumber": "esdm47",
-   "est": false
+   "est": false,
+   "deret": null
   },
   {
    "label": {
@@ -51,7 +53,49 @@
     "en": "MW"
    },
    "sumber": "ruptl",
-   "est": false
+   "est": false,
+   "deret": [
+    [
+     2015,
+     32959
+    ],
+    [
+     2016,
+     36475
+    ],
+    [
+     2017,
+     38797
+    ],
+    [
+     2018,
+     40243
+    ],
+    [
+     2019,
+     41671
+    ],
+    [
+     2020,
+     38799
+    ],
+    [
+     2021,
+     41065
+    ],
+    [
+     2022,
+     42326
+    ],
+    [
+     2023,
+     45948
+    ],
+    [
+     2024,
+     48219
+    ]
+   ]
   },
   {
    "label": {
@@ -65,7 +109,8 @@
     "en": "kms"
    },
    "sumber": "kontan_prog",
-   "est": false
+   "est": false,
+   "deret": null
   },
   {
    "label": {
@@ -79,7 +124,8 @@
     "en": "percent"
    },
    "sumber": "owid",
-   "est": true
+   "est": true,
+   "deret": null
   }
  ],
  "penting": [
@@ -451,7 +497,8 @@
      "j": {
       "id": "Jaringan transmisi tulang punggung yang menghubungkan pusat pembangkit terbarukan yang jauh ke pusat beban dan antarpulau. Dokumen pemerintah dan PLN menyebutnya green enabling super grid dengan jalur backbone dan fishbone (ESDM, Mei 2025).",
       "en": "A backbone transmission network linking distant renewable plants to load centres and islands to each other. Government and PLN documents call it a green enabling super grid with backbone and fishbone routes (ESDM, May 2025)."
-     }
+     },
+     "bab": 3
     },
     {
      "t": {
@@ -461,7 +508,8 @@
      "j": {
       "id": "47.758 kilometer sirkuit (kms) dengan investasi transmisi, distribusi, dan listrik perdesaan Rp565,3 triliun menurut Kementerian ESDM (30 Mei 2025).",
       "en": "47,758 circuit kilometres (kms), with transmission, distribution and rural electrification investment of IDR 565.3 trillion per the Energy Ministry (30 May 2025)."
-     }
+     },
+     "bab": 30
     },
     {
      "t": {
@@ -471,7 +519,8 @@
      "j": {
       "id": "Hingga Juni 2026 terealisasi 3.694 kms; PLN memproyeksikan 4.138 kms pada akhir 2026 (rapat DPR 2 Jul 2026, via Kontan).",
       "en": "By June 2026, 3,694 kms were realised; PLN projects 4,138 kms by end-2026 (DPR hearing 2 Jul 2026, via Kontan)."
-     }
+     },
+     "bab": 30
     },
     {
      "t": {
@@ -481,7 +530,8 @@
      "j": {
       "id": "Saluran HVDC yang disebut prioritas pemerintah, panjang sirkuit 112 km, dalam tahap persiapan; RUPTL menyebut operasi komersial 2031. Kapasitas dan biaya tidak disebut di sumber yang dibaca.",
       "en": "An HVDC link named a government priority, circuit length 112 km, in preparation; RUPTL cites commercial operation in 2031. Capacity and cost are not stated in the sources read."
-     }
+     },
+     "bab": 3
     },
     {
      "t": {
@@ -491,7 +541,8 @@
      "j": {
       "id": "Lokasi terbaik sering jauh dari beban. Direktur Enjiniring PLN Enjiniring menyatakan sistem yang ada masih menampung kapasitas surya saat ini yang kecil, tetapi tidak bila kapasitas melonjak (Katadata, 30 Okt 2026).",
       "en": "The best sites are often far from demand. PLN Enjiniring's engineering director says the current system can absorb today's modest solar capacity but not once it grows sharply (Katadata, 30 Oct 2026)."
-     }
+     },
+     "bab": 4
     },
     {
      "t": {
@@ -501,7 +552,8 @@
      "j": {
       "id": "Transmisi menambah kapasitas angkut; smart grid membantu sistem mengikuti naik turunnya pasokan terbarukan (pernyataan PLN Enjiniring, Katadata).",
       "en": "Transmission adds carrying capacity; a smart grid helps the system follow swings in renewable supply (PLN Enjiniring statement, Katadata)."
-     }
+     },
+     "bab": 3
     },
     {
      "t": {
@@ -511,7 +563,8 @@
      "j": {
       "id": "Pembangkit terbarukan sengaja dikurangi keluarannya karena jaringan atau beban tidak mampu menampung. Tidak ada angka kurtailmen publik per sistem di RUPTL 2025-2034 (celah data repo).",
       "en": "Renewable output is deliberately reduced because the grid or demand cannot take it. There is no public curtailment figure per system in RUPTL 2025-2034 (repo data gap)."
-     }
+     },
+     "bab": 3
     },
     {
      "t": {
@@ -521,7 +574,8 @@
      "j": {
       "id": "Ya. Judul Bisnis (5 Jun 2024) melaporkan pemadaman Sumatera tembus 24 jam, dan Jakarta Post (24 Jun 2026) melaporkan pemadaman luas di Sumatera yang memicu rencana perluasan jaringan 275 kV.",
       "en": "Yes. A Bisnis headline (5 Jun 2024) reported a Sumatra outage exceeding 24 hours, and the Jakarta Post (24 Jun 2026) reported widespread Sumatra blackouts prompting a 275 kV expansion."
-     }
+     },
+     "bab": 4
     },
     {
      "t": {
@@ -531,7 +585,8 @@
      "j": {
       "id": "SUTT adalah saluran udara tegangan tinggi (70 dan 150 kV); SUTET saluran udara tegangan ekstra tinggi (275 dan 500 kV); SKTT saluran kabel tanah tegangan tinggi yang dipakai di kota padat atau lintas laut.",
       "en": "SUTT is a high-voltage overhead line (70 and 150 kV); SUTET an extra-high-voltage overhead line (275 and 500 kV); SKTT a high-voltage underground cable used in dense cities or across water."
-     }
+     },
+     "bab": 3
     },
     {
      "t": {
@@ -541,7 +596,8 @@
      "j": {
       "id": "RUKN adalah rencana umum ketenagalistrikan nasional yang disusun pemerintah; RUPTL adalah rencana usaha penyediaan tenaga listrik milik PLN yang dirinci per sistem dan disahkan Kementerian ESDM.",
       "en": "RUKN is the national general electricity plan drawn up by government; RUPTL is PLN's electricity supply business plan, itemised per system and approved by the Energy Ministry."
-     }
+     },
+     "bab": 3
     },
     {
      "t": {
@@ -551,7 +607,8 @@
      "j": {
       "id": "Pemakaian jaringan transmisi milik pihak lain untuk mengantar listrik dari pembangkit ke konsumen tertentu dengan imbalan biaya sewa jaringan. Isu ini diperdebatkan dalam RUU Energi Baru dan Energi Terbarukan (tercatat di basis regulasi repo sebagai rancangan).",
       "en": "Using a third party's transmission network to deliver power from a plant to a specific consumer for a network fee. The issue is debated in the New and Renewable Energy Bill (recorded in the repo regulation base as a draft)."
-     }
+     },
+     "bab": 3
     },
     {
      "t": {
@@ -561,7 +618,8 @@
      "j": {
       "id": "Usaha penyediaan tenaga listrik diatur UU 30/2009 dan PP 14/2012; dalam praktik transmisi nasional dibangun dan dioperasikan PLN, sedangkan pengembang pembangkit membangun saluran sambung ke gardu terdekat menurut perjanjian jual beli listrik.",
       "en": "Electricity supply business is governed by Law 30/2009 and Gov. Reg. 14/2012; in practice national transmission is built and operated by PLN, while plant developers build the connection line to the nearest substation under their power purchase agreement."
-     }
+     },
+     "bab": 12
     },
     {
      "t": {
@@ -571,7 +629,8 @@
      "j": {
       "id": "Bank Dunia mencatat pinjaman untuk dua proyek pengembangan transmisi PLN: USD 225 juta (disetujui 2010, ditutup 2019) dan USD 325 juta (disetujui 2013, ditutup 2019). Sumber lain di naskah ini: RUPTL, mitra pembangunan, dan dukungan pemerintah.",
       "en": "The World Bank recorded loans for two PLN transmission development projects: USD 225 million (approved 2010, closed 2019) and USD 325 million (approved 2013, closed 2019). Other sources in this text: RUPTL, development partners and government support."
-     }
+     },
+     "bab": 19
     },
     {
      "t": {
@@ -581,7 +640,8 @@
      "j": {
       "id": "Permen ESDM 13/2025 mengatur ruang bebas jaringan transmisi tenaga listrik dan kompensasi atas tanah, bangunan, dan tanaman di bawahnya (judul regulasi di repo; pasal rinci dibaca langsung dari naskah).",
       "en": "Energy Ministry Reg. 13/2025 governs the free space of transmission lines and compensation for land, buildings and plants beneath them (regulation title in the repo; read article detail in the text itself)."
-     }
+     },
+     "bab": 4
     },
     {
      "t": {
@@ -591,7 +651,8 @@
      "j": {
       "id": "Indonesia telah mengesahkan nota kesepahaman ASEAN Power Grid lewat Perpres 77/2008. Proyek Australia-Asia Power Link (Sun Cable) juga diusulkan sebagai kabel laut ekspor listrik, tetapi masih berstatus usulan.",
       "en": "Indonesia ratified the ASEAN Power Grid memorandum through Perpres 77/2008. The Australia-Asia Power Link (Sun Cable) is also proposed as a subsea export cable but remains a proposal."
-     }
+     },
+     "bab": 4
     }
    ]
   },
@@ -610,7 +671,8 @@
      "arti": {
       "id": "Penyaluran listrik tegangan tinggi (150 kV, 275 kV, 500 kV) dari pembangkit ke gardu induk.",
       "en": "High-voltage power delivery (150, 275, 500 kV) from plants to substations."
-     }
+     },
+     "kat": "teknis"
     },
     {
      "istilah": {
@@ -620,7 +682,8 @@
      "arti": {
       "id": "Panjang jalur dihitung per sirkuit; menara dua sirkuit menghitung dua kali panjang rute.",
       "en": "Route length counted per circuit; a double-circuit tower counts twice the route length."
-     }
+     },
+     "kat": "satuan"
     },
     {
      "istilah": {
@@ -630,7 +693,8 @@
      "arti": {
       "id": "Satuan kapasitas gardu induk (mega volt ampere); RUPTL menargetkan tambahan 107.950 MVA.",
       "en": "Substation capacity unit (mega volt-ampere); RUPTL targets 107,950 MVA added."
-     }
+     },
+     "kat": "satuan"
     },
     {
      "istilah": {
@@ -640,7 +704,8 @@
      "arti": {
       "id": "Arus searah tegangan tinggi untuk jarak jauh atau lintas laut dengan rugi lebih kecil daripada arus bolak-balik.",
       "en": "High-voltage direct current for long or subsea links with lower losses than alternating current."
-     }
+     },
+     "kat": "teknis"
     },
     {
      "istilah": {
@@ -650,7 +715,8 @@
      "arti": {
       "id": "Ultra high voltage; di Tiongkok mencapai +/-1100 kV arus searah.",
       "en": "Ultra high voltage; in China up to +/-1100 kV direct current."
-     }
+     },
+     "kat": "teknis"
     },
     {
      "istilah": {
@@ -660,7 +726,8 @@
      "arti": {
       "id": "Jaringan tulang punggung antarpulau dan antarwilayah beban untuk memindahkan listrik terbarukan.",
       "en": "An inter-island and inter-region backbone network for moving renewable power."
-     }
+     },
+     "kat": "teknis"
     },
     {
      "istilah": {
@@ -670,7 +737,8 @@
      "arti": {
       "id": "Jaringan dengan sensor, komunikasi, dan kontrol digital untuk menyeimbangkan pasokan dan beban waktu nyata.",
       "en": "A grid with sensors, communications and digital control for real-time balancing of supply and load."
-     }
+     },
+     "kat": "teknis"
     },
     {
      "istilah": {
@@ -680,7 +748,8 @@
      "arti": {
       "id": "Variable renewable energy: surya dan angin yang keluarannya berubah menurut cuaca.",
       "en": "Variable renewable energy: solar and wind whose output varies with weather."
-     }
+     },
+     "kat": "teknis"
     },
     {
      "istilah": {
@@ -690,7 +759,8 @@
      "arti": {
       "id": "Pengurangan keluaran pembangkit karena batas jaringan atau kelebihan pasokan.",
       "en": "Reduction of plant output due to network limits or oversupply."
-     }
+     },
+     "kat": "teknis"
     },
     {
      "istilah": {
@@ -700,7 +770,8 @@
      "arti": {
       "id": "Pengubahan jadwal pembangkit untuk meredakan kemacetan jaringan; biayanya ditanggung konsumen di Jerman.",
       "en": "Rescheduling plants to relieve network congestion; in Germany consumers bear the cost."
-     }
+     },
+     "kat": "uang"
     },
     {
      "istilah": {
@@ -710,7 +781,8 @@
      "arti": {
       "id": "Selisih daya mampu dan beban puncak sebagai persen beban; dilaporkan RUPTL per sistem.",
       "en": "Gap between dependable capacity and peak load as a percent of load; reported by RUPTL per system."
-     }
+     },
+     "kat": "teknis"
     },
     {
      "istilah": {
@@ -720,7 +792,8 @@
      "arti": {
       "id": "Loss of load probability, peluang beban tak terlayani; RUPTL melaporkannya per sistem.",
       "en": "Loss of load probability; RUPTL reports it per system."
-     }
+     },
+     "kat": "teknis"
     },
     {
      "istilah": {
@@ -730,7 +803,8 @@
      "arti": {
       "id": "Saluran udara tegangan tinggi 70 kV dan 150 kV.",
       "en": "High-voltage overhead line, 70 and 150 kV."
-     }
+     },
+     "kat": "teknis"
     },
     {
      "istilah": {
@@ -740,7 +814,8 @@
      "arti": {
       "id": "Saluran udara tegangan ekstra tinggi 275 kV dan 500 kV.",
       "en": "Extra-high-voltage overhead line, 275 and 500 kV."
-     }
+     },
+     "kat": "teknis"
     },
     {
      "istilah": {
@@ -750,7 +825,8 @@
      "arti": {
       "id": "Saluran kabel tanah dan kabel laut tegangan tinggi; dipakai bila saluran udara tidak mungkin.",
       "en": "High-voltage underground and subsea cable; used where overhead lines are not possible."
-     }
+     },
+     "kat": "teknis"
     },
     {
      "istilah": {
@@ -760,7 +836,8 @@
      "arti": {
       "id": "Simpul jaringan tempat tegangan diubah dan arus dibagi; kapasitasnya dalam MVA.",
       "en": "A grid node where voltage is transformed and flows are split; its capacity is in MVA."
-     }
+     },
+     "kat": "teknis"
     },
     {
      "istilah": {
@@ -770,7 +847,8 @@
      "arti": {
       "id": "Gardu induk tegangan ekstra tinggi (275 dan 500 kV).",
       "en": "Extra-high-voltage substation (275 and 500 kV)."
-     }
+     },
+     "kat": "teknis"
     },
     {
      "istilah": {
@@ -780,7 +858,8 @@
      "arti": {
       "id": "Ruang di bawah dan sekitar saluran yang bebas bangunan dan tanaman tinggi demi keselamatan; dasar kompensasi pemilik lahan.",
       "en": "Space below and around a line kept free of buildings and tall plants for safety; basis of landowner compensation."
-     }
+     },
+     "kat": "teknis"
     },
     {
      "istilah": {
@@ -790,7 +869,8 @@
      "arti": {
       "id": "Sistem tetap melayani beban bila satu unsur terbesar (saluran, trafo, pembangkit) lepas; dasar perencanaan keandalan.",
       "en": "The system keeps serving load if its largest single element (line, transformer, plant) trips; the basis of reliability planning."
-     }
+     },
+     "kat": "teknis"
     },
     {
      "istilah": {
@@ -800,7 +880,8 @@
      "arti": {
       "id": "Pusat kendali yang menjadwalkan pembangkit dan mengatur aliran daya waktu nyata, memakai SCADA.",
       "en": "A control centre that schedules plants and manages real-time flows using SCADA."
-     }
+     },
+     "kat": "teknis"
     },
     {
      "istilah": {
@@ -810,7 +891,8 @@
      "arti": {
       "id": "Sistem pemantauan dan kendali jarak jauh atas gardu dan pembangkit.",
       "en": "Supervisory control and data acquisition for remote monitoring and control of substations and plants."
-     }
+     },
+     "kat": "teknis"
     },
     {
      "istilah": {
@@ -820,7 +902,8 @@
      "arti": {
       "id": "Aturan teknis sambungan dan operasi pembangkit serta beban ke jaringan, termasuk syarat frekuensi dan tegangan.",
       "en": "Technical rules for connecting and operating plants and loads on the grid, including frequency and voltage requirements."
-     }
+     },
+     "kat": "aturan"
     },
     {
      "istilah": {
@@ -830,7 +913,8 @@
      "arti": {
       "id": "Penyambungan dua sistem terpisah agar dapat saling mengirim daya, misalnya Sumatera-Jawa.",
       "en": "Joining two separate systems so they can exchange power, for example Sumatra-Java."
-     }
+     },
+     "kat": "teknis"
     },
     {
      "istilah": {
@@ -840,7 +924,8 @@
      "arti": {
       "id": "Penyaluran listrik pihak ketiga lewat jaringan pemilik lain dengan membayar sewa jaringan.",
       "en": "Delivery of a third party's power over another owner's network for a network fee."
-     }
+     },
+     "kat": "teknis"
     },
     {
      "istilah": {
@@ -850,7 +935,8 @@
      "arti": {
       "id": "Denyut arus bolak-balik, 50 Hz di Indonesia; menyimpang bila pasokan dan beban tidak seimbang.",
       "en": "The beat of alternating current, 50 Hz in Indonesia; drifts when supply and load are unbalanced."
-     }
+     },
+     "kat": "teknis"
     },
     {
      "istilah": {
@@ -860,7 +946,8 @@
      "arti": {
       "id": "Kemampuan massa putar generator menahan perubahan frekuensi; surya dan angin berbasis inverter tidak menyumbangnya secara bawaan.",
       "en": "The ability of rotating generator mass to resist frequency change; inverter-based solar and wind do not provide it by default."
-     }
+     },
+     "kat": "teknis"
     },
     {
      "istilah": {
@@ -870,7 +957,8 @@
      "arti": {
       "id": "Selisih energi yang dikirim dan yang terjual akibat panas saluran, trafo, dan pencurian.",
       "en": "The gap between energy sent and sold due to line and transformer heat and theft."
-     }
+     },
+     "kat": "teknis"
     },
     {
      "istilah": {
@@ -880,7 +968,8 @@
      "arti": {
       "id": "Jaringan kecil yang dapat berdiri sendiri, biasanya pembangkit surya, baterai, dan diesel untuk pulau atau kawasan.",
       "en": "A small grid that can stand alone, usually solar, battery and diesel for an island or estate."
-     }
+     },
+     "kat": "teknis"
     },
     {
      "istilah": {
@@ -890,7 +979,8 @@
      "arti": {
       "id": "Jaringan kecil tak tersambung ke sistem besar, umum di pulau kecil; biaya pokoknya tinggi.",
       "en": "A small grid not connected to a large system, common on small islands; its cost of supply is high."
-     }
+     },
+     "kat": "uang"
     },
     {
      "istilah": {
@@ -900,7 +990,8 @@
      "arti": {
       "id": "Menghidupkan kembali sistem dari padam total memakai pembangkit yang bisa start tanpa pasokan luar.",
       "en": "Restarting a system from total blackout using plants that can start without external supply."
-     }
+     },
+     "kat": "teknis"
     }
    ]
   },
@@ -1007,6 +1098,10 @@
      "pelaku": {
       "id": "PLN, Kementerian ESDM, Dewan Energi Nasional",
       "en": "PLN, Energy Ministry, National Energy Council"
+     },
+     "peran": {
+      "id": "PLN, Kementerian ESDM, Dewan Energi Nasional",
+      "en": "PLN, Energy Ministry, National Energy Council"
      }
     },
     {
@@ -1019,6 +1114,10 @@
       "en": "PLN budget, government assignment and development loans; the World Bank recorded two PLN transmission loans (2010 and 2013)."
      },
      "pelaku": {
+      "id": "PLN, Kementerian Keuangan, Bank Dunia, ADB, JICA, KfW",
+      "en": "PLN, Finance Ministry, World Bank, ADB, JICA, KfW"
+     },
+     "peran": {
       "id": "PLN, Kementerian Keuangan, Bank Dunia, ADB, JICA, KfW",
       "en": "PLN, Finance Ministry, World Bank, ADB, JICA, KfW"
      }
@@ -1035,6 +1134,10 @@
      "pelaku": {
       "id": "PLN Enjiniring, konsultan",
       "en": "PLN Enjiniring, consultants"
+     },
+     "peran": {
+      "id": "PLN Enjiniring, konsultan",
+      "en": "PLN Enjiniring, consultants"
      }
     },
     {
@@ -1047,6 +1150,10 @@
       "en": "Tendering of lines and substations by package; the 2025-2031 tender roadmap is in the domestic market chapter."
      },
      "pelaku": {
+      "id": "PLN, kontraktor EPC",
+      "en": "PLN, EPC contractors"
+     },
+     "peran": {
       "id": "PLN, kontraktor EPC",
       "en": "PLN, EPC contractors"
      }
@@ -1063,6 +1170,10 @@
      "pelaku": {
       "id": "Hitachi Energy, Siemens Energy, ABB, Siemens, pabrikan menara dan kabel lokal",
       "en": "Hitachi Energy, Siemens Energy, ABB, Siemens, local tower and cable makers"
+     },
+     "peran": {
+      "id": "Hitachi Energy, Siemens Energy, ABB, Siemens, pabrikan menara dan kabel lokal",
+      "en": "Hitachi Energy, Siemens Energy, ABB, Siemens, local tower and cable makers"
      }
     },
     {
@@ -1075,6 +1186,10 @@
       "en": "Tower site and corridor acquisition; this obstacle was recorded on the Lahat-Muara Bungo project and is a main risk for the Aceh-North Sumatra 275 kV project."
      },
      "pelaku": {
+      "id": "PLN, pemda, pemilik lahan",
+      "en": "PLN, local governments, landowners"
+     },
+     "peran": {
       "id": "PLN, pemda, pemilik lahan",
       "en": "PLN, local governments, landowners"
      }
@@ -1091,6 +1206,10 @@
      "pelaku": {
       "id": "Kontraktor, PLN Unit Induk Pembangunan",
       "en": "Contractors, PLN construction units"
+     },
+     "peran": {
+      "id": "Kontraktor, PLN Unit Induk Pembangunan",
+      "en": "Contractors, PLN construction units"
      }
     },
     {
@@ -1103,6 +1222,10 @@
       "en": "Load dispatch, plant scheduling within line capacity (including curtailment decisions), maintenance and digitalisation (fibre communications, SCADA)."
      },
      "pelaku": {
+      "id": "Pusat pengatur beban PLN, PLN Icon Plus",
+      "en": "PLN load dispatch centres, PLN Icon Plus"
+     },
+     "peran": {
       "id": "Pusat pengatur beban PLN, PLN Icon Plus",
       "en": "PLN load dispatch centres, PLN Icon Plus"
      }
@@ -1458,6 +1581,15 @@
       "id": "Dasar",
       "en": "Basis"
      }
+    },
+    {
+     "k": "mw",
+     "l": {
+      "id": "Kapasitas proyek tercatat (MW)",
+      "en": "Recorded project capacity (MW)"
+     },
+     "num": true,
+     "d": 0
     }
    ],
    "baris": [
@@ -1469,7 +1601,8 @@
       "id": "Pemilik RUPTL; membangun dan mengoperasikan sebagian besar transmisi; VP Perencanaan Sistem menyebut konstruksi super grid mungkin tahun-tahun depan",
       "en": "Owner of RUPTL; builds and operates most transmission; its VP System Planning says super grid construction may start in coming years"
      },
-     "rujuk": "Katadata, 30 Okt 2026"
+     "rujuk": "Katadata, 30 Okt 2026",
+     "mw": 9025.2
     },
     {
      "nama": "PT PLN Enjiniring",
@@ -1477,7 +1610,9 @@
       "id": "Rekayasa; menyatakan smart grid Jawa-Bali sedang dibangun dan desain Sumatera dimulai",
       "en": "Engineering; says the Java-Bali smart grid is under construction and Sumatra design has begun"
      },
-     "rujuk": "Katadata, 30 Okt 2026"
+     "rujuk": "Katadata, 30 Okt 2026",
+     "id": null,
+     "mw": null
     },
     {
      "nama": "Kementerian ESDM",
@@ -1487,7 +1622,8 @@
       "id": "Mengesahkan RUPTL dan mengumumkan target 47.758 kms",
       "en": "Approves RUPTL and announced the 47,758 kms target"
      },
-     "rujuk": "ESDM, 30 Mei 2025"
+     "rujuk": "ESDM, 30 Mei 2025",
+     "mw": null
     },
     {
      "nama": "DPR (Komisi terkait)",
@@ -1495,7 +1631,9 @@
       "id": "Forum pelaporan progres RUPTL (rapat 2 Jul 2026)",
       "en": "Forum for RUPTL progress reporting (hearing 2 Jul 2026)"
      },
-     "rujuk": "Kontan, 5 Jul 2026"
+     "rujuk": "Kontan, 5 Jul 2026",
+     "id": null,
+     "mw": null
     },
     {
      "nama": "TenneT dan TransnetBW (Jerman)",
@@ -1503,7 +1641,9 @@
       "id": "Pembangun SuedLink, pembanding luar negeri",
       "en": "SuedLink builders, foreign comparison"
      },
-     "rujuk": "S&P Global, 19 Sep 2025"
+     "rujuk": "S&P Global, 19 Sep 2025",
+     "id": null,
+     "mw": null
     },
     {
      "nama": "State Grid Corporation (Tiongkok)",
@@ -1511,7 +1651,9 @@
       "id": "Operator jaringan UHV, pembanding luar negeri (nama pemilik jalur tidak disebut tegas di sumber yang dibaca)",
       "en": "UHV grid operator, foreign comparison (line owner not explicitly named in the sources read)"
      },
-     "rujuk": "China Daily, 2020"
+     "rujuk": "China Daily, 2020",
+     "id": null,
+     "mw": null
     },
     {
      "nama": "Hitachi Energy",
@@ -1521,7 +1663,8 @@
       "id": "Pemasok trafo dan konverter HVDC; tercatat di direktori METI berkepakaran jaringan",
       "en": "Supplier of transformers and HVDC converters; listed in the METI directory with grid expertise"
      },
-     "rujuk": "Direktori METI"
+     "rujuk": "Direktori METI",
+     "mw": null
     },
     {
      "nama": "Siemens Energy",
@@ -1531,7 +1674,8 @@
       "id": "Pemasok peralatan transmisi dan gardu; tercatat berkepakaran jaringan dan gas",
       "en": "Supplier of transmission and substation equipment; listed with grid and gas expertise"
      },
-     "rujuk": "Direktori METI"
+     "rujuk": "Direktori METI",
+     "mw": null
     },
     {
      "nama": "ABB",
@@ -1541,7 +1685,8 @@
       "id": "Pemasok otomasi dan peralatan jaringan; tercatat berkepakaran jaringan",
       "en": "Supplier of automation and grid equipment; listed with grid expertise"
      },
-     "rujuk": "Direktori METI"
+     "rujuk": "Direktori METI",
+     "mw": null
     },
     {
      "nama": "PT PLN Icon Plus",
@@ -1551,7 +1696,8 @@
       "id": "Anak usaha PLN berkepakaran jaringan dan efisiensi; menyediakan komunikasi dan layanan digital",
       "en": "PLN subsidiary with grid and efficiency expertise; provides communications and digital services"
      },
-     "rujuk": "Direktori METI"
+     "rujuk": "Direktori METI",
+     "mw": null
     },
     {
      "nama": "PT PLN Indonesia Power",
@@ -1561,7 +1707,8 @@
       "id": "Anak usaha PLN; pembangkit yang menyambung ke transmisi dan penerima kurtailmen",
       "en": "PLN subsidiary; plants that connect to transmission and bear curtailment"
      },
-     "rujuk": "Direktori METI"
+     "rujuk": "Direktori METI",
+     "mw": 1745.6
     },
     {
      "nama": "PT PLN Nusantara Power",
@@ -1571,7 +1718,8 @@
       "id": "Anak usaha PLN; operator pembangkit yang menyambung ke transmisi",
       "en": "PLN subsidiary; operator of plants that connect to transmission"
      },
-     "rujuk": "Direktori METI"
+     "rujuk": "Direktori METI",
+     "mw": 2149.8
     },
     {
      "nama": "Kementerian Keuangan",
@@ -1581,7 +1729,8 @@
       "id": "Mitra penjaminan pemerintah dan penyedia dukungan fiskal proyek ketenagalistrikan (Permen Kemenkeu 5/2025)",
       "en": "Partner for government guarantees and fiscal support to power projects (Finance Ministry Reg. 5/2025)"
      },
-     "rujuk": "Regulasi repo"
+     "rujuk": "Regulasi repo",
+     "mw": null
     },
     {
      "nama": "Badan Pengelola Investasi Daya Anagata Nusantara",
@@ -1591,7 +1740,8 @@
       "id": "Pengelola investasi negara; calon pendana infrastruktur energi",
       "en": "State investment manager; potential funder of energy infrastructure"
      },
-     "rujuk": "Direktori METI"
+     "rujuk": "Direktori METI",
+     "mw": 0
     },
     {
      "nama": "Asian Development Bank",
@@ -1601,7 +1751,8 @@
       "id": "Pemberi pinjaman pembangunan untuk energi; skema ada di bab Pembiayaan",
       "en": "Development lender for energy; scheme in the Financing chapter"
      },
-     "rujuk": "Direktori METI"
+     "rujuk": "Direktori METI",
+     "mw": null
     },
     {
      "nama": "World Bank",
@@ -1611,7 +1762,8 @@
       "id": "Pemberi pinjaman dua proyek transmisi PLN (USD 225 juta dan USD 325 juta)",
       "en": "Lender for two PLN transmission projects (USD 225 million and USD 325 million)"
      },
-     "rujuk": "Bank Dunia, via direktori METI"
+     "rujuk": "Bank Dunia, via direktori METI",
+     "mw": null
     },
     {
      "nama": "Japan International Cooperation Agency",
@@ -1621,7 +1773,8 @@
       "id": "Pemberi pinjaman ODA; skema JICA ada di bab Pembiayaan",
       "en": "ODA lender; the JICA scheme is in the Financing chapter"
      },
-     "rujuk": "Direktori METI"
+     "rujuk": "Direktori METI",
+     "mw": null
     },
     {
      "nama": "Dewan Energi Nasional",
@@ -1629,7 +1782,9 @@
       "id": "Menetapkan kebijakan dan rencana energi nasional (RUEN, KEN); anggota menurut Perpres 26/2008",
       "en": "Sets national energy policy and plans (RUEN, KEN); members per Perpres 26/2008"
      },
-     "rujuk": "Regulasi repo"
+     "rujuk": "Regulasi repo",
+     "id": null,
+     "mw": null
     },
     {
      "nama": "Direktorat Jenderal Ketenagalistrikan, Kementerian ESDM",
@@ -1637,7 +1792,9 @@
       "id": "Pembina teknis ketenagalistrikan dan penerbit Statistik Ketenagalistrikan",
       "en": "Technical regulator of electricity and publisher of the Electricity Statistics"
      },
-     "rujuk": "Statistik Ketenagalistrikan 2024"
+     "rujuk": "Statistik Ketenagalistrikan 2024",
+     "id": null,
+     "mw": null
     },
     {
      "nama": "KfW Development Bank",
@@ -1645,7 +1802,9 @@
       "id": "Pemberi pinjaman jaringan dan efisiensi; skema ada di bab Pembiayaan",
       "en": "Lender for grids and efficiency; scheme in the Financing chapter"
      },
-     "rujuk": "Direktori METI (skema)"
+     "rujuk": "Direktori METI (skema)",
+     "id": null,
+     "mw": null
     },
     {
      "nama": "Asian Infrastructure Investment Bank",
@@ -1653,7 +1812,9 @@
       "id": "Pemberi pinjaman infrastruktur energi termasuk distribusi PLN",
       "en": "Infrastructure lender including PLN distribution"
      },
-     "rujuk": "Direktori METI (skema)"
+     "rujuk": "Direktori METI (skema)",
+     "id": null,
+     "mw": null
     },
     {
      "nama": "ASEAN Centre for Energy",
@@ -1661,7 +1822,9 @@
       "id": "Sekretariat teknis ASEAN Power Grid (memorandum disahkan Perpres 77/2008)",
       "en": "Technical secretariat of the ASEAN Power Grid (memorandum ratified by Perpres 77/2008)"
      },
-     "rujuk": "Regulasi repo"
+     "rujuk": "Regulasi repo",
+     "id": null,
+     "mw": null
     },
     {
      "nama": "Vietnam Electricity (EVN)",
@@ -1669,7 +1832,9 @@
       "id": "Pembanding luar negeri: operator utama jaringan Vietnam",
       "en": "Foreign comparison: main grid operator of Vietnam"
      },
-     "rujuk": "Sumber bab Pembanding"
+     "rujuk": "Sumber bab Pembanding",
+     "id": null,
+     "mw": null
     },
     {
      "nama": "Institute for Essential Services Reform",
@@ -1677,7 +1842,9 @@
       "id": "Lembaga kajian; Indonesia Energy Transition Outlook memuat kajian jaringan dan EBT variabel",
       "en": "Think tank; the Indonesia Energy Transition Outlook covers grids and variable renewables"
      },
-     "rujuk": "IESR, IETO 2025"
+     "rujuk": "IESR, IETO 2025",
+     "id": null,
+     "mw": null
     },
     {
      "nama": "Siemens",
@@ -1687,7 +1854,8 @@
       "id": "Perusahaan Internasional di Indonesia; peran rantai: pemasok",
       "en": "Perusahaan Internasional di Indonesia; chain role: pemasok"
      },
-     "rujuk": "Direktori METI"
+     "rujuk": "Direktori METI",
+     "mw": null
     },
     {
      "nama": "Hyundai Engineering & Construction",
@@ -1697,7 +1865,8 @@
       "id": "Perusahaan Internasional di Indonesia; peran rantai: EPC",
       "en": "Perusahaan Internasional di Indonesia; chain role: EPC"
      },
-     "rujuk": "Direktori METI"
+     "rujuk": "Direktori METI",
+     "mw": null
     },
     {
      "nama": "Preformed Line Products",
@@ -1707,7 +1876,8 @@
       "id": "Perusahaan Internasional di Indonesia; peran rantai: pemasok",
       "en": "Perusahaan Internasional di Indonesia; chain role: pemasok"
      },
-     "rujuk": "Direktori METI"
+     "rujuk": "Direktori METI",
+     "mw": null
     },
     {
      "nama": "Lapp Group (JJ Lapp)",
@@ -1717,7 +1887,8 @@
       "id": "Perusahaan Internasional di Indonesia; peran rantai: pemasok",
       "en": "Perusahaan Internasional di Indonesia; chain role: pemasok"
      },
-     "rujuk": "Direktori METI"
+     "rujuk": "Direktori METI",
+     "mw": null
     },
     {
      "nama": "Fuji Electric",
@@ -1727,7 +1898,8 @@
       "id": "Perusahaan Internasional di Indonesia; peran rantai: pemasok",
       "en": "Perusahaan Internasional di Indonesia; chain role: pemasok"
      },
-     "rujuk": "Direktori METI"
+     "rujuk": "Direktori METI",
+     "mw": null
     },
     {
      "nama": "Indonesia Smart Grid Association (PJCI)",
@@ -1737,7 +1909,8 @@
       "id": "Asosiasi; peran rantai: tercatat di direktori",
       "en": "Asosiasi; chain role: listed in the directory"
      },
-     "rujuk": "Direktori METI"
+     "rujuk": "Direktori METI",
+     "mw": null
     },
     {
      "nama": "PT Microvision Indonesia",
@@ -1747,7 +1920,8 @@
       "id": "Swasta; peran rantai: manufaktur",
       "en": "Swasta; chain role: manufaktur"
      },
-     "rujuk": "Direktori METI"
+     "rujuk": "Direktori METI",
+     "mw": null
     },
     {
      "nama": "PT Hari Mukti Teknik",
@@ -1757,7 +1931,8 @@
       "id": "Swasta; peran rantai: manufaktur",
       "en": "Swasta; chain role: manufaktur"
      },
-     "rujuk": "Direktori METI"
+     "rujuk": "Direktori METI",
+     "mw": null
     },
     {
      "nama": "PT Cahaya Agro Teknik",
@@ -1767,7 +1942,8 @@
       "id": "Swasta; peran rantai: manufaktur",
       "en": "Swasta; chain role: manufaktur"
      },
-     "rujuk": "Direktori METI"
+     "rujuk": "Direktori METI",
+     "mw": null
     },
     {
      "nama": "PT Bumi Center Delapan Delapan Tiga",
@@ -1777,7 +1953,8 @@
       "id": "Swasta; peran rantai: manufaktur",
       "en": "Swasta; chain role: manufaktur"
      },
-     "rujuk": "Direktori METI"
+     "rujuk": "Direktori METI",
+     "mw": null
     },
     {
      "nama": "PT Gridtech Indonesia",
@@ -1787,7 +1964,8 @@
       "id": "Swasta; peran rantai: manufaktur",
       "en": "Swasta; chain role: manufaktur"
      },
-     "rujuk": "Direktori METI"
+     "rujuk": "Direktori METI",
+     "mw": null
     },
     {
      "nama": "PT Adyawinsa Electrical And Power",
@@ -1797,7 +1975,8 @@
       "id": "Swasta; peran rantai: manufaktur",
       "en": "Swasta; chain role: manufaktur"
      },
-     "rujuk": "Direktori METI"
+     "rujuk": "Direktori METI",
+     "mw": null
     },
     {
      "nama": "CV Protel Multi Energy",
@@ -1807,7 +1986,8 @@
       "id": "Swasta; peran rantai: manufaktur",
       "en": "Swasta; chain role: manufaktur"
      },
-     "rujuk": "Direktori METI"
+     "rujuk": "Direktori METI",
+     "mw": null
     },
     {
      "nama": "PT Tirta Surya Cipta",
@@ -1817,7 +1997,8 @@
       "id": "Swasta; peran rantai: manufaktur",
       "en": "Swasta; chain role: manufaktur"
      },
-     "rujuk": "Direktori METI"
+     "rujuk": "Direktori METI",
+     "mw": null
     },
     {
      "nama": "PT Jetspeed Mandiri Indonesia",
@@ -1827,7 +2008,8 @@
       "id": "Swasta; peran rantai: manufaktur",
       "en": "Swasta; chain role: manufaktur"
      },
-     "rujuk": "Direktori METI"
+     "rujuk": "Direktori METI",
+     "mw": null
     },
     {
      "nama": "CV Sumber Tiga Jaya",
@@ -1837,7 +2019,8 @@
       "id": "Swasta; peran rantai: manufaktur",
       "en": "Swasta; chain role: manufaktur"
      },
-     "rujuk": "Direktori METI"
+     "rujuk": "Direktori METI",
+     "mw": null
     },
     {
      "nama": "PT Puncak Jaya Solusindo",
@@ -1847,7 +2030,8 @@
       "id": "Swasta; peran rantai: manufaktur",
       "en": "Swasta; chain role: manufaktur"
      },
-     "rujuk": "Direktori METI"
+     "rujuk": "Direktori METI",
+     "mw": null
     },
     {
      "nama": "PT Avia Anugrah Nusantara",
@@ -1857,7 +2041,8 @@
       "id": "Swasta; peran rantai: manufaktur",
       "en": "Swasta; chain role: manufaktur"
      },
-     "rujuk": "Direktori METI"
+     "rujuk": "Direktori METI",
+     "mw": null
     }
    ],
    "catatan": {
@@ -1929,7 +2114,8 @@
       "id": "Rampung 2020; PLN menyebut hemat Rp163 miliar per bulan",
       "en": "Completed 2020; PLN cites savings of IDR 163 billion per month"
      },
-     "sumber": "Bisnis, 12 Mar 2020"
+     "sumber": "Bisnis, 12 Mar 2020",
+     "id": null
     },
     {
      "nama": "SUTET 275 kV Lumut Balai-Muara Enim-Gumawang-Lampung",
@@ -1942,7 +2128,8 @@
       "id": "Ditargetkan 2021; sumber terbaru menyebut Gumawang-Lampung dan gardu Lampung telah di-energize (tanggal tak terbaca)",
       "en": "Targeted 2021; a later source says Gumawang-Lampung and the Lampung substation are energised (date unreadable)"
      },
-     "sumber": "Listrik Indonesia"
+     "sumber": "Listrik Indonesia",
+     "id": null
     },
     {
      "nama": "Interkoneksi HVDC Sumatera-Jawa",
@@ -1955,7 +2142,8 @@
       "id": "Persiapan; RUPTL menyebut operasi komersial 2031",
       "en": "In preparation; RUPTL cites commercial operation in 2031"
      },
-     "sumber": "Investortrust, 21 Apr 2026; Katadata"
+     "sumber": "Investortrust, 21 Apr 2026; Katadata",
+     "id": null
     },
     {
      "nama": "SUTET 275 kV Aceh-Sumatera Utara (Sigli-Aceh Utara; Pangkalan Susu-Helvetia)",
@@ -1968,7 +2156,8 @@
       "id": "Rencana setelah pemadaman 2026; izin dan lahan sedang diurus",
       "en": "Planned after the 2026 blackouts; permits and land in progress"
      },
-     "sumber": "Jakarta Post, 24 Jun 2026"
+     "sumber": "Jakarta Post, 24 Jun 2026",
+     "id": null
     },
     {
      "nama": "Smart grid Jawa-Bali",
@@ -1981,7 +2170,8 @@
       "id": "Sedang dibangun; disebut rampung tahun ini (Katadata, 30 Okt 2026)",
       "en": "Under construction; said to finish this year (Katadata, 30 Oct 2026)"
      },
-     "sumber": "Katadata, 30 Okt 2026"
+     "sumber": "Katadata, 30 Okt 2026",
+     "id": null
     },
     {
      "nama": "Smart microgrid Nusa Penida",
@@ -1994,12 +2184,13 @@
       "id": "Diterapkan PLN (21 Sep 2026)",
       "en": "Implemented by PLN (21 Sep 2026)"
      },
-     "sumber": "JPNN Bali, 21 Sep 2026"
+     "sumber": "JPNN Bali, 21 Sep 2026",
+     "id": null
     },
     {
      "nama": "Indonesia Power Transmission Development Project",
      "id": "wb_P117323",
-     "url": "/p/wb_P117323",
+     "url": "/proyek#wb_P117323",
      "wilayah": {
       "id": "Indonesia",
       "en": "Indonesia"
@@ -2017,7 +2208,7 @@
     {
      "nama": "Indonesia Second Power Transmission Development Project",
      "id": "wb_P123994",
-     "url": "/p/wb_P123994",
+     "url": "/proyek#wb_P123994",
      "wilayah": {
       "id": "Indonesia",
       "en": "Indonesia"
@@ -2035,7 +2226,7 @@
     {
      "nama": "Second Power Transmission and Distribution Project",
      "id": "wb_P004021",
-     "url": "/p/wb_P004021",
+     "url": "/proyek#wb_P004021",
      "wilayah": {
       "id": "Indonesia",
       "en": "Indonesia"
@@ -2053,7 +2244,7 @@
     {
      "nama": "Power Transmission Project",
      "id": "wb_P003975",
-     "url": "/p/wb_P003975",
+     "url": "/proyek#wb_P003975",
      "wilayah": {
       "id": "Indonesia",
       "en": "Indonesia"
@@ -2071,7 +2262,7 @@
     {
      "nama": "Power Sector Efficiency Project",
      "id": "wb_P003920",
-     "url": "/p/wb_P003920",
+     "url": "/proyek#wb_P003920",
      "wilayah": {
       "id": "Indonesia",
       "en": "Indonesia"
@@ -2089,7 +2280,7 @@
     {
      "nama": "Indonesia Grid and Renewable Energy Financing Facility (GREFI)",
      "id": "wb_P178788",
-     "url": "/p/wb_P178788",
+     "url": "/proyek#wb_P178788",
      "wilayah": {
       "id": "Indonesia",
       "en": "Indonesia"
@@ -2107,7 +2298,7 @@
     {
      "nama": "Capacity Building for Smart Grid Investments for Transmission and Dist",
      "id": "wb_P149389",
-     "url": "/p/wb_P149389",
+     "url": "/proyek#wb_P149389",
      "wilayah": {
       "id": "Indonesia",
       "en": "Indonesia"
@@ -2125,7 +2316,7 @@
     {
      "nama": "Java-Bali Power Sector Restructuring and Strengthening Project",
      "id": "wb_P063913",
-     "url": "/p/wb_P063913",
+     "url": "/proyek#wb_P063913",
      "wilayah": {
       "id": "Indonesia",
       "en": "Indonesia"
@@ -2143,7 +2334,7 @@
     {
      "nama": "Java Power Distribution Project",
      "id": "wb_P040524",
-     "url": "/p/wb_P040524",
+     "url": "/proyek#wb_P040524",
      "wilayah": {
       "id": "Indonesia",
       "en": "Indonesia"
@@ -2161,7 +2352,7 @@
     {
      "nama": "Indonesia Sustainable Least-cost Electrification-2 (ISLE-2) Operation",
      "id": "wb_P501217",
-     "url": "/p/wb_P501217",
+     "url": "/proyek#wb_P501217",
      "wilayah": {
       "id": "Indonesia",
       "en": "Indonesia"
@@ -2688,6 +2879,10 @@
      "pelaku": {
       "id": "PLN, Kementerian ESDM",
       "en": "PLN, Energy Ministry"
+     },
+     "peran": {
+      "id": "PLN, Kementerian ESDM",
+      "en": "PLN, Energy Ministry"
      }
     },
     {
@@ -2700,6 +2895,10 @@
       "en": "Load-flow studies and route survey; fixing tower and substation sites."
      },
      "pelaku": {
+      "id": "PLN Enjiniring, PLN",
+      "en": "PLN Enjiniring, PLN"
+     },
+     "peran": {
       "id": "PLN Enjiniring, PLN",
       "en": "PLN Enjiniring, PLN"
      }
@@ -2716,6 +2915,10 @@
      "pelaku": {
       "id": "PLN, pemda",
       "en": "PLN, local governments"
+     },
+     "peran": {
+      "id": "PLN, pemda",
+      "en": "PLN, local governments"
      }
     },
     {
@@ -2728,6 +2931,10 @@
       "en": "Site acquisition and right-of-way compensation (Energy Ministry Reg. 13/2025); about 26 percent of the Aceh-North Sumatra corridor passes residential and urban areas."
      },
      "pelaku": {
+      "id": "PLN, pemilik lahan, pemda",
+      "en": "PLN, landowners, local governments"
+     },
+     "peran": {
       "id": "PLN, pemilik lahan, pemda",
       "en": "PLN, landowners, local governments"
      }
@@ -2744,6 +2951,10 @@
      "pelaku": {
       "id": "PLN, kontraktor",
       "en": "PLN, contractors"
+     },
+     "peran": {
+      "id": "PLN, kontraktor",
+      "en": "PLN, contractors"
      }
     },
     {
@@ -2756,6 +2967,10 @@
       "en": "Foundations and towers, conductor stringing, substations; land delays most often shift the schedule."
      },
      "pelaku": {
+      "id": "Kontraktor, PLN",
+      "en": "Contractors, PLN"
+     },
+     "peran": {
       "id": "Kontraktor, PLN",
       "en": "Contractors, PLN"
      }
@@ -2772,6 +2987,10 @@
      "pelaku": {
       "id": "PLN, Kementerian ESDM",
       "en": "PLN, Energy Ministry"
+     },
+     "peran": {
+      "id": "PLN, Kementerian ESDM",
+      "en": "PLN, Energy Ministry"
      }
     },
     {
@@ -2784,6 +3003,10 @@
       "en": "The asset is handed to the operating unit and the dispatch centre; it begins to count in absorption capacity."
      },
      "pelaku": {
+      "id": "PLN",
+      "en": "PLN"
+     },
+     "peran": {
       "id": "PLN",
       "en": "PLN"
      }
@@ -2887,13 +3110,15 @@
      "judul": "Smart microgrid Nusa Penida (PLTS dan baterai terintegrasi)",
      "penulis": "PLN",
      "jurnal": "JPNN Bali, 21 Sep 2026",
-     "sitasi": 0
+     "sitasi": 0,
+     "id": null
     },
     {
      "judul": "Smart grid Jawa-Bali dan desain Sumatera",
      "penulis": "PLN Enjiniring",
      "jurnal": "Katadata, 30 Okt 2026",
-     "sitasi": 0
+     "sitasi": 0,
+     "id": null
     },
     {
      "judul": "Pathway towards 100% renewable energy in Indonesia power system by 2050",
@@ -4030,7 +4255,8 @@
      "mengapa": {
       "id": "Tabel beban, kapasitas, dan transmisi per sistem",
       "en": "Load, capacity and transmission tables per system"
-     }
+     },
+     "id": null
     },
     {
      "judul": "Indonesia Energy Transition Outlook 2025",
@@ -4039,7 +4265,8 @@
      "mengapa": {
       "id": "Kajian pembanding tentang EBT variabel dan RUKN",
       "en": "Independent view on variable renewables and RUKN"
-     }
+     },
+     "id": null
     },
     {
      "judul": "Managing Vietnam's Grid Issues for Effective Energy Transition",
@@ -4048,7 +4275,8 @@
      "mengapa": {
       "id": "Pelajaran jaringan Vietnam",
       "en": "Lessons from the Vietnamese grid"
-     }
+     },
+     "id": null
     },
     {
      "judul": "RUPTL PT PLN (Persero) 2025-2034",
@@ -4221,7 +4449,9 @@
      "sumber": [
       "tol20",
       "tol19"
-     ]
+     ],
+     "foto": null,
+     "koordinat": null
     },
     {
      "id": "zhundong",
@@ -4312,7 +4542,9 @@
      "sumber": [
       "uhv1",
       "uhv3"
-     ]
+     ],
+     "foto": null,
+     "koordinat": null
     },
     {
      "id": "vn-c3",
@@ -4372,7 +4604,9 @@
      },
      "sumber": [
       "vn_c3"
-     ]
+     ],
+     "foto": null,
+     "koordinat": null
     },
     {
      "id": "viking-link",
@@ -4451,7 +4685,9 @@
      },
      "sumber": [
       "viking"
-     ]
+     ],
+     "foto": null,
+     "koordinat": null
     },
     {
      "id": "nordlink",
@@ -4540,7 +4776,9 @@
      },
      "sumber": [
       "nordlink"
-     ]
+     ],
+     "foto": null,
+     "koordinat": null
     }
    ]
   },
@@ -4633,7 +4871,9 @@
       "blackoutll",
       "jp26"
      ],
-     "hak_jawab": true
+     "hak_jawab": true,
+     "foto": null,
+     "koordinat": null
     },
     {
      "id": "suedlink",
@@ -4734,7 +4974,9 @@
       "sl_bt",
       "redis"
      ],
-     "hak_jawab": true
+     "hak_jawab": true,
+     "foto": null,
+     "koordinat": null
     },
     {
      "id": "vn-kurtail",
@@ -4803,7 +5045,9 @@
       "vn_c3",
       "vn_etp"
      ],
-     "hak_jawab": true
+     "hak_jawab": true,
+     "foto": null,
+     "koordinat": null
     }
    ]
   },

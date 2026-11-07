@@ -23,7 +23,73 @@
     "en": "MW"
    },
    "sumber": "kap",
-   "est": false
+   "est": false,
+   "deret": [
+    [
+     2010,
+     1911
+    ],
+    [
+     2011,
+     1937
+    ],
+    [
+     2012,
+     1957
+    ],
+    [
+     2013,
+     1688
+    ],
+    [
+     2014,
+     1711
+    ],
+    [
+     2015,
+     1726
+    ],
+    [
+     2016,
+     1767
+    ],
+    [
+     2017,
+     1841
+    ],
+    [
+     2018,
+     1867
+    ],
+    [
+     2019,
+     1876
+    ],
+    [
+     2020,
+     1885
+    ],
+    [
+     2021,
+     2256
+    ],
+    [
+     2022,
+     3074
+    ],
+    [
+     2023,
+     3357
+    ],
+    [
+     2024,
+     3064
+    ],
+    [
+     2025,
+     3185
+    ]
+   ]
   },
   {
    "label": {
@@ -182,6 +248,14 @@
    "tanggal": "2026-09-08",
    "tahun": 2026,
    "bukti": "media"
+  },
+  "dak": {
+   "judul": "Kemenkeu DJPK, Bidang Infrastruktur Energi Terbarukan (DAK-IET)",
+   "penerbit": "Kemenkeu DJPK",
+   "url": "https://djpk.kemenkeu.go.id/wp-content/uploads/2024/04/Bidang-Infrastruktur-Energi-Terbarukan-IET.pdf",
+   "tanggal": "2024-04-01",
+   "tahun": 2024,
+   "bukti": "resmi"
   },
   "cof24": {
    "judul": "PLN akui realisasi pemanfaatan biomassa masih di bawah target (target 2024 2,83 juta ton menurut Permen ESDM 12/2023, realisasi 1,62 juta ton; 2025 sekitar 2,2 juta ton; cangkang sawit sekitar Rp1,7 juta per ton)",
@@ -400,6 +474,46 @@
    "tanggal": "2024-08-29",
    "tahun": 2024,
    "bukti": "resmi"
+  },
+  "iea_bio": {
+   "judul": "IEA, Bioenergy (ringkasan teknologi, kebijakan, dan data bioenergi dunia)",
+   "penerbit": "IEA",
+   "url": "https://www.iea.org/energy-system/renewables/bioenergy",
+   "tanggal": "2026-11-08",
+   "tahun": 2026,
+   "bukti": "resmi"
+  },
+  "wto593": {
+   "judul": "WTO, DS593 Indonesia lawan Uni Eropa: tindakan atas minyak sawit dan biofuel berbasis sawit (halaman sengketa)",
+   "penerbit": "WTO",
+   "url": "https://www.wto.org/english/tratop_e/dispu_e/cases_e/ds593_e.htm",
+   "tanggal": "2026-11-08",
+   "tahun": 2026,
+   "bukti": "resmi"
+  },
+  "ipcc6": {
+   "judul": "IPCC AR6 WG1 bab 7: potensi pemanasan global (GWP) metana dan gas lain",
+   "penerbit": "IPCC",
+   "url": "https://www.ipcc.ch/report/ar6/wg1/chapter/chapter-7/",
+   "tanggal": "2026-11-08",
+   "tahun": 2026,
+   "bukti": "resmi"
+  },
+  "ipcc_ef": {
+   "judul": "IPCC Guidelines 2006 vol. 2 bab 2: faktor emisi bawaan bahan bakar (batubara bituminus lain 94,6 kg CO2 per GJ)",
+   "penerbit": "IPCC",
+   "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html",
+   "tanggal": "2026-11-08",
+   "tahun": 2026,
+   "bukti": "resmi"
+  },
+  "redIII": {
+   "judul": "Uni Eropa, Directive (EU) 2023/2413 (RED III): target energi terbarukan 42,5 persen pada 2030",
+   "penerbit": "Uni Eropa",
+   "url": "https://eur-lex.europa.eu/eli/dir/2023/2413/oj",
+   "tanggal": "2023-10-31",
+   "tahun": 2023,
+   "bukti": "resmi"
   }
  },
  "bab": {
@@ -411,7 +525,11 @@
     "owid",
     "cof24",
     "bd26",
-    "e10"
+    "e10",
+    "b50",
+    "pomeundip",
+    "regul",
+    "pendanaan"
    ],
    "butir": [
     {
@@ -422,7 +540,8 @@
      "j": {
       "id": "Biomassa padat (cangkang, serpih kayu, pelet), biogas dari limbah cair sawit (POME) dan kotoran, serta bahan bakar nabati cair: biodiesel dan bioetanol. Sampah jadi energi dibahas di topik terpisah.",
       "en": "Solid biomass (shells, wood chips, pellets), biogas from palm oil mill effluent (POME) and manure, and liquid biofuels: biodiesel and bioethanol. Waste-to-energy has its own topic."
-     }
+     },
+     "bab": 4
     },
     {
      "t": {
@@ -432,7 +551,8 @@
      "j": {
       "id": "157.25 MW pada 2025 menurut IRENA, naik dari 748 MW pada 2000; pembangkitan 20181.01 GWh pada 2024.",
       "en": "157.25 MW in 2025 per IRENA, up from 748 MW in 2000; generation 20181.01 GWh in 2024."
-     }
+     },
+     "bab": 4
     },
     {
      "t": {
@@ -442,7 +562,8 @@
      "j": {
       "id": "Mencampur biomassa (cangkang sawit, serbuk kayu, pelet) dengan batubara di PLTU yang sudah ada. PLN menargetkan 52 PLTU; realisasi 2025 sekitar 2,2 sampai 2,35 juta ton, di bawah target 3 juta ton.",
       "en": "Blending biomass (palm shells, sawdust, pellets) with coal in existing coal plants. PLN targets 52 plants; 2025 actual was about 2.2 to 2.35 million tonnes, below the 3 million tonne target."
-     }
+     },
+     "bab": 30
     },
     {
      "t": {
@@ -452,7 +573,8 @@
      "j": {
       "id": "Angka menunjukkan persen biodiesel sawit (FAME) dalam solar. Alokasi 2026 adalah 15,65 juta kiloliter pada B40; B50 ditunda dan statusnya berubah antar laporan.",
       "en": "The number is the percent palm biodiesel (FAME) in diesel. The 2026 allocation is 15.65 million kilolitres at B40; B50 was delayed and its status changed between reports."
-     }
+     },
+     "bab": 4
     },
     {
      "t": {
@@ -462,7 +584,8 @@
      "j": {
       "id": "Pertamax Green 95 (E5) diluncurkan Juli 2023; pemerintah menargetkan mandatori E10 mulai 2027 dengan kebutuhan etanol sekitar 1,4 juta kiloliter per tahun.",
       "en": "Pertamax Green 95 (E5) launched in July 2023; government targets an E10 mandate from 2027 needing about 1.4 million kilolitres of ethanol a year."
-     }
+     },
+     "bab": 4
     },
     {
      "t": {
@@ -472,7 +595,8 @@
      "j": {
       "id": "Bisa; contoh PLTBg PKS Tandun 1,5 MW dan Sei Mangkei 2,4 MW. Potensi nasional besar tetapi data kapasitas terpasang nasional belum ditemukan di sumber terbuka.",
       "en": "Yes; examples are the PKS Tandun 1.5 MW and Sei Mangkei 2.4 MW biogas plants. National potential is large but national installed capacity was not found in open sources."
-     }
+     },
+     "bab": 4
     },
     {
      "t": {
@@ -482,7 +606,8 @@
      "j": {
       "id": "Diperdebatkan. Pemerintah dan PLN menyebutnya murah dan cepat; Trend Asia dan lembaga lain menilai klaim netral karbon tidak terbukti bila bahan baku berasal dari tanaman energi yang menggantikan hutan. Lihat bab 29.",
       "en": "Disputed. Government and PLN call it cheap and fast; Trend Asia and others say the carbon-neutral claim is unproven when feedstock comes from energy crops replacing forest. See chapter 29."
-     }
+     },
+     "bab": 27
     },
     {
      "t": {
@@ -492,7 +617,85 @@
      "j": {
       "id": "14 proyek bioenergi bernama dalam RUPTL 2025-2034 (115.8 MW); lihat bab 8 untuk sebaran.",
       "en": "14 named bioenergy projects in the 2025-2034 RUPTL (115.8 MW); see chapter 8 for distribution."
-     }
+     },
+     "bab": 10
+    },
+    {
+     "t": {
+      "id": "Berapa harga cangkang sawit untuk co-firing?",
+      "en": "What does palm kernel shell cost for co-firing?"
+     },
+     "j": {
+      "id": "Sekitar Rp1,7 juta per ton menurut pemberitaan Republika; lebih mahal daripada batubara yang harganya dibatasi kebijakan, dan ini salah satu sebab realisasi di bawah target.",
+      "en": "About IDR 1.7 million per tonne per Republika; above policy-capped coal, which is one reason actuals trail targets."
+     },
+     "bab": 19
+    },
+    {
+     "t": {
+      "id": "Apa itu ISPO dan apakah wajib bagi usaha bioenergi sawit?",
+      "en": "What is ISPO and is it required for palm bioenergy?"
+     },
+     "j": {
+      "id": "ISPO (Indonesian Sustainable Palm Oil) adalah sertifikasi keberlanjutan sawit nasional. Permen ESDM 3/2026 mengatur sertifikasi tersebut untuk usaha bioenergi kelapa sawit; cek pasal dan masa transisinya di basis regulasi.",
+      "en": "ISPO (Indonesian Sustainable Palm Oil) is the national palm sustainability certification. Energy Ministry Reg. 3/2026 governs it for palm bioenergy businesses; check the articles and transition period in the regulation base."
+     },
+     "bab": 12
+    },
+    {
+     "t": {
+      "id": "Siapa yang menanggung selisih harga biodiesel dan solar?",
+      "en": "Who covers the gap between biodiesel and diesel prices?"
+     },
+     "j": {
+      "id": "Dana perkebunan sawit (BPDP, dahulu BPDPKS) yang dipungut dari ekspor sawit dan turunannya; pungutan ekspor CPO naik dari 10 menjadi 12,5 persen mulai Maret 2026.",
+      "en": "The palm plantation fund (BPDP, formerly BPDPKS) collected from palm exports; the CPO export levy rose from 10 to 12.5 percent from March 2026."
+     },
+     "bab": 19
+    },
+    {
+     "t": {
+      "id": "Berapa listrik yang bisa dihasilkan satu pabrik sawit dari POME?",
+      "en": "How much power can one palm mill make from POME?"
+     },
+     "j": {
+      "id": "Kajian Undip menaksir sekitar 1 MW per pabrik berkapasitas 30 ton TBS per jam. Contoh hitung bab 5 untuk pabrik 60 ton per jam menghasilkan sekitar 2.3 MW rata-rata (EST, asumsi hipotesis).",
+      "en": "A Diponegoro University study estimates about 1 MW per mill of 30 tonnes FFB per hour. The chapter 5 example for a 60 tonne per hour mill gives about 2.3 MW average (EST, hypothetical assumptions)."
+     },
+     "bab": 10
+    },
+    {
+     "t": {
+      "id": "Apakah co-firing benar-benar mengurangi emisi?",
+      "en": "Does co-firing really cut emissions?"
+     },
+     "j": {
+      "id": "Tergantung asal bahan baku. Bila biomassa dari limbah, pengurangan nyata; bila dari tanaman energi yang menggantikan hutan, emisi bersih bisa naik. Perhitungan batas atas ada di bab 5 dan perdebatannya di bab 29.",
+      "en": "It depends on feedstock origin. From residues the cut is real; from energy crops replacing forest net emissions can rise. The upper-bound calculation is in chapter 5 and the debate in chapter 29."
+     },
+     "bab": 27
+    },
+    {
+     "t": {
+      "id": "Apa beda biodiesel (FAME) dengan diesel hijau (HVO)?",
+      "en": "What is the difference between biodiesel (FAME) and green diesel (HVO)?"
+     },
+     "j": {
+      "id": "FAME adalah ester minyak nabati yang dicampur terbatas ke solar (B40). HVO diolah dengan hidrogen sehingga sifatnya mirip solar dan bisa dipakai tanpa batas campuran mesin, tetapi biaya produksinya lebih tinggi. Pesawat memakai varian serupa yang disebut SAF.",
+      "en": "FAME is a vegetable-oil ester blended in limited share into diesel (B40). HVO is treated with hydrogen so it behaves like diesel and needs no engine blend limit, but costs more. Aviation uses a similar product called SAF."
+     },
+     "bab": 19
+    },
+    {
+     "t": {
+      "id": "Bisakah proyek bioenergi menjual kredit karbon?",
+      "en": "Can bioenergy projects sell carbon credits?"
+     },
+     "j": {
+      "id": "Bisa, terutama penangkapan metana POME dan biogas rumah tangga. Di basis pendanaan METI tercatat proyek Verra dan Gold Standard seperti Indonesia Domestic Biogas Programme dan penangkapan metana PT Musim Mas di Pangkalan Lesung; lihat bab 24.",
+      "en": "Yes, mainly POME methane capture and household biogas. The METI funding base lists Verra and Gold Standard projects such as the Indonesia Domestic Biogas Programme and PT Musim Mas methane recovery at Pangkalan Lesung; see chapter 24."
+     },
+     "bab": 10
     }
    ]
   },
@@ -510,7 +713,8 @@
      "arti": {
       "id": "Bahan organik padat (cangkang sawit, kayu, sekam) sebagai bahan bakar.",
       "en": "Solid organic material (palm shells, wood, husk) used as fuel."
-     }
+     },
+     "kat": "teknis"
     },
     {
      "istilah": {
@@ -520,7 +724,8 @@
      "arti": {
       "id": "Pembakaran campuran biomassa dan batubara di PLTU.",
       "en": "Burning a biomass and coal blend in a coal plant."
-     }
+     },
+     "kat": "teknis"
     },
     {
      "istilah": {
@@ -530,7 +735,8 @@
      "arti": {
       "id": "Palm oil mill effluent, limbah cair pabrik sawit yang menghasilkan metana.",
       "en": "Palm oil mill effluent, liquid mill waste that releases methane."
-     }
+     },
+     "kat": "teknis"
     },
     {
      "istilah": {
@@ -540,7 +746,8 @@
      "arti": {
       "id": "Pembangkit listrik tenaga biogas / biomassa.",
       "en": "Biogas / biomass power plant."
-     }
+     },
+     "kat": "teknis"
     },
     {
      "istilah": {
@@ -550,7 +757,8 @@
      "arti": {
       "id": "Fatty acid methyl ester, biodiesel dari minyak sawit.",
       "en": "Fatty acid methyl ester, biodiesel from palm oil."
-     }
+     },
+     "kat": "teknis"
     },
     {
      "istilah": {
@@ -560,7 +768,8 @@
      "arti": {
       "id": "Campuran 40 atau 50 persen biodiesel dalam solar.",
       "en": "A blend of 40 or 50 percent biodiesel in diesel."
-     }
+     },
+     "kat": "teknis"
     },
     {
      "istilah": {
@@ -570,7 +779,8 @@
      "arti": {
       "id": "Etanol dari tebu, singkong, atau jagung; E10 berarti 10 persen etanol dalam bensin.",
       "en": "Ethanol from cane, cassava or corn; E10 means 10 percent ethanol in gasoline."
-     }
+     },
+     "kat": "teknis"
     },
     {
      "istilah": {
@@ -580,7 +790,8 @@
      "arti": {
       "id": "Badan Pengelola Dana Perkebunan Kelapa Sawit yang menutup selisih harga biodiesel.",
       "en": "Palm Oil Plantation Fund Agency that covers the biodiesel price gap."
-     }
+     },
+     "kat": "uang"
     },
     {
      "istilah": {
@@ -590,7 +801,8 @@
      "arti": {
       "id": "Hutan tanaman energi untuk memasok biomassa.",
       "en": "Energy plantation forest supplying biomass."
-     }
+     },
+     "kat": "teknis"
     },
     {
      "istilah": {
@@ -600,7 +812,8 @@
      "arti": {
       "id": "Public service obligation, biodiesel bersubsidi.",
       "en": "Public service obligation, subsidised biodiesel."
-     }
+     },
+     "kat": "aturan"
     },
     {
      "istilah": {
@@ -610,7 +823,8 @@
      "arti": {
       "id": "Indonesian Sustainable Palm Oil, sertifikasi sawit berkelanjutan.",
       "en": "Indonesian Sustainable Palm Oil certification."
-     }
+     },
+     "kat": "aturan"
     },
     {
      "istilah": {
@@ -620,7 +834,8 @@
      "arti": {
       "id": "Cangkang inti sawit, biomassa utama co-firing.",
       "en": "Palm kernel shell, the main co-firing biomass."
-     }
+     },
+     "kat": "teknis"
     },
     {
      "istilah": {
@@ -630,7 +845,8 @@
      "arti": {
       "id": "Biomassa kayu dipadatkan untuk pembakaran.",
       "en": "Compressed wood biomass for burning."
-     }
+     },
+     "kat": "teknis"
     },
     {
      "istilah": {
@@ -640,7 +856,8 @@
      "arti": {
       "id": "Skema subsidi Inggris: Renewables Obligation Certificate dan Contract for Difference.",
       "en": "UK subsidy schemes: Renewables Obligation Certificate and Contract for Difference."
-     }
+     },
+     "kat": "uang"
     },
     {
      "istilah": {
@@ -650,7 +867,228 @@
      "arti": {
       "id": "Hasil samping gula yang menjadi bahan baku etanol utama.",
       "en": "Sugar by-product that is the main ethanol feedstock."
-     }
+     },
+     "kat": "teknis"
+    },
+    {
+     "istilah": {
+      "id": "BBN",
+      "en": "BBN"
+     },
+     "arti": {
+      "id": "Bahan bakar nabati: biodiesel, bioetanol, dan minyak nabati murni.",
+      "en": "Biofuel: biodiesel, bioethanol and straight vegetable oil."
+     },
+     "kat": "teknis"
+    },
+    {
+     "istilah": {
+      "id": "TBS",
+      "en": "TBS"
+     },
+     "arti": {
+      "id": "Tandan buah segar, bahan baku pabrik kelapa sawit.",
+      "en": "Fresh fruit bunches, the raw material of a palm oil mill."
+     },
+     "kat": "teknis"
+    },
+    {
+     "istilah": {
+      "id": "CPO / PKO",
+      "en": "CPO / PKO"
+     },
+     "arti": {
+      "id": "Crude palm oil dan palm kernel oil, hasil olahan TBS.",
+      "en": "Crude palm oil and palm kernel oil, products of processing FFB."
+     },
+     "kat": "teknis"
+    },
+    {
+     "istilah": {
+      "id": "Tankos (EFB)",
+      "en": "Tankos (EFB)"
+     },
+     "arti": {
+      "id": "Tandan kosong sawit, biomassa limbah pabrik yang potensial untuk pelet dan pembangkit.",
+      "en": "Empty fruit bunches, mill waste biomass suited to pellets and power."
+     },
+     "kat": "teknis"
+    },
+    {
+     "istilah": {
+      "id": "Biogas",
+      "en": "Biogas"
+     },
+     "arti": {
+      "id": "Campuran metana dan CO2 dari penguraian anaerob limbah organik.",
+      "en": "A methane and CO2 mixture from anaerobic digestion of organic waste."
+     },
+     "kat": "teknis"
+    },
+    {
+     "istilah": {
+      "id": "Biometana (bio-CNG)",
+      "en": "Biometana (bio-CNG)"
+     },
+     "arti": {
+      "id": "Biogas yang dimurnikan hingga kadar metana tinggi sehingga setara gas alam.",
+      "en": "Biogas purified to high methane content, equivalent to natural gas."
+     },
+     "kat": "teknis"
+    },
+    {
+     "istilah": {
+      "id": "Digestat",
+      "en": "Digestat"
+     },
+     "arti": {
+      "id": "Sisa padat dan cair dari pencerna biogas yang dapat dipakai sebagai pupuk.",
+      "en": "Solid and liquid residue of a digester that can be used as fertiliser."
+     },
+     "kat": "teknis"
+    },
+    {
+     "istilah": {
+      "id": "HVO / diesel hijau",
+      "en": "HVO / diesel hijau"
+     },
+     "arti": {
+      "id": "Hydrotreated vegetable oil, minyak nabati yang diolah dengan hidrogen menjadi bahan bakar mirip solar.",
+      "en": "Hydrotreated vegetable oil, processed with hydrogen into a diesel-like fuel."
+     },
+     "kat": "teknis"
+    },
+    {
+     "istilah": {
+      "id": "SAF",
+      "en": "SAF"
+     },
+     "arti": {
+      "id": "Sustainable aviation fuel, bahan bakar pesawat nabati atau sintetis berkelanjutan.",
+      "en": "Sustainable aviation fuel, a sustainable bio-based or synthetic jet fuel."
+     },
+     "kat": "teknis"
+    },
+    {
+     "istilah": {
+      "id": "Gasifikasi",
+      "en": "Gasifikasi"
+     },
+     "arti": {
+      "id": "Proses termal memecah biomassa menjadi gas sintesis (syngas) untuk mesin atau turbin.",
+      "en": "A thermal process turning biomass into syngas for engines or turbines."
+     },
+     "kat": "teknis"
+    },
+    {
+     "istilah": {
+      "id": "Torefaksi",
+      "en": "Torefaksi"
+     },
+     "arti": {
+      "id": "Pemanasan biomassa tanpa oksigen pada sekitar 200 sampai 300 derajat Celsius agar lebih padat energi dan tahan air.",
+      "en": "Heating biomass without oxygen at about 200 to 300 degrees Celsius to make it denser in energy and water resistant."
+     },
+     "kat": "teknis"
+    },
+    {
+     "istilah": {
+      "id": "Biochar",
+      "en": "Biochar"
+     },
+     "arti": {
+      "id": "Arang hayati dari pirolisis biomassa, dipakai untuk tanah dan penyimpan karbon.",
+      "en": "Biomass pyrolysis char used for soil and carbon storage."
+     },
+     "kat": "teknis"
+    },
+    {
+     "istilah": {
+      "id": "Nilai kalor (LHV/HHV)",
+      "en": "Nilai kalor (LHV/HHV)"
+     },
+     "arti": {
+      "id": "Energi per massa bahan bakar; LHV tidak menghitung uap air, HHV menghitungnya.",
+      "en": "Energy per unit mass of fuel; LHV excludes water vapour, HHV includes it."
+     },
+     "kat": "satuan"
+    },
+    {
+     "istilah": {
+      "id": "Faktor emisi",
+      "en": "Faktor emisi"
+     },
+     "arti": {
+      "id": "Emisi CO2 per satuan energi bahan bakar; bawaan IPCC batubara sekitar 94,6 kg per GJ.",
+      "en": "CO2 emitted per unit of fuel energy; the IPCC default for coal is about 94.6 kg per GJ."
+     },
+     "kat": "teknis"
+    },
+    {
+     "istilah": {
+      "id": "ILUC",
+      "en": "ILUC"
+     },
+     "arti": {
+      "id": "Indirect land-use change, perubahan penggunaan lahan tidak langsung akibat tanaman energi yang menggeser lahan pangan.",
+      "en": "Indirect land-use change caused by energy crops displacing food land."
+     },
+     "kat": "teknis"
+    },
+    {
+     "istilah": {
+      "id": "RED III",
+      "en": "RED III"
+     },
+     "arti": {
+      "id": "Renewable Energy Directive III Uni Eropa, target 42,5 persen terbarukan pada 2030 dengan kriteria keberlanjutan bahan baku.",
+      "en": "EU Renewable Energy Directive III, 42.5 percent renewables by 2030 with feedstock sustainability criteria."
+     },
+     "kat": "aturan"
+    },
+    {
+     "istilah": {
+      "id": "RSPO",
+      "en": "RSPO"
+     },
+     "arti": {
+      "id": "Roundtable on Sustainable Palm Oil, standar sukarela internasional untuk sawit.",
+      "en": "Roundtable on Sustainable Palm Oil, an international voluntary palm standard."
+     },
+     "kat": "aturan"
+    },
+    {
+     "istilah": {
+      "id": "HIP BBN",
+      "en": "HIP BBN"
+     },
+     "arti": {
+      "id": "Harga indeks pasar bahan bakar nabati yang ditetapkan pemerintah sebagai patokan pembayaran.",
+      "en": "The market index price of biofuel set by government as a payment benchmark."
+     },
+     "kat": "uang"
+    },
+    {
+     "istilah": {
+      "id": "Pencerna anaerob",
+      "en": "Pencerna anaerob"
+     },
+     "arti": {
+      "id": "Tangki tertutup tempat bakteri menguraikan limbah tanpa oksigen menjadi biogas.",
+      "en": "A sealed tank where bacteria break down waste without oxygen into biogas."
+     },
+     "kat": "teknis"
+    },
+    {
+     "istilah": {
+      "id": "Peat dan HTI",
+      "en": "Peat dan HTI"
+     },
+     "arti": {
+      "id": "Gambut dan hutan tanaman industri; sumber risiko emisi bila lahannya dibuka untuk bahan baku.",
+      "en": "Peatland and industrial plantation forest; sources of emission risk when cleared for feedstock."
+     },
+     "kat": "teknis"
     }
    ]
   },
@@ -660,7 +1098,8 @@
     "kap",
     "owid",
     "bd26",
-    "cof24"
+    "cof24",
+    "ed"
    ],
    "paragraf": [
     {
@@ -674,6 +1113,14 @@
     {
      "id": "Bioenergi unik karena rantai pasoknya adalah pertanian dan kehutanan: keberhasilannya ditentukan oleh bahan baku, harga, dan lahan, bukan hanya mesin.",
      "en": "Bioenergy is unique because its supply chain is agriculture and forestry: success depends on feedstock, price and land, not only machines."
+    },
+    {
+     "id": "Secara fisika, bioenergi adalah energi surya yang disimpan fotosintesis. Karena bentuknya bahan bakar (padat, cair, gas), bioenergi dapat disimpan dan dipakai sesuai kebutuhan; ini membedakannya dari surya dan bayu yang bergantung cuaca.",
+     "en": "Physically, bioenergy is solar energy stored by photosynthesis. Because it is a fuel (solid, liquid, gas) it can be stored and dispatched on demand, unlike solar and wind that depend on weather."
+    },
+    {
+     "id": "Bagi Indonesia ada tiga alasan penting: (1) negara produsen sawit terbesar sehingga limbah dan minyaknya melimpah, (2) mengurangi impor solar dan bensin, dan (3) memakai PLTU yang sudah ada lewat co-firing tanpa membangun pembangkit baru.",
+     "en": "For Indonesia three reasons matter: (1) it is the largest palm producer so residues and oil are abundant, (2) it reduces diesel and gasoline imports, and (3) co-firing uses existing coal plants without new build."
     }
    ]
   },
@@ -682,7 +1129,11 @@
    "sumber": [
     "ed",
     "cof24",
-    "bd26"
+    "bd26",
+    "ipcc_ef",
+    "ipcc6",
+    "pomeundip",
+    "e10"
    ],
    "rumus": [
     {
@@ -692,6 +1143,22 @@
     {
      "id": "Basis solar (kiloliter) = alokasi biodiesel / porsi campuran (misalnya 0,4 untuk B40)",
      "en": "Diesel base (kL) = biodiesel allocation / blend share (for example 0.4 for B40)"
+    },
+    {
+     "id": "Emisi terhindar co-firing, batas atas (tCO2) = biomassa (ton) x nilai kalor (GJ per ton) x faktor emisi batubara (0,0946 tCO2 per GJ) x faktor netralitas (0 sampai 1)",
+     "en": "Co-firing avoided emissions, upper bound (tCO2) = biomass (t) x calorific value (GJ per t) x coal emission factor (0.0946 tCO2 per GJ) x neutrality factor (0 to 1)"
+    },
+    {
+     "id": "Listrik dari POME (kWh per hari) = POME (m3) x metana per m3 POME x 9,94 kWh per m3 metana x efisiensi mesin",
+     "en": "Power from POME (kWh per day) = POME (m3) x methane per m3 POME x 9.94 kWh per m3 methane x engine efficiency"
+    },
+    {
+     "id": "Metana terhindar (tCO2e) = metana tertangkap (m3) x 0,668 kg per m3 / 1000 x GWP metana (sekitar 27 menurut IPCC AR6 untuk metana nonfosil)",
+     "en": "Avoided methane (tCO2e) = captured methane (m3) x 0.668 kg per m3 / 1000 x methane GWP (about 27 per IPCC AR6 for non-fossil methane)"
+    },
+    {
+     "id": "Lahan etanol (ha) = etanol (liter) / hasil (liter per ha); kebutuhan CPO biodiesel (ton) = FAME (kL) x 0,88 / rasio konversi",
+     "en": "Ethanol land (ha) = ethanol (litres) / yield (litres per ha); biodiesel CPO need (t) = FAME (kL) x 0.88 / conversion ratio"
     }
    ],
    "contoh": [
@@ -702,6 +1169,26 @@
     {
      "id": "Alokasi B40 15,65 juta kiloliter berarti basis solar sekitar 39.1 juta kiloliter; pada B50 kebutuhan biodiesel menjadi sekitar 19.6 juta kiloliter, dekat angka 20,1 juta yang dikutip pemberitaan (EST, hitung sendiri).",
      "en": "A B40 allocation of 15.65 million kilolitres implies a diesel base of about 39.1 million kilolitres; at B50 biodiesel need becomes about 19.6 million kilolitres, near the 20.1 million cited by news (EST, own calculation)."
+    },
+    {
+     "id": "Co-firing 5 persen pada PLTU contoh 600 MW: biomassa 2102 TJ menggantikan batubara; dengan faktor 94,6 ton CO2 per TJ batas atas emisi terhindar sekitar 199 ribu tCO2 per tahun bila biomassa dianggap netral penuh. Bila tanaman energi menggantikan hutan, angkanya bisa nol atau negatif (EST, hipotesis).",
+     "en": "Co-firing 5 percent at the 600 MW example plant: 2102 TJ of biomass replaces coal; at 94.6 t CO2 per TJ the upper bound of avoided emissions is about 199 thousand tCO2 per year if biomass is fully neutral. If energy crops replace forest the figure can be zero or negative (EST, hypothesis)."
+    },
+    {
+     "id": "Pabrik sawit 60 ton TBS per jam, 20 jam per hari, 0.6 m3 POME per ton TBS: 720 m3 POME per hari. Dengan 20 m3 metana per m3 POME dihasilkan 14400 m3 metana, setara sekitar 54 MWh listrik per hari pada efisiensi 38 persen, rata-rata 2.3 MW (EST, semua asumsi hipotesis).",
+     "en": "A palm mill of 60 t FFB per hour, 20 hours a day, 0.6 m3 POME per t FFB: 720 m3 POME a day. At 20 m3 methane per m3 POME that is 14400 m3 methane, equal to about 54 MWh of power a day at 38 percent efficiency, an average 2.3 MW (EST, all assumptions hypothetical)."
+    },
+    {
+     "id": "Bila metana yang sama dibiarkan lepas dari kolam terbuka, 330 hari operasi per tahun setara sekitar 86 ribu tCO2e (EST, GWP 27); inilah dasar kredit karbon penangkapan metana.",
+     "en": "If the same methane escaped from an open pond, 330 operating days a year equal about 86 thousand tCO2e (EST, GWP 27); this is the basis of methane-capture carbon credits."
+    },
+    {
+     "id": "Alokasi biodiesel 2026 (15,65 juta kL) kira-kira 13.8 juta ton FAME pada massa jenis 0,88; dengan rasio konversi 1:1 butuh sekitar 14 juta ton CPO. Pangsa PSO 47.6 persen dan non-PSO 52.4 persen (EST, rasio konversi hipotesis).",
+     "en": "The 2026 biodiesel allocation (15.65 million kL) is roughly 13.8 million tonnes of FAME at density 0.88; at a 1:1 conversion ratio it needs about 14 million tonnes of CPO. The PSO share is 47.6 percent and non-PSO 52.4 percent (EST, conversion ratio hypothetical)."
+    },
+    {
+     "id": "Etanol E10 1,4 juta kL = 1,4 miliar liter; pada hasil tebu 5.000 liter per ha dibutuhkan sekitar 280 ribu ha (EST; hasil 5.000 liter per ha adalah asumsi hipotesis, Brasil jauh lebih tinggi).",
+     "en": "E10 ethanol of 1.4 million kL = 1.4 billion litres; at a cane yield of 5,000 litres per ha about 280 thousand ha are needed (EST; 5,000 litres per ha is a hypothetical assumption, Brazil is far higher)."
     }
    ]
   },
@@ -726,7 +1213,8 @@
      "pelaku": {
       "id": "Petani, koperasi, pemasok, PLN EPI",
       "en": "Farmers, cooperatives, suppliers, PLN EPI"
-     }
+     },
+     "peran": "pln"
     },
     {
      "judul": {
@@ -740,7 +1228,8 @@
      "pelaku": {
       "id": "Pemasok, pelabuhan",
       "en": "Suppliers, ports"
-     }
+     },
+     "peran": "pengembang"
     },
     {
      "judul": {
@@ -754,7 +1243,8 @@
      "pelaku": {
       "id": "PLN, IPP, badan usaha BBN",
       "en": "PLN, IPPs, biofuel businesses"
-     }
+     },
+     "peran": "pln"
     },
     {
      "judul": {
@@ -768,7 +1258,8 @@
      "pelaku": {
       "id": "Pertamina, ESDM",
       "en": "Pertamina, Energy Ministry"
-     }
+     },
+     "peran": "pusat"
     },
     {
      "judul": {
@@ -782,7 +1273,8 @@
      "pelaku": {
       "id": "BPDPKS",
       "en": "BPDPKS"
-     }
+     },
+     "peran": "pusat"
     },
     {
      "judul": {
@@ -796,57 +1288,220 @@
      "pelaku": {
       "id": "Pelaku usaha, auditor",
       "en": "Businesses, auditors"
-     }
+     },
+     "peran": "pengembang"
+    },
+    {
+     "judul": {
+      "id": "Perdagangan, harga indeks, dan ekspor",
+      "en": "Trading, index price and exports"
+     },
+     "isi": {
+      "id": "Pemerintah menetapkan HIP BBN; pelaku sawit menjual CPO ke pasar domestik atau ekspor dengan pungutan yang membiayai dana BPDP.",
+      "en": "Government sets the biofuel index price; palm firms sell CPO domestically or export with levies that fund BPDP."
+     },
+     "pelaku": {
+      "id": "Wilmar, Musim Mas, APROBI, BPDP",
+      "en": "Wilmar, Musim Mas, APROBI, BPDP"
+     },
+     "peran": "pusat"
+    },
+    {
+     "judul": {
+      "id": "Pengguna akhir dan pemantauan",
+      "en": "End users and monitoring"
+     },
+     "isi": {
+      "id": "SPBU Pertamina menjual solar campur; PLTU PLN memakai biomassa; ESDM memantau realisasi dan sanksi.",
+      "en": "Pertamina stations sell blended diesel; PLN coal plants burn biomass; the Energy Ministry monitors actuals and penalties."
+     },
+     "pelaku": {
+      "id": "Pertamina Patra Niaga, PLN, ESDM",
+      "en": "Pertamina Patra Niaga, PLN, Energy Ministry"
+     },
+     "peran": "pln"
     }
    ]
   },
   "7": {
    "tipe": "grafik",
-   "jenis": "kolom",
+   "jenis": "garis",
    "sumber": [
     "kap"
    ],
    "label": {
-    "id": "Kapasitas bioenergi terpasang Indonesia",
-    "en": "Indonesia installed bioenergy capacity"
+    "id": "Kapasitas bioenergi terpasang Indonesia menurut jenis",
+    "en": "Indonesia installed bioenergy capacity by type"
    },
    "satuan": "MW",
    "d": 0,
+   "catatan": {
+    "id": "Tiga deret MW dari IRENA: total, biomassa padat, dan biogas. Biodiesel dan etanol bukan kapasitas listrik sehingga tidak masuk.",
+    "en": "Three MW series from IRENA: total, solid biomass and biogas. Biodiesel and ethanol are not power capacity so they are excluded."
+   },
    "seri": [
     {
      "nama": {
-      "id": "Kapasitas (MW)",
-      "en": "Capacity (MW)"
+      "id": "Total bioenergi",
+      "en": "Total bioenergy"
      },
      "sorot": true,
+     "titik": [
+      [
+       "2010",
+       1911.06
+      ],
+      [
+       "2011",
+       1937.06
+      ],
+      [
+       "2012",
+       1957.06
+      ],
+      [
+       "2013",
+       1688.06
+      ],
+      [
+       "2014",
+       1710.66
+      ],
+      [
+       "2015",
+       1726.01
+      ],
+      [
+       "2016",
+       1767.45
+      ],
+      [
+       "2017",
+       1841.16
+      ],
+      [
+       "2018",
+       1867.15
+      ],
+      [
+       "2019",
+       1875.95
+      ],
+      [
+       "2020",
+       1884.86
+      ],
+      [
+       "2021",
+       2255.95
+      ],
+      [
+       "2022",
+       3074.46
+      ],
+      [
+       "2023",
+       3356.94
+      ],
+      [
+       "2024",
+       3063.61
+      ],
+      [
+       "2025",
+       3184.61
+      ]
+     ]
+    },
+    {
+     "nama": {
+      "id": "Biomassa padat",
+      "en": "Solid biomass"
+     },
      "titik": [
       [
        "2010",
        1908
       ],
       [
-       "2010",
-       3.06
-      ],
-      [
        "2011",
        1928
-      ],
-      [
-       "2011",
-       9.06
       ],
       [
        "2012",
        1948
       ],
       [
-       "2012",
+       "2013",
+       1670
+      ],
+      [
+       "2014",
+       1691.4
+      ],
+      [
+       "2015",
+       1671.29
+      ],
+      [
+       "2016",
+       1703.29
+      ],
+      [
+       "2017",
+       1740.54
+      ],
+      [
+       "2018",
+       1758.54
+      ],
+      [
+       "2019",
+       1763.54
+      ],
+      [
+       "2020",
+       1767.04
+      ],
+      [
+       "2021",
+       2121.16
+      ],
+      [
+       "2022",
+       2925.05
+      ],
+      [
+       "2023",
+       3201.01
+      ],
+      [
+       "2024",
+       2906.36
+      ],
+      [
+       "2025",
+       3027.36
+      ]
+     ]
+    },
+    {
+     "nama": {
+      "id": "Biogas",
+      "en": "Biogas"
+     },
+     "titik": [
+      [
+       "2010",
+       3.06
+      ],
+      [
+       "2011",
        9.06
       ],
       [
-       "2013",
-       1670
+       "2012",
+       9.06
       ],
       [
        "2013",
@@ -854,15 +1509,7 @@
       ],
       [
        "2014",
-       1691.4
-      ],
-      [
-       "2014",
        19.26
-      ],
-      [
-       "2015",
-       1671.29
       ],
       [
        "2015",
@@ -870,15 +1517,7 @@
       ],
       [
        "2016",
-       1703.29
-      ],
-      [
-       "2016",
        64.16
-      ],
-      [
-       "2017",
-       1740.54
       ],
       [
        "2017",
@@ -886,15 +1525,7 @@
       ],
       [
        "2018",
-       1758.54
-      ],
-      [
-       "2018",
        108.61
-      ],
-      [
-       "2019",
-       1763.54
       ],
       [
        "2019",
@@ -902,15 +1533,7 @@
       ],
       [
        "2020",
-       1767.04
-      ],
-      [
-       "2020",
        117.82
-      ],
-      [
-       "2021",
-       2121.16
       ],
       [
        "2021",
@@ -918,15 +1541,7 @@
       ],
       [
        "2022",
-       2925.05
-      ],
-      [
-       "2022",
        149.41
-      ],
-      [
-       "2023",
-       3201.01
       ],
       [
        "2023",
@@ -934,15 +1549,7 @@
       ],
       [
        "2024",
-       2906.36
-      ],
-      [
-       "2024",
        157.25
-      ],
-      [
-       "2025",
-       3027.36
       ],
       [
        "2025",
@@ -968,6 +1575,14 @@
      "l": {
       "id": "Provinsi",
       "en": "Province"
+     },
+     "url": "u"
+    },
+    {
+     "k": "kode",
+     "l": {
+      "id": "Kode BPS",
+      "en": "BPS code"
      }
     },
     {
@@ -1003,31 +1618,424 @@
      "prov": "Maluku",
      "n": 3,
      "mw": 30,
-     "op": 0
+     "op": 0,
+     "kode": "81",
+     "u": "/wilayah?prov=81"
     },
     {
      "prov": "Aceh",
      "n": 3,
      "mw": 23,
-     "op": 0
+     "op": 0,
+     "kode": "11",
+     "u": "/wilayah?prov=11"
     },
     {
      "prov": "Maluku Utara",
      "n": 1,
      "mw": 10,
-     "op": 0
+     "op": 0,
+     "kode": "82",
+     "u": "/wilayah?prov=82"
     },
     {
      "prov": "Kepulauan Riau",
      "n": 1,
      "mw": 6,
-     "op": 0
+     "op": 0,
+     "kode": "21",
+     "u": "/wilayah?prov=21"
     },
     {
      "prov": "Kalimantan Barat",
      "n": 1,
      "mw": 5,
-     "op": 0
+     "op": 0,
+     "kode": "61",
+     "u": "/wilayah?prov=61"
+    }
+   ]
+  },
+  "9": {
+   "tipe": "tabel",
+   "per": 10,
+   "sumber": [
+    "ed",
+    "proyek"
+   ],
+   "catatan": {
+    "id": "Organisasi di basis METI yang berkepakaran pada topik ini atau disebut dalam rantai nilai; klik nama untuk profil. Pihak yang belum punya profil di basis tidak ditampilkan di sini.",
+    "en": "Organisations in the METI base with expertise in this topic or named in the value chain; click a name for the profile. Parties without a profile in the base are not shown here."
+   },
+   "kolom": [
+    {
+     "k": "nama",
+     "l": {
+      "id": "Organisasi",
+      "en": "Organisation"
+     },
+     "url": "u"
+    },
+    {
+     "k": "kategori",
+     "l": {
+      "id": "Kategori",
+      "en": "Category"
+     }
+    },
+    {
+     "k": "peran",
+     "l": {
+      "id": "Peran",
+      "en": "Role"
+     }
+    },
+    {
+     "k": "proyek",
+     "l": {
+      "id": "Proyek di basis",
+      "en": "Projects in base"
+     },
+     "num": true,
+     "d": 0
+    },
+    {
+     "k": "mw",
+     "l": {
+      "id": "Kapasitas proyek (MW)",
+      "en": "Project capacity (MW)"
+     },
+     "num": true,
+     "d": 0
+    }
+   ],
+   "baris": [
+    {
+     "nama": "PLN",
+     "id": "su_ed074ff5",
+     "kategori": "BUMN",
+     "peran": {
+      "id": "Offtaker listrik dan pembeli biomassa",
+      "en": "Power offtaker and biomass buyer"
+     },
+     "proyek": 93,
+     "u": "/o/su_ed074ff5",
+     "mw": 8039
+    },
+    {
+     "nama": "PT PLN Indonesia Power",
+     "id": "p_5a2e7d0c63",
+     "kategori": "BUMN",
+     "peran": {
+      "id": "Pembangkit PLTU co-firing",
+      "en": "Co-firing plant operator"
+     },
+     "proyek": 18,
+     "u": "/o/p_5a2e7d0c63",
+     "mw": 2397
+    },
+    {
+     "nama": "PT PLN Nusantara Power",
+     "id": "p_ff7a390a42",
+     "kategori": "BUMN",
+     "peran": {
+      "id": "Pembangkit PLTU co-firing",
+      "en": "Co-firing plant operator"
+     },
+     "proyek": 13,
+     "u": "/o/p_ff7a390a42",
+     "mw": 2345
+    },
+    {
+     "nama": "PT Daya Energi Bersih Nusantara (Denera)",
+     "id": "p_0ed65b38b8",
+     "kategori": "BUMN",
+     "peran": "pengembang",
+     "proyek": 10,
+     "u": "/o/p_0ed65b38b8",
+     "mw": 0
+    },
+    {
+     "nama": "Badan Pengelola Investasi Daya Anagata Nusantara",
+     "id": "l_43f00f6a72",
+     "kategori": "Kementerian dan Lembaga Negara",
+     "peran": {
+      "id": "Pendana transisi",
+      "en": "Transition investor"
+     },
+     "proyek": 3,
+     "u": "/o/l_43f00f6a72",
+     "mw": 0
+    },
+    {
+     "nama": "Kementerian Energi dan Sumber Daya Mineral",
+     "id": "l_7278e0528a",
+     "kategori": "Kementerian dan Lembaga Negara",
+     "peran": {
+      "id": "Regulator: alokasi BBN dan co-firing",
+      "en": "Regulator: biofuel allocation and co-firing"
+     },
+     "proyek": 2,
+     "u": "/o/l_7278e0528a",
+     "mw": 0
+    },
+    {
+     "nama": "PT Pertamina (Persero)",
+     "id": "p_b1c52ad7b0",
+     "kategori": "BUMN",
+     "peran": {
+      "id": "Pencampur dan distributor BBN",
+      "en": "Biofuel blender and distributor"
+     },
+     "proyek": 2,
+     "u": "/o/p_b1c52ad7b0",
+     "mw": 220
+    },
+    {
+     "nama": "PT Indo Green Power",
+     "id": "pm_7493cxb037b",
+     "kategori": "Swasta",
+     "peran": "pengembang",
+     "proyek": 1,
+     "u": "/o/pm_7493cxb037b",
+     "mw": 18
+    },
+    {
+     "nama": "PT Sumber Organik",
+     "id": "pm_b4424x486f6",
+     "kategori": "Swasta",
+     "peran": "pengembang",
+     "proyek": 1,
+     "u": "/o/pm_b4424x486f6",
+     "mw": 12
+    },
+    {
+     "nama": "Asosiasi Produsen Biofuel Indonesia",
+     "id": "l_d3dadc789e",
+     "kategori": "Asosiasi",
+     "peran": {
+      "id": "Asosiasi produsen biodiesel",
+      "en": "Biodiesel producers association"
+     },
+     "proyek": 0,
+     "u": "/o/l_d3dadc789e",
+     "mw": 0
+    },
+    {
+     "nama": "Badan Pengelola Dana Perkebunan",
+     "id": "l_060c77568c",
+     "kategori": "Kementerian dan Lembaga Negara",
+     "peran": {
+      "id": "Pendana selisih harga biodiesel",
+      "en": "Biodiesel price-gap funder"
+     },
+     "proyek": 0,
+     "u": "/o/l_060c77568c",
+     "mw": 0
+    },
+    {
+     "nama": "Direktorat Aneka Energi Baru dan Energi Terbarukan",
+     "id": "l_69296f786c",
+     "kategori": "Kementerian dan Lembaga Negara",
+     "peran": "-",
+     "proyek": 0,
+     "u": "/o/l_69296f786c",
+     "mw": 0
+    },
+    {
+     "nama": "Direktorat Bioenergi",
+     "id": "l_e4f0f03487",
+     "kategori": "Kementerian dan Lembaga Negara",
+     "peran": "-",
+     "proyek": 0,
+     "u": "/o/l_e4f0f03487",
+     "mw": 0
+    },
+    {
+     "nama": "Greenvolt",
+     "id": "in_8ad0a593f5",
+     "kategori": "Perusahaan Internasional di Indonesia",
+     "peran": "pengembang",
+     "proyek": 0,
+     "u": "/o/in_8ad0a593f5",
+     "mw": 0
+    },
+    {
+     "nama": "Institut Pertanian Bogor - Surfactant and Bioenergy Research Center",
+     "id": "l_c7f9927ccc",
+     "kategori": "Perguruan Tinggi",
+     "peran": "-",
+     "proyek": 0,
+     "u": "/o/l_c7f9927ccc",
+     "mw": 0
+    },
+    {
+     "nama": "Kementerian Kehutanan",
+     "id": "l_3d20494e0a",
+     "kategori": "Kementerian dan Lembaga Negara",
+     "peran": {
+      "id": "Regulator: hutan tanaman energi dan lahan",
+      "en": "Regulator: energy plantations and land"
+     },
+     "proyek": 0,
+     "u": "/o/l_3d20494e0a",
+     "mw": 0
+    },
+    {
+     "nama": "Kementerian Pertanian",
+     "id": "l_7c9f6d4654",
+     "kategori": "Kementerian dan Lembaga Negara",
+     "peran": "-",
+     "proyek": 0,
+     "u": "/o/l_7c9f6d4654",
+     "mw": 0
+    },
+    {
+     "nama": "Koperasi Agro Niaga Jabung",
+     "id": "kp_4f5b67b1e2",
+     "kategori": "Koperasi",
+     "peran": "-",
+     "proyek": 0,
+     "u": "/o/kp_4f5b67b1e2",
+     "mw": 0
+    },
+    {
+     "nama": "Koperasi pengelola minyak jelantah Purwokerto (nama tidak disebut)",
+     "id": "kp_87ca1f74ca",
+     "kategori": "Koperasi",
+     "peran": "-",
+     "proyek": 0,
+     "u": "/o/kp_87ca1f74ca",
+     "mw": 0
+    },
+    {
+     "nama": "Koperasi Produksi Ternak (KPT) Maju Sejahtera",
+     "id": "kp_533bd1ffe3",
+     "kategori": "Koperasi",
+     "peran": "-",
+     "proyek": 0,
+     "u": "/o/kp_533bd1ffe3",
+     "mw": 0
+    },
+    {
+     "nama": "PT Adhitya Serayakorita",
+     "id": "p_1cb5bccd1b",
+     "kategori": "Swasta",
+     "peran": "produsen BBN",
+     "proyek": 0,
+     "u": "/o/p_1cb5bccd1b",
+     "mw": 0
+    },
+    {
+     "nama": "PT Energi Agro Nusantara",
+     "id": "p_1a272e3233",
+     "kategori": "BUMN",
+     "peran": "produsen BBN",
+     "proyek": 0,
+     "u": "/o/p_1a272e3233",
+     "mw": 0
+    },
+    {
+     "nama": "PT Multi Nabati Sulawesi",
+     "id": "p_00aab1733c",
+     "kategori": "Swasta",
+     "peran": "produsen BBN",
+     "proyek": 0,
+     "u": "/o/p_00aab1733c",
+     "mw": 0
+    },
+    {
+     "nama": "PT Musim Mas",
+     "id": "p_3bfe6ea3f4",
+     "kategori": "Swasta",
+     "peran": {
+      "id": "Produsen sawit dan biodiesel; penangkapan metana",
+      "en": "Palm and biodiesel producer; methane capture"
+     },
+     "proyek": 0,
+     "u": "/o/p_3bfe6ea3f4",
+     "mw": 0
+    },
+    {
+     "nama": "PT Padang Raya Cakrawala",
+     "id": "p_1d8a12c158",
+     "kategori": "Swasta",
+     "peran": "produsen BBN",
+     "proyek": 0,
+     "u": "/o/p_1d8a12c158",
+     "mw": 0
+    },
+    {
+     "nama": "PT Pelita Agung Agrindustri",
+     "id": "p_2e232ef532",
+     "kategori": "Swasta",
+     "peran": "produsen BBN",
+     "proyek": 0,
+     "u": "/o/p_2e232ef532",
+     "mw": 0
+    },
+    {
+     "nama": "PT Pertamina Patra Niaga",
+     "id": "p_476a6bf2fb",
+     "kategori": "BUMN",
+     "peran": {
+      "id": "Pencampuran dan niaga BBN",
+      "en": "Biofuel blending and trading"
+     },
+     "proyek": 0,
+     "u": "/o/p_476a6bf2fb",
+     "mw": 0
+    },
+    {
+     "nama": "PT Sinarmas Bio Energy",
+     "id": "p_0ef2c3c3a0",
+     "kategori": "Swasta",
+     "peran": "produsen BBN",
+     "proyek": 0,
+     "u": "/o/p_0ef2c3c3a0",
+     "mw": 0
+    },
+    {
+     "nama": "PT Wilmar Bioenergi Indonesia",
+     "id": "p_f9b341c0f2",
+     "kategori": "Swasta",
+     "peran": {
+      "id": "Produsen bioetanol dan biodiesel",
+      "en": "Bioethanol and biodiesel producer"
+     },
+     "proyek": 0,
+     "u": "/o/p_f9b341c0f2",
+     "mw": 0
+    },
+    {
+     "nama": "PT Wilmar Nabati Indonesia",
+     "id": "p_6f8075d555",
+     "kategori": "Perusahaan Internasional di Indonesia",
+     "peran": {
+      "id": "Produsen biodiesel",
+      "en": "Biodiesel producer"
+     },
+     "proyek": 0,
+     "u": "/o/p_6f8075d555",
+     "mw": 0
+    },
+    {
+     "nama": "Shell",
+     "id": "in_b87ab519c7",
+     "kategori": "Perusahaan Internasional di Indonesia",
+     "peran": "pengembang",
+     "proyek": 0,
+     "u": "/o/in_b87ab519c7",
+     "mw": 0
+    },
+    {
+     "nama": "Wilmar International",
+     "id": "in_277ebc86bd",
+     "kategori": "Perusahaan Internasional di Indonesia",
+     "peran": "pengembang",
+     "proyek": 0,
+     "u": "/o/in_277ebc86bd",
+     "mw": 0
     }
    ]
   },
@@ -1037,7 +2045,13 @@
     "bd26",
     "bdpet",
     "cof26",
-    "e10"
+    "e10",
+    "cof24",
+    "b50",
+    "bdhemat",
+    "e10gap",
+    "kap",
+    "owid"
    ],
    "paragraf": [
     {
@@ -1047,6 +2061,30 @@
     {
      "id": "Pasar kedua adalah biomassa untuk PLN: 52 PLTU dengan target 3,65 juta ton pada 2026 dan realisasi sekitar 1,4 juta ton hingga 26 Agustus 2026. Pasar etanol baru berupa Pertamax Green 95 dan akan membesar bila E10 2027 berjalan.",
      "en": "The second market is biomass for PLN: 52 coal plants with a 3.65 million tonne target in 2026 and about 1.4 million tonnes by 26 August 2026. The ethanol market is so far Pertamax Green 95 and will grow if E10 starts in 2027."
+    },
+    {
+     "id": "Struktur biodiesel: PSO bersubsidi 47.6 persen dan non-PSO 52.4 persen dari alokasi 2026 (EST, hitung dari bd26). Konsumsi domestik 2025 sekitar 14,2 juta kL berarti alokasi 2026 sekitar 10.2 persen di atasnya.",
+     "en": "Biodiesel structure: subsidised PSO is 47.6 percent and non-PSO 52.4 percent of the 2026 allocation (EST, from bd26). 2025 domestic consumption of about 14.2 million kL puts the 2026 allocation about 10.2 percent above it."
+    },
+    {
+     "id": "Co-firing: realisasi 2024 1,62 juta ton atau 57 persen dari target 2,83 juta ton; 2025 sekitar 2,35 juta ton; 2026 sampai 26 Agustus sekitar 1,4 juta ton atau 38 persen dari target 3,65 juta ton (EST, hitung dari cof24 dan cof26).",
+     "en": "Co-firing: 2024 actual 1.62 million tonnes or 57 percent of the 2.83 million target; 2025 about 2.35 million tonnes; 2026 to 26 August about 1.4 million tonnes or 38 percent of the 3.65 million target (EST, from cof24 and cof26)."
+    },
+    {
+     "id": "Harga bahan baku: cangkang sawit sekitar Rp1,7 juta per ton (cof24). Dengan 2,35 juta ton per tahun, nilai pasokan sekitar Rp4 triliun per tahun (EST, kali harga rata-rata).",
+     "en": "Feedstock price: palm shells about IDR 1.7 million per tonne (cof24). At 2.35 million tonnes a year the supply is worth about IDR 4 trillion a year (EST, times the average price)."
+    },
+    {
+     "id": "Dana: pungutan ekspor CPO naik dari 10 menjadi 12,5 persen mulai Maret 2026 (b50) untuk menjaga dana BPDP menutup selisih harga; klaim pemerintah, hemat devisa Rp139 triliun dari B40 (bdhemat).",
+     "en": "Funding: the CPO export levy rose from 10 to 12.5 percent from March 2026 (b50) to keep BPDP able to cover the price gap; government claims forex savings of IDR 139 trillion from B40 (bdhemat)."
+    },
+    {
+     "id": "Etanol: E10 membutuhkan 1,4 juta kL per tahun (e10) dan pasokan dalam negeri masih terbatas (e10gap); Perpres 40/2023 mendorong tebu dan bioetanol di Merauke sebagai sumber baru.",
+     "en": "Ethanol: E10 needs 1.4 million kL a year (e10) and domestic supply is limited (e10gap); Presidential Reg. 40/2023 pushes sugarcane and bioethanol in Merauke as a new source."
+    },
+    {
+     "id": "Listrik: bioenergi 5,74 persen listrik 2024 menurut Ember; kapasitas total 3185 MW pada 2025 terdiri dari biomassa padat 3027 MW dan biogas 157 MW (kap).",
+     "en": "Power: bioenergy was 5.74 percent of 2024 electricity per Ember; total capacity of 3185 MW in 2025 consists of 3027 MW solid biomass and 157 MW biogas (kap)."
     }
    ]
   },
@@ -1089,7 +2127,8 @@
       "en": "Using biomass as a blend fuel in coal plants (co-firing)"
      },
      "st": "berlaku",
-     "u": "https://peraturan.bpk.go.id/Details/291410"
+     "u": "https://peraturan.bpk.go.id/Details/291410",
+     "id": "permen-esdm-12-2023"
     },
     {
      "dok": "Permen ESDM 24/2021",
@@ -1098,7 +2137,8 @@
       "en": "Supply and use of biodiesel financed by BPDPKS"
      },
      "st": "berlaku",
-     "u": "https://peraturan.bpk.go.id/Details/215435"
+     "u": "https://peraturan.bpk.go.id/Details/215435",
+     "id": "permen-esdm-24-2021"
     },
     {
      "dok": "Perpres 40/2023",
@@ -1107,7 +2147,8 @@
       "en": "Accelerating sugar self-sufficiency and bioethanol supply as biofuel"
      },
      "st": "berlaku",
-     "u": "https://peraturan.bpk.go.id/Details/251973"
+     "u": "https://peraturan.bpk.go.id/Details/251973",
+     "id": "perpres-40-2023"
     },
     {
      "dok": "Keppres 15/2024",
@@ -1116,7 +2157,8 @@
       "en": "Task force for sugar and bioethanol self-sufficiency in Merauke"
      },
      "st": "berlaku",
-     "u": "https://peraturan.bpk.go.id/Details/283176"
+     "u": "https://peraturan.bpk.go.id/Details/283176",
+     "id": "keppres-15-2024"
     },
     {
      "dok": "Permen ESDM 3/2026",
@@ -1125,7 +2167,8 @@
       "en": "Indonesian sustainable palm certification for palm bioenergy businesses"
      },
      "st": "berlaku",
-     "u": "https://peraturan.bpk.go.id/Details/350242"
+     "u": "https://peraturan.bpk.go.id/Details/350242",
+     "id": "permen-esdm-3-2026"
     },
     {
      "dok": "Permen ESDM 21/2016",
@@ -1134,7 +2177,8 @@
       "en": "PLN purchase of biomass and biogas power (revoked)"
      },
      "st": "dicabut",
-     "u": "https://peraturan.bpk.go.id/Details/142568"
+     "u": "https://peraturan.bpk.go.id/Details/142568",
+     "id": "permen-esdm-21-2016"
     },
     {
      "dok": "Perpres 112/2022",
@@ -1143,7 +2187,68 @@
       "en": "Benchmark prices and PLN purchase of renewable power"
      },
      "st": "berlaku",
-     "u": "https://peraturan.bpk.go.id/Details/225308"
+     "u": "https://peraturan.bpk.go.id/Details/225308",
+     "id": "perpres-112-2022"
+    },
+    {
+     "dok": "Permen ESDM 4/2025",
+     "ttg": {
+      "id": "Pengusahaan dan pemanfaatan bahan bakar nabati",
+      "en": "Business and use of biofuels"
+     },
+     "st": "berlaku",
+     "u": "/regulasi?id=permen-esdm-4-2025",
+     "id": "permen-esdm-4-2025"
+    },
+    {
+     "dok": "Permen ESDM 41/2018",
+     "ttg": {
+      "id": "Biodiesel dalam kerangka pembiayaan dana perkebunan (perluasan ke non-PSO)",
+      "en": "Biodiesel under plantation fund financing (expansion to non-PSO)"
+     },
+     "st": "diubah",
+     "u": "/regulasi?id=permen-esdm-41-2018",
+     "id": "permen-esdm-41-2018"
+    },
+    {
+     "dok": "Permen ESDM 32/2008",
+     "ttg": {
+      "id": "Penyediaan, pemanfaatan, dan tata niaga BBN (tonggak mandatori; dicabut)",
+      "en": "Biofuel supply, use and trading (mandate milestone; revoked)"
+     },
+     "st": "dicabut",
+     "u": "/regulasi?id=permen-esdm-32-2008",
+     "id": "permen-esdm-32-2008"
+    },
+    {
+     "dok": "Keppres 10/2006",
+     "ttg": {
+      "id": "Tim Nasional Pengembangan BBN",
+      "en": "National Biofuel Development Team"
+     },
+     "st": "berlaku",
+     "u": "/regulasi?id=keppres-10-2006",
+     "id": "keppres-10-2006"
+    },
+    {
+     "dok": "Perpres 109/2025",
+     "ttg": {
+      "id": "Pengolahan sampah menjadi energi terbarukan",
+      "en": "Waste to renewable energy"
+     },
+     "st": "berlaku",
+     "u": "/regulasi?id=perpres-109-2025",
+     "id": "perpres-109-2025"
+    },
+    {
+     "dok": "Pp 150/2000",
+     "ttg": {
+      "id": "Pengendalian kerusakan tanah untuk produksi biomassa",
+      "en": "Control of soil damage for biomass production"
+     },
+     "st": "berlaku",
+     "u": "/regulasi?id=pp-150-2000",
+     "id": "pp-150-2000"
     }
    ]
   },
@@ -1165,14 +2270,6 @@
       "en": "Pertamax Green 95 (E5) launched (month only)"
      },
      "url": "https://en.antaranews.com/news/430941/pertamina-prepares-for-mandatory-ethanol-blended-gasoline-policy"
-    },
-    {
-     "tanggal": "2023-01-01",
-     "judul": {
-      "id": "Permen ESDM 12/2023 tentang co-firing biomassa (tahun saja)",
-      "en": "Energy Ministry Reg. 12/2023 on biomass co-firing (year only)"
-     },
-     "url": "https://peraturan.bpk.go.id/"
     },
     {
      "tanggal": "2024-08-29",
@@ -1213,6 +2310,110 @@
       "en": "Target start of E10 mandate (year only, scheduled)"
      },
      "url": "https://ekonomi.bisnis.com/read/20251024/44/1923128/mandatori-e10-mulai-2027-bahlil-butuh-etanol-14-juta-kiloliter"
+    },
+    {
+     "tanggal": "2006-07-24",
+     "judul": {
+      "id": "Keppres 10/2006 membentuk Tim Nasional Pengembangan BBN",
+      "en": "Presidential Decree 10/2006 forms the National Biofuel Development Team"
+     },
+     "reg": "keppres-10-2006"
+    },
+    {
+     "tanggal": "2008-09-26",
+     "judul": {
+      "id": "Permen ESDM 32/2008: mandatori BBN bertahap",
+      "en": "Energy Ministry Reg. 32/2008: staged biofuel mandate"
+     },
+     "reg": "permen-esdm-32-2008"
+    },
+    {
+     "tanggal": "2014-07-03",
+     "judul": {
+      "id": "Permen ESDM 20/2014 menaikkan kewajiban BBN",
+      "en": "Energy Ministry Reg. 20/2014 raises biofuel obligations"
+     },
+     "reg": "permen-esdm-20-2014"
+    },
+    {
+     "tanggal": "2018-08-23",
+     "judul": {
+      "id": "Permen ESDM 41/2018: biodiesel dibiayai dana perkebunan, perluasan ke non-PSO",
+      "en": "Energy Ministry Reg. 41/2018: biodiesel financed by the plantation fund, expansion to non-PSO"
+     },
+     "reg": "permen-esdm-41-2018"
+    },
+    {
+     "tanggal": "2021-07-30",
+     "judul": {
+      "id": "Permen ESDM 24/2021 tentang biodiesel dan pembiayaan BPDPKS",
+      "en": "Energy Ministry Reg. 24/2021 on biodiesel and BPDPKS financing"
+     },
+     "reg": "permen-esdm-24-2021"
+    },
+    {
+     "tanggal": "2023-06-16",
+     "judul": {
+      "id": "Perpres 40/2023: swasembada gula dan bioetanol",
+      "en": "Presidential Reg. 40/2023: sugar self-sufficiency and bioethanol"
+     },
+     "reg": "perpres-40-2023"
+    },
+    {
+     "tanggal": "2023-11-27",
+     "judul": {
+      "id": "Permen ESDM 12/2023: co-firing biomassa di PLTU",
+      "en": "Energy Ministry Reg. 12/2023: biomass co-firing in coal plants"
+     },
+     "reg": "permen-esdm-12-2023"
+    },
+    {
+     "tanggal": "2024-04-19",
+     "judul": {
+      "id": "Keppres 15/2024: Satgas Swasembada Gula dan Bioetanol Merauke",
+      "en": "Presidential Decree 15/2024: Merauke Sugar and Bioethanol Task Force"
+     },
+     "reg": "keppres-15-2024"
+    },
+    {
+     "tanggal": "2025-02-19",
+     "judul": {
+      "id": "Permen ESDM 4/2025: pengusahaan dan pemanfaatan BBN",
+      "en": "Energy Ministry Reg. 4/2025: biofuel business and use"
+     },
+     "reg": "permen-esdm-4-2025"
+    },
+    {
+     "tanggal": "2026-01-13",
+     "judul": {
+      "id": "Permen ESDM 3/2026: ISPO untuk usaha bioenergi sawit",
+      "en": "Energy Ministry Reg. 3/2026: ISPO for palm bioenergy businesses"
+     },
+     "reg": "permen-esdm-3-2026"
+    },
+    {
+     "tanggal": "2020-01-01",
+     "judul": {
+      "id": "B30 berlaku nasional (bulan saja)",
+      "en": "B30 takes effect nationally (month only)"
+     },
+     "url": "https://peraturan.bpk.go.id/"
+    },
+    {
+     "tanggal": "2023-02-01",
+     "judul": {
+      "id": "B35 berlaku (bulan saja)",
+      "en": "B35 takes effect (month only)"
+     },
+     "url": "https://peraturan.bpk.go.id/"
+    },
+    {
+     "tanggal": "2025-01-01",
+     "judul": {
+      "id": "B40 berlaku (bulan saja)",
+      "en": "B40 takes effect (month only)"
+     },
+     "url": "https://industri.kontan.co.id/news/alokasi-biodiesel-2026-ditetapkan-ancaman-ekspansi-lahan-mengintai"
     }
    ]
   },
@@ -1222,7 +2423,9 @@
     "cof24",
     "bd26",
     "e10",
-    "regul"
+    "regul",
+    "perpres112",
+    "dak"
    ],
    "paragraf": [
     {
@@ -1232,6 +2435,14 @@
     {
      "id": "Insentif utama bukan pajak tetapi dana: BPDPKS menutup selisih harga biodiesel PSO dan pemerintah memberi alokasi yang menjamin pasar. Sanksi kegagalan memasok tidak ditemukan di sumber yang dibaca.",
      "en": "The main incentive is funding rather than tax: BPDPKS covers the price gap for PSO biodiesel and government allocations guarantee the market. Penalties for supply failure were not found in the sources read."
+    },
+    {
+     "id": "Kewajiban: badan usaha niaga BBM wajib mencampur biodiesel sesuai alokasi menteri; PLTU yang ditetapkan wajib menyerap biomassa sesuai Permen ESDM 12/2023; usaha bioenergi sawit wajib sertifikat ISPO sesuai Permen ESDM 3/2026. Sanksi dan masa transisi: baca pasal di basis regulasi.",
+     "en": "Obligations: fuel trading businesses must blend biodiesel per ministerial allocation; designated coal plants must take biomass under Reg. 12/2023; palm bioenergy businesses must hold ISPO per Reg. 3/2026. Penalties and transition: read the articles in the regulation base."
+    },
+    {
+     "id": "Insentif: selisih harga biodiesel dibayar dana BPDP; listrik biomassa dan biogas dibeli PLN dengan patokan Perpres 112/2022; proyek penangkapan metana dapat menjual kredit karbon (bab 24); DAK Infrastruktur Energi Terbarukan membuka dana daerah. Besaran insentif fiskal rinci belum dikumpulkan dalam basis ini.",
+     "en": "Incentives: the biodiesel price gap is paid by the BPDP fund; biomass and biogas power is bought by PLN at Presidential Reg. 112/2022 benchmarks; methane capture projects can sell carbon credits (chapter 24); the Renewable Energy Infrastructure special allocation (DAK) opens regional funds. Detailed fiscal incentive amounts are not yet collected in this base."
     }
    ]
   },
@@ -1242,8 +2453,8 @@
     "regul"
    ],
    "catatan": {
-    "id": "Ringkasan alur umum; durasi dan biaya belum bersumber sehingga sengaja tidak dicantumkan.",
-    "en": "General flow summary; durations and costs are not sourced and are deliberately omitted."
+    "id": "Ringkasan alur umum. Lama dan biaya per langkah belum bersumber di basis ini sehingga sengaja tidak dicantumkan; jangan mengandalkan alur ini sebagai nasihat hukum.",
+    "en": "General flow summary. Duration and cost per step are not yet sourced in this base so are deliberately omitted; do not rely on this as legal advice."
    },
    "butir": [
     {
@@ -1315,6 +2526,76 @@
       "id": "Pengembang",
       "en": "Developer"
      }
+    },
+    {
+     "judul": {
+      "id": "Nomor Induk Berusaha (NIB) lewat OSS",
+      "en": "Business ID (NIB) through OSS"
+     },
+     "isi": {
+      "id": "Daftar usaha di sistem OSS; klasifikasi KBLI menentukan izin berikutnya.",
+      "en": "Register the business in the OSS system; the KBLI classification decides the next permits."
+     },
+     "pelaku": {
+      "id": "Pengembang",
+      "en": "Developer"
+     }
+    },
+    {
+     "judul": {
+      "id": "Persetujuan lingkungan",
+      "en": "Environmental approval"
+     },
+     "isi": {
+      "id": "Dokumen AMDAL atau UKL-UPL menurut skala; pabrik pelet dan PLTBm perlu pengelolaan emisi dan limbah.",
+      "en": "AMDAL or UKL-UPL by scale; pellet mills and biomass plants need emission and waste management."
+     },
+     "pelaku": {
+      "id": "Pengembang, KLH, pemda",
+      "en": "Developer, Environment Ministry, local government"
+     }
+    },
+    {
+     "judul": {
+      "id": "Izin usaha penyediaan tenaga listrik (IUPTL)",
+      "en": "Electricity supply business licence (IUPTL)"
+     },
+     "isi": {
+      "id": "Untuk dijual ke PLN; untuk BBN, izin usaha niaga atau pengolahan dari Ditjen EBTKE dan Migas.",
+      "en": "To sell to PLN; for biofuels, trading or processing licences from the relevant ESDM directorates."
+     },
+     "pelaku": {
+      "id": "Pengembang, ESDM",
+      "en": "Developer, Energy Ministry"
+     }
+    },
+    {
+     "judul": {
+      "id": "Sertifikasi ISPO",
+      "en": "ISPO certification"
+     },
+     "isi": {
+      "id": "Wajib untuk bioenergi sawit (Permen ESDM 3/2026).",
+      "en": "Required for palm bioenergy (Energy Ministry Reg. 3/2026)."
+     },
+     "pelaku": {
+      "id": "Pengembang, lembaga sertifikasi",
+      "en": "Developer, certification body"
+     }
+    },
+    {
+     "judul": {
+      "id": "Uji laik operasi (SLO)",
+      "en": "Operation worthiness certificate (SLO)"
+     },
+     "isi": {
+      "id": "Pembangkit baru wajib memiliki SLO sebelum operasi komersial.",
+      "en": "New plants must hold an SLO before commercial operation."
+     },
+     "pelaku": {
+      "id": "Pengembang, lembaga inspeksi",
+      "en": "Developer, inspection body"
+     }
     }
    ]
   },
@@ -1340,7 +2621,10 @@
    "sumber": [
     "pomeits",
     "brwiki",
-    "e20"
+    "e20",
+    "iea_bio",
+    "redIII",
+    "ed"
    ],
    "paragraf": [
     {
@@ -1350,6 +2634,38 @@
     {
      "id": "Pada bahan bakar cair, Brasil menunjukkan jalur mesin fleks-bahan bakar (94 persen mobil baru pada 2013); Indonesia memilih tahapan E5 ke E10 dan E20 hanya setelah industri etanol siap (Bisnis, 28 Juli 2026).",
      "en": "For liquid fuels, Brazil shows the flex-fuel engine path (94 percent of new cars in 2013); Indonesia chose stages E5 to E10 with E20 only once the ethanol industry is ready (Bisnis, 28 July 2026)."
+    },
+    {
+     "id": "1. Diesel hijau (HVO) dan SAF: pengolahan minyak nabati dan minyak jelantah dengan hidrogen menghasilkan bahan bakar siap pakai (drop-in). Mandat penerbangan Uni Eropa mulai 2025 mendorong permintaan; di repo tercatat inovasi bioavtur dari jelantah (Undip). Kematangan komersial, biaya masih jauh di atas bahan bakar fosil.",
+     "en": "1. Green diesel (HVO) and SAF: processing vegetable and used cooking oil with hydrogen gives drop-in fuel. EU aviation mandates from 2025 drive demand; the repo lists a bio-jet fuel from used cooking oil innovation (Undip). Commercially mature; cost remains well above fossil fuels."
+    },
+    {
+     "id": "2. Biometana: pemurnian biogas dengan membran (kasus ITS) menghasilkan gas setara alam yang dapat disuntik ke jaringan atau dikompresi; TRL menengah di Indonesia.",
+     "en": "2. Biomethane: membrane upgrading of biogas (the ITS case) produces natural-gas-grade gas that can be injected into grids or compressed; mid TRL in Indonesia."
+    },
+    {
+     "id": "3. Torefaksi dan pelet hitam: biomassa dipanaskan tanpa oksigen sehingga mirip batubara dan bisa dicampur lebih tinggi di PLTU; mengurangi masalah kadar air dan penyimpanan.",
+     "en": "3. Torrefaction and black pellets: biomass heated without oxygen resembles coal and can be blended at higher shares in coal plants; eases moisture and storage problems."
+    },
+    {
+     "id": "4. Gasifikasi skala kecil: biomassa menjadi syngas untuk genset desa; cocok pulau dan hutan tanaman, tetapi perawatan tar menjadi tantangan.",
+     "en": "4. Small-scale gasification: biomass becomes syngas for village gensets; suits islands and plantation forests, but tar handling is the challenge."
+    },
+    {
+     "id": "5. Etanol generasi kedua: bahan selulosa (tandan kosong, bagas) menghindari persaingan pangan; masih mahal dan pada tahap demonstrasi.",
+     "en": "5. Second-generation ethanol: cellulosic feedstock (empty fruit bunches, bagasse) avoids food competition; still costly and at demonstration stage."
+    },
+    {
+     "id": "6. Biochar dan BECCS: pirolisis menghasilkan arang penyimpan karbon dan bioenergi dengan penangkapan karbon dapat menghasilkan emisi negatif; metodologi kredit karbon masih berkembang.",
+     "en": "6. Biochar and BECCS: pyrolysis gives carbon-storing char and bioenergy with carbon capture can give negative emissions; carbon credit methodologies are still developing."
+    },
+    {
+     "id": "7. Pengolah anaerob termodifikasi: pencerna tertutup dan pemanfaatan digestat untuk pupuk menaikkan nilai ekonomi POME dan kotoran ternak (kasus biodigester kulit kopi di repo).",
+     "en": "7. Improved anaerobic digesters: closed digesters and digestate used as fertiliser raise the value of POME and manure (the coffee husk biodigester case in the repo)."
+    },
+    {
+     "id": "8. Pelacakan bahan baku digital: sertifikat asal dan data satelit untuk membuktikan bahan baku bebas deforestasi, jawaban atas kritik RED III dan kasus Drax.",
+     "en": "8. Digital feedstock tracing: origin certificates and satellite data prove deforestation-free feedstock, an answer to RED III critique and the Drax case."
     }
    ]
   },
@@ -1560,7 +2876,9 @@
     "brwiki",
     "drax",
     "ofgem",
-    "owid"
+    "owid",
+    "redIII",
+    "wto593"
    ],
    "paragraf": [
     {
@@ -1570,6 +2888,10 @@
     {
      "id": "Analisis METI (Hipotesis): dua negara itu sukses pada skala karena kebijakan jangka panjang dan pasar yang dijamin, tetapi keduanya juga menunjukkan retaknya: pasokan etanol Brasil terganggu 2010 sampai 2012 dan Drax didenda atas tata kelola data bahan baku. Indonesia, dengan sawit sebagai bahan baku utama, menghadapi pertanyaan lahan yang lebih besar.",
      "en": "METI analysis (Hypothesis): both countries succeeded at scale thanks to long-term policy and guaranteed markets, but both also show cracks: Brazilian ethanol supply faltered 2010 to 2012 and Drax was fined over feedstock data governance. Indonesia, with palm as the main feedstock, faces a bigger land question."
+    },
+    {
+     "id": "Uni Eropa memakai RED III (target 42,5 persen terbarukan pada 2030) dengan kriteria keberlanjutan yang membatasi biofuel berisiko ILUC tinggi; Indonesia menggugatnya di WTO (DS593). Pelajaran bagi Indonesia: akses pasar ekspor bioenergi bergantung pada bukti bahan baku bebas deforestasi.",
+     "en": "The EU uses RED III (42.5 percent renewables by 2030) with sustainability criteria that restrict high-ILUC-risk biofuels; Indonesia challenged it at the WTO (DS593). Lesson for Indonesia: export market access for bioenergy depends on proof of deforestation-free feedstock."
     }
    ]
   },
@@ -1649,7 +2971,8 @@
       "id": "skema",
       "en": "scheme"
      },
-     "u": "https://bpdlh.id/"
+     "u": "https://bpdlh.id/",
+     "id": "sk_bpdlh"
     },
     {
      "nama": "Global Environment Facility",
@@ -1658,7 +2981,8 @@
       "id": "skema",
       "en": "scheme"
      },
-     "u": "https://www.thegef.org/"
+     "u": "https://www.thegef.org/",
+     "id": "sk_gef"
     },
     {
      "nama": "Standar karbon sukarela (Verra dan Gold Standard)",
@@ -1667,7 +2991,8 @@
       "id": "skema",
       "en": "scheme"
      },
-     "u": "https://registry.verra.org/"
+     "u": "https://registry.verra.org/",
+     "id": "sk_karbon_sukarela"
     },
     {
      "nama": "Indonesia Domestic Biogas Programme of Activities (IDBP) , VPA-1",
@@ -1675,7 +3000,8 @@
       "id": "proyek",
       "en": "project"
      },
-     "u": "https://assurance-platform.goldstandard.org/project-documents/GS1174"
+     "u": "https://assurance-platform.goldstandard.org/project-documents/GS1174",
+     "id": "pd_gs_110"
     },
     {
      "nama": "Methane Recovery and Utilization at PT. Musim Mas Palm Oil Mill in Pangkalan Lesung, Riau Indonesia",
@@ -1683,7 +3009,8 @@
       "id": "proyek",
       "en": "project"
      },
-     "u": "https://assurance-platform.goldstandard.org/project-documents/GS942"
+     "u": "https://assurance-platform.goldstandard.org/project-documents/GS942",
+     "id": "pd_gs_1268"
     },
     {
      "nama": "Indonesia Domestic Biogas Programme of Activities (IDBP)",
@@ -1691,7 +3018,8 @@
       "id": "proyek",
       "en": "project"
      },
-     "u": "https://assurance-platform.goldstandard.org/project-documents/GS1172"
+     "u": "https://assurance-platform.goldstandard.org/project-documents/GS1172",
+     "id": "pd_gs_1619"
     },
     {
      "nama": "Indonesia Domestic Biogas Programme of Activities (IDBP) (ID 1172), VPA-2",
@@ -1699,7 +3027,8 @@
       "id": "proyek",
       "en": "project"
      },
-     "u": "https://assurance-platform.goldstandard.org/project-documents/GS5303"
+     "u": "https://assurance-platform.goldstandard.org/project-documents/GS5303",
+     "id": "pd_gs_1620"
     },
     {
      "nama": "Recyling Used Cooking Oil into Biodiesel in Bali",
@@ -1707,7 +3036,8 @@
       "id": "proyek",
       "en": "project"
      },
-     "u": "https://assurance-platform.goldstandard.org/project-documents/GS1374"
+     "u": "https://assurance-platform.goldstandard.org/project-documents/GS1374",
+     "id": "pd_gs_229"
     },
     {
      "nama": "CPA B11001 - Bagendung Landfill Gas Recovery",
@@ -1715,7 +3045,8 @@
       "id": "proyek",
       "en": "project"
      },
-     "u": "https://assurance-platform.goldstandard.org/project-documents/GS1143"
+     "u": "https://assurance-platform.goldstandard.org/project-documents/GS1143",
+     "id": "pd_gs_98"
     },
     {
      "nama": "Hamparan biogas project",
@@ -1723,7 +3054,8 @@
       "id": "proyek",
       "en": "project"
      },
-     "u": "https://registry.verra.org/app/projectDetail/VCS/3297"
+     "u": "https://registry.verra.org/app/projectDetail/VCS/3297",
+     "id": "pd_vcs_3297"
     },
     {
      "nama": "Halmahera Zero-Waste Renewable Energy and Biochar Project",
@@ -1731,7 +3063,8 @@
       "id": "proyek",
       "en": "project"
      },
-     "u": "https://registry.verra.org/app/projectDetail/VCS/4611"
+     "u": "https://registry.verra.org/app/projectDetail/VCS/4611",
+     "id": "pd_vcs_4611"
     },
     {
      "nama": "Biogas Project PT Rohul Sawit Industri",
@@ -1739,7 +3072,8 @@
       "id": "proyek",
       "en": "project"
      },
-     "u": "https://registry.verra.org/app/projectDetail/VCS/5323"
+     "u": "https://registry.verra.org/app/projectDetail/VCS/5323",
+     "id": "pd_vcs_5323"
     },
     {
      "nama": "Sambu Group Biomass Energy Transition Grouped Project",
@@ -1747,7 +3081,8 @@
       "id": "proyek",
       "en": "project"
      },
-     "u": "https://registry.verra.org/app/projectDetail/VCS/6104"
+     "u": "https://registry.verra.org/app/projectDetail/VCS/6104",
+     "id": "pd_vcs_6104"
     },
     {
      "nama": "Bantargebang Landfill Gas Management & Power Generation",
@@ -1755,7 +3090,8 @@
       "id": "proyek",
       "en": "project"
      },
-     "u": "https://registry.verra.org/app/projectDetail/VCS/967"
+     "u": "https://registry.verra.org/app/projectDetail/VCS/967",
+     "id": "pd_vcs_967"
     }
    ]
   },
@@ -1930,7 +3266,10 @@
     "mglabel",
     "bd26",
     "b50",
-    "ofgem"
+    "ofgem",
+    "wto593",
+    "redIII",
+    "b50s"
    ],
    "paragraf": [
     {
@@ -1944,6 +3283,14 @@
     {
      "id": "Drax (Inggris): Ofgem tidak menemukan bukti biomassa tidak berkelanjutan tetapi menemukan kontrol data yang tidak memadai; Drax menyatakan tidak ada pelanggaran yang disengaja dan Ofgem menyebut pelanggaran bersifat teknis.",
      "en": "Drax (UK): Ofgem found no evidence the biomass was unsustainable but found inadequate data controls; Drax says nothing was deliberate and Ofgem described a technical breach."
+    },
+    {
+     "id": "Sengketa dagang sawit: Uni Eropa membatasi biofuel sawit berisiko ILUC tinggi pada 2030 dalam RED; Indonesia menilai kebijakan itu diskriminatif dan menggugat ke WTO (DS593). Uni Eropa menyatakan kriteria berlaku untuk semua bahan baku. Dua sisi ini belum selesai di semua tingkatan.",
+     "en": "Palm trade dispute: the EU phases out high-ILUC-risk palm biofuels by 2030 under RED; Indonesia considers this discriminatory and sued at the WTO (DS593). The EU says criteria apply to all feedstocks. The two sides are unresolved at every level."
+    },
+    {
+     "id": "Pangan lawan bahan bakar: pendukung B40 menyebut devisa dan nilai tambah; pengkritik memperingatkan ekspansi kebun dan harga minyak goreng. Kuota 2026 hampir sama dengan 2025 sehingga tekanan lahan untuk B50 belum jadi nyata.",
+     "en": "Food versus fuel: B40 supporters cite forex and added value; critics warn of plantation expansion and cooking oil prices. The 2026 quota is almost flat on 2025 so the land pressure for B50 has not materialised."
     }
    ]
   },
@@ -2034,12 +3381,18 @@
    "sumber": [
     "ed",
     "cof24",
-    "e10gap"
+    "e10gap",
+    "cofjob",
+    "pomeundip"
    ],
    "paragraf": [
     {
      "id": "Analisis METI (Hipotesis): Pengembang: nilai terbesar ada pada bahan baku yang bersertifikat dan terkontrak, bukan pada mesin. Investor: risiko harga dan kebijakan alokasi lebih besar daripada risiko teknologi. Pemda: koperasi pasokan biomassa desa perlu kontrak jangka panjang. Akademisi: hitung siklus karbon penuh agar klaim netral karbon dapat diuji.",
      "en": "METI analysis (Hypothesis): Developers: most value lies in certified, contracted feedstock rather than machines. Investors: price and allocation policy risk exceeds technology risk. Local government: village biomass supply cooperatives need long-term contracts. Academics: compute the full carbon cycle so carbon-neutral claims can be tested."
+    },
+    {
+     "id": "Per peran: pengembang menangkap peluang PLTBg POME dan pelet biomassa dengan kontrak pasok jangka panjang; investor memeriksa sensitivitas harga bahan baku; pemda membentuk koperasi pasokan dan menyiapkan lahan non-hutan; akademisi mengisi celah data pabrik sawit dan metode MRV; pemasok mesin biogas dan boiler melayani 52 PLTU.",
+     "en": "By role: developers can seize POME biogas and biomass pellet opportunities with long-term supply contracts; investors test feedstock price sensitivity; local governments organise supply cooperatives and prepare non-forest land; academics fill the mill data gap and MRV methods; biogas engine and boiler suppliers serve 52 plants."
     }
    ]
   },
@@ -2049,12 +3402,18 @@
     "b50",
     "e20",
     "cof26",
-    "ruuebet"
+    "ruuebet",
+    "e10",
+    "wto593"
    ],
    "paragraf": [
     {
      "id": "Yang perlu dipantau: (1) keputusan B50 dan alokasi biodiesel semester II 2026; (2) kesiapan pasokan etanol untuk E10 2027; (3) realisasi biomassa PLN EPI terhadap target 3,65 juta ton; (4) pembahasan RUU EBET; (5) harga cangkang sawit dibanding batubara.",
      "en": "To watch: (1) the B50 decision and second-half 2026 biodiesel allocation; (2) ethanol supply readiness for E10 2027; (3) PLN EPI biomass against the 3.65 million tonne target; (4) RUU EBET deliberation; (5) palm shell versus coal price."
+    },
+    {
+     "id": "Daftar pantau 2026 sampai 2027: (1) keputusan B50 dan jadwal; (2) realisasi co-firing dibanding 3,65 juta ton; (3) tarif pungutan ekspor CPO; (4) mandatori E10 2027 dan pasokan etanol 1,4 juta kL; (5) kemajuan Perpres 40/2023 dan Merauke; (6) pelaksanaan ISPO untuk bioenergi (Permen ESDM 3/2026); (7) RUU EBET; (8) harga cangkang; (9) hasil sengketa WTO DS593 dan RED; (10) pasar kredit karbon untuk metana POME.",
+     "en": "Watch list 2026 to 2027: (1) B50 decision and schedule; (2) co-firing actuals against 3.65 million tonnes; (3) CPO export levy rate; (4) the 2027 E10 mandate and 1.4 million kL ethanol supply; (5) progress of Presidential Reg. 40/2023 and Merauke; (6) ISPO implementation for bioenergy (Reg. 3/2026); (7) the RUU EBET; (8) shell prices; (9) outcome of WTO DS593 and RED; (10) the carbon credit market for POME methane."
     }
    ]
   },

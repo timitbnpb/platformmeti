@@ -23,7 +23,73 @@
     "en": "MW"
    },
    "sumber": "kap",
-   "est": false
+   "est": false,
+   "deret": [
+    [
+     "2010",
+     3741.61
+    ],
+    [
+     "2011",
+     3953.73
+    ],
+    [
+     "2012",
+     4156.52
+    ],
+    [
+     "2013",
+     5177.68
+    ],
+    [
+     "2014",
+     5242.7
+    ],
+    [
+     "2015",
+     5322.46
+    ],
+    [
+     "2016",
+     5666.3
+    ],
+    [
+     "2017",
+     5703.34
+    ],
+    [
+     "2018",
+     5772.15
+    ],
+    [
+     "2019",
+     5976.03
+    ],
+    [
+     "2020",
+     6120.88
+    ],
+    [
+     "2021",
+     6601.75
+    ],
+    [
+     "2022",
+     6689.02
+    ],
+    [
+     "2023",
+     6569.64
+    ],
+    [
+     "2024",
+     7052.47
+    ],
+    [
+     "2025",
+     7587.47
+    ]
+   ]
   },
   {
    "label": {
@@ -37,7 +103,69 @@
     "en": "percent"
    },
    "sumber": "owid",
-   "est": false
+   "est": false,
+   "deret": [
+    [
+     "2010",
+     17491.97
+    ],
+    [
+     "2011",
+     12448.31
+    ],
+    [
+     "2012",
+     12830.19
+    ],
+    [
+     "2013",
+     16962.53
+    ],
+    [
+     "2014",
+     15200.6
+    ],
+    [
+     "2015",
+     13779.85
+    ],
+    [
+     "2016",
+     18728.02
+    ],
+    [
+     "2017",
+     18682.57
+    ],
+    [
+     "2018",
+     21637
+    ],
+    [
+     "2019",
+     21161
+    ],
+    [
+     "2020",
+     24325
+    ],
+    [
+     "2021",
+     24697
+    ],
+    [
+     "2022",
+     27295
+    ],
+    [
+     "2023",
+     24590
+    ],
+    [
+     "2024",
+     27290
+    ]
+   ]
   },
   {
    "label": {
@@ -586,6 +714,14 @@
    "bukti": "via-pihak-ketiga",
    "lisensi": "CC BY 4.0"
   },
+  "d_target": {
+   "judul": "Target KEN (PP 40/2025), RUKN (Kepmen ESDM 85.K/2025), RUPTL 2025-2034 (public/data/target.json, halaman tertera di berkas)",
+   "penerbit": "Pemerintah RI, ESDM, PLN",
+   "url": "https://peraturan.bpk.go.id/Details/328789",
+   "tanggal": "2026-11-07",
+   "tahun": 2026,
+   "bukti": "resmi"
+  },
   "d_lsp": {
    "judul": "Lembaga sertifikasi profesi BNSP dan skema EBT (public/data/prodi_pelatihan.json, situs BNSP)",
    "penerbit": "BNSP, METI",
@@ -634,7 +770,12 @@
     "ed",
     "kap",
     "owid",
-    "proyek"
+    "proyek",
+    "d_izin",
+    "perpres112",
+    "d_pot",
+    "ruptl",
+    "cmwwf"
    ],
    "butir": [
     {
@@ -645,7 +786,8 @@
      "j": {
       "id": "7587.47 MW pada 2025 menurut IRENA, naik dari 4202.11 MW pada 2000.",
       "en": "7587.47 MW in 2025 per IRENA, up from 4202.11 MW in 2000."
-     }
+     },
+     "bab": 10
     },
     {
      "t": {
@@ -655,7 +797,8 @@
      "j": {
       "id": "7.34 persen pada 2024 menurut Ember; batubara masih 61.48 persen.",
       "en": "7.34 percent in 2024 per Ember; coal is still 61.48 percent."
-     }
+     },
+     "bab": 4
     },
     {
      "t": {
@@ -665,7 +808,8 @@
      "j": {
       "id": "Pembagian umum menurut ukuran: PLTMH (mikrohidro) kecil, biasanya di bawah 1 MW untuk desa; PLTM (minihidro) sekitar 1 sampai 10 MW; PLTA di atas itu. Batas pastinya berbeda antar peraturan.",
       "en": "A common split by size: PLTMH (micro-hydro) small, usually below 1 MW for villages; PLTM (mini-hydro) about 1 to 10 MW; PLTA above that. Exact thresholds differ between regulations."
-     }
+     },
+     "bab": 4
     },
     {
      "t": {
@@ -675,7 +819,8 @@
      "j": {
       "id": "PLTA pompa memindahkan air ke waduk atas saat listrik murah, lalu mengalirkannya turun untuk membangkitkan listrik saat beban puncak. Ia berfungsi seperti baterai raksasa. Contoh Indonesia: Upper Cisokan 1.040 MW.",
       "en": "Pumped storage lifts water to an upper reservoir when power is cheap and releases it to generate at peak. It works like a giant battery. Indonesian example: Upper Cisokan, 1,040 MW."
-     }
+     },
+     "bab": 4
     },
     {
      "t": {
@@ -685,7 +830,8 @@
      "j": {
       "id": "182 proyek dengan total 23934 MW (rencana, konstruksi, dan beroperasi); 37 berstatus beroperasi.",
       "en": "182 projects totalling 23934 MW (planned, under construction and operating); 37 are operating."
-     }
+     },
+     "bab": 10
     },
     {
      "t": {
@@ -695,7 +841,8 @@
      "j": {
       "id": "Umumnya PLN lewat perjanjian jual beli tenaga listrik (PJBL). Poso Energy, misalnya, menandatangani PJBL ekspansi pada 2017 dan berfungsi sebagai pembangkit peaker.",
       "en": "Usually PLN through a power purchase agreement (PPA). Poso Energy, for example, signed an expansion PPA in 2017 and serves as a peaker plant."
-     }
+     },
+     "bab": 4
     },
     {
      "t": {
@@ -705,7 +852,8 @@
      "j": {
       "id": "Lokasinya di habitat orangutan Tapanuli dan sejumlah bank meninjau ulang pendanaan. Lihat bab 40.",
       "en": "It sits in Tapanuli orangutan habitat and several banks reviewed funding. See chapter 40."
-     }
+     },
+     "bab": 40
     },
     {
      "t": {
@@ -715,7 +863,85 @@
      "j": {
       "id": "Sumber menyebut kurangnya pemeliharaan, pengelola yang tidak siap, dan dana desa yang tidak cukup untuk perbaikan. Lihat bab 40.",
       "en": "Sources cite lack of maintenance, unprepared operators and village funds too small for repairs. See chapter 40."
-     }
+     },
+     "bab": 40
+    },
+    {
+     "t": {
+      "id": "Apakah PLTA perlu izin khusus?",
+      "en": "Does hydropower need a special permit?"
+     },
+     "j": {
+      "id": "Penjualan listrik untuk umum butuh IUPTLU (maksimal 30 tahun); pembangkit sendiri di atas 500 kW butuh IUPTLS. Bendungan dan sungai juga memerlukan persetujuan lingkungan dan izin sumber daya air, yang di luar cakupan jawaban singkat ini.",
+      "en": "Selling power to the public needs an IUPTLU (up to 30 years); own-use plants above 500 kW need an IUPTLS. Dams and rivers also need environmental approval and water resources permits, which are outside this short answer."
+     },
+     "bab": 15
+    },
+    {
+     "t": {
+      "id": "Bagaimana PLN membeli listrik dari PLTA?",
+      "en": "How does PLN buy power from hydropower?"
+     },
+     "j": {
+      "id": "PLTA dibeli lewat pemilihan langsung; PLTA pada waduk atau saluran irigasi multiguna milik negara lewat penunjukan langsung. PLTA aliran sungai sampai 5 MW harus mampu beroperasi dengan faktor kapasitas minimal 60 persen (Perpres 112/2022 Pasal 14, 18, 19).",
+      "en": "Hydropower is bought by direct selection; hydropower on state-owned multipurpose reservoirs or irrigation canals by direct appointment. Run-of-river plants up to 5 MW must be able to run at a capacity factor of at least 60 percent (Presidential Reg. 112/2022 Articles 14, 18, 19)."
+     },
+     "bab": 4
+    },
+    {
+     "t": {
+      "id": "Berapa potensi hidro Indonesia?",
+      "en": "How large is the hydro potential?"
+     },
+     "j": {
+      "id": "Basis peluang METI mencatat 40.607 MW hidro dan 19.385 MW mikrohidro per provinsi (RUEN 2015 dan sumber lain; sebagian provinsi hanya berupa total kelompok), sedangkan terpasang 7.587 MW (IRENA 2025).",
+      "en": "The METI opportunity base records 40,607 MW of hydro and 19,385 MW of micro-hydro by province (RUEN 2015 and others; some provinces appear only as group totals) against 7,587 MW installed (IRENA 2025)."
+     },
+     "bab": 8
+    },
+    {
+     "t": {
+      "id": "Mengapa PLTA sering terlambat?",
+      "en": "Why is hydropower often late?"
+     },
+     "j": {
+      "id": "Karena pekerjaan sipil besar, risiko geologi dan hidrologi, pembebasan lahan dan relokasi, serta pendanaan multipihak. Jatigede butuh sembilan tahun dari pengisian waduk ke sinkronisasi dan Upper Cisokan bergeser dari 2025 ke 2030.",
+      "en": "Because of large civil works, geological and hydrological risk, land acquisition and relocation, and multi-party financing. Jatigede took nine years from impoundment to synchronisation and Upper Cisokan slipped from 2025 to 2030."
+     },
+     "bab": 4
+    },
+    {
+     "t": {
+      "id": "Apakah PLTA bisa menjadi baterai?",
+      "en": "Can hydropower act as a battery?"
+     },
+     "j": {
+      "id": "PLTA pompa memompa air ke atas saat listrik murah dan melepasnya saat beban puncak. RUPTL 2025-2034 memuat penyimpanan termasuk PLTA pompa; Upper Cisokan adalah proyek pompa utama.",
+      "en": "Pumped hydro pumps water uphill when power is cheap and releases it at peak load. The RUPTL 2025-2034 includes storage with pumped hydro; Upper Cisokan is the main pumped project."
+     },
+     "bab": 17
+    },
+    {
+     "t": {
+      "id": "Siapa yang boleh membangun PLTMH desa?",
+      "en": "Who may build village micro-hydro?"
+     },
+     "j": {
+      "id": "Koperasi atau badan usaha desa; izin kelistrikan mengikuti ambang yang sama (laporan sampai 500 kW, IUPTLS di atasnya). Kasus PLTMH mati menunjukkan pengelola dan dana pemeliharaan harus ditetapkan sebelum aset diserahkan.",
+      "en": "Cooperatives or village enterprises; electricity permits follow the same thresholds (report up to 500 kW, IUPTLS above). Dead micro-hydro cases show the manager and maintenance fund must be set before the asset is handed over."
+     },
+     "bab": 4
+    },
+    {
+     "t": {
+      "id": "Apa dampak PLTA pada ikan dan sungai?",
+      "en": "What does hydropower do to fish and rivers?"
+     },
+     "j": {
+      "id": "Bendungan mengubah aliran, sedimen, dan jalur ikan; studi lingkungan harus menilai air limpas, tangga ikan, dan aliran lingkungan minimum. Kasus Batang Toru menunjukkan sengketa habitat satwa langka.",
+      "en": "Dams change flow, sediment and fish passage; environmental studies must assess spill, fish ladders and minimum environmental flow. The Batang Toru case shows disputes over rare wildlife habitat."
+     },
+     "bab": 4
     }
    ]
   },
@@ -733,7 +959,8 @@
      "arti": {
       "id": "Pembangkit Listrik Tenaga Air.",
       "en": "Hydropower plant."
-     }
+     },
+     "kat": "teknis"
     },
     {
      "istilah": {
@@ -743,7 +970,8 @@
      "arti": {
       "id": "Pembangkit listrik minihidro / mikrohidro.",
       "en": "Mini-hydro / micro-hydro power plant."
-     }
+     },
+     "kat": "teknis"
     },
     {
      "istilah": {
@@ -753,7 +981,8 @@
      "arti": {
       "id": "Tinggi jatuh air dari muka air atas ke turbin (meter).",
       "en": "Height water falls from upper level to the turbine (metres)."
-     }
+     },
+     "kat": "satuan"
     },
     {
      "istilah": {
@@ -763,7 +992,8 @@
      "arti": {
       "id": "Volume air per detik yang melewati turbin (meter kubik per detik).",
       "en": "Water volume per second through the turbine (cubic metres per second)."
-     }
+     },
+     "kat": "satuan"
     },
     {
      "istilah": {
@@ -773,7 +1003,8 @@
      "arti": {
       "id": "PLTA aliran sungai tanpa waduk besar; produksi mengikuti debit musiman.",
       "en": "River-flow plant without a large reservoir; output follows seasonal flow."
-     }
+     },
+     "kat": "teknis"
     },
     {
      "istilah": {
@@ -783,7 +1014,8 @@
      "arti": {
       "id": "Tampungan air di belakang bendungan yang menyimpan energi dan meratakan debit.",
       "en": "Reservoir behind a dam that stores energy and smooths flow."
-     }
+     },
+     "kat": "teknis"
     },
     {
      "istilah": {
@@ -793,7 +1025,8 @@
      "arti": {
       "id": "PLTA pompa: memompa air ke atas saat listrik murah dan membangkitkan saat puncak.",
       "en": "Pumped hydro: pumps water uphill when power is cheap and generates at peak."
-     }
+     },
+     "kat": "teknis"
     },
     {
      "istilah": {
@@ -803,7 +1036,8 @@
      "arti": {
       "id": "Pembangkit yang dijalankan untuk beban puncak.",
       "en": "Plant dispatched for peak load."
-     }
+     },
+     "kat": "teknis"
     },
     {
      "istilah": {
@@ -813,7 +1047,8 @@
      "arti": {
       "id": "Produksi aktual dibagi produksi bila beroperasi penuh sepanjang tahun.",
       "en": "Actual output divided by output at full power all year."
-     }
+     },
+     "kat": "satuan"
     },
     {
      "istilah": {
@@ -823,7 +1058,8 @@
      "arti": {
       "id": "Perjanjian jual beli tenaga listrik.",
       "en": "Power purchase agreement."
-     }
+     },
+     "kat": "aturan"
     },
     {
      "istilah": {
@@ -833,7 +1069,8 @@
      "arti": {
       "id": "Analisis mengenai dampak lingkungan.",
       "en": "Environmental impact assessment."
-     }
+     },
+     "kat": "aturan"
     },
     {
      "istilah": {
@@ -843,7 +1080,8 @@
      "arti": {
       "id": "Rencana pengelolaan lingkungan dan sosial yang disyaratkan pemberi pinjaman.",
       "en": "Environmental and social management plan required by lenders."
-     }
+     },
+     "kat": "aturan"
     },
     {
      "istilah": {
@@ -853,7 +1091,8 @@
      "arti": {
       "id": "Persetujuan atas dasar informasi di awal tanpa paksaan dari masyarakat terdampak.",
       "en": "Free, prior and informed consent of affected communities."
-     }
+     },
+     "kat": "aturan"
     },
     {
      "istilah": {
@@ -863,7 +1102,8 @@
      "arti": {
       "id": "Sertifikat Laik Operasi pembangkit.",
       "en": "Plant operation worthiness certificate."
-     }
+     },
+     "kat": "aturan"
     },
     {
      "istilah": {
@@ -873,7 +1113,8 @@
      "arti": {
       "id": "Daerah aliran sungai.",
       "en": "River basin."
-     }
+     },
+     "kat": "teknis"
     },
     {
      "istilah": {
@@ -883,7 +1124,162 @@
      "arti": {
       "id": "Dana Alokasi Khusus bidang infrastruktur energi terbarukan.",
       "en": "Special allocation fund for renewable energy infrastructure."
-     }
+     },
+     "kat": "aturan"
+    },
+    {
+     "istilah": {
+      "id": "Turbin Francis, Pelton, Kaplan",
+      "en": "Francis, Pelton, Kaplan turbines"
+     },
+     "arti": {
+      "id": "Tiga jenis turbin air: Pelton untuk head tinggi, Francis menengah, Kaplan untuk head rendah dan debit besar.",
+      "en": "Three kinds of water turbine: Pelton for high head, Francis for medium, Kaplan for low head and large flow."
+     },
+     "kat": "teknis"
+    },
+    {
+     "istilah": {
+      "id": "Pipa pesat (penstock)",
+      "en": "Penstock"
+     },
+     "arti": {
+      "id": "Pipa bertekanan yang mengalirkan air dari waduk atau bak penenang ke turbin.",
+      "en": "The pressurised pipe carrying water from the reservoir or forebay to the turbine."
+     },
+     "kat": "teknis"
+    },
+    {
+     "istilah": {
+      "id": "Bendung dan bendungan",
+      "en": "Weir and dam"
+     },
+     "arti": {
+      "id": "Bendung menaikkan muka air sungai; bendungan menahan volume besar untuk waduk.",
+      "en": "A weir raises the river level; a dam holds a large volume as a reservoir."
+     },
+     "kat": "teknis"
+    },
+    {
+     "istilah": {
+      "id": "Aliran sungai (run-of-river)",
+      "en": "Run-of-river"
+     },
+     "arti": {
+      "id": "PLTA tanpa waduk besar; keluaran mengikuti debit sungai.",
+      "en": "Hydropower without a large reservoir; output follows river flow."
+     },
+     "kat": "teknis"
+    },
+    {
+     "istilah": {
+      "id": "Aliran lingkungan minimum",
+      "en": "Minimum environmental flow"
+     },
+     "arti": {
+      "id": "Debit minimum yang wajib dilepas ke hilir untuk menjaga ekosistem sungai.",
+      "en": "The minimum flow that must be released downstream to sustain the river ecosystem."
+     },
+     "kat": "teknis"
+    },
+    {
+     "istilah": {
+      "id": "Kurva durasi aliran",
+      "en": "Flow duration curve"
+     },
+     "arti": {
+      "id": "Grafik berapa persen waktu debit melampaui nilai tertentu; dasar menentukan kapasitas.",
+      "en": "A graph of the percentage of time flow exceeds a value; the basis for sizing capacity."
+     },
+     "kat": "teknis"
+    },
+    {
+     "istilah": {
+      "id": "Sedimentasi",
+      "en": "Sedimentation"
+     },
+     "arti": {
+      "id": "Pengendapan lumpur di waduk yang mengurangi volume dan umur PLTA.",
+      "en": "Silt settling in the reservoir that reduces volume and plant life."
+     },
+     "kat": "teknis"
+    },
+    {
+     "istilah": {
+      "id": "Daerah tangkapan air",
+      "en": "Catchment area"
+     },
+     "arti": {
+      "id": "Wilayah yang menyalurkan hujan ke sungai di titik bendung.",
+      "en": "The area that drains rain to the river at the weir point."
+     },
+     "kat": "teknis"
+    },
+    {
+     "istilah": {
+      "id": "Beban puncak",
+      "en": "Peak load"
+     },
+     "arti": {
+      "id": "Jam permintaan listrik tertinggi, saat PLTA berwaduk paling bernilai.",
+      "en": "The hours of highest power demand, when reservoir hydro is most valuable."
+     },
+     "kat": "teknis"
+    },
+    {
+     "istilah": {
+      "id": "Black start",
+      "en": "Black start"
+     },
+     "arti": {
+      "id": "Kemampuan menyalakan pembangkit tanpa pasokan jaringan; PLTA lazim memilikinya.",
+      "en": "The ability to start a plant without grid supply; hydropower commonly has it."
+     },
+     "kat": "teknis"
+    },
+    {
+     "istilah": {
+      "id": "Tarif PLTMH berbasis komunitas",
+      "en": "Community micro-hydro tariff"
+     },
+     "arti": {
+      "id": "Iuran warga untuk menutup biaya operasi dan pemeliharaan PLTMH desa.",
+      "en": "Resident fees covering operation and maintenance of village micro-hydro."
+     },
+     "kat": "uang"
+    },
+    {
+     "istilah": {
+      "id": "Kaskade",
+      "en": "Cascade"
+     },
+     "arti": {
+      "id": "Beberapa PLTA berurutan di satu sungai yang memakai air yang sama berulang.",
+      "en": "Several hydro plants in sequence on one river reusing the same water."
+     },
+     "kat": "teknis"
+    },
+    {
+     "istilah": {
+      "id": "Pumped storage dan ESS",
+      "en": "Pumped storage and ESS"
+     },
+     "arti": {
+      "id": "Penyimpanan energi berbasis pompa air; bersaing dengan baterai (BESS).",
+      "en": "Pump-based energy storage; competes with batteries (BESS)."
+     },
+     "kat": "teknis"
+    },
+    {
+     "istilah": {
+      "id": "LCOE hidro",
+      "en": "Hydro LCOE"
+     },
+     "arti": {
+      "id": "Biaya listrik rata-rata sepanjang umur PLTA; sangat bergantung pada lokasi dan biaya sipil.",
+      "en": "Average lifetime electricity cost of hydropower; highly dependent on site and civil costs."
+     },
+     "kat": "uang"
     }
    ]
   },
@@ -892,7 +1288,9 @@
    "sumber": [
     "kap",
     "owid",
-    "rricis"
+    "rricis",
+    "d_stat",
+    "ed"
    ],
    "paragraf": [
     {
@@ -906,6 +1304,14 @@
     {
      "id": "Biayanya tertanam di depan (sipil, bendungan, relokasi) dan risikonya geologi, hidrologi, dan sosial. Karena itu cerita sukses dan gagal hidro sering ditentukan jauh sebelum turbin dipasang.",
      "en": "Costs are front-loaded (civil works, dam, resettlement) and risks are geological, hydrological and social. Success and failure are often decided long before turbines are installed."
+    },
+    {
+     "id": "Terpasang 7.587 MW pada 2025 (IRENA), naik dari 7.052 MW pada 2024; Statistik Ketenagalistrikan 2024 mencatat 7.058 MW PLTA/M semua pengusaha, selisih angka karena cakupan sumber berbeda.",
+     "en": "Installed 7,587 MW in 2025 (IRENA), up from 7,052 MW in 2024; the 2024 Electricity Statistics records 7,058 MW of PLTA/M for all operators, the gap arising from differing source coverage."
+    },
+    {
+     "id": "Tiga skala berjalan berbeda: PLTA besar berwaduk (megaproyek, sering bergeser), PLTM aliran sungai (proyek IPP menengah) dan PLTMH komunitas (kecil, rawan mati tanpa pengelola). Kebijakan yang cocok untuk satu skala jarang cocok untuk yang lain.",
+     "en": "Three scales behave differently: large reservoir hydro (megaprojects that often slip), run-of-river PLTM (mid-size IPP projects) and community PLTMH (small, prone to die without a manager). A policy fitting one scale seldom fits another."
     }
    ]
   },
@@ -923,6 +1329,22 @@
     {
      "id": "Energi tahunan (kWh) = daya (kW) x 8.760 jam x faktor kapasitas",
      "en": "Annual energy (kWh) = power (kW) x 8,760 hours x capacity factor"
+    },
+    {
+     "id": "Head bersih = head kotor - rugi gesekan pipa; daya memakai head bersih, bukan head kotor.",
+     "en": "Net head = gross head - pipe friction losses; power uses net head, not gross head."
+    },
+    {
+     "id": "Energi PLTA aliran sungai = jumlah (daya pada debit jam ke-i) dari kurva durasi aliran; faktor kapasitas mengikuti musim.",
+     "en": "Run-of-river energy = sum of (power at flow in hour i) from the flow duration curve; capacity factor follows the season."
+    },
+    {
+     "id": "Biaya per kW = (biaya sipil + elektromekanik + jaringan) / kapasitas; biaya sipil mendominasi PLTA berwaduk.",
+     "en": "Cost per kW = (civil + electromechanical + grid cost) / capacity; civil cost dominates reservoir hydro."
+    },
+    {
+     "id": "Pumped storage: energi keluar = energi pompa x efisiensi siklus; efisiensi siklus hidro pompa umumnya di kisaran 70 sampai 80 persen (penjelasan umum, cek lembar data proyek).",
+     "en": "Pumped storage: energy out = pumping energy x round-trip efficiency; pumped hydro round-trip efficiency is generally in the 70 to 80 percent range (general explanation, check project datasheets)."
     }
    ],
    "contoh": [
@@ -937,6 +1359,14 @@
     {
      "id": "Analisis METI (Hipotesis): debit sungai musiman paling sering menjadi sumber kesalahan studi kelayakan; data debit multitahun lebih penting daripada head.",
      "en": "METI analysis (Hypothesis): seasonal river flow is the most common source of feasibility errors; multi-year flow records matter more than head."
+    },
+    {
+     "id": "Contoh head bersih (asumsi Hipotesis): head kotor 100 m dengan rugi pipa 5 m memberi head bersih 95 m; daya turun 5 persen dari contoh bab ini (EST).",
+     "en": "Net head example (Hypothesis assumption): gross head of 100 m with 5 m pipe loss gives 95 m net head; power falls 5 percent from this chapter example (EST)."
+    },
+    {
+     "id": "Contoh pumped storage (asumsi Hipotesis 75 persen): memompa 1.000 MWh mengembalikan 750 MWh (EST).",
+     "en": "Pumped storage example (Hypothesis 75 percent assumption): pumping 1,000 MWh returns 750 MWh (EST)."
     }
    ]
   },
@@ -945,7 +1375,8 @@
    "sumber": [
     "ed",
     "aiib",
-    "posoesdm"
+    "posoesdm",
+    "posopeak"
    ],
    "butir": [
     {
@@ -960,7 +1391,8 @@
      "pelaku": {
       "id": "Pengembang, konsultan, BBWS/BWS",
       "en": "Developer, consultants, river basin authority"
-     }
+     },
+     "peran": "lembaga"
     },
     {
      "judul": {
@@ -974,7 +1406,8 @@
      "pelaku": {
       "id": "Pengembang, pemda, KLH",
       "en": "Developer, local government, environment ministry"
-     }
+     },
+     "peran": "lembaga"
     },
     {
      "judul": {
@@ -986,9 +1419,10 @@
       "en": "PLN as main buyer; project loans from development or commercial banks."
      },
      "pelaku": {
-      "id": "PLN, pendana",
-      "en": "PLN, lenders"
-     }
+      "id": "PLN, pendana; contoh di basis METI: PT PLN Indonesia Power, PT Kayan Hydro Energy, PT Vale Indonesia Tbk",
+      "en": "PLN, lenders; examples in the METI base: PT PLN Indonesia Power, PT Kayan Hydro Energy, PT Vale Indonesia Tbk"
+     },
+     "peran": "pendana"
     },
     {
      "judul": {
@@ -1000,9 +1434,10 @@
       "en": "Dam, tunnels, powerhouse, turbines, generators; often years with geological risk."
      },
      "pelaku": {
-      "id": "Kontraktor EPC",
-      "en": "EPC contractor"
-     }
+      "id": "Kontraktor EPC; contoh di basis METI: PT PLN Indonesia Power, PT Kayan Hydro Energy, PT Vale Indonesia Tbk",
+      "en": "EPC contractor; examples in the METI base: PT PLN Indonesia Power, PT Kayan Hydro Energy, PT Vale Indonesia Tbk"
+     },
+     "peran": "EPC"
     },
     {
      "judul": {
@@ -1016,7 +1451,8 @@
      "pelaku": {
       "id": "Pengembang/PLN",
       "en": "Developer/PLN"
-     }
+     },
+     "peran": "pengembang"
     },
     {
      "judul": {
@@ -1028,9 +1464,40 @@
       "en": "Trained operator, O&M budget, and sediment and catchment management."
      },
      "pelaku": {
-      "id": "Operator, pemda, komunitas",
-      "en": "Operator, local government, community"
-     }
+      "id": "Operator, pemda, komunitas; contoh di basis METI: PT PLN Indonesia Power, PT PLN Nusantara Power, PT Kayan Hydro Energy",
+      "en": "Operator, local government, community; examples in the METI base: PT PLN Indonesia Power, PT PLN Nusantara Power, PT Kayan Hydro Energy"
+     },
+     "peran": "operator"
+    },
+    {
+     "judul": {
+      "id": "Pembebasan lahan dan relokasi",
+      "en": "Land acquisition and resettlement"
+     },
+     "isi": {
+      "id": "Pembebasan area genangan dan jalur; relokasi warga menjadi risiko jadwal terbesar, dengan standar safeguard internasional (ESMP) bila didanai multilateral.",
+      "en": "Acquiring inundation and corridor land; resettlement is the largest schedule risk, with international safeguard standards (ESMP) if multilaterally financed."
+     },
+     "pelaku": {
+      "id": "Pengembang, pemda, warga",
+      "en": "Developer, local government, residents"
+     },
+     "peran": "pengembang"
+    },
+    {
+     "judul": {
+      "id": "Pembeli dan penyerapan jaringan",
+      "en": "Offtake and grid absorption"
+     },
+     "isi": {
+      "id": "PLN sebagai pembeli tunggal; PLTA berwaduk dinilai sebagai peaker, PLTA pompa sebagai penyimpan.",
+      "en": "PLN as sole buyer; reservoir hydro valued as a peaker and pumped hydro as storage."
+     },
+     "pelaku": {
+      "id": "PLN",
+      "en": "PLN"
+     },
+     "peran": "IPP"
     }
    ]
   },
@@ -1779,6 +2246,15 @@
      },
      "num": true,
      "d": 0
+    },
+    {
+     "k": "mw",
+     "l": {
+      "id": "Kapasitas proyek (MW)",
+      "en": "Project capacity (MW)"
+     },
+     "num": true,
+     "d": 0
     }
    ],
    "baris": [
@@ -1791,7 +2267,8 @@
      "peran": "operator, pengembang",
      "relevansi": "teknologi",
      "negara": "ID",
-     "proyek": 18
+     "proyek": 18,
+     "mw": 1727
     },
     {
      "nama": "PT PLN Nusantara Power",
@@ -1802,7 +2279,8 @@
      "peran": "operator",
      "relevansi": "teknologi",
      "negara": "ID",
-     "proyek": 13
+     "proyek": 13,
+     "mw": 1958
     },
     {
      "nama": "PT Kayan Hydro Energy",
@@ -1813,7 +2291,8 @@
      "peran": "pengembang, IPP",
      "relevansi": "teknologi",
      "negara": "ID",
-     "proyek": 6
+     "proyek": 6,
+     "mw": 10375
     },
     {
      "nama": "PT Vale Indonesia Tbk",
@@ -1824,7 +2303,8 @@
      "peran": "pengembang",
      "relevansi": "teknologi",
      "negara": "ID",
-     "proyek": 5
+     "proyek": 5,
+     "mw": 772
     },
     {
      "nama": "PT Poso Energy",
@@ -1835,7 +2315,8 @@
      "peran": "pengembang",
      "relevansi": "teknologi",
      "negara": "ID",
-     "proyek": 4
+     "proyek": 4,
+     "mw": 1055
     },
     {
      "nama": "PT Medco Power Indonesia",
@@ -1846,7 +2327,8 @@
      "peran": "pengembang, IPP",
      "relevansi": "teknologi",
      "negara": "ID",
-     "proyek": 3
+     "proyek": 3,
+     "mw": 0
     },
     {
      "nama": "Vale",
@@ -1857,7 +2339,8 @@
      "peran": "pengembang",
      "relevansi": "teknologi",
      "negara": "BR",
-     "proyek": 2
+     "proyek": 2,
+     "mw": 0
     },
     {
      "nama": "China Gezhouba Group",
@@ -1868,7 +2351,8 @@
      "peran": "EPC",
      "relevansi": "teknologi",
      "negara": "CN",
-     "proyek": 1
+     "proyek": 1,
+     "mw": 0
     },
     {
      "nama": "Kansai Electric Power",
@@ -1879,7 +2363,8 @@
      "peran": "pengembang",
      "relevansi": "teknologi",
      "negara": "JP",
-     "proyek": 1
+     "proyek": 1,
+     "mw": 0
     },
     {
      "nama": "PT Wijaya Karya (Persero) Tbk",
@@ -1890,7 +2375,8 @@
      "peran": "EPC",
      "relevansi": "teknologi",
      "negara": "ID",
-     "proyek": 1
+     "proyek": 1,
+     "mw": 120
     },
     {
      "nama": "PT Jasa Tirta II",
@@ -1901,7 +2387,8 @@
      "peran": "pengembang",
      "relevansi": "teknologi",
      "negara": "ID",
-     "proyek": 1
+     "proyek": 1,
+     "mw": 186
     },
     {
      "nama": "PT Binsar Natorang Energi",
@@ -1912,7 +2399,8 @@
      "peran": "pengembang",
      "relevansi": "teknologi",
      "negara": "ID",
-     "proyek": 1
+     "proyek": 1,
+     "mw": 40
     },
     {
      "nama": "PT Bajradaya Sentranusa",
@@ -1923,7 +2411,8 @@
      "peran": "pengembang",
      "relevansi": "teknologi",
      "negara": "ID",
-     "proyek": 1
+     "proyek": 1,
+     "mw": 180
     },
     {
      "nama": "PT Sulbar Group",
@@ -1934,7 +2423,8 @@
      "peran": "pengembang",
      "relevansi": "teknologi",
      "negara": "ID",
-     "proyek": 1
+     "proyek": 1,
+     "mw": 190
     },
     {
      "nama": "PT Hadji Kalla",
@@ -1945,7 +2435,8 @@
      "peran": "pengembang",
      "relevansi": "teknologi",
      "negara": "ID",
-     "proyek": 1
+     "proyek": 1,
+     "mw": 120
     },
     {
      "nama": "PT Kerinci Merangin Hydro",
@@ -1956,7 +2447,8 @@
      "peran": "pengembang",
      "relevansi": "teknologi",
      "negara": "ID",
-     "proyek": 1
+     "proyek": 1,
+     "mw": 350
     },
     {
      "nama": "PT Wampu Electric Power",
@@ -1967,7 +2459,8 @@
      "peran": "pengembang",
      "relevansi": "teknologi",
      "negara": "ID",
-     "proyek": 1
+     "proyek": 1,
+     "mw": 45
     },
     {
      "nama": "PT Sulawesi Mini Hydro Power",
@@ -1978,7 +2471,8 @@
      "peran": "pengembang",
      "relevansi": "teknologi",
      "negara": "ID",
-     "proyek": 1
+     "proyek": 1,
+     "mw": 100
     },
     {
      "nama": "PT Amera Terrasys Energi",
@@ -1989,7 +2483,8 @@
      "peran": "pengembang",
      "relevansi": "teknologi",
      "negara": "ID",
-     "proyek": 1
+     "proyek": 1,
+     "mw": 200
     },
     {
      "nama": "Soma Power Indonesia",
@@ -2000,7 +2495,8 @@
      "peran": "pengembang",
      "relevansi": "teknologi",
      "negara": "ID",
-     "proyek": 1
+     "proyek": 1,
+     "mw": 100
     },
     {
      "nama": "Aboitiz Power (SN Aboitiz Power)",
@@ -2011,7 +2507,8 @@
      "peran": "pengembang",
      "relevansi": "teknologi",
      "negara": "PH",
-     "proyek": 0
+     "proyek": 0,
+     "mw": 0
     },
     {
      "nama": "Andritz",
@@ -2022,7 +2519,8 @@
      "peran": "pemasok",
      "relevansi": "teknologi",
      "negara": "AT",
-     "proyek": 0
+     "proyek": 0,
+     "mw": 0
     },
     {
      "nama": "Scatec",
@@ -2033,7 +2531,8 @@
      "peran": "pengembang",
      "relevansi": "teknologi",
      "negara": "NO",
-     "proyek": 0
+     "proyek": 0,
+     "mw": 0
     },
     {
      "nama": "Dongfang Electric",
@@ -2044,7 +2543,8 @@
      "peran": "pemasok",
      "relevansi": "teknologi",
      "negara": "CN",
-     "proyek": 0
+     "proyek": 0,
+     "mw": 0
     },
     {
      "nama": "Toshiba",
@@ -2055,7 +2555,8 @@
      "peran": "pemasok",
      "relevansi": "teknologi",
      "negara": "JP",
-     "proyek": 0
+     "proyek": 0,
+     "mw": 0
     },
     {
      "nama": "Aboitiz Equity Ventures",
@@ -2066,7 +2567,8 @@
      "peran": "pengembang",
      "relevansi": "teknologi",
      "negara": "PH",
-     "proyek": 0
+     "proyek": 0,
+     "mw": 0
     },
     {
      "nama": "Impsa",
@@ -2077,7 +2579,8 @@
      "peran": "pemasok",
      "relevansi": "teknologi",
      "negara": "AR",
-     "proyek": 0
+     "proyek": 0,
+     "mw": 0
     },
     {
      "nama": "Harbin Electric",
@@ -2088,7 +2591,8 @@
      "peran": "pemasok",
      "relevansi": "teknologi",
      "negara": "CN",
-     "proyek": 0
+     "proyek": 0,
+     "mw": 0
     },
     {
      "nama": "Koperasi Pengelola PLTMH Tepal",
@@ -2099,7 +2603,8 @@
      "peran": "-",
      "relevansi": "teknologi",
      "negara": "ID",
-     "proyek": 0
+     "proyek": 0,
+     "mw": 0
     },
     {
      "nama": "Koperasi Tuah Sabeena Sejahtera",
@@ -2110,7 +2615,8 @@
      "peran": "-",
      "relevansi": "teknologi",
      "negara": "ID",
-     "proyek": 0
+     "proyek": 0,
+     "mw": 0
     },
     {
      "nama": "Inisiatif Bisnis Ekonomi Kerakyatan (IBEKA)",
@@ -2121,7 +2627,8 @@
      "peran": "-",
      "relevansi": "teknologi",
      "negara": "ID",
-     "proyek": 0
+     "proyek": 0,
+     "mw": 0
     },
     {
      "nama": "PLN",
@@ -2132,7 +2639,8 @@
      "peran": "manufaktur",
      "relevansi": "pemilik proyek",
      "negara": "ID",
-     "proyek": 93
+     "proyek": 93,
+     "mw": 3381
     },
     {
      "nama": "IGIS Asset Management",
@@ -2143,7 +2651,8 @@
      "peran": "pendana",
      "relevansi": "pemilik proyek",
      "negara": "KR",
-     "proyek": 1
+     "proyek": 1,
+     "mw": 120
     },
     {
      "nama": "Posco E&C",
@@ -2154,7 +2663,8 @@
      "peran": "EPC",
      "relevansi": "pemilik proyek",
      "negara": "KR",
-     "proyek": 1
+     "proyek": 1,
+     "mw": 57
     },
     {
      "nama": "World Bank Indonesia",
@@ -2165,7 +2675,8 @@
      "peran": "-",
      "relevansi": "pemangku kebijakan",
      "negara": "ID",
-     "proyek": 33
+     "proyek": 33,
+     "mw": 0
     },
     {
      "nama": "Badan Pengelola Investasi Daya Anagata Nusantara",
@@ -2176,7 +2687,8 @@
      "peran": "pembiaya",
      "relevansi": "pemangku kebijakan",
      "negara": "ID",
-     "proyek": 3
+     "proyek": 3,
+     "mw": 0
     },
     {
      "nama": "Kementerian Keuangan",
@@ -2187,7 +2699,8 @@
      "peran": "-",
      "relevansi": "pemangku kebijakan",
      "negara": "ID",
-     "proyek": 3
+     "proyek": 3,
+     "mw": 0
     },
     {
      "nama": "Kementerian Energi dan Sumber Daya Mineral",
@@ -2198,7 +2711,8 @@
      "peran": "-",
      "relevansi": "pemangku kebijakan",
      "negara": "ID",
-     "proyek": 2
+     "proyek": 2,
+     "mw": 0
     },
     {
      "nama": "Kementerian Investasi dan Hilirisasi/BKPM",
@@ -2209,7 +2723,8 @@
      "peran": "-",
      "relevansi": "pemangku kebijakan",
      "negara": "ID",
-     "proyek": 0
+     "proyek": 0,
+     "mw": 0
     },
     {
      "nama": "Badan Pengelola Dana Perkebunan",
@@ -2220,7 +2735,8 @@
      "peran": "-",
      "relevansi": "pemangku kebijakan",
      "negara": "ID",
-     "proyek": 0
+     "proyek": 0,
+     "mw": 0
     },
     {
      "nama": "Asosiasi Produsen Listrik Swasta Indonesia",
@@ -2231,7 +2747,8 @@
      "peran": "-",
      "relevansi": "pemangku kebijakan",
      "negara": "ID",
-     "proyek": 0
+     "proyek": 0,
+     "mw": 0
     },
     {
      "nama": "Asosiasi Pengusaha Batubara Indonesia",
@@ -2242,7 +2759,8 @@
      "peran": "-",
      "relevansi": "pemangku kebijakan",
      "negara": "ID",
-     "proyek": 0
+     "proyek": 0,
+     "mw": 0
     },
     {
      "nama": "Institute for Economic and Social Research FEB UI (LPEM)",
@@ -2253,7 +2771,8 @@
      "peran": "-",
      "relevansi": "pemangku kebijakan",
      "negara": "ID",
-     "proyek": 0
+     "proyek": 0,
+     "mw": 0
     },
     {
      "nama": "Organisasi Riset Energi dan Manufaktur BRIN",
@@ -2264,7 +2783,8 @@
      "peran": "-",
      "relevansi": "pemangku kebijakan",
      "negara": "ID",
-     "proyek": 0
+     "proyek": 0,
+     "mw": 0
     },
     {
      "nama": "Direktorat Perencanaan dan Pembangunan Infrastruktur EBTKE",
@@ -2275,7 +2795,8 @@
      "peran": "-",
      "relevansi": "pemangku kebijakan",
      "negara": "ID",
-     "proyek": 0
+     "proyek": 0,
+     "mw": 0
     },
     {
      "nama": "Otoritas Jasa Keuangan",
@@ -2286,7 +2807,8 @@
      "peran": "-",
      "relevansi": "pemangku kebijakan",
      "negara": "ID",
-     "proyek": 0
+     "proyek": 0,
+     "mw": 0
     },
     {
      "nama": "Climate Policy Initiative Indonesia",
@@ -2297,7 +2819,8 @@
      "peran": "-",
      "relevansi": "pemangku kebijakan",
      "negara": "ID",
-     "proyek": 0
+     "proyek": 0,
+     "mw": 0
     },
     {
      "nama": "International Renewable Energy Agency",
@@ -2308,7 +2831,8 @@
      "peran": "lembaga",
      "relevansi": "pemangku kebijakan",
      "negara": "ID",
-     "proyek": 0
+     "proyek": 0,
+     "mw": 0
     },
     {
      "nama": "Kamar Dagang dan Industri Indonesia (Komite Tetap Energi Baru Terbarukan)",
@@ -2319,7 +2843,8 @@
      "peran": "-",
      "relevansi": "pemangku kebijakan",
      "negara": "ID",
-     "proyek": 0
+     "proyek": 0,
+     "mw": 0
     },
     {
      "nama": "Direktorat Jenderal Energi Baru, Terbarukan dan Konservasi Energi",
@@ -2330,7 +2855,8 @@
      "peran": "-",
      "relevansi": "pemangku kebijakan",
      "negara": "ID",
-     "proyek": 0
+     "proyek": 0,
+     "mw": 0
     },
     {
      "nama": "Badan Pusat Statistik",
@@ -2341,7 +2867,8 @@
      "peran": "-",
      "relevansi": "pemangku kebijakan",
      "negara": "ID",
-     "proyek": 0
+     "proyek": 0,
+     "mw": 0
     },
     {
      "nama": "Masyarakat Energi Terbarukan Indonesia",
@@ -2352,7 +2879,8 @@
      "peran": "-",
      "relevansi": "pemangku kebijakan",
      "negara": "ID",
-     "proyek": 0
+     "proyek": 0,
+     "mw": 0
     },
     {
      "nama": "Center of Economic and Law Studies",
@@ -2363,7 +2891,8 @@
      "peran": "-",
      "relevansi": "pemangku kebijakan",
      "negara": "ID",
-     "proyek": 0
+     "proyek": 0,
+     "mw": 0
     },
     {
      "nama": "International Energy Agency",
@@ -2374,7 +2903,8 @@
      "peran": "lembaga",
      "relevansi": "pemangku kebijakan",
      "negara": "ID",
-     "proyek": 0
+     "proyek": 0,
+     "mw": 0
     },
     {
      "nama": "Dewan Perwakilan Rakyat RI Komisi XII",
@@ -2385,7 +2915,8 @@
      "peran": "-",
      "relevansi": "pemangku kebijakan",
      "negara": "ID",
-     "proyek": 0
+     "proyek": 0,
+     "mw": 0
     },
     {
      "nama": "Badan Riset dan Inovasi Nasional",
@@ -2396,7 +2927,8 @@
      "peran": "-",
      "relevansi": "pemangku kebijakan",
      "negara": "ID",
-     "proyek": 0
+     "proyek": 0,
+     "mw": 0
     },
     {
      "nama": "Sekretariat JETP Indonesia",
@@ -2407,7 +2939,8 @@
      "peran": "-",
      "relevansi": "pemangku kebijakan",
      "negara": "ID",
-     "proyek": 0
+     "proyek": 0,
+     "mw": 0
     },
     {
      "nama": "Badan Kebijakan Fiskal",
@@ -2418,7 +2951,8 @@
      "peran": "-",
      "relevansi": "pemangku kebijakan",
      "negara": "ID",
-     "proyek": 0
+     "proyek": 0,
+     "mw": 0
     },
     {
      "nama": "Purnomo Yusgiantoro Center",
@@ -2429,7 +2963,8 @@
      "peran": "-",
      "relevansi": "pemangku kebijakan",
      "negara": "ID",
-     "proyek": 0
+     "proyek": 0,
+     "mw": 0
     },
     {
      "nama": "Badan Meteorologi, Klimatologi, dan Geofisika",
@@ -2440,7 +2975,8 @@
      "peran": "-",
      "relevansi": "pemangku kebijakan",
      "negara": "ID",
-     "proyek": 0
+     "proyek": 0,
+     "mw": 0
     }
    ],
    "catatan": {
@@ -3655,7 +4191,10 @@
     "posobis",
     "posopeak",
     "ruptl",
-    "kap"
+    "kap",
+    "d_rpasok",
+    "d_stat",
+    "perpres112"
    ],
    "paragraf": [
     {
@@ -3665,6 +4204,22 @@
     {
      "id": "RUPTL 2025-2034 memuat 112 proyek hidro bernama (3972.83 MW) dan 50 proyek penyimpanan (6641.234 MW), termasuk PLTA pompa; tahun COD memakai skenario RE Base.",
      "en": "The 2025-2034 RUPTL lists 112 named hydro projects (3972.83 MW) and 50 storage projects (6641.234 MW), including pumped storage; COD years follow the RE Base scenario."
+    },
+    {
+     "id": "Kebutuhan pasar RUPTL 2025-2034: 3.973 MW hidro dalam 112 proyek, puncak 2025 sebesar 905 MW (basis proyek RUPTL, EST).",
+     "en": "RUPTL 2025-2034 market demand: 3,973 MW of hydro in 112 projects, peaking in 2025 at 905 MW (RUPTL project base, EST)."
+    },
+    {
+     "id": "Listrik terjual PLN 2024: 306.219 GWh kepada 92.877.292 pelanggan; hidro menghasilkan 27.290 GWh, sekitar 8,9 persen dari penjualan (EST, perbandingan kasar karena cakupan berbeda).",
+     "en": "Electricity sold by PLN in 2024: 306,219 GWh to 92,877,292 customers; hydro generated 27,290 GWh, about 8.9 percent of sales (EST, a rough comparison because coverage differs)."
+    },
+    {
+     "id": "Pertumbuhan: kapasitas hidro naik dari 7.052 MW (2024) ke 7.587 MW (2025), tambahan 535 MW dalam setahun (IRENA, EST selisih).",
+     "en": "Growth: hydro capacity rose from 7,052 MW (2024) to 7,587 MW (2025), an addition of 535 MW in a year (IRENA, EST difference)."
+    },
+    {
+     "id": "Harga: PLTA dibeli dengan harga patokan tertinggi Perpres 112/2022 atau harga kesepakatan; basis tarif lengkap per kapasitas ada di basis keuangan METI dan perlu dibaca dari naskah.",
+     "en": "Price: hydropower is bought at the Presidential Reg. 112/2022 ceiling price or an agreed price; the full tariff table by capacity is in the METI finance base and should be read from the text."
     }
    ]
   },
@@ -3823,20 +4378,6 @@
      "u": null
     },
     {
-     "dok": "Perda 16/2019",
-     "id": "perda-b120470-16-2019",
-     "u": "/regulasi?id=perda-b120470-16-2019",
-     "naskah": "BPK",
-     "tgl": "2019-04-22",
-     "judul": "Tata Kelola Pembangkit Listrik Tenaga Mikrohidro Berbasis Masyarakat",
-     "isi": {
-      "id": "PERDA 16/2019 mengatur tata kelola pembangkit listrik tenaga mikrohidro berbasis masyarakat.",
-      "en": "PERDA 16/2019 mengatur tata kelola pembangkit listrik tenaga mikrohidro berbasis masyarakat. (ringkasan resmi basis regulasi, bahasa Indonesia)"
-     },
-     "status": "berlaku",
-     "url": "https://peraturan.bpk.go.id/Details/120470"
-    },
-    {
      "dok": "Peraturan 14/2017",
      "id": "lainnya-b188740-14-2017",
      "u": "/regulasi?id=lainnya-b188740-14-2017",
@@ -3863,20 +4404,6 @@
      },
      "status": "berlaku",
      "url": "https://peraturan.bpk.go.id/Details/159770"
-    },
-    {
-     "dok": "Perda 16/2016",
-     "id": "perda-b53307-16-2016",
-     "u": "/regulasi?id=perda-b53307-16-2016",
-     "naskah": "BPK",
-     "tgl": "2016-05-09",
-     "judul": "PEDOMAN PELAKSANAAN KEGIATAN PENYERAHAN ALAT TURBIN MIKROHIDRO TAHUN ANGGARAN 2016",
-     "isi": {
-      "id": "PERDA 16/2016 mengatur pedoman pelaksanaan kegiatan penyerahan alat turbin mikrohidro tahun anggaran 2016.",
-      "en": "PERDA 16/2016 mengatur pedoman pelaksanaan kegiatan penyerahan alat turbin mikrohidro tahun anggaran 2016. (ringkasan resmi basis regulasi, bahasa Indonesia)"
-     },
-     "status": "berlaku",
-     "url": "https://peraturan.bpk.go.id/Details/53307"
     },
     {
      "dok": "Permen 09/PRT/M/2016/2016",
@@ -4003,6 +4530,34 @@
      },
      "status": "berlaku",
      "url": "https://peraturan.bpk.go.id/Details/343106"
+    },
+    {
+     "dok": "Permen 73/2025",
+     "id": "permen-kemenkeu-73-2025",
+     "u": "/regulasi?id=permen-kemenkeu-73-2025",
+     "naskah": "BPK",
+     "tgl": "2025-11-06",
+     "judul": "Tata Cara Penyediaan, Penghitungan, Pembayaran dan Pertanggungjawaban Dana Kompensasi Atas Kekuarangan Penerimaan Badan Usaha Akibat Kebi...",
+     "isi": {
+      "id": "PERMEN 73/2025 mengatur tata cara penyediaan, penghitungan, pembayaran dan pertanggungjawaban dana kompensasi atas kekuarangan penerimaan badan usaha akibat kebijakan penetapan harga.",
+      "en": "PERMEN 73/2025 mengatur tata cara penyediaan, penghitungan, pembayaran dan pertanggungjawaban dana kompensasi atas kekuarangan penerimaan badan usaha akibat kebijakan penetapan harga. (ringkasan resmi basis regulasi, bahasa Indonesia)"
+     },
+     "status": "berlaku",
+     "url": "https://peraturan.bpk.go.id/Details/333927"
+    },
+    {
+     "dok": "Perpres 109/2025",
+     "id": "perpres-109-2025",
+     "u": "/regulasi?id=perpres-109-2025",
+     "naskah": "BPK",
+     "tgl": "2025-10-10",
+     "judul": "Penanganan Sampah Perkotaan Melalui Pengolahan Sampah Menjadi Energi Terbarukan Berbasis Teknologi Ramah Lingkungan",
+     "isi": {
+      "id": "PERPRES 109/2025 mengatur penanganan sampah perkotaan melalui pengolahan sampah menjadi energi terbarukan berbasis teknologi ramah lingkungan.",
+      "en": "PERPRES 109/2025 mengatur penanganan sampah perkotaan melalui pengolahan sampah menjadi energi terbarukan berbasis teknologi ramah lingkungan. (ringkasan resmi basis regulasi, bahasa Indonesia)"
+     },
+     "status": "berlaku",
+     "url": "https://peraturan.bpk.go.id/Details/334718"
     }
    ],
    "catatan": {
@@ -4306,7 +4861,10 @@
    "sumber": [
     "iea74",
     "seawater",
-    "masdar"
+    "masdar",
+    "ed",
+    "perpres112",
+    "cirata"
    ],
    "paragraf": [
     {
@@ -4320,6 +4878,26 @@
     {
      "id": "Hibrida hidro-surya terapung juga berkembang: PLTS terapung Cirata (Masdar, diresmikan 9 November 2023) memanfaatkan waduk dan transmisi PLTA yang sudah ada.",
      "en": "Hydro-floating solar hybrids are also growing: the Cirata floating solar plant (Masdar, inaugurated 9 November 2023) reuses an existing reservoir and hydro transmission."
+    },
+    {
+     "id": "Turbin ramah ikan dan tangga ikan mengurangi dampak bendungan pada migrasi ikan (penjelasan umum); penerapannya di Indonesia belum terdokumentasi terbuka.",
+     "en": "Fish-friendly turbines and fish ladders reduce dam impact on fish migration (general explanation); their use in Indonesia is not openly documented."
+    },
+    {
+     "id": "Modernisasi PLTA tua (penggantian runner, generator, dan sistem kontrol) menambah keluaran tanpa bendungan baru; PLTA Saguling dan Cirata menjadi kandidat jenis ini di jaringan Jawa.",
+     "en": "Modernisation of old plants (replacing runners, generators and controls) adds output without a new dam; the Saguling and Cirata plants are candidates of this kind on the Java grid."
+    },
+    {
+     "id": "Penggerak kecepatan variabel pada PLTA pompa meningkatkan fleksibilitas menyerap surya dan bayu (penjelasan umum).",
+     "en": "Variable-speed drives in pumped hydro raise the flexibility to absorb solar and wind (general explanation)."
+    },
+    {
+     "id": "PLTA di saluran irigasi dan infrastruktur air minum memakai head yang sudah ada tanpa waduk baru; Perpres 112/2022 mengatur penunjukan langsung untuk PLTA pada waduk atau saluran irigasi multiguna milik negara.",
+     "en": "Hydropower on irrigation canals and water supply infrastructure uses existing head without a new reservoir; Presidential Reg. 112/2022 provides direct appointment for hydropower on state-owned multipurpose reservoirs or canals."
+    },
+    {
+     "id": "Pemantauan sedimentasi dengan survei batimetri dan satelit membantu menjaga umur waduk (penjelasan umum).",
+     "en": "Sedimentation monitoring with bathymetric and satellite surveys helps keep reservoir life (general explanation)."
     }
    ]
   },
@@ -4397,135 +4975,293 @@
    "tipe": "grafik",
    "jenis": "garis",
    "sumber": [
-    "lcoe"
+    "lcoe",
+    "d_lcoe"
    ],
    "label": {
-    "id": "LCOE hidro rata-rata global (sen USD 2025 per kWh)",
-    "en": "Global average hydro LCOE (US cents 2025 per kWh)"
+    "id": "Kurva biaya: LCOE rata-rata dunia (indeks 2010 = 100)",
+    "en": "Cost curve: global average LCOE (index 2010 = 100)"
    },
-   "satuan": "sen/kWh",
-   "d": 2,
+   "satuan": "indeks",
+   "d": 0,
    "seri": [
     {
      "nama": {
-      "id": "Hidro, dunia",
-      "en": "Hydro, world"
+      "id": "LCOE hidro dunia (indeks 2010 = 100)",
+      "en": "Global hydro LCOE (index 2010 = 100)"
      },
      "sorot": true,
      "titik": [
       [
        "2010",
-       4.37
+       100
       ],
       [
        "2011",
-       4.13
+       94.5
       ],
       [
        "2012",
-       4.14
+       94.7
       ],
       [
        "2013",
-       4.7
+       107.6
       ],
       [
        "2014",
-       3.73
+       85.4
       ],
       [
        "2015",
-       4.14
+       94.7
       ],
       [
        "2016",
-       5.44
+       124.5
       ],
       [
        "2017",
-       5.61
+       128.4
       ],
       [
        "2018",
-       4.63
+       105.9
       ],
       [
        "2019",
-       4.8
+       109.8
       ],
       [
        "2020",
-       5.15
+       117.8
       ],
       [
        "2021",
-       5.65
+       129.3
       ],
       [
        "2022",
-       6.78
+       155.1
       ],
       [
        "2023",
-       5.79
+       132.5
       ],
       [
        "2024",
-       5.65
+       129.3
       ],
       [
        "2025",
-       6.17
+       141.2
+      ]
+     ]
+    },
+    {
+     "nama": {
+      "id": "LCOE surya dunia (indeks 2010 = 100)",
+      "en": "Global solar LCOE (index 2010 = 100)"
+     },
+     "titik": [
+      [
+       "2010",
+       100
+      ],
+      [
+       "2011",
+       84.3
+      ],
+      [
+       "2012",
+       63.7
+      ],
+      [
+       "2013",
+       49.7
+      ],
+      [
+       "2014",
+       44.3
+      ],
+      [
+       "2015",
+       32.8
+      ],
+      [
+       "2016",
+       28.8
+      ],
+      [
+       "2017",
+       23
+      ],
+      [
+       "2018",
+       19.4
+      ],
+      [
+       "2019",
+       16.8
+      ],
+      [
+       "2020",
+       14.9
+      ],
+      [
+       "2021",
+       13.3
+      ],
+      [
+       "2022",
+       12.4
+      ],
+      [
+       "2023",
+       10.4
+      ],
+      [
+       "2024",
+       10.5
+      ],
+      [
+       "2025",
+       10.7
+      ]
+     ]
+    },
+    {
+     "nama": {
+      "id": "LCOE bayu darat dunia (indeks 2010 = 100)",
+      "en": "Global onshore wind LCOE (index 2010 = 100)"
+     },
+     "titik": [
+      [
+       "2010",
+       100
+      ],
+      [
+       "2011",
+       94.8
+      ],
+      [
+       "2012",
+       87
+      ],
+      [
+       "2013",
+       87.1
+      ],
+      [
+       "2014",
+       77.1
+      ],
+      [
+       "2015",
+       66.9
+      ],
+      [
+       "2016",
+       61.4
+      ],
+      [
+       "2017",
+       57
+      ],
+      [
+       "2018",
+       48.9
+      ],
+      [
+       "2019",
+       43.4
+      ],
+      [
+       "2020",
+       36
+      ],
+      [
+       "2021",
+       31.8
+      ],
+      [
+       "2022",
+       29.9
+      ],
+      [
+       "2023",
+       29.1
+      ],
+      [
+       "2024",
+       30.2
+      ],
+      [
+       "2025",
+       29
       ]
      ]
     }
    ],
    "catatan": {
-    "id": "Berbeda dengan surya, biaya hidro tidak turun mengikuti kurva belajar; hidro adalah teknologi matang dengan biaya spesifik lokasi.",
-    "en": "Unlike solar, hydro cost has not fallen along a learning curve; hydro is mature and site-specific."
+    "id": "Turunan hitung METI (EST) dari IRENA via Our World in Data (USD tetap); nilai absolut LCOE ada di FAQ dan teks bab 4. Indeks di bawah 100 berarti lebih murah daripada 2010.",
+    "en": "METI derived figures (EST) from IRENA via Our World in Data (constant USD); absolute LCOE values are in the FAQ and chapter 4 text. An index below 100 means cheaper than in 2010."
    }
   },
   "20": {
    "tipe": "tabel",
-   "per": 10,
+   "per": 11,
    "sumber": [
+    "d_owid",
     "owid"
    ],
-   "catatan": {
-    "id": "Porsi hidro dalam pembangkitan listrik 2024 (Ember via Our World in Data).",
-    "en": "Hydro share of 2024 electricity generation (Ember via Our World in Data)."
-   },
    "kolom": [
     {
-     "k": "n",
+     "k": "neg",
      "l": {
       "id": "Negara",
       "en": "Country"
      }
     },
     {
-     "k": "v",
+     "k": "tahun",
      "l": {
-      "id": "Porsi hidro (persen)",
-      "en": "Hydro share (percent)"
-     },
-     "num": true,
-     "d": 2
+      "id": "Tahun data",
+      "en": "Data year"
+     }
     },
     {
-     "k": "ebt",
+     "k": "porsi",
      "l": {
-      "id": "Total EBT (persen)",
-      "en": "Total renewables (percent)"
+      "id": "Porsi dalam listrik (persen)",
+      "en": "Share of electricity (percent)"
      },
      "num": true,
      "d": 1
     },
     {
-     "k": "ci",
+     "k": "twh",
      "l": {
-      "id": "Intensitas karbon (gCO2 per kWh)",
-      "en": "Carbon intensity (gCO2 per kWh)"
+      "id": "Produksi (TWh)",
+      "en": "Generation (TWh)"
+     },
+     "num": true,
+     "d": 1
+    },
+    {
+     "k": "ebt",
+     "l": {
+      "id": "Porsi EBT total (persen)",
+      "en": "Total renewable share (percent)"
+     },
+     "num": true,
+     "d": 1
+    },
+    {
+     "k": "total_twh",
+     "l": {
+      "id": "Total listrik (TWh)",
+      "en": "Total electricity (TWh)"
      },
      "num": true,
      "d": 0
@@ -4533,66 +5269,238 @@
    ],
    "baris": [
     {
-     "n": "Lao PDR",
-     "v": 76.47,
-     "ebt": 76.72,
-     "ci": 232.08
-    },
-    {
-     "n": "Myanmar",
-     "v": 46.06,
-     "ebt": 47.86,
-     "ci": 502.99
-    },
-    {
-     "n": "Viet Nam",
-     "v": 33.02,
-     "ebt": 45.42,
-     "ci": 460.73
-    },
-    {
-     "n": "Cambodia",
-     "v": 29.9,
-     "ebt": 40.88,
-     "ci": 498.87
-    },
-    {
-     "n": "Malaysia",
-     "v": 17.52,
-     "ebt": 20.65,
-     "ci": 601.97
-    },
-    {
-     "n": "Philippines",
-     "v": 10.31,
-     "ebt": 23.31,
-     "ci": 588.29
-    },
-    {
-     "n": "Indonesia",
-     "v": 7.34,
+     "neg": {
+      "id": "Indonesia",
+      "en": "Indonesia"
+     },
+     "iso2": "ID",
+     "tahun": "2024",
+     "porsi": 7.345,
+     "twh": 27.29,
      "ebt": 18.09,
-     "ci": 680.25
+     "total_twh": 371.54
     },
     {
-     "n": "Thailand",
-     "v": 4.05,
+     "neg": {
+      "id": "Tiongkok",
+      "en": "China"
+     },
+     "iso2": "CN",
+     "tahun": "2025",
+     "porsi": 13.201,
+     "twh": 1397.06,
+     "ebt": 37.044,
+     "total_twh": 10583.36
+    },
+    {
+     "neg": {
+      "id": "India",
+      "en": "India"
+     },
+     "iso2": "IN",
+     "tahun": "2025",
+     "porsi": 8.55,
+     "twh": 177.97,
+     "ebt": 24.067,
+     "total_twh": 2081.6
+    },
+    {
+     "neg": {
+      "id": "Jerman",
+      "en": "Germany"
+     },
+     "iso2": "DE",
+     "tahun": "2025",
+     "porsi": 3.908,
+     "twh": 19.56,
+     "ebt": 59.092,
+     "total_twh": 500.47
+    },
+    {
+     "neg": {
+      "id": "Amerika Serikat",
+      "en": "United States"
+     },
+     "iso2": "US",
+     "tahun": "2025",
+     "porsi": 5.348,
+     "twh": 241.7,
+     "ebt": 25.638,
+     "total_twh": 4519.79
+    },
+    {
+     "neg": {
+      "id": "Australia",
+      "en": "Australia"
+     },
+     "iso2": "AU",
+     "tahun": "2025",
+     "porsi": 4.268,
+     "twh": 12.22,
+     "ebt": 38.618,
+     "total_twh": 286.34
+    },
+    {
+     "neg": {
+      "id": "Jepang",
+      "en": "Japan"
+     },
+     "iso2": "JP",
+     "tahun": "2025",
+     "porsi": 7.176,
+     "twh": 73.9,
+     "ebt": 23.569,
+     "total_twh": 1029.86
+    },
+    {
+     "neg": {
+      "id": "Korea Selatan",
+      "en": "South Korea"
+     },
+     "iso2": "KR",
+     "tahun": "2025",
+     "porsi": 0.608,
+     "twh": 3.8,
+     "ebt": 10.394,
+     "total_twh": 624.66
+    },
+    {
+     "neg": {
+      "id": "Brasil",
+      "en": "Brazil"
+     },
+     "iso2": "BR",
+     "tahun": "2025",
+     "porsi": 51.781,
+     "twh": 388.63,
+     "ebt": 86.601,
+     "total_twh": 750.53
+    },
+    {
+     "neg": {
+      "id": "Afrika Selatan",
+      "en": "South Africa"
+     },
+     "iso2": "ZA",
+     "tahun": "2025",
+     "porsi": 0.754,
+     "twh": 1.83,
+     "ebt": 13.635,
+     "total_twh": 242.76
+    },
+    {
+     "neg": {
+      "id": "Vietnam",
+      "en": "Vietnam"
+     },
+     "iso2": "VN",
+     "tahun": "2025",
+     "porsi": 33.017,
+     "twh": 102.35,
+     "ebt": 45.418,
+     "total_twh": 309.99
+    },
+    {
+     "neg": {
+      "id": "Laos",
+      "en": "Laos"
+     },
+     "iso2": "LA",
+     "tahun": "2024",
+     "porsi": 76.47,
+     "twh": null,
+     "ebt": 76.72,
+     "total_twh": null
+    },
+    {
+     "neg": {
+      "id": "Myanmar",
+      "en": "Myanmar"
+     },
+     "iso2": "MM",
+     "tahun": "2024",
+     "porsi": 46.06,
+     "twh": null,
+     "ebt": 47.86,
+     "total_twh": null
+    },
+    {
+     "neg": {
+      "id": "Kamboja",
+      "en": "Cambodia"
+     },
+     "iso2": "KH",
+     "tahun": "2024",
+     "porsi": 29.9,
+     "twh": null,
+     "ebt": 40.88,
+     "total_twh": null
+    },
+    {
+     "neg": {
+      "id": "Malaysia",
+      "en": "Malaysia"
+     },
+     "iso2": "MY",
+     "tahun": "2024",
+     "porsi": 17.52,
+     "twh": null,
+     "ebt": 20.65,
+     "total_twh": null
+    },
+    {
+     "neg": {
+      "id": "Filipina",
+      "en": "Philippines"
+     },
+     "iso2": "PH",
+     "tahun": "2024",
+     "porsi": 10.31,
+     "twh": null,
+     "ebt": 23.31,
+     "total_twh": null
+    },
+    {
+     "neg": {
+      "id": "Thailand",
+      "en": "Thailand"
+     },
+     "iso2": "TH",
+     "tahun": "2024",
+     "porsi": 4.05,
+     "twh": null,
      "ebt": 16.57,
-     "ci": 545.74
+     "total_twh": null
     },
     {
-     "n": "Singapore",
-     "v": 0,
+     "neg": {
+      "id": "Singapura",
+      "en": "Singapore"
+     },
+     "iso2": "SG",
+     "tahun": "2024",
+     "porsi": 0,
+     "twh": null,
      "ebt": 5.49,
-     "ci": 497.09
+     "total_twh": null
     },
     {
-     "n": "Brunei Darussalam",
-     "v": 0,
+     "neg": {
+      "id": "Brunei",
+      "en": "Brunei"
+     },
+     "iso2": "BN",
+     "tahun": "2024",
+     "porsi": 0,
+     "twh": null,
      "ebt": 0.18,
-     "ci": 892.09
+     "total_twh": null
     }
-   ]
+   ],
+   "catatan": {
+    "id": "Sepuluh negara pembanding dan Indonesia dari Ember via Our World in Data; tahun data terbaru yang tersedia per negara.",
+    "en": "Ten comparison countries and Indonesia from Ember via Our World in Data; latest available data year per country."
+   }
   },
   "21": {
    "tipe": "teks",
@@ -4827,6 +5735,7 @@
     {
      "nama": "PLTS Terapung Gajah Mungkur (investasi)",
      "id": "pd_media_asirp16triliun",
+     "pemberi": "-",
      "jenis": "proyek",
      "status": "konstruksi",
      "nilai_usd": 88154270,
@@ -4836,6 +5745,7 @@
     {
      "nama": "*Salido Kecil Mini Hydropower Plant",
      "id": "pd_gs_716",
+     "pemberi": "-",
      "jenis": "kredit karbon",
      "status": "tersertifikasi",
      "nilai_usd": null,
@@ -4845,6 +5755,7 @@
     {
      "nama": "Mobuya Mini Hydro Power Plant 3 x 1000 kW North Sulawesi, Indonesia",
      "id": "pd_vcs_238",
+     "pemberi": "-",
      "jenis": "kredit karbon",
      "status": "terdaftar terlambat verifikasi",
      "nilai_usd": null,
@@ -4854,6 +5765,7 @@
     {
      "nama": "50 MW Sipansihaporas Hydro Power Plant, North Sumatra",
      "id": "pd_vcs_486",
+     "pemberi": "-",
      "jenis": "kredit karbon",
      "status": "terdaftar",
      "nilai_usd": null,
@@ -4863,6 +5775,7 @@
     {
      "nama": "210 MW Musi Hydro Power Plant, Bengkulu",
      "id": "pd_vcs_487",
+     "pemberi": "-",
      "jenis": "kredit karbon",
      "status": "terdaftar",
      "nilai_usd": null,
@@ -4872,6 +5785,7 @@
     {
      "nama": "82 MW Lau Renun Hydro Power Plant, North Sumatra",
      "id": "pd_vcs_488",
+     "pemberi": "-",
      "jenis": "kredit karbon",
      "status": "terdaftar",
      "nilai_usd": null,
@@ -5147,7 +6061,8 @@
     "katadata20",
     "detikbpk",
     "meratus",
-    "d_lsp"
+    "d_lsp",
+    "ed"
    ],
    "paragraf": [
     {
@@ -5161,6 +6076,10 @@
     {
      "id": "Sertifikasi kompetensi BNSP: 5 lembaga sertifikasi profesi (LSP) memuat 24 skema terkait teknologi ini, antara lain Balai Pelatihan Vokasi dan Produktivitas (BPVP) Banda Aceh, Balai Pelatihan Vokasi dan Produktivitas (BPVP) Lombok Timur, BBPPMPV Bidang Mesin dan Teknik Industri, Energi Terbarukan, Politeknik Negeri Ujung Pandang. Skema berjenjang dari teknisi, pelaksana, sampai engineer perencana (data prodi_pelatihan, diperiksa 2026).",
      "en": "BNSP competency certification: 5 professional certification bodies (LSP) list 24 schemes related to this technology, including Balai Pelatihan Vokasi dan Produktivitas (BPVP) Banda Aceh, Balai Pelatihan Vokasi dan Produktivitas (BPVP) Lombok Timur, BBPPMPV Bidang Mesin dan Teknik Industri, Energi Terbarukan, Politeknik Negeri Ujung Pandang. Schemes run from technician and installer up to planning engineer (prodi_pelatihan data, checked 2026)."
+    },
+    {
+     "id": "Kompetensi inti PLTA: teknik sipil bendungan, hidrologi, elektromekanik, dan operasi sistem; konstruksi besar mempekerjakan ribuan pekerja sementara dan puluhan orang tetap, sehingga manfaat lapangan kerja jangka panjang kecil dibanding saat konstruksi (hipotesis METI dari pola proyek, belum diukur).",
+     "en": "Core hydropower skills: dam civil engineering, hydrology, electromechanical work and system operation; large construction employs thousands temporarily and dozens permanently, so long-term job benefits are small relative to construction (METI hypothesis from project patterns, not measured)."
     }
    ]
   },
@@ -5171,7 +6090,9 @@
     "btcgs",
     "posopeak",
     "rricis",
-    "kybn"
+    "kybn",
+    "iea74",
+    "ed"
    ],
    "paragraf": [
     {
@@ -5181,6 +6102,14 @@
     {
      "id": "Sisi pendukung: PLN dan pemerintah menekankan nilai PLTA sebagai pembangkit puncak dan penstabil jaringan di tengah naiknya surya dan bayu (Poso sebagai peaker, Cisokan untuk stabilitas). Tanggapan pengembang Batang Toru dan Kayan belum kami muat; pihak yang disebut dapat mengirim hak jawab.",
      "en": "Supporters: PLN and government stress hydro as peaker and grid stabiliser as solar and wind rise (Poso as peaker, Cisokan for stability). Responses from the Batang Toru and Kayan developers are not yet carried; named parties can send a right of reply."
+    },
+    {
+     "id": "Kontroversi biaya lawan nilai: pendukung menekankan PLTA berumur puluhan tahun dan beban puncak; kritikus menyoroti biaya sipil dan relokasi yang membuat proyek bergeser (Jatigede, Upper Cisokan).",
+     "en": "Cost versus value controversy: supporters stress decades-long life and peak load; critics highlight civil and resettlement costs that make projects slip (Jatigede, Upper Cisokan)."
+    },
+    {
+     "id": "Analisis METI (Hipotesis): PLTA pompa melawan baterai: baterai makin murah dan cepat dibangun, PLTA pompa lebih tahan lama; pilihan tergantung durasi penyimpanan yang dibutuhkan jaringan, dan datanya belum terbuka.",
+     "en": "METI analysis (Hypothesis): pumped hydro versus batteries: batteries are cheaper and faster to build, pumped hydro lasts longer; the choice depends on the storage duration the grid needs, and the data are not yet open."
     }
    ]
   },
@@ -5190,7 +6119,9 @@
    "sumber": [
     "ruptl",
     "petro",
-    "kybn"
+    "kybn",
+    "d_target",
+    "d_rpasok"
    ],
    "catatan": {
     "id": "Target COD memakai skenario RE Base RUPTL; jadwal proyek besar sering bergeser (lihat bab 40).",
@@ -5256,6 +6187,30 @@
      },
      "v": 9000,
      "sat": "MW"
+    },
+    {
+     "d": {
+      "id": "Hitungan METI 2030 (EST): 2024 + proyek RUPTL ber-COD sampai 2030",
+      "en": "METI calculation 2030 (EST): 2024 + RUPTL projects reaching COD by 2030"
+     },
+     "v": 10321,
+     "sat": "MW"
+    },
+    {
+     "d": {
+      "id": "Hitungan METI 2045 (EST): interpolasi lurus 2034 ke 2060",
+      "en": "METI calculation 2045 (EST): straight-line 2034 to 2060"
+     },
+     "v": 36188,
+     "sat": "MW"
+    },
+    {
+     "d": {
+      "id": "RUKN 2025: PLTA 2060 (hlm 134)",
+      "en": "RUKN 2025: hydro 2060 (p. 134)"
+     },
+     "v": 70500,
+     "sat": "MW"
     }
    ]
   },
@@ -5271,6 +6226,22 @@
     {
      "id": "Analisis METI (Hipotesis): Pengembang: kaskade sedang dan peaker (Poso) lebih layak dibiayai daripada megaproyek bersyarat. Investor: syarat safeguard internasional memberi disiplin tetapi menambah waktu. Pemda: PLTMH komunitas hanya hidup bila pemeliharaan dianggarkan sejak awal. Akademisi: data debit dan sedimen terbuka masih langka.",
      "en": "METI analysis (Hypothesis): Developers: medium cascades and peakers (Poso) are easier to finance than conditional mega-projects. Investors: international safeguards impose discipline but add time. Local government: community micro-hydro survives only if maintenance is budgeted from the start. Academics: open flow and sediment data remain scarce."
+    },
+    {
+     "id": "Analisis METI (Hipotesis): Pemasok dan kontraktor sipil: pekerjaan bendungan dan terowongan berkualifikasi tinggi; peluang ada pada elektromekanik dan modernisasi PLTA tua.",
+     "en": "METI analysis (Hypothesis): suppliers and civil contractors: dam and tunnel work is highly qualified; opportunities lie in electromechanical work and modernising old plants."
+    },
+    {
+     "id": "Analisis METI (Hipotesis): Pemda dan desa: PLTMH komunitas layak bila ada koperasi pengelola, iuran pemeliharaan, dan suku cadang sebelum serah terima.",
+     "en": "METI analysis (Hypothesis): local governments and villages: community micro-hydro is viable with a managing cooperative, maintenance fees and spare parts before handover."
+    },
+    {
+     "id": "Analisis METI (Hipotesis): Akademisi: data debit multitahun, model sedimentasi, dan dampak ekologi sungai adalah celah data terbesar.",
+     "en": "METI analysis (Hypothesis): academics: multi-year flow data, sedimentation models and river ecology impacts are the largest data gaps."
+    },
+    {
+     "id": "Analisis METI (Hipotesis): Pendana: syarat safeguard multilateral menambah waktu tetapi membuka pinjaman jangka panjang bagi megaproyek.",
+     "en": "METI analysis (Hypothesis): financiers: multilateral safeguard requirements add time but open long-term loans for megaprojects."
     }
    ]
   },
@@ -5281,12 +6252,52 @@
     "iea74",
     "ruuebet",
     "kybn",
-    "ruptl"
+    "ruptl",
+    "perpres112",
+    "aiib",
+    "btboc",
+    "d_rpasok"
    ],
    "paragraf": [
     {
      "id": "Yang perlu dipantau: (1) COD Upper Cisokan dan realisasi pencairan pinjaman AIIB/Bank Dunia; (2) pembahasan RUU EBET; (3) mitra baru dan izin Kayan Cascade; (4) kenaikan pumped storage dibanding BESS dalam revisi RUPTL; (5) status operasi komersial Jatigede.",
      "en": "To watch: (1) Upper Cisokan COD and AIIB/World Bank loan disbursement; (2) RUU EBET deliberation; (3) new partners and permits for Kayan Cascade; (4) pumped storage versus BESS in RUPTL revisions; (5) commercial operation status of Jatigede."
+    },
+    {
+     "id": "Jadwal COD RUPTL 2025-2034: 32 proyek hidro (905 MW) pada 2025 dan 16 proyek (590 MW) pada 2026; selisih ke realisasi adalah indikator kesehatan pasar.",
+     "en": "RUPTL 2025-2034 COD schedule: 32 hydro projects (905 MW) in 2025 and 16 projects (590 MW) in 2026; the gap to delivery is a market health indicator."
+    },
+    {
+     "id": "Revisi Perpres 112/2022 dan harga patokan PLTA.",
+     "en": "The revision of Presidential Reg. 112/2022 and hydropower ceiling prices."
+    },
+    {
+     "id": "RUU Energi Baru dan Energi Terbarukan di Komisi XII DPR RI.",
+     "en": "The New and Renewable Energy bill in DPR Commission XII."
+    },
+    {
+     "id": "Keputusan lokasi PLTA pompa air laut 1 GW (Puger) dan apakah masuk RUPTL berikutnya.",
+     "en": "The siting decision on the 1 GW seawater pumped hydro (Puger) and whether it enters the next RUPTL."
+    },
+    {
+     "id": "Evaluasi lingkungan Batang Toru dan perkembangan kasus orangutan Tapanuli.",
+     "en": "Environmental review of Batang Toru and developments in the Tapanuli orangutan case."
+    },
+    {
+     "id": "Mitra baru dan izin Kayan Cascade (rencana 9.000 MW).",
+     "en": "New partners and permits for the Kayan Cascade (9,000 MW plan)."
+    },
+    {
+     "id": "Daftar PLTMH desa yang diserahterimakan dan statusnya, termasuk hak jawab pihak yang disebut.",
+     "en": "List of handed-over village micro-hydro plants and their status, including right of reply for named parties."
+    },
+    {
+     "id": "Pembaruan kuota penawaran PLTA oleh Menteri (Perpres 112/2022 Pasal 19).",
+     "en": "Updates to hydropower offer quotas set by the Minister (Presidential Reg. 112/2022 Article 19)."
+    },
+    {
+     "id": "Kemajuan pencairan pinjaman AIIB dan Bank Dunia untuk proyek PLTA.",
+     "en": "Progress on AIIB and World Bank loan disbursements for hydropower projects."
     }
    ]
   },
@@ -5432,7 +6443,13 @@
       "posoesdm",
       "posopeak"
      ],
-     "hak_jawab": true
+     "hak_jawab": true,
+     "koordinat": [
+      -3.1281,
+      119.7936
+     ],
+     "koordinat_presisi": "titik_persis",
+     "id_proyek": "gem_hydropower_L100000602128"
     },
     {
      "negara": "ID",
@@ -5540,7 +6557,13 @@
       "jatiluhur",
       "masdar"
      ],
-     "hak_jawab": true
+     "hak_jawab": true,
+     "koordinat": [
+      -6.6826944444444,
+      107.34763888889
+     ],
+     "koordinat_presisi": "titik_persis",
+     "id_proyek": "pj_0080"
     },
     {
      "negara": "ID",
@@ -6034,7 +7057,13 @@
       "btbhr",
       "btcgs"
      ],
-     "hak_jawab": true
+     "hak_jawab": true,
+     "koordinat": [
+      1.5803888888888888,
+      99.16883333333334
+     ],
+     "koordinat_presisi": "titik_persis",
+     "id_proyek": "pj_0066"
     },
     {
      "negara": "ID",
@@ -6133,7 +7162,13 @@
       "kyjp",
       "kymin"
      ],
-     "hak_jawab": true
+     "hak_jawab": true,
+     "koordinat": [
+      2.6048,
+      117.8146
+     ],
+     "koordinat_presisi": "kabupaten",
+     "id_proyek": "gem_hydropower_L100000602115"
     },
     {
      "negara": "ID",
@@ -6235,7 +7270,13 @@
       "jg2021",
       "jgwiki"
      ],
-     "hak_jawab": true
+     "hak_jawab": true,
+     "koordinat": [
+      -6.8315277777778,
+      108.10572222222
+     ],
+     "koordinat_presisi": "titik_persis",
+     "id_proyek": "pj_0079"
     },
     {
      "negara": "ID",

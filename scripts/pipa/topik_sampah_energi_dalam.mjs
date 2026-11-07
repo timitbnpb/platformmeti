@@ -131,4 +131,5 @@ export function perdalam(bab, SUMBER) {
   ke(bab, '32', 'teks', 'paragraf', P(
     ['Daftar pantau: (1) COD Bali akhir 2027 dan Bekasi pertengahan 2028; (2) penetapan tahap II dan III; (3) tahap kompensasi negara di APBN; (4) aturan take-or-pay; (5) hasil uji nilai kalor sampah per kota; (6) data emisi terbuka; (7) kasus Sunter dan Gedebage; (8) status Tangerang dan Tangsel; (9) perkembangan RUU EBET; (10) pendampingan pemulung.', 'Watch list: (1) Bali COD end 2027 and Bekasi mid 2028; (2) stage II and III designation; (3) state compensation stage in the budget; (4) take-or-pay rules; (5) per-city waste calorific tests; (6) open emission data; (7) the Sunter and Gedebage cases; (8) status of Tangerang and South Tangerang; (9) RUU EBET progress; (10) waste picker support.'],
   ), sm('bali', 'bekasi', 'tgr', 'ruuebet'));
+  return { 3: tr.map((r) => [r.tahun, r.kapasitas_mw]) };
 }

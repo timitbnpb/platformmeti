@@ -300,6 +300,24 @@
    "tanggal": "2026-11-08",
    "tahun": 2026,
    "bukti": "media"
+  },
+  "ghr25": {
+   "judul": "IEA, Global Hydrogen Review 2025, ringkasan eksekutif (permintaan hampir 100 Mt pada 2024; produksi rendah emisi kurang dari 1 persen; potensi 2030 turun ke 37 Mtpa; elektroliser 2 GW pada 2024; biaya pasang di luar Tiongkok USD 2.000 sampai 2.600 per kW)",
+   "penerbit": "IEA",
+   "url": "https://www.iea.org/reports/global-hydrogen-review-2025/executive-summary",
+   "tanggal": "2025-09-01",
+   "tahun": 2025,
+   "bukti": "resmi",
+   "lisensi": "CC BY 4.0"
+  },
+  "ghr25sea": {
+   "judul": "IEA, Global Hydrogen Review 2025, bab Asia Tenggara (permintaan kawasan 4 Mt pada 2024; Indonesia lebih dari sepertiga; hampir separuh adalah amonia; jalur proyek rendah emisi sekitar 480 ktpa)",
+   "penerbit": "IEA",
+   "url": "https://www.iea.org/reports/global-hydrogen-review-2025/southeast-asia",
+   "tanggal": "2025-09-01",
+   "tahun": 2025,
+   "bukti": "resmi",
+   "lisensi": "CC BY 4.0"
   }
  },
  "bab": {
@@ -310,7 +328,9 @@
     "dpr",
     "hrs",
     "ulu",
-    "mc"
+    "mc",
+    "ghr25",
+    "ghr25sea"
    ],
    "butir": [
     {
@@ -321,7 +341,8 @@
      "j": {
       "id": "Hidrogen yang dibuat dengan elektrolisis air memakai listrik terbarukan. Hidrogen abu-abu dibuat dari gas alam dan melepas CO2; hidrogen biru menambah penangkapan karbon.",
       "en": "Hydrogen made by electrolysing water with renewable power. Grey hydrogen comes from natural gas and releases CO2; blue hydrogen adds carbon capture."
-     }
+     },
+     "bab": 4
     },
     {
      "t": {
@@ -331,7 +352,8 @@
      "j": {
       "id": "Ya, kecil. PLN mengoperasikan 22 pabrik hidrogen hijau (GHP) dengan total sekitar 203 ton per tahun; yang pertama di Muara Karang (51 ton per tahun, 9 Oktober 2023).",
       "en": "Yes, small. PLN runs 22 green hydrogen plants (GHP) with about 203 tonnes a year in total; the first at Muara Karang (51 tonnes a year, 9 October 2023)."
-     }
+     },
+     "bab": 10
     },
     {
      "t": {
@@ -341,7 +363,8 @@
      "j": {
       "id": "Sekitar 4 juta ton per tahun pada 2024 menurut DPR; produksi hijau PLN sekitar 0.0051 persen dari itu (hitung sendiri).",
       "en": "About 4 million tonnes a year in 2024 per the DPR; PLN green output is about 0.0051 percent of that (own calculation)."
-     }
+     },
+     "bab": 5
     },
     {
      "t": {
@@ -351,7 +374,8 @@
      "j": {
       "id": "DPR mencatat biaya dari PLTS sekitar USD 4,3 sampai 8,3 per kg, diperkirakan turun ke sekitar USD 2 per kg sebelum 2040.",
       "en": "The DPR records a cost from solar of about USD 4.3 to 8.3 per kg, expected to fall to about USD 2 per kg before 2040."
-     }
+     },
+     "bab": 19
     },
     {
      "t": {
@@ -361,7 +385,8 @@
      "j": {
       "id": "Strategi Hidrogen Nasional diluncurkan Desember 2023, dan Roadmap Hidrogen dan Amonia Nasional (RHAN) 2025 membagi tiga tahap: inisiasi 2025-2030, integrasi 2031-2044, akselerasi 2045-2060.",
       "en": "The National Hydrogen Strategy was launched in December 2023, and the 2025 National Hydrogen and Ammonia Roadmap (RHAN) has three stages: initiation 2025-2030, integration 2031-2044, acceleration 2045-2060."
-     }
+     },
+     "bab": 30
     },
     {
      "t": {
@@ -371,7 +396,8 @@
      "j": {
       "id": "Pilot Pertamina Geothermal di PLTP Ulubelu, Lampung: groundbreaking 9 September 2025, 100 kg per hari, sekitar USD 3 juta, target operasi 2026.",
       "en": "A Pertamina Geothermal pilot at the Ulubelu geothermal plant, Lampung: groundbreaking 9 September 2025, 100 kg a day, about USD 3 million, operation targeted for 2026."
-     }
+     },
+     "bab": 19
     },
     {
      "t": {
@@ -381,7 +407,8 @@
      "j": {
       "id": "Ya, stasiun pertama PLN di Senayan, Jakarta, dipasok dari GHP PLN.",
       "en": "Yes, PLN's first station in Senayan, Jakarta, supplied from PLN GHPs."
-     }
+     },
+     "bab": 10
     },
     {
      "t": {
@@ -391,7 +418,96 @@
      "j": {
       "id": "Contoh Australia: Fortescue membatalkan dua proyek pada Juli 2025, BP keluar dari hub 26 GW, dan proyek Townsville dihentikan karena tidak menemukan pembeli. Lihat bab 40.",
       "en": "Australian examples: Fortescue cancelled two projects in July 2025, BP exited a 26 GW hub, and the Townsville project was scrapped for lack of buyers. See chapter 40."
-     }
+     },
+     "bab": 10
+    },
+    {
+     "t": {
+      "id": "Berapa permintaan hidrogen Indonesia menurut IEA?",
+      "en": "What is Indonesian hydrogen demand per the IEA?"
+     },
+     "j": {
+      "id": "IEA Global Hydrogen Review 2025 mencatat permintaan Asia Tenggara 4 Mt pada 2024 dan Indonesia lebih dari sepertiganya, kira-kira 1.3 Mt (EST). Angka ini lebih kecil daripada 4 juta ton yang dikutip DPR untuk Indonesia; selisihnya belum direkonsiliasi dan perlu dicek ke sumber DPR.",
+      "en": "The IEA Global Hydrogen Review 2025 records Southeast Asian demand of 4 Mt in 2024 with Indonesia over a third, roughly 1.3 Mt (EST). That is lower than the 4 million tonnes cited by the DPR for Indonesia; the gap has not been reconciled and the DPR source should be checked."
+     },
+     "bab": 20
+    },
+    {
+     "t": {
+      "id": "Untuk apa hidrogen dipakai sekarang?",
+      "en": "What is hydrogen used for today?"
+     },
+     "j": {
+      "id": "Hampir seluruhnya di kilang minyak dan industri (amonia, metanol). Di Asia Tenggara hampir separuh permintaan adalah amonia, dan dua pertiga amonia itu dari Indonesia; seluruh kebutuhan baru kurang dari 1 persen dunia (IEA).",
+      "en": "Almost entirely in refining and industry (ammonia, methanol). In Southeast Asia nearly half of demand is ammonia and two-thirds of that is from Indonesia; all new uses are under 1 percent of the world total (IEA)."
+     },
+     "bab": 20
+    },
+    {
+     "t": {
+      "id": "Berapa kebutuhan listrik untuk hidrogen hijau?",
+      "en": "How much electricity does green hydrogen need?"
+     },
+     "j": {
+      "id": "Sekitar 50 sampai 55 kWh per kg di sistem elektroliser. Bila seluruh 1.3 Mt permintaan Indonesia dihijaukan, dibutuhkan sekitar 0 TWh per tahun, 0 persen dari seluruh listrik Indonesia 2024 (371.54 TWh) (EST).",
+      "en": "About 50 to 55 kWh per kg at system level. Greening all 1.3 Mt of Indonesian demand would need about 0 TWh a year, 0 percent of all Indonesian electricity in 2024 (371.54 TWh) (EST)."
+     },
+     "bab": 5
+    },
+    {
+     "t": {
+      "id": "Berapa global produksi hidrogen rendah emisi?",
+      "en": "How large is global low-emissions hydrogen production?"
+     },
+     "j": {
+      "id": "Kurang dari 1 persen produksi dunia; tumbuh 10 persen pada 2024 dan menuju 1 Mt pada 2025. Proyek yang beroperasi atau FID mencapai 4,2 Mtpa pada 2030 atau sekitar 4 persen (IEA).",
+      "en": "Under 1 percent of world output; it grew 10 percent in 2024 and is heading to 1 Mt in 2025. Operating or FID projects reach 4.2 Mtpa by 2030 or about 4 percent (IEA)."
+     },
+     "bab": 10
+    },
+    {
+     "t": {
+      "id": "Apa itu hidrogen biru dan apakah relevan?",
+      "en": "What is blue hydrogen and is it relevant?"
+     },
+     "j": {
+      "id": "Hidrogen dari gas alam dengan penangkapan CO2 (CCS). Perpres 14/2024 mengatur penangkapan dan penyimpanan karbon di Indonesia sehingga jalur biru terbuka secara hukum; IEA menilai CCUS lebih bersaing di wilayah bergas murah.",
+      "en": "Hydrogen from natural gas with CO2 capture (CCS). Presidential Reg. 14/2024 governs carbon capture and storage in Indonesia so the blue path is legally open; the IEA finds CCUS more competitive where gas is cheap."
+     },
+     "bab": 12
+    },
+    {
+     "t": {
+      "id": "Apa beda hidrogen dan amonia hijau sebagai pembawa energi?",
+      "en": "How do hydrogen and green ammonia differ as carriers?"
+     },
+     "j": {
+      "id": "Amonia lebih mudah diangkut dan dipakai untuk pupuk atau kapal, tetapi konversi bolak-balik menghilangkan energi. Hidrogen langsung cocok untuk industri di lokasi yang sama.",
+      "en": "Ammonia is easier to ship and use for fertiliser or ships but round-trip conversion loses energy. Direct hydrogen suits industry on the same site."
+     },
+     "bab": 4
+    },
+    {
+     "t": {
+      "id": "Apakah hidrogen aman?",
+      "en": "Is hydrogen safe?"
+     },
+     "j": {
+      "id": "Mudah menyala dan bocor karena molekulnya kecil, sehingga perlu sensor, ventilasi, dan standar tangki; stasiun pengisian dan elektroliser mengikuti kode keselamatan khusus.",
+      "en": "It ignites easily and leaks because the molecule is small, so sensors, ventilation and tank standards are needed; refuelling stations and electrolysers follow specific safety codes."
+     },
+     "bab": 10
+    },
+    {
+     "t": {
+      "id": "Bisakah hidrogen dipakai di PLTU dan PLTG?",
+      "en": "Can hydrogen be burned in coal and gas plants?"
+     },
+     "j": {
+      "id": "RHAN menargetkan co-firing hidrogen 60 persen di PLTG pada 2045 dan pembangkit hidrogen murni 25,3 GW pada 2060 (bab 30); amonia dapat dicampur di PLTU. Keduanya masih tahap uji.",
+      "en": "The RHAN targets 60 percent hydrogen co-firing in gas turbines by 2045 and 25.3 GW of pure hydrogen power by 2060 (chapter 30); ammonia can be blended in coal plants. Both are still at trial stage."
+     },
+     "bab": 30
     }
    ]
   },
@@ -409,7 +525,8 @@
      "arti": {
       "id": "Hidrogen dari elektrolisis memakai listrik terbarukan.",
       "en": "Hydrogen from electrolysis using renewable power."
-     }
+     },
+     "kat": "teknis"
     },
     {
      "istilah": {
@@ -419,7 +536,8 @@
      "arti": {
       "id": "Dari gas alam tanpa / dengan penangkapan karbon.",
       "en": "From natural gas without / with carbon capture."
-     }
+     },
+     "kat": "teknis"
     },
     {
      "istilah": {
@@ -429,7 +547,8 @@
      "arti": {
       "id": "Alat pemecah air menjadi hidrogen dan oksigen (PEM, alkali, AEM).",
       "en": "Device splitting water into hydrogen and oxygen (PEM, alkaline, AEM)."
-     }
+     },
+     "kat": "teknis"
     },
     {
      "istilah": {
@@ -439,7 +558,8 @@
      "arti": {
       "id": "Green hydrogen plant milik PLN.",
       "en": "PLN green hydrogen plant."
-     }
+     },
+     "kat": "teknis"
     },
     {
      "istilah": {
@@ -449,7 +569,8 @@
      "arti": {
       "id": "Stasiun pengisian hidrogen.",
       "en": "Hydrogen refuelling station."
-     }
+     },
+     "kat": "teknis"
     },
     {
      "istilah": {
@@ -459,7 +580,8 @@
      "arti": {
       "id": "Amonia dari hidrogen hijau, pembawa hidrogen dan pupuk.",
       "en": "Ammonia made from green hydrogen, a carrier and fertiliser."
-     }
+     },
+     "kat": "teknis"
     },
     {
      "istilah": {
@@ -469,7 +591,8 @@
      "arti": {
       "id": "Biaya hidrogen rata-rata per kilogram selama umur proyek.",
       "en": "Levelized cost of hydrogen per kilogram over the project life."
-     }
+     },
+     "kat": "uang"
     },
     {
      "istilah": {
@@ -479,7 +602,8 @@
      "arti": {
       "id": "Sertifikat energi terbarukan yang menjadi dasar klaim listrik hijau.",
       "en": "Renewable energy certificate underpinning a green power claim."
-     }
+     },
+     "kat": "teknis"
     },
     {
      "istilah": {
@@ -489,7 +613,8 @@
      "arti": {
       "id": "Roadmap Hidrogen dan Amonia Nasional 2025.",
       "en": "National Hydrogen and Ammonia Roadmap 2025."
-     }
+     },
+     "kat": "teknis"
     },
     {
      "istilah": {
@@ -499,7 +624,8 @@
      "arti": {
       "id": "Mencampur hidrogen dengan gas di PLTG.",
       "en": "Blending hydrogen with gas in gas turbines."
-     }
+     },
+     "kat": "teknis"
     },
     {
      "istilah": {
@@ -509,7 +635,8 @@
      "arti": {
       "id": "Normal meter kubik, satuan volume gas.",
       "en": "Normal cubic metre, a gas volume unit."
-     }
+     },
+     "kat": "satuan"
     },
     {
      "istilah": {
@@ -519,7 +646,8 @@
      "arti": {
       "id": "Nilai kalor bawah; hidrogen sekitar 33,3 kWh per kg.",
       "en": "Lower heating value; hydrogen is about 33.3 kWh per kg."
-     }
+     },
+     "kat": "teknis"
     },
     {
      "istilah": {
@@ -529,7 +657,8 @@
      "arti": {
       "id": "Pembeli yang menandatangani kontrak pembelian jangka panjang.",
       "en": "Buyer signing a long-term purchase contract."
-     }
+     },
+     "kat": "uang"
     },
     {
      "istilah": {
@@ -539,7 +668,8 @@
      "arti": {
       "id": "Keputusan investasi akhir.",
       "en": "Final investment decision."
-     }
+     },
+     "kat": "uang"
     },
     {
      "istilah": {
@@ -549,7 +679,173 @@
      "arti": {
       "id": "Penangkapan dan penyimpanan karbon.",
       "en": "Carbon capture and storage."
-     }
+     },
+     "kat": "teknis"
+    },
+    {
+     "istilah": {
+      "id": "Hidrogen pink / kuning / turkois",
+      "en": "Hidrogen pink / kuning / turkois"
+     },
+     "arti": {
+      "id": "Hidrogen dari nuklir / surya jaringan campuran / pirolisis metana; warna hanyalah label, yang dihitung adalah intensitas karbonnya.",
+      "en": "Hydrogen from nuclear / mixed grid solar / methane pyrolysis; colour is only a label, what counts is carbon intensity."
+     },
+     "kat": "teknis"
+    },
+    {
+     "istilah": {
+      "id": "Hidrogen putih",
+      "en": "Hidrogen putih"
+     },
+     "arti": {
+      "id": "Hidrogen alami yang ditemukan di perut bumi; belum terbukti komersial.",
+      "en": "Natural hydrogen found underground; not yet proven commercial."
+     },
+     "kat": "teknis"
+    },
+    {
+     "istilah": {
+      "id": "SMR / ATR",
+      "en": "SMR / ATR"
+     },
+     "arti": {
+      "id": "Steam methane reforming / autothermal reforming, pembuatan hidrogen dari gas alam.",
+      "en": "Steam methane reforming / autothermal reforming, making hydrogen from natural gas."
+     },
+     "kat": "teknis"
+    },
+    {
+     "istilah": {
+      "id": "Alkalin / PEM / AEM / SOEC",
+      "en": "Alkalin / PEM / AEM / SOEC"
+     },
+     "arti": {
+      "id": "Jenis elektroliser: alkalin murah dan matang; PEM cepat merespons; AEM berkembang; SOEC bersuhu tinggi dan sangat efisien.",
+      "en": "Electrolyser types: alkaline cheap and mature; PEM fast responding; AEM emerging; SOEC high temperature and very efficient."
+     },
+     "kat": "teknis"
+    },
+    {
+     "istilah": {
+      "id": "Faktor kapasitas elektroliser",
+      "en": "Faktor kapasitas elektroliser"
+     },
+     "arti": {
+      "id": "Persen jam setahun elektroliser beroperasi; menentukan sebaran biaya modal per kg.",
+      "en": "Share of hours a year the electrolyser runs; sets the capital cost per kg."
+     },
+     "kat": "teknis"
+    },
+    {
+     "istilah": {
+      "id": "Haber-Bosch",
+      "en": "Haber-Bosch"
+     },
+     "arti": {
+      "id": "Proses pembuatan amonia dari nitrogen dan hidrogen pada suhu dan tekanan tinggi.",
+      "en": "The process making ammonia from nitrogen and hydrogen at high temperature and pressure."
+     },
+     "kat": "teknis"
+    },
+    {
+     "istilah": {
+      "id": "Metanol hijau / e-fuel",
+      "en": "Metanol hijau / e-fuel"
+     },
+     "arti": {
+      "id": "Bahan bakar sintetis dari hidrogen hijau dan CO2 untuk kapal dan pesawat.",
+      "en": "Synthetic fuels from green hydrogen and CO2 for ships and aircraft."
+     },
+     "kat": "teknis"
+    },
+    {
+     "istilah": {
+      "id": "Sel bahan bakar (fuel cell)",
+      "en": "Sel bahan bakar (fuel cell)"
+     },
+     "arti": {
+      "id": "Perangkat yang mengubah hidrogen dan oksigen menjadi listrik dan air.",
+      "en": "A device converting hydrogen and oxygen into electricity and water."
+     },
+     "kat": "teknis"
+    },
+    {
+     "istilah": {
+      "id": "FCEV",
+      "en": "FCEV"
+     },
+     "arti": {
+      "id": "Kendaraan listrik sel bahan bakar, pengisian hidrogen dalam menit.",
+      "en": "Fuel cell electric vehicle, refuelled with hydrogen in minutes."
+     },
+     "kat": "teknis"
+    },
+    {
+     "istilah": {
+      "id": "Pengikatan (offtake agreement)",
+      "en": "Pengikatan (offtake agreement)"
+     },
+     "arti": {
+      "id": "Kontrak pembelian jangka panjang yang menentukan kelayakan pendanaan proyek.",
+      "en": "A long-term purchase contract deciding the bankability of a project."
+     },
+     "kat": "uang"
+    },
+    {
+     "istilah": {
+      "id": "CfD hidrogen",
+      "en": "CfD hidrogen"
+     },
+     "arti": {
+      "id": "Contract for difference yang membayar selisih harga hidrogen hijau dengan acuan fosil.",
+      "en": "A contract for difference paying the gap between green hydrogen and a fossil reference price."
+     },
+     "kat": "uang"
+    },
+    {
+     "istilah": {
+      "id": "Skema sertifikasi (Guarantee of Origin)",
+      "en": "Skema sertifikasi (Guarantee of Origin)"
+     },
+     "arti": {
+      "id": "Sertifikat yang membuktikan jejak karbon hidrogen; belum ada standar nasional Indonesia.",
+      "en": "A certificate proving hydrogen carbon footprint; no Indonesian national standard exists yet."
+     },
+     "kat": "aturan"
+    },
+    {
+     "istilah": {
+      "id": "Embrittlement",
+      "en": "Embrittlement"
+     },
+     "arti": {
+      "id": "Pengerapuhan baja oleh hidrogen yang membatasi pipa dan tangki.",
+      "en": "Hydrogen-caused steel embrittlement that limits pipes and tanks."
+     },
+     "kat": "teknis"
+    },
+    {
+     "istilah": {
+      "id": "Mtpa / ktpa",
+      "en": "Mtpa / ktpa"
+     },
+     "arti": {
+      "id": "Juta ton per tahun / ribu ton per tahun.",
+      "en": "Million tonnes per year / thousand tonnes per year."
+     },
+     "kat": "satuan"
+    },
+    {
+     "istilah": {
+      "id": "Kg per hari",
+      "en": "Kg per hari"
+     },
+     "arti": {
+      "id": "Satuan produksi pilot kecil; 100 kg per hari di Ulubelu.",
+      "en": "Unit of small pilot output; 100 kg a day at Ulubelu."
+     },
+     "kat": "satuan"
     }
    ]
   },
@@ -558,7 +854,9 @@
    "sumber": [
     "dpr",
     "mc",
-    "hrs"
+    "hrs",
+    "ghr25sea",
+    "ed"
    ],
    "paragraf": [
     {
@@ -572,6 +870,14 @@
     {
      "id": "Kunci ekonomi hidrogen hijau adalah harga listrik terbarukan dan pembeli jangka panjang; keduanya terbukti menentukan proyek di luar negeri.",
      "en": "The keys to green hydrogen economics are renewable power price and long-term buyers; both proved decisive in projects abroad."
+    },
+    {
+     "id": "Hidrogen bukan sumber energi tetapi pembawa: ia harus dibuat dari energi lain. Nilainya ada pada tempat listrik langsung tidak bisa masuk, seperti pupuk, kilang, baja, kapal, dan penerbangan.",
+     "en": "Hydrogen is not a source but a carrier: it must be made from other energy. Its value lies where direct electricity cannot reach, such as fertiliser, refining, steel, shipping and aviation."
+    },
+    {
+     "id": "Bagi Indonesia daya tariknya tiga: sudah menjadi konsumen hidrogen abu-abu dalam jumlah besar (pupuk, kilang), punya panas bumi dan hidro untuk listrik hijau stabil, dan berpeluang mengekspor amonia hijau. Kelemahannya: biaya tinggi dan permintaan hijau belum ada.",
+     "en": "For Indonesia the attractions are three: it is already a large consumer of grey hydrogen (fertiliser, refining), has geothermal and hydro for stable green power and could export green ammonia. The weaknesses: high cost and no green demand yet."
     }
    ]
   },
@@ -580,7 +886,8 @@
    "sumber": [
     "ed",
     "dpr",
-    "neomceo"
+    "neomceo",
+    "ghr25"
    ],
    "rumus": [
     {
@@ -594,6 +901,22 @@
     {
      "id": "LCOH = (biaya modal tahunan + biaya operasi + biaya listrik) / kg per tahun",
      "en": "LCOH = (annualised capital + operating + electricity cost) / kg per year"
+    },
+    {
+     "id": "Produksi (kg per tahun) = MW elektroliser x 8.760 x faktor kapasitas x 1000 / konsumsi sistem (kWh per kg)",
+     "en": "Output (kg per year) = electrolyser MW x 8,760 x capacity factor x 1000 / system consumption (kWh per kg)"
+    },
+    {
+     "id": "Amonia (ton) = hidrogen (ton) / 0,18; kebutuhan hidrogen stoikiometri 0,176 ton per ton amonia",
+     "en": "Ammonia (t) = hydrogen (t) / 0.18; stoichiometric hydrogen need 0.176 t per t ammonia"
+    },
+    {
+     "id": "Air (kg) = hidrogen (kg) x 9 stoikiometri, praktis 10 sampai 15 kali",
+     "en": "Water (kg) = hydrogen (kg) x 9 stoichiometric, practically 10 to 15 times"
+    },
+    {
+     "id": "Porsi biaya modal per kg = CAPEX x faktor anuitas / (kg per tahun); bila faktor kapasitas turun separuh, porsi ini naik dua kali",
+     "en": "Capital cost per kg = CAPEX x annuity factor / (kg per year); if capacity factor halves this share doubles"
     }
    ],
    "contoh": [
@@ -608,6 +931,18 @@
     {
      "id": "Dengan asumsi hipotesis konsumsi 50 kWh per kg dan listrik 5 sen USD per kWh, komponen listrik sekitar USD 2.5 per kg; sisanya modal dan operasi menjelaskan LCOH USD 4,3 sampai 8,3 yang dicatat DPR (EST, konsumsi 50 kWh per kg adalah asumsi).",
      "en": "Assuming a hypothetical 50 kWh per kg and power at 5 US cents per kWh, the electricity component is about USD 2.5 per kg; capital and operations explain the USD 4.3 to 8.3 LCOH the DPR records (EST, 50 kWh per kg is an assumption)."
+    },
+    {
+     "id": "Elektroliser hipotesis 100 MW pada faktor kapasitas 50 persen (PLTS) dan 55 kWh per kg menghasilkan 7964 ton hidrogen per tahun (EST). Bandingkan produksi PLN sekitar 203 ton per tahun dari 22 pabrik.",
+     "en": "A hypothetical 100 MW electrolyser at a 50 percent capacity factor (solar) and 55 kWh per kg gives 7964 tonnes of hydrogen a year (EST). Compare PLN's roughly 203 tonnes a year from 22 plants."
+    },
+    {
+     "id": "Untuk 1 juta ton amonia per tahun dibutuhkan sekitar 176 ribu ton hidrogen; pada 55 kWh per kg itu 9.7 TWh listrik (EST).",
+     "en": "One million tonnes of ammonia a year needs about 176 thousand tonnes of hydrogen; at 55 kWh per kg that is 9.7 TWh of electricity (EST)."
+    },
+    {
+     "id": "Biaya instal elektroliser di luar Tiongkok USD 2.000 sampai 2.600 per kW (IEA 2024). Pada 100 MW itu USD 200 sampai 260 juta, setara USD 2.9 sampai 3.8 per kg hanya dari biaya modal (EST, anuitas 0,1168 hipotesis, di luar listrik).",
+     "en": "Electrolyser installed cost outside China is USD 2,000 to 2,600 per kW (IEA 2024). At 100 MW that is USD 200 to 260 million, or USD 2.9 to 3.8 per kg from capital alone (EST, hypothetical annuity 0.1168, excluding power)."
     }
    ]
   },
@@ -617,7 +952,8 @@
     "ed",
     "mc",
     "hrs",
-    "ulu"
+    "ulu",
+    "ghr25sea"
    ],
    "butir": [
     {
@@ -632,7 +968,8 @@
      "pelaku": {
       "id": "PLN, Pertamina Geothermal",
       "en": "PLN, Pertamina Geothermal"
-     }
+     },
+     "peran": "pln"
     },
     {
      "judul": {
@@ -646,7 +983,8 @@
      "pelaku": {
       "id": "Pengembang, penyedia teknologi",
       "en": "Developer, technology provider"
-     }
+     },
+     "peran": "pengembang"
     },
     {
      "judul": {
@@ -660,7 +998,8 @@
      "pelaku": {
       "id": "Pelaku logistik gas",
       "en": "Gas logistics players"
-     }
+     },
+     "peran": "pengembang"
     },
     {
      "judul": {
@@ -674,7 +1013,8 @@
      "pelaku": {
       "id": "PLN, industri, transportasi",
       "en": "PLN, industry, transport"
-     }
+     },
+     "peran": "pln"
     },
     {
      "judul": {
@@ -688,7 +1028,53 @@
      "pelaku": {
       "id": "Belum ada",
       "en": "None yet"
-     }
+     },
+     "peran": "pengembang"
+    },
+    {
+     "judul": {
+      "id": "Sertifikasi dan perdagangan",
+      "en": "Certification and trading"
+     },
+     "isi": {
+      "id": "Sertifikat asal (GoO atau REC) membuktikan listrik hijau; di Indonesia standar sertifikasi hidrogen belum ada.",
+      "en": "Certificates of origin (GoO or REC) prove green power; no hydrogen certification standard exists in Indonesia yet."
+     },
+     "pelaku": {
+      "id": "PLN, ESDM, lembaga sertifikasi",
+      "en": "PLN, Energy Ministry, certifiers"
+     },
+     "peran": "pln"
+    },
+    {
+     "judul": {
+      "id": "Pendanaan dan pengikatan pembeli",
+      "en": "Financing and offtake"
+     },
+     "isi": {
+      "id": "Pembeli jangka panjang (pupuk, kilang) menentukan pendanaan proyek; tanpa pembeli proyek Townsville dihentikan.",
+      "en": "Long-term buyers (fertiliser, refining) decide project finance; without buyers the Townsville project was stopped."
+     },
+     "pelaku": {
+      "id": "Pertamina, produsen pupuk, bank pembangunan",
+      "en": "Pertamina, fertiliser makers, development banks"
+     },
+     "peran": "investor"
+    },
+    {
+     "judul": {
+      "id": "Pelayanan akhir: transportasi, industri, ekspor",
+      "en": "End uses: transport, industry, export"
+     },
+     "isi": {
+      "id": "Stasiun pengisian PLN Senayan, pupuk, kilang, dan amonia ekspor.",
+      "en": "The PLN Senayan station, fertiliser, refining and export ammonia."
+     },
+     "pelaku": {
+      "id": "PLN, Pertamina",
+      "en": "PLN, Pertamina"
+     },
+     "peran": "pln"
     }
    ]
   },
@@ -756,6 +1142,14 @@
      "l": {
       "id": "Lokasi",
       "en": "Location"
+     },
+     "url": "u"
+    },
+    {
+     "k": "kode",
+     "l": {
+      "id": "Kode BPS",
+      "en": "BPS code"
      }
     },
     {
@@ -819,11 +1213,250 @@
     }
    ]
   },
+  "9": {
+   "tipe": "tabel",
+   "per": 10,
+   "sumber": [
+    "ed",
+    "proyek"
+   ],
+   "catatan": {
+    "id": "Organisasi di basis METI yang berkepakaran pada topik ini atau disebut dalam rantai nilai; klik nama untuk profil. Pihak yang belum punya profil di basis tidak ditampilkan di sini.",
+    "en": "Organisations in the METI base with expertise in this topic or named in the value chain; click a name for the profile. Parties without a profile in the base are not shown here."
+   },
+   "kolom": [
+    {
+     "k": "nama",
+     "l": {
+      "id": "Organisasi",
+      "en": "Organisation"
+     },
+     "url": "u"
+    },
+    {
+     "k": "kategori",
+     "l": {
+      "id": "Kategori",
+      "en": "Category"
+     }
+    },
+    {
+     "k": "peran",
+     "l": {
+      "id": "Peran",
+      "en": "Role"
+     }
+    },
+    {
+     "k": "proyek",
+     "l": {
+      "id": "Proyek di basis",
+      "en": "Projects in base"
+     },
+     "num": true,
+     "d": 0
+    },
+    {
+     "k": "mw",
+     "l": {
+      "id": "Kapasitas proyek (MW)",
+      "en": "Project capacity (MW)"
+     },
+     "num": true,
+     "d": 0
+    }
+   ],
+   "baris": [
+    {
+     "nama": "PLN",
+     "id": "su_ed074ff5",
+     "kategori": "BUMN",
+     "peran": {
+      "id": "Produsen 22 GHP dan stasiun pengisian",
+      "en": "Producer of 22 GHPs and a refuelling station"
+     },
+     "proyek": 93,
+     "u": "/o/su_ed074ff5",
+     "mw": 8039
+    },
+    {
+     "nama": "PT PLN Indonesia Power",
+     "id": "p_5a2e7d0c63",
+     "kategori": "BUMN",
+     "peran": {
+      "id": "Pengembang pembangkit",
+      "en": "Power developer"
+     },
+     "proyek": 18,
+     "u": "/o/p_5a2e7d0c63",
+     "mw": 2397
+    },
+    {
+     "nama": "PT Pertamina Geothermal Energy Tbk",
+     "id": "p_dda1e51dae",
+     "kategori": "Swasta",
+     "peran": {
+      "id": "Pilot hidrogen hijau Ulubelu",
+      "en": "Ulubelu green hydrogen pilot"
+     },
+     "proyek": 11,
+     "u": "/o/p_dda1e51dae",
+     "mw": 784
+    },
+    {
+     "nama": "ACWA Power",
+     "id": "p_0e6d34a26d",
+     "kategori": "Perusahaan Internasional di Indonesia",
+     "peran": {
+      "id": "Pengembang hidrogen hijau internasional",
+      "en": "International green hydrogen developer"
+     },
+     "proyek": 3,
+     "u": "/o/p_0e6d34a26d",
+     "mw": 110
+    },
+    {
+     "nama": "Kementerian Energi dan Sumber Daya Mineral",
+     "id": "l_7278e0528a",
+     "kategori": "Kementerian dan Lembaga Negara",
+     "peran": {
+      "id": "Regulator Strategi Hidrogen Nasional",
+      "en": "Regulator of the National Hydrogen Strategy"
+     },
+     "proyek": 2,
+     "u": "/o/l_7278e0528a",
+     "mw": 0
+    },
+    {
+     "nama": "PT Pertamina (Persero)",
+     "id": "p_b1c52ad7b0",
+     "kategori": "BUMN",
+     "peran": {
+      "id": "Pengolah dan konsumen hidrogen abu-abu",
+      "en": "Processor and consumer of grey hydrogen"
+     },
+     "proyek": 2,
+     "u": "/o/p_b1c52ad7b0",
+     "mw": 220
+    },
+    {
+     "nama": "Masdar",
+     "id": "p_45c7d8a27f",
+     "kategori": "Perusahaan Internasional di Indonesia",
+     "peran": {
+      "id": "Pengembang energi bersih internasional",
+      "en": "International clean energy developer"
+     },
+     "proyek": 1,
+     "u": "/o/p_45c7d8a27f",
+     "mw": 192
+    },
+    {
+     "nama": "Badan Riset dan Inovasi Nasional",
+     "id": "l_973f60de15",
+     "kategori": "Kementerian dan Lembaga Negara",
+     "peran": {
+      "id": "Riset teknologi hidrogen",
+      "en": "Hydrogen technology research"
+     },
+     "proyek": 0,
+     "u": "/o/l_973f60de15",
+     "mw": 0
+    },
+    {
+     "nama": "Hyundai Motor Group",
+     "id": "in_dfb3ec26f0",
+     "kategori": "Perusahaan Internasional di Indonesia",
+     "peran": {
+      "id": "Produsen FCEV dan sel bahan bakar",
+      "en": "FCEV and fuel cell maker"
+     },
+     "proyek": 0,
+     "u": "/o/in_dfb3ec26f0",
+     "mw": 0
+    },
+    {
+     "nama": "Institut Teknologi Bandung - Pusat Studi Energi (Center for Renewable Energy Studies)",
+     "id": "l_07dd603a7c",
+     "kategori": "Perguruan Tinggi",
+     "peran": {
+      "id": "Pusat studi",
+      "en": "Study centre"
+     },
+     "proyek": 0,
+     "u": "/o/l_07dd603a7c",
+     "mw": 0
+    },
+    {
+     "nama": "PT Medco Energi Internasional Tbk",
+     "id": "p_9de27fd5b9",
+     "kategori": "Swasta",
+     "peran": {
+      "id": "Pengembang energi",
+      "en": "Energy developer"
+     },
+     "proyek": 0,
+     "u": "/o/p_9de27fd5b9",
+     "mw": 0
+    },
+    {
+     "nama": "PT Pertamina New & Renewable Energy",
+     "id": "p_10e0dde689",
+     "kategori": "BUMN",
+     "peran": {
+      "id": "Pengembang hidrogen dan energi baru",
+      "en": "Hydrogen and new energy developer"
+     },
+     "proyek": 0,
+     "u": "/o/p_10e0dde689",
+     "mw": 0
+    },
+    {
+     "nama": "Pusat Studi Energi Universitas Gadjah Mada",
+     "id": "l_4164507db1",
+     "kategori": "Perguruan Tinggi",
+     "peran": {
+      "id": "Pusat studi",
+      "en": "Study centre"
+     },
+     "proyek": 0,
+     "u": "/o/l_4164507db1",
+     "mw": 0
+    },
+    {
+     "nama": "Shell",
+     "id": "in_b87ab519c7",
+     "kategori": "Perusahaan Internasional di Indonesia",
+     "peran": {
+      "id": "Energi internasional",
+      "en": "International energy company"
+     },
+     "proyek": 0,
+     "u": "/o/in_b87ab519c7",
+     "mw": 0
+    },
+    {
+     "nama": "Siemens Energy",
+     "id": "in_34901d69af",
+     "kategori": "Perusahaan Internasional di Indonesia",
+     "peran": {
+      "id": "Pemasok elektroliser dan turbin",
+      "en": "Electrolyser and turbine supplier"
+     },
+     "proyek": 0,
+     "u": "/o/in_34901d69af",
+     "mw": 0
+    }
+   ]
+  },
   "11": {
    "tipe": "teks",
    "sumber": [
     "dpr",
-    "hrs"
+    "hrs",
+    "ghr25",
+    "ghr25sea",
+    "ibp"
    ],
    "paragraf": [
     {
@@ -833,6 +1466,22 @@
     {
      "id": "Dari 203 ton, 128 ton dialokasikan untuk transportasi menurut Indonesia Business Post; sisanya untuk pendingin generator dan kebutuhan internal PLN. DPR mencatat belum ada kewajiban pemanfaatan hidrogen hijau di sektor tertentu sehingga pasar domestik belum berkembang.",
      "en": "Of the 203 tonnes, 128 are allocated to transport per Indonesia Business Post; the rest is for generator cooling and PLN internal needs. The DPR notes there is no mandatory use of green hydrogen in any sector so the domestic market has not developed."
+    },
+    {
+     "id": "Skala global: permintaan hampir 100 Mt pada 2024; hidrogen rendah emisi kurang dari 1 persen, tumbuh 10 persen setahun, menuju 1 Mt pada 2025 (IEA). Indonesia: produksi PLN 203 ton setara sekitar 0.0152 persen dari perkiraan permintaan 1.3 Mt (EST).",
+     "en": "Global scale: demand nearly 100 Mt in 2024; low-emissions hydrogen under 1 percent, growing 10 percent a year toward 1 Mt in 2025 (IEA). Indonesia: PLN output of 203 tonnes is about 0.0152 percent of the estimated 1.3 Mt demand (EST)."
+    },
+    {
+     "id": "Jalur proyek: Asia Tenggara memiliki sekitar 480 ktpa proyek rendah emisi sampai 2030, lebih dari 90 persen di Indonesia dan Malaysia, dan hanya 6 persen telah FID (IEA). Dua proyek menyumbang hampir separuhnya.",
+     "en": "Pipeline: Southeast Asia has about 480 ktpa of low-emissions projects to 2030, over 90 percent in Indonesia and Malaysia, and only 6 percent has reached FID (IEA). Two projects account for nearly half."
+    },
+    {
+     "id": "Biaya: DPR mencatat USD 4,3 sampai 8,3 per kg dari PLTS, menuju sekitar USD 2 per kg sebelum 2040; IEA mencatat kesenjangan dengan hidrogen fosil melebar di 2023-2025 karena gas murah dan elektroliser mahal, tetapi menyempit menuju 2030.",
+     "en": "Cost: the DPR records USD 4.3 to 8.3 per kg from solar, heading to about USD 2 per kg before 2040; the IEA records the gap with fossil hydrogen widened in 2023-2025 because of cheap gas and costly electrolysers but narrows toward 2030."
+    },
+    {
+     "id": "Peta jalan: RHAN 2025 membagi inisiasi 2025-2030, integrasi 2031-2044, akselerasi 2045-2060 dengan target permintaan 2060 antara 9,9 dan 11,7 juta ton per tahun (dua sumber berbeda).",
+     "en": "Roadmap: the 2025 RHAN splits initiation 2025-2030, integration 2031-2044 and acceleration 2045-2060 with 2060 demand targets between 9.9 and 11.7 million tonnes a year (two differing sources)."
     }
    ]
   },
@@ -884,7 +1533,8 @@
      "st": {
       "id": "berlaku sebagai strategi",
       "en": "in force as strategy"
-     }
+     },
+     "id": "lokal-431"
     },
     {
      "dok": "RHAN 2025",
@@ -895,7 +1545,8 @@
      "st": {
       "id": "peta jalan",
       "en": "roadmap"
-     }
+     },
+     "id": "lokal-431"
     },
     {
      "dok": {
@@ -909,7 +1560,8 @@
      "st": {
       "id": "belum ada",
       "en": "not yet"
-     }
+     },
+     "id": "lokal-431"
     },
     {
      "dok": {
@@ -923,7 +1575,28 @@
      "st": {
       "id": "belum ada",
       "en": "not yet"
-     }
+     },
+     "id": "lokal-431"
+    },
+    {
+     "dok": "Perpres 14/2024",
+     "ttg": {
+      "id": "Penangkapan dan penyimpanan karbon (CCS), relevan untuk hidrogen biru",
+      "en": "Carbon capture and storage (CCS), relevant to blue hydrogen"
+     },
+     "st": "berlaku",
+     "u": "/regulasi?id=perpres-14-2024",
+     "id": "perpres-14-2024"
+    },
+    {
+     "dok": "Perpres 110/2025",
+     "ttg": {
+      "id": "Instrumen nilai ekonomi karbon dan pengendalian emisi gas rumah kaca",
+      "en": "Carbon economic value instruments and greenhouse gas control"
+     },
+     "st": "berlaku",
+     "u": "/regulasi?id=perpres-110-2025",
+     "id": "perpres-110-2025"
     }
    ]
   },
@@ -937,7 +1610,8 @@
     "bp",
     "dpr",
     "kuqa2",
-    "neom"
+    "neom",
+    "regul"
    ],
    "butir": [
     {
@@ -1011,13 +1685,46 @@
       "en": "NEOM commercial operation target (year only)"
      },
      "url": "https://guest.meed.com/acwa-completes-construction-of-85bn-hydrogen-project/"
+    },
+    {
+     "tanggal": "2024-01-30",
+     "judul": {
+      "id": "Perpres 14/2024: penangkapan dan penyimpanan karbon",
+      "en": "Presidential Reg. 14/2024: carbon capture and storage"
+     },
+     "reg": "perpres-14-2024"
+    },
+    {
+     "tanggal": "2025-10-10",
+     "judul": {
+      "id": "Perpres 110/2025: instrumen nilai ekonomi karbon",
+      "en": "Presidential Reg. 110/2025: carbon economic value instruments"
+     },
+     "reg": "perpres-110-2025"
+    },
+    {
+     "tanggal": "2024-10-01",
+     "judul": {
+      "id": "IEA menerbitkan Global Hydrogen Review 2024 (49 Mtpa potensi 2030; bulan saja)",
+      "en": "IEA publishes Global Hydrogen Review 2024 (49 Mtpa 2030 potential; month only)"
+     },
+     "url": "https://www.iea.org/reports/global-hydrogen-review-2024"
+    },
+    {
+     "tanggal": "2025-09-01",
+     "judul": {
+      "id": "IEA menerbitkan Global Hydrogen Review 2025 (potensi 2030 turun ke 37 Mtpa; bulan saja)",
+      "en": "IEA publishes Global Hydrogen Review 2025 (2030 potential falls to 37 Mtpa; month only)"
+     },
+     "url": "https://www.iea.org/reports/global-hydrogen-review-2025/executive-summary"
     }
    ]
   },
   "14": {
    "tipe": "teks",
    "sumber": [
-    "dpr"
+    "dpr",
+    "ghr25sea"
    ],
    "paragraf": [
     {
@@ -1027,6 +1734,61 @@
     {
      "id": "Rekomendasi DPR: memperkuat regulasi dan insentif fiskal, menetapkan target konsumsi hidrogen hijau untuk industri dan transportasi berat, dan membangun proyek dekat sumber energi dan pasar.",
      "en": "DPR recommendations: strengthen regulation and fiscal incentives, set green hydrogen consumption targets for industry and heavy transport, and build projects close to energy sources and markets."
+    },
+    {
+     "id": "IEA Asia Tenggara: Indonesia, Laos, Malaysia, Singapura, dan Vietnam memiliki strategi hidrogen; peluang kebijakan ada pada pergeseran bahan bakar di pemakaian yang ada dan pada sertifikasi. Indonesia belum memiliki kewajiban pemanfaatan, insentif fiskal, atau sertifikasi (DPR, Oktober 2025).",
+     "en": "IEA Southeast Asia: Indonesia, Laos, Malaysia, Singapore and Viet Nam have hydrogen strategies; the policy opportunity lies in fuel switching in existing uses and certification. Indonesia has no utilisation mandate, fiscal incentive or certification yet (DPR, October 2025)."
+    }
+   ]
+  },
+  "15": {
+   "tipe": "langkah",
+   "sumber": [
+    "dpr",
+    "ed"
+   ],
+   "butir": [
+    {
+     "judul": {
+      "id": "Pilih pembeli dan pasar akhir sebelum elektroliser",
+      "en": "Pick the buyer and end market before the electrolyser"
+     },
+     "isi": {
+      "id": "Tanda tangani pengikatan jangka panjang dengan pabrik pupuk, kilang, atau pengguna transportasi.",
+      "en": "Sign a long-term offtake with a fertiliser plant, refinery or transport user."
+     },
+     "pelaku": {
+      "id": "Pengembang, pembeli",
+      "en": "Developer, buyer"
+     }
+    },
+    {
+     "judul": {
+      "id": "Pastikan listrik hijau dan sertifikat",
+      "en": "Secure green power and certificates"
+     },
+     "isi": {
+      "id": "Kontrak listrik terbarukan atau REC dari PLN; standar sertifikasi hidrogen belum ada.",
+      "en": "Renewable power contract or PLN REC; no hydrogen certification standard yet."
+     },
+     "pelaku": {
+      "id": "Pengembang, PLN",
+      "en": "Developer, PLN"
+     }
+    },
+    {
+     "judul": {
+      "id": "Izin lingkungan, keselamatan, dan tata ruang",
+      "en": "Environmental, safety and zoning permits"
+     },
+     "isi": {
+      "id": "Izin usaha, persetujuan lingkungan, dan kajian keselamatan tangki bertekanan.",
+      "en": "Business licence, environmental approval and pressurised tank safety review."
+     },
+     "pelaku": {
+      "id": "Pengembang, ESDM, KLH",
+      "en": "Developer, Energy Ministry, Environment Ministry"
+     }
     }
    ]
   },
@@ -1054,7 +1816,9 @@
     "dpr",
     "kuqa",
     "fh2r",
-    "neomceo"
+    "neomceo",
+    "ghr25",
+    "ghr25sea"
    ],
    "paragraf": [
     {
@@ -1064,6 +1828,38 @@
     {
      "id": "Skala: NEOM menargetkan sekitar 600 ton per hari. Kuqa menunjukkan risiko ramp-up: laporan menyebut sekitar 35 persen dari output harapan pada 12 bulan pertama dan target 20.000 ton per tahun tertunda hingga 2025.",
      "en": "Scale: NEOM targets about 600 tonnes a day. Kuqa shows ramp-up risk: reports cite about 35 percent of expected output in the first 12 months and the 20,000 tonnes a year target delayed to 2025."
+    },
+    {
+     "id": "1. Elektroliser: kapasitas dunia 2 GW pada 2024 dan menambah lebih dari 1 GW sampai Juli 2025; Tiongkok memegang 65 persen kapasitas terpasang dan FID, dan hampir 60 persen kapasitas pabrikan (IEA).",
+     "en": "1. Electrolysers: world capacity 2 GW in 2024, adding over 1 GW through July 2025; China holds 65 percent of installed and FID capacity and nearly 60 percent of manufacturing capacity (IEA)."
+    },
+    {
+     "id": "2. Kelebihan pasokan elektroliser: kapasitas pabrik Tiongkok 20 GW per tahun jauh di atas permintaan 2 GW pada 2024, menandakan konsolidasi.",
+     "en": "2. Electrolyser oversupply: Chinese factory capacity of 20 GW a year far exceeds 2024 demand of 2 GW, signalling consolidation."
+    },
+    {
+     "id": "3. AEM dan elektroliser tanpa logam mulia: pilot Ulubelu memakai AEM.",
+     "en": "3. AEM and platinum-group-free electrolysers: the Ulubelu pilot uses AEM."
+    },
+    {
+     "id": "4. Amonia hijau sebagai bahan bakar kapal dan pembangkit: uji bunkering di Singapura dan co-firing amonia di PLTU Jepang.",
+     "en": "4. Green ammonia as ship and power fuel: bunkering trials in Singapore and ammonia co-firing in Japanese coal plants."
+    },
+    {
+     "id": "5. Baja berbasis hidrogen: peluang Indonesia dan Vietnam sebagai produsen baja dengan bijih besi, tetapi bersaing dengan Tiongkok (IEA).",
+     "en": "5. Hydrogen-based steel: an opportunity for Indonesia and Viet Nam as steel producers with iron ore, but competing with China (IEA)."
+    },
+    {
+     "id": "6. Penyimpanan hidrogen: kavern garam, tangki bertekanan, dan LOHC; pipa khusus hidrogen di Eropa.",
+     "en": "6. Hydrogen storage: salt caverns, pressurised tanks and LOHC; dedicated hydrogen pipelines in Europe."
+    },
+    {
+     "id": "7. Sel bahan bakar untuk truk dan kereta: Hyundai dan lainnya; penggunaan di Indonesia masih terbatas pada stasiun percontohan.",
+     "en": "7. Fuel cells for trucks and trains: Hyundai and others; Indonesian use is limited to pilot stations."
+    },
+    {
+     "id": "8. Pirolisis metana dan hidrogen alami: jalur alternatif tanpa elektroliser; masih tahap awal.",
+     "en": "8. Methane pyrolysis and natural hydrogen: alternative routes without electrolysers; still early stage."
     }
    ]
   },
@@ -1322,7 +2118,8 @@
       "id": "proyek",
       "en": "project"
      },
-     "u": "https://d-portal.org/ctrack.html#view=act&aid=GB-GOV-1-400399-405"
+     "u": "https://d-portal.org/ctrack.html#view=act&aid=GB-GOV-1-400399-405",
+     "id": "pi_GB_GOV_1_400399_405"
     },
     {
      "nama": "Establishment of hydrogen mobility ecosystem in West Java, Indonesia",
@@ -1331,7 +2128,8 @@
       "id": "proyek",
       "en": "project"
      },
-     "u": "https://d-portal.org/ctrack.html#view=act&aid=KR-GOV-120-1480000_2026_005"
+     "u": "https://d-portal.org/ctrack.html#view=act&aid=KR-GOV-120-1480000_2026_005",
+     "id": "pi_KR_GOV_120_1480000_2026_005"
     },
     {
      "nama": "Study into green hydrogen location mapping in West Java",
@@ -1340,7 +2138,8 @@
       "id": "proyek",
       "en": "project"
      },
-     "u": "https://d-portal.org/ctrack.html#view=act&aid=NL-KVK-27378529-CERF24ID4I"
+     "u": "https://d-portal.org/ctrack.html#view=act&aid=NL-KVK-27378529-CERF24ID4I",
+     "id": "pi_NL_KVK_27378529_CERF24ID4I"
     },
     {
      "nama": "World Hydrogen Summit 2024 tickets Indonesian delegation",
@@ -1349,7 +2148,8 @@
       "id": "proyek",
       "en": "project"
      },
-     "u": "https://d-portal.org/ctrack.html#view=act&aid=NL-KVK-27378529-CERF24NL2O"
+     "u": "https://d-portal.org/ctrack.html#view=act&aid=NL-KVK-27378529-CERF24NL2O",
+     "id": "pi_NL_KVK_27378529_CERF24NL2O"
     },
     {
      "nama": "Advice on Green Hydrogen Location Mapping study Indonesia",
@@ -1358,7 +2158,8 @@
       "id": "proyek",
       "en": "project"
      },
-     "u": "https://d-portal.org/ctrack.html#view=act&aid=NL-KVK-27378529-CERF25ID2O"
+     "u": "https://d-portal.org/ctrack.html#view=act&aid=NL-KVK-27378529-CERF25ID2O",
+     "id": "pi_NL_KVK_27378529_CERF25ID2O"
     }
    ]
   },
@@ -1518,7 +2319,9 @@
     "mc",
     "fort2",
     "repay",
-    "neom"
+    "neom",
+    "ghr25sea",
+    "ghr25"
    ],
    "paragraf": [
     {
@@ -1528,6 +2331,10 @@
     {
      "id": "Hype dan koreksi: Fortescue menyatakan target nol bersih tetap berjalan meski proyeknya dibatalkan, sementara pemerintah Australia dilaporkan meminta hibah proyek Gladstone dikembalikan. NEOM tetap berlanjut meski jadwalnya bergeser dari 2026 ke 2027.",
      "en": "Hype and correction: Fortescue says its real zero target stays on track despite cancelling projects, while the Australian government was reported to ask for the Gladstone grant to be repaid. NEOM continues although its schedule slipped from 2026 to 2027."
+    },
+    {
+     "id": "Efisiensi dan prioritas: pengkritik menyebut hidrogen boros energi untuk pemakaian yang dapat dilistriki langsung; pendukung menegaskan hidrogen hanya untuk sektor sulit diistrikkan. Konsensus IEA: prioritas pada pemakaian yang ada (kilang, amonia).",
+     "en": "Efficiency and priority: critics say hydrogen wastes energy where direct electrification works; supporters stress it is only for hard-to-electrify sectors. The IEA consensus: prioritise existing uses (refining, ammonia)."
     }
    ]
   },
@@ -1628,12 +2435,17 @@
    "sumber": [
     "ed",
     "dpr",
-    "tville"
+    "tville",
+    "ghr25"
    ],
    "paragraf": [
     {
      "id": "Analisis METI (Hipotesis): Pengembang: mulai dari pembeli yang sudah ada (pupuk, kilang, pendingin pembangkit) dan kontrak jangka panjang sebelum membangun elektroliser; proyek Townsville gagal karena tidak ada pembeli. Investor: tunggu standar sertifikasi dan kewajiban pemanfaatan. Pemda: lahan dan air dekat PLTP dan PLTS lebih menarik daripada ekspor jauh. Akademisi: elektrolisis AEM, penyimpanan, dan LCOH lokal.",
      "en": "METI analysis (Hypothesis): Developers: start with existing buyers (fertiliser, refineries, plant cooling) and long-term contracts before building electrolysers; the Townsville project failed for lack of buyers. Investors: wait for a certification standard and a use mandate. Local government: land and water near geothermal and solar plants are more attractive than distant export. Academics: AEM electrolysis, storage and local LCOH."
+    },
+    {
+     "id": "Per peran: pengembang mengamankan pembeli lebih dulu; pemasok elektroliser menghadapi konsolidasi dan harus bersaing dengan Tiongkok; pemda menyiapkan kawasan industri dekat sumber terbarukan; akademisi mengembangkan standar sertifikasi dan data biaya lokal; investor menunggu kebijakan permintaan.",
+     "en": "By role: developers secure buyers first; electrolyser suppliers face consolidation and competition from China; local governments prepare industrial areas near renewable sources; academics develop certification standards and local cost data; investors wait for demand policy."
     }
    ]
   },
@@ -1643,12 +2455,18 @@
     "ulu",
     "dpr",
     "neom",
-    "ruuebet"
+    "ruuebet",
+    "ghr25sea",
+    "ghr25"
    ],
    "paragraf": [
     {
      "id": "Yang perlu dipantau: (1) operasi pilot Ulubelu pada 2026; (2) standar sertifikasi dan insentif fiskal hidrogen; (3) pembahasan RUU EBET; (4) operasi komersial NEOM 2027 sebagai ujian skala; (5) pembatalan atau FID baru di Australia dan Asia.",
      "en": "To watch: (1) Ulubelu pilot operation in 2026; (2) certification standard and hydrogen fiscal incentives; (3) RUU EBET deliberation; (4) NEOM commercial operation in 2027 as a scale test; (5) new cancellations or FIDs in Australia and Asia."
+    },
+    {
+     "id": "Tambahan daftar pantau: (6) keputusan FID proyek hidrogen Asia Tenggara dari jalur 480 ktpa; (7) pembaruan IEA Global Hydrogen Review 2026; (8) rekonsiliasi angka permintaan Indonesia; (9) skema sertifikasi nasional; (10) harga elektroliser dan konsolidasi pabrikan.",
+     "en": "Added watch list: (6) FID decisions on Southeast Asian hydrogen projects from the 480 ktpa pipeline; (7) the IEA Global Hydrogen Review 2026 update; (8) reconciliation of Indonesian demand figures; (9) a national certification scheme; (10) electrolyser prices and manufacturer consolidation."
     }
    ]
   },

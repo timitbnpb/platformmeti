@@ -24,16 +24,16 @@ const TAB = [
   { href: "/", kunci: "nav.beranda", ikon: "beranda", hak: null },
   { kunci: "nav.insight", ikon: "insight", hak: null, grup: [
     { href: "/insight", kunci: "nav.insight_ringkasan", ikon: "kajian" },
-    { href: "/rapor", kunci: "nav.rapor", ikon: "presentasi" }, { href: "/pelacak", kunci: "nav.pelacak", ikon: "tingkat" }, { href: "/rantai", kunci: "nav.rantai", ikon: "rantai" }, { href: "/asean", kunci: "nav.asean", ikon: "asean" }, { href: "/jejaring", kunci: "nav.jejaring", ikon: "tautan" }, { href: "/kuadran", kunci: "nav.kuadran", ikon: "status" }, { href: "/transisi", kunci: "nav.transisi", ikon: "tek-panas" }, { href: "/strategi", kunci: "nav.strategi", ikon: "analisis" }, { href: "/topik", kunci: "nav.topik", ikon: "topik" }, { href: "/metode", kunci: "nav.sub.metode", ikon: "metode" }] },
+    { href: "/rapor", kunci: "nav.rapor", ikon: "presentasi" }, { href: "/pelacak", kunci: "nav.pelacak", ikon: "tingkat" }, { href: "/pelacak-proyek", kunci: "pt2.nav", ikon: "petir" }, { href: "/rantai", kunci: "nav.rantai", ikon: "rantai" }, { href: "/asean", kunci: "nav.asean", ikon: "asean" }, { href: "/jejaring", kunci: "nav.jejaring", ikon: "tautan" }, { href: "/kuadran", kunci: "nav.kuadran", ikon: "status" }, { href: "/transisi", kunci: "nav.transisi", ikon: "tek-panas" }, { href: "/strategi", kunci: "nav.strategi", ikon: "analisis" }, { href: "/topik", kunci: "nav.topik", ikon: "topik" }, { href: "/metode", kunci: "nav.sub.metode", ikon: "metode" }] },
   { kunci: "nav.wilayah", ikon: "wilayah", hak: null, grup: [
     { href: "/wilayah", kunci: "nav.wilayah_peta", ikon: "peta" }, { href: "/proyek", kunci: "nav.proyek", ikon: "proyek" },
     { href: "/program", kunci: "nav.program", ikon: "bintang" }, { href: "/peluang", kunci: "nav.peluang", ikon: "kompas" },
     { href: "/biaya-listrik", kunci: "nav.biaya_listrik", ikon: "kalkulator" }, { href: "/keuangan-hijau", kunci: "nav.keuangan_hijau", ikon: "tek-bio" }, { href: "/pasar-listrik-hijau", kunci: "nav.pasar_hijau", ikon: "tek-listrik" },
-    { href: "/indeks", kunci: "nav.indeks", ikon: "grafik" }] },
+    { href: "/indeks", kunci: "nav.indeks", ikon: "grafik" }, { href: "/radar", kunci: "nav.radar", ikon: "berlian" }] },
   { kunci: "nav.direktori", ikon: "direktori", hak: "masuk", grup: [
     { href: "/direktori?tampil=pakar", kunci: "nav.d_orang", ikon: "orang" }, { href: "/direktori?tampil=lembaga", kunci: "nav.d_org", ikon: "gedung" },
     { href: "/direktori?tampil=inovasi", kunci: "nav.d_inovasi", ikon: "tek-surya" }, { href: "/direktori?tampil=riset", kunci: "nav.d_riset", ikon: "wisuda" },
-    { href: "/direktori?tampil=sistem_data", kunci: "nav.d_sistem", ikon: "csv" }, { href: "/direktori?tampil=pendanaan", kunci: "nav.d_pendanaan", ikon: "kartu" }] },
+    { href: "/direktori?tampil=sistem_data", kunci: "nav.d_sistem", ikon: "csv" }, { href: "/direktori?tampil=pendanaan", kunci: "nav.d_pendanaan", ikon: "kartu" }, { href: "/kerja", kunci: "nav.kerja", ikon: "koper" }] },
   { kunci: "nav.pustaka", ikon: "buku", hak: null, grup: [
     { href: "/regulasi", kunci: "nav.regulasi", ikon: "regulasi" }, { href: "/pustaka", kunci: "nav.dokumen", ikon: "pdf" }, { href: "/dokumen-data", kunci: "nav.dokumen_data", ikon: "tabel" }] },
   { kunci: "nav.media", ikon: "kamera", hak: null, grup: [

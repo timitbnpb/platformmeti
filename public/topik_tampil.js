@@ -147,7 +147,7 @@ export function kartuKasus(k, bantu) {
   const angka = (k.angka || []).length ? `<ul class="jm-tp-angka">${k.angka.map((a) => { const lab = tok(a.label); return `<li><span class="jm-tp-ub-ik">${ikon(ikonAngka(lab + " " + L(a.satuan)), 18)}</span><b>${esc(typeof a.nilai === "number" ? num(a.nilai, a.d || 0) : tok(a.nilai))}${a.satuan ? `<small>${esc(L(a.satuan))}</small>` : ""}</b><span>${esc(lab)}${a.est ? ` <span class="jm-pil">EST</span>` : ""}</span></li>`; }).join("")}</ul>` : "";
   const pilJenis = `<span class="jm-pil ${gagal ? "jm-pil-warn" : "jm-pil-ok"} jm-tp-pil-i">${ikon(gagal ? "peringatan" : "centang", 14)}<span>${esc(u(S.ui.s["kasus." + k.jenis] ? "kasus." + k.jenis : gagal ? "kasus.gagal" : "kasus.berhasil"))}</span></span>`;
   const pilNegara = `<span class="jm-pil jm-tp-pil-i">${bendera(iso, 16) || ikon("globe", 14)}<span>${esc(u(lokal ? "kasus.lokal" : "kasus.luar"))}</span></span>`;
-  return bantu(k, { gagal, sampul, profil, angka, pilJenis, pilNegara, lok });
+  return bantu(k, { buruk: gagal, sampul, profil, angka, pilJenis, pilNegara, lok });
 }
 export { saringGlosarium, hitungKalk };
 

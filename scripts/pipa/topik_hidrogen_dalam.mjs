@@ -127,4 +127,5 @@ export function perdalam(bab, SUMBER) {
   ke(bab, '32', 'teks', 'paragraf', P(
     ['Tambahan daftar pantau: (6) keputusan FID proyek hidrogen Asia Tenggara dari jalur 480 ktpa; (7) pembaruan IEA Global Hydrogen Review 2026; (8) rekonsiliasi angka permintaan Indonesia; (9) skema sertifikasi nasional; (10) harga elektroliser dan konsolidasi pabrikan.', 'Added watch list: (6) FID decisions on Southeast Asian hydrogen projects from the 480 ktpa pipeline; (7) the IEA Global Hydrogen Review 2026 update; (8) reconciliation of Indonesian demand figures; (9) a national certification scheme; (10) electrolyser prices and manufacturer consolidation.'],
   ), sm('ghr25sea', 'ghr25'));
+  return {};
 }

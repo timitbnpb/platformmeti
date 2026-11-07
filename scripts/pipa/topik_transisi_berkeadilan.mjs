@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 // Naskah topik Transisi berkeadilan -> public/data/topik/transisi_berkeadilan.json (TOPIK-SKEMA.md). Pakai: node scripts/pipa/topik_transisi_berkeadilan.mjs [--selftest]
 // Teks dari sumber publik yang dibaca 8 Nov 2026; tabel proyek JETP dari public/data/jetp_cipp.json. Sintesis berlabel "Analisis METI (Hipotesis)".
+import { dalam } from './topik_transisi_berkeadilan_dalam.mjs';
 import { T, hp, S, ED, baca, regS, nf, SPUBFIN, teks, faq, glos, rumus, langkah, tabel, grafik, linimasa, kol, L, kunci, kas, rakit, selftest as st, jalankan, tabelRegulasi, kolRegulasi, validasi as val } from './topik_enam_lib.mjs';
 
 const jetp = baca('public/data/jetp_cipp.json');
@@ -29,7 +30,7 @@ export const SUMBER = {
 };
 const jr = jetp.baris;
 
-export function susun() {
+function susunAsal() {
   const bab = {};
   bab['2'] = faq(['cpi', 'jp_rusak', 'batal'], [
     ['Apa itu JETP Indonesia?', 'What is the Indonesia JETP?', 'Kemitraan transisi energi berkeadilan senilai USD 20 miliar dari kelompok mitra internasional (IPG); Jakarta Post/The Conversation (2 Jun 2026) menyebut total komitmen USD 21,4 miliar.', 'A just energy transition partnership of USD 20 billion from an international partners group (IPG); the Jakarta Post/The Conversation (2 Jun 2026) puts total pledges at USD 21.4 billion.'],
@@ -250,6 +251,7 @@ export function susun() {
     sumber: SUMBER, bab });
 }
 
+export function susun() { return dalam(susunAsal()); }
 export const validasi = val;
 export const selftest = () => st(susun);
 jalankan(import.meta.url, 'transisi_berkeadilan', susun);

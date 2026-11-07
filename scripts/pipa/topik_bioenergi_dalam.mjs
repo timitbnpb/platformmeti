@@ -204,4 +204,5 @@ export function perdalam(bab, SUMBER, ctx) {
   ke(bab, '32', 'teks', 'paragraf', P(
     ['Daftar pantau 2026 sampai 2027: (1) keputusan B50 dan jadwal; (2) realisasi co-firing dibanding 3,65 juta ton; (3) tarif pungutan ekspor CPO; (4) mandatori E10 2027 dan pasokan etanol 1,4 juta kL; (5) kemajuan Perpres 40/2023 dan Merauke; (6) pelaksanaan ISPO untuk bioenergi (Permen ESDM 3/2026); (7) RUU EBET; (8) harga cangkang; (9) hasil sengketa WTO DS593 dan RED; (10) pasar kredit karbon untuk metana POME.', 'Watch list 2026 to 2027: (1) B50 decision and schedule; (2) co-firing actuals against 3.65 million tonnes; (3) CPO export levy rate; (4) the 2027 E10 mandate and 1.4 million kL ethanol supply; (5) progress of Presidential Reg. 40/2023 and Merauke; (6) ISPO implementation for bioenergy (Reg. 3/2026); (7) the RUU EBET; (8) shell prices; (9) outcome of WTO DS593 and RED; (10) the carbon credit market for POME methane.'],
   ), sm('b50', 'cof26', 'e10', 'wto593', 'ruuebet'));
+  return { 0: Object.entries(total).map(([y, v]) => [Number(y), rf(v, 0)]) };
 }

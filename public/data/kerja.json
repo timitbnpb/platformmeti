@@ -1,0 +1,1784 @@
+{
+ "diperbarui": "2026-11-07",
+ "tahun": [
+  2025,
+  2026,
+  2027,
+  2028,
+  2029,
+  2030,
+  2031,
+  2032,
+  2033,
+  2034
+ ],
+ "faktor": {
+  "pengali_asia": 2.4,
+  "tabel": {
+   "surya": {
+    "baris": "Solar Photovoltaics",
+    "tahun_bangun": 1,
+    "konstruksi": 13,
+    "om": 0.7
+   },
+   "bayu": {
+    "baris": "Wind onshore",
+    "tahun_bangun": 2,
+    "konstruksi": 3.2,
+    "om": 0.3
+   },
+   "hidro-besar": {
+    "baris": "Hydro-large",
+    "tahun_bangun": 2,
+    "konstruksi": 7.4,
+    "om": 0.2
+   },
+   "hidro-kecil": {
+    "baris": "Hydro-small",
+    "tahun_bangun": 2,
+    "konstruksi": 15.8,
+    "om": 4.9
+   },
+   "panas-bumi": {
+    "baris": "Geothermal",
+    "tahun_bangun": 2,
+    "konstruksi": 6.8,
+    "om": 0.4
+   },
+   "bioenergi": {
+    "baris": "Biomass",
+    "tahun_bangun": 2,
+    "konstruksi": 14,
+    "om": 1.5
+   },
+   "biomassa-sampah": {
+    "baris": "Biomass",
+    "tahun_bangun": 2,
+    "konstruksi": 14,
+    "om": 1.5
+   },
+   "nuklir": {
+    "baris": "Nuclear",
+    "tahun_bangun": 10,
+    "konstruksi": 11.8,
+    "om": 0.6
+   }
+  },
+  "ambang_hidro_kecil": "nama proyek memuat PLTM/PLTMH/mikro (asumsi METI)"
+ },
+ "analisis": {
+  "dasar": "ruptl-2025",
+  "proyek": 221,
+  "mw": 11119,
+  "dikeluarkan": {
+   "penyimpanan_mw": 6641,
+   "tanpa_cod": 0,
+   "tanpa_cod_mw": 0
+  },
+  "per_teknologi": {
+   "hidro": {
+    "2025": {
+     "konstruksi": 9270,
+     "om": 1968
+    },
+    "2026": {
+     "konstruksi": 9208,
+     "om": 2460
+    },
+    "2027": {
+     "konstruksi": 3454,
+     "om": 6650
+    },
+    "2028": {
+     "konstruksi": 2169,
+     "om": 7832
+    },
+    "2029": {
+     "konstruksi": 1168,
+     "om": 8041
+    },
+    "2030": {
+     "konstruksi": 1463,
+     "om": 8202
+    },
+    "2031": {
+     "konstruksi": 2616,
+     "om": 8202
+    },
+    "2032": {
+     "konstruksi": 1154,
+     "om": 8286
+    },
+    "2033": {
+     "konstruksi": 0,
+     "om": 8354
+    },
+    "2034": {
+     "konstruksi": 0,
+     "om": 8354
+    }
+   },
+   "bayu": {
+    "2025": {
+     "konstruksi": 200,
+     "om": 0
+    },
+    "2026": {
+     "konstruksi": 248,
+     "om": 38
+    },
+    "2027": {
+     "konstruksi": 392,
+     "om": 38
+    },
+    "2028": {
+     "konstruksi": 288,
+     "om": 84
+    },
+    "2029": {
+     "konstruksi": 144,
+     "om": 111
+    },
+    "2030": {
+     "konstruksi": 0,
+     "om": 138
+    },
+    "2031": {
+     "konstruksi": 0,
+     "om": 138
+    },
+    "2032": {
+     "konstruksi": 0,
+     "om": 138
+    },
+    "2033": {
+     "konstruksi": 0,
+     "om": 138
+    },
+    "2034": {
+     "konstruksi": 0,
+     "om": 138
+    }
+   },
+   "bioenergi": {
+    "2025": {
+     "konstruksi": 137,
+     "om": 22
+    },
+    "2026": {
+     "konstruksi": 116,
+     "om": 27
+    },
+    "2027": {
+     "konstruksi": 395,
+     "om": 52
+    },
+    "2028": {
+     "konstruksi": 465,
+     "om": 52
+    },
+    "2029": {
+     "konstruksi": 140,
+     "om": 136
+    },
+    "2030": {
+     "konstruksi": 105,
+     "om": 151
+    },
+    "2031": {
+     "konstruksi": 35,
+     "om": 166
+    },
+    "2032": {
+     "konstruksi": 0,
+     "om": 174
+    },
+    "2033": {
+     "konstruksi": 0,
+     "om": 174
+    },
+    "2034": {
+     "konstruksi": 0,
+     "om": 174
+    }
+   },
+   "panas-bumi": {
+    "2025": {
+     "konstruksi": 1560,
+     "om": 87
+    },
+    "2026": {
+     "konstruksi": 2667,
+     "om": 125
+    },
+    "2027": {
+     "konstruksi": 1467,
+     "om": 271
+    },
+    "2028": {
+     "konstruksi": 1506,
+     "om": 439
+    },
+    "2029": {
+     "konstruksi": 2889,
+     "om": 443
+    },
+    "2030": {
+     "konstruksi": 4626,
+     "om": 616
+    },
+    "2031": {
+     "konstruksi": 5908,
+     "om": 783
+    },
+    "2032": {
+     "konstruksi": 2702,
+     "om": 1160
+    },
+    "2033": {
+     "konstruksi": 0,
+     "om": 1478
+    },
+    "2034": {
+     "konstruksi": 0,
+     "om": 1478
+    }
+   },
+   "surya": {
+    "2025": {
+     "konstruksi": 874,
+     "om": 191
+    },
+    "2026": {
+     "konstruksi": 5628,
+     "om": 238
+    },
+    "2027": {
+     "konstruksi": 4298,
+     "om": 541
+    },
+    "2028": {
+     "konstruksi": 4288,
+     "om": 772
+    },
+    "2029": {
+     "konstruksi": 2729,
+     "om": 1003
+    },
+    "2030": {
+     "konstruksi": 136,
+     "om": 1150
+    },
+    "2031": {
+     "konstruksi": 2035,
+     "om": 1157
+    },
+    "2032": {
+     "konstruksi": 9780,
+     "om": 1267
+    },
+    "2033": {
+     "konstruksi": 136,
+     "om": 1794
+    },
+    "2034": {
+     "konstruksi": 0,
+     "om": 1801
+    }
+   },
+   "nuklir": {
+    "2025": {
+     "konstruksi": 295,
+     "om": 0
+    },
+    "2026": {
+     "konstruksi": 295,
+     "om": 0
+    },
+    "2027": {
+     "konstruksi": 295,
+     "om": 0
+    },
+    "2028": {
+     "konstruksi": 295,
+     "om": 0
+    },
+    "2029": {
+     "konstruksi": 295,
+     "om": 0
+    },
+    "2030": {
+     "konstruksi": 295,
+     "om": 0
+    },
+    "2031": {
+     "konstruksi": 295,
+     "om": 0
+    },
+    "2032": {
+     "konstruksi": 0,
+     "om": 150
+    },
+    "2033": {
+     "konstruksi": 0,
+     "om": 150
+    },
+    "2034": {
+     "konstruksi": 0,
+     "om": 150
+    }
+   },
+   "biomassa-sampah": {
+    "2025": {
+     "konstruksi": 124,
+     "om": 0
+    },
+    "2026": {
+     "konstruksi": 245,
+     "om": 27
+    },
+    "2027": {
+     "konstruksi": 245,
+     "om": 27
+    },
+    "2028": {
+     "konstruksi": 0,
+     "om": 79
+    },
+    "2029": {
+     "konstruksi": 0,
+     "om": 79
+    },
+    "2030": {
+     "konstruksi": 0,
+     "om": 79
+    },
+    "2031": {
+     "konstruksi": 0,
+     "om": 79
+    },
+    "2032": {
+     "konstruksi": 0,
+     "om": 79
+    },
+    "2033": {
+     "konstruksi": 0,
+     "om": 79
+    },
+    "2034": {
+     "konstruksi": 0,
+     "om": 79
+    }
+   }
+  },
+  "per_provinsi": {
+   "11": {
+    "2025": {
+     "konstruksi": 552,
+     "om": 32
+    },
+    "2026": {
+     "konstruksi": 938,
+     "om": 53
+    },
+    "2027": {
+     "konstruksi": 1028,
+     "om": 301
+    },
+    "2028": {
+     "konstruksi": 986,
+     "om": 551
+    },
+    "2029": {
+     "konstruksi": 453,
+     "om": 625
+    },
+    "2030": {
+     "konstruksi": 0,
+     "om": 649
+    },
+    "2031": {
+     "konstruksi": 17,
+     "om": 649
+    },
+    "2032": {
+     "konstruksi": 7843,
+     "om": 649
+    },
+    "2033": {
+     "konstruksi": 0,
+     "om": 1072
+    },
+    "2034": {
+     "konstruksi": 0,
+     "om": 1072
+    }
+   },
+   "12": {
+    "2025": {
+     "konstruksi": 2899,
+     "om": 279
+    },
+    "2026": {
+     "konstruksi": 1948,
+     "om": 585
+    },
+    "2027": {
+     "konstruksi": 1302,
+     "om": 828
+    },
+    "2028": {
+     "konstruksi": 130,
+     "om": 1636
+    },
+    "2029": {
+     "konstruksi": 130,
+     "om": 1643
+    },
+    "2030": {
+     "konstruksi": 0,
+     "om": 1650
+    },
+    "2031": {
+     "konstruksi": 0,
+     "om": 1650
+    },
+    "2032": {
+     "konstruksi": 0,
+     "om": 1650
+    },
+    "2033": {
+     "konstruksi": 0,
+     "om": 1650
+    },
+    "2034": {
+     "konstruksi": 0,
+     "om": 1650
+    }
+   },
+   "13": {
+    "2025": {
+     "konstruksi": 48,
+     "om": 54
+    },
+    "2026": {
+     "konstruksi": 238,
+     "om": 84
+    },
+    "2027": {
+     "konstruksi": 401,
+     "om": 84
+    },
+    "2028": {
+     "konstruksi": 163,
+     "om": 112
+    },
+    "2029": {
+     "konstruksi": 0,
+     "om": 121
+    },
+    "2030": {
+     "konstruksi": 0,
+     "om": 121
+    },
+    "2031": {
+     "konstruksi": 238,
+     "om": 121
+    },
+    "2032": {
+     "konstruksi": 553,
+     "om": 121
+    },
+    "2033": {
+     "konstruksi": 0,
+     "om": 166
+    },
+    "2034": {
+     "konstruksi": 0,
+     "om": 166
+    }
+   },
+   "14": {
+    "2025": {
+     "konstruksi": 46,
+     "om": 0
+    },
+    "2026": {
+     "konstruksi": 88,
+     "om": 0
+    },
+    "2027": {
+     "konstruksi": 0,
+     "om": 12
+    },
+    "2028": {
+     "konstruksi": 0,
+     "om": 12
+    },
+    "2029": {
+     "konstruksi": 0,
+     "om": 12
+    },
+    "2030": {
+     "konstruksi": 0,
+     "om": 12
+    },
+    "2031": {
+     "konstruksi": 0,
+     "om": 12
+    },
+    "2032": {
+     "konstruksi": 42,
+     "om": 12
+    },
+    "2033": {
+     "konstruksi": 0,
+     "om": 14
+    },
+    "2034": {
+     "konstruksi": 0,
+     "om": 14
+    }
+   },
+   "15": {
+    "2025": {
+     "konstruksi": 0,
+     "om": 70
+    },
+    "2026": {
+     "konstruksi": 0,
+     "om": 70
+    },
+    "2027": {
+     "konstruksi": 0,
+     "om": 70
+    },
+    "2028": {
+     "konstruksi": 0,
+     "om": 70
+    },
+    "2029": {
+     "konstruksi": 0,
+     "om": 70
+    },
+    "2030": {
+     "konstruksi": 396,
+     "om": 70
+    },
+    "2031": {
+     "konstruksi": 583,
+     "om": 70
+    },
+    "2032": {
+     "konstruksi": 187,
+     "om": 91
+    },
+    "2033": {
+     "konstruksi": 0,
+     "om": 113
+    },
+    "2034": {
+     "konstruksi": 0,
+     "om": 113
+    }
+   },
+   "16": {
+    "2025": {
+     "konstruksi": 152,
+     "om": 22
+    },
+    "2026": {
+     "konstruksi": 28,
+     "om": 49
+    },
+    "2027": {
+     "konstruksi": 0,
+     "om": 66
+    },
+    "2028": {
+     "konstruksi": 0,
+     "om": 66
+    },
+    "2029": {
+     "konstruksi": 0,
+     "om": 66
+    },
+    "2030": {
+     "konstruksi": 2040,
+     "om": 66
+    },
+    "2031": {
+     "konstruksi": 4547,
+     "om": 66
+    },
+    "2032": {
+     "konstruksi": 2507,
+     "om": 385
+    },
+    "2033": {
+     "konstruksi": 0,
+     "om": 564
+    },
+    "2034": {
+     "konstruksi": 0,
+     "om": 564
+    }
+   },
+   "17": {
+    "2025": {
+     "konstruksi": 0,
+     "om": 73
+    },
+    "2026": {
+     "konstruksi": 374,
+     "om": 73
+    },
+    "2027": {
+     "konstruksi": 374,
+     "om": 73
+    },
+    "2028": {
+     "konstruksi": 374,
+     "om": 117
+    },
+    "2029": {
+     "konstruksi": 374,
+     "om": 117
+    },
+    "2030": {
+     "konstruksi": 0,
+     "om": 161
+    },
+    "2031": {
+     "konstruksi": 0,
+     "om": 161
+    },
+    "2032": {
+     "konstruksi": 0,
+     "om": 161
+    },
+    "2033": {
+     "konstruksi": 0,
+     "om": 161
+    },
+    "2034": {
+     "konstruksi": 0,
+     "om": 161
+    }
+   },
+   "18": {
+    "2025": {
+     "konstruksi": 0,
+     "om": 67
+    },
+    "2026": {
+     "konstruksi": 8,
+     "om": 67
+    },
+    "2027": {
+     "konstruksi": 6,
+     "om": 68
+    },
+    "2028": {
+     "konstruksi": 3074,
+     "om": 68
+    },
+    "2029": {
+     "konstruksi": 2324,
+     "om": 233
+    },
+    "2030": {
+     "konstruksi": 380,
+     "om": 338
+    },
+    "2031": {
+     "konstruksi": 374,
+     "om": 383
+    },
+    "2032": {
+     "konstruksi": 380,
+     "om": 383
+    },
+    "2033": {
+     "konstruksi": 6,
+     "om": 427
+    },
+    "2034": {
+     "konstruksi": 0,
+     "om": 427
+    }
+   },
+   "19": {
+    "2025": {
+     "konstruksi": 295,
+     "om": 1
+    },
+    "2026": {
+     "konstruksi": 326,
+     "om": 1
+    },
+    "2027": {
+     "konstruksi": 295,
+     "om": 2
+    },
+    "2028": {
+     "konstruksi": 295,
+     "om": 2
+    },
+    "2029": {
+     "konstruksi": 302,
+     "om": 2
+    },
+    "2030": {
+     "konstruksi": 295,
+     "om": 3
+    },
+    "2031": {
+     "konstruksi": 295,
+     "om": 3
+    },
+    "2032": {
+     "konstruksi": 7,
+     "om": 153
+    },
+    "2033": {
+     "konstruksi": 130,
+     "om": 153
+    },
+    "2034": {
+     "konstruksi": 0,
+     "om": 160
+    }
+   },
+   "21": {
+    "2025": {
+     "konstruksi": 0,
+     "om": 0
+    },
+    "2026": {
+     "konstruksi": 255,
+     "om": 0
+    },
+    "2027": {
+     "konstruksi": 45,
+     "om": 14
+    },
+    "2028": {
+     "konstruksi": 89,
+     "om": 14
+    },
+    "2029": {
+     "konstruksi": 44,
+     "om": 26
+    },
+    "2030": {
+     "konstruksi": 0,
+     "om": 28
+    },
+    "2031": {
+     "konstruksi": 52,
+     "om": 28
+    },
+    "2032": {
+     "konstruksi": 45,
+     "om": 31
+    },
+    "2033": {
+     "konstruksi": 0,
+     "om": 33
+    },
+    "2034": {
+     "konstruksi": 0,
+     "om": 33
+    }
+   },
+   "31": {
+    "2025": {
+     "konstruksi": 0,
+     "om": 0
+    },
+    "2026": {
+     "konstruksi": 245,
+     "om": 0
+    },
+    "2027": {
+     "konstruksi": 245,
+     "om": 0
+    },
+    "2028": {
+     "konstruksi": 0,
+     "om": 53
+    },
+    "2029": {
+     "konstruksi": 0,
+     "om": 53
+    },
+    "2030": {
+     "konstruksi": 0,
+     "om": 53
+    },
+    "2031": {
+     "konstruksi": 0,
+     "om": 53
+    },
+    "2032": {
+     "konstruksi": 0,
+     "om": 53
+    },
+    "2033": {
+     "konstruksi": 0,
+     "om": 53
+    },
+    "2034": {
+     "konstruksi": 0,
+     "om": 53
+    }
+   },
+   "32": {
+    "2025": {
+     "konstruksi": 926,
+     "om": 62
+    },
+    "2026": {
+     "konstruksi": 915,
+     "om": 142
+    },
+    "2027": {
+     "konstruksi": 380,
+     "om": 252
+    },
+    "2028": {
+     "konstruksi": 58,
+     "om": 342
+    },
+    "2029": {
+     "konstruksi": 58,
+     "om": 342
+    },
+    "2030": {
+     "konstruksi": 537,
+     "om": 378
+    },
+    "2031": {
+     "konstruksi": 979,
+     "om": 378
+    },
+    "2032": {
+     "konstruksi": 442,
+     "om": 441
+    },
+    "2033": {
+     "konstruksi": 0,
+     "om": 493
+    },
+    "2034": {
+     "konstruksi": 0,
+     "om": 493
+    }
+   },
+   "33": {
+    "2025": {
+     "konstruksi": 344,
+     "om": 49
+    },
+    "2026": {
+     "konstruksi": 587,
+     "om": 81
+    },
+    "2027": {
+     "konstruksi": 293,
+     "om": 116
+    },
+    "2028": {
+     "konstruksi": 293,
+     "om": 150
+    },
+    "2029": {
+     "konstruksi": 854,
+     "om": 150
+    },
+    "2030": {
+     "konstruksi": 935,
+     "om": 185
+    },
+    "2031": {
+     "konstruksi": 667,
+     "om": 251
+    },
+    "2032": {
+     "konstruksi": 293,
+     "om": 295
+    },
+    "2033": {
+     "konstruksi": 0,
+     "om": 329
+    },
+    "2034": {
+     "konstruksi": 0,
+     "om": 329
+    }
+   },
+   "35": {
+    "2025": {
+     "konstruksi": 201,
+     "om": 92
+    },
+    "2026": {
+     "konstruksi": 187,
+     "om": 100
+    },
+    "2027": {
+     "konstruksi": 0,
+     "om": 122
+    },
+    "2028": {
+     "konstruksi": 281,
+     "om": 122
+    },
+    "2029": {
+     "konstruksi": 561,
+     "om": 122
+    },
+    "2030": {
+     "konstruksi": 281,
+     "om": 155
+    },
+    "2031": {
+     "konstruksi": 0,
+     "om": 188
+    },
+    "2032": {
+     "konstruksi": 0,
+     "om": 188
+    },
+    "2033": {
+     "konstruksi": 0,
+     "om": 188
+    },
+    "2034": {
+     "konstruksi": 0,
+     "om": 188
+    }
+   },
+   "36": {
+    "2025": {
+     "konstruksi": 152,
+     "om": 0
+    },
+    "2026": {
+     "konstruksi": 332,
+     "om": 21
+    },
+    "2027": {
+     "konstruksi": 358,
+     "om": 94
+    },
+    "2028": {
+     "konstruksi": 475,
+     "om": 157
+    },
+    "2029": {
+     "konstruksi": 331,
+     "om": 184
+    },
+    "2030": {
+     "konstruksi": 187,
+     "om": 233
+    },
+    "2031": {
+     "konstruksi": 187,
+     "om": 233
+    },
+    "2032": {
+     "konstruksi": 0,
+     "om": 255
+    },
+    "2033": {
+     "konstruksi": 0,
+     "om": 255
+    },
+    "2034": {
+     "konstruksi": 0,
+     "om": 255
+    }
+   },
+   "51": {
+    "2025": {
+     "konstruksi": 0,
+     "om": 41
+    },
+    "2026": {
+     "konstruksi": 198,
+     "om": 41
+    },
+    "2027": {
+     "konstruksi": 198,
+     "om": 41
+    },
+    "2028": {
+     "konstruksi": 198,
+     "om": 65
+    },
+    "2029": {
+     "konstruksi": 198,
+     "om": 65
+    },
+    "2030": {
+     "konstruksi": 0,
+     "om": 88
+    },
+    "2031": {
+     "konstruksi": 198,
+     "om": 88
+    },
+    "2032": {
+     "konstruksi": 198,
+     "om": 88
+    },
+    "2033": {
+     "konstruksi": 0,
+     "om": 111
+    },
+    "2034": {
+     "konstruksi": 0,
+     "om": 111
+    }
+   },
+   "52": {
+    "2025": {
+     "konstruksi": 18,
+     "om": 9
+    },
+    "2026": {
+     "konstruksi": 18,
+     "om": 9
+    },
+    "2027": {
+     "konstruksi": 0,
+     "om": 20
+    },
+    "2028": {
+     "konstruksi": 0,
+     "om": 20
+    },
+    "2029": {
+     "konstruksi": 0,
+     "om": 20
+    },
+    "2030": {
+     "konstruksi": 0,
+     "om": 20
+    },
+    "2031": {
+     "konstruksi": 0,
+     "om": 20
+    },
+    "2032": {
+     "konstruksi": 0,
+     "om": 20
+    },
+    "2033": {
+     "konstruksi": 0,
+     "om": 20
+    },
+    "2034": {
+     "konstruksi": 0,
+     "om": 20
+    }
+   },
+   "53": {
+    "2025": {
+     "konstruksi": 23,
+     "om": 16
+    },
+    "2026": {
+     "konstruksi": 62,
+     "om": 17
+    },
+    "2027": {
+     "konstruksi": 113,
+     "om": 17
+    },
+    "2028": {
+     "konstruksi": 154,
+     "om": 36
+    },
+    "2029": {
+     "konstruksi": 170,
+     "om": 50
+    },
+    "2030": {
+     "konstruksi": 136,
+     "om": 62
+    },
+    "2031": {
+     "konstruksi": 119,
+     "om": 70
+    },
+    "2032": {
+     "konstruksi": 51,
+     "om": 78
+    },
+    "2033": {
+     "konstruksi": 0,
+     "om": 84
+    },
+    "2034": {
+     "konstruksi": 0,
+     "om": 84
+    }
+   },
+   "61": {
+    "2025": {
+     "konstruksi": 1649,
+     "om": 8
+    },
+    "2026": {
+     "konstruksi": 1649,
+     "om": 50
+    },
+    "2027": {
+     "konstruksi": 666,
+     "om": 631
+    },
+    "2028": {
+     "konstruksi": 1056,
+     "om": 666
+    },
+    "2029": {
+     "konstruksi": 0,
+     "om": 731
+    },
+    "2030": {
+     "konstruksi": 0,
+     "om": 731
+    },
+    "2031": {
+     "konstruksi": 0,
+     "om": 731
+    },
+    "2032": {
+     "konstruksi": 0,
+     "om": 731
+    },
+    "2033": {
+     "konstruksi": 0,
+     "om": 731
+    },
+    "2034": {
+     "konstruksi": 0,
+     "om": 731
+    }
+   },
+   "62": {
+    "2025": {
+     "konstruksi": 0,
+     "om": 0
+    },
+    "2026": {
+     "konstruksi": 2080,
+     "om": 0
+    },
+    "2027": {
+     "konstruksi": 0,
+     "om": 112
+    },
+    "2028": {
+     "konstruksi": 0,
+     "om": 112
+    },
+    "2029": {
+     "konstruksi": 0,
+     "om": 112
+    },
+    "2030": {
+     "konstruksi": 0,
+     "om": 112
+    },
+    "2031": {
+     "konstruksi": 520,
+     "om": 112
+    },
+    "2032": {
+     "konstruksi": 0,
+     "om": 140
+    },
+    "2033": {
+     "konstruksi": 0,
+     "om": 140
+    },
+    "2034": {
+     "konstruksi": 0,
+     "om": 140
+    }
+   },
+   "63": {
+    "2025": {
+     "konstruksi": 112,
+     "om": 0
+    },
+    "2026": {
+     "konstruksi": 0,
+     "om": 21
+    },
+    "2027": {
+     "konstruksi": 0,
+     "om": 21
+    },
+    "2028": {
+     "konstruksi": 0,
+     "om": 21
+    },
+    "2029": {
+     "konstruksi": 0,
+     "om": 21
+    },
+    "2030": {
+     "konstruksi": 0,
+     "om": 21
+    },
+    "2031": {
+     "konstruksi": 0,
+     "om": 21
+    },
+    "2032": {
+     "konstruksi": 0,
+     "om": 21
+    },
+    "2033": {
+     "konstruksi": 0,
+     "om": 21
+    },
+    "2034": {
+     "konstruksi": 0,
+     "om": 21
+    }
+   },
+   "64": {
+    "2025": {
+     "konstruksi": 0,
+     "om": 35
+    },
+    "2026": {
+     "konstruksi": 1040,
+     "om": 35
+    },
+    "2027": {
+     "konstruksi": 3120,
+     "om": 91
+    },
+    "2028": {
+     "konstruksi": 0,
+     "om": 259
+    },
+    "2029": {
+     "konstruksi": 520,
+     "om": 259
+    },
+    "2030": {
+     "konstruksi": 781,
+     "om": 287
+    },
+    "2031": {
+     "konstruksi": 836,
+     "om": 287
+    },
+    "2032": {
+     "konstruksi": 56,
+     "om": 329
+    },
+    "2033": {
+     "konstruksi": 0,
+     "om": 332
+    },
+    "2034": {
+     "konstruksi": 0,
+     "om": 332
+    }
+   },
+   "65": {
+    "2025": {
+     "konstruksi": 25,
+     "om": 1
+    },
+    "2026": {
+     "konstruksi": 1325,
+     "om": 2
+    },
+    "2027": {
+     "konstruksi": 0,
+     "om": 77
+    },
+    "2028": {
+     "konstruksi": 0,
+     "om": 77
+    },
+    "2029": {
+     "konstruksi": 77,
+     "om": 77
+    },
+    "2030": {
+     "konstruksi": 0,
+     "om": 81
+    },
+    "2031": {
+     "konstruksi": 0,
+     "om": 81
+    },
+    "2032": {
+     "konstruksi": 77,
+     "om": 81
+    },
+    "2033": {
+     "konstruksi": 0,
+     "om": 85
+    },
+    "2034": {
+     "konstruksi": 0,
+     "om": 85
+    }
+   },
+   "71": {
+    "2025": {
+     "konstruksi": 0,
+     "om": 0
+    },
+    "2026": {
+     "konstruksi": 0,
+     "om": 0
+    },
+    "2027": {
+     "konstruksi": 111,
+     "om": 0
+    },
+    "2028": {
+     "konstruksi": 111,
+     "om": 0
+    },
+    "2029": {
+     "konstruksi": 68,
+     "om": 6
+    },
+    "2030": {
+     "konstruksi": 68,
+     "om": 6
+    },
+    "2031": {
+     "konstruksi": 204,
+     "om": 14
+    },
+    "2032": {
+     "konstruksi": 204,
+     "om": 14
+    },
+    "2033": {
+     "konstruksi": 0,
+     "om": 38
+    },
+    "2034": {
+     "konstruksi": 0,
+     "om": 38
+    }
+   },
+   "72": {
+    "2025": {
+     "konstruksi": 9,
+     "om": 216
+    },
+    "2026": {
+     "konstruksi": 9,
+     "om": 221
+    },
+    "2027": {
+     "konstruksi": 9,
+     "om": 221
+    },
+    "2028": {
+     "konstruksi": 44,
+     "om": 227
+    },
+    "2029": {
+     "konstruksi": 44,
+     "om": 227
+    },
+    "2030": {
+     "konstruksi": 0,
+     "om": 255
+    },
+    "2031": {
+     "konstruksi": 0,
+     "om": 255
+    },
+    "2032": {
+     "konstruksi": 0,
+     "om": 255
+    },
+    "2033": {
+     "konstruksi": 0,
+     "om": 255
+    },
+    "2034": {
+     "konstruksi": 0,
+     "om": 255
+    }
+   },
+   "73": {
+    "2025": {
+     "konstruksi": 0,
+     "om": 1103
+    },
+    "2026": {
+     "konstruksi": 518,
+     "om": 1103
+    },
+    "2027": {
+     "konstruksi": 518,
+     "om": 1103
+    },
+    "2028": {
+     "konstruksi": 461,
+     "om": 1131
+    },
+    "2029": {
+     "konstruksi": 461,
+     "om": 1131
+    },
+    "2030": {
+     "konstruksi": 0,
+     "om": 1155
+    },
+    "2031": {
+     "konstruksi": 740,
+     "om": 1155
+    },
+    "2032": {
+     "konstruksi": 740,
+     "om": 1155
+    },
+    "2033": {
+     "konstruksi": 0,
+     "om": 1195
+    },
+    "2034": {
+     "konstruksi": 0,
+     "om": 1195
+    }
+   },
+   "74": {
+    "2025": {
+     "konstruksi": 4803,
+     "om": 20
+    },
+    "2026": {
+     "konstruksi": 4884,
+     "om": 20
+    },
+    "2027": {
+     "konstruksi": 81,
+     "om": 2999
+    },
+    "2028": {
+     "konstruksi": 0,
+     "om": 3003
+    },
+    "2029": {
+     "konstruksi": 0,
+     "om": 3003
+    },
+    "2030": {
+     "konstruksi": 78,
+     "om": 3003
+    },
+    "2031": {
+     "konstruksi": 78,
+     "om": 3003
+    },
+    "2032": {
+     "konstruksi": 0,
+     "om": 3007
+    },
+    "2033": {
+     "konstruksi": 0,
+     "om": 3007
+    },
+    "2034": {
+     "konstruksi": 0,
+     "om": 3007
+    }
+   },
+   "75": {
+    "2025": {
+     "konstruksi": 94,
+     "om": 0
+    },
+    "2026": {
+     "konstruksi": 16,
+     "om": 49
+    },
+    "2027": {
+     "konstruksi": 0,
+     "om": 58
+    },
+    "2028": {
+     "konstruksi": 0,
+     "om": 58
+    },
+    "2029": {
+     "konstruksi": 0,
+     "om": 58
+    },
+    "2030": {
+     "konstruksi": 0,
+     "om": 58
+    },
+    "2031": {
+     "konstruksi": 0,
+     "om": 58
+    },
+    "2032": {
+     "konstruksi": 0,
+     "om": 58
+    },
+    "2033": {
+     "konstruksi": 0,
+     "om": 58
+    },
+    "2034": {
+     "konstruksi": 0,
+     "om": 58
+    }
+   },
+   "76": {
+    "2025": {
+     "konstruksi": 0,
+     "om": 20
+    },
+    "2026": {
+     "konstruksi": 0,
+     "om": 20
+    },
+    "2027": {
+     "konstruksi": 0,
+     "om": 20
+    },
+    "2028": {
+     "konstruksi": 0,
+     "om": 20
+    },
+    "2029": {
+     "konstruksi": 0,
+     "om": 20
+    },
+    "2030": {
+     "konstruksi": 0,
+     "om": 20
+    },
+    "2031": {
+     "konstruksi": 0,
+     "om": 20
+    },
+    "2032": {
+     "konstruksi": 0,
+     "om": 20
+    },
+    "2033": {
+     "konstruksi": 0,
+     "om": 20
+    },
+    "2034": {
+     "konstruksi": 0,
+     "om": 20
+    }
+   },
+   "81": {
+    "2025": {
+     "konstruksi": 0,
+     "om": 0
+    },
+    "2026": {
+     "konstruksi": 0,
+     "om": 0
+    },
+    "2027": {
+     "konstruksi": 289,
+     "om": 0
+    },
+    "2028": {
+     "konstruksi": 403,
+     "om": 0
+    },
+    "2029": {
+     "konstruksi": 182,
+     "om": 65
+    },
+    "2030": {
+     "konstruksi": 268,
+     "om": 111
+    },
+    "2031": {
+     "konstruksi": 200,
+     "om": 119
+    },
+    "2032": {
+     "konstruksi": 0,
+     "om": 130
+    },
+    "2033": {
+     "konstruksi": 0,
+     "om": 130
+    },
+    "2034": {
+     "konstruksi": 0,
+     "om": 130
+    }
+   },
+   "82": {
+    "2025": {
+     "konstruksi": 0,
+     "om": 0
+    },
+    "2026": {
+     "konstruksi": 0,
+     "om": 0
+    },
+    "2027": {
+     "konstruksi": 206,
+     "om": 0
+    },
+    "2028": {
+     "konstruksi": 104,
+     "om": 11
+    },
+    "2029": {
+     "konstruksi": 104,
+     "om": 11
+    },
+    "2030": {
+     "konstruksi": 35,
+     "om": 30
+    },
+    "2031": {
+     "konstruksi": 35,
+     "om": 30
+    },
+    "2032": {
+     "konstruksi": 0,
+     "om": 38
+    },
+    "2033": {
+     "konstruksi": 0,
+     "om": 38
+    },
+    "2034": {
+     "konstruksi": 0,
+     "om": 38
+    }
+   },
+   "tanpa": {
+    "2025": {
+     "konstruksi": 111,
+     "om": 0
+    },
+    "2026": {
+     "konstruksi": 137,
+     "om": 1
+    },
+    "2027": {
+     "konstruksi": 509,
+     "om": 64
+    },
+    "2028": {
+     "konstruksi": 263,
+     "om": 79
+    },
+    "2029": {
+     "konstruksi": 107,
+     "om": 191
+    },
+    "2030": {
+     "konstruksi": 209,
+     "om": 193
+    },
+    "2031": {
+     "konstruksi": 19,
+     "om": 215
+    },
+    "2032": {
+     "konstruksi": 10,
+     "om": 220
+    },
+    "2033": {
+     "konstruksi": 0,
+     "om": 227
+    },
+    "2034": {
+     "konstruksi": 0,
+     "om": 227
+    }
+   }
+  }
+ },
+ "sumber": [
+  {
+   "id": "rutovitz-2015",
+   "judul": "Calculating global energy sector jobs: 2015 methodology update (Tabel 1 dan Tabel 6)",
+   "penerbit": "Rutovitz, Dominish, Downes; UTS Institute for Sustainable Futures untuk Greenpeace International",
+   "tahun": 2015,
+   "url": "https://opus.lib.uts.edu.au/bitstream/10453/43718/1/Rutovitzetal2015Calculatingglobalenergysectorjobsmethodology.pdf",
+   "tingkat_bukti": "riset"
+  },
+  {
+   "id": "ruptl-2025",
+   "judul": "RUPTL PT PLN (Persero) 2025-2034 (Kepmen ESDM 188.K/TL.03/MEM.L/2025)",
+   "penerbit": "PT PLN (Persero); Kementerian ESDM",
+   "tahun": 2025,
+   "url": "https://gatrik.esdm.go.id/gatrik/gatrik-api//storage/migrasi/download_index/files/b967d-ruptl-pln-2025-2034-pub-.pdf",
+   "tingkat_bukti": "resmi"
+  },
+  {
+   "id": "irena-jobs",
+   "judul": "Renewable Energy and Jobs: Annual Review 2025",
+   "penerbit": "IRENA dan ILO",
+   "tahun": 2025,
+   "url": "https://www.ilo.org/publications/renewable-energy-and-jobs-annual-review-2025",
+   "tingkat_bukti": "resmi"
+  }
+ ],
+ "lsp": [
+  {
+   "id": "lsp-bpsdm-esdm",
+   "nama": "LSP BPSDM ESDM",
+   "lingkup": "Sertifikasi kompetensi tenaga teknik sub sektor EBTKE dan ketenagalistrikan",
+   "lisensi": "Lisensi BNSP Kep.0597/BNSP/III/2021 (perluasan Maret 2021)",
+   "teknologi": [
+    "surya",
+    "bayu",
+    "hidro",
+    "panas-bumi",
+    "bioenergi"
+   ],
+   "url": "https://www.esdm.go.id/id/berita-unit/badan-pengembangan-sumber-daya-manusia/membangun-kompetensi-tenaga-teknik-ketenagalistrikan-bersama-lsp-ppsdm-kebtke",
+   "diperiksa": "2026-11-08"
+  },
+  {
+   "id": "ppsdm-kebtke",
+   "nama": "PPSDM KEBTKE (Kementerian ESDM)",
+   "lingkup": "Diklat dan sertifikasi operator dan pemeliharaan PLTS, termasuk PLTS atap dan PLTS terpusat",
+   "lisensi": "Penyelenggara diklat resmi; skema sertifikasi lewat LSP BPSDM ESDM",
+   "teknologi": [
+    "surya"
+   ],
+   "url": "https://www.esdm.go.id/id/berita-unit/badan-pengembangan-sumber-daya-manusia/ppsdm-kebtke-selenggarakan-diklat-dan-sertifikasi-operator-plts-bagi-masyarakat-",
+   "diperiksa": "2026-11-08"
+  },
+  {
+   "id": "bnsp",
+   "nama": "BNSP: daftar LSP berlisensi",
+   "lingkup": "Rujukan resmi status lisensi LSP lain (mis. LSP pihak ketiga energi terbarukan); periksa sebelum mendaftar",
+   "lisensi": "Badan Nasional Sertifikasi Profesi",
+   "teknologi": [],
+   "url": "https://bnsp.go.id",
+   "diperiksa": "2026-11-08"
+  }
+ ]
+}

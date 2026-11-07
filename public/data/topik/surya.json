@@ -23,7 +23,73 @@
     "en": "MW"
    },
    "sumber": "kap",
-   "est": false
+   "est": false,
+   "deret": [
+    [
+     "2010",
+     14.58
+    ],
+    [
+     "2011",
+     16.99
+    ],
+    [
+     "2012",
+     26.42
+    ],
+    [
+     "2013",
+     38.38
+    ],
+    [
+     "2014",
+     41.65
+    ],
+    [
+     "2015",
+     78.62
+    ],
+    [
+     "2016",
+     88.48
+    ],
+    [
+     "2017",
+     97.41
+    ],
+    [
+     "2018",
+     68.28
+    ],
+    [
+     "2019",
+     157.8
+    ],
+    [
+     "2020",
+     166.14
+    ],
+    [
+     "2021",
+     220.94
+    ],
+    [
+     "2022",
+     305.89
+    ],
+    [
+     "2023",
+     630.26
+    ],
+    [
+     "2024",
+     940.97
+    ],
+    [
+     "2025",
+     1493.97
+    ]
+   ]
   },
   {
    "label": {
@@ -37,7 +103,69 @@
     "en": "percent"
    },
    "sumber": "owid",
-   "est": false
+   "est": false,
+   "deret": [
+    [
+     "2010",
+     29.45
+    ],
+    [
+     "2011",
+     32.59
+    ],
+    [
+     "2012",
+     47.9
+    ],
+    [
+     "2013",
+     64.51
+    ],
+    [
+     "2014",
+     72.39
+    ],
+    [
+     "2015",
+     89.05
+    ],
+    [
+     "2016",
+     105.08
+    ],
+    [
+     "2017",
+     115.12
+    ],
+    [
+     "2018",
+     91
+    ],
+    [
+     "2019",
+     118
+    ],
+    [
+     "2020",
+     171
+    ],
+    [
+     "2021",
+     192.62
+    ],
+    [
+     "2022",
+     443.73
+    ],
+    [
+     "2023",
+     712.87
+    ],
+    [
+     "2024",
+     1350.98
+    ]
+   ]
   },
   {
    "label": {
@@ -705,7 +833,8 @@
      "j": {
       "id": "1493.97 MW pada 2025 menurut IRENA, naik dari 26.42 MW pada 2012.",
       "en": "1493.97 MW in 2025 per IRENA, up from 26.42 MW in 2012."
-     }
+     },
+     "bab": 10
     },
     {
      "t": {
@@ -715,7 +844,8 @@
      "j": {
       "id": "MWp adalah kapasitas puncak panel (arus searah); MWac adalah daya keluaran inverter ke jaringan. Cirata 192 MWp setara 145 MWac.",
       "en": "MWp is peak panel capacity (DC); MWac is inverter output to the grid. Cirata 192 MWp equals 145 MWac."
-     }
+     },
+     "bab": 4
     },
     {
      "t": {
@@ -725,7 +855,8 @@
      "j": {
       "id": "Tidak. Permen ESDM 2/2024 menghapus skema ekspor-impor; energi yang masuk ke jaringan tidak dihitung dalam tagihan. Pengguna lama boleh melanjutkan skema lama sampai 10 tahun (Pasal 47, menurut ringkasan pers).",
       "en": "No. Energy Ministry Regulation 2/2024 removed the export-import scheme; energy fed to the grid is not counted in bills. Existing users may keep the old scheme for 10 years (Article 47, per press summaries)."
-     }
+     },
+     "bab": 4
     },
     {
      "t": {
@@ -735,7 +866,8 @@
      "j": {
       "id": "Ya. Pemegang IUPTLU menyusun kuota per sistem ketenagalistrikan untuk lima tahun dan mengevaluasinya tiap tahun (Pasal 7 sampai 11, menurut ringkasan pers).",
       "en": "Yes. Licensed utilities set quotas per power system for five years, evaluated annually (Articles 7 to 11, per press summaries)."
-     }
+     },
+     "bab": 12
     },
     {
      "t": {
@@ -745,7 +877,8 @@
      "j": {
       "id": "Sekitar 0.12 USD per W pada 2025, dari 2.512 pada 2010 (USD 2025).",
       "en": "About 0.12 USD per W in 2025, from 2.512 in 2010 (USD 2025)."
-     }
+     },
+     "bab": 11
     },
     {
      "t": {
@@ -755,7 +888,8 @@
      "j": {
       "id": "Menurut Global Solar Atlas, titik ibu kota Nusa Tenggara Timur tertinggi (1688 kWh per kWp per tahun) dan Kalimantan Timur terendah (1252).",
       "en": "Per Global Solar Atlas, the Nusa Tenggara Timur capital point is highest (1688 kWh per kWp per year) and Kalimantan Timur lowest (1252)."
-     }
+     },
+     "bab": 8
     },
     {
      "t": {
@@ -765,7 +899,8 @@
      "j": {
       "id": "40 pabrikan dengan total 24863 MWp per tahun; 6538 MWp untuk pasar lokal dan 18325 MWp untuk ekspor (DJEBTKE).",
       "en": "40 factories with 24863 MWp per year in total; 6538 MWp domestic and 18325 MWp export (DJEBTKE)."
-     }
+     },
+     "bab": 11
     },
     {
      "t": {
@@ -775,7 +910,8 @@
      "j": {
       "id": "Sumber menyebut pengelola belum siap, alih aset ke daerah tersendat, dan tak ada anggaran pemeliharaan. Lihat bab 40.",
       "en": "Sources cite unprepared operators, stalled asset transfers and no maintenance budget. See chapter 40."
-     }
+     },
+     "bab": 40
     },
     {
      "t": {
@@ -785,7 +921,8 @@
      "j": {
       "id": "Pemasangan hanya setelah persetujuan pemegang IUPTLU (misalnya PLN) dan dikerjakan badan usaha. Total inverter lebih dari 500 kW wajib IUPTLS; sampai 500 kW cukup lapor satu kali sebelum pemasangan. Sistem wajib SLO, kecuali sistem sampai 500 kW berkontrol panel terpadu yang cukup surat pernyataan keselamatan (Permen ESDM 2/2024 Pasal 17 sampai 25).",
       "en": "Installation is allowed only after approval by the IUPTLU holder (for example PLN) and is done by a business entity. Total inverter capacity above 500 kW needs an IUPTLS licence; up to 500 kW a one-time report before installation is enough. Systems need an SLO operation certificate, except plug-and-play systems up to 500 kW, which need only a safety statement (Energy Ministry Reg. 2/2024 Articles 17 to 25)."
-     }
+     },
+     "bab": 15
     },
     {
      "t": {
@@ -795,7 +932,8 @@
      "j": {
       "id": "Pemegang IUPTLU memberi surat pemberitahuan untuk memutus sistem dan memungut pinalti sebesar kapasitas total inverter dikali 240 jam dikali tarif listrik; bila tidak dipenuhi dalam sebulan layanan dapat diputus sementara (Pasal 23).",
       "en": "The licence holder issues a notice to disconnect and charges a penalty equal to total inverter capacity times 240 hours times the electricity tariff; if unpaid within a month, service can be cut temporarily (Article 23)."
-     }
+     },
+     "bab": 4
     },
     {
      "t": {
@@ -805,7 +943,8 @@
      "j": {
       "id": "Lewat pemilihan langsung untuk semua kapasitas, dengan atau tanpa baterai. Harga memakai harga patokan tertinggi atau harga kesepakatan yang disetujui Menteri; fasilitas baterai dihargai paling tinggi 60 persen dari harga pembelian listrik dan fasilitas jaringan paling tinggi 30 persen (Perpres 112/2022).",
       "en": "Through direct selection for all capacities, with or without batteries. The price is the ceiling price or an agreed price approved by the Minister; battery facilities are priced at most 60 percent of the power purchase price and grid facilities at most 30 percent (Presidential Reg. 112/2022)."
-     }
+     },
+     "bab": 4
     },
     {
      "t": {
@@ -815,7 +954,8 @@
      "j": {
       "id": "Paling lama 90 hari kalender untuk penunjukan langsung dan 180 hari kalender untuk pemilihan langsung termasuk negosiasi harga (Perpres 112/2022 Pasal 15 dan 16). Itu batas proses PPA, bukan waktu izin dan pendanaan proyek.",
       "en": "Up to 90 calendar days for direct appointment and 180 calendar days for direct selection including price negotiation (Presidential Reg. 112/2022 Articles 15 and 16). That is the PPA process limit, not the time for permits and financing."
-     }
+     },
+     "bab": 15
     },
     {
      "t": {
@@ -825,7 +965,8 @@
      "j": {
       "id": "TKDN menghitung kandungan dalam negeri produk; tata cara untuk modul surya diatur Permenperin 34/2024. Penggunaan produk dalam negeri untuk infrastruktur ketenagalistrikan diatur Permen ESDM 11/2024; ambang per komponen belum dibaca METI, jadi cek naskahnya sebelum menawar.",
       "en": "TKDN measures the domestic content of a product; the method for solar modules is set by Industry Ministry Reg. 34/2024. Domestic product use in electricity infrastructure is set by Energy Ministry Reg. 11/2024; per-component thresholds are not yet read by METI, so check the text before bidding."
-     }
+     },
+     "bab": 15
     },
     {
      "t": {
@@ -835,7 +976,8 @@
      "j": {
       "id": "Program percepatan PLTS 100 gigawatt-peak untuk desa dan koperasi. Menurut laporan Menteri ESDM kepada Presiden, peluncuran dan groundbreaking tahap awal terjadi 25 Agustus 2026 dengan 5,3 GWp di 14 proyek; KPK mengingatkan belum disahkannya Perpres dan risiko tata kelola.",
       "en": "An acceleration programme for 100 gigawatt-peak of solar for villages and cooperatives. Per the Energy Minister report to the President, the first phase launch and groundbreaking took place on 25 August 2026 with 5.3 GWp across 14 projects; the KPK warns that the presidential regulation is not yet passed and flags governance risk."
-     }
+     },
+     "bab": 10
     },
     {
      "t": {
@@ -845,7 +987,8 @@
      "j": {
       "id": "Bukan lebih baik, tetapi berbeda: menghemat lahan dan menurut pemilik Cirata menekan penguapan waduk, namun butuh waduk berizin, jangkar, dan kabel apung. Cirata 192 MWp adalah PLTS terapung terbesar di Indonesia di basis METI; dampak ekologis jangka panjangnya belum didokumentasikan terbuka.",
       "en": "Not better but different: it saves land and, per the Cirata owner, cuts reservoir evaporation, but needs a permitted reservoir, anchoring and floating cables. Cirata at 192 MWp is the largest floating solar plant in the METI base; long-term ecological effects are not openly documented."
-     }
+     },
+     "bab": 17
     }
    ]
   },
@@ -865,7 +1008,8 @@
      "arti": {
       "id": "Pembangkit Listrik Tenaga Surya.",
       "en": "Solar power plant."
-     }
+     },
+     "kat": "teknis"
     },
     {
      "istilah": {
@@ -875,7 +1019,8 @@
      "arti": {
       "id": "PLTS di atap bangunan, tersambung jaringan PLN atau mandiri.",
       "en": "Rooftop solar connected to the PLN grid or off-grid."
-     }
+     },
+     "kat": "teknis"
     },
     {
      "istilah": {
@@ -885,7 +1030,8 @@
      "arti": {
       "id": "Daya puncak panel pada kondisi uji standar.",
       "en": "Peak panel power at standard test conditions."
-     }
+     },
+     "kat": "satuan"
     },
     {
      "istilah": {
@@ -895,7 +1041,8 @@
      "arti": {
       "id": "Daya keluaran inverter ke jaringan.",
       "en": "Inverter output power to the grid."
-     }
+     },
+     "kat": "satuan"
     },
     {
      "istilah": {
@@ -905,7 +1052,8 @@
      "arti": {
       "id": "Produksi listrik tahunan per kWp terpasang (kWh per kWp per tahun) dari model Global Solar Atlas.",
       "en": "Annual electricity yield per installed kWp (kWh per kWp per year) from the Global Solar Atlas model."
-     }
+     },
+     "kat": "satuan"
     },
     {
      "istilah": {
@@ -915,7 +1063,8 @@
      "arti": {
       "id": "Radiasi matahari global horizontal (kWh per m2 per tahun).",
       "en": "Global horizontal irradiation (kWh per m2 per year)."
-     }
+     },
+     "kat": "satuan"
     },
     {
      "istilah": {
@@ -925,7 +1074,8 @@
      "arti": {
       "id": "Produksi aktual dibagi produksi bila beroperasi penuh sepanjang tahun.",
       "en": "Actual output divided by output at full power all year."
-     }
+     },
+     "kat": "satuan"
     },
     {
      "istilah": {
@@ -935,7 +1085,8 @@
      "arti": {
       "id": "Biaya listrik rata-rata sepanjang umur pembangkit (levelized cost of electricity).",
       "en": "Average cost of electricity over a plant life (levelized cost of electricity)."
-     }
+     },
+     "kat": "uang"
     },
     {
      "istilah": {
@@ -945,7 +1096,8 @@
      "arti": {
       "id": "Perjanjian jual beli tenaga listrik.",
       "en": "Power purchase agreement."
-     }
+     },
+     "kat": "aturan"
     },
     {
      "istilah": {
@@ -955,7 +1107,8 @@
      "arti": {
       "id": "Pengembang listrik swasta.",
       "en": "Independent power producer."
-     }
+     },
+     "kat": "uang"
     },
     {
      "istilah": {
@@ -965,7 +1118,8 @@
      "arti": {
       "id": "Feed-in tariff, tarif tetap per kWh yang dijamin.",
       "en": "Feed-in tariff, a guaranteed fixed price per kWh."
-     }
+     },
+     "kat": "uang"
     },
     {
      "istilah": {
@@ -975,7 +1129,8 @@
      "arti": {
       "id": "Tingkat Komponen Dalam Negeri.",
       "en": "Local content level."
-     }
+     },
+     "kat": "aturan"
     },
     {
      "istilah": {
@@ -985,7 +1140,8 @@
      "arti": {
       "id": "Rencana Usaha Penyediaan Tenaga Listrik PLN.",
       "en": "PLN electricity supply business plan."
-     }
+     },
+     "kat": "aturan"
     },
     {
      "istilah": {
@@ -995,7 +1151,8 @@
      "arti": {
       "id": "Rencana Umum Ketenagalistrikan Nasional.",
       "en": "National general electricity plan."
-     }
+     },
+     "kat": "aturan"
     },
     {
      "istilah": {
@@ -1005,7 +1162,8 @@
      "arti": {
       "id": "Sistem penyimpanan energi baterai.",
       "en": "Battery energy storage system."
-     }
+     },
+     "kat": "teknis"
     },
     {
      "istilah": {
@@ -1015,7 +1173,8 @@
      "arti": {
       "id": "Pembatasan produksi pembangkit karena jaringan atau permintaan tidak menyerap.",
       "en": "Forced reduction of plant output because the grid or demand cannot absorb it."
-     }
+     },
+     "kat": "teknis"
     },
     {
      "istilah": {
@@ -1025,7 +1184,8 @@
      "arti": {
       "id": "Izin Usaha Penyediaan Tenaga Listrik untuk Kepentingan Umum (misalnya PLN).",
       "en": "Electricity supply business licence for public interest (for example PLN)."
-     }
+     },
+     "kat": "aturan"
     },
     {
      "istilah": {
@@ -1035,7 +1195,8 @@
      "arti": {
       "id": "PLTS di permukaan waduk atau danau.",
       "en": "Solar on a reservoir or lake surface."
-     }
+     },
+     "kat": "teknis"
     },
     {
      "istilah": {
@@ -1045,7 +1206,8 @@
      "arti": {
       "id": "PLTS digabung baterai atau genset diesel.",
       "en": "Solar combined with batteries or diesel generators."
-     }
+     },
+     "kat": "teknis"
     },
     {
      "istilah": {
@@ -1055,7 +1217,8 @@
      "arti": {
       "id": "Alat yang mengubah listrik arus searah (DC) panel menjadi arus bolak-balik (AC) untuk jaringan.",
       "en": "The device that converts panel direct current (DC) into alternating current (AC) for the grid."
-     }
+     },
+     "kat": "teknis"
     },
     {
      "istilah": {
@@ -1065,7 +1228,8 @@
      "arti": {
       "id": "Rangkaian sel fotovoltaik berbingkai yang dipasang di atap atau tanah; sering disebut panel.",
       "en": "A framed assembly of photovoltaic cells mounted on a roof or the ground; often called a panel."
-     }
+     },
+     "kat": "teknis"
     },
     {
      "istilah": {
@@ -1075,7 +1239,8 @@
      "arti": {
       "id": "Passivated emitter and rear cell, teknologi sel silikon yang lama mendominasi pasar.",
       "en": "Passivated emitter and rear cell, a silicon cell technology that long dominated the market."
-     }
+     },
+     "kat": "teknis"
     },
     {
      "istilah": {
@@ -1085,7 +1250,8 @@
      "arti": {
       "id": "Sel silikon tipe-n dengan lapisan kontak terpasivasi; melampaui PERC dalam pengapalan pada 2024 (ITRPV).",
       "en": "An n-type silicon cell with a passivated contact layer; it overtook PERC in shipments in 2024 (ITRPV)."
-     }
+     },
+     "kat": "teknis"
     },
     {
      "istilah": {
@@ -1095,7 +1261,8 @@
      "arti": {
       "id": "Modul yang menangkap cahaya dari kedua sisi, sisi belakang dari pantulan tanah atau air.",
       "en": "A module that captures light from both sides, the rear from ground or water reflection."
-     }
+     },
+     "kat": "teknis"
     },
     {
      "istilah": {
@@ -1105,7 +1272,8 @@
      "arti": {
       "id": "Rangka yang memutar modul mengikuti matahari agar produksi harian naik.",
       "en": "A mount that rotates modules to follow the sun and raise daily yield."
-     }
+     },
+     "kat": "teknis"
     },
     {
      "istilah": {
@@ -1115,7 +1283,8 @@
      "arti": {
       "id": "Kapasitas panel (kWp) dibagi kapasitas inverter (kWac); di atas 1 berarti panel dibuat lebih besar daripada inverter.",
       "en": "Panel capacity (kWp) divided by inverter capacity (kWac); above 1 means the array is oversized relative to the inverter."
-     }
+     },
+     "kat": "satuan"
     },
     {
      "istilah": {
@@ -1125,7 +1294,8 @@
      "arti": {
       "id": "Penurunan bertahap keluaran modul dari tahun ke tahun, dinyatakan persen per tahun.",
       "en": "The gradual decline in module output over the years, expressed as percent per year."
-     }
+     },
+     "kat": "satuan"
     },
     {
      "istilah": {
@@ -1135,7 +1305,8 @@
      "arti": {
       "id": "Perbandingan produksi nyata dengan produksi teoritis pada radiasi yang sama; mengukur kehilangan sistem.",
       "en": "Actual output divided by theoretical output at the same irradiation; it measures system losses."
-     }
+     },
+     "kat": "satuan"
     },
     {
      "istilah": {
@@ -1145,7 +1316,8 @@
      "arti": {
       "id": "Sertifikat Laik Operasi untuk instalasi tenaga listrik; wajib pada PLTS atap kecuali sistem plug and play sampai 500 kW.",
       "en": "Operation worthiness certificate for power installations; required for rooftop solar except plug-and-play systems up to 500 kW."
-     }
+     },
+     "kat": "aturan"
     },
     {
      "istilah": {
@@ -1155,7 +1327,8 @@
      "arti": {
       "id": "Izin Usaha Penyediaan Tenaga Listrik untuk Kepentingan Sendiri, wajib di atas 500 kW.",
       "en": "Electricity supply business licence for own use, required above 500 kW."
-     }
+     },
+     "kat": "aturan"
     },
     {
      "istilah": {
@@ -1165,7 +1338,8 @@
      "arti": {
       "id": "Perjanjian jual beli tenaga listrik antara pembangkit dan PLN; setara PPA.",
       "en": "Power purchase agreement between a generator and PLN; equivalent to a PPA."
-     }
+     },
+     "kat": "aturan"
     },
     {
      "istilah": {
@@ -1175,7 +1349,8 @@
      "arti": {
       "id": "Bentuk beban bersih harian saat surya melimpah siang hari lalu turun tajam menjelang malam, menuntut pembangkit yang cepat naik.",
       "en": "The daily net-load shape when solar peaks at midday then drops sharply at dusk, demanding fast-ramping plants."
-     }
+     },
+     "kat": "teknis"
     },
     {
      "istilah": {
@@ -1185,7 +1360,8 @@
      "arti": {
       "id": "Tersambung ke jaringan listrik atau berdiri sendiri (mandiri) dengan baterai.",
       "en": "Connected to the power grid or standalone with batteries."
-     }
+     },
+     "kat": "teknis"
     },
     {
      "istilah": {
@@ -1195,7 +1371,8 @@
      "arti": {
       "id": "Skema yang menghitung kelebihan listrik atap yang dikirim ke jaringan sebagai pengurang tagihan; dihapus untuk PLTS atap oleh Permen ESDM 2/2024.",
       "en": "A scheme crediting surplus rooftop power sent to the grid against the bill; removed for rooftop solar by Energy Ministry Reg. 2/2024."
-     }
+     },
+     "kat": "uang"
     }
    ]
   },
@@ -1318,7 +1495,8 @@
      "pelaku": {
       "id": "Pengembang, kontraktor EPC",
       "en": "Pengembang, kontraktor EPC"
-     }
+     },
+     "peran": "EPC"
     },
     {
      "judul": {
@@ -1332,7 +1510,8 @@
      "pelaku": {
       "id": "Pabrikan, antara lain PT REC Solar Energy Indonesia, PT IDN Solar Tech, PT Blue Sky Solar Indonesia",
       "en": "Manufacturers, including PT REC Solar Energy Indonesia, PT IDN Solar Tech, PT Blue Sky Solar Indonesia"
-     }
+     },
+     "peran": "manufaktur"
     },
     {
      "judul": {
@@ -1346,7 +1525,8 @@
      "pelaku": {
       "id": "Pemasok",
       "en": "Pemasok"
-     }
+     },
+     "peran": "pengembang"
     },
     {
      "judul": {
@@ -1360,7 +1540,8 @@
      "pelaku": {
       "id": "PLN, pelanggan",
       "en": "PLN, pelanggan"
-     }
+     },
+     "peran": "IPP"
     },
     {
      "judul": {
@@ -1374,7 +1555,8 @@
      "pelaku": {
       "id": "Pendana",
       "en": "Pendana"
-     }
+     },
+     "peran": "pendana"
     },
     {
      "judul": {
@@ -1388,7 +1570,8 @@
      "pelaku": {
       "id": "Pemerintah",
       "en": "Pemerintah"
-     }
+     },
+     "peran": "lembaga"
     },
     {
      "judul": {
@@ -1402,7 +1585,8 @@
      "pelaku": {
       "id": "Operator: PLN Indonesia Power, PLN Nusantara Renewables, pengelola desa",
       "en": "Operators: PLN Indonesia Power, PLN Nusantara Renewables, village managers"
-     }
+     },
+     "peran": "operator"
     },
     {
      "judul": {
@@ -1416,7 +1600,8 @@
      "pelaku": {
       "id": "Pemilik aset, pengelola limbah",
       "en": "Asset owners, waste handlers"
-     }
+     },
+     "peran": "pengembang"
     }
    ]
   },
@@ -2258,6 +2443,15 @@
      },
      "num": true,
      "d": 0
+    },
+    {
+     "k": "mw",
+     "l": {
+      "id": "Kapasitas proyek (MW)",
+      "en": "Project capacity (MW)"
+     },
+     "num": true,
+     "d": 0
     }
    ],
    "baris": [
@@ -2270,7 +2464,8 @@
      "peran": "operator, pengembang",
      "relevansi": "teknologi",
      "negara": "ID",
-     "proyek": 18
+     "proyek": 18,
+     "mw": 0
     },
     {
      "nama": "PT PLN Nusantara Power",
@@ -2281,7 +2476,8 @@
      "peran": "operator",
      "relevansi": "teknologi",
      "negara": "ID",
-     "proyek": 13
+     "proyek": 13,
+     "mw": 192
     },
     {
      "nama": "ACEN Corporation",
@@ -2292,7 +2488,8 @@
      "peran": "pengembang",
      "relevansi": "teknologi",
      "negara": "PH",
-     "proyek": 3
+     "proyek": 3,
+     "mw": 0
     },
     {
      "nama": "ACWA Power",
@@ -2303,7 +2500,8 @@
      "peran": "pengembang, IPP",
      "relevansi": "teknologi",
      "negara": "SA",
-     "proyek": 3
+     "proyek": 3,
+     "mw": 0
     },
     {
      "nama": "Engie",
@@ -2314,7 +2512,8 @@
      "peran": "pengembang, IPP",
      "relevansi": "teknologi",
      "negara": "FR",
-     "proyek": 3
+     "proyek": 3,
+     "mw": 0
     },
     {
      "nama": "PT Medco Power Indonesia",
@@ -2325,7 +2524,8 @@
      "peran": "pengembang, IPP",
      "relevansi": "teknologi",
      "negara": "ID",
-     "proyek": 3
+     "proyek": 3,
+     "mw": 695
     },
     {
      "nama": "Sumitomo Corporation",
@@ -2336,7 +2536,8 @@
      "peran": "pengembang, pembiaya",
      "relevansi": "teknologi",
      "negara": "JP",
-     "proyek": 3
+     "proyek": 3,
+     "mw": 0
     },
     {
      "nama": "IGIS Asset Management",
@@ -2347,7 +2548,8 @@
      "peran": "pendana",
      "relevansi": "teknologi",
      "negara": "KR",
-     "proyek": 1
+     "proyek": 1,
+     "mw": 0
     },
     {
      "nama": "PacificLight Power",
@@ -2358,7 +2560,8 @@
      "peran": "pengembang",
      "relevansi": "teknologi",
      "negara": "SG",
-     "proyek": 1
+     "proyek": 1,
+     "mw": 0
     },
     {
      "nama": "Korea South-East Power (KOEN)",
@@ -2369,7 +2572,8 @@
      "peran": "pengembang",
      "relevansi": "teknologi",
      "negara": "KR",
-     "proyek": 1
+     "proyek": 1,
+     "mw": 0
     },
     {
      "nama": "Gallant Venture",
@@ -2380,7 +2584,8 @@
      "peran": "pengembang",
      "relevansi": "teknologi",
      "negara": "SG",
-     "proyek": 1
+     "proyek": 1,
+     "mw": 0
     },
     {
      "nama": "Korea Midland Power (KOMIPO)",
@@ -2391,7 +2596,8 @@
      "peran": "pengembang",
      "relevansi": "teknologi",
      "negara": "KR",
-     "proyek": 1
+     "proyek": 1,
+     "mw": 0
     },
     {
      "nama": "Sunseap Group",
@@ -2402,7 +2608,8 @@
      "peran": "pengembang",
      "relevansi": "teknologi",
      "negara": "SG",
-     "proyek": 1
+     "proyek": 1,
+     "mw": 0
     },
     {
      "nama": "Posco E&C",
@@ -2413,7 +2620,8 @@
      "peran": "EPC",
      "relevansi": "teknologi",
      "negara": "KR",
-     "proyek": 1
+     "proyek": 1,
+     "mw": 0
     },
     {
      "nama": "Hyundai Engineering & Construction",
@@ -2424,7 +2632,8 @@
      "peran": "EPC",
      "relevansi": "teknologi",
      "negara": "KR",
-     "proyek": 1
+     "proyek": 1,
+     "mw": 0
     },
     {
      "nama": "Solar Philippines",
@@ -2435,7 +2644,8 @@
      "peran": "pengembang",
      "relevansi": "teknologi",
      "negara": "PH",
-     "proyek": 1
+     "proyek": 1,
+     "mw": 25
     },
     {
      "nama": "Marubeni Corporation",
@@ -2446,7 +2656,8 @@
      "peran": "pengembang, pembiaya",
      "relevansi": "teknologi",
      "negara": "JP",
-     "proyek": 1
+     "proyek": 1,
+     "mw": 0
     },
     {
      "nama": "PT Ace Energy Service",
@@ -2457,7 +2668,8 @@
      "peran": "-",
      "relevansi": "teknologi",
      "negara": "ID",
-     "proyek": 1
+     "proyek": 1,
+     "mw": 0
     },
     {
      "nama": "Masdar",
@@ -2468,7 +2680,8 @@
      "peran": "pengembang, IPP",
      "relevansi": "teknologi",
      "negara": "AE",
-     "proyek": 1
+     "proyek": 1,
+     "mw": 0
     },
     {
      "nama": "Sembcorp Industries",
@@ -2479,7 +2692,8 @@
      "peran": "pengembang, IPP",
      "relevansi": "teknologi",
      "negara": "SG",
-     "proyek": 1
+     "proyek": 1,
+     "mw": 0
     },
     {
      "nama": "PT Wijaya Karya (Persero) Tbk",
@@ -2490,7 +2704,8 @@
      "peran": "EPC",
      "relevansi": "teknologi",
      "negara": "ID",
-     "proyek": 1
+     "proyek": 1,
+     "mw": 0
     },
     {
      "nama": "Vena Energy",
@@ -2501,7 +2716,8 @@
      "peran": "pengembang, IPP",
      "relevansi": "teknologi",
      "negara": "SG",
-     "proyek": 1
+     "proyek": 1,
+     "mw": 0
     },
     {
      "nama": "Nusantara Embesi Baru Energi",
@@ -2512,7 +2728,8 @@
      "peran": "pengembang",
      "relevansi": "teknologi",
      "negara": "ID",
-     "proyek": 1
+     "proyek": 1,
+     "mw": 36
     },
     {
      "nama": "PT Nusantara Sembcorp Solar Energi",
@@ -2523,7 +2740,8 @@
      "peran": "pengembang",
      "relevansi": "teknologi",
      "negara": "ID",
-     "proyek": 1
+     "proyek": 1,
+     "mw": 50
     },
     {
      "nama": "REC Group",
@@ -2534,7 +2752,8 @@
      "peran": "pemasok",
      "relevansi": "teknologi",
      "negara": "NO",
-     "proyek": 0
+     "proyek": 0,
+     "mw": 0
     },
     {
      "nama": "Temasek",
@@ -2545,7 +2764,8 @@
      "peran": "pendana",
      "relevansi": "teknologi",
      "negara": "SG",
-     "proyek": 0
+     "proyek": 0,
+     "mw": 0
     },
     {
      "nama": "UPC Renewables",
@@ -2556,7 +2776,8 @@
      "peran": "pengembang",
      "relevansi": "teknologi",
      "negara": "HK",
-     "proyek": 0
+     "proyek": 0,
+     "mw": 0
     },
     {
      "nama": "Mubadala",
@@ -2567,7 +2788,8 @@
      "peran": "pendana",
      "relevansi": "teknologi",
      "negara": "AE",
-     "proyek": 0
+     "proyek": 0,
+     "mw": 0
     },
     {
      "nama": "Quantum Power Asia",
@@ -2578,7 +2800,8 @@
      "peran": "pengembang",
      "relevansi": "teknologi",
      "negara": "SG",
-     "proyek": 0
+     "proyek": 0,
+     "mw": 0
     },
     {
      "nama": "Khazanah",
@@ -2589,7 +2812,8 @@
      "peran": "pendana",
      "relevansi": "teknologi",
      "negara": "MY",
-     "proyek": 0
+     "proyek": 0,
+     "mw": 0
     },
     {
      "nama": "Shanghai Electric",
@@ -2600,7 +2824,8 @@
      "peran": "pemasok",
      "relevansi": "teknologi",
      "negara": "CN",
-     "proyek": 0
+     "proyek": 0,
+     "mw": 0
     },
     {
      "nama": "SEG Solar",
@@ -2611,7 +2836,8 @@
      "peran": "pemasok",
      "relevansi": "teknologi",
      "negara": "US",
-     "proyek": 0
+     "proyek": 0,
+     "mw": 0
     },
     {
      "nama": "Keppel",
@@ -2622,7 +2848,8 @@
      "peran": "pengembang",
      "relevansi": "teknologi",
      "negara": "SG",
-     "proyek": 0
+     "proyek": 0,
+     "mw": 0
     },
     {
      "nama": "Taqa",
@@ -2633,7 +2860,8 @@
      "peran": "pengembang",
      "relevansi": "teknologi",
      "negara": "AE",
-     "proyek": 0
+     "proyek": 0,
+     "mw": 0
     },
     {
      "nama": "GoodWe",
@@ -2644,7 +2872,8 @@
      "peran": "pemasok",
      "relevansi": "teknologi",
      "negara": "CN",
-     "proyek": 0
+     "proyek": 0,
+     "mw": 0
     },
     {
      "nama": "Xinyi Glass Holdings",
@@ -2655,7 +2884,8 @@
      "peran": "pemasok",
      "relevansi": "teknologi",
      "negara": "CN",
-     "proyek": 0
+     "proyek": 0,
+     "mw": 0
     },
     {
      "nama": "Scatec",
@@ -2666,7 +2896,8 @@
      "peran": "pengembang",
      "relevansi": "teknologi",
      "negara": "NO",
-     "proyek": 0
+     "proyek": 0,
+     "mw": 0
     },
     {
      "nama": "Greenvolt",
@@ -2677,7 +2908,8 @@
      "peran": "pengembang",
      "relevansi": "teknologi",
      "negara": "PT",
-     "proyek": 0
+     "proyek": 0,
+     "mw": 0
     },
     {
      "nama": "Astronergy (Chint)",
@@ -2688,7 +2920,8 @@
      "peran": "pemasok",
      "relevansi": "teknologi",
      "negara": "CN",
-     "proyek": 0
+     "proyek": 0,
+     "mw": 0
     },
     {
      "nama": "Jiangsu Seraphim Solar System",
@@ -2699,7 +2932,8 @@
      "peran": "pemasok",
      "relevansi": "teknologi",
      "negara": "CN",
-     "proyek": 0
+     "proyek": 0,
+     "mw": 0
     },
     {
      "nama": "Risen Energy",
@@ -2710,7 +2944,8 @@
      "peran": "pemasok",
      "relevansi": "teknologi",
      "negara": "CN",
-     "proyek": 0
+     "proyek": 0,
+     "mw": 0
     },
     {
      "nama": "LONGi Green Energy",
@@ -2721,7 +2956,8 @@
      "peran": "pemasok",
      "relevansi": "teknologi",
      "negara": "CN",
-     "proyek": 0
+     "proyek": 0,
+     "mw": 0
     },
     {
      "nama": "Lesso Group",
@@ -2732,7 +2968,8 @@
      "peran": "pemasok",
      "relevansi": "teknologi",
      "negara": "CN",
-     "proyek": 0
+     "proyek": 0,
+     "mw": 0
     },
     {
      "nama": "Akuo",
@@ -2743,7 +2980,8 @@
      "peran": "pengembang",
      "relevansi": "teknologi",
      "negara": "FR",
-     "proyek": 0
+     "proyek": 0,
+     "mw": 0
     },
     {
      "nama": "Ampotech",
@@ -2754,7 +2992,8 @@
      "peran": "pemasok",
      "relevansi": "teknologi",
      "negara": "SG",
-     "proyek": 0
+     "proyek": 0,
+     "mw": 0
     },
     {
      "nama": "China Guodian",
@@ -2765,7 +3004,8 @@
      "peran": "pengembang",
      "relevansi": "teknologi",
      "negara": "CN",
-     "proyek": 0
+     "proyek": 0,
+     "mw": 0
     },
     {
      "nama": "ib vogt",
@@ -2776,7 +3016,8 @@
      "peran": "EPC",
      "relevansi": "teknologi",
      "negara": "DE",
-     "proyek": 0
+     "proyek": 0,
+     "mw": 0
     },
     {
      "nama": "Hokuriku Electrical Construction",
@@ -2787,7 +3028,8 @@
      "peran": "EPC",
      "relevansi": "teknologi",
      "negara": "JP",
-     "proyek": 0
+     "proyek": 0,
+     "mw": 0
     },
     {
      "nama": "Koperasi Kelurahan Merah Putih Galang Baru (PLTS Pulau Sembur Laut)",
@@ -2798,7 +3040,8 @@
      "peran": "-",
      "relevansi": "teknologi",
      "negara": "ID",
-     "proyek": 0
+     "proyek": 0,
+     "mw": 0
     },
     {
      "nama": "Institut Teknologi Del",
@@ -2809,7 +3052,8 @@
      "peran": "-",
      "relevansi": "teknologi",
      "negara": "ID",
-     "proyek": 0
+     "proyek": 0,
+     "mw": 0
     },
     {
      "nama": "Asosiasi Pabrikan Modul Surya Indonesia",
@@ -2820,7 +3064,8 @@
      "peran": "-",
      "relevansi": "teknologi",
      "negara": "ID",
-     "proyek": 0
+     "proyek": 0,
+     "mw": 0
     },
     {
      "nama": "Direktorat Aneka Energi Baru dan Energi Terbarukan",
@@ -2831,7 +3076,8 @@
      "peran": "-",
      "relevansi": "teknologi",
      "negara": "ID",
-     "proyek": 0
+     "proyek": 0,
+     "mw": 0
     },
     {
      "nama": "Asosiasi Energi Surya Indonesia",
@@ -2842,7 +3088,8 @@
      "peran": "-",
      "relevansi": "teknologi",
      "negara": "ID",
-     "proyek": 0
+     "proyek": 0,
+     "mw": 0
     },
     {
      "nama": "Badan Meteorologi, Klimatologi, dan Geofisika",
@@ -2853,7 +3100,8 @@
      "peran": "-",
      "relevansi": "teknologi",
      "negara": "ID",
-     "proyek": 0
+     "proyek": 0,
+     "mw": 0
     },
     {
      "nama": "PT Solar Karya Indonesia",
@@ -2864,7 +3112,8 @@
      "peran": "manufaktur",
      "relevansi": "teknologi",
      "negara": "ID",
-     "proyek": 0
+     "proyek": 0,
+     "mw": 0
     },
     {
      "nama": "Multi Kabel",
@@ -2875,7 +3124,8 @@
      "peran": "-",
      "relevansi": "teknologi",
      "negara": "ID",
-     "proyek": 0
+     "proyek": 0,
+     "mw": 0
     },
     {
      "nama": "PT Kencana Dua Sinergi",
@@ -2886,7 +3136,8 @@
      "peran": "-",
      "relevansi": "teknologi",
      "negara": "ID",
-     "proyek": 0
+     "proyek": 0,
+     "mw": 0
     },
     {
      "nama": "PT Asuransi Msig Indonesia",
@@ -2897,7 +3148,8 @@
      "peran": "-",
      "relevansi": "teknologi",
      "negara": "ID",
-     "proyek": 0
+     "proyek": 0,
+     "mw": 0
     },
     {
      "nama": "PT Pertamina New & Renewable Energy",
@@ -2908,7 +3160,8 @@
      "peran": "pengembang",
      "relevansi": "teknologi",
      "negara": "ID",
-     "proyek": 0
+     "proyek": 0,
+     "mw": 0
     },
     {
      "nama": "PT Sundaya Indonesia",
@@ -2919,7 +3172,8 @@
      "peran": "manufaktur, pengembang",
      "relevansi": "teknologi",
      "negara": "ID",
-     "proyek": 0
+     "proyek": 0,
+     "mw": 0
     }
    ],
    "catatan": {
@@ -4316,20 +4570,6 @@
      "u": "/regulasi?id=permen-esdm-26-2021"
     },
     {
-     "dok": "Perda 1/2025",
-     "id": "perda-b317110-1-2025",
-     "u": "/regulasi?id=perda-b317110-1-2025",
-     "naskah": "BPK",
-     "tgl": "2025-02-28",
-     "judul": "Perusahaan Umum Daerah Air Minum Surya Sembada Kota Surabaya",
-     "isi": {
-      "id": "PERDA 1/2025 mengatur perusahaan umum daerah air minum surya sembada kota surabaya.",
-      "en": "PERDA 1/2025 mengatur perusahaan umum daerah air minum surya sembada kota surabaya. (ringkasan resmi basis regulasi, bahasa Indonesia)"
-     },
-     "status": "berlaku",
-     "url": "https://peraturan.bpk.go.id/Details/317110"
-    },
-    {
      "dok": "Permen 34/2024",
      "id": "permen-kemenperin-34-2024",
      "u": "/regulasi?id=permen-kemenperin-34-2024",
@@ -4342,20 +4582,6 @@
      },
      "status": "berlaku",
      "url": "https://peraturan.bpk.go.id/Details/296131"
-    },
-    {
-     "dok": "Perda 100/2023",
-     "id": "perda-b269644-100-2023",
-     "u": "/regulasi?id=perda-b269644-100-2023",
-     "naskah": "BPK",
-     "tgl": "2023-08-31",
-     "judul": "PERUBAHAN ATAS PERATURAN WALIKOTA SURABAYA NOMOR 123 TAHUN 2022 TENTANG TARIF AIR MINUM PERUSAHAAN DAERAH AIR MINUM SURYA SEMBADA KOTA SU...",
-     "isi": {
-      "id": "PERDA 100/2023 mengatur perubahan atas peraturan walikota surabaya nomor 123 tahun 2022 tentang tarif air minum perusahaan daerah air minum surya.",
-      "en": "PERDA 100/2023 mengatur perubahan atas peraturan walikota surabaya nomor 123 tahun 2022 tentang tarif air minum perusahaan daerah air minum surya. (ringkasan resmi basis regulasi, bahasa Indonesia)"
-     },
-     "status": "berlaku",
-     "url": "https://peraturan.bpk.go.id/Details/269644"
     },
     {
      "dok": "Permen 16/2019",
@@ -4470,60 +4696,88 @@
      "url": "https://peraturan.bpk.go.id/Details/142566"
     },
     {
-     "dok": "Perda 8/2011",
-     "id": "perda-b89353-8-2011",
-     "u": "/regulasi?id=perda-b89353-8-2011",
+     "dok": "Permen 17/2013",
+     "id": "permen-esdm-17-2013",
+     "u": "/regulasi?id=permen-esdm-17-2013",
      "naskah": "BPK",
-     "tgl": "2016-03-12",
-     "judul": "Petunjuk Teknis Penentuan Penetapan Lokasi Pembangunan Pembangkit Listrik Tenaga Surya Provinsi Kalimantan Tengah",
+     "tgl": "2013-06-12",
+     "judul": "Pembelian Tenaga Listrik Oleh PT Perusahaan Listrik Negara (Persero) Dari Pembangkit Listrik Tenaga Surya Fotovoltaik",
      "isi": {
-      "id": "PERDA 8/2011 mengatur petunjuk teknis penentuan penetapan lokasi pembangunan pembangkit listrik tenaga surya provinsi kalimantan tengah.",
-      "en": "PERDA 8/2011 mengatur petunjuk teknis penentuan penetapan lokasi pembangunan pembangkit listrik tenaga surya provinsi kalimantan tengah. (ringkasan resmi basis regulasi, bahasa Indonesia)"
+      "id": "PERMEN 17/2013 mengatur pembelian tenaga listrik oleh pt perusahaan listrik negara (persero) dari pembangkit listrik tenaga surya fotovoltaik.",
+      "en": "PERMEN 17/2013 mengatur pembelian tenaga listrik oleh pt perusahaan listrik negara (persero) dari pembangkit listrik tenaga surya fotovoltaik. (ringkasan resmi basis regulasi, bahasa Indonesia)"
      },
-     "status": "berlaku",
-     "url": "https://peraturan.bpk.go.id/Details/89353"
+     "status": "dicabut",
+     "url": "https://peraturan.bpk.go.id/Details/142567"
     },
     {
-     "dok": "Perda 49/2015",
-     "id": "perda-b199323-49-2015",
-     "u": "/regulasi?id=perda-b199323-49-2015",
+     "dok": "Permen 30/2006",
+     "id": "permen-esdm-30-2006",
+     "u": "/regulasi?id=permen-esdm-30-2006",
      "naskah": "BPK",
-     "tgl": "2015-11-30",
-     "judul": "Organ Perusahaan Daerah Bank Perkreditan Rakyat Surya Galuh Kabupaten Ciamis",
+     "tgl": "2006-05-08",
+     "judul": "Penetapan dan Pemberlakuan Standar Kompetensi Tenaga Teknik Ketenagalistrikan Bidang Pembangkitan Energi Baru dan Terbarukan, Pembangkit ...",
      "isi": {
-      "id": "PERDA 49/2015 mengatur organ perusahaan daerah bank perkreditan rakyat surya galuh kabupaten ciamis.",
-      "en": "PERDA 49/2015 mengatur organ perusahaan daerah bank perkreditan rakyat surya galuh kabupaten ciamis. (ringkasan resmi basis regulasi, bahasa Indonesia)"
+      "id": "PERMEN 30/2006 mengatur penetapan dan pemberlakuan standar kompetensi tenaga teknik ketenagalistrikan bidang pembangkitan energi baru dan terbarukan, pembangkit listrik tenaga mikro.",
+      "en": "PERMEN 30/2006 mengatur penetapan dan pemberlakuan standar kompetensi tenaga teknik ketenagalistrikan bidang pembangkitan energi baru dan terbarukan, pembangkit listrik tenaga mikro. (ringkasan resmi basis regulasi, bahasa Indonesia)"
      },
-     "status": "berlaku",
-     "url": "https://peraturan.bpk.go.id/Details/199323"
+     "status": "dicabut",
+     "url": "https://peraturan.bpk.go.id/Details/143855"
     },
     {
-     "dok": "Perda 50/2015",
-     "id": "perda-b199325-50-2015",
-     "u": "/regulasi?id=perda-b199325-50-2015",
+     "dok": "Permen 7/2026",
+     "id": "permen-esdm-7-2026",
+     "u": "/regulasi?id=permen-esdm-7-2026",
      "naskah": "BPK",
-     "tgl": "2015-11-30",
-     "judul": "Perhitungan Tahunan Dan Penggunaan Laba Bersih Tahunan Perusahaan Daerah Bank Perkreditan Rakyat Surya Galuh Kabupaten Ciamis",
+     "tgl": "2026-06-08",
+     "judul": "Standar Kegiatan Usaha pada Penyelenggaraan Perizinan Berusaha Berbasis Risiko Sektor Energi dan Sumber Daya Mineral",
      "isi": {
-      "id": "PERDA 50/2015 mengatur perhitungan tahunan dan penggunaan laba bersih tahunan perusahaan daerah bank perkreditan rakyat surya galuh kabupaten ciamis.",
-      "en": "PERDA 50/2015 mengatur perhitungan tahunan dan penggunaan laba bersih tahunan perusahaan daerah bank perkreditan rakyat surya galuh kabupaten ciamis. (ringkasan resmi basis regulasi, bahasa Indonesia)"
+      "id": "PERMEN 7/2026 mengatur standar kegiatan usaha pada penyelenggaraan perizinan berusaha berbasis risiko sektor energi dan sumber daya mineral.",
+      "en": "PERMEN 7/2026 mengatur standar kegiatan usaha pada penyelenggaraan perizinan berusaha berbasis risiko sektor energi dan sumber daya mineral. (ringkasan resmi basis regulasi, bahasa Indonesia)"
      },
      "status": "berlaku",
-     "url": "https://peraturan.bpk.go.id/Details/199325"
+     "url": "https://peraturan.bpk.go.id/Details/350238"
     },
     {
-     "dok": "Perda 23/2014",
-     "id": "perda-b138912-23-2014",
-     "u": "/regulasi?id=perda-b138912-23-2014",
+     "dok": "Permen 28/2025",
+     "id": "permen-klhk-28-2025",
+     "u": "/regulasi?id=permen-klhk-28-2025",
      "naskah": "BPK",
-     "tgl": "2014-10-13",
-     "judul": "Bantuan Uang Saku Bagi Mahasiswa Sekolah Tinggi Keguruan Dan Ilmu Pendidikan Surya",
+     "tgl": "2025-12-23",
+     "judul": "Besaran Nilai A, Nilai B1, Nilai B2, dan Nilai B3 pada Penerimaan Negara Bukan Pajak Pungutan atas Kegiatan Perizinan Berusaha Pemanfaata...",
      "isi": {
-      "id": "PERDA 23/2014 mengatur bantuan uang saku bagi mahasiswa sekolah tinggi keguruan dan ilmu pendidikan surya.",
-      "en": "PERDA 23/2014 mengatur bantuan uang saku bagi mahasiswa sekolah tinggi keguruan dan ilmu pendidikan surya. (ringkasan resmi basis regulasi, bahasa Indonesia)"
+      "id": "PERMEN 28/2025 mengatur besaran nilai a, nilai b1, nilai b2, dan nilai b3 pada penerimaan negara bukan pajak pungutan atas kegiatan.",
+      "en": "PERMEN 28/2025 mengatur besaran nilai a, nilai b1, nilai b2, dan nilai b3 pada penerimaan negara bukan pajak pungutan atas kegiatan. (ringkasan resmi basis regulasi, bahasa Indonesia)"
      },
      "status": "berlaku",
-     "url": "https://peraturan.bpk.go.id/Details/138912"
+     "url": "https://peraturan.bpk.go.id/Details/341119"
+    },
+    {
+     "dok": "Permen 39/2025",
+     "id": "permen-kemenperin-39-2025",
+     "u": "/regulasi?id=permen-kemenperin-39-2025",
+     "naskah": "BPK",
+     "tgl": "2025-11-12",
+     "judul": "Pencabutan Peraturan Menteri Perindustrian Nomor 15/M-IND/PER/3/2016 tentang Standar Spesifikasi dan Standar Harga Tower Transmisi dan Ko...",
+     "isi": {
+      "id": "PERMEN 39/2025 mengatur pencabutan peraturan menteri perindustrian nomor 15/m-ind/per/3/2016 tentang standar spesifikasi dan standar harga tower transmisi dan konduktor produk dalam.",
+      "en": "PERMEN 39/2025 mengatur pencabutan peraturan menteri perindustrian nomor 15/m-ind/per/3/2016 tentang standar spesifikasi dan standar harga tower transmisi dan konduktor produk dalam. (ringkasan resmi basis regulasi, bahasa Indonesia)"
+     },
+     "status": "berlaku",
+     "url": "https://peraturan.bpk.go.id/Details/343106"
+    },
+    {
+     "dok": "Permen 73/2025",
+     "id": "permen-kemenkeu-73-2025",
+     "u": "/regulasi?id=permen-kemenkeu-73-2025",
+     "naskah": "BPK",
+     "tgl": "2025-11-06",
+     "judul": "Tata Cara Penyediaan, Penghitungan, Pembayaran dan Pertanggungjawaban Dana Kompensasi Atas Kekuarangan Penerimaan Badan Usaha Akibat Kebi...",
+     "isi": {
+      "id": "PERMEN 73/2025 mengatur tata cara penyediaan, penghitungan, pembayaran dan pertanggungjawaban dana kompensasi atas kekuarangan penerimaan badan usaha akibat kebijakan penetapan harga.",
+      "en": "PERMEN 73/2025 mengatur tata cara penyediaan, penghitungan, pembayaran dan pertanggungjawaban dana kompensasi atas kekuarangan penerimaan badan usaha akibat kebijakan penetapan harga. (ringkasan resmi basis regulasi, bahasa Indonesia)"
+     },
+     "status": "berlaku",
+     "url": "https://peraturan.bpk.go.id/Details/333927"
     }
    ],
    "catatan": {
@@ -4550,57 +4804,12 @@
      "url": "https://peraturan.bpk.go.id/Details/143855"
     },
     {
-     "tanggal": "2011-05-13",
-     "judul": {
-      "id": "Perda 18/2011 ditetapkan: PETUNJUK TEKNIS KEGIATAN PENGADAAN JARINGAN INSTALASI LISTRIK DAN LISTRIK TENAGA SURYA YANG BERSUMBER DARI ...",
-      "en": "Perda 18/2011 enacted: PETUNJUK TEKNIS KEGIATAN PENGADAAN JARINGAN INSTALASI LISTRIK DAN LISTRIK TENAGA SURYA YANG BERSUMBER DARI ... (official title in Indonesian)"
-     },
-     "reg": "perda-b27178-18-2011",
-     "url": "https://peraturan.bpk.go.id/Details/27178"
-    },
-    {
-     "tanggal": "2012-12-28",
-     "judul": {
-      "id": "Perda 11/2012 ditetapkan: Pembentukan Kelurahan Sinar Jaya Jelutung, Kelurahan Matras, Kelurahan Jeletik, Kelurahan Surya Timur, Kelu...",
-      "en": "Perda 11/2012 enacted: Pembentukan Kelurahan Sinar Jaya Jelutung, Kelurahan Matras, Kelurahan Jeletik, Kelurahan Surya Timur, Kelu... (official title in Indonesian)"
-     },
-     "reg": "perda-b25003-11-2012",
-     "url": "https://peraturan.bpk.go.id/Details/25003"
-    },
-    {
      "tanggal": "2013-06-12",
      "reg": "permen-esdm-17-2013",
      "judul": {
       "id": "Permen ESDM 17/2013 pembelian listrik dari PLTS (dicabut)",
       "en": "Permen ESDM 17/2013 pembelian listrik dari PLTS (dicabut)"
      }
-    },
-    {
-     "tanggal": "2013-12-12",
-     "judul": {
-      "id": "Perda 50/2013 ditetapkan: Penunjukan Perusahaan Daerah Bhukti Mukti Bhakti Kabupaten Bangli Sebagai Pengelola Usaha Pembangkit Listri...",
-      "en": "Perda 50/2013 enacted: Penunjukan Perusahaan Daerah Bhukti Mukti Bhakti Kabupaten Bangli Sebagai Pengelola Usaha Pembangkit Listri... (official title in Indonesian)"
-     },
-     "reg": "perda-b38440-50-2013",
-     "url": "https://peraturan.bpk.go.id/Details/38440"
-    },
-    {
-     "tanggal": "2014-10-13",
-     "judul": {
-      "id": "Perda 23/2014 ditetapkan: Bantuan Uang Saku Bagi Mahasiswa Sekolah Tinggi Keguruan Dan Ilmu Pendidikan Surya",
-      "en": "Perda 23/2014 enacted: Bantuan Uang Saku Bagi Mahasiswa Sekolah Tinggi Keguruan Dan Ilmu Pendidikan Surya (official title in Indonesian)"
-     },
-     "reg": "perda-b138912-23-2014",
-     "url": "https://peraturan.bpk.go.id/Details/138912"
-    },
-    {
-     "tanggal": "2015-11-30",
-     "judul": {
-      "id": "Perda 49/2015 ditetapkan: Organ Perusahaan Daerah Bank Perkreditan Rakyat Surya Galuh Kabupaten Ciamis",
-      "en": "Perda 49/2015 enacted: Organ Perusahaan Daerah Bank Perkreditan Rakyat Surya Galuh Kabupaten Ciamis (official title in Indonesian)"
-     },
-     "reg": "perda-b199323-49-2015",
-     "url": "https://peraturan.bpk.go.id/Details/199323"
     },
     {
      "tanggal": "2016-06-28",
@@ -4611,12 +4820,57 @@
      }
     },
     {
+     "tanggal": "2017-04-12",
+     "judul": {
+      "id": "Perpres 47/2017 ditetapkan: Penyediaan Lampu Tenaga Surya Hemat Energi bagi Masyarakat yang Belum Mendapatkan Akses Listrik",
+      "en": "Perpres 47/2017 enacted: Penyediaan Lampu Tenaga Surya Hemat Energi bagi Masyarakat yang Belum Mendapatkan Akses Listrik (official title in Indonesian)"
+     },
+     "reg": "perpres-47-2017",
+     "url": "https://peraturan.bpk.go.id/Details/72904"
+    },
+    {
+     "tanggal": "2017-04-28",
+     "judul": {
+      "id": "Permen 09/PRT/M/2017/2017 ditetapkan: Tata Cara Pemilihan Badan Usaha Sebagai Mitra Pemanfaatan Barang Milik Negara dalam Rangka Penyediaan Infra...",
+      "en": "Permen 09/PRT/M/2017/2017 enacted: Tata Cara Pemilihan Badan Usaha Sebagai Mitra Pemanfaatan Barang Milik Negara dalam Rangka Penyediaan Infra... (official title in Indonesian)"
+     },
+     "reg": "permen-b159770-09-prt-m-2017-2017",
+     "url": "https://peraturan.bpk.go.id/Details/159770"
+    },
+    {
+     "tanggal": "2017-05-03",
+     "judul": {
+      "id": "Permen 33/2017 ditetapkan: Tata Cara Penyediaan Lampu Tenaga Surya Hemat Energi Bagi Masyarakat Yang Belum Mendapatkan Akses Listrik",
+      "en": "Permen 33/2017 enacted: Tata Cara Penyediaan Lampu Tenaga Surya Hemat Energi Bagi Masyarakat Yang Belum Mendapatkan Akses Listrik (official title in Indonesian)"
+     },
+     "reg": "permen-esdm-33-2017",
+     "url": "https://peraturan.bpk.go.id/Details/142501"
+    },
+    {
+     "tanggal": "2018-01-25",
+     "judul": {
+      "id": "Permen 5/2018 ditetapkan: Perubahan Atas Peraturan Menteri Energi Dan Sumber Daya Mineral Nomor 33 Tahun 2017 Tentang Tata Cara Penye...",
+      "en": "Permen 5/2018 enacted: Perubahan Atas Peraturan Menteri Energi Dan Sumber Daya Mineral Nomor 33 Tahun 2017 Tentang Tata Cara Penye... (official title in Indonesian)"
+     },
+     "reg": "permen-esdm-5-2018",
+     "url": "https://peraturan.bpk.go.id/Details/142500"
+    },
+    {
      "tanggal": "2018-11-15",
      "reg": "permen-esdm-49-2018",
      "judul": {
       "id": "Permen ESDM 49/2018 PLTS atap konsumen PLN (dicabut)",
       "en": "Permen ESDM 49/2018 PLTS atap konsumen PLN (dicabut)"
      }
+    },
+    {
+     "tanggal": "2019-09-02",
+     "judul": {
+      "id": "Permen 13/2019 ditetapkan: Perubahan Atas Peraturan Menteri Energi Dan Sumber Daya Mineral Nomor 49 Tahun 2018 Tentang Penggunaan Sist...",
+      "en": "Permen 13/2019 enacted: Perubahan Atas Peraturan Menteri Energi Dan Sumber Daya Mineral Nomor 49 Tahun 2018 Tentang Penggunaan Sist... (official title in Indonesian)"
+     },
+     "reg": "permen-esdm-13-2019",
+     "url": "https://peraturan.bpk.go.id/Details/142299"
     },
     {
      "tanggal": "2021-08-13",
@@ -6248,6 +6502,7 @@
     {
      "nama": "42 MWp Bundled Solar Photovoltaic Power project in Indonesia",
      "id": "pd_gs_2055",
+     "pemberi": "-",
      "jenis": "kredit karbon",
      "status": "tersertifikasi",
      "nilai_usd": null,
@@ -6928,7 +7183,13 @@
      "sumber": [
       "masdar",
       "cirata"
-     ]
+     ],
+     "koordinat": [
+      -6.6954,
+      107.3334
+     ],
+     "koordinat_presisi": "titik_persis",
+     "id_proyek": "pj_0334"
     },
     {
      "id": "ikn",
@@ -7005,7 +7266,13 @@
      },
      "sumber": [
       "ikn"
-     ]
+     ],
+     "koordinat": [
+      -0.9911,
+      116.637
+     ],
+     "koordinat_presisi": "titik_persis",
+     "id_proyek": "gem_solar_L100000830284"
     },
     {
      "id": "benban",
@@ -7545,7 +7812,13 @@
      "sumber": [
       "kubu"
      ],
-     "hak_jawab": true
+     "hak_jawab": true,
+     "koordinat": [
+      -8.255,
+      115.5647
+     ],
+     "koordinat_presisi": "titik_persis",
+     "id_proyek": "gem_solar_L100001066605"
     },
     {
      "id": "lelang-plts-pln",
@@ -7621,7 +7894,13 @@
       "samindo",
       "lelang23"
      ],
-     "hak_jawab": true
+     "hak_jawab": true,
+     "koordinat": [
+      -0.9911,
+      116.637
+     ],
+     "koordinat_presisi": "titik_persis",
+     "id_proyek": "gem_solar_L100000830284"
     },
     {
      "id": "vn-fit",

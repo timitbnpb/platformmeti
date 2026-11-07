@@ -2,6 +2,7 @@
 // Naskah topik Energi laut (arus, gelombang, panas laut/OTEC) -> public/data/topik/energi_laut.json (TOPIK-SKEMA.md).
 // Catatan: id topik "energi-laut" belum terdaftar di ui.json/indeks.json/topik_bangun.mjs (berkas cetakan, bukan milik pengerja ini).
 // Pakai: node scripts/pipa/topik_energi_laut.mjs [--selftest]
+import { dalam } from './topik_energi_laut_dalam.mjs';
 import { T, hp, S, ED, baca, regS, nf, nfe, SPUBFIN, teks, faq, glos, rumus, langkah, tabel, grafik, linimasa, kol, L, kunci, kas, rakit, selftest as st, jalankan, tabelRegulasi, kolRegulasi, validasi as val } from './topik_enam_lib.mjs';
 
 const kh = baca('public/data/keuangan_hijau.json');
@@ -29,7 +30,7 @@ const cfMey = Math.round((10.2 / (6 * 8.76)) * 1000) / 10;
 const cfSihwa = Math.round((552.7 / (254 * 8.76)) * 1000) / 10;
 const pArus = Math.round(0.5 * 1025 * Math.PI * 8 * 8 * 27 * 0.4) / 1e6;
 
-export function susun() {
+function susunAsal() {
   const bab = {};
   bab['2'] = faq(['pot63', 'jp28', 'esdm_arus'], [
     ['Apa saja jenis energi laut?', 'What types of ocean energy are there?', 'Arus pasang surut (tidal stream), gelombang, dan panas laut (OTEC). Studi 2022 yang dikutip ESDM menaksir potensi praktis 63 GW: arus 20,01 GW, gelombang 1,99 GW, panas laut 41 GW.', 'Tidal stream, waves and ocean thermal energy (OTEC). A 2022 study cited by the ministry puts practical potential at 63 GW: currents 20.01 GW, waves 1.99 GW, thermal 41 GW.'],
@@ -237,6 +238,7 @@ export function susun() {
     sumber: SUMBER, bab });
 }
 
+export function susun() { return dalam(susunAsal()); }
 export const validasi = val;
 export const selftest = () => st(susun);
 jalankan(import.meta.url, 'energi_laut', susun);

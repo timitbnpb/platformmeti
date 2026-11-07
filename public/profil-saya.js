@@ -36,7 +36,7 @@ const tx = (k) => `data-i18n="${k}"`;
 const pesan = (jenis, teks) => { const el = $("pfPesan"); if (el) el.innerHTML = teks ? pesanHtml(jenis, teks) : ""; };
 const tombolIk = (aksi, ik, label, data = "") => `<button type="button" class="ps-ik" data-aksi="${aksi}" ${data} aria-label="${esc(label)}" title="${esc(label)}">${ikon(ik, 18)}</button>`;
 const kartu = (ik, kunci, isi, aksi = "") => exHtml({ ikon: ik, judulHtml: `<span ${tx(kunci)}>${esc(t(kunci))}</span>`, aksiHtml: aksi, isiHtml: isi, tingkat: "h2", kelas: "pf-ex" });
-const kosong = (ik, kunci, aksi, data = "") => `<div class="ps-kosong"><span class="ps-kosong-ik">${ikon(ik, 28)}</span><p>${esc(t(kunci))}</p><button type="button" class="jm-tbl" data-aksi="${aksi}" ${data}>${ikon("tambah", 18)}<span>${esc(t("pf.tambah"))}</span></button></div>`;
+const kosong = (ik, kunci, aksi, data = "") => `<div class="pfs-kosong"><span class="pfs-kosong-ik">${ikon(ik, 28)}</span><p>${esc(t(kunci))}</p><button type="button" class="jm-tbl" data-aksi="${aksi}" ${data}>${ikon("tambah", 18)}<span>${esc(t("pf.tambah"))}</span></button></div>`;
 const medan = (id, kunci, ik, isi, bantu = "") => `<div class="jm-medan ps-f"><label for="${id}">${esc(t(kunci))}</label><div class="ps-in">${ikon(ik, 18)}${isi}</div><small class="pf-bantu ps-bantu">${bantu}</small></div>`;
 const teks = (id, nilai, maks, { tipe = "text", ac = "off", mode = "", ro = false } = {}) => `<input class="jm-isian" id="${id}" name="${id}" type="${tipe}" maxlength="${maks}" autocomplete="${ac}"${mode ? ` inputmode="${mode}"` : ""} value="${esc(nilai ?? "")}"${ro ? " readonly" : ""}>`;
 

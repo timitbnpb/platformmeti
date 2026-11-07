@@ -23,7 +23,8 @@
     "en": "years"
    },
    "sumber": "den26",
-   "est": false
+   "est": false,
+   "deret": null
   },
   {
    "label": {
@@ -37,7 +38,8 @@
     "en": "MW"
    },
    "sumber": "den26",
-   "est": false
+   "est": false,
+   "deret": null
   },
   {
    "label": {
@@ -51,7 +53,8 @@
     "en": "GW"
    },
    "sumber": "den26",
-   "est": false
+   "est": false,
+   "deret": null
   },
   {
    "label": {
@@ -65,7 +68,8 @@
     "en": "sites"
    },
    "sumber": "ibp25",
-   "est": false
+   "est": false,
+   "deret": null
   },
   {
    "label": {
@@ -79,7 +83,8 @@
     "en": "MWt"
    },
    "sumber": "rsg",
-   "est": false
+   "est": false,
+   "deret": null
   }
  ],
  "penting": [
@@ -245,6 +250,114 @@
    "tahun": 2025,
    "bukti": "via-pihak-ketiga",
    "lisensi": "CC BY 4.0"
+  },
+  "direktori": {
+   "judul": "Direktori METI: organisasi, proyek, pendanaan, regulasi, riset (berkas public/data/*.json; tiap baris punya sumber sendiri di berkasnya)",
+   "penerbit": "METI",
+   "url": "https://platformmeti.timitbnpb.workers.dev",
+   "tanggal": "2026-11-08",
+   "tahun": 2026,
+   "bukti": "via-pihak-ketiga"
+  },
+  "ruptlp": {
+   "judul": "RUPTL PT PLN (Persero) 2025-2034: bagian II.2.6 dan III.1.3 (program PLTN: 19 elemen infrastruktur IAEA, penilaian INIR 2009 16 dari 19, 28 wilayah potensial hingga 70 GW), tabel penambahan pembangkit EBT (PLTN 250 MW 2032 dan 250 MW 2033; jumlah 500 MW), proyek 28 Sumatera-Bangka dan 23 Kalimantan; dibaca penuh dari PDF 8 Nov 2026",
+   "penerbit": "PT PLN (Persero); disahkan Kementerian ESDM",
+   "url": "https://gatrik.esdm.go.id/gatrik/gatrik-api//storage/migrasi/download_index/files/b967d-ruptl-pln-2025-2034-pub-.pdf",
+   "tanggal": "2026-11-08",
+   "tahun": 2025,
+   "bukti": "resmi"
+  },
+  "rooppur": {
+   "judul": "Rooppur Nuclear Power Plant (Bangladesh: 2 x VVER-1200, 2,4 GWe; unit 1 mencapai kritikalitas Oktober 2026 menurut artikel)",
+   "penerbit": "Wikipedia (ringkasan artikel; bukan sumber primer)",
+   "url": "https://en.wikipedia.org/wiki/Rooppur_Nuclear_Power_Plant",
+   "tanggal": "2026-11-08",
+   "tahun": 2026,
+   "bukti": "via-pihak-ketiga",
+   "lisensi": "CC BY-SA 4.0"
+  },
+  "akkuyu": {
+   "judul": "Akkuyu Nuclear Power Plant (Turki: dalam konstruksi, peluncuran resmi Apr 2015, reaktor pertama diharapkan 2026 setelah tertunda tiga tahun)",
+   "penerbit": "Wikipedia (ringkasan artikel; bukan sumber primer)",
+   "url": "https://en.wikipedia.org/wiki/Akkuyu_Nuclear_Power_Plant",
+   "tanggal": "2026-11-08",
+   "tahun": 2026,
+   "bukti": "via-pihak-ketiga",
+   "lisensi": "CC BY-SA 4.0"
+  },
+  "vnnuk": {
+   "judul": "Nuclear power in Vietnam (rencana ditangguhkan November 2016; 2022 menteri menyebut nuklir tren tak terelakkan)",
+   "penerbit": "Wikipedia (ringkasan artikel; bukan sumber primer)",
+   "url": "https://en.wikipedia.org/wiki/Nuclear_power_in_Vietnam",
+   "tanggal": "2026-11-08",
+   "tahun": 2026,
+   "bukti": "via-pihak-ketiga",
+   "lisensi": "CC BY-SA 4.0"
+  },
+  "idnuk": {
+   "judul": "Nuclear power in Indonesia (Indonesia menandatangani NPT 2 Mar 1970, diratifikasi UU 8/1978 pada 18 Des 1978)",
+   "penerbit": "Wikipedia (ringkasan artikel; bukan sumber primer)",
+   "url": "https://en.wikipedia.org/wiki/Nuclear_power_in_Indonesia",
+   "tanggal": "2026-11-08",
+   "tahun": 2026,
+   "bukti": "via-pihak-ketiga",
+   "lisensi": "CC BY-SA 4.0"
+  },
+  "iaea": {
+   "judul": "IAEA, Milestones in the Development of a National Infrastructure for Nuclear Power (19 isu infrastruktur; dirujuk RUPTL 2025-2034)",
+   "penerbit": "International Atomic Energy Agency",
+   "url": "https://www.iaea.org/publications/8009/milestones-in-the-development-of-a-national-infrastructure-for-nuclear-power",
+   "tanggal": "2026-11-08",
+   "tahun": 2026,
+   "bukti": "resmi"
+  },
+  "uu10": {
+   "judul": "UU 10/1997 tentang Ketenaganukliran",
+   "penerbit": "Pemerintah RI (JDIH BPK)",
+   "url": "https://peraturan.bpk.go.id/Details/45931",
+   "tanggal": "2026-11-07",
+   "tahun": 1997,
+   "bukti": "resmi"
+  },
+  "pp46": {
+   "judul": "PP 46/2009 tentang Batas Pertanggungjawaban Kerugian Nuklir",
+   "penerbit": "Pemerintah RI (JDIH BPK)",
+   "url": "https://peraturan.bpk.go.id/Details/4968",
+   "tanggal": "2026-11-07",
+   "tahun": 2009,
+   "bukti": "resmi"
+  },
+  "pp54": {
+   "judul": "PP 54/2012 tentang Keselamatan Dan Keamanan Instalasi Nuklir",
+   "penerbit": "Pemerintah RI (JDIH BPK)",
+   "url": "https://peraturan.bpk.go.id/Details/5267",
+   "tanggal": "2026-11-07",
+   "tahun": 2012,
+   "bukti": "resmi"
+  },
+  "pp2": {
+   "judul": "PP 2/2014 tentang Perizinan Instalasi Nuklir Dan Pemanfaatan Bahan Nuklir",
+   "penerbit": "Pemerintah RI (JDIH BPK)",
+   "url": "https://peraturan.bpk.go.id/Details/5439",
+   "tanggal": "2026-11-07",
+   "tahun": 2014,
+   "bukti": "resmi"
+  },
+  "uu8": {
+   "judul": "UU 8/1978 tentang Pengesahan Perjanjian Mengenai Pencegahan Penyebaran Senjata-Senjata Nuklir",
+   "penerbit": "Pemerintah RI (JDIH BPK)",
+   "url": "https://peraturan.bpk.go.id/Details/47168",
+   "tanggal": "2026-11-07",
+   "tahun": 1978,
+   "bukti": "resmi"
+  },
+  "pbp": {
+   "judul": "Peraturan 1/2026 tentang Sistem Proteksi Fisik Instalasi Nuklir dan Bahan Nuklir",
+   "penerbit": "Pemerintah RI (JDIH BPK)",
+   "url": "https://peraturan.bpk.go.id/Details/344440",
+   "tanggal": "2026-11-07",
+   "tahun": 2026,
+   "bukti": "resmi"
   }
  },
  "bab": {
@@ -264,7 +377,8 @@
      "j": {
       "id": "Target pemerintah 2032 sampai 2034 dengan kapasitas awal 500 MW (Dewan Energi Nasional, 3 Mar 2026). Pada Februari 2025 Dirjen EBTKE menyebut 250 MW pada 2032; angka awal berbeda antarpernyataan.",
       "en": "The government target is 2032 to 2034 with an initial 500 MW (National Energy Council, 3 Mar 2026). In February 2025 the EBTKE director general cited 250 MW in 2032; initial figures differ between statements."
-     }
+     },
+     "bab": 10
     },
     {
      "t": {
@@ -274,7 +388,8 @@
      "j": {
       "id": "Belum per 12 Agu 2025: Bapeten baru menerbitkan persetujuan evaluasi tapak untuk Thorcon 500 di Pulau Kelasa, dan Direktur Jenderal EBTKE menyatakan belum ada yang menerima izin tapak.",
       "en": "Not as of 12 Aug 2025: Bapeten has only issued a site evaluation approval for Thorcon 500 on Kelasa Island, and the EBTKE director general said no one has received a site permit."
-     }
+     },
+     "bab": 12
     },
     {
      "t": {
@@ -284,7 +399,8 @@
      "j": {
       "id": "Bapeten (Badan Pengawas Tenaga Nuklir) menerbitkan persetujuan evaluasi tapak dan izin tahapan lain; keputusan akhir proyek di tangan Menteri ESDM menurut Dirjen EBTKE.",
       "en": "Bapeten (Nuclear Energy Regulatory Agency) issues the site evaluation approval and later-stage permits; per the EBTKE director general the project's final decision rests with the Energy Minister."
-     }
+     },
+     "bab": 9
     },
     {
      "t": {
@@ -294,7 +410,8 @@
      "j": {
       "id": "UU 10/1997 tentang Ketenaganukliran, PP 54/2012 (keselamatan instalasi), PP 2/2014 (perizinan), dan PP 40/2025 tentang Kebijakan Energi Nasional yang menempatkan nuklir bukan opsi terakhir.",
       "en": "Law 10/1997 on nuclear energy, PP 54/2012 (installation safety), PP 2/2014 (licensing) and PP 40/2025 on National Energy Policy, which no longer treats nuclear as a last resort."
-     }
+     },
+     "bab": 12
     },
     {
      "t": {
@@ -304,7 +421,8 @@
      "j": {
       "id": "DEN menyebut 44 GW pada 2060 (35 GW listrik dan 9 GW untuk hidrogen mulai 2045); Februari 2025 ESDM menyebut 42 GW pada 2060.",
       "en": "DEN cites 44 GW by 2060 (35 GW for electricity and 9 GW for hydrogen from 2045); in February 2025 the ministry cited 42 GW by 2060."
-     }
+     },
+     "bab": 30
     },
     {
      "t": {
@@ -314,7 +432,8 @@
      "j": {
       "id": "Ya, tiga reaktor riset BRIN: Serpong 30 MWt, Bandung 2 MWt, Yogyakarta 100 kWt (kutipan pejabat BRIN via Katadata).",
       "en": "Yes, three BRIN research reactors: Serpong 30 MWt, Bandung 2 MWt, Yogyakarta 100 kWt (BRIN official quoted via Katadata)."
-     }
+     },
+     "bab": 10
     },
     {
      "t": {
@@ -324,7 +443,8 @@
      "j": {
       "id": "Small modular reactor: reaktor modul kecil, misalnya modul 77 MW pada proyek NuScale yang dibatalkan di AS.",
       "en": "Small modular reactor: a small modular reactor, e.g. the 77 MW modules in the cancelled NuScale project in the US."
-     }
+     },
+     "bab": 3
     },
     {
      "t": {
@@ -334,7 +454,96 @@
      "j": {
       "id": "Ya. Warga Bangka Belitung dan aliansi di Kalimantan Barat menolak; IESR menilai Indonesia tidak membutuhkan nuklir (Mongabay, 23 Feb 2025). Pemerintah dan pengembang berpendapat sebaliknya.",
       "en": "Yes. Residents of Bangka Belitung and an alliance in West Kalimantan object; IESR says Indonesia does not need nuclear (Mongabay, 23 Feb 2025). The government and developer argue otherwise."
-     }
+     },
+     "bab": 4
+    },
+    {
+     "t": {
+      "id": "Berapa PLTN yang tercantum di RUPTL 2025-2034?",
+      "en": "How many nuclear plants are in RUPTL 2025-2034?"
+     },
+     "j": {
+      "id": "Dua kuota PLTN 250 MW: Sumatera-Bangka (COD 2032) dan Kalimantan (COD 2033), jumlah 500 MW sampai 2034 (RUPTL, tabel penambahan pembangkit EBT). Angka 250 MW (ESDM, 2025) dan 500 MW (DEN, 2026) sama-sama benar: yang pertama satu kuota, yang kedua jumlah dua kuota.",
+      "en": "Two 250 MW nuclear quotas: Sumatra-Bangka (COD 2032) and Kalimantan (COD 2033), 500 MW in total to 2034 (RUPTL, renewable addition table). The 250 MW (Energy Ministry, 2025) and 500 MW (DEN, 2026) figures are both right: the first is one quota, the second is both quotas together."
+     },
+     "bab": 10
+    },
+    {
+     "t": {
+      "id": "Apa 19 elemen infrastruktur IAEA?",
+      "en": "What are the 19 IAEA infrastructure elements?"
+     },
+     "j": {
+      "id": "Keselamatan nuklir, pendanaan, kerangka hukum, safeguards, proteksi radiasi, kerangka regulasi, jaringan listrik, SDM, tapak, perlindungan lingkungan, perencanaan darurat, keamanan nuklir, daur bahan bakar, pengelolaan limbah, keterlibatan industri, pengadaan, posisi nasional, manajemen, dan keterlibatan pemangku kepentingan (daftar dalam RUPTL).",
+      "en": "Nuclear safety, funding, legal framework, safeguards, radiation protection, regulatory framework, electrical grid, human resources, sites, environmental protection, emergency planning, nuclear security, fuel cycle, waste management, industrial involvement, procurement, national position, management and stakeholder involvement (list in RUPTL)."
+     },
+     "bab": 4
+    },
+    {
+     "t": {
+      "id": "Seberapa siap Indonesia menurut penilaian IAEA?",
+      "en": "How ready is Indonesia per the IAEA review?"
+     },
+     "j": {
+      "id": "Misi INIR IAEA tahun 2009 menilai Indonesia telah memenuhi 16 dari 19 elemen (nomor 1 sampai 16); RUPTL menyatakan Indonesia masih di fase pertimbangan menuju keputusan pelaksanaan proyek.",
+      "en": "The 2009 IAEA INIR mission found Indonesia had prepared 16 of the 19 elements (numbers 1 to 16); RUPTL states Indonesia is still at the consideration phase toward a project implementation decision."
+     },
+     "bab": 30
+    },
+    {
+     "t": {
+      "id": "Berapa lokasi potensial dan di mana PLTN awal?",
+      "en": "How many potential sites and where are the first plants?"
+     },
+     "j": {
+      "id": "RUPTL menyebut 28 wilayah potensial yang dapat menampung PLTN hingga 70 GW, dan tahap awal direncanakan di sistem Sumatera dan Kalimantan. Dirjen EBTKE (Feb 2025) menyebut 29 lokasi di 13 wilayah; selisih satu lokasi tidak dijelaskan sumber.",
+      "en": "RUPTL cites 28 potential regions able to host up to 70 GW of nuclear, with the first phase planned in the Sumatra and Kalimantan systems. The EBTKE director general (Feb 2025) cited 29 sites in 13 regions; the one-site difference is not explained by sources."
+     },
+     "bab": 10
+    },
+    {
+     "t": {
+      "id": "Apakah Indonesia boleh membuat senjata nuklir?",
+      "en": "May Indonesia make nuclear weapons?"
+     },
+     "j": {
+      "id": "Tidak. Indonesia menandatangani Traktat Nonproliferasi pada 1970 dan meratifikasinya lewat UU 8/1978; PLTN hanya untuk tujuan damai.",
+      "en": "No. Indonesia signed the Non-Proliferation Treaty in 1970 and ratified it through Law 8/1978; nuclear plants are for peaceful use only."
+     },
+     "bab": 12
+    },
+    {
+     "t": {
+      "id": "Siapa menanggung kerugian bila terjadi kecelakaan nuklir?",
+      "en": "Who bears the loss in a nuclear accident?"
+     },
+     "j": {
+      "id": "PP 46/2009 mengatur batas pertanggungjawaban kerugian nuklir (judul regulasi di repo); besarnya dan skema asuransi dibaca pada naskah peraturan itu.",
+      "en": "Gov. Reg. 46/2009 sets the limit of liability for nuclear damage (regulation title in the repo); read the amount and insurance scheme in that text."
+     },
+     "bab": 9
+    },
+    {
+     "t": {
+      "id": "Bagaimana limbah radioaktif ditangani?",
+      "en": "How is radioactive waste handled?"
+     },
+     "j": {
+      "id": "RUPTL mensyaratkan jaminan pasokan bahan bakar, pengelolaan limbah radioaktif, keselamatan, dan keamanan sebelum PLTN dibangun dan dioperasikan. Skema penyimpanan akhir belum ada di sumber yang dibaca.",
+      "en": "RUPTL requires assured fuel supply, radioactive waste management, safety and security before a plant is built and operated. A final disposal scheme is not in the sources read."
+     },
+     "bab": 4
+    },
+    {
+     "t": {
+      "id": "Siapa yang mengawasi keselamatan instalasi nuklir?",
+      "en": "Who supervises the safety of nuclear installations?"
+     },
+     "j": {
+      "id": "Bapeten; keselamatan dan keamanan instalasi nuklir diatur PP 54/2012, dan sistem proteksi fisik diatur peraturan Bapeten 1/2026 (judul regulasi di repo).",
+      "en": "Bapeten; safety and security of nuclear installations are governed by Gov. Reg. 54/2012, and physical protection by Bapeten regulation 1/2026 (regulation titles in the repo)."
+     },
+     "bab": 9
     }
    ]
   },
@@ -354,7 +563,8 @@
      "arti": {
       "id": "Pembangkit listrik tenaga nuklir.",
       "en": "Nuclear power plant."
-     }
+     },
+     "kat": "teknis"
     },
     {
      "istilah": {
@@ -364,7 +574,8 @@
      "arti": {
       "id": "Reaktor modular kecil, umumnya di bawah 300 MWe per unit.",
       "en": "Small modular reactor, generally under 300 MWe per unit."
-     }
+     },
+     "kat": "teknis"
     },
     {
      "istilah": {
@@ -374,7 +585,8 @@
      "arti": {
       "id": "Badan Pengawas Tenaga Nuklir, regulator keselamatan.",
       "en": "Nuclear Energy Regulatory Agency, the safety regulator."
-     }
+     },
+     "kat": "teknis"
     },
     {
      "istilah": {
@@ -384,7 +596,8 @@
      "arti": {
       "id": "Nuclear Energy Program Implementing Organization; badan pelaksana program sesuai pedoman IAEA.",
       "en": "Nuclear Energy Program Implementing Organization; the implementing body under IAEA guidance."
-     }
+     },
+     "kat": "teknis"
     },
     {
      "istilah": {
@@ -394,7 +607,8 @@
      "arti": {
       "id": "Badan Tenaga Atom Internasional; pedomannya dipakai peta jalan PLTN Indonesia.",
       "en": "International Atomic Energy Agency; its guidance underpins Indonesia's roadmap."
-     }
+     },
+     "kat": "teknis"
     },
     {
      "istilah": {
@@ -404,7 +618,8 @@
      "arti": {
       "id": "Tahap awal perizinan tapak; mengizinkan pemohon mengevaluasi lokasi.",
       "en": "The first licensing step for a site; lets the applicant evaluate the location."
-     }
+     },
+     "kat": "teknis"
     },
     {
      "istilah": {
@@ -414,7 +629,8 @@
      "arti": {
       "id": "Izin atas lokasi setelah evaluasi tuntas; belum terbit untuk siapa pun per Agu 2025.",
       "en": "Permit for the location after evaluation; not issued to anyone as of Aug 2025."
-     }
+     },
+     "kat": "teknis"
     },
     {
      "istilah": {
@@ -424,7 +640,8 @@
      "arti": {
       "id": "Daya termal dan daya listrik; reaktor riset biasanya dinyatakan dalam MWt.",
       "en": "Thermal and electrical power; research reactors are usually quoted in MWt."
-     }
+     },
+     "kat": "satuan"
     },
     {
      "istilah": {
@@ -434,7 +651,8 @@
      "arti": {
       "id": "Thorium molten salt reactor; nama dalam proyek Thorcon (TMSR500). Detail teknis tidak ditemukan di sumber.",
       "en": "Thorium molten salt reactor; the name in the Thorcon project (TMSR500). Technical detail was not found in the sources."
-     }
+     },
+     "kat": "teknis"
     },
     {
      "istilah": {
@@ -444,7 +662,228 @@
      "arti": {
       "id": "First of a kind; unit pertama suatu desain, biasanya paling mahal.",
       "en": "First of a kind; the first unit of a design, usually the costliest."
-     }
+     },
+     "kat": "teknis"
+    },
+    {
+     "istilah": {
+      "id": "Fisi nuklir",
+      "en": "Nuclear fission"
+     },
+     "arti": {
+      "id": "Pemecahan inti berat (uranium-235) menjadi inti lebih ringan yang melepas panas; sumber panas PLTN.",
+      "en": "Splitting of a heavy nucleus (uranium-235) into lighter ones releasing heat; the heat source of a nuclear plant."
+     },
+     "kat": "teknis"
+    },
+    {
+     "istilah": {
+      "id": "Moderator dan pendingin",
+      "en": "Moderator and coolant"
+     },
+     "arti": {
+      "id": "Moderator memperlambat neutron agar fisi berlanjut; pendingin membawa panas keluar teras.",
+      "en": "A moderator slows neutrons so fission continues; a coolant carries heat out of the core."
+     },
+     "kat": "teknis"
+    },
+    {
+     "istilah": {
+      "id": "PWR dan BWR",
+      "en": "PWR and BWR"
+     },
+     "arti": {
+      "id": "Reaktor air bertekanan dan reaktor air didih, dua desain air ringan paling umum.",
+      "en": "Pressurised and boiling water reactors, the two most common light-water designs."
+     },
+     "kat": "teknis"
+    },
+    {
+     "istilah": {
+      "id": "Reaktor garam cair (MSR)",
+      "en": "Molten salt reactor (MSR)"
+     },
+     "arti": {
+      "id": "Reaktor yang bahan bakarnya larut dalam garam cair; TMSR500 Thorcon adalah usulan jenis ini.",
+      "en": "A reactor whose fuel is dissolved in molten salt; Thorcon's TMSR500 is a proposal of this type."
+     },
+     "kat": "teknis"
+    },
+    {
+     "istilah": {
+      "id": "HTGR",
+      "en": "HTGR"
+     },
+     "arti": {
+      "id": "Reaktor berpendingin gas suhu tinggi dengan bahan bakar partikel; dibahas sebagai opsi SMR.",
+      "en": "High-temperature gas-cooled reactor with particle fuel; discussed as an SMR option."
+     },
+     "kat": "teknis"
+    },
+    {
+     "istilah": {
+      "id": "Kritikalitas",
+      "en": "Criticality"
+     },
+     "arti": {
+      "id": "Keadaan reaksi berantai swa-lanjut; RSG-GAS pertama kritis 29 Jul 1987.",
+      "en": "The state of a self-sustaining chain reaction; RSG-GAS first went critical on 29 Jul 1987."
+     },
+     "kat": "teknis"
+    },
+    {
+     "istilah": {
+      "id": "Pengayaan uranium",
+      "en": "Uranium enrichment"
+     },
+     "arti": {
+      "id": "Menaikkan porsi uranium-235 agar menjadi bahan bakar reaktor; bagian rantai bahan bakar.",
+      "en": "Raising the share of uranium-235 so it can fuel a reactor; part of the fuel chain."
+     },
+     "kat": "teknis"
+    },
+    {
+     "istilah": {
+      "id": "Bahan bakar bekas",
+      "en": "Spent fuel"
+     },
+     "arti": {
+      "id": "Bahan bakar yang telah dipakai di reaktor, masih panas dan radioaktif, disimpan lalu dikelola.",
+      "en": "Fuel already used in a reactor, still hot and radioactive, stored then managed."
+     },
+     "kat": "teknis"
+    },
+    {
+     "istilah": {
+      "id": "Limbah radioaktif",
+      "en": "Radioactive waste"
+     },
+     "arti": {
+      "id": "Bahan sisa yang mengandung radionuklida; digolongkan menurut aktivitas dan umur paruh.",
+      "en": "Residual material containing radionuclides; classified by activity and half-life."
+     },
+     "kat": "teknis"
+    },
+    {
+     "istilah": {
+      "id": "Safeguards (garda aman)",
+      "en": "Safeguards"
+     },
+     "arti": {
+      "id": "Sistem verifikasi IAEA bahwa bahan nuklir tidak dialihkan ke senjata.",
+      "en": "IAEA verification that nuclear material is not diverted to weapons."
+     },
+     "kat": "aturan"
+    },
+    {
+     "istilah": {
+      "id": "Pendekatan Milestones IAEA",
+      "en": "IAEA Milestones approach"
+     },
+     "arti": {
+      "id": "Tiga fase pembangunan infrastruktur: pertimbangan, persiapan, dan konstruksi, dengan 19 isu yang dinilai.",
+      "en": "Three phases of infrastructure build-up (consideration, preparation, construction) with 19 issues assessed."
+     },
+     "kat": "teknis"
+    },
+    {
+     "istilah": {
+      "id": "INIR",
+      "en": "INIR"
+     },
+     "arti": {
+      "id": "Integrated Nuclear Infrastructure Review: misi IAEA menilai kesiapan negara; Indonesia dinilai pada 2009.",
+      "en": "Integrated Nuclear Infrastructure Review: an IAEA mission assessing national readiness; Indonesia was assessed in 2009."
+     },
+     "kat": "aturan"
+    },
+    {
+     "istilah": {
+      "id": "Pertahanan berlapis",
+      "en": "Defence in depth"
+     },
+     "arti": {
+      "id": "Prinsip keselamatan dengan beberapa lapis pencegahan dan mitigasi yang saling bebas.",
+      "en": "A safety principle of several independent layers of prevention and mitigation."
+     },
+     "kat": "teknis"
+    },
+    {
+     "istilah": {
+      "id": "Zona perencanaan darurat",
+      "en": "Emergency planning zone"
+     },
+     "arti": {
+      "id": "Wilayah sekitar PLTN yang disiapkan untuk tindakan darurat; ukurannya bergantung desain.",
+      "en": "The area around a plant prepared for emergency action; its size depends on the design."
+     },
+     "kat": "teknis"
+    },
+    {
+     "istilah": {
+      "id": "Faktor kapasitas",
+      "en": "Capacity factor"
+     },
+     "arti": {
+      "id": "Produksi tahunan dibanding produksi bila beroperasi penuh sepanjang tahun; PLTN biasanya tinggi karena beban dasar.",
+      "en": "Annual output compared with running at full power all year; nuclear plants are usually high as baseload."
+     },
+     "kat": "teknis"
+    },
+    {
+     "istilah": {
+      "id": "Beban dasar",
+      "en": "Baseload"
+     },
+     "arti": {
+      "id": "Beban minimum yang terus ada; dilayani pembangkit yang menyala hampir terus.",
+      "en": "The minimum load that is always present; served by plants running almost continuously."
+     },
+     "kat": "teknis"
+    },
+    {
+     "istilah": {
+      "id": "Penghentian operasi (decommissioning)",
+      "en": "Decommissioning"
+     },
+     "arti": {
+      "id": "Pembongkaran dan dekontaminasi instalasi di akhir umur; biayanya dicadangkan sejak awal.",
+      "en": "Dismantling and decontaminating an installation at end of life; its cost is reserved from the start."
+     },
+     "kat": "uang"
+    },
+    {
+     "istilah": {
+      "id": "Kerugian nuklir",
+      "en": "Nuclear damage"
+     },
+     "arti": {
+      "id": "Kerugian akibat kecelakaan nuklir yang pertanggungjawabannya dibatasi PP 46/2009.",
+      "en": "Loss from a nuclear accident whose liability is limited by Gov. Reg. 46/2009."
+     },
+     "kat": "aturan"
+    },
+    {
+     "istilah": {
+      "id": "Proteksi fisik",
+      "en": "Physical protection"
+     },
+     "arti": {
+      "id": "Pengamanan instalasi dan bahan nuklir dari pencurian dan sabotase; diatur peraturan Bapeten 1/2026.",
+      "en": "Securing installations and nuclear material against theft and sabotage; governed by Bapeten regulation 1/2026."
+     },
+     "kat": "aturan"
+    },
+    {
+     "istilah": {
+      "id": "Kuota PLTN tersebar",
+      "en": "Dispersed nuclear quota"
+     },
+     "arti": {
+      "id": "Cara RUPTL mencantumkan PLTN: kapasitas 250 MW per sistem yang lokasinya belum ditetapkan.",
+      "en": "How RUPTL lists nuclear plants: 250 MW per system with the site not yet fixed."
+     },
+     "kat": "aturan"
     }
    ]
   },
@@ -453,7 +892,9 @@
    "sumber": [
     "den26",
     "ken",
-    "ed"
+    "ed",
+    "ruptlp",
+    "iaea"
    ],
    "paragraf": [
     {
@@ -463,6 +904,18 @@
     {
      "id": "Risikonya: biaya modal tinggi, waktu bangun panjang, keselamatan, dan penerimaan masyarakat. Bab Kasus menunjukkan proyek yang mangkrak (Bataan) dan dibatalkan (NuScale) di samping yang berhasil (Barakah).",
      "en": "The risks: high capital cost, long build time, safety and public acceptance. The cases chapters show stalled (Bataan) and cancelled (NuScale) projects beside a success (Barakah)."
+    },
+    {
+     "id": "Menurut RUPTL 2025-2034, arah kebijakan energi nasional memakai nuklir untuk menyeimbangkan dan mencapai target dekarbonisasi, dan RPJPN 2025-2045 (UU 59/2024) sudah memuat rencana nuklir dalam pasokan listrik. Pengembangannya mengikuti dokumen RUKN yang ditetapkan Keputusan Menteri ESDM 85.K/TL.01/MEM.L/2025.",
+     "en": "Per RUPTL 2025-2034, national energy policy direction uses nuclear to balance and reach decarbonisation targets, and the 2025-2045 long-term plan (Law 59/2024) already includes nuclear in electricity supply. Development follows the RUKN set by Energy Minister Decree 85.K/TL.01/MEM.L/2025."
+    },
+    {
+     "id": "Teknologinya tidak dibatasi pada SMR: RUPTL menyebut skala besar, menengah, PWR, BWR, terapung, dan di darat. Pemilihan lokasi mempertimbangkan keseimbangan pasokan dan permintaan, keekonomian, dan kajian lanjutan, bukan semata kesiapan teknologi.",
+     "en": "The technology is not limited to SMRs: RUPTL cites large, medium, PWR, BWR, floating and land-based. Site selection weighs supply-demand balance, economics and further study, not technology readiness alone."
+    },
+    {
+     "id": "Hal yang membedakan nuklir dari pembangkit lain adalah kerangka tanggung jawab: keselamatan, safeguards, bahan bakar, limbah, dan liabilitas harus siap sebelum konstruksi, itu sebabnya IAEA menilai 19 elemen infrastruktur, bukan pembangkitnya saja.",
+     "en": "What sets nuclear apart is the responsibility framework: safety, safeguards, fuel, waste and liability must be ready before construction, which is why the IAEA assesses 19 infrastructure elements, not the plant alone."
     }
    ]
   },
@@ -471,7 +924,8 @@
    "sumber": [
     "wna_uae",
     "nuscale",
-    "ed"
+    "ed",
+    "ruptlp"
    ],
    "rumus": [
     {
@@ -485,6 +939,18 @@
     {
      "id": "Faktor kapasitas (persen) = Produksi tahunan (MWh) / (Daya MW x 8.760 jam) x 100",
      "en": "Capacity factor (percent) = Annual output (MWh) / (Power MW x 8,760 hours) x 100"
+    },
+    {
+     "id": "Daya listrik (MWe) = Daya termal (MWt) x Efisiensi termal",
+     "en": "Electric power (MWe) = Thermal power (MWt) x Thermal efficiency"
+    },
+    {
+     "id": "Energi tahunan (GWh) = Daya (MW) x 8,76 x Faktor kapasitas",
+     "en": "Annual energy (GWh) = Power (MW) x 8.76 x Capacity factor"
+    },
+    {
+     "id": "Biaya modal per kW = Nilai kontrak atau investasi / Kapasitas (kW)",
+     "en": "Capital cost per kW = Contract or investment value / Capacity (kW)"
     }
    ],
    "contoh": [
@@ -495,6 +961,14 @@
     {
      "id": "Pembanding SMR: Wood Mackenzie memperkirakan USD 6.000 sampai 8.000 per kW untuk unit pertama sejenis (via POWER Engineering).",
      "en": "SMR comparison: Wood Mackenzie estimates USD 6,000 to 8,000 per kW for first-of-a-kind units (via POWER Engineering)."
+    },
+    {
+     "id": "Biaya modal Barakah (EST): kontrak sekitar USD 20,4 miliar untuk 5.600 MW = 20.400.000.000 / 5.600.000 kW = sekitar USD 3.643 per kW (belum termasuk biaya pembiayaan; World Nuclear Association).",
+     "en": "Barakah capital cost (EST): a contract of about USD 20.4 billion for 5,600 MW = 20,400,000,000 / 5,600,000 kW = about USD 3,643 per kW (before financing cost; World Nuclear Association)."
+    },
+    {
+     "id": "Energi tahunan (angka ilustrasi, faktor kapasitas 90 persen sebagai asumsi): 500 MW x 8,76 x 0,9 = sekitar 3.942 GWh per tahun (EST) bagi dua kuota PLTN RUPTL.",
+     "en": "Annual energy (illustrative figures, 90 percent capacity factor as an assumption): 500 MW x 8.76 x 0.9 = about 3,942 GWh a year (EST) for the two RUPTL nuclear quotas."
     }
    ]
   },
@@ -502,8 +976,10 @@
    "tipe": "langkah",
    "sumber": [
     "ed",
-    "ibp25",
-    "detik_tapak"
+    "ruptlp",
+    "korea",
+    "brin_sdm",
+    "pp54"
    ],
    "butir": [
     {
@@ -512,12 +988,34 @@
       "en": "Policy and institutions"
      },
      "isi": {
-      "id": "PP 40/2025, RUPTL, dan pembentukan NEPIO menurut pedoman IAEA; tiga satuan tugas memilih tapak setelah NEPIO diformalkan (Feb 2025).",
-      "en": "PP 40/2025, RUPTL and an NEPIO per IAEA guidance; three task forces select the site once NEPIO is formalised (Feb 2025)."
+      "id": "PP 40/2025, RUKN, RUPTL, dan pembentukan NEPIO menurut pedoman IAEA.",
+      "en": "Gov. Reg. 40/2025, RUKN, RUPTL and a NEPIO per IAEA guidance."
      },
      "pelaku": {
-      "id": "Kementerian ESDM, DEN",
-      "en": "Energy Ministry, DEN"
+      "id": "Dewan Energi Nasional, Kementerian ESDM, PLN",
+      "en": "National Energy Council, Energy Ministry, PLN"
+     },
+     "peran": {
+      "id": "Dewan Energi Nasional, Kementerian ESDM, PLN",
+      "en": "National Energy Council, Energy Ministry, PLN"
+     }
+    },
+    {
+     "judul": {
+      "id": "Kesiapan 19 elemen infrastruktur",
+      "en": "Readiness of 19 infrastructure elements"
+     },
+     "isi": {
+      "id": "Penilaian diri dan misi INIR; hukum, regulator, SDM, jaringan, dan pemangku kepentingan.",
+      "en": "Self-assessment and INIR missions; law, regulator, human resources, grid and stakeholders."
+     },
+     "pelaku": {
+      "id": "Pemerintah, Bapeten, BRIN",
+      "en": "Government, Bapeten, BRIN"
+     },
+     "peran": {
+      "id": "Pemerintah, Bapeten, BRIN",
+      "en": "Government, Bapeten, BRIN"
      }
     },
     {
@@ -526,54 +1024,106 @@
       "en": "Site evaluation"
      },
      "isi": {
-      "id": "Enam aspek bahaya eksternal: seismisitas, geoteknik, vulkanisme, meteorologi dan hidrologi, peristiwa akibat manusia, dispersi radioaktif.",
-      "en": "Six external hazard aspects: seismicity, geotechnics, volcanism, meteorology and hydrology, human-induced events, radioactive dispersion."
+      "id": "Survei kegempaan, gunung api, sesar, dan hidrologi oleh BATAN (kini BRIN) di beberapa lokasi, lalu evaluasi tapak oleh Bapeten.",
+      "en": "Surveys of seismicity, volcanoes, faults and hydrology by BATAN (now BRIN) at several sites, then site evaluation by Bapeten."
      },
      "pelaku": {
-      "id": "Pemohon, Bapeten",
-      "en": "Applicant, Bapeten"
+      "id": "BRIN, Bapeten, pemohon",
+      "en": "BRIN, Bapeten, applicant"
+     },
+     "peran": {
+      "id": "BRIN, Bapeten, pemohon",
+      "en": "BRIN, Bapeten, applicant"
      }
     },
     {
      "judul": {
-      "id": "Izin tapak, konstruksi, komisioning, operasi",
-      "en": "Site, construction, commissioning, operating permits"
+      "id": "Pemilihan teknologi dan mitra",
+      "en": "Technology and partner choice"
      },
      "isi": {
-      "id": "Urutan izin menurut Peraturan Bapeten 1/2022 (ringkasan Kontan); izin tapak juga memerlukan persetujuan desain dan izin lingkungan.",
-      "en": "Permit sequence under Bapeten Regulation 1/2022 (Kontan summary); the site permit also needs design approval and an environmental permit."
+      "id": "Pemasok teknologi dan pembiayaan: pada Barakah, KEPCO sebagai kontraktor utama; di Indonesia pengusul Thorcon dan kerja sama dengan Korea (Perpres 42/2011).",
+      "en": "Technology and financing suppliers: at Barakah, KEPCO as main contractor; in Indonesia, the proponent Thorcon and cooperation with Korea (Perpres 42/2011)."
      },
      "pelaku": {
-      "id": "Bapeten, KLH, ESDM",
-      "en": "Bapeten, Environment Ministry, Energy Ministry"
+      "id": "KEPCO, Thorcon, NuScale, mitra pemerintah",
+      "en": "KEPCO, Thorcon, NuScale, government partners"
+     },
+     "peran": {
+      "id": "KEPCO, Thorcon, NuScale, mitra pemerintah",
+      "en": "KEPCO, Thorcon, NuScale, government partners"
      }
     },
     {
      "judul": {
-      "id": "Konstruksi dan bahan bakar",
-      "en": "Construction and fuel"
+      "id": "Perizinan",
+      "en": "Licensing"
      },
      "isi": {
-      "id": "Pemasok teknologi, kontraktor, dan rantai bahan bakar; pada Barakah kontraktor utama KEPCO dan bahan bakar dibeli dari beberapa pemasok.",
-      "en": "Technology vendor, contractors and fuel chain; at Barakah the main contractor was KEPCO and fuel was bought from several suppliers."
+      "id": "Persetujuan evaluasi tapak, izin tapak, konstruksi, komisioning, operasi (Peraturan Bapeten 1/2022).",
+      "en": "Site evaluation approval, site, construction, commissioning and operating permits (Bapeten Regulation 1/2022)."
      },
      "pelaku": {
-      "id": "Vendor, operator",
-      "en": "Vendor, operator"
+      "id": "Bapeten",
+      "en": "Bapeten"
+     },
+     "peran": {
+      "id": "Bapeten",
+      "en": "Bapeten"
      }
     },
     {
      "judul": {
-      "id": "Operasi dan penghentian",
-      "en": "Operation and decommissioning"
+      "id": "Bahan bakar dan rantai pasok",
+      "en": "Fuel and supply chain"
      },
      "isi": {
-      "id": "Operator berizin dan pengawasan berkelanjutan.",
-      "en": "Licensed operator and continuous oversight."
+      "id": "Jaminan pasokan bahan bakar; BRIN merevitalisasi fasilitas bahan bakar untuk reaktor riset RSG-GAS.",
+      "en": "Assured fuel supply; BRIN is revitalising fuel facilities for the RSG-GAS research reactor."
      },
      "pelaku": {
-      "id": "Operator, Bapeten",
-      "en": "Operator, Bapeten"
+      "id": "BRIN, pemasok bahan bakar",
+      "en": "BRIN, fuel suppliers"
+     },
+     "peran": {
+      "id": "BRIN, pemasok bahan bakar",
+      "en": "BRIN, fuel suppliers"
+     }
+    },
+    {
+     "judul": {
+      "id": "Konstruksi dan komisioning",
+      "en": "Construction and commissioning"
+     },
+     "isi": {
+      "id": "Pembangunan, uji, dan pemuatan bahan bakar pertama.",
+      "en": "Construction, testing and first fuel load."
+     },
+     "pelaku": {
+      "id": "Kontraktor utama, operator",
+      "en": "Main contractor, operator"
+     },
+     "peran": {
+      "id": "Kontraktor utama, operator",
+      "en": "Main contractor, operator"
+     }
+    },
+    {
+     "judul": {
+      "id": "Operasi, limbah, dan penghentian",
+      "en": "Operation, waste and decommissioning"
+     },
+     "isi": {
+      "id": "Operator berizin dengan pengawasan terus-menerus, pengelolaan bahan bakar bekas dan limbah, dan dana penghentian.",
+      "en": "A licensed operator under continuous oversight, spent fuel and waste management and a decommissioning fund."
+     },
+     "pelaku": {
+      "id": "Operator, Bapeten, BRIN",
+      "en": "Operator, Bapeten, BRIN"
+     },
+     "peran": {
+      "id": "Operator, Bapeten, BRIN",
+      "en": "Operator, Bapeten, BRIN"
      }
     }
    ]
@@ -627,7 +1177,8 @@
    "per": 13,
    "sumber": [
     "ibp25",
-    "mongabay_gelasa"
+    "mongabay_gelasa",
+    "ruptlp"
    ],
    "kolom": [
     {
@@ -635,6 +1186,14 @@
      "l": {
       "id": "Calon wilayah tapak (29 lokasi di 13 wilayah)",
       "en": "Candidate site region (29 sites in 13 regions)"
+     },
+     "url": "url"
+    },
+    {
+     "k": "kode",
+     "l": {
+      "id": "Kode BPS",
+      "en": "BPS code"
      }
     },
     {
@@ -654,7 +1213,9 @@
      "catatan": {
       "id": "Perlu diverifikasi satuan tugas",
       "en": "To be verified by the task forces"
-     }
+     },
+     "kode": "12",
+     "url": "/wilayah?prov=12"
     },
     {
      "wilayah": {
@@ -664,7 +1225,9 @@
      "catatan": {
       "id": "Perlu diverifikasi satuan tugas",
       "en": "To be verified by the task forces"
-     }
+     },
+     "kode": "21",
+     "url": "/wilayah?prov=21"
     },
     {
      "wilayah": {
@@ -674,7 +1237,9 @@
      "catatan": {
       "id": "Pulau Kelasa (Gelasa): persetujuan evaluasi tapak Thorcon; warga menolak",
       "en": "Kelasa (Gelasa) Island: Thorcon site evaluation approval; residents object"
-     }
+     },
+     "kode": "19",
+     "url": "/wilayah?prov=19"
     },
     {
      "wilayah": {
@@ -684,7 +1249,9 @@
      "catatan": {
       "id": "Perlu diverifikasi satuan tugas",
       "en": "To be verified by the task forces"
-     }
+     },
+     "kode": "36",
+     "url": "/wilayah?prov=36"
     },
     {
      "wilayah": {
@@ -694,7 +1261,9 @@
      "catatan": {
       "id": "Perlu diverifikasi satuan tugas",
       "en": "To be verified by the task forces"
-     }
+     },
+     "kode": "33",
+     "url": "/wilayah?prov=33"
     },
     {
      "wilayah": {
@@ -704,7 +1273,9 @@
      "catatan": {
       "id": "Perlu diverifikasi satuan tugas",
       "en": "To be verified by the task forces"
-     }
+     },
+     "kode": "51",
+     "url": "/wilayah?prov=51"
     },
     {
      "wilayah": {
@@ -714,7 +1285,9 @@
      "catatan": {
       "id": "Aliansi Kalimantan Barat Tolak PLTN menentang",
       "en": "The West Kalimantan Anti-Nuclear Alliance objects"
-     }
+     },
+     "kode": "61",
+     "url": "/wilayah?prov=61"
     },
     {
      "wilayah": {
@@ -724,7 +1297,9 @@
      "catatan": {
       "id": "Perlu diverifikasi satuan tugas",
       "en": "To be verified by the task forces"
-     }
+     },
+     "kode": "64",
+     "url": "/wilayah?prov=64"
     },
     {
      "wilayah": {
@@ -734,7 +1309,9 @@
      "catatan": {
       "id": "Perlu diverifikasi satuan tugas",
       "en": "To be verified by the task forces"
-     }
+     },
+     "kode": "72",
+     "url": "/wilayah?prov=72"
     },
     {
      "wilayah": {
@@ -744,7 +1321,9 @@
      "catatan": {
       "id": "Perlu diverifikasi satuan tugas",
       "en": "To be verified by the task forces"
-     }
+     },
+     "kode": "81",
+     "url": "/wilayah?prov=81"
     },
     {
      "wilayah": {
@@ -754,7 +1333,9 @@
      "catatan": {
       "id": "Perlu diverifikasi satuan tugas",
       "en": "To be verified by the task forces"
-     }
+     },
+     "kode": "92",
+     "url": "/wilayah?prov=92"
     },
     {
      "wilayah": {
@@ -764,7 +1345,9 @@
      "catatan": {
       "id": "Perlu diverifikasi satuan tugas",
       "en": "To be verified by the task forces"
-     }
+     },
+     "kode": "94",
+     "url": "/wilayah?prov=94"
     },
     {
      "wilayah": {
@@ -774,23 +1357,29 @@
      "catatan": {
       "id": "Perlu diverifikasi satuan tugas",
       "en": "To be verified by the task forces"
-     }
+     },
+     "kode": "93",
+     "url": "/wilayah?prov=93"
     }
    ],
    "catatan": {
-    "id": "Daftar 13 wilayah dari laporan ESDM yang dikutip Dirjen EBTKE (Feb 2025); daftar sumber menyebut wilayah tanpa memisahkan Kalimantan Barat dan Timur secara eksplisit; keduanya dimasukkan. Tapak belum diverifikasi.",
-    "en": "The 13-region list comes from the ministry report cited by the EBTKE director general (Feb 2025); both West and East Kalimantan are listed. Sites are not yet verified."
+    "id": "Kode BPS dari public/data/kelistrikan.json. RUPTL menyebut 28 wilayah potensial dan sistem Sumatera dan Kalimantan untuk PLTN awal; daftar 13 wilayah ini berasal dari sumber ESDM di naskah.",
+    "en": "BPS codes from public/data/kelistrikan.json. RUPTL cites 28 potential regions and the Sumatra and Kalimantan systems for the first plants; this list of 13 regions comes from the Energy Ministry sources in the text."
    }
   },
   "9": {
    "tipe": "tabel",
-   "per": 8,
+   "per": 15,
    "sumber": [
     "ibp25",
     "detik_tapak",
     "den26",
     "brin_sdm",
-    "mongabay_gelasa"
+    "mongabay_gelasa",
+    "direktori",
+    "ruptlp",
+    "wna_uae",
+    "nuscale"
    ],
    "kolom": [
     {
@@ -798,13 +1387,14 @@
      "l": {
       "id": "Pelaku",
       "en": "Actor"
-     }
+     },
+     "url": "url"
     },
     {
      "k": "peran",
      "l": {
-      "id": "Peran",
-      "en": "Role"
+      "id": "Peran di topik ini",
+      "en": "Role in this topic"
      }
     },
     {
@@ -813,6 +1403,15 @@
       "id": "Dasar",
       "en": "Basis"
      }
+    },
+    {
+     "k": "mw",
+     "l": {
+      "id": "Kapasitas proyek tercatat (MW)",
+      "en": "Recorded project capacity (MW)"
+     },
+     "num": true,
+     "d": 0
     }
    ],
    "baris": [
@@ -822,7 +1421,9 @@
       "id": "Penetapan program dan keputusan akhir proyek nuklir",
       "en": "Programme setting and final project decisions"
      },
-     "rujuk": "detikFinance, 12 Agu 2025"
+     "rujuk": "detikFinance, 12 Agu 2025",
+     "id": null,
+     "mw": null
     },
     {
      "nama": "Dewan Energi Nasional (DEN)",
@@ -830,7 +1431,9 @@
       "id": "Kebijakan dan target 44 GW 2060",
       "en": "Policy and the 44 GW 2060 target"
      },
-     "rujuk": "CNBC, 3 Mar 2026"
+     "rujuk": "CNBC, 3 Mar 2026",
+     "id": null,
+     "mw": null
     },
     {
      "nama": "Bapeten",
@@ -838,15 +1441,20 @@
       "id": "Regulator; menerbitkan persetujuan evaluasi tapak",
       "en": "Regulator; issued the site evaluation approval"
      },
-     "rujuk": "detikFinance, 12 Agu 2025"
+     "rujuk": "detikFinance, 12 Agu 2025",
+     "id": null,
+     "mw": null
     },
     {
      "nama": "BRIN",
+     "id": "l_973f60de15",
+     "url": "/o/l_973f60de15",
      "peran": {
       "id": "Mengoperasikan tiga reaktor riset; revitalisasi fasilitas bahan bakar",
       "en": "Operates three research reactors; revitalising fuel facilities"
      },
-     "rujuk": "Katadata; RRI 2026"
+     "rujuk": "Katadata; RRI 2026",
+     "mw": null
     },
     {
      "nama": "PT Thorcon Power Indonesia",
@@ -854,7 +1462,9 @@
       "id": "Pemohon evaluasi tapak PLTN TMSR500 di Pulau Gelasa (didirikan 2021)",
       "en": "Applicant for the TMSR500 site evaluation on Gelasa Island (founded 2021)"
      },
-     "rujuk": "Mongabay, 23 Feb 2025"
+     "rujuk": "Mongabay, 23 Feb 2025",
+     "id": null,
+     "mw": null
     },
     {
      "nama": "IESR",
@@ -862,32 +1472,217 @@
       "id": "Pengkritik rencana nuklir (Fabby Tumiwa)",
       "en": "Critic of the nuclear plan (Fabby Tumiwa)"
      },
-     "rujuk": "Mongabay, 23 Feb 2025"
+     "rujuk": "Mongabay, 23 Feb 2025",
+     "id": null,
+     "mw": null
+    },
+    {
+     "nama": "PT PLN (Persero)",
+     "id": "su_ed074ff5",
+     "url": "/o/su_ed074ff5",
+     "peran": {
+      "id": "Calon pembeli tunggal listrik PLTN; pemilik RUPTL yang memuat kuota 2 x 250 MW",
+      "en": "Prospective sole buyer of nuclear power; owner of the RUPTL that lists the 2 x 250 MW quotas"
+     },
+     "rujuk": "RUPTL 2025-2034",
+     "mw": 9025.2
+    },
+    {
+     "nama": "Kementerian Energi dan Sumber Daya Mineral",
+     "id": "l_7278e0528a",
+     "url": "/o/l_7278e0528a",
+     "peran": {
+      "id": "Menetapkan RUKN (Kepmen 85.K/2025) dan keputusan akhir proyek",
+      "en": "Sets the RUKN (Decree 85.K/2025) and final project decisions"
+     },
+     "rujuk": "RUPTL 2025-2034",
+     "mw": null
+    },
+    {
+     "nama": "Badan Pengawas Tenaga Nuklir (Bapeten)",
+     "peran": {
+      "id": "Regulator ketenaganukliran; belum ada di direktori METI",
+      "en": "Nuclear regulator; not yet in the METI directory"
+     },
+     "rujuk": "detikFinance, 12 Agu 2025",
+     "id": null,
+     "mw": null
+    },
+    {
+     "nama": "International Atomic Energy Agency",
+     "peran": {
+      "id": "Penyusun pedoman 19 elemen dan penyelenggara misi INIR 2009",
+      "en": "Author of the 19-element guidance and organiser of the 2009 INIR mission"
+     },
+     "rujuk": "RUPTL 2025-2034; IAEA",
+     "id": null,
+     "mw": null
+    },
+    {
+     "nama": "Korea Electric Power Corporation (KEPCO)",
+     "peran": {
+      "id": "Kontraktor utama Barakah (APR1400); Indonesia-Korea punya persetujuan kerja sama (Perpres 42/2011)",
+      "en": "Main contractor of Barakah (APR1400); Indonesia and Korea have a cooperation agreement (Perpres 42/2011)"
+     },
+     "rujuk": "World Nuclear Association",
+     "id": null,
+     "mw": null
+    },
+    {
+     "nama": "Emirates Nuclear Energy Corporation",
+     "peran": {
+      "id": "Pemilik dan operator Barakah (pembanding)",
+      "en": "Owner and operator of Barakah (comparison)"
+     },
+     "rujuk": "World Nuclear Association",
+     "id": null,
+     "mw": null
+    },
+    {
+     "nama": "NuScale Power",
+     "peran": {
+      "id": "Pengembang SMR 77 MW per modul; proyek UAMPS dibatalkan 2023",
+      "en": "Developer of the 77 MW-per-module SMR; the UAMPS project was cancelled in 2023"
+     },
+     "rujuk": "POWER Engineering, 9 Nov 2023",
+     "id": null,
+     "mw": null
+    },
+    {
+     "nama": "Utah Associated Municipal Power Systems (UAMPS)",
+     "peran": {
+      "id": "Pemilik proyek NuScale yang dibatalkan",
+      "en": "Owner of the cancelled NuScale project"
+     },
+     "rujuk": "POWER Engineering",
+     "id": null,
+     "mw": null
+    },
+    {
+     "nama": "Rosatom",
+     "peran": {
+      "id": "Pemasok reaktor VVER di Rooppur dan Akkuyu; rencana reaktor terapung dicatat berita direktori",
+      "en": "Supplier of VVER reactors at Rooppur and Akkuyu; a floating reactor plan is noted by directory news"
+     },
+     "rujuk": "Wikipedia; berita direktori",
+     "id": null,
+     "mw": null
+    },
+    {
+     "nama": "Pemerintah Provinsi Kepulauan Bangka Belitung",
+     "peran": {
+      "id": "Wilayah tapak Gelasa (Kelasa) dan kuota PLTN RUPTL Sumatera-Bangka",
+      "en": "Host of the Gelasa (Kelasa) site and the Sumatra-Bangka RUPTL nuclear quota"
+     },
+     "rujuk": "RUPTL; Mongabay",
+     "id": null,
+     "mw": null
+    },
+    {
+     "nama": "Aliansi Kalimantan Barat Tolak PLTN",
+     "peran": {
+      "id": "Kelompok warga penolak",
+      "en": "Resident group opposing"
+     },
+     "rujuk": "Naskah bab Sebaran",
+     "id": null,
+     "mw": null
+    },
+    {
+     "nama": "Universitas Gadjah Mada",
+     "peran": {
+      "id": "Kampus dengan program studi teknik nuklir; mitra SDM",
+      "en": "Campus with a nuclear engineering programme; human-resources partner"
+     },
+     "rujuk": "Direktori METI",
+     "id": null,
+     "mw": null
+    },
+    {
+     "nama": "Institut Teknologi Bandung",
+     "peran": {
+      "id": "Kampus dengan riset energi dan reaktor Bandung (2 MWt) di sekitarnya",
+      "en": "Campus with energy research; the 2 MWt Bandung reactor is nearby"
+     },
+     "rujuk": "Direktori METI",
+     "id": null,
+     "mw": null
+    },
+    {
+     "nama": "World Nuclear Association",
+     "peran": {
+      "id": "Penerbit profil tenaga nuklir per negara yang dikutip naskah",
+      "en": "Publisher of the country nuclear profiles cited in this text"
+     },
+     "rujuk": "WNA",
+     "id": null,
+     "mw": null
+    },
+    {
+     "nama": "Badan Pengelola Investasi Daya Anagata Nusantara",
+     "id": "l_43f00f6a72",
+     "url": "/o/l_43f00f6a72",
+     "peran": {
+      "id": "Calon pendana infrastruktur energi strategis",
+      "en": "Prospective funder of strategic energy infrastructure"
+     },
+     "rujuk": "Direktori METI",
+     "mw": 0
+    },
+    {
+     "nama": "Institute for Essential Services Reform",
+     "peran": {
+      "id": "Pengkritik biaya dan risiko nuklir",
+      "en": "Critic of nuclear cost and risk"
+     },
+     "rujuk": "Mongabay, 23 Feb 2025",
+     "id": null,
+     "mw": null
+    },
+    {
+     "nama": "Dewan Energi Nasional",
+     "peran": {
+      "id": "Sumber target 44 GW 2060 dan PLTN pertama 500 MW",
+      "en": "Source of the 44 GW 2060 target and the 500 MW first plant"
+     },
+     "rujuk": "CNBC, 3 Mar 2026",
+     "id": null,
+     "mw": null
     }
-   ]
+   ],
+   "catatan": {
+    "id": "Tautan nama mengarah ke profil di direktori METI bila organisasinya tercatat; pelaku tanpa tautan belum ada di direktori dan dicatat dari sumber di kolom Dasar.",
+    "en": "Names link to the METI directory profile when the organisation is listed; actors without a link are not yet in the directory and are noted from the source in the Basis column."
+   }
   },
   "10": {
    "tipe": "tabel",
-   "per": 8,
+   "per": 15,
    "sumber": [
     "ruptl",
     "detik_tapak",
     "brin_sdm",
-    "rsg"
+    "rsg",
+    "ruptlp",
+    "rooppur",
+    "akkuyu",
+    "wna_uae",
+    "direktori"
    ],
    "kolom": [
     {
      "k": "nama",
      "l": {
-      "id": "Proyek atau fasilitas",
-      "en": "Project or facility"
-     }
+      "id": "Proyek",
+      "en": "Project"
+     },
+     "url": "url"
     },
     {
-     "k": "lokasi",
+     "k": "wilayah",
      "l": {
-      "id": "Lokasi",
-      "en": "Location"
+      "id": "Wilayah",
+      "en": "Region"
      }
     },
     {
@@ -903,12 +1698,21 @@
       "id": "Status menurut sumber",
       "en": "Status per source"
      }
+    },
+    {
+     "k": "sumber",
+     "l": {
+      "id": "Dasar",
+      "en": "Basis"
+     }
     }
    ],
    "baris": [
     {
      "nama": "PLTN Tersebar (RUPTL 2025-2034, skenario RE Base)",
-     "lokasi": "Kepulauan Bangka Belitung",
+     "id": "pj_0220",
+     "url": "/proyek#pj_0220",
+     "wilayah": "Kepulauan Bangka Belitung",
      "ukuran": {
       "id": "250 MW",
       "en": "250 MW"
@@ -916,11 +1720,12 @@
      "status": {
       "id": "Rencana; COD 2032 (RE Base); titik peta adalah pusat provinsi, bukan lokasi proyek",
       "en": "Plan; COD 2032 (RE Base); the map point is the province centroid, not the project site"
-     }
+     },
+     "sumber": "-"
     },
     {
      "nama": "Thorcon TMSR500",
-     "lokasi": "Pulau Gelasa (Kelasa), Bangka Tengah",
+     "wilayah": "Pulau Gelasa (Kelasa), Bangka Tengah",
      "ukuran": {
       "id": "500 MW menurut keterangan pengembang dan media",
       "en": "500 MW per developer and media statements"
@@ -928,11 +1733,13 @@
      "status": {
       "id": "Persetujuan evaluasi tapak Bapeten (keputusan 30 Jul 2025); belum ada izin tapak",
       "en": "Bapeten site evaluation approval (decision 30 Jul 2025); no site permit yet"
-     }
+     },
+     "sumber": "-",
+     "id": null
     },
     {
      "nama": "Reaktor Serba Guna G.A. Siwabessy",
-     "lokasi": "Serpong",
+     "wilayah": "Serpong",
      "ukuran": {
       "id": "30 MWt; operasi rutin 15 MW",
       "en": "30 MWt; routine operation at 15 MW"
@@ -940,11 +1747,13 @@
      "status": {
       "id": "Beroperasi sejak kritis 1987; BRIN merevitalisasi fasilitas bahan bakar (Mar 2026)",
       "en": "Operating since criticality in 1987; BRIN is revitalising fuel facilities (Mar 2026)"
-     }
+     },
+     "sumber": "-",
+     "id": null
     },
     {
      "nama": "Reaktor riset Bandung",
-     "lokasi": "Bandung",
+     "wilayah": "Bandung",
      "ukuran": {
       "id": "2 MWt",
       "en": "2 MWt"
@@ -952,11 +1761,13 @@
      "status": {
       "id": "Hanya untuk edukasi menurut sumber",
       "en": "Education use only per source"
-     }
+     },
+     "sumber": "-",
+     "id": null
     },
     {
      "nama": "Reaktor riset Yogyakarta",
-     "lokasi": "Yogyakarta",
+     "wilayah": "Yogyakarta",
      "ukuran": {
       "id": "100 kWt",
       "en": "100 kWt"
@@ -964,7 +1775,115 @@
      "status": {
       "id": "Pendidikan dan penelitian",
       "en": "Education and research"
-     }
+     },
+     "sumber": "-",
+     "id": null
+    },
+    {
+     "nama": "PLTN Sumatera-Bangka (kuota, RUPTL proyek 28)",
+     "wilayah": {
+      "id": "Sumatera-Bangka",
+      "en": "Sumatra-Bangka"
+     },
+     "ukuran": {
+      "id": "250 MW",
+      "en": "250 MW"
+     },
+     "status": {
+      "id": "Rencana; COD 2032; kuota PLTN tersebar New EBT (RUPTL hlm V-17)",
+      "en": "Planned; COD 2032; dispersed New EBT nuclear quota (RUPTL p. V-17)"
+     },
+     "sumber": "RUPTL 2025-2034",
+     "id": null
+    },
+    {
+     "nama": "PLTN Kalimantan (kuota, RUPTL proyek 23)",
+     "wilayah": {
+      "id": "Kalimantan",
+      "en": "Kalimantan"
+     },
+     "ukuran": {
+      "id": "250 MW",
+      "en": "250 MW"
+     },
+     "status": {
+      "id": "Rencana; COD 2033; kuota PLTN tersebar New EBT",
+      "en": "Planned; COD 2033; dispersed New EBT nuclear quota"
+     },
+     "sumber": "RUPTL 2025-2034",
+     "id": null
+    },
+    {
+     "nama": "Barakah (APR1400, 4 unit)",
+     "wilayah": {
+      "id": "Uni Emirat Arab",
+      "en": "United Arab Emirates"
+     },
+     "ukuran": {
+      "id": "5,6 GW",
+      "en": "5.6 GW"
+     },
+     "status": {
+      "id": "Unit 4 komersial Sep 2024",
+      "en": "Unit 4 commercial Sep 2024"
+     },
+     "sumber": "World Nuclear Association",
+     "id": null
+    },
+    {
+     "nama": "Rooppur (2 x VVER-1200)",
+     "wilayah": {
+      "id": "Bangladesh",
+      "en": "Bangladesh"
+     },
+     "ukuran": {
+      "id": "2,4 GWe",
+      "en": "2.4 GWe"
+     },
+     "status": {
+      "id": "Unit 1 kritis Okt 2026 menurut artikel",
+      "en": "Unit 1 critical Oct 2026 per the article"
+     },
+     "sumber": "Wikipedia",
+     "id": null
+    },
+    {
+     "nama": "Akkuyu",
+     "wilayah": {
+      "id": "Turki",
+      "en": "Turkey"
+     },
+     "ukuran": {
+      "id": "sekitar 10 persen listrik Turki bila rampung",
+      "en": "about 10 percent of Turkish electricity when complete"
+     },
+     "status": {
+      "id": "Dalam konstruksi; reaktor pertama diharapkan 2026 setelah tertunda tiga tahun",
+      "en": "Under construction; first reactor expected 2026 after a three-year delay"
+     },
+     "sumber": "Wikipedia",
+     "id": null
+    }
+   ]
+  },
+  "11": {
+   "tipe": "teks",
+   "sumber": [
+    "ruptlp",
+    "ruptl"
+   ],
+   "paragraf": [
+    {
+     "id": "Pasar PLTN dalam negeri belum terbentuk. RUPTL 2025-2034 mencantumkan PLTN sebagai kuota 250 MW Sumatera-Bangka (COD 2032) dan 250 MW Kalimantan (COD 2033), jumlah 500 MW, dalam kategori pembangkit baru dengan opsi PLTN sesuai potensi EBT dan selaras RUKN.",
+     "en": "The domestic nuclear market has not formed. RUPTL 2025-2034 lists nuclear as a 250 MW Sumatra-Bangka quota (COD 2032) and a 250 MW Kalimantan quota (COD 2033), 500 MW in total, as new generation with a nuclear option in line with renewable potential and RUKN."
+    },
+    {
+     "id": "Dari total tambahan pembangkit EBT 42.569 MW sampai 2034, PLTN 500 MW setara 1,2 persen (EST dari tabel RUPTL).",
+     "en": "Of the 42,569 MW total renewable generation addition to 2034, the 500 MW of nuclear equals 1,2 percent (EST from the RUPTL table)."
+    },
+    {
+     "id": "Pembeli tunggal listrik PLTN adalah PLN; harga dan skema jual beli tidak ditemukan di sumber yang dibaca.",
+     "en": "The sole buyer of nuclear power would be PLN; the price and offtake scheme were not found in the sources read."
     }
    ]
   },
@@ -1022,7 +1941,8 @@
       "id": "Dasar ketenaganukliran: pemanfaatan, pengawasan, dan perizinan.",
       "en": "Basis of nuclear law: utilisation, oversight and licensing."
      },
-     "url": "https://peraturan.bpk.go.id/Details/45931"
+     "url": "https://peraturan.bpk.go.id/Details/45931",
+     "id": "uu-10-1997"
     },
     {
      "nama": "PP 2/2014",
@@ -1033,7 +1953,8 @@
       "id": "Perizinan instalasi nuklir dan pemanfaatan bahan nuklir.",
       "en": "Licensing of nuclear installations and use of nuclear material."
      },
-     "url": "https://peraturan.bpk.go.id/Details/5439"
+     "url": "https://peraturan.bpk.go.id/Details/5439",
+     "id": "pp-2-2014"
     },
     {
      "nama": "PP 54/2012",
@@ -1044,7 +1965,8 @@
       "id": "Keselamatan dan keamanan instalasi nuklir.",
       "en": "Safety and security of nuclear installations."
      },
-     "url": "https://peraturan.bpk.go.id/Details/5267"
+     "url": "https://peraturan.bpk.go.id/Details/5267",
+     "id": "pp-54-2012"
     },
     {
      "nama": "PP 52/2022",
@@ -1055,7 +1977,8 @@
       "id": "Keselamatan dan keamanan pertambangan bahan galian nuklir.",
       "en": "Safety and security of nuclear mineral mining."
      },
-     "url": "https://peraturan.bpk.go.id/Details/232967"
+     "url": "https://peraturan.bpk.go.id/Details/232967",
+     "id": "pp-52-2022"
     },
     {
      "nama": "Peraturan 1/2022",
@@ -1066,7 +1989,8 @@
       "id": "Perizinan berusaha berbasis risiko sektor ketenaganukliran (rujukan Thorcon pada Peraturan Bapeten 1/2022 menurut media).",
       "en": "Risk-based business licensing in the nuclear sector (Thorcon referred to Bapeten Regulation 1/2022 per media)."
      },
-     "url": "https://peraturan.bpk.go.id/Details/204020"
+     "url": "https://peraturan.bpk.go.id/Details/204020",
+     "id": "lainnya-b204020-1-2022"
     },
     {
      "nama": "Peraturan 3/2021",
@@ -1077,7 +2001,8 @@
       "id": "Standar kegiatan usaha dan produk perizinan berbasis risiko ketenaganukliran.",
       "en": "Business-activity and product standards for risk-based nuclear licensing."
      },
-     "url": "https://peraturan.bpk.go.id/Details/204016"
+     "url": "https://peraturan.bpk.go.id/Details/204016",
+     "id": "lainnya-b204016-3-2021"
     },
     {
      "nama": "Perpres 46/2013",
@@ -1088,7 +2013,8 @@
       "id": "Badan Tenaga Nuklir Nasional (kelembagaan lama; BRIN kini memegang riset).",
       "en": "National Nuclear Energy Agency (former body; BRIN now holds research)."
      },
-     "url": "https://peraturan.bpk.go.id/Details/41416"
+     "url": "https://peraturan.bpk.go.id/Details/41416",
+     "id": "perpres-46-2013"
     },
     {
      "nama": "PP 40/2025",
@@ -1099,7 +2025,128 @@
       "id": "Kebijakan Energi Nasional: nuklir dalam rencana jangka panjang.",
       "en": "National Energy Policy: nuclear in long-term plans."
      },
-     "url": "https://peraturan.bpk.go.id/Details/328789"
+     "url": "https://peraturan.bpk.go.id/Details/328789",
+     "id": "pp-40-2025"
+    },
+    {
+     "nama": "PP 46/2009",
+     "judul": "Batas Pertanggungjawaban Kerugian Nuklir",
+     "status": "berlaku",
+     "tanggal": "2009-06-11",
+     "ringkas": {
+      "id": "Batas pertanggungjawaban kerugian nuklir.",
+      "en": "Limit of liability for nuclear damage."
+     },
+     "url": "https://peraturan.bpk.go.id/Details/4968",
+     "id": "pp-46-2009"
+    },
+    {
+     "nama": "PP 43/2006",
+     "judul": "Perizinan Reaktor Nuklir",
+     "status": "dicabut",
+     "tanggal": "2006-12-15",
+     "ringkas": {
+      "id": "Perizinan reaktor nuklir (peraturan lama).",
+      "en": "Nuclear reactor licensing (former regulation)."
+     },
+     "url": "https://peraturan.bpk.go.id/Details/49183",
+     "id": "pp-43-2006"
+    },
+    {
+     "nama": "UU 8/1978",
+     "judul": "Pengesahan Perjanjian Mengenai Pencegahan Penyebaran Senjata-Senjata Nuklir",
+     "status": "berlaku",
+     "tanggal": "1978-12-18",
+     "ringkas": {
+      "id": "Pengesahan Traktat Nonproliferasi Senjata Nuklir.",
+      "en": "Ratification of the Non-Proliferation Treaty."
+     },
+     "url": "https://peraturan.bpk.go.id/Details/47168",
+     "id": "uu-8-1978"
+    },
+    {
+     "nama": "UU 9/1997",
+     "judul": "Pengesahan Treaty On The Southeast Asia Nuclear Weapon Free Zone (Traktat Kawasan Bebas Senjata Nuklir Di Asia Tenggara)",
+     "status": "berlaku",
+     "tanggal": "1997-04-02",
+     "ringkas": {
+      "id": "Pengesahan Traktat Kawasan Bebas Senjata Nuklir Asia Tenggara.",
+      "en": "Ratification of the Southeast Asia Nuclear Weapon Free Zone Treaty."
+     },
+     "url": "https://peraturan.bpk.go.id/Details/45930",
+     "id": "uu-9-1997"
+    },
+    {
+     "nama": "UU 1/2012",
+     "judul": "Pengesahan Traktat Pelarangan Menyeluruh Uji Coba Nuklir (Comprehensive Nuclear-Test-Ban Treaty)",
+     "status": "berlaku",
+     "tanggal": "2012-01-04",
+     "ringkas": {
+      "id": "Pengesahan Traktat Pelarangan Menyeluruh Uji Coba Nuklir.",
+      "en": "Ratification of the Comprehensive Nuclear-Test-Ban Treaty."
+     },
+     "url": "https://peraturan.bpk.go.id/Details/39007",
+     "id": "uu-1-2012"
+    },
+    {
+     "nama": "Perpres 83/2014",
+     "judul": "Majelis Pertimbangan Tenaga Nuklir",
+     "status": "berlaku",
+     "tanggal": "2014-08-22",
+     "ringkas": {
+      "id": "Majelis Pertimbangan Tenaga Nuklir.",
+      "en": "The Nuclear Energy Advisory Council."
+     },
+     "url": "https://peraturan.bpk.go.id/Details/41577",
+     "id": "perpres-83-2014"
+    },
+    {
+     "nama": "Perpres 84/2010",
+     "judul": "Pengesahan Joint Convention On The Safety Of Spent Fuel Management And On The Safety Of Radioactive Waste Management ...",
+     "status": "berlaku",
+     "tanggal": "2010-12-28",
+     "ringkas": {
+      "id": "Pengesahan Joint Convention keselamatan pengelolaan bahan bakar bekas dan limbah radioaktif.",
+      "en": "Ratification of the Joint Convention on safety of spent fuel and radioactive waste management."
+     },
+     "url": "https://peraturan.bpk.go.id/Details/41136",
+     "id": "perpres-84-2010"
+    },
+    {
+     "nama": "Perpres 46/2009",
+     "judul": "Pengesahan Amandement To The Convention On The Physical Protection Of Nuclear Material (Perubahan Konvensi Proteksi F...",
+     "status": "berlaku",
+     "tanggal": "2009-10-29",
+     "ringkas": {
+      "id": "Pengesahan amandemen Konvensi Proteksi Fisik Bahan Nuklir.",
+      "en": "Ratification of the amendment to the Convention on the Physical Protection of Nuclear Material."
+     },
+     "url": "https://peraturan.bpk.go.id/Details/42362",
+     "id": "perpres-46-2009"
+    },
+    {
+     "nama": "Peraturan 1/2026",
+     "judul": "Sistem Proteksi Fisik Instalasi Nuklir dan Bahan Nuklir",
+     "status": "berlaku",
+     "tanggal": "2026-01-12",
+     "ringkas": {
+      "id": "Sistem proteksi fisik instalasi nuklir dan bahan nuklir.",
+      "en": "Physical protection system for nuclear installations and material."
+     },
+     "url": "https://peraturan.bpk.go.id/Details/344440",
+     "id": "lainnya-b344440-1-2026"
+    },
+    {
+     "nama": "UU 22/2023",
+     "judul": "Pengesahan Treaty on the Prohibition of Nuclear Weapons (Traktat mengenai Pelarangan Senjata Nuklir)",
+     "status": "berlaku",
+     "tanggal": "2023-12-20",
+     "ringkas": {
+      "id": "Pengesahan Traktat Pelarangan Senjata Nuklir.",
+      "en": "Ratification of the Treaty on the Prohibition of Nuclear Weapons."
+     },
+     "url": "https://peraturan.bpk.go.id/Details/274228",
+     "id": "uu-22-2023"
     }
    ],
    "catatan": {
@@ -1116,9 +2163,32 @@
     "mongabay_gelasa",
     "detik_tapak",
     "den26",
-    "wna_ph"
+    "wna_ph",
+    "uu8",
+    "pp46",
+    "pp54",
+    "pp2",
+    "idnuk",
+    "vnnuk",
+    "ruptlp"
    ],
    "butir": [
+    {
+     "tanggal": "1970-03-02",
+     "judul": {
+      "id": "Indonesia menandatangani Traktat Nonproliferasi Senjata Nuklir",
+      "en": "Indonesia signs the Non-Proliferation Treaty"
+     },
+     "url": "https://en.wikipedia.org/wiki/Nuclear_power_in_Indonesia"
+    },
+    {
+     "tanggal": "1978-12-18",
+     "judul": {
+      "id": "UU 8/1978 mengesahkan Traktat Nonproliferasi Senjata Nuklir",
+      "en": "Law 8/1978 ratifies the Non-Proliferation Treaty"
+     },
+     "url": "https://peraturan.bpk.go.id/Details/47168"
+    },
     {
      "tanggal": "1987-07-29",
      "judul": {
@@ -1136,12 +2206,76 @@
      "url": "https://en.wikipedia.org/wiki/Reaktor_Serba_Guna_G.A._Siwabessy"
     },
     {
+     "tanggal": "1997-04-02",
+     "judul": {
+      "id": "UU 9/1997 mengesahkan Traktat Kawasan Bebas Senjata Nuklir Asia Tenggara",
+      "en": "Law 9/1997 ratifies the Southeast Asia Nuclear Weapon Free Zone Treaty"
+     },
+     "url": "https://peraturan.bpk.go.id/Details/45930"
+    },
+    {
      "tanggal": "1997-04-10",
      "judul": {
       "id": "UU 10/1997 tentang Ketenaganukliran ditetapkan",
       "en": "Law 10/1997 on nuclear energy enacted"
      },
      "url": "https://peraturan.bpk.go.id/Details/45931"
+    },
+    {
+     "tanggal": "2006-12-15",
+     "judul": {
+      "id": "PP 43/2006 tentang perizinan reaktor nuklir",
+      "en": "Gov. Reg. 43/2006 on nuclear reactor licensing"
+     },
+     "url": "https://peraturan.bpk.go.id/Details/49183"
+    },
+    {
+     "tanggal": "2009-06-11",
+     "judul": {
+      "id": "PP 46/2009 tentang batas pertanggungjawaban kerugian nuklir",
+      "en": "Gov. Reg. 46/2009 on the limit of nuclear damage liability"
+     },
+     "url": "https://peraturan.bpk.go.id/Details/4968"
+    },
+    {
+     "tanggal": "2010-12-28",
+     "judul": {
+      "id": "Perpres 84/2010 mengesahkan Joint Convention bahan bakar bekas dan limbah",
+      "en": "Perpres 84/2010 ratifies the Joint Convention on spent fuel and waste"
+     },
+     "url": "https://peraturan.bpk.go.id/Details/41136"
+    },
+    {
+     "tanggal": "2012-04-23",
+     "judul": {
+      "id": "PP 54/2012 tentang keselamatan dan keamanan instalasi nuklir",
+      "en": "Gov. Reg. 54/2012 on safety and security of nuclear installations"
+     },
+     "url": "https://peraturan.bpk.go.id/Details/5267"
+    },
+    {
+     "tanggal": "2014-01-16",
+     "judul": {
+      "id": "PP 2/2014 tentang perizinan instalasi nuklir dan pemanfaatan bahan nuklir",
+      "en": "Gov. Reg. 2/2014 on licensing of nuclear installations and use of nuclear material"
+     },
+     "url": "https://peraturan.bpk.go.id/Details/5439"
+    },
+    {
+     "tanggal": "2016-11-01",
+     "judul": {
+      "id": "Vietnam menangguhkan rencana nuklirnya (November 2016; pembanding)",
+      "en": "Vietnam suspends its nuclear plans (November 2016; comparison)"
+     },
+     "url": "https://en.wikipedia.org/wiki/Nuclear_power_in_Vietnam"
+    },
+    {
+     "tanggal": "2023-12-20",
+     "judul": {
+      "id": "UU 22/2023 mengesahkan Traktat Pelarangan Senjata Nuklir",
+      "en": "Law 22/2023 ratifies the Treaty on the Prohibition of Nuclear Weapons"
+     },
+     "url": "https://peraturan.bpk.go.id/Details/274228"
     },
     {
      "tanggal": "2025-01-21",
@@ -1158,6 +2292,14 @@
       "en": "EBTKE director general: first plant in 2032, 29 potential sites in 13 regions"
      },
      "url": "https://indonesiabusinesspost.com/3648/energy-and-resources/profiles"
+    },
+    {
+     "tanggal": "2025-05-26",
+     "judul": {
+      "id": "RUPTL 2025-2034 disahkan memuat dua kuota PLTN 250 MW (2032 dan 2033)",
+      "en": "RUPTL 2025-2034 approved with two 250 MW nuclear quotas (2032 and 2033)"
+     },
+     "url": "https://gatrik.esdm.go.id/gatrik/gatrik-api//storage/migrasi/download_index/files/b967d-ruptl-pln-2025-2034-pub-.pdf"
     },
     {
      "tanggal": "2025-07-30",
@@ -1199,6 +2341,51 @@
     }
    ]
   },
+  "14": {
+   "tipe": "teks",
+   "sumber": [
+    "uu10",
+    "pp2",
+    "pp54",
+    "pp46",
+    "pbp",
+    "ruptlp"
+   ],
+   "paragraf": [
+    {
+     "id": "Kewajiban 1, izin: pemanfaatan tenaga nuklir wajib berizin; tahapan izin instalasi nuklir diatur PP 2/2014 dan Peraturan Bapeten 1/2022 (judul regulasi).",
+     "en": "Duty 1, licence: use of nuclear energy requires a licence; the licensing stages of nuclear installations are in Gov. Reg. 2/2014 and Bapeten Regulation 1/2022 (regulation titles)."
+    },
+    {
+     "id": "Kewajiban 2, keselamatan dan keamanan: PP 54/2012 mengatur keselamatan dan keamanan instalasi nuklir (judul regulasi).",
+     "en": "Duty 2, safety and security: Gov. Reg. 54/2012 governs safety and security of nuclear installations (regulation title)."
+    },
+    {
+     "id": "Kewajiban 3, proteksi fisik: Peraturan Bapeten 1/2026 mengatur sistem proteksi fisik instalasi dan bahan nuklir (judul regulasi).",
+     "en": "Duty 3, physical protection: Bapeten Regulation 1/2026 governs the physical protection of installations and nuclear material (regulation title)."
+    },
+    {
+     "id": "Kewajiban 4, pertanggungjawaban: PP 46/2009 menetapkan batas pertanggungjawaban kerugian nuklir (judul regulasi); asuransi atau jaminan keuangan dibaca pada naskahnya.",
+     "en": "Duty 4, liability: Gov. Reg. 46/2009 sets the limit of nuclear damage liability (regulation title); read insurance or financial security in the text."
+    },
+    {
+     "id": "Kewajiban 5, kesiapan sebelum konstruksi: RUPTL mensyaratkan jaminan bahan bakar, pengelolaan limbah, keselamatan, keamanan, dan rekomendasi IAEA sebelum PLTN dibangun dan dioperasikan.",
+     "en": "Duty 5, readiness before construction: RUPTL requires assured fuel, waste management, safety, security and IAEA recommendations before a plant is built and operated."
+    },
+    {
+     "id": "Kewajiban 6, nonproliferasi: Indonesia terikat NPT (UU 8/1978), zona bebas senjata nuklir Asia Tenggara (UU 9/1997), dan Traktat Pelarangan Uji Coba (UU 1/2012).",
+     "en": "Duty 6, non-proliferation: Indonesia is bound by the NPT (Law 8/1978), the Southeast Asia nuclear weapon free zone (Law 9/1997) and the Test-Ban Treaty (Law 1/2012)."
+    },
+    {
+     "id": "Biaya perizinan: PP tarif penerimaan negara bukan pajak untuk Bapeten ada di basis regulasi (mis. PP 42/2022 dan PP 8/2019); besaran dibaca pada naskahnya.",
+     "en": "Licensing fees: non-tax state revenue tariff regulations for Bapeten are in the regulation base (e.g. Gov. Reg. 42/2022 and 8/2019); read amounts in the text."
+    },
+    {
+     "id": "Insentif: tidak ada insentif fiskal khusus nuklir di sumber yang dibaca; skema pendanaan umum ada di bab Pembiayaan.",
+     "en": "Incentives: no nuclear-specific fiscal incentive in the sources read; general funding schemes are in the Financing chapter."
+    }
+   ]
+  },
   "15": {
    "tipe": "langkah",
    "sumber": [
@@ -1208,8 +2395,8 @@
    "butir": [
     {
      "judul": {
-      "id": "Ajukan evaluasi tapak",
-      "en": "Apply for site evaluation"
+      "id": "1. Ajukan evaluasi tapak",
+      "en": "1. Apply for site evaluation"
      },
      "isi": {
       "id": "Pemohon mengajukan program dan sistem manajemen evaluasi tapak; Thorcon mengajukan pada 21 Jan 2025 dan Bapeten menyerahkan persetujuan pada 13 Feb 2025.",
@@ -1218,12 +2405,16 @@
      "pelaku": {
       "id": "Pemohon, Bapeten",
       "en": "Applicant, Bapeten"
+     },
+     "peran": {
+      "id": "Pemohon, Bapeten",
+      "en": "Applicant, Bapeten"
      }
     },
     {
      "judul": {
-      "id": "Lakukan evaluasi enam aspek",
-      "en": "Carry out the six-aspect evaluation"
+      "id": "2. Lakukan evaluasi enam aspek",
+      "en": "2. Carry out the six-aspect evaluation"
      },
      "isi": {
       "id": "Bapeten menyebut evaluasi tapak sekitar satu tahun dan menolak tapak yang patahannya dalam jarak 5 km.",
@@ -1232,12 +2423,16 @@
      "pelaku": {
       "id": "Pemohon",
       "en": "Applicant"
+     },
+     "peran": {
+      "id": "Pemohon",
+      "en": "Applicant"
      }
     },
     {
      "judul": {
-      "id": "Peroleh izin tapak",
-      "en": "Obtain the site permit"
+      "id": "3. Peroleh izin tapak",
+      "en": "3. Obtain the site permit"
      },
      "isi": {
       "id": "Perlu persetujuan desain dan izin lingkungan; keputusan akhir proyek ada pada Menteri ESDM.",
@@ -1246,12 +2441,16 @@
      "pelaku": {
       "id": "Bapeten, KLH, ESDM",
       "en": "Bapeten, Environment Ministry, Energy Ministry"
+     },
+     "peran": {
+      "id": "Bapeten, KLH, ESDM",
+      "en": "Bapeten, Environment Ministry, Energy Ministry"
      }
     },
     {
      "judul": {
-      "id": "Izin konstruksi, komisioning, operasi",
-      "en": "Construction, commissioning, operating permits"
+      "id": "4. Izin konstruksi, komisioning, operasi",
+      "en": "4. Construction, commissioning, operating permits"
      },
      "isi": {
       "id": "Tahap izin berikutnya menurut Peraturan Bapeten 1/2022.",
@@ -1260,6 +2459,64 @@
      "pelaku": {
       "id": "Bapeten",
       "en": "Bapeten"
+     },
+     "peran": {
+      "id": "Bapeten",
+      "en": "Bapeten"
+     }
+    },
+    {
+     "judul": {
+      "id": "5. Siapkan 19 elemen infrastruktur",
+      "en": "5. Prepare the 19 infrastructure elements"
+     },
+     "isi": {
+      "id": "Sebelum konstruksi, negara perlu memenuhi 19 elemen IAEA; Indonesia memenuhi 16 menurut INIR 2009.",
+      "en": "Before construction a country must meet the 19 IAEA elements; Indonesia met 16 per the 2009 INIR."
+     },
+     "pelaku": {
+      "id": "Pemerintah",
+      "en": "Government"
+     },
+     "peran": {
+      "id": "Pemerintah",
+      "en": "Government"
+     }
+    },
+    {
+     "judul": {
+      "id": "6. Pilih teknologi dan skema pembiayaan",
+      "en": "6. Choose technology and financing"
+     },
+     "isi": {
+      "id": "Putuskan jenis reaktor, mitra, dan struktur pendanaan; RUPTL tidak membatasi pada SMR.",
+      "en": "Decide reactor type, partner and funding structure; RUPTL is not limited to SMRs."
+     },
+     "pelaku": {
+      "id": "ESDM, PLN, Danantara",
+      "en": "Energy Ministry, PLN, Danantara"
+     },
+     "peran": {
+      "id": "ESDM, PLN, Danantara",
+      "en": "Energy Ministry, PLN, Danantara"
+     }
+    },
+    {
+     "judul": {
+      "id": "7. Komisioning dan izin operasi",
+      "en": "7. Commissioning and operating permit"
+     },
+     "isi": {
+      "id": "Uji komisioning dan izin operasi dari Bapeten sebelum pemuatan bahan bakar komersial.",
+      "en": "Commissioning tests and the operating permit from Bapeten before commercial fuel loading."
+     },
+     "pelaku": {
+      "id": "Bapeten, operator",
+      "en": "Bapeten, operator"
+     },
+     "peran": {
+      "id": "Bapeten, operator",
+      "en": "Bapeten, operator"
      }
     }
    ]
@@ -1281,7 +2538,10 @@
    "sumber": [
     "nuscale",
     "wna_uae",
-    "mongabay_gelasa"
+    "mongabay_gelasa",
+    "rooppur",
+    "akkuyu",
+    "rsg"
    ],
    "paragraf": [
     {
@@ -1291,26 +2551,138 @@
     {
      "id": "Desain besar yang terbukti: APR1400 Korea di Barakah, empat unit total 5,6 GW (World Nuclear Association). Thorcon mengusulkan reaktor garam cair thorium (TMSR500) di Indonesia, tetapi detail kapasitas dan biaya tidak ada di artikel yang dibaca, dan IESR menyebut belum ada proyek percontohan sejenis (Mongabay).",
      "en": "A proven large design: Korea's APR1400 at Barakah, four units totalling 5.6 GW (World Nuclear Association). Thorcon proposes a thorium molten salt reactor (TMSR500) in Indonesia, but the article read has no capacity or cost detail, and IESR says no comparable pilot exists (Mongabay)."
+    },
+    {
+     "id": "Tiga kelompok teknologi dibahas untuk Indonesia: reaktor air ringan skala besar (APR1400 Korea di Barakah), SMR (NuScale 77 MW per modul), dan reaktor generasi baru seperti garam cair (TMSR500 usulan Thorcon). Tingkat kematangan berbeda: yang pertama beroperasi komersial, SMR Barat belum ada unit komersial pertama, dan garam cair belum teruji komersial menurut sumber yang dibaca.",
+     "en": "Three technology groups are discussed for Indonesia: large light-water reactors (Korea's APR1400 at Barakah), SMRs (NuScale at 77 MW per module) and new-generation reactors such as molten salt (Thorcon's proposed TMSR500). Maturity differs: the first is in commercial operation, Western SMRs have no first commercial unit, and molten salt is not commercially proven per the sources read."
+    },
+    {
+     "id": "Reaktor skala besar baru yang dibangun dengan mitra negara: Rooppur Bangladesh (2 x VVER-1200, unit 1 kritis Oktober 2026 menurut Wikipedia) dan Akkuyu Turki (tertunda tiga tahun, reaktor pertama diharapkan 2026).",
+     "en": "New large reactors built with state partners: Rooppur in Bangladesh (2 x VVER-1200, unit 1 critical in October 2026 per Wikipedia) and Akkuyu in Turkey (delayed three years, first reactor expected 2026)."
+    },
+    {
+     "id": "Reaktor terapung dan modul pabrikan: berita direktori mencatat rencana Rosatom menempatkan reaktor kelas pemecah es pada platform terapung; belum ada rencana komersial di Indonesia di sumber yang dibaca.",
+     "en": "Floating reactors and factory modules: the directory's news records a Rosatom plan to place icebreaker-class reactors on floating platforms; no commercial plan in Indonesia is in the sources read."
+    },
+    {
+     "id": "Bahan bakar maju (HALEU, TRISO) dan daur bahan bakar tertutup masih riset; tidak ada angka biaya yang bersumber di naskah ini.",
+     "en": "Advanced fuels (HALEU, TRISO) and closed fuel cycles remain research; no sourced cost figure is in this text."
+    },
+    {
+     "id": "Reaktor riset Indonesia: RSG-GAS 30 MWt di Serpong, reaktor Bandung 2 MWt, dan reaktor Yogyakarta 100 kWt (bab Proyek).",
+     "en": "Indonesia's research reactors: the 30 MWt RSG-GAS at Serpong, the 2 MWt Bandung reactor and the 100 kWt Yogyakarta reactor (Projects chapter)."
     }
    ]
   },
   "18": {
-   "tipe": "teks",
+   "tipe": "tabel",
+   "per": 10,
    "sumber": [
-    "brin_sdm",
-    "brin_bbn",
-    "rsg"
+    "direktori"
    ],
-   "paragraf": [
+   "kolom": [
     {
-     "id": "BRIN mengoperasikan reaktor riset Serpong 30 MWt (kritis 1987) dan sedang merevitalisasi fasilitas bahan bakar nuklir (Mar 2026). Seorang pejabat BRIN menyebut tiga reaktor riset dan SDM yang mumpuni (Katadata).",
-     "en": "BRIN operates the 30 MWt Serpong research reactor (critical in 1987) and is revitalising nuclear fuel facilities (Mar 2026). A BRIN official cites three research reactors and capable personnel (Katadata)."
+     "k": "judul",
+     "l": {
+      "id": "Karya",
+      "en": "Work"
+     },
+     "url": "url"
     },
     {
-     "id": "Paten dan startup nuklir Indonesia tidak ditemukan di sumber yang dibaca.",
-     "en": "Indonesian nuclear patents and start-ups were not found in the sources read."
+     "k": "penulis",
+     "l": {
+      "id": "Penulis",
+      "en": "Authors"
+     }
+    },
+    {
+     "k": "jurnal",
+     "l": {
+      "id": "Jurnal (tahun)",
+      "en": "Journal (year)"
+     }
+    },
+    {
+     "k": "sitasi",
+     "l": {
+      "id": "Sitasi",
+      "en": "Citations"
+     },
+     "num": true,
+     "d": 0
     }
-   ]
+   ],
+   "baris": [
+    {
+     "judul": "Multi-criteria decision making for nuclear power plant selection using fuzzy AHP: Evidence from Indonesia",
+     "id": "W4362663130",
+     "url": "https://doi.org/10.1016/j.egyai.2023.100263",
+     "penulis": "Ade Gafar Abdullah, Mohammad Ali Shafii, Syeilendra Pramuditya",
+     "jurnal": "Energy and AI (2023)",
+     "sitasi": 84
+    },
+    {
+     "judul": "Advancing Renewable Energy in Indonesia: A Comprehensive Analysis of Challenges, Opportunities, and Strategic Solutions",
+     "id": "W4408132404",
+     "url": "https://doi.org/10.3390/su17052216",
+     "penulis": "Indra Ardhanayudha Aditya, Tito Wijayanto, Dzikri Firmansyah Hakam",
+     "jurnal": "Sustainability (2025)",
+     "sitasi": 80
+    },
+    {
+     "judul": "Public acceptance of nuclear power plants in Indonesia: Portraying the role of a multilevel governance system",
+     "id": "W2987828119",
+     "url": "https://doi.org/10.1016/j.esr.2019.100427",
+     "penulis": "Yogi Sugiawan, Shunsuke Managi",
+     "jurnal": "Energy Strategy Reviews (2019)",
+     "sitasi": 68
+    },
+    {
+     "judul": "A unique high natural background radiation area – Dose assessment and perspectives",
+     "id": "W3085827523",
+     "url": "https://doi.org/10.1016/j.scitotenv.2020.142346",
+     "penulis": "Masahiro Hosoda, Eka Djatnika Nugraha, Naofumi Akata",
+     "jurnal": "The Science of The Total Environment (2020)",
+     "sitasi": 64
+    },
+    {
+     "judul": "Developing a Multi-Criteria Decision-Making model for nuclear power plant location selection using Fuzzy Analytic Hierarchy Process and Fuzzy VIKOR methods focused on socio-economic factors",
+     "id": "W4392884001",
+     "url": "https://doi.org/10.1016/j.clet.2024.100737",
+     "penulis": "Rida SN Mahmudah, Dea Inanda Putri, Ade Gafar Abdullah",
+     "jurnal": "Cleaner Engineering and Technology (2024)",
+     "sitasi": 55
+    },
+    {
+     "judul": "Long-Term Scenarios of Indonesia Power Sector to Achieve Nationally Determined Contribution (NDC) 2060",
+     "id": "W4380997041",
+     "url": "https://doi.org/10.3390/en16124719",
+     "penulis": "Satria Putra Kanugrahan, Dzikri Firmansyah Hakam",
+     "jurnal": "Energies (2023)",
+     "sitasi": 54
+    },
+    {
+     "judul": "Site suitability-based spatial-weighted multicriteria analysis for nuclear power plants in Indonesia",
+     "id": "W4220822878",
+     "url": "https://doi.org/10.1016/j.heliyon.2022.e09088",
+     "penulis": "Heni Susiati, Moh. Dede, Millary Agung Widiawaty",
+     "jurnal": "Heliyon (2022)",
+     "sitasi": 51
+    },
+    {
+     "judul": "Sustainable Long-Term Energy Supply and Demand: The Gradual Transition to a New and Renewable Energy System in Indonesia by 2050",
+     "id": "W4321351176",
+     "url": "https://doi.org/10.14710/ijred.2023.50361",
+     "penulis": "Yudiartono Yudiartono, Jaka Windarta, Adiarso Adiarso",
+     "jurnal": "International Journal of Renewable Energy Development (2023)",
+     "sitasi": 44
+    }
+   ],
+   "catatan": {
+    "id": "Riset dari irisan OpenAlex di repo. Inovasi tercatat di direktori METI untuk nuklir belum ada.",
+    "en": "Research from the OpenAlex slice in the repo. No nuclear innovation is yet recorded in the METI directory."
+   }
   },
   "19": {
    "tipe": "tabel",
@@ -1421,13 +2793,16 @@
   },
   "20": {
    "tipe": "tabel",
-   "per": 6,
+   "per": 10,
    "sumber": [
     "wna_uae",
     "wna_ph",
     "nuscale",
     "den26",
-    "owid"
+    "owid",
+    "rooppur",
+    "akkuyu",
+    "vnnuk"
    ],
    "kolom": [
     {
@@ -1435,6 +2810,13 @@
      "l": {
       "id": "Negara dan proyek",
       "en": "Country and project"
+     }
+    },
+    {
+     "k": "iso2",
+     "l": {
+      "id": "ISO2",
+      "en": "ISO2"
      }
     },
     {
@@ -1473,7 +2855,8 @@
      "catatan": {
       "id": "Kontrak sebagian besar harga tetap",
       "en": "Largely fixed-price contract"
-     }
+     },
+     "iso2": "AE"
     },
     {
      "negara": "Filipina: Bataan",
@@ -1488,7 +2871,8 @@
      "catatan": {
       "id": "Studi rehabilitasi KHNP sejak 2025",
       "en": "KHNP rehabilitation study since 2025"
-     }
+     },
+     "iso2": "PH"
     },
     {
      "negara": "AS: NuScale UAMPS",
@@ -1503,7 +2887,8 @@
      "catatan": {
       "id": "Harga naik dan langganan kurang",
       "en": "Price up, subscription short"
-     }
+     },
+     "iso2": "US"
     },
     {
      "negara": "Indonesia",
@@ -1518,6 +2903,55 @@
      "catatan": {
       "id": "Reaktor riset saja yang beroperasi",
       "en": "Only research reactors operate"
+     },
+     "iso2": "ID"
+    },
+    {
+     "negara": "Bangladesh: Rooppur",
+     "iso2": "BD",
+     "ukuran": {
+      "id": "2 x VVER-1200, 2,4 GWe",
+      "en": "2 x VVER-1200, 2.4 GWe"
+     },
+     "status": {
+      "id": "Unit 1 kritis Okt 2026 menurut artikel",
+      "en": "Unit 1 critical Oct 2026 per the article"
+     },
+     "catatan": {
+      "id": "Pembangkit nuklir pertama Bangladesh",
+      "en": "Bangladesh's first nuclear plant"
+     }
+    },
+    {
+     "negara": "Turki: Akkuyu",
+     "iso2": "TR",
+     "ukuran": {
+      "id": "sekitar 10 persen listrik bila rampung",
+      "en": "about 10 percent of electricity when complete"
+     },
+     "status": {
+      "id": "Konstruksi; tertunda tiga tahun",
+      "en": "Under construction; delayed three years"
+     },
+     "catatan": {
+      "id": "Peluncuran resmi Apr 2015",
+      "en": "Official launch Apr 2015"
+     }
+    },
+    {
+     "negara": "Vietnam",
+     "iso2": "VN",
+     "ukuran": {
+      "id": "-",
+      "en": "-"
+     },
+     "status": {
+      "id": "Rencana ditangguhkan Nov 2016; 2022 menteri menyebut nuklir tren tak terelakkan",
+      "en": "Plans suspended Nov 2016; in 2022 a minister called nuclear an inevitable trend"
+     },
+     "catatan": {
+      "id": "Pembanding ASEAN",
+      "en": "ASEAN comparison"
      }
     }
    ]
@@ -1615,12 +3049,130 @@
     }
    ]
   },
+  "26": {
+   "tipe": "tabel",
+   "per": 8,
+   "sumber": [
+    "wna_uae",
+    "wna_ph",
+    "nuscale2",
+    "direktori"
+   ],
+   "kolom": [
+    {
+     "k": "pos",
+     "l": {
+      "id": "Kasus",
+      "en": "Case"
+     }
+    },
+    {
+     "k": "nilai",
+     "l": {
+      "id": "Nilai",
+      "en": "Value"
+     }
+    },
+    {
+     "k": "catatan",
+     "l": {
+      "id": "Catatan",
+      "en": "Note"
+     }
+    }
+   ],
+   "baris": [
+    {
+     "pos": {
+      "id": "Kontrak Barakah (4 unit)",
+      "en": "Barakah contract (4 units)"
+     },
+     "nilai": "USD 20,4 miliar",
+     "catatan": {
+      "id": "World Nuclear Association",
+      "en": "World Nuclear Association"
+     }
+    },
+    {
+     "pos": {
+      "id": "Pembiayaan total Barakah",
+      "en": "Barakah total financing"
+     },
+     "nilai": "USD 24,4 miliar",
+     "catatan": {
+      "id": "World Nuclear Association",
+      "en": "World Nuclear Association"
+     }
+    },
+    {
+     "pos": {
+      "id": "Bataan (biaya bangun 1984)",
+      "en": "Bataan (1984 construction cost)"
+     },
+     "nilai": "USD 1,9 miliar",
+     "catatan": {
+      "id": "Tidak pernah beroperasi",
+      "en": "Never operated"
+     }
+    },
+    {
+     "pos": {
+      "id": "Bataan (taksiran rehabilitasi Nov 2022)",
+      "en": "Bataan (Nov 2022 rehabilitation estimate)"
+     },
+     "nilai": "USD 2,3 miliar",
+     "catatan": {
+      "id": "World Nuclear Association",
+      "en": "World Nuclear Association"
+     }
+    },
+    {
+     "pos": {
+      "id": "Proyek NuScale UAMPS (dibatalkan 9 Nov 2023)",
+      "en": "NuScale UAMPS project (cancelled 9 Nov 2023)"
+     },
+     "nilai": "USD 89 per MWh",
+     "catatan": {
+      "id": "Harga target naik dari USD 58",
+      "en": "Target price rose from USD 58"
+     }
+    },
+    {
+     "pos": {
+      "id": "Pendanaan publik internasional untuk nuklir Indonesia 2006 sampai 2023",
+      "en": "International public finance for Indonesian nuclear 2006 to 2023"
+     },
+     "nilai": "USD 13,2 juta",
+     "catatan": {
+      "id": "IRENA dan OECD, kumulatif (bab Pembiayaan)",
+      "en": "IRENA and OECD, cumulative (Financing chapter)"
+     }
+    },
+    {
+     "pos": {
+      "id": "Investasi PLTN di Indonesia",
+      "en": "Nuclear investment in Indonesia"
+     },
+     "nilai": "-",
+     "catatan": {
+      "id": "Belum ada keputusan investasi atau struktur pendanaan di sumber",
+      "en": "No investment decision or funding structure in the sources"
+     }
+    }
+   ],
+   "catatan": {
+    "id": "Merger, akuisisi, dan IPO nuklir tidak ditemukan di sumber yang dibaca; baris ini merangkum angka biaya dan pembiayaan pembanding.",
+    "en": "No nuclear mergers, acquisitions or IPOs were found in the sources read; these rows summarise comparison cost and financing figures."
+   }
+  },
   "27": {
    "tipe": "teks",
    "sumber": [
     "mongabay_gelasa",
     "wna_ph",
-    "detik_tapak"
+    "detik_tapak",
+    "ruptlp",
+    "den26"
    ],
    "paragraf": [
     {
@@ -1630,6 +3182,10 @@
     {
      "id": "Bapeten menyatakan akan menolak tapak bila ada patahan dalam jarak 5 km, dan evaluasi mencakup seismisitas dan dispersi radioaktif. Di Filipina, dewan Morong yang menaungi Bataan menetapkan wilayahnya zona bebas nuklir (Jun 2026).",
      "en": "Bapeten says it will reject a site with a fault within 5 km, and the evaluation covers seismicity and radioactive dispersion. In the Philippines, the Morong council hosting Bataan declared its municipality a non-nuclear zone (Jun 2026)."
+    },
+    {
+     "id": "Manfaat: listrik beban dasar tanpa emisi operasi (DEN, 2026). Risiko dan safeguard: kecelakaan, bahan bakar bekas, dan limbah; RUPTL mensyaratkan jaminan pengelolaan limbah dan rekomendasi IAEA. Hak masyarakat: pelibatan pemangku kepentingan adalah elemen ke-19 IAEA, dan penolakan warga tercatat di Pulau Gelasa dan Kalimantan Barat (bab Sebaran).",
+     "en": "Benefits: baseload power with no operating emissions (DEN, 2026). Risks and safeguards: accidents, spent fuel and waste; RUPTL requires waste management assurance and IAEA recommendations. Community rights: stakeholder involvement is the 19th IAEA element, and resident opposition is recorded on Gelasa Island and in West Kalimantan (Distribution chapter)."
     }
    ]
   },
@@ -1651,7 +3207,9 @@
    "sumber": [
     "mongabay_gelasa",
     "den26",
-    "detik_tapak"
+    "detik_tapak",
+    "ruptlp",
+    "ibp25"
    ],
    "paragraf": [
     {
@@ -1661,6 +3219,14 @@
     {
      "id": "Bapeten menyatakan netral soal perlu tidaknya nuklir dan hanya memastikan standar terpenuhi; pengembang menyatakan sedang menjalani proses perizinan (Listrik Indonesia, judul).",
      "en": "Bapeten says it is neutral on whether nuclear is needed and only ensures standards are met; the developer says licensing is under way (Listrik Indonesia, headline)."
+    },
+    {
+     "id": "Kontroversi 3, nuklir dan energi terbarukan. Pendukung: nuklir melengkapi surya dan angin dengan listrik beban dasar dan menekan emisi. Penolak (IESR): biaya tinggi dan pembengkakan dua sampai tiga kali pada proyek berjalan, serta risiko menggeser prioritas dari energi terbarukan yang lebih cepat dibangun. Kedua pandangan bersumber di naskah ini (DEN; Mongabay).",
+     "en": "Controversy 3, nuclear and renewables. Supporters: nuclear complements solar and wind with baseload and cuts emissions. Opponents (IESR): high cost and two- to three-fold overruns on projects under way, and a risk of shifting priority from faster-built renewables. Both views are sourced in this text (DEN; Mongabay)."
+    },
+    {
+     "id": "Kontroversi 4, 250 atau 500 MW dan jumlah lokasi. Angka berbeda antarpejabat berasal dari satuan yang berbeda (satu kuota versus jumlah dua kuota; 28 wilayah menurut RUPTL versus 29 lokasi di 13 wilayah menurut Dirjen EBTKE). Hipotesis METI: pernyataan publik perlu menyebut satuan dan sumber dokumennya agar perdebatan tidak berputar pada selisih hitung.",
+     "en": "Controversy 4, 250 or 500 MW and the number of sites. Figures differ between officials because of different units (one quota versus the total of two; 28 regions per RUPTL versus 29 sites in 13 regions per the EBTKE director general). METI hypothesis: public statements should name the unit and source document so debate does not circle around counting differences."
     }
    ]
   },
@@ -1670,7 +3236,8 @@
    "sumber": [
     "ibp25",
     "den26",
-    "cnbc_rup"
+    "cnbc_rup",
+    "ruptlp"
    ],
    "kolom": [
     {
@@ -1771,6 +3338,24 @@
      },
      "tahun": "2060",
      "sumber": "Mar 2026"
+    },
+    {
+     "item": {
+      "id": "PLTN RUPTL (kuota Sumatera-Bangka dan Kalimantan)",
+      "en": "RUPTL nuclear (Sumatra-Bangka and Kalimantan quotas)"
+     },
+     "nilai": "500",
+     "tahun": "2034",
+     "sumber": "RUPTL 2025-2034"
+    },
+    {
+     "item": {
+      "id": "Potensi PLTN pada 28 wilayah (RUPTL)",
+      "en": "Nuclear potential in 28 regions (RUPTL)"
+     },
+     "nilai": "70 GW",
+     "tahun": "-",
+     "sumber": "RUPTL 2025-2034"
     }
    ]
   },
@@ -1787,6 +3372,18 @@
     {
      "id": "Analisis METI (Hipotesis): investor: nilai kepastian izin dan pembeli listrik sebelum modal masuk; pemda: siapkan diskusi publik sejak sebelum evaluasi tapak; akademisi: kapasitas BRIN sebagai mitra uji.",
      "en": "METI analysis (Hypothesis): investors: value permit and offtaker certainty before capital enters; local governments: prepare public discussion before site evaluation; academics: BRIN capacity as a test partner."
+    },
+    {
+     "id": "Analisis METI (Hipotesis): pemasok dan industri lokal: rantai nilai nuklir menuntut mutu tinggi (komponen berkelas nuklir, pekerjaan sipil, dan jasa inspeksi); kandungan lokal perlu dirundingkan sejak pemilihan teknologi.",
+     "en": "METI analysis (Hypothesis): suppliers and local industry: the nuclear value chain demands high quality (nuclear-grade components, civil works and inspection services); local content must be negotiated from technology selection."
+    },
+    {
+     "id": "Analisis METI (Hipotesis): akademisi dan BRIN: SDM, uji tapak, bahan bakar, dan limbah; pejabat BRIN menilai SDM Indonesia sudah mumpuni (Katadata, 2024) tetapi pengalaman operasi komersial belum ada.",
+     "en": "METI analysis (Hypothesis): academics and BRIN: human resources, site tests, fuel and waste; BRIN officials judge Indonesian human resources capable (Katadata, 2024) but there is no commercial operating experience."
+    },
+    {
+     "id": "Analisis METI (Hipotesis): pemda dan masyarakat: libatkan warga sejak penetapan tapak; kasus Gelasa dan Kalimantan Barat menunjukkan penolakan muncul di tahap evaluasi tapak.",
+     "en": "METI analysis (Hypothesis): local governments and communities: involve residents from site selection; the Gelasa and West Kalimantan cases show opposition arises at the site evaluation stage."
     }
    ]
   },
@@ -1795,7 +3392,10 @@
    "sumber": [
     "detik_tapak",
     "ibp25",
-    "den26"
+    "den26",
+    "brin_bbn",
+    "rooppur",
+    "akkuyu"
    ],
    "paragraf": [
     {
@@ -1809,6 +3409,34 @@
     {
      "id": "Hasil studi rehabilitasi Bataan oleh KHNP dan pembentukan regulator PhilATOM di Filipina sebagai pembanding kawasan.",
      "en": "Results of KHNP's Bataan rehabilitation study and the creation of the PhilATOM regulator in the Philippines as a regional comparison."
+    },
+    {
+     "id": "Keputusan penetapan tapak PLTN Sumatera-Bangka dan Kalimantan (kuota RUPTL 2032 dan 2033).",
+     "en": "Decisions fixing the Sumatra-Bangka and Kalimantan nuclear sites (RUPTL quotas of 2032 and 2033)."
+    },
+    {
+     "id": "Penerbitan izin tapak pertama oleh Bapeten dan status permohonan Thorcon.",
+     "en": "Issue of the first site permit by Bapeten and the status of Thorcon's application."
+    },
+    {
+     "id": "Pembahasan RUU Energi Baru dan Energi Terbarukan dan ketentuan nuklirnya.",
+     "en": "Discussion of the New and Renewable Energy Bill and its nuclear provisions."
+    },
+    {
+     "id": "Penilaian IAEA berikutnya terhadap 19 elemen infrastruktur (terakhir INIR 2009).",
+     "en": "The next IAEA assessment of the 19 infrastructure elements (last INIR in 2009)."
+    },
+    {
+     "id": "Perkembangan Rooppur dan Akkuyu sebagai pembanding waktu dan biaya.",
+     "en": "Progress of Rooppur and Akkuyu as time and cost comparisons."
+    },
+    {
+     "id": "Revitalisasi fasilitas bahan bakar BRIN untuk RSG-GAS.",
+     "en": "BRIN's revitalisation of fuel facilities for RSG-GAS."
+    },
+    {
+     "id": "Skema pendanaan dan harga listrik PLTN pertama.",
+     "en": "The funding scheme and electricity price of the first plant."
     }
    ]
   },
@@ -1819,7 +3447,9 @@
     "wna_uae",
     "wna_ph",
     "nuscale",
-    "ibp25"
+    "ibp25",
+    "direktori",
+    "iaea"
    ],
    "kolom": [
     {
@@ -1853,7 +3483,8 @@
      "mengapa": {
       "id": "Tabel waktu, kontrak, dan pembiayaan Barakah",
       "en": "Barakah timeline, contract and financing"
-     }
+     },
+     "id": null
     },
     {
      "judul": "Nuclear Power in the Philippines",
@@ -1862,7 +3493,8 @@
      "mengapa": {
       "id": "Riwayat Bataan",
       "en": "History of Bataan"
-     }
+     },
+     "id": null
     },
     {
      "judul": "NuScale cancels SMR project in Utah",
@@ -1871,7 +3503,68 @@
      "mengapa": {
       "id": "Mengapa proyek SMR dibatalkan",
       "en": "Why the SMR project was cancelled"
+     },
+     "id": null
+    },
+    {
+     "judul": "UU 10/1997: Ketenaganukliran",
+     "id": "pk-reg-uu-10-1997",
+     "url": "/pustaka?id=pk-reg-uu-10-1997",
+     "penerbit": "Pemerintah Pusat",
+     "mengapa": {
+      "id": "Peraturan di Pustaka METI",
+      "en": "Regulation in the METI Library"
      }
+    },
+    {
+     "judul": "PP 2/2014: Perizinan Instalasi Nuklir Dan Pemanfaatan Bahan Nuklir",
+     "id": "pk-reg-pp-2-2014",
+     "url": "/pustaka?id=pk-reg-pp-2-2014",
+     "penerbit": "Pemerintah Pusat",
+     "mengapa": {
+      "id": "Peraturan di Pustaka METI",
+      "en": "Regulation in the METI Library"
+     }
+    },
+    {
+     "judul": "PP 54/2012: Keselamatan Dan Keamanan Instalasi Nuklir",
+     "id": "pk-reg-pp-54-2012",
+     "url": "/pustaka?id=pk-reg-pp-54-2012",
+     "penerbit": "Pemerintah Pusat",
+     "mengapa": {
+      "id": "Peraturan di Pustaka METI",
+      "en": "Regulation in the METI Library"
+     }
+    },
+    {
+     "judul": "PP 46/2009: Batas Pertanggungjawaban Kerugian Nuklir",
+     "id": "pk-reg-pp-46-2009",
+     "url": "/pustaka?id=pk-reg-pp-46-2009",
+     "penerbit": "Pemerintah Pusat",
+     "mengapa": {
+      "id": "Peraturan di Pustaka METI",
+      "en": "Regulation in the METI Library"
+     }
+    },
+    {
+     "judul": "PP 43/2006: Perizinan Reaktor Nuklir",
+     "id": "pk-reg-pp-43-2006",
+     "url": "/pustaka?id=pk-reg-pp-43-2006",
+     "penerbit": "Pemerintah Pusat",
+     "mengapa": {
+      "id": "Peraturan di Pustaka METI",
+      "en": "Regulation in the METI Library"
+     }
+    },
+    {
+     "judul": "Milestones in the Development of a National Infrastructure for Nuclear Power",
+     "url": "https://www.iaea.org/publications/8009/milestones-in-the-development-of-a-national-infrastructure-for-nuclear-power",
+     "penerbit": "IAEA",
+     "mengapa": {
+      "id": "Dasar 19 elemen infrastruktur yang dirujuk RUPTL",
+      "en": "Basis of the 19 infrastructure elements cited by RUPTL"
+     },
+     "id": null
     }
    ]
   },
@@ -2037,7 +3730,9 @@
      },
      "sumber": [
       "wna_uae"
-     ]
+     ],
+     "foto": null,
+     "koordinat": null
     },
     {
      "id": "rsg-gas",
@@ -2122,7 +3817,9 @@
       "rsg",
       "brin_bbn",
       "brin_sdm"
-     ]
+     ],
+     "foto": null,
+     "koordinat": null
     }
    ]
   },
@@ -2262,7 +3959,9 @@
      "sumber": [
       "wna_ph"
      ],
-     "hak_jawab": true
+     "hak_jawab": true,
+     "foto": null,
+     "koordinat": null
     },
     {
      "id": "nuscale-cfpp",
@@ -2366,7 +4065,9 @@
       "nuscale",
       "nuscale2"
      ],
-     "hak_jawab": true
+     "hak_jawab": true,
+     "foto": null,
+     "koordinat": null
     }
    ]
   },

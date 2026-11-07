@@ -1,1 +1,2193 @@
-{"id": "karbon", "versi": 1, "diperbarui": "2026-11-08", "judul": {"id": "Karbon", "en": "Carbon"}, "lead": {"id": "Harga, pasar, dan kredit karbon bagi energi terbarukan Indonesia, dengan pembanding luar negeri dan pelajaran dari proyek.", "en": "Carbon prices, markets and credits for Indonesian renewable energy, with international comparisons and lessons from projects."}, "kunci": [{"ref": "cakupan"}, {"ref": "ets_usd"}, {"ref": "bursa_vol"}, {"ref": "kredit_terbit"}, {"ref": "emisi_juta"}], "penting": [{"id": "Indonesia tercatat memiliki ETS yang mencakup {cakupan} persen emisi CO2 ({tahun_luar}), tetapi harga rata-rata tertimbangnya hanya US${ets_usd} per tCO2e dan tanpa pajak karbon.", "en": "Indonesia is recorded as having an ETS covering {cakupan} percent of CO2 emissions ({tahun_luar}), but its weighted average price is only US${ets_usd} per tCO2e and there is no carbon tax."}, {"id": "Pasar domestik masih tipis: volume kumulatif tahun berjalan {bursa_vol} tCO2e per {bursa_bln}, dengan harga rata-rata bulanan Rp{bursa_harga} per tCO2e.", "en": "The domestic market is still thin: year-to-date volume of {bursa_vol} tCO2e as of {bursa_bln}, at a monthly average price of Rp{bursa_harga} per tCO2e."}, {"id": "Proyek energi Indonesia di Verra dan Gold Standard telah menerbitkan {kredit_terbit} tCO2e kredit, dan {kredit_pensiun} tCO2e di antaranya sudah dipensiunkan.", "en": "Indonesian energy projects in Verra and Gold Standard have issued {kredit_terbit} tCO2e of credits, of which {kredit_pensiun} tCO2e are already retired."}], "posisi": {"id": "Cakupan harga karbon Indonesia ({cakupan} persen) di atas {nol_n} dari 14 negara pembanding yang berada di 0 persen, tetapi harganya jauh di bawah ETS Jerman (US${de_ets}) dan pajak karbon Afrika Selatan (US${za_pajak}).", "en": "Indonesia's carbon price coverage ({cakupan} percent) is above the {nol_n} of 14 comparison countries still at 0 percent, but its price is far below Germany's ETS (US${de_ets}) and South Africa's carbon tax (US${za_pajak})."}, "sumber": {"ed": {"judul": "Ringkasan editorial METI (definisi dan penjelasan umum; bukan kutipan pasal)", "penerbit": "METI", "tanggal": "2026-11-08", "bukti": "editorial"}, "idx": {"judul": "IDXCarbon Monthly Report (Carbon Market Trading Summary dan Listed Project)", "penerbit": "Bursa Efek Indonesia (IDXCarbon)", "url": "https://idxcarbon.co.id/id/data-monthly", "tanggal": "2026-11-07", "tahun": 2026, "bukti": "resmi"}, "ct": {"judul": "Climate TRACE v6 API: aset pembangkit listrik Indonesia", "penerbit": "Climate TRACE", "url": "https://api.climatetrace.org/v6/assets?sectors=power&countries=IDN&limit=100&offset=0&year=2024", "tanggal": "2026-11-07", "tahun": 2024, "bukti": "via-pihak-ketiga", "lisensi": "CC BY 4.0"}, "kp": {"judul": "Registri Verra VCS (salinan Berkeley VROD) dan Gold Standard: proyek energi terbarukan Indonesia", "penerbit": "Verra, Gold Standard, Berkeley Carbon Trading Project", "url": "https://gspp.berkeley.edu/berkeley-carbon-trading-project/offsets-database", "tanggal": "2026-11-08", "tahun": 2026, "bukti": "via-pihak-ketiga", "lisensi": "CC BY 4.0"}, "ruptl": {"judul": "RUPTL PT PLN (Persero) 2025-2034, neraca daya per sistem (turunan intensitas emisi dihitung METI)", "penerbit": "PT PLN (Persero), disahkan Kementerian ESDM", "url": "https://gatrik.esdm.go.id/gatrik/gatrik-api//storage/migrasi/download_index/files/b967d-ruptl-pln-2025-2034-pub-.pdf", "tanggal": "2026-11-08", "tahun": 2025, "bukti": "resmi"}, "stat": {"judul": "Statistik Ketenagalistrikan 2024, Tabel 18", "penerbit": "Kementerian ESDM, Ditjen Ketenagalistrikan", "url": "https://gatrik.esdm.go.id/gatrik/gatrik-api//storage/migrasi/download_index/files/91fa8-buku-statistik-ketenagalistrikan-2024.pdf", "tanggal": "2026-11-07", "tahun": 2024, "bukti": "resmi"}, "celah": {"judul": "Catatan celah data transisi.json (pajak karbon: UU 7/2021 Pasal 13, tarif Rp30 per kg CO2e; naskah belum ada di korpus)", "penerbit": "Direktori METI", "tanggal": "2026-11-08", "bukti": "editorial"}, "sbti": {"judul": "SBTi Target Dashboard dan RE100 (perusahaan berkantor pusat di Indonesia)", "penerbit": "Science Based Targets initiative, RE100", "url": "https://sciencebasedtargets.org/target-dashboard", "tanggal": "2026-11-07", "tahun": 2026, "bukti": "resmi"}}, "bab": {"2": {"tipe": "faq", "sumber": ["ed"], "butir": [{"t": {"id": "Apa itu kredit karbon?", "en": "What is a carbon credit?"}, "j": {"id": "Satu unit yang mewakili penurunan atau penghindaran satu ton CO2e dan sudah diverifikasi pihak ketiga. Unit itu dicatat di registri, boleh dijual, lalu dipensiunkan (dipakai) oleh pembelinya sehingga tidak bisa dijual lagi.", "en": "A unit representing one tonne of CO2e reduced or avoided and verified by a third party. It is recorded in a registry, can be sold, and is then retired (used) by its buyer so it cannot be sold again."}}, {"t": {"id": "Apa beda pajak karbon, ETS, dan offset?", "en": "What is the difference between a carbon tax, an ETS and offsets?"}, "j": {"id": "Pajak karbon menetapkan harga per ton emisi. ETS menetapkan batas emisi lalu mengizinkan pelaku yang melebihi batas membeli unit dari yang di bawah batas. Offset adalah kredit dari proyek di luar batas itu yang dibeli untuk mengimbangi emisi.", "en": "A carbon tax sets a price per tonne of emissions. An ETS sets an emissions cap and lets those above the cap buy units from those below it. Offsets are credits from projects outside the cap that are bought to compensate emissions."}}, {"t": {"id": "Apakah pajak karbon sudah berlaku di Indonesia?", "en": "Is a carbon tax already in force in Indonesia?"}, "j": {"id": "Seri harga karbon yang dipakai halaman ini mencatat Indonesia tanpa pajak karbon dan dengan ETS pada {tahun_luar}. Tarif minimal Rp30 per kg CO2e tercatat di UU 7/2021 Pasal 13, tetapi naskah dan aturan turunannya belum ada di korpus METI, jadi cek penerapan terbarunya ke sumber resmi.", "en": "The carbon price series used on this page records Indonesia with an ETS and no carbon tax in {tahun_luar}. A minimum rate of Rp30 per kg CO2e is noted in Law 7/2021 Article 13, but the text and its implementing rules are not in the METI corpus, so check the latest application with official sources."}}, {"t": {"id": "Berapa harga unit karbon di IDXCarbon?", "en": "What do carbon units cost on IDXCarbon?"}, "j": {"id": "Harga rata-rata tertimbang bulan {bursa_bln} adalah Rp{bursa_harga} per tCO2e, dihitung dari nilai dibagi volume. Selama {bursa_n} bulan laporan, rata-rata bulanan bergerak antara Rp{harga_min} dan Rp{harga_maks}. Ini bukan harga kutipan karena bursa tidak menerbitkan harga per unit.", "en": "The weighted average price in {bursa_bln} was Rp{bursa_harga} per tCO2e, computed as value divided by volume. Over {bursa_n} reporting months the monthly average ranged between Rp{harga_min} and Rp{harga_maks}. This is not a quoted price because the exchange does not publish per-unit prices."}}, {"t": {"id": "Siapa yang boleh menjual unit karbon?", "en": "Who can sell carbon units?"}, "j": {"id": "Pemilik proyek yang unitnya sudah tercatat di Sistem Registri Nasional dan terdaftar di bursa, seperti daftar proyek yang tampil di bab Proyek. Syarat rincinya ada di Perpres 110/2025 dan aturan turunannya; naskah turunan belum ada di korpus METI.", "en": "Project owners whose units are recorded in the National Registry System and listed on the exchange, like the projects shown in the Projects chapter. Detailed requirements are in Presidential Regulation 110/2025 and its implementing rules; those rules are not yet in the METI corpus."}}, {"t": {"id": "Apakah PLTS bisa menghasilkan kredit karbon?", "en": "Can a solar plant earn carbon credits?"}, "j": {"id": "Bisa bila penurunan emisinya tambahan (additional), diukur dengan metodologi yang diakui seperti ACM0002 untuk listrik tersambung jaringan, dan diverifikasi. Di registri Verra dan Gold Standard, proyek surya Indonesia masih sedikit dibanding hidro dan panas bumi.", "en": "Yes, if the emission reduction is additional, measured with a recognized methodology such as ACM0002 for grid-connected electricity, and verified. In the Verra and Gold Standard registries, Indonesian solar projects are still few compared with hydro and geothermal."}}, {"t": {"id": "Apa beda kredit di IDXCarbon dan di Verra atau Gold Standard?", "en": "How do IDXCarbon credits differ from Verra or Gold Standard ones?"}, "j": {"id": "IDXCarbon memperdagangkan unit domestik yang tercatat di SRN PPI dengan seri SPE. Verra dan Gold Standard adalah registri sukarela internasional dengan metodologi dan penerbitan sendiri. Satu proyek bisa muncul di keduanya, jadi periksa agar tidak ada penghitungan ganda.", "en": "IDXCarbon trades domestic units recorded in SRN PPI with SPE series numbers. Verra and Gold Standard are international voluntary registries with their own methodologies and issuance. One project can appear in both, so check that nothing is counted twice."}}, {"t": {"id": "Apa itu additionality dan kenapa menentukan?", "en": "What is additionality and why does it decide everything?"}, "j": {"id": "Penurunan emisi dihitung hanya bila tidak akan terjadi tanpa insentif karbon. Tanpa itu, kredit mewakili emisi yang memang sudah akan turun dan integritasnya dipertanyakan.", "en": "An emission reduction counts only if it would not have happened without carbon incentives. Without that, a credit represents emissions that were going to fall anyway and its integrity is questioned."}}, {"t": {"id": "Dari mana angka faktor emisi listrik berasal?", "en": "Where do grid emission factors come from?"}, "j": {"id": "Halaman ini menurunkan intensitas emisi tiap sistem PLN dari tabel RUPTL 2025-2034 (emisi GRK dibagi produksi listrik), lalu memberi label EST. Faktor emisi resmi ESDM per sistem belum ada di korpus METI, jadi angka resmi harus dipakai untuk dokumen proyek.", "en": "This page derives the emission intensity of each PLN system from the RUPTL 2025-2034 tables (GHG emissions divided by electricity production) and labels it EST. The official ESDM emission factor per system is not yet in the METI corpus, so official figures must be used for project documents."}}, {"t": {"id": "Apa yang bisa dilakukan anggota METI sekarang?", "en": "What can METI members do now?"}, "j": {"id": "Pengembang bisa menyiapkan dokumentasi pengukuran sejak desain, investor memasukkan harga karbon sebagai skenario, dan pemda menyelaraskan rencana aksi daerah. Rincinya ada di bab Peluang dan tantangan serta Daftar yang harus dilakukan.", "en": "Developers can prepare measurement documentation from the design stage, investors can model carbon prices as scenarios, and local governments can align regional action plans. Details are in the Opportunities and Things to do chapters."}}]}, "3": {"tipe": "glosarium", "sumber": ["ed"], "butir": [{"istilah": {"id": "NDC", "en": "NDC"}, "arti": {"id": "Kontribusi yang ditetapkan secara nasional di bawah Persetujuan Paris: janji penurunan emisi tiap negara. Angka Indonesia: {ndc_min} persen dengan upaya sendiri dan {ndc_maks} persen dengan dukungan internasional pada 2030 (E-NDC 2022).", "en": "Nationally Determined Contribution under the Paris Agreement: each country's emission reduction pledge. Indonesia's figures: {ndc_min} percent unconditional and {ndc_maks} percent with international support by 2030 (E-NDC 2022)."}}, {"istilah": {"id": "ETS", "en": "ETS"}, "arti": {"id": "Sistem perdagangan emisi: pemerintah membatasi emisi total, pelaku menerima atau membeli izin, dan kelebihan atau kekurangan izin diperdagangkan.", "en": "Emissions trading system: the government caps total emissions, participants receive or buy allowances, and surplus or shortfall allowances are traded."}}, {"istilah": {"id": "Offset", "en": "Offset"}, "arti": {"id": "Kredit dari proyek di luar batas emisi pembeli, dibeli untuk mengimbangi emisinya.", "en": "Credits from projects outside the buyer's emission cap, bought to compensate its emissions."}}, {"istilah": {"id": "tCO2e", "en": "tCO2e"}, "arti": {"id": "Satu ton setara karbon dioksida; satuan umum untuk menjumlahkan beragam gas rumah kaca.", "en": "One tonne of carbon dioxide equivalent; the common unit for adding up different greenhouse gases."}}, {"istilah": {"id": "PTBAE-PU", "en": "PTBAE-PU"}, "arti": {"id": "Persetujuan teknis batas atas emisi pelaku usaha: batas emisi yang dipakai pada ETS Indonesia untuk pembangkit listrik.", "en": "Technical approval of a business actor's emission cap: the cap used in Indonesia's ETS for power plants."}}, {"istilah": {"id": "SPE-GRK", "en": "SPE-GRK"}, "arti": {"id": "Sertifikat penurunan emisi gas rumah kaca; unit yang tercatat di registri nasional dan bisa diperdagangkan di bursa karbon.", "en": "Greenhouse gas emission reduction certificate; the unit recorded in the national registry and tradable on the carbon exchange."}}, {"istilah": {"id": "SRN PPI", "en": "SRN PPI"}, "arti": {"id": "Sistem Registri Nasional Pengendalian Perubahan Iklim: pencatatan aksi dan unit karbon nasional.", "en": "National Registry System for Climate Change Control: the national record of climate actions and carbon units."}}, {"istilah": {"id": "MRV", "en": "MRV"}, "arti": {"id": "Measurement, reporting, verification: mengukur, melaporkan, dan memverifikasi emisi atau penurunannya.", "en": "Measurement, reporting, verification of emissions or their reduction."}}, {"istilah": {"id": "LVV", "en": "LVV"}, "arti": {"id": "Lembaga validasi dan verifikasi: pihak ketiga independen yang memeriksa desain dan hasil proyek.", "en": "Validation and verification body: an independent third party that checks a project's design and results."}}, {"istilah": {"id": "Additionality", "en": "Additionality"}, "arti": {"id": "Syarat bahwa penurunan emisi hanya terjadi karena insentif karbon.", "en": "The requirement that the reduction happens only because of carbon incentives."}}, {"istilah": {"id": "Baseline", "en": "Baseline"}, "arti": {"id": "Perkiraan emisi bila proyek tidak ada; penurunan dihitung dari selisihnya dengan emisi proyek.", "en": "The estimated emissions without the project; the reduction is the difference from project emissions."}}, {"istilah": {"id": "Faktor emisi grid", "en": "Faktor emisi grid"}, "arti": {"id": "Emisi per MWh listrik jaringan (tCO2e per MWh) yang dipakai untuk menghitung emisi terhindar oleh pembangkit bersih.", "en": "Emissions per MWh of grid electricity (tCO2e per MWh) used to compute emissions avoided by clean generation."}}, {"istilah": {"id": "Vintage", "en": "Vintage"}, "arti": {"id": "Tahun penurunan emisi yang diwakili sebuah unit karbon.", "en": "The year of the emission reduction a carbon unit represents."}}, {"istilah": {"id": "Pensiun unit", "en": "Pensiun unit"}, "arti": {"id": "Unit dipakai pembelinya dan dikeluarkan dari peredaran sehingga tidak bisa dijual lagi.", "en": "The unit is used by its buyer and removed from circulation so it cannot be sold again."}}, {"istilah": {"id": "CORSIA", "en": "CORSIA"}, "arti": {"id": "Skema ICAO yang mewajibkan maskapai penerbangan internasional mengimbangi pertumbuhan emisinya dengan unit karbon.", "en": "The ICAO scheme requiring international airlines to offset emissions growth with carbon units."}}, {"istilah": {"id": "Article 6", "en": "Article 6"}, "arti": {"id": "Pasal 6 Persetujuan Paris tentang kerja sama pasar karbon antarnegara.", "en": "Article 6 of the Paris Agreement on cross-border carbon market cooperation."}}, {"istilah": {"id": "ITMO", "en": "ITMO"}, "arti": {"id": "Internationally transferred mitigation outcome: hasil mitigasi yang dipindahkan antarnegara di bawah Pasal 6.2.", "en": "Internationally transferred mitigation outcome: a mitigation result transferred between countries under Article 6.2."}}, {"istilah": {"id": "Net zero", "en": "Net zero"}, "arti": {"id": "Keseimbangan antara emisi yang dilepas dan yang diserap atau dihindari. Indonesia menyebut sasaran 2060 di KEN PP 40/2025.", "en": "A balance between emissions released and those removed or avoided. Indonesia states a 2060 goal in KEN, Government Regulation 40/2025."}}]}, "4": {"tipe": "teks", "sumber": ["ed"], "paragraf": [{"id": "Karbon di sini berarti harga yang diberikan pada emisi gas rumah kaca dan pasar yang memperdagangkan penurunannya. Ada tiga alat utama: pajak karbon yang menetapkan harga per ton, sistem perdagangan emisi (ETS) yang menetapkan batas lalu membiarkan izin diperdagangkan, dan kredit offset dari proyek yang mengurangi atau menghindari emisi.", "en": "Carbon here means the price placed on greenhouse gas emissions and the markets that trade their reduction. There are three main tools: a carbon tax that sets a price per tonne, an emissions trading system (ETS) that sets a cap and lets allowances be traded, and offset credits from projects that reduce or avoid emissions."}, {"id": "Bagi energi terbarukan ada dua jalur nilai. Pertama, pembangkit bersih menghindari emisi yang akan dilepas pembangkit fosil di jaringan yang sama, dan penghindaran terverifikasi itu bisa menjadi kredit. Kedua, harga karbon pada pembangkit fosil menaikkan biaya listrik fosil sehingga selisih biaya terhadap energi terbarukan menyempit.", "en": "For renewable energy there are two value paths. First, clean generation avoids emissions that fossil plants on the same grid would release, and that verified avoidance can become a credit. Second, a carbon price on fossil plants raises the cost of fossil electricity so the cost gap with renewables narrows."}, {"id": "Karena itu harga karbon penting bagi anggota METI: ia menambah pendapatan proyek, memengaruhi kelayakan, dan menentukan seberapa cepat pembangkit fosil kehilangan keunggulan biayanya. Besarnya sangat bergantung pada kebijakan, jadi angka di halaman ini selalu disertai sumber dan tanggal.", "en": "That is why carbon pricing matters to METI members: it adds project revenue, affects bankability, and sets how fast fossil plants lose their cost advantage. The size depends heavily on policy, so every figure on this page carries a source and a date."}]}, "5": {"tipe": "rumus", "sumber": ["ed", "ruptl"], "rumus": [{"id": "Emisi terhindar (tCO2e) = Energi yang diserahkan ke jaringan (MWh) x Faktor emisi grid (tCO2e per MWh) - Emisi proyek (tCO2e)", "en": "Avoided emissions (tCO2e) = Energy delivered to the grid (MWh) x Grid emission factor (tCO2e per MWh) - Project emissions (tCO2e)"}, {"id": "Pendapatan kredit (Rp) = Emisi terhindar yang terverifikasi (tCO2e) x Harga unit (Rp per tCO2e) - Biaya MRV, registri, dan perantara", "en": "Credit revenue (Rp) = Verified avoided emissions (tCO2e) x Unit price (Rp per tCO2e) - MRV, registry and intermediary costs"}, {"id": "Metodologi yang umum dipakai untuk listrik tersambung jaringan: ACM0002 (Verra, Gold Standard) atau metodologi SRN PPI yang setara. Baseline, additionality, dan pemantauan wajib mengikuti dokumen metodologi.", "en": "A common methodology for grid-connected electricity: ACM0002 (Verra, Gold Standard) or the equivalent SRN PPI methodology. Baseline, additionality and monitoring must follow the methodology document."}], "contoh": [{"id": "Langkah 1. Ambil faktor emisi: intensitas sistem Jawa-Bali 2025 dari RUPTL adalah {grid_jb} tCO2e per MWh (turunan EST).", "en": "Step 1. Take the emission factor: the 2025 intensity of the Java-Bali system from RUPTL is {grid_jb} tCO2e per MWh (EST derivation)."}, {"id": "Langkah 2. Anggap pembangkit bersih mengalirkan 1.000 MWh (1 GWh) ke jaringan itu dalam setahun dan tanpa emisi proyek.", "en": "Step 2. Assume a clean plant delivers 1,000 MWh (1 GWh) to that grid in a year with no project emissions."}, {"id": "Langkah 3. Emisi terhindar = 1.000 x {grid_jb} = {contoh_t} tCO2e (EST).", "en": "Step 3. Avoided emissions = 1,000 x {grid_jb} = {contoh_t} tCO2e (EST)."}, {"id": "Langkah 4. Pada harga bulanan IDXCarbon terendah Rp{harga_min} sampai tertinggi Rp{harga_maks} per tCO2e, nilai kotornya Rp{contoh_rp_min} juta sampai Rp{contoh_rp_maks} juta per GWh (EST, batas atas sebelum biaya MRV, potongan, dan syarat additionality).", "en": "Step 4. At the lowest monthly IDXCarbon price of Rp{harga_min} to the highest of Rp{harga_maks} per tCO2e, the gross value is Rp{contoh_rp_min} million to Rp{contoh_rp_maks} million per GWh (EST, an upper bound before MRV costs, deductions and additionality tests)."}]}, "6": {"tipe": "langkah", "sumber": ["ed", "kp", "idx"], "butir": [{"judul": {"id": "Pengembang proyek", "en": "Project developer"}, "isi": {"id": "Membangun dan memiliki pembangkit, menyiapkan dokumen proyek dan pemantauan. Di data registri terdapat pengembang BUMN, swasta nasional, dan perantara internasional.", "en": "Builds and owns the plant, prepares project and monitoring documents. The registry data includes state-owned, national private and international intermediary developers."}, "pelaku": {"id": "Pengembang", "en": "Developer"}}, {"judul": {"id": "Lembaga validasi dan verifikasi", "en": "Validation and verification body"}, "isi": {"id": "Memeriksa desain proyek sebelum registrasi lalu memverifikasi penurunan emisi tiap periode pemantauan.", "en": "Checks the project design before registration and then verifies the emission reduction in each monitoring period."}, "pelaku": {"id": "Pihak ketiga independen", "en": "Independent third party"}}, {"judul": {"id": "Registri", "en": "Registry"}, "isi": {"id": "Mencatat proyek, menerbitkan unit, dan mencatat pensiun. Jalur domestik lewat SRN PPI; jalur sukarela lewat Verra dan Gold Standard.", "en": "Records projects, issues units and records retirements. The domestic route is SRN PPI; the voluntary route is Verra and Gold Standard."}, "pelaku": {"id": "Registri", "en": "Registry"}}, {"judul": {"id": "Bursa", "en": "Exchange"}, "isi": {"id": "IDXCarbon mencatat proyek yang terdaftar dan mempertemukan penjual dan pembeli unit SPE-GRK.", "en": "IDXCarbon lists registered projects and matches sellers and buyers of SPE-GRK units."}, "pelaku": {"id": "Bursa Efek Indonesia", "en": "Indonesia Stock Exchange"}}, {"judul": {"id": "Pembeli", "en": "Buyer"}, "isi": {"id": "Pelaku usaha yang menutup kewajiban atau komitmen sukarelanya, termasuk perusahaan dengan target SBTi atau RE100.", "en": "Businesses that cover obligations or voluntary commitments, including companies with SBTi or RE100 targets."}, "pelaku": {"id": "Industri, pembangkit, korporasi", "en": "Industry, generators, corporations"}}]}, "12": {"tipe": "tabel", "sumber": ["celah"], "judul": {"id": "Tercatat tetapi naskahnya belum ada di korpus", "en": "Recorded but not yet in the corpus"}, "kolom": [{"k": "kode", "l": {"id": "Aturan", "en": "Rule"}}, {"k": "tentang", "l": {"id": "Tentang", "en": "About"}}, {"k": "catatan", "l": {"id": "Status di METI", "en": "Status at METI"}}], "baris": [{"kode": "UU 7/2021 (HPP)", "tentang": {"id": "Pajak karbon, Pasal 13, tarif minimal Rp30 per kg CO2e", "en": "Carbon tax, Article 13, minimum rate Rp30 per kg CO2e"}, "catatan": {"id": "Naskah belum diunduh; butuh UU HPP dan PMK terkait", "en": "Text not yet downloaded; needs the HPP Law and related MoF regulations"}}, {"kode": "Permen LHK 21/2022", "tentang": {"id": "Tata laksana penerapan nilai ekonomi karbon", "en": "Procedures for carbon economic value implementation"}, "catatan": {"id": "Disebut dalam kerangka pemilik; naskah belum di korpus", "en": "Named in the owner's framework; text not yet in the corpus"}}, {"kode": "Permen ESDM 16/2022", "tentang": {"id": "Penyelenggaraan nilai ekonomi karbon subsektor pembangkit tenaga listrik", "en": "Carbon economic value for the power generation subsector"}, "catatan": {"id": "Disebut dalam kerangka pemilik; naskah belum di korpus", "en": "Named in the owner's framework; text not yet in the corpus"}}, {"kode": "POJK 14/2023", "tentang": {"id": "Perdagangan karbon melalui bursa karbon", "en": "Carbon trading through the carbon exchange"}, "catatan": {"id": "Disebut dalam kerangka pemilik; naskah belum di korpus", "en": "Named in the owner's framework; text not yet in the corpus"}}]}, "13": {"tipe": "linimasa", "sumber": ["ed", "idx"], "butir": [{"tanggal": "1994-08-01", "reg": "uu-6-1994", "judul": {"id": "Indonesia mengesahkan Konvensi Kerangka Kerja PBB tentang Perubahan Iklim", "en": "Indonesia ratifies the UN Framework Convention on Climate Change"}}, {"tanggal": "2004-07-28", "reg": "uu-17-2004", "judul": {"id": "Pengesahan Protokol Kyoto", "en": "Ratification of the Kyoto Protocol"}}, {"tanggal": "2016-10-24", "reg": "uu-16-2016", "judul": {"id": "Pengesahan Persetujuan Paris", "en": "Ratification of the Paris Agreement"}}, {"tanggal": "2021-10-29", "reg": "perpres-98-2021", "judul": {"id": "Perpres 98/2021 tentang nilai ekonomi karbon (kemudian dicabut)", "en": "Presidential Regulation 98/2021 on carbon economic value (later revoked)"}}, {"tanggal": "2023-09-26", "judul": {"id": "Tanggal listing proyek tercatat paling awal di IDXCarbon dalam data METI", "en": "Earliest project listing date in IDXCarbon on record in METI data"}, "url": "https://idxcarbon.co.id/id/data-monthly"}, {"tanggal": "2024-01-30", "reg": "perpres-14-2024", "judul": {"id": "Perpres 14/2024 tentang penangkapan dan penyimpanan karbon", "en": "Presidential Regulation 14/2024 on carbon capture and storage"}}, {"tanggal": "2025-10-10", "reg": "perpres-110-2025", "judul": {"id": "Perpres 110/2025 menetapkan instrumen nilai ekonomi karbon dan menggantikan Perpres 98/2021", "en": "Presidential Regulation 110/2025 sets the carbon economic value instruments and replaces Presidential Regulation 98/2021"}}, {"tanggal": "2030-12-31", "judul": {"id": "Tahun sasaran E-NDC 2022 (target.json, RUKN 2025)", "en": "Target year of the 2022 E-NDC (target.json, RUKN 2025)"}}, {"tanggal": "2060-12-31", "judul": {"id": "Sasaran net zero emission menurut KEN PP 40/2025", "en": "Net zero emissions goal under KEN, Government Regulation 40/2025"}}]}, "15": {"tipe": "langkah", "sumber": ["ed", "idx"], "catatan": {"id": "Lama dan biaya tiap langkah tidak ditampilkan karena belum ada sumber terbuka yang bisa dikutip.", "en": "Duration and cost of each step are not shown because no citable open source is available yet."}, "butir": [{"judul": {"id": "Susun dokumen proyek", "en": "Prepare the project document"}, "isi": {"id": "Pilih metodologi, tetapkan baseline, dan tunjukkan additionality.", "en": "Choose the methodology, set the baseline and show additionality."}, "pelaku": {"id": "Pengembang", "en": "Developer"}}, {"judul": {"id": "Validasi", "en": "Validation"}, "isi": {"id": "Lembaga validasi dan verifikasi memeriksa dokumen proyek.", "en": "A validation and verification body checks the project document."}, "pelaku": {"id": "LVV", "en": "Validation body"}}, {"judul": {"id": "Registrasi proyek", "en": "Register the project"}, "isi": {"id": "Daftarkan proyek di SRN PPI untuk jalur domestik, atau di Verra atau Gold Standard untuk jalur sukarela.", "en": "Register in SRN PPI for the domestic route, or in Verra or Gold Standard for the voluntary route."}, "pelaku": {"id": "Pengembang dan registri", "en": "Developer and registry"}}, {"judul": {"id": "Pemantauan dan verifikasi", "en": "Monitoring and verification"}, "isi": {"id": "Ukur produksi listrik tiap periode lalu verifikasi oleh pihak ketiga.", "en": "Measure electricity output each period, then third-party verification."}, "pelaku": {"id": "Pengembang dan LVV", "en": "Developer and validation body"}}, {"judul": {"id": "Penerbitan unit", "en": "Issue units"}, "isi": {"id": "Registri menerbitkan unit (SPE-GRK di SRN PPI) sesuai hasil verifikasi.", "en": "The registry issues units (SPE-GRK in SRN PPI) according to the verification result."}, "pelaku": {"id": "Registri", "en": "Registry"}}, {"judul": {"id": "Listing dan perdagangan", "en": "Listing and trading"}, "isi": {"id": "Daftarkan unit di IDXCarbon lalu jual, atau jual langsung ke pembeli sukarela.", "en": "List the units on IDXCarbon and sell, or sell directly to voluntary buyers."}, "pelaku": {"id": "Pengembang dan bursa", "en": "Developer and exchange"}}]}, "31": {"tipe": "langkah", "sumber": ["ed", "kp", "idx", "ruptl"], "judul": {"id": "Peluang dan tantangan menurut peran", "en": "Opportunities and challenges by role"}, "butir": [{"judul": {"id": "Pengembang", "en": "Developers"}, "isi": {"id": "Peluang: di registri, unit terbit terbesar datang dari hidro dan panas bumi, sedangkan proyek surya dan bayu masih sedikit. Tantangan: dokumen MRV dan additionality harus disiapkan sejak desain, dan beberapa proyek registri berstatus verifikasi tertunda.", "en": "Opportunity: in registries, the largest issuance comes from hydro and geothermal while solar and wind projects are still few. Challenge: MRV and additionality documents must be prepared from design, and some registry projects have delayed verification."}, "pelaku": {"id": "Analisis METI (EST)", "en": "METI analysis (EST)"}}, {"judul": {"id": "Investor", "en": "Investors"}, "isi": {"id": "Peluang: pendapatan kredit sebagai tambahan arus kas. Tantangan: harga rata-rata bulanan bergerak antara Rp{harga_min} dan Rp{harga_maks} per tCO2e, jadi pakai skenario, bukan satu titik harga.", "en": "Opportunity: credit revenue as additional cash flow. Challenge: the monthly average price moved between Rp{harga_min} and Rp{harga_maks} per tCO2e, so use scenarios, not a single price point."}, "pelaku": {"id": "Analisis METI (EST)", "en": "METI analysis (EST)"}}, {"judul": {"id": "Pemerintah daerah", "en": "Local governments"}, "isi": {"id": "Peluang: rencana aksi daerah penurunan emisi sudah ada di beberapa provinsi (lihat bab Kerangka hukum). Tantangan: menyelaraskan RAD GRK dengan pencatatan di SRN PPI agar tidak terjadi penghitungan ganda.", "en": "Opportunity: regional emission reduction action plans already exist in several provinces (see the Legal framework chapter). Challenge: aligning regional plans with SRN PPI records to avoid double counting."}, "pelaku": {"id": "Analisis METI (EST)", "en": "METI analysis (EST)"}}, {"judul": {"id": "Pemasok dan penyedia teknologi", "en": "Suppliers and technology providers"}, "isi": {"id": "Peluang: alat ukur, sistem pemantauan, dan jasa MRV. Tantangan: standar pengukuran dan data harus selaras dengan metodologi registri.", "en": "Opportunity: metering, monitoring systems and MRV services. Challenge: measurement standards and data must match registry methodologies."}, "pelaku": {"id": "Analisis METI (EST)", "en": "METI analysis (EST)"}}, {"judul": {"id": "Akademisi", "en": "Academics"}, "isi": {"id": "Peluang: studi faktor emisi per sistem, evaluasi integritas kredit, dan model harga. Tantangan: data harga per unit tidak diterbitkan bursa.", "en": "Opportunity: studies of emission factors per system, credit integrity evaluation and price models. Challenge: per-unit price data is not published by the exchange."}, "pelaku": {"id": "Analisis METI (EST)", "en": "METI analysis (EST)"}}]}, "32": {"tipe": "langkah", "sumber": ["ed", "idx"], "butir": [{"judul": {"id": "Laporan bulanan IDXCarbon berikutnya", "en": "The next IDXCarbon monthly report"}, "isi": {"id": "Pantau volume, harga rata-rata, jumlah peserta, dan unit tersedia setelah {bursa_bln}.", "en": "Watch volume, average price, participant count and available units after {bursa_bln}."}, "pelaku": {"id": "Indikator", "en": "Indicator"}}, {"judul": {"id": "Aturan turunan Perpres 110/2025", "en": "Implementing rules of Presidential Regulation 110/2025"}, "isi": {"id": "Naskah turunan menentukan siapa wajib, batas emisi, dan tata cara; belum ada di korpus.", "en": "The implementing rules decide who is obliged, emission caps and procedures; not yet in the corpus."}, "pelaku": {"id": "Keputusan", "en": "Decision"}}, {"judul": {"id": "Penerapan pajak karbon", "en": "Carbon tax implementation"}, "isi": {"id": "Seri harga karbon mencatat Indonesia tanpa pajak karbon pada {tahun_luar}; cek tiap pembaruan seri.", "en": "The carbon price series records Indonesia with no carbon tax in {tahun_luar}; check each series update."}, "pelaku": {"id": "Keputusan", "en": "Decision"}}, {"judul": {"id": "Status verifikasi proyek di registri", "en": "Project verification status in registries"}, "isi": {"id": "Proyek berstatus verifikasi tertunda atau ditarik bisa berubah; lihat bab Proyek gagal atau mundur.", "en": "Projects with delayed verification or withdrawn status can change; see the failed or delayed projects chapter."}, "pelaku": {"id": "Indikator", "en": "Indicator"}}]}, "39": {"tipe": "kasus", "sumber": ["kp", "idx"], "butir": [{"id": "musi", "jenis": "berhasil", "dari": {"jenis": "kredit", "id": "vcs_487"}, "pelajaran": [{"id": "Pembangkit besar milik BUMN dengan metodologi baku (ACM0002) menghasilkan unit dalam jumlah besar dan hampir semuanya sudah dipensiunkan, tanda ada pembeli.", "en": "A large state-owned plant using a standard methodology (ACM0002) produced large issuance and almost all of it is retired, a sign of buyers."}]}, {"id": "lau-renun", "jenis": "berhasil", "dari": {"jenis": "kredit", "id": "vcs_488"}, "pelajaran": [{"id": "Pola yang sama dengan Musi: hidro BUMN, metodologi baku, unit terserap pembeli.", "en": "The same pattern as Musi: state-owned hydro, standard methodology, units absorbed by buyers."}]}, {"id": "sidrap", "jenis": "berhasil", "dari": {"jenis": "kredit", "id": "gs_1618"}, "foto": {"src": "/img/beranda/bayu-sidrap.webp", "alt": {"id": "PLTB Sidrap", "en": "Sidrap wind farm"}, "kredit": "USAID Indonesia, domain publik"}, "pelajaran": [{"id": "Satu dari sedikit proyek bayu di registri; sebagian besar unitnya sudah dipensiunkan.", "en": "One of few wind projects in the registries; most of its units are already retired."}]}, {"id": "ulubelu", "jenis": "berhasil", "dari": {"jenis": "kredit", "id": "gs_315"}, "pelajaran": [{"id": "Unit sudah terbit dalam jumlah besar tetapi baru sebagian kecil dipensiunkan: penerbitan belum berarti penjualan.", "en": "A large amount has been issued but only a small share retired: issuance does not mean sales."}]}, {"id": "jerman", "jenis": "berhasil", "dari": {"jenis": "negara", "kode": "DEU"}}, {"id": "singapura", "jenis": "berhasil", "dari": {"jenis": "negara", "kode": "SGP"}}, {"id": "afsel", "jenis": "berhasil", "dari": {"jenis": "negara", "kode": "ZAF"}}]}, "40": {"tipe": "kasus", "sumber": ["kp", "idx"], "butir": [{"id": "lahendong", "jenis": "gagal", "dari": {"jenis": "kredit", "id": "vcs_1778"}, "tindakan": [{"id": "Proyek Verra dengan nama ini berstatus ditarik tanpa unit terbit. Daftar IDXCarbon memuat proyek bernama serupa dengan seri SPE (volume listing tercatat di bab Proyek), jadi jalur domestik tampaknya ditempuh; sumber tidak menyatakan hubungannya.", "en": "The Verra project with this name has withdrawn status and no units issued. The IDXCarbon list has a similarly named project with an SPE series (listing volume in the Projects chapter), so a domestic route seems to have been taken; the sources do not state the link."}]}, {"id": "gunung-salak", "jenis": "gagal", "dari": {"jenis": "kredit", "id": "vcs_144"}, "pelajaran": [{"id": "Unit lama sudah hampir seluruhnya dipensiunkan, namun status registri menandai verifikasi terlambat: periksa kelengkapan pemantauan sebelum periode berikutnya.", "en": "Older units are almost entirely retired, yet the registry flags late verification: check monitoring completeness before the next period."}]}, {"id": "wayang-windu", "jenis": "gagal", "dari": {"jenis": "kredit", "id": "vcs_688"}}, {"id": "bantargebang", "jenis": "gagal", "dari": {"jenis": "kredit", "id": "vcs_967"}}, {"id": "hamparan", "jenis": "gagal", "dari": {"jenis": "kredit", "id": "vcs_3297"}}]}, "41": {"tipe": "pola", "sumber": ["kp", "idx"], "faktor": [{"k": "kredit_terbit", "l": {"id": "Unit kredit sudah terbit", "en": "Credits issued"}}, {"k": "kredit_dipakai", "l": {"id": "Separuh lebih unit dipensiunkan", "en": "More than half of units retired"}}, {"k": "status_aktif", "l": {"id": "Status registri aktif", "en": "Registry status active"}}, {"k": "metodologi_baku", "l": {"id": "Memakai metodologi baku", "en": "Uses a standard methodology"}}, {"k": "periode_berjalan", "l": {"id": "Periode kredit belum berakhir", "en": "Crediting period not yet ended"}}], "faktor_negara": [{"k": "cakupan_luas", "l": {"id": "Cakupan emisi 50 persen atau lebih", "en": "Emissions coverage of 50 percent or more"}}, {"k": "harga_bermakna", "l": {"id": "Harga rata-rata di atas US$1 per tCO2e", "en": "Average price above US$1 per tCO2e"}}, {"k": "nasional", "l": {"id": "Instrumen berlaku nasional", "en": "Instrument applies nationally"}}]}, "42": {"tipe": "periksa", "sumber": ["ed"], "peran": [{"k": "pengembang", "l": {"id": "Pengembang", "en": "Developer"}}, {"k": "investor", "l": {"id": "Investor", "en": "Investor"}}, {"k": "pemda", "l": {"id": "Pemerintah daerah", "en": "Local government"}}, {"k": "pusat", "l": {"id": "Pemerintah pusat", "en": "Central government"}}, {"k": "pln", "l": {"id": "PLN", "en": "PLN"}}, {"k": "meti", "l": {"id": "METI", "en": "METI"}}], "tahap": [{"k": "lokasi", "l": {"id": "Penyaringan lokasi dan desain", "en": "Site screening and design"}}, {"k": "izin", "l": {"id": "Perizinan dan registrasi", "en": "Permits and registration"}}, {"k": "ppa", "l": {"id": "PPA dan kontrak", "en": "PPA and contracts"}}, {"k": "dana", "l": {"id": "Pendanaan", "en": "Financing"}}, {"k": "bangun", "l": {"id": "Konstruksi", "en": "Construction"}}, {"k": "operasi", "l": {"id": "Operasi dan pemantauan", "en": "Operation and monitoring"}}], "butir": [{"peran": "pengembang", "tahap": "lokasi", "teks": {"id": "Hitung emisi terhindar dengan faktor emisi sistem tujuan dan simpan asumsinya.", "en": "Compute avoided emissions with the destination system's emission factor and keep the assumptions."}}, {"peran": "pengembang", "tahap": "lokasi", "teks": {"id": "Tulis argumen additionality: apa yang tidak layak tanpa pendapatan karbon.", "en": "Write the additionality argument: what would not be viable without carbon revenue."}}, {"peran": "pengembang", "tahap": "izin", "teks": {"id": "Pilih jalur registri (SRN PPI, Verra, Gold Standard) dan metodologinya sebelum desain dikunci.", "en": "Choose the registry route (SRN PPI, Verra, Gold Standard) and its methodology before the design is locked."}}, {"peran": "pengembang", "tahap": "izin", "teks": {"id": "Pastikan proyek tidak didaftarkan ganda di dua registri.", "en": "Make sure the project is not registered twice in two registries."}}, {"peran": "pengembang", "tahap": "ppa", "teks": {"id": "Atur dalam kontrak siapa yang memiliki hak atas atribut lingkungan listrik yang dijual.", "en": "Specify in contracts who owns the environmental attributes of the electricity sold."}}, {"peran": "pengembang", "tahap": "bangun", "teks": {"id": "Pasang meteran dan sistem data yang memenuhi syarat metodologi sejak konstruksi.", "en": "Install meters and a data system that meet the methodology's requirements from construction."}}, {"peran": "pengembang", "tahap": "operasi", "teks": {"id": "Jadwalkan verifikasi tiap periode agar tidak berstatus terlambat.", "en": "Schedule verification each period so it does not become late."}}, {"peran": "investor", "tahap": "dana", "teks": {"id": "Modelkan pendapatan karbon sebagai skenario rendah, tengah, tinggi, bukan satu harga.", "en": "Model carbon revenue as low, mid and high scenarios, not one price."}}, {"peran": "investor", "tahap": "dana", "teks": {"id": "Minta bukti status registri dan riwayat verifikasi proyek.", "en": "Ask for evidence of registry status and the project's verification history."}}, {"peran": "investor", "tahap": "operasi", "teks": {"id": "Pantau rasio unit terbit terhadap unit dipensiunkan sebagai tanda permintaan.", "en": "Track the ratio of issued to retired units as a demand signal."}}, {"peran": "pemda", "tahap": "lokasi", "teks": {"id": "Selaraskan rencana aksi daerah penurunan emisi dengan proyek energi terbarukan di wilayah.", "en": "Align the regional emission reduction action plan with renewable projects in the region."}}, {"peran": "pemda", "tahap": "izin", "teks": {"id": "Catat proyek karbon di wilayah agar tidak terhitung ganda dengan klaim daerah.", "en": "Record carbon projects in the region so they are not double counted with regional claims."}}, {"peran": "pusat", "tahap": "izin", "teks": {"id": "Terbitkan dan publikasikan aturan turunan Perpres 110/2025 beserta faktor emisi resmi per sistem.", "en": "Issue and publish the implementing rules of Presidential Regulation 110/2025 with official emission factors per system."}}, {"peran": "pusat", "tahap": "operasi", "teks": {"id": "Terbitkan data harga dan volume per unit agar pasar lebih transparan.", "en": "Publish per-unit price and volume data so the market is more transparent."}}, {"peran": "pln", "tahap": "ppa", "teks": {"id": "Terbitkan faktor emisi jaringan per sistem dan perbarui tiap tahun.", "en": "Publish grid emission factors per system and update them yearly."}}, {"peran": "pln", "tahap": "ppa", "teks": {"id": "Jelaskan perlakuan atribut karbon dalam draf PPA standar.", "en": "Explain the treatment of carbon attributes in the standard PPA draft."}}, {"peran": "meti", "tahap": "izin", "teks": {"id": "Kumpulkan hambatan registrasi dari anggota dan sampaikan di forum konsultasi.", "en": "Collect registration obstacles from members and raise them in consultation forums."}}, {"peran": "meti", "tahap": "operasi", "teks": {"id": "Perbarui halaman ini tiap laporan bulanan IDXCarbon terbit.", "en": "Update this page whenever a new IDXCarbon monthly report is published."}}]}}}
+{
+ "id": "karbon",
+ "versi": 2,
+ "diperbarui": "2026-11-08",
+ "judul": {
+  "id": "Karbon",
+  "en": "Carbon"
+ },
+ "lead": {
+  "id": "Harga, pasar, dan kredit karbon bagi energi terbarukan Indonesia, dengan pembanding luar negeri dan pelajaran dari proyek.",
+  "en": "Carbon prices, markets and credits for Indonesian renewable energy, with international comparisons and lessons from projects."
+ },
+ "kunci": [
+  {
+   "ref": "cakupan"
+  },
+  {
+   "ref": "ets_usd"
+  },
+  {
+   "ref": "bursa_vol"
+  },
+  {
+   "ref": "kredit_terbit"
+  },
+  {
+   "ref": "emisi_juta"
+  }
+ ],
+ "penting": [
+  {
+   "id": "Indonesia tercatat memiliki ETS yang mencakup {cakupan} persen emisi CO2 ({tahun_luar}), tetapi harga rata-rata tertimbangnya hanya US${ets_usd} per tCO2e dan tanpa pajak karbon.",
+   "en": "Indonesia is recorded as having an ETS covering {cakupan} percent of CO2 emissions ({tahun_luar}), but its weighted average price is only US${ets_usd} per tCO2e and there is no carbon tax."
+  },
+  {
+   "id": "Pasar domestik masih tipis: volume kumulatif tahun berjalan {bursa_vol} tCO2e per {bursa_bln}, dengan harga rata-rata bulanan Rp{bursa_harga} per tCO2e.",
+   "en": "The domestic market is still thin: year-to-date volume of {bursa_vol} tCO2e as of {bursa_bln}, at a monthly average price of Rp{bursa_harga} per tCO2e."
+  },
+  {
+   "id": "Proyek energi Indonesia di Verra dan Gold Standard telah menerbitkan {kredit_terbit} tCO2e kredit, dan {kredit_pensiun} tCO2e di antaranya sudah dipensiunkan.",
+   "en": "Indonesian energy projects in Verra and Gold Standard have issued {kredit_terbit} tCO2e of credits, of which {kredit_pensiun} tCO2e are already retired."
+  }
+ ],
+ "posisi": {
+  "id": "Cakupan harga karbon Indonesia ({cakupan} persen) di atas {nol_n} dari 14 negara pembanding yang berada di 0 persen, tetapi harganya jauh di bawah ETS Jerman (US${de_ets}) dan pajak karbon Afrika Selatan (US${za_pajak}).",
+  "en": "Indonesia's carbon price coverage ({cakupan} percent) is above the {nol_n} of 14 comparison countries still at 0 percent, but its price is far below Germany's ETS (US${de_ets}) and South Africa's carbon tax (US${za_pajak})."
+ },
+ "sumber": {
+  "ed": {
+   "judul": "Ringkasan editorial METI (definisi dan penjelasan umum; bukan kutipan pasal)",
+   "penerbit": "METI",
+   "tanggal": "2026-11-08",
+   "bukti": "editorial"
+  },
+  "idx": {
+   "judul": "IDXCarbon Monthly Report (Carbon Market Trading Summary dan Listed Project)",
+   "penerbit": "Bursa Efek Indonesia (IDXCarbon)",
+   "url": "https://idxcarbon.co.id/id/data-monthly",
+   "tanggal": "2026-11-07",
+   "tahun": 2026,
+   "bukti": "resmi"
+  },
+  "ct": {
+   "judul": "Climate TRACE v6 API: aset pembangkit listrik Indonesia",
+   "penerbit": "Climate TRACE",
+   "url": "https://api.climatetrace.org/v6/assets?sectors=power&countries=IDN&limit=100&offset=0&year=2024",
+   "tanggal": "2026-11-07",
+   "tahun": 2024,
+   "bukti": "via-pihak-ketiga",
+   "lisensi": "CC BY 4.0"
+  },
+  "kp": {
+   "judul": "Registri Verra VCS (salinan Berkeley VROD) dan Gold Standard: proyek energi terbarukan Indonesia",
+   "penerbit": "Verra, Gold Standard, Berkeley Carbon Trading Project",
+   "url": "https://gspp.berkeley.edu/berkeley-carbon-trading-project/offsets-database",
+   "tanggal": "2026-11-08",
+   "tahun": 2026,
+   "bukti": "via-pihak-ketiga",
+   "lisensi": "CC BY 4.0"
+  },
+  "ruptl": {
+   "judul": "RUPTL PT PLN (Persero) 2025-2034, neraca daya per sistem (turunan intensitas emisi dihitung METI)",
+   "penerbit": "PT PLN (Persero), disahkan Kementerian ESDM",
+   "url": "https://gatrik.esdm.go.id/gatrik/gatrik-api//storage/migrasi/download_index/files/b967d-ruptl-pln-2025-2034-pub-.pdf",
+   "tanggal": "2026-11-08",
+   "tahun": 2025,
+   "bukti": "resmi"
+  },
+  "stat": {
+   "judul": "Statistik Ketenagalistrikan 2024, Tabel 18",
+   "penerbit": "Kementerian ESDM, Ditjen Ketenagalistrikan",
+   "url": "https://gatrik.esdm.go.id/gatrik/gatrik-api//storage/migrasi/download_index/files/91fa8-buku-statistik-ketenagalistrikan-2024.pdf",
+   "tanggal": "2026-11-07",
+   "tahun": 2024,
+   "bukti": "resmi"
+  },
+  "celah": {
+   "judul": "Catatan celah data transisi.json (pajak karbon: UU 7/2021 Pasal 13, tarif Rp30 per kg CO2e; naskah belum ada di korpus)",
+   "penerbit": "Direktori METI",
+   "tanggal": "2026-11-08",
+   "bukti": "editorial"
+  },
+  "sbti": {
+   "judul": "SBTi Target Dashboard dan RE100 (perusahaan berkantor pusat di Indonesia)",
+   "penerbit": "Science Based Targets initiative, RE100",
+   "url": "https://sciencebasedtargets.org/target-dashboard",
+   "tanggal": "2026-11-07",
+   "tahun": 2026,
+   "bukti": "resmi"
+  },
+  "icap": {
+   "judul": "ICAP, ETS Prices (harga izin sistem perdagangan emisi dunia; data harian)",
+   "penerbit": "International Carbon Action Partnership",
+   "url": "https://icapcarbonaction.com/en/ets-prices",
+   "tanggal": "2026-11-08",
+   "tahun": 2026,
+   "bukti": "resmi"
+  },
+  "ipcc_ef": {
+   "judul": "IPCC Guidelines 2006 vol. 2 bab 2: faktor emisi bawaan bahan bakar",
+   "penerbit": "IPCC",
+   "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html",
+   "tanggal": "2026-11-08",
+   "tahun": 2026,
+   "bukti": "resmi"
+  },
+  "regul": {
+   "judul": "Basis regulasi METI (public/data/regulasi.json, naskah BPK JDIH)",
+   "penerbit": "BPK JDIH, METI",
+   "url": "https://peraturan.bpk.go.id/",
+   "tanggal": "2026-11-07",
+   "tahun": 2026,
+   "bukti": "resmi"
+  },
+  "pendanaan": {
+   "judul": "Basis pendanaan METI (public/data/pendanaan.json: skema dan proyek pendana)",
+   "penerbit": "METI, ADB, World Bank, GIZ dan lain-lain",
+   "url": "https://platformmeti.timitbnpb.workers.dev",
+   "tanggal": "2026-11-08",
+   "tahun": 2026,
+   "bukti": "via-pihak-ketiga"
+  },
+  "luar": {
+   "judul": "Our World in Data, grafik harga dan cakupan karbon (public/data/topik/luar_karbon.json); World Bank Carbon Pricing Dashboard membalas 403 sehingga tidak dipakai",
+   "penerbit": "Our World in Data",
+   "url": "https://ourworldindata.org/grapher/carbon-tax-trading-coverage",
+   "tanggal": "2026-11-08",
+   "tahun": 2026,
+   "bukti": "via-pihak-ketiga",
+   "lisensi": "CC BY 4.0"
+  }
+ },
+ "bab": {
+  "2": {
+   "tipe": "faq",
+   "sumber": [
+    "ed",
+    "regul",
+    "idx",
+    "kp"
+   ],
+   "butir": [
+    {
+     "t": {
+      "id": "Apa itu kredit karbon?",
+      "en": "What is a carbon credit?"
+     },
+     "j": {
+      "id": "Satu unit yang mewakili penurunan atau penghindaran satu ton CO2e dan sudah diverifikasi pihak ketiga. Unit itu dicatat di registri, boleh dijual, lalu dipensiunkan (dipakai) oleh pembelinya sehingga tidak bisa dijual lagi.",
+      "en": "A unit representing one tonne of CO2e reduced or avoided and verified by a third party. It is recorded in a registry, can be sold, and is then retired (used) by its buyer so it cannot be sold again."
+     },
+     "bab": 4
+    },
+    {
+     "t": {
+      "id": "Apa beda pajak karbon, ETS, dan offset?",
+      "en": "What is the difference between a carbon tax, an ETS and offsets?"
+     },
+     "j": {
+      "id": "Pajak karbon menetapkan harga per ton emisi. ETS menetapkan batas emisi lalu mengizinkan pelaku yang melebihi batas membeli unit dari yang di bawah batas. Offset adalah kredit dari proyek di luar batas itu yang dibeli untuk mengimbangi emisi.",
+      "en": "A carbon tax sets a price per tonne of emissions. An ETS sets an emissions cap and lets those above the cap buy units from those below it. Offsets are credits from projects outside the cap that are bought to compensate emissions."
+     },
+     "bab": 19
+    },
+    {
+     "t": {
+      "id": "Apakah pajak karbon sudah berlaku di Indonesia?",
+      "en": "Is a carbon tax already in force in Indonesia?"
+     },
+     "j": {
+      "id": "Seri harga karbon yang dipakai halaman ini mencatat Indonesia tanpa pajak karbon dan dengan ETS pada {tahun_luar}. Tarif minimal Rp30 per kg CO2e tercatat di UU 7/2021 Pasal 13, tetapi naskah dan aturan turunannya belum ada di korpus METI, jadi cek penerapan terbarunya ke sumber resmi.",
+      "en": "The carbon price series used on this page records Indonesia with an ETS and no carbon tax in {tahun_luar}. A minimum rate of Rp30 per kg CO2e is noted in Law 7/2021 Article 13, but the text and its implementing rules are not in the METI corpus, so check the latest application with official sources."
+     },
+     "bab": 19
+    },
+    {
+     "t": {
+      "id": "Berapa harga unit karbon di IDXCarbon?",
+      "en": "What do carbon units cost on IDXCarbon?"
+     },
+     "j": {
+      "id": "Harga rata-rata tertimbang bulan {bursa_bln} adalah Rp{bursa_harga} per tCO2e, dihitung dari nilai dibagi volume. Selama {bursa_n} bulan laporan, rata-rata bulanan bergerak antara Rp{harga_min} dan Rp{harga_maks}. Ini bukan harga kutipan karena bursa tidak menerbitkan harga per unit.",
+      "en": "The weighted average price in {bursa_bln} was Rp{bursa_harga} per tCO2e, computed as value divided by volume. Over {bursa_n} reporting months the monthly average ranged between Rp{harga_min} and Rp{harga_maks}. This is not a quoted price because the exchange does not publish per-unit prices."
+     },
+     "bab": 19
+    },
+    {
+     "t": {
+      "id": "Siapa yang boleh menjual unit karbon?",
+      "en": "Who can sell carbon units?"
+     },
+     "j": {
+      "id": "Pemilik proyek yang unitnya sudah tercatat di Sistem Registri Nasional dan terdaftar di bursa, seperti daftar proyek yang tampil di bab Proyek. Syarat rincinya ada di Perpres 110/2025 dan aturan turunannya; naskah turunan belum ada di korpus METI.",
+      "en": "Project owners whose units are recorded in the National Registry System and listed on the exchange, like the projects shown in the Projects chapter. Detailed requirements are in Presidential Regulation 110/2025 and its implementing rules; those rules are not yet in the METI corpus."
+     },
+     "bab": 12
+    },
+    {
+     "t": {
+      "id": "Apakah PLTS bisa menghasilkan kredit karbon?",
+      "en": "Can a solar plant earn carbon credits?"
+     },
+     "j": {
+      "id": "Bisa bila penurunan emisinya tambahan (additional), diukur dengan metodologi yang diakui seperti ACM0002 untuk listrik tersambung jaringan, dan diverifikasi. Di registri Verra dan Gold Standard, proyek surya Indonesia masih sedikit dibanding hidro dan panas bumi.",
+      "en": "Yes, if the emission reduction is additional, measured with a recognized methodology such as ACM0002 for grid-connected electricity, and verified. In the Verra and Gold Standard registries, Indonesian solar projects are still few compared with hydro and geothermal."
+     },
+     "bab": 10
+    },
+    {
+     "t": {
+      "id": "Apa beda kredit di IDXCarbon dan di Verra atau Gold Standard?",
+      "en": "How do IDXCarbon credits differ from Verra or Gold Standard ones?"
+     },
+     "j": {
+      "id": "IDXCarbon memperdagangkan unit domestik yang tercatat di SRN PPI dengan seri SPE. Verra dan Gold Standard adalah registri sukarela internasional dengan metodologi dan penerbitan sendiri. Satu proyek bisa muncul di keduanya, jadi periksa agar tidak ada penghitungan ganda.",
+      "en": "IDXCarbon trades domestic units recorded in SRN PPI with SPE series numbers. Verra and Gold Standard are international voluntary registries with their own methodologies and issuance. One project can appear in both, so check that nothing is counted twice."
+     },
+     "bab": 10
+    },
+    {
+     "t": {
+      "id": "Apa itu additionality dan kenapa menentukan?",
+      "en": "What is additionality and why does it decide everything?"
+     },
+     "j": {
+      "id": "Penurunan emisi dihitung hanya bila tidak akan terjadi tanpa insentif karbon. Tanpa itu, kredit mewakili emisi yang memang sudah akan turun dan integritasnya dipertanyakan.",
+      "en": "An emission reduction counts only if it would not have happened without carbon incentives. Without that, a credit represents emissions that were going to fall anyway and its integrity is questioned."
+     },
+     "bab": 12
+    },
+    {
+     "t": {
+      "id": "Dari mana angka faktor emisi listrik berasal?",
+      "en": "Where do grid emission factors come from?"
+     },
+     "j": {
+      "id": "Halaman ini menurunkan intensitas emisi tiap sistem PLN dari tabel RUPTL 2025-2034 (emisi GRK dibagi produksi listrik), lalu memberi label EST. Faktor emisi resmi ESDM per sistem belum ada di korpus METI, jadi angka resmi harus dipakai untuk dokumen proyek.",
+      "en": "This page derives the emission intensity of each PLN system from the RUPTL 2025-2034 tables (GHG emissions divided by electricity production) and labels it EST. The official ESDM emission factor per system is not yet in the METI corpus, so official figures must be used for project documents."
+     },
+     "bab": 10
+    },
+    {
+     "t": {
+      "id": "Apa yang bisa dilakukan anggota METI sekarang?",
+      "en": "What can METI members do now?"
+     },
+     "j": {
+      "id": "Pengembang bisa menyiapkan dokumentasi pengukuran sejak desain, investor memasukkan harga karbon sebagai skenario, dan pemda menyelaraskan rencana aksi daerah. Rincinya ada di bab Peluang dan tantangan serta Daftar yang harus dilakukan.",
+      "en": "Developers can prepare measurement documentation from the design stage, investors can model carbon prices as scenarios, and local governments can align regional action plans. Details are in the Opportunities and Things to do chapters."
+     },
+     "bab": 19
+    },
+    {
+     "t": {
+      "id": "Apa itu SRN PPI dan SPE-GRK?",
+      "en": "What are SRN PPI and SPE-GRK?"
+     },
+     "j": {
+      "id": "SRN PPI adalah sistem registri nasional pengendalian perubahan iklim milik KLH; SPE-GRK adalah sertifikat pengurangan emisi gas rumah kaca yang diterbitkan setelah verifikasi. Permen LH 10/2026 menata sistem registri unit karbon.",
+      "en": "SRN PPI is the national climate change control registry run by the Environment Ministry; SPE-GRK is the greenhouse gas emission reduction certificate issued after verification. Environment Reg. 10/2026 organises the carbon unit registry system."
+     },
+     "bab": 12
+    },
+    {
+     "t": {
+      "id": "Siapa yang mengatur perdagangan karbon di bursa?",
+      "en": "Who regulates carbon trading on the exchange?"
+     },
+     "j": {
+      "id": "OJK mengatur perdagangan karbon melalui bursa (POJK 14/2023, diubah dengan POJK 10/2026 pada 2 Juli 2026); KLH mengatur unit dan registri; Perpres 110/2025 menjadi payung instrumen nilai ekonomi karbon.",
+      "en": "The OJK regulates exchange carbon trading (POJK 14/2023, amended by POJK 10/2026 on 2 July 2026); the Environment Ministry governs units and registries; Presidential Reg. 110/2025 is the umbrella for carbon economic value instruments."
+     },
+     "bab": 12
+    },
+    {
+     "t": {
+      "id": "Apakah hutan dan laut juga bisa menjual karbon?",
+      "en": "Can forests and the sea also sell carbon?"
+     },
+     "j": {
+      "id": "Ya, dengan aturan sektoral: Permen LHK 6/2026 untuk offset emisi sektor kehutanan (6 April 2026) dan Permen KKP 1/2025 untuk sektor kelautan (6 Januari 2025). Energi terbarukan bersaing dengan unit sektor ini di pasar yang sama.",
+      "en": "Yes, under sector rules: Environment Reg. 6/2026 for forestry offsets (6 April 2026) and Marine Affairs Reg. 1/2025 for the marine sector (6 January 2025). Renewable energy competes with these sector units in the same market."
+     },
+     "bab": 12
+    },
+    {
+     "t": {
+      "id": "Berapa pendapatan kredit karbon sebuah PLTS?",
+      "en": "How much does a solar plant earn from credits?"
+     },
+     "j": {
+      "id": "Contoh hipotesis PLTS 10 MW pada faktor kapasitas 18 persen menghasilkan 15.8 GWh dan dengan faktor emisi 0.68025 tCO2 per MWh sekitar 10.7 ribu tCO2e per tahun; pada harga bursa terakhir Rp79.421 per tCO2e itu sekitar Rp852 juta (EST, sebelum biaya MRV dan perantara; faktor emisi resmi untuk kredit bisa berbeda).",
+      "en": "A hypothetical 10 MW solar plant at an 18 percent capacity factor makes 15.8 GWh and at an emission factor of 0.68025 tCO2 per MWh about 10.7 thousand tCO2e a year; at the latest exchange price of IDR 79,421 per tCO2e that is about IDR 852 million (EST, before MRV and intermediary costs; the official emission factor for credits can differ)."
+     },
+     "bab": 19
+    },
+    {
+     "t": {
+      "id": "Apa itu CBAM dan kenapa relevan?",
+      "en": "What is CBAM and why does it matter?"
+     },
+     "j": {
+      "id": "Mekanisme penyesuaian karbon perbatasan Uni Eropa mengenakan biaya karbon pada impor seperti baja, aluminium, semen, pupuk, listrik, dan hidrogen. Eksportir Indonesia yang membayar harga karbon domestik dapat mengurangi beban; ini alasan bursa dan pajak karbon penting.",
+      "en": "The EU carbon border adjustment mechanism charges carbon on imports such as steel, aluminium, cement, fertiliser, electricity and hydrogen. Indonesian exporters paying a domestic carbon price can reduce the burden; this is why the exchange and carbon tax matter."
+     },
+     "bab": 19
+    }
+   ]
+  },
+  "3": {
+   "tipe": "glosarium",
+   "sumber": [
+    "ed"
+   ],
+   "butir": [
+    {
+     "istilah": {
+      "id": "NDC",
+      "en": "NDC"
+     },
+     "arti": {
+      "id": "Kontribusi yang ditetapkan secara nasional di bawah Persetujuan Paris: janji penurunan emisi tiap negara. Angka Indonesia: {ndc_min} persen dengan upaya sendiri dan {ndc_maks} persen dengan dukungan internasional pada 2030 (E-NDC 2022).",
+      "en": "Nationally Determined Contribution under the Paris Agreement: each country's emission reduction pledge. Indonesia's figures: {ndc_min} percent unconditional and {ndc_maks} percent with international support by 2030 (E-NDC 2022)."
+     },
+     "kat": "teknis"
+    },
+    {
+     "istilah": {
+      "id": "ETS",
+      "en": "ETS"
+     },
+     "arti": {
+      "id": "Sistem perdagangan emisi: pemerintah membatasi emisi total, pelaku menerima atau membeli izin, dan kelebihan atau kekurangan izin diperdagangkan.",
+      "en": "Emissions trading system: the government caps total emissions, participants receive or buy allowances, and surplus or shortfall allowances are traded."
+     },
+     "kat": "teknis"
+    },
+    {
+     "istilah": {
+      "id": "Offset",
+      "en": "Offset"
+     },
+     "arti": {
+      "id": "Kredit dari proyek di luar batas emisi pembeli, dibeli untuk mengimbangi emisinya.",
+      "en": "Credits from projects outside the buyer's emission cap, bought to compensate its emissions."
+     },
+     "kat": "uang"
+    },
+    {
+     "istilah": {
+      "id": "tCO2e",
+      "en": "tCO2e"
+     },
+     "arti": {
+      "id": "Satu ton setara karbon dioksida; satuan umum untuk menjumlahkan beragam gas rumah kaca.",
+      "en": "One tonne of carbon dioxide equivalent; the common unit for adding up different greenhouse gases."
+     },
+     "kat": "satuan"
+    },
+    {
+     "istilah": {
+      "id": "PTBAE-PU",
+      "en": "PTBAE-PU"
+     },
+     "arti": {
+      "id": "Persetujuan teknis batas atas emisi pelaku usaha: batas emisi yang dipakai pada ETS Indonesia untuk pembangkit listrik.",
+      "en": "Technical approval of a business actor's emission cap: the cap used in Indonesia's ETS for power plants."
+     },
+     "kat": "teknis"
+    },
+    {
+     "istilah": {
+      "id": "SPE-GRK",
+      "en": "SPE-GRK"
+     },
+     "arti": {
+      "id": "Sertifikat penurunan emisi gas rumah kaca; unit yang tercatat di registri nasional dan bisa diperdagangkan di bursa karbon.",
+      "en": "Greenhouse gas emission reduction certificate; the unit recorded in the national registry and tradable on the carbon exchange."
+     },
+     "kat": "teknis"
+    },
+    {
+     "istilah": {
+      "id": "SRN PPI",
+      "en": "SRN PPI"
+     },
+     "arti": {
+      "id": "Sistem Registri Nasional Pengendalian Perubahan Iklim: pencatatan aksi dan unit karbon nasional.",
+      "en": "National Registry System for Climate Change Control: the national record of climate actions and carbon units."
+     },
+     "kat": "teknis"
+    },
+    {
+     "istilah": {
+      "id": "MRV",
+      "en": "MRV"
+     },
+     "arti": {
+      "id": "Measurement, reporting, verification: mengukur, melaporkan, dan memverifikasi emisi atau penurunannya.",
+      "en": "Measurement, reporting, verification of emissions or their reduction."
+     },
+     "kat": "teknis"
+    },
+    {
+     "istilah": {
+      "id": "LVV",
+      "en": "LVV"
+     },
+     "arti": {
+      "id": "Lembaga validasi dan verifikasi: pihak ketiga independen yang memeriksa desain dan hasil proyek.",
+      "en": "Validation and verification body: an independent third party that checks a project's design and results."
+     },
+     "kat": "teknis"
+    },
+    {
+     "istilah": {
+      "id": "Additionality",
+      "en": "Additionality"
+     },
+     "arti": {
+      "id": "Syarat bahwa penurunan emisi hanya terjadi karena insentif karbon.",
+      "en": "The requirement that the reduction happens only because of carbon incentives."
+     },
+     "kat": "uang"
+    },
+    {
+     "istilah": {
+      "id": "Baseline",
+      "en": "Baseline"
+     },
+     "arti": {
+      "id": "Perkiraan emisi bila proyek tidak ada; penurunan dihitung dari selisihnya dengan emisi proyek.",
+      "en": "The estimated emissions without the project; the reduction is the difference from project emissions."
+     },
+     "kat": "teknis"
+    },
+    {
+     "istilah": {
+      "id": "Faktor emisi grid",
+      "en": "Faktor emisi grid"
+     },
+     "arti": {
+      "id": "Emisi per MWh listrik jaringan (tCO2e per MWh) yang dipakai untuk menghitung emisi terhindar oleh pembangkit bersih.",
+      "en": "Emissions per MWh of grid electricity (tCO2e per MWh) used to compute emissions avoided by clean generation."
+     },
+     "kat": "uang"
+    },
+    {
+     "istilah": {
+      "id": "Vintage",
+      "en": "Vintage"
+     },
+     "arti": {
+      "id": "Tahun penurunan emisi yang diwakili sebuah unit karbon.",
+      "en": "The year of the emission reduction a carbon unit represents."
+     },
+     "kat": "teknis"
+    },
+    {
+     "istilah": {
+      "id": "Pensiun unit",
+      "en": "Pensiun unit"
+     },
+     "arti": {
+      "id": "Unit dipakai pembelinya dan dikeluarkan dari peredaran sehingga tidak bisa dijual lagi.",
+      "en": "The unit is used by its buyer and removed from circulation so it cannot be sold again."
+     },
+     "kat": "teknis"
+    },
+    {
+     "istilah": {
+      "id": "CORSIA",
+      "en": "CORSIA"
+     },
+     "arti": {
+      "id": "Skema ICAO yang mewajibkan maskapai penerbangan internasional mengimbangi pertumbuhan emisinya dengan unit karbon.",
+      "en": "The ICAO scheme requiring international airlines to offset emissions growth with carbon units."
+     },
+     "kat": "aturan"
+    },
+    {
+     "istilah": {
+      "id": "Article 6",
+      "en": "Article 6"
+     },
+     "arti": {
+      "id": "Pasal 6 Persetujuan Paris tentang kerja sama pasar karbon antarnegara.",
+      "en": "Article 6 of the Paris Agreement on cross-border carbon market cooperation."
+     },
+     "kat": "teknis"
+    },
+    {
+     "istilah": {
+      "id": "ITMO",
+      "en": "ITMO"
+     },
+     "arti": {
+      "id": "Internationally transferred mitigation outcome: hasil mitigasi yang dipindahkan antarnegara di bawah Pasal 6.2.",
+      "en": "Internationally transferred mitigation outcome: a mitigation result transferred between countries under Article 6.2."
+     },
+     "kat": "uang"
+    },
+    {
+     "istilah": {
+      "id": "Net zero",
+      "en": "Net zero"
+     },
+     "arti": {
+      "id": "Keseimbangan antara emisi yang dilepas dan yang diserap atau dihindari. Indonesia menyebut sasaran 2060 di KEN PP 40/2025.",
+      "en": "A balance between emissions released and those removed or avoided. Indonesia states a 2060 goal in KEN, Government Regulation 40/2025."
+     },
+     "kat": "teknis"
+    },
+    {
+     "istilah": {
+      "id": "Scope 1, 2, 3",
+      "en": "Scope 1, 2, 3"
+     },
+     "arti": {
+      "id": "Cakupan emisi korporasi: langsung, listrik dibeli, dan rantai nilai.",
+      "en": "Corporate emission scopes: direct, purchased power and value chain."
+     },
+     "kat": "teknis"
+    },
+    {
+     "istilah": {
+      "id": "CBAM",
+      "en": "CBAM"
+     },
+     "arti": {
+      "id": "Carbon border adjustment mechanism, biaya karbon pada impor ke Uni Eropa.",
+      "en": "Carbon border adjustment mechanism, a carbon charge on imports into the EU."
+     },
+     "kat": "teknis"
+    },
+    {
+     "istilah": {
+      "id": "Cap and trade",
+      "en": "Cap and trade"
+     },
+     "arti": {
+      "id": "Batas total emisi dengan izin yang dapat diperdagangkan, dasar ETS.",
+      "en": "A total emission cap with tradable allowances, the basis of an ETS."
+     },
+     "kat": "teknis"
+    },
+    {
+     "istilah": {
+      "id": "Carbon leakage",
+      "en": "Carbon leakage"
+     },
+     "arti": {
+      "id": "Kebocoran karbon: emisi berpindah ke negara berharga karbon rendah.",
+      "en": "Carbon leakage: emissions moving to a country with a lower carbon price."
+     },
+     "kat": "uang"
+    },
+    {
+     "istilah": {
+      "id": "Permanence",
+      "en": "Permanence"
+     },
+     "arti": {
+      "id": "Kekekalan penyimpanan karbon, terutama di hutan.",
+      "en": "Durability of carbon storage, especially in forests."
+     },
+     "kat": "teknis"
+    },
+    {
+     "istilah": {
+      "id": "Buffer pool",
+      "en": "Buffer pool"
+     },
+     "arti": {
+      "id": "Cadangan unit untuk menutup risiko pembalikan karbon.",
+      "en": "A reserve of units to cover carbon reversal risk."
+     },
+     "kat": "teknis"
+    },
+    {
+     "istilah": {
+      "id": "Corresponding adjustment",
+      "en": "Corresponding adjustment"
+     },
+     "arti": {
+      "id": "Penyesuaian akuntansi agar unit yang dijual ke luar tidak dihitung dua kali pada NDC.",
+      "en": "An accounting adjustment so exported units are not double-counted in the NDC."
+     },
+     "kat": "teknis"
+    },
+    {
+     "istilah": {
+      "id": "Insetting",
+      "en": "Insetting"
+     },
+     "arti": {
+      "id": "Penurunan emisi di dalam rantai pasok sendiri, bukan membeli offset luar.",
+      "en": "Cutting emissions inside one's own supply chain rather than buying external offsets."
+     },
+     "kat": "teknis"
+    },
+    {
+     "istilah": {
+      "id": "SBTi",
+      "en": "SBTi"
+     },
+     "arti": {
+      "id": "Science Based Targets initiative, standar target iklim korporasi.",
+      "en": "The Science Based Targets initiative, a corporate climate target standard."
+     },
+     "kat": "aturan"
+    },
+    {
+     "istilah": {
+      "id": "VCS dan Gold Standard",
+      "en": "VCS dan Gold Standard"
+     },
+     "arti": {
+      "id": "Dua standar kredit sukarela terbesar; Verra mengelola VCS.",
+      "en": "The two largest voluntary credit standards; Verra manages VCS."
+     },
+     "kat": "aturan"
+    },
+    {
+     "istilah": {
+      "id": "CDM",
+      "en": "CDM"
+     },
+     "arti": {
+      "id": "Clean development mechanism Protokol Kyoto, pendahulu pasar offset modern.",
+      "en": "The Kyoto Protocol clean development mechanism, predecessor of modern offset markets."
+     },
+     "kat": "teknis"
+    },
+    {
+     "istilah": {
+      "id": "Blue carbon",
+      "en": "Blue carbon"
+     },
+     "arti": {
+      "id": "Karbon yang tersimpan di mangrove, lamun, dan rawa pasang surut.",
+      "en": "Carbon stored in mangroves, seagrass and tidal marshes."
+     },
+     "kat": "teknis"
+    },
+    {
+     "istilah": {
+      "id": "Harga bayangan karbon",
+      "en": "Harga bayangan karbon"
+     },
+     "arti": {
+      "id": "Harga karbon internal yang dipakai perusahaan dalam keputusan investasi.",
+      "en": "The internal carbon price a company uses in investment decisions."
+     },
+     "kat": "uang"
+    },
+    {
+     "istilah": {
+      "id": "Dekarbonisasi",
+      "en": "Dekarbonisasi"
+     },
+     "arti": {
+      "id": "Penurunan intensitas karbon sistem energi atau industri.",
+      "en": "Lowering the carbon intensity of an energy system or industry."
+     },
+     "kat": "teknis"
+    },
+    {
+     "istilah": {
+      "id": "KPEI dan KSEI",
+      "en": "KPEI dan KSEI"
+     },
+     "arti": {
+      "id": "Lembaga kliring dan kustodian pasar modal yang terlibat dalam penyelesaian transaksi bursa.",
+      "en": "The capital market clearing and custody institutions involved in settling exchange trades."
+     },
+     "kat": "teknis"
+    }
+   ]
+  },
+  "4": {
+   "tipe": "teks",
+   "sumber": [
+    "ed",
+    "idx",
+    "kp"
+   ],
+   "paragraf": [
+    {
+     "id": "Karbon di sini berarti harga yang diberikan pada emisi gas rumah kaca dan pasar yang memperdagangkan penurunannya. Ada tiga alat utama: pajak karbon yang menetapkan harga per ton, sistem perdagangan emisi (ETS) yang menetapkan batas lalu membiarkan izin diperdagangkan, dan kredit offset dari proyek yang mengurangi atau menghindari emisi.",
+     "en": "Carbon here means the price placed on greenhouse gas emissions and the markets that trade their reduction. There are three main tools: a carbon tax that sets a price per tonne, an emissions trading system (ETS) that sets a cap and lets allowances be traded, and offset credits from projects that reduce or avoid emissions."
+    },
+    {
+     "id": "Bagi energi terbarukan ada dua jalur nilai. Pertama, pembangkit bersih menghindari emisi yang akan dilepas pembangkit fosil di jaringan yang sama, dan penghindaran terverifikasi itu bisa menjadi kredit. Kedua, harga karbon pada pembangkit fosil menaikkan biaya listrik fosil sehingga selisih biaya terhadap energi terbarukan menyempit.",
+     "en": "For renewable energy there are two value paths. First, clean generation avoids emissions that fossil plants on the same grid would release, and that verified avoidance can become a credit. Second, a carbon price on fossil plants raises the cost of fossil electricity so the cost gap with renewables narrows."
+    },
+    {
+     "id": "Karena itu harga karbon penting bagi anggota METI: ia menambah pendapatan proyek, memengaruhi kelayakan, dan menentukan seberapa cepat pembangkit fosil kehilangan keunggulan biayanya. Besarnya sangat bergantung pada kebijakan, jadi angka di halaman ini selalu disertai sumber dan tanggal.",
+     "en": "That is why carbon pricing matters to METI members: it adds project revenue, affects bankability, and sets how fast fossil plants lose their cost advantage. The size depends heavily on policy, so every figure on this page carries a source and a date."
+    },
+    {
+     "id": "Mengapa penting bagi energi terbarukan: harga karbon mengubah perbandingan biaya batubara dan terbarukan, dan kredit karbon menambah pendapatan proyek. Dalam sistem listrik yang masih memakai batubara, tiap MWh terbarukan menghindari sekitar 0,68 tCO2.",
+     "en": "Why it matters for renewables: a carbon price changes the cost comparison of coal and renewables, and carbon credits add project revenue. In a power system still using coal, each renewable MWh avoids about 0.68 tCO2."
+    },
+    {
+     "id": "Ada dua pasar yang sering dicampur: pasar wajib (pajak, ETS, batas emisi PTBAE-PU) yang digerakkan hukum, dan pasar sukarela (Verra, Gold Standard) yang digerakkan pembeli korporasi. Keduanya memerlukan MRV yang kredibel agar unit tidak dihitung dua kali.",
+     "en": "Two markets are often mixed: the compliance market (tax, ETS, PTBAE-PU emission limits) driven by law, and the voluntary market (Verra, Gold Standard) driven by corporate buyers. Both need credible MRV so units are not counted twice."
+    }
+   ]
+  },
+  "5": {
+   "tipe": "rumus",
+   "sumber": [
+    "ed",
+    "ruptl",
+    "ct",
+    "idx",
+    "icap"
+   ],
+   "rumus": [
+    {
+     "id": "Emisi terhindar (tCO2e) = Energi yang diserahkan ke jaringan (MWh) x Faktor emisi grid (tCO2e per MWh) - Emisi proyek (tCO2e)",
+     "en": "Avoided emissions (tCO2e) = Energy delivered to the grid (MWh) x Grid emission factor (tCO2e per MWh) - Project emissions (tCO2e)"
+    },
+    {
+     "id": "Pendapatan kredit (Rp) = Emisi terhindar yang terverifikasi (tCO2e) x Harga unit (Rp per tCO2e) - Biaya MRV, registri, dan perantara",
+     "en": "Credit revenue (Rp) = Verified avoided emissions (tCO2e) x Unit price (Rp per tCO2e) - MRV, registry and intermediary costs"
+    },
+    {
+     "id": "Metodologi yang umum dipakai untuk listrik tersambung jaringan: ACM0002 (Verra, Gold Standard) atau metodologi SRN PPI yang setara. Baseline, additionality, dan pemantauan wajib mengikuti dokumen metodologi.",
+     "en": "A common methodology for grid-connected electricity: ACM0002 (Verra, Gold Standard) or the equivalent SRN PPI methodology. Baseline, additionality and monitoring must follow the methodology document."
+    },
+    {
+     "id": "Pendapatan tambahan per MWh (Rp) = faktor emisi grid (tCO2 per MWh) x harga unit (Rp per tCO2e)",
+     "en": "Added revenue per MWh (IDR) = grid emission factor (tCO2 per MWh) x unit price (IDR per tCO2e)"
+    },
+    {
+     "id": "Biaya CBAM (EUR) = emisi tertanam (tCO2) x (harga ETS UE - harga karbon yang sudah dibayar di negara asal)",
+     "en": "CBAM cost (EUR) = embedded emissions (tCO2) x (EU ETS price - carbon price already paid in the origin country)"
+    },
+    {
+     "id": "Pajak karbon (Rp) = (emisi - batas) x tarif; tarif minimal UU HPP Rp30 per kg CO2e atau Rp30.000 per tCO2e",
+     "en": "Carbon tax (IDR) = (emissions - cap) x rate; the HPP Law minimum rate is IDR 30 per kg CO2e or IDR 30,000 per tCO2e"
+    }
+   ],
+   "contoh": [
+    {
+     "id": "Langkah 1. Ambil faktor emisi: intensitas sistem Jawa-Bali 2025 dari RUPTL adalah {grid_jb} tCO2e per MWh (turunan EST).",
+     "en": "Step 1. Take the emission factor: the 2025 intensity of the Java-Bali system from RUPTL is {grid_jb} tCO2e per MWh (EST derivation)."
+    },
+    {
+     "id": "Langkah 2. Anggap pembangkit bersih mengalirkan 1.000 MWh (1 GWh) ke jaringan itu dalam setahun dan tanpa emisi proyek.",
+     "en": "Step 2. Assume a clean plant delivers 1,000 MWh (1 GWh) to that grid in a year with no project emissions."
+    },
+    {
+     "id": "Langkah 3. Emisi terhindar = 1.000 x {grid_jb} = {contoh_t} tCO2e (EST).",
+     "en": "Step 3. Avoided emissions = 1,000 x {grid_jb} = {contoh_t} tCO2e (EST)."
+    },
+    {
+     "id": "Langkah 4. Pada harga bulanan IDXCarbon terendah Rp{harga_min} sampai tertinggi Rp{harga_maks} per tCO2e, nilai kotornya Rp{contoh_rp_min} juta sampai Rp{contoh_rp_maks} juta per GWh (EST, batas atas sebelum biaya MRV, potongan, dan syarat additionality).",
+     "en": "Step 4. At the lowest monthly IDXCarbon price of Rp{harga_min} to the highest of Rp{harga_maks} per tCO2e, the gross value is Rp{contoh_rp_min} million to Rp{contoh_rp_maks} million per GWh (EST, an upper bound before MRV costs, deductions and additionality tests)."
+    },
+    {
+     "id": "Pendapatan per MWh pada faktor emisi 0.68025 tCO2 per MWh dan harga bursa terakhir Rp79.421 per tCO2e: Rp54.026 per MWh (EST), jauh di bawah harga listrik sehingga kredit menjadi pelengkap, bukan penentu kelayakan.",
+     "en": "Revenue per MWh at an emission factor of 0.68025 tCO2 per MWh and the latest exchange price of IDR 79,421 per tCO2e: IDR 54,026 per MWh (EST), far below the power price so credits are a supplement, not a viability driver."
+    },
+    {
+     "id": "Pajak karbon pada tarif minimal Rp30.000 per tCO2e: PLTU 600 MW dengan emisi sekitar 3 juta tCO2e per tahun yang melebihi batas 100 persen membayar sekitar Rp90 miliar per tahun (EST, hipotesis; pajak karbon belum berlaku).",
+     "en": "Carbon tax at the minimum rate of IDR 30,000 per tCO2e: a 600 MW coal plant emitting about 3 million tCO2e a year, all above the cap, would pay about IDR 90 billion a year (EST, hypothetical; the carbon tax is not yet in force)."
+    },
+    {
+     "id": "Contoh CBAM: 1.000 ton baja dengan emisi tertanam 1,9 tCO2 per ton = 1900 tCO2; bila harga ETS UE EUR 70 dan negara asal belum mengenakan harga, biaya sekitar EUR 133 ribu (EST, semua angka hipotesis).",
+     "en": "CBAM example: 1,000 tonnes of steel with 1.9 tCO2 embedded per tonne = 1900 tCO2; with an EU ETS price of EUR 70 and no price at origin the cost is about EUR 133 thousand (EST, all figures hypothetical)."
+    }
+   ]
+  },
+  "6": {
+   "tipe": "langkah",
+   "sumber": [
+    "ed",
+    "kp",
+    "idx"
+   ],
+   "butir": [
+    {
+     "judul": {
+      "id": "Pengembang proyek",
+      "en": "Project developer"
+     },
+     "isi": {
+      "id": "Membangun dan memiliki pembangkit, menyiapkan dokumen proyek dan pemantauan. Di data registri terdapat pengembang BUMN, swasta nasional, dan perantara internasional.",
+      "en": "Builds and owns the plant, prepares project and monitoring documents. The registry data includes state-owned, national private and international intermediary developers."
+     },
+     "pelaku": {
+      "id": "Pengembang",
+      "en": "Developer"
+     },
+     "peran": "pengembang"
+    },
+    {
+     "judul": {
+      "id": "Lembaga validasi dan verifikasi",
+      "en": "Validation and verification body"
+     },
+     "isi": {
+      "id": "Memeriksa desain proyek sebelum registrasi lalu memverifikasi penurunan emisi tiap periode pemantauan.",
+      "en": "Checks the project design before registration and then verifies the emission reduction in each monitoring period."
+     },
+     "pelaku": {
+      "id": "Pihak ketiga independen",
+      "en": "Independent third party"
+     },
+     "peran": "pengembang"
+    },
+    {
+     "judul": {
+      "id": "Registri",
+      "en": "Registry"
+     },
+     "isi": {
+      "id": "Mencatat proyek, menerbitkan unit, dan mencatat pensiun. Jalur domestik lewat SRN PPI; jalur sukarela lewat Verra dan Gold Standard.",
+      "en": "Records projects, issues units and records retirements. The domestic route is SRN PPI; the voluntary route is Verra and Gold Standard."
+     },
+     "pelaku": {
+      "id": "Registri",
+      "en": "Registry"
+     },
+     "peran": "pengembang"
+    },
+    {
+     "judul": {
+      "id": "Bursa",
+      "en": "Exchange"
+     },
+     "isi": {
+      "id": "IDXCarbon mencatat proyek yang terdaftar dan mempertemukan penjual dan pembeli unit SPE-GRK.",
+      "en": "IDXCarbon lists registered projects and matches sellers and buyers of SPE-GRK units."
+     },
+     "pelaku": {
+      "id": "Bursa Efek Indonesia",
+      "en": "Indonesia Stock Exchange"
+     },
+     "peran": "pengembang"
+    },
+    {
+     "judul": {
+      "id": "Pembeli",
+      "en": "Buyer"
+     },
+     "isi": {
+      "id": "Pelaku usaha yang menutup kewajiban atau komitmen sukarelanya, termasuk perusahaan dengan target SBTi atau RE100.",
+      "en": "Businesses that cover obligations or voluntary commitments, including companies with SBTi or RE100 targets."
+     },
+     "pelaku": {
+      "id": "Industri, pembangkit, korporasi",
+      "en": "Industry, generators, corporations"
+     },
+     "peran": "pengembang"
+    },
+    {
+     "judul": {
+      "id": "Penerbitan SPE dan pencatatan di SRN",
+      "en": "SPE issuance and recording in SRN"
+     },
+     "isi": {
+      "id": "Setelah verifikasi, KLH menerbitkan SPE-GRK dan mencatatnya pada registri nasional.",
+      "en": "After verification, the Environment Ministry issues the SPE-GRK and records it in the national registry."
+     },
+     "pelaku": {
+      "id": "KLH, pengembang",
+      "en": "Environment Ministry, developer"
+     },
+     "peran": "pusat"
+    },
+    {
+     "judul": {
+      "id": "Perdagangan, kliring, dan penyelesaian",
+      "en": "Trading, clearing and settlement"
+     },
+     "isi": {
+      "id": "Penyelenggara bursa karbon memperdagangkan unit; lembaga kliring dan kustodian menyelesaikan transaksi.",
+      "en": "The carbon exchange operator trades units; clearing and custody institutions settle transactions."
+     },
+     "pelaku": {
+      "id": "IDXCarbon, KPEI, KSEI, peserta",
+      "en": "IDXCarbon, KPEI, KSEI, participants"
+     },
+     "peran": "pengembang"
+    },
+    {
+     "judul": {
+      "id": "Pelaporan dan pensiun unit",
+      "en": "Reporting and unit retirement"
+     },
+     "isi": {
+      "id": "Pembeli memensiunkan unit untuk klaim; pelaporan memuat NDC agar tidak ada penghitungan ganda.",
+      "en": "Buyers retire units to make claims; reporting feeds the NDC so there is no double counting."
+     },
+     "pelaku": {
+      "id": "Pembeli, KLH",
+      "en": "Buyers, Environment Ministry"
+     },
+     "peran": "pusat"
+    }
+   ]
+  },
+  "12": {
+   "tipe": "tabel",
+   "sumber": [
+    "celah"
+   ],
+   "judul": {
+    "id": "Tercatat tetapi naskahnya belum ada di korpus",
+    "en": "Recorded but not yet in the corpus"
+   },
+   "kolom": [
+    {
+     "k": "kode",
+     "l": {
+      "id": "Aturan",
+      "en": "Rule"
+     }
+    },
+    {
+     "k": "tentang",
+     "l": {
+      "id": "Tentang",
+      "en": "About"
+     }
+    },
+    {
+     "k": "catatan",
+     "l": {
+      "id": "Status di METI",
+      "en": "Status at METI"
+     }
+    }
+   ],
+   "baris": [
+    {
+     "kode": "UU 7/2021 (HPP)",
+     "tentang": {
+      "id": "Pajak karbon, Pasal 13, tarif minimal Rp30 per kg CO2e",
+      "en": "Carbon tax, Article 13, minimum rate Rp30 per kg CO2e"
+     },
+     "catatan": {
+      "id": "Naskah belum diunduh; butuh UU HPP dan PMK terkait",
+      "en": "Text not yet downloaded; needs the HPP Law and related MoF regulations"
+     },
+     "id": "lokal-431"
+    },
+    {
+     "kode": "Permen LHK 21/2022",
+     "tentang": {
+      "id": "Tata laksana penerapan nilai ekonomi karbon",
+      "en": "Procedures for carbon economic value implementation"
+     },
+     "catatan": {
+      "id": "Disebut dalam kerangka pemilik; naskah belum di korpus",
+      "en": "Named in the owner's framework; text not yet in the corpus"
+     },
+     "id": "lokal-431"
+    },
+    {
+     "kode": "Permen ESDM 16/2022",
+     "tentang": {
+      "id": "Penyelenggaraan nilai ekonomi karbon subsektor pembangkit tenaga listrik",
+      "en": "Carbon economic value for the power generation subsector"
+     },
+     "catatan": {
+      "id": "Disebut dalam kerangka pemilik; naskah belum di korpus",
+      "en": "Named in the owner's framework; text not yet in the corpus"
+     },
+     "id": "lokal-431"
+    },
+    {
+     "kode": "POJK 14/2023",
+     "tentang": {
+      "id": "Perdagangan karbon melalui bursa karbon",
+      "en": "Carbon trading through the carbon exchange"
+     },
+     "catatan": {
+      "id": "Disebut dalam kerangka pemilik; naskah belum di korpus",
+      "en": "Named in the owner's framework; text not yet in the corpus"
+     },
+     "id": "lokal-431"
+    }
+   ]
+  },
+  "13": {
+   "tipe": "linimasa",
+   "sumber": [
+    "ed",
+    "idx",
+    "regul"
+   ],
+   "butir": [
+    {
+     "tanggal": "1994-08-01",
+     "reg": "uu-6-1994",
+     "judul": {
+      "id": "Indonesia mengesahkan Konvensi Kerangka Kerja PBB tentang Perubahan Iklim",
+      "en": "Indonesia ratifies the UN Framework Convention on Climate Change"
+     }
+    },
+    {
+     "tanggal": "2004-07-28",
+     "reg": "uu-17-2004",
+     "judul": {
+      "id": "Pengesahan Protokol Kyoto",
+      "en": "Ratification of the Kyoto Protocol"
+     }
+    },
+    {
+     "tanggal": "2016-10-24",
+     "reg": "uu-16-2016",
+     "judul": {
+      "id": "Pengesahan Persetujuan Paris",
+      "en": "Ratification of the Paris Agreement"
+     }
+    },
+    {
+     "tanggal": "2021-10-29",
+     "reg": "perpres-98-2021",
+     "judul": {
+      "id": "Perpres 98/2021 tentang nilai ekonomi karbon (kemudian dicabut)",
+      "en": "Presidential Regulation 98/2021 on carbon economic value (later revoked)"
+     }
+    },
+    {
+     "tanggal": "2023-09-26",
+     "judul": {
+      "id": "Tanggal listing proyek tercatat paling awal di IDXCarbon dalam data METI",
+      "en": "Earliest project listing date in IDXCarbon on record in METI data"
+     },
+     "url": "https://idxcarbon.co.id/id/data-monthly"
+    },
+    {
+     "tanggal": "2024-01-30",
+     "reg": "perpres-14-2024",
+     "judul": {
+      "id": "Perpres 14/2024 tentang penangkapan dan penyimpanan karbon",
+      "en": "Presidential Regulation 14/2024 on carbon capture and storage"
+     }
+    },
+    {
+     "tanggal": "2025-10-10",
+     "reg": "perpres-110-2025",
+     "judul": {
+      "id": "Perpres 110/2025 menetapkan instrumen nilai ekonomi karbon dan menggantikan Perpres 98/2021",
+      "en": "Presidential Regulation 110/2025 sets the carbon economic value instruments and replaces Presidential Regulation 98/2021"
+     }
+    },
+    {
+     "tanggal": "2030-12-31",
+     "judul": {
+      "id": "Tahun sasaran E-NDC 2022 (target.json, RUKN 2025)",
+      "en": "Target year of the 2022 E-NDC (target.json, RUKN 2025)"
+     }
+    },
+    {
+     "tanggal": "2060-12-31",
+     "judul": {
+      "id": "Sasaran net zero emission menurut KEN PP 40/2025",
+      "en": "Net zero emissions goal under KEN, Government Regulation 40/2025"
+     }
+    },
+    {
+     "tanggal": "2023-06-14",
+     "judul": {
+      "id": "Permen LHK 7/2023: tata cara perdagangan karbon sektor kehutanan (kemudian dicabut)",
+      "en": "Environment Reg. 7/2023: forestry carbon trading procedure (later revoked)"
+     },
+     "reg": "permen-klhk-7-2023"
+    },
+    {
+     "tanggal": "2025-01-06",
+     "judul": {
+      "id": "Permen KKP 1/2025: nilai ekonomi karbon sektor kelautan",
+      "en": "Marine Affairs Reg. 1/2025: marine carbon economic value"
+     },
+     "reg": "permen-kkp-1-2025"
+    },
+    {
+     "tanggal": "2026-04-06",
+     "judul": {
+      "id": "Permen LHK 6/2026: perdagangan karbon melalui offset emisi sektor kehutanan",
+      "en": "Environment Reg. 6/2026: carbon trading through forestry emission offsets"
+     },
+     "reg": "permen-klhk-6-2026"
+    },
+    {
+     "tanggal": "2026-07-02",
+     "judul": {
+      "id": "POJK 10/2026: perubahan atas POJK 14/2023 tentang perdagangan karbon",
+      "en": "POJK 10/2026: amendment of POJK 14/2023 on carbon trading"
+     },
+     "reg": "ojk-10-2026"
+    },
+    {
+     "tanggal": "2026-07-02",
+     "judul": {
+      "id": "Permen LHK 10/2026: sistem registri unit karbon",
+      "en": "Environment Reg. 10/2026: carbon unit registry system"
+     },
+     "reg": "permen-klhk-10-2026"
+    },
+    {
+     "tanggal": "2026-07-02",
+     "judul": {
+      "id": "Permen LHK 9/2026: program pengendalian perubahan iklim berbasis masyarakat",
+      "en": "Environment Reg. 9/2026: community-based climate change control programme"
+     },
+     "reg": "permen-klhk-9-2026"
+    }
+   ]
+  },
+  "14": {
+   "tipe": "teks",
+   "sumber": [
+    "regul",
+    "ct",
+    "idx"
+   ],
+   "paragraf": [
+    {
+     "id": "Kewajiban: sektor pembangkit tertentu tunduk pada batas emisi (PTBAE-PU); pajak karbon dalam UU HPP belum diberlakukan; unit karbon yang diperdagangkan harus terdaftar di registri nasional (Permen LHK 10/2026) dan perdagangan bursa mengikuti POJK 14/2023 yang diubah POJK 10/2026.",
+     "en": "Obligations: certain power sectors are subject to emission limits (PTBAE-PU); the carbon tax in the HPP Law is not yet in force; traded carbon units must be in the national registry (Environment Reg. 10/2026) and exchange trading follows POJK 14/2023 as amended by POJK 10/2026."
+    },
+    {
+     "id": "Insentif: pendapatan kredit karbon, akses pendanaan hijau, dan jalur perdagangan lintas negara yang diatur Perpres 110/2025. Rincian insentif fiskal pajak karbon belum ada karena pajaknya belum berlaku.",
+     "en": "Incentives: carbon credit revenue, green finance access and cross-border trading routes governed by Presidential Reg. 110/2025. Fiscal incentive detail is not available because the tax is not yet in force."
+    }
+   ]
+  },
+  "15": {
+   "tipe": "langkah",
+   "sumber": [
+    "ed",
+    "idx"
+   ],
+   "catatan": {
+    "id": "Lama dan biaya tiap langkah tidak ditampilkan karena belum ada sumber terbuka yang bisa dikutip.",
+    "en": "Duration and cost of each step are not shown because no citable open source is available yet."
+   },
+   "butir": [
+    {
+     "judul": {
+      "id": "Susun dokumen proyek",
+      "en": "Prepare the project document"
+     },
+     "isi": {
+      "id": "Pilih metodologi, tetapkan baseline, dan tunjukkan additionality.",
+      "en": "Choose the methodology, set the baseline and show additionality."
+     },
+     "pelaku": {
+      "id": "Pengembang",
+      "en": "Developer"
+     }
+    },
+    {
+     "judul": {
+      "id": "Validasi",
+      "en": "Validation"
+     },
+     "isi": {
+      "id": "Lembaga validasi dan verifikasi memeriksa dokumen proyek.",
+      "en": "A validation and verification body checks the project document."
+     },
+     "pelaku": {
+      "id": "LVV",
+      "en": "Validation body"
+     }
+    },
+    {
+     "judul": {
+      "id": "Registrasi proyek",
+      "en": "Register the project"
+     },
+     "isi": {
+      "id": "Daftarkan proyek di SRN PPI untuk jalur domestik, atau di Verra atau Gold Standard untuk jalur sukarela.",
+      "en": "Register in SRN PPI for the domestic route, or in Verra or Gold Standard for the voluntary route."
+     },
+     "pelaku": {
+      "id": "Pengembang dan registri",
+      "en": "Developer and registry"
+     }
+    },
+    {
+     "judul": {
+      "id": "Pemantauan dan verifikasi",
+      "en": "Monitoring and verification"
+     },
+     "isi": {
+      "id": "Ukur produksi listrik tiap periode lalu verifikasi oleh pihak ketiga.",
+      "en": "Measure electricity output each period, then third-party verification."
+     },
+     "pelaku": {
+      "id": "Pengembang dan LVV",
+      "en": "Developer and validation body"
+     }
+    },
+    {
+     "judul": {
+      "id": "Penerbitan unit",
+      "en": "Issue units"
+     },
+     "isi": {
+      "id": "Registri menerbitkan unit (SPE-GRK di SRN PPI) sesuai hasil verifikasi.",
+      "en": "The registry issues units (SPE-GRK in SRN PPI) according to the verification result."
+     },
+     "pelaku": {
+      "id": "Registri",
+      "en": "Registry"
+     }
+    },
+    {
+     "judul": {
+      "id": "Listing dan perdagangan",
+      "en": "Listing and trading"
+     },
+     "isi": {
+      "id": "Daftarkan unit di IDXCarbon lalu jual, atau jual langsung ke pembeli sukarela.",
+      "en": "List the units on IDXCarbon and sell, or sell directly to voluntary buyers."
+     },
+     "pelaku": {
+      "id": "Pengembang dan bursa",
+      "en": "Developer and exchange"
+     }
+    }
+   ]
+  },
+  "16": {
+   "tipe": "teks",
+   "sumber": [
+    "regul",
+    "ruptl"
+   ],
+   "paragraf": [
+    {
+     "id": "Aturan turunan Perpres 110/2025 masih berjalan: pengembang perlu mengikuti penerbitan aturan teknis tentang registri, metodologi, dan perdagangan lintas negara. Usulan layak diajukan lewat forum Konsultasi METI: definisi additionality untuk energi terbarukan yang sudah dijadwalkan RUPTL, dan pemisahan klaim kredit dari klaim bauran EBT.",
+     "en": "Implementing rules of Presidential Reg. 110/2025 are still being issued: developers should follow technical rules on registries, methodologies and cross-border trading. Inputs worth submitting through the METI Consultation forum: the definition of additionality for renewables already scheduled in the RUPTL and separating credit claims from renewable mix claims."
+    }
+   ]
+  },
+  "17": {
+   "tipe": "teks",
+   "sumber": [
+    "ct",
+    "idx",
+    "ed"
+   ],
+   "paragraf": [
+    {
+     "id": "1. MRV digital: sensor, satelit, dan data meter otomatis menurunkan biaya verifikasi dan mengurangi sengketa angka.",
+     "en": "1. Digital MRV: sensors, satellites and automatic meter data lower verification cost and reduce disputes over numbers."
+    },
+    {
+     "id": "2. Registri terintegrasi dengan bursa: sistem registri unit karbon (Permen LHK 10/2026) mengurangi risiko penghitungan ganda.",
+     "en": "2. Registry integration with exchanges: the carbon unit registry system (Environment Reg. 10/2026) reduces double counting risk."
+    },
+    {
+     "id": "3. Penghilangan karbon (CDR): penangkapan udara langsung, biochar, dan mineralisasi; Perpres 14/2024 membuka jalur CCS di Indonesia.",
+     "en": "3. Carbon dioxide removal (CDR): direct air capture, biochar and mineralisation; Presidential Reg. 14/2024 opens the CCS route in Indonesia."
+    },
+    {
+     "id": "4. Skor kualitas unit: penilai independen menilai integritas unit sehingga pembeli mau membayar premi untuk unit berkualitas.",
+     "en": "4. Unit quality ratings: independent raters assess unit integrity so buyers pay a premium for high-quality units."
+    },
+    {
+     "id": "5. Perhitungan jejak karbon produk: data emisi per produk untuk CBAM dan rantai pasok.",
+     "en": "5. Product carbon footprints: per-product emission data for CBAM and supply chains."
+    },
+    {
+     "id": "6. Kontrak listrik hijau dengan sertifikat atribut (REC): menyatakan atribut hijau terpisah dari kredit karbon.",
+     "en": "6. Green power contracts with attribute certificates (REC): claim green attributes separately from carbon credits."
+    },
+    {
+     "id": "7. Metodologi baru untuk biogas dan penyimpanan: pengurangan metana POME dan PLTS terapung masih memerlukan metodologi baku.",
+     "en": "7. New methodologies for biogas and storage: POME methane reduction and floating solar still need standard methodologies."
+    },
+    {
+     "id": "8. Pelacakan emisi pembangkit dari satelit: Climate TRACE memperkirakan emisi aset pembangkit Indonesia (sumber di basis METI).",
+     "en": "8. Satellite tracking of plant emissions: Climate TRACE estimates emissions of Indonesian power assets (a source in the METI base)."
+    }
+   ]
+  },
+  "24": {
+   "tipe": "tabel",
+   "sumber": [
+    "pendanaan"
+   ],
+   "baris": [
+    {
+     "id": "sk_idxcarbon",
+     "nama": "Perdagangan karbon di IDXCarbon",
+     "pem": "Bursa Efek Indonesia",
+     "jenis": {
+      "id": "skema",
+      "en": "scheme"
+     },
+     "u": "https://idxcarbon.co.id/"
+    },
+    {
+     "id": "sk_karbon_sukarela",
+     "nama": "Standar karbon sukarela (Verra dan Gold Standard)",
+     "pem": "Verra dan Gold Standard",
+     "jenis": {
+      "id": "skema",
+      "en": "scheme"
+     },
+     "u": "https://registry.verra.org/"
+    },
+    {
+     "id": "pi_DE_1_202221380",
+     "nama": "Strengthening carbon pricing mechanism and fiscal framework for energy transition and climate finance",
+     "pem": "Federal Ministry for Economic Cooperation and Development (BMZ)",
+     "jenis": {
+      "id": "proyek",
+      "en": "project"
+     },
+     "u": "https://d-portal.org/ctrack.html#view=act&aid=DE-1-202221380"
+    },
+    {
+     "id": "pi_DE_1_202421642",
+     "nama": "Fair and Accelerated Energy Transition towards Carbon Neutrality",
+     "pem": "Federal Ministry for Economic Cooperation and Development (BMZ)",
+     "jenis": {
+      "id": "proyek",
+      "en": "project"
+     },
+     "u": "https://d-portal.org/ctrack.html#view=act&aid=DE-1-202421642"
+    },
+    {
+     "id": "pi_XM_DAC_46004_45064_001_LN2805",
+     "nama": "Low-Carbon and Resilient Development Program",
+     "pem": "Asian Development Bank",
+     "jenis": {
+      "id": "proyek",
+      "en": "project"
+     },
+     "u": "https://d-portal.org/ctrack.html#view=act&aid=XM-DAC-46004-45064-001-LN2805"
+    },
+    {
+     "id": "pi_XM_DAC_46004_57229_001_TA10264",
+     "nama": "Building Capacity for Low-Carbon Power Infrastructure Development",
+     "pem": "Asian Development Bank",
+     "jenis": {
+      "id": "proyek",
+      "en": "project"
+     },
+     "u": "https://d-portal.org/ctrack.html#view=act&aid=XM-DAC-46004-57229-001-TA10264"
+    },
+    {
+     "id": "pi_XM_DAC_41317_FP296",
+     "nama": "Navis Decarbonization Fund I",
+     "pem": "Green Climate Fund",
+     "jenis": {
+      "id": "proyek",
+      "en": "project"
+     },
+     "u": "https://d-portal.org/ctrack.html#view=act&aid=XM-DAC-41317-FP296"
+    },
+    {
+     "id": "pi_US_GOV_1_720DD122T00002",
+     "nama": "Partnership for Decarbonized and Climate Resilient Energy Systems",
+     "pem": "U.S. Agency for International Development",
+     "jenis": {
+      "id": "proyek",
+      "en": "project"
+     },
+     "u": "https://d-portal.org/ctrack.html#view=act&aid=US-GOV-1-720DD122T00002"
+    }
+   ],
+   "per": 8,
+   "kolom": [
+    {
+     "k": "nama",
+     "l": {
+      "id": "Skema atau proyek",
+      "en": "Scheme or project"
+     },
+     "url": "u"
+    },
+    {
+     "k": "pem",
+     "l": {
+      "id": "Pemberi",
+      "en": "Provider"
+     }
+    },
+    {
+     "k": "jenis",
+     "l": {
+      "id": "Jenis",
+      "en": "Type"
+     }
+    }
+   ],
+   "catatan": {
+    "id": "Skema dan proyek pendana yang menyebut karbon atau dekarbonisasi di basis pendanaan METI; nilai untuk seluruh program.",
+    "en": "Schemes and funder projects mentioning carbon or decarbonisation in the METI funding base; values are for the whole programme."
+   }
+  },
+  "26": {
+   "tipe": "teks",
+   "sumber": [
+    "idx"
+   ],
+   "paragraf": [
+    {
+     "id": "Transaksi bursa: volume kumulatif tahun berjalan 169.404 tCO2e dan nilai kumulatif Rp7.2 miliar pada 2026-10 dengan 160 peserta terdaftar dan 10 proyek terdaftar (IDXCarbon).",
+     "en": "Exchange trading: year-to-date volume of 169,404 tCO2e and cumulative value of IDR 7.2 billion in 2026-10 with 160 registered participants and 10 listed projects (IDXCarbon)."
+    },
+    {
+     "id": "Unit tersedia untuk dibeli 3.140.413 tCO2e berbanding unit yang dipensiunkan 0, sekitar 0 persen (EST), tanda pasokan jauh melebihi permintaan.",
+     "en": "Units available to buy 3,140,413 tCO2e against retired units 0, about 0 percent (EST), a sign that supply far exceeds demand."
+    }
+   ]
+  },
+  "27": {
+   "tipe": "teks",
+   "sumber": [
+    "ed",
+    "kp"
+   ],
+   "paragraf": [
+    {
+     "id": "Manfaat: pendapatan tambahan bagi proyek terbarukan dan tekanan pada emisi tinggi. Risiko: greenwashing bila unit tanpa additionality dipakai untuk klaim netral karbon, dan penghitungan ganda dengan NDC. Hak masyarakat: proyek berbasis lahan harus memuat persetujuan masyarakat dan pembagian manfaat.",
+     "en": "Benefits: added revenue for renewable projects and pressure on high emitters. Risks: greenwashing when units lacking additionality are used for carbon-neutral claims, and double counting with the NDC. Community rights: land-based projects must include community consent and benefit sharing."
+    }
+   ]
+  },
+  "28": {
+   "tipe": "teks",
+   "sumber": [
+    "ed"
+   ],
+   "paragraf": [
+    {
+     "id": "Pekerjaan baru: validator dan verifikator (LVV), penghitung emisi, auditor MRV, pengelola registri, dan perdagangan karbon. Sertifikasi kompetensi lewat LSP bidang lingkungan dan energi; kebutuhan pelatihan MRV untuk PLTS, PLTB, dan panas bumi belum terpetakan di basis ini.",
+     "en": "New jobs: validators and verifiers (LVV), emission accountants, MRV auditors, registry managers and carbon traders. Competency certification through environment and energy LSPs; MRV training needs for solar, wind and geothermal are not yet mapped in this base."
+    }
+   ]
+  },
+  "31": {
+   "tipe": "langkah",
+   "sumber": [
+    "ed",
+    "kp",
+    "idx",
+    "ruptl"
+   ],
+   "judul": {
+    "id": "Peluang dan tantangan menurut peran",
+    "en": "Opportunities and challenges by role"
+   },
+   "butir": [
+    {
+     "judul": {
+      "id": "Pengembang",
+      "en": "Developers"
+     },
+     "isi": {
+      "id": "Peluang: di registri, unit terbit terbesar datang dari hidro dan panas bumi, sedangkan proyek surya dan bayu masih sedikit. Tantangan: dokumen MRV dan additionality harus disiapkan sejak desain, dan beberapa proyek registri berstatus verifikasi tertunda.",
+      "en": "Opportunity: in registries, the largest issuance comes from hydro and geothermal while solar and wind projects are still few. Challenge: MRV and additionality documents must be prepared from design, and some registry projects have delayed verification."
+     },
+     "pelaku": {
+      "id": "Analisis METI (EST)",
+      "en": "METI analysis (EST)"
+     }
+    },
+    {
+     "judul": {
+      "id": "Investor",
+      "en": "Investors"
+     },
+     "isi": {
+      "id": "Peluang: pendapatan kredit sebagai tambahan arus kas. Tantangan: harga rata-rata bulanan bergerak antara Rp{harga_min} dan Rp{harga_maks} per tCO2e, jadi pakai skenario, bukan satu titik harga.",
+      "en": "Opportunity: credit revenue as additional cash flow. Challenge: the monthly average price moved between Rp{harga_min} and Rp{harga_maks} per tCO2e, so use scenarios, not a single price point."
+     },
+     "pelaku": {
+      "id": "Analisis METI (EST)",
+      "en": "METI analysis (EST)"
+     }
+    },
+    {
+     "judul": {
+      "id": "Pemerintah daerah",
+      "en": "Local governments"
+     },
+     "isi": {
+      "id": "Peluang: rencana aksi daerah penurunan emisi sudah ada di beberapa provinsi (lihat bab Kerangka hukum). Tantangan: menyelaraskan RAD GRK dengan pencatatan di SRN PPI agar tidak terjadi penghitungan ganda.",
+      "en": "Opportunity: regional emission reduction action plans already exist in several provinces (see the Legal framework chapter). Challenge: aligning regional plans with SRN PPI records to avoid double counting."
+     },
+     "pelaku": {
+      "id": "Analisis METI (EST)",
+      "en": "METI analysis (EST)"
+     }
+    },
+    {
+     "judul": {
+      "id": "Pemasok dan penyedia teknologi",
+      "en": "Suppliers and technology providers"
+     },
+     "isi": {
+      "id": "Peluang: alat ukur, sistem pemantauan, dan jasa MRV. Tantangan: standar pengukuran dan data harus selaras dengan metodologi registri.",
+      "en": "Opportunity: metering, monitoring systems and MRV services. Challenge: measurement standards and data must match registry methodologies."
+     },
+     "pelaku": {
+      "id": "Analisis METI (EST)",
+      "en": "METI analysis (EST)"
+     }
+    },
+    {
+     "judul": {
+      "id": "Akademisi",
+      "en": "Academics"
+     },
+     "isi": {
+      "id": "Peluang: studi faktor emisi per sistem, evaluasi integritas kredit, dan model harga. Tantangan: data harga per unit tidak diterbitkan bursa.",
+      "en": "Opportunity: studies of emission factors per system, credit integrity evaluation and price models. Challenge: per-unit price data is not published by the exchange."
+     },
+     "pelaku": {
+      "id": "Analisis METI (EST)",
+      "en": "METI analysis (EST)"
+     }
+    },
+    {
+     "judul": {
+      "id": "Pemda",
+      "en": "Local governments"
+     },
+     "isi": {
+      "id": "Peluang: program karbon berbasis masyarakat (Permen LHK 9/2026) dan pendapatan daerah. Tantangan: kapasitas MRV dan pembagian manfaat.",
+      "en": "Opportunity: community-based carbon programmes (Environment Reg. 9/2026) and regional revenue. Challenge: MRV capacity and benefit sharing."
+     },
+     "pelaku": {
+      "id": "Pemda",
+      "en": "Local governments"
+     }
+    }
+   ]
+  },
+  "32": {
+   "tipe": "langkah",
+   "sumber": [
+    "ed",
+    "idx",
+    "icap"
+   ],
+   "butir": [
+    {
+     "judul": {
+      "id": "Laporan bulanan IDXCarbon berikutnya",
+      "en": "The next IDXCarbon monthly report"
+     },
+     "isi": {
+      "id": "Pantau volume, harga rata-rata, jumlah peserta, dan unit tersedia setelah {bursa_bln}.",
+      "en": "Watch volume, average price, participant count and available units after {bursa_bln}."
+     },
+     "pelaku": {
+      "id": "Indikator",
+      "en": "Indicator"
+     }
+    },
+    {
+     "judul": {
+      "id": "Aturan turunan Perpres 110/2025",
+      "en": "Implementing rules of Presidential Regulation 110/2025"
+     },
+     "isi": {
+      "id": "Naskah turunan menentukan siapa wajib, batas emisi, dan tata cara; belum ada di korpus.",
+      "en": "The implementing rules decide who is obliged, emission caps and procedures; not yet in the corpus."
+     },
+     "pelaku": {
+      "id": "Keputusan",
+      "en": "Decision"
+     }
+    },
+    {
+     "judul": {
+      "id": "Penerapan pajak karbon",
+      "en": "Carbon tax implementation"
+     },
+     "isi": {
+      "id": "Seri harga karbon mencatat Indonesia tanpa pajak karbon pada {tahun_luar}; cek tiap pembaruan seri.",
+      "en": "The carbon price series records Indonesia with no carbon tax in {tahun_luar}; check each series update."
+     },
+     "pelaku": {
+      "id": "Keputusan",
+      "en": "Decision"
+     }
+    },
+    {
+     "judul": {
+      "id": "Status verifikasi proyek di registri",
+      "en": "Project verification status in registries"
+     },
+     "isi": {
+      "id": "Proyek berstatus verifikasi tertunda atau ditarik bisa berubah; lihat bab Proyek gagal atau mundur.",
+      "en": "Projects with delayed verification or withdrawn status can change; see the failed or delayed projects chapter."
+     },
+     "pelaku": {
+      "id": "Indikator",
+      "en": "Indicator"
+     }
+    },
+    {
+     "judul": {
+      "id": "POJK 10/2026 dan registri unit",
+      "en": "POJK 10/2026 and the unit registry"
+     },
+     "isi": {
+      "id": "Pantau pelaksanaan perdagangan karbon dan sistem registri (Permen LHK 10/2026).",
+      "en": "Watch implementation of carbon trading and the registry system (Environment Reg. 10/2026)."
+     },
+     "pelaku": {
+      "id": "Indikator",
+      "en": "Indicator"
+     }
+    },
+    {
+     "judul": {
+      "id": "Pajak karbon UU HPP",
+      "en": "HPP Law carbon tax"
+     },
+     "isi": {
+      "id": "Belum berlaku; pantau jadwal dan tarif.",
+      "en": "Not yet in force; watch schedule and rate."
+     },
+     "pelaku": {
+      "id": "Indikator",
+      "en": "Indicator"
+     }
+    },
+    {
+     "judul": {
+      "id": "Harga ETS dunia",
+      "en": "Global ETS prices"
+     },
+     "isi": {
+      "id": "Pantau harga ICAP sebagai acuan CBAM.",
+      "en": "Watch ICAP prices as the CBAM reference."
+     },
+     "pelaku": {
+      "id": "Indikator",
+      "en": "Indicator"
+     }
+    },
+    {
+     "judul": {
+      "id": "Rasio pensiun terhadap unit tersedia",
+      "en": "Retirement-to-available-unit ratio"
+     },
+     "isi": {
+      "id": "Indikator kecukupan permintaan di bursa.",
+      "en": "An indicator of demand sufficiency on the exchange."
+     },
+     "pelaku": {
+      "id": "Indikator",
+      "en": "Indicator"
+     }
+    },
+    {
+     "judul": {
+      "id": "Pengesahan RUU EBET",
+      "en": "RUU EBET enactment"
+     },
+     "isi": {
+      "id": "Mempengaruhi insentif terbarukan dan klaim kredit.",
+      "en": "Affects renewable incentives and credit claims."
+     },
+     "pelaku": {
+      "id": "Indikator",
+      "en": "Indicator"
+     }
+    },
+    {
+     "judul": {
+      "id": "Aturan CBAM Uni Eropa",
+      "en": "EU CBAM rules"
+     },
+     "isi": {
+      "id": "Pantau fase definitif dan perluasan produk.",
+      "en": "Watch the definitive phase and product expansion."
+     },
+     "pelaku": {
+      "id": "Indikator",
+      "en": "Indicator"
+     }
+    }
+   ]
+  },
+  "39": {
+   "tipe": "kasus",
+   "sumber": [
+    "kp",
+    "idx"
+   ],
+   "butir": [
+    {
+     "id": "musi",
+     "jenis": "berhasil",
+     "dari": {
+      "jenis": "kredit",
+      "id": "vcs_487"
+     },
+     "pelajaran": [
+      {
+       "id": "Pembangkit besar milik BUMN dengan metodologi baku (ACM0002) menghasilkan unit dalam jumlah besar dan hampir semuanya sudah dipensiunkan, tanda ada pembeli.",
+       "en": "A large state-owned plant using a standard methodology (ACM0002) produced large issuance and almost all of it is retired, a sign of buyers."
+      }
+     ],
+     "negara": "ID"
+    },
+    {
+     "id": "lau-renun",
+     "jenis": "berhasil",
+     "dari": {
+      "jenis": "kredit",
+      "id": "vcs_488"
+     },
+     "pelajaran": [
+      {
+       "id": "Pola yang sama dengan Musi: hidro BUMN, metodologi baku, unit terserap pembeli.",
+       "en": "The same pattern as Musi: state-owned hydro, standard methodology, units absorbed by buyers."
+      }
+     ],
+     "negara": "ID"
+    },
+    {
+     "id": "sidrap",
+     "jenis": "berhasil",
+     "dari": {
+      "jenis": "kredit",
+      "id": "gs_1618"
+     },
+     "foto": {
+      "src": "/img/beranda/bayu-sidrap.webp",
+      "alt": {
+       "id": "PLTB Sidrap",
+       "en": "Sidrap wind farm"
+      },
+      "kredit": "USAID Indonesia, domain publik"
+     },
+     "pelajaran": [
+      {
+       "id": "Satu dari sedikit proyek bayu di registri; sebagian besar unitnya sudah dipensiunkan.",
+       "en": "One of few wind projects in the registries; most of its units are already retired."
+      }
+     ],
+     "negara": "ID"
+    },
+    {
+     "id": "ulubelu",
+     "jenis": "berhasil",
+     "dari": {
+      "jenis": "kredit",
+      "id": "gs_315"
+     },
+     "pelajaran": [
+      {
+       "id": "Unit sudah terbit dalam jumlah besar tetapi baru sebagian kecil dipensiunkan: penerbitan belum berarti penjualan.",
+       "en": "A large amount has been issued but only a small share retired: issuance does not mean sales."
+      }
+     ],
+     "negara": "ID"
+    },
+    {
+     "id": "jerman",
+     "jenis": "berhasil",
+     "dari": {
+      "jenis": "negara",
+      "kode": "DEU"
+     },
+     "negara": "ID"
+    },
+    {
+     "id": "singapura",
+     "jenis": "berhasil",
+     "dari": {
+      "jenis": "negara",
+      "kode": "SGP"
+     },
+     "negara": "ID"
+    },
+    {
+     "id": "afsel",
+     "jenis": "berhasil",
+     "dari": {
+      "jenis": "negara",
+      "kode": "ZAF"
+     },
+     "negara": "ID"
+    }
+   ]
+  },
+  "40": {
+   "tipe": "kasus",
+   "sumber": [
+    "kp",
+    "idx"
+   ],
+   "butir": [
+    {
+     "id": "lahendong",
+     "jenis": "gagal",
+     "dari": {
+      "jenis": "kredit",
+      "id": "vcs_1778"
+     },
+     "tindakan": [
+      {
+       "id": "Proyek Verra dengan nama ini berstatus ditarik tanpa unit terbit. Daftar IDXCarbon memuat proyek bernama serupa dengan seri SPE (volume listing tercatat di bab Proyek), jadi jalur domestik tampaknya ditempuh; sumber tidak menyatakan hubungannya.",
+       "en": "The Verra project with this name has withdrawn status and no units issued. The IDXCarbon list has a similarly named project with an SPE series (listing volume in the Projects chapter), so a domestic route seems to have been taken; the sources do not state the link."
+      }
+     ],
+     "negara": "ID"
+    },
+    {
+     "id": "gunung-salak",
+     "jenis": "gagal",
+     "dari": {
+      "jenis": "kredit",
+      "id": "vcs_144"
+     },
+     "pelajaran": [
+      {
+       "id": "Unit lama sudah hampir seluruhnya dipensiunkan, namun status registri menandai verifikasi terlambat: periksa kelengkapan pemantauan sebelum periode berikutnya.",
+       "en": "Older units are almost entirely retired, yet the registry flags late verification: check monitoring completeness before the next period."
+      }
+     ],
+     "negara": "ID"
+    },
+    {
+     "id": "wayang-windu",
+     "jenis": "gagal",
+     "dari": {
+      "jenis": "kredit",
+      "id": "vcs_688"
+     },
+     "negara": "ID"
+    },
+    {
+     "id": "bantargebang",
+     "jenis": "gagal",
+     "dari": {
+      "jenis": "kredit",
+      "id": "vcs_967"
+     },
+     "negara": "ID"
+    },
+    {
+     "id": "hamparan",
+     "jenis": "gagal",
+     "dari": {
+      "jenis": "kredit",
+      "id": "vcs_3297"
+     },
+     "negara": "ID"
+    }
+   ]
+  },
+  "41": {
+   "tipe": "pola",
+   "sumber": [
+    "kp",
+    "idx"
+   ],
+   "faktor": [
+    {
+     "k": "kredit_terbit",
+     "l": {
+      "id": "Unit kredit sudah terbit",
+      "en": "Credits issued"
+     }
+    },
+    {
+     "k": "kredit_dipakai",
+     "l": {
+      "id": "Separuh lebih unit dipensiunkan",
+      "en": "More than half of units retired"
+     }
+    },
+    {
+     "k": "status_aktif",
+     "l": {
+      "id": "Status registri aktif",
+      "en": "Registry status active"
+     }
+    },
+    {
+     "k": "metodologi_baku",
+     "l": {
+      "id": "Memakai metodologi baku",
+      "en": "Uses a standard methodology"
+     }
+    },
+    {
+     "k": "periode_berjalan",
+     "l": {
+      "id": "Periode kredit belum berakhir",
+      "en": "Crediting period not yet ended"
+     }
+    }
+   ],
+   "faktor_negara": [
+    {
+     "k": "cakupan_luas",
+     "l": {
+      "id": "Cakupan emisi 50 persen atau lebih",
+      "en": "Emissions coverage of 50 percent or more"
+     }
+    },
+    {
+     "k": "harga_bermakna",
+     "l": {
+      "id": "Harga rata-rata di atas US$1 per tCO2e",
+      "en": "Average price above US$1 per tCO2e"
+     }
+    },
+    {
+     "k": "nasional",
+     "l": {
+      "id": "Instrumen berlaku nasional",
+      "en": "Instrument applies nationally"
+     }
+    }
+   ]
+  },
+  "42": {
+   "tipe": "periksa",
+   "sumber": [
+    "ed"
+   ],
+   "peran": [
+    {
+     "k": "pengembang",
+     "l": {
+      "id": "Pengembang",
+      "en": "Developer"
+     }
+    },
+    {
+     "k": "investor",
+     "l": {
+      "id": "Investor",
+      "en": "Investor"
+     }
+    },
+    {
+     "k": "pemda",
+     "l": {
+      "id": "Pemerintah daerah",
+      "en": "Local government"
+     }
+    },
+    {
+     "k": "pusat",
+     "l": {
+      "id": "Pemerintah pusat",
+      "en": "Central government"
+     }
+    },
+    {
+     "k": "pln",
+     "l": {
+      "id": "PLN",
+      "en": "PLN"
+     }
+    },
+    {
+     "k": "meti",
+     "l": {
+      "id": "METI",
+      "en": "METI"
+     }
+    }
+   ],
+   "tahap": [
+    {
+     "k": "lokasi",
+     "l": {
+      "id": "Penyaringan lokasi dan desain",
+      "en": "Site screening and design"
+     }
+    },
+    {
+     "k": "izin",
+     "l": {
+      "id": "Perizinan dan registrasi",
+      "en": "Permits and registration"
+     }
+    },
+    {
+     "k": "ppa",
+     "l": {
+      "id": "PPA dan kontrak",
+      "en": "PPA and contracts"
+     }
+    },
+    {
+     "k": "dana",
+     "l": {
+      "id": "Pendanaan",
+      "en": "Financing"
+     }
+    },
+    {
+     "k": "bangun",
+     "l": {
+      "id": "Konstruksi",
+      "en": "Construction"
+     }
+    },
+    {
+     "k": "operasi",
+     "l": {
+      "id": "Operasi dan pemantauan",
+      "en": "Operation and monitoring"
+     }
+    }
+   ],
+   "butir": [
+    {
+     "peran": "pengembang",
+     "tahap": "lokasi",
+     "teks": {
+      "id": "Hitung emisi terhindar dengan faktor emisi sistem tujuan dan simpan asumsinya.",
+      "en": "Compute avoided emissions with the destination system's emission factor and keep the assumptions."
+     }
+    },
+    {
+     "peran": "pengembang",
+     "tahap": "lokasi",
+     "teks": {
+      "id": "Tulis argumen additionality: apa yang tidak layak tanpa pendapatan karbon.",
+      "en": "Write the additionality argument: what would not be viable without carbon revenue."
+     }
+    },
+    {
+     "peran": "pengembang",
+     "tahap": "izin",
+     "teks": {
+      "id": "Pilih jalur registri (SRN PPI, Verra, Gold Standard) dan metodologinya sebelum desain dikunci.",
+      "en": "Choose the registry route (SRN PPI, Verra, Gold Standard) and its methodology before the design is locked."
+     }
+    },
+    {
+     "peran": "pengembang",
+     "tahap": "izin",
+     "teks": {
+      "id": "Pastikan proyek tidak didaftarkan ganda di dua registri.",
+      "en": "Make sure the project is not registered twice in two registries."
+     }
+    },
+    {
+     "peran": "pengembang",
+     "tahap": "ppa",
+     "teks": {
+      "id": "Atur dalam kontrak siapa yang memiliki hak atas atribut lingkungan listrik yang dijual.",
+      "en": "Specify in contracts who owns the environmental attributes of the electricity sold."
+     }
+    },
+    {
+     "peran": "pengembang",
+     "tahap": "bangun",
+     "teks": {
+      "id": "Pasang meteran dan sistem data yang memenuhi syarat metodologi sejak konstruksi.",
+      "en": "Install meters and a data system that meet the methodology's requirements from construction."
+     }
+    },
+    {
+     "peran": "pengembang",
+     "tahap": "operasi",
+     "teks": {
+      "id": "Jadwalkan verifikasi tiap periode agar tidak berstatus terlambat.",
+      "en": "Schedule verification each period so it does not become late."
+     }
+    },
+    {
+     "peran": "investor",
+     "tahap": "dana",
+     "teks": {
+      "id": "Modelkan pendapatan karbon sebagai skenario rendah, tengah, tinggi, bukan satu harga.",
+      "en": "Model carbon revenue as low, mid and high scenarios, not one price."
+     }
+    },
+    {
+     "peran": "investor",
+     "tahap": "dana",
+     "teks": {
+      "id": "Minta bukti status registri dan riwayat verifikasi proyek.",
+      "en": "Ask for evidence of registry status and the project's verification history."
+     }
+    },
+    {
+     "peran": "investor",
+     "tahap": "operasi",
+     "teks": {
+      "id": "Pantau rasio unit terbit terhadap unit dipensiunkan sebagai tanda permintaan.",
+      "en": "Track the ratio of issued to retired units as a demand signal."
+     }
+    },
+    {
+     "peran": "pemda",
+     "tahap": "lokasi",
+     "teks": {
+      "id": "Selaraskan rencana aksi daerah penurunan emisi dengan proyek energi terbarukan di wilayah.",
+      "en": "Align the regional emission reduction action plan with renewable projects in the region."
+     }
+    },
+    {
+     "peran": "pemda",
+     "tahap": "izin",
+     "teks": {
+      "id": "Catat proyek karbon di wilayah agar tidak terhitung ganda dengan klaim daerah.",
+      "en": "Record carbon projects in the region so they are not double counted with regional claims."
+     }
+    },
+    {
+     "peran": "pusat",
+     "tahap": "izin",
+     "teks": {
+      "id": "Terbitkan dan publikasikan aturan turunan Perpres 110/2025 beserta faktor emisi resmi per sistem.",
+      "en": "Issue and publish the implementing rules of Presidential Regulation 110/2025 with official emission factors per system."
+     }
+    },
+    {
+     "peran": "pusat",
+     "tahap": "operasi",
+     "teks": {
+      "id": "Terbitkan data harga dan volume per unit agar pasar lebih transparan.",
+      "en": "Publish per-unit price and volume data so the market is more transparent."
+     }
+    },
+    {
+     "peran": "pln",
+     "tahap": "ppa",
+     "teks": {
+      "id": "Terbitkan faktor emisi jaringan per sistem dan perbarui tiap tahun.",
+      "en": "Publish grid emission factors per system and update them yearly."
+     }
+    },
+    {
+     "peran": "pln",
+     "tahap": "ppa",
+     "teks": {
+      "id": "Jelaskan perlakuan atribut karbon dalam draf PPA standar.",
+      "en": "Explain the treatment of carbon attributes in the standard PPA draft."
+     }
+    },
+    {
+     "peran": "meti",
+     "tahap": "izin",
+     "teks": {
+      "id": "Kumpulkan hambatan registrasi dari anggota dan sampaikan di forum konsultasi.",
+      "en": "Collect registration obstacles from members and raise them in consultation forums."
+     }
+    },
+    {
+     "peran": "meti",
+     "tahap": "operasi",
+     "teks": {
+      "id": "Perbarui halaman ini tiap laporan bulanan IDXCarbon terbit.",
+      "en": "Update this page whenever a new IDXCarbon monthly report is published."
+     }
+    }
+   ]
+  }
+ }
+}

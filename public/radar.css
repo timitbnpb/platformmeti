@@ -1,0 +1,80 @@
+/* /radar: hanya token tema.css. Kelas .rd2-* (baru); segmen memakai .jm-kl-tb, kerangka peta/panel memakai .jm-pel-* dari peluang.css. */
+.rd2-halaman{display:grid;grid-template-columns:minmax(0,1fr);gap:var(--gap);padding-block:20px 64px;align-content:start}
+.rd2-halaman>*{min-width:0}
+#rdKabIsi,#rdDedIsi{display:grid;gap:24px;align-content:start}
+#rdKabIsi>*,#rdDedIsi>*{min-width:0}
+#rdPeta .jm-ex>.jm-ex-bd{padding:0}
+#rdPeta .jm-pel-seg{position:static;grid-template-columns:repeat(6,minmax(0,1fr));padding:12px 22px;border-bottom:1px solid var(--line);background:var(--card)}
+.rd2-peta{height:auto;aspect-ratio:2.5/1;min-height:480px}
+.rd2-kanvas{position:absolute;inset:0;display:grid;place-items:center;padding:16px 372px 16px 16px}
+.rd2-peta .jm-pel-lapis{top:auto;bottom:12px;left:12px;width:auto;max-width:calc(100% - 400px)}
+.rd2-peta .jm-pel-kuantil{display:flex;flex-wrap:wrap;gap:8px 16px;padding:4px 14px 12px}
+.rd2-peta .jm-pel-kuantil li{flex:none}
+.rd2-peta .jm-pel-kuantil li>span:first-of-type{flex:none}
+.rd2-svg{width:100%;height:100%}
+.rd2-prov{stroke:var(--card);stroke-width:.8;stroke-linejoin:round;cursor:pointer;transition:fill-opacity .15s}
+.rd2-prov:hover{stroke:var(--head);stroke-width:1.6}
+.rd2-prov:focus-visible{outline:none;stroke:var(--fokus);stroke-width:2.4}
+.rd2-prov.rd2-on{stroke:var(--sorot);stroke-width:3}
+.rd2-f0{fill:color-mix(in srgb,var(--accent-isi) 20%,var(--card))}.rd2-f1{fill:color-mix(in srgb,var(--accent-isi) 38%,var(--card))}.rd2-f2{fill:color-mix(in srgb,var(--accent-isi) 56%,var(--card))}.rd2-f3{fill:color-mix(in srgb,var(--accent-isi) 74%,var(--card))}.rd2-f4{fill:color-mix(in srgb,var(--accent-isi) 92%,var(--card))}.rd2-fx{fill:color-mix(in srgb,var(--accent-isi) 5%,var(--card))}
+.rd2-top button{grid-template-columns:24px minmax(0,1fr) auto}
+.rd2-sk{display:inline-flex;align-items:center;gap:6px}
+.rd2-sk b{font-variant-numeric:tabular-nums}
+.rd2-sk-t{background:var(--ok-bg);color:var(--ok)}
+.rd2-sk-s{background:var(--info-bg);color:var(--info)}
+.rd2-sk-r{background:var(--warn-bg);color:var(--warn)}
+.rd2-kosong{color:var(--ink2);opacity:.7}
+.rd2-sr{margin-bottom:12px}
+.rd2-tabel{width:100%}
+.rd2-tabel td,.rd2-tabel th{vertical-align:middle}
+.rd2-c-nama{width:34%}.rd2-c-skor{width:14%}.rd2-c-celah{width:14%}.rd2-c-bpp{width:14%}.rd2-c-pasar{width:12%}.rd2-c-dasar{width:12%}
+.rd2-d-prov{width:22%}
+.rd2-nama{all:unset;box-sizing:border-box;cursor:pointer;display:grid;gap:4px;max-width:100%;color:var(--head)}
+.rd2-nama:hover .rd2-nama-a{color:var(--accent)}
+.rd2-nama:focus-visible{outline:2px solid var(--fokus);outline-offset:2px;border-radius:var(--r-sm)}
+.rd2-nama-a{font:700 var(--t-tombol)/var(--lh-rapat) var(--font);overflow-wrap:anywhere}
+.rd2-nama-p small{font:400 var(--t-kecil)/var(--lh-rapat) var(--font);color:var(--ink2)}
+.rd2-ruptl{display:inline-flex;align-items:center;gap:4px;margin-top:4px;color:var(--accent);font:600 var(--t-label)/var(--lh-rapat) var(--font)}
+.rd2-sel{display:grid;gap:2px;min-width:0}
+.rd2-seg-blok{display:grid;gap:8px}
+.rd2-seg-blok+.rd2-seg-blok{margin-top:16px}
+.rd2-seg-j{font:700 var(--t-tombol)/var(--lh-rapat) var(--font);color:var(--head)}
+.rd2-seg3{grid-template-columns:repeat(3,minmax(0,1fr))}
+.rd2-metode{display:grid;gap:16px;grid-template-columns:repeat(3,minmax(0,1fr))}
+.rd2-metode>section{display:grid;gap:10px;align-content:start;padding:16px;border:1px solid var(--line);border-radius:var(--r);background:var(--card)}
+.rd2-metode h3{display:flex;align-items:center;gap:8px;margin:0;font:700 var(--t-body)/var(--lh-rapat) var(--font);color:var(--head)}
+.rd2-metode h3 svg{flex:none;color:var(--accent)}
+.rd2-bobot,.rd2-celah,.rd2-langkah{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+.rd2-bobot li{display:flex;justify-content:space-between;gap:12px;padding:8px 10px;border-radius:var(--r-sm);background:var(--surface);font:400 var(--t-tombol)/var(--lh-rapat) var(--font)}
+.rd2-bobot li span{font-weight:700;color:var(--accent);font-variant-numeric:tabular-nums}
+.rd2-celah li{display:flex;gap:8px;align-items:flex-start;font:400 var(--t-tombol)/var(--lh-isi) var(--font);color:var(--ink)}
+.rd2-celah li svg{flex:none;margin-top:3px;color:var(--warn)}
+.rd2-langkah{counter-reset:l}
+.rd2-langkah li{counter-increment:l;display:grid;grid-template-columns:24px minmax(0,1fr);gap:8px;align-items:start;font:400 var(--t-tombol)/var(--lh-isi) var(--font)}
+.rd2-langkah li::before{content:counter(l);display:grid;place-items:center;width:24px;height:24px;border-radius:50%;background:var(--soft-hijau);color:var(--accent);font:700 var(--t-label)/1 var(--font)}
+.rd2-p{margin:0;font:400 var(--t-tombol)/var(--lh-isi) var(--font);color:var(--ink2)}
+dialog.rd2-dlg{width:min(680px,calc(100vw - 32px));max-height:calc(100vh - 48px);overflow:auto;gap:12px}
+dialog.rd2-dlg[open]{display:grid}
+.rd2-dlg h2{margin:0;font:700 var(--t-h1)/var(--lh-judul) var(--display);color:var(--head)}
+.rd2-dlg h3{margin:0;font:700 var(--t-body)/var(--lh-rapat) var(--font);color:var(--head)}
+.rd2-dlg-h{display:flex;justify-content:space-between;gap:12px;align-items:flex-start}
+.rd2-dlg-ey{display:inline-flex;align-items:center;gap:8px;font:600 var(--t-kecil)/var(--lh-rapat) var(--font);color:var(--ink2)}
+.rd2-komp{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+.rd2-komp li{display:grid;grid-template-columns:auto minmax(0,1fr) auto auto;gap:8px 12px;align-items:center;padding:8px 10px;border:1px solid var(--line);border-radius:var(--r-sm);background:var(--card);font:400 var(--t-tombol)/var(--lh-rapat) var(--font)}
+.rd2-komp li b{font-weight:600;color:var(--head)}
+.rd2-komp li span:nth-of-type(2){font-variant-numeric:tabular-nums;font-weight:700;color:var(--ink)}
+.rd2-komp li small{color:var(--ink2);font-size:var(--t-kecil)}
+@media (max-width:999px){
+  #rdPeta .jm-pel-seg{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .rd2-peta{display:grid;aspect-ratio:auto;min-height:0;height:auto}
+  .rd2-kanvas{position:relative;inset:auto;height:clamp(180px,48vw,320px);padding:8px}
+  .rd2-peta .jm-pel-lapis{max-width:none}
+  .rd2-peta .jm-pel-lapis,.rd2-peta .jm-pel-panel{position:static;width:auto!important;max-height:none;border-radius:0;border-inline:0;margin:0;left:auto!important;top:auto!important;bottom:auto}
+  .rd2-peta .jm-pel-lapis summary,.rd2-peta .jm-pel-panel summary{min-height:48px}
+  .rd2-metode{grid-template-columns:minmax(0,1fr)}
+}
+@media (max-width:599px){
+  #rdPeta .jm-pel-seg{padding:10px 16px}
+  .rd2-komp li{grid-template-columns:minmax(0,1fr) auto}
+  .rd2-komp li .jm-pil{grid-column:1/-1;justify-self:start}
+}

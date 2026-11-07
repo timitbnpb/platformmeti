@@ -181,10 +181,10 @@ export function pemain(d, tambahan, dasarId, maks = 45) {
 export function proyek(d, peta, tambahan, judulKol = ['Proyek', 'Project']) {
   const b = d.bab['10']; const ada = new Set();
   const ambil = (r, k) => { const v = peta[k] ? r[peta[k]] : r[k]; return v == null ? '-' : v; };
-  const baris = b.baris.map((r) => { const nama = r[peta.nama || 'nama']; const id = r.id || null; return { nama, ...(id ? { id, url: '/p/' + id } : {}), wilayah: ambil(r, 'wilayah'), ukuran: ambil(r, 'ukuran'), status: ambil(r, 'status'), sumber: r.sumber || r.rujuk || '-' }; });
+  const baris = b.baris.map((r) => { const nama = r[peta.nama || 'nama']; const id = r.id || null; return { nama, ...(id ? { id, url: '/proyek#' + id } : {}), wilayah: ambil(r, 'wilayah'), ukuran: ambil(r, 'ukuran'), status: ambil(r, 'status'), sumber: r.sumber || r.rujuk || '-' }; });
   for (const [nama, wil, uk, st, rujuk, idp] of tambahan) {
     const id = idp ? (idp.startsWith('WRI') ? cekId('gppd', idp) : cekId('pj', idp)) : null; if (id) ada.add(id);
-    baris.push({ nama, ...(id ? (id.startsWith('WRI') ? { id } : { id, url: '/p/' + id }) : {}), wilayah: sel(wil), ukuran: sel(uk), status: sel(st), sumber: rujuk });
+    baris.push({ nama, ...(id ? (id.startsWith('WRI') ? { id } : { id, url: '/proyek#' + id }) : {}), wilayah: sel(wil), ukuran: sel(uk), status: sel(st), sumber: rujuk });
   }
   d.bab['10'] = { ...b, kolom: [kol('nama', judulKol[0], judulKol[1], { url: 'url' }), kol('wilayah', 'Wilayah', 'Region'), kol('ukuran', 'Ukuran', 'Size'), kol('status', 'Status menurut sumber', 'Status per source'), kol('sumber', 'Dasar', 'Basis')], baris, per: 15 };
 }
@@ -201,7 +201,31 @@ export function regulasi(d, cat) {
 export const tambah = (d, n, kunciDaftar, butir) => { d.bab[n][kunciDaftar].push(...butir); };
 export const pasang = (d, n, bab) => { d.bab[n] = bab; };
 export function sumberBaru(d, peta) { Object.assign(d.sumber, peta); }
+const BAB_FAQ = [[/regulasi|aturan|izin|wajib|sanksi|hukum|boleh/i, 12], [/biaya|harga|investasi|dana|danai|pembiaya/i, 19], [/proyek|lokasi|pltn|plta|reaktor/i, 10], [/siapa|pemain|operator|mengawasi/i, 9], [/target|proyeksi|kapan|berapa/i, 30], [/apa itu|apa beda|apa saja|apa bedanya/i, 3]];
+const KAT_UANG = /biaya|pinjam|obligasi|sukuk|dana|kontrak kinerja|savings|payback|investasi|green|finance|pembiaya/i, KAT_ATURAN = /^(PP|UU|Perpres|Permen|SKEM|LTHE|RUPTL|RUKN|INIR|ISO|SNI|Aturan|Grid code|Milestones|Safeguards|Kuota|Kerugian|Proteksi)/i, KAT_SATUAN = /^(MVA|kms|TOE|SBM|MWt|MWe|kWh|GWh|MW|GW)\b|satuan|unit/i;
+const MWORG = () => { const m = new Map(); for (const p of baca('public/data/proyek.json').baris) { const k = (p.kapasitas || [])[0]; const mw = k && /^mw$/i.test(k.satuan) && Number.isFinite(k.nilai) ? k.nilai : 0; for (const o of (p.pihak?.pemilik || [])) if (o.organisasi_id) m.set(o.organisasi_id, (m.get(o.organisasi_id) || 0) + mw); } return m; };
+const judulKasus = (t) => (typeof t === 'string' && t.length > 12 && !/[a-z]/.test(t) && (t.match(/[A-Z]+/g) || []).length >= 3 ? t.toLowerCase().replace(/(^|\s)([a-z])/g, (m, a, b) => a + b.toUpperCase()) : t);
+/* medan tambahan untuk cetakan topik baru (koordinator 8 Nov 2026): faq.bab, glosarium.kat, pemain.mw, langkah.peran, id baris tabel, normalisasi kapital penuh */
+export function lengkapi(d) {
+  const mw = MWORG();
+  for (const [n, b] of Object.entries(d.bab)) {
+    if (b.tipe === 'faq') b.butir.forEach((x) => { if (x.bab == null) x.bab = (BAB_FAQ.find(([re]) => re.test(x.t.id)) || [0, 4])[1]; });
+    if (b.tipe === 'glosarium') b.butir.forEach((x) => { if (!x.kat) x.kat = KAT_SATUAN.test(x.istilah.id) ? 'satuan' : KAT_ATURAN.test(x.istilah.id) ? 'aturan' : KAT_UANG.test(x.istilah.id + ' ' + x.arti.id) ? 'uang' : 'teknis'; });
+    if (b.tipe === 'langkah') b.butir.forEach((x) => { if (!x.peran) x.peran = x.pelaku; });
+    if (b.tipe === 'tabel') {
+      b.baris.forEach((r) => { if (!('id' in r) && (n === '9' || n === '10' || n === '12' || n === '24' || n === '18' || n === '36')) r.id = null; for (const k of ['nama', 'pos', 'judul', 'negara']) if (typeof r[k] === 'string') r[k] = judulKasus(r[k]); if (n === '9') r.mw = r.id && mw.has(r.id) ? Math.round(mw.get(r.id) * 10) / 10 : null; });
+      if (n === '9' && !b.kolom.some((c) => c.k === 'mw')) b.kolom.push(kol('mw', 'Kapasitas proyek tercatat (MW)', 'Recorded project capacity (MW)', { num: true, d: 0 }));
+    }
+    if (b.tipe === 'linimasa') b.butir = b.butir.filter((x) => !/^perda\b/i.test(x.judul.id));
+  }
+  for (const k of d.bab['39'].butir.concat(d.bab['40'].butir)) { if (!('foto' in k)) k.foto = null; if (!('koordinat' in k)) k.koordinat = null; }
+  const s7 = d.bab['7']?.seri?.[0]?.titik;
+  d.kunci.forEach((x) => { if (!x.deret) x.deret = null; });
+  if (s7 && s7.every((p) => /^\d{4}$/.test(String(p[0])) && typeof p[1] === 'number') && d.kunci[2] && /Beban puncak/.test(d.kunci[2].label.id) && !d.kunci[2].deret && Number.isFinite(d.kunci[2].nilai)) d.kunci[2].deret = s7.map((p) => [Number(p[0]), p[1]]);
+  return d;
+}
 export function pangkas(d) {
+  lengkapi(d);
   const dipakai = JSON.stringify({ ku: d.kunci, bab: d.bab });
   d.sumber = Object.fromEntries(Object.entries(d.sumber).filter(([k]) => dipakai.includes(`"${k}"`)));
   return d;
@@ -246,4 +270,13 @@ export function pasarListrik() {
     T(`Rumah tangga berlistrik (PLN dan nonPLN) 2024: ${fm(rt)} rumah tangga, jumlah 38 provinsi (EST).`, `Electrified households (PLN and non-PLN) in 2024: ${fe(rt)} households, the sum of 38 provinces (EST).`),
     T(`Rasio elektrifikasi 2024 terendah ${re[0].provinsi} (${fm(re[0].rasio_elektrifikasi_persen, 2)} persen) dan tertinggi ${re.at(-1).provinsi} (${fm(re.at(-1).rasio_elektrifikasi_persen, 2)} persen).`, `The 2024 electrification ratio was lowest in ${re[0].provinsi} (${fe(re[0].rasio_elektrifikasi_persen, 2)} percent) and highest in ${re.at(-1).provinsi} (${fe(re.at(-1).rasio_elektrifikasi_persen, 2)} percent).`),
   ];
+}
+
+/* kode provinsi BPS dari public/data/kelistrikan.json (38 provinsi); nama tak dikenal = galat */
+export const kodeProv = (nama) => { const r = baca('public/data/kelistrikan.json').baris.find((x) => x.provinsi.toLowerCase() === String(nama).toLowerCase()); if (!r) throw new Error('provinsi tidak ada: ' + nama); return r.kode; };
+/* tambah kolom kode BPS dan tautan /wilayah?prov= pada tabel yang kolom namanya k berisi nama provinsi (string atau {id,en}) */
+export function denganKode(bab, k) {
+  bab.kolom = [{ ...bab.kolom[0], url: 'url' }, kol('kode', 'Kode BPS', 'BPS code'), ...bab.kolom.slice(1)];
+  bab.baris = bab.baris.map((r) => { const nm = typeof r[k] === 'string' ? r[k] : r[k].id; const kode = kodeProv(nm); return { ...r, kode, url: '/wilayah?prov=' + kode }; });
+  return bab;
 }

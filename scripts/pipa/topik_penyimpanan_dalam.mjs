@@ -132,4 +132,5 @@ export function perdalam(bab, SUMBER) {
   ke(bab, '32', 'teks', 'paragraf', P(
     ['Daftar pantau: (1) COD Upper Cisokan 2030; (2) status BESS RUPTL yang pertama beroperasi; (3) kemajuan proyek Dragon dan pengganti LG; (4) harga paket baterai BloombergNEF berikutnya; (5) standar keselamatan BESS nasional; (6) penyelidikan Moss Landing; (7) kajian PLTA pompa air laut Puger; (8) peta jalan hilirisasi baterai; (9) kebijakan daur ulang; (10) RUU EBET.', 'Watch list: (1) Upper Cisokan COD 2030; (2) the first RUPTL BESS reaching operation; (3) progress of Dragon and the LG replacement; (4) the next BloombergNEF pack price; (5) a national BESS safety standard; (6) the Moss Landing investigation; (7) the Puger seawater pumped hydro study; (8) the battery downstream roadmap; (9) recycling policy; (10) the RUU EBET.'],
   ), sm('lgpet', 'dragon2', 'bnef115', 'ruuebet'));
+  return {};
 }

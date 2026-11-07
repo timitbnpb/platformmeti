@@ -6,6 +6,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { validasi } from './topik_surya.mjs';
+import { lengkapi } from './topik_dalam_lib.mjs';
 import { perdalam } from './topik_penyimpanan_dalam.mjs';
 export { validasi };
 const akar = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '../..');
@@ -353,7 +354,8 @@ export function susun() {
     dasarP('pln', 'operasi', 'Mulai dengan BESS di PLTS yang sudah ada (contoh IKN) untuk membangun pengalaman operasi.', 'Start with BESS at existing solar plants (IKN example) to build operating experience.', 'ikn'),
     dasarP('meti', 'operasi', 'Pantau produksi Dragon dan BESS RUPTL pertama, serta beri hak jawab pada pihak yang disebut.', 'Monitor Dragon production and the first RUPTL BESS, and give named parties a right of reply.', 'dragon'),
   ] };
-  perdalam(bab, SUMBER);
+  const DERET_KUNCI = perdalam(bab, SUMBER);
+  lengkapi({ kunci, bab }, { deret: DERET_KUNCI });
   return {
     id: ID, versi: 1, diperbarui: TGL,
     judul: T('Penyimpanan dan baterai', 'Storage and batteries'),

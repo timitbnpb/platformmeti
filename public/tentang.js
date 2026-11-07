@@ -62,7 +62,7 @@ function ringkas(judul, a, { ik = "orang", pimpinan = PIM } = {}) {
   /* kotak selebar isinya: n kartu pimpinan (maks 3) berukuran tetap; avatar 56px maks 2 baris lalu "+n" */
   const n = Math.min(3, Math.max(2, pim.length)), maks = { 2: 10, 3: 16 }[n];
   const tampil = avat.length > maks ? avat.slice(0, maks - 1) : avat, lebih = avat.length - tampil.length;
-  const bawah = avat.length ? `<ul class="tn-av-kisi">${tampil.map((o) => `<li title="${esc(o.nama)}, ${esc(o.jabatan)}">${avatar(o)}</li>`).join("")}${lebih ? `<li class="tn-plus" title="${esc(TX("tn.anggota_plus", "+{n} anggota", { n: lebih }))}">+${angka(lebih)}</li>` : ""}</ul>
+  const bawah = avat.length ? `<ul class="tn-av-kisi">${tampil.map((o) => { const k = o.orang_id || slug(o.nama); PERS.set(k, o); return `<li><button type="button" class="tn-av-b" data-p="${esc(k)}" title="${esc(o.nama)}, ${esc(o.jabatan)}" aria-label="${esc(t("tn.p.buka", { nama: o.nama }))}">${avatar(o)}</button></li>`; }).join("")}${lebih ? `<li><button type="button" class="tn-av-b tn-plus" data-grup="${id}" title="${esc(TX("tn.anggota_plus", "+{n} anggota", { n: lebih }))}">+${angka(lebih)}</button></li>` : ""}</ul>
     ${lebih ? `<button type="button" class="tn-semua" data-grup="${id}">${ikon("orang", 16)}<span>${esc(TX("tn.lihat_semua", "Lihat semua {n} anggota", { n: nyata.length }))}</span></button>` : ""}` : "";
   return `<section class="tn-grp tn-rg" data-n="${n}">${kepalaGrup(ik, judul, a)}${lr}${bawah}</section>`;
 }

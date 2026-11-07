@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 // Naskah topik Nuklir dan SMR -> public/data/topik/nuklir.json (TOPIK-SKEMA.md). Pakai: node scripts/pipa/topik_nuklir.mjs [--selftest]
 // Teks dari sumber publik yang dibaca 8 Nov 2026; tabel dari berkas repo (proyek, keuangan_hijau, asean_energi, regulasi).
+import { dalam } from './topik_nuklir_dalam.mjs';
 import { T, hp, S, ED, baca, regS, nf, nfe, SPUBFIN, teks, faq, glos, rumus, langkah, tabel, grafik, linimasa, kol, L, kunci, kas, rakit, selftest as st, jalankan, tabelRegulasi, kolRegulasi, validasi as val } from './topik_enam_lib.mjs';
 
 const ase = baca('public/data/asean_energi.json'), kh = baca('public/data/keuangan_hijau.json');
@@ -32,7 +33,7 @@ export const SUMBER = {
 const UU10_URL = SUMBER.uu10.url;
 const barakahPerKw = Math.round(20.4e9 / 5.6e6);
 
-export function susun() {
+function susunAsal() {
   const bab = {};
   bab['2'] = faq(['den26', 'ibp25', 'detik_tapak'], [
     ['Kapan PLTN pertama Indonesia?', 'When is Indonesia\'s first nuclear plant?', 'Target pemerintah 2032 sampai 2034 dengan kapasitas awal 500 MW (Dewan Energi Nasional, 3 Mar 2026). Pada Februari 2025 Dirjen EBTKE menyebut 250 MW pada 2032; angka awal berbeda antarpernyataan.', 'The government target is 2032 to 2034 with an initial 500 MW (National Energy Council, 3 Mar 2026). In February 2025 the EBTKE director general cited 250 MW in 2032; initial figures differ between statements.'],
@@ -274,6 +275,7 @@ export function susun() {
     sumber: SUMBER, bab });
 }
 
+export function susun() { return dalam(susunAsal()); }
 export const validasi = val;
 export const selftest = () => st(susun);
 jalankan(import.meta.url, 'nuklir', susun);

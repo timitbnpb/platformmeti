@@ -52,7 +52,7 @@ export function ke(bab, n, tipe, field, arr, srcKeys = []) {
   const b = (bab[n] ||= { tipe, sumber: [] });
   if (b.tipe !== tipe) throw new Error(`bab ${n} bertipe ${b.tipe}, bukan ${tipe}`);
   (b[field] ||= []);
-  const kunci = (x) => JSON.stringify(x.istilah?.id ?? x.t?.id ?? x.judul?.id ?? x.nama ?? x.id ?? x);
+  const kunci = (x) => JSON.stringify(x.dok ?? x.istilah?.id ?? x.t?.id ?? x.judul?.id ?? x.nama ?? x.id ?? x);
   const ada = new Set(b[field].map(kunci));
   for (const x of arr) if (!ada.has(kunci(x))) { b[field].push(x); ada.add(kunci(x)); }
   for (const s of srcKeys) if (!b.sumber.includes(s)) b.sumber.push(s);
@@ -88,6 +88,50 @@ export function liniReg(rows) {
 }
 /* tabel regulasi (bab 12): tambahan baris ber-id; kolom dok, ttg, st, u */
 export function regTabel(rows) {
-  return rows.flatMap(([id, ttg, ttgEn]) => { const r = REG.find((x) => x.id === id); return r ? [{ dok: `${String(r.jenis).replace(/^./, (c) => c.toUpperCase())} ${r.nomor}/${r.tahun}`, ttg: T(ttg, ttgEn), st: r.status, u: '/regulasi?id=' + id, id }] : []; });
+  const cap = (w) => w.charAt(0).toUpperCase() + w.slice(1);
+  const label = (id) => { const p = id.split('-'); const th = p.pop(), no = p.pop(); const mid = p.slice(1).filter((x) => !/^b\d+$/.test(x)).map((x) => (x.length <= 4 ? x.toUpperCase() : cap(x))); return [cap(p[0]), ...mid].join(' ') + ` ${no}/${th}`; };
+  return rows.flatMap(([id, ttg, ttgEn]) => { const r = REG.find((x) => x.id === id); return r ? [{ dok: label(id), ttg: T(ttg, ttgEn), st: r.status, u: '/regulasi?id=' + id, id }] : []; });
 }
 export const kasus = (o) => ({ negara: 'ID', ...o });
+
+/* ---------- pelengkap cetakan baru (8 Nov 2026): bab pada FAQ, kat glosarium, mw pemain, id baris regulasi, peran rantai, kapital, linimasa ---------- */
+const KATA_BAB = [[/harga|biaya|tarif|lcoe|lcos|rp\b|usd/i, 19], [/aturan|wajib|izin|perpres|permen|pojk|insentif|ppn|tkdn/i, 12], [/proyek|beroperasi|pabrik|stasiun|spklu/i, 10], [/risiko|aman|kebakaran|emisi|netral|lingkungan/i, 27], [/target|peta jalan|rencana|2030|2045|2060/i, 30], [/rumus|hitung|berapa lama|kwh|waktu/i, 5], [/negara|dunia|iea|global/i, 20]];
+const KAT_ATURAN = /perpres|permen|\buu\b|pojk|inpres|keppres|mandatori|wajib|ispo|tkdn|\bpso\b|\bred\b|sertifikasi|standar|baku mutu|\bsni\b|jakstranas/i;
+const KAT_UANG = /tarif|harga|cfd|capex|opex|lcos|lcoe|lcoh|pendanaan|tipping|fee|\bfid\b|offtake|pengikatan|dana\b|bpdp|investasi|kredit|pajak|ppn|insentif|kompensasi|anuitas|pembiayaan|take-or-pay|tco|\bppa\b/i;
+const KAT_SATUAN = /^(mw|mwh|kwh|gwh|twh|mtpa|ktpa|nm3|tco2e?|kg|gj|tj|c-rate|kg per hari|mw dan mwh|nilai kalor|siklus|jangkauan|kapasitas baterai)/i;
+const ROLE = [['pln', /pln|offtaker|pembeli listrik/i], ['pusat', /esdm|kemen|kemenperin|kemenkeu|kemenhub|ojk|klh|bpdp|regulator|pemerintah pusat|kemenperin/i], ['pemda', /pemda|daerah/i], ['investor', /investor|bank|danantara|pembiayaan|pendan/i], ['meti', /meti|akademisi|kampus|studi/i], ['pengembang', /.*/]];
+const TITIK = new Set('PT CV TBK PLN ESDM BUMN BUMD UI UGM ITB IPB BRIN DPR RI KLH OJK IDX KSEI KPEI APROBI BPDP IBC CATL LG SK EV BESS PLTS PLTP PLTU PLTA PLTB'.split(' '));
+export function normalKapital(s) {
+  if (typeof s !== 'string') return s;
+  const kata = s.match(/[A-Za-z]+/g) || [];
+  if (kata.length < 3 || s !== s.toUpperCase()) return s;
+  return s.replace(/[A-Za-z]+/g, (w) => (TITIK.has(w) ? w : w.charAt(0) + w.slice(1).toLowerCase()));
+}
+function mwOrg(id) {
+  const o = ORG.find((x) => x.id === id); if (!o) return 0;
+  let mw = 0; for (const pid_ of o.proyek_ids || []) { const p = PROYEK.find((x) => x.id === pid_); const k = p?.kapasitas?.[0]; if (k && /^mw$/i.test(k.satuan) && Number.isFinite(k.nilai)) mw += k.nilai; }
+  return Math.round(mw);
+}
+export function lengkapi(d, { deret = {} } = {}) {
+  const bab = d.bab, tx = (t) => (typeof t === 'string' ? t : t?.id || '');
+  /* (1) deret kunci: indeks kunci -> [[tahun, nilai]] */
+  for (const [i, serie] of Object.entries(deret)) if (d.kunci[i] && serie?.length) d.kunci[i].deret = serie;
+  /* (2) faq.bab */
+  for (const x of bab['2']?.butir || []) if (x.bab == null) x.bab = (KATA_BAB.find(([re]) => re.test(tx(x.t) + ' ' + tx(x.j))) || [0, 4])[1];
+  /* (3) glosarium.kat */
+  for (const x of bab['3']?.butir || []) { const s = tx(x.istilah), a = tx(x.arti); x.kat = x.kat || (KAT_SATUAN.test(s) ? 'satuan' : KAT_ATURAN.test(s + ' ' + a.slice(0, 60)) ? 'aturan' : KAT_UANG.test(s + ' ' + a.slice(0, 60)) ? 'uang' : 'teknis'); }
+  /* (4) pemain mw */
+  const b9 = bab['9']; if (b9?.baris) { for (const r of b9.baris) r.mw = r.id ? mwOrg(r.id) : 0; if (!b9.kolom.some((c) => c.k === 'mw')) b9.kolom.push({ k: 'mw', l: T('Kapasitas proyek (MW)', 'Project capacity (MW)'), num: true, d: 0 }); }
+  /* (5) id baris regulasi dan pendanaan */
+  for (const r of bab['12']?.baris || []) if (!r.id) { const m = REG.find((x) => x.url_sumber === r.u || x.url_pdf === r.u || '/regulasi?id=' + x.id === r.u); if (m) r.id = m.id; }
+  for (const r of bab['24']?.baris || []) if (!r.id) { const m = PEND.find((x) => x.nama === r.nama); if (m) r.id = m.id; }
+  /* (6) negara ISO2 pada kasus */
+  for (const n of ['39', '40']) for (const k of bab[n]?.butir || []) if (!k.negara) k.negara = 'ID';
+  /* (7) peran per tahap rantai */
+  for (const x of bab['6']?.butir || []) if (!x.peran) { const s = tx(x.pelaku); x.peran = (ROLE.find(([, re]) => re.test(s)) || ['pengembang'])[0]; }
+  /* (8) kapital penuh -> huruf biasa pada nama baris */
+  for (const b of Object.values(bab)) for (const r of b.baris || []) for (const f of ['nama', 'pem', 'dok']) if (typeof r[f] === 'string') r[f] = normalKapital(r[f]);
+  /* (9) linimasa: buang butir dari perda/lainnya (cocok kata saja) */
+  if (bab['13']?.butir) bab['13'].butir = bab['13'].butir.filter((x) => !/^(perda|lainnya)/.test(x.reg || ''));
+  return d;
+}

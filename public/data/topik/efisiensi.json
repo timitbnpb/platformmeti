@@ -23,7 +23,8 @@
     "en": "million BOE"
    },
    "sumber": "mgmt",
-   "est": false
+   "est": false,
+   "deret": null
   },
   {
    "label": {
@@ -37,7 +38,8 @@
     "en": "percent"
    },
    "sumber": "mgmt",
-   "est": false
+   "est": false,
+   "deret": null
   },
   {
    "label": {
@@ -51,7 +53,8 @@
     "en": "entities"
    },
    "sumber": "mgmt",
-   "est": false
+   "est": false,
+   "deret": null
   },
   {
    "label": {
@@ -65,7 +68,8 @@
     "en": "IDR trillion"
    },
    "sumber": "ac",
-   "est": false
+   "est": false,
+   "deret": null
   },
   {
    "label": {
@@ -79,7 +83,8 @@
     "en": "million tonnes CO2"
    },
    "sumber": "kabar30",
-   "est": false
+   "est": false,
+   "deret": null
   }
  ],
  "penting": [
@@ -252,6 +257,87 @@
    "tahun": 2025,
    "bukti": "via-pihak-ketiga",
    "lisensi": "CC BY 4.0"
+  },
+  "direktori": {
+   "judul": "Direktori METI: organisasi, proyek, pendanaan, regulasi, riset (berkas public/data/*.json; tiap baris punya sumber sendiri di berkasnya)",
+   "penerbit": "METI",
+   "url": "https://platformmeti.timitbnpb.workers.dev",
+   "tanggal": "2026-11-08",
+   "tahun": 2026,
+   "bukti": "via-pihak-ketiga"
+  },
+  "wbp": {
+   "judul": "World Bank Projects and Operations, ringkasan proyek Indonesia (diolah repo: public/data/proyek.json, id wb_P...)",
+   "penerbit": "The World Bank",
+   "url": "https://projects.worldbank.org/en/projects-operations/projects-home",
+   "tanggal": "2026-11-07",
+   "tahun": 2026,
+   "bukti": "resmi",
+   "lisensi": "CC BY 4.0"
+  },
+  "statpln": {
+   "judul": "Statistik Ketenagalistrikan 2024, Ditjen Ketenagalistrikan ESDM (diolah repo: public/data/statistik_pln.json dan kelistrikan.json, 38 provinsi)",
+   "penerbit": "Kementerian ESDM",
+   "url": "https://gatrik.esdm.go.id/gatrik/gatrik-api//storage/migrasi/download_index/files/91fa8-buku-statistik-ketenagalistrikan-2024.pdf",
+   "tanggal": "2026-11-07",
+   "tahun": 2024,
+   "bukti": "resmi"
+  },
+  "pp70": {
+   "judul": "PP 70/2009 tentang Konservasi Energi",
+   "penerbit": "Pemerintah RI (JDIH BPK)",
+   "url": "https://peraturan.bpk.go.id/Details/4996",
+   "tanggal": "2026-11-07",
+   "tahun": 2009,
+   "bukti": "resmi"
+  },
+  "pm3": {
+   "judul": "Permen 3/2025 tentang Konservasi Energi Oleh Pemerintah dan Pemerintah Daerah",
+   "penerbit": "Pemerintah RI (JDIH BPK)",
+   "url": "https://peraturan.bpk.go.id/Details/317655",
+   "tanggal": "2026-11-07",
+   "tahun": 2025,
+   "bukti": "resmi"
+  },
+  "pm1": {
+   "judul": "Permen 1/2026 tentang Usaha Jasa Konservasi Energi",
+   "penerbit": "Pemerintah RI (JDIH BPK)",
+   "url": "https://peraturan.bpk.go.id/Details/350156",
+   "tanggal": "2026-11-07",
+   "tahun": 2026,
+   "bukti": "resmi"
+  },
+  "pda5": {
+   "judul": "Perda 5/2026 tentang Efisiensi Energi Dan Air Pada Bangunan Gedung",
+   "penerbit": "Pemerintah RI (JDIH BPK)",
+   "url": "https://peraturan.bpk.go.id/Details/345755",
+   "tanggal": "2026-11-07",
+   "tahun": 2026,
+   "bukti": "resmi"
+  },
+  "pm14": {
+   "judul": "Permen 14/2016 tentang Permen ESDM No. 14 Tahun 2016 tentang Penyelenggaraan Usaha Jasa Konservasi Energi",
+   "penerbit": "Pemerintah RI (JDIH BPK)",
+   "url": "https://peraturan.bpk.go.id/Details/142565",
+   "tanggal": "2026-11-07",
+   "tahun": 2016,
+   "bukti": "resmi"
+  },
+  "pm9": {
+   "judul": "Permen 9/2018 tentang Permen ESDM No. 9 Tahun 2018 tentang Pencabutan Peraturan Menteri Energi Dan Sumber Daya Mineral Terkait Kegiatan Di Bidang Energi Baru, Terbarukan, Dan Konservasi Energi",
+   "penerbit": "Pemerintah RI (JDIH BPK)",
+   "url": "https://peraturan.bpk.go.id/Details/142560",
+   "tanggal": "2026-11-07",
+   "tahun": 2018,
+   "bukti": "resmi"
+  },
+  "iea_conv": {
+   "judul": "IEA, unit converter dan definisi tonne of oil equivalent (1 TOE = 41,868 GJ, sekitar 11.630 kWh)",
+   "penerbit": "Badan Energi Internasional (IEA)",
+   "url": "https://www.iea.org/data-and-statistics/data-tools/unit-converter-and-glossary",
+   "tanggal": "2026-11-08",
+   "tahun": 2026,
+   "bukti": "resmi"
   }
  },
  "bab": {
@@ -271,7 +357,8 @@
      "j": {
       "id": "Upaya menggunakan energi secara efisien tanpa menurunkan manfaat; dasar hukumnya PP 33/2023 tentang Konservasi Energi.",
       "en": "Using energy efficiently without losing the benefit; its legal basis is Government Regulation 33/2023 on Energy Conservation."
-     }
+     },
+     "bab": 3
     },
     {
      "t": {
@@ -281,7 +368,8 @@
      "j": {
       "id": "Pengguna energi sektor industri dan transportasi di atas 4.000 TOE per tahun, penyedia energi di atas 6.000 TOE, dan bangunan di atas 500 TOE (siaran pers ESDM, 9 Feb 2024).",
       "en": "Industry and transport users above 4,000 TOE per year, energy providers above 6,000 TOE and buildings above 500 TOE (Energy Ministry release, 9 Feb 2024)."
-     }
+     },
+     "bab": 12
     },
     {
      "t": {
@@ -291,7 +379,8 @@
      "j": {
       "id": "Menunjuk manajer energi bersertifikat, menyusun program konservasi, mengaudit energi, menjalankan rekomendasi audit, dan melapor (ringkasan TUV NORD, ESDM).",
       "en": "Appoint a certified energy manager, draw up a conservation programme, audit energy, implement audit recommendations and report (TUV NORD, Energy Ministry summaries)."
-     }
+     },
+     "bab": 4
     },
     {
      "t": {
@@ -301,7 +390,8 @@
      "j": {
       "id": "410 entitas melapor dan menghemat 10,42 juta SBM, sekitar 1,73 persen dari konsumsi 602 juta SBM, dengan emisi 8,42 juta tCO2e terhindar.",
       "en": "410 entities reported and saved 10.42 million BOE, about 1.73 percent of the 602 million BOE consumption, avoiding 8.42 million tCO2e."
-     }
+     },
+     "bab": 30
     },
     {
      "t": {
@@ -311,7 +401,8 @@
      "j": {
       "id": "SKEM adalah standar kinerja energi minimum yang melarang produk boros; LTHE adalah label tanda hemat energi berbintang 1 sampai 5.",
       "en": "SKEM is the minimum energy performance standard that bars inefficient products; LTHE is the energy-saving label rated 1 to 5 stars."
-     }
+     },
+     "bab": 3
     },
     {
      "t": {
@@ -321,7 +412,8 @@
      "j": {
       "id": "Menurut Kompas (2024) tujuh produk: AC, penanak nasi, kipas angin, kulkas, lampu LED, televisi, dan showcase.",
       "en": "Per Kompas (2024) seven products: air conditioners, rice cookers, fans, refrigerators, LED lamps, televisions and display coolers."
-     }
+     },
+     "bab": 12
     },
     {
      "t": {
@@ -331,7 +423,8 @@
      "j": {
       "id": "Sumber berbeda: TUV NORD menyebut sanksi administratif; pejabat Balai Besar ESDM pada Mei 2024 menyatakan belum ada sanksi dan prioritas masih penyadaran. Periksa teks PP 33/2023 dan aturan turunan.",
       "en": "Sources differ: TUV NORD cites administrative sanctions; an Energy Ministry institute head said in May 2024 there were none yet, with awareness the priority. Check the text of PP 33/2023 and its derived rules."
-     }
+     },
+     "bab": 12
     },
     {
      "t": {
@@ -341,7 +434,85 @@
      "j": {
       "id": "Perusahaan jasa energi yang membiayai atau menjalankan proyek efisiensi dan dibayar dari penghematan; Permen ESDM 1/2026 menyebut standardisasi usaha ESCO (KabarBursa).",
       "en": "An energy service company that finances or runs efficiency projects and is paid from savings; Energy Ministry Reg. 1/2026 covers ESCO business standardisation (KabarBursa)."
-     }
+     },
+     "bab": 3
+    },
+    {
+     "t": {
+      "id": "Apa beda efisiensi energi dan konservasi energi?",
+      "en": "What is the difference between energy efficiency and energy conservation?"
+     },
+     "j": {
+      "id": "Efisiensi energi berarti memakai energi lebih sedikit untuk hasil yang sama (mis. AC inverter). Konservasi energi lebih luas: mencakup efisiensi, pengurangan pemakaian, dan pengelolaan, seperti istilah yang dipakai PP 33/2023.",
+      "en": "Energy efficiency means using less energy for the same result (e.g. an inverter air conditioner). Conservation is broader: efficiency, reduced use and management, as the term is used in Gov. Reg. 33/2023."
+     },
+     "bab": 3
+    },
+    {
+     "t": {
+      "id": "Berapa kWh dalam satu TOE?",
+      "en": "How many kWh are in one TOE?"
+     },
+     "j": {
+      "id": "Satu tonne of oil equivalent (TOE) adalah 41,868 GJ atau sekitar 11.630 kWh menurut IEA. Ambang kewajiban 500 TOE (bangunan) berarti sekitar 5,8 juta kWh per tahun (EST).",
+      "en": "One tonne of oil equivalent (TOE) is 41.868 GJ or about 11,630 kWh per the IEA. The 500 TOE obligation threshold for buildings means about 5.8 million kWh a year (EST)."
+     },
+     "bab": 30
+    },
+    {
+     "t": {
+      "id": "Apakah rumah tangga wajib melakukan manajemen energi?",
+      "en": "Must households apply energy management?"
+     },
+     "j": {
+      "id": "Tidak. Kewajiban manajemen energi berlaku bagi pengguna energi di atas ambang TOE per tahun (lihat bab Sebaran); rumah tangga terkena lewat standar dan label produk.",
+      "en": "No. The energy management duty applies to users above the annual TOE thresholds (see the Distribution chapter); households are reached through product standards and labels."
+     },
+     "bab": 12
+    },
+    {
+     "t": {
+      "id": "Apa itu kontrak kinerja energi?",
+      "en": "What is an energy performance contract?"
+     },
+     "j": {
+      "id": "Perjanjian ESCO dengan pemilik bangunan: ESCO membiayai atau memasang perbaikan efisiensi dan dibayar dari penghematan yang terukur. Dua bentuk umum: shared savings dan guaranteed savings.",
+      "en": "An agreement between an ESCO and a building owner: the ESCO finances or installs efficiency upgrades and is paid from measured savings. Two common forms: shared savings and guaranteed savings."
+     },
+     "bab": 3
+    },
+    {
+     "t": {
+      "id": "Bagaimana penghematan dihitung dan dibuktikan?",
+      "en": "How is saving calculated and proven?"
+     },
+     "j": {
+      "id": "Penghematan = konsumsi dasar (baseline) dikurangi konsumsi sesudah perbaikan, disesuaikan untuk cuaca dan produksi. Protokol pengukuran dan verifikasi (M&V) seperti IPMVP dipakai di kontrak kinerja.",
+      "en": "Saving = baseline consumption minus post-upgrade consumption, adjusted for weather and output. Measurement and verification (M&V) protocols such as IPMVP are used in performance contracts."
+     },
+     "bab": 4
+    },
+    {
+     "t": {
+      "id": "Apakah ada aturan efisiensi untuk bangunan gedung?",
+      "en": "Are there efficiency rules for buildings?"
+     },
+     "j": {
+      "id": "Ada. Peraturan daerah 5/2026 mengatur efisiensi energi dan air pada bangunan gedung (basis regulasi repo, ditetapkan 5 Feb 2026); Permen ESDM 3/2025 mewajibkan konservasi energi di instansi pemerintah pusat dan daerah.",
+      "en": "Yes. Regional Regulation 5/2026 governs energy and water efficiency in buildings (repo regulation base, enacted 5 Feb 2026); Energy Ministry Reg. 3/2025 requires energy conservation in central and regional government bodies."
+     },
+     "bab": 12
+    },
+    {
+     "t": {
+      "id": "Siapa yang boleh membuka usaha jasa ESCO?",
+      "en": "Who may open an ESCO business?"
+     },
+     "j": {
+      "id": "Usaha jasa konservasi energi diatur Permen ESDM 1/2026 (menggantikan Permen ESDM 14/2016 yang dicabut); persyaratan rinci dibaca pada naskahnya.",
+      "en": "The energy conservation services business is governed by Energy Ministry Reg. 1/2026 (replacing the revoked Energy Ministry Reg. 14/2016); read the detailed requirements in the text."
+     },
+     "bab": 12
     }
    ]
   },
@@ -361,7 +532,8 @@
      "arti": {
       "id": "Setara barel minyak, satuan energi nasional; 1 TOE sekitar 7,2 SBM.",
       "en": "Barrel of oil equivalent; 1 TOE is roughly 7.2 BOE."
-     }
+     },
+     "kat": "satuan"
     },
     {
      "istilah": {
@@ -371,7 +543,8 @@
      "arti": {
       "id": "Tonne of oil equivalent; ambang kewajiban manajemen energi dinyatakan dalam TOE per tahun.",
       "en": "Tonne of oil equivalent; the management duty thresholds are in TOE per year."
-     }
+     },
+     "kat": "satuan"
     },
     {
      "istilah": {
@@ -381,7 +554,8 @@
      "arti": {
       "id": "Rangkaian kegiatan terencana (manajer, program, audit, pelaporan) untuk menghemat energi.",
       "en": "A planned set of activities (manager, programme, audit, reporting) to save energy."
-     }
+     },
+     "kat": "teknis"
     },
     {
      "istilah": {
@@ -391,7 +565,8 @@
      "arti": {
       "id": "Pemeriksaan pola pemakaian energi untuk menemukan peluang hemat; dilakukan auditor bersertifikat.",
       "en": "Examination of energy-use patterns to find savings; done by certified auditors."
-     }
+     },
+     "kat": "teknis"
     },
     {
      "istilah": {
@@ -401,7 +576,8 @@
      "arti": {
       "id": "Standar kinerja energi minimum; produk di bawah nilai tidak boleh diedarkan.",
       "en": "Minimum energy performance standard; products below the value may not be sold."
-     }
+     },
+     "kat": "aturan"
     },
     {
      "istilah": {
@@ -411,7 +587,8 @@
      "arti": {
       "id": "Label tanda hemat energi berbintang 1 sampai 5.",
       "en": "Energy-saving label with 1 to 5 stars."
-     }
+     },
+     "kat": "aturan"
     },
     {
      "istilah": {
@@ -421,7 +598,8 @@
      "arti": {
       "id": "Cooling seasonal performance factor, ukuran efisiensi AC dalam W per W; makin tinggi makin hemat.",
       "en": "Cooling seasonal performance factor, AC efficiency in W per W; higher is better."
-     }
+     },
+     "kat": "teknis"
     },
     {
      "istilah": {
@@ -431,7 +609,8 @@
      "arti": {
       "id": "Energy service company; dibayar dari penghematan.",
       "en": "Energy service company; paid from savings."
-     }
+     },
+     "kat": "teknis"
     },
     {
      "istilah": {
@@ -441,7 +620,8 @@
      "arti": {
       "id": "Program Jepang yang menetapkan target efisiensi dari produk terbaik di pasar.",
       "en": "Japan's programme setting efficiency targets from the best product on the market."
-     }
+     },
+     "kat": "teknis"
     },
     {
      "istilah": {
@@ -451,7 +631,228 @@
      "arti": {
       "id": "Energi yang dipakai per satuan PDB; sasaran RUEN menurunkannya 1 persen per tahun.",
       "en": "Energy used per unit of GDP; RUEN aims to cut it 1 percent a year."
-     }
+     },
+     "kat": "teknis"
+    },
+    {
+     "istilah": {
+      "id": "Efisiensi energi",
+      "en": "Energy efficiency"
+     },
+     "arti": {
+      "id": "Rasio keluaran berguna terhadap energi masuk; naik bila layanan sama dilayani energi lebih sedikit.",
+      "en": "Ratio of useful output to energy input; it rises when the same service is delivered with less energy."
+     },
+     "kat": "teknis"
+    },
+    {
+     "istilah": {
+      "id": "Konservasi energi",
+      "en": "Energy conservation"
+     },
+     "arti": {
+      "id": "Upaya sistematis hemat energi: efisiensi, perubahan perilaku, dan manajemen (istilah PP 33/2023).",
+      "en": "Systematic effort to save energy: efficiency, behaviour change and management (term of Gov. Reg. 33/2023)."
+     },
+     "kat": "teknis"
+    },
+    {
+     "istilah": {
+      "id": "ISO 50001",
+      "en": "ISO 50001"
+     },
+     "arti": {
+      "id": "Standar internasional sistem manajemen energi untuk perbaikan kinerja energi berkelanjutan.",
+      "en": "The international energy management system standard for continual energy performance improvement."
+     },
+     "kat": "aturan"
+    },
+    {
+     "istilah": {
+      "id": "Audit awal dan audit rinci",
+      "en": "Preliminary and detailed audit"
+     },
+     "arti": {
+      "id": "Audit awal menyaring peluang dari data dan tinjauan singkat; audit rinci mengukur beban per peralatan dan menghitung ekonomi tiap rekomendasi.",
+      "en": "A preliminary audit screens opportunities from data and a short walk-through; a detailed audit measures load per equipment and costs each recommendation."
+     },
+     "kat": "teknis"
+    },
+    {
+     "istilah": {
+      "id": "Retrofit",
+      "en": "Retrofit"
+     },
+     "arti": {
+      "id": "Memasang perbaikan efisiensi pada bangunan atau pabrik yang sudah ada.",
+      "en": "Installing efficiency upgrades in an existing building or plant."
+     },
+     "kat": "teknis"
+    },
+    {
+     "istilah": {
+      "id": "Kontrak kinerja energi",
+      "en": "Energy performance contract"
+     },
+     "arti": {
+      "id": "Kontrak ESCO yang dibayar dari penghematan terukur.",
+      "en": "An ESCO contract paid from measured savings."
+     },
+     "kat": "uang"
+    },
+    {
+     "istilah": {
+      "id": "Shared savings",
+      "en": "Shared savings"
+     },
+     "arti": {
+      "id": "Penghematan dibagi antara ESCO dan pemilik menurut persentase yang disepakati; ESCO menanggung biaya awal.",
+      "en": "Savings are split between ESCO and owner at an agreed percentage; the ESCO bears the upfront cost."
+     },
+     "kat": "uang"
+    },
+    {
+     "istilah": {
+      "id": "Guaranteed savings",
+      "en": "Guaranteed savings"
+     },
+     "arti": {
+      "id": "ESCO menjamin tingkat penghematan minimum; kekurangan ditanggung ESCO.",
+      "en": "The ESCO guarantees a minimum saving; any shortfall falls on the ESCO."
+     },
+     "kat": "uang"
+    },
+    {
+     "istilah": {
+      "id": "Pengukuran dan verifikasi (M&V)",
+      "en": "Measurement and verification (M&V)"
+     },
+     "arti": {
+      "id": "Cara membuktikan penghematan dengan baseline dan penyesuaian; acuan umum IPMVP.",
+      "en": "How to prove savings with a baseline and adjustments; the common reference is IPMVP."
+     },
+     "kat": "teknis"
+    },
+    {
+     "istilah": {
+      "id": "Baseline",
+      "en": "Baseline"
+     },
+     "arti": {
+      "id": "Konsumsi energi sebelum perbaikan yang dipakai sebagai pembanding.",
+      "en": "Energy consumption before the upgrade, used as the comparison."
+     },
+     "kat": "teknis"
+    },
+    {
+     "istilah": {
+      "id": "COP",
+      "en": "COP"
+     },
+     "arti": {
+      "id": "Coefficient of performance: panas atau dingin yang dihasilkan per satuan listrik; makin besar makin efisien.",
+      "en": "Coefficient of performance: heat or cooling delivered per unit of electricity; higher is more efficient."
+     },
+     "kat": "teknis"
+    },
+    {
+     "istilah": {
+      "id": "EER dan SEER",
+      "en": "EER and SEER"
+     },
+     "arti": {
+      "id": "Rasio pendinginan terhadap daya listrik (sesaat dan musiman); CSPF dipakai SKEM AC di Indonesia.",
+      "en": "Cooling-to-electric-power ratios (instant and seasonal); CSPF is used by the Indonesian AC MEPS."
+     },
+     "kat": "teknis"
+    },
+    {
+     "istilah": {
+      "id": "Variable speed drive (VSD)",
+      "en": "Variable speed drive (VSD)"
+     },
+     "arti": {
+      "id": "Pengatur kecepatan motor yang menurunkan daya pompa atau kipas bila beban rendah.",
+      "en": "A motor speed controller that cuts pump or fan power at low load."
+     },
+     "kat": "teknis"
+    },
+    {
+     "istilah": {
+      "id": "Sistem manajemen bangunan (BMS)",
+      "en": "Building management system (BMS)"
+     },
+     "arti": {
+      "id": "Sistem kendali terpusat untuk AC, pencahayaan, dan peralatan gedung.",
+      "en": "A central control system for a building's air conditioning, lighting and equipment."
+     },
+     "kat": "teknis"
+    },
+    {
+     "istilah": {
+      "id": "OTTV dan SNI 6389",
+      "en": "OTTV and SNI 6389"
+     },
+     "arti": {
+      "id": "Nilai perpindahan termal selubung bangunan; SNI 6389 adalah standar konservasi energi selubung bangunan gedung.",
+      "en": "Overall thermal transfer value of the building envelope; SNI 6389 is the envelope energy conservation standard."
+     },
+     "kat": "teknis"
+    },
+    {
+     "istilah": {
+      "id": "Greenship",
+      "en": "Greenship"
+     },
+     "arti": {
+      "id": "Sistem penilaian bangunan hijau Indonesia; 60 bangunan bersertifikat hingga 2022 menurut sumber di naskah ini.",
+      "en": "The Indonesian green building rating system; 60 buildings were certified by 2022 per sources in this text."
+     },
+     "kat": "uang"
+    },
+    {
+     "istilah": {
+      "id": "Kogenerasi (CHP)",
+      "en": "Cogeneration (CHP)"
+     },
+     "arti": {
+      "id": "Produksi listrik dan panas berguna sekaligus dari satu bahan bakar; efisiensi total lebih tinggi.",
+      "en": "Producing electricity and useful heat together from one fuel; higher overall efficiency."
+     },
+     "kat": "teknis"
+    },
+    {
+     "istilah": {
+      "id": "Efek rebound",
+      "en": "Rebound effect"
+     },
+     "arti": {
+      "id": "Sebagian penghematan hilang karena pengguna memakai lebih banyak layanan setelah biaya turun.",
+      "en": "Part of the saving is lost because users consume more service once costs fall."
+     },
+     "kat": "uang"
+    },
+    {
+     "istilah": {
+      "id": "Pergeseran beban puncak",
+      "en": "Peak shifting"
+     },
+     "arti": {
+      "id": "Memindahkan pemakaian dari jam puncak ke jam sepi, misalnya lewat penyimpanan dingin.",
+      "en": "Moving use from peak to off-peak hours, for example with cold storage."
+     },
+     "kat": "teknis"
+    },
+    {
+     "istilah": {
+      "id": "Motor kelas IE",
+      "en": "IE motor class"
+     },
+     "arti": {
+      "id": "Kelas efisiensi motor listrik (IE1 sampai IE4) menurut standar IEC; kelas lebih tinggi lebih hemat.",
+      "en": "Electric motor efficiency classes (IE1 to IE4) under IEC; higher classes save more."
+     },
+     "kat": "teknis"
     }
    ]
   },
@@ -473,6 +874,14 @@
     {
      "id": "Bagi anggota METI: tiap kWh yang dihemat mengurangi kebutuhan pembangkit dan jaringan baru, dan membuka pasar jasa audit, ESCO, serta peralatan efisien.",
      "en": "For METI members: every kWh saved reduces the need for new generation and grid, and opens a market for audits, ESCOs and efficient equipment."
+    },
+    {
+     "id": "Efisiensi energi adalah satu-satunya sumber energi yang tidak perlu dibangun, dibebaskan lahannya, atau disambungkan ke jaringan. Satu kWh yang tidak dipakai di jam puncak menghindarkan kapasitas pembangkit dan saluran yang paling mahal.",
+     "en": "Energy efficiency is the one energy source that needs no building, land acquisition or grid connection. A kWh not used at the peak hour avoids the most expensive generation and line capacity."
+    },
+    {
+     "id": "Cara kerjanya ada tiga: peralatan yang lebih baik (AC inverter, motor efisien, LED), sistem yang lebih baik (pengendali, isolasi, pemulihan panas), dan perilaku yang lebih baik (manajer energi, target, pemantauan). Peralatan dan sistem membutuhkan modal; perilaku membutuhkan data.",
+     "en": "It works in three ways: better equipment (inverter air conditioners, efficient motors, LED), better systems (controls, insulation, heat recovery) and better behaviour (energy managers, targets, monitoring). Equipment and systems need capital; behaviour needs data."
     }
    ]
   },
@@ -481,7 +890,9 @@
    "sumber": [
     "ed",
     "mgmt",
-    "mongabay"
+    "mongabay",
+    "iea_conv",
+    "owid"
    ],
    "rumus": [
     {
@@ -495,6 +906,18 @@
     {
      "id": "Pangsa AC bintang 4 dan 5 (persen) = (Unit bintang 4 + bintang 5) / Total unit x 100",
      "en": "Share of 4- and 5-star ACs (percent) = (4-star + 5-star units) / Total units x 100"
+    },
+    {
+     "id": "Konversi ke TOE = Energi (kWh) / 11.630",
+     "en": "Conversion to TOE = Energy (kWh) / 11,630"
+    },
+    {
+     "id": "Emisi dihindari (tCO2) = Energi dihemat (kWh) x Faktor emisi listrik (gCO2 per kWh) / 1.000.000",
+     "en": "Avoided emissions (tCO2) = Energy saved (kWh) x Grid emission factor (gCO2 per kWh) / 1,000,000"
+    },
+    {
+     "id": "Payback sederhana (tahun) = Investasi / Penghematan biaya tahunan",
+     "en": "Simple payback (years) = Investment / Annual cost saving"
     }
    ],
    "contoh": [
@@ -509,6 +932,18 @@
     {
      "id": "Penjualan Daikin 2023: (58.800 + 147.000) / 1.470.000 unit = 14 persen (EST; satu produsen saja, bukan pasar nasional).",
      "en": "Daikin 2023 sales: (58,800 + 147,000) / 1,470,000 units = 14 percent (EST; one manufacturer only, not the national market)."
+    },
+    {
+     "id": "Konversi (angka ilustrasi): 1 GWh = 1.000.000 kWh / 11.630 = sekitar 86 TOE (EST); sebuah gedung 6.000 MWh per tahun setara sekitar 516 TOE, di atas ambang 500 TOE.",
+     "en": "Conversion (illustrative figures): 1 GWh = 1,000,000 kWh / 11,630 = about 86 TOE (EST); a building using 6,000 MWh a year equals about 516 TOE, above the 500 TOE threshold."
+    },
+    {
+     "id": "Emisi (angka ilustrasi dengan faktor 680 gCO2 per kWh, intensitas listrik Indonesia 2024 menurut Ember lewat OWID di bab Proyeksi): menghemat 1 juta kWh menghindarkan 1.000.000 x 680 / 1.000.000 = 680 tCO2 (EST).",
+     "en": "Emissions (illustrative figures with 680 gCO2 per kWh, the 2024 Indonesian electricity intensity per Ember via OWID in the Projections chapter): saving 1 million kWh avoids 1,000,000 x 680 / 1,000,000 = 680 tCO2 (EST)."
+    },
+    {
+     "id": "Payback (angka ilustrasi): investasi Rp900 juta dengan hemat tagihan Rp300 juta per tahun = 3 tahun (EST).",
+     "en": "Payback (illustrative figures): an investment of IDR 900 million with an annual bill saving of IDR 300 million = 3 years (EST)."
     }
    ]
   },
@@ -517,6 +952,7 @@
    "sumber": [
     "ed",
     "pp33",
+    "pm1",
     "detikx",
     "esco"
    ],
@@ -528,11 +964,15 @@
      },
      "isi": {
       "id": "Pemerintah menetapkan PP 33/2023, Permen ESDM 8/2025 (manajemen energi), 3/2025 (instansi pemerintah), dan 1/2026 (ESCO).",
-      "en": "The government sets PP 33/2023 and Energy Ministry Regs 8/2025 (energy management), 3/2025 (government agencies) and 1/2026 (ESCO)."
+      "en": "The government sets Gov. Reg. 33/2023 and Energy Ministry Regs 8/2025 (energy management), 3/2025 (government bodies) and 1/2026 (ESCOs)."
      },
      "pelaku": {
-      "id": "Kementerian ESDM",
-      "en": "Energy Ministry"
+      "id": "Direktorat Konservasi Energi, Badan Standardisasi Nasional, Kementerian Perindustrian",
+      "en": "Directorate of Energy Conservation, National Standardisation Agency, Ministry of Industry"
+     },
+     "peran": {
+      "id": "Direktorat Konservasi Energi, Badan Standardisasi Nasional, Kementerian Perindustrian",
+      "en": "Directorate of Energy Conservation, National Standardisation Agency, Ministry of Industry"
      }
     },
     {
@@ -542,25 +982,51 @@
      },
      "isi": {
       "id": "Hanya tujuh laboratorium uji tersedia untuk SKEM AC (ESDM, detikX 2024).",
-      "en": "Only seven test laboratories are available for AC SKEM (Energy Ministry, detikX 2024)."
+      "en": "Only seven test laboratories are available for AC MEPS (Energy Ministry, detikX 2024)."
      },
      "pelaku": {
-      "id": "Laboratorium uji, ESDM",
-      "en": "Test laboratories, Energy Ministry"
+      "id": "Laboratorium uji, balai pengujian ketenagalistrikan",
+      "en": "Test laboratories, electricity testing institute"
+     },
+     "peran": {
+      "id": "Laboratorium uji, balai pengujian ketenagalistrikan",
+      "en": "Test laboratories, electricity testing institute"
      }
     },
     {
      "judul": {
-      "id": "Produsen dan penjual",
-      "en": "Manufacturers and sellers"
+      "id": "Produsen dan importir",
+      "en": "Manufacturers and importers"
      },
      "isi": {
-      "id": "Mengedarkan produk berstiker; komponen kunci seperti kompresor masih diimpor.",
-      "en": "Sell labelled products; key components such as compressors are still imported."
+      "id": "Merancang dan mengedarkan produk berstiker; komponen kunci seperti kompresor masih diimpor.",
+      "en": "Design and sell labelled products; key components such as compressors are still imported."
      },
      "pelaku": {
-      "id": "Produsen, toko",
-      "en": "Manufacturers, shops"
+      "id": "Daikin, Polytron, dan produsen AC lain",
+      "en": "Daikin, Polytron and other AC makers"
+     },
+     "peran": {
+      "id": "Daikin, Polytron, dan produsen AC lain",
+      "en": "Daikin, Polytron and other AC makers"
+     }
+    },
+    {
+     "judul": {
+      "id": "Distribusi dan ritel",
+      "en": "Distribution and retail"
+     },
+     "isi": {
+      "id": "Menampilkan stiker label dan menjelaskannya ke pembeli; sosialisasi toko dinilai minim.",
+      "en": "Display the label sticker and explain it to buyers; shop outreach is rated minimal."
+     },
+     "pelaku": {
+      "id": "Toko elektronik, ritel daring",
+      "en": "Electronics shops, online retail"
+     },
+     "peran": {
+      "id": "Toko elektronik, ritel daring",
+      "en": "Electronics shops, online retail"
      }
     },
     {
@@ -569,26 +1035,70 @@
       "en": "Large energy users"
      },
      "isi": {
-      "id": "Manajer energi, audit, rekomendasi, pelaporan.",
-      "en": "Energy manager, audit, recommendations, reporting."
+      "id": "Manajer energi, program, audit, rekomendasi, pelaporan.",
+      "en": "Energy manager, programme, audit, recommendations, reporting."
      },
      "pelaku": {
+      "id": "Industri, bangunan, penyedia energi",
+      "en": "Industry, buildings, energy providers"
+     },
+     "peran": {
       "id": "Industri, bangunan, penyedia energi",
       "en": "Industry, buildings, energy providers"
      }
     },
     {
      "judul": {
-      "id": "Penyedia jasa",
-      "en": "Service providers"
+      "id": "Auditor dan lembaga sertifikasi",
+      "en": "Auditors and certifiers"
      },
      "isi": {
-      "id": "Auditor bersertifikat dan ESCO; Indonesia hanya mencatat 12 ESCO di situs pemerintah (IKI, 2026).",
-      "en": "Certified auditors and ESCOs; Indonesia lists only 12 ESCOs on the government website (IKI, 2026)."
+      "id": "Auditor energi bersertifikat, lembaga sertifikasi sistem manajemen, dan pemeriksa mutu.",
+      "en": "Certified energy auditors, management system certifiers and inspection bodies."
      },
      "pelaku": {
-      "id": "Auditor, ESCO",
-      "en": "Auditors, ESCOs"
+      "id": "PT Surveyor Indonesia, TUV NORD, DQS",
+      "en": "PT Surveyor Indonesia, TUV NORD, DQS"
+     },
+     "peran": {
+      "id": "PT Surveyor Indonesia, TUV NORD, DQS",
+      "en": "PT Surveyor Indonesia, TUV NORD, DQS"
+     }
+    },
+    {
+     "judul": {
+      "id": "ESCO dan pembiaya",
+      "en": "ESCOs and financiers"
+     },
+     "isi": {
+      "id": "Indonesia hanya mencatat 12 ESCO di situs pemerintah (IKI, 2026); pembiayaan proyek efisiensi sulit dari bank.",
+      "en": "Indonesia lists only 12 ESCOs on the government site (IKI, 2026); banks find efficiency projects hard to finance."
+     },
+     "pelaku": {
+      "id": "ESCO, IFC, lembaga keuangan",
+      "en": "ESCOs, IFC, financial institutions"
+     },
+     "peran": {
+      "id": "ESCO, IFC, lembaga keuangan",
+      "en": "ESCOs, IFC, financial institutions"
+     }
+    },
+    {
+     "judul": {
+      "id": "Pemantauan dan pelaporan",
+      "en": "Monitoring and reporting"
+     },
+     "isi": {
+      "id": "Entitas melapor ke pemerintah; pemerintah menghitung hemat nasional (10,42 juta SBM pada 2023).",
+      "en": "Entities report to government; government totals national savings (10.42 million BOE in 2023)."
+     },
+     "pelaku": {
+      "id": "Direktorat Konservasi Energi",
+      "en": "Directorate of Energy Conservation"
+     },
+     "peran": {
+      "id": "Direktorat Konservasi Energi",
+      "en": "Directorate of Energy Conservation"
      }
     }
    ]
@@ -720,13 +1230,22 @@
   },
   "9": {
    "tipe": "tabel",
-   "per": 8,
+   "per": 15,
    "sumber": [
     "kabar30",
     "mongabay",
     "detikx",
     "kompas60",
-    "esco"
+    "esco",
+    "direktori",
+    "iea_tr",
+    "iea_conv",
+    "esco",
+    "dqs",
+    "tuv",
+    "kompas60",
+    "detikx",
+    "mongabay"
    ],
    "kolom": [
     {
@@ -734,13 +1253,14 @@
      "l": {
       "id": "Pelaku",
       "en": "Actor"
-     }
+     },
+     "url": "url"
     },
     {
      "k": "peran",
      "l": {
-      "id": "Peran",
-      "en": "Role"
+      "id": "Peran di topik ini",
+      "en": "Role in this topic"
      }
     },
     {
@@ -749,6 +1269,15 @@
       "id": "Dasar",
       "en": "Basis"
      }
+    },
+    {
+     "k": "mw",
+     "l": {
+      "id": "Kapasitas proyek tercatat (MW)",
+      "en": "Recorded project capacity (MW)"
+     },
+     "num": true,
+     "d": 0
     }
    ],
    "baris": [
@@ -758,7 +1287,9 @@
       "id": "Penyusun SKEM, LTHE, dan aturan manajemen energi",
       "en": "Drafts SKEM, LTHE and energy management rules"
      },
-     "rujuk": "Mongabay, 30 Jun 2024; KabarBursa, 24 Apr 2026"
+     "rujuk": "Mongabay, 30 Jun 2024; KabarBursa, 24 Apr 2026",
+     "id": null,
+     "mw": null
     },
     {
      "nama": "Balai Besar Survei dan Pengujian Ketenagalistrikan, EBTKE dan Konservasi Energi",
@@ -766,7 +1297,9 @@
       "id": "Pengujian dan pelaporan hasil hemat",
       "en": "Testing and savings reporting"
      },
-     "rujuk": "Metro TV, 15 Mei 2024"
+     "rujuk": "Metro TV, 15 Mei 2024",
+     "id": null,
+     "mw": null
     },
     {
      "nama": "CLASP Asia Tenggara",
@@ -774,7 +1307,9 @@
       "id": "Lembaga riset efisiensi produk; survei kesadaran label",
       "en": "Product efficiency research; label awareness surveys"
      },
-     "rujuk": "detikX; Mongabay"
+     "rujuk": "detikX; Mongabay",
+     "id": null,
+     "mw": null
     },
     {
      "nama": "Green Building Council Indonesia (GBCI)",
@@ -782,7 +1317,9 @@
       "id": "Sertifikasi Greenship bangunan hijau",
       "en": "Greenship green building certification"
      },
-     "rujuk": "Kompas, 8 Mar 2023"
+     "rujuk": "Kompas, 8 Mar 2023",
+     "id": null,
+     "mw": null
     },
     {
      "nama": "YLKI",
@@ -790,7 +1327,9 @@
       "id": "Perlindungan konsumen; menekankan sosialisasi label",
       "en": "Consumer protection; stresses label outreach"
      },
-     "rujuk": "Mongabay"
+     "rujuk": "Mongabay",
+     "id": null,
+     "mw": null
     },
     {
      "nama": "GAPEL (asosiasi produsen elektronik)",
@@ -798,98 +1337,388 @@
       "id": "Mewakili produsen AC; menyebut biaya produksi lokal sekitar 20 persen lebih tinggi daripada impor",
       "en": "Represents AC makers; cites local production cost about 20 percent above imports"
      },
-     "rujuk": "detikX"
+     "rujuk": "detikX",
+     "id": null,
+     "mw": null
+    },
+    {
+     "nama": "Direktorat Konservasi Energi",
+     "id": "l_15bc6ff298",
+     "url": "/o/l_15bc6ff298",
+     "peran": {
+      "id": "Pembuat kebijakan konservasi energi; pelapor hasil manajemen energi 2023",
+      "en": "Energy conservation policy maker; reporter of 2023 energy management results"
+     },
+     "rujuk": "Siaran pers ESDM 9 Feb 2024",
+     "mw": null
+    },
+    {
+     "nama": "Direktorat Jenderal Energi Baru, Terbarukan dan Konservasi Energi",
+     "id": "l_38ba1d6f56",
+     "url": "/o/l_38ba1d6f56",
+     "peran": {
+      "id": "Ditjen induk Direktorat Konservasi Energi",
+      "en": "Parent directorate general of the Directorate of Energy Conservation"
+     },
+     "rujuk": "Direktori METI",
+     "mw": null
+    },
+    {
+     "nama": "Badan Standardisasi Nasional",
+     "id": "l_e0b79e0beb",
+     "url": "/o/l_e0b79e0beb",
+     "peran": {
+      "id": "Menetapkan SNI untuk peralatan dan bangunan, dasar standar kinerja energi",
+      "en": "Sets SNI standards for equipment and buildings, the base of energy performance standards"
+     },
+     "rujuk": "Direktori METI",
+     "mw": null
+    },
+    {
+     "nama": "PT Surveyor Indonesia (ID Survey)",
+     "id": "p_039ffe3689",
+     "url": "/o/p_039ffe3689",
+     "peran": {
+      "id": "BUMN pengujian dan inspeksi; tercatat berkepakaran efisiensi",
+      "en": "State-owned testing and inspection company; listed with efficiency expertise"
+     },
+     "rujuk": "Direktori METI",
+     "mw": null
+    },
+    {
+     "nama": "PT PLN Icon Plus",
+     "id": "p_e0f3886341",
+     "url": "/o/p_e0f3886341",
+     "peran": {
+      "id": "Anak usaha PLN berkepakaran jaringan dan efisiensi",
+      "en": "PLN subsidiary with grid and efficiency expertise"
+     },
+     "rujuk": "Direktori METI",
+     "mw": null
+    },
+    {
+     "nama": "International Finance Corporation",
+     "id": "in_2acc58947a",
+     "url": "/o/in_2acc58947a",
+     "peran": {
+      "id": "Lembaga pembiayaan swasta Bank Dunia; calon pembiaya proyek efisiensi",
+      "en": "World Bank private-sector arm; possible financier of efficiency projects"
+     },
+     "rujuk": "Direktori METI",
+     "mw": null
+    },
+    {
+     "nama": "Giz",
+     "id": "in_4227ab3084",
+     "url": "/o/in_4227ab3084",
+     "peran": {
+      "id": "Mitra teknis Kementerian ESDM yang menargetkan efisiensi menyumbang 37 persen penurunan emisi sektor energi",
+      "en": "Technical partner of the Energy Ministry targeting efficiency to deliver 37 percent of energy-sector emission cuts"
+     },
+     "rujuk": "Judul GIZ via naskah",
+     "mw": null
+    },
+    {
+     "nama": "Kamar Dagang dan Industri Indonesia (Komite Tetap Energi Baru Terbarukan)",
+     "id": "l_2f86ba4616",
+     "url": "/o/l_2f86ba4616",
+     "peran": {
+      "id": "Wadah pengusaha untuk advokasi kebijakan energi, termasuk pembiayaan",
+      "en": "Business forum for energy policy advocacy, including financing"
+     },
+     "rujuk": "Direktori METI",
+     "mw": null
+    },
+    {
+     "nama": "Asosiasi Produsen Listrik Swasta Indonesia",
+     "id": "l_06d49428ac",
+     "url": "/o/l_06d49428ac",
+     "peran": {
+      "id": "Asosiasi pembangkit swasta; pihak yang merasakan permintaan listrik turun lewat efisiensi",
+      "en": "Private power association; affected by lower demand through efficiency"
+     },
+     "rujuk": "Direktori METI",
+     "mw": null
+    },
+    {
+     "nama": "Daikin",
+     "peran": {
+      "id": "Produsen AC; disebut berpandangan bintang lebih tinggi tidak mungkin lebih murah",
+      "en": "Air conditioner maker; said to hold that higher stars cannot be cheaper"
+     },
+     "rujuk": "Mongabay, 30 Jun 2024",
+     "id": null,
+     "mw": null
+    },
+    {
+     "nama": "Polytron",
+     "peran": {
+      "id": "Produsen elektronik lokal; menyebut AC inverter bintang 4 lebih mahal 35 sampai 60 persen",
+      "en": "Local electronics maker; says 4-star inverter ACs cost 35 to 60 percent more"
+     },
+     "rujuk": "detikX, 1 Jul 2024",
+     "id": null,
+     "mw": null
+    },
+    {
+     "nama": "CLASP",
+     "peran": {
+      "id": "Lembaga advokasi standar dan label peralatan; berpandangan efisiensi lebih penting daripada harga bagi pembeli AC di luar Papua",
+      "en": "Advocacy body for appliance standards and labels; holds that efficiency outranks price for AC buyers outside Papua"
+     },
+     "rujuk": "detikX, 1 Jul 2024",
+     "id": null,
+     "mw": null
+    },
+    {
+     "nama": "Internationale Klimaschutzinitiative (IKI)",
+     "peran": {
+      "id": "Penerbit policy brief pasar ESCO ASEAN (Mar 2026)",
+      "en": "Publisher of the ASEAN ESCO market policy brief (Mar 2026)"
+     },
+     "rujuk": "IKI, Mar 2026",
+     "id": null,
+     "mw": null
+    },
+    {
+     "nama": "TUV NORD Indonesia",
+     "peran": {
+      "id": "Penerbit whitepaper audit energi dan sistem manajemen energi",
+      "en": "Publisher of the energy audit and management system whitepaper"
+     },
+     "rujuk": "TUV NORD",
+     "id": null,
+     "mw": null
+    },
+    {
+     "nama": "DQS Indonesia",
+     "peran": {
+      "id": "Penerbit ringkasan Permen ESDM 8/2025",
+      "en": "Publisher of the Energy Ministry Reg. 8/2025 summary"
+     },
+     "rujuk": "DQS Indonesia",
+     "id": null,
+     "mw": null
+    },
+    {
+     "nama": "Green Building Council Indonesia",
+     "peran": {
+      "id": "Penyelenggara sertifikasi Greenship; 60 bangunan bersertifikat hingga 2022",
+      "en": "Operator of Greenship certification; 60 certified buildings by 2022"
+     },
+     "rujuk": "Kompas, 8 Mar 2023",
+     "id": null,
+     "mw": null
+    },
+    {
+     "nama": "Pemerintah Kota Surabaya",
+     "peran": {
+      "id": "Mitra studi dasar energi 295 bangunan (SETI)",
+      "en": "Partner of the baseline energy study of 295 buildings (SETI)"
+     },
+     "rujuk": "Laporan ASEAN ESCO",
+     "id": null,
+     "mw": null
+    },
+    {
+     "nama": "Energy Conservation Center Japan (ECCJ)",
+     "peran": {
+      "id": "Pelaksana Top Runner Jepang; pembanding luar negeri",
+      "en": "Implementer of Japan's Top Runner; foreign comparison"
+     },
+     "rujuk": "ECCJ",
+     "id": null,
+     "mw": null
+    },
+    {
+     "nama": "Badan Energi Internasional (IEA)",
+     "peran": {
+      "id": "Penerbit deskripsi Top Runner dan definisi TOE",
+      "en": "Publisher of the Top Runner description and the TOE definition"
+     },
+     "rujuk": "IEA",
+     "id": null,
+     "mw": null
     }
-   ]
+   ],
+   "catatan": {
+    "id": "Tautan nama mengarah ke profil di direktori METI bila organisasinya tercatat; pelaku tanpa tautan belum ada di direktori dan dicatat dari sumber di kolom Dasar.",
+    "en": "Names link to the METI directory profile when the organisation is listed; actors without a link are not yet in the directory and are noted from the source in the Basis column."
+   }
   },
   "10": {
    "tipe": "tabel",
-   "per": 8,
+   "per": 15,
    "sumber": [
     "ac",
     "kompas7",
     "mgmt",
     "esco",
-    "kompas60"
+    "kompas60",
+    "wbp"
    ],
    "kolom": [
     {
      "k": "nama",
      "l": {
-      "id": "Program",
-      "en": "Programme"
+      "id": "Proyek",
+      "en": "Project"
+     },
+     "url": "url"
+    },
+    {
+     "k": "wilayah",
+     "l": {
+      "id": "Wilayah",
+      "en": "Region"
      }
     },
     {
-     "k": "rinci",
+     "k": "ukuran",
      "l": {
-      "id": "Rincian menurut sumber",
-      "en": "Detail per source"
+      "id": "Ukuran",
+      "en": "Size"
      }
     },
     {
      "k": "status",
      "l": {
-      "id": "Status",
-      "en": "Status"
+      "id": "Status menurut sumber",
+      "en": "Status per source"
+     }
+    },
+    {
+     "k": "sumber",
+     "l": {
+      "id": "Dasar",
+      "en": "Basis"
      }
     }
    ],
    "baris": [
     {
      "nama": "SKEM dan LTHE untuk AC",
-     "rinci": {
+     "wilayah": "-",
+     "ukuran": {
       "id": "Sejak Permen ESDM 7/2015; nilai diperbarui; hemat Rp3,76 triliun, 2,6 TWh, dan 2,4 juta ton CO2 pada 2021 sampai semester I 2023 (klaim ESDM)",
       "en": "Since Energy Ministry Reg. 7/2015; values updated; saved IDR 3.76 trillion, 2.6 TWh and 2.4 million tonnes of CO2 in 2021 to H1 2023 (ministry claim)"
      },
      "status": {
       "id": "Berjalan",
       "en": "Running"
-     }
+     },
+     "sumber": "-",
+     "id": null
     },
     {
      "nama": "SKEM dan LTHE tujuh produk",
-     "rinci": {
+     "wilayah": "-",
+     "ukuran": {
       "id": "AC, penanak nasi, kipas angin, kulkas, lampu LED, televisi, showcase",
       "en": "Air conditioners, rice cookers, fans, refrigerators, LED lamps, televisions, display coolers"
      },
      "status": {
       "id": "Wajib sejak 2024 menurut Kompas",
       "en": "Mandatory in 2024 per Kompas"
-     }
+     },
+     "sumber": "-",
+     "id": null
     },
     {
      "nama": "Manajemen energi PP 33/2023",
-     "rinci": {
+     "wilayah": "-",
+     "ukuran": {
       "id": "410 entitas melapor 2023, hemat 10,42 juta SBM",
       "en": "410 entities reported in 2023, saving 10.42 million BOE"
      },
      "status": {
       "id": "Berjalan",
       "en": "Running"
-     }
+     },
+     "sumber": "-",
+     "id": null
     },
     {
      "nama": "Studi dasar energi gedung Surabaya (SETI)",
-     "rinci": {
+     "wilayah": "-",
+     "ukuran": {
       "id": "Studi dasar pada 295 bangunan bersama Pemkot Surabaya (ringkasan hasil pencarian atas laporan ASEAN ESCO)",
       "en": "Baseline study on 295 buildings with the Surabaya City Government (search summary of an ASEAN ESCO report)"
      },
      "status": {
       "id": "Studi",
       "en": "Study"
-     }
+     },
+     "sumber": "-",
+     "id": null
     },
     {
      "nama": "Sertifikasi bangunan hijau Greenship",
-     "rinci": {
+     "wilayah": "-",
+     "ukuran": {
       "id": "60 bangunan bersertifikat hingga 2022: 22 platinum, 35 gold, 3 silver",
       "en": "60 certified buildings to 2022: 22 platinum, 35 gold, 3 silver"
      },
      "status": {
       "id": "Sukarela",
       "en": "Voluntary"
-     }
+     },
+     "sumber": "-",
+     "id": null
+    },
+    {
+     "nama": "Power Sector Efficiency Project",
+     "id": "wb_P003920",
+     "url": "/proyek#wb_P003920",
+     "wilayah": {
+      "id": "Indonesia",
+      "en": "Indonesia"
+     },
+     "ukuran": {
+      "id": "USD 337 juta (komitmen Bank Dunia)",
+      "en": "USD 337 million (World Bank commitment)"
+     },
+     "status": {
+      "id": "Ditutup 1995 (disetujui 1989)",
+      "en": "Closed 1995 (approved 1989)"
+     },
+     "sumber": "Bank Dunia, via direktori METI"
+    },
+    {
+     "nama": "ID - Chiller Energy Efficiency Project",
+     "id": "wb_P121003",
+     "url": "/proyek#wb_P121003",
+     "wilayah": {
+      "id": "Indonesia",
+      "en": "Indonesia"
+     },
+     "ukuran": {
+      "id": "tanpa komitmen tercatat",
+      "en": "no commitment recorded"
+     },
+     "status": {
+      "id": "Dibatalkan (status Bank Dunia: Dropped)",
+      "en": "Dropped (World Bank status)"
+     },
+     "sumber": "Bank Dunia, via direktori METI"
+    },
+    {
+     "nama": "Indonesia Grid and Renewable Energy Financing Facility (GREFI)",
+     "id": "wb_P178788",
+     "url": "/proyek#wb_P178788",
+     "wilayah": {
+      "id": "Indonesia",
+      "en": "Indonesia"
+     },
+     "ukuran": {
+      "id": "USD 750 juta (komitmen Bank Dunia)",
+      "en": "USD 750 million (World Bank commitment)"
+     },
+     "status": {
+      "id": "Dalam pipeline; fasilitas pembiayaan jaringan dan energi terbarukan",
+      "en": "In the pipeline; grid and renewable energy financing facility"
+     },
+     "sumber": "Bank Dunia, via direktori METI"
     }
    ]
   },
@@ -897,7 +1726,8 @@
    "tipe": "teks",
    "sumber": [
     "detikx",
-    "esco"
+    "esco",
+    "statpln"
    ],
    "paragraf": [
     {
@@ -907,14 +1737,36 @@
     {
      "id": "Pasar ESCO kecil: 12 ESCO terdaftar di situs pemerintah, tiga proyek ESCO baru menurut jaringan ESCO global, dan sebagian terdaftar tidak aktif (IKI, Mar 2026).",
      "en": "The ESCO market is small: 12 ESCOs listed on the government site, three new ESCO projects per the global ESCO network, and some listed firms inactive (IKI, Mar 2026)."
+    },
+    {
+     "id": "Kapasitas terpasang seluruh pengusaha (PLN dan nonPLN) 2024: 100.647 MW, jumlah 38 provinsi (EST; Statistik Ketenagalistrikan 2024).",
+     "en": "Installed capacity of all operators (PLN and non-PLN) in 2024: 100,647 MW, the sum of 38 provinces (EST; Electricity Statistics 2024)."
+    },
+    {
+     "id": "Komposisi: kategori PLTU/MT 54.340 MW (54 persen); hidro, panas bumi, surya, bayu, dan bio 13.857 MW (13,8 persen) (EST).",
+     "en": "Mix: the PLTU/MT category 54,340 MW (54 percent); hydro, geothermal, solar, wind and bio 13,857 MW (13.8 percent) (EST)."
+    },
+    {
+     "id": "Rumah tangga berlistrik (PLN dan nonPLN) 2024: 85.995.030 rumah tangga, jumlah 38 provinsi (EST).",
+     "en": "Electrified households (PLN and non-PLN) in 2024: 85,995,030 households, the sum of 38 provinces (EST)."
+    },
+    {
+     "id": "Rasio elektrifikasi 2024 terendah Papua Pegunungan (94,02 persen) dan tertinggi Bali (100 persen).",
+     "en": "The 2024 electrification ratio was lowest in Papua Pegunungan (94.02 percent) and highest in Bali (100 percent)."
     }
    ]
   },
   "12": {
    "tipe": "tabel",
-   "per": 8,
+   "per": 10,
    "sumber": [
-    "ed"
+    "ed",
+    "pp70",
+    "pm3",
+    "pm1",
+    "pda5",
+    "pm14",
+    "pm9"
    ],
    "kolom": [
     {
@@ -964,7 +1816,8 @@
       "id": "Konservasi energi: manajemen energi, standar dan label, sanksi (basis regulasi METI).",
       "en": "Energy conservation: energy management, standards and labels, sanctions (METI regulation base)."
      },
-     "url": "https://peraturan.bpk.go.id/Details/252083"
+     "url": "https://peraturan.bpk.go.id/Details/252083",
+     "id": "pp-33-2023"
     },
     {
      "nama": "PP 40/2025",
@@ -975,7 +1828,8 @@
       "id": "Kebijakan Energi Nasional 2025; kerangka target efisiensi dan bauran.",
       "en": "National Energy Policy 2025; framework for efficiency and mix targets."
      },
-     "url": "https://peraturan.bpk.go.id/Details/328789"
+     "url": "https://peraturan.bpk.go.id/Details/328789",
+     "id": "pp-40-2025"
     },
     {
      "nama": "Perpres 22/2017",
@@ -986,7 +1840,8 @@
       "id": "RUEN; target intensitas energi dalam rencana umum.",
       "en": "RUEN; energy intensity target within the general plan."
      },
-     "url": "https://peraturan.bpk.go.id/Details/68772"
+     "url": "https://peraturan.bpk.go.id/Details/68772",
+     "id": "perpres-22-2017"
     },
     {
      "nama": "Keppres 43/1991",
@@ -997,7 +1852,8 @@
       "id": "Konservasi energi (dasar historis).",
       "en": "Energy conservation (historical basis)."
      },
-     "url": "https://peraturan.bpk.go.id/Details/63769"
+     "url": "https://peraturan.bpk.go.id/Details/63769",
+     "id": "keppres-43-1991"
     },
     {
      "nama": "Inpres 9/1982",
@@ -1008,7 +1864,80 @@
       "id": "Konservasi energi (dasar historis).",
       "en": "Energy conservation (historical basis)."
      },
-     "url": "https://peraturan.bpk.go.id/Details/287087"
+     "url": "https://peraturan.bpk.go.id/Details/287087",
+     "id": "inpres-9-1982"
+    },
+    {
+     "nama": "Permen 3/2025",
+     "judul": "Konservasi Energi Oleh Pemerintah dan Pemerintah Daerah",
+     "status": "berlaku",
+     "tanggal": "2025-01-23",
+     "ringkas": {
+      "id": "Konservasi energi oleh pemerintah dan pemerintah daerah.",
+      "en": "Energy conservation by central and regional government."
+     },
+     "url": "https://peraturan.bpk.go.id/Details/317655",
+     "id": "permen-esdm-3-2025"
+    },
+    {
+     "nama": "Permen 1/2026",
+     "judul": "Usaha Jasa Konservasi Energi",
+     "status": "berlaku",
+     "tanggal": "2026-01-05",
+     "ringkas": {
+      "id": "Usaha jasa konservasi energi (ESCO).",
+      "en": "The energy conservation services (ESCO) business."
+     },
+     "url": "https://peraturan.bpk.go.id/Details/350156",
+     "id": "permen-esdm-1-2026"
+    },
+    {
+     "nama": "Perda 5/2026",
+     "judul": "Efisiensi Energi Dan Air Pada Bangunan Gedung",
+     "status": "berlaku",
+     "tanggal": "2026-02-05",
+     "ringkas": {
+      "id": "Peraturan daerah efisiensi energi dan air pada bangunan gedung (ditetapkan 5 Feb 2026).",
+      "en": "Regional regulation on energy and water efficiency in buildings (enacted 5 Feb 2026)."
+     },
+     "url": "https://peraturan.bpk.go.id/Details/345755",
+     "id": "perda-b345755-5-2026"
+    },
+    {
+     "nama": "PP 70/2009",
+     "judul": "Konservasi Energi",
+     "status": "dicabut",
+     "tanggal": "2009-11-16",
+     "ringkas": {
+      "id": "Peraturan konservasi energi lama; dicabut oleh PP 33/2023.",
+      "en": "The former energy conservation regulation; revoked by Gov. Reg. 33/2023."
+     },
+     "url": "https://peraturan.bpk.go.id/Details/4996",
+     "id": "pp-70-2009"
+    },
+    {
+     "nama": "Permen 14/2016",
+     "judul": "Permen ESDM No. 14 Tahun 2016 tentang Penyelenggaraan Usaha Jasa Konservasi Energi",
+     "status": "dicabut",
+     "tanggal": "2016-05-27",
+     "ringkas": {
+      "id": "Penyelenggaraan usaha jasa konservasi energi; dicabut.",
+      "en": "Conduct of the energy conservation services business; revoked."
+     },
+     "url": "https://peraturan.bpk.go.id/Details/142565",
+     "id": "permen-esdm-14-2016"
+    },
+    {
+     "nama": "Permen 9/2018",
+     "judul": "Permen ESDM No. 9 Tahun 2018 tentang Pencabutan Peraturan Menteri Energi Dan Sumber Daya Mineral Terkait Kegiatan Di ...",
+     "status": "berlaku",
+     "tanggal": "2018-02-05",
+     "ringkas": {
+      "id": "Pencabutan sejumlah Permen ESDM sektor efisiensi dan energi baru.",
+      "en": "Revocation of several Energy Ministry regulations in efficiency and new energy."
+     },
+     "url": "https://peraturan.bpk.go.id/Details/142560",
+     "id": "permen-esdm-9-2018"
     }
    ],
    "catatan": {
@@ -1025,7 +1954,13 @@
     "kabar30",
     "kompas60",
     "metro331",
-    "ed"
+    "ed",
+    "pm3",
+    "pm1",
+    "pda5",
+    "pp70",
+    "pm14",
+    "pm9"
    ],
    "butir": [
     {
@@ -1035,6 +1970,37 @@
       "en": "Presidential Instruction 9/1982 on energy conservation (exact date not in the base; year 1982)"
      },
      "url": "https://peraturan.bpk.go.id/Details/287087"
+    },
+    {
+     "tanggal": "2009-11-16",
+     "judul": {
+      "id": "PP 70/2009 tentang konservasi energi",
+      "en": "Gov. Reg. 70/2009 on energy conservation"
+     },
+     "url": "https://peraturan.bpk.go.id/Details/4996"
+    },
+    {
+     "tanggal": "2016-05-27",
+     "judul": {
+      "id": "Permen ESDM 14/2016 tentang usaha jasa konservasi energi",
+      "en": "Energy Ministry Reg. 14/2016 on the energy conservation services business"
+     },
+     "url": "https://peraturan.bpk.go.id/Details/142565"
+    },
+    {
+     "tanggal": "2018-02-05",
+     "judul": {
+      "id": "Permen ESDM 9/2018 mencabut sejumlah aturan",
+      "en": "Energy Ministry Reg. 9/2018 revokes several rules"
+     },
+     "url": "https://peraturan.bpk.go.id/Details/142560"
+    },
+    {
+     "tanggal": "2022-12-31",
+     "judul": {
+      "id": "Batas tahun jumlah bangunan bersertifikat Greenship: 60 bangunan (22 platinum, 35 gold, 3 silver)",
+      "en": "Cut-off year for certified Greenship buildings: 60 (22 platinum, 35 gold, 3 silver)"
+     }
     },
     {
      "tanggal": "2023-06-16",
@@ -1051,6 +2017,13 @@
       "en": "Energy Minister decree raises AC SKEM to a minimum CSPF of 3.4 (Listrik Indonesia)"
      },
      "url": "https://listrikindonesia.com/detail/11935/indonesia-hemat-rp-376-triliun-tagihan-listrik-berkat-kebijakan-efisiensi-ac"
+    },
+    {
+     "tanggal": "2023-11-20",
+     "judul": {
+      "id": "ESDM melaporkan hemat Rp3,76 triliun tagihan listrik berkat kebijakan efisiensi AC",
+      "en": "The Energy Ministry reports IDR 3.76 trillion of electricity bills saved through AC efficiency policy"
+     }
     },
     {
      "tanggal": "2024-02-09",
@@ -1077,6 +2050,22 @@
      "url": "https://news.detik.com/x/detail/spotlight/20240701/Jalan-Terjal-Menuju-Pasar-AC-Efisien/"
     },
     {
+     "tanggal": "2025-01-23",
+     "judul": {
+      "id": "Permen ESDM 3/2025 konservasi energi instansi pemerintah",
+      "en": "Energy Ministry Reg. 3/2025 on energy conservation in government bodies"
+     },
+     "url": "https://peraturan.bpk.go.id/Details/317655"
+    },
+    {
+     "tanggal": "2026-01-05",
+     "judul": {
+      "id": "Permen ESDM 1/2026 usaha jasa konservasi energi",
+      "en": "Energy Ministry Reg. 1/2026 on the energy conservation services business"
+     },
+     "url": "https://peraturan.bpk.go.id/Details/350156"
+    },
+    {
      "tanggal": "2026-04-24",
      "judul": {
       "id": "Efisiensi disebut telah menekan 30 juta ton CO2 hingga awal 2026",
@@ -1093,7 +2082,11 @@
     "tuv",
     "metro331",
     "dqs",
-    "kabar30"
+    "kabar30",
+    "pm3",
+    "pm1",
+    "pda5",
+    "direktori"
    ],
    "paragraf": [
     {
@@ -1107,34 +2100,60 @@
     {
      "id": "Sanksi: TUV NORD menyebut sanksi administratif, sedangkan pejabat ESDM pada 15 Mei 2024 menyatakan belum ada sanksi. Pertentangan ini belum terselesaikan di sumber.",
      "en": "Sanctions: TUV NORD cites administrative sanctions, while an Energy Ministry official said on 15 May 2024 there were none yet. The sources leave this unresolved."
+    },
+    {
+     "id": "Kewajiban instansi pemerintah: Permen ESDM 3/2025 mengatur konservasi energi oleh pemerintah dan pemerintah daerah (judul regulasi); mulai dari penetapan penanggung jawab hingga pelaporan dibaca pada naskahnya.",
+     "en": "Duty of government bodies: Energy Ministry Reg. 3/2025 governs energy conservation by central and regional government (regulation title); from naming a responsible officer to reporting, read the text."
+    },
+    {
+     "id": "Kewajiban bangunan gedung: Perda 5/2026 menetapkan efisiensi energi dan air pada bangunan gedung di wilayah penetapnya (judul regulasi di repo).",
+     "en": "Duty for buildings: Regional Regulation 5/2026 sets energy and water efficiency in buildings in its jurisdiction (regulation title in the repo)."
+    },
+    {
+     "id": "Kewajiban penyedia jasa: usaha jasa konservasi energi tunduk pada Permen ESDM 1/2026 (judul regulasi).",
+     "en": "Duty of service providers: the energy conservation services business is subject to Energy Ministry Reg. 1/2026 (regulation title)."
+    },
+    {
+     "id": "Insentif: skema hibah dan pinjaman lunak yang tercatat di direktori pendanaan (GEF, KfW, GCF, JICA) ada di bab Pembiayaan; insentif fiskal umum seperti bea masuk mesin dan tax holiday juga tercatat di sana.",
+     "en": "Incentives: grant and soft-loan schemes in the funding directory (GEF, KfW, GCF, JICA) are in the Financing chapter; general fiscal incentives such as machinery duty exemption and tax holiday are also listed there."
+    },
+    {
+     "id": "Insentif nonfiskal: label dan sertifikasi (SKEM, LTHE, Greenship) sebagai sinyal pasar; Greenship bersifat sukarela.",
+     "en": "Non-fiscal incentive: labels and certification (MEPS, energy label, Greenship) as market signals; Greenship is voluntary."
     }
    ]
   },
   "15": {
    "tipe": "langkah",
    "sumber": [
-    "mgmt",
-    "tuv"
+    "ed",
+    "pp33",
+    "pm1",
+    "detikx"
    ],
    "butir": [
     {
      "judul": {
-      "id": "Hitung konsumsi",
-      "en": "Measure consumption"
+      "id": "1. Hitung konsumsi tahunan",
+      "en": "1. Measure annual consumption"
      },
      "isi": {
-      "id": "Bandingkan konsumsi tahunan dengan ambang TOE sektor Anda.",
-      "en": "Compare annual consumption with your sector's TOE threshold."
+      "id": "Bandingkan konsumsi tahunan dengan ambang TOE sektor Anda (500 bangunan, 4.000 industri dan transportasi, 6.000 penyedia energi).",
+      "en": "Compare annual consumption with your sector's TOE threshold (500 buildings, 4,000 industry and transport, 6,000 energy providers)."
      },
      "pelaku": {
+      "id": "Pengguna energi",
+      "en": "Energy user"
+     },
+     "peran": {
       "id": "Pengguna energi",
       "en": "Energy user"
      }
     },
     {
      "judul": {
-      "id": "Tunjuk manajer energi",
-      "en": "Appoint an energy manager"
+      "id": "2. Tunjuk manajer energi",
+      "en": "2. Appoint an energy manager"
      },
      "isi": {
       "id": "Manajer energi harus bersertifikat.",
@@ -1143,12 +2162,16 @@
      "pelaku": {
       "id": "Pengguna energi",
       "en": "Energy user"
+     },
+     "peran": {
+      "id": "Pengguna energi",
+      "en": "Energy user"
      }
     },
     {
      "judul": {
-      "id": "Susun program konservasi",
-      "en": "Draw up a conservation programme"
+      "id": "3. Susun program konservasi",
+      "en": "3. Draw up a conservation programme"
      },
      "isi": {
       "id": "Program memuat sasaran dan tindakan.",
@@ -1157,43 +2180,114 @@
      "pelaku": {
       "id": "Manajer energi",
       "en": "Energy manager"
+     },
+     "peran": {
+      "id": "Manajer energi",
+      "en": "Energy manager"
      }
     },
     {
      "judul": {
-      "id": "Audit energi",
-      "en": "Energy audit"
+      "id": "4. Audit energi",
+      "en": "4. Energy audit"
      },
      "isi": {
-      "id": "Dilakukan auditor energi bersertifikat.",
-      "en": "Done by a certified energy auditor."
+      "id": "Dilakukan auditor energi bersertifikat; audit awal lalu rinci.",
+      "en": "Done by a certified energy auditor; preliminary then detailed."
      },
      "pelaku": {
+      "id": "Auditor",
+      "en": "Auditor"
+     },
+     "peran": {
       "id": "Auditor",
       "en": "Auditor"
      }
     },
     {
      "judul": {
-      "id": "Jalankan rekomendasi dan lapor",
-      "en": "Implement recommendations and report"
+      "id": "5. Jalankan rekomendasi",
+      "en": "5. Implement recommendations"
+     },
+     "isi": {
+      "id": "Prioritaskan yang payback pendek; libatkan ESCO bila modal terbatas.",
+      "en": "Prioritise short-payback measures; involve an ESCO when capital is limited."
+     },
+     "pelaku": {
+      "id": "Pengguna energi, ESCO",
+      "en": "Energy user, ESCO"
+     },
+     "peran": {
+      "id": "Pengguna energi, ESCO",
+      "en": "Energy user, ESCO"
+     }
+    },
+    {
+     "judul": {
+      "id": "6. Lapor",
+      "en": "6. Report"
      },
      "isi": {
       "id": "Laporan pelaksanaan manajemen energi disampaikan ke pemerintah; 410 entitas melapor untuk 2023.",
-      "en": "The energy management report goes to government; 410 entities reported for 2023."
+      "en": "The energy management implementation report goes to government; 410 entities reported for 2023."
      },
      "pelaku": {
       "id": "Pengguna energi",
       "en": "Energy user"
+     },
+     "peran": {
+      "id": "Pengguna energi",
+      "en": "Energy user"
+     }
+    },
+    {
+     "judul": {
+      "id": "7. Jalur produk: uji dan daftar",
+      "en": "7. Product path: test and register"
+     },
+     "isi": {
+      "id": "Produsen menguji produk di laboratorium uji (tujuh laboratorium untuk AC) lalu mendaftarkan nilai SKEM.",
+      "en": "Makers test products in a laboratory (seven for ACs) then register the MEPS value."
+     },
+     "pelaku": {
+      "id": "Produsen, laboratorium",
+      "en": "Manufacturers, laboratories"
+     },
+     "peran": {
+      "id": "Produsen, laboratorium",
+      "en": "Manufacturers, laboratories"
+     }
+    },
+    {
+     "judul": {
+      "id": "8. Jalur produk: label dan edar",
+      "en": "8. Product path: label and sell"
+     },
+     "isi": {
+      "id": "Memasang stiker LTHE pada produk wajib (tujuh produk pada 2024) dan memajangnya di toko.",
+      "en": "Affix the energy label sticker on mandatory products (seven in 2024) and display it in shops."
+     },
+     "pelaku": {
+      "id": "Produsen, ritel",
+      "en": "Manufacturers, retailers"
+     },
+     "peran": {
+      "id": "Produsen, ritel",
+      "en": "Manufacturers, retailers"
      }
     }
-   ]
+   ],
+   "catatan": {
+    "id": "Lama dan biaya tiap langkah tidak ditemukan di sumber yang dibaca; sengaja tidak diisi.",
+    "en": "The duration and cost of each step were not found in the sources read; deliberately left blank."
+   }
   },
   "17": {
    "tipe": "teks",
    "sumber": [
     "iea_tr",
-    "meti_jp"
+    "meti_jp",
+    "ed"
    ],
    "paragraf": [
     {
@@ -1203,11 +2297,153 @@
     {
      "id": "Produk yang tercakup menyumbang lebih dari 70 persen listrik rumah tangga Jepang (IEA). Perbaikan AC non-saluran 32,3 persen pada FY1997 sampai FY2007 menurut lembar METI Jepang.",
      "en": "Covered products account for more than 70 percent of Japanese household electricity (IEA). Non-ducted AC improved 32.3 percent from FY1997 to FY2007 per a Japanese METI sheet."
+    },
+    {
+     "id": "Pompa kalor (heat pump) memberi COP di atas satu untuk pemanasan dan pendinginan; di iklim tropis dipakai untuk air panas dan pengering industri (ringkasan editorial METI, tanpa angka).",
+     "en": "Heat pumps deliver a COP above one for heating and cooling; in tropical climates they serve hot water and industrial drying (METI editorial summary, no figures)."
+    },
+    {
+     "id": "AC inverter dan sistem VRF mengatur kecepatan kompresor sesuai beban sehingga lebih hemat daripada AC on-off; ini menjadi dasar SKEM AC memakai CSPF.",
+     "en": "Inverter air conditioners and VRF systems adjust compressor speed to load, saving more than on-off units; this is why the AC MEPS uses CSPF."
+    },
+    {
+     "id": "LED, motor kelas IE3 ke atas, dan pengatur kecepatan (VSD) pada pompa dan kipas adalah peralatan efisiensi dengan payback terpendek di industri dan gedung.",
+     "en": "LEDs, motors of IE3 class or higher and variable speed drives on pumps and fans are the shortest-payback efficiency equipment in industry and buildings."
+    },
+    {
+     "id": "Penyimpanan termal berbasis bahan perubah fase (PCM) menggeser beban pendingin dari jam puncak; Universitas Diponegoro mengembangkan cold storage PCM bersama PT Dewa Salju Nusantara (purwarupa 2025).",
+     "en": "Thermal storage with phase-change material (PCM) shifts cooling load from peak hours; Diponegoro University is developing PCM cold storage with PT Dewa Salju Nusantara (prototype 2025)."
+    },
+    {
+     "id": "Kogenerasi dan pemanfaatan panas sisa: IPB University memperkenalkan konsep CHPP yang mengubah panas sisa industri menjadi listrik dan biochar (2026).",
+     "en": "Cogeneration and waste-heat use: IPB University introduced the CHPP concept turning industrial waste heat into electricity and biochar (2026)."
+    },
+    {
+     "id": "Pemantauan beban digital (meter pintar, IoT, sistem manajemen bangunan) menjadi dasar M&V dan manajemen energi berbasis data. Tingkat kematangan (TRL) dan biaya tidak dikutip karena tidak ada sumber tunggal yang dibaca.",
+     "en": "Digital load monitoring (smart meters, IoT, building management systems) underpins M&V and data-driven energy management. TRL and cost are not quoted as no single source was read."
     }
    ],
    "catatan": {
     "id": "Tingkat kematangan teknologi (TRL) tidak relevan untuk kebijakan standar; bab ini memakai desain program sebagai pembanding.",
     "en": "Technology readiness (TRL) is not relevant for standards policy; this chapter uses programme design as the comparison."
+   }
+  },
+  "18": {
+   "tipe": "tabel",
+   "per": 10,
+   "sumber": [
+    "direktori"
+   ],
+   "kolom": [
+    {
+     "k": "judul",
+     "l": {
+      "id": "Karya",
+      "en": "Work"
+     },
+     "url": "url"
+    },
+    {
+     "k": "penulis",
+     "l": {
+      "id": "Penulis",
+      "en": "Authors"
+     }
+    },
+    {
+     "k": "jurnal",
+     "l": {
+      "id": "Jurnal (tahun)",
+      "en": "Journal (year)"
+     }
+    },
+    {
+     "k": "sitasi",
+     "l": {
+      "id": "Sitasi",
+      "en": "Citations"
+     },
+     "num": true,
+     "d": 0
+    }
+   ],
+   "baris": [
+    {
+     "judul": "Cold storage hemat energi berbasis PCM",
+     "id": "in_cold_storage_pcm_undip",
+     "url": "https://undip.ac.id/post/51921/undip-kembangkan-cold-storage-hemat-energi-berbasis-pcm-dukung-ketersediaan-pangan-berkelanjutan.html",
+     "penulis": "Universitas Diponegoro",
+     "jurnal": "purwarupa (2025)",
+     "sitasi": 0
+    },
+    {
+     "judul": "Combined heat, power and product (CHPP)",
+     "id": "in_chpp_ipb",
+     "url": "https://www.ipb.ac.id/news/index/2026/05/prof-edy-hartulistiyoso-panas-sisa-industri-bisa-diubah-jadi-listrik-dan-biochar/",
+     "penulis": "IPB University",
+     "jurnal": "konsep (2026)",
+     "sitasi": 0
+    },
+    {
+     "judul": "Revisiting the role of international climate finance (ICF) towards achieving the nationally determined contribution (NDC) target: A case study of the Indonesian energy sector",
+     "id": "W4213255661",
+     "url": "https://doi.org/10.1016/j.envsci.2022.01.022",
+     "penulis": "Djoko Santoso Abi Suroso, Budhi Setiawan, Pradono Pradono",
+     "jurnal": "Environmental Science & Policy (2022)",
+     "sitasi": 97
+    },
+    {
+     "judul": "An assessment of energy policy impacts on achieving Sustainable Development Goal 7 in Indonesia",
+     "id": "W3087014690",
+     "url": "https://doi.org/10.1016/j.esd.2020.08.011",
+     "penulis": "Wayan G. Santika, Tania Urmee, Yeliz Simsek",
+     "jurnal": "Energy Sustainable Development/Energy for sustainable development (2020)",
+     "sitasi": 91
+    },
+    {
+     "judul": "Investigation on household energy consumption of urban residential buildings in major cities of Indonesia during COVID-19 pandemic",
+     "id": "W4213364039",
+     "url": "https://doi.org/10.1016/j.enbuild.2022.111956",
+     "penulis": "Usep Surahman, Djoni Hartono, Erni Setyowati",
+     "jurnal": "Energy and Buildings (2022)",
+     "sitasi": 74
+    },
+    {
+     "judul": "Eco-Efficiency and Energy Audit to Improve Environmental Performance: An Empirical Study of Hotels in Bali-Indonesia",
+     "id": "W4310095957",
+     "url": "https://doi.org/10.32479/ijeep.13565",
+     "penulis": "Komang Adi Kurniawan Saputra, Bambang Subroto, ‪Aulia Fuad Rahman",
+     "jurnal": "International Journal of Energy Economics and Policy (2022)",
+     "sitasi": 69
+    },
+    {
+     "judul": "Energy-Saving Triangle: Internalizing Islamic Ethical Values on Energy Saving in Integrative Learning",
+     "id": "W4387576725",
+     "url": "https://doi.org/10.3390/rel14101284",
+     "penulis": "Rohmatulloh Rohmatulloh, Aan Hasanah, Lalan Sahlani",
+     "jurnal": "Religions (2023)",
+     "sitasi": 65
+    },
+    {
+     "judul": "Effect of COVID-19 on energy consumption and carbon dioxide emissions in Indonesia",
+     "id": "W3167554808",
+     "url": "https://doi.org/10.1016/j.spc.2021.06.003",
+     "penulis": "Djoni Hartono, Arief Anshory Yusuf, Sasmita Hastri Hastuti",
+     "jurnal": "Sustainable Production and Consumption (2021)",
+     "sitasi": 57
+    },
+    {
+     "judul": "Unveiling the Carbon Footprint: Biomass vs. Geothermal Energy in Indonesia",
+     "id": "W4385430686",
+     "url": "https://doi.org/10.60084/eje.v1i1.47",
+     "penulis": "Ghalieb Mutig Idroes, Sofyan Syahnur, M. Shabri Abd. Majid",
+     "jurnal": "Ekonomikalia Journal of Economics (2023)",
+     "sitasi": 53
+    }
+   ],
+   "catatan": {
+    "id": "Dua baris pertama adalah inovasi tercatat di direktori METI (kampus); sisanya karya ilmiah dari irisan OpenAlex di repo.",
+    "en": "The first two rows are innovations listed in the METI directory (campuses); the rest are scholarly works from the OpenAlex slice in the repo."
    }
   },
   "19": {
@@ -1293,12 +2529,13 @@
   },
   "20": {
    "tipe": "tabel",
-   "per": 6,
+   "per": 12,
    "sumber": [
     "detikx",
     "iea_tr",
     "meti_jp",
-    "kabar30"
+    "kabar30",
+    "ed"
    ],
    "kolom": [
     {
@@ -1306,6 +2543,13 @@
      "l": {
       "id": "Negara atau kawasan",
       "en": "Country or region"
+     }
+    },
+    {
+     "k": "iso2",
+     "l": {
+      "id": "ISO2",
+      "en": "ISO2"
      }
     },
     {
@@ -1341,7 +2585,8 @@
      "catatan": {
       "id": "Di bawah ASEAN SKEM 2023 (3,7)",
       "en": "Below ASEAN SKEM 2023 (3.7)"
-     }
+     },
+     "iso2": "ID"
     },
     {
      "negara": "Jepang",
@@ -1353,7 +2598,8 @@
      "catatan": {
       "id": "Tanpa larangan jual produk tak patuh",
       "en": "No ban on non-compliant products"
-     }
+     },
+     "iso2": "JP"
     },
     {
      "negara": "Singapura",
@@ -1365,7 +2611,8 @@
      "catatan": {
       "id": "Menurut detikX",
       "en": "Per detikX"
-     }
+     },
+     "iso2": "SG"
     },
     {
      "negara": "Tiongkok",
@@ -1377,7 +2624,8 @@
      "catatan": {
       "id": "Menurut detikX",
       "en": "Per detikX"
-     }
+     },
+     "iso2": "CN"
     },
     {
      "negara": "ASEAN",
@@ -1389,6 +2637,98 @@
      "catatan": {
       "id": "Target 2025 jauh di atas nilai Indonesia",
       "en": "The 2025 target is far above Indonesia's value"
+     },
+     "iso2": "-"
+    },
+    {
+     "negara": "India",
+     "iso2": "IN",
+     "instrumen": "Bureau of Energy Efficiency: label bintang dan skema Perform, Achieve and Trade",
+     "nilai": {
+      "id": "Nama program; angka tidak dikutip",
+      "en": "Programme name; figures not quoted"
+     },
+     "catatan": {
+      "id": "Ringkasan editorial METI; periksa sumber resmi negara tersebut sebelum mengutip angka.",
+      "en": "METI editorial summary; check that country's official source before quoting figures."
+     }
+    },
+    {
+     "negara": "Uni Eropa",
+     "iso2": "EU",
+     "instrumen": "Ecodesign dan label energi",
+     "nilai": {
+      "id": "Nama program; angka tidak dikutip",
+      "en": "Programme name; figures not quoted"
+     },
+     "catatan": {
+      "id": "Ringkasan editorial METI; periksa sumber resmi negara tersebut sebelum mengutip angka.",
+      "en": "METI editorial summary; check that country's official source before quoting figures."
+     }
+    },
+    {
+     "negara": "Australia",
+     "iso2": "AU",
+     "instrumen": "Greenhouse and Energy Minimum Standards (GEMS)",
+     "nilai": {
+      "id": "Nama program; angka tidak dikutip",
+      "en": "Programme name; figures not quoted"
+     },
+     "catatan": {
+      "id": "Ringkasan editorial METI; periksa sumber resmi negara tersebut sebelum mengutip angka.",
+      "en": "METI editorial summary; check that country's official source before quoting figures."
+     }
+    },
+    {
+     "negara": "Amerika Serikat",
+     "iso2": "US",
+     "instrumen": "ENERGY STAR dan standar efisiensi Departemen Energi",
+     "nilai": {
+      "id": "Nama program; angka tidak dikutip",
+      "en": "Programme name; figures not quoted"
+     },
+     "catatan": {
+      "id": "Ringkasan editorial METI; periksa sumber resmi negara tersebut sebelum mengutip angka.",
+      "en": "METI editorial summary; check that country's official source before quoting figures."
+     }
+    },
+    {
+     "negara": "Korea Selatan",
+     "iso2": "KR",
+     "instrumen": "Standar kinerja energi minimum dan label efisiensi",
+     "nilai": {
+      "id": "Nama program; angka tidak dikutip",
+      "en": "Programme name; figures not quoted"
+     },
+     "catatan": {
+      "id": "Ringkasan editorial METI; periksa sumber resmi negara tersebut sebelum mengutip angka.",
+      "en": "METI editorial summary; check that country's official source before quoting figures."
+     }
+    },
+    {
+     "negara": "Brasil",
+     "iso2": "BR",
+     "instrumen": "Program Procel dan label PBE",
+     "nilai": {
+      "id": "Nama program; angka tidak dikutip",
+      "en": "Programme name; figures not quoted"
+     },
+     "catatan": {
+      "id": "Ringkasan editorial METI; periksa sumber resmi negara tersebut sebelum mengutip angka.",
+      "en": "METI editorial summary; check that country's official source before quoting figures."
+     }
+    },
+    {
+     "negara": "Thailand",
+     "iso2": "TH",
+     "instrumen": "Label efisiensi nomor 5 EGAT",
+     "nilai": {
+      "id": "Nama program; angka tidak dikutip",
+      "en": "Programme name; figures not quoted"
+     },
+     "catatan": {
+      "id": "Ringkasan editorial METI; periksa sumber resmi negara tersebut sebelum mengutip angka.",
+      "en": "METI editorial summary; check that country's official source before quoting figures."
      }
     }
    ]
@@ -1444,21 +2784,153 @@
    ]
   },
   "24": {
-   "tipe": "teks",
+   "tipe": "tabel",
+   "per": 8,
    "sumber": [
+    "direktori",
     "esco",
     "dqs"
    ],
-   "paragraf": [
+   "kolom": [
     {
-     "id": "Hambatan pembiayaan ESCO: ESCO kesulitan pembiayaan berbasis proyek, dan pembatasan kontrak berbasis kinerja di sektor publik menghambat pasar (IKI, Mar 2026; paparan ADB 2016).",
-     "en": "ESCO financing barriers: ESCOs struggle with project-based financing, and limits on performance contracting in the public sector hold back the market (IKI, Mar 2026; ADB presentation 2016)."
+     "k": "nama",
+     "l": {
+      "id": "Skema",
+      "en": "Scheme"
+     },
+     "url": "url"
     },
     {
-     "id": "Permen ESDM 8/2025 disebut memuat ketentuan pembiayaan (DQS). Nilai dana atau skema hibah efisiensi tidak ditemukan di sumber yang dibaca.",
-     "en": "Energy Ministry Reg. 8/2025 is said to contain financing provisions (DQS). Fund sizes or efficiency grant schemes were not found in the sources read."
+     "k": "pemberi",
+     "l": {
+      "id": "Pemberi",
+      "en": "Provider"
+     }
+    },
+    {
+     "k": "jenis",
+     "l": {
+      "id": "Jenis",
+      "en": "Type"
+     }
+    },
+    {
+     "k": "bukti",
+     "l": {
+      "id": "Tingkat bukti",
+      "en": "Evidence level"
+     }
+    },
+    {
+     "k": "ringkas",
+     "l": {
+      "id": "Relevansi untuk topik ini",
+      "en": "Relevance to this topic"
+     }
     }
-   ]
+   ],
+   "baris": [
+    {
+     "nama": "Global Environment Facility",
+     "id": "sk_gef",
+     "url": "https://www.thegef.org/",
+     "pemberi": "Global Environment Facility",
+     "jenis": "hibah",
+     "bukti": "kata-pihak",
+     "ringkas": {
+      "id": "Hibah Global Environment Facility; sektor efisiensi tercatat.",
+      "en": "Global Environment Facility grant; the efficiency sector is listed."
+     }
+    },
+    {
+     "nama": "Kerja sama keuangan KfW",
+     "id": "sk_kfw",
+     "url": "https://www.kfw-entwicklungsbank.de/",
+     "pemberi": "KfW Development Bank",
+     "jenis": "pinjaman lunak",
+     "bukti": "kata-pihak",
+     "ringkas": {
+      "id": "Kerja sama keuangan Jerman; efisiensi tercatat.",
+      "en": "German financial cooperation; efficiency is listed."
+     }
+    },
+    {
+     "nama": "Green Climate Fund",
+     "id": "sk_gcf",
+     "url": "https://www.greenclimate.fund/",
+     "pemberi": "Green Climate Fund",
+     "jenis": "blended",
+     "bukti": "kata-pihak",
+     "ringkas": {
+      "id": "Dana iklim multilateral; efisiensi tercatat di sektornya.",
+      "en": "Multilateral climate fund; efficiency is listed in its sectors."
+     }
+    },
+    {
+     "nama": "Pinjaman ODA JICA",
+     "id": "sk_jica",
+     "url": "https://www.jica.go.jp/indonesia/",
+     "pemberi": "Japan International Cooperation Agency",
+     "jenis": "pinjaman lunak",
+     "bukti": "kata-pihak",
+     "ringkas": {
+      "id": "Pinjaman ODA Jepang; berpotensi untuk efisiensi industri dan jaringan.",
+      "en": "Japanese ODA loans; potential for industrial efficiency and grids."
+     }
+    },
+    {
+     "nama": "Obligasi dan sukuk hijau korporasi",
+     "id": "sk_efek_hijau",
+     "url": "https://www.ojk.go.id/",
+     "pemberi": "Otoritas Jasa Keuangan",
+     "jenis": "obligasi hijau",
+     "bukti": "kata-pihak",
+     "ringkas": {
+      "id": "Obligasi dan sukuk hijau korporasi untuk kegiatan usaha berwawasan lingkungan, termasuk efisiensi.",
+      "en": "Corporate green bonds and sukuk for environmentally sound activities, including efficiency."
+     }
+    },
+    {
+     "nama": "SDG Indonesia One",
+     "id": "sk_sdg_one",
+     "url": "https://www.ptsmi.co.id/",
+     "pemberi": "PT Sarana Multi Infrastruktur",
+     "jenis": "blended",
+     "bukti": "kata-pihak",
+     "ringkas": {
+      "id": "Platform pembiayaan campuran SMI untuk proyek hijau.",
+      "en": "SMI blended-finance platform for green projects."
+     }
+    },
+    {
+     "nama": "Pembebasan bea masuk mesin, barang, dan bahan investasi",
+     "id": "sk_ins_bea_masuk_mesin",
+     "url": "https://peraturan.bpk.go.id/Details/167732/pmk-no-176pmk0112009",
+     "pemberi": "Kementerian Keuangan",
+     "jenis": "insentif fiskal",
+     "bukti": "resmi",
+     "ringkas": {
+      "id": "Pembebasan bea masuk mesin dan bahan investasi (insentif fiskal umum).",
+      "en": "Duty exemption on machinery and investment materials (general fiscal incentive)."
+     }
+    },
+    {
+     "nama": "Tax holiday (pengurangan PPh badan)",
+     "id": "sk_ins_tax_holiday",
+     "url": "https://peraturan.bpk.go.id/Details/148016/pmk-no-130pmk0102020",
+     "pemberi": "Kementerian Keuangan",
+     "jenis": "insentif fiskal",
+     "bukti": "resmi",
+     "ringkas": {
+      "id": "Pengurangan PPh badan bagi pelaku usaha pionir (insentif fiskal umum).",
+      "en": "Corporate income tax reduction for pioneer businesses (general fiscal incentive)."
+     }
+    }
+   ],
+   "catatan": {
+    "id": "Hambatan: ESCO kesulitan pembiayaan berbasis proyek dan pembatasan kontrak kinerja sektor publik menghambat pasar (IKI, Mar 2026; ADB 2016). Permen ESDM 8/2025 disebut memuat ketentuan pembiayaan (DQS); nilai hibah efisiensi tidak ditemukan.",
+    "en": "Barriers: ESCOs struggle with project-based financing and limits on public-sector performance contracts hold back the market (IKI, Mar 2026; ADB 2016). Energy Ministry Reg. 8/2025 is said to contain financing provisions (DQS); no efficiency grant value was found."
+   }
   },
   "25": {
    "tipe": "rumus",
@@ -1483,16 +2955,101 @@
     }
    ]
   },
+  "26": {
+   "tipe": "tabel",
+   "per": 8,
+   "sumber": [
+    "wbp",
+    "direktori"
+   ],
+   "kolom": [
+    {
+     "k": "pos",
+     "l": {
+      "id": "Proyek",
+      "en": "Project"
+     },
+     "url": "url"
+    },
+    {
+     "k": "nilai",
+     "l": {
+      "id": "Komitmen",
+      "en": "Commitment"
+     },
+     "num": true,
+     "d": 0
+    },
+    {
+     "k": "sat",
+     "l": {
+      "id": "Satuan",
+      "en": "Unit"
+     }
+    },
+    {
+     "k": "sumber",
+     "l": {
+      "id": "Dasar",
+      "en": "Basis"
+     }
+    }
+   ],
+   "baris": [
+    {
+     "pos": {
+      "id": "Power Sector Efficiency Project (1989 sampai 1995)",
+      "en": "Power Sector Efficiency Project (1989 to 1995)"
+     },
+     "nilai": 337,
+     "sat": {
+      "id": "USD juta",
+      "en": "USD million"
+     },
+     "sumber": "Bank Dunia, via direktori METI",
+     "id": "wb_P003920",
+     "url": "/p/wb_P003920"
+    },
+    {
+     "pos": {
+      "id": "ID - Chiller Energy Efficiency Project (dibatalkan)",
+      "en": "ID - Chiller Energy Efficiency Project (dropped)"
+     },
+     "nilai": 0,
+     "sat": {
+      "id": "USD juta",
+      "en": "USD million"
+     },
+     "sumber": "Bank Dunia, via direktori METI",
+     "id": "wb_P121003",
+     "url": "/p/wb_P121003"
+    }
+   ],
+   "catatan": {
+    "id": "Hanya dua baris investasi efisiensi yang tercatat di direktori METI. Nilai transaksi ESCO, merger, atau IPO terkait efisiensi tidak ditemukan di sumber yang dibaca.",
+    "en": "Only two efficiency investment rows are recorded in the METI directory. No ESCO transaction, merger or IPO value linked to efficiency was found in the sources read."
+   }
+  },
   "27": {
    "tipe": "teks",
    "sumber": [
     "mongabay",
-    "kabar30"
+    "kabar30",
+    "owid",
+    "ac"
    ],
    "paragraf": [
     {
      "id": "CLASP menyatakan penggunaan alat hemat energi bisa mengurangi hampir 40 persen emisi karbon, dan beralih ke bintang 3 sampai 5 bisa memangkas 63 persen (Mongabay, 30 Jun 2024). KESDM menargetkan 358 juta ton CO2 hingga 2030 dengan 132,25 juta ton dari efisiensi.",
      "en": "CLASP says efficient appliances can cut almost 40 percent of carbon emissions, and moving to 3 to 5 stars can cut 63 percent (Mongabay, 30 Jun 2024). The ministry targets 358 million tonnes of CO2 by 2030, 132.25 million tonnes of it from efficiency."
+    },
+    {
+     "id": "Manfaat lingkungan: tiap kWh hemat menghindarkan emisi pembangkitan sebesar faktor emisi listrik (680 gCO2 per kWh pada 2024 menurut Ember lewat OWID, EST). Efek rebound dapat mengurangi manfaat ini; pemantauan hasil nyata penting.",
+     "en": "Environmental benefit: every kWh saved avoids generation emissions equal to the grid emission factor (680 gCO2 per kWh in 2024 per Ember via OWID, EST). The rebound effect can reduce this; monitoring real results matters."
+    },
+    {
+     "id": "Manfaat sosial: tagihan rumah tangga turun; ESDM mengklaim hemat Rp3,76 triliun tagihan listrik dari kebijakan AC pada 2021 sampai semester I 2023. Risiko: produk murah tak berlabel tetap beredar sehingga konsumen berpenghasilan rendah tertinggal.",
+     "en": "Social benefit: household bills fall; the Energy Ministry claims IDR 3.76 trillion of bills saved from the AC policy over 2021 to the first half of 2023. Risk: cheap unlabelled products still circulate, leaving low-income consumers behind."
     }
    ]
   },
@@ -1500,12 +3057,17 @@
    "tipe": "teks",
    "sumber": [
     "mgmt",
-    "detikx"
+    "detikx",
+    "pp33"
    ],
    "paragraf": [
     {
      "id": "PP 33/2023 menuntut manajer energi dan auditor energi bersertifikat; jumlah tenaga bersertifikat dan lembaga sertifikasinya tidak ditemukan di sumber yang dibaca. Hanya tujuh laboratorium uji tersedia untuk SKEM AC.",
      "en": "PP 33/2023 requires certified energy managers and auditors; the number of certified people and certifying bodies was not found in the sources read. Only seven test laboratories are available for AC SKEM."
+    },
+    {
+     "id": "Pekerjaan: auditor energi, manajer energi, teknisi HVAC dan kontrol, pemasang insulasi, dan staf ESCO. Manajer energi dan auditor wajib bersertifikat (PP 33/2023); lembaga sertifikasi profesi per bidang belum dirinci di sumber yang dibaca.",
+     "en": "Jobs: energy auditors, energy managers, HVAC and controls technicians, insulation installers and ESCO staff. Energy managers and auditors must be certified (Gov. Reg. 33/2023); professional certification bodies per field are not detailed in the sources read."
     }
    ]
   },
@@ -1525,6 +3087,14 @@
     {
      "id": "Harga: produsen menyebut AC bintang tinggi lebih mahal, sedangkan CLASP berpendapat daya beli bukan hambatan utama karena produsen menawarkan sebagian besar produk berefisiensi rendah. Kontan memuat dugaan praktik dumping AC (hanya judul dibaca).",
      "en": "Price: manufacturers say high-star ACs cost more, while CLASP argues purchasing power is not the main barrier since makers offer mostly low-efficiency products. Kontan carried an alleged AC dumping story (headline only)."
+    },
+    {
+     "id": "Kontroversi 3, dumping dan harga. Satu pihak: AC murah impor diduga dijual di bawah harga wajar sehingga produsen lokal tertekan (judul Kontan); GAPEL memperkirakan biaya produksi lokal sekitar 20 persen lebih tinggi daripada impor (detikX). Pihak lain: konsumen mendapat produk murah, sedangkan SKEM yang lebih ketat dapat menaikkan harga. Dugaan dumping belum terbukti di sumber yang dibaca.",
+     "en": "Controversy 3, dumping and price. One side: cheap imported ACs are alleged to be sold below fair price, pressing local makers (Kontan headline); GAPEL estimates local production cost is about 20 percent above imports (detikX). Other side: consumers get cheap products while a stricter MEPS can raise prices. Dumping is not proven in the sources read."
+    },
+    {
+     "id": "Kontroversi 4, wajib atau sukarela. Pendukung kewajiban: manajemen energi yang tidak ditegakkan tidak menghasilkan hemat; pejabat ESDM pada 15 Mei 2024 menyatakan belum ada sanksi. Penolak: beban biaya pada industri kecil dan risiko formalitas tanpa hasil. Hipotesis METI: kewajiban perlu disertai bantuan audit dan akses pembiayaan.",
+     "en": "Controversy 4, mandatory or voluntary. For mandates: energy management that is not enforced yields no saving; an Energy Ministry official said on 15 May 2024 there were no sanctions yet. Against: cost burden on small industry and the risk of box-ticking. METI hypothesis: mandates need audit assistance and financing access."
     }
    ]
   },
@@ -1615,6 +3185,14 @@
       "en": "1 percent a year"
      },
      "tahun": "-"
+    },
+    {
+     "item": {
+      "id": "Proyeksi 2045: tidak ada angka resmi khusus efisiensi di sumber yang dibaca",
+      "en": "Projection 2045: no efficiency-specific official figure in the sources read"
+     },
+     "nilai": "-",
+     "tahun": "2045"
     }
    ]
   },
@@ -1631,6 +3209,18 @@
     {
      "id": "Analisis METI (Hipotesis): ESCO dan investor: buka gedung pemerintah dengan kontrak berbasis kinerja; pemda dan akademisi: data dasar gedung seperti studi 295 bangunan Surabaya.",
      "en": "METI analysis (Hypothesis): ESCOs and investors: open government buildings with performance contracts; local governments and academics: baseline building data like the 295-building Surabaya study."
+    },
+    {
+     "id": "Analisis METI (Hipotesis): pengembang dan pemasok: efisiensi memperkecil kebutuhan pembangkit baru sehingga pengembang perlu memadukan tawaran pembangkit dengan paket efisiensi bagi pelanggan industri.",
+     "en": "METI analysis (Hypothesis): developers and suppliers: efficiency shrinks the need for new generation, so developers should pair generation offers with efficiency packages for industrial customers."
+    },
+    {
+     "id": "Analisis METI (Hipotesis): investor dan pemberi pinjaman: pembiayaan berbasis penghematan butuh protokol M&V yang kredibel; lembaga seperti IFC dan skema hijau dapat menjadi mitra.",
+     "en": "METI analysis (Hypothesis): investors and lenders: savings-based financing needs credible M&V protocols; bodies such as IFC and green schemes can be partners."
+    },
+    {
+     "id": "Analisis METI (Hipotesis): pemda dan akademisi: Perda 5/2026 dan Permen ESDM 3/2025 membuka pasar audit gedung pemerintah; kampus dapat menyediakan auditor dan studi dasar.",
+     "en": "METI analysis (Hypothesis): local governments and academics: Regional Regulation 5/2026 and Energy Ministry Reg. 3/2025 open a market for government building audits; campuses can supply auditors and baseline studies."
     }
    ]
   },
@@ -1653,6 +3243,34 @@
     {
      "id": "Revisi SKEM AC berikutnya (pemerintah berencana meninjau tiap tiga tahun dengan masa adaptasi industri satu tahun).",
      "en": "The next AC SKEM revision (the government plans reviews every three years with a one-year industry adaptation period)."
+    },
+    {
+     "id": "Angka entitas pelapor dan hemat energi untuk 2024 dan 2025.",
+     "en": "Reporting entities and energy saved for 2024 and 2025."
+    },
+    {
+     "id": "Jumlah ESCO terdaftar setelah Permen ESDM 1/2026.",
+     "en": "Number of registered ESCOs after Energy Ministry Reg. 1/2026."
+    },
+    {
+     "id": "Penegakan sanksi manajemen energi (sumber saling bertentangan pada 2024).",
+     "en": "Enforcement of energy management sanctions (sources conflicted in 2024)."
+    },
+    {
+     "id": "Penerapan Perda 5/2026 dan peraturan serupa di kota lain.",
+     "en": "Implementation of Regional Regulation 5/2026 and similar rules in other cities."
+    },
+    {
+     "id": "Revisi SKEM AC berikutnya dan ketersediaan laboratorium uji (tujuh pada 2024).",
+     "en": "The next AC MEPS revision and test laboratory availability (seven in 2024)."
+    },
+    {
+     "id": "Ada tidaknya dukungan hibah GEF, KfW, atau GCF untuk proyek efisiensi baru.",
+     "en": "Whether GEF, KfW or GCF grants appear for new efficiency projects."
+    },
+    {
+     "id": "Perkembangan dugaan dumping AC dan tanggapan pemerintah.",
+     "en": "Developments in the alleged AC dumping and the government response."
     }
    ]
   },
@@ -1662,7 +3280,8 @@
    "sumber": [
     "mgmt",
     "esco",
-    "iea_tr"
+    "iea_tr",
+    "direktori"
    ],
    "kolom": [
     {
@@ -1696,7 +3315,8 @@
      "mengapa": {
       "id": "Angka hemat resmi per sektor",
       "en": "Official savings per sector"
-     }
+     },
+     "id": null
     },
     {
      "judul": "Enabling ESCO Market in ASEAN for Low Carbon Buildings",
@@ -1705,7 +3325,8 @@
      "mengapa": {
       "id": "Hambatan pasar ESCO dan rekomendasi",
       "en": "ESCO market barriers and recommendations"
-     }
+     },
+     "id": null
     },
     {
      "judul": "Top Runner Programme",
@@ -1714,6 +3335,57 @@
      "mengapa": {
       "id": "Desain program standar Jepang",
       "en": "Design of the Japanese standards programme"
+     },
+     "id": null
+    },
+    {
+     "judul": "PP 33/2023: Konservasi Energi",
+     "id": "pk-reg-pp-33-2023",
+     "url": "/pustaka?id=pk-reg-pp-33-2023",
+     "penerbit": "Pemerintah Pusat",
+     "mengapa": {
+      "id": "Dokumen peraturan di Pustaka METI",
+      "en": "Regulation document in the METI Library"
+     }
+    },
+    {
+     "judul": "PP 70/2009: Konservasi Energi",
+     "id": "pk-reg-pp-70-2009",
+     "url": "/pustaka?id=pk-reg-pp-70-2009",
+     "penerbit": "Pemerintah Pusat",
+     "mengapa": {
+      "id": "Dokumen peraturan di Pustaka METI",
+      "en": "Regulation document in the METI Library"
+     }
+    },
+    {
+     "judul": "PERMEN 14/2016: Permen ESDM No. 14 Tahun 2016 tentang Penyelenggaraan Usaha Jasa Konservasi Energi",
+     "id": "pk-reg-permen-esdm-14-2016",
+     "url": "/pustaka?id=pk-reg-permen-esdm-14-2016",
+     "penerbit": "Kementerian Energi dan Sumber Daya Mineral",
+     "mengapa": {
+      "id": "Dokumen peraturan di Pustaka METI",
+      "en": "Regulation document in the METI Library"
+     }
+    },
+    {
+     "judul": "KEPPRES 43/1991: Konservasi Energi",
+     "id": "pk-reg-keppres-43-1991",
+     "url": "/pustaka?id=pk-reg-keppres-43-1991",
+     "penerbit": "Pemerintah Pusat",
+     "mengapa": {
+      "id": "Dokumen peraturan di Pustaka METI",
+      "en": "Regulation document in the METI Library"
+     }
+    },
+    {
+     "judul": "INPRES 9/1982: Konservasi Energi",
+     "id": "pk-reg-inpres-9-1982",
+     "url": "/pustaka?id=pk-reg-inpres-9-1982",
+     "penerbit": "Pemerintah Pusat",
+     "mengapa": {
+      "id": "Dokumen peraturan di Pustaka METI",
+      "en": "Regulation document in the METI Library"
      }
     }
    ]
@@ -1852,7 +3524,9 @@
      "sumber": [
       "ac",
       "detikx"
-     ]
+     ],
+     "foto": null,
+     "koordinat": null
     },
     {
      "id": "manajemen-energi",
@@ -1959,7 +3633,9 @@
      "sumber": [
       "mgmt",
       "pp33"
-     ]
+     ],
+     "foto": null,
+     "koordinat": null
     },
     {
      "id": "top-runner",
@@ -2041,7 +3717,9 @@
      "sumber": [
       "iea_tr",
       "meti_jp"
-     ]
+     ],
+     "foto": null,
+     "koordinat": null
     }
    ]
   },
@@ -2141,7 +3819,9 @@
       "mongabay",
       "detikx"
      ],
-     "hak_jawab": true
+     "hak_jawab": true,
+     "foto": null,
+     "koordinat": null
     },
     {
      "id": "esco-publik",
@@ -2224,7 +3904,9 @@
      "sumber": [
       "esco"
      ],
-     "hak_jawab": true
+     "hak_jawab": true,
+     "foto": null,
+     "koordinat": null
     },
     {
      "id": "sanksi-manajemen",
@@ -2309,7 +3991,9 @@
       "tuv",
       "pp33"
      ],
-     "hak_jawab": true
+     "hak_jawab": true,
+     "foto": null,
+     "koordinat": null
     }
    ]
   },

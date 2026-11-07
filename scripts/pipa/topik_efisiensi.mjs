@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 // Naskah topik Efisiensi energi -> public/data/topik/efisiensi.json (TOPIK-SKEMA.md). Pakai: node scripts/pipa/topik_efisiensi.mjs [--selftest]
 // Teks dari sumber publik yang dibaca 8 Nov 2026; tabel regulasi dari public/data/regulasi.json. Sintesis berlabel "Analisis METI (Hipotesis)".
+import { dalam } from './topik_efisiensi_dalam.mjs';
 import { T, hp, S, ED, baca, regS, nf, nfe, teks, faq, glos, rumus, langkah, tabel, grafik, linimasa, kol, L, kunci, kas, rakit, selftest as st, jalankan, tabelRegulasi, kolRegulasi, validasi as val } from './topik_enam_lib.mjs';
 
 const ase = baca('public/data/asean_energi.json');
@@ -30,7 +31,7 @@ const star = { 3: 896700, 2: 367500, 5: 147000, 4: 58800 };
 const totDaikin = Object.values(star).reduce((a, b) => a + b, 0);
 const persen45 = Math.round(((star[4] + star[5]) / totDaikin) * 1000) / 10;
 
-export function susun() {
+function susunAsal() {
   const bab = {};
   bab['2'] = faq(['mgmt', 'pp33', 'ac'], [
     ['Apa itu konservasi energi?', 'What is energy conservation?', 'Upaya menggunakan energi secara efisien tanpa menurunkan manfaat; dasar hukumnya PP 33/2023 tentang Konservasi Energi.', 'Using energy efficiently without losing the benefit; its legal basis is Government Regulation 33/2023 on Energy Conservation.'],
@@ -290,6 +291,7 @@ export function susun() {
     sumber: SUMBER, bab });
 }
 
+export function susun() { return dalam(susunAsal()); }
 export const validasi = val;
 export const selftest = () => st(susun);
 jalankan(import.meta.url, 'efisiensi', susun);

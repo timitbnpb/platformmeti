@@ -23,7 +23,8 @@
     "en": "USD billion"
    },
    "sumber": "gs_bi",
-   "est": false
+   "est": false,
+   "deret": null
   },
   {
    "label": {
@@ -37,7 +38,8 @@
     "en": "IDR trillion"
    },
    "sumber": "gs_bi",
-   "est": false
+   "est": false,
+   "deret": null
   },
   {
    "label": {
@@ -51,7 +53,8 @@
     "en": "USD billion"
    },
    "sumber": "sio",
-   "est": false
+   "est": false,
+   "deret": null
   },
   {
    "label": {
@@ -65,7 +68,8 @@
     "en": "USD million"
    },
    "sumber": "djppr",
-   "est": false
+   "est": false,
+   "deret": null
   },
   {
    "label": {
@@ -79,7 +83,8 @@
     "en": "USD billion"
    },
    "sumber": "jp_rusak",
-   "est": false
+   "est": false,
+   "deret": null
   }
  ],
  "penting": [
@@ -293,6 +298,62 @@
    "tanggal": "2026-11-08",
    "tahun": 2026,
    "bukti": "kajian"
+  },
+  "direktori": {
+   "judul": "Direktori METI: organisasi, proyek, pendanaan, regulasi, riset (berkas public/data/*.json; tiap baris punya sumber sendiri di berkasnya)",
+   "penerbit": "METI",
+   "url": "https://platformmeti.timitbnpb.workers.dev",
+   "tanggal": "2026-11-08",
+   "tahun": 2026,
+   "bukti": "via-pihak-ketiga"
+  },
+  "jetpid": {
+   "judul": "JETP Indonesia (laman resmi Sekretariat JETP): peluncuran 15 Nov 2022, komitmen awal USD 20 miliar (USD 10 miliar IPG dan USD 10 miliar swasta GFANZ), anggota IPG, CIPP",
+   "penerbit": "Sekretariat JETP Indonesia",
+   "url": "https://jetp-id.org/",
+   "tanggal": "2026-11-08",
+   "tahun": 2025,
+   "bukti": "resmi"
+  },
+  "pr110": {
+   "judul": "Perpres 110/2025 tentang Penyelenggaraan Instrumen Nilai Ekonomi Karbon dan Pengendalian Emisi Gas Rumah Kaca Nasional",
+   "penerbit": "Pemerintah RI (JDIH BPK)",
+   "url": "https://peraturan.bpk.go.id/Details/334733",
+   "tanggal": "2026-11-07",
+   "tahun": 2025,
+   "bukti": "resmi"
+  },
+  "pk5": {
+   "judul": "Permen 5/2025 tentang Tata Cara Pemberian dan Pelaksanaan Penjaminan Pemerintah Serta Penanggungan Risiko dalam Rangka Percepatan Pengembangan Energi Terbarukan untuk Penyediaan Tenaga Listrik",
+   "penerbit": "Pemerintah RI (JDIH BPK)",
+   "url": "https://peraturan.bpk.go.id/Details/313153",
+   "tanggal": "2026-11-07",
+   "tahun": 2025,
+   "bukti": "resmi"
+  },
+  "uu16": {
+   "judul": "UU 16/2016 tentang Pengesahan Paris Agreement To The United Nations Framework Convention On Climate Change (Persetujuan Paris Atas Konvensi Kerangka Kerja Perserikatan Bangsa-Bangsa mengenai Perubahan Iklim)",
+   "penerbit": "Pemerintah RI (JDIH BPK)",
+   "url": "https://peraturan.bpk.go.id/Details/37573",
+   "tanggal": "2026-11-07",
+   "tahun": 2016,
+   "bukti": "resmi"
+  },
+  "ojk10": {
+   "judul": "ojk 10/2026 tentang Perubahan Atas Peraturan Otoritas Jasa Keuangan Nomor 14 Tahun 2023 tentang Perdagangan Karbon Melalui Bursa Karbon",
+   "penerbit": "Pemerintah RI (JDIH BPK)",
+   "url": "https://peraturan.bpk.go.id/Details/352355",
+   "tanggal": "2026-11-07",
+   "tahun": 2026,
+   "bukti": "resmi"
+  },
+  "pm10": {
+   "judul": "Permen 10/2025 tentang Peta Jalan (Road Map) Transisi Energi Sektor Ketenagalistrikan",
+   "penerbit": "Pemerintah RI (JDIH BPK)",
+   "url": "https://peraturan.bpk.go.id/Details/317729",
+   "tanggal": "2026-11-07",
+   "tahun": 2025,
+   "bukti": "resmi"
   }
  },
  "bab": {
@@ -312,7 +373,8 @@
      "j": {
       "id": "Taksonomi untuk Keuangan Berkelanjutan Indonesia dari OJK (20 Feb 2024): klasifikasi aktivitas ekonomi yang mendukung tujuan lingkungan; hasilnya hijau, transisi, atau tidak memenuhi klasifikasi.",
       "en": "The Indonesian Sustainable Finance Taxonomy from OJK (20 Feb 2024): a classification of economic activities supporting environmental goals; outcomes are green, transition or does not meet classification."
-     }
+     },
+     "bab": 3
     },
     {
      "t": {
@@ -322,7 +384,8 @@
      "j": {
       "id": "Sukuk negara untuk membiayai proyek hijau; Indonesia menerbitkan sukuk hijau berdaulat global pertama USD 1,25 miliar pada 2018 (ringkasan GlobalCapital).",
       "en": "A sovereign sukuk financing green projects; Indonesia issued the first global sovereign green sukuk of USD 1.25 billion in 2018 (GlobalCapital summary)."
-     }
+     },
+     "bab": 3
     },
     {
      "t": {
@@ -332,7 +395,8 @@
      "j": {
       "id": "Global kumulatif USD 7,7 miliar dan domestik Rp108,9 triliun sampai pertengahan 2026 (Gubernur BI, 14 Okt 2026).",
       "en": "Cumulative global USD 7.7 billion and domestic IDR 108.9 trillion to mid-2026 (BI Governor, 14 Oct 2026)."
-     }
+     },
+     "bab": 30
     },
     {
      "t": {
@@ -342,7 +406,8 @@
      "j": {
       "id": "Campuran dana publik atau filantropi dengan dana swasta untuk menurunkan risiko; contohnya SDG Indonesia One.",
       "en": "A mix of public or philanthropic funds with private capital to lower risk; SDG Indonesia One is an example."
-     }
+     },
+     "bab": 3
     },
     {
      "t": {
@@ -352,7 +417,8 @@
      "j": {
       "id": "Platform pendanaan campuran sejak 2018, dikelola PT SMI di bawah Kemenkeu, dengan USD 3,29 miliar investasi terjamin dan 38 mitra (ANTARA, 13 Jun 2025).",
       "en": "A blended funding platform since 2018 run by PT SMI under the Finance Ministry, with USD 3.29 billion secured and 38 partners (ANTARA, 13 Jun 2025)."
-     }
+     },
+     "bab": 3
     },
     {
      "t": {
@@ -362,7 +428,8 @@
      "j": {
       "id": "Halaman OJK menyebutnya panduan dan tidak menyatakan siapa wajib memakai; kritik menilai masih ada celah greenwashing.",
       "en": "The OJK page calls it a guide and does not say who must use it; critics see remaining greenwashing gaps."
-     }
+     },
+     "bab": 12
     },
     {
      "t": {
@@ -372,7 +439,96 @@
      "j": {
       "id": "Komitmen USD 21,4 miliar, USD 3,1 miliar disetujui, dan hanya 2,6 persen hibah (The Conversation; IEEFA). Rincian ada di topik Transisi berkeadilan.",
       "en": "Pledges of USD 21.4 billion, USD 3.1 billion approved and only 2.6 percent grants (The Conversation; IEEFA). Details are in the Just transition topic."
-     }
+     },
+     "bab": 19
+    },
+    {
+     "t": {
+      "id": "Siapa yang menerbitkan green sukuk Indonesia?",
+      "en": "Who issues Indonesia's green sukuk?"
+     },
+     "j": {
+      "id": "Kementerian Keuangan lewat DJPPR; seri global, ritel (ST), dan wholesale (PBSG) tercatat di tabel Penerbitan.",
+      "en": "The Finance Ministry through DJPPR; global, retail (ST) and wholesale (PBSG) series are in the Issuance table."
+     },
+     "bab": 9
+    },
+    {
+     "t": {
+      "id": "Bagaimana perusahaan swasta menerbitkan obligasi hijau?",
+      "en": "How do private companies issue green bonds?"
+     },
+     "j": {
+      "id": "Lewat OJK dan Bursa Efek Indonesia; contohnya Arkora Hydro dan IIF dalam tabel Penerbitan. Skema Efek Hijau korporasi tercatat di direktori pendanaan (sk_efek_hijau).",
+      "en": "Through OJK and the Indonesia Stock Exchange; examples are Arkora Hydro and IIF in the Issuance table. The corporate green securities scheme is in the funding directory (sk_efek_hijau)."
+     },
+     "bab": 4
+    },
+    {
+     "t": {
+      "id": "Apa itu penjaminan pemerintah untuk proyek ketenagalistrikan?",
+      "en": "What is a government guarantee for power projects?"
+     },
+     "j": {
+      "id": "Permen Kemenkeu 5/2025 mengatur tata cara pemberian penjaminan pemerintah dan penanggungan risiko untuk proyek ketenagalistrikan dan energi baru (judul regulasi).",
+      "en": "Finance Ministry Reg. 5/2025 governs government guarantees and risk coverage for electricity and new-energy projects (regulation title)."
+     },
+     "bab": 10
+    },
+    {
+     "t": {
+      "id": "Apa itu pembiayaan campuran?",
+      "en": "What is blended finance?"
+     },
+     "j": {
+      "id": "Dana publik atau filantropi dipakai untuk menurunkan risiko sehingga dana swasta masuk; contoh SDG Indonesia One yang mengamankan USD 3,29 miliar (Jun 2025).",
+      "en": "Public or philanthropic money lowers risk so private money comes in; an example is SDG Indonesia One, which secured USD 3.29 billion (Jun 2025)."
+     },
+     "bab": 19
+    },
+    {
+     "t": {
+      "id": "Apa beda hibah, pinjaman lunak, dan ekuitas?",
+      "en": "What is the difference between a grant, a soft loan and equity?"
+     },
+     "j": {
+      "id": "Hibah tidak dikembalikan; pinjaman lunak dikembalikan dengan syarat ringan; ekuitas membeli kepemilikan dan menuntut imbal hasil (penjelasan editorial METI).",
+      "en": "A grant is not repaid; a soft loan is repaid on easy terms; equity buys ownership and expects returns (METI editorial explanation)."
+     },
+     "bab": 3
+    },
+    {
+     "t": {
+      "id": "Apa itu greenwashing dan bagaimana taksonomi mencegahnya?",
+      "en": "What is greenwashing and how does a taxonomy prevent it?"
+     },
+     "j": {
+      "id": "Klaim hijau tanpa dasar. TKBI memberi kriteria aktivitas yang dapat diklasifikasi; kritik atas TKBI dan penghapusan kategori kuning dan merah dibahas di bab Isu.",
+      "en": "Green claims without basis. The TKBI gives criteria for classifiable activities; criticism of the TKBI and removal of the yellow and red categories are in the Issues chapter."
+     },
+     "bab": 3
+    },
+    {
+     "t": {
+      "id": "Siapa saja pendana JETP?",
+      "en": "Who funds JETP?"
+     },
+     "j": {
+      "id": "Kelompok mitra IPG (Jepang dan AS sebagai ketua bersama, Kanada, Denmark, Uni Eropa, Jerman, Prancis, Norwegia, Italia, Inggris) dan GFANZ (laman Sekretariat JETP).",
+      "en": "The IPG partner group (Japan and the US as co-leaders, Canada, Denmark, the European Union, Germany, France, Norway, Italy, the UK) and GFANZ (JETP Secretariat site)."
+     },
+     "bab": 19
+    },
+    {
+     "t": {
+      "id": "Di mana saya mencari skema pendanaan yang bisa dilamar?",
+      "en": "Where do I find funding schemes I can apply for?"
+     },
+     "j": {
+      "id": "Di tab Pendanaan METI (public/data/pendanaan.json): 24 skema dan 314 entri proyek berpendana; tabel bab Pembiayaan memuat 15 skema dengan id.",
+      "en": "In the METI Funding tab (public/data/pendanaan.json): 24 schemes and 314 funded project entries; the Financing chapter table lists 15 schemes with ids."
+     },
+     "bab": 19
     }
    ]
   },
@@ -392,7 +548,8 @@
      "arti": {
       "id": "Surat utang yang dananya dipakai khusus untuk proyek hijau.",
       "en": "A debt security whose proceeds go to green projects."
-     }
+     },
+     "kat": "uang"
     },
     {
      "istilah": {
@@ -402,7 +559,8 @@
      "arti": {
       "id": "Sukuk berbasis aset untuk proyek hijau, sesuai prinsip syariah.",
       "en": "An asset-backed sukuk for green projects, in line with sharia principles."
-     }
+     },
+     "kat": "uang"
     },
     {
      "istilah": {
@@ -412,7 +570,8 @@
      "arti": {
       "id": "Selisih imbal hasil lebih rendah obligasi hijau dibanding obligasi biasa; India: sekitar 6 bps pada tranche pertama (CEEW).",
       "en": "The lower yield of a green bond versus a conventional one; India: about 6 bps on its first tranche (CEEW)."
-     }
+     },
+     "kat": "uang"
     },
     {
      "istilah": {
@@ -422,7 +581,8 @@
      "arti": {
       "id": "Dana konsesional dipakai untuk menarik dana komersial.",
       "en": "Concessional funds used to attract commercial capital."
-     }
+     },
+     "kat": "uang"
     },
     {
      "istilah": {
@@ -432,7 +592,8 @@
      "arti": {
       "id": "Taksonomi Keuangan Berkelanjutan Indonesia; empat tujuan lingkungan, tiga kriteria esensial.",
       "en": "Indonesian Sustainable Finance Taxonomy; four environmental objectives, three essential criteria."
-     }
+     },
+     "kat": "teknis"
     },
     {
      "istilah": {
@@ -442,7 +603,8 @@
      "arti": {
       "id": "Technical Screening Criteria untuk korporasi dan Sector Agnostic Decision Tree untuk UMKM.",
       "en": "Technical Screening Criteria for corporates and a Sector Agnostic Decision Tree for MSMEs."
-     }
+     },
+     "kat": "teknis"
     },
     {
      "istilah": {
@@ -452,7 +614,8 @@
      "arti": {
       "id": "Klaim hijau yang menyesatkan; kritik terhadap celah taksonomi.",
       "en": "Misleading green claims; a criticism of taxonomy loopholes."
-     }
+     },
+     "kat": "uang"
     },
     {
      "istilah": {
@@ -462,7 +625,8 @@
      "arti": {
       "id": "Jaminan pihak ketiga atas kredit atau sukuk; IIF menjamin hingga Rp645 miliar untuk sukuk Arkora Hydro.",
       "en": "A third-party guarantee of a loan or sukuk; IIF guarantees up to IDR 645 billion for the Arkora Hydro sukuk."
-     }
+     },
+     "kat": "uang"
     },
     {
      "istilah": {
@@ -472,7 +636,239 @@
      "arti": {
       "id": "Energy Transition Mechanism ADB; PT SMI adalah country platform manager (judul Fortune IDN).",
       "en": "ADB's Energy Transition Mechanism; PT SMI is the country platform manager (Fortune IDN headline)."
-     }
+     },
+     "kat": "teknis"
+    },
+    {
+     "istilah": {
+      "id": "Obligasi berkelanjutan",
+      "en": "Sustainability bond"
+     },
+     "arti": {
+      "id": "Obligasi yang hasilnya membiayai proyek hijau dan sosial.",
+      "en": "A bond whose proceeds finance green and social projects."
+     },
+     "kat": "uang"
+    },
+    {
+     "istilah": {
+      "id": "Sukuk ijarah",
+      "en": "Ijarah sukuk"
+     },
+     "arti": {
+      "id": "Sukuk berbasis sewa aset; bentuk sukuk hijau korporasi Arkora Hydro 2026.",
+      "en": "A lease-based sukuk; the form of Arkora Hydro's 2026 corporate green sukuk."
+     },
+     "kat": "uang"
+    },
+    {
+     "istilah": {
+      "id": "Green perpetual notes",
+      "en": "Green perpetual notes"
+     },
+     "arti": {
+      "id": "Surat utang tanpa jatuh tempo, dicatatkan di BEI oleh IIF pada 2023.",
+      "en": "Debt with no maturity, listed on the IDX by IIF in 2023."
+     },
+     "kat": "uang"
+    },
+    {
+     "istilah": {
+      "id": "PUB",
+      "en": "PUB"
+     },
+     "arti": {
+      "id": "Penawaran umum berkelanjutan, program penerbitan bertahap; IIF menerbitkan PUB 2023 pada Nov 2025.",
+      "en": "A shelf offering programme in tranches; IIF issued its 2023 PUB in Nov 2025."
+     },
+     "kat": "teknis"
+    },
+    {
+     "istilah": {
+      "id": "Use of proceeds",
+      "en": "Use of proceeds"
+     },
+     "arti": {
+      "id": "Syarat hasil penerbitan hanya untuk proyek hijau yang memenuhi kerangka.",
+      "en": "The condition that proceeds go only to green projects meeting the framework."
+     },
+     "kat": "teknis"
+    },
+    {
+     "istilah": {
+      "id": "Pelaporan alokasi dan dampak",
+      "en": "Allocation and impact reporting"
+     },
+     "arti": {
+      "id": "Laporan penggunaan dana dan dampak; DJPPR menerbitkan Green Sukuk Allocation and Impact Report.",
+      "en": "A report on use of funds and impact; DJPPR publishes the Green Sukuk Allocation and Impact Report."
+     },
+     "kat": "uang"
+    },
+    {
+     "istilah": {
+      "id": "Opini pihak kedua",
+      "en": "Second-party opinion"
+     },
+     "arti": {
+      "id": "Penilaian independen atas kerangka hijau penerbit.",
+      "en": "Independent assessment of an issuer's green framework."
+     },
+     "kat": "teknis"
+    },
+    {
+     "istilah": {
+      "id": "Pinjaman konsesional",
+      "en": "Concessional loan"
+     },
+     "arti": {
+      "id": "Pinjaman dengan bunga atau tenor lebih ringan dari pasar.",
+      "en": "A loan with softer interest or tenor than the market."
+     },
+     "kat": "uang"
+    },
+    {
+     "istilah": {
+      "id": "Pembiayaan proyek",
+      "en": "Project finance"
+     },
+     "arti": {
+      "id": "Pinjaman tanpa jaminan induk, dibayar dari arus kas proyek; umum untuk PLTS dan PLTB.",
+      "en": "Non-recourse loans repaid from project cash flow; common for solar and wind."
+     },
+     "kat": "uang"
+    },
+    {
+     "istilah": {
+      "id": "Penjamin (guarantee)",
+      "en": "Guarantee"
+     },
+     "arti": {
+      "id": "Pihak yang menanggung pembayaran bila penerbit gagal, seperti IIF untuk sukuk Arkora hingga Rp645 miliar.",
+      "en": "A party that covers payment if the issuer defaults, such as IIF for the Arkora sukuk up to IDR 645 billion."
+     },
+     "kat": "uang"
+    },
+    {
+     "istilah": {
+      "id": "Biaya modal (WACC)",
+      "en": "Cost of capital (WACC)"
+     },
+     "arti": {
+      "id": "Rata-rata biaya dana ekuitas dan utang; penentu tarif proyek.",
+      "en": "The average cost of equity and debt funds; a driver of project tariffs."
+     },
+     "kat": "uang"
+    },
+    {
+     "istilah": {
+      "id": "Struktur menara pembiayaan",
+      "en": "Capital stack"
+     },
+     "arti": {
+      "id": "Susunan modal sponsor, utang senior, dan dana lunak dalam satu proyek.",
+      "en": "The layering of sponsor equity, senior debt and soft funds in one project."
+     },
+     "kat": "uang"
+    },
+    {
+     "istilah": {
+      "id": "Financial close",
+      "en": "Financial close"
+     },
+     "arti": {
+      "id": "Saat semua perjanjian pendanaan efektif dan dana dapat ditarik.",
+      "en": "The point at which all financing agreements are effective and funds can be drawn."
+     },
+     "kat": "uang"
+    },
+    {
+     "istilah": {
+      "id": "Risiko politik",
+      "en": "Political risk"
+     },
+     "arti": {
+      "id": "Risiko perubahan kebijakan atau pengambilalihan yang dapat ditanggung penjamin.",
+      "en": "The risk of policy change or expropriation that a guarantor can cover."
+     },
+     "kat": "teknis"
+    },
+    {
+     "istilah": {
+      "id": "Risiko kurs",
+      "en": "Currency risk"
+     },
+     "arti": {
+      "id": "Risiko nilai tukar antara pendapatan rupiah dan utang dolar.",
+      "en": "Exchange-rate risk between rupiah revenue and dollar debt."
+     },
+     "kat": "teknis"
+    },
+    {
+     "istilah": {
+      "id": "Pembiayaan iklim",
+      "en": "Climate finance"
+     },
+     "arti": {
+      "id": "Dana untuk mitigasi dan adaptasi iklim, dari sumber publik, swasta, dan campuran.",
+      "en": "Funds for climate mitigation and adaptation from public, private and blended sources."
+     },
+     "kat": "uang"
+    },
+    {
+     "istilah": {
+      "id": "Dana kekayaan negara (SWF)",
+      "en": "Sovereign wealth fund (SWF)"
+     },
+     "arti": {
+      "id": "Dana investasi negara; Danantara tercatat di direktori METI.",
+      "en": "A state investment fund; Danantara is listed in the METI directory."
+     },
+     "kat": "uang"
+    },
+    {
+     "istilah": {
+      "id": "Urun dana",
+      "en": "Crowdfunding"
+     },
+     "arti": {
+      "id": "Penghimpunan dana dari banyak investor kecil; contoh urun dana PLTS Asmat lewat Danamart.",
+      "en": "Raising funds from many small investors; for example the Asmat solar crowdfunding via Danamart."
+     },
+     "kat": "uang"
+    },
+    {
+     "istilah": {
+      "id": "Pajak karbon dan perdagangan karbon",
+      "en": "Carbon tax and trading"
+     },
+     "arti": {
+      "id": "Instrumen harga karbon yang menambah arus kas proyek; diatur Perpres 110/2025 dan POJK.",
+      "en": "Carbon pricing instruments that add project cash flow; governed by Perpres 110/2025 and OJK rules."
+     },
+     "kat": "teknis"
+    },
+    {
+     "istilah": {
+      "id": "Kerangka keuangan hijau",
+      "en": "Green finance framework"
+     },
+     "arti": {
+      "id": "Dokumen penerbit yang menetapkan kriteria proyek, pengelolaan dana, dan pelaporan.",
+      "en": "An issuer document setting project criteria, fund management and reporting."
+     },
+     "kat": "uang"
+    },
+    {
+     "istilah": {
+      "id": "Dampak per rupiah",
+      "en": "Impact per rupiah"
+     },
+     "arti": {
+      "id": "Ukuran hasil lingkungan (ton CO2, MW) per dana yang dipakai.",
+      "en": "A measure of environmental result (tCO2, MW) per fund used."
+     },
+     "kat": "uang"
     }
    ]
   },
@@ -481,7 +877,10 @@
    "sumber": [
     "gs_bi",
     "jp_rusak",
-    "sio"
+    "sio",
+    "jetpid",
+    "pk5",
+    "smi"
    ],
    "paragraf": [
     {
@@ -491,6 +890,18 @@
     {
      "id": "Tetapi jumlah komitmen tidak sama dengan uang yang masuk: SDG Indonesia One baru merealisasikan USD 396 juta dari USD 3,29 miliar komitmen, dan JETP menunjukkan jurang antara komitmen dan pencairan.",
      "en": "But commitments are not money received: SDG Indonesia One has realised USD 396 million of USD 3.29 billion in commitments, and JETP shows the gap between pledges and disbursement."
+    },
+    {
+     "id": "Pembiayaan hijau bukan satu produk melainkan susunan: hibah dan pinjaman lunak menurunkan risiko, penjamin menanggung gagal bayar, obligasi dan sukuk hijau menghimpun dana pasar, dan ekuitas sponsor menanggung risiko pertama. Proyek terbarukan padat modal di awal sehingga biaya modal menentukan tarif.",
+     "en": "Green finance is not one product but a stack: grants and soft loans lower risk, guarantors cover default, green bonds and sukuk raise market funds, and sponsor equity takes the first loss. Renewable projects are capital-heavy upfront so the cost of capital sets the tariff."
+    },
+    {
+     "id": "Di Indonesia, kerangka berlapis: taksonomi TKBI (OJK), pasar sukuk negara (DJPPR), platform campuran SDG Indonesia One (PT SMI), penjaminan (IIF dan Permen Kemenkeu 5/2025), serta kemitraan JETP yang diluncurkan 15 November 2022 dengan komitmen awal USD 20 miliar.",
+     "en": "In Indonesia the framework is layered: the TKBI taxonomy (OJK), the sovereign sukuk market (DJPPR), the SDG Indonesia One blended platform (PT SMI), guarantees (IIF and Finance Ministry Reg. 5/2025) and the JETP partnership launched on 15 November 2022 with an initial USD 20 billion pledge."
+    },
+    {
+     "id": "Pembeda utama dengan pembiayaan konvensional adalah pelaporan: pendana meminta bukti alokasi dan dampak, sehingga data proyek yang terukur menjadi syarat akses.",
+     "en": "The main difference from conventional finance is reporting: funders ask for allocation and impact proof, so measured project data becomes an access condition."
     }
    ]
   },
@@ -499,7 +910,9 @@
    "sumber": [
     "sio",
     "in_ceew",
-    "gs_bi"
+    "gs_bi",
+    "ed",
+    "jetpid"
    ],
    "rumus": [
     {
@@ -513,6 +926,18 @@
     {
      "id": "Pangsa sukuk hijau dalam alokasi sektor (persen) = Alokasi sektor / Total alokasi x 100",
      "en": "Sector share of green sukuk allocation (percent) = Sector allocation / Total allocation x 100"
+    },
+    {
+     "id": "Biaya modal rata-rata tertimbang (WACC) = Porsi ekuitas x Biaya ekuitas + Porsi utang x Biaya utang x (1 - tarif pajak)",
+     "en": "Weighted average cost of capital (WACC) = Equity share x Cost of equity + Debt share x Cost of debt x (1 - tax rate)"
+    },
+    {
+     "id": "Greenium (basis poin) = Imbal hasil obligasi biasa - Imbal hasil obligasi hijau setara",
+     "en": "Greenium (basis points) = Yield of a conventional bond - Yield of an equivalent green bond"
+    },
+    {
+     "id": "Rasio mobilisasi swasta = Dana swasta yang terhimpun / Dana publik yang dipakai",
+     "en": "Private mobilisation ratio = Private funds raised / Public funds used"
     }
    ],
    "contoh": [
@@ -523,6 +948,14 @@
     {
      "id": "India: tranche pertama obligasi hijau berdaulat diprediksi sekitar 6 bps di bawah patokan (CEEW); greenium tidak tetap antarlelang karena tranche kedua menyempit.",
      "en": "India: the first tranche of the sovereign green bond priced about 6 bps below the benchmark (CEEW); the greenium is not fixed across auctions as it narrowed on the second tranche."
+    },
+    {
+     "id": "WACC (angka ilustrasi): 40 persen ekuitas berbiaya 12 persen, 60 persen utang berbiaya 8 persen, pajak 22 persen = 0,4 x 12 + 0,6 x 8 x 0,78 = sekitar 8,5 persen (EST).",
+     "en": "WACC (illustrative figures): 40 percent equity at 12 percent, 60 percent debt at 8 percent, tax 22 percent = 0.4 x 12 + 0.6 x 8 x 0.78 = about 8.5 percent (EST)."
+    },
+    {
+     "id": "Rasio mobilisasi (angka sumber): JETP menargetkan USD 10 miliar swasta dari USD 10 miliar publik IPG, rasio 1,0 (laman Sekretariat JETP).",
+     "en": "Mobilisation ratio (sourced figures): JETP targets USD 10 billion of private money against USD 10 billion of IPG public money, a ratio of 1.0 (JETP Secretariat site)."
     }
    ]
   },
@@ -530,78 +963,152 @@
    "tipe": "langkah",
    "sumber": [
     "ed",
-    "tkbi",
-    "arkora"
+    "pendanaan",
+    "jetpid"
    ],
    "butir": [
     {
      "judul": {
-      "id": "Penerbit dan pemilik proyek",
-      "en": "Issuer and project owner"
+      "id": "Pembuat aturan dan taksonomi",
+      "en": "Rule and taxonomy makers"
      },
      "isi": {
-      "id": "Pemerintah (green sukuk berdaulat), BUMN dan swasta (misal Arkora Hydro) menetapkan proyek hijau dan kerangka.",
-      "en": "The government (sovereign green sukuk), state firms and private firms (e.g. Arkora Hydro) set green projects and a framework."
+      "id": "OJK menyusun TKBI dan aturan efek hijau; Kemenkeu menetapkan penjaminan dan menerbitkan sukuk negara.",
+      "en": "OJK drafts the TKBI and green securities rules; the Finance Ministry sets guarantees and issues sovereign sukuk."
      },
      "pelaku": {
-      "id": "Kemenkeu, korporasi",
-      "en": "Finance Ministry, corporates"
+      "id": "OJK, Kementerian Keuangan, Bank Indonesia",
+      "en": "OJK, Finance Ministry, Bank Indonesia"
+     },
+     "peran": {
+      "id": "OJK, Kementerian Keuangan, Bank Indonesia",
+      "en": "OJK, Finance Ministry, Bank Indonesia"
      }
     },
     {
      "judul": {
-      "id": "Taksonomi dan standar",
-      "en": "Taxonomy and standards"
+      "id": "Pendana publik dan donor",
+      "en": "Public funders and donors"
      },
      "isi": {
-      "id": "OJK menyediakan TKBI; empat tujuan lingkungan dan tiga kriteria esensial menilai aktivitas.",
-      "en": "OJK provides the TKBI; four environmental objectives and three essential criteria assess activities."
+      "id": "Hibah dan pinjaman lunak dari IPG, ADB, JICA, KfW, AIIB, GEF.",
+      "en": "Grants and soft loans from the IPG, ADB, JICA, KfW, AIIB, GEF."
      },
      "pelaku": {
-      "id": "OJK",
-      "en": "OJK"
+      "id": "IPG, ADB, JICA, KfW, GEF",
+      "en": "IPG, ADB, JICA, KfW, GEF"
+     },
+     "peran": {
+      "id": "IPG, ADB, JICA, KfW, GEF",
+      "en": "IPG, ADB, JICA, KfW, GEF"
      }
     },
     {
      "judul": {
-      "id": "Penjamin dan pendukung kredit",
-      "en": "Guarantors and credit enhancers"
+      "id": "Platform campuran dan penjamin",
+      "en": "Blended platforms and guarantors"
      },
      "isi": {
-      "id": "IIF memberi penjaminan; PT SMI mengelola platform campuran.",
-      "en": "IIF gives guarantees; PT SMI runs the blended platform."
+      "id": "Menurunkan risiko agar dana swasta masuk.",
+      "en": "Lower risk so private funds come in."
      },
      "pelaku": {
-      "id": "IIF, PT SMI",
-      "en": "IIF, PT SMI"
+      "id": "PT SMI, PT IIF",
+      "en": "PT SMI, PT IIF"
+     },
+     "peran": {
+      "id": "PT SMI, PT IIF",
+      "en": "PT SMI, PT IIF"
      }
     },
     {
      "judul": {
-      "id": "Investor",
-      "en": "Investors"
+      "id": "Penerbit",
+      "en": "Issuers"
      },
      "isi": {
-      "id": "Investor global dan domestik; pembeli green sukuk global termasuk investor Amerika dan Eropa (BI).",
-      "en": "Global and domestic investors; buyers of global green sukuk include American and European investors (BI)."
+      "id": "Pemerintah dan perusahaan menerbitkan obligasi dan sukuk hijau.",
+      "en": "Government and companies issue green bonds and sukuk."
      },
      "pelaku": {
-      "id": "Investor",
-      "en": "Investors"
+      "id": "DJPPR, Arkora Hydro, IIF",
+      "en": "DJPPR, Arkora Hydro, IIF"
+     },
+     "peran": {
+      "id": "DJPPR, Arkora Hydro, IIF",
+      "en": "DJPPR, Arkora Hydro, IIF"
      }
     },
     {
      "judul": {
-      "id": "Pelaporan alokasi dan dampak",
-      "en": "Allocation and impact reporting"
+      "id": "Bank dan investor institusi",
+      "en": "Banks and institutional investors"
      },
      "isi": {
-      "id": "DJPPR menerbitkan laporan alokasi dan dampak tahunan.",
-      "en": "DJPPR publishes annual allocation and impact reports."
+      "id": "Membeli efek dan memberi pinjaman proyek.",
+      "en": "Buy securities and lend to projects."
      },
      "pelaku": {
-      "id": "DJPPR",
-      "en": "DJPPR"
+      "id": "Bank, dana pensiun, asuransi",
+      "en": "Banks, pension funds, insurers"
+     },
+     "peran": {
+      "id": "Bank, dana pensiun, asuransi",
+      "en": "Banks, pension funds, insurers"
+     }
+    },
+    {
+     "judul": {
+      "id": "Pengembang proyek",
+      "en": "Project developers"
+     },
+     "isi": {
+      "id": "Memakai dana untuk membangun pembangkit terbarukan.",
+      "en": "Use funds to build renewable plants."
+     },
+     "pelaku": {
+      "id": "Pengembang IPP",
+      "en": "IPP developers"
+     },
+     "peran": {
+      "id": "Pengembang IPP",
+      "en": "IPP developers"
+     }
+    },
+    {
+     "judul": {
+      "id": "Pemverifikasi",
+      "en": "Verifiers"
+     },
+     "isi": {
+      "id": "Opini pihak kedua dan audit alokasi.",
+      "en": "Second-party opinion and allocation audits."
+     },
+     "pelaku": {
+      "id": "Lembaga verifikasi",
+      "en": "Verification bodies"
+     },
+     "peran": {
+      "id": "Lembaga verifikasi",
+      "en": "Verification bodies"
+     }
+    },
+    {
+     "judul": {
+      "id": "Pelaporan dan pengawasan",
+      "en": "Reporting and oversight"
+     },
+     "isi": {
+      "id": "Laporan alokasi dan dampak; OJK mengawasi emisi efek.",
+      "en": "Allocation and impact reports; OJK supervises securities issuance."
+     },
+     "pelaku": {
+      "id": "DJPPR, OJK, Sekretariat JETP",
+      "en": "DJPPR, OJK, JETP Secretariat"
+     },
+     "peran": {
+      "id": "DJPPR, OJK, Sekretariat JETP",
+      "en": "DJPPR, OJK, JETP Secretariat"
      }
     }
    ]
@@ -777,6 +1284,13 @@
      }
     },
     {
+     "k": "iso2",
+     "l": {
+      "id": "ISO2",
+      "en": "ISO2"
+     }
+    },
+    {
      "k": "ebt",
      "l": {
       "id": "EBT dalam listrik (persen)",
@@ -817,70 +1331,80 @@
      "ebt": 18.09,
      "fosil": 81.91,
      "int": 680.25,
-     "tahun": "2024"
+     "tahun": "2024",
+     "iso2": "ID"
     },
     {
      "negara": "Viet Nam",
      "ebt": 45.42,
      "fosil": 54.58,
      "int": 460.73,
-     "tahun": "2025"
+     "tahun": "2025",
+     "iso2": "VN"
     },
     {
      "negara": "Philippines",
      "ebt": 23.31,
      "fosil": 76.69,
      "int": 588.29,
-     "tahun": "2025"
+     "tahun": "2025",
+     "iso2": "PH"
     },
     {
      "negara": "Thailand",
      "ebt": 16.57,
      "fosil": 83.42,
      "int": 545.74,
-     "tahun": "2025"
+     "tahun": "2025",
+     "iso2": "TH"
     },
     {
      "negara": "Malaysia",
      "ebt": 20.65,
      "fosil": 79.35,
      "int": 601.97,
-     "tahun": "2025"
+     "tahun": "2025",
+     "iso2": "MY"
     },
     {
      "negara": "Singapore",
      "ebt": 5.49,
      "fosil": 94.51,
      "int": 497.09,
-     "tahun": "2025"
+     "tahun": "2025",
+     "iso2": "SG"
     },
     {
      "negara": "Lao PDR",
      "ebt": 76.72,
      "fosil": 23.28,
      "int": 232.08,
-     "tahun": "2024"
+     "tahun": "2024",
+     "iso2": "LA"
     },
     {
      "negara": "Cambodia",
      "ebt": 40.88,
      "fosil": 59.12,
      "int": 498.87,
-     "tahun": "2025"
+     "tahun": "2025",
+     "iso2": "KH"
     },
     {
      "negara": "Myanmar",
      "ebt": 47.86,
      "fosil": 52.14,
      "int": 502.99,
-     "tahun": "2024"
+     "tahun": "2024",
+     "iso2": "MM"
     },
     {
      "negara": "Brunei Darussalam",
      "ebt": 0.18,
      "fosil": 99.82,
      "int": 892.09,
-     "tahun": "2024"
+     "tahun": "2024",
+     "iso2": "BN"
     }
    ],
    "catatan": {
@@ -890,13 +1414,17 @@
   },
   "9": {
    "tipe": "tabel",
-   "per": 8,
+   "per": 15,
    "sumber": [
     "tkbi",
     "sio",
     "arkora",
     "gs_bi",
-    "smi"
+    "smi",
+    "direktori",
+    "pk5",
+    "jetpid",
+    "direktori"
    ],
    "kolom": [
     {
@@ -904,13 +1432,14 @@
      "l": {
       "id": "Pelaku",
       "en": "Actor"
-     }
+     },
+     "url": "url"
     },
     {
      "k": "peran",
      "l": {
-      "id": "Peran",
-      "en": "Role"
+      "id": "Peran di topik ini",
+      "en": "Role in this topic"
      }
     },
     {
@@ -919,16 +1448,28 @@
       "id": "Dasar",
       "en": "Basis"
      }
+    },
+    {
+     "k": "mw",
+     "l": {
+      "id": "Kapasitas proyek tercatat (MW)",
+      "en": "Recorded project capacity (MW)"
+     },
+     "num": true,
+     "d": 0
     }
    ],
    "baris": [
     {
      "nama": "OJK",
+     "id": "l_15e21f04fa",
+     "url": "/o/l_15e21f04fa",
      "peran": {
       "id": "Penyusun TKBI dan regulator jasa keuangan",
       "en": "Author of the TKBI and financial services regulator"
      },
-     "rujuk": "OJK, 20 Feb 2024"
+     "rujuk": "OJK, 20 Feb 2024",
+     "mw": null
     },
     {
      "nama": "DJPPR, Kementerian Keuangan",
@@ -936,7 +1477,9 @@
       "id": "Penerbit green sukuk berdaulat dan laporan alokasi",
       "en": "Issuer of sovereign green sukuk and allocation reports"
      },
-     "rujuk": "DJPPR; Katadata"
+     "rujuk": "DJPPR; Katadata",
+     "id": null,
+     "mw": null
     },
     {
      "nama": "Bank Indonesia",
@@ -944,7 +1487,9 @@
       "id": "Mendorong pengembangan pasar sukuk hijau",
       "en": "Promotes development of the green sukuk market"
      },
-     "rujuk": "Katadata, 14 Okt 2026"
+     "rujuk": "Katadata, 14 Okt 2026",
+     "id": null,
+     "mw": null
     },
     {
      "nama": "PT Sarana Multi Infrastruktur (PT SMI)",
@@ -952,7 +1497,9 @@
       "id": "Pengelola SDG Indonesia One dan penyedia pembiayaan (contoh PLTP Ijen USD 144,9 juta)",
       "en": "Manager of SDG Indonesia One and financier (e.g. Ijen geothermal USD 144.9 million)"
      },
-     "rujuk": "ANTARA, 13 Jun 2025; Kyodo, 26 Jun 2025"
+     "rujuk": "ANTARA, 13 Jun 2025; Kyodo, 26 Jun 2025",
+     "id": null,
+     "mw": null
     },
     {
      "nama": "PT Indonesia Infrastructure Finance (IIF)",
@@ -960,7 +1507,9 @@
       "id": "Penjamin sukuk Arkora Hydro hingga Rp645 miliar",
       "en": "Guarantor of the Arkora Hydro sukuk up to IDR 645 billion"
      },
-     "rujuk": "ANTARA, 25 Mei 2026"
+     "rujuk": "ANTARA, 25 Mei 2026",
+     "id": null,
+     "mw": null
     },
     {
      "nama": "Sekretariat JETP",
@@ -968,9 +1517,267 @@
       "id": "Mengelola portofolio JETP",
       "en": "Manages the JETP portfolio"
      },
-     "rujuk": "jetp-id.org"
+     "rujuk": "jetp-id.org",
+     "id": null,
+     "mw": null
+    },
+    {
+     "nama": "Kementerian Keuangan",
+     "id": "l_7b43a2574c",
+     "url": "/o/l_7b43a2574c",
+     "peran": {
+      "id": "Penerbit sukuk negara, pemberi penjaminan pemerintah (Permen 5/2025)",
+      "en": "Issuer of sovereign sukuk and giver of government guarantees (Reg. 5/2025)"
+     },
+     "rujuk": "DJPPR; regulasi repo",
+     "mw": null
+    },
+    {
+     "nama": "PT Sarana Multi Infrastruktur (Persero)",
+     "id": "p_a235c21f23",
+     "url": "/o/p_a235c21f23",
+     "peran": {
+      "id": "Operator SDG Indonesia One dan pembiaya proyek",
+      "en": "Operator of SDG Indonesia One and project financier"
+     },
+     "rujuk": "PT SMI",
+     "mw": null
+    },
+    {
+     "nama": "PT Indonesia Infrastructure Finance",
+     "id": "p_15bc360dc3",
+     "url": "/o/p_15bc360dc3",
+     "peran": {
+      "id": "Penerbit obligasi dan penjamin sukuk Arkora",
+      "en": "Bond issuer and guarantor of the Arkora sukuk"
+     },
+     "rujuk": "IIF",
+     "mw": null
+    },
+    {
+     "nama": "Sekretariat JETP Indonesia",
+     "id": "l_c455b2f724",
+     "url": "/o/l_c455b2f724",
+     "peran": {
+      "id": "Penyusun CIPP dan portofolio JETP",
+      "en": "Drafter of the CIPP and JETP portfolio"
+     },
+     "rujuk": "jetp-id.org",
+     "mw": null
+    },
+    {
+     "nama": "Badan Pengelola Investasi Daya Anagata Nusantara",
+     "id": "l_43f00f6a72",
+     "url": "/o/l_43f00f6a72",
+     "peran": {
+      "id": "Dana kekayaan negara",
+      "en": "Sovereign wealth fund"
+     },
+     "rujuk": "Direktori METI",
+     "mw": 0
+    },
+    {
+     "nama": "Asian Development Bank",
+     "id": "in_9a375db244",
+     "url": "/o/in_9a375db244",
+     "peran": {
+      "id": "Pengelola ETM dan ACGF",
+      "en": "Manager of the ETM and ACGF"
+     },
+     "rujuk": "Direktori METI",
+     "mw": null
+    },
+    {
+     "nama": "World Bank",
+     "id": "l_18a9ec31f4",
+     "url": "/o/l_18a9ec31f4",
+     "peran": {
+      "id": "Pemberi pinjaman dan penerbit data proyek (GREFI pipeline)",
+      "en": "Lender and source of project data (GREFI pipeline)"
+     },
+     "rujuk": "Direktori METI",
+     "mw": null
+    },
+    {
+     "nama": "Japan International Cooperation Agency",
+     "id": "in_eb327fef3a",
+     "url": "/o/in_eb327fef3a",
+     "peran": {
+      "id": "Pinjaman ODA Jepang",
+      "en": "Japanese ODA loans"
+     },
+     "rujuk": "Direktori METI",
+     "mw": null
+    },
+    {
+     "nama": "International Finance Corporation",
+     "id": "in_2acc58947a",
+     "url": "/o/in_2acc58947a",
+     "peran": {
+      "id": "Pembiaya sektor swasta Bank Dunia",
+      "en": "World Bank private-sector financier"
+     },
+     "rujuk": "Direktori METI",
+     "mw": null
+    },
+    {
+     "nama": "Global Environment Facility",
+     "id": "in_e049455716",
+     "url": "/o/in_e049455716",
+     "peran": {
+      "id": "Pemberi hibah lingkungan",
+      "en": "Environmental grant giver"
+     },
+     "rujuk": "Direktori METI",
+     "mw": null
+    },
+    {
+     "nama": "US International Development Finance Corporation (DFC)",
+     "id": "in_80ff9e7496",
+     "url": "/o/in_80ff9e7496",
+     "peran": {
+      "id": "Lembaga pembiayaan pembangunan AS",
+      "en": "US development finance institution"
+     },
+     "rujuk": "Direktori METI",
+     "mw": null
+    },
+    {
+     "nama": "Japan Bank for International Cooperation",
+     "id": "in_8b0d2e98d6",
+     "url": "/o/in_8b0d2e98d6",
+     "peran": {
+      "id": "Bank kerja sama internasional Jepang",
+      "en": "Japan's international cooperation bank"
+     },
+     "rujuk": "Direktori METI",
+     "mw": null
+    },
+    {
+     "nama": "Islamic Development Bank",
+     "id": "in_41e3e0c573",
+     "url": "/o/in_41e3e0c573",
+     "peran": {
+      "id": "Bank pembangunan Islam; calon pendana sukuk dan proyek",
+      "en": "Islamic development bank; potential funder of sukuk and projects"
+     },
+     "rujuk": "Direktori METI",
+     "mw": null
+    },
+    {
+     "nama": "PT PLN (Persero)",
+     "id": "su_ed074ff5",
+     "url": "/o/su_ed074ff5",
+     "peran": {
+      "id": "Offtaker utama dan penerima pinjaman transmisi",
+      "en": "Main offtaker and borrower for transmission"
+     },
+     "rujuk": "Direktori METI",
+     "mw": 9025.2
+    },
+    {
+     "nama": "PT Pertamina Geothermal Energy Tbk",
+     "id": "p_dda1e51dae",
+     "url": "/o/p_dda1e51dae",
+     "peran": {
+      "id": "Penerbit terbuka berkepakaran panas bumi",
+      "en": "Listed issuer with geothermal expertise"
+     },
+     "rujuk": "Direktori METI",
+     "mw": 220
+    },
+    {
+     "nama": "Kamar Dagang dan Industri Indonesia (Komite Tetap Energi Baru Terbarukan)",
+     "id": "l_2f86ba4616",
+     "url": "/o/l_2f86ba4616",
+     "peran": {
+      "id": "Wadah pengusaha; advokasi pembiayaan",
+      "en": "Business forum; financing advocacy"
+     },
+     "rujuk": "Direktori METI",
+     "mw": null
+    },
+    {
+     "nama": "Badan Riset dan Inovasi Nasional",
+     "id": "l_973f60de15",
+     "url": "/o/l_973f60de15",
+     "peran": {
+      "id": "Pendana riset energi",
+      "en": "Energy research funder"
+     },
+     "rujuk": "Direktori METI",
+     "mw": null
+    },
+    {
+     "nama": "Arkora Hydro",
+     "id": "ix_arko",
+     "url": "/o/ix_arko",
+     "peran": {
+      "id": "Penerbit obligasi dan sukuk hijau korporasi",
+      "en": "Issuer of corporate green bonds and sukuk"
+     },
+     "rujuk": "Tabel Penerbitan",
+     "mw": null
+    },
+    {
+     "nama": "Bursa Efek Indonesia",
+     "peran": {
+      "id": "Tempat pencatatan efek hijau dan IDXCarbon",
+      "en": "Listing venue for green securities and IDXCarbon"
+     },
+     "rujuk": "Direktori METI (skema IDXCarbon)",
+     "id": null,
+     "mw": null
+    },
+    {
+     "nama": "Badan Pengelola Dana Perkebunan",
+     "id": "l_060c77568c",
+     "url": "/o/l_060c77568c",
+     "peran": {
+      "id": "Kementerian dan Lembaga Negara; peran rantai: tercatat di direktori",
+      "en": "Kementerian dan Lembaga Negara; chain role: listed in the directory"
+     },
+     "rujuk": "Direktori METI",
+     "mw": null
+    },
+    {
+     "nama": "Climate Policy Initiative Indonesia",
+     "id": "l_17c427f563",
+     "url": "/o/l_17c427f563",
+     "peran": {
+      "id": "Think Tank dan Lembaga Riset; peran rantai: tercatat di direktori",
+      "en": "Think Tank dan Lembaga Riset; chain role: listed in the directory"
+     },
+     "rujuk": "Direktori METI",
+     "mw": null
+    },
+    {
+     "nama": "Center of Economic and Law Studies",
+     "id": "l_488614e2c7",
+     "url": "/o/l_488614e2c7",
+     "peran": {
+      "id": "Think Tank dan Lembaga Riset; peran rantai: tercatat di direktori",
+      "en": "Think Tank dan Lembaga Riset; chain role: listed in the directory"
+     },
+     "rujuk": "Direktori METI",
+     "mw": null
+    },
+    {
+     "nama": "Badan Kebijakan Fiskal",
+     "id": "l_c6d98b8a10",
+     "url": "/o/l_c6d98b8a10",
+     "peran": {
+      "id": "Kementerian dan Lembaga Negara; peran rantai: tercatat di direktori",
+      "en": "Kementerian dan Lembaga Negara; chain role: listed in the directory"
+     },
+     "rujuk": "Direktori METI",
+     "mw": null
     }
-   ]
+   ],
+   "catatan": {
+    "id": "Tautan nama mengarah ke profil di direktori METI bila organisasinya tercatat; pelaku tanpa tautan belum ada di direktori dan dicatat dari sumber di kolom Dasar.",
+    "en": "Names link to the METI directory profile when the organisation is listed; actors without a link are not yet in the directory and are noted from the source in the Basis column."
+   }
   },
   "10": {
    "tipe": "tabel",
@@ -1024,7 +1831,8 @@
      "nilai": "-",
      "tahun": "2023",
      "tautan": "Sumber",
-     "url": "https://www.antaranews.com/berita/5581897"
+     "url": "https://www.antaranews.com/berita/5581897",
+     "id": "pd_ob_arko_obligasi_hijau_2023"
     },
     {
      "penerbit": "PT Arkora Hydro Tbk",
@@ -1032,7 +1840,8 @@
      "nilai": "-",
      "tahun": "2026",
      "tautan": "Sumber",
-     "url": "https://www.antaranews.com/berita/5581897"
+     "url": "https://www.antaranews.com/berita/5581897",
+     "id": "pd_ob_arko_sukuk_2026"
     },
     {
      "penerbit": "PT Indonesia Infrastructure Finance",
@@ -1040,7 +1849,8 @@
      "nilai": "335,19 IDR miliar",
      "tahun": "2023",
      "tautan": "Sumber",
-     "url": "https://www.antaranews.com/berita/5253477"
+     "url": "https://www.antaranews.com/berita/5253477",
+     "id": "pd_ob_iif_green_perpetual_2023"
     },
     {
      "penerbit": "PT Indonesia Infrastructure Finance",
@@ -1048,7 +1858,8 @@
      "nilai": "1.500 IDR miliar",
      "tahun": "2025",
      "tautan": "Sumber",
-     "url": "https://www.antaranews.com/berita/5253477"
+     "url": "https://www.antaranews.com/berita/5253477",
+     "id": "pd_ob_iif_pub_2023_nov2025"
     },
     {
      "penerbit": "Pemerintah Indonesia (Kemenkeu/DJPPR)",
@@ -1056,7 +1867,8 @@
      "nilai": "6.600 juta USD",
      "tahun": "2024",
      "tautan": "Sumber",
-     "url": "https://api-djppr.kemenkeu.go.id/web/api/v1/media/8C2C3353-9134-43B3-9307-D465DE7C2CB8"
+     "url": "https://api-djppr.kemenkeu.go.id/web/api/v1/media/8C2C3353-9134-43B3-9307-D465DE7C2CB8",
+     "id": null
     },
     {
      "penerbit": "Pemerintah Indonesia (Kemenkeu/DJPPR)",
@@ -1064,7 +1876,8 @@
      "nilai": "40.600 IDR miliar",
      "tahun": "2024",
      "tautan": "Sumber",
-     "url": "https://api-djppr.kemenkeu.go.id/web/api/v1/media/8C2C3353-9134-43B3-9307-D465DE7C2CB8"
+     "url": "https://api-djppr.kemenkeu.go.id/web/api/v1/media/8C2C3353-9134-43B3-9307-D465DE7C2CB8",
+     "id": null
     },
     {
      "penerbit": "Pemerintah Indonesia (Kemenkeu/DJPPR)",
@@ -1072,7 +1885,8 @@
      "nilai": "31.170 IDR miliar",
      "tahun": "2024",
      "tautan": "Sumber",
-     "url": "https://api-djppr.kemenkeu.go.id/web/api/v1/media/8C2C3353-9134-43B3-9307-D465DE7C2CB8"
+     "url": "https://api-djppr.kemenkeu.go.id/web/api/v1/media/8C2C3353-9134-43B3-9307-D465DE7C2CB8",
+     "id": null
     },
     {
      "penerbit": "Pemerintah Indonesia (Kemenkeu/DJPPR)",
@@ -1080,7 +1894,8 @@
      "nilai": "1.500 juta USD",
      "tahun": "2022",
      "tautan": "Sumber",
-     "url": "https://api-djppr.kemenkeu.go.id/web/api/v1/media/8C2C3353-9134-43B3-9307-D465DE7C2CB8"
+     "url": "https://api-djppr.kemenkeu.go.id/web/api/v1/media/8C2C3353-9134-43B3-9307-D465DE7C2CB8",
+     "id": "pd_ob_ri_global_2022"
     },
     {
      "penerbit": "Pemerintah Indonesia (Kemenkeu/DJPPR)",
@@ -1088,7 +1903,8 @@
      "nilai": "1.000 juta USD",
      "tahun": "2023",
      "tautan": "Sumber",
-     "url": "https://api-djppr.kemenkeu.go.id/web/api/v1/media/8C2C3353-9134-43B3-9307-D465DE7C2CB8"
+     "url": "https://api-djppr.kemenkeu.go.id/web/api/v1/media/8C2C3353-9134-43B3-9307-D465DE7C2CB8",
+     "id": "pd_ob_ri_global_2023"
     },
     {
      "penerbit": "Pemerintah Indonesia (Kemenkeu/DJPPR)",
@@ -1096,7 +1912,8 @@
      "nilai": "600 juta USD",
      "tahun": "2024",
      "tautan": "Sumber",
-     "url": "https://api-djppr.kemenkeu.go.id/web/api/v1/media/8C2C3353-9134-43B3-9307-D465DE7C2CB8"
+     "url": "https://api-djppr.kemenkeu.go.id/web/api/v1/media/8C2C3353-9134-43B3-9307-D465DE7C2CB8",
+     "id": "pd_ob_ri_global_2024"
     },
     {
      "penerbit": "Pemerintah Indonesia (Kemenkeu/DJPPR)",
@@ -1104,7 +1921,8 @@
      "nilai": "-",
      "tahun": "2026",
      "tautan": "Sumber",
-     "url": "https://www.antaranews.com/berita/5531499"
+     "url": "https://www.antaranews.com/berita/5531499",
+     "id": "pd_ob_ri_pbsg002_2026"
     },
     {
      "penerbit": "Pemerintah Indonesia (Kemenkeu)",
@@ -1112,7 +1930,8 @@
      "nilai": "185.600 IDR miliar",
      "tahun": "2025",
      "tautan": "Sumber",
-     "url": "https://www.antaranews.com/berita/4895069"
+     "url": "https://www.antaranews.com/berita/4895069",
+     "id": null
     }
    ],
    "catatan": {
@@ -1139,9 +1958,13 @@
   },
   "12": {
    "tipe": "tabel",
-   "per": 6,
+   "per": 10,
    "sumber": [
-    "ed"
+    "ed",
+    "pr110",
+    "pk5",
+    "ojk10",
+    "pm10"
    ],
    "kolom": [
     {
@@ -1191,7 +2014,8 @@
       "id": "Instrumen nilai ekonomi karbon dan registri unit karbon; menggantikan Perpres 98/2021.",
       "en": "Carbon pricing instruments and a carbon unit registry; replaces Perpres 98/2021."
      },
-     "url": "https://peraturan.bpk.go.id/Details/334733"
+     "url": "https://peraturan.bpk.go.id/Details/334733",
+     "id": "perpres-110-2025"
     },
     {
      "nama": "Perpres 112/2022",
@@ -1202,7 +2026,8 @@
       "id": "Percepatan energi terbarukan: harga patokan dan penugasan PLN sebagai dasar pendapatan proyek.",
       "en": "Renewable acceleration: benchmark prices and PLN assignments underpin project revenue."
      },
-     "url": "https://peraturan.bpk.go.id/Details/225308"
+     "url": "https://peraturan.bpk.go.id/Details/225308",
+     "id": "perpres-112-2022"
     },
     {
      "nama": "PP 40/2025",
@@ -1213,7 +2038,8 @@
       "id": "Kebijakan Energi Nasional 2025; sasaran bauran yang menentukan kebutuhan pembiayaan.",
       "en": "National Energy Policy 2025; mix targets that determine financing needs."
      },
-     "url": "https://peraturan.bpk.go.id/Details/328789"
+     "url": "https://peraturan.bpk.go.id/Details/328789",
+     "id": "pp-40-2025"
     },
     {
      "nama": "UU 16/2016",
@@ -1224,7 +2050,92 @@
       "id": "Pengesahan Persetujuan Paris, dasar komitmen iklim.",
       "en": "Ratification of the Paris Agreement, the basis of climate commitments."
      },
-     "url": "https://peraturan.bpk.go.id/Details/37573"
+     "url": "https://peraturan.bpk.go.id/Details/37573",
+     "id": "uu-16-2016"
+    },
+    {
+     "nama": "Permen 5/2025",
+     "judul": "Tata Cara Pemberian dan Pelaksanaan Penjaminan Pemerintah Serta Penanggungan Risiko dalam Rangka Percepatan Pengemban...",
+     "status": "berlaku",
+     "tanggal": "2025-01-07",
+     "ringkas": {
+      "id": "Penjaminan pemerintah dan penanggungan risiko proyek ketenagalistrikan.",
+      "en": "Government guarantees and risk coverage for power projects."
+     },
+     "url": "https://peraturan.bpk.go.id/Details/313153",
+     "id": "permen-kemenkeu-5-2025"
+    },
+    {
+     "nama": "ojk 10/2026",
+     "judul": "Perubahan Atas Peraturan Otoritas Jasa Keuangan Nomor 14 Tahun 2023 tentang Perdagangan Karbon Melalui Bursa Karbon",
+     "status": "berlaku",
+     "tanggal": "2026-07-02",
+     "ringkas": {
+      "id": "Perubahan POJK 14/2023 tentang perdagangan karbon lewat bursa karbon.",
+      "en": "Amendment of OJK Reg. 14/2023 on carbon trading through the carbon exchange."
+     },
+     "url": "https://peraturan.bpk.go.id/Details/352355",
+     "id": "ojk-10-2026"
+    },
+    {
+     "nama": "Permen 10/2025",
+     "judul": "Peta Jalan (Road Map) Transisi Energi Sektor Ketenagalistrikan",
+     "status": "berlaku",
+     "tanggal": "2025-04-10",
+     "ringkas": {
+      "id": "Peta jalan transisi energi ketenagalistrikan; dasar kebutuhan investasi.",
+      "en": "Electricity transition road map; basis of investment needs."
+     },
+     "url": "https://peraturan.bpk.go.id/Details/317729",
+     "id": "permen-esdm-10-2025"
+    },
+    {
+     "nama": "Permen 5/2025",
+     "judul": "Pedoman Perjanjian Jual Beli Tenaga Listrik dari Pembangkit Tenaga Listrik yang Memanfaatkan Sumber Energi Terbarukan",
+     "status": "berlaku",
+     "tanggal": "2025-02-27",
+     "ringkas": {
+      "id": "Pedoman PJBL yang memengaruhi bankability proyek terbarukan.",
+      "en": "PPA guideline affecting the bankability of renewable projects."
+     },
+     "url": "https://peraturan.bpk.go.id/Details/317619",
+     "id": "permen-esdm-5-2025"
+    },
+    {
+     "nama": "PP 60/1992",
+     "judul": "Obligasi Perusahaan Umum (Perum) Listrik Negara",
+     "status": "berlaku",
+     "tanggal": "1992-09-19",
+     "ringkas": {
+      "id": "Obligasi Perum Listrik Negara (rujukan sejarah penerbitan obligasi sektor listrik).",
+      "en": "Perum Listrik Negara bonds (historical reference for power sector bond issuance)."
+     },
+     "url": "https://peraturan.bpk.go.id/Details/57894",
+     "id": "pp-60-1992"
+    },
+    {
+     "nama": "Perpres 9/2011",
+     "judul": "Penugasan Kepada Pusat Investasi Pemerintah untuk Memberikan Pinjaman dengan Persyaratan Lunak Kepada PT Perusahaan L...",
+     "status": "berlaku",
+     "tanggal": "2011-02-08",
+     "ringkas": {
+      "id": "Penugasan Pusat Investasi Pemerintah untuk memberi pinjaman dengan persyaratan lunak.",
+      "en": "Assignment of the Government Investment Unit to give loans on soft terms."
+     },
+     "url": "https://peraturan.bpk.go.id/Details/41144",
+     "id": "perpres-9-2011"
+    },
+    {
+     "nama": "Permen 20/2025",
+     "judul": "Tata Cara Penyediaan, Penghitungan, Pembayaran dan Pertanggungjawaban Subsidi Listrik",
+     "status": "berlaku",
+     "tanggal": "2025-03-05",
+     "ringkas": {
+      "id": "Subsidi listrik: konteks fiskal tarif.",
+      "en": "Electricity subsidy: the fiscal context of tariffs."
+     },
+     "url": "https://peraturan.bpk.go.id/Details/316100",
+     "id": "permen-kemenkeu-20-2025"
     }
    ],
    "catatan": {
@@ -1241,9 +2152,31 @@
     "arkora",
     "gs_bi",
     "in_rbi",
-    "jp_rusak"
+    "jp_rusak",
+    "jetpid",
+    "uu16",
+    "pr110",
+    "pk5",
+    "pm10",
+    "ojk10"
    ],
    "butir": [
+    {
+     "tanggal": "2016-10-24",
+     "judul": {
+      "id": "UU 16/2016 mengesahkan Persetujuan Paris",
+      "en": "Law 16/2016 ratifies the Paris Agreement"
+     },
+     "url": "https://peraturan.bpk.go.id/Details/37573"
+    },
+    {
+     "tanggal": "2022-11-15",
+     "judul": {
+      "id": "JETP Indonesia diluncurkan: komitmen awal USD 20 miliar",
+      "en": "JETP Indonesia launched: initial pledge of USD 20 billion"
+     },
+     "url": "https://jetp-id.org/"
+    },
     {
      "tanggal": "2023-01-25",
      "judul": {
@@ -1269,12 +2202,28 @@
      "url": "https://ojk.go.id/id/berita-dan-kegiatan/info-terkini/Pages/Taksonomi-untuk-Keuangan-Berkelanjutan-Indonesia.aspx"
     },
     {
+     "tanggal": "2025-01-07",
+     "judul": {
+      "id": "Permen Kemenkeu 5/2025 tentang penjaminan pemerintah",
+      "en": "Finance Ministry Reg. 5/2025 on government guarantees"
+     },
+     "url": "https://peraturan.bpk.go.id/Details/313153"
+    },
+    {
      "tanggal": "2025-02-11",
      "judul": {
       "id": "OJK merilis TKBI versi 2 (menurut ringkasan hasil pencarian; dokumen FAQ versi 2 ada)",
       "en": "OJK releases TKBI version 2 (per a search summary; the version 2 FAQ document exists)"
      },
      "url": "https://ojk.go.id/id/Publikasi/Roadmap-dan-Pedoman/Sektor-Jasa-Keuangan/Keuangan-Berkelanjutan/Documents/FAQ%20Taksonomi%20untuk%20Keuangan%20Berkelanjutan%20Indonesia%20versi%202.pdf"
+    },
+    {
+     "tanggal": "2025-04-10",
+     "judul": {
+      "id": "Permen ESDM 10/2025 peta jalan transisi",
+      "en": "Energy Ministry Reg. 10/2025 transition road map"
+     },
+     "url": "https://peraturan.bpk.go.id/Details/317729"
     },
     {
      "tanggal": "2025-06-12",
@@ -1293,12 +2242,28 @@
      "url": "https://kyodonewsprwire.jp/release/202506261283"
     },
     {
+     "tanggal": "2025-10-10",
+     "judul": {
+      "id": "Perpres 110/2025 tentang nilai ekonomi karbon",
+      "en": "Perpres 110/2025 on carbon economic value"
+     },
+     "url": "https://peraturan.bpk.go.id/Details/334733"
+    },
+    {
      "tanggal": "2026-05-25",
      "judul": {
       "id": "IIF menjamin sukuk berwawasan lingkungan Arkora Hydro hingga Rp645 miliar",
       "en": "IIF guarantees Arkora Hydro's sustainability sukuk up to IDR 645 billion"
      },
      "url": "https://www.antaranews.com/berita/5581897"
+    },
+    {
+     "tanggal": "2026-07-02",
+     "judul": {
+      "id": "POJK 10/2026 mengubah POJK 14/2023 perdagangan karbon",
+      "en": "OJK Reg. 10/2026 amends OJK Reg. 14/2023 on carbon trading"
+     },
+     "url": "https://peraturan.bpk.go.id/Details/352355"
     },
     {
      "tanggal": "2026-10-14",
@@ -1310,76 +2275,215 @@
     }
    ]
   },
+  "14": {
+   "tipe": "teks",
+   "sumber": [
+    "pk5",
+    "ojk10",
+    "pr110",
+    "ed",
+    "pendanaan"
+   ],
+   "paragraf": [
+    {
+     "id": "Kewajiban penerbit: efek hijau mengikuti ketentuan OJK dan kerangka hijau penerbit; pelaporan alokasi dan dampak dipraktikkan DJPPR untuk green sukuk.",
+     "en": "Issuer duty: green securities follow OJK rules and the issuer's green framework; allocation and impact reporting is practised by DJPPR for green sukuk."
+    },
+    {
+     "id": "Kewajiban peminjam: pinjaman luar negeri pemerintah memakai daftar Green Book Bappenas (sk_greenbook di direktori).",
+     "en": "Borrower duty: government foreign loans use the Bappenas Green Book list (sk_greenbook in the directory)."
+    },
+    {
+     "id": "Penjaminan: Permen Kemenkeu 5/2025 mengatur tata cara penjaminan pemerintah dan penanggungan risiko (judul regulasi).",
+     "en": "Guarantees: Finance Ministry Reg. 5/2025 governs government guarantees and risk coverage (regulation title)."
+    },
+    {
+     "id": "Karbon: Perpres 110/2025 dan POJK 10/2026 mengatur nilai ekonomi karbon dan perdagangan karbon yang dapat menambah arus kas proyek (judul regulasi).",
+     "en": "Carbon: Perpres 110/2025 and OJK Reg. 10/2026 govern carbon economic value and carbon trading that can add project cash flow (regulation titles)."
+    },
+    {
+     "id": "Insentif fiskal: pembebasan bea masuk mesin dan barang modal pembangkitan, serta tax holiday tercatat di direktori pendanaan (sk_ins_bea_masuk_mesin, sk_ins_bea_masuk_pembangkit, sk_ins_tax_holiday).",
+     "en": "Fiscal incentives: duty exemption for machinery and power generation capital goods, and tax holiday, are in the funding directory (sk_ins_bea_masuk_mesin, sk_ins_bea_masuk_pembangkit, sk_ins_tax_holiday)."
+    },
+    {
+     "id": "Insentif nonfiskal: akses ke platform campuran seperti SDG Indonesia One dan penjaminan IIF.",
+     "en": "Non-fiscal incentives: access to blended platforms such as SDG Indonesia One and IIF guarantees."
+    },
+    {
+     "id": "Sanksi: pelanggaran pelaporan efek mengikuti kewenangan OJK; rincian tidak dibaca di naskah ini.",
+     "en": "Sanctions: securities reporting breaches fall under OJK authority; detail is not read in this text."
+    },
+    {
+     "id": "Kewajiban kepatuhan taksonomi: TKBI bersifat panduan klasifikasi; apakah wajib dibahas di bab Isu (TKBI wajib atau tidak ada di FAQ).",
+     "en": "Taxonomy compliance: the TKBI is a classification guide; whether it is mandatory is covered in the Issues chapter (FAQ)."
+    }
+   ]
+  },
   "15": {
    "tipe": "langkah",
    "sumber": [
-    "tkbi"
+    "ed",
+    "pendanaan"
    ],
    "butir": [
     {
      "judul": {
-      "id": "Pilih tujuan lingkungan",
-      "en": "Pick the environmental objective"
+      "id": "1. Siapkan kerangka hijau",
+      "en": "1. Prepare the green framework"
      },
      "isi": {
-      "id": "Empat pilihan: mitigasi perubahan iklim, adaptasi, ekosistem dan keanekaragaman hayati, ketahanan sumber daya dan ekonomi sirkular.",
-      "en": "Four options: climate mitigation, adaptation, ecosystems and biodiversity, resource resilience and circular economy."
+      "id": "Tentukan kriteria proyek, pengelolaan dana, dan pelaporan.",
+      "en": "Set project criteria, fund management and reporting."
      },
      "pelaku": {
-      "id": "Penerbit atau debitur",
-      "en": "Issuer or borrower"
-     }
-    },
-    {
-     "judul": {
-      "id": "Pilih jalur penilaian",
-      "en": "Pick the assessment route"
+      "id": "Penerbit",
+      "en": "Issuer"
      },
-     "isi": {
-      "id": "Technical Screening Criteria untuk korporasi dan Sector Agnostic Decision Tree untuk UMKM.",
-      "en": "Technical Screening Criteria for corporates and a Sector Agnostic Decision Tree for MSMEs."
-     },
-     "pelaku": {
-      "id": "Penerbit, penilai",
-      "en": "Issuer, assessor"
-     }
-    },
-    {
-     "judul": {
-      "id": "Uji tiga kriteria esensial",
-      "en": "Test the three essential criteria"
-     },
-     "isi": {
-      "id": "Do No Significant Harm, tindakan perbaikan menuju transisi, dan aspek sosial.",
-      "en": "Do No Significant Harm, remedial measures toward transition, and the social aspect."
-     },
-     "pelaku": {
+     "peran": {
       "id": "Penerbit",
       "en": "Issuer"
      }
     },
     {
      "judul": {
-      "id": "Terima klasifikasi",
-      "en": "Receive the classification"
+      "id": "2. Klasifikasi menurut TKBI",
+      "en": "2. Classify under the TKBI"
      },
      "isi": {
-      "id": "Hijau, transisi, atau tidak memenuhi klasifikasi; TKBI dirancang sebagai dokumen hidup yang ditinjau berkala.",
-      "en": "Green, transition or does not meet classification; the TKBI is designed as a living document reviewed periodically."
+      "id": "Cocokkan aktivitas dengan kategori taksonomi.",
+      "en": "Match activities to taxonomy categories."
      },
      "pelaku": {
+      "id": "Penerbit, konsultan",
+      "en": "Issuer, consultants"
+     },
+     "peran": {
+      "id": "Penerbit, konsultan",
+      "en": "Issuer, consultants"
+     }
+    },
+    {
+     "judul": {
+      "id": "3. Opini pihak kedua",
+      "en": "3. Second-party opinion"
+     },
+     "isi": {
+      "id": "Minta penilaian independen atas kerangka.",
+      "en": "Obtain an independent assessment of the framework."
+     },
+     "pelaku": {
+      "id": "Lembaga verifikasi",
+      "en": "Verification body"
+     },
+     "peran": {
+      "id": "Lembaga verifikasi",
+      "en": "Verification body"
+     }
+    },
+    {
+     "judul": {
+      "id": "4. Pernyataan pendaftaran dan penawaran",
+      "en": "4. Registration statement and offering"
+     },
+     "isi": {
+      "id": "Ajukan ke OJK dan catat di BEI.",
+      "en": "File with OJK and list on the IDX."
+     },
+     "pelaku": {
+      "id": "OJK, BEI",
+      "en": "OJK, IDX"
+     },
+     "peran": {
+      "id": "OJK, BEI",
+      "en": "OJK, IDX"
+     }
+    },
+    {
+     "judul": {
+      "id": "5. Penjaminan atau peningkatan kredit",
+      "en": "5. Guarantee or credit enhancement"
+     },
+     "isi": {
+      "id": "Opsional: penjamin seperti IIF menambah peringkat.",
+      "en": "Optional: a guarantor such as IIF lifts the rating."
+     },
+     "pelaku": {
+      "id": "IIF, SMI",
+      "en": "IIF, SMI"
+     },
+     "peran": {
+      "id": "IIF, SMI",
+      "en": "IIF, SMI"
+     }
+    },
+    {
+     "judul": {
+      "id": "6. Penerbitan dan penjualan",
+      "en": "6. Issuance and sale"
+     },
+     "isi": {
+      "id": "Tawarkan ke investor; sukuk negara lewat lelang atau ritel.",
+      "en": "Offer to investors; sovereign sukuk via auction or retail."
+     },
+     "pelaku": {
+      "id": "Penerbit, penjamin emisi",
+      "en": "Issuer, underwriters"
+     },
+     "peran": {
+      "id": "Penerbit, penjamin emisi",
+      "en": "Issuer, underwriters"
+     }
+    },
+    {
+     "judul": {
+      "id": "7. Alokasi dana",
+      "en": "7. Allocate proceeds"
+     },
+     "isi": {
+      "id": "Dana hanya untuk proyek memenuhi kriteria.",
+      "en": "Funds only for projects meeting the criteria."
+     },
+     "pelaku": {
+      "id": "Penerbit",
+      "en": "Issuer"
+     },
+     "peran": {
+      "id": "Penerbit",
+      "en": "Issuer"
+     }
+    },
+    {
+     "judul": {
+      "id": "8. Laporan alokasi dan dampak",
+      "en": "8. Allocation and impact report"
+     },
+     "isi": {
+      "id": "Terbitkan tahunan; DJPPR contohnya.",
+      "en": "Publish annually; DJPPR is an example."
+     },
+     "pelaku": {
+      "id": "Penerbit",
+      "en": "Issuer"
+     },
+     "peran": {
       "id": "Penerbit",
       "en": "Issuer"
      }
     }
-   ]
+   ],
+   "catatan": {
+    "id": "Lama dan biaya tiap langkah tidak ditemukan di sumber; urutan adalah ringkasan editorial METI dan harus dicek pada ketentuan OJK terbaru.",
+    "en": "The duration and cost of each step were not found in sources; the order is a METI editorial summary to be checked against the latest OJK rules."
+   }
   },
   "17": {
    "tipe": "teks",
    "sumber": [
     "arkora",
     "sio_oecd",
-    "smi"
+    "smi",
+    "ed",
+    "pendanaan"
    ],
    "paragraf": [
     {
@@ -1389,6 +2493,30 @@
     {
      "id": "Kematangan dan biaya instrumen baru tidak ditemukan di sumber yang dibaca.",
      "en": "The maturity and cost of the new instruments were not found in the sources read."
+    },
+    {
+     "id": "Obligasi dan sukuk bertema hijau, sosial, dan berkelanjutan, dengan variasi terbaru: sukuk ijarah berkelanjutan berwawasan lingkungan (Arkora Hydro 2026) dan green perpetual notes (IIF 2023).",
+     "en": "Green, social and sustainability-themed bonds and sukuk, with recent variants: sustainable environmental ijarah sukuk (Arkora Hydro 2026) and green perpetual notes (IIF 2023)."
+    },
+    {
+     "id": "Obligasi terkait keberlanjutan (sustainability-linked) mengikat kupon pada target kinerja; belum ada contoh dalam tabel Penerbitan.",
+     "en": "Sustainability-linked bonds tie the coupon to performance targets; there is no example in the Issuance table yet."
+    },
+    {
+     "id": "Urun dana proyek energi: Danamart mengumpulkan dana PLTS Asmat (direktori pendanaan pd_media_yekpltsdiasmat).",
+     "en": "Energy project crowdfunding: Danamart raised funds for the Asmat solar plant (funding directory pd_media_yekpltsdiasmat)."
+    },
+    {
+     "id": "Pembiayaan platform campuran (SDG Indonesia One), penjaminan risiko politik, dan hasil perdagangan karbon sebagai arus kas tambahan.",
+     "en": "Blended platform finance (SDG Indonesia One), political risk guarantees and carbon trading proceeds as extra cash flow."
+    },
+    {
+     "id": "Teknologi data: pelaporan dampak digital dan registri karbon (SRN) memudahkan verifikasi; TRL tidak relevan untuk instrumen keuangan.",
+     "en": "Data technology: digital impact reporting and the carbon registry (SRN) ease verification; TRL is not relevant to financial instruments."
+    },
+    {
+     "id": "Biaya penerbitan dan greenium tidak dikutip kecuali yang ada di sumber bab Isu (Vietnam).",
+     "en": "Issuance cost and greenium are not quoted except those in the Issues chapter sources (Vietnam)."
     }
    ]
   },
@@ -1408,6 +2536,13 @@
      "l": {
       "id": "Negara",
       "en": "Country"
+     }
+    },
+    {
+     "k": "iso2",
+     "l": {
+      "id": "ISO2",
+      "en": "ISO2"
      }
     },
     {
@@ -1443,7 +2578,8 @@
      "catatan": {
       "id": "Sejak 2018",
       "en": "Since 2018"
-     }
+     },
+     "iso2": "ID"
     },
     {
      "negara": "India",
@@ -1458,7 +2594,8 @@
      "catatan": {
       "id": "Greenium sekitar 6 bps (CEEW)",
       "en": "Greenium about 6 bps (CEEW)"
-     }
+     },
+     "iso2": "IN"
     },
     {
      "negara": "Vietnam",
@@ -1473,7 +2610,8 @@
      "catatan": {
       "id": "Kerangka obligasi berdaulat masih disusun",
       "en": "A sovereign bond framework is still being drafted"
-     }
+     },
+     "iso2": "VN"
     }
    ],
    "catatan": {
@@ -1567,105 +2705,120 @@
      "pemberi": "Badan Pengelola Dana Lingkungan Hidup",
      "jenis": "hibah",
      "status": "berjalan",
-     "url": "https://bpdlh.id/"
+     "url": "https://bpdlh.id/",
+     "id": "sk_bpdlh"
     },
     {
      "nama": "Global Environment Facility",
      "pemberi": "Global Environment Facility",
      "jenis": "hibah",
      "status": "berjalan",
-     "url": "https://www.thegef.org/"
+     "url": "https://www.thegef.org/",
+     "id": "sk_gef"
     },
     {
      "nama": "Pembiayaan energi AIIB",
      "pemberi": "Asian Infrastructure Investment Bank",
      "jenis": "pinjaman lunak",
      "status": "berjalan",
-     "url": "https://www.aiib.org/"
+     "url": "https://www.aiib.org/",
+     "id": "sk_aiib"
     },
     {
      "nama": "Pinjaman luar negeri lewat Green Book",
      "pemberi": "Kementerian PPN/Bappenas",
      "jenis": "pinjaman lunak",
      "status": "berjalan",
-     "url": "https://www.bappenas.go.id/"
+     "url": "https://www.bappenas.go.id/",
+     "id": "sk_greenbook"
     },
     {
      "nama": "Pinjaman ODA JICA",
      "pemberi": "Japan International Cooperation Agency",
      "jenis": "pinjaman lunak",
      "status": "berjalan",
-     "url": "https://www.jica.go.jp/indonesia/"
+     "url": "https://www.jica.go.jp/indonesia/",
+     "id": "sk_jica"
     },
     {
      "nama": "Kerja sama keuangan KfW",
      "pemberi": "KfW Development Bank",
      "jenis": "pinjaman lunak",
      "status": "berjalan",
-     "url": "https://www.kfw-entwicklungsbank.de/"
+     "url": "https://www.kfw-entwicklungsbank.de/",
+     "id": "sk_kfw"
     },
     {
      "nama": "ASEAN Catalytic Green Finance Facility",
      "pemberi": "Asian Development Bank",
      "jenis": "blended",
      "status": "berjalan",
-     "url": "https://www.adb.org/"
+     "url": "https://www.adb.org/",
+     "id": "sk_acgf"
     },
     {
      "nama": "Energy Transition Mechanism (ADB)",
      "pemberi": "Asian Development Bank",
      "jenis": "blended",
      "status": "berjalan",
-     "url": "https://www.adb.org/"
+     "url": "https://www.adb.org/",
+     "id": "sk_adb_etm"
     },
     {
      "nama": "Accelerating Coal Transition (CIF ACT)",
      "pemberi": "Climate Investment Funds",
      "jenis": "blended",
      "status": "berjalan",
-     "url": "https://www.cif.org/"
+     "url": "https://www.cif.org/",
+     "id": "sk_cif_act"
     },
     {
      "nama": "Green Climate Fund",
      "pemberi": "Green Climate Fund",
      "jenis": "blended",
      "status": "berjalan",
-     "url": "https://www.greenclimate.fund/"
+     "url": "https://www.greenclimate.fund/",
+     "id": "sk_gcf"
     },
     {
      "nama": "SDG Indonesia One",
      "pemberi": "PT Sarana Multi Infrastruktur",
      "jenis": "blended",
      "status": "berjalan",
-     "url": "https://www.ptsmi.co.id/"
+     "url": "https://www.ptsmi.co.id/",
+     "id": "sk_sdg_one"
     },
     {
      "nama": "Pembebasan bea masuk mesin, barang, dan bahan investasi",
      "pemberi": "Kementerian Keuangan",
      "jenis": "insentif fiskal",
      "status": "berjalan",
-     "url": "https://peraturan.bpk.go.id/Details/167732/pmk-no-176pmk0112009"
+     "url": "https://peraturan.bpk.go.id/Details/167732/pmk-no-176pmk0112009",
+     "id": "sk_ins_bea_masuk_mesin"
     },
     {
      "nama": "Pembebasan bea masuk barang modal pembangkitan listrik",
      "pemberi": "Kementerian Keuangan",
      "jenis": "insentif fiskal",
      "status": "berjalan",
-     "url": "https://peraturan.bpk.go.id/Details/146740/pmk-no-66pmk0102015"
+     "url": "https://peraturan.bpk.go.id/Details/146740/pmk-no-66pmk0102015",
+     "id": "sk_ins_bea_masuk_pembangkit"
     },
     {
      "nama": "PPN dibebaskan atas impor barang kontraktor panas bumi",
      "pemberi": "Kementerian Keuangan",
      "jenis": "insentif fiskal",
      "status": "berjalan",
-     "url": "https://peraturan.bpk.go.id/Details/232943/pp-no-49-tahun-2022"
+     "url": "https://peraturan.bpk.go.id/Details/232943/pp-no-49-tahun-2022",
+     "id": "sk_ins_ppn_panas_bumi"
     },
     {
      "nama": "Tax holiday (pengurangan PPh badan)",
      "pemberi": "Kementerian Keuangan",
      "jenis": "insentif fiskal",
      "status": "berjalan",
-     "url": "https://peraturan.bpk.go.id/Details/148016/pmk-no-130pmk0102020"
+     "url": "https://peraturan.bpk.go.id/Details/148016/pmk-no-130pmk0102020",
+     "id": "sk_ins_tax_holiday"
     }
    ],
    "catatan": {
@@ -1823,7 +2976,9 @@
     "tkbi_krit",
     "tkbi_hapus",
     "jp_rusak",
-    "vn_news"
+    "vn_news",
+    "ieefa",
+    "jetpid"
    ],
    "paragraf": [
     {
@@ -1833,6 +2988,14 @@
     {
      "id": "Komitmen versus uang: hanya 2,6 persen komitmen JETP berupa hibah dan sekitar 50 paket pendanaan membuat belanja sulit dilacak (The Conversation). Di Vietnam, biaya penerbitan obligasi hijau jauh lebih tinggi sementara bunga tidak jauh berbeda (ringkasan hasil pencarian).",
      "en": "Pledges versus money: only 2.6 percent of JETP pledges are grants and about 50 funding packages make spending hard to track (The Conversation). In Vietnam green bond issuance costs are much higher while interest rates do not differ much (search summary)."
+    },
+    {
+     "id": "Kontroversi 3, JETP: komitmen atau uang tersalur. Pemerintah dan mitra menekankan paket yang disetujui; IEEFA dan The Conversation menilai pencairan jauh di bawah komitmen USD 21,4 miliar. Angka resmi pencairan belum terbaca dari laman Sekretariat JETP (laporan 2025 tersedia di sana tetapi berkasnya tidak terbaca otomatis).",
+     "en": "Controversy 3, JETP: pledge or money disbursed. Government and partners stress approved packages; IEEFA and The Conversation judge disbursement far below the USD 21.4 billion pledge. The official disbursement figure could not be read from the JETP Secretariat site (the 2025 report is listed there but the file could not be read automatically)."
+    },
+    {
+     "id": "Kontroversi 4, pinjaman atau hibah. Pendukung pinjaman: cepat dan skala besar. Penolak: menambah utang proyek yang manfaatnya publik. Hipotesis METI: porsi hibah teknis untuk persiapan proyek menentukan jumlah proyek yang layak bank.",
+     "en": "Controversy 4, loans or grants. Supporters of loans: fast and large scale. Opponents: they add debt to projects with public benefit. METI hypothesis: the grant share for project preparation determines how many projects become bankable."
     }
    ]
   },
@@ -1902,6 +3065,14 @@
       "id": "2060 atau lebih cepat",
       "en": "2060 or earlier"
      }
+    },
+    {
+     "item": {
+      "id": "Tonggak 2045 dan 2060: tidak ada proyeksi pembiayaan hijau resmi di sumber yang dibaca selain TKBI nol bersih",
+      "en": "Milestones 2045 and 2060: no official green finance projection in the sources read beyond the TKBI net zero item"
+     },
+     "nilai": "-",
+     "tahun": "2045"
     }
    ],
    "catatan": {
@@ -1922,6 +3093,14 @@
     {
      "id": "Analisis METI (Hipotesis): pemda dan akademisi: pemda dapat memakai SDG Indonesia One (36,15 persen penerima adalah pemda); akademisi dapat mengkaji pelacakan dana dan kredibilitas klasifikasi.",
      "en": "METI analysis (Hypothesis): local governments and academics: local governments can use SDG Indonesia One (36.15 percent of beneficiaries are local governments); academics can study fund tracking and classification credibility."
+    },
+    {
+     "id": "Analisis METI (Hipotesis): pengembang: siapkan data proyek terukur dan pilih skema dari tabel Pembiayaan; hibah teknis mempercepat financial close.",
+     "en": "METI analysis (Hypothesis): developers: prepare measured project data and choose a scheme from the Financing table; technical grants speed financial close."
+    },
+    {
+     "id": "Analisis METI (Hipotesis): pemda dan akademisi: akses platform campuran dan dana riset; BRIN dan Kedaireka tercatat di direktori pendanaan.",
+     "en": "METI analysis (Hypothesis): local governments and academics: access blended platforms and research funds; BRIN and Kedaireka are in the funding directory."
     }
    ]
   },
@@ -1940,6 +3119,34 @@
     {
      "id": "Persetujuan dan pencairan JETP berikutnya, serta kerangka obligasi hijau berdaulat Vietnam sebagai pembanding.",
      "en": "The next JETP approvals and disbursements, and Vietnam's sovereign green bond framework as a comparison."
+    },
+    {
+     "id": "JETP Progress Report 2025 dan angka pencairan resmi.",
+     "en": "The JETP Progress Report 2025 and official disbursement figures."
+    },
+    {
+     "id": "Revisi TKBI berikutnya dan status kategori kuning dan merah.",
+     "en": "The next TKBI revision and the status of the yellow and red categories."
+    },
+    {
+     "id": "Penerbitan green sukuk berikutnya (PBSG002 dan seri global).",
+     "en": "The next green sukuk issues (PBSG002 and global series)."
+    },
+    {
+     "id": "Implementasi Permen Kemenkeu 5/2025 pada proyek pertama.",
+     "en": "Implementation of Finance Ministry Reg. 5/2025 on the first project."
+    },
+    {
+     "id": "Pipeline Bank Dunia GREFI dan skema CIF ACT.",
+     "en": "The World Bank GREFI pipeline and the CIF ACT scheme."
+    },
+    {
+     "id": "Implementasi Perpres 110/2025 dan POJK 10/2026 pada arus kas proyek.",
+     "en": "Implementation of Perpres 110/2025 and OJK Reg. 10/2026 on project cash flows."
+    },
+    {
+     "id": "Tren greenium sukuk negara.",
+     "en": "Trend of the sovereign sukuk greenium."
     }
    ]
   },
@@ -1949,7 +3156,8 @@
    "sumber": [
     "tkbi",
     "sio_oecd",
-    "in_ceew"
+    "in_ceew",
+    "direktori"
    ],
    "kolom": [
     {
@@ -1983,7 +3191,8 @@
      "mengapa": {
       "id": "Kriteria klasifikasi hijau dan transisi",
       "en": "Green and transition classification criteria"
-     }
+     },
+     "id": null
     },
     {
      "judul": "SDG Indonesia One (OECD blended finance case)",
@@ -1992,7 +3201,8 @@
      "mengapa": {
       "id": "Studi kasus pendanaan campuran",
       "en": "Blended finance case study"
-     }
+     },
+     "id": null
     },
     {
      "judul": "India's maiden sovereign green bonds",
@@ -2001,6 +3211,37 @@
      "mengapa": {
       "id": "Greenium dan desain tranche",
       "en": "Greenium and tranche design"
+     },
+     "id": null
+    },
+    {
+     "judul": "Indonesia Energy Transition Outlook 2025",
+     "id": "pk-indonesia-energy-transition-outlook-2025",
+     "url": "/pustaka?id=pk-indonesia-energy-transition-outlook-2025",
+     "penerbit": "Institute for Essential Services Reform (IESR)",
+     "mengapa": {
+      "id": "Dokumen di Pustaka METI",
+      "en": "Document in the METI Library"
+     }
+    },
+    {
+     "judul": "Strategi Transisi Energi Berbasis Kewilayahan Menuju Indonesia Emas",
+     "id": "pk-strategi-transisi-energi-berbasis-kewilayahan-menuju-ind",
+     "url": "/pustaka?id=pk-strategi-transisi-energi-berbasis-kewilayahan-menuju-ind",
+     "penerbit": "Kementerian PPN/Bappenas (dengan GIZ dan Pertamina Energy Institute)",
+     "mengapa": {
+      "id": "Dokumen di Pustaka METI",
+      "en": "Document in the METI Library"
+     }
+    },
+    {
+     "judul": "PERMEN 12/2025: Pajak Pertambahan Nilai Atas Kendaraan Bermotor Listrik Berbasis Baterai Roda Empat Tertentu dan Kendaraan Bermotor Listrik Berbasis Baterai Bus Tertentu Serta Pajak Penjualan Atas Barang Mewah Atas Penyerahan Barang Kena Pajak Yang Tergolong Mewah Berupa Kendaraan Bermotor Roda Empat Emisi Karbon Rendah Listrik Tertentu Yang Ditanggung Pemerintah Tahun Anggaran 2025",
+     "id": "pk-reg-permen-kemenkeu-12-2025",
+     "url": "/pustaka?id=pk-reg-permen-kemenkeu-12-2025",
+     "penerbit": "Kementerian Keuangan",
+     "mengapa": {
+      "id": "Dokumen di Pustaka METI",
+      "en": "Document in the METI Library"
      }
     }
    ]
@@ -2149,7 +3390,9 @@
      "sumber": [
       "sio",
       "sio_oecd"
-     ]
+     ],
+     "foto": null,
+     "koordinat": null
     },
     {
      "id": "green-sukuk",
@@ -2244,7 +3487,9 @@
       "gs_bi",
       "gs_2018",
       "djppr"
-     ]
+     ],
+     "foto": null,
+     "koordinat": null
     },
     {
      "id": "india",
@@ -2349,7 +3594,9 @@
      "sumber": [
       "in_rbi",
       "in_ceew"
-     ]
+     ],
+     "foto": null,
+     "koordinat": null
     }
    ]
   },
@@ -2471,7 +3718,9 @@
       "jp_rusak",
       "ieefa"
      ],
-     "hak_jawab": true
+     "hak_jawab": true,
+     "foto": null,
+     "koordinat": null
     },
     {
      "id": "etm-cirebon",
@@ -2556,7 +3805,9 @@
      "sumber": [
       "batal"
      ],
-     "hak_jawab": true
+     "hak_jawab": true,
+     "foto": null,
+     "koordinat": null
     },
     {
      "id": "vn-obligasi",
@@ -2643,7 +3894,9 @@
       "vn_hukum",
       "vn_obl"
      ],
-     "hak_jawab": true
+     "hak_jawab": true,
+     "foto": null,
+     "koordinat": null
     }
    ]
   },

@@ -37,7 +37,7 @@ export const ikonSumber = (url, judul = "") => (/^https?:\/\//i.test(url || "") 
 export function jenisKolom(c, baris) {
   const k = c.k + " " + teks(c.l), v = baris.map((r) => teks(r[c.k])).filter(Boolean), n = v.length || 1;
   const bagi = (f) => v.filter(f).length / n;
-  if (c.url && c.url === c.k) return "url";
+  if (c.url && (c.url === c.k || /naskah|sumber|source|unduh|tautan|link|^url/i.test(k))) return "url";
   if (v.length && bagi((x) => ISO.test(x)) >= 0.7) return "tgl";
   if (/status/i.test(k)) return "status";
   if (/kategori|category/i.test(k) && bagi((x) => x.length <= 48) > 0.8) return "kat";
@@ -60,7 +60,7 @@ function sel(j, r, c, ctx, adaReg) {
     return ikonSumber(r[c.url]);
   }
   if (c.url && /^https?:\/\//.test(r[c.url] || "") && !["prov", "org", "proyek", "reg"].includes(j)) return `<a class="jm-tp-ent" href="${esc(r[c.url])}" target="_blank" rel="noopener noreferrer"><span>${esc(x)}</span></a>`;
-  if (!x) return `<span class="jm-tp-kosong" title="${esc(u("tanpa"))}">-</span>`;
+  if (!x || x === "-") return `<span class="jm-tp-kosong" title="${esc(u("tanpa"))}">-</span>`;
   if (j === "tgl") return `<time datetime="${esc(x)}">${esc(tanggal(x))}</time>`;
   if (j === "status") return /^(berlaku|dicabut|diubah)$/i.test(x) ? pilStatusReg(x) : pilStatusProyek(x);
   if (j === "kat") return pilKat(x);
@@ -75,6 +75,8 @@ function sel(j, r, c, ctx, adaReg) {
     return `<span class="jm-tp-ent">${logoPenerbit(pb)}${r2?.id ? `<a href="/regulasi?id=${encodeURIComponent(r2.id)}"><b>${esc(x)}</b></a>` : `<b>${esc(x)}</b>`}</span>`;
   }
   if (j === "num" || (c.num && typeof r[c.k] === "number")) return typeof r[c.k] === "number" ? num(r[c.k], c.d || 0) : esc(x);
+  if (/proyek|project|nama/i.test(teks(c.l) + c.k) && cariProyek(x)) return `<a class="jm-tp-ent" href="/p/${esc(cariProyek(x).id)}"><span>${esc(x)}</span></a>`;
+  if (/organisasi|pemilik|pengembang|operator|perusahaan|lembaga|owner|developer/i.test(teks(c.l) + c.k) && cariOrg(x)) return orgSel(x);
   return esc(x);
 }
 const urut = (j, r, c) => { const v = r[c.k]; return typeof v === "number" ? v : j === "tgl" ? teks(v) || null : teks(v) || null; };
@@ -82,10 +84,12 @@ const urut = (j, r, c) => { const v = r[c.k]; return typeof v === "number" ? v :
 /* kolom kenal-isi untuk tabel naskah (bab bertipe tabel) */
 export function kolomPintar(b, ctx) {
   const baris = b.baris || [], dasar = (b.kolom || []).map((c) => ({ c, j: jenisKolom(c, baris) })), adaReg = dasar.find((x) => x.j === "reg");
-  const kols = [];
+  const kols = [], adaStatus = dasar.some((x) => x.j === "status");
+  let orgPakai = false;
+  for (const d of dasar) if (d.j === "org") { if (orgPakai) d.j = "teks"; orgPakai = true; }
   for (const { c, j } of dasar) {
     kols.push({ k: c.k, l: L(c.l), j, num: !!c.num, w: j, f: (r) => sel(j, r, c, ctx, j === "url" && adaReg ? { k: adaReg.c.k } : null), v: (r) => urut(j, r, c) });
-    if (j === "reg") kols.push({ k: c.k + "_st", l: u("k.status"), j: "status", w: "status", f: (r) => { const q = cariReg(teks(r[c.k])); return q?.status ? pilStatusReg(q.status) : "-"; }, v: (r) => cariReg(teks(r[c.k]))?.status || null });
+    if (j === "reg" && !adaStatus) kols.push({ k: c.k + "_st", l: u("k.status"), j: "status", w: "status", f: (r) => { const q = cariReg(teks(r[c.k])); return q?.status ? pilStatusReg(q.status) : "-"; }, v: (r) => cariReg(teks(r[c.k]))?.status || null });
   }
   return { kols, dasar };
 }
@@ -96,7 +100,7 @@ export function tabelPintar(b, id, ctx) {
   const dasar = d0.filter((x) => !buang(x.c)), kols = semua.filter((c) => !d0.some((x) => buang(x.c) && x.c.k === c.k));
   let atas = "";
   const kp = dasar.find((x) => x.j === "prov"), kn = dasar.filter((x) => x.c.num);
-  if (kp && kn.length && new Set(baris.map((r) => kodeProv(teks(r[kp.c.k]))).filter(Boolean)).size >= 15) atas = petaHtml(id, baris, kp.c, kn.find((x) => /pvout/i.test(x.c.k + teks(x.c.l)))?.c || kn.find((x) => /potensi|potential/i.test(x.c.k + teks(x.c.l)))?.c || kn[0].c, kn.map((x) => x.c));
+  if (kp && kn.length && new Set(baris.map((r) => kodeProv(teks(r[kp.c.k]))).filter(Boolean)).size >= Math.max(15, baris.length * 0.9)) atas = petaHtml(id, baris, kp.c, kn.find((x) => /pvout/i.test(x.c.k + teks(x.c.l)))?.c || kn.find((x) => /potensi|potential/i.test(x.c.k + teks(x.c.l)))?.c || kn[0].c, kn.map((x) => x.c));
   const rapat = kn.length > 4;
   const ks = dasar.find((x) => x.j === "status"), km = dasar.find((x) => x.c.num && /mw/i.test(x.c.k + teks(x.c.l)));
   if (ks && km && ctx.dasar?.proyek?.daftar?.length) atas += ringkasStatus(ctx.dasar.proyek.daftar, id);

@@ -23,7 +23,8 @@
     "en": "GW"
    },
    "sumber": "pot63",
-   "est": false
+   "est": false,
+   "deret": null
   },
   {
    "label": {
@@ -37,7 +38,8 @@
     "en": "GW"
    },
    "sumber": "pot63",
-   "est": false
+   "est": false,
+   "deret": null
   },
   {
    "label": {
@@ -51,7 +53,8 @@
     "en": "GW"
    },
    "sumber": "otec17",
-   "est": false
+   "est": false,
+   "deret": null
   },
   {
    "label": {
@@ -65,7 +68,8 @@
     "en": "MW"
    },
    "sumber": "jp28",
-   "est": false
+   "est": false,
+   "deret": null
   },
   {
    "label": {
@@ -79,7 +83,8 @@
     "en": "USD million"
    },
    "sumber": "pubfin",
-   "est": false
+   "est": false,
+   "deret": null
   }
  ],
  "penting": [
@@ -230,6 +235,65 @@
    "tanggal": "2026-11-08",
    "tahun": 2024,
    "bukti": "kajian"
+  },
+  "direktori": {
+   "judul": "Direktori METI: organisasi, proyek, pendanaan, regulasi, riset (berkas public/data/*.json; tiap baris punya sumber sendiri di berkasnya)",
+   "penerbit": "METI",
+   "url": "https://platformmeti.timitbnpb.workers.dev",
+   "tanggal": "2026-11-08",
+   "tahun": 2026,
+   "bukti": "via-pihak-ketiga"
+  },
+  "ruptlp": {
+   "judul": "RUPTL PT PLN (Persero) 2025-2034, bagian III.2.7 Energi Laut: lima jenis energi kelautan, tiga tahap strategi, studi PLTEL di Selat Larantuka, Selat Sape, dan Maluku, empat syarat pengembangan; dibaca penuh dari PDF 8 Nov 2026",
+   "penerbit": "PT PLN (Persero); disahkan Kementerian ESDM",
+   "url": "https://gatrik.esdm.go.id/gatrik/gatrik-api//storage/migrasi/download_index/files/b967d-ruptl-pln-2025-2034-pub-.pdf",
+   "tanggal": "2026-11-08",
+   "tahun": 2025,
+   "bukti": "resmi"
+  },
+  "annap": {
+   "judul": "Annapolis Royal Generating Station (bendung pasang surut Kanada; puncak 20 MW; sekitar 30 juta kWh per tahun; sudah tidak beroperasi)",
+   "penerbit": "Wikipedia (ringkasan artikel; bukan sumber primer)",
+   "url": "https://en.wikipedia.org/wiki/Annapolis_Royal_Generating_Station",
+   "tanggal": "2026-11-08",
+   "tahun": 2026,
+   "bukti": "via-pihak-ketiga",
+   "lisensi": "CC BY-SA 4.0"
+  },
+  "jiangxia": {
+   "judul": "Jiangxia Tidal Power Station (Tiongkok: 3,2 MW pada 1985, 4,1 MW sejak 2014; hingga 6,5 GWh per tahun)",
+   "penerbit": "Wikipedia (ringkasan artikel; bukan sumber primer)",
+   "url": "https://en.wikipedia.org/wiki/Jiangxia_Tidal_Power_Station",
+   "tanggal": "2026-11-08",
+   "tahun": 2026,
+   "bukti": "via-pihak-ketiga",
+   "lisensi": "CC BY-SA 4.0"
+  },
+  "emec": {
+   "judul": "European Marine Energy Centre (pusat uji gelombang dan arus, Kepulauan Orkney)",
+   "penerbit": "Wikipedia (ringkasan artikel; bukan sumber primer)",
+   "url": "https://en.wikipedia.org/wiki/European_Marine_Energy_Centre",
+   "tanggal": "2026-11-08",
+   "tahun": 2026,
+   "bukti": "via-pihak-ketiga",
+   "lisensi": "CC BY-SA 4.0"
+  },
+  "pnep": {
+   "judul": "Permen 10/2025 tentang Peta Jalan (Road Map) Transisi Energi Sektor Ketenagalistrikan",
+   "penerbit": "Pemerintah RI (JDIH BPK)",
+   "url": "https://peraturan.bpk.go.id/Details/317729",
+   "tanggal": "2026-11-07",
+   "tahun": 2025,
+   "bukti": "resmi"
+  },
+  "pkkp": {
+   "judul": "Permen 1/2025 tentang Tata Cara Penyelenggaraan Nilai Ekonomi Karbon Sektor Kelautan",
+   "penerbit": "Pemerintah RI (JDIH BPK)",
+   "url": "https://peraturan.bpk.go.id/Details/314428",
+   "tanggal": "2026-11-07",
+   "tahun": 2025,
+   "bukti": "resmi"
   }
  },
  "bab": {
@@ -249,7 +313,8 @@
      "j": {
       "id": "Arus pasang surut (tidal stream), gelombang, dan panas laut (OTEC). Studi 2022 yang dikutip ESDM menaksir potensi praktis 63 GW: arus 20,01 GW, gelombang 1,99 GW, panas laut 41 GW.",
       "en": "Tidal stream, waves and ocean thermal energy (OTEC). A 2022 study cited by the ministry puts practical potential at 63 GW: currents 20.01 GW, waves 1.99 GW, thermal 41 GW."
-     }
+     },
+     "bab": 3
     },
     {
      "t": {
@@ -259,7 +324,8 @@
      "j": {
       "id": "Belum. Kementerian ESDM menyatakan pembangkit arus laut pertama (40 MW, dua fase 20 MW di NTT dan NTB) ditargetkan beroperasi 2028 dan masih tahap pra-konstruksi (16 Jun 2025).",
       "en": "Not yet. The Energy Ministry says the first tidal plant (40 MW, two 20 MW phases in NTT and NTB) is targeted for 2028 and is still pre-construction (16 Jun 2025)."
-     }
+     },
+     "bab": 4
     },
     {
      "t": {
@@ -269,7 +335,8 @@
      "j": {
       "id": "ESDM menyebut kecepatan 0,6 sampai 3,5 m/s dan lebih dari 2 m/s di Selat Pantar, Lombok, Toyapakeh, Larantuka, Alas, Molo, Sunda, dan Boleng.",
       "en": "The ministry cites speeds of 0.6 to 3.5 m/s and above 2 m/s in the Pantar, Lombok, Toyapakeh, Larantuka, Alas, Molo, Sunda and Boleng straits."
-     }
+     },
+     "bab": 4
     },
     {
      "t": {
@@ -279,7 +346,8 @@
      "j": {
       "id": "Sekitar USD 220 juta menurut siaran ESDM (via Jakarta Post).",
       "en": "About USD 220 million per the ministry statement (via the Jakarta Post)."
-     }
+     },
+     "bab": 10
     },
     {
      "t": {
@@ -289,7 +357,8 @@
      "j": {
       "id": "SBS Indonesia (kontraktor lokal), Tidal Bridge (Belanda), Nova Innovation (Skotlandia), dan Pertamina Power Indonesia.",
       "en": "SBS Indonesia (local contractor), Tidal Bridge (Netherlands), Nova Innovation (Scotland) and Pertamina Power Indonesia."
-     }
+     },
+     "bab": 9
     },
     {
      "t": {
@@ -299,7 +368,8 @@
      "j": {
       "id": "Pembangkit yang memanfaatkan selisih suhu air laut permukaan dan dalam; PPPGL menyebut 41 GW di 17 lokasi (2017).",
       "en": "Plants that use the temperature gap between surface and deep seawater; PPPGL cites 41 GW at 17 sites (2017)."
-     }
+     },
+     "bab": 3
     },
     {
      "t": {
@@ -309,7 +379,96 @@
      "j": {
       "id": "Sihwa Korea 254 MW (bendung pasang surut) dan MeyGen Skotlandia fase 1A 6 MW (aliran arus).",
       "en": "Sihwa in Korea at 254 MW (tidal barrage) and MeyGen in Scotland phase 1A at 6 MW (stream)."
-     }
+     },
+     "bab": 10
+    },
+    {
+     "t": {
+      "id": "Apa pandangan PLN terhadap energi laut dalam RUPTL 2025-2034?",
+      "en": "What does PLN say about ocean energy in RUPTL 2025-2034?"
+     },
+     "j": {
+      "id": "RUPTL menyebut pengembangan energi laut di beberapa tempat masih tahap penelitian; kelayakan teknis dan komersial menjadi pertimbangan pokok, disesuaikan dengan kebutuhan sistem setempat.",
+      "en": "RUPTL says ocean energy is still at the research stage in several places; technical and commercial feasibility will be the main consideration, matched to local system needs."
+     },
+     "bab": 4
+    },
+    {
+     "t": {
+      "id": "Studi PLTEL mana yang disebut RUPTL?",
+      "en": "Which ocean energy studies does RUPTL cite?"
+     },
+     "j": {
+      "id": "Studi PLTEL di beberapa lokasi Selat Larantuka, studi di Selat Sape, dan studi di Maluku.",
+      "en": "Studies at several sites in the Larantuka Strait, a study in the Sape Strait and a study in Maluku."
+     },
+     "bab": 4
+    },
+    {
+     "t": {
+      "id": "Apa syarat PLTEL masuk sistem setempat menurut RUPTL?",
+      "en": "What conditions must an ocean plant meet to enter the local system per RUPTL?"
+     },
+     "j": {
+      "id": "Empat syarat: keseimbangan pasokan-permintaan setempat, kajian kelayakan dan penyambungan (grid study) yang sesuai, kemampuan pendanaan, dan harga yang layak menurut ketentuan.",
+      "en": "Four conditions: local supply-demand balance, a suitable feasibility and grid study, funding capability and a price that is viable under the rules."
+     },
+     "bab": 4
+    },
+    {
+     "t": {
+      "id": "Apa strategi energi laut dalam RUPTL?",
+      "en": "What is the ocean energy strategy in RUPTL?"
+     },
+     "j": {
+      "id": "Tiga tahap: meletakkan landasan, membuat prototipe industri untuk membangun kapasitas nasional, lalu ekspansi untuk ketahanan dan kemandirian energi.",
+      "en": "Three stages: lay the foundation, build industrial prototypes to develop national capacity, then expand for energy security and self-reliance."
+     },
+     "bab": 4
+    },
+    {
+     "t": {
+      "id": "Kenapa energi laut cocok untuk pulau kecil?",
+      "en": "Why is ocean energy suited to small islands?"
+     },
+     "j": {
+      "id": "RUPTL menyebut teknologi energi laut skala kecil dapat menggantikan pembangkit fosil di daerah kepulauan.",
+      "en": "RUPTL says small-scale ocean technology can replace fossil plants in island areas."
+     },
+     "bab": 4
+    },
+    {
+     "t": {
+      "id": "Apa itu pusat uji energi laut?",
+      "en": "What is a marine energy test centre?"
+     },
+     "j": {
+      "id": "Fasilitas dengan tapak berizin dan sambungan jaringan untuk menguji perangkat skala penuh; contoh European Marine Energy Centre di Orkney, Skotlandia (Wikipedia).",
+      "en": "A facility with consented sites and grid connection to test full-scale devices; an example is the European Marine Energy Centre in Orkney, Scotland (Wikipedia)."
+     },
+     "bab": 3
+    },
+    {
+     "t": {
+      "id": "Apakah ada bendung pasang surut yang sudah ditutup?",
+      "en": "Has any tidal barrage been closed?"
+     },
+     "j": {
+      "id": "Ya. Annapolis Royal di Kanada (puncak 20 MW, sekitar 30 juta kWh per tahun) disebut pernah menjadi satu-satunya pembangkit pasang surut di Amerika Utara dan kini tidak beroperasi (Wikipedia).",
+      "en": "Yes. Annapolis Royal in Canada (20 MW peak, about 30 million kWh a year) was the only tidal station in North America and no longer operates (Wikipedia)."
+     },
+     "bab": 4
+    },
+    {
+     "t": {
+      "id": "Apa itu energi gradien salinitas?",
+      "en": "What is salinity gradient energy?"
+     },
+     "j": {
+      "id": "Energi dari perbedaan kadar garam antara air tawar dan air laut, salah satu dari lima jenis energi kelautan yang disebut RUPTL.",
+      "en": "Energy from the salt difference between fresh and sea water, one of the five ocean energy types named in RUPTL."
+     },
+     "bab": 3
     }
    ]
   },
@@ -328,7 +487,8 @@
      "arti": {
       "id": "Pembangkit listrik tenaga arus laut.",
       "en": "Ocean current power plant."
-     }
+     },
+     "kat": "teknis"
     },
     {
      "istilah": {
@@ -338,7 +498,8 @@
      "arti": {
       "id": "Turbin bawah air yang memanfaatkan aliran pasang surut, mirip kincir angin bawah laut.",
       "en": "Underwater turbines using tidal flow, like underwater wind turbines."
-     }
+     },
+     "kat": "teknis"
     },
     {
      "istilah": {
@@ -348,7 +509,8 @@
      "arti": {
       "id": "Bendung yang menahan air pasang dan mengalirkannya lewat turbin (contoh Sihwa).",
       "en": "A dam that holds tidal water and passes it through turbines (e.g. Sihwa)."
-     }
+     },
+     "kat": "teknis"
     },
     {
      "istilah": {
@@ -358,7 +520,8 @@
      "arti": {
       "id": "Ocean thermal energy conversion; memanfaatkan beda suhu laut permukaan dan dalam.",
       "en": "Ocean thermal energy conversion; uses the temperature difference between surface and deep water."
-     }
+     },
+     "kat": "teknis"
     },
     {
      "istilah": {
@@ -368,7 +531,8 @@
      "arti": {
       "id": "Selisih suhu air permukaan dan dalam; makin besar makin efisien OTEC.",
       "en": "Temperature difference between surface and deep water; larger means more efficient OTEC."
-     }
+     },
+     "kat": "teknis"
     },
     {
      "istilah": {
@@ -378,7 +542,8 @@
      "arti": {
       "id": "Tiga tingkat potensi; angka praktis paling kecil karena memperhitungkan kendala.",
       "en": "Three potential levels; the practical figure is smallest because it counts constraints."
-     }
+     },
+     "kat": "teknis"
     },
     {
      "istilah": {
@@ -388,7 +553,8 @@
      "arti": {
       "id": "Contract for Difference, skema harga tetap Inggris; MeyGen mendapat 9 MW pada AR6 (Sep 2024).",
       "en": "Contract for Difference, the UK fixed-price scheme; MeyGen won 9 MW in AR6 (Sep 2024)."
-     }
+     },
+     "kat": "teknis"
     },
     {
      "istilah": {
@@ -398,7 +564,217 @@
      "arti": {
       "id": "Produksi tahunan dibagi produksi maksimum teoretis.",
       "en": "Annual output divided by theoretical maximum output."
-     }
+     },
+     "kat": "teknis"
+    },
+    {
+     "istilah": {
+      "id": "PLTEL",
+      "en": "Ocean energy plant"
+     },
+     "arti": {
+      "id": "Pusat listrik tenaga energi laut, istilah RUPTL untuk pembangkit energi kelautan.",
+      "en": "Ocean power plant, the RUPTL term for marine energy generation."
+     },
+     "kat": "teknis"
+    },
+    {
+     "istilah": {
+      "id": "Tidal rise and fall",
+      "en": "Tidal rise and fall"
+     },
+     "arti": {
+      "id": "Memanfaatkan naik turun muka laut (pasang surut), seperti bendung pasang surut.",
+      "en": "Using the rise and fall of sea level, as in a tidal barrage."
+     },
+     "kat": "teknis"
+    },
+    {
+     "istilah": {
+      "id": "Arus laut",
+      "en": "Tidal and ocean current"
+     },
+     "arti": {
+      "id": "Memanfaatkan aliran air laut lewat turbin bawah air.",
+      "en": "Using the flow of sea water through underwater turbines."
+     },
+     "kat": "teknis"
+    },
+    {
+     "istilah": {
+      "id": "Gelombang laut",
+      "en": "Waves"
+     },
+     "arti": {
+      "id": "Memanfaatkan gerak gelombang permukaan lewat konverter gelombang.",
+      "en": "Using surface wave motion through wave energy converters."
+     },
+     "kat": "teknis"
+    },
+    {
+     "istilah": {
+      "id": "Gradien salinitas",
+      "en": "Salinity gradient"
+     },
+     "arti": {
+      "id": "Energi dari beda kadar garam, misalnya di muara.",
+      "en": "Energy from salt difference, for instance at estuaries."
+     },
+     "kat": "teknis"
+    },
+    {
+     "istilah": {
+      "id": "Gradien termal",
+      "en": "Thermal gradient"
+     },
+     "arti": {
+      "id": "Energi dari beda suhu permukaan dan dasar laut, dasar OTEC.",
+      "en": "Energy from the temperature difference between surface and deep sea, the basis of OTEC."
+     },
+     "kat": "teknis"
+    },
+    {
+     "istilah": {
+      "id": "Konverter gelombang (WEC)",
+      "en": "Wave energy converter (WEC)"
+     },
+     "arti": {
+      "id": "Perangkat yang mengubah gerak gelombang menjadi listrik.",
+      "en": "A device that converts wave motion into electricity."
+     },
+     "kat": "teknis"
+    },
+    {
+     "istilah": {
+      "id": "Turbin sumbu horizontal",
+      "en": "Horizontal-axis turbine"
+     },
+     "arti": {
+      "id": "Turbin arus mirip kincir angin bawah air; desain paling umum untuk arus pasang.",
+      "en": "A tidal turbine like an underwater wind turbine; the most common tidal stream design."
+     },
+     "kat": "teknis"
+    },
+    {
+     "istilah": {
+      "id": "Kecepatan potong",
+      "en": "Cut-in speed"
+     },
+     "arti": {
+      "id": "Kecepatan arus minimum agar turbin mulai menghasilkan daya; arus di atas 2 m/s dianggap menarik oleh ESDM.",
+      "en": "The minimum current speed at which a turbine starts producing power; currents above 2 m/s are seen as attractive by the Energy Ministry."
+     },
+     "kat": "teknis"
+    },
+    {
+     "istilah": {
+      "id": "Biofouling",
+      "en": "Biofouling"
+     },
+     "arti": {
+      "id": "Penempelan organisme laut pada struktur yang menambah beban dan biaya perawatan.",
+      "en": "Attachment of marine organisms to structures that adds load and maintenance cost."
+     },
+     "kat": "uang"
+    },
+    {
+     "istilah": {
+      "id": "Korosi air laut",
+      "en": "Seawater corrosion"
+     },
+     "arti": {
+      "id": "Kerusakan material oleh air asin; pendorong biaya material dan O&M di laut.",
+      "en": "Material damage by salt water; a driver of material and O&M cost at sea."
+     },
+     "kat": "uang"
+    },
+    {
+     "istilah": {
+      "id": "Kabel ekspor bawah laut",
+      "en": "Subsea export cable"
+     },
+     "arti": {
+      "id": "Kabel yang menyalurkan daya dari perangkat laut ke jaringan darat.",
+      "en": "The cable that carries power from marine devices to the shore grid."
+     },
+     "kat": "teknis"
+    },
+    {
+     "istilah": {
+      "id": "Kajian penyambungan (grid study)",
+      "en": "Grid study"
+     },
+     "arti": {
+      "id": "Kajian teknis dampak sambungan pembangkit baru pada jaringan; salah satu syarat RUPTL.",
+      "en": "Technical study of a new plant's connection impact on the grid; one of the RUPTL conditions."
+     },
+     "kat": "teknis"
+    },
+    {
+     "istilah": {
+      "id": "Kontrak selisih (CfD)",
+      "en": "Contract for difference (CfD)"
+     },
+     "arti": {
+      "id": "Harga tetap berjangka; mekanisme yang mendukung MeyGen di Inggris.",
+      "en": "A fixed term price; the mechanism that supported MeyGen in the UK."
+     },
+     "kat": "teknis"
+    },
+    {
+     "istilah": {
+      "id": "Kesesuaian pemanfaatan ruang laut (KKPRL)",
+      "en": "Marine space use conformity (KKPRL)"
+     },
+     "arti": {
+      "id": "Persetujuan tata ruang laut dari KKP yang lazim dibutuhkan kegiatan di perairan; periksa peraturan terbaru.",
+      "en": "Marine spatial approval from the Fisheries Ministry usually needed for activities at sea; check the latest rules."
+     },
+     "kat": "teknis"
+    },
+    {
+     "istilah": {
+      "id": "Zona ekonomi eksklusif (ZEE)",
+      "en": "Exclusive economic zone (EEZ)"
+     },
+     "arti": {
+      "id": "Perairan sampai 200 mil laut; salah satu studi menaksir potensi 289,73 GW di seluruh ZEE (ringkasan hasil pencarian).",
+      "en": "Waters to 200 nautical miles; one study estimates 289.73 GW across the whole EEZ (search summary)."
+     },
+     "kat": "teknis"
+    },
+    {
+     "istilah": {
+      "id": "TKDN",
+      "en": "Local content (TKDN)"
+     },
+     "arti": {
+      "id": "Tingkat komponen dalam negeri; peluang kandungan lokal pada struktur laut dan kabel.",
+      "en": "Domestic component level; a local content opportunity in marine structures and cables."
+     },
+     "kat": "teknis"
+    },
+    {
+     "istilah": {
+      "id": "Prototipe industri",
+      "en": "Industrial prototype"
+     },
+     "arti": {
+      "id": "Tahap kedua strategi RUPTL untuk membangun kapasitas industri nasional.",
+      "en": "The second stage of the RUPTL strategy to build national industrial capacity."
+     },
+     "kat": "teknis"
+    },
+    {
+     "istilah": {
+      "id": "Kapasitas terpasang nol",
+      "en": "Zero installed capacity"
+     },
+     "arti": {
+      "id": "Kondisi Indonesia saat ini: belum ada PLTAL beroperasi komersial.",
+      "en": "Indonesia's current condition: no commercial ocean power plant operating."
+     },
+     "kat": "teknis"
     }
    ]
   },
@@ -407,7 +783,8 @@
    "sumber": [
     "pot63",
     "jp28",
-    "ed"
+    "ed",
+    "ruptlp"
    ],
    "paragraf": [
     {
@@ -417,6 +794,18 @@
     {
      "id": "Namun potensi besar belum menjadi kapasitas: kapasitas terpasang nol, proyek 40 MW masih pra-konstruksi, dan basis IRENA/OECD hanya mencatat satu aliran dana publik asing ke energi laut Indonesia, USD 0,74 juta pada 2019.",
      "en": "But large potential has not become capacity: installed capacity is zero, the 40 MW project is pre-construction, and the IRENA/OECD database records only one foreign public finance flow to Indonesian marine energy, USD 0.74 million in 2019."
+    },
+    {
+     "id": "RUPTL 2025-2034 membagi energi kelautan menjadi lima jenis: pasang surut, arus laut, gelombang, gradien salinitas, dan gradien termal. Tiap jenis punya fisika, biaya, dan kematangan berbeda; arus laut dan pasang surut paling dekat ke operasi, sedangkan salinitas masih jauh.",
+     "en": "RUPTL 2025-2034 divides marine energy into five types: tidal rise and fall, ocean current, waves, salinity gradient and thermal gradient. Each has its own physics, cost and maturity; current and tidal are closest to operation while salinity is far off."
+    },
+    {
+     "id": "Peran dalam sistem: arus pasang dapat diprakirakan jauh hari sehingga lebih mudah dijadwalkan daripada surya dan angin, dan cocok untuk pulau berarus kuat. Hambatannya adalah biaya struktur laut, perawatan, dan skema harga yang belum ada.",
+     "en": "Role in the system: tidal streams can be forecast far ahead, so they are easier to schedule than solar and wind, and suit islands with strong currents. The barriers are marine structure cost, maintenance and a missing pricing scheme."
+    },
+    {
+     "id": "Dalam bauran, RUPTL memperlakukannya sebagai opsi yang menunggu studi dan syarat kelayakan, bukan target kapasitas; karena itu angka potensi besar (63 GW praktis) tidak sama dengan rencana pembangunan.",
+     "en": "In the mix, RUPTL treats it as an option awaiting studies and feasibility conditions, not a capacity target; so the large potential figure (63 GW practical) is not a build plan."
     }
    ]
   },
@@ -440,6 +829,18 @@
     {
      "id": "Faktor kapasitas = Produksi tahunan (GWh) / (Daya MW x 8,76)",
      "en": "Capacity factor = Annual output (GWh) / (Power MW x 8.76)"
+    },
+    {
+     "id": "Energi bendung per pasang (J) = 0,5 x kerapatan air x percepatan gravitasi x luas kolam x tinggi pasang kuadrat",
+     "en": "Barrage energy per tide (J) = 0.5 x water density x gravity x basin area x tidal range squared"
+    },
+    {
+     "id": "Daya gelombang laut dalam (kW per meter muka gelombang), perkiraan = 0,5 x tinggi gelombang signifikan (m) kuadrat x periode (s)",
+     "en": "Deep-water wave power (kW per metre of wave front), approximation = 0.5 x significant wave height (m) squared x period (s)"
+    },
+    {
+     "id": "Faktor kapasitas bersih = Produksi bersih (GWh) / (Daya terpasang MW x 8,76)",
+     "en": "Net capacity factor = Net output (GWh) / (Installed MW x 8.76)"
     }
    ],
    "contoh": [
@@ -454,6 +855,14 @@
     {
      "id": "MeyGen fase 1A: 10,2 GWh / (6 MW x 8,76) = sekitar 19,4 persen (EST, tahun 2023). Sihwa: 552,7 GWh / (254 MW x 8,76) = sekitar 24,8 persen (EST).",
      "en": "MeyGen phase 1A: 10.2 GWh / (6 MW x 8.76) = about 19.4 percent (EST, 2023). Sihwa: 552.7 GWh / (254 MW x 8.76) = about 24.8 percent (EST)."
+    },
+    {
+     "id": "Gelombang (angka ilustrasi): tinggi 2 m dan periode 8 s memberi 0,5 x 4 x 8 = sekitar 16 kW per meter muka gelombang (EST).",
+     "en": "Waves (illustrative figures): height 2 m and period 8 s give 0.5 x 4 x 8 = about 16 kW per metre of wave front (EST)."
+    },
+    {
+     "id": "MeyGen fase 1A (EST): 10,2 GWh pada 2023 dari 6 MW = 10,2 / (6 x 8,76) = sekitar 19,4 persen faktor kapasitas bersih, lebih rendah dari Sihwa 24,8 persen.",
+     "en": "MeyGen phase 1A (EST): 10.2 GWh in 2023 from 6 MW = 10.2 / (6 x 8.76) = about 19.4 percent net capacity factor, lower than Sihwa at 24.8 percent."
     }
    ]
   },
@@ -461,8 +870,10 @@
    "tipe": "langkah",
    "sumber": [
     "ed",
-    "jp28",
-    "lar18"
+    "ruptlp",
+    "lar18",
+    "mey_ops",
+    "jp28"
    ],
    "butir": [
     {
@@ -471,12 +882,16 @@
       "en": "Resource survey"
      },
      "isi": {
-      "id": "Pengukuran kecepatan arus, kedalaman, dan suhu di selat atau perairan calon.",
-      "en": "Measuring current speed, depth and temperature in candidate straits or waters."
+      "id": "Pengukuran kecepatan arus, kedalaman, dan suhu di selat atau perairan calon; riset kampus menyediakan peta gelombang.",
+      "en": "Measuring current speed, depth and temperature in candidate straits or waters; campus research provides wave maps."
      },
      "pelaku": {
-      "id": "Lembaga riset, pengembang",
-      "en": "Research bodies, developers"
+      "id": "BRIN, ESDM, kampus",
+      "en": "BRIN, Energy Ministry, campuses"
+     },
+     "peran": {
+      "id": "BRIN, ESDM, kampus",
+      "en": "BRIN, Energy Ministry, campuses"
      }
     },
     {
@@ -485,12 +900,52 @@
       "en": "Feasibility and grid studies"
      },
      "isi": {
-      "id": "Contoh Larantuka: pra-FS PUPR 2017 dan MoU studi dengan PLN 22 Feb 2018.",
-      "en": "Larantuka example: PUPR pre-FS in 2017 and a study MoU with PLN on 22 Feb 2018."
+      "id": "RUPTL menyebut studi di Selat Larantuka, Selat Sape, dan Maluku; Larantuka punya pra-FS PUPR 2017 dan MoU studi PLN 22 Feb 2018.",
+      "en": "RUPTL cites studies at the Larantuka Strait, the Sape Strait and Maluku; Larantuka had a PUPR pre-FS in 2017 and a PLN study MoU on 22 Feb 2018."
      },
      "pelaku": {
-      "id": "Pengembang, PLN",
-      "en": "Developer, PLN"
+      "id": "PLN, pengembang, PUPR",
+      "en": "PLN, developers, Public Works Ministry"
+     },
+     "peran": {
+      "id": "PLN, pengembang, PUPR",
+      "en": "PLN, developers, Public Works Ministry"
+     }
+    },
+    {
+     "judul": {
+      "id": "Perizinan ruang laut dan lingkungan",
+      "en": "Marine space and environmental permits"
+     },
+     "isi": {
+      "id": "Persetujuan pemanfaatan ruang laut, lingkungan, dan alur pelayaran sebelum pemasangan.",
+      "en": "Marine space, environmental and shipping-lane approvals before installation."
+     },
+     "pelaku": {
+      "id": "KKP, pemda, kementerian terkait",
+      "en": "Fisheries Ministry, local governments, relevant ministries"
+     },
+     "peran": {
+      "id": "KKP, pemda, kementerian terkait",
+      "en": "Fisheries Ministry, local governments, relevant ministries"
+     }
+    },
+    {
+     "judul": {
+      "id": "Kesepakatan harga dan pembelian listrik",
+      "en": "Pricing and offtake agreement"
+     },
+     "isi": {
+      "id": "Syarat RUPTL: harga yang layak; skema tarif arus laut belum ditemukan di sumber.",
+      "en": "RUPTL condition: a viable price; a tidal tariff scheme was not found in sources."
+     },
+     "pelaku": {
+      "id": "PLN, ESDM",
+      "en": "PLN, Energy Ministry"
+     },
+     "peran": {
+      "id": "PLN, ESDM",
+      "en": "PLN, Energy Ministry"
      }
     },
     {
@@ -500,39 +955,69 @@
      },
      "isi": {
       "id": "Mitra teknologi luar (Belanda, Skotlandia) dan kontraktor lokal.",
-      "en": "Foreign technology partners (Netherlands, Scotland) and a local contractor."
+      "en": "Foreign technology partners (Netherlands, Scotland) and local contractors."
      },
      "pelaku": {
-      "id": "Pengembang, kontraktor",
-      "en": "Developer, contractor"
+      "id": "Tidal Bridge, Nova Innovation, SBS Indonesia",
+      "en": "Tidal Bridge, Nova Innovation, SBS Indonesia"
+     },
+     "peran": {
+      "id": "Tidal Bridge, Nova Innovation, SBS Indonesia",
+      "en": "Tidal Bridge, Nova Innovation, SBS Indonesia"
      }
     },
     {
      "judul": {
-      "id": "Instalasi dan interkoneksi",
-      "en": "Installation and interconnection"
+      "id": "Instalasi dan kabel bawah laut",
+      "en": "Installation and subsea cable"
      },
      "isi": {
-      "id": "Pemasangan di dasar laut, kabel bawah laut, dan sambungan ke jaringan.",
-      "en": "Seabed installation, subsea cable and grid connection."
+      "id": "Pemasangan di dasar laut dengan kapal khusus dan sambungan ke jaringan.",
+      "en": "Seabed installation with specialist vessels and grid connection."
      },
      "pelaku": {
-      "id": "Kontraktor, PLN",
-      "en": "Contractor, PLN"
+      "id": "Kontraktor laut, PLN",
+      "en": "Marine contractors, PLN"
+     },
+     "peran": {
+      "id": "Kontraktor laut, PLN",
+      "en": "Marine contractors, PLN"
      }
     },
     {
      "judul": {
-      "id": "Operasi 25 tahun",
-      "en": "25-year operation"
+      "id": "Operasi dan pemeliharaan laut",
+      "en": "Marine operation and maintenance"
      },
      "isi": {
-      "id": "MeyGen fase 1A memasuki fase operasi 25 tahun.",
-      "en": "MeyGen phase 1A entered a 25-year operations phase."
+      "id": "MeyGen fase 1A memasuki fase operasi 25 tahun; perawatan bergantung jendela cuaca.",
+      "en": "MeyGen phase 1A entered a 25-year operations phase; maintenance depends on weather windows."
      },
      "pelaku": {
-      "id": "Operator",
-      "en": "Operator"
+      "id": "Operator, kapal servis",
+      "en": "Operator, service vessels"
+     },
+     "peran": {
+      "id": "Operator, kapal servis",
+      "en": "Operator, service vessels"
+     }
+    },
+    {
+     "judul": {
+      "id": "Pengujian dan pembelajaran",
+      "en": "Testing and learning"
+     },
+     "isi": {
+      "id": "Pusat uji seperti EMEC membuktikan perangkat sebelum skala komersial.",
+      "en": "Test centres such as EMEC prove devices before commercial scale."
+     },
+     "pelaku": {
+      "id": "EMEC, kampus, BRIN",
+      "en": "EMEC, campuses, BRIN"
+     },
+     "peran": {
+      "id": "EMEC, kampus, BRIN",
+      "en": "EMEC, campuses, BRIN"
      }
     }
    ]
@@ -656,11 +1141,15 @@
   },
   "9": {
    "tipe": "tabel",
-   "per": 8,
+   "per": 15,
    "sumber": [
     "jp28",
     "lar18",
-    "mey_ops"
+    "mey_ops",
+    "direktori",
+    "ruptlp",
+    "emec",
+    "tud"
    ],
    "kolom": [
     {
@@ -668,13 +1157,14 @@
      "l": {
       "id": "Pelaku",
       "en": "Actor"
-     }
+     },
+     "url": "url"
     },
     {
      "k": "peran",
      "l": {
-      "id": "Peran",
-      "en": "Role"
+      "id": "Peran di topik ini",
+      "en": "Role in this topic"
      }
     },
     {
@@ -683,6 +1173,15 @@
       "id": "Dasar",
       "en": "Basis"
      }
+    },
+    {
+     "k": "mw",
+     "l": {
+      "id": "Kapasitas proyek tercatat (MW)",
+      "en": "Recorded project capacity (MW)"
+     },
+     "num": true,
+     "d": 0
     }
    ],
    "baris": [
@@ -692,7 +1191,9 @@
       "id": "Penyusun kebijakan dan juru bicara proyek 40 MW",
       "en": "Policy maker and spokesperson of the 40 MW project"
      },
-     "rujuk": "Jakarta Post, 16 Jun 2025"
+     "rujuk": "Jakarta Post, 16 Jun 2025",
+     "id": null,
+     "mw": null
     },
     {
      "nama": "Tidal Bridge (Belanda)",
@@ -700,7 +1201,9 @@
       "id": "Mitra teknologi; membentuk Tidal Bridge Indonesia bersama PJB (2018)",
       "en": "Technology partner; formed Tidal Bridge Indonesia with PJB (2018)"
      },
-     "rujuk": "ESDM, 1 Apr 2018"
+     "rujuk": "ESDM, 1 Apr 2018",
+     "id": null,
+     "mw": null
     },
     {
      "nama": "PT PJB",
@@ -708,7 +1211,9 @@
       "id": "Mitra usaha patungan Larantuka (2018)",
       "en": "Joint venture partner in Larantuka (2018)"
      },
-     "rujuk": "ESDM, 1 Apr 2018"
+     "rujuk": "ESDM, 1 Apr 2018",
+     "id": null,
+     "mw": null
     },
     {
      "nama": "Nova Innovation (Skotlandia)",
@@ -716,7 +1221,9 @@
       "id": "Mitra teknologi proyek 2025",
       "en": "Technology partner of the 2025 project"
      },
-     "rujuk": "Jakarta Post, 16 Jun 2025"
+     "rujuk": "Jakarta Post, 16 Jun 2025",
+     "id": null,
+     "mw": null
     },
     {
      "nama": "SBS Indonesia",
@@ -724,7 +1231,9 @@
       "id": "Kontraktor lokal",
       "en": "Local contractor"
      },
-     "rujuk": "Jakarta Post, 16 Jun 2025"
+     "rujuk": "Jakarta Post, 16 Jun 2025",
+     "id": null,
+     "mw": null
     },
     {
      "nama": "Pertamina Power Indonesia",
@@ -732,7 +1241,9 @@
       "id": "Mitra, lengan listrik Pertamina",
       "en": "Partner, Pertamina's electricity arm"
      },
-     "rujuk": "Jakarta Post, 16 Jun 2025"
+     "rujuk": "Jakarta Post, 16 Jun 2025",
+     "id": null,
+     "mw": null
     },
     {
      "nama": "PUPR dan PLN",
@@ -740,19 +1251,201 @@
       "id": "Pra-FS jembatan (2017) dan MoU studi jaringan (2018) di Larantuka",
       "en": "Bridge pre-FS (2017) and a grid study MoU (2018) at Larantuka"
      },
-     "rujuk": "ESDM, 1 Apr 2018"
+     "rujuk": "ESDM, 1 Apr 2018",
+     "id": null,
+     "mw": null
+    },
+    {
+     "nama": "Kementerian Energi dan Sumber Daya Mineral",
+     "id": "l_7278e0528a",
+     "url": "/o/l_7278e0528a",
+     "peran": {
+      "id": "Penerbit kajian potensi 63 GW dan penyetuju RUPTL",
+      "en": "Publisher of the 63 GW potential study and approver of RUPTL"
+     },
+     "rujuk": "ESDM; RUPTL",
+     "mw": null
+    },
+    {
+     "nama": "Direktorat Jenderal Energi Baru, Terbarukan dan Konservasi Energi",
+     "id": "l_38ba1d6f56",
+     "url": "/o/l_38ba1d6f56",
+     "peran": {
+      "id": "Ditjen penyusun kebijakan energi laut",
+      "en": "The directorate general drafting ocean energy policy"
+     },
+     "rujuk": "Direktori METI",
+     "mw": null
+    },
+    {
+     "nama": "Badan Riset dan Inovasi Nasional",
+     "id": "l_973f60de15",
+     "url": "/o/l_973f60de15",
+     "peran": {
+      "id": "Pelaksana riset energi laut dan pengelola pendanaan riset",
+      "en": "Runs ocean energy research and research funding"
+     },
+     "rujuk": "Direktori METI",
+     "mw": null
+    },
+    {
+     "nama": "PT PLN (Persero)",
+     "id": "su_ed074ff5",
+     "url": "/o/su_ed074ff5",
+     "peran": {
+      "id": "Pembeli listrik dan penyusun RUPTL yang memuat studi PLTEL Larantuka, Sape, Maluku",
+      "en": "Power buyer and drafter of the RUPTL that lists ocean studies at Larantuka, Sape and Maluku"
+     },
+     "rujuk": "RUPTL 2025-2034",
+     "mw": 9025.2
+    },
+    {
+     "nama": "PT PLN Nusantara Power",
+     "id": "p_ff7a390a42",
+     "url": "/o/p_ff7a390a42",
+     "peran": {
+      "id": "Anak usaha PLN pembangkit; calon operator (PJB sebelum berganti nama, belum dikonfirmasi sumber)",
+      "en": "PLN generation subsidiary; possible operator (formerly PJB, not confirmed by sources)"
+     },
+     "rujuk": "Direktori METI",
+     "mw": 2149.8
+    },
+    {
+     "nama": "PT Pertamina New & Renewable Energy",
+     "id": "p_10e0dde689",
+     "url": "/o/p_10e0dde689",
+     "peran": {
+      "id": "Entitas energi baru Pertamina; mitra serupa Pertamina Power Indonesia di proyek 2025 belum dipastikan sama",
+      "en": "Pertamina's new energy entity; whether it is the same as the Pertamina Power Indonesia partner in the 2025 project is not confirmed"
+     },
+     "rujuk": "Direktori METI",
+     "mw": null
+    },
+    {
+     "nama": "Pusat Studi Energi Universitas Gadjah Mada",
+     "id": "l_4164507db1",
+     "url": "/o/l_4164507db1",
+     "peran": {
+      "id": "Kampus tempat pakar energi laut (F. Danang Wijaya)",
+      "en": "Campus of an ocean energy expert (F. Danang Wijaya)"
+     },
+     "rujuk": "Direktori METI; OpenAlex",
+     "mw": null
+    },
+    {
+     "nama": "Institut Teknologi Sepuluh Nopember - Pusat Studi Energi",
+     "id": "l_5d0062e04b",
+     "url": "/o/l_5d0062e04b",
+     "peran": {
+      "id": "Kampus dengan riset rekayasa kelautan dan energi",
+      "en": "Campus with ocean engineering and energy research"
+     },
+     "rujuk": "Direktori METI",
+     "mw": null
+    },
+    {
+     "nama": "Pusat Penelitian Energi Universitas Indonesia (Pusat Kajian Energi / Fakultas Teknik)",
+     "id": "l_2c27d00604",
+     "url": "/o/l_2c27d00604",
+     "peran": {
+      "id": "Pusat kajian energi nasional",
+      "en": "National energy study centre"
+     },
+     "rujuk": "Direktori METI",
+     "mw": null
+    },
+    {
+     "nama": "Institut Pertanian Bogor",
+     "id": "l_09a0eabcbd",
+     "url": "/o/l_09a0eabcbd",
+     "peran": {
+      "id": "Pengembang baterai air laut Sagara dan pakar kelautan (Bono Pranoto)",
+      "en": "Developer of the Sagara seawater battery and home of an ocean expert (Bono Pranoto)"
+     },
+     "rujuk": "Direktori METI; inovasi",
+     "mw": null
+    },
+    {
+     "nama": "Badan Pengelola Investasi Daya Anagata Nusantara",
+     "id": "l_43f00f6a72",
+     "url": "/o/l_43f00f6a72",
+     "peran": {
+      "id": "Calon pendana infrastruktur energi",
+      "en": "Prospective energy infrastructure funder"
+     },
+     "rujuk": "Direktori METI",
+     "mw": 0
+    },
+    {
+     "nama": "Atlantis Resources",
+     "peran": {
+      "id": "Pemasok turbin MeyGen (pembanding)",
+      "en": "MeyGen turbine supplier (comparison)"
+     },
+     "rujuk": "Wikipedia via naskah",
+     "id": null,
+     "mw": null
+    },
+    {
+     "nama": "K-water",
+     "peran": {
+      "id": "Pemilik Sihwa (pembanding)",
+      "en": "Owner of Sihwa (comparison)"
+     },
+     "rujuk": "K-water",
+     "id": null,
+     "mw": null
+    },
+    {
+     "nama": "European Marine Energy Centre",
+     "peran": {
+      "id": "Pusat uji gelombang dan arus Orkney (pembanding)",
+      "en": "Orkney wave and tidal test centre (comparison)"
+     },
+     "rujuk": "Wikipedia",
+     "id": null,
+     "mw": null
+    },
+    {
+     "nama": "International Renewable Energy Agency",
+     "id": "l_268f74ec67",
+     "url": "/o/l_268f74ec67",
+     "peran": {
+      "id": "Penyedia basis data pendanaan publik (IRENA/OECD)",
+      "en": "Provider of the public finance database (IRENA/OECD)"
+     },
+     "rujuk": "IRENA",
+     "mw": null
+    },
+    {
+     "nama": "TU Delft",
+     "peran": {
+      "id": "Penulis skenario OTEC Indonesia hingga 45 GW",
+      "en": "Author of the Indonesian OTEC scenario up to 45 GW"
+     },
+     "rujuk": "Renewable Energy (jurnal)",
+     "id": null,
+     "mw": null
     }
-   ]
+   ],
+   "catatan": {
+    "id": "Tautan nama mengarah ke profil di direktori METI bila organisasinya tercatat; pelaku tanpa tautan belum ada di direktori dan dicatat dari sumber di kolom Dasar.",
+    "en": "Names link to the METI directory profile when the organisation is listed; actors without a link are not yet in the directory and are noted from the source in the Basis column."
+   }
   },
   "10": {
    "tipe": "tabel",
-   "per": 8,
+   "per": 15,
    "sumber": [
     "jp28",
     "lar18",
     "mey_wiki",
     "kwater",
-    "mey_ops"
+    "mey_ops",
+    "ruptlp",
+    "annap",
+    "jiangxia",
+    "emec"
    ],
    "kolom": [
     {
@@ -760,13 +1453,14 @@
      "l": {
       "id": "Proyek",
       "en": "Project"
-     }
+     },
+     "url": "url"
     },
     {
-     "k": "negara",
+     "k": "wilayah",
      "l": {
-      "id": "Negara",
-      "en": "Country"
+      "id": "Wilayah",
+      "en": "Region"
      }
     },
     {
@@ -779,15 +1473,22 @@
     {
      "k": "status",
      "l": {
-      "id": "Status",
-      "en": "Status"
+      "id": "Status menurut sumber",
+      "en": "Status per source"
+     }
+    },
+    {
+     "k": "sumber",
+     "l": {
+      "id": "Dasar",
+      "en": "Basis"
      }
     }
    ],
    "baris": [
     {
      "nama": "PLTAL NTT dan NTB (Tidal Bridge, Nova Innovation, SBS, Pertamina Power)",
-     "negara": "Indonesia",
+     "wilayah": "Indonesia",
      "ukuran": {
       "id": "40 MW (2 x 20 MW); sekitar USD 220 juta",
       "en": "40 MW (2 x 20 MW); about USD 220 million"
@@ -795,11 +1496,13 @@
      "status": {
       "id": "Pra-konstruksi; operasi ditargetkan 2028; ada di RUPTL 2025-2034",
       "en": "Pre-construction; operation targeted for 2028; in RUPTL 2025-2034"
-     }
+     },
+     "sumber": "-",
+     "id": null
     },
     {
      "nama": "Jembatan Pancasila-Palmerah dan PLTAL Larantuka (rencana 2018)",
-     "negara": "Indonesia",
+     "wilayah": "Indonesia",
      "ukuran": {
       "id": "20 MW disebut Menteri; jembatan sekitar 810 m",
       "en": "20 MW cited by the Minister; bridge about 810 m"
@@ -807,11 +1510,13 @@
      "status": {
       "id": "Studi kelayakan 2018; kelanjutan menjadi proyek 2025 tidak dijelaskan sumber",
       "en": "Feasibility studies in 2018; how it continues into the 2025 project is not explained by sources"
-     }
+     },
+     "sumber": "-",
+     "id": null
     },
     {
      "nama": "MeyGen fase 1A",
-     "negara": {
+     "wilayah": {
       "id": "Skotlandia",
       "en": "Scotland"
      },
@@ -822,11 +1527,13 @@
      "status": {
       "id": "Operasi 25 tahun; 10,2 GWh pada 2023",
       "en": "25-year operations; 10.2 GWh in 2023"
-     }
+     },
+     "sumber": "-",
+     "id": null
     },
     {
      "nama": "Sihwa Lake",
-     "negara": {
+     "wilayah": {
       "id": "Korea Selatan",
       "en": "South Korea"
      },
@@ -837,7 +1544,128 @@
      "status": {
       "id": "Beroperasi sejak 2011 atau 2012 (sumber berbeda); 552,7 GWh per tahun",
       "en": "Operating since 2011 or 2012 (sources differ); 552.7 GWh a year"
-     }
+     },
+     "sumber": "-",
+     "id": null
+    },
+    {
+     "nama": "Studi PLTEL Selat Larantuka (RUPTL)",
+     "wilayah": {
+      "id": "NTT",
+      "en": "NTT"
+     },
+     "ukuran": {
+      "id": "10 MW pada daftar potensi 2022",
+      "en": "10 MW on the 2022 potential list"
+     },
+     "status": {
+      "id": "Studi disebut RUPTL 2025-2034",
+      "en": "Study cited by RUPTL 2025-2034"
+     },
+     "sumber": "RUPTL; ESDM 2022",
+     "id": null
+    },
+    {
+     "nama": "Studi PLTEL Selat Sape (RUPTL)",
+     "wilayah": {
+      "id": "NTB",
+      "en": "NTB"
+     },
+     "ukuran": {
+      "id": "tidak disebut",
+      "en": "not stated"
+     },
+     "status": {
+      "id": "Studi disebut RUPTL 2025-2034",
+      "en": "Study cited by RUPTL 2025-2034"
+     },
+     "sumber": "RUPTL",
+     "id": null
+    },
+    {
+     "nama": "Studi PLTEL Maluku (RUPTL)",
+     "wilayah": {
+      "id": "Maluku",
+      "en": "Maluku"
+     },
+     "ukuran": {
+      "id": "tidak disebut",
+      "en": "not stated"
+     },
+     "status": {
+      "id": "Studi disebut RUPTL 2025-2034",
+      "en": "Study cited by RUPTL 2025-2034"
+     },
+     "sumber": "RUPTL",
+     "id": null
+    },
+    {
+     "nama": "PLTAL Selat Alas dan Selat Lombok",
+     "wilayah": {
+      "id": "NTB",
+      "en": "NTB"
+     },
+     "ukuran": {
+      "id": "10 MW dan 10 MW",
+      "en": "10 MW and 10 MW"
+     },
+     "status": {
+      "id": "Daftar potensi RUPTL (pemutakhiran ESDM 2022)",
+      "en": "RUPTL potential list (2022 ministry update)"
+     },
+     "sumber": "Listrik Indonesia",
+     "id": null
+    },
+    {
+     "nama": "Annapolis Royal",
+     "wilayah": {
+      "id": "Kanada",
+      "en": "Canada"
+     },
+     "ukuran": {
+      "id": "puncak 20 MW; sekitar 30 juta kWh per tahun",
+      "en": "20 MW peak; about 30 million kWh a year"
+     },
+     "status": {
+      "id": "Tidak lagi beroperasi",
+      "en": "No longer operating"
+     },
+     "sumber": "Wikipedia",
+     "id": null
+    },
+    {
+     "nama": "Jiangxia",
+     "wilayah": {
+      "id": "Tiongkok",
+      "en": "China"
+     },
+     "ukuran": {
+      "id": "4,1 MW; hingga 6,5 GWh per tahun",
+      "en": "4.1 MW; up to 6.5 GWh a year"
+     },
+     "status": {
+      "id": "Beroperasi sejak 1985 (3,2 MW)",
+      "en": "Operating since 1985 (3.2 MW)"
+     },
+     "sumber": "Wikipedia",
+     "id": null
+    },
+    {
+     "nama": "EMEC Orkney",
+     "wilayah": {
+      "id": "Skotlandia",
+      "en": "Scotland"
+     },
+     "ukuran": {
+      "id": "pusat uji",
+      "en": "test centre"
+     },
+     "status": {
+      "id": "Beroperasi",
+      "en": "Operating"
+     },
+     "sumber": "Wikipedia",
+     "id": null
     }
    ]
   },
@@ -845,7 +1673,8 @@
    "tipe": "teks",
    "sumber": [
     "rup22",
-    "jp28"
+    "jp28",
+    "ruptlp"
    ],
    "paragraf": [
     {
@@ -855,14 +1684,20 @@
     {
      "id": "Tarif dan skema pembelian listrik arus laut tidak ditemukan di sumber yang dibaca.",
      "en": "The tariff and power purchase scheme for tidal power were not found in the sources read."
+    },
+    {
+     "id": "Menurut RUPTL 2025-2034, PLTEL hanya dikembangkan bila memenuhi empat syarat sistem setempat (pasokan-permintaan, kajian kelayakan dan penyambungan, pendanaan, harga); karena itu pasar belum ada dan tidak ada target MW di tabel RUPTL.",
+     "en": "Per RUPTL 2025-2034, ocean plants are developed only if they meet four local-system conditions (supply-demand, feasibility and grid study, funding, price); so there is no market yet and no MW target in the RUPTL tables."
     }
    ]
   },
   "12": {
    "tipe": "tabel",
-   "per": 6,
+   "per": 10,
    "sumber": [
-    "ed"
+    "ed",
+    "pkkp",
+    "pnep"
    ],
    "kolom": [
     {
@@ -912,7 +1747,8 @@
       "id": "Dasar usaha ketenagalistrikan termasuk sumber energi primer terbarukan.",
       "en": "Basis of the electricity business including renewable primary energy."
      },
-     "url": "https://peraturan.bpk.go.id/Details/38767"
+     "url": "https://peraturan.bpk.go.id/Details/38767",
+     "id": "uu-30-2009"
     },
     {
      "nama": "Perpres 112/2022",
@@ -923,7 +1759,8 @@
       "id": "Percepatan energi terbarukan untuk tenaga listrik; mengatur harga patokan dan penugasan PLN.",
       "en": "Acceleration of renewable power; sets benchmark prices and PLN assignments."
      },
-     "url": "https://peraturan.bpk.go.id/Details/225308"
+     "url": "https://peraturan.bpk.go.id/Details/225308",
+     "id": "perpres-112-2022"
     },
     {
      "nama": "PP 40/2025",
@@ -934,7 +1771,67 @@
       "id": "Kebijakan Energi Nasional 2025.",
       "en": "National Energy Policy 2025."
      },
-     "url": "https://peraturan.bpk.go.id/Details/328789"
+     "url": "https://peraturan.bpk.go.id/Details/328789",
+     "id": "pp-40-2025"
+    },
+    {
+     "nama": "Permen 10/2025",
+     "judul": "Peta Jalan (Road Map) Transisi Energi Sektor Ketenagalistrikan",
+     "status": "berlaku",
+     "tanggal": "2025-04-10",
+     "ringkas": {
+      "id": "Peta jalan transisi energi sektor ketenagalistrikan; kerangka rencana pembangkit baru.",
+      "en": "Road map of the electricity-sector transition; framework for new plant planning."
+     },
+     "url": "https://peraturan.bpk.go.id/Details/317729",
+     "id": "permen-esdm-10-2025"
+    },
+    {
+     "nama": "Permen 5/2025",
+     "judul": "Pedoman Perjanjian Jual Beli Tenaga Listrik dari Pembangkit Tenaga Listrik yang Memanfaatkan Sumber Energi Terbarukan",
+     "status": "berlaku",
+     "tanggal": "2025-02-27",
+     "ringkas": {
+      "id": "Pedoman perjanjian jual beli listrik dari pembangkit energi terbarukan; acuan skema harga.",
+      "en": "Guideline for power purchase agreements from renewable plants; pricing scheme reference."
+     },
+     "url": "https://peraturan.bpk.go.id/Details/317619",
+     "id": "permen-esdm-5-2025"
+    },
+    {
+     "nama": "Permen 1/2025",
+     "judul": "Tata Cara Penyelenggaraan Nilai Ekonomi Karbon Sektor Kelautan",
+     "status": "berlaku",
+     "tanggal": "2025-01-06",
+     "ringkas": {
+      "id": "Nilai ekonomi karbon sektor kelautan (Kementerian Kelautan dan Perikanan), relevan bagi aktivitas di ruang laut.",
+      "en": "Carbon economic value in the marine sector (Fisheries Ministry), relevant to activity in marine space."
+     },
+     "url": "https://peraturan.bpk.go.id/Details/314428",
+     "id": "permen-kkp-1-2025"
+    },
+    {
+     "nama": "Perpres 62/2014",
+     "judul": "Pengesahan Statute Of The International Renewable Energy Agency (Statuta Badan Energi Terbarukan Internasional)",
+     "status": "berlaku",
+     "tanggal": "2014-06-11",
+     "ringkas": {
+      "id": "Pengesahan Statuta IRENA (rujukan kerja sama energi terbarukan).",
+      "en": "Ratification of the IRENA statute (renewable energy cooperation reference)."
+     },
+     "url": "https://peraturan.bpk.go.id/Details/41553",
+     "id": "perpres-62-2014"
+    },
+    {
+     "nama": "Peraturan RUU EBET/undefined",
+     "judul": "Rancangan Undang-Undang Energi Baru dan Energi Terbarukan",
+     "status": "rancangan",
+     "tanggal": "-",
+     "ringkas": {
+      "id": "Rancangan UU Energi Baru dan Energi Terbarukan; belum ada ketentuan khusus energi laut yang dibaca.",
+      "en": "Draft New and Renewable Energy Bill; no ocean-specific provision was read."
+     },
+     "id": "lokal-431"
     }
    ],
    "catatan": {
@@ -951,9 +1848,21 @@
     "mey_wiki",
     "kwater",
     "tethys",
-    "ed"
+    "ed",
+    "jiangxia",
+    "otec17",
+    "ruptlp",
+    "pnep"
    ],
    "butir": [
+    {
+     "tanggal": "1985-01-01",
+     "judul": {
+      "id": "Jiangxia (Tiongkok) beroperasi dengan 3,2 MW terpasang (tahun 1985)",
+      "en": "Jiangxia (China) operates with 3.2 MW installed (year 1985)"
+     },
+     "url": "https://en.wikipedia.org/wiki/Jiangxia_Tidal_Power_Station"
+    },
     {
      "tanggal": "2011-08-01",
      "judul": {
@@ -963,12 +1872,27 @@
      "url": "https://tethys.pnnl.gov/project-sites/sihwa-tidal-power-plant"
     },
     {
+     "tanggal": "2014-01-01",
+     "judul": {
+      "id": "Jiangxia ditingkatkan menjadi 4,1 MW (tahun 2014)",
+      "en": "Jiangxia upgraded to 4.1 MW (year 2014)"
+     },
+     "url": "https://en.wikipedia.org/wiki/Jiangxia_Tidal_Power_Station"
+    },
+    {
      "tanggal": "2016-04-01",
      "judul": {
       "id": "Head of Agreement Larantuka ditandatangani di Belanda (Apr 2016)",
       "en": "Larantuka Head of Agreement signed in the Netherlands (Apr 2016)"
      },
      "url": "https://www.esdm.go.id/en/media-center/news-archives/tinjau-lokasi-pembangunan-pembangkit-arus-laut-di-selat-larantuka-menteri-esdm-pertama-di-indonesia-terbesar-di-dunia"
+    },
+    {
+     "tanggal": "2017-09-26",
+     "judul": {
+      "id": "PPPGL meneliti OTEC di 17 lokasi dengan total 41 GW (Good News from Indonesia)",
+      "en": "PPPGL studies OTEC at 17 sites totalling 41 GW (Good News from Indonesia)"
+     }
     },
     {
      "tanggal": "2018-02-22",
@@ -1003,12 +1927,34 @@
      "url": "https://en.wikipedia.org/wiki/MeyGen"
     },
     {
+     "tanggal": "2025-04-10",
+     "judul": {
+      "id": "Permen ESDM 10/2025 peta jalan transisi energi sektor ketenagalistrikan",
+      "en": "Energy Ministry Reg. 10/2025 road map of the electricity-sector transition"
+     }
+    },
+    {
+     "tanggal": "2025-05-26",
+     "judul": {
+      "id": "RUPTL 2025-2034 disahkan; memuat studi PLTEL Larantuka, Sape, dan Maluku",
+      "en": "RUPTL 2025-2034 approved; lists ocean energy studies at Larantuka, Sape and Maluku"
+     },
+     "url": "https://gatrik.esdm.go.id/gatrik/gatrik-api//storage/migrasi/download_index/files/b967d-ruptl-pln-2025-2034-pub-.pdf"
+    },
+    {
      "tanggal": "2025-06-16",
      "judul": {
       "id": "ESDM: PLTAL pertama 40 MW ditargetkan beroperasi 2028",
       "en": "Energy Ministry: first 40 MW tidal plant targeted for 2028"
      },
      "url": "https://www.thejakartapost.com/business/2025/06/16/ri-to-start-operating-first-ocean-power-plant-in-2028.html"
+    },
+    {
+     "tanggal": "2026-05-26",
+     "judul": {
+      "id": "Satu tahun RUPTL 2025-2034: belum ada target MW energi laut di tabelnya",
+      "en": "One year of RUPTL 2025-2034: still no ocean energy MW target in its tables"
+     }
     },
     {
      "tanggal": "2028-01-01",
@@ -1019,13 +1965,216 @@
     }
    ]
   },
+  "14": {
+   "tipe": "teks",
+   "sumber": [
+    "ruptlp",
+    "ed",
+    "pnep",
+    "pkkp"
+   ],
+   "paragraf": [
+    {
+     "id": "Syarat RUPTL: PLTEL masuk sistem setempat bila memenuhi keseimbangan pasokan-permintaan, kajian kelayakan dan penyambungan, kemampuan pendanaan, dan harga yang layak.",
+     "en": "RUPTL condition: an ocean plant enters the local system if it meets supply-demand balance, a feasibility and grid study, funding capability and a viable price."
+    },
+    {
+     "id": "Izin usaha ketenagalistrikan: pembangkit untuk dijual ke PLN tunduk pada UU 30/2009 dan turunannya (bab Kerangka hukum).",
+     "en": "Electricity business licence: a plant selling to PLN is subject to Law 30/2009 and its implementing rules (Legal framework chapter)."
+    },
+    {
+     "id": "Persetujuan ruang laut dan lingkungan: kegiatan di perairan membutuhkan persetujuan pemanfaatan ruang laut dan lingkungan; peraturan rinci perlu diperiksa karena tidak dibaca di naskah ini (ringkasan editorial METI).",
+     "en": "Marine space and environmental approval: activity at sea needs marine space and environmental approval; check detailed rules as they were not read in this text (METI editorial summary)."
+    },
+    {
+     "id": "Karbon sektor kelautan: Permen KKP 1/2025 mengatur tata cara nilai ekonomi karbon sektor kelautan (judul regulasi).",
+     "en": "Marine-sector carbon: Fisheries Ministry Reg. 1/2025 governs carbon economic value in the marine sector (regulation title)."
+    },
+    {
+     "id": "Pedoman jual beli listrik: Permen ESDM 5/2025 menjadi acuan perjanjian jual beli listrik energi terbarukan (judul regulasi); tarif khusus arus laut belum ada.",
+     "en": "Power purchase guideline: Energy Ministry Reg. 5/2025 is the reference for renewable PPAs (regulation title); there is no tidal-specific tariff."
+    },
+    {
+     "id": "Insentif: skema hibah riset dan dana iklim di bab Pembiayaan; tidak ada insentif fiskal khusus energi laut di sumber yang dibaca.",
+     "en": "Incentives: research grants and climate funds are in the Financing chapter; there is no ocean-specific fiscal incentive in the sources read."
+    },
+    {
+     "id": "Kewajiban pelaporan: pengembang melaporkan data arus dan hasil ke pemerintah sesuai izin; rincian tidak ada di sumber.",
+     "en": "Reporting duty: developers report current data and output to government under their permit; detail is not in the sources."
+    },
+    {
+     "id": "Sanksi: tidak ditemukan di sumber yang dibaca.",
+     "en": "Sanctions: not found in the sources read."
+    }
+   ]
+  },
+  "15": {
+   "tipe": "langkah",
+   "sumber": [
+    "ruptlp",
+    "ed"
+   ],
+   "butir": [
+    {
+     "judul": {
+      "id": "1. Studi sumber daya dan lokasi",
+      "en": "1. Resource and site study"
+     },
+     "isi": {
+      "id": "Ukur arus atau gelombang sepanjang musim.",
+      "en": "Measure current or waves across seasons."
+     },
+     "pelaku": {
+      "id": "Pengembang, BRIN",
+      "en": "Developer, BRIN"
+     },
+     "peran": {
+      "id": "Pengembang, BRIN",
+      "en": "Developer, BRIN"
+     }
+    },
+    {
+     "judul": {
+      "id": "2. Kajian kelayakan dan penyambungan",
+      "en": "2. Feasibility and grid study"
+     },
+     "isi": {
+      "id": "Syarat RUPTL; hasilnya menentukan kapasitas yang bisa diserap.",
+      "en": "A RUPTL condition; the result sets the absorbable capacity."
+     },
+     "pelaku": {
+      "id": "Pengembang, PLN",
+      "en": "Developer, PLN"
+     },
+     "peran": {
+      "id": "Pengembang, PLN",
+      "en": "Developer, PLN"
+     }
+    },
+    {
+     "judul": {
+      "id": "3. Persetujuan ruang laut dan lingkungan",
+      "en": "3. Marine space and environment approvals"
+     },
+     "isi": {
+      "id": "Ajukan persetujuan pemanfaatan ruang laut dan dokumen lingkungan.",
+      "en": "Apply for marine space approval and environmental documents."
+     },
+     "pelaku": {
+      "id": "KKP, pemda",
+      "en": "Fisheries Ministry, local governments"
+     },
+     "peran": {
+      "id": "KKP, pemda",
+      "en": "Fisheries Ministry, local governments"
+     }
+    },
+    {
+     "judul": {
+      "id": "4. Masuk rencana PLN",
+      "en": "4. Enter PLN planning"
+     },
+     "isi": {
+      "id": "Usulkan melalui RUPTL; syarat harga yang layak harus dipenuhi.",
+      "en": "Propose through RUPTL; the viable-price condition must be met."
+     },
+     "pelaku": {
+      "id": "PLN, ESDM",
+      "en": "PLN, Energy Ministry"
+     },
+     "peran": {
+      "id": "PLN, ESDM",
+      "en": "PLN, Energy Ministry"
+     }
+    },
+    {
+     "judul": {
+      "id": "5. Perjanjian jual beli listrik",
+      "en": "5. Power purchase agreement"
+     },
+     "isi": {
+      "id": "Negosiasi tarif dan skema pembelian.",
+      "en": "Negotiate the tariff and purchase scheme."
+     },
+     "pelaku": {
+      "id": "PLN, pengembang",
+      "en": "PLN, developer"
+     },
+     "peran": {
+      "id": "PLN, pengembang",
+      "en": "PLN, developer"
+     }
+    },
+    {
+     "judul": {
+      "id": "6. Pendanaan",
+      "en": "6. Financing"
+     },
+     "isi": {
+      "id": "Ekuitas, pinjaman, atau hibah (bab Pembiayaan).",
+      "en": "Equity, loans or grants (Financing chapter)."
+     },
+     "pelaku": {
+      "id": "Pengembang, pendana",
+      "en": "Developer, funders"
+     },
+     "peran": {
+      "id": "Pengembang, pendana",
+      "en": "Developer, funders"
+     }
+    },
+    {
+     "judul": {
+      "id": "7. Pemasangan dan komisioning",
+      "en": "7. Installation and commissioning"
+     },
+     "isi": {
+      "id": "Kapal khusus, kabel, dan uji sambungan.",
+      "en": "Specialist vessels, cable and connection tests."
+     },
+     "pelaku": {
+      "id": "Kontraktor laut",
+      "en": "Marine contractors"
+     },
+     "peran": {
+      "id": "Kontraktor laut",
+      "en": "Marine contractors"
+     }
+    },
+    {
+     "judul": {
+      "id": "8. Operasi",
+      "en": "8. Operation"
+     },
+     "isi": {
+      "id": "Sertifikat laik operasi dan pelaporan.",
+      "en": "Operation certificate and reporting."
+     },
+     "pelaku": {
+      "id": "Operator",
+      "en": "Operator"
+     },
+     "peran": {
+      "id": "Operator",
+      "en": "Operator"
+     }
+    }
+   ],
+   "catatan": {
+    "id": "Lama dan biaya tiap langkah tidak ditemukan di sumber; urutan adalah ringkasan editorial METI dan syarat RUPTL.",
+    "en": "The duration and cost of each step were not found in sources; the order is a METI editorial summary plus the RUPTL conditions."
+   }
+  },
   "17": {
    "tipe": "teks",
    "sumber": [
     "mey_wiki",
     "mey_ops",
     "kwater",
-    "esdm_arus"
+    "esdm_arus",
+    "emec",
+    "otec17",
+    "tud"
    ],
    "paragraf": [
     {
@@ -1035,21 +2184,162 @@
     {
      "id": "Bendung pasang surut: Sihwa memakai 10 turbin 25,4 MW pada bendung yang sudah ada (K-water). Tingkat kematangan (TRL) tidak ditemukan di sumber; sengaja tidak diisi.",
      "en": "Tidal barrage: Sihwa uses ten 25.4 MW turbines in an existing dam (K-water). TRL was not found in the sources and is deliberately left blank."
+    },
+    {
+     "id": "Turbin arus sumbu horizontal (MeyGen: empat unit 1,5 MW) adalah desain paling matang; turbin sumbu vertikal dan sayap hidrofoil masih pada tahap uji.",
+     "en": "Horizontal-axis tidal turbines (MeyGen: four 1.5 MW units) are the most mature design; vertical-axis turbines and hydrofoil kites are still in testing."
+    },
+    {
+     "id": "Konverter gelombang (titik penyerap, kolom air berosilasi, terapung) belum konvergen ke satu desain; pusat uji seperti EMEC dipakai untuk menguji perangkat skala penuh.",
+     "en": "Wave energy converters (point absorbers, oscillating water columns, floating) have not converged on one design; test centres such as EMEC test full-scale devices."
+    },
+    {
+     "id": "OTEC memerlukan beda suhu sekitar 20 derajat Celsius antara permukaan dan kedalaman; estimasi potensi Indonesia 41 GW (PPPGL) dan hingga 45 GW (TU Delft), tetapi belum ada pembangkit komersial di sumber yang dibaca.",
+     "en": "OTEC needs a temperature difference of about 20 degrees Celsius between surface and depth; Indonesian potential is estimated at 41 GW (PPPGL) and up to 45 GW (TU Delft), but no commercial plant is in the sources read."
+    },
+    {
+     "id": "Baterai air laut: IPB University mengembangkan Sagara (baterai tenaga air laut untuk lampu bagan nelayan, uji lapangan 2023), contoh teknologi laut skala kecil sesuai arah RUPTL.",
+     "en": "Seawater battery: IPB University developed Sagara (a seawater-powered battery for fishermen's lights, field test 2023), an example of small-scale marine technology in line with the RUPTL direction."
+    },
+    {
+     "id": "Tingkat kematangan (TRL) dan biaya tiap teknologi tidak dikutip karena tidak ada sumber tunggal yang dibaca.",
+     "en": "The TRL and cost of each technology are not quoted as no single source was read."
     }
    ]
   },
   "18": {
-   "tipe": "teks",
+   "tipe": "tabel",
+   "per": 10,
    "sumber": [
-    "otec17",
-    "tud"
+    "direktori"
    ],
-   "paragraf": [
+   "kolom": [
     {
-     "id": "Riset: PPPGL meneliti OTEC di 17 lokasi dengan total 41 GW (2017), dan studi TU Delft menaksir hingga 45 GW dengan 22 persen kebutuhan nasional pada 2050. Paten, startup, dan prototipe Indonesia tidak ditemukan di sumber yang dibaca.",
-     "en": "Research: PPPGL studied OTEC at 17 sites totalling 41 GW (2017), and a TU Delft study estimates up to 45 GW covering 22 percent of national demand in 2050. Indonesian patents, start-ups and prototypes were not found in the sources read."
+     "k": "judul",
+     "l": {
+      "id": "Karya",
+      "en": "Work"
+     },
+     "url": "url"
+    },
+    {
+     "k": "penulis",
+     "l": {
+      "id": "Penulis",
+      "en": "Authors"
+     }
+    },
+    {
+     "k": "jurnal",
+     "l": {
+      "id": "Jurnal (tahun)",
+      "en": "Journal (year)"
+     }
+    },
+    {
+     "k": "sitasi",
+     "l": {
+      "id": "Sitasi",
+      "en": "Citations"
+     },
+     "num": true,
+     "d": 0
     }
-   ]
+   ],
+   "baris": [
+    {
+     "judul": "Sagara, baterai tenaga air laut",
+     "id": "in_sagara_baterai_air_laut",
+     "url": "https://www.ipb.ac.id/news/index/2023/10/implementasi-kedaireka-departemen-psp-ipb-university-sosialisasi-sagara-baterai-tenaga-air-laut-ke-nelayan-palabuhanratu/",
+     "penulis": "IPB University",
+     "jurnal": "uji lapangan (2023)",
+     "sitasi": 0
+    },
+    {
+     "judul": "Intraseasonal Kelvin Waves in the Equatorial Indian Ocean and Their Propagation into the Indonesian Seas",
+     "id": "W3016870844",
+     "url": "https://doi.org/10.1029/2019jc015839",
+     "penulis": "Kandaga Pujiana, Michael James McPhaden",
+     "jurnal": "Journal of Geophysical Research Oceans (2020)",
+     "sitasi": 67
+    },
+    {
+     "judul": "A high-resolution wave energy resource assessment of Indonesia",
+     "id": "W3036004943",
+     "url": "https://doi.org/10.1016/j.renene.2020.06.017",
+     "penulis": "Agustinus Ribal, Alexander V. Babanin, Stefan Zieger",
+     "jurnal": "Renewable Energy (2020)",
+     "sitasi": 62
+    },
+    {
+     "judul": "Description and variation of ocean wave energy in Indonesian seas and adjacent waters",
+     "id": "W4221135758",
+     "url": "https://doi.org/10.1016/j.oceaneng.2022.111086",
+     "penulis": "Ardian M. Rizal, Nining Sari Ningsih",
+     "jurnal": "Ocean Engineering (2022)",
+     "sitasi": 27
+    },
+    {
+     "judul": "Ocean wave energy potential along the west coast of the Sumatra island, Indonesia",
+     "id": "W3025054055",
+     "url": "https://doi.org/10.1007/s40722-020-00164-w",
+     "penulis": "Ardian M. Rizal, Nining Sari Ningsih",
+     "jurnal": "Journal of Ocean Engineering and Marine Energy (2020)",
+     "sitasi": 26
+    },
+    {
+     "judul": "Characteristics of internal solitary waves in the Maluku Sea, Indonesia",
+     "id": "W4291329547",
+     "url": "https://doi.org/10.1016/j.oceano.2022.07.008",
+     "penulis": "Adi Purwandana, Yannis Cuypers",
+     "jurnal": "Oceanologia (2022)",
+     "sitasi": 25
+    },
+    {
+     "judul": "Numerical Study of Bamboo Breakwater for Wave Reduction",
+     "id": "W4205757173",
+     "url": "https://doi.org/10.3390/fluids7010014",
+     "penulis": "Haryo Dwito Armono, Briangga Herswastio Bromo, Sholihin",
+     "jurnal": "Fluids (2021)",
+     "sitasi": 23
+    },
+    {
+     "judul": "Harvesting ocean energy with a small-scale tidal-current turbine and fish aggregating device in the Indonesian Archipelagos",
+     "id": "W2956581894",
+     "url": "https://doi.org/10.1016/j.seta.2019.07.001",
+     "penulis": "Hidemi Mutsuda, Shade Rahmawati, Naokazu Taniguchi",
+     "jurnal": "Sustainable Energy Technologies and Assessments (2019)",
+     "sitasi": 22
+    },
+    {
+     "judul": "A 10-year wave energy resource assessment and trends of Indonesia based on satellite observations",
+     "id": "W2966353757",
+     "url": "https://doi.org/10.1007/s13131-019-1400-z",
+     "penulis": "Amiruddin Amiruddin, Agustinus Ribal, Khaeruddin Khaeruddin",
+     "jurnal": "Acta Oceanologica Sinica (2019)",
+     "sitasi": 20
+    },
+    {
+     "judul": "Hydrodynamic performance and multi-objective optimization of multi-cylinder floating point absorber wave energy converter",
+     "id": "W4405508138",
+     "url": "https://doi.org/10.1016/j.oceaneng.2024.120040",
+     "penulis": "Wildan Amarullah Arrosyid, Kurniawan T. Waskito, Yanuar Yanuar",
+     "jurnal": "Ocean Engineering (2024)",
+     "sitasi": 18
+    },
+    {
+     "judul": "Fate of internal solitary wave and enhanced mixing in Manado Bay, North Sulawesi, Indonesia",
+     "id": "W4283786069",
+     "url": "https://doi.org/10.1016/j.csr.2022.104801",
+     "penulis": "Adi Purwandana, Yannis Cuypers, Daniel Bourgault",
+     "jurnal": "Continental Shelf Research (2022)",
+     "sitasi": 16
+    }
+   ],
+   "catatan": {
+    "id": "Baris pertama adalah inovasi tercatat di direktori METI (IPB University); sisanya karya riset kampus dan peneliti dari irisan OpenAlex di repo. Penulis berafiliasi kampus tertera di tabel Pakar.",
+    "en": "The first row is an innovation listed in the METI directory (IPB University); the rest are campus and researcher works from the OpenAlex slice in the repo. Campus-affiliated authors appear in the Experts table."
+   }
   },
   "19": {
    "tipe": "tabel",
@@ -1124,12 +2414,14 @@
   },
   "20": {
    "tipe": "tabel",
-   "per": 6,
+   "per": 10,
    "sumber": [
     "mey_wiki",
     "kwater",
     "jp28",
-    "tud"
+    "tud",
+    "annap",
+    "jiangxia"
    ],
    "kolom": [
     {
@@ -1137,6 +2429,13 @@
      "l": {
       "id": "Negara dan proyek",
       "en": "Country and project"
+     }
+    },
+    {
+     "k": "iso2",
+     "l": {
+      "id": "ISO2",
+      "en": "ISO2"
      }
     },
     {
@@ -1172,7 +2471,8 @@
      "hasil": {
       "id": "552,7 GWh per tahun; faktor kapasitas EST 24,8 persen",
       "en": "552.7 GWh a year; EST capacity factor 24.8 percent"
-     }
+     },
+     "iso2": "KR"
     },
     {
      "negara": {
@@ -1184,7 +2484,8 @@
      "hasil": {
       "id": "10,2 GWh pada 2023; tapak berizin 398 MW; CfD 9 MW",
       "en": "10.2 GWh in 2023; site consented to 398 MW; 9 MW CfD"
-     }
+     },
+     "iso2": "GB"
     },
     {
      "negara": "Indonesia",
@@ -1193,6 +2494,27 @@
      "hasil": {
       "id": "40 MW ditargetkan 2028; praktis 20 GW arus",
       "en": "40 MW targeted for 2028; practical potential 20 GW of current"
+     },
+     "iso2": "ID"
+    },
+    {
+     "negara": "Kanada: Annapolis Royal",
+     "iso2": "CA",
+     "tipe": "Barrage",
+     "kapasitas": "20 MW (puncak)",
+     "hasil": {
+      "id": "sekitar 30 juta kWh per tahun; tidak lagi beroperasi",
+      "en": "about 30 million kWh a year; no longer operating"
+     }
+    },
+    {
+     "negara": "Tiongkok: Jiangxia",
+     "iso2": "CN",
+     "tipe": "Barrage",
+     "kapasitas": "4,1 MW",
+     "hasil": {
+      "id": "hingga 6,5 GWh per tahun; beroperasi sejak 1985",
+      "en": "up to 6.5 GWh a year; operating since 1985"
      }
     }
    ],
@@ -1249,18 +2571,152 @@
    ]
   },
   "24": {
-   "tipe": "teks",
+   "tipe": "tabel",
+   "per": 8,
    "sumber": [
-    "jp28",
-    "pubfin",
-    "mey_wiki"
+    "direktori",
+    "pubfin"
    ],
-   "paragraf": [
+   "kolom": [
     {
-     "id": "Proyek 40 MW senilai sekitar USD 220 juta; sumber dana (ekuitas, pinjaman, hibah) tidak disebut. Satu-satunya aliran publik asing tercatat: USD 0,74 juta (2019, IRENA/OECD). Pembanding: CfD Inggris AR6 memberi MeyGen 9 MW tambahan untuk penyerahan 2028 sampai 2029.",
-     "en": "The 40 MW project is worth about USD 220 million; the funding sources (equity, debt, grants) are not stated. The only recorded foreign public flow: USD 0.74 million (2019, IRENA/OECD). Comparison: the UK AR6 CfD gave MeyGen an extra 9 MW for delivery in 2028 to 2029."
+     "k": "nama",
+     "l": {
+      "id": "Skema",
+      "en": "Scheme"
+     },
+     "url": "url"
+    },
+    {
+     "k": "pemberi",
+     "l": {
+      "id": "Pemberi",
+      "en": "Provider"
+     }
+    },
+    {
+     "k": "jenis",
+     "l": {
+      "id": "Jenis",
+      "en": "Type"
+     }
+    },
+    {
+     "k": "bukti",
+     "l": {
+      "id": "Tingkat bukti",
+      "en": "Evidence level"
+     }
+    },
+    {
+     "k": "ringkas",
+     "l": {
+      "id": "Relevansi untuk topik ini",
+      "en": "Relevance to this topic"
+     }
     }
-   ]
+   ],
+   "baris": [
+    {
+     "nama": "Pendanaan riset dan inovasi BRIN",
+     "id": "sk_brin_riset",
+     "url": "https://www.brin.go.id/",
+     "pemberi": "Badan Riset dan Inovasi Nasional",
+     "jenis": "dana riset",
+     "bukti": "kata-pihak",
+     "ringkas": {
+      "id": "Pendanaan riset dan inovasi BRIN untuk survei sumber daya dan prototipe.",
+      "en": "BRIN research and innovation funding for resource surveys and prototypes."
+     }
+    },
+    {
+     "nama": "Matching Fund Kedaireka",
+     "id": "sk_kedaireka",
+     "url": "https://kedaireka.id/",
+     "pemberi": "Kementerian Pendidikan Tinggi, Sains, dan Teknologi",
+     "jenis": "dana riset",
+     "bukti": "kata-pihak",
+     "ringkas": {
+      "id": "Dana padanan kampus-industri untuk prototipe teknologi laut.",
+      "en": "University-industry matching fund for marine technology prototypes."
+     }
+    },
+    {
+     "nama": "Penelitian dan pengabdian lewat BIMA",
+     "id": "sk_bima",
+     "url": "https://bima.kemdiktisaintek.go.id/",
+     "pemberi": "Kementerian Pendidikan Tinggi, Sains, dan Teknologi",
+     "jenis": "dana riset",
+     "bukti": "kata-pihak",
+     "ringkas": {
+      "id": "Penelitian dan pengabdian kampus lewat BIMA.",
+      "en": "Campus research and community service through BIMA."
+     }
+    },
+    {
+     "nama": "Pendanaan riset LPDP",
+     "id": "sk_lpdp_riset",
+     "url": "https://www.lpdp.kemenkeu.go.id/",
+     "pemberi": "Lembaga Pengelola Dana Pendidikan",
+     "jenis": "dana riset",
+     "bukti": "kata-pihak",
+     "ringkas": {
+      "id": "Pendanaan riset LPDP.",
+      "en": "LPDP research funding."
+     }
+    },
+    {
+     "nama": "Global Environment Facility",
+     "id": "sk_gef",
+     "url": "https://www.thegef.org/",
+     "pemberi": "Global Environment Facility",
+     "jenis": "hibah",
+     "bukti": "kata-pihak",
+     "ringkas": {
+      "id": "Hibah Global Environment Facility untuk proyek percontohan lingkungan.",
+      "en": "Global Environment Facility grant for environmental pilot projects."
+     }
+    },
+    {
+     "nama": "Green Climate Fund",
+     "id": "sk_gcf",
+     "url": "https://www.greenclimate.fund/",
+     "pemberi": "Green Climate Fund",
+     "jenis": "blended",
+     "bukti": "kata-pihak",
+     "ringkas": {
+      "id": "Dana iklim multilateral yang dapat membiayai proyek percontohan energi bersih.",
+      "en": "Multilateral climate fund that can finance clean energy pilots."
+     }
+    },
+    {
+     "nama": "Energy Transition Mechanism (ADB)",
+     "id": "sk_adb_etm",
+     "url": "https://www.adb.org/",
+     "pemberi": "Asian Development Bank",
+     "jenis": "blended",
+     "bukti": "kata-pihak",
+     "ringkas": {
+      "id": "Mekanisme transisi energi ADB (sektor surya dan jaringan tercatat; relevansi laut perlu dipastikan).",
+      "en": "ADB energy transition mechanism (solar and grid sectors listed; marine relevance to be confirmed)."
+     }
+    },
+    {
+     "nama": "Pinjaman luar negeri lewat Green Book",
+     "id": "sk_greenbook",
+     "url": "https://www.bappenas.go.id/",
+     "pemberi": "Kementerian PPN/Bappenas",
+     "jenis": "pinjaman lunak",
+     "bukti": "kata-pihak",
+     "ringkas": {
+      "id": "Pinjaman luar negeri pemerintah lewat Green Book Bappenas untuk infrastruktur.",
+      "en": "Government foreign loans through the Bappenas Green Book for infrastructure."
+     }
+    }
+   ],
+   "catatan": {
+    "id": "Proyek 40 MW senilai sekitar USD 220 juta tidak menyebut sumber dana; satu-satunya aliran publik asing tercatat USD 0,74 juta (2019, IRENA/OECD).",
+    "en": "The 40 MW project worth about USD 220 million names no funding source; the only recorded foreign public flow is USD 0.74 million (2019, IRENA/OECD)."
+   }
   },
   "25": {
    "tipe": "rumus",
@@ -1285,6 +2741,110 @@
     }
    ]
   },
+  "26": {
+   "tipe": "tabel",
+   "per": 8,
+   "sumber": [
+    "jp28",
+    "kwater",
+    "mey_ops",
+    "direktori"
+   ],
+   "kolom": [
+    {
+     "k": "pos",
+     "l": {
+      "id": "Kasus",
+      "en": "Case"
+     }
+    },
+    {
+     "k": "nilai",
+     "l": {
+      "id": "Nilai",
+      "en": "Value"
+     }
+    },
+    {
+     "k": "catatan",
+     "l": {
+      "id": "Catatan",
+      "en": "Note"
+     }
+    }
+   ],
+   "baris": [
+    {
+     "pos": {
+      "id": "PLTAL NTT dan NTB 40 MW",
+      "en": "NTT and NTB tidal plants 40 MW"
+     },
+     "nilai": "USD 220 juta",
+     "catatan": {
+      "id": "Rencana operasi 2028 (Jakarta Post, 16 Jun 2025)",
+      "en": "Operation planned 2028 (Jakarta Post, 16 Jun 2025)"
+     }
+    },
+    {
+     "pos": {
+      "id": "Sihwa 254 MW (K-water)",
+      "en": "Sihwa 254 MW (K-water)"
+     },
+     "nilai": "USD 355,1 juta",
+     "catatan": {
+      "id": "Beroperasi",
+      "en": "Operating"
+     }
+    },
+    {
+     "pos": {
+      "id": "Aliran publik asing ke energi laut Indonesia (2019)",
+      "en": "Foreign public flow to Indonesian ocean energy (2019)"
+     },
+     "nilai": "USD 0,74 juta",
+     "catatan": {
+      "id": "IRENA dan OECD",
+      "en": "IRENA and OECD"
+     }
+    },
+    {
+     "pos": {
+      "id": "Transaksi merger, akuisisi, IPO",
+      "en": "Merger, acquisition, IPO transactions"
+     },
+     "nilai": "-",
+     "catatan": {
+      "id": "Tidak ditemukan di sumber yang dibaca",
+      "en": "Not found in the sources read"
+     }
+    }
+   ]
+  },
+  "27": {
+   "tipe": "teks",
+   "sumber": [
+    "ed"
+   ],
+   "paragraf": [
+    {
+     "id": "Manfaat: listrik rendah emisi untuk pulau berarus kuat. Risiko: dampak pada biota laut, alur pelayaran, dan nelayan setempat; studi lingkungan khusus Indonesia tidak ditemukan di sumber. Hak masyarakat: nelayan di selat calon perlu dilibatkan sejak survei.",
+     "en": "Benefits: low-emission power for islands with strong currents. Risks: effects on marine life, shipping lanes and local fishers; no Indonesia-specific environmental study was found in the sources. Community rights: fishers in candidate straits need involving from the survey stage."
+    }
+   ]
+  },
+  "28": {
+   "tipe": "teks",
+   "sumber": [
+    "ed",
+    "ruptlp"
+   ],
+   "paragraf": [
+    {
+     "id": "Keterampilan: penyelam dan teknisi kapal, insinyur kelautan, pengelas struktur baja, dan operator jaringan. RUPTL menetapkan tahap kedua berupa prototipe industri untuk membangun kapasitas nasional, jadi pelatihan dan sertifikasi perlu menyertai prototipe. Daftar lembaga sertifikasi tidak ditemukan di sumber.",
+     "en": "Skills: vessel divers and technicians, marine engineers, steel structure welders and grid operators. RUPTL sets a second stage of industrial prototypes to build national capacity, so training and certification must accompany prototypes. A list of certification bodies was not found in sources."
+    }
+   ]
+  },
   "29": {
    "tipe": "teks",
    "sumber": [
@@ -1292,7 +2852,9 @@
     "tud",
     "pot63",
     "kwater",
-    "sihwa_wiki"
+    "sihwa_wiki",
+    "ruptlp",
+    "ed"
    ],
    "paragraf": [
     {
@@ -1302,6 +2864,14 @@
     {
      "id": "Biaya Sihwa berbeda: USD 355,1 juta (K-water) versus USD 560 juta (Wikipedia). Tahun mulai operasi berbeda: 2011 (Tethys) versus 2012 (Wikipedia). Sumber tidak merekonsiliasi.",
      "en": "Sihwa cost differs: USD 355.1 million (K-water) versus USD 560 million (Wikipedia). Start year differs: 2011 (Tethys) versus 2012 (Wikipedia). The sources do not reconcile."
+    },
+    {
+     "id": "Kontroversi 3, arus laut atau surya terapung. Pendukung energi laut: dapat diprakirakan dan cocok untuk pulau berarus kuat. Pendukung surya: biaya jauh lebih rendah dan teknologi matang. Hipotesis METI: keduanya melengkapi; energi laut layak dikejar sebagai prototipe industri sesuai tahap RUPTL, bukan sebagai pengganti surya.",
+     "en": "Controversy 3, tidal or floating solar. Ocean energy supporters: predictable and suited to islands with strong currents. Solar supporters: far lower cost and mature technology. METI hypothesis: they complement each other; ocean energy is worth pursuing as an industrial prototype per the RUPTL stage, not as a solar substitute."
+    },
+    {
+     "id": "Kontroversi 4, potensi teoretis atau praktis. Taksiran 63 GW praktis dan 289,73 GW seluruh ZEE berbeda jauh karena definisi dan batasan (kedalaman, jarak ke pantai, kebutuhan sistem) berbeda; RUPTL sendiri tidak memberi target MW.",
+     "en": "Controversy 4, theoretical or practical potential. The 63 GW practical and 289.73 GW whole-EEZ estimates differ widely because definitions and limits (depth, distance to shore, system demand) differ; RUPTL itself sets no MW target."
     }
    ]
   },
@@ -1386,6 +2956,14 @@
     {
      "id": "Analisis METI (Hipotesis): akademisi dan pemda NTT/NTB: data arus terbuka dan lokasi pelabuhan pendukung; investor: tunggu kepastian tarif dan skema jual-beli sebelum modal besar.",
      "en": "METI analysis (Hypothesis): academics and NTT/NTB local governments: open current data and supporting port sites; investors: wait for tariff and offtake certainty before large capital."
+    },
+    {
+     "id": "Analisis METI (Hipotesis): akademisi: data gelombang dan arus terbuka serta prototipe skala kecil; peneliti UGM, Universitas Hasanuddin, dan IPB tercatat di tabel Pakar.",
+     "en": "METI analysis (Hypothesis): academics: open wave and current data and small-scale prototypes; researchers at UGM, Hasanuddin University and IPB are listed in the Experts table."
+    },
+    {
+     "id": "Analisis METI (Hipotesis): pemasok: struktur baja laut, kabel bawah laut, dan kapal servis adalah peluang awal bila tahap prototipe industri RUPTL berjalan.",
+     "en": "METI analysis (Hypothesis): suppliers: marine steel structures, subsea cable and service vessels are early opportunities if the RUPTL industrial prototype stage proceeds."
     }
    ]
   },
@@ -1403,6 +2981,34 @@
     {
      "id": "Skema tarif atau pembelian khusus arus laut, dan kejelasan hubungan proyek Larantuka 2018 dengan proyek 2025.",
      "en": "A tariff or offtake scheme specific to tidal power, and clarity on how the 2018 Larantuka project relates to the 2025 project."
+    },
+    {
+     "id": "Hasil studi PLTEL Larantuka, Sape, dan Maluku yang disebut RUPTL.",
+     "en": "The results of the Larantuka, Sape and Maluku ocean studies cited by RUPTL."
+    },
+    {
+     "id": "Revisi RUPTL berikutnya: apakah muncul target MW energi laut.",
+     "en": "The next RUPTL revision: whether an ocean energy MW target appears."
+    },
+    {
+     "id": "Keputusan investasi akhir proyek 40 MW dan jadwal konstruksi 2028.",
+     "en": "The final investment decision and 2028 construction schedule of the 40 MW project."
+    },
+    {
+     "id": "Skema tarif arus laut dari ESDM atau PLN.",
+     "en": "A tidal tariff scheme from the Energy Ministry or PLN."
+    },
+    {
+     "id": "Rekonsiliasi angka potensi 63 GW, 41 GW OTEC, dan 289,73 GW ZEE.",
+     "en": "Reconciling the 63 GW, 41 GW OTEC and 289.73 GW EEZ potential figures."
+    },
+    {
+     "id": "Hasil prototipe kampus (Sagara, turbin arus kecil).",
+     "en": "Results of campus prototypes (Sagara, small tidal turbines)."
+    },
+    {
+     "id": "Pendanaan riset BRIN, Kedaireka, dan LPDP untuk energi laut.",
+     "en": "BRIN, Kedaireka and LPDP research funding for ocean energy."
     }
    ]
   },
@@ -1412,7 +3018,8 @@
    "sumber": [
     "jp28",
     "kwater",
-    "tud"
+    "tud",
+    "direktori"
    ],
    "kolom": [
     {
@@ -1446,7 +3053,8 @@
      "mengapa": {
       "id": "Status proyek 40 MW",
       "en": "Status of the 40 MW project"
-     }
+     },
+     "id": null
     },
     {
      "judul": "Sihwa Tidal Power Plant",
@@ -1455,7 +3063,8 @@
      "mengapa": {
       "id": "Spesifikasi bendung pasang surut terbesar",
       "en": "Specifications of the largest tidal barrage"
-     }
+     },
+     "id": null
     },
     {
      "judul": "Upscaling scenarios for OTEC in Indonesia",
@@ -1464,6 +3073,17 @@
      "mengapa": {
       "id": "Skenario OTEC Indonesia",
       "en": "OTEC scenarios for Indonesia"
+     },
+     "id": null
+    },
+    {
+     "judul": "RUPTL PT PLN (Persero) 2025-2034 (bagian III.2.7 Energi Laut)",
+     "id": "pk-ruptl-pt-pln-persero-2025-2034",
+     "url": "/pustaka?id=pk-ruptl-pt-pln-persero-2025-2034",
+     "penerbit": "Kementerian ESDM dan PT PLN (Persero)",
+     "mengapa": {
+      "id": "Satu-satunya dokumen perencanaan PLN yang memuat strategi energi laut",
+      "en": "The PLN planning document that carries the ocean energy strategy"
      }
     }
    ]
@@ -1601,7 +3221,9 @@
      "sumber": [
       "mey_wiki",
       "mey_ops"
-     ]
+     ],
+     "foto": null,
+     "koordinat": null
     },
     {
      "id": "sihwa",
@@ -1697,7 +3319,9 @@
       "kwater",
       "tethys",
       "sihwa_wiki"
-     ]
+     ],
+     "foto": null,
+     "koordinat": null
     }
    ]
   },
@@ -1706,7 +3330,8 @@
    "sumber": [
     "lar18",
     "bis18",
-    "jp28"
+    "jp28",
+    "ruptlp"
    ],
    "catatan": {
     "id": "Hak jawab: pihak yang disebut dapat mengirim koreksi lewat formulir koreksi platform. Satu kasus; kegagalan energi laut luar negeri tidak dibaca. Larantuka tidak dinyatakan batal oleh sumber, hanya belum terbangun.",
@@ -1752,7 +3377,12 @@
        "est": false
       }
      ],
-     "pelajaran": [],
+     "pelajaran": [
+      {
+       "id": "Larantuka kini berstatus studi dalam RUPTL; tanda \"mundur\" berarti jadwal 2018 tidak terpenuhi, bukan bahwa gagasan dihentikan.",
+       "en": "Larantuka is now a study in RUPTL; \"delayed\" means the 2018 schedule was missed, not that the idea was dropped."
+      }
+     ],
      "kronologi": [
       {
        "tanggal": "2016-04-01",
@@ -1780,6 +3410,13 @@
        "teks": {
         "id": "ESDM: operasi PLTAL pertama ditargetkan 2028.",
         "en": "Ministry: first tidal plant operation targeted for 2028."
+       }
+      },
+      {
+       "tanggal": "2025-05-26",
+       "teks": {
+        "id": "RUPTL 2025-2034 masih mencantumkan studi PLTEL di Selat Larantuka; status studi, bukan pembatalan.",
+        "en": "RUPTL 2025-2034 still lists ocean energy studies at the Larantuka Strait; study status, not cancellation."
        }
       }
      ],
@@ -1810,9 +3447,12 @@
      "sumber": [
       "lar18",
       "bis18",
-      "jp28"
+      "jp28",
+      "ruptlp"
      ],
-     "hak_jawab": true
+     "hak_jawab": true,
+     "foto": null,
+     "koordinat": null
     }
    ]
   },

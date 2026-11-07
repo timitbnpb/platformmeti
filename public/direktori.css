@@ -3322,5 +3322,29 @@ h3 .ak-sd2-sg{display:inline-block;height:auto;padding:1px 8px;border-radius:999
 .ak-pkl-2s .ak-pkn{padding-right:176px}@media (max-width:760px){.ak-pkl-2s .ak-pkn{padding-right:0}.ak-pkl-2s .ak-pkm{position:static;grid-column:1/-1;margin-top:8px}.ak-pkl-2s .ak-pkbtn{grid-template-columns:40px minmax(0,1fr)!important}}
 .ak-in2-meta dd button{padding:0;margin:0;border:0;background:none;text-align:left;font:inherit;font-weight:600;color:var(--accent);cursor:pointer}
 /* negara donor, daftar periksa, segmen sumber (8 Nov 2026) */
-.ak-pd-wadah #akPdSrc[hidden]{display:none}
+.ak-pd-wadah #akPdSrc[hidden]{display:none!important}
 .ak-pd-cekl{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:8px 16px}.ak-pd-cekl li{display:flex;align-items:center;gap:8px;font-size:var(--t-kecil)}.ak-pd-cekl svg{width:18px;height:18px;flex:none;color:var(--ok);fill:none;stroke:currentColor;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round}
+.ak-pd-cekl li.pering svg{color:var(--ink2)}.ak-pd-cekl li.pering{color:var(--ink2)}
+/* negara donor: batang penuh lebar + tabel proyek */
+.ak-ng-ex{margin-top:24px}.ak-ng-ex:first-child{margin-top:0}
+.ak-ng-b{display:grid;gap:4px;margin-top:16px}
+.ak-ng-r{display:grid;grid-template-columns:28px minmax(150px,220px) minmax(0,1fr) minmax(150px,200px);gap:12px;align-items:center;padding:4px 12px;border:1px solid transparent;border-radius:12px;background:none;color:var(--ink);font:inherit;text-align:left;cursor:pointer;width:100%}
+.ak-ng-r:hover,.ak-ng-r:focus-visible{background:var(--paper);border-color:var(--line)}.ak-ng-r.ak-bsel{border-color:var(--data5);background:var(--paper)}.ak-ng-r.ak-bredup{opacity:.45}.ak-ng-r.ak-bredup:hover{opacity:1}
+.ak-ng-no{color:var(--ink2);font-variant-numeric:tabular-nums;font-size:var(--t-label)}
+.ak-ng-nm{display:flex;align-items:center;gap:8px;min-width:0;font-weight:600;font-size:var(--t-kecil)}.ak-ng-nm span{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.ak-ng-tr{height:14px;border-radius:999px;background:var(--line);overflow:hidden}.ak-ng-tr i{display:block;height:100%;border-radius:999px;background:var(--data5)}
+.ak-ng-v{display:grid;justify-items:end;font-variant-numeric:tabular-nums}.ak-ng-v b{font-size:var(--t-kecil)}.ak-ng-v small{color:var(--ink2);font-size:var(--t-label)}
+.ak-ng-alat{display:grid;gap:12px;margin:16px 0}.ak-ng-alat .ak-baris3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.ak-ng-hasil{margin:0 0 12px;display:flex;align-items:center;gap:8px;flex-wrap:wrap;color:var(--ink2);font-size:var(--t-kecil)}
+.ak-ng-tb{width:100%;table-layout:fixed}.ak-ng-tb td{vertical-align:top;overflow-wrap:anywhere}
+.ak-ng-tb th:nth-child(1){width:22%}.ak-ng-tb th:nth-child(2){width:11%}.ak-ng-tb th:nth-child(3){width:15%}.ak-ng-tb th:nth-child(4){width:11%}.ak-ng-tb th:nth-child(5){width:11%}.ak-ng-tb th:nth-child(6){width:13%}.ak-ng-tb th:nth-child(7){width:8%}.ak-ng-tb th:nth-child(8){width:9%}
+.ak-ng-u{all:unset;cursor:pointer;display:inline-flex;align-items:center;gap:4px;color:inherit;font:inherit;font-weight:inherit}.ak-ng-u:focus-visible{outline:2px solid currentColor}.ak-ng-u svg{width:14px;height:14px;fill:none;stroke:currentColor;stroke-width:2}
+.ak-ng-c{display:flex;align-items:center;gap:6px;min-width:0}.ak-ng-c .ak-lgo{flex:none}
+@media (max-width:1100px){.ak-ng-r{grid-template-columns:24px minmax(110px,170px) minmax(0,1fr) minmax(120px,160px)}.ak-ng-alat .ak-baris3{grid-template-columns:1fr}}
+@media (max-width:640px){.ak-ng-r{grid-template-columns:22px minmax(0,1fr) auto;row-gap:4px}.ak-ng-tr{grid-column:2/-1;grid-row:2}.ak-ng-v{grid-row:1;grid-column:3}
+  .ak-ng-tb thead{display:none}.ak-ng-tb,.ak-ng-tb tbody,.ak-ng-tb tr,.ak-ng-tb td{display:block;width:auto}.ak-ng-tb tr{padding:10px 0;border-bottom:1px solid var(--line)}.ak-ng-tb td::before{content:attr(data-l);display:block;color:var(--ink2);font-size:var(--t-label)}}
+.ak-pd-cekl li.pering svg{color:var(--ink2)}.ak-ng-tb td:nth-child(7){white-space:nowrap;overflow-wrap:normal}.ak-ng-tb .jm-uang-s{flex:none;white-space:nowrap}.ak-ng-tb .jm-uang{display:flex;justify-content:space-between;gap:8px}
+.ak-segmeti[hidden]{display:none!important}
+#akPdSrc[hidden]{display:none!important}
+
+@media (max-width:640px){.ak-ng-tb .ak-pd-uang .jm-uang{width:100%}.ak-ng-r{grid-template-columns:22px minmax(0,1fr) minmax(0,110px);row-gap:4px}.ak-ng-r .ak-ng-tr{grid-column:2/-1;grid-row:2}.ak-ng-r .ak-ng-v{grid-column:3;grid-row:1}}

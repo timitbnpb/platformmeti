@@ -13,6 +13,7 @@ import crypto from 'node:crypto';
 import assert from 'node:assert/strict';
 import { fileURLToPath } from 'node:url';
 import { bangunSitemap } from './sitemap.mjs';
+import { baris as entitasTambah } from './entitas_tambah.mjs';
 import { terapkan as terapkanMetiWilayah } from './meti_wilayah_orang.mjs';
 import { gabung as gabungFoto, muat as muatFoto } from './foto_orang_gabung.mjs';
 import { gabung as gabungPakar, muatPakar } from './pakar_orang.mjs';
@@ -222,6 +223,11 @@ export function bangun(masukan = {}) {
     const ft = path.join(ROOT, 'data/direktori/asosiasi_tambahan.json');
     if (!masukan.perusahaan && fs.existsSync(ft)) for (const b of JSON.parse(fs.readFileSync(ft, 'utf8')).baris || []) if (adaUrl(b.sumber_url)) tambahOrg({ id: b.id, nama: b.nama, singkatan: b.singkatan, kategori: b.kategori, kepakaran: b.kepakaran || [], peran_rantai: [], situs: b.situs, sumber: [{ id: 'situs-resmi', jenis: 'situs-resmi', url: b.sumber_url, keterangan: 'situs resmi asosiasi', tingkat_bukti: b.tingkat_bukti, tanggal: b.tanggal }] });
   }
+  if (!masukan.perusahaan) { // kampus pembuat inovasi (data/inovasi/kampus_org.json) dan organisasi tambahan terkurasi (entitas_tambah.mjs): tahan rebuild
+    const fk = path.join(ROOT, 'data/inovasi/kampus_org.json');
+    if (fs.existsSync(fk)) for (const k of JSON.parse(fs.readFileSync(fk, 'utf8'))) tambahOrg({ id: k.id, nama: k.nama, singkatan: k.singkatan, kategori: 'perguruan-tinggi', kepakaran: [], peran_rantai: [], situs: k.situs, lokasi: bersih({ kota: k.kota, provinsi: k.provinsi, lat: k.lat, lng: k.lng, presisi: 'kota' }), sumber: [{ id: 'situs-resmi', jenis: 'situs-resmi', url: k.situs + '/', keterangan: 'situs resmi kampus (nama, lokasi, logo)', tingkat_bukti: 'situs-sendiri', tanggal: '2026-11-08' }], extra: {} });
+    for (const e of entitasTambah()) { catatTgl([e]); tambahOrg({ ...e, extra: {} }); }
+  }
   const perusahaan = M('perusahaan', 'perusahaan/perusahaan.jsonl'); catatTgl(perusahaan);
   for (const p of perusahaan) tambahOrg({ id: p.perusahaan_id, nama: p.nama, nama_lain: p.nama_lain, kategori: kategoriPerusahaan(p), induk: p.induk, kepakaran: p.kepakaran || [], peran_rantai: p.peran_rantai || [], situs: p.situs, tahun_berdiri: p.tahun_berdiri, kode_saham: p.kode_saham, lokasi: bersih({ alamat: p.kontak?.alamat_kantor, kota: p.kantor_pusat?.kota || p.kontak?.kota, provinsi: p.kantor_pusat?.provinsi || p.kontak?.provinsi, lat: p.kontak?.lat, lng: p.kontak?.lng }), teknis: bersih({ kapasitas_mwp_tahun: p.kapasitas_mwp_tahun, pasar: p.pasar, apamsi: p.apamsi, tkdn: p.tkdn, bmp: p.bmp, kapasitas_portofolio: p.kapasitas_portofolio }), kontak_mentah: p.kontak || {}, sumber: sumberOrg(p.sumber), asosiasi: p.anggota_asosiasi || [], extra: { pengurus_status: p.pengurus_status, verifikasi: p.verifikasi, situs_keyakinan: p.situs_keyakinan, situs_catatan: p.situs_catatan, kandidat: p.kandidat } });
   // pemilik proyek yang belum ada di direktori (scripts/pipa/org_pemilik.mjs bangun); tiap baris punya sumber berurl
@@ -376,9 +382,10 @@ export function bangun(masukan = {}) {
   }
   // tambahan: Bank Dunia (pembiayaan) dan WKP/JICA
   const ket = (v) => (v == null ? [] : [{ nilai: v }]);
-  for (const w of M('wb', 'proyek/tambahan_worldbank.jsonl')) {
+  const wbRows = M('wb', 'proyek/tambahan_worldbank.jsonl'); const wbNama = new Map(); for (const w of wbRows) wbNama.set(norm(w.nama), (wbNama.get(norm(w.nama)) || 0) + 1);
+  for (const w of wbRows) {
     if (w.publik === false || !adaUrl(w.sumber_url)) continue; tanggalMax.push(w.tanggal_ambil);
-    proyekPub.push(bersih({ id: w.id, nama: judulHuruf(w.nama), teknologi: w.teknologi, asal: 'worldbank', lokasi: bersih({ provinsi: w.provinsi }), status: [{ nilai: w.status, status_asli: w.status_asli }], nilai_investasi: w.nilai_komitmen_usd != null ? [{ nilai: w.nilai_komitmen_usd, satuan: 'USD', catatan: ('komitmen ' + (w.instrumen || '')).trim() }] : [], pihak: bersih({ peminjam: w.peminjam ? [{ nilai: w.peminjam, organisasi_id: orgPerNama(w.peminjam) }] : [], pelaksana: w.lembaga_pelaksana ? [{ nilai: w.lembaga_pelaksana, organisasi_id: orgPerNama(w.lembaga_pelaksana) }] : [] }), waktu: bersih({ persetujuan: w.tanggal_persetujuan, penutupan: w.tanggal_penutupan }), tingkat_bukti: w.tingkat_bukti, sumber: [bersih({ id: 'wb', jenis: w.sumber_jenis, url: w.sumber_url, tingkat_bukti: w.tingkat_bukti, tanggal: w.tanggal_ambil, lisensi: w.lisensi })] }));
+    proyekPub.push(bersih({ id: w.id, nama: judulHuruf(w.nama) + (wbNama.get(norm(w.nama)) > 1 ? ' (' + String(w.id).replace(/^wb_/, '') + ')' : ''), teknologi: w.teknologi, asal: 'worldbank', lokasi: bersih({ provinsi: w.provinsi }), status: [{ nilai: w.status, status_asli: w.status_asli }], nilai_investasi: w.nilai_komitmen_usd != null ? [{ nilai: w.nilai_komitmen_usd, satuan: 'USD', catatan: ('komitmen ' + (w.instrumen || '')).trim() }] : [], pihak: bersih({ peminjam: w.peminjam ? [{ nilai: w.peminjam, organisasi_id: orgPerNama(w.peminjam) }] : [], pelaksana: w.lembaga_pelaksana ? [{ nilai: w.lembaga_pelaksana, organisasi_id: orgPerNama(w.lembaga_pelaksana) }] : [] }), waktu: bersih({ persetujuan: w.tanggal_persetujuan, penutupan: w.tanggal_penutupan }), tingkat_bukti: w.tingkat_bukti, sumber: [bersih({ id: 'wb', jenis: w.sumber_jenis, url: w.sumber_url, tingkat_bukti: w.tingkat_bukti, tanggal: w.tanggal_ambil, lisensi: w.lisensi })] }));
     proyekAng.push(bersih({ id: w.id, pemberi_dana: ket(w.pemberi_dana) }));
   }
   for (const w of M('wkp', 'proyek/tambahan_wkp_jica.jsonl')) {
@@ -664,6 +671,17 @@ export function bangun(masukan = {}) {
   // logo organisasi hasil panen_logo.mjs (berkas ada = tautan); logo kurasi lama (public/img/logo/*.png) tetap dipakai beranda dan menang
   for (const o of [...organisasi.publik, ...orgAng, ...orgPen]) if (/^[A-Za-z0-9_-]+$/.test(o.id) && fs.existsSync(path.join(ROOT, 'public/img/logo/org', o.id + '.png'))) o.logo = `/img/logo/org/${o.id}.png`;
   for (const o of [...organisasi.publik, ...orgAng, ...orgPen]) { const ik = !o.logo && (indukKampus.get(o.id) || LOGO_KAMPUS[Object.keys(LOGO_KAMPUS).find((k) => tanpaAksen(o.nama).split(' ').includes(k))]); if (ik && fs.existsSync(path.join(ROOT, 'public/img/logo/org', ik + '.png'))) o.logo = `/img/logo/org/${ik}.png`; }
+  { // rujukan mati di lapis publik: organisasi_id yang tak tayang dipetakan lewat nama, bila tak ada dihapus; regulasi_ids hanya yang tayang (tanpa URL = ditahan)
+    const regPubIds = new Set(regOut.publik.map((r) => r.id));
+    const sapu = (x) => {
+      if (Array.isArray(x)) { x.forEach(sapu); return; }
+      if (!x || typeof x !== 'object') return;
+      if (typeof x.organisasi_id === 'string' && !orgPubSet.has(x.organisasi_id)) { const k = orgPerNama(x.nama || x.organisasi || x.nilai); if (k && orgPubSet.has(k)) x.organisasi_id = k; else delete x.organisasi_id; }
+      if (Array.isArray(x.regulasi_ids)) { x.regulasi_ids = x.regulasi_ids.filter((i) => regPubIds.has(i)); if (!x.regulasi_ids.length) delete x.regulasi_ids; }
+      Object.values(x).forEach(sapu);
+    };
+    sapu(proyekPub); sapu(organisasi.publik); sapu(orangOut.publik); sapu(progOut);
+  }
   const kosong = [];
   const idAng = new Map(); // id stabil baris anggota_meti; kembar nama+jenis+no diberi nomor urut
   const lapisan = {

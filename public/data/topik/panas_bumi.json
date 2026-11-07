@@ -23,7 +23,73 @@
     "en": "MW"
    },
    "sumber": "irena",
-   "est": false
+   "est": false,
+   "deret": [
+    [
+     "2010",
+     1189
+    ],
+    [
+     "2011",
+     1226
+    ],
+    [
+     "2012",
+     1336
+    ],
+    [
+     "2013",
+     1343.5
+    ],
+    [
+     "2014",
+     1403.5
+    ],
+    [
+     "2015",
+     1438.3
+    ],
+    [
+     "2016",
+     1533.3
+    ],
+    [
+     "2017",
+     1808.3
+    ],
+    [
+     "2018",
+     1948.3
+    ],
+    [
+     "2019",
+     2130.7
+    ],
+    [
+     "2020",
+     2130.7
+    ],
+    [
+     "2021",
+     2286.05
+    ],
+    [
+     "2022",
+     2360.33
+    ],
+    [
+     "2023",
+     2597.51
+    ],
+    [
+     "2024",
+     2638.76
+    ],
+    [
+     "2025",
+     2743.76
+    ]
+   ]
   },
   {
    "label": {
@@ -37,7 +103,69 @@
     "en": "GWh"
    },
    "sumber": "irena",
-   "est": false
+   "est": false,
+   "deret": [
+    [
+     "2010",
+     9357
+    ],
+    [
+     "2011",
+     9371
+    ],
+    [
+     "2012",
+     9417
+    ],
+    [
+     "2013",
+     9414
+    ],
+    [
+     "2014",
+     10038
+    ],
+    [
+     "2015",
+     10048
+    ],
+    [
+     "2016",
+     10656
+    ],
+    [
+     "2017",
+     12764
+    ],
+    [
+     "2018",
+     14019
+    ],
+    [
+     "2019",
+     14100
+    ],
+    [
+     "2020",
+     15563
+    ],
+    [
+     "2021",
+     15899
+    ],
+    [
+     "2022",
+     16677
+    ],
+    [
+     "2023",
+     16936
+    ],
+    [
+     "2024",
+     16763
+    ]
+   ]
   },
   {
    "label": {
@@ -833,15 +961,6 @@
    "tahun": 2026,
    "bukti": "via-pihak-ketiga"
   },
-  "d_owid": {
-   "judul": "Our World in Data energy-data (Ember Yearly Electricity Data), diiris ke data/topik_dunia/owid_negara.json",
-   "penerbit": "Ember via Our World in Data",
-   "url": "https://github.com/owid/energy-data",
-   "tanggal": "2026-11-08",
-   "tahun": 2026,
-   "bukti": "via-pihak-ketiga",
-   "lisensi": "CC BY 4.0"
-  },
   "d_kap": {
    "judul": "IRENA, kapasitas dan pembangkitan terpasang Indonesia (public/data/kapasitas_tren.json)",
    "penerbit": "IRENA",
@@ -860,6 +979,14 @@
    "bukti": "via-pihak-ketiga",
    "lisensi": "CC BY 4.0"
   },
+  "d_target": {
+   "judul": "Target KEN (PP 40/2025), RUKN (Kepmen ESDM 85.K/2025), RUPTL 2025-2034 (public/data/target.json, halaman tertera di berkas)",
+   "penerbit": "Pemerintah RI, ESDM, PLN",
+   "url": "https://peraturan.bpk.go.id/Details/328789",
+   "tanggal": "2026-11-07",
+   "tahun": 2026,
+   "bukti": "resmi"
+  },
   "d_lsp": {
    "judul": "Lembaga sertifikasi profesi BNSP dan skema EBT (public/data/prodi_pelatihan.json, situs BNSP)",
    "penerbit": "BNSP, METI",
@@ -867,14 +994,6 @@
    "tanggal": "2026-11-07",
    "tahun": 2026,
    "bukti": "resmi"
-  },
-  "d_inov": {
-   "judul": "Basis inovasi METI (public/data/inovasi.json; tiap inovasi membawa sumbernya)",
-   "penerbit": "METI, kampus, BRIN dan startup",
-   "url": "https://platformmeti.timitbnpb.workers.dev/direktori",
-   "tanggal": "2026-11-08",
-   "tahun": 2026,
-   "bukti": "via-pihak-ketiga"
   },
   "d_ins": {
    "judul": "Basis insentif METI (public/data/insentif.json: PMK 66/2015, PMK 130/2020, Permen ESDM 11/2024, Perpres 112/2022)",
@@ -899,6 +1018,22 @@
    "tanggal": "2026-11-07",
    "tahun": 2026,
    "bukti": "resmi"
+  },
+  "ed": {
+   "judul": "Ringkasan editorial METI (penjelasan umum dan definisi; bukan kutipan pasal)",
+   "penerbit": "METI",
+   "url": "https://platformmeti.timitbnpb.workers.dev/metode",
+   "tanggal": "2026-11-08",
+   "tahun": 2026,
+   "bukti": "editorial"
+  },
+  "tge25": {
+   "judul": "ThinkGeoEnergy, Global Top 10 geothermal power countries at year-end 2025 (terbit 12 Jan 2026; total dunia 17.173 MW, 35 negara)",
+   "penerbit": "ThinkGeoEnergy",
+   "url": "https://www.thinkgeoenergy.com/global-top-10-geothermal-power-countries-at-year-end-2025/",
+   "tanggal": "2026-11-08",
+   "tahun": 2026,
+   "bukti": "media"
   }
  },
  "bab": {
@@ -913,7 +1048,8 @@
      "j": {
       "id": "Energi panas dari dalam bumi. Uap atau air panas dari sumur dipakai memutar turbin (PLTP) atau dipakai langsung sebagai panas.",
       "en": "Heat from within the earth. Steam or hot water from wells turns a turbine (PLTP) or is used directly as heat."
-     }
+     },
+     "bab": 4
     },
     {
      "t": {
@@ -923,7 +1059,8 @@
      "j": {
       "id": "Indonesia berada di cincin gunung api sehingga banyak lapangan; panas bumi bisa jadi beban dasar yang stabil, tidak bergantung cuaca. Faktor kapasitas nasional rata-rata 2024 sekitar 72% (hitungan METI dari data IRENA).",
       "en": "Indonesia sits on the ring of fire so many fields exist; geothermal can be stable baseload independent of weather. The 2024 national average capacity factor is about 72% (METI calculation from IRENA data)."
-     }
+     },
+     "bab": 4
     },
     {
      "t": {
@@ -933,7 +1070,8 @@
      "j": {
       "id": "Badan usaha, koperasi, atau BUMN yang memegang izin panas bumi setelah menang lelang wilayah kerja atau mendapat penugasan, menurut UU 21/2014.",
       "en": "Companies, cooperatives or state companies holding a geothermal permit after winning a working area auction or being assigned, per Law 21/2014."
-     }
+     },
+     "bab": 4
     },
     {
      "t": {
@@ -943,7 +1081,8 @@
      "j": {
       "id": "Perpres 112/2022 menetapkan harga patokan tertinggi, misalnya 9,76 sen US$/kWh untuk PLTP sampai 10 MW pada tahun 1-10 sebelum dikali faktor lokasi F. Lihat tabel di bab 11.",
       "en": "Perpres 112/2022 sets ceiling prices, for example 9.76 US cents/kWh for PLTP up to 10 MW in years 1-10 before the location factor F. See the table in chapter 11."
-     }
+     },
+     "bab": 11
     },
     {
      "t": {
@@ -953,7 +1092,8 @@
      "j": {
       "id": "Biaya sumur besar dan hasilnya baru diketahui setelah dibor. ESMAP mencatat tingkat sukses sumur eksplorasi sekitar 59%; riset lain menyebut 63-73% untuk Indonesia (definisi sukses berbeda antar studi).",
       "en": "Wells are costly and results are known only after drilling. ESMAP notes an exploration well success rate of about 59%; other research cites 63-73% for Indonesia (success definitions differ between studies)."
-     }
+     },
+     "bab": 4
     },
     {
      "t": {
@@ -963,7 +1103,8 @@
      "j": {
       "id": "Pemerintah membiayai pengeboran eksplorasi di wilayah tertentu lewat dana PISP yang dikelola PT SMI, lalu data hasilnya ditawarkan kepada peserta lelang; bila tak ada pemenang, Kemenkeu memulihkan biaya.",
       "en": "The government funds exploration drilling in certain areas through the PISP fund managed by PT SMI, then offers the data to auction bidders; if no winner emerges the Ministry of Finance recovers the cost."
-     }
+     },
+     "bab": 4
     },
     {
      "t": {
@@ -973,7 +1114,8 @@
      "j": {
       "id": "Risiko utama ialah gas H2S saat uji alir dan pengeboran. Insiden Sorik Marapi 2021 dan Dieng 2022 menunjukkan perlunya zona aman dan peringatan dini. Lihat bab 40.",
       "en": "The main risk is H2S gas during discharge testing and drilling. The 2021 Sorik Marapi and 2022 Dieng incidents show the need for buffer zones and early warning. See chapter 40."
-     }
+     },
+     "bab": 4
     },
     {
      "t": {
@@ -983,7 +1125,8 @@
      "j": {
       "id": "Pengembang hulu menjual uap ke pembangkit (PLN atau lain) pada harga uap; pengembang terpadu menjual listrik. Perpres 112/2022 memuat tarif keduanya.",
       "en": "An upstream developer sells steam to a power plant (PLN or other) at a steam price; an integrated developer sells electricity. Perpres 112/2022 has tariffs for both."
-     }
+     },
+     "bab": 4
     },
     {
      "t": {
@@ -993,7 +1136,8 @@
      "j": {
       "id": "Bisa, sebagai pemanfaatan langsung: pengering hasil tani, pemanas proses, pariwisata. Islandia memenuhi hampir seluruh keluaran pemanas dari panas bumi (OECD).",
       "en": "Yes, as direct use: crop drying, process heat, tourism. Iceland meets almost all heating output from geothermal (OECD)."
-     }
+     },
+     "bab": 4
     },
     {
      "t": {
@@ -1003,7 +1147,74 @@
      "j": {
       "id": "Penyebab yang berulang dalam kasus bab 39 dan 40: tarif dan PPA, kawasan hutan, pendanaan eksplorasi, dan penerimaan warga. Tabel pola ada di bab 41.",
       "en": "Recurring causes in chapters 39 and 40: tariff and PPA, forest area, exploration funding and resident acceptance. The pattern table is in chapter 41."
-     }
+     },
+     "bab": 40
+    },
+    {
+     "t": {
+      "id": "Apa itu WKP dan bagaimana tahu wilayah mana yang tersedia?",
+      "en": "What is a WKP and how do I know which areas are available?"
+     },
+     "j": {
+      "id": "WKP adalah Wilayah Kerja Panas Bumi, area yang ditetapkan Menteri untuk diusahakan. Pemerintah mengumumkan lelang 3 WKP dan 7 PSPE pada September 2025; daftar kurasi METI memuat 19 butir (lihat peta di bab 8). Daftar WKP nasional lengkap tidak dapat dipanen karena geoportal ESDM melarang robot.",
+      "en": "A WKP is a geothermal working area designated by the Minister for development. The government announced a tender of 3 WKP and 7 PSPE in September 2025; the METI curated list holds 19 entries (see the map in chapter 8). A complete national WKP list cannot be harvested because the ESDM geoportal blocks robots."
+     },
+     "bab": 8
+    },
+    {
+     "t": {
+      "id": "Berapa besar potensi panas bumi Indonesia?",
+      "en": "How large is Indonesia geothermal potential?"
+     },
+     "j": {
+      "id": "Basis peluang METI menjumlahkan 23.204 MW sumber daya dan cadangan per provinsi (Badan Geologi, Desember 2025, HEESI 2025), sedangkan terpasang 2.744 MW (IRENA 2025), atau sekitar 11,8 persen dari potensi (EST). Potensi bukan kapasitas yang layak dibangun.",
+      "en": "The METI opportunity base sums 23,204 MW of resources and reserves by province (Geological Agency, December 2025, HEESI 2025) against 2,744 MW installed (IRENA 2025), about 11.8 percent of potential (EST). Potential is not buildable capacity."
+     },
+     "bab": 8
+    },
+    {
+     "t": {
+      "id": "Apa beda pemanfaatan langsung dan tidak langsung?",
+      "en": "What is the difference between direct and indirect use?"
+     },
+     "j": {
+      "id": "Pemanfaatan tidak langsung berarti mengubah panas menjadi listrik (PLTP) dan diatur PP 7/2017. Pemanfaatan langsung memakai panas tanpa jadi listrik, misalnya pengeringan hasil tani, pemandian, dan pemanas ruang; Islandia memakai 97 persen keluaran pemanasnya dari panas bumi.",
+      "en": "Indirect use converts heat into electricity (geothermal plants) and is governed by Government Reg. 7/2017. Direct use applies heat without making power, for example drying crops, baths and space heating; Iceland draws 97 percent of its heating output from geothermal."
+     },
+     "bab": 4
+    },
+    {
+     "t": {
+      "id": "Apakah reservoir panas bumi bisa menurun?",
+      "en": "Can a geothermal reservoir decline?"
+     },
+     "j": {
+      "id": "Bisa. Tekanan dan suhu reservoir turun bila uap diambil lebih cepat daripada diisi ulang. Pengelola menginjeksikan kembali air kondensat dan brine, memantau reservoir, dan sesekali mengebor sumur tambahan untuk menjaga keluaran; karena itu faktor kapasitas dan kinerja lapangan harus dipantau tahunan (penjelasan umum).",
+      "en": "It can. Reservoir pressure and temperature fall if steam is withdrawn faster than it is recharged. Operators reinject condensate and brine, monitor the reservoir and sometimes drill make-up wells to hold output; so capacity factor and field performance must be tracked yearly (general explanation)."
+     },
+     "bab": 4
+    },
+    {
+     "t": {
+      "id": "Bagaimana pemerintah membantu risiko eksplorasi?",
+      "en": "How does government help with exploration risk?"
+     },
+     "j": {
+      "id": "Lewat Dana PISP (Pembiayaan Infrastruktur Sektor Panas Bumi) yang dikelola PT SMI berdasarkan PMK 80/2022, pengeboran pemerintah, hibah multilateral seperti Clean Technology Fund dan GEF, serta pinjaman lunak. PT SMI juga menyiapkan dana US$30 juta untuk eksplorasi Waesano.",
+      "en": "Through the PISP Fund (Geothermal Sector Infrastructure Financing) managed by PT SMI under MoF Reg. 80/2022, government drilling, multilateral grants such as the Clean Technology Fund and GEF, and soft loans. PT SMI also prepared a US$30 million fund for Waesano exploration."
+     },
+     "bab": 4
+    },
+    {
+     "t": {
+      "id": "Insentif fiskal apa yang ada untuk panas bumi?",
+      "en": "What fiscal incentives exist for geothermal?"
+     },
+     "j": {
+      "id": "PPN dibebaskan atas impor barang yang dipakai kontraktor panas bumi untuk pemanfaatan tidak langsung (PP 49/2022 Pasal 25), ditambah insentif umum Perpres 112/2022 Pasal 22 (PPh, bea masuk, PBB) dan pembebasan bea masuk barang modal pembangkit bila belum diproduksi dalam negeri.",
+      "en": "VAT is waived on imports used by geothermal contractors for indirect use (Government Reg. 49/2022 Article 25), plus the general incentives of Presidential Reg. 112/2022 Article 22 (income tax, import duty, property tax) and import duty waiver on generation capital goods not made domestically."
+     },
+     "bab": 12
     }
    ],
    "sumber": [
@@ -1013,7 +1224,17 @@
     "stanford",
     "smi",
     "iceland_oecd",
-    "irena"
+    "irena",
+    "wkp",
+    "lelang",
+    "lelang2",
+    "d_pot",
+    "pp7",
+    "pmk80",
+    "tgefund",
+    "waesano",
+    "pp49",
+    "insentif"
    ]
   },
   "3": {
@@ -1027,7 +1248,8 @@
      "arti": {
       "id": "Wilayah yang ditetapkan pemerintah untuk diusahakan panas bumi lewat lelang atau penugasan.",
       "en": "An area designated by the government for geothermal development through auction or assignment."
-     }
+     },
+     "kat": "aturan"
     },
     {
      "istilah": {
@@ -1037,7 +1259,8 @@
      "arti": {
       "id": "Penugasan survei dan eksplorasi di area yang belum menjadi WKP.",
       "en": "Assignment for survey and exploration in an area that is not yet a WKP."
-     }
+     },
+     "kat": "aturan"
     },
     {
      "istilah": {
@@ -1047,7 +1270,8 @@
      "arti": {
       "id": "Izin yang diberikan kepada pemenang lelang WKP menurut UU 21/2014.",
       "en": "The permit given to the WKP auction winner under Law 21/2014."
-     }
+     },
+     "kat": "aturan"
     },
     {
      "istilah": {
@@ -1057,7 +1281,8 @@
      "arti": {
       "id": "Kontrak penjualan listrik atau uap, umumnya ke PLN.",
       "en": "A contract for selling electricity or steam, generally to PLN."
-     }
+     },
+     "kat": "aturan"
     },
     {
      "istilah": {
@@ -1067,7 +1292,8 @@
      "arti": {
       "id": "Dana pembiayaan infrastruktur panas bumi (Geothermal Fund) yang dikelola PT SMI.",
       "en": "Geothermal infrastructure financing fund (Geothermal Fund) managed by PT SMI."
-     }
+     },
+     "kat": "uang"
     },
     {
      "istilah": {
@@ -1077,7 +1303,8 @@
      "arti": {
       "id": "Pengeboran eksplorasi yang dibiayai pemerintah untuk mengurangi risiko pengembang.",
       "en": "Exploration drilling funded by government to reduce developer risk."
-     }
+     },
+     "kat": "teknis"
     },
     {
      "istilah": {
@@ -1087,7 +1314,8 @@
      "arti": {
       "id": "Skema kemitraan lapangan lama dengan PGE, misalnya Wayang Windu, Darajat, dan Salak.",
       "en": "Partnership scheme of older fields with PGE, for example Wayang Windu, Darajat and Salak."
-     }
+     },
+     "kat": "teknis"
     },
     {
      "istilah": {
@@ -1097,7 +1325,8 @@
      "arti": {
       "id": "Hidrogen sulfida, gas beracun yang dapat keluar dari sumur panas bumi.",
       "en": "Hydrogen sulfide, a toxic gas that can escape from geothermal wells."
-     }
+     },
+     "kat": "teknis"
     },
     {
      "istilah": {
@@ -1107,7 +1336,8 @@
      "arti": {
       "id": "Perbaikan sumur yang sudah ada, bukan pengeboran baru.",
       "en": "Repair of an existing well rather than a new drilling."
-     }
+     },
+     "kat": "teknis"
     },
     {
      "istilah": {
@@ -1117,7 +1347,8 @@
      "arti": {
       "id": "Pengali harga patokan menurut wilayah dalam Lampiran II Perpres 112/2022.",
       "en": "Regional multiplier of the ceiling price in Annex II of Perpres 112/2022."
-     }
+     },
+     "kat": "uang"
     },
     {
      "istilah": {
@@ -1127,7 +1358,8 @@
      "arti": {
       "id": "Energi yang dibangkitkan dibagi energi bila beroperasi penuh sepanjang tahun.",
       "en": "Energy generated divided by energy at full output through the year."
-     }
+     },
+     "kat": "satuan"
     },
     {
      "istilah": {
@@ -1137,7 +1369,8 @@
      "arti": {
       "id": "Memakai panas bumi sebagai panas, tanpa dikonversi menjadi listrik.",
       "en": "Using geothermal as heat, without converting it to electricity."
-     }
+     },
+     "kat": "teknis"
     },
     {
      "istilah": {
@@ -1147,7 +1380,8 @@
      "arti": {
       "id": "Tanggal operasi komersial pembangkit.",
       "en": "Commercial operation date of a plant."
-     }
+     },
+     "kat": "teknis"
     },
     {
      "istilah": {
@@ -1157,14 +1391,205 @@
      "arti": {
       "id": "Persetujuan bebas, didahulukan, dan diinformasikan dari masyarakat terdampak.",
       "en": "Free, prior and informed consent from affected communities."
-     }
+     },
+     "kat": "aturan"
+    },
+    {
+     "istilah": {
+      "id": "Reservoir",
+      "en": "Reservoir"
+     },
+     "arti": {
+      "id": "Batuan berpori di bawah tanah yang menyimpan air dan uap panas, sumber fluida PLTP.",
+      "en": "Porous underground rock holding hot water and steam, the fluid source of a geothermal plant."
+     },
+     "kat": "teknis"
+    },
+    {
+     "istilah": {
+      "id": "Uap kering, flash, binari",
+      "en": "Dry steam, flash, binary"
+     },
+     "arti": {
+      "id": "Tiga jenis siklus PLTP: uap langsung memutar turbin, cairan panas diuapkan mendadak (flash), atau panas dipindah ke fluida kerja bertitik didih rendah (binari).",
+      "en": "Three plant cycles: steam turns the turbine directly, hot liquid is flashed to steam (flash), or heat is passed to a low-boiling working fluid (binary)."
+     },
+     "kat": "teknis"
+    },
+    {
+     "istilah": {
+      "id": "Sumur produksi",
+      "en": "Production well"
+     },
+     "arti": {
+      "id": "Sumur yang mengalirkan uap atau air panas dari reservoir ke pembangkit.",
+      "en": "A well that brings steam or hot water from the reservoir to the plant."
+     },
+     "kat": "teknis"
+    },
+    {
+     "istilah": {
+      "id": "Sumur injeksi",
+      "en": "Injection well"
+     },
+     "arti": {
+      "id": "Sumur yang mengembalikan air limbah dan kondensat ke reservoir agar tekanan terjaga.",
+      "en": "A well that returns waste water and condensate to the reservoir to maintain pressure."
+     },
+     "kat": "teknis"
+    },
+    {
+     "istilah": {
+      "id": "Sumur tambahan (make-up well)",
+      "en": "Make-up well"
+     },
+     "arti": {
+      "id": "Sumur baru untuk menggantikan keluaran yang menurun dari sumur lama.",
+      "en": "A new well drilled to replace declining output from older wells."
+     },
+     "kat": "teknis"
+    },
+    {
+     "istilah": {
+      "id": "Wellpad",
+      "en": "Wellpad"
+     },
+     "arti": {
+      "id": "Hamparan datar tempat beberapa sumur dibor dari satu titik (pengeboran terarah) untuk menghemat lahan.",
+      "en": "A flat pad from which several wells are drilled from one point (directional drilling) to save land."
+     },
+     "kat": "teknis"
+    },
+    {
+     "istilah": {
+      "id": "Brine",
+      "en": "Brine"
+     },
+     "arti": {
+      "id": "Air panas asin sisa pemisahan uap yang biasanya diinjeksikan kembali.",
+      "en": "Hot saline water left after steam separation, usually reinjected."
+     },
+     "kat": "teknis"
+    },
+    {
+     "istilah": {
+      "id": "Manifestasi permukaan",
+      "en": "Surface manifestation"
+     },
+     "arti": {
+      "id": "Tanda panas bumi di permukaan seperti fumarol, mata air panas, dan tanah beruap yang memandu survei awal.",
+      "en": "Surface signs of geothermal activity such as fumaroles, hot springs and steaming ground that guide early surveys."
+     },
+     "kat": "teknis"
+    },
+    {
+     "istilah": {
+      "id": "Sumber daya dan cadangan",
+      "en": "Resource and reserve"
+     },
+     "arti": {
+      "id": "Sumber daya diperkirakan dari survei; cadangan sudah dibuktikan dengan pengeboran. Keduanya dijumlahkan dalam angka potensi Badan Geologi.",
+      "en": "Resources are estimated from surveys; reserves are proven by drilling. Both are summed in the Geological Agency potential figure."
+     },
+     "kat": "teknis"
+    },
+    {
+     "istilah": {
+      "id": "Eksplorasi dan eksploitasi",
+      "en": "Exploration and exploitation"
+     },
+     "arti": {
+      "id": "Eksplorasi mencari dan membuktikan reservoir; eksploitasi membangun lapangan uap dan pembangkit.",
+      "en": "Exploration finds and proves the reservoir; exploitation builds the steam field and plant."
+     },
+     "kat": "teknis"
+    },
+    {
+     "istilah": {
+      "id": "Lapangan uap (steam field)",
+      "en": "Steam field"
+     },
+     "arti": {
+      "id": "Kumpulan sumur dan pipa penyalur yang memasok uap ke pembangkit.",
+      "en": "The set of wells and pipelines that supply steam to the plant."
+     },
+     "kat": "teknis"
+    },
+    {
+     "istilah": {
+      "id": "EGS",
+      "en": "EGS"
+     },
+     "arti": {
+      "id": "Enhanced geothermal system: menciptakan rekahan buatan pada batuan panas kering untuk mengalirkan fluida; tahap pengembangan di dunia dan belum komersial di Indonesia.",
+      "en": "Enhanced geothermal system: creating artificial fractures in hot dry rock to circulate fluid; in development worldwide and not yet commercial in Indonesia."
+     },
+     "kat": "teknis"
+    },
+    {
+     "istilah": {
+      "id": "Casing",
+      "en": "Casing"
+     },
+     "arti": {
+      "id": "Pipa baja yang dipasang dan disemen dalam sumur untuk menahan dinding dan mengisolasi lapisan.",
+      "en": "Steel pipe set and cemented in a well to hold the wall and isolate layers."
+     },
+     "kat": "teknis"
+    },
+    {
+     "istilah": {
+      "id": "Bonus produksi",
+      "en": "Production bonus"
+     },
+     "arti": {
+      "id": "Kewajiban pemegang izin panas bumi menyetor persentase pendapatan kepada daerah (PP 28/2016 menurut ringkasan METI).",
+      "en": "An obligation of the geothermal licence holder to pay a percentage of revenue to local governments (Government Reg. 28/2016 per METI summary)."
+     },
+     "kat": "aturan"
+    },
+    {
+     "istilah": {
+      "id": "Take-or-pay",
+      "en": "Take-or-pay"
+     },
+     "arti": {
+      "id": "Klausul PPA yang mewajibkan pembeli membayar energi yang tersedia walau tidak diambil; penting untuk pembiayaan beban dasar.",
+      "en": "A PPA clause obliging the buyer to pay for available energy even if not taken; important for financing baseload plants."
+     },
+     "kat": "uang"
+    },
+    {
+     "istilah": {
+      "id": "Kondensat",
+      "en": "Condensate"
+     },
+     "arti": {
+      "id": "Air hasil pengembunan uap setelah turbin yang didinginkan di menara pendingin dan umumnya diinjeksikan kembali.",
+      "en": "Water from steam condensed after the turbine, cooled in the cooling tower and usually reinjected."
+     },
+     "kat": "teknis"
+    },
+    {
+     "istilah": {
+      "id": "Cincin Api (Ring of Fire)",
+      "en": "Ring of Fire"
+     },
+     "arti": {
+      "id": "Jalur gunung api Pasifik tempat Indonesia berada; sumber sistem panas bumi bertemperatur tinggi.",
+      "en": "The Pacific volcanic belt on which Indonesia sits; the source of high-temperature geothermal systems."
+     },
+     "kat": "teknis"
     }
    ],
    "sumber": [
     "uu21",
     "pp7",
     "perpres112",
-    "smi"
+    "smi",
+    "ed",
+    "pp49",
+    "iceland_oecd"
    ]
   },
   "4": {
@@ -1177,10 +1602,24 @@
     {
      "id": "Kapasitas terpasang Indonesia 2.743,76 MW pada 2025 (IRENA), naik dari 1.438,3 MW pada 2015. Pembangkitan 2024 sebesar 16.763 GWh.",
      "en": "Indonesia's installed capacity was 2,743.76 MW in 2025 (IRENA), up from 1,438.3 MW in 2015. Generation in 2024 was 16,763 GWh."
+    },
+    {
+     "id": "Ada tiga siklus pembangkit: uap kering (uap langsung ke turbin), flash (cairan panas dikabutkan menjadi uap), dan binari (panas dipindah ke fluida kerja bertitik didih rendah sehingga reservoir bersuhu lebih rendah pun bisa dipakai). Pilihan siklus ditentukan oleh suhu dan kandungan gas reservoir.",
+     "en": "There are three plant cycles: dry steam (steam straight to the turbine), flash (hot liquid flashed to steam) and binary (heat passed to a low-boiling working fluid so cooler reservoirs can be used). The cycle is chosen by reservoir temperature and gas content."
+    },
+    {
+     "id": "Indonesia berada di Cincin Api. Basis peluang METI menjumlahkan 23.204 MW sumber daya dan cadangan (HEESI 2025), sementara terpasang 2.744 MW; sekitar 11,8 persen potensi (EST) sudah dibangun.",
+     "en": "Indonesia sits on the Ring of Fire. The METI opportunity base sums 23,204 MW of resources and reserves (HEESI 2025) against 2,744 MW installed; about 11.8 percent of potential (EST) has been built."
+    },
+    {
+     "id": "Bedanya dengan surya dan bayu: sumbernya tidak berubah-ubah, tetapi uang terbesar keluar di depan dan sebelum seseorang tahu apakah reservoirnya ada. Karena itu kebijakan panas bumi lebih banyak soal siapa memikul risiko eksplorasi daripada soal harga modul.",
+     "en": "Unlike solar and wind, the source does not fluctuate, but the largest spending comes first, before anyone knows whether the reservoir exists. Geothermal policy is therefore more about who carries exploration risk than about module prices."
     }
    ],
    "sumber": [
-    "irena"
+    "irena",
+    "d_pot",
+    "ed"
    ]
   },
   "5": {
@@ -1197,6 +1636,18 @@
     {
      "id": "Pendapatan tahun 1-10 (US$) = energi (kWh) x harga dasar x F x pengali (Perpres 112/2022)",
      "en": "Years 1-10 revenue (US$) = energy (kWh) x base price x F x multiplier (Perpres 112/2022)"
+    },
+    {
+     "id": "Daya listrik (MW) = laju massa fluida (kg/s) x entalpi (kJ/kg) x efisiensi konversi / 1.000. Efisiensi konversi netto jauh lebih rendah dari mesin termal biasa karena suhu sumber rendah.",
+     "en": "Electric power (MW) = fluid mass flow (kg/s) x enthalpy (kJ/kg) x conversion efficiency / 1,000. Net conversion efficiency is far below ordinary heat engines because the source temperature is low."
+    },
+    {
+     "id": "Jumlah sumur produksi = kapasitas rencana (MW) / keluaran rata-rata per sumur (MW); biaya bor produksi = jumlah sumur x biaya per sumur.",
+     "en": "Number of production wells = planned capacity (MW) / average output per well (MW); production drilling cost = number of wells x cost per well."
+    },
+    {
+     "id": "Penurunan reservoir: keluaran tahun ke-t = keluaran awal x e pangkat (- laju penurunan x t); laju penurunan dipulihkan dengan sumur tambahan dan injeksi.",
+     "en": "Reservoir decline: output in year t = initial output x e to the power (- decline rate x t); the decline is restored by make-up wells and injection."
     }
    ],
    "contoh": [
@@ -1207,12 +1658,26 @@
     {
      "id": "Bila p = 50% dan 5 sumur dibor, peluang minimal satu berhasil = 1 - 0,5^5 = 96,9% (risiko semua gagal sekitar 3%, selaras dengan analisis yang dikutip ESMAP). Asumsi bahwa sumur saling bebas adalah penyederhanaan.",
      "en": "If p = 50% and 5 wells are drilled, probability of at least one success = 1 - 0.5^5 = 96.9% (all-fail risk about 3%, in line with the analysis cited by ESMAP). Assuming wells are independent is a simplification."
+    },
+    {
+     "id": "Contoh ilustrasi (asumsi Hipotesis): 7 sumur produksi berkeluaran 8 MW masing-masing memberi 56 MW; dengan biaya rata-rata US$5 juta per sumur (studi kasus Lemigas 2023) biaya bor produksi sekitar US$35 juta, belum termasuk sumur injeksi dan eksplorasi yang gagal (EST).",
+     "en": "Illustrative example (Hypothesis assumption): 7 production wells at 8 MW each give 56 MW; at an average US$5 million per well (Lemigas 2023 case study) production drilling costs about US$35 million, excluding injection wells and failed exploration (EST)."
+    },
+    {
+     "id": "Contoh daya (asumsi Hipotesis): 50 kg/s x 2.700 kJ/kg x 0,12 / 1.000 = 16,2 MW; angka entalpi dan efisiensi tiap lapangan berbeda dan harus dari uji alir sumur.",
+     "en": "Power example (Hypothesis assumption): 50 kg/s x 2,700 kJ/kg x 0.12 / 1,000 = 16.2 MW; enthalpy and efficiency differ by field and must come from well flow tests."
+    },
+    {
+     "id": "Contoh penurunan (asumsi Hipotesis 3 persen per tahun): setelah 10 tahun keluaran tinggal e pangkat (-0,3) = 74,1 persen dari awal bila tidak ada sumur tambahan (EST).",
+     "en": "Decline example (Hypothesis assumption of 3 percent a year): after 10 years output is e to the power (-0.3) = 74.1 percent of initial without make-up wells (EST)."
     }
    ],
    "sumber": [
     "irena",
     "esmap",
-    "perpres112"
+    "perpres112",
+    "lemigas",
+    "ed"
    ]
   },
   "6": {
@@ -1230,7 +1695,8 @@
      "pelaku": {
       "id": "Kementerian ESDM, Badan Geologi",
       "en": "Ministry of ESDM, Geological Agency"
-     }
+     },
+     "peran": "lembaga"
     },
     {
      "judul": {
@@ -1244,7 +1710,8 @@
      "pelaku": {
       "id": "Kementerian ESDM, peserta lelang",
       "en": "Ministry of ESDM, bidders"
-     }
+     },
+     "peran": "lembaga"
     },
     {
      "judul": {
@@ -1256,9 +1723,10 @@
       "en": "Detailed surveys and exploration wells to confirm the reservoir; a high risk stage."
      },
      "pelaku": {
-      "id": "Pengembang, kontraktor bor",
-      "en": "Developer, drilling contractors"
-     }
+      "id": "Pengembang, kontraktor bor; contoh di basis METI: PT PLN Indonesia Power, PT Pertamina Geothermal Energy Tbk, PT Star Energy Geothermal",
+      "en": "Developer, drilling contractors; examples in the METI base: PT PLN Indonesia Power, PT Pertamina Geothermal Energy Tbk, PT Star Energy Geothermal"
+     },
+     "peran": "pengembang"
     },
     {
      "judul": {
@@ -1272,7 +1740,8 @@
      "pelaku": {
       "id": "Pengembang, PLN, pendana",
       "en": "Developer, PLN, lenders"
-     }
+     },
+     "peran": "IPP"
     },
     {
      "judul": {
@@ -1284,9 +1753,10 @@
       "en": "Production and injection wells, steam pipes, turbine and grid connection."
      },
      "pelaku": {
-      "id": "Pengembang, kontraktor EPC, pemasok turbin",
-      "en": "Developer, EPC contractors, turbine suppliers"
-     }
+      "id": "Pengembang, kontraktor EPC, pemasok turbin; contoh di basis METI: PT PLN Indonesia Power, PT Pertamina Geothermal Energy Tbk, PT Star Energy Geothermal",
+      "en": "Developer, EPC contractors, turbine suppliers; examples in the METI base: PT PLN Indonesia Power, PT Pertamina Geothermal Energy Tbk, PT Star Energy Geothermal"
+     },
+     "peran": "pengembang"
     },
     {
      "judul": {
@@ -1298,14 +1768,48 @@
       "en": "Reservoir management, make-up wells and environmental monitoring."
      },
      "pelaku": {
-      "id": "Operator",
-      "en": "Operator"
-     }
+      "id": "Operator; contoh di basis METI: PT PLN Indonesia Power, PT Pertamina Geothermal Energy Tbk, PT Star Energy Geothermal",
+      "en": "Operator; examples in the METI base: PT PLN Indonesia Power, PT Pertamina Geothermal Energy Tbk, PT Star Energy Geothermal"
+     },
+     "peran": "operator"
+    },
+    {
+     "judul": {
+      "id": "Pemasok peralatan",
+      "en": "Equipment suppliers"
+     },
+     "isi": {
+      "id": "Turbin-generator, menara pendingin, pipa uap, dan peralatan kepala sumur; kandungan dalam negeri (TKDN) dan keselamatan H2S menjadi pembeda penawaran.",
+      "en": "Turbine-generators, cooling towers, steam pipes and wellhead equipment; domestic content (TKDN) and H2S safety differentiate bids."
+     },
+     "pelaku": {
+      "id": "Pabrikan turbin, produsen peralatan sumur",
+      "en": "Turbine makers, wellhead equipment producers"
+     },
+     "peran": "manufaktur"
+    },
+    {
+     "judul": {
+      "id": "Pengelolaan reservoir dan lingkungan",
+      "en": "Reservoir and environment management"
+     },
+     "isi": {
+      "id": "Injeksi balik, pemantauan tekanan, kegempaan, dan gas, serta pelibatan warga sekitar lapangan; kegagalan di tahap ini yang muncul di kasus Sorik Marapi dan Dieng.",
+      "en": "Reinjection, pressure, seismicity and gas monitoring, and involvement of residents near the field; failures at this stage appear in the Sorik Marapi and Dieng cases."
+     },
+     "pelaku": {
+      "id": "Operator, pemda, warga",
+      "en": "Operators, local governments, residents"
+     },
+     "peran": "pengembang"
     }
    ],
    "sumber": [
     "uu21",
-    "pp7"
+    "pp7",
+    "ed",
+    "sorik_esdm",
+    "dieng_kabar"
    ]
   },
   "7": {
@@ -1499,7 +2003,7 @@
    ],
    "kolom": [
     {
-     "k": "prov",
+     "k": "provinsi",
      "l": {
       "id": "Provinsi",
       "en": "Province"
@@ -1568,7 +2072,7 @@
    ],
    "baris": [
     {
-     "prov": "Aceh",
+     "provinsi": "Aceh",
      "kode": "11",
      "u": "/wilayah?prov=11",
      "proyek": 1,
@@ -1579,7 +2083,7 @@
      "wkp": "-"
     },
     {
-     "prov": "Sumatera Utara",
+     "provinsi": "Sumatera Utara",
      "kode": "12",
      "u": "/wilayah?prov=12",
      "proyek": 3,
@@ -1590,7 +2094,7 @@
      "wkp": "-"
     },
     {
-     "prov": "Sumatera Barat",
+     "provinsi": "Sumatera Barat",
      "kode": "13",
      "u": "/wilayah?prov=13",
      "proyek": 3,
@@ -1608,7 +2112,7 @@
      "wkp": "Cubudak-Panti"
     },
     {
-     "prov": "Riau",
+     "provinsi": "Riau",
      "kode": "14",
      "u": "/wilayah?prov=14",
      "proyek": 0,
@@ -1619,7 +2123,7 @@
      "wkp": "-"
     },
     {
-     "prov": "Jambi",
+     "provinsi": "Jambi",
      "kode": "15",
      "u": "/wilayah?prov=15",
      "proyek": 1,
@@ -1630,7 +2134,7 @@
      "wkp": "-"
     },
     {
-     "prov": "Sumatera Selatan",
+     "provinsi": "Sumatera Selatan",
      "kode": "16",
      "u": "/wilayah?prov=16",
      "proyek": 6,
@@ -1641,7 +2145,7 @@
      "wkp": "-"
     },
     {
-     "prov": "Bengkulu",
+     "provinsi": "Bengkulu",
      "kode": "17",
      "u": "/wilayah?prov=17",
      "proyek": 4,
@@ -1659,7 +2163,7 @@
      "wkp": "Hululais"
     },
     {
-     "prov": "Lampung",
+     "provinsi": "Lampung",
      "kode": "18",
      "u": "/wilayah?prov=18",
      "proyek": 5,
@@ -1677,7 +2181,7 @@
      "wkp": "Danau Ranau, Ulubelu"
     },
     {
-     "prov": "Kepulauan Bangka Belitung",
+     "provinsi": "Kepulauan Bangka Belitung",
      "kode": "19",
      "u": "/wilayah?prov=19",
      "proyek": 0,
@@ -1688,7 +2192,7 @@
      "wkp": "-"
     },
     {
-     "prov": "Kepulauan Riau",
+     "provinsi": "Kepulauan Riau",
      "kode": "21",
      "u": "/wilayah?prov=21",
      "proyek": 0,
@@ -1699,7 +2203,7 @@
      "wkp": "-"
     },
     {
-     "prov": "DKI Jakarta",
+     "provinsi": "DKI Jakarta",
      "kode": "31",
      "u": "/wilayah?prov=31",
      "proyek": 0,
@@ -1710,7 +2214,7 @@
      "wkp": "-"
     },
     {
-     "prov": "Jawa Barat",
+     "provinsi": "Jawa Barat",
      "kode": "32",
      "u": "/wilayah?prov=32",
      "proyek": 17,
@@ -1728,7 +2232,7 @@
      "wkp": "Gunung Tampomas, Cisurupan Kertasari, Patuha, Kamojang"
     },
     {
-     "prov": "Jawa Tengah",
+     "provinsi": "Jawa Tengah",
      "kode": "33",
      "u": "/wilayah?prov=33",
      "proyek": 5,
@@ -1746,7 +2250,7 @@
      "wkp": "Jenawi, Gunung Ungaran"
     },
     {
-     "prov": "DI Yogyakarta",
+     "provinsi": "DI Yogyakarta",
      "kode": "34",
      "u": "/wilayah?prov=34",
      "proyek": 0,
@@ -1757,7 +2261,7 @@
      "wkp": "-"
     },
     {
-     "prov": "Jawa Timur",
+     "provinsi": "Jawa Timur",
      "kode": "35",
      "u": "/wilayah?prov=35",
      "proyek": 3,
@@ -1775,7 +2279,7 @@
      "wkp": "Songgoriti"
     },
     {
-     "prov": "Banten",
+     "provinsi": "Banten",
      "kode": "36",
      "u": "/wilayah?prov=36",
      "proyek": 2,
@@ -1786,7 +2290,7 @@
      "wkp": "-"
     },
     {
-     "prov": "Bali",
+     "provinsi": "Bali",
      "kode": "51",
      "u": "/wilayah?prov=51",
      "proyek": 1,
@@ -1797,7 +2301,7 @@
      "wkp": "-"
     },
     {
-     "prov": "Nusa Tenggara Barat",
+     "provinsi": "Nusa Tenggara Barat",
      "kode": "52",
      "u": "/wilayah?prov=52",
      "proyek": 0,
@@ -1808,7 +2312,7 @@
      "wkp": "-"
     },
     {
-     "prov": "Nusa Tenggara Timur",
+     "provinsi": "Nusa Tenggara Timur",
      "kode": "53",
      "u": "/wilayah?prov=53",
      "proyek": 8,
@@ -1826,7 +2330,7 @@
      "wkp": "Mataloko, Ulumbu"
     },
     {
-     "prov": "Kalimantan Barat",
+     "provinsi": "Kalimantan Barat",
      "kode": "61",
      "u": "/wilayah?prov=61",
      "proyek": 0,
@@ -1837,7 +2341,7 @@
      "wkp": "-"
     },
     {
-     "prov": "Kalimantan Tengah",
+     "provinsi": "Kalimantan Tengah",
      "kode": "62",
      "u": "/wilayah?prov=62",
      "proyek": 0,
@@ -1848,7 +2352,7 @@
      "wkp": "-"
     },
     {
-     "prov": "Kalimantan Selatan",
+     "provinsi": "Kalimantan Selatan",
      "kode": "63",
      "u": "/wilayah?prov=63",
      "proyek": 0,
@@ -1859,7 +2363,7 @@
      "wkp": "-"
     },
     {
-     "prov": "Kalimantan Timur",
+     "provinsi": "Kalimantan Timur",
      "kode": "64",
      "u": "/wilayah?prov=64",
      "proyek": 0,
@@ -1870,7 +2374,7 @@
      "wkp": "-"
     },
     {
-     "prov": "Kalimantan Utara",
+     "provinsi": "Kalimantan Utara",
      "kode": "65",
      "u": "/wilayah?prov=65",
      "proyek": 0,
@@ -1881,7 +2385,7 @@
      "wkp": "-"
     },
     {
-     "prov": "Sulawesi Utara",
+     "provinsi": "Sulawesi Utara",
      "kode": "71",
      "u": "/wilayah?prov=71",
      "proyek": 5,
@@ -1899,7 +2403,7 @@
      "wkp": "Lahendong"
     },
     {
-     "prov": "Sulawesi Tengah",
+     "provinsi": "Sulawesi Tengah",
      "kode": "72",
      "u": "/wilayah?prov=72",
      "proyek": 2,
@@ -1917,7 +2421,7 @@
      "wkp": "Kadidia, Bora Pulu (Sigi)"
     },
     {
-     "prov": "Sulawesi Selatan",
+     "provinsi": "Sulawesi Selatan",
      "kode": "73",
      "u": "/wilayah?prov=73",
      "proyek": 1,
@@ -1935,7 +2439,7 @@
      "wkp": "Tuang"
     },
     {
-     "prov": "Sulawesi Tenggara",
+     "provinsi": "Sulawesi Tenggara",
      "kode": "74",
      "u": "/wilayah?prov=74",
      "proyek": 0,
@@ -1946,7 +2450,7 @@
      "wkp": "-"
     },
     {
-     "prov": "Gorontalo",
+     "provinsi": "Gorontalo",
      "kode": "75",
      "u": "/wilayah?prov=75",
      "proyek": 0,
@@ -1957,7 +2461,7 @@
      "wkp": "-"
     },
     {
-     "prov": "Sulawesi Barat",
+     "provinsi": "Sulawesi Barat",
      "kode": "76",
      "u": "/wilayah?prov=76",
      "proyek": 0,
@@ -1968,7 +2472,7 @@
      "wkp": "-"
     },
     {
-     "prov": "Maluku",
+     "provinsi": "Maluku",
      "kode": "81",
      "u": "/wilayah?prov=81",
      "proyek": 2,
@@ -1986,7 +2490,7 @@
      "wkp": "Bandar Baru Sepa"
     },
     {
-     "prov": "Maluku Utara",
+     "provinsi": "Maluku Utara",
      "kode": "82",
      "u": "/wilayah?prov=82",
      "proyek": 2,
@@ -2004,7 +2508,7 @@
      "wkp": "Telaga Ranau"
     },
     {
-     "prov": "Papua",
+     "provinsi": "Papua",
      "kode": "91",
      "u": "/wilayah?prov=91",
      "proyek": 0,
@@ -2015,7 +2519,7 @@
      "wkp": "-"
     },
     {
-     "prov": "Papua Barat",
+     "provinsi": "Papua Barat",
      "kode": "92",
      "u": "/wilayah?prov=92",
      "proyek": 0,
@@ -2026,7 +2530,7 @@
      "wkp": "-"
     },
     {
-     "prov": "Papua Selatan",
+     "provinsi": "Papua Selatan",
      "kode": "93",
      "u": "/wilayah?prov=93",
      "proyek": 0,
@@ -2037,7 +2541,7 @@
      "wkp": "-"
     },
     {
-     "prov": "Papua Tengah",
+     "provinsi": "Papua Tengah",
      "kode": "94",
      "u": "/wilayah?prov=94",
      "proyek": 0,
@@ -2048,7 +2552,7 @@
      "wkp": "-"
     },
     {
-     "prov": "Papua Pegunungan",
+     "provinsi": "Papua Pegunungan",
      "kode": "95",
      "u": "/wilayah?prov=95",
      "proyek": 0,
@@ -2059,7 +2563,7 @@
      "wkp": "-"
     },
     {
-     "prov": "Papua Barat Daya",
+     "provinsi": "Papua Barat Daya",
      "kode": "96",
      "u": "/wilayah?prov=96",
      "proyek": 0,
@@ -2138,6 +2642,15 @@
      },
      "num": true,
      "d": 0
+    },
+    {
+     "k": "mw",
+     "l": {
+      "id": "Kapasitas proyek (MW)",
+      "en": "Project capacity (MW)"
+     },
+     "num": true,
+     "d": 0
     }
    ],
    "baris": [
@@ -2150,7 +2663,8 @@
      "peran": "operator, pengembang",
      "relevansi": "teknologi",
      "negara": "ID",
-     "proyek": 18
+     "proyek": 18,
+     "mw": 18
     },
     {
      "nama": "PT Pertamina Geothermal Energy Tbk",
@@ -2161,7 +2675,8 @@
      "peran": "pengembang, operator",
      "relevansi": "teknologi",
      "negara": "ID",
-     "proyek": 11
+     "proyek": 11,
+     "mw": 220
     },
     {
      "nama": "PT Star Energy Geothermal",
@@ -2172,7 +2687,8 @@
      "peran": "pengembang, IPP",
      "relevansi": "teknologi",
      "negara": "ID",
-     "proyek": 5
+     "proyek": 5,
+     "mw": 206
     },
     {
      "nama": "PT Geo Dipa Energi (Persero)",
@@ -2183,7 +2699,8 @@
      "peran": "pengembang, operator",
      "relevansi": "teknologi",
      "negara": "ID",
-     "proyek": 5
+     "proyek": 5,
+     "mw": 225
     },
     {
      "nama": "Star Energy Group",
@@ -2194,7 +2711,8 @@
      "peran": "pengembang",
      "relevansi": "teknologi",
      "negara": "SG",
-     "proyek": 4
+     "proyek": 4,
+     "mw": 0
     },
     {
      "nama": "Engie",
@@ -2205,7 +2723,8 @@
      "peran": "pengembang, IPP",
      "relevansi": "teknologi",
      "negara": "FR",
-     "proyek": 3
+     "proyek": 3,
+     "mw": 0
     },
     {
      "nama": "PT Medco Power Indonesia",
@@ -2216,7 +2735,8 @@
      "peran": "pengembang, IPP",
      "relevansi": "teknologi",
      "negara": "ID",
-     "proyek": 3
+     "proyek": 3,
+     "mw": 110
     },
     {
      "nama": "PT Barito Renewables Energy Tbk",
@@ -2227,7 +2747,8 @@
      "peran": "pengembang, IPP",
      "relevansi": "teknologi",
      "negara": "ID",
-     "proyek": 3
+     "proyek": 3,
+     "mw": 0
     },
     {
      "nama": "PT Supreme Energy",
@@ -2238,7 +2759,8 @@
      "peran": "pengembang, IPP",
      "relevansi": "teknologi",
      "negara": "ID",
-     "proyek": 3
+     "proyek": 3,
+     "mw": 613
     },
     {
      "nama": "Sumitomo Corporation",
@@ -2249,7 +2771,8 @@
      "peran": "pengembang, pembiaya",
      "relevansi": "teknologi",
      "negara": "JP",
-     "proyek": 3
+     "proyek": 3,
+     "mw": 0
     },
     {
      "nama": "Ormat Technologies",
@@ -2260,7 +2783,8 @@
      "peran": "pengembang",
      "relevansi": "teknologi",
      "negara": "US",
-     "proyek": 2
+     "proyek": 2,
+     "mw": 0
     },
     {
      "nama": "Chevron",
@@ -2271,7 +2795,8 @@
      "peran": "pengembang",
      "relevansi": "teknologi",
      "negara": "US",
-     "proyek": 2
+     "proyek": 2,
+     "mw": 0
     },
     {
      "nama": "PT Pertamina (Persero)",
@@ -2282,7 +2807,8 @@
      "peran": "operator, produsen BBN",
      "relevansi": "teknologi",
      "negara": "ID",
-     "proyek": 2
+     "proyek": 2,
+     "mw": 20
     },
     {
      "nama": "Tohoku Electric Power",
@@ -2293,7 +2819,8 @@
      "peran": "pengembang",
      "relevansi": "teknologi",
      "negara": "JP",
-     "proyek": 1
+     "proyek": 1,
+     "mw": 0
     },
     {
      "nama": "KS Orka Renewables",
@@ -2304,7 +2831,8 @@
      "peran": "pengembang",
      "relevansi": "teknologi",
      "negara": "SG",
-     "proyek": 1
+     "proyek": 1,
+     "mw": 0
     },
     {
      "nama": "Kansai Electric Power",
@@ -2315,7 +2843,8 @@
      "peran": "pengembang",
      "relevansi": "teknologi",
      "negara": "JP",
-     "proyek": 1
+     "proyek": 1,
+     "mw": 0
     },
     {
      "nama": "Electricity Generating PCL (EGCO)",
@@ -2326,7 +2855,8 @@
      "peran": "pengembang",
      "relevansi": "teknologi",
      "negara": "TH",
-     "proyek": 1
+     "proyek": 1,
+     "mw": 40
     },
     {
      "nama": "Inpex",
@@ -2337,7 +2867,8 @@
      "peran": "pengembang",
      "relevansi": "teknologi",
      "negara": "JP",
-     "proyek": 1
+     "proyek": 1,
+     "mw": 0
     },
     {
      "nama": "Marubeni Corporation",
@@ -2348,7 +2879,8 @@
      "peran": "pengembang, pembiaya",
      "relevansi": "teknologi",
      "negara": "JP",
-     "proyek": 1
+     "proyek": 1,
+     "mw": 0
     },
     {
      "nama": "PT Dizamatara Powerindo",
@@ -2359,7 +2891,8 @@
      "peran": "pengembang",
      "relevansi": "teknologi",
      "negara": "ID",
-     "proyek": 1
+     "proyek": 1,
+     "mw": 11
     },
     {
      "nama": "PT Trinergy Mandiri International",
@@ -2370,7 +2903,8 @@
      "peran": "pengembang",
      "relevansi": "teknologi",
      "negara": "ID",
-     "proyek": 1
+     "proyek": 1,
+     "mw": 220
     },
     {
      "nama": "PT Cahaya Anagata Energy",
@@ -2381,7 +2915,8 @@
      "peran": "pengembang",
      "relevansi": "teknologi",
      "negara": "ID",
-     "proyek": 1
+     "proyek": 1,
+     "mw": 55
     },
     {
      "nama": "PT Archi Indonesia Tbk",
@@ -2392,7 +2927,8 @@
      "peran": "pengembang",
      "relevansi": "teknologi",
      "negara": "ID",
-     "proyek": 1
+     "proyek": 1,
+     "mw": 40
     },
     {
      "nama": "PT Sintesa Banten Geothermal",
@@ -2403,7 +2939,8 @@
      "peran": "pengembang",
      "relevansi": "teknologi",
      "negara": "ID",
-     "proyek": 1
+     "proyek": 1,
+     "mw": 110
     },
     {
      "nama": "PT Bakrie Power",
@@ -2414,7 +2951,8 @@
      "peran": "pengembang",
      "relevansi": "teknologi",
      "negara": "ID",
-     "proyek": 1
+     "proyek": 1,
+     "mw": 165
     },
     {
      "nama": "PT Nirwana Suci Abadi",
@@ -2425,7 +2963,8 @@
      "peran": "pengembang",
      "relevansi": "teknologi",
      "negara": "ID",
-     "proyek": 1
+     "proyek": 1,
+     "mw": 220
     },
     {
      "nama": "PT Sokoria Geothermal Indonesia",
@@ -2436,7 +2975,8 @@
      "peran": "pengembang",
      "relevansi": "teknologi",
      "negara": "ID",
-     "proyek": 1
+     "proyek": 1,
+     "mw": 6
     },
     {
      "nama": "ReNu Energy",
@@ -2447,7 +2987,8 @@
      "peran": "pengembang",
      "relevansi": "teknologi",
      "negara": "AU",
-     "proyek": 0
+     "proyek": 0,
+     "mw": 0
     },
     {
      "nama": "Fuji Electric",
@@ -2458,7 +2999,8 @@
      "peran": "pemasok",
      "relevansi": "teknologi",
      "negara": "JP",
-     "proyek": 0
+     "proyek": 0,
+     "mw": 0
     },
     {
      "nama": "Toshiba",
@@ -2469,7 +3011,8 @@
      "peran": "pemasok",
      "relevansi": "teknologi",
      "negara": "JP",
-     "proyek": 0
+     "proyek": 0,
+     "mw": 0
     },
     {
      "nama": "J-Power (Electric Power Development)",
@@ -2480,7 +3023,8 @@
      "peran": "pengembang",
      "relevansi": "teknologi",
      "negara": "JP",
-     "proyek": 0
+     "proyek": 0,
+     "mw": 0
     },
     {
      "nama": "Mitsubishi Heavy Industries",
@@ -2491,7 +3035,8 @@
      "peran": "pemasok",
      "relevansi": "teknologi",
      "negara": "JP",
-     "proyek": 0
+     "proyek": 0,
+     "mw": 0
     },
     {
      "nama": "Direktorat Panas Bumi",
@@ -2502,7 +3047,8 @@
      "peran": "-",
      "relevansi": "teknologi",
      "negara": "ID",
-     "proyek": 0
+     "proyek": 0,
+     "mw": 0
     },
     {
      "nama": "Asosiasi Panas Bumi Indonesia",
@@ -2513,7 +3059,8 @@
      "peran": "-",
      "relevansi": "teknologi",
      "negara": "ID",
-     "proyek": 0
+     "proyek": 0,
+     "mw": 0
     },
     {
      "nama": "PT Medco Energi Internasional Tbk",
@@ -2524,7 +3071,8 @@
      "peran": "pengembang, IPP",
      "relevansi": "teknologi",
      "negara": "ID",
-     "proyek": 0
+     "proyek": 0,
+     "mw": 0
     },
     {
      "nama": "PLN",
@@ -2535,7 +3083,8 @@
      "peran": "manufaktur",
      "relevansi": "pemilik proyek",
      "negara": "ID",
-     "proyek": 93
+     "proyek": 93,
+     "mw": 498
     },
     {
      "nama": "PT Sarana Multi Infrastruktur (Persero)",
@@ -2546,7 +3095,8 @@
      "peran": "pembiaya",
      "relevansi": "pemilik proyek",
      "negara": "ID",
-     "proyek": 4
+     "proyek": 4,
+     "mw": 0
     },
     {
      "nama": "World Bank Indonesia",
@@ -2557,7 +3107,8 @@
      "peran": "-",
      "relevansi": "pemangku kebijakan",
      "negara": "ID",
-     "proyek": 33
+     "proyek": 33,
+     "mw": 0
     },
     {
      "nama": "Badan Pengelola Investasi Daya Anagata Nusantara",
@@ -2568,7 +3119,8 @@
      "peran": "pembiaya",
      "relevansi": "pemangku kebijakan",
      "negara": "ID",
-     "proyek": 3
+     "proyek": 3,
+     "mw": 0
     },
     {
      "nama": "Kementerian Keuangan",
@@ -2579,7 +3131,8 @@
      "peran": "-",
      "relevansi": "pemangku kebijakan",
      "negara": "ID",
-     "proyek": 3
+     "proyek": 3,
+     "mw": 0
     },
     {
      "nama": "Kementerian Energi dan Sumber Daya Mineral",
@@ -2590,7 +3143,8 @@
      "peran": "-",
      "relevansi": "pemangku kebijakan",
      "negara": "ID",
-     "proyek": 2
+     "proyek": 2,
+     "mw": 0
     },
     {
      "nama": "Kementerian Investasi dan Hilirisasi/BKPM",
@@ -2601,7 +3155,8 @@
      "peran": "-",
      "relevansi": "pemangku kebijakan",
      "negara": "ID",
-     "proyek": 0
+     "proyek": 0,
+     "mw": 0
     },
     {
      "nama": "Badan Pengelola Dana Perkebunan",
@@ -2612,7 +3167,8 @@
      "peran": "-",
      "relevansi": "pemangku kebijakan",
      "negara": "ID",
-     "proyek": 0
+     "proyek": 0,
+     "mw": 0
     },
     {
      "nama": "Asosiasi Produsen Listrik Swasta Indonesia",
@@ -2623,7 +3179,8 @@
      "peran": "-",
      "relevansi": "pemangku kebijakan",
      "negara": "ID",
-     "proyek": 0
+     "proyek": 0,
+     "mw": 0
     },
     {
      "nama": "Asosiasi Pengusaha Batubara Indonesia",
@@ -2634,7 +3191,8 @@
      "peran": "-",
      "relevansi": "pemangku kebijakan",
      "negara": "ID",
-     "proyek": 0
+     "proyek": 0,
+     "mw": 0
     },
     {
      "nama": "Institute for Economic and Social Research FEB UI (LPEM)",
@@ -2645,7 +3203,8 @@
      "peran": "-",
      "relevansi": "pemangku kebijakan",
      "negara": "ID",
-     "proyek": 0
+     "proyek": 0,
+     "mw": 0
     },
     {
      "nama": "Organisasi Riset Energi dan Manufaktur BRIN",
@@ -2656,7 +3215,8 @@
      "peran": "-",
      "relevansi": "pemangku kebijakan",
      "negara": "ID",
-     "proyek": 0
+     "proyek": 0,
+     "mw": 0
     },
     {
      "nama": "Direktorat Perencanaan dan Pembangunan Infrastruktur EBTKE",
@@ -2667,7 +3227,8 @@
      "peran": "-",
      "relevansi": "pemangku kebijakan",
      "negara": "ID",
-     "proyek": 0
+     "proyek": 0,
+     "mw": 0
     },
     {
      "nama": "Otoritas Jasa Keuangan",
@@ -2678,7 +3239,8 @@
      "peran": "-",
      "relevansi": "pemangku kebijakan",
      "negara": "ID",
-     "proyek": 0
+     "proyek": 0,
+     "mw": 0
     },
     {
      "nama": "Climate Policy Initiative Indonesia",
@@ -2689,7 +3251,8 @@
      "peran": "-",
      "relevansi": "pemangku kebijakan",
      "negara": "ID",
-     "proyek": 0
+     "proyek": 0,
+     "mw": 0
     },
     {
      "nama": "International Renewable Energy Agency",
@@ -2700,7 +3263,8 @@
      "peran": "lembaga",
      "relevansi": "pemangku kebijakan",
      "negara": "ID",
-     "proyek": 0
+     "proyek": 0,
+     "mw": 0
     },
     {
      "nama": "Kamar Dagang dan Industri Indonesia (Komite Tetap Energi Baru Terbarukan)",
@@ -2711,7 +3275,8 @@
      "peran": "-",
      "relevansi": "pemangku kebijakan",
      "negara": "ID",
-     "proyek": 0
+     "proyek": 0,
+     "mw": 0
     },
     {
      "nama": "Direktorat Jenderal Energi Baru, Terbarukan dan Konservasi Energi",
@@ -2722,7 +3287,8 @@
      "peran": "-",
      "relevansi": "pemangku kebijakan",
      "negara": "ID",
-     "proyek": 0
+     "proyek": 0,
+     "mw": 0
     },
     {
      "nama": "Badan Pusat Statistik",
@@ -2733,7 +3299,8 @@
      "peran": "-",
      "relevansi": "pemangku kebijakan",
      "negara": "ID",
-     "proyek": 0
+     "proyek": 0,
+     "mw": 0
     },
     {
      "nama": "Masyarakat Energi Terbarukan Indonesia",
@@ -2744,7 +3311,8 @@
      "peran": "-",
      "relevansi": "pemangku kebijakan",
      "negara": "ID",
-     "proyek": 0
+     "proyek": 0,
+     "mw": 0
     },
     {
      "nama": "Center of Economic and Law Studies",
@@ -2755,7 +3323,8 @@
      "peran": "-",
      "relevansi": "pemangku kebijakan",
      "negara": "ID",
-     "proyek": 0
+     "proyek": 0,
+     "mw": 0
     },
     {
      "nama": "International Energy Agency",
@@ -2766,7 +3335,8 @@
      "peran": "lembaga",
      "relevansi": "pemangku kebijakan",
      "negara": "ID",
-     "proyek": 0
+     "proyek": 0,
+     "mw": 0
     },
     {
      "nama": "Dewan Perwakilan Rakyat RI Komisi XII",
@@ -2777,7 +3347,8 @@
      "peran": "-",
      "relevansi": "pemangku kebijakan",
      "negara": "ID",
-     "proyek": 0
+     "proyek": 0,
+     "mw": 0
     },
     {
      "nama": "Badan Riset dan Inovasi Nasional",
@@ -2788,7 +3359,8 @@
      "peran": "-",
      "relevansi": "pemangku kebijakan",
      "negara": "ID",
-     "proyek": 0
+     "proyek": 0,
+     "mw": 0
     },
     {
      "nama": "Sekretariat JETP Indonesia",
@@ -2799,7 +3371,8 @@
      "peran": "-",
      "relevansi": "pemangku kebijakan",
      "negara": "ID",
-     "proyek": 0
+     "proyek": 0,
+     "mw": 0
     }
    ],
    "catatan": {
@@ -4449,18 +5022,18 @@
      "u": "/regulasi?id=keppres-22-1981"
     },
     {
-     "dok": "Perda 13/2026",
-     "id": "perda-b350217-13-2026",
-     "u": "/regulasi?id=perda-b350217-13-2026",
+     "dok": "Permen 7/2026",
+     "id": "permen-esdm-7-2026",
+     "u": "/regulasi?id=permen-esdm-7-2026",
      "naskah": "BPK",
-     "tgl": "2026-03-16",
-     "judul": "PEMANFAATAN DAN PEMBAGIAN BONUS PRODUKSI PANAS BUMI",
+     "tgl": "2026-06-08",
+     "judul": "Standar Kegiatan Usaha pada Penyelenggaraan Perizinan Berusaha Berbasis Risiko Sektor Energi dan Sumber Daya Mineral",
      "isi": {
-      "id": "PERDA 13/2026 mengatur pemanfaatan dan pembagian bonus produksi panas bumi.",
-      "en": "PERDA 13/2026 mengatur pemanfaatan dan pembagian bonus produksi panas bumi. (ringkasan resmi basis regulasi, bahasa Indonesia)"
+      "id": "PERMEN 7/2026 mengatur standar kegiatan usaha pada penyelenggaraan perizinan berusaha berbasis risiko sektor energi dan sumber daya mineral.",
+      "en": "PERMEN 7/2026 mengatur standar kegiatan usaha pada penyelenggaraan perizinan berusaha berbasis risiko sektor energi dan sumber daya mineral. (ringkasan resmi basis regulasi, bahasa Indonesia)"
      },
      "status": "berlaku",
-     "url": "https://peraturan.bpk.go.id/Details/350217"
+     "url": "https://peraturan.bpk.go.id/Details/350238"
     }
    ],
    "catatan": {
@@ -4730,79 +5303,49 @@
       "id": "Pengembang, pendana, kontraktor",
       "en": "Developer, lenders, contractors"
      }
+    },
+    {
+     "judul": {
+      "id": "Pembebasan lahan dan izin lokasi",
+      "en": "Land acquisition and site permits"
+     },
+     "isi": {
+      "id": "Pembebasan lahan wellpad dan jalur pipa serta persetujuan pemda; lama proses bergantung lokasi dan tidak ada angka resmi tunggal.",
+      "en": "Acquiring wellpad and pipeline land plus local government approvals; duration depends on location and no single official figure exists."
+     },
+     "pelaku": {
+      "id": "Pengembang, pemda, pemilik lahan",
+      "en": "Developer, local government, landowners"
+     }
     }
    ],
    "catatan": {
-    "id": "Alur umum menurut UU 21/2014 dan PP 7/2017; METI belum merinci lama dan biaya tiap izin karena aturan turunan perlu dibaca per kasus. Jangan dipakai sebagai nasihat hukum.",
-    "en": "A general flow per Law 21/2014 and PP 7/2017; METI has not detailed the time and cost of each permit because implementing rules need reading case by case. Not legal advice."
+    "id": "Lama: PPA paling lama 90 hari kalender bila penunjukan langsung kepada pemegang izin panas bumi (Perpres 112/2022 Pasal 15); tahap eksplorasi sampai COD memakan bertahun-tahun menurut jadwal proyek RUPTL dan tidak ada angka resmi tunggal. Biaya: bor rata-rata US$5 juta per sumur (studi Lemigas 2023); METI tidak menemukan angka resmi terbuka untuk biaya izin dan jaminan lelang, jadi tidak diisi.",
+    "en": "Time: the PPA takes up to 90 calendar days for direct appointment to a geothermal licence holder (Presidential Reg. 112/2022 Article 15); exploration to COD takes years per RUPTL project schedules and no single official figure exists. Cost: drilling averages US$5 million per well (Lemigas 2023 study); METI found no open official figures for permit fees and auction guarantees, so none are shown."
    },
    "sumber": [
     "uu21",
     "pp7",
-    "perpres112"
+    "perpres112",
+    "ed",
+    "lemigas",
+    "ruptl"
    ]
   },
-  "18": {
-   "tipe": "tabel",
-   "per": 8,
-   "sumber": [
-    "d_inov"
-   ],
-   "kolom": [
-    {
-     "k": "nama",
-     "l": {
-      "id": "Inovasi",
-      "en": "Innovation"
-     },
-     "url": "url"
-    },
-    {
-     "k": "jenis",
-     "l": {
-      "id": "Jenis",
-      "en": "Type"
-     }
-    },
-    {
-     "k": "status",
-     "l": {
-      "id": "Status",
-      "en": "Status"
-     }
-    },
-    {
-     "k": "tahun",
-     "l": {
-      "id": "Tahun",
-      "en": "Year"
-     }
-    },
-    {
-     "k": "pembuat",
-     "l": {
-      "id": "Pembuat",
-      "en": "Maker"
-     }
-    },
-    {
-     "k": "trl",
-     "l": {
-      "id": "TRL",
-      "en": "TRL"
-     },
-     "num": true,
-     "d": 0
-    }
-   ],
-   "baris": [],
-   "catatan": {
-    "id": "Inovasi di basis METI yang bertag teknologi ini; id inovasi tersimpan di tiap baris, tautan membuka sumbernya. TRL kosong berarti belum dinilai.",
-    "en": "Innovations in the METI base tagged with this technology; the innovation id is kept on every row and the link opens its source. An empty TRL means not yet assessed."
-   }
-  },
-  "19": {
+  "17": {
    "tipe": "teks",
+   "sumber": [
+    "tge25",
+    "esmap",
+    "sorik_esdm",
+    "dieng_kabar",
+    "uu21",
+    "iceland_oecd",
+    "lemigas",
+    "stanford",
+    "ed",
+    "patuha"
+   ],
    "paragraf": [
     {
      "id": "Biaya rata-rata satu sumur panas bumi sekitar US$5 juta (studi kasus Lemigas 2023); pengeboran dilaporkan memakan 35-40% biaya total proyek (dikutip dari ESMAP). Estimasi lama untuk Indonesia: US$300.000-400.000 per MW (Stanford, 2011).",
@@ -4811,142 +5354,476 @@
     {
      "id": "Tingkat sukses sumur naik seiring pengalaman: ESMAP mencatat sekitar 59% pada eksplorasi, 74% pada pengembangan, dan 83% pada operasi.",
      "en": "Well success rises with experience: ESMAP records about 59% in exploration, 74% in development and 83% in operation."
+    },
+    {
+     "id": "PLTP binari memperluas jangkauan ke reservoir bersuhu lebih rendah; ThinkGeoEnergy mencatat unit binari baru di Salak pada 2025 dan tambahan kapasitas dari Ijen unit 1 serta Lumut Balai unit 2 sebagai penambah kapasitas terbesar Indonesia tahun itu.",
+     "en": "Binary plants extend reach to lower-temperature reservoirs; ThinkGeoEnergy recorded a new binary unit at Salak in 2025 and capacity additions from Ijen unit 1 and Lumut Balai unit 2 as Indonesia largest additions that year."
+    },
+    {
+     "id": "Pengeboran terarah dari satu wellpad menurunkan jejak lahan dan biaya mobilisasi, meminjam teknik migas; tingkat sukses sumur naik dari sekitar 59 persen pada eksplorasi menjadi 83 persen pada operasi (ESMAP).",
+     "en": "Directional drilling from one wellpad cuts land footprint and mobilisation cost, borrowing oil and gas techniques; well success rises from about 59 percent in exploration to 83 percent in operation (ESMAP)."
+    },
+    {
+     "id": "Sistem pemantauan gas dan kegempaan secara waktu nyata menjadi tuntutan setelah insiden H2S Sorik Marapi (2021) dan Dieng (2022); ESDM menghentikan operasi sumur saat investigasi.",
+     "en": "Real-time gas and seismicity monitoring became a demand after the H2S incidents at Sorik Marapi (2021) and Dieng (2022); ESDM halted wells during the investigation."
+    },
+    {
+     "id": "Pemanfaatan langsung (pengeringan, agroindustri, pemandian) memakai panas yang sama tanpa turbin dan diatur UU 21/2014; Islandia memakai 97 persen keluaran pemanasnya dari panas bumi.",
+     "en": "Direct use (drying, agro-industry, baths) uses the same heat without a turbine and is governed by Law 21/2014; Iceland takes 97 percent of its heating output from geothermal."
+    },
+    {
+     "id": "EGS dan sistem tertutup (closed-loop) menjadi topik penelitian dunia untuk membuka panas bumi di luar reservoir alami; METI belum menemukan proyek komersial di Indonesia sehingga statusnya riset.",
+     "en": "EGS and closed-loop systems are a global research topic for opening geothermal beyond natural reservoirs; METI has not found a commercial project in Indonesia, so the status is research."
+    },
+    {
+     "id": "Ekspansi lapangan yang sudah berproduksi (Muara Laboh, Wayang Windu unit 3, Patuha unit 2) memakai infrastruktur dan data yang ada dan menjadi jalan tercepat menambah kapasitas.",
+     "en": "Expanding fields already in production (Muara Laboh, Wayang Windu unit 3, Patuha unit 2) uses existing infrastructure and data and is the fastest way to add capacity."
+    },
+    {
+     "id": "Hibrida dengan surya dan penyimpanan di lokasi yang sama mulai dibahas untuk memanfaatkan jaringan dan lahan bersama (gagasan, belum terdokumentasi di Indonesia).",
+     "en": "Hybrids with solar and storage on the same site are starting to be discussed to share grid and land (an idea, not yet documented in Indonesia)."
+    },
+    {
+     "id": "Ekstraksi mineral dari brine (misalnya litium) disebut dalam kajian internasional sebagai tambahan pendapatan; belum ada bukti komersial di Indonesia, sehingga hanya catatan pantauan.",
+     "en": "Mineral extraction from brine (for example lithium) is mentioned in international studies as extra revenue; there is no commercial evidence in Indonesia, so it is only a watch item."
     }
-   ],
-   "catatan": {
-    "id": "Angka biaya berasal dari studi yang usianya berbeda dan definisi sukses tidak seragam; periksa laporan asli sebelum dipakai untuk model keuangan.",
-    "en": "Cost figures come from studies of different ages and success definitions are not uniform; check original reports before using them in a financial model."
-   },
+   ]
+  },
+  "19": {
+   "tipe": "grafik",
+   "jenis": "garis",
    "sumber": [
     "lemigas",
     "esmap",
-    "stanford"
-   ]
+    "stanford",
+    "d_lcoe"
+   ],
+   "label": {
+    "id": "Kurva biaya: LCOE rata-rata dunia (indeks 2010 = 100)",
+    "en": "Cost curve: global average LCOE (index 2010 = 100)"
+   },
+   "satuan": "indeks",
+   "d": 0,
+   "seri": [
+    {
+     "nama": {
+      "id": "LCOE panas bumi dunia (indeks 2010 = 100)",
+      "en": "Global geothermal LCOE (index 2010 = 100)"
+     },
+     "sorot": true,
+     "titik": [
+      [
+       "2010",
+       100
+      ],
+      [
+       "2012",
+       172.5
+      ],
+      [
+       "2013",
+       127
+      ],
+      [
+       "2014",
+       128.2
+      ],
+      [
+       "2015",
+       118.3
+      ],
+      [
+       "2016",
+       133.7
+      ],
+      [
+       "2017",
+       140.7
+      ],
+      [
+       "2018",
+       136.3
+      ],
+      [
+       "2019",
+       135.5
+      ],
+      [
+       "2020",
+       115.4
+      ],
+      [
+       "2021",
+       133.9
+      ],
+      [
+       "2022",
+       107.4
+      ],
+      [
+       "2023",
+       132.2
+      ],
+      [
+       "2024",
+       100
+      ],
+      [
+       "2025",
+       153.5
+      ]
+     ]
+    },
+    {
+     "nama": {
+      "id": "LCOE surya dunia (indeks 2010 = 100)",
+      "en": "Global solar LCOE (index 2010 = 100)"
+     },
+     "titik": [
+      [
+       "2010",
+       100
+      ],
+      [
+       "2011",
+       84.3
+      ],
+      [
+       "2012",
+       63.7
+      ],
+      [
+       "2013",
+       49.7
+      ],
+      [
+       "2014",
+       44.3
+      ],
+      [
+       "2015",
+       32.8
+      ],
+      [
+       "2016",
+       28.8
+      ],
+      [
+       "2017",
+       23
+      ],
+      [
+       "2018",
+       19.4
+      ],
+      [
+       "2019",
+       16.8
+      ],
+      [
+       "2020",
+       14.9
+      ],
+      [
+       "2021",
+       13.3
+      ],
+      [
+       "2022",
+       12.4
+      ],
+      [
+       "2023",
+       10.4
+      ],
+      [
+       "2024",
+       10.5
+      ],
+      [
+       "2025",
+       10.7
+      ]
+     ]
+    },
+    {
+     "nama": {
+      "id": "LCOE bayu darat dunia (indeks 2010 = 100)",
+      "en": "Global onshore wind LCOE (index 2010 = 100)"
+     },
+     "titik": [
+      [
+       "2010",
+       100
+      ],
+      [
+       "2011",
+       94.8
+      ],
+      [
+       "2012",
+       87
+      ],
+      [
+       "2013",
+       87.1
+      ],
+      [
+       "2014",
+       77.1
+      ],
+      [
+       "2015",
+       66.9
+      ],
+      [
+       "2016",
+       61.4
+      ],
+      [
+       "2017",
+       57
+      ],
+      [
+       "2018",
+       48.9
+      ],
+      [
+       "2019",
+       43.4
+      ],
+      [
+       "2020",
+       36
+      ],
+      [
+       "2021",
+       31.8
+      ],
+      [
+       "2022",
+       29.9
+      ],
+      [
+       "2023",
+       29.1
+      ],
+      [
+       "2024",
+       30.2
+      ],
+      [
+       "2025",
+       29
+      ]
+     ]
+    }
+   ],
+   "catatan": {
+    "id": "Turunan hitung METI (EST) dari IRENA via Our World in Data (USD tetap); nilai absolut LCOE ada di FAQ dan teks bab 4. Indeks di bawah 100 berarti lebih murah daripada 2010.",
+    "en": "METI derived figures (EST) from IRENA via Our World in Data (constant USD); absolute LCOE values are in the FAQ and chapter 4 text. An index below 100 means cheaper than in 2010."
+   }
   },
   "20": {
    "tipe": "tabel",
-   "per": 8,
-   "judul": {
-    "id": "Pembanding negara (kapasitas dan skema)",
-    "en": "Country comparison (capacity and scheme)"
-   },
+   "per": 10,
+   "sumber": [
+    "irena",
+    "tr_kapsarc",
+    "ph_edc",
+    "kenya",
+    "iceland_oecd",
+    "tge25"
+   ],
    "kolom": [
     {
-     "k": "negara",
+     "k": "neg",
      "l": {
       "id": "Negara",
       "en": "Country"
      }
     },
     {
-     "k": "kap",
+     "k": "rank",
      "l": {
-      "id": "Kapasitas (MW)",
-      "en": "Capacity (MW)"
+      "id": "Peringkat 2025",
+      "en": "2025 rank"
      },
      "num": true,
      "d": 0
     },
     {
-     "k": "tahun",
+     "k": "kap",
      "l": {
-      "id": "Tahun data",
-      "en": "Data year"
-     }
+      "id": "Kapasitas terpasang 2025 (MW)",
+      "en": "Installed capacity 2025 (MW)"
+     },
+     "num": true,
+     "d": 0
+    },
+    {
+     "k": "pangsa",
+     "l": {
+      "id": "Pangsa kapasitas dunia (persen)",
+      "en": "Share of world capacity (percent)"
+     },
+     "num": true,
+     "d": 1
     },
     {
      "k": "skema",
      "l": {
-      "id": "Skema kunci",
-      "en": "Key scheme"
-     }
-    },
-    {
-     "k": "bukti",
-     "l": {
-      "id": "Bukti",
-      "en": "Evidence"
+      "id": "Skema dan pelajaran (bila tercatat METI)",
+      "en": "Scheme and lesson (if recorded by METI)"
      }
     }
    ],
    "baris": [
     {
-     "negara": {
+     "neg": {
+      "id": "Amerika Serikat",
+      "en": "United States"
+     },
+     "iso2": "US",
+     "rank": 1,
+     "kap": 3953,
+     "pangsa": 23,
+     "skema": {
+      "id": "Belum dipanen METI",
+      "en": "Not yet harvested by METI"
+     }
+    },
+    {
+     "neg": {
       "id": "Indonesia",
       "en": "Indonesia"
      },
-     "kap": 2743.76,
-     "tahun": "2025",
+     "iso2": "ID",
+     "rank": 2,
+     "kap": 2742,
+     "pangsa": 16,
      "skema": {
       "id": "Harga patokan tertinggi (Perpres 112/2022), pengeboran pemerintah lewat PISP",
       "en": "Ceiling price (Perpres 112/2022), government drilling through PISP"
-     },
-     "bukti": "resmi"
+     }
     },
     {
-     "negara": {
-      "id": "Turki",
-      "en": "Turkey"
-     },
-     "kap": 1691.4,
-     "tahun": "2024",
-     "skema": {
-      "id": "FiT YEKDEM dalam dolar AS dengan bonus komponen lokal",
-      "en": "YEKDEM FiT in US dollars with local content bonus"
-     },
-     "bukti": "media"
-    },
-    {
-     "negara": {
+     "neg": {
       "id": "Filipina",
       "en": "Philippines"
      },
-     "kap": null,
-     "tahun": "-",
+     "iso2": "PH",
+     "rank": 3,
+     "kap": 2034,
+     "pangsa": 11.8,
      "skema": {
       "id": "Badan negara membuka lapangan lalu diprivatisasi (EDC 2006)",
       "en": "A state body opens fields then privatises (EDC 2006)"
-     },
-     "bukti": "media"
+     }
     },
     {
-     "negara": {
+     "neg": {
+      "id": "Turki",
+      "en": "Turkiye"
+     },
+     "iso2": "TR",
+     "rank": 4,
+     "kap": 1797,
+     "pangsa": 10.5,
+     "skema": {
+      "id": "FiT YEKDEM dalam dolar AS dengan bonus komponen lokal",
+      "en": "YEKDEM FiT in US dollars with local content bonus"
+     }
+    },
+    {
+     "neg": {
+      "id": "Selandia Baru",
+      "en": "New Zealand"
+     },
+     "iso2": "NZ",
+     "rank": 5,
+     "kap": 1259,
+     "pangsa": 7.3,
+     "skema": {
+      "id": "Belum dipanen METI",
+      "en": "Not yet harvested by METI"
+     }
+    },
+    {
+     "neg": {
       "id": "Kenya",
       "en": "Kenya"
      },
-     "kap": null,
-     "tahun": "-",
+     "iso2": "KE",
+     "rank": 6,
+     "kap": 980,
+     "pangsa": 5.7,
      "skema": {
       "id": "GDC milik negara menanggung risiko uap, KenGen dan Ormat membangkitkan",
       "en": "State-owned GDC carries steam risk, KenGen and Ormat generate"
-     },
-     "bukti": "media"
+     }
     },
     {
-     "negara": {
+     "neg": {
+      "id": "Meksiko",
+      "en": "Mexico"
+     },
+     "iso2": "MX",
+     "rank": 7,
+     "kap": 976,
+     "pangsa": 5.7,
+     "skema": {
+      "id": "Belum dipanen METI",
+      "en": "Not yet harvested by METI"
+     }
+    },
+    {
+     "neg": {
+      "id": "Italia",
+      "en": "Italy"
+     },
+     "iso2": "IT",
+     "rank": 8,
+     "kap": 916,
+     "pangsa": 5.3,
+     "skema": {
+      "id": "Belum dipanen METI",
+      "en": "Not yet harvested by METI"
+     }
+    },
+    {
+     "neg": {
       "id": "Islandia",
       "en": "Iceland"
      },
-     "kap": null,
-     "tahun": "-",
+     "iso2": "IS",
+     "rank": 9,
+     "kap": 808,
+     "pangsa": 4.7,
      "skema": {
       "id": "Pemanfaatan langsung: 97% keluaran pemanas dari panas bumi",
       "en": "Direct use: 97% of heating output from geothermal"
+     }
+    },
+    {
+     "neg": {
+      "id": "Jepang",
+      "en": "Japan"
      },
-     "bukti": "resmi"
+     "iso2": "JP",
+     "rank": 10,
+     "kap": 607,
+     "pangsa": 3.5,
+     "skema": {
+      "id": "Belum dipanen METI",
+      "en": "Not yet harvested by METI"
+     }
     }
    ],
    "catatan": {
-    "id": "Sel kapasitas kosong berarti METI belum punya angka bersumber yang sebanding; sengaja tidak diisi. Tiongkok, India, Jepang, Korea, Uni Eropa, AS, Australia, Brasil, dan Afrika Selatan belum dipanen.",
-    "en": "An empty capacity cell means METI has no comparable sourced figure; deliberately left blank. China, India, Japan, Korea, EU, USA, Australia, Brazil and South Africa have not been harvested."
-   },
-   "sumber": [
-    "irena",
-    "tr_kapsarc",
-    "ph_edc",
-    "kenya",
-    "iceland_oecd"
-   ]
+    "id": "Sepuluh negara teratas menurut ThinkGeoEnergy akhir 2025 (total dunia 17.173 MW; pangsa dihitung METI, EST). Angka Indonesia ThinkGeoEnergy 2.742 MW berbeda tipis dari IRENA 2.743,76 MW karena sumber dan tanggal berbeda.",
+    "en": "Top ten countries per ThinkGeoEnergy at end 2025 (world total 17,173 MW; shares computed by METI, EST). ThinkGeoEnergy figure for Indonesia of 2,742 MW differs slightly from IRENA 2,743.76 MW because source and date differ."
+   }
   },
   "21": {
    "tipe": "teks",
@@ -4977,12 +5854,17 @@
     {
      "id": "Peringkat dunia belum dihitung METI dari satu sumber seragam; satu berita Geo Dipa (CNN Indonesia, 6 November 2026) menyebut cita-cita menjadi negara berkapasitas panas bumi nomor satu dunia.",
      "en": "METI has not computed a world ranking from one uniform source; one Geo Dipa news item (CNN Indonesia, 6 November 2026) mentions the aspiration to be the world's number one in geothermal capacity."
+    },
+    {
+     "id": "Menurut ThinkGeoEnergy akhir 2025, Indonesia peringkat 2 dunia dengan 2.742 MW setelah Amerika Serikat (3.953 MW) dan di depan Filipina (2.034 MW), Turki (1.797 MW), dan Selandia Baru (1.259 MW); sepuluh negara teratas memegang lebih dari 93 persen kapasitas dunia. Indonesia menyumbang 16,0 persen kapasitas dunia (EST).",
+     "en": "Per ThinkGeoEnergy at end 2025, Indonesia ranks second in the world with 2,742 MW behind the United States (3,953 MW) and ahead of the Philippines (2,034 MW), Turkiye (1,797 MW) and New Zealand (1,259 MW); the top ten hold over 93 percent of world capacity. Indonesia accounts for 16.0 percent of world capacity (EST)."
     }
    ],
    "sumber": [
     "irena",
     "tr_kapsarc",
-    "geodipa"
+    "geodipa",
+    "tge25"
    ]
   },
   "23": {
@@ -5190,6 +6072,7 @@
     {
      "nama": "Project Ulubelu Unit 3 - 4 PT. Pertamina Geothermal Energy",
      "id": "pd_gs_315",
+     "pemberi": "-",
      "jenis": "kredit karbon",
      "status": "tersertifikasi",
      "nilai_usd": null,
@@ -5199,6 +6082,7 @@
     {
      "nama": "Project Lumut Balai Unit 1 - 2 PT. Pertamina Geothermal Energy",
      "id": "pd_gs_316",
+     "pemberi": "-",
      "jenis": "kredit karbon",
      "status": "desain tersertifikasi",
      "nilai_usd": null,
@@ -5208,6 +6092,7 @@
     {
      "nama": "Project Karaha Unit 1 PT. Pertamina Geothermal Energy",
      "id": "pd_gs_335",
+     "pemberi": "-",
      "jenis": "kredit karbon",
      "status": "tersertifikasi",
      "nilai_usd": null,
@@ -5217,6 +6102,7 @@
     {
      "nama": "Liki Pinangawan Muaralaboh Geothermal Power Plant",
      "id": "pd_gs_4163",
+     "pemberi": "-",
      "jenis": "kredit karbon",
      "status": "tersertifikasi",
      "nilai_usd": null,
@@ -5246,6 +6132,7 @@
     {
      "nama": "Capacity Upgrade of Gunung Salak Geothermal Power Plant Project, Indonesia",
      "id": "pd_vcs_144",
+     "pemberi": "-",
      "jenis": "kredit karbon",
      "status": "terdaftar terlambat verifikasi",
      "nilai_usd": null,
@@ -5451,6 +6338,14 @@
     {
      "id": "Dari sisi pengembang, Patuha unit 2 mencatat satu juta jam kerja selamat sebelum beroperasi (JPNN, Agustus 2026), contoh praktik keselamatan kerja yang dapat ditiru.",
      "en": "On the developer side, Patuha unit 2 logged one million safe working hours before operating (JPNN, August 2026), an example of work safety practice that can be copied."
+    },
+    {
+     "id": "Manfaat: beban dasar tanpa pembakaran, jejak lahan kecil per MWh dibanding surya, dan pendapatan daerah lewat bonus produksi. Risiko: gas H2S yang dilepas saat uji alir atau kebocoran, penurunan muka air tanah dan kualitas air, serta kegempaan mikro terkait injeksi.",
+     "en": "Benefits: baseload without combustion, small land footprint per MWh compared with solar, and local revenue through production bonuses. Risks: H2S gas released during flow tests or leaks, effects on groundwater level and quality, and micro-seismicity linked to injection."
+    },
+    {
+     "id": "Safeguard: persetujuan lingkungan, zona penyangga gas, sirene dan jalur evakuasi, serta konsultasi warga yang bebas, didahulukan, dan diinformasikan (FPIC); kasus di bab 40 menunjukkan pelanggaran paling sering di komunikasi dan pemantauan gas, bukan pada teknologi.",
+     "en": "Safeguards: environmental approval, gas buffer zones, sirens and evacuation routes, and free, prior and informed consultation (FPIC); the cases in chapter 40 show the most frequent failures in communication and gas monitoring, not in the technology."
     }
    ],
    "sumber": [
@@ -5458,7 +6353,8 @@
     "dieng_kabar",
     "talang25",
     "puna_hei",
-    "patuha"
+    "patuha",
+    "ed"
    ]
   },
   "28": {
@@ -5492,11 +6388,23 @@
     {
      "id": "Analisis METI (Hipotesis): kedua sisi sering benar pada hal berbeda: manfaat pendapatan daerah nyata, risiko lokal juga nyata. Yang sering hilang ialah forum bersama untuk memeriksa klaim.",
      "en": "METI analysis (Hypothesis): both sides are often right about different things: the local revenue benefit is real and the local risk is real. What is often missing is a shared forum to check claims."
+    },
+    {
+     "id": "Kontroversi lain, Gunung Ungaran: PLN menyebut proyek masih tahap kajian dan Kementerian ESDM mengizinkan PLN mengembangkan panas bumi di sana (sisi pengembang); warga menolak dan proyek tetap berjalan menurut pemberitaan (sisi penolak).",
+     "en": "Another controversy, Mount Ungaran: PLN says the project is still at study stage and the Energy Ministry allowed PLN to develop geothermal there (developer side); residents refuse and the project continues per reports (opposing side)."
+    },
+    {
+     "id": "Analisis METI (Hipotesis): keempat kontroversi (Talang, Ungaran, Sorik Marapi, Dieng) memiliki pola sama: keputusan teknis dan izin berjalan lebih cepat daripada kepercayaan warga. Menunda pengumuman data gas dan kajian air memperbesar penolakan.",
+     "en": "METI analysis (Hypothesis): all four controversies (Talang, Ungaran, Sorik Marapi, Dieng) share a pattern: technical decisions and permits move faster than resident trust. Delaying gas data and water study releases enlarges opposition."
     }
    ],
    "sumber": [
     "talang18",
-    "talang25"
+    "talang25",
+    "ungaran1",
+    "ungaran2",
+    "ungaran3",
+    "ed"
    ]
   },
   "30": {
@@ -5505,11 +6413,26 @@
     {
      "id": "Target resmi dari perusahaan: PGE menargetkan kapasitas yang dikelola sendiri 1 GW pada 2028 dan 1,8 GW pada 2034 (siaran pers PGE). Proyeksi nasional per tahun 2030, 2045, dan 2060 dari RUEN dan RUPTL 2025-2034 belum diekstrak METI ke bab ini.",
      "en": "Official company targets: PGE targets self-operated capacity of 1 GW by 2028 and 1.8 GW by 2034 (PGE press release). National projections for 2030, 2045 and 2060 from RUEN and RUPTL 2025-2034 have not yet been extracted by METI into this chapter."
+    },
+    {
+     "id": "Proyeksi panas bumi 2030 (EST): kapasitas 2024 sebesar 2.639 MW ditambah proyek RUPTL 2025-2034 yang ber-COD sampai 2030 menjadi sekitar 4.716 MW. Ini jadwal rencana, bukan realisasi; sejarah proyek bergeser (bab 40).",
+     "en": "panas bumi projection for 2030 (EST): 2024 capacity of 2,639 MW plus RUPTL 2025-2034 projects reaching COD by 2030 gives about 4,716 MW. This is a planned schedule, not delivery; projects have historically slipped (chapter 40)."
+    },
+    {
+     "id": "Proyeksi 2045 (EST, interpolasi lurus antara sekitar 6.334 MW pada 2034 menurut RUPTL dan 22.700 MW pada 2060 menurut RUKN): sekitar 13.258 MW. Tidak ada dokumen resmi yang memberi angka 2045 per teknologi, jadi ini pembacaan METI, bukan target.",
+     "en": "Projection for 2045 (EST, straight-line interpolation between about 6,334 MW in 2034 per RUPTL and 22,700 MW in 2060 per RUKN): about 13,258 MW. No official document gives a 2045 figure per technology, so this is a METI reading, not a target."
+    },
+    {
+     "id": "Proyeksi 2060: RUKN (Kepmen ESDM 85.K/2025, hlm 134) memperkirakan panas bumi sebesar 22.700 MW dalam daya mampu neto total sekitar 443 GW pada skenario sasaran nol emisi bersih 2060.",
+     "en": "2060 projection: the RUKN (Energy Ministry Decree 85.K/2025, p. 134) projects panas bumi at 22,700 MW within total net capacity of about 443 GW in the 2060 net-zero scenario."
     }
    ],
    "sumber": [
     "pge_1gw",
-    "ruptl"
+    "ruptl",
+    "d_kap",
+    "d_rpasok",
+    "d_target"
    ]
   },
   "31": {
@@ -5550,6 +6473,42 @@
     {
      "id": "Yang perlu dipantau: hasil lelang 3 WKP dan 7 PSPE 2025 (pemenang belum ditemukan METI); pembaruan harga patokan Perpres 112/2022 lewat Kepmen ESDM; pembukaan kembali sumur dan hasil proses hukum Sorik Marapi; keputusan Gunung Talang dan Ungaran; penyelesaian pinjaman JICA untuk Hululais; dan realisasi target PGE 1 GW pada 2028.",
      "en": "To watch: results of the 2025 auction of 3 WKP and 7 PSPE (winners not found by METI); updates to the Perpres 112/2022 ceiling prices via ministerial decree; the outcome of legal processes at Sorik Marapi; decisions on Gunung Talang and Ungaran; the JICA loan for Hululais; and delivery of the PGE 1 GW target by 2028."
+    },
+    {
+     "id": "Pembaruan harga patokan Perpres 112/2022 dan revisi yang sedang dibahas ESDM (batas atas dan bawah tarif EBT).",
+     "en": "Updates to the Presidential Reg. 112/2022 ceiling prices and the revision being discussed by ESDM (upper and lower renewable tariff bounds)."
+    },
+    {
+     "id": "RUU Energi Baru dan Energi Terbarukan di Komisi XII DPR RI dan pasal tentang panas bumi.",
+     "en": "The New and Renewable Energy bill in DPR Commission XII and its geothermal articles."
+    },
+    {
+     "id": "Jadwal COD RUPTL 2025-2034: 4 proyek panas bumi (365 MW) pada 2025 dan 2 proyek (205 MW) pada 2026; selisih dengan realisasi adalah indikator kesehatan pasar.",
+     "en": "RUPTL 2025-2034 COD schedule: 4 geothermal projects (365 MW) in 2025 and 2 projects (205 MW) in 2026; the gap to delivery is a market health indicator."
+    },
+    {
+     "id": "Pemenang dan nilai investasi lelang 3 WKP dan 7 PSPE 2025 (investasi sekitar US$1,99 miliar menurut ESDM).",
+     "en": "Winners and investment of the 2025 tender of 3 WKP and 7 PSPE (about US$1.99 billion investment per ESDM)."
+    },
+    {
+     "id": "Dana PISP/PT SMI: penyaluran pengeboran pemerintah berikutnya dan pembiayaan eksplorasi Waesano.",
+     "en": "PISP/PT SMI fund: the next government drilling disbursements and Waesano exploration financing."
+    },
+    {
+     "id": "Hasil investigasi dan proses hukum insiden H2S Sorik Marapi serta kesiapan mitigasi gas di Dieng.",
+     "en": "Outcome of the investigation and legal process of the Sorik Marapi H2S incident and gas mitigation readiness at Dieng."
+    },
+    {
+     "id": "Pengesahan izin dan sikap warga di Gunung Talang dan Gunung Ungaran.",
+     "en": "Permits and resident stances at Mount Talang and Mount Ungaran."
+    },
+    {
+     "id": "Pencairan pinjaman JICA untuk PLTP Hululais (perjanjian 30 Maret 2026).",
+     "en": "Disbursement of the JICA loan for the Hululais geothermal plant (agreement of 30 March 2026)."
+    },
+    {
+     "id": "Realisasi target PGE 1 GW pada 2028 dan 1,8 GW pada 2034.",
+     "en": "Delivery of the PGE targets of 1 GW in 2028 and 1.8 GW in 2034."
     }
    ],
    "sumber": [
@@ -5559,7 +6518,13 @@
     "talang26",
     "ungaran3",
     "jica",
-    "pge_1gw"
+    "pge_1gw",
+    "lelang",
+    "smi",
+    "waesano",
+    "dieng_kabar",
+    "talang25",
+    "d_rpasok"
    ]
   },
   "38": {
@@ -5704,7 +6669,13 @@
       "esdm_kmj",
       "pge_kmj"
      ],
-     "hak_jawab": false
+     "hak_jawab": false,
+     "koordinat": [
+      -7.13871,
+      107.78475
+     ],
+     "koordinat_presisi": "titik_persis",
+     "id_proyek": "pj_0232"
     },
     {
      "id": "sarulla",
@@ -5824,7 +6795,13 @@
       "sarulla2",
       "sarulla3"
      ],
-     "hak_jawab": false
+     "hak_jawab": false,
+     "koordinat": [
+      1.8202,
+      99.0885
+     ],
+     "koordinat_presisi": "titik_persis",
+     "id_proyek": "gem_geothermal_L100000700157"
     },
     {
      "id": "muara-laboh",
@@ -5946,7 +6923,13 @@
       "laboh_jbic",
       "laboh_bisnis"
      ],
-     "hak_jawab": false
+     "hak_jawab": false,
+     "koordinat": [
+      -1.6268812,
+      101.1296539
+     ],
+     "koordinat_presisi": "titik_persis",
+     "id_proyek": "pj_0265"
     },
     {
      "id": "rantau-dedap",
@@ -6071,7 +7054,13 @@
       "dedap_loan",
       "dedap_ppa"
      ],
-     "hak_jawab": false
+     "hak_jawab": false,
+     "koordinat": [
+      -4.2069,
+      103.3857
+     ],
+     "koordinat_presisi": "titik_persis",
+     "id_proyek": "gem_geothermal_L100000700146"
     },
     {
      "id": "wayang-windu",
@@ -6183,7 +7172,13 @@
       "wayang",
       "wayang2"
      ],
-     "hak_jawab": false
+     "hak_jawab": false,
+     "koordinat": [
+      -7.2,
+      107.625
+     ],
+     "koordinat_presisi": "titik_persis",
+     "id_proyek": "pj_0239"
     },
     {
      "id": "olkaria",
@@ -6675,7 +7670,13 @@
       "id": "Tanggapan pengembang: SMGP menyatakan mendukung penuh investigasi pemerintah dan kepolisian (Listrik Indonesia, 2021). Hasil investigasi dan proses hukum perlu dibaca dari sumber resmi.",
       "en": "Developer response: SMGP said it fully supports the government and police investigations (Listrik Indonesia, 2021). Investigation results and legal processes should be read from official sources."
      },
-     "hak_jawab": true
+     "hak_jawab": true,
+     "koordinat": [
+      0.7475,
+      99.5751
+     ],
+     "koordinat_presisi": "titik_persis",
+     "id_proyek": "pj_0272"
     },
     {
      "id": "dieng-2022",
@@ -6765,7 +7766,13 @@
       "id": "Tanggapan pengelola: Geo Dipa menerangkan kronologi dan membantah adanya ledakan sumur (Bisnis.com, 13 Maret 2022). Proyek PLTP Dieng pengembangan (345 MW, status konstruksi menurut data METI) tidak berhenti total; status terkini perlu dikonfirmasi pengelola.",
       "en": "Operator response: Geo Dipa explained the chronology and denied a well blowout (Bisnis.com, 13 March 2022). The Dieng expansion (345 MW, construction status per METI data) has not stopped altogether; the current status should be confirmed with the operator."
      },
-     "hak_jawab": true
+     "hak_jawab": true,
+     "koordinat": [
+      -7.2061,
+      109.9119
+     ],
+     "koordinat_presisi": "titik_persis",
+     "id_proyek": "pj_0242"
     },
     {
      "id": "gunung-talang",
@@ -6867,7 +7874,13 @@
       "id": "Tanggapan: perusahaan tidak menanggapi Mongabay hingga artikel 1 Desember 2025 terbit; Pemprov Sumbar pada Maret 2026 menyatakan tetap melanjutkan percepatan proyek (Mongabay, 17 Maret 2026). Nama pemegang izin tidak dimuat di artikel 2025.",
       "en": "Response: the company did not respond to Mongabay by the 1 December 2025 article; the West Sumatra government said in March 2026 it still pursues the acceleration (Mongabay, 17 March 2026). The permit holder is not named in the 2025 article."
      },
-     "hak_jawab": true
+     "hak_jawab": true,
+     "koordinat": [
+      -6.7416,
+      106.648
+     ],
+     "koordinat_presisi": "titik_persis",
+     "id_proyek": "pj_0230"
     },
     {
      "id": "ungaran",
@@ -6957,7 +7970,13 @@
       "id": "Kasus ini masih berjalan; label \"tertunda\" bukan penilaian gagal. Tanggapan PLN dan warga dapat dikirim lewat formulir koreksi.",
       "en": "This case is ongoing; the \"delayed\" label is not a failure judgement. PLN and resident responses can be sent via the correction form."
      },
-     "hak_jawab": true
+     "hak_jawab": true,
+     "koordinat": [
+      -6.7416,
+      106.648
+     ],
+     "koordinat_presisi": "titik_persis",
+     "id_proyek": "pj_0230"
     },
     {
      "id": "puna",

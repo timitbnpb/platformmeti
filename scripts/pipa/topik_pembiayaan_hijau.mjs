@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 // Naskah topik Pembiayaan hijau -> public/data/topik/pembiayaan_hijau.json (TOPIK-SKEMA.md). Pakai: node scripts/pipa/topik_pembiayaan_hijau.mjs [--selftest]
 // Tabel dari berkas repo (keuangan_hijau, obligasi_hijau, regulasi); teks dari sumber publik yang dibaca 8 Nov 2026.
+import { dalam } from './topik_pembiayaan_hijau_dalam.mjs';
 import { T, hp, S, ED, baca, regS, nf, nfe, SPUBFIN, teks, faq, glos, rumus, langkah, tabel, grafik, linimasa, kol, L, kunci, kas, rakit, selftest as st, jalankan, tabelRegulasi, kolRegulasi, validasi as val } from './topik_enam_lib.mjs';
 
 const kh = baca('public/data/keuangan_hijau.json'), ob = baca('public/data/obligasi_hijau.json');
@@ -41,7 +42,7 @@ const ebtT = tot('ebt'), fosT = tot('fosil');
 const leverage = Math.round((0.396 / 3.29) * 1000) / 10;
 const fm = (n) => String(n).replace(/\B(?=(\d{3})+(?!\d))/g, '.');
 
-export function susun() {
+function susunAsal() {
   const bab = {};
   bab['2'] = faq(['tkbi', 'gs_bi', 'sio'], [
     ['Apa itu TKBI?', 'What is the TKBI?', 'Taksonomi untuk Keuangan Berkelanjutan Indonesia dari OJK (20 Feb 2024): klasifikasi aktivitas ekonomi yang mendukung tujuan lingkungan; hasilnya hijau, transisi, atau tidak memenuhi klasifikasi.', 'The Indonesian Sustainable Finance Taxonomy from OJK (20 Feb 2024): a classification of economic activities supporting environmental goals; outcomes are green, transition or does not meet classification.'],
@@ -274,6 +275,7 @@ export function susun() {
     sumber: SUMBER, bab });
 }
 
+export function susun() { return dalam(susunAsal()); }
 export const validasi = val;
 export const selftest = () => st(susun);
 jalankan(import.meta.url, 'pembiayaan_hijau', susun);
