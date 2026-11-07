@@ -22,7 +22,7 @@ $("atas").addEventListener("click", (e) => {
   for (const x of $("atas").querySelectorAll("button[data-b]")) x.setAttribute("aria-pressed", String(x === b));
   nanti(() => gantiBahasa(b.dataset.b, { masuk: saya.masuk }));
 });
-const POTRET = { tgl: "2026-11-07", proyek: 548, organisasi: 362, orang: 443 }; // potret public/data/*.json; tampil dengan tanggal
+const POTRET = { tgl: "2026-11-07", proyek: 548, organisasi: 363, orang: 550 }; // potret public/data/*.json; tampil dengan tanggal
 $("panggung").innerHTML = `<img class="jm-pg-foto" src="/img/beranda/surya-cirata.webp" alt="" width="1600" height="1067" loading="eager">
 <div class="jm-pg-lapis"><dl class="jm-pg-stat">${[["proyek", "masuk.stat_proyek"], ["organisasi", "masuk.stat_org"], ["orang", "masuk.stat_orang"]].map(([k, l]) => `<div><dd>${angka(POTRET[k])}</dd><dt data-i18n="${l}">${t(l)}</dt></div>`).join("")}</dl>
 <p class="jm-pg-sumber">${t("masuk.stat_sumber", { tanggal: tanggal(POTRET.tgl) })}</p>

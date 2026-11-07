@@ -144,7 +144,7 @@ async function kakiIsi(kaki, saya) {
   kaki.querySelector("#kakiAtas")?.addEventListener("click", () => scrollTo({ top: 0, behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth" }));
   if (!saya?.masuk) return;
   try {
-    const r = await api("/api/direktori/potret/ringkas"), h = r?.hitung || {}, ul = kaki.querySelector("#kakiStat"), sumber = (n) => t("jm.kaki.sumber_potret").replace("{tanggal}", r.dibangun_pada || "-").replace("{lapis}", r.lapis || "");
+    const r = await fetch("/data/ringkas.json").then((x) => (x.ok ? x.json() : null)) /* satu sumber dengan Tentang dan masuk (8 Nov 2026) */, h = r?.hitung || {}, ul = kaki.querySelector("#kakiStat"), sumber = (n) => t("jm.kaki.sumber_potret").replace("{tanggal}", r.dibangun_pada || "-").replace("{lapis}", r.lapis || "");
     const tambah = (n, kunci, ik) => { if (Number.isFinite(n)) ul.insertAdjacentHTML("beforeend", `<li title="${sumber(n)}"><i>${ikon(ik, 18)}</i><b>${angka(n)}</b><span data-i18n="${kunci}">${t(kunci)}</span></li>`); };
     tambah(h.proyek, "jm.kaki.proyek", "proyek"); tambah(h.organisasi, "jm.kaki.organisasi", "direktori");
   } catch (e) { /* tanpa potret: angka disembunyikan, bukan ditebak */ }
