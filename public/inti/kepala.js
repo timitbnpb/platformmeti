@@ -119,7 +119,6 @@ const KOLOM = [
 ];
 const KONTAK = [
   ["jm.kaki.kantor", "Taman Sari Parama Lt. 10, Jl. K.H. Wahid Hasyim No. 84-86, Kebon Sirih, Menteng, Jakarta Pusat 10340", IK.pin, "https://www.google.com/maps/search/?api=1&query=" + encodeURIComponent("Taman Sari Parama, Jl. K.H. Wahid Hasyim No. 84-86, Kebon Sirih, Menteng, Jakarta Pusat 10340")],
-  ["jm.kaki.rumah", "Jl. Jatinegara Barat IV No. 3A, Balimester, Jatinegara, Jakarta Timur 13310", IK.pin, "https://www.google.com/maps/search/?api=1&query=" + encodeURIComponent("Jl. Jatinegara Barat IV No. 3A, Balimester, Jatinegara, Jakarta Timur 13310")],
   ["jm.kaki.surel", "meti.ires@gmail.com", IK.surel, "mailto:meti.ires@gmail.com"],
   ["jm.kaki.situs", "www.meti.or.id", IK.web, "https://www.meti.or.id"],
 ];
