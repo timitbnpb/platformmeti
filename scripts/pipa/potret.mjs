@@ -157,6 +157,8 @@ function cariKota(kota, provinsi) {
   }
   return null;
 }
+// logo induk untuk unit kampus tanpa logo sendiri (singkatan kampus -> id organisasi yang logonya sudah dipanen dari situs kampus)
+const LOGO_KAMPUS = { ui: 'l_2c27d00604', itb: 'l_07dd603a7c' };
 const KOTA_KAMPUS = { ugm: 'Kota Yogyakarta', unair: 'Kota Surabaya', its: 'Kota Surabaya', untirta: 'Kota Serang', undip: 'Kota Semarang', ui: 'Kota Depok', itb: 'Kota Bandung', ipb: 'Kota Bogor', unpad: 'Kabupaten Sumedang', unhas: 'Kota Makassar', usu: 'Kota Medan' };
 const geser = (id, nilai) => { const h = crypto.createHash('sha1').update(String(id)).digest(); return [nilai[0] + ((h[0] / 255) * 2 - 1) * 0.08, nilai[1] + ((h[1] / 255) * 2 - 1) * 0.08]; };
 export function titikLokasi(o, indukKampus) {
@@ -597,7 +599,7 @@ export function bangun(masukan = {}) {
 
   // logo organisasi hasil panen_logo.mjs (berkas ada = tautan); logo kurasi lama (public/img/logo/*.png) tetap dipakai beranda dan menang
   for (const o of [...organisasi.publik, ...orgAng, ...orgPen]) if (/^[A-Za-z0-9_-]+$/.test(o.id) && fs.existsSync(path.join(ROOT, 'public/img/logo/org', o.id + '.png'))) o.logo = `/img/logo/org/${o.id}.png`;
-  for (const o of [...organisasi.publik, ...orgAng, ...orgPen]) { const ik = !o.logo && indukKampus.get(o.id); if (ik && fs.existsSync(path.join(ROOT, 'public/img/logo/org', ik + '.png'))) o.logo = `/img/logo/org/${ik}.png`; }
+  for (const o of [...organisasi.publik, ...orgAng, ...orgPen]) { const ik = !o.logo && (indukKampus.get(o.id) || LOGO_KAMPUS[Object.keys(LOGO_KAMPUS).find((k) => tanpaAksen(o.nama).split(' ').includes(k))]); if (ik && fs.existsSync(path.join(ROOT, 'public/img/logo/org', ik + '.png'))) o.logo = `/img/logo/org/${ik}.png`; }
   const kosong = [];
   const idAng = new Map(); // id stabil baris anggota_meti; kembar nama+jenis+no diberi nomor urut
   const lapisan = {

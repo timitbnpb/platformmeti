@@ -1,0 +1,149 @@
+{
+ "meta": {
+  "diperbarui": "2026-11-08",
+  "keterangan": "Perusahaan pengembang untuk baris RUPTL berlabel IPP/SH-PLN. Dicocokkan lewat proyek tertaut, lalu GEM (nama+teknologi+provinsi+kapasitas +-20%, ambigu dilewati). Pemilik terbesar menurut sumber; bukan pernyataan resmi PLN.",
+  "ipp": 165,
+  "ipp_kenal": 15,
+  "sh": 50,
+  "sh_kenal": 2,
+  "per_sumber": {
+   "Global Energy Monitor": 7,
+   "GEM (via proyek.json)": 9,
+   "proyek.json": 1
+  }
+ },
+ "baris": {
+  "rp_ba547b6a": {
+   "nama": "PT Dharma Hydro Nusantara",
+   "sumber": "Global Energy Monitor",
+   "sumber_url": "https://www.gem.wiki/Batang_Toru_hydroelectric_plant",
+   "tingkat_bukti": "kajian",
+   "tanggal_periksa": "2026-11-08"
+  },
+  "rp_4b72242a": {
+   "nama": "KS Orka Renewables Pte Ltd",
+   "sumber": "GEM (via proyek.json)",
+   "sumber_url": "https://www.gem.wiki/Sorik_Marapi_geothermal_power_plant",
+   "tingkat_bukti": "kajian",
+   "tanggal_periksa": "2026-11-08"
+  },
+  "rp_5e673b76": {
+   "nama": "INPEX Corp",
+   "sumber": "Global Energy Monitor",
+   "sumber_url": "https://www.gem.wiki/Muarah_Laboh_geothermal_plant",
+   "tingkat_bukti": "kajian",
+   "tanggal_periksa": "2026-11-08"
+  },
+  "rp_5786a58a": {
+   "nama": "PT Kerinci Merangin Hydro",
+   "sumber": "GEM (via proyek.json)",
+   "sumber_url": "https://www.gem.wiki/Kerinci_Merangin_hydroelectric_plant",
+   "tingkat_bukti": "kajian",
+   "tanggal_periksa": "2026-11-08"
+  },
+  "rp_8c4fd2d5": {
+   "nama": "Pertamina Geothermal Energy",
+   "org_id": "p_dda1e51dae",
+   "logo": true,
+   "sumber": "GEM (via proyek.json)",
+   "sumber_url": "https://www.gem.wiki/Sungai_Penuh_geothermal_power_plant",
+   "tingkat_bukti": "kajian",
+   "tanggal_periksa": "2026-11-08"
+  },
+  "rp_63f8ac43": {
+   "nama": "Pertamina Geothermal Energy",
+   "org_id": "p_dda1e51dae",
+   "logo": true,
+   "sumber": "GEM (via proyek.json)",
+   "sumber_url": "https://www.gem.wiki/Lumut_Balai_geothermal_power_plant",
+   "tingkat_bukti": "kajian",
+   "tanggal_periksa": "2026-11-08"
+  },
+  "rp_5b9bb1c4": {
+   "nama": "Pertamina Geothermal Energy",
+   "org_id": "p_dda1e51dae",
+   "logo": true,
+   "sumber": "Global Energy Monitor",
+   "sumber_url": "https://www.gem.wiki/Lumut_Balai_geothermal_power_plant",
+   "tingkat_bukti": "kajian",
+   "tanggal_periksa": "2026-11-08"
+  },
+  "rp_692a7d11": {
+   "nama": "Pertamina Geothermal Energy",
+   "org_id": "p_dda1e51dae",
+   "logo": true,
+   "sumber": "Global Energy Monitor",
+   "sumber_url": "https://www.gem.wiki/Lumut_Balai_geothermal_power_plant",
+   "tingkat_bukti": "kajian",
+   "tanggal_periksa": "2026-11-08"
+  },
+  "rp_3060de16": {
+   "nama": "PT Indo Green Power",
+   "sumber": "proyek.json",
+   "sumber_url": "https://www.jpnn.com/news/gubernur-herman-deru-genjot-operasional-psel-palembang-progres-tembus-83",
+   "tingkat_bukti": "media",
+   "tanggal_periksa": "2026-11-08"
+  },
+  "rp_ff6e7417": {
+   "nama": "Pace Energy Pvt Ltd / PT Juvisk Tri Swarna",
+   "sumber": "GEM (via proyek.json)",
+   "sumber_url": "https://www.gem.wiki/Tanah_Laut_wind_farm",
+   "tingkat_bukti": "kajian",
+   "tanggal_periksa": "2026-11-08"
+  },
+  "rp_b4304fb9_2": {
+   "nama": "Star Energy Geothermal",
+   "org_id": "p_7a803f3b71",
+   "logo": true,
+   "sumber": "Global Energy Monitor",
+   "sumber_url": "https://www.gem.wiki/Wayang_Windu_geothermal_power_plant",
+   "tingkat_bukti": "kajian",
+   "tanggal_periksa": "2026-11-08"
+  },
+  "rp_b4304fb9": {
+   "nama": "Star Energy Geothermal",
+   "org_id": "p_7a803f3b71",
+   "logo": true,
+   "sumber": "Global Energy Monitor",
+   "sumber_url": "https://www.gem.wiki/Wayang_Windu_geothermal_power_plant",
+   "tingkat_bukti": "kajian",
+   "tanggal_periksa": "2026-11-08"
+  },
+  "rp_b664b53a": {
+   "nama": "PT Nirwana Suci Abadi",
+   "sumber": "GEM (via proyek.json)",
+   "sumber_url": "https://www.gem.wiki/Baturaden_geothermal_power_plant",
+   "tingkat_bukti": "kajian",
+   "tanggal_periksa": "2026-11-08"
+  },
+  "rp_0c687a78": {
+   "nama": "PT Geo Dipa Energi",
+   "sumber": "Global Energy Monitor",
+   "sumber_url": "https://www.gem.wiki/Dieng_geothermal_power_plant",
+   "tingkat_bukti": "kajian",
+   "tanggal_periksa": "2026-11-08"
+  },
+  "rp_285c3644": {
+   "nama": "PT Medco Power Indonesia",
+   "org_id": "p_27ae5a4203",
+   "sumber": "GEM (via proyek.json)",
+   "sumber_url": "https://www.gem.wiki/Blawan_Ijen_geothermal_project",
+   "tingkat_bukti": "kajian",
+   "tanggal_periksa": "2026-11-08"
+  },
+  "rp_abd943fa": {
+   "nama": "Oakridge International",
+   "sumber": "GEM (via proyek.json)",
+   "sumber_url": "https://www.gem.wiki/Ngebel_geothermal_power_plant",
+   "tingkat_bukti": "kajian",
+   "tanggal_periksa": "2026-11-08"
+  },
+  "rp_fd66fcd0": {
+   "nama": "PT Amera Terrasys Energi",
+   "sumber": "GEM (via proyek.json)",
+   "sumber_url": "https://www.gem.wiki/Buttu_Batu_hydroelectric_plant",
+   "tingkat_bukti": "kajian",
+   "tanggal_periksa": "2026-11-08"
+  }
+ }
+}

@@ -1,14 +1,16 @@
 /* /proyek: dua bagian keputusan. J = pelacak proyek bermasalah, N = pipeline RUPTL untuk investor.
    Modul mandiri: proyek.js memanggil pasangKeputusan(SEMUA, wadah) sekali. Data = potret /data/*.json.
    INP: chrome filter/ubin/urut berubah seketika; badan tabel digambar ulang lewat nanti(). */
-import { t, ada, angka, tanggal } from "/i18n.js";
+import { t, ada, angka, tanggal, bahasa } from "/i18n.js";
 import { esc, nanti, debounce, ikon } from "/inti/umum.js";
 import { sumberHtml, exHtml } from "/inti/komponen.js";
 import { pilTek, pilStatus } from "/inti/ikon_tek.js";
 import { PROV } from "/penerbit.js";
+import { tautOrg, siapTautan } from "/inti/tautan.js";
+import { logoOrgSatu } from "/inti/logo_org.js";
 import { aksiHtml } from "/inti/aksi_ex.js";
 
-const BATAS = 15, TAHUN = new Date().getFullYear();
+const BATAS = 15, UJUNG = "…", TAHUN = new Date().getFullYear();
 const TEKS = ["surya", "bayu", "hidro", "panas-bumi", "bioenergi", "biomassa-sampah", "penyimpanan", "nuklir"];
 const GOL = [["a", "kalender"], ["b", "blokir"], ["c", "linimasa"]];
 const SIS = ["sum", "jmb", "kal", "smpnt"];
@@ -35,26 +37,53 @@ function tabel(el, kolom, rows, S, kosong) {
   rows = rows.slice().sort(bandingkan(S.k, S.arah));
   if (!rows.length) { el.innerHTML = `<div class="jm-kosong">${ikon("info", 32)}<p>${esc(t(kosong))}</p></div>`; return; }
   const kepala = kolom.map(([k, kt]) => `<th scope="col"${k ? ` aria-sort="${S.k === k ? (S.arah > 0 ? "ascending" : "descending") : "none"}"` : ""}>${k ? `<button type="button" class="jm-urut" data-u="${k}">${esc(t(kt))}</button>` : esc(t(kt))}</th>`).join("");
-  const badan = rows.slice(0, S.n).map((r) => `<tr>${kolom.map(([, kt, f, kls]) => `<td data-label="${esc(t(kt))}"${kls ? ` class="${kls}"` : ""}>${f(r)}</td>`).join("")}</tr>`).join("");
+  const maks = Math.max(1, Math.ceil(rows.length / BATAS)); S.hal = Math.min(Math.max(1, S.hal || 1), maks);
+  const dari = (S.hal - 1) * BATAS;
+  const badan = rows.slice(dari, dari + BATAS).map((r) => `<tr>${kolom.map(([, kt, f, kls]) => `<td data-label="${esc(t(kt))}"${kls ? ` class="${kls}"` : ""}>${f(r)}</td>`).join("")}</tr>`).join("");
   el.innerHTML = `<div class="jm-gulir"><table class="jm-tabel jm-kp-tabel"><thead><tr>${kepala}</tr></thead><tbody>${badan}</tbody></table></div>
-    <div class="jm-hal"><span>${esc(t("pj.tampil", { n: num(Math.min(S.n, rows.length)), total: num(rows.length) }))}</span>${rows.length > S.n ? `<button type="button" class="jm-tbl" data-lagi="1">${esc(t("pj.lagi"))}</button>` : ""}</div>`;
+    ${pager(S.hal, maks, dari + 1, Math.min(dari + BATAS, rows.length), rows.length)}`;
+}
+/* kolom Pengembang: logo kecil + nama perusahaan (tautan /o/<id> bila ada di organisasi) + pil status di bawahnya */
+const kelompok = (b) => (b.peng === "IPP" ? "ipp" : b.peng ? "pln" : "tak");
+function pengHtml(b) {
+  if (!b.peng) return `<span class="jm-bantu">${esc(t("kp.peng.tak"))}</span>`;
+  const anak = b.peng === "SH-PLN", pil = anak ? (bahasa() === "en" ? "PLN subsidiary" : "Anak usaha PLN") : b.peng;
+  const d = b.dev;
+  let nama;
+  if (d) {
+    const logo = d.org_id ? logoOrgSatu(d.org_id, d.nama) : "";
+    const teks = d.org_id ? tautOrg(d.org_id, d.nama) : esc(d.nama);
+    nama = `<span class="jm-kp-dev">${logo ? `<img class="jm-kp-dev-logo" src="${esc(logo)}" alt="" width="22" height="22" loading="lazy" data-galat="hapus">` : ""}<span class="jm-kp-dev-nama">${teks}</span></span>`;
+  } else if (b.peng === "IPP") nama = `<span class="jm-bantu jm-kp-dev-nama">${esc(bahasa() === "en" ? "IPP (not yet identified)" : "IPP (belum diketahui)")}</span>`;
+  else nama = anak ? "" : `<span class="jm-kp-dev-nama">${"PT PLN (Persero)"}</span>`;
+  return `<span class="jm-kp-peng-sel">${nama}<span class="jm-kp-peng jm-kp-peng-${kelompok(b)}">${esc(pil)}</span></span>`;
+}
+/* paginasi bernomor: panah ikon, nomor dengan elipsis, "a-b dari n"; tanpa kunci i18n baru (jm.sebelumnya/berikutnya sudah ada) */
+function pager(hal, maks, a, b, total) {
+  const set = new Set([1, maks, hal - 1, hal, hal + 1]); if (hal <= 3) [2, 3].forEach((x) => set.add(x)); if (hal >= maks - 2) [maks - 1, maks - 2].forEach((x) => set.add(x));
+  let nomor = "", prev = 0;
+  for (const n of [...set].filter((x) => x >= 1 && x <= maks).sort((x, y) => x - y)) { if (n - prev > 1) nomor += `<span class="jm-hal-elips" aria-hidden="true">${UJUNG}</span>`; nomor += `<button type="button" class="jm-hal-no" data-hal="${n}"${n === hal ? ' aria-current="page"' : ""} aria-label="${esc(t("jm.hal", { n: angka(n) }))}">${num(n)}</button>`; prev = n; }
+  const panah = (ik, h, kunci, mati) => `<button type="button" class="jm-hal-no jm-hal-panah" data-hal="${h}" aria-label="${esc(t(kunci))}"${mati ? " disabled" : ""}>${ikon(ik, 16)}</button>`;
+  return `<nav class="jm-hal jm-hal-no-bar" aria-label="${esc(t("jm.hal", { n: angka(hal) }))}"><span class="jm-hal-info">${num(a)}-${num(b)} ${esc(bahasa() === "en" ? "of" : "dari")} ${num(total)}</span>${maks > 1 ? `<span class="jm-hal-daftar">${panah("panah-kiri", hal - 1, "jm.sebelumnya", hal <= 1)}${nomor}${panah("panah-kanan", hal + 1, "jm.berikutnya", hal >= maks)}</span>` : ""}</nav>`;
 }
 function urutKlik(sec, S, gambar, kananDulu) {
   sec.addEventListener("click", (e) => {
-    const u = e.target.closest("[data-u]"), l = e.target.closest("[data-lagi]");
+    const u = e.target.closest("[data-u]"), l = e.target.closest("[data-hal]");
     if (u) {
       const k = u.dataset.u;
-      S.arah = S.k === k ? -S.arah : (kananDulu.includes(k) ? -1 : 1); S.k = k;
+      S.hal = 1; S.arah = S.k === k ? -S.arah : (kananDulu.includes(k) ? -1 : 1); S.k = k;
       for (const th of sec.querySelectorAll("th[aria-sort]")) th.setAttribute("aria-sort", th.contains(u) ? (S.arah > 0 ? "ascending" : "descending") : "none");
       nanti(gambar);
-    } else if (l) { S.n += BATAS; l.setAttribute("aria-busy", "true"); nanti(gambar); }
+    } else if (l && !l.disabled) { S.hal = +l.dataset.hal; nanti(gambar); }
   });
 }
 const pilihHtml = (id, ik, label, opsi, nilai) => `<label class="jm-pil-pilih">${ikon(ik, 18)}<span class="sr">${esc(label)}</span><select id="${id}" data-ikon="${esc(ik)}">${opsi.map(([v, l, oi]) => `<option value="${esc(v)}"${oi ? ` data-ikon="${esc(oi)}"` : ""}${v === nilai ? " selected" : ""}>${esc(l)}</option>`).join("")}</select></label>`;
 
 export async function pasangKeputusan(SEMUA, wadah, tglProyek) {
-  let rup, ber;
+  let rup, ber, png = { baris: {} };
   try { [rup, ber] = await Promise.all([ambil("/data/ruptl.json"), ambil("/data/berita.json")]); } catch { return; }
+  try { png = await ambil("/data/ruptl_pengembang.json"); } catch { /* pendamping opsional: tanpa itu kolom memakai label status */ }
+  siapTautan("org");
 
   /* ---------- J: proyek bermasalah ---------- */
   const awal = new Date(); awal.setFullYear(awal.getFullYear() - 1);
@@ -73,7 +102,7 @@ export async function pasangKeputusan(SEMUA, wadah, tglProyek) {
     if (!["beroperasi", "dibatalkan"].includes(r.st) && (!k || k.tgl < batas)) gol.push("c");
     if (gol.length) JR.push({ ...r, gol, kab: k, kabTgl: k ? k.tgl : null });
   }
-  const J = { gol: "", tek: "", prov: "", k: "telat", arah: -1, n: BATAS };
+  const J = { gol: "", tek: "", prov: "", k: "telat", arah: -1, hal: 1 };
   const jTampil = () => JR.filter((r) => (!J.gol || r.gol.includes(J.gol)) && (!J.tek || r.tek === J.tek) && (!J.prov || r.prov === J.prov));
   const selGol = (r) => r.gol.map((g) => `<span class="jm-kp-gol jm-kp-gol-${g}">${ikon(GOL.find((x) => x[0] === g)[1], 14)}<span>${esc(t("kp.g." + g))}</span></span>`).join("");
   const kolomJ = [
@@ -111,12 +140,12 @@ export async function pasangKeputusan(SEMUA, wadah, tglProyek) {
   };
   secJ.addEventListener("click", (e) => {
     const g = e.target.closest("[data-g]");
-    if (g) { J.gol = J.gol === g.dataset.g ? "" : g.dataset.g; J.n = BATAS; jUbin(); nanti(jTabel); }
-    if (e.target.closest("#kpJHapus")) { Object.assign(J, { gol: "", tek: "", prov: "", n: BATAS }); $j("kpJTek").value = ""; $j("kpJProv").value = ""; jUbin(); nanti(jTabel); }
+    if (g) { J.gol = J.gol === g.dataset.g ? "" : g.dataset.g; J.hal = 1; jUbin(); nanti(jTabel); }
+    if (e.target.closest("#kpJHapus")) { Object.assign(J, { gol: "", tek: "", prov: "", hal: 1 }); $j("kpJTek").value = ""; $j("kpJProv").value = ""; jUbin(); nanti(jTabel); }
   });
   secJ.addEventListener("change", (e) => {
     if (e.target.id === "kpJTek") J.tek = e.target.value; else if (e.target.id === "kpJProv") J.prov = e.target.value; else return;
-    J.n = BATAS; jUbin(); nanti(jTabel);
+    J.hal = 1; jUbin(); nanti(jTabel);
   });
   urutKlik(secJ, J, jTabel, ["kap", "telat", "kabTgl"]);
   secJ.addEventListener("jm:csv", (e) => {
@@ -125,10 +154,9 @@ export async function pasangKeputusan(SEMUA, wadah, tglProyek) {
   }, true);
 
   /* ---------- N: pipeline RUPTL ---------- */
-  const RB = rup.baris.map((b) => ({ ...b, nama: b.nama, mw: b.kapasitas_mw ?? 0, prov: b.provinsi || "", cod: (b.cod_tahun || []).join(", "), codMin: (b.cod_tahun || [])[0] ?? null, peng: b.pengembang_status || "", sis: b.regional || "" }));
-  const kelompok = (b) => (b.peng === "IPP" ? "ipp" : b.peng ? "pln" : "tak");
+  const RB = rup.baris.map((b) => ({ ...b, nama: b.nama, mw: b.kapasitas_mw ?? 0, prov: b.provinsi || "", cod: (b.cod_tahun || []).join(", "), codMin: (b.cod_tahun || [])[0] ?? null, peng: b.pengembang_status || "", dev: png.baris[b.id] || null, sis: b.regional || "" }));
   const jumMW = (rows) => rows.reduce((s, b) => s + b.mw, 0);
-  const N = { ipp: false, sis: "", prov: "", k: "mw", arah: -1, n: BATAS };
+  const N = { ipp: false, sis: "", prov: "", k: "mw", arah: -1, hal: 1 };
   const nTampil = () => RB.filter((b) => (!N.ipp || b.peng === "IPP") && (!N.sis || b.sis === N.sis) && (!N.prov || b.prov === N.prov));
   const namaTbl = (b) => (b.proyek_id ? `<b><a class="jm-pj-nm" href="/p/${esc(b.proyek_id)}">${esc(b.nama)}</a></b>` : `<b>${esc(b.nama)}</b>`);
   const kolomN = [
@@ -138,7 +166,7 @@ export async function pasangKeputusan(SEMUA, wadah, tglProyek) {
     ["prov", "pj.c.prov", (b) => (b.prov ? selProv(b.prov) : esc(t("kp.prov.gab")))],
     ["mw", "kp.c.mw", (b) => num(b.mw), "jm-num"],
     ["codMin", "pj.c.cod", (b) => esc(b.cod || "-"), "jm-tengah"],
-    ["peng", "kp.c.peng", (b) => (b.peng ? `<span class="jm-kp-peng jm-kp-peng-${kelompok(b)}">${esc(b.peng)}</span>` : `<span class="jm-bantu">${esc(t("kp.peng.tak"))}</span>`), "jm-tengah"],
+    ["peng", "kp.c.peng", pengHtml, "jm-kp-sel-peng"],
     ["status", "pj.c.status", (b) => pilStatus(b.status), "jm-tengah"],
   ];
   const secN = document.createElement("div");
@@ -200,11 +228,11 @@ export async function pasangKeputusan(SEMUA, wadah, tglProyek) {
     nTabel(); nanti(grafik);
   };
   secN.addEventListener("click", (e) => {
-    if (e.target.closest("#kpNIpp")) { N.ipp = !N.ipp; N.n = BATAS; $n("kpNIpp").setAttribute("aria-pressed", String(N.ipp)); nanti(nTabel); }
+    if (e.target.closest("#kpNIpp")) { N.ipp = !N.ipp; N.hal = 1; $n("kpNIpp").setAttribute("aria-pressed", String(N.ipp)); nanti(nTabel); }
   });
   secN.addEventListener("change", (e) => {
     if (e.target.id === "kpNSis") N.sis = e.target.value; else if (e.target.id === "kpNProv") N.prov = e.target.value; else return;
-    N.n = BATAS; nanti(nTabel);
+    N.hal = 1; nanti(nTabel);
   });
   const graf = () => secN.querySelector("#kpNGraf");
   secN.addEventListener("pointerover", (e) => { const h = e.target.closest(".jm-kp-hit"); if (h) tip(graf(), h); });
@@ -214,7 +242,7 @@ export async function pasangKeputusan(SEMUA, wadah, tglProyek) {
   urutKlik(secN, N, nTabel, ["mw"]);
   secN.addEventListener("jm:csv", (e) => {
     e.detail.baris = [[t("pj.c.nama"), t("pj.c.tek"), t("kp.c.sis"), t("pj.c.prov"), t("kp.c.mw"), t("pj.c.cod"), t("kp.c.peng"), t("pj.c.status"), "ID"],
-      ...nTampil().sort(bandingkan(N.k, N.arah)).map((b) => [b.nama, labTek(b.teknologi), t("kp.s." + b.sis), b.prov, b.mw, b.cod, b.peng, b.status, b.proyek_id || ""])];
+      ...nTampil().sort(bandingkan(N.k, N.arah)).map((b) => [b.nama, labTek(b.teknologi), t("kp.s." + b.sis), b.prov, b.mw, b.cod, b.dev ? b.dev.nama : b.peng, b.status, b.proyek_id || ""])];
   }, true);
   window.addEventListener("resize", debounce(grafik, 150));
 

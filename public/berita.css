@@ -103,9 +103,9 @@ button.brt-bb-r:hover .brt-bb-n{color:var(--accent)}
 .brt-kartu-b .brt-judul{-webkit-line-clamp:3;line-clamp:3}
 
 /* semua berita: baris dengan thumbnail 96x64 */
-.brt-grid{display:grid;gap:16px;grid-template-columns:minmax(0,1fr);margin-top:12px}
-@media (min-width:640px){.brt-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
-@media (min-width:1000px){.brt-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
+.brt-daftar.brt-grid{gap:16px;margin-top:12px}
+@media (min-width:640px){.brt-daftar.brt-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (min-width:1000px){.brt-daftar.brt-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
 .brt-item{position:relative;display:flex;flex-direction:column;gap:10px;padding:10px;border:1px solid var(--line);border-radius:var(--r);background:var(--card);height:100%}
 .brt-item .brt-s169{width:100%}
 .brt-item .brt-isi{flex:1;align-content:start;gap:8px;padding:0 4px 4px}
@@ -292,3 +292,16 @@ button.brt-an-k:focus-visible,.brt-an-dlg button:focus-visible{outline:2px solid
 /* cadangan favicon di sampul 16:9: kecil di tengah di atas latar lembut, tidak diregangkan */
 .brt-sampul{background:var(--surface)}
 .brt-sampul img.brt-fv{position:absolute;inset:0;margin:auto;width:48px!important;height:48px!important;object-fit:contain!important;border-radius:var(--r-sm)}
+
+/* Lihat semua: tombol ikon panah SVG + jumlah sebagai pil kecil; kepala bergambar diberi gradasi di kanan agar aksi terbaca */
+#bagian .jm-ex>.jm-ex-hd{background-image:linear-gradient(90deg,rgb(7 22 33/.88),rgb(7 22 33/.6) 55%,rgb(7 22 33/.75))}
+#bagian #ex-sorotan>.jm-ex-hd,#bagian #ex-surya>.jm-ex-hd,#bagian #ex-panas>.jm-ex-hd,#bagian #ex-bio>.jm-ex-hd{background-image:linear-gradient(90deg,rgb(7 22 33/.88),rgb(7 22 33/.6) 55%,rgb(7 22 33/.78)),var(--hd-foto)}
+#bagian #ex-sorotan>.jm-ex-hd,#bagian #ex-surya>.jm-ex-hd{--hd-foto:url(/img/beranda/surya-cirata.webp)}
+#bagian #ex-panas>.jm-ex-hd{--hd-foto:url(/img/beranda/panas-bumi-sibayak.webp)}
+#bagian #ex-bio>.jm-ex-hd{--hd-foto:url(/img/beranda/bioenergi-sawit.webp)}
+.brt-semua{display:inline-flex;align-items:center;gap:8px;min-height:36px;padding:0 10px 0 16px}
+.brt-semua .jm-ik{flex:none}
+.brt-semua-n{display:inline-block;padding:2px 8px;border-radius:var(--r-pil);background:var(--soft-hijau);color:var(--accent);font:600 var(--t-kecil)/1.3 var(--font);font-variant-numeric:tabular-nums}
+#bagian .jm-ex .jm-ex-aksi .jm-aksi-b{background:var(--card);color:var(--ink);border-color:var(--card)}
+#bagian .jm-ex .jm-ex-aksi .jm-aksi-b:hover{background:var(--soft-hijau);color:var(--accent)}
+#bagian .jm-ex .jm-ex-aksi .jm-sumber{color:var(--on-brand)}

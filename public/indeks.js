@@ -68,8 +68,20 @@ function peta() {
   const per = new Map(S.d.provinsi.map((p) => [p.kode, p]));
   const W = 1000, H = 440;
   const jalur = jalurPerProvinsi(S.geo, W, H).filter((j) => j.d && per.has(j.kode));
-  el.innerHTML = `<svg class="ix-peta" viewBox="0 0 ${W} ${H}" preserveAspectRatio="xMidYMid meet" role="group" aria-label="${esc(t("ix.peta.j"))}">${jalur.map((j) => { const p = per.get(j.kode), k = p.peringkat ? "ix-q" + kuintil(p.skor) : "ix-kos"; return `<path class="${k}" tabindex="0" role="button" data-k="${esc(j.kode)}" d="${j.d}"><title>${esc(p.nama)}: ${p.skor === null ? esc(t("an.tanpa_data")) : esc(num(p.skor, 1))}</title></path>`; }).join("")}</svg>
+  el.innerHTML = `<svg class="ix-peta" viewBox="0 0 ${W} ${H}" preserveAspectRatio="xMidYMid meet" role="group" aria-label="${esc(t("ix.peta.j"))}">${jalur.map((j) => { const p = per.get(j.kode), k = p.peringkat ? "ix-q" + kuintil(p.skor) : "ix-kos"; return `<path class="${k}" tabindex="0" role="button" data-k="${esc(j.kode)}" aria-label="${esc(p.nama)}: ${p.skor === null ? esc(t("an.tanpa_data")) : esc(num(p.skor, 1))}" d="${j.d}"></path>`; }).join("")}</svg>
     <div class="ix-legenda" aria-label="${esc(t("ix.lg"))}">${[0, 1, 2, 3, 4].map((q) => `<span><i class="ix-q${q}"></i>${esc(num(q * 20))}-${esc(num(q * 20 + 20))} (${esc(num(S.d.provinsi.filter((p) => p.peringkat && kuintil(p.skor) === q).length))})</span>`).join("")}<span><i class="ix-kos"></i>${esc(t("ix.tanpa_rank"))} (${esc(num(S.d.provinsi.filter((p) => !p.peringkat).length))})</span></div>`;
+  const tip = document.createElement("div"); tip.className = "ix-tip"; tip.hidden = true; tip.setAttribute("role", "status"); el.append(tip);
+  const tampil = (k, x, y) => {
+    const p = per.get(k); if (!p) return;
+    tip.innerHTML = `<header><img src="/img/provinsi/${esc(k)}.png" width="36" height="36" alt=""><div><strong>${esc(p.nama)}</strong><small>${esc(p.peringkat ? t("ix.tip.peringkat", { r: p.peringkat, n: S.d.provinsi.filter((q) => q.peringkat).length }) : t("an.tanpa_data"))}</small></div></header><p><span>${esc(t("ix.c.skor"))}</span><b>${p.skor === null ? "-" : esc(num(p.skor, 1))}</b></p><small class="ix-ajak-tip">${esc(t("ix.tip.klik"))}</small>`;
+    tip.hidden = false;
+    tip.style.left = Math.max(8, Math.min(el.clientWidth - tip.offsetWidth - 8, x + 14)) + "px"; tip.style.top = Math.max(8, Math.min(el.clientHeight - tip.offsetHeight - 8, y + 14)) + "px";
+  };
+  const svg = el.querySelector("svg"), kotak = () => el.getBoundingClientRect();
+  svg.addEventListener("mousemove", (e) => { const pa = e.target.closest("path[data-k]"); if (!pa) { tip.hidden = true; return; } tampil(pa.dataset.k, e.clientX - kotak().left, e.clientY - kotak().top); });
+  svg.addEventListener("mouseleave", () => { tip.hidden = true; });
+  svg.addEventListener("focusin", (e) => { const pa = e.target.closest("path[data-k]"); if (pa) { const r = pa.getBoundingClientRect(), b = kotak(); tampil(pa.dataset.k, r.left - b.left + r.width / 2, r.top - b.top + r.height / 2); } });
+  svg.addEventListener("focusout", () => { tip.hidden = true; });
 }
 
 /* ---------- tabel ---------- */

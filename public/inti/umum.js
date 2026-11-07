@@ -73,3 +73,11 @@ export function pesanHtml(jenis, teks) {
   const role = jenis === "galat" ? "alert" : "status";
   return `<div class="jm-pesan jm-pesan-${jenis}" role="${role}">${ikon(jenis === "galat" ? "peringatan" : "centang")}<span>${esc(teks)}</span></div>`;
 }
+
+/** Judul berhuruf Kapital Tiap Kata -> huruf kalimat (singkatan <=5 huruf kapital, "Indonesia", dan kata pertama dijaga). Judul yang sudah wajar tidak diubah. */
+export function judulHuruf(v) {
+  const s = String(v ?? "");
+  const kata = s.split(/\s+/).filter((w) => /^[A-Z][a-z]/.test(w));
+  if (kata.length < 3 || kata.length < s.split(/\s+/).length * 0.6) return s;
+  return s.split(/(\s+)/).map((w, i) => (i === 0 || /^[A-Z0-9]{2,5}\W*$/.test(w) || /^(Indonesia|Republik|Papua|Jawa|Sumatera|Kalimantan|Sulawesi)/.test(w) || !/^[A-Z][a-z]/.test(w) ? w : w[0].toLowerCase() + w.slice(1))).join("");
+}

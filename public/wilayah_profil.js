@@ -8,10 +8,10 @@ import { tombolIkuti, pasangIkuti } from "/inti/ikuti.js";
 import { aksiHtml, hlHtml } from "/inti/aksi_ex.js";
 import { batang } from "/grafik.js";
 import { pilTek, pilTekTaut, pilStatus } from "/inti/ikon_tek.js";
-import { muatMapLibre } from "/inti/maplibre.js";
-import { rapikanPeta, geoProvinsi, jalurPerProvinsi } from "/inti/peta_indonesia.js";
+import { geoProvinsi, jalurPerProvinsi } from "/inti/peta_indonesia.js";
 import { sumberLipat, amanUrl, muatData, num, pil, pasangBar } from "/analisis.js";
 import { namaProyek } from "/inti/nama_proyek.js";
+import { kartu } from "/wilayah_profil_kartu.js";
 
 const ST0 = "tidak" + "-diketahui"; // slug data status, bukan teks layar
 const TEK = ["hidro", "panas-bumi", "surya", "bayu", "bioenergi"];
@@ -44,7 +44,7 @@ function peringkat(data, p, k) {
   const U = UKUR[k], semua = data.baris.map((b) => ({ b, v: U.f(b) })).filter((x) => x.v != null && Number.isFinite(x.v));
   semua.sort((a, b) => b.v - a.v || a.b.nama.localeCompare(b.b.nama));
   const i = semua.findIndex((x) => x.b.kode === p.kode);
-  return { v: U.f(p) ?? null, r: i < 0 ? null : i + 1, n: semua.length, med: median(semua.map((x) => x.v)), top: semua[0] || null };
+  return { v: U.f(p) ?? null, r: i < 0 ? null : i + 1, n: semua.length, med: median(semua.map((x) => x.v)), top: semua[0] || null, lo: semua.length ? semua[semua.length - 1].v : null, hi: semua.length ? semua[0].v : null };
 }
 const satuan = (k) => (UKUR[k].satKey ? t(UKUR[k].satKey) : UKUR[k].sat);
 const fmt = (k, v) => (v == null ? null : UKUR[k].juta ? juta(v) : num(v, UKUR[k].d)) ;
@@ -157,42 +157,6 @@ function rued(p) {
   return seksi({ id: "rued", ikon: "regulasi", topik: t("wp.ey.rued"), judulHtml: j, aksiHtml: aksiHtml() + sumberDari({ sumber: t("wl.sumber_rued"), url: r.url, tanggal: r.tanggal }, kj), isiHtml: isi + gr, kakiHtml: kand + `<p class="jm-bantu">${esc(t("wp.cat.rued"))}</p>` });
 }
 
-/* ---------- 5. peta proyek ---------- */
-function petaSeksi(p) {
-  if (!p.proyek.length) return "";
-  const tepat = p.proyek.filter((x) => x.lat != null && x.presisi !== "provinsi").length;
-  const j = hlHtml("wp.j.peta", num(p.proyek.length), { nama: p.nama, tepat: num(tepat) });
-  return seksi({ id: "peta", ikon: "peta", topik: t("wp.ey.peta"), judulHtml: j, aksiHtml: aksiHtml({ csv: false }) + sumberDari({ sumber: t("wl.sumber_proyek"), tanggal: "" }), isiHtml: `<div class="jm-wp-peta" id="wp-peta" role="region" aria-label="${esc(t("wp.peta_label"))}"></div>`, kakiHtml: `<p class="jm-bantu">${esc(t("wp.peta_cat", { tepat: num(tepat), n: num(p.proyek.length) }))}</p>` });
-}
-const gelap = () => (document.documentElement.dataset.theme || (matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light")) === "dark";
-const warna = (v) => getComputedStyle(document.documentElement).getPropertyValue(v).trim();
-async function bukaPeta(p) {
-  const el = document.getElementById("wp-peta"); if (!el) return;
-  try {
-    const [g] = await Promise.all([geoProvinsi(), muatMapLibre()]);
-    const f = g?.features.find((x) => String(x.properties.kode) === p.kode); if (!f) throw new Error("geo");
-    const b = new maplibregl.LngLatBounds();
-    for (const poli of f.geometry.type === "Polygon" ? [f.geometry.coordinates] : f.geometry.coordinates) for (const [x, y] of poli[0]) b.extend([x, y]);
-    const peta = new maplibregl.Map({ container: el, style: "https://tiles.openfreemap.org/styles/" + (gelap() ? "dark" : "positron"), bounds: b, fitBoundsOptions: { padding: 24 }, minZoom: 3, maxZoom: 14, dragRotate: false, pitchWithRotate: false, scrollZoom: false, cooperativeGestures: true, attributionControl: { compact: true } });
-    peta.addControl(new maplibregl.NavigationControl({ showCompass: false }), "bottom-right");
-    peta.on("style.load", () => {
-      rapikanPeta(peta);
-      const luar = [[[-180, -85], [180, -85], [180, 85], [-180, 85], [-180, -85]]];
-      for (const poli of f.geometry.type === "Polygon" ? [f.geometry.coordinates] : f.geometry.coordinates) luar.push(poli[0]);
-      peta.addSource("luar", { type: "geojson", data: { type: "Feature", geometry: { type: "Polygon", coordinates: luar } } });
-      peta.addSource("prov", { type: "geojson", data: f });
-      peta.addLayer({ id: "luar", type: "fill", source: "luar", paint: { "fill-color": warna("--paper"), "fill-opacity": 0.72 } });
-      peta.addLayer({ id: "prov", type: "line", source: "prov", paint: { "line-color": warna("--accent-isi"), "line-width": 2 } });
-      const titik = p.proyek.filter((x) => x.lat != null).map((x) => ({ type: "Feature", geometry: { type: "Point", coordinates: [x.lng, x.lat] }, properties: { nama: namaBersih(x), mw: x.mw || 0, tepat: x.presisi === "provinsi" ? 0 : 1 } }));
-      peta.addSource("titik", { type: "geojson", data: { type: "FeatureCollection", features: titik } });
-      peta.addLayer({ id: "titik", type: "circle", source: "titik", paint: { "circle-color": warna("--accent-isi"), "circle-opacity": ["case", ["==", ["get", "tepat"], 1], 0.85, 0.25], "circle-radius": ["interpolate", ["linear"], ["sqrt", ["get", "mw"]], 0, 5, 10, 8, 30, 13], "circle-stroke-color": warna("--card"), "circle-stroke-width": 1.5 } });
-      const pop = new maplibregl.Popup({ closeButton: false, closeOnClick: false, offset: 10 });
-      peta.on("mousemove", "titik", (e) => { const q = e.features[0].properties; peta.getCanvas().style.cursor = "pointer"; pop.setLngLat(e.lngLat).setText(q.nama + (q.mw ? ` (${num(q.mw, 1)} MW)` : "")).addTo(peta); });
-      peta.on("mouseleave", "titik", () => { peta.getCanvas().style.cursor = ""; pop.remove(); });
-    });
-  } catch (e) { console.warn("peta profil", e); el.innerHTML = `<p class="jm-kosong">${esc(t("wl.peta_gagal"))}</p>`; }
-}
-
 /* ---------- 6. daftar proyek ---------- */
 const dedupe = (n) => String(n).replace(/\b(\S+)(\s+\1)+(?=\s|$)/gi, "$1");
 const namaBersih = (x) => dedupe(namaProyek(x));
@@ -208,14 +172,6 @@ function proyek(p) {
   const tb = `<div class="jm-gulir"><table class="jm-tabel"><thead><tr><th>${L("wl.col.proyek")}</th><th>${L("wl.col.tek")}</th><th>${L("wp.col.program")}</th><th>${L("wp.col.peng")}</th><th class="jm-num">${L("wl.col.kap")}</th><th>${L("wl.col.status")}</th></tr></thead><tbody>${A.map((x) =>
     `<tr><td data-label="${L("wl.col.proyek")}"><a href="/p/${encodeURIComponent(x.id)}">${esc(namaBersih(x))}</a></td><td data-label="${L("wl.col.tek")}">${pilTekTaut(x.teknologi)}</td><td data-label="${L("wp.col.program")}">${x.program?.length ? progPil(x.program) : kos()}</td><td data-label="${L("wp.col.peng")}">${pengTd(x)}</td><td data-label="${L("wl.col.kap")}" class="jm-num">${x.mw == null ? kos() : esc(num(x.mw, 1) + " " + (x.satuan || "MW"))}</td><td data-label="${L("wl.col.status")}">${pilStatus(x.status || ST0)}</td></tr>`).join("")}</tbody></table></div>`;
   return seksi({ id: "proyek", ikon: "proyek", topik: t("wp.ey.proyek"), judulHtml: hlHtml("wp.j.proyek", num(A.length), { nama: p.nama, mw: num(mw, 0) }), aksiHtml: aksiHtml({ csv: true }) + sumberDari({ sumber: t("wl.sumber_proyek"), tanggal: "" }), isiHtml: rinci + tb, kakiHtml: `<p class="jm-bantu">${esc(t("wp.cat.proyek"))}</p>` });
-}
-
-/* ---------- 7. organisasi ---------- */
-function organisasi(p) {
-  if (!p.organisasi.length) return "";
-  const kat = [...new Set(p.organisasi.map((o) => o.kategori).filter(Boolean))].length;
-  const kartu = p.organisasi.map((o) => `<li><a class="jm-wp-org" href="/direktori?tampil=lembaga&amp;id=${encodeURIComponent(o.id)}" title="${esc(o.nama)}">${o.logo && /^\/img\//.test(o.logo) ? `<img src="${esc(o.logo)}" width="40" height="40" alt="" loading="lazy" decoding="async">` : `<span class="jm-wp-org-i" aria-hidden="true">${esc(o.nama.replace(/^(PT|CV|Pemerintah|Dinas|Universitas|Koperasi)\s+/i, "").slice(0, 2).toUpperCase())}</span>`}<span><b>${esc(o.nama)}</b>${o.kategori ? `<small>${esc(o.kategori)}</small>` : ""}</span></a></li>`).join("");
-  return seksi({ id: "organisasi", ikon: "direktori", topik: t("wp.ey.org"), judulHtml: hlHtml("wp.j.org", num(p.organisasi.length), { nama: p.nama, kat: num(kat) }), aksiHtml: aksiHtml() + sumberDari({ sumber: t("wl.sumber_org"), tanggal: "" }), isiHtml: `<ul class="jm-wp-orgs">${kartu}</ul>` });
 }
 
 /* ---------- 8. pakar ---------- */
@@ -235,13 +191,6 @@ function regulasi(p) {
   return seksi({ id: "regulasi", ikon: "regulasi", topik: t("wp.ey.reg"), judulHtml: hlHtml("wp.j.reg", num(A.length), { nama: p.nama }), aksiHtml: aksiHtml({ csv: true }) + sumberDari({ sumber: t("wl.sumber_perda"), tanggal: "" }), isiHtml: tb });
 }
 
-/* ---------- 10. emisi ---------- */
-function emisi(p, d) {
-  const e = d?.emisi; if (!e) return "";
-  const rows = e.pembangkit.map((x, i) => ({ label: x.nama.replace(/ (power station|power plant|PLTU|plant)$/i, ""), v: x.emisi, sorot: i === 0, teks: t("wp.emisi.nilai", { n: juta(x.emisi) }) }));
-  return seksi({ id: "emisi", ikon: "analisis", topik: t("wp.ey.emisi"), judulHtml: hlHtml("wp.j.emisi", t("wp.emisi.nilai", { n: juta(e.total_tco2e) }), { nama: p.nama, n: num(e.jumlah), tahun: e.tahun }), aksiHtml: aksiHtml() + sumberDari({ sumber: e.sumber, url: e.url, tahun: e.tahun, tanggal: e.tanggal }), isiHtml: batang(rows, { label: t("wp.emisi.grafik") }), kakiHtml: `<p class="jm-bantu">${esc(t("wp.cat.emisi"))}</p>` });
-}
-
 /* ---------- 11. berita dan agenda ---------- */
 function berita(p, d) {
   const b = d?.berita || [], k = d?.kalender || [];
@@ -249,20 +198,6 @@ function berita(p, d) {
   const lb = b.length ? `<ul class="jm-wp-daftar">${b.map((x) => `<li>${tautan(x.url, x.judul)} <small>${esc(x.media)}, ${esc(tanggal(x.terbit))}</small></li>`).join("")}</ul>` : "";
   const lk = k.length ? `<h3 class="jm-wp-h3">${esc(t("wp.agenda"))}</h3><ul class="jm-wp-daftar">${k.map((x) => `<li>${tautan(x.url, x.judul)} <small>${esc(tanggal(x.tanggal))}</small></li>`).join("")}</ul>` : "";
   return seksi({ id: "berita", ikon: "berita", topik: t("wp.ey.berita"), judulHtml: hlHtml("wp.j.berita", num(b.length + k.length), { nama: p.nama }), aksiHtml: aksiHtml(), isiHtml: lb + lk, kakiHtml: `<p class="jm-bantu">${esc(t("wp.cat.berita"))}</p>` });
-}
-
-/* ---------- 12. perbandingan ---------- */
-function banding(data, p) {
-  const K = ["ebt", "kap", "rasio", "desa", "pb", "proyek", "penduduk", "pdrbk"], R = K.map((k) => [k, peringkat(data, p, k)]);
-  const ada = R.filter(([, r]) => r.v != null);
-  if (!ada.length) return "";
-  const utama = R[0][1];
-  const j = utama.r ? hlHtml("wp.j.banding", t("wp.rank_ket", { r: utama.r, n: utama.n }), { nama: p.nama }) : hlHtml("wp.j.banding0", p.nama, {});
-  const tb = `<div class="jm-gulir"><table class="jm-tabel"><thead><tr><th>${esc(t("wp.col.ukuran"))}</th><th class="jm-num">${esc(p.nama)}</th><th class="jm-num">${esc(t("wp.col.rank"))}</th><th class="jm-num">${esc(t("wp.col.median"))}</th><th>${esc(t("wp.col.tertinggi"))}</th></tr></thead><tbody>${R.map(([k, r]) => {
-    const sat = satuan(k) ? " " + satuan(k) : "";
-    return `<tr><td data-label="${esc(t("wp.col.ukuran"))}">${esc(t("wp.uk." + k))}</td><td data-label="${esc(p.nama)}" class="jm-num">${r.v == null ? kos() : esc(fmt(k, r.v) + sat)}</td><td data-label="${esc(t("wp.col.rank"))}" class="jm-num">${r.r ? esc(t("wp.rank_ket", { r: r.r, n: r.n })) : kos()}</td><td data-label="${esc(t("wp.col.median"))}" class="jm-num">${r.med == null ? kos() : esc(fmt(k, r.med) + sat)}</td><td data-label="${esc(t("wp.col.tertinggi"))}">${r.top ? `<a href="/wilayah?prov=${esc(r.top.b.kode)}">${esc(r.top.b.nama)}</a> <small>${esc(fmt(k, r.top.v) + sat)}</small>` : kos()}</td></tr>`;
-  }).join("")}</tbody></table></div>`;
-  return seksi({ id: "banding", ikon: "tabel", topik: t("wp.ey.banding"), judulHtml: j, aksiHtml: aksiHtml({ csv: true }), isiHtml: tb, kakiHtml: `<p class="jm-bantu">${esc(t("wp.cat.banding"))}</p>` });
 }
 
 /* ---------- kartu METI Wilayah (hanya bila provinsi punya status selain "belum") ---------- */
@@ -281,15 +216,17 @@ async function isiMetiWilayah(p) {
 
 /* ---------- pasang ---------- */
 export async function profilProvinsi(p, data, $) {
+  const K = kartu({ seksi, sumberDari, namaBersih, peringkat, UKUR, fmt, satuan, kos, juta, hlHtml, aksiHtml });
   document.title = t("wl.profil_title", { nama: p.nama }); TGL = data.dibangun_pada;
   try { for (const r of (await muatData("regulasi.json")).baris) REG.set(r.id, r); } catch (e) { /* tautan sumber saja */ }
   let d = null;
   try { d = await muatData("wilayah/" + encodeURIComponent(p.kode) + ".json"); } catch (e) { /* bagian tambahan disembunyikan */ }
-  $("profil-isi").innerHTML = kepala(data, p) + [ringkasan(p), kelistrikan(p), potensi(p), rued(p), petaSeksi(p), proyek(p), organisasi(p), '<div id="wp-meti"></div>', pakar(p, d), regulasi(p), emisi(p, d), berita(p, d), banding(data, p), await terkaitHtml("provinsi", String(p.kode))].join("");
+  $("profil-isi").innerHTML = kepala(data, p) + [ringkasan(p), kelistrikan(p), potensi(p), rued(p), K.petaSeksi(p), proyek(p), K.organisasi(p), '<div id="wp-meti"></div>', pakar(p, d), regulasi(p), K.emisi(p, d), berita(p, d), K.banding(data, p), await terkaitHtml("provinsi", String(p.kode))].join("");
   $("cara").innerHTML = `<p>${esc(t("wl.cara_profil"))}</p>`;
   $("profil-isi").querySelector(".jm-wp-chips")?.insertAdjacentHTML("afterend", `<p>${tombolIkuti({ jenis: "provinsi", id: p.kode, nama: p.nama })}</p>`);
   pasangIkuti($("profil-isi"));
   pasangBar($("profil-isi")); petaMini(p);
   isiMetiWilayah(p);
-  bukaPeta(p);
+  K.pasang($("profil-isi"));
+  K.bukaPeta(p);
 }

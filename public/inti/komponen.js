@@ -1,7 +1,7 @@
 /* Komponen bersama (CSS di inti/jm.css): baris filter, tab, subnav. Teks selalu dari pemanggil lewat t().
    Contoh filter: `<div class="jm-saring">${cariHtml({id:"q",label:t("reg.cari")})}${pilihHtml({id:"jenis",ikon:"jenis",label:t("reg.jenis"),opsi:[["","Semua"],["uu","UU"]]})}${hapusHtml({id:"hapus",label:t("jm.hapus_filter")})}${hitungHtml({id:"hitung",teks:"430 dari 430"})}</div>` */
-import { t } from "/i18n.js";
-import { esc, ikon } from "/inti/umum.js";
+import { t, tanggal } from "/i18n.js";
+import { esc, ikon, judulHuruf } from "/inti/umum.js";
 import { kabar } from "/inti/aksi_ex.js";
 import { urlMutlak, tautanBagi } from "/inti/bagi.js";
 export { urlMutlak, tautanBagi };
@@ -10,8 +10,17 @@ export const cariHtml = ({ id, label, placeholder }) =>
   `<label class="jm-cari">${ikon("cari2", 18)}<span class="sr">${esc(label)}</span><input id="${esc(id)}" type="search" autocomplete="off" placeholder="${esc(placeholder ?? label)}"></label>`;
 
 /** opsi: [[nilai, teks, ikon?, hitungan?], ...]; ikon per opsi ("tek:surya", "st:beroperasi", "prov:Aceh", atau nama sprite) menimpa ikon select. Teks panjang dipotong elipsis. */
-export const pilihHtml = ({ id, ikon: ik, label, opsi, nilai = "" }) =>
-  `<label class="jm-pil-pilih">${ikon(ik, 18)}<span class="sr">${esc(label)}</span><select id="${esc(id)}" title="${esc(label)}" data-ikon="${esc(ik)}">${opsi.map(([v, l, i, n]) => `<option value="${esc(v)}"${String(v) === String(nilai) ? " selected" : ""} title="${esc(l)}"${i ? ` data-ikon="${esc(i)}"` : ""}${n !== undefined && n !== "" ? ` data-n="${esc(n)}"` : ""}>${esc(l)}</option>`).join("")}</select></label>`;
+export const pilihHtml = ({ id, ikon: ik, label, opsi, nilai = "" }) => {
+  const o = ([v, l, i, n]) => `<option value="${esc(v)}"${String(v) === String(nilai) ? " selected" : ""} title="${esc(l)}"${i ? ` data-ikon="${esc(i)}"` : ""}${n !== undefined && n !== "" ? ` data-n="${esc(n)}"` : ""}>${esc(l)}</option>`;
+  /* opsi kelima = nama grup (opsi sejenis berurutan dibungkus <optgroup>) */
+  let isi = "", g = null;
+  for (const x of opsi) {
+    if (x[4] !== g) { isi += g ? "</optgroup>" : ""; g = x[4] || null; isi += g ? `<optgroup label="${esc(g)}">` : ""; }
+    isi += o(x);
+  }
+  isi += g ? "</optgroup>" : "";
+  return `<label class="jm-pil-pilih">${ikon(ik, 18)}<span class="sr">${esc(label)}</span><select id="${esc(id)}" title="${esc(label)}" data-ikon="${esc(ik)}">${isi}</select></label>`;
+};
 
 /** Tautan teks kecil berikon X; atribut hidden sampai ada filter aktif (atur `el.hidden`). */
 export const hapusHtml = ({ id, label }) =>
@@ -206,14 +215,21 @@ export const unduhRegHtml = (r) => {
 /* Tombol bagikan bersama (permintaan pemilik 8 Nov 2026): Facebook, X, WhatsApp, LinkedIn, salin tautan.
    Tautan dibuka di tab baru dengan rel noopener; url kanonik (relatif dijadikan mutlak). Penyalinan ditangani satu pendengar klik di bawah.
    Pakai: bagikanHtml({ url: "/siaran-pers/abc", judul: "Judul", kelas: "kecil" }). */
-export const bagikanHtml = ({ url, judul, kelas = "" }) => {
+export const bagikanHtml = ({ url, judul, kelas = "", lengkap = false }) => {
   const mutlak = urlMutlak(url), h = tautanBagi(mutlak, judul);
   const a = (k, ik, kunci) => `<a class="jm-bagi-b" href="${esc(h[k])}" target="_blank" rel="noopener noreferrer" title="${esc(t(kunci))}" aria-label="${esc(t(kunci))}">${ikon(ik, 18)}</a>`;
-  return `<span class="jm-bagi${kelas ? " " + esc(kelas) : ""}" role="group" aria-label="${esc(t("bagi.grup"))}">${a("fb", "facebook", "bagi.fb")}${a("x", "x", "bagi.x")}${a("wa", "whatsapp", "aksi.wa")}${a("li", "linkedin", "aksi.li")}<button type="button" class="jm-bagi-b" data-jm-salin="${esc(mutlak)}" title="${esc(t("aksi.salin"))}" aria-label="${esc(t("aksi.salin"))}">${ikon("salin", 18)}</button></span>`;
+  const salin = `<button type="button" class="jm-bagi-b" data-jm-salin="${esc(mutlak)}" title="${esc(t("aksi.salin"))}" aria-label="${esc(t("aksi.salin"))}">${ikon("salin", 18)}</button>`;
+  /* lengkap: urutan WhatsApp, X, LinkedIn, Facebook, Telegram, Surel, Salin + tombol Web Share bila peramban mendukung */
+  const isi = lengkap
+    ? `${a("wa", "whatsapp", "aksi.wa")}${a("x", "x", "bagi.x")}${a("li", "linkedin", "aksi.li")}${a("fb", "facebook", "bagi.fb")}${a("tg", "telegram", "bagi.tg")}<a class="jm-bagi-b" href="${esc(h.surel)}" title="${esc(t("bagi.surel"))}" aria-label="${esc(t("bagi.surel"))}">${ikon("surel", 18)}</a>${salin}${typeof navigator !== "undefined" && navigator.share ? `<button type="button" class="jm-bagi-b" data-jm-natif="${esc(mutlak)}" data-judul="${esc(judul)}" title="${esc(t("bagi.natif"))}" aria-label="${esc(t("bagi.natif"))}">${ikon("bagikan", 18)}</button>` : ""}`
+    : `${a("fb", "facebook", "bagi.fb")}${a("x", "x", "bagi.x")}${a("wa", "whatsapp", "aksi.wa")}${a("li", "linkedin", "aksi.li")}${salin}`;
+  return `<span class="jm-bagi${kelas ? " " + esc(kelas) : ""}" role="group" aria-label="${esc(t("bagi.grup"))}">${isi}</span>`;
 };
 if (typeof document !== "undefined" && !window.__jmBagi) {
   window.__jmBagi = true;
   document.addEventListener("click", async (e) => {
+    const n = e.target.closest("[data-jm-natif]");
+    if (n) { try { await navigator.share({ url: n.dataset.jmNatif, title: n.dataset.judul }); } catch (x) { /* dibatalkan pengguna */ } return; }
     const b = e.target.closest("[data-jm-salin]");
     if (!b) return;
     try { await navigator.clipboard.writeText(b.dataset.jmSalin); kabar(t("aksi.disalin")); } catch (x) { kabar(t("aksi.gagal")); }
@@ -235,19 +251,26 @@ const TERKAIT_URUT = [
   ["siaran", "siaran"],
   ["berita", "berita"],
 ];
-const TERKAIT_MAKS = 12;
+const TERKAIT_TAMPIL = 6;
+const KLS_STATUS = { berlaku: "jm-pil-ok", diubah: "jm-pil-warn", dicabut: "jm-pil-bad" };
+/* satu butir: ikon/logo kecil, label pendek, satu baris judul (elipsis, title penuh), meta (tanggal, status) */
+function butirTerkait(j, x, ik, bangun, rinci) {
+  if (j === "berita") return `<li class="jm-tr"><a class="jm-tr-a" href="${esc(x.url)}" target="_blank" rel="noopener noreferrer" title="${esc(x.nama)}"><span class="jm-tr-ik">${ikon(ik, 18)}</span><span class="jm-tr-isi"><b>${esc(judulHuruf(x.nama))}</b>${x.media ? `<small>${esc(x.media)}</small>` : ""}</span></a></li>`;
+  const r = rinci(j, x);
+  if (!r) return `<li class="jm-tr jm-tr-p"><span class="jm-tr-ik">${ikon(ik, 18)}</span><span class="jm-tr-isi">${bangun(j, x)}</span></li>`;
+  const judul = judulHuruf(r.nama);
+  const logo = r.logo ? `<img class="jm-tr-lb" src="${esc(r.logo)}" alt="" width="24" height="24" loading="lazy" decoding="async" data-galat="hapus">` : ikon(ik, 18);
+  const meta = (r.tgl ? `<small class="jm-tr-tgl">${esc(tanggal(r.tgl))}</small>` : "") + (r.status && KLS_STATUS[r.status] ? `<span class="jm-pil ${KLS_STATUS[r.status]}">${esc(t("reg.status." + r.status))}</span>` : "");
+  return `<li class="jm-tr"><a class="jm-tr-a" href="${esc(r.href)}" title="${esc(r.kode ? r.kode + ": " + judul : judul)}"><span class="jm-tr-ik">${logo}</span><span class="jm-tr-isi"><b>${esc(r.kode || judul)}</b>${r.kode ? `<small class="jm-tr-jd">${esc(judul)}</small>` : ""}</span>${meta ? `<span class="jm-tr-meta">${meta}</span>` : ""}</a>${j === "regulasi" ? unduhRegHtml({ url_pdf: r.pdf, url_sumber: r.sumber, judul: r.kode }) : ""}</li>`;
+}
 export async function terkaitHtml(jenis, id, { kecuali = [] } = {}) {
-  const { hubungan, bangun } = await import("/inti/tautan.js");
+  const { hubungan, bangun, rinci } = await import("/inti/tautan.js");
   const h = await hubungan(jenis, id);
   const grup = TERKAIT_URUT.filter(([j]) => h[j]?.length && !kecuali.includes(j)).map(([j, ik]) => {
-    const isi = [...new Set(h[j])];
-    const butir = isi.slice(0, TERKAIT_MAKS).map((x) =>
-      j === "berita"
-        ? `<li><a class="jm-taut jm-taut-berita" href="${esc(x.url)}" target="_blank" rel="noopener noreferrer"><span>${esc(x.nama)}</span></a></li>`
-        : `<li>${bangun(j, x)}</li>`,
-    );
-    const lagi = isi.length - butir.length;
-    return `<div class="jm-terkait-grup"><h3>${ikon(ik, 16)}<span>${esc(t("terkait." + j))}</span><b>${isi.length}</b></h3><ul>${butir.join("")}${lagi > 0 ? `<li class="jm-bantu">${esc(t("terkait.lagi", { n: lagi }))}</li>` : ""}</ul></div>`;
+    const isi = j === "berita" ? h[j] : [...new Set(h[j])];
+    const butir = isi.map((x, i) => butirTerkait(j, x, ik, bangun, rinci).replace('class="jm-tr', i >= TERKAIT_TAMPIL ? 'hidden class="jm-tr' : 'class="jm-tr'));
+    const lagi = isi.length - TERKAIT_TAMPIL;
+    return `<div class="jm-terkait-grup"><h3>${ikon(ik, 18)}<span>${esc(t("terkait." + j))}</span><b>${isi.length}</b></h3><ul>${butir.join("")}</ul>${lagi > 0 ? `<button type="button" class="jm-tbl jm-tbl-kecil jm-tr-semua" data-jm-semua aria-expanded="false" data-ringkas="${esc(t("terkait.ringkas"))}">${ikon("daftar2", 16)}<span>${esc(t("terkait.semua", { n: isi.length }))}</span></button>` : ""}</div>`;
   });
   if (!grup.length) return "";
   return exHtml({
@@ -258,5 +281,17 @@ export async function terkaitHtml(jenis, id, { kecuali = [] } = {}) {
     subHtml: esc(t("terkait.sub")),
     kelas: "jm-terkait",
     isiHtml: `<div class="jm-terkait-isi">${grup.join("")}</div>`,
+  });
+}
+
+if (typeof document !== "undefined" && !window.__jmSemua) {
+  window.__jmSemua = true;
+  document.addEventListener("click", (e) => {
+    const b = e.target.closest("[data-jm-semua]");
+    if (!b) return;
+    const buka = b.getAttribute("aria-expanded") !== "true";
+    b.setAttribute("aria-expanded", String(buka));
+    const lbl = b.querySelector("span"); b.dataset.semua ??= lbl.textContent; lbl.textContent = buka ? b.dataset.ringkas : b.dataset.semua;
+    b.previousElementSibling.querySelectorAll("li.jm-tr").forEach((li, i) => { if (i >= TERKAIT_TAMPIL) li.hidden = !buka; });
   });
 }

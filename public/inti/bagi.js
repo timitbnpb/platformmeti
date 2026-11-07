@@ -6,6 +6,8 @@ export const tautanBagi = (url, judul) => {
     fb: `https://www.facebook.com/sharer/sharer.php?u=${u}`,
     x: `https://twitter.com/intent/tweet?url=${u}&text=${j}`,
     wa: `https://wa.me/?text=${encodeURIComponent(judul + " " + url)}`,
+    tg: `https://t.me/share/url?url=${u}&text=${j}`,
+    surel: `mailto:?subject=${j}&body=${u}`,
     li: `https://www.linkedin.com/sharing/share-offsite/?url=${u}`,
   };
 };

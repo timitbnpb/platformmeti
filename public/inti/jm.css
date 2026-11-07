@@ -302,9 +302,22 @@ nav.jm-isi{display:none!important}
 .jm-taut>span{min-width:0;overflow-wrap:anywhere}
 .jm-taut-lb{width:16px;height:16px;flex:none;object-fit:contain;border-radius:3px}
 .jm-taut-ik{display:inline-grid;width:16px;height:16px;flex:none}.jm-taut-ik svg{width:16px;height:16px}
-.jm-terkait-isi{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:18px 28px;padding:18px 22px}
-.jm-terkait-grup h3{display:flex;align-items:center;gap:8px;margin:0 0 8px;font-size:var(--t-body)}.jm-terkait-grup h3 b{margin-left:auto;font-weight:600;color:var(--ink2)}
+.jm-terkait-isi{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:20px 24px;padding:18px 22px;align-items:start}
+.jm-terkait-grup{display:flex;flex-direction:column;gap:8px;min-width:0}
+.jm-terkait-grup h3{display:flex;align-items:center;gap:8px;margin:0;padding-bottom:8px;border-bottom:2px solid var(--line);font:700 var(--t-body)/var(--lh-judul) var(--display);color:var(--head)}.jm-terkait-grup h3 .jm-ik{stroke:var(--accent);fill:none}
+.jm-terkait-grup h3 b{margin-left:auto;min-width:24px;padding:0 8px;border-radius:var(--r-pil);background:var(--soft-hijau);color:var(--accent);font:700 var(--t-kecil)/22px var(--font);text-align:center}
 .jm-terkait-grup ul{list-style:none;margin:0;padding:0;display:grid;gap:6px}
+.jm-tr{display:flex;align-items:center;gap:8px;min-width:0;padding:8px 10px;border:1px solid var(--line);border-radius:var(--r-sm);background:var(--card)}
+.jm-tr[hidden]{display:none}
+.jm-tr:hover{border-color:var(--accent);background:var(--soft-hijau)}
+.jm-tr-a{display:flex;align-items:center;gap:10px;flex:1;min-width:0;color:var(--ink);text-decoration:none}
+.jm-tr-ik{display:inline-grid;place-items:center;flex:none;width:28px;height:28px;border-radius:var(--r-sm);background:var(--soft-hijau)}.jm-tr-ik .jm-ik{stroke:var(--accent);fill:none}
+.jm-tr-lb{width:24px;height:24px;object-fit:contain;border-radius:3px}
+.jm-tr-isi{display:flex;flex-direction:column;min-width:0;flex:1}
+.jm-tr-isi b{font:600 var(--t-tombol)/var(--lh-rapat) var(--font);color:var(--accent);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.jm-tr-isi small{font-size:var(--t-kecil);color:var(--ink2);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.jm-tr-meta{display:flex;flex-direction:column;align-items:flex-end;gap:2px;flex:none}.jm-tr-tgl{font-size:var(--t-kecil);color:var(--ink2);white-space:nowrap}
+.jm-tr-semua{align-self:flex-start}.jm-tr-semua .jm-ik{stroke:currentColor;fill:none}
 /* penerbit: logo + nama pendek (pemilik: logo saja tidak terbaca); jumlah aturan disembunyikan secara visual */
 .jm-reg-pen .jm-pen{display:flex;align-items:center;gap:10px;text-align:left}
 .jm-reg-pen .jm-pen-pendek{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;font:600 var(--t-tombol)/var(--lh-rapat) var(--font);color:var(--ink)}
@@ -570,3 +583,14 @@ main>:is(section,div,article)+:is(section,div,article){margin-top:max(24px,var(-
 @media (max-width:639px){.jm-lg-y{font-size:var(--t-label)}.jm-lg-kolom{gap:2px}.jm-lg-v{font-size:var(--t-label)}}
 @media (prefers-reduced-motion:reduce){.jm-lg-batang{transition:none}}
 .jm-lg-eb svg,.jm-lg-eb .jm-ik{width:14px!important;height:14px!important;flex:none}.jm-lg-eb span{white-space:nowrap}.jm-lg-kep>div{flex:1;min-width:0}
+
+/* paginasi bernomor bersama (inti/paginasi.js) */
+.jm-pag{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px;margin:16px 0;color:var(--ink2);font-size:var(--t-body)}
+.jm-pag-nomor{display:inline-flex;flex-wrap:wrap;align-items:center;gap:6px}
+.jm-pag-b{display:inline-grid;place-items:center;min-width:40px;height:40px;padding:0 10px;border:1px solid var(--line-ctl);border-radius:var(--r);background:var(--card);color:var(--ink);font:600 var(--t-tombol)/1 var(--font);font-variant-numeric:tabular-nums;cursor:pointer}
+.jm-pag-b:hover:not(:disabled){border-color:var(--accent);color:var(--accent)}
+.jm-pag-b[aria-current=page]{background:var(--accent);border-color:var(--accent);color:var(--on-accent)}
+.jm-pag-b:disabled{opacity:.45;cursor:not-allowed}
+.jm-pag-b:focus-visible{outline:3px solid var(--fokus);outline-offset:2px}
+.jm-pag-b svg{stroke:currentColor;fill:none}
+.jm-pag-elips{padding:0 4px;color:var(--ink2)}

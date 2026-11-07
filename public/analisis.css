@@ -548,7 +548,7 @@ a.jm-wp-op:hover{color:var(--accent)}
 .jm-wp-lg .jm-wp-org-i{width:100%;height:100%;border-radius:0}
 .jm-wp-ob{display:flex;flex-direction:column;gap:4px;min-width:0}
 .jm-wp-ob b{font-size:var(--t-body);line-height:1.3;overflow-wrap:anywhere}
-.jm-wp-jenis{align-self:flex-start;gap:5px;font-size:var(--t-kecil)}
+.jm-wp-jenis{align-self:flex-start;gap:5px;max-width:100%;height:auto;padding:3px 10px;white-space:normal;font-size:var(--t-kecil)}
 .jm-wp-kota{display:inline-flex;align-items:center;gap:4px;color:var(--ink2);font-size:var(--t-kecil)}
 .jm-wp-kota svg{flex:none}
 /* peta */
@@ -601,7 +601,7 @@ a.jm-wp-op:hover{color:var(--accent)}
 .jm-wp-bd td.jm-num{width:auto}
 .jm-wp-uk-n{display:inline-flex;align-items:center;gap:10px}
 .jm-wp-uk-ik{flex:none;display:grid;place-items:center;width:32px;height:32px;border-radius:8px;background:var(--info-bg);color:var(--accent-isi)}
-.jm-wp-v b{font-size:var(--t-tombol)}.jm-wp-v small{margin-left:4px;color:var(--ink2);font-size:var(--t-kecil)}
+.jm-wp-v{white-space:nowrap}.jm-wp-v b{font-size:var(--t-tombol)}.jm-wp-v small{margin-left:4px;color:var(--ink2);font-size:var(--t-kecil)}
 .jm-wp-rk-p{gap:5px;white-space:nowrap}
 .jm-wp-ds{position:relative;display:block;height:18px;min-width:110px;margin:0 8px}
 .jm-wp-ds-g{position:absolute;left:0;right:0;top:8px;height:2px;border-radius:1px;background:var(--line)}

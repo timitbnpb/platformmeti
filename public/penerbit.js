@@ -48,3 +48,6 @@ export function penerbitHtml(nama, ukuran = 32) {
 }
 /* berkas hilang -> ikon gedung (tanpa onerror inline: CSP) */
 document.addEventListener("error", (e) => { const i = e.target; if (i && i.tagName === "IMG" && i.classList.contains("jm-pen-lg") && !i.src.endsWith("gedung.svg")) i.src = GEDUNG; }, true);
+
+/* penerbit turunan: data kosong -> Keppres/Perpres/PP/Inpres selalu terbit atas nama Presiden (Pemerintah Pusat); selain itu dibiarkan kosong */
+export const penerbitDari = (r) => r?.instansi_penerbit || (["keppres", "perpres", "pp", "inpres"].includes(r?.jenis) ? "Pemerintah Pusat" : "");

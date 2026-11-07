@@ -1,6 +1,6 @@
 /* Pemilih cantik (ES module): <select> asli tetap sumber kebenaran (tersembunyi, event change), tampilannya tombol pil berikon + menu kartu.
    Menu posisi fixed supaya tidak terpotong kartu overflow:hidden. Dikecualikan dengan atribut data-asli.
-   Ikon: data-ikon pada <select> (bawaan semua opsi) atau pada <option>. Nilai: "nama" sprite, "tek:kode", "st:kode", "prov:kode-BPS" (11, 12, ...; lambang di /img/provinsi). */
+   Ikon: data-ikon pada <select> (bawaan semua opsi) atau pada <option>. Nilai: "nama" sprite, "tek:kode", "st:kode", "prov:kode-BPS" (11, 12, ...; lambang di /img/provinsi), "img:/img/..." (logo). */
 import { t } from "/i18n.js";
 import { esc, ikon } from "/inti/umum.js";
 import { IKON_TEK, pilStatus } from "/inti/ikon_tek.js";
@@ -14,6 +14,7 @@ export function ikonHtml(spec) {
   const [jenis, nilai] = spec.includes(":") ? spec.split(/:(.*)/s) : ["", spec];
   if (jenis === "tek") return IKON_TEK[nilai] || "";
   if (jenis === "st") return (SVG.exec(pilStatus(nilai)) || [""])[0];
+  if (jenis === "img") return /^\/img\/[\w./-]+$/.test(nilai) ? `<img class="pc-lb" src="${esc(nilai)}" width="18" height="18" alt="" loading="lazy" decoding="async" data-galat="hapus">` : "";
   if (jenis === "prov") {
     const k = /^\d+$/.test(nilai) ? nilai : null;
     return k

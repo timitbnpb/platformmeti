@@ -19,15 +19,16 @@ const RUTE = { proyek: (k) => "/p/" + k, org: (k) => "/o/" + k, regulasi: (k) =>
 const data = {}; // jenis -> Promise<json>
 const idx = {}; // jenis -> { byId: Map(id -> rekam), byNama: Map(norm -> id) }
 const muatJson = (j) => (data[j] ??= fetch(`/data/${SUMBER[j]}.json`).then((r) => r.json()).catch(() => { delete data[j]; return { baris: [] }; }));
+const KODE_REG = { uu: "UU", perppu: "Perppu", pp: "PP", perpres: "Perpres", keppres: "Keppres", inpres: "Inpres", permen: "Permen", perda: "Perda" };
 const rekam = {
   proyek: (b) => ({ id: b.id, nama: namaProyek(b), lain: [b.nama, ...(b.nama_lain || [])] }),
   org: (b) => ({ id: b.id, nama: b.nama, lain: [b.nama, b.singkatan, ...(b.nama_lain || [])], logo: b.logo }),
   orang: (b) => ({ id: b.id, nama: [b.gelar, b.nama].filter(Boolean).join(" "), lain: [b.nama], org: b.organisasi_id }),
-  regulasi: (b) => ({ id: b.id, nama: b.judul, lain: [] }),
-  event: (b) => ({ id: b.slug, nama: b.judul, lain: [], ada: !!b.slug }),
-  dokumen: (b) => ({ id: b.id, nama: b.judul, lain: [] }),
+  regulasi: (b) => ({ id: b.id, nama: b.judul, lain: [], kode: `${KODE_REG[b.jenis] || String(b.jenis || "").toUpperCase()} ${b.nomor}/${b.tahun}`, tgl: b.tanggal_ditetapkan, status: b.status, pdf: b.url_pdf, sumber: b.url_sumber }),
+  event: (b) => ({ id: b.slug, nama: b.judul, lain: [], ada: !!b.slug, tgl: b.tanggal }),
+  dokumen: (b) => ({ id: b.id, nama: b.judul, lain: [], tgl: b.tanggal }),
   program: (b) => ({ id: b.id, nama: b.nama, lain: [b.nama] }),
-  siaran: (b) => ({ id: b.id, nama: b.judul, lain: [] }),
+  siaran: (b) => ({ id: b.id, nama: b.judul, lain: [], tgl: b.tanggal }),
   berita: (b) => ({ id: b.id, nama: b.judul, lain: [] }),
 };
 export function siapTautan(...jenis) {
@@ -45,6 +46,9 @@ export function siapTautan(...jenis) {
   })));
 }
 const cari = (j, kunci) => { const x = idx[j]; if (!x) return undefined; const s = String(kunci ?? ""); return x.byId.get(s) ?? x.byId.get(x.byNama.get(norm(s))) ?? null; };
+
+/** Rekam ringkas untuk satu butir panel Terkait: { id, nama, kode?, tgl?, status?, logo?, pdf?, sumber?, href } atau null (indeks belum siap/tak ada). */
+export const rinci = (j, kunci) => { const r = cari(j, kunci); return r ? { ...r, href: RUTE[j](r.id) } : null; };
 
 /* ---------- provinsi dan teknologi: tanpa fetch ---------- */
 const KODE_PROV = new Set(Object.values(PROV).map((k) => String(k)));

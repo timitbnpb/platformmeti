@@ -103,7 +103,7 @@ export function bangunDetail() {
       kalender: kal.filter((k) => re.test(k.judul + ' ' + (k.mitra || ''))).map((k) => ({ tanggal: k.tanggal, judul: k.judul, jenis: k.jenis, url: k.sumber?.url || null })),
       emisi: em.length ? {
         jumlah: em.length, total_tco2e: Math.round(em.reduce((s, x) => s + (x.emisi_tco2e || 0), 0)), tahun: em[0].tahun, sumber: em[0].sumber, url: 'https://climatetrace.org/', lisensi: em[0].lisensi, tanggal: em[0].tanggal, tingkat_bukti: em[0].tingkat_bukti,
-        pembangkit: em.sort((a, b) => (b.emisi_tco2e || 0) - (a.emisi_tco2e || 0)).slice(0, 10).map((x) => ({ nama: x.nama, jenis: x.jenis_aset, mw: x.kapasitas_mw, emisi: x.emisi_tco2e, tahun: x.tahun, lat: x.lat, lng: x.lng })),
+        pembangkit: em.sort((a, b) => (b.emisi_tco2e || 0) - (a.emisi_tco2e || 0)).map((x) => ({ nama: x.nama, jenis: x.jenis_aset, mw: x.kapasitas_mw, emisi: x.emisi_tco2e, tahun: x.tahun, lat: x.lat, lng: x.lng })),
       } : null,
       pakar: { jumlah: pk.length, sumber: 'OpenAlex (afiliasi institusi terkini)', url: 'https://openalex.org/', tanggal: TANGGAL, daftar: pk.slice(0, 12).map((x) => ({ nama: x.nama, institusi: x.afiliasi?.institusi || null, topik: (x.kepakaran || []).map((k) => k.kode), h: x.h_index ?? null, url: x.sumber_url || null })) },
     };

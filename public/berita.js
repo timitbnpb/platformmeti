@@ -147,7 +147,7 @@ function gambarBagian() {
   BAGIAN.forEach(([kunci, ks, ik], i) => {
     const xs = dalamBagian(ks); if (xs.length < 2) return;
     const semua = B.filter((r) => (r.kepakaran || []).some((k) => ks.includes(k))).length;
-    const lihat = `<button type="button" class="brt-semua" data-lihat="${esc(ks.join(","))}">${esc(t("brt.lihat", { n: angka(semua) }))} &rarr;</button>`;
+    const lihat = `<button type="button" class="brt-semua" data-lihat="${esc(ks.join(","))}"><span>${esc(t("brt.lihat.t"))}</span><b class="brt-semua-n">${esc(angka(semua))}</b>${ikon("panah-kanan", 18)}</button>`;
     html += blok("ex-" + kunci, ik, t("brt.sek." + kunci), hlHtml("brt.sek.j", angka(xs.length), { tek: t("brt.sek." + kunci).toLowerCase() }), lihat, majalah(xs, ks, i % 2 === 0), i + 1, angkaBagian(xs));
   });
   el.innerHTML = html;

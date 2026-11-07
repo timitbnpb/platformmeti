@@ -32,6 +32,7 @@ Diambil oleh scripts/panen/panen_logo.mjs (UA METI, robots.txt dihormati, jeda >
 - l_05301f48a5 | Kementerian Investasi dan Hilirisasi/BKPM | logo-header | https://bkpm.go.id/assets/frontend/image/logo/logo-id-2024.png
 - l_060c77568c | Badan Pengelola Dana Perkebunan | wikidata-p154 | https://commons.wikimedia.org/wiki/File:Logo_BPDP_Sawit.svg (Wikidata Q122763776)
 - l_06d49428ac | Asosiasi Produsen Listrik Swasta Indonesia | apple-touch-icon | https://aplsi.or.id/wp-content/uploads/2026/04/cropped-aplsi_favicon_full_512-192x192.png
+- l_07dd603a7c | Institut Teknologi Bandung - Pusat Studi Energi (Center for Renewable Energy Studies) | logo-header | https://itb.ac.id/assets/images/Logo%20ITB_COLOR_2026@4x.png
 - l_0823338eb7 | Dinas ESDM Provinsi Sulawesi Barat | logo-header | https://cloudfiles.website.sulbarprov.go.id/store/761301/assets/icon/logo.png
 - l_0974f82eba | Asosiasi Pemasok Energi, Mineral, dan Batubara Indonesia | apple-touch-icon | https://aspebindo.id/wp-content/uploads/2023/08/Association-Profile-ASPEBINDO-logo-2-1ev.png
 - l_09bd6fb0a8 | Dinas ESDM Provinsi Sumatera Barat | favicon | https://esdm.sumbarprov.go.id/assets/logo-BefqP45p.png

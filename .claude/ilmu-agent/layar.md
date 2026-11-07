@@ -78,3 +78,4 @@ Belum ada kasus. Tambahkan lewat ilmu.mjs kasus.
 - 2026-11-08 · Tabel admin table-layout:fixed: kolom tanpa kelas lebar jadi 0 px dan isi tetangga menimpa; jangan fixed tanpa lebar semua kolom. Kelas legenda jm-adm-w0..4 diganti jm-adm-dt0..4.
 - 2026-11-08 · Foto avatar: crop wajah dikerjakan di pipeline (scripts/pipa/foto_wajah.mjs + wajah.swift Vision, catatan data/foto_wajah.json), bukan object-position; python3 -I tak menemukan PIL user-site
 - 2026-11-08 · gerbang-i18n: regex literal salah pasang bila template berisi ${esc(x || "")} atau regex /\/\//; pindahkan ke const dan pakai [/][/]
+- 2026-11-08 · Peta 3D MapLibre ditolak pemilik (7 Nov): koroplet provinsi tetap SVG datar. Screenshot headless WebGL harus real-time (CDP + tunggu), bukan --virtual-time-budget; stylesheet dinamis harus ditunggu sebelum new Map atau kanvas 0px.
