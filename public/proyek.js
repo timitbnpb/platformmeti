@@ -121,7 +121,7 @@ function gambarCorong() {
   const maks = Math.max(1, ...TAHAP.map((k) => st[k] || 0));
   $("pjCorong").innerHTML = `<ol class="jm-pj-corong">${TAHAP.map((k) => `<li><span class="jm-pj-c-l">${esc(labSt(k))}</span><span class="jm-pj-bar"><i data-w="${((st[k] || 0) / maks) * 100}"></i></span><b>${num(st[k] || 0)}</b><small>${st[k] ? num(mw[k] || 0, 0) + " MW" : "-"}</small></li>`).join("")}</ol>` +
     (st[TIDAK] ? `<p class="jm-bantu">${esc(t("pj.corong.tak", { n: num(st[TIDAK]) }))}</p>` : "") + `<p class="jm-bantu">${esc(t("pj.corong.cara"))}</p>`;
-  for (const i of $("pjCorong").querySelectorAll("i")) i.style.setProperty("--w", i.dataset.w + "%");
+  for (const i of $("pjCorong").querySelectorAll("i")) i.style.width = i.dataset.w + "%";
 }
 
 /* ---------- tabel (urut + paging) ---------- */

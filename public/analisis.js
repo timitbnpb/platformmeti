@@ -34,21 +34,20 @@ export function kartuHtml({ judul, nilai, satuan, penyebut, sumber, turunan }) {
     ${penyebut ? `<p class="jm-bantu">${esc(penyebut)}</p>` : ""}${sumber || ""}</article>`;
 }
 
-/* Batang horizontal SVG. baris: [{label, bagian:[{nilai, kelas}], teks, sorot}]; lebar tetap viewBox, ukuran dari CSS. */
+/* Batang horizontal: teks HTML (rapi di layar sempit), batang SVG berskala viewBox. baris: [{label, bagian:[{nilai, kelas}], teks, sorot}]. */
 export function batangSvg(baris, { maks, label } = {}) {
   const M = maks || Math.max(1, ...baris.map((b) => b.bagian.reduce((s, x) => s + (x.nilai || 0), 0)));
-  const H = 30, L = 150, W = 360;
-  const isi = baris.map((b, i) => {
-    let x = L;
+  const isi = baris.map((b) => {
+    let x = 0;
     const rect = b.bagian.map((p) => {
-      const w = Math.max(0, ((p.nilai || 0) / M) * W);
-      const r = `<rect class="${p.kelas}" x="${x.toFixed(1)}" y="${i * H + 6}" width="${w.toFixed(1)}" height="18" rx="3"/>`;
+      const w = Math.max(0, ((p.nilai || 0) / M) * 100);
+      const r = `<rect class="${p.kelas}" x="${x.toFixed(2)}" y="0" width="${w.toFixed(2)}" height="10"/>`;
       x += w;
       return r;
     }).join("");
-    return `<g class="${b.sorot ? "jm-an-sorot" : ""}"><text class="jm-an-lbl" x="${L - 8}" y="${i * H + 19}" text-anchor="end">${esc(b.label)}</text>${rect}<text class="jm-an-val" x="${(x + 6).toFixed(1)}" y="${i * H + 19}">${esc(b.teks)}</text></g>`;
+    return `<li class="jm-an-br${b.sorot ? " jm-an-sorot" : ""}"><div class="jm-an-bt"><span>${esc(b.label)}</span><b>${esc(b.teks)}</b></div><svg viewBox="0 0 100 10" preserveAspectRatio="none" aria-hidden="true" focusable="false"><rect class="jm-an-trek" x="0" y="0" width="100" height="10"/>${rect}</svg></li>`;
   }).join("");
-  return `<svg class="jm-an-batang" viewBox="0 0 ${L + W + 90} ${baris.length * H + 6}" role="img" aria-label="${esc(label || "")}" focusable="false">${isi}</svg>`;
+  return `<ul class="jm-an-batang" aria-label="${esc(label || "")}">${isi}</ul>`;
 }
 
 export const teksTek = (k) => t("an.tek." + k);

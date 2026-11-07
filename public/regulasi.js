@@ -122,7 +122,7 @@ function terkait(r) {
 }
 function profilHtml(r) {
   const nama = (id) => { const x = D.byId.get(id); return x ? `<button type="button" data-id="${esc(id)}">${esc(namaRegulasi(x))}</button>` : `<span>${esc(id)}</span>`; };
-  const rantai = (judul, daftar, kunci) => (daftar?.length ? `<section><h3>${esc(t(judul))}</h3><ul class="jm-rantai">${daftar.map((x) => `<li><span class="jm-tanda jm-tanda-${x.jenis}">${esc(t("reg.tl." + x.jenis))}</span>${nama(x[kunci])}</li>`).join("")}</ul></section>` : "");
+  const rantai = (judul, daftar, kunci, pasif) => (daftar?.length ? `<section><h3>${esc(t(judul))}</h3><ul class="jm-rantai">${daftar.map((x) => `<li><span class="jm-tanda jm-tanda-${x.jenis}">${esc(t((pasif ? "reg.tp." : "reg.tl.") + x.jenis))}</span>${nama(x[kunci])}</li>`).join("")}</ul></section>` : "");
   const { proyek, program } = terkait(r);
   const lain = (n) => (n > 8 ? ` <small>${esc(t("reg.lainnya", { n: angka(n - 8) }))}</small>` : "");
   const sat = (p) => esc(`${p.nama}${p.lokasi?.provinsi ? ", " + p.lokasi.provinsi : ""}`);
@@ -131,9 +131,9 @@ function profilHtml(r) {
     <button type="button" class="iconbtn" data-aksi="tutup" aria-label="${esc(t("jm.tutup"))}">${ikon("tutup", 22)}</button></div>
     <div class="jm-baris-meta">${pil(r)}<span class="jm-pil">${esc(label("reg.tingkat.", tingkatDari(r)))}</span></div>
     <dl class="jm-dl">${dd("reg.f.jenis", esc(label("reg.jenis.", r.jenis)))}${dd("reg.f.penerbit", esc(r.instansi_penerbit))}${dd("reg.f.ditetapkan", esc(tanggal(r.tanggal_ditetapkan)))}${r.tanggal_diundangkan ? dd("reg.f.diundangkan", esc(tanggal(r.tanggal_diundangkan))) : ""}${dd("reg.f.topik", (r.topik || []).map((x) => esc(label("reg.topik.", x))).join(", "))}</dl>
-    <section><h3>${esc(t("reg.f.ringkasan"))} <span class="jm-pil jm-pil-est">${esc(t("reg.otomatis"))}</span></h3><p>${esc(r.ringkasan || "-")}</p></section>
+    <section><h3>${esc(t("reg.f.ringkasan"))} ${/^\S+ \d+\/\d+ mengatur /.test(r.ringkasan || "") ? `<span class="jm-pil jm-pil-est">${esc(t("reg.otomatis"))}</span>` : ""}</h3><p>${esc(r.ringkasan || "-")}</p></section>
     ${r.posisi_meti ? `<section class="jm-posisi"><h3>${esc(t("reg.f.posisi"))}</h3><p>${esc(r.posisi_meti)}</p></section>` : ""}
-    ${rantai("reg.rantai.ikatan", r.ikatan, "ke")}${rantai("reg.rantai.diikat", r.diikat_oleh, "dari")}
+    ${rantai("reg.rantai.ikatan", r.ikatan, "ke")}${rantai("reg.rantai.diikat", r.diikat_oleh, "dari", true)}
     ${proyek.length || program.length ? `<section><h3>${esc(t("reg.terkait"))}</h3><ul class="jm-rantai">${program.map((g) => `<li><span class="jm-pil">${esc(t("reg.program"))}</span>${esc(g.nama)}</li>`).join("")}${proyek.slice(0, 8).map((p) => `<li><span class="jm-pil">${esc(t("reg.proyek"))}</span>${sat(p)}</li>`).join("")}</ul>${lain(proyek.length)}</section>` : ""}
     <section><h3>${esc(t("reg.f.sumber"))}</h3><p class="jm-baris-meta">${urlAman(r.url_sumber) ? `<a href="${esc(r.url_sumber)}" target="_blank" rel="noopener noreferrer">${esc(t("reg.naskah"))}</a>` : ""}${urlAman(r.url_pdf) ? `<a href="${esc(r.url_pdf)}" target="_blank" rel="noopener noreferrer">${esc(t("reg.pdf"))}</a>` : ""}<span>${esc(t("reg.diambil", { tanggal: tanggal(r.tanggal_ambil) }))}</span></p></section></div>`;
 }

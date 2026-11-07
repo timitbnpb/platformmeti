@@ -151,12 +151,12 @@ export function dedup(artikel) {
     const k = norm(a.judul), u = urlKanon(a.url);
     const ada = perJudul.get(k) || perUrl.get(u);
     if (!ada) {
-      const baru = { id: createHash('sha1').update(k).digest('hex').slice(0, 10), ...a, kepakaran: [...a.kepakaran], kueri: [a.kueri] };
+      const baru = { id: createHash('sha1').update(k).digest('hex').slice(0, 10), ...a, kepakaran: [...a.kepakaran], kueri: [].concat(a.kueri) };
       perJudul.set(k, baru); perUrl.set(u, baru); hasil.push(baru); continue;
     }
     perJudul.set(k, ada); perUrl.set(u, ada);
     ada.kepakaran = [...new Set([...ada.kepakaran, ...a.kepakaran])];
-    if (!ada.kueri.includes(a.kueri)) ada.kueri.push(a.kueri);
+    for (const q of [].concat(a.kueri)) if (!ada.kueri.includes(q)) ada.kueri.push(q);
   }
   return hasil;
 }
@@ -265,7 +265,11 @@ async function main() {
     }
     if (!baris.length) { console.error('nol artikel: berkas lama tidak ditimpa'); process.exit(1); }
   }
-  const hasil = dedup(baris).sort((a, b) => b.terbit.localeCompare(a.terbit));
+  // Arsip bergulir: baris baru lebih dulu, lalu berkas lama (GDELT sering 429; panen parsial tidak boleh menghapus arsip). Batas 120 hari.
+  const jalurArsip = join(AKAR, 'data-panen/berita/berita.jsonl');
+  const lama = !uji && existsSync(jalurArsip) ? readFileSync(jalurArsip, 'utf-8').split('\n').filter(Boolean).map((l) => JSON.parse(l)) : [];
+  const batas = new Date(Date.now() - 120 * 864e5).toISOString();
+  const hasil = dedup([...baris, ...lama.filter((a) => a.terbit >= batas)]).sort((a, b) => b.terbit.localeCompare(a.terbit));
   const per = {}; for (const a of hasil) for (const k of a.kepakaran) per[k] = (per[k] || 0) + 1;
   const media = {}; for (const a of hasil) media[a.media || '?'] = (media[a.media || '?'] || 0) + 1;
   const sumber = {}; for (const a of hasil) sumber[a.sumber_panen.split(':')[0]] = (sumber[a.sumber_panen.split(':')[0]] || 0) + 1;

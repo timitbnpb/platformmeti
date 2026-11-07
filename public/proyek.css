@@ -13,15 +13,15 @@
 .jm-pj-peta{position:relative;border:1px solid var(--line);border-radius:var(--r);overflow:hidden;margin-top:10px}
 .jm-pj-kanvas{height:min(62vh,560px);min-height:320px;background:var(--surface)}
 .jm-pj-legenda{list-style:none;margin:10px 0 4px;padding:0;display:flex;flex-wrap:wrap;gap:6px 16px;font-size:13px}
-.jm-pj-titik{display:inline-block;width:12px;height:12px;border-radius:50%;margin-right:6px;vertical-align:-1px;background:var(--tc,var(--ink2));border:1px solid var(--paper)}
-.jm-pj-t-surya{--tc:var(--data4)}.jm-pj-t-bayu{--tc:var(--data3)}.jm-pj-t-hidro{--tc:var(--data5)}
-.jm-pj-t-panas-bumi{--tc:var(--warn)}.jm-pj-t-bioenergi{--tc:var(--data2)}.jm-pj-t-biomassa-sampah{--tc:var(--data1)}
-.jm-pj-t-penyimpanan{--tc:var(--ink2)}.jm-pj-t-nuklir{--tc:var(--bad)}.jm-pj-t-lain{--tc:var(--ink2)}
+.jm-pj-titik{display:inline-block;width:12px;height:12px;border-radius:50%;margin-right:6px;vertical-align:-1px;background:var(--ink2);border:1px solid var(--paper)}
+.jm-pj-t-surya{background:var(--data4)}.jm-pj-t-bayu{background:var(--data3)}.jm-pj-t-hidro{background:var(--data5)}
+.jm-pj-t-panas-bumi{background:var(--warn)}.jm-pj-t-bioenergi{background:var(--data2)}.jm-pj-t-biomassa-sampah{background:var(--data1)}
+.jm-pj-t-penyimpanan{background:var(--ink2)}.jm-pj-t-nuklir{background:var(--bad)}.jm-pj-t-lain{background:var(--ink2)}
 
 .jm-pj-corong{list-style:none;margin:0;padding:0;display:grid;gap:8px}
 .jm-pj-corong li{display:grid;grid-template-columns:minmax(80px,120px) minmax(0,1fr) 44px 84px;gap:10px;align-items:center}
 .jm-pj-bar{height:22px;border-radius:var(--r-sm);background:var(--surface);overflow:hidden}
-.jm-pj-bar i{display:block;height:100%;width:var(--w,0%);min-width:2px;background:var(--accent-isi);border-radius:var(--r-sm)}
+.jm-pj-bar i{display:block;height:100%;width:0;min-width:2px;background:var(--accent-isi);border-radius:var(--r-sm)}
 .jm-pj-corong b{text-align:right}
 .jm-pj-corong small{color:var(--ink2)}
 

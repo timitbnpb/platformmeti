@@ -8,7 +8,7 @@ const S = { tampil: "bulan", jenis: "", bulan: "" }; // bulan = "YYYY-MM"
 let D = null;
 
 const bulanDari = (tgl) => tgl.slice(0, 7);
-const namaBulan = (ym) => tanggal(ym + "-01", { gaya: "panjang" }).split(" ").slice(1).join(" ");
+const namaBulan = (ym) => tanggal(ym + "-01", { gaya: "panjang" }).split(" ").slice(1, -1).join(" ");
 function geser(ym, n) { const [y, m] = ym.split("-").map(Number); const d = new Date(Date.UTC(y, m - 1 + n, 1)); return d.toISOString().slice(0, 7); }
 
 function bacaUrl() {

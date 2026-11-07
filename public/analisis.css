@@ -1,0 +1,72 @@
+/* Halaman analisis statis (/wilayah, /rantai, /asean). Hanya token tema.css; kelas .jm-an-*. */
+.jm-an{gap:16px}
+.jm-an h3{font-size:15px;color:var(--ink2);font-weight:600}
+.jm-hero .jm-an-label,.jm-an-label{font:700 11px/1 var(--font);letter-spacing:.1em;text-transform:uppercase;color:var(--meti-lime)}
+.jm-an-kartu-baris{display:grid;gap:var(--gap);grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
+.jm-an-kartu{display:grid;gap:6px;align-content:start}
+.jm-an-angka{font:700 var(--t-angka)/1.1 var(--display);color:var(--head)}
+.jm-an-angka span{font:500 14px/1 var(--font);color:var(--ink2)}
+.jm-an-sumber{display:block;color:var(--ink2);font-size:var(--t-kecil);line-height:1.4;margin-top:4px}
+.jm-an-sumber a{color:var(--accent)}
+.jm-an-cara{display:grid;gap:8px;margin-top:10px}
+.jm-an-cara p{max-width:80ch}
+summary{cursor:pointer;font:600 var(--t-h2)/1.3 var(--display);color:var(--head);min-height:var(--target);display:flex;align-items:center}
+
+/* sakelar metrik: chip aria-pressed */
+.jm-an-sakelar{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:12px}
+.jm-an-sakelar button{min-height:var(--target);padding:0 16px;border:1px solid var(--line-ctl);border-radius:var(--r-pil);background:var(--card);color:var(--ink);font:600 14px/1 var(--font);cursor:pointer}
+.jm-an-sakelar button:hover{border-color:var(--accent);color:var(--accent)}
+.jm-an-sakelar button[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);color:var(--on-accent)}
+
+/* peta koroplet */
+.jm-an-petabagian{display:grid;gap:8px}
+.jm-an-peta{height:320px;border:1px solid var(--line);border-radius:var(--r-sm);overflow:hidden;background:var(--surface)}
+@media (min-width:768px){.jm-an-peta{height:480px}}
+.jm-an-tunjuk{cursor:pointer}
+.jm-an-legenda{display:flex;flex-wrap:wrap;align-items:center;gap:10px 14px}
+.jm-an-ramp{width:140px;height:12px;border-radius:var(--r-pil);border:1px solid var(--line);background:linear-gradient(90deg,color-mix(in srgb,var(--accent-isi) 18%,var(--surface)),var(--accent-isi))}
+.jm-an-kosong{display:inline-block;width:14px;height:14px;vertical-align:middle;border-radius:3px;border:1px solid var(--line-ctl);background:var(--line)}
+.maplibregl-popup-content{background:var(--card);color:var(--ink);border:1px solid var(--line);border-radius:var(--r-sm);box-shadow:var(--shadow);font:400 13px/1.4 var(--font)}
+.maplibregl-popup-tip{display:none}
+
+/* batang */
+.jm-an-batang{list-style:none;margin:0 0 8px;padding:0;display:grid;gap:10px;max-width:760px}
+.jm-an-br{display:grid;gap:3px;padding:2px 6px;border-radius:var(--r-sm)}
+.jm-an-bt{display:flex;justify-content:space-between;gap:12px;font-size:14px}
+.jm-an-bt b{font-weight:600;white-space:nowrap}
+.jm-an-br svg{width:100%;height:12px;display:block}
+.jm-an-trek{fill:var(--surface)}
+.jm-an-b1{fill:var(--data1);background:var(--data1)}
+.jm-an-b2{fill:var(--data3);background:var(--data3)}
+.jm-an-b3{fill:var(--warn);background:var(--warn)}
+.jm-an-b4{fill:var(--data4);background:var(--data4)}
+.jm-an-sorot.jm-an-br{background:var(--soft-hijau);outline:2px solid var(--accent);outline-offset:0}
+.jm-an-sorot.jm-an-br .jm-an-bt span{font-weight:700}
+.jm-an-kunci{display:flex;flex-wrap:wrap;align-items:center;gap:6px 14px;font-size:13px;color:var(--ink2)}
+.jm-an-sw{display:inline-block;width:14px;height:14px;border-radius:3px;margin-right:-8px}
+
+/* garis tren */
+.jm-an-garis{width:100%;max-width:760px;height:auto;display:block}
+.jm-an-garis text{font-size:12px;fill:var(--ink2)}
+.jm-an-grid{stroke:var(--line);stroke-width:1}
+.jm-an-gars polyline{fill:none;stroke:var(--ink2);stroke-opacity:.55;stroke-width:1.5}
+.jm-an-gars.jm-an-sorot polyline{stroke:var(--accent);stroke-opacity:1;stroke-width:3.5}
+.jm-an-gars.jm-an-sorot text{fill:var(--head);font-weight:700}
+@media (max-width:700px){.jm-an-garis text{font-size:20px}}
+.jm-an-baris-id td{font-weight:700;background:var(--soft-hijau)!important}
+
+/* peta pabrik (SVG) */
+.jm-an-peta-svg{width:100%;height:auto;display:block;border:1px solid var(--line);border-radius:var(--r-sm);background:var(--surface)}
+.jm-an-prov{fill:var(--card);stroke:var(--line-ctl);stroke-width:.6}
+.jm-an-titik{fill:var(--accent-isi);fill-opacity:.55;stroke:var(--accent);stroke-width:1.5}
+.jm-an-daftar{margin:8px 0;padding-left:18px;display:grid;gap:4px}
+.jm-an-kota{columns:2 220px}
+.jm-an-daftar small{color:var(--ink2)}
+
+/* bilah alat tabel */
+.jm-an-bar{display:grid;gap:8px;margin-bottom:8px}
+@media (min-width:768px){.jm-an-bar{grid-template-columns:minmax(0,1.4fr) repeat(3,minmax(0,1fr))}}
+.jm-an-urut{all:unset;box-sizing:border-box;cursor:pointer;min-height:var(--target);display:inline-flex;align-items:center;color:inherit;font:inherit}
+.jm-an-urut:focus-visible{outline:2px solid var(--on-brand);outline-offset:2px}
+th[aria-sort="ascending"] .jm-an-urut::after{content:" \25B2"}
+th[aria-sort="descending"] .jm-an-urut::after{content:" \25BC"}

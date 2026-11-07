@@ -96,8 +96,10 @@
   /* foto pakar: foto induk, lalu foto_pakar.json (dimuat malas), jika tidak ada siluet netral (bukan inisial) */
   const FOTO_PAKAR = new Map(); let fotoPakarMuat = false;
   const muatFotoPakar = () => { if (fotoPakarMuat) return; fotoPakarMuat = true; ambilData("foto_pakar").then(d => { if (d && typeof d === "object" && !Array.isArray(d)) for (const [k, v] of Object.entries(d)) if (urlOk(v?.foto_url)) FOTO_PAKAR.set(k.replace(/^https?:\/\/openalex\.org\//, ""), v.foto_url); }); };
+  /* avatar inisial: warna deterministik per nama dari 5 pasangan token METI (AA); foto bila ada */
+  const ciNama = n => { let h = 0; for (const c of String(n || "")) h = (h * 31 + c.charCodeAt(0)) >>> 0; return h % 5; };
   const foto = (o, besar) => { const u = o[9] || FOTO_PAKAR.get(o[0]);
-    return u ? `<img class="ak-foto${besar ? " besar" : ""}" src="${esc(u)}" alt="" loading="lazy" referrerpolicy="no-referrer" data-inisial="">` : `<span class="ak-foto ak-sil${besar ? " besar" : ""}" aria-hidden="true"><svg viewBox="0 0 24 24">${SIL}</svg></span>`; };
+    return u ? `<img class="ak-foto${besar ? " besar" : ""}" src="${esc(u)}" alt="" loading="lazy" referrerpolicy="no-referrer" data-inisial="${esc(inisial(o[1]))}" data-ci="${ciNama(o[1])}">` : `<span class="ak-foto ak-ini ak-ci${ciNama(o[1])}${besar ? " besar" : ""}" aria-hidden="true">${esc(inisial(o[1]))}</span>`; };
   /* institusi dulu, prodi (bila ada) sebagai label di bawahnya */
   const sub = o => `<p>${esc(o[2])}</p>${o[11] ? `<span class="ak-prodi">${esc(prodiDari(o))}</span>` : ""}`;
   const logo = o => urlOk(o[14] || logoK[o[2]]) ? `<img class="ak-logo" src="${esc(urlOk(o[14] || logoK[o[2]]))}" alt="Logo ${esc(o[2])}" loading="lazy" referrerpolicy="no-referrer">` : "";
@@ -729,8 +731,9 @@ h4{margin:0 0 2px;font-size:8px;letter-spacing:.08em;text-transform:uppercase;co
     const IK = ['<circle cx="9" cy="8" r="3.5"/><path d="M2.5 20c0-3.6 2.9-6 6.5-6s6.5 2.4 6.5 6"/><circle cx="17" cy="9" r="2.5"/><path d="M16 14c3 0 5.5 2 5.5 5"/>', IK_GEDUNG, KAT.inovasi[1], IKP.data];
     /* statistik hero: angka nyata dari ringkas.json (potret); tanpa potret: dihitung dari data yang termuat */
     const TIL = [["proyek", "akProyekN", "proyek", '<path d="M3 21V9l6 4V9l6 4V5h6v16z"/>'], ["MW tercatat", "akMwN", "proyek", '<path d="M13 3 6 13h5l-1 8 7-10h-5z"/>'], ["organisasi", "akLembagaN", "lembaga", IK_GEDUNG], ["orang", "akTokohN", "tokoh", '<circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.4 3.6-7 8-7s8 2.6 8 7"/>'],
-      ["pakar", "akPakarN", "pakar", IK[0]], ["regulasi", "akRegN", "regulasi", IKJ], ["program", "akProgN", "proyek", IKP.data], ["berita", "akBeritaN", "pustaka", '<path d="M4 5h13v14H6a2 2 0 0 1-2-2zM17 9h3v8a2 2 0 0 1-2 2M7 9h7M7 13h7M7 16h4"/>']];
+      ...(semua.length ? [["pakar", "akPakarN", "pakar", IK[0]]] : []), ["regulasi", "akRegN", "regulasi", IKJ], ["program", "akProgN", "proyek", IKP.data], ["berita", "akBeritaN", "pustaka", '<path d="M4 5h13v14H6a2 2 0 0 1-2-2zM17 9h3v8a2 2 0 0 1-2 2M7 9h7M7 13h7M7 16h4"/>']];
     $("akAngka").innerHTML = TIL.map(([l, id, go, ic]) => `<div role="button" tabindex="0" data-go="${go}"><svg viewBox="0 0 24 24" aria-hidden="true">${ic}</svg><b id="${id}">${id === "akPakarN" ? angka(semua.length) : "..."}</b><span>${l}</span></div>`).join("");
+    $("akAngka").style.setProperty("--n", TIL.length);
     const isi = (id, n) => { const e = $(id); if (e) e.textContent = n == null ? "-" : angka(n); };
     nanti(() => ambilData("ringkas").then(r => { const h = r?.hitung || {}, mw = dlist(r?.kartu).find(k => k.kode === "kapasitas");
       isi("akProyekN", h.proyek); isi("akMwN", mw?.nilai); isi("akLembagaN", h.organisasi); isi("akTokohN", h.orang); isi("akRegN", h.regulasi); isi("akProgN", h.program); isi("akBeritaN", h.berita);
@@ -1417,7 +1420,7 @@ h4{margin:0 0 2px;font-size:8px;letter-spacing:.08em;text-transform:uppercase;co
   /* PENGURUS METI (lapis anggota): foto pengurus dari R2 potret/anggota/foto, nama dan jabatan dari catatan orang; hak cipta di tautan sumber */
   const pengurusMeti = x => { const a = dlist(x.pengurus_foto), om = dlist(x.pengurus_ormawa);
     const foto = a.length ? bagB("Pengurus METI", `<ul class="ak-pgr">${a.map(p => { const o = tkArr.find(q => q.id === p.orang_id), u = fotoUrl(p); const nm = o?.nama || p.orang_id;
-      return `<li>${u ? `<img src="${esc(u)}" alt="${esc(nm)}" loading="lazy" width="72" height="72">` : `<span class="ak-foto" aria-hidden="true"><svg viewBox="0 0 24 24">${SIL}</svg></span>`}<b>${o ? `<button type="button" class="ak-pk" data-tkid="${esc(p.orang_id)}">${esc(nm)}</button>` : esc(nm)}</b><small>${esc(o?.peran || "")}</small>${urlOk(p.sumber_url) ? `<a class="ak-lper" href="${esc(urlOk(p.sumber_url))}" ${LUAR}>Foto: ${esc(hostDari2(urlOk(p.sumber_url)))}</a>` : ""}</li>`; }).join("")}</ul>`) : "";
+      return `<li>${u ? `<img src="${esc(u)}" alt="${esc(nm)}" loading="lazy" width="72" height="72">` : `<span class="ak-foto ak-ini ak-ci${ciNama(nm)}" aria-hidden="true">${esc(inisial(nm))}</span>`}<b>${o ? `<button type="button" class="ak-pk" data-tkid="${esc(p.orang_id)}">${esc(nm)}</button>` : esc(nm)}</b><small>${esc(o?.peran || "")}</small>${urlOk(p.sumber_url) ? `<a class="ak-lper" href="${esc(urlOk(p.sumber_url))}" ${LUAR}>Foto: ${esc(hostDari2(urlOk(p.sumber_url)))}</a>` : ""}</li>`; }).join("")}</ul>`) : "";
     return foto + (om.length ? bagB("Pengurus organisasi", `<ul class="ak-lsumber">${om.map(p => `<li><b>${esc(p.nama)}</b>${p.jabatan ? ` <small class="ak-lper">${esc(p.jabatan)}</small>` : ""}</li>`).join("")}</ul>`) : ""); };
   function rakitLb(x, panel) {
     const lok = kabProv(x), web = urlOk(x.web), induk = x.induk && lbMap.get(x.induk), pre = panel ? "akDr" : "akLb";
@@ -2118,7 +2121,7 @@ h4{margin:0 0 2px;font-size:8px;letter-spacing:.08em;text-transform:uppercase;co
     const kk = [v, pkSub, st.sumber, a?.length || 0].join("|");
     if (sbMemo.k === kk) { c = sbMemo.c; tot = sbMemo.tot; } else { if (a && a.length) { tot = a.length; a.forEach(x => (Array.isArray(x) ? x[3] : strs(x.sektor)).forEach(r => { c[r] = (c[r] || 0) + 1; })); } sbMemo = {k: kk, c, tot}; }
     const chip = ([k, l]) => { const ic = SEKTOR[k], n = k ? (tot == null ? null : c[k] || 0) : tot;
-      return `<button type="button" data-r="${esc(k)}" aria-pressed="${k === "" ? !GL.set.size : GL.set.has(k)}"${n === 0 ? " data-nol" : ""}${n === 0 ? ` title="${esc(l)}: 0"` : ""}>${ic ? ikon(ic[1], ic[2]) : ikon(IK_SEMUA, "currentColor")}${esc(l)}${n != null ? `<span>${angka(n)}</span>` : ""}</button>`; };
+      return `<button type="button" data-r="${esc(k)}" aria-pressed="${k === "" ? !GL.set.size : GL.set.has(k)}"${n === 0 ? " data-nol" : ""}${` title="${esc(l)}${n != null ? ": " + angka(n) : ""}"`}>${ic ? ikon(ic[1], ic[2]) : ikon(IK_SEMUA, "currentColor")}<span class="ak-sl">${esc(l)}</span>${n != null ? `<span class="ak-sn">${angka(n)}</span>` : ""}</button>`; };
     $("akSektor").innerHTML = SEKTOR_GRUP.map(([jd, ks], i) => `<div class="ak-sg"><span class="ak-sg-h">${esc(jd)}</span><div class="ak-sg-b">${(i === 0 ? chip(GLB[0]) : "") + ks.map(k => chip([k, SEKTOR[k][0]])).join("")}</div></div>`).join("");
   }
   const namaSektor = r => (GLB.find(x => x[0] === r) || [r, (SEKTOR[r] || [kapital(r)])[0]])[1];
@@ -2145,7 +2148,7 @@ h4{margin:0 0 2px;font-size:8px;letter-spacing:.08em;text-transform:uppercase;co
   const pilPeranKb = t => { const k = String(t || "").toLowerCase(); return k ? `<span class="ak-izin" data-st="background:${PERAN_KB[k] || "var(--ink2)"}">${esc(kapital(k))}</span>` : ""; };
   const namaInti = n => nrm(String(n || "").replace(/,.*$/, " ").replace(/\b(prof|dr|drs|dra|ir|h|hj|dipl|ing|m\.?sc|ph\.?d|s\.?t|m\.?t|s\.?si|m\.?si|s\.?e|m\.?e|m\.?a|b\.?sc)\b\.?/gi, " "));
   let PK_NAMA = null; const pakarSama = x => { if (x.pakar_id && peta.has(x.pakar_id)) return peta.get(x.pakar_id); if (!PK_NAMA) { PK_NAMA = new Map(); semua.forEach(o => { const k = namaInti(o[1]); if (k) PK_NAMA.set(k, PK_NAMA.has(k) ? null : o); }); } return PK_NAMA.get(namaInti(x.nama)) || null; };
-  const fotoTk = (x, besar) => { const pk = !urlOk(x.foto_url) && pakarSama(x), u = urlOk(x.foto_url) || (pk && pk[9]); return u ? `<img class="ak-foto${besar ? " besar" : ""}" src="${esc(u)}" alt="" loading="lazy" referrerpolicy="no-referrer" data-inisial="">` : `<span class="ak-foto${besar ? " besar" : ""}" aria-hidden="true"><svg viewBox="0 0 24 24">${SIL}</svg></span>`; };
+  const fotoTk = (x, besar) => { const pk = !urlOk(x.foto_url) && pakarSama(x), u = urlOk(x.foto_url) || (pk && pk[9]), ci = ciNama(x.nama); return u ? `<img class="ak-foto${besar ? " besar" : ""}" src="${esc(u)}" alt="" loading="lazy" referrerpolicy="no-referrer" data-inisial="${esc(inisial(x.nama))}" data-ci="${ci}">` : `<span class="ak-foto ak-ini ak-ci${ci}${besar ? " besar" : ""}" aria-hidden="true">${esc(inisial(x.nama))}</span>`; };
   const kartuTk = (x, i) => kartuPola({attr: `data-tk="${i}"`, sosok: `<span class="ak-sosok">${fotoTk(x)}</span>`, nama: x.nama, status: x.jenis ? ["sinta", kapital(x.jenis)] : null, navy: x.lembaga || x.institusi, navyLb: x.lembaga_id || ((x.lembaga || x.institusi) && lbArr.find(y => namaLb(y).includes(nrm(x.lembaga || x.institusi)))?.id) || "", biru: x.peran, sektor: x.sektor, ket2: (x.negara ? `<span class="ak-lencana"><em class="ak-l-diaspora">${esc(NEGARA_NAMA[x.negara] || x.negara)}</em></span>` : "") + (pakarSama(x) ? '<span class="ak-lencana"><em class="ak-l-sinta">Juga pakar</em></span>' : "") + ((x.peran_energi || x.alasan) ? `<span class="ak-tk-ket">${x.peran_energi ? `<b>${esc(kapital(x.peran_energi))}</b> ` : ""}${esc(bersihWiki(x.alasan || ""))}</span>` : ""),
     metrik: []});   // pemilik: kartu tokoh tanpa angka kiprah/medsos
   function sheetTk(x) {
@@ -3369,7 +3372,7 @@ h4{margin:0 0 2px;font-size:8px;letter-spacing:.08em;text-transform:uppercase;co
     const sp = img.parentElement?.classList.contains("ak-sampul") ? img.parentElement : null;
     if (sp && img === sp.firstElementChild) { sp.classList.add("kosong"); const i = document.createElement("span"); i.className = "ak-sampul-inisial"; i.textContent = img.dataset.inisial || ""; img.replaceWith(i); return; }
     if (!img.classList.contains("ak-foto")) return;
-    const s = document.createElement("span"); s.className = img.className; if (img.dataset.inisial) s.textContent = img.dataset.inisial; else s.innerHTML = SIL; s.setAttribute("aria-hidden", "true");
+    const s = document.createElement("span"); s.className = img.className + (img.dataset.ci ? " ak-ini ak-ci" + img.dataset.ci : ""); if (img.dataset.inisial) s.textContent = img.dataset.inisial; else s.innerHTML = SIL; s.setAttribute("aria-hidden", "true");
     img.replaceWith(s);
   }, true);
 
