@@ -11,8 +11,8 @@ export const cariHtml = ({ id, label, placeholder }) =>
 
 /** opsi: [[nilai, teks, ikon?, hitungan?], ...]; ikon per opsi ("tek:surya", "st:beroperasi", "prov:Aceh", atau nama sprite) menimpa ikon select. Teks panjang dipotong elipsis. */
 export const pilihHtml = ({ id, ikon: ik, label, opsi, nilai = "" }) => {
-  const o = ([v, l, i, n]) => `<option value="${esc(v)}"${String(v) === String(nilai) ? " selected" : ""} title="${esc(l)}"${i ? ` data-ikon="${esc(i)}"` : ""}${n !== undefined && n !== "" ? ` data-n="${esc(n)}"` : ""}>${esc(l)}</option>`;
-  /* opsi kelima = nama grup (opsi sejenis berurutan dibungkus <optgroup>) */
+  const o = ([v, l, i, n, , judul]) => `<option value="${esc(v)}"${String(v) === String(nilai) ? " selected" : ""} title="${esc(judul || l)}"${i ? ` data-ikon="${esc(i)}"` : ""}${n !== undefined && n !== "" ? ` data-n="${esc(n)}"` : ""}>${esc(l)}</option>`;
+  /* opsi kelima = nama grup (opsi sejenis berurutan dibungkus <optgroup>), keenam = title (nama lengkap) */
   let isi = "", g = null;
   for (const x of opsi) {
     if (x[4] !== g) { isi += g ? "</optgroup>" : ""; g = x[4] || null; isi += g ? `<optgroup label="${esc(g)}">` : ""; }

@@ -55,7 +55,7 @@ dialog#lembar{width:min(1100px,95vw)}
 #lembar .jm-fakta .jm-dl{padding:0;background:none;grid-template-columns:minmax(80px,max-content) minmax(0,1fr)}
 .jm-fakta .jm-pen{display:inline-flex;align-items:center;gap:8px}.jm-fakta .jm-pen-pendek{display:inline;font-weight:600}
 .jm-fakta .jm-pil{margin:0 4px 4px 0}.jm-fakta .jm-pil .jm-ik{stroke:currentColor;fill:none}
-.jm-hub-n{margin-left:auto;padding:0 8px;border-radius:var(--r-pil);background:var(--soft-hijau);color:var(--accent);font:700 var(--t-kecil)/22px var(--font)}
+.jm-hub-n{margin-left:auto;padding:0 8px;border-radius:var(--r-pil);background:var(--soft-hijau);color:var(--accent);font:700 var(--t-kecil)/var(--lh-rapat) var(--font);padding-block:2px}
 .jm-hub{list-style:none;margin:0;padding:0 0 0 18px;border-left:2px solid var(--line);display:grid;gap:10px}
 .jm-hub-b{position:relative;display:flex;align-items:center;gap:10px;min-width:0;padding:8px 10px;border:1px solid var(--line);border-radius:var(--r-sm);background:var(--card)}
 .jm-hub-b::before{content:"";position:absolute;left:-25px;top:50%;width:10px;height:10px;margin-top:-5px;border-radius:50%;background:var(--accent);border:2px solid var(--card)}
