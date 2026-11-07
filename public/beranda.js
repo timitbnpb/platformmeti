@@ -146,6 +146,21 @@ async function gambarJalur() {
   } catch (e) { sembunyi(el, e); }
 }
 
+/* ---------- banner akses: manfaat anggota + jumlah anggota dari meti-wilayah ---------- */
+const MANFAAT = [["m1", "kartu"], ["m2", "buku"], ["m3", "lonceng"], ["m4", "gedung"]];
+async function gambarAkses() {
+  const el = document.getElementById("aksesManfaat");
+  let n = null, sumber = "";
+  try {
+    const w = await muat("meti-wilayah");
+    n = w.provinsi.reduce((a, p) => a + (p.individu || 0) + (p.organisasi || 0), 0);
+    sumber = t("beranda.akses.sumber", { label: w.anggota_sumber.label, tanggal: tanggal(w.anggota_sumber.tanggal) });
+  } catch (e) { /* tanpa angka anggota: kartu manfaat tetap tampil */ }
+  el.innerHTML = (n ? `<p class="jm-akses-n">${ikon("orang", 16)}<span>${esc(t("beranda.akses.anggota", { n: angka(n) }))}</span></p>` : "") + `<ul class="jm-akses-m">${MANFAAT.map(([k, ik]) => `<li><span class="jm-akses-ik">${ikon(ik, 22)}</span><span><strong>${esc(t("beranda.akses." + k + ".j"))}</strong><small>${esc(t("beranda.akses." + k + ".d"))}</small></span></li>`).join("")}</ul>`;
+  const ak = document.getElementById("srcAkses");
+  if (ak) ak.innerHTML = sumberHtml(`${sumber ? esc(sumber) + " " : ""}${esc(t("beranda.akses.kutip"))} <a href="/tentang">${esc(t("beranda.akses.tentang"))}</a>`);
+}
+
 /* ---------- cari global ---------- */
 const GRUP = [
   ["proyek", (x) => `${x.nama} ${x.lokasi?.provinsi || ""} ${x.teknologi || ""}`, (x) => x.nama, (x) => x.lokasi?.provinsi, () => "/direktori?tampil=proyek"],
@@ -175,7 +190,7 @@ async function main() {
   document.getElementById("kartu").innerHTML = hantuHtml(2);
   const mulai = async () => {
     try { R = await muat("ringkas"); } catch (e) { sembunyi(document.getElementById("kartu"), e); return; }
-    gambarKartu(); nanti(() => { gambarEkosistem(); gambarJalur(); gambarDataset(R); gambarBerita(); gambarProyek(); gambarAgenda(); });
+    gambarKartu(); nanti(() => { gambarEkosistem(); gambarJalur(); gambarDataset(R); gambarBerita(); gambarProyek(); gambarAgenda(); gambarAkses(); });
   };
   await mulai();
   pasangBawah(R);
@@ -187,6 +202,6 @@ async function main() {
   input.addEventListener("input", () => tunda(input.value));
   document.getElementById("cariTbl").addEventListener("click", () => cari(input.value));
   input.addEventListener("keydown", (e) => e.key === "Enter" && cari(input.value));
-  document.addEventListener("jm:bahasa", () => nanti(() => { R && gambarKartu(); gambarEkosistem(); gambarJalur(); R && gambarDataset(R); gambarBerita(); gambarProyek(); gambarAgenda(); input.value && cari(input.value); }));
+  document.addEventListener("jm:bahasa", () => nanti(() => { R && gambarKartu(); gambarEkosistem(); gambarJalur(); R && gambarDataset(R); gambarBerita(); gambarProyek(); gambarAgenda(); gambarAkses(); input.value && cari(input.value); }));
 }
 main();

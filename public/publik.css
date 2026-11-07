@@ -581,3 +581,24 @@ a.jm-foto:focus-visible{outline:3px solid var(--fokus)}
 .jm-rank-tx a:hover{background:none;color:var(--accent)}
 .jm-baris-meta .jm-taut{display:inline-flex;padding:0;background:none;border-radius:0}
 @media (max-width:760px){.jm-ds-pasar{grid-template-columns:minmax(0,1fr)}.jm-ds-ps{grid-template-columns:auto minmax(0,1fr) auto auto}.jm-ds-ps small{min-width:0;overflow-wrap:anywhere}}
+
+/* ===== banner akses: kiri ajakan, kanan manfaat anggota (kartu kaca) ===== */
+.jm-akses{grid-template-columns:minmax(0,1fr);gap:28px;padding:32px 20px;background:linear-gradient(135deg,var(--brand),color-mix(in srgb,var(--brand) 55%,var(--meti-cyan)))}
+.jm-akses::after{content:none}
+.jm-akses>:not(.jm-sh-src){position:relative;z-index:1}
+@media (min-width:900px){.jm-akses{grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:48px;padding:48px;align-items:center}}
+.jm-akses-kiri{display:grid;gap:16px;align-content:center}
+.jm-akses-kiri h2,.jm-akses-kiri p{margin:0}
+.jm-akses-aksi .jm-tbl{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:48px;box-sizing:border-box}
+.jm-akses-kanan{display:grid;gap:12px}
+.jm-akses-n{display:inline-flex;align-items:center;gap:8px;justify-self:start;margin:0;padding:6px 14px;border-radius:var(--r-pil);background:color-mix(in srgb,var(--on-brand) 16%,transparent);font:700 var(--t-body)/1 var(--font)}
+.jm-akses-m{list-style:none;margin:0;padding:0;display:grid;gap:10px;grid-template-columns:repeat(2,minmax(0,1fr))}
+@media (max-width:599px){.jm-akses-m{grid-template-columns:minmax(0,1fr)}}
+.jm-akses-m li{display:flex;gap:12px;align-items:flex-start;padding:14px;border:1px solid color-mix(in srgb,var(--on-brand) 30%,transparent);border-radius:var(--r);background:color-mix(in srgb,var(--on-brand) 12%,transparent);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px)}
+.jm-akses-ik{flex:none;display:grid;place-items:center;width:40px;height:40px;border-radius:12px;background:color-mix(in srgb,var(--on-brand) 22%,transparent)}
+.jm-akses-m strong{display:block;font:700 var(--t-body)/var(--lh-rapat) var(--font);margin-bottom:2px}
+.jm-akses-m small{display:block;font:400 var(--t-kecil)/var(--lh-rapat) var(--font);opacity:.9}
+.jm-akses-m li>span:last-child{min-width:0}
+.jm-akses .jm-ik,.jm-akses-ik{color:currentColor}
+.jm-akses .jm-akses-kiri h2{font-size:var(--t-h1)}
+.jm-kpi-lab span:first-child{overflow:visible;text-overflow:clip;white-space:normal;min-width:0}

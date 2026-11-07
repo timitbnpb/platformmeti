@@ -144,7 +144,7 @@ async function siapPeta() {
     const tek = Object.entries(g.per_teknologi || {}).sort((a, b) => b[1] - a[1])[0]?.[0];
     const meta = awal?.id === g.id ? t("beranda.prog.awal", { n: angka(g.jumlah_proyek), gw: angka(awal.tahap_awal_gwp, { desimal: 1 }) }) : t("beranda.prog.meta", { n: angka(g.jumlah_proyek), tek: label("beranda.tek.", tek).toLowerCase() });
     const tgt = awal?.id === g.id && target > 0 ? Math.min(1, g.kapasitas_mw / target) : null;
-    const bar = tgt === null ? "" : `<span class="jm-bb-tgt"><svg viewBox="0 0 100 4" preserveAspectRatio="none" aria-hidden="true"><rect class="jm-bar-latar" width="100" height="4"/><rect class="jm-bar-isi" width="${Math.max(1, Math.round(tgt * 100))}" height="4"/></svg><small>${esc(t("beranda.prog.target", { persen: angka(tgt * 100, { desimal: 0 }), mw: angka(target) }))}</small></span>`;
+    const bar = tgt === null ? "" : `<span class="jm-bb-tgt"><span class="jm-pil jm-pil-ok">${ikon("grafik", 12)}<span>${esc(t("beranda.prog.target", { persen: angka(tgt * 100, { desimal: 0 }), mw: angka(target) }))}</span></span></span>`;
     return `<li><button type="button" class="jm-bb-prog" data-prog="${esc(g.id)}" aria-pressed="${terpilih === g.id}"><span class="jm-bb-prog-ik">${IKON[IKON_PROG[g.id] || "lapis"]}</span><span class="jm-bb-prog-t"><strong>${esc(ada("beranda.prog." + g.id) ? t("beranda.prog." + g.id) : g.nama)}</strong><small>${esc(meta)}</small>${bar}</span><b class="jm-bb-n jm-bb-mw">${esc(num(g.kapasitas_mw))}<small> MW</small></b></button></li>`;
   }).join("");
   const info = $("petaInfo");
