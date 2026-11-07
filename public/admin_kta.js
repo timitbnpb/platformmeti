@@ -62,21 +62,24 @@ export function panelKta(panel) {
     const th = (kunci, k) => (k
       ? `<th scope="col" aria-sort="${S.urut === k ? (S.arah > 0 ? "ascending" : "descending") : "none"}"><button type="button" class="jm-adm-urut" data-k="urut" data-u="${k}">${esc(t(kunci))}</button></th>`
       : `<th scope="col">${esc(t(kunci))}</th>`);
-    const baris = S.saring.slice((S.hal - 1) * BARIS, S.hal * BARIS).map((r) => {
+    const hal = S.saring.slice((S.hal - 1) * BARIS, S.hal * BARIS);
+    const isi = { sumber: (r) => r.jenisAng, nomor: (r) => r.kta?.nomor_kta, jenis: (r) => r.kta, berlaku: (r) => r.kta?.berlaku_sampai, akun: (r) => r.kta?.akun_surel };
+    const ada = Object.fromEntries(Object.entries(isi).map(([k, f]) => [k, hal.some(f)]));
+    const baris = hal.map((r) => {
       const k = r.kta, L = (kunci) => `data-l="${esc(t(kunci))}"`;
       const aksi = (a, kunci, ik) => `<button type="button" class="jm-tbl jm-tbl-kecil${a === "cabut" || a === "tolak" ? " jm-tbl-bahaya" : ""}" data-k="${a}" data-id="${esc(r.id)}" title="${esc(t(kunci))}" aria-label="${esc(t("adm.kta.a.untuk", { aksi: t(kunci), nama: r.nama }))}">${ikon(ik, 18)}</button>`;
       const tombol = r.st === "belum" || r.st === "dicabut" ? aksi("terbit", "adm.kta.a.terbit", "tambah")
         : r.st === "tertunda" ? aksi("setujui", "adm.kta.a.setujui", "centang") + aksi("tolak", "adm.kta.a.tolak", "silang")
         : aksi("perpanjang", "adm.kta.a.perpanjang", "kalender") + aksi("cabut", "adm.kta.a.cabut", "blokir");
       return `<tr><td ${L("adm.kta.k.nama")}><strong>${esc(r.nama)}</strong>${r.instansi ? `<br><small>${esc(r.instansi)}</small>` : ""}</td>
-        <td ${L("adm.kta.k.sumber")}>${esc(r.jenisAng || "-")}</td><td ${L("adm.kta.k.nomor")}>${esc(k?.nomor_kta || "-")}</td>
-        <td ${L("adm.kta.k.jenis")}>${k ? esc(labelJenis(k.jenis)) : "-"}</td>
+        ${ada.sumber ? `<td ${L("adm.kta.k.sumber")}>${esc(r.jenisAng || "-")}</td>` : ""}${ada.nomor ? `<td ${L("adm.kta.k.nomor")}>${esc(k?.nomor_kta || "-")}</td>` : ""}
+        ${ada.jenis ? `<td ${L("adm.kta.k.jenis")}>${k ? esc(labelJenis(k.jenis)) : "-"}</td>` : ""}
         <td ${L("adm.kta.k.status")}><span class="jm-pil ${NADA[r.st]}">${esc(t("adm.kta.status." + r.st))}</span></td>
-        <td ${L("adm.kta.k.berlaku")}>${k?.berlaku_sampai ? esc(tanggal(k.berlaku_sampai)) : "-"}</td>
-        <td ${L("adm.kta.k.akun")}>${esc(k?.akun_surel || "-")}</td>
+        ${ada.berlaku ? `<td ${L("adm.kta.k.berlaku")}>${k?.berlaku_sampai ? esc(tanggal(k.berlaku_sampai)) : "-"}</td>` : ""}
+        ${ada.akun ? `<td ${L("adm.kta.k.akun")}>${esc(k?.akun_surel || "-")}</td>` : ""}
         <td ${L("adm.kta.k.aksi")}><span class="jm-adm-acts">${tombol}${k?.ada_bukti && r.st === "tertunda" ? `<a class="jm-tbl jm-tbl-kecil" href="/api/admin/kta/${k.id}/bukti" download title="${esc(t("adm.kta.a.bukti"))}" aria-label="${esc(t("adm.kta.a.bukti"))}">${ikon("unduh", 18)}</a>` : ""}</span></td></tr>`;
     }).join("");
-    $("kIsi").innerHTML = `<div class="jm-gulir"><table class="jm-tabel jm-adm-tabel"><thead><tr>${th("adm.kta.k.nama", "nama")}${th("adm.kta.k.sumber")}${th("adm.kta.k.nomor", "nomor")}${th("adm.kta.k.jenis")}${th("adm.kta.k.status", "status")}${th("adm.kta.k.berlaku", "berlaku")}${th("adm.kta.k.akun")}${th("adm.kta.k.aksi")}</tr></thead><tbody>${baris}</tbody></table></div>
+    $("kIsi").innerHTML = `<div class="jm-gulir"><table class="jm-tabel jm-adm-tabel"><thead><tr>${th("adm.kta.k.nama", "nama")}${ada.sumber ? th("adm.kta.k.sumber") : ""}${ada.nomor ? th("adm.kta.k.nomor", "nomor") : ""}${ada.jenis ? th("adm.kta.k.jenis") : ""}${th("adm.kta.k.status", "status")}${ada.berlaku ? th("adm.kta.k.berlaku", "berlaku") : ""}${ada.akun ? th("adm.kta.k.akun") : ""}${th("adm.kta.k.aksi")}</tr></thead><tbody>${baris}</tbody></table></div>
       ${maks > 1 ? `<div class="jm-bar"><button type="button" class="jm-tbl jm-tbl-kecil" data-k="hal-"${S.hal <= 1 ? " disabled" : ""} aria-label="${esc(t("jm.sebelumnya"))}">${ikon("panah-kiri", 18)}</button><span>${esc(t("adm.kta.hal", { n: angka(S.hal), m: angka(maks) }))}</span><button type="button" class="jm-tbl jm-tbl-kecil" data-k="hal+"${S.hal >= maks ? " disabled" : ""} aria-label="${esc(t("jm.berikutnya"))}">${ikon("panah-kanan", 18)}</button></div>` : ""}`;
   }
 

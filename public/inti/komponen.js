@@ -29,6 +29,7 @@ export const BAGIAN_INSIGHT = [
   { href: "/insight#tren", ikon: "analisis", kunci: "nav.sub.tren" },
   { href: "/rantai", ikon: "rantai", kunci: "nav.rantai" },
   { href: "/asean", ikon: "asean", kunci: "nav.asean" },
+  { href: "/indeks", ikon: "analisis", kunci: "nav.indeks" },
   { href: "/metode", ikon: "metode", kunci: "nav.sub.metode" },
 ];
 export function subnavHtml(jalur, hash = "") {

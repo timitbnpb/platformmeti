@@ -54,13 +54,15 @@ function gambarAngkaKunci() {
 function gambarKepala() {
   gambarAngkaKunci();
   document.getElementById("kepalaKal").innerHTML = `
+    <div class="kal-kiri">
+      <div class="kal-seg" role="group" aria-label="${esc(t("kal.agenda"))}">${tombolTampil("bulan", "tabel")}${tombolTampil("agenda", "daftar2")}</div>
+      <button type="button" class="kal-hariini" data-hariini>${ikon("kalender", 18)}<span>${esc(t("kal.hariini"))}</span></button>
+    </div>
     <div class="kal-nav">
       <button type="button" class="kal-bulat" data-geser="-1" aria-label="${esc(t("kal.sebelumnya"))}">${ikon("panah-kiri", 20)}</button>
       <h2 id="judulBulan"></h2>
       <button type="button" class="kal-bulat" data-geser="1" aria-label="${esc(t("kal.berikutnya"))}">${ikon("panah-kanan", 20)}</button>
-      <button type="button" class="kal-hariini" data-hariini>${ikon("kalender", 18)}<span>${esc(t("kal.hariini"))}</span></button>
     </div>
-    <div class="kal-seg" role="group" aria-label="${esc(t("kal.agenda"))}">${tombolTampil("bulan", "tabel")}${tombolTampil("agenda", "daftar2")}</div>
     <div class="kal-kanan">
       <a class="kal-hariini" id="kalLanggan" href="https://calendar.google.com/calendar/r?cid=${encodeURIComponent("webcal://" + location.host + "/kalender.ics")}" target="_blank" rel="noopener noreferrer" title="${esc(t("kal.langgan"))}" aria-label="${esc(t("kal.langgan"))}">${ikon("tambah", 18)}<span>${esc(t("kal.langgan_pendek"))}</span></a>
       <button type="button" class="kal-bulat" data-salin-ical aria-label="${esc(t("kal.salin_ical"))}" title="${esc(t("kal.salin_ical"))}">${ikon("salin", 20)}</button>

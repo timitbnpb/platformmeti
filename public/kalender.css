@@ -7,7 +7,8 @@
 
 /* kepala */
 .kal-kepala{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:16px;padding:14px 20px}
-.kal-nav,.kal-kanan{display:flex;align-items:center;gap:10px}
+.kal-nav,.kal-kanan,.kal-kiri{display:flex;align-items:center;gap:10px}
+.kal-nav{justify-content:center}.kal-nav h2{text-align:center}
 .kal-kanan{justify-content:flex-end;flex-wrap:wrap}
 .kal-saring .jm-pil-pilih{min-width:180px}
 .kal-nav h2{margin:0 6px;min-width:13ch;font:700 var(--t-h2)/var(--lh-judul) var(--display);color:var(--head)}
@@ -79,7 +80,7 @@ a.kal-baris:hover{border-color:var(--accent);box-shadow:var(--shadow)}
 .kal-pilih-bar{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px;padding:12px 16px;border:1px solid var(--line);border-radius:var(--r);background:var(--card);color:var(--head)}
 @media (max-width:639px){
   .kal-kepala{padding:14px}
-  .kal-kepala{grid-template-columns:1fr}.kal-nav{flex-wrap:wrap}.kal-nav h2{min-width:0;flex:1 1 100%;order:-1;margin:0}
+  .kal-kepala{grid-template-columns:1fr}.kal-kiri{flex-wrap:wrap}.kal-nav h2{min-width:0;flex:1;margin:0}.kal-nav{order:-1}
   .kal-seg{display:none}
   .kal-kanan,.kal-saring{width:100%}
   .kal-kanan{justify-content:flex-start}

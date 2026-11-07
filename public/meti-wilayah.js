@@ -15,7 +15,21 @@ const $ = (id) => document.getElementById(id);
 const S = { kat: null, ap: null, baris: [], filter: "", geo: null };
 
 export const lambang = (kode, u = 40) => `<img class="mw-lb" src="/img/provinsi/${esc(kode)}.png" width="${u}" height="${u}" alt="" loading="lazy" decoding="async">`;
-export const pilStatus = (s) => `<span class="${PIL[s]}">${esc(t("mw.st." + s))}</span>`;
+export const pilStatus = (s) => `<span class="jm-pil mw-pil mw-pil-${s}"><svg class="jm-ik" width="12" height="12" aria-hidden="true" focusable="false"><use href="/img/ikon.svg#i-${IKON_PIL[s]}"/></svg>${esc(t("mw.st." + s))}</span>`;
+const IKON_PIL = { berdiri: "centang", segera: "kalender", rencana: "linimasa", belum: "wilayah" };
+const ik = (n, u = 14) => `<svg class="jm-ik" width="${u}" height="${u}" aria-hidden="true" focusable="false"><use href="/img/ikon.svg#i-${n}"/></svg>`;
+const tahunDari = (b) => (b.tgl_pelantikan || "").slice(0, 4);
+const cacah = (n) => (typeof n === "number" ? angka(n) : n ? t("mw.kurang10") : "");
+/* kartu info provinsi: dipakai tooltip peta dan kartu ponsel */
+export function isiKartu(b) {
+  const kos = `<span class="mw-kos">${esc(t("mw.belum_dicantum"))}</span>`;
+  const baris = [["orang", b.ketua ? `${esc(t("mw.ketua"))}: <b>${esc(b.ketua)}</b>` : kos], ["lokasi", b.sekretariat ? esc(b.sekretariat) : kos], ["tahun", tahunDari(b) ? esc(t("mw.tahun", { tahun: tahunDari(b) })) : kos]];
+  const ang = [["orang", cacah(b.individu), t("mw.u.individu")], ["direktori", cacah(b.organisasi), t("mw.u.organisasi")]].filter((x) => x[1]);
+  return `<header>${lambang(b.kode, 36)}<div><strong>${esc(b.nama)}</strong>${pilStatus(b.status)}</div></header>
+    <ul class="mw-info">${baris.map(([i, v]) => `<li>${ik(i)}<span>${v}</span></li>`).join("")}</ul>
+    ${ang.length ? `<p class="mw-cacah">${ang.map(([i, v, l]) => `<span title="${esc(l)}">${ik(i)}<b>${esc(v)}</b> ${esc(l)}</span>`).join("")}</p>` : ""}
+    <p class="mw-ajak">${ik("panah-kanan")}${esc(t("mw.klik_profil"))}</p>`;
+}
 export const namaWilayah = (nama) => t("mw.nama", { prov: nama });
 export const tgl = (s) => (s ? tanggal(s, { gaya: "panjang" }) : "");
 
@@ -52,11 +66,22 @@ function warnai() {
 
 function tampilTip(b, x, y) {
   const tip = $("tip");
-  tip.innerHTML = `<header>${lambang(b.kode, 32)}<div><strong>${esc(namaWilayah(b.nama))}</strong><small>${esc(t("mw.st." + b.status))}</small></div></header>${b.ketua ? `<p>${esc(t("mw.ketua"))}: <b>${esc(b.ketua)}</b></p>` : ""}`;
+  tip.innerHTML = isiKartu(b);
   tip.hidden = false;
   const kotak = $("penuh").getBoundingClientRect();
-  tip.style.left = Math.max(8, Math.min(kotak.width - tip.offsetWidth - 8, x + 14)) + "px";
-  tip.style.top = Math.max(8, Math.min(kotak.height - tip.offsetHeight - 8, y + 14)) + "px";
+  const kiri = x + 16 + tip.offsetWidth > kotak.width - 8 ? x - tip.offsetWidth - 16 : x + 16;
+  const atas = y + 16 + tip.offsetHeight > kotak.height - 8 ? y - tip.offsetHeight - 16 : y + 16;
+  tip.style.left = Math.max(8, kiri) + "px";
+  tip.style.top = Math.max(8, atas) + "px";
+}
+
+/* zoom: viewBox digeser; tombol tambah = perbesar ke tengah, balik = atur ulang */
+let zoom = 1;
+function atur(f) {
+  const svg = $("peta").querySelector("svg");
+  zoom = f ? Math.min(4, zoom * f) : 1;
+  const w = W / zoom, h = H / zoom;
+  svg.setAttribute("viewBox", `${zoom === 1 ? 0 : (W - w) * 0.62} ${zoom === 1 ? 0 : (H - h) * 0.55} ${w} ${h}`);
 }
 
 async function petaSvg() {
@@ -64,9 +89,14 @@ async function petaSvg() {
   if (!S.geo) { $("peta").innerHTML = `<p class="jm-bantu">${esc(t("mw.peta_gagal"))}</p>`; return; }
   const ada = new Set(S.baris.map((b) => b.kode));
   const jalur = jalurPerProvinsi(S.geo, W, H).filter((j) => ada.has(j.kode) && j.d);
-  $("peta").innerHTML = `<svg class="mw-svg" viewBox="0 0 ${W} ${H}" preserveAspectRatio="xMidYMid meet" focusable="false">${jalur.map((j) => `<path tabindex="0" role="link" data-k="${esc(j.kode)}" d="${j.d}"/>`).join("")}</svg>`;
+  $("peta").innerHTML = `<svg class="mw-svg" viewBox="0 0 ${W} ${H}" preserveAspectRatio="xMidYMid meet" focusable="false">${jalur.map((j) => `<path tabindex="0" role="link" data-k="${esc(j.kode)}" d="${j.d}"/>`).join("")}</svg><div class="mw-zoom">${[["tambah", "perbesar", "mw.zoom_masuk"], ["balik", "atur", "mw.zoom_reset"]].map(([i, a, k]) => `<button type="button" class="mw-zm" data-z="${a}" aria-label="${esc(t(k))}" title="${esc(t(k))}">${ik(i, 18)}</button>`).join("")}</div><div class="mw-kartu-hp" id="kartu-peta" hidden></div>`;
   const svg = $("peta").querySelector("svg"), dasar = $("penuh");
-  const buka = (pa) => pa && location.assign("/meti-wilayah/" + encodeURIComponent(pa.dataset.k));
+  const buka = (pa) => {
+    if (!pa) return;
+    if (innerWidth < 900) { const b = S.baris.find((v) => v.kode === pa.dataset.k), k = $("kartu-peta"); k.innerHTML = isiKartu(b) + `<a class="jm-tbl jm-tbl-utama" href="/meti-wilayah/${esc(b.kode)}">${ik("panah-kanan")}${esc(t("mw.lihat"))}</a>`; k.hidden = false; return; }
+    location.assign("/meti-wilayah/" + encodeURIComponent(pa.dataset.k));
+  };
+  $("peta").addEventListener("click", (e) => { const z = e.target.closest("button[data-z]"); if (z) atur(z.dataset.z === "perbesar" ? 1.6 : 0); });
   const tampil = (pa, x, y) => { const b = S.baris.find((v) => v.kode === pa.dataset.k); tampilTip(b, x, y); };
   svg.addEventListener("mousemove", (e) => { const pa = e.target.closest("path[data-k]"); if (!pa) { $("tip").hidden = true; return; } const k = dasar.getBoundingClientRect(); tampil(pa, e.clientX - k.left, e.clientY - k.top); });
   svg.addEventListener("mouseleave", () => { $("tip").hidden = true; });
@@ -84,22 +114,24 @@ function legenda() {
   $("legenda").innerHTML = STATUS.map((s) => `<button type="button" class="mw-lg" data-s="${s}" aria-pressed="${S.filter === s}"><i class="mw-sw mw-s-${s}" aria-hidden="true"></i><span>${esc(t("mw.st." + s))}</span><b>${angka(n(s))}</b></button>`).join("")
     + `<p class="jm-bantu">${esc(t("mw.legenda_bantu"))}</p>`;
   $("saring").innerHTML = [["", t("mw.semua"), S.baris.length], ...STATUS.map((s) => [s, t("mw.st." + s), n(s)])]
-    .map(([v, l, c]) => `<button type="button" class="mw-chip" data-s="${v}" aria-pressed="${S.filter === v}">${esc(l)}<small>${angka(c)}</small></button>`).join("");
+    .filter(([v, , c]) => c > 0 || v === S.filter)
+    .map(([v, l, c]) => `<button type="button" class="mw-chip" data-s="${v}" aria-pressed="${S.filter === v}">${ik(v ? IKON_PIL[v] : "daftar")}${esc(l)}<small>${angka(c)}</small></button>`).join("");
 }
 
 /* ---------- kartu ---------- */
 const URUT = Object.fromEntries(STATUS.map((s, i) => [s, i]));
 function kartu() {
-  const isi = S.baris.filter(dipilih).sort((a, b) => URUT[a.status] - URUT[b.status] || a.nama.localeCompare(b.nama, "id"));
+  const q = ($("cari")?.value || "").trim().toLowerCase();
+  const isi = S.baris.filter((b) => dipilih(b) && (!q || b.nama.toLowerCase().includes(q))).sort((a, b) => URUT[a.status] - URUT[b.status] || a.nama.localeCompare(b.nama, "id"));
+  $("ringkas").innerHTML = STATUS.filter((s) => S.ap.hitung[s] > 0).map((s) => `<span class="mw-ring">${ik(IKON_PIL[s], 14)}${angka(S.ap.hitung[s])} ${esc(t("mw.st." + s))}</span>`).join("");
+  $("j-kartu").textContent = t("mw.n_prov", { n: angka(S.baris.length) });
   $("kisi").innerHTML = isi.map((b) => {
-    const nama = namaWilayah(b.nama);
-    const baris = [
-      b.ketua ? [t("mw.ketua"), b.ketua] : null,
-      b.sekretariat ? [t("mw.sekretariat"), b.sekretariat] : null,
-      b.tgl_pelantikan ? [t("mw.tgl_pelantikan"), tgl(b.tgl_pelantikan)] : null,
-    ].filter(Boolean);
-    return `<a class="mw-kartu mw-k-${b.status}" href="/meti-wilayah/${esc(b.kode)}"><header>${lambang(b.kode, 44)}<div><h3>${esc(nama)}</h3>${pilStatus(b.status)}</div></header>
-      ${baris.length ? `<dl>${baris.map(([k, v]) => `<div><dt>${esc(k)}</dt><dd>${esc(v)}</dd></div>`).join("")}</dl>` : `<p class="jm-bantu">${esc(t(b.status === "belum" ? "mw.kartu_belum" : "mw.kartu_kosong"))}</p>`}</a>`;
+    const kos = `<span class="mw-kos">${esc(t("mw.belum_dicantum"))}</span>`;
+    const th = tahunDari(b);
+    const kaki = b.status === "belum" ? `${ik("tambah")}${esc(t("mw.daftar_tombol"))}` : `${esc(t("mw.lihat"))}${ik("panah-kanan")}`;
+    return `<article class="mw-kartu mw-k-${b.status}"><header>${lambang(b.kode, 40)}<div><h3>${esc(b.nama)}</h3>${pilStatus(b.status)}</div></header>
+      <ul class="mw-info"><li>${ik("orang")}<span>${b.ketua ? esc(b.ketua) : `<span class="mw-kos">${esc(t("mw.ketua_belum"))}</span>`}</span></li>${b.sekretariat ? `<li>${ik("lokasi")}<span>${esc(b.sekretariat)}</span></li>` : ""}${th ? `<li>${ik("tahun")}<span>${esc(t("mw.tahun", { tahun: th }))}</span></li>` : ""}</ul>
+      <a class="mw-kaki${b.status === "belum" ? " jm-tbl jm-tbl-utama" : ""}" href="/meti-wilayah/${esc(b.kode)}${b.status === "belum" ? "#ajukan" : ""}">${kaki}</a></article>`;
   }).join("") || `<p class="jm-bantu">${esc(t("mw.kosong"))}</p>`;
 }
 
@@ -122,6 +154,7 @@ function pasangFilter() {
     nanti(() => { warnai(); kartu(); });
   };
   $("saring").addEventListener("click", klik);
+  let td; $("cari").addEventListener("input", () => { clearTimeout(td); td = setTimeout(kartu, 120); });
   $("legenda").addEventListener("click", klik);
 }
 

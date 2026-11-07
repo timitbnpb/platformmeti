@@ -55,15 +55,17 @@ function sekretariatHtml(b) {
     [t("mw.telp"), b.kontak_telp ? `<a href="tel:${esc(b.kontak_telp.replace(/[^\d+]/g, ""))}">${esc(b.kontak_telp)}</a>` : kos("mw.belum_ada")],
   ]);
   return seksi({ id: "sekretariat", ikon: "peta", topik: t("mw.ey.sekretariat"), judulHtml: esc(t("mw.sekretariat")),
-    isiHtml: `<div class="mw-dua"><div>${kontak}<p class="jm-bantu">${esc(t("mw.kontak_resmi"))}</p></div><div class="mw-mini" id="mini" role="img" aria-label="${esc(t("mw.peta_mini", { prov: b.nama }))}"></div></div>` });
+    isiHtml: `<div class="mw-sat"><div>${kontak}<p class="jm-bantu">${esc(t("mw.kontak_resmi"))}</p></div><div class="mw-mini" id="mini" role="img" aria-label="${esc(t("mw.peta_mini", { prov: b.nama }))}"></div></div>` });
 }
 
-const kartuOrang = (nama, jabatan) => nama
-  ? `<li class="mw-fk"><span class="mw-fk-bg" data-foto="${esc(slug(nama))}"><span class="mw-fk-ini" aria-hidden="true">${esc(inisial(nama))}</span></span><span class="mw-fk-t"><b>${esc(nama)}</b><small>${esc(jabatan)}</small></span></li>`
-  : `<li class="mw-fk mw-fk-kosong"><span class="mw-fk-bg">${ikon("orang", 40)}</span><span class="mw-fk-t"><b>${esc(t("mw.lowong"))}</b><small>${esc(jabatan)}</small></span></li>`;
+const slotOrang = (nama, jabatan) => `<li class="mw-sl${nama ? "" : " mw-sl-kosong"}"><span class="mw-av"${nama ? ` data-foto="${esc(slug(nama))}"` : ""}>${nama ? `<span class="mw-fk-ini" aria-hidden="true">${esc(inisial(nama))}</span>` : ikon("orang", 24)}</span><span class="mw-sl-t"><b>${esc(nama || t("mw.lowong"))}</b><small>${esc(jabatan)}</small></span></li>`;
 
-function pengurusHtml(b) {
-  const isi = `<ul class="mw-fkg">${kartuOrang(b.ketua, t("mw.ketua"))}${kartuOrang(b.sekretaris, t("mw.sekretaris"))}${kartuOrang(b.bendahara, t("mw.bendahara"))}</ul>`;
+function pengurusHtml(b, saya) {
+  const kosong = !b.ketua && !b.sekretaris && !b.bendahara;
+  const kelola = Array.isArray(saya?.peran) ? saya.peran.includes("pengurus_wilayah") : ["pengurus_wilayah", "admin", "super"].includes(saya?.peran);
+  const isi = kosong
+    ? `<div class="mw-kosong-st">${ikon("orang", 28)}<p>${esc(t("mw.pengurus_kosong"))}</p>${kelola ? `<a class="jm-tbl jm-tbl-utama" href="/meti-wilayah/${esc(b.kode)}/kelola">${ikon("ubah", 16)}${esc(t("mw.kelola"))}</a>` : ""}</div>`
+    : `<ul class="mw-slot">${slotOrang(b.ketua, t("mw.ketua"))}${slotOrang(b.sekretaris, t("mw.sekretaris"))}${slotOrang(b.bendahara, t("mw.bendahara"))}</ul>`;
   return seksi({ id: "pengurus", ikon: "orang", topik: t("mw.ey.pengurus"), judulHtml: esc(t("mw.pengurus")), isiHtml: isi, kakiHtml: `<p class="jm-bantu">${esc(t("mw.pengurus_bantu"))}</p>` });
 }
 
@@ -233,7 +235,7 @@ export async function profilWilayah(kode, S, saya, akar) {
   try { det = await api("/api/meti-wilayah/" + encodeURIComponent(kode)); } catch (e) { akar.innerHTML = `<div class="jm-galat" role="alert">${esc(galatTeks(e.kode || "umum"))}</div>`; return; }
   const w = { ...b, ...(det.wilayah || {}), bidang: det.wilayah?.bidang || [] };
   const { html, ub } = kepalaHtml(w, det.wilayah, det.anggota);
-  akar.innerHTML = html + `<div class="mw-isi">${[skHtml(w), sekretariatHtml(w), pengurusHtml(w), bidangHtml(w), anggotaHtml(det.anggota, kode, saya), kegiatanHtml(), proyekHtml(w), kitHtml(w), w.status === "berdiri" ? "" : ajakanHtml(w, det.wilayah, det.ajuan_saya)].join("")}</div>`;
+  akar.innerHTML = html + `<div class="mw-isi">${[skHtml(w), sekretariatHtml(w), pengurusHtml(w, saya), bidangHtml(w), anggotaHtml(det.anggota, kode, saya), kegiatanHtml(), proyekHtml(w), kitHtml(w), w.status === "berdiri" ? "" : ajakanHtml(w, det.wilayah, det.ajuan_saya)].join("")}</div>`;
   khUbin("ubin-p", ub);
   pasangFoto(akar); pasangKit(akar, w);
   pasangForm(akar, w, () => profilWilayah(kode, S, saya, akar));

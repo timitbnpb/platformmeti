@@ -73,7 +73,7 @@ export async function panelKesehatan(panel) {
     el.innerHTML = exHtml({ ikon: "tabel", topik: t("keh.ey"), tingkat: "h3", judulHtml: esc(t("keh.m." + pilih)), subHtml: esc(t("keh.sub.tabel", { n: angka(rows.length) })), isiHtml: `<div class="jm-gulir"><table class="jm-tabel jm-adm-tabel-k"><thead><tr><th scope="col">${esc(t("keh.c.nama"))}</th><th scope="col">${esc(t("keh.c.jenis"))}</th><th scope="col" data-urut="tidak">${esc(t("admin.k.aksi"))}</th></tr></thead><tbody>${tampil.map((r) => `<tr${r.href ? ` data-href="${esc(r.href)}"` : ""}>
         <td data-l="${esc(t("keh.c.nama"))}">${r.href ? `<a href="${esc(r.href)}"${r.ent === "berita" ? ' target="_blank" rel="noopener noreferrer"' : ""}>${esc(r.nama)}</a>` : esc(r.nama)}</td>
         <td data-l="${esc(t("keh.c.jenis"))}">${esc(t("kor.e." + r.ent))}</td>
-        <td data-l="${esc(t("admin.k.aksi"))}">${r.ent === "berita" ? "-" : tombolKoreksi({ entitas: r.ent, id: r.id, nama: r.nama, kolom: m[3] })}</td></tr>`).join("")}</tbody></table></div>
+        <td data-l="${esc(t("admin.k.aksi"))}">${r.ent === "berita" ? `<span class="jm-adm-mati" title="${esc(t("keh.bersih"))}">${ikon("tautan", 16)}</span>` : tombolKoreksi({ entitas: r.ent, id: r.id, nama: r.nama, kolom: m[3] })}</td></tr>`).join("")}</tbody></table></div>
       ${rows.length > tampil.length ? `<p class="jm-bantu">${esc(t("pf.lagi", { n: angka(rows.length - tampil.length) }))}</p>` : ""}` });
   }
 }
