@@ -91,6 +91,11 @@ Singkatan: KP = KEPUTUSAN-METI, GD = GRAND-DESIGN, R1..R9 = riset/, DT = DESAIN-
 | JM-P06 | Regulasi terhubung ke proyek (ikatan `diatur_oleh`/`terhambat_oleh` bersumber) | pipa+layar | F2 | M | belum |
 | JM-P07 | Rapor Transisi Energi kuartalan (beku, tautan kutip, PDF) | layar+pipa | F2 | M | belum |
 | JM-P08 | Bagian Pengurus METI (Dewan Pembina, Pengurus Harian, Bidang, METI Institute, Wilayah) dengan foto resmi, di `/organisasi/meti` dan `/tentang#pengurus` | pipa+layar | F1 | M | belum |
+| JM-R01 | Migrasi 0007: kategori organisasi K19, `program`, kelompok orang, `akun.telepon`, profil milik akun, verifikasi surel | migrasi | F1 | M | belum |
+| JM-R02 | `/daftar` + verifikasi surel (DITUNDA pemilik 7 Nov 2026: masa uji, akun dibuat manual oleh admin lewat `/admin` + tautan aktivasi) | worker+layar | F3 | L | tunda |
+| JM-R03 | `/profil-saya`: sunting profil, unggah foto R2 (gambar saja, maks 2 MB, EXIF dibuang), pendidikan, tautan, privasi kontak | worker+layar | F1 | L | belum |
+| JM-R04 | Tab kelompok orang (Profesional, Praktisi, Akademisi, Think Tank, Tokoh Publik, Aktivis/Tokoh Daerah) dan saringan kategori organisasi K19 | layar | F1 | M | belum |
+| JM-R05 | Panen aktivis, tokoh daerah EBT, dan organisasi mahasiswa (SRE, Dewan Energi Mahasiswa, BEM) | pipa | F1 | M | belum |
 | JM-Q01 | Potensi vs realisasi per provinsi (potensi teknis ESDM, terpasang, target RUED) | pipa+layar | F2 | M | belum |
 | JM-Q02 | Indeks kesiapan investasi provinsi (regulasi daerah, jaringan, lahan, RUED; metode terbuka) | pipa+layar | F3 | L | belum |
 | JM-Q03 | Pelacak tarif dan harga (PPA per teknologi, hasil lelang, BPP per sistem) | pipa+layar | F2 | M | belum |

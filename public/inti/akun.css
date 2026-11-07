@@ -1,0 +1,52 @@
+/* Halaman akun (masuk, aktivasi, ganti sandi): kartu tengah, label mengambang. Hanya token. Gerak: transform/opacity. */
+.jm-akun .jm-halaman,.jm-akun .jm-kaki{position:relative;z-index:1}
+.jm-akun::before{content:"";position:fixed;inset:0;z-index:0;pointer-events:none;
+  background:
+    linear-gradient(to right,color-mix(in srgb,var(--line) 55%,transparent) 1px,transparent 1px) 0 0/48px 48px,
+    linear-gradient(to bottom,color-mix(in srgb,var(--line) 55%,transparent) 1px,transparent 1px) 0 0/48px 48px;
+  -webkit-mask-image:radial-gradient(ellipse at 50% 40%,#000 25%,transparent 75%);mask-image:radial-gradient(ellipse at 50% 40%,#000 25%,transparent 75%)}
+.jm-akun::after{content:"";position:fixed;z-index:0;pointer-events:none;width:min(70vw,640px);height:min(70vw,640px);left:50%;top:18%;margin-left:calc(min(70vw,640px)/-2);border-radius:50%;
+  background:radial-gradient(circle at 35% 35%,var(--meti-cyan),transparent 62%),radial-gradient(circle at 70% 70%,var(--meti-lime),transparent 60%);opacity:.22;filter:blur(70px)}
+.jm-akun .jm-halaman{align-content:center;padding-top:32px}
+.jm-akun .jm-kartu{padding:28px 22px;border-radius:28px;box-shadow:var(--shadow-lg)}
+@media (min-width:600px){.jm-akun .jm-kartu{padding:36px 36px 28px}}
+.jm-akun .jm-sempit{max-width:460px}
+
+.jm-merek-kartu{display:grid;justify-items:center;gap:4px;text-align:center;padding-bottom:18px;margin-bottom:18px;border-bottom:1px solid var(--line)}
+.jm-merek-kartu img{width:64px;height:64px;margin-bottom:8px}
+.jm-merek-kartu strong{font:700 20px/1.25 var(--display);color:var(--head)}
+.jm-merek-kartu span{font-size:var(--t-kecil);color:var(--ink2)}
+.jm-akun .jm-form-judul{margin-bottom:2px}
+.jm-akun .jm-form-judul h1{font-size:26px}
+.jm-akun .jm-form .jm-tbl{justify-self:stretch}
+
+/* label mengambang: label di dalam isian, mengecil ke atas saat fokus atau terisi */
+.jm-ambang{position:relative;display:block}
+.jm-ambang .jm-isian{min-height:56px;padding:22px 14px 6px;background:var(--card)}
+.jm-ambang .jm-isian:not(:placeholder-shown),.jm-ambang .jm-isian:-webkit-autofill{background:var(--soft-biru);border-color:var(--brand2)}
+.jm-ambang .jm-isian:focus-visible{outline:2px solid var(--fokus);outline-offset:1px;border-color:var(--fokus)}
+.jm-ambang label{position:absolute;left:15px;top:17px;max-width:calc(100% - 64px);overflow:hidden;text-overflow:ellipsis;white-space:nowrap;
+  font:400 16px/1.3 var(--font);color:var(--ink2);pointer-events:none;transform-origin:left top;transition:transform .16s ease-out}
+.jm-ambang .jm-isian:focus-visible~label,.jm-ambang .jm-isian:not(:placeholder-shown)~label,.jm-ambang .jm-isian:-webkit-autofill~label{transform:translateY(-10px) scale(.78);color:var(--accent)}
+.jm-ambang .jm-bantu{display:block;margin-top:6px}
+.jm-sandi .jm-isian{padding-right:52px}
+
+/* tombol mata */
+.jm-mata{position:absolute;right:4px;top:6px;width:44px;height:44px;display:grid;place-items:center;border:0;border-radius:var(--r-pil);background:transparent;color:var(--ink2);cursor:pointer}
+.jm-mata:hover{color:var(--accent)}
+.jm-mata svg{width:20px;height:20px;grid-area:1/1;transition:opacity .15s}
+.jm-mata .jm-mata-tutup{opacity:0}
+.jm-mata[aria-pressed="true"] .jm-mata-tutup{opacity:1}
+.jm-mata[aria-pressed="true"] .jm-mata-buka{opacity:0}
+
+/* tombol: utama gradasi navy METI, sekunder garis tepi */
+.jm-akun .jm-tbl{min-height:50px;font-size:15px;transition:transform .12s ease-out,opacity .15s}
+.jm-akun .jm-tbl:active{transform:scale(.985)}
+.jm-akun .jm-tbl-utama{background:linear-gradient(135deg,var(--brand),var(--brand2));border-color:var(--line-ctl);color:var(--on-brand)}
+.jm-akun .jm-tbl-utama:hover{color:var(--on-brand);filter:none;opacity:.92}
+.jm-tbl-garis{background:transparent;border-color:var(--line-ctl);color:var(--ink)}
+
+.jm-lupa{display:grid;gap:6px;padding:12px 14px;border-radius:var(--r-sm);background:var(--info-bg);color:var(--ink);font-size:14px;line-height:1.5}
+.jm-lupa strong{color:var(--info)}
+.jm-catatan{display:grid;gap:6px;margin-top:18px;text-align:center;font-size:var(--t-kecil);color:var(--ink2)}
+@media (prefers-reduced-motion:reduce){.jm-ambang label,.jm-akun .jm-tbl,.jm-mata svg{transition:none}}

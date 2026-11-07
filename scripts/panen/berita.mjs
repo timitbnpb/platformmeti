@@ -71,7 +71,7 @@ export const KUERI_LEMBAGA = [
   ['IESR', T(['IESR', 'Institute for Essential Services Reform'], ['IESR energy transition'])],
 ];
 const frasa = (t) => (/\s/.test(t) ? `"${t}"` : t);
-export const kueriGdelt = (terms, ed) => `(${terms.map(frasa).join(' OR ')})` + (ed === 'en' ? ' Indonesia sourcelang:english' : ' sourcelang:indonesian');
+export const kueriGdelt = (terms, ed) => (terms.length > 1 ? `(${terms.map(frasa).join(" OR ")})` : frasa(terms[0])) + (ed === 'en' ? ' Indonesia sourcelang:english' : ' sourcelang:indonesian');
 export const kueriGoogle = (terms) => terms.map(frasa).join(' OR ');
 
 // RSS langsung media (bukan feed pencarian: disaring dengan aturan K16). Yang tidak ada di sini gagal diperiksa 7 Nov 2026:
@@ -192,7 +192,9 @@ async function ambil(url, { coba = 2 } = {}) {
   for (let i = 0; i < coba; i++) {
     const tunggu = (terakhir.get(host) || 0) + jeda - Date.now(); if (tunggu > 0) await tidur(tunggu);
     terakhir.set(host, Date.now());
-    const r = await fetch(url, { headers: { 'User-Agent': UA }, redirect: 'follow', signal: AbortSignal.timeout(60000) });
+    let r;
+    try { r = await fetch(url, { headers: { 'User-Agent': UA }, redirect: 'follow', signal: AbortSignal.timeout(60000) }); }
+    catch (e) { if (i === coba - 1) throw new Error(`jaringan ${host}: ${e.cause?.code || e.message}`); await tidur(15000); continue; }
     if (r.status === 403) throw new Error('403: ' + host);
     if (r.status === 429) { if (i === coba - 1) throw new Error('429: ' + host); await tidur((+r.headers.get('retry-after') || 60) * 1000); continue; }
     if (r.ok) {
@@ -243,7 +245,7 @@ async function main() {
     if (pilih.includes('gdelt')) {
       let beruntun = 0;
       for (const [kode, ed, terms] of daftarKueri()) {
-        if (beruntun >= 4) { gagal.push('gdelt: dihentikan setelah 4 kegagalan beruntun'); break; }
+        if (beruntun >= 6) { gagal.push('gdelt: dihentikan setelah 6 kegagalan beruntun'); break; }
         try { catat(uraiGdelt(await ambil(urlGdelt(kueriGdelt(terms, ed)), { coba: 3 })), { kueri: `${kode}:${ed}`, sumber_panen: 'gdelt' }); beruntun = 0; }
         catch (e) { beruntun++; gagal.push(`gdelt ${kode}:${ed} ${e.message}`); }
       }

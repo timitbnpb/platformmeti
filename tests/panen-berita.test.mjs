@@ -93,7 +93,7 @@ test('GDELT: petakan url/judul/domain/seendate/bahasa, buang bahasa lain dan tan
 
 test('sintaks kueri GDELT: kurung, frasa, filter bahasa', () => {
   assert.equal(kueriGdelt(['PLTS', 'energi surya'], 'id'), '(PLTS OR "energi surya") sourcelang:indonesian');
-  assert.equal(kueriGdelt(['solar power'], 'en'), '("solar power") Indonesia sourcelang:english');
+  assert.equal(kueriGdelt(['solar power'], 'en'), '"solar power" Indonesia sourcelang:english');
   for (const v of Object.values(KUERI)) for (const t of [...v.id, ...v.en]) assert.ok(t.length >= 3, t);
   assert.equal(kueriGoogle(['PLTA', 'tenaga air']), 'PLTA OR "tenaga air"');
 });

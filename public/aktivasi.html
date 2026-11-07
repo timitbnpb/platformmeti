@@ -13,13 +13,19 @@
 <link rel="stylesheet" href="/inti/kepala.css">
 <link rel="stylesheet" href="/inti/gaya.css">
 <link rel="stylesheet" href="/inti/jm.css">
+<link rel="stylesheet" href="/inti/akun.css">
 <script src="/tema.js"></script>
 </head>
-<body data-halaman="aktivasi">
+<body class="jm-akun" data-halaman="aktivasi">
 <header class="top" id="kepala"></header>
 <div id="pita"></div>
 <div class="jm-halaman">
   <section class="jm-kartu jm-sempit" aria-labelledby="judul">
+    <div class="jm-merek-kartu">
+      <img src="/img/logo-meti.svg" width="64" height="64" alt="">
+      <strong data-i18n="akun.merek">Jaringan METI</strong>
+      <span data-i18n="akun.merek_sub">Ekosistem energi terbarukan Indonesia</span>
+    </div>
     <div id="selesai" hidden>
       <div class="jm-form-judul"><h1 id="judul-selesai" data-i18n="aktivasi.sukses">Akunmu aktif. Silakan masuk.</h1></div>
       <a class="jm-tbl jm-tbl-utama" href="/masuk" data-i18n="jm.masuk">Masuk</a>
@@ -31,16 +37,8 @@
       </div>
       <div id="pesan"></div>
       <input type="text" name="username" autocomplete="username" tabindex="-1" aria-hidden="true" hidden>
-      <div class="jm-medan">
-        <label for="baru" data-i18n="sandi.baru">Sandi baru</label>
-        <input class="jm-isian" id="baru" name="baru" type="password" autocomplete="new-password" minlength="12" maxlength="128" required>
-        <span class="jm-bantu" data-i18n="sandi.aturan">12 sampai 128 karakter. Jangan sama dengan surelmu.</span>
-      </div>
-      <div class="jm-medan">
-        <label for="ulang" data-i18n="sandi.ulang">Ulangi sandi</label>
-        <input class="jm-isian" id="ulang" name="ulang" type="password" autocomplete="new-password" required>
-      </div>
-      <label class="jm-cek"><input type="checkbox" id="tampil"><span data-i18n="masuk.tampil">Tampilkan sandi</span></label>
+      <div class="jm-medan jm-ambang jm-sandi"><input class="jm-isian" id="baru" name="baru" type="password" autocomplete="new-password" placeholder=" " minlength="12" maxlength="128" required><label for="baru" data-i18n="sandi.baru"></label><span class="jm-bantu" data-i18n="sandi.aturan">12 sampai 128 karakter. Jangan sama dengan surelmu.</span></div>
+      <div class="jm-medan jm-ambang jm-sandi"><input class="jm-isian" id="ulang" name="ulang" type="password" autocomplete="new-password" placeholder=" " required><label for="ulang" data-i18n="sandi.ulang"></label></div>
       <button type="submit" class="jm-tbl jm-tbl-utama" id="kirim" data-i18n="aktivasi.kirim">Aktifkan akun</button>
     </form>
   </section>
