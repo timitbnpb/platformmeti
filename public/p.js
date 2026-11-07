@@ -4,6 +4,7 @@ import { mulaiHalaman } from "/inti/kepala.js";
 import { tombolKoreksi } from "/inti/koreksi.js";
 import { tombolIkuti, pasangIkuti } from "/inti/ikuti.js";
 import { muatPembaruan } from "/inti/pembaruan.js";
+import { khUbinHtml, khFaktaHtml } from "/inti/kh.js";
 import { hantuHtml } from "/inti/umum.js";
 import { terkaitHtml } from "/inti/komponen.js";
 import { tautOrg } from "/inti/tautan.js";
@@ -65,7 +66,9 @@ async function mulai() {
   const pihakHtml = pihak(p, orgById);
 
   const terkait = await terkaitHtml("proyek", id);
-  akar.innerHTML = kepalaHtml({ avatar: `<span class="pf-av pf-av-tek">${ikonTek(r.tek)}</span>`, nama: r.nama, pil, meta, balik: ["/proyek", t("pf.ke_proyek")] })
+  const sisi = stat.length ? khUbinHtml(stat.slice(0, 3).map((x) => ({ ikon: x.ik, nilai: x.nilai, label: x.label })))
+    : khFaktaHtml([{ ikon: "proyek", label: t("kh.jenis"), nilai: label("pj.tek.", r.tek) }, { ikon: "peta", label: t("kh.lokasi"), nilai: [kab, r.prov].filter(Boolean).join(", ") }]);
+  akar.innerHTML = kepalaHtml({ avatar: `<span class="pf-av pf-av-tek">${ikonTek(r.tek)}</span>`, nama: r.nama, pil, meta, balik: ["/proyek", t("pf.ke_proyek")], sisi })
     + `<div class="pf-bagian">${ringkasan}${lokasi}`
     + seksi({ id: "pihak", ik: "orang", topik: t("pf.ey.pihak"), judulHtml: esc(t("pf.j.pihak")), isiHtml: pihakHtml, csv: true, sumber })
     + seksi({ id: "program", ik: "regulasi", topik: t("pf.ey.program"), judulHtml: hlHtml("pf.j.program", angka(programs.length)), isiHtml: kartuProgram(programs.map((g) => ({ g }))), csv: false, sumber })

@@ -10,6 +10,9 @@ export function khUbin(id, items) {
   if (el) el.innerHTML = items.map((u) => `<div class="jm-kh-ub"><span class="jm-kpi-ik">${ikon(u.ikon, 18)}</span><p class="jm-kh-angka"><b>${esc(u.nilai)}</b>${u.satuan ? `<span>${esc(u.satuan)}</span>` : ""}</p><p class="jm-kh-lbl">${esc(u.label)}</p></div>`).join("");
 }
 
+/** Ubin angka sebagai HTML (dipakai khSisi dan kepala profil). */
+export const khUbinHtml = (items) => `<div class="jm-kh-ubin" data-n="${items.length}">${items.map((u) => `<div class="jm-kh-ub"><span class="jm-kpi-ik">${ikon(u.ikon, 18)}</span><p class="jm-kh-angka"><b>${esc(u.nilai)}</b>${u.satuan ? `<span>${esc(u.satuan)}</span>` : ""}</p><p class="jm-kh-lbl">${esc(u.label)}</p></div>`).join("")}</div>`;
+
 /** Gambar berlatar gradien brand + batik. {src?, alt?, logo?, judul?, cap?}: tanpa src tampil logo/judul di atas gradien. */
 export const khGambarHtml = ({ src = "", alt = "", logo = "", judul = "", cap = "", poster = false }) =>
   `<figure class="jm-kh-gambar jm-batik${poster ? " jm-kh-poster" : ""}">${src ? `<img class="jm-kh-foto" src="${esc(src)}" alt="${esc(alt)}" data-galat="hapus" loading="eager" decoding="async">` : ""}${logo || judul ? `<span class="jm-kh-lencana${src ? " jm-kh-lencana-pojok" : ""}">${logo ? `<img src="${esc(logo)}" alt="" width="40" height="40" data-galat="hapus" loading="eager" decoding="async">` : ""}${judul ? `<b>${esc(judul)}</b>` : ""}</span>` : ""}${cap ? `<figcaption>${esc(cap)}</figcaption>` : ""}</figure>`;
@@ -23,7 +26,7 @@ export function khSisi(kh, { ubin, gambar, fakta, aksi = "" } = {}) {
   if (!el) return null;
   el.querySelector(":scope > .jm-kh-sisi")?.remove();
   let isi = "";
-  if (ubin && ubin.length) isi = `<div class="jm-kh-ubin">${ubin.map((u) => `<div class="jm-kh-ub"><span class="jm-kpi-ik">${ikon(u.ikon, 18)}</span><p class="jm-kh-angka"><b>${esc(u.nilai)}</b>${u.satuan ? `<span>${esc(u.satuan)}</span>` : ""}</p><p class="jm-kh-lbl">${esc(u.label)}</p></div>`).join("")}</div>`;
+  if (ubin && ubin.length) isi = khUbinHtml(ubin);
   else if (gambar) isi = khGambarHtml(gambar);
   else if (fakta && fakta.some((f) => f && f.nilai)) isi = khFaktaHtml(fakta);
   if (!isi && !aksi) return null;

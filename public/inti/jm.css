@@ -650,3 +650,4 @@ main>:is(section,div,article)+:is(section,div,article){margin-top:max(24px,var(-
 .jm-tek-hidrogen{--tk:var(--tp-hidrogen)}.jm-tek-jaringan{--tk:var(--tp-jaringan)}.jm-tek-kebijakan{--tk:var(--tp-kebijakan)}.jm-tek-industri{--tk:var(--tp-industri)}
 .jm-tek-pembiayaan{--tk:var(--tp-biaya)}.jm-tek-transisi-adil{--tk:var(--tp-adil)}.jm-tek-karbon{--tk:var(--tp-karbon)}.jm-tek-elektrifikasi{--tk:var(--tp-listrik)}.jm-tek-efisiensi{--tk:var(--tp-efisiensi)}
 .pc-tw{display:inline-grid;color:var(--tk)}.pc-tw svg{width:18px;height:18px}
+.jm-hal>.jm-pag{flex:1;margin:0}

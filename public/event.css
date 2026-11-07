@@ -226,7 +226,7 @@ img.ev-poster-besar{background:var(--surface)}
 .gal-hero{margin:0 0 6px}
 .gal-hero .gal-foto{height:clamp(220px,34vw,440px)}
 .gal-mosaik{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:6px}
-.gal-mosaik li{flex:1 1 200px;height:240px;margin:0}
+.gal-mosaik li{flex:0 0 auto;width:200px;height:240px;margin:0}
 .gal-foto{position:relative;display:block;width:100%;height:100%;padding:0;border:0;border-radius:var(--r-sm);overflow:hidden;background:var(--kaki-bg);cursor:zoom-in}
 .gal-foto img.gal-g{position:relative;display:block;width:100%;height:100%;object-fit:cover;transition:transform .35s}
 .gal-latar{display:none;position:absolute;inset:-12%;width:124%;height:124%;object-fit:cover;filter:blur(18px) brightness(.8)}
@@ -243,7 +243,8 @@ img.ev-poster-besar{background:var(--surface)}
 .gal-chip{flex:1 1 calc(50% - 4px);padding:0 10px}
 .gal-chip span{max-width:14ch}
 .gal-mosaik{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:6px}
-.gal-mosaik li{height:auto;aspect-ratio:4/3}
+.gal-mosaik li{width:auto;height:auto;aspect-ratio:4/3}
+.gal-mosaik li:last-child:nth-child(odd){grid-column:1/-1;aspect-ratio:16/9}
 .gal-jenis{display:none}
 .gal-ket{padding:28px 8px 6px}
 }

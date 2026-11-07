@@ -79,3 +79,8 @@
 .pf-orang-n{font-weight:700;color:var(--ink);overflow-wrap:anywhere}
 .pf-orang-j{font-size:var(--t-kecil);color:var(--ink2);overflow-wrap:anywhere}
 @media (max-width:760px){.pf-balik{display:inline-flex;align-items:center;min-height:44px}}
+/* sisi kanan kepala: ubin angka / gambar / fakta dari inti/kh.js (tanpa ruang kosong di kanan) */
+.pf-kepala-sisi{display:grid;min-width:0;align-content:center}
+.pf-kepala-sisi .jm-kh-angka{white-space:normal;flex-wrap:wrap}.pf-kepala-sisi .jm-kh-angka b{font-size:var(--t-h1)}.pf-kepala-sisi .jm-kpi-ik{grid-area:auto;display:grid;place-items:center;flex:none;width:32px;height:32px;border-radius:50%;background:var(--soft-hijau);color:var(--accent)}
+@media (min-width:1000px){.pf-kepala{grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);column-gap:40px;align-items:center}.pf-kepala>.pf-balik{grid-column:1/-1}}
+@media (max-width:639px){.pf-kepala-sisi .jm-kh-ubin{gap:8px;grid-template-columns:repeat(2,minmax(0,1fr))!important}.pf-kepala-sisi .jm-kh-ub{padding:12px 10px;gap:6px}.pf-kepala-sisi .jm-kh-angka b{font-size:var(--t-h2)}}

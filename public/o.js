@@ -4,6 +4,7 @@ import { tombolKoreksi } from "/inti/koreksi.js";
 import { tombolIkuti, pasangIkuti } from "/inti/ikuti.js";
 import { muatPembaruan } from "/inti/pembaruan.js";
 import { hantuHtml } from "/inti/umum.js";
+import { khUbinHtml, khGambarHtml, khFaktaHtml } from "/inti/kh.js";
 import { terkaitHtml } from "/inti/komponen.js";
 import { t, angka, esc, ikon, muat, norm, urlAman, hlHtml, pilTek, idJalur, provHtml, lambang, inisial, barisProyek, kapTeks, kepalaHtml, metaItem, statHtml, seksi, tabel, td, tabelProyek, tabelBerita, tabelRegulasi, tabelSumber, kartuProgram, petaTitik, galatHtml, pasangLogoCadangan, ringkasTgl } from "/profil.js";
 
@@ -108,7 +109,8 @@ async function mulai() {
     isiHtml: (rows.some((r) => r.ada) ? `<div class="pf-peta" id="pfPeta" role="img" aria-label="${esc(t("pf.peta"))}"></div><p class="jm-bantu pf-peta-ket">${esc(t("pj.presisi.ket", { pasti: angka(rows.filter((r) => r.presisi === "titik_persis").length), kira: angka(rows.filter((r) => r.ada && r.presisi !== "titik_persis").length), tanpa: angka(rows.filter((r) => !r.ada).length) }))}</p>` : "") + tabelProyek(rows), csv: true, sumber: sumberRingkas }) : "";
 
   const terkait = await terkaitHtml("org", id);
-  akar.innerHTML = kepalaHtml({ avatar: avatar(o), nama: o.nama, pil, meta, balik: ["/", t("pf.ke_beranda")] })
+  const sisi = stat.length ? khUbinHtml(stat.slice(0, 3).map((x) => ({ ikon: x.ik, nilai: x.nilai, label: x.label }))) : o.logo ? khGambarHtml({ logo: o.logo, judul: o.nama }) : khFaktaHtml([{ ikon: "direktori", label: t("kh.jenis"), nilai: o.kategori?.label }, { ikon: "peta", label: t("kh.lokasi"), nilai: tempat }]);
+  akar.innerHTML = kepalaHtml({ avatar: avatar(o), nama: o.nama, pil, meta, balik: ["/", t("pf.ke_beranda")], sisi })
     + `<div class="pf-bagian">${ringkasan}${proyekSek}`
     + seksi({ id: "program", ik: "regulasi", topik: t("pf.ey.program"), judulHtml: hlHtml("pf.j.program", angka(progT.n)), isiHtml: progT.html, csv: false, sumber: sumberRingkas })
     + seksi({ id: "regulasi", ik: "regulasi", topik: t("pf.ey.regulasi"), judulHtml: hlHtml("pf.j.regulasi", angka(regs.length)), isiHtml: tabelRegulasi(regs), csv: true, sumber: esc(t("pf.sumber_data", { tanggal: ringkasTgl(reg.dibangun_pada) })) })

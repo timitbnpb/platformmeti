@@ -331,6 +331,229 @@
    "url_akhir": "https://www.mhi.com/",
    "judul": "Mitsubishi Heavy Industries, Ltd. Global Website",
    "tanggal": "2026-11-08"
+  },
+  "Ansaldo Energia": {
+   "status": "ok",
+   "url_akhir": "https://www.ansaldoenergia.com/",
+   "judul": "HomePage",
+   "tanggal": "2026-11-08"
+  },
+  "Andritz": {
+   "status": "ok",
+   "url_akhir": "https://www.andritz.com/group-en",
+   "judul": "ANDRITZ GROUP",
+   "tanggal": "2026-11-08"
+  },
+  "Dongfang Electric": {
+   "status": "diblokir",
+   "alasan": "robots.txt melarang"
+  },
+  "Harbin Electric": {
+   "status": "gagal",
+   "alasan": "fetch failed"
+  },
+  "Shanghai Electric": {
+   "status": "gagal",
+   "alasan": "HTTP 521"
+  },
+  "Doosan Enerbility": {
+   "status": "ok",
+   "url_akhir": "https://www.doosanenerbility.com/en",
+   "judul": "Doosan Enerbility",
+   "tanggal": "2026-11-08"
+  },
+  "China Everbright Environment": {
+   "status": "tak-memuat-nama",
+   "url_akhir": "https://www.cebenvironment.com/",
+   "judul": "中国光大环境(集团)有限公司"
+  },
+  "CITIC Construction": {
+   "status": "diblokir",
+   "alasan": "HTTP 403"
+  },
+  "Beijing GeoEnviron Engineering": {
+   "status": "gagal",
+   "alasan": "fetch failed"
+  },
+  "China Datang": {
+   "status": "tak-memuat-nama",
+   "url_akhir": "https://www.china-cdt.com/",
+   "judul": "中国大唐集团有限公司"
+  },
+  "Huadian": {
+   "status": "gagal",
+   "alasan": "HTTP 404"
+  },
+  "Tsingshan": {
+   "status": "gagal",
+   "alasan": "fetch failed"
+  },
+  "Risen Energy": {
+   "status": "gagal",
+   "alasan": "fetch failed"
+  },
+  "Astronergy (Chint)": {
+   "status": "diblokir",
+   "alasan": "robots.txt 403/429"
+  },
+  "REC Group": {
+   "status": "diblokir",
+   "alasan": "robots.txt melarang"
+  },
+  "GoodWe": {
+   "status": "tak-memuat-nama",
+   "url_akhir": "https://www.goodwe.com/",
+   "judul": "固德威——以光伏逆变器为核心的整体解决方案服务商"
+  },
+  "Trina Solar": {
+   "status": "ok",
+   "url_akhir": "https://www.trinasolar.com/en-glb/",
+   "judul": "Trinasolar",
+   "tanggal": "2026-11-08"
+  },
+  "Canadian Solar": {
+   "status": "ok",
+   "url_akhir": "https://www.csisolar.com/",
+   "judul": "CSI Solar &#8211; Global",
+   "tanggal": "2026-11-08"
+  },
+  "Sungrow": {
+   "status": "ok",
+   "url_akhir": "https://www.sungrowpower.com/en",
+   "judul": "Sungrow - Solar Inverter &amp; Energy Storage Solutions - Sungrow - SUNGROW",
+   "tanggal": "2026-11-08"
+  },
+  "LONGi Green Energy": {
+   "status": "ok",
+   "url_akhir": "https://www.longi.com/en/",
+   "judul": "The World’s Leading Supplier of Solar PV Solutions - LONGi",
+   "tanggal": "2026-11-08"
+  },
+  "JinkoSolar": {
+   "status": "ok",
+   "url_akhir": "https://www.jinkosolar.com/en/",
+   "judul": "Jinko Solar-Solar Energy Solutions &amp; PV Modules | JinkoSolar",
+   "tanggal": "2026-11-08"
+  },
+  "Masdar": {
+   "status": "ok",
+   "url_akhir": "https://masdar.ae/",
+   "judul": "Masdar | The Power of Next",
+   "tanggal": "2026-11-08"
+  },
+  "ACWA Power": {
+   "status": "ok",
+   "url_akhir": "https://acwapower.com/",
+   "judul": "Acwa | Home",
+   "tanggal": "2026-11-08"
+  },
+  "TotalEnergies": {
+   "status": "diblokir",
+   "alasan": "robots.txt melarang"
+  },
+  "ENGIE": {
+   "status": "ok",
+   "url_akhir": "https://www.engie.com/",
+   "judul": "Agir pour la transition énergétique - ENGIE",
+   "tanggal": "2026-11-08"
+  },
+  "Akuo": {
+   "status": "ok",
+   "url_akhir": "https://www.akuoenergy.com/",
+   "judul": "Akuo | Producteur d&#039;énergie renouvelable",
+   "tanggal": "2026-11-08"
+  },
+  "Mubadala": {
+   "status": "diblokir",
+   "alasan": "robots.txt melarang"
+  },
+  "TAQA": {
+   "status": "tak-memuat-nama",
+   "url_akhir": "https://www.taqa.com/"
+  },
+  "Temasek": {
+   "status": "diblokir",
+   "alasan": "robots.txt 403/429"
+  },
+  "Asian Development Bank": {
+   "status": "diblokir",
+   "alasan": "robots.txt melarang"
+  },
+  "World Bank": {
+   "status": "ok",
+   "url_akhir": "https://www.worldbank.org/ext/en/home",
+   "judul": "World Bank Group - International Development, Poverty and Sustainability",
+   "tanggal": "2026-11-08"
+  },
+  "International Finance Corporation": {
+   "status": "diblokir",
+   "alasan": "robots.txt melarang"
+  },
+  "Islamic Development Bank": {
+   "status": "ok",
+   "url_akhir": "https://www.isdb.org/",
+   "judul": "Islamic Development Bank | Empowering people, building partnerships, driving innovation",
+   "tanggal": "2026-11-08"
+  },
+  "Green Climate Fund": {
+   "status": "ok",
+   "url_akhir": "https://www.greenclimate.fund/",
+   "judul": "The world’s climate fund for developing countries | Green Climate Fund",
+   "tanggal": "2026-11-08"
+  },
+  "Global Environment Facility": {
+   "status": "ok",
+   "url_akhir": "https://www.thegef.org/",
+   "judul": "Home | GEF",
+   "tanggal": "2026-11-08"
+  },
+  "United Nations Development Programme": {
+   "status": "diblokir",
+   "alasan": "robots.txt melarang"
+  },
+  "European Commission": {
+   "status": "ok",
+   "url_akhir": "https://commission.europa.eu/select-language?destination=/node/1",
+   "judul": "Language selection | European Commission",
+   "tanggal": "2026-11-08"
+  },
+  "Private Infrastructure Development Group": {
+   "status": "ok",
+   "url_akhir": "https://pidg.org/",
+   "judul": "Private Infrastructure Development Group (PIDG)",
+   "tanggal": "2026-11-08"
+  },
+  "International Energy Agency": {
+   "status": "ok",
+   "url_akhir": "https://www.iea.org/",
+   "judul": "IEA - International Energy Agency",
+   "tanggal": "2026-11-08"
+  },
+  "International Renewable Energy Agency": {
+   "status": "diblokir",
+   "alasan": "robots.txt 403/429"
+  },
+  "Climate Investment Funds": {
+   "status": "diblokir",
+   "alasan": "robots.txt melarang"
+  },
+  "Japan International Cooperation Agency": {
+   "status": "ok",
+   "url_akhir": "https://www.jica.go.jp/",
+   "judul": "JICA - 国際協力機構",
+   "tanggal": "2026-11-08"
+  },
+  "Japan Bank for International Cooperation": {
+   "status": "ok",
+   "url_akhir": "https://www.jbic.go.jp/",
+   "judul": "JBIC 国際協力銀行",
+   "tanggal": "2026-11-08"
+  },
+  "Sumitomo Mitsui Banking Corporation": {
+   "status": "ok",
+   "url_akhir": "https://www.smbc.co.jp/",
+   "judul": "�O��Z�F��s",
+   "tanggal": "2026-11-08"
   }
  }
 }

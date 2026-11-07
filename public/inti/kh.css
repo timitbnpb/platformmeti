@@ -33,7 +33,7 @@
 .jm-kh-lencana-pojok b{font-size:var(--t-kecil)}
 .jm-kh-lencana-pojok img{width:24px;height:24px}
 .jm-kh-gambar figcaption{position:absolute;right:12px;bottom:8px;z-index:1;font:400 var(--t-label)/var(--lh-rapat) var(--font);color:var(--on-brand)}
-.jm-kh-fakta{display:grid;gap:10px;margin:0;grid-template-columns:repeat(2,minmax(0,1fr))}
+.jm-kh-fakta{display:grid;gap:10px;margin:0;grid-template-columns:repeat(auto-fit,minmax(200px,1fr))}
 .jm-kh-fk{display:flex;align-items:center;gap:12px;min-width:0;padding:14px 16px;border:1px solid var(--line);border-radius:var(--r);background:var(--card);box-shadow:var(--shadow)}
 .jm-kh-fk>div{min-width:0}
 .jm-kh-fk dt{font:400 var(--t-kecil)/var(--lh-rapat) var(--font);color:var(--ink2)}
@@ -43,3 +43,6 @@
 .jm-kh-aksi{display:flex;flex-wrap:wrap;align-items:center;gap:8px 12px}
 @media (max-width:639px){.jm-kh-gambar{min-height:140px}.jm-kh-fakta{grid-template-columns:minmax(0,1fr)}.jm-kh-fk{padding:10px 12px}}
 .jm-kh-poster .jm-kh-foto{object-fit:contain}
+.jm-kh-ubin[data-n="1"]{grid-template-columns:minmax(0,1fr)}
+.jm-kh-ubin[data-n="2"]{grid-template-columns:repeat(2,minmax(0,1fr))}
+.jm-kh-gambar:not(:has(.jm-kh-foto)) .jm-kh-lencana img{width:64px;height:64px}

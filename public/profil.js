@@ -36,9 +36,9 @@ export function barisProyek(p) {
 export const kapTeks = (r) => (r.kap === null ? "-" : `${angka(r.kap)} ${r.sat}`);
 
 /** Kepala profil (terang, seperti /regulasi): avatar, nama, pil, meta. */
-export const kepalaHtml = ({ avatar, nama, pil = "", meta = "", balik }) => `<header class="pf-kepala">
+export const kepalaHtml = ({ avatar, nama, pil = "", meta = "", balik, sisi = "" }) => `<header class="pf-kepala">
   <a class="pf-balik" href="${esc(balik[0])}">${ikon("panah-kiri", 16)}<span>${esc(balik[1])}</span></a>
-  <div class="pf-kepala-isi">${avatar}<div class="pf-kepala-teks"><h1>${esc(nama)}</h1>${pil ? `<div class="pf-pil">${pil}</div>` : ""}${meta ? `<ul class="pf-meta">${meta}</ul>` : ""}${bagikanHtml({ url: location.pathname, judul: nama, kelas: "kecil" })}</div></div></header>`;
+  <div class="pf-kepala-isi">${avatar}<div class="pf-kepala-teks"><h1>${esc(nama)}</h1>${pil ? `<div class="pf-pil">${pil}</div>` : ""}${meta ? `<ul class="pf-meta">${meta}</ul>` : ""}${bagikanHtml({ url: location.pathname, judul: nama, kelas: "kecil" })}</div></div>${sisi ? `<div class="pf-kepala-sisi">${sisi}</div>` : ""}</header>`;
 export const metaItem = (ik, isiHtml) => `<li>${ikon(ik, 16)}<span>${isiHtml}</span></li>`;
 
 /** Kartu ringkasan: item {ik, nilai, label, est?}. */
