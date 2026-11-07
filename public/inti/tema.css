@@ -28,6 +28,10 @@
      peran: h1/h2 Inter 700, h3 Inter 600, angka Inter 700, eyebrow Inter 700 label kapital .08em, isi Inter 400 body, bantu Inter 400 kecil, tombol/pil Inter 600 tombol. */
   --t-display:30px; --t-h1:24px; --t-h2:18px; --t-h3:17px; --t-angka:28px; --t-body:15px; --t-tombol:13px; --t-kecil:12.5px; --t-label:11px; --t-masukan:16px;
   --lh-judul:1.2; --lh-rapat:1.35; --lh-isi:1.5; --ls-label:.08em;
+
+  /* palet topik/teknologi: tiap topik warna sendiri (pemilik 8 Nov 2026) */
+  --tp-surya:#D99A06; --tp-bayu:#2B8FC7; --tp-hidro:#1F5FA8; --tp-panas:#C2410C; --tp-bio:#4D8B1F; --tp-sampah:#7A5A2E; --tp-simpan:#6D4BB5; --tp-nuklir:#B3261E; --tp-hidrogen:#0E8C8C; --tp-jaringan:#475569;
+  --tp-kebijakan:#0A5C47; --tp-industri:#8A3FA0; --tp-biaya:#B8860B; --tp-adil:#C2185B; --tp-karbon:#3F4F45; --tp-listrik:#0277BD; --tp-efisiensi:#2E7D32;
   color-scheme:light;
 }
 @media (min-width:600px){:root{--gut:24px}}
@@ -45,6 +49,9 @@
   --ok-bg:#123A2F; --warn-bg:#3A2616; --bad-bg:#3A1B19; --info-bg:#153A4A;
   --fokus:#5BB8EC; --kaki-bg:#041912;
   --shadow:0 2px 14px rgb(0 0 0/.35); --shadow-lg:0 8px 28px rgb(0 0 0/.5);
+
+  --tp-surya:#F2B632; --tp-bayu:#5BB8EC; --tp-hidro:#6E9FE0; --tp-panas:#F2955A; --tp-bio:#8BC34A; --tp-sampah:#C9A06A; --tp-simpan:#A98BEB; --tp-nuklir:#FF8A80; --tp-hidrogen:#4FD3D3; --tp-jaringan:#94A3B8;
+  --tp-kebijakan:#4FD3AD; --tp-industri:#CE93D8; --tp-biaya:#E6C04A; --tp-adil:#F48FB1; --tp-karbon:#A7BDB4; --tp-listrik:#4FC3F7; --tp-efisiensi:#81C784;
   color-scheme:dark;
 }}
 :root[data-theme="dark"]{
@@ -59,5 +66,8 @@
   --ok-bg:#123A2F; --warn-bg:#3A2616; --bad-bg:#3A1B19; --info-bg:#153A4A;
   --fokus:#5BB8EC; --kaki-bg:#041912;
   --shadow:0 2px 14px rgb(0 0 0/.35); --shadow-lg:0 8px 28px rgb(0 0 0/.5);
+
+  --tp-surya:#F2B632; --tp-bayu:#5BB8EC; --tp-hidro:#6E9FE0; --tp-panas:#F2955A; --tp-bio:#8BC34A; --tp-sampah:#C9A06A; --tp-simpan:#A98BEB; --tp-nuklir:#FF8A80; --tp-hidrogen:#4FD3D3; --tp-jaringan:#94A3B8;
+  --tp-kebijakan:#4FD3AD; --tp-industri:#CE93D8; --tp-biaya:#E6C04A; --tp-adil:#F48FB1; --tp-karbon:#A7BDB4; --tp-listrik:#4FC3F7; --tp-efisiensi:#81C784;
   color-scheme:dark;
 }

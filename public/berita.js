@@ -8,7 +8,7 @@ import { namaMedia, logoLokal } from "/inti/nama_media.js";
 import { paginasiHtml } from "/inti/paginasi.js";
 import { volumeSvg, batangMendatar, jumlahJendela } from "/berita_grafik.js";
 import { muat, label, urlAman, norm, namaRegulasi } from "/publik.js";
-import { IKON_TEK as IKT } from "/inti/ikon_tek.js";
+import { IKON_TEK as IKT, pilTek } from "/inti/ikon_tek.js";
 import { LOGO_ORG } from "/beranda_data.js";
 import { petaHtml, pasangPeta, agregat } from "/berita_peta.js";
 import { gambarAnalisis } from "/berita_analisis.js";
@@ -121,9 +121,9 @@ const sampul = (r, kelas, w, h, tag = false) => {
 };
 const tautan = (r, isi, kelas) => `<a class="${kelas}" href="${esc(urlAman(r.url))}" target="_blank" rel="noopener noreferrer" title="${esc(t("brt.buka"))}">${isi}</a>`;
 const metaHtml = (r) => `<p class="brt-meta">${esc(r.media)}, ${esc(tanggal(r.terbit.slice(0, 10)))}</p>`;
-const pil = (r) => (r.kepakaran?.[0] ? `<span class="brt-pil">${esc(tek(r.kepakaran[0]))}</span>` : "");
+const pil = (r) => (r.kepakaran?.[0] ? `<span class="brt-pil">${pilTek(r.kepakaran[0])}</span>` : "");
 const tagHtml = (r, n = 2) => (r.kepakaran || []).slice(0, n).map((k) => `<button type="button" class="brt-tek" data-topik="${esc(k)}">${esc(tek(k))}</button>`).join("");
-const orgHtml = (r) => (r.organisasi_ids || []).filter((id) => ORG.has(id)).slice(0, 2).map((id) => `<a class="brt-org" href="/o/${esc(id)}">${esc(ORG.get(id))}</a>`).join("");
+const orgHtml = (r) => (r.organisasi_ids || []).filter((id) => ORG.has(id)).slice(0, 2).map((id) => `<a class="brt-org" href="/o/${esc(id)}">${LOGO_ORG[id] ? `<img class="brt-org-lg" src="/img/logo/${esc(LOGO_ORG[id])}.png" width="16" height="16" alt="" loading="lazy" data-galat="hapus">` : ""}${esc(ORG.get(id))}</a>`).join("");
 const BAGIAN = [["surya", ["surya"], "tek-surya"], ["panas", ["panas-bumi"], "tek-panas"], ["bio", ["bioenergi", "biomassa-sampah"], "tek-bio"], ["kebijakan", ["kebijakan", "pembiayaan", "transisi-adil"], "regulasi"]];
 const utama = (r) => (r.kepakaran || [])[0];
 /** Berita milik satu bagian menurut teknologi UTAMA saja (kepakaran pertama), 90 hari terakhir. */

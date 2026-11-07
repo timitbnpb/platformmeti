@@ -351,3 +351,28 @@ button.brt-an-k:focus-visible,.brt-an-dlg button:focus-visible{outline:2px solid
 .jm-rel-gulir{scroll-padding-inline:24px;scroll-behavior:smooth;padding-inline:8px}
 .jm-rel-gulir>a{flex:none}
 .jm-rel-gulir>a:last-child{margin-right:8px}
+
+/* pil topik di foto: ikon + warna topik pekat, teks putih */
+.brt-pil{padding:0;background:none;box-shadow:none;border-radius:var(--r-pil)}
+.brt-pil .jm-pil-tek{background:color-mix(in srgb,var(--tk) 62%,var(--kaki-bg));color:var(--on-brand);border:0;box-shadow:var(--shadow)}
+.brt-org{gap:6px}
+.brt-org-lg{width:16px;height:16px;flex:none;object-fit:contain;border-radius:4px;background:var(--card)}
+/* Sorotan dunia: peringkat negara + kartu berita asing bergambar */
+.brt-an-rank{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+.brt-an-rk{display:grid;grid-template-columns:24px 28px minmax(7em,12em) minmax(60px,1fr) minmax(70px,140px) 3.2em auto;align-items:center;gap:12px;padding:8px 12px;border:1px solid var(--line);border-radius:var(--r);background:var(--card);min-width:0}
+.brt-an-no{font:600 var(--t-kecil)/1 var(--font);color:var(--ink2);text-align:center}
+.brt-an-nm{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;color:var(--head)}
+.brt-an-bar{width:100%;height:8px;display:block}.brt-an-bar rect{fill:var(--data2)}.brt-an-bar .brt-an-bk{fill:var(--surface)}
+.brt-an-sp2{width:100%;height:28px;display:block}.brt-an-sp2 polyline{stroke:var(--accent);stroke-width:2;stroke-linejoin:round}
+.brt-an-tt{font:700 var(--t-h2)/1 var(--display);color:var(--accent);text-align:right;font-variant-numeric:tabular-nums}
+.brt-an-bdr{width:24px;height:18px;object-fit:cover;border-radius:3px;box-shadow:0 0 0 1px var(--line)}
+.brt-an-sorot{list-style:none;margin:0;padding:0;display:grid;gap:16px;grid-template-columns:repeat(3,minmax(0,1fr))}
+.brt-an-sk{display:grid;gap:8px;align-content:start;min-width:0}
+.brt-an-sf{position:relative;display:grid;place-items:center;aspect-ratio:16/10;overflow:hidden;border-radius:var(--r-sm);background:color-mix(in srgb,var(--brand) 10%,var(--surface))}
+.brt-an-sf>img:not(.brt-an-lg):not(.brt-an-bp){position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.brt-an-lg{width:48px;height:48px;object-fit:contain}
+.brt-an-bp{position:absolute;left:10px;top:10px;width:30px;height:22px;object-fit:cover;border-radius:4px;box-shadow:0 0 0 2px var(--card)}
+.brt-an-sk .brt-judul{display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2;line-clamp:2;overflow:hidden;font:600 var(--t-body)/1.35 var(--font);color:var(--ink);text-decoration:none}
+@media (max-width:1000px){.brt-an-sorot{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:639px){.brt-an-sorot{grid-template-columns:minmax(0,1fr)}.brt-an-rk{grid-template-columns:24px 28px minmax(0,1fr) auto;gap:8px}.brt-an-bar,.brt-an-sp2,.brt-an-rk .brt-ubah{display:none}}
+.brt-pil .jm-pil-tek,.brt-pil .jm-pil-tek .jm-ikt{color:var(--on-brand)}

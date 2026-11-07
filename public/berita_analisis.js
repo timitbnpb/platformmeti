@@ -93,16 +93,21 @@ function kebijakan(K0) {
 }
 /* 7 */
 function dunia(K0) {
-  const en = K0.B.filter((r) => r.bahasa === "en").map((r) => ({ r, n: negaraMedia(hostDari(r)) })).filter((x) => x.n && x.n !== "id");
+  const baru = K0.B.filter((r) => r.bahasa === "en" && K0.ak - Date.parse(r.terbit) <= 30 * HARI).map((r) => ({ r, n: negaraMedia(hostDari(r)) })).filter((x) => x.n && x.n !== "id");
   const per = new Map();
-  for (const x of en) (per.get(x.n) || per.set(x.n, []).get(x.n)).push(x.r);
-  const hs0 = [...per].map(([n, rows]) => ({ n, rows, ...banding(rows, () => true, K0.ak, 7) })).sort((a, b) => b.a - a.a || b.rows.length - a.rows.length);
-  const [hs, gk] = rata(hs0);
-  if (!hs0.length) return bagian(K0, { id: "ex-an-dunia", ik: "bahasa", ey: "brt.an.dunia.ey", judulHtml: esc(t("brt.an.dunia.ey")), sub: "brt.an.dunia.sub", isi: kartuKosong("brt.an.dunia.kosong"), cara: "brt.an.dunia.cara" });
-  const bdr = (n) => BENDERA_ADA.has(n) ? `<img class="brt-an-bdr" src="/img/bendera/${n}.svg" width="24" height="16" alt="" loading="lazy">` : `<span class="brt-an-bdr brt-an-kode">${esc(n.toUpperCase())}</span>`;
-  const kartu = hs.map((x) => `<li class="brt-an-k"><span class="brt-an-n">${bdr(x.n)}<b>${esc(t("brt.an.n." + x.n))}</b></span><span class="brt-an-v">${esc(t("brt.an.v.berita7", { n: angka(x.a) }))}</span>${panah(x.selisih, x.b)}${stat3([["kalender", "brt.an.isu.h7", x.a], ["kalender", "brt.an.isu.lalu.h", x.b], ["berita", "brt.an.dunia.total.h", x.rows.length]])}<ul class="brt-an-list">${x.rows.slice(0, 1).map(baris).join("")}</ul></li>`).join("");
-  const n7 = hs0.reduce((a, x) => a + x.a, 0);
-  return bagian(K0, { id: "ex-an-dunia", ik: "bahasa", ey: "brt.an.dunia.ey", judulHtml: hlHtml("brt.an.dunia.j", angka(n7)), sub: "brt.an.dunia.sub", isi: `<ul class="${gk}">${kartu}</ul>`, cara: "brt.an.dunia.cara" });
+  for (const x of baru) (per.get(x.n) || per.set(x.n, []).get(x.n)).push(x.r);
+  const hs = [...per].map(([n, rows]) => ({ n, rows, ...banding(rows, () => true, K0.ak, 7) })).filter((x) => x.rows.length).sort((a, b) => b.rows.length - a.rows.length).slice(0, 8);
+  if (!hs.length) return bagian(K0, { id: "ex-an-dunia", ik: "bahasa", ey: "brt.an.dunia.ey", judulHtml: esc(t("brt.an.dunia.ey")), sub: "brt.an.dunia.sub", isi: kartuKosong("brt.an.dunia.kosong"), cara: "brt.an.dunia.cara" });
+  const bdr = (n, kelas = "brt-an-bdr") => BENDERA_ADA.has(n) ? `<img class="${kelas}" src="/img/bendera/${n}.svg" width="24" height="18" alt="" loading="lazy">` : `<span class="${kelas} brt-an-kode">${esc(n.toUpperCase())}</span>`;
+  const mx = hs[0].rows.length, total = baru.length, nama = (n) => t("brt.an.n." + n);
+  const mini = (d) => `<svg class="brt-an-sp2" viewBox="0 0 120 28" preserveAspectRatio="none" aria-hidden="true"><polygon class="brt-an-ar" points="0,28 ${sparkPoin(d, 120, 28)} 120,28"/><polyline points="${sparkPoin(d, 120, 28)}" fill="none" vector-effect="non-scaling-stroke"/></svg>`;
+  const bermakna = (x) => x.selisih != null && x.selisih !== -100 && x.a + x.b >= 3;
+  const baris2 = hs.map((x, k) => `<li class="brt-an-rk"><span class="brt-an-no">${angka(k + 1)}</span>${bdr(x.n)}<b class="brt-an-nm">${esc(nama(x.n))}</b><svg class="brt-an-bar" viewBox="0 0 100 8" preserveAspectRatio="none" aria-hidden="true"><rect width="100" height="8" rx="4" class="brt-an-bk"/><rect width="${Math.max(3, Math.round(x.rows.length / mx * 100))}" height="8" rx="4"/></svg>${mini(harian(x.rows, () => true, K0.ak))}<span class="brt-an-tt">${angka(x.rows.length)}</span>${bermakna(x) ? panah(x.selisih, x.b) : ""}</li>`).join("");
+  const sor = baru.sort((a, b) => b.r.terbit.localeCompare(a.r.terbit)).slice(0, 6).map(({ r, n }) => { const f = fotoBerita(K0.FOTO, r.id), lg = fav(r);
+    return `<li class="brt-an-sk"><a class="brt-an-sf" href="${esc(urlAman(r.url))}" target="_blank" rel="noopener noreferrer" title="${esc(t("brt.buka"))}">${f ? `<img src="${esc(f)}" width="320" height="200" alt="" loading="lazy" decoding="async" data-galat="hapus">` : ""}${lg ? `<img class="brt-an-lg" src="${esc(lg)}" width="48" height="48" alt="" loading="lazy" data-galat="hapus">` : ""}${bdr(n, "brt-an-bp")}</a>
+      ${tautan(r, esc(r.judul))}<span class="brt-meta">${logo(r)}<span>${esc(r.media)}, ${esc(tanggal(r.terbit.slice(0, 10)))}</span></span></li>`; }).join("");
+  const isi = `<ol class="brt-an-rank">${baris2}</ol><h3 class="brt-grup">${esc(t("brt.an.dunia.sorot"))}</h3><ul class="brt-an-sorot">${sor}</ul>`;
+  return bagian(K0, { id: "ex-an-dunia", ik: "bahasa", ey: "brt.an.dunia.ey", judulHtml: hlHtml("brt.an.dunia.j30", angka(total), { n: nama(hs[0].n) }), sub: "brt.an.dunia.sub", isi, cara: "brt.an.dunia.cara" });
 }
 
 function dialog() {

@@ -643,3 +643,8 @@ main>:is(section,div,article)+:is(section,div,article){margin-top:max(24px,var(-
 @media (max-width:760px){.jj-chip{min-height:44px}}
 /* tab halaman gabungan (inti/tab_halaman.js): di HP tiap tab sama lebar, isi rata tengah */
 .jm-tab-rata>button{flex:1 1 0;justify-content:center;padding-inline:8px}
+/* warna topik unik (8 Nov 2026) */
+.jm-tek-surya{--tk:var(--tp-surya)}.jm-tek-bayu{--tk:var(--tp-bayu)}.jm-tek-hidro{--tk:var(--tp-hidro)}.jm-tek-panas-bumi{--tk:var(--tp-panas)}
+.jm-tek-bioenergi{--tk:var(--tp-bio)}.jm-tek-biomassa-sampah{--tk:var(--tp-sampah)}.jm-tek-penyimpanan{--tk:var(--tp-simpan)}.jm-tek-nuklir{--tk:var(--tp-nuklir)}
+.jm-tek-hidrogen{--tk:var(--tp-hidrogen)}.jm-tek-jaringan{--tk:var(--tp-jaringan)}.jm-tek-kebijakan{--tk:var(--tp-kebijakan)}.jm-tek-industri{--tk:var(--tp-industri)}
+.jm-tek-pembiayaan{--tk:var(--tp-biaya)}.jm-tek-transisi-adil{--tk:var(--tp-adil)}.jm-tek-karbon{--tk:var(--tp-karbon)}.jm-tek-elektrifikasi{--tk:var(--tp-listrik)}.jm-tek-efisiensi{--tk:var(--tp-efisiensi)}
