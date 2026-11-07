@@ -84,3 +84,10 @@ dialog.jm-cari::backdrop{background:rgb(11 23 38/.55)}
 .jm-cari-info{margin:0;padding:28px 16px;text-align:center;color:var(--ink2)}
 .jm-cari .jm-cari-petunjuk{max-width:none;margin:0;padding:10px 16px;border-top:1px solid var(--line);font:400 var(--t-kecil)/var(--lh-rapat) var(--font);color:var(--ink2)}
 @media (max-width:600px){.jm-cari-petunjuk{display:none}}
+/* menu desktop rata (pemilik 7 Nov): kolom sama lebar, grup Insight ikut sel grid, jarak sama di semua halaman */
+@media (min-width:1200px){
+  nav.tabs,nav.tabs.buka{grid-auto-columns:minmax(0,1fr);gap:4px}
+  nav.tabs>.jm-grup{display:flex;min-width:0}
+  nav.tabs>.jm-grup>.jm-grup-tbl{flex:1;width:100%;min-width:0}
+  nav.tabs>a,nav.tabs .jm-grup-tbl{min-width:0;white-space:nowrap}
+}

@@ -5,14 +5,23 @@ import { esc, ikon } from "/inti/umum.js";
 import { t } from "/i18n.js";
 
 const PILIH = "main section[id], main article.jm-ex[id], main section.jm-ex[id], main .jm-ex[id]";
-const judul = (el) => (el.dataset.relLabel || el.querySelector(".jm-ex-ey")?.textContent || el.querySelector("h2, .jm-ex-j, h3")?.textContent || "").trim().replace(/\s+/g, " ");
+const judulPenuh = (el) => (el.dataset.relLabel || el.querySelector(".jm-ex-ey, .jm-kh-ey")?.textContent || el.querySelector("h2, .jm-ex-j, h3")?.textContent || "").trim().replace(/\s+/g, " ");
+/* label butir rel: maksimal 3 kata bermakna (data-rel-label menang, apa adanya) */
+const KATA_LEWAT = /^(di|ke|dari|yang|dan|untuk|pada|dengan|apa|mengapa|bagaimana|siapa|kapan|ini|itu|atau|serta|saja|ada|dalamnya)$/i;
+const judul = (el) => {
+  if (el.dataset.relLabel) return judulPenuh(el);
+  const k = judulPenuh(el).replace(/[?!.:;,]+$/g, "").split(" ");
+  const inti = k.filter((w) => !KATA_LEWAT.test(w));
+  const h = (inti.length ? inti : k).slice(0, 3).join(" ");
+  return h.charAt(0).toUpperCase() + h.slice(1);
+};
 /* ikon dari kata kunci judul bila seksi tak menyebut ikon sendiri, supaya tiap butir rel berbeda */
 const KATA_IKON = [[/peta|lokasi|wilayah|provinsi|sebaran/i, "peta"], [/proyek|pembangkit/i, "proyek"], [/regulasi|aturan|hukum|kebijakan|perda/i, "regulasi"], [/berita|media/i, "berita"], [/kalender|agenda|acara|jadwal/i, "kalender"], [/tren|volume|waktu|tahun/i, "analisis"], [/rantai|pabrik|pasok/i, "rantai"], [/asean|negara/i, "asean"], [/metode|cara|sumber/i, "metode"], [/organisasi|pengurus|struktur|anggota|mitra|tim|orang|pakar|siapa/i, "orang"], [/tentang|mengapa|kontak|faq|pertanyaan/i, "info"], [/teknologi|surya|energi/i, "tek-surya"], [/emisi|karbon/i, "tek-panas"], [/data|dataset|angka|ringkas|kondisi|insight|temuan/i, "insight"], [/akses|gabung|daftar/i, "kunci"]];
 const ikonSeksi = (el) => {
-  const sv = el.querySelector(".jm-ex-ey svg");
+  const sv = el.querySelector(".jm-ex-ey svg, .jm-kh-ey svg");
   if (el.dataset.relIkon) return ikon(el.dataset.relIkon, 18);
   if (sv) return sv.outerHTML;
-  const j = judul(el); const k = KATA_IKON.find(([re]) => re.test(j));
+  const j = judulPenuh(el); const k = KATA_IKON.find(([re]) => re.test(j));
   return ikon(k ? k[1] : "daftar", 18);
 };
 
