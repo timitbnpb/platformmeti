@@ -12,7 +12,7 @@ const SVG = /<svg[\s\S]*<\/svg>/;
 export function ikonHtml(spec) {
   if (!spec) return "";
   const [jenis, nilai] = spec.includes(":") ? spec.split(/:(.*)/s) : ["", spec];
-  if (jenis === "tek") return IKON_TEK[nilai] || "";
+  if (jenis === "tek") return IKON_TEK[nilai] ? `<span class="pc-tw jm-tek-${esc(nilai)}">${IKON_TEK[nilai]}</span>` : "";   /* berwarna sesuai topik */
   if (jenis === "st") return (SVG.exec(pilStatus(nilai)) || [""])[0];
   if (jenis === "img") return /^\/img\/[\w./-]+$/.test(nilai) ? `<img class="pc-lb" src="${esc(nilai)}" width="18" height="18" alt="" loading="lazy" decoding="async" data-galat="hapus">` : "";
   if (jenis === "prov") {

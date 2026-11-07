@@ -41,11 +41,14 @@ const adaFilter = () => !!(S.q || S.jenis || S.tahun || S.status || S.topik || S
 function gambarSaring() {
   const hitung = (f) => [...new Set(D.baris.flatMap(f).filter(Boolean))];
   const p = (id, ik, semua, daftar) => pilihHtml({ id, ikon: ik, label: t(semua), opsi: [["", t(semua)], ...daftar], nilai: S[id] });
-  const jenis = hitung((r) => [r.jenis]).map((v) => [v, label("reg.jenis.", v)]);
+  /* ikon unik per opsi (pemilik 8 Nov 2026: "kenapa iconnya sama semua") */
+  const IK_JENIS = { uu: "palu", perppu: "peringatan", pp: "regulasi", perpres: "perisai", keppres: "bintang", inpres: "siaran", permen: "gedung", perda: "lokasi", lainnya: "daftar" };
+  const IK_TOPIK = { angin: "tek:bayu", bioenergi: "tek:bioenergi", efisiensi: "tek:efisiensi", energi_baru_umum: "tek:elektrifikasi", energi_umum: "tek:jaringan", harga: "tek:pembiayaan", hidro: "tek:hidro", hidrogen: "tek:hidrogen", insentif: "tek:transisi-adil", jaringan: "tek:jaringan", karbon: "tek:karbon", nuklir: "tek:nuklir", panas_bumi: "tek:panas-bumi", penyimpanan: "tek:penyimpanan", perencanaan: "tek:kebijakan", perizinan: "tek:industri", surya: "tek:surya", tkdn: "tek:industri" };
+  const jenis = hitung((r) => [r.jenis]).map((v) => [v, label("reg.jenis.", v), IK_JENIS[v] || "regulasi"]);
   const tahun = hitung((r) => [r.tahun]).sort((a, b) => b - a).map((v) => [String(v), String(v)]);
-  const status = ["berlaku", "diubah", "dicabut"].map((v) => [v, label("reg.status.", v)]);
-  const topik = hitung((r) => r.topik || []).map((v) => [v, label("reg.topik.", v)]).sort((a, b) => a[1].localeCompare(b[1]));
-  const tingkat = ["nasional", "daerah"].map((v) => [v, label("reg.tingkat.", v)]);
+  const status = ["berlaku", "diubah", "dicabut"].map((v) => [v, label("reg.status.", v), { berlaku: "centang", diubah: "ubah", dicabut: "silang" }[v]]);
+  const topik = hitung((r) => r.topik || []).map((v) => [v, label("reg.topik.", v), IK_TOPIK[v] || "topik"]).sort((a, b) => a[1].localeCompare(b[1]));
+  const tingkat = ["nasional", "daerah"].map((v) => [v, label("reg.tingkat.", v), { nasional: "img:/img/penerbit/garuda.png", daerah: "peta" }[v]]);
   document.getElementById("saring").innerHTML = cariHtml({ id: "q", label: t("reg.cari") }) + p("jenis", "jenis", "reg.semua.jenis", jenis) + p("tahun", "tahun", "reg.semua.tahun", tahun) + p("status", "status", "reg.semua.status", status)
     + p("topik", "topik", "reg.semua.topik", topik) + p("tingkat", "tingkat", "reg.semua.tingkat", tingkat) + hapusHtml({ id: "hapus", label: t("jm.kosong.reset") });
   document.getElementById("q").value = S.q;

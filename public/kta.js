@@ -115,7 +115,7 @@ async function kepala() {
     h.innerHTML = `<div class="jm-kh-ubin">${ub("qr", "kta.kartu.nomor", esc(k.nomor_kta || "-"))}${ub("orang", "kta.kartu.jenis", esc(labelJenis(k.jenis)))}${ub("tahun", "kta.kartu.berlaku", esc(tanggal(k.berlaku_sampai)))}</div>`;
     return;
   }
-  h.innerHTML = `<figure class="kta-contoh"><canvas id="cContoh" width="${LEBAR}" height="${TINGGI}" role="img" aria-label="${esc(t("kta.contoh.cap"))}"></canvas><figcaption>${ikon("info", 14)}<span>${esc(t("kta.contoh.cap"))}</span></figcaption></figure>`;
+  h.innerHTML = `<figure class="kta-contoh"><div class="kta-kilau"><canvas id="cContoh" width="${LEBAR}" height="${TINGGI}" role="img" aria-label="${esc(t("kta.contoh.cap"))}"></canvas></div><figcaption>${ikon("info", 14)}<span>${esc(t("kta.contoh.cap"))}</span></figcaption></figure>`;
   nanti(async () => {
     await pastikanFont();
     const c = $("cContoh");
@@ -145,7 +145,7 @@ function kartu() {
   const k = S.k, st = t("kta.kartu.status." + k.status);
   isi.innerHTML = `<div class="kta-grid">
     <div class="kta-pentas">
-      <div class="kta-balik" id="balik" data-sisi="depan" role="button" tabindex="0" aria-label="${esc(t("kta.pentas"))}">
+      <div class="kta-balik kta-kilau" id="balik" data-sisi="depan" role="button" tabindex="0" aria-label="${esc(t("kta.pentas"))}">
         <canvas class="kta-sisi kta-depan" id="cDepan" width="${LEBAR}" height="${TINGGI}" aria-hidden="true"></canvas>
         <canvas class="kta-sisi kta-belakang" id="cBelakang" width="${LEBAR}" height="${TINGGI}" aria-hidden="true"></canvas>
       </div>
@@ -173,14 +173,13 @@ async function gambarSemua() {
   const k = S.k, depan = $("cDepan"), belakang = $("cBelakang");
   if (!depan || !k) return;
   await pastikanFont();
-  const [logo, ttd, foto, qr] = await Promise.all([
+  const [logo, foto, qr] = await Promise.all([
     muatGambar("/img/logo-meti-tanda.png"),
-    muatGambar("/img/kta/ttd-ketua.png"),
     k.ada_foto ? muatGambar(`/api/kta/foto/${k.id}?v=${S.versi}`) : null,
     k.url_verifikasi ? bikinQr(k.url_verifikasi).catch(() => null) : null,
   ]);
   if (!$("cDepan")) return;
-  const d = { nama: k.nama_cetak, nomor: k.nomor_kta, jenis: k.jenis, instansi: k.instansi, berlaku: k.berlaku_sampai, status: k.status, qr, foto, logo, ttd };
+  const d = { nama: k.nama_cetak, nomor: k.nomor_kta, jenis: k.jenis, instansi: k.instansi, berlaku: k.berlaku_sampai, status: k.status, qr, foto, logo, urlVerif: k.url_verifikasi };
   gambarDepan(depan.getContext("2d"), d);
   gambarBelakang(belakang.getContext("2d"), d);
 }

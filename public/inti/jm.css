@@ -591,15 +591,16 @@ main>:is(section,div,article)+:is(section,div,article){margin-top:max(24px,var(-
 .jm-lg-eb svg,.jm-lg-eb .jm-ik{width:14px!important;height:14px!important;flex:none}.jm-lg-eb span{white-space:nowrap}.jm-lg-kep>div{flex:1;min-width:0}
 
 /* paginasi bernomor bersama (inti/paginasi.js) */
-.jm-pag{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px;margin:16px 0;color:var(--ink2);font-size:var(--t-body)}
-.jm-pag-nomor{display:inline-flex;flex-wrap:wrap;align-items:center;gap:6px}
-.jm-pag-b{display:inline-grid;place-items:center;min-width:40px;height:40px;padding:0 10px;border:1px solid var(--line-ctl);border-radius:var(--r);background:var(--card);color:var(--ink);font:600 var(--t-tombol)/1 var(--font);font-variant-numeric:tabular-nums;cursor:pointer}
-.jm-pag-b:hover:not(:disabled){border-color:var(--accent);color:var(--accent)}
-.jm-pag-b[aria-current=page]{background:var(--accent);border-color:var(--accent);color:var(--on-accent)}
-.jm-pag-b:disabled{opacity:.45;cursor:not-allowed}
+.jm-pag{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:8px;border-top:1px solid var(--line);padding-top:12px;margin:14px 0 16px}
+.jm-pag-teks{margin:0;font-size:var(--t-kecil);font-weight:600;color:var(--ink2);font-variant-numeric:tabular-nums}
+.jm-pag-nomor{display:flex;flex-wrap:wrap;align-items:center;gap:4px}
+.jm-pag-b{display:inline-flex;align-items:center;justify-content:center;height:32px;min-width:32px;padding:0 9px;border:0;border-radius:9px;background:transparent;color:var(--ink2);font:700 var(--t-kecil)/1 var(--font);font-variant-numeric:tabular-nums;cursor:pointer;transition:background .12s,color .12s}
+.jm-pag-b:hover:not(:disabled):not(.on){background:var(--card);color:var(--ink);box-shadow:var(--shadow)}
+.jm-pag-b.on{background:linear-gradient(135deg,var(--brand),var(--brand2));color:var(--on-brand);box-shadow:var(--shadow)}
+.jm-pag-b:disabled{opacity:.35;cursor:default}
 .jm-pag-b:focus-visible{outline:3px solid var(--fokus);outline-offset:2px}
-.jm-pag-b svg{stroke:currentColor;fill:none}
-.jm-pag-elips{padding:0 4px;color:var(--ink2)}
+.jm-pag-elips{color:var(--ink2);padding:0 4px}
+@media (max-width:600px){.jm-pag{flex-direction:column;justify-content:center;text-align:center}.jm-pag-nomor{justify-content:center}.jm-pag-b{min-height:44px;min-width:44px}.jm-pag-b:not(.on):not(:first-child):not(:last-child):not([aria-current]){display:none}.jm-pag-b.on{display:inline-flex}.jm-pag-elips{display:none}}
 
 /* BATIK kawung bersama (pola putih transparan di kepala/kartu): .jm-batik pada elemen berisi; warna dari --batik (bawaan currentColor), kepekatan --batik-op, memudar ke bawah; .jm-batik-rata tanpa pudar */
 .jm-batik{position:relative}
@@ -648,3 +649,4 @@ main>:is(section,div,article)+:is(section,div,article){margin-top:max(24px,var(-
 .jm-tek-bioenergi{--tk:var(--tp-bio)}.jm-tek-biomassa-sampah{--tk:var(--tp-sampah)}.jm-tek-penyimpanan{--tk:var(--tp-simpan)}.jm-tek-nuklir{--tk:var(--tp-nuklir)}
 .jm-tek-hidrogen{--tk:var(--tp-hidrogen)}.jm-tek-jaringan{--tk:var(--tp-jaringan)}.jm-tek-kebijakan{--tk:var(--tp-kebijakan)}.jm-tek-industri{--tk:var(--tp-industri)}
 .jm-tek-pembiayaan{--tk:var(--tp-biaya)}.jm-tek-transisi-adil{--tk:var(--tp-adil)}.jm-tek-karbon{--tk:var(--tp-karbon)}.jm-tek-elektrifikasi{--tk:var(--tp-listrik)}.jm-tek-efisiensi{--tk:var(--tp-efisiensi)}
+.pc-tw{display:inline-grid;color:var(--tk)}.pc-tw svg{width:18px;height:18px}

@@ -57,13 +57,13 @@ function garisAksen(c) {
   g.addColorStop(0, warna("--meti-lime")); g.addColorStop(1, warna("--meti-cyan"));
   c.fillStyle = g; c.fillRect(0, TINGGI - 16, LEBAR, 16);
 }
-function kepalaMerek(c, logo, { kanan }) {
-  c.fillStyle = PUTIH; c.beginPath(); c.arc(M + 70, 138, 70, 0, Math.PI * 2); c.fill();
-  if (logo) { const w = 104, h = (w * 238) / 256; c.drawImage(logo, M + 70 - w / 2, 138 - h / 2, w, h); }
+function kepalaMerek(c, logo, { kanan, x: X = M }) {
+  c.fillStyle = PUTIH; c.beginPath(); c.arc(X + 70, 138, 70, 0, Math.PI * 2); c.fill();
+  if (logo) { const w = 104, h = (w * 238) / 256; c.drawImage(logo, X + 70 - w / 2, 138 - h / 2, w, h); }
   c.textBaseline = "alphabetic"; c.textAlign = "left";
-  huruf(c, 700, "2px", 66); c.fillStyle = PUTIH; c.fillText("METI", M + 168, 134);
-  huruf(c, 400, "0px", 28); c.fillStyle = "rgba(255,255,255,.88)"; c.fillText(t("kta.kartu.org"), M + 168, 176);
-  if (kanan) { c.textAlign = "right"; huruf(c, 700, "0px", 40); c.fillStyle = warna("--meti-lime"); c.fillText(kanan, LEBAR - M, 150); c.textAlign = "left"; }
+  huruf(c, 700, "2px", 66); c.fillStyle = PUTIH; c.fillText("METI", X + 168, 134);
+  huruf(c, 400, "0px", 28); c.fillStyle = "rgba(255,255,255,.88)"; c.fillText(t("kta.kartu.org"), X + 168, 176);
+  if (kanan) { c.textAlign = "right"; huruf(c, 700, "0px", 34); c.fillStyle = warna("--meti-lime"); c.fillText(kanan, LEBAR - M, 78); c.textAlign = "left"; }
 }
 
 /* ---------- QR: modul digambar langsung dari matriks (qrcode-generator, di-vendor) ---------- */
@@ -85,57 +85,110 @@ function gambarQr(c, matriks, x, y, ukuran) {
 const STATUS = { aktif: ["--meti-lime", "gelap"], kedaluwarsa: ["--meti-oranye", PUTIH], dicabut: ["#B3261E", PUTIH], tertunda: ["--meti-cyan", "gelap"] };
 const ambil = (x) => (x === "gelap" ? gelap() : x.startsWith("--") ? warna(x) : x);
 
+/* ---------- latar gaya kartu foto pengurus (.tn-fk-pt v3) untuk panel foto ---------- */
+const PX = 560, CX = PX / 2, CY = 380; // lebar panel foto dan pusat cahaya di belakang kepala
+function latarFoto(c) {
+  const navy = warna("--meti-navy"), teal = warna("--meti-teal"), cyan = warna("--meti-cyan"), lime = warna("--meti-lime");
+  c.save(); c.beginPath(); c.rect(0, 0, PX, TINGGI); c.clip();
+  const g = c.createLinearGradient(0, 0, PX * 0.6, TINGGI);
+  g.addColorStop(0, "#04382b"); g.addColorStop(0.35, navy); g.addColorStop(0.75, teal); g.addColorStop(1, cyan);
+  c.fillStyle = g; c.fillRect(0, 0, PX, TINGGI);
+  c.strokeStyle = lembut(lime, 0.1); c.lineWidth = 3; // garis parang lime
+  for (let x = -TINGGI; x < PX; x += 40) { c.beginPath(); c.moveTo(x, 0); c.lineTo(x + TINGGI, TINGGI); c.stroke(); }
+  c.fillStyle = lembut("#ffffff", 0.06); // sinar conic halus
+  for (let a = 0; a < 360; a += 14) { c.beginPath(); c.moveTo(CX, CY); c.arc(CX, CY, 1200, (a * Math.PI) / 180, ((a + 4) * Math.PI) / 180); c.closePath(); c.fill(); }
+  c.strokeStyle = "rgba(255,255,255,.1)"; c.lineWidth = 2; // cincin halo
+  for (let r = 230; r < 700; r += 54) { c.beginPath(); c.arc(CX, CY, r, 0, Math.PI * 2); c.stroke(); }
+  const r1 = c.createRadialGradient(CX, CY, 0, CX, CY, 330); // cahaya lime di belakang kepala
+  r1.addColorStop(0, lembut(lime, 0.5)); r1.addColorStop(0.5, "rgba(255,255,255,.12)"); r1.addColorStop(1, lembut(lime, 0));
+  c.fillStyle = r1; c.fillRect(0, 0, PX, TINGGI);
+  const r2 = c.createLinearGradient(0, TINGGI * 0.55, 0, TINGGI); // vinyet bawah
+  r2.addColorStop(0, "rgba(0,0,0,0)"); r2.addColorStop(1, "rgba(0,0,0,.5)");
+  c.fillStyle = r2; c.fillRect(0, TINGGI * 0.55, PX, TINGGI);
+  c.restore();
+}
+/* ---------- latar kanan: gradien brand gelap + kawung halus (setara .jm-batik) + kilau ---------- */
+function latarKanan(c) {
+  const navy = warna("--meti-navy"), lime = warna("--meti-lime");
+  c.save(); c.beginPath(); c.rect(PX, 0, LEBAR - PX, TINGGI); c.clip();
+  const g = c.createLinearGradient(PX, 0, LEBAR, TINGGI);
+  g.addColorStop(0, "#05392c"); g.addColorStop(0.6, navy); g.addColorStop(1, "#04382b");
+  c.fillStyle = g; c.fillRect(PX, 0, LEBAR - PX, TINGGI);
+  c.save(); c.strokeStyle = "rgba(255,255,255,.09)"; c.lineWidth = 2;
+  const k = 64; // kawung: empat elips bertumpuk per sel
+  for (let y = 0; y < TINGGI; y += k) for (let x = PX; x < LEBAR + k; x += k) {
+    for (const [dx, dy, rot] of [[0, -k / 4, 0], [0, k / 4, 0], [-k / 4, 0, 1], [k / 4, 0, 1]]) {
+      c.beginPath(); c.ellipse(x + k / 2 + dx, y + k / 2 + dy, k / 4, k / 8 + 4, rot ? Math.PI / 2 : 0, 0, Math.PI * 2); c.stroke();
+    }
+  }
+  c.restore();
+  const m = c.createLinearGradient(0, 0, 0, TINGGI); // pola memudar ke bawah
+  m.addColorStop(0, lembut(navy, 0)); m.addColorStop(1, lembut(navy, 0.75));
+  c.fillStyle = m; c.fillRect(PX, 0, LEBAR - PX, TINGGI);
+  const kl = c.createLinearGradient(PX + 300, 0, PX + 760, TINGGI); // kilau diagonal
+  kl.addColorStop(0, "rgba(255,255,255,0)"); kl.addColorStop(0.5, lembut(lime, 0.14)); kl.addColorStop(1, "rgba(255,255,255,0)");
+  c.fillStyle = kl; c.fillRect(PX, 0, LEBAR - PX, TINGGI);
+  c.restore();
+  const s = c.createLinearGradient(0, 0, 0, TINGGI); // garis aksen lime pemisah
+  s.addColorStop(0, lime); s.addColorStop(1, warna("--meti-cyan"));
+  c.fillStyle = s; c.fillRect(PX - 4, 0, 8, TINGGI);
+}
+
 /** Sisi depan. d: { nama, nomor, jenis, instansi, berlaku, status, qr, foto, logo }. */
 export function gambarDepan(c, d) {
   c.save(); kotak(c, 0, 0, LEBAR, TINGGI, 56); c.clip();
-  latarHijau(c); garisAksen(c);
-  kepalaMerek(c, d.logo, { kanan: t("kta.kartu.judul") });
-  // foto persegi
-  const fx = M, fy = 300, fs = 380;
-  c.fillStyle = PUTIH; kotak(c, fx - 8, fy - 8, fs + 16, fs + 16, 40); c.fill();
-  c.save(); kotak(c, fx, fy, fs, fs, 32); c.clip();
+  latarFoto(c); latarKanan(c); garisAksen(c);
+  const lime = warna("--meti-lime");
+  // foto: lingkaran berbingkai lime di depan cahaya; tanpa foto, inisial besar
+  const R = 190;
+  c.save(); c.shadowColor = lembut(lime, 0.55); c.shadowBlur = 50;
+  c.fillStyle = lime; c.beginPath(); c.arc(CX, CY, R + 12, 0, Math.PI * 2); c.fill(); c.restore();
+  c.save(); c.beginPath(); c.arc(CX, CY, R, 0, Math.PI * 2); c.clip();
   if (d.foto) {
     const s = Math.min(d.foto.width, d.foto.height), sx = (d.foto.width - s) / 2, sy = (d.foto.height - s) / 2;
-    c.drawImage(d.foto, sx, sy, s, s, fx, fy, fs, fs);
+    c.drawImage(d.foto, sx, sy, s, s, CX - R, CY - R, R * 2, R * 2);
   } else {
-    const g = c.createLinearGradient(fx, fy, fx + fs, fy + fs);
-    g.addColorStop(0, warna("--meti-lime")); g.addColorStop(1, warna("--meti-cyan"));
-    c.fillStyle = g; c.fillRect(fx, fy, fs, fs);
-    huruf(c, 700, "0px", 170); c.fillStyle = PUTIH; c.textAlign = "center"; c.textBaseline = "middle";
-    c.fillText((String(d.nama).match(/\p{L}/gu) || ["?"]).slice(0, 2).join("").toLocaleUpperCase(), fx + fs / 2, fy + fs / 2 + 8);
+    const g = c.createLinearGradient(CX - R, CY - R, CX + R, CY + R);
+    g.addColorStop(0, warna("--meti-teal")); g.addColorStop(1, warna("--meti-navy"));
+    c.fillStyle = g; c.fillRect(CX - R, CY - R, R * 2, R * 2);
+    huruf(c, 700, "0px", 150); c.fillStyle = PUTIH; c.textAlign = "center"; c.textBaseline = "middle";
+    c.fillText((String(d.nama).match(/\p{L}/gu) || ["?"]).slice(0, 2).join("").toLocaleUpperCase(), CX, CY + 8);
     c.textAlign = "left"; c.textBaseline = "alphabetic";
   }
   c.restore();
+  c.strokeStyle = "rgba(255,255,255,.7)"; c.lineWidth = 4; // kilau bingkai
+  c.beginPath(); c.arc(CX, CY, R + 12, Math.PI * 1.1, Math.PI * 1.45); c.stroke();
   // lencana status
   const [lat, tek] = STATUS[d.status] || STATUS.tertunda;
-  c.fillStyle = ambil(lat); kotak(c, fx, 718, fs, 66, 33); c.fill();
+  c.fillStyle = ambil(lat); kotak(c, CX - 170, 800, 340, 66, 33); c.fill();
   huruf(c, 700, "0px", 32); c.fillStyle = ambil(tek); c.textAlign = "center"; c.textBaseline = "middle";
-  c.fillText(t("kta.kartu.status." + d.status), fx + fs / 2, 752); c.textAlign = "left"; c.textBaseline = "alphabetic";
-  // nama (maks dua baris), instansi
-  const kx = 520, kl = LEBAR - M - kx;
-  let px = 78, baris;
+  c.fillText(t("kta.kartu.status." + d.status), CX, 834); c.textAlign = "left"; c.textBaseline = "alphabetic";
+  // kanan: merek
+  const kx = PX + 64, kl = LEBAR - M - kx;
+  kepalaMerek(c, d.logo, { kanan: t("kta.kartu.judul"), x: kx });
+  // nama (maks dua baris), pil jenis, instansi
+  let px = 76, baris;
   for (;;) { huruf(c, 700, "-1px", px); baris = bungkus(c, d.nama, kl); if (baris.length <= 2 || px <= 52) break; px -= 4; }
   baris = baris.slice(0, 2).map((b, i, a) => (i === a.length - 1 ? potong(c, b, kl) : b));
   c.fillStyle = PUTIH;
-  let y = 372;
-  for (const b of baris) { c.fillText(b, kx, y); y += px * 1.12; }
-  if (d.instansi) { huruf(c, 400, "0px", 40); c.fillStyle = "rgba(255,255,255,.9)"; c.fillText(potong(c, d.instansi, kl), kx, y + 14); }
-  // jenis dan masa berlaku
-  c.fillStyle = "rgba(255,255,255,.32)"; c.fillRect(kx, 612, 790, 2);
-  const kolom = (x, kunci, nilai) => {
-    huruf(c, 400, "0px", 28); c.fillStyle = "rgba(255,255,255,.75)"; c.fillText(t(kunci), x, 662);
-    huruf(c, 600, "0px", 44); c.fillStyle = PUTIH; c.fillText(nilai, x, 716);
-  };
-  kolom(kx, "kta.kartu.jenis", labelJenis(d.jenis));
-  kolom(960, "kta.kartu.berlaku", tanggal(d.berlaku));
-  // nomor KTA dan QR
-  huruf(c, 400, "0px", 28); c.fillStyle = "rgba(255,255,255,.75)"; c.fillText(t("kta.kartu.nomor"), M, 852);
-  huruf(c, 700, "1px", 68); c.fillStyle = warna("--meti-lime"); c.fillText(d.nomor || "-", M, 930);
-  gambarQr(c, d.qr, LEBAR - M - 330, 690, 330);
+  let y = 340;
+  for (const b of baris) { c.fillText(b, kx, y); y += px * 1.1; }
+  huruf(c, 700, "0px", 34);
+  const jt = labelJenis(d.jenis), jw = c.measureText(jt).width + 56;
+  c.fillStyle = lime; kotak(c, kx, y - 18, jw, 62, 31); c.fill();
+  c.fillStyle = gelap(); c.textBaseline = "middle"; c.fillText(jt, kx + 28, y + 14); c.textBaseline = "alphabetic";
+  y += 100;
+  if (d.instansi) { huruf(c, 400, "0px", 38); c.fillStyle = "rgba(255,255,255,.9)"; c.fillText(potong(c, d.instansi, kl), kx, y); }
+  // nomor, berlaku, QR di pojok
+  huruf(c, 400, "0px", 28); c.fillStyle = "rgba(255,255,255,.75)"; c.fillText(t("kta.kartu.nomor"), kx, 770);
+  huruf(c, 700, "1px", 66); c.fillStyle = lime; c.fillText(d.nomor || "-", kx, 840);
+  huruf(c, 400, "0px", 28); c.fillStyle = "rgba(255,255,255,.75)"; c.fillText(t("kta.kartu.berlaku"), kx, 905);
+  huruf(c, 600, "0px", 42); c.fillStyle = PUTIH; c.fillText(tanggal(d.berlaku), kx, 955);
+  gambarQr(c, d.qr, LEBAR - M - 270, 700, 270);
   c.restore();
 }
 
-/** Sisi belakang. d: { nomor, berlaku, logo, ttd (gambar tanda tangan Ketua Umum atau null) }. */
+/** Sisi belakang. d: { nomor, berlaku, logo, urlVerif }. */
 export function gambarBelakang(c, d) {
   c.save(); kotak(c, 0, 0, LEBAR, TINGGI, 56); c.clip();
   const g = c.createLinearGradient(0, 0, 0, TINGGI);
@@ -163,13 +216,11 @@ export function gambarBelakang(c, d) {
   yy += 14;
   c.fillStyle = warna("--meti-navy"); huruf(c, 600, "0px", 31);
   c.fillText("meti.ires@gmail.com", sx, yy); yy += 46; c.fillText("www.meti.or.id", sx, yy);
-  // tanda tangan Ketua Umum, hanya bila berkas tersedia
-  if (d.ttd) {
-    const h = 130, w = Math.min(380, (d.ttd.width / d.ttd.height) * h);
-    c.drawImage(d.ttd, sx, 740, w, (w * d.ttd.height) / d.ttd.width);
-    c.fillStyle = lembut(gelap(), 0.78); c.fillRect(sx, 884, 380, 2);
-    huruf(c, 600, "0px", 28); c.fillText(t("kta.belakang.ketua"), sx, 924);
-  }
+  // pengesahan sekretariat sebagai teks (bukan tanda tangan gambar)
+  c.fillStyle = lembut(gelap(), 0.78); c.fillRect(sx, 884, 380, 2);
+  huruf(c, 600, "0px", 28); c.fillText(t("kta.belakang.sekretariat") + " METI", sx, 924);
+  // tautan verifikasi
+  if (d.urlVerif) { huruf(c, 600, "0px", 27); c.fillStyle = warna("--meti-navy"); c.fillText(potong(c, d.urlVerif, 820), M, 860); }
   // nomor dan masa berlaku
   c.fillStyle = warna("--meti-navy"); huruf(c, 700, "1px", 44); c.fillText(d.nomor || "-", M, 940);
   huruf(c, 400, "0px", 30); c.fillStyle = lembut(gelap(), 0.78); c.fillText(t("kta.kartu.berlaku") + " " + tanggal(d.berlaku), M, 988);

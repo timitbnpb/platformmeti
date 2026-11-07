@@ -95,7 +95,7 @@
 
 /* verifikasi publik */
 .jm-hal-kta-v{display:grid;place-items:center;min-height:100dvh;margin:0;padding:24px 16px;background:linear-gradient(160deg,var(--brand),var(--brand2))}
-.ktav{width:min(440px,100%)}
+.ktav{width:min(560px,100%)}
 .ktav-kartu{display:grid;gap:18px;justify-items:center;padding:32px 24px;border-radius:var(--r-lg);background:var(--card);box-shadow:var(--shadow-lg);text-align:center}
 .ktav-logo{display:block;width:auto;height:72px}
 .ktav-lencana{display:grid;place-items:center;width:64px;height:64px;border-radius:50%}
@@ -110,3 +110,12 @@
 .ktav-dl dd{margin:0;font-weight:600;color:var(--ink);text-align:right}
 .ktav-catatan{margin:0;font-size:var(--t-kecil);line-height:var(--lh-isi);color:var(--ink2)}
 .ktav-kartu a{color:var(--info);font-weight:600}
+
+/* kilau pelan di kartu (hanya layar; unduhan memakai kilau statis di kanvas) */
+.ktav-kartu-kta{width:100%}
+.ktav-kartu-kta canvas{display:block;width:100%;height:auto;aspect-ratio:856/540;border-radius:3.27%/5.19%;box-shadow:var(--shadow)}
+.kta-kilau{position:relative}
+.kta-kilau::after{content:"";position:absolute;inset:0 0 0 32.7%;border-radius:0 3.27% 3.27% 0/0 5.19% 5.19% 0;pointer-events:none;background:linear-gradient(105deg,transparent 40%,color-mix(in srgb,var(--meti-lime) 22%,transparent) 50%,transparent 60%) 120% 0/250% 100% no-repeat;animation:kta-kilau 6s ease-in-out infinite}
+.kta-balik[data-sisi="belakang"]::after{display:none}
+@keyframes kta-kilau{0%,45%{background-position:120% 0}100%{background-position:-60% 0}}
+@media (prefers-reduced-motion:reduce){.kta-kilau::after{animation:none;display:none}}
