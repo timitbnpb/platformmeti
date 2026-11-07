@@ -1,0 +1,759 @@
+{
+ "lapis": "desa_energi_mandiri",
+ "tanggal_ambil": "2026-11-08",
+ "tingkat_bukti": "berita",
+ "jumlah": 24,
+ "nasional": {
+  "sumber": {
+   "judul": "Terkendala sumber daya manusia, beberapa pembangkit listrik EBT rusak",
+   "penerbit": "Katadata",
+   "tanggal": "2018-12-10",
+   "url": "https://katadata.co.id/berita/energi/5e9a558d01a63/terkendala-sumber-daya-manusia-beberapa-pembangkit-listrik-ebt-rusak"
+  },
+  "unit": 719,
+  "persen_rusak": 5,
+  "catatan": "Pernyataan pejabat Ditjen EBTKE ESDM, Desember 2018: sekitar 5 persen dari 719 unit PLTMH dan PLTS desa rusak."
+ },
+ "meta": {
+  "metode": "Kasus dikurasi dari liputan terbuka; bukan sensus dan bukan sampel acak. Kasus rusak/mati lebih sering diberitakan daripada yang menyala, jadi proporsi rusak di sini bukan angka nasional (EST).",
+  "tanpa": "Tanpa Antara, tanpa media sosial, tanpa login; isi diparafrase.",
+  "celah": [
+   "Daftar resmi PLTS terpusat dan PLTMH per desa (ESDM DJEBTKE) tidak terbit sebagai data terbuka; geoportal.esdm.go.id melarang robot dan ebtke.esdm.go.id melarang /simantaps/.",
+   "Data Kemendes (IDM) hanya menyebut status desa, bukan status pembangkit.",
+   "Kajian IESR/WRI tentang tingkat keberfungsian PLTS komunal belum ditemukan dalam bentuk angka publik."
+  ],
+  "penyebab": [
+   "komponen",
+   "biaya",
+   "kelembagaan",
+   "sdm",
+   "bencana",
+   "jaringan_pln",
+   "beban",
+   "tak_diketahui"
+  ],
+  "status": [
+   "hidup",
+   "rusak",
+   "mati"
+  ],
+  "jenis": [
+   "plts-komunal",
+   "pltmh",
+   "biogas"
+  ]
+ },
+ "baris": [
+  {
+   "id": "de-laigoma",
+   "nama": "Laigoma",
+   "jenis": "plts-komunal",
+   "kabupaten": "Halmahera Selatan",
+   "provinsi": "Maluku Utara",
+   "kode_prov": "82",
+   "kapasitas_kw": null,
+   "tahun_bangun": 2018,
+   "status": "rusak",
+   "tahun_henti": 2020,
+   "penyebab": [
+    "komponen",
+    "beban",
+    "sdm"
+   ],
+   "uraian": "Rusak sekitar 1,5 tahun setelah menyala; warga menduga inverter hangus, pemakaian melampaui kapasitas penerangan, tanpa perawatan di tapak.",
+   "lokasi": {
+    "lat": -0.63,
+    "lng": 127.49,
+    "presisi": "kabupaten",
+    "catatan": "pusat kabupaten perkiraan, bukan lokasi desa"
+   },
+   "sumber": {
+    "judul": "Tidak hanya terpasang, PLTS di Halmahera Selatan perlu dirawat agar tidak rusak",
+    "penerbit": "Mongabay Indonesia",
+    "tanggal": "2023-08-13",
+    "url": "https://mongabay.co.id/2023/08/13/tidak-hanya-terpasang-plts-di-halmahera-selatan-perlu-dirawat-agar-tidak-rusak/"
+   },
+   "tingkat_bukti": "berita"
+  },
+  {
+   "id": "de-siko",
+   "nama": "Siko",
+   "jenis": "plts-komunal",
+   "kabupaten": "Halmahera Selatan",
+   "provinsi": "Maluku Utara",
+   "kode_prov": "82",
+   "kapasitas_kw": null,
+   "tahun_bangun": 2016,
+   "status": "rusak",
+   "tahun_henti": 2022,
+   "penyebab": [
+    "komponen",
+    "sdm"
+   ],
+   "uraian": "Rusak sekitar setahun sebelum liputan dan belum diperbaiki; pemerintah desa menentukan apakah Dana Desa dipakai.",
+   "lokasi": {
+    "lat": -0.63,
+    "lng": 127.49,
+    "presisi": "kabupaten",
+    "catatan": "pusat kabupaten perkiraan, bukan lokasi desa"
+   },
+   "sumber": {
+    "judul": "Tidak hanya terpasang, PLTS di Halmahera Selatan perlu dirawat agar tidak rusak",
+    "penerbit": "Mongabay Indonesia",
+    "tanggal": "2023-08-13",
+    "url": "https://mongabay.co.id/2023/08/13/tidak-hanya-terpasang-plts-di-halmahera-selatan-perlu-dirawat-agar-tidak-rusak/"
+   },
+   "tingkat_bukti": "berita"
+  },
+  {
+   "id": "de-bokimiake",
+   "nama": "Bokimiake (Pulau Moari)",
+   "jenis": "plts-komunal",
+   "kabupaten": "Halmahera Selatan",
+   "provinsi": "Maluku Utara",
+   "kode_prov": "82",
+   "kapasitas_kw": null,
+   "tahun_bangun": null,
+   "status": "rusak",
+   "tahun_henti": null,
+   "penyebab": [
+    "sdm",
+    "tak_diketahui"
+   ],
+   "uraian": "Masuk daftar desa dengan PLTS rusak; perawatan tingkat tapak minim dan warga tidak tahu cara menangani gangguan.",
+   "lokasi": {
+    "lat": -0.63,
+    "lng": 127.49,
+    "presisi": "kabupaten",
+    "catatan": "pusat kabupaten perkiraan, bukan lokasi desa"
+   },
+   "sumber": {
+    "judul": "Tidak hanya terpasang, PLTS di Halmahera Selatan perlu dirawat agar tidak rusak",
+    "penerbit": "Mongabay Indonesia",
+    "tanggal": "2023-08-13",
+    "url": "https://mongabay.co.id/2023/08/13/tidak-hanya-terpasang-plts-di-halmahera-selatan-perlu-dirawat-agar-tidak-rusak/"
+   },
+   "tingkat_bukti": "berita"
+  },
+  {
+   "id": "de-marituso",
+   "nama": "Marituso (Pulau Kasiruta)",
+   "jenis": "plts-komunal",
+   "kabupaten": "Halmahera Selatan",
+   "provinsi": "Maluku Utara",
+   "kode_prov": "82",
+   "kapasitas_kw": null,
+   "tahun_bangun": null,
+   "status": "rusak",
+   "tahun_henti": null,
+   "penyebab": [
+    "sdm",
+    "tak_diketahui"
+   ],
+   "uraian": "Masuk daftar desa dengan PLTS rusak; perawatan tingkat tapak minim.",
+   "lokasi": {
+    "lat": -0.63,
+    "lng": 127.49,
+    "presisi": "kabupaten",
+    "catatan": "pusat kabupaten perkiraan, bukan lokasi desa"
+   },
+   "sumber": {
+    "judul": "Tidak hanya terpasang, PLTS di Halmahera Selatan perlu dirawat agar tidak rusak",
+    "penerbit": "Mongabay Indonesia",
+    "tanggal": "2023-08-13",
+    "url": "https://mongabay.co.id/2023/08/13/tidak-hanya-terpasang-plts-di-halmahera-selatan-perlu-dirawat-agar-tidak-rusak/"
+   },
+   "tingkat_bukti": "berita"
+  },
+  {
+   "id": "de-wiring",
+   "nama": "Wiring (Pulau Tawabi)",
+   "jenis": "plts-komunal",
+   "kabupaten": "Halmahera Selatan",
+   "provinsi": "Maluku Utara",
+   "kode_prov": "82",
+   "kapasitas_kw": null,
+   "tahun_bangun": null,
+   "status": "rusak",
+   "tahun_henti": null,
+   "penyebab": [
+    "sdm",
+    "tak_diketahui"
+   ],
+   "uraian": "Masuk daftar desa dengan PLTS rusak; komponen pulau kecil rentan korosi air laut.",
+   "lokasi": {
+    "lat": -0.63,
+    "lng": 127.49,
+    "presisi": "kabupaten",
+    "catatan": "pusat kabupaten perkiraan, bukan lokasi desa"
+   },
+   "sumber": {
+    "judul": "Tidak hanya terpasang, PLTS di Halmahera Selatan perlu dirawat agar tidak rusak",
+    "penerbit": "Mongabay Indonesia",
+    "tanggal": "2023-08-13",
+    "url": "https://mongabay.co.id/2023/08/13/tidak-hanya-terpasang-plts-di-halmahera-selatan-perlu-dirawat-agar-tidak-rusak/"
+   },
+   "tingkat_bukti": "berita"
+  },
+  {
+   "id": "de-gajah-makmur",
+   "nama": "Gajah Makmur",
+   "jenis": "plts-komunal",
+   "kabupaten": "Mukomuko",
+   "provinsi": "Bengkulu",
+   "kode_prov": "17",
+   "kapasitas_kw": 60,
+   "tahun_bangun": 2016,
+   "status": "mati",
+   "tahun_henti": 2017,
+   "penyebab": [
+    "kelembagaan",
+    "biaya",
+    "sdm"
+   ],
+   "uraian": "Padam sejak akhir 2017: pengisian air aki tak ditangani, kepemilikan dan tanggung jawab perawatan simpang siur, dana warga rendah.",
+   "lokasi": {
+    "lat": -2.57,
+    "lng": 101.1,
+    "presisi": "kabupaten",
+    "catatan": "pusat kabupaten perkiraan, bukan lokasi desa"
+   },
+   "sumber": {
+    "judul": "Padamnya listrik tenaga surya di Gajah Makmur",
+    "penerbit": "Mongabay Indonesia",
+    "tanggal": "2020-10-03",
+    "url": "https://mongabay.co.id/2020/10/03/padamnya-listrik-tenaga-surya-di-gajah-makmur/"
+   },
+   "tingkat_bukti": "berita"
+  },
+  {
+   "id": "de-buhung-pitue",
+   "nama": "Buhung Pitue (Pulau Burunglo'e)",
+   "jenis": "plts-komunal",
+   "kabupaten": "Sinjai",
+   "provinsi": "Sulawesi Selatan",
+   "kode_prov": "73",
+   "kapasitas_kw": 100,
+   "tahun_bangun": 2016,
+   "status": "mati",
+   "tahun_henti": 2018,
+   "penyebab": [
+    "komponen",
+    "biaya"
+   ],
+   "uraian": "Tidak beroperasi sejak 2018: baterai dan inverter rusak, perbaikan ratusan juta rupiah tertahan dana.",
+   "lokasi": {
+    "lat": -5.12,
+    "lng": 120.25,
+    "presisi": "kabupaten",
+    "catatan": "pusat kabupaten perkiraan, bukan lokasi desa"
+   },
+   "sumber": {
+    "judul": "Rusak dan mangkraknya pembangkit surya di Kepulauan Sembilan Sinjai, di mana masalahnya?",
+    "penerbit": "Mongabay Indonesia",
+    "tanggal": "2020-10-16",
+    "url": "https://mongabay.co.id/2020/10/16/rusak-dan-mangkraknya-pembangkit-surya-di-kepulauan-sembilan-sinjai-dimana-masalahnya/"
+   },
+   "tingkat_bukti": "berita"
+  },
+  {
+   "id": "de-sembilan-lain",
+   "nama": "Kepulauan Sembilan (Liang-liang, Kanalo I dan II, Batang Lampe, Persatuan)",
+   "jenis": "plts-komunal",
+   "kabupaten": "Sinjai",
+   "provinsi": "Sulawesi Selatan",
+   "kode_prov": "73",
+   "kapasitas_kw": null,
+   "tahun_bangun": null,
+   "status": "rusak",
+   "tahun_henti": null,
+   "penyebab": [
+    "komponen",
+    "biaya"
+   ],
+   "uraian": "Lima unit 30 sampai 50 kWp dilaporkan tidak beroperasi karena peralatan rusak; satu unit lain hanya melayani lampu jalan.",
+   "lokasi": {
+    "lat": -5.12,
+    "lng": 120.25,
+    "presisi": "kabupaten",
+    "catatan": "pusat kabupaten perkiraan, bukan lokasi desa"
+   },
+   "sumber": {
+    "judul": "Rusak dan mangkraknya pembangkit surya di Kepulauan Sembilan Sinjai, di mana masalahnya?",
+    "penerbit": "Mongabay Indonesia",
+    "tanggal": "2020-10-16",
+    "url": "https://mongabay.co.id/2020/10/16/rusak-dan-mangkraknya-pembangkit-surya-di-kepulauan-sembilan-sinjai-dimana-masalahnya/"
+   },
+   "tingkat_bukti": "berita"
+  },
+  {
+   "id": "de-sungai-solok",
+   "nama": "Sungai Solok (Pulau Penyalai)",
+   "jenis": "plts-komunal",
+   "kabupaten": "Pelalawan",
+   "provinsi": "Riau",
+   "kode_prov": "14",
+   "kapasitas_kw": null,
+   "tahun_bangun": 2009,
+   "status": "mati",
+   "tahun_henti": 2019,
+   "penyebab": [
+    "komponen",
+    "biaya",
+    "jaringan_pln"
+   ],
+   "uraian": "Berhenti total 2019, sekitar tiga bulan setelah listrik diesel masuk: baterai rusak, operator dan APBDes tak mampu menggantinya.",
+   "lokasi": {
+    "lat": 0.35,
+    "lng": 102.3,
+    "presisi": "kabupaten",
+    "catatan": "pusat kabupaten perkiraan, bukan lokasi desa"
+   },
+   "sumber": {
+    "judul": "Berbagai tantangan hidupkan energi matahari di Pulau Penyalai",
+    "penerbit": "Mongabay Indonesia",
+    "tanggal": "2023-08-15",
+    "url": "https://mongabay.co.id/2023/08/15/berbagai-tantangan-hidupkan-energi-matahari-di-pulau-penyalai-2/"
+   },
+   "tingkat_bukti": "berita"
+  },
+  {
+   "id": "de-sungai-upih",
+   "nama": "Sungai Upih (Pulau Penyalai)",
+   "jenis": "plts-komunal",
+   "kabupaten": "Pelalawan",
+   "provinsi": "Riau",
+   "kode_prov": "14",
+   "kapasitas_kw": 75,
+   "tahun_bangun": 2016,
+   "status": "mati",
+   "tahun_henti": 2016,
+   "penyebab": [
+    "bencana"
+   ],
+   "uraian": "Bangunan terbakar sekitar delapan bulan setelah beroperasi; penyebab belum terungkap, kini tersisa pagar.",
+   "lokasi": {
+    "lat": 0.35,
+    "lng": 102.3,
+    "presisi": "kabupaten",
+    "catatan": "pusat kabupaten perkiraan, bukan lokasi desa"
+   },
+   "sumber": {
+    "judul": "Berbagai tantangan hidupkan energi matahari di Pulau Penyalai",
+    "penerbit": "Mongabay Indonesia",
+    "tanggal": "2023-08-15",
+    "url": "https://mongabay.co.id/2023/08/15/berbagai-tantangan-hidupkan-energi-matahari-di-pulau-penyalai-2/"
+   },
+   "tingkat_bukti": "berita"
+  },
+  {
+   "id": "de-teluk-bakau",
+   "nama": "Teluk Bakau (Pulau Penyalai)",
+   "jenis": "plts-komunal",
+   "kabupaten": "Pelalawan",
+   "provinsi": "Riau",
+   "kode_prov": "14",
+   "kapasitas_kw": null,
+   "tahun_bangun": null,
+   "status": "mati",
+   "tahun_henti": null,
+   "penyebab": [
+    "komponen",
+    "biaya"
+   ],
+   "uraian": "Berhenti total setelah sekitar enam tahun: baterai menurun, iuran bulanan hanya cukup untuk gaji dan perbaikan kecil.",
+   "lokasi": {
+    "lat": 0.35,
+    "lng": 102.3,
+    "presisi": "kabupaten",
+    "catatan": "pusat kabupaten perkiraan, bukan lokasi desa"
+   },
+   "sumber": {
+    "judul": "Berbagai tantangan hidupkan energi matahari di Pulau Penyalai",
+    "penerbit": "Mongabay Indonesia",
+    "tanggal": "2023-08-15",
+    "url": "https://mongabay.co.id/2023/08/15/berbagai-tantangan-hidupkan-energi-matahari-di-pulau-penyalai-2/"
+   },
+   "tingkat_bukti": "berita"
+  },
+  {
+   "id": "de-teluk-beringin",
+   "nama": "Teluk Beringin (Pulau Penyalai)",
+   "jenis": "plts-komunal",
+   "kabupaten": "Pelalawan",
+   "provinsi": "Riau",
+   "kode_prov": "14",
+   "kapasitas_kw": 60,
+   "tahun_bangun": null,
+   "status": "rusak",
+   "tahun_henti": null,
+   "penyebab": [
+    "komponen",
+    "sdm"
+   ],
+   "uraian": "Masih menyala tetapi menyusut: hanya pukul 05.00 sampai 07.00, enam dari sepuluh unit mati, tak ada teknisi lokal untuk perbaikan besar.",
+   "lokasi": {
+    "lat": 0.35,
+    "lng": 102.3,
+    "presisi": "kabupaten",
+    "catatan": "pusat kabupaten perkiraan, bukan lokasi desa"
+   },
+   "sumber": {
+    "judul": "Berbagai tantangan hidupkan energi matahari di Pulau Penyalai",
+    "penerbit": "Mongabay Indonesia",
+    "tanggal": "2023-08-15",
+    "url": "https://mongabay.co.id/2023/08/15/berbagai-tantangan-hidupkan-energi-matahari-di-pulau-penyalai-2/"
+   },
+   "tingkat_bukti": "berita"
+  },
+  {
+   "id": "de-muara-enggelam",
+   "nama": "Muara Enggelam",
+   "jenis": "plts-komunal",
+   "kabupaten": "Kutai Kartanegara",
+   "provinsi": "Kalimantan Timur",
+   "kode_prov": "64",
+   "kapasitas_kw": 42,
+   "tahun_bangun": 2015,
+   "status": "hidup",
+   "tahun_henti": null,
+   "penyebab": [],
+   "uraian": "Menyala delapan tahun lebih; dikelola BUMDes lewat peraturan desa dengan retribusi bulanan untuk operasional, gaji teknisi, dan tabungan ganti baterai.",
+   "lokasi": {
+    "lat": -0.42,
+    "lng": 116.99,
+    "presisi": "kabupaten",
+    "catatan": "pusat kabupaten perkiraan, bukan lokasi desa"
+   },
+   "sumber": {
+    "judul": "Muara Enggelam, desa role model PLTS komunal di Kalimantan Timur",
+    "penerbit": "Mongabay Indonesia",
+    "tanggal": "2023-08-16",
+    "url": "https://mongabay.co.id/2023/08/16/muara-enggelam-desa-role-model-plts-komunal-di-kalimantan-timur/"
+   },
+   "tingkat_bukti": "berita"
+  },
+  {
+   "id": "de-talang-aro",
+   "nama": "Talang Aro (Desa Aro)",
+   "jenis": "plts-komunal",
+   "kabupaten": "Batanghari",
+   "provinsi": "Jambi",
+   "kode_prov": "15",
+   "kapasitas_kw": 20,
+   "tahun_bangun": 2015,
+   "status": "hidup",
+   "tahun_henti": null,
+   "penyebab": [
+    "bencana"
+   ],
+   "uraian": "Sempat rusak disambar petir pada 2017, pulih sejak 2019; tiga teknisi warga merawat dan iuran Rp15.000 per bulan untuk 72 rumah.",
+   "lokasi": {
+    "lat": -1.72,
+    "lng": 103.15,
+    "presisi": "kabupaten",
+    "catatan": "pusat kabupaten perkiraan, bukan lokasi desa"
+   },
+   "sumber": {
+    "judul": "Berdaulat energi surya dari Dusun Talang Aro",
+    "penerbit": "Mongabay Indonesia",
+    "tanggal": "2023-02-21",
+    "url": "https://mongabay.co.id/2023/02/21/berdaulat-energi-surya-dari-dusun-talang-aro/"
+   },
+   "tingkat_bukti": "berita"
+  },
+  {
+   "id": "de-sialang-pungguk",
+   "nama": "Sialang Pungguk",
+   "jenis": "plts-komunal",
+   "kabupaten": "Batanghari",
+   "provinsi": "Jambi",
+   "kode_prov": "15",
+   "kapasitas_kw": null,
+   "tahun_bangun": 2016,
+   "status": "mati",
+   "tahun_henti": 2018,
+   "penyebab": [
+    "komponen"
+   ],
+   "uraian": "Inverter dan baterai rusak pada 2018 dan sistem dibiarkan terbengkalai; dibangun dari DAK energi skala kecil 2016.",
+   "lokasi": {
+    "lat": -1.72,
+    "lng": 103.15,
+    "presisi": "kabupaten",
+    "catatan": "pusat kabupaten perkiraan, bukan lokasi desa"
+   },
+   "sumber": {
+    "judul": "Berdaulat energi surya dari Dusun Talang Aro",
+    "penerbit": "Mongabay Indonesia",
+    "tanggal": "2023-02-21",
+    "url": "https://mongabay.co.id/2023/02/21/berdaulat-energi-surya-dari-dusun-talang-aro/"
+   },
+   "tingkat_bukti": "berita"
+  },
+  {
+   "id": "de-parang",
+   "nama": "Parang (Karimunjawa)",
+   "jenis": "plts-komunal",
+   "kabupaten": "Jepara",
+   "provinsi": "Jawa Tengah",
+   "kode_prov": "33",
+   "kapasitas_kw": 75,
+   "tahun_bangun": 2014,
+   "status": "rusak",
+   "tahun_henti": 2019,
+   "penyebab": [
+    "komponen"
+   ],
+   "uraian": "Hampir seluruh sistem 75 kWp tidak berfungsi sejak 2019 karena baterai dan peralatan lain; desa bertumpu pada genset.",
+   "lokasi": {
+    "lat": -5.85,
+    "lng": 110.45,
+    "presisi": "kabupaten",
+    "catatan": "pusat kabupaten perkiraan, bukan lokasi desa"
+   },
+   "sumber": {
+    "judul": "Miris! Hampir semua PLTS di Parang Karimunjawa rusak sejak 2019",
+    "penerbit": "detikJateng",
+    "tanggal": "2022-03-12",
+    "url": "https://www.detik.com/jateng/berita/d-5979817/miris-hampir-semua-plts-di-parang-karimunjawa-rusak-sejak-2019"
+   },
+   "tingkat_bukti": "berita"
+  },
+  {
+   "id": "de-pulau-tunda",
+   "nama": "Pulau Tunda",
+   "jenis": "plts-komunal",
+   "kabupaten": "Serang",
+   "provinsi": "Banten",
+   "kode_prov": "36",
+   "kapasitas_kw": null,
+   "tahun_bangun": null,
+   "status": "rusak",
+   "tahun_henti": 2026,
+   "penyebab": [
+    "komponen",
+    "sdm"
+   ],
+   "uraian": "Panel masih baik tetapi baterai dan instalasi rusak; teknisi terlatih terbatas sehingga gangguan kecil membesar, warga kembali ke PLTD.",
+   "lokasi": {
+    "lat": -5.8,
+    "lng": 106.28,
+    "presisi": "kabupaten",
+    "catatan": "pusat kabupaten perkiraan, bukan lokasi desa"
+   },
+   "sumber": {
+    "judul": "Minim tenaga teknis, PLTS Pulau Tunda Banten rusak",
+    "penerbit": "listrikindonesia.com",
+    "tanggal": "2026-05-11",
+    "url": "https://listrikindonesia.com/detail/20025/minim-tenaga-teknis-plts-pulau-tunda-banten-rusak"
+   },
+   "tingkat_bukti": "berita"
+  },
+  {
+   "id": "de-tepal",
+   "nama": "Tepal",
+   "jenis": "pltmh",
+   "kabupaten": "Sumbawa",
+   "provinsi": "Nusa Tenggara Barat",
+   "kode_prov": "52",
+   "kapasitas_kw": 40,
+   "tahun_bangun": 2009,
+   "status": "hidup",
+   "tahun_henti": null,
+   "penyebab": [
+    "komponen",
+    "bencana",
+    "beban"
+   ],
+   "uraian": "Menyala lebih dari satu dekade dengan koperasi, namun pasokan sering goyah: runner turbin rusak, suku cadang dari luar daerah, banjir dan debit kemarau.",
+   "lokasi": {
+    "lat": -8.55,
+    "lng": 117.35,
+    "presisi": "kabupaten",
+    "catatan": "pusat kabupaten perkiraan, bukan lokasi desa"
+   },
+   "sumber": {
+    "judul": "Jalan terjal Desa Tepal wujudkan kemandirian energi",
+    "penerbit": "Mongabay Indonesia",
+    "tanggal": "2026-04-02",
+    "url": "https://mongabay.co.id/2026/04/02/jalan-terjal-desa-tepal-wujudkan-kemandirian-energi/"
+   },
+   "tingkat_bukti": "berita"
+  },
+  {
+   "id": "de-juhu",
+   "nama": "Juhu (Meratus)",
+   "jenis": "pltmh",
+   "kabupaten": null,
+   "provinsi": "Kalimantan Selatan",
+   "kode_prov": "63",
+   "kapasitas_kw": 4,
+   "tahun_bangun": null,
+   "status": "mati",
+   "tahun_henti": null,
+   "penyebab": [
+    "bencana",
+    "biaya"
+   ],
+   "uraian": "Hancur diterjang banjir bandang; pembangunan ulang sekitar Rp300 juta belum terlaksana karena anggaran.",
+   "lokasi": {
+    "lat": -2.8,
+    "lng": 115.4,
+    "presisi": "provinsi",
+    "catatan": "pusat provinsi perkiraan, kabupaten tidak disebut sumber"
+   },
+   "sumber": {
+    "judul": "Ketika upaya warga Meratus mandiri energi minim dukungan pemerintah",
+    "penerbit": "Mongabay Indonesia",
+    "tanggal": "2026-02-26",
+    "url": "https://mongabay.co.id/2026/02/26/ketika-upaya-warga-meratus-mandiri-energi-minim-dukungan-pemerintah/"
+   },
+   "tingkat_bukti": "berita"
+  },
+  {
+   "id": "de-loklahung",
+   "nama": "Loklahung",
+   "jenis": "pltmh",
+   "kabupaten": "Hulu Sungai Selatan",
+   "provinsi": "Kalimantan Selatan",
+   "kode_prov": "63",
+   "kapasitas_kw": null,
+   "tahun_bangun": null,
+   "status": "mati",
+   "tahun_henti": null,
+   "penyebab": [
+    "tak_diketahui"
+   ],
+   "uraian": "Bangunan telantar berlumut, kini menjadi bagian objek wisata air terjun.",
+   "lokasi": {
+    "lat": -2.77,
+    "lng": 115.3,
+    "presisi": "kabupaten",
+    "catatan": "pusat kabupaten perkiraan, bukan lokasi desa"
+   },
+   "sumber": {
+    "judul": "Ketika upaya warga Meratus mandiri energi minim dukungan pemerintah",
+    "penerbit": "Mongabay Indonesia",
+    "tanggal": "2026-02-26",
+    "url": "https://mongabay.co.id/2026/02/26/ketika-upaya-warga-meratus-mandiri-energi-minim-dukungan-pemerintah/"
+   },
+   "tingkat_bukti": "berita"
+  },
+  {
+   "id": "de-loksado",
+   "nama": "Loksado (Haratai dan sekitarnya)",
+   "jenis": "pltmh",
+   "kabupaten": "Hulu Sungai Selatan",
+   "provinsi": "Kalimantan Selatan",
+   "kode_prov": "63",
+   "kapasitas_kw": null,
+   "tahun_bangun": null,
+   "status": "mati",
+   "tahun_henti": null,
+   "penyebab": [
+    "jaringan_pln"
+   ],
+   "uraian": "Dari tujuh unit PLTMH, hanya satu (Balai Sulang Ai) yang masih menyala; peredupan dikaitkan dengan masuknya listrik PLN.",
+   "lokasi": {
+    "lat": -2.77,
+    "lng": 115.3,
+    "presisi": "kabupaten",
+    "catatan": "pusat kabupaten perkiraan, bukan lokasi desa"
+   },
+   "sumber": {
+    "judul": "Ketika upaya warga Meratus mandiri energi minim dukungan pemerintah",
+    "penerbit": "Mongabay Indonesia",
+    "tanggal": "2026-02-26",
+    "url": "https://mongabay.co.id/2026/02/26/ketika-upaya-warga-meratus-mandiri-energi-minim-dukungan-pemerintah/"
+   },
+   "tingkat_bukti": "berita"
+  },
+  {
+   "id": "de-mangkiki",
+   "nama": "Sungai Mangkiki (Meratus)",
+   "jenis": "pltmh",
+   "kabupaten": null,
+   "provinsi": "Kalimantan Selatan",
+   "kode_prov": "63",
+   "kapasitas_kw": 17,
+   "tahun_bangun": null,
+   "status": "mati",
+   "tahun_henti": null,
+   "penyebab": [
+    "jaringan_pln"
+   ],
+   "uraian": "Menyala 12 tahun tanpa kerusakan berarti, lalu tidak terawat setelah jaringan PLN tiba.",
+   "lokasi": {
+    "lat": -2.8,
+    "lng": 115.4,
+    "presisi": "provinsi",
+    "catatan": "pusat provinsi perkiraan, kabupaten tidak disebut sumber"
+   },
+   "sumber": {
+    "judul": "Ketika upaya warga Meratus mandiri energi minim dukungan pemerintah",
+    "penerbit": "Mongabay Indonesia",
+    "tanggal": "2026-02-26",
+    "url": "https://mongabay.co.id/2026/02/26/ketika-upaya-warga-meratus-mandiri-energi-minim-dukungan-pemerintah/"
+   },
+   "tingkat_bukti": "berita"
+  },
+  {
+   "id": "de-karangtengah",
+   "nama": "Karangtengah",
+   "jenis": "pltmh",
+   "kabupaten": "Banyumas",
+   "provinsi": "Jawa Tengah",
+   "kode_prov": "33",
+   "kapasitas_kw": 15,
+   "tahun_bangun": 2015,
+   "status": "hidup",
+   "tahun_henti": null,
+   "penyebab": [],
+   "uraian": "Beroperasi mandiri untuk 75 rumah; warga membayar Rp500 per kWh untuk operator, perawatan, dan sewa lahan.",
+   "lokasi": {
+    "lat": -7.43,
+    "lng": 109.24,
+    "presisi": "kabupaten",
+    "catatan": "pusat kabupaten perkiraan, bukan lokasi desa"
+   },
+   "sumber": {
+    "judul": "Cerita masyarakat Karangtengah mandiri energi dari aliran sungai",
+    "penerbit": "Mongabay Indonesia",
+    "tanggal": "2022-08-26",
+    "url": "https://mongabay.co.id/2022/08/26/cerita-masyarakat-karangtengah-mandiri-energi-dari-aliran-sungai/"
+   },
+   "tingkat_bukti": "berita"
+  },
+  {
+   "id": "de-samirono",
+   "nama": "Samirono",
+   "jenis": "biogas",
+   "kabupaten": "Semarang",
+   "provinsi": "Jawa Tengah",
+   "kode_prov": "33",
+   "kapasitas_kw": null,
+   "tahun_bangun": 2001,
+   "status": "mati",
+   "tahun_henti": null,
+   "penyebab": [
+    "kelembagaan",
+    "komponen"
+   ],
+   "uraian": "Biogas komunal dari pemerintah desa tak beroperasi: kompor dan lampu rusak, ternak berkurang dari delapan menjadi tiga ekor.",
+   "lokasi": {
+    "lat": -7.14,
+    "lng": 110.4,
+    "presisi": "kabupaten",
+    "catatan": "pusat kabupaten perkiraan, bukan lokasi desa"
+   },
+   "sumber": {
+    "judul": "Cerita warga Samirono, Bantar, beralih ke biogas dan gas rawa",
+    "penerbit": "Mongabay Indonesia",
+    "tanggal": "2022-08-12",
+    "url": "https://www.mongabay.co.id/2022/08/12/cerita-warga-samirono-bantar-beralih-ke-biogas-dan-gas-rawa/"
+   },
+   "tingkat_bukti": "berita"
+  }
+ ]
+}

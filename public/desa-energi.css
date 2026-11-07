@@ -1,0 +1,36 @@
+/* /desa-energi: exhibit desa energi mandiri (peta berstatus, penyebab mati, daftar periksa, tabel). Melengkapi pelacak-proyek.css; token tema.css saja. */
+.jm-de2{display:grid;gap:var(--gap);min-width:0}
+.jm-de2>*{min-width:0}
+.de2-pil{display:inline-flex;align-items:center;gap:6px;padding:3px 10px;border-radius:var(--r-pil);font:700 var(--t-kecil)/var(--lh-rapat) var(--font);white-space:nowrap;background:var(--sbg);color:var(--sk)}
+.de2-s-hidup{--sk:var(--ok);--sbg:var(--ok-bg)}
+.de2-s-rusak{--sk:var(--warn);--sbg:var(--warn-bg)}
+.de2-s-mati{--sk:var(--bad);--sbg:var(--bad-bg)}
+.de2-t-hidup{background:var(--ok)}.de2-t-rusak{background:var(--warn)}.de2-t-mati{background:var(--bad)}
+.de2-j-plts-komunal{--sk:var(--tp-surya)}.de2-j-pltmh{--sk:var(--tp-hidro)}.de2-j-biogas{--sk:var(--tp-bio)}
+.de2-jenis{display:inline-flex;align-items:center;gap:6px;padding:3px 10px;border-radius:var(--r-pil);font:600 var(--t-kecil)/var(--lh-rapat) var(--font);white-space:nowrap;color:var(--sk);background:color-mix(in srgb,var(--sk) 14%,var(--card))}
+.de2-sebab{display:flex;flex-wrap:wrap;gap:6px}
+.de2-sb{display:inline-flex;align-items:center;gap:5px;padding:3px 9px;border-radius:var(--r-pil);font:600 var(--t-kecil)/var(--lh-rapat) var(--font);background:color-mix(in srgb,var(--sk) 14%,var(--card));color:var(--sk);white-space:nowrap}
+.de2-p-komponen{--sk:var(--bad)}.de2-p-biaya{--sk:var(--warn)}.de2-p-kelembagaan{--sk:var(--data5)}.de2-p-sdm{--sk:var(--info)}
+.de2-p-bencana{--sk:var(--data3)}.de2-p-jaringan_pln{--sk:var(--data4)}.de2-p-beban{--sk:var(--data2)}.de2-p-tak_diketahui{--sk:var(--ink2)}
+.de2-b-sebab{background:var(--sk)}
+/* daftar periksa */
+.de2-cek{list-style:none;margin:0;padding:0;display:grid;gap:12px}
+.de2-cek-i{display:grid;grid-template-columns:auto minmax(0,1fr);gap:14px;align-items:start;padding:14px 16px;border:1px solid var(--line);border-radius:var(--r);background:var(--card);cursor:pointer}
+.de2-cek-i:hover{border-color:var(--accent)}
+.de2-cek-i input{position:absolute;opacity:0;pointer-events:none}
+.de2-kotak{width:26px;height:26px;border-radius:8px;border:2px solid var(--line-ctl);display:grid;place-items:center;color:transparent;background:var(--card)}
+.de2-cek-i input:checked+.de2-kotak{background:var(--brand);border-color:var(--brand);color:var(--on-brand)}
+.de2-cek-i input:focus-visible+.de2-kotak{outline:2px solid var(--fokus);outline-offset:2px}
+.de2-cek-t{display:grid;gap:6px;min-width:0}
+.de2-cek-t b{font-weight:700;color:var(--head)}
+.de2-cek-t p{margin:0;color:var(--ink2)}
+.de2-cek-m{display:flex;flex-wrap:wrap;gap:6px 12px;align-items:center}
+.de2-skor{display:flex;flex-wrap:wrap;align-items:center;gap:12px;margin-bottom:16px;padding:12px 16px;border-radius:var(--r);background:var(--surface)}
+.de2-skor b{font:700 var(--t-h3)/1 var(--font);font-variant-numeric:tabular-nums}
+.de2-g-leg{list-style:none;margin:0 0 12px;padding:0;display:flex;flex-wrap:wrap;gap:6px 18px;color:var(--ink2);font-size:var(--t-kecil)}
+.de2-g-leg li{display:inline-flex;align-items:center;gap:8px}
+.de2-g-leg i{display:block;width:14px;height:14px;border-radius:4px}
+@media (min-width:768px){.pb-tabel .pb-c-status{width:112px}.pb-tabel .pb-c-jenis{width:132px}.pb-tabel .pb-c-kap{width:86px}.pb-tabel .pb-c-tahun{width:100px}.pb-tabel .pb-c-n{width:24%}}
+@media (max-width:999px){.pt2-saring .jm-cari{grid-column:1/-1}}
+.jm-de2 .pt2-prov{flex-wrap:nowrap;align-items:flex-start}
+.jm-de2 .pt2-prov img{flex:none;margin-top:2px}

@@ -1,0 +1,16 @@
+/* /cari: halaman pencarian penuh. Baris hasil memakai .jm-cari-baris (inti/kepala.css), paginasi dan seg dari inti/jm.css. */
+.cari-alat{display:grid;gap:14px;margin-bottom:16px}
+.cari-alat .jm-cari{grid-column:auto;width:100%}
+.cari-seg{grid-template-columns:repeat(7,minmax(0,1fr))!important}
+@media (max-width:720px){.cari-seg{grid-template-columns:repeat(2,minmax(0,1fr))!important}}
+.cari-seg button{display:inline-flex;align-items:center;justify-content:center;gap:6px}
+.cari-seg b{font-weight:700;opacity:.8}
+.cari-hasil{display:grid;gap:4px;min-height:160px}
+.cari-hasil mark{background:none;color:var(--accent);font-weight:700;padding:0}
+.cari-hasil .jm-cari-grup{padding:6px 0 14px}
+.cari-hasil .jm-cari-baris{border:1px solid transparent}
+.cari-hasil .jm-cari-baris:hover,.cari-hasil .jm-cari-baris[aria-selected=true]{border-color:var(--line)}
+.cari-hasil .jm-cari-enter{display:inline-flex}
+.cari-hasil .jm-cari-contoh{padding:0}
+#cariPag{margin-top:16px}
+@media (max-width:639px){#cariUbin>:last-child:nth-child(odd){grid-column:1/-1}}

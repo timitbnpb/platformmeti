@@ -5,10 +5,14 @@
 .hk2-k-h .jm-ik{width:20px;height:20px;flex:none}
 .hk2-k-h span{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .hk2-k-n{display:flex;align-items:baseline;gap:6px;font:700 var(--t-h2)/1.1 var(--font);color:var(--ink);font-variant-numeric:tabular-nums}
-.hk2-k-n small{font:500 var(--t-kecil)/1 var(--font);color:var(--ink2)}
+.hk2-k-n small{font:400 var(--t-kecil)/1 var(--font);color:var(--ink2)}
 .hk2-k-f{display:flex;flex-wrap:wrap;align-items:center;gap:8px;font:400 var(--t-kecil)/var(--lh-isi) var(--font);color:var(--ink2)}
 .hk2-sub{margin:24px 0 8px;font:600 var(--t-body)/var(--lh-rapat) var(--font);color:var(--ink)}
 .hk2-sub:first-of-type{margin-top:0}
 .hk2-bagan{margin-bottom:8px}
 .hk2-tab{margin-bottom:24px}
 .hk2-baris{display:grid;gap:24px}
+.hk2-tab{display:grid;grid-auto-flow:column;grid-auto-columns:1fr;overflow-x:auto}
+.hk2-tab button{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-width:0;text-align:center}
+@media (max-width:600px){.hk2-tab button{padding-inline:6px}.hk2-tab button .jm-ik{display:none}.hk2-tab button span{overflow:hidden;text-overflow:ellipsis}}
+@media (max-width:767px){.hk2-tabel .jm-tabel:has(td[data-label]) td{grid-template-columns:148px minmax(0,1fr)}}

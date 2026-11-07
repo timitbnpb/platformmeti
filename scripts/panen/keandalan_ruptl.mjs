@@ -45,16 +45,16 @@ export function bangun() {
     let j = i + 1;
     while (j < rt.length && !/^\s*Tabel 5\.\d+/.test(rt[j])) j++;
     const blk = rt.slice(i, j);
-    const rm = deret(blk, /Reserve Margin\s+%/), bp = deret(blk, /Beban Puncak Neto\s+MW/), ebt = deret(blk, /Pembangkit EBT\s+MW/), dmn = deret(blk, /Total (DMN|Daya Mampu)[^%]*MW/);
+    const rm = deret(blk, /Reserve Margin\s+%/), bp = deret(blk, /Beban Puncak Neto\s+MW/), ebt = deret(blk, /Pembangkit EBT\s+MW/);
     if (!rm || !bp || !ebt) throw new Error('gagal urai ' + s.id);
-    return { ...s, tahun_awal: 2025, rm_persen: rm, beban_puncak_neto_mw: bp, ebt_dmn_mw: ebt, total_dmn_mw: dmn };
+    return { ...s, tahun_awal: 2025, rm_persen: rm, beban_puncak_neto_mw: bp, ebt_dmn_mw: ebt };
   });
   const dmnRuptl = JSON.parse(fs.readFileSync(path.join(AKAR, 'public/data/ruptl.json'), 'utf-8')).baris;
   const nama = new Map(JSON.parse(fs.readFileSync(path.join(AKAR, 'public/data/wilayah.json'), 'utf-8')).baris.map((b) => [b.nama, b.kode]));
   for (const s of sistem) s.penyimpanan_ruptl_mw = Math.round(dmnRuptl.filter((r) => r.teknologi === 'penyimpanan' && s.prov.includes(nama.get(r.provinsi))).reduce((a, r) => a + (r.kapasitas_mw || 0), 0));
   // SAIDI/SAIFI nasional: RUPTL Tabel 4.51 (2015-2019) + Statistik 2024 Tabel 47 (2020-2024)
   const st = pdfTeks('statistik-ketenagalistrikan-2024.pdf');
-  const t47 = st.slice(st.findIndex((l, i) => i > 1000 && /^Tabel 47\b(?!\.)/.test(l)), st.findIndex((l, i) => i > 1000 && /^Tabel 48\b(?!\.)/.test(l)));
+  const t47 = st.slice(st.findIndex((l, i) => i > 1000 && /^\f?Tabel 47\b(?!\.)/.test(l)), st.findIndex((l, i) => i > 1000 && /^\f?Tabel 48\b(?!\.)/.test(l)));
   const saidi = {};
   for (const l of t47) { const m = l.match(/^\s*(20\d\d)\s+([\d,]+)\s+([\d,]+)\s*$/) || l.match(/\b(20\d\d)\s+([\d,]+)\s+([\d,]+)\s*(?:$|\s{2,})/); if (m) saidi[m[1]] = { saidi_jam: ang(m[2]), saifi_kali: ang(m[3]) }; }
   const r451 = rt.findIndex((l) => /Tabel 4\.51 Realisasi SAIDI/.test(l) && /^\s+Tabel/.test(l));
@@ -64,9 +64,9 @@ export function bangun() {
   const tren = [];
   for (let k = 0; k < 5; k++) tren.push({ tahun: 2015 + k, saidi_jam: sd[k], saifi_kali: sf[k], sumber: 'ruptl' });
   for (const y of ['2020', '2021', '2022', '2023', '2024']) tren.push({ tahun: Number(y), ...saidi[y], sumber: 'statistik' });
-  if (tren.length !== 10 || tren.some((x) => !(x.saidi_jam > 0))) throw new Error('SAIDI tak terurai');
+  if (tren.length !== 10 || tren.some((x) => !(x.saidi_jam > 0))) throw new Error('SAIDI tak terurai ' + JSON.stringify(tren));
   const susut = [];
-  const i46 = st.findIndex((l) => /^Tabel 46\s*$/.test(l));
+  const i46 = st.findIndex((l) => /^\f?Tabel 46\s*$/.test(l));
   for (const l of st.slice(i46, i46 + 25)) { const m = l.match(/^\s*(20\d\d)\s+([\d,]+)\s+([\d,]+)\s+([\d,]+)\s*$/); if (m) susut.push({ tahun: Number(m[1]), transmisi: ang(m[2]), distribusi: ang(m[3]), jumlah: ang(m[4]) }); }
   if (susut.length !== 5) throw new Error('susut tak terurai');
   return {
@@ -75,7 +75,7 @@ export function bangun() {
       { id: 'ruptl', judul: 'RUPTL PT PLN (Persero) 2025-2034, Bab V neraca daya skenario RE Base (Tabel 5.82-5.122) dan Tabel 4.51', penerbit: 'PT PLN (Persero); Kementerian ESDM', tahun: 2025, url: URL_RUPTL, tingkat_bukti: 'resmi' },
       { id: 'stat', judul: 'Statistik Ketenagalistrikan 2024 (Tabel 46 susut, Tabel 47 SAIDI dan SAIFI)', penerbit: 'Ditjen Ketenagalistrikan, Kementerian ESDM', tahun: 2024, url: URL_STAT, tingkat_bukti: 'situs-sendiri' },
     ],
-    tren_nasional: tren, susut_nasional: susut, sistem,
+    ambang_penyimpanan: { rm_persen_maks: 35, ebt_rasio_persen_min: 50 }, tren_nasional: tren, susut_nasional: susut, sistem,
     celah: [
       'SAIDI dan SAIFI per wilayah atau UID PLN tidak terbit sebagai berkas terbuka yang dapat dipanen (Statistik ESDM dan RUPTL hanya memuat angka nasional; web.pln.co.id tidak dapat diakses dari lingkungan panen). Tidak diisi, tidak dikarang.',
       'Curtailment atau pembatasan EBT: tidak ada angka bersumber di repo (berita yang dipanen tidak memuatnya). Tidak diisi.',

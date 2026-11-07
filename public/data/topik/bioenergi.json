@@ -1810,6 +1810,15 @@
      "mw": 12
     },
     {
+     "nama": "Asian Agri",
+     "id": "en_69420x4809",
+     "kategori": "Swasta",
+     "peran": "-",
+     "proyek": 0,
+     "u": "/o/en_69420x4809",
+     "mw": 0
+    },
+    {
      "nama": "Asosiasi Produsen Biofuel Indonesia",
      "id": "l_d3dadc789e",
      "kategori": "Asosiasi",
@@ -1918,21 +1927,12 @@
      "mw": 0
     },
     {
-     "nama": "PT Adhitya Serayakorita",
-     "id": "p_1cb5bccd1b",
+     "nama": "PT Biru Karbon Nusantara",
+     "id": "en_8a443b6597",
      "kategori": "Swasta",
-     "peran": "produsen BBN",
+     "peran": "pengembang",
      "proyek": 0,
-     "u": "/o/p_1cb5bccd1b",
-     "mw": 0
-    },
-    {
-     "nama": "PT Energi Agro Nusantara",
-     "id": "p_1a272e3233",
-     "kategori": "BUMN",
-     "peran": "produsen BBN",
-     "proyek": 0,
-     "u": "/o/p_1a272e3233",
+     "u": "/o/en_8a443b6597",
      "mw": 0
     },
     {
@@ -1957,21 +1957,12 @@
      "mw": 0
     },
     {
-     "nama": "PT Padang Raya Cakrawala",
-     "id": "p_1d8a12c158",
+     "nama": "PT Navigat Organic Energy Indonesia",
+     "id": "en_76c93c11fe",
      "kategori": "Swasta",
-     "peran": "produsen BBN",
+     "peran": "pengembang",
      "proyek": 0,
-     "u": "/o/p_1d8a12c158",
-     "mw": 0
-    },
-    {
-     "nama": "PT Pelita Agung Agrindustri",
-     "id": "p_2e232ef532",
-     "kategori": "Swasta",
-     "peran": "produsen BBN",
-     "proyek": 0,
-     "u": "/o/p_2e232ef532",
+     "u": "/o/en_76c93c11fe",
      "mw": 0
     },
     {
@@ -1984,6 +1975,15 @@
      },
      "proyek": 0,
      "u": "/o/p_476a6bf2fb",
+     "mw": 0
+    },
+    {
+     "nama": "PT Rohul Sawit Industri",
+     "id": "en_eb7f03d22e",
+     "kategori": "Swasta",
+     "peran": "pengembang",
+     "proyek": 0,
+     "u": "/o/en_eb7f03d22e",
      "mw": 0
     },
     {
@@ -2026,6 +2026,15 @@
      "peran": "pengembang",
      "proyek": 0,
      "u": "/o/in_b87ab519c7",
+     "mw": 0
+    },
+    {
+     "nama": "Sinar Mas",
+     "id": "en_79d4b37bfd",
+     "kategori": "Swasta",
+     "peran": "-",
+     "proyek": 0,
+     "u": "/o/en_79d4b37bfd",
      "mw": 0
     },
     {

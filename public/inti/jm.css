@@ -728,3 +728,65 @@ li.jm-gf-on{stroke:none;outline:2px solid var(--fokus);outline-offset:2px;border
 :is(.jm-an-cara,.jm-tr-cara,.jm-tk-cara,.jm-pg-cara,.jm-pel-cara,.jm-cara,.ak-cara,.ak-sk-cara,.oj-cara,.sta-cara,.ix-cara)>*{text-align:left!important;hyphens:manual!important}
 :is(.jm-an-cara,.jm-tr-cara,.jm-tk-cara,.jm-pg-cara,.jm-pel-cara,.jm-cara,.ak-cara,.ak-sk-cara,.oj-cara,.sta-cara,.ix-cara){align-items:start}
 :is(.jm-an-cara,.jm-tr-cara,.jm-tk-cara,.jm-pg-cara,.jm-pel-cara,.jm-cara,.ak-cara,.ak-sk-cara,.oj-cara,.sta-cara,.ix-cara) a{text-decoration:none}
+
+/* PRESENTASI layar penuh, tombol kepala halaman, dialog sematan (aksi_presentasi.js) */
+.jm-pres{position:fixed;inset:0;z-index:100;display:grid;background:var(--paper);color:var(--ink);outline:0}
+.jm-pres-slide{display:grid;grid-template-rows:auto auto auto minmax(0,1fr) auto;gap:12px;box-sizing:border-box;min-height:0;padding:clamp(20px,4vw,56px) clamp(56px,7vw,110px) 24px;border-top:6px solid var(--meti-lime)}
+.jm-pres-ey{margin:0;color:var(--accent);font:700 var(--t-body)/var(--lh-judul) var(--font)}
+.jm-pres-j{margin:0;color:var(--head);font:700 clamp(28px,4.4vw,64px)/var(--lh-rapat) var(--font)}
+.jm-pres-j .jm-hl{color:var(--accent)}
+.jm-pres-sub{margin:0;color:var(--ink2);font:400 var(--t-h2)/var(--lh-isi) var(--font)}
+.jm-pres-sub:empty,.jm-pres-ey:empty{display:none}
+.jm-pres-gb{position:relative;display:grid;place-items:center;min-height:0;overflow:hidden}
+.jm-pres-gb img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain}
+.jm-pres-gb img[hidden],.jm-pres-muat[hidden]{display:none}
+.jm-pres-muat{margin:0;color:var(--ink2);font:600 var(--t-h2)/1 var(--font)}
+.jm-pres-kaki{display:flex;align-items:center;gap:14px;padding-top:12px;border-top:1px solid var(--line);color:var(--ink2);font:400 var(--t-tombol)/var(--lh-isi) var(--font)}
+.jm-pres-sumber{flex:1;min-width:0;margin:0;overflow:hidden;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical}
+.jm-pres-no{font:700 var(--t-body)/1 var(--font);color:var(--head);font-variant-numeric:tabular-nums}
+.jm-pres-nav{position:absolute;display:grid;place-items:center;width:48px;height:48px;padding:0;border:1px solid var(--line);border-radius:50%;background:var(--card);color:var(--ink2);cursor:pointer}
+.jm-pres-nav:hover{color:var(--accent);border-color:var(--accent)}
+.jm-pres-nav:focus-visible{outline:2px solid var(--fokus);outline-offset:2px}
+.jm-pres-kiri{left:12px;top:50%;translate:0 -50%}
+.jm-pres-kanan{right:12px;top:50%;translate:0 -50%}
+.jm-pres-tutup{right:16px;top:16px}
+.jm-pres-kh{display:flex;flex-wrap:wrap;gap:12px;margin-top:4px}
+.jm-pres-tb{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:44px;padding:0 18px;border:1px solid var(--line);border-radius:var(--r-pil);background:var(--card);color:var(--head);font:600 var(--t-tombol)/1 var(--font);cursor:pointer}
+.jm-pres-tb:hover{color:var(--accent);border-color:var(--accent);background:var(--soft-hijau)}
+.jm-pres-tb:focus-visible{outline:2px solid var(--fokus);outline-offset:2px}
+.jm-sem{width:min(560px,calc(100vw - 32px));padding:24px;border:1px solid var(--line);border-radius:var(--r-lg);background:var(--paper);color:var(--ink);box-shadow:var(--shadow-lg)}
+.jm-sem::backdrop{background:rgba(11,61,49,.5)}
+.jm-sem form{display:grid;gap:16px}
+.jm-sem h2{margin:0;color:var(--head);font:700 var(--t-h2)/var(--lh-rapat) var(--font)}
+.jm-sem p{margin:0;color:var(--ink2)}
+.jm-sem textarea{box-sizing:border-box;width:100%;padding:12px;border:1px solid var(--line-ctl);border-radius:var(--r-sm);background:var(--surface);color:var(--ink);font:400 var(--t-kecil)/var(--lh-isi) ui-monospace,Menlo,monospace;resize:vertical}
+.jm-sem-aksi{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.jm-sem-aksi button{min-height:44px;border:1px solid var(--line);border-radius:var(--r-pil);background:var(--card);color:var(--head);font:600 var(--t-tombol)/1 var(--font);cursor:pointer}
+.jm-sem-aksi button:first-child{background:var(--brand);border-color:var(--brand);color:var(--on-brand)}
+@media print{
+  .jm-pres,.jm-pres-kh,.jm-sem{display:none!important}
+  *{print-color-adjust:exact;-webkit-print-color-adjust:exact}
+  .jm-ex{break-inside:avoid;page-break-inside:avoid}
+  body::before{content:"Platform Jaringan METI";display:block;margin:0 0 12px;padding:0 0 10px;border-bottom:2px solid var(--meti-lime);font:700 var(--t-body)/1 var(--font);color:var(--head)}
+  body:has(.jm-cetak-aktif)::before{display:none}
+}
+
+/* G2 label kepercayaan (inti/bukti.js): Resmi / Media / EST / Hipotesis / Kata pihak / Kajian / Perlu tinjau. Selalu ikon + teks, tidak hanya warna. */
+.jm-bukti{display:inline-flex;align-items:center;gap:5px;min-height:24px;padding:0 10px 0 8px;border:0;border-radius:var(--r-pil);font:600 var(--t-kecil)/1 var(--font);white-space:nowrap;cursor:help;vertical-align:middle;background:var(--info-bg);color:var(--info)}
+.jm-bukti .jm-ik{width:14px;height:14px;flex:none}
+.jm-bukti:focus-visible{outline:2px solid var(--fokus);outline-offset:2px}
+.jm-bukti[data-b=resmi]{background:var(--ok-bg);color:var(--ok)}
+.jm-bukti[data-b=media]{background:var(--warn-bg);color:var(--warn)}
+.jm-bukti[data-b=est]{background:color-mix(in srgb,var(--data2) 18%,var(--card));color:var(--ink)}
+.jm-bukti[data-b=hip]{background:color-mix(in srgb,var(--data3) 22%,var(--card));color:var(--ink)}
+.jm-bukti[data-b=kata]{background:color-mix(in srgb,var(--data5) 16%,var(--card));color:var(--ink)}
+.jm-bukti[data-b=kajian]{background:var(--info-bg);color:var(--info)}
+.jm-bukti[data-b=tinjau]{background:var(--bad-bg);color:var(--bad)}
+.jm-bukti-tip{position:fixed;left:0;top:0;z-index:70;width:min(320px,calc(100vw - 16px));display:grid;gap:8px;padding:12px 14px;border:1px solid var(--line);border-radius:var(--r-sm);background:var(--card);color:var(--ink);box-shadow:var(--shadow-lg);font:400 var(--t-tombol)/1.4 var(--font);text-align:left}
+.jm-bukti-tip[hidden]{display:none}
+.jm-bukti-tip b{display:flex;align-items:center;gap:8px;font:700 var(--t-body)/1.2 var(--font);color:var(--head)}
+.jm-bukti-tip p{margin:0;color:var(--ink2)}
+.jm-bukti-tip dl{display:grid;gap:6px;margin:0}
+.jm-bukti-tip dl>div{display:grid;grid-template-columns:76px minmax(0,1fr);gap:8px}
+.jm-bukti-tip dt{color:var(--ink2);font-weight:600}.jm-bukti-tip dd{margin:0;overflow-wrap:anywhere}
+.jm-bukti-tip a{color:var(--accent);font-weight:600;text-decoration:none}

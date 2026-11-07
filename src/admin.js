@@ -17,7 +17,7 @@ export function normalisasiCari(v) {
   return k;
 }
 // Jalur halaman: tanpa query/hash, huruf kecil, karakter jalur saja.
-const HALAMAN = new Set(["/", "/asean", "/berita", "/direktori", "/insight", "/kalender", "/kelayakan", "/metode", "/peluang", "/proyek", "/pustaka", "/rantai", "/regulasi", "/strategi", "/tentang", "/wilayah", "/masuk"]);
+const HALAMAN = new Set(["/", "/asean", "/berita", "/cari", "/direktori", "/insight", "/kalender", "/kelayakan", "/metode", "/peluang", "/proyek", "/pustaka", "/rantai", "/regulasi", "/strategi", "/tentang", "/wilayah", "/masuk"]);
 export function normalisasiHalaman(v) {
   if (typeof v !== "string") return null;
   const k = v.toLowerCase().split(/[?#]/)[0].replace(/(.)\/$/, "$1").replace(/\.html$/, "");

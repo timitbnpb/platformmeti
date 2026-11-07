@@ -37,6 +37,7 @@ document.addEventListener("click", async (e) => {
     else await api(`/api/ikuti/${encodeURIComponent(b.dataset.jenis)}/${encodeURIComponent(b.dataset.ref)}`, { metode: "DELETE" });
     if (ya) set.add(kunci); else set.delete(kunci);
     document.querySelectorAll("[data-ikuti]").forEach((x) => { if (x.dataset.jenis + "|" + x.dataset.ref === kunci) isi(x, ya); });
+    document.dispatchEvent(new CustomEvent("jm:ikuti", { detail: { jenis: b.dataset.jenis, ref: b.dataset.ref, ikut: ya } }));
   } catch (err) { b.title = t(err.status === 409 ? "ik.penuh" : "ik.gagal"); }
   b.disabled = false;
 });

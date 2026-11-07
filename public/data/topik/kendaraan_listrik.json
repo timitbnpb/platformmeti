@@ -1357,6 +1357,15 @@
      "mw": 0
     },
     {
+     "nama": "Gaikindo",
+     "id": "en_4e09b94b48",
+     "kategori": "Asosiasi",
+     "peran": "-",
+     "proyek": 0,
+     "u": "/o/en_4e09b94b48",
+     "mw": 0
+    },
+    {
      "nama": "Hyundai Motor Group",
      "id": "in_dfb3ec26f0",
      "kategori": "Perusahaan Internasional di Indonesia",
@@ -1369,6 +1378,15 @@
      "mw": 0
     },
     {
+     "nama": "Hyundai Motor Manufacturing Indonesia",
+     "id": "en_23191a1172",
+     "kategori": "Swasta",
+     "peran": "manufaktur",
+     "proyek": 0,
+     "u": "/o/en_23191a1172",
+     "mw": 0
+    },
+    {
      "nama": "Kementerian Investasi dan Hilirisasi/BKPM",
      "id": "l_05301f48a5",
      "kategori": "Kementerian dan Lembaga Negara",
@@ -1378,6 +1396,15 @@
      },
      "proyek": 0,
      "u": "/o/l_05301f48a5",
+     "mw": 0
+    },
+    {
+     "nama": "PT Astra International Tbk",
+     "id": "en_9babc68051",
+     "kategori": "Swasta",
+     "peran": "-",
+     "proyek": 0,
+     "u": "/o/en_9babc68051",
      "mw": 0
     },
     {
@@ -1414,6 +1441,24 @@
      },
      "proyek": 0,
      "u": "/o/p_e0f3886341",
+     "mw": 0
+    },
+    {
+     "nama": "PT Toyota-Astra Motor",
+     "id": "en_27ab45ac94",
+     "kategori": "Swasta",
+     "peran": "manufaktur",
+     "proyek": 0,
+     "u": "/o/en_27ab45ac94",
+     "mw": 0
+    },
+    {
+     "nama": "VinFast Indonesia",
+     "id": "en_43c1d59ffc",
+     "kategori": "Swasta",
+     "peran": "manufaktur",
+     "proyek": 0,
+     "u": "/o/en_43c1d59ffc",
      "mw": 0
     }
    ]

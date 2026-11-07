@@ -3062,7 +3062,7 @@
     {
      "nama": "Kayan 5 hydroelectric plant",
      "id": "gem_hydropower_L100000602119",
-     "u": "/proyek#gem_hydropower_L100000602119",
+     "u": "/p/gem_hydropower_L100000602119",
      "prov": "Kalimantan Utara",
      "kode": "65",
      "mw": 3300,
@@ -3076,7 +3076,7 @@
     {
      "nama": "Kayan 3 hydroelectric plant",
      "id": "gem_hydropower_L100000602117",
-     "u": "/proyek#gem_hydropower_L100000602117",
+     "u": "/p/gem_hydropower_L100000602117",
      "prov": "Kalimantan Utara",
      "kode": "65",
      "mw": 1800,
@@ -3090,7 +3090,7 @@
     {
      "nama": "Kayan 4 hydroelectric plant",
      "id": "gem_hydropower_L100000602118",
-     "u": "/proyek#gem_hydropower_L100000602118",
+     "u": "/p/gem_hydropower_L100000602118",
      "prov": "Kalimantan Utara",
      "kode": "65",
      "mw": 1800,
@@ -3104,7 +3104,7 @@
     {
      "nama": "Mentarang hydroelectric plant",
      "id": "gem_hydropower_L100000602132",
-     "u": "/proyek#gem_hydropower_L100000602132",
+     "u": "/p/gem_hydropower_L100000602132",
      "prov": "Kalimantan Utara",
      "kode": "65",
      "mw": 1375,
@@ -3118,7 +3118,7 @@
     {
      "nama": "Kayan 2 hydroelectric plant",
      "id": "gem_hydropower_L100000602116",
-     "u": "/proyek#gem_hydropower_L100000602116",
+     "u": "/p/gem_hydropower_L100000602116",
      "prov": "Kalimantan Utara",
      "kode": "65",
      "mw": 1200,
@@ -3132,7 +3132,7 @@
     {
      "nama": "Cirata hydro",
      "id": "pj_0080",
-     "u": "/proyek#pj_0080",
+     "u": "/p/pj_0080",
      "prov": "Jawa Barat",
      "kode": "32",
      "mw": 1008,
@@ -3146,7 +3146,7 @@
     {
      "nama": "Kayan 1 hydroelectric plant",
      "id": "gem_hydropower_L100000602115",
-     "u": "/proyek#gem_hydropower_L100000602115",
+     "u": "/p/gem_hydropower_L100000602115",
      "prov": "Kalimantan Utara",
      "kode": "65",
      "mw": 900,
@@ -3160,7 +3160,7 @@
     {
      "nama": "Saguling hydro",
      "id": "pj_0095",
-     "u": "/proyek#pj_0095",
+     "u": "/p/pj_0095",
      "prov": "Jawa Barat",
      "kode": "32",
      "mw": 701,
@@ -3174,7 +3174,7 @@
     {
      "nama": "Saguling hydroelectric plant",
      "id": "gem_hydropower_L100000602142",
-     "u": "/proyek#gem_hydropower_L100000602142",
+     "u": "/p/gem_hydropower_L100000602142",
      "prov": "Jawa Barat",
      "kode": "32",
      "mw": 701,
@@ -3188,7 +3188,7 @@
     {
      "nama": "PLTM Riorita Sulbagsel Sulbagsel Sulbagsel",
      "id": "pj_0179",
-     "u": "/proyek#pj_0179",
+     "u": "/p/pj_0179",
      "prov": "Sulawesi Tenggara",
      "kode": "74",
      "mw": 601.3,
@@ -3202,7 +3202,7 @@
     {
      "nama": "Batang Toru hydropower project",
      "id": "pj_0066",
-     "u": "/proyek#pj_0066",
+     "u": "/p/pj_0066",
      "prov": "-",
      "kode": null,
      "mw": 510,
@@ -3216,7 +3216,7 @@
     {
      "nama": "PLTA Batang Toru",
      "id": "pj_0197",
-     "u": "/proyek#pj_0197",
+     "u": "/p/pj_0197",
      "prov": "Sumatera Utara",
      "kode": "12",
      "mw": 510,
@@ -3230,7 +3230,7 @@
     {
      "nama": "Poso 3 hydroelectric plant",
      "id": "gem_hydropower_L100000602141",
-     "u": "/proyek#gem_hydropower_L100000602141",
+     "u": "/p/gem_hydropower_L100000602141",
      "prov": "Sulawesi Tengah",
      "kode": "72",
      "mw": 400,
@@ -3244,7 +3244,7 @@
     {
      "nama": "PLTA Merangin",
      "id": "pj_0078",
-     "u": "/proyek#pj_0078",
+     "u": "/p/pj_0078",
      "prov": "Jambi",
      "kode": "15",
      "mw": 350,
@@ -3258,7 +3258,7 @@
     {
      "nama": "Tangga hydro",
      "id": "pj_0216",
-     "u": "/proyek#pj_0216",
+     "u": "/p/pj_0216",
      "prov": "Sumatera Utara",
      "kode": "12",
      "mw": 317,
@@ -3272,7 +3272,7 @@
     {
      "nama": "Sigura-gura hydro",
      "id": "pj_0214",
-     "u": "/proyek#pj_0214",
+     "u": "/p/pj_0214",
      "prov": "Sumatera Utara",
      "kode": "12",
      "mw": 286,
@@ -3286,7 +3286,7 @@
     {
      "nama": "Pamona 2 hydro",
      "id": "pj_0166",
-     "u": "/proyek#pj_0166",
+     "u": "/p/pj_0166",
      "prov": "Sulawesi Tengah",
      "kode": "72",
      "mw": 260,
@@ -3300,7 +3300,7 @@
     {
      "nama": "PLTA Kumbih-3 Sumatera",
      "id": "pj_0055",
-     "u": "/proyek#pj_0055",
+     "u": "/p/pj_0055",
      "prov": "Aceh",
      "kode": "11",
      "mw": 245,
@@ -3314,7 +3314,7 @@
     {
      "nama": "Musi hydro",
      "id": "pj_0067",
-     "u": "/proyek#pj_0067",
+     "u": "/p/pj_0067",
      "prov": "Bengkulu",
      "kode": "17",
      "mw": 210,
@@ -3328,7 +3328,7 @@
     {
      "nama": "PLTM Tomoni i MPP Indonesia 1 Sulbagsel",
      "id": "pj_0165",
-     "u": "/proyek#pj_0165",
+     "u": "/p/pj_0165",
      "prov": "Sulawesi Selatan",
      "kode": "73",
      "mw": 210,
@@ -3342,7 +3342,7 @@
     {
      "nama": "Musi hydroelectric plant",
      "id": "gem_hydropower_L100000602134",
-     "u": "/proyek#gem_hydropower_L100000602134",
+     "u": "/p/gem_hydropower_L100000602134",
      "prov": "Bengkulu",
      "kode": "17",
      "mw": 210,
@@ -3356,7 +3356,7 @@
     {
      "nama": "PLTA Buttu Batu n Sulbagsel",
      "id": "pj_0161",
-     "u": "/proyek#pj_0161",
+     "u": "/p/pj_0161",
      "prov": "Sulawesi Selatan",
      "kode": "73",
      "mw": 200,
@@ -3370,7 +3370,7 @@
     {
      "nama": "Poso Extension Stage 2 hydroelectric plant",
      "id": "gem_hydropower_L100001045705",
-     "u": "/proyek#gem_hydropower_L100001045705",
+     "u": "/p/gem_hydropower_L100001045705",
      "prov": "Sulawesi Tengah",
      "kode": "72",
      "mw": 200,
@@ -3384,7 +3384,7 @@
     {
      "nama": "PLTA Poso 2",
      "id": "pj_0142",
-     "u": "/proyek#pj_0142",
+     "u": "/p/pj_0142",
      "prov": "-",
      "kode": null,
      "mw": 195,
@@ -3398,7 +3398,7 @@
     {
      "nama": "Larona hydro",
      "id": "pj_0159",
-     "u": "/proyek#pj_0159",
+     "u": "/p/pj_0159",
      "prov": "Sulawesi Selatan",
      "kode": "73",
      "mw": 195,
@@ -3412,7 +3412,7 @@
     {
      "nama": "Bakaru I & II hydro",
      "id": "pj_0156",
-     "u": "/proyek#pj_0156",
+     "u": "/p/pj_0156",
      "prov": "Sulawesi Selatan",
      "kode": "73",
      "mw": 191,
@@ -3426,7 +3426,7 @@
     {
      "nama": "Karama hydroelectric plant",
      "id": "gem_hydropower_L100000602113",
-     "u": "/proyek#gem_hydropower_L100000602113",
+     "u": "/p/gem_hydropower_L100000602113",
      "prov": "Sulawesi Barat",
      "kode": "76",
      "mw": 190,
@@ -3440,7 +3440,7 @@
     {
      "nama": "Jatiluhur hydro",
      "id": "pj_0082",
-     "u": "/proyek#pj_0082",
+     "u": "/p/pj_0082",
      "prov": "Jawa Barat",
      "kode": "32",
      "mw": 186,
@@ -3454,7 +3454,7 @@
     {
      "nama": "PB. Sudirman hydro",
      "id": "pj_0101",
-     "u": "/proyek#pj_0101",
+     "u": "/p/pj_0101",
      "prov": "Jawa Tengah",
      "kode": "33",
      "mw": 181,
@@ -3468,7 +3468,7 @@
     {
      "nama": "Commander in Chief Sudirman Dam",
      "id": "pj_0097",
-     "u": "/proyek#pj_0097",
+     "u": "/p/pj_0097",
      "prov": "Jawa Tengah",
      "kode": "33",
      "mw": 180.9,
@@ -3482,7 +3482,7 @@
     {
      "nama": "Kerinci hydro",
      "id": "pj_0076",
-     "u": "/proyek#pj_0076",
+     "u": "/p/pj_0076",
      "prov": "Jambi",
      "kode": "15",
      "mw": 180,
@@ -3496,7 +3496,7 @@
     {
      "nama": "Jatiluhur Dam",
      "id": "pj_0081",
-     "u": "/proyek#pj_0081",
+     "u": "/p/pj_0081",
      "prov": "Jawa Barat",
      "kode": "32",
      "mw": 180,
@@ -3510,7 +3510,7 @@
     {
      "nama": "Asahan I hydro",
      "id": "pj_0193",
-     "u": "/proyek#pj_0193",
+     "u": "/p/pj_0193",
      "prov": "Sumatera Utara",
      "kode": "12",
      "mw": 180,
@@ -3524,7 +3524,7 @@
     {
      "nama": "Singkarak hydro",
      "id": "pj_0190",
-     "u": "/proyek#pj_0190",
+     "u": "/p/pj_0190",
      "prov": "Sumatera Barat",
      "kode": "13",
      "mw": 175,
@@ -3538,7 +3538,7 @@
     {
      "nama": "Asahan III hydro",
      "id": "pj_0194",
-     "u": "/proyek#pj_0194",
+     "u": "/p/pj_0194",
      "prov": "Sumatera Utara",
      "kode": "12",
      "mw": 174,
@@ -3552,7 +3552,7 @@
     {
      "nama": "Larona hydroelectric plant",
      "id": "gem_hydropower_L100000602124",
-     "u": "/proyek#gem_hydropower_L100000602124",
+     "u": "/p/gem_hydropower_L100000602124",
      "prov": "Sulawesi Selatan",
      "kode": "73",
      "mw": 165,
@@ -3566,7 +3566,7 @@
     {
      "nama": "PLTM Sumbagut",
      "id": "pj_0212",
-     "u": "/proyek#pj_0212",
+     "u": "/p/pj_0212",
      "prov": "Sumatera Utara",
      "kode": "12",
      "mw": 164.8,
@@ -3580,7 +3580,7 @@
     {
      "nama": "Balambano hydro",
      "id": "pj_0157",
-     "u": "/proyek#pj_0157",
+     "u": "/p/pj_0157",
      "prov": "Sulawesi Selatan",
      "kode": "73",
      "mw": 140,
@@ -3594,7 +3594,7 @@
     {
      "nama": "PLTA Bakaru 2 n Sulbagsel",
      "id": "pj_0160",
-     "u": "/proyek#pj_0160",
+     "u": "/p/pj_0160",
      "prov": "Sulawesi Selatan",
      "kode": "73",
      "mw": 140,
@@ -3608,7 +3608,7 @@
     {
      "nama": "Balambano hydroelectric plant",
      "id": "gem_hydropower_L100000602103",
-     "u": "/proyek#gem_hydropower_L100000602103",
+     "u": "/p/gem_hydropower_L100000602103",
      "prov": "Sulawesi Selatan",
      "kode": "73",
      "mw": 140,
@@ -3622,7 +3622,7 @@
     {
      "nama": "Karebbe hydro",
      "id": "pj_0158",
-     "u": "/proyek#pj_0158",
+     "u": "/p/pj_0158",
      "prov": "Sulawesi Selatan",
      "kode": "73",
      "mw": 132,
@@ -3636,7 +3636,7 @@
     {
      "nama": "Bakaru hydroelectric plant",
      "id": "gem_hydropower_L100000602102",
-     "u": "/proyek#gem_hydropower_L100000602102",
+     "u": "/p/gem_hydropower_L100000602102",
      "prov": "Sulawesi Selatan",
      "kode": "73",
      "mw": 126,
@@ -3650,7 +3650,7 @@
     {
      "nama": "PLTA Pokko",
      "id": "pj_0162",
-     "u": "/proyek#pj_0162",
+     "u": "/p/pj_0162",
      "prov": "Sulawesi Selatan",
      "kode": "73",
      "mw": 124.5,
@@ -3664,7 +3664,7 @@
     {
      "nama": "Peusangan 4 hydroelectric plant",
      "id": "gem_hydropower_L100000602139",
-     "u": "/proyek#gem_hydropower_L100000602139",
+     "u": "/p/gem_hydropower_L100000602139",
      "prov": "Aceh",
      "kode": "11",
      "mw": 120,
@@ -3678,7 +3678,7 @@
     {
      "nama": "Poso Extension Stage 1 hydroelectric plant",
      "id": "gem_hydropower_L100001045707",
-     "u": "/proyek#gem_hydropower_L100001045707",
+     "u": "/p/gem_hydropower_L100001045707",
      "prov": "Sulawesi Tengah",
      "kode": "72",
      "mw": 120,
@@ -3692,7 +3692,7 @@
     {
      "nama": "Koto Panjang hydro",
      "id": "pj_0154",
-     "u": "/proyek#pj_0154",
+     "u": "/p/pj_0154",
      "prov": "Riau",
      "kode": "14",
      "mw": 114,
@@ -3706,7 +3706,7 @@
     {
      "nama": "Jatigede Power Plant",
      "id": "pj_0079",
-     "u": "/proyek#pj_0079",
+     "u": "/p/pj_0079",
      "prov": "-",
      "kode": null,
      "mw": 110,
@@ -3720,7 +3720,7 @@
     {
      "nama": "Bendungan Merangin hydroelectric plant",
      "id": "gem_hydropower_L100000602105",
-     "u": "/proyek#gem_hydropower_L100000602105",
+     "u": "/p/gem_hydropower_L100000602105",
      "prov": "Jambi",
      "kode": "15",
      "mw": 107,
@@ -3734,7 +3734,7 @@
     {
      "nama": "Sutami hydro",
      "id": "pj_0111",
-     "u": "/proyek#pj_0111",
+     "u": "/p/pj_0111",
      "prov": "Jawa Timur",
      "kode": "35",
      "mw": 105,
@@ -3748,7 +3748,7 @@
     {
      "nama": "PLTM Manajur Kalbar-2",
      "id": "pj_0115",
-     "u": "/proyek#pj_0115",
+     "u": "/p/pj_0115",
      "prov": "Kalimantan Barat",
      "kode": "61",
      "mw": 105,
@@ -3762,7 +3762,7 @@
     {
      "nama": "Karangkates Hydroelectric Power Plant",
      "id": "pj_0106",
-     "u": "/proyek#pj_0106",
+     "u": "/p/pj_0106",
      "prov": "Jawa Timur",
      "kode": "35",
      "mw": 103,
@@ -3776,7 +3776,7 @@
     {
      "nama": "PLTA Tabang 1",
      "id": "pj_0121",
-     "u": "/proyek#pj_0121",
+     "u": "/p/pj_0121",
      "prov": "Kalimantan Timur",
      "kode": "64",
      "mw": 101,
@@ -3790,7 +3790,7 @@
     {
      "nama": "Bongka hydroelectric plant",
      "id": "gem_hydropower_L100000602106",
-     "u": "/proyek#gem_hydropower_L100000602106",
+     "u": "/p/gem_hydropower_L100000602106",
      "prov": "Sulawesi Tengah",
      "kode": "72",
      "mw": 100,
@@ -3804,7 +3804,7 @@
     {
      "nama": "Bonto Batu hydroelectric plant",
      "id": "gem_hydropower_L100000602107",
-     "u": "/proyek#gem_hydropower_L100000602107",
+     "u": "/p/gem_hydropower_L100000602107",
      "prov": "Sulawesi Selatan",
      "kode": "73",
      "mw": 100,
@@ -3818,7 +3818,7 @@
     {
      "nama": "PLTA Tanjung Sakti",
      "id": "pj_0191",
-     "u": "/proyek#pj_0191",
+     "u": "/p/pj_0191",
      "prov": "Sumatera Selatan",
      "kode": "16",
      "mw": 94,
@@ -3832,7 +3832,7 @@
     {
      "nama": "Besai hydro",
      "id": "pj_0124",
-     "u": "/proyek#pj_0124",
+     "u": "/p/pj_0124",
      "prov": "Lampung",
      "kode": "18",
      "mw": 90,
@@ -3846,7 +3846,7 @@
     {
      "nama": "Malea hydroelectric plant",
      "id": "gem_hydropower_L100000602128",
-     "u": "/proyek#gem_hydropower_L100000602128",
+     "u": "/p/gem_hydropower_L100000602128",
      "prov": "Sulawesi Tengah",
      "kode": "72",
      "mw": 90,
@@ -3860,7 +3860,7 @@
     {
      "nama": "PLTA Peusangan 1- 2",
      "id": "pj_0056",
-     "u": "/proyek#pj_0056",
+     "u": "/p/pj_0056",
      "prov": "Aceh",
      "kode": "11",
      "mw": 88,
@@ -3874,7 +3874,7 @@
     {
      "nama": "PLTA Asahan III (FTP2)",
      "id": "pj_0196",
-     "u": "/proyek#pj_0196",
+     "u": "/p/pj_0196",
      "prov": "Sumatera Utara",
      "kode": "12",
      "mw": 87,
@@ -3888,7 +3888,7 @@
     {
      "nama": "Lau Renun hydro",
      "id": "pj_0195",
-     "u": "/proyek#pj_0195",
+     "u": "/p/pj_0195",
      "prov": "Sumatera Utara",
      "kode": "12",
      "mw": 82,
@@ -3902,7 +3902,7 @@
     {
      "nama": "Lau Renun hydroelectric plant",
      "id": "gem_hydropower_L100000602125",
-     "u": "/proyek#gem_hydropower_L100000602125",
+     "u": "/p/gem_hydropower_L100000602125",
      "prov": "Sumatera Utara",
      "kode": "12",
      "mw": 82,
@@ -3916,7 +3916,7 @@
     {
      "nama": "Maninjau hydro",
      "id": "pj_0184",
-     "u": "/proyek#pj_0184",
+     "u": "/p/pj_0184",
      "prov": "Sumatera Barat",
      "kode": "13",
      "mw": 68,
@@ -3930,7 +3930,7 @@
     {
      "nama": "PLTA Kelai 2",
      "id": "pj_0119",
-     "u": "/proyek#pj_0119",
+     "u": "/p/pj_0119",
      "prov": "Kalimantan Timur",
      "kode": "64",
      "mw": 65,
@@ -3944,7 +3944,7 @@
     {
      "nama": "Semangka hydroelectric plant",
      "id": "gem_hydropower_L100001045710",
-     "u": "/proyek#gem_hydropower_L100001045710",
+     "u": "/p/gem_hydropower_L100001045710",
      "prov": "Lampung",
      "kode": "18",
      "mw": 57,
@@ -3958,7 +3958,7 @@
     {
      "nama": "Wlingi hydro",
      "id": "pj_0113",
-     "u": "/proyek#pj_0113",
+     "u": "/p/pj_0113",
      "prov": "Jawa Timur",
      "kode": "35",
      "mw": 54,
@@ -3972,7 +3972,7 @@
     {
      "nama": "PLTA Wai Tala",
      "id": "pj_0128",
-     "u": "/proyek#pj_0128",
+     "u": "/p/pj_0128",
      "prov": "Maluku",
      "kode": "81",
      "mw": 54,
@@ -3986,7 +3986,7 @@
     {
      "nama": "Wlingi-Brantas hydroelectric plant",
      "id": "gem_hydropower_L100001023096",
-     "u": "/proyek#gem_hydropower_L100001023096",
+     "u": "/p/gem_hydropower_L100001023096",
      "prov": "Jawa Timur",
      "kode": "35",
      "mw": 54,
@@ -4000,7 +4000,7 @@
     {
      "nama": "Wlingi Dam",
      "id": "pj_0112",
-     "u": "/proyek#pj_0112",
+     "u": "/p/pj_0112",
      "prov": "Jawa Timur",
      "kode": "35",
      "mw": 53.62,
@@ -4014,7 +4014,7 @@
     {
      "nama": "Sipansihaporas hydro",
      "id": "pj_0215",
-     "u": "/proyek#pj_0215",
+     "u": "/p/pj_0215",
      "prov": "Sumatera Utara",
      "kode": "12",
      "mw": 50,
@@ -4028,7 +4028,7 @@
     {
      "nama": "Rajamandala Power Plant",
      "id": "pj_0094",
-     "u": "/proyek#pj_0094",
+     "u": "/p/pj_0094",
      "prov": "Jawa Barat",
      "kode": "32",
      "mw": 46.6,
@@ -4042,7 +4042,7 @@
     {
      "nama": "PLTA Kelai",
      "id": "pj_0118",
-     "u": "/proyek#pj_0118",
+     "u": "/p/pj_0118",
      "prov": "Kalimantan Timur",
      "kode": "64",
      "mw": 45,
@@ -4056,7 +4056,7 @@
     {
      "nama": "Wampu hydro",
      "id": "pj_0217",
-     "u": "/proyek#pj_0217",
+     "u": "/p/pj_0217",
      "prov": "Sumatera Utara",
      "kode": "12",
      "mw": 45,
@@ -4070,7 +4070,7 @@
     {
      "nama": "PLTA Masang-2 (FTP2)",
      "id": "pj_0185",
-     "u": "/proyek#pj_0185",
+     "u": "/p/pj_0185",
      "prov": "Sumatera Barat",
      "kode": "13",
      "mw": 44,
@@ -4084,7 +4084,7 @@
     {
      "nama": "PLTM Luwuk",
      "id": "pj_0173",
-     "u": "/proyek#pj_0173",
+     "u": "/p/pj_0173",
      "prov": "Sulawesi Tengah",
      "kode": "72",
      "mw": 40,
@@ -4098,7 +4098,7 @@
     {
      "nama": "Hasang hydroelectric plant",
      "id": "gem_hydropower_L100001064159",
-     "u": "/proyek#gem_hydropower_L100001064159",
+     "u": "/p/gem_hydropower_L100001064159",
      "prov": "Sumatera Utara",
      "kode": "12",
      "mw": 40,
@@ -4112,7 +4112,7 @@
     {
      "nama": "Kesamben hydroelectric plant",
      "id": "gem_hydropower_L100001064149",
-     "u": "/proyek#gem_hydropower_L100001064149",
+     "u": "/p/gem_hydropower_L100001064149",
      "prov": "Jawa Timur",
      "kode": "35",
      "mw": 37,
@@ -4126,7 +4126,7 @@
     {
      "nama": "Tanggari I & II hydro",
      "id": "pj_0181",
-     "u": "/proyek#pj_0181",
+     "u": "/p/pj_0181",
      "prov": "Sulawesi Utara",
      "kode": "71",
      "mw": 36,
@@ -4140,7 +4140,7 @@
     {
      "nama": "Tulungagung hydroelectric plant",
      "id": "gem_hydropower_L100001064154",
-     "u": "/proyek#gem_hydropower_L100001064154",
+     "u": "/p/gem_hydropower_L100001064154",
      "prov": "-",
      "kode": null,
      "mw": 36,
@@ -4154,7 +4154,7 @@
     {
      "nama": "Riam Kanan hydro",
      "id": "pj_0117",
-     "u": "/proyek#pj_0117",
+     "u": "/p/pj_0117",
      "prov": "Kalimantan Selatan",
      "kode": "63",
      "mw": 30,
@@ -4168,7 +4168,7 @@
     {
      "nama": "PLTA Poigar-2 Sulbagut",
      "id": "pj_0180",
-     "u": "/proyek#pj_0180",
+     "u": "/p/pj_0180",
      "prov": "Sulawesi Utara",
      "kode": "71",
      "mw": 30,

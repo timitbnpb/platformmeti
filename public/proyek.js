@@ -1,5 +1,6 @@
 /* /proyek: pelacak proyek nasional (K17, JM-P02/P03). Data = potret statis /data/*.json, tanpa rute Worker.
    INP: chrome filter/sort berubah seketika; peta, corong, tabel menyusul lewat nanti(); tabel dipaging 50 baris. */
+import { buktiHtml } from "/inti/bukti.js";
 import { t, ada, angka, tanggal, bahasa } from "/i18n.js";
 import { paginasiHtml, sorotHalaman } from "/inti/paginasi.js";
 import { esc, nanti, debounce, hantuHtml, galatHtml, ikon } from "/inti/umum.js";
@@ -615,7 +616,7 @@ function profilHtml(r) {
     + tile2("pj.c.status", `${pilSt(r.st)}${tahap ? `<span class="jm-pil jm-pil-bad">${esc(tahap)}</span>` : ""}`)
     + tile2("pj.c.cod", `<b>${cods.length ? esc(cods.join(" / ")) : "-"}</b>${aktual ? `<small>${esc(t("pj.w.aktual"))} ${esc(String(aktual.nilai).slice(0, 4))}</small>` : ""}`)
     + tile2("pj.c.prov", `<b>${provHtmlSel(r)}</b>`);
-  const pilHtml = `${pil(t("pj.bukti." + (p.tingkat_bukti || "media")), p.tingkat_bukti === "resmi" ? "ok" : "warn")}${p.nama_perlu_tinjau ? `<span class="jm-pj-tinjau">${esc(t("pj.tinjau"))}</span>` : ""}`;
+  const pilHtml = `${buktiHtml(p.tingkat_bukti || "media", { sumber: sm[0]?.judul, tanggal: (p.sumber || [])[0]?.tanggal })}${p.nama_perlu_tinjau ? `<span class="jm-pj-tinjau">${esc(t("pj.tinjau"))}</span>` : ""}`;
   const aks = (r.ada ? `<a class="jm-tbl jm-tbl-kecil" href="${mapsUrl(L.lat, L.lng)}" target="_blank" rel="noopener noreferrer">${PIN}<span>${esc(t("pj.maps.pendek"))}</span></a>` : "") + aksiHtml({ csv: false });
   return kepalaModal({ id: r.id, img: IMG_TEK[r.tek], ikonSvg: ikonTek(r.tek), judul: r.nama, ringkas: baris, pilHtml, aks, balik: dlg.dataset.balik || "" })
     + `<div class="jm-pj-strip"><div class="jm-pj-tiles jm-pj-tiles4">${tiles}</div></div><div class="jm-pj-sh-badan"><div class="jm-pj-dua" id="pjDua"><div class="jm-pj-kol" id="pjKiri">${kiri.join("")}</div><div class="jm-pj-kol" id="pjKanan">${kanan.join("")}</div></div>

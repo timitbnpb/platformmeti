@@ -45,6 +45,7 @@ Berkas milikmu (glob paling spesifik menang):
 
 - `scripts/panen/**`
 - `scripts/pipa/**`
+- `scripts/hukum/**`
 - `scripts/direktori/**`
 - `scripts/mesin/**`
 - `data/**`

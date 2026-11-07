@@ -181,10 +181,10 @@ export function pemain(d, tambahan, dasarId, maks = 45) {
 export function proyek(d, peta, tambahan, judulKol = ['Proyek', 'Project']) {
   const b = d.bab['10']; const ada = new Set();
   const ambil = (r, k) => { const v = peta[k] ? r[peta[k]] : r[k]; return v == null ? '-' : v; };
-  const baris = b.baris.map((r) => { const nama = r[peta.nama || 'nama']; const id = r.id || null; return { nama, ...(id ? { id, url: '/proyek#' + id } : {}), wilayah: ambil(r, 'wilayah'), ukuran: ambil(r, 'ukuran'), status: ambil(r, 'status'), sumber: r.sumber || r.rujuk || '-' }; });
+  const baris = b.baris.map((r) => { const nama = r[peta.nama || 'nama']; const id = r.id || null; return { nama, ...(id ? { id, url: '/p/' + id } : {}), wilayah: ambil(r, 'wilayah'), ukuran: ambil(r, 'ukuran'), status: ambil(r, 'status'), sumber: r.sumber || r.rujuk || '-' }; });
   for (const [nama, wil, uk, st, rujuk, idp] of tambahan) {
     const id = idp ? (idp.startsWith('WRI') ? cekId('gppd', idp) : cekId('pj', idp)) : null; if (id) ada.add(id);
-    baris.push({ nama, ...(id ? (id.startsWith('WRI') ? { id } : { id, url: '/proyek#' + id }) : {}), wilayah: sel(wil), ukuran: sel(uk), status: sel(st), sumber: rujuk });
+    baris.push({ nama, ...(id ? (id.startsWith('WRI') ? { id } : { id, url: '/p/' + id }) : {}), wilayah: sel(wil), ukuran: sel(uk), status: sel(st), sumber: rujuk });
   }
   d.bab['10'] = { ...b, kolom: [kol('nama', judulKol[0], judulKol[1], { url: 'url' }), kol('wilayah', 'Wilayah', 'Region'), kol('ukuran', 'Ukuran', 'Size'), kol('status', 'Status menurut sumber', 'Status per source'), kol('sumber', 'Dasar', 'Basis')], baris, per: 15 };
 }

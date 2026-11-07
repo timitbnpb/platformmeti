@@ -4,6 +4,7 @@ import { fileURLToPath } from 'node:url';
 
 const AKAR = fileURLToPath(new URL('../../', import.meta.url));
 export const TANGGAL = '2026-11-08';
+export const TOP = 25;
 export const TAHUN = [2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024];
 // surya: HS 2017 (sampai 2021) hanya punya 8541.40 (juga memuat LED dan dioda); HS 2022 memecahnya, sel rakitan modul jadi 8541.43.
 export const KOMPONEN = ['surya', 'baterai', 'angin', 'inverter'];
@@ -28,8 +29,11 @@ export function bangun() {
     if (!fs.existsSync(AKAR + f)) continue;
     const m = baca(f), rows = m.data;
     const dunia = rows.find((r) => r.p === 0);
-    const mitra = rows.filter((r) => r.p !== 0 && peta.has(r.p) && r.v > 0).map((r) => { mitraSet.set(r.p, peta.get(r.p)); return { kode: r.p, usd: Math.round(r.v), kg: Math.round(r.w || 0) }; }).sort((a, b) => b.usd - a.usd);
-    tahunan.push({ komponen: k, hs, alir: alir === 'M' ? 'impor' : 'ekspor', tahun: th, usd: dunia ? Math.round(dunia.v) : mitra.reduce((a, r) => a + r.usd, 0), kg: dunia ? Math.round(dunia.w || 0) : null, mitra, sumber_id: 's-comtrade', tingkat_bukti: 'resmi', tanggal: m.ambil || TANGGAL });
+    const mitra = rows.filter((r) => r.p !== 0 && peta.has(r.p) && r.v > 0).map((r) => { return { kode: r.p, usd: Math.round(r.v), kg: Math.round(r.w || 0) }; }).sort((a, b) => b.usd - a.usd);
+    const lainnya = mitra.slice(TOP).reduce((a, r) => a + r.usd, 0);
+    mitra.length = Math.min(mitra.length, TOP);
+    for (const r of mitra) mitraSet.set(r.kode, peta.get(r.kode));
+    tahunan.push({ komponen: k, hs, alir: alir === 'M' ? 'impor' : 'ekspor', tahun: th, usd: dunia ? Math.round(dunia.v) : mitra.reduce((a, r) => a + r.usd, 0), kg: dunia ? Math.round(dunia.w || 0) : null, mitra, lainnya_usd: lainnya, sumber_id: 's-comtrade', tingkat_bukti: 'resmi', tanggal: m.ambil || TANGGAL });
   }
   const mitra = [...mitraSet].map(([kode, v]) => ({ kode, ...v })).sort((a, b) => a.kode - b.kode);
   return { lapis: 'publik', dibangun_pada: TANGGAL, hs: { surya: ['854140', '854143'], baterai: ['850760'], angin: ['850231'], inverter: ['850440'] }, sumber: SUMBER, tahunan, mitra, meta: { diperbarui: TANGGAL, celah: CELAH } };

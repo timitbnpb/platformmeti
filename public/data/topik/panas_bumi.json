@@ -2811,6 +2811,18 @@
      "mw": 20
     },
     {
+     "nama": "Sarulla Operations Ltd",
+     "id": "en_8d7c565560",
+     "u": "/o/en_8d7c565560",
+     "singkatan": "-",
+     "kategori": "Swasta",
+     "peran": "pengembang, IPP",
+     "relevansi": "teknologi",
+     "negara": "ID",
+     "proyek": 1,
+     "mw": 330
+    },
+    {
      "nama": "Tohoku Electric Power",
      "id": "in_2e43564369",
      "u": "/o/in_2e43564369",
@@ -3361,18 +3373,6 @@
      "negara": "ID",
      "proyek": 0,
      "mw": 0
-    },
-    {
-     "nama": "Sekretariat JETP Indonesia",
-     "id": "l_c455b2f724",
-     "u": "/o/l_c455b2f724",
-     "singkatan": "JETP",
-     "kategori": "Lembaga Donor",
-     "peran": "-",
-     "relevansi": "pemangku kebijakan",
-     "negara": "ID",
-     "proyek": 0,
-     "mw": 0
     }
    ],
    "catatan": {
@@ -3458,7 +3458,7 @@
     {
      "nama": "PLTP 2030 2030 (FTP2)",
      "id": "pj_0267",
-     "u": "/proyek#pj_0267",
+     "u": "/p/pj_0267",
      "prov": "Sumatera Selatan",
      "kode": "16",
      "mw": 600,
@@ -3472,7 +3472,7 @@
     {
      "nama": "PLTP Dieng (FTP2)",
      "id": "pj_0244",
-     "u": "/proyek#pj_0244",
+     "u": "/p/pj_0244",
      "prov": "Jawa Tengah",
      "kode": "33",
      "mw": 345,
@@ -3486,21 +3486,21 @@
     {
      "nama": "Sarulla geothermal power plant",
      "id": "gem_geothermal_L100000700157",
-     "u": "/proyek#gem_geothermal_L100000700157",
+     "u": "/p/gem_geothermal_L100000700157",
      "prov": "Sumatera Utara",
      "kode": "12",
      "mw": 330,
      "status": "beroperasi",
      "cod": null,
      "pemilik": "Sarulla Operations Ltd",
-     "id_organisasi": null,
-     "uo": null,
+     "id_organisasi": "en_8d7c565560",
+     "uo": "/o/en_8d7c565560",
      "bukti": "kajian"
     },
     {
      "nama": "Kamojang geothermal",
      "id": "pj_0232",
-     "u": "/proyek#pj_0232",
+     "u": "/p/pj_0232",
      "prov": "Jawa Barat",
      "kode": "32",
      "mw": 235,
@@ -3514,7 +3514,7 @@
     {
      "nama": "Wayang Windu geothermal",
      "id": "pj_0241",
-     "u": "/proyek#pj_0241",
+     "u": "/p/pj_0241",
      "prov": "Jawa Barat",
      "kode": "32",
      "mw": 227,
@@ -3528,7 +3528,7 @@
     {
      "nama": "Rantau Dedep geothermal power plant",
      "id": "gem_geothermal_L100000700146",
-     "u": "/proyek#gem_geothermal_L100000700146",
+     "u": "/p/gem_geothermal_L100000700146",
      "prov": "Sumatera Selatan",
      "kode": "16",
      "mw": 225,
@@ -3542,7 +3542,7 @@
     {
      "nama": "PLTP Baturaden (FTP2)",
      "id": "pj_0243",
-     "u": "/proyek#pj_0243",
+     "u": "/p/pj_0243",
      "prov": "Jawa Tengah",
      "kode": "33",
      "mw": 220,
@@ -3556,7 +3556,7 @@
     {
      "nama": "Rajabasa geothermal power plant",
      "id": "gem_geothermal_L100000700144",
-     "u": "/proyek#gem_geothermal_L100000700144",
+     "u": "/p/gem_geothermal_L100000700144",
      "prov": "Lampung",
      "kode": "18",
      "mw": 220,
@@ -3570,7 +3570,7 @@
     {
      "nama": "Darajat geothermal",
      "id": "pj_0229",
-     "u": "/proyek#pj_0229",
+     "u": "/p/pj_0229",
      "prov": "Jawa Barat",
      "kode": "32",
      "mw": 200,
@@ -3584,7 +3584,7 @@
     {
      "nama": "PLTP Sorik Marapi (FTP2)",
      "id": "pj_0272",
-     "u": "/proyek#pj_0272",
+     "u": "/p/pj_0272",
      "prov": "Sumatera Utara",
      "kode": "12",
      "mw": 185,
@@ -3598,7 +3598,7 @@
     {
      "nama": "Gunung Salak geothermal",
      "id": "pj_0230",
-     "u": "/proyek#pj_0230",
+     "u": "/p/pj_0230",
      "prov": "Jawa Barat",
      "kode": "32",
      "mw": 180,
@@ -3612,7 +3612,7 @@
     {
      "nama": "PLTP Bedugul",
      "id": "pj_0222",
-     "u": "/proyek#pj_0222",
+     "u": "/p/pj_0222",
      "prov": "Bali",
      "kode": "51",
      "mw": 175,
@@ -3626,7 +3626,7 @@
     {
      "nama": "Muara Laboh Geothermal Power Plant",
      "id": "pj_0265",
-     "u": "/proyek#pj_0265",
+     "u": "/p/pj_0265",
      "prov": "Sumatera Barat",
      "kode": "13",
      "mw": 168,
@@ -3640,7 +3640,7 @@
     {
      "nama": "Gunung Salak geothermal",
      "id": "pj_0231",
-     "u": "/proyek#pj_0231",
+     "u": "/p/pj_0231",
      "prov": "Jawa Barat",
      "kode": "32",
      "mw": 165,
@@ -3654,7 +3654,7 @@
     {
      "nama": "Patuha geothermal",
      "id": "pj_0233",
-     "u": "/proyek#pj_0233",
+     "u": "/p/pj_0233",
      "prov": "Jawa Barat",
      "kode": "32",
      "mw": 165,
@@ -3668,7 +3668,7 @@
     {
      "nama": "PLTP Telaga Ngebel (FTP2)",
      "id": "pj_0247",
-     "u": "/proyek#pj_0247",
+     "u": "/p/pj_0247",
      "prov": "Jawa Timur",
      "kode": "35",
      "mw": 165,
@@ -3682,7 +3682,7 @@
     {
      "nama": "PLTP Wayang Windu",
      "id": "pj_0239",
-     "u": "/proyek#pj_0239",
+     "u": "/p/pj_0239",
      "prov": "Jawa Barat",
      "kode": "32",
      "mw": 150,
@@ -3696,7 +3696,7 @@
     {
      "nama": "PLTP Muara Laboh (FTP2)",
      "id": "pj_0266",
-     "u": "/proyek#pj_0266",
+     "u": "/p/pj_0266",
      "prov": "Sumatera Barat",
      "kode": "13",
      "mw": 140,
@@ -3710,7 +3710,7 @@
     {
      "nama": "PLTP Wayang Windu (FTP2)",
      "id": "pj_0240",
-     "u": "/proyek#pj_0240",
+     "u": "/p/pj_0240",
      "prov": "Jawa Barat",
      "kode": "32",
      "mw": 130,
@@ -3724,7 +3724,7 @@
     {
      "nama": "PLTP Rawadano (FTP2)",
      "id": "pj_0223",
-     "u": "/proyek#pj_0223",
+     "u": "/p/pj_0223",
      "prov": "Banten",
      "kode": "36",
      "mw": 110,
@@ -3738,7 +3738,7 @@
     {
      "nama": "PLTP Hululais (FTP2)",
      "id": "pj_0224",
-     "u": "/proyek#pj_0224",
+     "u": "/p/pj_0224",
      "prov": "Bengkulu",
      "kode": "17",
      "mw": 110,
@@ -3752,7 +3752,7 @@
     {
      "nama": "PLTP Ijen (FTP2)",
      "id": "pj_0246",
-     "u": "/proyek#pj_0246",
+     "u": "/p/pj_0246",
      "prov": "Jawa Timur",
      "kode": "35",
      "mw": 110,
@@ -3766,7 +3766,7 @@
     {
      "nama": "Ulubelu Geothermal Power Station",
      "id": "pj_0249",
-     "u": "/proyek#pj_0249",
+     "u": "/p/pj_0249",
      "prov": "Lampung",
      "kode": "18",
      "mw": 110,
@@ -3780,7 +3780,7 @@
     {
      "nama": "Rawa Dano geothermal power plant",
      "id": "gem_geothermal_L100000700209",
-     "u": "/proyek#gem_geothermal_L100000700209",
+     "u": "/p/gem_geothermal_L100000700209",
      "prov": "Banten",
      "kode": "36",
      "mw": 110,
@@ -3794,7 +3794,7 @@
     {
      "nama": "PLTP Danau Ranau (FPT2)",
      "id": "pj_0268",
-     "u": "/proyek#pj_0268",
+     "u": "/p/pj_0268",
      "prov": "Sumatera Selatan",
      "kode": "16",
      "mw": 95,
@@ -3808,7 +3808,7 @@
     {
      "nama": "PSPE panas bumi Jenawi",
      "id": "wkp25_jenawi",
-     "u": "/proyek#wkp25_jenawi",
+     "u": "/p/wkp25_jenawi",
      "prov": "Jawa Tengah",
      "kode": "33",
      "mw": 86,
@@ -3822,7 +3822,7 @@
     {
      "nama": "Lahendong geothermal",
      "id": "pj_0260",
-     "u": "/proyek#pj_0260",
+     "u": "/p/pj_0260",
      "prov": "Sulawesi Utara",
      "kode": "71",
      "mw": 80,
@@ -3836,7 +3836,7 @@
     {
      "nama": "PLTP III Gunung Salak 8",
      "id": "pj_0236",
-     "u": "/proyek#pj_0236",
+     "u": "/p/pj_0236",
      "prov": "Jawa Barat",
      "kode": "32",
      "mw": 63,
@@ -3850,7 +3850,7 @@
     {
      "nama": "Dieng geothermal",
      "id": "pj_0242",
-     "u": "/proyek#pj_0242",
+     "u": "/p/pj_0242",
      "prov": "Jawa Tengah",
      "kode": "33",
      "mw": 60,
@@ -3864,7 +3864,7 @@
     {
      "nama": "PLTP Kepahiang #1",
      "id": "pj_0225",
-     "u": "/proyek#pj_0225",
+     "u": "/p/pj_0225",
      "prov": "Bengkulu",
      "kode": "17",
      "mw": 55,
@@ -3878,7 +3878,7 @@
     {
      "nama": "PLTP Kepahiang #2",
      "id": "pj_0226",
-     "u": "/proyek#pj_0226",
+     "u": "/p/pj_0226",
      "prov": "Bengkulu",
      "kode": "17",
      "mw": 55,
@@ -3892,7 +3892,7 @@
     {
      "nama": "PLTP Sungai Penuh (FTP2)",
      "id": "pj_0227",
-     "u": "/proyek#pj_0227",
+     "u": "/p/pj_0227",
      "prov": "Jambi",
      "kode": "15",
      "mw": 55,
@@ -3906,7 +3906,7 @@
     {
      "nama": "Darajat geothermal",
      "id": "pj_0228",
-     "u": "/proyek#pj_0228",
+     "u": "/p/pj_0228",
      "prov": "Jawa Barat",
      "kode": "32",
      "mw": 55,
@@ -3920,7 +3920,7 @@
     {
      "nama": "PLTP Ungaran (FTP2)",
      "id": "pj_0245",
-     "u": "/proyek#pj_0245",
+     "u": "/p/pj_0245",
      "prov": "Jawa Tengah",
      "kode": "33",
      "mw": 55,
@@ -3934,7 +3934,7 @@
     {
      "nama": "PLTP Lumut Balai (FTP2) #2",
      "id": "pj_0269",
-     "u": "/proyek#pj_0269",
+     "u": "/p/pj_0269",
      "prov": "Sumatera Selatan",
      "kode": "16",
      "mw": 55,
@@ -3948,7 +3948,7 @@
     {
      "nama": "PLTP Lumut Balai (FTP2) #3",
      "id": "pj_0270",
-     "u": "/proyek#pj_0270",
+     "u": "/p/pj_0270",
      "prov": "Sumatera Selatan",
      "kode": "16",
      "mw": 55,
@@ -3962,7 +3962,7 @@
     {
      "nama": "PLTP Lumut Balai (FTP2) #4",
      "id": "pj_0271",
-     "u": "/proyek#pj_0271",
+     "u": "/p/pj_0271",
      "prov": "Sumatera Selatan",
      "kode": "16",
      "mw": 55,
@@ -3976,7 +3976,7 @@
     {
      "nama": "Ratai geothermal power plant",
      "id": "gem_geothermal_L100000700147",
-     "u": "/proyek#gem_geothermal_L100000700147",
+     "u": "/p/gem_geothermal_L100000700147",
      "prov": "Lampung",
      "kode": "18",
      "mw": 55,
@@ -3990,7 +3990,7 @@
     {
      "nama": "Sarulla 2 geothermal power plant",
      "id": "gem_geothermal_L100001025662",
-     "u": "/proyek#gem_geothermal_L100001025662",
+     "u": "/p/gem_geothermal_L100001025662",
      "prov": "-",
      "kode": null,
      "mw": 50,
@@ -4004,7 +4004,7 @@
     {
      "nama": "PLTP I Gunung Salak 7",
      "id": "pj_0235",
-     "u": "/proyek#pj_0235",
+     "u": "/p/pj_0235",
      "prov": "Jawa Barat",
      "kode": "32",
      "mw": 40,
@@ -4018,7 +4018,7 @@
     {
      "nama": "PLTP Tangkuban Perahu (FTP2)",
      "id": "pj_0238",
-     "u": "/proyek#pj_0238",
+     "u": "/p/pj_0238",
      "prov": "Jawa Barat",
      "kode": "32",
      "mw": 40,
@@ -4032,7 +4032,7 @@
     {
      "nama": "Toka Tindung geothermal power plant",
      "id": "gem_geothermal_L100001025604",
-     "u": "/proyek#gem_geothermal_L100001025604",
+     "u": "/p/gem_geothermal_L100001025604",
      "prov": "-",
      "kode": null,
      "mw": 40,
@@ -4046,7 +4046,7 @@
     {
      "nama": "WKP panas bumi Danau Ranau",
      "id": "wkp25_danau_ranau",
-     "u": "/proyek#wkp25_danau_ranau",
+     "u": "/p/wkp25_danau_ranau",
      "prov": "Lampung",
      "kode": "18",
      "mw": 40,
@@ -4060,7 +4060,7 @@
     {
      "nama": "WKP panas bumi Telaga Ranau",
      "id": "wkp25_telaga_ranau",
-     "u": "/proyek#wkp25_telaga_ranau",
+     "u": "/p/wkp25_telaga_ranau",
      "prov": "Maluku Utara",
      "kode": "82",
      "mw": 40,
@@ -4074,7 +4074,7 @@
     {
      "nama": "WKP panas bumi Songgoriti",
      "id": "wkp25_songgoriti",
-     "u": "/proyek#wkp25_songgoriti",
+     "u": "/p/wkp25_songgoriti",
      "prov": "Jawa Timur",
      "kode": "35",
      "mw": 40,
@@ -4088,7 +4088,7 @@
     {
      "nama": "PSPE panas bumi Kadidia",
      "id": "wkp25_kadidia",
-     "u": "/proyek#wkp25_kadidia",
+     "u": "/p/wkp25_kadidia",
      "prov": "Sulawesi Tengah",
      "kode": "72",
      "mw": 40,
@@ -4102,7 +4102,7 @@
     {
      "nama": "PSPE panas bumi Cubudak-Panti",
      "id": "wkp25_cubudak_panti",
-     "u": "/proyek#wkp25_cubudak_panti",
+     "u": "/p/wkp25_cubudak_panti",
      "prov": "Sumatera Barat",
      "kode": "13",
      "mw": 40,
@@ -4116,7 +4116,7 @@
     {
      "nama": "PSPE panas bumi Gunung Tampomas",
      "id": "wkp25_gunung_tampomas",
-     "u": "/proyek#wkp25_gunung_tampomas",
+     "u": "/p/wkp25_gunung_tampomas",
      "prov": "Jawa Barat",
      "kode": "32",
      "mw": 30,
@@ -4130,7 +4130,7 @@
     {
      "nama": "PLTP Sokoria (FTP2)",
      "id": "pj_0256",
-     "u": "/proyek#pj_0256",
+     "u": "/p/pj_0256",
      "prov": "Nusa Tenggara Timur",
      "kode": "53",
      "mw": 22,
@@ -4144,7 +4144,7 @@
     {
      "nama": "PLTP Tulehu (FTP2)",
      "id": "pj_0251",
-     "u": "/proyek#pj_0251",
+     "u": "/p/pj_0251",
      "prov": "Maluku",
      "kode": "81",
      "mw": 20,
@@ -4158,7 +4158,7 @@
     {
      "nama": "PLTP Mataloko (FTP2)",
      "id": "pj_0254",
-     "u": "/proyek#pj_0254",
+     "u": "/p/pj_0254",
      "prov": "Nusa Tenggara Timur",
      "kode": "53",
      "mw": 20,
@@ -4172,7 +4172,7 @@
     {
      "nama": "PLTP Ulumbu 5",
      "id": "pj_0257",
-     "u": "/proyek#pj_0257",
+     "u": "/p/pj_0257",
      "prov": "Nusa Tenggara Timur",
      "kode": "53",
      "mw": 20,
@@ -4186,7 +4186,7 @@
     {
      "nama": "PLTP Ulumbu 6",
      "id": "pj_0258",
-     "u": "/proyek#pj_0258",
+     "u": "/p/pj_0258",
      "prov": "Nusa Tenggara Timur",
      "kode": "53",
      "mw": 20,
@@ -4200,7 +4200,7 @@
     {
      "nama": "PLTP Kotamobagu 1 Sulbagut",
      "id": "pj_0261",
-     "u": "/proyek#pj_0261",
+     "u": "/p/pj_0261",
      "prov": "Sulawesi Utara",
      "kode": "71",
      "mw": 20,
@@ -4214,7 +4214,7 @@
     {
      "nama": "PLTP Kotamobagu 2",
      "id": "pj_0262",
-     "u": "/proyek#pj_0262",
+     "u": "/p/pj_0262",
      "prov": "Sulawesi Utara",
      "kode": "71",
      "mw": 20,
@@ -4228,7 +4228,7 @@
     {
      "nama": "PLTP Kotamobagu 3",
      "id": "pj_0263",
-     "u": "/proyek#pj_0263",
+     "u": "/p/pj_0263",
      "prov": "Sulawesi Utara",
      "kode": "71",
      "mw": 20,
@@ -4242,7 +4242,7 @@
     {
      "nama": "PLTP Kotamobagu 4",
      "id": "pj_0264",
-     "u": "/proyek#pj_0264",
+     "u": "/p/pj_0264",
      "prov": "Sulawesi Utara",
      "kode": "71",
      "mw": 20,
@@ -4256,7 +4256,7 @@
     {
      "nama": "Wapsalit geothermal power plant",
      "id": "gem_geothermal_L100001063268",
-     "u": "/proyek#gem_geothermal_L100001063268",
+     "u": "/p/gem_geothermal_L100001063268",
      "prov": "-",
      "kode": null,
      "mw": 20,
@@ -4270,7 +4270,7 @@
     {
      "nama": "PSPE panas bumi Cisurupan Kertasari",
      "id": "wkp25_cisurupan_kertasari",
-     "u": "/proyek#wkp25_cisurupan_kertasari",
+     "u": "/p/wkp25_cisurupan_kertasari",
      "prov": "Jawa Barat",
      "kode": "32",
      "mw": 20,
@@ -4284,7 +4284,7 @@
     {
      "nama": "PSPE panas bumi Tuang",
      "id": "wkp25_tuang",
-     "u": "/proyek#wkp25_tuang",
+     "u": "/p/wkp25_tuang",
      "prov": "Sulawesi Selatan",
      "kode": "73",
      "mw": 20,
@@ -4298,7 +4298,7 @@
     {
      "nama": "PLTP Karaha Bodas",
      "id": "pj_0259",
-     "u": "/proyek#pj_0259",
+     "u": "/p/pj_0259",
      "prov": "-",
      "kode": null,
      "mw": 18.16,
@@ -4312,7 +4312,7 @@
     {
      "nama": "Salak Binary geothermal power plant",
      "id": "gem_geothermal_L100001063273",
-     "u": "/proyek#gem_geothermal_L100001063273",
+     "u": "/p/gem_geothermal_L100001063273",
      "prov": "-",
      "kode": null,
      "mw": 15.5,
@@ -4326,7 +4326,7 @@
     {
      "nama": "PLTP Small Scale Binary",
      "id": "pj_0237",
-     "u": "/proyek#pj_0237",
+     "u": "/p/pj_0237",
      "prov": "Jawa Barat",
      "kode": "32",
      "mw": 15,
@@ -4340,7 +4340,7 @@
     {
      "nama": "Sibayak geothermal",
      "id": "pj_0273",
-     "u": "/proyek#pj_0273",
+     "u": "/p/pj_0273",
      "prov": "Sumatera Utara",
      "kode": "12",
      "mw": 11.3,
@@ -4354,7 +4354,7 @@
     {
      "nama": "PLTP Cibuni (FTP2)",
      "id": "pj_0234",
-     "u": "/proyek#pj_0234",
+     "u": "/p/pj_0234",
      "prov": "Jawa Barat",
      "kode": "32",
      "mw": 10,
@@ -4368,7 +4368,7 @@
     {
      "nama": "PLTP Songa Wayaua (FTP2)",
      "id": "pj_0250",
-     "u": "/proyek#pj_0250",
+     "u": "/p/pj_0250",
      "prov": "Maluku Utara",
      "kode": "82",
      "mw": 10,
@@ -4382,7 +4382,7 @@
     {
      "nama": "PLTP Atadei (FTP2)",
      "id": "pj_0252",
-     "u": "/proyek#pj_0252",
+     "u": "/p/pj_0252",
      "prov": "Nusa Tenggara Timur",
      "kode": "53",
      "mw": 10,
@@ -4396,7 +4396,7 @@
     {
      "nama": "PLTP Oka Ile Ange",
      "id": "pj_0255",
-     "u": "/proyek#pj_0255",
+     "u": "/p/pj_0255",
      "prov": "Nusa Tenggara Timur",
      "kode": "53",
      "mw": 10,
@@ -4410,7 +4410,7 @@
     {
      "nama": "Dieng Small Scale geothermal power plant",
      "id": "gem_geothermal_L100001042931",
-     "u": "/proyek#gem_geothermal_L100001042931",
+     "u": "/p/gem_geothermal_L100001042931",
      "prov": "-",
      "kode": null,
      "mw": 10,
@@ -4424,7 +4424,7 @@
     {
      "nama": "Ulumbo geothermal power plant",
      "id": "gem_geothermal_L100000700215",
-     "u": "/proyek#gem_geothermal_L100000700215",
+     "u": "/p/gem_geothermal_L100000700215",
      "prov": "Lampung",
      "kode": "18",
      "mw": 8,
@@ -4438,7 +4438,7 @@
     {
      "nama": "Sokoria geothermal power plant",
      "id": "gem_geothermal_L100000700211",
-     "u": "/proyek#gem_geothermal_L100000700211",
+     "u": "/p/gem_geothermal_L100000700211",
      "prov": "Nusa Tenggara Timur",
      "kode": "53",
      "mw": 6,
@@ -4452,7 +4452,7 @@
     {
      "nama": "PLTP Jaboi (FTP2) Sinabang",
      "id": "pj_0221",
-     "u": "/proyek#pj_0221",
+     "u": "/p/pj_0221",
      "prov": "Aceh",
      "kode": "11",
      "mw": 5,
@@ -4466,7 +4466,7 @@
     {
      "nama": "PLTP Gunung Sirung",
      "id": "pj_0253",
-     "u": "/proyek#pj_0253",
+     "u": "/p/pj_0253",
      "prov": "Nusa Tenggara Timur",
      "kode": "53",
      "mw": 5,
@@ -4480,7 +4480,7 @@
     {
      "nama": "PLTP Bora Pulu",
      "id": "pjb_012",
-     "u": "/proyek#pjb_012",
+     "u": "/p/pjb_012",
      "prov": "Sulawesi Tengah",
      "kode": "72",
      "mw": null,
@@ -4494,7 +4494,7 @@
     {
      "nama": "PLTP Patuha Unit 2",
      "id": "pjb_013",
-     "u": "/proyek#pjb_013",
+     "u": "/p/pjb_013",
      "prov": "Jawa Barat",
      "kode": "32",
      "mw": null,
@@ -4508,7 +4508,7 @@
     {
      "nama": "Indonesia Geothermal Resource Risk Mitigation Project (GREM)",
      "id": "wb_P166071",
-     "u": "/proyek#wb_P166071",
+     "u": "/p/wb_P166071",
      "prov": "-",
      "kode": null,
      "mw": null,
@@ -4522,7 +4522,7 @@
     {
      "nama": "ID-TF PNPM GREEN Awareness Raising Project in Sumatera",
      "id": "wb_P130909",
-     "u": "/proyek#wb_P130909",
+     "u": "/p/wb_P130909",
      "prov": "-",
      "kode": null,
      "mw": null,
@@ -4536,7 +4536,7 @@
     {
      "nama": "Geothermal Clean Energy Investment Project",
      "id": "wb_P113078",
-     "u": "/proyek#wb_P113078",
+     "u": "/p/wb_P113078",
      "prov": "-",
      "kode": null,
      "mw": null,
@@ -4550,7 +4550,7 @@
     {
      "nama": "ID: Geothermal Power Support Program",
      "id": "wb_P115100",
-     "u": "/proyek#wb_P115100",
+     "u": "/p/wb_P115100",
      "prov": "-",
      "kode": null,
      "mw": null,
@@ -4564,7 +4564,7 @@
     {
      "nama": "ID-PCF-Indonesia Lahendong Geothermal Project",
      "id": "wb_P096677",
-     "u": "/proyek#wb_P096677",
+     "u": "/p/wb_P096677",
      "prov": "-",
      "kode": null,
      "mw": null,

@@ -17,9 +17,10 @@ export function akunMenuHtml(saya) {
   return `<div class="jm-akunwrap"><button type="button" class="iconbtn jm-bulat jm-avatar" id="akunBtn" aria-haspopup="menu" aria-expanded="false" aria-controls="akunMenu" data-i18n-attr="aria-label:am.akun;title:am.akun" aria-label="${esc(t("am.akun"))}" title="${esc(t("am.akun"))}">${avatarIsi(saya.nama, fotoDicoba())}</button>
     <div class="jm-akunmenu" id="akunMenu" role="menu" hidden data-i18n-attr="aria-label:am.akun" aria-label="${esc(t("am.akun"))}">
       <div class="jm-akun-ident"><span class="jm-avatar">${avatarIsi(saya.nama, fotoDicoba())}</span><span><b>${esc(saya.nama)}</b><small data-i18n="peran.${esc(saya.peran)}">${esc(t("peran." + saya.peran))}</small></span></div>
+      <a role="menuitem" href="/saya" id="am-saya">${ikon("mahkota", 20)}<span data-i18n="am.saya">${esc(t("am.saya"))}</span><span class="jm-am-lencana" id="amIkuti" hidden></span></a>
       ${taut("/profil-saya", ikon("orang", 20), "am.profil")}
       ${taut("/kta", ikon("kartu", 20), "am.kta")}
-      <a role="menuitem" href="/diikuti" id="am-diikuti">${ikon("lonceng", 20)}<span data-i18n="am.diikuti">${esc(t("am.diikuti"))}</span><span class="jm-am-lencana" id="amIkuti" hidden></span></a>
+      <a role="menuitem" href="/diikuti" id="am-diikuti">${ikon("lonceng", 20)}<span data-i18n="am.diikuti">${esc(t("am.diikuti"))}</span></a>
       ${taut("/portal", ikon("direktori", 20), "am.portal")}
       ${butir("pesan", IK_PESAN, "am.pesan", '<span class="jm-am-lencana" id="amBelum" hidden></span>')}
       ${taut("/langganan", ikon("surel", 20), "am.langganan")}
@@ -64,7 +65,7 @@ export function pasangAkunMenu(kepala, saya) {
     api("/api/ikuti").then((d) => {
       const n = d.baru || 0, l = menu.querySelector("#amIkuti");
       l.textContent = n > 99 ? "99+" : String(n); l.hidden = !n;
-    }).catch((e) => { if (e.status === 503 || e.status === 404) menu.querySelector("#am-diikuti").hidden = true; });
+    }).catch((e) => { if (e.status === 503 || e.status === 404) { menu.querySelector("#am-diikuti").hidden = true; menu.querySelector("#am-saya").hidden = true; } });
   };
   tombol.addEventListener("click", () => buka(menu.hidden));
   document.addEventListener("click", (e) => { if (!menu.hidden && !e.target.closest(".jm-akunwrap")) buka(false); });

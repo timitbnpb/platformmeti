@@ -3259,7 +3259,7 @@
     {
      "nama": "Batam floating solar",
      "id": "pj_0362",
-     "u": "/proyek#pj_0362",
+     "u": "/p/pj_0362",
      "prov": "Kepulauan Riau",
      "kode": "21",
      "mw": 2200,
@@ -3273,7 +3273,7 @@
     {
      "nama": "Pulau Bulan solar farm 1",
      "id": "gem_solar_L100000808624",
-     "u": "/proyek#gem_solar_L100000808624",
+     "u": "/p/gem_solar_L100000808624",
      "prov": "Kepulauan Riau",
      "kode": "21",
      "mw": 670,
@@ -3287,7 +3287,7 @@
     {
      "nama": "PLTS Kalseltengtimra-2 (PLTS+BESS)",
      "id": "pj_0353",
-     "u": "/proyek#pj_0353",
+     "u": "/p/pj_0353",
      "prov": "Kalimantan Timur",
      "kode": "64",
      "mw": 240,
@@ -3301,7 +3301,7 @@
     {
      "nama": "PLTS S BESS Sumatera 1",
      "id": "pj_0371",
-     "u": "/proyek#pj_0371",
+     "u": "/p/pj_0371",
      "prov": "Lampung",
      "kode": "18",
      "mw": 236,
@@ -3315,7 +3315,7 @@
     {
      "nama": "PLTS Sumatera Hybrid",
      "id": "pj_0389",
-     "u": "/proyek#pj_0389",
+     "u": "/p/pj_0389",
      "prov": "Sumatera Selatan",
      "kode": "16",
      "mw": 225,
@@ -3329,7 +3329,7 @@
     {
      "nama": "Cirata floating solar",
      "id": "pj_0334",
-     "u": "/proyek#pj_0334",
+     "u": "/p/pj_0334",
      "prov": "Jawa Barat",
      "kode": "32",
      "mw": 192,
@@ -3343,7 +3343,7 @@
     {
      "nama": "Mabar solar farm",
      "id": "gem_solar_L100000830283",
-     "u": "/proyek#gem_solar_L100000830283",
+     "u": "/p/gem_solar_L100000830283",
      "prov": "Nusa Tenggara Timur",
      "kode": "53",
      "mw": 165,
@@ -3357,7 +3357,7 @@
     {
      "nama": "PLTS Kalseltengtimra- 5 (PLTS+BESS)",
      "id": "pj_0349",
-     "u": "/proyek#pj_0349",
+     "u": "/p/pj_0349",
      "prov": "Kalimantan Tengah",
      "kode": "62",
      "mw": 160,
@@ -3371,7 +3371,7 @@
     {
      "nama": "PLTS S BESS Sumatera 3",
      "id": "pj_0372",
-     "u": "/proyek#pj_0372",
+     "u": "/p/pj_0372",
      "prov": "Lampung",
      "kode": "18",
      "mw": 150,
@@ -3385,7 +3385,7 @@
     {
      "nama": "PLTS Kalbar-1 (PLTS+BESS)",
      "id": "pj_0347",
-     "u": "/proyek#pj_0347",
+     "u": "/p/pj_0347",
      "prov": "Kalimantan Barat",
      "kode": "61",
      "mw": 120,
@@ -3399,7 +3399,7 @@
     {
      "nama": "Karawang solar farm",
      "id": "gem_solar_L100001020725",
-     "u": "/proyek#gem_solar_L100001020725",
+     "u": "/p/gem_solar_L100001020725",
      "prov": "Jawa Barat",
      "kode": "32",
      "mw": 101,
@@ -3413,7 +3413,7 @@
     {
      "nama": "PLTS Karangkates",
      "id": "pj_0343",
-     "u": "/proyek#pj_0343",
+     "u": "/p/pj_0343",
      "prov": "Jawa Timur",
      "kode": "35",
      "mw": 100,
@@ -3427,7 +3427,7 @@
     {
      "nama": "PLTS Kalbar-2 (PLTS+BESS)",
      "id": "pj_0348",
-     "u": "/proyek#pj_0348",
+     "u": "/p/pj_0348",
      "prov": "Kalimantan Barat",
      "kode": "61",
      "mw": 80,
@@ -3441,7 +3441,7 @@
     {
      "nama": "PLTS Kalseltengtimra-1 (PLTS+BESS)",
      "id": "pj_0352",
-     "u": "/proyek#pj_0352",
+     "u": "/p/pj_0352",
      "prov": "Kalimantan Timur",
      "kode": "64",
      "mw": 80,
@@ -3455,7 +3455,7 @@
     {
      "nama": "Saguling solar farm",
      "id": "gem_solar_L100000801313",
-     "u": "/proyek#gem_solar_L100000801313",
+     "u": "/p/gem_solar_L100000801313",
      "prov": "Jawa Barat",
      "kode": "32",
      "mw": 60,
@@ -3469,7 +3469,7 @@
     {
      "nama": "PLTS Kalbar Khatulistiwa",
      "id": "pj_0346",
-     "u": "/proyek#pj_0346",
+     "u": "/p/pj_0346",
      "prov": "Kalimantan Barat",
      "kode": "61",
      "mw": 50,
@@ -3483,7 +3483,7 @@
     {
      "nama": "PLTS Ikn",
      "id": "pj_0351",
-     "u": "/proyek#pj_0351",
+     "u": "/p/pj_0351",
      "prov": "Kalimantan Timur",
      "kode": "64",
      "mw": 50,
@@ -3497,7 +3497,7 @@
     {
      "nama": "Singkarak solar farm",
      "id": "gem_solar_L100000801387",
-     "u": "/proyek#gem_solar_L100000801387",
+     "u": "/p/gem_solar_L100000801387",
      "prov": "Sumatera Barat",
      "kode": "13",
      "mw": 50,
@@ -3511,7 +3511,7 @@
     {
      "nama": "Nusantara Sembcorp Solar Energi (NSSE) Power Plant",
      "id": "gem_solar_L100000830284",
-     "u": "/proyek#gem_solar_L100000830284",
+     "u": "/p/gem_solar_L100000830284",
      "prov": "Kalimantan Timur",
      "kode": "64",
      "mw": 50,
@@ -3525,7 +3525,7 @@
     {
      "nama": "PLTS MT Hybrid Kalselteng 4",
      "id": "pj_0350",
-     "u": "/proyek#pj_0350",
+     "u": "/p/pj_0350",
      "prov": "Kalimantan Tengah",
      "kode": "62",
      "mw": 40,
@@ -3539,7 +3539,7 @@
     {
      "nama": "PLTS Kalseltengtimra-4 (PLTS+BESS)",
      "id": "pj_0354",
-     "u": "/proyek#pj_0354",
+     "u": "/p/pj_0354",
      "prov": "Kalimantan Timur",
      "kode": "64",
      "mw": 40,
@@ -3553,7 +3553,7 @@
     {
      "nama": "Tembesi Batam floating solar farm",
      "id": "gem_solar_L100001080948",
-     "u": "/proyek#gem_solar_L100001080948",
+     "u": "/p/gem_solar_L100001080948",
      "prov": "Kepulauan Riau",
      "kode": "21",
      "mw": 36,
@@ -3567,7 +3567,7 @@
     {
      "nama": "PLTS Bali Barat",
      "id": "pj_0330",
-     "u": "/proyek#pj_0330",
+     "u": "/p/pj_0330",
      "prov": "Bali",
      "kode": "51",
      "mw": 25,
@@ -3581,7 +3581,7 @@
     {
      "nama": "PLTS Bali Timur",
      "id": "pj_0331",
-     "u": "/proyek#pj_0331",
+     "u": "/p/pj_0331",
      "prov": "Bali",
      "kode": "51",
      "mw": 25,
@@ -3595,7 +3595,7 @@
     {
      "nama": "East Bali solar farm",
      "id": "gem_solar_L100000800820",
-     "u": "/proyek#gem_solar_L100000800820",
+     "u": "/p/gem_solar_L100000800820",
      "prov": "Bali",
      "kode": "51",
      "mw": 25,
@@ -3609,7 +3609,7 @@
     {
      "nama": "PLTS Sumbar",
      "id": "pj_0388",
-     "u": "/proyek#pj_0388",
+     "u": "/p/pj_0388",
      "prov": "Sumatera Barat",
      "kode": "13",
      "mw": 24.2,
@@ -3623,7 +3623,7 @@
     {
      "nama": "Silungkang solar plant",
      "id": "pj_0387",
-     "u": "/proyek#pj_0387",
+     "u": "/p/pj_0387",
      "prov": "Sulawesi Utara",
      "kode": "71",
      "mw": 21,
@@ -3637,7 +3637,7 @@
     {
      "nama": "Minut solar farm",
      "id": "gem_solar_L100000808623",
-     "u": "/proyek#gem_solar_L100000808623",
+     "u": "/p/gem_solar_L100000808623",
      "prov": "Sulawesi Utara",
      "kode": "71",
      "mw": 21,
@@ -3651,7 +3651,7 @@
     {
      "nama": "PLTS PLT Surya Nias + BESS",
      "id": "pj_0391",
-     "u": "/proyek#pj_0391",
+     "u": "/p/pj_0391",
      "prov": "Sumatera Utara",
      "kode": "12",
      "mw": 20,
@@ -3665,7 +3665,7 @@
     {
      "nama": "Purwakarta solar project II",
      "id": "gem_solar_L100001066584",
-     "u": "/proyek#gem_solar_L100001066584",
+     "u": "/p/gem_solar_L100001066584",
      "prov": "Jawa Barat",
      "kode": "32",
      "mw": 17.8,
@@ -3679,7 +3679,7 @@
     {
      "nama": "Sumbawa Barat solar project",
      "id": "gem_solar_L100001024237",
-     "u": "/proyek#gem_solar_L100001024237",
+     "u": "/p/gem_solar_L100001024237",
      "prov": "Nusa Tenggara Barat",
      "kode": "52",
      "mw": 17.5,
@@ -3693,7 +3693,7 @@
     {
      "nama": "Gorontalo solar project",
      "id": "gem_solar_L100001024234",
-     "u": "/proyek#gem_solar_L100001024234",
+     "u": "/p/gem_solar_L100001024234",
      "prov": "Gorontalo",
      "kode": "75",
      "mw": 17.1,
@@ -3707,7 +3707,7 @@
     {
      "nama": "PLTS Isolated Maluku",
      "id": "pj_0373",
-     "u": "/proyek#pj_0373",
+     "u": "/p/pj_0373",
      "prov": "Maluku Utara",
      "kode": "82",
      "mw": 15.816,
@@ -3721,7 +3721,7 @@
     {
      "nama": "PLTS Dedieselisasi",
      "id": "pj_0367",
-     "u": "/proyek#pj_0367",
+     "u": "/p/pj_0367",
      "prov": "Kepulauan Riau",
      "kode": "21",
      "mw": 15.6,
@@ -3735,7 +3735,7 @@
     {
      "nama": "PLTS+BESS Manokwari",
      "id": "pj_0379",
-     "u": "/proyek#pj_0379",
+     "u": "/p/pj_0379",
      "prov": "-",
      "kode": null,
      "mw": 15,
@@ -3749,7 +3749,7 @@
     {
      "nama": "Bengkalis solar project",
      "id": "gem_solar_L100001024232",
-     "u": "/proyek#gem_solar_L100001024232",
+     "u": "/p/gem_solar_L100001024232",
      "prov": "Riau",
      "kode": "14",
      "mw": 12.4,
@@ -3763,7 +3763,7 @@
     {
      "nama": "Purwakarta solar project III",
      "id": "gem_solar_L100001066590",
-     "u": "/proyek#gem_solar_L100001066590",
+     "u": "/p/gem_solar_L100001066590",
      "prov": "Jawa Barat",
      "kode": "32",
      "mw": 11,
@@ -3777,7 +3777,7 @@
     {
      "nama": "PLTS+BESS Manokwari uota)",
      "id": "pj_0381",
-     "u": "/proyek#pj_0381",
+     "u": "/p/pj_0381",
      "prov": "-",
      "kode": null,
      "mw": 10,
@@ -3791,7 +3791,7 @@
     {
      "nama": "Kotabaru solar project",
      "id": "gem_solar_L100001066598",
-     "u": "/proyek#gem_solar_L100001066598",
+     "u": "/p/gem_solar_L100001066598",
      "prov": "Kalimantan Selatan",
      "kode": "63",
      "mw": 9.8,
@@ -3805,7 +3805,7 @@
     {
      "nama": "Gresik solar project I",
      "id": "gem_solar_L100001066600",
-     "u": "/proyek#gem_solar_L100001066600",
+     "u": "/p/gem_solar_L100001066600",
      "prov": "Jawa Timur",
      "kode": "35",
      "mw": 8.7,
@@ -3819,7 +3819,7 @@
     {
      "nama": "Gresik solar project II",
      "id": "gem_solar_L100001066601",
-     "u": "/proyek#gem_solar_L100001066601",
+     "u": "/p/gem_solar_L100001066601",
      "prov": "Jawa Timur",
      "kode": "35",
      "mw": 8.7,
@@ -3833,7 +3833,7 @@
     {
      "nama": "East Lombok A solar project",
      "id": "gem_solar_L100000830278",
-     "u": "/proyek#gem_solar_L100000830278",
+     "u": "/p/gem_solar_L100000830278",
      "prov": "Nusa Tenggara Barat",
      "kode": "52",
      "mw": 8.4,
@@ -3847,7 +3847,7 @@
     {
      "nama": "Pelalawan solar project",
      "id": "gem_solar_L100001066565",
-     "u": "/proyek#gem_solar_L100001066565",
+     "u": "/p/gem_solar_L100001066565",
      "prov": "Riau",
      "kode": "14",
      "mw": 8.4,
@@ -3861,7 +3861,7 @@
     {
      "nama": "West Nusa Tenggara solar project I",
      "id": "gem_solar_L100001024228",
-     "u": "/proyek#gem_solar_L100001024228",
+     "u": "/p/gem_solar_L100001024228",
      "prov": "Nusa Tenggara Barat",
      "kode": "52",
      "mw": 7.8,
@@ -3875,7 +3875,7 @@
     {
      "nama": "Sidoarjo solar project",
      "id": "gem_solar_L100001066563",
-     "u": "/proyek#gem_solar_L100001066563",
+     "u": "/p/gem_solar_L100001066563",
      "prov": "Jawa Timur",
      "kode": "35",
      "mw": 7.8,
@@ -3889,7 +3889,7 @@
     {
      "nama": "West Java solar project XII",
      "id": "gem_solar_L100001066587",
-     "u": "/proyek#gem_solar_L100001066587",
+     "u": "/p/gem_solar_L100001066587",
      "prov": "Jawa Barat",
      "kode": "32",
      "mw": 7.6,
@@ -3903,7 +3903,7 @@
     {
      "nama": "West Nusa Tenggara solar project II",
      "id": "gem_solar_L100001024229",
-     "u": "/proyek#gem_solar_L100001024229",
+     "u": "/p/gem_solar_L100001024229",
      "prov": "Nusa Tenggara Barat",
      "kode": "52",
      "mw": 7.5,
@@ -3917,7 +3917,7 @@
     {
      "nama": "Bogor solar project II",
      "id": "gem_solar_L100001066603",
-     "u": "/proyek#gem_solar_L100001066603",
+     "u": "/p/gem_solar_L100001066603",
      "prov": "Jawa Barat",
      "kode": "32",
      "mw": 6.8,
@@ -3931,7 +3931,7 @@
     {
      "nama": "West Java solar project IV",
      "id": "gem_solar_L100001066569",
-     "u": "/proyek#gem_solar_L100001066569",
+     "u": "/p/gem_solar_L100001066569",
      "prov": "Jawa Barat",
      "kode": "32",
      "mw": 6.6,
@@ -3945,7 +3945,7 @@
     {
      "nama": "Lombok Tengah solar project",
      "id": "gem_solar_L100001024230",
-     "u": "/proyek#gem_solar_L100001024230",
+     "u": "/p/gem_solar_L100001024230",
      "prov": "Nusa Tenggara Barat",
      "kode": "52",
      "mw": 6.3,
@@ -3959,7 +3959,7 @@
     {
      "nama": "West Java solar project VII",
      "id": "gem_solar_L100001066574",
-     "u": "/proyek#gem_solar_L100001066574",
+     "u": "/p/gem_solar_L100001066574",
      "prov": "Jawa Barat",
      "kode": "32",
      "mw": 6.2,
@@ -3973,7 +3973,7 @@
     {
      "nama": "West Java solar project I",
      "id": "gem_solar_L100001066552",
-     "u": "/proyek#gem_solar_L100001066552",
+     "u": "/p/gem_solar_L100001066552",
      "prov": "Jawa Barat",
      "kode": "32",
      "mw": 5.7,
@@ -3987,7 +3987,7 @@
     {
      "nama": "West Java solar project II",
      "id": "gem_solar_L100001066561",
-     "u": "/proyek#gem_solar_L100001066561",
+     "u": "/p/gem_solar_L100001066561",
      "prov": "Jawa Barat",
      "kode": "32",
      "mw": 5.7,
@@ -4001,7 +4001,7 @@
     {
      "nama": "PLTS Sabang",
      "id": "pj_0328",
-     "u": "/proyek#pj_0328",
+     "u": "/p/pj_0328",
      "prov": "Aceh",
      "kode": "11",
      "mw": 5.3,
@@ -4015,7 +4015,7 @@
     {
      "nama": "West Java solar project V",
      "id": "gem_solar_L100001066571",
-     "u": "/proyek#gem_solar_L100001066571",
+     "u": "/p/gem_solar_L100001066571",
      "prov": "Jawa Barat",
      "kode": "32",
      "mw": 5,
@@ -4029,7 +4029,7 @@
     {
      "nama": "West Java solar project XIII",
      "id": "gem_solar_L100001066592",
-     "u": "/proyek#gem_solar_L100001066592",
+     "u": "/p/gem_solar_L100001066592",
      "prov": "Jawa Barat",
      "kode": "32",
      "mw": 4.8,
@@ -4043,7 +4043,7 @@
     {
      "nama": "PLTS Lisdes Kaltara",
      "id": "pj_0356",
-     "u": "/proyek#pj_0356",
+     "u": "/p/pj_0356",
      "prov": "Kalimantan Utara",
      "kode": "65",
      "mw": 4.4,
@@ -4057,7 +4057,7 @@
     {
      "nama": "Bontang solar project",
      "id": "gem_solar_L100001024231",
-     "u": "/proyek#gem_solar_L100001024231",
+     "u": "/p/gem_solar_L100001024231",
      "prov": "Kalimantan Timur",
      "kode": "64",
      "mw": 4.2,
@@ -4071,7 +4071,7 @@
     {
      "nama": "PLTS + BESS Kepri",
      "id": "pj_0363",
-     "u": "/proyek#pj_0363",
+     "u": "/p/pj_0363",
      "prov": "Kepulauan Riau",
      "kode": "21",
      "mw": 4,
@@ -4085,7 +4085,7 @@
     {
      "nama": "Kupang solar project",
      "id": "gem_solar_L100001024227",
-     "u": "/proyek#gem_solar_L100001024227",
+     "u": "/p/gem_solar_L100001024227",
      "prov": "Nusa Tenggara Timur",
      "kode": "53",
      "mw": 4,
@@ -4099,7 +4099,7 @@
     {
      "nama": "Pekanbaru solar project",
      "id": "gem_solar_L100001066578",
-     "u": "/proyek#gem_solar_L100001066578",
+     "u": "/p/gem_solar_L100001066578",
      "prov": "Riau",
      "kode": "14",
      "mw": 3.9,
@@ -4113,7 +4113,7 @@
     {
      "nama": "Sula Islands solar project",
      "id": "gem_solar_L100001066568",
-     "u": "/proyek#gem_solar_L100001066568",
+     "u": "/p/gem_solar_L100001066568",
      "prov": "Maluku Utara",
      "kode": "82",
      "mw": 3.7,
@@ -4127,7 +4127,7 @@
     {
      "nama": "Purwakarta solar project I",
      "id": "gem_solar_L100001066570",
-     "u": "/proyek#gem_solar_L100001066570",
+     "u": "/p/gem_solar_L100001066570",
      "prov": "Jawa Barat",
      "kode": "32",
      "mw": 3.6,
@@ -4141,7 +4141,7 @@
     {
      "nama": "Kab Serang solar project",
      "id": "gem_solar_L100001066564",
-     "u": "/proyek#gem_solar_L100001066564",
+     "u": "/p/gem_solar_L100001066564",
      "prov": "-",
      "kode": null,
      "mw": 3.4,
@@ -4155,7 +4155,7 @@
     {
      "nama": "West Java solar project VIII",
      "id": "gem_solar_L100001066577",
-     "u": "/proyek#gem_solar_L100001066577",
+     "u": "/p/gem_solar_L100001066577",
      "prov": "Jawa Barat",
      "kode": "32",
      "mw": 3.4,
@@ -4169,7 +4169,7 @@
     {
      "nama": "Klungkung Regency solar project",
      "id": "gem_solar_L100001066585",
-     "u": "/proyek#gem_solar_L100001066585",
+     "u": "/p/gem_solar_L100001066585",
      "prov": "Bali",
      "kode": "51",
      "mw": 3.4,
@@ -4183,7 +4183,7 @@
     {
      "nama": "West Java solar project III",
      "id": "gem_solar_L100001066567",
-     "u": "/proyek#gem_solar_L100001066567",
+     "u": "/p/gem_solar_L100001066567",
      "prov": "Jawa Barat",
      "kode": "32",
      "mw": 3.3,
@@ -4197,7 +4197,7 @@
     {
      "nama": "Mojokerto solar project",
      "id": "gem_solar_L100001066555",
-     "u": "/proyek#gem_solar_L100001066555",
+     "u": "/p/gem_solar_L100001066555",
      "prov": "Jawa Timur",
      "kode": "35",
      "mw": 3.2,
@@ -4211,7 +4211,7 @@
     {
      "nama": "PLTS+BESS Raja Ampat uota)",
      "id": "pj_0382",
-     "u": "/proyek#pj_0382",
+     "u": "/p/pj_0382",
      "prov": "-",
      "kode": null,
      "mw": 3,
@@ -4225,7 +4225,7 @@
     {
      "nama": "PLTS+BESS Teminabuan uota)",
      "id": "pj_0385",
-     "u": "/proyek#pj_0385",
+     "u": "/p/pj_0385",
      "prov": "-",
      "kode": null,
      "mw": 3,
@@ -4239,7 +4239,7 @@
     {
      "nama": "PLTS PLT Surya Nias",
      "id": "pj_0390",
-     "u": "/proyek#pj_0390",
+     "u": "/p/pj_0390",
      "prov": "Sumatera Utara",
      "kode": "12",
      "mw": 3,
@@ -4253,7 +4253,7 @@
     {
      "nama": "Lamongan solar project",
      "id": "gem_solar_L100001066559",
-     "u": "/proyek#gem_solar_L100001066559",
+     "u": "/p/gem_solar_L100001066559",
      "prov": "Jawa Timur",
      "kode": "35",
      "mw": 3,
@@ -4267,7 +4267,7 @@
     {
      "nama": "Kabupaten Semarang solar project",
      "id": "gem_solar_L100001066560",
-     "u": "/proyek#gem_solar_L100001066560",
+     "u": "/p/gem_solar_L100001066560",
      "prov": "Jawa Tengah",
      "kode": "33",
      "mw": 2.9,
@@ -4281,7 +4281,7 @@
     {
      "nama": "West Java solar project VI",
      "id": "gem_solar_L100001066572",
-     "u": "/proyek#gem_solar_L100001066572",
+     "u": "/p/gem_solar_L100001066572",
      "prov": "Jawa Barat",
      "kode": "32",
      "mw": 2.9,
@@ -4295,7 +4295,7 @@
     {
      "nama": "Subang solar project",
      "id": "gem_solar_L100001066557",
-     "u": "/proyek#gem_solar_L100001066557",
+     "u": "/p/gem_solar_L100001066557",
      "prov": "Jawa Barat",
      "kode": "32",
      "mw": 2.8,
@@ -4309,7 +4309,7 @@
     {
      "nama": "Bengkalis solar project I",
      "id": "gem_solar_L100001066593",
-     "u": "/proyek#gem_solar_L100001066593",
+     "u": "/p/gem_solar_L100001066593",
      "prov": "Riau",
      "kode": "14",
      "mw": 2.8,
@@ -4323,7 +4323,7 @@
     {
      "nama": "West Java solar project XVI",
      "id": "gem_solar_L100001066602",
-     "u": "/proyek#gem_solar_L100001066602",
+     "u": "/p/gem_solar_L100001066602",
      "prov": "Jawa Barat",
      "kode": "32",
      "mw": 2.8,
@@ -4337,7 +4337,7 @@
     {
      "nama": "East Kalimantan solar project",
      "id": "gem_solar_L100001066566",
-     "u": "/proyek#gem_solar_L100001066566",
+     "u": "/p/gem_solar_L100001066566",
      "prov": "Kalimantan Timur",
      "kode": "64",
      "mw": 2.7,
@@ -4351,7 +4351,7 @@
     {
      "nama": "West Java solar project XI",
      "id": "gem_solar_L100001066583",
-     "u": "/proyek#gem_solar_L100001066583",
+     "u": "/p/gem_solar_L100001066583",
      "prov": "Jawa Barat",
      "kode": "32",
      "mw": 2.7,
@@ -4365,7 +4365,7 @@
     {
      "nama": "Bogor solar project I",
      "id": "gem_solar_L100001066589",
-     "u": "/proyek#gem_solar_L100001066589",
+     "u": "/p/gem_solar_L100001066589",
      "prov": "Jawa Barat",
      "kode": "32",
      "mw": 2.6,

@@ -389,4 +389,4 @@ a.jm-tp-ent:hover,.jm-tp-ent a:hover{color:var(--accent)}
 .jm-tp-peta .jm-wl-tip header{display:flex;flex-direction:row;text-align:left;justify-content:flex-start}
 @media (max-width:899px){.jm-tp-tiga{grid-template-columns:minmax(0,1fr)}}
 @media (max-width:767px){.jm-tp-tb .jm-tabel td .jm-pil-tek{white-space:normal}}
-.jm-tp-ub-n{font-size:clamp(20px,1.9vw,24px);overflow-wrap:normal;white-space:nowrap}
+.jm-tp-ub-n{font-size:var(--t-h1);overflow-wrap:normal;white-space:nowrap}

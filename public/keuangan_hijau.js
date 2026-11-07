@@ -1,8 +1,9 @@
 /* /keuangan-hijau: investasi publik EBT vs fosil, obligasi dan sukuk hijau, JETP, skema hibah, pembanding ASEAN. Informasi saja. Data statis /data/keuangan_hijau.json. Tab Pendanaan tidak digandakan, hanya ditautkan. */
+import { buktiHtml } from "/inti/bukti.js";
 import { mulaiHalaman } from "/inti/kepala.js";
 import { nanti, esc, hantuHtml, debounce, ikon } from "/inti/umum.js";
 import { t } from "/i18n.js";
-import { exHtml } from "/inti/komponen.js";
+import { exHtml, unduhRegHtml } from "/inti/komponen.js";
 import { aksiHtml, hlHtml } from "/inti/aksi_ex.js";
 import { muatData, tampilGalat, sumberLipat, ubinHtml, pil, num, saatBahasa } from "/analisis.js";
 import { legendaHtml, tabel, celahHtml, n1 } from "/info_hijau.js";
@@ -12,7 +13,7 @@ import { logoUrl } from "/penerbit.js";
 
 const $ = (id) => document.getElementById(id);
 const PENDANAAN = "/direktori?tampil=pendanaan";
-let d = null, kurs = 0;
+let d = null, kurs = 0, dIf = null, dTk = null, dReg = null;
 const src = (catatan, ...id) => sumberLipat(id.map((i) => { const s = d.sumber.find((x) => x.id === i); return { sumber: s.penerbit, halaman: s.judul, url: s.url, tanggal: d.dibangun_pada }; }), catatan ? `<span class="jm-an-srcl">${esc(t(catatan))}</span>` : "");
 const KEL = ["ebt", "fosil", "lain"], KLS = { ebt: "ih-ebt", fosil: "ih-fosil", lain: "ih-lain" };
 const jumlahKel = (a, b) => { const o = { ebt: 0, fosil: 0, lain: 0 }; for (const r of d.investasi_publik) if (r.tahun >= a && r.tahun <= b) o[r.kelompok] += r.usd_juta_2023; return o; };
@@ -51,7 +52,7 @@ const pilTekInv = (x) => { const [i, k] = TEK[x] || ["jaringan", "kg-t-lain"]; r
 const KIK = { ebt: ["bioenergi", "kg-k-ebt"], fosil: ["karbon", "kg-k-fosil"], lain: ["jaringan", "kg-k-lain"] };
 const pilKel = (k) => pilK(KIK[k][1], IT(KIK[k][0]), t("kg.kel." + k));
 const BIK = { resmi: "centang", media: "berita", "kata-pihak": "info", "via-pihak-ketiga": "tautan" };
-const pilBukti = (b) => pilK("kg-b-" + b, ikon(BIK[b] || "info", 14), t("kg.bukti." + b));
+const pilBukti = (b) => buktiHtml(b);
 const SKI = { hibah: "bintang", "pinjaman-lunak": "kartu", blended: "rantai", "insentif-fiskal": "kalkulator" };
 const pilSkema = (j) => pilK("kg-j-" + slug(j), ikon(SKI[slug(j)] || "tag", 14), t("kg.skj." + slug(j)));
 const pilJetp = (j) => pilK("kg-j-" + j, ikon(j === "program" ? "daftar" : "proyek", 14), t("kg.jenis." + j));
@@ -244,7 +245,8 @@ async function mulai() {
   $("isi").innerHTML = hantuHtml(3);
   try { d = await muatData("keuangan_hijau.json"); } catch (e) { tampilGalat($("isi"), mulai); return; }
   try { kurs = (await muatData("pendanaan.json")).kurs?.usd_idr || 0; } catch { kurs = 0; }
-  const gambar = () => { ubin(); rangka(); jetpBaris(); bagan(); };
+  try { [dIf, dTk, dReg] = await Promise.all([muatData("insentif_fiskal.json"), muatData("taksonomi_ojk.json"), muatData("regulasi.json")]); } catch { dIf = dTk = null; }
+  const gambar = () => { ubin(); rangka(); if (dIf && dTk) rangka2(); jetpBaris(); bagan(); };
   gambar();
   saatBahasa(gambar);
   /* legenda kolom: chrome (aria-pressed) sinkron, grafik digambar ulang sesudah satu bingkai */
@@ -258,4 +260,44 @@ async function mulai() {
   let w = innerWidth;
   addEventListener("resize", debounce(() => { if (Math.abs(innerWidth - w) > 20) { w = innerWidth; nanti(bagan); } }, 200));
 }
+/* ---------- exhibit 7 dan 8: insentif fiskal EBT dan taksonomi hijau OJK sektor energi ---------- */
+const JIF = { "bea-masuk": ["industri", "kg2-j-bm"], "ppn-dtp": ["pembiayaan", "kg2-j-pd"], ppn: ["pembiayaan", "kg2-j-pn"], "ppnbm-dtp": ["elektrifikasi", "kg2-j-pb"], "tax-allowance": ["efisiensi", "kg2-j-ta"], "tax-holiday": ["transisi-adil", "kg2-j-th"] };
+const pilJif = (j) => pilK(JIF[j][1], IT(JIF[j][0]), t("kg2.j." + j));
+const srcDari = (dat, catatan) => sumberLipat(dat.sumber.map((x) => ({ sumber: x.penerbit, halaman: x.judul, url: x.url, tanggal: x.tanggal_akses })), catatan);
+const adaKls = (x) => !!x && !/^N\/A/i.test(x);
+const ambangH = (x) => { const m = /<\s*(\d+)\s*gCO2e\/kWh/.exec(x || ""); return m ? +m[1] : null; };
+const ambangT = (x) => { const m = /(\d+)\s*dan\s*<\s*(\d+)\s*gCO2e\/kWh/.exec(x || ""); return m ? [+m[1], +m[2]] : null; };
+
+function kartuIf(r) {
+  const reg = r.regulasi_id && dReg.baris.find((x) => x.id === r.regulasi_id), ber = r.status_berlaku === "berlaku";
+  const unduh = unduhRegHtml(reg || { judul: r.nomor_aturan, url_sumber: r.sumber_url });
+  return `<li class="kg2-kt${ber ? "" : " kg2-mati"}"><div class="kg2-pils">${pilJif(r.jenis_insentif)}${pilK(ber ? "kg2-s-ok" : "kg2-s-no", ikon(ber ? "centang" : "silang", 14), t(ber ? "kg2.berlaku" : "kg2.tidak"))}</div>
+    <h3>${esc(r.instrumen)}</h3>
+    <p class="kg2-un"><span>${esc(t("kg2.untuk"))}</span> ${esc(r.teknologi.join(", "))}</p>
+    <div class="kg2-dasar"><div><small>${esc(t("kg2.dasar"))}</small><b>${esc(r.nomor_aturan)}</b><small>${esc(t("kg2.sejak", { tgl: r.tanggal_berlaku }))}</small></div>${unduh}</div>
+    ${r.regulasi_id && reg ? `<a class="jm-tbl kg2-reg" href="/regulasi?id=${encodeURIComponent(r.regulasi_id)}">${ikon("regulasi", 16)}${esc(t("kg2.regulasi"))}</a>` : ""}</li>`;
+}
+
+function rangka2() {
+  const B = dIf.baris, ber = B.filter((r) => r.status_berlaku === "berlaku").length, TB = dTk.baris, hj = TB.filter((r) => adaKls(r.klasifikasi_hijau_eo1)).length, kr = dTk.meta.kerangka;
+  const ex = (o) => exHtml({ ...o, aksiHtml: aksiHtml({ csv: false }), tingkat: "h2" });
+  const urut = [...B].sort((a, b) => (b.status_berlaku === "berlaku") - (a.status_berlaku === "berlaku"));
+  const leg = (kunci, arr, kls) => `<div class="kg2-lg"><small>${esc(t(kunci))}</small><span class="kg2-lgp">${arr.map((x) => `<span class="jm-pil-tek kg-pil ${kls}">${esc(x)}</span>`).join("")}</span></div>`;
+  const hasil = (kr.hasil_penilaian || []).map((x) => `<span class="jm-pil-tek kg-pil ${/^Hijau/.test(x) ? "kg2-h" : /^Transisi/.test(x) ? "kg2-t" : "kg2-0"}">${esc(x)}</span>`).join("");
+  $("isi").insertAdjacentHTML("beforeend",
+    ex({ id: "insentif", ikon: "kalkulator", topik: t("kg2.ey.insentif"), judulHtml: hlHtml("kg2.t.insentif", String(B.length), { n: ber }), subHtml: esc(t("kg2.s.insentif")),
+      isiHtml: `<ul class="kg2-kartu">${urut.map(kartuIf).join("")}</ul>${srcDari(dIf, t("kg2.cat.insentif"))}` }) +
+    ex({ id: "taksonomi", ikon: "perisai", topik: t("kg2.ey.taks"), judulHtml: hlHtml("kg2.t.taks", String(TB.length), { h: hj }), subHtml: esc(t("kg2.s.taks")),
+      isiHtml: `<div class="kg2-legenda"><div class="kg2-lg"><small>${esc(t("kg2.leg.hasil"))}</small><span class="kg2-lgp">${hasil}</span></div>${leg("kg2.leg.eo", kr.tujuan_lingkungan || [], "kg2-eo")}${leg("kg2.leg.ec", kr.kriteria_esensial || [], "kg2-ec")}<p class="jm-bantu">${esc(t("kg2.leg.versi"))}: ${esc(kr.versi || "")}</p></div><div id="tb-taks" class="ih-tabel kg-tb"></div>${srcDari(dTk, t("kg2.cat.taks"))}` }));
+  const kls = (x) => (adaKls(x) ? 1 : 0), pilH = (r) => (adaKls(r.klasifikasi_hijau_eo1) ? pilK("kg2-h", ikon("centang", 14), t("kg2.hijau")) : "-"), pilT = (r) => (adaKls(r.klasifikasi_transisi_eo1) ? pilK("kg2-t", ikon("peringatan", 14), t("kg2.transisi")) : "-");
+  tabel($("tb-taks"), { satuan: "kg2.u.aktivitas", per: 8, urutAwal: 0, menurun: false, kolom: [
+    { label: t("kg2.c.aktivitas"), v: (r) => r.aktivitas, f: (r) => `<span class="kg2-akt" title="${esc(r.klasifikasi_hijau_eo1 || r.klasifikasi_transisi_eo1 || t("kg2.tdk_terbaca"))}"><b>${esc(r.aktivitas)}</b><small>KBLI ${esc(r.kbli_2017)}${r.kriteria_terbaca ? "" : " | " + esc(t("kg2.tdk_terbaca"))}</small></span>` },
+    { label: t("kg2.c.hijau"), v: (r) => kls(r.klasifikasi_hijau_eo1), f: pilH },
+    { label: t("kg2.c.transisi"), v: (r) => kls(r.klasifikasi_transisi_eo1), f: pilT },
+    { label: t("kg2.c.ambang_h"), num: true, v: (r) => ambangH(r.klasifikasi_hijau_eo1), f: (r) => { const v = ambangH(r.klasifikasi_hijau_eo1); return v == null ? "-" : esc(t("kg2.amb_h", { v: num(v) })); } },
+    { label: t("kg2.c.ambang_t"), num: true, v: (r) => ambangT(r.klasifikasi_transisi_eo1)?.[1] ?? null, f: (r) => { const v = ambangT(r.klasifikasi_transisi_eo1); return v ? esc(t("kg2.amb_t", { a: num(v[0]), b: num(v[1]) })) : "-"; } },
+    { label: t("kg2.c.bukti"), v: (r) => r.halaman_pdf, f: (r) => (/^https?:\/\//.test(r.sumber_url) ? `<a class="jm-tbl kg2-bukti" href="${esc(r.sumber_url)}" target="_blank" rel="noopener noreferrer" title="${esc(t("kg2.buka"))}">${ikon("pdf", 16)}${esc(t("kg2.hal", { n: r.halaman_pdf }))}</a>` : "-") },
+  ], baris: TB });
+}
+
 mulai();

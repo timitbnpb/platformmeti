@@ -10,6 +10,7 @@ import { pasangBawah, IKON } from "/beranda_bawah.js";
 import { sumberHtml, lihatSemuaHtml } from "/inti/komponen.js";
 import { kontenBeranda, daftarKonten } from "/inti/konten_beranda.js";
 import { muat, label, urlAman, norm, namaRegulasi, sembunyi } from "/publik.js";
+import { pasangPita } from "/inti/riwayat.js";
 
 const KARTU = ["proyek", "kapasitas", "organisasi", "orang", "regulasi"];
 const ALIAS = [[/pertamina power indonesia|pertamina nre/i, "Pertamina NRE"], [/kementerian energi dan sumber daya mineral/i, "Kementerian ESDM"], [/masyarakat energi terbarukan/i, "METI"], [/badan riset dan inovasi nasional/i, "BRIN"], [/asosiasi energi surya/i, "AESI"], [/asosiasi produsen biofuel/i, "APROBI"], [/asosiasi panas bumi/i, "API (panas bumi)"], [/kementerian investasi/i, "Kementerian Investasi/BKPM"], [/direktorat jenderal energi baru/i, "Ditjen EBTKE"], [/^pln$/i, "PLN"], [/otoritas jasa keuangan/i, "OJK"], [/medco energi internasional/i, "Medco Energi"], [/sumitomo/i, "Sumitomo"], [/barito renewables/i, "Barito Renewables"], [/pertamina geothermal/i, "Pertamina Geothermal"], [/badan usaha milik negara/i, "Kementerian BUMN"], [/kementerian investasi/i, "Kementerian Investasi"], [/pln nusantara power/i, "PLN Nusantara Power"], [/asosiasi panas bumi/i, "API Panas Bumi"]];
@@ -204,6 +205,7 @@ async function main() {
     gambarKartu(); nanti(() => { gambarEkosistem(); gambarJalur(); gambarDataset(R); gambarBerita(); gambarProyek(); gambarAgenda(); gambarAkses(); });
   };
   await mulai();
+  nanti(() => pasangPita(document.getElementById("pitaRiwayat")));
   pasangBawah(R);
   addEventListener("error", (e) => { if (e.target.tagName !== "IMG") return; if (e.target.closest(".jm-feed-th")) e.target.remove(); }, true);
   document.getElementById("kartu").addEventListener("click", (e) => e.target.closest("[data-aksi=ulang]") && mulai());
@@ -213,6 +215,6 @@ async function main() {
   input.addEventListener("input", () => tunda(input.value));
   document.getElementById("cariTbl").addEventListener("click", () => cari(input.value));
   input.addEventListener("keydown", (e) => e.key === "Enter" && cari(input.value));
-  document.addEventListener("jm:bahasa", () => nanti(() => { R && gambarKartu(); gambarEkosistem(); gambarJalur(); R && gambarDataset(R); gambarBerita(); gambarProyek(); gambarAgenda(); gambarAkses(); input.value && cari(input.value); }));
+  document.addEventListener("jm:bahasa", () => nanti(() => { R && gambarKartu(); gambarEkosistem(); gambarJalur(); R && gambarDataset(R); gambarBerita(); gambarProyek(); gambarAgenda(); gambarAkses(); pasangPita(document.getElementById("pitaRiwayat")); input.value && cari(input.value); }));
 }
 main();

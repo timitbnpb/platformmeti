@@ -1,0 +1,30 @@
+/* /keandalan: pop-up rincian, langkah metode. Token tema.css saja. */
+dialog.kd-dlg{width:min(880px,calc(100vw - 32px));max-height:calc(100dvh - 48px);padding:24px;border:1px solid var(--line);border-radius:var(--r-lg);background:var(--card);color:var(--ink);box-shadow:var(--shadow-lg)}
+dialog.kd-dlg::backdrop{background:rgb(11 23 38/.55)}
+.kd-dh{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:16px}
+.kd-dh h2{margin:0;font-size:var(--t-h3);color:var(--head)}
+.kd-dr{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin-bottom:16px}
+.kd-dr .jm-pil{display:inline-flex;align-items:center;gap:6px}
+.kd-komp{display:inline-flex;align-items:center;gap:8px;color:var(--ink)}
+.kd-tabel td{vertical-align:top}
+.kd-daftar{margin:6px 0 0;padding:0;list-style:none;display:grid;gap:6px}
+.kd-daftar li{color:var(--ink2);font-size:var(--t-kecil)}
+.kd-langkah{margin:0 0 var(--gap);padding:0;list-style:none;display:grid;gap:16px;position:relative}
+.kd-langkah li{display:grid;grid-template-columns:auto minmax(0,1fr);gap:12px;align-items:start;padding:12px 16px;border:1px solid var(--line);border-radius:var(--r);background:var(--card)}
+.kd-langkah li>svg{margin-top:2px;color:var(--accent)}
+.kd-langkah p{margin:2px 0 0;color:var(--ink2)}
+.kd-celah{margin:0 0 var(--gap);padding-left:20px;display:grid;gap:8px;color:var(--ink2)}
+.inf-pv:is(.on,:hover){opacity:.9}
+@media (max-width:639px){dialog.kd-dlg{padding:16px}}
+
+.kd-grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,22rem),1fr));gap:var(--gap)}
+.kd-grid2>div{min-width:0}
+.kd-lg{display:flex;flex-wrap:wrap;gap:16px;margin:0 0 8px;color:var(--ink2);font-size:var(--t-kecil)}
+.kd-lg span{display:inline-flex;align-items:center;gap:6px}
+.kd-lg i{width:14px;height:4px;border-radius:2px}
+.kd-lg .a{background:var(--brand)}
+.kd-lg .b{background:var(--accent)}
+.kd-sorot{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,15rem),1fr));gap:12px;margin:0;padding:0;list-style:none}
+.kd-sorot li{display:grid;gap:6px;padding:14px 16px;border:1px solid var(--line);border-radius:var(--r);background:var(--card)}
+.kd-sorot b{color:var(--head)}
+.kd-sorot p{margin:0;color:var(--ink2);font-size:var(--t-kecil)}

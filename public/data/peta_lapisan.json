@@ -1,0 +1,32 @@
+{
+ "versi": 1,
+ "dibuat": "2026-11-08",
+ "catatan": "Indeks lapisan /peta. nyala = aktif saat pertama dibuka. menanti = berkas belum ada saat ini; halaman mencoba memuatnya dan menampilkan lapisan redup 'segera' bila belum ada (adapter generik membaca baris[] berkode provinsi 2 digit atau berlat/lng, nilai/satuan menunjuk kolomnya).",
+ "kelompok": [
+  {"id": "proyek", "ikon": "proyek"},
+  {"id": "infra", "ikon": "tek-listrik"},
+  {"id": "peluang", "ikon": "kompas"},
+  {"id": "risiko", "ikon": "peringatan"},
+  {"id": "wilayah", "ikon": "wilayah"}
+ ],
+ "lapisan": [
+  {"id": "proyek_terpadu", "kelompok": "proyek", "jenis": "titik", "adapter": "terpadu", "berkas": "/data/proyek_terpadu.json", "ikon": "petir", "nyala": true},
+  {"id": "proyek_meti", "kelompok": "proyek", "jenis": "titik", "adapter": "proyek", "berkas": "/data/proyek.json", "ikon": "bintang"},
+  {"id": "gem", "kelompok": "proyek", "jenis": "titik", "adapter": "gem", "berkas": "/data/gem_pembangkit.json", "ikon": "pabrik"},
+  {"id": "transmisi", "kelompok": "infra", "jenis": "garis", "adapter": "transmisi", "berkas": "/geo/transmisi.json", "ikon": "tek-listrik"},
+  {"id": "gardu", "kelompok": "infra", "jenis": "titik", "adapter": "gardu", "berkas": "/geo/gardu.json", "ikon": "denah"},
+  {"id": "wkp", "kelompok": "infra", "jenis": "titik", "adapter": "wkp", "berkas": "/data/wkp.json", "ikon": "tek-panas"},
+  {"id": "radar", "kelompok": "peluang", "jenis": "koroplet", "adapter": "radar", "berkas": "/data/radar_kabupaten.json", "ikon": "berlian"},
+  {"id": "celah", "kelompok": "peluang", "jenis": "koroplet", "adapter": "celah", "berkas": "/data/peluang.json", "ikon": "kompas"},
+  {"id": "risiko_proyek", "kelompok": "risiko", "jenis": "titik", "adapter": "generik_titik", "berkas": "/data/risiko_proyek.json", "ikon": "peringatan", "menanti": true},
+  {"id": "risiko_geo", "kelompok": "risiko", "jenis": "koroplet", "adapter": "generik_koroplet", "berkas": "/data/geo/risiko_provinsi.json", "ikon": "perisai", "menanti": true, "nilai": "skor", "satuan": "skor"},
+  {"id": "desa_idm", "kelompok": "risiko", "jenis": "koroplet", "adapter": "desa_idm", "berkas": "/data/desa_energi.json", "ikon": "lencana"},
+  {"id": "desa_mandiri", "kelompok": "risiko", "jenis": "titik", "adapter": "desa_mandiri", "berkas": "/data/desa_energi_mandiri.json", "ikon": "medali"},
+  {"id": "desa_listrik", "kelompok": "risiko", "jenis": "koroplet", "adapter": "desa_listrik", "berkas": "/data/desa_listrik.json", "ikon": "tag"},
+  {"id": "podes_listrik", "kelompok": "risiko", "jenis": "koroplet", "adapter": "generik_koroplet", "berkas": "/data/podes_listrik.json", "ikon": "kartu", "menanti": true, "nilai": "persen", "satuan": "%"},
+  {"id": "meti_wilayah", "kelompok": "wilayah", "jenis": "koroplet", "adapter": "meti_wilayah", "berkas": "/data/meti-wilayah.json", "ikon": "lokasi"},
+  {"id": "rued", "kelompok": "wilayah", "jenis": "koroplet", "adapter": "rued", "berkas": "/data/rued.json", "ikon": "regulasi"},
+  {"id": "perizinan", "kelompok": "wilayah", "jenis": "koroplet", "adapter": "perizinan", "berkas": "/data/perizinan_provinsi.json", "ikon": "palu"},
+  {"id": "keandalan", "kelompok": "wilayah", "jenis": "koroplet", "adapter": "keandalan", "berkas": "/data/keandalan.json", "ikon": "grafik"}
+ ]
+}

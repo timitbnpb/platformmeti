@@ -1721,12 +1721,13 @@
     },
     {
      "nama": "Bursa Efek Indonesia",
+     "id": "en_7f548f73fd",
+     "url": "/o/en_7f548f73fd",
      "peran": {
       "id": "Tempat pencatatan efek hijau dan IDXCarbon",
       "en": "Listing venue for green securities and IDXCarbon"
      },
      "rujuk": "Direktori METI (skema IDXCarbon)",
-     "id": null,
      "mw": null
     },
     {

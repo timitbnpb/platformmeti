@@ -21,10 +21,13 @@ import { rute as ruteWilayahKelola } from "./wilayah_kelola.js";
 import { rute as ruteDaftar } from "./daftar.js";
 import { rute as ruteKonsultasi } from "./konsultasi.js";
 import { rute as ruteKerja } from "./kerja.js";
+import { rute as ruteHukum } from "./hukum.js";
 import { catatHit, perbaruiRentang } from "./lalin.js";
 import * as hak from "./hak.js";
 import { halamanProfil } from "./profil.js";
 import { halamanSiaran } from "./siaran.js";
+import { halamanOg, sisipOg } from "./og.js";
+import { halamanSematan } from "./sematan.js";
 import { gagal, halamanHtml, json, PRIVAT, sha } from "./util.js";
 
 const rutePemilik = {
@@ -43,7 +46,7 @@ const rutePemilik = {
 };
 
 // Tabel rute dikompilasi sekali: { metode, bagian[], fn }.
-const DAFTAR = Object.entries({ ...ruteSesi, ...ruteGoogle, ...ruteAkun, ...ruteAgenda, ...ruteSosmed, ...ruteEvent, ...ruteDirektori, ...ruteFoto, ...ruteAdmin, ...ruteLangganan, ...ruteKelayakan, ...rutePustaka, ...ruteKta, ...ruteMetiWilayah, ...rutePesan, ...ruteProfilAkun, ...ruteIkuti, ...rutePortal, ...ruteWilayahKelola, ...ruteKonsultasi, ...ruteKerja, ...ruteDaftar, ...rutePemilik }).map(([k, fn]) => {
+const DAFTAR = Object.entries({ ...ruteSesi, ...ruteGoogle, ...ruteAkun, ...ruteAgenda, ...ruteSosmed, ...ruteEvent, ...ruteDirektori, ...ruteFoto, ...ruteAdmin, ...ruteLangganan, ...ruteKelayakan, ...rutePustaka, ...ruteKta, ...ruteMetiWilayah, ...rutePesan, ...ruteProfilAkun, ...ruteIkuti, ...rutePortal, ...ruteWilayahKelola, ...ruteKonsultasi, ...ruteKerja, ...ruteHukum, ...ruteDaftar, ...rutePemilik }).map(([k, fn]) => {
   const [metode, jalur] = k.split(" ");
   return { metode, bagian: jalur.split("/").slice(1), fn };
 });
@@ -171,6 +174,10 @@ async function halamanVideo(req, env, url, id) {
 async function halaman(req, env, url, akun) {
   const path = url.pathname;
   if (LANGSUNG_404.test(path)) return TIDAK_ADA();
+  // Kartu bagikan: terbuka untuk perayap (hanya angka ringkas publik), dilayani sebelum gerbang masuk.
+  if (path.startsWith("/og/")) return halamanOg(req, env, url);
+  // Sematan <iframe>: satu-satunya rute yang boleh dibingkai (src/sematan.js); hanya angka ringkas publik.
+  if (path.startsWith("/sematan/")) return halamanSematan(req, env, url);
   if (!akun && !PUBLIK.test(path)) {
     if (path === "/kalender.ics" && (await icsSah(env, url.searchParams.get("t")))) {
       return halamanPrivat(await env.ASSETS.fetch(new Request(new URL("/kalender.ics", url), { method: req.method })));
@@ -275,7 +282,7 @@ export default {
     let res;
     try {
       const url = new URL(req.url);
-      res = url.pathname.startsWith("/api/") ? await api(req, env, ctx, url) : await halaman(req, env, url, (await muatSesi(req, env)).akun);
+      res = url.pathname.startsWith("/api/") ? await api(req, env, ctx, url) : await sisipOg(await halaman(req, env, url, (await muatSesi(req, env)).akun), req, url);
     } catch (e) {
       if (e?.kode && Number.isInteger(e.status)) res = gagal(e.kode, e.status);
       else { console.error("galat-tak-terduga", e?.name, e?.message); res = gagal("server"); }

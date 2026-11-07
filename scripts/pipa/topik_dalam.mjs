@@ -118,7 +118,7 @@ export function bab10(id) {
   const baris = pj.map((p) => {
     const org = Object.values(p.pihak || {}).flat().find((x) => x.organisasi_id);
     const cod = (p.cod_target || [])[0]?.nilai;
-    return { nama: p.nama, id: p.id, u: '/proyek#' + p.id, prov: p.lokasi?.provinsi || '-', kode: wil.get(norm(p.lokasi?.provinsi)) || null, mw: mwProyek(p), status: statusP(p), cod: Number.isFinite(cod) ? cod : null, pemilik: org ? org.nilai : (p.pihak?.pemilik || [])[0]?.nilai || '-', id_organisasi: org?.organisasi_id || null, uo: org?.organisasi_id ? '/o/' + org.organisasi_id : null, bukti: p.tingkat_bukti || '-' };
+    return { nama: p.nama, id: p.id, u: '/p/' + p.id, prov: p.lokasi?.provinsi || '-', kode: wil.get(norm(p.lokasi?.provinsi)) || null, mw: mwProyek(p), status: statusP(p), cod: Number.isFinite(cod) ? cod : null, pemilik: org ? org.nilai : (p.pihak?.pemilik || [])[0]?.nilai || '-', id_organisasi: org?.organisasi_id || null, uo: org?.organisasi_id ? '/o/' + org.organisasi_id : null, bukti: p.tingkat_bukti || '-' };
   });
   return { tipe: 'tabel', per: 10, judul: T(`Proyek ${K.nama} terbesar di basis METI`, `Largest ${K.nama} projects in the METI base`), sumber: ['d_proyek'], kolom: [
     { k: 'nama', l: T('Proyek', 'Project'), url: 'u' }, { k: 'prov', l: T('Provinsi', 'Province') }, { k: 'kode', l: T('Kode BPS', 'BPS code') }, { k: 'mw', l: T('MW', 'MW'), num: true, d: 0 }, { k: 'status', l: T('Status', 'Status') }, { k: 'cod', l: T('Target COD', 'COD target'), num: true, d: 0 },

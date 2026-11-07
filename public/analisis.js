@@ -1,4 +1,5 @@
 /* Pembantu bersama halaman analisis statis (/wilayah, /rantai, /asean): data JSON statis, sumber bertanggal (dilipat), batang, kartu angka. */
+import { buktiHtml } from "/inti/bukti.js";
 import { t, angka, tanggal } from "/i18n.js";
 import { esc, galatHtml, ikon } from "/inti/umum.js";
 import { sumberHtml as sumberIkon } from "/inti/komponen.js";
@@ -38,7 +39,7 @@ export function sumberLipat(daftar, ekstraHtml = "") {
 }
 export const sumberHtml = (s) => sumberLipat([s]);
 
-export const pil = (kunci, jenis = "warn") => `<span class="jm-pil jm-pil-${jenis}">${esc(t(kunci))}</span>`;
+export const pil = (kunci, jenis = "warn") => (kunci === "an.est" ? buktiHtml("est") : kunci === "an.hipotesis" ? buktiHtml("hipotesis") : `<span class="jm-pil jm-pil-${jenis}">${esc(t(kunci))}</span>`);
 
 /* Kartu angka (KPI): ikon bertinta + label satu baris + pil EST, angka besar dengan satuan sebaris, sub baris, sumber satu baris (tooltip penuh). */
 export function kartuHtml({ judul, nilai, satuan, penyebut, sumber, turunan, ikon: ik = "analisis", ikonHtml }) {

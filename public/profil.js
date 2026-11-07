@@ -1,5 +1,6 @@
 /* Pembantu bersama halaman profil publik /o/<id> dan /p/<id>: lambang provinsi, tabel proyek, peta mini, seksi exhibit.
    Data statis /data/*.json (lapis publik). Semua teks lewat t(); semua nilai data lewat esc(). */
+import { buktiHtml } from "/inti/bukti.js";
 import { t, angka, tanggal } from "/i18n.js";
 import { esc, ikon, fotoBerita } from "/inti/umum.js";
 import { muat, urlAman, norm, label, namaRegulasi, kelasStatus } from "/publik.js";
@@ -130,7 +131,7 @@ export function tabelSumber(daftar, judulPerUrl = new Map()) {
     const judul = s.judul || judulPerUrl.get(s.url), nm = esc(namaPenerbit(s));
     const a = `<span class="jm-id"><b>${urlAman(s.url) ? `<a class="pf-nm" href="${esc(s.url)}" target="_blank" rel="noopener noreferrer">${nm}</a>` : nm}</b>${judul ? `<small>${esc(judul)}</small>` : ""}</span>`;
     const pil = (v) => (v ? `<span class="jm-pil">${esc(v)}</span>` : "-");
-    return `<tr>${td("pf.c.sumber", a)}${td("pf.c.jenis", pil(s.jenis))}${td("pf.c.bukti", pil(s.tingkat_bukti))}${td("pf.c.tanggal", tglSel(s.tanggal), "jm-tengah")}</tr>`;
+    return `<tr>${td("pf.c.sumber", a)}${td("pf.c.jenis", pil(s.jenis))}${td("pf.c.bukti", buktiHtml(s.tingkat_bukti, { sumber: nm, tanggal: s.tanggal }))}${td("pf.c.tanggal", tglSel(s.tanggal), "jm-tengah")}</tr>`;
   }).join(""), "pf-tabel-sumber");
 }
 

@@ -8,6 +8,7 @@ import { urlAman } from "/publik.js";
 import { lencanaOrg } from "/peristiwa_komitmen.js";
 import { sebanding, domain, sektorDari, suratPeran, teleponKantor, NORM, TEK_PROYEK } from "/inti/org_sensus.js";
 import { logoOrgHtml } from "/o_bagian.js";
+import { diperbaruiHtml, pasangRiwayat } from "/inti/riwayat.js";
 
 const pilBukti = (b) => (b ? `<span class="oj-pil" title="${esc(t("oj.tip.bukti"))}" tabindex="0">${esc(t("oj.bukti." + b))}</span>` : "");
 const namaSek = (id) => (id === "lain" || id === "lintas" ? t("so.sek." + id) : t("an.tek." + id));
@@ -111,6 +112,7 @@ export function ringkasHtml(o, S, { tombolIkuti, tombolKoreksi }) {
     <div class="oj-kepala-isi"><div class="oj-kepala-kiri">
       <div class="oj-id">${logoOrgHtml(o.id, o.nama, o.logo, "oj-lg oj-lg-b")}<div><h1>${esc(o.nama)}</h1>${bh ? `<p class="oj-bantu">${esc(t("oj.bh." + bh))}</p>` : ""}<p class="oj-pils">${pilSek(sek)}${r.aplsi ? `<span class="oj-pil">${esc(t("so.len.aplsi"))}</span>` : ""}</p></div></div>
       <p class="oj-jawab">${esc(jawab)}</p>
+      ${diperbaruiHtml({ jenis: "organisasi", id: o.id, nama: o.nama, tgl: o.diperiksa || S.tgl })}
       <div class="oj-kutip"><span class="oj-kl">${esc(t("oj.kutip"))}</span><code id="ojKutip">${esc(kutip)}</code><button type="button" class="oj-tb" id="ojSalin" data-salin="${esc(kutip)}">${ikon("salin", 18)}<span>${esc(t("oj.salin"))}</span></button></div>
       ${aksi}</div>
       <ul class="oj-kpis">${kpis}</ul></div>
@@ -123,6 +125,7 @@ export function ringkasHtml(o, S, { tombolIkuti, tombolKoreksi }) {
 
 /* tombol salin kutipan + logo cadangan; dipanggil sekali sesudah innerHTML */
 export function pasangRingkas(akar, o) {
+  pasangRiwayat(akar);
   if (o) lencanaOrg(o.nama).then((h) => { if (h) akar.querySelector(".oj-pils")?.insertAdjacentHTML("beforeend", h); });
   akar.addEventListener("error", (e) => { const im = e.target; if (im.tagName === "IMG" && im.dataset.ini !== undefined && im.closest(".oj-lg")) im.replaceWith(document.createTextNode(im.dataset.ini)); }, true);
   akar.querySelector("#ojSalin")?.addEventListener("click", async (e) => {

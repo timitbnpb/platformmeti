@@ -2500,3 +2500,54 @@ export async function konsKabar(env, akun, dari, n) {
     return [...baru, ...bal, ...put, ...seb];
   });
 }
+
+/* ========================= Pustaka hukum EBT (0029_hukum.sql) ========================= */
+// Pembaca D1 saja (rute di src/hukum.js). Hasil null = tabel belum dimigrasi; rute membalas 503. Wajib masuk (situs di balik login).
+const RE_HUKUM_ID = /^[a-z0-9-]{3,60}$/;
+export async function hukumCari(env, akun, { match, jenis, tahun, status, hal, per }) {
+  gerbangMasuk(akun);
+  return tanpaTabel(async () => {
+    const w = ["hukum_fts MATCH ?"], b = [match];
+    if (jenis) { w.push("upper(d.singkatan) = ?"); b.push(String(jenis).toUpperCase()); }
+    if (tahun) { w.push("d.tahun = ?"); b.push(tahun); }
+    if (status) { w.push("lower(d.status) = ?"); b.push(String(status).toLowerCase()); }
+    const dari = `FROM hukum_fts JOIN hukum_segmen s ON s.id = hukum_fts.rowid JOIN hukum_dok d ON d.id = s.dok WHERE ${w.join(" AND ")}`;
+    const wj = w.filter((x) => !x.startsWith("upper(d.singkatan)")), bj = jenis ? b.filter((_, i) => i !== 1) : b;
+    const [t, h, pj] = await env.DB.batch([
+      env.DB.prepare(`SELECT count(*) AS n ${dari}`).bind(...b),
+      env.DB.prepare(`SELECT s.id AS segmen, d.id AS dok, d.judul, d.singkatan, d.jenis, d.nomor, d.tahun, d.status, d.resmi, d.sumber, d.ocr, s.label, s.bab,
+        snippet(hukum_fts, 0, '[[', ']]', '...', 24) AS cuplikan ${dari} ORDER BY bm25(hukum_fts, 1.0, 3.0, 1.0) LIMIT ? OFFSET ?`).bind(...b, per, (hal - 1) * per),
+      env.DB.prepare(`SELECT d.singkatan AS j, count(*) AS n FROM hukum_fts JOIN hukum_segmen s ON s.id = hukum_fts.rowid JOIN hukum_dok d ON d.id = s.dok WHERE ${wj.join(" AND ")} GROUP BY 1 ORDER BY 2 DESC`).bind(...bj)]);
+    return { total: t.results[0].n, hasil: h.results, per_jenis: Object.fromEntries(pj.results.filter((r) => r.j).map((r) => [r.j, r.n])) };
+  });
+}
+export async function hukumDok(env, akun, id) {
+  gerbangMasuk(akun);
+  if (!RE_HUKUM_ID.test(String(id))) return { tidak_sah: true };
+  return tanpaTabel(async () => {
+    const dok = await env.DB.prepare("SELECT * FROM hukum_dok WHERE id = ?").bind(id).first();
+    if (!dok) return { ada: false };
+    const [s, k, m] = await env.DB.batch([
+      env.DB.prepare("SELECT id, urut, jenis, label, bab, halaman, teks FROM hukum_segmen WHERE dok = ? ORDER BY urut").bind(id),
+      env.DB.prepare("SELECT r.ke AS id, r.jenis, r.terdaftar, coalesce(d.judul, r.ke_judul) AS judul, d.status, d.singkatan FROM hukum_relasi r LEFT JOIN hukum_dok d ON d.id = r.ke WHERE r.dari = ? ORDER BY r.jenis, r.ke").bind(id),
+      env.DB.prepare("SELECT r.dari AS id, r.jenis, d.judul, d.status, d.singkatan FROM hukum_relasi r LEFT JOIN hukum_dok d ON d.id = r.dari WHERE r.ke = ? ORDER BY r.jenis, r.dari").bind(id)]);
+    let pdf = []; try { pdf = JSON.parse(dok.pdf || "[]"); } catch { pdf = []; }
+    return { ada: true, dok: { ...dok, pdf }, segmen: s.results, keluar: k.results, masuk: m.results };
+  });
+}
+// Ringkasan angka + peringkat relasi untuk tab Relasi dan kepala halaman.
+export async function hukumRingkas(env, akun) {
+  gerbangMasuk(akun);
+  return tanpaTabel(async () => {
+    const [a, rujuk, ganti] = await env.DB.batch([
+      env.DB.prepare("SELECT (SELECT count(*) FROM hukum_dok) AS dok, (SELECT count(*) FROM hukum_segmen) AS segmen, (SELECT count(*) FROM hukum_relasi) AS relasi"),
+      env.DB.prepare("SELECT r.ke AS id, coalesce(d.judul, max(r.ke_judul)) AS judul, d.singkatan, d.status, d.tahun, d.nomor, r.terdaftar, count(*) AS n FROM hukum_relasi r LEFT JOIN hukum_dok d ON d.id = r.ke GROUP BY r.ke ORDER BY n DESC, r.ke LIMIT 15"),
+      env.DB.prepare("SELECT r.dari, r.ke, r.jenis, coalesce(d.judul, r.ke_judul) AS judul_ke, x.judul AS judul_dari, d.singkatan AS singkatan_ke, x.singkatan AS singkatan_dari, r.terdaftar FROM hukum_relasi r LEFT JOIN hukum_dok d ON d.id = r.ke LEFT JOIN hukum_dok x ON x.id = r.dari WHERE r.jenis IN ('mencabut','mengganti') ORDER BY x.tahun DESC LIMIT 40")]);
+    return { ...a.results[0], dirujuk: rujuk.results, dicabut: ganti.results };
+  });
+}
+export async function hukumSegmenTanya(env, akun, match, n) {
+  gerbangMasuk(akun);
+  return tanpaTabel(async () => (await env.DB.prepare(`SELECT s.id, s.label, s.teks, d.id AS dok, d.judul FROM hukum_fts JOIN hukum_segmen s ON s.id = hukum_fts.rowid JOIN hukum_dok d ON d.id = s.dok
+    WHERE hukum_fts MATCH ? ORDER BY bm25(hukum_fts, 1.0, 3.0, 1.0) LIMIT ?`).bind(match, n).all()).results);
+}

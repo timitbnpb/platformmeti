@@ -8,7 +8,7 @@ import { mulaiHalaman } from "/inti/kepala.js";
 const saya = await mulaiHalaman();
 const halaman = document.body.dataset.halaman;
 const params = new URLSearchParams(location.search);
-const ke = amanKe(params.get("ke"));
+const ke = params.get("ke") ? amanKe(params.get("ke")) : "/saya"; // tanpa tujuan: halaman pertama setelah masuk = METI untuk saya
 const $ = (id) => document.getElementById(id);
 const form = $("form");
 const pesan = $("pesan");

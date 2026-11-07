@@ -11,6 +11,7 @@ import { tautOrg } from "/inti/tautan.js";
 import { t, angka, esc, ikon, muat, urlAman, label, hlHtml, pilTek, pilStatus, idJalur, provHtml, lambang, inisial, barisProyek, kapTeks, kepalaHtml, metaItem, statHtml, seksi, tabel, td, tabelBerita, tabelRegulasi, tabelSumber, kartuProgram, petaTitik, galatHtml, ringkasTgl, tglSel, TAHUN } from "/profil.js";
 
 import { peristiwaProyek, peristiwaProyekHtml } from "/peristiwa_komitmen.js";
+import { diperbaruiHtml, pasangRiwayat } from "/inti/riwayat.js";
 
 const akar = document.getElementById("profil");
 
@@ -83,6 +84,8 @@ async function mulai() {
     + seksi({ id: "sumber", ik: "tautan", topik: t("pf.ey.sumber"), judulHtml: esc(t("pf.j.sumber")), isiHtml: tabelSumber(p.sumber, new Map(ber.baris.map((b) => [b.url, b.judul]))), csv: true, sumber })
     + `</div>`;
   akar.querySelector(".pf-kepala-teks")?.insertAdjacentHTML("beforeend", `<p class="pf-koreksi">${tombolKoreksi({ entitas: "proyek", id, nama: r.nama })} ${tombolIkuti({ jenis: "proyek", id, nama: r.nama })}</p>`);
+  akar.querySelector(".pf-kepala-teks")?.insertAdjacentHTML("beforeend", diperbaruiHtml({ jenis: "proyek", id, nama: r.nama, tgl: dibangun }));
+  pasangRiwayat(akar);
   pasangIkuti(akar); muatPembaruan("proyek", id, akar.querySelector(".pf-bagian"));
   petaTitik(document.getElementById("pfPeta"), [r], { zoomSatu: persis ? 11 : 6, klik: false });
 }

@@ -68,7 +68,7 @@ export function fitur(el, eps) {
 }
 
 const tidur = (ms) => new Promise((r) => setTimeout(r, ms));
-export const kueri = ([s, w, n, e]) => `[out:json][timeout:240];(way["power"="line"]["voltage"~"[0-9]{6}"](${s},${w},${n},${e});nwr["power"="substation"]["voltage"~"[0-9]{6}"](${s},${w},${n},${e}););out geom tags center qt;`;
+export const kueri = ([s, w, n, e]) => `[out:json][timeout:240];way["power"="line"]["voltage"~"[0-9]{6}"](${s},${w},${n},${e});out geom tags qt;nwr["power"="substation"]["voltage"~"[0-9]{6}"](${s},${w},${n},${e});out center tags qt;`;
 
 async function ambil(bbox, coba = 0) {
   const r = await fetch(ENDPOINT, { method: 'POST', headers: { 'User-Agent': UA, 'Content-Type': 'application/x-www-form-urlencoded', Accept: 'application/json' }, body: 'data=' + encodeURIComponent(kueri(bbox)), signal: AbortSignal.timeout(300000) });

@@ -1,0 +1,14 @@
+/* Penjelasan istilah di teks halaman (inti/istilah.js): garis titik tipis, bukan garis bawah tautan. */
+.jm-ist{border-bottom:1px dotted var(--ink2);cursor:help;border-radius:2px;text-decoration:none}
+.jm-ist:hover,.jm-ist:focus-visible,.jm-ist[aria-describedby]{background:var(--soft-hijau);border-bottom-color:var(--accent)}
+.jm-ist:focus-visible{outline:2px solid var(--fokus);outline-offset:1px}
+.jm-ist-pop{position:fixed;z-index:60;width:min(320px,calc(100vw - 16px));padding:12px 14px;border:1px solid var(--line);border-radius:var(--r);background:var(--card);color:var(--ink);box-shadow:var(--shadow-lg);font:400 var(--t-kecil)/var(--lh-isi) var(--font)}
+.jm-ist-pop[hidden]{display:none}
+.jm-ist-n{display:flex;align-items:center;flex-wrap:wrap;gap:8px;margin:0 0 6px;color:var(--head);font:700 var(--t-body)/var(--lh-rapat) var(--font)}
+.jm-ist-a{margin:0 0 10px;color:var(--ink)}
+.jm-ist-aksi{display:flex;align-items:center;justify-content:space-between;gap:12px;margin:0;padding-top:8px;border-top:1px solid var(--line)}
+.jm-ist-aksi a{color:var(--accent);font-weight:600;text-decoration:none}
+.jm-ist-aksi a:hover{color:var(--ink)}
+.jm-ist-aksi button{padding:0;border:0;background:none;color:var(--ink2);font:inherit;cursor:pointer}
+.jm-ist-aksi button:hover{color:var(--ink)}
+.jm-ist-aksi a:focus-visible,.jm-ist-aksi button:focus-visible{outline:2px solid var(--fokus);outline-offset:2px;border-radius:var(--r-sm)}

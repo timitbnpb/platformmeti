@@ -7,6 +7,7 @@ import { subnavHtml, diBagianInsight } from "/inti/komponen.js";
 import { pasangRel } from "/inti/rel.js";
 import { pasangPilih } from "/inti/pilih.js";
 import { pasangCari } from "/inti/cari_global.js";
+import { pasangBukti } from "/inti/bukti.js";
 import { catatHalaman } from "/inti/statistik.js";
 import { sosmedHtml } from "/inti/sosmed.js";
 import { teksLencana } from "/inti/pesan_umum.js";
@@ -14,6 +15,7 @@ import { akunMenuHtml, pasangAkunMenu } from "/inti/akun_menu.js";
 import "/inti/mata_sandi.js";
 import "/inti/galat_gambar.js";
 import "/inti/sejajar.js";
+import "/inti/istilah.js";
 
 export const PITA_DRAF = false; // pemilik 7 Nov 2026: pita draf tidak ditampilkan
 const STAF = ["pengurus", "kurator", "admin", "super"];
@@ -24,18 +26,18 @@ const TAB = [
   { href: "/", kunci: "nav.beranda", ikon: "beranda", hak: null },
   { kunci: "nav.insight", ikon: "insight", hak: null, grup: [
     { href: "/insight", kunci: "nav.insight_ringkasan", ikon: "kajian" },
-    { href: "/rapor", kunci: "nav.rapor", ikon: "presentasi" }, { href: "/pelacak", kunci: "nav.pelacak", ikon: "tingkat" }, { href: "/pelacak-proyek", kunci: "pt2.nav", ikon: "petir" }, { href: "/rantai", kunci: "nav.rantai", ikon: "rantai" }, { href: "/asean", kunci: "nav.asean", ikon: "asean" }, { href: "/jejaring", kunci: "nav.jejaring", ikon: "tautan" }, { href: "/kuadran", kunci: "nav.kuadran", ikon: "status" }, { href: "/transisi", kunci: "nav.transisi", ikon: "tek-panas" }, { href: "/strategi", kunci: "nav.strategi", ikon: "analisis" }, { href: "/topik", kunci: "nav.topik", ikon: "topik" }, { href: "/metode", kunci: "nav.sub.metode", ikon: "metode" }] },
+    { href: "/rapor", kunci: "nav.rapor", ikon: "presentasi" }, { href: "/pelacak", kunci: "nav.pelacak", ikon: "tingkat" }, { href: "/pelacak-proyek", kunci: "pt2.nav", ikon: "petir" }, { href: "/ringkasan", kunci: "re2.nav", ikon: "ringkasan" }, { href: "/korporat", kunci: "kr2.nav", ikon: "pabrik" }, { href: "/kinerja", kunci: "kn2.nav", ikon: "medali" }, { href: "/keandalan", kunci: "kd2.nav", ikon: "jam" }, { href: "/rantai", kunci: "nav.rantai", ikon: "rantai" }, { href: "/asean", kunci: "nav.asean", ikon: "asean" }, { href: "/jejaring", kunci: "nav.jejaring", ikon: "tautan" }, { href: "/kuadran", kunci: "nav.kuadran", ikon: "status" }, { href: "/transisi", kunci: "nav.transisi", ikon: "tek-panas" }, { href: "/strategi", kunci: "nav.strategi", ikon: "analisis" }, { href: "/harga-komponen", kunci: "hk2.nav", ikon: "tag" }, { href: "/topik", kunci: "nav.topik", ikon: "topik" }, { href: "/metode", kunci: "nav.sub.metode", ikon: "metode" }] },
   { kunci: "nav.wilayah", ikon: "wilayah", hak: null, grup: [
-    { href: "/wilayah", kunci: "nav.wilayah_peta", ikon: "peta" }, { href: "/proyek", kunci: "nav.proyek", ikon: "proyek" },
+    { href: "/wilayah", kunci: "nav.wilayah_peta", ikon: "peta" }, { href: "/peta", kunci: "nav.peta_nasional", ikon: "globe" }, { href: "/proyek", kunci: "nav.proyek", ikon: "proyek" },
     { href: "/program", kunci: "nav.program", ikon: "bintang" }, { href: "/peluang", kunci: "nav.peluang", ikon: "kompas" },
     { href: "/biaya-listrik", kunci: "nav.biaya_listrik", ikon: "kalkulator" }, { href: "/keuangan-hijau", kunci: "nav.keuangan_hijau", ikon: "tek-bio" }, { href: "/pasar-listrik-hijau", kunci: "nav.pasar_hijau", ikon: "tek-listrik" },
-    { href: "/indeks", kunci: "nav.indeks", ikon: "grafik" }, { href: "/radar", kunci: "nav.radar", ikon: "berlian" }] },
+    { href: "/indeks", kunci: "nav.indeks", ikon: "grafik" }, { href: "/radar", kunci: "nav.radar", ikon: "berlian" }, { href: "/banding", kunci: "bd2.nav", ikon: "banding" }, { href: "/risiko", kunci: "rs3.nav", ikon: "peringatan" }, { href: "/perizinan", kunci: "pz2.nav", ikon: "lencana" }] },
   { kunci: "nav.direktori", ikon: "direktori", hak: "masuk", grup: [
     { href: "/direktori?tampil=pakar", kunci: "nav.d_orang", ikon: "orang" }, { href: "/direktori?tampil=lembaga", kunci: "nav.d_org", ikon: "gedung" },
     { href: "/direktori?tampil=inovasi", kunci: "nav.d_inovasi", ikon: "tek-surya" }, { href: "/direktori?tampil=riset", kunci: "nav.d_riset", ikon: "wisuda" },
     { href: "/direktori?tampil=sistem_data", kunci: "nav.d_sistem", ikon: "csv" }, { href: "/direktori?tampil=pendanaan", kunci: "nav.d_pendanaan", ikon: "kartu" }, { href: "/kerja", kunci: "nav.kerja", ikon: "koper" }] },
   { kunci: "nav.pustaka", ikon: "buku", hak: null, grup: [
-    { href: "/regulasi", kunci: "nav.regulasi", ikon: "regulasi" }, { href: "/pustaka", kunci: "nav.dokumen", ikon: "pdf" }, { href: "/dokumen-data", kunci: "nav.dokumen_data", ikon: "tabel" }] },
+    { href: "/regulasi", kunci: "nav.regulasi", ikon: "regulasi" }, { href: "/hukum", kunci: "nav.hukum", ikon: "palu" }, { href: "/pustaka", kunci: "nav.dokumen", ikon: "pdf" }, { href: "/istilah", kunci: "is2.nav", ikon: "kamus" }, { href: "/dokumen-data", kunci: "nav.dokumen_data", ikon: "tabel" }] },
   { kunci: "nav.media", ikon: "kamera", hak: null, grup: [
     { href: "/berita", kunci: "nav.berita", ikon: "berita" }, { href: "/siaran-pers", kunci: "nav.siaran", ikon: "siaran" },
     { href: "/galeri", kunci: "nav.foto", ikon: "gambar" },
@@ -75,7 +77,7 @@ function gambarKepala(el, saya) {
     <a class="jm-merek" href="/"><img src="/img/logo-meti-tanda.png" width="42" height="40" alt=""><span data-i18n="jm.merek">${t("jm.merek")}</span></a>
     <nav class="tabs" id="menu" data-i18n-attr="aria-label:jm.menu" aria-label="${t("jm.menu")}">${tab}</nav>
     <div class="jm-sisi">
-      <button type="button" class="iconbtn jm-bulat" id="cari" aria-haspopup="dialog" data-i18n-attr="aria-label:cari.tombol;title:cari.tombol" aria-label="${t("cari.tombol")}" title="${t("cari.tombol")}">${ikon("cari", 20)}</button>
+      <button type="button" class="iconbtn jm-bulat jm-cari-kotak" id="cari" aria-haspopup="dialog" data-i18n-attr="aria-label:cari.tombol;title:cari.tombol" aria-label="${t("cari.tombol")}" title="${t("cari.tombol")}">${ikon("cari", 20)}<span class="jm-cari-kotak-t" data-i18n="cari.kotak">${t("cari.kotak")}</span><span class="jm-cari-kotak-k" aria-hidden="true"><kbd>${/mac|iphone|ipad/i.test(navigator.platform || navigator.userAgent || "") ? "⌘" : "Ctrl"}</kbd><kbd>K</kbd></span></button>
       <button type="button" class="iconbtn jm-bulat jm-bahasa" id="bahasa" data-i18n-attr="aria-label:jm.ganti_bahasa;title:jm.ganti_bahasa" aria-label="${t("jm.ganti_bahasa")}" title="${t("jm.ganti_bahasa")}">${BENDERA[b]}</button>
       <button type="button" class="iconbtn jm-bulat" id="tema" data-i18n-attr="aria-label:jm.tema;title:jm.tema" aria-label="${t("jm.tema")}" title="${t("jm.tema")}">${ikon("tema", 20)}</button>
       ${akun}
@@ -182,6 +184,7 @@ export async function mulaiHalaman() {
     return saya;
   }
   if (kepala) { gambarKepala(kepala, saya); pasangPenangan(kepala, saya); pasangCari(kepala); if (saya.masuk) pasangAkunMenu(kepala, saya); }
+  pasangBukti();
   if (kepala && diBagianInsight(location.pathname) && !document.getElementById("subnav")) { kepala.insertAdjacentHTML("afterend", subnavHtml(location.pathname, location.hash)); addEventListener("hashchange", () => { const s = document.getElementById("subnav"); if (s) s.outerHTML = subnavHtml(location.pathname, location.hash); }); }
   const pita = document.getElementById("pita");
   if (pita && PITA_DRAF) {

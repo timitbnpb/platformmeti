@@ -145,3 +145,28 @@ dialog.jm-rt-pop{width:min(960px,calc(100vw - 24px));max-height:calc(100vh - 32p
 .jm-rt-daftar li>a{flex:1 1 auto;min-width:0}
 .jm-rt-daftar .jm-id{min-width:0}.jm-rt-daftar .jm-id b{display:block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .jm-rt-daftar .jm-rt-ps{flex:none}
+
+/* ---- C3: pasokan vs kebutuhan, TKDN per kategori, sertifikat TKDN ---- */
+.rt2-slot{display:contents}
+.jm-pil-info{background:var(--info-bg);color:var(--info)}
+.jm-rt-celah{border-color:var(--bad);background:var(--bad-bg)}
+.jm-rt-celah .jm-rt-w3{--tk:var(--bad)}
+.jm-rt-celah .jm-pil{background:var(--card);color:var(--bad);font-weight:700}
+.rt2-ubin{display:grid;gap:16px;grid-template-columns:repeat(3,minmax(0,1fr));margin:0 0 16px}
+.rt2-ub{display:flex;align-items:center;gap:12px;padding:14px 16px;border:1px solid var(--line);border-radius:var(--r);background:var(--card)}
+.rt2-ub b{display:block;font:700 var(--t-angka)/1 var(--display);color:var(--head);font-variant-numeric:tabular-nums}
+.rt2-ub b span{margin-left:6px;font:600 var(--t-kecil)/1 var(--font);color:var(--ink2)}
+.rt2-ub small{display:block;margin-top:4px;color:var(--ink2);font-size:var(--t-kecil)}
+.rt2-c-modul{--tk:var(--tp-surya)}.rt2-c-baterai{--tk:var(--tp-simpan)}.rt2-c-inverter{--tk:var(--tp-listrik)}.rt2-c-kabel{--tk:var(--tp-jaringan)}.rt2-c-trafo{--tk:var(--tp-industri)}.rt2-c-struktur{--tk:var(--tp-sampah)}.rt2-c-turbin{--tk:var(--tp-bayu)}
+.ih-bar[class*="rt2-c-"]{color:var(--tk)}
+.rt2-umum{--tk:var(--ink2)}
+.rt2-pils{display:flex;flex-wrap:wrap;gap:6px}
+.rt2-prod{display:grid;gap:2px;min-width:180px}.rt2-prod small{color:var(--ink2);font-size:var(--t-kecil)}
+.rt2-nilai{font-variant-numeric:tabular-nums;font-weight:600}.rt2-ok{color:var(--ok)}
+#rt2-tabel td .jm-an-nama{display:flex;align-items:center;gap:10px;min-width:220px}
+#rt2-tabel td .jm-id{display:grid;min-width:0}#rt2-tabel td .jm-id small{color:var(--ink2);font-size:var(--t-kecil)}
+#rt2-tabel .jm-tabel{min-width:860px;width:100%}
+#rt2-tabel th.jm-num{text-align:right}
+@media (max-width:719px){.rt2-ubin{grid-template-columns:1fr}#rt2-tabel .jm-tabel{min-width:0}#rt2-tabel td .jm-an-nama,.rt2-prod{min-width:0}}
+#rt2-tabel td .jm-id b{white-space:normal;overflow:visible;text-overflow:clip}
+@media (max-width:719px){#rt2-tabel td[data-label]{grid-template-columns:110px minmax(0,1fr)!important;align-items:center}#rt2-tabel td::before{white-space:normal;min-width:0}#rt2-tabel td.jm-num{text-align:left}}

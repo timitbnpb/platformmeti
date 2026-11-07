@@ -1,0 +1,76 @@
+/* /ringkasan: lembar eksekutif siap cetak. Token tema saja; jarak antar kartu 24px; cetak A4 satu halaman lewat @media print. */
+.re-aksi{display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin-top:16px}
+.re-aksi .jm-tbl{min-height:var(--target)}
+.re-lembar{display:grid;gap:24px;margin-top:24px}
+.re-kop,.re-sc{display:none}
+.re-kaki{margin:0;color:var(--ink2);font-size:var(--t-kecil)}
+/* delapan angka kunci: 4 x 2 */
+.re-angka{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px;margin:0;padding:0;list-style:none}
+.re-ang{display:grid;grid-template-rows:auto auto auto 1fr;gap:8px;min-width:0;padding:16px;border:1px solid var(--line);border-radius:var(--r);background:var(--surface)}
+.re-ang-k{display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:10px;align-items:center}
+.re-ang-ik{display:grid;place-items:center;width:36px;height:36px;border-radius:50%;background:var(--soft-hijau);color:var(--accent)}
+.re-ang-l{margin:0;font:600 var(--t-body)/var(--lh-rapat) var(--font);color:var(--ink);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.re-ang-n{display:flex;align-items:baseline;gap:8px;margin:0;min-width:0}
+.re-ang-n b{font:700 var(--t-h1)/1 var(--font);color:var(--head);font-variant-numeric:tabular-nums}
+.re-ang-n span{color:var(--ink2);font-size:var(--t-kecil);font-weight:600;white-space:nowrap}
+.re-ang-s{margin:0;color:var(--ink2);font-size:var(--t-kecil);line-height:var(--lh-isi)}
+.re-ang-b{display:flex;flex-wrap:wrap;gap:6px;align-content:flex-end}
+/* temuan + peta */
+.re-dua{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:24px;align-items:stretch}
+.re-temuan{display:grid;gap:12px;margin:0;padding:0;list-style:none}
+.re-t{display:grid;grid-template-columns:auto auto minmax(0,1fr);gap:12px;align-items:start;padding:14px;border:1px solid var(--line-cell);border-radius:var(--r);background:var(--surface)}
+.re-t-no{display:grid;place-items:center;width:32px;height:32px;border-radius:50%;background:var(--brand);color:var(--on-brand);font:700 var(--t-body)/1 var(--font)}
+.re-t-ik{display:grid;place-items:center;width:32px;height:32px;color:var(--accent)}
+.re-t-isi{margin:0;line-height:var(--lh-isi);color:var(--ink)}
+/* peta mini */
+.re-peta{max-height:340px}
+.re-pv{stroke:var(--card);stroke-width:.6;fill:var(--surface);cursor:pointer;transition:opacity .15s}
+.re-k0{fill:color-mix(in srgb,var(--accent-isi) 14%,var(--surface))}
+.re-k1{fill:color-mix(in srgb,var(--accent-isi) 30%,var(--surface))}
+.re-k2{fill:color-mix(in srgb,var(--accent-isi) 50%,var(--surface))}
+.re-k3{fill:color-mix(in srgb,var(--accent-isi) 72%,var(--surface))}
+.re-k4{fill:var(--accent-isi)}
+.re-kx{fill:var(--line-cell)}
+.re-atas{stroke:var(--ink);stroke-width:1.2}
+.jm-gf-fokus .re-pv:not(.jm-gf-on){opacity:.4}
+.re-legenda{display:flex;align-items:center;justify-content:center;gap:10px;margin-top:8px;color:var(--ink2);font-size:var(--t-kecil)}
+.re-lg{display:inline-flex;gap:2px}
+.re-lg i{width:28px;height:10px;border-radius:2px;border:1px solid var(--line)}
+/* perubahan */
+.re-ubin{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin:0 0 16px;padding:0;list-style:none}
+.re-ub{display:grid;grid-template-columns:auto minmax(0,1fr);grid-template-rows:auto auto;column-gap:12px;align-items:center;padding:14px;border:1px solid var(--line-cell);border-radius:var(--r);background:var(--surface)}
+.re-ub-ik{grid-row:1 / span 2;display:grid;place-items:center;width:36px;height:36px;border-radius:50%;background:var(--soft-hijau);color:var(--accent)}
+.re-ub b{font:700 var(--t-h2)/1 var(--font);font-variant-numeric:tabular-nums}
+.re-ub span:last-child{color:var(--ink2);font-size:var(--t-kecil)}
+.re-sub{display:flex;align-items:center;gap:8px;margin:0 0 12px;font:700 var(--t-body)/var(--lh-rapat) var(--font)}
+.re-sub .jm-ik{color:var(--accent)}
+.re-rps{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin:0;padding:0;list-style:none}
+.re-rp{display:grid;grid-template-columns:auto minmax(0,1fr) auto auto;gap:10px;align-items:center;padding:12px 14px;border:1px solid var(--line-cell);border-radius:var(--r);background:var(--surface)}
+.re-rp .jm-ik{color:var(--accent)}
+.re-rp b{font-variant-numeric:tabular-nums}
+.re-kosong{display:flex;gap:8px;align-items:flex-start;margin:0 0 16px;color:var(--ink2)}
+.re-kosong .jm-ik{flex:none;margin-top:2px;color:var(--accent)}
+@media (max-width:1100px){.re-angka{grid-template-columns:repeat(2,minmax(0,1fr))}.re-dua{grid-template-columns:minmax(0,1fr)}}
+@media (max-width:560px){.re-angka{grid-template-columns:minmax(0,1fr)}.re-t{grid-template-columns:auto minmax(0,1fr)}.re-t-ik{display:none}}
+/* cetak: satu lembar A4, kop METI, tanpa kepala situs */
+@media print{
+  @page{size:A4;margin:10mm}
+  .re-cetak .top,.re-cetak .jm-kaki,.re-cetak .jm-kh,.re-cetak #subnav,.re-cetak .jm-ex-aksi,.re-cetak .jm-sumber,.re-cetak .jm-aksi-kabar{display:none!important}
+  .re-cetak body{background:var(--card)}
+  .re-cetak .jm-halaman{padding:0;max-width:none}
+  .re-cetak .re-lembar{gap:10px;margin:0}
+  .re-cetak .re-kop{display:flex;align-items:center;gap:12px;padding-bottom:8px;border-bottom:3px solid var(--meti-lime)}
+  .re-cetak .re-kop div{display:grid;flex:1}.re-cetak .re-kop span{color:var(--ink2);font-size:var(--t-kecil)}
+  .re-cetak .re-angka{grid-template-columns:repeat(4,minmax(0,1fr));gap:8px}
+  .re-cetak .re-ang{padding:8px;gap:4px;break-inside:avoid}
+  .re-cetak .re-ang-n b{font-size:var(--t-h2)}
+  .re-cetak .re-dua{grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:10px}
+  .re-cetak .re-t{padding:8px;break-inside:avoid}
+  .re-cetak .re-peta{max-height:200px}
+  .re-cetak .jm-ex{padding:8px;box-shadow:none;break-inside:avoid}
+  .re-cetak .re-sc{display:block;font-size:var(--t-label);color:var(--ink2)}
+  .re-cetak .re-sc h2{margin:0 0 4px;font:700 var(--t-kecil)/1.2 var(--font);color:var(--ink)}
+  .re-cetak .re-sc ol{margin:0;padding-left:18px;columns:2;column-gap:16px}
+  .re-cetak .re-sc li{break-inside:avoid}
+  .re-cetak .re-ub,.re-cetak .re-rp{padding:6px}
+}

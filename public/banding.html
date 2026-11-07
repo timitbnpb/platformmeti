@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title data-i18n="bd2.title">Pembanding provinsi dan organisasi | Direktori METI</title>
+<meta name="description" content="Bandingkan 2 sampai 4 provinsi atau organisasi berdampingan: kapasitas, proyek, potensi, skor kesiapan dan peluang, regulasi, pakar, berita, dengan grafik interaktif dan unduhan CSV." data-i18n-attr="content:bd2.deskripsi">
+<meta name="theme-color" content="#122B4A">
+<link rel="icon" href="/img/logo-meti-tanda.png" type="image/png">
+<link rel="preload" href="/fonts/inter-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/inti/tema.css">
+<link rel="stylesheet" href="/inti/kepala.css">
+<link rel="stylesheet" href="/inti/gaya.css">
+<link rel="stylesheet" href="/inti/jm.css">
+<link rel="stylesheet" href="/inti/kh.css">
+<link rel="stylesheet" href="/analisis.css">
+<link rel="stylesheet" href="/grafik.css">
+<link rel="stylesheet" href="/banding.css">
+<script src="/tema.js"></script>
+</head>
+<body data-halaman="banding">
+<header class="top" id="kepala"></header>
+<main class="jm-halaman jm-wadah jm-an">
+<section class="jm-kh" aria-labelledby="judul">
+  <div class="jm-kh-teks">
+    <p class="jm-kh-ey"><svg class="jm-ik" width="16" height="16" aria-hidden="true" focusable="false"><use href="/img/ikon.svg#i-banding"/></svg><span data-i18n="bd2.eyebrow">Pembanding</span></p>
+    <h1 id="judul" data-i18n="bd2.judul">Bandingkan berdampingan</h1>
+    <p id="jawab" class="jm-kh-lead" data-i18n="bd2.lead">Pilih 2 sampai 4 provinsi atau organisasi, lihat angka kuncinya berdampingan, siapa yang unggul di tiap baris, dan bagikan hasilnya lewat tautan.</p>
+  </div>
+  <div class="jm-kh-ubin" id="ubin" aria-live="polite"></div>
+</section>
+<div id="isi"></div>
+</main>
+<footer class="jm-kaki" id="kaki"></footer>
+<script type="module" src="/banding.js"></script>
+</body>
+</html>

@@ -1,0 +1,422 @@
+{
+ "lapis": "publik",
+ "dibangun_pada": "2026-11-08",
+ "angka": [
+  {
+   "kode": "kapasitas",
+   "ikon": "petir",
+   "nilai": 13856,
+   "satuan": "MW",
+   "tahun": 2024,
+   "tingkat": "resmi",
+   "sumber": {
+    "judul": "Statistik Ketenagalistrikan Tahun 2024",
+    "penerbit": "Ditjen Ketenagalistrikan, Kementerian ESDM",
+    "url": "https://gatrik.esdm.go.id/gatrik/gatrik-api//storage/migrasi/download_index/files/91fa8-buku-statistik-ketenagalistrikan-2024.pdf",
+    "tingkat_bukti": "",
+    "halaman": "Tabel 21 hlm 21; hidro=PLTA/M; PLTS termasuk PLTS Atap; PLTGB (30 MW 2022, 250 MW 2023, 450 MW 2024) tidak dihitung"
+   }
+  },
+  {
+   "kode": "bauran",
+   "ikon": "grafik",
+   "nilai": 18.1,
+   "satuan": "%",
+   "tahun": 2024,
+   "tingkat": "via-pihak-ketiga",
+   "sumber": {
+    "judul": "Energy dataset (Our World in Data; bersumber Ember Yearly Electricity Data dan Energy Institute Statistical Review)",
+    "penerbit": "Our World in Data (CC BY 4.0)",
+    "url": "https://github.com/owid/energy-data",
+    "tingkat_bukti": "via-pihak-ketiga"
+   }
+  },
+  {
+   "kode": "investasi",
+   "ikon": "kartu",
+   "nilai": 24.3,
+   "satuan": "USD miliar",
+   "tahun": 2026,
+   "tingkat": "campuran",
+   "sumber": {
+    "judul": "Pendanaan tercatat di Direktori METI (338 skema, nilai per pemberi)",
+    "penerbit": "Direktori METI",
+    "url": "/pendanaan",
+    "tingkat_bukti": "campuran"
+   }
+  },
+  {
+   "kode": "proyek",
+   "ikon": "proyek",
+   "nilai": 63,
+   "satuan": "proyek",
+   "tahun": 2026,
+   "tingkat": "campuran",
+   "tambahan": {
+    "terlambat": 40,
+    "dasar": 238
+   },
+   "sumber": {
+    "judul": "Proyek terlacak (548); terlambat = status rencana, konstruksi, atau ditunda dengan COD target paling awal sebelum 2026",
+    "penerbit": "Direktori METI",
+    "url": "/proyek",
+    "tingkat_bukti": "campuran"
+   }
+  },
+  {
+   "kode": "regulasi",
+   "ikon": "regulasi",
+   "nilai": 23,
+   "satuan": "aturan",
+   "tahun": 2026,
+   "tingkat": "resmi",
+   "tambahan": {
+    "bulan_ini": 0
+   },
+   "sumber": {
+    "judul": "Regulasi berlaku yang ditetapkan 12 bulan terakhir, dari 496 aturan tercatat (BPK JDIH dan sumber resmi lain)",
+    "penerbit": "Direktori METI",
+    "url": "/regulasi",
+    "tingkat_bukti": "resmi"
+   }
+  },
+  {
+   "kode": "kerja",
+   "ikon": "koper",
+   "nilai": 21322,
+   "satuan": "orang",
+   "tahun": 2026,
+   "tingkat": "est",
+   "est": true,
+   "sumber": {
+    "judul": "Kebutuhan tenaga kerja konstruksi dan O&M dari 221 proyek RUPTL (11119 MW) dikali faktor Rutovitz, tahun 2026; estimasi, bukan data lowongan",
+    "penerbit": "Direktori METI",
+    "url": "/kerja",
+    "tingkat_bukti": "riset"
+   }
+  },
+  {
+   "kode": "modul",
+   "ikon": "tek-surya",
+   "nilai": 0.12,
+   "satuan": "USD/W",
+   "tahun": 2025,
+   "tingkat": "via-pihak-ketiga",
+   "tambahan": {
+    "sebelum": 0.133,
+    "tahun_sebelum": 2024
+   },
+   "sumber": {
+    "judul": "IRENA, Renewable Power Generation Costs in 2025 (harga modul surya dunia), diolah Our World in Data",
+    "penerbit": "IRENA via Our World in Data",
+    "url": "https://ourworldindata.org/grapher/solar-pv-prices",
+    "tingkat_bukti": "via-pihak-ketiga"
+   }
+  },
+  {
+   "kode": "emisi",
+   "ikon": "globe",
+   "nilai": 372.6,
+   "satuan": "Mt CO2e",
+   "tahun": 2025,
+   "tingkat": "via-pihak-ketiga",
+   "sumber": {
+    "judul": "Ember Yearly Electricity Data (release_generation_yearly_global), baris Indonesia",
+    "penerbit": "Ember",
+    "url": "https://ember-energy.org/data/yearly-electricity-data/",
+    "tingkat_bukti": ""
+   }
+  }
+ ],
+ "perubahan": {
+  "riwayat": {
+   "hari": 30,
+   "awal": "2026-11-07",
+   "jumlah": 1768,
+   "per": {
+    "proyek": 308,
+    "regulasi": 69,
+    "organisasi": 563,
+    "orang": 214,
+    "program": 9,
+    "berita": 605
+   }
+  },
+  "rapor": {
+   "periode": "2026-11",
+   "lalu": "2026-10",
+   "berita": [
+    26,
+    80
+   ],
+   "regulasi": [
+    0,
+    0
+   ],
+   "tender": [
+    0,
+    0
+   ]
+  }
+ },
+ "temuan": [
+  {
+   "kode": "celah",
+   "ikon": "tingkat",
+   "angka": {
+    "celah_mw": 42569,
+    "per_tahun": 4256.9,
+    "kali": 7.2,
+    "laju": 592.6,
+    "tahun": 2034
+   },
+   "label_est": true
+  },
+  {
+   "kode": "bauran",
+   "ikon": "grafik",
+   "angka": {
+    "real": 18.1,
+    "tahun_real": 2024,
+    "target": 34.3,
+    "tahun_target": 2034,
+    "selisih": 16.2
+   }
+  },
+  {
+   "kode": "lambat",
+   "ikon": "peringatan",
+   "angka": {
+    "lambat": 40,
+    "dari": 238,
+    "persen": 17,
+    "tahun": 2026
+   }
+  },
+  {
+   "kode": "modul",
+   "ikon": "tek-surya",
+   "angka": {
+    "sekarang": 0.12,
+    "tahun": 2025,
+    "sebelum": 0.133,
+    "tahun_sebelum": 2024,
+    "ubah": -9.8
+   }
+  },
+  {
+   "kode": "sebaran",
+   "ikon": "wilayah",
+   "angka": {
+    "n": 5,
+    "persen": 63,
+    "dari": 38,
+    "teratas": "Jawa Barat",
+    "tahun": 2025
+   },
+   "provinsi": [
+    "32",
+    "12",
+    "16",
+    "14",
+    "73"
+   ]
+  }
+ ],
+ "peta": {
+  "satuan": "MW",
+  "tahun": 2025,
+  "baris": [
+   {
+    "kode": "11",
+    "nama": "Aceh",
+    "mw": 64.41
+   },
+   {
+    "kode": "12",
+    "nama": "Sumatera Utara",
+    "mw": 2524.09
+   },
+   {
+    "kode": "13",
+    "nama": "Sumatera Barat",
+    "mw": 499.29
+   },
+   {
+    "kode": "14",
+    "nama": "Riau",
+    "mw": 1056.38
+   },
+   {
+    "kode": "15",
+    "nama": "Jambi",
+    "mw": 623.36
+   },
+   {
+    "kode": "16",
+    "nama": "Sumatera Selatan",
+    "mw": 1086.56
+   },
+   {
+    "kode": "17",
+    "nama": "Bengkulu",
+    "mw": 341.31
+   },
+   {
+    "kode": "18",
+    "nama": "Lampung",
+    "mw": 515.43
+   },
+   {
+    "kode": "19",
+    "nama": "Kepulauan Bangka Belitung",
+    "mw": 128.96
+   },
+   {
+    "kode": "21",
+    "nama": "Kepulauan Riau",
+    "mw": 30.09
+   },
+   {
+    "kode": "31",
+    "nama": "DKI Jakarta",
+    "mw": 65.33
+   },
+   {
+    "kode": "32",
+    "nama": "Jawa Barat",
+    "mw": 4190.15
+   },
+   {
+    "kode": "33",
+    "nama": "Jawa Tengah",
+    "mw": 578.9
+   },
+   {
+    "kode": "34",
+    "nama": "DI Yogyakarta",
+    "mw": 8.47
+   },
+   {
+    "kode": "35",
+    "nama": "Jawa Timur",
+    "mw": 698.77
+   },
+   {
+    "kode": "36",
+    "nama": "Banten",
+    "mw": 107.03
+   },
+   {
+    "kode": "51",
+    "nama": "Bali",
+    "mw": 45.21
+   },
+   {
+    "kode": "52",
+    "nama": "Nusa Tenggara Barat",
+    "mw": 69.18
+   },
+   {
+    "kode": "53",
+    "nama": "Nusa Tenggara Timur",
+    "mw": 60.49
+   },
+   {
+    "kode": "61",
+    "nama": "Kalimantan Barat",
+    "mw": 170.37
+   },
+   {
+    "kode": "62",
+    "nama": "Kalimantan Tengah",
+    "mw": 445.46
+   },
+   {
+    "kode": "63",
+    "nama": "Kalimantan Selatan",
+    "mw": 81.86
+   },
+   {
+    "kode": "64",
+    "nama": "Kalimantan Timur",
+    "mw": 199.93
+   },
+   {
+    "kode": "65",
+    "nama": "Kalimantan Utara",
+    "mw": 13.42
+   },
+   {
+    "kode": "71",
+    "nama": "Sulawesi Utara",
+    "mw": 210.69
+   },
+   {
+    "kode": "72",
+    "nama": "Sulawesi Tengah",
+    "mw": 662.76
+   },
+   {
+    "kode": "73",
+    "nama": "Sulawesi Selatan",
+    "mw": 1014.47
+   },
+   {
+    "kode": "74",
+    "nama": "Sulawesi Tenggara",
+    "mw": 9.65
+   },
+   {
+    "kode": "75",
+    "nama": "Gorontalo",
+    "mw": 31.72
+   },
+   {
+    "kode": "76",
+    "nama": "Sulawesi Barat",
+    "mw": 29.89
+   },
+   {
+    "kode": "81",
+    "nama": "Maluku",
+    "mw": 3.08
+   },
+   {
+    "kode": "82",
+    "nama": "Maluku Utara",
+    "mw": 6.17
+   },
+   {
+    "kode": "91",
+    "nama": "Papua",
+    "mw": 37.89
+   },
+   {
+    "kode": "92",
+    "nama": "Papua Barat",
+    "mw": 17.15
+   },
+   {
+    "kode": "93",
+    "nama": "Papua Selatan",
+    "mw": 8.16
+   },
+   {
+    "kode": "94",
+    "nama": "Papua Tengah",
+    "mw": 2.16
+   },
+   {
+    "kode": "95",
+    "nama": "Papua Pegunungan",
+    "mw": 5.32
+   },
+   {
+    "kode": "96",
+    "nama": "Papua Barat Daya",
+    "mw": 8.51
+   }
+  ]
+ }
+}

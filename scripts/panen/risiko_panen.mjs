@@ -21,7 +21,7 @@ export const LAPIS = {
   gambut: { nama: 'gfw_peatlands', ver: 'v20230302', lisensi: 'Global Peatlands (GFW), CC BY 4.0', url: 'https://data-api.globalforestwatch.org/dataset/gfw_peatlands/v20230302' },
 };
 const BNPB = 'https://gis.bnpb.go.id/server/rest/services/inarisk';
-export const BAHAYA = { banjir: 'INDEKS_BAHAYA_BANJIR', longsor: 'INDEKS_BAHAYA_TANAHLONGSOR', gempa: 'INDEKS_BAHAYA_GEMPABUMI', karhutla: 'INDEKS_BAHAYA_KARHUTLA', tsunami: 'INDEKS_BAHAYA_TSUNAMI', gunungapi: 'INDEKS_BAHAYA_GUNUNGAPI', multi: 'INDEKS_MULTI_BAHAYA' };
+export const BAHAYA = { multi: 'INDEKS_MULTI_BAHAYA', banjir: 'INDEKS_BAHAYA_BANJIR', longsor: 'INDEKS_BAHAYA_TANAHLONGSOR', gempa: 'INDEKS_BAHAYA_GEMPABUMI', karhutla: 'INDEKS_BAHAYA_KARHUTLA', tsunami: 'INDEKS_BAHAYA_TSUNAMI', gunungapi: 'INDEKS_BAHAYA_GUNUNGAPI' };
 
 async function lewatCache(kunci, ambilFn) {
   const f = path.join(CACHE, crypto.createHash('sha1').update(kunci).digest('hex'));
@@ -47,14 +47,22 @@ export function kumpulTitik() {
 async function bahaya(titik) {
   const out = {};
   for (const [k, svc] of Object.entries(BAHAYA)) {
+    try {
     for (let i = 0; i < titik.length; i += 150) {
       const bagian = titik.slice(i, i + 150);
       const body = new URLSearchParams({ geometry: JSON.stringify({ points: bagian.map((t) => [t.lng, t.lat]), spatialReference: { wkid: 4326 } }), geometryType: 'esriGeometryMultipoint', returnFirstValueOnly: 'true', f: 'json' });
-      const b = await lewatCache(`${BNPB}/${svc}/getSamples/${body}`, () => ambil(`${BNPB}/${svc}/ImageServer/getSamples`, { method: 'POST', body, headers: { 'content-type': 'application/x-www-form-urlencoded' }, buf: true }));
+      const b = await lewatCache(`${BNPB}/${svc}/getSamples/${body}`, async () => { // jangan simpan galat 503 ke cache; ulangi dengan jeda
+        for (let k = 0; ; k++) {
+          const r = await Promise.race([ambil(`${BNPB}/${svc}/ImageServer/getSamples`, { method: 'POST', body, headers: { 'content-type': 'application/x-www-form-urlencoded' }, buf: true }), new Promise((_, no) => setTimeout(() => no(new Error('waktu habis 90 dtk')), 90000))]);
+          if (JSON.parse(r.toString('utf8')).samples) return r;
+          if (k >= 3) throw new Error('InaRISK ' + svc + ': ' + r.toString('utf8').slice(0, 200));
+          await new Promise((ok) => setTimeout(ok, 15000));
+        }
+      });
       const j = JSON.parse(b.toString('utf8'));
-      if (!j.samples) throw new Error('InaRISK ' + svc + ': ' + b.toString('utf8').slice(0, 200));
       for (const s of j.samples) { const v = parseFloat(s.value); (out[bagian[s.locationId].id] ||= {})[k] = Number.isFinite(v) ? Math.round(v * 1000) / 1000 : null; }
     }
+    } catch (e) { console.log('lewati lapis bahaya', k, String(e.message).slice(0, 120)); if (k === 'multi') throw e; } // lapis tunggal boleh gagal; indeks multi wajib
   }
   return out;
 }
@@ -116,8 +124,7 @@ function dp(p, tol) { // Douglas-Peucker iteratif
   }
   return p.filter((_, i) => keep[i]);
 }
-const luas = (c) => { let s = 0; for (let i = 0, j = c.length - 1; i < c.length; j = i++) s += (c[j][0] + c[i][0]) * (c[j][1] - c[i][1]); return s / 2; };
-const BATAS = { x: [48, 58], y: [29, 38], z: 6 }; // ubin z6 yang menutup Indonesia (95-141 BT, 11 LS-6 LU)
+const luas = (c) => { let s = 0; for (let i = 0, j = c.length - 1; i < c.length; j = i++) s += c[j][0] * c[i][1] - c[i][0] * c[j][1]; return s / 2; }; // rumus tali sepatu baku: cincin luar MVT bernilai positif
 async function geoVektor(lapis, z, kelasDari, toleransi, minLuas) {
   const fitur = new Map(), n = 2 ** z, x0 = Math.floor(((95 + 180) / 360) * n), x1 = Math.floor(((141 + 180) / 360) * n), y0 = ubinDari(0, 6.5, z).y, y1 = ubinDari(0, -11.5, z).y;
   for (let x = x0; x <= x1; x++) for (let y = y0; y <= y1; y++) {
@@ -125,8 +132,6 @@ async function geoVektor(lapis, z, kelasDari, toleransi, minLuas) {
     for (const f of tile.fitur) {
       if (f.tipe !== 3) continue;
       const k = kelasDari(f.sifat); if (!k) continue;
-      const cincin = f.geom.map((c) => dp(c, toleransi)).filter((c) => c.length >= 4 && Math.abs(luas(c)) >= minLuas);
-      if (!cincin.length) continue;
       const poli = []; // cincin luar (arah +) membuka poligon baru, cincin dalam menempel
       for (const c of f.geom.map((c0) => dp(c0, toleransi)).filter((c) => c.length >= 4)) {
         const a = luas(c); if (Math.abs(a) < minLuas && a > 0) continue;

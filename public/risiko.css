@@ -1,0 +1,33 @@
+/* /risiko: pelengkap pelacak-proyek.css (peta, panel, pil) dengan kelas risiko, rantai komponen, lapisan geojson. Token tema.css saja. */
+.jm-rs3 #rsIsi{display:grid;gap:var(--gap);min-width:0}
+.jm-rs3 #rsIsi>*{min-width:0}
+.rs3-pil{display:inline-flex;align-items:center;gap:6px;padding:3px 10px;border-radius:var(--r-pil);font:700 var(--t-kecil)/var(--lh-rapat) var(--font);white-space:nowrap;background:var(--sbg);color:var(--sk)}
+.rs3-pil svg{flex:none}
+.rs3-pil b{font-variant-numeric:tabular-nums}
+.rs3-k-rendah{--sk:var(--ok);--sbg:var(--ok-bg)}
+.rs3-k-sedang{--sk:var(--info);--sbg:var(--info-bg)}
+.rs3-k-tinggi{--sk:var(--warn);--sbg:var(--warn-bg)}
+.rs3-k-sangat-tinggi{--sk:var(--bad);--sbg:var(--bad-bg)}
+.rs3-t-rendah{background:var(--ok)}.rs3-t-sedang{background:var(--info)}.rs3-t-tinggi{background:var(--warn)}.rs3-t-sangat-tinggi{background:var(--bad)}
+.rs3-b-rendah{background:var(--ok)}.rs3-b-sedang{background:var(--info)}.rs3-b-tinggi{background:var(--warn)}.rs3-b-sangat-tinggi{background:var(--bad)}
+/* komponen */
+.rs3-komp{display:flex;flex-wrap:wrap;gap:6px}
+.rs3-ch{display:inline-flex;align-items:center;gap:5px;padding:3px 9px;border-radius:var(--r-pil);font:600 var(--t-kecil)/var(--lh-rapat) var(--font);background:var(--sbg);color:var(--sk);white-space:nowrap}
+.rs3-c-hutan{--sk:var(--ok);--sbg:var(--ok-bg)}
+.rs3-c-gambut{--sk:var(--data3);--sbg:var(--warn-bg)}
+.rs3-c-adat{--sk:var(--data5);--sbg:var(--info-bg)}
+.rs3-c-bahaya{--sk:var(--bad);--sbg:var(--bad-bg)}
+.rs3-sw{flex:none;width:14px;height:14px;border-radius:4px;border:2px solid var(--card)}
+.rs3-sw-hutan{background:#2f7d4f}.rs3-sw-gambut{background:#8a5a2b}.rs3-sw-adat{background:#7b4fb0}.rs3-sw-bahaya{background:linear-gradient(90deg,#8bc34a,#ffc107,#ff5722)}
+.rs3-hk{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:4px 12px;color:var(--ink2)}
+.rs3-hk li{display:inline-flex;align-items:center;gap:6px}
+.rs3-hk i{display:block;width:12px;height:12px;border-radius:3px}
+.rs3-bar{display:grid;grid-template-columns:88px minmax(0,1fr) auto;align-items:center;gap:8px}
+.rs3-bar>i{display:block;height:8px;border-radius:4px;background:var(--line-cell);position:relative;overflow:hidden}
+.rs3-bar>i>u{position:absolute;inset:0 auto 0 0;border-radius:4px;background:var(--sk,var(--accent))}
+.rs3-skor{display:inline-flex;align-items:center;gap:8px}
+.rs3-g-leg{list-style:none;margin:0 0 12px;padding:0;display:flex;flex-wrap:wrap;gap:6px 18px;color:var(--ink2);font-size:var(--t-kecil)}
+.rs3-g-leg li{display:inline-flex;align-items:center;gap:8px}
+.rs3-g-leg i{display:block;width:14px;height:14px;border-radius:4px}
+@media (min-width:768px){.pb-tabel .pb-c-skor{width:128px}.pb-tabel .pb-c-komp{width:24%}.pb-tabel .pb-c-n{width:24%}}
+@media (max-width:999px){.pt2-saring .jm-cari{grid-column:1/-1}}

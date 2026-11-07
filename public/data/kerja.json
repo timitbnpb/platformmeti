@@ -1780,5 +1780,16 @@
    "url": "https://bnsp.go.id",
    "diperiksa": "2026-11-08"
   }
- ]
+ ],
+ "lowongan": [],
+ "periksa": {
+  "situs": 211,
+  "diperiksa": 211,
+  "halaman_karir": 77,
+  "dengan_lowongan": 0,
+  "gagal": 10,
+  "tanggal": "2026-11-07",
+  "ua": "METI-Network-research/0.1",
+  "keterangan": "Hanya halaman karir resmi organisasi (JSON-LD JobPosting / HTML publik). Tanpa LinkedIn, Jobstreet, dan media sosial."
+ }
 }

@@ -1,0 +1,93 @@
+/* Riwayat perubahan (G1): "Diperbarui" + tombol Riwayat, dialog linimasa, pita beranda, pil jenis perubahan, pil kesegaran.
+   Dipasang otomatis oleh inti/riwayat.js (tanpa edit HTML). Tanpa hex: semua warna dari token tema.css. */
+
+/* ---- warna jenis data dan jenis perubahan ---- */
+.jm-rw-d-organisasi{--rw:var(--tp-jaringan)}.jm-rw-d-orang{--rw:var(--tp-adil)}.jm-rw-d-proyek{--rw:var(--tp-surya)}
+.jm-rw-d-regulasi{--rw:var(--tp-kebijakan)}.jm-rw-d-pendanaan{--rw:var(--tp-biaya)}.jm-rw-d-berita{--rw:var(--tp-listrik)}
+.jm-rw-d-inovasi{--rw:var(--tp-simpan)}.jm-rw-d-program{--rw:var(--tp-efisiensi)}
+.jm-rw-ik{display:inline-flex;align-items:center;justify-content:center;flex:none;width:36px;height:36px;border-radius:var(--r-pil);color:var(--rw,var(--accent));background:color-mix(in srgb,var(--rw,var(--accent)) 14%,transparent)}
+.jm-rw-ik .jm-ik{width:20px;height:20px}
+
+.jm-rw-j,.jm-rw-st{display:inline-flex;align-items:center;gap:6px;min-height:24px;padding:0 10px;border-radius:var(--r-pil);font:600 var(--t-kecil)/1 var(--font);white-space:nowrap}
+.jm-rw-j::before,.jm-rw-st::before{content:"";width:8px;height:8px;border-radius:var(--r-pil);background:currentColor;flex:none}
+.jm-rw-tambah,.jm-rw-segar{background:var(--ok-bg);color:var(--ok)}
+.jm-rw-hapus,.jm-rw-basi{background:var(--bad-bg);color:var(--bad)}
+.jm-rw-ubah{background:var(--info-bg);color:var(--info)}
+.jm-rw-perlu{background:var(--warn-bg);color:var(--warn)}
+.jm-rw-seg-ok{background:var(--ok)}.jm-rw-seg-bad{background:var(--bad)}.jm-rw-seg-info{background:var(--info)}
+
+/* ---- "Diperbarui <tanggal>" + tombol Riwayat ---- */
+.jm-rw{display:inline-flex;flex-wrap:wrap;align-items:center;gap:8px 12px;margin:0;color:var(--ink2);font:400 var(--t-kecil)/var(--lh-rapat) var(--font)}
+.jm-rw-tgl{display:inline-flex;align-items:center;gap:6px}
+.jm-rw-tgl .jm-ik{width:16px;height:16px;color:var(--accent)}
+.jm-rw-tb{display:inline-flex;align-items:center;justify-content:center;gap:6px;min-height:32px;padding:0 12px;border:1px solid var(--line-ctl);border-radius:var(--r-pil);background:var(--card);color:var(--accent);font:600 var(--t-tombol)/1 var(--font);cursor:pointer}
+.jm-rw-tb:hover{background:var(--soft-hijau);border-color:var(--accent)}
+.jm-rw-tb:focus-visible{outline:2px solid var(--fokus);outline-offset:2px}
+.jm-rw-tb .jm-ik{width:16px;height:16px}
+.jm-rw-n{display:inline-flex;align-items:center;justify-content:center;min-width:20px;height:20px;padding:0 6px;border-radius:var(--r-pil);background:var(--accent);color:var(--on-accent);font:700 var(--t-label)/1 var(--font);font-variant-numeric:tabular-nums}
+.jm-rw-n[hidden]{display:none}
+
+/* ---- dialog linimasa ---- */
+.jm-rw-dlg{width:min(680px,calc(100vw - 24px));max-height:min(86vh,820px);padding:0;border:1px solid var(--line);border-radius:var(--r-lg);background:var(--card);color:var(--ink);box-shadow:var(--shadow-lg);overflow:hidden}
+.jm-rw-dlg[open]{display:grid;grid-template-rows:auto minmax(0,1fr)}
+.jm-rw-dlg::backdrop{background:color-mix(in srgb,var(--ink) 55%,transparent)}
+.jm-rw-kep{display:grid;grid-template-columns:auto minmax(0,1fr) auto;align-items:center;gap:14px;padding:18px 20px;border-bottom:1px solid var(--line);background:var(--surface)}
+.jm-rw-kep h2{margin:0;font:700 var(--t-h2)/var(--lh-judul) var(--font);color:var(--head)}
+.jm-rw-kep p{margin:2px 0 0;color:var(--ink2);font:400 var(--t-kecil)/var(--lh-rapat) var(--font);overflow-wrap:anywhere}
+.jm-rw-x{display:inline-flex;align-items:center;justify-content:center;width:var(--target);height:var(--target);border:1px solid var(--line-ctl);border-radius:var(--r-pil);background:var(--card);color:var(--ink);cursor:pointer}
+.jm-rw-x:hover{background:var(--soft-hijau)}
+.jm-rw-isi{overflow:auto;padding:20px;display:grid;gap:24px;align-content:start}
+
+.jm-rw-lini{list-style:none;margin:0;padding:0;display:grid;gap:24px}
+.jm-rw-hari{display:grid;gap:12px}
+.jm-rw-hari>h3{display:flex;align-items:center;justify-content:space-between;gap:12px;margin:0;padding:8px 12px;border-radius:var(--r-sm);background:var(--soft-hijau);color:var(--head);font:700 var(--t-body)/var(--lh-rapat) var(--font)}
+.jm-rw-hari>h3 small{color:var(--ink2);font:600 var(--t-kecil)/1 var(--font);font-variant-numeric:tabular-nums}
+.jm-rw-hari>ol{list-style:none;margin:0;padding:0 0 0 18px;display:grid;gap:12px;border-left:2px solid var(--line)}
+.jm-rw-hari>ol>li{position:relative;display:grid;gap:8px;padding:12px 14px;border:1px solid var(--line);border-radius:var(--r-sm);background:var(--card)}
+.jm-rw-hari>ol>li::before{content:"";position:absolute;left:-26px;top:18px;width:10px;height:10px;border-radius:var(--r-pil);background:var(--rw,var(--accent));box-shadow:0 0 0 3px var(--card)}
+.jm-rw-baris{display:flex;flex-wrap:wrap;align-items:center;gap:8px 10px}
+.jm-rw-medan{display:inline-flex;align-items:center;gap:6px;color:var(--ink);font:600 var(--t-body)/var(--lh-rapat) var(--font)}
+.jm-rw-medan .jm-ik{width:16px;height:16px;color:var(--ink2)}
+.jm-rw-nilai{display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 10px;margin:0;font:400 var(--t-body)/var(--lh-isi) var(--font);overflow-wrap:anywhere}
+.jm-rw-nilai del{color:var(--ink2);text-decoration:line-through;text-decoration-thickness:1.5px}
+.jm-rw-nilai ins{padding:1px 8px;border-radius:var(--r-sm);background:var(--ok-bg);color:var(--ok);font-weight:600;text-decoration:none}
+.jm-rw-nilai .jm-ik{width:14px;height:14px;color:var(--ink2);align-self:center}
+.jm-rw-sum{display:inline-flex;align-items:center;gap:6px;color:var(--accent);font:600 var(--t-kecil)/1 var(--font);text-decoration:none}
+.jm-rw-sum .jm-ik{width:14px;height:14px}
+.jm-rw-sum:hover{background:var(--soft-hijau)}
+.jm-rw-kosong{display:grid;justify-items:center;gap:8px;padding:28px 12px;text-align:center;color:var(--ink2)}
+.jm-rw-kosong .jm-ik{width:32px;height:32px;color:var(--accent)}
+.jm-rw-kosong p{margin:0}.jm-rw-kosong strong{color:var(--ink)}
+
+/* ---- pita "Yang berubah minggu ini" (beranda) ---- */
+.jm-rw-pita{margin-block:24px}
+.jm-rw-kisi{list-style:none;margin:0;padding:0;display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
+.jm-rw-kisi>li{display:grid;grid-template-rows:auto minmax(0,1fr) auto;gap:12px;align-content:start;padding:16px;border:1px solid var(--line);border-radius:var(--r-sm);background:var(--card)}
+.jm-rw-kisi .jm-rw-atas{display:flex;align-items:center;justify-content:space-between;gap:8px}
+.jm-rw-kisi .jm-rw-nama{margin:0;font:700 var(--t-body)/var(--lh-rapat) var(--font);color:var(--head);display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;overflow-wrap:anywhere}
+.jm-rw-kisi .jm-rw-nama a{color:inherit;text-decoration:none}
+.jm-rw-kisi .jm-rw-nama a:hover{color:var(--accent)}
+.jm-rw-kisi .jm-rw-nilai{font-size:var(--t-kecil)}
+.jm-rw-kisi .jm-rw-ket{display:flex;align-items:center;gap:6px;color:var(--ink2);font:600 var(--t-kecil)/var(--lh-rapat) var(--font)}
+.jm-rw-kisi .jm-rw-ket .jm-ik{width:14px;height:14px}
+@media (max-width:519px){
+  .jm-rw-kep{padding:14px 16px;gap:10px}
+  .jm-rw-isi{padding:16px}
+  .jm-rw-hari>ol{padding-left:14px}
+  .jm-rw-hari>ol>li::before{left:-22px}
+}
+
+/* ---- tab Admin kesegaran ---- */
+.jm-rw-kons{list-style:none;margin:0;padding:0;display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(200px,1fr))}
+.jm-rw-kons>li{display:grid;gap:8px;padding:14px 16px;border:1px solid var(--line);border-radius:var(--r-sm);background:var(--card)}
+.jm-rw-kons b{font:700 var(--t-angka)/1 var(--font);font-variant-numeric:tabular-nums;color:var(--head)}
+.jm-rw-kons span{color:var(--ink2);font:400 var(--t-kecil)/var(--lh-rapat) var(--font)}
+.jm-rw-dom{display:flex;flex-wrap:wrap;gap:6px}
+.jm-rw-dom .jm-pil{max-width:100%;overflow:hidden;text-overflow:ellipsis}
+.jm-rw-ds{display:inline-flex;align-items:center;gap:10px;font-weight:600}
+.jm-rw-ds .jm-rw-ik{width:28px;height:28px}
+.jm-rw-ds .jm-rw-ik .jm-ik{width:16px;height:16px}
+.jm-rw-seg-sw{display:inline-block;width:12px;height:12px;border-radius:var(--r-sm);vertical-align:-1px;margin-right:6px}
+.jm-rw-legenda{display:flex;flex-wrap:wrap;gap:8px 16px;margin:0 0 12px;padding:0;list-style:none;color:var(--ink2);font:400 var(--t-kecil)/var(--lh-rapat) var(--font)}
+.jm-rw-sunyi{color:var(--ink2)}
+.jm-tabel td.jm-rw-nw{white-space:nowrap}

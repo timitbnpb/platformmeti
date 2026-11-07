@@ -120,3 +120,9 @@ Pembagian agent: F1 (1+2), F2 (3+7), F3 (4+8), F4 (5+6), F5 (9, agent Green jobs
 5. G5 Glosarium nasional /istilah dengan hover definisi di seluruh situs.
 Urutan jalan: G1 dan G2 segera; G3 setelah G1; G4 dan G5 saat slot kosong; Gelombang D (uji hijau, cek visual, commit lokal, Buku Pegangan) di jam terakhir.
 6. Pilihan pemilik tambahan: kartu bagikan otomatis (OG), glosarium nasional /istilah, aksesibilitas + mode gelap penuh, tinjau seluruh bahasa Inggris (en.json). Aksesibilitas/mode gelap dan tinjau EN dijalankan di gelombang D (setelah agent lain berhenti menyunting CSS dan i18n) agar tidak bentrok.
+
+## Gelombang H: Iklim dan karbon (lapisan klaim, bukan direktori terpisah)
+- H1 (fase 1): registri karbon terpadu (Verra, Gold Standard, SRN PPI, IDXCarbon, Plan Vivo), pasar karbon energi (IDXCarbon, PTBAE-PU, pajak karbon, faktor emisi grid), dampak harga karbon ke EBT vs PLTU, halaman /karbon, pelaku masuk direktori.
+- H2 (fase 2): lapisan lahan (konsesi, perhutanan sosial, wilayah adat, mangrove, kawasan hutan, gambut), klaim per provinsi/kabupaten di profil wilayah, uji integritas karbon (tidak di SRN, multi-registri, tumpang tindih, metodologi, otorisasi) berbahasa netral dengan hak jawab, lapisan di peta nasional.
+- Fase 3 (kemitraan data poligon resmi KLHK/BRWA/CIFOR) ditunda sampai ada mitra.
+Juga: peta pemangku kepentingan per proyek, pencocok lokasi industri hijau, pelacak target vs realisasi (berjalan).

@@ -1,6 +1,7 @@
 /* /metode: cara kerja data (alur), tingkat bukti, katalog sumber, metode per kartu (akordeon + rumus), isi angka, batasan dan kutipan. Daftar isi lengket.
    Teks dari kamus; katalog sumber dari /data/sumber_katalog.json (scripts/pipa/katalog_sumber.mjs). */
 import { mulaiHalaman } from "/inti/kepala.js";
+import { buktiHtml } from "/inti/bukti.js";
 import { esc, ikon, debounce } from "/inti/umum.js";
 import { t, tanggal, bahasa } from "/i18n.js";
 import { exHtml, sumberHtml, cariHtml, pilihHtml } from "/inti/komponen.js";
@@ -99,7 +100,7 @@ function tabelSumber() {
   const th = (k, kelas = "") => `<th scope="col" class="${kelas}" aria-sort="${S.uk === k ? (S.ua > 0 ? "ascending" : "descending") : "none"}"><button type="button" class="jm-urut" data-uk="${k}">${esc(t("met.sc." + k))}</button></th>`;
   const isi = rows.slice((S.hal - 1) * PER, S.hal * PER).map((r) => `<tr><td data-label="${esc(t("met.sc.sumber"))}" class="met-nama"><span class="met-nm">${lg(r.penerbit)}<span><b title="${esc(r.judul)}">${esc(r.judul)}</b><small>${esc(r.penerbit || "-")}</small></span></span></td>
     <td data-label="${esc(t("met.sc.dataset"))}"><span class="jm-pil met-pds">${ikon("tabel", 14)}<span>${esc(labDs(r.dataset))}</span></span></td>
-    <td data-label="${esc(t("met.sc.bukti"))}">${pilBukti(r.tingkat_bukti)}</td>
+    <td data-label="${esc(t("met.sc.bukti"))}">${r.tingkat_bukti ? buktiHtml(r.tingkat_bukti, { sumber: r.judul, tanggal: r.diperbarui }) : "-"}</td>
     <td data-label="${esc(t("met.sc.lisensi"))}">${r.lisensi ? `<span class="jm-pil met-pli" title="${esc(r.lisensi)}">${esc(lisensiPendek(r.lisensi))}</span>` : `<span class="met-kosong">${esc(t("met.belum_dicatat"))}</span>`}</td>
     <td data-label="${esc(t("met.sc.tahun"))}" class="met-n">${r.tahun ? esc(String(r.tahun)) : "-"}</td>
     <td data-label="${esc(t("met.sc.diperbarui"))}" class="met-n">${r.diperbarui ? esc(tanggal(r.diperbarui)) : "-"}</td>

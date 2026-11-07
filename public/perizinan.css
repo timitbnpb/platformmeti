@@ -1,0 +1,18 @@
+/* /perizinan: pop-up rincian, langkah metode. Token tema.css saja. */
+dialog.pz-dlg{width:min(880px,calc(100vw - 32px));max-height:calc(100dvh - 48px);padding:24px;border:1px solid var(--line);border-radius:var(--r-lg);background:var(--card);color:var(--ink);box-shadow:var(--shadow-lg)}
+dialog.pz-dlg::backdrop{background:rgb(11 23 38/.55)}
+.pz-dh{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:16px}
+.pz-dh h2{margin:0;font-size:var(--t-h3);color:var(--head)}
+.pz-dr{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin-bottom:16px}
+.pz-dr .jm-pil{display:inline-flex;align-items:center;gap:6px}
+.pz-komp{display:inline-flex;align-items:center;gap:8px;color:var(--ink)}
+.pz-tabel td{vertical-align:top}
+.pz-daftar{margin:6px 0 0;padding:0;list-style:none;display:grid;gap:6px}
+.pz-daftar li{color:var(--ink2);font-size:var(--t-kecil)}
+.pz-langkah{margin:0 0 var(--gap);padding:0;list-style:none;display:grid;gap:16px;position:relative}
+.pz-langkah li{display:grid;grid-template-columns:auto minmax(0,1fr);gap:12px;align-items:start;padding:12px 16px;border:1px solid var(--line);border-radius:var(--r);background:var(--card)}
+.pz-langkah li>svg{margin-top:2px;color:var(--accent)}
+.pz-langkah p{margin:2px 0 0;color:var(--ink2)}
+.pz-celah{margin:0 0 var(--gap);padding-left:20px;display:grid;gap:8px;color:var(--ink2)}
+.inf-pv:is(.on,:hover){opacity:.9}
+@media (max-width:639px){dialog.pz-dlg{padding:16px}}

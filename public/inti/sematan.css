@@ -1,0 +1,12 @@
+/* Kartu sematan (<iframe> di situs luar): satu kolom ringkas, token dari tema.css. */
+body{margin:0;background:var(--paper);color:var(--ink);font:400 var(--t-body)/var(--lh-isi) var(--font)}
+.sm{box-sizing:border-box;min-height:100vh;display:grid;align-content:space-between;gap:16px;padding:20px;border-top:4px solid var(--meti-lime)}
+.sm-kop{display:flex;align-items:center;gap:10px;color:var(--head)}
+.sm h1{margin:0;font:700 var(--t-h2)/var(--lh-rapat) var(--font);color:var(--head)}
+.sm-sub{margin:4px 0 0;color:var(--ink2)}
+.sm-angka{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:12px;margin:0;padding:0;list-style:none}
+.sm-angka li{display:grid;gap:4px;padding:14px;border:1px solid var(--line);border-radius:var(--r-lg);background:var(--surface)}
+.sm-angka b{font:700 var(--t-h2)/var(--lh-rapat) var(--font);color:var(--accent)}
+.sm-angka span{color:var(--ink2)}
+.sm-kaki{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px;padding-top:12px;border-top:1px solid var(--line);color:var(--ink2);font-size:var(--t-label)}
+.sm-kaki a{color:var(--accent);font-weight:600;text-decoration:none}

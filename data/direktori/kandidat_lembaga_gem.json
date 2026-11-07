@@ -2,7 +2,7 @@
  "_catatan": "Pemilik/operator/induk GEM yang belum ada di organisasi.json (nama ternormalisasi + alias). KANDIDAT saja: tinjau kurator sebelum masuk direktori; tidak dimuat potret.",
  "sumber": "Global Energy Monitor (CC BY 4.0)",
  "tanggal": "2026-11-08",
- "jumlah": 326,
+ "jumlah": 324,
  "baris": [
   {
    "nama": "to be determined",
@@ -817,21 +817,6 @@
     "Banyuasin power station",
     "Karang Asem power station",
     "Kuala Tanjung-1 power station"
-   ]
-  },
-  {
-   "nama": "Sarulla Operations Ltd",
-   "peran": [
-    "operator",
-    "pemilik"
-   ],
-   "tracker": [
-    "geothermal"
-   ],
-   "jumlah_baris": 6,
-   "kapasitas_pemilik_mw": 330,
-   "contoh_proyek": [
-    "Sarulla geothermal power plant"
    ]
   },
   {
@@ -3823,20 +3808,6 @@
    "kapasitas_pemilik_mw": 60,
    "contoh_proyek": [
     "Hu'u Daha geothermal power plant"
-   ]
-  },
-  {
-   "nama": "PT Astra International Tbk",
-   "peran": [
-    "induk"
-   ],
-   "tracker": [
-    "coal"
-   ],
-   "jumlah_baris": 1,
-   "kapasitas_pemilik_mw": 0,
-   "contoh_proyek": [
-    "Astratel power station"
    ]
   },
   {

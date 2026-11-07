@@ -77,3 +77,29 @@
 .kg-cat{margin:10px 0 0;display:flex;justify-content:flex-end}
 .kg-tc-surya{color:var(--tp-surya)}.kg-tc-panas-bumi{color:var(--tp-panas)}.kg-tc-bayu-darat,.kg-tc-bayu-laut{color:var(--tp-bayu)}.kg-tc-air{color:var(--tp-hidro)}.kg-tc-bioenergi{color:var(--tp-bio)}
 .kg-pil .jm-ikt{width:14px;height:14px;flex:none;color:var(--tk)}
+
+/* ---- insentif fiskal dan taksonomi hijau OJK ---- */
+.kg2-kartu{display:grid;gap:20px;margin:0 0 16px;padding:0;list-style:none;grid-template-columns:repeat(auto-fill,minmax(300px,1fr))}
+.kg2-kt{display:grid;align-content:start;gap:12px;padding:20px;border:1px solid var(--line);border-radius:var(--r);background:var(--card);box-shadow:var(--shadow)}
+.kg2-kt.kg2-mati{background:var(--surface)}
+.kg2-kt h3{margin:0;font:700 var(--t-h3)/var(--lh-judul) var(--font);color:var(--head)}
+.kg2-pils{display:flex;flex-wrap:wrap;gap:8px}
+.kg2-un{margin:0;color:var(--ink2);font-size:var(--t-kecil)}.kg2-un span{font-weight:600;color:var(--ink)}
+.kg2-dasar{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;padding:12px 14px;border-radius:var(--r-sm);background:var(--surface)}
+.kg2-dasar div{display:grid;gap:2px;min-width:0}.kg2-dasar small{color:var(--ink2);font-size:var(--t-kecil)}.kg2-dasar b{font-weight:600;color:var(--ink);font-size:var(--t-kecil);overflow-wrap:anywhere}
+.kg2-reg{display:inline-flex;align-items:center;gap:6px;justify-self:start}
+.kg2-j-bm{--tk:var(--tp-industri)}.kg2-j-pd{--tk:var(--tp-biaya)}.kg2-j-pn{--tk:var(--tp-karbon)}.kg2-j-pb{--tk:var(--tp-listrik)}.kg2-j-ta{--tk:var(--tp-efisiensi)}.kg2-j-th{--tk:var(--tp-adil)}
+.kg2-s-ok,.kg2-h,.kg2-eo{--tk:var(--ok)}.kg2-s-no,.kg2-0{--tk:var(--bad)}.kg2-t,.kg2-ec{--tk:var(--warn)}.kg2-0{--tk:var(--ink2)}
+.kg2-legenda{display:grid;gap:12px;margin:0 0 16px;padding:16px 20px;border:1px solid var(--line);border-radius:var(--r);background:var(--surface)}
+.kg2-lg{display:grid;gap:8px}.kg2-lg small{color:var(--ink2);font-size:var(--t-kecil);font-weight:600}
+.kg2-lgp{display:flex;flex-wrap:wrap;gap:8px}
+.kg2-akt{display:grid;gap:2px;min-width:220px}.kg2-akt small{color:var(--ink2);font-size:var(--t-kecil)}
+.kg2-bukti{display:inline-flex;align-items:center;gap:6px;white-space:nowrap}
+#tb-taks .jm-tabel{width:100%;min-width:860px}
+@media (max-width:719px){.kg2-kartu{grid-template-columns:1fr}#tb-taks .jm-tabel{min-width:0}.kg2-akt{min-width:0}}
+#tb-taks th:nth-child(1),#tb-taks td:nth-child(1){width:34%}
+#tb-taks td:nth-child(2),#tb-taks td:nth-child(3),#tb-taks td:nth-child(6){text-align:center}
+.kg2-akt{min-width:260px}
+@media (max-width:719px){#tb-taks td:nth-child(1){width:auto}#tb-taks td:nth-child(2),#tb-taks td:nth-child(3),#tb-taks td:nth-child(6){text-align:left}}
+.kg2-lgp .jm-pil-tek{white-space:normal;max-width:100%}
+@media (max-width:719px){#tb-taks td[data-label]{display:grid;grid-template-columns:130px minmax(0,1fr);gap:8px;align-items:center;text-align:left}#tb-taks td::before{white-space:normal;min-width:0}#tb-taks td.jm-num{text-align:left}}

@@ -1,7 +1,9 @@
 /* /rantai: kebutuhan PLTS 100 GWp per tahun vs kapasitas 40 pabrikan modul (ESDM DJEBTKE). Data statis /data/rantai_plts.json. */
 import { mulaiHalaman } from "/inti/kepala.js";
 import { nanti, esc, hantuHtml, debounce, ikon } from "/inti/umum.js";
-import { cariHtml, pilihHtml, hapusHtml, hitungHtml } from "/inti/komponen.js";
+import { cariHtml, pilihHtml, hapusHtml, hitungHtml, exHtml } from "/inti/komponen.js";
+import { aksiHtml, hlHtml } from "/inti/aksi_ex.js";
+import { kolomSvg, batangSvg as batangIh, tipHtml, tabel as tabelIh, n1 } from "/info_hijau.js";
 import { t, tanggal } from "/i18n.js";
 import { ikonTek } from "/inti/ikon_tek.js";
 import { PROV } from "/penerbit.js";
@@ -16,6 +18,7 @@ const WARNA = { lokal: "--data1", ekspor: "--data3", keduanya: "--data4" };
 let d = null, dp = null, tek = "surya", fProv = "", fKomp = "", horizon = 10, urut = { k: "mwp", arah: -1 }, cari = new URLSearchParams(location.search).get("cari") || "", fPasar = "", fApamsi = "", fBin = null;
 let mPasar = "", mApamsi = "", sel = null, urutKota = { k: "mwp", arah: -1 };
 let halK = 1, hal = 1, balaiPer = 10, tkdnDat = null, popIdx = -1, daftarKini = [];
+let tkdn2 = null, fKat = "", cariS = "";
 let peta = null, petaSiap = false, grup = [], markah = [];
 
 const gw = (mwp) => mwp / 1000;
@@ -397,7 +400,7 @@ function komp() {
       if (!ada) return `<a class="jm-rt-kk jm-rt-celah" href="/peluang"><span class="jm-rt-ik jm-rt-w3">${ikon("peringatan", 22)}</span><b>${esc(t("rt.komp." + k.id))}</b><span class="jm-rt-n"><span class="jm-pil jm-pil-warn">${esc(t("rt.celah"))}</span></span><small>${esc(t("rt.celah_cat"))}</small><span class="jm-rt-ajak">${esc(t("rt.peluang"))}</span></a>`;
       const top = [...k.pemasok].sort((a, b) => (b.mwp ?? -1) - (a.mwp ?? -1)).slice(0, 3).map((p) => logoHtml({ ...(peta.get(p.id) || p), nama: namaBaku(p.nama).nama }, "jm-rt-lgk")).join(""), lebih = k.pemasok.length - 3;
       return `<button type="button" class="jm-rt-kk" data-komp="${esc(k.id)}" aria-pressed="${fKomp === k.id}">${kompIk(k.id, i)}<b>${esc(t("rt.komp." + k.id))}</b>
-        <span class="jm-rt-n"><strong>${esc(num(k.pemasok.length))}</strong><span>${esc(t("rt.kk.label"))}</span>${tk.length ? `<span class="jm-pil ${median(tk) >= 40 ? "jm-pil-ok" : "jm-pil-warn"}">${esc(t("rt.kk.tkdn", { v: num(median(tk), 1) }))}</span>` : ""}</span>
+        <span class="jm-rt-n"><strong>${esc(num(k.pemasok.length))}</strong><span>${esc(t("rt.kk.label"))}</span>${tk.length ? `<span class="jm-pil ${median(tk) >= 40 ? "jm-pil-ok" : "jm-pil-warn"}">${esc(t("rt.kk.tkdn", { v: num(median(tk), 1) }))}</span>${tk.length ? `<span class="jm-pil jm-pil-info">${esc(t("rt2.kk.maks", { v: num(Math.max(...tk), 1) }))}</span>` : ""}` : ""}</span>
         <span class="jm-rt-lgs">${top}${lebih > 0 ? `<span class="jm-rt-lebihk">+${lebih}</span>` : ""}</span></button>`; }).join("")}</div>`;
 }
 
@@ -412,7 +415,7 @@ function cara() {
   $("kutip").textContent = t("rt.kutip", { tanggal: tanggal(d.dibangun_pada, { gaya: "panjang" }) });
 }
 
-function gambarSemua() { tekPilih(); komp(); for (const e of document.querySelectorAll("[data-surya]")) e.hidden = tek !== "surya"; jawab(); kartu(); grafikKebutuhan(); grafikTkdn(); petaPerbarui(); saringRender(); tabel(); cara(); }
+function gambarSemua() { tekPilih(); komp(); rt2Pasok(); rt2Sisa(); for (const e of document.querySelectorAll("[data-surya]")) e.hidden = tek !== "surya"; jawab(); kartu(); grafikKebutuhan(); grafikTkdn(); petaPerbarui(); saringRender(); tabel(); cara(); }
 
 function segSync(seg, b) { for (const x of seg.children) x.setAttribute("aria-selected", String(x === b)); }
 
@@ -482,6 +485,9 @@ function pasang() {
     for (const th of b.closest("tr").children) th.setAttribute("aria-sort", th === b.parentElement ? (urut.arah > 0 ? "ascending" : "descending") : "none");
     nanti(tabel);
   });
+  $("rt2-sisa").addEventListener("input", debounce((e) => { if (e.target.id === "rt2-cari") { cariS = e.target.value; rt2Tabel(); } }));
+  $("rt2-sisa").addEventListener("change", (e) => { if (e.target.id === "rt2-kat") { fKat = e.target.value; nanti(rt2Tabel); } });
+  $("rt2-sisa").addEventListener("click", (e) => { if (!e.target.closest("#rt2-hapus")) return; cariS = ""; fKat = ""; $("rt2-cari").value = ""; $("rt2-kat").value = ""; nanti(rt2Tabel); });
   // peta dimuat malas saat mendekati layar
   const el = $("peta-pabrik");
   if ("IntersectionObserver" in window) {
@@ -493,9 +499,70 @@ function pasang() {
 async function mulai() {
   await mulaiHalaman();
   $("kartu").innerHTML = hantuHtml(2);
-  try { [d, dp] = await Promise.all([muatData("rantai_plts.json"), muatData("rantai_pasok.json")]); } catch (e) { tampilGalat($("kartu"), mulai); return; }
+  try { [d, dp] = await Promise.all([muatData("rantai_plts.json"), muatData("rantai_pasok.json")]); tkdn2 = await muatData("tkdn_produk.json").catch(() => ({ baris: [], sumber: [], meta: {} })); } catch (e) { tampilGalat($("kartu"), mulai); return; }
   pasangAksi(["aksi-peta", "aksi-tabel"]);
   gambarSemua(); pasang();
   saatBahasa(gambarSemua);
 }
 mulai();
+
+/* ---------- C3: pasokan vs kebutuhan RUPTL, TKDN per kategori, sertifikat TKDN (data/tkdn_produk.json) ---------- */
+const KAT = { modul: "surya", baterai: "penyimpanan", inverter: "elektrifikasi", kabel: "jaringan", trafo: "industri", struktur: "efisiensi", turbin: "bayu" };
+const UMUM = new Set(["kabel", "trafo", "struktur"]); // dipakai lintas sektor, bukan khusus energi (EST: penggolongan kami)
+const pilKat = (k) => `<span class="jm-pil-tek rt2-c-${esc(k)}">${ikonTek(KAT[k])}${esc(t("rt2.kat." + k))}</span>`;
+const pilUmum = (k) => (UMUM.has(k) ? `<span class="jm-pil-tek rt2-umum" title="${esc(t("rt2.umum_cat"))}">${ikon("info", 14)}${esc(t("rt2.umum"))}</span>` : "");
+const srcTkdn = () => sumberLipat((tkdn2.sumber || []).map((s) => ({ sumber: s.judul, tanggal: s.tanggal_akses, url: s.url })), "");
+const ubin2 = (ik, nilai, satuan, label) => `<div class="rt2-ub"><span class="jm-kpi-ik">${ikon(ik, 20)}</span><div><b>${esc(nilai)}${satuan ? `<span>${esc(satuan)}</span>` : ""}</b><small>${esc(label)}</small></div></div>`;
+
+function rt2Pasok() {
+  const T = dTek(), per = T.kebutuhan?.per_tahun || [], akar = $("rt2-pasok");
+  if (!per.length) { akar.innerHTML = ""; return; }
+  const tot = per.reduce((a, r) => a + r.mw, 0), span = per.at(-1).tahun - per[0].tahun + 1, rata = tot / span, maks = Math.max(...per.map((r) => r.mw));
+  const kap = barisTek().reduce((a, x) => a + (x.mwp || 0), 0), ada = kap > 0, rasio = ada ? kap / rata : null;
+  const sumb = (dp.sumber || []).map((z) => ({ sumber: z.judul, tanggal: z.tanggal }));
+  const kat = per.map((r) => ({ label: String(r.tahun), th: tipHtml(String(r.tahun), [[t("rt2.tip.mw"), num(r.mw, 0) + " MW"], [t("rt2.tip.proyek"), num(r.proyek)], [t("rt2.tip.vs"), ada ? num((r.mw / kap) * 100, 1) + "%" : "-"]]), tip: `${r.tahun}: ${num(r.mw, 0)} MW`, nilai: { mw: r.mw } }));
+  const refOk = ada && kap <= maks * 3;
+  akar.innerHTML = exHtml({ id: "h-pasok", ikon: "grafik", topik: t("rt2.ey.pasok"), judulHtml: hlHtml("rt2.t.pasok", num(rata, 0), { tek: t("rt.tek." + tek) }), subHtml: esc(t("rt2.s.pasok")), aksiHtml: aksiHtml({ csv: false }), tingkat: "h2",
+    isiHtml: `<div class="rt2-ubin">${ubin2("proyek", num(rata, 0), "MW", t("rt2.u.butuh", { a: per[0].tahun, b: per.at(-1).tahun }))}${ubin2("pabrik", ada ? num(kap, 0) : "-", ada ? "MW" : "", t("rt2.u.kap"))}${ubin2("tingkat", ada ? num(rasio, 1) + "x" : "-", "", t("rt2.u.rasio"))}</div>
+    <p class="jm-bantu">${pil("an.hipotesis")} ${esc(ada ? t("rt2.cat.pasok") : t("rt2.nopasok"))}</p>
+    <div class="ih-bagan" id="rt2-g-pasok"></div>${sumberLipat(sumb)}` });
+  const g = $("rt2-g-pasok"); g.innerHTML = kolomSvg({ kategori: kat, seri: [{ k: "mw", kelas: "ih-ebt" }], satuan: t("rt2.satuan"), el: g, ref: refOk ? { nilai: kap, label: t("rt2.ref_lokal", { v: num(kap, 0) }) } : null, label: t("rt2.s.pasok") });
+}
+
+function statKat() {
+  const m = new Map();
+  for (const r of tkdn2.baris) { const o = m.get(r.kategori) || { k: r.kategori, n: 0, aktif: 0, tk: [], pab: new Set() }; o.n++; if (r.aktif) o.aktif++; if (r.tkdn_persen != null) o.tk.push(r.tkdn_persen); o.pab.add(r.pabrikan_org_id || r.pabrikan); m.set(r.kategori, o); }
+  return [...m.values()].map((o) => ({ ...o, rata: o.tk.length ? o.tk.reduce((a, v) => a + v, 0) / o.tk.length : 0, maks: o.tk.length ? Math.max(...o.tk) : 0 })).sort((a, b) => b.rata - a.rata);
+}
+
+function rt2Sisa() {
+  const akar = $("rt2-sisa");
+  if (!tkdn2.baris.length) { akar.innerHTML = ""; return; }
+  const S = statKat(), pab = new Set(tkdn2.baris.map((r) => r.pabrikan_org_id || r.pabrikan)).size, top = S[0];
+  const baris = S.map((o) => ({ label: t("rt2.kat." + o.k), ikon: "", bagian: [{ k: o.k, nilai: o.rata }], th: tipHtml(t("rt2.kat." + o.k), [[t("rt2.tip.rata"), n1(o.rata, 1) + "%", "rt2-c-" + o.k], [t("rt2.tip.maks"), n1(o.maks, 1) + "%"], [t("rt2.tip.sert"), num(o.n)], [t("rt2.tip.aktif"), num(o.aktif)], [t("rt2.tip.pab"), num(o.pab.size)], [t("rt2.tip.relevansi"), t(UMUM.has(o.k) ? "rt2.umum" : "rt2.khusus")]]), tip: `${t("rt2.kat." + o.k)}: ${n1(o.rata, 1)}%` }));
+  const filterHtml = `<div class="jm-saring">${cariHtml({ id: "rt2-cari", label: t("rt2.cari") })}${pilihHtml({ id: "rt2-kat", ikon: "jenis", label: t("rt2.f_kat"), nilai: fKat, opsi: [["", t("rt2.f_kat") + ": " + t("rt.semua")], ...S.map((o) => [o.k, t("rt2.kat." + o.k), "tek:" + KAT[o.k], o.n])] })}${hapusHtml({ id: "rt2-hapus", label: t("jm.kosong.reset") })}${hitungHtml({ id: "rt2-hitung", teks: "" })}</div>`;
+  akar.innerHTML =
+    exHtml({ id: "h-kat", ikon: "tingkat", topik: t("rt2.ey.kat"), judulHtml: hlHtml("rt2.t.kat", t("rt2.kat." + top.k), { v: n1(top.rata, 1) }) + " " + pil("an.est"), subHtml: esc(t("rt2.s.kat")), aksiHtml: aksiHtml({ csv: false }), tingkat: "h2",
+      isiHtml: `<div class="ih-bagan" id="rt2-g-kat"></div><p class="jm-bantu">${esc(t("rt2.cat.kat"))}</p>${srcTkdn()}` }) +
+    exHtml({ id: "h-sert", ikon: "tabel", topik: t("rt2.ey.sert"), judulHtml: hlHtml("rt2.t.sert", num(tkdn2.baris.length), { n: num(pab) }), subHtml: esc(t("rt2.s.sert")), aksiHtml: aksiHtml({ csv: false }), tingkat: "h2",
+      isiHtml: `${filterHtml}<div id="rt2-tabel" class="ih-tabel"></div><p class="jm-bantu">${esc(t("rt2.cat.sert"))}</p>${srcTkdn()}` });
+  const gk = $("rt2-g-kat"); gk.innerHTML = batangIh({ baris, seri: S.map((o) => ({ k: o.k, kelas: "rt2-c-" + o.k })), satuan: "%", el: gk, d: 1, label: t("rt2.s.kat"), ref: { nilai: 40, label: t("rt.tk.batas") } });
+  $("rt2-cari").value = cariS;
+  rt2Tabel();
+}
+
+function rt2Tabel() {
+  const q = cariS.trim().toLowerCase();
+  const B = tkdn2.baris.filter((r) => (!fKat || r.kategori === fKat) && (!q || `${r.pabrikan} ${r.produk} ${r.merk || ""} ${r.provinsi || ""}`.toLowerCase().includes(q)));
+  $("rt2-hitung").textContent = t("rt2.info", { n: B.length, total: tkdn2.baris.length });
+  $("rt2-hapus").hidden = !(fKat || q);
+  const nm = (r) => namaBaku(r.pabrikan).nama;
+  tabelIh($("rt2-tabel"), { satuan: "rt2.u.sertifikat", per: 10, urutAwal: 3, kolom: [
+    { label: t("rt.col.nama"), v: nm, f: (r) => { const lg = logoHtml({ id: r.pabrikan_org_id, nama: nm(r), logo: r.pabrikan_org_id }), isi = `${lg}<span class="jm-id"><b>${esc(nm(r))}</b><small>${esc([r.lokasi, r.provinsi].filter(Boolean).join(", ") || "-")}</small></span>`; return r.pabrikan_org_id ? `<a class="jm-an-nama" href="/o/${esc(r.pabrikan_org_id)}">${isi}</a>` : `<span class="jm-an-nama">${isi}</span>`; } },
+    { label: t("rt2.c.produk"), v: (r) => r.produk, f: (r) => `<span class="rt2-prod"><b>${esc(r.produk)}</b>${r.merk ? `<small>${esc(r.merk)}</small>` : ""}</span>` },
+    { label: t("rt2.c.kat"), v: (r) => t("rt2.kat." + r.kategori), f: (r) => `<span class="rt2-pils">${pilKat(r.kategori)}${pilUmum(r.kategori)}</span>` },
+    { label: t("rt.col.tkdn"), num: true, v: (r) => r.tkdn_persen, f: (r) => (r.tkdn_persen == null ? "-" : `<span class="rt2-nilai${r.tkdn_persen >= 40 ? " rt2-ok" : ""}">${esc(n1(r.tkdn_persen, 2))}</span>`) },
+    { label: t("rt2.c.sampai"), num: true, v: (r) => r.berlaku_sampai, f: (r) => (r.berlaku_sampai ? esc(tanggal(r.berlaku_sampai)) : "-") },
+    { label: t("rt2.c.status"), v: (r) => (r.aktif ? 1 : 0), f: (r) => `<span class="jm-pil ${r.aktif ? "jm-pil-ok" : "jm-pil-bad"}">${ikon(r.aktif ? "centang" : "silang", 14)}${esc(t(r.aktif ? "rt2.aktif" : "rt2.lewat"))}</span>` },
+  ], baris: B });
+}

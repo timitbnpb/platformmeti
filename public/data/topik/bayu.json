@@ -3240,7 +3240,7 @@
     {
      "nama": "Jakarta wind farm",
      "id": "gem_wind_L100001062465",
-     "u": "/proyek#gem_wind_L100001062465",
+     "u": "/p/gem_wind_L100001062465",
      "prov": "Jawa Barat",
      "kode": "32",
      "mw": 597,
@@ -3254,7 +3254,7 @@
     {
      "nama": "Sukabumi West Java wind farm",
      "id": "gem_wind_L100001062466",
-     "u": "/proyek#gem_wind_L100001062466",
+     "u": "/p/gem_wind_L100001062466",
      "prov": "Jawa Barat",
      "kode": "32",
      "mw": 258,
@@ -3268,7 +3268,7 @@
     {
      "nama": "PLTB Banten Banten",
      "id": "pj_0003",
-     "u": "/proyek#pj_0003",
+     "u": "/p/pj_0003",
      "prov": "Banten",
      "kode": "36",
      "mw": 180,
@@ -3282,7 +3282,7 @@
     {
      "nama": "Sukabumi wind farm",
      "id": "gem_wind_L100000901313",
-     "u": "/proyek#gem_wind_L100000901313",
+     "u": "/p/gem_wind_L100000901313",
      "prov": "Jawa Barat",
      "kode": "32",
      "mw": 150,
@@ -3296,7 +3296,7 @@
     {
      "nama": "PLTB Bayu Sumatera",
      "id": "pj_0001",
-     "u": "/proyek#pj_0001",
+     "u": "/p/pj_0001",
      "prov": "Aceh",
      "kode": "11",
      "mw": 110,
@@ -3310,7 +3310,7 @@
     {
      "nama": "PLTB Banten",
      "id": "pj_0002",
-     "u": "/proyek#pj_0002",
+     "u": "/p/pj_0002",
      "prov": "Banten",
      "kode": "36",
      "mw": 100,
@@ -3324,7 +3324,7 @@
     {
      "nama": "Lombok wind farm",
      "id": "gem_wind_L100000916669",
-     "u": "/proyek#gem_wind_L100000916669",
+     "u": "/p/gem_wind_L100000916669",
      "prov": "-",
      "kode": null,
      "mw": 99,
@@ -3338,7 +3338,7 @@
     {
      "nama": "Sidrap",
      "id": "pj_0006",
-     "u": "/proyek#pj_0006",
+     "u": "/p/pj_0006",
      "prov": "Sulawesi Selatan",
      "kode": "73",
      "mw": 75,
@@ -3352,7 +3352,7 @@
     {
      "nama": "Jeneponto",
      "id": "pj_0005",
-     "u": "/proyek#pj_0005",
+     "u": "/p/pj_0005",
      "prov": "Sulawesi Selatan",
      "kode": "73",
      "mw": 72,
@@ -3366,7 +3366,7 @@
     {
      "nama": "Tolo wind farm",
      "id": "gem_wind_L100000901004",
-     "u": "/proyek#gem_wind_L100000901004",
+     "u": "/p/gem_wind_L100000901004",
      "prov": "Sulawesi Selatan",
      "kode": "73",
      "mw": 72,
@@ -3380,7 +3380,7 @@
     {
      "nama": "PLTB Tanah Laut",
      "id": "pj_0004",
-     "u": "/proyek#pj_0004",
+     "u": "/p/pj_0004",
      "prov": "Kalimantan Selatan",
      "kode": "63",
      "mw": 70,
@@ -3394,7 +3394,7 @@
     {
      "nama": "Bantaeng wind farm",
      "id": "gem_wind_L100000916656",
-     "u": "/proyek#gem_wind_L100000916656",
+     "u": "/p/gem_wind_L100000916656",
      "prov": "-",
      "kode": null,
      "mw": 70,
@@ -3408,7 +3408,7 @@
     {
      "nama": "Kluet wind farm",
      "id": "gem_wind_L100000901337",
-     "u": "/proyek#gem_wind_L100000901337",
+     "u": "/p/gem_wind_L100000901337",
      "prov": "Aceh",
      "kode": "11",
      "mw": 10,
