@@ -1,0 +1,12 @@
+.dev.vars
+.wrangler/
+*.sqlite
+*.env
+.env*
+!.dev.vars.example
+node_modules/
+data/pribadi/
+daftar-tolak.json
+# Panen mentah pihak ketiga (1001startup.id dll): tidak masuk repo publik.
+data-panen/
+.DS_Store
