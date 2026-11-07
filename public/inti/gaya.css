@@ -142,3 +142,6 @@ h1,h2,h3,.jm-kh h1{letter-spacing:-.015em}
 .jm-kaki-stat i svg{width:18px;height:18px}
 .jm-kaki-stat b{font:700 var(--t-h3)/1.1 var(--font);color:var(--on-brand);font-variant-numeric:tabular-nums}
 .jm-kaki-stat span{font-size:var(--t-label);letter-spacing:.01em}
+/* ikon tautan kaki */
+.jm-kaki-kol a{display:inline-flex;align-items:center;gap:8px}
+.jm-kaki-kol a svg{width:16px;height:16px;flex:none;color:var(--meti-lime);opacity:.85}
