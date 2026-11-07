@@ -392,7 +392,7 @@
       sek.querySelector(".ak-ksaring").addEventListener("click", e => { const b = e.target.closest("button[data-k]"); if (!b) return;
         kst[b.dataset.k] = b.dataset.v; kst.hal = 1; b.parentElement.querySelectorAll("button").forEach(x => x.setAttribute("aria-pressed", String(x === b))); karya(o, false); });
       sek.querySelector("input").addEventListener("input", e => { clearTimeout(karyaTunda); karyaTunda = setTimeout(() => { kst.cari = e.target.value.trim(); kst.hal = 1; karya(o, false); }, 350); });
-      $("akKHal").addEventListener("click", e => { const b = e.target.closest("button[data-h]"); if (!b || b.disabled) return; kst.hal = +b.dataset.h; karya(o, false); sek.scrollIntoView({block: "start", behavior: "smooth"}); });
+      $("akKHal").addEventListener("click", e => { const b = e.target.closest("button[data-hal]"); if (!b || b.disabled) return; kst.hal = +b.dataset.hal; JM.sorotHalaman(b, kst.hal); karya(o, false); sek.scrollIntoView({block: "start", behavior: "smooth"}); });
     }
   }
 
@@ -793,7 +793,7 @@ h4{margin:0 0 2px;font-size:8px;letter-spacing:normal;text-transform:none;color:
     jb.forEach(j => tambah(j.organisasi, j.organisasi_id, j.jabatan, j.kini)); dlist(o.afiliasi).forEach(a => tambah(a.organisasi, a.organisasi_id, a.jabatan, true));
     const semua = [...pil.values()].sort((a, b) => b.kini - a.kini), mj = (jb.find(j => isM(j.organisasi) && j.kini) || jb.find(j => isM(j.organisasi)) || {}).jabatan || (isM(o.organisasi_terkini) ? o.jabatan_terkini : "") || "";
     return semua.length || mj ? {utama: semua[0]?.kini ? semua[0] : null, lain: semua.filter((e, i) => i || !semua[0].kini), semua, mj} : null; };
-  const adaptOrang = o => { const pg = pecahGelar(o.nama); return {id: o.id, nama: pg.nama, gelar_awal: pg.gelar, meti: o.meti || (EH_METI.test(o.organisasi_terkini || "") ? "pengurus" : null), peran: o.jabatan_terkini || "", jenis: o.kelompok?.kode || "", lembaga: o.organisasi_terkini || "", lembaga_id: o.organisasi_id || "", afil: afilOrang(o), afiliasi: afilOrang(o)?.semua.map(e => ({nama_lembaga: e.nama})) || [], sektor: kodeSektor(o.kepakaran), prov: o.wilayah ? (o.wilayah.lingkup === "nasional" ? "nasional" : o.wilayah.provinsi || "") : "", wilayah: o.wilayah || null, kelompok_label: o.kelompok?.label || "", peran_energi: "",
+  const adaptOrang = o => { const pg = pecahGelar(o.nama); return {id: o.id, foto: o.foto || "", nama: pg.nama, gelar_awal: pg.gelar, meti: o.meti || (EH_METI.test(o.organisasi_terkini || "") ? "pengurus" : null), peran: o.jabatan_terkini || "", jenis: o.kelompok?.kode || "", lembaga: o.organisasi_terkini || "", lembaga_id: o.organisasi_id || "", afil: afilOrang(o), afiliasi: afilOrang(o)?.semua.map(e => ({nama_lembaga: e.nama})) || [], sektor: kodeSektor(o.kepakaran), prov: o.wilayah ? (o.wilayah.lingkup === "nasional" ? "nasional" : o.wilayah.provinsi || "") : "", wilayah: o.wilayah || null, kelompok_label: o.kelompok?.label || "", peran_energi: "",
     alasan: "", pernah_birokrasi: !!o.pernah_birokrasi, riwayat: dlist(o.jabatan).map(j => ({jabatan: j.jabatan, lembaga: j.organisasi, mulai: j.mulai, selesai: j.kini ? "" : j.selesai || "", sumber_url: j.sumber_url})), pendidikan: dlist(o.pendidikan), kiprah: dlist(o.kiprah),
     tautan: dlist(o.tautan).map(t => ({jenis: t.jenis === "profil-resmi" ? "web" : t.jenis, url: t.url})), foto_url: fotoUrl(o.foto), sumber: o.sumber_url ? [{butir: "profil", url: o.sumber_url, diperiksa: o.diperiksa}] : [], diperiksa: o.diperiksa || ""}; };
   /* METI Wilayah (berdiri atau segera) sebagai entri kategori "meti-wilayah": kontak resmi kantor, tertaut ke /meti-wilayah/<kode>. Gagal = tanpa entri. */
@@ -804,7 +804,7 @@ h4{margin:0 0 2px;font-size:8px;letter-spacing:normal;text-transform:none;color:
   } catch (e) { return []; } };
   const ADAPTER = {lembaga: ["organisasi", async p => [...dlist(p.baris).map(adaptOrg), ...await orgWilayahMeti()]], tokoh: ["orang", p => dlist(p.baris).map(adaptOrang)], proyek: ["proyek", p => dlist(p.baris)], regulasi: ["regulasi", p => ({baris: dlist(p.baris), posisi_topik: dlist(p.posisi_topik)})], ringkas: ["ringkas", p => p]};
   const ambilData = n => ADAPTER[n] ? DATA[n] ||= potretBaru(ADAPTER[n][0]).then(p => p && (p.baris || n === "ringkas") ? ADAPTER[n][1](p) : (n === "proyek" || n === "regulasi" || n === "ringkas" ? null : ambilLama(n))).then(x => { if (x == null) delete DATA[n]; return x; }) : ambilLama(n);
-  const urlOk = u => typeof u === "string" && /^(https?:\/\/|\/api\/gambar\/(logo|foto)\/|\/img\/logo\/)/i.test(u.trim()) ? u.trim() : "";
+  const urlOk = u => typeof u === "string" && /^(https?:\/\/|\/api\/gambar\/(logo|foto)\/|\/img\/(logo|orang|pengurus)\/)/i.test(u.trim()) ? u.trim() : "";
   const urlDoi = d => d ? urlOk(/^https?:\/\//i.test(d) ? d : "https://doi.org/" + String(d).replace(/^doi:\s*/i, "")) : "";
   const urlOA = id => id ? urlOk(/^https?:\/\//i.test(id) ? id : "https://openalex.org/" + id) : "";
   const tglID = s => { if (!s) return ""; if (/^\d{4}$/.test(String(s))) return String(s); const d = new Date(String(s).slice(0, 10) + "T00:00:00Z");
@@ -852,7 +852,7 @@ h4{margin:0 0 2px;font-size:8px;letter-spacing:normal;text-transform:none;color:
   document.addEventListener("click", e => { if (!e.target.isConnected) return; document.querySelectorAll(".ak-kampus-pilih[data-gen]").forEach(x => { if (!x.contains(e.target)) x._tutup?.(); }); });
   document.addEventListener("keydown", e => { if (e.key !== "Escape") return; const a = [...document.querySelectorAll(".ak-kampus-pilih[data-gen] .ak-kpop:not([hidden])")];
     if (!a.length) return; e.stopImmediatePropagation(); a.forEach(p => p.parentElement._tutup()); });
-  const pasangHal = (id, fn) => $(id).addEventListener("click", e => { const b = e.target.closest("button[data-h]"); if (b && !b.disabled) fn(+b.dataset.h); });
+  const pasangHal = (id, fn) => $(id).addEventListener("click", e => { const b = e.target.closest("button[data-hal]"); if (b && !b.disabled) (JM.sorotHalaman(b, +b.dataset.hal), fn(+b.dataset.hal)); });
   const gulirKe = id => $(id).scrollIntoView({behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth", block: "start"});
 
   /* ----- riset daerah: indeks sekali, saring sesuai permintaan ----- */
@@ -3392,7 +3392,7 @@ h4{margin:0 0 2px;font-size:8px;letter-spacing:normal;text-transform:none;color:
     $("akQ").addEventListener("input", () => { clearTimeout(tunda); tunda = setTimeout(() => { st.q = $("akQ").value.trim(); saring(); }, 200); });
     segmen("akS", "sumber", v => v);
     segmen("akU", "urut", v => +v);
-    $("akHal").addEventListener("click", e => { const b = e.target.closest("button[data-h]"); if (!b || b.disabled) return; st.hal = +b.dataset.h; b.setAttribute("aria-current", "page"); nanti(() => gambar(true)); });
+    $("akHal").addEventListener("click", e => { const b = e.target.closest("button[data-hal]"); if (!b || b.disabled) return; st.hal = +b.dataset.hal; JM.sorotHalaman(b, st.hal); nanti(() => gambar(true)); });
     $("akKBtn").addEventListener("click", () => bukaKampus($("akKPop").hidden));
     $("akKQ").addEventListener("input", daftarKampus);
     $("akKJenis").addEventListener("click", e => { const b = e.target.closest("button[data-j]"); if (!b) return; st.kJenis = b.dataset.j; daftarKampus(); $("akKQ").focus(); });
