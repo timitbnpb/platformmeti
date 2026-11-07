@@ -1,0 +1,3837 @@
+{
+ "dibangun": "2026-11-08",
+ "calon": 297,
+ "bersumber": 120,
+ "tanpa_sumber": [
+  "Mitsubishi Corporation",
+  "JERA",
+  "Itochu Corporation",
+  "Kyushu Electric Power",
+  "Tokyo Gas",
+  "Chubu Electric Power",
+  "Osaka Gas",
+  "Toyota Tsusho",
+  "Mitsui & Co",
+  "Sojitz Corporation",
+  "J-Power (Electric Power Development)",
+  "Idemitsu Kosan",
+  "ENEOS",
+  "Tokyo Electric Power (TEPCO)",
+  "Equis Development",
+  "Electricite de France (EDF)",
+  "Enel",
+  "Vestas",
+  "Goldwind",
+  "Sun Cable",
+  "Gentari",
+  "Keppel",
+  "Shell",
+  "BP",
+  "Equinor",
+  "Eni",
+  "Iberdrola",
+  "Statkraft",
+  "Orsted",
+  "RWE",
+  "Fortum",
+  "Meyer Burger",
+  "LG Energy Solution",
+  "BYD",
+  "Samsung SDI",
+  "SK On",
+  "Tesla",
+  "Fluence Energy",
+  "Wartsila",
+  "Nordex",
+  "Siemens Gamesa",
+  "Suzlon",
+  "Siemens Energy",
+  "GE Vernova",
+  "Hitachi Energy",
+  "ABB",
+  "Schneider Electric",
+  "Huawei Digital Power",
+  "SMA Solar Technology",
+  "Fuji Electric",
+  "Mitsubishi Heavy Industries",
+  "Ansaldo Energia",
+  "Andritz",
+  "Voith",
+  "Dongfang Electric",
+  "Harbin Electric",
+  "Hanwha",
+  "Hyosung Heavy Industries",
+  "LS Electric",
+  "Doosan Enerbility",
+  "Samsung C&T",
+  "GS Engineering & Construction",
+  "Power Construction Corporation of China (PowerChina)",
+  "China Energy Engineering (CEEC)",
+  "Sinohydro",
+  "Sinomach",
+  "China Huaneng",
+  "China Three Gorges",
+  "State Power Investment (SPIC)",
+  "Huayou Cobalt",
+  "GEM Co (Greenland)",
+  "LG Chem",
+  "Panasonic",
+  "Toyota",
+  "Honda",
+  "Nissan",
+  "JA Solar",
+  "Tongwei",
+  "First Solar",
+  "Enphase Energy",
+  "SolarEdge",
+  "Fronius",
+  "Growatt",
+  "Sineng Electric",
+  "TBEA",
+  "Eaton",
+  "Legrand",
+  "Nidec",
+  "Temasek",
+  "GIC",
+  "Brookfield",
+  "Macquarie",
+  "Actis",
+  "Copenhagen Infrastructure Partners",
+  "Global Infrastructure Partners",
+  "Blackrock",
+  "Asian Infrastructure Investment Bank",
+  "European Investment Bank",
+  "Global Energy Alliance for People and Planet",
+  "Global Green Growth Institute",
+  "UNIDO",
+  "Japan Bank for International Cooperation",
+  "Nippon Export and Investment Insurance",
+  "Japan Organization for Metals and Energy Security",
+  "New Energy and Industrial Technology Development Organization",
+  "JETRO",
+  "Mizuho Bank",
+  "MUFG Bank",
+  "KfW",
+  "BNP Paribas",
+  "Credit Agricole",
+  "Societe Generale",
+  "Business France",
+  "ING",
+  "Danish Energy Agency",
+  "Export Development Canada",
+  "UK PACT",
+  "UK Export Finance",
+  "British International Investment",
+  "HSBC",
+  "DBS Bank",
+  "OCBC",
+  "UOB",
+  "Enterprise Singapore",
+  "Singapore Economic Development Board",
+  "Citibank",
+  "Bank of America",
+  "JPMorgan Chase",
+  "US International Development Finance Corporation (DFC)",
+  "Export-Import Bank of the United States",
+  "Korea Eximbank",
+  "Korea International Cooperation Agency",
+  "Korea Development Bank",
+  "Export-Import Bank of China",
+  "China Development Bank",
+  "Bank of China",
+  "ICBC",
+  "China Construction Bank",
+  "Rockefeller Foundation",
+  "Bloomberg Philanthropies",
+  "Global Energy Monitor",
+  "World Resources Institute",
+  "Verra",
+  "Gold Standard Foundation",
+  "International Hydropower Association",
+  "Global Wind Energy Council",
+  "Geothermal Rising",
+  "New Zealand Geothermal Association",
+  "Iceland GeoSurvey (ISOR)",
+  "Landsvirkjun",
+  "Reykjavik Energy",
+  "Mitsui OSK Lines",
+  "Kawasaki Heavy Industries",
+  "Air Products",
+  "Linde",
+  "Thyssenkrupp",
+  "Yara",
+  "Mitsubishi Power",
+  "Sinopec",
+  "Petronas",
+  "Tenaga Nasional Berhad",
+  "Khazanah",
+  "Hindustan Power",
+  "Adani",
+  "Tata Power",
+  "ReNew",
+  "Ayala Corporation",
+  "EDC Philippines",
+  "Pacific Hydro",
+  "Fortescue",
+  "Woodside",
+  "Santos",
+  "Origin Energy",
+  "Genex Power",
+  "Lightsource bp",
+  "Octopus Energy",
+  "Aker"
+ ],
+ "baris": [
+  {
+   "nama": "Ormat Technologies",
+   "jumlah_bukti": 6,
+   "jenis": [
+    "gem",
+    "proyek"
+   ],
+   "proyek_ids": [
+    "gem_geothermal_L100001025604",
+    "pj_0246"
+   ],
+   "org_ids": [],
+   "bukti": [
+    {
+     "url": "https://www.gem.wiki/Blawan_Ijen_geothermal_project",
+     "tanggal": "2026-11-08",
+     "tb": "kajian",
+     "jenis": "gem",
+     "ket": "GEM Global Geothermal Power Tracker (2026-03), pemilik/operator proyek Blawan Ijen geothermal project",
+     "proyek_id": "pj_0246"
+    },
+    {
+     "url": "https://www.gem.wiki/Toka_Tindung_geothermal_power_plant",
+     "tanggal": "2026-11-08",
+     "tb": "kajian",
+     "jenis": "proyek",
+     "ket": "pihak pemilik pada Toka Tindung geothermal power plant",
+     "proyek_id": "gem_geothermal_L100001025604"
+    }
+   ]
+  },
+  {
+   "nama": "Sumitomo Corporation",
+   "jumlah_bukti": 10,
+   "jenis": [
+    "gem",
+    "proyek",
+    "penyedia",
+    "organisasi"
+   ],
+   "proyek_ids": [
+    "gem_geothermal_L100000700144",
+    "pj_0043",
+    "pj_0265"
+   ],
+   "org_ids": [
+    "p_d99d5987f7"
+   ],
+   "bukti": [
+    {
+     "url": "https://www.gem.wiki/Muarah_Laboh_geothermal_plant",
+     "tanggal": "2026-11-08",
+     "tb": "kajian",
+     "jenis": "gem",
+     "ket": "GEM Global Geothermal Power Tracker (2026-03), pemilik/operator proyek Muarah Laboh geothermal plant",
+     "proyek_id": "pj_0265"
+    },
+    {
+     "url": "https://www.liputan6.com/bisnis/read/8257484/psel-legok-nangka-mulai-dibangun-olah-2000-ton-sampah",
+     "tanggal": "2026-11-07",
+     "tb": "media",
+     "jenis": "proyek",
+     "ket": "pihak pemilik pada Energi asal sampah Bandung (PSN nomor 154)",
+     "proyek_id": "pj_0043"
+    },
+    {
+     "url": "https://www.sumitomocorp.com",
+     "tanggal": "2026-11-07",
+     "tb": "kata-pihak",
+     "jenis": "penyedia",
+     "ket": "penyedia teknologi: Sumitomo Corporation"
+    },
+    {
+     "url": "https://www.sumitomocorp.com/en/jp/info",
+     "tanggal": "2026-11-07",
+     "tb": "situs-sendiri",
+     "jenis": "organisasi",
+     "ket": "direktori METI: Sumitomo Corporation",
+     "org_id": "p_d99d5987f7"
+    },
+    {
+     "url": "https://www.gem.wiki/Rajabasa_geothermal_power_plant",
+     "tanggal": "2026-11-08",
+     "tb": "kajian",
+     "jenis": "gem",
+     "ket": "GEM Global Geothermal Power Tracker (2026-03), pemilik/operator proyek Rajabasa geothermal power plant",
+     "proyek_id": "gem_geothermal_L100000700144"
+    }
+   ]
+  },
+  {
+   "nama": "Marubeni Corporation",
+   "jumlah_bukti": 5,
+   "jenis": [
+    "gem",
+    "proyek",
+    "penyedia",
+    "organisasi"
+   ],
+   "proyek_ids": [
+    "gem_geothermal_L100000700146"
+   ],
+   "org_ids": [
+    "p_4322497a63"
+   ],
+   "bukti": [
+    {
+     "url": "https://www.gem.wiki/Rantau_Dedep_geothermal_power_plant",
+     "tanggal": "2026-11-08",
+     "tb": "kajian",
+     "jenis": "gem",
+     "ket": "GEM Global Geothermal Power Tracker (2026-03), pemilik/operator proyek Rantau Dedep geothermal power plant",
+     "proyek_id": "gem_geothermal_L100000700146"
+    },
+    {
+     "url": "https://www.marubeni.com",
+     "tanggal": "2026-11-07",
+     "tb": "kata-pihak",
+     "jenis": "penyedia",
+     "ket": "penyedia teknologi: Marubeni Corporation"
+    },
+    {
+     "url": "https://www.marubeni.com/en/contact_form/",
+     "tanggal": "2026-11-07",
+     "tb": "situs-sendiri",
+     "jenis": "organisasi",
+     "ket": "direktori METI: Marubeni Corporation",
+     "org_id": "p_4322497a63"
+    }
+   ]
+  },
+  {
+   "nama": "Kansai Electric Power",
+   "jumlah_bukti": 2,
+   "jenis": [
+    "gem",
+    "proyek"
+   ],
+   "proyek_ids": [
+    "pj_0094"
+   ],
+   "org_ids": [],
+   "bukti": [
+    {
+     "url": "https://www.gem.wiki/Rajamandala_hydroelectric_plant",
+     "tanggal": "2026-11-08",
+     "tb": "kajian",
+     "jenis": "gem",
+     "ket": "GEM Global Hydropower Tracker (2026-03), pemilik/operator proyek Rajamandala hydroelectric plant",
+     "proyek_id": "pj_0094"
+    }
+   ]
+  },
+  {
+   "nama": "INPEX",
+   "jumlah_bukti": 3,
+   "jenis": [
+    "gem",
+    "proyek"
+   ],
+   "proyek_ids": [
+    "pj_0265"
+   ],
+   "org_ids": [],
+   "bukti": [
+    {
+     "url": "https://www.gem.wiki/Muarah_Laboh_geothermal_plant",
+     "tanggal": "2026-11-08",
+     "tb": "kajian",
+     "jenis": "gem",
+     "ket": "GEM Global Geothermal Power Tracker (2026-03), pemilik/operator proyek Muarah Laboh geothermal plant",
+     "proyek_id": "pj_0265"
+    }
+   ]
+  },
+  {
+   "nama": "Tohoku Electric Power",
+   "jumlah_bukti": 2,
+   "jenis": [
+    "gem",
+    "proyek"
+   ],
+   "proyek_ids": [
+    "gem_geothermal_L100000700146"
+   ],
+   "org_ids": [],
+   "bukti": [
+    {
+     "url": "https://www.gem.wiki/Rantau_Dedep_geothermal_power_plant",
+     "tanggal": "2026-11-08",
+     "tb": "kajian",
+     "jenis": "gem",
+     "ket": "GEM Global Geothermal Power Tracker (2026-03), pemilik/operator proyek Rantau Dedep geothermal power plant",
+     "proyek_id": "gem_geothermal_L100000700146"
+    }
+   ]
+  },
+  {
+   "nama": "Hokuriku Electrical Construction",
+   "jumlah_bukti": 1,
+   "jenis": [
+    "penyedia"
+   ],
+   "proyek_ids": [],
+   "org_ids": [],
+   "bukti": [
+    {
+     "url": "https://aesi.or.id/anggota",
+     "tanggal": "2026-11-08",
+     "tb": "kata-pihak",
+     "jenis": "penyedia",
+     "ket": "penyedia teknologi: Hokuriku Electrical Construction Co Ltd"
+    }
+   ]
+  },
+  {
+   "nama": "Sembcorp Industries",
+   "jumlah_bukti": 4,
+   "jenis": [
+    "gem",
+    "proyek",
+    "organisasi"
+   ],
+   "proyek_ids": [
+    "gem_solar_L100000830284"
+   ],
+   "org_ids": [
+    "p_18be3c85ca"
+   ],
+   "bukti": [
+    {
+     "url": "https://www.gem.wiki/Batam_Bintan_Karimun_solar_farm",
+     "tanggal": "2026-11-08",
+     "tb": "kajian",
+     "jenis": "gem",
+     "ket": "GEM Global Solar Power Tracker (2026-02), pemilik/operator proyek Batam Bintan Karimun solar farm"
+    },
+    {
+     "url": "https://www.gem.wiki/Nusantara_Capital_City_Solar_Power_Plant",
+     "tanggal": "2026-11-08",
+     "tb": "kajian",
+     "jenis": "proyek",
+     "ket": "pihak pemilik pada Nusantara Sembcorp Solar Energi (NSSE) Power Plant",
+     "proyek_id": "gem_solar_L100000830284"
+    },
+    {
+     "url": "https://aesi.or.id/anggota/",
+     "tanggal": "2026-11-07",
+     "tb": "kata-pihak",
+     "jenis": "organisasi",
+     "ket": "direktori METI: Sembcorp",
+     "org_id": "p_18be3c85ca"
+    }
+   ]
+  },
+  {
+   "nama": "ACEN Corporation",
+   "jumlah_bukti": 12,
+   "jenis": [
+    "gem",
+    "proyek"
+   ],
+   "proyek_ids": [
+    "gem_wind_L100000901313",
+    "pj_0006",
+    "pj_0235"
+   ],
+   "org_ids": [],
+   "bukti": [
+    {
+     "url": "https://www.gem.wiki/Gunung_Salak_geothermal_power_plant",
+     "tanggal": "2026-11-08",
+     "tb": "kajian",
+     "jenis": "gem",
+     "ket": "GEM Global Geothermal Power Tracker (2026-03), pemilik/operator proyek Gunung Salak geothermal power plant",
+     "proyek_id": "pj_0235"
+    },
+    {
+     "url": "https://www.gem.wiki/Sidrap_wind_farm",
+     "tanggal": "2026-11-08",
+     "tb": "kajian",
+     "jenis": "proyek",
+     "ket": "pihak pemilik pada Sidrap",
+     "proyek_id": "pj_0006"
+    },
+    {
+     "url": "https://www.gem.wiki/Sukabumi_(UPC_Renewables)_wind_farm",
+     "tanggal": "2026-11-08",
+     "tb": "kajian",
+     "jenis": "gem",
+     "ket": "GEM Global Wind Power Tracker (2026-02), pemilik/operator proyek Sukabumi wind farm",
+     "proyek_id": "gem_wind_L100000901313"
+    }
+   ]
+  },
+  {
+   "nama": "UPC Renewables",
+   "jumlah_bukti": 2,
+   "jenis": [
+    "gem",
+    "karbon"
+   ],
+   "proyek_ids": [],
+   "org_ids": [],
+   "bukti": [
+    {
+     "url": "https://www.gem.wiki/Samas_wind_farm",
+     "tanggal": "2026-11-08",
+     "tb": "kajian",
+     "jenis": "gem",
+     "ket": "GEM Global Wind Power Tracker (2026-02), pemilik/operator proyek Samas wind farm"
+    },
+    {
+     "url": "https://assurance-platform.goldstandard.org/project-documents/GS4813",
+     "tanggal": "2026-11-08",
+     "tb": "resmi",
+     "jenis": "karbon",
+     "ket": "proyek karbon Gold Standard: Sidrap Wind Farm Project Phase 1"
+    }
+   ]
+  },
+  {
+   "nama": "Vena Energy",
+   "jumlah_bukti": 5,
+   "jenis": [
+    "gem",
+    "proyek"
+   ],
+   "proyek_ids": [
+    "gem_wind_L100000901004"
+   ],
+   "org_ids": [],
+   "bukti": [
+    {
+     "url": "https://www.gem.wiki/Bali-1_solar_farm",
+     "tanggal": "2026-11-08",
+     "tb": "kajian",
+     "jenis": "gem",
+     "ket": "GEM Global Solar Power Tracker (2026-02), pemilik/operator proyek Bali-1 solar farm"
+    },
+    {
+     "url": "https://www.gem.wiki/Tolo_wind_farm",
+     "tanggal": "2026-11-08",
+     "tb": "kajian",
+     "jenis": "proyek",
+     "ket": "pihak pemilik pada Tolo wind farm",
+     "proyek_id": "gem_wind_L100000901004"
+    },
+    {
+     "url": "https://www.gem.wiki/Riau_(Vena_Energy)_solar_power_project",
+     "tanggal": "2026-11-08",
+     "tb": "kajian",
+     "jenis": "gem",
+     "ket": "GEM Global Solar Power Tracker (2026-02), pemilik/operator proyek Riau (Vena Energy) solar power project"
+    }
+   ]
+  },
+  {
+   "nama": "Envision Energy",
+   "jumlah_bukti": 3,
+   "jenis": [
+    "gem",
+    "proyek"
+   ],
+   "proyek_ids": [
+    "gem_wind_L100000916656"
+   ],
+   "org_ids": [],
+   "bukti": [
+    {
+     "url": "https://www.gem.wiki/Bantaeng_wind_farm",
+     "tanggal": "2026-11-08",
+     "tb": "kajian",
+     "jenis": "gem",
+     "ket": "GEM Global Wind Power Tracker (2026-02), pemilik/operator proyek Bantaeng wind farm",
+     "proyek_id": "gem_wind_L100000916656"
+    }
+   ]
+  },
+  {
+   "nama": "Quantum Power Asia",
+   "jumlah_bukti": 1,
+   "jenis": [
+    "gem"
+   ],
+   "proyek_ids": [],
+   "org_ids": [],
+   "bukti": [
+    {
+     "url": "https://www.gem.wiki/Riau_Solar_and_Storage_Power_Plant",
+     "tanggal": "2026-11-08",
+     "tb": "kajian",
+     "jenis": "gem",
+     "ket": "GEM Global Solar Power Tracker (2026-02), pemilik/operator proyek Riau Solar and Storage Power Plant"
+    }
+   ]
+  },
+  {
+   "nama": "Star Energy Group",
+   "jumlah_bukti": 22,
+   "jenis": [
+    "gem",
+    "proyek",
+    "karbon",
+    "penyedia",
+    "organisasi"
+   ],
+   "proyek_ids": [
+    "gem_geothermal_L100001063273",
+    "pj_0228",
+    "pj_0235",
+    "pj_0239"
+   ],
+   "org_ids": [
+    "p_7a803f3b71"
+   ],
+   "bukti": [
+    {
+     "url": "https://www.gem.wiki/Darajat_geothermal_power_plant",
+     "tanggal": "2026-11-08",
+     "tb": "kajian",
+     "jenis": "gem",
+     "ket": "GEM Global Geothermal Power Tracker (2026-03), pemilik/operator proyek Darajat geothermal power plant",
+     "proyek_id": "pj_0228"
+    },
+    {
+     "url": "https://www.gem.wiki/Gunung_Salak_geothermal_power_plant",
+     "tanggal": "2026-11-08",
+     "tb": "kajian",
+     "jenis": "proyek",
+     "ket": "pihak pemilik pada PLTP I Gunung Salak 7",
+     "proyek_id": "pj_0235"
+    },
+    {
+     "url": "https://registry.verra.org/app/projectDetail/VCS/688",
+     "tanggal": "2026-11-08",
+     "tb": "via-pihak-ketiga",
+     "jenis": "karbon",
+     "ket": "proyek karbon Verra VCS: Wayang Windu Phase 2 Geothermal Power Project"
+    },
+    {
+     "url": "https://www.starenergy.co.id/",
+     "tanggal": "2026-11-07",
+     "tb": "kata-pihak",
+     "jenis": "penyedia",
+     "ket": "penyedia teknologi: PT Star Energy Geothermal"
+    },
+    {
+     "url": "https://www.gem.wiki/Wayang_Windu_geothermal_power_plant",
+     "tanggal": "2026-11-08",
+     "tb": "kajian",
+     "jenis": "gem",
+     "ket": "GEM Global Geothermal Power Tracker (2026-03), pemilik/operator proyek Wayang Windu geothermal power plant",
+     "proyek_id": "pj_0239"
+    }
+   ]
+  },
+  {
+   "nama": "Electricity Generating PCL (EGCO)",
+   "jumlah_bukti": 8,
+   "jenis": [
+    "gem",
+    "proyek"
+   ],
+   "proyek_ids": [
+    "pj_0235"
+   ],
+   "org_ids": [],
+   "bukti": [
+    {
+     "url": "https://www.gem.wiki/Gunung_Salak_geothermal_power_plant",
+     "tanggal": "2026-11-08",
+     "tb": "kajian",
+     "jenis": "gem",
+     "ket": "GEM Global Geothermal Power Tracker (2026-03), pemilik/operator proyek Gunung Salak geothermal power plant",
+     "proyek_id": "pj_0235"
+    }
+   ]
+  },
+  {
+   "nama": "KS Orka Renewables",
+   "jumlah_bukti": 8,
+   "jenis": [
+    "berita",
+    "gem",
+    "proyek"
+   ],
+   "proyek_ids": [
+    "pj_0272"
+   ],
+   "org_ids": [],
+   "bukti": [
+    {
+     "url": "https://www.tribunnews.com/bisnis/7871597/hanya-8-tahun-ks-orka-renewables-berhasil-kembangan-panas-bumi-tercepat-di-dunia",
+     "tanggal": "2026-08-21",
+     "tb": "media",
+     "jenis": "berita",
+     "ket": "judul berita tribunnews.com"
+    },
+    {
+     "url": "https://www.gem.wiki/Sorik_Marapi_geothermal_power_plant",
+     "tanggal": "2026-11-08",
+     "tb": "kajian",
+     "jenis": "gem",
+     "ket": "GEM Global Geothermal Power Tracker (2026-03), pemilik/operator proyek Sorik Marapi geothermal power plant",
+     "proyek_id": "pj_0272"
+    }
+   ]
+  },
+  {
+   "nama": "Scatec",
+   "jumlah_bukti": 2,
+   "jenis": [
+    "gem",
+    "pendanaan"
+   ],
+   "proyek_ids": [],
+   "org_ids": [],
+   "bukti": [
+    {
+     "url": "https://www.gem.wiki/Labuan_Bajo_solar_farm",
+     "tanggal": "2026-11-08",
+     "tb": "kajian",
+     "jenis": "gem",
+     "ket": "GEM Global Solar Power Tracker (2026-02), pemilik/operator proyek Labuan Bajo solar farm"
+    },
+    {
+     "url": "https://d-portal.org/ctrack.html#view=act&aid=NO-BRC-971277882-INS-19%2F0001",
+     "tanggal": "2026-11-07",
+     "tb": "resmi",
+     "jenis": "pendanaan",
+     "ket": "pendanaan energi Indonesia: Scatec Solar AS Feasibility study solar power plants in Indonesia"
+    }
+   ]
+  },
+  {
+   "nama": "Aboitiz Power (SN Aboitiz Power)",
+   "jumlah_bukti": 1,
+   "jenis": [
+    "gem"
+   ],
+   "proyek_ids": [],
+   "org_ids": [],
+   "bukti": [
+    {
+     "url": "https://www.gem.wiki/Lariang_hydroelectric_plant",
+     "tanggal": "2026-11-08",
+     "tb": "kajian",
+     "jenis": "gem",
+     "ket": "GEM Global Hydropower Tracker (2026-03), pemilik/operator proyek Lariang hydroelectric plant"
+    }
+   ]
+  },
+  {
+   "nama": "Korea South-East Power (KOEN)",
+   "jumlah_bukti": 4,
+   "jenis": [
+    "gem",
+    "proyek"
+   ],
+   "proyek_ids": [
+    "gem_hydropower_L100000602139"
+   ],
+   "org_ids": [],
+   "bukti": [
+    {
+     "url": "https://www.gem.wiki/Jambi_Tebo_power_station",
+     "tanggal": "2026-11-08",
+     "tb": "kajian",
+     "jenis": "gem",
+     "ket": "GEM Global Coal Plant Tracker (2026-07), pemilik/operator proyek Jambi Tebo power station"
+    },
+    {
+     "url": "https://www.gem.wiki/Peusangan_4_hydroelectric_plant",
+     "tanggal": "2026-11-08",
+     "tb": "kajian",
+     "jenis": "proyek",
+     "ket": "pihak pemilik pada Peusangan 4 hydroelectric plant",
+     "proyek_id": "gem_hydropower_L100000602139"
+    }
+   ]
+  },
+  {
+   "nama": "Korea Midland Power (KOMIPO)",
+   "jumlah_bukti": 3,
+   "jenis": [
+    "gem",
+    "proyek"
+   ],
+   "proyek_ids": [
+    "gem_hydropower_L100001045710"
+   ],
+   "org_ids": [],
+   "bukti": [
+    {
+     "url": "https://www.gem.wiki/Muara_Juloi_hydroelectric_plant",
+     "tanggal": "2026-11-08",
+     "tb": "kajian",
+     "jenis": "gem",
+     "ket": "GEM Global Hydropower Tracker (2026-03), pemilik/operator proyek Muara Juloi hydroelectric plant"
+    },
+    {
+     "url": "https://www.gem.wiki/Semangka_hydroelectric_plant",
+     "tanggal": "2026-11-08",
+     "tb": "kajian",
+     "jenis": "proyek",
+     "ket": "pihak pemilik pada Semangka hydroelectric plant",
+     "proyek_id": "gem_hydropower_L100001045710"
+    }
+   ]
+  },
+  {
+   "nama": "Hyundai Engineering & Construction",
+   "jumlah_bukti": 2,
+   "jenis": [
+    "gem",
+    "proyek"
+   ],
+   "proyek_ids": [
+    "gem_hydropower_L100000602139"
+   ],
+   "org_ids": [],
+   "bukti": [
+    {
+     "url": "https://www.gem.wiki/Peusangan_4_hydroelectric_plant",
+     "tanggal": "2026-11-08",
+     "tb": "kajian",
+     "jenis": "gem",
+     "ket": "GEM Global Hydropower Tracker (2026-03), pemilik/operator proyek Peusangan 4 hydroelectric plant",
+     "proyek_id": "gem_hydropower_L100000602139"
+    }
+   ]
+  },
+  {
+   "nama": "POSCO E&C",
+   "jumlah_bukti": 4,
+   "jenis": [
+    "gem",
+    "proyek"
+   ],
+   "proyek_ids": [
+    "gem_hydropower_L100001045710"
+   ],
+   "org_ids": [],
+   "bukti": [
+    {
+     "url": "https://www.gem.wiki/PT_Krakatau_Posco_Energy_power_station",
+     "tanggal": "2026-11-08",
+     "tb": "kajian",
+     "jenis": "gem",
+     "ket": "GEM Global Coal Plant Tracker (2026-07), pemilik/operator proyek PT Krakatau Posco Energy power station"
+    },
+    {
+     "url": "https://www.gem.wiki/Semangka_hydroelectric_plant",
+     "tanggal": "2026-11-08",
+     "tb": "kajian",
+     "jenis": "proyek",
+     "ket": "pihak pemilik pada Semangka hydroelectric plant",
+     "proyek_id": "gem_hydropower_L100001045710"
+    }
+   ]
+  },
+  {
+   "nama": "IGIS Asset Management",
+   "jumlah_bukti": 2,
+   "jenis": [
+    "gem",
+    "proyek"
+   ],
+   "proyek_ids": [
+    "gem_hydropower_L100000602139"
+   ],
+   "org_ids": [],
+   "bukti": [
+    {
+     "url": "https://www.gem.wiki/Peusangan_4_hydroelectric_plant",
+     "tanggal": "2026-11-08",
+     "tb": "kajian",
+     "jenis": "gem",
+     "ket": "GEM Global Hydropower Tracker (2026-03), pemilik/operator proyek Peusangan 4 hydroelectric plant",
+     "proyek_id": "gem_hydropower_L100000602139"
+    }
+   ]
+  },
+  {
+   "nama": "Solar Philippines",
+   "jumlah_bukti": 2,
+   "jenis": [
+    "gem",
+    "proyek"
+   ],
+   "proyek_ids": [
+    "gem_solar_L100000800820"
+   ],
+   "org_ids": [],
+   "bukti": [
+    {
+     "url": "https://www.gem.wiki/Bali-2_solar_farm",
+     "tanggal": "2026-11-08",
+     "tb": "kajian",
+     "jenis": "gem",
+     "ket": "GEM Global Solar Power Tracker (2026-02), pemilik/operator proyek East Bali solar farm",
+     "proyek_id": "gem_solar_L100000800820"
+    }
+   ]
+  },
+  {
+   "nama": "Sunseap Group",
+   "jumlah_bukti": 5,
+   "jenis": [
+    "gem",
+    "proyek"
+   ],
+   "proyek_ids": [
+    "pj_0362"
+   ],
+   "org_ids": [],
+   "bukti": [
+    {
+     "url": "https://www.gem.wiki/Batam_solar_farm",
+     "tanggal": "2026-11-08",
+     "tb": "kajian",
+     "jenis": "gem",
+     "ket": "GEM Global Solar Power Tracker (2026-02), pemilik/operator proyek Batam solar farm",
+     "proyek_id": "pj_0362"
+    },
+    {
+     "url": "https://www.gem.wiki/Combol_solar_farm",
+     "tanggal": "2026-11-08",
+     "tb": "kajian",
+     "jenis": "gem",
+     "ket": "GEM Global Solar Power Tracker (2026-02), pemilik/operator proyek Combol solar farm"
+    },
+    {
+     "url": "https://www.gem.wiki/Citlim_Island_solar_farm",
+     "tanggal": "2026-11-08",
+     "tb": "kajian",
+     "jenis": "gem",
+     "ket": "GEM Global Solar Power Tracker (2026-02), pemilik/operator proyek Citlim Island solar farm"
+    },
+    {
+     "url": "https://www.gem.wiki/Tembesi_Reservoir_floating_solar_farm",
+     "tanggal": "2026-11-08",
+     "tb": "kajian",
+     "jenis": "gem",
+     "ket": "GEM Global Solar Power Tracker (2026-02), pemilik/operator proyek Tembesi Reservoir floating solar farm"
+    }
+   ]
+  },
+  {
+   "nama": "PacificLight Power",
+   "jumlah_bukti": 4,
+   "jenis": [
+    "berita",
+    "gem",
+    "proyek"
+   ],
+   "proyek_ids": [
+    "gem_solar_L100000808624"
+   ],
+   "org_ids": [],
+   "bukti": [
+    {
+     "url": "https://www.businesstimes.com.sg/companies-markets/energy-commodities/pacificlight-pair-new-gas-power-plant-giant-batteries-singapore-first",
+     "tanggal": "2026-09-28",
+     "tb": "media",
+     "jenis": "berita",
+     "ket": "judul berita businesstimes.com.sg"
+    },
+    {
+     "url": "https://www.gem.wiki/Pulau_Bulan_solar_farm",
+     "tanggal": "2026-11-08",
+     "tb": "kajian",
+     "jenis": "gem",
+     "ket": "GEM Global Solar Power Tracker (2026-02), pemilik/operator proyek Pulau Bulan solar farm",
+     "proyek_id": "gem_solar_L100000808624"
+    }
+   ]
+  },
+  {
+   "nama": "ib vogt",
+   "jumlah_bukti": 1,
+   "jenis": [
+    "gem"
+   ],
+   "proyek_ids": [],
+   "org_ids": [],
+   "bukti": [
+    {
+     "url": "https://www.gem.wiki/Riau_Solar_and_Storage_Power_Plant",
+     "tanggal": "2026-11-08",
+     "tb": "kajian",
+     "jenis": "gem",
+     "ket": "GEM Global Solar Power Tracker (2026-02), pemilik/operator proyek Riau Solar and Storage Power Plant"
+    }
+   ]
+  },
+  {
+   "nama": "China Gezhouba Group",
+   "jumlah_bukti": 6,
+   "jenis": [
+    "gem",
+    "proyek"
+   ],
+   "proyek_ids": [
+    "gem_hydropower_L100000602113"
+   ],
+   "org_ids": [],
+   "bukti": [
+    {
+     "url": "https://www.gem.wiki/Parit_Baru_power_station",
+     "tanggal": "2026-11-08",
+     "tb": "kajian",
+     "jenis": "gem",
+     "ket": "GEM Global Coal Plant Tracker (2026-07), pemilik/operator proyek Parit Baru power station"
+    },
+    {
+     "url": "https://www.gem.wiki/Karama_hydroelectric_plant",
+     "tanggal": "2026-11-08",
+     "tb": "kajian",
+     "jenis": "proyek",
+     "ket": "pihak pemilik pada Karama hydroelectric plant",
+     "proyek_id": "gem_hydropower_L100000602113"
+    }
+   ]
+  },
+  {
+   "nama": "China Guodian",
+   "jumlah_bukti": 1,
+   "jenis": [
+    "gem"
+   ],
+   "proyek_ids": [],
+   "org_ids": [],
+   "bukti": [
+    {
+     "url": "https://www.gem.wiki/Java_Island_floating_solar_farm",
+     "tanggal": "2026-11-08",
+     "tb": "kajian",
+     "jenis": "gem",
+     "ket": "GEM Global Solar Power Tracker (2026-02), pemilik/operator proyek Java Island floating solar farm"
+    }
+   ]
+  },
+  {
+   "nama": "China Shenhua Energy",
+   "jumlah_bukti": 8,
+   "jenis": [
+    "gem"
+   ],
+   "proyek_ids": [],
+   "org_ids": [],
+   "bukti": [
+    {
+     "url": "https://www.gem.wiki/Adaro_East_Kalimantan_power_station",
+     "tanggal": "2026-11-08",
+     "tb": "kajian",
+     "jenis": "gem",
+     "ket": "GEM Global Coal Plant Tracker (2026-07), pemilik/operator proyek Adaro East Kalimantan power station"
+    },
+    {
+     "url": "https://www.gem.wiki/Jawa-7_power_station",
+     "tanggal": "2026-11-08",
+     "tb": "kajian",
+     "jenis": "gem",
+     "ket": "GEM Global Coal Plant Tracker (2026-07), pemilik/operator proyek Jawa-7 power station"
+    },
+    {
+     "url": "https://www.gem.wiki/Mesuji_power_station",
+     "tanggal": "2026-11-08",
+     "tb": "kajian",
+     "jenis": "gem",
+     "ket": "GEM Global Coal Plant Tracker (2026-07), pemilik/operator proyek Mesuji power station"
+    },
+    {
+     "url": "https://www.gem.wiki/Sumsel-1_power_station",
+     "tanggal": "2026-11-08",
+     "tb": "kajian",
+     "jenis": "gem",
+     "ket": "GEM Global Coal Plant Tracker (2026-07), pemilik/operator proyek Sumsel-1 power station"
+    }
+   ]
+  },
+  {
+   "nama": "Bharat Heavy Electricals (BHEL)",
+   "jumlah_bukti": 1,
+   "jenis": [
+    "gem"
+   ],
+   "proyek_ids": [],
+   "org_ids": [],
+   "bukti": [
+    {
+     "url": "https://www.gem.wiki/Sulawesi_Star_power_station",
+     "tanggal": "2026-11-08",
+     "tb": "kajian",
+     "jenis": "gem",
+     "ket": "GEM Global Coal Plant Tracker (2026-07), pemilik/operator proyek Sulawesi Star power station"
+    }
+   ]
+  },
+  {
+   "nama": "Xinyi Glass Holdings",
+   "jumlah_bukti": 3,
+   "jenis": [
+    "gem",
+    "penyedia"
+   ],
+   "proyek_ids": [],
+   "org_ids": [],
+   "bukti": [
+    {
+     "url": "https://www.gem.wiki/Xinyi_Group_captive_power_station",
+     "tanggal": "2026-11-08",
+     "tb": "kajian",
+     "jenis": "gem",
+     "ket": "GEM Global Coal Plant Tracker (2026-07), pemilik/operator proyek Xinyi Group captive power station"
+    },
+    {
+     "url": "https://www.antaranews.com/berita/3656814/jokowi-gaet-investasi-115-miliar-dolar-as-dari-industri-kaca-china",
+     "tanggal": "2023-07-28",
+     "tb": "media",
+     "jenis": "penyedia",
+     "ket": "penyedia teknologi: Xinyi International Investments"
+    },
+    {
+     "url": "https://www.antaranews.com/berita/4262787/pgnpasok-gas-bumi-18-bbtudke-industri-panel-surya-di-gresik",
+     "tanggal": "2024-08-15",
+     "tb": "media",
+     "jenis": "penyedia",
+     "ket": "penyedia teknologi: PT Xinyi Solar Indonesia / PT Xinyi Glass Indonesia"
+    }
+   ]
+  },
+  {
+   "nama": "Vale",
+   "jumlah_bukti": 5,
+   "jenis": [
+    "gem",
+    "proyek"
+   ],
+   "proyek_ids": [
+    "gem_hydropower_L100000602103",
+    "gem_hydropower_L100000602124"
+   ],
+   "org_ids": [],
+   "bukti": [
+    {
+     "url": "https://www.gem.wiki/Hu'u_Daha_geothermal_power_plant",
+     "tanggal": "2026-11-08",
+     "tb": "kajian",
+     "jenis": "gem",
+     "ket": "GEM Global Geothermal Power Tracker (2026-03), pemilik/operator proyek Hu'u Daha geothermal power plant"
+    },
+    {
+     "url": "https://www.gem.wiki/Balambano_hydroelectric_plant",
+     "tanggal": "2026-11-08",
+     "tb": "kajian",
+     "jenis": "proyek",
+     "ket": "pihak pemilik pada Balambano hydroelectric plant",
+     "proyek_id": "gem_hydropower_L100000602103"
+    },
+    {
+     "url": "https://www.gem.wiki/Larona_hydroelectric_plant",
+     "tanggal": "2026-11-08",
+     "tb": "kajian",
+     "jenis": "gem",
+     "ket": "GEM Global Hydropower Tracker (2026-03), pemilik/operator proyek Larona hydroelectric plant",
+     "proyek_id": "gem_hydropower_L100000602124"
+    }
+   ]
+  },
+  {
+   "nama": "Gallant Venture",
+   "jumlah_bukti": 7,
+   "jenis": [
+    "gem",
+    "proyek"
+   ],
+   "proyek_ids": [
+    "gem_solar_L100000808624"
+   ],
+   "org_ids": [],
+   "bukti": [
+    {
+     "url": "https://www.gem.wiki/Gallant_Venture_power_station",
+     "tanggal": "2026-11-08",
+     "tb": "kajian",
+     "jenis": "gem",
+     "ket": "GEM Global Coal Plant Tracker (2026-07), pemilik/operator proyek Gallant Venture power station"
+    },
+    {
+     "url": "https://www.gem.wiki/Pulau_Bulan_solar_farm",
+     "tanggal": "2026-11-08",
+     "tb": "kajian",
+     "jenis": "proyek",
+     "ket": "pihak pemilik pada Pulau Bulan solar farm 1",
+     "proyek_id": "gem_solar_L100000808624"
+    }
+   ]
+  },
+  {
+   "nama": "ReNu Energy",
+   "jumlah_bukti": 1,
+   "jenis": [
+    "gem"
+   ],
+   "proyek_ids": [],
+   "org_ids": [],
+   "bukti": [
+    {
+     "url": "https://www.gem.wiki/Riau_solar_farm",
+     "tanggal": "2026-11-08",
+     "tb": "kajian",
+     "jenis": "gem",
+     "ket": "GEM Global Solar Power Tracker (2026-02), pemilik/operator proyek Riau solar farm"
+    }
+   ]
+  },
+  {
+   "nama": "Pace Energy",
+   "jumlah_bukti": 4,
+   "jenis": [
+    "gem",
+    "proyek"
+   ],
+   "proyek_ids": [
+    "pj_0004"
+   ],
+   "org_ids": [],
+   "bukti": [
+    {
+     "url": "https://www.gem.wiki/Tanah_Laut_wind_farm",
+     "tanggal": "2026-11-08",
+     "tb": "kajian",
+     "jenis": "gem",
+     "ket": "GEM Global Wind Power Tracker (2026-02), pemilik/operator proyek Tanah Laut wind farm",
+     "proyek_id": "pj_0004"
+    }
+   ]
+  },
+  {
+   "nama": "Veolia",
+   "jumlah_bukti": 1,
+   "jenis": [
+    "proyek"
+   ],
+   "proyek_ids": [
+    "pj_0047"
+   ],
+   "org_ids": [],
+   "bukti": [
+    {
+     "url": "https://www.liputan6.com/bisnis/read/8251038/daftar-nama-8-mitra-penggarap-proyek-listrik-dari-sampah-di-indonesia",
+     "tanggal": "2026-11-07",
+     "tb": "media",
+     "jenis": "proyek",
+     "ket": "pihak pemilik pada Energi asal sampah Semarang (PSN nomor 154)",
+     "proyek_id": "pj_0047"
+    }
+   ]
+  },
+  {
+   "nama": "Wilmar International",
+   "jumlah_bukti": 2,
+   "jenis": [
+    "organisasi"
+   ],
+   "proyek_ids": [],
+   "org_ids": [
+    "p_6f8075d555",
+    "p_f9b341c0f2"
+   ],
+   "bukti": [
+    {
+     "url": "https://www.aprobi.or.id/about-us/members/",
+     "tanggal": "2026-11-07",
+     "tb": "kata-pihak",
+     "jenis": "organisasi",
+     "ket": "direktori METI: PT Wilmar Nabati Indonesia",
+     "org_id": "p_6f8075d555"
+    }
+   ]
+  },
+  {
+   "nama": "Chevron",
+   "jumlah_bukti": 2,
+   "jenis": [
+    "proyek"
+   ],
+   "proyek_ids": [
+    "pj_0229",
+    "pj_0231"
+   ],
+   "org_ids": [],
+   "bukti": [
+    {
+     "url": "https://en.wikipedia.org/wiki/List_of_power_stations_in_Indonesia",
+     "tanggal": "2026-11-07",
+     "tb": "media",
+     "jenis": "proyek",
+     "ket": "pihak pemilik pada Darajat geothermal",
+     "proyek_id": "pj_0229"
+    }
+   ]
+  },
+  {
+   "nama": "Wpd",
+   "jumlah_bukti": 2,
+   "jenis": [
+    "penyedia",
+    "organisasi"
+   ],
+   "proyek_ids": [],
+   "org_ids": [
+    "p_8841495321"
+   ],
+   "bukti": [
+    {
+     "url": "https://aesi.or.id/anggota/",
+     "tanggal": "2026-11-07",
+     "tb": "kata-pihak",
+     "jenis": "penyedia",
+     "ket": "penyedia teknologi: Wpd"
+    }
+   ]
+  },
+  {
+   "nama": "Greenvolt",
+   "jumlah_bukti": 2,
+   "jenis": [
+    "penyedia",
+    "organisasi"
+   ],
+   "proyek_ids": [],
+   "org_ids": [
+    "p_7796b6d355"
+   ],
+   "bukti": [
+    {
+     "url": "https://aesi.or.id/anggota/",
+     "tanggal": "2026-11-07",
+     "tb": "kata-pihak",
+     "jenis": "penyedia",
+     "ket": "penyedia teknologi: PT Greenvolt Power Indonesia"
+    }
+   ]
+  },
+  {
+   "nama": "Ampotech",
+   "jumlah_bukti": 2,
+   "jenis": [
+    "penyedia",
+    "organisasi"
+   ],
+   "proyek_ids": [],
+   "org_ids": [
+    "p_7583f2d0af"
+   ],
+   "bukti": [
+    {
+     "url": "https://aesi.or.id/anggota/",
+     "tanggal": "2026-11-07",
+     "tb": "kata-pihak",
+     "jenis": "penyedia",
+     "ket": "penyedia teknologi: Ampotech Pte Ltd"
+    }
+   ]
+  },
+  {
+   "nama": "Jiangsu Seraphim Solar System",
+   "jumlah_bukti": 2,
+   "jenis": [
+    "penyedia",
+    "organisasi"
+   ],
+   "proyek_ids": [],
+   "org_ids": [
+    "p_6aa90e3b2d"
+   ],
+   "bukti": [
+    {
+     "url": "https://aesi.or.id/anggota/",
+     "tanggal": "2026-11-07",
+     "tb": "kata-pihak",
+     "jenis": "penyedia",
+     "ket": "penyedia teknologi: Jiangsu Seraphim Solar System Co Ltd"
+    }
+   ]
+  },
+  {
+   "nama": "SEG Solar",
+   "jumlah_bukti": 2,
+   "jenis": [
+    "penyedia"
+   ],
+   "proyek_ids": [],
+   "org_ids": [],
+   "bukti": [
+    {
+     "url": "https://www.antaranews.com/berita/4370775/seg-solar-mulai-bangun-kawasan-industri-fotovoltaik-terintegrasi-dan-terbesar-di-indonesia",
+     "tanggal": "2024-10-02",
+     "tb": "kata-pihak",
+     "jenis": "penyedia",
+     "ket": "penyedia teknologi: SEG Solar Indonesia"
+    },
+    {
+     "url": "https://www.antaranews.com/berita/4735373/kemenperin-perkuat-industri-modul-surya-dukung-elektrifikasi-ebt",
+     "tanggal": "2025-03-25",
+     "tb": "media",
+     "jenis": "penyedia",
+     "ket": "penyedia teknologi: PT SEG Solar Manufaktur Indonesia"
+    }
+   ]
+  },
+  {
+   "nama": "Lesso Group",
+   "jumlah_bukti": 1,
+   "jenis": [
+    "penyedia"
+   ],
+   "proyek_ids": [],
+   "org_ids": [],
+   "bukti": [
+    {
+     "url": "https://www.antaranews.com/berita/4735373/kemenperin-perkuat-industri-modul-surya-dukung-elektrifikasi-ebt",
+     "tanggal": "2025-03-25",
+     "tb": "media",
+     "jenis": "penyedia",
+     "ket": "penyedia teknologi: PT Lesso New Energy"
+    }
+   ]
+  },
+  {
+   "nama": "Preformed Line Products",
+   "jumlah_bukti": 7,
+   "jenis": [
+    "tkdn",
+    "penyedia",
+    "organisasi"
+   ],
+   "proyek_ids": [],
+   "org_ids": [
+    "p_54c31c66e1"
+   ],
+   "bukti": [
+    {
+     "url": "https://tkdn.kemenperin.go.id/sertifikat?q=modul%20surya",
+     "tanggal": "2026-11-07",
+     "tb": "resmi",
+     "jenis": "tkdn",
+     "ket": "sertifikat TKDN Kemenperin: PT PREFORMED LINE PRODUCTS INDONESIA"
+    },
+    {
+     "url": "https://aesi.or.id/anggota/",
+     "tanggal": "2026-11-07",
+     "tb": "kata-pihak",
+     "jenis": "penyedia",
+     "ket": "penyedia teknologi: PT Preformed Line Products Indonesia"
+    }
+   ]
+  },
+  {
+   "nama": "Lapp Group (JJ Lapp)",
+   "jumlah_bukti": 2,
+   "jenis": [
+    "penyedia",
+    "organisasi"
+   ],
+   "proyek_ids": [],
+   "org_ids": [
+    "p_87d9e75a06"
+   ],
+   "bukti": [
+    {
+     "url": "https://aesi.or.id/anggota/",
+     "tanggal": "2026-11-07",
+     "tb": "kata-pihak",
+     "jenis": "penyedia",
+     "ket": "penyedia teknologi: PT Jj Lapp Indonesia"
+    }
+   ]
+  },
+  {
+   "nama": "REPT Battero",
+   "jumlah_bukti": 1,
+   "jenis": [
+    "penyedia"
+   ],
+   "proyek_ids": [],
+   "org_ids": [],
+   "bukti": [
+    {
+     "url": "https://www.antaranews.com/berita/5776614/prabowo-luncurkan-ekspor-perdana-baterai-ev-dan-11-proyek-di-iwip",
+     "tanggal": "2026-10-08",
+     "tb": "media",
+     "jenis": "penyedia",
+     "ket": "penyedia teknologi: REPT Battero Indonesia"
+    }
+   ]
+  },
+  {
+   "nama": "Tianneng Power",
+   "jumlah_bukti": 2,
+   "jenis": [
+    "penyedia",
+    "organisasi"
+   ],
+   "proyek_ids": [],
+   "org_ids": [
+    "p_de8c288239"
+   ],
+   "bukti": [
+    {
+     "url": "https://aesi.or.id/anggota/",
+     "tanggal": "2026-11-07",
+     "tb": "kata-pihak",
+     "jenis": "penyedia",
+     "ket": "penyedia teknologi: PT Tianneng Power Indonesia"
+    }
+   ]
+  },
+  {
+   "nama": "Contemporary Amperex Technology (CATL)",
+   "jumlah_bukti": 4,
+   "jenis": [
+    "video",
+    "penyedia"
+   ],
+   "proyek_ids": [],
+   "org_ids": [],
+   "bukti": [
+    {
+     "url": "https://www.youtube.com/watch?v=Ixipw6CWlCM",
+     "tanggal": "2026-11-07",
+     "tb": "media",
+     "jenis": "video",
+     "ket": "video Rilisid TV "
+    },
+    {
+     "url": "https://www.antaranews.com/berita/5705060/esdm-sebut-pembangunan-pabrik-baterai-ev-di-karawang-sudah-rampung",
+     "tanggal": "2026-08-21",
+     "tb": "media",
+     "jenis": "penyedia",
+     "ket": "penyedia teknologi: PT Contemporary Amperex Technology Indonesia Battery"
+    },
+    {
+     "url": "https://www.youtube.com/watch?v=eMRa4BECyaI",
+     "tanggal": "2026-11-07",
+     "tb": "media",
+     "jenis": "video",
+     "ket": "video Kaltim Post"
+    },
+    {
+     "url": "https://www.youtube.com/watch?v=i4aPKgMWncs",
+     "tanggal": "2026-11-07",
+     "tb": "media",
+     "jenis": "video",
+     "ket": "video KONTAN TV"
+    }
+   ]
+  },
+  {
+   "nama": "Hyundai Motor Group",
+   "jumlah_bukti": 1,
+   "jenis": [
+    "penyedia"
+   ],
+   "proyek_ids": [],
+   "org_ids": [],
+   "bukti": [
+    {
+     "url": "https://www.antaranews.com/berita/4791589/hyundai-sebut-pabrik-baterai-ev-hli-tetap-beroperasi-meski-lg-mundur",
+     "tanggal": "2025-04-24",
+     "tb": "media",
+     "jenis": "penyedia",
+     "ket": "penyedia teknologi: PT HLI Green Power"
+    }
+   ]
+  },
+  {
+   "nama": "Siemens",
+   "jumlah_bukti": 1,
+   "jenis": [
+    "gem"
+   ],
+   "proyek_ids": [
+    "gem_wind_L100000901004"
+   ],
+   "org_ids": [],
+   "bukti": [
+    {
+     "url": "https://www.gem.wiki/Tolo_wind_farm",
+     "tanggal": "2026-11-08",
+     "tb": "kajian",
+     "jenis": "gem",
+     "ket": "GEM Global Wind Power Tracker (2026-02), pemilik/operator proyek Tolo wind farm",
+     "proyek_id": "gem_wind_L100000901004"
+    }
+   ]
+  },
+  {
+   "nama": "Toshiba",
+   "jumlah_bukti": 2,
+   "jenis": [
+    "berita"
+   ],
+   "proyek_ids": [],
+   "org_ids": [],
+   "bukti": [
+    {
+     "url": "https://www.antaranews.com/berita/5690361/toshiba-tampilkan-keahlian-panas-bumi-dan-solusi-digital-yang-telah-teruji-di-ajang-12th-iigce-2026",
+     "tanggal": "2026-08-12",
+     "tb": "media",
+     "jenis": "berita",
+     "ket": "judul berita antaranews.com"
+    }
+   ]
+  },
+  {
+   "nama": "Shanghai Electric",
+   "jumlah_bukti": 1,
+   "jenis": [
+    "berita"
+   ],
+   "proyek_ids": [],
+   "org_ids": [],
+   "bukti": [
+    {
+     "url": "http://www.vietnamtribune.com/news/279326059/shanghai-electric-presents-three-energy-transition-solutions-at-enlit-asia-2026",
+     "tanggal": "2026-09-23",
+     "tb": "media",
+     "jenis": "berita",
+     "ket": "judul berita vietnamtribune.com"
+    }
+   ]
+  },
+  {
+   "nama": "China Everbright Environment",
+   "jumlah_bukti": 1,
+   "jenis": [
+    "proyek"
+   ],
+   "proyek_ids": [
+    "pjb_004"
+   ],
+   "org_ids": [],
+   "bukti": [
+    {
+     "url": "https://www.liputan6.com/bisnis/read/8251038/daftar-nama-8-mitra-penggarap-proyek-listrik-dari-sampah-di-indonesia",
+     "tanggal": "2026-11-07",
+     "tb": "media",
+     "jenis": "proyek",
+     "ket": "pihak pemilik pada PSEL Kabupaten Bekasi",
+     "proyek_id": "pjb_004"
+    }
+   ]
+  },
+  {
+   "nama": "CITIC Construction",
+   "jumlah_bukti": 1,
+   "jenis": [
+    "proyek"
+   ],
+   "proyek_ids": [
+    "pjb_002"
+   ],
+   "org_ids": [],
+   "bukti": [
+    {
+     "url": "https://www.liputan6.com/bisnis/read/8251038/daftar-nama-8-mitra-penggarap-proyek-listrik-dari-sampah-di-indonesia",
+     "tanggal": "2026-11-07",
+     "tb": "media",
+     "jenis": "proyek",
+     "ket": "pihak pemilik pada PSEL Yogyakarta Raya (Piyungan)",
+     "proyek_id": "pjb_002"
+    }
+   ]
+  },
+  {
+   "nama": "Beijing GeoEnviron Engineering",
+   "jumlah_bukti": 1,
+   "jenis": [
+    "proyek"
+   ],
+   "proyek_ids": [
+    "pjb_006"
+   ],
+   "org_ids": [],
+   "bukti": [
+    {
+     "url": "https://www.liputan6.com/bisnis/read/8251038/daftar-nama-8-mitra-penggarap-proyek-listrik-dari-sampah-di-indonesia",
+     "tanggal": "2026-11-07",
+     "tb": "media",
+     "jenis": "proyek",
+     "ket": "pihak pemilik pada PSEL Serang Raya",
+     "proyek_id": "pjb_006"
+    }
+   ]
+  },
+  {
+   "nama": "China Datang",
+   "jumlah_bukti": 4,
+   "jenis": [
+    "berita",
+    "gem"
+   ],
+   "proyek_ids": [],
+   "org_ids": [],
+   "bukti": [
+    {
+     "url": "https://bali.tribunnews.com/karangasem/603862/undang-presiden-peluncuran-plts-di-jembrana-plts-di-desa-kubu-karangasem-ditumbuhi-tanaman-liar",
+     "tanggal": "2026-08-26",
+     "tb": "media",
+     "jenis": "berita",
+     "ket": "judul berita bali.tribunnews.com"
+    },
+    {
+     "url": "https://www.gem.wiki/Kalselteng-1_power_station",
+     "tanggal": "2026-11-08",
+     "tb": "kajian",
+     "jenis": "gem",
+     "ket": "GEM Global Coal Plant Tracker (2026-07), pemilik/operator proyek Kalselteng-1 power station"
+    }
+   ]
+  },
+  {
+   "nama": "Huadian",
+   "jumlah_bukti": 6,
+   "jenis": [
+    "berita",
+    "gem"
+   ],
+   "proyek_ids": [],
+   "org_ids": [],
+   "bukti": [
+    {
+     "url": "https://sumatra.bisnis.com/read/20260906/533/2001751/pt-huadian-bukit-asam-power-raih-penghargaan-ebtke-2026-dari-kementerian-esdm",
+     "tanggal": "2026-09-06",
+     "tb": "media",
+     "jenis": "berita",
+     "ket": "judul berita sumatra.bisnis.com"
+    },
+    {
+     "url": "https://www.gem.wiki/Bangko_Tengah_power_station",
+     "tanggal": "2026-11-08",
+     "tb": "kajian",
+     "jenis": "gem",
+     "ket": "GEM Global Coal Plant Tracker (2026-07), pemilik/operator proyek Bangko Tengah power station"
+    }
+   ]
+  },
+  {
+   "nama": "Tsingshan",
+   "jumlah_bukti": 4,
+   "jenis": [
+    "gem"
+   ],
+   "proyek_ids": [],
+   "org_ids": [],
+   "bukti": [
+    {
+     "url": "https://www.gem.wiki/Sulawesi_Mining_power_station",
+     "tanggal": "2026-11-08",
+     "tb": "kajian",
+     "jenis": "gem",
+     "ket": "GEM Global Coal Plant Tracker (2026-07), pemilik/operator proyek Sulawesi Mining power station"
+    }
+   ]
+  },
+  {
+   "nama": "Risen Energy",
+   "jumlah_bukti": 1,
+   "jenis": [
+    "berita"
+   ],
+   "proyek_ids": [],
+   "org_ids": [],
+   "bukti": [
+    {
+     "url": "https://organiser.org/2026/09/13/380252/politics/fragile-five-to-fastest-growing-major-economy-incredible-indias-transformation-in-12-years/",
+     "tanggal": "2026-09-13",
+     "tb": "media",
+     "jenis": "berita",
+     "ket": "ringkasan berita organiser.org"
+    }
+   ]
+  },
+  {
+   "nama": "Astronergy (Chint)",
+   "jumlah_bukti": 2,
+   "jenis": [
+    "organisasi"
+   ],
+   "proyek_ids": [],
+   "org_ids": [
+    "p_db9a161e69"
+   ],
+   "bukti": [
+    {
+     "url": "https://aesi.or.id/anggota/",
+     "tanggal": "2026-11-07",
+     "tb": "kata-pihak",
+     "jenis": "organisasi",
+     "ket": "direktori METI: Chint",
+     "org_id": "p_db9a161e69"
+    },
+    {
+     "url": "https://www.chint.id/contactor-135935",
+     "tanggal": "2026-11-07",
+     "tb": "situs-sendiri",
+     "jenis": "organisasi",
+     "ket": "direktori METI: Chint",
+     "org_id": "p_db9a161e69"
+    }
+   ]
+  },
+  {
+   "nama": "GCL",
+   "jumlah_bukti": 2,
+   "jenis": [
+    "berita"
+   ],
+   "proyek_ids": [],
+   "org_ids": [],
+   "bukti": [
+    {
+     "url": "https://en.antaranews.com/news/430791/gcl-si-to-showcase-ecopower-mate-at-oil-gas-indonesia-2026",
+     "tanggal": "2026-09-10",
+     "tb": "media",
+     "jenis": "berita",
+     "ket": "judul berita en.antaranews.com"
+    }
+   ]
+  },
+  {
+   "nama": "REC Group",
+   "jumlah_bukti": 14,
+   "jenis": [
+    "tkdn",
+    "penyedia",
+    "organisasi"
+   ],
+   "proyek_ids": [],
+   "org_ids": [
+    "p_f9282cbf6b"
+   ],
+   "bukti": [
+    {
+     "url": "https://tkdn.kemenperin.go.id/sertifikat?q=modul%20surya",
+     "tanggal": "2026-11-07",
+     "tb": "resmi",
+     "jenis": "tkdn",
+     "ket": "sertifikat TKDN Kemenperin: PT Rec Solar Energy Indonesia"
+    },
+    {
+     "url": "https://tkdn.kemenperin.go.id/sertifikat?q=modul%20surya&page=2",
+     "tanggal": "2026-11-07",
+     "tb": "resmi",
+     "jenis": "organisasi",
+     "ket": "direktori METI: PT REC Solar Energy Indonesia",
+     "org_id": "p_f9282cbf6b"
+    },
+    {
+     "url": "https://www.recgroup.com/en/contact",
+     "tanggal": "2026-11-07",
+     "tb": "situs-sendiri",
+     "jenis": "organisasi",
+     "ket": "direktori METI: PT REC Solar Energy Indonesia",
+     "org_id": "p_f9282cbf6b"
+    }
+   ]
+  },
+  {
+   "nama": "GoodWe",
+   "jumlah_bukti": 1,
+   "jenis": [
+    "berita"
+   ],
+   "proyek_ids": [],
+   "org_ids": [],
+   "bukti": [
+    {
+     "url": "https://en.antaranews.com/news/436109/yude-solar-and-sedayusolar-form-strategic-joint-venture-to-develop-solar-projects-in-indonesia",
+     "tanggal": "2026-10-17",
+     "tb": "media",
+     "jenis": "berita",
+     "ket": "ringkasan berita en.antaranews.com"
+    }
+   ]
+  },
+  {
+   "nama": "Trina Solar",
+   "jumlah_bukti": 4,
+   "jenis": [
+    "penyedia",
+    "organisasi"
+   ],
+   "proyek_ids": [],
+   "org_ids": [
+    "p_636350291c",
+    "p_d7ba891819"
+   ],
+   "bukti": [
+    {
+     "url": "https://www.antaranews.com/berita/4735373/kemenperin-perkuat-industri-modul-surya-dukung-elektrifikasi-ebt",
+     "tanggal": "2025-03-25",
+     "tb": "media",
+     "jenis": "penyedia",
+     "ket": "penyedia teknologi: PT Trina Mas Agra Indonesia"
+    },
+    {
+     "url": "https://www.trinasolar.com",
+     "tanggal": "2026-11-07",
+     "tb": "kata-pihak",
+     "jenis": "organisasi",
+     "ket": "direktori METI: Trina Solar",
+     "org_id": "p_636350291c"
+    },
+    {
+     "url": "https://aesi.or.id/anggota/",
+     "tanggal": "2026-11-07",
+     "tb": "kata-pihak",
+     "jenis": "organisasi",
+     "ket": "direktori METI: Trina",
+     "org_id": "p_d7ba891819"
+    }
+   ]
+  },
+  {
+   "nama": "Canadian Solar",
+   "jumlah_bukti": 3,
+   "jenis": [
+    "penyedia",
+    "organisasi"
+   ],
+   "proyek_ids": [],
+   "org_ids": [
+    "p_af0f14186a"
+   ],
+   "bukti": [
+    {
+     "url": "https://www.csisolar.com",
+     "tanggal": "2026-11-07",
+     "tb": "kata-pihak",
+     "jenis": "penyedia",
+     "ket": "penyedia teknologi: Canadian Solar"
+    },
+    {
+     "url": "https://www.csisolar.com/contactus/",
+     "tanggal": "2026-11-07",
+     "tb": "situs-sendiri",
+     "jenis": "organisasi",
+     "ket": "direktori METI: Canadian Solar",
+     "org_id": "p_af0f14186a"
+    }
+   ]
+  },
+  {
+   "nama": "Sungrow",
+   "jumlah_bukti": 18,
+   "jenis": [
+    "tkdn",
+    "penyedia",
+    "organisasi"
+   ],
+   "proyek_ids": [],
+   "org_ids": [
+    "p_6d6378747b"
+   ],
+   "bukti": [
+    {
+     "url": "https://tkdn.kemenperin.go.id/sertifikat?q=panel%20surya",
+     "tanggal": "2026-11-07",
+     "tb": "resmi",
+     "jenis": "tkdn",
+     "ket": "sertifikat TKDN Kemenperin: PT Utomo Solar Panel Terapung Erpo"
+    },
+    {
+     "url": "https://en.sungrowpower.com",
+     "tanggal": "2026-11-07",
+     "tb": "kata-pihak",
+     "jenis": "penyedia",
+     "ket": "penyedia teknologi: Sungrow"
+    },
+    {
+     "url": "https://www.sungrowpower.com/en/about-us/contact-us",
+     "tanggal": "2026-11-07",
+     "tb": "situs-sendiri",
+     "jenis": "organisasi",
+     "ket": "direktori METI: Sungrow",
+     "org_id": "p_6d6378747b"
+    },
+    {
+     "url": "https://tkdn.kemenperin.go.id/sertifikat?q=panel%20surya&page=2",
+     "tanggal": "2026-11-07",
+     "tb": "resmi",
+     "jenis": "tkdn",
+     "ket": "sertifikat TKDN Kemenperin: PT Utomo Solar Panel Terapung Erpo"
+    }
+   ]
+  },
+  {
+   "nama": "LONGi Green Energy",
+   "jumlah_bukti": 4,
+   "jenis": [
+    "penyedia",
+    "organisasi"
+   ],
+   "proyek_ids": [],
+   "org_ids": [
+    "p_19a0c30f94"
+   ],
+   "bukti": [
+    {
+     "url": "https://www.antaranews.com/berita/4735373/kemenperin-perkuat-industri-modul-surya-dukung-elektrifikasi-ebt",
+     "tanggal": "2025-03-25",
+     "tb": "media",
+     "jenis": "penyedia",
+     "ket": "penyedia teknologi: PT Longi Pertamina Power Indonesia (JV)"
+    },
+    {
+     "url": "https://www.longi.com",
+     "tanggal": "2026-11-07",
+     "tb": "kata-pihak",
+     "jenis": "organisasi",
+     "ket": "direktori METI: LONGi Green Energy Technology",
+     "org_id": "p_19a0c30f94"
+    },
+    {
+     "url": "https://www.longi.com/en/contact-us/",
+     "tanggal": "2026-11-07",
+     "tb": "situs-sendiri",
+     "jenis": "organisasi",
+     "ket": "direktori METI: LONGi Green Energy Technology",
+     "org_id": "p_19a0c30f94"
+    }
+   ]
+  },
+  {
+   "nama": "JinkoSolar",
+   "jumlah_bukti": 1,
+   "jenis": [
+    "organisasi"
+   ],
+   "proyek_ids": [],
+   "org_ids": [
+    "p_ab7de55eca"
+   ],
+   "bukti": [
+    {
+     "url": "https://aesi.or.id/anggota/",
+     "tanggal": "2026-11-07",
+     "tb": "kata-pihak",
+     "jenis": "organisasi",
+     "ket": "direktori METI: Jinko",
+     "org_id": "p_ab7de55eca"
+    }
+   ]
+  },
+  {
+   "nama": "Masdar",
+   "jumlah_bukti": 12,
+   "jenis": [
+    "tkdn",
+    "gem",
+    "proyek",
+    "penyedia",
+    "organisasi"
+   ],
+   "proyek_ids": [
+    "pj_0334"
+   ],
+   "org_ids": [
+    "p_45c7d8a27f",
+    "p_e0ca80d46a",
+    "tk_7d9f65bf"
+   ],
+   "bukti": [
+    {
+     "url": "https://tkdn.kemenperin.go.id/sertifikat?q=pembangkit%20listrik%20tenaga",
+     "tanggal": "2026-11-07",
+     "tb": "resmi",
+     "jenis": "tkdn",
+     "ket": "sertifikat TKDN Kemenperin: PT. Pembangkitan Jawa Bali Masdar Solar Energi"
+    },
+    {
+     "url": "https://www.gem.wiki/Cirata_Reservoir_solar_farm",
+     "tanggal": "2026-11-08",
+     "tb": "kajian",
+     "jenis": "gem",
+     "ket": "GEM Global Solar Power Tracker (2026-02), pemilik/operator proyek Cirata Reservoir solar farm",
+     "proyek_id": "pj_0334"
+    },
+    {
+     "url": "https://masdar.ae",
+     "tanggal": "2026-11-07",
+     "tb": "kata-pihak",
+     "jenis": "penyedia",
+     "ket": "penyedia teknologi: Masdar"
+    },
+    {
+     "url": "https://masdar.ae/en/contact-us",
+     "tanggal": "2026-11-07",
+     "tb": "situs-sendiri",
+     "jenis": "organisasi",
+     "ket": "direktori METI: Masdar",
+     "org_id": "p_45c7d8a27f"
+    },
+    {
+     "url": "https://aesi.or.id/anggota/",
+     "tanggal": "2026-11-07",
+     "tb": "kata-pihak",
+     "jenis": "penyedia",
+     "ket": "penyedia teknologi: PT Masdar Mitra Solar Radiance"
+    }
+   ]
+  },
+  {
+   "nama": "ACWA Power",
+   "jumlah_bukti": 10,
+   "jenis": [
+    "berita",
+    "gem",
+    "proyek",
+    "penyedia",
+    "organisasi"
+   ],
+   "proyek_ids": [
+    "gem_solar_L100000801313",
+    "gem_solar_L100000801387",
+    "pj_0339"
+   ],
+   "org_ids": [
+    "p_0e6d34a26d"
+   ],
+   "bukti": [
+    {
+     "url": "https://english.aawsat.com/business/5330187-acwa-asharq-al-awsat-energy-storage-key-saudi-renewable-expansion",
+     "tanggal": "2026-10-16",
+     "tb": "media",
+     "jenis": "berita",
+     "ket": "judul berita english.aawsat.com"
+    },
+    {
+     "url": "https://www.gem.wiki/Saguling_solar_farm",
+     "tanggal": "2026-11-08",
+     "tb": "kajian",
+     "jenis": "gem",
+     "ket": "GEM Global Solar Power Tracker (2026-02), pemilik/operator proyek Saguling solar farm",
+     "proyek_id": "gem_solar_L100000801313"
+    },
+    {
+     "url": "https://jetp-id.org/portfolio-sub/project/saguling-floating-solar-pv-power-plant",
+     "tanggal": "2026-11-07",
+     "tb": "resmi",
+     "jenis": "proyek",
+     "ket": "pihak pemilik pada Saguling Floating Solar PV Power Plant",
+     "proyek_id": "pj_0339"
+    },
+    {
+     "url": "https://acwapower.com",
+     "tanggal": "2026-11-07",
+     "tb": "kata-pihak",
+     "jenis": "penyedia",
+     "ket": "penyedia teknologi: ACWA Power"
+    },
+    {
+     "url": "https://www.gem.wiki/Singkarak_solar_farm",
+     "tanggal": "2026-11-08",
+     "tb": "kajian",
+     "jenis": "gem",
+     "ket": "GEM Global Solar Power Tracker (2026-02), pemilik/operator proyek Singkarak solar farm",
+     "proyek_id": "gem_solar_L100000801387"
+    }
+   ]
+  },
+  {
+   "nama": "TotalEnergies",
+   "jumlah_bukti": 3,
+   "jenis": [
+    "penyedia",
+    "organisasi"
+   ],
+   "proyek_ids": [],
+   "org_ids": [
+    "p_a6be6e993f"
+   ],
+   "bukti": [
+    {
+     "url": "https://aesi.or.id/anggota/",
+     "tanggal": "2026-11-07",
+     "tb": "kata-pihak",
+     "jenis": "penyedia",
+     "ket": "penyedia teknologi: TotalEnergies"
+    },
+    {
+     "url": "https://totalenergies.com/info/help-and-contact",
+     "tanggal": "2026-11-07",
+     "tb": "situs-sendiri",
+     "jenis": "organisasi",
+     "ket": "direktori METI: TotalEnergies",
+     "org_id": "p_a6be6e993f"
+    }
+   ]
+  },
+  {
+   "nama": "ENGIE",
+   "jumlah_bukti": 11,
+   "jenis": [
+    "gem",
+    "proyek",
+    "penyedia",
+    "organisasi"
+   ],
+   "proyek_ids": [
+    "gem_geothermal_L100000700144",
+    "gem_geothermal_L100000700146",
+    "pj_0265"
+   ],
+   "org_ids": [
+    "p_1c9eb202dd"
+   ],
+   "bukti": [
+    {
+     "url": "https://www.gem.wiki/Muarah_Laboh_geothermal_plant",
+     "tanggal": "2026-11-08",
+     "tb": "kajian",
+     "jenis": "gem",
+     "ket": "GEM Global Geothermal Power Tracker (2026-03), pemilik/operator proyek Muarah Laboh geothermal plant",
+     "proyek_id": "pj_0265"
+    },
+    {
+     "url": "https://www.gem.wiki/Rajabasa_geothermal_power_plant",
+     "tanggal": "2026-11-08",
+     "tb": "kajian",
+     "jenis": "proyek",
+     "ket": "pihak pemilik pada Rajabasa geothermal power plant",
+     "proyek_id": "gem_geothermal_L100000700144"
+    },
+    {
+     "url": "https://www.engie.com",
+     "tanggal": "2026-11-07",
+     "tb": "kata-pihak",
+     "jenis": "penyedia",
+     "ket": "penyedia teknologi: Engie"
+    },
+    {
+     "url": "https://www.engie.com/investisseurs/agenda-financier-et-contacts/",
+     "tanggal": "2026-11-07",
+     "tb": "situs-sendiri",
+     "jenis": "organisasi",
+     "ket": "direktori METI: Engie",
+     "org_id": "p_1c9eb202dd"
+    },
+    {
+     "url": "https://www.gem.wiki/Rantau_Dedep_geothermal_power_plant",
+     "tanggal": "2026-11-08",
+     "tb": "kajian",
+     "jenis": "gem",
+     "ket": "GEM Global Geothermal Power Tracker (2026-03), pemilik/operator proyek Rantau Dedep geothermal power plant",
+     "proyek_id": "gem_geothermal_L100000700146"
+    }
+   ]
+  },
+  {
+   "nama": "Akuo",
+   "jumlah_bukti": 3,
+   "jenis": [
+    "penyedia",
+    "organisasi"
+   ],
+   "proyek_ids": [],
+   "org_ids": [
+    "p_b331ed2843"
+   ],
+   "bukti": [
+    {
+     "url": "https://www.akuoenergy.com",
+     "tanggal": "2026-11-07",
+     "tb": "kata-pihak",
+     "jenis": "penyedia",
+     "ket": "penyedia teknologi: PT Akuo Energy Indonesia"
+    },
+    {
+     "url": "https://www.akuoenergy.com/contactez-nous",
+     "tanggal": "2026-11-07",
+     "tb": "situs-sendiri",
+     "jenis": "organisasi",
+     "ket": "direktori METI: PT Akuo Energy Indonesia",
+     "org_id": "p_b331ed2843"
+    }
+   ]
+  },
+  {
+   "nama": "Mubadala",
+   "jumlah_bukti": 2,
+   "jenis": [
+    "organisasi"
+   ],
+   "proyek_ids": [],
+   "org_ids": [
+    "p_45c7d8a27f"
+   ],
+   "bukti": [
+    {
+     "url": "https://masdar.ae",
+     "tanggal": "2026-11-07",
+     "tb": "kata-pihak",
+     "jenis": "organisasi",
+     "ket": "direktori METI: Masdar",
+     "org_id": "p_45c7d8a27f"
+    },
+    {
+     "url": "https://masdar.ae/en/contact-us",
+     "tanggal": "2026-11-07",
+     "tb": "situs-sendiri",
+     "jenis": "organisasi",
+     "ket": "direktori METI: Masdar",
+     "org_id": "p_45c7d8a27f"
+    }
+   ]
+  },
+  {
+   "nama": "TAQA",
+   "jumlah_bukti": 2,
+   "jenis": [
+    "organisasi"
+   ],
+   "proyek_ids": [],
+   "org_ids": [
+    "p_45c7d8a27f"
+   ],
+   "bukti": [
+    {
+     "url": "https://masdar.ae",
+     "tanggal": "2026-11-07",
+     "tb": "kata-pihak",
+     "jenis": "organisasi",
+     "ket": "direktori METI: Masdar",
+     "org_id": "p_45c7d8a27f"
+    },
+    {
+     "url": "https://masdar.ae/en/contact-us",
+     "tanggal": "2026-11-07",
+     "tb": "situs-sendiri",
+     "jenis": "organisasi",
+     "ket": "direktori METI: Masdar",
+     "org_id": "p_45c7d8a27f"
+    }
+   ]
+  },
+  {
+   "nama": "Asian Development Bank",
+   "jumlah_bukti": 40,
+   "jenis": [
+    "pendanaan",
+    "organisasi"
+   ],
+   "proyek_ids": [
+    "pj_0265"
+   ],
+   "org_ids": [
+    "p_15bc360dc3"
+   ],
+   "bukti": [
+    {
+     "url": "https://d-portal.org/ctrack.html#view=act&aid=AU-5-INM618-ID",
+     "tanggal": "2026-11-07",
+     "tb": "resmi",
+     "jenis": "pendanaan",
+     "ket": "pendanaan energi Indonesia: ADB Sustainble Infrstrctre Assstnce Prog II-SIAP2"
+    },
+    {
+     "url": "https://iif.co.id",
+     "tanggal": "2026-11-07",
+     "tb": "kata-pihak",
+     "jenis": "organisasi",
+     "ket": "direktori METI: PT Indonesia Infrastructure Finance",
+     "org_id": "p_15bc360dc3"
+    },
+    {
+     "url": "https://d-portal.org/ctrack.html#view=act&aid=XM-DAC-46004-40009-013-LN2264",
+     "tanggal": "2026-11-07",
+     "tb": "resmi",
+     "jenis": "pendanaan",
+     "ket": "pendanaan energi Indonesia: Infrastructure Project Development Facility"
+    },
+    {
+     "url": "https://d-portal.org/ctrack.html#view=act&aid=XM-DAC-46004-40061-013-GRNT0198",
+     "tanggal": "2026-11-07",
+     "tb": "resmi",
+     "jenis": "pendanaan",
+     "ket": "pendanaan energi Indonesia: Java-Bali Electricity Distribution Performance Improvement Project"
+    },
+    {
+     "url": "https://d-portal.org/ctrack.html#view=act&aid=XM-DAC-46004-40061-013-LN2619",
+     "tanggal": "2026-11-07",
+     "tb": "resmi",
+     "jenis": "pendanaan",
+     "ket": "pendanaan energi Indonesia: Java-Bali Electricity Distribution Performance Improvement Project"
+    }
+   ]
+  },
+  {
+   "nama": "World Bank",
+   "jumlah_bukti": 9,
+   "jenis": [
+    "berita",
+    "pendanaan",
+    "organisasi"
+   ],
+   "proyek_ids": [
+    "pj_0286"
+   ],
+   "org_ids": [
+    "l_18a9ec31f4"
+   ],
+   "bukti": [
+    {
+     "url": "https://foreignpolicy.com/2026/09/23/ajay-banga-world-bank-private-sector-global-job-growth-plan/",
+     "tanggal": "2026-09-23",
+     "tb": "media",
+     "jenis": "berita",
+     "ket": "ringkasan berita foreignpolicy.com"
+    },
+    {
+     "url": "https://d-portal.org/ctrack.html#view=act&aid=GB-1-204867-403",
+     "tanggal": "2026-11-07",
+     "tb": "resmi",
+     "jenis": "pendanaan",
+     "ket": "pendanaan energi Indonesia: TEA Demonstrator - Contribution to World Bank Indonesia Sustainable Least-cost Electrification Programme and Support to ESMAP"
+    },
+    {
+     "url": "https://www.worldbank.org/en/country/indonesia",
+     "tanggal": "2026-11-07",
+     "tb": "situs-sendiri",
+     "jenis": "organisasi",
+     "ket": "direktori METI: World Bank Indonesia",
+     "org_id": "l_18a9ec31f4"
+    },
+    {
+     "url": "https://d-portal.org/ctrack.html#view=act&aid=XI-BRIDGE-6385676864-9115",
+     "tanggal": "2026-11-07",
+     "tb": "resmi",
+     "jenis": "pendanaan",
+     "ket": "pendanaan energi Indonesia: IBRD Geothermal Energy Upstream Development Project"
+    },
+    {
+     "url": "https://d-portal.org/ctrack.html#view=act&aid=XI-IATI-WBTF-TF071811",
+     "tanggal": "2026-11-07",
+     "tb": "resmi",
+     "jenis": "pendanaan",
+     "ket": "pendanaan energi Indonesia: Geothermal Development in Indonesia: Technical Assistance for Capacity Building Single Donor Trust Fund"
+    }
+   ]
+  },
+  {
+   "nama": "International Finance Corporation",
+   "jumlah_bukti": 3,
+   "jenis": [
+    "pendanaan",
+    "organisasi"
+   ],
+   "proyek_ids": [],
+   "org_ids": [
+    "p_15bc360dc3"
+   ],
+   "bukti": [
+    {
+     "url": "https://d-portal.org/ctrack.html#view=act&aid=XM-DAC-41317-FP254",
+     "tanggal": "2026-11-07",
+     "tb": "resmi",
+     "jenis": "pendanaan",
+     "ket": "pendanaan energi Indonesia: GCF-IFC Scaling Resilient Water Infrastructure (RWI) Facility"
+    },
+    {
+     "url": "https://iif.co.id",
+     "tanggal": "2026-11-07",
+     "tb": "kata-pihak",
+     "jenis": "organisasi",
+     "ket": "direktori METI: PT Indonesia Infrastructure Finance",
+     "org_id": "p_15bc360dc3"
+    },
+    {
+     "url": "https://iif.co.id/id/client-care/contact-us",
+     "tanggal": "2026-11-07",
+     "tb": "situs-sendiri",
+     "jenis": "organisasi",
+     "ket": "direktori METI: PT Indonesia Infrastructure Finance",
+     "org_id": "p_15bc360dc3"
+    }
+   ]
+  },
+  {
+   "nama": "Islamic Development Bank",
+   "jumlah_bukti": 3,
+   "jenis": [
+    "pendanaan"
+   ],
+   "proyek_ids": [],
+   "org_ids": [],
+   "bukti": [
+    {
+     "url": "https://d-portal.org/ctrack.html#view=act&aid=XM-DAC-46025-IDN0052",
+     "tanggal": "2026-11-07",
+     "tb": "resmi",
+     "jenis": "pendanaan",
+     "ket": "pendanaan energi Indonesia: RURAL DIESEL-ELECTRIC GENERATORS"
+    },
+    {
+     "url": "https://d-portal.org/ctrack.html#view=act&aid=XM-DAC-46025-IDN0062",
+     "tanggal": "2026-11-07",
+     "tb": "resmi",
+     "jenis": "pendanaan",
+     "ket": "pendanaan energi Indonesia: THREE DISTRIBUTION CONTROL CENTERS PROJECT"
+    },
+    {
+     "url": "https://d-portal.org/ctrack.html#view=act&aid=XM-DAC-46025-IDN1007",
+     "tanggal": "2026-11-07",
+     "tb": "resmi",
+     "jenis": "pendanaan",
+     "ket": "pendanaan energi Indonesia: Power Grid Enhancement Project"
+    }
+   ]
+  },
+  {
+   "nama": "Green Climate Fund",
+   "jumlah_bukti": 12,
+   "jenis": [
+    "pendanaan"
+   ],
+   "proyek_ids": [],
+   "org_ids": [],
+   "bukti": [
+    {
+     "url": "https://d-portal.org/ctrack.html#view=act&aid=XM-DAC-41317-FP083",
+     "tanggal": "2026-11-07",
+     "tb": "resmi",
+     "jenis": "pendanaan",
+     "ket": "pendanaan energi Indonesia: Indonesia Geothermal Resource Risk Mitigation Project"
+    },
+    {
+     "url": "https://d-portal.org/ctrack.html#view=act&aid=XM-DAC-41317-FP099",
+     "tanggal": "2026-11-07",
+     "tb": "resmi",
+     "jenis": "pendanaan",
+     "ket": "pendanaan energi Indonesia: Climate Investor One"
+    },
+    {
+     "url": "https://d-portal.org/ctrack.html#view=act&aid=XM-DAC-41317-FP151",
+     "tanggal": "2026-11-07",
+     "tb": "resmi",
+     "jenis": "pendanaan",
+     "ket": "pendanaan energi Indonesia: Global Subnational Climate Fund (SnCF Global) – Technical Assistance (TA) Facility"
+    },
+    {
+     "url": "https://d-portal.org/ctrack.html#view=act&aid=XM-DAC-41317-FP152",
+     "tanggal": "2026-11-07",
+     "tb": "resmi",
+     "jenis": "pendanaan",
+     "ket": "pendanaan energi Indonesia: Global Subnational Climate Fund (SnCF Global) – Equity"
+    },
+    {
+     "url": "https://d-portal.org/ctrack.html#view=act&aid=XM-DAC-41317-FP156",
+     "tanggal": "2026-11-07",
+     "tb": "resmi",
+     "jenis": "pendanaan",
+     "ket": "pendanaan energi Indonesia: ASEAN Catalytic Green Finance Facility (ACGF): Green Recovery Program"
+    }
+   ]
+  },
+  {
+   "nama": "Global Environment Facility",
+   "jumlah_bukti": 3,
+   "jenis": [
+    "pendanaan"
+   ],
+   "proyek_ids": [],
+   "org_ids": [],
+   "bukti": [
+    {
+     "url": "https://d-portal.org/ctrack.html#view=act&aid=XI-BRIDGE-6385676864-10459",
+     "tanggal": "2026-11-07",
+     "tb": "resmi",
+     "jenis": "pendanaan",
+     "ket": "pendanaan energi Indonesia: Accelerating cleantech innovation and entrepreneurship in start-ups and SMEs in Indonesia"
+    },
+    {
+     "url": "https://d-portal.org/ctrack.html#view=act&aid=XI-BRIDGE-6385676864-10641",
+     "tanggal": "2026-11-07",
+     "tb": "resmi",
+     "jenis": "pendanaan",
+     "ket": "pendanaan energi Indonesia: Enhancing Readiness for the Transition to Electric Vehicles in Indonesia (ENTREV)"
+    },
+    {
+     "url": "https://d-portal.org/ctrack.html#view=act&aid=XI-BRIDGE-6385676864-9115",
+     "tanggal": "2026-11-07",
+     "tb": "resmi",
+     "jenis": "pendanaan",
+     "ket": "pendanaan energi Indonesia: IBRD Geothermal Energy Upstream Development Project"
+    }
+   ]
+  },
+  {
+   "nama": "United Nations Development Programme",
+   "jumlah_bukti": 5,
+   "jenis": [
+    "pendanaan"
+   ],
+   "proyek_ids": [],
+   "org_ids": [],
+   "bukti": [
+    {
+     "url": "https://d-portal.org/ctrack.html#view=act&aid=XM-DAC-41114-OUTPUT-00101814",
+     "tanggal": "2026-11-07",
+     "tb": "resmi",
+     "jenis": "pendanaan",
+     "ket": "pendanaan energi Indonesia: GEF - Advancing High Efficient Lighting Market (ADLIGHT)"
+    },
+    {
+     "url": "https://d-portal.org/ctrack.html#view=act&aid=XM-DAC-41114-OUTPUT-00127474",
+     "tanggal": "2026-11-07",
+     "tb": "resmi",
+     "jenis": "pendanaan",
+     "ket": "pendanaan energi Indonesia: Enhancing Readiness for the Tr"
+    },
+    {
+     "url": "https://d-portal.org/ctrack.html#view=act&aid=XM-DAC-41114-OUTPUT-01000743",
+     "tanggal": "2026-11-07",
+     "tb": "resmi",
+     "jenis": "pendanaan",
+     "ket": "pendanaan energi Indonesia: PIP - Support for Indonesia's Just Energy Transition"
+    },
+    {
+     "url": "https://d-portal.org/ctrack.html#view=act&aid=XM-DAC-41114-OUTPUT-01003970",
+     "tanggal": "2026-11-07",
+     "tb": "resmi",
+     "jenis": "pendanaan",
+     "ket": "pendanaan energi Indonesia: GEF PIMS 9602 FSP Indonesia NZNP Project"
+    },
+    {
+     "url": "https://d-portal.org/ctrack.html#view=act&aid=XM-DAC-41114-OUTPUT-01004995",
+     "tanggal": "2026-11-07",
+     "tb": "resmi",
+     "jenis": "pendanaan",
+     "ket": "pendanaan energi Indonesia: Boosting Renewable Innovation for Green and Inclusive Transition (BRIGHT)"
+    }
+   ]
+  },
+  {
+   "nama": "European Commission",
+   "jumlah_bukti": 4,
+   "jenis": [
+    "pendanaan"
+   ],
+   "proyek_ids": [],
+   "org_ids": [],
+   "bukti": [
+    {
+     "url": "https://d-portal.org/ctrack.html#view=act&aid=XI-IATI-EC_INTPA-2019-PCC-408629",
+     "tanggal": "2026-11-07",
+     "tb": "resmi",
+     "jenis": "pendanaan",
+     "ket": "pendanaan energi Indonesia: Indonesia Policy Dialogue Fund (IPDF)"
+    },
+    {
+     "url": "https://d-portal.org/ctrack.html#view=act&aid=XI-IATI-EC_INTPA-2019-PCC-408641",
+     "tanggal": "2026-11-07",
+     "tb": "resmi",
+     "jenis": "pendanaan",
+     "ket": "pendanaan energi Indonesia: Support for Infrastructure Investments in Indonesia (S4I)  Assistance for the establishment of Indonesia¿s Development Bank"
+    },
+    {
+     "url": "https://d-portal.org/ctrack.html#view=act&aid=XI-IATI-EC_INTPA-2020-PCC-408831",
+     "tanggal": "2026-11-07",
+     "tb": "resmi",
+     "jenis": "pendanaan",
+     "ket": "pendanaan energi Indonesia: SDG Indonesia One, support to PT SMI"
+    },
+    {
+     "url": "https://d-portal.org/ctrack.html#view=act&aid=XI-IATI-EC_INTPA-2024-PC-37854",
+     "tanggal": "2026-11-07",
+     "tb": "resmi",
+     "jenis": "pendanaan",
+     "ket": "pendanaan energi Indonesia: Indonesia Energy Transition Facility (IETF)"
+    }
+   ]
+  },
+  {
+   "nama": "Private Infrastructure Development Group",
+   "jumlah_bukti": 5,
+   "jenis": [
+    "pendanaan"
+   ],
+   "proyek_ids": [],
+   "org_ids": [],
+   "bukti": [
+    {
+     "url": "https://d-portal.org/ctrack.html#view=act&aid=AU-5-INK924-ID",
+     "tanggal": "2026-11-07",
+     "tb": "resmi",
+     "jenis": "pendanaan",
+     "ket": "pendanaan energi Indonesia: The Private Infrastructure Development Group"
+    },
+    {
+     "url": "https://d-portal.org/ctrack.html#view=act&aid=XM-DAC-47086-155C5A46-InfraCo%20Asia",
+     "tanggal": "2026-11-07",
+     "tb": "resmi",
+     "jenis": "pendanaan",
+     "ket": "pendanaan energi Indonesia: Archipelago Hybrid Power Solutions"
+    },
+    {
+     "url": "https://d-portal.org/ctrack.html#view=act&aid=XM-DAC-47086-265FE2AA-InfraCo%20Asia",
+     "tanggal": "2026-11-07",
+     "tb": "resmi",
+     "jenis": "pendanaan",
+     "ket": "pendanaan energi Indonesia: Endikat Hydro Power"
+    },
+    {
+     "url": "https://d-portal.org/ctrack.html#view=act&aid=XM-DAC-47086-816-InfraCo%20Asia",
+     "tanggal": "2026-11-07",
+     "tb": "resmi",
+     "jenis": "pendanaan",
+     "ket": "pendanaan energi Indonesia: Indonesia De-Dieselisation Project"
+    },
+    {
+     "url": "https://d-portal.org/ctrack.html#view=act&aid=XM-DAC-47086-D15250DF-InfraCo%20Asia",
+     "tanggal": "2026-11-07",
+     "tb": "resmi",
+     "jenis": "pendanaan",
+     "ket": "pendanaan energi Indonesia: Sumatra Wind Power"
+    }
+   ]
+  },
+  {
+   "nama": "International Energy Agency",
+   "jumlah_bukti": 1,
+   "jenis": [
+    "berita"
+   ],
+   "proyek_ids": [],
+   "org_ids": [],
+   "bukti": [
+    {
+     "url": "https://www.trend.az/world/4243656.html",
+     "tanggal": "2026-11-06",
+     "tb": "media",
+     "jenis": "berita",
+     "ket": "ringkasan berita trend.az"
+    }
+   ]
+  },
+  {
+   "nama": "International Renewable Energy Agency",
+   "jumlah_bukti": 2,
+   "jenis": [
+    "pustaka",
+    "regulasi"
+   ],
+   "proyek_ids": [],
+   "org_ids": [],
+   "bukti": [
+    {
+     "url": "https://peraturan.bpk.go.id/Download/66276/Perpres%20Nomor%2062%20Tahun%202014%20.pdf",
+     "tanggal": "2014-06-11",
+     "tb": "kata-pihak",
+     "jenis": "pustaka",
+     "ket": "dokumen: PERPRES 62/2014: Pengesahan Statute Of The International Renewable Energy Agency (Statuta Badan Energi Terbarukan Internasional)"
+    },
+    {
+     "url": "https://peraturan.bpk.go.id/Details/41553",
+     "tanggal": "2026-11-07",
+     "tb": "resmi",
+     "jenis": "regulasi",
+     "ket": "regulasi: Pengesahan Statute Of The International Renewable Energy Agency (Statuta Badan Energi Terbarukan Internasional)"
+    }
+   ]
+  },
+  {
+   "nama": "Climate Investment Funds",
+   "jumlah_bukti": 1,
+   "jenis": [
+    "pendanaan"
+   ],
+   "proyek_ids": [],
+   "org_ids": [],
+   "bukti": [
+    {
+     "url": "https://d-portal.org/ctrack.html#view=act&aid=CA-3-P010807001",
+     "tanggal": "2026-11-07",
+     "tb": "resmi",
+     "jenis": "pendanaan",
+     "ket": "pendanaan energi Indonesia: Climate Investment Funds - Accelerating Coal Transition Investment Program (CIF-ACT)"
+    }
+   ]
+  },
+  {
+   "nama": "Japan International Cooperation Agency",
+   "jumlah_bukti": 5,
+   "jenis": [
+    "pendanaan",
+    "jetp",
+    "keuangan"
+   ],
+   "proyek_ids": [],
+   "org_ids": [],
+   "bukti": [
+    {
+     "url": "https://d-portal.org/ctrack.html#view=act&aid=XM-DAC-701-8-201942390",
+     "tanggal": "2026-11-07",
+     "tb": "resmi",
+     "jenis": "pendanaan",
+     "ket": "pendanaan energi Indonesia: フルライス地熱発電事業"
+    },
+    {
+     "url": "https://jetp-id.org/portfolio-sub/index",
+     "tanggal": "2026-11-08",
+     "tb": "resmi",
+     "jenis": "jetp",
+     "ket": "JETP/CIPP: MRT Jakarta North–South Line"
+    },
+    {
+     "url": "https://jetp-id.org/",
+     "tanggal": "2026-11-07",
+     "tb": "resmi",
+     "jenis": "keuangan",
+     "ket": "catatan keuangan jetp"
+    },
+    {
+     "url": "https://d-portal.org/ctrack.html#view=act&aid=XM-DAC-701-8-202004819",
+     "tanggal": "2026-11-07",
+     "tb": "resmi",
+     "jenis": "pendanaan",
+     "ket": "pendanaan energi Indonesia: プサンガン水力発電所建設事業（第二期）"
+    }
+   ]
+  },
+  {
+   "nama": "Sumitomo Mitsui Banking Corporation",
+   "jumlah_bukti": 3,
+   "jenis": [
+    "siaran-pers",
+    "organisasi"
+   ],
+   "proyek_ids": [],
+   "org_ids": [
+    "p_15bc360dc3"
+   ],
+   "bukti": [
+    {
+     "url": "https://www.antaranews.com/berita/5502426/pegadaian-dan-smbc-corporation-tandatangani-nota-kesepahaman-di-forum-indonesia-jepang",
+     "tanggal": "2026-03-31",
+     "tb": "resmi",
+     "jenis": "siaran-pers",
+     "ket": "siaran pers/liputan Antara: Pegadaian dan SMBC Corporation tandatangani Nota Kesepahaman di Forum Indonesia &ndash; Jepang"
+    },
+    {
+     "url": "https://iif.co.id",
+     "tanggal": "2026-11-07",
+     "tb": "kata-pihak",
+     "jenis": "organisasi",
+     "ket": "direktori METI: PT Indonesia Infrastructure Finance",
+     "org_id": "p_15bc360dc3"
+    },
+    {
+     "url": "https://iif.co.id/id/client-care/contact-us",
+     "tanggal": "2026-11-07",
+     "tb": "situs-sendiri",
+     "jenis": "organisasi",
+     "ket": "direktori METI: PT Indonesia Infrastructure Finance",
+     "org_id": "p_15bc360dc3"
+    }
+   ]
+  },
+  {
+   "nama": "GIZ",
+   "jumlah_bukti": 5,
+   "jenis": [
+    "berita",
+    "jetp"
+   ],
+   "proyek_ids": [],
+   "org_ids": [],
+   "bukti": [
+    {
+     "url": "https://ecologic.harianjogja.com/r-1266944/giz-jerman-dukung-plts-100-gw-indonesia-ini-catatannya",
+     "tanggal": "2026-08-11",
+     "tb": "media",
+     "jenis": "berita",
+     "ket": "judul berita ecologic.harianjogja.com"
+    },
+    {
+     "url": "https://jetp-id.org/portfolio-sub/index",
+     "tanggal": "2026-11-08",
+     "tb": "resmi",
+     "jenis": "jetp",
+     "ket": "JETP/CIPP: IKI-Flex JETP Support Package"
+    },
+    {
+     "url": "https://hijau.bisnis.com/read/20260811/652/1995385/giz-jerman-siap-dukung-program-plts-100-gw-ri-ini-catatannya",
+     "tanggal": "2026-08-11",
+     "tb": "media",
+     "jenis": "berita",
+     "ket": "judul berita hijau.bisnis.com"
+    }
+   ]
+  },
+  {
+   "nama": "DEG",
+   "jumlah_bukti": 3,
+   "jenis": [
+    "jetp",
+    "organisasi"
+   ],
+   "proyek_ids": [
+    "pj_0339"
+   ],
+   "org_ids": [
+    "p_15bc360dc3"
+   ],
+   "bukti": [
+    {
+     "url": "https://jetp-id.org/portfolio-sub/index",
+     "tanggal": "2026-11-08",
+     "tb": "resmi",
+     "jenis": "jetp",
+     "ket": "JETP/CIPP: Saguling Floating Solar PV Power Plant",
+     "proyek_id": "pj_0339"
+    },
+    {
+     "url": "https://iif.co.id",
+     "tanggal": "2026-11-07",
+     "tb": "kata-pihak",
+     "jenis": "organisasi",
+     "ket": "direktori METI: PT Indonesia Infrastructure Finance",
+     "org_id": "p_15bc360dc3"
+    },
+    {
+     "url": "https://iif.co.id/id/client-care/contact-us",
+     "tanggal": "2026-11-07",
+     "tb": "situs-sendiri",
+     "jenis": "organisasi",
+     "ket": "direktori METI: PT Indonesia Infrastructure Finance",
+     "org_id": "p_15bc360dc3"
+    }
+   ]
+  },
+  {
+   "nama": "German Federal Ministry for Economic Cooperation and Development (BMZ)",
+   "jumlah_bukti": 24,
+   "jenis": [
+    "pendanaan"
+   ],
+   "proyek_ids": [],
+   "org_ids": [],
+   "bukti": [
+    {
+     "url": "https://d-portal.org/ctrack.html#view=act&aid=DE-1-200866871",
+     "tanggal": "2026-11-07",
+     "tb": "resmi",
+     "jenis": "pendanaan",
+     "ket": "pendanaan energi Indonesia: Exploration of Geothermal Ressources"
+    },
+    {
+     "url": "https://d-portal.org/ctrack.html#view=act&aid=DE-1-200966358",
+     "tanggal": "2026-11-07",
+     "tb": "resmi",
+     "jenis": "pendanaan",
+     "ket": "pendanaan energi Indonesia: Geothermal Energy Program"
+    },
+    {
+     "url": "https://d-portal.org/ctrack.html#view=act&aid=DE-1-201468040",
+     "tanggal": "2026-11-07",
+     "tb": "resmi",
+     "jenis": "pendanaan",
+     "ket": "pendanaan energi Indonesia: Sustainable Hydropower"
+    },
+    {
+     "url": "https://d-portal.org/ctrack.html#view=act&aid=DE-1-201521111",
+     "tanggal": "2026-11-07",
+     "tb": "resmi",
+     "jenis": "pendanaan",
+     "ket": "pendanaan energi Indonesia: Electrification through Renewable Resources- ELREN"
+    },
+    {
+     "url": "https://d-portal.org/ctrack.html#view=act&aid=DE-1-201521186",
+     "tanggal": "2026-11-07",
+     "tb": "resmi",
+     "jenis": "pendanaan",
+     "ket": "pendanaan energi Indonesia: Indonesia - Support for the Utilization of Geothermal Energy"
+    }
+   ]
+  },
+  {
+   "nama": "Agence Francaise de Developpement",
+   "jumlah_bukti": 2,
+   "jenis": [
+    "pendanaan"
+   ],
+   "proyek_ids": [],
+   "org_ids": [],
+   "bukti": [
+    {
+     "url": "https://d-portal.org/ctrack.html#view=act&aid=FR-3-CID112901",
+     "tanggal": "2026-11-07",
+     "tb": "resmi",
+     "jenis": "pendanaan",
+     "ket": "pendanaan energi Indonesia: financement budgétaire de politiques publiques \"Affordable and Sustainable Energy Transition\""
+    },
+    {
+     "url": "https://d-portal.org/ctrack.html#view=act&aid=FR-3-CID114601",
+     "tanggal": "2026-11-07",
+     "tb": "resmi",
+     "jenis": "pendanaan",
+     "ket": "pendanaan energi Indonesia: Fonds délégués UE - Indonesia Energy Transition Facility"
+    }
+   ]
+  },
+  {
+   "nama": "Proparco",
+   "jumlah_bukti": 1,
+   "jenis": [
+    "jetp"
+   ],
+   "proyek_ids": [
+    "pj_0339"
+   ],
+   "org_ids": [],
+   "bukti": [
+    {
+     "url": "https://jetp-id.org/portfolio-sub/index",
+     "tanggal": "2026-11-08",
+     "tb": "resmi",
+     "jenis": "jetp",
+     "ket": "JETP/CIPP: Saguling Floating Solar PV Power Plant",
+     "proyek_id": "pj_0339"
+    }
+   ]
+  },
+  {
+   "nama": "Netherlands Enterprise Agency (RVO)",
+   "jumlah_bukti": 24,
+   "jenis": [
+    "pendanaan"
+   ],
+   "proyek_ids": [],
+   "org_ids": [],
+   "bukti": [
+    {
+     "url": "https://d-portal.org/ctrack.html#view=act&aid=NL-KVK-27378529-CERF22ID1O",
+     "tanggal": "2026-11-07",
+     "tb": "resmi",
+     "jenis": "pendanaan",
+     "ket": "pendanaan energi Indonesia: Study on Indonesian offshore wind and floating solar sector"
+    },
+    {
+     "url": "https://d-portal.org/ctrack.html#view=act&aid=NL-KVK-27378529-CERF22NL1O",
+     "tanggal": "2026-11-07",
+     "tb": "resmi",
+     "jenis": "pendanaan",
+     "ket": "pendanaan energi Indonesia: Offshore Energy Exhibition & Conference 2022 – Hotel cost government officials"
+    },
+    {
+     "url": "https://d-portal.org/ctrack.html#view=act&aid=NL-KVK-27378529-CERF23ID1O",
+     "tanggal": "2026-11-07",
+     "tb": "resmi",
+     "jenis": "pendanaan",
+     "ket": "pendanaan energi Indonesia: Study and intervention plan Just Energy Transition Partnership Indonesia and South Africa"
+    },
+    {
+     "url": "https://d-portal.org/ctrack.html#view=act&aid=NL-KVK-27378529-CERF23NL1O",
+     "tanggal": "2026-11-07",
+     "tb": "resmi",
+     "jenis": "pendanaan",
+     "ket": "pendanaan energi Indonesia: Finance expert advising and supporting CERF in access to climate finance and investment"
+    },
+    {
+     "url": "https://d-portal.org/ctrack.html#view=act&aid=NL-KVK-27378529-CERF24ID1I",
+     "tanggal": "2026-11-07",
+     "tb": "resmi",
+     "jenis": "pendanaan",
+     "ket": "pendanaan energi Indonesia: Event for Dutch private sector to identify opportunities in the renewable energy sector in Indonesia"
+    }
+   ]
+  },
+  {
+   "nama": "FMO",
+   "jumlah_bukti": 1,
+   "jenis": [
+    "gem"
+   ],
+   "proyek_ids": [],
+   "org_ids": [],
+   "bukti": [
+    {
+     "url": "https://www.gem.wiki/Samas_wind_farm",
+     "tanggal": "2026-11-08",
+     "tb": "kajian",
+     "jenis": "gem",
+     "ket": "GEM Global Wind Power Tracker (2026-02), pemilik/operator proyek Samas wind farm"
+    }
+   ]
+  },
+  {
+   "nama": "Norwegian Agency for Development Cooperation (Norad)",
+   "jumlah_bukti": 4,
+   "jenis": [
+    "pendanaan"
+   ],
+   "proyek_ids": [],
+   "org_ids": [],
+   "bukti": [
+    {
+     "url": "https://d-portal.org/ctrack.html#view=act&aid=NO-BRC-971277882-INS-19%2F0001",
+     "tanggal": "2026-11-07",
+     "tb": "resmi",
+     "jenis": "pendanaan",
+     "ket": "pendanaan energi Indonesia: Scatec Solar AS Feasibility study solar power plants in Indonesia"
+    },
+    {
+     "url": "https://d-portal.org/ctrack.html#view=act&aid=NO-BRC-971277882-INS-20%2F0002",
+     "tanggal": "2026-11-07",
+     "tb": "resmi",
+     "jenis": "pendanaan",
+     "ket": "pendanaan energi Indonesia: Tinfos feasibility study phase II Indonesia small hydro projects"
+    },
+    {
+     "url": "https://d-portal.org/ctrack.html#view=act&aid=NO-BRC-971277882-INS-23%2F0002",
+     "tanggal": "2026-11-07",
+     "tb": "resmi",
+     "jenis": "pendanaan",
+     "ket": "pendanaan energi Indonesia: Hydropower feasibility studies and infrastructure support in Indonesia (phase 3)"
+    },
+    {
+     "url": "https://d-portal.org/ctrack.html#view=act&aid=NO-BRC-971277882-INS-25%2F0011",
+     "tanggal": "2026-11-07",
+     "tb": "resmi",
+     "jenis": "pendanaan",
+     "ket": "pendanaan energi Indonesia: Tinfos. Hydropower feasibility studies and infrastructure support in Indonesia (phase 4)"
+    }
+   ]
+  },
+  {
+   "nama": "Swedish International Development Cooperation Agency (Sida)",
+   "jumlah_bukti": 8,
+   "jenis": [
+    "pendanaan"
+   ],
+   "proyek_ids": [],
+   "org_ids": [],
+   "bukti": [
+    {
+     "url": "https://d-portal.org/ctrack.html#view=act&aid=SE-0-SE-22-315612-1",
+     "tanggal": "2026-11-07",
+     "tb": "resmi",
+     "jenis": "pendanaan",
+     "ket": "pendanaan energi Indonesia: Xurya"
+    },
+    {
+     "url": "https://d-portal.org/ctrack.html#view=act&aid=SE-0-SE-22-68041-1",
+     "tanggal": "2026-11-07",
+     "tb": "resmi",
+     "jenis": "pendanaan",
+     "ket": "pendanaan energi Indonesia: PQ Java"
+    },
+    {
+     "url": "https://d-portal.org/ctrack.html#view=act&aid=SE-0-SE-22-68042-1",
+     "tanggal": "2026-11-07",
+     "tb": "resmi",
+     "jenis": "pendanaan",
+     "ket": "pendanaan energi Indonesia: WTE Indonesia"
+    },
+    {
+     "url": "https://d-portal.org/ctrack.html#view=act&aid=SE-0-SE-29-2014-3522-1",
+     "tanggal": "2026-11-07",
+     "tb": "resmi",
+     "jenis": "pendanaan",
+     "ket": "pendanaan energi Indonesia: Sustainable small scale production of energy from biomass waste products."
+    },
+    {
+     "url": "https://d-portal.org/ctrack.html#view=act&aid=SE-0-SE-6-14365-14365A0106",
+     "tanggal": "2026-11-07",
+     "tb": "resmi",
+     "jenis": "pendanaan",
+     "ket": "pendanaan energi Indonesia: NIR ITP Sustainability Impact Accelerator SIA - SIA - NIR Sustainability Impact Accelerator 2024 Inpakt Strategy"
+    }
+   ]
+  },
+  {
+   "nama": "Danish Ministry of Foreign Affairs (Danida)",
+   "jumlah_bukti": 6,
+   "jenis": [
+    "pendanaan"
+   ],
+   "proyek_ids": [],
+   "org_ids": [],
+   "bukti": [
+    {
+     "url": "https://d-portal.org/ctrack.html#view=act&aid=XM-DAC-3-1-284647-33972",
+     "tanggal": "2026-11-07",
+     "tb": "resmi",
+     "jenis": "pendanaan",
+     "ket": "pendanaan energi Indonesia: Solar PV for Baluran Park Research Centre"
+    },
+    {
+     "url": "https://d-portal.org/ctrack.html#view=act&aid=XM-DAC-3-1-285987-34500",
+     "tanggal": "2026-11-07",
+     "tb": "resmi",
+     "jenis": "pendanaan",
+     "ket": "pendanaan energi Indonesia: Process support and formulation of a bilateral energy programme in Indonesia Danish Climate Envelope (2020-2025)"
+    },
+    {
+     "url": "https://d-portal.org/ctrack.html#view=act&aid=XM-DAC-3-1-286019-34529",
+     "tanggal": "2026-11-07",
+     "tb": "resmi",
+     "jenis": "pendanaan",
+     "ket": "pendanaan energi Indonesia: Appraisal DEA Indonesia"
+    },
+    {
+     "url": "https://d-portal.org/ctrack.html#view=act&aid=XM-DAC-3-1-286104-34708",
+     "tanggal": "2026-11-07",
+     "tb": "resmi",
+     "jenis": "pendanaan",
+     "ket": "pendanaan energi Indonesia: DEPP (INDODEPP) with ENS - Indonesia 2020-2025"
+    },
+    {
+     "url": "https://d-portal.org/ctrack.html#view=act&aid=XM-DAC-3-1-286104-34906",
+     "tanggal": "2026-11-07",
+     "tb": "resmi",
+     "jenis": "pendanaan",
+     "ket": "pendanaan energi Indonesia: DEPP (INDODEPP) with ENS - LTA Indonesia 2020-2025"
+    }
+   ]
+  },
+  {
+   "nama": "Finnfund",
+   "jumlah_bukti": 1,
+   "jenis": [
+    "pendanaan"
+   ],
+   "proyek_ids": [],
+   "org_ids": [],
+   "bukti": [
+    {
+     "url": "https://d-portal.org/ctrack.html#view=act&aid=FI-3-2018-2018185003",
+     "tanggal": "2026-11-07",
+     "tb": "resmi",
+     "jenis": "pendanaan",
+     "ket": "pendanaan energi Indonesia: ODA equity through Finnfund"
+    }
+   ]
+  },
+  {
+   "nama": "Finland Ministry for Foreign Affairs",
+   "jumlah_bukti": 11,
+   "jenis": [
+    "pendanaan"
+   ],
+   "proyek_ids": [],
+   "org_ids": [],
+   "bukti": [
+    {
+     "url": "https://d-portal.org/ctrack.html#view=act&aid=FI-3-2012-2012000300",
+     "tanggal": "2026-11-07",
+     "tb": "resmi",
+     "jenis": "pendanaan",
+     "ket": "pendanaan energi Indonesia: Project Preparation in Indonesia"
+    },
+    {
+     "url": "https://d-portal.org/ctrack.html#view=act&aid=FI-3-2013-2009091324",
+     "tanggal": "2026-11-07",
+     "tb": "resmi",
+     "jenis": "pendanaan",
+     "ket": "pendanaan energi Indonesia: Indonesia Energy and Environment Partnership"
+    },
+    {
+     "url": "https://d-portal.org/ctrack.html#view=act&aid=FI-3-2016-2016160184",
+     "tanggal": "2026-11-07",
+     "tb": "resmi",
+     "jenis": "pendanaan",
+     "ket": "pendanaan energi Indonesia: Business linkage programme (Finnpartnership)"
+    },
+    {
+     "url": "https://d-portal.org/ctrack.html#view=act&aid=FI-3-2016-2016160190",
+     "tanggal": "2026-11-07",
+     "tb": "resmi",
+     "jenis": "pendanaan",
+     "ket": "pendanaan energi Indonesia: Business linkage programme (Finnpartnership)"
+    },
+    {
+     "url": "https://d-portal.org/ctrack.html#view=act&aid=FI-3-2017-2017170163",
+     "tanggal": "2026-11-07",
+     "tb": "resmi",
+     "jenis": "pendanaan",
+     "ket": "pendanaan energi Indonesia: Business linkage programme (Finnpartnership)"
+    }
+   ]
+  },
+  {
+   "nama": "Australian Department of Foreign Affairs and Trade (DFAT)",
+   "jumlah_bukti": 11,
+   "jenis": [
+    "pendanaan"
+   ],
+   "proyek_ids": [],
+   "org_ids": [],
+   "bukti": [
+    {
+     "url": "https://d-portal.org/ctrack.html#view=act&aid=AU-5-INK144-ID",
+     "tanggal": "2026-11-07",
+     "tb": "resmi",
+     "jenis": "pendanaan",
+     "ket": "pendanaan energi Indonesia: DCCEE Administered Climate Funding"
+    },
+    {
+     "url": "https://d-portal.org/ctrack.html#view=act&aid=AU-5-INK924-ID",
+     "tanggal": "2026-11-07",
+     "tb": "resmi",
+     "jenis": "pendanaan",
+     "ket": "pendanaan energi Indonesia: The Private Infrastructure Development Group"
+    },
+    {
+     "url": "https://d-portal.org/ctrack.html#view=act&aid=AU-5-INL710-ID",
+     "tanggal": "2026-11-07",
+     "tb": "resmi",
+     "jenis": "pendanaan",
+     "ket": "pendanaan energi Indonesia: Development Credit Authority"
+    },
+    {
+     "url": "https://d-portal.org/ctrack.html#view=act&aid=AU-5-INM233-ID",
+     "tanggal": "2026-11-07",
+     "tb": "resmi",
+     "jenis": "pendanaan",
+     "ket": "pendanaan energi Indonesia: Partnership for Renewable Energy Finance and Trade"
+    },
+    {
+     "url": "https://d-portal.org/ctrack.html#view=act&aid=AU-5-INM618-ID",
+     "tanggal": "2026-11-07",
+     "tb": "resmi",
+     "jenis": "pendanaan",
+     "ket": "pendanaan energi Indonesia: ADB Sustainble Infrstrctre Assstnce Prog II-SIAP2"
+    }
+   ]
+  },
+  {
+   "nama": "Global Affairs Canada",
+   "jumlah_bukti": 6,
+   "jenis": [
+    "pendanaan"
+   ],
+   "proyek_ids": [],
+   "org_ids": [],
+   "bukti": [
+    {
+     "url": "https://d-portal.org/ctrack.html#view=act&aid=CA-3-D001628001",
+     "tanggal": "2026-11-07",
+     "tb": "resmi",
+     "jenis": "pendanaan",
+     "ket": "pendanaan energi Indonesia: Accelerating Sustainable Public-Private Investment for Infrastructure Renewal (ASPIRE)"
+    },
+    {
+     "url": "https://d-portal.org/ctrack.html#view=act&aid=CA-3-D001628003",
+     "tanggal": "2026-11-07",
+     "tb": "resmi",
+     "jenis": "pendanaan",
+     "ket": "pendanaan energi Indonesia: Accelerating Sustainable Public-Private Investment for Infrastructure Renewal (ASPIRE)"
+    },
+    {
+     "url": "https://d-portal.org/ctrack.html#view=act&aid=CA-3-P006167001",
+     "tanggal": "2026-11-07",
+     "tb": "resmi",
+     "jenis": "pendanaan",
+     "ket": "pendanaan energi Indonesia: Energy Transition Program"
+    },
+    {
+     "url": "https://d-portal.org/ctrack.html#view=act&aid=CA-3-P010807001",
+     "tanggal": "2026-11-07",
+     "tb": "resmi",
+     "jenis": "pendanaan",
+     "ket": "pendanaan energi Indonesia: Climate Investment Funds - Accelerating Coal Transition Investment Program (CIF-ACT)"
+    },
+    {
+     "url": "https://d-portal.org/ctrack.html#view=act&aid=CA-3-P013608001",
+     "tanggal": "2026-11-07",
+     "tb": "resmi",
+     "jenis": "pendanaan",
+     "ket": "pendanaan energi Indonesia: Emissions Ambition for Sustainable Economies in Southeast Asia (EASE-SEA)"
+    }
+   ]
+  },
+  {
+   "nama": "New Zealand Ministry of Foreign Affairs and Trade",
+   "jumlah_bukti": 3,
+   "jenis": [
+    "pendanaan"
+   ],
+   "proyek_ids": [],
+   "org_ids": [],
+   "bukti": [
+    {
+     "url": "https://d-portal.org/ctrack.html#view=act&aid=NZ-1-ACT-0102586",
+     "tanggal": "2026-11-07",
+     "tb": "resmi",
+     "jenis": "pendanaan",
+     "ket": "pendanaan energi Indonesia: Indonesia Renewable Energy Programme Resourcing"
+    },
+    {
+     "url": "https://d-portal.org/ctrack.html#view=act&aid=NZ-1-ACT-0103282",
+     "tanggal": "2026-11-07",
+     "tb": "resmi",
+     "jenis": "pendanaan",
+     "ket": "pendanaan energi Indonesia: Indonesia-NZ Geothermal Energy Partnership Programme Kerjasama Panas Bumi Indonesia - NZ"
+    },
+    {
+     "url": "https://d-portal.org/ctrack.html#view=act&aid=NZ-1-ACT-0104024",
+     "tanggal": "2026-11-07",
+     "tb": "resmi",
+     "jenis": "pendanaan",
+     "ket": "pendanaan energi Indonesia: Indonesia Energy: New Zealand-Maluku Access to Renewable Energy Support 2.0"
+    }
+   ]
+  },
+  {
+   "nama": "UK Foreign Commonwealth and Development Office (FCDO)",
+   "jumlah_bukti": 19,
+   "jenis": [
+    "pendanaan"
+   ],
+   "proyek_ids": [],
+   "org_ids": [],
+   "bukti": [
+    {
+     "url": "https://d-portal.org/ctrack.html#view=act&aid=GB-1-204867-403",
+     "tanggal": "2026-11-07",
+     "tb": "resmi",
+     "jenis": "pendanaan",
+     "ket": "pendanaan energi Indonesia: TEA Demonstrator - Contribution to World Bank Indonesia Sustainable Least-cost Electrification Programme and Support to ESMAP"
+    },
+    {
+     "url": "https://d-portal.org/ctrack.html#view=act&aid=GB-1-204867-413",
+     "tanggal": "2026-11-07",
+     "tb": "resmi",
+     "jenis": "pendanaan",
+     "ket": "pendanaan energi Indonesia: TEA Demonstrator - Energy Innovation Brokerage event in Indonesia"
+    },
+    {
+     "url": "https://d-portal.org/ctrack.html#view=act&aid=GB-1-204867-414",
+     "tanggal": "2026-11-07",
+     "tb": "resmi",
+     "jenis": "pendanaan",
+     "ket": "pendanaan energi Indonesia: TEA Demonstrator - Energy Catalyst Solar-Powered Intelligent Aquaculture System (SOLAQUA) project"
+    },
+    {
+     "url": "https://d-portal.org/ctrack.html#view=act&aid=GB-GOV-1-300708-170",
+     "tanggal": "2026-11-07",
+     "tb": "resmi",
+     "jenis": "pendanaan",
+     "ket": "pendanaan energi Indonesia: Whole Island Transition Roadmap in Indonesia"
+    },
+    {
+     "url": "https://d-portal.org/ctrack.html#view=act&aid=GB-GOV-1-400125-401",
+     "tanggal": "2026-11-07",
+     "tb": "resmi",
+     "jenis": "pendanaan",
+     "ket": "pendanaan energi Indonesia: Future Cities Indonesia Programme"
+    }
+   ]
+  },
+  {
+   "nama": "Standard Chartered",
+   "jumlah_bukti": 1,
+   "jenis": [
+    "jetp"
+   ],
+   "proyek_ids": [
+    "pj_0339"
+   ],
+   "org_ids": [],
+   "bukti": [
+    {
+     "url": "https://jetp-id.org/portfolio-sub/index",
+     "tanggal": "2026-11-08",
+     "tb": "resmi",
+     "jenis": "jetp",
+     "ket": "JETP/CIPP: Saguling Floating Solar PV Power Plant",
+     "proyek_id": "pj_0339"
+    }
+   ]
+  },
+  {
+   "nama": "Department for Science Innovation and Technology (UK)",
+   "jumlah_bukti": 6,
+   "jenis": [
+    "pendanaan"
+   ],
+   "proyek_ids": [],
+   "org_ids": [],
+   "bukti": [
+    {
+     "url": "https://d-portal.org/ctrack.html#view=act&aid=GB-GOV-26-ISPF-IUK-2BC54TT-4PCSDLJ-WJ4K8UB",
+     "tanggal": "2026-11-07",
+     "tb": "resmi",
+     "jenis": "pendanaan",
+     "ket": "pendanaan energi Indonesia: Feasibility Study for a Wave Energy Pilot Project in Indonesia"
+    },
+    {
+     "url": "https://d-portal.org/ctrack.html#view=act&aid=GB-GOV-26-ISPF-IUK-2BC54TT-4PCSDLJ-XC6CB73",
+     "tanggal": "2026-11-07",
+     "tb": "resmi",
+     "jenis": "pendanaan",
+     "ket": "pendanaan energi Indonesia: Solar2Wave: Design of Floating Solar Farms to Overcome Tough Ocean Waves"
+    },
+    {
+     "url": "https://d-portal.org/ctrack.html#view=act&aid=GB-GOV-26-ISPF-IUK-2BC54TT-4PCSDLJ-YEKAKXV",
+     "tanggal": "2026-11-07",
+     "tb": "resmi",
+     "jenis": "pendanaan",
+     "ket": "pendanaan energi Indonesia: Rice-straw powered biowaste to energy"
+    },
+    {
+     "url": "https://d-portal.org/ctrack.html#view=act&aid=GB-GOV-26-ISPF-IUK-2BC54TT-QEVK3CS-WRJTFGQ",
+     "tanggal": "2026-11-07",
+     "tb": "resmi",
+     "jenis": "pendanaan",
+     "ket": "pendanaan energi Indonesia: Safely transforming phytoremediation crops into bioenergy"
+    },
+    {
+     "url": "https://d-portal.org/ctrack.html#view=act&aid=GB-GOV-26-ISPF-UKRI-3Z7RWMZ-MQ2BLFY-FZV8HEZ",
+     "tanggal": "2026-11-07",
+     "tb": "resmi",
+     "jenis": "pendanaan",
+     "ket": "pendanaan energi Indonesia: Participation of Women in  Renewable Energy (POWERE): Inclusive Innovation with Floating Photovoltaics in Remote Island and Coastal Communities"
+    }
+   ]
+  },
+  {
+   "nama": "US Agency for International Development (USAID)",
+   "jumlah_bukti": 11,
+   "jenis": [
+    "pendanaan"
+   ],
+   "proyek_ids": [],
+   "org_ids": [],
+   "bukti": [
+    {
+     "url": "https://d-portal.org/ctrack.html#view=act&aid=US-GOV-1-7200AA22C00044",
+     "tanggal": "2026-11-07",
+     "tb": "resmi",
+     "jenis": "pendanaan",
+     "ket": "pendanaan energi Indonesia: Green Recovery Investment Platform (GRIP)"
+    },
+    {
+     "url": "https://d-portal.org/ctrack.html#view=act&aid=US-GOV-1-72049721F00001",
+     "tanggal": "2026-11-07",
+     "tb": "resmi",
+     "jenis": "pendanaan",
+     "ket": "pendanaan energi Indonesia: Sustainable Energy for Indonesia's Advancing Resilience (SINAR)"
+    },
+    {
+     "url": "https://d-portal.org/ctrack.html#view=act&aid=US-GOV-1-72049723N00001",
+     "tanggal": "2026-11-07",
+     "tb": "resmi",
+     "jenis": "pendanaan",
+     "ket": "pendanaan energi Indonesia: USAID Sustainable Municipal Solid Waste Management and Partnership (USAID SELARAS)"
+    },
+    {
+     "url": "https://d-portal.org/ctrack.html#view=act&aid=US-GOV-1-720DD122T00002",
+     "tanggal": "2026-11-07",
+     "tb": "resmi",
+     "jenis": "pendanaan",
+     "ket": "pendanaan energi Indonesia: Partnership for Decarbonized and Climate Resilient Energy Systems"
+    },
+    {
+     "url": "https://d-portal.org/ctrack.html#view=act&aid=US-GOV-1-AID-497-A-12-00001",
+     "tanggal": "2026-11-07",
+     "tb": "resmi",
+     "jenis": "pendanaan",
+     "ket": "pendanaan energi Indonesia: Greenhouse Gas Mitigation Program"
+    }
+   ]
+  },
+  {
+   "nama": "US Trade and Development Agency (USTDA)",
+   "jumlah_bukti": 5,
+   "jenis": [
+    "pendanaan"
+   ],
+   "proyek_ids": [],
+   "org_ids": [],
+   "bukti": [
+    {
+     "url": "https://d-portal.org/ctrack.html#view=act&aid=US-GOV-12-1131PL20FIQ31240-131167",
+     "tanggal": "2026-11-07",
+     "tb": "resmi",
+     "jenis": "pendanaan",
+     "ket": "pendanaan energi Indonesia: Reverse Trade Mission - Waste-to-Energy Reverse Trade Mission, through Gas Technology Institute"
+    },
+    {
+     "url": "https://d-portal.org/ctrack.html#view=act&aid=US-GOV-12-1131PL23GH31123-134444",
+     "tanggal": "2026-11-07",
+     "tb": "resmi",
+     "jenis": "pendanaan",
+     "ket": "pendanaan energi Indonesia: Feasibility Study - West Sumbawa Wind Power Plant Feasibility Study, through Enterprise - United States Unknown"
+    },
+    {
+     "url": "https://d-portal.org/ctrack.html#view=act&aid=US-GOV-12-1131PL24GH31040-134342",
+     "tanggal": "2026-11-07",
+     "tb": "resmi",
+     "jenis": "pendanaan",
+     "ket": "pendanaan energi Indonesia: Feasibility Study - Net Zero World Renewable Energy Mini Grids Feasibility Study, through tQAutomation"
+    },
+    {
+     "url": "https://d-portal.org/ctrack.html#view=act&aid=US-GOV-12-128014",
+     "tanggal": "2026-11-07",
+     "tb": "resmi",
+     "jenis": "pendanaan",
+     "ket": "pendanaan energi Indonesia: Feasibility Study - Cibuni 30 MW Geothermal Power Development, through Government of Indonesia"
+    },
+    {
+     "url": "https://d-portal.org/ctrack.html#view=act&aid=US-GOV-12-128650",
+     "tanggal": "2026-11-07",
+     "tb": "resmi",
+     "jenis": "pendanaan",
+     "ket": "pendanaan energi Indonesia: Feasibility Study - Liquified Natural Gas Terminal, through Government of Indonesia"
+    }
+   ]
+  },
+  {
+   "nama": "Millennium Challenge Corporation",
+   "jumlah_bukti": 2,
+   "jenis": [
+    "pendanaan"
+   ],
+   "proyek_ids": [],
+   "org_ids": [],
+   "bukti": [
+    {
+     "url": "https://d-portal.org/ctrack.html#view=act&aid=US-GOV-18-IDN-2750BXCOMD-GRN_PRSPTY-0377",
+     "tanggal": "2026-11-07",
+     "tb": "resmi",
+     "jenis": "pendanaan",
+     "ket": "pendanaan energi Indonesia: Green Prosperity Facility Activity"
+    },
+    {
+     "url": "https://d-portal.org/ctrack.html#view=act&aid=US-GOV-18-IDN-2750BXCOMD-GRN_PRSPTY-0378",
+     "tanggal": "2026-11-07",
+     "tb": "resmi",
+     "jenis": "pendanaan",
+     "ket": "pendanaan energi Indonesia: Green Knowledge Activity"
+    }
+   ]
+  },
+  {
+   "nama": "US Department of Energy",
+   "jumlah_bukti": 2,
+   "jenis": [
+    "pendanaan"
+   ],
+   "proyek_ids": [],
+   "org_ids": [],
+   "bukti": [
+    {
+     "url": "https://d-portal.org/ctrack.html#view=act&aid=US-GOV-20-DN4001020-30281",
+     "tanggal": "2026-11-07",
+     "tb": "resmi",
+     "jenis": "pendanaan",
+     "ket": "pendanaan energi Indonesia: Department of Energy, International Nuclear Safeguards Engagement Program"
+    },
+    {
+     "url": "https://d-portal.org/ctrack.html#view=act&aid=US-GOV-20-NN4009020",
+     "tanggal": "2026-11-07",
+     "tb": "resmi",
+     "jenis": "pendanaan",
+     "ket": "pendanaan energi Indonesia: Department of Energy, International Nuclear Safeguards Engagement Program"
+    }
+   ]
+  },
+  {
+   "nama": "US Department of State",
+   "jumlah_bukti": 1,
+   "jenis": [
+    "pendanaan"
+   ],
+   "proyek_ids": [],
+   "org_ids": [],
+   "bukti": [
+    {
+     "url": "https://d-portal.org/ctrack.html#view=act&aid=US-GOV-11-SAQMIP22CA0288",
+     "tanggal": "2026-11-07",
+     "tb": "resmi",
+     "jenis": "pendanaan",
+     "ket": "pendanaan energi Indonesia: Strengthen Just Workforce Clean Energy Transition"
+    }
+   ]
+  },
+  {
+   "nama": "Ember",
+   "jumlah_bukti": 2,
+   "jenis": [
+    "organisasi"
+   ],
+   "proyek_ids": [],
+   "org_ids": [
+    "l_f2d9cc6c76"
+   ],
+   "bukti": [
+    {
+     "url": "https://ember-energy.org",
+     "tanggal": "2026-11-07",
+     "tb": "situs-sendiri",
+     "jenis": "organisasi",
+     "ket": "direktori METI: Ember Indonesia",
+     "org_id": "l_f2d9cc6c76"
+    },
+    {
+     "url": "https://ember-energy.org/contact-us/",
+     "tanggal": "2026-11-07",
+     "tb": "situs-sendiri",
+     "jenis": "organisasi",
+     "ket": "direktori METI: Ember Indonesia",
+     "org_id": "l_f2d9cc6c76"
+    }
+   ]
+  },
+  {
+   "nama": "South Pole",
+   "jumlah_bukti": 4,
+   "jenis": [
+    "siaran-pers",
+    "karbon"
+   ],
+   "proyek_ids": [],
+   "org_ids": [],
+   "bukti": [
+    {
+     "url": "https://www.jawapos.com/energi/2609160484/tangkap-potensi-carbon-trading-dari-pltp-gunung-salak-pln-ip-south-pole-ag-teken-kerja-sama-erpa",
+     "tanggal": "2026-09-16",
+     "tb": "resmi",
+     "jenis": "siaran-pers",
+     "ket": "siaran pers/liputan Jawa Pos: Tangkap Potensi Carbon Trading dari PLTP Gunung Salak, PLN IP-South Pole AG Teken Kerja Sama ERPA"
+    },
+    {
+     "url": "https://assurance-platform.goldstandard.org/project-documents/GS2297",
+     "tanggal": "2026-11-08",
+     "tb": "resmi",
+     "jenis": "karbon",
+     "ket": "proyek karbon Gold Standard: Project Ulubelu Unit 3 - 4 PT. Pertamina Geothermal Energy"
+    },
+    {
+     "url": "https://assurance-platform.goldstandard.org/project-documents/GS2298",
+     "tanggal": "2026-11-08",
+     "tb": "resmi",
+     "jenis": "karbon",
+     "ket": "proyek karbon Gold Standard: Project Lumut Balai Unit 1 - 2 PT. Pertamina Geothermal Energy"
+    },
+    {
+     "url": "https://assurance-platform.goldstandard.org/project-documents/GS2419",
+     "tanggal": "2026-11-08",
+     "tb": "resmi",
+     "jenis": "karbon",
+     "ket": "proyek karbon Gold Standard: Project Karaha Unit 1 PT. Pertamina Geothermal Energy"
+    }
+   ]
+  },
+  {
+   "nama": "myclimate Foundation",
+   "jumlah_bukti": 2,
+   "jenis": [
+    "karbon"
+   ],
+   "proyek_ids": [],
+   "org_ids": [],
+   "bukti": [
+    {
+     "url": "https://assurance-platform.goldstandard.org/project-documents/GS1374",
+     "tanggal": "2026-11-08",
+     "tb": "resmi",
+     "jenis": "karbon",
+     "ket": "proyek karbon Gold Standard: Recyling Used Cooking Oil into Biodiesel in Bali"
+    },
+    {
+     "url": "https://assurance-platform.goldstandard.org/project-documents/GS423",
+     "tanggal": "2026-11-08",
+     "tb": "resmi",
+     "jenis": "karbon",
+     "ket": "proyek karbon Gold Standard: *Salido Kecil Mini Hydropower Plant"
+    }
+   ]
+  },
+  {
+   "nama": "Kosher Climate",
+   "jumlah_bukti": 2,
+   "jenis": [
+    "karbon"
+   ],
+   "proyek_ids": [],
+   "org_ids": [],
+   "bukti": [
+    {
+     "url": "https://assurance-platform.goldstandard.org/project-documents/GS7164",
+     "tanggal": "2026-11-08",
+     "tb": "resmi",
+     "jenis": "karbon",
+     "ket": "proyek karbon Gold Standard: 72 MW Wind power project in the South Sulawesi Province of Indonesia"
+    },
+    {
+     "url": "https://assurance-platform.goldstandard.org/project-documents/GS7553",
+     "tanggal": "2026-11-08",
+     "tb": "resmi",
+     "jenis": "karbon",
+     "ket": "proyek karbon Gold Standard: 42 MWp Bundled Solar Photovoltaic Power project in Indonesia"
+    }
+   ]
+  },
+  {
+   "nama": "CNOOC",
+   "jumlah_bukti": 1,
+   "jenis": [
+    "berita"
+   ],
+   "proyek_ids": [],
+   "org_ids": [],
+   "bukti": [
+    {
+     "url": "http://www.philippinetimes.com/news/279266297/cnooc-limited-focuses-on-value-creation-production-and-profit-hit-new-highs-in-h1-2026",
+     "tanggal": "2026-08-26",
+     "tb": "media",
+     "jenis": "berita",
+     "ket": "judul berita philippinetimes.com"
+    }
+   ]
+  },
+  {
+   "nama": "Aboitiz Equity Ventures",
+   "jumlah_bukti": 1,
+   "jenis": [
+    "gem"
+   ],
+   "proyek_ids": [],
+   "org_ids": [],
+   "bukti": [
+    {
+     "url": "https://www.gem.wiki/Lariang_hydroelectric_plant",
+     "tanggal": "2026-11-08",
+     "tb": "kajian",
+     "jenis": "gem",
+     "ket": "GEM Global Hydropower Tracker (2026-03), pemilik/operator proyek Lariang hydroelectric plant"
+    }
+   ]
+  }
+ ]
+}

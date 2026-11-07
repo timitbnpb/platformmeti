@@ -16,24 +16,41 @@ const MIN = 12, MAKS = 128;
 
 const MI = "https://metiires.or.id";
 // kerangka bersama tiga halaman akun: logo + bahasa, panggung kanan, kaki tipis (teks lewat data-i18n)
-$("atas").innerHTML = `<a href="${MI}" class="jm-ig-logo" aria-label="METI"><img src="/img/logo/meti.png" alt="METI" width="62" height="64"></a><div class="jm-ig-bahasa" role="group" aria-label="${t("masuk.bahasa")}"><button type="button" data-b="id" aria-pressed="${bahasa() === "id"}">ID</button><button type="button" data-b="en" aria-pressed="${bahasa() === "en"}">EN</button></div>`;
+document.querySelector(".jm-ig-isi").insertAdjacentHTML("afterbegin", `<a href="${MI}" class="jm-ig-logo" aria-label="METI"><img src="/img/logo/meti-vertikal-611.png" alt="METI" width="611" height="835"></a>`);
+$("atas").innerHTML = `<div class="jm-ig-bahasa" role="group" aria-label="${t("masuk.bahasa")}"><button type="button" data-b="id" aria-pressed="${bahasa() === "id"}">ID</button><button type="button" data-b="en" aria-pressed="${bahasa() === "en"}">EN</button></div>`;
 $("atas").addEventListener("click", (e) => {
   const b = e.target.closest("button[data-b]"); if (!b) return;
   for (const x of $("atas").querySelectorAll("button[data-b]")) x.setAttribute("aria-pressed", String(x === b));
   nanti(() => gantiBahasa(b.dataset.b, { masuk: saya.masuk }));
 });
 const POTRET = { tgl: "2026-11-07", proyek: 548, organisasi: 363, orang: 550 }; // potret public/data/*.json; tampil dengan tanggal
+const MITRA = [["pln-indonesia-power", "PLN Indonesia Power"], ["pertamina-nre", "Pertamina NRE"], ["medco-energi", "Medco Energi"], ["pge", "Pertamina Geothermal Energy"], ["brin", "BRIN"], ["esdm", "Kementerian ESDM"]];
+$("panggung").className += " jm-batik jm-batik-rata";
 $("panggung").innerHTML = `<img class="jm-pg-foto" src="/img/beranda/surya-cirata.webp" alt="" width="1600" height="1067" loading="eager">
-<div class="jm-pg-lapis"><dl class="jm-pg-stat">${[["proyek", "masuk.stat_proyek"], ["organisasi", "masuk.stat_org"], ["orang", "masuk.stat_orang"]].map(([k, l]) => `<div><dd>${angka(POTRET[k])}</dd><dt data-i18n="${l}">${t(l)}</dt></div>`).join("")}</dl>
-<p class="jm-pg-sumber">${t("masuk.stat_sumber", { tanggal: tanggal(POTRET.tgl) })}</p>
-<p class="jm-pg-ket"><b data-i18n="masuk.struk_judul">${t("masuk.struk_judul")}</b> <span data-i18n="masuk.struk_sub">${t("masuk.struk_sub")}</span></p></div>`;
+<p class="jm-pg-ket"><b data-i18n="masuk.struk_judul">${t("masuk.struk_judul")}</b> <span data-i18n="masuk.struk_sub">${t("masuk.struk_sub")}</span></p>
+<div class="jm-pg-lapis"><blockquote class="jm-pg-kutip" data-i18n="masuk.kutipan">${t("masuk.kutipan")}</blockquote>
+<dl class="jm-pg-stat">${[["proyek", "masuk.stat_proyek"], ["organisasi", "masuk.stat_org"], ["orang", "masuk.stat_orang"]].map(([k, l]) => `<div><dd>${angka(POTRET[k])}</dd><dt data-i18n="${l}">${t(l)}</dt></div>`).join("")}</dl>
+<div class="jm-pg-mitra"><span class="jm-pg-tumpuk">${MITRA.map(([f, n]) => `<img src="/img/logo/${f}.png" alt="${n}" title="${n}" width="40" height="40" loading="lazy">`).join("")}</span><span data-i18n="masuk.mitra">${t("masuk.mitra")}</span></div>
+<p class="jm-pg-sumber">${t("masuk.stat_sumber", { tanggal: tanggal(POTRET.tgl) })}</p></div>`;
 $("kaki-akun").innerHTML = `<nav><a href="${MI}/about" target="_blank" rel="noopener noreferrer" data-i18n="masuk.k_tentang">${t("masuk.k_tentang")}</a><a href="${MI}/policy/membership" target="_blank" rel="noopener noreferrer" data-i18n="masuk.k_privasi">${t("masuk.k_privasi")}</a><a href="${MI}" target="_blank" rel="noopener noreferrer" data-i18n="masuk.k_kontak">${t("masuk.k_kontak")}</a></nav><div class="jm-ig-sosial">${sosmedHtml(SOSMED, 18)}</div><small>&copy; 2026 METI</small>`;
 
-const tampilPesan = (jenis, teks) => { pesan.innerHTML = pesanHtml(jenis, teks); };
+// pesan: ikon + teks + tombol tutup; galat di /masuk menyarankan "Lupa sandi?"
+const IKX = '<svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true" focusable="false"><path d="M6 6l12 12M18 6L6 18"/></svg>';
+const tampilPesan = (jenis, teks) => {
+  pesan.innerHTML = pesanHtml(jenis, teks);
+  const kotak = pesan.firstElementChild;
+  if (jenis === "galat" && halaman === "masuk" && $("lupa")) kotak.querySelector("span").insertAdjacentHTML("beforeend", ` <button type="button" class="jm-tautan jm-pesan-lupa" data-lupa>${t("masuk.lupa")}</button>`);
+  kotak.insertAdjacentHTML("beforeend", `<button type="button" class="jm-pesan-tutup" aria-label="${t("masuk.tutup_pesan")}">${IKX}</button>`);
+};
+pesan.addEventListener("click", (e) => {
+  if (e.target.closest(".jm-pesan-tutup")) pesan.innerHTML = "";
+  else if (e.target.closest("[data-lupa]")) { pesan.innerHTML = ""; if ($("lupa").getAttribute("aria-expanded") !== "true") $("lupa").click(); $("lupa").scrollIntoView({ block: "center" }); }
+});
 const sibuk = (ya) => {
   kirim.disabled = ya;
   kirim.setAttribute("aria-busy", String(ya));
-  kirim.textContent = ya ? t("jm.memuat") : t(kirim.dataset.i18n);
+  const lab = kirim.querySelector("[data-i18n]") || kirim;
+  lab.textContent = ya ? t("jm.memuat") : t(lab.dataset.i18n);
 };
 
 // tombol mata di tiap isian sandi (aria-pressed); tombol dibuat di sini, ikon SVG tanpa inline style
@@ -49,6 +66,20 @@ for (const i of form.querySelectorAll('input[type="password"]')) {
   });
   i.insertAdjacentElement("afterend", b);
 }
+// label mengambang: kelas .terisi sebagai cadangan CSS (autofill peramban, ganti type lewat tombol mata)
+const tandai = (i) => i.closest(".jm-ambang")?.classList.toggle("terisi", i.value !== "");
+for (const i of form.querySelectorAll(".jm-ambang .jm-isian")) {
+  const t2 = () => tandai(i);
+  i.addEventListener("input", t2); i.addEventListener("change", t2); i.addEventListener("animationstart", t2);
+  new MutationObserver(t2).observe(i, { attributes: true, attributeFilter: ["type"] });
+  t2(); setTimeout(t2, 400); setTimeout(t2, 1200);
+}
+// ringkasan keamanan: popover rincian
+const aman = $("aman");
+if (aman) aman.addEventListener("click", () => {
+  const buka = aman.getAttribute("aria-expanded") !== "true";
+  aman.setAttribute("aria-expanded", String(buka)); $("aman-isi").hidden = !buka;
+});
 // "Lupa sandi": panel penjelasan (alur surel belum ada; hubungi Admin)
 const lupa = $("lupa");
 if (lupa) lupa.addEventListener("click", () => {
