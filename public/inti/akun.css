@@ -58,6 +58,4 @@
 .jm-lupa strong{color:var(--info)}
 .jm-catatan{display:grid;gap:6px;margin:24px 24px 0;padding-bottom:36px;text-align:center;font-size:var(--t-kecil);color:var(--ink2)}
 .jm-catatan b{font-weight:700;color:var(--info)}
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .jm-catatan b{color:var(--info)}}
-:root[data-theme="dark"] .jm-catatan b{color:var(--info)}
 @media (prefers-reduced-motion:reduce){.jm-ambang label,.jm-hal-akun .jm-tbl,.jm-mata svg{transition:none}}
