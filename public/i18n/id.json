@@ -216,7 +216,7 @@
  "jm.kaki.rumah": "Rumah Energi Terbarukan",
  "jm.kaki.surel": "Surel",
  "jm.kaki.situs": "Situs",
- "jm.kaki.berdiri": "Sejak berdiri",
+ "jm.kaki.berdiri": "Berdiri",
  "jm.kaki.sumber_berdiri": "Sumber: metiires.or.id, diperiksa 7 Nov 2026",
  "jm.kaki.sumber_potret": "Sumber: potret direktori lapis {lapis}, dibangun {tanggal}",
  "jm.kaki.proyek": "Proyek",
@@ -1254,5 +1254,16 @@
  "ins.ber.kini": "30 hari terakhir",
  "ins.trf.rendah": "terendah",
  "ins.trf.tinggi": "tertinggi",
- "ins.cel.kunci": "Abu: sudah terpasang. Hijau: sisa potensi."
+ "ins.cel.kunci": "Abu: sudah terpasang. Hijau: sisa potensi.",
+ "pj.lapis.judul": "Lapisan peta",
+ "pj.lapis.tek": "Teknologi",
+ "pj.lapis.presisi": "Ketepatan titik",
+ "pj.presisi.kira": "Perkiraan wilayah",
+ "pj.tip.kluster": "{n} proyek, perbesar untuk memisah",
+ "pj.prog.buka": "Buka program →",
+ "pj.prog.dipeta": "Tampilkan di peta",
+ "pj.prog.daftar": "Proyek dalam program",
+ "pj.prog.nproyek": "{n} proyek",
+ "pj.prog.dasar": "Dasar hukum",
+ "beranda.eko.semua": "Lihat semua {n} organisasi"
 }

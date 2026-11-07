@@ -45,7 +45,7 @@ article.jm-ins-kartu[data-belum]{min-height:360px}
 .jm-ins-ak{border-top:1px solid var(--line)}
 .jm-ins-ak p{margin:0 0 8px}
 .jm-ins-ak .jm-ins-penting{margin:0}
-.jm-ins-src .jm-an-sumber{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;margin:0}
+.jm-ins-src .jm-an-sumber{margin:0}
 .jm-ins-src details summary{font:500 12.5px/1.3 var(--font);min-height:32px;color:var(--ink2)}
 .jm-ins-sorot{outline:3px solid var(--accent);outline-offset:2px}
 /* gambar unduhan */

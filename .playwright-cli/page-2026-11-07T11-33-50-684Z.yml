@@ -1,0 +1,646 @@
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - link [ref=e3] [cursor=pointer]:
+      - /url: /
+    - navigation "Menu utama" [ref=e4]:
+      - link "Beranda" [ref=e5] [cursor=pointer]:
+        - /url: /
+      - button "Insight" [ref=e10] [cursor=pointer]
+      - link "Proyek" [ref=e16] [cursor=pointer]:
+        - /url: /proyek
+      - link "Regulasi" [ref=e20] [cursor=pointer]:
+        - /url: /regulasi
+      - link "Berita" [ref=e24] [cursor=pointer]:
+        - /url: /berita
+      - link "Kalender" [ref=e28] [cursor=pointer]:
+        - /url: /kalender
+      - link "Tentang" [ref=e32] [cursor=pointer]:
+        - /url: /tentang
+    - generic [ref=e36]:
+      - button "Ganti bahasa ke English" [ref=e37] [cursor=pointer]
+      - button "Ganti tema" [ref=e43] [cursor=pointer]
+      - link "Masuk" [ref=e46] [cursor=pointer]:
+        - /url: /masuk?ke=%2Fberita
+  - main [ref=e50]:
+    - generic [ref=e52]:
+      - paragraph [ref=e53]:
+        - generic [ref=e55]: Berita dan video EBET
+      - heading "Berita dan video energi terbarukan" [level=1] [ref=e56]
+      - paragraph [ref=e57]: Judul dan tautan ke sumber aslinya, dikelompokkan menurut teknologi dan pelaku yang disebut.
+      - generic [ref=e58]:
+        - generic [ref=e59]:
+          - definition [ref=e60]: "519"
+          - term [ref=e61]: berita
+        - generic [ref=e62]:
+          - definition [ref=e63]: "172"
+          - term [ref=e64]: media
+        - generic [ref=e65]:
+          - definition [ref=e66]: "98"
+          - term [ref=e67]: 30 hari terakhir
+        - generic [ref=e68]:
+          - definition [ref=e69]: "95"
+          - term [ref=e70]: video
+    - region [ref=e71]:
+      - generic [ref=e72]:
+        - generic [ref=e73]:
+          - paragraph [ref=e74]:
+            - generic [ref=e76]: 01 Ringkasan
+          - heading "Seberapa ramai pemberitaannya" [level=2] [ref=e77]
+        - generic [ref=e78]:
+          - generic [ref=e79]:
+            - generic [ref=e80]:
+              - heading "Berita per hari, 30 hari terakhir" [level=3] [ref=e81]
+              - generic [ref=e82]:
+                - button "Per hari" [pressed] [ref=e83] [cursor=pointer]
+                - button "Per minggu" [ref=e84] [cursor=pointer]
+            - img "Berita per hari" [ref=e86]:
+              - 'generic "-: 0" [ref=e87]'
+              - 'generic "-: 0" [ref=e88]'
+              - 'generic "-: 0" [ref=e89]'
+              - 'generic "-: 0" [ref=e90]'
+              - 'generic "-: 0" [ref=e91]'
+              - 'generic "-: 1" [ref=e92]'
+              - 'generic "-: 8" [ref=e93]'
+              - 'generic "-: 4" [ref=e94]'
+              - 'generic "-: 6" [ref=e95]'
+              - 'generic "-: 3" [ref=e96]'
+              - 'generic "-: 3" [ref=e97]'
+              - 'generic "-: 15" [ref=e98]'
+              - 'generic "-: 14" [ref=e99]'
+              - 'generic "-: 7" [ref=e100]'
+              - 'generic "-: 5" [ref=e101]'
+              - 'generic "-: 4" [ref=e102]'
+              - 'generic "-: 2" [ref=e103]'
+              - 'generic "-: 0" [ref=e104]'
+              - 'generic "-: 0" [ref=e105]'
+              - 'generic "-: 0" [ref=e106]'
+              - 'generic "-: 0" [ref=e107]'
+              - 'generic "-: 0" [ref=e108]'
+              - 'generic "-: 0" [ref=e109]'
+              - 'generic "-: 0" [ref=e110]'
+              - 'generic "-: 0" [ref=e111]'
+              - 'generic "-: 0" [ref=e112]'
+              - 'generic "-: 0" [ref=e113]'
+              - 'generic "-: 4" [ref=e114]'
+              - 'generic "-: 13" [ref=e115]'
+              - 'generic "-: 9" [ref=e116]'
+              - generic [ref=e117]: "-"
+              - generic [ref=e118]: "-"
+              - generic [ref=e119]: "15"
+          - generic [ref=e120]:
+            - heading "Sebaran teknologi" [level=3] [ref=e121]
+            - list [ref=e123]:
+              - listitem [ref=e124]:
+                - button "Surya 178" [ref=e125] [cursor=pointer]:
+                  - generic [ref=e126]: Surya
+                  - emphasis [ref=e130]: "178"
+              - listitem [ref=e131]:
+                - button "Panas bumi 44" [ref=e132] [cursor=pointer]:
+                  - generic [ref=e133]: Panas bumi
+                  - emphasis [ref=e137]: "44"
+              - listitem [ref=e138]:
+                - button "Transisi adil 16" [ref=e139] [cursor=pointer]:
+                  - generic [ref=e140]: Transisi adil
+                  - emphasis [ref=e144]: "16"
+              - listitem [ref=e145]:
+                - button "Industri 10" [ref=e146] [cursor=pointer]:
+                  - generic [ref=e147]: Industri
+                  - emphasis [ref=e151]: "10"
+              - listitem [ref=e152]:
+                - button "Penyimpanan 10" [ref=e153] [cursor=pointer]:
+                  - generic [ref=e154]: Penyimpanan
+                  - emphasis [ref=e158]: "10"
+              - listitem [ref=e159]:
+                - button "Kebijakan 8" [ref=e160] [cursor=pointer]:
+                  - generic [ref=e161]: Kebijakan
+                  - emphasis [ref=e165]: "8"
+              - listitem [ref=e166]:
+                - button "Pembiayaan 8" [ref=e167] [cursor=pointer]:
+                  - generic [ref=e168]: Pembiayaan
+                  - emphasis [ref=e172]: "8"
+              - listitem [ref=e173]:
+                - button "Biomassa dan sampah 6" [ref=e174] [cursor=pointer]:
+                  - generic [ref=e175]: Biomassa dan sampah
+                  - emphasis [ref=e179]: "6"
+          - generic [ref=e180]:
+            - heading "Media teratas" [level=3] [ref=e181]
+            - list [ref=e183]:
+              - listitem [ref=e184]:
+                - button "antaranews.com 72" [ref=e185] [cursor=pointer]:
+                  - generic [ref=e186]: antaranews.com
+                  - emphasis [ref=e190]: "72"
+              - listitem [ref=e191]:
+                - button "koran-jakarta.com 26" [ref=e192] [cursor=pointer]:
+                  - generic [ref=e193]: koran-jakarta.com
+                  - emphasis [ref=e197]: "26"
+              - listitem [ref=e198]:
+                - button "en.antaranews.com 24" [ref=e199] [cursor=pointer]:
+                  - generic [ref=e200]: en.antaranews.com
+                  - emphasis [ref=e204]: "24"
+              - listitem [ref=e205]:
+                - button "jawapos.com 17" [ref=e206] [cursor=pointer]:
+                  - generic [ref=e207]: jawapos.com
+                  - emphasis [ref=e211]: "17"
+              - listitem [ref=e212]:
+                - button "jateng.tribunnews.com 14" [ref=e213] [cursor=pointer]:
+                  - generic [ref=e214]: jateng.tribunnews.com
+                  - emphasis [ref=e218]: "14"
+              - listitem [ref=e219]:
+                - button "rri.co.id 12" [ref=e220] [cursor=pointer]:
+                  - generic [ref=e221]: rri.co.id
+                  - emphasis [ref=e225]: "12"
+              - listitem [ref=e226]:
+                - button "en.tempo.co 11" [ref=e227] [cursor=pointer]:
+                  - generic [ref=e228]: en.tempo.co
+                  - emphasis [ref=e232]: "11"
+              - listitem [ref=e233]:
+                - button "tribunnews.com 11" [ref=e234] [cursor=pointer]:
+                  - generic [ref=e235]: tribunnews.com
+                  - emphasis [ref=e239]: "11"
+    - region [ref=e240]:
+      - generic [ref=e241]:
+        - generic [ref=e242]:
+          - paragraph [ref=e243]:
+            - generic [ref=e245]: 02 Topik
+          - heading "Topik paling ramai 30 hari" [level=2] [ref=e246]
+          - paragraph [ref=e247]: Jumlah berita per teknologi dalam 30 hari terakhir. Pilih satu untuk menyaring daftar.
+        - generic [ref=e248]:
+          - button "Surya 22" [ref=e249] [cursor=pointer]:
+            - text: Surya
+            - generic [ref=e250]: "22"
+          - button "Panas bumi 8" [ref=e251] [cursor=pointer]:
+            - text: Panas bumi
+            - generic [ref=e252]: "8"
+          - button "Pembiayaan 6" [ref=e253] [cursor=pointer]:
+            - text: Pembiayaan
+            - generic [ref=e254]: "6"
+          - button "Biomassa dan sampah 4" [ref=e255] [cursor=pointer]:
+            - text: Biomassa dan sampah
+            - generic [ref=e256]: "4"
+          - button "Industri 4" [ref=e257] [cursor=pointer]:
+            - text: Industri
+            - generic [ref=e258]: "4"
+          - button "Nuklir 4" [ref=e259] [cursor=pointer]:
+            - text: Nuklir
+            - generic [ref=e260]: "4"
+          - button "Transisi adil 4" [ref=e261] [cursor=pointer]:
+            - text: Transisi adil
+            - generic [ref=e262]: "4"
+          - button "Efisiensi 3" [ref=e263] [cursor=pointer]:
+            - text: Efisiensi
+            - generic [ref=e264]: "3"
+          - button "Karbon 2" [ref=e265] [cursor=pointer]:
+            - text: Karbon
+            - generic [ref=e266]: "2"
+          - button "Kebijakan 2" [ref=e267] [cursor=pointer]:
+            - text: Kebijakan
+            - generic [ref=e268]: "2"
+    - region [ref=e269]:
+      - generic [ref=e270]:
+        - generic [ref=e271]:
+          - paragraph [ref=e272]:
+            - generic [ref=e274]: 03 Daftar
+          - heading "Semua berita dan video" [level=2] [ref=e275]
+        - tablist [ref=e276]:
+          - tab "Berita" [ref=e277] [cursor=pointer]
+          - tab "Video" [selected] [ref=e281] [cursor=pointer]
+        - generic [ref=e284]:
+          - generic [ref=e285]:
+            - generic [ref=e288]: Cari judul atau media
+            - searchbox "Cari judul atau media" [ref=e289]
+          - generic [ref=e290]:
+            - generic [ref=e291]: Semua kanal
+            - combobox "Semua kanal" [ref=e292] [cursor=pointer]:
+              - option "Semua kanal" [selected]
+              - option "2L4U Channel"
+              - option "3Go.SiGreMan"
+              - option "ATLAS BENCANA"
+              - option "Berita Nasional TV"
+              - option "Berita RI"
+              - option "BeritaDewan"
+              - option "bintang kecil"
+              - option "CNBC Indonesia"
+              - option "CNN Indonesia"
+              - option "Ditjen EBTKE"
+              - option "ETV"
+              - option "GARUDA TV"
+              - option "HUB Berita"
+              - option "IDX CHANNEL"
+              - option "Indir"
+              - option "INSTITUT TEKNOLOGI PLN"
+              - option "JawaPosTV"
+              - option "Kaltim Post"
+              - option "KOMPASTV"
+              - option "KOMPASTV MANADO"
+              - option "KONTAN TV"
+              - option "Lintas iNews MNCTV"
+              - option "Marketeers TV"
+              - option "Merdeka Finansial"
+              - option "METRO TV"
+              - option "MTs S Nurul Tauhid Sibanggor"
+              - option "ntvnewsdotid"
+              - option "Nusantara TV"
+              - option "Official iNews"
+              - option "Pertamina"
+              - option "PISOK TRIPS"
+              - option "PLN EPI"
+              - option "PLN NP Unit Pembangkitan Sengkang"
+              - option "PLN NP UP KENDARI"
+              - option "PLN Nusantara Power UP Brantas"
+              - option "PLN Nusantara Power UP Paiton"
+              - option "plnip.ubptello.pltgtello"
+              - option "PLTD TELLO"
+              - option "Portal JTV"
+              - option "PT PLN NP UP GRESIK"
+              - option "PT PLN NUSANTARA POWER UP KALTIM TELUK"
+              - option "RAKYAT MALUKU"
+              - option "Rilisid TV"
+              - option "Rumah Nada Entertainment"
+              - option "SDM UBP TELLO"
+              - option "Sekretariat Presiden"
+              - option "Supreme Energy"
+              - option "tazakka tv"
+              - option "Tempodotco"
+              - option "TOP Berita Indonesia"
+              - option "TVR PARLEMEN"
+              - option "UBP Tello"
+              - option "Ulpltd nopi"
+              - option "Unhas TV"
+              - option "UP PLTD Selayar"
+          - generic [ref=e293]:
+            - generic [ref=e294]: Semua periode
+            - combobox "Semua periode" [ref=e295] [cursor=pointer]:
+              - option "Semua periode" [selected]
+              - option "7 hari terakhir"
+              - option "30 hari terakhir"
+              - option "90 hari terakhir"
+          - status [ref=e296]: 95 dari 95
+        - tabpanel [ref=e297]:
+          - list [ref=e298]:
+            - listitem [ref=e299]:
+              - link "2:00 SEMANGAT HARI SUMPAH PEMUDA, PLN SIAPKAN TALENTA MUDA HADAPI TANTANGAN TRANSISI ENERGI Portal JTV Media 7 Nov 2026" [ref=e300] [cursor=pointer]:
+                - /url: https://www.youtube.com/watch?v=B_ByCdn_qGM
+                - generic [ref=e301]: 2:00
+                - generic [ref=e303]: SEMANGAT HARI SUMPAH PEMUDA, PLN SIAPKAN TALENTA MUDA HADAPI TANTANGAN TRANSISI ENERGI
+                - generic [ref=e304]:
+                  - generic [ref=e305]: Portal JTV
+                  - generic [ref=e306]: Media
+                  - generic [ref=e307]: 7 Nov 2026
+            - listitem [ref=e308]:
+              - link "9:42 BENARKAH BBM DI BUAT LANGKA AGAR MOBIL LISTRIK LAKU ? Merdeka Finansial Media 7 Nov 2026" [ref=e309] [cursor=pointer]:
+                - /url: https://www.youtube.com/watch?v=uIOqH7vvdgs
+                - generic [ref=e310]: 9:42
+                - generic [ref=e312]: BENARKAH BBM DI BUAT LANGKA AGAR MOBIL LISTRIK LAKU ?
+                - generic [ref=e313]:
+                  - generic [ref=e314]: Merdeka Finansial
+                  - generic [ref=e315]: Media
+                  - generic [ref=e316]: 7 Nov 2026
+            - listitem [ref=e317]:
+              - link "3:20 Banyuwangi Perkuat Investasi di Sektor Pariwisata hingga Energi Terbarukan | Nusantara Kini JawaPosTV Media 6 Nov 2026" [ref=e318] [cursor=pointer]:
+                - /url: https://www.youtube.com/watch?v=GMlMIM6H3PM
+                - generic [ref=e319]: 3:20
+                - generic [ref=e321]: Banyuwangi Perkuat Investasi di Sektor Pariwisata hingga Energi Terbarukan | Nusantara Kini
+                - generic [ref=e322]:
+                  - generic [ref=e323]: JawaPosTV
+                  - generic [ref=e324]: Media
+                  - generic [ref=e325]: 6 Nov 2026
+            - listitem [ref=e326]:
+              - link "37:16 M-Talk Auto | Peluang dan Tantangan Perkembangan Kendaraan Listrik di Indonesia Marketeers TV Media 6 Nov 2026" [ref=e327] [cursor=pointer]:
+                - /url: https://www.youtube.com/watch?v=svXf4rxPWSQ
+                - generic [ref=e328]: 37:16
+                - generic [ref=e330]: M-Talk Auto | Peluang dan Tantangan Perkembangan Kendaraan Listrik di Indonesia
+                - generic [ref=e331]:
+                  - generic [ref=e332]: Marketeers TV
+                  - generic [ref=e333]: Media
+                  - generic [ref=e334]: 6 Nov 2026
+            - listitem [ref=e335]:
+              - link "4:48 Pemanfaatan PLTS, Upaya Hemat Energi dan Biaya Listrik | SAPA SIANG KOMPASTV Media 6 Nov 2026" [ref=e336] [cursor=pointer]:
+                - /url: https://www.youtube.com/watch?v=A4aS16fO67s
+                - generic [ref=e337]: 4:48
+                - generic [ref=e339]: Pemanfaatan PLTS, Upaya Hemat Energi dan Biaya Listrik | SAPA SIANG
+                - generic [ref=e340]:
+                  - generic [ref=e341]: KOMPASTV
+                  - generic [ref=e342]: Media
+                  - generic [ref=e343]: 6 Nov 2026
+            - listitem [ref=e344]:
+              - link "8:27 11 Proyek Hilirisasi Diresmikan! Halmahera Perkuat Industri Baterai Indonesia - Cerita 8 Menit Official iNews Media 5 Nov 2026" [ref=e345] [cursor=pointer]:
+                - /url: https://www.youtube.com/watch?v=vRQfQY_AVKI
+                - generic [ref=e346]: 8:27
+                - generic [ref=e348]: 11 Proyek Hilirisasi Diresmikan! Halmahera Perkuat Industri Baterai Indonesia - Cerita 8 Menit
+                - generic [ref=e349]:
+                  - generic [ref=e350]: Official iNews
+                  - generic [ref=e351]: Media
+                  - generic [ref=e352]: 5 Nov 2026
+            - listitem [ref=e353]:
+              - link "1:57 Indonesia Usung Transisi Energi dan Keadilan Iklim di COP31 Turki ETV Media 5 Nov 2026" [ref=e354] [cursor=pointer]:
+                - /url: https://www.youtube.com/watch?v=aR7jDfVMIA0
+                - generic [ref=e355]: 1:57
+                - generic [ref=e357]: Indonesia Usung Transisi Energi dan Keadilan Iklim di COP31 Turki
+                - generic [ref=e358]:
+                  - generic [ref=e359]: ETV
+                  - generic [ref=e360]: Media
+                  - generic [ref=e361]: 5 Nov 2026
+            - listitem [ref=e362]:
+              - link "15:43 Berburu Kendaraan Listrik Terbaru di PEVS 2026, Banyak Inovasi Menarik! KONTAN TV Media 5 Nov 2026" [ref=e363] [cursor=pointer]:
+                - /url: https://www.youtube.com/watch?v=YUM26dcqrjY
+                - generic [ref=e364]: 15:43
+                - generic [ref=e366]: Berburu Kendaraan Listrik Terbaru di PEVS 2026, Banyak Inovasi Menarik!
+                - generic [ref=e367]:
+                  - generic [ref=e368]: KONTAN TV
+                  - generic [ref=e369]: Media
+                  - generic [ref=e370]: 5 Nov 2026
+            - listitem [ref=e371]:
+              - link "2:41 Keterangan Pers Menko Bidang Hilirisasi dan Transisi Energi Bahlil Lahadalia, 3 November 2026 Sekretariat Presiden Resmi 3 Nov 2026" [ref=e372] [cursor=pointer]:
+                - /url: https://www.youtube.com/watch?v=Nc8UoSurqzE
+                - generic [ref=e373]: 2:41
+                - generic [ref=e375]: Keterangan Pers Menko Bidang Hilirisasi dan Transisi Energi Bahlil Lahadalia, 3 November 2026
+                - generic [ref=e376]:
+                  - generic [ref=e377]: Sekretariat Presiden
+                  - generic [ref=e378]: Resmi
+                  - generic [ref=e379]: 3 Nov 2026
+            - listitem [ref=e380]:
+              - 'link "1:33 Komitmen Pemerataan Energi: Presiden Instruksikan Percepatan Listrik Desa dan Baterai BeritaDewan Media 2 Nov 2026" [ref=e381] [cursor=pointer]':
+                - /url: https://www.youtube.com/watch?v=PV469bkNA-s
+                - generic [ref=e382]: 1:33
+                - generic [ref=e384]: "Komitmen Pemerataan Energi: Presiden Instruksikan Percepatan Listrik Desa dan Baterai"
+                - generic [ref=e385]:
+                  - generic [ref=e386]: BeritaDewan
+                  - generic [ref=e387]: Media
+                  - generic [ref=e388]: 2 Nov 2026
+            - listitem [ref=e389]:
+              - link "2:21 Lampung Tawarkan Potensi Investasi Energi Terbarukan kepada Investor dalam FIOLA 2026 Rilisid TV Media 2 Nov 2026" [ref=e390] [cursor=pointer]:
+                - /url: https://www.youtube.com/watch?v=_VG7s3iYmzo
+                - generic [ref=e391]: 2:21
+                - generic [ref=e393]: Lampung Tawarkan Potensi Investasi Energi Terbarukan kepada Investor dalam FIOLA 2026
+                - generic [ref=e394]:
+                  - generic [ref=e395]: Rilisid TV
+                  - generic [ref=e396]: Media
+                  - generic [ref=e397]: 2 Nov 2026
+            - listitem [ref=e398]:
+              - link "30:43 Bukan Sekadar Wacana? AESI Blak-blakan ke Rektor ITPLN Soal Target PLTS 100 GWp! INSTITUT TEKNOLOGI PLN Resmi 2 Nov 2026" [ref=e399] [cursor=pointer]:
+                - /url: https://www.youtube.com/watch?v=u-XfzFFe3PU
+                - generic [ref=e400]: 30:43
+                - generic [ref=e402]: Bukan Sekadar Wacana? AESI Blak-blakan ke Rektor ITPLN Soal Target PLTS 100 GWp!
+                - generic [ref=e403]:
+                  - generic [ref=e404]: INSTITUT TEKNOLOGI PLN
+                  - generic [ref=e405]: Resmi
+                  - generic [ref=e406]: 2 Nov 2026
+            - listitem [ref=e407]:
+              - link "2:31 Indonesia Kini Punya Tiga Pabrik Baterai Kendaraan Listrik Berita Nasional TV Media 31 Okt 2026" [ref=e408] [cursor=pointer]:
+                - /url: https://www.youtube.com/watch?v=gBpZbFteLOY
+                - generic [ref=e409]: 2:31
+                - generic [ref=e411]: Indonesia Kini Punya Tiga Pabrik Baterai Kendaraan Listrik
+                - generic [ref=e412]:
+                  - generic [ref=e413]: Berita Nasional TV
+                  - generic [ref=e414]: Media
+                  - generic [ref=e415]: 31 Okt 2026
+            - listitem [ref=e416]:
+              - link "42:24 Indonesia Kini Punya Tiga Pabrik Baterai Kendaraan Listrik | Hari Ini Berita Nasional TV Media 30 Okt 2026" [ref=e417] [cursor=pointer]:
+                - /url: https://www.youtube.com/watch?v=YX7YEoCA7Sg
+                - generic [ref=e418]: 42:24
+                - generic [ref=e420]: Indonesia Kini Punya Tiga Pabrik Baterai Kendaraan Listrik | Hari Ini
+                - generic [ref=e421]:
+                  - generic [ref=e422]: Berita Nasional TV
+                  - generic [ref=e423]: Media
+                  - generic [ref=e424]: 30 Okt 2026
+            - listitem [ref=e425]:
+              - link "2:58 Lahan Dan Investasi Jadi Tantangan Energi Terbarukan CNN Indonesia Media 30 Okt 2026" [ref=e426] [cursor=pointer]:
+                - /url: https://www.youtube.com/watch?v=SCpvNaDly28
+                - generic [ref=e427]: 2:58
+                - generic [ref=e429]: Lahan Dan Investasi Jadi Tantangan Energi Terbarukan
+                - generic [ref=e430]:
+                  - generic [ref=e431]: CNN Indonesia
+                  - generic [ref=e432]: Media
+                  - generic [ref=e433]: 30 Okt 2026
+            - listitem [ref=e434]:
+              - link "2:38 Indonesia Kini Punya Tiga Pabrik Baterai Kendaraan Listrik Berita Nasional TV Media 30 Okt 2026" [ref=e435] [cursor=pointer]:
+                - /url: https://www.youtube.com/watch?v=sreSBZY2XmU
+                - generic [ref=e436]: 2:38
+                - generic [ref=e438]: Indonesia Kini Punya Tiga Pabrik Baterai Kendaraan Listrik
+                - generic [ref=e439]:
+                  - generic [ref=e440]: Berita Nasional TV
+                  - generic [ref=e441]: Media
+                  - generic [ref=e442]: 30 Okt 2026
+            - listitem [ref=e443]:
+              - link "2:01 Bahlil Ungkap Perkembangan Industri Baterai Nasional [Prioritas Indonesia] METRO TV Media 30 Okt 2026" [ref=e444] [cursor=pointer]:
+                - /url: https://www.youtube.com/watch?v=EvXt3rGbHws
+                - generic [ref=e445]: 2:01
+                - generic [ref=e447]: Bahlil Ungkap Perkembangan Industri Baterai Nasional [Prioritas Indonesia]
+                - generic [ref=e448]:
+                  - generic [ref=e449]: METRO TV
+                  - generic [ref=e450]: Media
+                  - generic [ref=e451]: 30 Okt 2026
+            - listitem [ref=e452]:
+              - link "2:29 Investasi Industri Sel Surya Perkuat Ekosistem Energi Terbarukan Indonesia CNN Indonesia Media 30 Okt 2026" [ref=e453] [cursor=pointer]:
+                - /url: https://www.youtube.com/watch?v=l4aqBCGuY20
+                - generic [ref=e454]: 2:29
+                - generic [ref=e456]: Investasi Industri Sel Surya Perkuat Ekosistem Energi Terbarukan Indonesia
+                - generic [ref=e457]:
+                  - generic [ref=e458]: CNN Indonesia
+                  - generic [ref=e459]: Media
+                  - generic [ref=e460]: 30 Okt 2026
+            - listitem [ref=e461]:
+              - link "4:49 Uma Palak Lestari Kembangkan Pertanian Berbasis Energi Terbarukan CNN Indonesia Media 30 Okt 2026" [ref=e462] [cursor=pointer]:
+                - /url: https://www.youtube.com/watch?v=vOilfJYKS9E
+                - generic [ref=e463]: 4:49
+                - generic [ref=e465]: Uma Palak Lestari Kembangkan Pertanian Berbasis Energi Terbarukan
+                - generic [ref=e466]:
+                  - generic [ref=e467]: CNN Indonesia
+                  - generic [ref=e468]: Media
+                  - generic [ref=e469]: 30 Okt 2026
+            - listitem [ref=e470]:
+              - link "5:23 Indonesia Siap Resmikan Listrik Desa & Pabrik Baterai CATL-Antam, Cegah Mafia Impor BBM Kaltim Post Media 30 Okt 2026" [ref=e471] [cursor=pointer]:
+                - /url: https://www.youtube.com/watch?v=eMRa4BECyaI
+                - generic [ref=e472]: 5:23
+                - generic [ref=e474]: Indonesia Siap Resmikan Listrik Desa & Pabrik Baterai CATL-Antam, Cegah Mafia Impor BBM
+                - generic [ref=e475]:
+                  - generic [ref=e476]: Kaltim Post
+                  - generic [ref=e477]: Media
+                  - generic [ref=e478]: 30 Okt 2026
+            - listitem [ref=e479]:
+              - link "1:38 Prabowo Panggil Bahlil, Bahas Listrik Desa hingga Pabrik Baterai CATL–Antam Rilisid TV Media 30 Okt 2026" [ref=e480] [cursor=pointer]:
+                - /url: https://www.youtube.com/watch?v=Ixipw6CWlCM
+                - generic [ref=e481]: 1:38
+                - generic [ref=e483]: Prabowo Panggil Bahlil, Bahas Listrik Desa hingga Pabrik Baterai CATL–Antam
+                - generic [ref=e484]:
+                  - generic [ref=e485]: Rilisid TV
+                  - generic [ref=e486]: Media
+                  - generic [ref=e487]: 30 Okt 2026
+            - listitem [ref=e488]:
+              - link "0:12 Mobil Hidrogen Untuk Masa Depan PT PLN NUSANTARA POWER UP KALTIM TELUK Resmi 28 Okt 2026" [ref=e489] [cursor=pointer]:
+                - /url: https://www.youtube.com/watch?v=2GjgToN-upg
+                - generic [ref=e490]: 0:12
+                - generic [ref=e492]: Mobil Hidrogen Untuk Masa Depan
+                - generic [ref=e493]:
+                  - generic [ref=e494]: PT PLN NUSANTARA POWER UP KALTIM TELUK
+                  - generic [ref=e495]: Resmi
+                  - generic [ref=e496]: 28 Okt 2026
+            - listitem [ref=e497]:
+              - link "31:45 Ambisi PLTS 100 GWp, Siapkah Industri Indonesia? GARUDA TV Media 28 Okt 2026" [ref=e498] [cursor=pointer]:
+                - /url: https://www.youtube.com/watch?v=v7oEwmtzZSY
+                - generic [ref=e499]: 31:45
+                - generic [ref=e501]: Ambisi PLTS 100 GWp, Siapkah Industri Indonesia?
+                - generic [ref=e502]:
+                  - generic [ref=e503]: GARUDA TV
+                  - generic [ref=e504]: Media
+                  - generic [ref=e505]: 28 Okt 2026
+            - listitem [ref=e506]:
+              - 'link "1:48 Listrik surya Matahari #beritaterkini #matahari #indonesia #beritari #indonesia Berita RI Media 28 Okt 2026" [ref=e507] [cursor=pointer]':
+                - /url: https://www.youtube.com/watch?v=CbVqLmPvZ5o
+                - generic [ref=e508]: 1:48
+                - generic [ref=e510]: "Listrik surya Matahari #beritaterkini #matahari #indonesia #beritari #indonesia"
+                - generic [ref=e511]:
+                  - generic [ref=e512]: Berita RI
+                  - generic [ref=e513]: Media
+                  - generic [ref=e514]: 28 Okt 2026
+            - listitem [ref=e515]:
+              - link "33:13 Untung Rugi Megaproyek PLTS 100 Gigawatt | Jelasin Dong! Tempodotco Media 26 Okt 2026" [ref=e516] [cursor=pointer]:
+                - /url: https://www.youtube.com/watch?v=U2MAywhiJ3M
+                - generic [ref=e517]: 33:13
+                - generic [ref=e519]: Untung Rugi Megaproyek PLTS 100 Gigawatt | Jelasin Dong!
+                - generic [ref=e520]:
+                  - generic [ref=e521]: Tempodotco
+                  - generic [ref=e522]: Media
+                  - generic [ref=e523]: 26 Okt 2026
+            - listitem [ref=e524]:
+              - 'link "1:06 Kereta Cepat Hidrogen Pertama di Sumatera! #Shorts TOP Berita Indonesia Media 26 Okt 2026" [ref=e525] [cursor=pointer]':
+                - /url: https://www.youtube.com/watch?v=yh93aXxGO6s
+                - generic [ref=e526]: 1:06
+                - generic [ref=e528]: "Kereta Cepat Hidrogen Pertama di Sumatera! #Shorts"
+                - generic [ref=e529]:
+                  - generic [ref=e530]: TOP Berita Indonesia
+                  - generic [ref=e531]: Media
+                  - generic [ref=e532]: 26 Okt 2026
+            - listitem [ref=e533]:
+              - link "1:24 Rapat BNSP & PPSDM Kementerian ESDM 3Go.SiGreMan Kreator 23 Okt 2026" [ref=e534] [cursor=pointer]:
+                - /url: https://www.youtube.com/watch?v=ZHk5A7b5DP8
+                - generic [ref=e535]: 1:24
+                - generic [ref=e537]: Rapat BNSP & PPSDM Kementerian ESDM
+                - generic [ref=e538]:
+                  - generic [ref=e539]: 3Go.SiGreMan
+                  - generic [ref=e540]: Kreator
+                  - generic [ref=e541]: 23 Okt 2026
+            - listitem [ref=e542]:
+              - 'link "1:15 Kementerian BUMN Luncurkan Kapal Feri Hidrogen! #Shorts TOP Berita Indonesia Media 22 Okt 2026" [ref=e543] [cursor=pointer]':
+                - /url: https://www.youtube.com/watch?v=iEcwfzZz6Qs
+                - generic [ref=e544]: 1:15
+                - generic [ref=e546]: "Kementerian BUMN Luncurkan Kapal Feri Hidrogen! #Shorts"
+                - generic [ref=e547]:
+                  - generic [ref=e548]: TOP Berita Indonesia
+                  - generic [ref=e549]: Media
+                  - generic [ref=e550]: 22 Okt 2026
+            - listitem [ref=e551]:
+              - 'link "1:16 Indonesia Resmikan PLTP Biner Pertama! #Shorts TOP Berita Indonesia Media 22 Okt 2026" [ref=e552] [cursor=pointer]':
+                - /url: https://www.youtube.com/watch?v=0OZbOuDX1g4
+                - generic [ref=e553]: 1:16
+                - generic [ref=e555]: "Indonesia Resmikan PLTP Biner Pertama! #Shorts"
+                - generic [ref=e556]:
+                  - generic [ref=e557]: TOP Berita Indonesia
+                  - generic [ref=e558]: Media
+                  - generic [ref=e559]: 22 Okt 2026
+            - listitem [ref=e560]:
+              - link "1:45 B50, PLTS, dan Sampah Jadi Listrik Solusi Krisis Energi METRO TV Media 21 Okt 2026" [ref=e561] [cursor=pointer]:
+                - /url: https://www.youtube.com/watch?v=pqZKJKZVuOo
+                - generic [ref=e562]: 1:45
+                - generic [ref=e564]: B50, PLTS, dan Sampah Jadi Listrik Solusi Krisis Energi
+                - generic [ref=e565]:
+                  - generic [ref=e566]: METRO TV
+                  - generic [ref=e567]: Media
+                  - generic [ref=e568]: 21 Okt 2026
+          - button "Tampilkan 30 lagi" [ref=e570] [cursor=pointer]
+        - paragraph [ref=e571]: Hanya judul dan tautan yang disimpan; isi berita tetap di situs asalnya. Label teknologi diberikan otomatis dari kata kunci judul (EST). Data per 7 Nov 2026.
+  - contentinfo [ref=e572]:
+    - generic [ref=e573]:
+      - generic [ref=e574]:
+        - generic [ref=e577]:
+          - strong [ref=e578]: METI
+          - generic [ref=e579]: Masyarakat Energi Terbarukan Indonesia
+        - list [ref=e580]:
+          - 'listitem "Sumber: metiires.or.id, diperiksa 7 Nov 2026" [ref=e581]':
+            - generic [ref=e582]: "1999"
+            - generic [ref=e583]: Berdiri
+        - generic [ref=e584]:
+          - link "LinkedIn METI" [ref=e585] [cursor=pointer]:
+            - /url: https://www.linkedin.com/in/meti-ires-b06066a1/
+          - link "Instagram METI" [ref=e589] [cursor=pointer]:
+            - /url: https://www.instagram.com/metiires/
+      - navigation [ref=e593]:
+        - heading "Tentang" [level=2] [ref=e594]
+        - list [ref=e595]:
+          - listitem [ref=e596]:
+            - link "Siapa kami" [ref=e597] [cursor=pointer]:
+              - /url: https://metiires.or.id/about
+          - listitem [ref=e599]:
+            - link "Pengurus dan tim" [ref=e600] [cursor=pointer]:
+              - /url: https://metiires.or.id/about/meettheteam
+          - listitem [ref=e602]:
+            - link "Bergabung" [ref=e603] [cursor=pointer]:
+              - /url: https://metiires.or.id/membership
+          - listitem [ref=e605]:
+            - link "Kemitraan" [ref=e606] [cursor=pointer]:
+              - /url: https://metiires.or.id/about/partnership
+      - navigation [ref=e608]:
+        - heading "Berita" [level=2] [ref=e609]
+        - list [ref=e610]:
+          - listitem [ref=e611]:
+            - link "Berita" [ref=e612] [cursor=pointer]:
+              - /url: https://metiires.or.id/news
+          - listitem [ref=e614]:
+            - link "Event" [ref=e615] [cursor=pointer]:
+              - /url: https://metiires.or.id/news/events
+          - listitem [ref=e617]:
+            - link "E-Voting Perlu masuk di metiires.or.id" [ref=e618] [cursor=pointer]:
+              - /url: https://metiires.or.id/login?redirect=/news/evoting
+              - generic [ref=e619]: E-Voting
+              - generic "Perlu masuk di metiires.or.id" [ref=e620]
+          - listitem [ref=e625]:
+            - link "Materi dan dokumen Perlu masuk di metiires.or.id" [ref=e626] [cursor=pointer]:
+              - /url: https://metiires.or.id/login?redirect=/news/materials
+              - generic [ref=e627]: Materi dan dokumen
+              - generic "Perlu masuk di metiires.or.id" [ref=e628]
+      - navigation [ref=e633]:
+        - heading "Direktori" [level=2] [ref=e634]
+        - list [ref=e635]:
+          - listitem [ref=e636]:
+            - link "Proyek" [ref=e637] [cursor=pointer]:
+              - /url: /direktori?tampil=proyek
+          - listitem [ref=e639]:
+            - link "Organisasi" [ref=e640] [cursor=pointer]:
+              - /url: /direktori?tampil=lembaga
+          - listitem [ref=e642]:
+            - link "Orang dan pakar" [ref=e643] [cursor=pointer]:
+              - /url: /direktori?tampil=pakar
+          - listitem [ref=e645]:
+            - link "Regulasi" [ref=e646] [cursor=pointer]:
+              - /url: /direktori?tampil=regulasi
+          - listitem [ref=e648]:
+            - link "Pustaka" [ref=e649] [cursor=pointer]:
+              - /url: /direktori?tampil=pustaka
+    - navigation [ref=e652]:
+      - heading "Kontak" [level=2] [ref=e653]
+      - list [ref=e654]:
+        - listitem [ref=e655]:
+          - generic [ref=e660]:
+            - generic [ref=e661]: Kantor
+            - link "Taman Sari Parama Lt. 10, Jl. K.H. Wahid Hasyim No. 84-86, Kebon Sirih, Menteng, Jakarta Pusat 10340" [ref=e662] [cursor=pointer]:
+              - /url: https://www.google.com/maps/search/?api=1&query=Taman%20Sari%20Parama%2C%20Jl.%20K.H.%20Wahid%20Hasyim%20No.%2084-86%2C%20Kebon%20Sirih%2C%20Menteng%2C%20Jakarta%20Pusat%2010340
+        - listitem [ref=e663]:
+          - generic [ref=e668]:
+            - generic [ref=e669]: Rumah Energi Terbarukan
+            - link "Jl. Jatinegara Barat IV No. 3A, Balimester, Jatinegara, Jakarta Timur 13310" [ref=e670] [cursor=pointer]:
+              - /url: https://www.google.com/maps/search/?api=1&query=Jl.%20Jatinegara%20Barat%20IV%20No.%203A%2C%20Balimester%2C%20Jatinegara%2C%20Jakarta%20Timur%2013310
+        - listitem [ref=e671]:
+          - generic [ref=e676]:
+            - generic [ref=e677]: Surel
+            - link "meti.ires@gmail.com" [ref=e678] [cursor=pointer]:
+              - /url: mailto:meti.ires@gmail.com
+        - listitem [ref=e679]:
+          - generic [ref=e684]:
+            - generic [ref=e685]: Situs
+            - link "www.meti.or.id" [ref=e686] [cursor=pointer]:
+              - /url: https://www.meti.or.id
+    - generic [ref=e687]:
+      - paragraph [ref=e688]: © 2026 METI
+      - link "Kebijakan membership dan pembayaran" [ref=e689] [cursor=pointer]:
+        - /url: https://metiires.or.id/policy/membership
+      - button "Kembali ke atas" [ref=e690] [cursor=pointer]

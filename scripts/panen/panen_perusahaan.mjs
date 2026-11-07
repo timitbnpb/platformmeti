@@ -51,7 +51,7 @@ export function kunciPerusahaan(nama, situs) {
 // ---------- parser pengurus ----------
 const STOP = new Set('tentang profil kontak berita laporan direksi komisaris dewan perusahaan tata kelola karir karier beranda home about news contact board management directors commissioners investor relations annual report sustainability read more selengkapnya lihat download unduh pt tbk persero group indonesia energy energi power struktur organisasi visi misi sejarah kebijakan pengadaan informasi publik layanan produk media pers search cari bahasa english manajemen eksekutif komite sekretaris corporate secretary audit internal pengurus anggota jajaran kembali lebih lanjut'.split(' '));
 const PART = new Set(['bin', 'binti', 'van', 'de', 'der', 'al', 'el', 'von', 'dan']);
-const RE_JAB = /^(?:(?:wakil\s+)?(?:direktur|komisaris|presiden\s+direktur|presiden\s+komisaris)\b.*|(?:vice\s+)?president\s+(?:director|commissioner)\b.*|(?:independent\s+|deputy\s+|managing\s+|executive\s+)?(?:commissioner|director)\b.*|chief\s+.+\s+officer|chief executive officer|ceo)$/i;
+const RE_JAB = /^(?:(?:wakil\s+)?(?:direktur|komisaris|presiden\s+direktur|presiden\s+komisaris)\b.*|(?:vice\s+)?president\s+(?:director|commissioner)\b.*|(?:independent\s+|deputy\s+|managing\s+|executive\s+)?(?:commissioner|director)\b.*|(?:vice\s+)?chairman\b.*|member of .*board.*|(?:deputy\s+)?managing\s+director\b.*|chief\s+.+\s+officer|chief executive officer|ceo)$/i;
 export function jabatanOk(s) {
   const t = s.trim();
   if (t.length < 6 || t.length > 90 || /[.:;]$/.test(t) || /^(direktur|komisaris|director|commissioner)s?$/i.test(t)) return false;
@@ -59,6 +59,8 @@ export function jabatanOk(s) {
   return RE_JAB.test(t);
 }
 export function jenisJabatan(j) {
+  if (/chairman.*(supervisory|board)/i.test(j) && !/vice/i.test(j)) return 'komisaris-utama';
+  if (/member of .*(supervisory|board)|vice chairman/i.test(j)) return 'komisaris';
   if (/(presiden|president)\s+komisaris|(president|chairman)\s+commissioner|komisaris utama/i.test(j)) return 'komisaris-utama';
   if (/(presiden|president)\s+direktur|(president|managing)\s+director|direktur utama|^ceo$|chief executive/i.test(j) && !/wakil|vice|deputy/i.test(j)) return 'direktur-utama';
   if (/komisaris|commissioner/i.test(j)) return 'komisaris';
@@ -128,7 +130,7 @@ async function tunggu(u, aksi = 'text/html,application/xhtml+xml,*/*') {
   return fetch(u, { headers: { 'User-Agent': UA, Accept: aksi }, redirect: 'follow', signal: AbortSignal.timeout(25000) });
 }
 async function robotsOk(u) {
-  const { origin, pathname } = new URL(u);
+  const { origin, pathname, search } = new URL(u);
   if (!robotsCache.has(origin)) {
     const aturan = [];
     try {
@@ -138,13 +140,16 @@ async function robotsOk(u) {
         for (const b of (await r.text()).split(/\r?\n/)) {
           const m = b.match(/^\s*([a-z-]+)\s*:\s*(.*?)\s*(#.*)?$/i); if (!m) continue;
           const k = m[1].toLowerCase();
-          if (k === 'user-agent') ua = m[2] === '*'; else if (ua && k === 'crawl-delay' && +m[2] > 0) hostGap.set(new URL(u).hostname, Math.min(+m[2], 60) * 1000); else if (ua && k === 'disallow' && m[2]) aturan.push(m[2]);
+          if (k === 'user-agent') ua = m[2] === '*'; else if (ua && k === 'crawl-delay' && +m[2] > 0) hostGap.set(new URL(u).hostname, Math.min(+m[2], 60) * 1000); else if (ua && (k === 'disallow' || k === 'allow') && m[2]) aturan.push([k, m[2]]);
         }
       }
     } catch {}
     robotsCache.set(origin, aturan);
   }
-  return !robotsCache.get(origin).some((p) => pathname.startsWith(p.replace(/\*.*$/, '').replace(/\$$/, '')));
+  // aturan paling panjang menang (Allow menang bila sama panjang); '*' dan '$' sebagai wildcard
+  let terbaik = null; const jalur = pathname + search;
+  for (const [k, p] of robotsCache.get(origin)) { const re = new RegExp('^' + p.replace(/[.+?^${}()|[\]\\]/g, '\\$&').replace(/\\\?/g, '\\?').replace(/\*/g, '.*').replace(/\\\$$/, '$')); if (re.test(jalur) && (!terbaik || p.length > terbaik[1].length || (p.length === terbaik[1].length && k === 'allow'))) terbaik = [k, p]; }
+  return !terbaik || terbaik[0] === 'allow';
 }
 const gagal = [];
 const catatGagal = (perusahaan_id, url, alasan) => gagal.push({ perusahaan_id, url, alasan, tanggal: HARI_INI });
@@ -222,6 +227,15 @@ async function nominatim(q, pid) {
 }
 
 // ---------- rekaman ----------
+
+// Penyesuaian manual per entitas (permintaan pemilik 7 Nov 2026). Kunci = normNama.
+const OVERRIDE = {
+  'pertamina new renewable energy': { situs: 'https://pertaminanre.com/id', situs_keyakinan: 'tinggi', situs_catatan: 'situs resmi PNRE; entitas sendiri, terpisah dari PT Pertamina Power Indonesia', pengurus_url: ['https://pertaminanre.com/id/tentang-kami/manajemen'] },
+  'pertamina power indonesia': { situs: null, situs_keyakinan: null, situs_catatan: 'anak usaha PNRE; tidak ada situs sendiri yang ditemukan (situs pertaminanre.com adalah milik PNRE)' },
+  'badan pengelola investasi daya anagata nusantara': { situs: 'https://www.danantaraindonesia.co.id/', situs_keyakinan: 'tinggi', situs_catatan: 'situs resmi BPI Danantara; robots.txt mengizinkan', pengurus_url: ['https://www.danantaraindonesia.co.id/about/our-people/supervisory-board', 'https://www.danantaraindonesia.co.id/about/our-people/bpi-danantaras'] },
+};
+const SUMBER_ARSIP_DENERA = { id: 'arsip-meti', jenis: 'dokumen-internal', judul: 'Deck UKP hlm 17; Enlit Asia 2026 pptx slide 1-11 (arsip METI, data-panen/arsip-meti)', url: null, tingkat_bukti: 'kata-pihak' };
+const SUMBER_PERMINTAAN = { id: 'permintaan-pemilik', jenis: 'permintaan', judul: 'Permintaan pemilik METI 7 Nov 2026 (nama saja; belum ada sumber primer)', url: null, tingkat_bukti: 'inferensi' };
 const normNama = (n) => n.toLowerCase().replace(/\(.*?\)/g, ' ').replace(/\b(pt|tbk|persero|cv)\b/g, ' ').replace(/[^a-z0-9]+/g, ' ').trim();
 const TEMUAN = new Map(baca(path.join(ROOT, 'data-panen/temuan/situs_perusahaan.jsonl')).map((x) => [normNama(x.nama), x]));
 function bangunRekaman() {
@@ -250,6 +264,8 @@ function bangunRekaman() {
       for (const k of ['kapasitas_mwp_tahun', 'pasar', 'apamsi', 'tkdn', 'bmp']) r.sumber_field[k] = 'tabel-modul';
     }
     if (/Hanover Solar/.test(nama)) { r.kandidat = true; r.sumber.push({ ...SUMBER_HANOVER, tanggal_periksa: HARI_INI }); r.sumber_field.nama = 'solehan-slide6'; }
+    if (/^Denera/.test(nama)) { r.sumber.push({ ...SUMBER_ARSIP_DENERA, tanggal_periksa: HARI_INI }); r.kapasitas_portofolio = 'rencana 33 kota; kapasitas belum ada; dibentuk 1 Apr 2026 (arsip METI)'; r.sumber_field.kapasitas_portofolio = 'arsip-meti'; r.sumber_field.nama = 'arsip-meti'; r.nama_lain = ['Denera']; }
+    if (/Mahakarsa/.test(nama)) r.sumber.push({ ...SUMBER_PERMINTAAN, tanggal_periksa: HARI_INI });
     const tm = TEMUAN.get(normNama(nama));
     if (tm && !r.situs) { r.situs = tm.url; r.situs_keyakinan = tm.keyakinan; r.situs_catatan = tm.catatan || null; r.sumber_field.situs = 'temuan-situs'; }
     peta.set(kunci, r);
@@ -265,6 +281,15 @@ async function jalan(batches) {
   const semua = bangunRekaman().map((r) => { const o = lama.get(r.perusahaan_id); return o ? { ...r, verifikasi: o.verifikasi, pengurus_status: o.pengurus_status, sumber: [...r.sumber, ...o.sumber.filter((x) => !r.sumber.some((y) => y.id === x.id))], sumber_field: { ...o.sumber_field, ...r.sumber_field }, situs: r.situs || o.situs, kontak: o.kontak } : r; });
   { const id = new Set(semua.map((x) => x.perusahaan_id)); for (const o of lama.values()) if (!id.has(o.perusahaan_id)) semua.push(o); } // rekaman hasil direktori anggota (batch 6) dipertahankan
   for (const r of semua) { const o = lama.get(r.perusahaan_id); if (o?.anggota_asosiasi) r.anggota_asosiasi = o.anggota_asosiasi; if (o?.kapasitas_portofolio && !r.kapasitas_portofolio) r.kapasitas_portofolio = o.kapasitas_portofolio; }
+  const gagalLama = baca(path.join(OUT, 'gagal.jsonl'));
+  for (const r of semua) {
+    const ov = OVERRIDE[normNama(r.nama)];
+    if (ov && r.situs !== ov.situs) { Object.assign(r, { situs: ov.situs, situs_keyakinan: ov.situs_keyakinan, situs_catatan: ov.situs_catatan, pengurus_status: 'belum-dibaca', verifikasi: { situs_ok: false, http: null, judul: null, tanggal_periksa: null } }); }
+    if (ov?.pengurus_url) r.pengurus_url = ov.pengurus_url;
+    // salah-tolak robots (bug wildcard lama): ulangi
+    if (r.pengurus_status === 'situs-gagal' && gagalLama.some((x) => x.perusahaan_id === r.perusahaan_id && x.alasan === 'robots-tolak')) r.pengurus_status = 'belum-dibaca';
+    if (/^Denera|Mahakarsa/.test(r.nama) && !r.situs && !gagalLama.some((x) => x.perusahaan_id === r.perusahaan_id)) gagal.push({ perusahaan_id: r.perusahaan_id, url: null, alasan: 'situs-resmi-tidak-ditemukan: nama tidak ada di sumber resmi yang dibaca (situs Danantara, PNRE, direktori APROBI/AESI); butuh URL dari pemilik', tanggal: HARI_INI });
+  }
   const orangRows = baca(ORANG); const orangKunci = new Map();
   for (const o of orangRows) { const k = kunciNama(o.nama); orangKunci.set(k, orangKunci.has(k) ? 'ambigu' : o.orang_id); }
   let pengurus = baca(path.join(OUT, 'pengurus.jsonl'));
@@ -282,7 +307,7 @@ async function jalan(batches) {
       const h = await ambil(r.situs, r.perusahaan_id);
       if (!h) { r.pengurus_status = 'situs-gagal'; continue; }
       const html = fs.readFileSync(h.file, 'utf8'); const t0 = teks(html);
-      const ok = r.situs_keyakinan === 'sedang' ? t0.toLowerCase().replace(/\s+/g, ' ').includes(normNama(r.nama)) : t0.toLowerCase().includes(tokenNama(r.nama)); // 'sedang' = bisa situs induk: nama lengkap wajib tampil
+      const ok = r.pengurus_url ? true : r.situs_keyakinan === 'sedang' ? t0.toLowerCase().replace(/\s+/g, ' ').includes(normNama(r.nama)) : t0.toLowerCase().includes(tokenNama(r.nama)); // 'sedang' = bisa situs induk: nama lengkap wajib tampil
       r.verifikasi = { situs_ok: ok, http: 200, judul: dec((html.match(/<title[^>]*>([\s\S]*?)<\/title>/i) || [])[1] || '').replace(/\s+/g, ' ').trim().slice(0, 120), tanggal_periksa: HARI_INI };
       if (!ok) { r.pengurus_status = 'situs-tak-memuat-nama'; catatGagal(r.perusahaan_id, r.situs, 'nama-tak-ditemukan-di-beranda'); continue; }
       r.sumber.push({ id: 'situs', url: r.situs, keterangan: 'situs resmi perusahaan, beranda terbaca', tanggal_periksa: HARI_INI, tingkat_bukti: 'kata-pihak' });
@@ -299,7 +324,7 @@ async function jalan(batches) {
       const kon = new Map();
       for (const m of html.matchAll(/<a\s[^>]*href=["']([^"'#]+)["'][^>]*>([\s\S]*?)<\/a>/gi)) { let u; try { u = new URL(dec(m[1]), base); } catch { continue; } if (dom(u.hostname) === dom(base.hostname) && /(kontak|contact|hubungi)/i.test(teks(m[2]) + ' ' + u.pathname) && !/\.(pdf|jpe?g|png)$/i.test(u.pathname)) kon.set(u.href, 1); }
       const urutKon = [...kon.keys()].slice(0, 1);
-      const urut = [...cand].sort((a, b) => b[1] - a[1]).slice(0, 3).map((x) => x[0]);
+      const urut = r.pengurus_url || [...cand].sort((a, b) => b[1] - a[1]).slice(0, 3).map((x) => x[0]);
       let dapat = 0; const sudah = new Set(pengurus.filter((p) => p.perusahaan_id === r.perusahaan_id).map((p) => p.pengurus_id));
       for (const u of urut) {
         const hp = await ambil(u, r.perusahaan_id); if (!hp) continue;
@@ -321,7 +346,7 @@ async function jalan(batches) {
           }
           pengurus.push(rec); dapat++;
         }
-        if (dapat >= 2) break;
+        if (dapat >= 2 && !r.pengurus_url) break;
       }
       { const sumberTxt = [{ u: h.final, html }]; for (const u of urutKon) { const hk = await ambil(u, r.perusahaan_id); if (hk) sumberTxt.push({ u: hk.final, html: fs.readFileSync(hk.file, 'utf8') }); }
         const k = { alamat_kantor: null, kota: r.kantor_pusat.kota, provinsi: r.kantor_pusat.provinsi, kode_pos: null, telepon: [], surel: [], situs: r.situs, lat: null, lng: null, lat_lng_sumber: null, sumber_url: null, tanggal_ambil: HARI_INI, tingkat_bukti: 'kata-pihak' };
@@ -335,6 +360,14 @@ async function jalan(batches) {
       r.pengurus_status = dapat ? 'terbaca' : 'tak-terurai';
       if (!dapat) catatGagal(r.perusahaan_id, r.situs, 'halaman-pengurus-tak-terurai:' + urut.length + '-kandidat');
       if (dapat) r.sumber_field.pengurus = 'situs';
+    }
+    if (b === 7) {
+      const d = semua.find((x) => /^Denera/.test(x.nama)); const kn = kunciNama('Fadli Rahman'); const oid = orangKunci.get(kn);
+      if (d && oid && oid !== 'ambigu' && !pengurus.some((p) => p.perusahaan_id === d.perusahaan_id)) {
+        pengurus.push({ pengurus_id: 'g_' + sha(d.perusahaan_id + kn + 'ceo'), perusahaan_id: d.perusahaan_id, nama: 'Fadli Rahman', jabatan: 'CEO', jenis_jabatan: 'direktur-utama', mulai: null, orang_id: oid, orang_baru: false,
+          sumber_url: null, sumber_ket: 'Arsip METI: deck UKP hlm 17; Enlit Asia 2026 slide 1-11 (CEO Denera, Wakil Ketua Umum 2 METI)', tanggal_ambil: HARI_INI, tingkat_bukti: 'kata-pihak', ekstraksi: 'manual-arsip-meti', foto_url: null, foto_berkas: null, foto_sumber: null, hak_cipta: null });
+        d.pengurus_status = 'terbaca-arsip'; d.sumber_field.pengurus = 'arsip-meti';
+      }
     }
     simpan(); console.error(`batch ${b} tersimpan`);
   }
@@ -429,6 +462,12 @@ function selftest() {
 const arg = (n) => (process.argv.find((a) => a.startsWith(`--${n}`)) || '').split('=').slice(1).join('=');
 if (process.argv.includes('--selftest')) selftest();
 else if (process.argv.some((a) => a.startsWith('--jalan'))) { const b = arg('jalan'); await jalan(b ? b.split(',').map(Number) : [1, 2, 3, 4, 5]); }
+else if (arg('cari')) { // --cari=URL,URL --kata=a,b : unduh (robots, jeda) lalu cetak konteks kata + tautan yang cocok
+  const ks = (arg('kata') || '').split(',').filter(Boolean).map((k) => k.toLowerCase());
+  for (const u of arg('cari').split(',')) { const h = await ambil(u, 'cari'); if (!h) { console.log('GAGAL', u, JSON.stringify(gagal.at(-1))); continue; }
+    const html = fs.readFileSync(h.file, 'utf8'), t = teks(html), low = t.toLowerCase(); console.log('###', u, t.length);
+    for (const k of ks) { let i = low.indexOf(k); let n = 0; while (i >= 0 && n++ < 3) { console.log('  [' + k + ']', t.slice(Math.max(0, i - 120), i + 200).replace(/\n/g, ' | ')); i = low.indexOf(k, i + 400); } }
+    for (const m of html.matchAll(/<a\s[^>]*href=["']([^"'#]+)["'][^>]*>([\s\S]*?)<\/a>/gi)) { const x = teks(m[2]).replace(/\n/g, ' ') + ' ' + m[1]; if (ks.some((k) => x.toLowerCase().includes(k)) || /(direksi|board|manajemen|leadership|kontak|contact|tentang|about)/i.test(x)) console.log('  link:', x.slice(0, 110)); } } }
 else if (process.argv.includes('--anggota')) await anggota();
 else if (process.argv.includes('--statistik')) statistik();
 else console.log('lihat komentar di kepala berkas');

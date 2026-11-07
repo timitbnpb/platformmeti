@@ -216,7 +216,7 @@
  "jm.kaki.rumah": "Renewable Energy House",
  "jm.kaki.surel": "Email",
  "jm.kaki.situs": "Website",
- "jm.kaki.berdiri": "Since founding",
+ "jm.kaki.berdiri": "Founded",
  "jm.kaki.sumber_berdiri": "Source: metiires.or.id, checked 7 Nov 2026",
  "jm.kaki.sumber_potret": "Source: directory snapshot, layer {lapis}, built {tanggal}",
  "jm.kaki.proyek": "Projects",
@@ -1254,5 +1254,16 @@
  "ins.ber.kini": "last 30 days",
  "ins.trf.rendah": "lowest",
  "ins.trf.tinggi": "highest",
- "ins.cel.kunci": "Gray: already installed. Green: remaining potential."
+ "ins.cel.kunci": "Gray: already installed. Green: remaining potential.",
+ "pj.lapis.judul": "Map layers",
+ "pj.lapis.tek": "Technology",
+ "pj.lapis.presisi": "Point precision",
+ "pj.presisi.kira": "Region estimate",
+ "pj.tip.kluster": "{n} projects, zoom in to separate",
+ "pj.prog.buka": "Open program →",
+ "pj.prog.dipeta": "Show on the map",
+ "pj.prog.daftar": "Projects in this program",
+ "pj.prog.nproyek": "{n} projects",
+ "pj.prog.dasar": "Legal basis",
+ "beranda.eko.semua": "See all {n} organizations"
 }

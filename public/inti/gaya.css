@@ -116,3 +116,16 @@ header.top{padding-inline:clamp(12px,2vw,28px)}
 .jm-kaki-isi{padding-block:48px 36px}
 .jm-kaki-kol>ul>li>a:not(.jm-kaki-ln){white-space:nowrap}
 .jm-kaki-isi{grid-template-columns:minmax(0,1.6fr) repeat(3,minmax(0,.95fr)) minmax(0,1.5fr)}
+
+/* kaki: tautan empat kolom, kontak satu baris mendatar di bawah garis tipis */
+.jm-kaki-isi{grid-template-columns:minmax(0,1.5fr) repeat(3,minmax(0,1fr));padding-bottom:28px}
+.jm-kaki-stat{max-width:none}
+.jm-kaki-stat b{font-size:20px}
+.jm-kaki-kontak{max-width:var(--maks);margin-inline:auto;padding:24px clamp(16px,4vw,32px) 28px;border-top:1px solid color-mix(in srgb,var(--on-brand) 12%,transparent)}
+.jm-kaki-kontak h2{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);margin:0}
+.jm-kaki-kontak .jm-kaki-hub ul{grid-template-columns:repeat(4,minmax(0,1fr));gap:24px}
+.jm-kaki-kontak .jm-kaki-hub li{font-size:13.5px;line-height:1.45}
+.jm-kaki-kontak .jm-kaki-hub li a{display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+@media (max-width:1100px){.jm-kaki-isi{grid-template-columns:repeat(3,minmax(0,1fr))}.jm-kaki-kontak .jm-kaki-hub ul{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:600px){.jm-kaki-isi{grid-template-columns:repeat(2,minmax(0,1fr))}.jm-kaki-kontak .jm-kaki-hub ul{grid-template-columns:repeat(2,minmax(0,1fr));gap:18px 14px}.jm-kaki-kontak .jm-kaki-hub li{grid-template-columns:1fr}.jm-kaki-kontak .jm-kaki-hub .jm-kaki-ik{display:none}}
+@media (max-width:420px){.jm-kaki-kontak .jm-kaki-hub ul{grid-template-columns:1fr}.jm-kaki-kontak .jm-kaki-hub li{grid-template-columns:16px minmax(0,1fr)}.jm-kaki-kontak .jm-kaki-hub .jm-kaki-ik{display:inline-flex}}

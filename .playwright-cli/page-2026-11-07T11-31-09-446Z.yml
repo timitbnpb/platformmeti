@@ -1,0 +1,473 @@
+- generic [active] [ref=f4e1]:
+  - banner [ref=f4e2]:
+    - button "Menu utama" [ref=f4e3] [cursor=pointer]
+    - link [ref=f4e6] [cursor=pointer]:
+      - /url: /
+    - generic [ref=f4e7]:
+      - button "Ganti bahasa ke English" [ref=f4e8] [cursor=pointer]
+      - button "Ganti tema" [ref=f4e14] [cursor=pointer]
+      - link "Masuk" [ref=f4e17] [cursor=pointer]:
+        - /url: /masuk?ke=%2Fberita
+  - main [ref=f4e20]:
+    - generic [ref=f4e22]:
+      - paragraph [ref=f4e23]:
+        - generic [ref=f4e25]: Berita dan video EBET
+      - heading "Berita dan video energi terbarukan" [level=1] [ref=f4e26]
+      - paragraph [ref=f4e27]: Judul dan tautan ke sumber aslinya, dikelompokkan menurut teknologi dan pelaku yang disebut.
+      - generic [ref=f4e28]:
+        - generic [ref=f4e29]:
+          - definition [ref=f4e30]: "519"
+          - term [ref=f4e31]: berita
+        - generic [ref=f4e32]:
+          - definition [ref=f4e33]: "172"
+          - term [ref=f4e34]: media
+        - generic [ref=f4e35]:
+          - definition [ref=f4e36]: "98"
+          - term [ref=f4e37]: 30 hari terakhir
+        - generic [ref=f4e38]:
+          - definition [ref=f4e39]: "95"
+          - term [ref=f4e40]: video
+    - region [ref=f4e41]:
+      - generic [ref=f4e42]:
+        - generic [ref=f4e43]:
+          - paragraph [ref=f4e44]:
+            - generic [ref=f4e46]: 01 Ringkasan
+          - heading "Seberapa ramai pemberitaannya" [level=2] [ref=f4e47]
+        - generic [ref=f4e48]:
+          - generic [ref=f4e49]:
+            - generic [ref=f4e50]:
+              - heading "Berita per hari, 30 hari terakhir" [level=3] [ref=f4e51]
+              - generic [ref=f4e52]:
+                - button "Per hari" [pressed] [ref=f4e53] [cursor=pointer]
+                - button "Per minggu" [ref=f4e54] [cursor=pointer]
+            - img "Berita per hari" [ref=f4e56]:
+              - 'generic "-: 0" [ref=f4e57]'
+              - 'generic "-: 0" [ref=f4e58]'
+              - 'generic "-: 0" [ref=f4e59]'
+              - 'generic "-: 0" [ref=f4e60]'
+              - 'generic "-: 0" [ref=f4e61]'
+              - 'generic "-: 1" [ref=f4e62]'
+              - 'generic "-: 8" [ref=f4e63]'
+              - 'generic "-: 4" [ref=f4e64]'
+              - 'generic "-: 6" [ref=f4e65]'
+              - 'generic "-: 3" [ref=f4e66]'
+              - 'generic "-: 3" [ref=f4e67]'
+              - 'generic "-: 15" [ref=f4e68]'
+              - 'generic "-: 14" [ref=f4e69]'
+              - 'generic "-: 7" [ref=f4e70]'
+              - 'generic "-: 5" [ref=f4e71]'
+              - 'generic "-: 4" [ref=f4e72]'
+              - 'generic "-: 2" [ref=f4e73]'
+              - 'generic "-: 0" [ref=f4e74]'
+              - 'generic "-: 0" [ref=f4e75]'
+              - 'generic "-: 0" [ref=f4e76]'
+              - 'generic "-: 0" [ref=f4e77]'
+              - 'generic "-: 0" [ref=f4e78]'
+              - 'generic "-: 0" [ref=f4e79]'
+              - 'generic "-: 0" [ref=f4e80]'
+              - 'generic "-: 0" [ref=f4e81]'
+              - 'generic "-: 0" [ref=f4e82]'
+              - 'generic "-: 0" [ref=f4e83]'
+              - 'generic "-: 4" [ref=f4e84]'
+              - 'generic "-: 13" [ref=f4e85]'
+              - 'generic "-: 9" [ref=f4e86]'
+              - generic [ref=f4e87]: "-"
+              - generic [ref=f4e88]: "-"
+              - generic [ref=f4e89]: "15"
+          - generic [ref=f4e90]:
+            - heading "Sebaran teknologi" [level=3] [ref=f4e91]
+            - list [ref=f4e93]:
+              - listitem [ref=f4e94]:
+                - button "Surya 178" [ref=f4e95] [cursor=pointer]:
+                  - generic [ref=f4e96]: Surya
+                  - emphasis [ref=f4e100]: "178"
+              - listitem [ref=f4e101]:
+                - button "Panas bumi 44" [ref=f4e102] [cursor=pointer]:
+                  - generic [ref=f4e103]: Panas bumi
+                  - emphasis [ref=f4e107]: "44"
+              - listitem [ref=f4e108]:
+                - button "Transisi adil 16" [ref=f4e109] [cursor=pointer]:
+                  - generic [ref=f4e110]: Transisi adil
+                  - emphasis [ref=f4e114]: "16"
+              - listitem [ref=f4e115]:
+                - button "Industri 10" [ref=f4e116] [cursor=pointer]:
+                  - generic [ref=f4e117]: Industri
+                  - emphasis [ref=f4e121]: "10"
+              - listitem [ref=f4e122]:
+                - button "Penyimpanan 10" [ref=f4e123] [cursor=pointer]:
+                  - generic [ref=f4e124]: Penyimpanan
+                  - emphasis [ref=f4e128]: "10"
+              - listitem [ref=f4e129]:
+                - button "Kebijakan 8" [ref=f4e130] [cursor=pointer]:
+                  - generic [ref=f4e131]: Kebijakan
+                  - emphasis [ref=f4e135]: "8"
+              - listitem [ref=f4e136]:
+                - button "Pembiayaan 8" [ref=f4e137] [cursor=pointer]:
+                  - generic [ref=f4e138]: Pembiayaan
+                  - emphasis [ref=f4e142]: "8"
+              - listitem [ref=f4e143]:
+                - button "Biomassa dan sampah 6" [ref=f4e144] [cursor=pointer]:
+                  - generic [ref=f4e145]: Biomassa dan sampah
+                  - emphasis [ref=f4e149]: "6"
+          - generic [ref=f4e150]:
+            - heading "Media teratas" [level=3] [ref=f4e151]
+            - list [ref=f4e153]:
+              - listitem [ref=f4e154]:
+                - button "antaranews.com 72" [ref=f4e155] [cursor=pointer]:
+                  - generic [ref=f4e156]: antaranews.com
+                  - emphasis [ref=f4e160]: "72"
+              - listitem [ref=f4e161]:
+                - button "koran-jakarta.com 26" [ref=f4e162] [cursor=pointer]:
+                  - generic [ref=f4e163]: koran-jakarta.com
+                  - emphasis [ref=f4e167]: "26"
+              - listitem [ref=f4e168]:
+                - button "en.antaranews.com 24" [ref=f4e169] [cursor=pointer]:
+                  - generic [ref=f4e170]: en.antaranews.com
+                  - emphasis [ref=f4e174]: "24"
+              - listitem [ref=f4e175]:
+                - button "jawapos.com 17" [ref=f4e176] [cursor=pointer]:
+                  - generic [ref=f4e177]: jawapos.com
+                  - emphasis [ref=f4e181]: "17"
+              - listitem [ref=f4e182]:
+                - button "jateng.tribunnews.com 14" [ref=f4e183] [cursor=pointer]:
+                  - generic [ref=f4e184]: jateng.tribunnews.com
+                  - emphasis [ref=f4e188]: "14"
+              - listitem [ref=f4e189]:
+                - button "rri.co.id 12" [ref=f4e190] [cursor=pointer]:
+                  - generic [ref=f4e191]: rri.co.id
+                  - emphasis [ref=f4e195]: "12"
+              - listitem [ref=f4e196]:
+                - button "en.tempo.co 11" [ref=f4e197] [cursor=pointer]:
+                  - generic [ref=f4e198]: en.tempo.co
+                  - emphasis [ref=f4e202]: "11"
+              - listitem [ref=f4e203]:
+                - button "tribunnews.com 11" [ref=f4e204] [cursor=pointer]:
+                  - generic [ref=f4e205]: tribunnews.com
+                  - emphasis [ref=f4e209]: "11"
+    - region [ref=f4e210]:
+      - generic [ref=f4e212]:
+        - paragraph [ref=f4e213]:
+          - generic [ref=f4e215]: 02 Topik
+        - heading "Topik paling ramai 30 hari" [level=2] [ref=f4e216]
+        - paragraph [ref=f4e217]: Jumlah berita per teknologi dalam 30 hari terakhir. Pilih satu untuk menyaring daftar.
+    - region [ref=f4e218]:
+      - generic [ref=f4e219]:
+        - generic [ref=f4e220]:
+          - paragraph [ref=f4e221]:
+            - generic [ref=f4e223]: 03 Daftar
+          - heading "Semua berita dan video" [level=2] [ref=f4e224]
+        - tablist [ref=f4e225]:
+          - tab "Berita" [selected] [ref=f4e226] [cursor=pointer]
+          - tab "Video" [ref=f4e230] [cursor=pointer]
+        - generic [ref=f4e233]:
+          - generic [ref=f4e234]:
+            - generic [ref=f4e237]: Cari judul atau media
+            - searchbox "Cari judul atau media" [ref=f4e238]
+          - generic [ref=f4e239]:
+            - generic [ref=f4e240]: Semua teknologi
+            - combobox "Semua teknologi" [ref=f4e241] [cursor=pointer]:
+              - option "Semua teknologi" [selected]
+              - option "Bayu"
+              - option "Bioenergi"
+              - option "Biomassa dan sampah"
+              - option "Efisiensi"
+              - option "Elektrifikasi"
+              - option "Hidro"
+              - option "Industri"
+              - option "Jaringan"
+              - option "Karbon"
+              - option "Kebijakan"
+              - option "Nuklir"
+              - option "Panas bumi"
+              - option "Pembiayaan"
+              - option "Penyimpanan"
+              - option "Surya"
+              - option "Transisi adil"
+          - generic [ref=f4e242]:
+            - generic [ref=f4e243]: Semua media
+            - combobox "Semua media" [ref=f4e244] [cursor=pointer]:
+              - option "Semua media" [selected]
+              - option "933thedrive.com"
+              - option "agrinews-pubs.com"
+              - option "alanbatnews.net"
+              - option "allafrica.com"
+              - option "analisadaily.com"
+              - option "Antara"
+              - option "antaranews.com"
+              - option "asiaone.com"
+              - option "bali.jpnn.com"
+              - option "bali.tribunnews.com"
+              - option "bandung.bisnis.com"
+              - option "bangka.tribunnews.com"
+              - option "bangkokpost.com"
+              - option "belitung.tribunnews.com"
+              - option "berita.liputan6.com"
+              - option "beritajatim.com"
+              - option "bignewsnetwork.com"
+              - option "bjreview.com.cn"
+              - option "bola.okezone.com"
+              - option "bruneinews.net"
+              - option "business-standard.com"
+              - option "businesstimes.com.sg"
+              - option "china.org.cn"
+              - option "CNBC Indonesia"
+              - option "CNN Indonesia"
+              - option "cnnindonesia.com"
+              - option "compositesworld.com"
+              - option "countercurrents.org"
+              - option "daerah.sindonews.com"
+              - option "dailyexcelsior.com"
+              - option "dailykos.com"
+              - option "dailynews.co.tz"
+              - option "dailypioneer.com"
+              - option "dailysabah.com"
+              - option "dealstreetasia.com"
+              - option "Detik Finance"
+              - option "dw.com"
+              - option "eco-business.com"
+              - option "ecologic.harianjogja.com"
+              - option "economictimes.indiatimes.com"
+              - option "economy.okezone.com"
+              - option "ekbis.harianjogja.com"
+              - option "ekbis.sindonews.com"
+              - option "ekonomi.bisnis.com"
+              - option "ekonomi.republika.co.id"
+              - option "en.antaranews.com"
+              - option "en.ce.cn"
+              - option "en.gmw.cn"
+              - option "en.mercopress.com"
+              - option "en.tempo.co"
+              - option "english.aawsat.com"
+              - option "english.anhuinews.com"
+              - option "english.kontan.co.id"
+              - option "english.news.cn"
+              - option "esgnow.republika.co.id"
+              - option "esmmagazine.com"
+              - option "eurekalert.org"
+              - option "fastmarkets.com"
+              - option "finance.yahoo.com"
+              - option "finanznachrichten.de"
+              - option "fool.com"
+              - option "forbes.com"
+              - option "foreignpolicy.com"
+              - option "fortune.com"
+              - option "freemalaysiatoday.com"
+              - option "gdnonline.com"
+              - option "globalissues.org"
+              - option "globaltimes.cn"
+              - option "greentechlead.com"
+              - option "harianjogja.com"
+              - option "hellenicshippingnews.com"
+              - option "hijau.bisnis.com"
+              - option "hindustantimes.com"
+              - option "hinews.cn"
+              - option "iaindale.com"
+              - option "indonesiatribune.com"
+              - option "insideretail.asia"
+              - option "insight.kontan.co.id"
+              - option "internationalviewpoint.org"
+              - option "investegate.co.uk"
+              - option "jabar.jpnn.com"
+              - option "jabar.tribunnews.com"
+              - option "jateng.harianjogja.com"
+              - option "jateng.jpnn.com"
+              - option "jateng.tribunnews.com"
+              - option "jawapos.com"
+              - option "jogja.tribunnews.com"
+              - option "jpnn.com"
+              - option "kaltara.antaranews.com"
+              - option "kaltim.tribunnews.com"
+              - option "Katadata"
+              - option "kepri.batampos.co.id"
+              - option "keuangan.kontan.co.id"
+              - option "kompas.com"
+              - option "koran-jakarta.com"
+              - option "kupang.tribunnews.com"
+              - option "lampung.tribunnews.com"
+              - option "lampung.viva.co.id"
+              - option "laosnews.net"
+              - option "latimes.com"
+              - option "leadership.ng"
+              - option "links.org.au"
+              - option "liputan6.com"
+              - option "livemint.com"
+              - option "makassar.tribunnews.com"
+              - option "malaysiasun.com"
+              - option "manado.antaranews.com"
+              - option "manado.tribunnews.com"
+              - option "manilatimes.net"
+              - option "market.bisnis.com"
+              - option "merdeka.com"
+              - option "metrotvnews.com"
+              - option "middleeastmonitor.com"
+              - option "miragenews.com"
+              - option "momsmoney.kontan.co.id"
+              - option "money.kompas.com"
+              - option "moneycontrol.com"
+              - option "mpoc.org.my"
+              - option "nasional.kompas.com"
+              - option "news.republika.co.id"
+              - option "newsday.com"
+              - option "newstodaynet.com"
+              - option "newsweek.com"
+              - option "ntt.viva.co.id"
+              - option "oilandgas360.com"
+              - option "oilprice.com"
+              - option "organiser.org"
+              - option "ototekno.harianjogja.com"
+              - option "pakistantelegraph.com"
+              - option "palembang.tribunnews.com"
+              - option "peakoil.com"
+              - option "philippinetimes.com"
+              - option "pontianak.tribunnews.com"
+              - option "prnewswire.com"
+              - option "pv-tech.org"
+              - option "regional.kompas.com"
+              - option "rejogja.republika.co.id"
+              - option "retail.economictimes.indiatimes.com"
+              - option "rri.co.id"
+              - option "Ruang Energi"
+              - option "semarang.bisnis.com"
+              - option "shangbao.com.ph"
+              - option "skepticalscience.com"
+              - option "smh.com.au"
+              - option "sumatra.bisnis.com"
+              - option "sumsel.tribunnews.com"
+              - option "surabaya.bisnis.com"
+              - option "Tempo"
+              - option "tempo.co"
+              - option "thailand-business-news.com"
+              - option "thedailystar.net"
+              - option "thediplomat.com"
+              - option "theepochtimes.com"
+              - option "thefifthestate.com.au"
+              - option "thehindubusinessline.com"
+              - option "thejakartapost.com"
+              - option "themarketsdaily.com"
+              - option "thestar.com.my"
+              - option "thisdaylive.com"
+              - option "tradearabia.com"
+              - option "trend.az"
+              - option "tribune.com.pk"
+              - option "tribunnews.com"
+              - option "ttrweekly.com"
+              - option "vietnamnews.vn"
+              - option "vietnamtribune.com"
+              - option "viva.co.id"
+              - option "wartakota.tribunnews.com"
+              - option "wattsupwiththat.com"
+              - option "yahoo.com"
+              - option "yalibnan.com"
+              - option "yourdemocracy.net.au"
+          - generic [ref=f4e245]:
+            - generic [ref=f4e246]: Semua periode
+            - combobox "Semua periode" [ref=f4e247] [cursor=pointer]:
+              - option "Semua periode" [selected]
+              - option "7 hari terakhir"
+              - option "30 hari terakhir"
+              - option "90 hari terakhir"
+          - generic [ref=f4e248]:
+            - generic [ref=f4e249]: Semua bahasa
+            - combobox "Semua bahasa" [ref=f4e250] [cursor=pointer]:
+              - option "Semua bahasa" [selected]
+              - option "Indonesia"
+              - option "Inggris"
+          - status [ref=f4e251]
+        - tabpanel [ref=f4e252]:
+          - status "Memuat" [ref=f4e253]
+        - paragraph [ref=f4e260]: Hanya judul dan tautan yang disimpan; isi berita tetap di situs asalnya. Label teknologi diberikan otomatis dari kata kunci judul (EST). Data per 7 Nov 2026.
+  - contentinfo [ref=f4e261]:
+    - generic [ref=f4e262]:
+      - generic [ref=f4e263]:
+        - generic [ref=f4e266]:
+          - strong [ref=f4e267]: METI
+          - generic [ref=f4e268]: Masyarakat Energi Terbarukan Indonesia
+        - list [ref=f4e269]:
+          - 'listitem "Sumber: metiires.or.id, diperiksa 7 Nov 2026" [ref=f4e270]':
+            - generic [ref=f4e271]: "1999"
+            - generic [ref=f4e272]: Berdiri
+        - generic [ref=f4e273]:
+          - link "LinkedIn METI" [ref=f4e274] [cursor=pointer]:
+            - /url: https://www.linkedin.com/in/meti-ires-b06066a1/
+          - link "Instagram METI" [ref=f4e278] [cursor=pointer]:
+            - /url: https://www.instagram.com/metiires/
+      - navigation [ref=f4e282]:
+        - heading "Tentang" [level=2] [ref=f4e283]
+        - list [ref=f4e284]:
+          - listitem [ref=f4e285]:
+            - link "Siapa kami" [ref=f4e286] [cursor=pointer]:
+              - /url: https://metiires.or.id/about
+          - listitem [ref=f4e288]:
+            - link "Pengurus dan tim" [ref=f4e289] [cursor=pointer]:
+              - /url: https://metiires.or.id/about/meettheteam
+          - listitem [ref=f4e291]:
+            - link "Bergabung" [ref=f4e292] [cursor=pointer]:
+              - /url: https://metiires.or.id/membership
+          - listitem [ref=f4e294]:
+            - link "Kemitraan" [ref=f4e295] [cursor=pointer]:
+              - /url: https://metiires.or.id/about/partnership
+      - navigation [ref=f4e297]:
+        - heading "Berita" [level=2] [ref=f4e298]
+        - list [ref=f4e299]:
+          - listitem [ref=f4e300]:
+            - link "Berita" [ref=f4e301] [cursor=pointer]:
+              - /url: https://metiires.or.id/news
+          - listitem [ref=f4e303]:
+            - link "Event" [ref=f4e304] [cursor=pointer]:
+              - /url: https://metiires.or.id/news/events
+          - listitem [ref=f4e306]:
+            - link "E-Voting Perlu masuk di metiires.or.id" [ref=f4e307] [cursor=pointer]:
+              - /url: https://metiires.or.id/login?redirect=/news/evoting
+              - generic [ref=f4e308]: E-Voting
+              - generic "Perlu masuk di metiires.or.id" [ref=f4e309]
+          - listitem [ref=f4e314]:
+            - link "Materi dan dokumen Perlu masuk di metiires.or.id" [ref=f4e315] [cursor=pointer]:
+              - /url: https://metiires.or.id/login?redirect=/news/materials
+              - generic [ref=f4e316]: Materi dan dokumen
+              - generic "Perlu masuk di metiires.or.id" [ref=f4e317]
+      - navigation [ref=f4e322]:
+        - heading "Direktori" [level=2] [ref=f4e323]
+        - list [ref=f4e324]:
+          - listitem [ref=f4e325]:
+            - link "Proyek" [ref=f4e326] [cursor=pointer]:
+              - /url: /direktori?tampil=proyek
+          - listitem [ref=f4e328]:
+            - link "Organisasi" [ref=f4e329] [cursor=pointer]:
+              - /url: /direktori?tampil=lembaga
+          - listitem [ref=f4e331]:
+            - link "Orang dan pakar" [ref=f4e332] [cursor=pointer]:
+              - /url: /direktori?tampil=pakar
+          - listitem [ref=f4e334]:
+            - link "Regulasi" [ref=f4e335] [cursor=pointer]:
+              - /url: /direktori?tampil=regulasi
+          - listitem [ref=f4e337]:
+            - link "Pustaka" [ref=f4e338] [cursor=pointer]:
+              - /url: /direktori?tampil=pustaka
+    - navigation [ref=f4e341]:
+      - heading "Kontak" [level=2] [ref=f4e342]
+      - list [ref=f4e343]:
+        - listitem [ref=f4e344]:
+          - generic [ref=f4e349]:
+            - generic [ref=f4e350]: Kantor
+            - link "Taman Sari Parama Lt. 10, Jl. K.H. Wahid Hasyim No. 84-86, Kebon Sirih, Menteng, Jakarta Pusat 10340" [ref=f4e351] [cursor=pointer]:
+              - /url: https://www.google.com/maps/search/?api=1&query=Taman%20Sari%20Parama%2C%20Jl.%20K.H.%20Wahid%20Hasyim%20No.%2084-86%2C%20Kebon%20Sirih%2C%20Menteng%2C%20Jakarta%20Pusat%2010340
+        - listitem [ref=f4e352]:
+          - generic [ref=f4e357]:
+            - generic [ref=f4e358]: Rumah Energi Terbarukan
+            - link "Jl. Jatinegara Barat IV No. 3A, Balimester, Jatinegara, Jakarta Timur 13310" [ref=f4e359] [cursor=pointer]:
+              - /url: https://www.google.com/maps/search/?api=1&query=Jl.%20Jatinegara%20Barat%20IV%20No.%203A%2C%20Balimester%2C%20Jatinegara%2C%20Jakarta%20Timur%2013310
+        - listitem [ref=f4e360]:
+          - generic [ref=f4e365]:
+            - generic [ref=f4e366]: Surel
+            - link "meti.ires@gmail.com" [ref=f4e367] [cursor=pointer]:
+              - /url: mailto:meti.ires@gmail.com
+        - listitem [ref=f4e368]:
+          - generic [ref=f4e373]:
+            - generic [ref=f4e374]: Situs
+            - link "www.meti.or.id" [ref=f4e375] [cursor=pointer]:
+              - /url: https://www.meti.or.id
+    - generic [ref=f4e376]:
+      - paragraph [ref=f4e377]: © 2026 METI
+      - link "Kebijakan membership dan pembayaran" [ref=f4e378] [cursor=pointer]:
+        - /url: https://metiires.or.id/policy/membership
+      - button "Kembali ke atas" [ref=f4e379] [cursor=pointer]

@@ -35,15 +35,15 @@ export async function unduhPng(art) {
   const w = document.createElement("div");
   w.className = "jm-snap"; w.dataset.theme = tema; w.style.width = lebar + "px";
   const k = art.cloneNode(true);
-  k.querySelectorAll(".jm-ins-bagi, .jm-ins-menu, details:not([open])").forEach((x) => x.remove());
+  k.querySelectorAll(".jm-ins-bagi, .jm-ins-menu, details").forEach((x) => x.remove());
   k.removeAttribute("id"); k.classList.add("jm-ins-snap");
-  const sumber = art.querySelector(".jm-an-sumber")?.textContent.trim() ?? "";
+  const sumber = art.querySelector(".jm-an-src div span")?.textContent.trim() ?? "";
   const kaki = document.createElement("div");
   kaki.className = "jm-snap-kaki";
   kaki.innerHTML = `<img src="${logo}" width="40" height="40" alt=""><p><b>${esc(t("jm.merek"))}</b> ${esc(location.host)}/insight<br>${esc(sumber)}</p>`;
   w.append(k, kaki);
   document.body.append(w);
-  const h = Math.ceil(w.getBoundingClientRect().height);
+  const h = Math.ceil(w.getBoundingClientRect().height) + 24;
   const xml = new XMLSerializer().serializeToString(w);
   w.remove();
   const isi = xml.replace(/^(<div[^>]*>)/, `$1<style><![CDATA[${cssTeks()}]]></style>`);

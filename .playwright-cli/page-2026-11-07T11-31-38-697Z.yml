@@ -1,0 +1,167 @@
+- generic [active] [ref=f10e1]:
+  - banner [ref=f10e2]:
+    - button "Menu utama" [ref=f10e3] [cursor=pointer]
+    - link [ref=f10e6] [cursor=pointer]:
+      - /url: /
+    - generic [ref=f10e7]:
+      - button "Ganti bahasa ke English" [ref=f10e8] [cursor=pointer]
+      - button "Ganti tema" [ref=f10e14] [cursor=pointer]
+      - link "Masuk" [ref=f10e17] [cursor=pointer]:
+        - /url: /masuk?ke=%2Fkalender
+  - main [ref=f10e20]:
+    - generic [ref=f10e21]:
+      - heading "Kalender" [level=1] [ref=f10e22]
+      - paragraph [ref=f10e23]: Agenda METI dan acara ekosistem energi terbarukan. Yang tampil hanya judul, tanggal, dan mitra penyelenggara.
+    - region [ref=f10e24]:
+      - heading "Agenda" [level=2] [ref=f10e25]
+      - generic [ref=f10e26]:
+        - tablist [ref=f10e27]:
+          - tab "Bulan" [selected] [ref=f10e28] [cursor=pointer]
+          - tab "Daftar" [ref=f10e29] [cursor=pointer]
+        - generic [ref=f10e31]:
+          - generic [ref=f10e32]: Jenis acara
+          - combobox "Jenis acara" [ref=f10e33] [cursor=pointer]:
+            - option "Jenis acara" [selected]
+            - option "Seminar dan diskusi"
+            - option "Konferensi dan forum"
+            - option "Audiensi"
+            - option "Lokakarya dan misi"
+            - option "Terbitan regulasi"
+            - option "Tenggat regulasi"
+        - status [ref=f10e34]: 5 dari 37 acara
+      - generic [ref=f10e36]:
+        - button "Bulan sebelumnya" [ref=f10e37] [cursor=pointer]: ‹
+        - strong [ref=f10e38]: September 2026
+        - button "Bulan berikutnya" [ref=f10e39] [cursor=pointer]: ›
+      - list [ref=f10e41]:
+        - listitem [ref=f10e42]:
+          - generic [ref=f10e43]: 2 Sep 2026
+          - strong [ref=f10e44]: IndoEBTKE ConEx ke-12, JIEXPO, 2-4 Sep
+          - generic [ref=f10e45]:
+            - generic [ref=f10e46]: Konferensi dan forum
+            - generic [ref=f10e47]: "Mitra: KESDM"
+          - generic [ref=f10e48]: Arsip kegiatan METI, diambil 7 Nov 2026
+        - listitem [ref=f10e49]:
+          - generic [ref=f10e50]: 8 Sep 2026
+          - strong [ref=f10e51]: "Audiensi/RDPU: 22 substansi pokok RUU EBET dalam 5 pilar"
+          - generic [ref=f10e52]:
+            - generic [ref=f10e53]: Audiensi
+            - generic [ref=f10e54]: "Mitra: Komisi XII DPR RI"
+          - generic [ref=f10e55]: Arsip kegiatan METI, diambil 7 Nov 2026
+        - listitem [ref=f10e56]:
+          - generic [ref=f10e57]: 24 Sep 2026
+          - strong [ref=f10e58]: Panel "Waste Not, Watt Not"
+          - generic [ref=f10e59]:
+            - generic [ref=f10e60]: Seminar dan diskusi
+            - generic [ref=f10e61]: "Mitra: Enlit Asia dan MKI Electricity Connect 2026"
+          - generic [ref=f10e62]: Arsip kegiatan METI, diambil 7 Nov 2026
+        - listitem [ref=f10e63]:
+          - generic [ref=f10e64]: 25 Sep 2026
+          - strong [ref=f10e65]: Diskusi pemanfaatan bendungan PU untuk EBT
+          - generic [ref=f10e66]:
+            - generic [ref=f10e67]: Seminar dan diskusi
+            - generic [ref=f10e68]: "Mitra: DJPI Kementerian PU, AESI, APLSI, APPLTA"
+          - generic [ref=f10e69]: Arsip kegiatan METI, diambil 7 Nov 2026
+        - listitem [ref=f10e70]:
+          - generic [ref=f10e71]: 28 Sep 2026
+          - strong [ref=f10e72]: Scoping Mission SSTC energi Kamboja-Indonesia-Jerman, Phnom Penh (28 Sep-1 Okt)
+          - generic [ref=f10e73]:
+            - generic [ref=f10e74]: Lokakarya dan misi
+            - generic [ref=f10e75]: "Mitra: GIZ, KESDM, Kemlu, Bappenas, Kemenkeu, Kamboja"
+          - generic [ref=f10e76]: Arsip kegiatan METI, diambil 7 Nov 2026
+      - paragraph [ref=f10e77]: Dibekukan 7 Nov 2026. Jadwal IndoEBTKE ConEx berikutnya dan tenggat regulasi belum tersedia dari sumber publik, jadi belum tampil.
+  - contentinfo [ref=f10e78]:
+    - generic [ref=f10e79]:
+      - generic [ref=f10e80]:
+        - generic [ref=f10e83]:
+          - strong [ref=f10e84]: METI
+          - generic [ref=f10e85]: Masyarakat Energi Terbarukan Indonesia
+        - list [ref=f10e86]:
+          - 'listitem "Sumber: metiires.or.id, diperiksa 7 Nov 2026" [ref=f10e87]':
+            - generic [ref=f10e88]: "1999"
+            - generic [ref=f10e89]: Berdiri
+        - generic [ref=f10e90]:
+          - link "LinkedIn METI" [ref=f10e91] [cursor=pointer]:
+            - /url: https://www.linkedin.com/in/meti-ires-b06066a1/
+          - link "Instagram METI" [ref=f10e95] [cursor=pointer]:
+            - /url: https://www.instagram.com/metiires/
+      - navigation [ref=f10e99]:
+        - heading "Tentang" [level=2] [ref=f10e100]
+        - list [ref=f10e101]:
+          - listitem [ref=f10e102]:
+            - link "Siapa kami" [ref=f10e103] [cursor=pointer]:
+              - /url: https://metiires.or.id/about
+          - listitem [ref=f10e105]:
+            - link "Pengurus dan tim" [ref=f10e106] [cursor=pointer]:
+              - /url: https://metiires.or.id/about/meettheteam
+          - listitem [ref=f10e108]:
+            - link "Bergabung" [ref=f10e109] [cursor=pointer]:
+              - /url: https://metiires.or.id/membership
+          - listitem [ref=f10e111]:
+            - link "Kemitraan" [ref=f10e112] [cursor=pointer]:
+              - /url: https://metiires.or.id/about/partnership
+      - navigation [ref=f10e114]:
+        - heading "Berita" [level=2] [ref=f10e115]
+        - list [ref=f10e116]:
+          - listitem [ref=f10e117]:
+            - link "Berita" [ref=f10e118] [cursor=pointer]:
+              - /url: https://metiires.or.id/news
+          - listitem [ref=f10e120]:
+            - link "Event" [ref=f10e121] [cursor=pointer]:
+              - /url: https://metiires.or.id/news/events
+          - listitem [ref=f10e123]:
+            - link "E-Voting Perlu masuk di metiires.or.id" [ref=f10e124] [cursor=pointer]:
+              - /url: https://metiires.or.id/login?redirect=/news/evoting
+              - generic [ref=f10e125]: E-Voting
+              - generic "Perlu masuk di metiires.or.id" [ref=f10e126]
+          - listitem [ref=f10e131]:
+            - link "Materi dan dokumen Perlu masuk di metiires.or.id" [ref=f10e132] [cursor=pointer]:
+              - /url: https://metiires.or.id/login?redirect=/news/materials
+              - generic [ref=f10e133]: Materi dan dokumen
+              - generic "Perlu masuk di metiires.or.id" [ref=f10e134]
+      - navigation [ref=f10e139]:
+        - heading "Direktori" [level=2] [ref=f10e140]
+        - list [ref=f10e141]:
+          - listitem [ref=f10e142]:
+            - link "Proyek" [ref=f10e143] [cursor=pointer]:
+              - /url: /direktori?tampil=proyek
+          - listitem [ref=f10e145]:
+            - link "Organisasi" [ref=f10e146] [cursor=pointer]:
+              - /url: /direktori?tampil=lembaga
+          - listitem [ref=f10e148]:
+            - link "Orang dan pakar" [ref=f10e149] [cursor=pointer]:
+              - /url: /direktori?tampil=pakar
+          - listitem [ref=f10e151]:
+            - link "Regulasi" [ref=f10e152] [cursor=pointer]:
+              - /url: /direktori?tampil=regulasi
+          - listitem [ref=f10e154]:
+            - link "Pustaka" [ref=f10e155] [cursor=pointer]:
+              - /url: /direktori?tampil=pustaka
+    - navigation [ref=f10e158]:
+      - heading "Kontak" [level=2] [ref=f10e159]
+      - list [ref=f10e160]:
+        - listitem [ref=f10e161]:
+          - generic [ref=f10e166]:
+            - generic [ref=f10e167]: Kantor
+            - link "Taman Sari Parama Lt. 10, Jl. K.H. Wahid Hasyim No. 84-86, Kebon Sirih, Menteng, Jakarta Pusat 10340" [ref=f10e168] [cursor=pointer]:
+              - /url: https://www.google.com/maps/search/?api=1&query=Taman%20Sari%20Parama%2C%20Jl.%20K.H.%20Wahid%20Hasyim%20No.%2084-86%2C%20Kebon%20Sirih%2C%20Menteng%2C%20Jakarta%20Pusat%2010340
+        - listitem [ref=f10e169]:
+          - generic [ref=f10e174]:
+            - generic [ref=f10e175]: Rumah Energi Terbarukan
+            - link "Jl. Jatinegara Barat IV No. 3A, Balimester, Jatinegara, Jakarta Timur 13310" [ref=f10e176] [cursor=pointer]:
+              - /url: https://www.google.com/maps/search/?api=1&query=Jl.%20Jatinegara%20Barat%20IV%20No.%203A%2C%20Balimester%2C%20Jatinegara%2C%20Jakarta%20Timur%2013310
+        - listitem [ref=f10e177]:
+          - generic [ref=f10e182]:
+            - generic [ref=f10e183]: Surel
+            - link "meti.ires@gmail.com" [ref=f10e184] [cursor=pointer]:
+              - /url: mailto:meti.ires@gmail.com
+        - listitem [ref=f10e185]:
+          - generic [ref=f10e190]:
+            - generic [ref=f10e191]: Situs
+            - link "www.meti.or.id" [ref=f10e192] [cursor=pointer]:
+              - /url: https://www.meti.or.id
+    - generic [ref=f10e193]:
+      - paragraph [ref=f10e194]: © 2026 METI
+      - link "Kebijakan membership dan pembayaran" [ref=f10e195] [cursor=pointer]:
+        - /url: https://metiires.or.id/policy/membership
+      - button "Kembali ke atas" [ref=f10e196] [cursor=pointer]

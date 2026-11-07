@@ -186,7 +186,7 @@ function gambarTabel(T, fokus) {
     ? `<th scope="col" aria-sort="${T.k === k ? (T.arah > 0 ? "ascending" : "descending") : "none"}"><button type="button" class="jm-urut" data-u="${k}">${esc(t(kt))}</button></th>`
     : `<th scope="col">${kls === "jm-pj-aksi" ? `<span class="sr">${esc(t(kt))}</span>` : esc(t(kt))}</th>`).join("");
   const badan = rows.slice(0, T.n).map((r) => `<tr>${T.kolom.map(([, kt, f, kls]) => `<td data-label="${esc(t(kt))}"${kls ? ` class="${kls}"` : ""}>${f(r)}</td>`).join("")}</tr>`).join("");
-  el.innerHTML = `<div class="jm-gulir"><table class="jm-tabel"><thead><tr>${kepala}</tr></thead><tbody>${badan}</tbody></table></div>
+  el.innerHTML = `<div class="jm-gulir"><table class="jm-tabel jm-pj-tetap"><thead><tr>${kepala}</tr></thead><tbody>${badan}</tbody></table></div>
     <div class="jm-hal"><span>${esc(t("pj.tampil", { n: num(Math.min(T.n, rows.length)), total: num(rows.length) }))}</span>${rows.length > T.n ? `<button type="button" class="jm-tbl" data-lagi="1">${esc(t("pj.lagi"))}</button>` : ""}</div>`;
   if (fokus) { const b = el.querySelector(fokus); if (b) b.focus(); }
 }
@@ -208,7 +208,9 @@ for (const T of [TD, TT]) {
 }
 
 /* ---------- peta (gaya direktori: kluster satu warna merek berangka, titik per teknologi mulai zoom 8, kartu popup) ---------- */
-let peta = null, petaSiap = false, popup = null;
+let peta = null, petaSiap = false, popup = null, idLabel = null;
+const HIDE = new Set(), PRES = { pasti: true, kira: true };
+let geoProv = null;
 const warna = (v) => getComputedStyle(document.documentElement).getPropertyValue(v).trim() || "gray";
 const gelap = () => (document.documentElement.dataset.theme || (matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light")) === "dark";
 const gaya = () => "https://tiles.openfreemap.org/styles/" + (gelap() ? "dark" : "positron");
@@ -220,8 +222,10 @@ const INDONESIA = { type: "MultiPolygon", coordinates: [
 ] };
 const SEMBUNYI = /^(poi|housenumber|aerodrome_label|transportation_name)$/;
 function rapikanPeta(peta) {
+  idLabel = null;
   for (const ly of peta.getStyle().layers || []) {
     if (ly.type !== "symbol") continue;
+    if (!idLabel) idLabel = ly.id;
     const sl = ly["source-layer"];
     if (SEMBUNYI.test(sl) || /shield|road_number/i.test(ly.id)) { peta.setLayoutProperty(ly.id, "visibility", "none"); continue; }
     if (sl === "place" || sl === "water_name") peta.setLayoutProperty(ly.id, "text-field", ["coalesce", ["get", "name:id"], ["get", "name:latin"], ["get", "name"]]);
@@ -230,7 +234,7 @@ function rapikanPeta(peta) {
 }
 const fiturSemua = () => {
   const w = {}; for (const k of TEKS) w[k] = warna(TEK_WARNA[k] || "--ink2");
-  return { type: "FeatureCollection", features: tampil.filter((r) => r.ada).map((r) => ({ type: "Feature", properties: { id: r.id, warna: w[r.tek] || warna("--ink2"), op: r.p.lokasi.presisi === "titik_persis" ? 1 : 0.6 }, geometry: { type: "Point", coordinates: [r.p.lokasi.lng, r.p.lokasi.lat] } })) };
+  return { type: "FeatureCollection", features: tampil.filter((r) => r.ada && !HIDE.has(r.tek) && (r.p.lokasi.presisi === "titik_persis" ? PRES.pasti : PRES.kira)).map((r) => ({ type: "Feature", properties: { id: r.id, warna: w[r.tek] || warna("--ink2"), op: r.p.lokasi.presisi === "titik_persis" ? 1 : 0.6 }, geometry: { type: "Point", coordinates: [r.p.lokasi.lng, r.p.lokasi.lat] } })) };
 };
 function pasangLapisan() {
   const lingkar = warna("--paper");
@@ -239,6 +243,26 @@ function pasangLapisan() {
   peta.addLayer({ id: "pts-n", type: "symbol", source: "pts", filter: ["has", "point_count"], layout: { "text-field": ["get", "point_count_abbreviated"], "text-font": ["Noto Sans Bold"], "text-size": 12, "text-allow-overlap": true }, paint: { "text-color": warna("--on-brand") } });
   peta.addLayer({ id: "pts-sel", type: "circle", source: "pts", filter: ["==", ["get", "id"], ""], paint: { "circle-radius": 14, "circle-color": warna("--sorot"), "circle-opacity": 0.55, "circle-stroke-color": warna("--sorot"), "circle-stroke-width": 2 } });
   peta.addLayer({ id: "pts-t", type: "circle", source: "pts", filter: ["!", ["has", "point_count"]], paint: { "circle-color": ["get", "warna"], "circle-radius": ["interpolate", ["linear"], ["zoom"], 3, 4, 8, 7, 12, 9], "circle-opacity": ["get", "op"], "circle-stroke-color": lingkar, "circle-stroke-width": 1.5 } });
+}
+/* batas Indonesia: garis provinsi tipis dan peredam di luar wilayah (negara lain tampak pudar) */
+function pasangBatas() {
+  (geoProv ??= ambil("/geo/provinsi.json").catch(() => null)).then((g) => {
+    if (!g || !peta || !peta.getStyle() || peta.getSource("prov")) return;
+    const luar = [[[-180, -85], [180, -85], [180, 85], [-180, 85], [-180, -85]]];
+    for (const f of g.features) for (const poli of f.geometry.type === "Polygon" ? [f.geometry.coordinates] : f.geometry.coordinates) luar.push(poli[0]);
+    peta.addSource("prov", { type: "geojson", data: g });
+    peta.addSource("luar", { type: "geojson", data: { type: "Feature", geometry: { type: "Polygon", coordinates: luar } } });
+    peta.addLayer({ id: "luar-redam", type: "fill", source: "luar", paint: { "fill-color": warna("--paper"), "fill-opacity": 0.72 } }, idLabel || "pts-k");
+    peta.addLayer({ id: "prov-garis", type: "line", source: "prov", paint: { "line-color": warna("--accent-isi"), "line-opacity": 0.55, "line-width": ["interpolate", ["linear"], ["zoom"], 4, 0.6, 9, 1.6] } }, "pts-k");
+  });
+}
+function tipPeta(e, html) {
+  const el = $("pjTip");
+  if (!html) { el.hidden = true; return; }
+  el.innerHTML = html; el.hidden = false;
+  const box = $("pjPeta").getBoundingClientRect(), x = e.originalEvent.clientX - box.left, y = e.originalEvent.clientY - box.top;
+  el.style.left = Math.min(Math.max(8, x + 14), box.width - el.offsetWidth - 8) + "px";
+  el.style.top = Math.max(8, y - el.offsetHeight - 12) + "px";
 }
 function kartuPopup(r) {
   const L = r.p.lokasi, d = document.createElement("div");
@@ -262,7 +286,8 @@ function bukaPeta() {
   muatMapLibre().then(() => {
     peta = new maplibregl.Map({ container: "pjPeta", style: gaya(), bounds: [[94, -11.5], [141.5, 6.5]], fitBoundsOptions: { padding: 10 }, minZoom: 3, maxZoom: 16, dragRotate: false, pitchWithRotate: false, attributionControl: { compact: true } });
     peta.addControl(new maplibregl.NavigationControl({ showCompass: false }), "bottom-right");
-    peta.on("style.load", () => { rapikanPeta(peta); pasangLapisan(); petaSiap = true; });
+    peta.on("style.load", () => { rapikanPeta(peta); pasangLapisan(); pasangBatas(); petaSiap = true; });
+    peta.addControl(new maplibregl.ScaleControl({ unit: "metric", maxWidth: 90 }), "bottom-left");
     new ResizeObserver(() => peta.resize()).observe($("pjPeta"));
     peta.on("click", "pts-k", (e) => {
       const f = peta.queryRenderedFeatures(e.point, { layers: ["pts-k"] })[0];
@@ -271,37 +296,47 @@ function bukaPeta() {
     peta.on("click", "pts-t", (e) => sorotPeta(PER_ID.get(e.features[0].properties.id)));
     for (const l of ["pts-k", "pts-t"]) {
       peta.on("mouseenter", l, () => { peta.getCanvas().style.cursor = "pointer"; });
-      peta.on("mouseleave", l, () => { peta.getCanvas().style.cursor = ""; });
+      peta.on("mouseleave", l, () => { peta.getCanvas().style.cursor = ""; tipPeta(null, ""); });
     }
+    peta.on("mousemove", "pts-t", (e) => {
+      const r = PER_ID.get(e.features[0].properties.id);
+      if (r) tipPeta(e, `<b>${esc(r.nama)}</b><span>${selTek(r)} ${esc(r.kap === null ? "" : num(r.kap) + " " + r.sat)}</span><span>${esc(labSt(r.st))}</span>`);
+    });
+    peta.on("mousemove", "pts-k", (e) => tipPeta(e, `<b>${esc(t("pj.tip.kluster", { n: num(e.features[0].properties.point_count) }))}</b>`));
+    peta.on("movestart", () => tipPeta(null, ""));
     const ganti = () => { if (peta) { petaSiap = false; peta.setStyle(gaya()); } };
     new MutationObserver(ganti).observe(document.documentElement, { attributes: true, attributeFilter: ["data-theme"] });
     matchMedia("(prefers-color-scheme: dark)").addEventListener("change", ganti);
-    peta.once("idle", kePeta);
+    peta.once("idle", () => { kePeta(); const a = $("pjPeta").querySelector(".maplibregl-ctrl-attrib"); if (a) { a.classList.remove("maplibregl-compact-show"); a.removeAttribute("open"); } });
   }).catch(() => { $("pjPeta").innerHTML = `<div class="jm-galat" role="alert"><p>${esc(t("pj.peta.galat"))}</p></div>`; });
 }
-function kePeta() {
+function kePeta(fit = true) {
   const n = tampil.filter((r) => r.ada), pasti = n.filter((r) => r.p.lokasi.presisi === "titik_persis").length;
-  $("pjPresisi").textContent = t("pj.peta.tempat", { n: num(n.length), m: num(tampil.length), kira: num(n.length - pasti) });
+  if ($("pjPresisi")) $("pjPresisi").textContent = t("pj.peta.tempat", { n: num(n.length), m: num(tampil.length), kira: num(n.length - pasti) });
   if (!peta || !petaSiap) return;
   if (popup) { popup.remove(); popup = null; }
   const s = peta.getSource("pts"); if (s) s.setData(fiturSemua());
-  if (n.length && Object.values(F).some(Boolean)) {
+  if (fit && n.length && Object.values(F).some(Boolean)) {
     const b = new maplibregl.LngLatBounds();
     for (const r of n) b.extend([r.p.lokasi.lng, r.p.lokasi.lat]);
     peta.fitBounds(b, { padding: 50, maxZoom: 8, duration: 400 });
   }
 }
 function gambarLegenda() {
-  const c = hitung(SEMUA.filter((r) => cocok(r, "tek")), (r) => r.tek);
-  $("pjLegenda").innerHTML = TEKS.filter((k) => c[k]).map((k) => `<li><button type="button" aria-pressed="${F.tek === k}" data-tek="${esc(k)}">${titik(k)}${esc(labTek(k))}<small>${num(c[k])}</small></button></li>`).join("");
+  const c = hitung(tampil, (r) => r.tek), loc = tampil.filter((r) => r.ada), pasti = loc.filter((r) => r.p.lokasi.presisi === "titik_persis").length;
+  $("pjLegenda").innerHTML = `<p class="jm-pj-lapis-j">${esc(t("pj.lapis.tek"))}</p><ul class="jm-pj-lap">${TEKS.filter((k) => c[k]).map((k) => `<li><button type="button" aria-pressed="${!HIDE.has(k)}" data-tek="${esc(k)}">${titik(k)}<span>${esc(labTek(k))}</span><b>${num(c[k])}</b></button></li>`).join("")}</ul>
+    <p class="jm-pj-lapis-j">${esc(t("pj.lapis.presisi"))}</p><ul class="jm-pj-lap"><li><button type="button" aria-pressed="${PRES.pasti}" data-pr="pasti"><span>${esc(t("pj.presisi.titik_persis"))}</span><b>${num(pasti)}</b></button></li><li><button type="button" aria-pressed="${PRES.kira}" data-pr="kira"><span>${esc(t("pj.presisi.kira"))}</span><b>${num(loc.length - pasti)}</b></button></li></ul>
+    <p class="jm-pj-pilpeta" id="pjPresisi" role="status"></p>`;
 }
 $("pjLegenda").addEventListener("click", (e) => {
-  const b = e.target.closest("[data-tek]");
+  const b = e.target.closest("[data-tek],[data-pr]");
   if (!b) return;
-  F.tek = F.tek === b.dataset.tek ? "" : b.dataset.tek; $("ftek").value = F.tek;
-  for (const x of $("pjLegenda").querySelectorAll("button")) x.setAttribute("aria-pressed", String(x.dataset.tek === F.tek));
-  terapkan();
+  if (b.dataset.tek) HIDE.has(b.dataset.tek) ? HIDE.delete(b.dataset.tek) : HIDE.add(b.dataset.tek);
+  else PRES[b.dataset.pr] = !PRES[b.dataset.pr];
+  b.setAttribute("aria-pressed", String(b.dataset.tek ? !HIDE.has(b.dataset.tek) : PRES[b.dataset.pr]));
+  nanti(() => kePeta(false));
 });
+if (innerWidth < 700) $("pjLapis").open = false;
 
 /* panel samping: daftar proyek yang tampil di peta; klik baris menerbangkan peta dan membuka kartu */
 const PN = { n: 40 };
@@ -330,21 +365,13 @@ function gambarProg() {
     const per = g.per_status || {}, tot = g.jumlah_proyek || 0, nreg = (g.regulasi_ids || []).length;
     const bar = tot ? `<div class="jm-pj-tumpuk" role="img" aria-label="${esc(ST_BAR.filter((k) => per[k]).map((k) => labSt(k) + " " + per[k]).join(", "))}">${ST_BAR.filter((k) => per[k]).map((k) => `<i class="jm-pj-s-${k}" data-w="${(per[k] / tot) * 100}"></i>`).join("")}</div>
       <ul class="jm-pj-leg">${ST_BAR.filter((k) => per[k]).map((k) => `<li><span class="jm-pj-s-${k}" aria-hidden="true"></span>${esc(labSt(k))} <b>${num(per[k])}</b></li>`).join("")}</ul>` : `<p class="jm-bantu">${esc(t("pj.prog.kosong"))}</p>`;
-    const kaki = tot ? `<button type="button" class="jm-pj-link" data-prog="${esc(g.id)}">${esc(t("pj.prog.lihat", { n: num(tot) }))}</button>` : (nreg ? `<a class="jm-pj-link" href="/regulasi">${esc(t("pj.prog.reg"))}</a>` : "");
-    return `<article class="jm-pj-pk jm-pj-pg-${i % 5}"><div class="jm-pj-pk-kepala"><span class="jm-pj-pk-ik">${IK_PROG}</span><h3>${esc(g.nama)}</h3></div><p class="jm-pj-pk-desk">${esc(g.ringkas || "")}</p>
+    const kaki = tot ? `<span class="jm-pj-link">${esc(t("pj.prog.lihat", { n: num(tot) }))}</span>` : `<span class="jm-pj-link">${esc(t(nreg ? "pj.prog.reg" : "pj.prog.buka"))}</span>`;
+    return `<a class="jm-pj-pk jm-pj-pg-${i % 5}" href="#program-${esc(g.id)}"><div class="jm-pj-pk-kepala"><span class="jm-pj-pk-ik">${IK_PROG}</span><h3>${esc(g.nama)}</h3></div><p class="jm-pj-pk-desk">${esc(g.ringkas || "")}</p>
       <dl class="jm-pj-pk-stat"><div><dt>${esc(t("pj.prog.proyek"))}</dt><dd>${num(tot)}</dd></div><div><dt>${esc(t("pj.c.kap"))}</dt><dd${tot && g.kapasitas_mw ? "" : ' class="jm-pj-redup"'}>${tot && g.kapasitas_mw ? kapTeks(g.kapasitas_mw) : esc(t("pj.prog.belum"))}</dd></div><div><dt>${esc(t("pj.rel.reg"))}</dt><dd>${num(nreg)}</dd></div></dl>
-      <div class="jm-pj-pk-bar">${bar}</div><div class="jm-pj-pk-kaki">${kaki}</div></article>`;
+      <div class="jm-pj-pk-bar">${bar}</div><div class="jm-pj-pk-kaki">${kaki}</div></a>`;
   }).join("");
   for (const i of $("pjProg").querySelectorAll("i[data-w]")) i.style.width = i.dataset.w + "%";
 }
-$("pjProg").addEventListener("click", (e) => {
-  const b = e.target.closest("[data-prog]");
-  if (!b) return;
-  F.prog = b.dataset.prog; $("fprog").value = F.prog;
-  terapkan();
-  $("hPeta").scrollIntoView({ behavior: "smooth", block: "start" });
-});
-
 /* ---------- profil: lembar dari kanan (gaya lembar direktori), tautan dalam #id ---------- */
 const dlg = $("pjProfil");
 let petaMini = null;
@@ -422,6 +449,48 @@ function miniPeta(r) {
   }).catch(() => { el.textContent = t("pj.peta.galat"); });
 }
 
+function programHtml(g) {
+  const rows = SEMUA.filter((r) => r.prog.includes(g.id)).sort((a, b) => (b.kap ?? -1) - (a.kap ?? -1) || a.nama.localeCompare(b.nama)), tot = rows.length;
+  const per = hitung(rows, (r) => r.st), mw = jumlahMW(rows), nreg = (g.regulasi_ids || []).length;
+  const ada1 = ST_BAR.filter((k) => per[k]);
+  const bar = tot ? `<div class="jm-pj-tumpuk" role="img" aria-label="${esc(ada1.map((k) => labSt(k) + " " + per[k]).join(", "))}">${ada1.map((k) => `<i class="jm-pj-s-${k}" data-w="${(per[k] / tot) * 100}"></i>`).join("")}</div><ul class="jm-pj-leg">${ada1.map((k) => `<li><span class="jm-pj-s-${k}" aria-hidden="true"></span>${esc(labSt(k))} <b>${num(per[k])}</b></li>`).join("")}</ul>` : "";
+  const docs = hitung(rows, (r) => [...new Set((r.p.sumber || []).map((x) => x.dokumen || x.jenis))]);
+  const baris = rows.slice(0, 100).map((r) => `<tr><td data-label="${esc(t("pj.c.nama"))}"><span class="jm-id"><b><a class="jm-pj-nm" href="#${esc(r.id)}">${esc(r.nama)}</a></b><small>${esc(r.prov || "")}</small></span></td><td data-label="${esc(t("pj.c.tek"))}">${selTek(r)}</td><td class="jm-num" data-label="${esc(t("pj.c.kap"))}">${selKap(r)}</td><td data-label="${esc(t("pj.c.status"))}">${pilSt(r.st)}</td></tr>`).join("");
+  return `<header class="jm-pj-sh"><button type="button" class="jm-pj-x" data-tutup="1" aria-label="${esc(t("jm.tutup"))}" title="${esc(t("jm.tutup"))}">${ikTutup}</button>
+    <div class="jm-pj-sh-atas"><span class="jm-pj-logo" aria-hidden="true">${IK_PROG}</span><div class="jm-pj-sh-nama"><h2 id="pjProfilJudul">${esc(g.nama)}</h2><p>${esc(g.ringkas || "")}</p></div></div>
+    <div class="jm-pj-tiles">${tile("pj.prog.proyek", num(tot), false)}${tile("pj.c.kap", tot && mw ? kapTeks(mw) : esc(t("pj.prog.belum")), !(tot && mw))}${tile("pj.rel.reg", num(nreg), false)}</div>
+    ${tot ? `<button type="button" class="jm-tbl jm-tbl-kecil jm-pj-sh-maps" data-tampil="${esc(g.id)}">${esc(t("pj.prog.dipeta"))}</button>` : ""}</header>
+    <div class="jm-pj-sh-badan">${tot ? laci("status", bar) + `<section class="jm-pj-bag"><h3>${esc(t("pj.prog.daftar"))}</h3><div class="jm-pj-kartubag"><div class="jm-gulir"><table class="jm-tabel"><thead><tr><th>${esc(t("pj.c.nama"))}</th><th>${esc(t("pj.c.tek"))}</th><th>${esc(t("pj.c.kap"))}</th><th>${esc(t("pj.c.status"))}</th></tr></thead><tbody>${baris}</tbody></table></div>${tot > 100 ? `<p class="jm-bantu">${esc(t("pj.tampil", { n: 100, total: num(tot) }))}</p>` : ""}</div></section>` : ""}
+    <section class="jm-pj-bag" id="pjRelBag" hidden></section>
+    ${tot ? laci("sumber", `<ul class="jm-pj-sumberl">${Object.entries(docs).sort((a, b) => b[1] - a[1]).map(([d, n]) => `<li><div><span><b>${esc(d)}</b><small>${esc(t("pj.prog.nproyek", { n: num(n) }))}</small></span></div></li>`).join("")}</ul>`) : ""}</div>`;
+}
+async function isiTerkaitProgram(g) {
+  const el = $("pjRelBag");
+  if (!el) return;
+  try {
+    const [rg, br] = await Promise.all([lazy("/data/regulasi.json"), lazy("/data/berita.json")]);
+    if (!el.isConnected || dlg.dataset.id !== "program-" + g.id) return;
+    const ids = new Set(g.regulasi_ids || []), pids = new Set((g.proyek_ids && g.proyek_ids.length ? g.proyek_ids : SEMUA.filter((r) => r.prog.includes(g.id)).map((r) => r.id)));
+    const regs = rg.baris.filter((x) => ids.has(x.id) || (x.program_ids || []).includes(g.id));
+    const brs = br.baris.filter((x) => (x.proyek_ids || []).some((i) => pids.has(i))).sort((a, b) => String(b.terbit).localeCompare(String(a.terbit))).slice(0, 8);
+    const item = (judul, ket, url, dalam) => `<li><a href="${esc(url)}"${dalam ? "" : ' target="_blank" rel="noopener noreferrer"'}><span><b>${esc(judul)}</b><small>${esc(ket)}</small></span>${ikon(dalam ? "panah-kanan" : "tautan", 18)}</a></li>`;
+    el.innerHTML = (regs.length ? `<h3>${esc(t("pj.prog.dasar"))}</h3><div class="jm-pj-kartubag"><ul class="jm-pj-sumberl">${regs.map((x) => item(x.judul, `${String(x.jenis || "").toUpperCase()} ${x.nomor || ""}/${x.tahun || ""}, ${x.status || ""}`, "/regulasi?id=" + encodeURIComponent(x.id), true)).join("")}</ul></div>` : "") +
+      (brs.length ? `<h3 class="jm-pj-h3b">${esc(t("pj.rel.ber"))}</h3><div class="jm-pj-kartubag"><ul class="jm-pj-sumberl">${brs.map((x) => item(x.judul, `${x.media || ""}, ${tglIso(x.terbit)}`, urlAman(x.url) || "#", false)).join("")}</ul></div>` : "");
+    el.hidden = !(regs.length || brs.length);
+  } catch (e) { /* tambahan saja */ }
+}
+function bukaProgram(id) {
+  const g = PROG.baris.find((x) => x.id === id);
+  if (!g) { if (dlg.open) dlg.close(); return; }
+  if (dlg.open && dlg.dataset.id === "program-" + id) return;
+  if (petaMini) { petaMini.remove(); petaMini = null; }
+  dlg.dataset.id = "program-" + id;
+  dlg.innerHTML = programHtml(g);
+  for (const i of dlg.querySelectorAll("i[data-w]")) i.style.width = i.dataset.w + "%";
+  if (!dlg.open) dlg.showModal();
+  dlg.scrollTop = 0;
+  nanti(() => isiTerkaitProgram(g));
+}
 function bukaProfil(id) {
   const r = PER_ID.get(id);
   if (!r) { if (dlg.open) dlg.close(); return; }
@@ -433,19 +502,23 @@ function bukaProfil(id) {
   dlg.scrollTop = 0;
   nanti(() => { miniPeta(r); isiTerkait(r); });
 }
-dlg.addEventListener("click", (e) => { if (e.target === dlg || e.target.closest("[data-tutup]")) dlg.close(); });
+dlg.addEventListener("click", (e) => {
+  const tp = e.target.closest("[data-tampil]");
+  if (tp) { dlg.close(); F.prog = tp.dataset.tampil; $("fprog").value = F.prog; segarHero(); terapkan(); $("hPeta").scrollIntoView({ behavior: "smooth", block: "start" }); return; }
+  if (e.target === dlg || e.target.closest("[data-tutup]")) dlg.close();
+});
 dlg.addEventListener("close", () => {
   if (petaMini) { petaMini.remove(); petaMini = null; }
   delete dlg.dataset.id;
   if (location.hash) history.replaceState(null, "", location.pathname + location.search);
 });
-const dariHash = () => { const id = decodeURIComponent(location.hash.slice(1)); if (id) bukaProfil(id); else if (dlg.open) dlg.close(); };
+const dariHash = () => { const id = decodeURIComponent(location.hash.slice(1)); if (id.startsWith("program-")) bukaProgram(id.slice(8)); else if (id) bukaProfil(id); else if (dlg.open) dlg.close(); };
 addEventListener("hashchange", dariHash);
 
 /* ---------- kerangka + pemasangan ---------- */
 function semua() {
   gambarHero(); isiPilihan(); gambarProg(); terapkan();
-  if (dlg.open && dlg.dataset.id) { const id = dlg.dataset.id; delete dlg.dataset.id; if (petaMini) { petaMini.remove(); petaMini = null; } bukaProfil(id); }
+  if (dlg.open && dlg.dataset.id) { const id = dlg.dataset.id; delete dlg.dataset.id; if (petaMini) { petaMini.remove(); petaMini = null; } id.startsWith("program-") ? bukaProgram(id.slice(8)) : bukaProfil(id); }
 }
 const cariTunda = debounce(() => { F.q = $("fq").value.trim().toLowerCase(); terapkan(); }, 120);
 $("fq").addEventListener("input", cariTunda);

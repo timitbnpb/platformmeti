@@ -211,7 +211,6 @@ body[data-halaman="beranda"] .jm-halaman{padding-inline:clamp(16px,4vw,32px)}
 .jm-angka-src{display:flex;gap:6px;align-items:flex-start;align-self:end;color:var(--ink2);font-size:12px;line-height:1.35}
 .jm-angka-src .jm-ik{width:14px;height:14px;margin-top:1px}
 .jm-hero2 .jm-logo{height:108px;min-height:0;justify-content:flex-start}
-.jm-hero2 .jm-logo span{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
 .jm-kisi .jm-angka>span:first-child{min-height:2.6em}
 .jm-angka-src span{font-weight:400}
 
@@ -351,3 +350,9 @@ a.jm-foto:focus-visible{outline:3px solid var(--fokus)}
 .jm-akses p{font-size:17px}
 .jm-bt-besar .jm-bt-peta{flex:1;min-height:0;height:100%}
 .jm-bt-besar{min-height:420px}
+.jm-hero2 .jm-logo{height:98px;padding:10px 12px;gap:6px}
+.jm-hero2 .jm-logo img,.jm-hero2 .jm-logo-ini{width:32px;height:32px}
+.jm-hero2 .jm-logo span:not(.jm-logo-ini){display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;line-height:1.25}
+.jm-hero2 .jm-logo-ini{display:grid;place-items:center;font:700 12px/1 var(--display);background:color-mix(in srgb,var(--data1) 16%,var(--card));color:var(--head);-webkit-line-clamp:unset;overflow:visible}
+.jm-hero2 .jm-logo-ini.jm-w2{background:color-mix(in srgb,var(--data2) 16%,var(--card))}.jm-hero2 .jm-logo-ini.jm-w3{background:color-mix(in srgb,var(--data3) 20%,var(--card))}.jm-hero2 .jm-logo-ini.jm-w4{background:color-mix(in srgb,var(--data4) 26%,var(--card))}
+.jm-hero2-kanan{display:grid;gap:10px}

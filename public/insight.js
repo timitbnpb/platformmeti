@@ -354,7 +354,6 @@ const URUT_TOPIK = ["proyek", "rantai", "wilayah", "regulasi", "berita", "pembia
 const WARNA = { proyek: "a", rantai: "b", wilayah: "a", regulasi: "c", berita: "b", pembiayaan: "d", karbon: "d", asean: "c" };
 
 function isiKartu(c) {
-  const [utama, ...lain] = c.sumber;
   return `<header class="jm-ins-h"><span class="jm-ins-topik jm-ins-w-${WARNA[c.topik] ?? "a"}">${esc(t("ins.topik." + c.topik))}</span>
     <span class="jm-ins-meta">${esc(tanggal(c.tgl))}</span>
     <button type="button" class="jm-ins-bagi" aria-haspopup="menu" aria-expanded="false" aria-label="${esc(t("ins.bagi"))}" title="${esc(t("ins.bagi"))}">${IKON_BAGI}</button></header>
@@ -365,7 +364,7 @@ function isiKartu(c) {
     <div class="jm-ins-grafik">${c.chart()}</div>
     <details class="jm-ins-ak" open><summary>${esc(t("ins.penting"))}</summary><p>${esc(c.penting)}</p></details>
     <details class="jm-ins-ak"${c.hip ? " open" : ""}><summary>${esc(t("an.cara"))}</summary><p>${esc(c.cara)}</p></details>
-    <div class="jm-ins-src">${utama ?? ""}${lain.length ? `<details><summary>${esc(t("ins.sumber_lain", { n: lain.length }))}</summary>${lain.join("")}</details>` : ""}</div>`;
+    <div class="jm-ins-src">${c.sumber.join("")}</div>`;
 }
 
 function pasang(el, daftar) {

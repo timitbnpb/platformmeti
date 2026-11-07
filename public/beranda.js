@@ -6,14 +6,28 @@ import { pasangBawah, IKON } from "/beranda_bawah.js";
 import { muat, label, urlAman, norm, namaRegulasi, sembunyi } from "/publik.js";
 
 const KARTU = ["proyek", "kapasitas", "organisasi", "orang", "regulasi"];
-const LOGO = new Set(["pertamina-nre", "pge", "pln-indonesia-power", "pln-nusantara-power", "medco-power", "barito-renewables", "star-energy", "meti", "aesi", "aprobi", "esdm", "brin"]);
-const EKO = [
-  ["bumn", 1, [["p_6998264f50", "pertamina-nre"], ["p_dda1e51dae", "pge"], ["p_5a2e7d0c63", "pln-indonesia-power"], ["p_ff7a390a42", "pln-nusantara-power"]]],
-  ["swasta", 2, [["p_27ae5a4203", "medco-power"], ["p_bdd0f2d140", "barito-renewables"], ["p_c6c4e478c0", "supreme-energy"], ["p_7a803f3b71", "star-energy"]]],
-  ["asosiasi", 3, [["l_41bf1f0b41", "meti"], ["l_dd90c88f59", "aesi"], ["l_d3dadc789e", "aprobi"], ["l_7e5f8d771d", "api"]]],
-  ["lembaga", 4, [["l_7278e0528a", "esdm"], ["l_973f60de15", "brin"], ["l_7b43a2574c", "kemenkeu"], ["l_05301f48a5", "bkpm"]]],
-];
+const LOGO_ORG = { p_6998264f50: "pertamina-nre", p_dda1e51dae: "pge", p_5a2e7d0c63: "pln-indonesia-power", p_ff7a390a42: "pln-nusantara-power", p_27ae5a4203: "medco-power", p_bdd0f2d140: "barito-renewables", p_7a803f3b71: "star-energy", l_41bf1f0b41: "meti", l_dd90c88f59: "aesi", l_d3dadc789e: "aprobi", l_7278e0528a: "esdm", l_973f60de15: "brin" };
+const ALIAS = [[/pertamina power indonesia|pertamina nre/i, "Pertamina NRE"], [/pertamina geothermal/i, "Pertamina Geothermal Energy"], [/kementerian energi dan sumber daya mineral/i, "Kementerian ESDM"], [/masyarakat energi terbarukan/i, "METI"], [/badan riset dan inovasi nasional/i, "BRIN"], [/asosiasi energi surya/i, "AESI"], [/asosiasi produsen biofuel/i, "APROBI"], [/asosiasi panas bumi/i, "API (panas bumi)"], [/kementerian investasi/i, "Kementerian Investasi/BKPM"]];
+const namaPendek = (n) => { for (const [re, a] of ALIAS) if (re.test(n)) return a; return n.replace(/^PT\.?\s+/i, "").replace(/\s*\((Persero)\)/i, "").replace(/\s+Tbk$/i, ""); };
+const URUT_ASOSIASI = [/metiires|masyarakat energi terbarukan/i, /surya/i, /biofuel/i, /panas bumi/i, /apamsi|modul surya/i, /applta|hidro/i, /aeski/i, /mki|ketenagalistrikan/i];
+const URUT_LEMBAGA = [/energi dan sumber daya mineral/i, /dewan energi/i, /bappenas|perencanaan pembangunan/i, /riset dan inovasi/i, /kementerian keuangan/i, /perindustrian/i, /lingkungan hidup|kehutanan/i, /danantara|investasi/i];
+const KAT_EKO = [["bumn", 1], ["swasta", 2], ["asosiasi", 3], ["lembaga", 4]];
 const HITUNG = [["bumn", 1, "organisasi", "bumn"], ["swasta", 2, "organisasi", "swasta"], ["asing", 5, "organisasi", "internasional"], ["asosiasi", 3, "organisasi", "asosiasi"], ["lembaga", 4, "organisasi", "kementerian-lembaga"], ["kampus", 3, "organisasi", "perguruan-tinggi"], ["proyek", 2, "proyek"], ["regulasi", 1, "regulasi"]];
+/** 8 terbesar per kategori: BUMN dan swasta menurut total MW proyek terkait lalu jumlah proyek; asosiasi menurut jumlah anggota lalu urutan tetap; lembaga menurut urutan tetap. */
+function delapan(org, pro) {
+  const proyek = new Map(pro.baris.map((p) => [p.id, p]));
+  const skor = (o) => { const ps = (o.proyek_ids || []).map((i) => proyek.get(i)).filter(Boolean); return [ps.reduce((s, p) => s + (p.kapasitas?.[0]?.nilai || 0), 0), ps.length]; };
+  const urutSkor = (a, b) => skor(b)[0] - skor(a)[0] || skor(b)[1] - skor(a)[1] || (LOGO_ORG[b.id] ? 1 : 0) - (LOGO_ORG[a.id] ? 1 : 0) || a.nama.localeCompare(b.nama);
+  const anggota = new Map(); for (const o of org) for (const k of o.keanggotaan || []) anggota.set(k.organisasi_id, (anggota.get(k.organisasi_id) || 0) + 1);
+  const tetap = (daftar, re) => { const idx = (o) => { const i = re.findIndex((r) => r.test(o.nama + " " + (o.singkatan || "") + " " + (o.situs || ""))); return i < 0 ? 99 : i; }; return [...daftar].sort((a, b) => idx(a) - idx(b) || a.nama.localeCompare(b.nama)); };
+  const kat = (k) => org.filter((o) => o.kategori?.kode === k);
+  return {
+    bumn: kat("bumn").sort(urutSkor).slice(0, 8),
+    swasta: kat("swasta").sort(urutSkor).slice(0, 8),
+    asosiasi: [...kat("asosiasi")].sort((a, b) => (anggota.get(b.id) || 0) - (anggota.get(a.id) || 0) || tetap([a, b], URUT_ASOSIASI)[0] === a ? -1 : 1).slice(0, 8),
+    lembaga: tetap(kat("kementerian-lembaga"), URUT_LEMBAGA).slice(0, 8),
+  };
+}
 let R = null; // ringkas
 let indeks = null; // korpus cari
 
@@ -63,19 +77,19 @@ async function gambarProyek() {
 }
 
 /* ---------- ekosistem: hitungan per kategori + kisi logo ---------- */
-const inisial = (n) => String(n).replace(/^PT\s+/i, "").split(/\s+/).slice(0, 2).map((w) => w[0]).join("").toUpperCase();
+const inisial = (n) => { const w = String(n).split(/\s+/).filter((x) => /^[A-Za-z]/.test(x)); return (w.length > 1 ? w.slice(0, 2).map((x) => x[0]).join("") : (w[0] || "?").slice(0, 3)).toUpperCase(); };
 async function gambarEkosistem() {
   const hit = document.getElementById("ekoHitung"), kisi = document.getElementById("ekoLogo");
   try {
     const [org, pro, reg] = await Promise.all([muat("organisasi"), muat("proyek"), muat("regulasi")]);
-    const per = new Map(org.baris.map((o) => [o.id, o]));
     const n = (k) => org.baris.filter((o) => o.kategori?.kode === k).length;
     hit.innerHTML = HITUNG.map(([k, w, benda, kode]) => `<li><span class="jm-kotak jm-w${w}" aria-hidden="true"></span><b>${esc(angka(benda === "organisasi" ? n(kode) : benda === "proyek" ? pro.baris.length : reg.baris.length))}</b> ${esc(t("beranda.eko.h." + k))}</li>`).join("");
-    kisi.innerHTML = EKO.map(([kat, w, isi]) => `<div class="jm-logo-kol"><h3><span class="jm-kotak jm-w${w}" aria-hidden="true"></span>${esc(t("beranda.eko.k." + kat))}</h3>${isi.map(([id, slug]) => {
-      const o = per.get(id); if (!o) return "";
-      const nama = o.nama.replace(/^PT\s+/i, "");
-      return `<a class="jm-logo" href="/direktori?tampil=lembaga">${LOGO.has(slug) ? `<img src="/img/logo/${slug}.png" width="40" height="40" alt="" loading="lazy">` : `<span class="jm-logo-ini jm-w${w}" aria-hidden="true">${esc(inisial(nama))}</span>`}<span>${esc(nama)}</span></a>`;
+    const d = delapan(org.baris, pro);
+    kisi.innerHTML = KAT_EKO.map(([kat, w]) => `<div class="jm-logo-kol"><h3><span class="jm-kotak jm-w${w}" aria-hidden="true"></span>${esc(t("beranda.eko.k." + kat))}</h3>${d[kat].map((o) => {
+      const nama = namaPendek(o.nama), slug = LOGO_ORG[o.id];
+      return `<a class="jm-logo" href="/direktori?tampil=lembaga" title="${esc(o.nama)}">${slug ? `<img src="/img/logo/${slug}.png" width="32" height="32" alt="" loading="lazy">` : `<span class="jm-logo-ini jm-w${w}" aria-hidden="true">${esc(inisial(nama))}</span>`}<span>${esc(nama)}</span></a>`;
     }).join("")}</div>`).join("");
+    document.getElementById("ekoSemua").innerHTML = `${esc(t("beranda.eko.semua", { n: angka(org.baris.length) }))} &rarr;`;
   } catch (e) { sembunyi(kisi, e); }
 }
 

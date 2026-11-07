@@ -118,6 +118,8 @@ export const BENIH = `
 5|Marubeni Corporation|asing|pengembang,pembiaya|surya,panas-bumi|Marubeni|Tokyo (Jepang)||https://www.marubeni.com|
 5|Sumitomo Corporation|asing|pengembang,pembiaya|panas-bumi,surya|Sumitomo|Tokyo (Jepang)||https://www.sumitomocorp.com|
 5|PT HLI Green Power|patungan|manufaktur|penyimpanan,elektrifikasi|Hyundai Motor / LG Energy Solution|Karawang|Jawa Barat||
+7|Denera (holding sampah jadi listrik)|tidak-diketahui|pengembang|biomassa-sampah|Danantara|Jakarta|DKI Jakarta||
+7|PT Mahakarsa Biru Energi|tidak-diketahui|pengembang|||||||
 `;
 
 // Tabel 40 pabrikan modul surya: No|nama (cocok dengan BENIH)|MWp/tahun|pasar|APAMSI|TKDN%|BMP%

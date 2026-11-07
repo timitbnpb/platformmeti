@@ -31,20 +31,20 @@ function opsiTab() {
 }
 function gambarSaring() {
   const o = opsiTab();
-  document.getElementById("saring").innerHTML = cariHtml({ id: "q", label: t("brt.cari") })
-    + pilihHtml({ id: "tek", ikon: "topik", label: t("brt.f.tek"), opsi: o.tek, nilai: S.tek })
-    + pilihHtml({ id: "media", ikon: "jenis", label: t(S.tab === "berita" ? "brt.f.media" : "brt.f.kanal"), opsi: o.media, nilai: S.media })
-    + pilihHtml({ id: "periode", ikon: "tahun", label: t("brt.f.periode"), opsi: o.periode, nilai: S.periode })
-    + pilihHtml({ id: "bahasa", ikon: "bahasa", label: t("brt.f.bahasa"), opsi: o.bahasa, nilai: S.bahasa })
-    + hapusHtml({ id: "hapus", label: t("jm.hapus_filter") }) + hitungHtml({ id: "hitung", teks: "" });
-  document.getElementById("q").value = S.q;
+  document.getElementById("saring").innerHTML = cariHtml({ id: "f-q", label: t("brt.cari") })
+    + pilihHtml({ id: "f-tek", ikon: "topik", label: t("brt.f.tek"), opsi: o.tek, nilai: S.tek })
+    + pilihHtml({ id: "f-media", ikon: "jenis", label: t(S.tab === "berita" ? "brt.f.media" : "brt.f.kanal"), opsi: o.media, nilai: S.media })
+    + pilihHtml({ id: "f-periode", ikon: "tahun", label: t("brt.f.periode"), opsi: o.periode, nilai: S.periode })
+    + pilihHtml({ id: "f-bahasa", ikon: "bahasa", label: t("brt.f.bahasa"), opsi: o.bahasa, nilai: S.bahasa })
+    + hapusHtml({ id: "f-hapus", label: t("jm.hapus_filter") }) + hitungHtml({ id: "f-hitung", teks: "" });
+  document.getElementById("f-q").value = S.q;
   aturSaring();
 }
 /** Teknologi dan bahasa hanya untuk berita (video tidak berlabel). */
 function aturSaring() {
   const v = S.tab === "video";
-  for (const id of ["tek", "bahasa"]) document.getElementById(id).closest("label").hidden = v;
-  document.getElementById("hapus").hidden = !(S.q || S.tek || S.media || S.periode || (!v && S.bahasa));
+  for (const id of ["f-tek", "f-bahasa"]) document.getElementById(id).closest("label").hidden = v;
+  document.getElementById("f-hapus").hidden = !(S.q || S.tek || S.media || S.periode || (!v && S.bahasa));
 }
 function gambarTab() {
   document.getElementById("tab").innerHTML = ["berita", "video"].map((k) => `<button type="button" role="tab" data-tab="${k}" aria-selected="${S.tab === k}">${ikon(k, 18)}<span>${esc(t("brt.tab." + k))}</span></button>`).join("");
@@ -81,7 +81,7 @@ function itemBerita(r) {
     + org.map((nama) => `<a class="brt-org" href="/direktori?tampil=lembaga">${esc(nama)}</a>`).join("");
   return `<li class="brt-item"><span class="brt-ubin brt-w${warna(r.media)}" aria-hidden="true">${esc(inisial(r.media))}</span>
     <div><a class="brt-judul" href="${esc(u)}" target="_blank" rel="noopener noreferrer" title="${esc(t("brt.buka"))}">${esc(r.judul)}</a>
-    <p class="brt-meta"><span>${esc(r.media)}</span><span>${esc(tanggal(r.terbit))}</span></p></div>${chips ? `<div class="brt-label">${chips}</div>` : ""}</li>`;
+    <p class="brt-meta"><span>${esc(r.media)}</span><span>${esc(tanggal(r.terbit.slice(0, 10)))}</span></p></div>${chips ? `<div class="brt-label">${chips}</div>` : ""}</li>`;
 }
 function durasi(d) { const j = Math.floor(d / 3600), m = Math.floor((d % 3600) / 60), s = String(d % 60).padStart(2, "0"); return j ? `${j}:${String(m).padStart(2, "0")}:${s}` : `${m}:${s}`; }
 function itemVideo(r) {
@@ -89,12 +89,12 @@ function itemVideo(r) {
   return `<li><a class="brt-kartu" href="${esc(urlAman(r.url))}" target="_blank" rel="noopener noreferrer" title="${esc(t("brt.buka"))}">
     <span class="brt-gambar"><img src="https://i.ytimg.com/vi/${encodeURIComponent(r.id)}/mqdefault.jpg" width="320" height="180" alt="" loading="lazy" decoding="async">${r.durasi_detik ? `<span class="brt-durasi">${durasi(r.durasi_detik)}</span>` : ""}</span>
     <span class="brt-judul">${esc(r.judul)}</span>
-    <span class="brt-meta"><span>${esc(r.kanal)}</span><span class="jm-pil ${lencana}">${esc(t("brt." + r.jenis))}</span><span>${esc(tanggal(r.terbit))}</span></span></a></li>`;
+    <span class="brt-meta"><span>${esc(r.kanal)}</span><span class="jm-pil ${lencana}">${esc(t("brt." + r.jenis))}</span><span>${esc(tanggal(r.terbit.slice(0, 10)))}</span></span></a></li>`;
 }
 
 function gambarIsi() {
   const rows = saring();
-  document.getElementById("hitung").textContent = t("brt.hitung", { n: angka(rows.length), total: angka(baris().length) });
+  document.getElementById("f-hitung").textContent = t("brt.hitung", { n: angka(rows.length), total: angka(baris().length) });
   const el = document.getElementById("isi");
   if (!rows.length) { el.innerHTML = `<p class="brt-lead">${esc(t("brt.kosong"))}</p>`; return; }
   const potong = rows.slice(0, S.n);
@@ -145,7 +145,7 @@ async function mulai() {
   document.getElementById("isi").addEventListener("click", (e) => {
     if (e.target.closest("[data-aksi=ulang]")) return mulai();
     if (e.target.closest("[data-aksi=lagi]")) { S.n += LANJUT; return nanti(gambarIsi); }
-    const c = e.target.closest("[data-topik]"); if (c) { ubah(() => { S.tek = c.dataset.topik; document.getElementById("tek").value = S.tek; }); }
+    const c = e.target.closest("[data-topik]"); if (c) { ubah(() => { S.tek = c.dataset.topik; document.getElementById("f-tek").value = S.tek; }); }
   });
   document.getElementById("topik").addEventListener("click", (e) => {
     const c = e.target.closest("[data-topik]"); if (!c) return;
@@ -163,8 +163,8 @@ async function mulai() {
   });
   const cariTunda = debounce(() => ubah(() => {}), 120);
   const sr = document.getElementById("saring");
-  sr.addEventListener("input", (e) => { if (e.target.id === "q") { S.q = e.target.value; cariTunda(); } });
-  sr.addEventListener("change", (e) => { const k = e.target.id; if (k in S && k !== "q") ubah(() => { S[k] = e.target.value; }); });
-  sr.addEventListener("click", (e) => { if (e.target.closest("#hapus")) ubah(() => { Object.assign(S, { q: "", tek: "", media: "", periode: "", bahasa: "" }); gambarSaring(); }); });
+  sr.addEventListener("input", (e) => { if (e.target.id === "f-q") { S.q = e.target.value; cariTunda(); } });
+  sr.addEventListener("change", (e) => { const k = e.target.id.slice(2); if (e.target.id.startsWith("f-") && k in S && k !== "q") ubah(() => { S[k] = e.target.value; }); });
+  sr.addEventListener("click", (e) => { if (e.target.closest("#f-hapus")) ubah(() => { Object.assign(S, { q: "", tek: "", media: "", periode: "", bahasa: "" }); gambarSaring(); }); });
   await mulai();
 })();

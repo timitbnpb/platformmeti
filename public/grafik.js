@@ -29,7 +29,7 @@ export function kolom(items, { rata = null, teksRata = "", d = 0, label = "", ni
     else if (nilai && n <= (M ? 8 : 14)) g += `<text class="jm-gf-t1${s ? " jm-gf-tb" : ""}" x="${(px + bw / 2).toFixed(1)}" y="${(y - 6).toFixed(1)}" text-anchor="middle" font-size="${fs - 1}">${esc(fmt(x.v, d))}</text>`;
     if (x.sorot) g += pil(px + bw / 2, y - 26, fmt(x.v, d), { fs: fs - 0.5, anchor: "middle" })[0];
   });
-  if (rata != null) g += `<line class="jm-gf-ref" x1="${L}" x2="${W - R}" y1="${Y(rata).toFixed(1)}" y2="${Y(rata).toFixed(1)}"/><text class="jm-gf-t1" x="${W - R}" y="${(Y(rata) - 5).toFixed(1)}" text-anchor="end" font-size="${fs - 1}">${esc(teksRata)}</text>`;
+  if (rata != null) g += `<line class="jm-gf-ref" x1="${L}" x2="${W - R}" y1="${Y(rata).toFixed(1)}" y2="${Y(rata).toFixed(1)}"/><text class="jm-gf-t1" x="${L + 4}" y="${(Y(rata) - 5).toFixed(1)}" font-size="${fs - 1}">${esc(teksRata)}</text>`;
   return svg(W, H, g, label);
 }
 

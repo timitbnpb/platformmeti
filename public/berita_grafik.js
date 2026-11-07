@@ -15,8 +15,8 @@ export function volumeSvg(rows, mode, akhirIso) {
   for (const r of rows) { const i = Math.floor((hariKe(r.terbit) - mulai) / langkah); if (i >= 0 && i < n) per[i]++; }
   const mx = Math.max(1, ...per), W = 620, bw = W / n;
   const tgl = (i) => new Date((mulai + i * langkah) * HARI).toISOString();
-  const bar = per.map((v, i) => { const h = Math.max(1, (v / mx) * 90); return `<rect class="brt-bar" x="${(i * bw + 1.5).toFixed(1)}" y="${(100 - h).toFixed(1)}" width="${(bw - 3).toFixed(1)}" height="${h.toFixed(1)}" rx="2"><title>${esc(tanggal(tgl(i)))}: ${angka(v)}</title></rect>`; }).join("");
-  return `<svg viewBox="0 0 ${W} 120" class="brt-svg" role="img" aria-label="${esc(t("brt.g.volume"))}">${bar}<text class="brt-sb" x="0" y="116">${esc(tanggal(tgl(0)))}</text><text class="brt-sb" x="${W}" y="116" text-anchor="end">${esc(tanggal(tgl(n - 1)))}</text><text class="brt-sb" x="${W}" y="10" text-anchor="end">${angka(mx)}</text></svg>`;
+  const bar = per.map((v, i) => { const h = Math.max(1, (v / mx) * 90); return `<rect class="brt-bar" x="${(i * bw + 1.5).toFixed(1)}" y="${(100 - h).toFixed(1)}" width="${(bw - 3).toFixed(1)}" height="${h.toFixed(1)}" rx="2"><title>${esc(tanggal(tgl(i).slice(0, 10)))}: ${angka(v)}</title></rect>`; }).join("");
+  return `<svg viewBox="0 0 ${W} 120" class="brt-svg" role="img" aria-label="${esc(t("brt.g.volume"))}">${bar}<text class="brt-sb" x="0" y="116">${esc(tanggal(tgl(0).slice(0, 10)))}</text><text class="brt-sb" x="${W}" y="116" text-anchor="end">${esc(tanggal(tgl(n - 1).slice(0, 10)))}</text><text class="brt-sb" x="${W}" y="10" text-anchor="end">${angka(mx)}</text></svg>`;
 }
 
 /** Batang mendatar: xs = [[teks, nilai]]. Lebar batang = atribut SVG persen. */

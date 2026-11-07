@@ -113,6 +113,8 @@ function kakiHtml() {
       <ul class="jm-kaki-stat" id="kakiStat"><li title="${t("jm.kaki.sumber_berdiri")}" data-i18n-attr="title:jm.kaki.sumber_berdiri"><b>1999</b><span data-i18n="jm.kaki.berdiri">${t("jm.kaki.berdiri")}</span></li></ul>
       <div class="jm-kaki-sos"><a href="https://www.linkedin.com/in/meti-ires-b06066a1/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn METI">${SVG(IK.linkedin, 20)}</a><a href="https://www.instagram.com/metiires/" target="_blank" rel="noopener noreferrer" aria-label="Instagram METI">${SVG(IK.instagram, 20)}</a></div></div>
     ${kol}
+  </div>
+  <div class="jm-kaki-kontak jm-wadah">
     <nav class="jm-kaki-kol jm-kaki-hub" aria-labelledby="jm-kaki-hubungi"><h2 id="jm-kaki-hubungi" data-i18n="jm.kaki.hubungi">${t("jm.kaki.hubungi")}</h2><ul>${kontak}</ul></nav>
   </div>
   <div class="jm-kaki-bawah jm-wadah"><p>&copy; 2026 METI</p><a href="${MI}/policy/membership" target="_blank" rel="noopener noreferrer" data-i18n="jm.kaki.kebijakan">${t("jm.kaki.kebijakan")}</a>
