@@ -30,9 +30,9 @@ export function pasangPesan() {
   const pilStatus = (s) => `<span class="ps-pil ps-pil-${esc(s)}">${esc(t("ps.status." + s))}</span>`;
   const formHtml = (baru) => `<form class="ps-form" id="psForm" novalidate>
       ${baru ? `<input type="hidden" id="psTopik" name="topik" value="umum">` : ""}
-      <label class="sr" for="psIsi">${esc(t("ps.tulis"))}</label><textarea id="psIsi" name="isi" maxlength="${MAKS_ISI}" placeholder="${esc(t("ps.tulis"))}" required></textarea>
-      <p class="ps-galat" role="alert" id="psGalat">${esc(S.galat)}</p>
-      <div class="ps-baris"><label class="jm-tbl jm-tbl-kecil" for="psBerkas">${IK_KLIP}<span>${esc(t("ps.lampir"))}</span></label><input class="sr" type="file" id="psBerkas" accept="image/png,image/jpeg,image/gif,image/webp,application/pdf"><span class="ps-file" id="psNamaBerkas"></span><span class="ps-sp"></span><span class="ps-hitung" id="psHitung">0/${MAKS_ISI}</span><button type="submit" class="jm-tbl jm-tbl-utama jm-tbl-kecil" id="psKirim">${IK_KIRIM}<span>${esc(t("ps.kirim"))}</span></button></div>
+      <div class="ps-komposer"><label class="sr" for="psIsi">${esc(t("ps.tulis"))}</label><textarea id="psIsi" name="isi" maxlength="${MAKS_ISI}" placeholder="${esc(t("ps.tulis"))}" required></textarea>
+      <div class="ps-baris"><label class="ps-lampir" for="psBerkas" title="${esc(t("ps.lampir"))}">${IK_KLIP}<span class="sr">${esc(t("ps.lampir"))}</span></label><input class="sr" type="file" id="psBerkas" accept="image/png,image/jpeg,image/gif,image/webp,application/pdf"><span class="ps-file" id="psNamaBerkas"></span><span class="ps-sp"></span><span class="ps-hitung" id="psHitung">0/${MAKS_ISI}</span><button type="submit" class="jm-tbl jm-tbl-utama jm-tbl-kecil" id="psKirim">${IK_KIRIM}<span>${esc(t("ps.kirim"))}</span></button></div>
+    </div><p class="ps-galat" role="alert" id="psGalat">${esc(S.galat)}</p>
     </form>`;
 
   async function gambarDaftar() {
