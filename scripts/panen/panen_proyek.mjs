@@ -110,7 +110,7 @@ export function dariWikiEn(wikitext) {
 }
 
 // ---------- kemiripan & dedup ----------
-const UMUM = new Set(['plts', 'plta', 'pltp', 'pltb', 'pltsa', 'pltmh', 'plt', 'pltu', 'solar', 'power', 'station', 'plant', 'geothermal', 'hydro', 'hydroelectric', 'wind', 'farm', 'pv', 'psel', 'pembangkit', 'listrik', 'tenaga', 'surya', 'air', 'panas', 'bumi', 'bayu', 'pumped', 'storage', 'unit', 'phase', 'i', 'ii', 'iii', 'iv', 'energi', 'asal', 'sampah', 'psn', 'nomor', '154', 'kota', 'kabupaten', 'ebt', 'floating', 'terapung']);
+const UMUM = new Set(['plts', 'plta', 'pltp', 'pltb', 'pltsa', 'pltmh', 'plt', 'pltu', 'solar', 'power', 'station', 'plant', 'geothermal', 'hydro', 'hydroelectric', 'wind', 'farm', 'pv', 'psel', 'pembangkit', 'listrik', 'tenaga', 'surya', 'air', 'panas', 'bumi', 'bayu', 'pumped', 'storage', 'unit', 'phase', 'i', 'ii', 'iii', 'iv', 'energi', 'asal', 'sampah', 'psn', 'nomor', '154', 'kota', 'kabupaten', 'ebt', 'floating', 'terapung', 'ftp1', 'ftp2', 'pump', 'storage', 'small', 'scale', 'binary']);
 const tokenNama = (n) => new Set(String(n).normalize('NFKD').replace(/[̀-ͯ]/g, '').toLowerCase().replace(/\([^)]*\)/g, ' ').split(/[^a-z0-9]+/).filter((t) => t && !UMUM.has(t)));
 export function mirip(a, b) {
   const A = tokenNama(a), B = tokenNama(b);
@@ -579,6 +579,11 @@ function selftest() {
   assert.ok(gemDari('gem_wind.csv', 'Nama,Negara\nA,B\n', 'x').lapor.dilewati, 'kolom tak dikenal: dilewati, tidak ditebak');
   const rh = bangun([{ nama: 'Rahasia', teknologi: 'bioenergi', provinsi: 'Bali', _sumber: { url: 'internal:x', tingkat_bukti: 'resmi', tanggal_ambil: 't', publik: false, catatan_kerahasiaan: 'ck' } }]);
   assert.equal(rh.proyek[0].publik, false); assert.equal(rh.proyek[0].catatan_kerahasiaan, 'ck');
+  const kol = (...x) => ' ' + String(x[0]).padEnd(4) + String(x[1]).padEnd(12) + String(x[2]).padEnd(10) + String(x[3]).padEnd(14) + String(x[4]).padEnd(8) + String(x[5]).padEnd(7) + String(x[6]).padEnd(7) + String(x[7]).padEnd(13) + x[8];
+  const rt = ruptlDari(['Tabel B4.10. Rencana Pembangunan Pembangkit', kol('', '', '', 'Lokasi/Nama', 'Kapasitas', 'COD', '', '', ''), kol('No', 'Sistem', 'Jenis', 'Pembangkit', '(MW)', 'Base', 'ARED', 'Status', 'Pengembang'),
+    kol(1, 'Jawa Bali', 'PLTM', 'Harjosari', '9,9', '2025', '2025', 'Konstruksi', 'IPP'), kol(2, 'Jawa Bali', 'PLTP', 'Dieng', '2x55', '-', '2030', 'Rencana', 'SH-PLN'), kol(3, 'Jawa Bali', 'PLTU', 'Batubara', '600', '2025', '2025', 'Rencana', 'PLN'), ''].join('\n'));
+  assert.equal(rt.proyek.length, 2); assert.equal(rt.proyek[0].tahap[0].mw, 9.9); assert.equal(rt.proyek[1].tahap[0].mw, 110); assert.equal(rt.proyek[1].tahap[0].base, null); assert.equal(rt.lewat.bukan_ebt, 1);
+  assert.equal(rt.proyek[0].peng, 'IPP'); assert.equal(rt.proyek[0].provinsi, 'Jawa Tengah');
   console.log('selftest OK');
 }
 

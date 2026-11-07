@@ -147,8 +147,9 @@ function selftest() {
 const arg = (n) => (process.argv.find((a) => a.startsWith(`--${n}=`)) || '').split('=').slice(1).join('=');
 if (process.argv.includes('--selftest')) selftest();
 else if (process.argv.includes('--bangun')) bangun();
-else if (arg('ambil')) {
-  for (const u of arg('ambil').split(',')) {
+else if (arg('ambil') || arg('daftar')) {
+  const daftar = arg('daftar') ? arg('daftar').split(',').flatMap((f) => baca(f).map((r) => r.url)) : arg('ambil').split(',');
+  for (const u of [...new Set(daftar)]) {
     try { const f = await ambil(u); if (f) console.log(`ok ${u} (${teks(fs.readFileSync(f, 'utf8')).length} huruf)`); } catch (e) { catatGagal(u, e.cause?.code || e.message); console.error('GAGAL', u, e.cause?.code || e.message); }
   }
 } else if (arg('teks')) {

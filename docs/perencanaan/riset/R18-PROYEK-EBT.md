@@ -15,27 +15,31 @@ Status: hasil panen pertama, 7 Nov 2026. Pengurai: `scripts/panen/panen_proyek.m
 | Wikipedia en "List of power stations in Indonesia" (tabel EBT) | CC BY-SA 4.0 | Terambil, 50 baris diurai (4 dibuang karena provinsi tak terpetakan). Tanpa tanggal data, status, atau koordinat. tingkat_bukti = media. Atribusi CC BY-SA 4.0 tercatat di `sumber.jsonl` (`atribusi`); data ini berada di `data-panen/` dan tidak masuk git. Share-alike: keputusan pemilik bila basis data diterbitkan. |
 | Wikipedia id (Daftar PSN item 154; TPA Benowo; Daftar pembangkit) | CC BY-SA 4.0 | 12 kota energi sampah, Benowo, Putri Cempo, Bantargebang. media. Seed dipindah ke `data-panen/proyek/seed/` (tidak masuk git), atribusi di sumber. |
 | Materi IndoEBTKE 2026 lokal (laporan PLTS 100 GWp 25 Agu, Gallery Walk B50/E20 hlm 13, Legok Nangka, Agrinas) | materi paparan, tanpa lisensi tertulis | 39 baris kurasi di `data-panen/proyek/seed/` (tidak masuk git). tingkat_bukti = resmi. Slide Agrinas berlabel STRICTLY CONFIDENTIAL: 2 proyek bertanda `publik: false` dengan `catatan_kerahasiaan`; potret publik wajib membuangnya dan membuang nilai ber-sumber `publik: false` pada proyek campuran. |
-| RUPTL PLN 2025-2034, KPPIP, World Bank PPI, ESDM EBTKE siaran pers, ADB | publik | GAGAL, rinci di `gagal.jsonl`: RUPTL (DNS gatrik dan web.pln.co.id tidak resolve), PPI (alat kueri interaktif, tanpa berkas statis), ebtke.esdm.go.id (SPA tanpa HTML statis), ADB (HTTP 403 tantangan Cloudflare, berhenti). |
+| RUPTL PLN 2025-2034 (PDF lokal 1.253 halaman, dokumen publik PLN) | dokumen publik | DIURAI: tabel rincian pembangkit Lampiran A, B, C (`pdftotext -layout`, lalu `--ruptl-teks=`). 271 proyek EBT bernama, resmi; 576 baris kuota/tersebar dan 182 baris non-EBT dilewati dan dihitung. Tidak ada tabel gambar yang ditemukan; lihat catatan mutu di bawah. |
+| KPPIP/PSN resmi, World Bank PPI, ESDM EBTKE siaran pers, ADB | publik | GAGAL, rinci di `gagal.jsonl`: PPI (alat kueri interaktif), ebtke.esdm.go.id (SPA), ADB (HTTP 403 Cloudflare, berhenti), PDF CIPP JETP (unduhan diputus server di sekitar 96 KB, tidak dilewati). |
 | `data-panen/berita/berita.jsonl` | | Belum ada. |
 
-## 2. Hasil (99 proyek)
+## 2. Hasil (366 proyek; 99 sebelum RUPTL, sekitar 267 baru dari RUPTL setelah dedup)
 
 Menurut teknologi (kode K16) dan status:
 
-| teknologi | jumlah | status terisi |
-|---|---|---|
-| hidro | 30 | 0 |
-| surya | 18 | 15 (beroperasi 2, konstruksi 6, rencana 7) |
-| bioenergi | 17 | 2 rencana |
-| biomassa-sampah | 16 | 8 (beroperasi 1, konstruksi 2, rencana 5) |
-| panas-bumi | 12 | 0 |
-| penyimpanan | 4 (PLTA pumped storage) | 0 |
-| bayu | 2 | 0 |
-| nuklir, hidrogen, laut | 0 | |
+| teknologi | jumlah |
+|---|---|
+| hidro | 142 |
+| surya | 64 |
+| panas-bumi | 52 |
+| penyimpanan (BESS, PLTA pumped storage) | 53 |
+| bioenergi | 31 |
+| biomassa-sampah | 17 |
+| bayu | 6 |
+| nuklir | 1 |
+| hidrogen, laut | 0 |
 
-Menurut program: plts-100gw 14, psn 12, e20 16, b50 1, jetp 2, wte-danantara 0, tanpa program 54 (Saguling masuk jetp dan plts-100gw sekaligus: `programs[]`; PLTS 100 GWp yang berdiri sendiri 14 baris + Saguling). Menurut bukti: resmi 34, media 65. Rahasia (`publik:false`): 2.
+Status (78% terisi; rencana, konstruksi, beroperasi): hidro 70/35/0 dan 37 tanpa status, surya 48/10/2, panas-bumi 30/10/0, penyimpanan 48/2/0, bioenergi 13/3/0, biomassa-sampah 7/2/1, bayu 3/0/0, nuklir 1/0/0. Status RUPTL dipetakan: Konstruksi menjadi konstruksi; Rencana, PPA, Committed, Pengadaan, Pendanaan, Eksplorasi menjadi rencana (status asli tersimpan).
 
-Cakupan per bidang (persen dari 99): provinsi 96, kabupaten/kota 76, kapasitas 80, pemilik 63, status 25, pihak terlibat 8, nilai investasi 2, skema kerja sama 2, pembeli 1, pemberi dana 2, tenaga kerja 1; EPC, tanggal PPA, financial close, COD target, COD aktual 0. Koordinat 96 (presisi: titik_persis 2%, kabupaten 59%, provinsi 35%, kosong 4%; lihat bagian 5). Sumber transaksi (PPI, RUPTL, ADB, ESDM) gagal, jadi investasi, skema, dan COD tetap 2%, 2%, 0%.
+Menurut program: plts-100gw 14, psn 12, e20 16, b50 1, jetp 2, wte-danantara 0, tanpa program 54 (Saguling masuk jetp dan plts-100gw sekaligus: `programs[]`; PLTS 100 GWp yang berdiri sendiri 14 baris + Saguling). Menurut bukti: resmi 304, media 63. Rahasia (`publik:false`): 2.
+
+Cakupan per bidang (persen dari 366): provinsi 92, kabupaten/kota 20, kapasitas 95, COD target 74 (100% dari 271 baris RUPTL), status 78, nama perusahaan pemilik 17 (62 proyek; 260 proyek hanya berlabel status pengembang RUPTL PLN/IPP/SH-PLN, 71% dari seluruh proyek), pihak terlibat 1, nilai investasi 1, skema kerja sama 1, pemberi dana 1; pembeli, EPC, tanggal PPA, financial close, COD aktual, tenaga kerja 0. Koordinat 92 (presisi: titik_persis 1%, kabupaten 16%, provinsi 76%, kosong 8%). Sebagian besar proyek RUPTL hanya berprovinsi, tanpa kabupaten, sehingga titiknya pusat provinsi. Nilai investasi, skema, dan tenaga kerja tidak ada di RUPTL, sehingga sumber transaksi yang gagal tetap menyisakan celah itu.
 
 Konflik tercatat (2): kapasitas Legok Nangka (2.131 vs 1.853-2.131 ton/hari, dua materi) dan PLTS Pulau Sembur (0,92 MWp peta vs 1 MWp rincian, satu laporan). Tidak ada nilai yang dipilih diam-diam; semua tetap berjajar dengan sumber_id.
 
@@ -75,3 +79,13 @@ Penilaian untuk platform ini (JS biasa, MapLibre 4.7.1 sudah ada, tanpa kerangka
 | Sankey pendana, pengembang, teknologi | Tidak sekarang | pemberi dana 1 persen; hanya menyesatkan sampai PPI/ADB/JETP terbaca. Tunda. |
 
 Pilihan untuk layar direktori proyek: (a) peta titik berklaster dengan koroplet provinsi sebagai lapisan yang bisa diganti, (b) di bawahnya batang kapasitas per provinsi dan corong status sebagai tabel-grafik yang sama datanya, (c) filter program nasional (plts-100gw, psn, e20, b50, wte-danantara) dan teknologi. Untuk profil proyek: kartu fakta dengan SEMUA nilai berjajar bersama sumbernya (termasuk yang bertentangan), peta mini bila ada koordinat (dengan label presisi) dan tombol Maps, lini masa kecil hanya jika ada tanggal. Gantt dan sankey ditambahkan setelah bidang terkait terisi di atas 40 persen.
+
+## 8. Catatan mutu RUPTL (wajib dibaca sebelum memakai angkanya)
+
+- Tabel PDF berlayout sel bertingkat; nama proyek sering terbelah di atas/bawah baris utama. Pengurai membagi pecahan secara heuristik, jadi sebagian nama masih terpotong atau tercampur ("ulehu" untuk Tulehu, "Langgur 2" bersama sisa paragraf). Nama dari RUPTL WAJIB ditinjau kurator sebelum tampil; jangan digabung otomatis dengan proyek lain (dedup hanya mengusulkan lewat konflik).
+- "Pengembang" RUPTL adalah status (PLN, SH-PLN, IPP), bukan nama perusahaan. Disimpan di `pemilik` dengan catatan itu. Jangan menampilkannya sebagai pemilik.
+- COD target = skenario RE Base; bila hanya ARED yang bertahun, tahunnya dipakai dengan catatan. Baris bernama sama dalam satu provinsi dijumlah (mis. 4 unit Upper Cisokan 4 x 260 MW).
+- Kapasitas BESS pada RUPTL dalam MW, bukan MWh.
+- Provinsi C9 (Papua gabungan) dan C10 (Papua Barat dan Barat Daya) dikosongkan karena tabel tidak memilah provinsi.
+- Baris "kuota/tersebar/Isolated/Lisdes" adalah slot perencanaan tanpa lokasi, bukan proyek bernama; dilewati (576).
+- Status Saguling berbeda antar sumber (laporan ESDM: konstruksi; RUPTL: rencana) dan dibiarkan berjajar di konflik.jsonl.

@@ -228,7 +228,7 @@ function pengurus() {
     if (!l || !o) { if (!l) tak.add(j.organisasi); continue; }
     out.push({ lembaga_id: l.lembaga_id, orang_id: j.orang_id, nama: o.nama, jabatan: j.jabatan, periode: { mulai: j.mulai ?? null, selesai: j.selesai ?? null }, status: j.status, sumber_url: j.sumber_url, foto_url: null, foto_sumber: null });
   }
-  tulis(F('pengurus.jsonl'), out);
+  tulis(F('pengurus.jsonl'), [...out, ...baca(F('pengurus.jsonl')).filter((p) => p.asal === 'dinas')]);
   const ada = new Set(out.map((p) => p.lembaga_id));
   for (const l of lemb) l.pengurus_status = ada.has(l.lembaga_id) ? 'terisi' : 'belum-dibaca';
   tulis(F('lembaga.jsonl'), lemb);
@@ -248,7 +248,7 @@ function anggota() {
   const pf = path.join(ROOT, 'data-panen/perusahaan/perusahaan.jsonl');
   let np = 0;
   for (const p of baca(pf)) if (p.apamsi) { out.push({ dari: p.perusahaan_id, ke: bySing.get('APAMSI').lembaga_id, jenis: 'anggota_dari', sumber_url: null, tingkat_bukti: 'via-pihak-ketiga', tanggal_periksa: ts, catatan: 'dari kolom apamsi direktori perusahaan' }); np++; }
-  tulis(F('keanggotaan.jsonl'), out);
+  tulis(F('keanggotaan.jsonl'), [...out, ...baca(F('keanggotaan.jsonl')).filter((k) => k.asal === 'api')]);
   console.log('keanggotaan', out.length, 'perusahaan->APAMSI', np);
 }
 
@@ -319,6 +319,61 @@ async function metiPengurus() {
   console.log(`pengurus-meti ${rows.length} orang; foto ${tp} (${(100 * tp / rows.length).toFixed(0)}%); orang_id ${to}`);
 }
 
+// ---------- dinas ESDM provinsi (domain dari data-panen/temuan) + anggota API ----------
+export function kepalaDinas(teksPolos) {
+  const L = teksPolos.split('\n').map((s) => s.trim()).filter(Boolean);
+  const namaOk = (s) => s && s.length < 70 && !/\d/.test(s) && s.split(' ').length >= 2 && s.split(' ').length <= 9 && /^[A-Z]/.test(s) && !/(dinas|provinsi|selamat|kepala|bidang|sekretaris|visi|misi)/i.test(s);
+  for (let i = 0; i < L.length; i++) {
+    if (/^kepala dinas( energi dan sumber daya mineral)?( provinsi [\w\s]+)?$/i.test(L[i])) {
+      for (const c of [L[i - 1], L[i + 1]]) if (namaOk(c)) return c.replace(/\s+/g, ' ');
+    }
+    const m = L[i].match(/^(.{5,60}?)\s*[-,–]\s*Kepala Dinas\b/i); if (m && namaOk(m[1])) return m[1];
+  }
+  return null;
+}
+async function dinas() {
+  fs.mkdirSync(RAW, { recursive: true });
+  const tem = baca(path.join(ROOT, 'data-panen/temuan/dinas_esdm.jsonl'));
+  const rows = baca(F('lembaga.jsonl'));
+  const orang = new Map(); for (const o of baca(path.join(ROOT, 'data-panen/orang/orang.jsonl'))) { const k = kunciNama(o.nama); orang.set(k, [...(orang.get(k) || []), o.orang_id]); }
+  const peng = baca(F('pengurus.jsonl')).filter((p) => p.asal !== 'dinas'); let kepalaN = 0, ok = 0;
+  for (const t of tem) {
+    const r = rows.find((x) => x.jenis === 'pemda' && x.kontak.provinsi === t.provinsi); if (!r) { console.error('tak ada', t.provinsi); continue; }
+    r.situs = t.url; r.situs_kandidat = null; r.sumber = r.sumber.filter((s) => s.id !== 'situs'); r.verifikasi.tanggal_periksa = HARI_INI;
+    const h = await ambil(t.url); if (!h) { r.verifikasi.situs_ok = false; continue; }
+    ok++; r.verifikasi.situs_ok = true; r.verifikasi.http = 200;
+    let e = ekstrak(h.html); r.verifikasi.judul = e.judul; let teksSemua = h.html;
+    const tautan = [...new Set([...h.html.matchAll(/href="([^"#]+)"/gi)].map((m) => m[1]).filter((u) => /(kontak|contact|hubungi|profil|pimpinan|pejabat|struktur|tentang|kepala-dinas|sambutan)/i.test(u)))].slice(0, 4);
+    for (const u of tautan) { try { const abs = new URL(u, t.url).href; if (new URL(abs).host !== new URL(t.url).host) continue; const h2 = await ambil(abs); if (!h2) continue; teksSemua += '\n' + h2.html; const e2 = ekstrak(h2.html); if (!e.alamat && e2.alamat) { e.alamat = e2.alamat; r.kontak.sumber_url = abs; } if (!e.surel.length) e.surel = e2.surel; if (!e.telepon.length) e.telepon = e2.telepon; } catch {} }
+    r.kontak = { ...r.kontak, alamat_kantor: e.alamat?.replace(/&amp;/g, '&') ?? null, telepon: e.telepon, surel: e.surel, sumber_url: r.kontak.sumber_url || t.url };
+    r.sumber.push({ id: 'situs', url: t.url, keterangan: 'situs resmi dinas (temuan ' + t.keyakinan + ')', tanggal_periksa: HARI_INI, tingkat_bukti: 'situs-sendiri' });
+    const plain = teksSemua.replace(/<(script|style)[\s\S]*?<\/\1>/gi, ' ').replace(/<\/(p|div|li|h\d|td|tr|span|strong|b)>|<br\s*\/?>/gi, '\n').replace(/<[^>]+>/g, ' ').replace(/&amp;/g, '&').replace(/&nbsp;/g, ' ').replace(/[ \t]+/g, ' ');
+    const kd = kepalaDinas(plain);
+    if (kd) { const id = orang.get(kunciNama(kd)) || []; kepalaN++; peng.push({ lembaga_id: r.lembaga_id, orang_id: id.length === 1 ? id[0] : null, nama: bersihNama(kd), nama_lengkap: kd, jabatan: 'Kepala Dinas', periode: null, status: 'menjabat', sumber_url: t.url, tingkat_bukti: 'situs-sendiri', foto_url: null, foto_sumber: null, asal: 'dinas' }); }
+    r.pengurus_status = kd ? 'terisi' : 'belum-dibaca';
+    tulis(F('lembaga.jsonl'), rows); tulis(F('pengurus.jsonl'), peng);
+  }
+  tulis(F('gagal.jsonl'), [...baca(F('gagal.jsonl')).filter((g) => !gagal.some((x) => x.url === g.url)), ...gagal]);
+  console.log(`dinas: ${tem.length} domain, ${ok} terbaca, ${kepalaN} kepala dinas`);
+}
+function anggotaApi() {
+  const h = fs.readFileSync(path.join(RAW, 'inaga_api_or_id_association_member.html'), 'utf8');
+  const t = h.replace(/<(script|style)[\s\S]*?<\/\1>/gi, ' ').replace(/<\/(div|p|h\d|li|tr|td|a)>/g, '\n').replace(/<[^>]+>/g, ' ').replace(/&amp;/g, '&').replace(/\s*\n\s*/g, '\n');
+  const L = t.split('\n').map((s) => s.trim()).filter(Boolean);
+  const a = L.findIndex((s) => /^PT\. EDC Indonesia/.test(s)), z = L.findIndex((s) => /^Copyright/.test(s));
+  const nama = L.slice(a, z).filter((s) => s !== 'details');
+  const lemb = baca(F('lembaga.jsonl')); const api = lemb.find((l) => l.singkatan === 'API');
+  const per = baca(path.join(ROOT, 'data-panen/perusahaan/perusahaan.jsonl'));
+  const pk = (s) => norm(s).replace(/\b(pt|tbk|ltd|persero|indonesia|co)\b/g, '').replace(/\s+/g, ' ').trim();
+  const idx = new Map(per.map((p) => [pk(p.nama), p.perusahaan_id]));
+  const sisa = baca(F('keanggotaan.jsonl')).filter((k) => k.ke !== api.lembaga_id || k.jenis !== 'anggota_dari' || k.asal !== 'api');
+  let cocok = 0;
+  for (const n of nama) { const pid = idx.get(pk(n)) || null; if (pid) cocok++;
+    sisa.push({ dari: pid, dari_nama: n, ke: api.lembaga_id, jenis: 'anggota_dari', sumber_url: 'https://inaga-api.or.id/association/member/', tingkat_bukti: 'situs-sendiri', tanggal_periksa: HARI_INI, asal: 'api' }); }
+  tulis(F('keanggotaan.jsonl'), sisa);
+  console.log('anggota API', nama.length, 'tertaut ke perusahaan_id', cocok);
+}
+
 function selftest() {
   const e = ekstrak('<title>X</title><a href="mailto:info@example.org">a</a>budi.santoso@example.org <a href="tel:+62 21 0000 0000">t</a>Jl. Merdeka No. 5, Jakarta 10110');
   assert.deepEqual(e.surel, ['info@example.org']); assert.equal(e.telepon.length, 1); assert.match(e.alamat, /Merdeka/);
@@ -332,6 +387,8 @@ if (arg === '--selftest') selftest();
 else if (arg === '--seed') { const s = bangunSeed(); const lama = new Map(baca(F('lembaga.jsonl')).map((x) => [x.lembaga_id, x])); tulis(F('lembaga.jsonl'), s.map((x) => lama.get(x.lembaga_id) ?? x)); console.log('seed', s.length); }
 else if (arg.startsWith('--verifikasi')) await verifikasi((process.argv.find((a) => a.startsWith('--hanya=')) || '').slice(8));
 else if (arg === '--meti') await metiPengurus();
+else if (arg === '--dinas') await dinas();
+else if (arg === '--anggota-api') anggotaApi();
 else if (arg === '--pengurus') pengurus();
 else if (arg === '--anggota') anggota();
 else if (arg === '--statistik') statistik();

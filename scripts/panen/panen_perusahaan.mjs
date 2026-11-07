@@ -220,6 +220,8 @@ async function nominatim(q, pid) {
 }
 
 // ---------- rekaman ----------
+const normNama = (n) => n.toLowerCase().replace(/\(.*?\)/g, ' ').replace(/\b(pt|tbk|persero|cv)\b/g, ' ').replace(/[^a-z0-9]+/g, ' ').trim();
+const TEMUAN = new Map(baca(path.join(ROOT, 'data-panen/temuan/situs_perusahaan.jsonl')).map((x) => [normNama(x.nama), x]));
 function bangunRekaman() {
   const tabel = new Map(TABEL_MODUL.trim().split('\n').map((l) => { const [n, mwp, pasar, apamsi, tkdn, bmp] = l.split('|'); return [n, { mwp, pasar, apamsi, tkdn, bmp }]; }));
   const peta = new Map(); const dipakai = new Set();
@@ -246,6 +248,8 @@ function bangunRekaman() {
       for (const k of ['kapasitas_mwp_tahun', 'pasar', 'apamsi', 'tkdn', 'bmp']) r.sumber_field[k] = 'tabel-modul';
     }
     if (/Hanover Solar/.test(nama)) { r.kandidat = true; r.sumber.push({ ...SUMBER_HANOVER, tanggal_periksa: HARI_INI }); r.sumber_field.nama = 'solehan-slide6'; }
+    const tm = TEMUAN.get(normNama(nama));
+    if (tm && !r.situs) { r.situs = tm.url; r.situs_keyakinan = tm.keyakinan; r.situs_catatan = tm.catatan || null; r.sumber_field.situs = 'temuan-situs'; }
     peta.set(kunci, r);
   }
   for (const n of tabel.keys()) assert(dipakai.has(n), 'tabel modul tanpa benih: ' + n);
@@ -256,7 +260,7 @@ const tokenNama = (n) => (n.toLowerCase().replace(/\(.*?\)/g, ' ').replace(/\b(p
 async function jalan(batches) {
   fs.mkdirSync(OUT, { recursive: true });
   const lama = new Map(baca(path.join(OUT, 'perusahaan.jsonl')).map((r) => [r.perusahaan_id, r]));
-  const semua = bangunRekaman().map((r) => { const o = lama.get(r.perusahaan_id); return o ? { ...r, verifikasi: o.verifikasi, pengurus_status: o.pengurus_status, sumber: [...r.sumber, ...o.sumber.filter((x) => !r.sumber.some((y) => y.id === x.id))], sumber_field: { ...o.sumber_field, ...r.sumber_field }, situs: o.situs, kontak: o.kontak } : r; });
+  const semua = bangunRekaman().map((r) => { const o = lama.get(r.perusahaan_id); return o ? { ...r, verifikasi: o.verifikasi, pengurus_status: o.pengurus_status, sumber: [...r.sumber, ...o.sumber.filter((x) => !r.sumber.some((y) => y.id === x.id))], sumber_field: { ...o.sumber_field, ...r.sumber_field }, situs: r.situs || o.situs, kontak: o.kontak } : r; });
   const orangRows = baca(ORANG); const orangKunci = new Map();
   for (const o of orangRows) { const k = kunciNama(o.nama); orangKunci.set(k, orangKunci.has(k) ? 'ambigu' : o.orang_id); }
   let pengurus = baca(path.join(OUT, 'pengurus.jsonl'));
@@ -270,10 +274,11 @@ async function jalan(batches) {
   for (const b of batches) {
     for (const r of semua.filter((x) => x.batch === b)) {
       if (!r.situs || r.pengurus_status !== 'belum-dibaca') continue;
+      r.pengurus_status = 'dibaca-tanpa-hasil';
       const h = await ambil(r.situs, r.perusahaan_id);
       if (!h) { r.pengurus_status = 'situs-gagal'; continue; }
       const html = fs.readFileSync(h.file, 'utf8'); const t0 = teks(html);
-      const ok = t0.toLowerCase().includes(tokenNama(r.nama));
+      const ok = r.situs_keyakinan === 'sedang' ? t0.toLowerCase().replace(/\s+/g, ' ').includes(normNama(r.nama)) : t0.toLowerCase().includes(tokenNama(r.nama)); // 'sedang' = bisa situs induk: nama lengkap wajib tampil
       r.verifikasi = { situs_ok: ok, http: 200, judul: dec((html.match(/<title[^>]*>([\s\S]*?)<\/title>/i) || [])[1] || '').replace(/\s+/g, ' ').trim().slice(0, 120), tanggal_periksa: HARI_INI };
       if (!ok) { r.pengurus_status = 'situs-tak-memuat-nama'; catatGagal(r.perusahaan_id, r.situs, 'nama-tak-ditemukan-di-beranda'); continue; }
       r.sumber.push({ id: 'situs', url: r.situs, keterangan: 'situs resmi perusahaan, beranda terbaca', tanggal_periksa: HARI_INI, tingkat_bukti: 'kata-pihak' });
