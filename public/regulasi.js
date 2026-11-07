@@ -104,22 +104,27 @@ function itemHtml(r, tersembunyi) {
     <span class="jm-lm-pen">${r.instansi_penerbit ? penerbitHtml(r.instansi_penerbit, 28) : "-"}</span>
     <span class="jm-lm-ting">${esc(label("reg.tingkat.", tingkatDari(r)))}</span><span class="jm-lm-sts">${pil(r)}</span><span class="jm-lm-dok">${unduhRegHtml(r)}</span></li>`;
 }
-/* kolom bertumpuk Nasional (bawah) + Daerah (atas) per tahun, SVG murni: kelas + atribut saja (CSP) */
+/* kolom bertumpuk Nasional (bawah) + Daerah (atas) per tahun. HTML, bukan SVG berskala:
+   teks tetap ukuran token di layar lebar (pemilik 8 Nov 2026: "jelek banget", angka raksasa). */
 function grafikTahun(per) {
-  const ada = [...per.keys()].filter(Boolean), akhir = Math.max(...ada), M = innerWidth < 640, W = M ? 360 : 640, H = 150, B = H - 22, T = 22, n = TAHUN_GRAFIK, gap = W / n, bw = gap * 0.62;
+  const ada = [...per.keys()].filter(Boolean), akhir = Math.max(...ada), n = TAHUN_GRAFIK;
   const ys = Array.from({ length: n }, (_, i) => akhir - n + 1 + i);
-  const tot = (y) => (per.get(y) || []).length, mx = Math.max(1, ...ys.map(tot)), Y = (v) => (v / mx) * (B - T);
-  const g = ys.map((y, i) => {
-    const rs = per.get(y) || [], nas = rs.filter((r) => tingkatDari(r) === "nasional").length, dae = rs.length - nas, x = i * gap + (gap - bw) / 2, cx = x + bw / 2;
-    const hn = Y(nas), hd = Y(dae), lab = M ? "'" + String(y).slice(2) : String(y);
-    return `<g class="jm-lg-k${String(y) === S.tahun ? " jm-lg-pilih" : ""}" data-th="${y}" role="button" tabindex="0" aria-label="${y}: ${rs.length}"><rect class="jm-lg-hit" x="${(i * gap).toFixed(1)}" y="0" width="${gap.toFixed(1)}" height="${H}"/>`
-      + (nas ? `<rect class="jm-lg-n" x="${x.toFixed(1)}" y="${(B - hn).toFixed(1)}" width="${bw.toFixed(1)}" height="${hn.toFixed(1)}" rx="2"/>` : "")
-      + (dae ? `<rect class="jm-lg-d" x="${x.toFixed(1)}" y="${(B - hn - hd).toFixed(1)}" width="${bw.toFixed(1)}" height="${hd.toFixed(1)}" rx="2"/>` : "")
-      + `<text class="jm-lg-v" x="${cx.toFixed(1)}" y="${(B - hn - hd - 5).toFixed(1)}" text-anchor="middle">${rs.length ? esc(angka(rs.length)) : ""}</text><text class="jm-lg-y" x="${cx.toFixed(1)}" y="${H - 6}" text-anchor="middle">${esc(lab)}</text></g>`;
-  }).join("");
-  return `<div class="jm-lg"><div class="jm-lg-kep"><h3>${ikon("tahun", 18)}<span>${esc(t("reg.tl.grafik"))}</span></h3><span class="jm-lg-leg"><i class="jm-lg-n"></i>${esc(label("reg.tingkat.", "nasional"))}<i class="jm-lg-d"></i>${esc(label("reg.tingkat.", "daerah"))}</span></div>`
-    + `<svg viewBox="0 0 ${W} ${H}" role="group" aria-label="${esc(t("reg.tl.grafik"))}" focusable="false">${g}<line class="jm-lg-dasar" x1="0" x2="${W}" y1="${B}" y2="${B}"/></svg></div>`;
+  const pecah = (y) => { const rs = per.get(y) || [], nas = rs.filter((r) => tingkatDari(r) === "nasional").length; return { tot: rs.length, nas, dae: rs.length - nas }; };
+  const d = ys.map((y) => ({ y, ...pecah(y) })), mx = Math.max(1, ...d.map((x) => x.tot)), jumlah = d.reduce((u, x) => u + x.tot, 0);
+  const puncak = d.filter((x) => x.tot === mx).map((x) => x.y), rata = jumlah / n;
+  const L = (k) => esc(label("reg.tingkat.", k));
+  const kol = d.map(({ y, tot, nas, dae }) => `<button type="button" class="jm-lg-k${String(y) === S.tahun ? " jm-lg-pilih" : ""}${tot === mx ? " jm-lg-puncak" : ""}" data-th="${y}" aria-label="${y}: ${tot} (${L("nasional")} ${nas}, ${L("daerah")} ${dae})">
+      <span class="jm-lg-v">${tot ? esc(angka(tot)) : ""}</span>
+      <span class="jm-lg-batang" data-h="${((tot / mx) * 100).toFixed(1)}">${dae ? `<i class="jm-lg-d" data-h="${((dae / tot) * 100).toFixed(1)}"></i>` : ""}${nas ? `<i class="jm-lg-n" data-h="${((nas / tot) * 100).toFixed(1)}"></i>` : ""}</span>
+      <span class="jm-lg-y">${esc(String(y))}</span>
+      <span class="jm-lg-tip" role="tooltip"><b>${y}</b><span><i class="jm-lg-n"></i>${L("nasional")} <b>${angka(nas)}</b></span><span><i class="jm-lg-d"></i>${L("daerah")} <b>${angka(dae)}</b></span></span></button>`).join("");
+  const judul = t("reg.tl.grafik_j", { n: angka(jumlah), th: n, puncak: puncak.join(", "), mx: angka(mx) });
+  return `<section class="jm-lg"><div class="jm-lg-kep"><div><p class="jm-lg-eb">${ikon("tahun", 16)}<span>${esc(t("reg.tl.grafik"))}</span></p><h3>${esc(judul)}</h3><p class="jm-lg-sub">${esc(t("reg.tl.grafik_s", { r: angka(Math.round(rata * 10) / 10) }))}</p></div>`
+    + `<span class="jm-lg-leg"><span><i class="jm-lg-n"></i>${L("nasional")}</span><span><i class="jm-lg-d"></i>${L("daerah")}</span></span></div>`
+    + `<div class="jm-lg-badan"><div class="jm-lg-rata" data-h="${((rata / mx) * 100).toFixed(1)}"><span>${esc(t("reg.tl.rata"))} ${esc(angka(Math.round(rata * 10) / 10))}</span></div><div class="jm-lg-kolom">${kol}</div></div></section>`;
 }
+/* tinggi batang lewat style properti (CSP style-src 'self' mengizinkan CSSOM) */
+function pasangTinggi(akar) { for (const el of akar.querySelectorAll(".jm-lg [data-h]")) el.style.setProperty("--h", el.dataset.h + "%"); }
 function gambarLinimasa(rows) {
   document.getElementById("hal").innerHTML = "";
   const per = new Map();
@@ -132,6 +137,7 @@ function gambarLinimasa(rows) {
     return `<section class="jm-lm-tahun" id="th-${y}" aria-label="${y || "-"}"><button type="button" class="jm-lm-th" data-lipat aria-expanded="true" aria-label="${esc(t("reg.tl.lipat"))} ${y || "-"}"><h3>${y || "-"}</h3><span class="jm-lm-pils">${chipN("terbit", rs.length)}${chipN("mengubah", ub)}${chipN("mencabut", cb)}</span>${ikon("panah-kanan", 18)}</button>
       <ol class="jm-lm-daftar">${rs.map((r, i) => itemHtml(r, i >= MAKS_TAHUN)).join("")}</ol>${rs.length > MAKS_TAHUN ? `<button type="button" class="jm-tbl jm-tbl-kecil jm-tl-lebih" data-lebih="${rs.length - MAKS_TAHUN}">${esc(t("reg.tl.lebih", { n: angka(rs.length - MAKS_TAHUN) }))}</button>` : ""}</section>`;
   }).join("")}</div>`;
+  pasangTinggi(document.getElementById("isi"));
 }
 const jml = (rs, j) => rs.reduce((n, r) => n + (r.ikatan || []).filter((x) => x.jenis === j).length, 0);
 

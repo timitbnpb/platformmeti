@@ -524,8 +524,8 @@ a.jm-wp-op:hover{color:var(--accent)}
 .jm-wl-tek[hidden]{display:none}
 .jm-wl-tek label{flex:none;font:600 var(--t-label)/1 var(--font);color:var(--ink2)}
 .jm-wl-tek select,.jm-wl-tek .pc{flex:1;min-width:0}
-.jm-wl-ada-tek .jm-wl-pr{top:132px}
-.jm-wl-pr{display:flex;flex-direction:column;max-height:calc(100% - 156px);overflow:hidden}
+.jm-wl-bingkai .jm-wl-pr{top:116px}.jm-wl-ada-tek .jm-wl-pr{top:172px}
+.jm-wl-pr{display:flex;flex-direction:column;max-height:calc(100% - 200px);overflow:hidden}
 .jm-wl-pr #pr-isi{flex:1;min-height:0;overflow:auto}
 @media (max-width:899px){.jm-wl-pr{max-height:none}.jm-wl-ada-tek .jm-wl-pr{top:auto}}
 .jm-wl-c1{width:64px}.jm-wl-c3{width:160px}.jm-wl-c4{width:220px}.jm-wl-c5{width:96px}
@@ -533,3 +533,82 @@ a.jm-wp-op:hover{color:var(--accent)}
 .jm-wl-tabel td:last-child{padding-right:12px}
 .jm-wl-belum{color:var(--ink2);opacity:.7}
 @media (max-width:639px){.jm-wl-tabel td:nth-child(3){text-align:left}}
+
+/* ---------- profil provinsi: organisasi, peta proyek, emisi, perbandingan (wilayah_profil_kartu.js) ---------- */
+.jm-wp-sar{display:flex;flex-wrap:wrap;gap:10px 14px;align-items:center;margin:0 0 14px}
+.jm-wp-ringkas{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:6px}
+.jm-wp-rk{display:inline-flex;align-items:center;gap:6px;min-height:28px;padding:0 10px;border:1px solid var(--line);border-radius:999px;background:var(--card);color:var(--ink);font:var(--t-kecil) var(--font);cursor:pointer}
+.jm-wp-rk:hover{border-color:var(--accent-isi)}.jm-wp-rk b{color:var(--accent-isi)}
+.jm-wp-orgs{grid-template-columns:repeat(auto-fill,minmax(270px,1fr))}
+.jm-wp-orgs>li[hidden]{display:none}
+.jm-wp-org{align-items:flex-start}
+.jm-wp-lg{flex:none;display:grid;place-items:center;width:56px;height:56px;border:1px solid var(--line);border-radius:10px;background:white;overflow:hidden}
+.jm-wp-lg>*{grid-area:1/1}
+.jm-wp-lg img{width:100%;height:100%;padding:5px;box-sizing:border-box;object-fit:contain;background:white;border-radius:0}
+.jm-wp-lg .jm-wp-org-i{width:100%;height:100%;border-radius:0}
+.jm-wp-ob{display:flex;flex-direction:column;gap:4px;min-width:0}
+.jm-wp-ob b{font-size:var(--t-body);line-height:1.3;overflow-wrap:anywhere}
+.jm-wp-jenis{align-self:flex-start;gap:5px;font-size:var(--t-kecil)}
+.jm-wp-kota{display:inline-flex;align-items:center;gap:4px;color:var(--ink2);font-size:var(--t-kecil)}
+.jm-wp-kota svg{flex:none}
+/* peta */
+.jm-wp-pw{position:relative}
+.jm-wp-peta{height:clamp(380px,62vh,580px);width:100%}
+.jm-wp-pw:fullscreen{background:var(--paper)}.jm-wp-pw:fullscreen .jm-wp-peta{height:100vh;border-radius:0}
+.jm-wp-pk{position:absolute;top:10px;right:10px;z-index:2;display:flex;flex-direction:column;gap:1px;border-radius:8px;overflow:hidden;box-shadow:0 1px 4px rgba(0,0,0,.25)}
+.jm-wp-pkb{display:grid;place-items:center;width:34px;height:34px;border:0;background:var(--card);color:var(--ink);cursor:pointer}
+.jm-wp-pkb:hover{background:var(--info-bg);color:var(--accent-isi)}
+.jm-wp-lg-peta{display:flex;flex-wrap:wrap;gap:12px 28px;margin-top:12px;padding:10px 12px;border:1px solid var(--line);border-radius:var(--r);background:var(--card)}
+.jm-wp-lg-b{display:flex;flex-wrap:wrap;align-items:center;gap:8px 10px;font-size:var(--t-kecil)}
+.jm-wp-uk{display:inline-flex;align-items:flex-end;gap:12px}
+.jm-wp-uk-i{display:inline-flex;align-items:center;gap:5px}
+.jm-wp-uk-i i,.jm-wp-ti i{display:inline-block;border-radius:50%;background:var(--ink2);opacity:.85}
+.jm-wp-uk-1{width:12px;height:12px}.jm-wp-uk-2{width:16px;height:16px}.jm-wp-uk-3{width:26px;height:26px}
+.jm-wp-ti{display:inline-flex;align-items:center;gap:6px}.jm-wp-ti i{width:14px;height:14px}
+.jm-wp-ti .jm-wp-ti-u{background:transparent;border:2px solid var(--ink2);opacity:.6}
+.jm-wp-pop{display:grid;gap:6px;min-width:210px;font:var(--t-kecil) var(--font);color:var(--ink)}
+.jm-wp-pop img{width:100%;max-height:120px;object-fit:cover;border-radius:6px}
+.jm-wp-pop b{font-size:var(--t-body)}.jm-wp-pop-b{display:flex;flex-wrap:wrap;gap:6px}.jm-wp-pop-m{display:grid;gap:2px;color:var(--ink2)}
+.jm-wp-pop-l{font-weight:600}
+.maplibregl-popup-content{background:var(--card);color:var(--ink);border-radius:10px}
+/* emisi */
+.jm-we-ubin{list-style:none;margin:0 0 14px;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:10px}
+.jm-we-batubara{--sk:var(--ink2)}.jm-we-gas{--sk:var(--data3)}.jm-we-industri{--sk:var(--warn)}.jm-we-tekstil{--sk:var(--data1)}.jm-we-lain{--sk:var(--bad)}
+.jm-we-u{display:flex;align-items:center;gap:10px;padding:10px 12px;border:1px solid var(--line);border-left:4px solid var(--sk);border-radius:var(--r);background:var(--card)}
+.jm-we-ik{flex:none;display:grid;place-items:center;width:34px;height:34px;border-radius:50%;background:var(--info-bg);color:var(--sk)}
+.jm-we-ut{display:flex;flex-direction:column;min-width:0;font-size:var(--t-kecil);color:var(--ink2)}
+.jm-we-ut b{font-size:var(--t-tombol);color:var(--ink)}
+.jm-we{list-style:none;margin:0;padding:0;display:grid;gap:2px}
+.jm-we-r{display:grid;grid-template-columns:28px 34px minmax(0,1.3fr) minmax(0,1fr);align-items:center;gap:10px;padding:8px 6px;border-bottom:1px solid var(--line)}
+.jm-we-r[hidden]{display:none}
+.jm-we-no{color:var(--ink2);font-size:var(--t-kecil);text-align:center;font-variant-numeric:tabular-nums}
+.jm-we-nm{display:flex;flex-direction:column;gap:2px;min-width:0}
+.jm-we-nm b{font-size:var(--t-body);line-height:1.25;overflow-wrap:anywhere;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.jm-we-sub{display:flex;flex-wrap:wrap;gap:2px 10px;color:var(--ink2);font-size:var(--t-kecil)}
+.jm-we-s{display:inline-flex;align-items:center;gap:3px}
+.jm-we-v{display:grid;grid-template-columns:minmax(40px,1fr) auto;align-items:center;gap:10px}
+.jm-we-bar{height:6px;border-radius:3px;background:var(--line);overflow:hidden}
+.jm-we-bar i{display:block;height:100%;width:0;background:var(--sk);border-radius:3px}
+.jm-we-n{text-align:right;white-space:nowrap;font-variant-numeric:tabular-nums;font-size:var(--t-body)}
+.jm-we-n small{color:var(--ink2);font-weight:400;font-size:var(--t-kecil)}
+.jm-we-kaki{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:10px;margin-top:12px}
+.jm-we-kunci{display:inline-flex;flex-wrap:wrap;gap:6px 14px;font-size:var(--t-kecil);color:var(--ink2)}
+.jm-we-lg{display:inline-flex;align-items:center;gap:6px}.jm-we-lg i{width:10px;height:10px;border-radius:50%;background:var(--sk)}
+@media (max-width:640px){.jm-we-r{grid-template-columns:24px 30px minmax(0,1fr)}.jm-we-v{grid-column:1/-1;padding-left:34px}}
+/* perbandingan */
+.jm-wp-bd th:nth-child(1){width:30%}.jm-wp-bd th:nth-child(2){width:18%}.jm-wp-bd th:nth-child(3){width:14%}.jm-wp-bd th:nth-child(4){width:20%}.jm-wp-bd th:nth-child(5){width:18%}
+.jm-wp-bd td{vertical-align:middle}
+.jm-wp-bd td.jm-num{width:auto}
+.jm-wp-uk-n{display:inline-flex;align-items:center;gap:10px}
+.jm-wp-uk-ik{flex:none;display:grid;place-items:center;width:32px;height:32px;border-radius:8px;background:var(--info-bg);color:var(--accent-isi)}
+.jm-wp-v b{font-size:var(--t-tombol)}.jm-wp-v small{margin-left:4px;color:var(--ink2);font-size:var(--t-kecil)}
+.jm-wp-rk-p{gap:5px;white-space:nowrap}
+.jm-wp-ds{position:relative;display:block;height:18px;min-width:110px;margin:0 8px}
+.jm-wp-ds-g{position:absolute;left:0;right:0;top:8px;height:2px;border-radius:1px;background:var(--line)}
+.jm-wp-ds-m{position:absolute;top:3px;width:2px;height:12px;margin-left:-1px;background:var(--ink2);opacity:.7}
+.jm-wp-ds-o{position:absolute;top:2px;width:14px;height:14px;margin-left:-7px;border-radius:50%;background:var(--accent-isi);border:2px solid var(--card)}
+.jm-wp-top .jm-taut{white-space:nowrap}
+.jm-wl-lt,.jm-wl-lv{paint-order:stroke;stroke:var(--card);stroke-linejoin:round}
+.jm-wl-legenda{overflow:hidden;max-height:calc(100% - 28px)}
+.jm-wl-rp-s span{min-width:0}.jm-wl-lg-s{max-width:100%;white-space:normal}
+.jm-wl-ajak{color:var(--accent);font-weight:600}

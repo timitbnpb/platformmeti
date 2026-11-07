@@ -1,7 +1,6 @@
 /* /wilayah: peta koroplet 38 provinsi + profil provinsi (?prov=XX). Data statis /data/wilayah.json. */
 import { mulaiHalaman } from "/inti/kepala.js";
 import { geserPanel } from "/inti/panel_geser.js";
-import { pasangPeta3d } from "/inti/peta3d.js";
 import { unduhRegHtml } from "/inti/komponen.js";
 import { nanti, esc, hantuHtml, debounce } from "/inti/umum.js";
 import { t, tanggal } from "/i18n.js";
@@ -10,7 +9,7 @@ import { muatData, tampilGalat, sumberHtml, sumberLipat, pasangAksi, kartuHtml, 
 const $ = (id) => document.getElementById(id);
 const param = new URLSearchParams(location.search).get("prov");
 const REG = new Map();
-let data = null, geo = null, metrik = "terpasang", peta = null, petaSiap = false, p3 = null, tek = "semua";
+let data = null, geo = null, metrik = "terpasang", peta = null, petaSiap = false, tek = "semua";
 const PEL = new Map(); let PELMETA = null;
 const TEKS = ["surya", "bayu", "hidro", "mikrohidro", "panas_bumi", "bioenergi", "laut"], TEKIK = { panas_bumi: "panas-bumi", mikrohidro: "hidro", semua: "jaringan" };
 const daftarTek = () => (tek === "semua" ? TEKS : [tek]);
@@ -117,7 +116,7 @@ const jalur = (g) => {
 function tipHtml(p) {
   const m = metrik, kd = METRIK[m].kedua.map((k) => `<li><span>${esc(t("wl.m." + k))}</span><b>${esc(nilaiTeks(k, p))}</b></li>`).join("");
   const rk = METRIK[m].ambil(p) === null ? esc(t("an.tanpa_data")) : esc(t("wl.peringkat", { r: peringkat(m, p), n: data.baris.length }));
-  return `<header>${lambang(p, 36)}<div><strong>${esc(p.nama)}</strong><small>${rk}</small></div></header><p><span>${esc(t("wl.m." + m))}</span><b>${esc(nilaiTeks(m, p))}</b></p><ul>${kd}</ul><small class="jm-p3d-ajak">${esc(t("wl.tip.klik"))}</small>`;
+  return `<header>${lambang(p, 36)}<div><strong>${esc(p.nama)}</strong><small>${rk}</small></div></header><p><span>${esc(t("wl.m." + m))}</span><b>${esc(nilaiTeks(m, p))}</b></p><ul>${kd}</ul><small class="jm-wl-ajak">${esc(t("wl.tip.klik"))}</small>`;
 }
 
 function tampilTip(p, x, y) {
@@ -129,17 +128,7 @@ function tampilTip(p, x, y) {
   tip.style.top = Math.max(8, Math.min(b.height - th - 8, y + 14)) + "px";
 }
 
-const opsi3 = () => {
-  const m = metrik, bar = document.querySelector(".jm-wl-bar"), byKode = new Map(data.baris.map((p) => [p.kode, p]));
-  return {
-    nilai: new Map(data.baris.map((p) => [p.kode, METRIK[m].ambil(p)])), kelas: kelasPeta(m).kelas, nama: new Map(data.baris.map((p) => [p.kode, p.nama])),
-    satuan: METRIK[m].satuan, judulLegenda: t("wl.m." + m), nilaiTeks: (k) => nilaiTeks(m, byKode.get(k)), tip: (k) => tipHtml(byKode.get(k)),
-    tinggi: m !== "rued", label: m === "rued" ? 0 : 5, padding: { top: (bar?.offsetHeight || 52) + 24, bottom: 24, left: 24, right: 24 },
-  };
-};
-
 function warnai() {
-  if (p3) { p3.perbarui(opsi3()); peringkatPanel(); return; }
   const svg = $("peta").querySelector("svg");
   if (!svg) return;
   const { kelas } = kelasPeta(metrik);
@@ -157,21 +146,19 @@ function warnai() {
   const dipakai = [{ x: W - 340 / s, y: -1e4, w: 340 / s, h: 1e4 + 340 / s }]; // panel peringkat di kanan atas
   for (const p of urutM(metrik).slice(0, metrik === "rued" ? 0 : 5)) {
     const pa = svg.querySelector(`path[data-k="${p.kode}"]`), bb = pa.getBBox(), cx = bb.x + bb.width / 2, cy = bb.y + bb.height / 2;
-    const nm = p.nama, vl = nilaiTeks(metrik, p), w = (Math.max(nm.length * 6.3, vl.length * 7) + 34) / s, h = 34 / s;
+    const nm = p.nama, vl = nilaiTeks(metrik, p), w = (Math.max(nm.length * 5.8, vl.length * 6.4) + 6) / s, h = 26 / s;
     const kand = [];
-    for (const jar of [14, 40, 70]) for (const a of [90, 270, 0, 180, 45, 315, 135, 225]) {
+    for (const jar of [10, 26, 46, 72, 100]) for (const a of [90, 270, 0, 180, 45, 315, 135, 225]) {
       const r = (a * Math.PI) / 180, ax = cx + (Math.cos(r) * jar) / s, ay = cy - (Math.sin(r) * jar) / s;
       kand.push({ x: Math.cos(r) > 0.3 ? ax : Math.cos(r) < -0.3 ? ax - w : ax - w / 2, y: Math.sin(r) > 0.3 ? ay - h : Math.sin(r) < -0.3 ? ay : ay - h / 2, w, h, jar });
     }
     const tb = (a, b) => a.x < b.x + b.w && a.x + a.w > b.x && a.y < b.y + b.h && a.y + a.h > b.y;
     const k = kand.find((c) => !dipakai.some((o) => tb(c, o))) || kand[0];
     dipakai.push(k);
-    if (k.jar > 14) g.append(el("line", { class: "jm-wl-gl", x1: cx.toFixed(1), y1: cy.toFixed(1), x2: Math.max(k.x, Math.min(k.x + w, cx)).toFixed(1), y2: Math.max(k.y, Math.min(k.y + h, cy)).toFixed(1) }));
-    g.append(el("circle", { class: "jm-wl-gd", cx: cx.toFixed(1), cy: cy.toFixed(1), r: (3 / s).toFixed(2) }), el("rect", { class: "jm-wl-lr", x: k.x.toFixed(1), y: k.y.toFixed(1), width: w.toFixed(1), height: h.toFixed(1), rx: (8 / s).toFixed(1) }));
-    const im = el("image", { href: `/img/provinsi/${p.kode}.png`, x: (k.x + 8 / s).toFixed(1), y: (k.y + 9 / s).toFixed(1), width: (16 / s).toFixed(1), height: (16 / s).toFixed(1), preserveAspectRatio: "xMidYMid meet" });
-    const t1 = el("text", { class: "jm-wl-lt", x: (k.x + 30 / s).toFixed(1), y: (k.y + 14 / s).toFixed(1), "font-size": (11 / s).toFixed(2) }); t1.textContent = nm;
-    const t2 = el("text", { class: "jm-wl-lv", x: (k.x + 30 / s).toFixed(1), y: (k.y + 28 / s).toFixed(1), "font-size": (12 / s).toFixed(2) }); t2.textContent = vl;
-    g.append(im, t1, t2);
+    if (k.jar > 10) g.append(el("line", { class: "jm-wl-gl", x1: cx.toFixed(1), y1: cy.toFixed(1), x2: Math.max(k.x, Math.min(k.x + w, cx)).toFixed(1), y2: Math.max(k.y, Math.min(k.y + h, cy)).toFixed(1) }));
+    const hw = (2.5 / s).toFixed(2), t1 = el("text", { class: "jm-wl-lt", x: (k.x + 3 / s).toFixed(1), y: (k.y + 10 / s).toFixed(1), "font-size": (10.5 / s).toFixed(2), "stroke-width": hw }), t2 = el("text", { class: "jm-wl-lv", x: (k.x + 3 / s).toFixed(1), y: (k.y + 22 / s).toFixed(1), "font-size": (11 / s).toFixed(2), "stroke-width": hw });
+    t1.textContent = nm; t2.textContent = vl; t1.style.fontSize = (10.5 / s).toFixed(2) + "px"; t2.style.fontSize = (11 / s).toFixed(2) + "px";
+    g.append(el("circle", { class: "jm-wl-gd", cx: cx.toFixed(1), cy: cy.toFixed(1), r: (2.6 / s).toFixed(2) }), t1, t2);
   }
   peringkatPanel();
 }
@@ -182,18 +169,6 @@ function peringkatPanel() {
 }
 
 async function bukaPeta() {
-  p3 = await pasangPeta3d($("peta"), opsi3()).catch(() => null);
-  if (p3) {
-    const pr = $("peringkat"), li = (k) => pr.querySelectorAll("li").forEach((x) => x.classList.toggle("jm-wl-aktif", x.dataset.k === k));
-    $("peta").addEventListener("jm:p3d-sorot", (e) => li(e.detail));
-    pr.addEventListener("mouseover", (e) => { const l = e.target.closest("li[data-k]"); if (l) p3.sorot(l.dataset.k); });
-    pr.addEventListener("focusin", (e) => { const l = e.target.closest("li[data-k]"); if (l) p3.sorot(l.dataset.k); });
-    pr.addEventListener("mouseleave", () => p3.sorot(null));
-    pr.addEventListener("click", (e) => { const l = e.target.closest("li[data-k]"); if (l) location.assign(`/wilayah?prov=${encodeURIComponent(l.dataset.k)}`); });
-    pr.addEventListener("keydown", (e) => { if (e.key === "Enter") e.target.closest("li[data-k]")?.click(); });
-    if (innerWidth >= 900) for (const [id, k] of [["peringkat", "peringkat"], ["legenda", "legenda"]]) geserPanel($(id), { kunci: k });
-    petaSiap = true; peringkatPanel(); return;
-  }
   try { geo = await (await fetch("/geo/provinsi.json", { credentials: "same-origin" })).json(); }
   catch (e) { $("peta").innerHTML = `<p class="jm-bantu">${esc(t("wl.peta_gagal"))}</p>`; return; }
   const nama = new Map(data.baris.map((p) => [p.kode, p]));

@@ -464,6 +464,8 @@ html.jm-ada-rel.jm-rel-tampil body{padding-bottom:calc(80px + env(safe-area-inse
 .jm-tabel th{padding:9px 14px}
 /* jarak wajib antar kartu/exhibit yang bertumpuk (pemilik: tidak boleh dempet) */
 :is(.jm-ex,.jm-kartu,.jm-pk-b,.jm-kal-kartu,article,section.jm-bagian-kartu)+:is(.jm-ex,.jm-kartu,.jm-pk-b,.jm-kal-kartu,article,section.jm-bagian-kartu){margin-top:24px}
+/* kecuali anak kisi/grid/daftar: kartu sejajar tidak boleh bergeser (pemilik 8 Nov 2026: tinggi kartu Pustaka harus sama) */
+:is([class*="kisi"],[class*="grid"],[class*="daftar"],[class*="deret"],[style*="grid"])>:is(.jm-ex,.jm-kartu,.jm-pk-b,.jm-kal-kartu,article,section.jm-bagian-kartu){margin-top:0!important}
 main>:is(section,div,article)+:is(section,div,article){margin-top:max(24px,var(--gap,12px))}
 
 /* ===== Pemilih cantik (inti/pilih.js): tombol pil berikon + menu kartu fixed ===== */
@@ -542,3 +544,29 @@ main>:is(section,div,article)+:is(section,div,article){margin-top:max(24px,var(-
 .jm-geser-sudut{position:absolute;right:2px;bottom:2px;width:16px;height:16px;cursor:nwse-resize;touch-action:none;z-index:3;background:linear-gradient(135deg,transparent 50%,var(--line-ctl) 50%,var(--line-ctl) 60%,transparent 60%,transparent 70%,var(--line-ctl) 70%,var(--line-ctl) 80%,transparent 80%);border-bottom-right-radius:var(--r-sm)}
 .jm-geser.sisi-kanan>.jm-geser-sudut{right:auto;left:2px;cursor:nesw-resize;transform:scaleX(-1)}
 .jm-geser{overflow:auto}
+/* grafik regulasi per tahun: kolom HTML, teks ukuran token (8 Nov 2026) */
+.jm-lg{padding:20px 24px}
+.jm-lg-kep{align-items:flex-start;margin-bottom:16px}
+.jm-lg-eb{display:inline-flex;align-items:center;gap:6px;margin:0 0 6px;padding:2px 10px;border-radius:var(--r-pil);background:var(--soft-hijau);color:var(--accent);font:600 var(--t-label)/1.6 var(--font)}
+.jm-lg-kep h3{display:block;margin:0;font:700 var(--t-h2)/var(--lh-judul) var(--display);color:var(--head)}
+.jm-lg-sub{margin:4px 0 0;font-size:var(--t-kecil);color:var(--ink2)}
+.jm-lg-leg{gap:14px}.jm-lg-leg>span{display:inline-flex;align-items:center;gap:6px}.jm-lg-leg i{margin:0!important}
+.jm-lg-badan{position:relative;height:220px;padding-top:22px}
+.jm-lg-kolom{position:absolute;inset:22px 0 0;display:grid;grid-auto-flow:column;grid-auto-columns:minmax(0,1fr);gap:6px;align-items:end;border-bottom:1px solid var(--line)}
+.jm-lg-k{all:unset;box-sizing:border-box;position:relative;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;height:100%;padding-bottom:22px;cursor:pointer;border-radius:var(--r-sm)}
+.jm-lg-k:hover,.jm-lg-k:focus-visible,.jm-lg-pilih{background:var(--soft-hijau)}
+.jm-lg-k:focus-visible{outline:2px solid var(--fokus);outline-offset:1px}
+.jm-lg-v{font:700 var(--t-tombol)/1 var(--font);color:var(--head);margin-bottom:4px;font-variant-numeric:tabular-nums}
+.jm-lg-puncak .jm-lg-v{color:var(--accent)}
+.jm-lg-batang{display:flex;flex-direction:column;width:min(70%,44px);height:calc(var(--h,0%) * .82);min-height:2px;border-radius:6px 6px 2px 2px;overflow:hidden;transition:height .3s ease}
+.jm-lg-batang i{display:block;height:var(--h,0%)}
+.jm-lg-batang i.jm-lg-n{background:var(--data2)}.jm-lg-batang i.jm-lg-d{background:var(--data3)}
+.jm-lg-y{position:absolute;bottom:4px;font:500 var(--t-kecil)/1 var(--font);color:var(--ink2);font-variant-numeric:tabular-nums}
+.jm-lg-rata{position:absolute;left:0;right:0;bottom:calc(var(--h,0%) * .82 * (100% - 44px) / 100% + 22px);border-top:1px dashed var(--ink2);opacity:.6;pointer-events:none;z-index:1}
+.jm-lg-rata span{position:absolute;right:0;top:-18px;font:500 var(--t-label)/1 var(--font);color:var(--ink2);background:var(--card);padding:2px 4px}
+.jm-lg-tip{position:absolute;bottom:calc(100% - 18px);left:50%;transform:translateX(-50%);display:none;flex-direction:column;gap:4px;min-width:140px;padding:8px 10px;border:1px solid var(--line);border-radius:var(--r-sm);background:var(--card);box-shadow:var(--shadow);font:400 var(--t-kecil)/1.3 var(--font);color:var(--ink);white-space:nowrap;z-index:5}
+.jm-lg-tip>span{display:flex;align-items:center;gap:6px}.jm-lg-tip i{width:8px;height:8px;border-radius:2px}
+.jm-lg-k:hover .jm-lg-tip,.jm-lg-k:focus-visible .jm-lg-tip{display:flex}
+@media (max-width:639px){.jm-lg-y{font-size:var(--t-label)}.jm-lg-kolom{gap:2px}.jm-lg-v{font-size:var(--t-label)}}
+@media (prefers-reduced-motion:reduce){.jm-lg-batang{transition:none}}
+.jm-lg-eb svg,.jm-lg-eb .jm-ik{width:14px!important;height:14px!important;flex:none}.jm-lg-eb span{white-space:nowrap}.jm-lg-kep>div{flex:1;min-width:0}
