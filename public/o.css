@@ -244,3 +244,4 @@ a.oj-or-n:hover{color:var(--accent)}
   .oj-bt-f{width:64px;height:52px}
   .oj-bag .pf-prog a{grid-template-columns:minmax(90px,30%) minmax(0,1fr)}
 }
+@media (max-width:640px){.oj-ub{gap:16px}}

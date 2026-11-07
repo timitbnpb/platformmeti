@@ -7,6 +7,7 @@
 import { readFileSync, writeFileSync, mkdirSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import { perdalam } from './topik_dalam_bayu.mjs';
+import { tambahJalanModel } from './topik_jalan_lib.mjs';
 
 const DATA = new URL('../../public/data/', import.meta.url);
 const baca = (n) => JSON.parse(readFileSync(new URL(n, DATA), 'utf8'));
@@ -830,7 +831,7 @@ function bangunDasar() {
   };
 }
 
-export function bangun() { return perdalam(bangunDasar(), SUMBER); }
+export function bangun() { return tambahJalanModel(perdalam(bangunDasar(), SUMBER), 'bayu'); }
 
 /* ---------- pemeriksaan bentuk (dipakai --selftest dan tests/topik_bayu.test.mjs) ---------- */
 export function periksa(D) {
@@ -857,7 +858,7 @@ export function periksa(D) {
   for (const k of D.kunci) { rujuk(k.sumber, 'kunci'); if (k.est === undefined) e.push('kunci tanpa est'); }
   const FAK = new Set(), PER = new Set(), TAH = new Set();
   for (const [n, b] of Object.entries(D.bab)) {
-    const num = Number(n); if (!(num >= 2 && num <= 42)) e.push('nomor bab di luar rentang ' + n);
+    const num = Number(n); if (!(num >= 2 && num <= 44)) e.push('nomor bab di luar rentang ' + n);
     rujuk(b.sumber, 'bab ' + n);
     if (b.tipe === 'teks') { for (const p of b.paragraf) if ((b.sumber || []).length && b.sumber.every((s) => D.sumber[s]?.bukti === 'editorial') && !/^Analisis METI \(Hipotesis\)|^METI analysis \(Hypothesis\)/.test(p.id + p.en)) e.push('paragraf editorial tanpa label bab ' + n); }
     if (b.tipe === 'tabel') for (const r of b.baris) for (const c of b.kolom) if (!(c.k in r)) e.push(`bab ${n} sel hilang ${c.k}`);

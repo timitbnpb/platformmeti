@@ -2,6 +2,7 @@
    Semua angka berasal dari berkas data; turunan hitung sendiri berlabel EST. Teks antarmuka di data/topik/ui.json, naskah di data/topik/karbon.json. */
 import { S, L, u, num, tok, aman, tautan, est, esc, ikon, tanggal, bulan, pilu, daftarTabel, subjudul, teksHtml, garisTip } from "/topik_umum.js";
 import { kolom, batang } from "/grafik.js";
+import { negaraSel, isoNegara } from "/topik_wujud.js";
 import { khUbinHtml } from "/inti/kh.js";
 import * as B from "/topik_bab.js";
 
@@ -147,7 +148,7 @@ K[20] = ({ lu }) => {
   const baris = lu.negara;
   const ST = (n, k) => (n[k]?.nilai ? u("instr." + (/^Has an? (carbon tax|ETS)$/.test(n[k].nilai) ? "ada" : /sub-national/.test(n[k].nilai) ? "sub" : "tidak")) : "-");
   const tabel = daftarTabel("benchmark", [
-    { k: "n", l: u("k.negara"), f: (r) => `<b>${esc(L(r.nama))}</b>`, v: (r) => L(r.nama) },
+    { k: "n", l: u("k.negara"), f: (r) => negaraSel(L(r.nama)), v: (r) => L(r.nama) },
     { k: "p", l: u("k.pajak"), f: (r) => ST(r, "pajak_status"), v: (r) => ST(r, "pajak_status") },
     { k: "e", l: u("k.ets"), f: (r) => ST(r, "ets_status"), v: (r) => ST(r, "ets_status") },
     { k: "hp", l: u("k.harga_pajak"), num: true, f: (r) => num(r.harga_pajak?.[1], 1), v: (r) => r.harga_pajak?.[1] },
@@ -156,10 +157,10 @@ K[20] = ({ lu }) => {
     { k: "s", l: u("k.tahun_mulai"), num: true, f: (r) => esc(String(r.pajak_sejak || r.ets_sejak || "-")), v: (r) => r.pajak_sejak || r.ets_sejak },
     { k: "k", l: u("k.kapita"), num: true, f: (r) => num(r.per_kapita?.[1], 1), v: (r) => r.per_kapita?.[1] },
     { k: "i", l: u("k.intensitas_listrik"), num: true, f: (r) => num(r.intensitas_listrik?.[1]), v: (r) => r.intensitas_listrik?.[1] }], baris, 8);
-  const sorot = (n) => n.kode === "IDN";
-  const gC = batang([...baris].sort((a, z) => (z.cakupan?.semua ?? 0) - (a.cakupan?.semua ?? 0)).map((n) => ({ label: L(n.nama), v: n.cakupan?.semua ?? 0, teks: num(n.cakupan?.semua, 1) + "%", sorot: sorot(n) })), { maks: 100, label: u("g.cakupan") });
+  const sorot = (n) => n.kode === "IDN", bd = (n) => { const i = isoNegara(L(n.nama).split(" (")[0]); return i ? { img: `/img/bendera/${i}.svg`, bend: true } : {}; };
+  const gC = batang([...baris].sort((a, z) => (z.cakupan?.semua ?? 0) - (a.cakupan?.semua ?? 0)).map((n) => ({ label: L(n.nama), ...bd(n), v: n.cakupan?.semua ?? 0, teks: num(n.cakupan?.semua, 1) + "%", sorot: sorot(n) })), { maks: 100, label: u("g.cakupan") });
   const hg = (n) => Math.max(n.harga_ets?.[1] || 0, n.harga_pajak?.[1] || 0);
-  const gH = batang([...baris].sort((a, z) => hg(z) - hg(a)).map((n) => ({ label: L(n.nama), v: hg(n), teks: "US$" + num(hg(n), 1), sorot: sorot(n) })), { label: u("g.harga_luar") });
+  const gH = batang([...baris].sort((a, z) => hg(z) - hg(a)).map((n) => ({ label: L(n.nama), ...bd(n), v: hg(n), teks: "US$" + num(hg(n), 1), sorot: sorot(n) })), { label: u("g.harga_luar") });
   const pilih = ["IDN", "CHN", "KOR", "DEU", "ZAF"].map((k) => baris.find((n) => n.kode === k)), tahun = pilih[0].deret_cakupan.map((p) => p[0]);
   const gT = garisTip(tahun.map(String), pilih.map((n) => ({ nama: L(n.nama).split(" (")[0], sorot: n.kode === "IDN", v: tahun.map((y) => n.deret_cakupan.find((p) => p[0] === y)?.[1] ?? null) })), { d: 0, satuan: "%", label: u("g.cakupan_tren") });
   const pil2 = ["IDN", "MYS", "CHN", "DEU", "ZAF"].map((k) => baris.find((n) => n.kode === k)), thn2 = pil2[0].deret_intensitas.map((p) => p[0]);

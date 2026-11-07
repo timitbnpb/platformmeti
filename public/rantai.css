@@ -115,7 +115,7 @@ main.jm-an .jm-ex>.jm-ex-hd>.jm-ex-teks>.jm-ex-sub{grid-row:2}
 @media (max-width:719px){.jm-rp-tabel td.jm-num{text-align:left}}
 /* ---- cara menghitung: daftar bernomor 2 kolom ---- */
 .jm-rt-cara{list-style:none;counter-reset:rtc;margin:0;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
-.jm-rt-cara li{counter-increment:rtc;position:relative;padding:14px 16px 14px 56px;border:1px solid var(--line);border-radius:var(--r-sm);background:var(--surface);text-align:justify;hyphens:auto;line-height:var(--lh-isi)}
+.jm-rt-cara li{counter-increment:rtc;position:relative;padding:14px 16px 14px 56px;border:1px solid var(--line);border-radius:var(--r-sm);background:var(--surface);text-align:left;hyphens:manual;line-height:var(--lh-isi)}
 .jm-rt-cara li::before{content:counter(rtc);position:absolute;left:14px;top:14px;display:grid;place-items:center;width:28px;height:28px;border-radius:50%;background:var(--soft-hijau);color:var(--accent);font-weight:700}
 @media (max-width:719px){.jm-rt-cara{grid-template-columns:1fr}}
 /* ---- pop-up pabrikan ---- */

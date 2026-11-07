@@ -12,7 +12,7 @@ const butir = Object.entries(ix).flatMap(([g, a]) => a.map((e) => ({ g, judul: e
 const teratas = (q, g) => (cari(butir, q, 5).get(g) || []).map((x) => x.judul);
 
 test("indeks: semua jenis inti ada, judul dan tautan terisi, tautan luar hanya http(s)", () => {
-  for (const g of ["org", "orang", "proyek", "reg", "topik", "berita", "pakar", "inovasi", "pendanaan", "program", "wilayah", "halaman"]) assert.ok(ix[g]?.length, `jenis ${g} kosong`);
+  for (const g of ["org", "orang", "proyek", "reg", "topik", "berita", "pakar", "inovasi", "pendanaan", "program", "wilayah", "halaman", "istilah"]) assert.ok(ix[g]?.length, `jenis ${g} kosong`);
   for (const [g, a] of Object.entries(ix)) for (const e of a) {
     assert.ok(e.j && e.u, `${g}: butir tanpa judul/tautan`);
     assert.ok(e.e ? /^https?:\/\//.test(e.u) : e.u.startsWith("/"), `${g}: tautan tak aman ${e.u}`);

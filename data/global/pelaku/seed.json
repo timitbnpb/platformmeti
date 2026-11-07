@@ -1,0 +1,950 @@
+{
+ "_catatan": "Daftar pelaku global yang diminta; situs dugaan awal, DIVERIFIKASI saat panen (beranda terbaca atau host sama dengan P856 Wikidata). Tanpa verifikasi: tidak masuk direktori.",
+ "baris": [
+  {
+   "nama": "ACWA Power",
+   "situs": "https://acwapower.com/",
+   "iso2": "SA",
+   "kelompok": "ipp",
+   "topik": [
+    "surya",
+    "bayu",
+    "hidrogen"
+   ]
+  },
+  {
+   "nama": "Masdar",
+   "situs": "https://masdar.ae/",
+   "iso2": "AE",
+   "kelompok": "ipp",
+   "topik": [
+    "surya",
+    "bayu",
+    "hidrogen"
+   ],
+   "cari": "Masdar Abu Dhabi Future Energy Company"
+  },
+  {
+   "nama": "ENGIE",
+   "situs": "https://www.engie.com/",
+   "iso2": "FR",
+   "kelompok": "ipp",
+   "topik": [
+    "surya",
+    "bayu",
+    "panas-bumi",
+    "hidrogen"
+   ]
+  },
+  {
+   "nama": "EDF",
+   "situs": "https://www.edf.fr/",
+   "iso2": "FR",
+   "kelompok": "ipp",
+   "topik": [
+    "surya",
+    "bayu",
+    "hidro"
+   ],
+   "cari": "Electricite de France"
+  },
+  {
+   "nama": "Sembcorp Industries",
+   "situs": "https://www.sembcorp.com/",
+   "iso2": "SG",
+   "kelompok": "ipp",
+   "topik": [
+    "surya",
+    "bayu"
+   ]
+  },
+  {
+   "nama": "Gentari",
+   "situs": "https://gentari.com/",
+   "iso2": "MY",
+   "kelompok": "ipp",
+   "topik": [
+    "surya",
+    "bayu",
+    "hidrogen"
+   ]
+  },
+  {
+   "nama": "TotalEnergies",
+   "situs": "https://totalenergies.com/",
+   "iso2": "FR",
+   "kelompok": "ipp",
+   "topik": [
+    "surya",
+    "bayu"
+   ]
+  },
+  {
+   "nama": "Total Eren",
+   "situs": "https://total-eren.com/",
+   "iso2": "FR",
+   "kelompok": "ipp",
+   "topik": [
+    "surya",
+    "bayu",
+    "hidro"
+   ]
+  },
+  {
+   "nama": "Orsted",
+   "situs": "https://orsted.com/",
+   "iso2": "DK",
+   "kelompok": "ipp",
+   "topik": [
+    "bayu"
+   ],
+   "cari": "Ørsted"
+  },
+  {
+   "nama": "Marubeni",
+   "situs": "https://www.marubeni.com/",
+   "iso2": "JP",
+   "kelompok": "ipp",
+   "topik": [
+    "surya",
+    "bayu",
+    "panas-bumi"
+   ]
+  },
+  {
+   "nama": "Sumitomo Corporation",
+   "situs": "https://www.sumitomocorp.com/",
+   "iso2": "JP",
+   "kelompok": "ipp",
+   "topik": [
+    "panas-bumi",
+    "surya"
+   ]
+  },
+  {
+   "nama": "Mitsubishi Corporation",
+   "situs": "https://www.mitsubishicorp.com/",
+   "iso2": "JP",
+   "kelompok": "ipp",
+   "topik": [
+    "surya",
+    "bayu",
+    "hidrogen"
+   ]
+  },
+  {
+   "nama": "Kansai Electric Power",
+   "situs": "https://www.kepco.co.jp/",
+   "iso2": "JP",
+   "kelompok": "ipp",
+   "topik": [
+    "panas-bumi",
+    "hidro"
+   ]
+  },
+  {
+   "nama": "JERA",
+   "situs": "https://www.jera.co.jp/",
+   "iso2": "JP",
+   "kelompok": "ipp",
+   "topik": [
+    "hidrogen",
+    "biomassa"
+   ]
+  },
+  {
+   "nama": "Ormat Technologies",
+   "situs": "https://ormat.com/",
+   "iso2": "US",
+   "kelompok": "ipp",
+   "topik": [
+    "panas-bumi"
+   ]
+  },
+  {
+   "nama": "Quantum Power Asia",
+   "situs": "https://www.quantum-power.asia/",
+   "iso2": "SG",
+   "kelompok": "ipp",
+   "topik": [
+    "surya"
+   ]
+  },
+  {
+   "nama": "Sunseap Group",
+   "situs": "https://www.sunseap.com/",
+   "iso2": "SG",
+   "kelompok": "ipp",
+   "topik": [
+    "surya"
+   ]
+  },
+  {
+   "nama": "EDP Renewables",
+   "situs": "https://www.edpr.com/",
+   "iso2": "PT",
+   "kelompok": "ipp",
+   "topik": [
+    "surya",
+    "bayu"
+   ]
+  },
+  {
+   "nama": "Vena Energy",
+   "situs": "https://www.venaenergy.com/",
+   "iso2": "SG",
+   "kelompok": "ipp",
+   "topik": [
+    "surya",
+    "bayu"
+   ]
+  },
+  {
+   "nama": "ReNew",
+   "situs": "https://www.renew.com/",
+   "iso2": "IN",
+   "kelompok": "ipp",
+   "topik": [
+    "surya",
+    "bayu"
+   ],
+   "cari": "ReNew Energy Global"
+  },
+  {
+   "nama": "Adani Green Energy",
+   "situs": "https://www.adanigreenenergy.com/",
+   "iso2": "IN",
+   "kelompok": "ipp",
+   "topik": [
+    "surya",
+    "bayu"
+   ]
+  },
+  {
+   "nama": "SUN Cable",
+   "situs": "https://www.suncable.energy/",
+   "iso2": "AU",
+   "kelompok": "ipp",
+   "topik": [
+    "surya",
+    "transmisi"
+   ]
+  },
+  {
+   "nama": "Equis Energy",
+   "situs": "https://www.equis.com/",
+   "iso2": "SG",
+   "kelompok": "ipp",
+   "topik": [
+    "surya",
+    "bayu"
+   ]
+  },
+  {
+   "nama": "Pertamina Geothermal Energy",
+   "situs": "https://pge.pertamina.com/",
+   "iso2": "ID",
+   "kelompok": "ipp",
+   "topik": [
+    "panas-bumi"
+   ]
+  },
+  {
+   "nama": "Star Energy Geothermal",
+   "situs": "https://www.starenergy.co.id/",
+   "iso2": "ID",
+   "kelompok": "ipp",
+   "topik": [
+    "panas-bumi"
+   ]
+  },
+  {
+   "nama": "Medco Power Indonesia",
+   "situs": "https://www.medcopower.co.id/",
+   "iso2": "ID",
+   "kelompok": "ipp",
+   "topik": [
+    "panas-bumi",
+    "surya"
+   ]
+  },
+  {
+   "nama": "PowerChina",
+   "situs": "https://www.powerchina.cn/",
+   "iso2": "CN",
+   "kelompok": "epc",
+   "topik": [
+    "hidro",
+    "surya",
+    "bayu"
+   ],
+   "cari": "Power Construction Corporation of China"
+  },
+  {
+   "nama": "China Energy Engineering Corporation",
+   "situs": "https://www.ceec.net.cn/",
+   "iso2": "CN",
+   "kelompok": "epc",
+   "topik": [
+    "surya",
+    "bayu",
+    "PLTU"
+   ],
+   "cari": "China Energy Engineering"
+  },
+  {
+   "nama": "China National Electric Engineering",
+   "situs": "https://www.cneec.com.cn/",
+   "iso2": "CN",
+   "kelompok": "epc",
+   "topik": [
+    "surya",
+    "PLTU"
+   ],
+   "cari": "CNEEC"
+  },
+  {
+   "nama": "Sterling and Wilson",
+   "situs": "https://www.sterlingandwilson.com/",
+   "iso2": "IN",
+   "kelompok": "epc",
+   "topik": [
+    "surya"
+   ],
+   "cari": "Sterling and Wilson Solar"
+  },
+  {
+   "nama": "Larsen and Toubro",
+   "situs": "https://www.larsentoubro.com/",
+   "iso2": "IN",
+   "kelompok": "epc",
+   "topik": [
+    "surya",
+    "transmisi"
+   ],
+   "cari": "Larsen & Toubro"
+  },
+  {
+   "nama": "Hyundai Engineering and Construction",
+   "situs": "https://www.hdec.kr/",
+   "iso2": "KR",
+   "kelompok": "epc",
+   "topik": [
+    "PLTU",
+    "surya"
+   ],
+   "cari": "Hyundai Engineering & Construction"
+  },
+  {
+   "nama": "Samsung C&T",
+   "situs": "https://www.samsungcnt.com/",
+   "iso2": "KR",
+   "kelompok": "epc",
+   "topik": [
+    "surya",
+    "bayu"
+   ]
+  },
+  {
+   "nama": "Toyo Engineering",
+   "situs": "https://www.toyo-eng.com/",
+   "iso2": "JP",
+   "kelompok": "epc",
+   "topik": [
+    "hidrogen",
+    "biofuel"
+   ]
+  },
+  {
+   "nama": "JGC Holdings",
+   "situs": "https://www.jgc.com/",
+   "iso2": "JP",
+   "kelompok": "epc",
+   "topik": [
+    "hidrogen",
+    "panas-bumi"
+   ]
+  },
+  {
+   "nama": "Mitsui E&S",
+   "situs": "https://www.mes.co.jp/",
+   "iso2": "JP",
+   "kelompok": "epc",
+   "topik": [
+    "PLTU",
+    "hidrogen"
+   ]
+  },
+  {
+   "nama": "TUV SUD",
+   "situs": "https://www.tuvsud.com/",
+   "iso2": "DE",
+   "kelompok": "uji",
+   "topik": [
+    "surya",
+    "bayu"
+   ],
+   "cari": "TÜV SÜD"
+  },
+  {
+   "nama": "TUV Rheinland",
+   "situs": "https://www.tuv.com/",
+   "iso2": "DE",
+   "kelompok": "uji",
+   "topik": [
+    "surya"
+   ],
+   "cari": "TÜV Rheinland"
+  },
+  {
+   "nama": "TUV Nord",
+   "situs": "https://www.tuev-nord.de/",
+   "iso2": "DE",
+   "kelompok": "uji",
+   "topik": [
+    "surya",
+    "bayu"
+   ],
+   "cari": "TÜV NORD"
+  },
+  {
+   "nama": "DNV",
+   "situs": "https://www.dnv.com/",
+   "iso2": "NO",
+   "kelompok": "uji",
+   "topik": [
+    "bayu",
+    "surya",
+    "hidrogen"
+   ]
+  },
+  {
+   "nama": "UL Solutions",
+   "situs": "https://www.ul.com/",
+   "iso2": "US",
+   "kelompok": "uji",
+   "topik": [
+    "surya",
+    "baterai"
+   ],
+   "cari": "UL Solutions"
+  },
+  {
+   "nama": "Bureau Veritas",
+   "situs": "https://group.bureauveritas.com/",
+   "iso2": "FR",
+   "kelompok": "uji",
+   "topik": [
+    "surya",
+    "bayu"
+   ]
+  },
+  {
+   "nama": "SGS",
+   "situs": "https://www.sgs.com/",
+   "iso2": "CH",
+   "kelompok": "uji",
+   "topik": [
+    "surya",
+    "biofuel"
+   ]
+  },
+  {
+   "nama": "Intertek",
+   "situs": "https://www.intertek.com/",
+   "iso2": "GB",
+   "kelompok": "uji",
+   "topik": [
+    "surya",
+    "baterai"
+   ]
+  },
+  {
+   "nama": "Kiwa PVEL",
+   "situs": "https://pvel.kiwa.com/",
+   "iso2": "US",
+   "kelompok": "uji",
+   "topik": [
+    "surya"
+   ],
+   "cari": "PV Evolution Labs"
+  },
+  {
+   "nama": "Renewable Energy Test Center",
+   "situs": "https://retc.com/",
+   "iso2": "US",
+   "kelompok": "uji",
+   "topik": [
+    "surya",
+    "baterai"
+   ],
+   "cari": "RETC"
+  },
+  {
+   "nama": "Balai Besar Pengujian Perangkat Telekomunikasi",
+   "situs": "https://www.bbppt.postel.go.id/",
+   "iso2": "ID",
+   "kelompok": "uji",
+   "topik": []
+  },
+  {
+   "nama": "B4T Kementerian Perindustrian",
+   "situs": "https://b4t.kemenperin.go.id/",
+   "iso2": "ID",
+   "kelompok": "uji",
+   "topik": [],
+   "cari": "Balai Besar Bahan dan Barang Teknik"
+  },
+  {
+   "nama": "PLN Puslitbang",
+   "situs": "https://plnlitbang.co.id/",
+   "iso2": "ID",
+   "kelompok": "uji",
+   "topik": [
+    "jaringan",
+    "surya"
+   ],
+   "cari": "PLN Puslitbang"
+  },
+  {
+   "nama": "LSPro PT PLN Persero",
+   "situs": "https://lsp.pln.co.id/",
+   "iso2": "ID",
+   "kelompok": "uji",
+   "topik": [],
+   "cari": "LSPro PLN"
+  },
+  {
+   "nama": "Tractebel",
+   "situs": "https://tractebel-engie.com/",
+   "iso2": "BE",
+   "kelompok": "konsultan",
+   "topik": [
+    "hidro",
+    "panas-bumi",
+    "surya"
+   ],
+   "cari": "Tractebel Lahmeyer"
+  },
+  {
+   "nama": "Mott MacDonald",
+   "situs": "https://www.mottmac.com/",
+   "iso2": "GB",
+   "kelompok": "konsultan",
+   "topik": [
+    "surya",
+    "hidro",
+    "transmisi"
+   ]
+  },
+  {
+   "nama": "Ricardo",
+   "situs": "https://www.ricardo.com/",
+   "iso2": "GB",
+   "kelompok": "konsultan",
+   "topik": [
+    "baterai",
+    "hidrogen"
+   ]
+  },
+  {
+   "nama": "WSP",
+   "situs": "https://www.wsp.com/",
+   "iso2": "CA",
+   "kelompok": "konsultan",
+   "topik": [
+    "surya",
+    "transmisi"
+   ]
+  },
+  {
+   "nama": "Arup",
+   "situs": "https://www.arup.com/",
+   "iso2": "GB",
+   "kelompok": "konsultan",
+   "topik": [
+    "transmisi",
+    "bayu"
+   ]
+  },
+  {
+   "nama": "Fichtner",
+   "situs": "https://www.fichtner.de/",
+   "iso2": "DE",
+   "kelompok": "konsultan",
+   "topik": [
+    "hidro",
+    "panas-bumi"
+   ]
+  },
+  {
+   "nama": "Jacobs",
+   "situs": "https://www.jacobs.com/",
+   "iso2": "US",
+   "kelompok": "konsultan",
+   "topik": [
+    "hidro",
+    "transmisi"
+   ]
+  },
+  {
+   "nama": "AECOM",
+   "situs": "https://aecom.com/",
+   "iso2": "US",
+   "kelompok": "konsultan",
+   "topik": [
+    "transmisi",
+    "surya"
+   ]
+  },
+  {
+   "nama": "Baker McKenzie",
+   "situs": "https://www.bakermckenzie.com/",
+   "iso2": "US",
+   "kelompok": "konsultan",
+   "topik": [
+    "hukum"
+   ]
+  },
+  {
+   "nama": "Allen and Overy Shearman",
+   "situs": "https://www.aoshearman.com/",
+   "iso2": "GB",
+   "kelompok": "konsultan",
+   "topik": [
+    "hukum"
+   ],
+   "cari": "Allen & Overy"
+  },
+  {
+   "nama": "Assegaf Hamzah and Partners",
+   "situs": "https://www.ahp.id/",
+   "iso2": "ID",
+   "kelompok": "konsultan",
+   "topik": [
+    "hukum"
+   ],
+   "cari": "Assegaf Hamzah & Partners"
+  },
+  {
+   "nama": "Norton Rose Fulbright",
+   "situs": "https://www.nortonrosefulbright.com/",
+   "iso2": "GB",
+   "kelompok": "konsultan",
+   "topik": [
+    "hukum"
+   ]
+  },
+  {
+   "nama": "Rothschild and Co",
+   "situs": "https://www.rothschildandco.com/",
+   "iso2": "GB",
+   "kelompok": "konsultan",
+   "topik": [
+    "penasihat-keuangan"
+   ],
+   "cari": "Rothschild & Co"
+  },
+  {
+   "nama": "Lazard",
+   "situs": "https://www.lazard.com/",
+   "iso2": "US",
+   "kelompok": "konsultan",
+   "topik": [
+    "penasihat-keuangan"
+   ]
+  },
+  {
+   "nama": "Multilateral Investment Guarantee Agency",
+   "situs": "https://www.miga.org/",
+   "iso2": "US",
+   "kelompok": "eca",
+   "topik": [],
+   "cari": "MIGA"
+  },
+  {
+   "nama": "Indonesia Infrastructure Guarantee Fund",
+   "situs": "https://iigf.co.id/",
+   "iso2": "ID",
+   "kelompok": "eca",
+   "topik": [],
+   "cari": "PT Penjaminan Infrastruktur Indonesia"
+  },
+  {
+   "nama": "Japan Bank for International Cooperation",
+   "situs": "https://www.jbic.go.jp/",
+   "iso2": "JP",
+   "kelompok": "eca",
+   "topik": [],
+   "cari": "JBIC"
+  },
+  {
+   "nama": "Nippon Export and Investment Insurance",
+   "situs": "https://www.nexi.go.jp/",
+   "iso2": "JP",
+   "kelompok": "eca",
+   "topik": [],
+   "cari": "NEXI"
+  },
+  {
+   "nama": "Sinosure",
+   "situs": "https://www.sinosure.com.cn/",
+   "iso2": "CN",
+   "kelompok": "eca",
+   "topik": [],
+   "cari": "China Export and Credit Insurance Corporation"
+  },
+  {
+   "nama": "Export-Import Bank of China",
+   "situs": "https://www.eximbank.gov.cn/",
+   "iso2": "CN",
+   "kelompok": "eca",
+   "topik": [],
+   "cari": "China Exim"
+  },
+  {
+   "nama": "Korea Eximbank",
+   "situs": "https://www.koreaexim.go.kr/",
+   "iso2": "KR",
+   "kelompok": "eca",
+   "topik": [],
+   "cari": "KEXIM"
+  },
+  {
+   "nama": "Korea Trade Insurance Corporation",
+   "situs": "https://www.ksure.or.kr/",
+   "iso2": "KR",
+   "kelompok": "eca",
+   "topik": [],
+   "cari": "K-SURE"
+  },
+  {
+   "nama": "Allianz Trade",
+   "situs": "https://www.allianz-trade.com/",
+   "iso2": "FR",
+   "kelompok": "eca",
+   "topik": [],
+   "cari": "Euler Hermes"
+  },
+  {
+   "nama": "EIFO",
+   "situs": "https://eifo.dk/",
+   "iso2": "DK",
+   "kelompok": "eca",
+   "topik": [],
+   "cari": "Denmark Export and Investment Fund"
+  },
+  {
+   "nama": "UK Export Finance",
+   "situs": "https://www.gov.uk/government/organisations/uk-export-finance",
+   "iso2": "GB",
+   "kelompok": "eca",
+   "topik": []
+  },
+  {
+   "nama": "Export-Import Bank of the United States",
+   "situs": "https://www.exim.gov/",
+   "iso2": "US",
+   "kelompok": "eca",
+   "topik": [],
+   "cari": "US EXIM"
+  },
+  {
+   "nama": "US International Development Finance Corporation",
+   "situs": "https://www.dfc.gov/",
+   "iso2": "US",
+   "kelompok": "eca",
+   "topik": [],
+   "cari": "DFC"
+  },
+  {
+   "nama": "Munich Re",
+   "situs": "https://www.munichre.com/",
+   "iso2": "DE",
+   "kelompok": "asuransi",
+   "topik": []
+  },
+  {
+   "nama": "Swiss Re",
+   "situs": "https://www.swissre.com/",
+   "iso2": "CH",
+   "kelompok": "asuransi",
+   "topik": []
+  },
+  {
+   "nama": "Allianz",
+   "situs": "https://www.allianz.com/",
+   "iso2": "DE",
+   "kelompok": "asuransi",
+   "topik": []
+  },
+  {
+   "nama": "Microsoft",
+   "situs": "https://www.microsoft.com/",
+   "iso2": "US",
+   "kelompok": "pembeli",
+   "topik": [
+    "surya",
+    "data-center"
+   ]
+  },
+  {
+   "nama": "Google",
+   "situs": "https://about.google/",
+   "iso2": "US",
+   "kelompok": "pembeli",
+   "topik": [
+    "surya",
+    "data-center"
+   ]
+  },
+  {
+   "nama": "Amazon Web Services",
+   "situs": "https://aws.amazon.com/",
+   "iso2": "US",
+   "kelompok": "pembeli",
+   "topik": [
+    "surya",
+    "data-center"
+   ]
+  },
+  {
+   "nama": "Equinix",
+   "situs": "https://www.equinix.com/",
+   "iso2": "US",
+   "kelompok": "pembeli",
+   "topik": [
+    "data-center"
+   ]
+  },
+  {
+   "nama": "DCI Indonesia",
+   "situs": "https://dci-indonesia.com/",
+   "iso2": "ID",
+   "kelompok": "pembeli",
+   "topik": [
+    "data-center"
+   ]
+  },
+  {
+   "nama": "Nvidia",
+   "situs": "https://www.nvidia.com/",
+   "iso2": "US",
+   "kelompok": "pembeli",
+   "topik": [
+    "data-center"
+   ]
+  },
+  {
+   "nama": "YTL Power International",
+   "situs": "https://www.ytlcommunity.com/",
+   "iso2": "MY",
+   "kelompok": "pembeli",
+   "topik": [
+    "data-center",
+    "surya"
+   ]
+  },
+  {
+   "nama": "BDx Data Centers",
+   "situs": "https://bdxworld.com/",
+   "iso2": "SG",
+   "kelompok": "pembeli",
+   "topik": [
+    "data-center"
+   ]
+  },
+  {
+   "nama": "Princeton Digital Group",
+   "situs": "https://www.princetondg.com/",
+   "iso2": "SG",
+   "kelompok": "pembeli",
+   "topik": [
+    "data-center"
+   ]
+  },
+  {
+   "nama": "RE100",
+   "situs": "https://www.there100.org/",
+   "iso2": "GB",
+   "kelompok": "pembeli",
+   "topik": [],
+   "cari": "The Climate Group RE100"
+  },
+  {
+   "nama": "Unilever",
+   "situs": "https://www.unilever.com/",
+   "iso2": "GB",
+   "kelompok": "pembeli",
+   "topik": [
+    "surya"
+   ]
+  },
+  {
+   "nama": "Nestle",
+   "situs": "https://www.nestle.com/",
+   "iso2": "CH",
+   "kelompok": "pembeli",
+   "topik": [
+    "surya"
+   ],
+   "cari": "Nestlé"
+  },
+  {
+   "nama": "Apple",
+   "situs": "https://www.apple.com/",
+   "iso2": "US",
+   "kelompok": "pembeli",
+   "topik": [
+    "surya"
+   ]
+  },
+  {
+   "nama": "Danone",
+   "situs": "https://www.danone.com/",
+   "iso2": "FR",
+   "kelompok": "pembeli",
+   "topik": [
+    "surya"
+   ]
+  },
+  {
+   "nama": "Tsingshan",
+   "situs": "https://www.tsingshan.com/",
+   "iso2": "CN",
+   "kelompok": "pembeli",
+   "topik": [
+    "smelter"
+   ]
+  },
+  {
+   "nama": "Indonesia Morowali Industrial Park",
+   "situs": "https://www.imip.co.id/",
+   "iso2": "ID",
+   "kelompok": "pembeli",
+   "topik": [
+    "smelter"
+   ]
+  },
+  {
+   "nama": "Vale Indonesia",
+   "situs": "https://vale.com/",
+   "iso2": "ID",
+   "kelompok": "pembeli",
+   "topik": [
+    "smelter",
+    "hidro"
+   ],
+   "cari": "PT Vale Indonesia"
+  },
+  {
+   "nama": "Harita Nickel",
+   "situs": "https://www.haritanickel.com/",
+   "iso2": "ID",
+   "kelompok": "pembeli",
+   "topik": [
+    "smelter"
+   ]
+  }
+ ]
+}

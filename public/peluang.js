@@ -127,7 +127,7 @@ function hero() {
   const total = PEL.baris.reduce((a, b) => a + (celahProv(b.kode, "semua") ?? 0), 0);
   khUbin("pelAngka", [
     { ikon: "analisis", nilai: N(total / 1000, 0), satuan: "GW", label: t("pel.k.celah") },
-    { ikon: "proyek", nilai: N(tanpa), label: t("pel.k.tanpa") },
+    { ikon: "proyek", nilai: N(tanpa), satuan: t("pel.k.sat_proyek"), label: t("pel.k.tanpa") },
     { ikon: "status", nilai: N(mwTanpa / 1000, 1), satuan: "GW", label: t("pel.k.mw") },
     { ikon: "peta", nilai: N(PEL.baris.length), label: t("pel.k.prov") },
   ]);

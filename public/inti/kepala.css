@@ -170,7 +170,7 @@ dialog.jm-cari::backdrop{background:color-mix(in srgb,var(--ink) 45%,transparent
 :root{--top:64px}
 body header.top{gap:12px;padding-inline:var(--tepi)}
 .jm-sisi{gap:8px}
-.jm-bulat,.jm-sisi .iconbtn{width:40px;height:40px;min-width:40px}
+.jm-bulat,.jm-sisi .iconbtn{width:44px;height:44px;min-width:44px}
 .jm-sisi .iconbtn.jm-akun{width:auto;padding:0 12px}
 @media (min-width:1200px){
   nav.tabs,nav.tabs.buka{display:flex;flex:1 1 auto;justify-content:center;width:auto;margin-inline:auto;gap:4px}

@@ -17,3 +17,6 @@ docs/internal/
 
 # Log dan rekaman playwright-cli lokal: tidak masuk repo publik.
 .playwright-cli/
+
+# seed pustaka hukum (~62 MB), dibangun ulang: python3 -I scripts/hukum/hukum.py
+data/hukum/seed*.sql

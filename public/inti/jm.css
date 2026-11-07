@@ -35,6 +35,9 @@
 /* dialog bawaan */
 dialog.jm-dlg{width:min(440px,calc(100vw - 32px));padding:20px;border:1px solid var(--line);border-radius:var(--r-lg);background:var(--card);color:var(--ink);box-shadow:var(--shadow-lg)}
 dialog.jm-dlg::backdrop{background:rgb(11 23 38/.55)}
+/* Minta surel METI (inti/surel_minta.js) */
+.sm-baris{display:flex;align-items:center;gap:8px}.sm-baris .jm-isian{flex:1;min-width:0}.sm-domain{color:var(--ink2);white-space:nowrap}
+.sm-status{display:grid;gap:6px;margin:0 0 14px;padding:12px 14px;border:1px solid var(--line);border-radius:var(--r-lg);background:var(--paper)}.sm-status p{margin:0}.sm-alamat{display:flex;flex-wrap:wrap;align-items:center;gap:8px;overflow-wrap:anywhere}
 
 /* tautan aktivasi */
 .jm-taut{display:grid;gap:8px;padding:14px;border-radius:var(--r-sm);background:var(--soft-hijau);color:var(--ink)}
@@ -483,7 +486,7 @@ html.jm-ada-rel.jm-rel-tampil body{padding-bottom:calc(80px + env(safe-area-inse
 }
 @media (prefers-reduced-motion:reduce){html .jm-rel{transition:none}.jm-rel-gulir{scroll-behavior:auto}}
 /* paragraf narasi rata kiri-kanan (pemilik 7 Nov); bukan tabel, pil, tombol, label pendek */
-:is(.jm-kh-lead,.jm-sh-lead,.tn .lead,.brt-lead,.jm-bb-sc-lead,.jm-ex-teks,.jm-kp-metode,.jm-hero p,.jm-hero2-sub):not(td *,th *,.jm-pil,button){text-align:justify;hyphens:auto;-webkit-hyphens:auto}
+:is(.jm-kh-lead,.jm-sh-lead,.tn .lead,.brt-lead,.jm-bb-sc-lead,.jm-ex-teks,.jm-kp-metode,.jm-hero p,.jm-hero2-sub):not(td *,th *,.jm-pil,button){text-align:left;hyphens:manual;-webkit-hyphens:manual}
 /* tabel lebih padat (pemilik 7 Nov): baris rapat tapi tidak dempet */
 .jm-tabel td{padding:7px 14px}
 .jm-tabel th{padding:9px 14px}
@@ -687,7 +690,7 @@ main>:is(section,div,article)+:is(section,div,article){margin-top:max(24px,var(-
 /* "Cara menghitung" seragam di semua halaman (pemilik 8 Nov 2026 "jelek"): daftar bernomor dua kolom lega,
    nomor bulat di kiri sejajar baris pertama, teks rata kiri-kanan, tanpa kotak kecil bertumpuk. */
 :is(.jm-an-cara,.jm-tr-cara,.jm-tk-cara,.jm-pg-cara,.jm-pel-cara,.jm-cara,.ak-cara,.ak-sk-cara,.oj-cara,.sta-cara,.ix-cara){display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px 28px;margin:0;padding:0;list-style:none;counter-reset:cara}
-:is(.jm-an-cara,.jm-tr-cara,.jm-tk-cara,.jm-pg-cara,.jm-pel-cara,.jm-cara,.ak-cara,.ak-sk-cara,.oj-cara,.sta-cara,.ix-cara)>*{position:relative;display:block!important;margin:0;padding:12px 14px 12px 52px!important;border:1px solid var(--line);border-radius:var(--r-lg);background:var(--card)!important;text-align:justify;hyphens:auto;line-height:1.55;counter-increment:cara}
+:is(.jm-an-cara,.jm-tr-cara,.jm-tk-cara,.jm-pg-cara,.jm-pel-cara,.jm-cara,.ak-cara,.ak-sk-cara,.oj-cara,.sta-cara,.ix-cara)>*{position:relative;display:block!important;margin:0;padding:12px 14px 12px 52px!important;border:1px solid var(--line);border-radius:var(--r-lg);background:var(--card)!important;text-align:left;hyphens:manual;line-height:1.55;counter-increment:cara}
 :is(.jm-an-cara,.jm-tr-cara,.jm-tk-cara,.jm-pg-cara,.jm-pel-cara,.jm-cara,.ak-cara,.ak-sk-cara,.oj-cara,.sta-cara,.ix-cara)>*::before{content:counter(cara);position:absolute;left:14px;top:12px;display:grid;place-items:center;width:26px;height:26px;border-radius:50%;background:var(--soft-hijau);color:var(--accent);font:700 var(--t-kecil)/1 var(--font)}
 :is(.jm-an-cara,.jm-tr-cara,.jm-tk-cara,.jm-pg-cara,.jm-pel-cara,.jm-cara,.ak-cara,.ak-sk-cara,.oj-cara,.sta-cara,.ix-cara)>* :is(.jm-cara-no,b.no,.no){display:none}
 @media (max-width:760px){:is(.jm-an-cara,.jm-tr-cara,.jm-tk-cara,.jm-pg-cara,.jm-pel-cara,.jm-cara,.ak-cara,.ak-sk-cara,.oj-cara,.sta-cara,.ix-cara){grid-template-columns:1fr}}
@@ -720,7 +723,8 @@ main>:is(section,div,article)+:is(section,div,article){margin-top:max(24px,var(-
 .jm-gf-fokus :is(rect,circle,path)[data-tip]:not(.jm-gf-on),.jm-gf-fokus>li[data-tip]:not(.jm-gf-on){opacity:.45}
 .jm-gf-on{opacity:1;stroke:var(--head);stroke-width:1.5}
 li.jm-gf-on{stroke:none;outline:2px solid var(--fokus);outline-offset:2px;border-radius:var(--r-sm)}
-.jm-gf [data-tip]:focus-visible{outline:2px solid var(--fokus);outline-offset:1px}
+.jm-gf [data-tip]:focus-visible,.jm-gx [data-tip]:focus-visible{outline:2px solid var(--fokus);outline-offset:1px}
+.jm-gx.jm-gf-fokus [data-tip]:not(.jm-gf-on){opacity:.4}.jm-gx [data-tip]{cursor:pointer}.jm-gx g.jm-gf-on,.jm-gx image.jm-gf-on{stroke:none}
 .jm-gf-tip{position:fixed;left:0;top:0;z-index:60;max-width:min(280px,calc(100vw - 16px));display:grid;gap:2px;padding:8px 12px;border:1px solid var(--line);border-radius:var(--r-sm);background:var(--card);color:var(--ink);box-shadow:var(--shadow-lg);font:400 var(--t-kecil)/var(--lh-rapat) var(--font);pointer-events:none}
 .jm-gf-tip[hidden]{display:none}.jm-gf-tip b{color:var(--head);font-weight:700}.jm-gf-tip small{color:var(--ink2);font-size:var(--t-label)}
 /* Cara menghitung: satu penghitung saja (analisis.css ::before ikut menambah, nomor jadi 2,4,6), teks rata kiri tanpa justify, kartu setinggi isi */
@@ -730,10 +734,10 @@ li.jm-gf-on{stroke:none;outline:2px solid var(--fokus);outline-offset:2px;border
 :is(.jm-an-cara,.jm-tr-cara,.jm-tk-cara,.jm-pg-cara,.jm-pel-cara,.jm-cara,.ak-cara,.ak-sk-cara,.oj-cara,.sta-cara,.ix-cara) a{text-decoration:none}
 
 /* PRESENTASI layar penuh, tombol kepala halaman, dialog sematan (aksi_presentasi.js) */
-.jm-pres{position:fixed;inset:0;z-index:100;display:grid;background:var(--paper);color:var(--ink);outline:0}
+.jm-pres{--t-presentasi:clamp(var(--t-display),4.4vw,64px);position:fixed;inset:0;z-index:100;display:grid;background:var(--paper);color:var(--ink);outline:0}
 .jm-pres-slide{display:grid;grid-template-rows:auto auto auto minmax(0,1fr) auto;gap:12px;box-sizing:border-box;min-height:0;padding:clamp(20px,4vw,56px) clamp(56px,7vw,110px) 24px;border-top:6px solid var(--meti-lime)}
 .jm-pres-ey{margin:0;color:var(--accent);font:700 var(--t-body)/var(--lh-judul) var(--font)}
-.jm-pres-j{margin:0;color:var(--head);font:700 clamp(28px,4.4vw,64px)/var(--lh-rapat) var(--font)}
+.jm-pres-j{margin:0;color:var(--head);font:700 var(--t-display)/var(--lh-rapat) var(--font);font-size:var(--t-presentasi,var(--t-display))}
 .jm-pres-j .jm-hl{color:var(--accent)}
 .jm-pres-sub{margin:0;color:var(--ink2);font:400 var(--t-h2)/var(--lh-isi) var(--font)}
 .jm-pres-sub:empty,.jm-pres-ey:empty{display:none}
@@ -790,3 +794,11 @@ li.jm-gf-on{stroke:none;outline:2px solid var(--fokus);outline-offset:2px;border
 .jm-bukti-tip dl>div{display:grid;grid-template-columns:76px minmax(0,1fr);gap:8px}
 .jm-bukti-tip dt{color:var(--ink2);font-weight:600}.jm-bukti-tip dd{margin:0;overflow-wrap:anywhere}
 .jm-bukti-tip a{color:var(--accent);font-weight:600;text-decoration:none}
+
+/* audit UI 2 (8 Nov 2026): jarak antar exhibit >= 24px juga di wadah grid/flex; target sentuh 44px di seluler */
+:where(*):has(> .jm-ex + .jm-ex),.jm-tp-isi,.jm-pel-halaman,main:has(> .brt-peta){row-gap:24px}
+@media (max-width:640px){
+  a.jm-merek,.iconbtn{min-width:44px;min-height:44px}
+  button.jm-urut{min-width:44px;min-height:44px}
+  .jm-ex .jm-ex-aksi>*{min-width:44px;min-height:44px}
+}

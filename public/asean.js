@@ -46,7 +46,7 @@ function band() {
     const v = nilaiN(n, m);
     return { id: n.iso3, pilih: pilih === n.iso3, label: namaN(n), labelHtml: `${bendera(n, n.iso3 === "IDN" ? 32 : 20)}<span>${esc(namaN(n))}</span>`, sorot: n.iso3 === "IDN", bagian: [{ nilai: v ?? 0, kelas: n.iso3 === "IDN" ? "jm-an-id" : "jm-an-c" + (1 + ISO_URUT.indexOf(n.iso3) % 4) }], teks: v === null ? t("an.tanpa_data") : `${num(v, M[m].d)} ${M[m].satuan} (${n[M[m].nilai].tahun})` };
   });
-  $("grafik-band").innerHTML = batangHtml(baris, { label: t("as.m." + m), aksi: true, satuan: M[m].satuan === "%" ? "%" : "MW" }) + `<p class="jm-bantu">${esc(t("as.klik"))}</p>` + sumber(m);
+  $("grafik-band").innerHTML = batangHtml(baris, { label: t("as.m." + m), aksi: true, satuan: M[m].satuan === "%" ? "%" : "MW" })  + sumber(m);
   pasangBar($("grafik-band"));
 }
 
@@ -66,13 +66,13 @@ function tren() {
   const garis = [...seri].sort((a, b) => (a.iso3 === "IDN") - (b.iso3 === "IDN") || (a.iso3 === pilih) - (b.iso3 === pilih)).map((n) => {
     const s = n[M[m].tren], id = n.iso3 === "IDN", a = s[s.length - 1], pts = s.map((p) => x(p.tahun).toFixed(1) + "," + y(p.nilai).toFixed(1)).join(" ");
     const titik = s.map((p) => `<circle class="jm-an-titik-tren" cx="${x(p.tahun).toFixed(1)}" cy="${y(p.nilai).toFixed(1)}" r="7"><title>${esc(namaN(n))}, ${p.tahun}: ${esc(num(p.nilai, M[m].d))} ${esc(M[m].satuan)}</title></circle>`).join("");
-    return `<g class="jm-an-gars${id ? " jm-an-sorot" : ""}${n.iso3 === pilih ? " jm-an-pilih" : ""}" data-iso="${n.iso3}"><polyline points="${pts}"/><polyline class="jm-an-tangkap" points="${pts}"/><polyline class="jm-an-penuntun" points="${x(a.tahun).toFixed(1)},${y(a.nilai).toFixed(1)} ${(LX - 4).toFixed(1)},${ly.get(n.iso3).toFixed(1)}"/><text class="jm-an-lbl" x="${LX}" y="${(ly.get(n.iso3) + 4).toFixed(1)}">${esc(n.iso3)}</text>${titik}</g>`;
+    return `<g class="jm-an-gars${id ? " jm-an-sorot" : ""}${n.iso3 === pilih ? " jm-an-pilih" : ""}" data-iso="${n.iso3}"><polyline points="${pts}"/><polyline class="jm-an-tangkap" points="${pts}"><title>${esc(namaN(n))}: ${esc(num(s[0].nilai, M[m].d))} ${esc(M[m].satuan)} (${s[0].tahun}), ${esc(num(a.nilai, M[m].d))} ${esc(M[m].satuan)} (${a.tahun})</title></polyline><polyline class="jm-an-penuntun" points="${x(a.tahun).toFixed(1)},${y(a.nilai).toFixed(1)} ${(LX - 4).toFixed(1)},${ly.get(n.iso3).toFixed(1)}"/><text class="jm-an-lbl" x="${LX}" y="${(ly.get(n.iso3) + 4).toFixed(1)}">${esc(n.iso3)}</text>${titik}</g>`;
   }).join("");
   const si = idn()[M[m].tren], pa = si[0], pb = si[si.length - 1];
   $("temuan-tren").innerHTML = temuanHtml(t("as.t.tren", { metrik: t("as.m." + m), a: num(pa.nilai, M[m].d) + " " + M[m].satuan, ta: pa.tahun, b: num(pb.nilai, M[m].d) + " " + M[m].satuan, tb: pb.tahun }));
   const dn = pilih && d.baris.find((n) => n.iso3 === pilih), sd = dn && dn[M[m].tren];
   const detail = sd && sd.length ? `<p class="jm-detail" role="status"><b>${esc(namaN(dn))}</b>: ${esc(num(sd[0].nilai, M[m].d))} ${esc(M[m].satuan)} (${sd[0].tahun}) &rarr; ${esc(num(sd[sd.length - 1].nilai, M[m].d))} ${esc(M[m].satuan)} (${sd[sd.length - 1].tahun})</p>` : "";
-  $("grafik-tren").innerHTML = `<svg class="jm-an-garis" viewBox="0 0 ${W} ${H}" role="img" aria-label="${esc(t("as.tren_label", { metrik: t("as.m." + m) }))}" focusable="false">${grid}${sb}${garis}</svg>${detail}<p class="jm-bantu">${esc(t("as.klik_garis"))}</p>${sumber(m)}`;
+  $("grafik-tren").innerHTML = `<svg class="jm-an-garis jm-gx" viewBox="0 0 ${W} ${H}" role="img" aria-label="${esc(t("as.tren_label", { metrik: t("as.m." + m) }))}" focusable="false">${grid}${sb}${garis}</svg>${detail}${sumber(m)}`;
   const ubah = (s) => { const a = s[0], b = s[s.length - 1]; return m === "kapasitas" ? (a.nilai ? `${num(((b.nilai - a.nilai) / a.nilai) * 100, 0)}%` : "-") : `${num(b.nilai - a.nilai, 1)} ${t("as.pp")}`; };
   $("tabel-tren").innerHTML = `<div class="jm-gulir"><table class="jm-tabel"><thead><tr><th>${esc(t("as.col.negara"))}</th><th>${esc(t("as.col.awal"))}</th><th>${esc(t("as.col.akhir"))}</th><th>${esc(t("as.col.ubah"))} ${pil("an.est")}</th></tr></thead><tbody>${seri.map((n) => {
     const s = n[M[m].tren], a = s[0], b = s[s.length - 1];

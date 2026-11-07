@@ -4,6 +4,7 @@ import { t, angka, tanggal, tanggalDariUnix, bahasa } from "/i18n.js";
 import { api, galatTeks, esc, pesanHtml, ikon } from "/inti/umum.js";
 import { mulaiHalaman } from "/inti/kepala.js";
 import { pilihHtml } from "/inti/komponen.js";
+import { khUbin } from "/inti/kh.js";
 import { unggahHtml } from "/inti/unggah.js";
 import { PROV } from "/inti/prov_singkat.js";
 import { IKON_TEK } from "/inti/ikon_tek.js";
@@ -244,6 +245,8 @@ function kepalaTarif() {
 }
 function landing() {
   kepalaTarif();
+  const iuran = KAT.map((k) => k.iuran_tahunan).filter((n) => n > 0);
+  khUbin("dft-ubin", [{ ikon: "orang", nilai: angka(KAT.length), label: t("dft.ubin.kat") }, ...(iuran.length ? [{ ikon: "kartu", nilai: angka(Math.min(...iuran)), label: t("dft.ubin.iuran") }] : []), { ikon: "pdf", nilai: angka(D.dokumen.length), label: t("dft.ubin.dok") }]);
   $(KUNCI_LANDING.atas).innerHTML = pilih();
   $(KUNCI_LANDING.bawah).innerHTML = banding() + alur() + dokumen();
   document.addEventListener("click", (e) => {

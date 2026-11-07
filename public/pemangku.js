@@ -13,7 +13,7 @@ export const IKON_PERAN = { pemilik: "gedung", pengembang: "proyek", epc: "palu"
 const IKON_JENIS = { org: "gedung", pendana: "berlian", orang: "orang", pemda: "wilayah", regulasi: "regulasi", proyek: "proyek" };
 const R = { proyek: 38, org: 25, pendana: 25, pemda: 23, regulasi: 21, orang: 23 };
 const TINGKAT = ["resmi", "kajian", "media", "hipotesis"];
-const inisial = (n) => String(n || "?").replace(/^(PT|CV|Yayasan|Pemerintah|Kementerian)\.?\s+/i, "").split(/\s+/).slice(0, 2).map((w) => w[0] || "").join("").toUpperCase();
+const inisial = (n) => String(n || "?").replace(/^(PT|CV|Yayasan|Pemerintah|Kementerian)\.?\s+/i, "").replace(/\([^)]*\)/g, " ").split(/\s+/).filter(Boolean).slice(0, 2).map((w) => w[0] || "").join("").toUpperCase();
 const pendek = (s, n) => (s.length > n ? s.slice(0, n - 1) + "…" : s);
 const hrefNode = (n) => (n.href ? n.href : (n.j === "org" || n.j === "pendana") && n.id ? "/o/" + encodeURIComponent(n.id) : "");
 const gambarNode = (n) => {
@@ -50,7 +50,7 @@ function tata(G, W, H) {
   for (let it = 0; it < 60; it++) {
     for (let i = 0; i < arr.length; i++) {
       const c = pos.get(pusat);
-      for (const [b, min] of [[c, 92], ...arr.slice(i + 1).map((o) => [o, 64])]) {
+      for (const [b, min] of [[c, 92], ...arr.slice(i + 1).map((o) => [o, W < 500 ? 84 : 64])]) {
         const dx = arr[i].x - b.x, dy = arr[i].y - b.y, d = Math.hypot(dx, dy) || 0.01;
         if (d < min) { const g = (min - d) / 2 / d; arr[i].x += dx * g; arr[i].y += dy * g; if (b !== c) { b.x -= dx * g; b.y -= dy * g; } }
       }
@@ -133,7 +133,7 @@ function pasangGraf(akar, G, M) {
       const r = R[n.j] || 22, g = gambarNode(n), peran = peranUtama(n) || "pemilik", d = r * 2 - 8;
       const ik = n.j === "proyek" || n.j === "regulasi" || n.j === "pemda" ? `<use class="pk-n-ik" href="/img/ikon.svg#i-${n.j === "proyek" ? "proyek" : IKON_JENIS[n.j]}" x="${-r * 0.5}" y="${-r * 0.5}" width="${r}" height="${r}"/>` : `<text class="pk-n-ini" text-anchor="middle" dy=".35em">${esc(inisial(n.nama))}</text>`;
       const img = g.length ? `<image class="pk-n-img${n.lambang || n.iso ? " pk-n-bulat" : ""}" href="${esc(g[0])}" data-cad="${esc(g.slice(1).join("|"))}" x="${-d / 2}" y="${-d / 2}" width="${d}" height="${d}" preserveAspectRatio="${n.lambang || n.iso ? "xMidYMid slice" : "xMidYMid meet"}"/>` : "";
-      const label = n.j === "proyek" ? pendek(n.nama, 26) : pendek(n.nama, 20);
+      const label = pendek(n.j === "proyek" ? n.nama : n.nama.replace(/^(Pemerintah|PT\.?)\s+/i, ""), n.j === "proyek" ? 26 : 22);
       return `<g class="pk-n pk-j-${esc(n.j)} pk-r-${esc(peran)}${kandidat(n) ? " pk-kand" : ""}" data-k="${esc(n.k)}" transform="translate(${p.x.toFixed(1)} ${p.y.toFixed(1)})" tabindex="0" role="button" aria-label="${esc(n.nama)}"><circle class="pk-n-c" r="${r}"/>${ik}${img}<text class="pk-n-l" text-anchor="middle" y="${r + 14}">${esc(label)}</text></g>`;
     }).join("");
     kanvas.innerHTML = `<svg class="pk-svg" width="${W}" height="${H}" viewBox="0 0 ${W} ${H}" role="img" aria-label="${esc(t("pk3.graf", { nama: G.nama }))}"><defs><clipPath id="pkBulat" clipPathUnits="objectBoundingBox"><circle cx=".5" cy=".5" r=".5"/></clipPath></defs><g class="pk-dunia"><g class="pk-sisi-g">${sisiSvg}</g><g class="pk-n-g">${bulat}</g></g></svg>`;

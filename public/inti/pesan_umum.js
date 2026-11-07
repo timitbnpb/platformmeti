@@ -9,10 +9,10 @@ export function gelembungHtml(m, o = {}) {
   const l = m.lampiran;
   const lamp = l && o.url
     ? (String(l.tipe).startsWith("image/")
-      ? `<a class="ps-g-lamp" href="${esc(o.url)}" target="_blank" rel="noopener"><img class="ps-g-img" src="${esc(o.url)}" alt="${esc(l.nama)}" loading="lazy"></a>`
-      : `<a class="ps-g-lamp ps-g-berkas" href="${esc(o.url)}" target="_blank" rel="noopener">${esc(l.nama)}</a>`)
+      ? `<a class="psn-g-lamp" href="${esc(o.url)}" target="_blank" rel="noopener"><img class="psn-g-img" src="${esc(o.url)}" alt="${esc(l.nama)}" loading="lazy"></a>`
+      : `<a class="psn-g-lamp psn-g-berkas" href="${esc(o.url)}" target="_blank" rel="noopener">${esc(l.nama)}</a>`)
     : "";
-  return `<li class="ps-g ps-g-${m.dari === "admin" ? "admin" : "akun"}"><div class="ps-g-isi"><span class="ps-g-nama">${esc(o.nama)}</span><p class="ps-g-teks">${esc(m.isi)}</p>${lamp}<span class="ps-g-meta"><span>${esc(o.waktu)}</span>${o.status ? `<span>${esc(o.status)}</span>` : ""}</span></div></li>`;
+  return `<li class="psn-g psn-g-${m.dari === "admin" ? "admin" : "akun"}"><div class="psn-g-isi"><span class="psn-g-nama">${esc(o.nama)}</span><p class="psn-g-teks">${esc(m.isi)}</p>${lamp}<span class="psn-g-meta"><span>${esc(o.waktu)}</span>${o.status ? `<span>${esc(o.status)}</span>` : ""}</span></div></li>`;
 }
 
 /** Galat sisi klien sebelum kirim: kunci i18n atau null. */

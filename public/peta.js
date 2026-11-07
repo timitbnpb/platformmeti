@@ -63,7 +63,7 @@ async function muat(id) {
     const d = await fetch(l.def.berkas, { credentials: "same-origin" }).then((r) => { if (!r.ok) throw new Error("muat"); return r.json(); });
     const ad = adapterDari(l.def);
     if (l.def.jenis === "titik") { l.rec = ad.baca(d, l.def); l.rec.forEach((r, i) => { r.i = i; }); l.semua = ad.semua ? ad.semua(d) : null; l.ad = ad; if (!l.rec.length) throw new Error("kosong"); }
-    else if (l.def.jenis === "garis") { l.fc = ad.baca(d, l.def); l.ad = ad; if (!l.fc.features.length) throw new Error("kosong"); }
+    else if (l.def.jenis === "garis" || l.def.jenis === "poligon") { l.fc = ad.baca(d, l.def); l.ad = ad; if (!l.fc.features.length) throw new Error("kosong"); }
     else { l.koro = ad.baca(d, l.def); l.ad = ad; if (kosongKoro(l.koro)) throw new Error("kosong"); }
     l.status = "siap";
   } catch (e) {
@@ -78,7 +78,7 @@ const jumlahTitik = (l) => titikFitur(l).features.length;
 const titikTerpadu = () => { const l = L.get("proyek_terpadu"); return l && l.rec ? jumlahTitik(l) : 0; };
 
 /* ---------- peta ---------- */
-const lid = (id) => ({ src: "s-" + id, cl: id + "-c", n: id + "-n", t: id + "-t", ik: id + "-i", g: id + "-g" });
+const lid = (id) => ({ f: id + "-f", src: "s-" + id, cl: id + "-c", n: id + "-n", t: id + "-t", ik: id + "-i", g: id + "-g" });
 function gambarIkon() {
   return Promise.all([...IKON_ADA].map((k) => new Promise((ok) => {
     const im = new Image(); im.onload = () => { GAMBAR.set("pn-" + k, im); ok(); }; im.onerror = ok;
@@ -114,6 +114,12 @@ function terapkan(id) {
     peta.addLayer({ id: k.g, type: "line", source: k.src, layout: { "line-cap": "round" }, paint: {
       "line-color": ["step", ["get", "v"], warna("--info"), 275, warna("--warn"), 500, warna("--bad")],
       "line-width": ["interpolate", ["linear"], ["zoom"], 4, ["step", ["get", "v"], 0.7, 275, 1.1, 500, 1.6], 9, ["step", ["get", "v"], 1.4, 275, 2, 500, 3]], "line-opacity": 0.88 } }, "pn-a-ln");
+  } else if (l.def.jenis === "poligon") {
+    if (peta.getSource(k.src)) return;
+    peta.addSource(k.src, { type: "geojson", data: l.fc });
+    const c = warna(l.def.warna);
+    peta.addLayer({ id: k.f, type: "fill", source: k.src, paint: { "fill-color": c, "fill-opacity": 0.3 } }, "pn-a-garis");
+    peta.addLayer({ id: k.g, type: "line", source: k.src, paint: { "line-color": c, "line-width": 1, "line-opacity": 0.8 } }, "pn-a-garis");
   } else terapKoro(l);
 }
 async function terapKoro(l) {
@@ -129,7 +135,7 @@ function lepas(id) {
   const l = L.get(id), k = lid(id);
   if (!peta || !siap) return;
   if (l.def.jenis === "koroplet") { if (peta.getLayer("koro-fill")) peta.removeLayer("koro-fill"); if (peta.getSource("s-koro")) peta.removeSource("s-koro"); return; }
-  for (const i of [k.ik, k.t, k.n, k.cl, k.g]) if (peta.getLayer(i)) peta.removeLayer(i);
+  for (const i of [k.ik, k.t, k.n, k.cl, k.f, k.g]) if (peta.getLayer(i)) peta.removeLayer(i);
   if (peta.getSource(k.src)) peta.removeSource(k.src);
 }
 function pasangSemua() {
@@ -150,14 +156,14 @@ function atribusi() {
 }
 function lapisKlik() {
   const a = [];
-  for (const id of S.on) { const l = L.get(id), k = lid(id); if (l.status !== "siap") continue; if (l.def.jenis === "titik") a.push(k.t, k.cl); else if (l.def.jenis === "garis") a.push(k.g); else a.push("koro-fill"); }
+  for (const id of S.on) { const l = L.get(id), k = lid(id); if (l.status !== "siap") continue; if (l.def.jenis === "titik") a.push(k.t, k.cl); else if (l.def.jenis === "garis") a.push(k.g); else if (l.def.jenis === "poligon") a.push(k.f); else a.push("koro-fill"); }
   return a.filter((i) => peta.getLayer(i));
 }
 function kena(pt) {
   const ids = lapisKlik();
   if (!ids.length) return null;
   const f = peta.queryRenderedFeatures([[pt.x - 5, pt.y - 5], [pt.x + 5, pt.y + 5]], { layers: ids });
-  const bobot = (x) => (x.layer.id === "koro-fill" ? 2 : x.layer.id.endsWith("-g") ? 1 : 0);
+  const bobot = (x) => (x.layer.id === "koro-fill" ? 3 : x.layer.id.endsWith("-f") ? 2 : x.layer.id.endsWith("-g") ? 1 : 0);
   return f.sort((a, b) => bobot(a) - bobot(b))[0] || null;
 }
 const lapisDari = (f) => L.get(f.layer.id === "koro-fill" ? [...S.on].find((i) => L.get(i).def.jenis === "koroplet") : f.layer.id.slice(0, f.layer.id.lastIndexOf("-")));
@@ -169,7 +175,7 @@ function bukaFitur(f, ll) {
   const l = lapisDari(f);
   if (!l) return;
   if (f.layer.id === "koro-fill") { const kode = String(f.properties.kode); return bukaPop(l.ad.popup(kode, l.koro), ll); }
-  if (l.def.jenis === "garis") return bukaPop(l.ad.popup(f.properties), ll);
+  if (l.def.jenis !== "titik") return bukaPop(l.ad.popup(f.properties), ll);
   const r = l.rec[f.properties.i];
   if (r) bukaPop(l.ad.popup(r), [r.px ?? r.lng, r.py ?? r.lat]);
 }
@@ -178,7 +184,7 @@ function tip(f, pt) {
   if (!l || (popup && popup.isOpen()) || (f.properties.cluster_id != null)) { el.hidden = true; return; }
   let h;
   if (f.layer.id === "koro-fill") { const kode = String(f.properties.kode), x = l.koro.peta.get(kode); h = `<b>${esc(PROV[kode] ? PROV[kode][0] : kode)}</b><span>${esc(x && x.v != null ? teksNilai(l.koro, x.v) : t("pn2.tanpa_data"))}</span>`; }
-  else if (l.def.jenis === "garis") h = l.ad.tip(f.properties);
+  else if (l.def.jenis !== "titik") h = l.ad.tip(f.properties);
   else { const r = l.rec[f.properties.i]; h = r ? l.ad.tip(r) : ""; }
   if (!h) { el.hidden = true; return; }
   el.innerHTML = h; el.hidden = false;
@@ -222,7 +228,7 @@ function simpanUrl() {
 }
 
 /* ---------- panel lapisan dan legenda ---------- */
-const HITUNG = (l) => (l.def.jenis === "titik" ? jumlahTitik(l) : l.def.jenis === "garis" ? l.fc.features.length : l.koro.peta.size);
+const HITUNG = (l) => (l.def.jenis === "titik" ? jumlahTitik(l) : l.def.jenis !== "titik" && l.fc ? l.fc.features.length : l.koro.peta.size);
 function legenda(l) {
   const d = l.def, ket = `<p class="pn-leg-j">${esc(t("pn2.l." + d.id + ".d"))}</p>`;
   if (d.jenis === "titik") {
@@ -231,6 +237,7 @@ function legenda(l) {
     const peri = l.rec.some((r) => r.perkiraan) ? `<p class="pn-leg-j">${esc(t("pn2.perkiraan.ket"))}</p>` : "";
     return `${ket}<ul class="pn-leg-d">${palet.map(([k, lab]) => `<li><i class="pn-d pn-d-${esc(k)}" aria-hidden="true"></i><span>${esc(lab || t("pn2.l." + d.id))}</span><b>${esc(N(per[k]))}</b></li>`).join("")}</ul>${peri}`;
   }
+  if (d.jenis === "poligon") return `${ket}<ul class="pn-leg-d"><li><i class="pn-p pn-p-${esc(d.id)}" aria-hidden="true"></i><span>${esc(t("pn2.l." + d.id))}</span></li></ul>`;
   if (d.jenis === "garis") return `${ket}<ul class="pn-leg-d">${[["500", "bad"], ["275", "warn"], ["150", "info"]].map(([kv, c]) => `<li><i class="pn-g pn-g-${c}" aria-hidden="true"></i><span>${kv} kV${kv === "150" ? " " + esc(t("pn2.kv.ke_bawah")) : kv === "500" ? " " + esc(t("pn2.kv.ke_atas")) : ""}</span></li>`).join("")}</ul>`;
   const k = l.koro;
   return `${ket}<div class="pn-ramp pn-ramp-${k.ramp}" aria-hidden="true"></div><div class="pn-ramp-n"><b>${esc(N(k.min, k.des))}</b><span>${esc(k.satuan || "")}</span><b>${esc(N(k.max, k.des))}</b></div><ul class="pn-leg-d"><li><i class="pn-d pn-d-kosong" aria-hidden="true"></i><span>${esc(t("pn2.tanpa_data"))}</span></li></ul>`;

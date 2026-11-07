@@ -224,7 +224,7 @@ export async function bukaDokumen(akar, id, { tutup, bagianAwal = null }) {
       : [esc(b.label), esc(b.asli), `<b>${esc(b.usulan)}</b>`, esc(b.alasan)]);
     const baris = r.baris;
     el.innerHTML = `<div class="kf-rekap"><p class="jm-bantu">${esc(t("kf.rekap_bantu", { n: angka(baris.filter((b) => b.berubah).length) }))}</p>
-      <div class="kf-ekspor">${r.bisa_ekspor ? `<a class="jm-tbl" href="/api/konsultasi/${encodeURIComponent(id)}/rekap.docx" download>${ikon(IK.unduh, 16)}<span>${esc(t("kf.unduh_docx"))}</span></a>` : ""}<button type="button" class="jm-tbl" data-m="cetak">${ikon(IK.cetak, 16)}<span>${esc(t("kf.simpan_pdf"))}</span></button></div>
+      <div class="kf-ekspor">${staf() ? `<button type="button" class="jm-tbl" data-m="kertas">${ikon("kajian", 16)}<span>${esc(t("re2.kp.susun"))}</span></button>` : ""}${r.bisa_ekspor ? `<a class="jm-tbl" href="/api/konsultasi/${encodeURIComponent(id)}/rekap.docx" download>${ikon(IK.unduh, 16)}<span>${esc(t("kf.unduh_docx"))}</span></a>` : ""}<button type="button" class="jm-tbl" data-m="cetak">${ikon(IK.cetak, 16)}<span>${esc(t("kf.simpan_pdf"))}</span></button></div>
       ${baris.length ? `<div class="jm-gulir"><table class="jm-tabel"><thead><tr>${kolom.map((k) => `<th scope="col">${esc(t("kf.rk." + k))}</th>`).join("")}</tr></thead><tbody>${baris.map((b) => `<tr class="${b.berubah ? "" : "jm-redup"}">${sel(b).map((c, i) => `<td data-l="${esc(t("kf.rk." + kolom[i]))}">${c}</td>`).join("")}</tr>`).join("")}</tbody></table></div>` : kosongHtml("kf.rekap_kosong")}</div>`;
   }
 
@@ -333,6 +333,7 @@ export async function bukaDokumen(akar, id, { tutup, bagianAwal = null }) {
     if (m === "isi-tgl") { S.isiBuka = !S.isiBuka; tom.setAttribute("aria-expanded", String(S.isiBuka)); return akar.querySelector(".kf-isi")?.classList.toggle("kf-isi-buka", S.isiBuka); }
     if (m === "batal") { S.form = S.balas = S.putus = S.sunting = null; return gambarPanel(); }
     if (m === "cetak") return print();
+    if (m === "kertas") { if (!staf()) return; const { bukaKertas } = await import("/konsultasi_kertas_tampil.js"); return bukaKertas(S.d, ""); }
     if (m === "kelola") { const { bukaKelola } = await import("/konsultasi_kelola.js"); return bukaKelola(S.d.dokumen, { selesai: () => segarkan() }); }
     if (m === "balas") { S.balas = S.balas === nid ? null : nid; S.form = S.putus = S.sunting = null; gambarPanel(); return akar.querySelector(`#u${nid} textarea`)?.focus(); }
     if (m === "putus") { S.putus = S.putus === nid ? null : nid; S.balas = S.form = S.sunting = null; return gambarPanel(); }

@@ -17,8 +17,8 @@ const waktu = (w) => `${tanggalDariUnix(w)} ${jam(w)}`;
 export function pasangPesan() {
   if (document.getElementById("psFab")) return;
   if (!document.querySelector('link[href="/pesan.css"]')) document.head.insertAdjacentHTML("beforeend", '<link rel="stylesheet" href="/pesan.css">');
-  document.body.insertAdjacentHTML("beforeend", `<button type="button" class="ps-fab" id="psFab" aria-haspopup="dialog" aria-expanded="false" aria-controls="psPn">${IK_PESAN}<span class="ps-fab-l">${esc(t("ps.fab"))}</span><span class="ps-lencana" id="psLencana" hidden></span></button>
-    <section class="ps-pn" id="psPn" role="dialog" aria-modal="false" aria-labelledby="psJudul" hidden></section>`);
+  document.body.insertAdjacentHTML("beforeend", `<button type="button" class="psn-fab" id="psFab" aria-haspopup="dialog" aria-expanded="false" aria-controls="psPn">${IK_PESAN}<span class="psn-fab-l">${esc(t("ps.fab"))}</span><span class="psn-lencana" id="psLencana" hidden></span></button>
+    <section class="psn-pn" id="psPn" role="dialog" aria-modal="false" aria-labelledby="psJudul" hidden></section>`);
   const fab = document.getElementById("psFab"), pn = document.getElementById("psPn"), lencana = document.getElementById("psLencana");
   const S = { buka: false, view: "daftar", utas: null, timer: null, n: 0, galat: "" };
 
@@ -26,18 +26,18 @@ export function pasangPesan() {
   const muatBelum = () => api("/api/pesan").then((d) => setBelum(d.belum || 0)).catch(() => {});
   muatBelum();
 
-  const kepala = (judul, kembali, sub) => `<div class="ps-kep">${kembali ? `<button type="button" class="ps-ik" data-aksi="kembali" aria-label="${esc(t("ps.kembali"))}">${IK_KEMBALI}</button>` : `<span class="ps-kep-ik">${IK_PESAN}</span>`}<div class="ps-kep-t"><h2 id="psJudul">${esc(judul)}</h2>${sub ? `<p>${esc(sub)}</p>` : ""}</div><button type="button" class="ps-ik" data-aksi="tutup" aria-label="${esc(t("ps.tutup"))}">${IK_TUTUP}</button></div>`;
-  const pilStatus = (s) => `<span class="ps-pil ps-pil-${esc(s)}">${esc(t("ps.status." + s))}</span>`;
-  const formHtml = (baru) => `<form class="ps-form" id="psForm" novalidate>
+  const kepala = (judul, kembali, sub) => `<div class="psn-kep">${kembali ? `<button type="button" class="psn-ik" data-aksi="kembali" aria-label="${esc(t("ps.kembali"))}">${IK_KEMBALI}</button>` : `<span class="psn-kep-ik">${IK_PESAN}</span>`}<div class="psn-kep-t"><h2 id="psJudul">${esc(judul)}</h2>${sub ? `<p>${esc(sub)}</p>` : ""}</div><button type="button" class="psn-ik" data-aksi="tutup" aria-label="${esc(t("ps.tutup"))}">${IK_TUTUP}</button></div>`;
+  const pilStatus = (s) => `<span class="psn-pil psn-pil-${esc(s)}">${esc(t("ps.status." + s))}</span>`;
+  const formHtml = (baru) => `<form class="psn-form" id="psForm" novalidate>
       ${baru ? `<input type="hidden" id="psTopik" name="topik" value="umum">` : ""}
-      <div class="ps-komposer"><label class="sr" for="psIsi">${esc(t("ps.tulis"))}</label><textarea id="psIsi" name="isi" maxlength="${MAKS_ISI}" placeholder="${esc(t("ps.tulis"))}" required></textarea>
-      <div class="ps-baris"><label class="ps-lampir" for="psBerkas" title="${esc(t("ps.lampir"))}">${IK_KLIP}<span class="sr">${esc(t("ps.lampir"))}</span></label><input class="sr" type="file" id="psBerkas" accept="image/png,image/jpeg,image/gif,image/webp,application/pdf"><span class="ps-file" id="psNamaBerkas"></span><span class="ps-sp"></span><span class="ps-hitung" id="psHitung">0/${MAKS_ISI}</span><button type="submit" class="jm-tbl jm-tbl-utama jm-tbl-kecil" id="psKirim">${IK_KIRIM}<span>${esc(t("ps.kirim"))}</span></button></div>
-    </div><p class="ps-galat" role="alert" id="psGalat">${esc(S.galat)}</p>
+      <div class="psn-komposer"><label class="sr" for="psIsi">${esc(t("ps.tulis"))}</label><textarea id="psIsi" name="isi" maxlength="${MAKS_ISI}" placeholder="${esc(t("ps.tulis"))}" required></textarea>
+      <div class="psn-baris"><label class="psn-lampir" for="psBerkas" title="${esc(t("ps.lampir"))}">${IK_KLIP}<span class="sr">${esc(t("ps.lampir"))}</span></label><input class="sr" type="file" id="psBerkas" accept="image/png,image/jpeg,image/gif,image/webp,application/pdf"><span class="psn-file" id="psNamaBerkas"></span><span class="psn-sp"></span><span class="psn-hitung" id="psHitung">0/${MAKS_ISI}</span><button type="submit" class="jm-tbl jm-tbl-utama jm-tbl-kecil" id="psKirim">${IK_KIRIM}<span>${esc(t("ps.kirim"))}</span></button></div>
+    </div><p class="psn-galat" role="alert" id="psGalat">${esc(S.galat)}</p>
     </form>`;
 
   async function gambarDaftar() {
     S.view = "daftar";
-    pn.innerHTML = `${kepala(t("ps.judul"), false, t("ps.kep_sub"))}<div class="ps-isi" id="psIsiBox" aria-live="polite"><div id="psDaf"><p class="ps-sub">${esc(t("jm.memuat"))}</p></div><div class="ps-cepat"><span class="ps-cepat-l">${esc(t("ps.baru"))}</span><div class="ps-chip-baris" role="group" aria-label="${esc(t("ps.topik"))}">${CEPAT.map(([k, d]) => `<button type="button" class="ps-chip" data-topik="${k}" aria-pressed="${k === "umum"}">${ikCepat(d)}<span>${esc(t("ps.cepat." + k))}</span></button>`).join("")}</div></div></div>${formHtml(true)}`;
+    pn.innerHTML = `${kepala(t("ps.judul"), false, t("ps.kep_sub"))}<div class="psn-isi" id="psIsiBox" aria-live="polite"><div id="psDaf"><p class="psn-sub">${esc(t("jm.memuat"))}</p></div><div class="psn-cepat"><span class="psn-cepat-l">${esc(t("ps.baru"))}</span><div class="psn-chip-baris" role="group" aria-label="${esc(t("ps.topik"))}">${CEPAT.map(([k, d]) => `<button type="button" class="psn-chip" data-topik="${k}" aria-pressed="${k === "umum"}">${ikCepat(d)}<span>${esc(t("ps.cepat." + k))}</span></button>`).join("")}</div></div></div>${formHtml(true)}`;
     await segarDaftar();
   }
   async function segarDaftar() {
@@ -48,14 +48,14 @@ export function pasangPesan() {
       const daf = pn.querySelector("#psDaf");
       if (!daf) return;
       daf.innerHTML = d.utas.length
-        ? `<ul class="ps-daftar">${d.utas.map((u) => `<li><button type="button" class="ps-utas${u.dibaca_akun ? "" : " belum"}" data-utas="${esc(u.id)}"><span class="ps-utas-a"><b>${esc(t("ps.topik." + u.topik))}</b>${pilStatus(u.status)}</span><span class="ps-utas-t">${esc(u.terakhir_dari === "admin" ? t("ps.admin") + ": " : "")}${esc(u.terakhir || "")}</span><span class="ps-g-meta">${esc(waktu(u.diubah))}</span></button></li>`).join("")}</ul>`
-        : `<div class="ps-kosong"><span class="ps-kosong-ik">${IK_PESAN}</span><p>${esc(t("ps.kosong"))}</p></div>`;
-    } catch { const daf = pn.querySelector("#psDaf"); if (daf) daf.innerHTML = `<p class="ps-galat">${esc(t("ps.err.umum"))}</p>`; }
+        ? `<ul class="psn-daftar">${d.utas.map((u) => `<li><button type="button" class="psn-utas${u.dibaca_akun ? "" : " belum"}" data-utas="${esc(u.id)}"><span class="psn-utas-a"><b>${esc(t("ps.topik." + u.topik))}</b>${pilStatus(u.status)}</span><span class="psn-utas-t">${esc(u.terakhir_dari === "admin" ? t("ps.admin") + ": " : "")}${esc(u.terakhir || "")}</span><span class="psn-g-meta">${esc(waktu(u.diubah))}</span></button></li>`).join("")}</ul>`
+        : `<div class="psn-kosong"><span class="psn-kosong-ik">${IK_PESAN}</span><p>${esc(t("ps.kosong"))}</p></div>`;
+    } catch { const daf = pn.querySelector("#psDaf"); if (daf) daf.innerHTML = `<p class="psn-galat">${esc(t("ps.err.umum"))}</p>`; }
   }
 
   async function gambarUtas(id, awal) {
     S.view = "utas"; S.utas = id; S.galat = "";
-    if (awal) pn.innerHTML = `${kepala(t("ps.judul"), true)}<div class="ps-isi"><p class="ps-sub">${esc(t("jm.memuat"))}</p></div>`;
+    if (awal) pn.innerHTML = `${kepala(t("ps.judul"), true)}<div class="psn-isi"><p class="psn-sub">${esc(t("jm.memuat"))}</p></div>`;
     try {
       const d = await api("/api/pesan/" + encodeURIComponent(id));
       if (S.view !== "utas" || S.utas !== id) return;
@@ -67,15 +67,15 @@ export function pasangPesan() {
         status: m === terakhirAkun ? t(dibaca ? "ps.dibaca" : "ps.terkirim") : "",
         url: m.lampiran ? `/api/pesan/${encodeURIComponent(id)}/berkas/${encodeURIComponent(m.id)}` : "",
       })).join("");
-      const lama = pn.querySelector(".ps-isi"), dekat = !lama || lama.scrollHeight - lama.scrollTop - lama.clientHeight < 80;
+      const lama = pn.querySelector(".psn-isi"), dekat = !lama || lama.scrollHeight - lama.scrollTop - lama.clientHeight < 80;
       const teksSimpan = pn.querySelector("#psIsi")?.value || "";
-      pn.innerHTML = `${kepala(t("ps.topik." + d.utas.topik), true)}<div class="ps-isi" aria-live="polite"><div class="ps-baris">${pilStatus(d.utas.status)}</div><ul class="ps-pesan">${daftar}</ul></div>${formHtml(false)}${d.utas.status === "selesai" ? `<p class="ps-tutup-info">${esc(t("ps.selesai_info"))}</p>` : ""}`;
+      pn.innerHTML = `${kepala(t("ps.topik." + d.utas.topik), true)}<div class="psn-isi" aria-live="polite"><div class="psn-baris">${pilStatus(d.utas.status)}</div><ul class="psn-pesan">${daftar}</ul></div>${formHtml(false)}${d.utas.status === "selesai" ? `<p class="psn-tutup-info">${esc(t("ps.selesai_info"))}</p>` : ""}`;
       pn.querySelector("#psIsi").value = teksSimpan;
       pn.querySelector("#psHitung").textContent = `${teksSimpan.length}/${MAKS_ISI}`;
-      const kotak = pn.querySelector(".ps-isi");
+      const kotak = pn.querySelector(".psn-isi");
       if (awal || dekat) kotak.scrollTop = kotak.scrollHeight;
       muatBelum();
-    } catch (e) { if (awal) pn.innerHTML = `${kepala(t("ps.judul"), true)}<div class="ps-isi"><p class="ps-galat">${esc(t("ps.err.umum"))}</p></div>`; }
+    } catch (e) { if (awal) pn.innerHTML = `${kepala(t("ps.judul"), true)}<div class="psn-isi"><p class="psn-galat">${esc(t("ps.err.umum"))}</p></div>`; }
   }
 
   function mulaiPoling() {
@@ -88,7 +88,7 @@ export function pasangPesan() {
   function tutup() { S.buka = false; clearInterval(S.timer); pn.hidden = true; fab.setAttribute("aria-expanded", "false"); fab.focus(); }
   function bukaPanel() {
     S.buka = true; pn.hidden = false; fab.setAttribute("aria-expanded", "true"); // chrome urgent
-    pn.innerHTML = `${kepala(t("ps.judul"), false, t("ps.kep_sub"))}<div class="ps-isi"><p class="ps-sub">${esc(t("jm.memuat"))}</p></div>`;
+    pn.innerHTML = `${kepala(t("ps.judul"), false, t("ps.kep_sub"))}<div class="psn-isi"><p class="psn-sub">${esc(t("jm.memuat"))}</p></div>`;
     mulaiPoling();
     nanti(() => gambarDaftar());
   }

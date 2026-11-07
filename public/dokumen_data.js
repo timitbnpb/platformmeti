@@ -333,7 +333,7 @@ function cfgProv(d, tab, m) {
   const urut = [...m.baris].sort((a, b) => b.tot - a.tot), seri = m.kol.map((c) => ({ id: c.k, label: c.label, kls: c.info[2], ebt: c.info[1], nilai: urut.map((r) => r.v[c.k] || 0), tip: jPanjang(c.k, c.label) }));
   return {
     mode: "kolom", slot: 22, satuan: dasar(tab), judul: t("dd.g.prov", { s: dasar(tab) }), sub: t("dd.g.sub_klik"), klik: true,
-    kat: urut.map((r) => ({ id: r.id, label: r.nama, pend: singkatProv(r.kode) || r.nama })), seri,
+    kat: urut.map((r) => ({ id: r.id, kode: r.kode, label: r.nama, pend: singkatProv(r.kode) || r.nama })), seri,
     pilih: (ki) => urut[ki].id === S.g,
     aria: (ki) => `${urut[ki].nama}: ${angka(urut[ki].tot)}`,
     tip: (ki) => {
@@ -370,7 +370,7 @@ function cfgRued(d, tab, m) {
   const seri = tek.map((k) => ({ id: k, label: labelTek(k), kls: jinfo(k)[2], ebt: true, nilai: urut.map((g) => jml(g.anak.filter((a) => a.teknologi === k).map((a) => a.mw))) }));
   return {
     mode: "kolom", slot: 40, satuan: "MW", judul: t("dd.g.rued"), sub: t("dd.g.sub_klik"), klik: true, nilaiAtas: true,
-    kat: urut.map((g) => ({ id: g.id, label: nmProv(g.id), pend: singkatProv(g.kode) || nmProv(g.id) })), seri,
+    kat: urut.map((g) => ({ id: g.id, kode: g.kode, label: nmProv(g.id), pend: singkatProv(g.kode) || nmProv(g.id) })), seri,
     pilih: (ki) => urut[ki].id === S.g,
     aria: (ki) => `${nmProv(urut[ki].id)}: ${angka(urut[ki].mw)} MW`,
     tip: (ki) => { const g = urut[ki], v = seri.filter((s) => !G.hid.has(s.id) && s.nilai[ki]).sort((a, b) => b.nilai[ki] - a.nilai[ki]);
@@ -388,7 +388,7 @@ function lukis() {
   const svg = $("ddSvg"); if (!svg || !G.cfg) return;
   const c = G.cfg, n = c.kat.length, sc = $("ddGs"), H = 280, mL = 52, mT = 26, mR = c.garis ? 118 : 10;
   const maxLab = Math.max(...c.kat.map((k) => k.pend.length)), W = Math.max(sc.clientWidth || 600, n * c.slot + mL + mR);
-  const slot = (W - mL - mR) / n, rot = slot < maxLab * 6.4, mB = rot ? Math.min(100, 14 + maxLab * 5.6) : 30, ph = H - mT - mB;
+  const slot = (W - mL - mR) / n, rot = slot < maxLab * 6.4, kd = (k) => k.kode || kodeProv(String(k.label).replace(/\./g, "")), ik = c.kat.some(kd) ? 18 : 0, mB = (rot ? Math.min(100, 14 + maxLab * 5.6) : 30) + ik, ph = H - mT - mB;
   const vis = c.seri.map((_, i) => i).filter((i) => !G.hid.has(c.seri[i].id));
   const tot = c.kat.map((_, ki) => vis.reduce((a, si) => a + (c.seri[si].nilai[ki] || 0), 0));
   const mx = Math.max(1, ...tot, c.garis?.v || 0, ...(c.tanda || []).map((v) => v || 0)), step = stepBagus(mx / 4), top = Math.ceil(mx / step) * step;
@@ -409,8 +409,9 @@ function lukis() {
   if (c.tanda) c.tanda.forEach((v, ki) => { if (v) o += `<line class="dd-mark" x1="${(cx(ki) - slot * 0.4).toFixed(1)}" x2="${(cx(ki) + slot * 0.4).toFixed(1)}" y1="${y(v).toFixed(1)}" y2="${y(v).toFixed(1)}"/>`; });
   if (c.garis) o += `<line class="dd-nas" x1="${mL}" x2="${W - mR + 4}" y1="${y(c.garis.v).toFixed(1)}" y2="${y(c.garis.v).toFixed(1)}"/><text class="dd-nas-t" x="${W - mR + 8}" y="${(y(c.garis.v) + 4).toFixed(1)}" text-anchor="start">${esc(c.garis.label)}</text>`;
   c.kat.forEach((k, ki) => {
-    const lab = k.pend.length > 15 ? k.pend.slice(0, 14) + "…" : k.pend, xx = cx(ki).toFixed(1), yy = (mT + ph + 14).toFixed(1);
-    o += rot ? `<text class="dd-ax dd-eks" data-ki="${ki}" x="${xx}" y="${yy}" text-anchor="end" transform="rotate(-55 ${xx} ${yy})">${esc(lab)}</text>` : `<text class="dd-ax dd-eks" data-ki="${ki}" x="${xx}" y="${(mT + ph + 18).toFixed(1)}" text-anchor="middle">${esc(lab)}</text>`;
+    const lab = k.pend.length > 15 ? k.pend.slice(0, 14) + "…" : k.pend, xx = cx(ki).toFixed(1), yy = (mT + ph + 14 + ik).toFixed(1);
+    if (kd(k)) o += `<image href="/img/provinsi/${esc(kd(k))}.png" x="${(cx(ki) - 8).toFixed(1)}" y="${(mT + ph + 3).toFixed(1)}" width="16" height="16" preserveAspectRatio="xMidYMid meet"/>`;
+    o += rot ? `<text class="dd-ax dd-eks" data-ki="${ki}" x="${xx}" y="${yy}" text-anchor="end" transform="rotate(-55 ${xx} ${yy})">${esc(lab)}</text>` : `<text class="dd-ax dd-eks" data-ki="${ki}" x="${xx}" y="${(mT + ph + 18 + ik).toFixed(1)}" text-anchor="middle">${esc(lab)}</text>`;
   });
   c.kat.forEach((k, ki) => { o += `<rect class="dd-hit" data-ki="${ki}" tabindex="0" role="img" aria-label="${esc(c.aria(ki))}" x="${(mL + slot * ki).toFixed(1)}" y="${mT}" width="${slot.toFixed(1)}" height="${ph.toFixed(1)}"/>`; });
   svg.setAttribute("viewBox", `0 0 ${W} ${H}`); svg.setAttribute("width", W); svg.setAttribute("height", H); svg.innerHTML = o;

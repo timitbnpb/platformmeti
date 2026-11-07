@@ -11,6 +11,7 @@ import { logoOrg } from "/inti/logo_org.js";
 import { ikonTek, pilTek } from "/inti/ikon_tek.js";
 import { namaProyek } from "/inti/nama_proyek.js";
 import { tombolIkuti, pasangIkuti } from "/inti/ikuti.js";
+import { seksiSurelHtml, bukaMintaSurel } from "/inti/surel_minta.js";
 import * as C from "/saya_cocok.js";
 
 const saya = await mulaiHalaman();
@@ -55,6 +56,7 @@ function entitas(jenis, ref) {
 const sebutan = (jenis, ref) => { const e = entitas(jenis, ref); return `<a href="${esc(e.href)}">${esc(e.nama)}</a>`; };
 
 function apa(x) {
+  if (x.tipe === "riwayat") return esc(t("sy2.rw." + x.j, { kolom: x.kolom || "" }));
   if (x.tipe === "portal") return esc(t("dk.portal." + x.jenis_ajuan));
   if (x.tipe === "koreksi") return esc(t("dk.koreksi", { kolom: t("kor.k." + x.kolom) }));
   if (x.tipe === "topik") return esc(t("dk.topik_baru", { judul: x.judul || x.ref }));
@@ -94,7 +96,7 @@ function barisIkuti(x, terbaru) {
 }
 function seksiIkuti() {
   const jenis = S.tab.syIkuti, a = daftarIkuti(jenis), hal = Math.min(S.hal.syIkuti, Math.max(1, Math.ceil(a.length / PER)));
-  const terbaru = C.terbaruPerEntitas(S.r.item);
+  const terbaru = C.terbaruPerEntitas([...S.r.item, ...(S.riwayat || [])]);
   const isi = tabHtml("syIkuti", JENIS_IKUTI, jenis, IK_IKUTI, (k) => daftarIkuti(k).length)
     + (a.length ? `<ul class="sy-daftar">${potong(a, hal).map((x) => barisIkuti(x, terbaru)).join("")}</ul>${pag(a, hal)}` : kosong(IK_IKUTI[jenis], "sy2.kosong." + jenis, TAUT_JELAJAH[jenis], "sy2.jelajah"));
   return exHtml({ id: "syIkuti", ikon: "bintang", topik: t("sy2.ikuti.topik"), judulHtml: hl("sy2.ikuti.judul", angka(S.ikut.length)), subHtml: esc(t("sy2.ikuti.sub")), isiHtml: isi });
@@ -177,7 +179,7 @@ function hitung() {
 function gambar() {
   hitung();
   gambarKepala();
-  akar.innerHTML = seksiBaru() + seksiIkuti() + seksiUntuk() + seksiSaran();
+  akar.innerHTML = seksiBaru() + seksiIkuti() + seksiUntuk() + seksiSurelHtml(S.surel) + seksiSaran();
   pasangIkuti(akar);
 }
 const ulang = (id) => {
@@ -189,22 +191,37 @@ const ulang = (id) => {
 
 async function ambil(jalur) { try { return await api(jalur); } catch { return null; } }
 async function muat() {
-  const [p, ik, rg, kj, ks, org, sk, kal, pj, wl, tp, reg] = await Promise.all([
+  const [p, ik, rg, kj, ks, org, sk, kal, pj, wl, tp, reg, sr] = await Promise.all([
     ambil("/api/profil/saya"), ambil("/api/ikuti"), ambil("/api/ikuti/ringkasan"), ambil("/api/kerja"), ambil("/api/konsultasi"),
-    muatJson("organisasi"), muatJson("pendanaan"), muatJson("kalender"), muatJson("proyek"), muatJson("meti-wilayah"), muatJson("topik/indeks"), muatJson("regulasi")]);
+    muatJson("organisasi"), muatJson("pendanaan"), muatJson("kalender"), muatJson("proyek"), muatJson("meti-wilayah"), muatJson("topik/indeks"), muatJson("regulasi"), ambil("/api/surel/saya")]);
+  S.surel = sr?.baris ?? null; // null = fitur belum aktif: seksi tidak tampil
   S.p = p || {}; S.ikut = ik?.baris || []; S.r = rg || { item: [], baru: 0 }; S.kerja = kj?.baris || []; S.kons = ks?.baris || [];
   S.org = org?.baris || []; S.skema = sk?.pendanaan || []; S.kal = Array.isArray(kal) ? kal : kal?.baris || []; S.proyek = pj?.baris || [];
   S.prov = wl?.provinsi || []; S.topik = tp?.topik || []; S.reg = reg?.baris || [];
+  await muatRiwayat();
   ORG = new Map(S.org.map((o) => [o.id, o])); PROY = new Map(S.proyek.map((x) => [x.id, x])); REG = new Map(S.reg.map((x) => [x.id, x])); KONS = new Map(S.kons.map((k) => [k.id, k]));
   gambar();
+}
+/* Riwayat perubahan data (G1): public/data/riwayat/entitas/<jenis>.json, entri [tanggal, jenis, kolom, lama, baru, url]; hanya untuk yang diikuti. Gagal = cadangan ringkasan ikuti. */
+async function muatRiwayat() {
+  const hasil = [];
+  await Promise.all(["organisasi", "proyek", "regulasi"].map(async (jenis) => {
+    const ref = S.ikut.filter((x) => x.jenis === jenis).map((x) => x.ref);
+    if (!ref.length) return;
+    const d = await muatJson("riwayat/entitas/" + jenis);
+    for (const id of ref) for (const [tgl_, j, kolom] of d?.entitas?.[id] || []) hasil.push({ tipe: "riwayat", jenis, ref: id, j, kolom, waktu: Math.floor(Date.parse(tgl_) / 1000) || 0 });
+  }));
+  S.riwayat = hasil;
 }
 async function segarkanIkuti() {
   const [ik, rg] = await Promise.all([ambil("/api/ikuti"), ambil("/api/ikuti/ringkasan")]);
   if (ik) S.ikut = ik.baris; if (rg) S.r = rg;
+  await muatRiwayat();
   gambar();
 }
 
 akar.addEventListener("click", (e) => {
+  if (e.target.closest("[data-surel=buka]")) { bukaMintaSurel(); return; }
   const sek = e.target.closest(".jm-ex")?.id;
   const tab = e.target.closest("[data-tab]");
   if (tab && sek) {
@@ -227,6 +244,7 @@ akar.addEventListener("keydown", (e) => {
   const semua = [...b.parentElement.querySelectorAll("[data-tab]")], i = semua.indexOf(b);
   semua[(i + (e.key === "ArrowRight" ? 1 : -1) + semua.length) % semua.length].focus();
 });
+document.addEventListener("jm:surel", async () => { const sr = await ambil("/api/surel/saya"); S.surel = sr?.baris ?? null; nanti(gambar); });
 document.addEventListener("jm:ikuti", () => nanti(segarkanIkuti));
 document.addEventListener("jm:bahasa", () => { if (S.ikut) gambar(); });
 

@@ -10,6 +10,7 @@ import { sumberLipat, num, amanUrl, batangHtml } from "/analisis.js";
 import { tautOrg, tautProyek } from "/inti/tautan.js";
 import { logoOrgSatu } from "/inti/logo_org.js";
 import { tabelHtml } from "/pelacak_tabel.js";
+import { isoNegara } from "/topik_wujud.js";
 
 const inisial = (nama) => namaBaku(nama).nama.replace(/^PT\.?\s+/i, "").charAt(0).toUpperCase() || "?";
 const warnaMg = (nama) => [...String(nama)].reduce((z, c) => z + c.charCodeAt(0), 0) % 6;
@@ -110,7 +111,7 @@ export function industriHtml(cfg, X) {
       { k: "nama", j: "pl.c.pabrik", u: (r) => r.nama, sel: (r) => (r.jenis === "fasilitas" ? nm(r.id, r.nama) : esc(r.nama)) },
       { k: "status", j: "pl.c.status", u: (r) => r.status, kelas: "jm-tengah", sel: (r) => (r.status ? `<span class="jm-pil">${stat(r.status)}</span>` : `<span class="jm-pil">${esc(t("pl.i.berita"))}</span>`) },
       { k: "kap", j: "pl.c.kapasitas", u: (r) => r.kap, desc: 1, kelas: "jm-num", sel: (r) => (r.kap ? `${esc(num(r.kap))} ${esc(r.sat)}` : "-") },
-      { k: "investor", j: "pl.c.investor", u: (r) => r.investor, sel: (r) => sel(r.investor) },
+      { k: "investor", j: "pl.c.investor", u: (r) => r.investor, sel: (r) => { const i = isoNegara(String(r.investor || "").split("/")[0]); return i ? `<span class="jm-bd-n"><img class="jm-bd" src="/img/bendera/${i}.svg" width="20" height="15" alt="" loading="lazy" data-galat="hapus"><span>${esc(r.investor)}</span></span>` : sel(r.investor); } },
       { k: "mulai", j: "pl.c.tahun", u: (r) => Number(r.mulai) || null, desc: 1, kelas: "jm-num", sel: (r) => sel(r.mulai) },
       { k: "sumber", j: "pl.c.sumber", u: (r) => r.sumber, sel: (r) => tautSumber(r.sumber) },
     ] }), sumber: srcRt,

@@ -67,7 +67,7 @@ dialog.pu-dlg::backdrop{background:color-mix(in srgb,var(--brand) 62%,transparen
 .pu-tab>button{flex:1}
 .pu-panel{display:grid;gap:20px;min-width:0}
 .pu-panel[hidden]{display:none}
-.pu-panel p{margin:0;line-height:var(--lh-isi);color:var(--ink2);text-align:justify;hyphens:auto}
+.pu-panel p{margin:0;line-height:var(--lh-isi);color:var(--ink2);text-align:left;hyphens:manual}
 .pu-panel .pu-bantu,.pu-k .pu-bantu{font-size:var(--t-kecil);text-align:left}
 .pu-tau{display:grid;gap:6px;margin-top:10px}
 .pu-tau h4{margin:0;font:700 var(--t-kecil)/1 var(--font);color:var(--ink2)}

@@ -31,8 +31,14 @@ export async function cari(env, akun, s) {
   const jenis = s.get("jenis") || "", status = s.get("status") || "";
   if ((jenis && !/^[A-Za-z]{2,12}$/.test(jenis)) || (status && !/^[A-Za-z]{2,12}$/.test(status))) throw new Galat("masukan_salah");
   await lajuHukum(env, "cari", akun, 120);
-  const r = WAJIB_ADA(await hak.hukumCari(env, akun, { match, jenis, tahun, status, hal, per: PER_HAL }));
-  return { ...r, hal, per_hal: PER_HAL };
+  const f = { jenis, tahun, status, hal, per: PER_HAL };
+  let r = WAJIB_ADA(await hak.hukumCari(env, akun, { match, ...f }));
+  let longgar = false;
+  if (!r.total) {   // semua kata tak ketemu bersamaan: longgarkan jadi salah satu kata (tanpa kata umum), ditandai agar layar jujur
+    const atau = kueriFts(q, { atau: true, buangStop: true });
+    if (atau && atau !== match) { r = WAJIB_ADA(await hak.hukumCari(env, akun, { match: atau, ...f })); longgar = r.total > 0; }
+  }
+  return { ...r, hal, per_hal: PER_HAL, longgar };
 }
 
 export async function tanya(env, akun, pertanyaan) {

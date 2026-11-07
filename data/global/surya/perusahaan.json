@@ -1,0 +1,5654 @@
+{
+ "_catatan": "Pemasok global SURYA. Kutipan kalimat Wikipedia (CC BY-SA 4.0) dan data Wikidata (CC0); TKDN dari sertifikat Kemenperin. Kapasitas/pangsa hanya kutipan bersumber, bukan angka yang dihitung. Bukan via-pihak-ketiga tinggi: maks keyakinan Sedang.",
+ "diambil": "2026-11-08",
+ "jumlah": 80,
+ "per_segmen": {
+  "polisilikon": 9,
+  "wafer": 5,
+  "sel": 14,
+  "modul": 25,
+  "inverter-string": 15,
+  "inverter-sentral": 9,
+  "mikroinverter": 2,
+  "tracker-mounting": 9,
+  "kaca": 3,
+  "frame": 0,
+  "eva": 0,
+  "backsheet": 0,
+  "bess": 30
+ },
+ "tanpa_sumber": [
+  "GCL Technology Holdings",
+  "Waaree Energies",
+  "Seraphim Solar",
+  "Talesun Solar",
+  "Huasun Energy",
+  "Znshine PV-Tech",
+  "Phono Solar",
+  "Boviet Solar",
+  "Premier Energies",
+  "Tata Power Solar",
+  "Mission Solar Energy",
+  "Solarspace",
+  "Hounen Solar",
+  "Xinte Energy",
+  "Asia Silicon",
+  "Shuangliang Eco-Energy Systems",
+  "Hangzhou First Applied Material",
+  "Jolywood",
+  "Zhongli Talesun",
+  "Growatt",
+  "Ginlong Technologies",
+  "Sineng Electric",
+  "Kehua Data",
+  "Sofar Solar",
+  "Hoymiles",
+  "Gamesa Electric",
+  "FTC Solar",
+  "GameChange Solar",
+  "K2 Systems",
+  "Convert Italia",
+  "Terrasmart",
+  "Esdec",
+  "Gonvarri Solar Steel",
+  "Hithium Energy Storage Technology",
+  "Powin",
+  "Sigenergy",
+  "Trina Storage"
+ ],
+ "blokir": {},
+ "baris": [
+  {
+   "id": "en_7f04db4544",
+   "nama": "Adani Solar",
+   "nama_lain": [
+    "Mundra Solar",
+    "Adani Green Energy",
+    "Adani Green Energy Limited",
+    "AGEL"
+   ],
+   "negara_iso2": "IN",
+   "wikidata": "Q83473736",
+   "wikipedia": "https://en.wikipedia.org/wiki/Adani_Green_Energy",
+   "segmen": [
+    "modul"
+   ],
+   "segmen_belum_terbukti": [
+    "wafer",
+    "sel"
+   ],
+   "tahun_berdiri": 2015,
+   "kantor_pusat": {
+    "kota": "Ahmedabad",
+    "negara_iso2": "IN"
+   },
+   "situs": "https://www.adanigreenenergy.com/",
+   "logo": null,
+   "kapasitas": [
+    {
+     "kutipan": "During the initial days of existence, AGEL and Inox Wind together established a 20 MW capacity wind power project in Lahori, Madhya Pradesh.",
+     "sumber_url": "https://en.wikipedia.org/wiki/Adani_Green_Energy",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "via-pihak-ketiga"
+    },
+    {
+     "kutipan": "AGEL has a current project portfolio of ~5.29 GW and an operational capacity of ~2.36 GW.",
+     "sumber_url": "https://en.wikipedia.org/wiki/Adani_Green_Energy",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "via-pihak-ketiga"
+    }
+   ],
+   "pangsa_pasar": [
+    {
+     "kutipan": "In May 2020, AGEL won the world's largest solar bid worth $6 billion by the Solar Energy Corporation of India (SECI).",
+     "sumber_url": "https://en.wikipedia.org/wiki/Adani_Green_Energy",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "via-pihak-ketiga"
+    }
+   ],
+   "status_tier1": [],
+   "pabrik_indonesia": [],
+   "pabrik_asean": [],
+   "mitra_indonesia": [],
+   "kantor_indonesia": [],
+   "tkdn": null,
+   "proyek_indonesia": [],
+   "isu_dagang": [],
+   "esg": [],
+   "sumber": [
+    {
+     "url": "https://www.wikidata.org/wiki/Q83473736",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "tanggal_periksa": "2026-11-08",
+     "keterangan": "Wikidata (CC0)"
+    },
+    {
+     "url": "https://en.wikipedia.org/wiki/Adani_Green_Energy",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "tanggal_periksa": "2026-11-08",
+     "keterangan": "Wikipedia (CC BY-SA)"
+    }
+   ],
+   "fakta": [
+    {
+     "medan": "tahun_berdiri",
+     "sumber_url": "https://www.wikidata.org/wiki/Q83473736",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "nilai": 2015
+    },
+    {
+     "medan": "kantor_pusat",
+     "sumber_url": "https://www.wikidata.org/wiki/Q83473736",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "nilai": "Ahmedabad"
+    },
+    {
+     "medan": "situs",
+     "sumber_url": "https://www.wikidata.org/wiki/Q83473736",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "nilai": "https://www.adanigreenenergy.com/"
+    }
+   ]
+  },
+  {
+   "id": "en_621bfcce14",
+   "nama": "Aiko Solar",
+   "nama_lain": [
+    "AIKO",
+    "Aiko Solar Energy"
+   ],
+   "negara_iso2": "CN",
+   "wikidata": "Q134629226",
+   "wikipedia": null,
+   "segmen": [
+    "sel"
+   ],
+   "segmen_belum_terbukti": [
+    "modul"
+   ],
+   "tahun_berdiri": 2023,
+   "kantor_pusat": {
+    "kota": "Paris",
+    "negara_iso2": "CN"
+   },
+   "situs": null,
+   "logo": null,
+   "kapasitas": [],
+   "pangsa_pasar": [],
+   "status_tier1": [],
+   "pabrik_indonesia": [],
+   "pabrik_asean": [],
+   "mitra_indonesia": [],
+   "kantor_indonesia": [],
+   "tkdn": null,
+   "proyek_indonesia": [],
+   "isu_dagang": [],
+   "esg": [],
+   "sumber": [
+    {
+     "url": "https://www.wikidata.org/wiki/Q134629226",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "tanggal_periksa": "2026-11-08",
+     "keterangan": "Wikidata (CC0)"
+    }
+   ],
+   "fakta": [
+    {
+     "medan": "tahun_berdiri",
+     "sumber_url": "https://www.wikidata.org/wiki/Q134629226",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "nilai": 2023
+    },
+    {
+     "medan": "kantor_pusat",
+     "sumber_url": "https://www.wikidata.org/wiki/Q134629226",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "nilai": "Paris"
+    }
+   ],
+   "catatan_negara": "Wikidata menyebut FR; kurasi CN"
+  },
+  {
+   "id": "en_d6dc34ecc6",
+   "nama": "Antai Solar",
+   "nama_lain": [
+    "Antaisolar",
+    "Antai",
+    "Antes"
+   ],
+   "negara_iso2": "CN",
+   "wikidata": "Q571813",
+   "wikipedia": "https://en.wikipedia.org/wiki/Antes_people",
+   "segmen": [
+    "tracker-mounting"
+   ],
+   "segmen_belum_terbukti": [],
+   "tahun_berdiri": null,
+   "kantor_pusat": null,
+   "situs": null,
+   "logo": null,
+   "kapasitas": [],
+   "pangsa_pasar": [],
+   "status_tier1": [],
+   "pabrik_indonesia": [],
+   "pabrik_asean": [],
+   "mitra_indonesia": [],
+   "kantor_indonesia": [],
+   "tkdn": null,
+   "proyek_indonesia": [],
+   "isu_dagang": [],
+   "esg": [],
+   "sumber": [
+    {
+     "url": "https://www.wikidata.org/wiki/Q571813",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "tanggal_periksa": "2026-11-08",
+     "keterangan": "Wikidata (CC0)"
+    },
+    {
+     "url": "https://en.wikipedia.org/wiki/Antes_people",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "tanggal_periksa": "2026-11-08",
+     "keterangan": "Wikipedia (CC BY-SA)"
+    }
+   ],
+   "fakta": [],
+   "segmen_catatan": "segmen kurasi tim; tanpa teks sumber untuk diverifikasi"
+  },
+  {
+   "id": "en_3ef6f20a6c",
+   "nama": "APsystems",
+   "nama_lain": [
+    "Altenergy Power System"
+   ],
+   "negara_iso2": "US",
+   "wikidata": "Q137399884",
+   "wikipedia": "https://en.wikipedia.org/wiki/APsystems",
+   "segmen": [
+    "mikroinverter"
+   ],
+   "segmen_belum_terbukti": [],
+   "tahun_berdiri": null,
+   "kantor_pusat": null,
+   "situs": null,
+   "logo": null,
+   "kapasitas": [
+    {
+     "kutipan": "As of January 2018, APsystems microinverters had produced more than 130 GWh of energy with a carbon offset of over 95,000 tons.",
+     "sumber_url": "https://en.wikipedia.org/wiki/APsystems",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "via-pihak-ketiga"
+    },
+    {
+     "kutipan": "In 2020, APsmart RSD device shipments surpassed 100MV and APsystems Microinverter cumulative shipments exceeded 1GW globally.",
+     "sumber_url": "https://en.wikipedia.org/wiki/APsystems",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "via-pihak-ketiga"
+    }
+   ],
+   "pangsa_pasar": [
+    {
+     "kutipan": "Greentech Media Research ranked APS number two in global microinverter suppliers by shipments in 2013.",
+     "sumber_url": "https://en.wikipedia.org/wiki/APsystems",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "via-pihak-ketiga"
+    },
+    {
+     "kutipan": "In February 2025, the company was ranked as one of the most bankable inverter companies by Sinovoltaics.",
+     "sumber_url": "https://en.wikipedia.org/wiki/APsystems",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "via-pihak-ketiga"
+    }
+   ],
+   "status_tier1": [],
+   "pabrik_indonesia": [],
+   "pabrik_asean": [],
+   "mitra_indonesia": [],
+   "kantor_indonesia": [],
+   "tkdn": null,
+   "proyek_indonesia": [],
+   "isu_dagang": [],
+   "esg": [
+    {
+     "kutipan": "In March 2014, APS America microinverters were available broadly across the Pacific Northwest United States, including residential development projects such as Grow Community, a net-zero and townhome community on Bainbridge Island, Washington.",
+     "sumber_url": "https://en.wikipedia.org/wiki/APsystems",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "via-pihak-ketiga"
+    }
+   ],
+   "sumber": [
+    {
+     "url": "https://www.wikidata.org/wiki/Q137399884",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "tanggal_periksa": "2026-11-08",
+     "keterangan": "Wikidata (CC0)"
+    },
+    {
+     "url": "https://en.wikipedia.org/wiki/APsystems",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "tanggal_periksa": "2026-11-08",
+     "keterangan": "Wikipedia (CC BY-SA)"
+    }
+   ],
+   "fakta": []
+  },
+  {
+   "id": "en_321b14fadf",
+   "nama": "Arctech Solar",
+   "nama_lain": [
+    "Arctech",
+    "Jiangsu Zhongtian Arctech"
+   ],
+   "negara_iso2": "CN",
+   "wikidata": "Q1278953",
+   "wikipedia": "https://en.wikipedia.org/wiki/Arctech_Helsinki_Shipyard",
+   "segmen": [
+    "tracker-mounting"
+   ],
+   "segmen_belum_terbukti": [],
+   "tahun_berdiri": 2010,
+   "kantor_pusat": {
+    "kota": "Helsinki",
+    "negara_iso2": "CN"
+   },
+   "situs": "https://arctech.fi",
+   "logo": null,
+   "kapasitas": [],
+   "pangsa_pasar": [],
+   "status_tier1": [],
+   "pabrik_indonesia": [],
+   "pabrik_asean": [],
+   "mitra_indonesia": [],
+   "kantor_indonesia": [],
+   "tkdn": null,
+   "proyek_indonesia": [],
+   "isu_dagang": [],
+   "esg": [],
+   "sumber": [
+    {
+     "url": "https://www.wikidata.org/wiki/Q1278953",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "tanggal_periksa": "2026-11-08",
+     "keterangan": "Wikidata (CC0)"
+    },
+    {
+     "url": "https://en.wikipedia.org/wiki/Arctech_Helsinki_Shipyard",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "tanggal_periksa": "2026-11-08",
+     "keterangan": "Wikipedia (CC BY-SA)"
+    }
+   ],
+   "fakta": [
+    {
+     "medan": "tahun_berdiri",
+     "sumber_url": "https://www.wikidata.org/wiki/Q1278953",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "nilai": 2010
+    },
+    {
+     "medan": "kantor_pusat",
+     "sumber_url": "https://www.wikidata.org/wiki/Q1278953",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "nilai": "Helsinki"
+    },
+    {
+     "medan": "situs",
+     "sumber_url": "https://www.wikidata.org/wiki/Q1278953",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "nilai": "https://arctech.fi",
+     "catatan": "http diubah ke https"
+    }
+   ],
+   "segmen_catatan": "segmen kurasi tim; tanpa teks sumber untuk diverifikasi",
+   "catatan_negara": "Wikidata menyebut FI; kurasi CN"
+  },
+  {
+   "id": "en_a7a5c8060a",
+   "nama": "Array Technologies",
+   "nama_lain": [
+    "Array Technologies Inc",
+    "ARRAY",
+    "ATI",
+    "Array Technologies Incorporated",
+    "Array Technology Incorporated"
+   ],
+   "negara_iso2": "US",
+   "wikidata": "Q213849",
+   "wikipedia": "https://en.wikipedia.org/wiki/ATI_Technologies",
+   "segmen": [
+    "tracker-mounting"
+   ],
+   "segmen_belum_terbukti": [],
+   "tahun_berdiri": 1985,
+   "kantor_pusat": {
+    "kota": "Markham",
+    "negara_iso2": "US"
+   },
+   "situs": "https://ati.amd.com/",
+   "logo": null,
+   "kapasitas": [],
+   "pangsa_pasar": [],
+   "status_tier1": [],
+   "pabrik_indonesia": [],
+   "pabrik_asean": [],
+   "mitra_indonesia": [],
+   "kantor_indonesia": [],
+   "tkdn": null,
+   "proyek_indonesia": [],
+   "isu_dagang": [],
+   "esg": [],
+   "sumber": [
+    {
+     "url": "https://www.wikidata.org/wiki/Q213849",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "tanggal_periksa": "2026-11-08",
+     "keterangan": "Wikidata (CC0)"
+    },
+    {
+     "url": "https://en.wikipedia.org/wiki/ATI_Technologies",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "tanggal_periksa": "2026-11-08",
+     "keterangan": "Wikipedia (CC BY-SA)"
+    }
+   ],
+   "fakta": [
+    {
+     "medan": "tahun_berdiri",
+     "sumber_url": "https://www.wikidata.org/wiki/Q213849",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "nilai": 1985
+    },
+    {
+     "medan": "kantor_pusat",
+     "sumber_url": "https://www.wikidata.org/wiki/Q213849",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "nilai": "Markham"
+    },
+    {
+     "medan": "situs",
+     "sumber_url": "https://www.wikidata.org/wiki/Q213849",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "nilai": "https://ati.amd.com/",
+     "catatan": "http diubah ke https"
+    }
+   ],
+   "segmen_catatan": "segmen kurasi tim; tanpa teks sumber untuk diverifikasi",
+   "catatan_negara": "Wikidata menyebut CA; kurasi US"
+  },
+  {
+   "id": "en_df52dd9f61",
+   "nama": "Astronergy",
+   "nama_lain": [
+    "Chint Solar",
+    "Zhejiang Astronergy"
+   ],
+   "negara_iso2": "CN",
+   "wikidata": "Q134632225",
+   "wikipedia": null,
+   "segmen": [
+    "sel",
+    "modul"
+   ],
+   "segmen_belum_terbukti": [],
+   "tahun_berdiri": 2023,
+   "kantor_pusat": null,
+   "situs": null,
+   "logo": null,
+   "kapasitas": [],
+   "pangsa_pasar": [],
+   "status_tier1": [],
+   "pabrik_indonesia": [],
+   "pabrik_asean": [],
+   "mitra_indonesia": [],
+   "kantor_indonesia": [],
+   "tkdn": null,
+   "proyek_indonesia": [],
+   "isu_dagang": [],
+   "esg": [],
+   "sumber": [
+    {
+     "url": "https://www.wikidata.org/wiki/Q134632225",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "tanggal_periksa": "2026-11-08",
+     "keterangan": "Wikidata (CC0)"
+    }
+   ],
+   "fakta": [
+    {
+     "medan": "tahun_berdiri",
+     "sumber_url": "https://www.wikidata.org/wiki/Q134632225",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "nilai": 2023
+    }
+   ],
+   "catatan_negara": "Wikidata menyebut FR; kurasi CN"
+  },
+  {
+   "id": "en_636c3f6ace",
+   "nama": "BYD Company",
+   "nama_lain": [
+    "BYD",
+    "BYD Energy Storage",
+    "BYD Company Limited",
+    "Build Your Dreams"
+   ],
+   "negara_iso2": "CN",
+   "wikidata": "Q2608329",
+   "wikipedia": "https://en.wikipedia.org/wiki/BYD_Company",
+   "segmen": [
+    "bess"
+   ],
+   "segmen_belum_terbukti": [
+    "modul"
+   ],
+   "tahun_berdiri": 1995,
+   "kantor_pusat": {
+    "kota": "Shenzhen",
+    "negara_iso2": "CN"
+   },
+   "situs": "https://www.bydglobal.com/",
+   "logo": null,
+   "kapasitas": [],
+   "pangsa_pasar": [],
+   "status_tier1": [],
+   "pabrik_indonesia": [],
+   "pabrik_asean": [],
+   "mitra_indonesia": [],
+   "kantor_indonesia": [],
+   "tkdn": null,
+   "proyek_indonesia": [],
+   "isu_dagang": [],
+   "esg": [],
+   "sumber": [
+    {
+     "url": "https://www.wikidata.org/wiki/Q2608329",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "tanggal_periksa": "2026-11-08",
+     "keterangan": "Wikidata (CC0)"
+    },
+    {
+     "url": "https://en.wikipedia.org/wiki/BYD_Company",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "tanggal_periksa": "2026-11-08",
+     "keterangan": "Wikipedia (CC BY-SA)"
+    }
+   ],
+   "fakta": [
+    {
+     "medan": "tahun_berdiri",
+     "sumber_url": "https://www.wikidata.org/wiki/Q2608329",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "nilai": 1995
+    },
+    {
+     "medan": "kantor_pusat",
+     "sumber_url": "https://www.wikidata.org/wiki/Q2608329",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "nilai": "Shenzhen"
+    },
+    {
+     "medan": "situs",
+     "sumber_url": "https://www.wikidata.org/wiki/Q2608329",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "nilai": "https://www.bydglobal.com/"
+    }
+   ]
+  },
+  {
+   "id": "en_45e1e455cf",
+   "nama": "CALB",
+   "nama_lain": [
+    "China Aviation Lithium Battery",
+    "CALB Co., Ltd."
+   ],
+   "negara_iso2": "CN",
+   "wikidata": "Q112276255",
+   "wikipedia": "https://en.wikipedia.org/wiki/CALB",
+   "segmen": [
+    "bess"
+   ],
+   "segmen_belum_terbukti": [],
+   "tahun_berdiri": 2015,
+   "kantor_pusat": null,
+   "situs": "https://en.calb-tech.com/",
+   "logo": null,
+   "kapasitas": [],
+   "pangsa_pasar": [
+    {
+     "kutipan": "In 2022, CALB was the 7th largest supplier of batteries for electric vehicles in the world, 3rd in China (behind CATL and BYD).",
+     "sumber_url": "https://en.wikipedia.org/wiki/CALB",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "via-pihak-ketiga"
+    },
+    {
+     "kutipan": "By 2013, CALB was leading in market share for commercial electric vehicle batteries in China.",
+     "sumber_url": "https://en.wikipedia.org/wiki/CALB",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "via-pihak-ketiga"
+    }
+   ],
+   "status_tier1": [],
+   "pabrik_indonesia": [],
+   "pabrik_asean": [],
+   "mitra_indonesia": [],
+   "kantor_indonesia": [],
+   "tkdn": null,
+   "proyek_indonesia": [],
+   "isu_dagang": [],
+   "esg": [],
+   "sumber": [
+    {
+     "url": "https://www.wikidata.org/wiki/Q112276255",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "tanggal_periksa": "2026-11-08",
+     "keterangan": "Wikidata (CC0)"
+    },
+    {
+     "url": "https://en.wikipedia.org/wiki/CALB",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "tanggal_periksa": "2026-11-08",
+     "keterangan": "Wikipedia (CC BY-SA)"
+    }
+   ],
+   "fakta": [
+    {
+     "medan": "tahun_berdiri",
+     "sumber_url": "https://www.wikidata.org/wiki/Q112276255",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "nilai": 2015
+    },
+    {
+     "medan": "situs",
+     "sumber_url": "https://www.wikidata.org/wiki/Q112276255",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "nilai": "https://en.calb-tech.com/",
+     "catatan": "http diubah ke https"
+    }
+   ]
+  },
+  {
+   "id": "en_0c1bf31853",
+   "nama": "Canadian Solar",
+   "nama_lain": [
+    "CSI Solar",
+    "e-Storage"
+   ],
+   "negara_iso2": "CA",
+   "wikidata": "Q1032353",
+   "wikipedia": "https://en.wikipedia.org/wiki/Canadian_Solar",
+   "segmen": [
+    "modul",
+    "bess"
+   ],
+   "segmen_belum_terbukti": [],
+   "tahun_berdiri": 2001,
+   "kantor_pusat": null,
+   "situs": "https://www.canadian-solar.com",
+   "logo": null,
+   "kapasitas": [
+    {
+     "kutipan": "The $250 million plant, which will employ up to 1,500 people, is designed to assemble 20,000 solar panels a day, totaling 5 GW of annual production capacity.",
+     "sumber_url": "https://en.wikipedia.org/wiki/Canadian_Solar",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "via-pihak-ketiga"
+    },
+    {
+     "kutipan": "Located about 30 miles from downtown Louisville, the one-million-square-foot project will initially have a capacity of 3 GWh, with a second phase expected to double production capacity.",
+     "sumber_url": "https://en.wikipedia.org/wiki/Canadian_Solar",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "via-pihak-ketiga"
+    }
+   ],
+   "pangsa_pasar": [],
+   "status_tier1": [],
+   "pabrik_indonesia": [],
+   "pabrik_asean": [],
+   "mitra_indonesia": [],
+   "kantor_indonesia": [],
+   "tkdn": null,
+   "proyek_indonesia": [],
+   "isu_dagang": [
+    {
+     "kutipan": "Released in 2024, Canadian Solar’s 2023 Corporate Sustainability Report cited ongoing reductions in greenhouse gas emissions and energy, water, and waste intensities. === Controversies === In 2021, the Human Rights Foundation criticized Canadian Solar after The Globe and Mail reported that the company operated a solar farm in Xinjiang, China, near a Uyghur internment camp.",
+     "sumber_url": "https://en.wikipedia.org/wiki/Canadian_Solar",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "via-pihak-ketiga"
+    },
+    {
+     "kutipan": "The Guelph Mercury Tribune later reported a second solar farm in Xinjiang with ties to a supplier of Canadian Solar.",
+     "sumber_url": "https://en.wikipedia.org/wiki/Canadian_Solar",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "via-pihak-ketiga"
+    },
+    {
+     "kutipan": "The Globe also reported a 2019 agreement between Canadian Solar and polysilicon manufacturer GCL-Poly, a company whose Xinjiang subsidiary had ties to forced labor.",
+     "sumber_url": "https://en.wikipedia.org/wiki/Canadian_Solar",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "via-pihak-ketiga"
+    }
+   ],
+   "esg": [
+    {
+     "kutipan": "Released in 2024, Canadian Solar’s 2023 Corporate Sustainability Report cited ongoing reductions in greenhouse gas emissions and energy, water, and waste intensities. === Controversies === In 2021, the Human Rights Foundation criticized Canadian Solar after The Globe and Mail reported that the company operated a solar farm in Xinjiang, China, near a Uyghur internment camp.",
+     "sumber_url": "https://en.wikipedia.org/wiki/Canadian_Solar",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "via-pihak-ketiga"
+    }
+   ],
+   "sumber": [
+    {
+     "url": "https://www.wikidata.org/wiki/Q1032353",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "tanggal_periksa": "2026-11-08",
+     "keterangan": "Wikidata (CC0)"
+    },
+    {
+     "url": "https://en.wikipedia.org/wiki/Canadian_Solar",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "tanggal_periksa": "2026-11-08",
+     "keterangan": "Wikipedia (CC BY-SA)"
+    }
+   ],
+   "fakta": [
+    {
+     "medan": "tahun_berdiri",
+     "sumber_url": "https://www.wikidata.org/wiki/Q1032353",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "nilai": 2001
+    },
+    {
+     "medan": "situs",
+     "sumber_url": "https://www.wikidata.org/wiki/Q1032353",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "nilai": "https://www.canadian-solar.com",
+     "catatan": "http diubah ke https"
+    }
+   ],
+   "catatan_negara": "Wikidata menyebut US; kurasi CA"
+  },
+  {
+   "id": "en_7af0d23531",
+   "nama": "Chint Power Systems",
+   "nama_lain": [
+    "CPS",
+    "Chint Power",
+    "Common Schools of Cincinnati"
+   ],
+   "negara_iso2": "CN",
+   "wikidata": "Q3065651",
+   "wikipedia": "https://en.wikipedia.org/wiki/Cincinnati_Public_Schools",
+   "segmen": [
+    "inverter-string",
+    "inverter-sentral"
+   ],
+   "segmen_belum_terbukti": [],
+   "tahun_berdiri": 1829,
+   "kantor_pusat": null,
+   "situs": "https://www.cps-k12.org/",
+   "logo": null,
+   "kapasitas": [],
+   "pangsa_pasar": [],
+   "status_tier1": [],
+   "pabrik_indonesia": [],
+   "pabrik_asean": [],
+   "mitra_indonesia": [],
+   "kantor_indonesia": [],
+   "tkdn": null,
+   "proyek_indonesia": [],
+   "isu_dagang": [],
+   "esg": [],
+   "sumber": [
+    {
+     "url": "https://www.wikidata.org/wiki/Q3065651",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "tanggal_periksa": "2026-11-08",
+     "keterangan": "Wikidata (CC0)"
+    },
+    {
+     "url": "https://en.wikipedia.org/wiki/Cincinnati_Public_Schools",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "tanggal_periksa": "2026-11-08",
+     "keterangan": "Wikipedia (CC BY-SA)"
+    }
+   ],
+   "fakta": [
+    {
+     "medan": "tahun_berdiri",
+     "sumber_url": "https://www.wikidata.org/wiki/Q3065651",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "nilai": 1829
+    },
+    {
+     "medan": "situs",
+     "sumber_url": "https://www.wikidata.org/wiki/Q3065651",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "nilai": "https://www.cps-k12.org/"
+    }
+   ],
+   "segmen_catatan": "segmen kurasi tim; tanpa teks sumber untuk diverifikasi",
+   "catatan_negara": "Wikidata menyebut US; kurasi CN"
+  },
+  {
+   "id": "en_872fddc5ba",
+   "nama": "Clenergy",
+   "nama_lain": [
+    "Clenergy PV",
+    "Clenergy Australia"
+   ],
+   "negara_iso2": "AU",
+   "wikidata": "Q136149129",
+   "wikipedia": null,
+   "segmen": [
+    "tracker-mounting"
+   ],
+   "segmen_belum_terbukti": [],
+   "tahun_berdiri": null,
+   "kantor_pusat": null,
+   "situs": null,
+   "logo": null,
+   "kapasitas": [],
+   "pangsa_pasar": [],
+   "status_tier1": [],
+   "pabrik_indonesia": [],
+   "pabrik_asean": [],
+   "mitra_indonesia": [],
+   "kantor_indonesia": [],
+   "tkdn": null,
+   "proyek_indonesia": [],
+   "isu_dagang": [],
+   "esg": [],
+   "sumber": [
+    {
+     "url": "https://www.wikidata.org/wiki/Q136149129",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "tanggal_periksa": "2026-11-08",
+     "keterangan": "Wikidata (CC0)"
+    }
+   ],
+   "fakta": [],
+   "segmen_catatan": "segmen kurasi tim; tanpa teks sumber untuk diverifikasi"
+  },
+  {
+   "id": "en_eb7ac55bdd",
+   "nama": "Contemporary Amperex Technology",
+   "nama_lain": [
+    "CATL",
+    "Contemporary Amperex Technology Ltd"
+   ],
+   "negara_iso2": "CN",
+   "wikidata": "Q18653563",
+   "wikipedia": "https://en.wikipedia.org/wiki/CATL",
+   "segmen": [
+    "bess"
+   ],
+   "segmen_belum_terbukti": [],
+   "tahun_berdiri": 2011,
+   "kantor_pusat": {
+    "kota": "Ningde",
+    "negara_iso2": "CN"
+   },
+   "situs": "https://www.catl.com",
+   "logo": null,
+   "kapasitas": [],
+   "pangsa_pasar": [],
+   "status_tier1": [],
+   "pabrik_indonesia": [],
+   "pabrik_asean": [],
+   "mitra_indonesia": [],
+   "kantor_indonesia": [],
+   "tkdn": null,
+   "proyek_indonesia": [],
+   "isu_dagang": [],
+   "esg": [],
+   "sumber": [
+    {
+     "url": "https://www.wikidata.org/wiki/Q18653563",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "tanggal_periksa": "2026-11-08",
+     "keterangan": "Wikidata (CC0)"
+    },
+    {
+     "url": "https://en.wikipedia.org/wiki/CATL",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "tanggal_periksa": "2026-11-08",
+     "keterangan": "Wikipedia (CC BY-SA)"
+    }
+   ],
+   "fakta": [
+    {
+     "medan": "tahun_berdiri",
+     "sumber_url": "https://www.wikidata.org/wiki/Q18653563",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "nilai": 2011
+    },
+    {
+     "medan": "kantor_pusat",
+     "sumber_url": "https://www.wikidata.org/wiki/Q18653563",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "nilai": "Ningde"
+    },
+    {
+     "medan": "situs",
+     "sumber_url": "https://www.wikidata.org/wiki/Q18653563",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "nilai": "https://www.catl.com"
+    }
+   ],
+   "segmen_catatan": "segmen kurasi tim; tanpa teks sumber untuk diverifikasi"
+  },
+  {
+   "id": "en_8dc29e8ca8",
+   "nama": "Daqo New Energy",
+   "nama_lain": [
+    "Daqo",
+    "Daqo New Energy Corp."
+   ],
+   "negara_iso2": "CN",
+   "wikidata": "Q16973267",
+   "wikipedia": "https://en.wikipedia.org/wiki/Daqo_New_Energy",
+   "segmen": [
+    "polisilikon"
+   ],
+   "segmen_belum_terbukti": [],
+   "tahun_berdiri": 2008,
+   "kantor_pusat": {
+    "kota": "Shanghai",
+    "negara_iso2": "CN"
+   },
+   "situs": "https://www.dqsolar.com",
+   "logo": null,
+   "kapasitas": [],
+   "pangsa_pasar": [],
+   "status_tier1": [],
+   "pabrik_indonesia": [],
+   "pabrik_asean": [],
+   "mitra_indonesia": [],
+   "kantor_indonesia": [],
+   "tkdn": null,
+   "proyek_indonesia": [],
+   "isu_dagang": [],
+   "esg": [],
+   "sumber": [
+    {
+     "url": "https://www.wikidata.org/wiki/Q16973267",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "tanggal_periksa": "2026-11-08",
+     "keterangan": "Wikidata (CC0)"
+    },
+    {
+     "url": "https://en.wikipedia.org/wiki/Daqo_New_Energy",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "tanggal_periksa": "2026-11-08",
+     "keterangan": "Wikipedia (CC BY-SA)"
+    }
+   ],
+   "fakta": [
+    {
+     "medan": "tahun_berdiri",
+     "sumber_url": "https://www.wikidata.org/wiki/Q16973267",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "nilai": 2008
+    },
+    {
+     "medan": "kantor_pusat",
+     "sumber_url": "https://www.wikidata.org/wiki/Q16973267",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "nilai": "Shanghai"
+    },
+    {
+     "medan": "situs",
+     "sumber_url": "https://www.wikidata.org/wiki/Q16973267",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "nilai": "https://www.dqsolar.com",
+     "catatan": "http diubah ke https"
+    }
+   ],
+   "segmen_catatan": "segmen kurasi tim; tanpa teks sumber untuk diverifikasi"
+  },
+  {
+   "id": "en_fb240f76aa",
+   "nama": "DAS Solar",
+   "nama_lain": [
+    "Yuzhou DAS Solar"
+   ],
+   "negara_iso2": "CN",
+   "wikidata": "Q112670455",
+   "wikipedia": null,
+   "segmen": [
+    "sel",
+    "modul"
+   ],
+   "segmen_belum_terbukti": [],
+   "tahun_berdiri": null,
+   "kantor_pusat": null,
+   "situs": null,
+   "logo": null,
+   "kapasitas": [],
+   "pangsa_pasar": [],
+   "status_tier1": [],
+   "pabrik_indonesia": [],
+   "pabrik_asean": [],
+   "mitra_indonesia": [],
+   "kantor_indonesia": [],
+   "tkdn": null,
+   "proyek_indonesia": [],
+   "isu_dagang": [],
+   "esg": [],
+   "sumber": [
+    {
+     "url": "https://www.wikidata.org/wiki/Q112670455",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "tanggal_periksa": "2026-11-08",
+     "keterangan": "Wikidata (CC0)"
+    }
+   ],
+   "fakta": [],
+   "segmen_catatan": "segmen kurasi tim; tanpa teks sumber untuk diverifikasi",
+   "catatan_negara": "Wikidata menyebut US; kurasi CN"
+  },
+  {
+   "id": "en_64eed2dd22",
+   "nama": "Delta Electronics",
+   "nama_lain": [
+    "Delta",
+    "Delta (Taiwan)",
+    "Delta Electronics, Inc."
+   ],
+   "negara_iso2": "TW",
+   "wikidata": "Q5254620",
+   "wikipedia": "https://en.wikipedia.org/wiki/Delta_Electronics",
+   "segmen": [
+    "inverter-string",
+    "inverter-sentral",
+    "bess"
+   ],
+   "segmen_belum_terbukti": [],
+   "tahun_berdiri": 1971,
+   "kantor_pusat": {
+    "kota": "Taipei",
+    "negara_iso2": "TW"
+   },
+   "situs": "https://www.deltaww.com/",
+   "logo": null,
+   "kapasitas": [],
+   "pangsa_pasar": [],
+   "status_tier1": [],
+   "pabrik_indonesia": [],
+   "pabrik_asean": [],
+   "mitra_indonesia": [],
+   "kantor_indonesia": [],
+   "tkdn": null,
+   "proyek_indonesia": [],
+   "isu_dagang": [],
+   "esg": [],
+   "sumber": [
+    {
+     "url": "https://www.wikidata.org/wiki/Q5254620",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "tanggal_periksa": "2026-11-08",
+     "keterangan": "Wikidata (CC0)"
+    },
+    {
+     "url": "https://en.wikipedia.org/wiki/Delta_Electronics",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "tanggal_periksa": "2026-11-08",
+     "keterangan": "Wikipedia (CC BY-SA)"
+    }
+   ],
+   "fakta": [
+    {
+     "medan": "tahun_berdiri",
+     "sumber_url": "https://www.wikidata.org/wiki/Q5254620",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "nilai": 1971
+    },
+    {
+     "medan": "kantor_pusat",
+     "sumber_url": "https://www.wikidata.org/wiki/Q5254620",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "nilai": "Taipei"
+    },
+    {
+     "medan": "situs",
+     "sumber_url": "https://www.wikidata.org/wiki/Q5254620",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "nilai": "https://www.deltaww.com/",
+     "catatan": "http diubah ke https"
+    }
+   ],
+   "segmen_catatan": "segmen kurasi tim; tanpa teks sumber untuk diverifikasi"
+  },
+  {
+   "id": "en_fdafea5dce",
+   "nama": "East Hope Group",
+   "nama_lain": [
+    "East Hope"
+   ],
+   "negara_iso2": "CN",
+   "wikidata": "Q120269265",
+   "wikipedia": null,
+   "segmen": [
+    "polisilikon"
+   ],
+   "segmen_belum_terbukti": [],
+   "tahun_berdiri": 1995,
+   "kantor_pusat": {
+    "kota": "Shanghai",
+    "negara_iso2": "CN"
+   },
+   "situs": "https://easthope.cn",
+   "logo": null,
+   "kapasitas": [],
+   "pangsa_pasar": [],
+   "status_tier1": [],
+   "pabrik_indonesia": [],
+   "pabrik_asean": [],
+   "mitra_indonesia": [],
+   "kantor_indonesia": [],
+   "tkdn": null,
+   "proyek_indonesia": [],
+   "isu_dagang": [],
+   "esg": [],
+   "sumber": [
+    {
+     "url": "https://www.wikidata.org/wiki/Q120269265",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "tanggal_periksa": "2026-11-08",
+     "keterangan": "Wikidata (CC0)"
+    }
+   ],
+   "fakta": [
+    {
+     "medan": "tahun_berdiri",
+     "sumber_url": "https://www.wikidata.org/wiki/Q120269265",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "nilai": 1995
+    },
+    {
+     "medan": "kantor_pusat",
+     "sumber_url": "https://www.wikidata.org/wiki/Q120269265",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "nilai": "Shanghai"
+    },
+    {
+     "medan": "situs",
+     "sumber_url": "https://www.wikidata.org/wiki/Q120269265",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "nilai": "https://easthope.cn"
+    }
+   ],
+   "segmen_catatan": "segmen kurasi tim; tanpa teks sumber untuk diverifikasi"
+  },
+  {
+   "id": "en_edb412a2f5",
+   "nama": "Emmvee Photovoltaic Power",
+   "nama_lain": [
+    "Emmvee"
+   ],
+   "negara_iso2": "IN",
+   "wikidata": "Q134479354",
+   "wikipedia": "https://en.wikipedia.org/wiki/Emmvee_Group",
+   "segmen": [
+    "sel",
+    "modul"
+   ],
+   "segmen_belum_terbukti": [],
+   "tahun_berdiri": null,
+   "kantor_pusat": null,
+   "situs": null,
+   "logo": null,
+   "kapasitas": [],
+   "pangsa_pasar": [],
+   "status_tier1": [],
+   "pabrik_indonesia": [],
+   "pabrik_asean": [],
+   "mitra_indonesia": [],
+   "kantor_indonesia": [],
+   "tkdn": null,
+   "proyek_indonesia": [],
+   "isu_dagang": [],
+   "esg": [],
+   "sumber": [
+    {
+     "url": "https://www.wikidata.org/wiki/Q134479354",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "tanggal_periksa": "2026-11-08",
+     "keterangan": "Wikidata (CC0)"
+    },
+    {
+     "url": "https://en.wikipedia.org/wiki/Emmvee_Group",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "tanggal_periksa": "2026-11-08",
+     "keterangan": "Wikipedia (CC BY-SA)"
+    }
+   ],
+   "fakta": [],
+   "segmen_catatan": "segmen kurasi tim; tanpa teks sumber untuk diverifikasi"
+  },
+  {
+   "id": "en_63cd53b829",
+   "nama": "Enphase Energy",
+   "nama_lain": [
+    "Enphase"
+   ],
+   "negara_iso2": "US",
+   "wikidata": "Q17012234",
+   "wikipedia": "https://en.wikipedia.org/wiki/Enphase_Energy",
+   "segmen": [
+    "mikroinverter",
+    "bess"
+   ],
+   "segmen_belum_terbukti": [],
+   "tahun_berdiri": 2006,
+   "kantor_pusat": {
+    "kota": "Petaluma",
+    "negara_iso2": "US"
+   },
+   "situs": "https://enphase.com",
+   "logo": null,
+   "kapasitas": [],
+   "pangsa_pasar": [],
+   "status_tier1": [],
+   "pabrik_indonesia": [],
+   "pabrik_asean": [],
+   "mitra_indonesia": [],
+   "kantor_indonesia": [],
+   "tkdn": null,
+   "proyek_indonesia": [],
+   "isu_dagang": [],
+   "esg": [],
+   "sumber": [
+    {
+     "url": "https://www.wikidata.org/wiki/Q17012234",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "tanggal_periksa": "2026-11-08",
+     "keterangan": "Wikidata (CC0)"
+    },
+    {
+     "url": "https://en.wikipedia.org/wiki/Enphase_Energy",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "tanggal_periksa": "2026-11-08",
+     "keterangan": "Wikipedia (CC BY-SA)"
+    }
+   ],
+   "fakta": [
+    {
+     "medan": "tahun_berdiri",
+     "sumber_url": "https://www.wikidata.org/wiki/Q17012234",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "nilai": 2006
+    },
+    {
+     "medan": "kantor_pusat",
+     "sumber_url": "https://www.wikidata.org/wiki/Q17012234",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "nilai": "Petaluma"
+    },
+    {
+     "medan": "situs",
+     "sumber_url": "https://www.wikidata.org/wiki/Q17012234",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "nilai": "https://enphase.com",
+     "catatan": "http diubah ke https"
+    }
+   ],
+   "segmen_catatan": "segmen kurasi tim; tanpa teks sumber untuk diverifikasi"
+  },
+  {
+   "id": "en_6352f2452e",
+   "nama": "Envision AESC",
+   "nama_lain": [
+    "AESC",
+    "Envision Energy",
+    "United States of America Standards Institute",
+    "USASI",
+    "American Standards Association",
+    "ASA"
+   ],
+   "negara_iso2": "JP",
+   "wikidata": "Q180003",
+   "wikipedia": "https://en.wikipedia.org/wiki/American_National_Standards_Institute",
+   "segmen": [
+    "bess"
+   ],
+   "segmen_belum_terbukti": [],
+   "tahun_berdiri": 1918,
+   "kantor_pusat": {
+    "kota": "Washington, D.C.",
+    "negara_iso2": "JP"
+   },
+   "situs": "https://www.ansi.org/",
+   "logo": null,
+   "kapasitas": [],
+   "pangsa_pasar": [],
+   "status_tier1": [],
+   "pabrik_indonesia": [],
+   "pabrik_asean": [],
+   "mitra_indonesia": [],
+   "kantor_indonesia": [],
+   "tkdn": null,
+   "proyek_indonesia": [],
+   "isu_dagang": [],
+   "esg": [],
+   "sumber": [
+    {
+     "url": "https://www.wikidata.org/wiki/Q180003",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "tanggal_periksa": "2026-11-08",
+     "keterangan": "Wikidata (CC0)"
+    },
+    {
+     "url": "https://en.wikipedia.org/wiki/American_National_Standards_Institute",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "tanggal_periksa": "2026-11-08",
+     "keterangan": "Wikipedia (CC BY-SA)"
+    }
+   ],
+   "fakta": [
+    {
+     "medan": "tahun_berdiri",
+     "sumber_url": "https://www.wikidata.org/wiki/Q180003",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "nilai": 1918
+    },
+    {
+     "medan": "kantor_pusat",
+     "sumber_url": "https://www.wikidata.org/wiki/Q180003",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "nilai": "Washington, D.C."
+    },
+    {
+     "medan": "situs",
+     "sumber_url": "https://www.wikidata.org/wiki/Q180003",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "nilai": "https://www.ansi.org/"
+    }
+   ],
+   "segmen_catatan": "segmen kurasi tim; tanpa teks sumber untuk diverifikasi",
+   "catatan_negara": "Wikidata menyebut US; kurasi JP"
+  },
+  {
+   "id": "en_fde9aefbb4",
+   "nama": "EVE Energy",
+   "nama_lain": [
+    "EVE",
+    "Eve Energy Co"
+   ],
+   "negara_iso2": "CN",
+   "wikidata": "Q105966435",
+   "wikipedia": "https://en.wikipedia.org/wiki/EVE_Energy",
+   "segmen": [
+    "bess"
+   ],
+   "segmen_belum_terbukti": [],
+   "tahun_berdiri": 2001,
+   "kantor_pusat": {
+    "kota": "Huizhou",
+    "negara_iso2": "CN"
+   },
+   "situs": "https://www.evebattery.com",
+   "logo": null,
+   "kapasitas": [],
+   "pangsa_pasar": [],
+   "status_tier1": [],
+   "pabrik_indonesia": [],
+   "pabrik_asean": [],
+   "mitra_indonesia": [],
+   "kantor_indonesia": [],
+   "tkdn": null,
+   "proyek_indonesia": [],
+   "isu_dagang": [],
+   "esg": [],
+   "sumber": [
+    {
+     "url": "https://www.wikidata.org/wiki/Q105966435",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "tanggal_periksa": "2026-11-08",
+     "keterangan": "Wikidata (CC0)"
+    },
+    {
+     "url": "https://en.wikipedia.org/wiki/EVE_Energy",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "tanggal_periksa": "2026-11-08",
+     "keterangan": "Wikipedia (CC BY-SA)"
+    }
+   ],
+   "fakta": [
+    {
+     "medan": "tahun_berdiri",
+     "sumber_url": "https://www.wikidata.org/wiki/Q105966435",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "nilai": 2001
+    },
+    {
+     "medan": "kantor_pusat",
+     "sumber_url": "https://www.wikidata.org/wiki/Q105966435",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "nilai": "Huizhou"
+    },
+    {
+     "medan": "situs",
+     "sumber_url": "https://www.wikidata.org/wiki/Q105966435",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "nilai": "https://www.evebattery.com",
+     "catatan": "http diubah ke https"
+    }
+   ]
+  },
+  {
+   "id": "en_89d09b1c44",
+   "nama": "FIMER",
+   "nama_lain": [
+    "ABB solar inverters",
+    "ABB Power Conversion"
+   ],
+   "negara_iso2": "IT",
+   "wikidata": "Q1239317",
+   "wikipedia": "https://en.wikipedia.org/wiki/Fimer",
+   "segmen": [
+    "inverter-string",
+    "inverter-sentral"
+   ],
+   "segmen_belum_terbukti": [],
+   "tahun_berdiri": 1947,
+   "kantor_pusat": {
+    "kota": "Milan",
+    "negara_iso2": "IT"
+   },
+   "situs": null,
+   "logo": null,
+   "kapasitas": [],
+   "pangsa_pasar": [],
+   "status_tier1": [],
+   "pabrik_indonesia": [],
+   "pabrik_asean": [],
+   "mitra_indonesia": [],
+   "kantor_indonesia": [],
+   "tkdn": null,
+   "proyek_indonesia": [],
+   "isu_dagang": [],
+   "esg": [],
+   "sumber": [
+    {
+     "url": "https://www.wikidata.org/wiki/Q1239317",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "tanggal_periksa": "2026-11-08",
+     "keterangan": "Wikidata (CC0)"
+    },
+    {
+     "url": "https://en.wikipedia.org/wiki/Fimer",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "tanggal_periksa": "2026-11-08",
+     "keterangan": "Wikipedia (CC BY-SA)"
+    }
+   ],
+   "fakta": [
+    {
+     "medan": "tahun_berdiri",
+     "sumber_url": "https://www.wikidata.org/wiki/Q1239317",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "nilai": 1947
+    },
+    {
+     "medan": "kantor_pusat",
+     "sumber_url": "https://www.wikidata.org/wiki/Q1239317",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "nilai": "Milan"
+    }
+   ],
+   "segmen_catatan": "segmen kurasi tim; tanpa teks sumber untuk diverifikasi"
+  },
+  {
+   "id": "en_2adae77ad6",
+   "nama": "First Solar",
+   "nama_lain": [
+    "First Solar Inc",
+    "FSLR"
+   ],
+   "negara_iso2": "US",
+   "wikidata": "Q1138888",
+   "wikipedia": "https://en.wikipedia.org/wiki/First_Solar",
+   "segmen": [
+    "modul"
+   ],
+   "segmen_belum_terbukti": [],
+   "tahun_berdiri": 1999,
+   "kantor_pusat": {
+    "kota": "Tempe",
+    "negara_iso2": "US"
+   },
+   "situs": "https://www.firstsolar.com/",
+   "logo": null,
+   "kapasitas": [],
+   "pangsa_pasar": [],
+   "status_tier1": [],
+   "pabrik_indonesia": [],
+   "pabrik_asean": [],
+   "mitra_indonesia": [],
+   "kantor_indonesia": [],
+   "tkdn": null,
+   "proyek_indonesia": [],
+   "isu_dagang": [],
+   "esg": [],
+   "sumber": [
+    {
+     "url": "https://www.wikidata.org/wiki/Q1138888",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "tanggal_periksa": "2026-11-08",
+     "keterangan": "Wikidata (CC0)"
+    },
+    {
+     "url": "https://en.wikipedia.org/wiki/First_Solar",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "tanggal_periksa": "2026-11-08",
+     "keterangan": "Wikipedia (CC BY-SA)"
+    }
+   ],
+   "fakta": [
+    {
+     "medan": "tahun_berdiri",
+     "sumber_url": "https://www.wikidata.org/wiki/Q1138888",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "nilai": 1999
+    },
+    {
+     "medan": "kantor_pusat",
+     "sumber_url": "https://www.wikidata.org/wiki/Q1138888",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "nilai": "Tempe"
+    },
+    {
+     "medan": "situs",
+     "sumber_url": "https://www.wikidata.org/wiki/Q1138888",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "nilai": "https://www.firstsolar.com/"
+    }
+   ]
+  },
+  {
+   "id": "en_78cfd62fd8",
+   "nama": "Flat Glass Group",
+   "nama_lain": [
+    "Flat Glass",
+    "Zhejiang Flat Solar Energy",
+    "Flat Glass Group Co., Ltd."
+   ],
+   "negara_iso2": "CN",
+   "wikidata": "Q25176857",
+   "wikipedia": "https://en.wikipedia.org/wiki/Flat_Glass_Group",
+   "segmen": [
+    "kaca"
+   ],
+   "segmen_belum_terbukti": [],
+   "tahun_berdiri": null,
+   "kantor_pusat": {
+    "kota": "People's Republic of China",
+    "negara_iso2": "CN"
+   },
+   "situs": "https://www.flatgroup.com.cn",
+   "logo": null,
+   "kapasitas": [],
+   "pangsa_pasar": [],
+   "status_tier1": [],
+   "pabrik_indonesia": [],
+   "pabrik_asean": [],
+   "mitra_indonesia": [],
+   "kantor_indonesia": [],
+   "tkdn": null,
+   "proyek_indonesia": [],
+   "isu_dagang": [],
+   "esg": [],
+   "sumber": [
+    {
+     "url": "https://www.wikidata.org/wiki/Q25176857",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "tanggal_periksa": "2026-11-08",
+     "keterangan": "Wikidata (CC0)"
+    },
+    {
+     "url": "https://en.wikipedia.org/wiki/Flat_Glass_Group",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "tanggal_periksa": "2026-11-08",
+     "keterangan": "Wikipedia (CC BY-SA)"
+    }
+   ],
+   "fakta": [
+    {
+     "medan": "kantor_pusat",
+     "sumber_url": "https://www.wikidata.org/wiki/Q25176857",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "nilai": "People's Republic of China"
+    },
+    {
+     "medan": "situs",
+     "sumber_url": "https://www.wikidata.org/wiki/Q25176857",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "nilai": "https://www.flatgroup.com.cn",
+     "catatan": "http diubah ke https"
+    }
+   ]
+  },
+  {
+   "id": "en_0bd63971c5",
+   "nama": "Fluence Energy",
+   "nama_lain": [
+    "Fluence"
+   ],
+   "negara_iso2": "US",
+   "wikidata": "Q131607712",
+   "wikipedia": null,
+   "segmen": [
+    "bess"
+   ],
+   "segmen_belum_terbukti": [],
+   "tahun_berdiri": 2020,
+   "kantor_pusat": {
+    "kota": "Paris",
+    "negara_iso2": "US"
+   },
+   "situs": "https://www.fluence.eu/",
+   "logo": null,
+   "kapasitas": [],
+   "pangsa_pasar": [],
+   "status_tier1": [],
+   "pabrik_indonesia": [],
+   "pabrik_asean": [],
+   "mitra_indonesia": [],
+   "kantor_indonesia": [],
+   "tkdn": null,
+   "proyek_indonesia": [],
+   "isu_dagang": [],
+   "esg": [],
+   "sumber": [
+    {
+     "url": "https://www.wikidata.org/wiki/Q131607712",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "tanggal_periksa": "2026-11-08",
+     "keterangan": "Wikidata (CC0)"
+    }
+   ],
+   "fakta": [
+    {
+     "medan": "tahun_berdiri",
+     "sumber_url": "https://www.wikidata.org/wiki/Q131607712",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "nilai": 2020
+    },
+    {
+     "medan": "kantor_pusat",
+     "sumber_url": "https://www.wikidata.org/wiki/Q131607712",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "nilai": "Paris"
+    },
+    {
+     "medan": "situs",
+     "sumber_url": "https://www.wikidata.org/wiki/Q131607712",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "nilai": "https://www.fluence.eu/"
+    }
+   ],
+   "segmen_catatan": "segmen kurasi tim; tanpa teks sumber untuk diverifikasi",
+   "catatan_negara": "Wikidata menyebut FR; kurasi US"
+  },
+  {
+   "id": "en_a7429394b6",
+   "nama": "Fronius International",
+   "nama_lain": [
+    "Fronius"
+   ],
+   "negara_iso2": "AT",
+   "wikidata": "Q1469941",
+   "wikipedia": "https://en.wikipedia.org/wiki/Fronius_International",
+   "segmen": [
+    "inverter-string"
+   ],
+   "segmen_belum_terbukti": [],
+   "tahun_berdiri": 1945,
+   "kantor_pusat": {
+    "kota": "Pettenbach",
+    "negara_iso2": "AT"
+   },
+   "situs": "https://www.fronius.com/",
+   "logo": null,
+   "kapasitas": [],
+   "pangsa_pasar": [],
+   "status_tier1": [],
+   "pabrik_indonesia": [],
+   "pabrik_asean": [],
+   "mitra_indonesia": [],
+   "kantor_indonesia": [],
+   "tkdn": null,
+   "proyek_indonesia": [],
+   "isu_dagang": [],
+   "esg": [],
+   "sumber": [
+    {
+     "url": "https://www.wikidata.org/wiki/Q1469941",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "tanggal_periksa": "2026-11-08",
+     "keterangan": "Wikidata (CC0)"
+    },
+    {
+     "url": "https://en.wikipedia.org/wiki/Fronius_International",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "tanggal_periksa": "2026-11-08",
+     "keterangan": "Wikipedia (CC BY-SA)"
+    }
+   ],
+   "fakta": [
+    {
+     "medan": "tahun_berdiri",
+     "sumber_url": "https://www.wikidata.org/wiki/Q1469941",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "nilai": 1945
+    },
+    {
+     "medan": "kantor_pusat",
+     "sumber_url": "https://www.wikidata.org/wiki/Q1469941",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "nilai": "Pettenbach"
+    },
+    {
+     "medan": "situs",
+     "sumber_url": "https://www.wikidata.org/wiki/Q1469941",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "nilai": "https://www.fronius.com/",
+     "catatan": "http diubah ke https"
+    }
+   ],
+   "segmen_catatan": "segmen kurasi tim; tanpa teks sumber untuk diverifikasi"
+  },
+  {
+   "id": "en_2f459b31a8",
+   "nama": "GoodWe",
+   "nama_lain": [
+    "Jiangsu GoodWe Power Supply Technology",
+    "GoodWe imprint, GoodWe official imprint page"
+   ],
+   "negara_iso2": "CN",
+   "wikidata": "Q135082190",
+   "wikipedia": null,
+   "segmen": [
+    "inverter-string",
+    "bess"
+   ],
+   "segmen_belum_terbukti": [],
+   "tahun_berdiri": null,
+   "kantor_pusat": null,
+   "situs": "https://en.goodwe.com/imprint",
+   "logo": null,
+   "kapasitas": [],
+   "pangsa_pasar": [],
+   "status_tier1": [],
+   "pabrik_indonesia": [],
+   "pabrik_asean": [],
+   "mitra_indonesia": [],
+   "kantor_indonesia": [],
+   "tkdn": null,
+   "proyek_indonesia": [],
+   "isu_dagang": [],
+   "esg": [],
+   "sumber": [
+    {
+     "url": "https://www.wikidata.org/wiki/Q135082190",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "tanggal_periksa": "2026-11-08",
+     "keterangan": "Wikidata (CC0)"
+    }
+   ],
+   "fakta": [
+    {
+     "medan": "situs",
+     "sumber_url": "https://www.wikidata.org/wiki/Q135082190",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "nilai": "https://en.goodwe.com/imprint"
+    }
+   ],
+   "segmen_catatan": "segmen kurasi tim; tanpa teks sumber untuk diverifikasi"
+  },
+  {
+   "id": "en_361cdc0751",
+   "nama": "Gotion High-tech",
+   "nama_lain": [
+    "Gotion",
+    "Guoxuan High-Tech",
+    "Hefei Guoxuan Hi-Tech Power Energy",
+    "Gotion High-Tech Co., Ltd."
+   ],
+   "negara_iso2": "CN",
+   "wikidata": "Q67932360",
+   "wikipedia": "https://en.wikipedia.org/wiki/Gotion",
+   "segmen": [
+    "bess"
+   ],
+   "segmen_belum_terbukti": [],
+   "tahun_berdiri": null,
+   "kantor_pusat": {
+    "kota": "Hefei",
+    "negara_iso2": "CN"
+   },
+   "situs": "https://www.gotion.com.cn",
+   "logo": null,
+   "kapasitas": [],
+   "pangsa_pasar": [],
+   "status_tier1": [],
+   "pabrik_indonesia": [],
+   "pabrik_asean": [],
+   "mitra_indonesia": [],
+   "kantor_indonesia": [
+    {
+     "pabrikan": "PT Gotion Green Energy Solutions Indonesia",
+     "lokasi": "Kabupaten Bogor",
+     "provinsi": "Jawa Barat",
+     "kategori": "baterai",
+     "sumber_url": "https://tkdn.kemenperin.go.id/sertifikat?q=battery%20pack%20lifepo4&page=4",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "resmi"
+    }
+   ],
+   "tkdn": {
+    "jumlah_sertifikat": 1,
+    "tkdn_persen_maks": 21.06,
+    "sertifikat": [
+     {
+      "id": "tkp_0012",
+      "kategori": "baterai",
+      "produk": "Battery Pack",
+      "merk": "-",
+      "tipe": "Lithium Ion Battery",
+      "tkdn_persen": 21.06,
+      "pabrikan": "PT Gotion Green Energy Solutions Indonesia",
+      "lokasi": "Kabupaten Bogor",
+      "provinsi": "Jawa Barat",
+      "sumber_url": "https://tkdn.kemenperin.go.id/sertifikat?q=battery%20pack%20lifepo4&page=4",
+      "tanggal_periksa": "2026-11-08",
+      "tingkat_bukti": "resmi"
+     }
+    ]
+   },
+   "proyek_indonesia": [],
+   "isu_dagang": [],
+   "esg": [],
+   "sumber": [
+    {
+     "url": "https://www.wikidata.org/wiki/Q67932360",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "tanggal_periksa": "2026-11-08",
+     "keterangan": "Wikidata (CC0)"
+    },
+    {
+     "url": "https://en.wikipedia.org/wiki/Gotion",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "tanggal_periksa": "2026-11-08",
+     "keterangan": "Wikipedia (CC BY-SA)"
+    }
+   ],
+   "fakta": [
+    {
+     "medan": "kantor_pusat",
+     "sumber_url": "https://www.wikidata.org/wiki/Q67932360",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "nilai": "Hefei"
+    },
+    {
+     "medan": "situs",
+     "sumber_url": "https://www.wikidata.org/wiki/Q67932360",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "nilai": "https://www.gotion.com.cn"
+    }
+   ]
+  },
+  {
+   "id": "en_f34503235f",
+   "nama": "Great Power Energy",
+   "nama_lain": [
+    "Great Power",
+    "Shenzhen Greatpower",
+    "great powers",
+    "major power",
+    "major powers"
+   ],
+   "negara_iso2": "CN",
+   "wikidata": "Q185145",
+   "wikipedia": "https://en.wikipedia.org/wiki/Great_power",
+   "segmen": [
+    "bess"
+   ],
+   "segmen_belum_terbukti": [],
+   "tahun_berdiri": null,
+   "kantor_pusat": null,
+   "situs": null,
+   "logo": null,
+   "kapasitas": [],
+   "pangsa_pasar": [],
+   "status_tier1": [],
+   "pabrik_indonesia": [],
+   "pabrik_asean": [],
+   "mitra_indonesia": [],
+   "kantor_indonesia": [],
+   "tkdn": null,
+   "proyek_indonesia": [],
+   "isu_dagang": [],
+   "esg": [],
+   "sumber": [
+    {
+     "url": "https://www.wikidata.org/wiki/Q185145",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "tanggal_periksa": "2026-11-08",
+     "keterangan": "Wikidata (CC0)"
+    },
+    {
+     "url": "https://en.wikipedia.org/wiki/Great_power",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "tanggal_periksa": "2026-11-08",
+     "keterangan": "Wikipedia (CC BY-SA)"
+    }
+   ],
+   "fakta": [],
+   "segmen_catatan": "segmen kurasi tim; tanpa teks sumber untuk diverifikasi"
+  },
+  {
+   "id": "en_14b02c6a5a",
+   "nama": "Gstar Solar",
+   "nama_lain": [
+    "Gstar",
+    "G-star",
+    "G-Star RAW",
+    "G Star",
+    "GStar"
+   ],
+   "negara_iso2": "CN",
+   "wikidata": "Q1484081",
+   "wikipedia": "https://en.wikipedia.org/wiki/G-Star_(company)",
+   "segmen": [
+    "modul"
+   ],
+   "segmen_belum_terbukti": [],
+   "tahun_berdiri": 1989,
+   "kantor_pusat": {
+    "kota": "Amsterdam",
+    "negara_iso2": "CN"
+   },
+   "situs": "https://www.g-star.com/",
+   "logo": null,
+   "kapasitas": [],
+   "pangsa_pasar": [],
+   "status_tier1": [],
+   "pabrik_indonesia": [],
+   "pabrik_asean": [],
+   "mitra_indonesia": [],
+   "kantor_indonesia": [],
+   "tkdn": null,
+   "proyek_indonesia": [],
+   "isu_dagang": [],
+   "esg": [],
+   "sumber": [
+    {
+     "url": "https://www.wikidata.org/wiki/Q1484081",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "tanggal_periksa": "2026-11-08",
+     "keterangan": "Wikidata (CC0)"
+    },
+    {
+     "url": "https://en.wikipedia.org/wiki/G-Star_(company)",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "tanggal_periksa": "2026-11-08",
+     "keterangan": "Wikipedia (CC BY-SA)"
+    }
+   ],
+   "fakta": [
+    {
+     "medan": "tahun_berdiri",
+     "sumber_url": "https://www.wikidata.org/wiki/Q1484081",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "nilai": 1989
+    },
+    {
+     "medan": "kantor_pusat",
+     "sumber_url": "https://www.wikidata.org/wiki/Q1484081",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "nilai": "Amsterdam"
+    },
+    {
+     "medan": "situs",
+     "sumber_url": "https://www.wikidata.org/wiki/Q1484081",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "nilai": "https://www.g-star.com/"
+    }
+   ],
+   "segmen_catatan": "segmen kurasi tim; tanpa teks sumber untuk diverifikasi"
+  },
+  {
+   "id": "en_a71319ce22",
+   "nama": "Hanwha Qcells",
+   "nama_lain": [
+    "Qcells",
+    "Q CELLS",
+    "Hanwha Solutions",
+    "Q-CELLS"
+   ],
+   "negara_iso2": "KR",
+   "wikidata": "Q265176",
+   "wikipedia": "https://en.wikipedia.org/wiki/Qcells",
+   "segmen": [
+    "sel"
+   ],
+   "segmen_belum_terbukti": [
+    "polisilikon",
+    "wafer",
+    "modul"
+   ],
+   "tahun_berdiri": 2012,
+   "kantor_pusat": {
+    "kota": "Bitterfeld-Wolfen",
+    "negara_iso2": "KR"
+   },
+   "situs": "https://qcells.com/",
+   "logo": null,
+   "kapasitas": [],
+   "pangsa_pasar": [],
+   "status_tier1": [],
+   "pabrik_indonesia": [],
+   "pabrik_asean": [],
+   "mitra_indonesia": [],
+   "kantor_indonesia": [],
+   "tkdn": null,
+   "proyek_indonesia": [],
+   "isu_dagang": [],
+   "esg": [],
+   "sumber": [
+    {
+     "url": "https://www.wikidata.org/wiki/Q265176",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "tanggal_periksa": "2026-11-08",
+     "keterangan": "Wikidata (CC0)"
+    },
+    {
+     "url": "https://en.wikipedia.org/wiki/Qcells",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "tanggal_periksa": "2026-11-08",
+     "keterangan": "Wikipedia (CC BY-SA)"
+    }
+   ],
+   "fakta": [
+    {
+     "medan": "tahun_berdiri",
+     "sumber_url": "https://www.wikidata.org/wiki/Q265176",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "nilai": 2012
+    },
+    {
+     "medan": "kantor_pusat",
+     "sumber_url": "https://www.wikidata.org/wiki/Q265176",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "nilai": "Bitterfeld-Wolfen"
+    },
+    {
+     "medan": "situs",
+     "sumber_url": "https://www.wikidata.org/wiki/Q265176",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "nilai": "https://qcells.com/"
+    }
+   ],
+   "catatan_negara": "Wikidata menyebut DE; kurasi KR"
+  },
+  {
+   "id": "en_7669e47acc",
+   "nama": "Hemlock Semiconductor",
+   "nama_lain": [
+    "Hemlock Semiconductor Group"
+   ],
+   "negara_iso2": "US",
+   "wikidata": "Q5712288",
+   "wikipedia": "https://en.wikipedia.org/wiki/Hemlock_Semiconductor",
+   "segmen": [
+    "polisilikon"
+   ],
+   "segmen_belum_terbukti": [],
+   "tahun_berdiri": 1961,
+   "kantor_pusat": {
+    "kota": "Michigan",
+    "negara_iso2": "US"
+   },
+   "situs": null,
+   "logo": null,
+   "kapasitas": [],
+   "pangsa_pasar": [],
+   "status_tier1": [],
+   "pabrik_indonesia": [],
+   "pabrik_asean": [],
+   "mitra_indonesia": [],
+   "kantor_indonesia": [],
+   "tkdn": null,
+   "proyek_indonesia": [],
+   "isu_dagang": [],
+   "esg": [],
+   "sumber": [
+    {
+     "url": "https://www.wikidata.org/wiki/Q5712288",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "tanggal_periksa": "2026-11-08",
+     "keterangan": "Wikidata (CC0)"
+    },
+    {
+     "url": "https://en.wikipedia.org/wiki/Hemlock_Semiconductor",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "tanggal_periksa": "2026-11-08",
+     "keterangan": "Wikipedia (CC BY-SA)"
+    }
+   ],
+   "fakta": [
+    {
+     "medan": "tahun_berdiri",
+     "sumber_url": "https://www.wikidata.org/wiki/Q5712288",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "nilai": 1961
+    },
+    {
+     "medan": "kantor_pusat",
+     "sumber_url": "https://www.wikidata.org/wiki/Q5712288",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "nilai": "Michigan"
+    }
+   ]
+  },
+  {
+   "id": "en_25e3aa9b9d",
+   "nama": "Huawei",
+   "nama_lain": [
+    "Huawei Digital Power",
+    "Huawei FusionSolar",
+    "Huawei Technologies",
+    "Huawei Technologies Co., Ltd.",
+    "Huawei Technologies Co., Ltd. (Guangdong)"
+   ],
+   "negara_iso2": "CN",
+   "wikidata": "Q160120",
+   "wikipedia": "https://en.wikipedia.org/wiki/Huawei",
+   "segmen": [
+    "inverter-string",
+    "inverter-sentral",
+    "bess"
+   ],
+   "segmen_belum_terbukti": [],
+   "tahun_berdiri": 1987,
+   "kantor_pusat": {
+    "kota": "Shenzhen",
+    "negara_iso2": "CN"
+   },
+   "situs": "https://www.huawei.com/",
+   "logo": null,
+   "kapasitas": [],
+   "pangsa_pasar": [],
+   "status_tier1": [],
+   "pabrik_indonesia": [],
+   "pabrik_asean": [],
+   "mitra_indonesia": [],
+   "kantor_indonesia": [],
+   "tkdn": null,
+   "proyek_indonesia": [],
+   "isu_dagang": [],
+   "esg": [],
+   "sumber": [
+    {
+     "url": "https://www.wikidata.org/wiki/Q160120",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "tanggal_periksa": "2026-11-08",
+     "keterangan": "Wikidata (CC0)"
+    },
+    {
+     "url": "https://en.wikipedia.org/wiki/Huawei",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "tanggal_periksa": "2026-11-08",
+     "keterangan": "Wikipedia (CC BY-SA)"
+    }
+   ],
+   "fakta": [
+    {
+     "medan": "tahun_berdiri",
+     "sumber_url": "https://www.wikidata.org/wiki/Q160120",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "nilai": 1987
+    },
+    {
+     "medan": "kantor_pusat",
+     "sumber_url": "https://www.wikidata.org/wiki/Q160120",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "nilai": "Shenzhen"
+    },
+    {
+     "medan": "situs",
+     "sumber_url": "https://www.wikidata.org/wiki/Q160120",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "nilai": "https://www.huawei.com/"
+    }
+   ],
+   "segmen_catatan": "segmen kurasi tim; tanpa teks sumber untuk diverifikasi"
+  },
+  {
+   "id": "en_c8b4cfb7e6",
+   "nama": "Ingeteam",
+   "nama_lain": [
+    "Ingeteam Power Technology"
+   ],
+   "negara_iso2": "ES",
+   "wikidata": "Q9008479",
+   "wikipedia": null,
+   "segmen": [
+    "inverter-string",
+    "inverter-sentral"
+   ],
+   "segmen_belum_terbukti": [],
+   "tahun_berdiri": 2007,
+   "kantor_pusat": {
+    "kota": "Zamudio",
+    "negara_iso2": "ES"
+   },
+   "situs": "https://www.ingeteam.com/",
+   "logo": null,
+   "kapasitas": [],
+   "pangsa_pasar": [],
+   "status_tier1": [],
+   "pabrik_indonesia": [],
+   "pabrik_asean": [],
+   "mitra_indonesia": [],
+   "kantor_indonesia": [],
+   "tkdn": null,
+   "proyek_indonesia": [],
+   "isu_dagang": [],
+   "esg": [],
+   "sumber": [
+    {
+     "url": "https://www.wikidata.org/wiki/Q9008479",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "tanggal_periksa": "2026-11-08",
+     "keterangan": "Wikidata (CC0)"
+    }
+   ],
+   "fakta": [
+    {
+     "medan": "tahun_berdiri",
+     "sumber_url": "https://www.wikidata.org/wiki/Q9008479",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "nilai": 2007
+    },
+    {
+     "medan": "kantor_pusat",
+     "sumber_url": "https://www.wikidata.org/wiki/Q9008479",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "nilai": "Zamudio"
+    },
+    {
+     "medan": "situs",
+     "sumber_url": "https://www.wikidata.org/wiki/Q9008479",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "nilai": "https://www.ingeteam.com/"
+    }
+   ],
+   "segmen_catatan": "segmen kurasi tim; tanpa teks sumber untuk diverifikasi"
+  },
+  {
+   "id": "en_4943f59989",
+   "nama": "Irico Group",
+   "nama_lain": [
+    "Irico",
+    "Irico Group New Energy",
+    "IRICO Group Corporation"
+   ],
+   "negara_iso2": "CN",
+   "wikidata": "Q5973509",
+   "wikipedia": null,
+   "segmen": [
+    "kaca"
+   ],
+   "segmen_belum_terbukti": [],
+   "tahun_berdiri": 1982,
+   "kantor_pusat": null,
+   "situs": null,
+   "logo": null,
+   "kapasitas": [],
+   "pangsa_pasar": [],
+   "status_tier1": [],
+   "pabrik_indonesia": [],
+   "pabrik_asean": [],
+   "mitra_indonesia": [],
+   "kantor_indonesia": [],
+   "tkdn": null,
+   "proyek_indonesia": [],
+   "isu_dagang": [],
+   "esg": [],
+   "sumber": [
+    {
+     "url": "https://www.wikidata.org/wiki/Q5973509",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "tanggal_periksa": "2026-11-08",
+     "keterangan": "Wikidata (CC0)"
+    }
+   ],
+   "fakta": [
+    {
+     "medan": "tahun_berdiri",
+     "sumber_url": "https://www.wikidata.org/wiki/Q5973509",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "nilai": 1982
+    }
+   ],
+   "segmen_catatan": "segmen kurasi tim; tanpa teks sumber untuk diverifikasi"
+  },
+  {
+   "id": "en_8ce6cc9a41",
+   "nama": "JA Solar Technology",
+   "nama_lain": [
+    "JA Solar",
+    "JASO",
+    "JA Solar Technology Co., Ltd."
+   ],
+   "negara_iso2": "CN",
+   "wikidata": "Q6107753",
+   "wikipedia": "https://en.wikipedia.org/wiki/JA_Solar_Holdings",
+   "segmen": [
+    "wafer",
+    "sel",
+    "modul"
+   ],
+   "segmen_belum_terbukti": [],
+   "tahun_berdiri": 2005,
+   "kantor_pusat": {
+    "kota": "Shanghai",
+    "negara_iso2": "CN"
+   },
+   "situs": "https://www.jasolar.com",
+   "logo": null,
+   "kapasitas": [],
+   "pangsa_pasar": [],
+   "status_tier1": [],
+   "pabrik_indonesia": [],
+   "pabrik_asean": [],
+   "mitra_indonesia": [],
+   "kantor_indonesia": [],
+   "tkdn": null,
+   "proyek_indonesia": [],
+   "isu_dagang": [],
+   "esg": [],
+   "sumber": [
+    {
+     "url": "https://www.wikidata.org/wiki/Q6107753",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "tanggal_periksa": "2026-11-08",
+     "keterangan": "Wikidata (CC0)"
+    },
+    {
+     "url": "https://en.wikipedia.org/wiki/JA_Solar_Holdings",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "tanggal_periksa": "2026-11-08",
+     "keterangan": "Wikipedia (CC BY-SA)"
+    }
+   ],
+   "fakta": [
+    {
+     "medan": "tahun_berdiri",
+     "sumber_url": "https://www.wikidata.org/wiki/Q6107753",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "nilai": 2005
+    },
+    {
+     "medan": "kantor_pusat",
+     "sumber_url": "https://www.wikidata.org/wiki/Q6107753",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "nilai": "Shanghai"
+    },
+    {
+     "medan": "situs",
+     "sumber_url": "https://www.wikidata.org/wiki/Q6107753",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "nilai": "https://www.jasolar.com",
+     "catatan": "http diubah ke https"
+    }
+   ],
+   "segmen_catatan": "segmen kurasi tim; tanpa teks sumber untuk diverifikasi"
+  },
+  {
+   "id": "en_ec74b10326",
+   "nama": "Jinergy",
+   "nama_lain": [
+    "Jinergy Co",
+    "Jinneng Clean Energy Technology",
+    "Jinneng Energy",
+    "Jinneng Clean Energy Technology Ltd"
+   ],
+   "negara_iso2": "CN",
+   "wikidata": "Q107518426",
+   "wikipedia": null,
+   "segmen": [
+    "modul"
+   ],
+   "segmen_belum_terbukti": [],
+   "tahun_berdiri": 2013,
+   "kantor_pusat": {
+    "kota": "Jinzhong",
+    "negara_iso2": "CN"
+   },
+   "situs": "https://www.jinergy.com",
+   "logo": null,
+   "kapasitas": [],
+   "pangsa_pasar": [],
+   "status_tier1": [],
+   "pabrik_indonesia": [],
+   "pabrik_asean": [],
+   "mitra_indonesia": [],
+   "kantor_indonesia": [],
+   "tkdn": null,
+   "proyek_indonesia": [],
+   "isu_dagang": [],
+   "esg": [],
+   "sumber": [
+    {
+     "url": "https://www.wikidata.org/wiki/Q107518426",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "tanggal_periksa": "2026-11-08",
+     "keterangan": "Wikidata (CC0)"
+    }
+   ],
+   "fakta": [
+    {
+     "medan": "tahun_berdiri",
+     "sumber_url": "https://www.wikidata.org/wiki/Q107518426",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "nilai": 2013
+    },
+    {
+     "medan": "kantor_pusat",
+     "sumber_url": "https://www.wikidata.org/wiki/Q107518426",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "nilai": "Jinzhong"
+    },
+    {
+     "medan": "situs",
+     "sumber_url": "https://www.wikidata.org/wiki/Q107518426",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "nilai": "https://www.jinergy.com",
+     "catatan": "http diubah ke https"
+    }
+   ],
+   "segmen_catatan": "segmen kurasi tim; tanpa teks sumber untuk diverifikasi"
+  },
+  {
+   "id": "en_15a69db346",
+   "nama": "JinkoSolar",
+   "nama_lain": [
+    "Jinko Solar",
+    "JinkoSolar Holding"
+   ],
+   "negara_iso2": "CN",
+   "wikidata": "Q20182011",
+   "wikipedia": "https://en.wikipedia.org/wiki/JinkoSolar",
+   "segmen": [
+    "modul"
+   ],
+   "segmen_belum_terbukti": [
+    "wafer",
+    "sel"
+   ],
+   "tahun_berdiri": 2006,
+   "kantor_pusat": {
+    "kota": "Shanghai",
+    "negara_iso2": "CN"
+   },
+   "situs": "https://www.jinkosolar.com/",
+   "logo": null,
+   "kapasitas": [],
+   "pangsa_pasar": [],
+   "status_tier1": [],
+   "pabrik_indonesia": [],
+   "pabrik_asean": [],
+   "mitra_indonesia": [],
+   "kantor_indonesia": [],
+   "tkdn": null,
+   "proyek_indonesia": [],
+   "isu_dagang": [],
+   "esg": [],
+   "sumber": [
+    {
+     "url": "https://www.wikidata.org/wiki/Q20182011",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "tanggal_periksa": "2026-11-08",
+     "keterangan": "Wikidata (CC0)"
+    },
+    {
+     "url": "https://en.wikipedia.org/wiki/JinkoSolar",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "tanggal_periksa": "2026-11-08",
+     "keterangan": "Wikipedia (CC BY-SA)"
+    }
+   ],
+   "fakta": [
+    {
+     "medan": "tahun_berdiri",
+     "sumber_url": "https://www.wikidata.org/wiki/Q20182011",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "nilai": 2006
+    },
+    {
+     "medan": "kantor_pusat",
+     "sumber_url": "https://www.wikidata.org/wiki/Q20182011",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "nilai": "Shanghai"
+    },
+    {
+     "medan": "situs",
+     "sumber_url": "https://www.wikidata.org/wiki/Q20182011",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "nilai": "https://www.jinkosolar.com/",
+     "catatan": "http diubah ke https"
+    }
+   ],
+   "catatan_negara": "Wikidata menyebut KY; kurasi CN"
+  },
+  {
+   "id": "en_e1508f7503",
+   "nama": "KACO new energy",
+   "nama_lain": [
+    "KACO"
+   ],
+   "negara_iso2": "DE",
+   "wikidata": "Q1718358",
+   "wikipedia": null,
+   "segmen": [
+    "inverter-string"
+   ],
+   "segmen_belum_terbukti": [],
+   "tahun_berdiri": 1999,
+   "kantor_pusat": {
+    "kota": "Neckarsulm",
+    "negara_iso2": "DE"
+   },
+   "situs": "https://www.kaco-newenergy.de",
+   "logo": null,
+   "kapasitas": [],
+   "pangsa_pasar": [],
+   "status_tier1": [],
+   "pabrik_indonesia": [],
+   "pabrik_asean": [],
+   "mitra_indonesia": [],
+   "kantor_indonesia": [],
+   "tkdn": null,
+   "proyek_indonesia": [],
+   "isu_dagang": [],
+   "esg": [],
+   "sumber": [
+    {
+     "url": "https://www.wikidata.org/wiki/Q1718358",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "tanggal_periksa": "2026-11-08",
+     "keterangan": "Wikidata (CC0)"
+    }
+   ],
+   "fakta": [
+    {
+     "medan": "tahun_berdiri",
+     "sumber_url": "https://www.wikidata.org/wiki/Q1718358",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "nilai": 1999
+    },
+    {
+     "medan": "kantor_pusat",
+     "sumber_url": "https://www.wikidata.org/wiki/Q1718358",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "nilai": "Neckarsulm"
+    },
+    {
+     "medan": "situs",
+     "sumber_url": "https://www.wikidata.org/wiki/Q1718358",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "nilai": "https://www.kaco-newenergy.de",
+     "catatan": "http diubah ke https"
+    }
+   ],
+   "segmen_catatan": "segmen kurasi tim; tanpa teks sumber untuk diverifikasi"
+  },
+  {
+   "id": "en_b20a2fe35d",
+   "nama": "Kokam",
+   "nama_lain": [
+    "Kokam Co"
+   ],
+   "negara_iso2": "KR",
+   "wikidata": "Q1565320",
+   "wikipedia": null,
+   "segmen": [
+    "bess"
+   ],
+   "segmen_belum_terbukti": [],
+   "tahun_berdiri": 1989,
+   "kantor_pusat": {
+    "kota": "Siheung",
+    "negara_iso2": "KR"
+   },
+   "situs": "https://www.kokam.com",
+   "logo": null,
+   "kapasitas": [],
+   "pangsa_pasar": [],
+   "status_tier1": [],
+   "pabrik_indonesia": [],
+   "pabrik_asean": [],
+   "mitra_indonesia": [],
+   "kantor_indonesia": [],
+   "tkdn": null,
+   "proyek_indonesia": [],
+   "isu_dagang": [],
+   "esg": [],
+   "sumber": [
+    {
+     "url": "https://www.wikidata.org/wiki/Q1565320",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "tanggal_periksa": "2026-11-08",
+     "keterangan": "Wikidata (CC0)"
+    }
+   ],
+   "fakta": [
+    {
+     "medan": "tahun_berdiri",
+     "sumber_url": "https://www.wikidata.org/wiki/Q1565320",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "nilai": 1989
+    },
+    {
+     "medan": "kantor_pusat",
+     "sumber_url": "https://www.wikidata.org/wiki/Q1565320",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "nilai": "Siheung"
+    },
+    {
+     "medan": "situs",
+     "sumber_url": "https://www.wikidata.org/wiki/Q1565320",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "nilai": "https://www.kokam.com",
+     "catatan": "http diubah ke https"
+    }
+   ]
+  },
+  {
+   "id": "en_4585ec0b9b",
+   "nama": "Kyocera",
+   "nama_lain": [
+    "Kyocera Solar",
+    "Kyocera Corporation",
+    "KYOCERA Corporation (Kyoto)"
+   ],
+   "negara_iso2": "JP",
+   "wikidata": "Q745099",
+   "wikipedia": "https://en.wikipedia.org/wiki/Kyocera",
+   "segmen": [
+    "modul"
+   ],
+   "segmen_belum_terbukti": [],
+   "tahun_berdiri": 1959,
+   "kantor_pusat": {
+    "kota": "Fushimi-ku",
+    "negara_iso2": "JP"
+   },
+   "situs": "https://global.kyocera.com/",
+   "logo": null,
+   "kapasitas": [],
+   "pangsa_pasar": [],
+   "status_tier1": [],
+   "pabrik_indonesia": [],
+   "pabrik_asean": [],
+   "mitra_indonesia": [],
+   "kantor_indonesia": [],
+   "tkdn": null,
+   "proyek_indonesia": [],
+   "isu_dagang": [],
+   "esg": [],
+   "sumber": [
+    {
+     "url": "https://www.wikidata.org/wiki/Q745099",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "tanggal_periksa": "2026-11-08",
+     "keterangan": "Wikidata (CC0)"
+    },
+    {
+     "url": "https://en.wikipedia.org/wiki/Kyocera",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "tanggal_periksa": "2026-11-08",
+     "keterangan": "Wikipedia (CC BY-SA)"
+    }
+   ],
+   "fakta": [
+    {
+     "medan": "tahun_berdiri",
+     "sumber_url": "https://www.wikidata.org/wiki/Q745099",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "nilai": 1959
+    },
+    {
+     "medan": "kantor_pusat",
+     "sumber_url": "https://www.wikidata.org/wiki/Q745099",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "nilai": "Fushimi-ku"
+    },
+    {
+     "medan": "situs",
+     "sumber_url": "https://www.wikidata.org/wiki/Q745099",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "nilai": "https://global.kyocera.com/"
+    }
+   ],
+   "segmen_catatan": "segmen kurasi tim; tanpa teks sumber untuk diverifikasi"
+  },
+  {
+   "id": "en_166bb8a8b2",
+   "nama": "Leclanche",
+   "nama_lain": [
+    "Leclanché"
+   ],
+   "negara_iso2": "CH",
+   "wikidata": "Q680683",
+   "wikipedia": "https://en.wikipedia.org/wiki/Leclanch%C3%A9",
+   "segmen": [
+    "bess"
+   ],
+   "segmen_belum_terbukti": [],
+   "tahun_berdiri": 1909,
+   "kantor_pusat": {
+    "kota": "Yverdon-les-Bains",
+    "negara_iso2": "CH"
+   },
+   "situs": "https://www.leclanche.ch/",
+   "logo": null,
+   "kapasitas": [],
+   "pangsa_pasar": [],
+   "status_tier1": [],
+   "pabrik_indonesia": [],
+   "pabrik_asean": [],
+   "mitra_indonesia": [],
+   "kantor_indonesia": [],
+   "tkdn": null,
+   "proyek_indonesia": [],
+   "isu_dagang": [],
+   "esg": [],
+   "sumber": [
+    {
+     "url": "https://www.wikidata.org/wiki/Q680683",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "tanggal_periksa": "2026-11-08",
+     "keterangan": "Wikidata (CC0)"
+    },
+    {
+     "url": "https://en.wikipedia.org/wiki/Leclanch%C3%A9",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "tanggal_periksa": "2026-11-08",
+     "keterangan": "Wikipedia (CC BY-SA)"
+    }
+   ],
+   "fakta": [
+    {
+     "medan": "tahun_berdiri",
+     "sumber_url": "https://www.wikidata.org/wiki/Q680683",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "nilai": 1909
+    },
+    {
+     "medan": "kantor_pusat",
+     "sumber_url": "https://www.wikidata.org/wiki/Q680683",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "nilai": "Yverdon-les-Bains"
+    },
+    {
+     "medan": "situs",
+     "sumber_url": "https://www.wikidata.org/wiki/Q680683",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "nilai": "https://www.leclanche.ch/",
+     "catatan": "http diubah ke https"
+    }
+   ],
+   "segmen_catatan": "segmen kurasi tim; tanpa teks sumber untuk diverifikasi"
+  },
+  {
+   "id": "en_e1421af365",
+   "nama": "LG Energy Solution",
+   "nama_lain": [
+    "LGES",
+    "LG ES"
+   ],
+   "negara_iso2": "KR",
+   "wikidata": "Q109464416",
+   "wikipedia": "https://en.wikipedia.org/wiki/LG_Energy_Solution",
+   "segmen": [
+    "bess"
+   ],
+   "segmen_belum_terbukti": [],
+   "tahun_berdiri": null,
+   "kantor_pusat": {
+    "kota": "Seoul",
+    "negara_iso2": "KR"
+   },
+   "situs": "https://www.lgensol.com",
+   "logo": null,
+   "kapasitas": [],
+   "pangsa_pasar": [],
+   "status_tier1": [],
+   "pabrik_indonesia": [],
+   "pabrik_asean": [],
+   "mitra_indonesia": [],
+   "kantor_indonesia": [],
+   "tkdn": null,
+   "proyek_indonesia": [],
+   "isu_dagang": [],
+   "esg": [],
+   "sumber": [
+    {
+     "url": "https://www.wikidata.org/wiki/Q109464416",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "tanggal_periksa": "2026-11-08",
+     "keterangan": "Wikidata (CC0)"
+    },
+    {
+     "url": "https://en.wikipedia.org/wiki/LG_Energy_Solution",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "tanggal_periksa": "2026-11-08",
+     "keterangan": "Wikipedia (CC BY-SA)"
+    }
+   ],
+   "fakta": [
+    {
+     "medan": "kantor_pusat",
+     "sumber_url": "https://www.wikidata.org/wiki/Q109464416",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "nilai": "Seoul"
+    },
+    {
+     "medan": "situs",
+     "sumber_url": "https://www.wikidata.org/wiki/Q109464416",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "nilai": "https://www.lgensol.com"
+    }
+   ]
+  },
+  {
+   "id": "en_4c0257e314",
+   "nama": "Lishen",
+   "nama_lain": [
+    "Tianjin Lishen Battery",
+    "Lishen Battery",
+    "Tianjin Lishen Battery Joint-Stock Co., Ltd."
+   ],
+   "negara_iso2": "CN",
+   "wikidata": "Q137546781",
+   "wikipedia": null,
+   "segmen": [
+    "bess"
+   ],
+   "segmen_belum_terbukti": [],
+   "tahun_berdiri": 1997,
+   "kantor_pusat": {
+    "kota": "Tianjin",
+    "negara_iso2": "CN"
+   },
+   "situs": "https://www.lishen.com.cn",
+   "logo": null,
+   "kapasitas": [],
+   "pangsa_pasar": [],
+   "status_tier1": [],
+   "pabrik_indonesia": [],
+   "pabrik_asean": [],
+   "mitra_indonesia": [],
+   "kantor_indonesia": [],
+   "tkdn": null,
+   "proyek_indonesia": [],
+   "isu_dagang": [],
+   "esg": [],
+   "sumber": [
+    {
+     "url": "https://www.wikidata.org/wiki/Q137546781",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "tanggal_periksa": "2026-11-08",
+     "keterangan": "Wikidata (CC0)"
+    }
+   ],
+   "fakta": [
+    {
+     "medan": "tahun_berdiri",
+     "sumber_url": "https://www.wikidata.org/wiki/Q137546781",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "nilai": 1997
+    },
+    {
+     "medan": "kantor_pusat",
+     "sumber_url": "https://www.wikidata.org/wiki/Q137546781",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "nilai": "Tianjin"
+    },
+    {
+     "medan": "situs",
+     "sumber_url": "https://www.wikidata.org/wiki/Q137546781",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "nilai": "https://www.lishen.com.cn"
+    }
+   ],
+   "segmen_catatan": "segmen kurasi tim; tanpa teks sumber untuk diverifikasi"
+  },
+  {
+   "id": "en_5812c37694",
+   "nama": "LONGi Green Energy Technology",
+   "nama_lain": [
+    "LONGi",
+    "Longi Solar",
+    "Xi'an Longi Silicon Materials Corporation"
+   ],
+   "negara_iso2": "CN",
+   "wikidata": "Q28207127",
+   "wikipedia": "https://en.wikipedia.org/wiki/LONGi",
+   "segmen": [
+    "polisilikon",
+    "wafer",
+    "sel",
+    "modul"
+   ],
+   "segmen_belum_terbukti": [],
+   "tahun_berdiri": 2006,
+   "kantor_pusat": {
+    "kota": "San Francisco",
+    "negara_iso2": "CN"
+   },
+   "situs": "https://www.longi.com/",
+   "logo": null,
+   "kapasitas": [],
+   "pangsa_pasar": [],
+   "status_tier1": [],
+   "pabrik_indonesia": [],
+   "pabrik_asean": [],
+   "mitra_indonesia": [],
+   "kantor_indonesia": [],
+   "tkdn": null,
+   "proyek_indonesia": [],
+   "isu_dagang": [],
+   "esg": [],
+   "sumber": [
+    {
+     "url": "https://www.wikidata.org/wiki/Q28207127",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "tanggal_periksa": "2026-11-08",
+     "keterangan": "Wikidata (CC0)"
+    },
+    {
+     "url": "https://en.wikipedia.org/wiki/LONGi",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "tanggal_periksa": "2026-11-08",
+     "keterangan": "Wikipedia (CC BY-SA)"
+    }
+   ],
+   "fakta": [
+    {
+     "medan": "tahun_berdiri",
+     "sumber_url": "https://www.wikidata.org/wiki/Q28207127",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "nilai": 2006
+    },
+    {
+     "medan": "kantor_pusat",
+     "sumber_url": "https://www.wikidata.org/wiki/Q28207127",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "nilai": "San Francisco"
+    },
+    {
+     "medan": "situs",
+     "sumber_url": "https://www.wikidata.org/wiki/Q28207127",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "nilai": "https://www.longi.com/",
+     "catatan": "http diubah ke https"
+    }
+   ],
+   "segmen_catatan": "segmen kurasi tim; tanpa teks sumber untuk diverifikasi"
+  },
+  {
+   "id": "en_1537eaf78d",
+   "nama": "Maxeon Solar Technologies",
+   "nama_lain": [
+    "SunPower",
+    "Maxeon",
+    "Maxeon Solar Technologies, Ltd."
+   ],
+   "negara_iso2": "SG",
+   "wikidata": "Q121832886",
+   "wikipedia": "https://en.wikipedia.org/wiki/Maxeon_Solar_Technologies",
+   "segmen": [
+    "sel",
+    "modul"
+   ],
+   "segmen_belum_terbukti": [],
+   "tahun_berdiri": null,
+   "kantor_pusat": null,
+   "situs": "https://maxeon.com/",
+   "logo": null,
+   "kapasitas": [],
+   "pangsa_pasar": [],
+   "status_tier1": [],
+   "pabrik_indonesia": [],
+   "pabrik_asean": [],
+   "mitra_indonesia": [],
+   "kantor_indonesia": [],
+   "tkdn": null,
+   "proyek_indonesia": [],
+   "isu_dagang": [],
+   "esg": [],
+   "sumber": [
+    {
+     "url": "https://www.wikidata.org/wiki/Q121832886",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "tanggal_periksa": "2026-11-08",
+     "keterangan": "Wikidata (CC0)"
+    },
+    {
+     "url": "https://en.wikipedia.org/wiki/Maxeon_Solar_Technologies",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "tanggal_periksa": "2026-11-08",
+     "keterangan": "Wikipedia (CC BY-SA)"
+    }
+   ],
+   "fakta": [
+    {
+     "medan": "situs",
+     "sumber_url": "https://www.wikidata.org/wiki/Q121832886",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "nilai": "https://maxeon.com/",
+     "catatan": "http diubah ke https"
+    }
+   ],
+   "segmen_catatan": "segmen kurasi tim; tanpa teks sumber untuk diverifikasi"
+  },
+  {
+   "id": "en_78058d49da",
+   "nama": "Meyer Burger Technology",
+   "nama_lain": [
+    "Meyer Burger"
+   ],
+   "negara_iso2": "CH",
+   "wikidata": "Q1288880",
+   "wikipedia": "https://en.wikipedia.org/wiki/Meyer_Burger",
+   "segmen": [
+    "sel",
+    "modul"
+   ],
+   "segmen_belum_terbukti": [],
+   "tahun_berdiri": 1953,
+   "kantor_pusat": {
+    "kota": "Thun",
+    "negara_iso2": "CH"
+   },
+   "situs": null,
+   "logo": null,
+   "kapasitas": [],
+   "pangsa_pasar": [],
+   "status_tier1": [],
+   "pabrik_indonesia": [],
+   "pabrik_asean": [],
+   "mitra_indonesia": [],
+   "kantor_indonesia": [],
+   "tkdn": null,
+   "proyek_indonesia": [],
+   "isu_dagang": [],
+   "esg": [],
+   "sumber": [
+    {
+     "url": "https://www.wikidata.org/wiki/Q1288880",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "tanggal_periksa": "2026-11-08",
+     "keterangan": "Wikidata (CC0)"
+    },
+    {
+     "url": "https://en.wikipedia.org/wiki/Meyer_Burger",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "tanggal_periksa": "2026-11-08",
+     "keterangan": "Wikipedia (CC BY-SA)"
+    }
+   ],
+   "fakta": [
+    {
+     "medan": "tahun_berdiri",
+     "sumber_url": "https://www.wikidata.org/wiki/Q1288880",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "nilai": 1953
+    },
+    {
+     "medan": "kantor_pusat",
+     "sumber_url": "https://www.wikidata.org/wiki/Q1288880",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "nilai": "Thun"
+    }
+   ],
+   "segmen_catatan": "segmen kurasi tim; tanpa teks sumber untuk diverifikasi"
+  },
+  {
+   "id": "en_09f51f2672",
+   "nama": "Nextracker",
+   "nama_lain": [
+    "Nextracker Inc",
+    "Nextracker Holdings"
+   ],
+   "negara_iso2": "US",
+   "wikidata": "Q131538133",
+   "wikipedia": "https://en.wikipedia.org/wiki/Nextpower",
+   "segmen": [
+    "tracker-mounting"
+   ],
+   "segmen_belum_terbukti": [],
+   "tahun_berdiri": null,
+   "kantor_pusat": null,
+   "situs": "https://www.nextracker.com/",
+   "logo": null,
+   "kapasitas": [],
+   "pangsa_pasar": [],
+   "status_tier1": [],
+   "pabrik_indonesia": [],
+   "pabrik_asean": [],
+   "mitra_indonesia": [],
+   "kantor_indonesia": [],
+   "tkdn": null,
+   "proyek_indonesia": [],
+   "isu_dagang": [],
+   "esg": [],
+   "sumber": [
+    {
+     "url": "https://www.wikidata.org/wiki/Q131538133",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "tanggal_periksa": "2026-11-08",
+     "keterangan": "Wikidata (CC0)"
+    },
+    {
+     "url": "https://en.wikipedia.org/wiki/Nextpower",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "tanggal_periksa": "2026-11-08",
+     "keterangan": "Wikipedia (CC BY-SA)"
+    }
+   ],
+   "fakta": [
+    {
+     "medan": "situs",
+     "sumber_url": "https://www.wikidata.org/wiki/Q131538133",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "nilai": "https://www.nextracker.com/"
+    }
+   ],
+   "segmen_catatan": "segmen kurasi tim; tanpa teks sumber untuk diverifikasi"
+  },
+  {
+   "id": "en_0ed28ca920",
+   "nama": "OCI Holdings",
+   "nama_lain": [
+    "OCI Co",
+    "OCI Company",
+    "OCI Malaysia"
+   ],
+   "negara_iso2": "KR",
+   "wikidata": "Q497825",
+   "wikipedia": "https://en.wikipedia.org/wiki/OCI_(company)",
+   "segmen": [
+    "polisilikon"
+   ],
+   "segmen_belum_terbukti": [],
+   "tahun_berdiri": 1959,
+   "kantor_pusat": {
+    "kota": "Seoul",
+    "negara_iso2": "KR"
+   },
+   "situs": "https://www.oci.co.kr",
+   "logo": null,
+   "kapasitas": [],
+   "pangsa_pasar": [],
+   "status_tier1": [],
+   "pabrik_indonesia": [],
+   "pabrik_asean": [],
+   "mitra_indonesia": [],
+   "kantor_indonesia": [],
+   "tkdn": null,
+   "proyek_indonesia": [],
+   "isu_dagang": [],
+   "esg": [],
+   "sumber": [
+    {
+     "url": "https://www.wikidata.org/wiki/Q497825",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "tanggal_periksa": "2026-11-08",
+     "keterangan": "Wikidata (CC0)"
+    },
+    {
+     "url": "https://en.wikipedia.org/wiki/OCI_(company)",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "tanggal_periksa": "2026-11-08",
+     "keterangan": "Wikipedia (CC BY-SA)"
+    }
+   ],
+   "fakta": [
+    {
+     "medan": "tahun_berdiri",
+     "sumber_url": "https://www.wikidata.org/wiki/Q497825",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "nilai": 1959
+    },
+    {
+     "medan": "kantor_pusat",
+     "sumber_url": "https://www.wikidata.org/wiki/Q497825",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "nilai": "Seoul"
+    },
+    {
+     "medan": "situs",
+     "sumber_url": "https://www.wikidata.org/wiki/Q497825",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "nilai": "https://www.oci.co.kr",
+     "catatan": "http diubah ke https"
+    }
+   ],
+   "segmen_catatan": "segmen kurasi tim; tanpa teks sumber untuk diverifikasi"
+  },
+  {
+   "id": "en_dd3027b0b1",
+   "nama": "Panasonic",
+   "nama_lain": [
+    "Panasonic Energy",
+    "Panasonic Holdings",
+    "Matsushita Electric Industrial Co., Ltd."
+   ],
+   "negara_iso2": "JP",
+   "wikidata": "Q53247",
+   "wikipedia": "https://en.wikipedia.org/wiki/Panasonic",
+   "segmen": [
+    "modul",
+    "bess"
+   ],
+   "segmen_belum_terbukti": [],
+   "tahun_berdiri": 1918,
+   "kantor_pusat": {
+    "kota": "Kadoma",
+    "negara_iso2": "JP"
+   },
+   "situs": "https://www.panasonic.com/",
+   "logo": null,
+   "kapasitas": [],
+   "pangsa_pasar": [],
+   "status_tier1": [],
+   "pabrik_indonesia": [],
+   "pabrik_asean": [],
+   "mitra_indonesia": [],
+   "kantor_indonesia": [],
+   "tkdn": null,
+   "proyek_indonesia": [],
+   "isu_dagang": [],
+   "esg": [],
+   "sumber": [
+    {
+     "url": "https://www.wikidata.org/wiki/Q53247",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "tanggal_periksa": "2026-11-08",
+     "keterangan": "Wikidata (CC0)"
+    },
+    {
+     "url": "https://en.wikipedia.org/wiki/Panasonic",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "tanggal_periksa": "2026-11-08",
+     "keterangan": "Wikipedia (CC BY-SA)"
+    }
+   ],
+   "fakta": [
+    {
+     "medan": "tahun_berdiri",
+     "sumber_url": "https://www.wikidata.org/wiki/Q53247",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "nilai": 1918
+    },
+    {
+     "medan": "kantor_pusat",
+     "sumber_url": "https://www.wikidata.org/wiki/Q53247",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "nilai": "Kadoma"
+    },
+    {
+     "medan": "situs",
+     "sumber_url": "https://www.wikidata.org/wiki/Q53247",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "nilai": "https://www.panasonic.com/"
+    }
+   ],
+   "segmen_catatan": "segmen kurasi tim; tanpa teks sumber untuk diverifikasi"
+  },
+  {
+   "id": "en_ccdb90d43c",
+   "nama": "Power Electronics",
+   "nama_lain": [
+    "Power Electronics Espana",
+    "Power Electronics SL"
+   ],
+   "negara_iso2": "ES",
+   "wikidata": "Q593143",
+   "wikipedia": "https://en.wikipedia.org/wiki/Power_electronics",
+   "segmen": [
+    "inverter-sentral",
+    "inverter-string",
+    "bess"
+   ],
+   "segmen_belum_terbukti": [],
+   "tahun_berdiri": null,
+   "kantor_pusat": null,
+   "situs": null,
+   "logo": null,
+   "kapasitas": [],
+   "pangsa_pasar": [],
+   "status_tier1": [],
+   "pabrik_indonesia": [],
+   "pabrik_asean": [],
+   "mitra_indonesia": [],
+   "kantor_indonesia": [],
+   "tkdn": null,
+   "proyek_indonesia": [],
+   "isu_dagang": [],
+   "esg": [],
+   "sumber": [
+    {
+     "url": "https://www.wikidata.org/wiki/Q593143",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "tanggal_periksa": "2026-11-08",
+     "keterangan": "Wikidata (CC0)"
+    },
+    {
+     "url": "https://en.wikipedia.org/wiki/Power_electronics",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "tanggal_periksa": "2026-11-08",
+     "keterangan": "Wikipedia (CC BY-SA)"
+    }
+   ],
+   "fakta": [],
+   "segmen_catatan": "segmen kurasi tim; tanpa teks sumber untuk diverifikasi"
+  },
+  {
+   "id": "en_9e0a280ba6",
+   "nama": "PV Hardware",
+   "nama_lain": [
+    "PVH",
+    "PV Hardware Solutions",
+    "Phillips-Van Heusen",
+    "Phillips-Van Heusen Corporation",
+    "Phillips-Jones Corporation"
+   ],
+   "negara_iso2": "ES",
+   "wikidata": "Q1132272",
+   "wikipedia": "https://en.wikipedia.org/wiki/PVH_Corp.",
+   "segmen": [
+    "tracker-mounting"
+   ],
+   "segmen_belum_terbukti": [],
+   "tahun_berdiri": 1881,
+   "kantor_pusat": {
+    "kota": "New York City",
+    "negara_iso2": "ES"
+   },
+   "situs": "https://www.pvh.com/",
+   "logo": null,
+   "kapasitas": [],
+   "pangsa_pasar": [],
+   "status_tier1": [],
+   "pabrik_indonesia": [],
+   "pabrik_asean": [],
+   "mitra_indonesia": [],
+   "kantor_indonesia": [],
+   "tkdn": null,
+   "proyek_indonesia": [],
+   "isu_dagang": [],
+   "esg": [],
+   "sumber": [
+    {
+     "url": "https://www.wikidata.org/wiki/Q1132272",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "tanggal_periksa": "2026-11-08",
+     "keterangan": "Wikidata (CC0)"
+    },
+    {
+     "url": "https://en.wikipedia.org/wiki/PVH_Corp.",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "tanggal_periksa": "2026-11-08",
+     "keterangan": "Wikipedia (CC BY-SA)"
+    }
+   ],
+   "fakta": [
+    {
+     "medan": "tahun_berdiri",
+     "sumber_url": "https://www.wikidata.org/wiki/Q1132272",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "nilai": 1881
+    },
+    {
+     "medan": "kantor_pusat",
+     "sumber_url": "https://www.wikidata.org/wiki/Q1132272",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "nilai": "New York City"
+    },
+    {
+     "medan": "situs",
+     "sumber_url": "https://www.wikidata.org/wiki/Q1132272",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "nilai": "https://www.pvh.com/"
+    }
+   ],
+   "segmen_catatan": "segmen kurasi tim; tanpa teks sumber untuk diverifikasi",
+   "catatan_negara": "Wikidata menyebut US; kurasi ES"
+  },
+  {
+   "id": "en_749183c6fd",
+   "nama": "Pylontech",
+   "nama_lain": [
+    "Pylon Technologies"
+   ],
+   "negara_iso2": "CN",
+   "wikidata": "Q136891861",
+   "wikipedia": null,
+   "segmen": [
+    "bess"
+   ],
+   "segmen_belum_terbukti": [],
+   "tahun_berdiri": 2009,
+   "kantor_pusat": {
+    "kota": "Shanghai",
+    "negara_iso2": "CN"
+   },
+   "situs": "https://en.pylontech.com.cn/",
+   "logo": null,
+   "kapasitas": [],
+   "pangsa_pasar": [],
+   "status_tier1": [],
+   "pabrik_indonesia": [],
+   "pabrik_asean": [],
+   "mitra_indonesia": [],
+   "kantor_indonesia": [],
+   "tkdn": null,
+   "proyek_indonesia": [],
+   "isu_dagang": [],
+   "esg": [],
+   "sumber": [
+    {
+     "url": "https://www.wikidata.org/wiki/Q136891861",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "tanggal_periksa": "2026-11-08",
+     "keterangan": "Wikidata (CC0)"
+    }
+   ],
+   "fakta": [
+    {
+     "medan": "tahun_berdiri",
+     "sumber_url": "https://www.wikidata.org/wiki/Q136891861",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "nilai": 2009
+    },
+    {
+     "medan": "kantor_pusat",
+     "sumber_url": "https://www.wikidata.org/wiki/Q136891861",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "nilai": "Shanghai"
+    },
+    {
+     "medan": "situs",
+     "sumber_url": "https://www.wikidata.org/wiki/Q136891861",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "nilai": "https://en.pylontech.com.cn/"
+    }
+   ]
+  },
+  {
+   "id": "en_98de632a79",
+   "nama": "REC Group",
+   "nama_lain": [
+    "REC Solar",
+    "REC Solar Holdings"
+   ],
+   "negara_iso2": "NO",
+   "wikidata": "Q54964066",
+   "wikipedia": null,
+   "segmen": [
+    "sel",
+    "modul"
+   ],
+   "segmen_belum_terbukti": [],
+   "tahun_berdiri": 1998,
+   "kantor_pusat": {
+    "kota": "Staré Město",
+    "negara_iso2": "NO"
+   },
+   "situs": null,
+   "logo": null,
+   "kapasitas": [],
+   "pangsa_pasar": [],
+   "status_tier1": [],
+   "pabrik_indonesia": [],
+   "pabrik_asean": [],
+   "mitra_indonesia": [],
+   "kantor_indonesia": [
+    {
+     "pabrikan": "PT Rec Solar Energy Indonesia",
+     "lokasi": "Kota Batam",
+     "provinsi": "Kepulauan Riau",
+     "kategori": "modul",
+     "sumber_url": "https://tkdn.kemenperin.go.id/sertifikat?q=modul%20surya&page=2",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "resmi"
+    }
+   ],
+   "tkdn": {
+    "jumlah_sertifikat": 5,
+    "tkdn_persen_maks": 57.2,
+    "sertifikat": [
+     {
+      "id": "tkp_0529",
+      "kategori": "modul",
+      "produk": "Modul Surya",
+      "merk": "NE Solar",
+      "tipe": "66THB-M10",
+      "tkdn_persen": 57.2,
+      "pabrikan": "PT Rec Solar Energy Indonesia",
+      "lokasi": "Kota Batam",
+      "provinsi": "Kepulauan Riau",
+      "sumber_url": "https://tkdn.kemenperin.go.id/sertifikat?q=modul%20surya",
+      "tanggal_periksa": "2026-11-08",
+      "tingkat_bukti": "resmi"
+     },
+     {
+      "id": "tkp_0530",
+      "kategori": "modul",
+      "produk": "Modul Surya",
+      "merk": "NE Solar",
+      "tipe": "54THB-M10",
+      "tkdn_persen": 56.92,
+      "pabrikan": "PT Rec Solar Energy Indonesia",
+      "lokasi": "Kota Batam",
+      "provinsi": "Kepulauan Riau",
+      "sumber_url": "https://tkdn.kemenperin.go.id/sertifikat?q=modul%20surya",
+      "tanggal_periksa": "2026-11-08",
+      "tingkat_bukti": "resmi"
+     },
+     {
+      "id": "tkp_0531",
+      "kategori": "modul",
+      "produk": "Modul Surya",
+      "merk": "NE Solar",
+      "tipe": "60THB-M10",
+      "tkdn_persen": 56.89,
+      "pabrikan": "PT Rec Solar Energy Indonesia",
+      "lokasi": "Kota Batam",
+      "provinsi": "Kepulauan Riau",
+      "sumber_url": "https://tkdn.kemenperin.go.id/sertifikat?q=modul%20surya&page=2",
+      "tanggal_periksa": "2026-11-08",
+      "tingkat_bukti": "resmi"
+     },
+     {
+      "id": "tkp_0532",
+      "kategori": "modul",
+      "produk": "Modul Surya",
+      "merk": "NE Solar",
+      "tipe": "78THB-M10",
+      "tkdn_persen": 56.28,
+      "pabrikan": "PT Rec Solar Energy Indonesia",
+      "lokasi": "Kota Batam",
+      "provinsi": "Kepulauan Riau",
+      "sumber_url": "https://tkdn.kemenperin.go.id/sertifikat?q=modul%20surya&page=2",
+      "tanggal_periksa": "2026-11-08",
+      "tingkat_bukti": "resmi"
+     },
+     {
+      "id": "tkp_0533",
+      "kategori": "modul",
+      "produk": "Modul Surya",
+      "merk": "NE Solar",
+      "tipe": "72THB-M10",
+      "tkdn_persen": 55.67,
+      "pabrikan": "PT Rec Solar Energy Indonesia",
+      "lokasi": "Kota Batam",
+      "provinsi": "Kepulauan Riau",
+      "sumber_url": "https://tkdn.kemenperin.go.id/sertifikat?q=modul%20surya&page=2",
+      "tanggal_periksa": "2026-11-08",
+      "tingkat_bukti": "resmi"
+     }
+    ]
+   },
+   "proyek_indonesia": [],
+   "isu_dagang": [],
+   "esg": [],
+   "sumber": [
+    {
+     "url": "https://www.wikidata.org/wiki/Q54964066",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "tanggal_periksa": "2026-11-08",
+     "keterangan": "Wikidata (CC0)"
+    }
+   ],
+   "fakta": [
+    {
+     "medan": "tahun_berdiri",
+     "sumber_url": "https://www.wikidata.org/wiki/Q54964066",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "nilai": 1998
+    },
+    {
+     "medan": "kantor_pusat",
+     "sumber_url": "https://www.wikidata.org/wiki/Q54964066",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "nilai": "Staré Město"
+    }
+   ],
+   "segmen_catatan": "segmen kurasi tim; tanpa teks sumber untuk diverifikasi",
+   "catatan_negara": "Wikidata menyebut CZ; kurasi NO"
+  },
+  {
+   "id": "en_02df1fdd54",
+   "nama": "REC Silicon",
+   "nama_lain": [
+    "REC Silicon ASA"
+   ],
+   "negara_iso2": "NO",
+   "wikidata": "Q21950804",
+   "wikipedia": null,
+   "segmen": [
+    "polisilikon"
+   ],
+   "segmen_belum_terbukti": [],
+   "tahun_berdiri": 1996,
+   "kantor_pusat": {
+    "kota": "Lysaker",
+    "negara_iso2": "NO"
+   },
+   "situs": "https://www.recsilicon.com",
+   "logo": null,
+   "kapasitas": [],
+   "pangsa_pasar": [],
+   "status_tier1": [],
+   "pabrik_indonesia": [],
+   "pabrik_asean": [],
+   "mitra_indonesia": [],
+   "kantor_indonesia": [],
+   "tkdn": null,
+   "proyek_indonesia": [],
+   "isu_dagang": [],
+   "esg": [],
+   "sumber": [
+    {
+     "url": "https://www.wikidata.org/wiki/Q21950804",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "tanggal_periksa": "2026-11-08",
+     "keterangan": "Wikidata (CC0)"
+    }
+   ],
+   "fakta": [
+    {
+     "medan": "tahun_berdiri",
+     "sumber_url": "https://www.wikidata.org/wiki/Q21950804",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "nilai": 1996
+    },
+    {
+     "medan": "kantor_pusat",
+     "sumber_url": "https://www.wikidata.org/wiki/Q21950804",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "nilai": "Lysaker"
+    },
+    {
+     "medan": "situs",
+     "sumber_url": "https://www.wikidata.org/wiki/Q21950804",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "nilai": "https://www.recsilicon.com",
+     "catatan": "http diubah ke https"
+    }
+   ],
+   "segmen_catatan": "segmen kurasi tim; tanpa teks sumber untuk diverifikasi"
+  },
+  {
+   "id": "en_a0077aa46d",
+   "nama": "REPT Battero",
+   "nama_lain": [
+    "REPT",
+    "REPT BATTERO Energy Co., Ltd"
+   ],
+   "negara_iso2": "CN",
+   "wikidata": "Q130746421",
+   "wikipedia": null,
+   "segmen": [
+    "bess"
+   ],
+   "segmen_belum_terbukti": [],
+   "tahun_berdiri": 2017,
+   "kantor_pusat": null,
+   "situs": "https://www.chinarept.com/de",
+   "logo": null,
+   "kapasitas": [],
+   "pangsa_pasar": [],
+   "status_tier1": [],
+   "pabrik_indonesia": [],
+   "pabrik_asean": [],
+   "mitra_indonesia": [],
+   "kantor_indonesia": [],
+   "tkdn": null,
+   "proyek_indonesia": [],
+   "isu_dagang": [],
+   "esg": [],
+   "sumber": [
+    {
+     "url": "https://www.wikidata.org/wiki/Q130746421",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "tanggal_periksa": "2026-11-08",
+     "keterangan": "Wikidata (CC0)"
+    }
+   ],
+   "fakta": [
+    {
+     "medan": "tahun_berdiri",
+     "sumber_url": "https://www.wikidata.org/wiki/Q130746421",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "nilai": 2017
+    },
+    {
+     "medan": "situs",
+     "sumber_url": "https://www.wikidata.org/wiki/Q130746421",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "nilai": "https://www.chinarept.com/de"
+    }
+   ],
+   "segmen_catatan": "segmen kurasi tim; tanpa teks sumber untuk diverifikasi"
+  },
+  {
+   "id": "en_0efa719627",
+   "nama": "Risen Energy",
+   "nama_lain": [
+    "Risen Energy Co"
+   ],
+   "negara_iso2": "CN",
+   "wikidata": "Q19855311",
+   "wikipedia": null,
+   "segmen": [
+    "modul"
+   ],
+   "segmen_belum_terbukti": [],
+   "tahun_berdiri": 2002,
+   "kantor_pusat": {
+    "kota": "Ningbo",
+    "negara_iso2": "CN"
+   },
+   "situs": null,
+   "logo": null,
+   "kapasitas": [],
+   "pangsa_pasar": [],
+   "status_tier1": [],
+   "pabrik_indonesia": [],
+   "pabrik_asean": [],
+   "mitra_indonesia": [],
+   "kantor_indonesia": [],
+   "tkdn": null,
+   "proyek_indonesia": [],
+   "isu_dagang": [],
+   "esg": [],
+   "sumber": [
+    {
+     "url": "https://www.wikidata.org/wiki/Q19855311",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "tanggal_periksa": "2026-11-08",
+     "keterangan": "Wikidata (CC0)"
+    }
+   ],
+   "fakta": [
+    {
+     "medan": "tahun_berdiri",
+     "sumber_url": "https://www.wikidata.org/wiki/Q19855311",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "nilai": 2002
+    },
+    {
+     "medan": "kantor_pusat",
+     "sumber_url": "https://www.wikidata.org/wiki/Q19855311",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "nilai": "Ningbo"
+    }
+   ],
+   "segmen_catatan": "segmen kurasi tim; tanpa teks sumber untuk diverifikasi"
+  },
+  {
+   "id": "en_6c53907a61",
+   "nama": "Saft",
+   "nama_lain": [
+    "Saft Groupe"
+   ],
+   "negara_iso2": "FR",
+   "wikidata": "Q2211570",
+   "wikipedia": "https://en.wikipedia.org/wiki/Saft_(company)",
+   "segmen": [
+    "bess"
+   ],
+   "segmen_belum_terbukti": [],
+   "tahun_berdiri": 1918,
+   "kantor_pusat": {
+    "kota": "Levallois-Perret",
+    "negara_iso2": "FR"
+   },
+   "situs": "https://saft.com/en",
+   "logo": null,
+   "kapasitas": [],
+   "pangsa_pasar": [],
+   "status_tier1": [],
+   "pabrik_indonesia": [],
+   "pabrik_asean": [],
+   "mitra_indonesia": [],
+   "kantor_indonesia": [],
+   "tkdn": null,
+   "proyek_indonesia": [],
+   "isu_dagang": [],
+   "esg": [],
+   "sumber": [
+    {
+     "url": "https://www.wikidata.org/wiki/Q2211570",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "tanggal_periksa": "2026-11-08",
+     "keterangan": "Wikidata (CC0)"
+    },
+    {
+     "url": "https://en.wikipedia.org/wiki/Saft_(company)",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "tanggal_periksa": "2026-11-08",
+     "keterangan": "Wikipedia (CC BY-SA)"
+    }
+   ],
+   "fakta": [
+    {
+     "medan": "tahun_berdiri",
+     "sumber_url": "https://www.wikidata.org/wiki/Q2211570",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "nilai": 1918
+    },
+    {
+     "medan": "kantor_pusat",
+     "sumber_url": "https://www.wikidata.org/wiki/Q2211570",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "nilai": "Levallois-Perret"
+    },
+    {
+     "medan": "situs",
+     "sumber_url": "https://www.wikidata.org/wiki/Q2211570",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "nilai": "https://saft.com/en"
+    }
+   ]
+  },
+  {
+   "id": "en_cbc72410fb",
+   "nama": "SAJ Electric",
+   "nama_lain": [
+    "SAJ",
+    "Guangzhou Sanjing Electric"
+   ],
+   "negara_iso2": "CN",
+   "wikidata": "Q137882902",
+   "wikipedia": null,
+   "segmen": [
+    "inverter-string",
+    "bess"
+   ],
+   "segmen_belum_terbukti": [],
+   "tahun_berdiri": 2011,
+   "kantor_pusat": null,
+   "situs": "https://southasiajournal.net",
+   "logo": null,
+   "kapasitas": [],
+   "pangsa_pasar": [],
+   "status_tier1": [],
+   "pabrik_indonesia": [],
+   "pabrik_asean": [],
+   "mitra_indonesia": [],
+   "kantor_indonesia": [],
+   "tkdn": null,
+   "proyek_indonesia": [],
+   "isu_dagang": [],
+   "esg": [],
+   "sumber": [
+    {
+     "url": "https://www.wikidata.org/wiki/Q137882902",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "tanggal_periksa": "2026-11-08",
+     "keterangan": "Wikidata (CC0)"
+    }
+   ],
+   "fakta": [
+    {
+     "medan": "tahun_berdiri",
+     "sumber_url": "https://www.wikidata.org/wiki/Q137882902",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "nilai": 2011
+    },
+    {
+     "medan": "situs",
+     "sumber_url": "https://www.wikidata.org/wiki/Q137882902",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "nilai": "https://southasiajournal.net"
+    }
+   ],
+   "segmen_catatan": "segmen kurasi tim; tanpa teks sumber untuk diverifikasi",
+   "catatan_negara": "Wikidata menyebut US; kurasi CN"
+  },
+  {
+   "id": "en_1025f6f5ce",
+   "nama": "Samsung SDI",
+   "nama_lain": [
+    "SDI",
+    "Samsung SDI Co., Ltd.",
+    "Samsung SDI Co.",
+    "Samsung SDD Co.",
+    "Samsung Display Devices"
+   ],
+   "negara_iso2": "KR",
+   "wikidata": "Q21120876",
+   "wikipedia": "https://en.wikipedia.org/wiki/Samsung_SDI",
+   "segmen": [
+    "bess"
+   ],
+   "segmen_belum_terbukti": [],
+   "tahun_berdiri": 1970,
+   "kantor_pusat": {
+    "kota": "Yongin",
+    "negara_iso2": "KR"
+   },
+   "situs": "https://www.samsungsdi.co.kr",
+   "logo": null,
+   "kapasitas": [],
+   "pangsa_pasar": [],
+   "status_tier1": [],
+   "pabrik_indonesia": [],
+   "pabrik_asean": [],
+   "mitra_indonesia": [],
+   "kantor_indonesia": [],
+   "tkdn": null,
+   "proyek_indonesia": [],
+   "isu_dagang": [],
+   "esg": [],
+   "sumber": [
+    {
+     "url": "https://www.wikidata.org/wiki/Q21120876",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "tanggal_periksa": "2026-11-08",
+     "keterangan": "Wikidata (CC0)"
+    },
+    {
+     "url": "https://en.wikipedia.org/wiki/Samsung_SDI",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "tanggal_periksa": "2026-11-08",
+     "keterangan": "Wikipedia (CC BY-SA)"
+    }
+   ],
+   "fakta": [
+    {
+     "medan": "tahun_berdiri",
+     "sumber_url": "https://www.wikidata.org/wiki/Q21120876",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "nilai": 1970
+    },
+    {
+     "medan": "kantor_pusat",
+     "sumber_url": "https://www.wikidata.org/wiki/Q21120876",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "nilai": "Yongin"
+    },
+    {
+     "medan": "situs",
+     "sumber_url": "https://www.wikidata.org/wiki/Q21120876",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "nilai": "https://www.samsungsdi.co.kr",
+     "catatan": "http diubah ke https"
+    }
+   ]
+  },
+  {
+   "id": "en_239c379cda",
+   "nama": "Schletter Group",
+   "nama_lain": [
+    "Schletter"
+   ],
+   "negara_iso2": "DE",
+   "wikidata": "Q2239369",
+   "wikipedia": null,
+   "segmen": [
+    "tracker-mounting"
+   ],
+   "segmen_belum_terbukti": [],
+   "tahun_berdiri": 1968,
+   "kantor_pusat": {
+    "kota": "Kirchdorf",
+    "negara_iso2": "DE"
+   },
+   "situs": "https://www.schletter.de",
+   "logo": null,
+   "kapasitas": [],
+   "pangsa_pasar": [],
+   "status_tier1": [],
+   "pabrik_indonesia": [],
+   "pabrik_asean": [],
+   "mitra_indonesia": [],
+   "kantor_indonesia": [],
+   "tkdn": null,
+   "proyek_indonesia": [],
+   "isu_dagang": [],
+   "esg": [],
+   "sumber": [
+    {
+     "url": "https://www.wikidata.org/wiki/Q2239369",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "tanggal_periksa": "2026-11-08",
+     "keterangan": "Wikidata (CC0)"
+    }
+   ],
+   "fakta": [
+    {
+     "medan": "tahun_berdiri",
+     "sumber_url": "https://www.wikidata.org/wiki/Q2239369",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "nilai": 1968
+    },
+    {
+     "medan": "kantor_pusat",
+     "sumber_url": "https://www.wikidata.org/wiki/Q2239369",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "nilai": "Kirchdorf"
+    },
+    {
+     "medan": "situs",
+     "sumber_url": "https://www.wikidata.org/wiki/Q2239369",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "nilai": "https://www.schletter.de",
+     "catatan": "http diubah ke https"
+    }
+   ],
+   "segmen_catatan": "segmen kurasi tim; tanpa teks sumber untuk diverifikasi"
+  },
+  {
+   "id": "en_eab75dcb58",
+   "nama": "Schneider Electric",
+   "nama_lain": [
+    "Schneider",
+    "SE",
+    "Schneider & Compagnie",
+    "Schneider Electric Industries",
+    "Schneider Creusot"
+   ],
+   "negara_iso2": "FR",
+   "wikidata": "Q49053",
+   "wikipedia": "https://en.wikipedia.org/wiki/Schneider_Electric",
+   "segmen": [
+    "inverter-string",
+    "bess"
+   ],
+   "segmen_belum_terbukti": [],
+   "tahun_berdiri": 1836,
+   "kantor_pusat": {
+    "kota": "Rueil-Malmaison",
+    "negara_iso2": "FR"
+   },
+   "situs": "https://www.se.com",
+   "logo": {
+    "url": "/img/logo/org/en_eab75dcb58.png",
+    "sumber_url": "https://commons.wikimedia.org/wiki/File:Schneider_Electric_2007.svg",
+    "tanggal_periksa": "2026-11-08",
+    "tingkat_bukti": "via-pihak-ketiga"
+   },
+   "kapasitas": [],
+   "pangsa_pasar": [],
+   "status_tier1": [],
+   "pabrik_indonesia": [],
+   "pabrik_asean": [],
+   "mitra_indonesia": [],
+   "kantor_indonesia": [
+    {
+     "pabrikan": "PT Schneider Indonesia",
+     "lokasi": "Kabupaten Bekasi",
+     "provinsi": "Jawa Barat",
+     "kategori": "trafo",
+     "sumber_url": "https://tkdn.kemenperin.go.id/sertifikat?q=kabel%20tegangan%20menengah&page=7",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "resmi"
+    }
+   ],
+   "tkdn": {
+    "jumlah_sertifikat": 4,
+    "tkdn_persen_maks": 37.23,
+    "sertifikat": [
+     {
+      "id": "tkp_0658",
+      "kategori": "trafo",
+      "produk": "Perangkat Hubung Bagi Tegangan Menengah Insulasi SF6",
+      "merk": "Schneider Electric",
+      "tipe": "Kubikel Transformator Tegangan - RM6 DE IVT",
+      "tkdn_persen": 37.23,
+      "pabrikan": "PT Schneider Indonesia",
+      "lokasi": "Kabupaten Bekasi",
+      "provinsi": "Jawa Barat",
+      "sumber_url": "https://tkdn.kemenperin.go.id/sertifikat?q=schneider",
+      "tanggal_periksa": "2026-11-08",
+      "tingkat_bukti": "resmi"
+     },
+     {
+      "id": "tkp_0659",
+      "kategori": "trafo",
+      "produk": "Perangkat Hubung Bagi Tegangan Menengah Kubikel Insulasi Udara Modular Bebas SF6 - Transformator Tegangan",
+      "merk": "Schneider Electric",
+      "tipe": "SM AirSeT CM",
+      "tkdn_persen": 33.21,
+      "pabrikan": "PT Schneider Indonesia",
+      "lokasi": "Kabupaten Bekasi",
+      "provinsi": "Jawa Barat",
+      "sumber_url": "https://tkdn.kemenperin.go.id/sertifikat?q=kabel%20tegangan%20menengah&page=6",
+      "tanggal_periksa": "2026-11-08",
+      "tingkat_bukti": "resmi"
+     },
+     {
+      "id": "tkp_0660",
+      "kategori": "trafo",
+      "produk": "Perangkat Hubung Bagi Tegangan Menengah Insulasi SF6",
+      "merk": "Schneider Electric",
+      "tipe": "Kubikel Proteksi Transformator - RM6 DE Q",
+      "tkdn_persen": 30.21,
+      "pabrikan": "PT Schneider Indonesia",
+      "lokasi": "Kabupaten Bekasi",
+      "provinsi": "Jawa Barat",
+      "sumber_url": "https://tkdn.kemenperin.go.id/sertifikat?q=schneider&page=2",
+      "tanggal_periksa": "2026-11-08",
+      "tingkat_bukti": "resmi"
+     },
+     {
+      "id": "tkp_0661",
+      "kategori": "trafo",
+      "produk": "Perangkat Hubung Bagi Tegangan Menengah Kubikel Insulasi Udara Modular Bebas SF6 -Proteksi Transformator Dengan Unit Trip",
+      "merk": "Schneider Electric",
+      "tipe": "SM AirSeT QM",
+      "tkdn_persen": 27.79,
+      "pabrikan": "PT Schneider Indonesia",
+      "lokasi": "Kabupaten Bekasi",
+      "provinsi": "Jawa Barat",
+      "sumber_url": "https://tkdn.kemenperin.go.id/sertifikat?q=kabel%20tegangan%20menengah&page=7",
+      "tanggal_periksa": "2026-11-08",
+      "tingkat_bukti": "resmi"
+     }
+    ]
+   },
+   "proyek_indonesia": [],
+   "isu_dagang": [],
+   "esg": [],
+   "sumber": [
+    {
+     "url": "https://www.wikidata.org/wiki/Q49053",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "tanggal_periksa": "2026-11-08",
+     "keterangan": "Wikidata (CC0)"
+    },
+    {
+     "url": "https://en.wikipedia.org/wiki/Schneider_Electric",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "tanggal_periksa": "2026-11-08",
+     "keterangan": "Wikipedia (CC BY-SA)"
+    }
+   ],
+   "fakta": [
+    {
+     "medan": "tahun_berdiri",
+     "sumber_url": "https://www.wikidata.org/wiki/Q49053",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "nilai": 1836
+    },
+    {
+     "medan": "kantor_pusat",
+     "sumber_url": "https://www.wikidata.org/wiki/Q49053",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "nilai": "Rueil-Malmaison"
+    },
+    {
+     "medan": "situs",
+     "sumber_url": "https://www.wikidata.org/wiki/Q49053",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "nilai": "https://www.se.com"
+    }
+   ],
+   "segmen_catatan": "segmen kurasi tim; tanpa teks sumber untuk diverifikasi"
+  },
+  {
+   "id": "en_7808eea1c7",
+   "nama": "Sharp Corporation",
+   "nama_lain": [
+    "Sharp Solar",
+    "Sharp",
+    "Sharp Electronics",
+    "Sharp corporation electronics",
+    "SHARP KABUSHIKI KAISHA (Sakai)"
+   ],
+   "negara_iso2": "JP",
+   "wikidata": "Q53227",
+   "wikipedia": "https://en.wikipedia.org/wiki/Sharp_Corporation",
+   "segmen": [
+    "modul"
+   ],
+   "segmen_belum_terbukti": [],
+   "tahun_berdiri": 1912,
+   "kantor_pusat": {
+    "kota": "Osaka",
+    "negara_iso2": "JP"
+   },
+   "situs": "https://global.sharp",
+   "logo": null,
+   "kapasitas": [],
+   "pangsa_pasar": [],
+   "status_tier1": [],
+   "pabrik_indonesia": [],
+   "pabrik_asean": [],
+   "mitra_indonesia": [],
+   "kantor_indonesia": [],
+   "tkdn": null,
+   "proyek_indonesia": [],
+   "isu_dagang": [],
+   "esg": [],
+   "sumber": [
+    {
+     "url": "https://www.wikidata.org/wiki/Q53227",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "tanggal_periksa": "2026-11-08",
+     "keterangan": "Wikidata (CC0)"
+    },
+    {
+     "url": "https://en.wikipedia.org/wiki/Sharp_Corporation",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "tanggal_periksa": "2026-11-08",
+     "keterangan": "Wikipedia (CC BY-SA)"
+    }
+   ],
+   "fakta": [
+    {
+     "medan": "tahun_berdiri",
+     "sumber_url": "https://www.wikidata.org/wiki/Q53227",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "nilai": 1912
+    },
+    {
+     "medan": "kantor_pusat",
+     "sumber_url": "https://www.wikidata.org/wiki/Q53227",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "nilai": "Osaka"
+    },
+    {
+     "medan": "situs",
+     "sumber_url": "https://www.wikidata.org/wiki/Q53227",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "nilai": "https://global.sharp"
+    }
+   ],
+   "segmen_catatan": "segmen kurasi tim; tanpa teks sumber untuk diverifikasi"
+  },
+  {
+   "id": "en_ee9533b44d",
+   "nama": "SMA Solar Technology",
+   "nama_lain": [
+    "SMA Solar",
+    "SMA",
+    "SMA Solar Technology AG"
+   ],
+   "negara_iso2": "DE",
+   "wikidata": "Q463337",
+   "wikipedia": "https://en.wikipedia.org/wiki/SMA_Solar_Technology",
+   "segmen": [
+    "inverter-string",
+    "inverter-sentral"
+   ],
+   "segmen_belum_terbukti": [],
+   "tahun_berdiri": 1981,
+   "kantor_pusat": {
+    "kota": "Niestetal",
+    "negara_iso2": "DE"
+   },
+   "situs": "https://www.sma.de/",
+   "logo": null,
+   "kapasitas": [],
+   "pangsa_pasar": [],
+   "status_tier1": [],
+   "pabrik_indonesia": [],
+   "pabrik_asean": [],
+   "mitra_indonesia": [],
+   "kantor_indonesia": [],
+   "tkdn": null,
+   "proyek_indonesia": [],
+   "isu_dagang": [],
+   "esg": [],
+   "sumber": [
+    {
+     "url": "https://www.wikidata.org/wiki/Q463337",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "tanggal_periksa": "2026-11-08",
+     "keterangan": "Wikidata (CC0)"
+    },
+    {
+     "url": "https://en.wikipedia.org/wiki/SMA_Solar_Technology",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "tanggal_periksa": "2026-11-08",
+     "keterangan": "Wikipedia (CC BY-SA)"
+    }
+   ],
+   "fakta": [
+    {
+     "medan": "tahun_berdiri",
+     "sumber_url": "https://www.wikidata.org/wiki/Q463337",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "nilai": 1981
+    },
+    {
+     "medan": "kantor_pusat",
+     "sumber_url": "https://www.wikidata.org/wiki/Q463337",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "nilai": "Niestetal"
+    },
+    {
+     "medan": "situs",
+     "sumber_url": "https://www.wikidata.org/wiki/Q463337",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "nilai": "https://www.sma.de/",
+     "catatan": "http diubah ke https"
+    }
+   ],
+   "segmen_catatan": "segmen kurasi tim; tanpa teks sumber untuk diverifikasi"
+  },
+  {
+   "id": "en_563e009773",
+   "nama": "SolarEdge Technologies",
+   "nama_lain": [
+    "SolarEdge"
+   ],
+   "negara_iso2": "IL",
+   "wikidata": "Q187212",
+   "wikipedia": "https://en.wikipedia.org/wiki/SolarEdge",
+   "segmen": [
+    "inverter-string",
+    "bess"
+   ],
+   "segmen_belum_terbukti": [],
+   "tahun_berdiri": 2006,
+   "kantor_pusat": {
+    "kota": "Herzliya",
+    "negara_iso2": "IL"
+   },
+   "situs": "https://www.solaredge.com",
+   "logo": null,
+   "kapasitas": [],
+   "pangsa_pasar": [],
+   "status_tier1": [],
+   "pabrik_indonesia": [],
+   "pabrik_asean": [],
+   "mitra_indonesia": [],
+   "kantor_indonesia": [],
+   "tkdn": null,
+   "proyek_indonesia": [],
+   "isu_dagang": [],
+   "esg": [],
+   "sumber": [
+    {
+     "url": "https://www.wikidata.org/wiki/Q187212",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "tanggal_periksa": "2026-11-08",
+     "keterangan": "Wikidata (CC0)"
+    },
+    {
+     "url": "https://en.wikipedia.org/wiki/SolarEdge",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "tanggal_periksa": "2026-11-08",
+     "keterangan": "Wikipedia (CC BY-SA)"
+    }
+   ],
+   "fakta": [
+    {
+     "medan": "tahun_berdiri",
+     "sumber_url": "https://www.wikidata.org/wiki/Q187212",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "nilai": 2006
+    },
+    {
+     "medan": "kantor_pusat",
+     "sumber_url": "https://www.wikidata.org/wiki/Q187212",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "nilai": "Herzliya"
+    },
+    {
+     "medan": "situs",
+     "sumber_url": "https://www.wikidata.org/wiki/Q187212",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "nilai": "https://www.solaredge.com",
+     "catatan": "http diubah ke https"
+    }
+   ],
+   "segmen_catatan": "segmen kurasi tim; tanpa teks sumber untuk diverifikasi"
+  },
+  {
+   "id": "en_be1d6882fd",
+   "nama": "Soltec",
+   "nama_lain": [
+    "Soltec Power Holdings"
+   ],
+   "negara_iso2": "ES",
+   "wikidata": "Q110800693",
+   "wikipedia": "https://en.wikipedia.org/wiki/Soltec_Team",
+   "segmen": [
+    "tracker-mounting"
+   ],
+   "segmen_belum_terbukti": [],
+   "tahun_berdiri": null,
+   "kantor_pusat": null,
+   "situs": null,
+   "logo": null,
+   "kapasitas": [],
+   "pangsa_pasar": [],
+   "status_tier1": [],
+   "pabrik_indonesia": [],
+   "pabrik_asean": [],
+   "mitra_indonesia": [],
+   "kantor_indonesia": [],
+   "tkdn": null,
+   "proyek_indonesia": [],
+   "isu_dagang": [],
+   "esg": [],
+   "sumber": [
+    {
+     "url": "https://www.wikidata.org/wiki/Q110800693",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "tanggal_periksa": "2026-11-08",
+     "keterangan": "Wikidata (CC0)"
+    },
+    {
+     "url": "https://en.wikipedia.org/wiki/Soltec_Team",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "tanggal_periksa": "2026-11-08",
+     "keterangan": "Wikipedia (CC BY-SA)"
+    }
+   ],
+   "fakta": [],
+   "segmen_catatan": "segmen kurasi tim; tanpa teks sumber untuk diverifikasi"
+  },
+  {
+   "id": "en_e7d96993c7",
+   "nama": "Sungrow",
+   "nama_lain": [
+    "Sungrow Power Supply",
+    "Sungrow Power"
+   ],
+   "negara_iso2": "CN",
+   "wikidata": "Q106003803",
+   "wikipedia": "https://en.wikipedia.org/wiki/Sungrow",
+   "segmen": [
+    "inverter-string",
+    "inverter-sentral",
+    "bess"
+   ],
+   "segmen_belum_terbukti": [],
+   "tahun_berdiri": null,
+   "kantor_pusat": null,
+   "situs": "https://sungrowpower.com",
+   "logo": null,
+   "kapasitas": [],
+   "pangsa_pasar": [],
+   "status_tier1": [],
+   "pabrik_indonesia": [],
+   "pabrik_asean": [],
+   "mitra_indonesia": [],
+   "kantor_indonesia": [
+    {
+     "pabrikan": "PT Utomo Solar Panel Terapung Erpo",
+     "lokasi": "Kota Batam",
+     "provinsi": "Kepulauan Riau",
+     "kategori": "modul",
+     "sumber_url": "https://tkdn.kemenperin.go.id/sertifikat?q=panel%20surya%20hybrid&page=2",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "resmi"
+    }
+   ],
+   "tkdn": {
+    "jumlah_sertifikat": 7,
+    "tkdn_persen_maks": 47.46,
+    "sertifikat": [
+     {
+      "id": "tkp_0541",
+      "kategori": "modul",
+      "produk": "Floater Panel Surya",
+      "merk": "SUNGROW",
+      "tipe": "Ear Connector",
+      "tkdn_persen": 47.46,
+      "pabrikan": "PT Utomo Solar Panel Terapung Erpo",
+      "lokasi": "Kota Batam",
+      "provinsi": "Kepulauan Riau",
+      "sumber_url": "https://tkdn.kemenperin.go.id/sertifikat?q=panel%20surya%20hybrid",
+      "tanggal_periksa": "2026-11-08",
+      "tingkat_bukti": "resmi"
+     },
+     {
+      "id": "tkp_0542",
+      "kategori": "modul",
+      "produk": "Floater Panel Surya",
+      "merk": "SUNGROW",
+      "tipe": "Main Floaters",
+      "tkdn_persen": 47.2,
+      "pabrikan": "PT Utomo Solar Panel Terapung Erpo",
+      "lokasi": "Kota Batam",
+      "provinsi": "Kepulauan Riau",
+      "sumber_url": "https://tkdn.kemenperin.go.id/sertifikat?q=panel%20surya%20hybrid",
+      "tanggal_periksa": "2026-11-08",
+      "tingkat_bukti": "resmi"
+     },
+     {
+      "id": "tkp_0543",
+      "kategori": "modul",
+      "produk": "Floater Panel Surya",
+      "merk": "SUNGROW",
+      "tipe": "Connection Floaters",
+      "tkdn_persen": 46.34,
+      "pabrikan": "PT Utomo Solar Panel Terapung Erpo",
+      "lokasi": "Kota Batam",
+      "provinsi": "Kepulauan Riau",
+      "sumber_url": "https://tkdn.kemenperin.go.id/sertifikat?q=panel%20surya%20hybrid&page=2",
+      "tanggal_periksa": "2026-11-08",
+      "tingkat_bukti": "resmi"
+     },
+     {
+      "id": "tkp_0544",
+      "kategori": "modul",
+      "produk": "Floater Panel Surya",
+      "merk": "SUNGROW",
+      "tipe": "Aisle Floaters",
+      "tkdn_persen": 45.35,
+      "pabrikan": "PT Utomo Solar Panel Terapung Erpo",
+      "lokasi": "Kota Batam",
+      "provinsi": "Kepulauan Riau",
+      "sumber_url": "https://tkdn.kemenperin.go.id/sertifikat?q=panel%20surya%20hybrid&page=2",
+      "tanggal_periksa": "2026-11-08",
+      "tingkat_bukti": "resmi"
+     },
+     {
+      "id": "tkp_0545",
+      "kategori": "modul",
+      "produk": "Floater Panel Surya",
+      "merk": "SUNGROW",
+      "tipe": "Multifunction Floaters",
+      "tkdn_persen": 44.14,
+      "pabrikan": "PT Utomo Solar Panel Terapung Erpo",
+      "lokasi": "Kota Batam",
+      "provinsi": "Kepulauan Riau",
+      "sumber_url": "https://tkdn.kemenperin.go.id/sertifikat?q=panel%20surya%20hybrid&page=2",
+      "tanggal_periksa": "2026-11-08",
+      "tingkat_bukti": "resmi"
+     },
+     {
+      "id": "tkp_0546",
+      "kategori": "modul",
+      "produk": "Floater Panel Surya",
+      "merk": "SUNGROW",
+      "tipe": "Equipment Floaters",
+      "tkdn_persen": 43.65,
+      "pabrikan": "PT Utomo Solar Panel Terapung Erpo",
+      "lokasi": "Kota Batam",
+      "provinsi": "Kepulauan Riau",
+      "sumber_url": "https://tkdn.kemenperin.go.id/sertifikat?q=panel%20surya%20hybrid&page=2",
+      "tanggal_periksa": "2026-11-08",
+      "tingkat_bukti": "resmi"
+     },
+     {
+      "id": "tkp_0547",
+      "kategori": "modul",
+      "produk": "Floater Panel Surya",
+      "merk": "SUNGROW",
+      "tipe": "Cable Floating Body",
+      "tkdn_persen": 42.86,
+      "pabrikan": "PT Utomo Solar Panel Terapung Erpo",
+      "lokasi": "Kota Batam",
+      "provinsi": "Kepulauan Riau",
+      "sumber_url": "https://tkdn.kemenperin.go.id/sertifikat?q=panel%20surya%20hybrid&page=2",
+      "tanggal_periksa": "2026-11-08",
+      "tingkat_bukti": "resmi"
+     }
+    ]
+   },
+   "proyek_indonesia": [],
+   "isu_dagang": [],
+   "esg": [],
+   "sumber": [
+    {
+     "url": "https://www.wikidata.org/wiki/Q106003803",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "tanggal_periksa": "2026-11-08",
+     "keterangan": "Wikidata (CC0)"
+    },
+    {
+     "url": "https://en.wikipedia.org/wiki/Sungrow",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "tanggal_periksa": "2026-11-08",
+     "keterangan": "Wikipedia (CC BY-SA)"
+    }
+   ],
+   "fakta": [
+    {
+     "medan": "situs",
+     "sumber_url": "https://www.wikidata.org/wiki/Q106003803",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "nilai": "https://sungrowpower.com",
+     "catatan": "http diubah ke https"
+    }
+   ],
+   "segmen_catatan": "segmen kurasi tim; tanpa teks sumber untuk diverifikasi"
+  },
+  {
+   "id": "en_0587ef8e42",
+   "nama": "Sunport Power",
+   "nama_lain": [
+    "Sunport"
+   ],
+   "negara_iso2": "CN",
+   "wikidata": "Q7640975",
+   "wikipedia": "https://en.wikipedia.org/wiki/Sunport_Takamatsu",
+   "segmen": [
+    "modul"
+   ],
+   "segmen_belum_terbukti": [],
+   "tahun_berdiri": null,
+   "kantor_pusat": null,
+   "situs": null,
+   "logo": null,
+   "kapasitas": [],
+   "pangsa_pasar": [],
+   "status_tier1": [],
+   "pabrik_indonesia": [],
+   "pabrik_asean": [],
+   "mitra_indonesia": [],
+   "kantor_indonesia": [],
+   "tkdn": null,
+   "proyek_indonesia": [],
+   "isu_dagang": [],
+   "esg": [],
+   "sumber": [
+    {
+     "url": "https://www.wikidata.org/wiki/Q7640975",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "tanggal_periksa": "2026-11-08",
+     "keterangan": "Wikidata (CC0)"
+    },
+    {
+     "url": "https://en.wikipedia.org/wiki/Sunport_Takamatsu",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "tanggal_periksa": "2026-11-08",
+     "keterangan": "Wikipedia (CC BY-SA)"
+    }
+   ],
+   "fakta": [],
+   "segmen_catatan": "segmen kurasi tim; tanpa teks sumber untuk diverifikasi",
+   "catatan_negara": "Wikidata menyebut JP; kurasi CN"
+  },
+  {
+   "id": "en_9cfe6c67d0",
+   "nama": "Suntech Power",
+   "nama_lain": [
+    "Wuxi Suntech",
+    "Suntech",
+    "Suntech Power Holdings Co., Ltd."
+   ],
+   "negara_iso2": "CN",
+   "wikidata": "Q1188943",
+   "wikipedia": "https://en.wikipedia.org/wiki/Suntech_Power",
+   "segmen": [
+    "modul"
+   ],
+   "segmen_belum_terbukti": [],
+   "tahun_berdiri": 2001,
+   "kantor_pusat": {
+    "kota": "Wuxi",
+    "negara_iso2": "CN"
+   },
+   "situs": "https://www.suntech-power.com/",
+   "logo": null,
+   "kapasitas": [],
+   "pangsa_pasar": [],
+   "status_tier1": [],
+   "pabrik_indonesia": [],
+   "pabrik_asean": [],
+   "mitra_indonesia": [],
+   "kantor_indonesia": [],
+   "tkdn": null,
+   "proyek_indonesia": [],
+   "isu_dagang": [],
+   "esg": [],
+   "sumber": [
+    {
+     "url": "https://www.wikidata.org/wiki/Q1188943",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "tanggal_periksa": "2026-11-08",
+     "keterangan": "Wikidata (CC0)"
+    },
+    {
+     "url": "https://en.wikipedia.org/wiki/Suntech_Power",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "tanggal_periksa": "2026-11-08",
+     "keterangan": "Wikipedia (CC BY-SA)"
+    }
+   ],
+   "fakta": [
+    {
+     "medan": "tahun_berdiri",
+     "sumber_url": "https://www.wikidata.org/wiki/Q1188943",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "nilai": 2001
+    },
+    {
+     "medan": "kantor_pusat",
+     "sumber_url": "https://www.wikidata.org/wiki/Q1188943",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "nilai": "Wuxi"
+    },
+    {
+     "medan": "situs",
+     "sumber_url": "https://www.wikidata.org/wiki/Q1188943",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "nilai": "https://www.suntech-power.com/",
+     "catatan": "http diubah ke https"
+    }
+   ]
+  },
+  {
+   "id": "en_c7c54fd72d",
+   "nama": "SVOLT Energy Technology",
+   "nama_lain": [
+    "SVOLT",
+    "Honeycomb Energy"
+   ],
+   "negara_iso2": "CN",
+   "wikidata": "Q121298604",
+   "wikipedia": "https://en.wikipedia.org/wiki/SVOLT",
+   "segmen": [
+    "bess"
+   ],
+   "segmen_belum_terbukti": [],
+   "tahun_berdiri": 2018,
+   "kantor_pusat": {
+    "kota": "Changzhou",
+    "negara_iso2": "CN"
+   },
+   "situs": "https://www.svolt.cn/",
+   "logo": null,
+   "kapasitas": [],
+   "pangsa_pasar": [],
+   "status_tier1": [],
+   "pabrik_indonesia": [],
+   "pabrik_asean": [],
+   "mitra_indonesia": [],
+   "kantor_indonesia": [],
+   "tkdn": null,
+   "proyek_indonesia": [],
+   "isu_dagang": [],
+   "esg": [],
+   "sumber": [
+    {
+     "url": "https://www.wikidata.org/wiki/Q121298604",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "tanggal_periksa": "2026-11-08",
+     "keterangan": "Wikidata (CC0)"
+    },
+    {
+     "url": "https://en.wikipedia.org/wiki/SVOLT",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "tanggal_periksa": "2026-11-08",
+     "keterangan": "Wikipedia (CC BY-SA)"
+    }
+   ],
+   "fakta": [
+    {
+     "medan": "tahun_berdiri",
+     "sumber_url": "https://www.wikidata.org/wiki/Q121298604",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "nilai": 2018
+    },
+    {
+     "medan": "kantor_pusat",
+     "sumber_url": "https://www.wikidata.org/wiki/Q121298604",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "nilai": "Changzhou"
+    },
+    {
+     "medan": "situs",
+     "sumber_url": "https://www.wikidata.org/wiki/Q121298604",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "nilai": "https://www.svolt.cn/"
+    }
+   ]
+  },
+  {
+   "id": "en_caaca00333",
+   "nama": "TBEA",
+   "nama_lain": [
+    "TBEA Co",
+    "Tebian Electric Apparatus",
+    "TBEA Co., Ltd."
+   ],
+   "negara_iso2": "CN",
+   "wikidata": "Q15831495",
+   "wikipedia": "https://en.wikipedia.org/wiki/TBEA",
+   "segmen": [
+    "inverter-sentral",
+    "polisilikon"
+   ],
+   "segmen_belum_terbukti": [],
+   "tahun_berdiri": 1988,
+   "kantor_pusat": {
+    "kota": "Changji",
+    "negara_iso2": "CN"
+   },
+   "situs": "https://en.tbea.com.cn/",
+   "logo": null,
+   "kapasitas": [],
+   "pangsa_pasar": [],
+   "status_tier1": [],
+   "pabrik_indonesia": [],
+   "pabrik_asean": [],
+   "mitra_indonesia": [],
+   "kantor_indonesia": [],
+   "tkdn": null,
+   "proyek_indonesia": [],
+   "isu_dagang": [],
+   "esg": [],
+   "sumber": [
+    {
+     "url": "https://www.wikidata.org/wiki/Q15831495",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "tanggal_periksa": "2026-11-08",
+     "keterangan": "Wikidata (CC0)"
+    },
+    {
+     "url": "https://en.wikipedia.org/wiki/TBEA",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "tanggal_periksa": "2026-11-08",
+     "keterangan": "Wikipedia (CC BY-SA)"
+    }
+   ],
+   "fakta": [
+    {
+     "medan": "tahun_berdiri",
+     "sumber_url": "https://www.wikidata.org/wiki/Q15831495",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "nilai": 1988
+    },
+    {
+     "medan": "kantor_pusat",
+     "sumber_url": "https://www.wikidata.org/wiki/Q15831495",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "nilai": "Changji"
+    },
+    {
+     "medan": "situs",
+     "sumber_url": "https://www.wikidata.org/wiki/Q15831495",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "nilai": "https://en.tbea.com.cn/",
+     "catatan": "http diubah ke https"
+    }
+   ],
+   "segmen_catatan": "segmen kurasi tim; tanpa teks sumber untuk diverifikasi"
+  },
+  {
+   "id": "en_20a770fd2c",
+   "nama": "TCL Zhonghuan Renewable Energy Technology",
+   "nama_lain": [
+    "TCL Zhonghuan",
+    "TZE",
+    "Maxeon",
+    "Tse",
+    "Chia",
+    "Hsieh",
+    "Dea"
+   ],
+   "negara_iso2": "CN",
+   "wikidata": "Q3570980",
+   "wikipedia": "https://en.wikipedia.org/wiki/Xie_(surname)",
+   "segmen": [
+    "wafer",
+    "sel",
+    "modul"
+   ],
+   "segmen_belum_terbukti": [],
+   "tahun_berdiri": null,
+   "kantor_pusat": null,
+   "situs": null,
+   "logo": null,
+   "kapasitas": [],
+   "pangsa_pasar": [],
+   "status_tier1": [],
+   "pabrik_indonesia": [],
+   "pabrik_asean": [],
+   "mitra_indonesia": [],
+   "kantor_indonesia": [],
+   "tkdn": null,
+   "proyek_indonesia": [],
+   "isu_dagang": [],
+   "esg": [],
+   "sumber": [
+    {
+     "url": "https://www.wikidata.org/wiki/Q3570980",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "tanggal_periksa": "2026-11-08",
+     "keterangan": "Wikidata (CC0)"
+    },
+    {
+     "url": "https://en.wikipedia.org/wiki/Xie_(surname)",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "tanggal_periksa": "2026-11-08",
+     "keterangan": "Wikipedia (CC BY-SA)"
+    }
+   ],
+   "fakta": [],
+   "segmen_catatan": "segmen kurasi tim; tanpa teks sumber untuk diverifikasi"
+  },
+  {
+   "id": "en_897708503e",
+   "nama": "Tesla Energy",
+   "nama_lain": [
+    "Tesla Megapack",
+    "Tesla Inc"
+   ],
+   "negara_iso2": "US",
+   "wikidata": "Q106868050",
+   "wikipedia": "https://en.wikipedia.org/wiki/Tesla_Energy",
+   "segmen": [
+    "bess",
+    "inverter-string"
+   ],
+   "segmen_belum_terbukti": [],
+   "tahun_berdiri": null,
+   "kantor_pusat": {
+    "kota": "Fremont",
+    "negara_iso2": "US"
+   },
+   "situs": "https://www.tesla.com/de_de/energy",
+   "logo": null,
+   "kapasitas": [],
+   "pangsa_pasar": [],
+   "status_tier1": [],
+   "pabrik_indonesia": [],
+   "pabrik_asean": [],
+   "mitra_indonesia": [],
+   "kantor_indonesia": [],
+   "tkdn": null,
+   "proyek_indonesia": [],
+   "isu_dagang": [],
+   "esg": [],
+   "sumber": [
+    {
+     "url": "https://www.wikidata.org/wiki/Q106868050",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "tanggal_periksa": "2026-11-08",
+     "keterangan": "Wikidata (CC0)"
+    },
+    {
+     "url": "https://en.wikipedia.org/wiki/Tesla_Energy",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "tanggal_periksa": "2026-11-08",
+     "keterangan": "Wikipedia (CC BY-SA)"
+    }
+   ],
+   "fakta": [
+    {
+     "medan": "kantor_pusat",
+     "sumber_url": "https://www.wikidata.org/wiki/Q106868050",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "nilai": "Fremont"
+    },
+    {
+     "medan": "situs",
+     "sumber_url": "https://www.wikidata.org/wiki/Q106868050",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "nilai": "https://www.tesla.com/de_de/energy"
+    }
+   ],
+   "segmen_catatan": "segmen kurasi tim; tanpa teks sumber untuk diverifikasi"
+  },
+  {
+   "id": "en_155549601e",
+   "nama": "Tongwei",
+   "nama_lain": [
+    "Tongwei Co Ltd",
+    "Tongwei Solar",
+    "Tongwei Co., Ltd."
+   ],
+   "negara_iso2": "CN",
+   "wikidata": "Q16923900",
+   "wikipedia": "https://en.wikipedia.org/wiki/Tongwei_Company",
+   "segmen": [
+    "polisilikon",
+    "sel",
+    "modul"
+   ],
+   "segmen_belum_terbukti": [],
+   "tahun_berdiri": null,
+   "kantor_pusat": {
+    "kota": "Chengdu",
+    "negara_iso2": "CN"
+   },
+   "situs": "https://en.tongwei.com.cn/",
+   "logo": null,
+   "kapasitas": [],
+   "pangsa_pasar": [],
+   "status_tier1": [],
+   "pabrik_indonesia": [],
+   "pabrik_asean": [],
+   "mitra_indonesia": [],
+   "kantor_indonesia": [],
+   "tkdn": null,
+   "proyek_indonesia": [],
+   "isu_dagang": [],
+   "esg": [],
+   "sumber": [
+    {
+     "url": "https://www.wikidata.org/wiki/Q16923900",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "tanggal_periksa": "2026-11-08",
+     "keterangan": "Wikidata (CC0)"
+    },
+    {
+     "url": "https://en.wikipedia.org/wiki/Tongwei_Company",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "tanggal_periksa": "2026-11-08",
+     "keterangan": "Wikipedia (CC BY-SA)"
+    }
+   ],
+   "fakta": [
+    {
+     "medan": "kantor_pusat",
+     "sumber_url": "https://www.wikidata.org/wiki/Q16923900",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "nilai": "Chengdu"
+    },
+    {
+     "medan": "situs",
+     "sumber_url": "https://www.wikidata.org/wiki/Q16923900",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "nilai": "https://en.tongwei.com.cn/"
+    }
+   ],
+   "segmen_catatan": "segmen kurasi tim; tanpa teks sumber untuk diverifikasi"
+  },
+  {
+   "id": "en_2684d348da",
+   "nama": "Trina Solar",
+   "nama_lain": [
+    "Trinasolar",
+    "TrinaSolar Co., Ltd. (China)",
+    "TrinaSolar Co., Ltd.",
+    "TrinaSolar Co.",
+    "TrinaSolar"
+   ],
+   "negara_iso2": "CN",
+   "wikidata": "Q2453426",
+   "wikipedia": "https://en.wikipedia.org/wiki/Trina_Solar",
+   "segmen": [
+    "wafer",
+    "sel",
+    "modul",
+    "tracker-mounting"
+   ],
+   "segmen_belum_terbukti": [],
+   "tahun_berdiri": 1997,
+   "kantor_pusat": {
+    "kota": "Changzhou",
+    "negara_iso2": "CN"
+   },
+   "situs": "https://www.trinasolar.com/",
+   "logo": null,
+   "kapasitas": [],
+   "pangsa_pasar": [],
+   "status_tier1": [],
+   "pabrik_indonesia": [],
+   "pabrik_asean": [],
+   "mitra_indonesia": [],
+   "kantor_indonesia": [],
+   "tkdn": null,
+   "proyek_indonesia": [],
+   "isu_dagang": [],
+   "esg": [],
+   "sumber": [
+    {
+     "url": "https://www.wikidata.org/wiki/Q2453426",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "tanggal_periksa": "2026-11-08",
+     "keterangan": "Wikidata (CC0)"
+    },
+    {
+     "url": "https://en.wikipedia.org/wiki/Trina_Solar",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "tanggal_periksa": "2026-11-08",
+     "keterangan": "Wikipedia (CC BY-SA)"
+    }
+   ],
+   "fakta": [
+    {
+     "medan": "tahun_berdiri",
+     "sumber_url": "https://www.wikidata.org/wiki/Q2453426",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "nilai": 1997
+    },
+    {
+     "medan": "kantor_pusat",
+     "sumber_url": "https://www.wikidata.org/wiki/Q2453426",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "nilai": "Changzhou"
+    },
+    {
+     "medan": "situs",
+     "sumber_url": "https://www.wikidata.org/wiki/Q2453426",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "nilai": "https://www.trinasolar.com/",
+     "catatan": "http diubah ke https"
+    }
+   ],
+   "segmen_catatan": "segmen kurasi tim; tanpa teks sumber untuk diverifikasi"
+  },
+  {
+   "id": "en_d83f5c739f",
+   "nama": "Vikram Solar",
+   "nama_lain": [
+    "Vikram Solar Ltd"
+   ],
+   "negara_iso2": "IN",
+   "wikidata": "Q24949477",
+   "wikipedia": "https://en.wikipedia.org/wiki/Vikram_Solar",
+   "segmen": [
+    "modul"
+   ],
+   "segmen_belum_terbukti": [],
+   "tahun_berdiri": 2006,
+   "kantor_pusat": {
+    "kota": "Kolkata",
+    "negara_iso2": "IN"
+   },
+   "situs": "https://www.vikramsolar.com/",
+   "logo": null,
+   "kapasitas": [],
+   "pangsa_pasar": [],
+   "status_tier1": [],
+   "pabrik_indonesia": [],
+   "pabrik_asean": [],
+   "mitra_indonesia": [],
+   "kantor_indonesia": [],
+   "tkdn": null,
+   "proyek_indonesia": [],
+   "isu_dagang": [],
+   "esg": [],
+   "sumber": [
+    {
+     "url": "https://www.wikidata.org/wiki/Q24949477",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "tanggal_periksa": "2026-11-08",
+     "keterangan": "Wikidata (CC0)"
+    },
+    {
+     "url": "https://en.wikipedia.org/wiki/Vikram_Solar",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "tanggal_periksa": "2026-11-08",
+     "keterangan": "Wikipedia (CC BY-SA)"
+    }
+   ],
+   "fakta": [
+    {
+     "medan": "tahun_berdiri",
+     "sumber_url": "https://www.wikidata.org/wiki/Q24949477",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "nilai": 2006
+    },
+    {
+     "medan": "kantor_pusat",
+     "sumber_url": "https://www.wikidata.org/wiki/Q24949477",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "nilai": "Kolkata"
+    },
+    {
+     "medan": "situs",
+     "sumber_url": "https://www.wikidata.org/wiki/Q24949477",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "nilai": "https://www.vikramsolar.com/",
+     "catatan": "http diubah ke https"
+    }
+   ],
+   "segmen_catatan": "segmen kurasi tim; tanpa teks sumber untuk diverifikasi"
+  },
+  {
+   "id": "en_28ad81bf3e",
+   "nama": "Wacker Chemie",
+   "nama_lain": [
+    "Wacker Polysilicon",
+    "WACKER",
+    "Wacker Chemie AG"
+   ],
+   "negara_iso2": "DE",
+   "wikidata": "Q535517",
+   "wikipedia": "https://en.wikipedia.org/wiki/Wacker_Chemie",
+   "segmen": [
+    "polisilikon"
+   ],
+   "segmen_belum_terbukti": [],
+   "tahun_berdiri": 1914,
+   "kantor_pusat": {
+    "kota": "Munich",
+    "negara_iso2": "DE"
+   },
+   "situs": "https://www.wacker.com",
+   "logo": null,
+   "kapasitas": [],
+   "pangsa_pasar": [],
+   "status_tier1": [],
+   "pabrik_indonesia": [],
+   "pabrik_asean": [],
+   "mitra_indonesia": [],
+   "kantor_indonesia": [],
+   "tkdn": null,
+   "proyek_indonesia": [],
+   "isu_dagang": [],
+   "esg": [],
+   "sumber": [
+    {
+     "url": "https://www.wikidata.org/wiki/Q535517",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "tanggal_periksa": "2026-11-08",
+     "keterangan": "Wikidata (CC0)"
+    },
+    {
+     "url": "https://en.wikipedia.org/wiki/Wacker_Chemie",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "tanggal_periksa": "2026-11-08",
+     "keterangan": "Wikipedia (CC BY-SA)"
+    }
+   ],
+   "fakta": [
+    {
+     "medan": "tahun_berdiri",
+     "sumber_url": "https://www.wikidata.org/wiki/Q535517",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "nilai": 1914
+    },
+    {
+     "medan": "kantor_pusat",
+     "sumber_url": "https://www.wikidata.org/wiki/Q535517",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "nilai": "Munich"
+    },
+    {
+     "medan": "situs",
+     "sumber_url": "https://www.wikidata.org/wiki/Q535517",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "nilai": "https://www.wacker.com",
+     "catatan": "http diubah ke https"
+    }
+   ],
+   "segmen_catatan": "segmen kurasi tim; tanpa teks sumber untuk diverifikasi"
+  },
+  {
+   "id": "en_ba044ce3f7",
+   "nama": "Wartsila",
+   "nama_lain": [
+    "Wärtsilä",
+    "Wartsila Energy Storage"
+   ],
+   "negara_iso2": "FI",
+   "wikidata": "Q327429",
+   "wikipedia": "https://en.wikipedia.org/wiki/W%C3%A4rtsil%C3%A4",
+   "segmen": [
+    "bess"
+   ],
+   "segmen_belum_terbukti": [],
+   "tahun_berdiri": 1834,
+   "kantor_pusat": {
+    "kota": "Helsinki",
+    "negara_iso2": "FI"
+   },
+   "situs": "https://www.wartsila.com/",
+   "logo": null,
+   "kapasitas": [],
+   "pangsa_pasar": [],
+   "status_tier1": [],
+   "pabrik_indonesia": [],
+   "pabrik_asean": [],
+   "mitra_indonesia": [],
+   "kantor_indonesia": [],
+   "tkdn": null,
+   "proyek_indonesia": [],
+   "isu_dagang": [],
+   "esg": [],
+   "sumber": [
+    {
+     "url": "https://www.wikidata.org/wiki/Q327429",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "tanggal_periksa": "2026-11-08",
+     "keterangan": "Wikidata (CC0)"
+    },
+    {
+     "url": "https://en.wikipedia.org/wiki/W%C3%A4rtsil%C3%A4",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "tanggal_periksa": "2026-11-08",
+     "keterangan": "Wikipedia (CC BY-SA)"
+    }
+   ],
+   "fakta": [
+    {
+     "medan": "tahun_berdiri",
+     "sumber_url": "https://www.wikidata.org/wiki/Q327429",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "nilai": 1834
+    },
+    {
+     "medan": "kantor_pusat",
+     "sumber_url": "https://www.wikidata.org/wiki/Q327429",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "nilai": "Helsinki"
+    },
+    {
+     "medan": "situs",
+     "sumber_url": "https://www.wikidata.org/wiki/Q327429",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "nilai": "https://www.wartsila.com/"
+    }
+   ],
+   "segmen_catatan": "segmen kurasi tim; tanpa teks sumber untuk diverifikasi"
+  },
+  {
+   "id": "en_d62cfd2865",
+   "nama": "Xinyi Solar Holdings",
+   "nama_lain": [
+    "Xinyi Solar",
+    "Xinyi"
+   ],
+   "negara_iso2": "CN",
+   "wikidata": "Q42625387",
+   "wikipedia": "https://en.wikipedia.org/wiki/Xinyi_Solar",
+   "segmen": [
+    "kaca"
+   ],
+   "segmen_belum_terbukti": [],
+   "tahun_berdiri": null,
+   "kantor_pusat": null,
+   "situs": "https://www.xinyisolar.com/",
+   "logo": null,
+   "kapasitas": [],
+   "pangsa_pasar": [],
+   "status_tier1": [],
+   "pabrik_indonesia": [],
+   "pabrik_asean": [],
+   "mitra_indonesia": [],
+   "kantor_indonesia": [],
+   "tkdn": null,
+   "proyek_indonesia": [],
+   "isu_dagang": [],
+   "esg": [],
+   "sumber": [
+    {
+     "url": "https://www.wikidata.org/wiki/Q42625387",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "tanggal_periksa": "2026-11-08",
+     "keterangan": "Wikidata (CC0)"
+    },
+    {
+     "url": "https://en.wikipedia.org/wiki/Xinyi_Solar",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "tanggal_periksa": "2026-11-08",
+     "keterangan": "Wikipedia (CC BY-SA)"
+    }
+   ],
+   "fakta": [
+    {
+     "medan": "situs",
+     "sumber_url": "https://www.wikidata.org/wiki/Q42625387",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "nilai": "https://www.xinyisolar.com/"
+    }
+   ],
+   "segmen_catatan": "segmen kurasi tim; tanpa teks sumber untuk diverifikasi"
+  },
+  {
+   "id": "en_f885d28578",
+   "nama": "Yingli Green Energy",
+   "nama_lain": [
+    "Yingli Solar"
+   ],
+   "negara_iso2": "CN",
+   "wikidata": "Q1572831",
+   "wikipedia": "https://en.wikipedia.org/wiki/Yingli",
+   "segmen": [
+    "wafer",
+    "sel",
+    "modul"
+   ],
+   "segmen_belum_terbukti": [],
+   "tahun_berdiri": 1998,
+   "kantor_pusat": {
+    "kota": "Baoding",
+    "negara_iso2": "CN"
+   },
+   "situs": "https://www.yinglisolar.com/",
+   "logo": null,
+   "kapasitas": [],
+   "pangsa_pasar": [],
+   "status_tier1": [],
+   "pabrik_indonesia": [],
+   "pabrik_asean": [],
+   "mitra_indonesia": [],
+   "kantor_indonesia": [],
+   "tkdn": null,
+   "proyek_indonesia": [],
+   "isu_dagang": [],
+   "esg": [],
+   "sumber": [
+    {
+     "url": "https://www.wikidata.org/wiki/Q1572831",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "tanggal_periksa": "2026-11-08",
+     "keterangan": "Wikidata (CC0)"
+    },
+    {
+     "url": "https://en.wikipedia.org/wiki/Yingli",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "tanggal_periksa": "2026-11-08",
+     "keterangan": "Wikipedia (CC BY-SA)"
+    }
+   ],
+   "fakta": [
+    {
+     "medan": "tahun_berdiri",
+     "sumber_url": "https://www.wikidata.org/wiki/Q1572831",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "nilai": 1998
+    },
+    {
+     "medan": "kantor_pusat",
+     "sumber_url": "https://www.wikidata.org/wiki/Q1572831",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "nilai": "Baoding"
+    },
+    {
+     "medan": "situs",
+     "sumber_url": "https://www.wikidata.org/wiki/Q1572831",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "nilai": "https://www.yinglisolar.com/",
+     "catatan": "http diubah ke https"
+    }
+   ],
+   "segmen_catatan": "segmen kurasi tim; tanpa teks sumber untuk diverifikasi"
+  }
+ ]
+}

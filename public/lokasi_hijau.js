@@ -4,6 +4,7 @@
 import { mulaiHalaman } from "/inti/kepala.js";
 import { t, angka } from "/i18n.js";
 import { esc, nanti, ikon, hantuHtml, galatHtml, debounce } from "/inti/umum.js";
+import { paginasiHtml, sorotHalaman } from "/inti/paginasi.js";
 import { khUbin } from "/inti/kh.js";
 import { exHtml, pilihHtml, sumberHtml } from "/inti/komponen.js";
 import { aksiHtml, hlHtml } from "/inti/aksi_ex.js";
@@ -33,13 +34,13 @@ const isi = $("lhIsi");
 isi.innerHTML = hantuHtml(8);
 let D, KOR;
 try { [D, KOR] = await Promise.all([ambil("/data/lokasi_hijau.json"), ambil("/data/korporat.json")]); } catch (e) {
-  isi.innerHTML = `<div class="jm-kartu">${galatHtml("jaringan")}</div>`;
+  isi.innerHTML = `<div class="lh-galat">${galatHtml("jaringan")}</div>`;
   isi.querySelector("[data-aksi=ulang]")?.addEventListener("click", () => location.reload());
   throw e;
 }
 const KAW = new Map(D.kawasan.map((k) => [k.id, k]));
 const PRSH = KOR.perusahaan.map((p) => ({ ...p, sek: sektorDariGrup(p.sektor_grup) })).sort((a, b) => a.nama.localeCompare(b.nama, "id"));
-const S = { pr: "", mw: 50, tek: ["surya"], sektor: "semua", pulau: [], titik: false, tampil: 10, sel: "" };
+const S = { pr: "", mw: 50, tek: ["surya"], sektor: "semua", pulau: [], titik: false, hal: 1, sel: "" };
 let HASIL = [];
 
 /* ---------- kepala ---------- */
@@ -73,16 +74,16 @@ function rangka() {
         <div class="lh-pr" id="lhPrKartu" hidden></div></div>` }),
     ex({ id: "lhPeta", ikon: "peta", topik: t("lh2.ey.peta"), judulHtml: `<span id="lhJPeta"></span> ${est()}`, subHtml: esc(t("lh2.s.peta")), aksiHtml: aksiHtml({ csv: false, pdf: false, sajian: false }),
       isiHtml: `<div class="lh-peta" id="lhPetaW"><div id="lhKanvas" class="lh-kanvas" role="application" aria-label="${esc(t("lh2.peta.label"))}"></div><div id="lhTip" class="lh-tip" role="status" hidden></div>
-        <details class="lh-panel" id="lhPanel" open><summary><span>${esc(t("lh2.panel"))}</span></summary><div class="lh-panel-isi" id="lhPanelIsi"></div></details></div>` }),
+        <details class="lh-panel" id="lhPanel"${innerWidth >= 1000 ? " open" : ""}><summary><span>${esc(t("lh2.panel"))}</span></summary><div class="lh-panel-isi" id="lhPanelIsi"></div></details></div>` }),
     ex({ id: "lhRank", ikon: "bintang", topik: t("lh2.ey.rank"), judulHtml: `<span id="lhJRank"></span> ${est()}`, subHtml: esc(t("lh2.s.rank")), aksiHtml: aksiHtml({ csv: false, pdf: false, sajian: false }),
       isiHtml: `<ol class="lh-daftar" id="lhDaftar" aria-live="polite"></ol><div class="lh-lagi" id="lhLagi"></div>` }),
     ex({ id: "metode", ikon: "metode", topik: t("lh2.ey.metode"), judulHtml: hlHtml("lh2.t.metode", String(KOM.length)) + " " + hip(), subHtml: esc(t("lh2.s.metode")),
-      isiHtml: `<ul class="lh-kom">${KOM.map((k) => `<li class="lh-k lh-tk-${TK_KOM[k]}"><span class="lh-k-ik">${ikon(IK_KOM[k], 20)}</span><div><h3>${esc(t("lh2.kom." + k))}</h3><p>${esc(t("lh2.rumus." + k, { a: AMBANG.gardu_dekat_km, b: AMBANG.gardu_jauh_km, c: AMBANG.proyek_penuh, r: D.radius_km }))}</p></div><span class="jm-pil lh-bobot">${esc(t("lh2.bobot", { n: BOBOT[k] }))}</span></li>`).join("")}</ul>
+      isiHtml: `<ul class="lh-kom">${KOM.map((k) => `<li class="lh-k lh-tk-${TK_KOM[k]}"><span class="lh-k-ik">${ikon(IK_KOM[k], 20)}</span><div><h3>${esc(t("lh2.kom." + k, { r: D.radius_km }))}</h3><p>${esc(t("lh2.rumus." + k, { a: AMBANG.gardu_dekat_km, b: AMBANG.gardu_jauh_km, c: AMBANG.proyek_penuh, r: D.radius_km }))}</p></div><span class="jm-pil lh-bobot">${esc(t("lh2.bobot", { n: BOBOT[k] }))}</span></li>`).join("")}</ul>
         <div class="lh-celah"><h3>${ikon("peringatan", 18)}<span>${esc(t("lh2.celah"))}</span></h3><ul>${D.meta.celah.map((c) => `<li>${ikon("info", 14)}<span>${esc(c)}</span></li>`).join("")}</ul></div>
         <p class="lh-sumber">${D.sumber.map((s) => { const u = urlAman(s.url); return u ? `<a href="${esc(u)}" target="_blank" rel="noopener noreferrer">${esc(s.judul)}</a>` : esc(s.judul); }).join(" ")}</p>` }),
   ].join("");
   $("lhDaftar").addEventListener("click", (e) => { const b = e.target.closest("[data-buka]"); if (b) bukaRincian(b.dataset.buka); });
-  $("lhLagi").addEventListener("click", (e) => { if (e.target.closest("[data-lagi]")) { S.tampil += 10; nanti(gambarDaftar); } });
+  $("lhLagi").addEventListener("click", (e) => { const b = e.target.closest("[data-hal]"); if (b && !b.disabled) { S.hal = +b.dataset.hal; sorotHalaman(b, S.hal); nanti(() => { gambarDaftar(); $("lhRank").scrollIntoView({ block: "start" }); }); } });
   $("lhPanelIsi").addEventListener("click", (e) => { const b = e.target.closest("[data-buka]"); if (b) { pilihKawasan(b.dataset.buka); bukaRincian(b.dataset.buka); } });
   pasangPilih();
   geserPanel($("lhPanel"), { kunci: "lh", batas: $("lhPetaW") });
@@ -144,7 +145,7 @@ const jenisPil = (k) => `<span class="jm-pil ${k.jenis === "kek" ? "jm-pil-ok" :
 
 function hitungUlang() {
   HASIL = peringkat(D, { mw: S.mw, tek: S.tek, sektor: S.sektor, pulau: S.pulau, hanyaTitik: S.titik });
-  S.tampil = 10;
+  S.hal = 1;
   gambarJudul(); gambarDaftar(); gambarPanel(); perbaruiPeta();
 }
 function gambarJudul() {
@@ -161,10 +162,11 @@ function barisHtml(r) {
     <ul class="lh-alasan">${a.length ? a.map((x) => pilAlasan(x, r)).join("") : `<li class="lh-bantu">${esc(t("lh2.alasan.netral"))}</li>`}</ul>
     <div class="lh-aksi"><a class="jm-tbl" href="/radar" title="${esc(t("lh2.radar"))}">${ikon("berlian", 16)}<span>${esc(t("lh2.radar"))}</span></a><a class="jm-tbl" href="/peluang?prov=${esc(k.kode)}" title="${esc(t("lh2.peluang"))}">${ikon("kompas", 16)}<span>${esc(t("lh2.peluang"))}</span></a></div></li>`;
 }
+const PER = 10;
 function gambarDaftar() {
   const ul = $("lhDaftar"), n = HASIL.length;
-  ul.innerHTML = n ? HASIL.slice(0, S.tampil).map(barisHtml).join("") : `<li class="lh-kosong">${ikon("info", 24)}<p>${esc(t("lh2.kosong"))}</p></li>`;
-  $("lhLagi").innerHTML = n > S.tampil ? `<button type="button" class="jm-tbl" data-lagi>${ikon("tambah", 16)}<span>${esc(t("lh2.lagi", { n: Math.min(10, n - S.tampil) }))}</span></button><small>${esc(t("lh2.menampilkan", { a: N(Math.min(S.tampil, n)), n: N(n) }))}</small>` : "";
+  ul.innerHTML = n ? HASIL.slice((S.hal - 1) * PER, S.hal * PER).map(barisHtml).join("") : `<li class="lh-kosong">${ikon("info", 24)}<p>${esc(t("lh2.kosong"))}</p></li>`;
+  $("lhLagi").innerHTML = paginasiHtml({ hal: S.hal, total: n, per: PER, satuan: "lh2.u.kawasan" });
 }
 function gambarPanel() {
   const top = HASIL.slice(0, 5), tanpa = HASIL.filter((r) => r.k.lat == null).length;
@@ -242,7 +244,7 @@ function bukaRincian(id) {
   const dlg = $("lhDlg"), kom = r?.kom ?? {};
   const baris = KOM.map((c) => {
     const x = kom[c];
-    return `<li class="lh-m-b lh-tk-${TK_KOM[c]}${x ? "" : " lh-m-kosong"}"><span class="lh-k-ik">${ikon(IK_KOM[c], 18)}</span><div class="lh-m-t"><b>${esc(t("lh2.kom." + c))}</b><small>${x ? esc(faktaTeks(c, x)) : esc(t("lh2.m.tanpa_data"))}</small></div>
+    return `<li class="lh-m-b lh-tk-${TK_KOM[c]}${x ? "" : " lh-m-kosong"}"><span class="lh-k-ik">${ikon(IK_KOM[c], 18)}</span><div class="lh-m-t"><b>${esc(t("lh2.kom." + c, { r: D.radius_km }))}</b><small>${x ? esc(faktaTeks(c, x)) : esc(t("lh2.m.tanpa_data"))}</small></div>
       <span class="lh-m-s">${x ? `<span class="jm-pil ${kelasSkor(x.skor)}"><b>${N(x.skor)}</b></span>` : `<span class="lh-redup" title="${esc(t("lh2.m.tanpa_data"))}">-</span>`}</span><span class="lh-m-w">${esc(t("lh2.bobot", { n: BOBOT[c] }))}</span></li>`;
   }).join("");
   const dekat = (kom.proyek_radius?.nilai.daftar ?? []).slice(0, 6);

@@ -1,0 +1,892 @@
+{
+ "_catatan": "Daftar pemasok yang diminta; situs adalah dugaan awal yang DIVERIFIKASI saat panen (host harus sama dengan situs di Wikidata). Alias = regex pencocok nama pemilik/pihak di proyek.json dan gem_pembangkit.json.",
+ "baris": [
+  {
+   "nama": "Vestas",
+   "situs": "https://www.vestas.com/",
+   "segmen": [
+    "bayu"
+   ],
+   "alias": "\\bVestas\\b",
+   "sub": [
+    "turbin-lengkap",
+    "nacelle",
+    "bilah"
+   ]
+  },
+  {
+   "nama": "Siemens Gamesa",
+   "cari": "Siemens Gamesa Renewable Energy",
+   "situs": "https://www.siemensgamesa.com/",
+   "segmen": [
+    "bayu"
+   ],
+   "alias": "Siemens Gamesa",
+   "sub": [
+    "turbin-lengkap",
+    "nacelle",
+    "bilah"
+   ]
+  },
+  {
+   "nama": "GE Vernova",
+   "situs": "https://www.gevernova.com/",
+   "segmen": [
+    "bayu",
+    "hidro",
+    "jaringan"
+   ],
+   "alias": "GE Vernova|General Electric|\\bGE (Renewable|Grid|Hydro|Power)",
+   "sub": [
+    "turbin-lengkap",
+    "nacelle",
+    "turbin",
+    "generator",
+    "transformator",
+    "hvdc",
+    "switchgear"
+   ]
+  },
+  {
+   "nama": "Goldwind",
+   "cari": "Xinjiang Goldwind",
+   "situs": "https://www.goldwind.com/",
+   "segmen": [
+    "bayu"
+   ],
+   "alias": "Goldwind",
+   "sub": [
+    "turbin-lengkap"
+   ]
+  },
+  {
+   "nama": "Envision Energy",
+   "situs": "https://www.envision-group.com/",
+   "segmen": [
+    "bayu"
+   ],
+   "alias": "Envision",
+   "sub": [
+    "turbin-lengkap"
+   ]
+  },
+  {
+   "nama": "Mingyang Smart Energy",
+   "cari": "Ming Yang Smart Energy",
+   "situs": "https://www.mywind.com.cn/",
+   "segmen": [
+    "bayu"
+   ],
+   "alias": "Mingyang|Ming Yang",
+   "sub": [
+    "turbin-lengkap"
+   ]
+  },
+  {
+   "nama": "Windey",
+   "cari": "Zhejiang Windey",
+   "situs": "https://www.chinawindey.com/",
+   "segmen": [
+    "bayu"
+   ],
+   "alias": "Windey",
+   "sub": [
+    "turbin-lengkap"
+   ]
+  },
+  {
+   "nama": "Sany Renewable Energy",
+   "situs": "https://www.sanyrenewable.com/",
+   "segmen": [
+    "bayu"
+   ],
+   "alias": "Sany Renewable|SANY",
+   "sub": [
+    "turbin-lengkap"
+   ]
+  },
+  {
+   "nama": "Nordex",
+   "situs": "https://www.nordex-online.com/",
+   "segmen": [
+    "bayu"
+   ],
+   "alias": "Nordex",
+   "sub": [
+    "turbin-lengkap"
+   ]
+  },
+  {
+   "nama": "Suzlon",
+   "situs": "https://www.suzlon.com/",
+   "segmen": [
+    "bayu"
+   ],
+   "alias": "Suzlon",
+   "sub": [
+    "turbin-lengkap"
+   ]
+  },
+  {
+   "nama": "TPI Composites",
+   "situs": "https://www.tpicomposites.com/",
+   "segmen": [
+    "bayu"
+   ],
+   "alias": "TPI Composites",
+   "sub": [
+    "bilah"
+   ]
+  },
+  {
+   "nama": "LM Wind Power",
+   "situs": "https://www.lmwindpower.com/",
+   "segmen": [
+    "bayu"
+   ],
+   "alias": "LM Wind Power",
+   "sub": [
+    "bilah"
+   ]
+  },
+  {
+   "nama": "Titan Wind Energy",
+   "situs": "https://www.titanwind.com/",
+   "segmen": [
+    "bayu"
+   ],
+   "alias": "Titan Wind",
+   "sub": [
+    "menara"
+   ]
+  },
+  {
+   "nama": "Ormat",
+   "cari": "Ormat Technologies",
+   "situs": "https://www.ormat.com/",
+   "segmen": [
+    "panas-bumi"
+   ],
+   "alias": "\\bOrmat\\b",
+   "sub": [
+    "binary-orc",
+    "turbin-pembangkit"
+   ]
+  },
+  {
+   "nama": "Toshiba Energy Systems & Solutions",
+   "situs": "https://www.global.toshiba/",
+   "segmen": [
+    "panas-bumi",
+    "hidro"
+   ],
+   "alias": "Toshiba",
+   "sub": [
+    "turbin-pembangkit",
+    "turbin",
+    "generator"
+   ]
+  },
+  {
+   "nama": "Fuji Electric",
+   "situs": "https://www.fujielectric.com/",
+   "segmen": [
+    "panas-bumi"
+   ],
+   "alias": "Fuji Electric",
+   "sub": [
+    "turbin-pembangkit"
+   ]
+  },
+  {
+   "nama": "Mitsubishi Power",
+   "cari": "Mitsubishi Heavy Industries",
+   "situs": "https://power.mhi.com/",
+   "segmen": [
+    "panas-bumi"
+   ],
+   "alias": "Mitsubishi (Power|Heavy|Hitachi Power)|\\bMHI\\b",
+   "sub": [
+    "turbin-pembangkit"
+   ]
+  },
+  {
+   "nama": "Ansaldo Energia",
+   "situs": "https://www.ansaldoenergia.com/",
+   "segmen": [
+    "panas-bumi"
+   ],
+   "alias": "Ansaldo",
+   "sub": [
+    "turbin-pembangkit"
+   ]
+  },
+  {
+   "nama": "Turboden",
+   "situs": "https://www.turboden.com/",
+   "segmen": [
+    "panas-bumi"
+   ],
+   "alias": "Turboden",
+   "sub": [
+    "binary-orc"
+   ]
+  },
+  {
+   "nama": "Exergy",
+   "cari": "Exergy International",
+   "situs": "https://www.exergy-orc.com/",
+   "segmen": [
+    "panas-bumi"
+   ],
+   "alias": "Exergy",
+   "sub": [
+    "binary-orc"
+   ]
+  },
+  {
+   "nama": "Halliburton",
+   "situs": "https://www.halliburton.com/",
+   "segmen": [
+    "panas-bumi"
+   ],
+   "alias": "Halliburton",
+   "sub": [
+    "pengeboran-sumur"
+   ]
+  },
+  {
+   "nama": "SLB",
+   "cari": "Schlumberger",
+   "situs": "https://www.slb.com/",
+   "segmen": [
+    "panas-bumi"
+   ],
+   "alias": "\\bSLB\\b|Schlumberger",
+   "sub": [
+    "pengeboran-sumur"
+   ]
+  },
+  {
+   "nama": "Baker Hughes",
+   "situs": "https://www.bakerhughes.com/",
+   "segmen": [
+    "panas-bumi"
+   ],
+   "alias": "Baker Hughes",
+   "sub": [
+    "pengeboran-sumur",
+    "turbin-pembangkit"
+   ]
+  },
+  {
+   "nama": "KS Orka",
+   "situs": "https://www.ksorka.com/",
+   "segmen": [
+    "panas-bumi"
+   ],
+   "alias": "KS Orka",
+   "sub": [
+    "pengembang-operator"
+   ]
+  },
+  {
+   "nama": "Andritz",
+   "situs": "https://www.andritz.com/",
+   "segmen": [
+    "hidro",
+    "biomassa"
+   ],
+   "alias": "Andritz",
+   "sub": [
+    "turbin",
+    "generator",
+    "pintu-air",
+    "boiler"
+   ]
+  },
+  {
+   "nama": "Voith",
+   "situs": "https://www.voith.com/",
+   "segmen": [
+    "hidro"
+   ],
+   "alias": "Voith",
+   "sub": [
+    "turbin",
+    "generator"
+   ]
+  },
+  {
+   "nama": "Harbin Electric",
+   "situs": "https://www.hec.com.cn/",
+   "segmen": [
+    "hidro"
+   ],
+   "alias": "Harbin Electric",
+   "sub": [
+    "turbin",
+    "generator"
+   ]
+  },
+  {
+   "nama": "Dongfang Electric",
+   "situs": "https://www.dongfang.com.cn/",
+   "segmen": [
+    "hidro"
+   ],
+   "alias": "Dongfang",
+   "sub": [
+    "turbin",
+    "generator"
+   ]
+  },
+  {
+   "nama": "Litostroj Power",
+   "situs": "https://www.litostrojpower.com/",
+   "segmen": [
+    "hidro"
+   ],
+   "alias": "Litostroj",
+   "sub": [
+    "turbin",
+    "pintu-air",
+    "penstock"
+   ]
+  },
+  {
+   "nama": "Gilkes",
+   "cari": "Gilbert Gilkes & Gordon",
+   "situs": "https://www.gilkes.com/",
+   "segmen": [
+    "hidro"
+   ],
+   "alias": "Gilkes",
+   "sub": [
+    "turbin",
+    "pltmh"
+   ]
+  },
+  {
+   "nama": "Cink Hydro-Energy",
+   "situs": "https://www.cink.cz/",
+   "segmen": [
+    "hidro"
+   ],
+   "alias": "Cink",
+   "sub": [
+    "turbin",
+    "pltmh"
+   ]
+  },
+  {
+   "nama": "Nel",
+   "cari": "Nel ASA",
+   "situs": "https://nelhydrogen.com/",
+   "segmen": [
+    "hidrogen"
+   ],
+   "alias": "Nel (ASA|Hydrogen)",
+   "sub": [
+    "stack-elektroliser",
+    "sistem-lengkap"
+   ]
+  },
+  {
+   "nama": "thyssenkrupp nucera",
+   "situs": "https://thyssenkrupp-nucera.com/",
+   "segmen": [
+    "hidrogen"
+   ],
+   "alias": "nucera",
+   "sub": [
+    "stack-elektroliser",
+    "sistem-lengkap"
+   ]
+  },
+  {
+   "nama": "Siemens Energy",
+   "situs": "https://www.siemens-energy.com/",
+   "segmen": [
+    "hidrogen",
+    "jaringan"
+   ],
+   "alias": "Siemens Energy",
+   "sub": [
+    "sistem-lengkap",
+    "transformator",
+    "hvdc",
+    "kompresor"
+   ]
+  },
+  {
+   "nama": "Plug Power",
+   "situs": "https://www.plugpower.com/",
+   "segmen": [
+    "hidrogen"
+   ],
+   "alias": "Plug Power",
+   "sub": [
+    "stack-elektroliser",
+    "sistem-lengkap"
+   ]
+  },
+  {
+   "nama": "ITM Power",
+   "situs": "https://itm-power.com/",
+   "segmen": [
+    "hidrogen"
+   ],
+   "alias": "ITM Power",
+   "sub": [
+    "stack-elektroliser",
+    "sistem-lengkap"
+   ]
+  },
+  {
+   "nama": "LONGi Hydrogen",
+   "cari": "LONGi Green Energy Technology",
+   "situs": "https://www.longi.com/",
+   "segmen": [
+    "hidrogen"
+   ],
+   "alias": "LONGi|Longi",
+   "sub": [
+    "stack-elektroliser"
+   ]
+  },
+  {
+   "nama": "Sungrow Hydrogen",
+   "cari": "Sungrow Power Supply",
+   "situs": "https://en.sungrowpower.com/",
+   "segmen": [
+    "hidrogen"
+   ],
+   "alias": "Sungrow",
+   "sub": [
+    "stack-elektroliser",
+    "bess-integrasi"
+   ]
+  },
+  {
+   "nama": "Peric Hydrogen Technologies",
+   "cari": "Peric",
+   "situs": "https://www.peric.com.cn/",
+   "segmen": [
+    "hidrogen"
+   ],
+   "alias": "\\bPeric\\b",
+   "sub": [
+    "stack-elektroliser"
+   ]
+  },
+  {
+   "nama": "John Cockerill",
+   "situs": "https://www.johncockerill.com/",
+   "segmen": [
+    "hidrogen"
+   ],
+   "alias": "John Cockerill",
+   "sub": [
+    "stack-elektroliser",
+    "sistem-lengkap"
+   ]
+  },
+  {
+   "nama": "Accelera",
+   "cari": "Cummins",
+   "situs": "https://www.accelerazero.com/",
+   "segmen": [
+    "hidrogen"
+   ],
+   "alias": "Accelera|Cummins",
+   "sub": [
+    "stack-elektroliser"
+   ]
+  },
+  {
+   "nama": "Hitachi Energy",
+   "situs": "https://www.hitachienergy.com/",
+   "segmen": [
+    "jaringan"
+   ],
+   "alias": "Hitachi Energy|ABB Power Grids",
+   "sub": [
+    "transformator",
+    "hvdc",
+    "switchgear",
+    "bess-integrasi"
+   ]
+  },
+  {
+   "nama": "Schneider Electric",
+   "situs": "https://www.se.com/",
+   "segmen": [
+    "jaringan"
+   ],
+   "alias": "Schneider",
+   "sub": [
+    "switchgear",
+    "bess-integrasi"
+   ]
+  },
+  {
+   "nama": "ABB",
+   "situs": "https://global.abb/",
+   "segmen": [
+    "jaringan"
+   ],
+   "alias": "\\bABB\\b",
+   "sub": [
+    "switchgear",
+    "hvdc"
+   ]
+  },
+  {
+   "nama": "NARI Group",
+   "situs": "https://www.nari-china.com/",
+   "segmen": [
+    "jaringan"
+   ],
+   "alias": "\\bNARI\\b",
+   "sub": [
+    "hvdc",
+    "switchgear"
+   ]
+  },
+  {
+   "nama": "XD Electric",
+   "cari": "China XD Electric",
+   "situs": "https://www.xd.com.cn/",
+   "segmen": [
+    "jaringan"
+   ],
+   "alias": "XD Electric",
+   "sub": [
+    "transformator",
+    "switchgear"
+   ]
+  },
+  {
+   "nama": "TBEA",
+   "situs": "https://www.tbea.com/",
+   "segmen": [
+    "jaringan"
+   ],
+   "alias": "TBEA",
+   "sub": [
+    "transformator"
+   ]
+  },
+  {
+   "nama": "Hyosung Heavy Industries",
+   "situs": "https://www.hyosungheavyindustries.com/",
+   "segmen": [
+    "jaringan"
+   ],
+   "alias": "Hyosung",
+   "sub": [
+    "transformator",
+    "hvdc"
+   ]
+  },
+  {
+   "nama": "LS Electric",
+   "situs": "https://www.ls-electric.com/",
+   "segmen": [
+    "jaringan"
+   ],
+   "alias": "LS Electric",
+   "sub": [
+    "switchgear",
+    "bess-integrasi"
+   ]
+  },
+  {
+   "nama": "Valmet",
+   "situs": "https://www.valmet.com/",
+   "segmen": [
+    "biomassa"
+   ],
+   "alias": "Valmet",
+   "sub": [
+    "boiler",
+    "gasifier"
+   ]
+  },
+  {
+   "nama": "Sumitomo SHI FW",
+   "cari": "Sumitomo SHI FW",
+   "situs": "https://www.shi-fw.com/",
+   "segmen": [
+    "biomassa"
+   ],
+   "alias": "Sumitomo SHI|SHI FW",
+   "sub": [
+    "boiler"
+   ]
+  },
+  {
+   "nama": "Thermax",
+   "situs": "https://www.thermaxglobal.com/",
+   "segmen": [
+    "biomassa"
+   ],
+   "alias": "Thermax",
+   "sub": [
+    "boiler",
+    "gasifier"
+   ]
+  },
+  {
+   "nama": "Doosan Enerbility",
+   "situs": "https://www.doosanenerbility.com/",
+   "segmen": [
+    "biomassa"
+   ],
+   "alias": "Doosan",
+   "sub": [
+    "boiler",
+    "turbin"
+   ]
+  },
+  {
+   "nama": "SKF",
+   "situs": "https://www.skf.com/",
+   "segmen": [
+    "bayu"
+   ],
+   "sub": [
+    "bantalan"
+   ],
+   "alias": "\\bSKF\\b"
+  },
+  {
+   "nama": "Schaeffler",
+   "situs": "https://www.schaeffler.com/",
+   "segmen": [
+    "bayu"
+   ],
+   "sub": [
+    "bantalan"
+   ],
+   "alias": "Schaeffler"
+  },
+  {
+   "nama": "ZF Friedrichshafen",
+   "cari": "ZF Friedrichshafen",
+   "situs": "https://www.zf.com/",
+   "segmen": [
+    "bayu"
+   ],
+   "sub": [
+    "gearbox"
+   ],
+   "alias": "\\bZF\\b"
+  },
+  {
+   "nama": "CS Wind",
+   "situs": "https://www.cswind.com/",
+   "segmen": [
+    "bayu"
+   ],
+   "sub": [
+    "menara"
+   ],
+   "alias": "CS Wind"
+  },
+  {
+   "nama": "Cadeler",
+   "situs": "https://www.cadeler.com/",
+   "segmen": [
+    "bayu"
+   ],
+   "sub": [
+    "kapal-instalasi"
+   ],
+   "alias": "Cadeler"
+  },
+  {
+   "nama": "Tenaris",
+   "situs": "https://www.tenaris.com/",
+   "segmen": [
+    "panas-bumi"
+   ],
+   "sub": [
+    "pipa-separator"
+   ],
+   "alias": "Tenaris"
+  },
+  {
+   "nama": "Vallourec",
+   "situs": "https://www.vallourec.com/",
+   "segmen": [
+    "panas-bumi"
+   ],
+   "sub": [
+    "pipa-separator"
+   ],
+   "alias": "Vallourec"
+  },
+  {
+   "nama": "Hexagon Purus",
+   "situs": "https://hexagonpurus.com/",
+   "segmen": [
+    "hidrogen"
+   ],
+   "sub": [
+    "tangki"
+   ],
+   "alias": "Hexagon Purus"
+  },
+  {
+   "nama": "Burckhardt Compression",
+   "situs": "https://www.burckhardtcompression.com/",
+   "segmen": [
+    "hidrogen"
+   ],
+   "sub": [
+    "kompresor"
+   ],
+   "alias": "Burckhardt"
+  },
+  {
+   "nama": "Linde",
+   "situs": "https://www.linde.com/",
+   "segmen": [
+    "hidrogen"
+   ],
+   "sub": [
+    "kompresor",
+    "tangki"
+   ],
+   "alias": "\\bLinde\\b"
+  },
+  {
+   "nama": "INNIO Jenbacher",
+   "cari": "INNIO Group",
+   "situs": "https://www.innio.com/",
+   "segmen": [
+    "biogas"
+   ],
+   "sub": [
+    "gas-engine"
+   ],
+   "alias": "Jenbacher|INNIO"
+  },
+  {
+   "nama": "Caterpillar",
+   "situs": "https://www.caterpillar.com/",
+   "segmen": [
+    "biogas"
+   ],
+   "sub": [
+    "gas-engine"
+   ],
+   "alias": "Caterpillar"
+  },
+  {
+   "nama": "MWM",
+   "cari": "MWM GmbH",
+   "situs": "https://www.mwm.net/",
+   "segmen": [
+    "biogas"
+   ],
+   "sub": [
+    "gas-engine"
+   ],
+   "alias": "\\bMWM\\b"
+  },
+  {
+   "nama": "Weichai Power",
+   "situs": "https://www.weichai.com/",
+   "segmen": [
+    "biogas"
+   ],
+   "sub": [
+    "gas-engine"
+   ],
+   "alias": "Weichai"
+  },
+  {
+   "nama": "Greenlane Renewables",
+   "situs": "https://www.greenlanerenewables.com/",
+   "segmen": [
+    "biogas"
+   ],
+   "sub": [
+    "pemurnian-biometana"
+   ],
+   "alias": "Greenlane"
+  },
+  {
+   "nama": "Drax",
+   "cari": "Drax Group",
+   "situs": "https://www.drax.com/",
+   "segmen": [
+    "biomassa"
+   ],
+   "sub": [
+    "pelet-briket",
+    "cofiring"
+   ],
+   "alias": "\\bDrax\\b"
+  },
+  {
+   "nama": "Neste",
+   "situs": "https://www.neste.com/",
+   "segmen": [
+    "biofuel"
+   ],
+   "sub": [
+    "bioavtur",
+    "fame"
+   ],
+   "alias": "\\bNeste\\b"
+  },
+  {
+   "nama": "Wilmar International",
+   "situs": "https://www.wilmar-international.com/",
+   "segmen": [
+    "biofuel"
+   ],
+   "sub": [
+    "fame"
+   ],
+   "alias": "Wilmar"
+  },
+  {
+   "nama": "Musim Mas",
+   "situs": "https://www.musimmas.com/",
+   "segmen": [
+    "biofuel"
+   ],
+   "sub": [
+    "fame"
+   ],
+   "alias": "Musim Mas"
+  },
+  {
+   "nama": "Novonesis",
+   "situs": "https://www.novonesis.com/",
+   "segmen": [
+    "biofuel"
+   ],
+   "sub": [
+    "enzim-katalis"
+   ],
+   "alias": "Novonesis|Novozymes"
+  },
+  {
+   "nama": "Johnson Matthey",
+   "situs": "https://matthey.com/",
+   "segmen": [
+    "biofuel"
+   ],
+   "sub": [
+    "enzim-katalis"
+   ],
+   "alias": "Johnson Matthey"
+  }
+ ]
+}

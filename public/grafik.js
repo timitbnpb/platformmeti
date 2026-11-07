@@ -42,7 +42,8 @@ export function batang(rows, { maks, ref = null, teksRef = "", label = "" } = {}
   let g = "";
   rows.forEach((r, i) => {
     const y = T + i * rh, on = i === s, b0 = r.v0 ?? 0, ym = y + (rh - bt) / 2;
-    g += `<text class="jm-gf-t1${on ? " jm-gf-tb" : ""}" x="${L - 8}" y="${(ym + bt - 1).toFixed(1)}" text-anchor="end" font-size="${fs}">${esc(potong(r.label, M ? 17 : 22))}<title>${esc(r.label)}</title></text>`;
+    g += `<text class="jm-gf-t1${on ? " jm-gf-tb" : ""}" x="${L - 8}" y="${(ym + bt - 1).toFixed(1)}" text-anchor="end" font-size="${fs}">${esc(potong(r.label, r.img ? (M ? 12 : 16) : (M ? 17 : 22)))}<title>${esc(r.label)}</title></text>`;
+    if (r.img) { const w = r.bend ? 20 : 18, h = r.bend ? 15 : 18; g += `<image href="${esc(r.img)}" x="2" y="${(ym + bt / 2 - h / 2).toFixed(1)}" width="${w}" height="${h}" preserveAspectRatio="${r.bend ? "xMidYMid slice" : "xMidYMid meet"}"/>`; }
     if (b0) g += `<rect class="jm-gf-abu" x="${L}" y="${ym}" width="${X(b0).toFixed(1)}" height="${bt}" rx="2"/>`;
     g += `<rect class="${on || b0 ? "jm-gf-sorot" : "jm-gf-abu"}" x="${(L + X(b0)).toFixed(1)}" y="${ym}" width="${Math.max(1, X(r.v)).toFixed(1)}" height="${bt}" rx="2"><title>${esc(r.label)}: ${esc(r.teks ?? fmt(r.v))}</title></rect>`;
     g += `<text class="jm-gf-t1${on ? " jm-gf-tb" : ""}" x="${(L + X(b0 + r.v) + 6).toFixed(1)}" y="${(ym + bt - 1).toFixed(1)}" font-size="${fs}">${esc(r.teks ?? fmt(r.v))}</text>`;

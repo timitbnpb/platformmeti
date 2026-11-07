@@ -9,6 +9,7 @@ import { khUbin } from "/inti/kh.js";
 import { paginasiHtml, sorotHalaman } from "/inti/paginasi.js";
 import { tombolIkuti, pasangIkuti } from "/inti/ikuti.js";
 import { ikonTek } from "/inti/ikon_tek.js";
+import "/inti/tip_grafik.js";
 
 const $ = (id) => document.getElementById(id);
 const KAM = { id: {}, en: {} };
@@ -146,7 +147,7 @@ function plot() {
     <button type="button" class="kq-zb" data-aksi="zoom" data-v="1" aria-label="${esc(k("plot.zoom_masuk"))}" title="${esc(k("plot.zoom_masuk"))}">${ikon("tambah", 18)}</button>
     <button type="button" class="kq-zb" data-aksi="zoom" data-v="-1" aria-label="${esc(k("plot.zoom_keluar"))}" title="${esc(k("plot.zoom_keluar"))}">${SVG_MIN}</button>
     <button type="button" class="kq-zb" data-aksi="zoom" data-v="0" aria-label="${esc(k("plot.reset"))}" title="${esc(k("plot.reset"))}">${ikon("balik", 18)}</button></div></div>
-    <svg class="kq-svg" viewBox="0 0 ${W} ${H}" width="${W}" height="${H}" role="group" aria-label="${esc(ket)}"><defs><clipPath id="kqKlip"><rect x="${px0}" y="${py0}" width="${pw}" height="${ph}"/></clipPath></defs>
+    <svg class="kq-svg jm-gx" viewBox="0 0 ${W} ${H}" width="${W}" height="${H}" role="group" aria-label="${esc(ket)}"><defs><clipPath id="kqKlip"><rect x="${px0}" y="${py0}" width="${pw}" height="${ph}"/></clipPath></defs>
     <rect class="kq-latar" x="${px0}" y="${py0}" width="${pw}" height="${ph}" rx="4"/>
     <g clip-path="url(#kqKlip)">${grid}${garis}</g>${angkaSumbu}${labelMed}
     ${lajurKiri}${lajurBawah}${sudut}

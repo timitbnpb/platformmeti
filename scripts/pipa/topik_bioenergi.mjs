@@ -8,6 +8,7 @@ import { fileURLToPath } from 'node:url';
 import { validasi } from './topik_surya.mjs';
 import { lengkapi } from './topik_dalam_lib.mjs';
 import { perdalam } from './topik_bioenergi_dalam.mjs';
+import { tambahJalanModel } from './topik_jalan_lib.mjs';
 export { validasi };
 const akar = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '../..');
 const ID = 'bioenergi';
@@ -85,7 +86,8 @@ export const SUMBER = {
   ofgem: S('Ofgem Decision: investigation into Drax Power Limited (29 Agu 2024; GBP 25 juta ke dana ganti rugi; 9.279.992 ROC bernilai sekitar GBP 548 juta pada 2023/24)', 'Ofgem', 'https://www.ofgem.gov.uk/publications/ofgem-decision-investigation-drax-power-limited', '2024-08-29', 'resmi'),
 };
 
-export function susun() {
+export function susun() { return tambahJalanModel(susunDasarJM(), ID); }
+function susunDasarJM() {
   const d0 = dasarJson();
   const kp = tren('bioenergi');
   const k25 = kp.at(-1), k00 = kp[0], k24 = kp.find((x) => x.tahun === 2024);

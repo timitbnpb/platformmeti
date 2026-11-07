@@ -59,6 +59,8 @@
 .pn-d-hidup{background:var(--ok)}.pn-d-rusak{background:var(--warn)}.pn-d-mati{background:var(--bad)}
 .pn-dm-hidup{--tk:var(--ok)}.pn-dm-rusak{--tk:var(--warn)}.pn-dm-mati{--tk:var(--bad)}
 .pn-d-kosong{background:var(--line-cell);border-color:var(--line-ctl)}
+.pn-p{flex:none;width:16px;height:12px;border-radius:3px;border:2px solid var(--ink2);opacity:.85}
+.pn-p-risiko_hutan{border-color:var(--ok);background:color-mix(in srgb,var(--ok) 30%,transparent)}.pn-p-risiko_gambut{border-color:var(--warn);background:color-mix(in srgb,var(--warn) 30%,transparent)}.pn-p-risiko_adat{border-color:var(--data5);background:color-mix(in srgb,var(--data5) 30%,transparent)}.pn-p-konsesi{border-color:var(--bad);background:color-mix(in srgb,var(--bad) 30%,transparent)}
 .pn-g{flex:none;width:22px;height:4px;border-radius:2px}
 .pn-g-bad{background:var(--bad)}.pn-g-warn{background:var(--warn)}.pn-g-info{background:var(--info)}
 .pn-ramp{height:12px;border-radius:var(--r-pil);border:1px solid var(--line-cell)}
@@ -71,7 +73,7 @@
 .pn-tip span{color:var(--ink2)}
 /* pop-up kaya */
 .pn-popup .maplibregl-popup-content{padding:0;border-radius:16px;background:var(--card);color:var(--ink);border:1px solid var(--line);box-shadow:var(--shadow-lg);min-width:250px}
-.pn-popup .maplibregl-popup-close-button{width:32px;height:32px;font-size:20px;color:var(--ink2);border-radius:0 16px 0 10px}
+.pn-popup .maplibregl-popup-close-button{width:32px;height:32px;font-size:var(--t-h2);color:var(--ink2);border-radius:0 16px 0 10px}
 .pn-popup .maplibregl-popup-close-button:hover{background:var(--surface);color:var(--ink)}
 .pn-popup.maplibregl-popup-anchor-top .maplibregl-popup-tip,.pn-popup.maplibregl-popup-anchor-top-left .maplibregl-popup-tip,.pn-popup.maplibregl-popup-anchor-top-right .maplibregl-popup-tip{border-bottom-color:var(--card)}
 .pn-popup.maplibregl-popup-anchor-bottom .maplibregl-popup-tip,.pn-popup.maplibregl-popup-anchor-bottom-left .maplibregl-popup-tip,.pn-popup.maplibregl-popup-anchor-bottom-right .maplibregl-popup-tip{border-top-color:var(--card)}

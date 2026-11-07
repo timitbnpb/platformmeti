@@ -57,7 +57,7 @@ export function validasi(d) {
   if (d.penting.length !== 3) err.push('penting != 3');
   d.penting.forEach((t, i) => cekT(t, 'penting' + i)); cekT(d.posisi, 'posisi'); cekT(d.lead, 'lead');
   for (const [n, b] of Object.entries(d.bab)) {
-    if (!(+n >= 2 && +n <= 42)) err.push('nomor bab ' + n);
+    if (!(+n >= 2 && +n <= 44)) err.push('nomor bab ' + n);
     cekS(b.sumber, 'bab' + n);
     if (!b.sumber?.length) err.push('bab tanpa sumber ' + n);
     if (b.tipe === 'tabel') { if (!b.baris.length) err.push('tabel kosong ' + n); b.kolom.forEach((c) => cekT(c.l, 'kolom' + n)); }

@@ -21,7 +21,8 @@ export const LAPIS = {
   gambut: { nama: 'gfw_peatlands', ver: 'v20230302', lisensi: 'Global Peatlands (GFW), CC BY 4.0', url: 'https://data-api.globalforestwatch.org/dataset/gfw_peatlands/v20230302' },
 };
 const BNPB = 'https://gis.bnpb.go.id/server/rest/services/inarisk';
-export const BAHAYA = { multi: 'INDEKS_MULTI_BAHAYA', banjir: 'INDEKS_BAHAYA_BANJIR', longsor: 'INDEKS_BAHAYA_TANAHLONGSOR', gempa: 'INDEKS_BAHAYA_GEMPABUMI', karhutla: 'INDEKS_BAHAYA_KARHUTLA', tsunami: 'INDEKS_BAHAYA_TSUNAMI', gunungapi: 'INDEKS_BAHAYA_GUNUNGAPI' };
+// INDEKS_MULTI_BAHAYA dan INDEKS_BAHAYA_GUNUNGAPI membalas 503 (waktu habis di server) pada 8 Nov 2026; komposit = rata-rata lapis yang menjawab
+export const BAHAYA = { banjir: 'INDEKS_BAHAYA_BANJIR', longsor: 'INDEKS_BAHAYA_TANAHLONGSOR', gempa: 'INDEKS_BAHAYA_GEMPABUMI', karhutla: 'INDEKS_BAHAYA_KARHUTLA', tsunami: 'INDEKS_BAHAYA_TSUNAMI' };
 
 async function lewatCache(kunci, ambilFn) {
   const f = path.join(CACHE, crypto.createHash('sha1').update(kunci).digest('hex'));
@@ -48,21 +49,21 @@ async function bahaya(titik) {
   const out = {};
   for (const [k, svc] of Object.entries(BAHAYA)) {
     try {
-    for (let i = 0; i < titik.length; i += 150) {
-      const bagian = titik.slice(i, i + 150);
+    for (let i = 0; i < titik.length; i += 40) {
+      const bagian = titik.slice(i, i + 40);
       const body = new URLSearchParams({ geometry: JSON.stringify({ points: bagian.map((t) => [t.lng, t.lat]), spatialReference: { wkid: 4326 } }), geometryType: 'esriGeometryMultipoint', returnFirstValueOnly: 'true', f: 'json' });
       const b = await lewatCache(`${BNPB}/${svc}/getSamples/${body}`, async () => { // jangan simpan galat 503 ke cache; ulangi dengan jeda
         for (let k = 0; ; k++) {
           const r = await Promise.race([ambil(`${BNPB}/${svc}/ImageServer/getSamples`, { method: 'POST', body, headers: { 'content-type': 'application/x-www-form-urlencoded' }, buf: true }), new Promise((_, no) => setTimeout(() => no(new Error('waktu habis 90 dtk')), 90000))]);
           if (JSON.parse(r.toString('utf8')).samples) return r;
-          if (k >= 3) throw new Error('InaRISK ' + svc + ': ' + r.toString('utf8').slice(0, 200));
+          if (k >= 2) throw new Error('InaRISK ' + svc + ': ' + r.toString('utf8').slice(0, 200));
           await new Promise((ok) => setTimeout(ok, 15000));
         }
       });
       const j = JSON.parse(b.toString('utf8'));
       for (const s of j.samples) { const v = parseFloat(s.value); (out[bagian[s.locationId].id] ||= {})[k] = Number.isFinite(v) ? Math.round(v * 1000) / 1000 : null; }
     }
-    } catch (e) { console.log('lewati lapis bahaya', k, String(e.message).slice(0, 120)); if (k === 'multi') throw e; } // lapis tunggal boleh gagal; indeks multi wajib
+    } catch (e) { console.log('lewati lapis bahaya', k, String(e.message).slice(0, 120)); } // lapis boleh gagal; risiko_proyek.mjs memakai rata-rata lapis tunggal bila indeks multi tak tersedia
   }
   return out;
 }
@@ -90,7 +91,7 @@ async function tumpangGambut(titik, z = 10) {
   for (const g of per.values()) {
     const im = await png(z, g.x, g.y); n++;
     if (n % 20 === 0) console.log('gambut', n, '/', per.size);
-    for (const [t, u] of g.t) out[t.id] = im ? im.ambil(Math.min(255, Math.floor((u.xf - g.x) * 256)), Math.min(255, Math.floor((u.yf - g.y) * 256)))[3] > 0 : false;
+    for (const [t, u] of g.t) out[t.id] = im ? im.ambil(Math.min(255, Math.floor((u.xf - g.x) * 256)), Math.min(255, Math.floor((u.yf - g.y) * 256)))[3] : 0; // alfa = intensitas gambut 0-255
   }
   return out;
 }
@@ -135,7 +136,7 @@ async function geoVektor(lapis, z, kelasDari, toleransi, minLuas) {
       const poli = []; // cincin luar (arah +) membuka poligon baru, cincin dalam menempel
       for (const c of f.geom.map((c0) => dp(c0, toleransi)).filter((c) => c.length >= 4)) {
         const a = luas(c); if (Math.abs(a) < minLuas && a > 0) continue;
-        const ll = c.map(([px, py]) => lonLatUbin(z, x, y, px, py).map((v) => Math.round(v * 1000) / 1000));
+        const ll = c.map(([px, py]) => lonLatUbin(z, x, y, px, py).map((v) => Math.round(v * 100) / 100));
         if (a > 0) poli.push([ll]); else if (poli.length) poli[poli.length - 1].push(ll);
       }
       if (poli.length) (fitur.get(k) || fitur.set(k, []).get(k)).push(...poli);
@@ -157,10 +158,10 @@ export const kelasHutan = (s) => {
   return null;
 };
 async function langkahGeo() {
-  tulisGeo('risiko_hutan.geojson', await geoVektor(LAPIS.hutan, 5, kelasHutan, 2, 6), (k) => ({ k }));
-  tulisGeo('risiko_adat.geojson', await geoVektor(LAPIS.adat, 5, () => 'adat', 2, 2), (k) => ({ k }));
-  // gambut: ubin PNG z6 (piksel sekitar 2,4 km) -> persegi hasil gabungan lintas baris
-  const z = 6, n = 2 ** z, x0 = Math.floor(((95 + 180) / 360) * n), x1 = Math.floor(((141 + 180) / 360) * n), y0 = ubinDari(0, 6.5, z).y, y1 = ubinDari(0, -11.5, z).y;
+  tulisGeo('risiko_hutan.geojson', await geoVektor(LAPIS.hutan, 5, kelasHutan, 5, 20), (k) => ({ k }));
+  tulisGeo('risiko_adat.geojson', await geoVektor(LAPIS.adat, 5, () => 'adat', 4, 6), (k) => ({ k }));
+  // gambut: ubin PNG z5 (piksel sekitar 4,8 km, tampilan nasional) -> persegi hasil gabungan lintas baris
+  const z = 5, n = 2 ** z, x0 = Math.floor(((95 + 180) / 360) * n), x1 = Math.floor(((141 + 180) / 360) * n), y0 = ubinDari(0, 6.5, z).y, y1 = ubinDari(0, -11.5, z).y;
   const kotak = new Map(), aktif = new Map(); // aktif: kunci "a-b" -> {a,b,y0,y1}
   const sel = {};
   for (let x = x0; x <= x1; x++) for (let y = y0; y <= y1; y++) {

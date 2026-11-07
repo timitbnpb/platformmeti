@@ -83,3 +83,4 @@
 .sy-kosong-ik{flex:none;display:grid;place-items:center;width:48px;height:48px;border-radius:50%;background:var(--soft-hijau);color:var(--accent)}
 .sy-kosong .jm-tbl{flex:none;margin-left:auto}
 @media (max-width:639px){.sy-kosong{flex-wrap:wrap}.sy-kosong .jm-tbl{width:100%;justify-content:center}}
+@media (max-width:639px){.sy-seg>button{gap:6px;padding-inline:8px}.sy-seg>button .jm-ik{display:none}}

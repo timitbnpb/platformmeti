@@ -10,7 +10,7 @@ import { aksiHtml, hlHtml } from "/inti/aksi_ex.js";
 import { pilTek } from "/inti/ikon_tek.js";
 import { logoOrgSatu } from "/inti/logo_org.js";
 import { muatMapLibre } from "/inti/maplibre.js";
-import { rapikanPeta, pasangBatas, BATAS_ID } from "/inti/peta_indonesia.js";
+import { rapikanPeta, pasangBatas } from "/inti/peta_indonesia.js";
 import { geserPanel } from "/inti/panel_geser.js";
 import { siapTautan, tautOrg, tautProvinsi } from "/inti/tautan.js";
 import { batangHtml, pasangBar, saatBahasa } from "/analisis.js";
@@ -30,13 +30,12 @@ const svg = (d) => `<svg class="jm-ikt jm-ikt-s" viewBox="0 0 24 24" fill="none"
 const IKK = { hutan: '<path d="M12 3 6 12h3l-3 5h12l-3-5h3zM12 17v4"/>', gambut: '<path d="M3 17c3-3 6 3 9 0s6 3 9 0M3 12c3-3 6 3 9 0s6 3 9 0M12 3v4"/>', adat: '<path d="M3 12 12 4l9 8M6 10v10h12V10M10 20v-5h4v5"/>', bahaya: '<path d="M13 2 4 14h7l-1 8 9-12h-7z"/>' };
 const pilKelas = (r) => `<span class="rs3-pil rs3-k-${r.kelas}">${svg(IK[r.kelas])}<span>${esc(t("rs3.kelas." + r.kelas))}</span><b>${r.skor}</b></span>`;
 const pilKelasNama = (k) => `<span class="rs3-pil rs3-k-${k}">${svg(IK[k])}<span>${esc(t("rs3.kelas." + k))}</span></span>`;
-const lambang = (kode, u = 16) => (kode ? `<img src="/img/provinsi/${esc(kode)}.png" width="${u}" height="${u}" alt="" loading="lazy" decoding="async" data-galat="hapus">` : "");
 const warna = (v) => getComputedStyle(document.documentElement).getPropertyValue(v).trim() || "gray";
 const gelap = () => document.documentElement.dataset.theme === "dark" || (!document.documentElement.dataset.theme && matchMedia("(prefers-color-scheme:dark)").matches);
 const gaya = () => "https://tiles.openfreemap.org/styles/" + (gelap() ? "dark" : "positron");
 const S = { q: "", tek: "", kelas: "", pilih: -1, lapis: { hutan: false, gambut: false, adat: false, bahaya: false } };
 const TABEL = { k: "skor", arah: -1, hal: 1, turun: ["skor", "mw"] };
-const WARNA_HUTAN = { konservasi: "#1b5e3a", lindung: "#2f7d4f", produksi: "#a8b84a", konversi: "#d9b25f" };
+const WARNA_HUTAN = { konservasi: "--ok", lindung: "--data4", produksi: "--warn", konversi: "--tp-biaya" };
 
 await mulaiHalaman();
 siapTautan("org");
@@ -63,7 +62,7 @@ const labKomp = (k, c) => {
   return `${t("rs3.komp.bahaya")} ${c.v}`;
 };
 const ringkasKomp = (r) => {
-  const a = Object.entries(r.komponen).filter(([k, c]) => (k === "bahaya" || c.v > 0));
+  const a = Object.entries(r.komponen).filter(([k, c]) => (k === "bahaya" || c.v >= (k === "gambut" ? 50 : 1)));
   return a.length ? `<span class="rs3-komp">${a.map(([k, c]) => `<span class="rs3-ch rs3-c-${k}">${svg(IKK[k])}${esc(labKomp(k, c))}</span>`).join("")}</span>` : `<span class="jm-bantu">-</span>`;
 };
 const selPem = (r) => {
@@ -71,7 +70,7 @@ const selPem = (r) => {
   const logo = logoOrgSatu(r.pemId, r.pem, r.pemilik && r.pemilik.logo);
   return `<span class="pb-pem">${logo ? `<img class="pb-logo" src="${esc(logo)}" alt="" width="22" height="22" loading="lazy" data-galat="hapus">` : ""}<span class="pb-pem-t"><span>${r.pemId ? tautOrg(r.pemId, r.pem) : esc(r.pem)}</span></span></span>`;
 };
-const selProv = (r) => (r.prov ? `<span class="pt2-prov">${lambang(r.prov_kode)}${r.prov_kode ? tautProvinsi(r.prov) : esc(r.prov)}</span>` : `<span class="jm-bantu">-</span>`);
+const selProv = (r) => (r.prov ? `<span class="pt2-prov">${r.prov_kode ? tautProvinsi(r.prov) : esc(r.prov)}</span>` : `<span class="jm-bantu">-</span>`);
 const selNama = (r) => `<b>${r.profil ? `<a class="jm-pj-nm" href="/p/${esc(r.id)}">${esc(r.nama)}</a>` : esc(r.nama)}</b><div class="pb-prov">${selProv(r)}</div>`;
 const KOLOM = [
   ["nama", "rs3.c.proyek", selNama],
@@ -107,7 +106,7 @@ function kerangka() {
   $("rs-tabel").addEventListener("jm:csv", (e) => {
     const baris = terpilih().sort((a, b) => b.skor - a.skor);
     e.detail.baris = [[t("rs3.c.proyek"), t("rs3.c.tek"), t("rs3.c.pemilik"), t("rs3.c.skor"), t("rs3.c.kelas"), t("rs3.c.komp"), t("rs3.c.mw"), t("rs3.c.presisi")],
-      ...baris.map((r) => [r.nama, labTek(r.tek), r.pem || "", r.skor, t("rs3.kelas." + r.kelas), Object.entries(r.komponen).filter(([k, c]) => k === "bahaya" || c.v > 0).map(([k, c]) => labKomp(k, c)).join("; "), r.mw ?? "", t("rs3.pr." + r.presisi)])];
+      ...baris.map((r) => [r.nama, labTek(r.tek), r.pem || "", r.skor, t("rs3.kelas." + r.kelas), Object.entries(r.komponen).filter(([k, c]) => k === "bahaya" || c.v >= (k === "gambut" ? 50 : 1)).map(([k, c]) => labKomp(k, c)).join("; "), r.mw ?? "", t("rs3.pr." + r.presisi)])];
   });
 }
 function judulEx(id, j, s) { const ex = $(id); if (!ex) return; ex.querySelector(".jm-ex-j").innerHTML = j; ex.querySelector(".jm-ex-sub").innerHTML = s; }
@@ -117,7 +116,7 @@ function gambarKepala() {
     { ikon: "proyek", nilai: N(a.length), label: t("rs3.kh.dinilai") },
     { ikon: "peringatan", nilai: N(a.filter((r) => r.kelas === "tinggi" || r.kelas === "sangat-tinggi").length), label: t("rs3.kh.tinggi") },
     { ikon: "tek-bio", nilai: N(kena("hutan", (c) => c.v >= 100)), label: t("rs3.kh.hutan") },
-    { ikon: "tek-listrik", nilai: N(kena("gambut", (c) => c.v > 0)), label: t("rs3.kh.gambut") },
+    { ikon: "tek-listrik", nilai: N(kena("gambut", (c) => c.v >= 50)), label: t("rs3.kh.gambut") },
   ]);
 }
 function gambarSemua() {
@@ -137,7 +136,7 @@ function gambarLapis() {
   const per = {}; for (const r of terpilih(true)) per[r.kelas] = (per[r.kelas] || 0) + 1;
   const kl = KELAS.filter((k) => per[k] || S.kelas === k).map((k) => `<li><button type="button" class="pt2-leg" data-kl="${k}" aria-pressed="${S.kelas === k}"><i class="pt2-titik rs3-t-${k}" aria-hidden="true"></i><span>${esc(t("rs3.kelas." + k))}</span><b>${N(per[k] || 0)}</b></button></li>`).join("");
   const lp = (k) => `<li><button type="button" class="pt2-leg pt2-sak" data-lp="${k}" aria-pressed="${S.lapis[k]}"><i class="rs3-sw rs3-sw-${k}" aria-hidden="true"></i><span>${esc(t("rs3.lapis." + k))}</span></button></li>`;
-  const hk = S.lapis.hutan ? `<ul class="rs3-hk">${["konservasi", "lindung", "produksi", "konversi"].map((k) => `<li><i style="background:${WARNA_HUTAN[k]}" aria-hidden="true"></i>${esc(t("rs3.kt.hutan." + k))}</li>`).join("")}</ul>` : "";
+  const hk = S.lapis.hutan ? `<ul class="rs3-hk">${["konservasi", "lindung", "produksi", "konversi"].map((k) => `<li><i class="rs3-hk-${k}" aria-hidden="true"></i>${esc(t("rs3.kt.hutan." + k))}</li>`).join("")}</ul>` : "";
   $("rsLapisIsi").innerHTML = `<p class="pt2-leg-j">${esc(t("rs3.lapis.kelas"))}</p><ul class="pt2-leg-daftar">${kl}</ul>
     <p class="pt2-leg-j">${esc(t("rs3.lapis.j"))}</p><ul class="pt2-leg-daftar">${["hutan", "gambut", "adat", "bahaya"].map(lp).join("")}</ul>${hk}
     <p class="pt2-attr">${esc(t("rs3.lapis.attr"))}</p>`;
@@ -161,7 +160,7 @@ async function lapisGeo(k) {
   }
   if (!peta.getSource(k) && S.lapis[k]) {
     try { GEO[k] ||= await fetch(`/data/geo/risiko_${k}.geojson`, { credentials: "same-origin" }).then((r) => { if (!r.ok) throw new Error(k); return r.json(); }); } catch (e) { S.lapis[k] = false; gambarLapis(); return; }
-    const warnaFill = k === "hutan" ? ["match", ["get", "k"], ...Object.entries(WARNA_HUTAN).flat(), "#888"] : k === "gambut" ? "#8a5a2b" : "#7b4fb0";
+    const warnaFill = k === "hutan" ? ["match", ["get", "k"], ...Object.entries(WARNA_HUTAN).flatMap(([a, v]) => [a, warna(v)]), warna("--ink2")] : k === "gambut" ? warna("--lg-bronze") : warna("--tp-industri");
     peta.addSource(k, { type: "geojson", data: GEO[k] });
     peta.addLayer({ id: k, type: "fill", source: k, paint: { "fill-color": warnaFill, "fill-opacity": k === "hutan" ? 0.5 : 0.6 } }, "rs-titik");
   }
@@ -195,13 +194,14 @@ function tampilTip(r, pt) {
   tip.style.top = Math.max(8, pt.y - th - 14) + "px";
 }
 function bukaPeta() {
+  const lo = SEMUA.map((r) => r.lng), la = SEMUA.map((r) => r.lat), BD = [[Math.min(...lo) - 1, Math.min(...la) - 1], [Math.max(...lo) + 1, Math.max(...la) + 1]];
   muatMapLibre().then(() => {
-    peta = new maplibregl.Map({ container: "rsPeta", style: gaya(), bounds: BATAS_ID, fitBoundsOptions: { padding: padPeta() }, minZoom: 2, maxZoom: 11, dragRotate: false, pitchWithRotate: false, attributionControl: false });
+    peta = new maplibregl.Map({ container: "rsPeta", style: gaya(), bounds: BD, fitBoundsOptions: { padding: padPeta() }, minZoom: 2, maxZoom: 11, dragRotate: false, pitchWithRotate: false, attributionControl: false });
     peta.addControl(new maplibregl.AttributionControl({ compact: true, customAttribution: t("rs3.attr") }), "bottom-left");
     peta.addControl(new maplibregl.NavigationControl({ showCompass: false }), "bottom-right");
     peta.on("style.load", () => { petaSiap = true; pasangLapisan(); });
     new ResizeObserver(() => peta && peta.resize()).observe($("rsPeta"));
-    peta.once("idle", () => { peta.resize(); peta.fitBounds(BATAS_ID, { padding: padPeta(), duration: 0 }); });
+    peta.once("idle", () => { peta.resize(); peta.fitBounds(BD, { padding: padPeta(), duration: 0 }); });
     peta.on("click", "rs-titik", (e) => pilihProyek(e.features[0].properties.i, false));
     peta.on("mousemove", "rs-titik", (e) => { peta.getCanvas().style.cursor = "pointer"; const r = SEMUA[e.features[0].properties.i]; if (r) tampilTip(r, e.point); });
     peta.on("mouseleave", "rs-titik", () => { peta.getCanvas().style.cursor = ""; $("rsTip").hidden = true; });
@@ -217,8 +217,7 @@ function pilihProyek(i, fokus) {
   $("rsPanel").open = true;
 }
 function barKomp(k, c) {
-  const kl = c.v >= 65 ? "sangat-tinggi" : c.v >= 45 ? "tinggi" : c.v >= 25 ? "sedang" : "rendah";
-  return `<div class="rs3-bar rs3-k-${kl}"><span class="rs3-ch rs3-c-${k}">${svg(IKK[k])}${esc(t("rs3.komp." + k))}</span><i><u style="width:${Math.max(c.v, 2)}%"></u></i><b>${c.v}</b></div>`;
+  return `<span class="rs3-ch rs3-c-${k}">${svg(IKK[k])}${esc(t("rs3.komp." + k))}</span><b>${c.v}</b>`;
 }
 function gambarPanel() {
   const el = $("rsPanelIsi"), r = SEMUA[S.pilih];

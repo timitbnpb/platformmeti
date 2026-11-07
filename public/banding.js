@@ -25,6 +25,7 @@ async function muatMode(mode) {
   const h = await Promise.all(MUAT[mode].map((n) => muatData(n + ".json")));
   const D = Object.fromEntries(MUAT[mode].map((n, i) => [n, h[i]]));
   if (mode === "prov") {
+    D.radar = D.radar_kabupaten; D.rued = D.rued_capaian;
     D.daftar = D.wilayah.baris.map((b) => ({ id: b.kode, nama: b.nama, sub: b.identitas?.ibu_kota || "", terpasang: b.terpasang_mw?.nilai ?? 0 }));
   } else {
     D.baris = D.organisasi.baris;
@@ -107,7 +108,7 @@ function tabelHtml(ent) {
     const sel = ent.map((e, i) => {
       const v = nil[i], ada = typeof v === "number";
       const isi = ada ? `${menang.includes(i) ? `<span class="bd-menang" title="${esc(t("bd2.tertinggi"))}">${ikon("piala", 14)}<b>${esc(fmt(v, mt.d))}</b></span>` : `<span>${esc(fmt(v, mt.d))}</span>`}${mt.sat ? `<small>${esc(mt.sat)}</small>` : ""}` : `<span class="bd-kosong" title="${esc(t("bd2.kosong"))}" tabindex="0">-</span>`;
-      return `<td data-label="${esc(e.nama)}" class="bd-n${menang.includes(i) ? " bd-win" : ""}">${isi}</td>`;
+      return `<td data-label="${esc(e.nama)}" class="bd-n${menang.includes(i) ? " bd-win" : ""}"><span class="bd-v">${isi}</span></td>`;
     }).join("");
     return `<tr><th scope="row" class="bd-th-m" title="${esc(tipM(mt.k))}"><span class="bd-mt">${ikon(mt.ikon, 16)}<span>${esc(labelM(mt.k))}</span></span></th>${sel}</tr>`;
   }).join("");

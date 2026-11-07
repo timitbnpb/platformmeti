@@ -363,8 +363,8 @@ dialog.jm-dlg.pd-dlg{width:min(980px,calc(100vw - 24px));max-height:calc(100dvh 
 .jm-adm-baris li>.jm-tbl{flex:none}
 @media (max-width:639px){.jm-adm-baris li{flex-wrap:wrap}}
 /* pesan tanpa percakapan: satu keadaan kosong penuh lebar */
-.ps-adm.jm-adm-satu{display:block}
-.ps-adm.jm-adm-satu .ps-adm-utas{display:none}
+.psn-adm.jm-adm-satu{display:block}
+.psn-adm.jm-adm-satu .psn-adm-utas{display:none}
 /* analitik: kartu tabel mengalir dua kolom menurut tinggi isinya (tanpa ruang kosong di samping tabel pendek) */
 .sta-masonry{column-count:1;column-gap:20px}
 @media (min-width:900px){.sta-masonry{column-count:2}}

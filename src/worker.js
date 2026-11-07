@@ -21,6 +21,7 @@ import { rute as ruteWilayahKelola } from "./wilayah_kelola.js";
 import { rute as ruteDaftar } from "./daftar.js";
 import { rute as ruteKonsultasi } from "./konsultasi.js";
 import { rute as ruteKerja } from "./kerja.js";
+import { rute as ruteSurel } from "./surel.js";
 import { rute as ruteHukum } from "./hukum.js";
 import { catatHit, perbaruiRentang } from "./lalin.js";
 import * as hak from "./hak.js";
@@ -46,7 +47,7 @@ const rutePemilik = {
 };
 
 // Tabel rute dikompilasi sekali: { metode, bagian[], fn }.
-const DAFTAR = Object.entries({ ...ruteSesi, ...ruteGoogle, ...ruteAkun, ...ruteAgenda, ...ruteSosmed, ...ruteEvent, ...ruteDirektori, ...ruteFoto, ...ruteAdmin, ...ruteLangganan, ...ruteKelayakan, ...rutePustaka, ...ruteKta, ...ruteMetiWilayah, ...rutePesan, ...ruteProfilAkun, ...ruteIkuti, ...rutePortal, ...ruteWilayahKelola, ...ruteKonsultasi, ...ruteKerja, ...ruteHukum, ...ruteDaftar, ...rutePemilik }).map(([k, fn]) => {
+const DAFTAR = Object.entries({ ...ruteSesi, ...ruteGoogle, ...ruteAkun, ...ruteAgenda, ...ruteSosmed, ...ruteEvent, ...ruteDirektori, ...ruteFoto, ...ruteAdmin, ...ruteLangganan, ...ruteKelayakan, ...rutePustaka, ...ruteKta, ...ruteMetiWilayah, ...rutePesan, ...ruteProfilAkun, ...ruteIkuti, ...rutePortal, ...ruteWilayahKelola, ...ruteKonsultasi, ...ruteKerja, ...ruteSurel, ...ruteHukum, ...ruteDaftar, ...rutePemilik }).map(([k, fn]) => {
   const [metode, jalur] = k.split(" ");
   return { metode, bagian: jalur.split("/").slice(1), fn };
 });

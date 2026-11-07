@@ -150,3 +150,4 @@ body.jm-hal-dft .jm-kh .jm-kh-lead{text-align:left;hyphens:none;-webkit-hyphens:
   .jm-tabel.dft-tabel:has(td[data-l]) td::before{text-align:left}
   .dft-tabel tbody th[scope="row"]{display:block;min-width:0;padding:12px 14px;background:var(--soft-hijau)}
 }
+@media (max-width:639px){#dft-ubin>.jm-kh-ub:last-child:nth-child(odd){grid-column:1/-1}}

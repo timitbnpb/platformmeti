@@ -1,0 +1,42 @@
+/* Klaim karbon dan lahan: pil berwarna, ubin, daftar, tab Integritas. Token dari tema.css; tanpa huruf kapital penuh. */
+.kl2-pil{display:inline-flex;align-items:center;gap:6px;padding:4px 10px;border-radius:999px;font-size:13px;font-weight:600;line-height:1.3;white-space:nowrap;color:var(--ink2);background:var(--soft-hijau)}
+.kl2-ubin{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:16px;margin:0 0 24px}
+.kl2-u{display:flex;flex-direction:column;gap:6px;padding:16px;border:1px solid var(--line);border-radius:14px;background:var(--card);min-width:0}
+.kl2-u b{font-size:22px;font-variant-numeric:tabular-nums;color:var(--head);line-height:1.2}
+.kl2-u small{color:var(--ink2);font-size:13px}
+.kl2-seg{display:grid;grid-auto-flow:column;grid-auto-columns:1fr;gap:8px;margin:0 0 16px}
+.kl2-seg button{display:flex;align-items:center;justify-content:center;gap:8px;padding:10px 12px;border:1px solid var(--line);border-radius:999px;background:var(--card);color:var(--head);font:inherit;font-weight:600;cursor:pointer;min-width:0;text-align:center}
+.kl2-seg button[aria-pressed=true]{background:var(--brand);border-color:var(--brand);color:var(--on-brand)}
+.kl2-peta-w{position:relative;height:520px;border-radius:14px;overflow:hidden;border:1px solid var(--line);margin:0 0 24px}
+.kl2-peta{position:absolute;inset:0}
+.kl2-panel{position:absolute;top:12px;right:12px;width:320px;max-width:calc(100% - 24px);max-height:calc(100% - 24px);overflow:auto;background:var(--card);border:1px solid var(--line);border-radius:14px;box-shadow:0 8px 24px rgba(0,0,0,.18);z-index:3}
+.kl2-panel>h3{margin:0;padding:12px 16px;font-size:15px;color:var(--head);cursor:grab;border-bottom:1px solid var(--line)}
+.kl2-leg{display:flex;flex-wrap:wrap;gap:8px;padding:12px 16px}
+.kl2-baris{display:grid;grid-template-columns:28px minmax(0,1fr) auto;gap:12px;align-items:center;padding:10px 16px;border-top:1px solid var(--line)}
+.kl2-no{width:28px;height:28px;border-radius:50%;display:grid;place-items:center;background:var(--ok-bg);color:var(--ok);font-weight:700;font-size:13px}
+.kl2-nm{min-width:0;display:flex;flex-direction:column;gap:4px}.kl2-nm b{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;color:var(--head);font-weight:600}
+.kl2-nm img{width:20px;height:20px;object-fit:contain;vertical-align:middle;margin-right:6px}
+.kl2-ha{font-variant-numeric:tabular-nums;text-align:right;font-weight:600;color:var(--head)}
+.kl2-dua{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}
+.kl2-kartu{border:1px solid var(--line);border-radius:14px;background:var(--card);overflow:hidden}
+.kl2-kartu>h3{margin:0;padding:14px 16px;font-size:15px;color:var(--head);display:flex;align-items:center;gap:8px}
+.kl2-pas{display:flex;flex-wrap:wrap;align-items:center;gap:8px;padding:12px 16px;border-top:1px solid var(--line);justify-content:space-between}
+.kl2-pas span.kl2-x{color:var(--ink2)}
+.kl2-hip{color:var(--warn);background:var(--warn-bg);border-radius:999px;padding:2px 8px;font-size:12px;font-weight:700}
+.kl2-kos{padding:20px 16px;color:var(--ink2)}
+.kl2-pop{font-size:13px;display:flex;flex-direction:column;gap:6px;max-width:260px}
+/* tab Integritas */
+.kl2-saring{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin:0 0 16px}
+.kl2-saring label{display:flex;flex-direction:column;gap:6px;font-size:13px;color:var(--ink2)}
+.kl2-saring select{padding:10px 12px;border:1px solid var(--line);border-radius:10px;background:var(--card);color:var(--head);font:inherit}
+.kl2-tbl{width:100%;table-layout:fixed;border-collapse:collapse}
+.kl2-tbl th{background:linear-gradient(90deg,var(--brand),var(--brand2));color:var(--on-brand);text-align:center;padding:12px 10px;font-weight:600;text-transform:none}
+.kl2-tbl td{padding:12px 10px;border-bottom:1px solid var(--line);vertical-align:top;overflow-wrap:anywhere}
+.kl2-tbl tr[data-id]{cursor:pointer}.kl2-tbl tr[data-id]:hover td{background:var(--ok-bg)}
+.kl2-bn{display:flex;flex-wrap:wrap;gap:6px}
+.kl2-bd{border:0;border-radius:16px;padding:0;max-width:min(680px,94vw);width:100%;background:var(--card);color:var(--head)}
+.kl2-bd::backdrop{background:rgba(0,0,0,.5)}.kl2-bd article{padding:24px;display:flex;flex-direction:column;gap:16px}
+.kl2-fk{border:1px solid var(--line);border-radius:12px;padding:14px;display:flex;flex-direction:column;gap:8px}
+.kl2-fk p{margin:0}.kl2-fk small{color:var(--ink2)}
+@media(max-width:760px){.kl2-dua,.kl2-saring{grid-template-columns:1fr}.kl2-peta-w{height:420px}.kl2-panel{position:static;width:auto;max-width:none;max-height:none;margin:0 0 16px}.kl2-seg{grid-auto-flow:row}.kl2-tbl,.kl2-tbl tbody,.kl2-tbl tr,.kl2-tbl td{display:block}.kl2-tbl thead{display:none}.kl2-tbl tr{border:1px solid var(--line);border-radius:12px;margin:0 0 12px;padding:6px}}
+.kl2-pil[data-l=hti]{color:var(--tp-bio);background:color-mix(in srgb,var(--tp-bio) 14%,transparent)}.kl2-pil[data-l=hph]{color:var(--tp-efisiensi);background:color-mix(in srgb,var(--tp-efisiensi) 14%,transparent)}.kl2-pil[data-l=re]{color:var(--tp-hidrogen);background:color-mix(in srgb,var(--tp-hidrogen) 14%,transparent)}.kl2-pil[data-l=sawit]{color:var(--tp-panas);background:color-mix(in srgb,var(--tp-panas) 14%,transparent)}.kl2-pil[data-l=mangrove]{color:var(--tp-bayu);background:color-mix(in srgb,var(--tp-bayu) 14%,transparent)}.kl2-pil[data-l=lindung]{color:var(--tp-simpan);background:color-mix(in srgb,var(--tp-simpan) 14%,transparent)}.kl2-pil[data-l=produksi]{color:var(--tp-sampah);background:color-mix(in srgb,var(--tp-sampah) 14%,transparent)}.kl2-pil[data-l=adat]{color:var(--tp-nuklir);background:color-mix(in srgb,var(--tp-nuklir) 14%,transparent)}.kl2-t-tinggi{color:var(--bad);background:var(--bad-bg)}.kl2-t-perhatian{color:var(--warn);background:var(--warn-bg)}.kl2-t-info{color:var(--info);background:var(--info-bg)}.kl2-atas{margin-top:24px}.kl2-polos{border:0}.kl2-h2{margin:0}.kl2-k1{width:34%}.kl2-k2{width:18%}.kl2-k3{width:48%}

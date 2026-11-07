@@ -20,7 +20,7 @@
 .tn-kolom::after{content:"";position:absolute;inset:0;z-index:0;pointer-events:none;background:radial-gradient(ellipse 70% 75% at 15% 85%,color-mix(in srgb,var(--brand) 92%,transparent),color-mix(in srgb,var(--brand) 55%,transparent) 55%,transparent)}
 .tn-hero-isi{width:100%;display:grid;gap:16px;justify-items:start}
 .tn-hero h1{font:700 var(--t-h1)/var(--lh-judul) var(--display);letter-spacing:-.01em;color:var(--on-brand)}
-.tn-lead{font-size:var(--t-h3);line-height:var(--lh-isi);color:var(--ink2);text-align:justify;hyphens:auto;max-width:72ch}
+.tn-lead{font-size:var(--t-h3);line-height:var(--lh-isi);color:var(--ink2);text-align:left;hyphens:manual;max-width:72ch}
 .tn-hero-lead{color:var(--on-brand);opacity:.94}
 .tn-aksi{display:flex;flex-wrap:wrap;gap:12px}
 .tn-tbl{display:inline-flex;align-items:center;justify-content:center;min-height:var(--target);padding:0 22px;border-radius:var(--r-pil);font:700 var(--t-body)/1 var(--font);border:1.5px solid transparent;transition:background-color .15s,border-color .15s,color .15s}
@@ -51,7 +51,7 @@
 .tn-lanjut{color:var(--accent);font-weight:600}
 .tn-lanjut::after{content:" \2192"}
 .tn-lanjut:hover{color:var(--head)}
-.tn-isi{color:var(--ink2);line-height:var(--lh-isi);text-align:justify;hyphens:auto}
+.tn-isi{color:var(--ink2);line-height:var(--lh-isi);text-align:left;hyphens:manual}
 .tn-tengah{text-align:center}
 .tn-sub.tn-tengah{justify-content:center}
 .tn-pangkal{margin-top:28px}
@@ -158,7 +158,7 @@
 .tn-q-t{flex:1;min-width:0}
 .tn-faq summary::after{content:"+";margin-left:auto;flex:none;width:28px;height:28px;display:grid;place-items:center;border-radius:50%;background:var(--soft-hijau);color:var(--accent);font:400 var(--t-h2)/1 var(--font)}
 .tn-faq details[open] summary::after{content:"\2212";background:var(--accent);color:var(--on-accent)}
-.tn-q-a{padding:0 18px 16px 66px;color:var(--ink2);line-height:var(--lh-isi);text-align:justify;hyphens:auto}
+.tn-q-a{padding:0 18px 16px 66px;color:var(--ink2);line-height:var(--lh-isi);text-align:left;hyphens:manual}
 .tn-ada{display:grid;gap:14px;padding:clamp(18px,3vw,26px);border:1px solid var(--line);border-top:4px solid var(--accent);border-radius:var(--r-lg);background:var(--card);box-shadow:var(--shadow);scroll-margin-top:calc(var(--top) + 8px)}
 .tn-ada-ik{display:grid;place-items:center;width:48px;height:48px;border-radius:50%;background:var(--soft-hijau);color:var(--accent)}
 .tn-ada h3{font:700 var(--t-h2)/var(--lh-judul) var(--display);color:var(--head);margin:0}
@@ -384,7 +384,7 @@
 .tn-lebar{padding-bottom:0}
 .tn-lebar-isi{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:clamp(20px,3vw,40px);align-items:stretch;padding-bottom:clamp(20px,3vw,28px)}
 .tn-lebar-teks{display:flex;flex-direction:column;gap:14px;align-items:flex-start}
-.tn-lebar-teks .tn-isi{margin:0;text-align:justify;hyphens:auto}
+.tn-lebar-teks .tn-isi{margin:0;text-align:left;hyphens:manual}
 .tn-tbl-hijau{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:44px;margin-top:auto;padding:0 22px;border-radius:var(--r-pil);background:var(--accent);color:var(--on-accent);font:700 var(--t-tombol)/1 var(--font);text-decoration:none}
 .tn-tbl-hijau:hover{background:var(--brand)}
 .tn-tbl-hijau:focus-visible{outline:3px solid var(--fokus);outline-offset:2px}
@@ -412,7 +412,7 @@
 .tn-pk-kanan{display:grid;gap:14px;align-content:start;min-width:0}
 .tn-pb h4{display:flex;align-items:center;gap:8px;margin:0 0 10px;font:700 var(--t-h3)/var(--lh-judul) var(--display);color:var(--head)}
 .tn-pb h4 .jm-ik{color:var(--accent)}
-.tn-pb p{margin:0;text-align:justify;hyphens:auto}
+.tn-pb p{margin:0;text-align:left;hyphens:manual}
 .tn-pk-jejak{list-style:none;margin:0;padding:0;display:grid;gap:0;position:relative}
 .tn-pk-r{position:relative;display:grid;grid-template-columns:44px minmax(0,1fr);gap:12px;padding-bottom:16px}
 .tn-pk-r:not(:last-child)::before{content:"";position:absolute;left:21px;top:46px;bottom:2px;width:2px;background:var(--line)}
@@ -613,3 +613,6 @@ span.tn-kp-b{cursor:default}
 .tn-bagan-bg .tn-kisi>.tn-grp>.tn-fkg:not(.tn-dg){align-content:start!important;flex:none!important;margin-top:4px}
 .tn-bagan-bg .tn-kisi>.tn-grp>.tn-av-kisi,.tn-bagan-bg .tn-kisi>.tn-grp>.tn-lr+.tn-av-kisi{margin-top:12px!important;align-content:start;justify-content:center}
 .tn-bagan-bg .tn-kisi>.tn-grp>.tn-av-kisi:first-of-type{margin-top:4px!important}
+/* bidang kerja: kartu satu baris sama tinggi (tidak ada kartu pendek dengan ruang kosong di bawah) */
+.tn-bagan-bg .tn-kisi.tn-kisi-b{align-items:stretch!important}
+.tn-bagan-bg .tn-kisi-b>.tn-grp>.tn-fkg:not(.tn-dg){flex:1!important;align-content:center!important}

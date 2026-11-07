@@ -1,0 +1,66 @@
+{
+ "_catatan": "Rantai pasok per segmen, urut hulu ke hilir. Pemain per sub-segmen = seed.sub. Sub tanpa pemain, harga, kapasitas, dan pemain lokal BELUM dipanen (butuh sumber); jangan diisi tanpa sumber.",
+ "segmen": {
+  "bayu": [
+   "bahan-baku-komposit",
+   "bilah",
+   "menara",
+   "bantalan",
+   "gearbox",
+   "generator",
+   "nacelle",
+   "turbin-lengkap",
+   "kapal-instalasi",
+   "pengembang-operator"
+  ],
+  "panas-bumi": [
+   "pengeboran-sumur",
+   "pipa-separator",
+   "turbin-pembangkit",
+   "binary-orc",
+   "pengembang-operator"
+  ],
+  "hidro": [
+   "pintu-air",
+   "penstock",
+   "turbin",
+   "generator",
+   "pltmh"
+  ],
+  "hidrogen": [
+   "stack-elektroliser",
+   "bop",
+   "kompresor",
+   "tangki",
+   "sistem-lengkap"
+  ],
+  "jaringan": [
+   "transformator",
+   "hvdc",
+   "switchgear",
+   "bess-integrasi"
+  ],
+  "biomassa": [
+   "bahan-baku",
+   "pelet-briket",
+   "pengolah",
+   "boiler",
+   "gasifier",
+   "turbin",
+   "cofiring"
+  ],
+  "biogas": [
+   "pemasok-pome",
+   "digester",
+   "gas-engine",
+   "pemurnian-biometana"
+  ],
+  "biofuel": [
+   "bahan-baku",
+   "fame",
+   "bioavtur",
+   "bioetanol",
+   "enzim-katalis"
+  ]
+ }
+}

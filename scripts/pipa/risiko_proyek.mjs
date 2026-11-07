@@ -26,13 +26,15 @@ export function skor(m) {
     const ks = m.hutan.map(kelasHutan).filter(Boolean), v = ks.length ? Math.max(...ks.map((k) => NILAI_HUTAN[k])) : 0;
     komp.hutan = { v, ket: ks.length ? [...new Set(ks)].sort((a, b) => NILAI_HUTAN[b] - NILAI_HUTAN[a])[0] : 'apl' };
   } else keluar.push('hutan');
-  if (typeof m.gambut === 'boolean') komp.gambut = { v: m.gambut ? 100 : 0, ket: m.gambut ? 'gambut' : 'tidak' };
+  if (typeof m.gambut === 'number') komp.gambut = { v: Math.round((m.gambut / 255) * 100), ket: m.gambut >= 128 ? 'gambut' : m.gambut > 0 ? 'rendah' : 'tidak' }; // alfa ubin GFW = intensitas 0-255
   else keluar.push('gambut');
   // poligon LandMark Indonesia belum lengkap: tidak ada poligon bukan bukti tidak ada wilayah adat, jadi hanya kena = komponen
   if (m.adat && m.adat.length) komp.adat = { v: 100, ket: m.adat[0].nama || 'adat' };
   else keluar.push('adat');
-  const b = m.bahaya && m.bahaya.multi;
-  if (typeof b === 'number') komp.bahaya = { v: Math.round(b * 100), ket: 'multi', rinci: Object.fromEntries(Object.entries(m.bahaya).filter(([k, v]) => k !== 'multi' && v != null)) };
+  const tunggal = m.bahaya ? Object.entries(m.bahaya).filter(([k, v]) => k !== 'multi' && typeof v === 'number') : [];
+  // indeks multi-bahaya InaRISK bila ada; bila layanan tak menjawab, rata-rata lapis tunggal yang menjawab (ket 'rata-rata')
+  const b = m.bahaya && typeof m.bahaya.multi === 'number' ? m.bahaya.multi : tunggal.length ? tunggal.reduce((a, [, v]) => a + v, 0) / tunggal.length : null;
+  if (typeof b === 'number') komp.bahaya = { v: Math.round(b * 100), ket: typeof m.bahaya.multi === 'number' ? 'multi' : 'rata-rata', rinci: Object.fromEntries(tunggal) };
   else keluar.push('bahaya');
   const ada = Object.keys(komp), w = ada.reduce((s, k) => s + BOBOT[k], 0);
   if (ada.length < 2) return { skor: null, kelas: null, komponen: komp, dikeluarkan: keluar };
@@ -57,9 +59,9 @@ export function bangun() {
   return {
     lapis: 'risiko_proyek', dibangun_pada: new Date().toISOString().slice(0, 10), tanggal_ambil: mentah.tanggal_ambil, tingkat_bukti: 'kajian',
     meta: {
-      jumlah: baris.length, dinilai: dinilai.length, bobot: BOBOT, ambang: Object.fromEntries(AMBANG), status_bobot: 'Hipotesis',
+      jumlah: baris.length, tak_dinilai: terpadu.baris.filter((r) => !r.ragu && !mentah.titik[r.id]).length, dinilai: dinilai.length, bobot: BOBOT, ambang: Object.fromEntries(AMBANG), status_bobot: 'Hipotesis',
       nilai_hutan: NILAI_HUTAN,
-      metode: 'Skor 0-100 = rata-rata berbobot komponen yang punya data: kawasan hutan (konservasi dan lindung 100, produksi tetap dan terbatas 50, produksi konversi 30, areal penggunaan lain 0), gambut (ada 100), wilayah adat LandMark (kena 100; tanpa poligon tidak dihitung karena cakupan belum lengkap), indeks multi-bahaya InaRISK (0-1 dikali 100). Komponen tanpa data dikeluarkan dan bobot sisa dinormalkan; minimal dua komponen. Bobot dan ambang kelas Hipotesis; hasil EST: titik berpresisi kabupaten (pusat perkiraan) dapat meleset beberapa kilometer, dan titik berpresisi provinsi tidak dinilai.',
+      metode: 'Skor 0-100 = rata-rata berbobot komponen yang punya data: kawasan hutan (konservasi dan lindung 100, produksi tetap dan terbatas 50, produksi konversi 30, areal penggunaan lain 0), gambut (intensitas piksel GFW 0-100), wilayah adat LandMark (kena 100; tanpa poligon tidak dihitung karena cakupan belum lengkap), indeks multi-bahaya InaRISK (0-1 dikali 100). Komponen tanpa data dikeluarkan dan bobot sisa dinormalkan; minimal dua komponen. Bobot dan ambang kelas Hipotesis; hasil EST: titik berpresisi kabupaten (pusat perkiraan) dapat meleset beberapa kilometer, dan titik berpresisi provinsi tidak dinilai.',
       sumber: [
         { id: 'hutan', judul: 'Kawasan hutan Indonesia (KLHK), ubin vektor idn_forest_area v201709', penerbit: 'KLHK via Global Forest Watch', url: mentah.lapis.hutan.url, lisensi: mentah.lapis.hutan.lisensi },
         { id: 'gambut', judul: 'Global peatland extent (gfw_peatlands v20230302)', penerbit: 'Global Forest Watch / Greifswald Mire Centre dan mitra', url: mentah.lapis.gambut.url, lisensi: mentah.lapis.gambut.lisensi },

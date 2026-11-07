@@ -191,7 +191,7 @@ function pkBaru() {
     <button type="button" class="jm-rg-nm" data-id="${esc(r.id)}">${esc(namaRegulasi(r))}</button><span class="jm-rg-jd">${esc(r.judul)}</span>
     ${r.instansi_penerbit ? `<span class="jm-rg-meta">${penerbitHtml(r.instansi_penerbit, 24)}</span>` : ""}</li>`;
   return pkEx("ex-baru", "tahun", t("reg.pk.baru"), t("reg.pk.baru.sub", { n: angka(HARI), tanggal: tanggal(akhir) }),
-    baru.length ? `<ul class="jm-rg-baru-daftar">${baru.map(kartu).join("")}</ul>` : `<p class="jm-pk-kosong">${esc(t("reg.pk.baru.kosong"))}</p>`);
+    baru.length ? `<ul class="jm-rg-baru-daftar jm-rg-k${[4, 3, 2].reduce((a, c) => ((c - (baru.length % c)) % c < (a - (baru.length % a)) % a ? c : a), 4)}">${baru.map(kartu).join("")}</ul>` : `<p class="jm-pk-kosong">${esc(t("reg.pk.baru.kosong"))}</p>`);
 }
 const HUB_IK = { mengubah: "ubah", mencabut: "silang" };
 function pkUbah() {

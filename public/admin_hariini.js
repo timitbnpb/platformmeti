@@ -24,11 +24,11 @@ export function panelHariIni(panel, { tabAda }) {
     .then(([r, kes, l7, l24]) => nanti(() => { if (isi.isConnected) isi.innerHTML = r.galat ? keadaan(r.galat) : gambar(r, kes, l7, l24); }));
 
   function gambar(r, kes, l7, l24) {
-    const a = r.antrean;
+    const a = r.antrean || {};
     const total = ANTREAN.reduce((s, [k]) => s + (a[k] || 0), 0);
     const u = ANTREAN.filter(([, , ke]) => tabAda(ke)).map(([k, ik, ke]) => ubin(ik, a[k] || 0, t("adm.hi.a." + k), ke, a[k])).join("");
     const antrean = kartu("lonceng", t("adm.hi.antrean"), `<p class="jm-bantu">${esc(total ? t("adm.hi.total", { n: angka(total) }) : t("adm.hi.bersih"))}</p><ul class="jm-hi-grid jm-hi-g7">${u}</ul>`);
-    const p = r.pengunjung24;
+    const p = r.pengunjung24 || {};
     const seri = (l7 && l7.seri) || [], kini = seri.at(-1), lalu = seri.at(-2);
     const teratas = l24 && l24.dim && l24.dim.halaman && l24.dim.halaman[0];
     const tamu = kartu("linimasa", t("adm.hi.tamu"), `<ul class="jm-hi-grid jm-hi-g4">${ubin("orang", p.orang, t("adm.hi.orang"), "statistik", p.orang)}${ubin("info", p.ai, t("adm.hi.ai"), "statistik", p.ai)}

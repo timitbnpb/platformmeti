@@ -1,0 +1,23 @@
+{
+ "tanggal_periksa": "2026-11-08",
+ "negara_nama": {"JP":"Jepang","CN":"China","DE":"Jerman","CH":"Swiss","DK":"Denmark","NL":"Belanda","KR":"Korea Selatan","SG":"Singapura","FR":"Prancis","US":"Amerika Serikat","FI":"Finlandia","AT":"Austria","BE":"Belgia"},
+ "pendanaan_pendamping": {
+  "JP": ["JICA", "JBIC", "NEXI"],
+  "DE": ["KfW IPEX-Bank", "Euler Hermes (kredit ekspor Jerman)"],
+  "KR": ["KEXIM", "K-SURE"],
+  "CN": ["China Exim Bank", "China Development Bank", "Sinosure"],
+  "DK": ["EKF (Eksport Kredit Fonden)"],
+  "CH": ["SERV (Swiss Export Risk Insurance)"],
+  "FI": ["Finnvera"],
+  "AT": ["OeKB"],
+  "FR": ["Bpifrance Assurance Export"],
+  "US": ["US EXIM", "DFC"]
+ },
+ "pendanaan_catatan": "Daftar lembaga kredit ekspor/ODA yang lazim mendampingi ekspor teknologi dari tiap negara. Keterlibatannya pada proyek WTE Indonesia BELUM bersumber; jangan dibaca sebagai fakta proyek.",
+ "alur_impor": {"status": "belum-bersumber", "catatan": "Alur pengiriman/impor komponen (grate, boiler, FGT, turbin) ke Indonesia belum ditemukan pada sumber terbuka yang dibaca; butuh dokumen lelang, laporan EPC, atau data kepabeanan."},
+ "hulu": [
+  {"segmen": "pengumpul-pemilah", "uraian": "Pengumpul dan pemilah sampah kota (bank sampah, TPS3R, pemulung terorganisasi) yang memasok umpan; volume minimal 1.000 ton/hari per PSEL menurut Perpres 109/2025 Pasal 4.", "pelaku": [], "sumber": {"url": "https://peraturan.bpk.go.id/Details/334718", "tingkat_bukti": "resmi", "tanggal": "2026-11-08"}},
+  {"segmen": "produsen-rdf-srf", "uraian": "Produsen RDF/SRF dari sampah kota (pengolahan di TPA/TPST).", "pelaku": [], "status": "perlu-sumber"},
+  {"segmen": "pembeli-rdf", "uraian": "Pembeli RDF sebagai bahan bakar alternatif.", "pelaku": [{"nama": "Semen Indonesia (SIG)", "status": "disebut pemilik 2026-11-08, belum bersumber"}, {"nama": "Indocement", "status": "disebut pemilik 2026-11-08, belum bersumber"}, {"nama": "Solusi Bangun Indonesia", "status": "disebut pemilik 2026-11-08, belum bersumber"}], "harga_rdf_per_ton": null, "harga_catatan": "belum bersumber; jangan diisi tanpa dokumen kontrak atau pernyataan resmi"}
+ ]
+}

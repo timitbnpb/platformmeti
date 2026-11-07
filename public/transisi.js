@@ -13,6 +13,8 @@ import { kolom, batang, dumbbell } from "/grafik.js";
 import { pilStatus } from "/inti/ikon_tek.js";
 import { geoProvinsi, jalurPerProvinsi } from "/inti/peta_indonesia.js";
 import { geserPanel } from "/inti/panel_geser.js";
+import { PROV } from "/inti/prov_singkat.js";
+import "/inti/tip_grafik.js";
 import * as H from "/transisi_hitung.js";
 import { pasangLinimasa } from "/peristiwa_komitmen.js";
 
@@ -300,6 +302,7 @@ function tPeta() {
     sumber: srcRuptl("Tabel 5.82-5.122 (RE Base)"),
   });
 }
+const NP = Object.fromEntries(Object.entries(PROV).map(([k, v]) => [k, v[0]]));
 async function petaSvg() {
   const g = await geoProvinsi();
   const el = $("trSvg");
@@ -307,7 +310,7 @@ async function petaSvg() {
   const W = 900, Hh = 340;
   D.jalur ??= jalurPerProvinsi(g, W, Hh).filter((j) => j.d);
   const nama = (k) => D.kelas ? D.kelas[D.provSis[k]] ?? -1 : -1;
-  el.innerHTML = `<svg viewBox="0 0 ${W} ${Hh}" role="group" aria-label="${esc(t("tr.peta.label"))}" focusable="false">${D.jalur.map((j) => `<path tabindex="0" role="button" class="jm-tr-prov k${nama(j.kode)}${D.provSis[j.kode] === ST.sistem ? " pilih" : ""}" data-k="${esc(j.kode)}" d="${j.d}"><title>${esc(D.provSis[j.kode] ? D.sisById[D.provSis[j.kode]].nama : t("tr.peta.tanpa"))}</title></path>`).join("")}</svg>`;
+  el.innerHTML = `<svg class="jm-gx" viewBox="0 0 ${W} ${Hh}" role="group" aria-label="${esc(t("tr.peta.label"))}" focusable="false">${D.jalur.map((j) => `<path tabindex="0" role="button" class="jm-tr-prov k${nama(j.kode)}${D.provSis[j.kode] === ST.sistem ? " pilih" : ""}" data-k="${esc(j.kode)}" d="${j.d}"><title>${esc(NP[j.kode] || j.kode)}: ${esc(D.provSis[j.kode] ? D.sisById[D.provSis[j.kode]].nama + ", " + num(METRIK[ST.segmen].f(D.sisById[D.provSis[j.kode]]), METRIK[ST.segmen].d) + "%" : t("tr.peta.tanpa"))}</title></path>`).join("")}</svg>`;
 }
 function panelSistem() {
   const s = D.sisById[ST.sistem], el = $("trPanel");

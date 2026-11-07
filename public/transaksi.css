@@ -1,0 +1,44 @@
+/* /transaksi: warna jenis/teknologi/status (token tema saja), sel pihak berlogo, peta asal modal, saringan ujung ke ujung. */
+.tr3-s-ma{color:var(--data1)}.tr3-s-ipo{color:var(--data2)}.tr3-s-obligasi{color:var(--data3)}.tr3-s-pembiayaan{color:var(--data4)}.tr3-s-pma{color:var(--data5)}.tr3-s-jv{color:var(--tp-hidrogen)}
+.tr3-s-surya{color:var(--tp-surya)}.tr3-s-bayu{color:var(--tp-bayu)}.tr3-s-hidro{color:var(--tp-hidro)}.tr3-s-panas-bumi{color:var(--tp-panas)}.tr3-s-bioenergi{color:var(--tp-bio)}.tr3-s-campuran{color:var(--tp-jaringan)}.tr3-s-neg{color:var(--data2)}
+.tr3-jn-ma{--sk:var(--data1)}.tr3-jn-ipo{--sk:var(--data2)}.tr3-jn-obligasi{--sk:var(--data3)}.tr3-jn-pembiayaan{--sk:var(--data4)}.tr3-jn-pma{--sk:var(--data5)}.tr3-jn-jv{--sk:var(--tp-hidrogen)}
+.tr3-st-selesai{--sk:var(--ok)}.tr3-st-diumumkan{--sk:var(--info)}.tr3-st-batal{--sk:var(--bad)}
+.tr3-saring{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-bottom:24px}
+.tr3-f{display:block;min-width:0}.tr3-f .pc{width:100%;justify-content:center}
+.tr3-peta{height:460px;border:1px solid var(--line);border-radius:var(--r);overflow:hidden;background:var(--soft-hijau);margin-bottom:24px}
+.tr3-mk{display:grid;place-items:center;cursor:pointer;outline-offset:3px}
+.tr3-mk img{width:100%;height:100%;border-radius:50%;object-fit:cover;border:2px solid var(--card);box-shadow:0 2px 8px rgb(0 0 0 / .25)}
+.tr3-mk b{position:absolute;right:-6px;top:-6px;min-width:20px;height:20px;padding:0 5px;border-radius:10px;display:grid;place-items:center;background:var(--brand);color:var(--on-brand);font:700 var(--t-kecil)/1 var(--font)}
+.tr3-mk-id{--w:1}.tr3-mk-id img{object-fit:contain;border-radius:6px;background:var(--card)}
+.tr3-mk-id b{position:static;margin-top:4px;border-radius:var(--r-pil);background:var(--card);color:var(--ink);border:1px solid var(--line)}
+.tr3-tipm{display:grid;gap:6px;min-width:180px;font:400 var(--t-kecil)/var(--lh-isi) var(--font);color:var(--ink)}
+.tr3-tipm b{display:flex;align-items:center;gap:8px;font-weight:600}.tr3-tipm span{display:flex;justify-content:space-between;gap:16px}.tr3-tipm em{font-style:normal;color:var(--ink2)}
+.tr3-pop .maplibregl-popup-content{background:var(--card);color:var(--ink);border-radius:var(--r);padding:12px 14px;box-shadow:var(--shadow)}
+.tr3-fl{border-radius:2px;vertical-align:middle;flex:none}
+.tr3-lg{border-radius:4px;object-fit:contain;background:var(--card);flex:none}
+.tr3-tx{display:grid;gap:8px;min-width:0}.tr3-tx>b{font-weight:600;color:var(--ink);overflow-wrap:anywhere}
+.tr3-pr{display:grid;grid-template-columns:72px minmax(0,1fr);gap:8px;align-items:start;font:400 var(--t-kecil)/var(--lh-isi) var(--font)}
+.tr3-pr>em{font-style:normal;color:var(--ink2)}.tr3-pr>span{display:flex;flex-wrap:wrap;gap:4px 12px;min-width:0}.tr3-pr small{color:var(--ink2)}
+.tr3-pn{display:inline-flex;align-items:center;gap:6px;min-width:0}.tr3-pt{color:var(--ink);text-decoration:none}.tr3-pt:hover .tr3-pn>span{color:var(--accent)}
+.tr3-pjs{display:flex;gap:8px;flex-wrap:wrap}
+.tr3-nl{display:grid;gap:4px;justify-items:end}.tr3-nl small{color:var(--ink2);font:400 var(--t-kecil)/var(--lh-rapat) var(--font)}
+.tr3-sm{display:inline-flex;align-items:center;gap:8px;flex-wrap:wrap}.tr3-src{overflow-wrap:anywhere}
+.tr3-tg{white-space:nowrap;font-variant-numeric:tabular-nums}
+.tr3-b-batal td{opacity:.75}
+.tr3-neg{margin-top:8px}
+@media (max-width:640px){.tr3-saring{grid-template-columns:repeat(2,minmax(0,1fr))}.tr3-peta{height:340px}.tr3-pr{grid-template-columns:64px minmax(0,1fr)}.tr3-nl{justify-items:start}}
+
+.jm-kh-ubin{grid-template-columns:repeat(2,minmax(0,1fr))!important}
+@media (min-width:1100px){#tb table.jm-tabel{table-layout:fixed;width:100%}#tb th:nth-child(1){width:9%}#tb th:nth-child(2){width:12%}#tb th:nth-child(3){width:28%}#tb th:nth-child(4){width:10%}#tb th:nth-child(5){width:13%}#tb th:nth-child(6){width:6%}#tb th:nth-child(7){width:10%}#tb th:nth-child(8){width:11%}}
+.tr3-sm{display:grid;gap:6px;justify-items:start}.tr3-src{overflow-wrap:anywhere}
+/* 768-1099px: tabel delapan kolom tak muat, pakai mode kartu bawaan (jm.css hanya sampai 767px) */
+@media (min-width:768px) and (max-width:1099px){
+  #tb .jm-tabel,#tb .jm-tabel tbody,#tb .jm-tabel tr,#tb .jm-tabel td{display:block;table-layout:auto}
+  #tb .jm-gulir{border:0}
+  #tb .jm-tabel thead{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+  #tb .jm-tabel tr{margin-bottom:16px;border:1px solid var(--line-cell);border-radius:var(--r-sm);overflow:hidden;background:var(--card)}
+  #tb .jm-tabel td{display:grid;grid-template-columns:120px minmax(0,1fr);gap:12px;align-items:center;border-bottom:0;border-top:1px solid var(--line-cell);background:transparent!important;text-align:left;padding:12px 16px}
+  #tb .jm-tabel td:first-child{border-top:0}
+  #tb .jm-tabel td::before{content:attr(data-label);font:600 var(--t-kecil)/var(--lh-rapat) var(--font);color:var(--ink2)}
+  #tb .tr3-nl{justify-items:start}
+}

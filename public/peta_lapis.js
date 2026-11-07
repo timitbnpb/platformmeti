@@ -23,7 +23,7 @@ export const labTek = (k) => (k === "batubara" ? t("pn2.tek.batubara") : ada("pj
 const namaProv = (k) => PROV[k]?.[0] || "";
 const lambang = (k, u = 32) => (PROV[k] ? `<img class="pn-lb" src="/img/provinsi/${esc(k)}.png" width="${u}" height="${u}" alt="" loading="lazy" decoding="async" data-galat="hapus">` : "");
 const urlAman = (u) => (/^https?:\/\//i.test(u || "") ? u : "");
-const baris = (kunci, v) => (v == null || v === "" ? "" : `<div><dt>${esc(t(kunci))}</dt><dd>${v}</dd></div>`);
+const baris = (kunci, v) => (v == null || v === false || v === "" ? "" : `<div><dt>${esc(t(kunci))}</dt><dd>${v}</dd></div>`);
 const taut = (href, kunci, ik, luar) => `<a class="pn-taut" href="${esc(href)}"${luar ? ' target="_blank" rel="noopener noreferrer"' : ""}>${ikon(ik, 14)}<span>${esc(t(kunci))}</span></a>`;
 const kartu = ({ logo = "", judul, sub = "", pil = "", rows = "", links = "" }) =>
   `<div class="pn-pop"><header class="pn-pop-h">${logo}<div><b>${judul}</b>${sub ? `<small>${sub}</small>` : ""}</div></header>${pil ? `<div class="pn-pop-pil">${pil}</div>` : ""}${rows ? `<dl class="pn-pop-d">${rows}</dl>` : ""}${links ? `<nav class="pn-pop-t">${links}</nav>` : ""}</div>`;
@@ -151,6 +151,15 @@ const GARIS = {
   },
 };
 
+/* ---------- poligon: kawasan hutan, gambut, wilayah adat, konsesi ---------- */
+const POLIGON = {
+  poligon: {
+    baca: (d) => d,
+    popup: (p) => kartu({ logo: ikon("perisai", 24), judul: esc(p.n || t("pn2.pg." + (p.k || p.j))), sub: esc(p.n ? t("pn2.pg." + p.j) : t("pn2.pg.kawasan")), rows: baris("pn2.pg.jenis", esc(t("pn2.pg." + (p.k || p.j)))) + baris("pn2.pg.luas", p.ha != null && `${esc(N(p.ha))} ha`) }),
+    tip: (p) => `<b>${esc(p.n || t("pn2.pg." + (p.k || p.j)))}</b><span>${esc(t("pn2.pg." + (p.j || p.k)))}</span>`,
+  },
+};
+
 /* ---------- koroplet per provinsi ---------- */
 const rataRata = (a) => (a.length ? a.reduce((s, x) => s + x, 0) / a.length : null);
 function koro(peta, ramp, des, satuan, tambah = {}) {
@@ -229,7 +238,7 @@ const KORO = {
 };
 export const kosongKoro = (k) => !k.peta.size;
 
-export const ADAPTER = { titik: TITIK, garis: GARIS, koroplet: KORO };
+export const ADAPTER = { titik: TITIK, garis: GARIS, poligon: POLIGON, koroplet: KORO };
 export const adapterDari = (L) => ADAPTER[L.jenis] && ADAPTER[L.jenis][L.adapter];
 export const teksNilai = fmtV;
 export const popupProvinsiTanpaNilai = (kode) => kartu({ logo: lambang(kode), judul: esc(namaProv(kode) || kode), sub: esc(t("pn2.provinsi")), links: linkProv(kode) + taut("/peluang?prov=" + kode, "pn2.t.peluang", "kompas") + taut("/pelacak-proyek?prov=" + kode, "pn2.t.pelacak", "petir") });

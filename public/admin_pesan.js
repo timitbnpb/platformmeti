@@ -16,7 +16,7 @@ export function panelPesan(panel) {
   panel.innerHTML = `<header class="jm-adm-bhd"><div><h3>${esc(t("adm.ps.j"))}</h3><p class="jm-bantu">${esc(t("adm.ps.catatan"))}</p></div></header>
     <div class="jm-bar jm-adm-bar1"><select data-ikon="status" class="jm-pilih" id="psfStatus" aria-label="${esc(t("adm.ps.f.status"))}">${opsi(STATUS, "ps.status.", "adm.ps.semua_status")}</select>
     <select data-ikon="topik" class="jm-pilih" id="psfTopik" aria-label="${esc(t("adm.ps.f.topik"))}">${opsi(TOPIK, "ps.topik.", "adm.ps.semua_topik")}</select></div>
-    <div class="ps-adm"><div class="ps-adm-daf" id="psaDaf" aria-live="polite"></div><div class="ps-adm-utas" id="psaUtas"><p class="jm-bantu">${esc(t("adm.ps.pilih"))}</p></div></div>`;
+    <div class="psn-adm"><div class="psn-adm-daf" id="psaDaf" aria-live="polite"></div><div class="psn-adm-utas" id="psaUtas"><p class="jm-bantu">${esc(t("adm.ps.pilih"))}</p></div></div>`;
   const daf = panel.querySelector("#psaDaf"), utasEl = panel.querySelector("#psaUtas");
 
   panel.addEventListener("change", (e) => {
@@ -36,7 +36,7 @@ export function panelPesan(panel) {
     if (h) { if (h.disabled) return; S.hal = +h.dataset.hal; sorotHalaman(h, S.hal); return muatDaftar(); }
     const u = e.target.closest("[data-utas]");
     if (u) { // chrome urgent: baris aktif seketika
-      daf.querySelectorAll(".ps-utas.aktif").forEach((x) => x.classList.remove("aktif")); u.classList.add("aktif");
+      daf.querySelectorAll(".psn-utas.aktif").forEach((x) => x.classList.remove("aktif")); u.classList.add("aktif");
       S.id = u.dataset.utas; return void nanti(() => muatUtas(true));
     }
     const tp = e.target.closest("[data-tpl]");
@@ -72,9 +72,9 @@ export function panelPesan(panel) {
   }
   function gambarDaftar(d) {
     const hal = Math.max(1, Math.ceil(d.total / 50));
-    panel.querySelector(".ps-adm").classList.toggle("jm-adm-satu", !d.baris.length); // tanpa percakapan: satu keadaan kosong penuh lebar, tanpa panel kanan
+    panel.querySelector(".psn-adm").classList.toggle("jm-adm-satu", !d.baris.length); // tanpa percakapan: satu keadaan kosong penuh lebar, tanpa panel kanan
     daf.innerHTML = `<p class="jm-bantu">${esc(t("adm.ps.ringkas", { total: angka(d.total), belum: angka(d.belum) }))}</p>` + (d.baris.length
-      ? `<ul class="ps-daftar">${d.baris.map((u) => `<li><button type="button" class="ps-utas${u.dibaca_admin ? "" : " belum"}${u.id === S.id ? " aktif" : ""}" data-utas="${esc(u.id)}"><span class="ps-utas-a"><b>${esc(u.nama || u.surel || "-")}</b><span class="ps-pil ps-pil-${esc(u.status)}">${esc(t("ps.status." + u.status))}</span></span><span class="ps-g-meta"><span>${esc(t("ps.topik." + u.topik))}</span><span>${esc(waktu(u.diubah))}</span></span><span class="ps-utas-t">${esc(u.terakhir_dari === "admin" ? t("adm.ps.anda") + ": " : "")}${esc(u.terakhir || "")}</span></button></li>`).join("")}</ul>`
+      ? `<ul class="psn-daftar">${d.baris.map((u) => `<li><button type="button" class="psn-utas${u.dibaca_admin ? "" : " belum"}${u.id === S.id ? " aktif" : ""}" data-utas="${esc(u.id)}"><span class="psn-utas-a"><b>${esc(u.nama || u.surel || "-")}</b><span class="psn-pil psn-pil-${esc(u.status)}">${esc(t("ps.status." + u.status))}</span></span><span class="psn-g-meta"><span>${esc(t("ps.topik." + u.topik))}</span><span>${esc(waktu(u.diubah))}</span></span><span class="psn-utas-t">${esc(u.terakhir_dari === "admin" ? t("adm.ps.anda") + ": " : "")}${esc(u.terakhir || "")}</span></button></li>`).join("")}</ul>`
       : kosongHtml("adm.ps.kosong"))
       + paginasiHtml({ hal: S.hal, total: d.total, per: 50, satuan: "jm.pag.u.pesan" });
   }
@@ -88,21 +88,21 @@ export function panelPesan(panel) {
       if (id !== S.id) return;
       const u = d.utas, ta = panel.querySelector("#psaIsi"), simpan = awal ? "" : ta?.value || "";
       const gel = d.pesan.map((m) => gelembungHtml(m, { nama: m.dari === "admin" ? t("adm.ps.anda") : u.nama || u.surel || "-", waktu: waktu(m.waktu), status: "", url: m.lampiran ? `/api/admin/pesan/${id}/berkas/${encodeURIComponent(m.id)}` : "" })).join("");
-      utasEl.innerHTML = `<div class="ps-adm-kep"><h3>${esc(u.nama || "-")} <span class="ps-g-meta"><span>${esc(u.surel || "")}</span><span>${esc(t("ps.topik." + u.topik))}</span></span></h3><span class="ps-pil ps-pil-${esc(u.status)}">${esc(t("ps.status." + u.status))}</span>
+      utasEl.innerHTML = `<div class="psn-adm-kep"><h3>${esc(u.nama || "-")} <span class="psn-g-meta"><span>${esc(u.surel || "")}</span><span>${esc(t("ps.topik." + u.topik))}</span></span></h3><span class="psn-pil psn-pil-${esc(u.status)}">${esc(t("ps.status." + u.status))}</span>
         <button type="button" class="jm-tbl jm-tbl-kecil" data-status="${u.status === "selesai" ? "baru" : "selesai"}">${esc(t(u.status === "selesai" ? "adm.ps.buka_lagi" : "adm.ps.selesai"))}</button></div>
-        <ul class="ps-pesan">${gel}</ul>
-        <form class="ps-form" novalidate><div class="ps-tpl" role="group" aria-label="${esc(t("adm.ps.templat"))}">${TEMPLAT.map((n) => `<button type="button" class="jm-tbl jm-tbl-kecil" data-tpl="${n}">${esc(t("adm.ps.tpl." + n + ".j"))}</button>`).join("")}</div>
+        <ul class="psn-pesan">${gel}</ul>
+        <form class="psn-form" novalidate><div class="psn-tpl" role="group" aria-label="${esc(t("adm.ps.templat"))}">${TEMPLAT.map((n) => `<button type="button" class="jm-tbl jm-tbl-kecil" data-tpl="${n}">${esc(t("adm.ps.tpl." + n + ".j"))}</button>`).join("")}</div>
         <label class="sr" for="psaIsi">${esc(t("adm.ps.balas"))}</label><textarea id="psaIsi" name="isi" maxlength="${MAKS_ISI}" placeholder="${esc(t("adm.ps.balas"))}" required></textarea>
-        <p class="ps-galat" role="alert" id="psaGalat"></p>
-        <div class="ps-baris"><label class="jm-tbl jm-tbl-kecil" for="psaBerkas">${esc(t("ps.lampir"))}</label><input class="sr" type="file" id="psaBerkas" accept="image/png,image/jpeg,image/gif,image/webp,application/pdf"><span class="ps-file" id="psaNamaBerkas"></span><span class="ps-sp"></span><span class="ps-hitung" id="psaHitung">${simpan.length}/${MAKS_ISI}</span><button type="submit" class="jm-tbl jm-tbl-utama jm-tbl-kecil" id="psaKirim">${esc(t("adm.ps.kirim"))}</button></div></form>`;
+        <p class="psn-galat" role="alert" id="psaGalat"></p>
+        <div class="psn-baris"><label class="jm-tbl jm-tbl-kecil" for="psaBerkas">${esc(t("ps.lampir"))}</label><input class="sr" type="file" id="psaBerkas" accept="image/png,image/jpeg,image/gif,image/webp,application/pdf"><span class="psn-file" id="psaNamaBerkas"></span><span class="psn-sp"></span><span class="psn-hitung" id="psaHitung">${simpan.length}/${MAKS_ISI}</span><button type="submit" class="jm-tbl jm-tbl-utama jm-tbl-kecil" id="psaKirim">${esc(t("adm.ps.kirim"))}</button></div></form>`;
       panel.querySelector("#psaIsi").value = simpan;
-      const l = utasEl.querySelector(".ps-pesan"); l.scrollTop = l.scrollHeight;
+      const l = utasEl.querySelector(".psn-pesan"); l.scrollTop = l.scrollHeight;
       if (awal) muatDaftar(true); // buka utas menandai dibaca: segarkan tebal dan lencana
     } catch (e) { if (id === S.id) utasEl.innerHTML = galatHtml(e.kode || "umum"); }
   }
 
   const timer = setInterval(() => {
-    if (!panel.isConnected || !panel.querySelector(".ps-adm")) return clearInterval(timer);
+    if (!panel.isConnected || !panel.querySelector(".psn-adm")) return clearInterval(timer);
     if (document.hidden) return;
     muatDaftar(true);
     if (S.id && !panel.querySelector("#psaIsi")?.value) muatUtas(false);

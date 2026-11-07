@@ -1,0 +1,738 @@
+{
+ "catatan": "Pengayaan tangan di atas daftar resmi Permenko 16/2025. Tiap fakta membawa kode sumber (kunci 'sumber' di bawah). Hanya fakta yang tercantum di sumbernya; yang tidak ada = kosong, bukan perkiraan. Tingkat bukti: resmi (situs pemerintah/BUMN), media (pemberitaan), perkiraan (titik koordinat dari pusat kabupaten).",
+ "sumber": {
+  "bpk16": {
+   "judul": "Permenko Perekonomian 16/2025 (Perubahan Kedelapan atas Permenko 7/2021), lampiran daftar PSN",
+   "penerbit": "Kemenko Perekonomian lewat JDIH BPK",
+   "url": "https://peraturan.bpk.go.id/Details/330372/permenko-perekonomian-no-16-tahun-2025",
+   "tanggal": "2025-09-24",
+   "bukti": "resmi"
+  },
+  "masela-gb": {
+   "judul": "Prabowo Resmikan Groundbreaking Blok Masela Senilai Rp376,02 Triliun",
+   "penerbit": "Bisnis.com",
+   "url": "https://ekonomi.bisnis.com/read/20260716/44/1988603/prabowo-resmikan-groundbreaking-blok-masela-senilai-rp37602-triliun",
+   "tanggal": "2026-07-16",
+   "bukti": "media"
+  },
+  "masela-fid": {
+   "judul": "Inpex rampungkan tahap rekayasa proyek gas Abadi, investasi ditargetkan Januari 2027",
+   "penerbit": "Kontan",
+   "url": "https://industri.kontan.co.id/news/inpex-rampungkan-tahap-rekayasa-proyek-gas-abadi-investasi-ditargetkan-januari-2027",
+   "tanggal": "2026",
+   "bukti": "media"
+  },
+  "masela-2030": {
+   "judul": "Proyek LNG Masela ditargetkan beroperasi paling lambat akhir 2030",
+   "penerbit": "Katadata",
+   "url": "https://katadata.co.id/berita/energi/6ae0af06b55e3/proyek-lng-masela-ditargetkan-beroperasi-paling-lambat-akhir-2030",
+   "tanggal": "2026",
+   "bukti": "media"
+  },
+  "eni-fid": {
+   "judul": "Eni moves forward with major deep water gas hubs in Indonesia with dual FIDs",
+   "penerbit": "Eni",
+   "url": "https://www.eni.com/en-IT/media/press-release/2026/03/eni-moves-forward-with-major-deep-water-gas-hubs-in-indonesia-with-dual-fids.html",
+   "tanggal": "2026-03",
+   "bukti": "resmi"
+  },
+  "eni-ogj": {
+   "judul": "Eni to develop major deep water gas hubs in Indonesia",
+   "penerbit": "Oil & Gas Journal",
+   "url": "https://www.ogj.com/exploration-development/news/55364912/eni-to-develop-major-deep-water-gas-hubs-in-indonesia",
+   "tanggal": "2026-03",
+   "bukti": "media"
+  },
+  "tangguh": {
+   "judul": "Tangguh Train 3 to boost Indonesian LNG exports",
+   "penerbit": "Argus Media",
+   "url": "https://www.argusmedia.com/en/news-and-insights/latest-market-news/2507945-tangguh-train-3-to-boost-indonesian-lng-exports",
+   "tanggal": "2023",
+   "bukti": "media"
+  },
+  "jtb-kontan": {
+   "judul": "Indonesia's Jambaran-Tiung Biru Gas Project Comes Onstream",
+   "penerbit": "Kontan",
+   "url": "https://insight.kontan.co.id/news/indonesias-jambaran-tiung-biru-gas-project-comes-onstream",
+   "tanggal": "2022",
+   "bukti": "media"
+  },
+  "jtb-voi": {
+   "judul": "JTB Records Full Capacity Production Of 192 Million Kubik Feet Per Day",
+   "penerbit": "VOI",
+   "url": "https://voi.id/en/economy/385198",
+   "tanggal": "2024",
+   "bukti": "media"
+  },
+  "tuban-bisnis": {
+   "judul": "Pilah-pilih Investor Jumbo Proyek Kilang Tuban",
+   "penerbit": "Bisnis.com",
+   "url": "https://ekonomi.bisnis.com/read/20260207/44/1950913/pilah-pilih-investor-jumbo-proyek-kilang-tuban",
+   "tanggal": "2026-02-07",
+   "bukti": "media"
+  },
+  "tuban-bt": {
+   "judul": "Bahlil mau konstruksi Kilang Tuban dipercepat usai tender EPCC",
+   "penerbit": "Bloomberg Technoz",
+   "url": "https://www.bloombergtechnoz.com/detail-news/108675/bahlil-mau-konstruksi-kilang-tuban-dipercepat-usai-tender-epcc/2",
+   "tanggal": "2026-05-08",
+   "bukti": "media"
+  },
+  "tuban-esdm": {
+   "judul": "Bangun Kilang Tuban, Pertamina-Rosneft tanda tangani akta pendirian perusahaan patungan",
+   "penerbit": "Ditjen Migas, Kementerian ESDM",
+   "url": "https://migas.esdm.go.id/post/bangun-kilang-tuban,-pertamina-rosneft-tanda-tangani-akta-pendirian-perusahaan-patungan",
+   "tanggal": "2022",
+   "bukti": "resmi"
+  },
+  "rdmp-bisnis": {
+   "judul": "Progres Kilang Balikpapan sentuh 96,67% di minggu kedua Oktober 2025",
+   "penerbit": "Bisnis.com",
+   "url": "https://ekonomi.bisnis.com/read/20251020/44/1921806/progres-kilang-balikpapan-sentuh-9667-di-minggu-kedua-oktober-2025",
+   "tanggal": "2025-10-20",
+   "bukti": "media"
+  },
+  "rdmp-jp": {
+   "judul": "Analysis: Prabowo inaugurates long-awaited Balikpapan refinery upgrade",
+   "penerbit": "The Jakarta Post",
+   "url": "https://www.thejakartapost.com/opinion/2026/01/22/analysis-prabowo-inaugurates-long-awaited-balikpapan-refinery-upgrade",
+   "tanggal": "2026-01-22",
+   "bukti": "media"
+  },
+  "cisem-bisnis": {
+   "judul": "Progres pipa gas Cisem II 86,1%, ditargetkan rampung Maret 2026",
+   "penerbit": "Bisnis.com",
+   "url": "https://ekonomi.bisnis.com/read/20250928/44/1915395/progres-pipa-gas-cisem-ii-861-ditargetkan-rampung-maret-2026",
+   "tanggal": "2025-09-28",
+   "bukti": "media"
+  },
+  "cisem-cnbc": {
+   "judul": "Sah! Proyek pipa Rp 2,7 triliun ini resmi mengalirkan gas perdana",
+   "penerbit": "CNBC Indonesia",
+   "url": "https://www.cnbcindonesia.com/news/20260318184910-4-720154/sah-proyek-pipa-rp-27-trilliun-ini-resmi-mengalirkan-gas-perdana",
+   "tanggal": "2026-03-18",
+   "bukti": "media"
+  },
+  "cisem-esdm": {
+   "judul": "Pantau progres PSN, Irjen KESDM dan Ditjen Migas tinjau pipa transmisi gas bumi Cisem Tahap 2",
+   "penerbit": "Ditjen Migas, Kementerian ESDM",
+   "url": "https://migas.esdm.go.id/post/Pantau-Progres-PSN-Inspektur-Jenderal-KESDM-dan-Ditjen-Migas-Tinjau-Pembangunan-Pipa-Transmisi-Gas-Bumi-Cisem-Tahap-2",
+   "tanggal": "2025",
+   "bukti": "resmi"
+  },
+  "cilacap": {
+   "judul": "Pertamina targetkan proyek biorefinery Cilacap Rp19 triliun beroperasi 2029",
+   "penerbit": "Katadata",
+   "url": "https://katadata.co.id/berita/energi/6aa338c250f04/pertamina-targetkan-proyek-biorefinery-cilacap-rp19-triliun-beroperasi-2029",
+   "tanggal": "2026",
+   "bukti": "media"
+  },
+  "dme": {
+   "judul": "Tekan impor LPG, PTBA bakal pasok DME 1,4 juta ton per tahun",
+   "penerbit": "CNBC Indonesia",
+   "url": "https://www.cnbcindonesia.com/news/20260429135237-4-730932/tekan-impor-lpg-ptba-bakal-pasok-dme-14-juta-ton-per-tahun",
+   "tanggal": "2026-04-29",
+   "bukti": "media"
+  },
+  "dme-biaya": {
+   "judul": "PTBA target proyek DME batu bara mulai 2026, butuh Rp40 triliun per pabrik",
+   "penerbit": "Bisnis.com",
+   "url": "https://ekonomi.bisnis.com/read/20251020/44/1921714/ptba-target-proyek-dme-batu-bara-mulai-2026-butuh-rp40-triliun-per-pabrik",
+   "tanggal": "2025-10-20",
+   "bukti": "media"
+  },
+  "dme-kritik": {
+   "judul": "Tersandung biaya dan teknologi, hilirisasi batu bara ke DME dinilai belum ekonomis",
+   "penerbit": "Investortrust",
+   "url": "https://www.investortrust.id/business/81445/tersandung-biaya-dan-teknologi-hilirisasi-batu-bara-ke-dme-dinilai-belum-ekonomis",
+   "tanggal": "2025",
+   "bukti": "media"
+  },
+  "mentarang": {
+   "judul": "Menyoal proyek PLTA Mentarang",
+   "penerbit": "Mongabay Indonesia",
+   "url": "https://mongabay.co.id/2026/02/09/menyoal-proyek-plta-mentarang/",
+   "tanggal": "2026-02-09",
+   "bukti": "media"
+  },
+  "mentarang-kb": {
+   "judul": "PLTA Mentarang Induk bisa dongkrak saham ADRO 50 persen",
+   "penerbit": "Kabar Bursa",
+   "url": "https://www.kabarbursa.com/ekonomi-hijau/plta-mentarang-induk-bisa-dongkrak-saham-adro-50-persen",
+   "tanggal": "2026",
+   "bukti": "media"
+  },
+  "mentarang-fc": {
+   "judul": "Kayan Hydropower targets Q1 2026 financial close for major hydropower project",
+   "penerbit": "Petromindo",
+   "url": "https://ftp.petromindo.com/news/article/kayan-hydropower-targets-q1-2026-financial-close-for-major-hydropower-project",
+   "tanggal": "2025",
+   "bukti": "media"
+  },
+  "kepri-kontan": {
+   "judul": "Investor asal Singapura ini bangun PLTS skala besar di Kepulauan Riau",
+   "penerbit": "Kontan",
+   "url": "https://industri.kontan.co.id/news/investor-asal-singapura-ini-bangun-plts-skala-besar-di-kepulauan-riau",
+   "tanggal": null,
+   "bukti": "media"
+  },
+  "kepri-it": {
+   "judul": "RI-Singapura matangkan proyek ekspor listrik bersih di Kepulauan Riau",
+   "penerbit": "Investortrust",
+   "url": "https://investortrust.id/business/97269/ri-singapura-matangkan-proyek-ekspor-listrik-bersih-di-kepulauan-riau",
+   "tanggal": "2026",
+   "bukti": "media"
+  },
+  "plts100": {
+   "judul": "Pemerintah percepat pembangunan PLTS nasional dengan target 100 gigawatt",
+   "penerbit": "Sekretariat Kabinet",
+   "url": "https://setkab.go.id/qx7g",
+   "tanggal": "2026",
+   "bukti": "resmi"
+  },
+  "plts100-antara": {
+   "judul": "Danantara: pengembangan PLTS 100 GW butuh investasi Rp1.130 triliun",
+   "penerbit": "Antara",
+   "url": "https://www.antaranews.com/berita/5711995/danantara-pengembangan-plts-100-gw-butuh-investasi-rp1130-triliun",
+   "tanggal": "2026",
+   "bukti": "media"
+  }
+ },
+ "butir": {
+  "200": {
+   "kab": [
+    "Maluku Tenggara Barat"
+   ],
+   "status": "pra-konstruksi",
+   "progres": null,
+   "kapasitas": {
+    "nilai": 9.5,
+    "satuan": "juta ton LNG per tahun",
+    "ket": "dua train LNG darat; gas pipa domestik sekitar 150 MMscfd"
+   },
+   "investasi": {
+    "usd_miliar": 21,
+    "ket": "sekitar US$21 miliar; judul Bisnis menyebut Rp376,02 triliun",
+    "sumber": "masela-gb"
+   },
+   "cod": 2030,
+   "cod_ket": "paling lambat akhir 2030",
+   "dana": [
+    "swasta",
+    "bumn"
+   ],
+   "pemrakarsa": [
+    "Inpex"
+   ],
+   "pelaksana": [
+    "Inpex Masela (65%)",
+    "Pertamina Hulu Energi (20%)",
+    "Petronas Masela (15%)"
+   ],
+   "tonggak": [
+    {
+     "tgl": "2026-07-16",
+     "teks": "Groundbreaking oleh Presiden",
+     "sumber": "masela-gb"
+    },
+    {
+     "tgl": "2027-01",
+     "teks": "Target keputusan investasi akhir (FID), paling lambat akhir Januari 2027",
+     "sumber": "masela-fid"
+    },
+    {
+     "tgl": "2030-12",
+     "teks": "Target operasi paling lambat",
+     "sumber": "masela-2030"
+    }
+   ],
+   "isu": [
+    {
+     "jenis": "pendanaan",
+     "teks": "FID bergeser dari target awal 2026 ke paling lambat Januari 2027",
+     "sumber": "masela-fid"
+    }
+   ],
+   "sumber": [
+    "masela-gb",
+    "masela-fid",
+    "masela-2030"
+   ]
+  },
+  "201": {
+   "status": "pra-konstruksi",
+   "kapasitas": {
+    "nilai": 2,
+    "satuan": "miliar kaki kubik gas per hari (puncak, gabungan dua hub)",
+    "ket": "plus 90.000 barel kondensat per hari"
+   },
+   "cod": 2028,
+   "cod_ket": "target awal produksi 2028 (OGJ); 2027 pada pemberitaan 2024",
+   "dana": [
+    "swasta"
+   ],
+   "pemrakarsa": [
+    "Eni"
+   ],
+   "pelaksana": [
+    "Eni"
+   ],
+   "tonggak": [
+    {
+     "tgl": "2026-03",
+     "teks": "Eni mengambil FID untuk Gendalo-Gandang (South Hub) dan Geng North-Gehem (North Hub)",
+     "sumber": "eni-fid"
+    }
+   ],
+   "isu": [],
+   "sumber": [
+    "eni-fid",
+    "eni-ogj"
+   ]
+  },
+  "202": {
+   "kab": [
+    "Teluk Bintuni"
+   ],
+   "status": "beroperasi",
+   "progres": 100,
+   "kapasitas": {
+    "nilai": 3.8,
+    "satuan": "juta ton LNG per tahun (tambahan)",
+    "ket": "kapasitas pabrik menjadi 11,4 juta ton per tahun"
+   },
+   "cod": 2023,
+   "cod_ket": "kargo pertama berlayar 18 Oktober 2023; kapasitas penuh April 2024",
+   "dana": [
+    "swasta"
+   ],
+   "pemrakarsa": [
+    "bp"
+   ],
+   "pelaksana": [
+    "bp (operator Tangguh)"
+   ],
+   "listrik_ebt": "75% produksi Train 3 dijual ke PLN, 25% ke Kansai Electric",
+   "tonggak": [
+    {
+     "tgl": "2023-10-18",
+     "teks": "Kargo LNG pertama dari Train 3",
+     "sumber": "tangguh"
+    },
+    {
+     "tgl": "2024-04",
+     "teks": "Kapasitas operasi 100%",
+     "sumber": "tangguh"
+    }
+   ],
+   "isu": [],
+   "sumber": [
+    "tangguh"
+   ]
+  },
+  "203": {
+   "kab": [
+    "Bojonegoro"
+   ],
+   "status": "beroperasi",
+   "progres": 100,
+   "kapasitas": {
+    "nilai": 192,
+    "satuan": "MMscfd gas jual",
+    "ket": "gas mentah 315 MMscfd; awal produksi 172 MMscfd"
+   },
+   "cod": 2022,
+   "cod_ket": "mulai produksi September 2022",
+   "dana": [
+    "bumn"
+   ],
+   "pemrakarsa": [
+    "Pertamina"
+   ],
+   "pelaksana": [
+    "PT Pertamina EP Cepu"
+   ],
+   "tonggak": [
+    {
+     "tgl": "2022-09",
+     "teks": "Gas mulai mengalir (onstream)",
+     "sumber": "jtb-kontan"
+    },
+    {
+     "tgl": "2024-05",
+     "teks": "Dilaporkan mencapai kapasitas penuh 192 MMscfd",
+     "sumber": "jtb-voi"
+    }
+   ],
+   "isu": [],
+   "sumber": [
+    "jtb-kontan",
+    "jtb-voi"
+   ]
+  },
+  "206": {
+   "kab": [
+    "Tuban"
+   ],
+   "status": "pra-konstruksi",
+   "progres": null,
+   "kapasitas": {
+    "nilai": 300000,
+    "satuan": "barel minyak mentah per hari",
+    "ket": "gasoline sekitar 80 ribu dan solar sekitar 99 ribu barel per hari"
+   },
+   "investasi": {
+    "usd_miliar": 23,
+    "ket": "angka berbeda antarsumber: US$15 miliar (rencana awal), US$23 miliar (Bisnis, Februari 2026), US$24 miliar (Bloomberg Technoz, Mei 2026)",
+    "sumber": "tuban-bisnis"
+   },
+   "cod": null,
+   "dana": [
+    "bumn",
+    "swasta"
+   ],
+   "pemrakarsa": [
+    "Pertamina"
+   ],
+   "pelaksana": [
+    "PT Pertamina Rosneft Pengolahan dan Petrokimia (patungan Pertamina dan Rosneft)"
+   ],
+   "tonggak": [
+    {
+     "tgl": "2026-05",
+     "teks": "FID masih berproses; prakualifikasi tender EPCC dibuka",
+     "sumber": "tuban-bt"
+    }
+   ],
+   "isu": [
+    {
+     "jenis": "pendanaan",
+     "teks": "Sanksi Barat terhadap Rosneft; Pertamina membuka peluang mitra baru (Februari 2026). FID yang ditargetkan kuartal IV 2025 belum tercapai",
+     "sumber": "tuban-bisnis"
+    }
+   ],
+   "sumber": [
+    "tuban-bisnis",
+    "tuban-bt",
+    "tuban-esdm"
+   ]
+  },
+  "207": {
+   "kab": [
+    "Kota Balikpapan"
+   ],
+   "status": "sebagian",
+   "progres": null,
+   "pemrakarsa": [
+    "Pertamina"
+   ],
+   "pelaksana": [
+    "PT Kilang Pertamina Balikpapan (anak usaha Pertamina)"
+   ],
+   "dana": [
+    "bumn"
+   ],
+   "tonggak": [
+    {
+     "tgl": "2025-10",
+     "teks": "RDMP Balikpapan 96,67% pada minggu kedua Oktober 2025",
+     "sumber": "rdmp-bisnis"
+    },
+    {
+     "tgl": "2026-01",
+     "teks": "Peresmian RDMP Balikpapan oleh Presiden menurut analisis Jakarta Post 22 Januari 2026",
+     "sumber": "rdmp-jp"
+    }
+   ],
+   "isu": [
+    {
+     "jenis": "jadwal",
+     "teks": "Target selesai September 2025 bergeser beberapa kali karena pekerjaan dilakukan di dalam kilang yang beroperasi",
+     "sumber": "rdmp-jp"
+    }
+   ],
+   "catatan": "Butir ini mencakup kilang di beberapa provinsi; hanya RDMP Balikpapan yang tercatat di sini, kilang lain belum ada sumbernya.",
+   "sumber": [
+    "rdmp-bisnis",
+    "rdmp-jp"
+   ]
+  },
+  "212": {
+   "kab": [
+    "Batang"
+   ],
+   "status": "sebagian",
+   "progres": null,
+   "kapasitas": {
+    "nilai": 245,
+    "satuan": "km (Cisem Tahap II)",
+    "ket": "panjang berbeda antarsumber: 242 hingga 302 km; Tahap I Semarang-Batang sekitar 60 km pipa 20 inci"
+   },
+   "investasi": {
+    "rp_triliun": 2.7,
+    "ket": "nilai proyek Cisem II menurut judul CNBC Indonesia",
+    "sumber": "cisem-cnbc"
+   },
+   "dana": [
+    "apbn"
+   ],
+   "pemrakarsa": [
+    "Kementerian ESDM"
+   ],
+   "pelaksana": [
+    "Pertagas (operator Cisem II sejak April 2026)"
+   ],
+   "tonggak": [
+    {
+     "tgl": "2025-09",
+     "teks": "Cisem II 86,1%",
+     "sumber": "cisem-bisnis"
+    },
+    {
+     "tgl": "2026-03-18",
+     "teks": "Gas perdana mengalir di Cisem II",
+     "sumber": "cisem-cnbc"
+    }
+   ],
+   "isu": [],
+   "catatan": "Ruas Sei Mangkei-Dumai belum ada sumber status.",
+   "sumber": [
+    "cisem-bisnis",
+    "cisem-cnbc",
+    "cisem-esdm"
+   ]
+  },
+  "213": {
+   "kab": [
+    "Cilacap"
+   ],
+   "status": "pra-konstruksi",
+   "investasi": {
+    "usd_miliar": 1.1,
+    "ket": "sekitar US$1,1 miliar atau Rp19 triliun (Cilacap fase 2)",
+    "sumber": "cilacap"
+   },
+   "cod": 2029,
+   "cod_ket": "operasi Cilacap fase 2 ditargetkan 2029",
+   "dana": [
+    "bumn"
+   ],
+   "pemrakarsa": [
+    "Pertamina"
+   ],
+   "pelaksana": [
+    "PT Kilang Pertamina Internasional"
+   ],
+   "kapasitas": {
+    "nilai": 860,
+    "satuan": "kiloliter SAF per hari (desain)",
+    "ket": "angka berbeda antarsumber: 860 hingga 887 KL per hari"
+   },
+   "tonggak": [
+    {
+     "tgl": "2026-02",
+     "teks": "Groundbreaking Cilacap fase 2",
+     "sumber": "cilacap"
+    },
+    {
+     "tgl": "2027",
+     "teks": "Konstruksi ditargetkan mulai setelah FID dan pemilihan mitra teknologi",
+     "sumber": "cilacap"
+    }
+   ],
+   "isu": [],
+   "listrik_ebt": "Bahan baku minyak jelantah; bahan bakar nabati pengganti BBM fosil",
+   "catatan": "Plaju (RU III) belum ada sumber 2026.",
+   "sumber": [
+    "cilacap"
+   ]
+  },
+  "215": {
+   "kab": [
+    "Muara Enim"
+   ],
+   "status": "pra-konstruksi",
+   "kapasitas": {
+    "nilai": 1.4,
+    "satuan": "juta ton DME per tahun",
+    "ket": "setara sekitar 1 juta ton LPG; butuh sekitar 7 juta ton batu bara per tahun"
+   },
+   "investasi": {
+    "rp_triliun": 40,
+    "ket": "target biaya PTBA sekitar Rp40 triliun per pabrik (Oktober 2025)",
+    "sumber": "dme-biaya"
+   },
+   "cod": 2029,
+   "cod_ket": "sekitar tiga tahun setelah April 2026",
+   "dana": [
+    "bumn"
+   ],
+   "pemrakarsa": [
+    "BPI Danantara"
+   ],
+   "pelaksana": [
+    "MIND ID",
+    "PT Bukit Asam (PTBA)",
+    "Pertamina (pembeli produk)"
+   ],
+   "tonggak": [
+    {
+     "tgl": "2026-04-29",
+     "teks": "Peresmian pembangunan Hilirisasi Fase II di Tanjung Enim",
+     "sumber": "dme"
+    }
+   ],
+   "isu": [
+    {
+     "jenis": "pendanaan",
+     "teks": "Mitra teknologi masih dicari; mitra lama APCI keluar 2023; keekonomian dipertanyakan",
+     "sumber": "dme-kritik"
+    }
+   ],
+   "sumber": [
+    "dme",
+    "dme-biaya",
+    "dme-kritik"
+   ]
+  },
+  "P1c": {
+   "kab": [
+    "Karimun"
+   ],
+   "status": "rencana",
+   "kapasitas": {
+    "nilai": 3500,
+    "satuan": "MWp surya dengan penyimpanan hingga 12 GWh",
+    "ket": "komitmen konsorsium Quantum dan ib vogt; belum PSN-spesifik"
+   },
+   "investasi": {
+    "usd_miliar": 6,
+    "ket": "komitmen pendanaan US$6 miliar; artikel tanpa tanggal",
+    "sumber": "kepri-kontan"
+   },
+   "dana": [
+    "swasta"
+   ],
+   "pemrakarsa": [
+    "ib vogt"
+   ],
+   "pelaksana": [
+    "Quantum dan ib vogt (konsorsium)"
+   ],
+   "listrik_ebt": "Memenuhi kebutuhan lokal dulu, lalu ekspor ke Singapura; kerangka ekspor RI-Singapura masih dimatangkan (Maret 2026)",
+   "proyek_gem": [
+    "gem-solar-L100000808626",
+    "gem-solar-L100000808621"
+   ],
+   "tonggak": [],
+   "isu": [
+    {
+     "jenis": "pendanaan",
+     "teks": "Kerangka ekspor listrik RI-Singapura belum final; proyek GEM terkait berstatus ditunda dan dibatalkan",
+     "sumber": "kepri-it"
+    }
+   ],
+   "sumber": [
+    "kepri-kontan",
+    "kepri-it"
+   ]
+  },
+  "P1d": {
+   "kab": [
+    "Malinau"
+   ],
+   "status": "konstruksi",
+   "kapasitas": {
+    "nilai": 1375,
+    "satuan": "MW",
+    "ket": "daya tetap sekitar 850 MW"
+   },
+   "investasi": {
+    "usd_miliar": 2.6,
+    "ket": "US$2,6 miliar (Reuters via media) atau Rp40 triliun (Kabar Bursa); belum diselaraskan",
+    "sumber": "mentarang-kb"
+   },
+   "cod": 2029,
+   "cod_ket": "2029 (GEM), 2030 (Dunia Energi); sumber berbeda",
+   "dana": [
+    "swasta"
+   ],
+   "pemrakarsa": [
+    "PT Kayan Hydropower Nusantara"
+   ],
+   "pelaksana": [
+    "PT Kayan Hydropower Nusantara"
+   ],
+   "listrik_ebt": "PLTA 1.375 MW untuk kawasan industri hijau Kalimantan Utara dan jaringan Kalimantan",
+   "proyek_gem": [
+    "gem_hydropower_L100000602132"
+   ],
+   "tonggak": [
+    {
+     "tgl": "2023-03-01",
+     "teks": "Groundbreaking oleh Presiden Joko Widodo",
+     "sumber": "mentarang-kb"
+    },
+    {
+     "tgl": "2026-03",
+     "teks": "Target financial close kuartal I 2026; belum terkonfirmasi",
+     "sumber": "mentarang-fc"
+    }
+   ],
+   "isu": [
+    {
+     "jenis": "lahan",
+     "teks": "Genangan sekitar 22.604 hektare; 2.108 jiwa dari 734 keluarga terdampak",
+     "sumber": "mentarang"
+    },
+    {
+     "jenis": "sosial",
+     "teks": "Relokasi warga Seboyo dan kritik masyarakat sipil atas proyek",
+     "sumber": "mentarang"
+    }
+   ],
+   "sumber": [
+    "mentarang",
+    "mentarang-kb",
+    "mentarang-fc"
+   ]
+  },
+  "P1b": {
+   "status": "rencana",
+   "kapasitas": {
+    "nilai": 100,
+    "satuan": "GWp (program PLTS nasional, terpisah dari butir PLTS Atap)",
+    "ket": "20 GW terpusat dan 80 GW terdistribusi di 80.000 desa; kaitan formal dengan butir PLTS Atap Nasional belum dikonfirmasi dokumen"
+   },
+   "investasi": {
+    "rp_triliun": 1140,
+    "ket": "perkiraan resmi untuk program 100 GW; Danantara menyebut Rp1.130 triliun",
+    "sumber": "plts100-antara"
+   },
+   "dana": [
+    "swasta",
+    "bumn"
+   ],
+   "pemrakarsa": [
+    "Pemerintah RI"
+   ],
+   "pelaksana": [
+    "BPI Danantara",
+    "PLN",
+    "pengembang swasta (lelang)"
+   ],
+   "tonggak": [
+    {
+     "tgl": "2026-08-25",
+     "teks": "Peluncuran Fase I: 14 proyek PLTS 5,3 GW di enam provinsi",
+     "sumber": "plts100"
+    }
+   ],
+   "isu": [],
+   "sumber": [
+    "plts100",
+    "plts100-antara"
+   ]
+  }
+ }
+}

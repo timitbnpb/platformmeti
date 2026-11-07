@@ -1,0 +1,96 @@
+/* /air-energi: pelengkap pelacak-proyek.css (peta, panel, pil) dengan kelas kerentanan air, grafik tren, kartu air dan waduk. Token tema.css saja. */
+.jm-ae2 #aeIsi{display:grid;gap:var(--gap);min-width:0}
+.jm-ae2 #aeIsi>*{min-width:0}
+.ae2-pil{display:inline-flex;max-width:100%;align-items:center;gap:6px;padding:3px 10px;border-radius:var(--r-pil);font:700 var(--t-kecil)/var(--lh-rapat) var(--font);white-space:nowrap}
+.ae2-pil svg{flex:none}
+.ae2-pil b{font-variant-numeric:tabular-nums}
+.ae2-k-rendah{color:var(--ok);background:var(--ok-bg)}
+.ae2-k-sedang{color:var(--info);background:var(--info-bg)}
+.ae2-k-tinggi{color:var(--warn);background:var(--warn-bg)}
+.ae2-k-sangat-tinggi{color:var(--bad);background:var(--bad-bg)}
+.ae2-t-rendah{background:var(--ok)}.ae2-t-sedang{background:var(--info)}.ae2-t-tinggi{background:var(--warn)}.ae2-t-sangat-tinggi{background:var(--bad)}
+.ae2-ch{display:inline-flex;align-items:center;gap:5px;padding:3px 9px;border-radius:var(--r-pil);font:600 var(--t-kecil)/var(--lh-rapat) var(--font);white-space:nowrap}
+.ae2-c-enso{color:var(--bad);background:var(--bad-bg)}
+.ae2-c-spi{color:var(--info);background:var(--info-bg)}
+.ae2-c-hth{color:var(--warn);background:var(--warn-bg)}
+.ae2-c-tanah{color:var(--data3);background:var(--warn-bg)}
+.ae2-c-tampungan{color:var(--ok);background:var(--ok-bg)}
+.ae2-c-tekanan{color:var(--data5);background:var(--info-bg)}
+.ae2-j-PLTA{color:var(--info);background:var(--info-bg)}
+.ae2-j-PLTM{color:var(--ok);background:var(--ok-bg)}
+.ae2-j-PLTMH{color:var(--data5);background:var(--warn-bg)}
+.ae2-f-plta{color:var(--warn);background:var(--warn-bg)}
+.ae2-f-irigasi{color:var(--ok);background:var(--ok-bg)}
+.ae2-f-air-baku{color:var(--info);background:var(--info-bg)}
+.ae2-f-banjir{color:var(--bad);background:var(--bad-bg)}
+.ae2-f-perikanan{color:var(--data5);background:var(--info-bg)}
+.ae2-komp{display:flex;flex-wrap:wrap;gap:6px}
+.ae2-sw{flex:none;width:14px;height:14px;border-radius:4px;border:2px solid var(--card);background:linear-gradient(90deg,var(--ok),var(--warn),var(--bad))}
+.ae2-das{all:unset;cursor:pointer;color:var(--accent);font-weight:600;overflow-wrap:anywhere}
+.ae2-das:hover{color:var(--ink)}
+.ae2-das:focus-visible{outline:2px solid var(--fokus);outline-offset:2px;border-radius:4px}
+.ae2-det-k{display:grid;gap:4px}
+.ae2-det-k small{padding-left:2px}
+.ae2-seg{margin-bottom:16px}
+.ae2-seg button{display:inline-flex;align-items:center;justify-content:center;gap:8px}
+/* grafik tren */
+.ae2-g-bungkus{width:100%;overflow:hidden}
+.ae2-g{display:block;width:100%;height:auto}
+.ae2-g-cf{fill:var(--accent);opacity:.8}
+.ae2-g-en{fill:var(--bad);opacity:.85}
+.ae2-g-o-en{fill:var(--bad)}.ae2-g-o-ln{fill:var(--info)}.ae2-g-o-n{fill:var(--line)}
+.ae2-g-hujan{stroke:var(--warn);stroke-width:2.5;stroke-linejoin:round}
+.ae2-g-tk{fill:var(--card);stroke:var(--warn);stroke-width:2}
+.ae2-g-pita{fill:transparent;cursor:pointer}
+.ae2-g-pita:hover,.ae2-g-pita:focus-visible{fill:var(--accent);fill-opacity:.1;outline:none}
+.ae2-g-leg{list-style:none;margin:0 0 12px;padding:0;display:flex;flex-wrap:wrap;gap:6px 18px;color:var(--ink2);font-size:var(--t-kecil)}
+.ae2-g-leg li{display:inline-flex;align-items:center;gap:8px}
+.ae2-g-leg i{display:block;width:14px;height:14px;border-radius:4px}
+.ae2-sw-cf{background:var(--accent)}.ae2-sw-en{background:var(--bad)}.ae2-sw-hj{background:var(--warn)}.ae2-sw-ln{background:var(--info)}
+.ae2-stat,.ae2-air-k{display:grid;gap:var(--gap);grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr));margin-top:16px}
+.ae2-s{display:grid;grid-template-columns:auto minmax(0,1fr);column-gap:12px;align-content:start;padding:16px;border:1px solid var(--line);border-radius:var(--r-lg);background:var(--card)}
+.ae2-s>.jm-kpi-ik,.ae2-s>.ae2-air-l{grid-row:1/4;grid-column:1;align-self:start;margin:0}
+.ae2-s p{margin:0;grid-column:2}
+.ae2-s-l{font:600 var(--t-label)/var(--lh-rapat) var(--font);color:var(--ink2)}
+.ae2-s-n{display:flex;align-items:baseline;gap:6px;margin-top:4px!important}
+.ae2-s-n b{font:700 var(--t-h2)/1.1 var(--font);font-variant-numeric:tabular-nums}
+.ae2-s-n span{color:var(--ink2)}
+/* air */
+.ae2-air{display:grid;gap:var(--gap);grid-template-columns:minmax(0,1fr);align-items:start}
+.ae2-air-k{margin-top:0;grid-template-columns:repeat(auto-fit,minmax(min(100%,190px),1fr))}
+.ae2-air-l{display:inline-flex;align-items:center;gap:6px;font-weight:600}
+.ae2-a-pltu{color:var(--bad)}.ae2-a-pltp{color:var(--warn)}.ae2-a-plts{color:var(--ok)}.ae2-a-h2{color:var(--info)}
+.ae2-b-pltu{background:var(--bad)}.ae2-b-pltp{background:var(--warn)}.ae2-b-plts{background:var(--ok)}
+/* waduk */
+.ae2-waduk{list-style:none;margin:0;padding:0;display:grid;gap:var(--gap);grid-template-columns:repeat(auto-fill,minmax(min(100%,300px),1fr))}
+.ae2-wd{display:grid;gap:10px;align-content:start;padding:16px;border:1px solid var(--line);border-radius:var(--r-lg);background:var(--card)}
+.ae2-wd-h{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap}
+.ae2-wd-f{display:flex;flex-wrap:wrap;gap:6px}
+.ae2-wd p{margin:0}
+.ae2-wd-c{display:flex;gap:8px;align-items:flex-start;color:var(--warn);font-size:var(--t-kecil)}
+.ae2-wd-c span{color:var(--ink2)}
+/* metode */
+.ae2-metode{list-style:none;margin:0 0 16px;padding:0;display:grid;gap:var(--gap);grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr))}
+.ae2-metode li{display:grid;grid-template-columns:auto minmax(0,1fr);gap:12px;padding:16px;border:1px solid var(--line);border-radius:var(--r-lg);background:var(--card)}
+.ae2-metode p{margin:4px 0 0;color:var(--ink2)}
+.ae2-m-no{display:inline-grid;place-items:center;width:36px;height:36px;border-radius:50%;background:var(--accent);color:var(--on-brand)}
+.ae2-m-aksi{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(min(100%,200px),1fr))}
+.ae2-m-aksi>a{display:inline-flex;align-items:center;justify-content:center;gap:8px;text-align:center}
+/* tabel */
+.ae2-t-das .pb-tabel .pb-c-nama{width:20%}.ae2-t-das .pb-tabel .pb-c-n{width:96px}
+@media (min-width:768px){
+  .jm-ae2 .pb-tabel .pb-c-nama{width:21%}.jm-ae2 .pb-tabel .pb-c-jenis{width:84px}.jm-ae2 .pb-tabel .pb-c-pem{width:15%}.jm-ae2 .pb-tabel .pb-c-status{width:112px}
+  .jm-ae2 .pb-tabel .pb-c-skor{width:158px}.jm-ae2 .pb-tabel .pb-c-das{width:14%}.jm-ae2 .pb-tabel .pb-c-mw{width:92px}.jm-ae2 .pb-tabel .pb-c-km2{width:104px}
+  .jm-ae2 .pb-tabel .pb-c-komp{width:19%}.jm-ae2 .pb-tabel .pb-c-serbaguna{width:15%}
+}
+}
+@media (max-width:999px){.pt2-saring .jm-cari{grid-column:1/-1}}
+/* kepala: empat ubin 2x2 agar angka lima digit tidak terpotong */
+@media (max-width:1280px){.jm-ae2 .jm-kh-ubin{grid-template-columns:repeat(2,minmax(0,1fr))!important}}
+.jm-ae2 .jm-kh-angka b{white-space:nowrap}
+/* saringan: tiga pilihan sama lebar, pencarian satu baris penuh di layar sempit */
+.jm-ae2 .pt2-saring{display:grid;gap:12px;grid-template-columns:repeat(3,minmax(0,1fr));align-items:center}
+.jm-ae2 .pt2-saring .jm-cari{grid-column:1/-1}
+.jm-ae2 .pt2-saring .jm-hapus{grid-column:1/-1;justify-self:start}
+@media (max-width:640px){.jm-ae2 .pt2-saring{grid-template-columns:minmax(0,1fr)}}
+@media (min-width:1200px){.jm-ae2 .pt2-saring{grid-template-columns:minmax(0,1.5fr) repeat(3,minmax(0,1fr))}.jm-ae2 .pt2-saring .jm-cari{grid-column:auto}}

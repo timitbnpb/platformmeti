@@ -3,6 +3,7 @@
 // Teks dari sumber publik yang dibaca 8 Nov 2026; tabel dari berkas repo (proyek, keuangan_hijau, asean_energi, regulasi).
 import { dalam } from './topik_nuklir_dalam.mjs';
 import { T, hp, S, ED, baca, regS, nf, nfe, SPUBFIN, teks, faq, glos, rumus, langkah, tabel, grafik, linimasa, kol, L, kunci, kas, rakit, selftest as st, jalankan, tabelRegulasi, kolRegulasi, validasi as val } from './topik_enam_lib.mjs';
+import { tambahJalanModel } from './topik_jalan_lib.mjs';
 
 const ase = baca('public/data/asean_energi.json'), kh = baca('public/data/keuangan_hijau.json');
 const pj = baca('public/data/proyek.json').baris.find((p) => p.id === 'pj_0220');
@@ -275,7 +276,7 @@ function susunAsal() {
     sumber: SUMBER, bab });
 }
 
-export function susun() { return dalam(susunAsal()); }
+export function susun() { return tambahJalanModel(dalam(susunAsal()), 'nuklir'); }
 export const validasi = val;
 export const selftest = () => st(susun);
 jalankan(import.meta.url, 'nuklir', susun);

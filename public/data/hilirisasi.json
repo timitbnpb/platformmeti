@@ -1,0 +1,2040 @@
+{
+ "lapis": "hilirisasi",
+ "dibangun_pada": "2026-11-08",
+ "parameter": {
+  "mwh_per_ton": {
+   "matte": 30,
+   "rkef": 38,
+   "feni": 40,
+   "hpal": 9,
+   "aluminium": 14.5
+  },
+  "kadar_ni_mhp": 0.35,
+  "faktor_emisi": {
+   "captive-pltu": null,
+   "jaringan": 0.8,
+   "ebt-hidro": 0
+  },
+  "faktor_emisi_captive_default": 0.95,
+  "jam": 8760,
+  "catatan": "Intensitas = MWh per ton x faktor emisi sumber listrik. Hanya baris dengan kapasitas terpublikasi dan jenis yang punya angka MWh per ton yang dihitung; sel baterai dan alumina belum."
+ },
+ "sumber": [
+  {
+   "id": "kurasi",
+   "judul": "Kurasi smelter dan baterai (scripts/panen/smelter_kurasi.mjs), sumber per baris",
+   "penerbit": "METI Network",
+   "url": "https://platformmeti.timitbnpb.workers.dev",
+   "tingkat_bukti": "laporan-publik"
+  },
+  {
+   "judul": "UN Comtrade (API preview publik), ekspor Indonesia, HS 2017",
+   "penerbit": "UN Statistics Division",
+   "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS",
+   "tingkat_bukti": "resmi"
+  }
+ ],
+ "meta": {
+  "jumlah": 20,
+  "jumlah_operasi": 14,
+  "jumlah_smelter_nikel": 14,
+  "nikel_ton_operasi": 628966,
+  "nikel_ton_konstruksi": 187000,
+  "tanpa_kapasitas": 7,
+  "mwh_per_ton": {
+   "matte": 30,
+   "rkef": 38,
+   "feni": 40,
+   "hpal": 9,
+   "aluminium": 14.5
+  }
+ },
+ "ekspor": {
+  "hs": {
+   "2604": "Bijih nikel",
+   "2606": "Bijih bauksit",
+   "7202": "Ferro-alloy (termasuk feronikel/NPI)",
+   "7501": "Matte nikel",
+   "7502": "Nikel tempa (katoda)",
+   "7601": "Aluminium tempa",
+   "8507": "Akumulator listrik (baterai)"
+  },
+  "nilai": {
+   "2604": {
+    "2021": {
+     "tahun": 2021,
+     "usd": 43,
+     "ton": 0,
+     "mitra": [
+      {
+       "kode": 156,
+       "iso": "cn",
+       "usd": 42
+      },
+      {
+       "kode": 392,
+       "iso": "jp",
+       "usd": 1
+      }
+     ]
+    },
+    "2022": {
+     "tahun": 2022,
+     "usd": 29,
+     "ton": 0,
+     "mitra": [
+      {
+       "kode": 251,
+       "iso": "fr",
+       "usd": 29
+      }
+     ]
+    },
+    "2023": {
+     "tahun": 2023,
+     "usd": 239,
+     "ton": 1,
+     "mitra": [
+      {
+       "kode": 36,
+       "iso": "au",
+       "usd": 239
+      }
+     ]
+    },
+    "2024": {
+     "tahun": 2024,
+     "usd": 14906,
+     "ton": 2,
+     "mitra": [
+      {
+       "kode": 36,
+       "iso": "au",
+       "usd": 14906
+      }
+     ]
+    }
+   },
+   "2606": {
+    "2021": {
+     "tahun": 2021,
+     "usd": 628176233,
+     "ton": 19914486,
+     "mitra": [
+      {
+       "kode": 156,
+       "iso": "cn",
+       "usd": 628176233
+      }
+     ]
+    },
+    "2022": {
+     "tahun": 2022,
+     "usd": 623000743,
+     "ton": 17845182,
+     "mitra": [
+      {
+       "kode": 156,
+       "iso": "cn",
+       "usd": 623000743
+      }
+     ]
+    },
+    "2023": {
+     "tahun": 2023,
+     "usd": 68118091,
+     "ton": 1921433,
+     "mitra": [
+      {
+       "kode": 156,
+       "iso": "cn",
+       "usd": 68118091
+      }
+     ]
+    }
+   },
+   "7202": {
+    "2021": {
+     "tahun": 2021,
+     "usd": 7107126972,
+     "ton": 3517126,
+     "mitra": [
+      {
+       "kode": 156,
+       "iso": "cn",
+       "usd": 6254860495
+      },
+      {
+       "kode": 699,
+       "iso": "in",
+       "usd": 504400433
+      },
+      {
+       "kode": 490,
+       "iso": "tw",
+       "usd": 218455603
+      },
+      {
+       "kode": 410,
+       "iso": "kr",
+       "usd": 90329877
+      },
+      {
+       "kode": 528,
+       "iso": "nl",
+       "usd": 9949110
+      },
+      {
+       "kode": 792,
+       "iso": "tr",
+       "usd": 9564846
+      }
+     ]
+    },
+    "2022": {
+     "tahun": 2022,
+     "usd": 13707965055,
+     "ton": 5836113,
+     "mitra": [
+      {
+       "kode": 156,
+       "iso": "cn",
+       "usd": 13248566784
+      },
+      {
+       "kode": 699,
+       "iso": "in",
+       "usd": 199653861
+      },
+      {
+       "kode": 490,
+       "iso": "tw",
+       "usd": 129419179
+      },
+      {
+       "kode": 410,
+       "iso": "kr",
+       "usd": 117513970
+      },
+      {
+       "kode": 608,
+       "iso": "ph",
+       "usd": 4036172
+      },
+      {
+       "kode": 12,
+       "iso": null,
+       "usd": 3456484
+      }
+     ]
+    },
+    "2023": {
+     "tahun": 2023,
+     "usd": 15300367454,
+     "ton": 8541485,
+     "mitra": [
+      {
+       "kode": 156,
+       "iso": "cn",
+       "usd": 14953215045
+      },
+      {
+       "kode": 699,
+       "iso": "in",
+       "usd": 190253213
+      },
+      {
+       "kode": 410,
+       "iso": "kr",
+       "usd": 91548265
+      },
+      {
+       "kode": 490,
+       "iso": "tw",
+       "usd": 55145359
+      },
+      {
+       "kode": 608,
+       "iso": "ph",
+       "usd": 3633889
+      },
+      {
+       "kode": 12,
+       "iso": null,
+       "usd": 2414870
+      }
+     ]
+    },
+    "2024": {
+     "tahun": 2024,
+     "usd": 14073009737,
+     "ton": 9679907,
+     "mitra": [
+      {
+       "kode": 156,
+       "iso": "cn",
+       "usd": 13263152958
+      },
+      {
+       "kode": 699,
+       "iso": "in",
+       "usd": 302092857
+      },
+      {
+       "kode": 410,
+       "iso": "kr",
+       "usd": 195820321
+      },
+      {
+       "kode": 528,
+       "iso": "nl",
+       "usd": 149118557
+      },
+      {
+       "kode": 490,
+       "iso": "tw",
+       "usd": 82091343
+      },
+      {
+       "kode": 380,
+       "iso": "it",
+       "usd": 34996010
+      }
+     ]
+    }
+   },
+   "7501": {
+    "2021": {
+     "tahun": 2021,
+     "usd": 1264628143,
+     "ton": 165049,
+     "mitra": [
+      {
+       "kode": 392,
+       "iso": "jp",
+       "usd": 953173742
+      },
+      {
+       "kode": 156,
+       "iso": "cn",
+       "usd": 311454402
+      }
+     ]
+    },
+    "2022": {
+     "tahun": 2022,
+     "usd": 5924921742,
+     "ton": 773462,
+     "mitra": [
+      {
+       "kode": 156,
+       "iso": "cn",
+       "usd": 4451181697
+      },
+      {
+       "kode": 392,
+       "iso": "jp",
+       "usd": 1235938134
+      },
+      {
+       "kode": 410,
+       "iso": "kr",
+       "usd": 106040947
+      },
+      {
+       "kode": 458,
+       "iso": "my",
+       "usd": 69847538
+      },
+      {
+       "kode": 579,
+       "iso": "no",
+       "usd": 61870769
+      },
+      {
+       "kode": 56,
+       "iso": "be",
+       "usd": 42257
+      }
+     ]
+    },
+    "2023": {
+     "tahun": 2023,
+     "usd": 6764479247,
+     "ton": 1254938,
+     "mitra": [
+      {
+       "kode": 156,
+       "iso": "cn",
+       "usd": 4918499458
+      },
+      {
+       "kode": 392,
+       "iso": "jp",
+       "usd": 1281522706
+      },
+      {
+       "kode": 579,
+       "iso": "no",
+       "usd": 397619963
+      },
+      {
+       "kode": 528,
+       "iso": "nl",
+       "usd": 155552542
+      },
+      {
+       "kode": 410,
+       "iso": "kr",
+       "usd": 10592193
+      },
+      {
+       "kode": 490,
+       "iso": "tw",
+       "usd": 692380
+      }
+     ]
+    },
+    "2024": {
+     "tahun": 2024,
+     "usd": 7123803369,
+     "ton": 1879882,
+     "mitra": [
+      {
+       "kode": 156,
+       "iso": "cn",
+       "usd": 5879732410
+      },
+      {
+       "kode": 392,
+       "iso": "jp",
+       "usd": 1025485740
+      },
+      {
+       "kode": 528,
+       "iso": "nl",
+       "usd": 135310909
+      },
+      {
+       "kode": 579,
+       "iso": "no",
+       "usd": 63888252
+      },
+      {
+       "kode": 410,
+       "iso": "kr",
+       "usd": 19386048
+      },
+      {
+       "kode": 699,
+       "iso": "in",
+       "usd": 5
+      }
+     ]
+    }
+   },
+   "7502": {
+    "2023": {
+     "tahun": 2023,
+     "usd": 37757917,
+     "ton": 1951,
+     "mitra": [
+      {
+       "kode": 156,
+       "iso": "cn",
+       "usd": 27952498
+      },
+      {
+       "kode": 528,
+       "iso": "nl",
+       "usd": 9689706
+      },
+      {
+       "kode": 699,
+       "iso": "in",
+       "usd": 115713
+      }
+     ]
+    },
+    "2024": {
+     "tahun": 2024,
+     "usd": 861626426,
+     "ton": 43640,
+     "mitra": [
+      {
+       "kode": 156,
+       "iso": "cn",
+       "usd": 380559785
+      },
+      {
+       "kode": 702,
+       "iso": "sg",
+       "usd": 193809351
+      },
+      {
+       "kode": 490,
+       "iso": "tw",
+       "usd": 109697923
+      },
+      {
+       "kode": 410,
+       "iso": "kr",
+       "usd": 86310629
+      },
+      {
+       "kode": 699,
+       "iso": "in",
+       "usd": 28777278
+      },
+      {
+       "kode": 392,
+       "iso": "jp",
+       "usd": 24071388
+      }
+     ]
+    }
+   },
+   "7601": {
+    "2021": {
+     "tahun": 2021,
+     "usd": 303184804,
+     "ton": 122611,
+     "mitra": [
+      {
+       "kode": 156,
+       "iso": "cn",
+       "usd": 113053194
+      },
+      {
+       "kode": 704,
+       "iso": "vn",
+       "usd": 62178075
+      },
+      {
+       "kode": 392,
+       "iso": "jp",
+       "usd": 53302288
+      },
+      {
+       "kode": 764,
+       "iso": "th",
+       "usd": 28190314
+      },
+      {
+       "kode": 608,
+       "iso": "ph",
+       "usd": 10090775
+      },
+      {
+       "kode": 380,
+       "iso": "it",
+       "usd": 6703495
+      }
+     ]
+    },
+    "2022": {
+     "tahun": 2022,
+     "usd": 359398206,
+     "ton": 129525,
+     "mitra": [
+      {
+       "kode": 156,
+       "iso": "cn",
+       "usd": 100249803
+      },
+      {
+       "kode": 528,
+       "iso": "nl",
+       "usd": 75421676
+      },
+      {
+       "kode": 704,
+       "iso": "vn",
+       "usd": 70599912
+      },
+      {
+       "kode": 699,
+       "iso": "in",
+       "usd": 28723420
+      },
+      {
+       "kode": 458,
+       "iso": "my",
+       "usd": 24225515
+      },
+      {
+       "kode": 392,
+       "iso": "jp",
+       "usd": 11086557
+      }
+     ]
+    },
+    "2023": {
+     "tahun": 2023,
+     "usd": 414239489,
+     "ton": 1161570,
+     "mitra": [
+      {
+       "kode": 156,
+       "iso": "cn",
+       "usd": 225394913
+      },
+      {
+       "kode": 704,
+       "iso": "vn",
+       "usd": 85260160
+      },
+      {
+       "kode": 792,
+       "iso": "tr",
+       "usd": 58838205
+      },
+      {
+       "kode": 458,
+       "iso": "my",
+       "usd": 10917559
+      },
+      {
+       "kode": 410,
+       "iso": "kr",
+       "usd": 9976940
+      },
+      {
+       "kode": 392,
+       "iso": "jp",
+       "usd": 7256435
+      }
+     ]
+    },
+    "2024": {
+     "tahun": 2024,
+     "usd": 975102102,
+     "ton": 0,
+     "mitra": [
+      {
+       "kode": 156,
+       "iso": "cn",
+       "usd": 445587802
+      },
+      {
+       "kode": 704,
+       "iso": "vn",
+       "usd": 98051097
+      },
+      {
+       "kode": 484,
+       "iso": "mx",
+       "usd": 67523521
+      },
+      {
+       "kode": 458,
+       "iso": "my",
+       "usd": 60355685
+      },
+      {
+       "kode": 410,
+       "iso": "kr",
+       "usd": 56433956
+      },
+      {
+       "kode": 380,
+       "iso": "it",
+       "usd": 54473418
+      }
+     ]
+    }
+   },
+   "8507": {
+    "2021": {
+     "tahun": 2021,
+     "usd": 220900810,
+     "ton": 0,
+     "mitra": [
+      {
+       "kode": 458,
+       "iso": "my",
+       "usd": 20729319
+      },
+      {
+       "kode": 826,
+       "iso": "gb",
+       "usd": 19406923
+      },
+      {
+       "kode": 699,
+       "iso": "in",
+       "usd": 17762774
+      },
+      {
+       "kode": 608,
+       "iso": "ph",
+       "usd": 13320979
+      },
+      {
+       "kode": 392,
+       "iso": "jp",
+       "usd": 11488718
+      },
+      {
+       "kode": 784,
+       "iso": "ae",
+       "usd": 9992340
+      }
+     ]
+    },
+    "2022": {
+     "tahun": 2022,
+     "usd": 196401415,
+     "ton": 58938,
+     "mitra": [
+      {
+       "kode": 458,
+       "iso": "my",
+       "usd": 18143704
+      },
+      {
+       "kode": 699,
+       "iso": "in",
+       "usd": 16170060
+      },
+      {
+       "kode": 702,
+       "iso": "sg",
+       "usd": 15670831
+      },
+      {
+       "kode": 608,
+       "iso": "ph",
+       "usd": 13599222
+      },
+      {
+       "kode": 392,
+       "iso": "jp",
+       "usd": 13511715
+      },
+      {
+       "kode": 826,
+       "iso": "gb",
+       "usd": 11677305
+      }
+     ]
+    },
+    "2023": {
+     "tahun": 2023,
+     "usd": 168709284,
+     "ton": 44212,
+     "mitra": [
+      {
+       "kode": 699,
+       "iso": "in",
+       "usd": 22679464
+      },
+      {
+       "kode": 608,
+       "iso": "ph",
+       "usd": 15687401
+      },
+      {
+       "kode": 458,
+       "iso": "my",
+       "usd": 13718932
+      },
+      {
+       "kode": 410,
+       "iso": "kr",
+       "usd": 12083450
+      },
+      {
+       "kode": 392,
+       "iso": "jp",
+       "usd": 11536206
+      },
+      {
+       "kode": 528,
+       "iso": "nl",
+       "usd": 7372889
+      }
+     ]
+    },
+    "2024": {
+     "tahun": 2024,
+     "usd": 780397114,
+     "ton": 81798,
+     "mitra": [
+      {
+       "kode": 410,
+       "iso": "kr",
+       "usd": 579286744
+      },
+      {
+       "kode": 699,
+       "iso": "in",
+       "usd": 41479600
+      },
+      {
+       "kode": 608,
+       "iso": "ph",
+       "usd": 17919397
+      },
+      {
+       "kode": 826,
+       "iso": "gb",
+       "usd": 14966139
+      },
+      {
+       "kode": 458,
+       "iso": "my",
+       "usd": 14933319
+      },
+      {
+       "kode": 528,
+       "iso": "nl",
+       "usd": 11666021
+      }
+     ]
+    }
+   }
+  },
+  "diambil": "2026-11-07"
+ },
+ "baris": [
+  {
+   "id": "vale-sorowako",
+   "nama": "Vale Indonesia Sorowako (matte nikel)",
+   "rantai": "smelter",
+   "jenis": "matte",
+   "produk": "Nikel dalam matte",
+   "kapasitas": {
+    "nilai": 70000,
+    "satuan": "ton Ni/tahun",
+    "jenis": "terpasang",
+    "ket": "Produksi 2024 70.728 ton Ni dalam matte; satu sumber menulis kapasitas 80.000 ton"
+   },
+   "ton_logam_tahun": 70000,
+   "teknologi": "Tungku listrik, PLTA Larona, Balambano, Karebbe",
+   "pemilik": [
+    {
+     "nama": "PT Vale Indonesia Tbk",
+     "negara": "br",
+     "org_id": "pm_129dbx35045",
+     "logo": "/img/logo/org/pm_129dbx35045.png",
+     "korporat": null
+    },
+    {
+     "nama": "MIND ID",
+     "negara": "id",
+     "org_id": null,
+     "logo": null,
+     "korporat": null
+    }
+   ],
+   "status": "operasi",
+   "ket_status": null,
+   "tahun": 1978,
+   "lat": -2.55,
+   "lng": 121.36,
+   "zona": "sorowako",
+   "kawasan_id": null,
+   "provinsi": "Sulawesi Selatan",
+   "kode_prov": "73",
+   "sumber_listrik": "ebt-hidro",
+   "tautan_listrik": null,
+   "pembangkit_ids": [],
+   "mw_pembangkit": 0,
+   "mw_pembangkit_konstruksi": 0,
+   "ebt_ids": [
+    "gem-hydropower-L100000602124",
+    "gem-hydropower-L100000602103"
+   ],
+   "mwh_per_ton": 30,
+   "listrik_gwh_tahun": 2100,
+   "mw_rata": 240,
+   "faktor_emisi": 0,
+   "intensitas_tco2e_per_ton": 0,
+   "pembeli": [
+    {
+     "nama": "Jepang (matte untuk pemurnian)",
+     "iso": "jp"
+    }
+   ],
+   "ekspor_utama": [
+    "cn"
+   ],
+   "org_id": null,
+   "tingkat_bukti": "laporan-publik",
+   "sumber": [
+    {
+     "judul": "Vale Indonesia, Briefing Book (Juli 2024)",
+     "url": "https://vale.com/documents/d/guest/ptvi-briefing-book-eng-_v20240722"
+    }
+   ]
+  },
+  {
+   "id": "vale-pomalaa",
+   "nama": "Vale Pomalaa HPAL (Huayou, Ford)",
+   "rantai": "prekursor",
+   "jenis": "hpal",
+   "produk": "MHP (nikel kobalt hidroksida)",
+   "kapasitas": {
+    "nilai": 120000,
+    "satuan": "ton MHP/tahun",
+    "jenis": "rencana",
+    "ket": "Mulai operasi sempat diberitakan Agustus 2026; RKAB 2026 di bawah target"
+   },
+   "ton_logam_tahun": 42000,
+   "teknologi": "HPAL",
+   "pemilik": [
+    {
+     "nama": "PT Vale Indonesia Tbk",
+     "negara": "br",
+     "org_id": "pm_129dbx35045",
+     "logo": "/img/logo/org/pm_129dbx35045.png",
+     "korporat": null
+    },
+    {
+     "nama": "Zhejiang Huayou Cobalt",
+     "negara": "cn",
+     "org_id": "en_33adbcf374",
+     "logo": null,
+     "korporat": null
+    },
+    {
+     "nama": "Ford",
+     "negara": "us",
+     "org_id": null,
+     "logo": null,
+     "korporat": null
+    }
+   ],
+   "status": "konstruksi",
+   "ket_status": null,
+   "tahun": 2026,
+   "lat": -4.17,
+   "lng": 121.62,
+   "zona": "pomalaa",
+   "kawasan_id": "ki_indonesiapomalaaindustry_dir",
+   "provinsi": "Sulawesi Tenggara",
+   "kode_prov": "74",
+   "sumber_listrik": "captive-pltu",
+   "tautan_listrik": "kawasan",
+   "pembangkit_ids": [
+    "L100000102801"
+   ],
+   "mw_pembangkit": 60,
+   "mw_pembangkit_konstruksi": 0,
+   "ebt_ids": [],
+   "mwh_per_ton": 9,
+   "listrik_gwh_tahun": 378,
+   "mw_rata": 43,
+   "faktor_emisi": 1.06,
+   "intensitas_tco2e_per_ton": 9.5,
+   "pembeli": [],
+   "ekspor_utama": [
+    "cn"
+   ],
+   "org_id": null,
+   "tingkat_bukti": "laporan-publik",
+   "sumber": [
+    {
+     "judul": "Metals Wire: Vale Indonesia targets 2026 for Pomalaa",
+     "url": "https://metalswire.net/news-of-the-week/pt-vale-indonesia-targets-2026-for-nickel-processing-plant-operation-in-southeast-sulawesi"
+    },
+    {
+     "judul": "Mining.com: Vale Indonesia, kuota 2026",
+     "url": "https://www.mining.com/web/vale-indonesia-says-2026-mining-quota-wont-be-enough-to-meet-demand-from-new-smelters"
+    }
+   ]
+  },
+  {
+   "id": "vale-bahodopi",
+   "nama": "Vale Bahodopi (RKEF)",
+   "rantai": "smelter",
+   "jenis": "rkef",
+   "produk": "Feronikel",
+   "kapasitas": {
+    "nilai": 73000,
+    "satuan": "ton Ni/tahun",
+    "jenis": "rencana",
+    "ket": "Sumber berbeda tentang teknologi (RKEF atau HPAL 66.000 ton MHP); dipakai angka RKEF"
+   },
+   "ton_logam_tahun": 73000,
+   "teknologi": "RKEF",
+   "pemilik": [
+    {
+     "nama": "PT Vale Indonesia Tbk",
+     "negara": "br",
+     "org_id": "pm_129dbx35045",
+     "logo": "/img/logo/org/pm_129dbx35045.png",
+     "korporat": null
+    }
+   ],
+   "status": "konstruksi",
+   "ket_status": null,
+   "tahun": 2026,
+   "lat": -2.82,
+   "lng": 122.15,
+   "zona": "imip",
+   "kawasan_id": "ki_morowali_dir",
+   "provinsi": "Sulawesi Tengah",
+   "kode_prov": "72",
+   "sumber_listrik": "captive-pltu",
+   "tautan_listrik": "kawasan",
+   "pembangkit_ids": [
+    "L100000104846",
+    "L100000102722",
+    "L100000104616",
+    "L100000104847"
+   ],
+   "mw_pembangkit": 5700,
+   "mw_pembangkit_konstruksi": 760,
+   "ebt_ids": [],
+   "mwh_per_ton": 38,
+   "listrik_gwh_tahun": 2774,
+   "mw_rata": 317,
+   "faktor_emisi": 0.92,
+   "intensitas_tco2e_per_ton": 35,
+   "pembeli": [],
+   "ekspor_utama": [
+    "cn"
+   ],
+   "org_id": null,
+   "tingkat_bukti": "laporan-publik",
+   "sumber": [
+    {
+     "judul": "Indonesia Business Post: Vale Indonesia nickel plant Southeast Sulawesi 2026",
+     "url": "https://indonesiabusinesspost.com/2637/Politics/pt-vale-indonesia-set-to-launch-nickel-plant-in-southeast-sulawesi-by-2026"
+    }
+   ]
+  },
+  {
+   "id": "harita-rkef",
+   "nama": "Harita Nickel Obi (RKEF)",
+   "rantai": "smelter",
+   "jenis": "rkef",
+   "produk": "Feronikel",
+   "kapasitas": {
+    "nilai": 305000,
+    "satuan": "ton Ni/tahun",
+    "jenis": "rencana",
+    "ket": "Target akhir 2026 setelah smelter ketiga; produksi 2024 126.344 ton feronikel"
+   },
+   "ton_logam_tahun": 305000,
+   "teknologi": "RKEF",
+   "pemilik": [
+    {
+     "nama": "PT Harita Nickel Tbk",
+     "negara": "id",
+     "org_id": "en_f99309c07b",
+     "logo": null,
+     "korporat": null
+    }
+   ],
+   "status": "operasi",
+   "ket_status": null,
+   "tahun": 2021,
+   "lat": -1.52,
+   "lng": 127.43,
+   "zona": "obi",
+   "kawasan_id": "ki_pulauobi_dir",
+   "provinsi": "Maluku Utara",
+   "kode_prov": "82",
+   "sumber_listrik": "captive-pltu",
+   "tautan_listrik": "kawasan",
+   "pembangkit_ids": [
+    "L100000104831",
+    "L100000104614",
+    "L100000104615"
+   ],
+   "mw_pembangkit": 1932,
+   "mw_pembangkit_konstruksi": 760,
+   "ebt_ids": [],
+   "mwh_per_ton": 38,
+   "listrik_gwh_tahun": 11590,
+   "mw_rata": 1323,
+   "faktor_emisi": 1.001,
+   "intensitas_tco2e_per_ton": 38,
+   "pembeli": [],
+   "ekspor_utama": [
+    "cn"
+   ],
+   "org_id": "en_f99309c07b",
+   "tingkat_bukti": "laporan-publik",
+   "sumber": [
+    {
+     "judul": "Bisnis: Harita Nickel kebut tiga proyek strategis di Pulau Obi",
+     "url": "https://market.bisnis.com/read/20260701/192/1984517/harita-nickel-nckl-kebut-tiga-proyek-strategis-di-pulau-obi"
+    }
+   ]
+  },
+  {
+   "id": "harita-hpal",
+   "nama": "Harita Nickel Obi HPAL (HPL dan ONC)",
+   "rantai": "prekursor",
+   "jenis": "hpal",
+   "produk": "MHP (nikel kobalt hidroksida)",
+   "kapasitas": {
+    "nilai": 120000,
+    "satuan": "ton MHP/tahun",
+    "jenis": "terpasang",
+    "ket": "Sumber berbeda (120.000 gabungan, 65.000 per pabrik ONC); produksi 2024 63.431 ton MHP"
+   },
+   "ton_logam_tahun": 42000,
+   "teknologi": "HPAL",
+   "pemilik": [
+    {
+     "nama": "PT Harita Nickel Tbk",
+     "negara": "id",
+     "org_id": "en_f99309c07b",
+     "logo": null,
+     "korporat": null
+    },
+    {
+     "nama": "Lygend Resources and Technology",
+     "negara": "cn",
+     "org_id": "en_84541cf352",
+     "logo": null,
+     "korporat": null
+    }
+   ],
+   "status": "operasi",
+   "ket_status": null,
+   "tahun": 2021,
+   "lat": -1.56,
+   "lng": 127.42,
+   "zona": "obi",
+   "kawasan_id": "ki_pulauobi_dir",
+   "provinsi": "Maluku Utara",
+   "kode_prov": "82",
+   "sumber_listrik": "captive-pltu",
+   "tautan_listrik": "pemilik-sama",
+   "pembangkit_ids": [
+    "L100000104831"
+   ],
+   "mw_pembangkit": 1630,
+   "mw_pembangkit_konstruksi": 760,
+   "ebt_ids": [],
+   "mwh_per_ton": 9,
+   "listrik_gwh_tahun": 378,
+   "mw_rata": 43,
+   "faktor_emisi": 1.001,
+   "intensitas_tco2e_per_ton": 9,
+   "pembeli": [],
+   "ekspor_utama": [
+    "cn"
+   ],
+   "org_id": "en_f99309c07b",
+   "tingkat_bukti": "laporan-publik",
+   "sumber": [
+    {
+     "judul": "Lygend fase dua HPAL dioperasikan",
+     "url": "https://news.metal.com/newscontent/102070296-lygends-phase-two-hpal-cobalt-nickel-project-commissioned-as-scheduled"
+    },
+    {
+     "judul": "GEM Wiki: PT Halmahera Persada Lygend Nickel Smelter power station",
+     "url": "https://www.gem.wiki/PT_Halmahera_Persada_Lygend_Nickel_Smelter_power_station"
+    }
+   ]
+  },
+  {
+   "id": "nic-rkef",
+   "nama": "Nickel Industries RKEF (Hengjaya, Ranger, Angel, Oracle)",
+   "rantai": "smelter",
+   "jenis": "rkef",
+   "produk": "NPI dan feronikel",
+   "kapasitas": {
+    "nilai": 124966,
+    "satuan": "ton Ni/tahun",
+    "jenis": "produksi",
+    "ket": "Produksi 2025 porsi kepemilikan (80%); belum kapasitas terpasang"
+   },
+   "ton_logam_tahun": 124966,
+   "teknologi": "RKEF",
+   "pemilik": [
+    {
+     "nama": "Nickel Industries Limited",
+     "negara": "au",
+     "org_id": "en_7f029af89a",
+     "logo": null,
+     "korporat": null
+    }
+   ],
+   "status": "operasi",
+   "ket_status": null,
+   "tahun": 2020,
+   "lat": -2.85,
+   "lng": 122.17,
+   "zona": "imip",
+   "kawasan_id": "ki_morowali_dir",
+   "provinsi": "Sulawesi Tengah",
+   "kode_prov": "72",
+   "sumber_listrik": "captive-pltu",
+   "tautan_listrik": "kawasan",
+   "pembangkit_ids": [
+    "L100000104846",
+    "L100000102722",
+    "L100000104616",
+    "L100000104847"
+   ],
+   "mw_pembangkit": 5700,
+   "mw_pembangkit_konstruksi": 760,
+   "ebt_ids": [],
+   "mwh_per_ton": 38,
+   "listrik_gwh_tahun": 4749,
+   "mw_rata": 542,
+   "faktor_emisi": 0.92,
+   "intensitas_tco2e_per_ton": 35,
+   "pembeli": [],
+   "ekspor_utama": [
+    "cn"
+   ],
+   "org_id": "en_7f029af89a",
+   "tingkat_bukti": "laporan-publik",
+   "sumber": [
+    {
+     "judul": "Nickel Industries, laporan tahunan 2025 dan pengumuman ASX",
+     "url": "https://announcements.asx.com.au/asxpdf/20260223/pdf/06wm4x116x1lxg.pdf"
+    }
+   ]
+  },
+  {
+   "id": "nic-enc",
+   "nama": "Excelsior Nickel Cobalt (ENC) HPAL",
+   "rantai": "prekursor",
+   "jenis": "hpal",
+   "produk": "MHP lalu katoda dan sulfat nikel",
+   "kapasitas": {
+    "nilai": 72000,
+    "satuan": "ton Ni/tahun",
+    "jenis": "rencana",
+    "ket": "Nameplate 72 ribu ton Ni; mulai operasi diharapkan paruh pertama 2026; porsi Nickel Industries 44 sampai 46%"
+   },
+   "ton_logam_tahun": 72000,
+   "teknologi": "HPAL",
+   "pemilik": [
+    {
+     "nama": "Nickel Industries Limited",
+     "negara": "au",
+     "org_id": "en_7f029af89a",
+     "logo": null,
+     "korporat": null
+    }
+   ],
+   "status": "konstruksi",
+   "ket_status": null,
+   "tahun": 2026,
+   "lat": 0.45,
+   "lng": 127.98,
+   "zona": "iwip",
+   "kawasan_id": "ki_indonesiawedabay_dir",
+   "provinsi": "Maluku Utara",
+   "kode_prov": "82",
+   "sumber_listrik": "captive-pltu",
+   "tautan_listrik": "kawasan",
+   "pembangkit_ids": [
+    "L100000104613"
+   ],
+   "mw_pembangkit": 4540,
+   "mw_pembangkit_konstruksi": 0,
+   "ebt_ids": [],
+   "mwh_per_ton": 9,
+   "listrik_gwh_tahun": 648,
+   "mw_rata": 74,
+   "faktor_emisi": 0.902,
+   "intensitas_tco2e_per_ton": 8.1,
+   "pembeli": [],
+   "ekspor_utama": [
+    "cn"
+   ],
+   "org_id": "en_7f029af89a",
+   "tingkat_bukti": "laporan-publik",
+   "sumber": [
+    {
+     "judul": "Nickel Industries, laporan tahunan 2025 dan pengumuman ASX",
+     "url": "https://announcements.asx.com.au/asxpdf/20260223/pdf/06wm4x116x1lxg.pdf"
+    }
+   ]
+  },
+  {
+   "id": "hnc-hpal",
+   "nama": "Huayue Nickel Cobalt (HNC) HPAL, IMIP",
+   "rantai": "prekursor",
+   "jenis": "hpal",
+   "produk": "MHP",
+   "kapasitas": {
+    "nilai": 60000,
+    "satuan": "ton Ni/tahun",
+    "jenis": "terpasang",
+    "ket": "Nameplate dari laporan emiten; produksi H1 2025 sekitar 40% di atas nameplate; Nickel Industries 10%"
+   },
+   "ton_logam_tahun": 60000,
+   "teknologi": "HPAL",
+   "pemilik": [
+    {
+     "nama": "Zhejiang Huayou Cobalt",
+     "negara": "cn",
+     "org_id": "en_33adbcf374",
+     "logo": null,
+     "korporat": null
+    },
+    {
+     "nama": "Nickel Industries Limited",
+     "negara": "au",
+     "org_id": "en_7f029af89a",
+     "logo": null,
+     "korporat": null
+    }
+   ],
+   "status": "operasi",
+   "ket_status": null,
+   "tahun": 2023,
+   "lat": -2.83,
+   "lng": 122.18,
+   "zona": "imip",
+   "kawasan_id": "ki_morowali_dir",
+   "provinsi": "Sulawesi Tengah",
+   "kode_prov": "72",
+   "sumber_listrik": "captive-pltu",
+   "tautan_listrik": "kawasan",
+   "pembangkit_ids": [
+    "L100000104846",
+    "L100000102722",
+    "L100000104616",
+    "L100000104847"
+   ],
+   "mw_pembangkit": 5700,
+   "mw_pembangkit_konstruksi": 760,
+   "ebt_ids": [],
+   "mwh_per_ton": 9,
+   "listrik_gwh_tahun": 540,
+   "mw_rata": 62,
+   "faktor_emisi": 0.92,
+   "intensitas_tco2e_per_ton": 8.3,
+   "pembeli": [],
+   "ekspor_utama": [
+    "cn"
+   ],
+   "org_id": "en_33adbcf374",
+   "tingkat_bukti": "laporan-publik",
+   "sumber": [
+    {
+     "judul": "Nickel Industries, laporan tahunan 2025 dan pengumuman ASX",
+     "url": "https://announcements.asx.com.au/asxpdf/20260223/pdf/06wm4x116x1lxg.pdf"
+    }
+   ]
+  },
+  {
+   "id": "antam-pomalaa",
+   "nama": "Antam Pomalaa (feronikel)",
+   "rantai": "smelter",
+   "jenis": "feni",
+   "produk": "Feronikel",
+   "kapasitas": {
+    "nilai": 27000,
+    "satuan": "ton Ni/tahun",
+    "jenis": "terpasang",
+    "ket": "Kapasitas nominal pabrik feronikel Pomalaa; belum dicek pada laporan tahunan terbaru"
+   },
+   "ton_logam_tahun": 27000,
+   "teknologi": "RKEF",
+   "pemilik": [
+    {
+     "nama": "PT Aneka Tambang Tbk",
+     "negara": "id",
+     "org_id": "en_8a4ce87da1",
+     "logo": null,
+     "korporat": null
+    }
+   ],
+   "status": "operasi",
+   "ket_status": null,
+   "tahun": 1975,
+   "lat": -4.19,
+   "lng": 121.58,
+   "zona": "pomalaa",
+   "kawasan_id": "ki_indonesiapomalaaindustry_dir",
+   "provinsi": "Sulawesi Tenggara",
+   "kode_prov": "74",
+   "sumber_listrik": "captive-pltu",
+   "tautan_listrik": "pemilik-sama",
+   "pembangkit_ids": [
+    "L100000102801"
+   ],
+   "mw_pembangkit": 60,
+   "mw_pembangkit_konstruksi": 0,
+   "ebt_ids": [],
+   "mwh_per_ton": 40,
+   "listrik_gwh_tahun": 1080,
+   "mw_rata": 123,
+   "faktor_emisi": 1.06,
+   "intensitas_tco2e_per_ton": 42.4,
+   "pembeli": [],
+   "ekspor_utama": [
+    "cn"
+   ],
+   "org_id": "en_8a4ce87da1",
+   "tingkat_bukti": "perlu-verifikasi",
+   "sumber": [
+    {
+     "judul": "GEM Wiki: Pomalaa Nickel power station",
+     "url": "https://www.gem.wiki/Pomalaa_Nickel_power_station"
+    }
+   ]
+  },
+  {
+   "id": "itss-imip",
+   "nama": "IMIP Morowali: Tsingshan (ITSS) dan mitra",
+   "rantai": "smelter",
+   "jenis": "rkef",
+   "produk": "NPI dan baja nirkarat",
+   "kapasitas": null,
+   "ton_logam_tahun": null,
+   "teknologi": "RKEF",
+   "pemilik": [
+    {
+     "nama": "Tsingshan",
+     "negara": "cn",
+     "org_id": "in_abdca05a83",
+     "logo": null,
+     "korporat": null
+    },
+    {
+     "nama": "PT Indonesia Morowali Industrial Park",
+     "negara": "id",
+     "org_id": "en_a7b76f883c",
+     "logo": null,
+     "korporat": null
+    }
+   ],
+   "status": "operasi",
+   "ket_status": null,
+   "tahun": 2015,
+   "lat": -2.84,
+   "lng": 122.16,
+   "zona": "imip",
+   "kawasan_id": "ki_morowali_dir",
+   "provinsi": "Sulawesi Tengah",
+   "kode_prov": "72",
+   "sumber_listrik": "captive-pltu",
+   "tautan_listrik": "kawasan",
+   "pembangkit_ids": [
+    "L100000104846"
+   ],
+   "mw_pembangkit": 3360,
+   "mw_pembangkit_konstruksi": 760,
+   "ebt_ids": [],
+   "mwh_per_ton": null,
+   "listrik_gwh_tahun": null,
+   "mw_rata": null,
+   "faktor_emisi": null,
+   "intensitas_tco2e_per_ton": null,
+   "pembeli": [],
+   "ekspor_utama": [
+    "cn"
+   ],
+   "org_id": "in_abdca05a83",
+   "tingkat_bukti": "laporan-publik",
+   "sumber": [
+    {
+     "judul": "GEM Wiki: Sulawesi Labota power station",
+     "url": "https://www.gem.wiki/Sulawesi_Labota_power_station"
+    }
+   ]
+  },
+  {
+   "id": "smi-imip",
+   "nama": "Sulawesi Mining Investment (SMI), IMIP",
+   "rantai": "smelter",
+   "jenis": "rkef",
+   "produk": "NPI",
+   "kapasitas": null,
+   "ton_logam_tahun": null,
+   "teknologi": "RKEF",
+   "pemilik": [
+    {
+     "nama": "PT Sulawesi Mining Investment",
+     "negara": "cn",
+     "org_id": null,
+     "logo": null,
+     "korporat": null
+    }
+   ],
+   "status": "operasi",
+   "ket_status": null,
+   "tahun": 2019,
+   "lat": -2.82,
+   "lng": 122.16,
+   "zona": "imip",
+   "kawasan_id": "ki_morowali_dir",
+   "provinsi": "Sulawesi Tengah",
+   "kode_prov": "72",
+   "sumber_listrik": "captive-pltu",
+   "tautan_listrik": "pemilik-sama",
+   "pembangkit_ids": [
+    "L100000102722"
+   ],
+   "mw_pembangkit": 2080,
+   "mw_pembangkit_konstruksi": 0,
+   "ebt_ids": [],
+   "mwh_per_ton": null,
+   "listrik_gwh_tahun": null,
+   "mw_rata": null,
+   "faktor_emisi": null,
+   "intensitas_tco2e_per_ton": null,
+   "pembeli": [],
+   "ekspor_utama": [
+    "cn"
+   ],
+   "org_id": null,
+   "tingkat_bukti": "laporan-publik",
+   "sumber": [
+    {
+     "judul": "GEM Wiki: Sulawesi Mining power station",
+     "url": "https://www.gem.wiki/Sulawesi_Mining_power_station"
+    }
+   ]
+  },
+  {
+   "id": "gni-morut",
+   "nama": "Gunbuster Nickel Industry (Delong), Morowali Utara",
+   "rantai": "smelter",
+   "jenis": "rkef",
+   "produk": "NPI",
+   "kapasitas": null,
+   "ton_logam_tahun": null,
+   "teknologi": "RKEF",
+   "pemilik": [
+    {
+     "nama": "Jiangsu Delong Nickel Industry",
+     "negara": "cn",
+     "org_id": "en_7ac3f73318",
+     "logo": null,
+     "korporat": null
+    }
+   ],
+   "status": "operasi",
+   "ket_status": null,
+   "tahun": 2019,
+   "lat": -2,
+   "lng": 121.44,
+   "zona": "morut",
+   "kawasan_id": null,
+   "provinsi": "Sulawesi Tengah",
+   "kode_prov": "72",
+   "sumber_listrik": "captive-pltu",
+   "tautan_listrik": "pemilik-sama",
+   "pembangkit_ids": [
+    "L100000104841"
+   ],
+   "mw_pembangkit": 810,
+   "mw_pembangkit_konstruksi": 0,
+   "ebt_ids": [],
+   "mwh_per_ton": null,
+   "listrik_gwh_tahun": null,
+   "mw_rata": null,
+   "faktor_emisi": null,
+   "intensitas_tco2e_per_ton": null,
+   "pembeli": [],
+   "ekspor_utama": [
+    "cn"
+   ],
+   "org_id": "en_7ac3f73318",
+   "tingkat_bukti": "laporan-publik",
+   "sumber": [
+    {
+     "judul": "GEM Wiki: Delong Nickel Phase III power station",
+     "url": "https://www.gem.wiki/Delong_Nickel_Phase_III_power_station"
+    }
+   ]
+  },
+  {
+   "id": "vdni-konawe",
+   "nama": "Virtue Dragon dan Obsidian (Delong), Konawe",
+   "rantai": "smelter",
+   "jenis": "rkef",
+   "produk": "NPI dan baja nirkarat",
+   "kapasitas": null,
+   "ton_logam_tahun": null,
+   "teknologi": "RKEF",
+   "pemilik": [
+    {
+     "nama": "Jiangsu Delong Nickel Industry",
+     "negara": "cn",
+     "org_id": "en_7ac3f73318",
+     "logo": null,
+     "korporat": null
+    }
+   ],
+   "status": "operasi",
+   "ket_status": null,
+   "tahun": 2017,
+   "lat": -3.86,
+   "lng": 122.45,
+   "zona": "konawe",
+   "kawasan_id": "ki_indonesiakonawe_dir",
+   "provinsi": "Sulawesi Tenggara",
+   "kode_prov": "74",
+   "sumber_listrik": "captive-pltu",
+   "tautan_listrik": "pemilik-sama",
+   "pembangkit_ids": [
+    "L100000104617",
+    "L100000105022"
+   ],
+   "mw_pembangkit": 2370,
+   "mw_pembangkit_konstruksi": 0,
+   "ebt_ids": [],
+   "mwh_per_ton": null,
+   "listrik_gwh_tahun": null,
+   "mw_rata": null,
+   "faktor_emisi": null,
+   "intensitas_tco2e_per_ton": null,
+   "pembeli": [],
+   "ekspor_utama": [
+    "cn"
+   ],
+   "org_id": "en_7ac3f73318",
+   "tingkat_bukti": "laporan-publik",
+   "sumber": [
+    {
+     "judul": "GEM Wiki: Delong Nickel Phase II power station",
+     "url": "https://www.gem.wiki/Delong_Nickel_Phase_II_power_station"
+    }
+   ]
+  },
+  {
+   "id": "iwip-weda",
+   "nama": "IWIP Weda Bay: smelter nikel kawasan",
+   "rantai": "smelter",
+   "jenis": "rkef",
+   "produk": "NPI dan feronikel",
+   "kapasitas": null,
+   "ton_logam_tahun": null,
+   "teknologi": "RKEF",
+   "pemilik": [
+    {
+     "nama": "PT Indonesia Weda Bay Industrial Park",
+     "negara": "cn",
+     "org_id": "en_aac574f476",
+     "logo": null,
+     "korporat": null
+    }
+   ],
+   "status": "operasi",
+   "ket_status": null,
+   "tahun": 2019,
+   "lat": 0.47,
+   "lng": 128,
+   "zona": "iwip",
+   "kawasan_id": "ki_indonesiawedabay_dir",
+   "provinsi": "Maluku Utara",
+   "kode_prov": "82",
+   "sumber_listrik": "captive-pltu",
+   "tautan_listrik": "kawasan",
+   "pembangkit_ids": [
+    "L100000104613"
+   ],
+   "mw_pembangkit": 4540,
+   "mw_pembangkit_konstruksi": 0,
+   "ebt_ids": [],
+   "mwh_per_ton": null,
+   "listrik_gwh_tahun": null,
+   "mw_rata": null,
+   "faktor_emisi": null,
+   "intensitas_tco2e_per_ton": null,
+   "pembeli": [],
+   "ekspor_utama": [
+    "cn"
+   ],
+   "org_id": "en_aac574f476",
+   "tingkat_bukti": "laporan-publik",
+   "sumber": [
+    {
+     "judul": "GEM Wiki: Weda Bay power station",
+     "url": "https://www.gem.wiki/Weda_Bay_power_station"
+    }
+   ]
+  },
+  {
+   "id": "hli-karawang",
+   "nama": "HLI Green Power (Hyundai, LG, IBC), Karawang",
+   "rantai": "sel",
+   "jenis": "sel",
+   "produk": "Sel baterai NCMA",
+   "kapasitas": {
+    "nilai": 10,
+    "satuan": "GWh/tahun",
+    "jenis": "terpasang",
+    "ket": "Beroperasi April 2024; rencana naik ke 20 GWh belum terkonfirmasi"
+   },
+   "ton_logam_tahun": null,
+   "teknologi": "Sel kantong NCMA",
+   "pemilik": [
+    {
+     "nama": "Hyundai Motor Group",
+     "negara": "kr",
+     "org_id": "in_dfb3ec26f0",
+     "logo": "/img/logo/org/in_dfb3ec26f0.png",
+     "korporat": null
+    },
+    {
+     "nama": "LG Energy Solution",
+     "negara": "kr",
+     "org_id": "en_e1421af365",
+     "logo": null,
+     "korporat": null
+    },
+    {
+     "nama": "PT Indonesia Battery Corporation",
+     "negara": "id",
+     "org_id": "p_c9b8bffbec",
+     "logo": "/img/logo/org/p_c9b8bffbec.png",
+     "korporat": null
+    }
+   ],
+   "status": "operasi",
+   "ket_status": null,
+   "tahun": 2024,
+   "lat": -6.35,
+   "lng": 107.45,
+   "zona": null,
+   "kawasan_id": "ki_karawangnewindustrycity_ptcfldkn",
+   "provinsi": "Jawa Barat",
+   "kode_prov": "32",
+   "sumber_listrik": "jaringan",
+   "tautan_listrik": null,
+   "pembangkit_ids": [],
+   "mw_pembangkit": 0,
+   "mw_pembangkit_konstruksi": 0,
+   "ebt_ids": [],
+   "mwh_per_ton": null,
+   "listrik_gwh_tahun": null,
+   "mw_rata": null,
+   "faktor_emisi": null,
+   "intensitas_tco2e_per_ton": null,
+   "pembeli": [
+    {
+     "nama": "Hyundai Motor Group (KONA Electric)",
+     "iso": "kr"
+    }
+   ],
+   "ekspor_utama": [],
+   "org_id": "en_fc2382eb45",
+   "tingkat_bukti": "laporan-publik",
+   "sumber": [
+    {
+     "judul": "LG Energy Solution: Karawang",
+     "url": "https://inside.lgensol.com/en/2025/04/world-battery-tour-with-lg-energy-solution-karawang-indonesia/"
+    },
+    {
+     "judul": "Tempo: Jokowi resmikan pabrik baterai Karawang",
+     "url": "https://en.tempo.co/amp/1886890/indonesias-jokowi-opens-southeast-asias-largest-ev-battery-factory-in-karawang"
+    }
+   ]
+  },
+  {
+   "id": "catl-ibc",
+   "nama": "CATL, Antam, IBC: sel baterai Karawang",
+   "rantai": "sel",
+   "jenis": "sel",
+   "produk": "Sel baterai",
+   "kapasitas": {
+    "nilai": 15,
+    "satuan": "GWh/tahun",
+    "jenis": "rencana",
+    "ket": "Kapasitas rencana 15 GWh; angka 6,9 GWh pada pemberitaan lama kemungkinan fase awal; peresmian belum terkonfirmasi"
+   },
+   "ton_logam_tahun": null,
+   "teknologi": "Sel baterai litium",
+   "pemilik": [
+    {
+     "nama": "Contemporary Amperex Technology (CATL)",
+     "negara": "cn",
+     "org_id": "in_b50ac2a3e1",
+     "logo": "/img/logo/org/in_b50ac2a3e1.png",
+     "korporat": null
+    },
+    {
+     "nama": "PT Aneka Tambang Tbk",
+     "negara": "id",
+     "org_id": "en_8a4ce87da1",
+     "logo": null,
+     "korporat": null
+    },
+    {
+     "nama": "PT Indonesia Battery Corporation",
+     "negara": "id",
+     "org_id": "p_c9b8bffbec",
+     "logo": "/img/logo/org/p_c9b8bffbec.png",
+     "korporat": null
+    }
+   ],
+   "status": "konstruksi",
+   "ket_status": null,
+   "tahun": 2026,
+   "lat": -6.37,
+   "lng": 107.46,
+   "zona": null,
+   "kawasan_id": "ki_karawangnewindustrycity_ptcfldkn",
+   "provinsi": "Jawa Barat",
+   "kode_prov": "32",
+   "sumber_listrik": "jaringan",
+   "tautan_listrik": null,
+   "pembangkit_ids": [],
+   "mw_pembangkit": 0,
+   "mw_pembangkit_konstruksi": 0,
+   "ebt_ids": [],
+   "mwh_per_ton": null,
+   "listrik_gwh_tahun": null,
+   "mw_rata": null,
+   "faktor_emisi": null,
+   "intensitas_tco2e_per_ton": null,
+   "pembeli": [],
+   "ekspor_utama": [],
+   "org_id": "in_b50ac2a3e1",
+   "tingkat_bukti": "perlu-verifikasi",
+   "sumber": [
+    {
+     "judul": "Kemenko Perekonomian: ekosistem baterai kendaraan listrik",
+     "url": "https://www.ekon.go.id/publikasi/detail/6661/pengembangan-ekosistem-baterai-kendaraan-listrik-dalam-mendorong-kemandirian-dan-ketahanan-energi-nasional"
+    }
+   ]
+  },
+  {
+   "id": "lg-ibc-gp",
+   "nama": "Proyek rantai nilai baterai LG-IBC (Grand Package)",
+   "rantai": "sel",
+   "jenis": "sel",
+   "produk": "Prekursor, katoda, sel",
+   "kapasitas": null,
+   "ton_logam_tahun": null,
+   "teknologi": "Rantai terpadu nikel ke sel",
+   "pemilik": [
+    {
+     "nama": "LG Energy Solution",
+     "negara": "kr",
+     "org_id": "en_e1421af365",
+     "logo": null,
+     "korporat": null
+    },
+    {
+     "nama": "PT Indonesia Battery Corporation",
+     "negara": "id",
+     "org_id": "p_c9b8bffbec",
+     "logo": "/img/logo/org/p_c9b8bffbec.png",
+     "korporat": null
+    },
+    {
+     "nama": "Zhejiang Huayou Cobalt",
+     "negara": "cn",
+     "org_id": "en_33adbcf374",
+     "logo": null,
+     "korporat": null
+    }
+   ],
+   "status": "batal",
+   "ket_status": "LG Energy Solution menarik diri 22 April 2025; pemerintah menyebut Huayou sebagai pengganti, syarat belum final",
+   "tahun": null,
+   "lat": -6.34,
+   "lng": 107.44,
+   "zona": null,
+   "kawasan_id": "ki_karawangnewindustrycity_ptcfldkn",
+   "provinsi": "Jawa Barat",
+   "kode_prov": "32",
+   "sumber_listrik": null,
+   "tautan_listrik": null,
+   "pembangkit_ids": [],
+   "mw_pembangkit": 0,
+   "mw_pembangkit_konstruksi": 0,
+   "ebt_ids": [],
+   "mwh_per_ton": null,
+   "listrik_gwh_tahun": null,
+   "mw_rata": null,
+   "faktor_emisi": null,
+   "intensitas_tco2e_per_ton": null,
+   "pembeli": [],
+   "ekspor_utama": [],
+   "org_id": "en_e1421af365",
+   "tingkat_bukti": "laporan-publik",
+   "sumber": [
+    {
+     "judul": "Asiae: LGES keluar dari proyek baterai Indonesia",
+     "url": "https://www.asiae.co.kr/en/article/2025041819392555129"
+    },
+    {
+     "judul": "The Star: Huayou gantikan LGES",
+     "url": "https://www.thestar.com.my/aseanplus/aseanplus-news/2025/04/23/indonesia-says-china039s-huayou-to-replace-lges-in-ev-battery-project"
+    }
+   ]
+  },
+  {
+   "id": "alamtri-kipi",
+   "nama": "AlamTri (Adaro) smelter aluminium KIPI Kaltara",
+   "rantai": "logam",
+   "jenis": "aluminium",
+   "produk": "Aluminium primer",
+   "kapasitas": {
+    "nilai": 500000,
+    "satuan": "ton Al/tahun",
+    "jenis": "rencana",
+    "ket": "Fase pertama 500 ribu ton dari 1,5 juta ton rencana; jadwal beberapa kali mundur"
+   },
+   "ton_logam_tahun": 500000,
+   "teknologi": "Elektrolisis Hall-Heroult",
+   "pemilik": [
+    {
+     "nama": "Adaro",
+     "negara": "id",
+     "org_id": "p_7f829f524e",
+     "logo": null,
+     "korporat": null
+    }
+   ],
+   "status": "konstruksi",
+   "ket_status": null,
+   "tahun": 2026,
+   "lat": 2.5,
+   "lng": 117.9,
+   "zona": "kaltara",
+   "kawasan_id": "ki_delma_dir",
+   "provinsi": "Kalimantan Utara",
+   "kode_prov": "65",
+   "sumber_listrik": "captive-pltu",
+   "tautan_listrik": "pemilik-sama",
+   "pembangkit_ids": [
+    "L100000104979"
+   ],
+   "mw_pembangkit": 0,
+   "mw_pembangkit_konstruksi": 1210,
+   "ebt_ids": [
+    "gem_hydropower_L100000602132"
+   ],
+   "mwh_per_ton": 14.5,
+   "listrik_gwh_tahun": 7250,
+   "mw_rata": 828,
+   "faktor_emisi": 0.95,
+   "intensitas_tco2e_per_ton": 13.8,
+   "pembeli": [],
+   "ekspor_utama": [],
+   "org_id": "p_7f829f524e",
+   "tingkat_bukti": "laporan-publik",
+   "sumber": [
+    {
+     "judul": "SMM: smelter aluminium KIPI Adaro",
+     "url": "https://news.metal.com/newscontent/102684954/Adaros-KIPI-aluminium-smelter-ramps-up-for-full-production-by-early-2026"
+    },
+    {
+     "judul": "SMM: PLTA Mentarang untuk smelter mulai 2030",
+     "url": "https://news.metal.com/newscontent/103421612"
+    },
+    {
+     "judul": "GEM Wiki: AlamTri Aluminum Smelter power station",
+     "url": "https://www.gem.wiki/AlamTri_Aluminum_Smelter_power_station"
+    }
+   ]
+  },
+  {
+   "id": "nanshan-bintan",
+   "nama": "Bintan Alumina Indonesia (Nanshan)",
+   "rantai": "logam",
+   "jenis": "alumina",
+   "produk": "Alumina",
+   "kapasitas": null,
+   "ton_logam_tahun": null,
+   "teknologi": "Kilang alumina (proses Bayer)",
+   "pemilik": [
+    {
+     "nama": "PT Bintan Alumina Indonesia",
+     "negara": "cn",
+     "org_id": null,
+     "logo": null,
+     "korporat": null
+    }
+   ],
+   "status": "operasi",
+   "ket_status": null,
+   "tahun": 2020,
+   "lat": 0.91,
+   "lng": 104.65,
+   "zona": "bintan",
+   "kawasan_id": "ki_kabil_dir",
+   "provinsi": "Kepulauan Riau",
+   "kode_prov": "21",
+   "sumber_listrik": "captive-pltu",
+   "tautan_listrik": "pemilik-sama",
+   "pembangkit_ids": [
+    "L100000104619"
+   ],
+   "mw_pembangkit": 180,
+   "mw_pembangkit_konstruksi": 300,
+   "ebt_ids": [],
+   "mwh_per_ton": null,
+   "listrik_gwh_tahun": null,
+   "mw_rata": null,
+   "faktor_emisi": null,
+   "intensitas_tco2e_per_ton": null,
+   "pembeli": [],
+   "ekspor_utama": [],
+   "org_id": null,
+   "tingkat_bukti": "laporan-publik",
+   "sumber": [
+    {
+     "judul": "GEM Wiki: Nanshan Industrial Park power station",
+     "url": "https://www.gem.wiki/Nanshan_Industrial_Park_power_station"
+    }
+   ]
+  },
+  {
+   "id": "ptfi-manyar",
+   "nama": "Smelter tembaga Freeport Manyar, Gresik",
+   "rantai": "logam",
+   "jenis": "tembaga",
+   "produk": "Katoda tembaga",
+   "kapasitas": {
+    "nilai": 1700000,
+    "satuan": "ton konsentrat/tahun",
+    "jenis": "terpasang",
+    "ket": "Angka dari ingatan kurasi, tidak ditemukan pada pencarian 8 Nov 2026; wajib diverifikasi"
+   },
+   "ton_logam_tahun": null,
+   "teknologi": "Peleburan flash",
+   "pemilik": [
+    {
+     "nama": "PT Freeport Indonesia",
+     "negara": "us",
+     "org_id": null,
+     "logo": null,
+     "korporat": null
+    }
+   ],
+   "status": "operasi",
+   "ket_status": null,
+   "tahun": 2024,
+   "lat": -7.12,
+   "lng": 112.62,
+   "zona": null,
+   "kawasan_id": "kek_gresik",
+   "provinsi": "Jawa Timur",
+   "kode_prov": "35",
+   "sumber_listrik": null,
+   "tautan_listrik": null,
+   "pembangkit_ids": [],
+   "mw_pembangkit": 0,
+   "mw_pembangkit_konstruksi": 0,
+   "ebt_ids": [],
+   "mwh_per_ton": null,
+   "listrik_gwh_tahun": null,
+   "mw_rata": null,
+   "faktor_emisi": null,
+   "intensitas_tco2e_per_ton": null,
+   "pembeli": [],
+   "ekspor_utama": [],
+   "org_id": null,
+   "tingkat_bukti": "perlu-verifikasi",
+   "sumber": [
+    {
+     "judul": "PT Freeport Indonesia",
+     "url": "https://ptfi.co.id/"
+    }
+   ]
+  }
+ ]
+}

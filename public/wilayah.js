@@ -167,7 +167,7 @@ function warnai() {
   const dipakai = [{ x: W - 340 / s, y: -1e4, w: 340 / s, h: 1e4 + 340 / s }]; // panel peringkat di kanan atas
   for (const p of urutM(metrik).slice(0, metrik === "rued" ? 0 : 5)) {
     const pa = svg.querySelector(`path[data-k="${p.kode}"]`), bb = pa.getBBox(), cx = bb.x + bb.width / 2, cy = bb.y + bb.height / 2;
-    const nm = p.nama, vl = nilaiTeks(metrik, p), w = (Math.max(nm.length * 5.8, vl.length * 6.4) + 6) / s, h = 26 / s;
+    const nm = p.nama, vl = nilaiTeks(metrik, p), iw = 16 / s, w = (Math.max(nm.length * 5.8, vl.length * 6.4) + 6) / s + iw, h = 26 / s;
     const kand = [];
     for (const jar of [10, 26, 46, 72, 100]) for (const a of [90, 270, 0, 180, 45, 315, 135, 225]) {
       const r = (a * Math.PI) / 180, ax = cx + (Math.cos(r) * jar) / s, ay = cy - (Math.sin(r) * jar) / s;
@@ -177,9 +177,9 @@ function warnai() {
     const k = kand.find((c) => !dipakai.some((o) => tb(c, o))) || kand[0];
     dipakai.push(k);
     if (k.jar > 10) g.append(el("line", { class: "jm-wl-gl", x1: cx.toFixed(1), y1: cy.toFixed(1), x2: Math.max(k.x, Math.min(k.x + w, cx)).toFixed(1), y2: Math.max(k.y, Math.min(k.y + h, cy)).toFixed(1) }));
-    const hw = (2.5 / s).toFixed(2), t1 = el("text", { class: "jm-wl-lt", x: (k.x + 3 / s).toFixed(1), y: (k.y + 10 / s).toFixed(1), "font-size": (10.5 / s).toFixed(2), "stroke-width": hw }), t2 = el("text", { class: "jm-wl-lv", x: (k.x + 3 / s).toFixed(1), y: (k.y + 22 / s).toFixed(1), "font-size": (11 / s).toFixed(2), "stroke-width": hw });
+    const hw = (2.5 / s).toFixed(2), t1 = el("text", { class: "jm-wl-lt", x: (k.x + 3 / s + iw).toFixed(1), y: (k.y + 10 / s).toFixed(1), "font-size": (10.5 / s).toFixed(2), "stroke-width": hw }), t2 = el("text", { class: "jm-wl-lv", x: (k.x + 3 / s + iw).toFixed(1), y: (k.y + 22 / s).toFixed(1), "font-size": (11 / s).toFixed(2), "stroke-width": hw });
     t1.textContent = nm; t2.textContent = vl; t1.style.fontSize = (10.5 / s).toFixed(2) + "px"; t2.style.fontSize = (11 / s).toFixed(2) + "px";
-    g.append(el("circle", { class: "jm-wl-gd", cx: cx.toFixed(1), cy: cy.toFixed(1), r: (2.6 / s).toFixed(2) }), t1, t2);
+    g.append(el("image", { href: `/img/provinsi/${p.kode}.png`, x: (k.x + 2 / s).toFixed(1), y: (k.y + 4 / s).toFixed(1), width: (14 / s).toFixed(2), height: (14 / s).toFixed(2) }), el("circle", { class: "jm-wl-gd", cx: cx.toFixed(1), cy: cy.toFixed(1), r: (2.6 / s).toFixed(2) }), t1, t2);
   }
   peringkatPanel();
 }

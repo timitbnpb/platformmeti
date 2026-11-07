@@ -34,7 +34,7 @@ function nt(sat, v) {
 }
 const lajuTeks = (sat, v) => (v == null ? "-" : (sat === "persen" ? num(v, 2) + " " + t("tg2.sat.poin") : nt(sat, v)) + t("tg2.per_th"));
 const tglTeks = (s) => (/^\d{4}-\d{2}-\d{2}$/.test(s || "") ? tanggal(s) : s || "");
-const tahunTeks = (v) => (Number.isInteger(v) ? String(v) : tglTeks(D.tglBy.get(v)) || String(Math.floor(v)));
+const thn = (d) => String(d.tahunTampil ?? Math.floor(d.tahun));
 
 /* ---------- pil ---------- */
 const pilSt = (s) => `<span class="tg-pil tg-st-${s}">${ikon(IK_ST[s], 14)}<span>${esc(t("tg2.st." + s))}</span></span>`;
@@ -45,10 +45,10 @@ const GF = new Map();
 const langkahNice = (r) => [1, 2, 5, 10, 20, 25].find((s) => r / s <= 5) ?? 50;
 function grafik(d, besar) {
   const W = besar ? 760 : 360, H = besar ? 320 : 150, Lm = besar ? 56 : 8, Rm = besar ? 22 : 8, Tm = besar ? 18 : 10, Bm = besar ? 34 : 6;
-  const k = d.seri, tT = d.tahun, t0 = k.length ? k[0].t : tT - 5, akhir = k.length ? k[k.length - 1].t : tT;
-  const tmin = Math.floor(Math.min(t0, ...(d.seriTarget || []).map((x) => x[0]))) - (k.length < 2 ? 1 : 0), tmax = Math.ceil(Math.max(tT, akhir));
-  const vals = [...k.map((x) => x.v), d.nilai, d.maks ?? 0, ...(d.seriTarget || []).map((x) => x[1])];
-  const ymax = Math.max(...vals) * 1.1 || 1;
+  const stg = (d.seriTarget || []).filter((x) => x[0] <= d.tahun), k = d.seri, tT = d.tahun, t0 = k.length ? k[0].t : tT - 5, akhir = k.length ? k[k.length - 1].t : tT;
+  const tmin = Math.floor(Math.min(t0, ...stg.map((x) => x[0]))) - (k.length < 2 ? 1 : 0), tmax = Math.ceil(Math.max(tT, akhir));
+  const vals = [...k.map((x) => x.v), d.nilai, d.maks ?? 0, ...stg.map((x) => x[1])];
+  const bruto = Math.max(...vals) * 1.05 || 1, mag = 10 ** Math.floor(Math.log10(bruto)), ymax = [1, 2, 2.5, 5, 10].map((f) => f * mag).find((v) => v >= bruto);
   const X = (v) => Lm + ((v - tmin) / (tmax - tmin)) * (W - Lm - Rm), Y = (v) => H - Bm - (v / ymax) * (H - Bm - Tm);
   const pts = (a) => a.map((p) => X(p[0]).toFixed(1) + "," + Y(p[1]).toFixed(1)).join(" ");
   let g = "";
@@ -58,7 +58,7 @@ function grafik(d, besar) {
     const st = langkahNice(tmax - tmin);
     for (let y = Math.ceil(tmin / st) * st; y <= tmax; y += st) g += `<text class="tg-ax" x="${X(y).toFixed(1)}" y="${H - 10}" text-anchor="middle">${y}</text>`;
   } else g += `<text class="tg-ax" x="${Lm}" y="${H - 1}" text-anchor="start">${tmin}</text><text class="tg-ax" x="${W - Rm}" y="${H - 1}" text-anchor="end">${tmax}</text>`;
-  if (d.seriTarget) g += `<polyline class="tg-sT" points="${pts(d.seriTarget)}"/>`;
+  if (stg.length > 1) g += `<polyline class="tg-sT" points="${pts(stg)}"/>`;
   g += `<line class="tg-tgt" x1="${Lm}" x2="${W - Rm}" y1="${Y(d.nilai).toFixed(1)}" y2="${Y(d.nilai).toFixed(1)}"/>`;
   if (d.maks) g += `<line class="tg-tgt tg-tgt-maks" x1="${Lm}" x2="${W - Rm}" y1="${Y(d.maks).toFixed(1)}" y2="${Y(d.maks).toFixed(1)}"/>`;
   if (d.jalur.length) g += `<polyline class="tg-jl" points="${pts(d.jalur)}"/>`;
@@ -82,7 +82,7 @@ function kandidat(d) {
   const m = new Map();
   const ambil = (tt) => { const kk = tt.toFixed(3); if (!m.has(kk)) m.set(kk, { t: tt }); return m.get(kk); };
   d.seri.forEach((x) => { ambil(x.t).real = x; });
-  (d.seriTarget || []).forEach((x) => { ambil(x[0]).st = x[1]; });
+  (d.seriTarget || []).filter((x) => x[0] <= d.tahun).forEach((x) => { ambil(x[0]).st = x[1]; });
   ambil(d.tahun).tgt = d.nilai;
   return [...m.values()];
 }
@@ -128,7 +128,7 @@ function kartu(d) {
   <h3 class="tg-nama">${esc(L(d.nama))}</h3>
   <p class="tg-ang"><b>${esc(cap)}</b><span>${esc(t("tg2.capai"))}</span></p>
   ${grafik(d, false)}
-  <div class="tg-fks">${fakta(t("tg2.real"), nt(d.satuan, d.terbaru?.v))}${fakta(t("tg2.target") + " " + Math.floor(d.tahun), nt(d.satuan, d.nilai))}${fakta(t("tg2.butuh"), lajuTeks(d.satuan, d.butuhPerTahun))}${fakta(t("tg2.laju"), lajuTeks(d.satuan, d.lajuHistoris))}</div>
+  <div class="tg-fks">${fakta(t("tg2.real"), nt(d.satuan, d.terbaru?.v))}${fakta(t("tg2.target") + " " + thn(d), nt(d.satuan, d.nilai))}${fakta(t("tg2.butuh"), lajuTeks(d.satuan, d.butuhPerTahun))}${fakta(t("tg2.laju"), lajuTeks(d.satuan, d.lajuHistoris))}</div>
   <button type="button" class="tg-buka" data-buka-b="${esc(d.id)}">${ikon("grafik", 16)}<span>${esc(t("tg2.lihat"))}</span></button></article>`;
 }
 function isiKisi() {
@@ -154,7 +154,7 @@ function modal(d) {
   const lihat = [["/transisi", "nav.transisi", "tg2.lj.transisi", "tek-panas"], ["/strategi", "nav.strategi", "tg2.lj.strategi", "analisis"], ["/pelacak", "nav.pelacak", "tg2.lj.pelacak", "tingkat"]];
   return `<header class="tg-m-hd"><div class="tg-m-pil">${pilKat(d.kat)}${pilSt(d.status)}</div><button type="button" class="tg-tutup" data-tutup aria-label="${esc(t("tg2.m.tutup"))}">${ikon("silang", 20)}</button></header>
   <h2 id="tgMJ" class="tg-m-j">${esc(L(d.nama))}</h2>
-  <div class="tg-fks tg-fks-m">${fakta(t("tg2.target") + " " + tahunTeks(d.tahun), nt(d.satuan, d.nilai) + (d.maks ? " - " + nt(d.satuan, d.maks) : ""))}${fakta(t("tg2.real") + " (" + tglTeks(d.terbaru?.tanggal) + ")", nt(d.satuan, d.terbaru?.v))}${fakta(t("tg2.capai"), d.capaianPersen == null ? "-" : num(d.capaianPersen, 1) + "%")}${fakta(t("tg2.m.rasio"), d.rasioLaju == null ? "-" : num(d.rasioLaju, 2) + "x")}</div>
+  <div class="tg-fks tg-fks-m">${fakta(t("tg2.target") + " " + thn(d), nt(d.satuan, d.nilai) + (d.maks ? " - " + nt(d.satuan, d.maks) : ""))}${fakta(t("tg2.real") + " (" + tglTeks(d.terbaru?.tanggal) + ")", nt(d.satuan, d.terbaru?.v))}${fakta(t("tg2.capai_k"), d.capaianPersen == null ? "-" : num(d.capaianPersen, 1) + "%")}${fakta(t("tg2.m.rasio"), d.rasioLaju == null ? "-" : num(d.rasioLaju, 2) + "x")}</div>
   <div class="tg-m-gf">${grafik(d, true)}</div>${legenda(d)}
   <p class="tg-m-cat">${ikon("info", 16)}<span>${esc(L(d.catatan))}</span></p>
   <div class="tg-m-kol"><section><h3>${esc(t("tg2.m.dasar"))}</h3><p>${esc(d.dokumen)}</p><p class="jm-bantu">${esc(t("tg2.m.pasal"))}: ${esc(d.pasal)}</p><p class="tg-m-dl">${unduhRegHtml({ judul: d.dokumen, url_pdf: pdf, url_sumber: d.url })}</p>
@@ -175,7 +175,7 @@ function buka(id) {
 function tabelRued() {
   const kep = ["prov", "target", "real", "rasio", "status", "naskah"].map((k) => `<th scope="col"${k === "prov" || k === "naskah" ? "" : ' class="jm-num"'}>${esc(t("tg2.rued.c." + k))}</th>`).join("");
   const sel = (v) => (v == null ? `<span class="jm-kosong" title="${esc(t("tg2.rued.kosong"))}">-</span>` : esc(num(v, des(v)) + "%"));
-  const baris = D.o.rued.map((r) => `<tr><th scope="row" class="tg-prov"><span class="tg-pr-id"><img src="/img/provinsi/${esc(r.kode)}.png" width="28" height="28" alt="" loading="lazy" decoding="async"><span><b>${esc(r.provinsi)}</b><small>Perda ${esc(r.perda)}</small></span></span></th>
+  const baris = D.o.rued.map((r) => `<tr><td class="tg-prov"><span class="tg-pr-id"><img src="/img/provinsi/${esc(r.kode)}.png" width="28" height="28" alt="" loading="lazy" decoding="async"><span><b>${esc(r.provinsi)}</b><small>Perda ${esc(r.perda)}</small></span></span></td>
     <td data-label="${esc(t("tg2.rued.c.target"))}" class="jm-num">${sel(r.target)}</td><td data-label="${esc(t("tg2.rued.c.real"))}" class="jm-num">${sel(r.realisasi)}</td>
     <td data-label="${esc(t("tg2.rued.c.rasio"))}" class="jm-num" data-urut="${r.rasio ?? ""}">${r.rasio == null ? sel(null) : `<span class="tg-dot tg-d-${r.status}">${esc(num(r.rasio, 0))}%</span>`}</td>
     <td data-label="${esc(t("tg2.rued.c.status"))}" class="jm-num">${pilSt(r.status)}</td><td data-label="${esc(t("tg2.rued.c.naskah"))}" class="jm-num">${unduhRegHtml({ judul: "Perda RUED " + r.provinsi, url_pdf: r.pdf, url_sumber: r.url })}</td></tr>`).join("");
@@ -186,7 +186,6 @@ function tabelRued() {
 const seg = () => `<div class="jm-tab" role="tablist" aria-label="${esc(t("tg2.saring"))}" data-seg="kat">${["semua", ...KAT, "daerah"].map((v) => `<button type="button" role="tab" data-v="${v}" aria-selected="${v === ST.kat}">${ikon(IK_KAT[v], 18)}<span>${esc(t("tg2.kat." + v))}</span></button>`).join("")}</div>`;
 function tampil() {
   const o = D.o, a = o.target, baik = a.filter((x) => BAIK.has(x.status)).length, lag = a.filter((x) => x.status === "tertinggal" || x.status === "jauh-tertinggal").length;
-  D.tglBy = new Map(a.flatMap((x) => x.seri.filter((s) => s.tgl).map((s) => [s.t, s.tgl])));
   $("jawab").textContent = t("tg2.lead");
   khSisi(".jm-kh", { ubin: [
     { ikon: "bendera", nilai: num(a.length), label: t("tg2.u1") },

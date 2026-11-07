@@ -23,7 +23,7 @@ const n0 = (v) => (v == null ? "-" : num(v, 0));
 const n1 = (v) => (v == null ? "-" : num(v, 1));
 const n2 = (v) => (v == null ? "-" : num(v, 2));
 const pct = (v, d = 1) => (v == null ? "-" : num(v, d) + "%");
-const usd = (v) => (v == null ? "-" : Math.abs(v) >= 1e9 ? t("st.u.miliar", { n: num(v / 1e9, 1) }) : Math.abs(v) >= 1e6 ? t("st.u.juta", { n: num(v / 1e6, Math.abs(v) < 1e7 ? 1 : 0) }) : t("st.u.ribu", { n: num(v / 1e3, 0) })));
+const usd = (v) => (v == null ? "-" : Math.abs(v) >= 1e9 ? t("st.u.miliar", { n: num(v / 1e9, 1) }) : Math.abs(v) >= 1e6 ? t("st.u.juta", { n: num(v / 1e6, Math.abs(v) < 1e7 ? 1 : 0) }) : t("st.u.ribu", { n: num(v / 1e3, 0) }));
 const EST = () => " " + pil("an.est");
 
 /* ---------- sumber ---------- */

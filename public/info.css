@@ -1,5 +1,5 @@
 /* Gaya bersama halaman informasi (pemda, kebijakan, desa energi, izin dan kontrak). Token tema.css saja; tanpa progress bar. */
-.inf-narasi{text-align:justify;hyphens:auto;margin:0 0 var(--gap);color:var(--ink)}
+.inf-narasi{text-align:left;hyphens:manual;margin:0 0 var(--gap);color:var(--ink)}
 .inf-cat{margin:12px 0 0}
 .inf-isi{display:grid;gap:var(--gap)}
 .inf-sel{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:12px;align-items:center;margin-bottom:var(--gap)}
@@ -28,11 +28,11 @@
 .inf-butuh{border:1px dashed var(--line-ctl);border-radius:var(--r);padding:14px 16px;background:var(--surface);min-width:0}
 .inf-butuh header{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:6px}
 .inf-butuh h3{margin:0;font-size:var(--t-body);font-weight:600;flex:1 1 auto}
-.inf-butuh p{margin:0 0 6px;text-align:justify}
+.inf-butuh p{margin:0 0 6px;text-align:left}
 .inf-lembar{border:1px solid var(--line);border-radius:var(--r);padding:20px 22px;background:var(--card);display:grid;gap:14px}
 .inf-lembar h3{margin:0;font-size:var(--t-h3)}
 .inf-lembar h4{margin:0 0 4px;font-size:var(--t-body);font-weight:700;color:var(--accent)}
-.inf-lembar p{margin:0;text-align:justify}
+.inf-lembar p{margin:0;text-align:left}
 .inf-lembar-kop{display:flex;align-items:center;gap:12px}
 .inf-baris-kv{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,11rem),1fr));gap:10px}
 .inf-qa{display:grid;gap:10px}
@@ -41,23 +41,23 @@
 .inf-qa summary::-webkit-details-marker{display:none}
 .inf-qa details[open] summary{color:var(--accent)}
 .inf-qa .inf-jawab{padding:0 0 14px;display:grid;gap:8px}
-.inf-qa .inf-jawab p{margin:0;text-align:justify}
+.inf-qa .inf-jawab p{margin:0;text-align:left}
 .inf-pasal{display:flex;flex-wrap:wrap;gap:6px 12px;color:var(--ink2);font-size:var(--t-kecil)}
 .inf-pasal a{color:inherit}
 .inf-langkah{counter-reset:l;display:grid;gap:12px;margin:0;padding:0;list-style:none}
 .inf-langkah li{counter-increment:l;border:1px solid var(--line);border-radius:var(--r);padding:14px 16px 14px 56px;position:relative;background:var(--card)}
 .inf-langkah li::before{content:counter(l);position:absolute;left:14px;top:14px;width:30px;height:30px;border-radius:50%;background:var(--brand);color:var(--on-brand);display:grid;place-items:center;font-weight:700}
 .inf-langkah h3{margin:0 0 4px;font-size:var(--t-body);font-weight:700}
-.inf-langkah p{margin:0 0 6px;text-align:justify}
+.inf-langkah p{margin:0 0 6px;text-align:left}
 .inf-kl{display:grid;gap:12px}
 .inf-kl article{border:1px solid var(--line);border-radius:var(--r);padding:14px 16px;background:var(--card);display:grid;gap:8px;min-width:0}
 .inf-kl h3{margin:0;font-size:var(--t-body);font-weight:700;display:flex;gap:8px;align-items:center;flex-wrap:wrap}
-.inf-kl p{margin:0;text-align:justify}
+.inf-kl p{margin:0;text-align:left}
 .inf-kl b{color:var(--accent)}
 .inf-daftar{display:grid;gap:10px;margin:0;padding:0;list-style:none}
 .inf-daftar li{border:1px solid var(--line);border-radius:var(--r);padding:12px 16px;background:var(--card);min-width:0}
 .inf-daftar b{display:block;overflow-wrap:anywhere}
-.inf-daftar span{display:block;color:var(--ink2);font-size:var(--t-kecil);margin-top:2px;text-align:justify}
+.inf-daftar span{display:block;color:var(--ink2);font-size:var(--t-kecil);margin-top:2px;text-align:left}
 .inf-lintasan{display:flex;flex-wrap:wrap;gap:6px;margin:6px 0}
 .inf-lintasan span{display:inline-flex;align-items:center;min-height:28px;padding:0 12px;border-radius:var(--r-pil);border:1px solid var(--line);color:var(--ink2);font-size:var(--t-kecil)}
 .inf-lintasan span.on{background:var(--brand);color:var(--on-brand);border-color:var(--brand);font-weight:600}

@@ -8,6 +8,7 @@ import { fileURLToPath } from 'node:url';
 import { validasi } from './topik_surya.mjs';
 import { lengkapi } from './topik_dalam_lib.mjs';
 import { perdalam } from './topik_sampah_energi_dalam.mjs';
+import { tambahJalanModel } from './topik_jalan_lib.mjs';
 export { validasi };
 const akar = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '../..');
 const ID = 'sampah-energi';
@@ -80,7 +81,8 @@ export const SUMBER = {
   reppie18: S('The Reppie project: Ethiopia opens Africa\'s first waste-to-energy facility (20 Agu 2018)', 'Africanews', 'https://www.africanews.com/2018/08/20/the-reppie-project-ethiopia-opens-africa-s-first-waste-to-energy-facility/', '2018-08-20', 'media'),
 };
 
-export function susun() {
+export function susun() { return tambahJalanModel(susunDasarJM(), ID); }
+function susunDasarJM() {
   const d0 = baca('public/data/topik/dasar-bioenergi.json');
   const kp = tren('biomassa-sampah');
   const k25 = kp.at(-1), k24 = kp.find((x) => x.tahun === 2024);

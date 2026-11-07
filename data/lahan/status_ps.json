@@ -1,0 +1,15 @@
+{
+ "tanggal": "2026-11-07",
+ "hasil": [
+  {
+   "url": "https://pskl.menlhk.go.id/robots.txt",
+   "ok": false,
+   "galat": "fetch failed"
+  },
+  {
+   "url": "https://geoportal.menlhk.go.id/robots.txt",
+   "ok": false,
+   "galat": "fetch failed"
+  }
+ ]
+}

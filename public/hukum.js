@@ -2,7 +2,7 @@
 import { mulaiHalaman } from "/inti/kepala.js";
 import { khUbin } from "/inti/kh.js";
 import { t, angka, tanggal } from "/i18n.js";
-import { esc, ikon, api, nanti, debounce, hantuHtml, kosongHtml, galatHtml } from "/inti/umum.js";
+import { esc, judulHuruf, ikon, api, nanti, debounce, hantuHtml, kosongHtml, galatHtml } from "/inti/umum.js";
 import { cariHtml, pilihHtml, exHtml, sumberHtml } from "/inti/komponen.js";
 import { paginasiHtml, sorotHalaman } from "/inti/paginasi.js";
 import { hlHtml } from "/inti/aksi_ex.js";
@@ -90,8 +90,8 @@ async function jalankanCari() {
   if (!d) { hasil.innerHTML = tidakAktif(); return; }
   saringHtml(d.per_jenis); el("hhapus").hidden = !adaFilter();
   if (!d.hasil.length) { hasil.innerHTML = kosongHtml("hk.cari.kosong"); hal.innerHTML = ""; return; }
-  hasil.innerHTML = `<p class="jm-hitung" role="status">${esc(t("hk.cari.hasil", { n: angka(d.total) }))}</p><ul class="hk-daftar">${d.hasil.map((r, i) => `<li class="hk-kartu" data-buka="${esc(r.dok)}" data-seg="${r.segmen}" data-i="${i}" tabindex="0">
-    <div class="hk-kep"><img src="${esc(LOGO(r.dok, r.singkatan))}" alt="" loading="lazy" decoding="async"><div><p class="hk-nama">${esc(nama(r))}</p><p class="hk-sub">${esc(r.judul)}</p></div></div>
+  hasil.innerHTML = `<p class="jm-hitung" role="status">${esc(t("hk.cari.hasil", { n: angka(d.total) }))}${d.longgar ? ` <span class="jm-pil jm-pil-warn">${ikon("info", 14)}${esc(t("hk.cari.longgar"))}</span>` : ""}</p><ul class="hk-daftar">${d.hasil.map((r, i) => `<li class="hk-kartu" data-buka="${esc(r.dok)}" data-seg="${r.segmen}" data-i="${i}" tabindex="0">
+    <div class="hk-kep"><img src="${esc(LOGO(r.dok, r.singkatan))}" alt="" loading="lazy" decoding="async"><div><p class="hk-nama">${esc(nama(r))}</p><p class="hk-sub">${esc(judulHuruf(r.judul))}</p></div></div>
     <div class="hk-meta">${pilJenis(r.singkatan)}${pilStatus(r.status)}<span class="hk-pasal">${esc(r.label)}${r.bab ? " | " + esc(r.bab) : ""}</span></div><div data-cup></div></li>`).join("")}</ul>`;
   hasil.querySelectorAll("[data-cup]").forEach((w, i) => w.replaceWith(cuplikanEl(d.hasil[i].cuplikan)));
   hal.innerHTML = paginasiHtml({ hal: d.hal, total: d.total, per: PER, satuan: "hk.satuan.pasal" });
@@ -120,7 +120,7 @@ async function daftarDok() {
   const dari = (L.hal - 1) * LOKAL, tampil = baris.slice(dari, dari + LOKAL);
   const jn = [...new Set(kat.dok.map((d) => d.singkatan))];
   el("hdaftar").innerHTML = tampil.length ? `<ul class="hk-daftar">${tampil.map((d) => `<li class="hk-kartu" data-buka="${esc(d.id)}" tabindex="0">
-    <div class="hk-kep"><img src="${esc(LOGO(d.id, d.singkatan))}" alt="" loading="lazy" decoding="async"><div><p class="hk-nama">${esc(nama(d))}</p><p class="hk-sub">${esc(d.judul)}</p></div></div>
+    <div class="hk-kep"><img src="${esc(LOGO(d.id, d.singkatan))}" alt="" loading="lazy" decoding="async"><div><p class="hk-nama">${esc(nama(d))}</p><p class="hk-sub">${esc(judulHuruf(d.judul))}</p></div></div>
     <div class="hk-meta">${pilJenis(d.singkatan)}${pilStatus(d.status)}<span class="jm-pil">${ikon("daftar2", 14)}${esc(t("hk.dok.halaman", { n: angka(d.halaman) }))}</span>${d.halaman_ocr ? `<span class="jm-pil hk-pil-r">${ikon("pdf", 14)}${esc(t("hk.dok.ocr"))}</span>` : ""}</div></li>`).join("")}</ul>` : kosongHtml("hk.cari.kosong");
   el("hdhal").innerHTML = paginasiHtml({ hal: L.hal, total: baris.length, per: LOKAL, satuan: "hk.satuan.dok" });
   if (el("hdjenis").options.length < 2) el("hdjenis").closest("label").outerHTML = pilihHtml({ id: "hdjenis", ikon: "jenis", label: t("hk.semua.jenis"), opsi: [["", t("hk.semua.jenis"), "daftar"], ...jn.map((v) => [v, label("hk.j.", v), IK_J[v] || "daftar"])], nilai: L.jenis });
@@ -143,7 +143,7 @@ async function tampilDokumen(id, seg) {
   const isi = grup.map((g) => `${g.b ? `<button type="button" class="hk-bab" data-s="${g.s[0].id}">${esc(g.b)}</button>` : ""}${g.s.map((x) => `<button type="button" data-s="${x.id}">${esc(x.label)}</button>`).join("")}`).join("");
   const rel = (daftar, arah) => daftar.length ? `<ul>${daftar.map((r) => `<li>${r.terdaftar === 0 && arah === "keluar" ? `<span class="hk-nama2">${esc(r.judul || r.id)}</span><span class="jm-pil">${esc(t("hk.rl.luar"))}</span>` : `<button type="button" data-buka="${esc(r.id)}">${esc(r.judul || r.id)}</button>${pilStatus(r.status)}`}<span class="jm-pil">${esc(label("hk.rel.", r.jenis))}</span></li>`).join("")}</ul>` : `<p class="hk-sub">${esc(t("hk.dok.kosong_rel"))}</p>`;
   w.innerHTML = `<div class="hk-panel"><div class="hk-aksi"><button type="button" class="jm-tbl" data-aksi="balik">${ikon("panah-kiri", 16)}${esc(t("hk.dok.balik"))}</button></div>
-    ${exHtml({ id: "ex-satu", ikon: "palu", topik: label("hk.j.", o.singkatan), judulHtml: esc(`${nama(o)}: ${o.judul}`), subHtml: "",
+    ${exHtml({ id: "ex-satu", ikon: "palu", topik: label("hk.j.", o.singkatan), judulHtml: esc(`${nama(o)}: ${judulHuruf(o.judul)}`), subHtml: "",
       aksiHtml: sumberHtml(esc(o.sumber || "")),
       isiHtml: `<div class="hk-meta">${pilJenis(o.singkatan)}${pilStatus(o.status)}${o.resmi ? "" : `<span class="jm-pil jm-pil-warn">${ikon("peringatan", 14)}${esc(t("hk.dok.nonresmi"))}</span>`}${o.ocr ? `<span class="jm-pil hk-pil-r">${ikon("pdf", 14)}${esc(t("hk.dok.ocr"))}</span>` : ""}</div>
       <dl class="hk-dl">${info.map(([k, v]) => `<div><dt>${esc(k)}</dt><dd>${esc(v)}</dd></div>`).join("")}</dl>

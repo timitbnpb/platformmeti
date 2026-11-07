@@ -61,7 +61,6 @@ const TEMA_IKON = { kebijakan: "regulasi", pembiayaan: "analisis", "transisi-adi
 const TEK_WARNA = new Set(["surya", "bayu", "hidro", "panas-bumi", "bioenergi", "biomassa-sampah", "penyimpanan", "nuklir"]);
 const ikTek = (k) => IKT[k] || ikon(TEMA_IKON[k] || "tek-listrik", 18);
 const klsTek = (k) => "jm-tek-" + (TEK_WARNA.has(k) ? k : "lain");
-const inisialMedia = (m) => (String(m).replace(/^www\./, "").split(".")[0].replace(/[^a-z0-9]/gi, "").slice(0, 2) || "?").toUpperCase();
 const PROGRAM = { "plts-100gw": [/100\s*GW/i, "100 GW"], b50: [/\bB-?50\b|biodiesel/i, "B50"], e20: [/\bE-?20\b|etanol/i, "E20"], jetp: [/\bJETP\b/i, "JETP"], wte: [/\bPSEL\b|waste to energy|\bWtE\b|sampah.{0,25}(energi|listrik)|(energi|listrik).{0,25}sampah/i, "sampah"], ruptl: [/RUPTL/i, "RUPTL"], psn: [/\bPSN\b|Proyek Strategis Nasional/i, "PSN"] };
 const regulasiDisebut = () => { const m = new Map(); for (const r of B) for (const id of r.regulasi_ids || []) m.set(id, (m.get(id) || 0) + 1); return [...m].map(([id, n]) => ({ g: REG.find((q) => q.id === id), n })).filter((x) => x.g).sort((a, b) => b.n - a.n); };
 /** Perubahan 7 hari terakhir terhadap 7 hari sebelumnya (kosong bila sebelumnya nol). */
@@ -89,7 +88,7 @@ function gambarRingkas() {
   const tekTop = urutHitung((r) => r.kepakaran || []).slice(0, 10), medTop = urutHitung((r) => [r.media]).slice(0, 8), orgTop = urutHitung((r) => r.organisasi_ids || []).slice(0, 8);
   const prg = PRG.map((p) => [p, B.filter((r) => PROGRAM[p.id]?.[0].test(r.judul)).length]).filter((x) => x[1] > 0).sort((a, b) => b[1] - a[1]);
   const reg = regulasiDisebut();
-  const logo = (id, nama) => { const s = LOGO_ORG[id]; return `<span class="brt-lg">${s ? `<img src="/img/logo/${s}.png" width="22" height="22" alt="" loading="lazy">` : esc(inisialMedia(nama))}</span>`; };
+  const logo = (id, nama) => { const s = LOGO_ORG[id]; return `<span class="brt-lg">${s ? `<img src="/img/logo/${s}.png" width="22" height="22" alt="" loading="lazy">` : ikon("berita", 14)}</span>`; };
   let h = ex({ id: "ex-teknologi", ikon: "topik", topik: t("brt.ex.tek.ey"), judulHtml: hlHtml("brt.ex.tek.j", tek(tekTop[0][0])), subHtml: `${esc(t("brt.ex.tek.sub"))} ${est}`,
     isiHtml: batangMendatar(tekTop.map(([k, v]) => [tek(k), v, k, { ikon: ikTek(k), kelas: klsTek(k), tren: tren((r) => (r.kepakaran || []).includes(k)) }]), "topik") });
   if (orgTop.length && ORG.size) h += ex({ id: "ex-pelaku", ikon: "orang", topik: t("brt.ex.org.ey"), judulHtml: hlHtml("brt.ex.org.j", ORG.get(orgTop[0][0]) || ""), subHtml: esc(t("brt.ex.org.sub")), sumberKunci: "brt.sumber.tag",
@@ -111,7 +110,7 @@ const FOTO_URL = (r) => fotoBerita(FOTO, r.id);
 const hostDari = (u) => { try { return new URL(u).hostname.replace(/^www\./, ""); } catch { return ""; } };
 const favUrl = (h) => logoLokal(h);
 const favMedia = (nama) => { const r = B.find((x) => x.media === nama); return favUrl(r ? hostDari(r.url) : ""); };
-const logoMedia = (nama, fv) => `<span class="brt-lg" aria-hidden="true">${esc(inisialMedia(nama))}${fv ? `<img src="${esc(fv)}" width="22" height="22" alt="" loading="lazy" decoding="async" data-galat="hapus">` : ""}</span>`;
+const logoMedia = (nama, fv) => `<span class="brt-lg" aria-hidden="true">${ikon("berita", 14)}${fv ? `<img src="${esc(fv)}" width="22" height="22" alt="" loading="lazy" decoding="async" data-galat="hapus">` : ""}</span>`;
 const ikonSampul = (r) => ikTek((r.kepakaran || [])[0]);
 /** Gambar sampul; tanpa foto = latar bermerek dengan ikon teknologi (tidak pernah inisial). Gambar gagal dimuat dicopot oleh penangan error. */
 const sampul = (r, kelas, w, h, tag = false) => {

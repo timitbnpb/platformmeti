@@ -1,0 +1,1162 @@
+{
+ "tanggal_periksa": "2026-11-08",
+ "penyedia": [
+  {
+   "slug": "kanadevia-inova",
+   "nama": "Kanadevia Inova",
+   "nama_lain": [
+    "Hitachi Zosen Inova",
+    "HZI",
+    "Hitachi Zosen"
+   ],
+   "negara": "CH",
+   "situs": "https://kanadevia-inova.com/",
+   "qid": "Q96381143",
+   "teknologi": [
+    "insinerasi-grate",
+    "biodigester-biogas"
+   ],
+   "komponen": [
+    "grate",
+    "boiler",
+    "flue-gas-treatment"
+   ],
+   "induk": "Kanadevia Corporation (dahulu Hitachi Zosen, Jepang)",
+   "organisasi_id_ada": null,
+   "pabrik_referensi": {
+    "dunia": null,
+    "asia": null,
+    "kapasitas_ton_hari": null,
+    "kapasitas_mw": null,
+    "catatan": "belum bersumber; diisi dari laporan tahunan/situs referensi perusahaan"
+   },
+   "indonesia": [
+    {
+     "proyek_id": "pj_0043",
+     "proyek": "PSEL Legok Nangka (Bandung)",
+     "peran": "anggota konsorsium pengembang via Hitachi Zosen (peran teknologi belum dikonfirmasi sumber)",
+     "mitra": "Sumitomo Corporation; PT Energia Prima Nusantara",
+     "sumber": {
+      "url": "https://www.liputan6.com/bisnis/read/8257484/psel-legok-nangka-mulai-dibangun-olah-2000-ton-sampah",
+      "tingkat_bukti": "media",
+      "tanggal": "2026-11-07"
+     }
+    }
+   ],
+   "kantor_indonesia_asean": null,
+   "teknologi_status": "perlu-tinjau (pengetahuan sektor; belum dicocokkan ke halaman produk)",
+   "catatan": "Berganti nama dari Hitachi Zosen Inova; induk Jepang Kanadevia Corporation (Q5871699).",
+   "sumber": [
+    {
+     "url": "https://kanadevia-inova.com/",
+     "tingkat_bukti": "situs-sendiri",
+     "tanggal": "2026-11-08",
+     "keterangan": "situs resmi dibuka (robots dicek, UA METI)"
+    }
+   ]
+  },
+  {
+   "slug": "keppel-seghers",
+   "nama": "Keppel Seghers",
+   "nama_lain": [
+    "Keppel Seghers Engineering"
+   ],
+   "negara": "SG",
+   "situs": "https://www.keppelseghers.com/en/",
+   "qid": null,
+   "teknologi": [
+    "insinerasi-grate"
+   ],
+   "komponen": [
+    "grate",
+    "boiler",
+    "flue-gas-treatment"
+   ],
+   "induk": "Keppel (Singapura)",
+   "organisasi_id_ada": null,
+   "pabrik_referensi": {
+    "dunia": null,
+    "asia": null,
+    "kapasitas_ton_hari": null,
+    "kapasitas_mw": null,
+    "catatan": "belum bersumber; diisi dari laporan tahunan/situs referensi perusahaan"
+   },
+   "indonesia": [],
+   "kantor_indonesia_asean": null,
+   "teknologi_status": "perlu-tinjau (pengetahuan sektor; belum dicocokkan ke halaman produk)",
+   "catatan": "Anak usaha Keppel; Keppel sudah ada di direktori (in_568bb2c518).",
+   "sumber": [
+    {
+     "url": "https://www.keppelseghers.com/en/",
+     "tingkat_bukti": "situs-sendiri",
+     "tanggal": "2026-11-08",
+     "keterangan": "situs resmi dibuka (robots dicek, UA METI)"
+    }
+   ]
+  },
+  {
+   "slug": "martin",
+   "nama": "Martin GmbH",
+   "nama_lain": [
+    "Martin GmbH fuer Umwelt- und Energietechnik",
+    "Martin GmbH für Umwelt- und Energietechnik"
+   ],
+   "negara": "DE",
+   "situs": "https://www.martin-ag.com/",
+   "qid": "Q142067392",
+   "teknologi": [
+    "insinerasi-grate"
+   ],
+   "komponen": [
+    "grate",
+    "boiler"
+   ],
+   "induk": null,
+   "organisasi_id_ada": null,
+   "pabrik_referensi": {
+    "dunia": null,
+    "asia": null,
+    "kapasitas_ton_hari": null,
+    "kapasitas_mw": null,
+    "catatan": "belum bersumber; diisi dari laporan tahunan/situs referensi perusahaan"
+   },
+   "indonesia": [],
+   "kantor_indonesia_asean": null,
+   "teknologi_status": "perlu-tinjau (pengetahuan sektor; belum dicocokkan ke halaman produk)",
+   "catatan": "robots.txt martin-ag.com dan martingmbh.de menutup untuk semua agen: situs tidak dibaca, hanya tautan dari Wikidata.",
+   "sumber": [
+    {
+     "url": "https://www.wikidata.org/wiki/Q142067392",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "tanggal": "2026-11-08",
+     "keterangan": "situs resmi menurut Wikidata P856"
+    }
+   ]
+  },
+  {
+   "slug": "babcock-wilcox-volund",
+   "nama": "Babcock & Wilcox Vølund",
+   "nama_lain": [
+    "B&W Vølund"
+   ],
+   "negara": "DK",
+   "situs": "https://www.babcock.com/",
+   "qid": "Q30284730",
+   "teknologi": [
+    "insinerasi-grate",
+    "fluidized-bed"
+   ],
+   "komponen": [
+    "grate",
+    "boiler",
+    "flue-gas-treatment"
+   ],
+   "induk": "Babcock & Wilcox Enterprises (AS)",
+   "organisasi_id_ada": null,
+   "pabrik_referensi": {
+    "dunia": null,
+    "asia": null,
+    "kapasitas_ton_hari": null,
+    "kapasitas_mw": null,
+    "catatan": "belum bersumber; diisi dari laporan tahunan/situs referensi perusahaan"
+   },
+   "indonesia": [],
+   "kantor_indonesia_asean": null,
+   "teknologi_status": "perlu-tinjau (pengetahuan sektor; belum dicocokkan ke halaman produk)",
+   "catatan": "Basis Esbjerg, Denmark; induk Babcock & Wilcox (Q797609).",
+   "sumber": [
+    {
+     "url": "https://www.babcock.com/",
+     "tingkat_bukti": "situs-sendiri",
+     "tanggal": "2026-11-08",
+     "keterangan": "situs resmi dibuka (robots dicek, UA METI)"
+    }
+   ]
+  },
+  {
+   "slug": "steinmueller-babcock",
+   "nama": "Steinmüller Babcock Environment",
+   "nama_lain": [
+    "SBE",
+    "Steinmueller Babcock Environment"
+   ],
+   "negara": "DE",
+   "situs": null,
+   "qid": null,
+   "teknologi": [
+    "insinerasi-grate"
+   ],
+   "komponen": [
+    "grate",
+    "boiler",
+    "flue-gas-treatment"
+   ],
+   "induk": null,
+   "organisasi_id_ada": null,
+   "pabrik_referensi": {
+    "dunia": null,
+    "asia": null,
+    "kapasitas_ton_hari": null,
+    "kapasitas_mw": null,
+    "catatan": "belum bersumber; diisi dari laporan tahunan/situs referensi perusahaan"
+   },
+   "indonesia": [],
+   "kantor_indonesia_asean": null,
+   "teknologi_status": "perlu-tinjau (pengetahuan sektor; belum dicocokkan ke halaman produk)",
+   "catatan": "Situs tidak dapat dibuka (2026-11-08); tidak ditebak.",
+   "sumber": []
+  },
+  {
+   "slug": "china-everbright-environment",
+   "nama": "China Everbright Environment",
+   "nama_lain": [
+    "Everbright Environment",
+    "CEEG"
+   ],
+   "negara": "CN",
+   "situs": "https://www.ebchinaintl.com",
+   "qid": "Q10890263",
+   "teknologi": [
+    "insinerasi-grate",
+    "fluidized-bed",
+    "biodigester-biogas"
+   ],
+   "komponen": [
+    "grate",
+    "boiler",
+    "flue-gas-treatment"
+   ],
+   "induk": null,
+   "organisasi_id_ada": "in_db9052087b",
+   "pabrik_referensi": {
+    "dunia": null,
+    "asia": null,
+    "kapasitas_ton_hari": null,
+    "kapasitas_mw": null,
+    "catatan": "belum bersumber; diisi dari laporan tahunan/situs referensi perusahaan"
+   },
+   "indonesia": [
+    {
+     "proyek_id": "pjb_004",
+     "proyek": "PSEL Kabupaten Bekasi",
+     "peran": "mitra konsorsium terpilih (Consortium Everbright Cemerlang Energy)",
+     "mitra": "PT Harmoni Development Indonesia; PT Bioregen Enviro Tech; Denera",
+     "sumber": {
+      "url": "https://www.liputan6.com/bisnis/read/8251038/daftar-nama-8-mitra-penggarap-proyek-listrik-dari-sampah-di-indonesia",
+      "tingkat_bukti": "media",
+      "tanggal": "2026-11-07"
+     }
+    }
+   ],
+   "kantor_indonesia_asean": null,
+   "teknologi_status": "perlu-tinjau (pengetahuan sektor; belum dicocokkan ke halaman produk)",
+   "catatan": "Sudah ada di direktori; situs dari Wikidata (tidak terbuka saat dicek 2026-11-08).",
+   "sumber": [
+    {
+     "url": "https://www.wikidata.org/wiki/Q10890263",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "tanggal": "2026-11-08",
+     "keterangan": "situs resmi menurut Wikidata P856"
+    }
+   ]
+  },
+  {
+   "slug": "sus-environment",
+   "nama": "SUS Environment",
+   "nama_lain": [
+    "Shanghai SUS Environment",
+    "SUS"
+   ],
+   "negara": "CN",
+   "situs": null,
+   "qid": null,
+   "teknologi": [
+    "insinerasi-grate"
+   ],
+   "komponen": [
+    "grate"
+   ],
+   "induk": null,
+   "organisasi_id_ada": null,
+   "pabrik_referensi": {
+    "dunia": null,
+    "asia": null,
+    "kapasitas_ton_hari": null,
+    "kapasitas_mw": null,
+    "catatan": "belum bersumber; diisi dari laporan tahunan/situs referensi perusahaan"
+   },
+   "indonesia": [
+    {
+     "proyek_id": "pjb_005",
+     "proyek": "PSEL Lampung Raya",
+     "peran": "mitra konsorsium terpilih (Bumi Biru Indonesia, SUS Indoplas)",
+     "mitra": "Denera",
+     "sumber": {
+      "url": "https://www.liputan6.com/bisnis/read/8251038/daftar-nama-8-mitra-penggarap-proyek-listrik-dari-sampah-di-indonesia",
+      "tingkat_bukti": "media",
+      "tanggal": "2026-11-07"
+     }
+    },
+    {
+     "proyek_id": "pjb_007",
+     "proyek": "PSEL Surabaya Raya",
+     "peran": "mitra konsorsium terpilih (Consortium Mentari Citra Lestari)",
+     "mitra": "PT Bakrie Power; Denera",
+     "sumber": {
+      "url": "https://www.liputan6.com/bisnis/read/8251038/daftar-nama-8-mitra-penggarap-proyek-listrik-dari-sampah-di-indonesia",
+      "tingkat_bukti": "media",
+      "tanggal": "2026-11-07"
+     }
+    }
+   ],
+   "kantor_indonesia_asean": null,
+   "teknologi_status": "perlu-tinjau (pengetahuan sektor; belum dicocokkan ke halaman produk)",
+   "catatan": "Situs tidak ditemukan terbuka; tidak ditebak.",
+   "sumber": []
+  },
+  {
+   "slug": "mhiec",
+   "nama": "Mitsubishi Heavy Industries Environmental & Chemical Engineering",
+   "nama_lain": [
+    "MHIEC",
+    "Mitsubishi Heavy Industries Environmental"
+   ],
+   "negara": "JP",
+   "situs": "https://www.mhiec.co.jp/",
+   "qid": "Q11357153",
+   "teknologi": [
+    "insinerasi-grate",
+    "gasifikasi"
+   ],
+   "komponen": [
+    "grate",
+    "boiler",
+    "flue-gas-treatment"
+   ],
+   "induk": "Mitsubishi Heavy Industries (in_c462bee334)",
+   "organisasi_id_ada": null,
+   "pabrik_referensi": {
+    "dunia": null,
+    "asia": null,
+    "kapasitas_ton_hari": null,
+    "kapasitas_mw": null,
+    "catatan": "belum bersumber; diisi dari laporan tahunan/situs referensi perusahaan"
+   },
+   "indonesia": [],
+   "kantor_indonesia_asean": null,
+   "teknologi_status": "perlu-tinjau (pengetahuan sektor; belum dicocokkan ke halaman produk)",
+   "catatan": "Situs dari Wikidata (tidak terbuka saat dicek 2026-11-08).",
+   "sumber": [
+    {
+     "url": "https://www.wikidata.org/wiki/Q11357153",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "tanggal": "2026-11-08",
+     "keterangan": "situs resmi menurut Wikidata P856"
+    }
+   ]
+  },
+  {
+   "slug": "jfe-engineering",
+   "nama": "JFE Engineering",
+   "nama_lain": [
+    "JFE"
+   ],
+   "negara": "JP",
+   "situs": "https://www.jfe-eng.co.jp/",
+   "qid": "Q17210842",
+   "teknologi": [
+    "insinerasi-grate",
+    "gasifikasi"
+   ],
+   "komponen": [
+    "boiler",
+    "flue-gas-treatment",
+    "gasification-melting"
+   ],
+   "induk": "JFE Holdings",
+   "organisasi_id_ada": null,
+   "pabrik_referensi": {
+    "dunia": null,
+    "asia": null,
+    "kapasitas_ton_hari": null,
+    "kapasitas_mw": null,
+    "catatan": "belum bersumber; diisi dari laporan tahunan/situs referensi perusahaan"
+   },
+   "indonesia": [],
+   "kantor_indonesia_asean": null,
+   "teknologi_status": "perlu-tinjau (pengetahuan sektor; belum dicocokkan ke halaman produk)",
+   "catatan": null,
+   "sumber": [
+    {
+     "url": "https://www.jfe-eng.co.jp/",
+     "tingkat_bukti": "situs-sendiri",
+     "tanggal": "2026-11-08",
+     "keterangan": "situs resmi dibuka (robots dicek, UA METI)"
+    }
+   ]
+  },
+  {
+   "slug": "takuma",
+   "nama": "Takuma",
+   "nama_lain": [
+    "Takuma Co., Ltd."
+   ],
+   "negara": "JP",
+   "situs": "https://www.takuma.co.jp/",
+   "qid": null,
+   "teknologi": [
+    "insinerasi-grate",
+    "fluidized-bed",
+    "biodigester-biogas"
+   ],
+   "komponen": [
+    "grate",
+    "boiler",
+    "flue-gas-treatment"
+   ],
+   "induk": null,
+   "organisasi_id_ada": null,
+   "pabrik_referensi": {
+    "dunia": null,
+    "asia": null,
+    "kapasitas_ton_hari": null,
+    "kapasitas_mw": null,
+    "catatan": "belum bersumber; diisi dari laporan tahunan/situs referensi perusahaan"
+   },
+   "indonesia": [],
+   "kantor_indonesia_asean": null,
+   "teknologi_status": "perlu-tinjau (pengetahuan sektor; belum dicocokkan ke halaman produk)",
+   "catatan": null,
+   "sumber": [
+    {
+     "url": "https://www.takuma.co.jp/",
+     "tingkat_bukti": "situs-sendiri",
+     "tanggal": "2026-11-08",
+     "keterangan": "situs resmi dibuka (robots dicek, UA METI)"
+    }
+   ]
+  },
+  {
+   "slug": "ebara-environmental-plant",
+   "nama": "Ebara Environmental Plant",
+   "nama_lain": [
+    "Ebara Environmental",
+    "EEP"
+   ],
+   "negara": "JP",
+   "situs": null,
+   "qid": null,
+   "teknologi": [
+    "fluidized-bed",
+    "insinerasi-grate",
+    "gasifikasi"
+   ],
+   "komponen": [
+    "boiler",
+    "flue-gas-treatment"
+   ],
+   "induk": "Ebara Corporation",
+   "organisasi_id_ada": null,
+   "pabrik_referensi": {
+    "dunia": null,
+    "asia": null,
+    "kapasitas_ton_hari": null,
+    "kapasitas_mw": null,
+    "catatan": "belum bersumber; diisi dari laporan tahunan/situs referensi perusahaan"
+   },
+   "indonesia": [],
+   "kantor_indonesia_asean": null,
+   "teknologi_status": "perlu-tinjau (pengetahuan sektor; belum dicocokkan ke halaman produk)",
+   "catatan": "eep.ebara.com membalas 403: berhenti, situs tidak dipakai.",
+   "sumber": [
+    {
+     "url": "https://en.wikipedia.org/wiki/Ebara_Corporation",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "tanggal": "2026-11-08",
+     "keterangan": "induk Ebara Corporation, Wikipedia (CC BY-SA)"
+    }
+   ]
+  },
+  {
+   "slug": "kawasaki-heavy-industries",
+   "nama": "Kawasaki Heavy Industries",
+   "nama_lain": [
+    "Kawasaki",
+    "Kawasaki Environmental"
+   ],
+   "negara": "JP",
+   "situs": "https://www.kawasaki.com/en-us/",
+   "qid": "Q748148",
+   "teknologi": [
+    "insinerasi-grate",
+    "gasifikasi"
+   ],
+   "komponen": [
+    "boiler",
+    "turbin",
+    "gasification-melting"
+   ],
+   "induk": null,
+   "organisasi_id_ada": null,
+   "pabrik_referensi": {
+    "dunia": null,
+    "asia": null,
+    "kapasitas_ton_hari": null,
+    "kapasitas_mw": null,
+    "catatan": "belum bersumber; diisi dari laporan tahunan/situs referensi perusahaan"
+   },
+   "indonesia": [],
+   "kantor_indonesia_asean": null,
+   "teknologi_status": "perlu-tinjau (pengetahuan sektor; belum dicocokkan ke halaman produk)",
+   "catatan": null,
+   "sumber": [
+    {
+     "url": "https://www.kawasaki.com/en-us/",
+     "tingkat_bukti": "situs-sendiri",
+     "tanggal": "2026-11-08",
+     "keterangan": "situs resmi dibuka (robots dicek, UA METI)"
+    }
+   ]
+  },
+  {
+   "slug": "valmet",
+   "nama": "Valmet",
+   "nama_lain": [
+    "Valmet Oyj"
+   ],
+   "negara": "FI",
+   "situs": "https://www.valmet.com/",
+   "qid": "Q1197161",
+   "teknologi": [
+    "fluidized-bed",
+    "gasifikasi"
+   ],
+   "komponen": [
+    "boiler",
+    "flue-gas-treatment"
+   ],
+   "induk": null,
+   "organisasi_id_ada": null,
+   "pabrik_referensi": {
+    "dunia": null,
+    "asia": null,
+    "kapasitas_ton_hari": null,
+    "kapasitas_mw": null,
+    "catatan": "belum bersumber; diisi dari laporan tahunan/situs referensi perusahaan"
+   },
+   "indonesia": [],
+   "kantor_indonesia_asean": null,
+   "teknologi_status": "perlu-tinjau (pengetahuan sektor; belum dicocokkan ke halaman produk)",
+   "catatan": "Fluidized bed biomassa/RDF.",
+   "sumber": [
+    {
+     "url": "https://www.valmet.com/",
+     "tingkat_bukti": "situs-sendiri",
+     "tanggal": "2026-11-08",
+     "keterangan": "situs resmi dibuka (robots dicek, UA METI)"
+    }
+   ]
+  },
+  {
+   "slug": "andritz",
+   "nama": "Andritz",
+   "nama_lain": [
+    "Andritz AG"
+   ],
+   "negara": "AT",
+   "situs": "https://www.andritz.com",
+   "qid": "Q442018",
+   "teknologi": [
+    "fluidized-bed",
+    "insinerasi-grate"
+   ],
+   "komponen": [
+    "boiler",
+    "flue-gas-treatment"
+   ],
+   "induk": null,
+   "organisasi_id_ada": "in_4518545c8a",
+   "pabrik_referensi": {
+    "dunia": null,
+    "asia": null,
+    "kapasitas_ton_hari": null,
+    "kapasitas_mw": null,
+    "catatan": "belum bersumber; diisi dari laporan tahunan/situs referensi perusahaan"
+   },
+   "indonesia": [],
+   "kantor_indonesia_asean": null,
+   "teknologi_status": "perlu-tinjau (pengetahuan sektor; belum dicocokkan ke halaman produk)",
+   "catatan": null,
+   "sumber": [
+    {
+     "url": "https://www.andritz.com",
+     "tingkat_bukti": "situs-sendiri",
+     "tanggal": "2026-11-08",
+     "keterangan": "situs resmi dibuka (robots dicek, UA METI)"
+    }
+   ]
+  },
+  {
+   "slug": "doosan-lentjes",
+   "nama": "Doosan Lentjes",
+   "nama_lain": [
+    "Doosan Lentjes GmbH"
+   ],
+   "negara": "DE",
+   "situs": "https://www.doosanlentjes.com/en",
+   "qid": "Q16974073",
+   "teknologi": [
+    "fluidized-bed",
+    "insinerasi-grate"
+   ],
+   "komponen": [
+    "boiler",
+    "flue-gas-treatment"
+   ],
+   "induk": "Doosan Enerbility (Korea Selatan, in_95ce4b67bd)",
+   "organisasi_id_ada": null,
+   "pabrik_referensi": {
+    "dunia": null,
+    "asia": null,
+    "kapasitas_ton_hari": null,
+    "kapasitas_mw": null,
+    "catatan": "belum bersumber; diisi dari laporan tahunan/situs referensi perusahaan"
+   },
+   "indonesia": [],
+   "kantor_indonesia_asean": null,
+   "teknologi_status": "perlu-tinjau (pengetahuan sektor; belum dicocokkan ke halaman produk)",
+   "catatan": null,
+   "sumber": [
+    {
+     "url": "https://www.doosanlentjes.com/en",
+     "tingkat_bukti": "situs-sendiri",
+     "tanggal": "2026-11-08",
+     "keterangan": "situs resmi dibuka (robots dicek, UA METI)"
+    }
+   ]
+  },
+  {
+   "slug": "cnty",
+   "nama": "CNTY",
+   "nama_lain": [
+    "China Tianying",
+    "China Tianying Inc."
+   ],
+   "negara": "CN",
+   "situs": null,
+   "qid": null,
+   "teknologi": [
+    "insinerasi-grate"
+   ],
+   "komponen": [
+    "grate"
+   ],
+   "induk": null,
+   "organisasi_id_ada": null,
+   "pabrik_referensi": {
+    "dunia": null,
+    "asia": null,
+    "kapasitas_ton_hari": null,
+    "kapasitas_mw": null,
+    "catatan": "belum bersumber; diisi dari laporan tahunan/situs referensi perusahaan"
+   },
+   "indonesia": [],
+   "kantor_indonesia_asean": null,
+   "teknologi_status": "perlu-tinjau (pengetahuan sektor; belum dicocokkan ke halaman produk)",
+   "catatan": "Situs tidak ditemukan terbuka; tidak ditebak.",
+   "sumber": []
+  },
+  {
+   "slug": "grandblue",
+   "nama": "Grandblue Environment",
+   "nama_lain": [
+    "Grandblue",
+    "Hanlan Huanjing"
+   ],
+   "negara": "CN",
+   "situs": "https://www.grandblue.cn/zh/",
+   "qid": null,
+   "teknologi": [
+    "insinerasi-grate"
+   ],
+   "komponen": [
+    "grate"
+   ],
+   "induk": null,
+   "organisasi_id_ada": null,
+   "pabrik_referensi": {
+    "dunia": null,
+    "asia": null,
+    "kapasitas_ton_hari": null,
+    "kapasitas_mw": null,
+    "catatan": "belum bersumber; diisi dari laporan tahunan/situs referensi perusahaan"
+   },
+   "indonesia": [],
+   "kantor_indonesia_asean": null,
+   "teknologi_status": "perlu-tinjau (pengetahuan sektor; belum dicocokkan ke halaman produk)",
+   "catatan": null,
+   "sumber": [
+    {
+     "url": "https://www.grandblue.cn/zh/",
+     "tingkat_bukti": "situs-sendiri",
+     "tanggal": "2026-11-08",
+     "keterangan": "situs resmi dibuka (robots dicek, UA METI)"
+    }
+   ]
+  },
+  {
+   "slug": "tianjin-teda",
+   "nama": "Tianjin Teda",
+   "nama_lain": [
+    "Tianjin TEDA Environmental Protection"
+   ],
+   "negara": "CN",
+   "situs": null,
+   "qid": null,
+   "teknologi": [
+    "insinerasi-grate"
+   ],
+   "komponen": [],
+   "induk": null,
+   "organisasi_id_ada": null,
+   "pabrik_referensi": {
+    "dunia": null,
+    "asia": null,
+    "kapasitas_ton_hari": null,
+    "kapasitas_mw": null,
+    "catatan": "belum bersumber; diisi dari laporan tahunan/situs referensi perusahaan"
+   },
+   "indonesia": [
+    {
+     "proyek_id": "pjb_002",
+     "proyek": "PSEL Yogyakarta Raya (Piyungan)",
+     "peran": "mitra konsorsium terpilih (Cakra Energi Lestari Consortium)",
+     "mitra": "Pertamina NRE; CITICC; Denera",
+     "sumber": {
+      "url": "https://www.liputan6.com/bisnis/read/8251038/daftar-nama-8-mitra-penggarap-proyek-listrik-dari-sampah-di-indonesia",
+      "tingkat_bukti": "media",
+      "tanggal": "2026-11-07"
+     }
+    }
+   ],
+   "kantor_indonesia_asean": null,
+   "teknologi_status": "perlu-tinjau (pengetahuan sektor; belum dicocokkan ke halaman produk)",
+   "catatan": "Disebut pada konsorsium PSEL Yogyakarta; ejaan sumber 'Tianjin'. Situs tidak ditebak.",
+   "sumber": []
+  },
+  {
+   "slug": "beijing-geoenviron",
+   "nama": "Beijing GeoEnviron Engineering",
+   "nama_lain": [
+    "Beijing GeoEnviron"
+   ],
+   "negara": "CN",
+   "situs": null,
+   "qid": null,
+   "teknologi": [],
+   "komponen": [],
+   "induk": null,
+   "organisasi_id_ada": "in_26d40387ce",
+   "pabrik_referensi": {
+    "dunia": null,
+    "asia": null,
+    "kapasitas_ton_hari": null,
+    "kapasitas_mw": null,
+    "catatan": "belum bersumber; diisi dari laporan tahunan/situs referensi perusahaan"
+   },
+   "indonesia": [
+    {
+     "proyek_id": "pjb_006",
+     "proyek": "PSEL Serang Raya",
+     "peran": "mitra konsorsium terpilih (Masa Depan Energi Indonesia)",
+     "mitra": "PT Chandra Waste Energy; Denera",
+     "sumber": {
+      "url": "https://www.liputan6.com/bisnis/read/8251038/daftar-nama-8-mitra-penggarap-proyek-listrik-dari-sampah-di-indonesia",
+      "tingkat_bukti": "media",
+      "tanggal": "2026-11-07"
+     }
+    }
+   ],
+   "kantor_indonesia_asean": null,
+   "teknologi_status": "perlu-tinjau (pengetahuan sektor; belum dicocokkan ke halaman produk)",
+   "catatan": "Sudah ada di direktori; disebut pada konsorsium PSEL Serang Raya.",
+   "sumber": []
+  },
+  {
+   "slug": "reworld",
+   "nama": "Reworld",
+   "nama_lain": [
+    "Covanta"
+   ],
+   "negara": "US",
+   "situs": "https://www.reworldwaste.com/",
+   "qid": "Q5178891",
+   "teknologi": [
+    "insinerasi-grate"
+   ],
+   "komponen": [
+    "grate",
+    "boiler",
+    "flue-gas-treatment"
+   ],
+   "induk": null,
+   "organisasi_id_ada": null,
+   "pabrik_referensi": {
+    "dunia": null,
+    "asia": null,
+    "kapasitas_ton_hari": null,
+    "kapasitas_mw": null,
+    "catatan": "belum bersumber; diisi dari laporan tahunan/situs referensi perusahaan"
+   },
+   "indonesia": [],
+   "kantor_indonesia_asean": null,
+   "teknologi_status": "perlu-tinjau (pengetahuan sektor; belum dicocokkan ke halaman produk)",
+   "catatan": "Covanta berganti nama menjadi Reworld.",
+   "sumber": [
+    {
+     "url": "https://www.reworldwaste.com/",
+     "tingkat_bukti": "situs-sendiri",
+     "tanggal": "2026-11-08",
+     "keterangan": "situs resmi dibuka (robots dicek, UA METI)"
+    }
+   ]
+  },
+  {
+   "slug": "veolia",
+   "nama": "Veolia",
+   "nama_lain": [
+    "Veolia Environmental Services Asia"
+   ],
+   "negara": "FR",
+   "situs": "https://www.veolia.com/",
+   "qid": "Q1632461",
+   "teknologi": [
+    "insinerasi-grate",
+    "biodigester-biogas"
+   ],
+   "komponen": [
+    "operator"
+   ],
+   "induk": null,
+   "organisasi_id_ada": "in_cd6da9ed54",
+   "pabrik_referensi": {
+    "dunia": null,
+    "asia": null,
+    "kapasitas_ton_hari": null,
+    "kapasitas_mw": null,
+    "catatan": "belum bersumber; diisi dari laporan tahunan/situs referensi perusahaan"
+   },
+   "indonesia": [
+    {
+     "proyek_id": "pj_0047",
+     "proyek": "PSEL Semarang Raya",
+     "peran": "mitra pemilik (Veolia Environmental Services Asia Pte. Ltd)",
+     "mitra": "Denera",
+     "sumber": {
+      "url": "https://id.wikipedia.org/wiki/Daftar_Proyek_Strategis_Nasional",
+      "tingkat_bukti": "media",
+      "tanggal": "2026-11-07"
+     }
+    }
+   ],
+   "kantor_indonesia_asean": null,
+   "teknologi_status": "perlu-tinjau (pengetahuan sektor; belum dicocokkan ke halaman produk)",
+   "catatan": "Sudah ada di direktori.",
+   "sumber": [
+    {
+     "url": "https://www.wikidata.org/wiki/Q1632461",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "tanggal": "2026-11-08",
+     "keterangan": "situs resmi menurut Wikidata P856"
+    }
+   ]
+  },
+  {
+   "slug": "suez",
+   "nama": "SUEZ",
+   "nama_lain": [
+    "Suez Environnement"
+   ],
+   "negara": "FR",
+   "situs": "https://www.suez.com/en",
+   "qid": "Q177814",
+   "teknologi": [
+    "insinerasi-grate",
+    "biodigester-biogas"
+   ],
+   "komponen": [
+    "operator"
+   ],
+   "induk": null,
+   "organisasi_id_ada": null,
+   "pabrik_referensi": {
+    "dunia": null,
+    "asia": null,
+    "kapasitas_ton_hari": null,
+    "kapasitas_mw": null,
+    "catatan": "belum bersumber; diisi dari laporan tahunan/situs referensi perusahaan"
+   },
+   "indonesia": [],
+   "kantor_indonesia_asean": null,
+   "teknologi_status": "perlu-tinjau (pengetahuan sektor; belum dicocokkan ke halaman produk)",
+   "catatan": null,
+   "sumber": [
+    {
+     "url": "https://www.suez.com/en",
+     "tingkat_bukti": "situs-sendiri",
+     "tanggal": "2026-11-08",
+     "keterangan": "situs resmi dibuka (robots dicek, UA METI)"
+    }
+   ]
+  },
+  {
+   "slug": "fisia-babcock",
+   "nama": "Fisia Babcock Environment",
+   "nama_lain": [
+    "FBE"
+   ],
+   "negara": "DE",
+   "situs": null,
+   "qid": null,
+   "teknologi": [
+    "insinerasi-grate"
+   ],
+   "komponen": [
+    "grate",
+    "boiler",
+    "flue-gas-treatment"
+   ],
+   "induk": null,
+   "organisasi_id_ada": null,
+   "pabrik_referensi": {
+    "dunia": null,
+    "asia": null,
+    "kapasitas_ton_hari": null,
+    "kapasitas_mw": null,
+    "catatan": "belum bersumber; diisi dari laporan tahunan/situs referensi perusahaan"
+   },
+   "indonesia": [],
+   "kantor_indonesia_asean": null,
+   "teknologi_status": "perlu-tinjau (pengetahuan sektor; belum dicocokkan ke halaman produk)",
+   "catatan": "Situs tidak dapat dibuka (2026-11-08); tidak ditebak.",
+   "sumber": []
+  },
+  {
+   "slug": "wheelabrator",
+   "nama": "Wheelabrator Technologies",
+   "nama_lain": [
+    "Wheelabrator"
+   ],
+   "negara": "US",
+   "situs": null,
+   "qid": null,
+   "teknologi": [
+    "insinerasi-grate"
+   ],
+   "komponen": [
+    "operator"
+   ],
+   "induk": null,
+   "organisasi_id_ada": null,
+   "pabrik_referensi": {
+    "dunia": null,
+    "asia": null,
+    "kapasitas_ton_hari": null,
+    "kapasitas_mw": null,
+    "catatan": "belum bersumber; diisi dari laporan tahunan/situs referensi perusahaan"
+   },
+   "indonesia": [],
+   "kantor_indonesia_asean": null,
+   "teknologi_status": "perlu-tinjau (pengetahuan sektor; belum dicocokkan ke halaman produk)",
+   "catatan": "wheelabrator.com bukan miliknya (dialihkan ke Winoa); situs tidak dipakai.",
+   "sumber": []
+  },
+  {
+   "slug": "weltec-biopower",
+   "nama": "Weltec Biopower",
+   "nama_lain": [
+    "WELTEC BIOPOWER"
+   ],
+   "negara": "DE",
+   "situs": "https://www.weltec-biopower.com/de",
+   "qid": null,
+   "teknologi": [
+    "biodigester-biogas"
+   ],
+   "komponen": [
+    "digester"
+   ],
+   "induk": null,
+   "organisasi_id_ada": null,
+   "pabrik_referensi": {
+    "dunia": null,
+    "asia": null,
+    "kapasitas_ton_hari": null,
+    "kapasitas_mw": null,
+    "catatan": "belum bersumber; diisi dari laporan tahunan/situs referensi perusahaan"
+   },
+   "indonesia": [],
+   "kantor_indonesia_asean": null,
+   "teknologi_status": "perlu-tinjau (pengetahuan sektor; belum dicocokkan ke halaman produk)",
+   "catatan": null,
+   "sumber": [
+    {
+     "url": "https://www.weltec-biopower.com/de",
+     "tingkat_bukti": "situs-sendiri",
+     "tanggal": "2026-11-08",
+     "keterangan": "situs resmi dibuka (robots dicek, UA METI)"
+    }
+   ]
+  },
+  {
+   "slug": "envitec-biogas",
+   "nama": "EnviTec Biogas",
+   "nama_lain": [
+    "Envitec"
+   ],
+   "negara": "DE",
+   "situs": "https://www.envitec-biogas.com/",
+   "qid": "Q328249",
+   "teknologi": [
+    "biodigester-biogas",
+    "landfill-gas"
+   ],
+   "komponen": [
+    "digester"
+   ],
+   "induk": null,
+   "organisasi_id_ada": null,
+   "pabrik_referensi": {
+    "dunia": null,
+    "asia": null,
+    "kapasitas_ton_hari": null,
+    "kapasitas_mw": null,
+    "catatan": "belum bersumber; diisi dari laporan tahunan/situs referensi perusahaan"
+   },
+   "indonesia": [],
+   "kantor_indonesia_asean": null,
+   "teknologi_status": "perlu-tinjau (pengetahuan sektor; belum dicocokkan ke halaman produk)",
+   "catatan": null,
+   "sumber": [
+    {
+     "url": "https://www.envitec-biogas.com/",
+     "tingkat_bukti": "situs-sendiri",
+     "tanggal": "2026-11-08",
+     "keterangan": "situs resmi dibuka (robots dicek, UA METI)"
+    }
+   ]
+  },
+  {
+   "slug": "bta-international",
+   "nama": "BTA International",
+   "nama_lain": [
+    "BTA"
+   ],
+   "negara": "DE",
+   "situs": "https://bta-international.de/",
+   "qid": null,
+   "teknologi": [
+    "biodigester-biogas"
+   ],
+   "komponen": [
+    "pretreatment",
+    "digester"
+   ],
+   "induk": null,
+   "organisasi_id_ada": null,
+   "pabrik_referensi": {
+    "dunia": null,
+    "asia": null,
+    "kapasitas_ton_hari": null,
+    "kapasitas_mw": null,
+    "catatan": "belum bersumber; diisi dari laporan tahunan/situs referensi perusahaan"
+   },
+   "indonesia": [],
+   "kantor_indonesia_asean": null,
+   "teknologi_status": "perlu-tinjau (pengetahuan sektor; belum dicocokkan ke halaman produk)",
+   "catatan": null,
+   "sumber": [
+    {
+     "url": "https://bta-international.de/",
+     "tingkat_bukti": "situs-sendiri",
+     "tanggal": "2026-11-08",
+     "keterangan": "situs resmi dibuka (robots dicek, UA METI)"
+    }
+   ]
+  },
+  {
+   "slug": "biogest",
+   "nama": "Biogest",
+   "nama_lain": [
+    "Biogest AG"
+   ],
+   "negara": "AT",
+   "situs": "https://www.biogest.at/",
+   "qid": null,
+   "teknologi": [
+    "biodigester-biogas"
+   ],
+   "komponen": [
+    "digester"
+   ],
+   "induk": null,
+   "organisasi_id_ada": null,
+   "pabrik_referensi": {
+    "dunia": null,
+    "asia": null,
+    "kapasitas_ton_hari": null,
+    "kapasitas_mw": null,
+    "catatan": "belum bersumber; diisi dari laporan tahunan/situs referensi perusahaan"
+   },
+   "indonesia": [],
+   "kantor_indonesia_asean": null,
+   "teknologi_status": "perlu-tinjau (pengetahuan sektor; belum dicocokkan ke halaman produk)",
+   "catatan": null,
+   "sumber": [
+    {
+     "url": "https://www.biogest.at/",
+     "tingkat_bukti": "situs-sendiri",
+     "tanggal": "2026-11-08",
+     "keterangan": "situs resmi dibuka (robots dicek, UA METI)"
+    }
+   ]
+  },
+  {
+   "slug": "sumitomo-shi-fw",
+   "nama": "Sumitomo SHI FW",
+   "nama_lain": [
+    "SHI FW"
+   ],
+   "negara": "FI",
+   "situs": "https://www.shi-fw.com/",
+   "qid": null,
+   "teknologi": [
+    "fluidized-bed"
+   ],
+   "komponen": [
+    "boiler"
+   ],
+   "induk": "Sumitomo Heavy Industries (Jepang)",
+   "organisasi_id_ada": null,
+   "pabrik_referensi": {
+    "dunia": null,
+    "asia": null,
+    "kapasitas_ton_hari": null,
+    "kapasitas_mw": null,
+    "catatan": "belum bersumber; diisi dari laporan tahunan/situs referensi perusahaan"
+   },
+   "indonesia": [],
+   "kantor_indonesia_asean": null,
+   "teknologi_status": "perlu-tinjau (pengetahuan sektor; belum dicocokkan ke halaman produk)",
+   "catatan": "Boiler CFB/BFB.",
+   "sumber": [
+    {
+     "url": "https://www.shi-fw.com/",
+     "tingkat_bukti": "situs-sendiri",
+     "tanggal": "2026-11-08",
+     "keterangan": "situs resmi dibuka (robots dicek, UA METI)"
+    }
+   ]
+  }
+ ]
+}

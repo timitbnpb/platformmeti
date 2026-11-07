@@ -79,7 +79,7 @@ function gambar() {
     { ikon: "grafik", nilai: fmt(n), label: t("re2.u.angka") },
     { ikon: "kajian", nilai: fmt(d.temuan.length), label: t("re2.u.temuan") },
     { ikon: "info", nilai: fmt(new Set(d.angka.map((a) => a.sumber.judul)).size), label: t("re2.u.sumber") },
-    { ikon: "kalender", nilai: tanggal(d.dibangun_pada), label: t("re2.u.data") },
+    { ikon: "kalender", nilai: d.dibangun_pada.slice(0, 4), label: t("re2.u.data") },
   ]);
   const angkaEx = exHtml({ id: "re-angka", ikon: "grafik", topik: t("re2.ey.angka"), judulHtml: hlHtml("re2.j.angka", fmt(n)), subHtml: esc(t("re2.sub.angka")), aksiHtml: aksiHtml({ png: true, pdf: false, bagi: false }), isiHtml: `<ul class="re-angka">${d.angka.map(kartuAngka).join("")}</ul>` });
   const temuanEx = exHtml({ id: "re-temuan", ikon: "kajian", topik: t("re2.ey.temuan"), judulHtml: hlHtml("re2.j.temuan", fmt(d.temuan.length)), subHtml: esc(t("re2.sub.temuan")), aksiHtml: aksiHtml({ png: true, pdf: false, bagi: false }),

@@ -8,7 +8,7 @@ dialog#lembar::backdrop,dialog#pasang::backdrop{background:color-mix(in srgb,var
 #lembar .jm-lembar-isi>section>h3,#pasang .jm-lembar-isi>section>h3{display:flex;align-items:center;gap:8px;margin:0 0 8px;font:700 var(--t-h3)/var(--lh-judul) var(--display);color:var(--head)}
 #lembar .jm-lembar-isi>section>h3::before,#pasang .jm-lembar-isi>section>h3::before{content:"";width:4px;height:1em;border-radius:2px;background:var(--accent)}
 #lembar p,#pasang p{display:block;margin:0;line-height:var(--lh-isi)}
-#lembar section>p,#pasang section>p{text-align:justify;hyphens:auto;color:var(--ink2)}
+#lembar section>p,#pasang section>p{text-align:left;hyphens:manual;color:var(--ink2)}
 #lembar .jm-baris-meta,#pasang .jm-baris-meta{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
 #lembar .jm-baris-meta .jm-ik{margin-right:4px}
 #lembar .jm-dl{grid-template-columns:minmax(110px,max-content) minmax(0,1fr);gap:10px 24px;padding:14px;border-radius:var(--r);background:var(--surface)}
@@ -26,7 +26,7 @@ dialog#lembar::backdrop,dialog#pasang::backdrop{background:color-mix(in srgb,var
 .jm-rg-k{display:flex;flex-direction:column;gap:10px;min-width:0;padding:16px;border:1px solid var(--line);border-radius:var(--r);background:var(--surface)}
 .jm-rg-k h3{margin:0;font:700 var(--t-body)/var(--lh-judul) var(--display);color:var(--head)}
 .jm-rg-ey{font:700 var(--t-label)/1 var(--font);color:var(--accent)}
-.jm-rg-ring{font-size:var(--t-tombol);color:var(--ink2);text-align:justify;hyphens:auto}
+.jm-rg-ring{font-size:var(--t-tombol);color:var(--ink2);text-align:left;hyphens:manual}
 .jm-rg-k .jm-rg-aksi{margin-top:auto}
 .jm-rg-tengah{align-self:center;display:inline-flex;align-items:center;gap:6px;white-space:nowrap}
 .jm-rg-apa{padding:14px 16px;border-left:4px solid var(--accent);border-radius:var(--r-sm);background:var(--soft-hijau)}
@@ -117,3 +117,6 @@ dialog#lembar{width:min(1100px,95vw)}
 .jm-ks-posisi{display:grid;gap:8px;min-width:0;padding:14px;border:1px solid var(--line);border-radius:var(--r-sm);background:var(--surface)}
 .jm-ks-posisi h4{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin:0;font:700 var(--t-body)/var(--lh-judul) var(--display);color:var(--head)}
 .jm-ks-posisi p{margin:0;color:var(--ink2);font-size:var(--t-tombol)}
+
+/* kisi tanpa yatim: jumlah kolom dipilih dari banyak kartu (jm-rg-k2/3/4) */
+@media (min-width:1100px){.jm-rg-baru-daftar.jm-rg-k4{grid-template-columns:repeat(4,minmax(0,1fr))}.jm-rg-baru-daftar.jm-rg-k3{grid-template-columns:repeat(3,minmax(0,1fr))}.jm-rg-baru-daftar.jm-rg-k2{grid-template-columns:repeat(2,minmax(0,1fr))}}

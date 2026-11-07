@@ -30,7 +30,7 @@ async function mulai(req, env) {
   const ip = await ipHash(env, req);
   if ((await hak.catatLaju(env, `masuk-ip:g${ip}`, JENDELA)) > BATAS) return gagal("laju_terlampaui", 429, { "retry-after": String(JENDELA) });
   const state = acak(16), nonce = acak(16), verifier = acak(32);
-  const ke = jalurAman(url.searchParams.get("ke"));
+  const keParam = url.searchParams.get("ke"), ke = keParam === null ? "/saya" : jalurAman(keParam); // tanpa tujuan: METI untuk saya (sejalan masuk.js)
   const isi = b64u(enc.encode(JSON.stringify({ s: state, n: nonce, v: verifier, k: ke, e: Math.floor(Date.now() / 1000) + TTL })));
   const challenge = b64u(await crypto.subtle.digest("SHA-256", enc.encode(verifier)));
   const q = new URLSearchParams({ client_id: env.GOOGLE_CLIENT_ID, redirect_uri: redirectUri(url), response_type: "code", scope: "openid email profile",

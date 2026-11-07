@@ -11,7 +11,7 @@ body[data-halaman="program"]{overflow-x:clip}
 .jm-pg-balik{display:inline-flex;align-items:center;gap:6px;min-height:var(--target);font:600 var(--t-tombol)/1 var(--font);color:var(--accent);text-decoration:none}
 .jm-pg-balik:hover{text-decoration:underline}
 .jm-pg-balik:focus-visible{outline:2px solid var(--fokus);outline-offset:2px}
-.jm-pg-ket{margin:12px 0 0;max-width:none;text-align:justify;hyphens:auto;color:var(--ink2);font:400 var(--t-body)/var(--lh-isi) var(--font)}
+.jm-pg-ket{margin:12px 0 0;max-width:none;text-align:left;hyphens:manual;color:var(--ink2);font:400 var(--t-body)/var(--lh-isi) var(--font)}
 .jm-pg-sub{margin:20px 0 8px;font:600 var(--t-body)/var(--lh-rapat) var(--font);color:var(--head)}
 .jm-pg-sub:first-child{margin-top:0}
 .jm-pg-kosong{margin:12px 0 0;font:400 var(--t-tombol)/var(--lh-isi) var(--font);color:var(--ink2)}
@@ -32,7 +32,7 @@ body[data-halaman="program"]{overflow-x:clip}
 .jm-pg-ik .jm-ikt{width:20px;height:20px}
 .jm-pg-gb .jm-pil-st{position:absolute;z-index:1;top:12px;right:12px;background:var(--card)}
 .jm-pg-isi{display:grid;gap:12px;align-content:start;padding:16px}
-.jm-pg-desk{margin:0;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;text-align:justify;hyphens:auto;font:400 var(--t-tombol)/var(--lh-isi) var(--font);color:var(--ink2)}
+.jm-pg-desk{margin:0;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;text-align:left;hyphens:manual;font:400 var(--t-tombol)/var(--lh-isi) var(--font);color:var(--ink2)}
 .jm-pg-stat{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin:0}
 .jm-pg-stat>div{display:grid;gap:2px;align-content:start;padding:8px 10px;border-radius:var(--r-sm);background:var(--surface)}
 .jm-pg-stat dt{font:400 var(--t-label)/var(--lh-rapat) var(--font);color:var(--ink2);white-space:nowrap}
@@ -57,7 +57,7 @@ body[data-halaman="program"]{overflow-x:clip}
 .jm-pg-tl-depan .jm-pg-tl-t{background:var(--card);border-style:dashed;border-color:var(--ink2)}
 .jm-pg-tl-kini .jm-pg-tl-t{width:18px;height:18px;top:3px;background:var(--sorot);border-color:var(--accent)}
 .jm-pg-tl time{font:700 var(--t-tombol)/var(--lh-rapat) var(--font);color:var(--head);font-variant-numeric:tabular-nums}
-.jm-pg-tl p{margin:0;text-align:justify;hyphens:auto;font:400 var(--t-tombol)/var(--lh-isi) var(--font);color:var(--ink)}
+.jm-pg-tl p{margin:0;text-align:left;hyphens:manual;font:400 var(--t-tombol)/var(--lh-isi) var(--font);color:var(--ink)}
 .jm-pg-tl .jm-sumber{justify-self:start}
 
 /* tahapan berlabel */
@@ -132,7 +132,7 @@ body[data-halaman="program"]{overflow-x:clip}
 .jm-pg-isu-atas{display:flex;flex-wrap:wrap;align-items:center;gap:8px}
 .jm-pg-isu-atas .jm-sumber{margin-left:auto}
 .jm-pg-isu h3{margin:0;font:700 var(--t-body)/var(--lh-rapat) var(--display);color:var(--head)}
-.jm-pg-isu p{margin:0;text-align:justify;hyphens:auto;font:400 var(--t-tombol)/var(--lh-isi) var(--font);color:var(--ink2)}
+.jm-pg-isu p{margin:0;text-align:left;hyphens:manual;font:400 var(--t-tombol)/var(--lh-isi) var(--font);color:var(--ink2)}
 
 /* pendanaan, posisi, indikator */
 .jm-pg-dana{list-style:none;margin:0;padding:0;display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
@@ -142,7 +142,7 @@ body[data-halaman="program"]{overflow-x:clip}
 .jm-pg-meti,.jm-pg-ind{list-style:none;margin:0;padding:0;display:grid;gap:12px}
 .jm-pg-meti li,.jm-pg-ind li{display:grid;grid-template-columns:24px minmax(0,1fr);gap:12px;align-items:start;padding:14px 16px;border:1px solid var(--line);border-radius:var(--r);background:var(--card)}
 .jm-pg-meti .jm-ik,.jm-pg-ind .jm-ik{color:var(--accent);margin-top:2px}
-.jm-pg-meti p,.jm-pg-ind p{margin:0;text-align:justify;hyphens:auto;font:400 var(--t-body)/var(--lh-isi) var(--font);color:var(--ink)}
+.jm-pg-meti p,.jm-pg-ind p{margin:0;text-align:left;hyphens:manual;font:400 var(--t-body)/var(--lh-isi) var(--font);color:var(--ink)}
 .jm-pg-meti small{display:block;margin-top:4px;font:400 var(--t-kecil)/var(--lh-rapat) var(--font);color:var(--ink2)}
 @media (min-width:1000px){.jm-pg-ind{grid-template-columns:repeat(2,minmax(0,1fr))}}
 

@@ -617,7 +617,7 @@ RX_LAMPIRAN = re.compile(r"^LAMPIRAN\b")
 
 
 def cari(L, rx, mulai=0, selesai=None):
-    for i in range(mulai, len(L) if selesai is None else selesai):
+    for i in range(mulai, len(L) if selesai is None else min(selesai, len(L))):
         if rx.match(L[i][0]):
             return i
     return None
@@ -968,36 +968,57 @@ def bangun():
             "dok": dok, "relasi": relasi, "definisi": definisi, "gagal": gagal}, segmen
 
 
+SHARD = 8_000_000   # byte per berkas seed (impor D1 lebih aman dalam potongan)
+
+
 def tulis_seed(kat, segmen, ms):
+    """-> [(nama berkas, isi)]. seed.sql = DELETE + dokumen + relasi; seed-NN.sql = segmen + fts. Jalankan berurutan: seed.sql dulu."""
     judul = {d["id"]: d["judul"] for d in kat["dok"]}
-    b = ["-- Pustaka hukum EBT METI. DIBANGUN oleh scripts/hukum/hukum.py urai; jangan disunting tangan.",
-         "-- Idempoten: DELETE lalu INSERT. Dijalankan pemilik: wrangler d1 execute jaringan-meti --remote --file=data/hukum/seed.sql",
-         "DELETE FROM hukum_fts;", "DELETE FROM hukum_relasi;", "DELETE FROM hukum_segmen;", "DELETE FROM hukum_dok;"]
+    kepala = ["-- Pustaka hukum EBT METI. DIBANGUN oleh scripts/hukum/hukum.py urai; jangan disunting tangan.",
+              "-- Idempoten: DELETE lalu INSERT. Urutan: seed.sql, lalu seed-01.sql, seed-02.sql, ... (wrangler d1 execute jaringan-meti --remote --file=...)."]
+    b = kepala + ["DELETE FROM hukum_fts;", "DELETE FROM hukum_relasi;", "DELETE FROM hukum_segmen;", "DELETE FROM hukum_dok;"]
     for d in kat["dok"]:
         b.append(sisip("hukum_dok", ["id", "regulasi_id", "slug", "tipe", "jenis", "singkatan", "nomor", "tahun", "judul", "status", "subjek",
                                      "tgl_tetap", "tgl_undang", "url", "pdf", "halaman", "ocr", "mutu", "diperbarui", "resmi", "sumber"],
                        [d["id"], d["regulasi_id"], d["slug"], d["tipe"], d["jenis"], d["singkatan"], d["nomor"], d["tahun"], d["judul"], d["status"],
                         d["subjek"], d["tgl_tetap"], d["tgl_undang"], d["url"], json.dumps(d["pdf"]), d["halaman"], d["halaman_ocr"], d["mutu"], ms, int(d["resmi"]), d["sumber"]]))
-    for s in segmen:
-        b.append(sisip("hukum_segmen", ["id", "dok", "urut", "jenis", "label", "bab", "halaman", "teks"],
-                       [s["id"], s["dok"], s["urut"], s["jenis"], s["label"], s["bab"], s["halaman"], s["teks"]]))
-        b.append(sisip("hukum_fts", ["rowid", "teks", "label", "judul"], [s["id"], s["teks"], s["label"], judul[s["dok"]]]))
     for r in kat["relasi"]:
         b.append(sisip("hukum_relasi", ["dari", "ke", "jenis", "terdaftar", "ke_judul"], [r["dari"], r["ke"], r["jenis"], int(r["terdaftar"]), r["ke_judul"]]))
-    return "\n".join(b) + "\n"
+    out = [("seed.sql", "\n".join(b) + "\n")]
+    cur, ukuran, n = list(kepala), 0, 0
+    def tutup():
+        nonlocal cur, ukuran, n
+        if len(cur) > len(kepala):
+            n += 1
+            out.append((f"seed-{n:02d}.sql", "\n".join(cur) + "\n"))
+        cur, ukuran = list(kepala), 0
+    for sg in segmen:
+        for st in (sisip("hukum_segmen", ["id", "dok", "urut", "jenis", "label", "bab", "halaman", "teks"], [sg["id"], sg["dok"], sg["urut"], sg["jenis"], sg["label"], sg["bab"], sg["halaman"], sg["teks"]]),
+                   sisip("hukum_fts", ["rowid", "teks", "label", "judul"], [sg["id"], sg["teks"], sg["label"], judul[sg["dok"]]])):
+            cur.append(st); ukuran += len(st)
+        if ukuran > SHARD:
+            tutup()
+    tutup()
+    return out
 
 
 def urai():
     kat, segmen = bangun()
     os.makedirs(os.path.dirname(KATALOG), exist_ok=True)
     os.makedirs(os.path.dirname(SEED), exist_ok=True)
-    json.dump(kat, open(KATALOG, "w"), ensure_ascii=False, separators=(",", ":"))
-    open(SEED, "w").write(tulis_seed(kat, segmen, int(time.time() * 1000)))
+    bersih_k = lambda o: ({k: bersih_k(v) for k, v in o.items()} if isinstance(o, dict) else [bersih_k(v) for v in o] if isinstance(o, list)
+                          else re.sub("[\u00b7\u2022]", ",", re.sub("[\u2013\u2014]", "-", o)) if isinstance(o, str) else o)   # gerbang repo: tanpa em dash dan titik tengah di public/**
+    json.dump(bersih_k(kat), open(KATALOG, "w"), ensure_ascii=False, separators=(",", ":"))
+    for lama in glob.glob(os.path.join(os.path.dirname(SEED), "seed*.sql")):
+        os.remove(lama)
+    berkas = tulis_seed(kat, segmen, int(time.time() * 1000))
+    for nama_, isi in berkas:
+        open(os.path.join(os.path.dirname(SEED), nama_), "w").write(isi)
     jenis = Counter(s["jenis"] for s in segmen)
     mutu = [d["mutu"] for d in kat["dok"] if d["mutu"] is not None]
     print(f"dok {len(kat['dok'])}  segmen {len(segmen)} {dict(jenis)}  relasi {len(kat['relasi'])} (terdaftar {sum(r['terdaftar'] for r in kat['relasi'])})  definisi {len(kat['definisi'])}  "
           f"mutu rata-rata {sum(mutu)/max(1,len(mutu)):.3f}  halaman OCR dipakai {sum(d['halaman_ocr'] for d in kat['dok'])}  butuh OCR (dilewati) {sum(d['halaman_butuh_ocr'] for d in kat['dok'])}  "
-          f"gagal {len(kat['gagal'])}  seed {os.path.getsize(SEED)//1024} KB  katalog {os.path.getsize(KATALOG)//1024} KB")
+          f"gagal {len(kat['gagal'])}  seed {len(berkas)} berkas {sum(len(i) for _, i in berkas)//1024} KB  katalog {os.path.getsize(KATALOG)//1024} KB")
     return kat, segmen
 
 

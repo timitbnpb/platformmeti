@@ -3,7 +3,7 @@
    dan batang HTML analisis.js (li di .jm-batang). Satu pendengar bersama di dokumen, tanpa gaya inline. */
 import { t, angka } from "/i18n.js";
 
-const SEL = ".jm-gf :is(rect,circle,path)[data-tip],.jm-batang>li[data-tip]:not(.jm-bar-ax),.jm-an-batang>li[data-tip]";
+const SEL = ".jm-gf :is(rect,circle,path)[data-tip],.jm-gx [data-tip],.jm-batang>li[data-tip]:not(.jm-bar-ax),.jm-an-batang>li[data-tip]";
 let tip;
 const kotak = () => tip || (tip = Object.assign(document.createElement("div"), { className: "jm-gf-tip", hidden: true, role: "tooltip", id: "jm-gf-tip" }), document.body.append(tip), tip);
 
@@ -14,11 +14,13 @@ const saudara = (e) => [...kelompok(e).querySelectorAll(SEL)];
 
 /* siapkan: pindahkan <title>/title jadi data-tip (cegah tooltip bawaan ganda), jadikan bisa difokus */
 function siapkan(akar) {
-  for (const ti of akar.querySelectorAll?.(".jm-gf title") ?? []) {
+  /* .jm-gx = SVG bebas (g/path/image/rect apa pun yang membawa <title> atau data-tip); .jm-gf = grafik.js (rect/circle/path saja) */
+  for (const ti of akar.querySelectorAll?.(".jm-gf title,.jm-gx title") ?? []) {
     const p = ti.parentElement;
-    if (!p.matches("rect,circle,path")) continue;
+    if (!p.matches(".jm-gx *") && !p.matches("rect,circle,path")) continue;
     p.dataset.tip = ti.textContent; p.setAttribute("aria-label", ti.textContent); p.setAttribute("tabindex", "0"); ti.remove();
   }
+  for (const x of akar.querySelectorAll?.(".jm-gx [data-tip]:not([tabindex],:has(button,a))") ?? []) x.setAttribute("tabindex", "0");
   for (const li of akar.querySelectorAll?.(".jm-batang>li[title]:not(.jm-bar-ax),.jm-an-batang>li[title]") ?? []) {
     li.dataset.tip = li.getAttribute("title"); li.removeAttribute("title"); li.setAttribute("tabindex", "0");
   }

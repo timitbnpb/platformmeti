@@ -4,6 +4,7 @@
 // Pakai: node scripts/pipa/topik_energi_laut.mjs [--selftest]
 import { dalam } from './topik_energi_laut_dalam.mjs';
 import { T, hp, S, ED, baca, regS, nf, nfe, SPUBFIN, teks, faq, glos, rumus, langkah, tabel, grafik, linimasa, kol, L, kunci, kas, rakit, selftest as st, jalankan, tabelRegulasi, kolRegulasi, validasi as val } from './topik_enam_lib.mjs';
+import { tambahJalanModel } from './topik_jalan_lib.mjs';
 
 const kh = baca('public/data/keuangan_hijau.json');
 const marine = kh.investasi_publik.filter((r) => r.teknologi === 'Marine energy');
@@ -238,7 +239,7 @@ function susunAsal() {
     sumber: SUMBER, bab });
 }
 
-export function susun() { return dalam(susunAsal()); }
+export function susun() { return tambahJalanModel(dalam(susunAsal()), 'energi-laut'); }
 export const validasi = val;
 export const selftest = () => st(susun);
 jalankan(import.meta.url, 'energi_laut', susun);

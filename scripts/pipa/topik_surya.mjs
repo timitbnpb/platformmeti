@@ -6,6 +6,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { perdalam } from './topik_dalam_surya.mjs';
+import { tambahJalanModel } from './topik_jalan_lib.mjs';
 const akar = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '../..');
 const TGL = '2026-11-08';
 const baca = (p) => JSON.parse(fs.readFileSync(path.join(akar, p), 'utf8'));
@@ -446,7 +447,7 @@ function susunDasar() {
   };
 }
 
-export function susun() { return perdalam(susunDasar(), SUMBER); }
+export function susun() { return tambahJalanModel(perdalam(susunDasar(), SUMBER), 'surya'); }
 
 export function validasi(d) {
   const err = [];
@@ -458,7 +459,7 @@ export function validasi(d) {
   d.kunci.forEach((k, i) => { cekT(k.label, 'kunci' + i); if (!SID.has(k.sumber)) err.push('sumber kunci ' + i); });
   d.penting.forEach((t, i) => cekT(t, 'penting' + i)); cekT(d.posisi, 'posisi'); cekT(d.lead, 'lead');
   for (const [n, b] of Object.entries(d.bab)) {
-    if (!(+n >= 2 && +n <= 42)) err.push('nomor bab ' + n);
+    if (!(+n >= 2 && +n <= 44)) err.push('nomor bab ' + n);
     cekS(b.sumber, 'bab' + n);
     if (!b.sumber?.length) err.push('bab tanpa sumber ' + n);
     for (const x of b.butir || []) {

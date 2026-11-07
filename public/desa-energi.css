@@ -1,10 +1,10 @@
 /* /desa-energi: exhibit desa energi mandiri (peta berstatus, penyebab mati, daftar periksa, tabel). Melengkapi pelacak-proyek.css; token tema.css saja. */
 .jm-de2{display:grid;gap:var(--gap);min-width:0}
 .jm-de2>*{min-width:0}
-.de2-pil{display:inline-flex;align-items:center;gap:6px;padding:3px 10px;border-radius:var(--r-pil);font:700 var(--t-kecil)/var(--lh-rapat) var(--font);white-space:nowrap;background:var(--sbg);color:var(--sk)}
-.de2-s-hidup{--sk:var(--ok);--sbg:var(--ok-bg)}
-.de2-s-rusak{--sk:var(--warn);--sbg:var(--warn-bg)}
-.de2-s-mati{--sk:var(--bad);--sbg:var(--bad-bg)}
+.de2-pil{display:inline-flex;align-items:center;gap:6px;padding:3px 10px;border-radius:var(--r-pil);font:700 var(--t-kecil)/var(--lh-rapat) var(--font);white-space:nowrap;background:color-mix(in srgb,var(--sk) 14%,var(--card));color:var(--sk)}
+.de2-s-hidup{--sk:var(--ok)}
+.de2-s-rusak{--sk:var(--warn)}
+.de2-s-mati{--sk:var(--bad)}
 .de2-t-hidup{background:var(--ok)}.de2-t-rusak{background:var(--warn)}.de2-t-mati{background:var(--bad)}
 .de2-j-plts-komunal{--sk:var(--tp-surya)}.de2-j-pltmh{--sk:var(--tp-hidro)}.de2-j-biogas{--sk:var(--tp-bio)}
 .de2-jenis{display:inline-flex;align-items:center;gap:6px;padding:3px 10px;border-radius:var(--r-pil);font:600 var(--t-kecil)/var(--lh-rapat) var(--font);white-space:nowrap;color:var(--sk);background:color-mix(in srgb,var(--sk) 14%,var(--card))}

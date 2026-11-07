@@ -7,6 +7,7 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { validasi } from './topik_surya.mjs';
 import { perdalam } from './topik_dalam_hidro.mjs';
+import { tambahJalanModel } from './topik_jalan_lib.mjs';
 export { validasi };
 const akar = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '../..');
 const ID = 'hidro';
@@ -403,7 +404,7 @@ function susunDasar() {
   };
 }
 
-export function susun() { return perdalam(susunDasar(), SUMBER); }
+export function susun() { return tambahJalanModel(perdalam(susunDasar(), SUMBER), 'hidro'); }
 
 export function selftest() {
   const d = susun(); const e = validasi(d);

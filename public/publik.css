@@ -477,14 +477,14 @@ a.jm-foto:focus-visible{outline:3px solid var(--fokus)}
 @media (max-width:1000px){.jm-hero2>.jm-hitung-hero{grid-template-columns:repeat(2,minmax(0,1fr))}.jm-hitung-hero>li.jm-hitung-src{grid-column:1/-1;justify-content:flex-end}}
 /* kepala bagian: judul token, lead justify, metode di dalam kartu */
 .jm-sh h2{font-size:var(--t-h1)}
-.jm-sh-lead{max-width:none;text-align:justify;hyphens:auto}
+.jm-sh-lead{max-width:none;text-align:left;hyphens:manual}
 .jm-sh .jm-cara-hit{margin:6px 0 0;border:1px solid var(--line);border-radius:var(--r);background:var(--card);overflow:hidden}
 .jm-sh .jm-cara-hit summary{display:flex;align-items:center;gap:8px;min-height:var(--target);padding:0 14px;list-style:none;font:600 var(--t-tombol)/var(--lh-rapat) var(--font);color:var(--accent)}
 .jm-sh .jm-cara-hit summary::-webkit-details-marker{display:none}
 .jm-sh .jm-cara-hit summary::after{content:"+";margin-left:auto;display:grid;place-items:center;width:24px;height:24px;border-radius:50%;background:var(--soft-hijau);font:400 var(--t-h3)/1 var(--font)}
 .jm-sh .jm-cara-hit[open] summary::after{content:"\2212";background:var(--accent);color:var(--on-accent)}
 .jm-sh .jm-cara-hit[open] summary{border-bottom:1px solid var(--line)}
-.jm-sh .jm-cara-hit p{margin:0;padding:12px 14px;font-size:var(--t-body);line-height:var(--lh-isi);color:var(--ink2);text-align:justify;hyphens:auto}
+.jm-sh .jm-cara-hit p{margin:0;padding:12px 14px;font-size:var(--t-body);line-height:var(--lh-isi);color:var(--ink2);text-align:left;hyphens:manual}
 .jm-sh .jm-cara-hit .jm-ik{stroke:currentColor;fill:none;flex:none}
 /* kartu KPI: ikon + label huruf biasa, angka besar, satuan, konteks */
 .jm-kpi{display:grid;grid-template-columns:auto minmax(0,1fr);grid-template-areas:"ik lab" "n n" "ctx ctx";align-items:center;gap:10px 12px;padding:18px 16px 14px}

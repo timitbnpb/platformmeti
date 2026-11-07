@@ -7,7 +7,7 @@ import { skor, BOBOT, kelasSkor } from '../scripts/pipa/risiko_proyek.mjs';
 import { dalamFitur, uraiPng, ubinDari, lonLatUbin } from '../scripts/panen/risiko_lib.mjs';
 
 test('skor: komponen tanpa data dikeluarkan dan bobot dinormalkan', () => {
-  const h = skor({ hutan: [{ kelas: 'Hutan Lindung', desc: 'Hutan Lindung' }], gambut: false, adat: [], bahaya: { multi: 0.5, banjir: 0.2 } });
+  const h = skor({ hutan: [{ kelas: 'Hutan Lindung', desc: 'Hutan Lindung' }], gambut: 0, adat: [], bahaya: { multi: 0.5, banjir: 0.2 } });
   const w = BOBOT.hutan + BOBOT.gambut + BOBOT.bahaya; // adat tak punya poligon: dikeluarkan
   assert.deepEqual(h.dikeluarkan, ['adat']);
   assert.equal(h.skor, Math.round((BOBOT.hutan * 100 + BOBOT.gambut * 0 + BOBOT.bahaya * 50) / w));
@@ -18,7 +18,7 @@ test('skor: kurang dari dua komponen = tidak dinilai', () => {
   assert.equal(h.skor, null); assert.equal(h.kelas, null);
 });
 test('skor: konservasi mengalahkan produksi bila poligon bertumpuk', () => {
-  const h = skor({ hutan: [{ desc: 'Hutan Produksi Tetap' }, { desc: 'Taman Nasional' }], gambut: false, adat: [], bahaya: null });
+  const h = skor({ hutan: [{ desc: 'Hutan Produksi Tetap' }, { desc: 'Taman Nasional' }], gambut: 0, adat: [], bahaya: null });
   assert.equal(h.komponen.hutan.v, 100); assert.equal(h.komponen.hutan.ket, 'konservasi');
 });
 test('kelasSkor memakai ambang', () => {

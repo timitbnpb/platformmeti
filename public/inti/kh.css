@@ -16,7 +16,7 @@
 .jm-kh-angka span{font:600 var(--t-body)/1 var(--font);color:var(--ink2)}
 .jm-kh-lbl{margin:0;font:400 var(--t-tombol)/var(--lh-rapat) var(--font);color:var(--ink2)}
 @media (min-width:1000px){.jm-kh{grid-template-columns:minmax(0,1fr) minmax(0,1.3fr);gap:40px;padding:36px 40px}}
-@media (max-width:639px){.jm-kh{padding:20px 16px}.jm-kh-ubin{gap:8px;grid-template-columns:repeat(2,minmax(0,1fr))!important}.jm-kh-ub{padding:12px 10px;gap:6px}.jm-kh-angka b{font-size:var(--t-h2)}.jm-kh-angka span{font-size:var(--t-kecil)}}
+@media (max-width:639px){.jm-kh{padding:20px 16px}.jm-kh-ubin{gap:12px;grid-template-columns:repeat(2,minmax(0,1fr))!important}.jm-kh-ub{padding:12px 10px;gap:6px}.jm-kh-angka b{font-size:var(--t-h2)}.jm-kh-angka span{font-size:var(--t-kecil)}}
 .jm-kh.jm-kh-satu{grid-template-columns:minmax(0,1fr)}
 .jm-sh .jm-kh-ey{margin:0}
 /* Sisi kanan kepala (kh.js khSisi): ubin | gambar | fakta, plus aksi. Di bawah 1000px turun ke bawah teks; di ponsel gambar dipendekkan. */

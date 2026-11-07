@@ -120,10 +120,10 @@ function dariHukum() {
     if (!o || typeof o !== "object") return;
     const sini = o.judul || o.nama || o.id ? o : induk;
     if (Array.isArray(o.definisi)) for (const x of o.definisi) {
-      const nm = bersih(x.istilah || x.nama || x.term), ar = bersih(x.arti || x.definisi || x.isi), aen = bersih(x.arti_en || x.en || ar);
+      const nm = bersih(x.istilah || x.nama || x.term), ar = bersih(x.arti || x.definisi || x.isi || x.teks), aen = bersih(x.arti_en || x.en || ar);
       if (!nm || !ar) continue;
-      const reg = sini?.judul?.id || sini?.judul || sini?.nama || sini?.id || "";
-      keluar.push({ nama: nm, id: ar, en: aen, kat: "aturan", resmi: true, sumber: { jenis: "pasal", ref: String(sini?.id || ""), judul: typeof reg === "string" ? reg : "", pasal: String(x.pasal || "1"), href: `/regulasi#${sini?.id || ""}` } });
+      const reg = sini?.judul?.id || sini?.judul || sini?.nama || sini?.id || x.dok || "";
+      keluar.push({ nama: nm, id: ar, en: aen, kat: "aturan", resmi: true, sumber: { jenis: "pasal", ref: String(sini?.id || x.dok || ""), judul: typeof reg === "string" ? reg : "", pasal: String(x.pasal || (x.label || "1").replace(/^Pasal\s+/i, "")), href: x.dok ? `/hukum#d=${x.dok}` : `/regulasi#${sini?.id || ""}` } });
     }
     for (const v of Object.values(o)) if (v && typeof v === "object") jalan(v, sini);
   };

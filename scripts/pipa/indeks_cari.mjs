@@ -22,6 +22,9 @@ const HALAMAN = [["/", "nav.beranda"], ["/insight", "nav.insight_ringkasan"], ["
   ["/radar", "nav.radar"], ["/biaya-listrik", "nav.biaya_listrik"], ["/keuangan-hijau", "nav.keuangan_hijau"], ["/pasar-listrik-hijau", "nav.pasar_hijau"], ["/dokumen-data", "nav.dokumen_data"],
   ["/kelayakan", "nav.kelayakan"], ["/cari", "cari.judul"]];
 
+// halaman yang bukan tujuan pencarian: akun, detail berparameter, kerangka
+const TANPA_CARI = /^(index|404|masuk|aktivasi|ganti-sandi|daftar|admin|langganan|kta|kta_v|portal|profil-saya|diikuti|event_detail|video_detail|siaran-pers-rinci|o|p|cari)$/;
+
 export function bangunIndeks({ data = baca, id = JSON.parse(readFileSync(join(PUB, "i18n/id.json"), "utf8")), dirTopik = join(PUB, "data/topik") } = {}) {
   const out = {};
   const tambah = (g, e) => { if (e.j) (out[g] ||= []).push(e); };
@@ -81,6 +84,17 @@ export function bangunIndeks({ data = baca, id = JSON.parse(readFileSync(join(PU
   for (const w of baris(data("wilayah"))) tambah("wilayah", b(w.nama, w.identitas?.ibu_kota, "/wilayah/" + w.kode, ["provinsi", w.identitas?.ibu_kota], { p: w.kode }));
 
   for (const [href, k] of HALAMAN) tambah("halaman", b(id[k] || href, "", href, href.slice(1), { k }));
+  // halaman/modul baru: pindai public/*.html, judul dari <title> (tanpa akhiran situs); yang sudah ada di daftar atas dilewati
+  const ada = new Set(HALAMAN.map(([h]) => h));
+  for (const f of readdirSync(PUB).filter((n) => n.endsWith(".html") && !n.startsWith("_"))) {
+    const slug = f.replace(/\.html$/, ""), href = "/" + slug;
+    if (ada.has(href) || TANPA_CARI.test(slug)) continue;
+    const ttl = readFileSync(join(PUB, f), "utf8").match(/<title[^>]*>([^<]+)<\/title>/)?.[1]?.replace(/\s*\|\s*Direktori METI\s*$/, "").trim();
+    if (ttl) tambah("halaman", b(ttl, "", href, slug.replace(/-/g, " ")));
+  }
+
+  // istilah nasional (G5): nama, alias, arti
+  for (const i of data("istilah")?.istilah || []) tambah("istilah", b(i.nama, i.arti?.id ? String(i.arti.id).slice(0, 90) : "", "/istilah#" + encodeURIComponent(i.id), [i.panjang, ...(i.alias || []), i.arti?.id, i.arti?.en], { b: i.resmi ? "resmi" : "" }));
   return out;
 }
 

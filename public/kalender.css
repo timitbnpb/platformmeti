@@ -232,7 +232,7 @@ dialog.jm-dlg-lebar{width:min(920px,calc(100vw - 24px));max-height:calc(100dvh -
 .kal-pop-kiri{display:grid;gap:22px;min-width:0}
 .kal-pop-kiri section{display:grid;gap:12px}
 .kal-pop-kiri h3{margin:0}
-.kal-pop .kal-pop-desk{text-align:justify;hyphens:auto;overflow-wrap:anywhere}
+.kal-pop .kal-pop-desk{text-align:left;hyphens:manual;overflow-wrap:anywhere}
 .kal-pop-kanan{display:grid;gap:16px;min-width:0;padding:18px;border:1px solid var(--line);border-radius:var(--r);background:var(--surface)}
 .kal-pop-kanan .kal-pop-meta li>span{overflow-wrap:anywhere}
 .kal-pop-kanan .kal-pop-meta a{color:var(--accent);font-weight:600;text-decoration:none}
@@ -299,3 +299,10 @@ dialog.jm-dlg-lebar{width:min(920px,calc(100vw - 24px));max-height:calc(100dvh -
 .kal-libur-daftar li.kal-libur{background:var(--bad-bg)}.kal-libur-daftar li.kal-cuti{background:var(--warn-bg)}
 .kal-libur-daftar em{font-style:normal;font:600 var(--t-kecil)/1 var(--font);color:var(--ink2)}
 @media (max-width:759px){.kal-libur-daftar li{grid-template-columns:18px minmax(0,1fr);}.kal-libur-daftar li em{grid-column:2}}
+
+/* poster kosong: ikon jenis + logo penyelenggara di bawah foto (foto dicopot bila gagal dimuat) */
+.kal-th{position:relative;overflow:hidden;display:grid;place-items:center;align-content:center;gap:8px;color:var(--accent)}
+.kal-th .jm-ik{width:40px;height:40px}
+.kal-th-lg{width:40px;height:40px;object-fit:contain;border-radius:var(--r-sm);background:var(--card);padding:3px}
+.kal-th-f{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.kal-trk .kal-th-lg{display:none}.kal-trk .kal-th .jm-ik{width:24px;height:24px}

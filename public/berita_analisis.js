@@ -52,7 +52,7 @@ const spark = (d, ak) => {
   const mx = Math.max(1, ...d), n = d.length, w = 120, h = 36, dx = w / Math.max(1, n - 1), tgl = (i) => tanggal(new Date(ak + 7 * 3600e3 - (n - 1 - i) * HARI).toISOString().slice(0, 10));
   const pts = sparkPoin(d, w, h), pk = d.indexOf(Math.max(...d));
   const hover = d.map((v, i) => `<rect x="${(i * dx - dx / 2).toFixed(1)}" y="0" width="${dx.toFixed(1)}" height="${h}" fill="transparent"><title>${esc(tgl(i))}: ${esc(angka(v))}</title></rect>`).join("");
-  return `<svg class="brt-an-sp" viewBox="0 0 ${w} ${h}" preserveAspectRatio="none" role="img" aria-label="${esc(d.join(", "))}"><polygon class="brt-an-ar" points="0,${h} ${pts} ${w},${h}"/><polyline points="${pts}" fill="none" vector-effect="non-scaling-stroke"/>${hover}</svg>
+  return `<svg class="brt-an-sp jm-gx" viewBox="0 0 ${w} ${h}" preserveAspectRatio="none" role="img" aria-label="${esc(d.join(", "))}"><polygon class="brt-an-ar" points="0,${h} ${pts} ${w},${h}"/><polyline points="${pts}" fill="none" vector-effect="non-scaling-stroke"/>${hover}</svg>
     <span class="brt-an-sx"><span>${esc(tgl(0))}</span><b>${esc(t("brt.an.tren.puncak", { n: angka(d[pk]), d: tgl(pk) }))}</b><span>${esc(tgl(n - 1))}</span></span>`;
 };
 function tren(K0) {

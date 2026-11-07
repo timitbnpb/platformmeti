@@ -14,6 +14,7 @@ import { namaProyek } from "/inti/nama_proyek.js";
 import { kartu } from "/wilayah_profil_kartu.js";
 import { pakarHtml, pasangPakar, muatRujukPakar } from "/wilayah_pakar.js";
 import { namaBaku } from "/inti/nama_baku.js";
+import { klaimTempat, isiKlaim } from "/wilayah_klaim.js";
 
 const ST0 = "tidak" + "-diketahui"; // slug data status, bukan teks layar
 const TEK = ["hidro", "panas-bumi", "surya", "bayu", "bioenergi"];
@@ -269,12 +270,12 @@ export async function profilProvinsi(p, data, $) {
   let d = null, cap = null;
   try { cap = await muatData("rued_capaian.json"); } catch (e) { /* kartu capaian disembunyikan */ }
   try { d = await muatData("wilayah/" + encodeURIComponent(p.kode) + ".json"); } catch (e) { /* bagian tambahan disembunyikan */ }
-  $("profil-isi").innerHTML = kepala(data, p) + [ringkasan(p), kelistrikan(p), potensi(p), rued(p, cap), K.petaSeksi(p), proyek(p), K.organisasi(p), '<div id="wp-meti"></div>', pakar(p, d), regulasi(p), K.emisi(p, d), berita(p, d), K.banding(data, p), await terkaitHtml("provinsi", String(p.kode))].join("");
+  $("profil-isi").innerHTML = kepala(data, p) + [ringkasan(p), kelistrikan(p), potensi(p), rued(p, cap), K.petaSeksi(p), klaimTempat(), proyek(p), K.organisasi(p), '<div id="wp-meti"></div>', pakar(p, d), regulasi(p), K.emisi(p, d), berita(p, d), K.banding(data, p), await terkaitHtml("provinsi", String(p.kode))].join("");
   $("cara").innerHTML = `<p>${esc(t("wl.cara_profil"))}</p>${["potensi", "sisa", "capaian", "peringkat", "emisi"].map((k) => `<p><b>${esc(t("met.pw." + k + ".j"))}.</b> ${esc(t("met.pw." + k))}</p>`).join("")}<p><a href="/metode#peta-wilayah">${esc(t("wl.cara_link"))}</a></p>`;
   $("profil-isi").querySelector(".jm-wp-chips")?.insertAdjacentHTML("afterend", `<p>${tombolIkuti({ jenis: "provinsi", id: p.kode, nama: p.nama })}</p>`);
   pasangIkuti($("profil-isi"));
   pasangBar($("profil-isi")); petaMini(p);
-  isiMetiWilayah(p);
+  isiMetiWilayah(p); isiKlaim(p);
   K.pasang($("profil-isi")); pasangPakar($("profil-isi"));
   K.bukaPeta(p);
 }

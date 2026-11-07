@@ -10,6 +10,7 @@ import { terkaitHtml } from "/inti/komponen.js";
 import { tautOrg } from "/inti/tautan.js";
 import { t, angka, esc, ikon, muat, urlAman, label, hlHtml, pilTek, pilStatus, idJalur, provHtml, lambang, inisial, barisProyek, kapTeks, kepalaHtml, metaItem, statHtml, seksi, tabel, td, tabelBerita, tabelRegulasi, tabelSumber, kartuProgram, petaTitik, galatHtml, ringkasTgl, tglSel, TAHUN } from "/profil.js";
 
+import { pemangkuSeksi } from "/pemangku.js";
 import { peristiwaProyek, peristiwaProyekHtml } from "/peristiwa_komitmen.js";
 import { diperbaruiHtml, pasangRiwayat } from "/inti/riwayat.js";
 
@@ -70,11 +71,13 @@ async function mulai() {
 
   const terkait = await terkaitHtml("proyek", id);
   const peristiwa = await peristiwaProyek(id);
+  const pk = await pemangkuSeksi(id, sumber);
   const sisi = stat.length ? khUbinHtml(stat.slice(0, 3).map((x) => ({ ikon: x.ik, nilai: x.nilai, label: x.label })))
     : khFaktaHtml([{ ikon: "proyek", label: t("kh.jenis"), nilai: label("pj.tek.", r.tek) }, { ikon: "peta", label: t("kh.lokasi"), nilai: [kab, r.prov].filter(Boolean).join(", ") }]);
   akar.innerHTML = kepalaHtml({ avatar: `<span class="pf-av pf-av-tek">${ikonTek(r.tek)}</span>`, nama: r.nama, pil, meta, balik: ["/proyek", t("pf.ke_proyek")], sisi })
     + `<div class="pf-bagian">${ringkasan}${lokasi}`
     + seksi({ id: "pihak", ik: "orang", topik: t("pf.ey.pihak"), judulHtml: esc(t("pf.j.pihak")), isiHtml: pihakHtml, csv: true, sumber })
+    + pk.html
     + seksi({ id: "program", ik: "regulasi", topik: t("pf.ey.program"), judulHtml: hlHtml("pf.j.program", angka(programs.length)), isiHtml: kartuProgram(programs.map((g) => ({ g }))), csv: false, sumber })
     + seksi({ id: "linimasa", ik: "linimasa", topik: t("pf.ey.linimasa"), judulHtml: esc(t("pf.j.linimasa")), isiHtml: linimasa(r), csv: false, sumber })
     + seksi({ id: "peristiwa", ik: "berita", topik: t("pe.p.ey"), judulHtml: hlHtml("pe.p.judul", angka(peristiwa.length)), isiHtml: peristiwaProyekHtml(peristiwa), csv: false, sumber: esc(t("pe.p.sumber")) })
@@ -86,6 +89,7 @@ async function mulai() {
   akar.querySelector(".pf-kepala-teks")?.insertAdjacentHTML("beforeend", `<p class="pf-koreksi">${tombolKoreksi({ entitas: "proyek", id, nama: r.nama })} ${tombolIkuti({ jenis: "proyek", id, nama: r.nama })}</p>`);
   akar.querySelector(".pf-kepala-teks")?.insertAdjacentHTML("beforeend", diperbaruiHtml({ jenis: "proyek", id, nama: r.nama, tgl: dibangun }));
   pasangRiwayat(akar);
+  pk.pasang(akar);
   pasangIkuti(akar); muatPembaruan("proyek", id, akar.querySelector(".pf-bagian"));
   petaTitik(document.getElementById("pfPeta"), [r], { zoomSatu: persis ? 11 : 6, klik: false });
 }

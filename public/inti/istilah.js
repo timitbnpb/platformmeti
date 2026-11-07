@@ -54,7 +54,7 @@ function cocok(teks) {
 }
 function bungkus(teks) {
   sudah.add(teks);
-  const blok = teks.parentElement.closest(BAGIAN) || document.querySelector("main") || document.body;
+  const blok = teks.parentElement?.closest(BAGIAN) || document.querySelector("main") || document.body;
   let ada = bagian.get(blok); if (!ada) bagian.set(blok, (ada = new Set()));
   const pakai = [];
   let akhir = -1;

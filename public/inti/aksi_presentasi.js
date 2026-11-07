@@ -128,7 +128,7 @@ export function kodeSematan() {
   const j = jenisSematan();
   if (!j) return kabar(t("aksi.gagal"));
   const src = `${location.origin}/sematan/${j.jenis}/${j.id}`;
-  const kode = `<iframe src="${src}" width="600" height="360" style="border:1px solid #D3E3DC;border-radius:12px" loading="lazy" title="${judulHalaman().replace(/["<>&]/g, "")}"></iframe>`;
+  const kode = `<iframe src="${src}" width="600" height="360" frameborder="0" loading="lazy" title="${judulHalaman().replace(/["<>&]/g, "")}"></iframe>`;
   const d = document.createElement("dialog");
   d.className = "jm-sem";
   d.innerHTML = `<form method="dialog"><h2>${esc(t("sem.judul"))}</h2><p>${esc(t("sem.ket"))}</p><textarea readonly rows="4" aria-label="${esc(t("sem.judul"))}"></textarea>

@@ -103,3 +103,4 @@
 @media (max-width:719px){#tb-taks td:nth-child(1){width:auto}#tb-taks td:nth-child(2),#tb-taks td:nth-child(3),#tb-taks td:nth-child(6){text-align:left}}
 .kg2-lgp .jm-pil-tek{white-space:normal;max-width:100%}
 @media (max-width:719px){#tb-taks td[data-label]{display:grid;grid-template-columns:130px minmax(0,1fr);gap:8px;align-items:center;text-align:left}#tb-taks td::before{white-space:normal;min-width:0}#tb-taks td.jm-num{text-align:left}}
+@media (max-width:719px){.kg2-akt{min-width:0;overflow-wrap:anywhere}}

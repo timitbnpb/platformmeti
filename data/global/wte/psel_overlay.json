@@ -1,0 +1,32 @@
+{
+ "tanggal_periksa": "2026-11-08",
+ "regulasi": [
+  {"id": "perpres-35-2018", "nomor": "35/2018", "status": "dicabut oleh Perpres 109/2025", "url": "https://peraturan.bpk.go.id/Details/73958", "pdf": "https://peraturan.bpk.go.id/Download/254520/Perpres%20Nomor%2035%20Tahun%202018.pdf", "tingkat_bukti": "resmi", "tanggal": "2026-11-08",
+   "kota": ["DKI Jakarta", "Kota Tangerang", "Kota Tangerang Selatan", "Kota Bekasi", "Kota Bandung", "Kota Semarang", "Kota Surakarta", "Kota Surabaya", "Kota Makassar", "Kota Denpasar", "Kota Palembang", "Kota Manado"],
+   "tarif": [{"syarat": "kapasitas sampai 20 MW", "usd_sen_per_kwh": 13.35, "pasal": "Pasal 11 ayat 1 huruf a"}, {"syarat": "kapasitas lebih dari 20 MW", "rumus": "14,54 - (0,076 x kapasitas MW yang dijual ke PLN) USD sen/kWh", "pasal": "Pasal 11 ayat 1 huruf b"}]},
+  {"id": "perpres-109-2025", "nomor": "109/2025", "status": "berlaku", "url": "https://peraturan.bpk.go.id/Details/334718", "pdf": "https://peraturan.bpk.go.id/Download/397285/Perpres%20Nomor%20109%20Tahun%202025.pdf", "tingkat_bukti": "resmi", "tanggal": "2026-11-08",
+   "kota": [], "kriteria": "sampah yang disalurkan pemda paling sedikit 1.000 ton/hari selama masa operasi (Pasal 4 ayat 1 huruf a)",
+   "tarif": [{"syarat": "semua kapasitas", "usd_sen_per_kwh": 20, "pasal": "Pasal 19 ayat 2"}]}
+ ],
+ "kota": {
+  "DKI Jakarta": {"kode_bps": "31", "provinsi": "DKI Jakarta"}, "Jakarta": {"kode_bps": "31", "provinsi": "DKI Jakarta"},
+  "Kota Tangerang": {"kode_bps": "3671", "provinsi": "Banten"}, "Kota Tangerang Selatan": {"kode_bps": "3674", "provinsi": "Banten"},
+  "Kota Bekasi": {"kode_bps": "3275", "provinsi": "Jawa Barat"}, "Kota Bandung": {"kode_bps": "3273", "provinsi": "Jawa Barat"},
+  "Kota Semarang": {"kode_bps": "3374", "provinsi": "Jawa Tengah"}, "Kota Surakarta": {"kode_bps": "3372", "provinsi": "Jawa Tengah"},
+  "Kota Surabaya": {"kode_bps": "3578", "provinsi": "Jawa Timur"}, "Kota Makassar": {"kode_bps": "7371", "provinsi": "Sulawesi Selatan"},
+  "Kota Denpasar": {"kode_bps": "5171", "provinsi": "Bali"}, "Kota Palembang": {"kode_bps": "1671", "provinsi": "Sumatera Selatan"},
+  "Kota Manado": {"kode_bps": "7171", "provinsi": "Sulawesi Utara"}, "Kabupaten Bogor": {"kode_bps": "3201", "provinsi": "Jawa Barat"},
+  "Kota Bogor": {"kode_bps": "3271", "provinsi": "Jawa Barat"}, "Kabupaten Bantul": {"kode_bps": "3402", "provinsi": "DI Yogyakarta"},
+  "Kota Medan": {"kode_bps": "1275", "provinsi": "Sumatera Utara"}, "Kabupaten Bekasi": {"kode_bps": "3216", "provinsi": "Jawa Barat"},
+  "Kota Bandar Lampung": {"kode_bps": "1871", "provinsi": "Lampung"}, "Kota Serang": {"kode_bps": "3673", "provinsi": "Banten"}
+ },
+ "pemasok": {
+  "pjb_004": [{"pemasok": "china-everbright-environment", "peran": "mitra konsorsium terpilih (teknologi belum dikonfirmasi sumber)"}],
+  "pjb_005": [{"pemasok": "sus-environment", "peran": "mitra konsorsium terpilih (SUS Indoplas)"}],
+  "pjb_007": [{"pemasok": "sus-environment", "peran": "mitra konsorsium terpilih"}],
+  "pjb_002": [{"pemasok": "tianjin-teda", "peran": "mitra konsorsium terpilih"}],
+  "pjb_006": [{"pemasok": "beijing-geoenviron", "peran": "mitra konsorsium terpilih"}],
+  "pj_0047": [{"pemasok": "veolia", "peran": "mitra pemilik"}],
+  "pj_0043": [{"pemasok": "kanadevia-inova", "peran": "anggota konsorsium via Hitachi Zosen (peran teknologi belum dikonfirmasi sumber)"}]
+ }
+}

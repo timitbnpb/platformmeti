@@ -15,6 +15,12 @@ const namaDs = (k) => t("rw.d." + k);
 const stPil = (s) => `<span class="jm-rw-st jm-rw-${s}">${esc(t("kes.s." + s))}</span>`;
 const dsHtml = (k) => `<span class="jm-rw-ds jm-rw-d-${esc(k)}"><span class="jm-rw-ik">${ikon(IKON_DS[k] || "tabel", 16)}</span>${esc(namaDs(k))}</span>`;
 
+const KONS_KELAS = { ok: "segar", bad: "basi", warn: "perlu" };
+function konsItem(k, v, gagal) {
+  const ket = !v ? "ok" : gagal.has(k) ? "bad" : "warn";
+  return `<li><b>${esc(angka(v))}</b><span>${esc(t("kes.kons." + k))}</span><span class="jm-rw-st jm-rw-${KONS_KELAS[ket]}">${esc(t("kes.kons.s." + ket))}</span></li>`;
+}
+
 export async function panelKesegaran(panel) {
   panel.innerHTML = `${kepalaTab("jam", "kes.ey", "kes.j", "kes.d")}<div id="kBadan">${hantuHtml(5)}</div>`;
   const badan = panel.querySelector("#kBadan");
@@ -47,7 +53,7 @@ export async function panelKesegaran(panel) {
     if (kons?.jumlah) {
       const gagal = new Set(["tautan_mati", "selisih_ringkas"]), ks = Object.entries(kons.jumlah), tot = ks.reduce((s, [, v]) => s + v, 0);
       kon = exHtml({ ikon: "perisai", topik: t("kes.kons.ey"), tingkat: "h3", judulHtml: esc(t("kes.kons.j", { n: "\u0001" })).replace("\u0001", `<span class="jm-hl">${esc(angka(tot))}</span>`), subHtml: esc(t("kes.kons.sub", { tgl: tanggal(String(kons.dibangun_pada || "").slice(0, 10)) })),
-        isiHtml: `<ul class="jm-rw-kons">${ks.map(([k, v]) => { const s = !v ? "segar" : gagal.has(k) ? "basi" : "perlu", ket = !v ? "ok" : gagal.has(k) ? "bad" : "warn"; return `<li><b>${esc(angka(v))}</b><span>${esc(t("kes.kons." + k))}</span><span class="jm-rw-st jm-rw-${s}">${esc(t("kes.kons.s." + ket))}</span></li>`; }).join("")}</ul>` });
+        isiHtml: `<ul class="jm-rw-kons">${ks.map(([k, v]) => konsItem(k, v, gagal)).join("")}</ul>` });
     }
     badan.innerHTML = `${tabel}${grafik}${kon}`;
     const g = badan.querySelector("#kGraf");

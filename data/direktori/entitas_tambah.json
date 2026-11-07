@@ -1,21 +1,4442 @@
 {
-  "_catatan": "Organisasi yang dirujuk naskah topik/karbon/GEM tetapi belum ada di direktori. Dibaca scripts/pipa/entitas_tambah.mjs lalu potret.mjs. Tiap baris wajib situs atau sumber berurl yang dibaca sopan (robots, jeda 2 dtk) pada tanggal_periksa. Bursa Efek Indonesia: idx.co.id membalas 403, jadi tidak dibaca; sumbernya idxcarbon.co.id.",
-  "tanggal_periksa": "2026-11-08",
-  "baris": [
-    { "nama": "Pupuk Indonesia", "nama_lain": ["PT Pupuk Indonesia (Persero)"], "kategori": "bumn", "kepakaran": ["industri", "hidrogen"], "peran_rantai": [], "situs": "https://www.pupuk-indonesia.com/", "sumber": [{ "url": "https://www.pupuk-indonesia.com/", "tingkat_bukti": "situs-sendiri", "keterangan": "situs resmi" }] },
-    { "nama": "Gaikindo", "nama_lain": ["Gabungan Industri Kendaraan Bermotor Indonesia"], "kategori": "asosiasi", "kepakaran": ["industri", "elektrifikasi"], "peran_rantai": [], "situs": "https://www.gaikindo.or.id/", "sumber": [{ "url": "https://www.gaikindo.or.id/", "tingkat_bukti": "situs-sendiri", "keterangan": "situs resmi asosiasi" }] },
-    { "nama": "PT Bursa Efek Indonesia", "nama_lain": ["Bursa Efek Indonesia", "BEI", "IDXCarbon"], "kategori": "keuangan", "kepakaran": ["karbon", "pembiayaan"], "peran_rantai": [], "situs": "https://www.idx.co.id/", "sumber": [{ "url": "https://www.idxcarbon.co.id/", "tingkat_bukti": "situs-sendiri", "keterangan": "situs IDXCarbon, bursa karbon yang diselenggarakan BEI" }] },
-    { "nama": "PT Toyota-Astra Motor", "nama_lain": ["Toyota Astra Motor", "TAM"], "kategori": "swasta", "kepakaran": ["elektrifikasi"], "peran_rantai": ["manufaktur"], "situs": "https://www.toyota.astra.co.id/", "sumber": [{ "url": "https://www.toyota.astra.co.id/", "tingkat_bukti": "situs-sendiri", "keterangan": "situs resmi" }] },
-    { "nama": "Hyundai Motor Manufacturing Indonesia", "nama_lain": ["HMMI"], "kategori": "swasta", "kepakaran": ["elektrifikasi"], "peran_rantai": ["manufaktur"], "situs": "https://www.hyundai.com/id/", "sumber": [{ "url": "https://www.hyundai.com/id/", "tingkat_bukti": "situs-sendiri", "keterangan": "situs Hyundai Indonesia" }] },
-    { "nama": "VinFast Indonesia", "nama_lain": ["PT VinFast Automobile Indonesia"], "kategori": "swasta", "kepakaran": ["elektrifikasi"], "peran_rantai": ["manufaktur"], "situs": "https://vinfastauto.id/", "sumber": [{ "url": "https://vinfastauto.id/", "tingkat_bukti": "situs-sendiri", "keterangan": "situs resmi" }] },
-    { "nama": "PT Astra International Tbk", "nama_lain": ["Astra International", "Astra"], "kategori": "swasta", "kepakaran": ["industri", "elektrifikasi"], "peran_rantai": [], "situs": "https://www.astra.co.id/", "sumber": [{ "url": "https://www.astra.co.id/", "tingkat_bukti": "situs-sendiri", "keterangan": "situs resmi" }] },
-    { "nama": "Sinar Mas", "nama_lain": ["Sinarmas", "Sinar Mas Group"], "kategori": "swasta", "kepakaran": ["energi", "bioenergi"], "peran_rantai": [], "situs": "https://www.sinarmas.com/", "sumber": [{ "url": "https://www.sinarmas.com/", "tingkat_bukti": "situs-sendiri", "keterangan": "situs grup (sertifikat TLS bermasalah; robots.txt 404, beranda dibaca)" }] },
-    { "nama": "Asian Agri", "nama_lain": ["PT Asian Agri"], "kategori": "swasta", "kepakaran": ["bioenergi"], "peran_rantai": [], "situs": "https://www.asianagri.com/", "sumber": [{ "url": "https://www.asianagri.com/en/", "tingkat_bukti": "situs-sendiri", "keterangan": "situs resmi" }] },
-    { "nama": "PT Biru Karbon Nusantara", "nama_lain": [], "kategori": "swasta", "kepakaran": ["karbon", "bioenergi"], "peran_rantai": ["pengembang"], "situs": null, "sumber": [{ "url": "https://assurance-platform.goldstandard.org/project-documents/GS1174", "tingkat_bukti": "kajian", "keterangan": "pengembang proyek Gold Standard GS1174 (Indonesia Domestic Biogas Programme)" }] },
-    { "nama": "PT ERC Austrindo", "nama_lain": [], "kategori": "swasta", "kepakaran": ["karbon"], "peran_rantai": ["pengembang"], "situs": null, "sumber": [{ "url": "https://assurance-platform.goldstandard.org/project-documents/GS1143", "tingkat_bukti": "kajian", "keterangan": "pengembang proyek Gold Standard GS1143" }] },
-    { "nama": "PT Cipta Daya Nusantara", "nama_lain": [], "kategori": "swasta", "kepakaran": ["karbon"], "peran_rantai": ["pengembang"], "situs": null, "sumber": [{ "url": "https://registry.verra.org/app/projectDetail/VCS/238", "tingkat_bukti": "kajian", "keterangan": "pengembang proyek Verra VCS238" }] },
-    { "nama": "PT Rohul Sawit Industri", "nama_lain": [], "kategori": "swasta", "kepakaran": ["karbon", "bioenergi"], "peran_rantai": ["pengembang"], "situs": null, "sumber": [{ "url": "https://registry.verra.org/app/projectDetail/VCS/5323", "tingkat_bukti": "kajian", "keterangan": "pengembang proyek Verra VCS5323" }] },
-    { "nama": "PT Navigat Organic Energy Indonesia", "nama_lain": [], "kategori": "swasta", "kepakaran": ["karbon", "bioenergi"], "peran_rantai": ["pengembang"], "situs": null, "sumber": [{ "url": "https://registry.verra.org/app/projectDetail/VCS/967", "tingkat_bukti": "kajian", "keterangan": "pengembang proyek Verra VCS967" }] },
-    { "nama": "Sarulla Operations Ltd", "nama_lain": ["Sarulla Operations"], "kategori": "swasta", "kepakaran": ["panas-bumi"], "peran_rantai": ["pengembang", "IPP"], "situs": "https://sarulla.com/", "sumber": [{ "url": "https://www.gem.wiki/Sarulla_geothermal_power_plant", "tingkat_bukti": "kajian", "keterangan": "pemilik PLTP Sarulla menurut Global Energy Monitor" }, { "url": "https://sarulla.com/", "tingkat_bukti": "situs-sendiri", "keterangan": "situs proyek" }] }
-  ]
+ "_catatan": "Organisasi yang dirujuk naskah topik/karbon/GEM tetapi belum ada di direktori. Dibaca scripts/pipa/entitas_tambah.mjs lalu potret.mjs. Tiap baris wajib situs atau sumber berurl yang dibaca sopan (robots, jeda 2 dtk) pada tanggal_periksa. Bursa Efek Indonesia: idx.co.id membalas 403, jadi tidak dibaca; sumbernya idxcarbon.co.id.",
+ "tanggal_periksa": "2026-11-08",
+ "baris": [
+  {
+   "nama": "Pupuk Indonesia",
+   "nama_lain": [
+    "PT Pupuk Indonesia (Persero)"
+   ],
+   "kategori": "bumn",
+   "kepakaran": [
+    "industri",
+    "hidrogen"
+   ],
+   "peran_rantai": [],
+   "situs": "https://www.pupuk-indonesia.com/",
+   "sumber": [
+    {
+     "url": "https://www.pupuk-indonesia.com/",
+     "tingkat_bukti": "situs-sendiri",
+     "keterangan": "situs resmi"
+    }
+   ]
+  },
+  {
+   "nama": "Gaikindo",
+   "nama_lain": [
+    "Gabungan Industri Kendaraan Bermotor Indonesia"
+   ],
+   "kategori": "asosiasi",
+   "kepakaran": [
+    "industri",
+    "elektrifikasi"
+   ],
+   "peran_rantai": [],
+   "situs": "https://www.gaikindo.or.id/",
+   "sumber": [
+    {
+     "url": "https://www.gaikindo.or.id/",
+     "tingkat_bukti": "situs-sendiri",
+     "keterangan": "situs resmi asosiasi"
+    }
+   ]
+  },
+  {
+   "nama": "PT Bursa Efek Indonesia",
+   "nama_lain": [
+    "Bursa Efek Indonesia",
+    "BEI",
+    "IDXCarbon"
+   ],
+   "kategori": "keuangan",
+   "kepakaran": [
+    "karbon",
+    "pembiayaan"
+   ],
+   "peran_rantai": [],
+   "situs": "https://www.idx.co.id/",
+   "sumber": [
+    {
+     "url": "https://www.idxcarbon.co.id/",
+     "tingkat_bukti": "situs-sendiri",
+     "keterangan": "situs IDXCarbon, bursa karbon yang diselenggarakan BEI"
+    }
+   ]
+  },
+  {
+   "nama": "PT Toyota-Astra Motor",
+   "nama_lain": [
+    "Toyota Astra Motor",
+    "TAM"
+   ],
+   "kategori": "swasta",
+   "kepakaran": [
+    "elektrifikasi"
+   ],
+   "peran_rantai": [
+    "manufaktur"
+   ],
+   "situs": "https://www.toyota.astra.co.id/",
+   "sumber": [
+    {
+     "url": "https://www.toyota.astra.co.id/",
+     "tingkat_bukti": "situs-sendiri",
+     "keterangan": "situs resmi"
+    }
+   ]
+  },
+  {
+   "nama": "Hyundai Motor Manufacturing Indonesia",
+   "nama_lain": [
+    "HMMI"
+   ],
+   "kategori": "swasta",
+   "kepakaran": [
+    "elektrifikasi"
+   ],
+   "peran_rantai": [
+    "manufaktur"
+   ],
+   "situs": "https://www.hyundai.com/id/",
+   "sumber": [
+    {
+     "url": "https://www.hyundai.com/id/",
+     "tingkat_bukti": "situs-sendiri",
+     "keterangan": "situs Hyundai Indonesia"
+    }
+   ]
+  },
+  {
+   "nama": "VinFast Indonesia",
+   "nama_lain": [
+    "PT VinFast Automobile Indonesia"
+   ],
+   "kategori": "swasta",
+   "kepakaran": [
+    "elektrifikasi"
+   ],
+   "peran_rantai": [
+    "manufaktur"
+   ],
+   "situs": "https://vinfastauto.id/",
+   "sumber": [
+    {
+     "url": "https://vinfastauto.id/",
+     "tingkat_bukti": "situs-sendiri",
+     "keterangan": "situs resmi"
+    }
+   ]
+  },
+  {
+   "nama": "PT Astra International Tbk",
+   "nama_lain": [
+    "Astra International",
+    "Astra"
+   ],
+   "kategori": "swasta",
+   "kepakaran": [
+    "industri",
+    "elektrifikasi"
+   ],
+   "peran_rantai": [],
+   "situs": "https://www.astra.co.id/",
+   "sumber": [
+    {
+     "url": "https://www.astra.co.id/",
+     "tingkat_bukti": "situs-sendiri",
+     "keterangan": "situs resmi"
+    }
+   ]
+  },
+  {
+   "nama": "Sinar Mas",
+   "nama_lain": [
+    "Sinarmas",
+    "Sinar Mas Group"
+   ],
+   "kategori": "swasta",
+   "kepakaran": [
+    "energi",
+    "bioenergi"
+   ],
+   "peran_rantai": [],
+   "situs": "https://www.sinarmas.com/",
+   "sumber": [
+    {
+     "url": "https://www.sinarmas.com/",
+     "tingkat_bukti": "situs-sendiri",
+     "keterangan": "situs grup (sertifikat TLS bermasalah; robots.txt 404, beranda dibaca)"
+    }
+   ]
+  },
+  {
+   "nama": "Asian Agri",
+   "nama_lain": [
+    "PT Asian Agri"
+   ],
+   "kategori": "swasta",
+   "kepakaran": [
+    "bioenergi"
+   ],
+   "peran_rantai": [],
+   "situs": "https://www.asianagri.com/",
+   "sumber": [
+    {
+     "url": "https://www.asianagri.com/en/",
+     "tingkat_bukti": "situs-sendiri",
+     "keterangan": "situs resmi"
+    }
+   ]
+  },
+  {
+   "nama": "PT Biru Karbon Nusantara",
+   "nama_lain": [],
+   "kategori": "swasta",
+   "kepakaran": [
+    "karbon",
+    "bioenergi"
+   ],
+   "peran_rantai": [
+    "pengembang"
+   ],
+   "situs": null,
+   "sumber": [
+    {
+     "url": "https://assurance-platform.goldstandard.org/project-documents/GS1174",
+     "tingkat_bukti": "kajian",
+     "keterangan": "pengembang proyek Gold Standard GS1174 (Indonesia Domestic Biogas Programme)"
+    }
+   ]
+  },
+  {
+   "nama": "PT ERC Austrindo",
+   "nama_lain": [],
+   "kategori": "swasta",
+   "kepakaran": [
+    "karbon"
+   ],
+   "peran_rantai": [
+    "pengembang"
+   ],
+   "situs": null,
+   "sumber": [
+    {
+     "url": "https://assurance-platform.goldstandard.org/project-documents/GS1143",
+     "tingkat_bukti": "kajian",
+     "keterangan": "pengembang proyek Gold Standard GS1143"
+    }
+   ]
+  },
+  {
+   "nama": "PT Cipta Daya Nusantara",
+   "nama_lain": [],
+   "kategori": "swasta",
+   "kepakaran": [
+    "karbon"
+   ],
+   "peran_rantai": [
+    "pengembang"
+   ],
+   "situs": null,
+   "sumber": [
+    {
+     "url": "https://registry.verra.org/app/projectDetail/VCS/238",
+     "tingkat_bukti": "kajian",
+     "keterangan": "pengembang proyek Verra VCS238"
+    }
+   ]
+  },
+  {
+   "nama": "PT Rohul Sawit Industri",
+   "nama_lain": [],
+   "kategori": "swasta",
+   "kepakaran": [
+    "karbon",
+    "bioenergi"
+   ],
+   "peran_rantai": [
+    "pengembang"
+   ],
+   "situs": null,
+   "sumber": [
+    {
+     "url": "https://registry.verra.org/app/projectDetail/VCS/5323",
+     "tingkat_bukti": "kajian",
+     "keterangan": "pengembang proyek Verra VCS5323"
+    }
+   ]
+  },
+  {
+   "nama": "PT Navigat Organic Energy Indonesia",
+   "nama_lain": [],
+   "kategori": "swasta",
+   "kepakaran": [
+    "karbon",
+    "bioenergi"
+   ],
+   "peran_rantai": [
+    "pengembang"
+   ],
+   "situs": null,
+   "sumber": [
+    {
+     "url": "https://registry.verra.org/app/projectDetail/VCS/967",
+     "tingkat_bukti": "kajian",
+     "keterangan": "pengembang proyek Verra VCS967"
+    }
+   ]
+  },
+  {
+   "nama": "Sarulla Operations Ltd",
+   "nama_lain": [
+    "Sarulla Operations"
+   ],
+   "kategori": "swasta",
+   "kepakaran": [
+    "panas-bumi"
+   ],
+   "peran_rantai": [
+    "pengembang",
+    "IPP"
+   ],
+   "situs": "https://sarulla.com/",
+   "sumber": [
+    {
+     "url": "https://www.gem.wiki/Sarulla_geothermal_power_plant",
+     "tingkat_bukti": "kajian",
+     "keterangan": "pemilik PLTP Sarulla menurut Global Energy Monitor"
+    },
+    {
+     "url": "https://sarulla.com/",
+     "tingkat_bukti": "situs-sendiri",
+     "keterangan": "situs proyek"
+    }
+   ]
+  },
+  {
+   "nama": "PT Harita Nickel Tbk",
+   "nama_lain": [
+    "Harita Nickel",
+    "NCKL",
+    "Trimegah Bangun Persada",
+    "Harita Group"
+   ],
+   "kategori": "swasta",
+   "kepakaran": [
+    "industri",
+    "mineral-kritis"
+   ],
+   "peran_rantai": [
+    "manufaktur"
+   ],
+   "situs": null,
+   "sumber": [
+    {
+     "url": "https://tbpnickel.com/media/news/operational/harita-nickels-high-pressure-acid-leach-hpal-smelter-to-be-operational-by-mid-2024",
+     "tingkat_bukti": "kajian",
+     "keterangan": "siaran perusahaan tentang smelter HPAL dan RKEF di Pulau Obi"
+    }
+   ]
+  },
+  {
+   "nama": "Nickel Industries Limited",
+   "nama_lain": [
+    "Nickel Industries",
+    "NIC"
+   ],
+   "kategori": "swasta",
+   "kepakaran": [
+    "industri",
+    "mineral-kritis"
+   ],
+   "peran_rantai": [
+    "manufaktur"
+   ],
+   "situs": null,
+   "sumber": [
+    {
+     "url": "https://announcements.asx.com.au/asxpdf/20231009/pdf/05vtqtfg19hgfc.pdf",
+     "tingkat_bukti": "kajian",
+     "keterangan": "pengumuman ASX 9 Oktober 2023 tentang PLTS 200 MWp di IMIP"
+    }
+   ]
+  },
+  {
+   "nama": "PT Indonesia Morowali Industrial Park",
+   "nama_lain": [
+    "IMIP",
+    "Morowali Industrial Park"
+   ],
+   "kategori": "swasta",
+   "kepakaran": [
+    "industri",
+    "mineral-kritis"
+   ],
+   "peran_rantai": [
+    "manufaktur"
+   ],
+   "situs": null,
+   "sumber": [
+    {
+     "url": "https://announcements.asx.com.au/asxpdf/20231009/pdf/05vtqtfg19hgfc.pdf",
+     "tingkat_bukti": "kajian",
+     "keterangan": "pengumuman ASX yang menyebut IMIP sebagai lokasi PLTS dan smelter"
+    }
+   ]
+  },
+  {
+   "nama": "PT Indonesia Weda Bay Industrial Park",
+   "nama_lain": [
+    "IWIP",
+    "Weda Bay Industrial Park"
+   ],
+   "kategori": "swasta",
+   "kepakaran": [
+    "industri",
+    "mineral-kritis"
+   ],
+   "peran_rantai": [
+    "manufaktur"
+   ],
+   "situs": null,
+   "sumber": [
+    {
+     "url": "https://www.gem.wiki/Weda_Bay_power_station",
+     "tingkat_bukti": "kajian",
+     "keterangan": "pembangkit captive kawasan IWIP menurut Global Energy Monitor"
+    }
+   ]
+  },
+  {
+   "nama": "Zhejiang Huayou Cobalt",
+   "nama_lain": [
+    "Huayou Cobalt",
+    "Huayou"
+   ],
+   "kategori": "internasional",
+   "kepakaran": [
+    "industri",
+    "mineral-kritis"
+   ],
+   "peran_rantai": [
+    "manufaktur"
+   ],
+   "situs": null,
+   "sumber": [
+    {
+     "url": "https://www.thestar.com.my/aseanplus/aseanplus-news/2025/04/23/indonesia-says-china039s-huayou-to-replace-lges-in-ev-battery-project",
+     "tingkat_bukti": "kajian",
+     "keterangan": "pengganti LG Energy Solution di proyek baterai Indonesia"
+    }
+   ]
+  },
+  {
+   "nama": "Jiangsu Delong Nickel Industry",
+   "nama_lain": [
+    "Delong Nickel",
+    "Delong Group"
+   ],
+   "kategori": "internasional",
+   "kepakaran": [
+    "industri",
+    "mineral-kritis"
+   ],
+   "peran_rantai": [
+    "manufaktur"
+   ],
+   "situs": null,
+   "sumber": [
+    {
+     "url": "https://www.gem.wiki/Delong_Nickel_Phase_II_power_station",
+     "tingkat_bukti": "kajian",
+     "keterangan": "pemilik jaringan smelter Konawe dan Morowali Utara menurut Global Energy Monitor"
+    }
+   ]
+  },
+  {
+   "nama": "Lygend Resources and Technology",
+   "nama_lain": [
+    "Lygend",
+    "Lygend Resources"
+   ],
+   "kategori": "internasional",
+   "kepakaran": [
+    "industri",
+    "mineral-kritis"
+   ],
+   "peran_rantai": [
+    "manufaktur"
+   ],
+   "situs": null,
+   "sumber": [
+    {
+     "url": "https://news.metal.com/newscontent/102070296-lygends-phase-two-hpal-cobalt-nickel-project-commissioned-as-scheduled",
+     "tingkat_bukti": "kajian",
+     "keterangan": "pengoperasian HPAL fase dua di Pulau Obi"
+    }
+   ]
+  },
+  {
+   "nama": "PT Merdeka Battery Materials Tbk",
+   "nama_lain": [
+    "Merdeka Battery Materials",
+    "MBMA"
+   ],
+   "kategori": "swasta",
+   "kepakaran": [
+    "industri",
+    "mineral-kritis"
+   ],
+   "peran_rantai": [
+    "manufaktur"
+   ],
+   "situs": null,
+   "sumber": [
+    {
+     "url": "https://www.petromindo.com/news/article/indonesia-s-nickel-industry-in-2025-from-expansion-to-stabilization",
+     "tingkat_bukti": "kajian",
+     "keterangan": "ulasan industri nikel Indonesia 2025"
+    }
+   ]
+  },
+  {
+   "nama": "PT Aneka Tambang Tbk",
+   "nama_lain": [
+    "Antam",
+    "Aneka Tambang"
+   ],
+   "kategori": "bumn",
+   "kepakaran": [
+    "industri",
+    "mineral-kritis"
+   ],
+   "peran_rantai": [
+    "manufaktur"
+   ],
+   "situs": null,
+   "sumber": [
+    {
+     "url": "https://www.ekon.go.id/publikasi/detail/6661/pengembangan-ekosistem-baterai-kendaraan-listrik-dalam-mendorong-kemandirian-dan-ketahanan-energi-nasional",
+     "tingkat_bukti": "kajian",
+     "keterangan": "ekosistem baterai kendaraan listrik nasional"
+    }
+   ]
+  },
+  {
+   "nama": "PT HLI Green Power",
+   "nama_lain": [
+    "HLI Green Power",
+    "Hyundai LG Industry"
+   ],
+   "kategori": "swasta",
+   "kepakaran": [
+    "elektrifikasi",
+    "industri"
+   ],
+   "peran_rantai": [
+    "manufaktur"
+   ],
+   "situs": null,
+   "sumber": [
+    {
+     "url": "https://inside.lgensol.com/en/2025/04/world-battery-tour-with-lg-energy-solution-karawang-indonesia/",
+     "tingkat_bukti": "kajian",
+     "keterangan": "pabrik sel baterai Karawang"
+    }
+   ]
+  },
+  {
+   "nama": "LG Energy Solution",
+   "nama_lain": [
+    "LGES"
+   ],
+   "kategori": "internasional",
+   "kepakaran": [
+    "elektrifikasi",
+    "industri"
+   ],
+   "peran_rantai": [
+    "manufaktur"
+   ],
+   "situs": null,
+   "sumber": [
+    {
+     "url": "https://www.asiae.co.kr/en/article/2025041819392555129",
+     "tingkat_bukti": "kajian",
+     "keterangan": "penarikan diri dari proyek rantai nilai baterai Indonesia, April 2025"
+    }
+   ]
+  },
+  {
+   "_asal": "karbon_registri",
+   "nama": "AES AgriVerde Ltd.",
+   "nama_lain": [],
+   "kategori": "swasta",
+   "kepakaran": [
+    "karbon"
+   ],
+   "peran_rantai": [
+    "pengembang"
+   ],
+   "sumber": [
+    {
+     "url": "https://registry.verra.org/app/projectDetail/VCS/866",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "keterangan": "pengembang proyek karbon Verra VCS VCS866, dibaca 2026-11-08"
+    }
+   ]
+  },
+  {
+   "_asal": "karbon_registri",
+   "nama": "AgriCapture, Inc.",
+   "nama_lain": [],
+   "kategori": "swasta",
+   "kepakaran": [
+    "karbon"
+   ],
+   "peran_rantai": [
+    "pengembang"
+   ],
+   "sumber": [
+    {
+     "url": "https://registry.verra.org/app/projectDetail/VCS/5956",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "keterangan": "pengembang proyek karbon Verra VCS VCS5956, dibaca 2026-11-08"
+    }
+   ]
+  },
+  {
+   "_asal": "karbon_registri",
+   "nama": "Aquila Climate Technology Holding Pte. Ltd.",
+   "nama_lain": [],
+   "kategori": "swasta",
+   "kepakaran": [
+    "karbon"
+   ],
+   "peran_rantai": [
+    "pengembang"
+   ],
+   "sumber": [
+    {
+     "url": "https://registry.verra.org/app/projectDetail/VCS/6156",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "keterangan": "pengembang proyek karbon Verra VCS VCS6156, dibaca 2026-11-08"
+    }
+   ]
+  },
+  {
+   "_asal": "karbon_registri",
+   "nama": "Asia Assets Developments Co. Ltd.",
+   "nama_lain": [],
+   "kategori": "swasta",
+   "kepakaran": [
+    "karbon"
+   ],
+   "peran_rantai": [
+    "pengembang"
+   ],
+   "sumber": [
+    {
+     "url": "https://registry.verra.org/app/projectDetail/VCS/5905",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "keterangan": "pengembang proyek karbon Verra VCS VCS5905, dibaca 2026-11-08"
+    }
+   ]
+  },
+  {
+   "_asal": "karbon_registri",
+   "nama": "C-Quest Capital Stoves Asia Limited",
+   "nama_lain": [],
+   "kategori": "swasta",
+   "kepakaran": [
+    "karbon"
+   ],
+   "peran_rantai": [
+    "pengembang"
+   ],
+   "sumber": [
+    {
+     "url": "https://registry.verra.org/app/projectDetail/VCS/3327",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "keterangan": "pengembang proyek karbon Verra VCS VCS3327, dibaca 2026-11-08"
+    }
+   ]
+  },
+  {
+   "_asal": "karbon_registri",
+   "nama": "Climate Quest Sdn Bhd",
+   "nama_lain": [],
+   "kategori": "swasta",
+   "kepakaran": [
+    "karbon"
+   ],
+   "peran_rantai": [
+    "pengembang"
+   ],
+   "sumber": [
+    {
+     "url": "https://registry.verra.org/app/projectDetail/VCS/6094",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "keterangan": "pengembang proyek karbon Verra VCS VCS6094, dibaca 2026-11-08"
+    }
+   ]
+  },
+  {
+   "_asal": "karbon_registri",
+   "nama": "EcoSecurities Group Limited",
+   "nama_lain": [],
+   "kategori": "swasta",
+   "kepakaran": [
+    "karbon"
+   ],
+   "peran_rantai": [
+    "pengembang"
+   ],
+   "sumber": [
+    {
+     "url": "https://assurance-platform.goldstandard.org/project-documents/GS23332",
+     "tingkat_bukti": "resmi",
+     "keterangan": "pengembang proyek karbon Gold Standard GS23332, dibaca 2026-11-08"
+    }
+   ]
+  },
+  {
+   "_asal": "karbon_registri",
+   "nama": "Global Mangrove Trust",
+   "nama_lain": [],
+   "kategori": "lsm-yayasan",
+   "kepakaran": [
+    "karbon"
+   ],
+   "peran_rantai": [
+    "pengembang"
+   ],
+   "sumber": [
+    {
+     "url": "https://assurance-platform.goldstandard.org/project-documents/GS23179",
+     "tingkat_bukti": "resmi",
+     "keterangan": "pengembang proyek karbon Gold Standard GS23179, dibaca 2026-11-08"
+    }
+   ]
+  },
+  {
+   "_asal": "karbon_registri",
+   "nama": "H201 Co., Ltd",
+   "nama_lain": [],
+   "kategori": "swasta",
+   "kepakaran": [
+    "karbon"
+   ],
+   "peran_rantai": [
+    "pengembang"
+   ],
+   "sumber": [
+    {
+     "url": "https://registry.verra.org/app/projectDetail/VCS/4445",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "keterangan": "pengembang proyek karbon Verra VCS VCS4445, dibaca 2026-11-08"
+    }
+   ]
+  },
+  {
+   "_asal": "karbon_registri",
+   "nama": "Hong Kong Fine Technology Co., Limited",
+   "nama_lain": [],
+   "kategori": "swasta",
+   "kepakaran": [
+    "karbon"
+   ],
+   "peran_rantai": [
+    "pengembang"
+   ],
+   "sumber": [
+    {
+     "url": "https://registry.verra.org/app/projectDetail/VCS/6128",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "keterangan": "pengembang proyek karbon Verra VCS VCS6128, dibaca 2026-11-08"
+    }
+   ]
+  },
+  {
+   "_asal": "karbon_registri",
+   "nama": "Indorama Ventures Global Services Limited (IVGS)",
+   "nama_lain": [],
+   "kategori": "swasta",
+   "kepakaran": [
+    "karbon"
+   ],
+   "peran_rantai": [
+    "pengembang"
+   ],
+   "sumber": [
+    {
+     "url": "https://registry.verra.org/app/projectDetail/VCS/5967",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "keterangan": "pengembang proyek karbon Verra VCS VCS5967, dibaca 2026-11-08"
+    }
+   ]
+  },
+  {
+   "_asal": "karbon_registri",
+   "nama": "InfiniteEARTH",
+   "nama_lain": [],
+   "kategori": "swasta",
+   "kepakaran": [
+    "karbon"
+   ],
+   "peran_rantai": [
+    "pengembang"
+   ],
+   "sumber": [
+    {
+     "url": "https://registry.verra.org/app/projectDetail/VCS/674",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "keterangan": "pengembang proyek karbon Verra VCS VCS674, dibaca 2026-11-08"
+    }
+   ]
+  },
+  {
+   "_asal": "karbon_registri",
+   "nama": "KNOWLEDGE INTEGRATION SERVICES SINGAPORE PTE. LTD.",
+   "nama_lain": [],
+   "kategori": "swasta",
+   "kepakaran": [
+    "karbon"
+   ],
+   "peran_rantai": [
+    "pengembang"
+   ],
+   "sumber": [
+    {
+     "url": "https://registry.verra.org/app/projectDetail/VCS/4705",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "keterangan": "pengembang proyek karbon Verra VCS VCS4705, dibaca 2026-11-08"
+    }
+   ]
+  },
+  {
+   "_asal": "karbon_registri",
+   "nama": "Kosher Climate India Pvt Ltd.",
+   "nama_lain": [],
+   "kategori": "swasta",
+   "kepakaran": [
+    "karbon"
+   ],
+   "peran_rantai": [
+    "pengembang"
+   ],
+   "sumber": [
+    {
+     "url": "https://assurance-platform.goldstandard.org/project-documents/GS7164",
+     "tingkat_bukti": "resmi",
+     "keterangan": "pengembang proyek karbon Gold Standard GS7164, dibaca 2026-11-08"
+    }
+   ]
+  },
+  {
+   "_asal": "karbon_registri",
+   "nama": "LIVELIHOODS CARBON FUND SICAV-RAIF",
+   "nama_lain": [],
+   "kategori": "swasta",
+   "kepakaran": [
+    "karbon"
+   ],
+   "peran_rantai": [
+    "pengembang"
+   ],
+   "sumber": [
+    {
+     "url": "https://assurance-platform.goldstandard.org/project-documents/GS13164",
+     "tingkat_bukti": "resmi",
+     "keterangan": "pengembang proyek karbon Gold Standard GS13164, dibaca 2026-11-08"
+    }
+   ]
+  },
+  {
+   "_asal": "karbon_registri",
+   "nama": "Livelihoods Fund SICAV SIF",
+   "nama_lain": [],
+   "kategori": "swasta",
+   "kepakaran": [
+    "karbon"
+   ],
+   "peran_rantai": [
+    "pengembang"
+   ],
+   "sumber": [
+    {
+     "url": "https://registry.verra.org/app/projectDetail/VCS/1493",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "keterangan": "pengembang proyek karbon Verra VCS VCS1493, dibaca 2026-11-08"
+    }
+   ]
+  },
+  {
+   "_asal": "karbon_registri",
+   "nama": "Menggala Rambu Utama",
+   "nama_lain": [],
+   "kategori": "swasta",
+   "kepakaran": [
+    "karbon"
+   ],
+   "peran_rantai": [
+    "pengembang"
+   ],
+   "sumber": [
+    {
+     "url": "https://registry.verra.org/app/projectDetail/VCS/5371",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "keterangan": "pengembang proyek karbon Verra VCS VCS5371, dibaca 2026-11-08"
+    }
+   ]
+  },
+  {
+   "_asal": "karbon_registri",
+   "nama": "Monsoon Carbon Pte Ltd",
+   "nama_lain": [],
+   "kategori": "swasta",
+   "kepakaran": [
+    "karbon"
+   ],
+   "peran_rantai": [
+    "pengembang"
+   ],
+   "sumber": [
+    {
+     "url": "https://registry.verra.org/app/projectDetail/VCS/5292",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "keterangan": "pengembang proyek karbon Verra VCS VCS5292, dibaca 2026-11-08"
+    }
+   ]
+  },
+  {
+   "_asal": "karbon_registri",
+   "nama": "Nazava",
+   "nama_lain": [],
+   "kategori": "swasta",
+   "kepakaran": [
+    "karbon"
+   ],
+   "peran_rantai": [
+    "pengembang"
+   ],
+   "sumber": [
+    {
+     "url": "https://assurance-platform.goldstandard.org/project-documents/GS4290",
+     "tingkat_bukti": "resmi",
+     "keterangan": "pengembang proyek karbon Gold Standard GS4290, dibaca 2026-11-08"
+    }
+   ]
+  },
+  {
+   "_asal": "karbon_registri",
+   "nama": "PRCF Indonesia",
+   "nama_lain": [],
+   "kategori": "lsm-yayasan",
+   "kepakaran": [
+    "karbon"
+   ],
+   "peran_rantai": [
+    "pengembang"
+   ],
+   "sumber": [
+    {
+     "url": "https://www.planvivo.org/projects/nanga-lauk-indonesia",
+     "tingkat_bukti": "situs-sendiri",
+     "keterangan": "pengembang proyek karbon Plan Vivo PV-Nanga-Lauk, dibaca 2026-11-08"
+    }
+   ]
+  },
+  {
+   "_asal": "karbon_registri",
+   "nama": "PT Alam Sukses Lestari",
+   "nama_lain": [],
+   "kategori": "swasta",
+   "kepakaran": [
+    "karbon"
+   ],
+   "peran_rantai": [
+    "pengembang"
+   ],
+   "sumber": [
+    {
+     "url": "https://registry.verra.org/app/projectDetail/VCS/3493",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "keterangan": "pengembang proyek karbon Verra VCS VCS3493, dibaca 2026-11-08"
+    }
+   ]
+  },
+  {
+   "_asal": "karbon_registri",
+   "nama": "PT Austral Byna",
+   "nama_lain": [],
+   "kategori": "swasta",
+   "kepakaran": [
+    "karbon"
+   ],
+   "peran_rantai": [
+    "pengembang"
+   ],
+   "sumber": [
+    {
+     "url": "https://registry.verra.org/app/projectDetail/VCS/4520",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "keterangan": "pengembang proyek karbon Verra VCS VCS4520, dibaca 2026-11-08"
+    }
+   ]
+  },
+  {
+   "_asal": "karbon_registri",
+   "nama": "PT Belantara Sejahtera Mandiri",
+   "nama_lain": [],
+   "kategori": "swasta",
+   "kepakaran": [
+    "karbon"
+   ],
+   "peran_rantai": [
+    "pengembang"
+   ],
+   "sumber": [
+    {
+     "url": "https://registry.verra.org/app/projectDetail/VCS/5834",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "keterangan": "pengembang proyek karbon Verra VCS VCS5834, dibaca 2026-11-08"
+    }
+   ]
+  },
+  {
+   "_asal": "karbon_registri",
+   "nama": "PT Charged Tech Indonesia",
+   "nama_lain": [],
+   "kategori": "swasta",
+   "kepakaran": [
+    "karbon"
+   ],
+   "peran_rantai": [
+    "pengembang"
+   ],
+   "sumber": [
+    {
+     "url": "https://registry.verra.org/app/projectDetail/VCS/5930",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "keterangan": "pengembang proyek karbon Verra VCS VCS5930, dibaca 2026-11-08"
+    }
+   ]
+  },
+  {
+   "_asal": "karbon_registri",
+   "nama": "PT Dalle Energy Batam",
+   "nama_lain": [],
+   "kategori": "swasta",
+   "kepakaran": [
+    "karbon"
+   ],
+   "peran_rantai": [
+    "pengembang"
+   ],
+   "sumber": [
+    {
+     "url": "https://registry.verra.org/app/projectDetail/VCS/243",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "keterangan": "pengembang proyek karbon Verra VCS VCS243, dibaca 2026-11-08"
+    }
+   ]
+  },
+  {
+   "_asal": "karbon_registri",
+   "nama": "PT Hutan Amanah Lestari",
+   "nama_lain": [],
+   "kategori": "swasta",
+   "kepakaran": [
+    "karbon"
+   ],
+   "peran_rantai": [
+    "pengembang"
+   ],
+   "sumber": [
+    {
+     "url": "https://registry.verra.org/app/projectDetail/VCS/3494",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "keterangan": "pengembang proyek karbon Verra VCS VCS3494, dibaca 2026-11-08"
+    }
+   ]
+  },
+  {
+   "_asal": "karbon_registri",
+   "nama": "PT Hutani Berkah Mulia",
+   "nama_lain": [],
+   "kategori": "swasta",
+   "kepakaran": [
+    "karbon"
+   ],
+   "peran_rantai": [
+    "pengembang"
+   ],
+   "sumber": [
+    {
+     "url": "https://registry.verra.org/app/projectDetail/VCS/5534",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "keterangan": "pengembang proyek karbon Verra VCS VCS5534, dibaca 2026-11-08"
+    }
+   ]
+  },
+  {
+   "_asal": "karbon_registri",
+   "nama": "PT Indonesia Power",
+   "nama_lain": [],
+   "kategori": "swasta",
+   "kepakaran": [
+    "karbon"
+   ],
+   "peran_rantai": [
+    "pengembang"
+   ],
+   "sumber": [
+    {
+     "url": "https://registry.verra.org/app/projectDetail/VCS/144",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "keterangan": "pengembang proyek karbon Verra VCS VCS144, dibaca 2026-11-08"
+    }
+   ]
+  },
+  {
+   "_asal": "karbon_registri",
+   "nama": "PT Mohairson Pawan Khatulistiwa",
+   "nama_lain": [],
+   "kategori": "swasta",
+   "kepakaran": [
+    "karbon"
+   ],
+   "peran_rantai": [
+    "pengembang"
+   ],
+   "sumber": [
+    {
+     "url": "https://registry.verra.org/app/projectDetail/VCS/3591",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "keterangan": "pengembang proyek karbon Verra VCS VCS3591, dibaca 2026-11-08"
+    }
+   ]
+  },
+  {
+   "_asal": "karbon_registri",
+   "nama": "PT Nagata Bio Energi",
+   "nama_lain": [],
+   "kategori": "swasta",
+   "kepakaran": [
+    "karbon"
+   ],
+   "peran_rantai": [
+    "pengembang"
+   ],
+   "sumber": [
+    {
+     "url": "https://idxcarbon.co.id/product-spe-grk",
+     "tingkat_bukti": "resmi",
+     "keterangan": "pengembang proyek karbon IDXCarbon (SPE-GRK) SPE-10-PR-V-2023-10134, dibaca 2026-11-08"
+    }
+   ]
+  },
+  {
+   "_asal": "karbon_registri",
+   "nama": "PT Nusantara Raya Solusi",
+   "nama_lain": [],
+   "kategori": "swasta",
+   "kepakaran": [
+    "karbon"
+   ],
+   "peran_rantai": [
+    "pengembang"
+   ],
+   "sumber": [
+    {
+     "url": "https://registry.verra.org/app/projectDetail/VCS/4782",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "keterangan": "pengembang proyek karbon Verra VCS VCS4782, dibaca 2026-11-08"
+    }
+   ]
+  },
+  {
+   "_asal": "karbon_registri",
+   "nama": "PT PTEC RESEARCH AND DEVELOPMENT",
+   "nama_lain": [],
+   "kategori": "swasta",
+   "kepakaran": [
+    "karbon"
+   ],
+   "peran_rantai": [
+    "pengembang"
+   ],
+   "sumber": [
+    {
+     "url": "https://registry.verra.org/app/projectDetail/VCS/5996",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "keterangan": "pengembang proyek karbon Verra VCS VCS5996, dibaca 2026-11-08"
+    }
+   ]
+  },
+  {
+   "_asal": "karbon_registri",
+   "nama": "PT Pasifik Agro Sentosa",
+   "nama_lain": [],
+   "kategori": "swasta",
+   "kepakaran": [
+    "karbon"
+   ],
+   "peran_rantai": [
+    "pengembang"
+   ],
+   "sumber": [
+    {
+     "url": "https://registry.verra.org/app/projectDetail/VCS/3446",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "keterangan": "pengembang proyek karbon Verra VCS VCS3446, dibaca 2026-11-08"
+    }
+   ]
+  },
+  {
+   "_asal": "karbon_registri",
+   "nama": "PT Pertamina Power Indonesia",
+   "nama_lain": [],
+   "kategori": "swasta",
+   "kepakaran": [
+    "karbon"
+   ],
+   "peran_rantai": [
+    "pengembang"
+   ],
+   "sumber": [
+    {
+     "url": "https://idxcarbon.co.id/product-spe-grk",
+     "tingkat_bukti": "resmi",
+     "keterangan": "pengembang proyek karbon IDXCarbon (SPE-GRK) SPE-10-PR-IV-2024-17599, dibaca 2026-11-08"
+    }
+   ]
+  },
+  {
+   "_asal": "karbon_registri",
+   "nama": "PT Rimbun Seruyan",
+   "nama_lain": [],
+   "kategori": "swasta",
+   "kepakaran": [
+    "karbon"
+   ],
+   "peran_rantai": [
+    "pengembang"
+   ],
+   "sumber": [
+    {
+     "url": "https://registry.verra.org/app/projectDetail/VCS/5631",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "keterangan": "pengembang proyek karbon Verra VCS VCS5631, dibaca 2026-11-08"
+    }
+   ]
+  },
+  {
+   "_asal": "karbon_registri",
+   "nama": "PT Solusi Transisi Iklim",
+   "nama_lain": [],
+   "kategori": "swasta",
+   "kepakaran": [
+    "karbon"
+   ],
+   "peran_rantai": [
+    "pengembang"
+   ],
+   "sumber": [
+    {
+     "url": "https://registry.verra.org/app/projectDetail/VCS/6104",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "keterangan": "pengembang proyek karbon Verra VCS VCS6104, dibaca 2026-11-08"
+    }
+   ]
+  },
+  {
+   "_asal": "karbon_registri",
+   "nama": "PT Strata Pacific",
+   "nama_lain": [],
+   "kategori": "swasta",
+   "kepakaran": [
+    "karbon"
+   ],
+   "peran_rantai": [
+    "pengembang"
+   ],
+   "sumber": [
+    {
+     "url": "https://registry.verra.org/app/projectDetail/VCS/5283",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "keterangan": "pengembang proyek karbon Verra VCS VCS5283, dibaca 2026-11-08"
+    }
+   ]
+  },
+  {
+   "_asal": "karbon_registri",
+   "nama": "PT Telaga Mas Kalimantan",
+   "nama_lain": [],
+   "kategori": "swasta",
+   "kepakaran": [
+    "karbon"
+   ],
+   "peran_rantai": [
+    "pengembang"
+   ],
+   "sumber": [
+    {
+     "url": "https://registry.verra.org/app/projectDetail/VCS/5873",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "keterangan": "pengembang proyek karbon Verra VCS VCS5873, dibaca 2026-11-08"
+    }
+   ]
+  },
+  {
+   "_asal": "karbon_registri",
+   "nama": "PT. AGRA INTI INVESTAMA",
+   "nama_lain": [],
+   "kategori": "swasta",
+   "kepakaran": [
+    "karbon"
+   ],
+   "peran_rantai": [
+    "pengembang"
+   ],
+   "sumber": [
+    {
+     "url": "https://registry.verra.org/app/projectDetail/VCS/5585",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "keterangan": "pengembang proyek karbon Verra VCS VCS5585, dibaca 2026-11-08"
+    }
+   ]
+  },
+  {
+   "_asal": "karbon_registri",
+   "nama": "PT. Annisa Surya Kencana",
+   "nama_lain": [],
+   "kategori": "swasta",
+   "kepakaran": [
+    "karbon"
+   ],
+   "peran_rantai": [
+    "pengembang"
+   ],
+   "sumber": [
+    {
+     "url": "https://registry.verra.org/app/projectDetail/VCS/5695",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "keterangan": "pengembang proyek karbon Verra VCS VCS5695, dibaca 2026-11-08"
+    }
+   ]
+  },
+  {
+   "_asal": "karbon_registri",
+   "nama": "PT. Bumi Hijau Konservasi",
+   "nama_lain": [],
+   "kategori": "lsm-yayasan",
+   "kepakaran": [
+    "karbon"
+   ],
+   "peran_rantai": [
+    "pengembang"
+   ],
+   "sumber": [
+    {
+     "url": "https://registry.verra.org/app/projectDetail/VCS/5845",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "keterangan": "pengembang proyek karbon Verra VCS VCS5845, dibaca 2026-11-08"
+    }
+   ]
+  },
+  {
+   "_asal": "karbon_registri",
+   "nama": "PT. Indo Hutan Ekosistem",
+   "nama_lain": [],
+   "kategori": "swasta",
+   "kepakaran": [
+    "karbon"
+   ],
+   "peran_rantai": [
+    "pengembang"
+   ],
+   "sumber": [
+    {
+     "url": "https://registry.verra.org/app/projectDetail/VCS/5736",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "keterangan": "pengembang proyek karbon Verra VCS VCS5736, dibaca 2026-11-08"
+    }
+   ]
+  },
+  {
+   "_asal": "karbon_registri",
+   "nama": "PT. Medco LPG Kaji (MLK)",
+   "nama_lain": [],
+   "kategori": "swasta",
+   "kepakaran": [
+    "karbon"
+   ],
+   "peran_rantai": [
+    "pengembang"
+   ],
+   "sumber": [
+    {
+     "url": "https://registry.verra.org/app/projectDetail/VCS/409",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "keterangan": "pengembang proyek karbon Verra VCS VCS409, dibaca 2026-11-08"
+    }
+   ]
+  },
+  {
+   "_asal": "karbon_registri",
+   "nama": "PT. Pagatan Usaha Makmur",
+   "nama_lain": [],
+   "kategori": "swasta",
+   "kepakaran": [
+    "karbon"
+   ],
+   "peran_rantai": [
+    "pengembang"
+   ],
+   "sumber": [
+    {
+     "url": "https://registry.verra.org/app/projectDetail/VCS/4967",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "keterangan": "pengembang proyek karbon Verra VCS VCS4967, dibaca 2026-11-08"
+    }
+   ]
+  },
+  {
+   "_asal": "karbon_registri",
+   "nama": "PT. SUPREME ENERGY MUARA LABOH",
+   "nama_lain": [],
+   "kategori": "swasta",
+   "kepakaran": [
+    "karbon"
+   ],
+   "peran_rantai": [
+    "pengembang"
+   ],
+   "sumber": [
+    {
+     "url": "https://assurance-platform.goldstandard.org/project-documents/GS12112",
+     "tingkat_bukti": "resmi",
+     "keterangan": "pengembang proyek karbon Gold Standard GS12112, dibaca 2026-11-08"
+    }
+   ]
+  },
+  {
+   "_asal": "karbon_registri",
+   "nama": "PT. Samudera Rejeki Perkasa",
+   "nama_lain": [],
+   "kategori": "swasta",
+   "kepakaran": [
+    "karbon"
+   ],
+   "peran_rantai": [
+    "pengembang"
+   ],
+   "sumber": [
+    {
+     "url": "https://registry.verra.org/app/projectDetail/VCS/6085",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "keterangan": "pengembang proyek karbon Verra VCS VCS6085, dibaca 2026-11-08"
+    }
+   ]
+  },
+  {
+   "_asal": "karbon_registri",
+   "nama": "RIZE PTE. LTD.",
+   "nama_lain": [],
+   "kategori": "swasta",
+   "kepakaran": [
+    "karbon"
+   ],
+   "peran_rantai": [
+    "pengembang"
+   ],
+   "sumber": [
+    {
+     "url": "https://assurance-platform.goldstandard.org/project-documents/GS23412",
+     "tingkat_bukti": "resmi",
+     "keterangan": "pengembang proyek karbon Gold Standard GS23412, dibaca 2026-11-08"
+    }
+   ]
+  },
+  {
+   "_asal": "karbon_registri",
+   "nama": "Star Energy Geothermal Salak Ltd",
+   "nama_lain": [],
+   "kategori": "swasta",
+   "kepakaran": [
+    "karbon"
+   ],
+   "peran_rantai": [
+    "pengembang"
+   ],
+   "sumber": [
+    {
+     "url": "https://assurance-platform.goldstandard.org/project-documents/GS11719",
+     "tingkat_bukti": "resmi",
+     "keterangan": "pengembang proyek karbon Gold Standard GS11719, dibaca 2026-11-08"
+    }
+   ]
+  },
+  {
+   "_asal": "karbon_registri",
+   "nama": "Synopex Inc.",
+   "nama_lain": [],
+   "kategori": "swasta",
+   "kepakaran": [
+    "karbon"
+   ],
+   "peran_rantai": [
+    "pengembang"
+   ],
+   "sumber": [
+    {
+     "url": "https://registry.verra.org/app/projectDetail/VCS/4103",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "keterangan": "pengembang proyek karbon Verra VCS VCS4103, dibaca 2026-11-08"
+    }
+   ]
+  },
+  {
+   "_asal": "karbon_registri",
+   "nama": "TSH Resources Berhad",
+   "nama_lain": [],
+   "kategori": "swasta",
+   "kepakaran": [
+    "karbon"
+   ],
+   "peran_rantai": [
+    "pengembang"
+   ],
+   "sumber": [
+    {
+     "url": "https://registry.verra.org/app/projectDetail/VCS/4467",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "keterangan": "pengembang proyek karbon Verra VCS VCS4467, dibaca 2026-11-08"
+    }
+   ]
+  },
+  {
+   "_asal": "karbon_registri",
+   "nama": "The PURE PROJECT SAS",
+   "nama_lain": [],
+   "kategori": "swasta",
+   "kepakaran": [
+    "karbon"
+   ],
+   "peran_rantai": [
+    "pengembang"
+   ],
+   "sumber": [
+    {
+     "url": "https://registry.verra.org/app/projectDetail/VCS/3012",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "keterangan": "pengembang proyek karbon Verra VCS VCS3012, dibaca 2026-11-08"
+    }
+   ]
+  },
+  {
+   "_asal": "karbon_registri",
+   "nama": "UPC Renewables Asia I Ltd",
+   "nama_lain": [],
+   "kategori": "swasta",
+   "kepakaran": [
+    "karbon"
+   ],
+   "peran_rantai": [
+    "pengembang"
+   ],
+   "sumber": [
+    {
+     "url": "https://assurance-platform.goldstandard.org/project-documents/GS4813",
+     "tingkat_bukti": "resmi",
+     "keterangan": "pengembang proyek karbon Gold Standard GS4813, dibaca 2026-11-08"
+    }
+   ]
+  },
+  {
+   "_asal": "karbon_registri",
+   "nama": "Value Network Ventures Pte. Ltd.",
+   "nama_lain": [],
+   "kategori": "swasta",
+   "kepakaran": [
+    "karbon"
+   ],
+   "peran_rantai": [
+    "pengembang"
+   ],
+   "sumber": [
+    {
+     "url": "https://assurance-platform.goldstandard.org/project-documents/GS23214",
+     "tingkat_bukti": "resmi",
+     "keterangan": "pengembang proyek karbon Gold Standard GS23214, dibaca 2026-11-08"
+    }
+   ]
+  },
+  {
+   "_asal": "karbon_registri",
+   "nama": "Vlinder Austria GmbH",
+   "nama_lain": [],
+   "kategori": "swasta",
+   "kepakaran": [
+    "karbon"
+   ],
+   "peran_rantai": [
+    "pengembang"
+   ],
+   "sumber": [
+    {
+     "url": "https://registry.verra.org/app/projectDetail/VCS/5032",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "keterangan": "pengembang proyek karbon Verra VCS VCS5032, dibaca 2026-11-08"
+    }
+   ]
+  },
+  {
+   "_asal": "karbon_registri",
+   "nama": "Yayasan Bumi Sasmaya",
+   "nama_lain": [],
+   "kategori": "lsm-yayasan",
+   "kepakaran": [
+    "karbon"
+   ],
+   "peran_rantai": [
+    "pengembang"
+   ],
+   "sumber": [
+    {
+     "url": "https://assurance-platform.goldstandard.org/project-documents/GS7561",
+     "tingkat_bukti": "resmi",
+     "keterangan": "pengembang proyek karbon Gold Standard GS7561, dibaca 2026-11-08"
+    }
+   ]
+  },
+  {
+   "_asal": "karbon_registri",
+   "nama": "Yayasan Konservasi Pesisir Indonesia (YAKOPI)",
+   "nama_lain": [],
+   "kategori": "lsm-yayasan",
+   "kepakaran": [
+    "karbon"
+   ],
+   "peran_rantai": [
+    "pengembang"
+   ],
+   "sumber": [
+    {
+     "url": "https://registry.verra.org/app/projectDetail/VCS/5545",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "keterangan": "pengembang proyek karbon Verra VCS VCS5545, dibaca 2026-11-08"
+    }
+   ]
+  },
+  {
+   "_asal": "karbon_registri",
+   "nama": "atmosfair gGmbH",
+   "nama_lain": [],
+   "kategori": "swasta",
+   "kepakaran": [
+    "karbon"
+   ],
+   "peran_rantai": [
+    "pengembang"
+   ],
+   "sumber": [
+    {
+     "url": "https://assurance-platform.goldstandard.org/project-documents/GS1295",
+     "tingkat_bukti": "resmi",
+     "keterangan": "pengembang proyek karbon Gold Standard GS1295, dibaca 2026-11-08"
+    }
+   ]
+  },
+  {
+   "nama": "Kanadevia Inova",
+   "nama_lain": [
+    "Hitachi Zosen Inova",
+    "HZI",
+    "Hitachi Zosen"
+   ],
+   "kategori": "internasional",
+   "kepakaran": [
+    "bioenergi"
+   ],
+   "peran_rantai": [
+    "manufaktur"
+   ],
+   "situs": "https://kanadevia-inova.com/",
+   "sumber": [
+    {
+     "url": "https://kanadevia-inova.com/",
+     "tingkat_bukti": "situs-sendiri",
+     "keterangan": "Penyedia teknologi global WTE (CH)"
+    }
+   ]
+  },
+  {
+   "nama": "Keppel Seghers",
+   "nama_lain": [
+    "Keppel Seghers Engineering"
+   ],
+   "kategori": "internasional",
+   "kepakaran": [
+    "bioenergi"
+   ],
+   "peran_rantai": [
+    "manufaktur"
+   ],
+   "situs": "https://www.keppelseghers.com/en/",
+   "sumber": [
+    {
+     "url": "https://www.keppelseghers.com/en/",
+     "tingkat_bukti": "situs-sendiri",
+     "keterangan": "Penyedia teknologi global WTE (SG)"
+    }
+   ]
+  },
+  {
+   "nama": "Martin GmbH",
+   "nama_lain": [
+    "Martin GmbH fuer Umwelt- und Energietechnik",
+    "Martin GmbH für Umwelt- und Energietechnik"
+   ],
+   "kategori": "internasional",
+   "kepakaran": [
+    "bioenergi"
+   ],
+   "peran_rantai": [
+    "manufaktur"
+   ],
+   "situs": "https://www.martin-ag.com/",
+   "sumber": [
+    {
+     "url": "https://www.wikidata.org/wiki/Q142067392",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "keterangan": "Penyedia teknologi global WTE (DE)"
+    }
+   ]
+  },
+  {
+   "nama": "Babcock & Wilcox Vølund",
+   "nama_lain": [
+    "B&W Vølund"
+   ],
+   "kategori": "internasional",
+   "kepakaran": [
+    "bioenergi"
+   ],
+   "peran_rantai": [
+    "manufaktur"
+   ],
+   "situs": "https://www.babcock.com/",
+   "sumber": [
+    {
+     "url": "https://www.babcock.com/",
+     "tingkat_bukti": "situs-sendiri",
+     "keterangan": "Penyedia teknologi global WTE (DK)"
+    }
+   ]
+  },
+  {
+   "nama": "SUS Environment",
+   "nama_lain": [
+    "Shanghai SUS Environment",
+    "SUS"
+   ],
+   "kategori": "internasional",
+   "kepakaran": [
+    "bioenergi"
+   ],
+   "peran_rantai": [
+    "manufaktur"
+   ],
+   "situs": null,
+   "sumber": [
+    {
+     "url": "https://www.liputan6.com/bisnis/read/8251038/daftar-nama-8-mitra-penggarap-proyek-listrik-dari-sampah-di-indonesia",
+     "tingkat_bukti": "media",
+     "keterangan": "Penyedia teknologi global WTE (CN)"
+    },
+    {
+     "url": "https://www.liputan6.com/bisnis/read/8251038/daftar-nama-8-mitra-penggarap-proyek-listrik-dari-sampah-di-indonesia",
+     "tingkat_bukti": "media",
+     "keterangan": "Penyedia teknologi global WTE (CN)"
+    }
+   ]
+  },
+  {
+   "nama": "Mitsubishi Heavy Industries Environmental & Chemical Engineering",
+   "nama_lain": [
+    "MHIEC",
+    "Mitsubishi Heavy Industries Environmental"
+   ],
+   "kategori": "internasional",
+   "kepakaran": [
+    "bioenergi"
+   ],
+   "peran_rantai": [
+    "manufaktur"
+   ],
+   "situs": "https://www.mhiec.co.jp/",
+   "sumber": [
+    {
+     "url": "https://www.wikidata.org/wiki/Q11357153",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "keterangan": "Penyedia teknologi global WTE (JP)"
+    }
+   ]
+  },
+  {
+   "nama": "JFE Engineering",
+   "nama_lain": [
+    "JFE"
+   ],
+   "kategori": "internasional",
+   "kepakaran": [
+    "bioenergi"
+   ],
+   "peran_rantai": [
+    "manufaktur"
+   ],
+   "situs": "https://www.jfe-eng.co.jp/",
+   "sumber": [
+    {
+     "url": "https://www.jfe-eng.co.jp/",
+     "tingkat_bukti": "situs-sendiri",
+     "keterangan": "Penyedia teknologi global WTE (JP)"
+    }
+   ]
+  },
+  {
+   "nama": "Takuma",
+   "nama_lain": [
+    "Takuma Co., Ltd."
+   ],
+   "kategori": "internasional",
+   "kepakaran": [
+    "bioenergi"
+   ],
+   "peran_rantai": [
+    "manufaktur"
+   ],
+   "situs": "https://www.takuma.co.jp/",
+   "sumber": [
+    {
+     "url": "https://www.takuma.co.jp/",
+     "tingkat_bukti": "situs-sendiri",
+     "keterangan": "Penyedia teknologi global WTE (JP)"
+    }
+   ]
+  },
+  {
+   "nama": "Ebara Environmental Plant",
+   "nama_lain": [
+    "Ebara Environmental",
+    "EEP"
+   ],
+   "kategori": "internasional",
+   "kepakaran": [
+    "bioenergi"
+   ],
+   "peran_rantai": [
+    "manufaktur"
+   ],
+   "situs": null,
+   "sumber": [
+    {
+     "url": "https://en.wikipedia.org/wiki/Ebara_Corporation",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "keterangan": "Penyedia teknologi global WTE (JP)"
+    }
+   ]
+  },
+  {
+   "nama": "Kawasaki Heavy Industries",
+   "nama_lain": [
+    "Kawasaki",
+    "Kawasaki Environmental"
+   ],
+   "kategori": "internasional",
+   "kepakaran": [
+    "bioenergi"
+   ],
+   "peran_rantai": [
+    "manufaktur"
+   ],
+   "situs": "https://www.kawasaki.com/en-us/",
+   "sumber": [
+    {
+     "url": "https://www.kawasaki.com/en-us/",
+     "tingkat_bukti": "situs-sendiri",
+     "keterangan": "Penyedia teknologi global WTE (JP)"
+    }
+   ]
+  },
+  {
+   "nama": "Valmet",
+   "nama_lain": [
+    "Valmet Oyj"
+   ],
+   "kategori": "internasional",
+   "kepakaran": [
+    "bioenergi"
+   ],
+   "peran_rantai": [
+    "manufaktur"
+   ],
+   "situs": "https://www.valmet.com/",
+   "sumber": [
+    {
+     "url": "https://www.valmet.com/",
+     "tingkat_bukti": "situs-sendiri",
+     "keterangan": "Penyedia teknologi global WTE (FI)"
+    }
+   ]
+  },
+  {
+   "nama": "Doosan Lentjes",
+   "nama_lain": [
+    "Doosan Lentjes GmbH"
+   ],
+   "kategori": "internasional",
+   "kepakaran": [
+    "bioenergi"
+   ],
+   "peran_rantai": [
+    "manufaktur"
+   ],
+   "situs": "https://www.doosanlentjes.com/en",
+   "sumber": [
+    {
+     "url": "https://www.doosanlentjes.com/en",
+     "tingkat_bukti": "situs-sendiri",
+     "keterangan": "Penyedia teknologi global WTE (DE)"
+    }
+   ]
+  },
+  {
+   "nama": "Grandblue Environment",
+   "nama_lain": [
+    "Grandblue",
+    "Hanlan Huanjing"
+   ],
+   "kategori": "internasional",
+   "kepakaran": [
+    "bioenergi"
+   ],
+   "peran_rantai": [
+    "manufaktur"
+   ],
+   "situs": "https://www.grandblue.cn/zh/",
+   "sumber": [
+    {
+     "url": "https://www.grandblue.cn/zh/",
+     "tingkat_bukti": "situs-sendiri",
+     "keterangan": "Penyedia teknologi global WTE (CN)"
+    }
+   ]
+  },
+  {
+   "nama": "Tianjin Teda",
+   "nama_lain": [
+    "Tianjin TEDA Environmental Protection"
+   ],
+   "kategori": "internasional",
+   "kepakaran": [
+    "bioenergi"
+   ],
+   "peran_rantai": [
+    "manufaktur"
+   ],
+   "situs": null,
+   "sumber": [
+    {
+     "url": "https://www.liputan6.com/bisnis/read/8251038/daftar-nama-8-mitra-penggarap-proyek-listrik-dari-sampah-di-indonesia",
+     "tingkat_bukti": "media",
+     "keterangan": "Penyedia teknologi global WTE (CN)"
+    }
+   ]
+  },
+  {
+   "nama": "Reworld",
+   "nama_lain": [
+    "Covanta"
+   ],
+   "kategori": "internasional",
+   "kepakaran": [
+    "bioenergi"
+   ],
+   "peran_rantai": [
+    "manufaktur"
+   ],
+   "situs": "https://www.reworldwaste.com/",
+   "sumber": [
+    {
+     "url": "https://www.reworldwaste.com/",
+     "tingkat_bukti": "situs-sendiri",
+     "keterangan": "Penyedia teknologi global WTE (US)"
+    }
+   ]
+  },
+  {
+   "nama": "SUEZ",
+   "nama_lain": [
+    "Suez Environnement"
+   ],
+   "kategori": "internasional",
+   "kepakaran": [
+    "bioenergi"
+   ],
+   "peran_rantai": [
+    "manufaktur"
+   ],
+   "situs": "https://www.suez.com/en",
+   "sumber": [
+    {
+     "url": "https://www.suez.com/en",
+     "tingkat_bukti": "situs-sendiri",
+     "keterangan": "Penyedia teknologi global WTE (FR)"
+    }
+   ]
+  },
+  {
+   "nama": "Weltec Biopower",
+   "nama_lain": [
+    "WELTEC BIOPOWER"
+   ],
+   "kategori": "internasional",
+   "kepakaran": [
+    "bioenergi"
+   ],
+   "peran_rantai": [
+    "manufaktur"
+   ],
+   "situs": "https://www.weltec-biopower.com/de",
+   "sumber": [
+    {
+     "url": "https://www.weltec-biopower.com/de",
+     "tingkat_bukti": "situs-sendiri",
+     "keterangan": "Penyedia teknologi global WTE (DE)"
+    }
+   ]
+  },
+  {
+   "nama": "EnviTec Biogas",
+   "nama_lain": [
+    "Envitec"
+   ],
+   "kategori": "internasional",
+   "kepakaran": [
+    "bioenergi"
+   ],
+   "peran_rantai": [
+    "manufaktur"
+   ],
+   "situs": "https://www.envitec-biogas.com/",
+   "sumber": [
+    {
+     "url": "https://www.envitec-biogas.com/",
+     "tingkat_bukti": "situs-sendiri",
+     "keterangan": "Penyedia teknologi global WTE (DE)"
+    }
+   ]
+  },
+  {
+   "nama": "BTA International",
+   "nama_lain": [
+    "BTA"
+   ],
+   "kategori": "internasional",
+   "kepakaran": [
+    "bioenergi"
+   ],
+   "peran_rantai": [
+    "manufaktur"
+   ],
+   "situs": "https://bta-international.de/",
+   "sumber": [
+    {
+     "url": "https://bta-international.de/",
+     "tingkat_bukti": "situs-sendiri",
+     "keterangan": "Penyedia teknologi global WTE (DE)"
+    }
+   ]
+  },
+  {
+   "nama": "Biogest",
+   "nama_lain": [
+    "Biogest AG"
+   ],
+   "kategori": "internasional",
+   "kepakaran": [
+    "bioenergi"
+   ],
+   "peran_rantai": [
+    "manufaktur"
+   ],
+   "situs": "https://www.biogest.at/",
+   "sumber": [
+    {
+     "url": "https://www.biogest.at/",
+     "tingkat_bukti": "situs-sendiri",
+     "keterangan": "Penyedia teknologi global WTE (AT)"
+    }
+   ]
+  },
+  {
+   "nama": "Sumitomo SHI FW",
+   "nama_lain": [
+    "SHI FW"
+   ],
+   "kategori": "internasional",
+   "kepakaran": [
+    "bioenergi"
+   ],
+   "peran_rantai": [
+    "manufaktur"
+   ],
+   "situs": "https://www.shi-fw.com/",
+   "sumber": [
+    {
+     "url": "https://www.shi-fw.com/",
+     "tingkat_bukti": "situs-sendiri",
+     "keterangan": "Penyedia teknologi global WTE (FI)"
+    }
+   ]
+  },
+  {
+   "_asal": "global_surya",
+   "nama": "Adani Solar",
+   "nama_lain": [
+    "Mundra Solar",
+    "Adani Green Energy",
+    "Adani Green Energy Limited",
+    "AGEL"
+   ],
+   "kategori": "internasional",
+   "kepakaran": [
+    "plts",
+    "penyedia-teknologi-global"
+   ],
+   "peran_rantai": [
+    "penyedia-teknologi-global",
+    "modul"
+   ],
+   "situs": "https://www.adanigreenenergy.com/",
+   "sumber": [
+    {
+     "url": "https://www.wikidata.org/wiki/Q83473736",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "keterangan": "Wikidata (CC0)"
+    },
+    {
+     "url": "https://en.wikipedia.org/wiki/Adani_Green_Energy",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "keterangan": "Wikipedia (CC BY-SA)"
+    }
+   ]
+  },
+  {
+   "_asal": "global_surya",
+   "nama": "Aiko Solar",
+   "nama_lain": [
+    "AIKO",
+    "Aiko Solar Energy"
+   ],
+   "kategori": "internasional",
+   "kepakaran": [
+    "plts",
+    "penyedia-teknologi-global"
+   ],
+   "peran_rantai": [
+    "penyedia-teknologi-global",
+    "sel"
+   ],
+   "sumber": [
+    {
+     "url": "https://www.wikidata.org/wiki/Q134629226",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "keterangan": "Wikidata (CC0)"
+    }
+   ]
+  },
+  {
+   "_asal": "global_surya",
+   "nama": "Antai Solar",
+   "nama_lain": [
+    "Antaisolar",
+    "Antai",
+    "Antes"
+   ],
+   "kategori": "internasional",
+   "kepakaran": [
+    "plts",
+    "penyedia-teknologi-global"
+   ],
+   "peran_rantai": [
+    "penyedia-teknologi-global",
+    "tracker-mounting"
+   ],
+   "sumber": [
+    {
+     "url": "https://www.wikidata.org/wiki/Q571813",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "keterangan": "Wikidata (CC0)"
+    },
+    {
+     "url": "https://en.wikipedia.org/wiki/Antes_people",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "keterangan": "Wikipedia (CC BY-SA)"
+    }
+   ]
+  },
+  {
+   "_asal": "global_surya",
+   "nama": "APsystems",
+   "nama_lain": [
+    "Altenergy Power System"
+   ],
+   "kategori": "internasional",
+   "kepakaran": [
+    "plts",
+    "penyedia-teknologi-global"
+   ],
+   "peran_rantai": [
+    "penyedia-teknologi-global",
+    "mikroinverter"
+   ],
+   "sumber": [
+    {
+     "url": "https://www.wikidata.org/wiki/Q137399884",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "keterangan": "Wikidata (CC0)"
+    },
+    {
+     "url": "https://en.wikipedia.org/wiki/APsystems",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "keterangan": "Wikipedia (CC BY-SA)"
+    }
+   ]
+  },
+  {
+   "_asal": "global_surya",
+   "nama": "Arctech Solar",
+   "nama_lain": [
+    "Arctech",
+    "Jiangsu Zhongtian Arctech"
+   ],
+   "kategori": "internasional",
+   "kepakaran": [
+    "plts",
+    "penyedia-teknologi-global"
+   ],
+   "peran_rantai": [
+    "penyedia-teknologi-global",
+    "tracker-mounting"
+   ],
+   "situs": "https://arctech.fi",
+   "sumber": [
+    {
+     "url": "https://www.wikidata.org/wiki/Q1278953",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "keterangan": "Wikidata (CC0)"
+    },
+    {
+     "url": "https://en.wikipedia.org/wiki/Arctech_Helsinki_Shipyard",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "keterangan": "Wikipedia (CC BY-SA)"
+    }
+   ]
+  },
+  {
+   "_asal": "global_surya",
+   "nama": "Array Technologies",
+   "nama_lain": [
+    "Array Technologies Inc",
+    "ARRAY",
+    "ATI",
+    "Array Technologies Incorporated",
+    "Array Technology Incorporated"
+   ],
+   "kategori": "internasional",
+   "kepakaran": [
+    "plts",
+    "penyedia-teknologi-global"
+   ],
+   "peran_rantai": [
+    "penyedia-teknologi-global",
+    "tracker-mounting"
+   ],
+   "situs": "https://ati.amd.com/",
+   "sumber": [
+    {
+     "url": "https://www.wikidata.org/wiki/Q213849",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "keterangan": "Wikidata (CC0)"
+    },
+    {
+     "url": "https://en.wikipedia.org/wiki/ATI_Technologies",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "keterangan": "Wikipedia (CC BY-SA)"
+    }
+   ]
+  },
+  {
+   "_asal": "global_surya",
+   "nama": "Astronergy",
+   "nama_lain": [
+    "Chint Solar",
+    "Zhejiang Astronergy"
+   ],
+   "kategori": "internasional",
+   "kepakaran": [
+    "plts",
+    "penyedia-teknologi-global"
+   ],
+   "peran_rantai": [
+    "penyedia-teknologi-global",
+    "sel",
+    "modul"
+   ],
+   "sumber": [
+    {
+     "url": "https://www.wikidata.org/wiki/Q134632225",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "keterangan": "Wikidata (CC0)"
+    }
+   ]
+  },
+  {
+   "_asal": "global_surya",
+   "nama": "BYD Company",
+   "nama_lain": [
+    "BYD",
+    "BYD Energy Storage",
+    "BYD Company Limited",
+    "Build Your Dreams"
+   ],
+   "kategori": "internasional",
+   "kepakaran": [
+    "plts",
+    "penyedia-teknologi-global"
+   ],
+   "peran_rantai": [
+    "penyedia-teknologi-global",
+    "bess"
+   ],
+   "situs": "https://www.bydglobal.com/",
+   "sumber": [
+    {
+     "url": "https://www.wikidata.org/wiki/Q2608329",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "keterangan": "Wikidata (CC0)"
+    },
+    {
+     "url": "https://en.wikipedia.org/wiki/BYD_Company",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "keterangan": "Wikipedia (CC BY-SA)"
+    }
+   ]
+  },
+  {
+   "_asal": "global_surya",
+   "nama": "CALB",
+   "nama_lain": [
+    "China Aviation Lithium Battery",
+    "CALB Co., Ltd."
+   ],
+   "kategori": "internasional",
+   "kepakaran": [
+    "plts",
+    "penyedia-teknologi-global"
+   ],
+   "peran_rantai": [
+    "penyedia-teknologi-global",
+    "bess"
+   ],
+   "situs": "https://en.calb-tech.com/",
+   "sumber": [
+    {
+     "url": "https://www.wikidata.org/wiki/Q112276255",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "keterangan": "Wikidata (CC0)"
+    },
+    {
+     "url": "https://en.wikipedia.org/wiki/CALB",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "keterangan": "Wikipedia (CC BY-SA)"
+    }
+   ]
+  },
+  {
+   "_asal": "global_surya",
+   "nama": "Canadian Solar",
+   "nama_lain": [
+    "CSI Solar",
+    "e-Storage"
+   ],
+   "kategori": "internasional",
+   "kepakaran": [
+    "plts",
+    "penyedia-teknologi-global"
+   ],
+   "peran_rantai": [
+    "penyedia-teknologi-global",
+    "modul",
+    "bess"
+   ],
+   "situs": "https://www.canadian-solar.com",
+   "sumber": [
+    {
+     "url": "https://www.wikidata.org/wiki/Q1032353",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "keterangan": "Wikidata (CC0)"
+    },
+    {
+     "url": "https://en.wikipedia.org/wiki/Canadian_Solar",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "keterangan": "Wikipedia (CC BY-SA)"
+    }
+   ]
+  },
+  {
+   "_asal": "global_surya",
+   "nama": "Chint Power Systems",
+   "nama_lain": [
+    "CPS",
+    "Chint Power",
+    "Common Schools of Cincinnati"
+   ],
+   "kategori": "internasional",
+   "kepakaran": [
+    "plts",
+    "penyedia-teknologi-global"
+   ],
+   "peran_rantai": [
+    "penyedia-teknologi-global",
+    "inverter-string",
+    "inverter-sentral"
+   ],
+   "situs": "https://www.cps-k12.org/",
+   "sumber": [
+    {
+     "url": "https://www.wikidata.org/wiki/Q3065651",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "keterangan": "Wikidata (CC0)"
+    },
+    {
+     "url": "https://en.wikipedia.org/wiki/Cincinnati_Public_Schools",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "keterangan": "Wikipedia (CC BY-SA)"
+    }
+   ]
+  },
+  {
+   "_asal": "global_surya",
+   "nama": "Clenergy",
+   "nama_lain": [
+    "Clenergy PV",
+    "Clenergy Australia"
+   ],
+   "kategori": "internasional",
+   "kepakaran": [
+    "plts",
+    "penyedia-teknologi-global"
+   ],
+   "peran_rantai": [
+    "penyedia-teknologi-global",
+    "tracker-mounting"
+   ],
+   "sumber": [
+    {
+     "url": "https://www.wikidata.org/wiki/Q136149129",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "keterangan": "Wikidata (CC0)"
+    }
+   ]
+  },
+  {
+   "_asal": "global_surya",
+   "nama": "Contemporary Amperex Technology",
+   "nama_lain": [
+    "CATL",
+    "Contemporary Amperex Technology Ltd"
+   ],
+   "kategori": "internasional",
+   "kepakaran": [
+    "plts",
+    "penyedia-teknologi-global"
+   ],
+   "peran_rantai": [
+    "penyedia-teknologi-global",
+    "bess"
+   ],
+   "situs": "https://www.catl.com",
+   "sumber": [
+    {
+     "url": "https://www.wikidata.org/wiki/Q18653563",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "keterangan": "Wikidata (CC0)"
+    },
+    {
+     "url": "https://en.wikipedia.org/wiki/CATL",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "keterangan": "Wikipedia (CC BY-SA)"
+    }
+   ]
+  },
+  {
+   "_asal": "global_surya",
+   "nama": "Daqo New Energy",
+   "nama_lain": [
+    "Daqo",
+    "Daqo New Energy Corp."
+   ],
+   "kategori": "internasional",
+   "kepakaran": [
+    "plts",
+    "penyedia-teknologi-global"
+   ],
+   "peran_rantai": [
+    "penyedia-teknologi-global",
+    "polisilikon"
+   ],
+   "situs": "https://www.dqsolar.com",
+   "sumber": [
+    {
+     "url": "https://www.wikidata.org/wiki/Q16973267",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "keterangan": "Wikidata (CC0)"
+    },
+    {
+     "url": "https://en.wikipedia.org/wiki/Daqo_New_Energy",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "keterangan": "Wikipedia (CC BY-SA)"
+    }
+   ]
+  },
+  {
+   "_asal": "global_surya",
+   "nama": "DAS Solar",
+   "nama_lain": [
+    "Yuzhou DAS Solar"
+   ],
+   "kategori": "internasional",
+   "kepakaran": [
+    "plts",
+    "penyedia-teknologi-global"
+   ],
+   "peran_rantai": [
+    "penyedia-teknologi-global",
+    "sel",
+    "modul"
+   ],
+   "sumber": [
+    {
+     "url": "https://www.wikidata.org/wiki/Q112670455",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "keterangan": "Wikidata (CC0)"
+    }
+   ]
+  },
+  {
+   "_asal": "global_surya",
+   "nama": "Delta Electronics",
+   "nama_lain": [
+    "Delta",
+    "Delta (Taiwan)",
+    "Delta Electronics, Inc."
+   ],
+   "kategori": "internasional",
+   "kepakaran": [
+    "plts",
+    "penyedia-teknologi-global"
+   ],
+   "peran_rantai": [
+    "penyedia-teknologi-global",
+    "inverter-string",
+    "inverter-sentral",
+    "bess"
+   ],
+   "situs": "https://www.deltaww.com/",
+   "sumber": [
+    {
+     "url": "https://www.wikidata.org/wiki/Q5254620",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "keterangan": "Wikidata (CC0)"
+    },
+    {
+     "url": "https://en.wikipedia.org/wiki/Delta_Electronics",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "keterangan": "Wikipedia (CC BY-SA)"
+    }
+   ]
+  },
+  {
+   "_asal": "global_surya",
+   "nama": "East Hope Group",
+   "nama_lain": [
+    "East Hope"
+   ],
+   "kategori": "internasional",
+   "kepakaran": [
+    "plts",
+    "penyedia-teknologi-global"
+   ],
+   "peran_rantai": [
+    "penyedia-teknologi-global",
+    "polisilikon"
+   ],
+   "situs": "https://easthope.cn",
+   "sumber": [
+    {
+     "url": "https://www.wikidata.org/wiki/Q120269265",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "keterangan": "Wikidata (CC0)"
+    }
+   ]
+  },
+  {
+   "_asal": "global_surya",
+   "nama": "Emmvee Photovoltaic Power",
+   "nama_lain": [
+    "Emmvee"
+   ],
+   "kategori": "internasional",
+   "kepakaran": [
+    "plts",
+    "penyedia-teknologi-global"
+   ],
+   "peran_rantai": [
+    "penyedia-teknologi-global",
+    "sel",
+    "modul"
+   ],
+   "sumber": [
+    {
+     "url": "https://www.wikidata.org/wiki/Q134479354",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "keterangan": "Wikidata (CC0)"
+    },
+    {
+     "url": "https://en.wikipedia.org/wiki/Emmvee_Group",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "keterangan": "Wikipedia (CC BY-SA)"
+    }
+   ]
+  },
+  {
+   "_asal": "global_surya",
+   "nama": "Enphase Energy",
+   "nama_lain": [
+    "Enphase"
+   ],
+   "kategori": "internasional",
+   "kepakaran": [
+    "plts",
+    "penyedia-teknologi-global"
+   ],
+   "peran_rantai": [
+    "penyedia-teknologi-global",
+    "mikroinverter",
+    "bess"
+   ],
+   "situs": "https://enphase.com",
+   "sumber": [
+    {
+     "url": "https://www.wikidata.org/wiki/Q17012234",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "keterangan": "Wikidata (CC0)"
+    },
+    {
+     "url": "https://en.wikipedia.org/wiki/Enphase_Energy",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "keterangan": "Wikipedia (CC BY-SA)"
+    }
+   ]
+  },
+  {
+   "_asal": "global_surya",
+   "nama": "Envision AESC",
+   "nama_lain": [
+    "AESC",
+    "Envision Energy",
+    "United States of America Standards Institute",
+    "USASI",
+    "American Standards Association",
+    "ASA"
+   ],
+   "kategori": "internasional",
+   "kepakaran": [
+    "plts",
+    "penyedia-teknologi-global"
+   ],
+   "peran_rantai": [
+    "penyedia-teknologi-global",
+    "bess"
+   ],
+   "situs": "https://www.ansi.org/",
+   "sumber": [
+    {
+     "url": "https://www.wikidata.org/wiki/Q180003",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "keterangan": "Wikidata (CC0)"
+    },
+    {
+     "url": "https://en.wikipedia.org/wiki/American_National_Standards_Institute",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "keterangan": "Wikipedia (CC BY-SA)"
+    }
+   ]
+  },
+  {
+   "_asal": "global_surya",
+   "nama": "EVE Energy",
+   "nama_lain": [
+    "EVE",
+    "Eve Energy Co"
+   ],
+   "kategori": "internasional",
+   "kepakaran": [
+    "plts",
+    "penyedia-teknologi-global"
+   ],
+   "peran_rantai": [
+    "penyedia-teknologi-global",
+    "bess"
+   ],
+   "situs": "https://www.evebattery.com",
+   "sumber": [
+    {
+     "url": "https://www.wikidata.org/wiki/Q105966435",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "keterangan": "Wikidata (CC0)"
+    },
+    {
+     "url": "https://en.wikipedia.org/wiki/EVE_Energy",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "keterangan": "Wikipedia (CC BY-SA)"
+    }
+   ]
+  },
+  {
+   "_asal": "global_surya",
+   "nama": "FIMER",
+   "nama_lain": [
+    "ABB solar inverters",
+    "ABB Power Conversion"
+   ],
+   "kategori": "internasional",
+   "kepakaran": [
+    "plts",
+    "penyedia-teknologi-global"
+   ],
+   "peran_rantai": [
+    "penyedia-teknologi-global",
+    "inverter-string",
+    "inverter-sentral"
+   ],
+   "sumber": [
+    {
+     "url": "https://www.wikidata.org/wiki/Q1239317",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "keterangan": "Wikidata (CC0)"
+    },
+    {
+     "url": "https://en.wikipedia.org/wiki/Fimer",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "keterangan": "Wikipedia (CC BY-SA)"
+    }
+   ]
+  },
+  {
+   "_asal": "global_surya",
+   "nama": "First Solar",
+   "nama_lain": [
+    "First Solar Inc",
+    "FSLR"
+   ],
+   "kategori": "internasional",
+   "kepakaran": [
+    "plts",
+    "penyedia-teknologi-global"
+   ],
+   "peran_rantai": [
+    "penyedia-teknologi-global",
+    "modul"
+   ],
+   "situs": "https://www.firstsolar.com/",
+   "sumber": [
+    {
+     "url": "https://www.wikidata.org/wiki/Q1138888",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "keterangan": "Wikidata (CC0)"
+    },
+    {
+     "url": "https://en.wikipedia.org/wiki/First_Solar",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "keterangan": "Wikipedia (CC BY-SA)"
+    }
+   ]
+  },
+  {
+   "_asal": "global_surya",
+   "nama": "Flat Glass Group",
+   "nama_lain": [
+    "Flat Glass",
+    "Zhejiang Flat Solar Energy",
+    "Flat Glass Group Co., Ltd."
+   ],
+   "kategori": "internasional",
+   "kepakaran": [
+    "plts",
+    "penyedia-teknologi-global"
+   ],
+   "peran_rantai": [
+    "penyedia-teknologi-global",
+    "kaca"
+   ],
+   "situs": "https://www.flatgroup.com.cn",
+   "sumber": [
+    {
+     "url": "https://www.wikidata.org/wiki/Q25176857",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "keterangan": "Wikidata (CC0)"
+    },
+    {
+     "url": "https://en.wikipedia.org/wiki/Flat_Glass_Group",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "keterangan": "Wikipedia (CC BY-SA)"
+    }
+   ]
+  },
+  {
+   "_asal": "global_surya",
+   "nama": "Fluence Energy",
+   "nama_lain": [
+    "Fluence"
+   ],
+   "kategori": "internasional",
+   "kepakaran": [
+    "plts",
+    "penyedia-teknologi-global"
+   ],
+   "peran_rantai": [
+    "penyedia-teknologi-global",
+    "bess"
+   ],
+   "situs": "https://www.fluence.eu/",
+   "sumber": [
+    {
+     "url": "https://www.wikidata.org/wiki/Q131607712",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "keterangan": "Wikidata (CC0)"
+    }
+   ]
+  },
+  {
+   "_asal": "global_surya",
+   "nama": "Fronius International",
+   "nama_lain": [
+    "Fronius"
+   ],
+   "kategori": "internasional",
+   "kepakaran": [
+    "plts",
+    "penyedia-teknologi-global"
+   ],
+   "peran_rantai": [
+    "penyedia-teknologi-global",
+    "inverter-string"
+   ],
+   "situs": "https://www.fronius.com/",
+   "sumber": [
+    {
+     "url": "https://www.wikidata.org/wiki/Q1469941",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "keterangan": "Wikidata (CC0)"
+    },
+    {
+     "url": "https://en.wikipedia.org/wiki/Fronius_International",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "keterangan": "Wikipedia (CC BY-SA)"
+    }
+   ]
+  },
+  {
+   "_asal": "global_surya",
+   "nama": "GoodWe",
+   "nama_lain": [
+    "Jiangsu GoodWe Power Supply Technology",
+    "GoodWe imprint, GoodWe official imprint page"
+   ],
+   "kategori": "internasional",
+   "kepakaran": [
+    "plts",
+    "penyedia-teknologi-global"
+   ],
+   "peran_rantai": [
+    "penyedia-teknologi-global",
+    "inverter-string",
+    "bess"
+   ],
+   "situs": "https://en.goodwe.com/imprint",
+   "sumber": [
+    {
+     "url": "https://www.wikidata.org/wiki/Q135082190",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "keterangan": "Wikidata (CC0)"
+    }
+   ]
+  },
+  {
+   "_asal": "global_surya",
+   "nama": "Gotion High-tech",
+   "nama_lain": [
+    "Gotion",
+    "Guoxuan High-Tech",
+    "Hefei Guoxuan Hi-Tech Power Energy",
+    "Gotion High-Tech Co., Ltd."
+   ],
+   "kategori": "internasional",
+   "kepakaran": [
+    "plts",
+    "penyedia-teknologi-global"
+   ],
+   "peran_rantai": [
+    "penyedia-teknologi-global",
+    "bess"
+   ],
+   "situs": "https://www.gotion.com.cn",
+   "sumber": [
+    {
+     "url": "https://www.wikidata.org/wiki/Q67932360",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "keterangan": "Wikidata (CC0)"
+    },
+    {
+     "url": "https://en.wikipedia.org/wiki/Gotion",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "keterangan": "Wikipedia (CC BY-SA)"
+    }
+   ]
+  },
+  {
+   "_asal": "global_surya",
+   "nama": "Great Power Energy",
+   "nama_lain": [
+    "Great Power",
+    "Shenzhen Greatpower",
+    "great powers",
+    "major power",
+    "major powers"
+   ],
+   "kategori": "internasional",
+   "kepakaran": [
+    "plts",
+    "penyedia-teknologi-global"
+   ],
+   "peran_rantai": [
+    "penyedia-teknologi-global",
+    "bess"
+   ],
+   "sumber": [
+    {
+     "url": "https://www.wikidata.org/wiki/Q185145",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "keterangan": "Wikidata (CC0)"
+    },
+    {
+     "url": "https://en.wikipedia.org/wiki/Great_power",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "keterangan": "Wikipedia (CC BY-SA)"
+    }
+   ]
+  },
+  {
+   "_asal": "global_surya",
+   "nama": "Gstar Solar",
+   "nama_lain": [
+    "Gstar",
+    "G-star",
+    "G-Star RAW",
+    "G Star",
+    "GStar"
+   ],
+   "kategori": "internasional",
+   "kepakaran": [
+    "plts",
+    "penyedia-teknologi-global"
+   ],
+   "peran_rantai": [
+    "penyedia-teknologi-global",
+    "modul"
+   ],
+   "situs": "https://www.g-star.com/",
+   "sumber": [
+    {
+     "url": "https://www.wikidata.org/wiki/Q1484081",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "keterangan": "Wikidata (CC0)"
+    },
+    {
+     "url": "https://en.wikipedia.org/wiki/G-Star_(company)",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "keterangan": "Wikipedia (CC BY-SA)"
+    }
+   ]
+  },
+  {
+   "_asal": "global_surya",
+   "nama": "Hanwha Qcells",
+   "nama_lain": [
+    "Qcells",
+    "Q CELLS",
+    "Hanwha Solutions",
+    "Q-CELLS"
+   ],
+   "kategori": "internasional",
+   "kepakaran": [
+    "plts",
+    "penyedia-teknologi-global"
+   ],
+   "peran_rantai": [
+    "penyedia-teknologi-global",
+    "sel"
+   ],
+   "situs": "https://qcells.com/",
+   "sumber": [
+    {
+     "url": "https://www.wikidata.org/wiki/Q265176",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "keterangan": "Wikidata (CC0)"
+    },
+    {
+     "url": "https://en.wikipedia.org/wiki/Qcells",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "keterangan": "Wikipedia (CC BY-SA)"
+    }
+   ]
+  },
+  {
+   "_asal": "global_surya",
+   "nama": "Hemlock Semiconductor",
+   "nama_lain": [
+    "Hemlock Semiconductor Group"
+   ],
+   "kategori": "internasional",
+   "kepakaran": [
+    "plts",
+    "penyedia-teknologi-global"
+   ],
+   "peran_rantai": [
+    "penyedia-teknologi-global",
+    "polisilikon"
+   ],
+   "sumber": [
+    {
+     "url": "https://www.wikidata.org/wiki/Q5712288",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "keterangan": "Wikidata (CC0)"
+    },
+    {
+     "url": "https://en.wikipedia.org/wiki/Hemlock_Semiconductor",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "keterangan": "Wikipedia (CC BY-SA)"
+    }
+   ]
+  },
+  {
+   "_asal": "global_surya",
+   "nama": "Huawei",
+   "nama_lain": [
+    "Huawei Digital Power",
+    "Huawei FusionSolar",
+    "Huawei Technologies",
+    "Huawei Technologies Co., Ltd.",
+    "Huawei Technologies Co., Ltd. (Guangdong)"
+   ],
+   "kategori": "internasional",
+   "kepakaran": [
+    "plts",
+    "penyedia-teknologi-global"
+   ],
+   "peran_rantai": [
+    "penyedia-teknologi-global",
+    "inverter-string",
+    "inverter-sentral",
+    "bess"
+   ],
+   "situs": "https://www.huawei.com/",
+   "sumber": [
+    {
+     "url": "https://www.wikidata.org/wiki/Q160120",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "keterangan": "Wikidata (CC0)"
+    },
+    {
+     "url": "https://en.wikipedia.org/wiki/Huawei",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "keterangan": "Wikipedia (CC BY-SA)"
+    }
+   ]
+  },
+  {
+   "_asal": "global_surya",
+   "nama": "Ingeteam",
+   "nama_lain": [
+    "Ingeteam Power Technology"
+   ],
+   "kategori": "internasional",
+   "kepakaran": [
+    "plts",
+    "penyedia-teknologi-global"
+   ],
+   "peran_rantai": [
+    "penyedia-teknologi-global",
+    "inverter-string",
+    "inverter-sentral"
+   ],
+   "situs": "https://www.ingeteam.com/",
+   "sumber": [
+    {
+     "url": "https://www.wikidata.org/wiki/Q9008479",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "keterangan": "Wikidata (CC0)"
+    }
+   ]
+  },
+  {
+   "_asal": "global_surya",
+   "nama": "Irico Group",
+   "nama_lain": [
+    "Irico",
+    "Irico Group New Energy",
+    "IRICO Group Corporation"
+   ],
+   "kategori": "internasional",
+   "kepakaran": [
+    "plts",
+    "penyedia-teknologi-global"
+   ],
+   "peran_rantai": [
+    "penyedia-teknologi-global",
+    "kaca"
+   ],
+   "sumber": [
+    {
+     "url": "https://www.wikidata.org/wiki/Q5973509",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "keterangan": "Wikidata (CC0)"
+    }
+   ]
+  },
+  {
+   "_asal": "global_surya",
+   "nama": "JA Solar Technology",
+   "nama_lain": [
+    "JA Solar",
+    "JASO",
+    "JA Solar Technology Co., Ltd."
+   ],
+   "kategori": "internasional",
+   "kepakaran": [
+    "plts",
+    "penyedia-teknologi-global"
+   ],
+   "peran_rantai": [
+    "penyedia-teknologi-global",
+    "wafer",
+    "sel",
+    "modul"
+   ],
+   "situs": "https://www.jasolar.com",
+   "sumber": [
+    {
+     "url": "https://www.wikidata.org/wiki/Q6107753",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "keterangan": "Wikidata (CC0)"
+    },
+    {
+     "url": "https://en.wikipedia.org/wiki/JA_Solar_Holdings",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "keterangan": "Wikipedia (CC BY-SA)"
+    }
+   ]
+  },
+  {
+   "_asal": "global_surya",
+   "nama": "Jinergy",
+   "nama_lain": [
+    "Jinergy Co",
+    "Jinneng Clean Energy Technology",
+    "Jinneng Energy",
+    "Jinneng Clean Energy Technology Ltd"
+   ],
+   "kategori": "internasional",
+   "kepakaran": [
+    "plts",
+    "penyedia-teknologi-global"
+   ],
+   "peran_rantai": [
+    "penyedia-teknologi-global",
+    "modul"
+   ],
+   "situs": "https://www.jinergy.com",
+   "sumber": [
+    {
+     "url": "https://www.wikidata.org/wiki/Q107518426",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "keterangan": "Wikidata (CC0)"
+    }
+   ]
+  },
+  {
+   "_asal": "global_surya",
+   "nama": "JinkoSolar",
+   "nama_lain": [
+    "Jinko Solar",
+    "JinkoSolar Holding"
+   ],
+   "kategori": "internasional",
+   "kepakaran": [
+    "plts",
+    "penyedia-teknologi-global"
+   ],
+   "peran_rantai": [
+    "penyedia-teknologi-global",
+    "modul"
+   ],
+   "situs": "https://www.jinkosolar.com/",
+   "sumber": [
+    {
+     "url": "https://www.wikidata.org/wiki/Q20182011",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "keterangan": "Wikidata (CC0)"
+    },
+    {
+     "url": "https://en.wikipedia.org/wiki/JinkoSolar",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "keterangan": "Wikipedia (CC BY-SA)"
+    }
+   ]
+  },
+  {
+   "_asal": "global_surya",
+   "nama": "KACO new energy",
+   "nama_lain": [
+    "KACO"
+   ],
+   "kategori": "internasional",
+   "kepakaran": [
+    "plts",
+    "penyedia-teknologi-global"
+   ],
+   "peran_rantai": [
+    "penyedia-teknologi-global",
+    "inverter-string"
+   ],
+   "situs": "https://www.kaco-newenergy.de",
+   "sumber": [
+    {
+     "url": "https://www.wikidata.org/wiki/Q1718358",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "keterangan": "Wikidata (CC0)"
+    }
+   ]
+  },
+  {
+   "_asal": "global_surya",
+   "nama": "Kokam",
+   "nama_lain": [
+    "Kokam Co"
+   ],
+   "kategori": "internasional",
+   "kepakaran": [
+    "plts",
+    "penyedia-teknologi-global"
+   ],
+   "peran_rantai": [
+    "penyedia-teknologi-global",
+    "bess"
+   ],
+   "situs": "https://www.kokam.com",
+   "sumber": [
+    {
+     "url": "https://www.wikidata.org/wiki/Q1565320",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "keterangan": "Wikidata (CC0)"
+    }
+   ]
+  },
+  {
+   "_asal": "global_surya",
+   "nama": "Kyocera",
+   "nama_lain": [
+    "Kyocera Solar",
+    "Kyocera Corporation",
+    "KYOCERA Corporation (Kyoto)"
+   ],
+   "kategori": "internasional",
+   "kepakaran": [
+    "plts",
+    "penyedia-teknologi-global"
+   ],
+   "peran_rantai": [
+    "penyedia-teknologi-global",
+    "modul"
+   ],
+   "situs": "https://global.kyocera.com/",
+   "sumber": [
+    {
+     "url": "https://www.wikidata.org/wiki/Q745099",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "keterangan": "Wikidata (CC0)"
+    },
+    {
+     "url": "https://en.wikipedia.org/wiki/Kyocera",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "keterangan": "Wikipedia (CC BY-SA)"
+    }
+   ]
+  },
+  {
+   "_asal": "global_surya",
+   "nama": "Leclanche",
+   "nama_lain": [
+    "Leclanché"
+   ],
+   "kategori": "internasional",
+   "kepakaran": [
+    "plts",
+    "penyedia-teknologi-global"
+   ],
+   "peran_rantai": [
+    "penyedia-teknologi-global",
+    "bess"
+   ],
+   "situs": "https://www.leclanche.ch/",
+   "sumber": [
+    {
+     "url": "https://www.wikidata.org/wiki/Q680683",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "keterangan": "Wikidata (CC0)"
+    },
+    {
+     "url": "https://en.wikipedia.org/wiki/Leclanch%C3%A9",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "keterangan": "Wikipedia (CC BY-SA)"
+    }
+   ]
+  },
+  {
+   "_asal": "global_surya",
+   "nama": "Lishen",
+   "nama_lain": [
+    "Tianjin Lishen Battery",
+    "Lishen Battery",
+    "Tianjin Lishen Battery Joint-Stock Co., Ltd."
+   ],
+   "kategori": "internasional",
+   "kepakaran": [
+    "plts",
+    "penyedia-teknologi-global"
+   ],
+   "peran_rantai": [
+    "penyedia-teknologi-global",
+    "bess"
+   ],
+   "situs": "https://www.lishen.com.cn",
+   "sumber": [
+    {
+     "url": "https://www.wikidata.org/wiki/Q137546781",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "keterangan": "Wikidata (CC0)"
+    }
+   ]
+  },
+  {
+   "_asal": "global_surya",
+   "nama": "LONGi Green Energy Technology",
+   "nama_lain": [
+    "LONGi",
+    "Longi Solar",
+    "Xi'an Longi Silicon Materials Corporation"
+   ],
+   "kategori": "internasional",
+   "kepakaran": [
+    "plts",
+    "penyedia-teknologi-global"
+   ],
+   "peran_rantai": [
+    "penyedia-teknologi-global",
+    "polisilikon",
+    "wafer",
+    "sel",
+    "modul"
+   ],
+   "situs": "https://www.longi.com/",
+   "sumber": [
+    {
+     "url": "https://www.wikidata.org/wiki/Q28207127",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "keterangan": "Wikidata (CC0)"
+    },
+    {
+     "url": "https://en.wikipedia.org/wiki/LONGi",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "keterangan": "Wikipedia (CC BY-SA)"
+    }
+   ]
+  },
+  {
+   "_asal": "global_surya",
+   "nama": "Maxeon Solar Technologies",
+   "nama_lain": [
+    "SunPower",
+    "Maxeon",
+    "Maxeon Solar Technologies, Ltd."
+   ],
+   "kategori": "internasional",
+   "kepakaran": [
+    "plts",
+    "penyedia-teknologi-global"
+   ],
+   "peran_rantai": [
+    "penyedia-teknologi-global",
+    "sel",
+    "modul"
+   ],
+   "situs": "https://maxeon.com/",
+   "sumber": [
+    {
+     "url": "https://www.wikidata.org/wiki/Q121832886",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "keterangan": "Wikidata (CC0)"
+    },
+    {
+     "url": "https://en.wikipedia.org/wiki/Maxeon_Solar_Technologies",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "keterangan": "Wikipedia (CC BY-SA)"
+    }
+   ]
+  },
+  {
+   "_asal": "global_surya",
+   "nama": "Meyer Burger Technology",
+   "nama_lain": [
+    "Meyer Burger"
+   ],
+   "kategori": "internasional",
+   "kepakaran": [
+    "plts",
+    "penyedia-teknologi-global"
+   ],
+   "peran_rantai": [
+    "penyedia-teknologi-global",
+    "sel",
+    "modul"
+   ],
+   "sumber": [
+    {
+     "url": "https://www.wikidata.org/wiki/Q1288880",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "keterangan": "Wikidata (CC0)"
+    },
+    {
+     "url": "https://en.wikipedia.org/wiki/Meyer_Burger",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "keterangan": "Wikipedia (CC BY-SA)"
+    }
+   ]
+  },
+  {
+   "_asal": "global_surya",
+   "nama": "Nextracker",
+   "nama_lain": [
+    "Nextracker Inc",
+    "Nextracker Holdings"
+   ],
+   "kategori": "internasional",
+   "kepakaran": [
+    "plts",
+    "penyedia-teknologi-global"
+   ],
+   "peran_rantai": [
+    "penyedia-teknologi-global",
+    "tracker-mounting"
+   ],
+   "situs": "https://www.nextracker.com/",
+   "sumber": [
+    {
+     "url": "https://www.wikidata.org/wiki/Q131538133",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "keterangan": "Wikidata (CC0)"
+    },
+    {
+     "url": "https://en.wikipedia.org/wiki/Nextpower",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "keterangan": "Wikipedia (CC BY-SA)"
+    }
+   ]
+  },
+  {
+   "_asal": "global_surya",
+   "nama": "OCI Holdings",
+   "nama_lain": [
+    "OCI Co",
+    "OCI Company",
+    "OCI Malaysia"
+   ],
+   "kategori": "internasional",
+   "kepakaran": [
+    "plts",
+    "penyedia-teknologi-global"
+   ],
+   "peran_rantai": [
+    "penyedia-teknologi-global",
+    "polisilikon"
+   ],
+   "situs": "https://www.oci.co.kr",
+   "sumber": [
+    {
+     "url": "https://www.wikidata.org/wiki/Q497825",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "keterangan": "Wikidata (CC0)"
+    },
+    {
+     "url": "https://en.wikipedia.org/wiki/OCI_(company)",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "keterangan": "Wikipedia (CC BY-SA)"
+    }
+   ]
+  },
+  {
+   "_asal": "global_surya",
+   "nama": "Panasonic",
+   "nama_lain": [
+    "Panasonic Energy",
+    "Panasonic Holdings",
+    "Matsushita Electric Industrial Co., Ltd."
+   ],
+   "kategori": "internasional",
+   "kepakaran": [
+    "plts",
+    "penyedia-teknologi-global"
+   ],
+   "peran_rantai": [
+    "penyedia-teknologi-global",
+    "modul",
+    "bess"
+   ],
+   "situs": "https://www.panasonic.com/",
+   "sumber": [
+    {
+     "url": "https://www.wikidata.org/wiki/Q53247",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "keterangan": "Wikidata (CC0)"
+    },
+    {
+     "url": "https://en.wikipedia.org/wiki/Panasonic",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "keterangan": "Wikipedia (CC BY-SA)"
+    }
+   ]
+  },
+  {
+   "_asal": "global_surya",
+   "nama": "Power Electronics",
+   "nama_lain": [
+    "Power Electronics Espana",
+    "Power Electronics SL"
+   ],
+   "kategori": "internasional",
+   "kepakaran": [
+    "plts",
+    "penyedia-teknologi-global"
+   ],
+   "peran_rantai": [
+    "penyedia-teknologi-global",
+    "inverter-sentral",
+    "inverter-string",
+    "bess"
+   ],
+   "sumber": [
+    {
+     "url": "https://www.wikidata.org/wiki/Q593143",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "keterangan": "Wikidata (CC0)"
+    },
+    {
+     "url": "https://en.wikipedia.org/wiki/Power_electronics",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "keterangan": "Wikipedia (CC BY-SA)"
+    }
+   ]
+  },
+  {
+   "_asal": "global_surya",
+   "nama": "PV Hardware",
+   "nama_lain": [
+    "PVH",
+    "PV Hardware Solutions",
+    "Phillips-Van Heusen",
+    "Phillips-Van Heusen Corporation",
+    "Phillips-Jones Corporation"
+   ],
+   "kategori": "internasional",
+   "kepakaran": [
+    "plts",
+    "penyedia-teknologi-global"
+   ],
+   "peran_rantai": [
+    "penyedia-teknologi-global",
+    "tracker-mounting"
+   ],
+   "situs": "https://www.pvh.com/",
+   "sumber": [
+    {
+     "url": "https://www.wikidata.org/wiki/Q1132272",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "keterangan": "Wikidata (CC0)"
+    },
+    {
+     "url": "https://en.wikipedia.org/wiki/PVH_Corp.",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "keterangan": "Wikipedia (CC BY-SA)"
+    }
+   ]
+  },
+  {
+   "_asal": "global_surya",
+   "nama": "Pylontech",
+   "nama_lain": [
+    "Pylon Technologies"
+   ],
+   "kategori": "internasional",
+   "kepakaran": [
+    "plts",
+    "penyedia-teknologi-global"
+   ],
+   "peran_rantai": [
+    "penyedia-teknologi-global",
+    "bess"
+   ],
+   "situs": "https://en.pylontech.com.cn/",
+   "sumber": [
+    {
+     "url": "https://www.wikidata.org/wiki/Q136891861",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "keterangan": "Wikidata (CC0)"
+    }
+   ]
+  },
+  {
+   "_asal": "global_surya",
+   "nama": "REC Group",
+   "nama_lain": [
+    "REC Solar",
+    "REC Solar Holdings"
+   ],
+   "kategori": "internasional",
+   "kepakaran": [
+    "plts",
+    "penyedia-teknologi-global"
+   ],
+   "peran_rantai": [
+    "penyedia-teknologi-global",
+    "sel",
+    "modul"
+   ],
+   "sumber": [
+    {
+     "url": "https://www.wikidata.org/wiki/Q54964066",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "keterangan": "Wikidata (CC0)"
+    }
+   ]
+  },
+  {
+   "_asal": "global_surya",
+   "nama": "REC Silicon",
+   "nama_lain": [
+    "REC Silicon ASA"
+   ],
+   "kategori": "internasional",
+   "kepakaran": [
+    "plts",
+    "penyedia-teknologi-global"
+   ],
+   "peran_rantai": [
+    "penyedia-teknologi-global",
+    "polisilikon"
+   ],
+   "situs": "https://www.recsilicon.com",
+   "sumber": [
+    {
+     "url": "https://www.wikidata.org/wiki/Q21950804",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "keterangan": "Wikidata (CC0)"
+    }
+   ]
+  },
+  {
+   "_asal": "global_surya",
+   "nama": "REPT Battero",
+   "nama_lain": [
+    "REPT",
+    "REPT BATTERO Energy Co., Ltd"
+   ],
+   "kategori": "internasional",
+   "kepakaran": [
+    "plts",
+    "penyedia-teknologi-global"
+   ],
+   "peran_rantai": [
+    "penyedia-teknologi-global",
+    "bess"
+   ],
+   "situs": "https://www.chinarept.com/de",
+   "sumber": [
+    {
+     "url": "https://www.wikidata.org/wiki/Q130746421",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "keterangan": "Wikidata (CC0)"
+    }
+   ]
+  },
+  {
+   "_asal": "global_surya",
+   "nama": "Risen Energy",
+   "nama_lain": [
+    "Risen Energy Co"
+   ],
+   "kategori": "internasional",
+   "kepakaran": [
+    "plts",
+    "penyedia-teknologi-global"
+   ],
+   "peran_rantai": [
+    "penyedia-teknologi-global",
+    "modul"
+   ],
+   "sumber": [
+    {
+     "url": "https://www.wikidata.org/wiki/Q19855311",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "keterangan": "Wikidata (CC0)"
+    }
+   ]
+  },
+  {
+   "_asal": "global_surya",
+   "nama": "Saft",
+   "nama_lain": [
+    "Saft Groupe"
+   ],
+   "kategori": "internasional",
+   "kepakaran": [
+    "plts",
+    "penyedia-teknologi-global"
+   ],
+   "peran_rantai": [
+    "penyedia-teknologi-global",
+    "bess"
+   ],
+   "situs": "https://saft.com/en",
+   "sumber": [
+    {
+     "url": "https://www.wikidata.org/wiki/Q2211570",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "keterangan": "Wikidata (CC0)"
+    },
+    {
+     "url": "https://en.wikipedia.org/wiki/Saft_(company)",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "keterangan": "Wikipedia (CC BY-SA)"
+    }
+   ]
+  },
+  {
+   "_asal": "global_surya",
+   "nama": "SAJ Electric",
+   "nama_lain": [
+    "SAJ",
+    "Guangzhou Sanjing Electric"
+   ],
+   "kategori": "internasional",
+   "kepakaran": [
+    "plts",
+    "penyedia-teknologi-global"
+   ],
+   "peran_rantai": [
+    "penyedia-teknologi-global",
+    "inverter-string",
+    "bess"
+   ],
+   "situs": "https://southasiajournal.net",
+   "sumber": [
+    {
+     "url": "https://www.wikidata.org/wiki/Q137882902",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "keterangan": "Wikidata (CC0)"
+    }
+   ]
+  },
+  {
+   "_asal": "global_surya",
+   "nama": "Samsung SDI",
+   "nama_lain": [
+    "SDI",
+    "Samsung SDI Co., Ltd.",
+    "Samsung SDI Co.",
+    "Samsung SDD Co.",
+    "Samsung Display Devices"
+   ],
+   "kategori": "internasional",
+   "kepakaran": [
+    "plts",
+    "penyedia-teknologi-global"
+   ],
+   "peran_rantai": [
+    "penyedia-teknologi-global",
+    "bess"
+   ],
+   "situs": "https://www.samsungsdi.co.kr",
+   "sumber": [
+    {
+     "url": "https://www.wikidata.org/wiki/Q21120876",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "keterangan": "Wikidata (CC0)"
+    },
+    {
+     "url": "https://en.wikipedia.org/wiki/Samsung_SDI",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "keterangan": "Wikipedia (CC BY-SA)"
+    }
+   ]
+  },
+  {
+   "_asal": "global_surya",
+   "nama": "Schletter Group",
+   "nama_lain": [
+    "Schletter"
+   ],
+   "kategori": "internasional",
+   "kepakaran": [
+    "plts",
+    "penyedia-teknologi-global"
+   ],
+   "peran_rantai": [
+    "penyedia-teknologi-global",
+    "tracker-mounting"
+   ],
+   "situs": "https://www.schletter.de",
+   "sumber": [
+    {
+     "url": "https://www.wikidata.org/wiki/Q2239369",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "keterangan": "Wikidata (CC0)"
+    }
+   ]
+  },
+  {
+   "_asal": "global_surya",
+   "nama": "Schneider Electric",
+   "nama_lain": [
+    "Schneider",
+    "SE",
+    "Schneider & Compagnie",
+    "Schneider Electric Industries",
+    "Schneider Creusot"
+   ],
+   "kategori": "internasional",
+   "kepakaran": [
+    "plts",
+    "penyedia-teknologi-global"
+   ],
+   "peran_rantai": [
+    "penyedia-teknologi-global",
+    "inverter-string",
+    "bess"
+   ],
+   "situs": "https://www.se.com",
+   "sumber": [
+    {
+     "url": "https://www.wikidata.org/wiki/Q49053",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "keterangan": "Wikidata (CC0)"
+    },
+    {
+     "url": "https://en.wikipedia.org/wiki/Schneider_Electric",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "keterangan": "Wikipedia (CC BY-SA)"
+    }
+   ]
+  },
+  {
+   "_asal": "global_surya",
+   "nama": "Sharp Corporation",
+   "nama_lain": [
+    "Sharp Solar",
+    "Sharp",
+    "Sharp Electronics",
+    "Sharp corporation electronics",
+    "SHARP KABUSHIKI KAISHA (Sakai)"
+   ],
+   "kategori": "internasional",
+   "kepakaran": [
+    "plts",
+    "penyedia-teknologi-global"
+   ],
+   "peran_rantai": [
+    "penyedia-teknologi-global",
+    "modul"
+   ],
+   "situs": "https://global.sharp",
+   "sumber": [
+    {
+     "url": "https://www.wikidata.org/wiki/Q53227",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "keterangan": "Wikidata (CC0)"
+    },
+    {
+     "url": "https://en.wikipedia.org/wiki/Sharp_Corporation",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "keterangan": "Wikipedia (CC BY-SA)"
+    }
+   ]
+  },
+  {
+   "_asal": "global_surya",
+   "nama": "SMA Solar Technology",
+   "nama_lain": [
+    "SMA Solar",
+    "SMA",
+    "SMA Solar Technology AG"
+   ],
+   "kategori": "internasional",
+   "kepakaran": [
+    "plts",
+    "penyedia-teknologi-global"
+   ],
+   "peran_rantai": [
+    "penyedia-teknologi-global",
+    "inverter-string",
+    "inverter-sentral"
+   ],
+   "situs": "https://www.sma.de/",
+   "sumber": [
+    {
+     "url": "https://www.wikidata.org/wiki/Q463337",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "keterangan": "Wikidata (CC0)"
+    },
+    {
+     "url": "https://en.wikipedia.org/wiki/SMA_Solar_Technology",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "keterangan": "Wikipedia (CC BY-SA)"
+    }
+   ]
+  },
+  {
+   "_asal": "global_surya",
+   "nama": "SolarEdge Technologies",
+   "nama_lain": [
+    "SolarEdge"
+   ],
+   "kategori": "internasional",
+   "kepakaran": [
+    "plts",
+    "penyedia-teknologi-global"
+   ],
+   "peran_rantai": [
+    "penyedia-teknologi-global",
+    "inverter-string",
+    "bess"
+   ],
+   "situs": "https://www.solaredge.com",
+   "sumber": [
+    {
+     "url": "https://www.wikidata.org/wiki/Q187212",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "keterangan": "Wikidata (CC0)"
+    },
+    {
+     "url": "https://en.wikipedia.org/wiki/SolarEdge",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "keterangan": "Wikipedia (CC BY-SA)"
+    }
+   ]
+  },
+  {
+   "_asal": "global_surya",
+   "nama": "Soltec",
+   "nama_lain": [
+    "Soltec Power Holdings"
+   ],
+   "kategori": "internasional",
+   "kepakaran": [
+    "plts",
+    "penyedia-teknologi-global"
+   ],
+   "peran_rantai": [
+    "penyedia-teknologi-global",
+    "tracker-mounting"
+   ],
+   "sumber": [
+    {
+     "url": "https://www.wikidata.org/wiki/Q110800693",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "keterangan": "Wikidata (CC0)"
+    },
+    {
+     "url": "https://en.wikipedia.org/wiki/Soltec_Team",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "keterangan": "Wikipedia (CC BY-SA)"
+    }
+   ]
+  },
+  {
+   "_asal": "global_surya",
+   "nama": "Sungrow",
+   "nama_lain": [
+    "Sungrow Power Supply",
+    "Sungrow Power"
+   ],
+   "kategori": "internasional",
+   "kepakaran": [
+    "plts",
+    "penyedia-teknologi-global"
+   ],
+   "peran_rantai": [
+    "penyedia-teknologi-global",
+    "inverter-string",
+    "inverter-sentral",
+    "bess"
+   ],
+   "situs": "https://sungrowpower.com",
+   "sumber": [
+    {
+     "url": "https://www.wikidata.org/wiki/Q106003803",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "keterangan": "Wikidata (CC0)"
+    },
+    {
+     "url": "https://en.wikipedia.org/wiki/Sungrow",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "keterangan": "Wikipedia (CC BY-SA)"
+    }
+   ]
+  },
+  {
+   "_asal": "global_surya",
+   "nama": "Sunport Power",
+   "nama_lain": [
+    "Sunport"
+   ],
+   "kategori": "internasional",
+   "kepakaran": [
+    "plts",
+    "penyedia-teknologi-global"
+   ],
+   "peran_rantai": [
+    "penyedia-teknologi-global",
+    "modul"
+   ],
+   "sumber": [
+    {
+     "url": "https://www.wikidata.org/wiki/Q7640975",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "keterangan": "Wikidata (CC0)"
+    },
+    {
+     "url": "https://en.wikipedia.org/wiki/Sunport_Takamatsu",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "keterangan": "Wikipedia (CC BY-SA)"
+    }
+   ]
+  },
+  {
+   "_asal": "global_surya",
+   "nama": "Suntech Power",
+   "nama_lain": [
+    "Wuxi Suntech",
+    "Suntech",
+    "Suntech Power Holdings Co., Ltd."
+   ],
+   "kategori": "internasional",
+   "kepakaran": [
+    "plts",
+    "penyedia-teknologi-global"
+   ],
+   "peran_rantai": [
+    "penyedia-teknologi-global",
+    "modul"
+   ],
+   "situs": "https://www.suntech-power.com/",
+   "sumber": [
+    {
+     "url": "https://www.wikidata.org/wiki/Q1188943",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "keterangan": "Wikidata (CC0)"
+    },
+    {
+     "url": "https://en.wikipedia.org/wiki/Suntech_Power",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "keterangan": "Wikipedia (CC BY-SA)"
+    }
+   ]
+  },
+  {
+   "_asal": "global_surya",
+   "nama": "SVOLT Energy Technology",
+   "nama_lain": [
+    "SVOLT",
+    "Honeycomb Energy"
+   ],
+   "kategori": "internasional",
+   "kepakaran": [
+    "plts",
+    "penyedia-teknologi-global"
+   ],
+   "peran_rantai": [
+    "penyedia-teknologi-global",
+    "bess"
+   ],
+   "situs": "https://www.svolt.cn/",
+   "sumber": [
+    {
+     "url": "https://www.wikidata.org/wiki/Q121298604",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "keterangan": "Wikidata (CC0)"
+    },
+    {
+     "url": "https://en.wikipedia.org/wiki/SVOLT",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "keterangan": "Wikipedia (CC BY-SA)"
+    }
+   ]
+  },
+  {
+   "_asal": "global_surya",
+   "nama": "TBEA",
+   "nama_lain": [
+    "TBEA Co",
+    "Tebian Electric Apparatus",
+    "TBEA Co., Ltd."
+   ],
+   "kategori": "internasional",
+   "kepakaran": [
+    "plts",
+    "penyedia-teknologi-global"
+   ],
+   "peran_rantai": [
+    "penyedia-teknologi-global",
+    "inverter-sentral",
+    "polisilikon"
+   ],
+   "situs": "https://en.tbea.com.cn/",
+   "sumber": [
+    {
+     "url": "https://www.wikidata.org/wiki/Q15831495",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "keterangan": "Wikidata (CC0)"
+    },
+    {
+     "url": "https://en.wikipedia.org/wiki/TBEA",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "keterangan": "Wikipedia (CC BY-SA)"
+    }
+   ]
+  },
+  {
+   "_asal": "global_surya",
+   "nama": "TCL Zhonghuan Renewable Energy Technology",
+   "nama_lain": [
+    "TCL Zhonghuan",
+    "TZE",
+    "Maxeon",
+    "Tse",
+    "Chia",
+    "Hsieh",
+    "Dea"
+   ],
+   "kategori": "internasional",
+   "kepakaran": [
+    "plts",
+    "penyedia-teknologi-global"
+   ],
+   "peran_rantai": [
+    "penyedia-teknologi-global",
+    "wafer",
+    "sel",
+    "modul"
+   ],
+   "sumber": [
+    {
+     "url": "https://www.wikidata.org/wiki/Q3570980",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "keterangan": "Wikidata (CC0)"
+    },
+    {
+     "url": "https://en.wikipedia.org/wiki/Xie_(surname)",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "keterangan": "Wikipedia (CC BY-SA)"
+    }
+   ]
+  },
+  {
+   "_asal": "global_surya",
+   "nama": "Tesla Energy",
+   "nama_lain": [
+    "Tesla Megapack",
+    "Tesla Inc"
+   ],
+   "kategori": "internasional",
+   "kepakaran": [
+    "plts",
+    "penyedia-teknologi-global"
+   ],
+   "peran_rantai": [
+    "penyedia-teknologi-global",
+    "bess",
+    "inverter-string"
+   ],
+   "situs": "https://www.tesla.com/de_de/energy",
+   "sumber": [
+    {
+     "url": "https://www.wikidata.org/wiki/Q106868050",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "keterangan": "Wikidata (CC0)"
+    },
+    {
+     "url": "https://en.wikipedia.org/wiki/Tesla_Energy",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "keterangan": "Wikipedia (CC BY-SA)"
+    }
+   ]
+  },
+  {
+   "_asal": "global_surya",
+   "nama": "Tongwei",
+   "nama_lain": [
+    "Tongwei Co Ltd",
+    "Tongwei Solar",
+    "Tongwei Co., Ltd."
+   ],
+   "kategori": "internasional",
+   "kepakaran": [
+    "plts",
+    "penyedia-teknologi-global"
+   ],
+   "peran_rantai": [
+    "penyedia-teknologi-global",
+    "polisilikon",
+    "sel",
+    "modul"
+   ],
+   "situs": "https://en.tongwei.com.cn/",
+   "sumber": [
+    {
+     "url": "https://www.wikidata.org/wiki/Q16923900",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "keterangan": "Wikidata (CC0)"
+    },
+    {
+     "url": "https://en.wikipedia.org/wiki/Tongwei_Company",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "keterangan": "Wikipedia (CC BY-SA)"
+    }
+   ]
+  },
+  {
+   "_asal": "global_surya",
+   "nama": "Trina Solar",
+   "nama_lain": [
+    "Trinasolar",
+    "TrinaSolar Co., Ltd. (China)",
+    "TrinaSolar Co., Ltd.",
+    "TrinaSolar Co.",
+    "TrinaSolar"
+   ],
+   "kategori": "internasional",
+   "kepakaran": [
+    "plts",
+    "penyedia-teknologi-global"
+   ],
+   "peran_rantai": [
+    "penyedia-teknologi-global",
+    "wafer",
+    "sel",
+    "modul",
+    "tracker-mounting"
+   ],
+   "situs": "https://www.trinasolar.com/",
+   "sumber": [
+    {
+     "url": "https://www.wikidata.org/wiki/Q2453426",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "keterangan": "Wikidata (CC0)"
+    },
+    {
+     "url": "https://en.wikipedia.org/wiki/Trina_Solar",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "keterangan": "Wikipedia (CC BY-SA)"
+    }
+   ]
+  },
+  {
+   "_asal": "global_surya",
+   "nama": "Vikram Solar",
+   "nama_lain": [
+    "Vikram Solar Ltd"
+   ],
+   "kategori": "internasional",
+   "kepakaran": [
+    "plts",
+    "penyedia-teknologi-global"
+   ],
+   "peran_rantai": [
+    "penyedia-teknologi-global",
+    "modul"
+   ],
+   "situs": "https://www.vikramsolar.com/",
+   "sumber": [
+    {
+     "url": "https://www.wikidata.org/wiki/Q24949477",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "keterangan": "Wikidata (CC0)"
+    },
+    {
+     "url": "https://en.wikipedia.org/wiki/Vikram_Solar",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "keterangan": "Wikipedia (CC BY-SA)"
+    }
+   ]
+  },
+  {
+   "_asal": "global_surya",
+   "nama": "Wacker Chemie",
+   "nama_lain": [
+    "Wacker Polysilicon",
+    "WACKER",
+    "Wacker Chemie AG"
+   ],
+   "kategori": "internasional",
+   "kepakaran": [
+    "plts",
+    "penyedia-teknologi-global"
+   ],
+   "peran_rantai": [
+    "penyedia-teknologi-global",
+    "polisilikon"
+   ],
+   "situs": "https://www.wacker.com",
+   "sumber": [
+    {
+     "url": "https://www.wikidata.org/wiki/Q535517",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "keterangan": "Wikidata (CC0)"
+    },
+    {
+     "url": "https://en.wikipedia.org/wiki/Wacker_Chemie",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "keterangan": "Wikipedia (CC BY-SA)"
+    }
+   ]
+  },
+  {
+   "_asal": "global_surya",
+   "nama": "Wartsila",
+   "nama_lain": [
+    "Wärtsilä",
+    "Wartsila Energy Storage"
+   ],
+   "kategori": "internasional",
+   "kepakaran": [
+    "plts",
+    "penyedia-teknologi-global"
+   ],
+   "peran_rantai": [
+    "penyedia-teknologi-global",
+    "bess"
+   ],
+   "situs": "https://www.wartsila.com/",
+   "sumber": [
+    {
+     "url": "https://www.wikidata.org/wiki/Q327429",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "keterangan": "Wikidata (CC0)"
+    },
+    {
+     "url": "https://en.wikipedia.org/wiki/W%C3%A4rtsil%C3%A4",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "keterangan": "Wikipedia (CC BY-SA)"
+    }
+   ]
+  },
+  {
+   "_asal": "global_surya",
+   "nama": "Xinyi Solar Holdings",
+   "nama_lain": [
+    "Xinyi Solar",
+    "Xinyi"
+   ],
+   "kategori": "internasional",
+   "kepakaran": [
+    "plts",
+    "penyedia-teknologi-global"
+   ],
+   "peran_rantai": [
+    "penyedia-teknologi-global",
+    "kaca"
+   ],
+   "situs": "https://www.xinyisolar.com/",
+   "sumber": [
+    {
+     "url": "https://www.wikidata.org/wiki/Q42625387",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "keterangan": "Wikidata (CC0)"
+    },
+    {
+     "url": "https://en.wikipedia.org/wiki/Xinyi_Solar",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "keterangan": "Wikipedia (CC BY-SA)"
+    }
+   ]
+  },
+  {
+   "_asal": "global_surya",
+   "nama": "Yingli Green Energy",
+   "nama_lain": [
+    "Yingli Solar"
+   ],
+   "kategori": "internasional",
+   "kepakaran": [
+    "plts",
+    "penyedia-teknologi-global"
+   ],
+   "peran_rantai": [
+    "penyedia-teknologi-global",
+    "wafer",
+    "sel",
+    "modul"
+   ],
+   "situs": "https://www.yinglisolar.com/",
+   "sumber": [
+    {
+     "url": "https://www.wikidata.org/wiki/Q1572831",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "keterangan": "Wikidata (CC0)"
+    },
+    {
+     "url": "https://en.wikipedia.org/wiki/Yingli",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "keterangan": "Wikipedia (CC BY-SA)"
+    }
+   ]
+  }
+ ]
 }

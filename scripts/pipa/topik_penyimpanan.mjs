@@ -8,6 +8,7 @@ import { fileURLToPath } from 'node:url';
 import { validasi } from './topik_surya.mjs';
 import { lengkapi } from './topik_dalam_lib.mjs';
 import { perdalam } from './topik_penyimpanan_dalam.mjs';
+import { tambahJalanModel } from './topik_jalan_lib.mjs';
 export { validasi };
 const akar = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '../..');
 const ID = 'penyimpanan';
@@ -79,7 +80,8 @@ export const SUMBER = {
   korea: S('Korea\'s ESS fires: batteries not to blame but industry takes hit anyway (sekitar 30 kebakaran ESS dilaporkan setahun)', 'Energy-Storage.news', 'https://www.energy-storage.news/koreas-ess-fires-batteries-not-to-blame-but-industry-takes-hit-anyway/', TGL, 'media'),
 };
 
-export function susun() {
+export function susun() { return tambahJalanModel(susunDasarJM(), ID); }
+function susunDasarJM() {
   const d0 = dasarJson();
   const ru = baca('public/data/ruptl.json');
   const st = ru.baris.filter((x) => x.teknologi === 'penyimpanan');

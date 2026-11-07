@@ -81,7 +81,7 @@ export function batangHtml(baris, { maks, ref, label, aksi, satuan = "", sumbu: 
     const pct = (tot(b) / M) * 100, dlm = pct > 70;
     const dalam = `<span class="jm-bar-lbl">${b.labelHtml ?? esc(b.label)}</span><span class="jm-bar-trek">${seg}${garis}<b class="jm-bar-val${dlm ? " jm-bar-in" : ""}" ${dlm ? "data-xi" : "data-x"}="${pct.toFixed(2)}">${esc(b.teks)}</b></span>`;
     const kelas = `${aksi ? "jm-bar-x" : "jm-bar-b"}${b.sorot ? " jm-an-sorot" : ""}`;
-    return aksi ? `<li class="${kelas}"><button type="button" class="jm-bar-aksi" data-id="${esc(b.id)}" aria-pressed="${b.pilih ? "true" : "false"}" title="${esc(b.label + ": " + b.teks)}">${dalam}</button></li>`
+    return aksi ? `<li class="${kelas}" title="${esc(b.label + ": " + b.teks)}"><button type="button" class="jm-bar-aksi" data-id="${esc(b.id)}" aria-pressed="${b.pilih ? "true" : "false"}">${dalam}</button></li>`
       : `<li class="${kelas}" title="${esc(b.label + ": " + b.teks)}">${dalam}</li>`;
   }).join("");
   return `<ul class="jm-batang" aria-label="${esc(label || "")}">${sumbu}${isi}</ul>`;

@@ -8,6 +8,7 @@ import { fileURLToPath } from 'node:url';
 import { validasi } from './topik_surya.mjs';
 import { lengkapi } from './topik_dalam_lib.mjs';
 import { perdalam } from './topik_hidrogen_dalam.mjs';
+import { tambahJalanModel } from './topik_jalan_lib.mjs';
 export { validasi };
 const akar = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '../..');
 const ID = 'hidrogen';
@@ -78,7 +79,8 @@ export const SUMBER = {
   repay: S('Albanese government tells Fortescue to repay hydrogen grant for dumped Gladstone project', 'BD Times', 'https://www.bdtimes.com.au/business/energy/hand-it-back-albanese-government-tells-fortescue-to-repay-hydrogen-grant-for-dumped-gladstone-project-c-19468162', TGL, 'media'),
 };
 
-export function susun() {
+export function susun() { return tambahJalanModel(susunDasarJM(), ID); }
+function susunDasarJM() {
   const bab = {};
   const rf = (n, d = 2) => Math.round(n * 10 ** d) / 10 ** d;
   const LHV = 33.3; // kWh per kg, nilai fisika

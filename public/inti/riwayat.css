@@ -2,10 +2,10 @@
    Dipasang otomatis oleh inti/riwayat.js (tanpa edit HTML). Tanpa hex: semua warna dari token tema.css. */
 
 /* ---- warna jenis data dan jenis perubahan ---- */
-.jm-rw-d-organisasi{--rw:var(--tp-jaringan)}.jm-rw-d-orang{--rw:var(--tp-adil)}.jm-rw-d-proyek{--rw:var(--tp-surya)}
-.jm-rw-d-regulasi{--rw:var(--tp-kebijakan)}.jm-rw-d-pendanaan{--rw:var(--tp-biaya)}.jm-rw-d-berita{--rw:var(--tp-listrik)}
-.jm-rw-d-inovasi{--rw:var(--tp-simpan)}.jm-rw-d-program{--rw:var(--tp-efisiensi)}
-.jm-rw-ik{display:inline-flex;align-items:center;justify-content:center;flex:none;width:36px;height:36px;border-radius:var(--r-pil);color:var(--rw,var(--accent));background:color-mix(in srgb,var(--rw,var(--accent)) 14%,transparent)}
+.jm-rw-d-organisasi{--tk:var(--tp-jaringan)}.jm-rw-d-orang{--tk:var(--tp-adil)}.jm-rw-d-proyek{--tk:var(--tp-surya)}
+.jm-rw-d-regulasi{--tk:var(--tp-kebijakan)}.jm-rw-d-pendanaan{--tk:var(--tp-biaya)}.jm-rw-d-berita{--tk:var(--tp-listrik)}
+.jm-rw-d-inovasi{--tk:var(--tp-simpan)}.jm-rw-d-program{--tk:var(--tp-efisiensi)}
+.jm-rw-ik{display:inline-flex;align-items:center;justify-content:center;flex:none;width:36px;height:36px;border-radius:var(--r-pil);color:var(--tk);background:color-mix(in srgb,var(--tk) 14%,transparent)}
 .jm-rw-ik .jm-ik{width:20px;height:20px}
 
 .jm-rw-j,.jm-rw-st{display:inline-flex;align-items:center;gap:6px;min-height:24px;padding:0 10px;border-radius:var(--r-pil);font:600 var(--t-kecil)/1 var(--font);white-space:nowrap}
@@ -44,7 +44,7 @@
 .jm-rw-hari>h3 small{color:var(--ink2);font:600 var(--t-kecil)/1 var(--font);font-variant-numeric:tabular-nums}
 .jm-rw-hari>ol{list-style:none;margin:0;padding:0 0 0 18px;display:grid;gap:12px;border-left:2px solid var(--line)}
 .jm-rw-hari>ol>li{position:relative;display:grid;gap:8px;padding:12px 14px;border:1px solid var(--line);border-radius:var(--r-sm);background:var(--card)}
-.jm-rw-hari>ol>li::before{content:"";position:absolute;left:-26px;top:18px;width:10px;height:10px;border-radius:var(--r-pil);background:var(--rw,var(--accent));box-shadow:0 0 0 3px var(--card)}
+.jm-rw-hari>ol>li::before{content:"";position:absolute;left:-26px;top:18px;width:10px;height:10px;border-radius:var(--r-pil);background:var(--tk);box-shadow:0 0 0 3px var(--card)}
 .jm-rw-baris{display:flex;flex-wrap:wrap;align-items:center;gap:8px 10px}
 .jm-rw-medan{display:inline-flex;align-items:center;gap:6px;color:var(--ink);font:600 var(--t-body)/var(--lh-rapat) var(--font)}
 .jm-rw-medan .jm-ik{width:16px;height:16px;color:var(--ink2)}

@@ -1,0 +1,1919 @@
+{
+ "sumber": "Wikidata (CC0) + beranda resmi perusahaan",
+ "diambil": "2026-11-08",
+ "lisensi": "Wikidata CC0; fakta beranda dikutip singkat dengan tautan",
+ "baris": [
+  {
+   "nama": "Vestas",
+   "situs": "https://www.vestas.com/",
+   "segmen": [
+    "bayu"
+   ],
+   "alias": "\\bVestas\\b",
+   "wikidata": {
+    "id": "Q868259",
+    "label": "Vestas",
+    "deskripsi": "manufacturer of wind turbines",
+    "tahun_berdiri": 1945,
+    "enwiki": "Vestas",
+    "logo_berkas": "Vestas.svg",
+    "iso2": [
+     "DK"
+    ]
+   },
+   "beranda": {
+    "judul": "Global Leader in Sustainable Energy | Vestas",
+    "deskripsi": "Vestas is the renewable energy industry’s global partner on sustainable energy solutions. We design, manufacture, install, and service wind turbines across the globe.",
+    "indonesia": null,
+    "produk": {
+     "bayu": [
+      "turbin angin lepas pantai",
+      "turbin angin darat",
+      "bilah turbin",
+      "menara turbin",
+      "angin"
+     ],
+     "panas-bumi": [],
+     "hidro": [
+      "turbin"
+     ],
+     "hidrogen": [],
+     "jaringan": [],
+     "biomassa": []
+    }
+   },
+   "logo": {
+    "berkas": "en_99265x2651.png",
+    "sumber": "Wikidata P154 / Wikimedia Commons",
+    "url": "https://commons.wikimedia.org/wiki/File:Vestas.svg"
+   }
+  },
+  {
+   "nama": "Siemens Gamesa",
+   "situs": "https://www.siemensgamesa.com/",
+   "segmen": [
+    "bayu"
+   ],
+   "alias": "Siemens Gamesa",
+   "wikidata": {
+    "id": "Q1493131",
+    "label": "Siemens Gamesa",
+    "deskripsi": "company",
+    "tahun_berdiri": 1976,
+    "enwiki": "Siemens Gamesa",
+    "logo_berkas": "Siemens Gamesa logo.svg",
+    "iso2": [
+     "ES",
+     "DE"
+    ]
+   },
+   "beranda": {
+    "judul": "Siemens Gamesa wind energy",
+    "deskripsi": "Siemens Gamesa makes real what matters by engineering, building and servicing onshore and offshore wind energy to deliver clean power for generations to come.",
+    "indonesia": null,
+    "produk": {
+     "bayu": [
+      "turbin angin lepas pantai",
+      "turbin angin darat",
+      "angin"
+     ],
+     "panas-bumi": [],
+     "hidro": [
+      "turbin"
+     ],
+     "hidrogen": [],
+     "jaringan": [],
+     "biomassa": []
+    }
+   },
+   "logo": {
+    "berkas": "en_9013c0f215.png",
+    "sumber": "Wikidata P154 / Wikimedia Commons",
+    "url": "https://commons.wikimedia.org/wiki/File:Siemens_Gamesa_logo.svg"
+   }
+  },
+  {
+   "nama": "GE Vernova",
+   "situs": "https://www.gevernova.com/",
+   "segmen": [
+    "bayu",
+    "hidro",
+    "jaringan"
+   ],
+   "alias": "GE Vernova|General Electric|\\bGE (Renewable|Grid|Hydro|Power)",
+   "wikidata": {
+    "id": "Q118957699",
+    "label": "GE Vernova",
+    "deskripsi": "American energy equipment manufacturing company",
+    "tahun_berdiri": 2023,
+    "enwiki": "GE Vernova",
+    "logo_berkas": "GE Vernova logo.svg",
+    "iso2": [
+     "US"
+    ]
+   },
+   "beranda": {
+    "judul": "GE Vernova | The Energy of Change",
+    "deskripsi": "GE Vernova is accelerating the path to more reliable, affordable, and sustainable energy through our innovative portfolio of electrification and decarbonization technologies.",
+    "indonesia": null,
+    "produk": {
+     "bayu": [
+      "turbin angin lepas pantai",
+      "turbin angin darat",
+      "bilah turbin",
+      "angin"
+     ],
+     "panas-bumi": [],
+     "hidro": [
+      "pembangkit hidro",
+      "turbin"
+     ],
+     "hidrogen": [],
+     "jaringan": [
+      "jaringan listrik"
+     ],
+     "biomassa": []
+    }
+   },
+   "logo": {
+    "berkas": "en_489bd14e4e.png",
+    "sumber": "Wikidata P154 / Wikimedia Commons",
+    "url": "https://commons.wikimedia.org/wiki/File:GE_Vernova_logo.svg"
+   }
+  },
+  {
+   "nama": "Goldwind",
+   "situs": "https://www.goldwind.com/",
+   "segmen": [
+    "bayu"
+   ],
+   "alias": "Goldwind",
+   "wikidata": {
+    "id": "Q1090900",
+    "label": "Goldwind",
+    "deskripsi": "Chinese multinational wind turbine manufacturer",
+    "tahun_berdiri": 1998,
+    "enwiki": "Goldwind",
+    "logo_berkas": "Goldwind Logo.svg",
+    "iso2": [
+     "CN"
+    ]
+   },
+   "beranda": {
+    "judul": "金风科技(Goldwind)-全球可信赖的清洁能源战略合作伙伴",
+    "deskripsi": "金风科技(股票代码: 002202)，致力于推动能源变革，让人人可负担、可靠、可持续的能源惠及全球，构建“可持续更美好”的未来。全球清洁能源和节能环保领域领跑者，中国风能风电龙头企业，风电整机制造企业，全球新能源企业500强。金风科技深度聚焦能源开发、能源装备、能源服务、能源应用四大领域。为全球客户提供风力发电综合解决方案，覆盖风力发电设备设计、制造、供应、安装、运维，海上和陆上风电项目规划和施工，清洁能源投资管理等。",
+    "indonesia": null,
+    "produk": {
+     "bayu": [],
+     "panas-bumi": [],
+     "hidro": [],
+     "hidrogen": [],
+     "jaringan": [],
+     "biomassa": []
+    }
+   },
+   "logo": {
+    "berkas": "en_26327x1969.png",
+    "sumber": "Wikidata P154 / Wikimedia Commons",
+    "url": "https://commons.wikimedia.org/wiki/File:Goldwind_Logo.svg"
+   }
+  },
+  {
+   "nama": "Envision Energy",
+   "situs": "https://www.envision-group.com/",
+   "segmen": [
+    "bayu"
+   ],
+   "alias": "Envision",
+   "wikidata": null,
+   "beranda": {
+    "judul": "Envision",
+    "deskripsi": "",
+    "indonesia": null,
+    "produk": {
+     "bayu": [],
+     "panas-bumi": [],
+     "hidro": [],
+     "hidrogen": [],
+     "jaringan": [],
+     "biomassa": []
+    }
+   },
+   "logo": {
+    "tanpa": true
+   }
+  },
+  {
+   "nama": "Mingyang Smart Energy",
+   "situs": "https://www.mywind.com.cn/",
+   "segmen": [
+    "bayu"
+   ],
+   "alias": "Mingyang|Ming Yang",
+   "wikidata": {
+    "id": "Q6864857",
+    "label": "Mingyang Wind Power",
+    "deskripsi": "Wind turbine manufacturer in China",
+    "tahun_berdiri": null,
+    "enwiki": "Ming Yang Smart Energy",
+    "logo_berkas": null,
+    "iso2": []
+   },
+   "beranda": {
+    "gagal": "fetch failed"
+   },
+   "logo": {
+    "tanpa": true
+   }
+  },
+  {
+   "nama": "Windey",
+   "situs": "https://www.chinawindey.com/",
+   "segmen": [
+    "bayu"
+   ],
+   "alias": "Windey",
+   "wikidata": null,
+   "beranda": {
+    "gagal": "fetch failed"
+   },
+   "logo": {
+    "tanpa": true
+   }
+  },
+  {
+   "nama": "Sany Renewable Energy",
+   "situs": "https://www.sanyrenewable.com/",
+   "segmen": [
+    "bayu"
+   ],
+   "alias": "Sany Renewable|SANY",
+   "wikidata": null,
+   "beranda": {
+    "gagal": "robots"
+   },
+   "logo": {
+    "tanpa": true
+   }
+  },
+  {
+   "nama": "Nordex",
+   "situs": "https://www.nordex-online.com/",
+   "segmen": [
+    "bayu"
+   ],
+   "alias": "Nordex",
+   "wikidata": {
+    "id": "Q571700",
+    "label": "Nordex SE",
+    "deskripsi": "company",
+    "tahun_berdiri": 1985,
+    "enwiki": "Nordex",
+    "logo_berkas": "Nordex Group Logo.svg",
+    "iso2": [
+     "DE"
+    ]
+   },
+   "beranda": {
+    "judul": "Home - Nordex SE",
+    "deskripsi": "The Nordex Group is one of the world´s leading OEM´s with 40 years of experience in manufacturing highly efficient wind turbines for global onshore markets.",
+    "indonesia": null,
+    "produk": {
+     "bayu": [
+      "turbin angin darat",
+      "angin"
+     ],
+     "panas-bumi": [],
+     "hidro": [
+      "turbin"
+     ],
+     "hidrogen": [
+      "elektroliser"
+     ],
+     "jaringan": [],
+     "biomassa": []
+    }
+   },
+   "logo": {
+    "berkas": "en_97fda94e39.png",
+    "sumber": "Wikidata P154 / Wikimedia Commons",
+    "url": "https://commons.wikimedia.org/wiki/File:Nordex_Group_Logo.svg"
+   }
+  },
+  {
+   "nama": "Suzlon",
+   "situs": "https://www.suzlon.com/",
+   "segmen": [
+    "bayu"
+   ],
+   "alias": "Suzlon",
+   "wikidata": {
+    "id": "Q1402563",
+    "label": "Suzlon Energy",
+    "deskripsi": "Indian wind turbine company",
+    "tahun_berdiri": 1995,
+    "enwiki": "Suzlon",
+    "logo_berkas": "Suzlon Energy logo.svg",
+    "iso2": [
+     "IN"
+    ]
+   },
+   "beranda": {
+    "judul": "Full Stack Renewable Energy Partner | Suzlon Group",
+    "deskripsi": "Suzlon is a full-stack renewable energy partner delivering wind, solar, storage, and asset management solutions worldwide.",
+    "indonesia": null,
+    "produk": {
+     "bayu": [
+      "turbin angin darat",
+      "angin"
+     ],
+     "panas-bumi": [],
+     "hidro": [
+      "turbin"
+     ],
+     "hidrogen": [],
+     "jaringan": [
+      "penyimpanan baterai",
+      "jaringan listrik"
+     ],
+     "biomassa": []
+    }
+   },
+   "logo": {
+    "berkas": "en_524dca79a9.png",
+    "sumber": "Wikidata P154 / Wikimedia Commons",
+    "url": "https://commons.wikimedia.org/wiki/File:Suzlon_Energy_logo.svg"
+   }
+  },
+  {
+   "nama": "TPI Composites",
+   "situs": "https://www.tpicomposites.com/",
+   "segmen": [
+    "bayu"
+   ],
+   "alias": "TPI Composites",
+   "wikidata": {
+    "id": "Q106623027",
+    "label": "TPI Composites",
+    "deskripsi": "company",
+    "tahun_berdiri": 1968,
+    "logo_berkas": null,
+    "iso2": [
+     "US"
+    ]
+   },
+   "beranda": {
+    "judul": "Powering Tomorrow | Global Wind Blade Manufacturing by TPI",
+    "deskripsi": "Leading the future of renewable energy, TPI Composites is a global wind blade manufacturer. Discover our advanced composite solutions for sustainable wind power.",
+    "indonesia": null,
+    "produk": {
+     "bayu": [
+      "turbin angin darat",
+      "bilah turbin",
+      "angin"
+     ],
+     "panas-bumi": [],
+     "hidro": [],
+     "hidrogen": [],
+     "jaringan": [
+      "jaringan listrik"
+     ],
+     "biomassa": []
+    }
+   },
+   "logo": {
+    "berkas": "en_a92c58d4e6.png",
+    "sumber": "ikon resmi situs",
+    "url": "https://tpicomposites.com/wp-content/uploads/2024/05/tpi-new-logo-july-23-300x300.webp"
+   }
+  },
+  {
+   "nama": "LM Wind Power",
+   "situs": "https://www.lmwindpower.com/",
+   "segmen": [
+    "bayu"
+   ],
+   "alias": "LM Wind Power",
+   "wikidata": {
+    "id": "Q508150",
+    "label": "LM Wind Power",
+    "deskripsi": "business",
+    "tahun_berdiri": 1952,
+    "enwiki": "LM Wind Power",
+    "logo_berkas": "LM Wind Power logo.svg",
+    "iso2": [
+     "DK"
+    ]
+   },
+   "beranda": {
+    "judul": "We are LM Wind Power - the leading rotor blade supplier to the wind industry | LM Wind Power",
+    "deskripsi": "",
+    "indonesia": null,
+    "produk": {
+     "bayu": [
+      "turbin angin darat",
+      "bilah turbin",
+      "angin"
+     ],
+     "panas-bumi": [],
+     "hidro": [
+      "turbin"
+     ],
+     "hidrogen": [],
+     "jaringan": [],
+     "biomassa": []
+    }
+   },
+   "logo": {
+    "berkas": "en_edcadb340d.png",
+    "sumber": "Wikidata P154 / Wikimedia Commons",
+    "url": "https://commons.wikimedia.org/wiki/File:LM_Wind_Power_logo.svg"
+   }
+  },
+  {
+   "nama": "Titan Wind Energy",
+   "situs": "https://www.titanwind.com/",
+   "segmen": [
+    "bayu"
+   ],
+   "alias": "Titan Wind",
+   "wikidata": null,
+   "beranda": {
+    "gagal": "blokir 403"
+   },
+   "logo": {
+    "tanpa": true
+   }
+  },
+  {
+   "nama": "Ormat",
+   "situs": "https://www.ormat.com/",
+   "segmen": [
+    "panas-bumi"
+   ],
+   "alias": "\\bOrmat\\b",
+   "wikidata": {
+    "id": "Q1549511",
+    "label": "Ormat Technologies",
+    "deskripsi": "Israeli American public energy company",
+    "tahun_berdiri": 1994,
+    "enwiki": "Ormat Technologies",
+    "logo_berkas": null,
+    "iso2": [
+     "IL"
+    ]
+   },
+   "beranda": {
+    "judul": "Ormat Technologies Inc. - Geothermal Power | Renewable Energy Expertise",
+    "deskripsi": "Ormat Technologies Inc. - At Ormat Technologies, Inc. , we’re always on; delivering renewable power and energy solutions to our customers",
+    "indonesia": null,
+    "produk": {
+     "bayu": [],
+     "panas-bumi": [
+      "panas bumi"
+     ],
+     "hidro": [
+      "turbin"
+     ],
+     "hidrogen": [],
+     "jaringan": [
+      "penyimpanan baterai",
+      "jaringan listrik"
+     ],
+     "biomassa": []
+    }
+   },
+   "logo": {
+    "berkas": "en_35453c105a.png",
+    "sumber": "ikon resmi situs",
+    "url": "https://ormat.cachefly.net/Warehouse/content/pics/favicon.ico"
+   }
+  },
+  {
+   "nama": "Toshiba Energy Systems & Solutions",
+   "situs": "https://www.global.toshiba/",
+   "segmen": [
+    "panas-bumi",
+    "hidro"
+   ],
+   "alias": "Toshiba",
+   "wikidata": null,
+   "beranda": {
+    "judul": "トップページ | 東芝",
+    "deskripsi": "東芝は、エネルギー・社会インフラ・ストレージ・ICT等、人と地球の明日を支える、社会の基盤となる事業に取り組んでいます。",
+    "indonesia": null,
+    "produk": {
+     "bayu": [],
+     "panas-bumi": [],
+     "hidro": [],
+     "hidrogen": [],
+     "jaringan": [
+      "jaringan listrik"
+     ],
+     "biomassa": []
+    }
+   },
+   "logo": {
+    "berkas": "en_8a7adde233.png",
+    "sumber": "ikon resmi situs",
+    "url": "https://www.global.toshiba/content/dam/toshiba/brand-assets/favicon/touch-icon_152.png"
+   }
+  },
+  {
+   "nama": "Fuji Electric",
+   "situs": "https://www.fujielectric.com/",
+   "segmen": [
+    "panas-bumi"
+   ],
+   "alias": "Fuji Electric",
+   "wikidata": null,
+   "beranda": {
+    "judul": "Fuji Electric Global",
+    "deskripsi": "Fuji Electric contributes to the resolution of energy management problems, through pursuit of technological innovation in electric and thermal energy.",
+    "indonesia": null,
+    "produk": {
+     "bayu": [],
+     "panas-bumi": [],
+     "hidro": [],
+     "hidrogen": [],
+     "jaringan": [
+      "transformator",
+      "gardu induk"
+     ],
+     "biomassa": []
+    }
+   },
+   "logo": {
+    "tanpa": true
+   }
+  },
+  {
+   "nama": "Mitsubishi Power",
+   "situs": "https://power.mhi.com/",
+   "segmen": [
+    "panas-bumi"
+   ],
+   "alias": "Mitsubishi (Power|Heavy|Hitachi Power)|\\bMHI\\b",
+   "wikidata": {
+    "id": "Q648280",
+    "label": "Mitsubishi Heavy Industries",
+    "deskripsi": "Japanese company",
+    "tahun_berdiri": 1934,
+    "enwiki": "Mitsubishi Heavy Industries",
+    "logo_berkas": "Mitsubishi heavyindustries mhi logo.svg",
+    "iso2": [
+     "JP"
+    ]
+   },
+   "beranda": {
+    "judul": "Mitsubishi Power",
+    "deskripsi": "Mitsubishi Power is an energy solutions company committed to addressing the energy challenges of today and tomorrow.",
+    "indonesia": "https://power.mhi.com/case/indonesia",
+    "produk": {
+     "bayu": [],
+     "panas-bumi": [
+      "panas bumi",
+      "turbin uap"
+     ],
+     "hidro": [
+      "turbin"
+     ],
+     "hidrogen": [
+      "hidrogen",
+      "sel bahan bakar"
+     ],
+     "jaringan": [],
+     "biomassa": [
+      "boiler"
+     ]
+    }
+   },
+   "logo": {
+    "berkas": "en_8f3dd6037a.png",
+    "sumber": "Wikidata P154 / Wikimedia Commons",
+    "url": "https://commons.wikimedia.org/wiki/File:Mitsubishi_heavyindustries_mhi_logo.svg"
+   }
+  },
+  {
+   "nama": "Ansaldo Energia",
+   "situs": "https://www.ansaldoenergia.com/",
+   "segmen": [
+    "panas-bumi"
+   ],
+   "alias": "Ansaldo",
+   "wikidata": {
+    "id": "Q2852429",
+    "label": "Ansaldo Energia",
+    "deskripsi": "Italian power company",
+    "tahun_berdiri": 1991,
+    "enwiki": "Ansaldo Energia",
+    "logo_berkas": "Ansaldo Energia.svg",
+    "iso2": [
+     "IT"
+    ]
+   },
+   "beranda": {
+    "judul": "HomePage",
+    "deskripsi": "Our civilization is built on energy: its generation, conservation and use has driven the evolution of human kind. We have been part of this process since 1853. Ansaldo Energia know-how covers all the most important technologies that make the energy transition possible: from turbomachinery to renewables, and from electro-generators to the new frontier of hydrogen.",
+    "indonesia": null,
+    "produk": {
+     "bayu": [],
+     "panas-bumi": [
+      "panas bumi",
+      "turbin uap"
+     ],
+     "hidro": [
+      "turbin"
+     ],
+     "hidrogen": [
+      "elektroliser",
+      "hidrogen"
+     ],
+     "jaringan": [
+      "jaringan listrik"
+     ],
+     "biomassa": []
+    }
+   },
+   "logo": {
+    "berkas": "en_aff3374b59.png",
+    "sumber": "Wikidata P154 / Wikimedia Commons",
+    "url": "https://commons.wikimedia.org/wiki/File:Ansaldo_Energia.svg"
+   }
+  },
+  {
+   "nama": "Turboden",
+   "situs": "https://www.turboden.com/",
+   "segmen": [
+    "panas-bumi"
+   ],
+   "alias": "Turboden",
+   "wikidata": {
+    "id": "Q131886209",
+    "tahun_berdiri": null,
+    "logo_berkas": null,
+    "iso2": [
+     "IT"
+    ]
+   },
+   "beranda": {
+    "judul": "TURBODEN: ORC systems, gas expander and large heat pump company | TURBODEN",
+    "deskripsi": "Turboden is a global leader in the design and production of ORC systems, large heat pump and gas expander. Discover all products, access the website!",
+    "indonesia": null,
+    "produk": {
+     "bayu": [],
+     "panas-bumi": [
+      "panas bumi",
+      "siklus ORC"
+     ],
+     "hidro": [
+      "turbin"
+     ],
+     "hidrogen": [],
+     "jaringan": [],
+     "biomassa": [
+      "biomassa",
+      "waste-to-energy"
+     ]
+    }
+   },
+   "logo": {
+    "berkas": "en_e27160fee2.png",
+    "sumber": "ikon resmi situs",
+    "url": "https://www.turboden.com/img/favicon/apple-touch-icon.png"
+   }
+  },
+  {
+   "nama": "Exergy",
+   "situs": "https://www.exergy-orc.com/",
+   "segmen": [
+    "panas-bumi"
+   ],
+   "alias": "Exergy",
+   "wikidata": null,
+   "beranda": {
+    "judul": "ORC solutions and industrial heat pumps | Exergy",
+    "deskripsi": "Exergy designs ORC solutions and industrial heat pumps for heat recovery and renewable energy production. Discover our technologies.",
+    "indonesia": null,
+    "produk": {
+     "bayu": [],
+     "panas-bumi": [
+      "panas bumi",
+      "siklus ORC"
+     ],
+     "hidro": [
+      "turbin"
+     ],
+     "hidrogen": [],
+     "jaringan": [
+      "jaringan listrik"
+     ],
+     "biomassa": [
+      "biomassa",
+      "gasifikasi"
+     ]
+    }
+   },
+   "logo": {
+    "berkas": "en_a46cb9a990.png",
+    "sumber": "ikon resmi situs",
+    "url": "https://exergyint.com/wp-content/uploads/2022/09/favicon-300x300.png"
+   }
+  },
+  {
+   "nama": "Halliburton",
+   "situs": "https://www.halliburton.com/",
+   "segmen": [
+    "panas-bumi"
+   ],
+   "alias": "Halliburton",
+   "wikidata": {
+    "id": "Q656165",
+    "label": "Halliburton",
+    "deskripsi": "American multinational corporation; provider of services and products to the energy industry",
+    "tahun_berdiri": 1919,
+    "enwiki": "Halliburton",
+    "logo_berkas": "Halliburton logo.svg",
+    "iso2": [
+     "US"
+    ]
+   },
+   "beranda": {
+    "judul": "Halliburton, engineering solutions for global energy needs",
+    "deskripsi": "Halliburton delivers advanced products and services to meet the evolving needs of the global energy industry, driving innovation, reliability, and performance.",
+    "indonesia": null,
+    "produk": {
+     "bayu": [],
+     "panas-bumi": [
+      "panas bumi",
+      "pengeboran"
+     ],
+     "hidro": [],
+     "hidrogen": [],
+     "jaringan": [],
+     "biomassa": []
+    }
+   },
+   "logo": {
+    "berkas": "en_d41c4a1533.png",
+    "sumber": "Wikidata P154 / Wikimedia Commons",
+    "url": "https://commons.wikimedia.org/wiki/File:Halliburton_logo.svg"
+   }
+  },
+  {
+   "nama": "SLB",
+   "situs": "https://www.slb.com/",
+   "segmen": [
+    "panas-bumi"
+   ],
+   "alias": "\\bSLB\\b|Schlumberger",
+   "wikidata": {
+    "id": "Q1425316",
+    "label": "SLB",
+    "deskripsi": "oilfield services company",
+    "tahun_berdiri": 1926,
+    "enwiki": "SLB",
+    "logo_berkas": "SLB Logo 2022.svg",
+    "iso2": [
+     "US"
+    ]
+   },
+   "beranda": {
+    "judul": "SLB, a global technology company | SLB",
+    "deskripsi": "SLB is a global technology company, driving energy innovation for a balanced planet",
+    "indonesia": null,
+    "produk": {
+     "bayu": [],
+     "panas-bumi": [
+      "panas bumi",
+      "pengeboran"
+     ],
+     "hidro": [],
+     "hidrogen": [
+      "hidrogen"
+     ],
+     "jaringan": [
+      "penyimpanan baterai"
+     ],
+     "biomassa": []
+    }
+   },
+   "logo": {
+    "berkas": "en_ab0a9744bd.png",
+    "sumber": "Wikidata P154 / Wikimedia Commons",
+    "url": "https://commons.wikimedia.org/wiki/File:SLB_Logo_2022.svg"
+   }
+  },
+  {
+   "nama": "Baker Hughes",
+   "situs": "https://www.bakerhughes.com/",
+   "segmen": [
+    "panas-bumi"
+   ],
+   "alias": "Baker Hughes",
+   "wikidata": {
+    "id": "Q804353",
+    "label": "Baker Hughes",
+    "deskripsi": "energy technology company",
+    "tahun_berdiri": 1908,
+    "enwiki": "Baker Hughes",
+    "logo_berkas": "Baker Hughes logo.svg",
+    "iso2": [
+     "US"
+    ]
+   },
+   "beranda": {
+    "judul": "Baker Hughes | Rewriting The Energy Equation™",
+    "deskripsi": "Baker Hughes | We are rewriting The Energy Equation™. We make energy safer, cleaner, and more efficient for people and the planet.",
+    "indonesia": null,
+    "produk": {
+     "bayu": [],
+     "panas-bumi": [
+      "panas bumi",
+      "turbin uap",
+      "pengeboran"
+     ],
+     "hidro": [
+      "pembangkit hidro",
+      "turbin"
+     ],
+     "hidrogen": [
+      "hidrogen"
+     ],
+     "jaringan": [],
+     "biomassa": []
+    }
+   },
+   "logo": {
+    "berkas": "en_631ec58416.png",
+    "sumber": "Wikidata P154 / Wikimedia Commons",
+    "url": "https://commons.wikimedia.org/wiki/File:Baker_Hughes_logo.svg"
+   }
+  },
+  {
+   "nama": "KS Orka",
+   "situs": "https://www.ksorka.com/",
+   "segmen": [
+    "panas-bumi"
+   ],
+   "alias": "KS Orka",
+   "wikidata": null,
+   "beranda": {
+    "judul": "KSORKA Renewables",
+    "deskripsi": "",
+    "indonesia": null,
+    "produk": {
+     "bayu": [],
+     "panas-bumi": [],
+     "hidro": [],
+     "hidrogen": [],
+     "jaringan": [],
+     "biomassa": []
+    }
+   },
+   "logo": {
+    "tanpa": true
+   }
+  },
+  {
+   "nama": "Andritz",
+   "situs": "https://www.andritz.com/",
+   "segmen": [
+    "hidro",
+    "biomassa"
+   ],
+   "alias": "Andritz",
+   "wikidata": {
+    "id": "Q442018",
+    "label": "Andritz",
+    "deskripsi": "Austrian company",
+    "tahun_berdiri": 1852,
+    "enwiki": "Andritz AG",
+    "logo_berkas": "Andritz Logo.svg",
+    "iso2": [
+     "AT"
+    ]
+   },
+   "beranda": {
+    "judul": "ANDRITZ GROUP",
+    "deskripsi": "Process technologies, equipment, plants and automation: ANDRITZ provides world-leading products and services for a wide range of industries.",
+    "indonesia": null,
+    "produk": {
+     "bayu": [
+      "angin"
+     ],
+     "panas-bumi": [],
+     "hidro": [
+      "pembangkit hidro",
+      "pumped storage",
+      "turbin"
+     ],
+     "hidrogen": [
+      "hidrogen"
+     ],
+     "jaringan": [
+      "gardu induk",
+      "penyimpanan baterai",
+      "jaringan listrik"
+     ],
+     "biomassa": [
+      "biomassa"
+     ]
+    }
+   },
+   "logo": {
+    "berkas": "en_eb48793c13.png",
+    "sumber": "Wikidata P154 / Wikimedia Commons",
+    "url": "https://commons.wikimedia.org/wiki/File:Andritz_Logo.svg"
+   }
+  },
+  {
+   "nama": "Voith",
+   "situs": "https://www.voith.com/",
+   "segmen": [
+    "hidro"
+   ],
+   "alias": "Voith",
+   "wikidata": {
+    "id": "Q126944",
+    "label": "Voith Group",
+    "deskripsi": "company",
+    "tahun_berdiri": 1867,
+    "enwiki": "Voith",
+    "logo_berkas": "Voith logo.svg",
+    "iso2": [
+     "DE"
+    ]
+   },
+   "beranda": {
+    "judul": "Voith",
+    "deskripsi": "As a family-owned company, we take responsibility for ensuring that progress and sustainability go hand in hand.",
+    "indonesia": null,
+    "produk": {
+     "bayu": [],
+     "panas-bumi": [],
+     "hidro": [
+      "pembangkit hidro",
+      "pumped storage"
+     ],
+     "hidrogen": [],
+     "jaringan": [
+      "penyimpanan baterai",
+      "jaringan listrik"
+     ],
+     "biomassa": []
+    }
+   },
+   "logo": {
+    "berkas": "en_a3c5388685.png",
+    "sumber": "Wikidata P154 / Wikimedia Commons",
+    "url": "https://commons.wikimedia.org/wiki/File:Voith_logo.svg"
+   }
+  },
+  {
+   "nama": "Harbin Electric",
+   "situs": "https://www.hec.com.cn/",
+   "segmen": [
+    "hidro"
+   ],
+   "alias": "Harbin Electric",
+   "wikidata": null,
+   "beranda": {
+    "judul": "上海酒总酒店设备有限公司HEC-酒总易快得",
+    "deskripsi": "酒总集团自1992年成立以来，在上海、北京、青岛、重庆、成都、杭州、济南等多地拥有大型酒店设备、酒店用品卖场，并成为肯德基、麦当劳、宜家家居等国际连锁餐饮的主要供应商。主要销售酒店设备、厨房设备、厨房用具、前厅用品、前厅用具、耗品、一次性用品、酒店布草、客房用品、餐饮设备、餐饮用品等商品，以期为广大酒店、餐饮、企事业、机关及个人提供优质的产品及服务。-酒总易快得",
+    "indonesia": null,
+    "produk": {
+     "bayu": [],
+     "panas-bumi": [],
+     "hidro": [],
+     "hidrogen": [],
+     "jaringan": [],
+     "biomassa": []
+    }
+   },
+   "logo": {
+    "berkas": "en_1613e168cd.png",
+    "sumber": "ikon resmi situs",
+    "url": "https://www.hec.com.cn/favicon.ico"
+   }
+  },
+  {
+   "nama": "Dongfang Electric",
+   "situs": "https://www.dongfang.com.cn/",
+   "segmen": [
+    "hidro"
+   ],
+   "alias": "Dongfang",
+   "wikidata": {
+    "id": "Q5295864",
+    "label": "Dongfang Electric",
+    "deskripsi": "Chinese publicly traded corporation engaged in the manufacturing of power generators and the contracts of power station projects",
+    "tahun_berdiri": 1958,
+    "enwiki": "Dongfang Electric",
+    "logo_berkas": "Dongfang Electric logo.svg",
+    "iso2": [
+     "CN"
+    ]
+   },
+   "beranda": {
+    "gagal": "robots"
+   },
+   "logo": {
+    "berkas": "en_f3564efcaf.png",
+    "sumber": "Wikidata P154 / Wikimedia Commons",
+    "url": "https://commons.wikimedia.org/wiki/File:Dongfang_Electric_logo.svg"
+   }
+  },
+  {
+   "nama": "Litostroj Power",
+   "situs": "https://www.litostrojpower.com/",
+   "segmen": [
+    "hidro"
+   ],
+   "alias": "Litostroj",
+   "wikidata": null,
+   "beranda": {
+    "judul": "Engineering the power of water | Litostroj",
+    "deskripsi": "Litostroj specializes in the design, development, testing and manufacturing of highly efficient, high-quality and reliable hydropower turbines and related equipment for medium and large hydropower plants.",
+    "indonesia": null,
+    "produk": {
+     "bayu": [],
+     "panas-bumi": [],
+     "hidro": [
+      "pembangkit hidro",
+      "turbin Pelton/Francis/Kaplan",
+      "pumped storage",
+      "turbin"
+     ],
+     "hidrogen": [],
+     "jaringan": [
+      "penyimpanan baterai"
+     ],
+     "biomassa": []
+    }
+   },
+   "logo": {
+    "tanpa": true
+   }
+  },
+  {
+   "nama": "Gilkes",
+   "situs": "https://www.gilkes.com/",
+   "segmen": [
+    "hidro"
+   ],
+   "alias": "Gilkes",
+   "wikidata": {
+    "id": "Q104918162",
+    "label": "Gilbert Gilkes & Gordon",
+    "deskripsi": "English hydropower engineering company",
+    "tahun_berdiri": null,
+    "enwiki": "Gilbert Gilkes & Gordon",
+    "logo_berkas": null,
+    "iso2": [
+     "GB"
+    ]
+   },
+   "beranda": {
+    "judul": "Hydropower & Pump Specialists | Gilkes",
+    "deskripsi": "Gilkes delivers complete hydropower systems and cooling pumps backed by 170 years of manufacturing expertise",
+    "indonesia": null,
+    "produk": {
+     "bayu": [],
+     "panas-bumi": [],
+     "hidro": [
+      "pembangkit hidro",
+      "turbin"
+     ],
+     "hidrogen": [],
+     "jaringan": [],
+     "biomassa": []
+    }
+   },
+   "logo": {
+    "berkas": "en_6f822225e2.png",
+    "sumber": "ikon resmi situs",
+    "url": "https://www.gilkes.com/wp-content/uploads/2025/03/cropped-favicon-180x180.png"
+   }
+  },
+  {
+   "nama": "Cink Hydro-Energy",
+   "situs": "https://www.cink.cz/",
+   "segmen": [
+    "hidro"
+   ],
+   "alias": "Cink",
+   "wikidata": null,
+   "beranda": {
+    "judul": "CINK - pokladní systém",
+    "deskripsi": "",
+    "indonesia": null,
+    "produk": {
+     "bayu": [],
+     "panas-bumi": [],
+     "hidro": [],
+     "hidrogen": [],
+     "jaringan": [],
+     "biomassa": []
+    }
+   },
+   "logo": {
+    "tanpa": true
+   }
+  },
+  {
+   "nama": "Nel",
+   "situs": "https://nelhydrogen.com/",
+   "segmen": [
+    "hidrogen"
+   ],
+   "alias": "Nel (ASA|Hydrogen)",
+   "wikidata": {
+    "id": "Q30259493",
+    "label": "Nel",
+    "deskripsi": "company in Oslo, Norway",
+    "tahun_berdiri": 1998,
+    "enwiki": "Nel ASA",
+    "logo_berkas": "Nel Logo.svg",
+    "iso2": [
+     "NO"
+    ]
+   },
+   "beranda": {
+    "judul": "Nel Hydrogen | The future belongs to the front-runners",
+    "deskripsi": "Nel is a global, dedicated hydrogen company, delivering world-class solutions to produce hydrogen from renewable energy.",
+    "indonesia": null,
+    "produk": {
+     "bayu": [],
+     "panas-bumi": [],
+     "hidro": [],
+     "hidrogen": [
+      "elektroliser",
+      "elektroliser PEM",
+      "elektroliser alkalin",
+      "hidrogen"
+     ],
+     "jaringan": [],
+     "biomassa": []
+    }
+   },
+   "logo": {
+    "berkas": "en_658261fe08.png",
+    "sumber": "Wikidata P154 / Wikimedia Commons",
+    "url": "https://commons.wikimedia.org/wiki/File:Nel_Logo.svg"
+   }
+  },
+  {
+   "nama": "thyssenkrupp nucera",
+   "situs": "https://thyssenkrupp-nucera.com/",
+   "segmen": [
+    "hidrogen"
+   ],
+   "alias": "nucera",
+   "wikidata": {
+    "id": "Q119781817",
+    "label": "Thyssenkrupp Nucera",
+    "deskripsi": "Global plant manufacturer for electrochemical plants headquartered in Germany",
+    "tahun_berdiri": 1960,
+    "logo_berkas": "Thyssenkrupp nucera logo.svg",
+    "iso2": [
+     "DE"
+    ]
+   },
+   "beranda": {
+    "judul": "thyssenkrupp nucera: thyssenkrupp nucera",
+    "deskripsi": "thyssenkrupp nucera offers world-leading technologies for high-efficiency chlor-alkali, hydrochloric acid and alkaline water electrolysis plants.",
+    "indonesia": null,
+    "produk": {
+     "bayu": [],
+     "panas-bumi": [],
+     "hidro": [],
+     "hidrogen": [
+      "elektroliser",
+      "elektroliser alkalin",
+      "hidrogen"
+     ],
+     "jaringan": [],
+     "biomassa": []
+    }
+   },
+   "logo": {
+    "berkas": "en_a96c8b5e73.png",
+    "sumber": "Wikidata P154 / Wikimedia Commons",
+    "url": "https://commons.wikimedia.org/wiki/File:Thyssenkrupp_nucera_logo.svg"
+   }
+  },
+  {
+   "nama": "Siemens Energy",
+   "situs": "https://www.siemens-energy.com/",
+   "segmen": [
+    "hidrogen",
+    "jaringan"
+   ],
+   "alias": "Siemens Energy",
+   "wikidata": {
+    "id": "Q89189545",
+    "label": "Siemens Energy AG",
+    "deskripsi": "German company in electrical engineering and energy technology",
+    "tahun_berdiri": 2020,
+    "enwiki": "Siemens Energy",
+    "logo_berkas": "Siemens Energy logo.svg",
+    "iso2": [
+     "DE"
+    ]
+   },
+   "beranda": {
+    "judul": "Siemens Energy | Let's make tomorrow different today",
+    "deskripsi": "We support companies and countries to reduce emissions across the energy landscape – for a more reliable, affordable and sustainable energy system.",
+    "indonesia": null,
+    "produk": {
+     "bayu": [
+      "angin"
+     ],
+     "panas-bumi": [
+      "siklus ORC",
+      "turbin uap"
+     ],
+     "hidro": [
+      "turbin"
+     ],
+     "hidrogen": [
+      "elektroliser"
+     ],
+     "jaringan": [
+      "HVDC",
+      "transformator",
+      "switchgear",
+      "gardu induk",
+      "penyimpanan baterai",
+      "jaringan listrik"
+     ],
+     "biomassa": [
+      "biomassa"
+     ]
+    }
+   },
+   "logo": {
+    "berkas": "en_a87d146e17.png",
+    "sumber": "Wikidata P154 / Wikimedia Commons",
+    "url": "https://commons.wikimedia.org/wiki/File:Siemens_Energy_logo.svg"
+   }
+  },
+  {
+   "nama": "Plug Power",
+   "situs": "https://www.plugpower.com/",
+   "segmen": [
+    "hidrogen"
+   ],
+   "alias": "Plug Power",
+   "wikidata": {
+    "id": "Q7205253",
+    "label": "Plug Power",
+    "deskripsi": "American company",
+    "tahun_berdiri": 1997,
+    "enwiki": "Plug Power",
+    "logo_berkas": "Plug Power Logo.svg",
+    "iso2": [
+     "US"
+    ]
+   },
+   "beranda": {
+    "judul": "Plug Power | Renewable Hydrogen & Fuel Cell Solutions",
+    "deskripsi": "Plug Power helps businesses achieve greater productivity and sustainability in an electrified world through hydrogen and fuel cells.",
+    "indonesia": null,
+    "produk": {
+     "bayu": [],
+     "panas-bumi": [],
+     "hidro": [],
+     "hidrogen": [
+      "elektroliser",
+      "elektroliser PEM",
+      "hidrogen",
+      "sel bahan bakar"
+     ],
+     "jaringan": [
+      "jaringan listrik"
+     ],
+     "biomassa": []
+    }
+   },
+   "logo": {
+    "berkas": "en_21b8116e01.png",
+    "sumber": "Wikidata P154 / Wikimedia Commons",
+    "url": "https://commons.wikimedia.org/wiki/File:Plug_Power_Logo.svg"
+   }
+  },
+  {
+   "nama": "ITM Power",
+   "situs": "https://itm-power.com/",
+   "segmen": [
+    "hidrogen"
+   ],
+   "alias": "ITM Power",
+   "wikidata": {
+    "id": "Q5974865",
+    "label": "ITM Power",
+    "deskripsi": "integrated hydrogen energy solutions manufacturer",
+    "tahun_berdiri": 2001,
+    "enwiki": "ITM Power",
+    "logo_berkas": "ITM Power Logo.svg",
+    "iso2": [
+     "GB"
+    ]
+   },
+   "beranda": {
+    "judul": "ITM",
+    "deskripsi": "ITM manufacture PEM electrolysers. A pioneering technology that generates green hydrogen enabling customers to decarbonise.",
+    "indonesia": null,
+    "produk": {
+     "bayu": [],
+     "panas-bumi": [],
+     "hidro": [],
+     "hidrogen": [
+      "elektroliser",
+      "elektroliser PEM",
+      "hidrogen"
+     ],
+     "jaringan": [],
+     "biomassa": []
+    }
+   },
+   "logo": {
+    "berkas": "en_b4e8346115.png",
+    "sumber": "Wikidata P154 / Wikimedia Commons",
+    "url": "https://commons.wikimedia.org/wiki/File:ITM_Power_Logo.svg"
+   }
+  },
+  {
+   "nama": "LONGi Hydrogen",
+   "situs": "https://www.longi.com/",
+   "segmen": [
+    "hidrogen"
+   ],
+   "alias": "LONGi|Longi",
+   "wikidata": {
+    "id": "Q28207127",
+    "label": "LONGi Green Energy Technology",
+    "deskripsi": "Chinese photovoltaics company",
+    "tahun_berdiri": 2006,
+    "enwiki": "LONGi",
+    "logo_berkas": "Longi Silicon Materials logo.png",
+    "iso2": [
+     "CN"
+    ]
+   },
+   "beranda": {
+    "judul": "The World’s Leading Supplier of Solar PV Solutions - LONGi",
+    "deskripsi": "LONGi, using innovative products and solutions help the world a healthier, safer and more sustainable place.",
+    "indonesia": null,
+    "produk": {
+     "bayu": [],
+     "panas-bumi": [],
+     "hidro": [],
+     "hidrogen": [
+      "hidrogen"
+     ],
+     "jaringan": [
+      "penyimpanan baterai"
+     ],
+     "biomassa": []
+    }
+   },
+   "logo": {
+    "berkas": "en_c86d682f80.png",
+    "sumber": "Wikidata P154 / Wikimedia Commons",
+    "url": "https://commons.wikimedia.org/wiki/File:Longi_Silicon_Materials_logo.png"
+   }
+  },
+  {
+   "nama": "Sungrow Hydrogen",
+   "situs": "https://en.sungrowpower.com/",
+   "segmen": [
+    "hidrogen"
+   ],
+   "alias": "Sungrow",
+   "wikidata": {
+    "id": "Q106003803",
+    "label": "Sungrow Power Supply",
+    "deskripsi": "Chinese solar photovoltaic company",
+    "tahun_berdiri": null,
+    "enwiki": "Sungrow",
+    "logo_berkas": "Sungrow Power Supply.svg",
+    "iso2": []
+   },
+   "beranda": {
+    "judul": "Sungrow - Solar Inverter & Energy Storage Solutions - Sungrow - SUNGROW",
+    "deskripsi": "Sungrow, the global leader in solar energy, powers 800GW+ worldwide with advanced solar inverters & energy storage systems. Trusted by homes, businesses & utilities in 150+ countries.",
+    "indonesia": null,
+    "produk": {
+     "bayu": [
+      "angin"
+     ],
+     "panas-bumi": [],
+     "hidro": [],
+     "hidrogen": [
+      "hidrogen"
+     ],
+     "jaringan": [
+      "penyimpanan baterai"
+     ],
+     "biomassa": []
+    }
+   },
+   "logo": {
+    "berkas": "en_297dd3c8ec.png",
+    "sumber": "Wikidata P154 / Wikimedia Commons",
+    "url": "https://commons.wikimedia.org/wiki/File:Sungrow_Power_Supply.svg"
+   }
+  },
+  {
+   "nama": "Peric Hydrogen Technologies",
+   "situs": "https://www.peric.com.cn/",
+   "segmen": [
+    "hidrogen"
+   ],
+   "alias": "\\bPeric\\b",
+   "wikidata": null,
+   "beranda": {
+    "gagal": "fetch failed"
+   },
+   "logo": {
+    "tanpa": true
+   }
+  },
+  {
+   "nama": "John Cockerill",
+   "situs": "https://www.johncockerill.com/",
+   "segmen": [
+    "hidrogen"
+   ],
+   "alias": "John Cockerill",
+   "wikidata": {
+    "id": "Q744233",
+    "label": "John Cockerill",
+    "deskripsi": "Belgian mechanical engineering group",
+    "tahun_berdiri": 1817,
+    "enwiki": "John Cockerill (company)",
+    "logo_berkas": null,
+    "iso2": [
+     "BE"
+    ]
+   },
+   "beranda": {
+    "judul": "",
+    "deskripsi": "",
+    "indonesia": null,
+    "produk": {
+     "bayu": [],
+     "panas-bumi": [],
+     "hidro": [],
+     "hidrogen": [],
+     "jaringan": [],
+     "biomassa": []
+    }
+   },
+   "logo": {
+    "tanpa": true
+   }
+  },
+  {
+   "nama": "Accelera",
+   "situs": "https://www.accelerazero.com/",
+   "segmen": [
+    "hidrogen"
+   ],
+   "alias": "Accelera|Cummins",
+   "wikidata": null,
+   "beranda": {
+    "judul": "Home | Accelera",
+    "deskripsi": "A leading supplier and integration partner for electric and hydrogen products and custom solutions for commercial vehicles and industrial processes.",
+    "indonesia": null,
+    "produk": {
+     "bayu": [],
+     "panas-bumi": [],
+     "hidro": [],
+     "hidrogen": [
+      "elektroliser",
+      "elektroliser PEM",
+      "hidrogen"
+     ],
+     "jaringan": [
+      "penyimpanan baterai"
+     ],
+     "biomassa": []
+    }
+   },
+   "logo": {
+    "berkas": "en_c7c1d80082.png",
+    "sumber": "ikon resmi situs",
+    "url": "https://www.accelerazero.com/themes/custom/luna_2022/apple-touch-icon.png"
+   }
+  },
+  {
+   "nama": "Hitachi Energy",
+   "situs": "https://www.hitachienergy.com/",
+   "segmen": [
+    "jaringan"
+   ],
+   "alias": "Hitachi Energy|ABB Power Grids",
+   "wikidata": {
+    "id": "Q107530770",
+    "label": "Hitachi Energy",
+    "deskripsi": "electric power company in Zurich, Switzerland",
+    "tahun_berdiri": 2018,
+    "enwiki": "Hitachi Energy",
+    "logo_berkas": "Hitachi-energy-mark-red.svg",
+    "iso2": [
+     "CH"
+    ]
+   },
+   "beranda": {
+    "judul": "Hitachi Energy - Powering the electricity era",
+    "deskripsi": "We are committed to powering the world’s energy system to be more sustainable, secure, resilient, and affordable, making electricity more accessible to all and empowering societies to thrive",
+    "indonesia": null,
+    "produk": {
+     "bayu": [
+      "turbin angin lepas pantai",
+      "turbin angin darat",
+      "angin"
+     ],
+     "panas-bumi": [],
+     "hidro": [],
+     "hidrogen": [
+      "hidrogen"
+     ],
+     "jaringan": [
+      "HVDC",
+      "transformator",
+      "switchgear",
+      "gardu induk",
+      "penyimpanan baterai",
+      "jaringan listrik"
+     ],
+     "biomassa": []
+    }
+   },
+   "logo": {
+    "berkas": "en_e52b2c7f68.png",
+    "sumber": "Wikidata P154 / Wikimedia Commons",
+    "url": "https://commons.wikimedia.org/wiki/File:Hitachi-energy-mark-red.svg"
+   }
+  },
+  {
+   "nama": "Schneider Electric",
+   "situs": "https://www.se.com/",
+   "segmen": [
+    "jaringan"
+   ],
+   "alias": "Schneider",
+   "wikidata": {
+    "id": "Q49053",
+    "label": "Schneider Electric",
+    "deskripsi": "France-based multinational corporation",
+    "tahun_berdiri": 1836,
+    "enwiki": "Schneider Electric",
+    "logo_berkas": "Schneider Electric 2007.svg",
+    "iso2": [
+     "FR"
+    ]
+   },
+   "beranda": {
+    "judul": "Schneider Electric Global | Your Energy Technology Partner",
+    "deskripsi": "As a global specialist in energy management, automation and digitalization in more than 100 countries, we offer integrated energy technology solutions across multiple market segments. | Schneider Electric",
+    "indonesia": null,
+    "produk": {
+     "bayu": [],
+     "panas-bumi": [],
+     "hidro": [],
+     "hidrogen": [],
+     "jaringan": [
+      "transformator",
+      "switchgear",
+      "penyimpanan baterai",
+      "jaringan listrik"
+     ],
+     "biomassa": []
+    }
+   },
+   "logo": {
+    "berkas": "en_eab75dcb58.png",
+    "sumber": "Wikidata P154 / Wikimedia Commons",
+    "url": "https://commons.wikimedia.org/wiki/File:Schneider_Electric_2007.svg"
+   }
+  },
+  {
+   "nama": "ABB",
+   "situs": "https://global.abb/",
+   "segmen": [
+    "jaringan"
+   ],
+   "alias": "\\bABB\\b",
+   "wikidata": {
+    "id": "Q52825",
+    "label": "ABB Group",
+    "deskripsi": "Swedish-Swiss robotics and electrical equipment company",
+    "tahun_berdiri": 1988,
+    "enwiki": "ABB",
+    "logo_berkas": "ABB logo.svg",
+    "iso2": [
+     "CH"
+    ]
+   },
+   "beranda": {
+    "gagal": "The operation was aborted due to timeout"
+   },
+   "logo": {
+    "berkas": "en_c64d3fcde2.png",
+    "sumber": "Wikidata P154 / Wikimedia Commons",
+    "url": "https://commons.wikimedia.org/wiki/File:ABB_logo.svg"
+   }
+  },
+  {
+   "nama": "NARI Group",
+   "situs": "https://www.nari-china.com/",
+   "segmen": [
+    "jaringan"
+   ],
+   "alias": "\\bNARI\\b",
+   "wikidata": null,
+   "beranda": {
+    "gagal": "fetch failed"
+   },
+   "logo": {
+    "tanpa": true
+   }
+  },
+  {
+   "nama": "XD Electric",
+   "situs": "https://www.xd.com.cn/",
+   "segmen": [
+    "jaringan"
+   ],
+   "alias": "XD Electric",
+   "wikidata": null,
+   "beranda": {
+    "judul": "中国西电集团有限公司",
+    "deskripsi": "",
+    "indonesia": null,
+    "produk": {
+     "bayu": [],
+     "panas-bumi": [],
+     "hidro": [],
+     "hidrogen": [],
+     "jaringan": [],
+     "biomassa": []
+    }
+   },
+   "logo": {
+    "tanpa": true
+   }
+  },
+  {
+   "nama": "TBEA",
+   "situs": "https://www.tbea.com/",
+   "segmen": [
+    "jaringan"
+   ],
+   "alias": "TBEA",
+   "wikidata": {
+    "id": "Q15831495",
+    "label": "Tebian Electric Apparatus",
+    "deskripsi": "Chinese electrical equipment manufacturer",
+    "tahun_berdiri": 1988,
+    "enwiki": "TBEA",
+    "logo_berkas": null,
+    "iso2": []
+   },
+   "beranda": {
+    "judul": "特变电工官网",
+    "deskripsi": "特变电工官网",
+    "indonesia": null,
+    "produk": {
+     "bayu": [],
+     "panas-bumi": [],
+     "hidro": [],
+     "hidrogen": [],
+     "jaringan": [],
+     "biomassa": []
+    }
+   },
+   "logo": {
+    "tanpa": true
+   }
+  },
+  {
+   "nama": "Hyosung Heavy Industries",
+   "situs": "https://www.hyosungheavyindustries.com/",
+   "segmen": [
+    "jaringan"
+   ],
+   "alias": "Hyosung",
+   "wikidata": {
+    "id": "Q131886942",
+    "tahun_berdiri": null,
+    "logo_berkas": null,
+    "iso2": [
+     "KR"
+    ]
+   },
+   "beranda": {
+    "judul": "효성중공업",
+    "deskripsi": "효성중공업 - 내일을 위한 토탈에너지 솔루션 리더",
+    "indonesia": null,
+    "produk": {
+     "bayu": [],
+     "panas-bumi": [],
+     "hidro": [],
+     "hidrogen": [
+      "hidrogen"
+     ],
+     "jaringan": [
+      "HVDC",
+      "jaringan listrik"
+     ],
+     "biomassa": []
+    }
+   },
+   "logo": {
+    "tanpa": true
+   }
+  },
+  {
+   "nama": "LS Electric",
+   "situs": "https://www.ls-electric.com/",
+   "segmen": [
+    "jaringan"
+   ],
+   "alias": "LS Electric",
+   "wikidata": null,
+   "beranda": {
+    "judul": "LS ELECTRIC Co., Ltd.",
+    "deskripsi": "글로벌 스마트에너지 솔루션 기업. 전력, 자동화 산업, ICT, DC 기술, 융복합 솔루션 제공.",
+    "indonesia": null,
+    "produk": {
+     "bayu": [],
+     "panas-bumi": [],
+     "hidro": [],
+     "hidrogen": [],
+     "jaringan": [],
+     "biomassa": []
+    }
+   },
+   "logo": {
+    "tanpa": true
+   }
+  },
+  {
+   "nama": "Valmet",
+   "situs": "https://www.valmet.com/",
+   "segmen": [
+    "biomassa"
+   ],
+   "alias": "Valmet",
+   "wikidata": {
+    "id": "Q1197161",
+    "label": "Valmet",
+    "deskripsi": "Finnish company",
+    "tahun_berdiri": 1951,
+    "enwiki": "Valmet",
+    "logo_berkas": "Valmet.svg",
+    "iso2": [
+     "FI"
+    ]
+   },
+   "beranda": {
+    "judul": "Valmet: technologies, services and automation to pulp, energy and paper industries",
+    "deskripsi": "Valmet is a global technology leader and manufacturer serving various industries. Process Performance Solutions delivers flow control technologies and automation systems ranging from individual measurements to full plant-wide solutions, complemented by lifecycle services. Biomaterial Solutions and Services serves global producers across the pulp, paper, packaging, tissue, and bioenergy industries, providing complete production lines and key process islands, and a full range of lifecycle services.",
+    "indonesia": "https://www.valmet.com/service/service-centers/indonesia/",
+    "produk": {
+     "bayu": [],
+     "panas-bumi": [],
+     "hidro": [
+      "pembangkit hidro",
+      "turbin"
+     ],
+     "hidrogen": [],
+     "jaringan": [],
+     "biomassa": [
+      "biomassa",
+      "boiler",
+      "fluidized bed",
+      "waste-to-energy",
+      "gasifikasi"
+     ]
+    }
+   },
+   "logo": {
+    "berkas": "en_f7449221ca.png",
+    "ada": true
+   }
+  },
+  {
+   "nama": "Sumitomo SHI FW",
+   "situs": "https://www.shi-fw.com/",
+   "segmen": [
+    "biomassa"
+   ],
+   "alias": "Sumitomo SHI|SHI FW",
+   "wikidata": null,
+   "beranda": {
+    "judul": "Sumitomo SHI FW",
+    "deskripsi": "Sumitomo SHI FW (SFW) is a global provider of solutions and services that drive the decarbonization of energy. Our solutions include energy from biomass and waste, long duration energy storage, recycling of waste to valuable end products, carbon capture, flue gas cleaning, waste heat boilers, as well as related services to digitalize, optimize, and decarbonize assets that we deliver to the global power and industrial markets.",
+    "indonesia": null,
+    "produk": {
+     "bayu": [],
+     "panas-bumi": [],
+     "hidro": [],
+     "hidrogen": [],
+     "jaringan": [
+      "penyimpanan baterai",
+      "jaringan listrik"
+     ],
+     "biomassa": [
+      "biomassa",
+      "boiler",
+      "fluidized bed",
+      "waste-to-energy",
+      "gasifikasi"
+     ]
+    }
+   },
+   "logo": {
+    "berkas": "en_f852bce1ed.png",
+    "ada": true
+   }
+  },
+  {
+   "nama": "Thermax",
+   "situs": "https://www.thermaxglobal.com/",
+   "segmen": [
+    "biomassa"
+   ],
+   "alias": "Thermax",
+   "wikidata": {
+    "id": "Q7783088",
+    "label": "Thermax",
+    "deskripsi": "Indian Engineering company",
+    "tahun_berdiri": 1980,
+    "enwiki": "Thermax",
+    "logo_berkas": null,
+    "iso2": [
+     "IN"
+    ]
+   },
+   "beranda": {
+    "gagal": "blokir 403"
+   },
+   "logo": {
+    "tanpa": true
+   }
+  },
+  {
+   "nama": "Doosan Enerbility",
+   "situs": "https://www.doosanenerbility.com/",
+   "segmen": [
+    "biomassa"
+   ],
+   "alias": "Doosan",
+   "wikidata": {
+    "id": "Q492581",
+    "label": "Doosan Enerbility",
+    "deskripsi": "company",
+    "tahun_berdiri": 1962,
+    "enwiki": "Doosan Enerbility",
+    "logo_berkas": "Doosan logo (en).png",
+    "iso2": [
+     "KR"
+    ]
+   },
+   "beranda": {
+    "judul": "Doosan Enerbility",
+    "deskripsi": "Doosan Enerbility, as a leading plant expert of the power and water industry, offers energy solutions for thermal power, nuclear power and renewable energy.",
+    "indonesia": null,
+    "produk": {
+     "bayu": [
+      "menara turbin",
+      "angin"
+     ],
+     "panas-bumi": [],
+     "hidro": [
+      "pembangkit hidro",
+      "turbin"
+     ],
+     "hidrogen": [
+      "hidrogen"
+     ],
+     "jaringan": [
+      "jaringan listrik"
+     ],
+     "biomassa": []
+    }
+   },
+   "logo": {
+    "berkas": "en_ea6383af3c.png",
+    "sumber": "Wikidata P154 / Wikimedia Commons",
+    "url": "https://commons.wikimedia.org/wiki/File:Doosan_logo_(en).png"
+   }
+  }
+ ]
+}

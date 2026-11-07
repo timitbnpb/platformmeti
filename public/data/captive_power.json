@@ -1,0 +1,2762 @@
+{
+ "lapis": "captive_power",
+ "dibangun_pada": "2026-11-08",
+ "parameter": {
+  "fk_batubara": 0.85,
+  "bauran": {
+   "surya": 0.45,
+   "bayu": 0.15,
+   "firm": 0.4
+  },
+  "fk_ebt": {
+   "surya": 0.17,
+   "bayu": 0.28,
+   "firm": 0.6
+  },
+  "faktor_emisi_default": 0.95,
+  "jam": 8760,
+  "catatan": "Penyimpanan baterai, transmisi, dan lahan tidak dihitung; MW EBT adalah MW nameplate yang menghasilkan energi tahunan sama dengan PLTU yang diganti."
+ },
+ "sumber": [
+  {
+   "id": "gem-coal",
+   "judul": "Global Coal Plant Tracker (unit berkolom captive), via data/strategis/pltu.json",
+   "penerbit": "Global Energy Monitor",
+   "url": "https://globalenergymonitor.org/projects/global-coal-plant-tracker/",
+   "lisensi": "CC BY 4.0",
+   "tingkat_bukti": "via-pihak-ketiga"
+  },
+  {
+   "id": "ct",
+   "judul": "Climate TRACE v6 (aktivitas dan emisi aset pembangkit 2024), public/data/karbon.json",
+   "penerbit": "Climate TRACE",
+   "url": "https://climatetrace.org/",
+   "lisensi": "CC BY 4.0",
+   "tingkat_bukti": "via-pihak-ketiga"
+  },
+  {
+   "id": "gem-ebt",
+   "judul": "GEM Solar/Hydropower/Wind Tracker (proyek EBT dalam radius zona), public/data/gem_pembangkit.json",
+   "penerbit": "Global Energy Monitor",
+   "url": "https://globalenergymonitor.org/",
+   "lisensi": "CC BY 4.0",
+   "tingkat_bukti": "via-pihak-ketiga"
+  },
+  {
+   "id": "kor",
+   "judul": "PPA korporat (public/data/korporat.json), pengumuman ASX Nickel Industries 9 Okt 2023",
+   "penerbit": "Nickel Industries Limited",
+   "url": "https://announcements.asx.com.au/asxpdf/20231009/pdf/05vtqtfg19hgfc.pdf",
+   "tingkat_bukti": "kata-pihak"
+  }
+ ],
+ "meta": {
+  "jumlah_pembangkit": 48,
+  "mw_operasi": 19644,
+  "mw_konstruksi": 4770,
+  "mw_rencana": 10280,
+  "mw_operasi_nikel": 15742,
+  "per_industri": {
+   "nikel": 14062,
+   "aluminium": 1995,
+   "pulp-kertas": 1571.4,
+   "kawasan-industri": 630,
+   "kimia": 560,
+   "baja": 160,
+   "logam-lain": 379,
+   "semen": 130,
+   "tekstil": 156.6
+  },
+  "ebt_captive_operasi_mw": 305,
+  "pct_batubara": 98.5,
+  "emisi_tco2e_terukur": 61004060,
+  "catatan": "Hanya unit batubara; captive EBT (mis. PLTA Vale) masuk lewat proyek_konversi. Kapasitas = jumlah unit GEM berstatus operasi/konstruksi/rencana per pembangkit."
+ },
+ "kawasan": [
+  {
+   "id": "imip",
+   "nama": "IMIP Morowali (Bahodopi)",
+   "kawasan_id": "ki_morowali_dir",
+   "prov": "Sulawesi Tengah",
+   "kode": "72",
+   "lat": -2.86,
+   "lng": 122.17,
+   "r": 40,
+   "jumlah_pembangkit": 4,
+   "mw_operasi": 5700,
+   "mw_konstruksi": 760,
+   "mw_rencana": 780,
+   "pembangkit_ids": [
+    "L100000104846",
+    "L100000102722",
+    "L100000104616",
+    "L100000104847"
+   ],
+   "mw_aktual_terukur": 5700,
+   "mwh_tahun": 24332180,
+   "emisi_tco2e": 22386020,
+   "pct_batubara": 100,
+   "ebt_operasi_mw": 0,
+   "ebt_sepadan_mw": {
+    "surya": 7353,
+    "bayu": 1488,
+    "firm": 1852,
+    "total": 10692
+   },
+   "rasio_ebt_per_mw_batubara": 1.88,
+   "proyek_konversi_ids": [
+    "gem-solar-L100001020724"
+   ],
+   "peringkat": 1
+  },
+  {
+   "id": "iwip",
+   "nama": "IWIP Weda Bay",
+   "kawasan_id": "ki_indonesiawedabay_dir",
+   "prov": "Maluku Utara",
+   "kode": "82",
+   "lat": 0.48,
+   "lng": 128,
+   "r": 30,
+   "jumlah_pembangkit": 1,
+   "mw_operasi": 4540,
+   "mw_konstruksi": 0,
+   "mw_rencana": 0,
+   "pembangkit_ids": [
+    "L100000104613"
+   ],
+   "mw_aktual_terukur": 4540,
+   "mwh_tahun": 9647500,
+   "emisi_tco2e": 8703200,
+   "pct_batubara": 100,
+   "ebt_operasi_mw": 0,
+   "ebt_sepadan_mw": {
+    "surya": 2915,
+    "bayu": 590,
+    "firm": 734,
+    "total": 4239
+   },
+   "rasio_ebt_per_mw_batubara": 0.93,
+   "proyek_konversi_ids": [
+    "pj_0310"
+   ],
+   "peringkat": 2
+  },
+  {
+   "id": "obi",
+   "nama": "Pulau Obi",
+   "kawasan_id": "ki_pulauobi_dir",
+   "prov": "Maluku Utara",
+   "kode": "82",
+   "lat": -1.55,
+   "lng": 127.42,
+   "r": 25,
+   "jumlah_pembangkit": 3,
+   "mw_operasi": 1932,
+   "mw_konstruksi": 760,
+   "mw_rencana": 0,
+   "pembangkit_ids": [
+    "L100000104831",
+    "L100000104614",
+    "L100000104615"
+   ],
+   "mw_aktual_terukur": 1932,
+   "mwh_tahun": 6625130,
+   "emisi_tco2e": 6632960,
+   "pct_batubara": 100,
+   "ebt_operasi_mw": 0,
+   "ebt_sepadan_mw": {
+    "surya": 2002,
+    "bayu": 405,
+    "firm": 504,
+    "total": 2911
+   },
+   "rasio_ebt_per_mw_batubara": 1.51,
+   "proyek_konversi_ids": [
+    "gem-solar-L100001020722"
+   ],
+   "peringkat": 3
+  },
+  {
+   "id": "morut",
+   "nama": "Morowali Utara (GNI, IHIP)",
+   "kawasan_id": null,
+   "prov": "Sulawesi Tengah",
+   "kode": "72",
+   "lat": -2.1,
+   "lng": 121.55,
+   "r": 50,
+   "jumlah_pembangkit": 3,
+   "mw_operasi": 1490,
+   "mw_konstruksi": 330,
+   "mw_rencana": 100,
+   "pembangkit_ids": [
+    "L100000104841",
+    "L100001000402",
+    "L100001026019"
+   ],
+   "mw_aktual_terukur": 1490,
+   "mwh_tahun": 6361000,
+   "emisi_tco2e": 6274700,
+   "pct_batubara": 100,
+   "ebt_operasi_mw": 0,
+   "ebt_sepadan_mw": {
+    "surya": 1922,
+    "bayu": 389,
+    "firm": 484,
+    "total": 2795
+   },
+   "rasio_ebt_per_mw_batubara": 1.88,
+   "proyek_konversi_ids": [],
+   "peringkat": 4
+  },
+  {
+   "id": "konawe",
+   "nama": "Konawe Morosi (VDNI, OSS)",
+   "kawasan_id": "ki_indonesiakonawe_dir",
+   "prov": "Sulawesi Tenggara",
+   "kode": "74",
+   "lat": -3.86,
+   "lng": 122.45,
+   "r": 30,
+   "jumlah_pembangkit": 2,
+   "mw_operasi": 2370,
+   "mw_konstruksi": 0,
+   "mw_rencana": 0,
+   "pembangkit_ids": [
+    "L100000105022",
+    "L100000104617"
+   ],
+   "mw_aktual_terukur": 1840,
+   "mwh_tahun": 6208880,
+   "emisi_tco2e": 6125561,
+   "pct_batubara": 100,
+   "ebt_operasi_mw": 0,
+   "ebt_sepadan_mw": {
+    "surya": 1876,
+    "bayu": 380,
+    "firm": 473,
+    "total": 2728
+   },
+   "rasio_ebt_per_mw_batubara": 1.15,
+   "proyek_konversi_ids": [],
+   "peringkat": 5
+  },
+  {
+   "id": "bintan",
+   "nama": "Bintan, Batam, Galang (Kepri)",
+   "kawasan_id": "ki_kabil_dir",
+   "prov": "Kepulauan Riau",
+   "kode": "21",
+   "lat": 0.95,
+   "lng": 104.4,
+   "r": 60,
+   "jumlah_pembangkit": 4,
+   "mw_operasi": 180,
+   "mw_konstruksi": 1650,
+   "mw_rencana": 4450,
+   "pembangkit_ids": [
+    "L100000104619",
+    "L100001047944",
+    "L100001082959",
+    "L100001000090"
+   ],
+   "mw_aktual_terukur": 180,
+   "mwh_tahun": 768390,
+   "emisi_tco2e": 859450,
+   "pct_batubara": 100,
+   "ebt_operasi_mw": 0,
+   "ebt_sepadan_mw": {
+    "surya": 232,
+    "bayu": 47,
+    "firm": 58,
+    "total": 338
+   },
+   "rasio_ebt_per_mw_batubara": 1.88,
+   "proyek_konversi_ids": [
+    "gem-solar-L100000808624",
+    "gem-solar-L100000830289",
+    "gem-solar-L100001080948"
+   ],
+   "peringkat": 6
+  },
+  {
+   "id": "pomalaa",
+   "nama": "Kolaka Pomalaa",
+   "kawasan_id": "ki_indonesiapomalaaindustry_dir",
+   "prov": "Sulawesi Tenggara",
+   "kode": "74",
+   "lat": -4.18,
+   "lng": 121.59,
+   "r": 25,
+   "jumlah_pembangkit": 1,
+   "mw_operasi": 60,
+   "mw_konstruksi": 0,
+   "mw_rencana": 0,
+   "pembangkit_ids": [
+    "L100000102801"
+   ],
+   "mw_aktual_terukur": 60,
+   "mwh_tahun": 360090,
+   "emisi_tco2e": 381590,
+   "pct_batubara": 100,
+   "ebt_operasi_mw": 0,
+   "ebt_sepadan_mw": {
+    "surya": 109,
+    "bayu": 22,
+    "firm": 27,
+    "total": 158
+   },
+   "rasio_ebt_per_mw_batubara": 2.64,
+   "proyek_konversi_ids": [],
+   "peringkat": 7
+  },
+  {
+   "id": "kaltara",
+   "nama": "Kaltara KIPI (Tanah Kuning)",
+   "kawasan_id": "ki_delma_dir",
+   "prov": "Kalimantan Utara",
+   "kode": "65",
+   "lat": 2.5,
+   "lng": 117.9,
+   "r": 60,
+   "jumlah_pembangkit": 1,
+   "mw_operasi": 0,
+   "mw_konstruksi": 1210,
+   "mw_rencana": 910,
+   "pembangkit_ids": [
+    "L100000104979"
+   ],
+   "mw_aktual_terukur": 0,
+   "mwh_tahun": 0,
+   "emisi_tco2e": 0,
+   "pct_batubara": null,
+   "ebt_operasi_mw": 0,
+   "ebt_sepadan_mw": {
+    "surya": 0,
+    "bayu": 0,
+    "firm": 0,
+    "total": 0
+   },
+   "rasio_ebt_per_mw_batubara": null,
+   "proyek_konversi_ids": [
+    "gem-hydropower-L100000602119",
+    "gem-hydropower-L100000602117",
+    "gem-hydropower-L100000602118",
+    "gem_hydropower_L100000602132",
+    "gem-hydropower-L100000602116",
+    "gem-hydropower-L100000602115"
+   ],
+   "peringkat": 8
+  }
+ ],
+ "pembangkit": [
+  {
+   "id": "L100000104613",
+   "nama": "Weda Bay power station",
+   "kota": "Weda",
+   "wilayah": "Maluku",
+   "industri": [
+    "nikel"
+   ],
+   "captive_ket": "nickel",
+   "pemilik": [
+    "PT Weda Bay Energi",
+    "PT Yashi Indonesia Investment",
+    "PT Youshan Nickel Indonesia",
+    "PT Libai Indonesia Metal Co",
+    "PT Angel Nickel Industry",
+    "PT Huayue Nickel Cobalt",
+    "PT Huake Nickel Indonesia",
+    "PT Sunny Metal Industry",
+    "PT Indonesia Weda Bay Industrial Park"
+   ],
+   "pemilik_org": [
+    {
+     "nama": "PT Weda Bay Energi",
+     "org_id": null,
+     "logo": null
+    },
+    {
+     "nama": "PT Yashi Indonesia Investment",
+     "org_id": null,
+     "logo": null
+    },
+    {
+     "nama": "PT Youshan Nickel Indonesia",
+     "org_id": null,
+     "logo": null
+    },
+    {
+     "nama": "PT Libai Indonesia Metal Co",
+     "org_id": null,
+     "logo": null
+    },
+    {
+     "nama": "PT Angel Nickel Industry",
+     "org_id": null,
+     "logo": null
+    },
+    {
+     "nama": "PT Huayue Nickel Cobalt",
+     "org_id": null,
+     "logo": null
+    },
+    {
+     "nama": "PT Huake Nickel Indonesia",
+     "org_id": null,
+     "logo": null
+    },
+    {
+     "nama": "PT Sunny Metal Industry",
+     "org_id": null,
+     "logo": null
+    },
+    {
+     "nama": "PT Indonesia Weda Bay Industrial Park",
+     "org_id": "en_aac574f476",
+     "logo": null
+    }
+   ],
+   "status": "operasi",
+   "bahan_bakar": "batubara",
+   "teknologi": [
+    "supercritical"
+   ],
+   "unit_operasi": 14,
+   "mw_operasi": 4540,
+   "mw_konstruksi": 0,
+   "mw_rencana": 0,
+   "tahun_mulai": [
+    2020,
+    2025
+   ],
+   "lat": 0.4764089,
+   "lng": 128.0012881,
+   "akurasi": "exact",
+   "zona": "iwip",
+   "karbon_id": "ct_25455952",
+   "mwh_aktual": 9647500,
+   "emisi_tco2e": 8703200,
+   "emisi_tahun": 2024,
+   "faktor_emisi": 0.902,
+   "url_wiki": "https://www.gem.wiki/Weda_Bay_power_station",
+   "tingkat_bukti": "via-pihak-ketiga"
+  },
+  {
+   "id": "L100000104846",
+   "nama": "Sulawesi Labota power station",
+   "kota": "Morowali Regency",
+   "wilayah": "Sulawesi",
+   "industri": [
+    "nikel",
+    "aluminium"
+   ],
+   "captive_ket": "aluminum, nickel",
+   "pemilik": [
+    "Indonesia Wanjia Ferro Nickel Co Ltd",
+    "Indonesia Zhaohui Ferro Nickel Co Ltd",
+    "PT Sulawesi Mining Investment",
+    "PT Walsin Nickel Industrial Indonesia",
+    "Indonesia Eternal Smelting Co",
+    "Indonesia Huaqing Aluminum Co Ltd",
+    "PT Hua Chin Aluminum Indonesia"
+   ],
+   "pemilik_org": [
+    {
+     "nama": "Indonesia Wanjia Ferro Nickel Co Ltd",
+     "org_id": null,
+     "logo": null
+    },
+    {
+     "nama": "Indonesia Zhaohui Ferro Nickel Co Ltd",
+     "org_id": null,
+     "logo": null
+    },
+    {
+     "nama": "PT Sulawesi Mining Investment",
+     "org_id": null,
+     "logo": null
+    },
+    {
+     "nama": "PT Walsin Nickel Industrial Indonesia",
+     "org_id": null,
+     "logo": null
+    },
+    {
+     "nama": "Indonesia Eternal Smelting Co",
+     "org_id": null,
+     "logo": null
+    },
+    {
+     "nama": "Indonesia Huaqing Aluminum Co Ltd",
+     "org_id": null,
+     "logo": null
+    },
+    {
+     "nama": "PT Hua Chin Aluminum Indonesia",
+     "org_id": null,
+     "logo": null
+    }
+   ],
+   "status": "operasi",
+   "bahan_bakar": "batubara",
+   "teknologi": [
+    "supercritical"
+   ],
+   "unit_operasi": 9,
+   "mw_operasi": 3360,
+   "mw_konstruksi": 760,
+   "mw_rencana": 380,
+   "tahun_mulai": [
+    2021,
+    2024
+   ],
+   "lat": -2.8689871,
+   "lng": 122.17188,
+   "akurasi": "exact",
+   "zona": "imip",
+   "karbon_id": "ct_1753130",
+   "mwh_aktual": 14343000,
+   "emisi_tco2e": 12820300,
+   "emisi_tahun": 2024,
+   "faktor_emisi": 0.894,
+   "url_wiki": "https://www.gem.wiki/Sulawesi_Labota_power_station",
+   "tingkat_bukti": "via-pihak-ketiga"
+  },
+  {
+   "id": "L100000102722",
+   "nama": "Sulawesi Mining power station",
+   "kota": "Morowali Regency",
+   "wilayah": "Sulawesi",
+   "industri": [
+    "nikel"
+   ],
+   "captive_ket": "nickel",
+   "pemilik": [
+    "PT Sulawesi Mining Investment",
+    "PT Indonesia Guang Ching Nickel and Stainless Steel Industry",
+    "PT Indonesia Tsingshan Stainless Steel",
+    "Indonesia Morowali Power Co"
+   ],
+   "pemilik_org": [
+    {
+     "nama": "PT Sulawesi Mining Investment",
+     "org_id": null,
+     "logo": null
+    },
+    {
+     "nama": "PT Indonesia Guang Ching Nickel and Stainless Steel Industry",
+     "org_id": null,
+     "logo": null
+    },
+    {
+     "nama": "PT Indonesia Tsingshan Stainless Steel",
+     "org_id": null,
+     "logo": null
+    },
+    {
+     "nama": "Indonesia Morowali Power Co",
+     "org_id": null,
+     "logo": null
+    }
+   ],
+   "status": "operasi",
+   "bahan_bakar": "batubara",
+   "teknologi": [],
+   "unit_operasi": 9,
+   "mw_operasi": 2080,
+   "mw_konstruksi": 0,
+   "mw_rencana": 0,
+   "tahun_mulai": [
+    2015,
+    2020
+   ],
+   "lat": -2.8255878,
+   "lng": 122.1554483,
+   "akurasi": "exact",
+   "zona": "imip",
+   "karbon_id": "ct_25455958",
+   "mwh_aktual": 8879300,
+   "emisi_tco2e": 8379400,
+   "emisi_tahun": 2024,
+   "faktor_emisi": 0.944,
+   "url_wiki": "https://www.gem.wiki/Sulawesi_Mining_power_station",
+   "tingkat_bukti": "via-pihak-ketiga"
+  },
+  {
+   "id": "L100000105022",
+   "nama": "Delong Nickel Phase II power station",
+   "kota": null,
+   "wilayah": "Sulawesi",
+   "industri": [
+    "nikel"
+   ],
+   "captive_ket": "nickel",
+   "pemilik": [
+    "PT Obsidian Stainless Steel"
+   ],
+   "pemilik_org": [
+    {
+     "nama": "PT Obsidian Stainless Steel",
+     "org_id": null,
+     "logo": null
+    }
+   ],
+   "status": "operasi",
+   "bahan_bakar": "batubara",
+   "teknologi": [],
+   "unit_operasi": 10,
+   "mw_operasi": 1840,
+   "mw_konstruksi": 0,
+   "mw_rencana": 0,
+   "tahun_mulai": [
+    2020,
+    2022
+   ],
+   "lat": -3.8279104,
+   "lng": 122.4682708,
+   "akurasi": "exact",
+   "zona": "konawe",
+   "karbon_id": "ct_25455979",
+   "mwh_aktual": 2262500,
+   "emisi_tco2e": 2376500,
+   "emisi_tahun": 2024,
+   "faktor_emisi": 1.05,
+   "url_wiki": "https://www.gem.wiki/Delong_Nickel_Phase_II_power_station",
+   "tingkat_bukti": "via-pihak-ketiga"
+  },
+  {
+   "id": "L100000104831",
+   "nama": "PT Halmahera Persada Lygend Nickel Smelter power station",
+   "kota": "South Halmahera",
+   "wilayah": "Maluku",
+   "industri": [
+    "nikel"
+   ],
+   "captive_ket": "nickel",
+   "pemilik": [
+    "PT Halmahera Persada Lygend",
+    "PT Obi Nickel Cobalt"
+   ],
+   "pemilik_org": [
+    {
+     "nama": "PT Halmahera Persada Lygend",
+     "org_id": null,
+     "logo": null
+    },
+    {
+     "nama": "PT Obi Nickel Cobalt",
+     "org_id": null,
+     "logo": null
+    }
+   ],
+   "status": "operasi",
+   "bahan_bakar": "batubara",
+   "teknologi": [],
+   "unit_operasi": 10,
+   "mw_operasi": 1630,
+   "mw_konstruksi": 760,
+   "mw_rencana": 0,
+   "tahun_mulai": [
+    2020,
+    2025
+   ],
+   "lat": -1.5614331,
+   "lng": 127.4210337,
+   "akurasi": "exact",
+   "zona": "obi",
+   "karbon_id": "ct_1753127",
+   "mwh_aktual": 5335900,
+   "emisi_tco2e": 5215000,
+   "emisi_tahun": 2024,
+   "faktor_emisi": 0.977,
+   "url_wiki": "https://www.gem.wiki/PT_Halmahera_Persada_Lygend_Nickel_Smelter_power_station",
+   "tingkat_bukti": "via-pihak-ketiga"
+  },
+  {
+   "id": "L100000104841",
+   "nama": "Delong Nickel Phase III power station",
+   "kota": "Morowali Regency",
+   "wilayah": "Sulawesi",
+   "industri": [
+    "nikel"
+   ],
+   "captive_ket": "nickel",
+   "pemilik": [
+    "PT Gunbuster Nickel Industry"
+   ],
+   "pemilik_org": [
+    {
+     "nama": "PT Gunbuster Nickel Industry",
+     "org_id": null,
+     "logo": null
+    }
+   ],
+   "status": "operasi",
+   "bahan_bakar": "batubara",
+   "teknologi": [],
+   "unit_operasi": 6,
+   "mw_operasi": 810,
+   "mw_konstruksi": 0,
+   "mw_rencana": 0,
+   "tahun_mulai": [
+    2021,
+    2022
+   ],
+   "lat": -2.004694,
+   "lng": 121.4380707,
+   "akurasi": "exact",
+   "zona": "morut",
+   "karbon_id": "ct_1753129",
+   "mwh_aktual": 3457800,
+   "emisi_tco2e": 3456900,
+   "emisi_tahun": 2024,
+   "faktor_emisi": 1,
+   "url_wiki": "https://www.gem.wiki/Delong_Nickel_Phase_III_power_station",
+   "tingkat_bukti": "via-pihak-ketiga"
+  },
+  {
+   "id": "L100000102779",
+   "nama": "Perawang Mill power station",
+   "kota": "Siak",
+   "wilayah": "Sumatera",
+   "industri": [
+    "pulp-kertas"
+   ],
+   "captive_ket": "pulp & paper",
+   "pemilik": [
+    "PT Indah Kiat Pulp & Paper Tbk"
+   ],
+   "pemilik_org": [
+    {
+     "nama": "PT Indah Kiat Pulp & Paper Tbk",
+     "org_id": null,
+     "logo": null
+    }
+   ],
+   "status": "operasi",
+   "bahan_bakar": "batubara",
+   "teknologi": [
+    "subcritical"
+   ],
+   "unit_operasi": 8,
+   "mw_operasi": 790,
+   "mw_konstruksi": 0,
+   "mw_rencana": 0,
+   "tahun_mulai": [
+    2000,
+    2014
+   ],
+   "lat": 0.68932,
+   "lng": 101.61907,
+   "akurasi": "exact",
+   "zona": null,
+   "karbon_id": "ct_448900",
+   "mwh_aktual": 3228700,
+   "emisi_tco2e": 3311400,
+   "emisi_tahun": 2024,
+   "faktor_emisi": 1.026,
+   "url_wiki": "https://www.gem.wiki/Perawang_Mill_power_station",
+   "tingkat_bukti": "via-pihak-ketiga"
+  },
+  {
+   "id": "L100000104617",
+   "nama": "Delong Nickel Phase I power station",
+   "kota": null,
+   "wilayah": "Sulawesi",
+   "industri": [
+    "nikel"
+   ],
+   "captive_ket": "nickel",
+   "pemilik": [
+    "PT Virtue Dragon Nickel Industry"
+   ],
+   "pemilik_org": [
+    {
+     "nama": "PT Virtue Dragon Nickel Industry",
+     "org_id": null,
+     "logo": null
+    }
+   ],
+   "status": "operasi",
+   "bahan_bakar": "batubara",
+   "teknologi": [],
+   "unit_operasi": 8,
+   "mw_operasi": 530,
+   "mw_konstruksi": 0,
+   "mw_rencana": 0,
+   "tahun_mulai": [
+    2018,
+    2019
+   ],
+   "lat": -3.907537,
+   "lng": 122.419265,
+   "akurasi": "exact",
+   "zona": "konawe",
+   "karbon_id": null,
+   "mwh_aktual": null,
+   "emisi_tco2e": null,
+   "emisi_tahun": null,
+   "faktor_emisi": null,
+   "url_wiki": "https://www.gem.wiki/Delong_Nickel_Phase_I_power_station",
+   "tingkat_bukti": "via-pihak-ketiga"
+  },
+  {
+   "id": "L100001000402",
+   "nama": "PT IHIP power station",
+   "kota": "Morowali",
+   "wilayah": "Sulawesi",
+   "industri": [
+    "kawasan-industri"
+   ],
+   "captive_ket": "industrial park",
+   "pemilik": [
+    "PT Baoshuo Taman Industry Investment Group"
+   ],
+   "pemilik_org": [
+    {
+     "nama": "PT Baoshuo Taman Industry Investment Group",
+     "org_id": null,
+     "logo": null
+    }
+   ],
+   "status": "operasi",
+   "bahan_bakar": "batubara",
+   "teknologi": [],
+   "unit_operasi": 3,
+   "mw_operasi": 350,
+   "mw_konstruksi": 0,
+   "mw_rencana": 100,
+   "tahun_mulai": [
+    2024,
+    2024
+   ],
+   "lat": -2.2578515,
+   "lng": 121.769024,
+   "akurasi": "exact",
+   "zona": "morut",
+   "karbon_id": "ct_49534255",
+   "mwh_aktual": 1494300,
+   "emisi_tco2e": 1513800,
+   "emisi_tahun": 2024,
+   "faktor_emisi": 1.013,
+   "url_wiki": "https://www.gem.wiki/PT_IHIP_power_station",
+   "tingkat_bukti": "via-pihak-ketiga"
+  },
+  {
+   "id": "L100001026019",
+   "nama": "Delong Nickel Phase IV power station",
+   "kota": "Morowali Regency",
+   "wilayah": "Sulawesi",
+   "industri": [
+    "nikel"
+   ],
+   "captive_ket": "nickel",
+   "pemilik": [
+    "PT Nadesico Nickel Industry"
+   ],
+   "pemilik_org": [
+    {
+     "nama": "PT Nadesico Nickel Industry",
+     "org_id": null,
+     "logo": null
+    }
+   ],
+   "status": "operasi",
+   "bahan_bakar": "batubara",
+   "teknologi": [],
+   "unit_operasi": 1,
+   "mw_operasi": 330,
+   "mw_konstruksi": 330,
+   "mw_rencana": 0,
+   "tahun_mulai": [
+    2024,
+    2024
+   ],
+   "lat": -2.0165661,
+   "lng": 121.4311814,
+   "akurasi": "exact",
+   "zona": "morut",
+   "karbon_id": "ct_49534309",
+   "mwh_aktual": 1408900,
+   "emisi_tco2e": 1304000,
+   "emisi_tahun": 2024,
+   "faktor_emisi": 0.926,
+   "url_wiki": "https://www.gem.wiki/Delong_Nickel_Phase_IV_power_station",
+   "tingkat_bukti": "via-pihak-ketiga"
+  },
+  {
+   "id": "L100000102695",
+   "nama": "Asahimas Chemical power station",
+   "kota": "Cilegon",
+   "wilayah": "Jawa",
+   "industri": [
+    "kimia"
+   ],
+   "captive_ket": "chemicals",
+   "pemilik": [
+    "PT Asahimas Chemical"
+   ],
+   "pemilik_org": [
+    {
+     "nama": "PT Asahimas Chemical",
+     "org_id": null,
+     "logo": null
+    }
+   ],
+   "status": "operasi",
+   "bahan_bakar": "batubara",
+   "teknologi": [],
+   "unit_operasi": 2,
+   "mw_operasi": 300,
+   "mw_konstruksi": 0,
+   "mw_rencana": 0,
+   "tahun_mulai": [
+    2019,
+    2019
+   ],
+   "lat": -6.024754,
+   "lng": 105.942635,
+   "akurasi": "exact",
+   "zona": null,
+   "karbon_id": "ct_448895",
+   "mwh_aktual": 1281390,
+   "emisi_tco2e": 1283890,
+   "emisi_tahun": 2024,
+   "faktor_emisi": 1.002,
+   "url_wiki": "https://www.gem.wiki/Asahimas_Chemical_power_station",
+   "tingkat_bukti": "via-pihak-ketiga"
+  },
+  {
+   "id": "L100000102813",
+   "nama": "Cikarang Babelan power station",
+   "kota": "Bekasi",
+   "wilayah": "Jawa",
+   "industri": [
+    "kawasan-industri"
+   ],
+   "captive_ket": "industrial park",
+   "pemilik": [
+    "PT Cikarang Listrindo Tbk"
+   ],
+   "pemilik_org": [
+    {
+     "nama": "PT Cikarang Listrindo Tbk",
+     "org_id": null,
+     "logo": null
+    }
+   ],
+   "status": "operasi",
+   "bahan_bakar": "batubara",
+   "teknologi": [
+    "subcritical"
+   ],
+   "unit_operasi": 2,
+   "mw_operasi": 280,
+   "mw_konstruksi": 0,
+   "mw_rencana": 0,
+   "tahun_mulai": [
+    2017,
+    2017
+   ],
+   "lat": -6.11607,
+   "lng": 107.05197,
+   "akurasi": "exact",
+   "zona": null,
+   "karbon_id": null,
+   "mwh_aktual": null,
+   "emisi_tco2e": null,
+   "emisi_tahun": null,
+   "faktor_emisi": null,
+   "url_wiki": "https://www.gem.wiki/Cikarang_Babelan_power_station",
+   "tingkat_bukti": "via-pihak-ketiga"
+  },
+  {
+   "id": "L100000104805",
+   "nama": "Tjiwi Kimia Paper Mill power station",
+   "kota": "Mliriprowo",
+   "wilayah": "Jawa",
+   "industri": [
+    "pulp-kertas"
+   ],
+   "captive_ket": "pulp & paper",
+   "pemilik": [
+    "PT Pabrik Kertas Tjiwi Kimia Tbk"
+   ],
+   "pemilik_org": [
+    {
+     "nama": "PT Pabrik Kertas Tjiwi Kimia Tbk",
+     "org_id": null,
+     "logo": null
+    }
+   ],
+   "status": "operasi",
+   "bahan_bakar": "batubara",
+   "teknologi": [
+    "subcritical"
+   ],
+   "unit_operasi": 4,
+   "mw_operasi": 230,
+   "mw_konstruksi": 0,
+   "mw_rencana": 0,
+   "tahun_mulai": [
+    1992,
+    2015
+   ],
+   "lat": -7.436835,
+   "lng": 112.468802,
+   "akurasi": "exact",
+   "zona": null,
+   "karbon_id": "ct_4404315",
+   "mwh_aktual": 1594700,
+   "emisi_tco2e": 1711100,
+   "emisi_tahun": 2024,
+   "faktor_emisi": 1.073,
+   "url_wiki": "https://www.gem.wiki/Tjiwi_Kimia_Paper_Mill_power_station",
+   "tingkat_bukti": "via-pihak-ketiga"
+  },
+  {
+   "id": "L100000102745",
+   "nama": "Sinar Mas Jambi Lontar power station",
+   "kota": "Tanjung Jabung Barat",
+   "wilayah": "Sumatera",
+   "industri": [
+    "pulp-kertas"
+   ],
+   "captive_ket": "pulp & paper",
+   "pemilik": [
+    "PT Lontar Papyrus Pulp & Paper Industry"
+   ],
+   "pemilik_org": [
+    {
+     "nama": "PT Lontar Papyrus Pulp & Paper Industry",
+     "org_id": null,
+     "logo": null
+    }
+   ],
+   "status": "operasi",
+   "bahan_bakar": "batubara",
+   "teknologi": [
+    "subcritical"
+   ],
+   "unit_operasi": 4,
+   "mw_operasi": 211,
+   "mw_konstruksi": 0,
+   "mw_rencana": 0,
+   "tahun_mulai": [
+    1994,
+    2017
+   ],
+   "lat": -1.0069,
+   "lng": 103.0821,
+   "akurasi": "exact",
+   "zona": null,
+   "karbon_id": "ct_25452748",
+   "mwh_aktual": 473850,
+   "emisi_tco2e": 529990,
+   "emisi_tahun": 2024,
+   "faktor_emisi": 1.118,
+   "url_wiki": "https://www.gem.wiki/Sinar_Mas_Jambi_Lontar_power_station",
+   "tingkat_bukti": "via-pihak-ketiga"
+  },
+  {
+   "id": "L100001082958",
+   "nama": "PT Krakatau Posco Energy power station",
+   "kota": "Cilegon",
+   "wilayah": "Jawa",
+   "industri": [
+    "baja",
+    "kimia"
+   ],
+   "captive_ket": "chemicals, iron & steel",
+   "pemilik": [
+    "Krakatau Posco Energy PT"
+   ],
+   "pemilik_org": [
+    {
+     "nama": "Krakatau Posco Energy PT",
+     "org_id": null,
+     "logo": null
+    }
+   ],
+   "status": "operasi",
+   "bahan_bakar": "batubara",
+   "teknologi": [],
+   "unit_operasi": 2,
+   "mw_operasi": 200,
+   "mw_konstruksi": 0,
+   "mw_rencana": 0,
+   "tahun_mulai": [
+    2014,
+    2014
+   ],
+   "lat": -6.0068473,
+   "lng": 105.9715142,
+   "akurasi": "exact",
+   "zona": null,
+   "karbon_id": null,
+   "mwh_aktual": null,
+   "emisi_tco2e": null,
+   "emisi_tahun": null,
+   "faktor_emisi": null,
+   "url_wiki": "https://www.gem.wiki/PT_Krakatau_Posco_Energy_power_station",
+   "tingkat_bukti": "via-pihak-ketiga"
+  },
+  {
+   "id": "L100000102773",
+   "nama": "Amamapare Port power station",
+   "kota": "Mimika",
+   "wilayah": "Papua",
+   "industri": [
+    "logam-lain"
+   ],
+   "captive_ket": "other metals & mining",
+   "pemilik": [
+    "PT Freeport Indonesia"
+   ],
+   "pemilik_org": [
+    {
+     "nama": "PT Freeport Indonesia",
+     "org_id": null,
+     "logo": null
+    }
+   ],
+   "status": "operasi",
+   "bahan_bakar": "batubara",
+   "teknologi": [
+    "subcritical"
+   ],
+   "unit_operasi": 3,
+   "mw_operasi": 195,
+   "mw_konstruksi": 0,
+   "mw_rencana": 0,
+   "tahun_mulai": [
+    1998,
+    1999
+   ],
+   "lat": -4.827752,
+   "lng": 136.839082,
+   "akurasi": "exact",
+   "zona": null,
+   "karbon_id": "ct_450158",
+   "mwh_aktual": 1956600,
+   "emisi_tco2e": 900930,
+   "emisi_tahun": 2024,
+   "faktor_emisi": 0.46,
+   "url_wiki": "https://www.gem.wiki/Amamapare_Port_power_station",
+   "tingkat_bukti": "via-pihak-ketiga"
+  },
+  {
+   "id": "L100000104619",
+   "nama": "Nanshan Industrial Park power station",
+   "kota": "Bintan",
+   "wilayah": "Sumatera",
+   "industri": [
+    "aluminium"
+   ],
+   "captive_ket": "aluminum",
+   "pemilik": [
+    "PT Bintan Alumina Indonesia"
+   ],
+   "pemilik_org": [
+    {
+     "nama": "PT Bintan Alumina Indonesia",
+     "org_id": null,
+     "logo": null
+    }
+   ],
+   "status": "operasi",
+   "bahan_bakar": "batubara",
+   "teknologi": [
+    "subcritical"
+   ],
+   "unit_operasi": 6,
+   "mw_operasi": 180,
+   "mw_konstruksi": 300,
+   "mw_rencana": 750,
+   "tahun_mulai": [
+    2021,
+    2023
+   ],
+   "lat": 0.911643,
+   "lng": 104.6505404,
+   "akurasi": "exact",
+   "zona": "bintan",
+   "karbon_id": "ct_25457270",
+   "mwh_aktual": 768390,
+   "emisi_tco2e": 859450,
+   "emisi_tahun": 2024,
+   "faktor_emisi": 1.119,
+   "url_wiki": "https://www.gem.wiki/Nanshan_Industrial_Park_power_station",
+   "tingkat_bukti": "via-pihak-ketiga"
+  },
+  {
+   "id": "L100000104834",
+   "nama": "Indah Kiat Serang power station",
+   "kota": null,
+   "wilayah": "Jawa",
+   "industri": [
+    "pulp-kertas"
+   ],
+   "captive_ket": "pulp & paper",
+   "pemilik": [
+    "PT Indah Kiat Pulp & Paper Tbk"
+   ],
+   "pemilik_org": [
+    {
+     "nama": "PT Indah Kiat Pulp & Paper Tbk",
+     "org_id": null,
+     "logo": null
+    }
+   ],
+   "status": "operasi",
+   "bahan_bakar": "batubara",
+   "teknologi": [],
+   "unit_operasi": 4,
+   "mw_operasi": 175,
+   "mw_konstruksi": 0,
+   "mw_rencana": 0,
+   "tahun_mulai": [
+    1998,
+    1998
+   ],
+   "lat": -6.125435,
+   "lng": 106.289205,
+   "akurasi": "exact",
+   "zona": null,
+   "karbon_id": "ct_25457283",
+   "mwh_aktual": 747040,
+   "emisi_tco2e": 812570,
+   "emisi_tahun": 2024,
+   "faktor_emisi": 1.088,
+   "url_wiki": "https://www.gem.wiki/Indah_Kiat_Serang_power_station",
+   "tingkat_bukti": "via-pihak-ketiga"
+  },
+  {
+   "id": "L100000104614",
+   "nama": "Xinxing Ductile Iron Pipes power station",
+   "kota": "South Halmahera",
+   "wilayah": "Maluku",
+   "industri": [
+    "nikel"
+   ],
+   "captive_ket": "nickel",
+   "pemilik": [
+    "PT Megah Surya Pertiwi"
+   ],
+   "pemilik_org": [
+    {
+     "nama": "PT Megah Surya Pertiwi",
+     "org_id": null,
+     "logo": null
+    }
+   ],
+   "status": "operasi",
+   "bahan_bakar": "batubara",
+   "teknologi": [],
+   "unit_operasi": 4,
+   "mw_operasi": 152,
+   "mw_konstruksi": 0,
+   "mw_rencana": 0,
+   "tahun_mulai": [
+    2017,
+    2017
+   ],
+   "lat": -1.530514,
+   "lng": 127.418975,
+   "akurasi": "exact",
+   "zona": "obi",
+   "karbon_id": "ct_25457267",
+   "mwh_aktual": 648880,
+   "emisi_tco2e": 717040,
+   "emisi_tahun": 2024,
+   "faktor_emisi": 1.105,
+   "url_wiki": "https://www.gem.wiki/Xinxing_Ductile_Iron_Pipes_power_station",
+   "tingkat_bukti": "via-pihak-ketiga"
+  },
+  {
+   "id": "L100000104615",
+   "nama": "Jinchuan Group WP&RKA power station",
+   "kota": "South Halmahera",
+   "wilayah": "Maluku",
+   "industri": [
+    "nikel"
+   ],
+   "captive_ket": "nickel",
+   "pemilik": [
+    "WP&RKA Company"
+   ],
+   "pemilik_org": [
+    {
+     "nama": "WP&RKA Company",
+     "org_id": null,
+     "logo": null
+    }
+   ],
+   "status": "operasi",
+   "bahan_bakar": "batubara",
+   "teknologi": [],
+   "unit_operasi": 3,
+   "mw_operasi": 150,
+   "mw_konstruksi": 0,
+   "mw_rencana": 0,
+   "tahun_mulai": [
+    2019,
+    2019
+   ],
+   "lat": -1.56606,
+   "lng": 127.415933,
+   "akurasi": "exact",
+   "zona": "obi",
+   "karbon_id": "ct_25457268",
+   "mwh_aktual": 640350,
+   "emisi_tco2e": 700920,
+   "emisi_tahun": 2024,
+   "faktor_emisi": 1.095,
+   "url_wiki": "https://www.gem.wiki/Jinchuan_Group_WP%26RKA_power_station",
+   "tingkat_bukti": "via-pihak-ketiga"
+  },
+  {
+   "id": "L100000104616",
+   "nama": "Qingdao Zhongsheng captive power station",
+   "kota": "Morowali Regency",
+   "wilayah": "Sulawesi",
+   "industri": [
+    "nikel"
+   ],
+   "captive_ket": "nickel",
+   "pemilik": [
+    "PT Metal Smeltindo Selaras"
+   ],
+   "pemilik_org": [
+    {
+     "nama": "PT Metal Smeltindo Selaras",
+     "org_id": null,
+     "logo": null
+    }
+   ],
+   "status": "operasi",
+   "bahan_bakar": "batubara",
+   "teknologi": [],
+   "unit_operasi": 2,
+   "mw_operasi": 130,
+   "mw_konstruksi": 0,
+   "mw_rencana": 0,
+   "tahun_mulai": [
+    2022,
+    2022
+   ],
+   "lat": -3.04035,
+   "lng": 122.261559,
+   "akurasi": "exact",
+   "zona": "imip",
+   "karbon_id": "ct_25457269",
+   "mwh_aktual": 554940,
+   "emisi_tco2e": 593160,
+   "emisi_tahun": 2024,
+   "faktor_emisi": 1.069,
+   "url_wiki": "https://www.gem.wiki/Qingdao_Zhongsheng_captive_power_station",
+   "tingkat_bukti": "via-pihak-ketiga"
+  },
+  {
+   "id": "L100000104847",
+   "nama": "Wanxiang Nickel Indonesia power station",
+   "kota": "Morowali Regency",
+   "wilayah": "Sulawesi",
+   "industri": [
+    "nikel"
+   ],
+   "captive_ket": "nickel",
+   "pemilik": [
+    "PT Wanxiang Steel Indonesia"
+   ],
+   "pemilik_org": [
+    {
+     "nama": "PT Wanxiang Steel Indonesia",
+     "org_id": null,
+     "logo": null
+    }
+   ],
+   "status": "operasi",
+   "bahan_bakar": "batubara",
+   "teknologi": [],
+   "unit_operasi": 2,
+   "mw_operasi": 130,
+   "mw_konstruksi": 0,
+   "mw_rencana": 400,
+   "tahun_mulai": [
+    2022,
+    2022
+   ],
+   "lat": -2.730952,
+   "lng": 122.030621,
+   "akurasi": "exact",
+   "zona": "imip",
+   "karbon_id": "ct_25457284",
+   "mwh_aktual": 554940,
+   "emisi_tco2e": 593160,
+   "emisi_tahun": 2024,
+   "faktor_emisi": 1.069,
+   "url_wiki": "https://www.gem.wiki/Wanxiang_Nickel_Indonesia_power_station",
+   "tingkat_bukti": "via-pihak-ketiga"
+  },
+  {
+   "id": "L100000102828",
+   "nama": "Batu Hijau power station",
+   "kota": "Sumbawa Barat",
+   "wilayah": "Nusa Tenggara",
+   "industri": [
+    "logam-lain"
+   ],
+   "captive_ket": "other metals & mining",
+   "pemilik": [
+    "PT Amman Mineral Nusa Tenggara"
+   ],
+   "pemilik_org": [
+    {
+     "nama": "PT Amman Mineral Nusa Tenggara",
+     "org_id": null,
+     "logo": null
+    }
+   ],
+   "status": "operasi",
+   "bahan_bakar": "batubara",
+   "teknologi": [
+    "subcritical"
+   ],
+   "unit_operasi": 4,
+   "mw_operasi": 124,
+   "mw_konstruksi": 0,
+   "mw_rencana": 0,
+   "tahun_mulai": [
+    1999,
+    1999
+   ],
+   "lat": -8.901172,
+   "lng": 116.738209,
+   "akurasi": "exact",
+   "zona": null,
+   "karbon_id": "ct_448903",
+   "mwh_aktual": 534690,
+   "emisi_tco2e": 596840,
+   "emisi_tahun": 2024,
+   "faktor_emisi": 1.116,
+   "url_wiki": "https://www.gem.wiki/Batu_Hijau_power_station",
+   "tingkat_bukti": "via-pihak-ketiga"
+  },
+  {
+   "id": "L100000102704",
+   "nama": "Merak power station",
+   "kota": "Serang",
+   "wilayah": "Jawa",
+   "industri": [
+    "kimia"
+   ],
+   "captive_ket": "chemicals",
+   "pemilik": [
+    "PT Merak Energi Indonesia"
+   ],
+   "pemilik_org": [
+    {
+     "nama": "PT Merak Energi Indonesia",
+     "org_id": null,
+     "logo": null
+    }
+   ],
+   "status": "operasi",
+   "bahan_bakar": "batubara",
+   "teknologi": [
+    "subcritical"
+   ],
+   "unit_operasi": 2,
+   "mw_operasi": 120,
+   "mw_konstruksi": 0,
+   "mw_rencana": 0,
+   "tahun_mulai": [
+    2014,
+    2014
+   ],
+   "lat": -5.88403,
+   "lng": 106.06422,
+   "akurasi": "exact",
+   "zona": null,
+   "karbon_id": "ct_25451704",
+   "mwh_aktual": 512270,
+   "emisi_tco2e": 558420,
+   "emisi_tahun": 2024,
+   "faktor_emisi": 1.09,
+   "url_wiki": "https://www.gem.wiki/Merak_power_station",
+   "tingkat_bukti": "via-pihak-ketiga"
+  },
+  {
+   "id": "L100001080962",
+   "nama": "Ketapang Bangun Sarana power station",
+   "kota": "Ketapang",
+   "wilayah": "Kalimantan",
+   "industri": [
+    "aluminium"
+   ],
+   "captive_ket": "aluminum",
+   "pemilik": [
+    "Hangzhou Jinjiang Group Co Ltd"
+   ],
+   "pemilik_org": [
+    {
+     "nama": "Hangzhou Jinjiang Group",
+     "org_id": "in_b4b538a044",
+     "logo": null
+    }
+   ],
+   "status": "operasi",
+   "bahan_bakar": "batubara",
+   "teknologi": [],
+   "unit_operasi": 2,
+   "mw_operasi": 75,
+   "mw_konstruksi": 0,
+   "mw_rencana": 0,
+   "tahun_mulai": [
+    2025,
+    2025
+   ],
+   "lat": -2.2356003,
+   "lng": 110.1066255,
+   "akurasi": "exact",
+   "zona": null,
+   "karbon_id": "ct_61582237",
+   "mwh_aktual": 0,
+   "emisi_tco2e": 0,
+   "emisi_tahun": 2024,
+   "faktor_emisi": null,
+   "url_wiki": "https://www.gem.wiki/Ketapang_Bangun_Sarana_power_station",
+   "tingkat_bukti": "via-pihak-ketiga"
+  },
+  {
+   "id": "L100000102793",
+   "nama": "Tonasa Cement Plant power station",
+   "kota": "Pangkajene Dan Kepulauan",
+   "wilayah": "Sulawesi",
+   "industri": [
+    "semen"
+   ],
+   "captive_ket": "cement & building",
+   "pemilik": [
+    "PT Semen Gresik"
+   ],
+   "pemilik_org": [
+    {
+     "nama": "PT Semen Gresik",
+     "org_id": null,
+     "logo": null
+    }
+   ],
+   "status": "operasi",
+   "bahan_bakar": "batubara",
+   "teknologi": [
+    "subcritical"
+   ],
+   "unit_operasi": 2,
+   "mw_operasi": 70,
+   "mw_konstruksi": 0,
+   "mw_rencana": 0,
+   "tahun_mulai": [
+    2013,
+    2013
+   ],
+   "lat": -4.816711,
+   "lng": 119.501684,
+   "akurasi": "exact",
+   "zona": null,
+   "karbon_id": "ct_450604",
+   "mwh_aktual": 819650,
+   "emisi_tco2e": 907920,
+   "emisi_tahun": 2024,
+   "faktor_emisi": 1.108,
+   "url_wiki": "https://www.gem.wiki/Tonasa_Cement_Plant_power_station",
+   "tingkat_bukti": "via-pihak-ketiga"
+  },
+  {
+   "id": "L100000102820",
+   "nama": "Pindo-Deli-Ii power station",
+   "kota": "Kec Teluk Jambe - Karawang",
+   "wilayah": "Jawa",
+   "industri": [
+    "pulp-kertas"
+   ],
+   "captive_ket": "pulp & paper",
+   "pemilik": [
+    "PT Pindo Deli Pulp and Paper Mills"
+   ],
+   "pemilik_org": [
+    {
+     "nama": "PT Pindo Deli Pulp and Paper Mills",
+     "org_id": null,
+     "logo": null
+    }
+   ],
+   "status": "operasi",
+   "bahan_bakar": "batubara",
+   "teknologi": [],
+   "unit_operasi": 2,
+   "mw_operasi": 60.4,
+   "mw_konstruksi": 0,
+   "mw_rencana": 0,
+   "tahun_mulai": [
+    2007,
+    2007
+   ],
+   "lat": -6.385474,
+   "lng": 107.343624,
+   "akurasi": "exact",
+   "zona": null,
+   "karbon_id": null,
+   "mwh_aktual": null,
+   "emisi_tco2e": null,
+   "emisi_tahun": null,
+   "faktor_emisi": null,
+   "url_wiki": "https://www.gem.wiki/Pindo-Deli-Ii_power_station",
+   "tingkat_bukti": "via-pihak-ketiga"
+  },
+  {
+   "id": "L100000102826",
+   "nama": "Ketapang Smelter power station",
+   "kota": "Ketapang",
+   "wilayah": "Kalimantan",
+   "industri": [
+    "aluminium"
+   ],
+   "captive_ket": "aluminum",
+   "pemilik": [
+    "PT Well Harvest Winning Alumina Refinery"
+   ],
+   "pemilik_org": [
+    {
+     "nama": "PT Well Harvest Winning Alumina Refinery",
+     "org_id": null,
+     "logo": null
+    }
+   ],
+   "status": "operasi",
+   "bahan_bakar": "batubara",
+   "teknologi": [
+    "subcritical"
+   ],
+   "unit_operasi": 2,
+   "mw_operasi": 60,
+   "mw_konstruksi": 0,
+   "mw_rencana": 0,
+   "tahun_mulai": [
+    2016,
+    2021
+   ],
+   "lat": -2.366182,
+   "lng": 110.157272,
+   "akurasi": "exact",
+   "zona": null,
+   "karbon_id": "ct_452532",
+   "mwh_aktual": 469580,
+   "emisi_tco2e": 522370,
+   "emisi_tahun": 2024,
+   "faktor_emisi": 1.112,
+   "url_wiki": "https://www.gem.wiki/Ketapang_Smelter_power_station",
+   "tingkat_bukti": "via-pihak-ketiga"
+  },
+  {
+   "id": "L100000102801",
+   "nama": "Pomalaa Nickel power station",
+   "kota": "Pomalaa",
+   "wilayah": "Sulawesi",
+   "industri": [
+    "nikel"
+   ],
+   "captive_ket": "nickel",
+   "pemilik": [
+    "PT Aneka Tambang Tbk"
+   ],
+   "pemilik_org": [
+    {
+     "nama": "PT Aneka Tambang Tbk",
+     "org_id": "en_8a4ce87da1",
+     "logo": null
+    }
+   ],
+   "status": "operasi",
+   "bahan_bakar": "batubara",
+   "teknologi": [
+    "subcritical"
+   ],
+   "unit_operasi": 2,
+   "mw_operasi": 60,
+   "mw_konstruksi": 0,
+   "mw_rencana": 0,
+   "tahun_mulai": [
+    2016,
+    2016
+   ],
+   "lat": -4.179865,
+   "lng": 121.592935,
+   "akurasi": "exact",
+   "zona": "pomalaa",
+   "karbon_id": "ct_448894",
+   "mwh_aktual": 360090,
+   "emisi_tco2e": 381590,
+   "emisi_tahun": 2024,
+   "faktor_emisi": 1.06,
+   "url_wiki": "https://www.gem.wiki/Pomalaa_Nickel_power_station",
+   "tingkat_bukti": "via-pihak-ketiga"
+  },
+  {
+   "id": "L100000102786",
+   "nama": "Tabalong Wisesa power station",
+   "kota": "Tanjung - Kab Tabalong",
+   "wilayah": "Kalimantan",
+   "industri": [
+    "logam-lain"
+   ],
+   "captive_ket": "other metals & mining",
+   "pemilik": [
+    "PT Makmur Sejahtera Wisesa"
+   ],
+   "pemilik_org": [
+    {
+     "nama": "PT Makmur Sejahtera Wisesa",
+     "org_id": null,
+     "logo": null
+    }
+   ],
+   "status": "operasi",
+   "bahan_bakar": "batubara",
+   "teknologi": [
+    "subcritical"
+   ],
+   "unit_operasi": 2,
+   "mw_operasi": 60,
+   "mw_konstruksi": 0,
+   "mw_rencana": 0,
+   "tahun_mulai": [
+    2013,
+    2013
+   ],
+   "lat": -2.158586,
+   "lng": 115.445925,
+   "akurasi": "exact",
+   "zona": null,
+   "karbon_id": "ct_25454298",
+   "mwh_aktual": 256130,
+   "emisi_tco2e": 289520,
+   "emisi_tahun": 2024,
+   "faktor_emisi": 1.13,
+   "url_wiki": "https://www.gem.wiki/Tabalong_Wisesa_power_station",
+   "tingkat_bukti": "via-pihak-ketiga"
+  },
+  {
+   "id": "L100000104400",
+   "nama": "Medan Steel Mill power station",
+   "kota": null,
+   "wilayah": "Sumatera",
+   "industri": [
+    "baja"
+   ],
+   "captive_ket": "iron & steel",
+   "pemilik": [
+    "PT Gahapi Nisco Steel"
+   ],
+   "pemilik_org": [
+    {
+     "nama": "PT Gahapi Nisco Steel",
+     "org_id": null,
+     "logo": null
+    }
+   ],
+   "status": "operasi",
+   "bahan_bakar": "batubara",
+   "teknologi": [
+    "subcritical"
+   ],
+   "unit_operasi": 2,
+   "mw_operasi": 60,
+   "mw_konstruksi": 0,
+   "mw_rencana": 0,
+   "tahun_mulai": [
+    2017,
+    2017
+   ],
+   "lat": 3.667568,
+   "lng": 98.665386,
+   "akurasi": "exact",
+   "zona": null,
+   "karbon_id": "ct_25455534",
+   "mwh_aktual": 128063,
+   "emisi_tco2e": 143260,
+   "emisi_tahun": 2024,
+   "faktor_emisi": 1.119,
+   "url_wiki": "https://www.gem.wiki/Medan_Steel_Mill_power_station",
+   "tingkat_bukti": "via-pihak-ketiga"
+  },
+  {
+   "id": "L100000104398",
+   "nama": "Purwakarta Indorama power station",
+   "kota": "Perwakarta",
+   "wilayah": "Jawa",
+   "industri": [
+    "tekstil"
+   ],
+   "captive_ket": "textiles",
+   "pemilik": [
+    "PT PLN (Persero)"
+   ],
+   "pemilik_org": [
+    {
+     "nama": "PLN",
+     "org_id": "su_ed074ff5",
+     "logo": null
+    }
+   ],
+   "status": "operasi",
+   "bahan_bakar": "batubara",
+   "teknologi": [
+    "subcritical"
+   ],
+   "unit_operasi": 2,
+   "mw_operasi": 60,
+   "mw_konstruksi": 0,
+   "mw_rencana": 0,
+   "tahun_mulai": [
+    2006,
+    2006
+   ],
+   "lat": -6.553921,
+   "lng": 107.413652,
+   "akurasi": "exact",
+   "zona": null,
+   "karbon_id": "ct_25455533",
+   "mwh_aktual": 256130,
+   "emisi_tco2e": 286470,
+   "emisi_tahun": 2024,
+   "faktor_emisi": 1.118,
+   "url_wiki": "https://www.gem.wiki/Purwakarta_Indorama_power_station",
+   "tingkat_bukti": "via-pihak-ketiga"
+  },
+  {
+   "id": "L100000104575",
+   "nama": "Cemindo Gemilang power station",
+   "kota": "Labak",
+   "wilayah": "Jawa",
+   "industri": [
+    "semen"
+   ],
+   "captive_ket": "cement & building",
+   "pemilik": [
+    "PT Cemindo Gemilang Tbk"
+   ],
+   "pemilik_org": [
+    {
+     "nama": "PT Cemindo Gemilang Tbk",
+     "org_id": null,
+     "logo": null
+    }
+   ],
+   "status": "operasi",
+   "bahan_bakar": "batubara",
+   "teknologi": [],
+   "unit_operasi": 1,
+   "mw_operasi": 60,
+   "mw_konstruksi": 0,
+   "mw_rencana": 0,
+   "tahun_mulai": [
+    2016,
+    2016
+   ],
+   "lat": -6.950808,
+   "lng": 106.250158,
+   "akurasi": "exact",
+   "zona": null,
+   "karbon_id": "ct_4409287",
+   "mwh_aktual": 256130,
+   "emisi_tco2e": 275790,
+   "emisi_tahun": 2024,
+   "faktor_emisi": 1.077,
+   "url_wiki": "https://www.gem.wiki/Cemindo_Gemilang_power_station",
+   "tingkat_bukti": "via-pihak-ketiga"
+  },
+  {
+   "id": "L100000104975",
+   "nama": "FAJAR power station",
+   "kota": "Bekasi",
+   "wilayah": "Jawa",
+   "industri": [
+    "pulp-kertas"
+   ],
+   "captive_ket": "pulp & paper",
+   "pemilik": [
+    "PT Fajar Surya Wisesa Tbk"
+   ],
+   "pemilik_org": [
+    {
+     "nama": "PT Fajar Surya Wisesa Tbk",
+     "org_id": null,
+     "logo": null
+    }
+   ],
+   "status": "operasi",
+   "bahan_bakar": "batubara",
+   "teknologi": [],
+   "unit_operasi": 1,
+   "mw_operasi": 55,
+   "mw_konstruksi": 0,
+   "mw_rencana": 0,
+   "tahun_mulai": [
+    2017,
+    2017
+   ],
+   "lat": -6.272646,
+   "lng": 107.124019,
+   "akurasi": "exact",
+   "zona": null,
+   "karbon_id": "ct_4409344",
+   "mwh_aktual": 234780,
+   "emisi_tco2e": 254780,
+   "emisi_tahun": 2024,
+   "faktor_emisi": 1.085,
+   "url_wiki": "https://www.gem.wiki/FAJAR_power_station",
+   "tingkat_bukti": "via-pihak-ketiga"
+  },
+  {
+   "id": "L100001082982",
+   "nama": "Toba Pulp Lestari power station",
+   "kota": "Toba",
+   "wilayah": "Sumatera",
+   "industri": [
+    "pulp-kertas"
+   ],
+   "captive_ket": "pulp & paper",
+   "pemilik": [
+    "PT Toba Pulp Lestari Tbk"
+   ],
+   "pemilik_org": [
+    {
+     "nama": "PT Toba Pulp Lestari Tbk",
+     "org_id": null,
+     "logo": null
+    }
+   ],
+   "status": "operasi",
+   "bahan_bakar": "batubara",
+   "teknologi": [],
+   "unit_operasi": 1,
+   "mw_operasi": 50,
+   "mw_konstruksi": 0,
+   "mw_rencana": 0,
+   "tahun_mulai": [
+    2014,
+    2014
+   ],
+   "lat": 2.4636762,
+   "lng": 99.1972775,
+   "akurasi": "exact",
+   "zona": null,
+   "karbon_id": "ct_61582241",
+   "mwh_aktual": 213460,
+   "emisi_tco2e": 233650,
+   "emisi_tahun": 2024,
+   "faktor_emisi": 1.095,
+   "url_wiki": "https://www.gem.wiki/Toba_Pulp_Lestari_power_station",
+   "tingkat_bukti": "via-pihak-ketiga"
+  },
+  {
+   "id": "L100000104397",
+   "nama": "Cilegon PTIP Power Station",
+   "kota": "Ciwandan - Cilegon",
+   "wilayah": "Jawa",
+   "industri": [
+    "kimia"
+   ],
+   "captive_ket": "chemicals",
+   "pemilik": [
+    "PT Indorama Petrochemicals"
+   ],
+   "pemilik_org": [
+    {
+     "nama": "PT Indorama Petrochemicals",
+     "org_id": null,
+     "logo": null
+    }
+   ],
+   "status": "operasi",
+   "bahan_bakar": "batubara",
+   "teknologi": [
+    "subcritical"
+   ],
+   "unit_operasi": 1,
+   "mw_operasi": 40,
+   "mw_konstruksi": 0,
+   "mw_rencana": 0,
+   "tahun_mulai": [
+    2017,
+    2017
+   ],
+   "lat": -6.023889,
+   "lng": 105.950127,
+   "akurasi": "exact",
+   "zona": null,
+   "karbon_id": "ct_25455532",
+   "mwh_aktual": 170760,
+   "emisi_tco2e": 190990,
+   "emisi_tahun": 2024,
+   "faktor_emisi": 1.118,
+   "url_wiki": "https://www.gem.wiki/Cilegon_PTIP_Power_Station",
+   "tingkat_bukti": "via-pihak-ketiga"
+  },
+  {
+   "id": "L100000104584",
+   "nama": "Indo Bharat Rayon power station",
+   "kota": "Purwakarta",
+   "wilayah": "Jawa",
+   "industri": [
+    "tekstil"
+   ],
+   "captive_ket": "textiles",
+   "pemilik": [
+    "PT Indo Bharat Rayon"
+   ],
+   "pemilik_org": [
+    {
+     "nama": "PT Indo Bharat Rayon",
+     "org_id": null,
+     "logo": null
+    }
+   ],
+   "status": "operasi",
+   "bahan_bakar": "batubara",
+   "teknologi": [],
+   "unit_operasi": 1,
+   "mw_operasi": 36.6,
+   "mw_konstruksi": 0,
+   "mw_rencana": 0,
+   "tahun_mulai": [
+    2008,
+    2008
+   ],
+   "lat": -6.485801,
+   "lng": 107.385203,
+   "akurasi": "exact",
+   "zona": null,
+   "karbon_id": "ct_715697",
+   "mwh_aktual": 267070,
+   "emisi_tco2e": 294970,
+   "emisi_tahun": 2024,
+   "faktor_emisi": 1.104,
+   "url_wiki": "https://www.gem.wiki/Indo_Bharat_Rayon_power_station",
+   "tingkat_bukti": "via-pihak-ketiga"
+  },
+  {
+   "id": "L100000102812",
+   "nama": "Bandung Indosyntec power station",
+   "kota": "Kab Bandung",
+   "wilayah": "Jawa",
+   "industri": [
+    "tekstil"
+   ],
+   "captive_ket": "textiles",
+   "pemilik": [
+    "PT Panasia Indo Resources Tbk"
+   ],
+   "pemilik_org": [
+    {
+     "nama": "PT Panasia Indo Resources Tbk",
+     "org_id": null,
+     "logo": null
+    }
+   ],
+   "status": "operasi",
+   "bahan_bakar": "batubara",
+   "teknologi": [
+    "subcritical"
+   ],
+   "unit_operasi": 1,
+   "mw_operasi": 30,
+   "mw_konstruksi": 0,
+   "mw_rencana": 0,
+   "tahun_mulai": [
+    2004,
+    2004
+   ],
+   "lat": -6.970501,
+   "lng": 107.605782,
+   "akurasi": "exact",
+   "zona": null,
+   "karbon_id": "ct_25453330",
+   "mwh_aktual": 128063,
+   "emisi_tco2e": 143260,
+   "emisi_tahun": 2024,
+   "faktor_emisi": 1.119,
+   "url_wiki": "https://www.gem.wiki/Bandung_Indosyntec_power_station",
+   "tingkat_bukti": "via-pihak-ketiga"
+  },
+  {
+   "id": "L100001082970",
+   "nama": "South Pasific Viscose power station",
+   "kota": "Purwakarta",
+   "wilayah": "Jawa",
+   "industri": [
+    "tekstil"
+   ],
+   "captive_ket": "textiles",
+   "pemilik": [
+    "South Pasific Viscose PT"
+   ],
+   "pemilik_org": [
+    {
+     "nama": "South Pasific Viscose PT",
+     "org_id": null,
+     "logo": null
+    }
+   ],
+   "status": "operasi",
+   "bahan_bakar": "batubara",
+   "teknologi": [],
+   "unit_operasi": 1,
+   "mw_operasi": 30,
+   "mw_konstruksi": 0,
+   "mw_rencana": 0,
+   "tahun_mulai": [
+    2009,
+    2009
+   ],
+   "lat": -6.4981713,
+   "lng": 107.3995564,
+   "akurasi": "exact",
+   "zona": null,
+   "karbon_id": "ct_61582242",
+   "mwh_aktual": 128063,
+   "emisi_tco2e": 141520,
+   "emisi_tahun": 2024,
+   "faktor_emisi": 1.105,
+   "url_wiki": "https://www.gem.wiki/South_Pasific_Viscose_power_station",
+   "tingkat_bukti": "via-pihak-ketiga"
+  },
+  {
+   "id": "L100000104979",
+   "nama": "AlamTri Aluminum Smelter power station",
+   "kota": "Bulungan",
+   "wilayah": "Kalimantan",
+   "industri": [
+    "aluminium"
+   ],
+   "captive_ket": "aluminum",
+   "pemilik": [
+    "PT Kaltara Power Indonesia"
+   ],
+   "pemilik_org": [
+    {
+     "nama": "PT Kaltara Power Indonesia",
+     "org_id": null,
+     "logo": null
+    }
+   ],
+   "status": "konstruksi",
+   "bahan_bakar": "batubara",
+   "teknologi": [],
+   "unit_operasi": 0,
+   "mw_operasi": 0,
+   "mw_konstruksi": 1210,
+   "mw_rencana": 910,
+   "tahun_mulai": null,
+   "lat": 2.4946822,
+   "lng": 117.9001999,
+   "akurasi": "exact",
+   "zona": "kaltara",
+   "karbon_id": null,
+   "mwh_aktual": null,
+   "emisi_tco2e": null,
+   "emisi_tahun": null,
+   "faktor_emisi": null,
+   "url_wiki": "https://www.gem.wiki/AlamTri_Aluminum_Smelter_power_station",
+   "tingkat_bukti": "via-pihak-ketiga"
+  },
+  {
+   "id": "L100001047944",
+   "nama": "Gallant Venture power station",
+   "kota": "Batam",
+   "wilayah": "Sumatera",
+   "industri": [
+    "kawasan-industri"
+   ],
+   "captive_ket": "industrial park",
+   "pemilik": [
+    "Gallant Venture Ltd"
+   ],
+   "pemilik_org": [
+    {
+     "nama": "Gallant Venture",
+     "org_id": "in_4894dd74a1",
+     "logo": null
+    }
+   ],
+   "status": "konstruksi",
+   "bahan_bakar": "batubara",
+   "teknologi": [
+    "supercritical"
+   ],
+   "unit_operasi": 0,
+   "mw_operasi": 0,
+   "mw_konstruksi": 1050,
+   "mw_rencana": 1200,
+   "tahun_mulai": null,
+   "lat": 0.9575588,
+   "lng": 104.0486358,
+   "akurasi": "exact",
+   "zona": "bintan",
+   "karbon_id": null,
+   "mwh_aktual": null,
+   "emisi_tco2e": null,
+   "emisi_tahun": null,
+   "faktor_emisi": null,
+   "url_wiki": "https://www.gem.wiki/Gallant_Venture_power_station",
+   "tingkat_bukti": "via-pihak-ketiga"
+  },
+  {
+   "id": "L100001082959",
+   "nama": "Tanjung Sauh power station",
+   "kota": "Batam City",
+   "wilayah": "Sumatera",
+   "industri": [
+    "kawasan-industri"
+   ],
+   "captive_ket": "industrial park",
+   "pemilik": [
+    "PT Tanjung Sauh Power"
+   ],
+   "pemilik_org": [
+    {
+     "nama": "PT Tanjung Sauh Power",
+     "org_id": null,
+     "logo": null
+    }
+   ],
+   "status": "konstruksi",
+   "bahan_bakar": "batubara",
+   "teknologi": [],
+   "unit_operasi": 0,
+   "mw_operasi": 0,
+   "mw_konstruksi": 300,
+   "mw_rencana": 0,
+   "tahun_mulai": null,
+   "lat": 1.0614475,
+   "lng": 104.1737382,
+   "akurasi": "exact",
+   "zona": "bintan",
+   "karbon_id": null,
+   "mwh_aktual": null,
+   "emisi_tco2e": null,
+   "emisi_tahun": null,
+   "faktor_emisi": null,
+   "url_wiki": "https://www.gem.wiki/Tanjung_Sauh_power_station",
+   "tingkat_bukti": "via-pihak-ketiga"
+  },
+  {
+   "id": "L100001082978",
+   "nama": "PT Kalimantan Alumina Nusantara power station",
+   "kota": "Sanggau",
+   "wilayah": "Kalimantan",
+   "industri": [
+    "aluminium"
+   ],
+   "captive_ket": "aluminum",
+   "pemilik": [
+    "PT Kalimantan Alumina Nusantara"
+   ],
+   "pemilik_org": [
+    {
+     "nama": "PT Kalimantan Alumina Nusantara",
+     "org_id": null,
+     "logo": null
+    }
+   ],
+   "status": "konstruksi",
+   "bahan_bakar": "batubara",
+   "teknologi": [],
+   "unit_operasi": 0,
+   "mw_operasi": 0,
+   "mw_konstruksi": 60,
+   "mw_rencana": 0,
+   "tahun_mulai": null,
+   "lat": -0.1238386,
+   "lng": 109.9713147,
+   "akurasi": "exact",
+   "zona": null,
+   "karbon_id": null,
+   "mwh_aktual": null,
+   "emisi_tco2e": null,
+   "emisi_tahun": null,
+   "faktor_emisi": null,
+   "url_wiki": "https://www.gem.wiki/PT_Kalimantan_Alumina_Nusantara_power_station",
+   "tingkat_bukti": "via-pihak-ketiga"
+  },
+  {
+   "id": "L100000104536",
+   "nama": "East Halmahera power station",
+   "kota": "Tanjung Buli",
+   "wilayah": "Maluku",
+   "industri": [
+    "nikel"
+   ],
+   "captive_ket": "nickel",
+   "pemilik": [
+    "PT Tambang Batubara Bukit Asam",
+    "PT Guna Darma Integra"
+   ],
+   "pemilik_org": [
+    {
+     "nama": "PT Tambang Batubara Bukit Asam",
+     "org_id": null,
+     "logo": null
+    },
+    {
+     "nama": "PT Guna Darma Integra",
+     "org_id": null,
+     "logo": null
+    }
+   ],
+   "status": "rencana",
+   "bahan_bakar": "batubara",
+   "teknologi": [],
+   "unit_operasi": 0,
+   "mw_operasi": 0,
+   "mw_konstruksi": 0,
+   "mw_rencana": 680,
+   "tahun_mulai": null,
+   "lat": 0.848580262582746,
+   "lng": 128.26157295498,
+   "akurasi": "exact",
+   "zona": null,
+   "karbon_id": null,
+   "mwh_aktual": null,
+   "emisi_tco2e": null,
+   "emisi_tahun": null,
+   "faktor_emisi": null,
+   "url_wiki": "https://www.gem.wiki/East_Halmahera_power_station",
+   "tingkat_bukti": "via-pihak-ketiga"
+  },
+  {
+   "id": "L100001000090",
+   "nama": "Xinyi Group captive power station",
+   "kota": "Rempang",
+   "wilayah": "Sumatera",
+   "industri": [
+    "kawasan-industri"
+   ],
+   "captive_ket": "industrial park",
+   "pemilik": [
+    "Xinyi Glass Holdings Ltd"
+   ],
+   "pemilik_org": [
+    {
+     "nama": "Xinyi Glass Holdings",
+     "org_id": "in_6a4065f8d3",
+     "logo": null
+    }
+   ],
+   "status": "rencana",
+   "bahan_bakar": "batubara",
+   "teknologi": [],
+   "unit_operasi": 0,
+   "mw_operasi": 0,
+   "mw_konstruksi": 0,
+   "mw_rencana": 2500,
+   "tahun_mulai": null,
+   "lat": 0.86008,
+   "lng": 104.1801,
+   "akurasi": "approximate",
+   "zona": "bintan",
+   "karbon_id": null,
+   "mwh_aktual": null,
+   "emisi_tco2e": null,
+   "emisi_tahun": null,
+   "faktor_emisi": null,
+   "url_wiki": "https://www.gem.wiki/Xinyi_Group_captive_power_station",
+   "tingkat_bukti": "via-pihak-ketiga"
+  },
+  {
+   "id": "L100001016333",
+   "nama": "PT Tianshan Alumina power station",
+   "kota": "Kabupaten Lingga",
+   "wilayah": "Sumatera",
+   "industri": [
+    "aluminium"
+   ],
+   "captive_ket": "aluminum",
+   "pemilik": [
+    "PT Tianshan Alumina Indonesia"
+   ],
+   "pemilik_org": [
+    {
+     "nama": "PT Tianshan Alumina Indonesia",
+     "org_id": null,
+     "logo": null
+    }
+   ],
+   "status": "rencana",
+   "bahan_bakar": "batubara",
+   "teknologi": [],
+   "unit_operasi": 0,
+   "mw_operasi": 0,
+   "mw_konstruksi": 0,
+   "mw_rencana": 160,
+   "tahun_mulai": null,
+   "lat": -0.554151,
+   "lng": 104.429654,
+   "akurasi": "approximate",
+   "zona": null,
+   "karbon_id": null,
+   "mwh_aktual": null,
+   "emisi_tco2e": null,
+   "emisi_tahun": null,
+   "faktor_emisi": null,
+   "url_wiki": "https://www.gem.wiki/PT_Tianshan_Alumina_power_station",
+   "tingkat_bukti": "via-pihak-ketiga"
+  },
+  {
+   "id": "L100001047529",
+   "nama": "Hongshi Silikon power station",
+   "kota": null,
+   "wilayah": "Jawa",
+   "industri": [
+    "kawasan-industri"
+   ],
+   "captive_ket": "industrial park",
+   "pemilik": [
+    "Hongshi Holding Group Co Ltd"
+   ],
+   "pemilik_org": [
+    {
+     "nama": "Hongshi Holding Group Co Ltd",
+     "org_id": null,
+     "logo": null
+    }
+   ],
+   "status": "rencana",
+   "bahan_bakar": "batubara",
+   "teknologi": [],
+   "unit_operasi": 0,
+   "mw_operasi": 0,
+   "mw_konstruksi": 0,
+   "mw_rencana": 2000,
+   "tahun_mulai": null,
+   "lat": -6.87203,
+   "lng": 107.59869,
+   "akurasi": "approximate",
+   "zona": null,
+   "karbon_id": null,
+   "mwh_aktual": null,
+   "emisi_tco2e": null,
+   "emisi_tahun": null,
+   "faktor_emisi": null,
+   "url_wiki": "https://www.gem.wiki/Hongshi_Silikon_power_station",
+   "tingkat_bukti": "via-pihak-ketiga"
+  },
+  {
+   "id": "L100001083608",
+   "nama": "Mempawah SGAR power station",
+   "kota": "West Kalimantan",
+   "wilayah": "Kalimantan",
+   "industri": [
+    "aluminium"
+   ],
+   "captive_ket": "aluminum",
+   "pemilik": [
+    "PT Bukit Asam Tbk"
+   ],
+   "pemilik_org": [
+    {
+     "nama": "PT Bukit Asam Tbk",
+     "org_id": null,
+     "logo": null
+    }
+   ],
+   "status": "rencana",
+   "bahan_bakar": "batubara",
+   "teknologi": [],
+   "unit_operasi": 0,
+   "mw_operasi": 0,
+   "mw_konstruksi": 0,
+   "mw_rencana": 1200,
+   "tahun_mulai": null,
+   "lat": 0.364557929142672,
+   "lng": 108.955678099535,
+   "akurasi": "approximate",
+   "zona": null,
+   "karbon_id": null,
+   "mwh_aktual": null,
+   "emisi_tco2e": null,
+   "emisi_tahun": null,
+   "faktor_emisi": null,
+   "url_wiki": "https://www.gem.wiki/Mempawah_SGAR_power_station",
+   "tingkat_bukti": "via-pihak-ketiga"
+  }
+ ],
+ "proyek_konversi": [
+  {
+   "id": "gem-hydropower-L100000602119",
+   "proyek_id": "gem_hydropower_L100000602119",
+   "nama": "Kayan 5 hydroelectric plant",
+   "teknologi": "hidro",
+   "mw": 3300,
+   "status": "pre-construction",
+   "zona": "kaltara",
+   "lat": 2.6048,
+   "lng": 117.8146,
+   "pemilik": [
+    "PT Kayan Hydro Energy"
+   ],
+   "sumber": "GEM",
+   "url": "https://www.gem.wiki/Kayan_5_hydroelectric_plant",
+   "tingkat_bukti": "via-pihak-ketiga",
+   "zona_nama": "Kaltara KIPI (Tanah Kuning)"
+  },
+  {
+   "id": "gem-hydropower-L100000602117",
+   "proyek_id": "gem_hydropower_L100000602117",
+   "nama": "Kayan 3 hydroelectric plant",
+   "teknologi": "hidro",
+   "mw": 1800,
+   "status": "pre-construction",
+   "zona": "kaltara",
+   "lat": 2.6048,
+   "lng": 117.8146,
+   "pemilik": [
+    "PT Kayan Hydro Energy"
+   ],
+   "sumber": "GEM",
+   "url": "https://www.gem.wiki/Kayan_3_hydroelectric_plant",
+   "tingkat_bukti": "via-pihak-ketiga",
+   "zona_nama": "Kaltara KIPI (Tanah Kuning)"
+  },
+  {
+   "id": "gem-hydropower-L100000602118",
+   "proyek_id": "gem_hydropower_L100000602118",
+   "nama": "Kayan 4 hydroelectric plant",
+   "teknologi": "hidro",
+   "mw": 1800,
+   "status": "pre-construction",
+   "zona": "kaltara",
+   "lat": 2.6048,
+   "lng": 117.8146,
+   "pemilik": [
+    "PT Kayan Hydro Energy"
+   ],
+   "sumber": "GEM",
+   "url": "https://www.gem.wiki/Kayan_4_hydroelectric_plant",
+   "tingkat_bukti": "via-pihak-ketiga",
+   "zona_nama": "Kaltara KIPI (Tanah Kuning)"
+  },
+  {
+   "id": "gem_hydropower_L100000602132",
+   "proyek_id": "gem_hydropower_L100000602132",
+   "nama": "Mentarang hydroelectric plant",
+   "teknologi": "hidro",
+   "mw": 1375,
+   "status": "konstruksi",
+   "zona": "kaltara",
+   "pemilik": [
+    "PT Kayan Hydro Energy"
+   ],
+   "sumber": "proyek",
+   "url": "/p/gem_hydropower_L100000602132",
+   "tingkat_bukti": "kajian",
+   "lat": 3.5839,
+   "lng": 116.6478,
+   "zona_nama": "Kaltara KIPI (Tanah Kuning)"
+  },
+  {
+   "id": "gem-solar-L100001020722",
+   "proyek_id": null,
+   "nama": "Kawasi solar power project",
+   "teknologi": "surya",
+   "mw": 1300,
+   "status": "announced",
+   "zona": "obi",
+   "lat": -1.5441,
+   "lng": 127.4418,
+   "pemilik": [],
+   "sumber": "GEM",
+   "url": "https://www.gem.wiki/Kawasi_solar_power_project",
+   "tingkat_bukti": "via-pihak-ketiga",
+   "zona_nama": "Pulau Obi"
+  },
+  {
+   "id": "gem-hydropower-L100000602116",
+   "proyek_id": "gem_hydropower_L100000602116",
+   "nama": "Kayan 2 hydroelectric plant",
+   "teknologi": "hidro",
+   "mw": 1200,
+   "status": "pre-construction",
+   "zona": "kaltara",
+   "lat": 2.6048,
+   "lng": 117.8146,
+   "pemilik": [
+    "PT Kayan Hydro Energy"
+   ],
+   "sumber": "GEM",
+   "url": "https://www.gem.wiki/Kayan_2_hydroelectric_plant",
+   "tingkat_bukti": "via-pihak-ketiga",
+   "zona_nama": "Kaltara KIPI (Tanah Kuning)"
+  },
+  {
+   "id": "gem-hydropower-L100000602115",
+   "proyek_id": "gem_hydropower_L100000602115",
+   "nama": "Kayan 1 hydroelectric plant",
+   "teknologi": "hidro",
+   "mw": 900,
+   "status": "pre-construction",
+   "zona": "kaltara",
+   "lat": 2.6048,
+   "lng": 117.8146,
+   "pemilik": [
+    "PT Kayan Hydro Energy"
+   ],
+   "sumber": "GEM",
+   "url": "https://www.gem.wiki/Kayan_1_hydroelectric_plant",
+   "tingkat_bukti": "via-pihak-ketiga",
+   "zona_nama": "Kaltara KIPI (Tanah Kuning)"
+  },
+  {
+   "id": "gem-solar-L100000808624",
+   "proyek_id": "gem_solar_L100000808624",
+   "nama": "Pulau Bulan solar farm",
+   "teknologi": "surya",
+   "mw": 670,
+   "status": "pre-construction",
+   "zona": "bintan",
+   "lat": 0.9765,
+   "lng": 103.9006,
+   "pemilik": [
+    "PacificLight Power Pte Ltd",
+    "PT Medco Power Indonesia",
+    "Gallant Venture Ltd"
+   ],
+   "sumber": "GEM",
+   "url": "https://www.gem.wiki/Pulau_Bulan_solar_farm",
+   "tingkat_bukti": "via-pihak-ketiga",
+   "zona_nama": "Bintan, Batam, Galang (Kepri)"
+  },
+  {
+   "id": "gem-solar-L100000830289",
+   "proyek_id": null,
+   "nama": "Tembesi Reservoir floating solar farm",
+   "teknologi": "surya",
+   "mw": 333,
+   "status": "announced",
+   "zona": "bintan",
+   "lat": 0.9986,
+   "lng": 104.0461,
+   "pemilik": [
+    "Sunseap Group Pte Ltd",
+    "BP Batam"
+   ],
+   "sumber": "GEM",
+   "url": "https://www.gem.wiki/Tembesi_Reservoir_floating_solar_farm",
+   "tingkat_bukti": "via-pihak-ketiga",
+   "zona_nama": "Bintan, Batam, Galang (Kepri)"
+  },
+  {
+   "id": "gem-solar-L100001020724",
+   "proyek_id": null,
+   "nama": "Morowali Industrial Park solar power project",
+   "teknologi": "surya",
+   "mw": 200,
+   "status": "announced",
+   "zona": "imip",
+   "lat": -2.8214,
+   "lng": 122.1493,
+   "pemilik": [
+    "Sumber Energi Surya Nusantara"
+   ],
+   "sumber": "GEM",
+   "url": "https://www.gem.wiki/Morowali_Industrial_Park_solar_power_project",
+   "tingkat_bukti": "via-pihak-ketiga",
+   "ppa": {
+    "id": "nickel-sesna",
+    "pembeli": "Nickel Industries",
+    "mw": 200,
+    "skema": "sewa-operasi",
+    "tahun": 2023,
+    "url": "https://announcements.asx.com.au/asxpdf/20231009/pdf/05vtqtfg19hgfc.pdf",
+    "tingkat_bukti": "kata-pihak"
+   },
+   "zona_nama": "IMIP Morowali (Bahodopi)"
+  },
+  {
+   "id": "gem-hydropower-L100000602124",
+   "proyek_id": "gem_hydropower_L100000602124",
+   "nama": "Larona hydroelectric plant",
+   "teknologi": "hidro",
+   "mw": 165,
+   "status": "operating",
+   "zona": "sorowako",
+   "lat": -2.666,
+   "lng": 121.2563,
+   "pemilik": [
+    "PT Vale Indonesia Tbk"
+   ],
+   "sumber": "GEM",
+   "url": "https://www.gem.wiki/Larona_hydroelectric_plant",
+   "tingkat_bukti": "via-pihak-ketiga",
+   "zona_nama": "Sorowako (Vale)"
+  },
+  {
+   "id": "gem-hydropower-L100000602103",
+   "proyek_id": "gem_hydropower_L100000602103",
+   "nama": "Balambano hydroelectric plant",
+   "teknologi": "hidro",
+   "mw": 140,
+   "status": "operating",
+   "zona": "sorowako",
+   "lat": -2.6418,
+   "lng": 121.214,
+   "pemilik": [
+    "PT Vale Indonesia Tbk"
+   ],
+   "sumber": "GEM",
+   "url": "https://www.gem.wiki/Balambano_hydroelectric_plant",
+   "tingkat_bukti": "via-pihak-ketiga",
+   "zona_nama": "Sorowako (Vale)"
+  },
+  {
+   "id": "gem-solar-L100001080948",
+   "proyek_id": "gem_solar_L100001080948",
+   "nama": "Tembesi Batam floating solar farm",
+   "teknologi": "surya",
+   "mw": 36,
+   "status": "construction",
+   "zona": "bintan",
+   "lat": 1.1314,
+   "lng": 104.0537,
+   "pemilik": [
+    "Nusantara Embesi Baru Energi"
+   ],
+   "sumber": "GEM",
+   "url": "https://www.gem.wiki/Tembesi_Batam_floating_solar_farm",
+   "tingkat_bukti": "via-pihak-ketiga",
+   "zona_nama": "Bintan, Batam, Galang (Kepri)"
+  },
+  {
+   "id": "pj_0310",
+   "proyek_id": "pj_0310",
+   "nama": "BESS Weda",
+   "teknologi": "penyimpanan",
+   "mw": 5,
+   "status": "rencana",
+   "zona": "iwip",
+   "pemilik": [
+    "SH-PLN"
+   ],
+   "sumber": "proyek",
+   "url": "/p/pj_0310",
+   "tingkat_bukti": "resmi",
+   "lat": 0.87222,
+   "lng": 128.01545,
+   "zona_nama": "IWIP Weda Bay"
+  }
+ ]
+}

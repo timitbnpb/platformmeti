@@ -3,7 +3,7 @@
 import { mulaiHalaman } from "/inti/kepala.js";
 import { esc, hantuHtml } from "/inti/umum.js";
 import { muatData, tampilGalat, batangHtml, pasangBar, ubinHtml } from "/analisis.js";
-import { muatTeks, tt, L, num, tgl, tautan, url, seksi, catatan, narasi, sumber, butuhDaftar, tabel, labelPil, garisSvg, saatBahasa } from "/info_kerangka.js";
+import { muatTeks, tt, L, num, tgl, tautan, url, seksi, catatan, narasi, sumber, butuhDaftar, tabel, labelPil, garisSvg, bendera, saatBahasa } from "/info_kerangka.js";
 
 const $ = (id) => document.getElementById(id);
 let d = null;
@@ -74,14 +74,14 @@ function bagDampak() {
 
 function bagAsean() {
   const ada = d.asean.filter((n) => n.karbon).sort((a, z) => z.karbon.nilai - a.karbon.nilai), idn = ada.findIndex((n) => n.iso3 === "IDN") + 1;
-  const bar = batangHtml(ada.map((n) => ({ id: n.iso3, label: n.nama, sorot: n.iso3 === "IDN", bagian: [{ nilai: n.karbon.nilai, kelas: n.iso3 === "IDN" ? "jm-an-id" : "jm-an-c2" }], teks: `${num(n.karbon.nilai, 0)} g/kWh (${n.karbon.tahun})` })), { label: tt("asean.bar"), satuan: "g" });
+  const bar = batangHtml(ada.map((n) => ({ id: n.iso3, label: n.nama, labelHtml: bendera(n.iso3, n.nama), sorot: n.iso3 === "IDN", bagian: [{ nilai: n.karbon.nilai, kelas: n.iso3 === "IDN" ? "jm-an-id" : "jm-an-c2" }], teks: `${num(n.karbon.nilai, 0)} g/kWh (${n.karbon.tahun})` })), { label: tt("asean.bar"), satuan: "g" });
   $("s-asean").innerHTML = seksi({
     id: "asean", ik: "asean", topik: tt("asean.topik"), judul: tt("asean.judul", { r: idn, n: ada.length, v: num(ada[idn - 1].karbon.nilai, 0) }), sub: tt("asean.sub"), csv: true,
     isi: `${narasi(tt("asean.narasi"))}<p class="inf-narasi"><a href="/asean">${esc(tt("asean.tautan"))}</a></p><h3 class="jm-bantu">${esc(tt("asean.bar"))}</h3>${bar}<div id="t-asean"></div>${butuhDaftar(d.butuh_unduhan, ["kebijakan_asean"])}${sumber([{ sumber: "Our World in Data energy-data (memuat Ember)", url: "https://github.com/owid/energy-data", tanggal: d.dibangun_pada, tahun: 2025 }])}`,
   });
   pasangBar($("s-asean"));
   tabel($("t-asean"), { baris: ada, per: 10, urut: { k: "karbon", arah: -1 }, label: tt("asean.topik"), kolom: [
-    { k: "nama", label: tt("tabel.negara"), v: (n) => n.nama },
+    { k: "nama", label: tt("tabel.negara"), v: (n) => n.nama, f: (n) => bendera(n.iso3, n.nama) },
     { k: "karbon", label: tt("tabel.karbon"), num: true, v: (n) => n.karbon.nilai, f: (n) => num(n.karbon.nilai, 0) },
     { k: "batubara", label: tt("tabel.batubara"), num: true, v: (n) => n.batubara?.nilai ?? null, f: (n) => (n.batubara ? `${num(n.batubara.nilai, 1)}%` : "-") },
     { k: "ebt", label: tt("tabel.ebt"), num: true, v: (n) => n.ebt?.nilai ?? null, f: (n) => (n.ebt ? `${num(n.ebt.nilai, 1)}%` : "-") },

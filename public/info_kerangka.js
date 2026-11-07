@@ -101,7 +101,7 @@ export async function petaHtml(data, { nama, onPilih, pilih = null, lebar = 640 
     return `<path class="inf-pv ${kelas(d?.nilai)}${pilih === kode ? " on" : ""}" d="${jalan}" data-kode="${kode}" tabindex="0" role="button" aria-label="${esc(judul)}"><title>${esc(judul)}</title></path>${lx >= 34 ? `<image class="inf-lb" href="/img/provinsi/${kode}.png" x="${(cx - 9).toFixed(1)}" y="${(cy - 9).toFixed(1)}" width="18" height="18" aria-hidden="true"/>` : ""}`;
   }).join("");
   const legenda = [0, 1, 2, 3, 4].map((i) => `<span class="inf-lg"><i class="inf-k${i}"></i>${esc(i === 0 ? tt("peta.rendah") : i === 4 ? tt("peta.tinggi") : "")}</span>`).join("");
-  const peta = `<div class="inf-peta"><svg viewBox="0 0 ${W} ${H}" role="group" aria-label="${esc(tt("peta.label"))}" focusable="false">${isi}</svg><div class="inf-legenda">${legenda}</div></div>`;
+  const peta = `<div class="inf-peta"><svg class="jm-gx" viewBox="0 0 ${W} ${H}" role="group" aria-label="${esc(tt("peta.label"))}" focusable="false">${isi}</svg><div class="inf-legenda">${legenda}</div></div>`;
   return peta;
 }
 export function pasangPeta(akar, onPilih) {
@@ -109,6 +109,9 @@ export function pasangPeta(akar, onPilih) {
   akar.addEventListener("click", f);
   akar.addEventListener("keydown", (e) => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); f(e); } });
 }
+/** Bendera negara ASEAN (iso3 -> /img/bendera/<iso2>.svg) di samping nama; tanpa bendera bila iso3 tak dikenal. */
+const ISO2 = { IDN: "id", VNM: "vn", PHL: "ph", THA: "th", MYS: "my", SGP: "sg", LAO: "la", KHM: "kh", MMR: "mm", BRN: "bn", TLS: "tl" };
+export const bendera = (iso3, nama) => (ISO2[iso3] ? `<span class="jm-bd-n"><img class="jm-bd" src="/img/bendera/${ISO2[iso3]}.svg" width="20" height="15" alt="" loading="lazy" data-galat="hapus"><span>${esc(nama)}</span></span>` : esc(nama));
 /** Lambang kecil di samping nama provinsi. */
 export const lambang = (kode, ukuran = 18) => `<img class="inf-lb-kecil" src="/img/provinsi/${esc(kode)}.png" width="${ukuran}" height="${ukuran}" alt="" loading="lazy" data-galat="hapus">`;
 
@@ -127,5 +130,5 @@ export function garisSvg({ titik, ref = [], lebar = 640, tinggi = 260, label = "
   const garis = `<polyline class="g g1" points="${titik.map((p) => `${x(p.x).toFixed(1)},${y(p.y).toFixed(1)}`).join(" ")}"/>`;
   const titikEl = titik.map((p) => `<circle class="t1" cx="${x(p.x).toFixed(1)}" cy="${y(p.y).toFixed(1)}" r="5"><title>${esc(p.teks)}</title></circle>`).join("");
   const acuan = ref.map((r) => `<line class="ref" x1="${L}" x2="${W - R}" y1="${y(r.y).toFixed(1)}" y2="${y(r.y).toFixed(1)}"><title>${esc(r.teks)}</title></line><text x="${W - R}" y="${(y(r.y) - 5).toFixed(1)}" text-anchor="end">${esc(r.teks)}</text>`).join("");
-  return `<svg class="inf-garis" viewBox="0 0 ${W} ${H}" role="img" aria-label="${esc(label)}" focusable="false">${grid}${sb}${acuan}${garis}${titikEl}</svg>`;
+  return `<svg class="inf-garis jm-gx" viewBox="0 0 ${W} ${H}" role="img" aria-label="${esc(label)}" focusable="false">${grid}${sb}${acuan}${garis}${titikEl}</svg>`;
 }

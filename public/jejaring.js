@@ -7,11 +7,12 @@ import { esc, ikon, hantuHtml, nanti } from "/inti/umum.js";
 import { cariHtml, hitungHtml } from "/inti/komponen.js";
 import { grafJejaring, bangun } from "/inti/tautan.js";
 import { geserPanel } from "/inti/panel_geser.js";
+import "/inti/tip_grafik.js";
 
 const JENIS = ["org", "pendana", "proyek", "provinsi", "regulasi", "orang"];
 const IKON = { org: "direktori", pendana: "analisis", proyek: "proyek", provinsi: "wilayah", regulasi: "regulasi", orang: "orang" };
 const MAKS = 140, L = 1000, H = 620;
-let G, S = { aktif: new Set(JENIS), q: "", pilih: null }, tetangga, derajat;
+let G, S = { aktif: new Set(JENIS), q: "", pilih: null, fokus: false }, tetangga, derajat;
 
 const kunciTaut = (n) => [n.j === "pendana" ? "org" : n.j, n.id];
 const norm = (s) => String(s ?? "").toLowerCase();
@@ -19,6 +20,7 @@ const norm = (s) => String(s ?? "").toLowerCase();
 function pilihTampil() {
   const aktif = G.simpul.filter((n) => S.aktif.has(n.j) && derajat.get(n.k));
   const pakai = new Map();
+  if (S.fokus && S.pilih) { pakai.set(S.pilih.k, S.pilih); for (const m of tetangga.get(S.pilih.k) || []) if (S.aktif.has(m.n.j)) pakai.set(m.n.k, m.n); return [...pakai.values()].slice(0, MAKS + 60); }
   const tambah = (n) => pakai.set(n.k, n);
   if (S.q) aktif.filter((n) => norm(n.nama).includes(S.q)).slice(0, 30).forEach((n) => { tambah(n); for (const m of tetangga.get(n.k) || []) if (S.aktif.has(m.n.j)) tambah(m.n); });
   else aktif.sort((a, b) => derajat.get(b.k) - derajat.get(a.k)).slice(0, MAKS).forEach(tambah);
@@ -59,9 +61,9 @@ function gambarGraf() {
   const garis = edges.map((e) => { const a = at.get(e.a), b = at.get(e.b), sorot = S.pilih && (e.a === S.pilih.k || e.b === S.pilih.k); return `<line class="jj-sisi${sorot ? " jj-sorot" : ""}" data-a="${esc(e.a)}" data-b="${esc(e.b)}" x1="${a.x.toFixed(1)}" y1="${a.y.toFixed(1)}" x2="${b.x.toFixed(1)}" y2="${b.y.toFixed(1)}"/>`; }).join("");
   const bulat = P.map((p) => {
     const r = 5 + Math.sqrt(derajat.get(p.n.k) || 1) * 1.8, on = S.pilih?.k === p.n.k;
-    return `<g class="jj-n jj-n-${p.n.j}${on ? " jj-on" : ""}" data-k="${esc(p.n.k)}" tabindex="0" role="button" aria-label="${esc(p.n.nama)}"><circle cx="${p.x.toFixed(1)}" cy="${p.y.toFixed(1)}" r="${r.toFixed(1)}"/><title>${esc(p.n.nama)}</title>${tampilLabel(p) ? `<text x="${p.x.toFixed(1)}" y="${(p.y + r + 11).toFixed(1)}" text-anchor="middle">${esc(p.n.nama.length > 28 ? p.n.nama.slice(0, 27) + "..." : p.n.nama)}</text>` : ""}</g>`;
+    return `<g class="jj-n jj-n-${p.n.j}${on ? " jj-on" : ""}" data-k="${esc(p.n.k)}" tabindex="0" role="button" aria-label="${esc(p.n.nama)}"><circle cx="${p.x.toFixed(1)}" cy="${p.y.toFixed(1)}" r="${r.toFixed(1)}"/>${p.n.j === "provinsi" ? `<image href="/img/provinsi/${esc(p.n.id)}.png" x="${(p.x - r).toFixed(1)}" y="${(p.y - r).toFixed(1)}" width="${(2 * r).toFixed(1)}" height="${(2 * r).toFixed(1)}" preserveAspectRatio="xMidYMid meet"/>` : ""}<title>${esc(`${p.n.nama}: ${t("jj.k." + p.n.j)}, ${t("jj.sisi")} ${angka(derajat.get(p.n.k) || 0)}`)}</title>${tampilLabel(p) ? `<text x="${p.x.toFixed(1)}" y="${(p.y + r + 11).toFixed(1)}" text-anchor="middle">${esc(p.n.nama.length > 28 ? p.n.nama.slice(0, 27) + "..." : p.n.nama)}</text>` : ""}</g>`;
   }).join("");
-  document.getElementById("jjKanvas").innerHTML = nodes.length ? `<svg class="jj-svg" viewBox="0 0 ${L} ${H}" role="img" aria-label="${esc(t("jj.graf"))}">${garis}${bulat}</svg>` : `<p class="jm-kosong">${esc(t("jj.kosong"))}</p>`;
+  document.getElementById("jjKanvas").innerHTML = nodes.length ? `<svg class="jj-svg jm-gx" viewBox="0 0 ${L} ${H}" role="img" aria-label="${esc(t("jj.graf"))}">${garis}${bulat}</svg>` : `<p class="jm-kosong">${esc(t("jj.kosong"))}</p>`;
   document.getElementById("jjKet").textContent = t("jj.ket", { n: angka(nodes.length), m: angka(edges.length), maks: angka(MAKS) });
   document.getElementById("jjHitung").textContent = t("jj.hitung", { n: angka(nodes.length), total: angka(derajat.size) });
 }
@@ -103,10 +105,11 @@ async function mulai() {
   }
   G.per = per;
   khUbin("ubin", [{ ikon: "direktori", nilai: angka(G.simpul.filter((n) => n.j === "org" || n.j === "pendana").length), label: t("jj.k.org") }, { ikon: "proyek", nilai: angka(G.simpul.filter((n) => n.j === "proyek").length), label: t("jj.k.proyek") }, { ikon: "tautan", nilai: angka(G.sisi.length), label: t("jj.sisi") }]);
+  { const qs = new URLSearchParams(location.search), k = qs.get("proyek") ? "proyek:" + qs.get("proyek") : qs.get("org") ? "org:" + qs.get("org") : ""; const n = k && (G.per.get(k) || (qs.get("org") && G.per.get("pendana:" + qs.get("org")))); if (n) { S.pilih = n; S.fokus = true; } }
   gambarSaring();
   semua();
   const dok = document.getElementById("jjSaring");
-  dok.addEventListener("input", (e) => { if (e.target.id !== "jjQ") return; clearTimeout(mulai.d); mulai.d = setTimeout(() => { S.q = norm(e.target.value.trim()); gambarPanel(); tundaGraf(); }, 160); });
+  dok.addEventListener("input", (e) => { if (e.target.id !== "jjQ") return; clearTimeout(mulai.d); mulai.d = setTimeout(() => { S.q = norm(e.target.value.trim()); if (S.q) S.fokus = false; gambarPanel(); tundaGraf(); }, 160); });
   dok.addEventListener("click", (e) => {
     const b = e.target.closest(".jj-chip"); if (!b) return;
     S.aktif.has(b.dataset.j) ? S.aktif.delete(b.dataset.j) : S.aktif.add(b.dataset.j);

@@ -51,7 +51,7 @@
 .hk-rel li>button,.hk-rel li>span.hk-nama2{flex:1 1 200px;min-width:0;text-align:left;background:none;border:0;padding:0;color:var(--ink);font:600 var(--t-kecil)/1.4 var(--font);overflow-wrap:anywhere}
 .hk-rel li>button{cursor:pointer;color:var(--accent)}
 .hk-aksi{display:flex;flex-wrap:wrap;gap:10px}
-.hk-dl{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin:0}
+.hk-dl{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin:0}
 .hk-dl div{padding:12px 14px;border-radius:var(--r-sm);background:var(--surface)}
 .hk-dl dt{font:600 var(--t-kecil)/1 var(--font);color:var(--ink2);margin-bottom:6px}
 .hk-dl dd{margin:0;font:600 var(--t-body)/1.3 var(--font);color:var(--head);overflow-wrap:anywhere}
@@ -76,4 +76,5 @@
   .hk-rel{grid-template-columns:minmax(0,1fr)}
   .hk-cabut-b{grid-template-columns:minmax(0,1fr)}
 }
+@media (max-width:600px){.hk-dl{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media (max-width:480px){.hk-kartu{padding:14px}.hk-peringkat li{grid-template-columns:30px minmax(0,1fr)}.hk-peringkat li>.jm-pil{grid-column:2}}

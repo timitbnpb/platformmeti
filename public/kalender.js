@@ -4,6 +4,7 @@ import { esc, nanti, ikon, hantuHtml, kosongHtml, galatHtml, api } from "/inti/u
 import { pilihHtml, exHtml, sumberHtml } from "/inti/komponen.js";
 import { tautOrg, siapTautan, rinci } from "/inti/tautan.js";
 import { tautanBagi } from "/inti/bagi.js";
+import { logoOrg } from "/inti/logo_org.js";
 import { lokasiTeks, petaUrl, sumberDaftar, namaSumber, sumberTeks, namaPenyelenggara, gambarAcara } from "/kalender_fmt.js";
 import { fotoAcara, hariIni } from "/event_umum.js";
 import { aksiHtml, hlHtml } from "/inti/aksi_ex.js";
@@ -83,7 +84,11 @@ const nmSumber = (l) => (ada("kal.sumber." + l) ? t("kal.sumber." + l) : "");
 const FMT = { nama: nmSumber, diambil: (d) => t("kal.diambil", { tanggal: tanggal(d) }) };
 const urlB = (b) => urlAman(sumberDaftar(b.sumber)[0]?.url || "");
 const mitraTeks = (b) => namaPenyelenggara(b).join(", ");
-const thumb = (b) => { const g = gambarAcara(b) || `/img/beranda/${fotoAcara({ judul: b.judul, judulTampil: b.judul, slug: b.id })}.webp`; return `<img class="kal-thumb" src="${esc(g)}" alt="" width="200" height="140" loading="lazy" decoding="async" data-galat="hapus">`; };
+const thumb = (b) => {
+  const g = gambarAcara(b) || `/img/beranda/${fotoAcara({ judul: b.judul, judulTampil: b.judul, slug: b.id })}.webp`;
+  const lg = namaPenyelenggara(b).map((n) => logoOrg("", n)[0]).find(Boolean);
+  return `<span class="kal-thumb kal-th kal-g-${esc(b.jenis)}" aria-hidden="true">${ikon(IKON_JENIS[b.jenis] || "kalender", 40)}${lg ? `<img class="kal-th-lg" src="${esc(lg)}" alt="" width="40" height="40" loading="lazy" data-galat="hapus">` : ""}<img class="kal-th-f" src="${esc(g)}" alt="" width="200" height="140" loading="lazy" decoding="async" data-galat="hapus"></span>`;
+};
 const pilJenis = (j) => `<span class="kal-pil kal-t-${esc(j)}">${esc(label("kal.jenis.", j))}</span>`;
 
 /* ---------- kalender ---------- */

@@ -24,6 +24,7 @@ export function akunMenuHtml(saya) {
       ${taut("/portal", ikon("direktori", 20), "am.portal")}
       ${butir("pesan", IK_PESAN, "am.pesan", '<span class="jm-am-lencana" id="amBelum" hidden></span>')}
       ${taut("/langganan", ikon("surel", 20), "am.langganan")}
+      ${butir("surel", ikon("lencana", 20), "am.surel")}
       ${saya.peran === "admin" || saya.peran === "super" || saya.peran === "pengurus" ? taut("/admin", ikon("perisai", 20), "nav.admin") : ""}
       ${taut("/ganti-sandi", ikon("kunci", 20), "am.sandi")}
       <hr>
@@ -80,6 +81,7 @@ export function pasangAkunMenu(kepala, saya) {
     const b = e.target.closest("[data-am]");
     if (!b) { if (e.target.closest("a")) buka(false); return; }
     if (b.dataset.am === "pesan") { buka(false); document.getElementById("psFab")?.click(); }
+    else if (b.dataset.am === "surel") { buka(false); import("/inti/surel_minta.js").then((m) => m.bukaMintaSurel()); }
     else if (b.dataset.am === "bahasa") { const baru = bahasa() === "id" ? "en" : "id"; buka(false); nanti(() => gantiBahasa(baru, { masuk: true })); }
   });
   tombol.addEventListener("keydown", (e) => { if (e.key === "ArrowDown") { buka(true); menu.querySelector('[role="menuitem"]')?.focus(); e.preventDefault(); } });

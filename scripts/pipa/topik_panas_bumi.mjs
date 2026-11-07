@@ -4,6 +4,7 @@
 import { readFileSync, writeFileSync } from "node:fs";
 import { fileURLToPath } from "node:url";
 import { perdalam } from "./topik_dalam_panas_bumi.mjs";
+import { tambahJalanModel } from './topik_jalan_lib.mjs';
 
 const AKAR = new URL("../../", import.meta.url);
 const baca = (n) => JSON.parse(readFileSync(new URL("public/data/" + n + ".json", AKAR), "utf8"));
@@ -740,7 +741,7 @@ export function periksa(n) {
   return m;
 }
 
-function bangun() { return perdalam(bangunDasar(), sumber); }
+function bangun() { return tambahJalanModel(perdalam(bangunDasar(), sumber), 'panas-bumi'); }
 export const naskah = bangun;
 if (process.argv[1] === fileURLToPath(import.meta.url)) {
   const n = bangun(); const m = periksa(n);

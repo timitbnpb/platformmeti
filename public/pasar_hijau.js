@@ -8,6 +8,7 @@ import { muatData, tampilGalat, sumberLipat, ubinHtml, pil, num, saatBahasa } fr
 import { muatKomitmen, statusKm, tahunKm, sektorKm, pilStatusKm, cocokOrg } from "/peristiwa_komitmen.js";
 import { logoOrgSatu } from "/inti/logo_org.js";
 import { namaBaku } from "/inti/nama_baku.js";
+import { kodeProv } from "/inti/prov_singkat.js";
 import { batangSvg, legendaHtml, detailHtml, pasangDetail, tabel, celahHtml, n1 } from "/info_hijau.js";
 
 const $ = (id) => document.getElementById(id);
@@ -56,7 +57,7 @@ function tabelTabel() {
     { label: t("pm.c.bahan"), v: (r) => nb(domin(r)), f: (r) => esc(nb(domin(r))) },
   ], baris: d.pemilik_pembangkit });
   tabel($("tb-wilayah"), { satuan: "ih.u.provinsi", per: 10, urutAwal: 2, kolom: [
-    { label: t("pm.c.provinsi"), v: (r) => r.provinsi, f: (r) => esc(r.provinsi === "tanpa-provinsi" ? t("pm.tanpa_prov") : r.provinsi) },
+    { label: t("pm.c.provinsi"), v: (r) => r.provinsi, f: (r) => (kodeProv(r.provinsi) ? `<img class="ih-pt" src="/img/provinsi/${kodeProv(r.provinsi)}.png" width="20" height="20" alt="" loading="lazy"> ` : "") + esc(r.provinsi === "tanpa-provinsi" ? t("pm.tanpa_prov") : r.provinsi) },
     { label: t("pm.c.proyek"), num: true, v: (r) => r.proyek, f: (r) => num(r.proyek, 0) },
     { label: t("pm.c.mw"), num: true, v: (r) => r.mw, f: (r) => num(r.mw, 0) },
     { label: t("pm.st.beroperasi"), num: true, v: (r) => r.beroperasi_mw, f: (r) => num(r.beroperasi_mw, 0) },
@@ -84,7 +85,7 @@ function bagan() {
     baris: top.map((p) => ({ label: nama(p), tip: t("pm.tip_ipp", { p: nama(p), mw: num(p.kapasitas_mw, 0), n: p.unit, b: nb(domin(p)) }), bagian: [{ k: p.grup, nilai: p.kapasitas_mw }] })) });
   const w = d.proyek_wilayah.filter((r) => r.provinsi !== "tanpa-provinsi").slice(0, 12);
   $("g-wilayah").innerHTML = batangSvg({ el: $("g-wilayah"), d: 0, label: t("pm.s.wilayah"), satuan: "MW", seri: [{ k: "o", kelas: "ih-ebt" }, { k: "k", kelas: "ih-s1" }, { k: "r", kelas: "ih-netral" }],
-    baris: w.map((r) => ({ label: r.provinsi, tip: t("pm.tip_wil", { p: r.provinsi, o: num(r.beroperasi_mw, 0), k: num(r.konstruksi_mw, 0), r: num(r.rencana_mw, 0), n: r.proyek }), bagian: [{ k: "o", nilai: r.beroperasi_mw }, { k: "k", nilai: r.konstruksi_mw }, { k: "r", nilai: r.rencana_mw }] })) });
+    baris: w.map((r) => ({ label: r.provinsi, ...(kodeProv(r.provinsi) ? { logo: `/img/provinsi/${kodeProv(r.provinsi)}.png` } : {}), tip: t("pm.tip_wil", { p: r.provinsi, o: num(r.beroperasi_mw, 0), k: num(r.konstruksi_mw, 0), r: num(r.rencana_mw, 0), n: r.proyek }), bagian: [{ k: "o", nilai: r.beroperasi_mw }, { k: "k", nilai: r.konstruksi_mw }, { k: "r", nilai: r.rencana_mw }] })) });
 }
 
 async function mulai() {

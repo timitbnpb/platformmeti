@@ -839,3 +839,6 @@ main.jm-an .jm-ex>.jm-ex-hd>.jm-ex-teks>.jm-ex-sub{grid-row:2}
   .jm-wp-eb-tr{grid-column:2/4;grid-row:2}.jm-wp-eb-mw{grid-column:2/4;grid-row:3;text-align:left}
 }
 .jm-wp-jn-rued{--tk:var(--data5)}.jm-wp-jn-rad{--tk:var(--data2)}.jm-wp-jn-listrik{--tk:var(--data4)}.jm-wp-jn-perda{--tk:var(--data1)}
+/* ikon sumber sebaris dengan angka kartu, bukan baris kosong sendiri di dasar */
+.jm-an-kartu>.jm-an-src{grid-row:2;grid-column:1;justify-self:end;align-self:center}
+.jm-an-kartu>.jm-an-angka{grid-row:2;grid-column:1}.jm-an-kartu>.jm-kpi-sub{grid-row:3}

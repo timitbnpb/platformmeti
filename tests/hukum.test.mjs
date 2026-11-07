@@ -125,6 +125,13 @@ test("tanya dengan AI: kutipan karangan dibuang dan dihitung, kutipan sah dikemb
   assert.ok(d.jawaban.includes("komponen dalam negeri") && !d.jawaban.includes("pajak dihapus"));
 });
 
+test("cari longgar: kata yang tak bertemu bersamaan dilonggarkan jadi salah satu kata, ditandai", async () => {
+  const d = await (await panggil("GET", "/api/hukum/cari?q=insentif%20pajak%20surya%20atap")).json();
+  assert.equal(d.longgar, true);
+  assert.ok(d.total >= 1);
+  assert.equal((await (await panggil("GET", "/api/hukum/cari?q=komponen%20negeri")).json()).longgar, false);
+});
+
 test("tabel belum dimigrasi: 503, bukan 500", async () => {
   await E.DB.batch([q("DROP TABLE hukum_fts"), q("DROP TABLE hukum_relasi"), q("DROP TABLE hukum_segmen"), q("DROP TABLE hukum_dok")]);
   for (const j of ["/api/hukum/cari?q=surya", "/api/hukum/dok?id=uu-30-2009", "/api/hukum/ringkas"]) assert.equal((await panggil("GET", j)).status, 503, j);

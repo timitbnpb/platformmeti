@@ -62,6 +62,7 @@ export const MATRIKS = {
   pendaftaran:     ["-", "-", "T", "-", "-", "T", "T"], // 8 Nov 2026: persetujuan anggota mandiri (setujui/tolak, bukti iuran) oleh pengurus, admin, super
   konsultasi:      ["-", "T daftar", "T daftar", "T daftar", "T daftar", "T", "T"], // forum Konsultasi: anggota aktif berkomentar/usul/dukung; menyunting hanya miliknya (15 menit, dijaga fungsi); tamu tidak
   sesi_admin:      ["-", "-", "-", "-", "-", "T cabut", "T cabut"], // 8 Nov 2026: daftar semua sesi aktif + cabut per sesi + riwayat gagal masuk + matriks hak (tab Keamanan); admin tak mencabut sesi super (dijaga fungsi)
+  surel_minta:     ["-", "T daftar", "T daftar", "T daftar", "T daftar", "T", "T"], // 8 Nov 2026: permintaan alamat @metiires.or.id; ajukan/lihat miliknya = akun masuk; antrean + putusan hanya admin, super (dijaga gerbangAdm)
   konsultasi_putus: ["-", "-", "T", "T", "-", "T", "T"], // moderasi + keputusan + kelola naskah: pengurus, kurator, admin, super
 };
 export const AKSI = ["baca", "tambah", "ubah", "hapus", "kirim", "cabut", "tinjau", "hapus_keras"];
@@ -2550,4 +2551,95 @@ export async function hukumSegmenTanya(env, akun, match, n) {
   gerbangMasuk(akun);
   return tanpaTabel(async () => (await env.DB.prepare(`SELECT s.id, s.label, s.teks, d.id AS dok, d.judul FROM hukum_fts JOIN hukum_segmen s ON s.id = hukum_fts.rowid JOIN hukum_dok d ON d.id = s.dok
     WHERE hukum_fts MATCH ? ORDER BY bm25(hukum_fts, 1.0, 3.0, 1.0) LIMIT ?`).bind(match, n).all()).results);
+}
+
+/* ===================== Permintaan surel @metiires.or.id (0030_surel_minta.sql) ===================== */
+// Kotak surel dibuat MANUAL oleh admin di penyedia; di sini hanya antrean + status. Tanpa sandi, tanpa API penyedia.
+export const DOMAIN_SUREL = "metiires.or.id";
+export const KATA_CADANGAN = ["admin", "administrator", "info", "sekretariat", "sekretaris", "sekjen", "ketua", "wakil", "bendahara", "noreply", "no-reply", "postmaster", "webmaster", "hostmaster",
+  "root", "abuse", "security", "support", "contact", "kontak", "humas", "press", "redaksi", "pengurus", "dewan", "keuangan", "iuran", "bantuan", "help", "hello", "halo", "office",
+  "mail", "www", "ftp", "smtp", "meti", "metiires", "pusat", "dpp", "dpd", "dpw", "layanan", "pendaftaran", "anggota", "billing", "sales", "marketing", "test", "tes"];
+/** Murni: "ok" atau alasan penolakan ("format" | "cadangan"). Huruf kecil, angka, titik, tanda hubung; 3-32; awal dan akhir huruf/angka; tanpa pemisah ganda; bukan angka semua. */
+export function periksaNamaSurel(n) {
+  if (typeof n !== "string" || n.length < 3 || n.length > 32 || !/^[a-z0-9][a-z0-9.-]*[a-z0-9]$/.test(n) || /[.-]{2}/.test(n) || /^\d+$/.test(n)) return "format";
+  if (KATA_CADANGAN.includes(n) || KATA_CADANGAN.includes(n.replace(/[.-]/g, ""))) return "cadangan";
+  return "ok";
+}
+const STATUS_SUREL = ["diajukan", "disetujui", "ditolak", "dibuat"];
+const gSurel = (akun) => { const r = boleh(akun?.peran, "tambah", "surel_minta", undefined, akun); if (!r.ok) throw tolak(r.alasan); };
+const KOL_SUREL = "id, nama_lokal, alternatif_1, alternatif_2, alasan, organisasi, status, alamat_final, catatan_admin, dibuat, diputus_pada, dibuat_pada";
+
+// Ketersediaan terhadap pengajuan yang sudah disetujui/dibuat. Hasil: "ok" | "format" | "cadangan" | "terpakai"; null = tabel belum dimigrasi.
+export async function surelCek(env, akun, nama) {
+  gSurel(akun);
+  const p = periksaNamaSurel(nama);
+  if (p !== "ok") return p;
+  return tanpaTabel(async () => ((await env.DB.prepare("SELECT 1 AS x FROM surel_minta WHERE alamat_final = ? AND status IN ('disetujui','dibuat')").bind(nama).first()) ? "terpakai" : "ok"));
+}
+
+export async function surelSaya(env, akun) {
+  gSurel(akun);
+  return tanpaTabel(async () => (await env.DB.prepare(`SELECT ${KOL_SUREL} FROM surel_minta WHERE akun_id = ? ORDER BY id DESC LIMIT 20`).bind(akun.id).all()).results);
+}
+
+// d: { nama, alt1, alt2, alasan, organisasi } sudah divalidasi rute. Hasil: { id } | { aktif: true } | { terpakai: true }; null = tabel belum ada.
+export async function surelMinta(env, akun, d) {
+  gSurel(akun);
+  for (const n of [d.nama, d.alt1, d.alt2]) if (n != null && periksaNamaSurel(n) !== "ok") throw salah("nama surel tidak sah");
+  return tanpaTabel(async () => {
+    if (await env.DB.prepare("SELECT 1 AS x FROM surel_minta WHERE akun_id = ? AND status <> 'ditolak'").bind(akun.id).first()) return { aktif: true };
+    if (await env.DB.prepare("SELECT 1 AS x FROM surel_minta WHERE alamat_final = ? AND status IN ('disetujui','dibuat')").bind(d.nama).first()) return { terpakai: true };
+    try {
+      const [r] = await env.DB.batch([
+        env.DB.prepare("INSERT INTO surel_minta (akun_id, nama_lokal, alternatif_1, alternatif_2, alasan, organisasi) VALUES (?, ?, ?, ?, ?, ?)")
+          .bind(akun.id, d.nama, d.alt1 ?? null, d.alt2 ?? null, d.alasan, d.organisasi),
+        jejakOrg(env, akun, "surel_minta", "minta surel " + d.nama),
+      ]);
+      return { id: r.meta.last_row_id };
+    } catch (e) { throw terjemah(e); }
+  });
+}
+
+export async function surelAntrean(env, akun, status, hal = 1) {
+  gerbangAdm(akun);
+  if (!STATUS_SUREL.includes(status)) throw salah("antrean tidak sah");
+  const h = Math.min(Math.max(Number(hal) || 1, 1), 10000);
+  return tanpaTabel(async () => {
+    const [b, c] = await env.DB.batch([
+      env.DB.prepare(`SELECT t.${KOL_SUREL.split(", ").join(", t.")}, a.nama AS pengaju, a.surel AS pengaju_surel, p.nama AS pemutus, m.nama AS pembuat
+        FROM surel_minta t LEFT JOIN akun a ON a.id = t.akun_id LEFT JOIN akun p ON p.id = t.diputus_oleh LEFT JOIN akun m ON m.id = t.dibuat_oleh
+        WHERE t.status = ? ORDER BY t.id DESC LIMIT ? OFFSET ?`).bind(status, HALAMAN_ADM, (h - 1) * HALAMAN_ADM),
+      env.DB.prepare("SELECT COUNT(*) AS n FROM surel_minta WHERE status = ?").bind(status),
+    ]);
+    return { baris: b.results, total: c.results[0].n };
+  });
+}
+
+// aksi: setuju (alamat wajib, bebas dari yang terpakai) | tolak (catatan wajib dari rute) | dibuat. UPDATE hanya dari status asal yang sah; jejak hanya bila baris berubah.
+// Hasil: { ubah: 0|1 } | { terpakai: true } | null.
+const ASAL_SUREL = { setuju: ["diajukan"], tolak: ["diajukan", "disetujui"], dibuat: ["disetujui"] };
+export async function surelPutus(env, akun, id, aksi, { alamat = null, catatan = null } = {}) {
+  gerbangAdm(akun);
+  if (!ASAL_SUREL[aksi] || !RE_ID.test(String(id))) throw salah("putusan tidak sah");
+  if (aksi === "setuju" && periksaNamaSurel(alamat) !== "ok") throw salah("alamat surel tidak sah");
+  const asal = ASAL_SUREL[aksi].map(() => "?").join(",");
+  const sql = {
+    setuju: `UPDATE surel_minta SET status = 'disetujui', alamat_final = ?, catatan_admin = ?, diputus_pada = ?, diputus_oleh = ? WHERE id = ? AND status IN (${asal})`,
+    tolak: `UPDATE surel_minta SET status = 'ditolak', alamat_final = NULL, catatan_admin = ?, diputus_pada = ?, diputus_oleh = ? WHERE id = ? AND status IN (${asal})`,
+    dibuat: `UPDATE surel_minta SET status = 'dibuat', catatan_admin = COALESCE(?, catatan_admin), dibuat_pada = ?, dibuat_oleh = ? WHERE id = ? AND status IN (${asal})`,
+  }[aksi];
+  const arg = aksi === "setuju" ? [alamat, catatan, kini(), akun.id] : [catatan, kini(), akun.id];
+  return tanpaTabel(async () => {
+    try {
+      const [u] = await env.DB.batch([
+        env.DB.prepare(sql).bind(...arg, Number(id), ...ASAL_SUREL[aksi]),
+        env.DB.prepare("INSERT INTO jejak (siapa, peran, aksi, tabel, baris_id, ke) SELECT ?, ?, 'tinjau', 'surel_minta', ?, ? WHERE changes() > 0")
+          .bind(akun.id, akun.peran, String(id), JSON.stringify({ ringkas: ("surel " + aksi + (alamat ? " " + alamat : "")).slice(0, 300) })),
+      ]);
+      return { ubah: u.meta.changes };
+    } catch (e) {
+      if (/UNIQUE/i.test(String(e?.message) + String(e?.cause?.message))) return { terpakai: true };
+      throw terjemah(e);
+    }
+  });
 }

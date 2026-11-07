@@ -192,3 +192,6 @@ dialog.ps-dlg{width:min(760px,calc(100vw - 24px));max-height:calc(100dvh - 24px)
 .ps-potong canvas{width:min(300px,100%);aspect-ratio:1;border:2px solid var(--accent);border-radius:50%;background:var(--surface);touch-action:none;cursor:grab}
 .ps-potong-k{display:grid;gap:8px;width:min(300px,100%)}
 .ps-potong-k input[type=range]{width:100%;accent-color:var(--accent)}
+/* kepala kartu bagian: judul kiri, ikon sunting/tambah sejajar kanan (audit UI 2) */
+#pfPanel .jm-ex>.jm-ex-hd{align-items:center}
+#pfPanel .jm-ex>.jm-ex-hd>.jm-ex-aksi{grid-row:1;align-self:center}
