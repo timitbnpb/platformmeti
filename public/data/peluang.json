@@ -4840,7 +4840,11 @@
      "sumber_id": "ruen",
      "halaman": "Tabel 42 (biomassa/biofuel + biogas) hlm 74",
      "catatan": "RUEN menggabung Kalimantan Timur/Utara (964.3 MW); tidak dipisah",
-     "kelompok_mw": 964.3
+     "kelompok_mw": 964.3,
+     "kelompok": [
+      "Kalimantan Timur",
+      "Kalimantan Utara"
+     ]
     },
     "hidro": {
      "mw": null,
@@ -5039,7 +5043,11 @@
      "sumber_id": "ruen",
      "halaman": "Tabel 42 (biomassa/biofuel + biogas) hlm 74",
      "catatan": "RUEN menggabung Kalimantan Timur/Utara (964.3 MW); tidak dipisah",
-     "kelompok_mw": 964.3
+     "kelompok_mw": 964.3,
+     "kelompok": [
+      "Kalimantan Timur",
+      "Kalimantan Utara"
+     ]
     },
     "panas_bumi": {
      "mw": 43,

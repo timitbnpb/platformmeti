@@ -243,7 +243,7 @@ img.pu-lb{object-fit:contain}
 .pu-pen-baris img.pu-lb,.pu-pen img.pu-lb{box-shadow:0 0 0 1px var(--line)}
 .pu-mono{display:inline-grid;place-items:center;color:var(--on-accent);font:700 var(--t-label)/1 var(--font);letter-spacing:0;overflow:hidden}
 .pu-w0{background:var(--tp-hidro)}.pu-w1{background:var(--tp-industri)}.pu-w2{background:var(--tp-kebijakan)}.pu-w3{background:var(--tp-panas)}.pu-w4{background:var(--tp-hidrogen)}.pu-w5{background:var(--tp-adil)}
-.pu-u18{width:18px;height:18px;font-size:7px}.pu-u20{width:20px;height:20px;font-size:8px}.pu-u24{width:24px;height:24px;font-size:9px}.pu-u32{width:32px;height:32px;font-size:11px}
+.pu-u18{width:18px;height:18px;font-size:calc(var(--t-label) * .64)}.pu-u20{width:20px;height:20px;font-size:calc(var(--t-label) * .73)}.pu-u24{width:24px;height:24px;font-size:calc(var(--t-label) * .82)}.pu-u32{width:32px;height:32px;font-size:var(--t-label)}
 .pu-lencana .pu-mono{width:32px;height:32px}
 /* kartu: baris sejajar antar kartu */
 .pu-kisi .pu-badan h3{min-height:calc(3 * 1.3em);line-height:1.3}

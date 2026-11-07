@@ -14,7 +14,7 @@ Pemilik cetakan: agent `layar` (Karbon). Kerangka bab: `TOPIK-MENDALAM.md` (1 sa
 2. Teks dua bahasa: `{ "id": "...", "en": "..." }`. Tanpa em dash, tanpa titik tengah, tanpa kapital penuh, tanpa panah teks.
 3. Bab yang tidak ada di `bab` disembunyikan. Jangan isi bab dengan karangan; lebih baik kosong.
 4. Hanya sumber terbuka; panen sopan (UA `METI-Network-research/0.1 (+https://platformmeti.timitbnpb.workers.dev)`, robots, jeda >= 2 s, berhenti pada 403/429).
-5. Tidak ada URL karangan. Foto: berkas lokal di `public/img/` dengan kredit.
+5. Tidak ada URL karangan; `url` sumber boleh jalur situs ("/data/x.json") untuk berkas milik repo. Foto: berkas lokal di `public/img/` dengan kredit.
 
 ## Bentuk berkas naskah
 ```json
@@ -44,7 +44,7 @@ Semua tipe boleh membawa `"sumber": ["s1","s2"]`, `"judul"` (menimpa judul baku)
 | `tabel` | `{ "tipe":"tabel", "per":8, "kolom":[ { "k":"nama", "l":{id,en}, "num":false, "d":0, "url":"kolom_url" } ], "baris":[ { "nama":"x" } ] }`; sel boleh `{id,en}` atau angka; kolom `url` menjadikan sel tautan |
 | `grafik` | `{ "tipe":"grafik", "jenis":"garis"\|"kolom"\|"batang", "label":{id,en}, "satuan":"MW", "d":0, "seri":[ { "nama":{id,en}, "sorot":true, "titik":[ ["2020",10], ["2021",12] ] } ] }` |
 | `linimasa` | `{ "tipe":"linimasa", "butir":[ { "tanggal":"2025-10-10", "judul":{id,en}, "url":"https://..." } ] }` (masa depan otomatis berlabel dijadwalkan) |
-| `kasus` | bab 39 dan 40, lihat di bawah |
+| `kasus` | bab 39 dan 40, lihat di bawah; `jenis`: berhasil, gagal, mundur, mangkrak, mati, atau dibatalkan (tiap jenis butuh teks `kasus.<jenis>` di ui.json) (selain berhasil = kartu kasus gagal: wajib `sumber` dan `hak_jawab`) |
 | `pola` | bab 41, lihat di bawah |
 | `periksa` | bab 42, lihat di bawah |
 
@@ -72,3 +72,8 @@ Semua tipe boleh membawa `"sumber": ["s1","s2"]`, `"judul"` (menimpa judul baku)
 
 ## Contoh minimal
 Lihat `public/data/topik/karbon.json` (contoh lengkap) dan uji `tests/topik.test.mjs` yang memvalidasi bentuk, dua bahasa, rujukan sumber, dan larangan karakter.
+
+## Tambahan khusus Karbon (dihitung cetakan, tidak diketik tangan)
+- `kunci[].ref` (cakupan, ets_usd, bursa_vol, kredit_terbit, emisi_juta) dan token `{nama}` di teks diisi `public/topik_karbon.js` dari `dasar-karbon.json` dan `luar_karbon.json`.
+- `kasus[].dari` ({"jenis":"kredit","id":"vcs_487"} atau {"jenis":"negara","kode":"DEU"}) mengisi profil, angka, dan faktor kasus dari data; `pola.faktor` (proyek kredit) dan `pola.faktor_negara` (instrumen negara).
+- Topik lain memakai `kunci[].nilai` biasa; tanpa token.

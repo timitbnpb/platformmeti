@@ -4,6 +4,7 @@ import { t, ada, angka, tanggal } from "/i18n.js";
 import { esc, hantuHtml, nanti, ikon } from "/inti/umum.js";
 import { paginasiHtml, sorotHalaman } from "/inti/paginasi.js";
 import { IKON_TEK } from "/inti/ikon_tek.js";
+import { logoOrg } from "/inti/logo_org.js";
 import { aksiHtml } from "/inti/aksi_ex.js";
 import { sumberHtml, exHtml } from "/inti/komponen.js";
 import { BATAS_ID, rapikanPeta, pasangBatas, geoProvinsi, jalurPerProvinsi } from "/inti/peta_indonesia.js";
@@ -128,8 +129,9 @@ let peta = null, petaSiapOk = false, dataPeta = null, terpilih = null;
 const HIDE = new Set();
 const FIT = [[94.8, -11], [141, 6.2]];
 let panelBuka = innerWidth >= 900;
+const PANEL_W = 320, TOP_LABEL = 5, WARNA_KLASTER = "--data1";
 /** Bingkai peta: ruang kanan untuk panel program di layar lebar. */
-const pad = () => (innerWidth >= 1200 ? { top: 30, bottom: 56, left: 20, right: 470 } : innerWidth >= 900 ? { top: 24, bottom: 52, left: 10, right: 10 } : { top: 6, bottom: 6, left: 6, right: 6 });
+const pad = () => (innerWidth >= 900 ? { top: 30, bottom: 56, left: 20, right: (($("petaInfo")?.offsetWidth) || PANEL_W) + 40 } : { top: 6, bottom: 6, left: 6, right: 6 });
 const num = (v) => angka(v, { desimal: v < 100 ? 1 : 0 });
 const fc = (features) => ({ type: "FeatureCollection", features });
 
@@ -151,11 +153,13 @@ async function siapPeta() {
   const info = $("petaInfo");
   gantiKepala($("petaKartu"), { ikon: "peta", topik: t("beranda.peta.k"), judulHtml: jud("beranda.ex.peta.j", angka(lok.length)), subHtml: esc(t("beranda.peta.d")), aksiHtml: aksiHtml() + sumberHtml(esc(t("beranda.peta.s", { tanggal: tanggal(pro.dibangun_pada) }))) });
   if (!info.firstElementChild) {
-    info.innerHTML = `<div class="jm-bb-pp-g" role="group" aria-label="${esc(t("jm.geser.label"))}"></div><div class="jm-bb-pp-r"></div>`;
+    info.innerHTML = `<div class="jm-bb-pp-g" role="group" aria-label="${esc(t("jm.geser.label"))}"><span class="jm-bb-pp-jd"></span><button type="button" class="jm-bb-pp-t" aria-expanded="${panelBuka}"><i aria-hidden="true"></i></button></div><div class="jm-bb-pp-r"></div>`;
     if (innerWidth >= 900) geserPanel(info, { kunci: "program" });
   }
   info.querySelector(".jm-bb-pp-g").setAttribute("aria-label", t("jm.geser.label"));
-  info.querySelector(".jm-bb-pp-r").innerHTML = `<button type="button" class="jm-bb-pp-t" aria-expanded="${panelBuka}"><span>${esc(t("beranda.peta.tabel"))}</span><i aria-hidden="true"></i></button><div class="jm-bb-pp-b"${panelBuka ? "" : " hidden"}>
+  info.querySelector(".jm-bb-pp-jd").textContent = t("beranda.peta.tabel");
+  info.querySelector(".jm-bb-pp-t").setAttribute("aria-label", t("beranda.peta.tabel"));
+  info.querySelector(".jm-bb-pp-r").innerHTML = `<div class="jm-bb-pp-b"${panelBuka ? "" : " hidden"}>
     <div class="jm-bb-prog-w"><ul class="jm-bb-prog-l">${baris}</ul></div><a class="jm-bb-prog-semua" href="/program">${ikon("proyek", 16)}<span>${esc(t("pg.beranda.semua"))}</span></a></div>`;
   if (!info.dataset.pasang) {
     info.dataset.pasang = "1";
@@ -170,16 +174,15 @@ async function siapPeta() {
   }
 }
 
-/** Sorot program terpilih (lainnya 15%), saring teknologi yang dimatikan di legenda, pasang label 8 terbesar, dan sesuaikan bingkai. */
+/** Sorot program terpilih (lainnya diredam 15% tanpa klaster), saring teknologi yang dimatikan di legenda, 5 proyek terbesar dilabeli, sisanya diklasterkan di zoom rendah. */
 function terapkan(fit = true) {
   if (!peta || !petaSiapOk || !dataPeta) return;
   const jarum = `|${terpilih}|`, pilih = (f) => !terpilih || f.properties.progs.includes(jarum);
-  const op = terpilih ? ["case", ["in", jarum, ["get", "progs"]], 0.9, 0.15] : 0.85;
-  peta.setPaintProperty("titik", "circle-opacity", op);
-  peta.setPaintProperty("titik", "circle-stroke-opacity", terpilih ? ["case", ["in", jarum, ["get", "progs"]], 1, 0.15] : 1);
-  peta.setFilter("titik", HIDE.size ? ["!", ["in", ["get", "k"], ["literal", [...HIDE]]]] : null);
-  const tampak = dataPeta.titik.filter((f) => pilih(f) && !HIDE.has(f.properties.k));
-  peta.getSource("besar")?.setData(fc([...tampak].sort((a, b) => b.properties.mw - a.properties.mw).slice(0, 8)));
+  const hidup = dataPeta.titik.filter((f) => !HIDE.has(f.properties.k)), tampak = hidup.filter(pilih);
+  const besar = [...tampak].sort((a, b) => b.properties.mw - a.properties.mw).slice(0, TOP_LABEL), idBesar = new Set(besar.map((f) => f.properties.id));
+  peta.getSource("besar")?.setData(fc(besar));
+  peta.getSource("titik")?.setData(fc(tampak.filter((f) => !idBesar.has(f.properties.id))));
+  peta.getSource("redup")?.setData(fc(terpilih ? hidup.filter((f) => !pilih(f)) : []));
   if (!fit) return;
   if (!terpilih || !tampak.length) { peta.fitBounds(FIT, { padding: pad(), duration: 500 }); return; }
   const b = new maplibregl.LngLatBounds();
@@ -191,9 +194,14 @@ function legendaPeta(el) {
   el.querySelectorAll(".jm-bb-tip").forEach((x) => x.remove());
   el.parentElement.querySelectorAll(".jm-bb-leg-peta").forEach((x) => x.remove());
   const ada = new Set(dataPeta.titik.map((f) => f.properties.k));
-  const w = [...TEK, "lain"].filter((k) => ada.has(k));
-  el.parentElement.insertAdjacentHTML("beforeend", `<div class="jm-bb-leg-peta" role="group" aria-label="${esc(t("beranda.peta.leg"))}">${w.map((k) => `<button type="button" aria-pressed="${!HIDE.has(k)}" data-tek="${esc(k)}"><i class="jm-bb-t-${esc(k)}"></i><span class="jm-bb-leg-ik" aria-hidden="true">${k === "lain" ? "" : IKON_TEK[k] || ""}</span>${esc(k === "lain" ? t("beranda.peta.lain.s") : label("beranda.tek.", k))}</button>`).join("")}</div>`);
+  const w = [...TEK, "lain"].filter((k) => ada.has(k)), buka = innerWidth >= 900;
+  el.parentElement.insertAdjacentHTML("beforeend", `<div class="jm-bb-leg-peta" role="group" aria-label="${esc(t("beranda.peta.leg"))}"><button type="button" class="jm-bb-leg-t" aria-expanded="${buka}"><span>${esc(t("beranda.peta.leg"))}</span><i aria-hidden="true"></i></button><div class="jm-bb-leg-b"${buka ? "" : " hidden"}>${w.map((k) => `<button type="button" aria-pressed="${!HIDE.has(k)}" data-tek="${esc(k)}"><i class="jm-bb-t-${esc(k)}"></i><span>${esc(k === "lain" ? t("beranda.peta.lain.s") : label("beranda.tek.", k))}</span></button>`).join("")}</div></div>`);
   el.insertAdjacentHTML("beforeend", `<div class="jm-bb-tip" hidden></div>`);
+}
+/** Peta dan panel memenuhi lebar layar tanpa jalur gulir: 100vw ikut menghitung bilah gulir, jadi ukuran diambil dari clientWidth. */
+function lebarPenuh() {
+  const g = $("petaEl")?.parentElement, w = document.documentElement.clientWidth;
+  if (g) { g.style.width = w + "px"; g.style.marginLeft = `calc(50% - ${w / 2}px)`; }
 }
 async function bangunPeta() {
   const el = $("petaEl");
@@ -202,12 +210,16 @@ async function bangunPeta() {
     petaSiapOk = false; peta?.remove();
     el.removeAttribute("role");
     peta = new maplibregl.Map({ container: el, style: "https://tiles.openfreemap.org/styles/" + (gelap() ? "dark" : "positron"), bounds: FIT, fitBoundsOptions: { padding: pad() }, minZoom: 2, maxZoom: 12, dragRotate: false, pitchWithRotate: false, scrollZoom: false, attributionControl: { compact: true } });
-    peta.addControl(new maplibregl.NavigationControl({ showCompass: false }), "bottom-right");
+    peta.addControl(new maplibregl.NavigationControl({ showCompass: false }), "top-left");
+    lebarPenuh();
     legendaPeta(el);
     const tip = el.querySelector(".jm-bb-tip");
     if (!el.dataset.pasang) {
       el.dataset.pasang = "1";
+      addEventListener("resize", lebarPenuh);
       el.parentElement.addEventListener("click", (e) => {
+        const lt = e.target.closest(".jm-bb-leg-t");
+        if (lt) { const b = lt.getAttribute("aria-expanded") !== "true"; lt.setAttribute("aria-expanded", String(b)); lt.nextElementSibling.hidden = !b; return; }
         const b = e.target.closest("[data-tek]"); if (!b) return;
         const k = b.dataset.tek, mati = !HIDE.has(k);
         mati ? HIDE.add(k) : HIDE.delete(k); b.setAttribute("aria-pressed", String(!mati));
@@ -216,24 +228,45 @@ async function bangunPeta() {
     }
     peta.on("style.load", () => {
       const idLabel = rapikanPeta(peta), d = dataPeta;
-      peta.addSource("titik", { type: "geojson", data: fc(d.titik) });
-      peta.addLayer({ id: "titik", type: "circle", source: "titik", layout: { "circle-sort-key": ["-", ["get", "mw"]] }, paint: { "circle-color": ["match", ["get", "k"], ...TEK.flatMap((k) => [k, warna(TEK_WARNA[k])]), warna("--ink2")], "circle-radius": ["interpolate", ["linear"], ["sqrt", ["get", "mw"]], 0, 4, 10, 6, 20, 9, 40, 14], "circle-opacity": 0.85, "circle-stroke-width": 1.2, "circle-stroke-color": warna("--paper") } });
+      // label kota kecil disembunyikan; ibu kota dan kota besar diredam supaya titik proyek menonjol
+      for (const id of ["label_other", "label_village", "label_town"]) if (peta.getLayer(id)) peta.setLayoutProperty(id, "visibility", "none");
+      for (const id of ["label_city", "label_city_capital", "label_state"]) if (peta.getLayer(id)) peta.setPaintProperty(id, "text-opacity", 0.5);
+      if (peta.getLayer("label_city")) peta.setFilter("label_city", ["all", peta.getFilter("label_city"), ["<=", ["get", "rank"], 3]]);
+      const warnaTek = ["match", ["get", "k"], ...TEK.flatMap((k) => [k, warna(TEK_WARNA[k])]), warna("--ink2")];
+      const jari = ["interpolate", ["linear"], ["sqrt", ["get", "mw"]], 0, 4, 10, 6, 20, 9, 40, 14];
+      const titik = (id, src, filter, op) => peta.addLayer({ id, type: "circle", source: src, ...(filter ? { filter } : {}), layout: { "circle-sort-key": ["-", ["get", "mw"]] }, paint: { "circle-color": warnaTek, "circle-radius": jari, "circle-opacity": op, "circle-stroke-width": 1.2, "circle-stroke-color": warna("--paper") } });
+      peta.addSource("redup", { type: "geojson", data: fc([]) });
+      peta.addSource("titik", { type: "geojson", data: fc(d.titik), cluster: true, clusterRadius: 42, clusterMaxZoom: 7 });
       peta.addSource("besar", { type: "geojson", data: fc([]) });
-      peta.addLayer({ id: "besar", type: "symbol", source: "besar", layout: { "text-field": ["get", "nama"], "text-size": 11, "text-font": ["Noto Sans Regular"], "text-anchor": "top", "text-offset": [0, 1.1], "text-max-width": 9 }, paint: { "text-color": warna("--ink"), "text-halo-color": warna("--paper"), "text-halo-width": 1.5 } });
-      pasangBatas(peta, warna, idLabel, "titik");
+      titik("redup", "redup", null, 0.15);
+      peta.addLayer({ id: "klaster", type: "circle", source: "titik", filter: ["has", "point_count"], paint: { "circle-color": warna(WARNA_KLASTER), "circle-opacity": 0.85, "circle-radius": ["step", ["get", "point_count"], 12, 10, 16, 30, 20], "circle-stroke-width": 1.5, "circle-stroke-color": warna("--paper") } });
+      peta.addLayer({ id: "klaster-n", type: "symbol", source: "titik", filter: ["has", "point_count"], layout: { "text-field": ["get", "point_count_abbreviated"], "text-size": 11, "text-font": ["Noto Sans Regular"], "text-allow-overlap": true }, paint: { "text-color": warna("--on-accent") } });
+      titik("titik", "titik", ["!", ["has", "point_count"]], 0.85);
+      titik("besar-titik", "besar", null, 0.95);
+      peta.addLayer({ id: "besar", type: "symbol", source: "besar", layout: { "text-field": ["get", "nama"], "text-size": 11, "text-font": ["Noto Sans Regular"], "text-anchor": "top", "text-offset": [0, 1.3], "text-max-width": 9, "text-padding": 6, "symbol-sort-key": ["-", ["get", "mw"]] }, paint: { "text-color": warna("--ink"), "text-halo-color": warna("--paper"), "text-halo-width": 1.5 } });
+      pasangBatas(peta, warna, idLabel, "redup");
       petaSiapOk = true; peta.resize(); if (!terpilih) peta.fitBounds(FIT, { padding: pad(), duration: 0 }); terapkan(!!terpilih);
     });
-    peta.on("mouseenter", "titik", () => { peta.getCanvas().style.cursor = "pointer"; });
-    peta.on("mouseleave", "titik", () => { peta.getCanvas().style.cursor = ""; tip.hidden = true; });
-    peta.on("mousemove", "titik", (e) => {
+    for (const id of ["titik", "besar-titik", "klaster"]) {
+      peta.on("mouseenter", id, () => { peta.getCanvas().style.cursor = "pointer"; });
+      peta.on("mouseleave", id, () => { peta.getCanvas().style.cursor = ""; tip.hidden = true; });
+    }
+    const tunjuk = (e) => {
       const p = e.features[0].properties;
       tip.innerHTML = `<b>${esc(p.nama)}</b><span><i class="jm-bb-t-${esc(p.k)}"></i>${esc(p.k === "lain" ? t("beranda.peta.lain") : label("beranda.tek.", p.k))}</span><span>${p.mw ? esc(num(p.mw)) + " MW" : esc(t("beranda.peta.mw0"))}</span><span>${esc(label("pj.st.", p.st))}</span>`;
       tip.hidden = false;
       const r = el.getBoundingClientRect();
       tip.style.left = Math.min(Math.max(8, e.originalEvent.clientX - r.left + 14), r.width - tip.offsetWidth - 8) + "px";
       tip.style.top = Math.max(8, e.originalEvent.clientY - r.top - tip.offsetHeight - 12) + "px";
+    };
+    for (const id of ["titik", "besar-titik"]) {
+      peta.on("mousemove", id, tunjuk);
+      peta.on("click", id, (e) => { location.href = "/proyek#" + encodeURIComponent(e.features[0].properties.id); });
+    }
+    peta.on("click", "klaster", async (e) => {
+      const f = e.features[0], z = await peta.getSource("titik").getClusterExpansionZoom(f.properties.cluster_id);
+      peta.easeTo({ center: f.geometry.coordinates, zoom: Math.min(z + 0.5, 12) });
     });
-    peta.on("click", "titik", (e) => { location.href = "/proyek#" + encodeURIComponent(e.features[0].properties.id); });
     peta.on("movestart", () => { tip.hidden = true; });
   } catch (e) { sembunyi(el, e); }
 }
@@ -246,18 +279,18 @@ const bagus = (m, n = 4) => { const mentah = m / n, p = 10 ** Math.floor(Math.lo
 async function karbon() {
   const el = $("karbon");
   try {
-    const [k, wil, geo] = await Promise.all([muat("karbon"), muat("wilayah"), geoProvinsi()]);
+    const [k, wil, geo, orgs] = await Promise.all([muat("karbon"), muat("wilayah"), geoProvinsi(), muat("organisasi").catch(() => ({ baris: [] }))]);
+    const orgById = new Map(orgs.baris.map((o) => [o.id, o]));
     const p = k.baris.filter((x) => x.kelompok === "pembangkit" && x.emisi_tco2e > 0 && x.kapasitas_mw > 0);
     if (!p.length) { el.closest("section").hidden = true; return; }
     const urut = [...p].sort((a, b) => b.emisi_tco2e - a.emisi_tco2e), top = urut.slice(0, 14), tot = jml(p, (x) => x.emisi_tco2e), pct = (jml(top, (x) => x.emisi_tco2e) / tot) * 100;
     const lx = (mw) => Math.log10(mw), x0 = Math.floor(Math.min(...p.map((x) => lx(x.kapasitas_mw)))), x1 = Math.ceil(Math.max(...p.map((x) => lx(x.kapasitas_mw))));
     const langkah = bagus(top[0].emisi_tco2e / 1e6), ym = Math.ceil(top[0].emisi_tco2e / 1e6 / langkah) * langkah * 1e6;
-    const L = 58, R = 690, T = 46, B = 376, X = (mw) => L + 24 + ((lx(mw) - x0) / Math.max(1, x1 - x0)) * (R - L - 48), Y = (e) => B - (e / ym) * (B - T);
+    const W = 700, H = 384, L = 58, R = 590, T = 30, B = 334, X = (mw) => L + 24 + ((lx(mw) - x0) / Math.max(1, x1 - x0)) * (R - L - 48), Y = (e) => B - (e / ym) * (B - T);
     const gx = []; for (let i = x0; i <= x1; i++) gx.push(i);
     const gy = []; for (let v = 0; v <= ym / 1e6 + 1e-9; v += langkah) gy.push(v);
     const kelas = (x) => "jm-bb-f-" + (BAHAN.has(bahan(x)) ? bahan(x) : "lain");
-    const BK_IK = { coal: "jaringan", gas: "hidrogen", oil: "laut", biomass: "bioenergi", lain: "jaringan" };
-    const rd = (i) => (i < 5 ? 10 : 6.5);
+    const rd = (i) => (i < 5 ? 10 : 6);
     const pos = top.map((x) => ({ x: X(x.kapasitas_mw), y: Y(x.emisi_tco2e) }));
     // lingkaran 6-14 digeser kecil sampai tidak saling tindih (5 teratas tetap di tempatnya)
     for (let it = 0; it < 60; it++) for (let i = 0; i < pos.length; i++) for (let j = i + 1; j < pos.length; j++) {
@@ -266,40 +299,41 @@ async function karbon() {
       const wi = i < 5 ? 0 : 1, wj = j < 5 ? 0 : 1, w = wi + wj || 1, m = (min - d + 0.05) / d;
       pos[i].x -= (dx * m * wi) / w; pos[i].y -= (dy * m * wi) / w; pos[j].x += (dx * m * wj) / w; pos[j].y += (dy * m * wj) / w;
     }
-    const abu = urut.slice(14).map((x, i) => `<circle class="jm-bb-sc-abu" data-i="${i + 14}" cx="${X(x.kapasitas_mw).toFixed(1)}" cy="${Y(x.emisi_tco2e).toFixed(1)}" r="4"><title>${esc(pendek(x.nama, 60))}</title></circle>`).join("");
+    const abu = urut.slice(14).map((x, i) => `<circle class="jm-bb-sc-abu" data-i="${i + 14}" cx="${X(x.kapasitas_mw).toFixed(1)}" cy="${Y(x.emisi_tco2e).toFixed(1)}" r="3.5"><title>${esc(pendek(x.nama, 60))}</title></circle>`).join("");
     // label 5 teratas: coba kanan/kiri x geser vertikal sampai tidak menabrak label lain maupun lingkaran
-    const kotak = [], bentur = (q) => kotak.some((k) => q.x0 < k.x1 && q.x1 > k.x0 && q.y0 < k.y1 && q.y1 > k.y0) || pos.some((c, j) => c.x > q.x0 - rd(j) && c.x < q.x1 + rd(j) && c.y > q.y0 - rd(j) && c.y < q.y1 + rd(j)) || q.y0 < T - 14 || q.y1 > B || q.x0 < L || q.x1 > R + 6;
+    const kotak = [], bentur = (q) => kotak.some((k) => q.x0 < k.x1 && q.x1 > k.x0 && q.y0 < k.y1 && q.y1 > k.y0) || pos.some((c, j) => c.x > q.x0 - rd(j) && c.x < q.x1 + rd(j) && c.y > q.y0 - rd(j) && c.y < q.y1 + rd(j)) || q.y0 < T - 14 || q.y1 > B || q.x0 < L || q.x1 > W - 4;
     const labs = top.slice(0, 5).map((x, i) => {
       const nm = pendek(x.nama), w = nm.length * 6.9, c = pos[i], cand = [];
-      for (const dy of [0, -18, 18, -36, 36, -54, 54]) for (const sisi of c.x + 16 + w < R ? [1, -1] : [-1, 1]) cand.push([sisi, dy]);
+      for (const dy of [0, -18, 18, -36, 36, -54, 54]) for (const sisi of c.x + 16 + w < W - 4 ? [1, -1] : [-1, 1]) cand.push([sisi, dy]);
       const x0s = (k) => (k[0] > 0 ? c.x + 16 : c.x - 16 - w);
       const pil = cand.find((k) => !bentur({ x0: x0s(k), x1: x0s(k) + w, y0: c.y + k[1] - 8, y1: c.y + k[1] + 8 })) || cand[0], [sisi, dy] = pil;
       kotak.push({ x0: x0s(pil), x1: x0s(pil) + w, y0: c.y + dy - 8, y1: c.y + dy + 8 });
       const lead = dy ? `<line class="jm-bb-sc-lead" x1="${(c.x + sisi * 8).toFixed(1)}" y1="${(c.y + Math.sign(dy) * 6).toFixed(1)}" x2="${(c.x + sisi * 14).toFixed(1)}" y2="${(c.y + dy).toFixed(1)}"/>` : "";
       return lead + `<text class="jm-bb-sc-nama" x="${(c.x + sisi * 16).toFixed(1)}" y="${(c.y + dy + 4).toFixed(1)}" text-anchor="${sisi > 0 ? "start" : "end"}">${esc(nm)}</text>`;
     });
-    const titik = top.map((x, i) => `<g class="jm-bb-sc-g ${kelas(x)}" data-i="${i}"${x.organisasi_ids?.[0] ? ` data-p="${esc(x.organisasi_ids[0])}"` : ""} tabindex="0" role="img" aria-label="${esc(pendek(x.nama, 60))}">${i < 5 ? labs[i] : ""}<circle class="jm-bb-sc-dot" cx="${pos[i].x.toFixed(1)}" cy="${pos[i].y.toFixed(1)}" r="${rd(i)}"/><text class="jm-bb-sc-no${i < 5 ? "" : " jm-bb-sc-kecil"}" x="${pos[i].x.toFixed(1)}" y="${(pos[i].y + (i < 5 ? 3.5 : 3)).toFixed(1)}" text-anchor="middle">${i + 1}</text></g>`).join("");
+    const titik = top.map((x, i) => `<g class="jm-bb-sc-g ${kelas(x)}" data-i="${i}"${x.organisasi_ids?.[0] ? ` data-p="${esc(x.organisasi_ids[0])}"` : ""} tabindex="0" role="img" aria-label="${esc(pendek(x.nama, 60))}">${i < 5 ? labs[i] : ""}<circle class="jm-bb-sc-dot" cx="${pos[i].x.toFixed(1)}" cy="${pos[i].y.toFixed(1)}" r="${rd(i)}"/>${i < 5 ? `<text class="jm-bb-sc-no" x="${pos[i].x.toFixed(1)}" y="${(pos[i].y + 3.5).toFixed(1)}" text-anchor="middle">${i + 1}</text>` : ""}</g>`).join("");
     const grid = gx.map((i) => `<line class="jm-sc-bagi" x1="${X(10 ** i).toFixed(1)}" y1="${T}" x2="${X(10 ** i).toFixed(1)}" y2="${B}"/><text class="jm-sc-sb" x="${X(10 ** i).toFixed(1)}" y="${B + 18}" text-anchor="middle">${esc(angka(10 ** i))}</text>`).join("")
       + gy.map((v) => `<line class="jm-sc-bagi" x1="${L}" y1="${Y(v * 1e6).toFixed(1)}" x2="${R}" y2="${Y(v * 1e6).toFixed(1)}"/><text class="jm-sc-sb" x="${L - 8}" y="${(Y(v * 1e6) + 3).toFixed(1)}" text-anchor="end">${esc(angka(v, { desimal: langkah < 1 ? 1 : 0 }))}</text>`).join("");
-    const svg = `<svg class="jm-bb-sc" viewBox="0 0 700 420" role="group" aria-label="${esc(t("beranda.karbon.aria"))}"><line class="jm-sc-as" x1="${L}" y1="${B}" x2="${R}" y2="${B}"/><line class="jm-sc-as" x1="${L}" y1="${T}" x2="${L}" y2="${B}"/>${grid}<text class="jm-sc-sb" x="${(L + R) / 2}" y="414" text-anchor="middle">${esc(t("beranda.karbon.x"))}</text><text class="jm-sc-sb" x="${L}" y="16">${esc(t("beranda.karbon.y"))}</text>${abu}${titik}</svg>`;
+    const svg = `<svg class="jm-bb-sc" viewBox="0 0 ${W} ${H}" role="group" aria-label="${esc(t("beranda.karbon.aria"))}"><line class="jm-sc-as" x1="${L}" y1="${B}" x2="${R}" y2="${B}"/><line class="jm-sc-as" x1="${L}" y1="${T}" x2="${L}" y2="${B}"/>${grid}<text class="jm-sc-jd" x="${(L + R) / 2}" y="${H - 8}" text-anchor="middle">${esc(t("beranda.karbon.x"))}</text><text class="jm-sc-jd" x="${L}" y="14">${esc(t("beranda.karbon.y"))}</text>${abu}${titik}</svg>`;
     const kodeProv = (x) => { if (!geo) return ""; let best = "", bd = 1e9; for (const f of geo.features) for (const po of f.geometry.type === "Polygon" ? [f.geometry.coordinates] : f.geometry.coordinates) { const r = po[0]; let c = false; for (let i = 0, j = r.length - 1; i < r.length; j = i++) { const [xi, yi] = r[i], [xj, yj] = r[j]; if ((yi > x.lat) !== (yj > x.lat) && x.lng < ((xj - xi) * (x.lat - yi)) / (yj - yi) + xi) c = !c; const d = Math.hypot(xi - x.lng, yi - x.lat); if (d < bd) { bd = d; best = f.properties.kode; } } if (c) return f.properties.kode; } return best; };
     const namaProv = {}; for (const w of wil.baris) namaProv[w.kode] = w.nama;
     const rows = top.map((x, i) => ({ x, i, kp: kodeProv(x) }));
     const KOL = { no: (r) => r.i, nama: (r) => r.x.nama.toLowerCase(), prov: (r) => namaProv[r.kp] || "", mw: (r) => r.x.kapasitas_mw, mt: (r) => r.x.emisi_tco2e };
     const sc = { k: "no", asc: true }, tampil = { hal: 1 }, SEL = 10;
-    const barisT = (r, n) => { const { x, i, kp } = r, bk = BAHAN.has(bahan(x)) ? bahan(x) : "lain", pid = x.organisasi_ids?.[0], nm = esc(pendek(x.nama, 34));
-      return `<tr data-i="${i}"><td class="jm-bb-tn">${i + 1}</td><td><span class="jm-id">${pid ? `<a href="/p/${esc(pid)}">${nm}</a>` : `<b>${nm}</b>`}<span class="jm-bb-pk jm-bb-f-${bk}">${IKON_TEK[BK_IK[bk]].replace('class="jm-ikt"', 'class="jm-ikt jm-ikt-s"')}<span>${esc(label("beranda.karbon.j.", bk))}</span></span></span></td><td class="jm-bb-tp">${kp ? `<img src="/img/provinsi/${esc(kp)}.png" width="18" height="18" alt="" loading="lazy" decoding="async">` : ""}<span>${esc(namaProv[kp] || "-")}</span></td><td class="jm-num">${esc(angka(x.kapasitas_mw))}</td><td class="jm-num"><b>${esc(angka(x.emisi_tco2e / 1e6, { desimal: 1 }))}</b></td></tr>`; };
+    const barisT = (r) => { const { x, i, kp } = r, bk = BAHAN.has(bahan(x)) ? bahan(x) : "lain", pid = x.organisasi_ids?.[0], nm = esc(pendek(x.nama, 30)), po = orgById.get(pid), lg = po && (po.logo || (logoOrg(po.id, po.nama, po.logo)[0] || "").replace(/^\/img\/logo\/org\/.*$/, ""));
+      return `<tr data-i="${i}"><td class="jm-bb-tn">${i + 1}</td><td><span class="jm-bb-nm">${lg ? `<img class="jm-bb-lg" src="${esc(lg)}" width="20" height="20" alt="" loading="lazy" decoding="async" data-galat="hapus">` : ""}${pid ? `<a href="/p/${esc(pid)}">${nm}</a>` : `<b>${nm}</b>`}${bk === "coal" ? "" : `<span class="jm-bb-pk jm-bb-f-${bk}">${esc(label("beranda.karbon.j.", bk))}</span>`}</span></td><td class="jm-bb-tp">${kp ? `<img src="/img/provinsi/${esc(kp)}.png" width="18" height="18" alt="" loading="lazy" decoding="async" data-galat="hapus">` : ""}<span>${esc(namaProv[kp] || "-")}</span></td><td class="jm-num">${esc(angka(x.kapasitas_mw))}</td><td class="jm-num"><b>${esc(angka(x.emisi_tco2e / 1e6, { desimal: 1 }))}</b></td></tr>`; };
     const isiBody = () => [...rows].sort((p, q) => { const a = KOL[sc.k](p), b = KOL[sc.k](q); return (a < b ? -1 : a > b ? 1 : 0) * (sc.asc ? 1 : -1); }).slice((tampil.hal - 1) * SEL, tampil.hal * SEL).map(barisT).join("");
     const kepala = [["no", "c.no", ""], ["nama", "c.nama", ""], ["prov", "c.prov", ""], ["mw", "c.mw", "jm-num"], ["mt", "c.mt", "jm-num"]].map(([k, c]) => `<th scope="col" aria-sort="${sc.k === k ? (sc.asc ? "ascending" : "descending") : "none"}"><button type="button" class="jm-urut" data-k="${k}">${esc(t("beranda.karbon." + c))}</button></th>`).join("");
     const fakta = (n, l, est) => `<div><b>${esc(n)}</b><span>${esc(t(l))}${est ? ' <span class="jm-pil jm-pil-est">EST</span>' : ""}</span></div>`;
-    const jenisAda = [...new Set(top.map(bahan))].filter((b) => BAHAN.has(b));
+    const jenisAda = [...new Set(top.map(bahan))].filter((b) => BAHAN.has(b)), semuaBatubara = jenisAda.length === 1 && jenisAda[0] === "coal" && top.every((x) => bahan(x) === "coal");
     const isi = `<div class="jm-bb-karbon-g"><div class="jm-bb-kol">
       <h4 class="jm-bb-h4">${esc(t("beranda.karbon.tabel"))}</h4><div class="jm-gulir jm-bb-tabel"><table class="jm-tabel"><thead><tr>${kepala}</tr></thead><tbody>${isiBody()}</tbody></table></div>
       <div class="jm-bb-pag">${paginasiHtml({ hal: 1, total: top.length, per: SEL, satuan: "jm.pag.u.proyek" })}</div></div>
-      <div class="jm-bb-kol jm-bb-kanan"><div class="jm-bb-kpi"><div class="jm-bb-kpi-b"><b>${esc(angka(pct, { desimal: 0 }))}%</b><span>${esc(t("beranda.karbon.wawasan", { n: angka(top.length), total: angka(p.length) }))}</span></div><div class="jm-bb-kpi-f">${fakta(angka(p.length), "beranda.karbon.l.n")}${fakta(angka(jml(p, (x) => x.kapasitas_mw) / 1000, { desimal: 1 }), "beranda.karbon.l.gw")}${fakta(angka(tot / 1e6, { desimal: 1 }), "beranda.karbon.l.mt", 1)}</div></div>
+      <div class="jm-bb-kol jm-bb-kanan">
       <div class="jm-bb-sc-w">${svg}<div class="jm-bb-tip" hidden></div></div>
-      <div class="jm-bb-leg" role="list">${jenisAda.map((b) => `<span role="listitem"><i class="jm-bb-f-${b}"></i>${esc(label("beranda.karbon.j.", b))}</span>`).join("")}<span role="listitem"><i class="jm-bb-sc-abu"></i>${esc(t("beranda.karbon.leg.lain", { n: angka(p.length - 14) }))}</span><small>${esc(t("beranda.karbon.leg.label"))}</small></div></div></div>`;
-    el.innerHTML = exHtml({ ikon: "analisis", topik: t("beranda.karbon.k"), judulHtml: jud("beranda.ex.karbon.j", angka(pct, { desimal: 0 }) + "%", { m: angka(top.length) }), subHtml: `${esc(t("beranda.karbon.d"))} <span class="jm-pil jm-pil-est">EST</span>`, aksiHtml: aksiHtml() + sumberHtml(esc(t("beranda.karbon.s", { tanggal: tanggal(k.dibangun_pada), tahun: p[0].tahun }))), isiHtml: isi });
+      <div class="jm-bb-leg" role="list">${(semuaBatubara ? [] : jenisAda).map((b) => `<span role="listitem"><i class="jm-bb-f-${b}"></i>${esc(label("beranda.karbon.j.", b))}</span>`).join("")}<span role="listitem"><i class="jm-bb-sc-abu"></i>${esc(t("beranda.karbon.leg.lain", { n: angka(p.length - 14) }))}</span><small>${esc(t("beranda.karbon.leg.label"))}</small></div></div></div>`;
+    el.innerHTML = exHtml({ ikon: "analisis", topik: t("beranda.karbon.k"), judulHtml: jud("beranda.ex.karbon.j", angka(pct, { desimal: 0 }) + "%", { m: angka(top.length) }), subHtml: `${esc(t("beranda.karbon.d"))}${semuaBatubara ? " " + esc(t("beranda.karbon.d.batubara")) : ""} <span class="jm-pil jm-pil-est">EST</span>`, aksiHtml: aksiHtml() + sumberHtml(esc(t("beranda.karbon.s", { tanggal: tanggal(k.dibangun_pada), tahun: p[0].tahun }))), isiHtml: isi });
+    el.querySelector(".jm-ex-hd").insertAdjacentHTML("beforeend", `<div class="jm-bb-ubin"><div class="jm-bb-ubin-b"><b>${esc(angka(pct, { desimal: 0 }))}%</b><span>${esc(t("beranda.karbon.wawasan", { n: angka(top.length), total: angka(p.length) }))}</span></div>${fakta(angka(p.length), "beranda.karbon.l.n")}${fakta(angka(jml(p, (x) => x.kapasitas_mw) / 1000, { desimal: 1 }), "beranda.karbon.l.gw")}${fakta(angka(tot / 1e6, { desimal: 1 }), "beranda.karbon.l.mt", 1)}</div>`);
     const tip = el.querySelector(".jm-bb-tip"), wrap = el.querySelector(".jm-bb-sc-w");
     const info = (x) => `<b>${esc(pendek(x.nama, 60))}</b><span>${esc(label("beranda.karbon.j.", bahan(x)))}, ${esc(angka(x.kapasitas_mw))} MW</span><span>${esc(angka(x.emisi_tco2e / 1e6, { desimal: 2 }))} Mt CO2e</span>`;
     const sorot = (i, on) => { for (const n of el.querySelectorAll(`[data-i="${i}"]`)) n.classList.toggle("jm-bb-hi", on); };

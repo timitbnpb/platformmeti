@@ -35,18 +35,19 @@
       <div id="pesan"></div>
       <div class="jm-medan jm-ambang jm-ber-ikon"><svg class="jm-ik-medan" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 4h16v16H4zM4 7l8 6 8-6"/></svg><input class="jm-isian" id="surel" name="surel" type="email" autocomplete="username" placeholder=" " autocapitalize="none" spellcheck="false" required><label for="surel" data-i18n="masuk.surel">Surel</label></div>
       <div class="jm-medan jm-ambang jm-ber-ikon jm-sandi"><svg class="jm-ik-medan" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg><input class="jm-isian" id="sandi" name="sandi" type="password" data-mata="1" autocomplete="current-password" placeholder=" " required><label for="sandi" data-i18n="masuk.sandi">Sandi</label></div>
+      <button type="submit" class="jm-tbl jm-tbl-utama" id="kirim"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg><span data-i18n="jm.masuk">Masuk</span></button>
       <button type="button" class="jm-tautan jm-lupa-tbl" id="lupa" aria-expanded="false" aria-controls="lupa-isi" data-i18n="masuk.lupa">Lupa sandi?</button>
       <div class="jm-lupa" id="lupa-isi" hidden>
         <strong data-i18n="masuk.lupa_judul">Lupa sandi?</strong>
         <p data-i18n="masuk.lupa_isi">Hubungi Admin Direktori METI untuk meminta tautan aktivasi baru. Setelah itu kamu bisa membuat sandi baru.</p>
       </div>
-      <button type="submit" class="jm-tbl jm-tbl-utama" id="kirim"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg><span data-i18n="jm.masuk">Masuk</span></button>
     </form>
       <div class="jm-atau" role="separator"><span data-i18n="masuk.atau">atau</span></div>
       <div class="jm-aksi2">
         <a class="jm-tbl" href="/daftar"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2M9 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM19 8v6M22 11h-6"/></svg><span data-i18n="masuk.gabung">Gabung METI</span></a>
         <a class="jm-tbl" href="/langganan"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 4h16v16H4zM4 7l8 6 8-6"/></svg><span data-i18n="masuk.langgan">Langganan buletin</span></a>
       </div>
+      <div class="jm-nota">
       <div class="jm-aman-bungkus">
         <button type="button" class="jm-aman" id="aman" aria-expanded="false" aria-controls="aman-isi"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/></svg><span data-i18n="masuk.aman">Sesi 14 hari, percobaan masuk dibatasi</span></button>
         <div class="jm-aman-isi" id="aman-isi" hidden>
@@ -55,6 +56,7 @@
         </div>
       </div>
       <a class="jm-privasi" href="https://metiires.or.id/policy/membership" target="_blank" rel="noopener noreferrer" data-i18n="masuk.setuju">Dengan masuk, kamu menyetujui kebijakan privasi METI.</a>
+      </div>
     </div>
     <footer class="jm-ig-kaki" id="kaki-akun"></footer>
   </section>

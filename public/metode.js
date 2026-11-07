@@ -2,7 +2,7 @@
    Teks dari kamus; katalog sumber dari /data/sumber_katalog.json (scripts/pipa/katalog_sumber.mjs). */
 import { mulaiHalaman } from "/inti/kepala.js";
 import { esc, ikon, debounce } from "/inti/umum.js";
-import { t, tanggal, angka } from "/i18n.js";
+import { t, tanggal, bahasa } from "/i18n.js";
 import { exHtml, sumberHtml, cariHtml } from "/inti/komponen.js";
 import { aksiHtml, hlHtml } from "/inti/aksi_ex.js";
 import { paginasiHtml, sorotHalaman } from "/inti/paginasi.js";
@@ -63,7 +63,7 @@ function sumberRows() {
   const f = URUT[S.uk]; if (f) b = [...b].sort((x, y) => { const p = f(x), z = f(y); return (typeof p === "number" ? p - z : String(p).localeCompare(String(z), "id")) * S.ua; });
   return b;
 }
-const lisensiPendek = (l) => (l ? l.split(/[;(]/)[0].trim() : "");
+const lisensiPendek = (l) => { const x = l ? l.split(/[;(]/)[0].trim() : ""; return x.length > 30 ? x.slice(0, 28).trim() + "..." : x; };
 function tabelSumber() {
   const rows = sumberRows(), maks = Math.max(1, Math.ceil(rows.length / PER)); S.hal = Math.min(S.hal, maks);
   const th = (k, kelas = "") => `<th scope="col" class="${kelas}" aria-sort="${S.uk === k ? (S.ua > 0 ? "ascending" : "descending") : "none"}"><button type="button" class="jm-urut" data-uk="${k}">${esc(t("met.sc." + k))}</button></th>`;
@@ -74,7 +74,7 @@ function tabelSumber() {
     <td data-label="${esc(t("met.sc.diperbarui"))}" class="met-n">${r.diperbarui ? esc(tanggal(r.diperbarui)) : "-"}</td>
     <td data-label="${esc(t("met.sc.bukti"))}">${r.tingkat_bukti ? `<span class="jm-pil ${r.tingkat_bukti === "resmi" ? "jm-pil-ok" : "jm-pil-warn"}">${esc(r.tingkat_bukti)}</span>` : "-"}</td>
     <td data-label="${esc(t("met.sc.tautan"))}" class="met-tt">${urlAman(r.url) ? `<a class="met-ik" href="${esc(r.url)}" target="_blank" rel="noopener noreferrer" title="${esc(t("met.buka_sumber"))}" aria-label="${esc(t("met.buka_sumber"))}: ${esc(r.judul)}">${ikon("tautan", 16)}</a>` : ""}</td></tr>`).join("") || `<tr><td colspan="7">${esc(t("met.tak_ada"))}</td></tr>`;
-  $("metSumberT").innerHTML = `<div class="jm-gulir"><table class="jm-tabel met-t" data-urut="tidak"><thead><tr>${th("sumber", "met-nama")}${th("dataset")}${th("lisensi")}${th("tahun", "met-n")}${th("diperbarui", "met-n")}${th("bukti")}<th scope="col" class="met-tt">${esc(t("met.sc.tautan"))}</th></tr></thead><tbody>${isi}</tbody></table></div>${paginasiHtml({ hal: S.hal, total: rows.length, per: PER, satuan: "met.u.sumber" })}`;
+  $("metSumberT").innerHTML = `<div class="jm-gulir"><table class="jm-tabel met-t" data-urut="tidak"><thead><tr>${th("sumber", "met-nama")}${th("dataset")}${th("lisensi")}${th("tahun", "met-n")}${th("diperbarui", "met-n")}${th("bukti")}<th scope="col" class="met-tt">${esc(t("met.sc.tautan"))}</th></tr></thead><tbody>${isi}</tbody></table></div>${paginasiHtml({ hal: S.hal, total: rows.length, per: PER, satuan: "met.u" })}`;
 }
 function sumberSeksi(ex) {
   if (!KAT) return "";
@@ -117,13 +117,17 @@ function batas(ex) {
   const kutip = t("ins.kutip", { tanggal: tanggal(tgl, { gaya: "panjang" }) });
   const kartu = (ik, j, isi, aksi = "") => `<li class="met-bt"><span class="met-bt-ik">${ikon(ik, 20)}</span><div><h3>${esc(j)}</h3>${isi}${aksi}</div></li>`;
   const daftar = ["a", "b", "c", "d"].map((k) => `<li>${esc(t("met.bt.belum." + k))}</li>`).join("");
+  const k1 = kartu("blokir", t("met.bt.belum"), `<ul class="met-pt">${daftar}</ul>`);
+  const k2 = kartu("kalender", t("met.bt.baru"), `<p>${esc(t("met.bt.baru.isi", { tgl: tanggal(tgl) }))}</p>`);
+  const aksi = `<div class="met-aksi"><a class="jm-tbl jm-tbl-kecil" href="/direktori?tampil=lembaga">${ikon("direktori", 16)}<span>${esc(t("met.bt.k.org"))}</span></a><a class="jm-tbl jm-tbl-kecil" href="/proyek">${ikon("proyek", 16)}<span>${esc(t("met.bt.k.proyek"))}</span></a></div>`;
+  const k3 = kartu("ubah", t("met.bt.koreksi"), `<p>${esc(t("met.bt.koreksi.isi"))}</p>`, aksi);
   return ex({ id: "batasan", ikon: "info", topik: t("met.bt.ey"), judulHtml: esc(t("met.bt.j")), subHtml: esc(t("met.bt.sub")),
-    isiHtml: `<ul class="met-bts">${kartu("blokir", t("met.bt.belum"), `<ul class="met-pt">${daftar}</ul>`)}${kartu("kalender", t("met.bt.baru"), `<p>${esc(t("met.bt.baru.isi", { tgl: tanggal(tgl) }))}</p>`)}${kartu("ubah", t("met.bt.koreksi"), `<p>${esc(t("met.bt.koreksi.isi"))}</p>`, `<div class="met-aksi"><a class="jm-tbl jm-tbl-kecil" href="/direktori?tampil=lembaga">${ikon("direktori", 16)}<span>${esc(t("met.bt.k.org"))}</span></a><a class="jm-tbl jm-tbl-kecil" href="/proyek">${ikon("proyek", 16)}<span>${esc(t("met.bt.k.proyek"))}</span></a></div>`)}</ul>
+    isiHtml: `<ul class="met-bts">${[k1, k2, k3].join("")}</ul>
     <section class="met-kutip" aria-labelledby="metKutipJ"><span class="met-bt-ik">${ikon("salin", 20)}</span><div class="met-kutip-t"><h3 id="metKutipJ">${esc(t("an.kutip"))}</h3><p id="kutip">${esc(kutip)}</p></div><button type="button" class="jm-tbl" data-aksi="salin">${ikon("salin", 16)}<span>${esc(t("rp.salin"))}</span></button></section>` });
 }
 
 function ubin() {
-  khUbin("metUbin", [{ ikon: "buku", nilai: KAT ? num(KAT.jumlah) : "-", label: t("met.u.sumber") }, { ikon: "tabel", nilai: KAT ? num(KAT.dataset) : "-", label: t("met.u.dataset") }, { ikon: "kalkulator", nilai: num(KARTU.length), label: t("met.u.kartu") }, { ikon: "kalender", nilai: tgl ? tanggal(tgl) : "-", label: t("met.u.tgl") }]);
+  khUbin("metUbin", [{ ikon: "buku", nilai: KAT ? num(KAT.jumlah) : "-", label: t("met.u.sumber") }, { ikon: "tabel", nilai: KAT ? num(KAT.dataset) : "-", label: t("met.u.dataset") }, { ikon: "kalkulator", nilai: num(KARTU.length), label: t("met.u.kartu") }, { ikon: "kalender", nilai: tgl ? new Intl.DateTimeFormat(bahasa(), { month: "short", year: "numeric", timeZone: "UTC" }).format(new Date(tgl.slice(0, 7) + "-01T00:00:00Z")) : "-", label: t("met.u.tgl") }]);
 }
 
 function gambar() {

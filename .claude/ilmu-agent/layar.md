@@ -92,3 +92,4 @@ Belum ada kasus. Tambahkan lewat ilmu.mjs kasus.
 - 2026-11-08 · Investasi sektor identik karena proyek diatribusikan via kepakaran organisasi; hitung proyek/MW sektor teknologi lewat p.teknologi
 - 2026-11-08 · tabel BPP: tingkat baris diturunkan di layar dari kapital nama (pulau/wilayah/sub); label OCR terpotong disambung di scripts/pipa/pdf/bpp.mjs; selector kartu mobile jm-tabel butuh spesifisitas .dd-t.dd-t tbody tr td
 - 2026-11-08 · tender digabung ke /proyek tab #tender (proyek_tender.js, dipasang proyek.js setelah mulaiHalaman); bungkus section dengan wrapper grid wajib minmax(0,1fr) agar trik 100vw full-bleed tidak meluap
+- 2026-11-08 · Chrome headless punya lebar minimal ~500: cek 390 lewat iframe lebar 390 di halaman bungkus; server statis uji butuh /api/saya = masuk:true atau halaman redirect ke masuk.

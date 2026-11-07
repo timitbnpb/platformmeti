@@ -157,18 +157,18 @@ function potensi(p) {
     let pot = isi.length ? isi.reduce((s, c) => s + c.mw, 0) : null;
     if (r.k === "panas-bumi" && pot == null && pb) pot = pb.nilai;
     const mw = r.tp ? pt[r.tp] ?? null : null, pra = cells.some((c) => c.pra_pemekaran), parsial = r.k === "hidro" && pot != null && cells.some((c) => c.mw == null);
-    return { ...r, mw, pot, sisa: pot != null && mw != null && !parsial ? Math.max(0, pot - mw) : null, real: pot && mw != null && !parsial ? (mw / pot) * 100 : null, alasan: pot == null ? alasanPot(cells) : parsial ? t("wp.pot.parsial") : null, pra, parsial };
+    return { ...r, mw, pot, sisa: pot != null && mw != null && !parsial ? Math.max(0, pot - mw) : null, real: pot && mw != null && !parsial ? (mw / pot) * 100 : null, alasan: pot == null ? alasanPot(cells) : parsial ? alasanPot(cells) + ". " + t("wp.pot.parsial") : null, pra, parsial };
   });
   const totPot = baris.reduce((s, r) => s + (r.pot ?? 0), 0), adaPot = baris.some((r) => r.pot != null);
   const terpDiPot = baris.reduce((s, r) => s + (r.pot != null ? r.mw ?? 0 : 0), 0);
-  const j = adaPot ? hlHtml("wp.j.pot2", num(totPot, 0) + " MW", { nama: p.nama, persen: num((terpDiPot / totPot) * 100, 1) + "%" })
+  const j = adaPot && totPot > 0 ? hlHtml("wp.j.pot2", num(totPot, 0) + " MW", { nama: p.nama, persen: num((terpDiPot / totPot) * 100, 1) + "%" })
     : pb && !(pt["panas-bumi"] > 0) ? hlHtml("wp.j.potensi_nol", num(pb.nilai, 0) + " MW", { nama: p.nama }) : hlHtml("wp.j.potensi0", num(p.terpasang_mw.nilai, 1) + " MW", { nama: p.nama });
   const grafik = grafikRapat(baris.map((r) => ({ k: r.k, label: namaTek(r.k), a: r.mw, b: r.pot })), { satuan: "MW", label: t("wp.pot.grafik"), dua: [t("wp.col.terpasang"), t("wp.col.potensi")] });
   const pilR = (v) => (v == null ? kos(t("wp.kos.real")) : `<span class="jm-pil ${v >= 50 ? "jm-pil-ok" : v >= 10 ? "jm-pil-warn" : ""}">${esc(num(v, 1))}%</span>`);
   const mwTd = (v, alasan) => (v == null ? kos(alasan) : `<span class="jm-wp-v">${esc(num(v, v < 10 ? 1 : 0))} MW</span>`);
   const L = (k) => esc(t(k));
   const tabel = `<div class="jm-gulir"><table class="jm-tabel jm-wp-tp"><colgroup><col class="jm-wp-tp-c1"><col><col><col><col></colgroup><thead><tr><th>${L("wl.col.tek")}</th><th class="jm-num">${L("wp.col.terpasang")}</th><th class="jm-num">${L("wp.col.potensi")}</th><th class="jm-num">${L("wp.col.sisa")}</th><th class="jm-num">${L("wp.col.real")}</th></tr></thead><tbody>${baris.map((r) =>
-    `<tr><td data-label="${L("wl.col.tek")}">${r.tp ? pilTekTaut(r.tp) : labelTek(r.k, namaTek(r.k))}</td><td data-label="${L("wp.col.terpasang")}" class="jm-num">${mwTd(r.mw, r.tp ? t("wp.kos.terpasang") : t("wp.kos.laut"))}</td><td data-label="${L("wp.col.potensi")}" class="jm-num">${r.pot != null ? `<span class="jm-wp-v"${r.parsial ? ` title="${esc(t("wp.pot.parsial"))}"` : ""}>${esc(num(r.pot, 0))} MW${r.parsial ? "*" : ""}</span>` : kos(r.alasan)}</td><td data-label="${L("wp.col.sisa")}" class="jm-num">${mwTd(r.sisa, r.alasan || t("wp.kos.sisa"))}</td><td data-label="${L("wp.col.real")}" class="jm-num">${pilR(r.real)}</td></tr>`).join("")}</tbody></table></div>`;
+    `<tr><td data-label="${L("wl.col.tek")}">${r.tp ? pilTekTaut(r.tp) : labelTek(r.k, namaTek(r.k))}</td><td data-label="${L("wp.col.terpasang")}" class="jm-num">${mwTd(r.mw, r.tp ? t("wp.kos.terpasang") : t("wp.kos.laut"))}</td><td data-label="${L("wp.col.potensi")}" class="jm-num">${r.pot != null ? `<span class="jm-wp-v"${r.parsial ? ` title="${esc(r.alasan)}"` : ""}>${esc(num(r.pot, 0))} MW${r.parsial ? "*" : ""}</span>` : kos(r.alasan)}</td><td data-label="${L("wp.col.sisa")}" class="jm-num">${mwTd(r.sisa, r.alasan || t("wp.kos.sisa"))}</td><td data-label="${L("wp.col.real")}" class="jm-num">${pilR(r.real)}</td></tr>`).join("")}</tbody></table></div>`;
   const induk = Object.values(B?.potensi || {}).find((c) => c.induk_kode);
   const pita = baris.some((r) => r.pra) ? t("wl.pita.pra") : induk ? t("wp.pita.ind", { induk: DATA?.baris.find((b) => b.kode === induk.induk_kode)?.nama || "" }) : "";
   const sur = atlas?.pvout_kwh_per_kwp_tahun ? `<p>${esc(t("wp.surya_atlas", { pv: num(atlas.pvout_kwh_per_kwp_tahun), ghi: num(atlas.ghi_kwh_per_m2_tahun ?? 0) }))}</p>` : "";
@@ -188,7 +188,7 @@ function rued(p, C) {
   const sub = c?.status ? `<span class="jm-pil ${ST[c.status]}">${esc(t("wp.cap.st." + c.status))}</span> <span class="jm-pil jm-pil-warn" title="${esc(t("wp.cap.hip_tip"))}">${esc(t("wp.cap.hip"))}</span>` : "";
   const j = c?.status ? esc(t("wp.cap.j", { nama: p.nama, status: t("wp.cap.st." + c.status).toLocaleLowerCase(), r: num(c.rasio_persen, 0) })) : r.target_ebt_persen != null ? hlHtml("wp.j.rued_t", num(r.target_ebt_persen, 0) + "%", { nama: p.nama, perda: r.perda }) : hlHtml("wp.j.rued", "Perda " + r.perda, { nama: p.nama });
   const dok = unduhRegHtml({ judul: r.perda, url_sumber: r.url, url_pdf: c?.url_pdf, ...(reg || {}) });
-  const perda = `<div class="jm-wp-pd">${lambang(p, 56)}<div class="jm-wp-pd-t"><b>${esc(t("wl.rued_ada", { perda: r.perda }))}</b><span>${esc(x?.judul || t("wp.ey.rued"))}${th ? ` · ${esc(th)}` : ""}</span></div><span class="jm-wp-pd-a">${dok}</span></div>`;
+  const perda = `<div class="jm-wp-pd">${lambang(p, 56)}<div class="jm-wp-pd-t"><b>${esc(t("wl.rued_ada", { perda: r.perda }))}</b><span>${esc(x?.judul || t("wp.ey.rued"))}${th ? `, ${esc(th)}` : ""}</span></div><span class="jm-wp-pd-a">${dok}</span></div>`;
   const ubin = (v, sub2) => `<div class="jm-wp-tg"><b>${v == null ? kos(t("wp.kos.target")) : esc(num(v, 0)) + "%"}</b><span>${esc(sub2)}</span>${v != null && tinjau ? `<em class="jm-pil jm-pil-warn">${esc(t("wp.rued.belum_tinjau"))}</em>` : ""}</div>`;
   const target = `<div class="jm-wp-tgs">${ubin(k2025, t("wp.rued.tahun", { th: 2025 }))}${ubin(akhir?.persen ?? null, t("wp.rued.tahun", { th: akhir?.tahun ?? 2050 }))}</div>`;
   const rows = [{ k: "tgt", label: t("wp.rued.tahun", { th: 2025 }), a: k2025 }, { k: "tgt2", label: t("wp.rued.tahun", { th: akhir?.tahun ?? 2050 }), a: akhir?.persen ?? null }, { k: "real", label: t("wp.cap.real_p", { tahun: c?.realisasi_tahun ?? kj?.tahun ?? "" }), a: porsi }]

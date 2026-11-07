@@ -314,10 +314,10 @@ nav.jm-isi{display:none!important}
 .jm-tk-kisi{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
 @media (max-width:1023px){.jm-tk-kisi{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media (max-width:640px){.jm-tk-kisi{grid-template-columns:minmax(0,1fr)}}
-.jm-tk{position:relative;min-width:0;border:1px solid var(--line);border-radius:var(--r-md);background:var(--card);transition:border-color .15s,background .15s}
+.jm-tk{position:relative;min-width:0;border:1px solid var(--line);border-radius:var(--r);background:var(--card);transition:border-color .15s,background .15s}
 .jm-tk:hover{border-color:var(--accent);background:var(--soft-hijau)}
 .jm-tk-a{display:flex;align-items:flex-start;gap:12px;min-width:0;min-height:var(--target);padding:12px 14px;color:var(--ink);text-decoration:none}
-.jm-tk-a:focus-visible{outline:3px solid var(--fokus);outline-offset:2px;border-radius:var(--r-md)}
+.jm-tk-a:focus-visible{outline:3px solid var(--fokus);outline-offset:2px;border-radius:var(--r)}
 .jm-tk-lg{position:relative;display:inline-grid;place-items:center;flex:none;width:40px;height:40px;border-radius:var(--r-sm);background:color-mix(in srgb,var(--tk,var(--accent)) 14%,var(--card));color:var(--tk,var(--accent));overflow:hidden}
 .jm-tk-lg .jm-ikt,.jm-tk-lg .jm-ik{width:22px;height:22px}.jm-tk-dok .jm-ik{stroke:var(--accent);fill:none}
 .jm-tk-mono{font:700 var(--t-tombol)/1 var(--display);color:var(--head);background:color-mix(in srgb,var(--data2) 16%,var(--card))}
@@ -328,7 +328,7 @@ nav.jm-isi{display:none!important}
 .jm-tk-m{display:flex;flex-wrap:wrap;align-items:center;gap:4px 8px}
 .jm-tk-s{font-size:var(--t-kecil);color:var(--ink2)}
 .jm-tk-pen{display:inline-flex;align-items:center;gap:6px;min-width:0}.jm-tk-pen>span:last-child{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
-.jm-tk-kecil{width:18px;height:18px;font-size:9px;border-radius:50%}
+.jm-tk-kecil{width:18px;height:18px;font-size:var(--t-label);border-radius:50%}
 .jm-tk .jm-reg-iks{position:absolute;top:8px;right:8px}
 /* penerbit: logo + nama pendek (pemilik: logo saja tidak terbaca); jumlah aturan disembunyikan secara visual */
 .jm-reg-pen .jm-pen{display:flex;align-items:center;gap:10px;text-align:left}

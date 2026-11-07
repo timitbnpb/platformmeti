@@ -23,7 +23,7 @@ function hubHtml(ind) {
   const n = ind.topik;
   const kartu = n.map((x) => {
     const nama = L(S.ui.topik[x.id].nama), ket = L(S.ui.topik[x.id].ket);
-    const angka = (x.angka || []).slice(0, 3).map((a) => `<li><b>${esc(a.nilai == null ? "-" : num(a.nilai, a.d || 0))}${a.satuan ? `<small>${esc(a.satuan)}</small>` : ""}</b><span>${esc(a.label ? L(a.label) : u(a.k))}</span></li>`).join("");
+    const angka = (x.angka || []).slice(0, 3).map((a) => `<li><b>${esc(a.nilai == null ? "-" : num(a.nilai, a.d || 0))}${a.satuan ? `<small>${esc(L(a.satuan))}</small>` : ""}</b><span>${esc(a.label ? L(a.label) : u(a.k))}</span></li>`).join("");
     const gambar = x.foto ? `<img src="${esc(x.foto)}" alt="" width="640" height="360" loading="lazy" decoding="async" data-galat="hapus">` : "";
     return `<a class="jm-tp-kt" href="/topik?id=${encodeURIComponent(x.id)}" data-st="${esc(x.status)}"><div class="jm-tp-kt-foto jm-batik">${gambar}<span class="jm-tp-kt-ik">${ikonTek(x.ikon)}</span>${pilu("st." + x.status, x.status === "lengkap" ? "ok" : x.status === "terisi" ? "info" : "warn").replace("jm-pil ", "jm-pil jm-tp-kt-st ")}</div>
       <div class="jm-tp-kt-isi"><h2>${esc(nama)}</h2><p>${esc(ket)}</p>${angka ? `<ul class="jm-tp-kt-angka">${angka}</ul>` : `<p class="jm-bantu">${esc(u("sedang"))}</p>`}<small>${esc(x.bab ? u("kartu.bab") + ": " + num(x.bab) : u("kartu.sumber"))}</small></div></a>`;
@@ -134,7 +134,7 @@ async function halaman(id) {
   const nama = L(S.ui.topik[id].nama);
   $("judul").textContent = nama;
   $("jawab").textContent = naskah?.lead ? tok(naskah.lead) : L(S.ui.topik[id].ket);
-  khSisi("#kh", { ubin: ubin?.length ? ubin.map((x) => ({ ikon: x.ikon, nilai: x.nilai, satuan: x.satuan, label: x.label })) : [{ ikon: "info", nilai: num(out.length), label: u("kartu.bab") }], aksi: `<span class="jm-tp-tgl">${esc(u("diperbarui", { tanggal: tanggal(diperbarui) }))}</span>` });
+  khSisi("#kh", { ubin: ubin?.length ? ubin.map((x) => ({ ikon: x.ikon, nilai: x.nilai, satuan: x.satuan.length > 3 ? "" : x.satuan, label: x.satuan.length > 3 ? `${x.label} (${x.satuan})` : x.label })) : [{ ikon: "info", nilai: num(out.length), label: u("kartu.bab") }], aksi: `<span class="jm-tp-tgl">${esc(u("diperbarui", { tanggal: tanggal(diperbarui) }))}</span>` });
   document.title = `${nama} | ${u("ey")} | ${t("jm.merek")}`;
   $("isi").innerHTML = `<div class="jm-tp">${tocHtml(out, id)}<div class="jm-tp-isi">${out.map((x) => x.html).join("")}</div></div>`;
   pasangScroll(out);

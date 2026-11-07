@@ -2,7 +2,7 @@
 import * as hak from "./hak.js";
 import { hashSandi, cocokSandi, hashPalsu, perluRehash, sandiSah } from "./sandi.js";
 import { infoSesi } from "./ua.js";
-import { Galat, RE_EMAIL, acak, bacaBody, gagal, ipHash, json, perlu, sha } from "./util.js";
+import { Galat, RE_EMAIL, acak, bacaBody, gagal, ipHash, json, perlu, samarSurel, sha } from "./util.js";
 
 const UMUR = 14 * 86400;
 const MASUK_BATAS = 10, MASUK_JENDELA = 900;       // 10 percobaan per 15 menit, per IP dan per surel
@@ -31,7 +31,7 @@ async function masuk(req, env) {
   else await hashPalsu(b.sandi);                      // waktu sama untuk surel tak dikenal / belum aktif
   if (!ok) {
     // Jejak gagal paling banyak sekali per menit per IP; tanpa id akun supaya tidak membocorkan keberadaannya.
-    if ((await laju(env, "masuk-log", ip, 60)) === 1) await hak.jejakTulis(env, { aksi: "masuk-gagal", tabel: "sesi", ipHash: ip });
+    if ((await laju(env, "masuk-log", ip, 60)) === 1) await hak.jejakTulis(env, { aksi: "masuk-gagal", tabel: "sesi", ipHash: ip, ringkas: samarSurel(surel) });
     return gagal("masuk_gagal");
   }
 

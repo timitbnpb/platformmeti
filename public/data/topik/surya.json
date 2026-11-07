@@ -1,0 +1,4339 @@
+{
+ "id": "surya",
+ "versi": 2,
+ "diperbarui": "2026-11-08",
+ "judul": {
+  "id": "Surya",
+  "en": "Solar"
+ },
+ "lead": {
+  "id": "PLTS skala utilitas, atap, terapung, dan hibrida desa: angka Indonesia, aturan, benchmark, dan pelajaran dari proyek berhasil dan gagal.",
+  "en": "Utility-scale, rooftop, floating and village hybrid solar: Indonesia figures, rules, benchmarks and lessons from successful and failed projects."
+ },
+ "kunci": [
+  {
+   "label": {
+    "id": "Kapasitas surya terpasang Indonesia",
+    "en": "Indonesia installed solar capacity"
+   },
+   "nilai": 1493.97,
+   "d": 0,
+   "satuan": {
+    "id": "MW",
+    "en": "MW"
+   },
+   "sumber": "kap",
+   "est": false
+  },
+  {
+   "label": {
+    "id": "Porsi surya dalam listrik Indonesia (2024)",
+    "en": "Solar share of Indonesia electricity (2024)"
+   },
+   "nilai": 0.36,
+   "d": 2,
+   "satuan": {
+    "id": "persen",
+    "en": "percent"
+   },
+   "sumber": "owid",
+   "est": false
+  },
+  {
+   "label": {
+    "id": "Harga modul surya global (2025, USD 2025)",
+    "en": "Global solar module price (2025, USD 2025)"
+   },
+   "nilai": 0.12,
+   "d": 2,
+   "satuan": {
+    "id": "USD per W",
+    "en": "USD per W"
+   },
+   "sumber": "lcoe",
+   "est": false
+  },
+  {
+   "label": {
+    "id": "Kapasitas pabrikan modul di Indonesia",
+    "en": "Module factory capacity in Indonesia"
+   },
+   "nilai": 24863,
+   "d": 0,
+   "satuan": {
+    "id": "MWp per tahun",
+    "en": "MWp per year"
+   },
+   "sumber": "rantai",
+   "est": false
+  },
+  {
+   "label": {
+    "id": "Target program PLTS 100 GWp",
+    "en": "PLTS 100 GWp programme target"
+   },
+   "nilai": 100,
+   "d": 0,
+   "satuan": {
+    "id": "GWp",
+    "en": "GWp"
+   },
+   "sumber": "plts100",
+   "est": false
+  }
+ ],
+ "penting": [
+  {
+   "id": "Kapasitas surya 1493.97 MW (2025) baru 0.36 persen listrik (2024).",
+   "en": "Solar capacity of 1493.97 MW (2025) is only 0.36 percent of electricity (2024)."
+  },
+  {
+   "id": "PLTS atap kini berkuota dan ekspor ke jaringan tidak dibayar (Permen ESDM 2/2024).",
+   "en": "Rooftop solar is now quota-based and exports to the grid are unpaid (Energy Ministry Reg. 2/2024)."
+  },
+  {
+   "id": "Proyek besar berhasil bila PPA, jaringan, dan pengelola jelas; mangkrak bila serah terima tanpa pengelola dan anggaran O&M.",
+   "en": "Large projects succeed with clear PPA, grid and operators; they stall when handed over without an operator and O&M budget."
+  }
+ ],
+ "posisi": {
+  "id": "Porsi surya listrik Indonesia 0.36 persen berada di dasar ASEAN, jauh di bawah Vietnam (7.43 persen).",
+  "en": "Indonesia's solar share of 0.36 percent is near the bottom of ASEAN, far below Vietnam (7.43 percent)."
+ },
+ "sumber": {
+  "ed": {
+   "judul": "Ringkasan editorial METI (penjelasan umum; bukan kutipan pasal)",
+   "penerbit": "METI",
+   "tanggal": "2026-11-08",
+   "tahun": 2026,
+   "bukti": "editorial"
+  },
+  "kap": {
+   "judul": "IRENA, kapasitas terpasang surya Indonesia (diolah repo: public/data/kapasitas_tren.json)",
+   "penerbit": "IRENA",
+   "url": "https://www.irena.org/Data",
+   "tanggal": "2026-11-08",
+   "tahun": 2026,
+   "bukti": "resmi",
+   "lisensi": "IRENA data terbuka"
+  },
+  "gsa": {
+   "judul": "Global Solar Atlas 2.0, titik ibu kota provinsi (public/data/potensi_atlas.json)",
+   "penerbit": "World Bank Group / ESMAP, Solargis",
+   "url": "https://globalsolaratlas.info/",
+   "tanggal": "2026-11-08",
+   "tahun": 2026,
+   "bukti": "via-pihak-ketiga",
+   "lisensi": "CC BY 4.0"
+  },
+  "lcoe": {
+   "judul": "IRENA LCOE dan harga modul via Our World in Data (public/data/biaya_listrik.json)",
+   "penerbit": "IRENA via Our World in Data",
+   "url": "https://ourworldindata.org/grapher/levelized-cost-of-energy",
+   "tanggal": "2026-11-08",
+   "tahun": 2026,
+   "bukti": "via-pihak-ketiga",
+   "lisensi": "CC BY 4.0"
+  },
+  "irena24": {
+   "judul": "IRENA, Renewable Power Generation Costs in 2024 (angka lewat ringkasan pers: LCOE surya USD 0,043 per kWh; biaya terpasang USD 691 per kW)",
+   "penerbit": "IRENA",
+   "url": "https://www.irena.org/Publications/2025/Jun/Renewable-Power-Generation-Costs-in-2024",
+   "tanggal": "2025-06-01",
+   "tahun": 2025,
+   "bukti": "resmi"
+  },
+  "rantai": {
+   "judul": "DJEBTKE ESDM, Daftar Pabrikan Modul Surya di Indonesia (public/data/rantai_plts.json)",
+   "penerbit": "DJEBTKE ESDM",
+   "url": "https://ebtke.esdm.go.id/",
+   "tanggal": "2026-11-07",
+   "tahun": 2026,
+   "bukti": "resmi"
+  },
+  "owid": {
+   "judul": "Our World in Data energy-data, memuat Ember Yearly Electricity Data (public/data/asean_energi.json)",
+   "penerbit": "Ember via Our World in Data",
+   "url": "https://github.com/owid/energy-data",
+   "tanggal": "2026-11-08",
+   "tahun": 2026,
+   "bukti": "via-pihak-ketiga",
+   "lisensi": "CC BY 4.0"
+  },
+  "irenaasean": {
+   "judul": "IRENASTAT kapasitas energi terbarukan ASEAN (public/data/asean.json)",
+   "penerbit": "IRENA",
+   "url": "https://pxweb.irena.org/pxweb/en/IRENASTAT/IRENASTAT__Power%20Capacity%20and%20Generation/",
+   "tanggal": "2026-11-08",
+   "tahun": 2026,
+   "bukti": "resmi",
+   "lisensi": "IRENA data terbuka"
+  },
+  "kebijakan": {
+   "judul": "Target KEN, RUKN, RUPTL 2025-2034 (public/data/kebijakan_info.json; teks PP 40/2025, Kepmen 85.K/2025, RUPTL)",
+   "penerbit": "Pemerintah RI, ESDM, PLN",
+   "url": "https://peraturan.bpk.go.id/Details/328789",
+   "tanggal": "2026-11-08",
+   "tahun": 2026,
+   "bukti": "resmi"
+  },
+  "ruptl": {
+   "judul": "RUPTL PT PLN (Persero) 2025-2034",
+   "penerbit": "PLN, ESDM",
+   "url": "https://gatrik.esdm.go.id/gatrik/gatrik-api//storage/migrasi/download_index/files/b967d-ruptl-pln-2025-2034-pub-.pdf",
+   "tanggal": "2025-05-01",
+   "tahun": 2025,
+   "bukti": "resmi"
+  },
+  "hitung": {
+   "judul": "Kalkulator PLTS atap METI: tarif PLN Q3 2026 dan asumsi berlabel Hipotesis (public/data/plts_atap_hitung.json)",
+   "penerbit": "METI, tarif PLN via Antara",
+   "url": "https://www.antaranews.com/berita/5719805",
+   "tanggal": "2026-09-30",
+   "tahun": 2026,
+   "bukti": "media"
+  },
+  "permen2": {
+   "judul": "Permen ESDM 2/2024 tentang PLTS Atap (naskah BPK)",
+   "penerbit": "BPK JDIH",
+   "url": "https://peraturan.bpk.go.id/Details/288519",
+   "tanggal": "2024-01-29",
+   "tahun": 2024,
+   "bukti": "resmi"
+  },
+  "bisnis2": {
+   "judul": "Kementerian ESDM terbitkan aturan PLTS atap: ekspor tidak dihitung, kuota Pasal 7 sampai 11, transisi 10 tahun Pasal 47 (ringkasan pers)",
+   "penerbit": "Kontan, Bisnis, detik",
+   "url": "https://industri.kontan.co.id/news/kementerian-esdm-terbitkan-aturan-terkait-plts-atap",
+   "tanggal": "2024-02-23",
+   "tahun": 2024,
+   "bukti": "media"
+  },
+  "iesr2": {
+   "judul": "IESR sayangkan revisi Permen PLTS atap condong berpihak ke PLN",
+   "penerbit": "Bisnis.com",
+   "url": "https://ekonomi.bisnis.com/read/20240223/44/1743527/iesr-sayangkan-revisi-permen-plts-atap-condong-berpihak-ke-pln",
+   "tanggal": "2024-02-23",
+   "tahun": 2024,
+   "bukti": "media"
+  },
+  "perpres112": {
+   "judul": "Perpres 112/2022 tentang Percepatan Pengembangan Energi Terbarukan untuk Penyediaan Tenaga Listrik",
+   "penerbit": "BPK JDIH",
+   "url": "https://peraturan.bpk.go.id/Details/225308",
+   "tanggal": "2022-09-13",
+   "tahun": 2022,
+   "bukti": "resmi"
+  },
+  "perpres112tarif": {
+   "judul": "Perpres 112/2022: batas harga PLTS (ringkasan Databoks Katadata, USD 5,63 sen per kWh; tabel berjenjang perlu dicek di naskah)",
+   "penerbit": "Katadata Databoks",
+   "url": "https://databoks.katadata.co.id/en/energy/statistics/35f260c297516a1/indonesias-renewable-energy-electricity-prices-cheap-or-expensive",
+   "tanggal": "2026-11-08",
+   "tahun": 2026,
+   "bukti": "media"
+  },
+  "perpres112rev": {
+   "judul": "Pemerintah mau tetapkan batas atas bawah tarif listrik EBT (revisi Perpres 112/2022)",
+   "penerbit": "CNBC Indonesia",
+   "url": "https://www.cnbcindonesia.com/news/20260205161013-4-708547/siap-siap-pemerintah-mau-tetapkan-batas-atas-bawah-tarif-listrik-ebt",
+   "tanggal": "2026-02-05",
+   "tahun": 2026,
+   "bukti": "media"
+  },
+  "tkdn": {
+   "judul": "Permenperin 34/2024 tentang Tata Cara Penghitungan Nilai TKDN Produk Modul Surya",
+   "penerbit": "BPK JDIH",
+   "url": "https://peraturan.bpk.go.id/Details/296131",
+   "tanggal": "2024-07-25",
+   "tahun": 2024,
+   "bukti": "resmi"
+  },
+  "regul": {
+   "judul": "Basis regulasi METI (public/data/regulasi.json, naskah BPK)",
+   "penerbit": "BPK JDIH, METI",
+   "url": "https://peraturan.bpk.go.id/",
+   "tanggal": "2026-11-07",
+   "tahun": 2026,
+   "bukti": "resmi"
+  },
+  "tarifas": {
+   "judul": "Bea masuk imbalan AS atas panel surya Indonesia 86 sampai 143 persen (public/data/rantai_plts.json)",
+   "penerbit": "ANTARA",
+   "url": "https://www.antaranews.com/berita/5438654/panel-surya-ri-hingga-india-dikenakan-tarif-ratusan-persen-oleh-as",
+   "tanggal": "2026-02-26",
+   "tahun": 2026,
+   "bukti": "media"
+  },
+  "plts100": {
+   "judul": "Program PLTS 100 GWp (public/data/program.json; laporan Menteri ESDM kepada Presiden)",
+   "penerbit": "ESDM, METI",
+   "url": "https://ebtke.esdm.go.id/",
+   "tanggal": "2026-08-25",
+   "tahun": 2026,
+   "bukti": "resmi"
+  },
+  "itrpv": {
+   "judul": "ITRPV: TOPCon melampaui PERC pada 2024 (ringkasan edisi 16 dan 17)",
+   "penerbit": "VDMA ITRPV via pv Europe",
+   "url": "https://www.pveurope.eu/solar-modules/itrpv-topcon-technology-overcomes-perc-2024",
+   "tanggal": "2025-04-15",
+   "tahun": 2025,
+   "bukti": "kajian"
+  },
+  "modul703": {
+   "judul": "Pengapalan modul surya global 703 GW pada 2024",
+   "penerbit": "pv magazine",
+   "url": "https://www.pv-magazine.com/2025/04/15/global-solar-module-shipments-hit-703-gw-in-2024/",
+   "tanggal": "2025-04-15",
+   "tahun": 2025,
+   "bukti": "media"
+  },
+  "nrel": {
+   "judul": "NREL, Best Research-Cell Efficiencies (revisi April 2024: tandem perovskit-silikon 33,9 persen)",
+   "penerbit": "NREL",
+   "url": "https://www.nrel.gov/pv/assets/pdfs/best-research-cell-efficiencies.pdf",
+   "tanggal": "2024-04-04",
+   "tahun": 2024,
+   "bukti": "resmi"
+  },
+  "masdar": {
+   "judul": "Masdar: President of Indonesia inaugurates floating solar plant (9 Nov 2023)",
+   "penerbit": "Masdar",
+   "url": "https://masdar.ae/en/news/newsroom/president-of-indonesia-inaugurates-floating-solar-plant",
+   "tanggal": "2023-11-09",
+   "tahun": 2023,
+   "bukti": "media"
+  },
+  "cirata": {
+   "judul": "Media Indonesia: kepemilikan PLN NR 51% dan Masdar 49%, PPA Januari 2020, ekspansi 500 MWac (Antara, Republika, Kompas)",
+   "penerbit": "Antara dan media",
+   "url": "https://www.antaranews.com/berita/5350241/masdar-uae-harap-ekspansi-plts-cirata-capai-kemajuan-konkret-tahun-ini",
+   "tanggal": "2026-11-08",
+   "tahun": 2026,
+   "bukti": "media"
+  },
+  "ikn": {
+   "judul": "PLTS IKN 50 MW, Nusantara Sembcorp: PLN NR 51% Sembcorp 49%, USD 64 juta, BESS 14,2 MWh, tahap 1 sinkron 22 Feb 2024, diresmikan 20 Jan 2025",
+   "penerbit": "Listrik Indonesia, Katadata, Kontan, Bisnis",
+   "url": "https://listrikindonesia.com/detail/15447/plts-50-mw-resmi-beroperasi-di-ikn",
+   "tanggal": "2025-01-20",
+   "tahun": 2025,
+   "bukti": "media"
+  },
+  "benban": {
+   "judul": "Benban Solar Park (ringkasan Wikipedia; rujukan pembiayaan IFC, EBRD, MIGA)",
+   "penerbit": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Benban_Solar_Park",
+   "tanggal": "2026-11-08",
+   "tahun": 2026,
+   "bukti": "via-pihak-ketiga",
+   "lisensi": "CC BY-SA 4.0"
+  },
+  "ebrd": {
+   "judul": "EBRD: Scaling up deployment of renewables, Egypt (Benban: USD 1,1 miliar di 16 PLTS 750 MW; lelang Kom Ombo USD 0,0247 per kWh)",
+   "penerbit": "EBRD",
+   "url": "https://www.ebrd.com/home/who-we-are/ebrd-values/ebrd-environmental-social-sustainability/EBRD-green/green-case-studies/scaling-up-deployment-of-renewables-egypt.html",
+   "tanggal": "2026-11-08",
+   "tahun": 2026,
+   "bukti": "resmi"
+  },
+  "cc": {
+   "judul": "Clifford Chance, Egypt solar feed-in tariff round 2 (FiT putaran 1 USD 14,34 sen, putaran 2 USD 8,4 sen)",
+   "penerbit": "Clifford Chance",
+   "url": "https://financialmarketstoolkit.cliffordchance.com/content/dam/cliffordchance/briefings/2018/02/egypt-solar-feedin-tariff-round-2.pdf",
+   "tanggal": "2018-02-01",
+   "tahun": 2018,
+   "bukti": "kajian"
+  },
+  "dhafra": {
+   "judul": "EDF, JinkoPower and partners close financing for 2GW solar project in Abu Dhabi",
+   "penerbit": "PV Tech",
+   "url": "https://www.pv-tech.org/edf-jinkopower-and-partners-close-financing-for-2gw-solar-project-in-abu-dhabi",
+   "tanggal": "2020-12-23",
+   "tahun": 2020,
+   "bukti": "media"
+  },
+  "dhafra2": {
+   "judul": "Masdar, Al Dhafra Solar PV factsheet",
+   "penerbit": "Masdar",
+   "url": "https://masdar.ae/-/media/corporate-revamp/projects/downloads/al-dhafra-solar-pv/al-dhafra-factsheet-en.pdf",
+   "tanggal": "2026-11-08",
+   "tahun": 2026,
+   "bukti": "media"
+  },
+  "bhadla": {
+   "judul": "Yet another India solar tariff record of 2.44 rupees in Rajasthan",
+   "penerbit": "PV Tech",
+   "url": "https://www.pv-tech.org/yet-another-india-solar-tariff-record-of-2-44-rupees-in-rajasthan/",
+   "tanggal": "2017-05-01",
+   "tahun": 2017,
+   "bukti": "media"
+  },
+  "bhadla2": {
+   "judul": "Mercom India, Bhadla Solar Park",
+   "penerbit": "Mercom India",
+   "url": "https://www.mercomindia.com/tag/bhadla-solar-park",
+   "tanggal": "2026-11-08",
+   "tahun": 2026,
+   "bukti": "media"
+  },
+  "gea4": {
+   "judul": "Philippines renewables auction awards 9.4 GW, short of 10.6 GW goal (GEA-4); angka akhir 10.195 MW atau 96 persen target",
+   "penerbit": "pv magazine, BusinessWorld",
+   "url": "https://www.pv-magazine.com/2025/09/05/philippines-renewable-auction-awards-9-4-gw-short-of-10-6-gw-goal/",
+   "tanggal": "2025-09-05",
+   "tahun": 2025,
+   "bukti": "media"
+  },
+  "gea4b": {
+   "judul": "Fourth round of Green Energy Auction awards top 10,159 MW, 96% of target",
+   "penerbit": "BusinessWorld",
+   "url": "https://www.bworldonline.com/?p=710655",
+   "tanggal": "2025-11-07",
+   "tahun": 2025,
+   "bukti": "media"
+  },
+  "detik2016": {
+   "judul": "Banyak PLTS rusak, ESDM: SDM untuk mengelola kurang siap (3 Feb 2016)",
+   "penerbit": "detikFinance",
+   "url": "https://finance.detik.com/energi/d-3134143/banyak-plts-rusak-esdm-sdm-untuk-mengelola-kurang-siap",
+   "tanggal": "2016-02-03",
+   "tahun": 2016,
+   "bukti": "media"
+  },
+  "detikbpk": {
+   "judul": "BPK temukan pembangkit EBT Rp467 M kondisinya rusak (12 Des 2017)",
+   "penerbit": "detikFinance",
+   "url": "https://finance.detik.com/energi/d-3766759/bpk-temukan-pembangkit-ebt-rp-467-m-kondisinya-rusak",
+   "tanggal": "2017-12-12",
+   "tahun": 2017,
+   "bukti": "media"
+  },
+  "gajah": {
+   "judul": "Padamnya listrik tenaga surya di Gajah Makmur (3 Okt 2020)",
+   "penerbit": "Mongabay Indonesia",
+   "url": "https://mongabay.co.id/2020/10/03/padamnya-listrik-tenaga-surya-di-gajah-makmur/",
+   "tanggal": "2020-10-03",
+   "tahun": 2020,
+   "bukti": "media"
+  },
+  "kpk": {
+   "judul": "KPK wanti-wanti program PLTS 100 GWp, ingatkan praktik korupsi proyek serupa",
+   "penerbit": "Katadata",
+   "url": "https://katadata.co.id/ekonomi-hijau/investasi-hijau/6ae841b1b79c8/kpk-sorot-proyek-plts-100-gwp-ingatkan-praktik-korupsi-proyek-serupa",
+   "tanggal": "2026-11-02",
+   "tahun": 2026,
+   "bukti": "media"
+  },
+  "kubu": {
+   "judul": "PLTS Rp26 miliar di Karangasem terbengkalai (31 Agu 2026)",
+   "penerbit": "Listrik Indonesia",
+   "url": "https://listrikindonesia.com/detail/21049/plts-rp26-miliar-di-karangasem-terbengkalai-panel-surya-kini-ditelan-semak",
+   "tanggal": "2026-08-31",
+   "tahun": 2026,
+   "bukti": "media"
+  },
+  "towea": {
+   "judul": "Warga di Towea Muna keluhkan sudah 5 tahun PLTS tidak berfungsi normal",
+   "penerbit": "Antara Sultra",
+   "url": "https://sultra.antaranews.com/berita/492426/warga-di-towea-muna-keluhkan-sudah-5-tahun-plts-tidak-berfungsi-normal",
+   "tanggal": "2026-11-08",
+   "tahun": 2026,
+   "bukti": "media"
+  },
+  "karimun": {
+   "judul": "Hampir semua PLTS di Parang Karimunjawa rusak sejak 2019",
+   "penerbit": "detikJateng",
+   "url": "https://www.detik.com/jateng/berita/d-5979817/miris-hampir-semua-plts-di-parang-karimunjawa-rusak-sejak-2019",
+   "tanggal": "2026-11-08",
+   "tahun": 2026,
+   "bukti": "media"
+  },
+  "iesrkop": {
+   "judul": "Proyek PLTS untuk Koperasi Merah Putih, IESR ingatkan risiko mangkrak (3 Sep 2025)",
+   "penerbit": "Kompas.com Lestari",
+   "url": "https://lestari.kompas.com/read/2025/09/03/081400186/proyek-plts-untuk-koperasi-merah-putih-iesr-ingatkan-risiko-mangkrak",
+   "tanggal": "2025-09-03",
+   "tahun": 2025,
+   "bukti": "media"
+  },
+  "adbsumba": {
+   "judul": "ADB support for Sumba transformation to 100% renewable energy island (21 Mei 2013)",
+   "penerbit": "Asian Development Bank",
+   "url": "https://www.adb.org/news/adb-support-sumbas-transformation-100-renewable-energy-island",
+   "tanggal": "2013-05-21",
+   "tahun": 2013,
+   "bukti": "resmi"
+  },
+  "lelang17": {
+   "judul": "Kesepakatan jual beli listrik EBT dengan PLN, 11 perusahaan mundur (4 Agu 2017)",
+   "penerbit": "Mongabay Indonesia",
+   "url": "https://mongabay.co.id/2017/08/04/kesepakatan-jual-beli-listrik-energi-terbarukan-dengan-pt-pln-11-perusahaan-mundur/",
+   "tanggal": "2017-08-04",
+   "tahun": 2017,
+   "bukti": "media"
+  },
+  "lelang17b": {
+   "judul": "No companies interested in three PLN projects last year (23 Jan 2017)",
+   "penerbit": "The Jakarta Post",
+   "url": "https://www.thejakartapost.com/news/2017/01/23/no-companies-interested-in-three-pln-projects-last-year.html",
+   "tanggal": "2017-01-23",
+   "tahun": 2017,
+   "bukti": "media"
+  },
+  "samindo": {
+   "judul": "Samindo Resources (MYOH) batal ikut proyek PLTS Bali (24 Sep 2019)",
+   "penerbit": "Bisnis.com",
+   "url": "https://market.bisnis.com/read/20190924/192/1151838/samindo-resources-myoh-batal-ikut-proyek-plts-bali",
+   "tanggal": "2019-09-24",
+   "tahun": 2019,
+   "bukti": "media"
+  },
+  "lelang23": {
+   "judul": "ESDM soroti lambannya lelang proyek PLTS PLN (14 Nov 2023)",
+   "penerbit": "Bisnis.com",
+   "url": "https://ekonomi.bisnis.com/read/20231114/44/1714316/esdm-soroti-lambannya-lelang-proyek-plts-pln",
+   "tanggal": "2023-11-14",
+   "tahun": 2023,
+   "bukti": "media"
+  },
+  "vnwiki": {
+   "judul": "Solar power in Vietnam",
+   "penerbit": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Solar_power_in_Vietnam",
+   "tanggal": "2026-11-08",
+   "tahun": 2026,
+   "bukti": "via-pihak-ketiga",
+   "lisensi": "CC BY-SA 4.0"
+  },
+  "vnallens": {
+   "judul": "Allens, Renewables in Vietnam 2022",
+   "penerbit": "Allens",
+   "url": "https://www.allens.com.au/globalassets/pdfs/insights/asia/allens-vietnam-renewables-in-vietnam-2022.pdf",
+   "tanggal": "2022-01-01",
+   "tahun": 2022,
+   "bukti": "kajian"
+  },
+  "vnvir": {
+   "judul": "FiTs now at risk through retroactive cuts",
+   "penerbit": "Vietnam Investment Review",
+   "url": "https://vir.com.vn/fits-now-at-risk-through-retroactive-cuts-131718.html",
+   "tanggal": "2025-07-01",
+   "tahun": 2025,
+   "bukti": "media"
+  },
+  "eswiki": {
+   "judul": "Solar power in Spain",
+   "penerbit": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Solar_power_in_Spain",
+   "tanggal": "2026-11-08",
+   "tahun": 2026,
+   "bukti": "via-pihak-ketiga",
+   "lisensi": "CC BY-SA 4.0"
+  },
+  "eiser": {
+   "judul": "Spain loses its first renewable energy case in international courts (Eiser, 4 Mei 2017)",
+   "penerbit": "pv magazine",
+   "url": "https://www.pv-magazine.com/2017/05/05/spain-loses-its-first-renewable-energy-case-in-international-courts/",
+   "tanggal": "2017-05-05",
+   "tahun": 2017,
+   "bukti": "media"
+  },
+  "nextera": {
+   "judul": "Spain ordered to pay EUR290m-plus over subsidy u-turn (6 Jun 2019)",
+   "penerbit": "PV Tech",
+   "url": "https://www.pv-tech.org/spain-ordered-to-pay-290m-plus-over-subsidy-u-turn",
+   "tanggal": "2019-06-06",
+   "tahun": 2019,
+   "bukti": "media"
+  },
+  "direktori": {
+   "judul": "Direktori METI: organisasi, proyek, inovasi (irisan otomatis public/data/topik/dasar-surya.json)",
+   "penerbit": "METI",
+   "url": "https://platformmeti.timitbnpb.workers.dev",
+   "tanggal": "2026-11-07",
+   "tahun": 2026,
+   "bukti": "via-pihak-ketiga"
+  },
+  "pendanaan": {
+   "judul": "Basis pendanaan METI (public/data/pendanaan.json, 338 skema dan proyek pendana)",
+   "penerbit": "METI, ADB, World Bank, AIIB dan lain-lain",
+   "url": "https://www.adb.org/projects",
+   "tanggal": "2026-11-08",
+   "tahun": 2026,
+   "bukti": "via-pihak-ketiga"
+  }
+ },
+ "bab": {
+  "2": {
+   "tipe": "faq",
+   "sumber": [
+    "ed",
+    "permen2",
+    "bisnis2",
+    "rantai"
+   ],
+   "butir": [
+    {
+     "t": {
+      "id": "Berapa kapasitas surya Indonesia?",
+      "en": "How much solar capacity does Indonesia have?"
+     },
+     "j": {
+      "id": "1493.97 MW pada 2025 menurut IRENA, naik dari 26.42 MW pada 2012.",
+      "en": "1493.97 MW in 2025 per IRENA, up from 26.42 MW in 2012."
+     }
+    },
+    {
+     "t": {
+      "id": "Apa bedanya MWp dan MWac?",
+      "en": "What is the difference between MWp and MWac?"
+     },
+     "j": {
+      "id": "MWp adalah kapasitas puncak panel (arus searah); MWac adalah daya keluaran inverter ke jaringan. Cirata 192 MWp setara 145 MWac.",
+      "en": "MWp is peak panel capacity (DC); MWac is inverter output to the grid. Cirata 192 MWp equals 145 MWac."
+     }
+    },
+    {
+     "t": {
+      "id": "Apakah listrik berlebih dari PLTS atap dibayar PLN?",
+      "en": "Does PLN pay for surplus rooftop solar power?"
+     },
+     "j": {
+      "id": "Tidak. Permen ESDM 2/2024 menghapus skema ekspor-impor; energi yang masuk ke jaringan tidak dihitung dalam tagihan. Pengguna lama boleh melanjutkan skema lama sampai 10 tahun (Pasal 47, menurut ringkasan pers).",
+      "en": "No. Energy Ministry Regulation 2/2024 removed the export-import scheme; energy fed to the grid is not counted in bills. Existing users may keep the old scheme for 10 years (Article 47, per press summaries)."
+     }
+    },
+    {
+     "t": {
+      "id": "Apakah ada kuota PLTS atap?",
+      "en": "Is there a rooftop solar quota?"
+     },
+     "j": {
+      "id": "Ya. Pemegang IUPTLU menyusun kuota per sistem ketenagalistrikan untuk lima tahun dan mengevaluasinya tiap tahun (Pasal 7 sampai 11, menurut ringkasan pers).",
+      "en": "Yes. Licensed utilities set quotas per power system for five years, evaluated annually (Articles 7 to 11, per press summaries)."
+     }
+    },
+    {
+     "t": {
+      "id": "Berapa harga modul surya sekarang?",
+      "en": "How much do solar modules cost now?"
+     },
+     "j": {
+      "id": "Sekitar 0.12 USD per W pada 2025, dari 2.512 pada 2010 (USD 2025).",
+      "en": "About 0.12 USD per W in 2025, from 2.512 in 2010 (USD 2025)."
+     }
+    },
+    {
+     "t": {
+      "id": "Daerah mana paling cerah?",
+      "en": "Which region is sunniest?"
+     },
+     "j": {
+      "id": "Menurut Global Solar Atlas, titik ibu kota Nusa Tenggara Timur tertinggi (1688 kWh per kWp per tahun) dan Kalimantan Timur terendah (1252).",
+      "en": "Per Global Solar Atlas, the Nusa Tenggara Timur capital point is highest (1688 kWh per kWp per year) and Kalimantan Timur lowest (1252)."
+     }
+    },
+    {
+     "t": {
+      "id": "Berapa pabrikan modul surya di Indonesia?",
+      "en": "How many solar module factories are in Indonesia?"
+     },
+     "j": {
+      "id": "40 pabrikan dengan total 24863 MWp per tahun; 6538 MWp untuk pasar lokal dan 18325 MWp untuk ekspor (DJEBTKE).",
+      "en": "40 factories with 24863 MWp per year in total; 6538 MWp domestic and 18325 MWp export (DJEBTKE)."
+     }
+    },
+    {
+     "t": {
+      "id": "Kenapa banyak PLTS desa mati?",
+      "en": "Why do many village solar plants die?"
+     },
+     "j": {
+      "id": "Sumber menyebut pengelola belum siap, alih aset ke daerah tersendat, dan tak ada anggaran pemeliharaan. Lihat bab 40.",
+      "en": "Sources cite unprepared operators, stalled asset transfers and no maintenance budget. See chapter 40."
+     }
+    }
+   ]
+  },
+  "3": {
+   "tipe": "glosarium",
+   "sumber": [
+    "ed"
+   ],
+   "butir": [
+    {
+     "istilah": {
+      "id": "PLTS",
+      "en": "PLTS"
+     },
+     "arti": {
+      "id": "Pembangkit Listrik Tenaga Surya.",
+      "en": "Solar power plant."
+     }
+    },
+    {
+     "istilah": {
+      "id": "PLTS atap",
+      "en": "PLTS atap"
+     },
+     "arti": {
+      "id": "PLTS di atap bangunan, tersambung jaringan PLN atau mandiri.",
+      "en": "Rooftop solar connected to the PLN grid or off-grid."
+     }
+    },
+    {
+     "istilah": {
+      "id": "MWp / kWp",
+      "en": "MWp / kWp"
+     },
+     "arti": {
+      "id": "Daya puncak panel pada kondisi uji standar.",
+      "en": "Peak panel power at standard test conditions."
+     }
+    },
+    {
+     "istilah": {
+      "id": "MWac",
+      "en": "MWac"
+     },
+     "arti": {
+      "id": "Daya keluaran inverter ke jaringan.",
+      "en": "Inverter output power to the grid."
+     }
+    },
+    {
+     "istilah": {
+      "id": "PVOUT",
+      "en": "PVOUT"
+     },
+     "arti": {
+      "id": "Produksi listrik tahunan per kWp terpasang (kWh per kWp per tahun) dari model Global Solar Atlas.",
+      "en": "Annual electricity yield per installed kWp (kWh per kWp per year) from the Global Solar Atlas model."
+     }
+    },
+    {
+     "istilah": {
+      "id": "GHI",
+      "en": "GHI"
+     },
+     "arti": {
+      "id": "Radiasi matahari global horizontal (kWh per m2 per tahun).",
+      "en": "Global horizontal irradiation (kWh per m2 per year)."
+     }
+    },
+    {
+     "istilah": {
+      "id": "Faktor kapasitas",
+      "en": "Faktor kapasitas"
+     },
+     "arti": {
+      "id": "Produksi aktual dibagi produksi bila beroperasi penuh sepanjang tahun.",
+      "en": "Actual output divided by output at full power all year."
+     }
+    },
+    {
+     "istilah": {
+      "id": "LCOE",
+      "en": "LCOE"
+     },
+     "arti": {
+      "id": "Biaya listrik rata-rata sepanjang umur pembangkit (levelized cost of electricity).",
+      "en": "Average cost of electricity over a plant life (levelized cost of electricity)."
+     }
+    },
+    {
+     "istilah": {
+      "id": "PPA",
+      "en": "PPA"
+     },
+     "arti": {
+      "id": "Perjanjian jual beli tenaga listrik.",
+      "en": "Power purchase agreement."
+     }
+    },
+    {
+     "istilah": {
+      "id": "IPP",
+      "en": "IPP"
+     },
+     "arti": {
+      "id": "Pengembang listrik swasta.",
+      "en": "Independent power producer."
+     }
+    },
+    {
+     "istilah": {
+      "id": "FiT",
+      "en": "FiT"
+     },
+     "arti": {
+      "id": "Feed-in tariff, tarif tetap per kWh yang dijamin.",
+      "en": "Feed-in tariff, a guaranteed fixed price per kWh."
+     }
+    },
+    {
+     "istilah": {
+      "id": "TKDN",
+      "en": "TKDN"
+     },
+     "arti": {
+      "id": "Tingkat Komponen Dalam Negeri.",
+      "en": "Local content level."
+     }
+    },
+    {
+     "istilah": {
+      "id": "RUPTL",
+      "en": "RUPTL"
+     },
+     "arti": {
+      "id": "Rencana Usaha Penyediaan Tenaga Listrik PLN.",
+      "en": "PLN electricity supply business plan."
+     }
+    },
+    {
+     "istilah": {
+      "id": "RUKN",
+      "en": "RUKN"
+     },
+     "arti": {
+      "id": "Rencana Umum Ketenagalistrikan Nasional.",
+      "en": "National general electricity plan."
+     }
+    },
+    {
+     "istilah": {
+      "id": "BESS",
+      "en": "BESS"
+     },
+     "arti": {
+      "id": "Sistem penyimpanan energi baterai.",
+      "en": "Battery energy storage system."
+     }
+    },
+    {
+     "istilah": {
+      "id": "Kurtailmen",
+      "en": "Kurtailmen"
+     },
+     "arti": {
+      "id": "Pembatasan produksi pembangkit karena jaringan atau permintaan tidak menyerap.",
+      "en": "Forced reduction of plant output because the grid or demand cannot absorb it."
+     }
+    },
+    {
+     "istilah": {
+      "id": "IUPTLU",
+      "en": "IUPTLU"
+     },
+     "arti": {
+      "id": "Izin Usaha Penyediaan Tenaga Listrik untuk Kepentingan Umum (misalnya PLN).",
+      "en": "Electricity supply business licence for public interest (for example PLN)."
+     }
+    },
+    {
+     "istilah": {
+      "id": "PLTS terapung",
+      "en": "PLTS terapung"
+     },
+     "arti": {
+      "id": "PLTS di permukaan waduk atau danau.",
+      "en": "Solar on a reservoir or lake surface."
+     }
+    },
+    {
+     "istilah": {
+      "id": "Hibrida",
+      "en": "Hibrida"
+     },
+     "arti": {
+      "id": "PLTS digabung baterai atau genset diesel.",
+      "en": "Solar combined with batteries or diesel generators."
+     }
+    }
+   ]
+  },
+  "4": {
+   "tipe": "teks",
+   "sumber": [
+    "kap",
+    "irena24",
+    "masdar"
+   ],
+   "paragraf": [
+    {
+     "id": "PLTS mengubah cahaya matahari langsung menjadi listrik lewat panel fotovoltaik. Pengembangan cepat karena modul murah, pemasangan modular, dan waktu bangun singkat dibanding pembangkit lain.",
+     "en": "Solar PV turns sunlight directly into electricity with photovoltaic panels. Growth is fast because modules are cheap, installation is modular and build times are short compared to other generation."
+    },
+    {
+     "id": "Menurut IRENA, rata-rata global LCOE surya baru USD 0,043 per kWh pada 2024 (ringkasan pers). Di Indonesia kapasitasnya 1493.97 MW pada 2025, masih kecil dibanding potensi.",
+     "en": "Per IRENA, the global average LCOE of new solar was USD 0.043 per kWh in 2024 (press summary). Indonesia has 1493.97 MW in 2025, still small relative to potential."
+    },
+    {
+     "id": "Empat bentuk utama: skala utilitas di tanah, atap (rumah, gedung, industri), terapung di waduk, dan hibrida atau komunal untuk desa tanpa jaringan andal.",
+     "en": "Four main forms: utility-scale ground-mounted, rooftop (homes, buildings, industry), floating on reservoirs, and hybrid or community systems for villages without reliable grids."
+    }
+   ]
+  },
+  "5": {
+   "tipe": "rumus",
+   "sumber": [
+    "gsa",
+    "hitung",
+    "ed"
+   ],
+   "rumus": [
+    {
+     "id": "Produksi tahunan (kWh) = Daya terpasang (kWp) x PVOUT (kWh per kWp per tahun)",
+     "en": "Annual output (kWh) = Installed power (kWp) x PVOUT (kWh per kWp per year)"
+    },
+    {
+     "id": "Faktor kapasitas (persen) = PVOUT / 8.760 jam x 100",
+     "en": "Capacity factor (percent) = PVOUT / 8,760 hours x 100"
+    },
+    {
+     "id": "Hemat tahunan (Rp) = Produksi x Persen pakai sendiri x Tarif (Rp per kWh) - Biaya O&M",
+     "en": "Annual saving (IDR) = Output x Self-consumption share x Tariff (IDR per kWh) - O&M cost"
+    },
+    {
+     "id": "LCOE (Rp per kWh) = (Capex + nilai kini O&M) / nilai kini produksi sepanjang umur",
+     "en": "LCOE (IDR per kWh) = (Capex + present value of O&M) / present value of lifetime output"
+    }
+   ],
+   "contoh": [
+    {
+     "id": "Contoh rumah 3 kWp di Jawa Barat (PVOUT 1422): produksi 4266 kWh per tahun, faktor kapasitas 16.23 persen. EST.",
+     "en": "Example 3 kWp home in West Java (PVOUT 1422): 4266 kWh per year, capacity factor 16.23 percent. EST."
+    },
+    {
+     "id": "Dengan asumsi Hipotesis kalkulator METI (Rp 15.000.000 per kWp, pakai sendiri 70 persen, O&M 1 persen per tahun) dan tarif R-1/TR 2.200 VA Rp 1444.7: hemat 4.314.163 dikurangi O&M 450.000 = Rp 3.864.163 per tahun; modal Rp 45.000.000 kembali sekitar 11.65 tahun tanpa diskonto dan degradasi. EST.",
+     "en": "With the METI calculator Hypothesis assumptions (IDR 15,000,000 per kWp, 70 percent self-consumption, 1 percent O&M per year) and tariff R-1/TR 2.200 VA IDR 1444.7: saving 4,314,163 minus O&M 450,000 = IDR 3,864,163 per year; capex IDR 45,000,000 repaid in about 11.65 years without discounting or degradation. EST."
+    },
+    {
+     "id": "Contoh LCOE dunia: IRENA mencatat USD 0,043 per kWh (2024) dan USD 691 per kW biaya terpasang (ringkasan pers; cek PDF IRENA).",
+     "en": "World LCOE example: IRENA reports USD 0.043 per kWh (2024) and USD 691 per kW installed cost (press summary; check the IRENA PDF)."
+    }
+   ],
+   "catatan": {
+    "id": "Asumsi harga dan pakai sendiri berlabel Hipotesis, bukan data pasar tersumber.",
+    "en": "Price and self-consumption assumptions are labelled Hypothesis, not sourced market data."
+   }
+  },
+  "6": {
+   "tipe": "langkah",
+   "sumber": [
+    "ed",
+    "rantai"
+   ],
+   "butir": [
+    {
+     "judul": {
+      "id": "Pengembang dan EPC",
+      "en": "Pengembang dan EPC"
+     },
+     "isi": {
+      "id": "Menyaring lokasi, mengurus izin, membangun, dan mengoperasikan.",
+      "en": "Screens sites, handles permits, builds and operates."
+     },
+     "pelaku": {
+      "id": "Pengembang, kontraktor EPC",
+      "en": "Pengembang, kontraktor EPC"
+     }
+    },
+    {
+     "judul": {
+      "id": "Pabrikan modul",
+      "en": "Pabrikan modul"
+     },
+     "isi": {
+      "id": "40 pabrikan modul terdaftar DJEBTKE, total 24863 MWp per tahun.",
+      "en": "40 module factories listed by DJEBTKE, 24863 MWp per year in total."
+     },
+     "pelaku": {
+      "id": "Pabrikan",
+      "en": "Pabrikan"
+     }
+    },
+    {
+     "judul": {
+      "id": "Inverter, baterai, struktur",
+      "en": "Inverter, baterai, struktur"
+     },
+     "isi": {
+      "id": "Komponen sistem; bagian lain dari TKDN.",
+      "en": "System components; another part of local content."
+     },
+     "pelaku": {
+      "id": "Pemasok",
+      "en": "Pemasok"
+     }
+    },
+    {
+     "judul": {
+      "id": "Pembeli listrik",
+      "en": "Pembeli listrik"
+     },
+     "isi": {
+      "id": "PLN sebagai pembeli tunggal untuk IPP; pelanggan sendiri untuk atap dan captive.",
+      "en": "PLN as single buyer for IPPs; the customer itself for rooftop and captive."
+     },
+     "pelaku": {
+      "id": "PLN, pelanggan",
+      "en": "PLN, pelanggan"
+     }
+    },
+    {
+     "judul": {
+      "id": "Pemodal",
+      "en": "Pemodal"
+     },
+     "isi": {
+      "id": "Bank, lembaga pembangunan, investor ekuitas.",
+      "en": "Banks, development institutions, equity investors."
+     },
+     "pelaku": {
+      "id": "Pendana",
+      "en": "Pendana"
+     }
+    },
+    {
+     "judul": {
+      "id": "Penetapan kebijakan",
+      "en": "Penetapan kebijakan"
+     },
+     "isi": {
+      "id": "ESDM, Kemenperin (TKDN), Kemenkeu, pemda.",
+      "en": "Energy Ministry, Industry Ministry (TKDN), Finance Ministry, local governments."
+     },
+     "pelaku": {
+      "id": "Pemerintah",
+      "en": "Pemerintah"
+     }
+    }
+   ]
+  },
+  "7": {
+   "tipe": "grafik",
+   "jenis": "kolom",
+   "sumber": [
+    "kap"
+   ],
+   "label": {
+    "id": "Kapasitas surya terpasang Indonesia",
+    "en": "Indonesia installed solar capacity"
+   },
+   "satuan": "MW",
+   "d": 0,
+   "seri": [
+    {
+     "nama": {
+      "id": "Kapasitas surya",
+      "en": "Solar capacity"
+     },
+     "sorot": true,
+     "titik": [
+      [
+       "2000",
+       0.34
+      ],
+      [
+       "2001",
+       0.61
+      ],
+      [
+       "2002",
+       0.94
+      ],
+      [
+       "2003",
+       1.3
+      ],
+      [
+       "2004",
+       1.33
+      ],
+      [
+       "2005",
+       1.39
+      ],
+      [
+       "2006",
+       2.22
+      ],
+      [
+       "2007",
+       5.7
+      ],
+      [
+       "2008",
+       9.5
+      ],
+      [
+       "2009",
+       13.44
+      ],
+      [
+       "2010",
+       14.58
+      ],
+      [
+       "2011",
+       16.99
+      ],
+      [
+       "2012",
+       26.42
+      ],
+      [
+       "2013",
+       38.38
+      ],
+      [
+       "2014",
+       41.65
+      ],
+      [
+       "2015",
+       78.62
+      ],
+      [
+       "2016",
+       88.48
+      ],
+      [
+       "2017",
+       97.41
+      ],
+      [
+       "2018",
+       68.28
+      ],
+      [
+       "2019",
+       157.8
+      ],
+      [
+       "2020",
+       166.14
+      ],
+      [
+       "2021",
+       220.94
+      ],
+      [
+       "2022",
+       305.89
+      ],
+      [
+       "2023",
+       630.26
+      ],
+      [
+       "2024",
+       940.97
+      ],
+      [
+       "2025",
+       1493.97
+      ]
+     ]
+    }
+   ]
+  },
+  "8": {
+   "tipe": "tabel",
+   "per": 10,
+   "sumber": [
+    "gsa"
+   ],
+   "catatan": {
+    "id": "Satu titik ibu kota per provinsi, bukan rata-rata provinsi; pakai sebagai indikasi relatif.",
+    "en": "One capital point per province, not a provincial mean; use as a relative indication."
+   },
+   "kolom": [
+    {
+     "k": "prov",
+     "l": {
+      "id": "Provinsi",
+      "en": "Province"
+     }
+    },
+    {
+     "k": "pvout",
+     "l": {
+      "id": "PVOUT (kWh per kWp per tahun)",
+      "en": "PVOUT (kWh per kWp per year)"
+     },
+     "num": true,
+     "d": 0
+    },
+    {
+     "k": "ghi",
+     "l": {
+      "id": "GHI (kWh per m2 per tahun)",
+      "en": "GHI (kWh per m2 per year)"
+     },
+     "num": true,
+     "d": 0
+    },
+    {
+     "k": "url",
+     "l": {
+      "id": "Sumber",
+      "en": "Source"
+     },
+     "url": "url"
+    }
+   ],
+   "baris": [
+    {
+     "prov": "Nusa Tenggara Timur",
+     "pvout": 1688,
+     "ghi": 2091,
+     "url": "https://globalsolaratlas.info/map?c=-10.18,123.61,9&s=-10.18,123.61"
+    },
+    {
+     "prov": "Bali",
+     "pvout": 1627,
+     "ghi": 1998,
+     "url": "https://globalsolaratlas.info/map?c=-8.65,115.22,9&s=-8.65,115.22"
+    },
+    {
+     "prov": "Papua Pegunungan",
+     "pvout": 1623,
+     "ghi": 1989,
+     "url": "https://globalsolaratlas.info/map?c=-4.1,138.95,9&s=-4.1,138.95"
+    },
+    {
+     "prov": "Jawa Timur",
+     "pvout": 1569,
+     "ghi": 1956,
+     "url": "https://globalsolaratlas.info/map?c=-7.26,112.75,9&s=-7.26,112.75"
+    },
+    {
+     "prov": "Gorontalo",
+     "pvout": 1542,
+     "ghi": 1957,
+     "url": "https://globalsolaratlas.info/map?c=0.54,123.06,9&s=0.54,123.06"
+    },
+    {
+     "prov": "Jawa Tengah",
+     "pvout": 1541,
+     "ghi": 1913,
+     "url": "https://globalsolaratlas.info/map?c=-6.99,110.42,9&s=-6.99,110.42"
+    },
+    {
+     "prov": "Sulawesi Tengah",
+     "pvout": 1524,
+     "ghi": 1925,
+     "url": "https://globalsolaratlas.info/map?c=-0.9,119.87,9&s=-0.9,119.87"
+    },
+    {
+     "prov": "Sulawesi Selatan",
+     "pvout": 1508,
+     "ghi": 1882,
+     "url": "https://globalsolaratlas.info/map?c=-5.15,119.43,9&s=-5.15,119.43"
+    },
+    {
+     "prov": "Nusa Tenggara Barat",
+     "pvout": 1503,
+     "ghi": 1875,
+     "url": "https://globalsolaratlas.info/map?c=-8.58,116.12,9&s=-8.58,116.12"
+    },
+    {
+     "prov": "Maluku Utara",
+     "pvout": 1497,
+     "ghi": 1879,
+     "url": "https://globalsolaratlas.info/map?c=0.79,127.38,9&s=0.79,127.38"
+    },
+    {
+     "prov": "Bengkulu",
+     "pvout": 1495,
+     "ghi": 1868,
+     "url": "https://globalsolaratlas.info/map?c=-3.8,102.26,9&s=-3.8,102.26"
+    },
+    {
+     "prov": "Papua Tengah",
+     "pvout": 1488,
+     "ghi": 1869,
+     "url": "https://globalsolaratlas.info/map?c=-3.36,135.5,9&s=-3.36,135.5"
+    },
+    {
+     "prov": "Sulawesi Utara",
+     "pvout": 1474,
+     "ghi": 1855,
+     "url": "https://globalsolaratlas.info/map?c=1.47,124.84,9&s=1.47,124.84"
+    },
+    {
+     "prov": "Sulawesi Barat",
+     "pvout": 1465,
+     "ghi": 1825,
+     "url": "https://globalsolaratlas.info/map?c=-2.68,118.89,9&s=-2.68,118.89"
+    },
+    {
+     "prov": "DI Yogyakarta",
+     "pvout": 1459,
+     "ghi": 1800,
+     "url": "https://globalsolaratlas.info/map?c=-7.8,110.36,9&s=-7.8,110.36"
+    },
+    {
+     "prov": "Papua Barat Daya",
+     "pvout": 1451,
+     "ghi": 1831,
+     "url": "https://globalsolaratlas.info/map?c=-0.88,131.26,9&s=-0.88,131.26"
+    },
+    {
+     "prov": "Sulawesi Tenggara",
+     "pvout": 1438,
+     "ghi": 1811,
+     "url": "https://globalsolaratlas.info/map?c=-3.97,122.51,9&s=-3.97,122.51"
+    },
+    {
+     "prov": "Papua",
+     "pvout": 1433,
+     "ghi": 1799,
+     "url": "https://globalsolaratlas.info/map?c=-2.53,140.72,9&s=-2.53,140.72"
+    },
+    {
+     "prov": "Sumatera Barat",
+     "pvout": 1430,
+     "ghi": 1791,
+     "url": "https://globalsolaratlas.info/map?c=-0.95,100.35,9&s=-0.95,100.35"
+    },
+    {
+     "prov": "Papua Barat",
+     "pvout": 1428,
+     "ghi": 1787,
+     "url": "https://globalsolaratlas.info/map?c=-0.87,134.08,9&s=-0.87,134.08"
+    },
+    {
+     "prov": "Aceh",
+     "pvout": 1422,
+     "ghi": 1789,
+     "url": "https://globalsolaratlas.info/map?c=5.55,95.32,9&s=5.55,95.32"
+    },
+    {
+     "prov": "Jawa Barat",
+     "pvout": 1422,
+     "ghi": 1754,
+     "url": "https://globalsolaratlas.info/map?c=-6.91,107.61,9&s=-6.91,107.61"
+    },
+    {
+     "prov": "Papua Selatan",
+     "pvout": 1397,
+     "ghi": 1752,
+     "url": "https://globalsolaratlas.info/map?c=-8.49,140.4,9&s=-8.49,140.4"
+    },
+    {
+     "prov": "Kalimantan Tengah",
+     "pvout": 1385,
+     "ghi": 1742,
+     "url": "https://globalsolaratlas.info/map?c=-2.21,113.92,9&s=-2.21,113.92"
+    },
+    {
+     "prov": "Kalimantan Barat",
+     "pvout": 1360,
+     "ghi": 1709,
+     "url": "https://globalsolaratlas.info/map?c=-0.03,109.33,9&s=-0.03,109.33"
+    },
+    {
+     "prov": "Kalimantan Selatan",
+     "pvout": 1350,
+     "ghi": 1694,
+     "url": "https://globalsolaratlas.info/map?c=-3.32,114.59,9&s=-3.32,114.59"
+    },
+    {
+     "prov": "Kalimantan Utara",
+     "pvout": 1348,
+     "ghi": 1700,
+     "url": "https://globalsolaratlas.info/map?c=2.84,117.37,9&s=2.84,117.37"
+    },
+    {
+     "prov": "Banten",
+     "pvout": 1347,
+     "ghi": 1678,
+     "url": "https://globalsolaratlas.info/map?c=-6.12,106.15,9&s=-6.12,106.15"
+    },
+    {
+     "prov": "Maluku",
+     "pvout": 1343,
+     "ghi": 1686,
+     "url": "https://globalsolaratlas.info/map?c=-3.7,128.18,9&s=-3.7,128.18"
+    },
+    {
+     "prov": "Lampung",
+     "pvout": 1336,
+     "ghi": 1673,
+     "url": "https://globalsolaratlas.info/map?c=-5.43,105.26,9&s=-5.43,105.26"
+    },
+    {
+     "prov": "Kepulauan Riau",
+     "pvout": 1329,
+     "ghi": 1669,
+     "url": "https://globalsolaratlas.info/map?c=0.92,104.45,9&s=0.92,104.45"
+    },
+    {
+     "prov": "Kepulauan Bangka Belitung",
+     "pvout": 1324,
+     "ghi": 1655,
+     "url": "https://globalsolaratlas.info/map?c=-2.13,106.11,9&s=-2.13,106.11"
+    },
+    {
+     "prov": "Sumatera Selatan",
+     "pvout": 1322,
+     "ghi": 1661,
+     "url": "https://globalsolaratlas.info/map?c=-2.99,104.76,9&s=-2.99,104.76"
+    },
+    {
+     "prov": "DKI Jakarta",
+     "pvout": 1320,
+     "ghi": 1649,
+     "url": "https://globalsolaratlas.info/map?c=-6.21,106.85,9&s=-6.21,106.85"
+    },
+    {
+     "prov": "Riau",
+     "pvout": 1315,
+     "ghi": 1656,
+     "url": "https://globalsolaratlas.info/map?c=0.51,101.45,9&s=0.51,101.45"
+    },
+    {
+     "prov": "Sumatera Utara",
+     "pvout": 1298,
+     "ghi": 1632,
+     "url": "https://globalsolaratlas.info/map?c=3.59,98.67,9&s=3.59,98.67"
+    },
+    {
+     "prov": "Jambi",
+     "pvout": 1283,
+     "ghi": 1611,
+     "url": "https://globalsolaratlas.info/map?c=-1.61,103.61,9&s=-1.61,103.61"
+    },
+    {
+     "prov": "Kalimantan Timur",
+     "pvout": 1252,
+     "ghi": 1574,
+     "url": "https://globalsolaratlas.info/map?c=-0.5,117.15,9&s=-0.5,117.15"
+    }
+   ]
+  },
+  "9": {
+   "tipe": "tabel",
+   "per": 12,
+   "sumber": [
+    "direktori"
+   ],
+   "judul": {
+    "id": "Pemain surya di basis METI",
+    "en": "Solar players in the METI base"
+   },
+   "kolom": [
+    {
+     "k": "nama",
+     "l": {
+      "id": "Organisasi",
+      "en": "Organisation"
+     }
+    },
+    {
+     "k": "kategori",
+     "l": {
+      "id": "Kategori",
+      "en": "Category"
+     }
+    },
+    {
+     "k": "peran",
+     "l": {
+      "id": "Peran rantai",
+      "en": "Chain role"
+     }
+    },
+    {
+     "k": "proyek",
+     "l": {
+      "id": "Proyek tercatat",
+      "en": "Recorded projects"
+     },
+     "num": true,
+     "d": 0
+    }
+   ],
+   "baris": [
+    {
+     "nama": "PT PLN Indonesia Power",
+     "kategori": "BUMN",
+     "peran": "operator, pengembang",
+     "proyek": 18
+    },
+    {
+     "nama": "PT PLN Nusantara Power",
+     "kategori": "BUMN",
+     "peran": "operator",
+     "proyek": 13
+    },
+    {
+     "nama": "ACEN Corporation",
+     "kategori": "Perusahaan Internasional di Indonesia",
+     "peran": "pengembang",
+     "proyek": 3
+    },
+    {
+     "nama": "ACWA Power",
+     "kategori": "Perusahaan Internasional di Indonesia",
+     "peran": "pengembang, IPP",
+     "proyek": 3
+    },
+    {
+     "nama": "Engie",
+     "kategori": "Perusahaan Internasional di Indonesia",
+     "peran": "pengembang, IPP",
+     "proyek": 3
+    },
+    {
+     "nama": "PT Medco Power Indonesia",
+     "kategori": "Swasta",
+     "peran": "pengembang, IPP",
+     "proyek": 3
+    },
+    {
+     "nama": "Sumitomo Corporation",
+     "kategori": "Perusahaan Internasional di Indonesia",
+     "peran": "pengembang, pembiaya",
+     "proyek": 3
+    },
+    {
+     "nama": "IGIS Asset Management",
+     "kategori": "Perusahaan Internasional di Indonesia",
+     "peran": "pendana",
+     "proyek": 1
+    },
+    {
+     "nama": "PacificLight Power",
+     "kategori": "Perusahaan Internasional di Indonesia",
+     "peran": "pengembang",
+     "proyek": 1
+    },
+    {
+     "nama": "Korea South-East Power (KOEN)",
+     "kategori": "Perusahaan Internasional di Indonesia",
+     "peran": "pengembang",
+     "proyek": 1
+    },
+    {
+     "nama": "Gallant Venture",
+     "kategori": "Perusahaan Internasional di Indonesia",
+     "peran": "pengembang",
+     "proyek": 1
+    },
+    {
+     "nama": "Korea Midland Power (KOMIPO)",
+     "kategori": "Perusahaan Internasional di Indonesia",
+     "peran": "pengembang",
+     "proyek": 1
+    },
+    {
+     "nama": "Sunseap Group",
+     "kategori": "Perusahaan Internasional di Indonesia",
+     "peran": "pengembang",
+     "proyek": 1
+    },
+    {
+     "nama": "Posco E&C",
+     "kategori": "Perusahaan Internasional di Indonesia",
+     "peran": "EPC",
+     "proyek": 1
+    },
+    {
+     "nama": "Hyundai Engineering & Construction",
+     "kategori": "Perusahaan Internasional di Indonesia",
+     "peran": "EPC",
+     "proyek": 1
+    },
+    {
+     "nama": "Solar Philippines",
+     "kategori": "Perusahaan Internasional di Indonesia",
+     "peran": "pengembang",
+     "proyek": 1
+    },
+    {
+     "nama": "Marubeni Corporation",
+     "kategori": "Perusahaan Internasional di Indonesia",
+     "peran": "pengembang, pembiaya",
+     "proyek": 1
+    },
+    {
+     "nama": "PT Ace Energy Service",
+     "kategori": "Swasta",
+     "peran": "",
+     "proyek": 1
+    },
+    {
+     "nama": "Masdar",
+     "kategori": "Perusahaan Internasional di Indonesia",
+     "peran": "pengembang, IPP",
+     "proyek": 1
+    },
+    {
+     "nama": "Sembcorp Industries",
+     "kategori": "Perusahaan Internasional di Indonesia",
+     "peran": "pengembang, IPP",
+     "proyek": 1
+    },
+    {
+     "nama": "PT Wijaya Karya (Persero) Tbk",
+     "kategori": "Swasta",
+     "peran": "EPC",
+     "proyek": 1
+    },
+    {
+     "nama": "Vena Energy",
+     "kategori": "Perusahaan Internasional di Indonesia",
+     "peran": "pengembang, IPP",
+     "proyek": 1
+    },
+    {
+     "nama": "Nusantara Embesi Baru Energi",
+     "kategori": "Swasta",
+     "peran": "pengembang",
+     "proyek": 1
+    },
+    {
+     "nama": "PT Nusantara Sembcorp Solar Energi",
+     "kategori": "Swasta",
+     "peran": "pengembang",
+     "proyek": 1
+    }
+   ]
+  },
+  "10": {
+   "tipe": "tabel",
+   "per": 10,
+   "sumber": [
+    "direktori"
+   ],
+   "judul": {
+    "id": "Proyek surya terbesar di basis METI",
+    "en": "Largest solar projects in the METI base"
+   },
+   "catatan": {
+    "id": "138 proyek surya, 5647 MW, 75 beroperasi.",
+    "en": "138 solar projects, 5647 MW, 75 operating."
+   },
+   "kolom": [
+    {
+     "k": "nama",
+     "l": {
+      "id": "Proyek",
+      "en": "Project"
+     }
+    },
+    {
+     "k": "prov",
+     "l": {
+      "id": "Provinsi",
+      "en": "Province"
+     }
+    },
+    {
+     "k": "mw",
+     "l": {
+      "id": "MW",
+      "en": "MW"
+     },
+     "num": true,
+     "d": 0
+    },
+    {
+     "k": "status",
+     "l": {
+      "id": "Status",
+      "en": "Status"
+     }
+    }
+   ],
+   "baris": [
+    {
+     "nama": "Batam floating solar",
+     "prov": "Kepulauan Riau",
+     "mw": 2200,
+     "status": "ditunda"
+    },
+    {
+     "nama": "Pulau Bulan solar farm 1",
+     "prov": "Kepulauan Riau",
+     "mw": 670,
+     "status": "rencana"
+    },
+    {
+     "nama": "PLTS Kalseltengtimra-2 (PLTS+BESS)",
+     "prov": "Kalimantan Timur",
+     "mw": 240,
+     "status": "rencana"
+    },
+    {
+     "nama": "PLTS S BESS Sumatera 1",
+     "prov": "Lampung",
+     "mw": 236,
+     "status": "rencana"
+    },
+    {
+     "nama": "PLTS Sumatera Hybrid",
+     "prov": "Sumatera Selatan",
+     "mw": 225,
+     "status": "rencana"
+    },
+    {
+     "nama": "Cirata floating solar",
+     "prov": "Jawa Barat",
+     "mw": 192,
+     "status": "beroperasi"
+    },
+    {
+     "nama": "Mabar solar farm",
+     "prov": "Nusa Tenggara Timur",
+     "mw": 165,
+     "status": "beroperasi"
+    },
+    {
+     "nama": "PLTS Kalseltengtimra- 5 (PLTS+BESS)",
+     "prov": "Kalimantan Tengah",
+     "mw": 160,
+     "status": "rencana"
+    },
+    {
+     "nama": "PLTS S BESS Sumatera 3",
+     "prov": "Lampung",
+     "mw": 150,
+     "status": "rencana"
+    },
+    {
+     "nama": "PLTS Kalbar-1 (PLTS+BESS)",
+     "prov": "Kalimantan Barat",
+     "mw": 120,
+     "status": "rencana"
+    },
+    {
+     "nama": "Karawang solar farm",
+     "prov": "Jawa Barat",
+     "mw": 101,
+     "status": "beroperasi"
+    },
+    {
+     "nama": "PLTS Karangkates",
+     "prov": "Jawa Timur",
+     "mw": 100,
+     "status": "rencana"
+    },
+    {
+     "nama": "PLTS Kalbar-2 (PLTS+BESS)",
+     "prov": "Kalimantan Barat",
+     "mw": 80,
+     "status": "rencana"
+    },
+    {
+     "nama": "PLTS Kalseltengtimra-1 (PLTS+BESS)",
+     "prov": "Kalimantan Timur",
+     "mw": 80,
+     "status": "rencana"
+    },
+    {
+     "nama": "Saguling solar farm",
+     "prov": "Jawa Barat",
+     "mw": 60,
+     "status": "konstruksi"
+    },
+    {
+     "nama": "PLTS Kalbar Khatulistiwa",
+     "prov": "Kalimantan Barat",
+     "mw": 50,
+     "status": "rencana"
+    },
+    {
+     "nama": "PLTS Ikn",
+     "prov": "Kalimantan Timur",
+     "mw": 50,
+     "status": "konstruksi"
+    },
+    {
+     "nama": "Singkarak solar farm",
+     "prov": "Sumatera Barat",
+     "mw": 50,
+     "status": "rencana"
+    },
+    {
+     "nama": "Nusantara Sembcorp Solar Energi (NSSE) Power Plant",
+     "prov": "Kalimantan Timur",
+     "mw": 50,
+     "status": "beroperasi"
+    },
+    {
+     "nama": "PLTS MT Hybrid Kalselteng 4",
+     "prov": "Kalimantan Tengah",
+     "mw": 40,
+     "status": "rencana"
+    },
+    {
+     "nama": "PLTS Kalseltengtimra-4 (PLTS+BESS)",
+     "prov": "Kalimantan Timur",
+     "mw": 40,
+     "status": "rencana"
+    },
+    {
+     "nama": "Tembesi Batam floating solar farm",
+     "prov": "Kepulauan Riau",
+     "mw": 36,
+     "status": "konstruksi"
+    },
+    {
+     "nama": "PLTS Bali Barat",
+     "prov": "Bali",
+     "mw": 25,
+     "status": "rencana"
+    },
+    {
+     "nama": "PLTS Bali Timur",
+     "prov": "Bali",
+     "mw": 25,
+     "status": "konstruksi"
+    },
+    {
+     "nama": "East Bali solar farm",
+     "prov": "Bali",
+     "mw": 25,
+     "status": "beroperasi"
+    },
+    {
+     "nama": "PLTS Sumbar",
+     "prov": "Sumatera Barat",
+     "mw": 24.2,
+     "status": "rencana"
+    },
+    {
+     "nama": "Silungkang solar plant",
+     "prov": "Sulawesi Utara",
+     "mw": 21,
+     "status": null
+    },
+    {
+     "nama": "Minut solar farm",
+     "prov": "Sulawesi Utara",
+     "mw": 21,
+     "status": "beroperasi"
+    },
+    {
+     "nama": "PLTS PLT Surya Nias + BESS",
+     "prov": "Sumatera Utara",
+     "mw": 20,
+     "status": "rencana"
+    },
+    {
+     "nama": "Purwakarta solar project II",
+     "prov": "Jawa Barat",
+     "mw": 17.8,
+     "status": "beroperasi"
+    }
+   ]
+  },
+  "11": {
+   "tipe": "teks",
+   "sumber": [
+    "rantai",
+    "tarifas",
+    "hitung"
+   ],
+   "paragraf": [
+    {
+     "id": "Industri modul: 40 pabrikan, 24863 MWp per tahun, 6538 MWp untuk pasar lokal, 18325 MWp untuk ekspor (13950 MWp khusus ekspor).",
+     "en": "Module industry: 40 factories, 24863 MWp per year, 6538 MWp domestic, 18325 MWp export (13950 MWp export-only)."
+    },
+    {
+     "id": "Pasar ekspor terpukul: AS menetapkan bea masuk imbalan sementara 86 sampai 143 persen atas panel surya Indonesia (ANTARA, 26 Feb 2026).",
+     "en": "Export market hit: the US set provisional countervailing duties of 86 to 143 percent on Indonesian solar panels (ANTARA, 26 Feb 2026)."
+    },
+    {
+     "id": "Tarif PLN nonsubsidi Q3 2026: rumah R-1 2.200 VA Rp 1.444,7 per kWh, industri I-3 Rp 1.114,74, bisnis B-2 Rp 1.444,7; patokan penghematan PLTS atap.",
+     "en": "PLN non-subsidised tariffs Q3 2026: home R-1 2,200 VA IDR 1,444.7 per kWh, industry I-3 IDR 1,114.74, business B-2 IDR 1,444.7; the benchmark for rooftop savings."
+    }
+   ]
+  },
+  "12": {
+   "tipe": "tabel",
+   "per": 8,
+   "sumber": [
+    "regul",
+    "permen2",
+    "perpres112",
+    "tkdn"
+   ],
+   "kolom": [
+    {
+     "k": "dok",
+     "l": {
+      "id": "Peraturan",
+      "en": "Regulation"
+     }
+    },
+    {
+     "k": "tgl",
+     "l": {
+      "id": "Ditetapkan",
+      "en": "Enacted"
+     }
+    },
+    {
+     "k": "isi",
+     "l": {
+      "id": "Pokok",
+      "en": "Key point"
+     }
+    },
+    {
+     "k": "url",
+     "l": {
+      "id": "Naskah",
+      "en": "Text"
+     },
+     "url": "url"
+    }
+   ],
+   "baris": [
+    {
+     "dok": {
+      "id": "Permen ESDM 2/2024",
+      "en": "Energy Ministry Reg. 2/2024"
+     },
+     "tgl": "2024-01-29",
+     "isi": {
+      "id": "PLTS atap tersambung jaringan IUPTLU; ekspor tidak dihitung; kuota per sistem; transisi 10 tahun bagi pengguna lama.",
+      "en": "Rooftop solar connected to a licensed utility grid; exports not counted; quota per system; 10-year transition for existing users."
+     },
+     "url": "https://peraturan.bpk.go.id/Details/288519"
+    },
+    {
+     "dok": {
+      "id": "Perpres 112/2022",
+      "en": "Presidential Reg. 112/2022"
+     },
+     "tgl": "2022-09-13",
+     "isi": {
+      "id": "Percepatan energi terbarukan; batas harga pembelian listrik EBT; dalam revisi sejak 2026.",
+      "en": "Renewable acceleration; price ceilings for renewable power purchase; under revision since 2026."
+     },
+     "url": "https://peraturan.bpk.go.id/Details/225308"
+    },
+    {
+     "dok": {
+      "id": "Permenperin 34/2024",
+      "en": "Industry Ministry Reg. 34/2024"
+     },
+     "tgl": "2024-07-25",
+     "isi": {
+      "id": "Tata cara menghitung TKDN modul surya.",
+      "en": "Method for calculating local content of solar modules."
+     },
+     "url": "https://peraturan.bpk.go.id/Details/296131"
+    },
+    {
+     "dok": {
+      "id": "Permenperin 6/2022",
+      "en": "Industry Ministry Reg. 6/2022"
+     },
+     "tgl": "2022-03-11",
+     "isi": {
+      "id": "Spesifikasi, peta jalan, dan penghitungan TKDN (termasuk PLTS).",
+      "en": "Specification, roadmap and local content calculation (including PLTS)."
+     },
+     "url": "https://peraturan.bpk.go.id/Details/227541"
+    },
+    {
+     "dok": {
+      "id": "Permen ESDM 26/2021",
+      "en": "Energy Ministry Reg. 26/2021"
+     },
+     "tgl": "2021-08-13",
+     "isi": {
+      "id": "PLTS atap versi sebelumnya; dicabut oleh Permen 2/2024.",
+      "en": "Previous rooftop regulation; replaced by Reg. 2/2024."
+     },
+     "url": "https://peraturan.bpk.go.id/Details/257416"
+    }
+   ],
+   "catatan": {
+    "id": "Ringkasan pokok bukan kutipan pasal; cocokkan dengan naskah sebelum dikutip.",
+    "en": "Key points are a summary, not article quotes; check against the text before citing."
+   }
+  },
+  "13": {
+   "tipe": "linimasa",
+   "sumber": [
+    "regul",
+    "plts100",
+    "perpres112rev"
+   ],
+   "butir": [
+    {
+     "tanggal": "2013-06-12",
+     "reg": "permen-esdm-17-2013",
+     "judul": {
+      "id": "Permen ESDM 17/2013 pembelian listrik dari PLTS (dicabut)",
+      "en": "Permen ESDM 17/2013 pembelian listrik dari PLTS (dicabut)"
+     }
+    },
+    {
+     "tanggal": "2016-06-28",
+     "reg": "permen-esdm-19-2016",
+     "judul": {
+      "id": "Permen ESDM 19/2016 pembelian listrik PLTS fotovoltaik (dicabut)",
+      "en": "Permen ESDM 19/2016 pembelian listrik PLTS fotovoltaik (dicabut)"
+     }
+    },
+    {
+     "tanggal": "2018-11-15",
+     "reg": "permen-esdm-49-2018",
+     "judul": {
+      "id": "Permen ESDM 49/2018 PLTS atap konsumen PLN (dicabut)",
+      "en": "Permen ESDM 49/2018 PLTS atap konsumen PLN (dicabut)"
+     }
+    },
+    {
+     "tanggal": "2021-08-13",
+     "reg": "permen-esdm-26-2021",
+     "judul": {
+      "id": "Permen ESDM 26/2021 PLTS atap (dicabut)",
+      "en": "Permen ESDM 26/2021 PLTS atap (dicabut)"
+     }
+    },
+    {
+     "tanggal": "2022-09-13",
+     "reg": "perpres-112-2022",
+     "judul": {
+      "id": "Perpres 112/2022 percepatan energi terbarukan",
+      "en": "Perpres 112/2022 percepatan energi terbarukan"
+     }
+    },
+    {
+     "tanggal": "2024-01-29",
+     "reg": "permen-esdm-2-2024",
+     "judul": {
+      "id": "Permen ESDM 2/2024 PLTS atap (berlaku)",
+      "en": "Permen ESDM 2/2024 PLTS atap (berlaku)"
+     }
+    },
+    {
+     "tanggal": "2024-07-25",
+     "reg": "permen-kemenperin-34-2024",
+     "judul": {
+      "id": "Permenperin 34/2024 TKDN modul surya (berlaku)",
+      "en": "Permenperin 34/2024 TKDN modul surya (berlaku)"
+     }
+    },
+    {
+     "tanggal": "2026-02-05",
+     "judul": {
+      "id": "ESDM merevisi Perpres 112/2022 (batas atas dan bawah tarif EBT)",
+      "en": "Energy Ministry revising Perpres 112/2022 (upper and lower renewable tariff bounds)"
+     },
+     "url": "https://www.cnbcindonesia.com/news/20260205161013-4-708547/siap-siap-pemerintah-mau-tetapkan-batas-atas-bawah-tarif-listrik-ebt"
+    },
+    {
+     "tanggal": "2026-08-25",
+     "judul": {
+      "id": "Peluncuran dan groundbreaking Program PLTS 100 GWp (tahap awal 5,3 GWp, 14 proyek)",
+      "en": "Launch and groundbreaking of the PLTS 100 GWp programme (first stage 5.3 GWp, 14 projects)"
+     },
+     "url": "https://ebtke.esdm.go.id/"
+    }
+   ]
+  },
+  "14": {
+   "tipe": "teks",
+   "sumber": [
+    "permen2",
+    "bisnis2",
+    "perpres112tarif",
+    "tkdn",
+    "iesr2"
+   ],
+   "paragraf": [
+    {
+     "id": "Insentif: batas harga PLTS Perpres 112/2022 sekitar USD 5,63 sen per kWh menurut ringkasan Databoks; tabel berjenjang dan faktor lokasi F harus dibaca dari naskah.",
+     "en": "Incentive: the Perpres 112/2022 PLTS ceiling is about USD 5.63 cents per kWh per Databoks; tiered tables and location factor F must be read from the text."
+    },
+    {
+     "id": "Pembatas: PLTS atap kini berkuota dan ekspor tidak dibayar; IESR menilai revisi condong berpihak ke PLN.",
+     "en": "Constraints: rooftop solar is now quota-based and exports are unpaid; IESR says the revision leans toward PLN."
+    },
+    {
+     "id": "Kewajiban TKDN modul dihitung berdasarkan Permenperin 34/2024 dan 6/2022.",
+     "en": "Module local content is calculated under Industry Ministry Regs. 34/2024 and 6/2022."
+    }
+   ]
+  },
+  "15": {
+   "tipe": "langkah",
+   "sumber": [
+    "ed",
+    "permen2",
+    "bisnis2"
+   ],
+   "catatan": {
+    "id": "Ringkasan alur umum; durasi dan biaya belum bersumber dan sengaja tidak ditulis. Cek PLN dan naskah Permen ESDM 2/2024.",
+    "en": "General flow summary; durations and costs are not sourced and deliberately omitted. Check PLN and the text of Reg. 2/2024."
+   },
+   "butir": [
+    {
+     "judul": {
+      "id": "PLTS atap: cek kuota sistem",
+      "en": "PLTS atap: cek kuota sistem"
+     },
+     "isi": {
+      "id": "Pastikan kuota PLTS atap sistem ketenagalistrikan setempat masih tersedia (Pasal 7 sampai 11).",
+      "en": "Check the local power system rooftop quota is still available (Articles 7 to 11)."
+     },
+     "pelaku": {
+      "id": "Pelanggan",
+      "en": "Pelanggan"
+     }
+    },
+    {
+     "judul": {
+      "id": "PLTS atap: ajukan ke PLN",
+      "en": "PLTS atap: ajukan ke PLN"
+     },
+     "isi": {
+      "id": "Ajukan permohonan pemasangan ke pemegang IUPTLU dan ikuti ketentuan teknis sambungan.",
+      "en": "Apply to the licensed utility and follow interconnection technical rules."
+     },
+     "pelaku": {
+      "id": "Pelanggan, PLN",
+      "en": "Pelanggan, PLN"
+     }
+    },
+    {
+     "judul": {
+      "id": "PLTS atap: pasang dan operasikan",
+      "en": "PLTS atap: pasang dan operasikan"
+     },
+     "isi": {
+      "id": "Kapasitas mengikuti kuota; energi ekspor tidak dihitung dalam tagihan.",
+      "en": "Capacity follows the quota; exported energy is not counted in the bill."
+     },
+     "pelaku": {
+      "id": "Pelanggan, instalatir",
+      "en": "Pelanggan, instalatir"
+     }
+    },
+    {
+     "judul": {
+      "id": "IPP: masuk daftar rencana",
+      "en": "IPP: masuk daftar rencana"
+     },
+     "isi": {
+      "id": "Proyek sesuai RUPTL PLN 2025-2034 atau program PLTS 100 GWp.",
+      "en": "Projects fit the PLN RUPTL 2025-2034 or the PLTS 100 GWp programme."
+     },
+     "pelaku": {
+      "id": "Pengembang, PLN",
+      "en": "Pengembang, PLN"
+     }
+    },
+    {
+     "judul": {
+      "id": "IPP: tarif dan PPA",
+      "en": "IPP: tarif dan PPA"
+     },
+     "isi": {
+      "id": "Harga mengacu batas harga Perpres 112/2022 atau hasil negosiasi atau lelang.",
+      "en": "Price refers to Perpres 112/2022 ceilings or negotiation or tender."
+     },
+     "pelaku": {
+      "id": "Pengembang, PLN",
+      "en": "Pengembang, PLN"
+     }
+    },
+    {
+     "judul": {
+      "id": "IPP: izin, TKDN, pendanaan",
+      "en": "IPP: izin, TKDN, pendanaan"
+     },
+     "isi": {
+      "id": "Lengkapi perizinan, penuhi TKDN modul, tutup pendanaan, lalu konstruksi.",
+      "en": "Complete permits, meet module local content, close financing, then construct."
+     },
+     "pelaku": {
+      "id": "Pengembang",
+      "en": "Pengembang"
+     }
+    }
+   ]
+  },
+  "16": {
+   "tipe": "teks",
+   "sumber": [
+    "kebijakan",
+    "perpres112rev"
+   ],
+   "paragraf": [
+    {
+     "id": "RUU Energi Baru dan Energi Terbarukan masih tahap pembahasan di Komisi XII DPR RI (arsip METI, September 2026). Situs DPR melarang perayap sehingga status tahap diambil dari arsip dan berita.",
+     "en": "The New and Renewable Energy Bill is still in deliberation at Commission XII of the House (METI archive, September 2026). The House site forbids crawlers so stage status comes from archives and news."
+    },
+    {
+     "id": "ESDM merevisi Perpres 112/2022 (CNBC Indonesia, 5 Februari 2026), termasuk harga dan hambatan proyek mangkrak.",
+     "en": "The Energy Ministry is revising Perpres 112/2022 (CNBC Indonesia, 5 February 2026), covering prices and stalled-project bottlenecks."
+    }
+   ]
+  },
+  "17": {
+   "tipe": "teks",
+   "sumber": [
+    "itrpv",
+    "modul703",
+    "nrel",
+    "masdar"
+   ],
+   "paragraf": [
+    {
+     "id": "Sel TOPCon (tipe-n) melampaui PERC pada 2024 menurut ITRPV; satu sumber menyebut sekitar 60 persen pengapalan 2024 (sumber lain 70 persen, definisi berbeda). Pengapalan modul global 703 GW pada 2024.",
+     "en": "TOPCon (n-type) cells overtook PERC in 2024 per ITRPV; one source puts it near 60 percent of 2024 shipments (another says 70 percent, different definitions). Global module shipments were 703 GW in 2024."
+    },
+    {
+     "id": "Tandem perovskit-silikon: bagan NREL revisi April 2024 mencatat 33,9 persen; rekor lebih baru dilaporkan tetapi belum saya konfirmasi di bagan langsung.",
+     "en": "Perovskite-silicon tandem: the April 2024 NREL chart lists 33.9 percent; newer records are reported but not confirmed on the live chart."
+    },
+    {
+     "id": "Terapung: panel dekat air lebih sejuk dan mengurangi penguapan menurut pemilik Cirata (Masdar).",
+     "en": "Floating: panels near water run cooler and reduce evaporation per the Cirata owner (Masdar)."
+    }
+   ],
+   "catatan": {
+    "id": "Bifacial dan agrivoltaik belum bersumber di naskah ini; lihat blok Inovasi.",
+    "en": "Bifacial and agrivoltaics are not sourced in this text; see the Innovation block."
+   }
+  },
+  "18": {
+   "tipe": "tabel",
+   "per": 8,
+   "sumber": [
+    "direktori"
+   ],
+   "judul": {
+    "id": "Inovasi surya Indonesia",
+    "en": "Indonesian solar innovation"
+   },
+   "kolom": [
+    {
+     "k": "nama",
+     "l": {
+      "id": "Inovasi",
+      "en": "Innovation"
+     }
+    },
+    {
+     "k": "jenis",
+     "l": {
+      "id": "Jenis",
+      "en": "Type"
+     }
+    },
+    {
+     "k": "status",
+     "l": {
+      "id": "Status",
+      "en": "Status"
+     }
+    },
+    {
+     "k": "tahun",
+     "l": {
+      "id": "Tahun",
+      "en": "Year"
+     }
+    }
+   ],
+   "baris": [
+    {
+     "nama": "Sistem pengisian motor listrik berbasis agri-photovoltaic",
+     "jenis": "sistem",
+     "status": "purwarupa",
+     "tahun": "2026"
+    },
+    {
+     "nama": "Buggy car hybrid tenaga surya",
+     "jenis": "produk",
+     "status": "uji lapangan",
+     "tahun": "2025"
+    },
+    {
+     "nama": "Charging station panel surya kendaraan listrik roda dua",
+     "jenis": "sistem",
+     "status": "terpasang",
+     "tahun": "2025"
+    },
+    {
+     "nama": "Charging station surya kapal wisata mangrove",
+     "jenis": "sistem",
+     "status": "terpasang",
+     "tahun": "2026"
+    },
+    {
+     "nama": "Desalinasi bertenaga surya Nusakambangan",
+     "jenis": "sistem",
+     "status": "terpasang",
+     "tahun": "2026"
+    },
+    {
+     "nama": "Smart irrigation tenaga surya SRE Undip",
+     "jenis": "sistem",
+     "status": "terpasang",
+     "tahun": "2026"
+    },
+    {
+     "nama": "Palka Pendingin Tenaga Surya (PPTS)",
+     "jenis": "sistem",
+     "status": "uji lapangan",
+     "tahun": "2025"
+    },
+    {
+     "nama": "Pompa Air Tenaga Surya (PATS) Banyubiru",
+     "jenis": "alat",
+     "status": "terpasang",
+     "tahun": "2026"
+    },
+    {
+     "nama": "Sistem pengairan panel surya dan IoT Desa Cokrokembang",
+     "jenis": "sistem",
+     "status": "terpasang",
+     "tahun": "2026"
+    },
+    {
+     "nama": "Pengering rumput laut surya-biomassa",
+     "jenis": "alat",
+     "status": "terpasang",
+     "tahun": "2026"
+    },
+    {
+     "nama": "Pengering surya hibrida kabinet portabel",
+     "jenis": "alat",
+     "status": "terpasang",
+     "tahun": "2026"
+    },
+    {
+     "nama": "Penyimpanan energi surya untuk PJU Desa Sajen",
+     "jenis": "sistem",
+     "status": "terpasang",
+     "tahun": "2026"
+    },
+    {
+     "nama": "PJU berbasis PLTS Masjid At-Taqwa",
+     "jenis": "sistem",
+     "status": "terpasang",
+     "tahun": "2026"
+    },
+    {
+     "nama": "PJU panel surya Kecamatan Pacet",
+     "jenis": "sistem",
+     "status": "terpasang",
+     "tahun": "2026"
+    },
+    {
+     "nama": "PLTS hybrid pompa kolam lele",
+     "jenis": "sistem",
+     "status": "terpasang",
+     "tahun": "2026"
+    },
+    {
+     "nama": "Tenda Darurat Pintar Bertenaga Panel Surya (Tedapis)",
+     "jenis": "alat",
+     "status": "purwarupa",
+     "tahun": "2019"
+    },
+    {
+     "nama": "Inverter Gridtech Indonesia",
+     "jenis": "alat",
+     "status": "dikomersialkan",
+     "tahun": "2026"
+    },
+    {
+     "nama": "Prolink (inverter)",
+     "jenis": "alat",
+     "status": "dikomersialkan",
+     "tahun": "2026"
+    },
+    {
+     "nama": "Inverter Tirta Surya Cipta",
+     "jenis": "alat",
+     "status": "dikomersialkan",
+     "tahun": "2026"
+    },
+    {
+     "nama": "Soleilight (modul surya)",
+     "jenis": "produk",
+     "status": "dikomersialkan",
+     "tahun": "2025"
+    }
+   ]
+  },
+  "19": {
+   "tipe": "grafik",
+   "jenis": "garis",
+   "sumber": [
+    "lcoe",
+    "irena24"
+   ],
+   "label": {
+    "id": "Harga modul surya global (USD 2025 per W)",
+    "en": "Global solar module price (USD 2025 per W)"
+   },
+   "satuan": "USD per W",
+   "d": 2,
+   "seri": [
+    {
+     "nama": {
+      "id": "Harga modul",
+      "en": "Module price"
+     },
+     "sorot": true,
+     "titik": [
+      [
+       "2005",
+       4.746
+      ],
+      [
+       "2006",
+       5.173
+      ],
+      [
+       "2007",
+       5.211
+      ],
+      [
+       "2008",
+       4.749
+      ],
+      [
+       "2009",
+       3.174
+      ],
+      [
+       "2010",
+       2.512
+      ],
+      [
+       "2011",
+       2.061
+      ],
+      [
+       "2012",
+       1.111
+      ],
+      [
+       "2013",
+       0.857
+      ],
+      [
+       "2014",
+       0.791
+      ],
+      [
+       "2015",
+       0.736
+      ],
+      [
+       "2016",
+       0.68
+      ],
+      [
+       "2017",
+       0.571
+      ],
+      [
+       "2018",
+       0.509
+      ],
+      [
+       "2019",
+       0.467
+      ],
+      [
+       "2020",
+       0.325
+      ],
+      [
+       "2021",
+       0.345
+      ],
+      [
+       "2022",
+       0.367
+      ],
+      [
+       "2023",
+       0.273
+      ],
+      [
+       "2024",
+       0.133
+      ],
+      [
+       "2025",
+       0.12
+      ]
+     ]
+    }
+   ],
+   "catatan": {
+    "id": "LCOE surya (sen USD per kWh): India 40.57 (2010) ke 3.52 (2025); Thailand 7.46 (2025); dunia 4.35 (2025). LCOE surya Indonesia tidak ada di rilis IRENA yang dibaca.",
+    "en": "Solar LCOE (USD cents per kWh): India 40.57 (2010) to 3.52 (2025); Thailand 7.46 (2025); world 4.35 (2025). Indonesia solar LCOE is not in the IRENA release read."
+   }
+  },
+  "20": {
+   "tipe": "tabel",
+   "per": 10,
+   "sumber": [
+    "owid",
+    "irenaasean"
+   ],
+   "catatan": {
+    "id": "Porsi surya dalam pembangkitan listrik (Ember via Our World in Data); kapasitas EBT total (IRENA). Brunei tanpa data kapasitas.",
+    "en": "Solar share of electricity generation (Ember via Our World in Data); total renewable capacity (IRENA). Brunei has no capacity data."
+   },
+   "kolom": [
+    {
+     "k": "neg",
+     "l": {
+      "id": "Negara",
+      "en": "Country"
+     }
+    },
+    {
+     "k": "surya",
+     "l": {
+      "id": "Porsi surya (persen)",
+      "en": "Solar share (percent)"
+     },
+     "num": true,
+     "d": 2
+    },
+    {
+     "k": "th",
+     "l": {
+      "id": "Tahun data",
+      "en": "Data year"
+     }
+    },
+    {
+     "k": "ebt",
+     "l": {
+      "id": "Porsi EBT total (persen)",
+      "en": "Total renewable share (percent)"
+     },
+     "num": true,
+     "d": 1
+    },
+    {
+     "k": "kap",
+     "l": {
+      "id": "Kapasitas EBT (MW)",
+      "en": "Renewable capacity (MW)"
+     },
+     "num": true,
+     "d": 0
+    }
+   ],
+   "baris": [
+    {
+     "neg": "Kamboja",
+     "surya": 10.64,
+     "th": "2025",
+     "ebt": 40.88,
+     "kap": 3356.2
+    },
+    {
+     "neg": "Vietnam",
+     "surya": 7.43,
+     "th": "2025",
+     "ebt": 45.42,
+     "kap": 50670.81
+    },
+    {
+     "neg": "Thailand",
+     "surya": 5.3,
+     "th": "2025",
+     "ebt": 16.57,
+     "kap": 16018.18
+    },
+    {
+     "neg": "Singapura",
+     "surya": 2.73,
+     "th": "2025",
+     "ebt": 5.49,
+     "kap": 1686.32
+    },
+    {
+     "neg": "Filipina",
+     "surya": 2.44,
+     "th": "2025",
+     "ebt": 23.31,
+     "kap": 10432.32
+    },
+    {
+     "neg": "Malaysia",
+     "surya": 2.24,
+     "th": "2025",
+     "ebt": 20.65,
+     "kap": 10286.46
+    },
+    {
+     "neg": "Myanmar",
+     "surya": 0.55,
+     "th": "2024",
+     "ebt": 47.86,
+     "kap": 3568.16
+    },
+    {
+     "neg": "Indonesia",
+     "surya": 0.36,
+     "th": "2024",
+     "ebt": 18.09,
+     "kap": 15180.34
+    },
+    {
+     "neg": "Brunei",
+     "surya": 0.18,
+     "th": "2024",
+     "ebt": 0.18,
+     "kap": ""
+    },
+    {
+     "neg": "Laos",
+     "surya": 0.17,
+     "th": "2024",
+     "ebt": 76.72,
+     "kap": 12688.42
+    }
+   ]
+  },
+  "21": {
+   "tipe": "teks",
+   "sumber": [
+    "ebrd",
+    "dhafra",
+    "bhadla",
+    "vnallens",
+    "eiser",
+    "ed"
+   ],
+   "paragraf": [
+    {
+     "id": "Analisis METI (Hipotesis): tiga negara berhasil (Mesir, UEA, India) memakai jalur berbeda untuk risiko yang sama: Mesir lewat FiT lalu lelang dengan penjaminan lembaga pembangunan, UEA lewat lelang IPP dengan pembeli negara, India lewat taman surya dengan lahan dan evakuasi disiapkan negara. Rinci di bab 39.",
+     "en": "METI analysis (Hypothesis): three successful countries (Egypt, UAE, India) used different routes for the same risk: Egypt via FiT then auctions with development-bank guarantees, UAE via IPP auctions with a state buyer, India via solar parks with land and evacuation prepared by the state. Details in chapter 39."
+    },
+    {
+     "id": "Analisis METI (Hipotesis): kegagalan Vietnam dan Spanyol sama-sama berpangkal pada tarif tetap tinggi tanpa kuota dan degresi yang kemudian diubah, Vietnam dengan jaringan tertinggal. Rinci di bab 40.",
+     "en": "METI analysis (Hypothesis): the Vietnam and Spain failures both stem from high fixed tariffs without caps and degression that were later changed, with Vietnam also facing lagging grids. Details in chapter 40."
+    }
+   ]
+  },
+  "22": {
+   "tipe": "teks",
+   "sumber": [
+    "owid"
+   ],
+   "paragraf": [
+    {
+     "id": "Porsi surya listrik Indonesia 0.36 persen (2024) berada di dasar ASEAN: Vietnam 7.43, Kamboja 10.64, Thailand 5.3 (2025). Vietnam sekitar 21 kali lipat (EST, beda tahun data).",
+     "en": "Indonesia's solar share of 0.36 percent (2024) sits near the bottom of ASEAN: Vietnam 7.43, Cambodia 10.64, Thailand 5.3 (2025). Vietnam is about 21 times higher (EST, different data years)."
+    }
+   ]
+  },
+  "23": {
+   "tipe": "teks",
+   "sumber": [
+    "kebijakan"
+   ],
+   "paragraf": [
+    {
+     "id": "Dua proyek surya tercatat disetujui pembiayaan JETP di basis METI: PLTS Terapung Saguling 60 MW (Jawa Barat).",
+     "en": "Surya projects recorded as JETP-financing approved in the METI base: PLTS Terapung Saguling 60 MW (Jawa Barat)."
+    }
+   ]
+  },
+  "24": {
+   "tipe": "tabel",
+   "per": 8,
+   "sumber": [
+    "pendanaan"
+   ],
+   "catatan": {
+    "id": "Nilai untuk SELURUH energi terbarukan dan efisiensi di basis METI, bukan khusus surya; filter surya ada di blok Pendanaan.",
+    "en": "Values cover ALL renewable energy and efficiency in the METI base, not solar only; the solar filter is in the Funding block."
+   },
+   "kolom": [
+    {
+     "k": "p",
+     "l": {
+      "id": "Pemberi",
+      "en": "Provider"
+     }
+    },
+    {
+     "k": "n",
+     "l": {
+      "id": "Jumlah proyek",
+      "en": "Projects"
+     },
+     "num": true,
+     "d": 0
+    },
+    {
+     "k": "u",
+     "l": {
+      "id": "Total (USD)",
+      "en": "Total (USD)"
+     },
+     "num": true,
+     "d": 0
+    }
+   ],
+   "baris": [
+    {
+     "p": "World Bank (IBRD/IDA)",
+     "n": 33,
+     "u": 9919300000
+    },
+    {
+     "p": "Asian Development Bank",
+     "n": 37,
+     "u": 6436400064
+    },
+    {
+     "p": "Investor pasar modal",
+     "n": 5,
+     "u": 3201112397
+    },
+    {
+     "p": "Federal Ministry for Economic Cooperation and Development (BMZ)",
+     "n": 24,
+     "u": 1469202679
+    },
+    {
+     "p": "Asian Infrastructure Investment Bank",
+     "n": 7,
+     "u": 1253000000
+    },
+    {
+     "p": "Foreign Affairs, Trade and Development Canada (DFATD)",
+     "n": 6,
+     "u": 965344655
+    },
+    {
+     "p": "Islamic Development Bank",
+     "n": 3,
+     "u": 351797904
+    },
+    {
+     "p": "Japan International Cooperation Agency (JICA)",
+     "n": 2,
+     "u": 285625810
+    }
+   ]
+  },
+  "25": {
+   "tipe": "rumus",
+   "sumber": [
+    "gsa",
+    "perpres112tarif",
+    "ed"
+   ],
+   "rumus": [
+    {
+     "id": "Produksi tahunan (GWh) = Kapasitas (MWp) x PVOUT (kWh per kWp per tahun) / 1.000",
+     "en": "Annual output (GWh) = Capacity (MWp) x PVOUT (kWh per kWp per year) / 1,000"
+    },
+    {
+     "id": "Pendapatan tahunan (USD juta) = Produksi (GWh) x Tarif (sen USD per kWh) / 100",
+     "en": "Annual revenue (USD million) = Output (GWh) x Tariff (USD cents per kWh) / 100"
+    }
+   ],
+   "contoh": [
+    {
+     "id": "Contoh ilustrasi (EST): PLTS 100 MWp dengan PVOUT 1500 (faktor kapasitas 17.12 persen) menghasilkan 150 GWh per tahun; pada tarif USD 5,63 sen per kWh (batas harga ringkasan Databoks; tabel berjenjang belum diverifikasi) pendapatan sekitar USD 8.45 juta per tahun, belum dikurangi O&M dan degradasi.",
+     "en": "Illustrative example (EST): a 100 MWp plant at PVOUT 1500 (capacity factor 17.12 percent) yields 150 GWh per year; at USD 5.63 cents per kWh (Databoks ceiling summary; tier tables unverified) revenue is about USD 8.45 million per year, before O&M and degradation."
+    }
+   ],
+   "catatan": {
+    "id": "Bukan data proyek nyata. Pendapatan tambahan kredit karbon dibahas di topik Karbon.",
+    "en": "Not real project data. Carbon credit revenue is covered in the Carbon topic."
+   }
+  },
+  "26": {
+   "tipe": "tabel",
+   "per": 8,
+   "sumber": [
+    "cirata",
+    "masdar",
+    "ikn",
+    "dhafra"
+   ],
+   "kolom": [
+    {
+     "k": "p",
+     "l": {
+      "id": "Proyek",
+      "en": "Project"
+     }
+    },
+    {
+     "k": "o",
+     "l": {
+      "id": "Struktur kepemilikan",
+      "en": "Ownership"
+     }
+    },
+    {
+     "k": "n",
+     "l": {
+      "id": "Nilai",
+      "en": "Value"
+     }
+    }
+   ],
+   "baris": [
+    {
+     "p": "PLTS Terapung Cirata 192 MWp",
+     "o": {
+      "id": "PLN Nusantara Renewables 51 persen, Masdar 49 persen (media)",
+      "en": "PLN Nusantara Renewables 51 percent, Masdar 49 percent (media)"
+     },
+     "n": {
+      "id": "Tidak ditemukan di sumber",
+      "en": "Not found in sources"
+     }
+    },
+    {
+     "p": "PLTS IKN 50 MW",
+     "o": {
+      "id": "PLN Nusantara Renewables 51 persen, Sembcorp 49 persen",
+      "en": "PLN Nusantara Renewables 51 percent, Sembcorp 49 percent"
+     },
+     "n": {
+      "id": "USD 64 juta (media)",
+      "en": "USD 64 million (media)"
+     }
+    },
+    {
+     "p": "Al Dhafra 2 GW (UEA)",
+     "o": {
+      "id": "TAQA 40 persen; Masdar, EDF, JinkoPower 20 persen masing-masing",
+      "en": "TAQA 40 percent; Masdar, EDF, JinkoPower 20 percent each"
+     },
+     "n": {
+      "id": "7 bank; jumlah tidak terkonfirmasi",
+      "en": "7 banks; amount unconfirmed"
+     }
+    }
+   ]
+  },
+  "27": {
+   "tipe": "teks",
+   "sumber": [
+    "masdar",
+    "gajah",
+    "adbsumba"
+   ],
+   "paragraf": [
+    {
+     "id": "Terapung: panel menekan penguapan waduk dan menghemat lahan menurut pemilik Cirata; dampak ekologis jangka panjang pada waduk belum bersumber di sini.",
+     "en": "Floating: panels reduce reservoir evaporation and save land per the Cirata owner; long-term ecological effects on the reservoir are not sourced here."
+    },
+    {
+     "id": "Desa: di Gajah Makmur, warga memakai genset solar Rp 200 ribu sampai Rp 500 ribu per bulan sebelum PLTS dan iuran Rp 30 ribu per rumah saat PLTS menyala.",
+     "en": "Villages: at Gajah Makmur villagers spent IDR 200k to 500k per month on diesel before PLTS and paid IDR 30k per home when it ran."
+    },
+    {
+     "id": "Sumba: ADB mencatat MoU 2011 antara pemerintah pusat, daerah, PLN, dan Hivos serta satuan tugas multipihak 2012 (pemerintah, swasta, universitas, masyarakat sipil).",
+     "en": "Sumba: ADB records a 2011 MoU among national and local governments, PLN and Hivos and a 2012 multi-stakeholder taskforce (government, private sector, universities, civil society)."
+    }
+   ]
+  },
+  "28": {
+   "tipe": "teks",
+   "sumber": [
+    "detik2016"
+   ],
+   "paragraf": [
+    {
+     "id": "Pada 2016 ESDM mengakui SDM pengelola belum siap sehingga PLTS rusak; program Patriot Energi menempatkan mahasiswa teknik di lokasi terpencil untuk pemeliharaan berkala dan ESDM melatih operator bersamaan pembangunan. Data sertifikasi dan pelatihan lain belum bersumber.",
+     "en": "In 2016 the Energy Ministry admitted unprepared operators left plants broken; the Patriot Energi programme places engineering students in remote sites for periodic maintenance and the ministry trains operators alongside construction. Other certification and training data is not yet sourced."
+    }
+   ]
+  },
+  "29": {
+   "tipe": "teks",
+   "sumber": [
+    "bisnis2",
+    "iesr2",
+    "tarifas",
+    "kpk"
+   ],
+   "paragraf": [
+    {
+     "id": "Ekspor-impor PLTS atap: ESDM menghapusnya dan memberi kuota; IESR menilai revisi condong berpihak ke PLN dan dapat menyurutkan partisipasi publik.",
+     "en": "Rooftop export-import: the ministry removed it and introduced quotas; IESR says the revision leans toward PLN and may dampen public participation."
+    },
+    {
+     "id": "Panel Indonesia kena bea masuk AS 86 sampai 143 persen; Wamen ESDM menyatakan yang terkena ialah panel yang tidak diproduksi di Indonesia dan hanya dilabeli atau ditranshipment (ANTARA).",
+     "en": "Indonesian panels face 86 to 143 percent US duties; the Deputy Energy Minister said the affected panels are not made in Indonesia and are only labelled or transshipped (ANTARA)."
+    },
+    {
+     "id": "KPK menemukan mark-up dan kolusi TKDN pada 629 PLTS ESDM 2023 dan mengingatkan risiko serupa pada PLTS 100 GWp.",
+     "en": "KPK found mark-ups and TKDN collusion in 629 Energy Ministry PLTS in 2023 and warns of similar risks for PLTS 100 GWp."
+    }
+   ]
+  },
+  "30": {
+   "tipe": "tabel",
+   "per": 8,
+   "sumber": [
+    "kebijakan",
+    "ruptl"
+   ],
+   "kolom": [
+    {
+     "k": "d",
+     "l": {
+      "id": "Dokumen dan ukuran",
+      "en": "Document and measure"
+     }
+    },
+    {
+     "k": "t",
+     "l": {
+      "id": "Tahun",
+      "en": "Year"
+     }
+    },
+    {
+     "k": "n",
+     "l": {
+      "id": "Nilai",
+      "en": "Value"
+     }
+    }
+   ],
+   "baris": [
+    {
+     "d": {
+      "id": "KEN PP 40/2025: bauran EBT energi primer",
+      "en": "KEN PP 40/2025: renewable primary energy mix"
+     },
+     "t": "2030",
+     "n": {
+      "id": "19 sampai 23 persen",
+      "en": "19 to 23 percent"
+     }
+    },
+    {
+     "d": {
+      "id": "KEN PP 40/2025: bauran EBT energi primer",
+      "en": "KEN PP 40/2025: renewable primary energy mix"
+     },
+     "t": "2040",
+     "n": {
+      "id": "36 sampai 40 persen",
+      "en": "36 to 40 percent"
+     }
+    },
+    {
+     "d": {
+      "id": "KEN PP 40/2025: bauran EBT energi primer",
+      "en": "KEN PP 40/2025: renewable primary energy mix"
+     },
+     "t": "2060",
+     "n": {
+      "id": "70 sampai 72 persen",
+      "en": "70 to 72 percent"
+     }
+    },
+    {
+     "d": {
+      "id": "RUPTL 2025-2034: tambahan EBT",
+      "en": "RUPTL 2025-2034: added renewables"
+     },
+     "t": "2034",
+     "n": {
+      "id": "42.569 MW dari total 69.512 MW",
+      "en": "42,569 MW of 69,512 MW total"
+     }
+    },
+    {
+     "d": {
+      "id": "RUPTL 2025-2034: bauran EBT pembangkitan",
+      "en": "RUPTL 2025-2034: renewable generation mix"
+     },
+     "t": "2034",
+     "n": {
+      "id": "34,3 persen",
+      "en": "34.3 percent"
+     }
+    },
+    {
+     "d": {
+      "id": "RUKN: PLTS 2060 (daya mampu total sekitar 443 GW)",
+      "en": "RUKN: PLTS 2060 (total net capacity about 443 GW)"
+     },
+     "t": "2060",
+     "n": {
+      "id": "108,7 GW",
+      "en": "108.7 GW"
+     }
+    }
+   ],
+   "catatan": {
+    "id": "Target surya per tahun 2030 dan 2045 belum ditemukan di sumber yang dibaca.",
+    "en": "Solar targets for 2030 and 2045 were not found in the sources read."
+   }
+  },
+  "31": {
+   "tipe": "teks",
+   "sumber": [
+    "kebijakan",
+    "ed"
+   ],
+   "paragraf": [
+    {
+     "id": "Tantangan: tambahan EBT RUPTL 42.569 MW perlu 4.256,9 MW per tahun, 7.2 kali laju 2015 sampai 2024 (592.6 MW per tahun). EST.",
+     "en": "Challenge: the RUPTL renewable addition of 42,569 MW needs 4,256.9 MW per year, 7.2 times the 2015 to 2024 pace (592.6 MW per year). EST."
+    },
+    {
+     "id": "Analisis METI (Hipotesis): pengembang butuh kepastian PPA dan jaringan; pemasok modul butuh pasar domestik karena ekspor ke AS terhambat; pemda perlu kapasitas mengelola aset; investor menilai risiko perubahan aturan (Spanyol, Vietnam).",
+     "en": "METI analysis (Hypothesis): developers need PPA and grid certainty; module suppliers need a domestic market as US exports are blocked; local governments need asset management capacity; investors weigh regulatory-change risk (Spain, Vietnam)."
+    }
+   ]
+  },
+  "32": {
+   "tipe": "teks",
+   "sumber": [
+    "perpres112rev",
+    "kpk",
+    "kebijakan",
+    "bisnis2",
+    "tarifas"
+   ],
+   "paragraf": [
+    {
+     "id": "Revisi Perpres 112/2022 (harga EBT).",
+     "en": "Revision of Perpres 112/2022 (renewable prices)."
+    },
+    {
+     "id": "Perpres PLTS 100 GWp: KPK mencatat belum disahkan; pantau tata kelola (ETGF).",
+     "en": "PLTS 100 GWp presidential regulation: KPK notes it is not yet enacted; watch governance (ETGF)."
+    },
+    {
+     "id": "Evaluasi tahunan kuota PLTS atap dan keputusan bea masuk AS atas panel Indonesia.",
+     "en": "Annual rooftop quota evaluation and the US duty decisions on Indonesian panels."
+    },
+    {
+     "id": "Pembahasan RUU EBET di DPR.",
+     "en": "Deliberation of the EBET bill in the House."
+    }
+   ]
+  },
+  "38": {
+   "tipe": "teks",
+   "sumber": [
+    "ed"
+   ],
+   "paragraf": [
+    {
+     "id": "Sumber: IRENA (kapasitas, biaya), Global Solar Atlas (PVOUT), Our World in Data dan Ember (porsi surya), JDIH BPK (aturan), berkas METI (proyek, tarif, pendanaan), rilis pemilik proyek (Masdar), EBRD, ADB, dan media kredibel. Angka dari media atau ringkasan pers diberi bukti media.",
+     "en": "Sources: IRENA (capacity, cost), Global Solar Atlas (PVOUT), Our World in Data and Ember (solar share), JDIH BPK (regulations), METI files (projects, tariffs, funding), project owner releases (Masdar), EBRD, ADB and credible media. Figures from media or press summaries carry media evidence."
+    },
+    {
+     "id": "Batas data: biaya dan tarif Cirata, hasil Sumba 2025, tarif Benban per kuartal, harga menang GEA-4, dan temuan BPK khusus PLTS terpusat tidak ditemukan; sengaja dikosongkan. Analisis berlabel Hipotesis. Pembacaan 8 Nov 2026.",
+     "en": "Data limits: Cirata cost and tariff, Sumba 2025 outcomes, Benban quarterly tariffs, GEA-4 winning prices and BPK findings specific to centralised PLTS were not found; deliberately blank. Analysis is labelled Hypothesis. Read on 8 Nov 2026."
+    }
+   ]
+  },
+  "39": {
+   "tipe": "kasus",
+   "sumber": [
+    "masdar",
+    "ebrd",
+    "dhafra",
+    "bhadla",
+    "gea4",
+    "ikn"
+   ],
+   "catatan": {
+    "id": "Biaya dan tarif yang tidak ditemukan di sumber sengaja dikosongkan. Sumba (ADB 2013) belum menjadi kasus karena hasil 2025 dan kapasitas hibrida tidak ditemukan; program 1000 pulau tidak ditemukan sumbernya.",
+    "en": "Costs and tariffs not found in sources are deliberately blank. Sumba (ADB 2013) is not yet a case because 2025 results and hybrid capacity were not found; no source found for the 1000-island programme."
+   },
+   "butir": [
+    {
+     "id": "cirata",
+     "nama": "PLTS Terapung Cirata",
+     "jenis": "berhasil",
+     "negara": "ID",
+     "lokasi": {
+      "id": "Waduk Cirata, Jawa Barat",
+      "en": "Cirata Reservoir, West Java"
+     },
+     "profil": [
+      {
+       "label": {
+        "id": "Kapasitas",
+        "en": "Capacity"
+       },
+       "nilai": "192 MWp / 145 MWac"
+      },
+      {
+       "label": {
+        "id": "Pemilik",
+        "en": "Owners"
+       },
+       "nilai": {
+        "id": "PLN Nusantara Renewables 51 persen, Masdar 49 persen (media)",
+        "en": "PLN Nusantara Renewables 51 percent, Masdar 49 percent (media)"
+       }
+      },
+      {
+       "label": {
+        "id": "Peresmian",
+        "en": "Inauguration"
+       },
+       "nilai": "2023-11-09"
+      },
+      {
+       "label": {
+        "id": "Pendana",
+        "en": "Financiers"
+       },
+       "nilai": {
+        "id": "Standard Chartered dan SMBC disebut dalam pembicaraan pendanaan; pendana akhir tidak terkonfirmasi",
+        "en": "Standard Chartered and SMBC named in financing talks; final lenders unconfirmed"
+       }
+      },
+      {
+       "label": {
+        "id": "Biaya dan tarif",
+        "en": "Cost and tariff"
+       },
+       "nilai": {
+        "id": "Tidak ditemukan di sumber",
+        "en": "Not found in sources"
+       }
+      },
+      {
+       "label": {
+        "id": "PPA",
+        "en": "PPA"
+       },
+       "nilai": {
+        "id": "Ditandatangani Januari 2020 (media)",
+        "en": "Signed January 2020 (media)"
+       }
+      }
+     ],
+     "tindakan": [
+      {
+       "id": "Memakai 250 ha permukaan waduk PLTA yang sudah ada; menjual listrik ke PLN.",
+       "en": "Used 250 ha of an existing hydropower reservoir surface; sells power to PLN."
+      },
+      {
+       "id": "Perubahan aturan menaikkan porsi permukaan waduk yang boleh dipakai energi terbarukan menjadi 20 persen.",
+       "en": "A rule change raised the usable share of reservoir surface for renewables to 20 percent."
+      }
+     ],
+     "sebab": [
+      {
+       "id": "Faktor yang dinyatakan pemilik: kemitraan global, teknologi, dan lahan terbatas diatasi dengan permukaan air.",
+       "en": "Factors stated by the owner: global partnership, technology, and limited land addressed with water surface."
+      },
+      {
+       "id": "Analisis METI (Hipotesis): waduk PLTA sudah punya transmisi dan pembeli tunggal (PLN) sehingga risiko jaringan dan offtake rendah; belum diverifikasi dokumen proyek.",
+       "en": "METI analysis (Hypothesis): the hydropower reservoir already has transmission and a single buyer (PLN), lowering grid and offtake risk; not verified against project documents."
+      }
+     ],
+     "angka": [
+      {
+       "label": {
+        "id": "Rumah terlayani (pemilik)",
+        "en": "Homes served (owner)"
+       },
+       "nilai": 50000,
+       "d": 0,
+       "satuan": "",
+       "sumber": "masdar",
+       "est": false
+      },
+      {
+       "label": {
+        "id": "CO2 terhindar (pemilik; tidak dinyatakan per tahun)",
+        "en": "CO2 offset (owner; not stated as annual)"
+       },
+       "nilai": 214000,
+       "d": 0,
+       "satuan": "t",
+       "sumber": "masdar",
+       "est": false
+      }
+     ],
+     "pelajaran": [
+      {
+       "id": "Waduk eksisting, mitra internasional, dan pembeli PLN mempercepat proyek; ekspansi sampai 500 MWac masih tahap studi (April 2025).",
+       "en": "Existing reservoir, an international partner and a PLN buyer speed delivery; expansion up to 500 MWac is still at study stage (April 2025)."
+      }
+     ],
+     "faktor": {
+      "lahan": true,
+      "ppa_tarif": true,
+      "pendanaan": true,
+      "kepastian_kebijakan": true
+     },
+     "sumber": [
+      "masdar",
+      "cirata"
+     ]
+    },
+    {
+     "id": "ikn",
+     "nama": "PLTS IKN (Nusantara Sembcorp)",
+     "jenis": "berhasil",
+     "negara": "ID",
+     "lokasi": {
+      "id": "Ibu Kota Nusantara, Kalimantan Timur",
+      "en": "Nusantara capital, East Kalimantan"
+     },
+     "profil": [
+      {
+       "label": {
+        "id": "Kapasitas",
+        "en": "Capacity"
+       },
+       "nilai": {
+        "id": "50 MW, tahap 1: 13,5 MWp / 10 MWac; BESS 14,2 MWh",
+        "en": "50 MW, stage 1: 13.5 MWp / 10 MWac; BESS 14.2 MWh"
+       }
+      },
+      {
+       "label": {
+        "id": "Kepemilikan",
+        "en": "Ownership"
+       },
+       "nilai": {
+        "id": "PLN Nusantara Renewables 51 persen, Sembcorp 49 persen",
+        "en": "PLN Nusantara Renewables 51 percent, Sembcorp 49 percent"
+       }
+      },
+      {
+       "label": {
+        "id": "Nilai proyek",
+        "en": "Project value"
+       },
+       "nilai": {
+        "id": "USD 64 juta (media)",
+        "en": "USD 64 million (media)"
+       }
+      },
+      {
+       "label": {
+        "id": "Operasi",
+        "en": "Operation"
+       },
+       "nilai": {
+        "id": "Tahap 1 sinkron 22 Feb 2024; diresmikan 20 Jan 2025",
+        "en": "Stage 1 synchronised 22 Feb 2024; inaugurated 20 Jan 2025"
+       }
+      }
+     ],
+     "tindakan": [
+      {
+       "id": "Kemitraan BUMN dan swasta asing, tahap bertingkat dengan baterai untuk stabilitas.",
+       "en": "State-owned and foreign private partnership, staged build with batteries for stability."
+      }
+     ],
+     "sebab": [
+      {
+       "id": "Analisis METI (Hipotesis): tahap 1 kecil di lahan 10 ha memberi bukti operasi cepat; penyimpanan baterai membantu kestabilan. Sumber tidak menyatakan faktor; target operasi penuh sempat mundur dari 22 Des 2024.",
+       "en": "METI analysis (Hypothesis): a small stage 1 on 10 ha gave quick proof of operation; battery storage helps stability. Sources do not state factors; full operation slipped from the 22 Dec 2024 target."
+      }
+     ],
+     "angka": [],
+     "pelajaran": [
+      {
+       "id": "Kecepatan tahap awal tercapai, tetapi tarif, faktor kapasitas, dan produksi tidak ditemukan di sumber sehingga keberhasilan ekonomi belum dapat dinilai.",
+       "en": "Stage 1 speed was met, but tariff, capacity factor and output were not found in sources so economic success cannot be judged."
+      }
+     ],
+     "faktor": {
+      "pendanaan": true
+     },
+     "sumber": [
+      "ikn"
+     ]
+    },
+    {
+     "id": "benban",
+     "nama": "Benban Solar Park",
+     "jenis": "berhasil",
+     "negara": "EG",
+     "lokasi": {
+      "id": "Aswan, Mesir",
+      "en": "Aswan, Egypt"
+     },
+     "profil": [
+      {
+       "label": {
+        "id": "Kapasitas",
+        "en": "Capacity"
+       },
+       "nilai": {
+        "id": "1.465 MW dikontrak (EBRD); 1.800 MW nominal (Wikipedia)",
+        "en": "1,465 MW contracted (EBRD); 1,800 MW nameplate (Wikipedia)"
+       }
+      },
+      {
+       "label": {
+        "id": "Pendana",
+        "en": "Financiers"
+       },
+       "nilai": {
+        "id": "EBRD USD 1,1 miliar di 16 PLTS 750 MW; IFC USD 653 juta untuk 13 PLTS; MIGA USD 210 juta asuransi risiko politik",
+        "en": "EBRD USD 1.1 billion in 16 plants 750 MW; IFC USD 653 million for 13 plants; MIGA USD 210 million political risk insurance"
+       }
+      },
+      {
+       "label": {
+        "id": "Tarif FiT",
+        "en": "FiT tariff"
+       },
+       "nilai": {
+        "id": "Putaran 1 USD 14,34 sen; putaran 2 USD 8,4 sen per kWh",
+        "en": "Round 1 USD 14.34 cents; round 2 USD 8.4 cents per kWh"
+       }
+      },
+      {
+       "label": {
+        "id": "Tersambung jaringan",
+        "en": "Grid connected"
+       },
+       "nilai": "2019"
+      }
+     ],
+     "tindakan": [
+      {
+       "id": "Program FiT Nubian Suns: satu kawasan 41 petak untuk banyak pengembang; dokumen standar dan pemrosesan massal oleh IFC; EETC membangun gardu.",
+       "en": "Nubian Suns FiT programme: one zone with 41 plots for many developers; standard documents and bulk processing by IFC; EETC builds substations."
+      }
+     ],
+     "sebab": [
+      {
+       "id": "Sumber menyatakan pergeseran dari FiT ke lelang membangun kepercayaan investor dan menurunkan harga (Kom Ombo USD 0,0247 per kWh).",
+       "en": "Sources state the move from FiT to auctions built investor trust and lowered prices (Kom Ombo USD 0.0247 per kWh)."
+      },
+      {
+       "id": "Putaran 1 ditinggalkan investor karena klausul PPA; putaran 2 menambah arbitrase luar negeri dan menurunkan syarat dana asing USD dari 85 ke 70 persen (Clifford Chance).",
+       "en": "Round 1 saw investors pull back over PPA clauses; round 2 added offshore arbitration and lowered the foreign USD funding requirement from 85 to 70 percent (Clifford Chance)."
+      }
+     ],
+     "angka": [
+      {
+       "label": {
+        "id": "Tarif lelang Kom Ombo",
+        "en": "Kom Ombo auction tariff"
+       },
+       "nilai": 2.47,
+       "d": 2,
+       "satuan": "sen USD per kWh",
+       "sumber": "ebrd",
+       "est": false
+      },
+      {
+       "label": {
+        "id": "Penambahan kapasitas terpasang nasional",
+        "en": "Addition to national installed capacity"
+       },
+       "nilai": 2.65,
+       "d": 2,
+       "satuan": "%",
+       "sumber": "ebrd",
+       "est": false
+      }
+     ],
+     "pelajaran": [
+      {
+       "id": "Kawasan terpadu, dokumen PPA standar yang diperbaiki, dan penjaminan risiko politik menurunkan risiko; FiT awal terlalu tinggi lalu diganti lelang.",
+       "en": "An integrated zone, standard PPAs that were fixed and political risk cover lowered risk; the initial FiT was too high and was replaced by auctions."
+      }
+     ],
+     "faktor": {
+      "lahan": true,
+      "ppa_tarif": true,
+      "pendanaan": true,
+      "jaringan": true,
+      "kepastian_kebijakan": true
+     },
+     "sumber": [
+      "benban",
+      "ebrd",
+      "cc"
+     ]
+    },
+    {
+     "id": "aldhafra",
+     "nama": "Al Dhafra Solar PV",
+     "jenis": "berhasil",
+     "negara": "AE",
+     "lokasi": {
+      "id": "Abu Dhabi, Uni Emirat Arab",
+      "en": "Abu Dhabi, United Arab Emirates"
+     },
+     "profil": [
+      {
+       "label": {
+        "id": "Kapasitas",
+        "en": "Capacity"
+       },
+       "nilai": "2 GW"
+      },
+      {
+       "label": {
+        "id": "Pemilik",
+        "en": "Owners"
+       },
+       "nilai": {
+        "id": "TAQA 40 persen; Masdar, EDF Renewables, JinkoPower 20 persen masing-masing",
+        "en": "TAQA 40 percent; Masdar, EDF Renewables, JinkoPower 20 percent each"
+       }
+      },
+      {
+       "label": {
+        "id": "Pendana",
+        "en": "Financiers"
+       },
+       "nilai": {
+        "id": "7 bank internasional; penutupan Desember 2020",
+        "en": "7 international banks; financial close December 2020"
+       }
+      },
+      {
+       "label": {
+        "id": "Tarif",
+        "en": "Tariff"
+       },
+       "nilai": {
+        "id": "USD 1,35 sen per kWh (penawaran Mei 2020); Masdar: AED 4,85 (sekitar USD 1,32 sen) setelah penutupan pembiayaan",
+        "en": "USD 1.35 cents per kWh (May 2020 bid); Masdar: AED 4.85 (about USD 1.32 cents) after financial close"
+       }
+      },
+      {
+       "label": {
+        "id": "COD",
+        "en": "COD"
+       },
+       "nilai": {
+        "id": "Target 2022; satu sumber lemah menyebut 30 Jun 2023",
+        "en": "Target 2022; one weak source says 30 Jun 2023"
+       }
+      }
+     ],
+     "tindakan": [
+      {
+       "id": "Lelang IPP kompetitif oleh EWEC dengan pembeli negara tunggal.",
+       "en": "Competitive IPP tender by EWEC with a single state buyer."
+      }
+     ],
+     "sebab": [
+      {
+       "id": "Analisis METI (Hipotesis): tarif rendah dimungkinkan radiasi tinggi, lahan murah, pembeli negara berperingkat tinggi, dan biaya modal rendah. Sumber tidak menyatakan faktor.",
+       "en": "METI analysis (Hypothesis): the low tariff is enabled by high irradiance, cheap land, a highly rated state buyer and low cost of capital. Sources do not state factors."
+      }
+     ],
+     "angka": [
+      {
+       "label": {
+        "id": "Tarif penawaran menang",
+        "en": "Winning bid tariff"
+       },
+       "nilai": 1.35,
+       "d": 2,
+       "satuan": "sen USD per kWh",
+       "sumber": "dhafra",
+       "est": false
+      }
+     ],
+     "pelajaran": [
+      {
+       "id": "Lelang kompetitif dengan pembeli kredibel menghasilkan tarif sangat rendah; kondisi UEA tidak otomatis berlaku di Indonesia.",
+       "en": "A competitive tender with a credible buyer yields very low tariffs; UAE conditions do not automatically transfer to Indonesia."
+      }
+     ],
+     "faktor": {
+      "ppa_tarif": true,
+      "pendanaan": true,
+      "tata_kelola_pengadaan": true
+     },
+     "sumber": [
+      "dhafra",
+      "dhafra2"
+     ]
+    },
+    {
+     "id": "bhadla",
+     "nama": "Bhadla Solar Park",
+     "jenis": "berhasil",
+     "negara": "IN",
+     "lokasi": {
+      "id": "Jodhpur, Rajasthan, India",
+      "en": "Jodhpur, Rajasthan, India"
+     },
+     "profil": [
+      {
+       "label": {
+        "id": "Kapasitas",
+        "en": "Capacity"
+       },
+       "nilai": {
+        "id": "2.245 MW (Mercom); Wikipedia 2.055 MW",
+        "en": "2,245 MW (Mercom); Wikipedia 2,055 MW"
+       }
+      },
+      {
+       "label": {
+        "id": "Luas",
+        "en": "Area"
+       },
+       "nilai": {
+        "id": "lebih dari 14.000 acre",
+        "en": "over 14,000 acres"
+       }
+      },
+      {
+       "label": {
+        "id": "Pengembang",
+        "en": "Developers"
+       },
+       "nilai": {
+        "id": "RSPDCL 745 MW, Adani JV 500 MW, ACME, SB Energy dan lain-lain",
+        "en": "RSPDCL 745 MW, Adani JV 500 MW, ACME, SB Energy and others"
+       }
+      },
+      {
+       "label": {
+        "id": "Tarif lelang",
+        "en": "Auction tariff"
+       },
+       "nilai": {
+        "id": "INR 2,44 dan 2,45 per kWh (Mei 2017); INR 2,47 dan 2,48 (Des 2019)",
+        "en": "INR 2.44 and 2.45 per kWh (May 2017); INR 2.47 and 2.48 (Dec 2019)"
+       }
+      },
+      {
+       "label": {
+        "id": "Beroperasi penuh",
+        "en": "Fully operational"
+       },
+       "nilai": "2020-03"
+      }
+     ],
+     "tindakan": [
+      {
+       "id": "Taman surya milik negara dengan lelang SECI per tahap; pengembang hanya menawar tarif.",
+       "en": "State-owned solar park with SECI tranche auctions; developers only bid tariffs."
+      }
+     ],
+     "sebab": [
+      {
+       "id": "Analisis METI (Hipotesis): lahan dan evakuasi disiapkan di muka sehingga lelang kompetitif; sumber hanya melaporkan hasil lelang.",
+       "en": "METI analysis (Hypothesis): land and evacuation prepared upfront so auctions were competitive; sources only report auction results."
+      }
+     ],
+     "angka": [
+      {
+       "label": {
+        "id": "Rekor tarif 2017 (belum terlampaui menurut Mercom)",
+        "en": "2017 record tariff (not breached per Mercom)"
+       },
+       "nilai": 2.44,
+       "d": 2,
+       "satuan": "INR per kWh",
+       "sumber": "bhadla2",
+       "est": false
+      }
+     ],
+     "pelajaran": [
+      {
+       "id": "Model taman surya siap pakai dengan lelang bertahap mengurangi risiko lahan dan jaringan bagi pengembang.",
+       "en": "A ready-made solar park with staged auctions removes land and grid risk for developers."
+      }
+     ],
+     "faktor": {
+      "lahan": true,
+      "ppa_tarif": true,
+      "jaringan": true,
+      "tata_kelola_pengadaan": true
+     },
+     "sumber": [
+      "bhadla",
+      "bhadla2"
+     ]
+    },
+    {
+     "id": "gea4",
+     "nama": "Lelang Green Energy Auction 4 (Filipina)",
+     "jenis": "berhasil",
+     "negara": "PH",
+     "lokasi": {
+      "id": "Filipina",
+      "en": "Philippines"
+     },
+     "profil": [
+      {
+       "label": {
+        "id": "Target dan hasil",
+        "en": "Target and result"
+       },
+       "nilai": {
+        "id": "Target sekitar 10.653 MW; hasil awal 9.423 MW (88 persen), angka akhir sekitar 10.195 MW (96 persen)",
+        "en": "Target about 10,653 MW; preliminary 9,423 MW (88 percent), final about 10,195 MW (96 percent)"
+       }
+      },
+      {
+       "label": {
+        "id": "Batas harga ERC (bukan harga menang)",
+        "en": "ERC price ceilings (not winning prices)"
+       },
+       "nilai": {
+        "id": "PLTS tanah PHP 4,4832; atap PHP 5,68; terapung PHP 6,528; surya dengan penyimpanan PHP 5,4028 per kWh",
+        "en": "Ground-mounted PHP 4.4832; rooftop PHP 5.68; floating PHP 6.528; solar with storage PHP 5.4028 per kWh"
+       }
+      }
+     ],
+     "tindakan": [
+      {
+       "id": "Lelang energi hijau bertahap oleh DOE dengan batas harga dari regulator, memasukkan surya tanah, terapung, atap, dan surya dengan penyimpanan.",
+       "en": "Staged green energy auctions by the DOE with regulator price caps, covering ground-mounted, floating, rooftop and solar plus storage."
+      }
+     ],
+     "sebab": [
+      {
+       "id": "Analisis METI (Hipotesis): volume besar dengan batas harga jelas menarik penawaran 9,4 GW. Sumber tidak menyatakan faktor; harga menang per kWh tidak ditemukan.",
+       "en": "METI analysis (Hypothesis): large volume with clear price caps drew 9.4 GW of bids. Sources do not state factors; winning prices per kWh were not found."
+      }
+     ],
+     "angka": [
+      {
+       "label": {
+        "id": "Kapasitas dialokasikan (akhir)",
+        "en": "Capacity allocated (final)"
+       },
+       "nilai": 10195,
+       "d": 0,
+       "satuan": "MW",
+       "sumber": "gea4b",
+       "est": false
+      }
+     ],
+     "pelajaran": [
+      {
+       "id": "Lelang berskala besar bisa berjalan, tetapi keberhasilan hanya terbukti bila proyek terbangun dan beroperasi (belum ada data).",
+       "en": "Large auctions can work, but success only shows when projects are built and operating (no data yet)."
+      }
+     ],
+     "faktor": {
+      "ppa_tarif": true,
+      "tata_kelola_pengadaan": true
+     },
+     "sumber": [
+      "gea4",
+      "gea4b"
+     ]
+    }
+   ]
+  },
+  "40": {
+   "tipe": "kasus",
+   "sumber": [
+    "kpk",
+    "vnallens",
+    "eiser"
+   ],
+   "catatan": {
+    "id": "Hak jawab: pihak yang disebut dapat mengirim koreksi lewat formulir koreksi platform.",
+    "en": "Right of reply: named parties can send corrections through the platform correction form."
+   },
+   "butir": [
+    {
+     "id": "plts-desa-esdm",
+     "nama": "PLTS desa bantuan pemerintah yang mati setelah serah terima",
+     "jenis": "gagal",
+     "negara": "ID",
+     "lokasi": {
+      "id": "Bengkulu, Sulawesi Tenggara, Jawa Tengah dan lainnya",
+      "en": "Bengkulu, Southeast Sulawesi, Central Java and others"
+     },
+     "kronologi": [
+      {
+       "tanggal": "2016-02-03",
+       "teks": {
+        "id": "Dirjen EBTKE mengakui SDM pengelola belum siap; UP3KN menyebut alih aset ke daerah tersendat dan daerah tak punya anggaran pemeliharaan.",
+        "en": "The EBTKE director general admits operators were unprepared; UP3KN says asset transfers to regions stalled and regions lacked maintenance budgets."
+       }
+      },
+      {
+       "tanggal": "2017-12-12",
+       "teks": {
+        "id": "BPK: 112 proyek EBT IPP (7,25 MW, Rp 467,078 miliar) rusak, Rp 305 miliar rusak berat; total temuan 142 proyek, 27,9 MW, Rp 1,17 triliun. Artikel tidak menyatakan semuanya PLTS.",
+        "en": "BPK: 112 IPP renewable projects (7.25 MW, IDR 467.078 billion) damaged, IDR 305 billion severely; total finding 142 projects, 27.9 MW, IDR 1.17 trillion. The article does not say all are solar."
+       }
+      },
+      {
+       "tanggal": "2020-10-03",
+       "teks": {
+        "id": "Gajah Makmur, Mukomuko: dibangun 2016, beroperasi awal 2017, mati akhir 2017, masih mati pada September 2020; kepemilikan dan tanggung jawab perawatan tidak jelas.",
+        "en": "Gajah Makmur, Mukomuko: built 2016, running early 2017, dead by end 2017, still dead in September 2020; ownership and maintenance duty unclear."
+       }
+      },
+      {
+       "tanggal": "2026-11-02",
+       "teks": {
+        "id": "KPK: sebagian besar dari 629 PLTS ESDM 2023 tidak berjalan; potensi kerugian negara Rp 2,5 triliun menurut perhitungan KPK; mark-up dan kolusi TKDN; vendor terkonsentrasi pada 20 perusahaan, 4 terlibat korupsi; revitalisasi mangkrak lagi.",
+        "en": "KPK: most of 629 Energy Ministry PLTS (2023) not running; potential state loss IDR 2.5 trillion per KPK; mark-ups and TKDN collusion; vendors concentrated in 20 firms, 4 involved in corruption; revitalisation stalled again."
+       }
+      }
+     ],
+     "sebab": [
+      {
+       "id": "Faktor yang dinyatakan sumber: SDM pengelola belum siap, alih aset tersendat, tanpa anggaran operasional daerah, tanpa koordinasi sejak awal, keluaran tidak sesuai kebutuhan PLN, tanpa interkoneksi, pengadaan terkonsentrasi.",
+       "en": "Factors stated by sources: unprepared operators, stalled asset transfers, no regional operating budget, no coordination from the start, output not matching PLN needs, no interconnection, concentrated procurement."
+      }
+     ],
+     "terdampak": {
+      "id": "Warga yang kembali ke genset solar (Rp 200 ribu sampai Rp 500 ribu per bulan di Gajah Makmur) dan negara (potensi kerugian menurut KPK). Kasus per desa bukan sampel nasional dan tidak ada temuan BPK khusus PLTS terpusat yang ditemukan.",
+      "en": "Villagers returning to diesel (IDR 200k to 500k per month at Gajah Makmur) and the state (loss potential per KPK). Village cases are not a national sample and no BPK finding specific to centralised PLTS was found."
+     },
+     "seharusnya": {
+      "id": "Analisis METI (Hipotesis): serah terima sah hanya bila ada operator terlatih, iuran atau anggaran O&M, dan kepemilikan aset tertulis, plus pemantauan pascaserah terima; selaras dengan rekomendasi KPK (tata kelola sejak perencanaan) dan peringatan IESR untuk program Koperasi Merah Putih.",
+      "en": "METI analysis (Hypothesis): handover is valid only with a trained operator, an O&M fee or budget and written asset ownership, plus post-handover monitoring; consistent with KPK advice (governance from planning) and the IESR warning on the Koperasi Merah Putih programme."
+     },
+     "tanda_bahaya": [
+      {
+       "id": "Dokumen serah terima tanpa nama pengelola dan anggaran O&M",
+       "en": "Handover documents without a named operator and O&M budget"
+      },
+      {
+       "id": "Pengadaan terkonsentrasi pada sedikit vendor",
+       "en": "Procurement concentrated on few vendors"
+      },
+      {
+       "id": "Tidak ada rencana interkoneksi atau pemakaian listrik",
+       "en": "No interconnection or load plan"
+      }
+     ],
+     "faktor": {
+      "pengelola_om": true,
+      "tata_kelola_pengadaan": true,
+      "jaringan": true
+     },
+     "sumber": [
+      "detik2016",
+      "detikbpk",
+      "gajah",
+      "towea",
+      "karimun",
+      "kpk",
+      "iesrkop"
+     ],
+     "hak_jawab": true
+    },
+    {
+     "id": "kubu",
+     "nama": "PLTS Kubu, Karangasem (Bali)",
+     "jenis": "gagal",
+     "negara": "ID",
+     "lokasi": {
+      "id": "Kubu, Karangasem, Bali",
+      "en": "Kubu, Karangasem, Bali"
+     },
+     "kronologi": [
+      {
+       "tanggal": "2013-01-01",
+       "teks": {
+        "id": "Dibangun dengan APBN sekitar Rp 26 miliar, rancangan hingga 1 MWp di lahan sekitar 1,2 ha (tahun 2013 menurut media).",
+        "en": "Built with state budget about IDR 26 billion, designed up to 1 MWp on about 1.2 ha (year 2013 per media)."
+       }
+      },
+      {
+       "tanggal": "2017-01-01",
+       "teks": {
+        "id": "ESDM menghibahkan aset ke Pemkab Karangasem.",
+        "en": "The Energy Ministry grants the asset to the Karangasem regency."
+       }
+      },
+      {
+       "tanggal": "2026-08-28",
+       "teks": {
+        "id": "Pengamatan lapangan: panel tertutup semak, sebagian rusak, pagar digembok, hampir tidak berfungsi.",
+        "en": "Field observation: panels overgrown, some damaged, fence padlocked, almost not functioning."
+       }
+      }
+     ],
+     "sebab": [
+      {
+       "id": "Belum ada OPD pemkab yang bertugas di usaha kelistrikan; rencana pengalihan ke Perusda atau Perseroda belum jalan (perlu penyertaan modal dan penilaian aset KPKNL); belum ada kerja sama B2B PLN dan Pemkab sehingga listrik tidak bisa disalurkan.",
+       "en": "No regency agency has an electricity-business mandate; the plan to move it to a regional company has not started (needs capital injection and KPKNL asset valuation); no PLN to regency B2B deal so power cannot be delivered."
+      }
+     ],
+     "terdampak": {
+      "id": "Pemkab dan warga; aset senilai Rp 26 miliar tidak menghasilkan listrik (laporan media satu kali, 31 Agu 2026).",
+      "en": "The regency and residents; an IDR 26 billion asset generates no power (single media report, 31 Aug 2026)."
+     },
+     "seharusnya": {
+      "id": "Analisis METI (Hipotesis): tetapkan pengelola dan skema jual listrik ke PLN sebelum hibah.",
+      "en": "METI analysis (Hypothesis): designate an operator and a power sale scheme to PLN before the grant."
+     },
+     "tanda_bahaya": [
+      {
+       "id": "Hibah aset ke pemda tanpa lembaga pengelola",
+       "en": "Asset grant to a local government without a managing entity"
+      },
+      {
+       "id": "Tidak ada perjanjian jual listrik ke PLN",
+       "en": "No power sale agreement with PLN"
+      }
+     ],
+     "faktor": {
+      "pengelola_om": true,
+      "jaringan": true,
+      "ppa_tarif": true
+     },
+     "sumber": [
+      "kubu"
+     ],
+     "hak_jawab": true
+    },
+    {
+     "id": "lelang-plts-pln",
+     "nama": "Lelang dan kontrak IPP energi terbarukan PLN yang sepi atau batal",
+     "jenis": "gagal",
+     "negara": "ID",
+     "lokasi": {
+      "id": "Nasional dan Bali",
+      "en": "National and Bali"
+     },
+     "kronologi": [
+      {
+       "tanggal": "2017-01-23",
+       "teks": {
+        "id": "PLN: tidak ada perusahaan menyerahkan dokumen tender untuk tiga proyeknya tahun sebelumnya.",
+        "en": "PLN: no company submitted tender documents for three of its projects the year before."
+       }
+      },
+      {
+       "tanggal": "2017-08-04",
+       "teks": {
+        "id": "Sebanyak 11 dari 64 IPP energi terbarukan mundur dari kesepakatan jual beli listrik dengan PLN; PLN membantah memaksa kontrak.",
+        "en": "11 of 64 renewable IPPs withdrew from power purchase deals with PLN; PLN denied forcing contracts."
+       }
+      },
+      {
+       "tanggal": "2019-09-24",
+       "teks": {
+        "id": "Samindo Resources mundur dari tender PLTS 50 MW di Bali; PLN sudah melelang ulang PLTS Bali Barat dan Timur 25 MW sejak Maret 2019.",
+        "en": "Samindo Resources withdrew from the 50 MW Bali solar tender; PLN had re-tendered Bali West and East 25 MW each since March 2019."
+       }
+      },
+      {
+       "tanggal": "2023-11-14",
+       "teks": {
+        "id": "ESDM menyoroti lambannya lelang PLTS PLN; salah satu sebab, tarif sulit disepakati dengan pengembang.",
+        "en": "The Energy Ministry flags slow PLN solar tenders; one cause is tariffs hard to agree with developers."
+       }
+      }
+     ],
+     "sebab": [
+      {
+       "id": "Faktor yang dinyatakan sumber: klausul PPA dan tarif sulit disepakati, syarat pengalaman IPP PLTS. Sumber tidak menyajikan data pembatalan resmi; kasus ini kumpulan laporan media.",
+       "en": "Factors stated by sources: PPA clauses and tariffs hard to agree, IPP solar experience requirement. Sources do not present official cancellation data; this case is a collection of media reports."
+      }
+     ],
+     "terdampak": {
+      "id": "PLN, pengembang yang gugur, dan daerah yang menunggu pembangkit pengganti diesel.",
+      "en": "PLN, developers who dropped out, and regions waiting for diesel-replacing plants."
+     },
+     "seharusnya": {
+      "id": "Analisis METI (Hipotesis): PPA standar dengan alokasi risiko yang bisa dibiayai bank dan tarif yang disepakati sebelum tender (bandingkan perbaikan PPA Mesir putaran 2).",
+      "en": "METI analysis (Hypothesis): a standard PPA with bankable risk allocation and tariffs agreed before tendering (compare the Egypt round 2 PPA fixes)."
+     },
+     "tanda_bahaya": [
+      {
+       "id": "Tender tanpa satu pun peserta",
+       "en": "A tender with no participants"
+      },
+      {
+       "id": "Peserta kualifikasi mundur menjelang kontrak",
+       "en": "Qualified bidders withdrawing before contract"
+      }
+     ],
+     "faktor": {
+      "ppa_tarif": true,
+      "pendanaan": true,
+      "tata_kelola_pengadaan": true
+     },
+     "sumber": [
+      "lelang17",
+      "lelang17b",
+      "samindo",
+      "lelang23"
+     ],
+     "hak_jawab": true
+    },
+    {
+     "id": "vn-fit",
+     "nama": "Ledakan FiT surya Vietnam 2019 sampai 2020 dan sengketa FiT",
+     "jenis": "gagal",
+     "negara": "VN",
+     "lokasi": {
+      "id": "Vietnam",
+      "en": "Vietnam"
+     },
+     "kronologi": [
+      {
+       "tanggal": "2017-04-11",
+       "teks": {
+        "id": "Keputusan 11/2017/QD-TTg menetapkan FiT surya USD 9,35 sen per kWh selama 20 tahun untuk proyek beroperasi sebelum 30 Jun 2019.",
+        "en": "Decision 11/2017/QD-TTg sets a solar FiT of USD 9.35 cents per kWh for 20 years for projects operating by 30 Jun 2019."
+       }
+      },
+      {
+       "tanggal": "2019-06-30",
+       "teks": {
+        "id": "Sekitar 4,46 GW (82 pembangkit) terhubung pada tenggat; akhir 2019 sebagian proyek selatan mengalami kurtailmen harian hingga 80 persen (firma hukum).",
+        "en": "About 4.46 GW (82 plants) connected by the deadline; late 2019 some southern projects saw daily curtailment up to 80 percent (law firm)."
+       }
+      },
+      {
+       "tanggal": "2023-12-01",
+       "teks": {
+        "id": "Audit Inspektorat Pemerintah: 14 proyek di Ninh Thuan menerima FiT tertinggi secara tidak tepat (akhir 2023).",
+        "en": "Government Inspectorate audit: 14 Ninh Thuan projects wrongly received the top FiT (late 2023)."
+       }
+      },
+      {
+       "tanggal": "2025-07-01",
+       "teks": {
+        "id": "Investor menolak potensi pemotongan FiT retroaktif untuk proyek COD sebelum atau selama 2021 (sekitar 12 GW surya dan bayu menurut satu sumber); hasil akhir tidak terkonfirmasi.",
+        "en": "Investors protest possible retroactive FiT cuts for projects with COD before or during 2021 (about 12 GW solar and wind per one source); final outcome unconfirmed."
+       }
+      }
+     ],
+     "sebab": [
+      {
+       "id": "Faktor menurut sumber: transmisi tertinggal dari ledakan kapasitas, kebijakan berbalik antara kementerian dan kantor PM, sengketa tafsir kelayakan FiT.",
+       "en": "Factors per sources: transmission lagged the capacity boom, policy reversals between the ministry and PM office, FiT eligibility disputes."
+      }
+     ],
+     "terdampak": {
+      "id": "Investor domestik dan asing, pemberi pinjaman, dan EVN sebagai pembeli.",
+      "en": "Domestic and foreign investors, lenders and EVN as buyer."
+     },
+     "seharusnya": {
+      "id": "Analisis METI (Hipotesis): sinkronkan tenggat FiT dengan kesiapan transmisi dengan kuota bertahap; aturan penurunan tarif tidak berlaku surut.",
+      "en": "METI analysis (Hypothesis): sync FiT deadlines with grid readiness using staged quotas; no retroactive tariff reductions."
+     },
+     "tanda_bahaya": [
+      {
+       "id": "Tenggat FiT pendek dengan volume jauh di atas kapasitas jaringan",
+       "en": "Short FiT deadline with volume far above grid capacity"
+      },
+      {
+       "id": "Kementerian menafsirkan kelayakan tarif secara berbeda",
+       "en": "Ministries interpreting tariff eligibility differently"
+      }
+     ],
+     "faktor": {
+      "ppa_tarif": true,
+      "jaringan": true,
+      "kepastian_kebijakan": true,
+      "tata_kelola_pengadaan": true
+     },
+     "sumber": [
+      "vnwiki",
+      "vnallens",
+      "vnvir"
+     ],
+     "hak_jawab": true
+    },
+    {
+     "id": "es-retro",
+     "nama": "Pemotongan retroaktif tarif energi terbarukan Spanyol",
+     "jenis": "gagal",
+     "negara": "ES",
+     "lokasi": {
+      "id": "Spanyol",
+      "en": "Spain"
+     },
+     "kronologi": [
+      {
+       "tanggal": "2008-12-31",
+       "teks": {
+        "id": "Spanyol menambah rekor 2,6 GW PV pada 2008 hingga 3,5 GW.",
+        "en": "Spain adds a record 2.6 GW PV in 2008 to reach 3.5 GW."
+       }
+      },
+      {
+       "tanggal": "2010-12-31",
+       "teks": {
+        "id": "Pemerintah memotong subsidi proyek surya yang sudah ada secara retroaktif; asosiasi PV memperingatkan ratusan operator bisa bangkrut.",
+        "en": "The government retroactively cuts subsidies for existing solar; the PV association warns hundreds of operators could go bankrupt."
+       }
+      },
+      {
+       "tanggal": "2017-05-04",
+       "teks": {
+        "id": "ICSID (Eiser v Spain): perubahan 2013 melanggar Energy Charter Treaty, sekitar EUR 128 juta.",
+        "en": "ICSID (Eiser v Spain): the 2013 changes breached the Energy Charter Treaty, about EUR 128 million."
+       }
+      },
+      {
+       "tanggal": "2019-06-06",
+       "teks": {
+        "id": "ICSID: NextEra menang EUR 290,4 juta; Spanyol dilaporkan menempuh pembatalan alih-alih membayar.",
+        "en": "ICSID: NextEra wins EUR 290.4 million; Spain reportedly pursued annulment rather than paying."
+       }
+      }
+     ],
+     "sebab": [
+      {
+       "id": "Faktor menurut sumber: ledakan kapasitas di bawah tarif tetap tinggi lalu tarif yang dijanjikan dipotong. Detail defisit tarif tidak ada di sumber yang dibaca.",
+       "en": "Factors per sources: a capacity boom under high fixed tariffs followed by cuts to promised tariffs. Tariff deficit detail is not in the sources read."
+      }
+     ],
+     "terdampak": {
+      "id": "Investor PV dan CSP (lebih dari 40 kasus sengketa dilaporkan 2017) dan kreditur.",
+      "en": "PV and CSP investors (over 40 dispute cases reported in 2017) and lenders."
+     },
+     "seharusnya": {
+      "id": "Analisis METI (Hipotesis): kuota tahunan dan degresi tarif otomatis di muka agar tarif yang dikunci tidak perlu dipotong.",
+      "en": "METI analysis (Hypothesis): annual caps and automatic upfront tariff degression so locked tariffs need not be cut."
+     },
+     "tanda_bahaya": [
+      {
+       "id": "Tarif tetap tanpa kuota dan tanpa degresi",
+       "en": "Fixed tariff without cap or degression"
+      },
+      {
+       "id": "Defisit pembeli listrik melebar",
+       "en": "Widening buyer deficit"
+      }
+     ],
+     "faktor": {
+      "ppa_tarif": true,
+      "pendanaan": true,
+      "kepastian_kebijakan": true
+     },
+     "sumber": [
+      "eswiki",
+      "eiser",
+      "nextera"
+     ],
+     "hak_jawab": true
+    }
+   ]
+  },
+  "41": {
+   "tipe": "pola",
+   "sumber": [
+    "ed"
+   ],
+   "catatan": {
+    "id": "Sel dibangun dari bendera faktor tiap kasus; pemetaan faktor ke kasus adalah analisis METI (Hipotesis) atas fakta di bab 39 dan 40.",
+    "en": "Cells are built from each case factor flags; mapping factors to cases is METI analysis (Hypothesis) on facts in chapters 39 and 40."
+   },
+   "faktor": [
+    {
+     "k": "lahan",
+     "l": {
+      "id": "Lahan dan lokasi siap",
+      "en": "Land and site ready"
+     }
+    },
+    {
+     "k": "perizinan",
+     "l": {
+      "id": "Perizinan jelas",
+      "en": "Permitting clear"
+     }
+    },
+    {
+     "k": "ppa_tarif",
+     "l": {
+      "id": "PPA dan tarif disepakati",
+      "en": "PPA and tariff agreed"
+     }
+    },
+    {
+     "k": "pendanaan",
+     "l": {
+      "id": "Pendanaan dan penjaminan",
+      "en": "Financing and guarantees"
+     }
+    },
+    {
+     "k": "jaringan",
+     "l": {
+      "id": "Jaringan dan interkoneksi",
+      "en": "Grid and interconnection"
+     }
+    },
+    {
+     "k": "pengelola_om",
+     "l": {
+      "id": "Pengelola dan O&M",
+      "en": "Operator and O&M"
+     }
+    },
+    {
+     "k": "kepastian_kebijakan",
+     "l": {
+      "id": "Kepastian kebijakan",
+      "en": "Policy certainty"
+     }
+    },
+    {
+     "k": "tata_kelola_pengadaan",
+     "l": {
+      "id": "Tata kelola pengadaan",
+      "en": "Procurement governance"
+     }
+    }
+   ]
+  },
+  "42": {
+   "tipe": "periksa",
+   "sumber": [
+    "ed"
+   ],
+   "peran": [
+    {
+     "k": "pengembang",
+     "l": {
+      "id": "Pengembang",
+      "en": "Developer"
+     }
+    },
+    {
+     "k": "investor",
+     "l": {
+      "id": "Investor",
+      "en": "Investor"
+     }
+    },
+    {
+     "k": "pemda",
+     "l": {
+      "id": "Pemerintah daerah",
+      "en": "Local government"
+     }
+    },
+    {
+     "k": "pusat",
+     "l": {
+      "id": "Pemerintah pusat",
+      "en": "Central government"
+     }
+    },
+    {
+     "k": "pln",
+     "l": {
+      "id": "PLN",
+      "en": "PLN"
+     }
+    },
+    {
+     "k": "meti",
+     "l": {
+      "id": "METI",
+      "en": "METI"
+     }
+    }
+   ],
+   "tahap": [
+    {
+     "k": "lokasi",
+     "l": {
+      "id": "Penyaringan lokasi",
+      "en": "Site screening"
+     }
+    },
+    {
+     "k": "izin",
+     "l": {
+      "id": "Perizinan",
+      "en": "Permitting"
+     }
+    },
+    {
+     "k": "ppa",
+     "l": {
+      "id": "PPA",
+      "en": "PPA"
+     }
+    },
+    {
+     "k": "dana",
+     "l": {
+      "id": "Pendanaan",
+      "en": "Financing"
+     }
+    },
+    {
+     "k": "bangun",
+     "l": {
+      "id": "Konstruksi",
+      "en": "Construction"
+     }
+    },
+    {
+     "k": "operasi",
+     "l": {
+      "id": "Operasi",
+      "en": "Operation"
+     }
+    }
+   ],
+   "butir": [
+    {
+     "peran": "pengembang",
+     "tahap": "lokasi",
+     "teks": {
+      "id": "Pertimbangkan permukaan waduk eksisting yang sudah punya transmisi dan pembeli (contoh Cirata).",
+      "en": "Consider existing reservoir surfaces that already have transmission and a buyer (Cirata example)."
+     },
+     "dasar": "masdar"
+    },
+    {
+     "peran": "pengembang",
+     "tahap": "lokasi",
+     "teks": {
+      "id": "Cek PVOUT lokasi di Global Solar Atlas sebelum studi kelayakan.",
+      "en": "Check site PVOUT in the Global Solar Atlas before the feasibility study."
+     },
+     "dasar": "gsa"
+    },
+    {
+     "peran": "pengembang",
+     "tahap": "dana",
+     "teks": {
+      "id": "Pertimbangkan penjaminan risiko politik dan pembiayaan bersama lembaga pembangunan (contoh Benban).",
+      "en": "Consider political risk cover and development-bank co-lending (Benban example)."
+     },
+     "dasar": "ebrd"
+    },
+    {
+     "peran": "pengembang",
+     "tahap": "bangun",
+     "teks": {
+      "id": "Hitung TKDN modul sesuai Permenperin 34/2024 sejak desain.",
+      "en": "Calculate module local content under Industry Ministry Reg. 34/2024 from design."
+     },
+     "dasar": "tkdn"
+    },
+    {
+     "peran": "pengembang",
+     "tahap": "operasi",
+     "teks": {
+      "id": "Tunjuk operator terlatih dan anggaran O&M tertulis sebelum serah terima.",
+      "en": "Name a trained operator and a written O&M budget before handover."
+     },
+     "dasar": "detik2016"
+    },
+    {
+     "peran": "investor",
+     "tahap": "ppa",
+     "teks": {
+      "id": "Periksa klausul perubahan hukum dan perlindungan investasi (Spanyol, Vietnam).",
+      "en": "Check change-in-law clauses and investment protection (Spain, Vietnam)."
+     },
+     "dasar": "eiser"
+    },
+    {
+     "peran": "investor",
+     "tahap": "dana",
+     "teks": {
+      "id": "Tanyakan alokasi risiko kurtailmen dalam PPA.",
+      "en": "Ask how curtailment risk is allocated in the PPA."
+     },
+     "dasar": "vnallens"
+    },
+    {
+     "peran": "pemda",
+     "tahap": "operasi",
+     "teks": {
+      "id": "Catat kepemilikan aset dan alokasikan anggaran pemeliharaan sebelum menerima alih aset.",
+      "en": "Record asset ownership and allocate maintenance budget before accepting a transfer."
+     },
+     "dasar": "detik2016"
+    },
+    {
+     "peran": "pemda",
+     "tahap": "lokasi",
+     "teks": {
+      "id": "Tetapkan lembaga pengelola dan skema jual listrik ke PLN sebelum menerima hibah (kasus Kubu).",
+      "en": "Designate a managing entity and a power sale scheme to PLN before accepting a grant (Kubu case)."
+     },
+     "dasar": "kubu"
+    },
+    {
+     "peran": "pusat",
+     "tahap": "ppa",
+     "teks": {
+      "id": "Sinkronkan tenggat insentif dengan kesiapan jaringan; hindari perubahan tarif surut.",
+      "en": "Align incentive deadlines with grid readiness; avoid retroactive tariff changes."
+     },
+     "dasar": "vnallens"
+    },
+    {
+     "peran": "pusat",
+     "tahap": "bangun",
+     "teks": {
+      "id": "Cegah konsentrasi vendor dan periksa kolusi TKDN sejak perencanaan (rekomendasi KPK: ETGF).",
+      "en": "Prevent vendor concentration and check TKDN collusion from planning (KPK: ETGF)."
+     },
+     "dasar": "kpk"
+    },
+    {
+     "peran": "pln",
+     "tahap": "ppa",
+     "teks": {
+      "id": "Selesaikan PPA standar dan tarif sebelum tender agar lelang tidak sepi.",
+      "en": "Finalise a standard PPA and tariff before tendering so auctions are not empty."
+     },
+     "dasar": "lelang23"
+    },
+    {
+     "peran": "pln",
+     "tahap": "bangun",
+     "teks": {
+      "id": "Pastikan rencana interkoneksi dan kebutuhan keluaran sebelum proyek dibangun.",
+      "en": "Confirm the interconnection plan and output needs before construction."
+     },
+     "dasar": "kpk"
+    },
+    {
+     "peran": "meti",
+     "tahap": "operasi",
+     "teks": {
+      "id": "Pantau PLTS yang diserahterimakan dan beri ruang hak jawab bagi pihak yang disebut.",
+      "en": "Monitor handed-over plants and give named parties a right of reply."
+     },
+     "dasar": "ed"
+    }
+   ]
+  }
+ }
+}

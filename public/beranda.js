@@ -142,7 +142,7 @@ async function gambarJalur() {
     const [rg, wl, rt, kl, pk, og] = await Promise.all(["ringkas", "wilayah", "rantai_plts", "kalender", "pustaka", "organisasi"].map(muat));
     const J = [["proyek", "/proyek", "pin", rg.hitung.proyek, "proyek"], ["wilayah", "/wilayah", "peta", wl.jumlah, "provinsi"], ["rantai", "/rantai", "pabrik", rt.ringkas.pabrikan, "pabrikan"], ["regulasi", "/regulasi", "timbangan", rg.hitung.regulasi, "regulasi"],
       ["direktori", "/direktori", "orangkunci", og.jumlah, "organisasi"], ["pustaka", "/direktori?tampil=pustaka", "buku", pk.jumlah, "dokumen"], ["kalender", "/kalender", "kalender", kl.jumlah, "acara"], ["insight", "/insight", "grafik", INSIGHT_KARTU, "kartu"]];
-    el.innerHTML = J.map(([k, href, ik, n, u]) => `<a class="jm-jalur" href="${href}"><span class="jm-jalur-ik">${IKON[ik] || ""}</span>${k === "direktori" ? `<span class="jm-pil jm-jalur-kunci">${ikon("kunci", 12)}${esc(t("beranda.j.masuk"))}</span>` : ""}<strong>${esc(t("beranda.j." + k))}</strong><span class="jm-jalur-ket">${esc(t("beranda.j." + k + ".ket"))}</span><b class="jm-jalur-n">${esc(angka(n))} <small>${esc(t("beranda.jn." + u))}</small></b></a>`).join("");
+    el.innerHTML = J.map(([k, href, ik, n, u]) => `<a class="jm-jalur jm-jalur-${k}" href="${href}"><span class="jm-jalur-ik">${IKON[ik] || ""}</span><span class="jm-jalur-t"><span class="jm-jalur-h"><strong>${esc(t("beranda.j." + k))}</strong>${k === "direktori" ? `<span class="jm-pil jm-jalur-kunci">${ikon("kunci", 12)}${esc(t("beranda.j.masuk"))}</span>` : ""}<b class="jm-jalur-n">${esc(angka(n))}<small>${esc(t("beranda.jn." + u))}</small></b></span><span class="jm-jalur-ket">${esc(t("beranda.j." + k + ".ket"))}</span></span></a>`).join("");
   } catch (e) { sembunyi(el, e); }
 }
 

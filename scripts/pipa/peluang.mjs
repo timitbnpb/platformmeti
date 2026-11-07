@@ -88,7 +88,7 @@ export function bangun({ ruen, harga, wilayah, proyek, bpp }) {
           ? isi(k, tek, { mw: r.nilai, pra_pemekaran: true, halaman: rujuk, catatan: `data 2015, sebelum pemekaran: RUEN mencatat ${r.nilai} MW untuk "${r.nama}" (induk); tidak dibagi ke provinsi pemekaran` })
           : isi(k, tek, { halaman: rujuk, catatan: `RUEN 2015 mencatat ${r.nilai} MW untuk provinsi induk "${r.nama}" sebelum pemekaran; tidak dibagi ke provinsi baru`, induk_mw: r.nilai, induk_kode: INDUK[r.nama][0] }));
       } else if (KEL_BIO[r.nama]) {
-        for (const k of KEL_BIO[r.nama]) isi(k, tek, { halaman: rujuk, catatan: `RUEN menggabung ${r.nama} (${r.nilai} MW); tidak dipisah`, kelompok_mw: r.nilai });
+        for (const k of KEL_BIO[r.nama]) isi(k, tek, { halaman: rujuk, catatan: `RUEN menggabung ${r.nama} (${r.nilai} MW); tidak dipisah`, kelompok_mw: r.nilai, kelompok: KEL_BIO[r.nama].map((x) => kodeNama[x]) });
       } else if (nama.length > 1) {
         for (const n of nama) isi(KODE[n], tek, { halaman: rujuk, catatan: `RUEN hanya memberi total kelompok ${nama.join(', ')} (${r.nilai} MW); tidak dipisah per provinsi`, kelompok_mw: r.nilai, kelompok: nama });
       } else {

@@ -117,13 +117,13 @@ const bag = (judul, isi) => (isi ? `<section><h4>${esc(u(judul))}</h4>${isi}</se
 const EMAIL = "meti.ires@gmail.com";
 
 export function kartuKasus(k) {
-  const gagal = k.jenis === "gagal";
-  const foto = k.foto?.src ? `<figure class="jm-tp-kfoto"><img src="${esc(k.foto.src)}" alt="${esc(L(k.foto.alt))}" loading="lazy" decoding="async" data-galat="hapus"><figcaption>${esc(k.foto.kredit || "")}</figcaption></figure>` : `<div class="jm-tp-kfoto jm-tp-kfoto-ikon jm-batik" aria-hidden="true">${ikon(k.ikon || "bintang", 40)}</div>`;
+  const gagal = k.jenis !== "berhasil";
+  const foto = k.foto?.src ? `<figure class="jm-tp-kfoto"><img src="${esc(k.foto.src)}" alt="${esc(L(k.foto.alt))}" loading="lazy" decoding="async" data-galat="hapus"><figcaption>${esc(k.foto.kredit || "")}</figcaption></figure>` : `<div class="jm-tp-kfoto jm-tp-kfoto-ikon" aria-hidden="true">${ikon(k.ikon || "bintang", 40)}</div>`;
   const profil = (k.profil || []).length ? `<dl class="jm-tp-profil">${k.profil.map((p) => `<div><dt>${esc(tok(p.label))}</dt><dd>${esc(nilaiProfil(p))}</dd></div>`).join("")}</dl>` : "";
   const angka = (k.angka || []).length ? `<ul class="jm-tp-angka">${k.angka.map((a) => `<li><b>${esc(typeof a.nilai === "number" ? num(a.nilai, a.d || 0) : tok(a.nilai))}${a.satuan ? `<small>${esc(L(a.satuan))}</small>` : ""}</b><span>${esc(tok(a.label))}${a.est ? est() : ""}</span></li>`).join("")}</ul>` : "";
   const kron = (k.kronologi || []).length ? `<ol class="jm-tp-linimasa">${k.kronologi.map((x) => `<li><time datetime="${esc(x.tanggal)}">${esc(tanggal(x.tanggal))}</time><span>${esc(tok(x.teks))}</span></li>`).join("")}</ol>` : "";
   const hak = gagal && k.hak_jawab ? `<p class="jm-tp-hak">${ikon("surel", 16)}<span>${esc(u("hak.ket"))} <a href="mailto:${EMAIL}?subject=${encodeURIComponent(u("bagikan.hak") + ": " + k.nama)}">${esc(u("hak.tautan"))}</a></span></p>` : "";
-  return `<article class="jm-tp-kasus ${gagal ? "jm-tp-kasus-g" : ""}" id="kasus-${esc(k.id)}">${foto}<div class="jm-tp-kbody"><header><span class="jm-pil ${gagal ? "jm-pil-warn" : "jm-pil-ok"}">${esc(u(gagal ? "kasus.gagal" : "kasus.berhasil"))}</span><span class="jm-pil">${esc(u(k.negara === "ID" ? "kasus.lokal" : "kasus.luar"))}</span><h3>${esc(k.nama)}</h3>${k.lokasi ? `<p class="jm-bantu">${esc(tok(k.lokasi))}</p>` : ""}</header>
+  return `<article class="jm-tp-kasus ${gagal ? "jm-tp-kasus-g" : ""}" id="kasus-${esc(k.id)}">${foto}<div class="jm-tp-kbody"><header><span class="jm-pil ${gagal ? "jm-pil-warn" : "jm-pil-ok"}">${esc(u(S.ui.s["kasus." + k.jenis] ? "kasus." + k.jenis : gagal ? "kasus.gagal" : "kasus.berhasil"))}</span><span class="jm-pil">${esc(u(k.negara === "ID" ? "kasus.lokal" : "kasus.luar"))}</span><h3>${esc(k.nama)}</h3>${k.lokasi ? `<p class="jm-bantu">${esc(tok(k.lokasi))}</p>` : ""}</header>
     ${profil}${bag("kasus.angka", angka)}${bag("kasus.tindakan", daftarUl(k.tindakan))}${bag(gagal ? "kasus.sebab_g" : "kasus.sebab_b", daftarUl(k.sebab))}${bag("kasus.kronologi", kron)}${bag("kasus.terdampak", k.terdampak ? `<p>${esc(tok(k.terdampak))}</p>` : "")}${bag("kasus.seharusnya", k.seharusnya ? `<p>${esc(tok(k.seharusnya))}</p>` : "")}${bag("kasus.tanda", daftarUl(k.tanda_bahaya))}${bag("kasus.pelajaran", daftarUl(k.pelajaran))}
     ${k.dibaca ? `<p class="jm-bantu">${esc(u("kasus.dibaca"))}</p>` : ""}<footer>${sumberHtml(k.sumber || [], k.sumber_tambahan || [])}${hak}</footer></div></article>`;
 }
@@ -133,7 +133,7 @@ export function tabelPola(faktor, kasusList, id, pilih) {
   const rows = kasusList.filter(pilih);
   if (!faktor?.length || !rows.length) return "";
   const sel = (r, k) => { const v = r.faktor?.[k]; return v === true ? `<span class="jm-tp-ya">${ikon("centang", 18)}<span class="sr">${esc(u("pola.ya"))}</span></span>` : v === false ? `<span class="jm-tp-tdk">${ikon("silang", 18)}<span class="sr">${esc(u("pola.tidak"))}</span></span>` : `<span class="sr">${esc(u("pola.nol"))}</span>`; };
-  const kols = [{ k: "kasus", l: u("pola.kasus"), f: (r) => `<a href="#kasus-${esc(r.id)}"><b>${esc(r.nama)}</b></a><br><small>${esc(u(r.jenis === "gagal" ? "kasus.gagal" : "kasus.berhasil"))}</small>`, v: (r) => r.nama }, ...faktor.map((f) => ({ k: f.k, l: L(f.l), num: true, f: (r) => sel(r, f.k), v: (r) => (r.faktor?.[f.k] === true ? 1 : r.faktor?.[f.k] === false ? 0 : null) }))];
+  const kols = [{ k: "kasus", l: u("pola.kasus"), f: (r) => `<a href="#kasus-${esc(r.id)}"><b>${esc(r.nama)}</b></a><br><small>${esc(u(S.ui.s["kasus." + r.jenis] ? "kasus." + r.jenis : r.jenis !== "berhasil" ? "kasus.gagal" : "kasus.berhasil"))}</small>`, v: (r) => r.nama }, ...faktor.map((f) => ({ k: f.k, l: L(f.l), num: false, f: (r) => sel(r, f.k), v: (r) => (r.faktor?.[f.k] === true ? 1 : r.faktor?.[f.k] === false ? 0 : null) }))];
   return daftarTabel(id, kols, rows, 12);
 }
 export function pola(b, ctx) {
@@ -181,7 +181,7 @@ export function pasangPeriksa() {
   document.addEventListener("jm:csv", (e) => {
     if (!e.target.querySelector?.("[data-periksa]") || !S.periksa) return;
     const s = bacaCek(), P = Object.fromEntries(S.periksa.peran.map((x) => [x.k, L(x.l)])), T = Object.fromEntries(S.periksa.tahap.map((x) => [x.k, L(x.l)]));
-    e.detail.baris = [[u("cek.peran"), u("cek.tahap"), u("cek.csv"), u("cek.selesai", { n: "", total: "" }).trim(), u("cek.dasar")], ...S.periksa.butir.map((x) => [P[x.peran], T[x.tahap], tok(x.teks), s.has(x.kunci) ? "1" : "0", S.sumber[x.dasar]?.judul || ""])];
+    e.detail.baris = [[u("cek.peran"), u("cek.tahap"), u("cek.csv"), u("cek.kolom_selesai"), u("cek.dasar")], ...S.periksa.butir.map((x) => [P[x.peran], T[x.tahap], tok(x.teks), s.has(x.kunci) ? "1" : "0", S.sumber[x.dasar]?.judul || ""])];
   }, true);
 }
 

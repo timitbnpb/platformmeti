@@ -20,6 +20,8 @@ import { panelPesan } from "/admin_pesan.js";
 import { panelMetiWilayah } from "/admin_meti_wilayah.js";
 import { panelPersetujuan } from "/admin_daftar.js";
 import { panelKonsultasi } from "/admin_konsultasi.js";
+import { panelHariIni } from "/admin_hariini.js";
+import { panelKeamanan } from "/admin_keamanan.js";
 import { teksLencana } from "/inti/pesan_umum.js";
 
 const saya = await mulaiHalaman();
@@ -45,9 +47,23 @@ function jalan() {
   const peranBisa = sa ? PERAN : PERAN.filter((p) => p !== "super");
   // kurator: hanya tab Anggota (tab Akun dan Jejak tidak ada di DOM; server tetap menolak). CSV hanya admin dan super.
   const adm = ["admin", "super"].includes(saya.peran);
-  const TAB = [...(adm ? [["akun", "admin.tab.akun", "orang"]] : []), ["koreksi", "admin.tab.koreksi", "ubah"], ...(adm ? [["jejak", "admin.tab.jejak", "jejak"]] : []), ["kesehatan", "admin.tab.kesehatan", "centang"],
-    ...(adm ? [["statistik", "admin.tab.statistik", "analisis"], ["beranda", "admin.tab.beranda", "beranda"], ["pustaka", "adm.pu.tab", "unduh"]] : []), ["anggota", "adm.anggota.tab", "daftar"], ...(adm ? [["kta", "adm.kta.tab", "kartu"]] : []), ["agenda", "adm.agenda.tab", "kalender"], ...(adm ? [["sosmed", "adm.so.tab", "tautan"]] : []), ...(adm ? [["event", "adm.event.tab", "kalender-bintang"]] : []), ...(adm ? [["langganan", "admin.tab.langganan", "berita"], ["pesan", "admin.tab.pesan", "info"], ["metiwilayah", "adm.mw.tab", "wilayah"], ["portal", "ap.tab", "centang"], ["persetujuan", "pd.tab", "daftar"], ["konsultasi", "kf.ad.tab", "palu"]] : [])];
-  let tab = TAB[0][0];
+  // [kunci, kunci i18n label, ikon, menu]. Hak per tab sama seperti sebelum dikelompokkan; server tetap menolak.
+  const ad = (...x) => (adm ? x : []);
+  const TAB = [
+    ...ad(["hariini", "adm.hi.tab", "lonceng", "hariini"]),
+    ...ad(["persetujuan", "pd.tab", "daftar", "anggota"], ["akun", "admin.tab.akun", "orang", "anggota"]), ["anggota", "adm.anggota.tab", "daftar", "anggota"],
+    ...ad(["kta", "adm.kta.tab", "kartu", "anggota"], ["metiwilayah", "adm.mw.tab", "wilayah", "anggota"], ["portal", "ap.tab", "centang", "anggota"], ["keamanan", "kam.tab", "kunci", "anggota"]),
+    ...ad(["beranda", "admin.tab.beranda", "beranda", "konten"], ["pustaka", "adm.pu.tab", "unduh", "konten"]), ["agenda", "adm.agenda.tab", "kalender", "konten"],
+    ...ad(["event", "adm.event.tab", "kalender-bintang", "konten"], ["sosmed", "adm.so.tab", "tautan", "konten"], ["konsultasi", "kf.ad.tab", "palu", "konten"]),
+    ["koreksi", "admin.tab.koreksi", "ubah", "data"], ...ad(["jejak", "admin.tab.jejak", "jejak", "data"]), ["kesehatan", "admin.tab.kesehatan", "centang", "data"],
+    ...ad(["pesan", "admin.tab.pesan", "info", "komunikasi"], ["langganan", "admin.tab.langganan", "berita", "komunikasi"], ["statistik", "admin.tab.statistik", "analisis", "analitik"]),
+  ];
+  const MENU = [["hariini", "adm.m.hariini", "lonceng"], ["anggota", "adm.m.anggota", "orang"], ["konten", "adm.m.konten", "beranda"], ["data", "adm.m.data", "tabel"], ["komunikasi", "adm.m.komunikasi", "surel"], ["analitik", "adm.m.analitik", "analisis"]]
+    .filter(([m]) => TAB.some((x) => x[3] === m));
+  const menuDari = (k) => TAB.find((x) => x[0] === k)[3];
+  const dariUrl = new URLSearchParams(location.search).get("tab");
+  let tab = TAB.some((x) => x[0] === dariUrl) ? dariUrl : TAB[0][0];
+  const terakhir = {}; // menu -> sub-tab terakhir dibuka
 
   const A = { cari: "", peran: "", status: "", hal: 1, baris: [], galat: null, ctl: null };
 
@@ -59,19 +75,30 @@ function jalan() {
 
   /* ---------- rangka dan tab ---------- */
 
+  const subHtml = (menu) => {
+    const isiSub = TAB.filter((x) => x[3] === menu);
+    return isiSub.length < 2 ? "" : isiSub.map(([k, kunci, ik]) => `<button type="button" role="tab" id="tab-${k}" data-tab="${k}" aria-selected="${k === tab}" aria-controls="panel" tabindex="${k === tab ? 0 : -1}">${ikon(ik, 18)}<span>${esc(t(kunci))}</span></button>`).join("");
+  };
+
   function rangka() {
+    terakhir[menuDari(tab)] = tab;
     isi.innerHTML = `
-      <div class="jm-tab" role="tablist" aria-label="${esc(t("admin.tab.label"))}">
-        ${TAB.map(([k, kunci, ik]) => `<button type="button" role="tab" id="tab-${k}" data-tab="${k}" aria-selected="${k === tab}" aria-controls="panel" tabindex="${k === tab ? 0 : -1}">${ikon(ik, 18)}<span>${esc(t(kunci))}</span></button>`).join("")}
+      <div class="jm-adm-nav">
+        <div class="jm-tab jm-adm-menu" role="group" aria-label="${esc(t("admin.tab.label"))}">
+          ${MENU.map(([m, kunci, ik]) => `<button type="button" data-menu="${m}" aria-pressed="${m === menuDari(tab)}">${ikon(ik, 20)}<span>${esc(t(kunci))}</span></button>`).join("")}
+        </div>
+        <div class="jm-tab jm-adm-alt" id="subTab" role="tablist" aria-label="${esc(t("adm.m.sub"))}"${subHtml(menuDari(tab)) ? "" : " hidden"}>${subHtml(menuDari(tab))}</div>
       </div>
       <section class="jm-kartu" id="panel" role="tabpanel" aria-labelledby="tab-${tab}"></section>
       <div class="jm-adm-status" id="status" aria-live="polite"></div>`;
     $("panel").addEventListener("click", klikPanel);
+    $("panel").addEventListener("click", klikKe);
     $("panel").addEventListener("input", inputPanel);
     $("panel").addEventListener("change", ubahPanel);
     $("panel").addEventListener("submit", kirimPanel);
-    isi.querySelector(".jm-tab").addEventListener("click", klikTab);
-    isi.querySelector(".jm-tab").addEventListener("keydown", tombolTab);
+    const nav = isi.querySelector(".jm-adm-nav");
+    nav.addEventListener("click", klikTab);
+    nav.addEventListener("keydown", tombolTab);
     bukaTab(tab);
     lencanaTab();
   }
@@ -89,19 +116,37 @@ function jalan() {
     api("/api/admin/pesan-belum").then((d) => { belumPesan = d.belum || 0; lencanaTab(); document.dispatchEvent(new CustomEvent("pesan-belum", { detail: belumPesan })); }).catch(() => {});
   }
 
+  // Chrome urgent: penanda menu dan sub-tab berubah seketika; isi panel menyusul lewat nanti().
+  function pilihTab(k, dorong = true) {
+    if (!TAB.some((x) => x[0] === k)) return;
+    const menu = menuDari(k);
+    terakhir[menu] = k;
+    const lama = isi.querySelector("[data-menu][aria-pressed=true]")?.dataset.menu;
+    for (const x of isi.querySelectorAll("[data-menu]")) x.setAttribute("aria-pressed", String(x.dataset.menu === menu));
+    const sub = $("subTab");
+    if (lama !== menu) { sub.innerHTML = subHtml(menu); sub.hidden = !sub.innerHTML; lencanaTab(); }
+    for (const x of sub.querySelectorAll("[data-tab]")) { const aktif = x.dataset.tab === k; x.setAttribute("aria-selected", String(aktif)); x.tabIndex = aktif ? 0 : -1; }
+    if (dorong) history.replaceState(null, "", `${location.pathname}?tab=${k}`);
+    nanti(() => bukaTab(k));
+  }
   function klikTab(e) {
+    const m = e.target.closest("[data-menu]");
+    if (m) { if (m.getAttribute("aria-pressed") !== "true") pilihTab(terakhir[m.dataset.menu] || TAB.find((x) => x[3] === m.dataset.menu)[0]); return; }
     const b = e.target.closest("[data-tab]");
-    if (!b || b.getAttribute("aria-selected") === "true") return;
-    for (const x of isi.querySelectorAll("[data-tab]")) { // chrome urgent
-      const aktif = x === b;
-      x.setAttribute("aria-selected", String(aktif));
-      x.tabIndex = aktif ? 0 : -1;
-    }
-    nanti(() => bukaTab(b.dataset.tab));
+    if (b && b.getAttribute("aria-selected") !== "true") pilihTab(b.dataset.tab);
+  }
+  // kartu beranda dan tautan data-ke membuka tab lain tanpa memuat ulang halaman
+  function klikKe(e) {
+    const a = e.target.closest("[data-ke]");
+    if (!a || e.metaKey || e.ctrlKey || e.shiftKey || e.button) return;
+    e.preventDefault();
+    pilihTab(a.dataset.ke);
+    window.scrollTo({ top: 0 });
   }
   function tombolTab(e) {
     if (e.key !== "ArrowLeft" && e.key !== "ArrowRight") return;
-    const semua = [...isi.querySelectorAll("[data-tab]")];
+    const baris = e.target.closest(".jm-tab");
+    const semua = baris ? [...baris.querySelectorAll("button")] : [];
     const i = semua.indexOf(document.activeElement);
     if (i < 0) return;
     const baru = semua[(i + (e.key === "ArrowRight" ? 1 : semua.length - 1)) % semua.length];
@@ -114,7 +159,7 @@ function jalan() {
     kabari("ok", "");
     $("panel").setAttribute("aria-labelledby", "tab-" + k);
     const P = $("panel");
-    if (k === "akun") panelAkun(); else if (k === "jejak") panelAudit(P); else if (k === "koreksi") panelKoreksi(P); else if (k === "kesehatan") panelKesehatan(P);
+    if (k === "hariini") panelHariIni(P, { tabAda: (x) => TAB.some((y) => y[0] === x) }); else if (k === "keamanan") panelKeamanan(P, saya); else if (k === "akun") panelAkun(); else if (k === "jejak") panelAudit(P); else if (k === "koreksi") panelKoreksi(P); else if (k === "kesehatan") panelKesehatan(P);
     else if (k === "statistik") panelStatistik(P); else if (k === "pustaka") panelPustaka(P); else if (k === "beranda") panelBeranda(P); else if (k === "agenda") panelAgenda(P, saya); else if (k === "sosmed") panelSosmed(P); else if (k === "kta") panelKta(P); else if (k === "event") panelEvent(P); else if (k === "langganan") panelLangganan(P); else if (k === "pesan") panelPesan(P); else if (k === "metiwilayah") panelMetiWilayah(P); else if (k === "portal") panelPortal(P); else if (k === "persetujuan") panelPersetujuan(P, { boleh: adm }); else if (k === "konsultasi") panelKonsultasi(P); else panelAnggota(P, { boleh: adm, kabari });
   }
 

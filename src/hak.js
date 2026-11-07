@@ -61,6 +61,7 @@ export const MATRIKS = {
   daftar_tolak:    ["-", "-", "-", "-", "-", "-", "B"],
   pendaftaran:     ["-", "-", "T", "-", "-", "T", "T"], // 8 Nov 2026: persetujuan anggota mandiri (setujui/tolak, bukti iuran) oleh pengurus, admin, super
   konsultasi:      ["-", "T daftar", "T daftar", "T daftar", "T daftar", "T", "T"], // forum Konsultasi: anggota aktif berkomentar/usul/dukung; menyunting hanya miliknya (15 menit, dijaga fungsi); tamu tidak
+  sesi_admin:      ["-", "-", "-", "-", "-", "T cabut", "T cabut"], // 8 Nov 2026: daftar semua sesi aktif + cabut per sesi + riwayat gagal masuk + matriks hak (tab Keamanan); admin tak mencabut sesi super (dijaga fungsi)
   konsultasi_putus: ["-", "-", "T", "T", "-", "T", "T"], // moderasi + keputusan + kelola naskah: pengurus, kurator, admin, super
 };
 export const AKSI = ["baca", "tambah", "ubah", "hapus", "kirim", "cabut", "tinjau", "hapus_keras"];
@@ -1125,12 +1126,23 @@ export async function cariAkunUntukMasuk(env, surel) {
     .bind(surel.trim()).first()) ?? null;
 }
 
-export async function catatSesi(env, { idHash, akunId, sampai, ipHash, info = null } = {}) {
+// Masuk Google: sub tertaut menang; tanpa tautan, cocokkan surel ke akun aktif yang belum tertaut sub lain, lalu tautkan.
+export async function cariAkunGoogle(env, sub, surel) {
+  const kol = "a.id, a.surel, a.nama, a.peran, a.bahasa, a.status, a.wajib_ganti";
+  const t = await env.DB.prepare(`SELECT ${kol} FROM akun_google g JOIN akun a ON a.id = g.akun_id WHERE g.sub = ?`).bind(String(sub)).first();
+  if (t) return t;
+  const a = await env.DB.prepare(`SELECT ${kol}, (SELECT 1 FROM akun_google WHERE akun_id = a.id) AS tertaut FROM akun a WHERE a.surel = ?`).bind(String(surel).trim()).first();
+  if (!a || a.tertaut) return null;
+  if (a.status === "aktif") await env.DB.prepare("INSERT OR IGNORE INTO akun_google (akun_id, sub) VALUES (?, ?)").bind(a.id, String(sub)).run();
+  return a;
+}
+
+export async function catatSesi(env, { idHash, akunId, sampai, ipHash, info = null, lewat = null } = {}) {
   const k = kini();
   await BATCH(env, [
     env.DB.prepare("INSERT INTO sesi (id_hash, akun_id, dibuat, sampai, ip_hash) VALUES (?, ?, ?, ?, ?)").bind(idHash, akunId, k, sampai ?? k + 14 * 86400, ip16(ipHash)),
     env.DB.prepare("UPDATE akun SET masuk_terakhir = ? WHERE id = ?").bind(k, akunId),
-    env.DB.prepare("INSERT INTO jejak (siapa, peran, aksi, tabel, baris_id, ip_hash) SELECT id, peran, 'masuk', 'sesi', CAST(id AS TEXT), ? FROM akun WHERE id = ?").bind(ip16(ipHash), akunId),
+    env.DB.prepare("INSERT INTO jejak (siapa, peran, aksi, tabel, baris_id, ip_hash) SELECT id, peran, 'masuk', ?, CAST(id AS TEXT), ? FROM akun WHERE id = ?").bind(lewat === "google" ? "sesi_google" : "sesi", ip16(ipHash), akunId),
   ]);
   // Info perangkat terpisah: migrasi 0019 belum diterapkan atau gagal simpan tidak boleh menggagalkan masuk.
   if (info) {
@@ -1142,12 +1154,23 @@ export async function catatSesi(env, { idHash, akunId, sampai, ipHash, info = nu
   return { ok: true };
 }
 
+// Penanda "terakhir aktif" sesi: tulis paling cepat tiap 10 menit per sesi per isolat (tanpa baca tambahan); gagal diam (0025 belum diterapkan).
+const SENTUH = new Map();
+async function sentuhSesi(env, idHash) {
+  const k = Date.now();
+  if (k - (SENTUH.get(idHash) ?? 0) < 600000) return;
+  if (SENTUH.size > 500) SENTUH.clear();
+  SENTUH.set(idHash, k);
+  try { await env.DB.prepare("INSERT INTO sesi_aktif (id_hash, terakhir) VALUES (?, ?) ON CONFLICT (id_hash) DO UPDATE SET terakhir = excluded.terakhir").bind(idHash, kini()).run(); } catch { /* abaikan */ }
+}
 export async function bacaSesi(env, idHash) {
   if (typeof idHash !== "string" || idHash.length !== 64) return null;
-  return (await env.DB.prepare(
+  const r = (await env.DB.prepare(
     "SELECT a.id, a.surel, a.nama, a.peran, a.cakupan_prov, a.bahasa, a.status, a.wajib_ganti, s.sampai " +
     "FROM sesi s JOIN akun a ON a.id = s.akun_id WHERE s.id_hash = ? AND s.sampai > ? AND a.status = 'aktif'")
     .bind(idHash, kini()).first()) ?? null;
+  if (r) await sentuhSesi(env, idHash);
+  return r;
 }
 
 export async function akunAktif(env, id) {
@@ -1213,8 +1236,10 @@ export async function ubahSandi(env, akunId, hash, garam, iterasi, kecualiIdHash
 }
 
 // Jejak untuk peristiwa tanpa tulis data (mis. masuk-gagal), pernyataan tetap.
-export async function jejakTulis(env, { siapa = null, peran = "publik", aksi, tabel, barisId = null, ipHash = null } = {}) {
-  await env.DB.prepare("INSERT INTO jejak (siapa, peran, aksi, tabel, baris_id, ip_hash) VALUES (?, ?, ?, ?, ?, ?)").bind(siapa, peran, aksi, tabel, barisId, ip16(ipHash)).run();
+// ringkas (opsional, maks 120): catatan pendek untuk layar Jejak, mis. surel yang sudah disamarkan pada masuk-gagal.
+export async function jejakTulis(env, { siapa = null, peran = "publik", aksi, tabel, barisId = null, ipHash = null, ringkas = null } = {}) {
+  await env.DB.prepare("INSERT INTO jejak (siapa, peran, aksi, tabel, baris_id, ke, ip_hash) VALUES (?, ?, ?, ?, ?, ?, ?)")
+    .bind(siapa, peran, aksi, tabel, barisId, ringkas ? JSON.stringify({ ringkas: String(ringkas).slice(0, 120) }) : null, ip16(ipHash)).run();
 }
 
 export async function sapu(env, sekarang = kini()) {
@@ -1224,6 +1249,8 @@ export async function sapu(env, sekarang = kini()) {
     env.DB.prepare(`DELETE FROM laju WHERE (jendela + 1) * CASE aksi ${Object.entries(LEBAR).map(([a, w]) => `WHEN '${a}' THEN ${w}`).join(" ")} ELSE 3600 END < ?`).bind(sekarang - 86400),
     env.DB.prepare("UPDATE akun SET aktivasi_hash = NULL, aktivasi_sampai = NULL WHERE aktivasi_sampai < ?").bind(sekarang),
   ]);
+  // penanda "terakhir aktif" yatim (sesinya sudah hilang); tabel 0025 belum ada = lewati
+  await env.DB.prepare("DELETE FROM sesi_aktif WHERE id_hash NOT IN (SELECT id_hash FROM sesi)").run().catch(() => {});
   return { sesi: a.meta.changes, laju: b.meta.changes, tautan: c.meta.changes };
 }
 // Rehash diam-diam ke iterasi lebih tinggi saat masuk: sandi sama, TANPA mencabut sesi atau menyentuh status (dipakai sesi.js).
@@ -1407,6 +1434,91 @@ export async function sesiSayaCabutLain(env, akun, idHashIni) {
     jejakAdm(env, akun, "cabut", "sesi", akun.id, "keluar dari perangkat lain"),
   ]);
   return { dicabut: r.meta.changes };
+}
+
+/* ========================= Beranda admin + keamanan akun (0025) ========================= */
+// Semua hanya admin dan super. Hitungan beranda = COUNT terindeks, satu panggilan; tabel yang belum ada dihitung 0.
+const hitungSatu = (env, sql, ...b) => env.DB.prepare(sql).bind(...b).first().then((r) => r?.n ?? 0)
+  .catch((e) => { if (/no such table/i.test(String(e?.message) + String(e?.cause?.message))) return 0; throw e; });
+
+export async function ringkasAdmin(env, akun, sekarang = Date.now()) {
+  gerbangAdm(akun);
+  const n = Math.floor(sekarang / 1000);
+  const usulan = USULAN_UTAS.map(() => "?").join(",");
+  const [pendaftar, bukti, koreksi, klaim, ajuan, wilayah, pesan, konsultasi, langganan, jam] = await Promise.all([
+    hitungSatu(env, "SELECT COUNT(*) AS n FROM pendaftaran WHERE status = 'menunggu'"),
+    hitungSatu(env, "SELECT COUNT(*) AS n FROM pendaftaran_bukti WHERE status = 'menunggu'"),
+    hitungSatu(env, "SELECT COUNT(*) AS n FROM koreksi_usul WHERE status = 'baru'"),
+    hitungSatu(env, "SELECT COUNT(*) AS n FROM org_klaim WHERE status = 'baru'"),
+    hitungSatu(env, "SELECT COUNT(*) AS n FROM org_ajuan WHERE status = 'baru'"),
+    hitungSatu(env, "SELECT COUNT(*) AS n FROM wilayah_ajuan WHERE status = 'baru'"),
+    hitungSatu(env, "SELECT COUNT(*) AS n FROM pesan_utas WHERE status = 'baru'"),
+    hitungSatu(env, `SELECT COUNT(*) AS n FROM kons_utas WHERE status = 'terbuka' AND tersembunyi = 0 AND jenis IN (${usulan})`, ...USULAN_UTAS),
+    hitungSatu(env, "SELECT COUNT(*) AS n FROM langganan WHERE status = 'aktif' AND dibuat >= ?", n - 7 * 86400),
+    tanpaTabel(async () => (await env.DB.prepare("SELECT tgl, kunci, n FROM lalin WHERE dim = 'jam' AND tgl >= ?").bind(tglLalin(sekarang - HARI_MS)).all()).results),
+  ]);
+  const { total24 } = lalin24(jam ?? [], sekarang);
+  return {
+    antrean: { pendaftar, bukti, koreksi, portal: klaim + ajuan + wilayah, portal_rinci: { klaim, ajuan, wilayah }, pesan, konsultasi, langganan },
+    pengunjung24: { orang: total24.orang, ai: total24.ai_jawab + total24.ai_crawl },
+    waktu: n,
+  };
+}
+
+const gerbangSesiAdm = (akun, aksi) => { const i = boleh(akun?.peran, aksi, "sesi_admin", undefined, akun); if (!i.ok) throw tolak(i.alasan); };
+
+// Semua sesi aktif (maks 300, terbaru dulu). sid = 16 hex pertama hash token (pegangan cabut; tak cukup memalsukan sesi). Hash penuh tak keluar.
+export async function sesiAdminDaftar(env, akun, idHashIni) {
+  gerbangSesiAdm(akun, "baca");
+  const penuh = "SELECT s.id_hash, s.akun_id, a.nama, a.surel, a.peran, s.dibuat, s.sampai, i.perangkat, i.jenis, i.kota, i.wilayah, i.negara, v.terakhir " +
+    "FROM sesi s JOIN akun a ON a.id = s.akun_id LEFT JOIN sesi_info i ON i.id_hash = s.id_hash LEFT JOIN sesi_aktif v ON v.id_hash = s.id_hash " +
+    "WHERE s.sampai > ? ORDER BY s.dibuat DESC LIMIT 300";
+  const dasar = "SELECT s.id_hash, s.akun_id, a.nama, a.surel, a.peran, s.dibuat, s.sampai FROM sesi s JOIN akun a ON a.id = s.akun_id WHERE s.sampai > ? ORDER BY s.dibuat DESC LIMIT 300";
+  let r;
+  try { r = await env.DB.prepare(penuh).bind(kini()).all(); }
+  catch (e) { if (!/no such table/i.test(String(e?.message) + String(e?.cause?.message))) throw e; r = await env.DB.prepare(dasar).bind(kini()).all(); }
+  return r.results.map((s) => ({
+    sid: s.id_hash.slice(0, 16), ini: s.id_hash === idHashIni, akun_id: s.akun_id, nama: s.nama, surel: s.surel, peran: s.peran,
+    dibuat: s.dibuat, aktif: s.terakhir ?? s.dibuat, sampai: s.sampai,
+    perangkat: s.perangkat ?? null, jenis: s.jenis ?? null, kota: s.kota ?? null, wilayah: s.wilayah ?? null, negara: s.negara ?? null,
+  }));
+}
+// Cabut satu sesi menurut sid. Sesi yang sedang dipakai pemanggil tidak lewat sini (pakai keluar); Admin tak menyentuh sesi akun super.
+export async function sesiAdminCabut(env, akun, idHashIni, sid) {
+  gerbangSesiAdm(akun, "cabut");
+  if (!/^[0-9a-f]{16}$/.test(String(sid))) throw salah("sid tidak sah");
+  const t = await env.DB.prepare("SELECT s.id_hash, s.akun_id, a.peran FROM sesi s JOIN akun a ON a.id = s.akun_id WHERE substr(s.id_hash, 1, 16) = ?").bind(sid).first();
+  if (!t) return { dicabut: 0 };
+  if (t.id_hash === idHashIni) throw salah("sesi ini dicabut lewat keluar");
+  if (t.peran === "super" && akun.peran !== "super") throw tolak("Admin tidak boleh mencabut sesi akun super");
+  const [r] = await env.DB.batch([
+    env.DB.prepare("DELETE FROM sesi WHERE id_hash = ?").bind(t.id_hash),
+    env.DB.prepare("INSERT INTO jejak (siapa, peran, aksi, tabel, baris_id, ke) SELECT ?, ?, 'cabut', 'sesi', ?, ? WHERE changes() > 0")
+      .bind(akun.id, akun.peran, String(t.akun_id), JSON.stringify({ ringkas: "cabut satu sesi" })),
+  ]);
+  return { dicabut: r.meta.changes };
+}
+// Riwayat gagal masuk 30 hari: surel sudah disamarkan saat ditulis (sesi.js), IP hanya 8 hex pertama dari hash; tanpa id akun.
+export async function gagalMasukDaftar(env, akun, sekarang = Date.now()) {
+  gerbangSesiAdm(akun, "baca");
+  const dari = Math.floor(sekarang / 1000) - 30 * 86400;
+  const [daftar, tot] = await env.DB.batch([
+    env.DB.prepare("SELECT kapan, ke, ip_hash FROM jejak WHERE aksi = 'masuk-gagal' AND kapan >= ? ORDER BY kapan DESC LIMIT 500").bind(dari),
+    env.DB.prepare("SELECT COUNT(*) AS n, COUNT(DISTINCT ip_hash) AS ip FROM jejak WHERE aksi = 'masuk-gagal' AND kapan >= ?").bind(dari),
+  ]);
+  const surel = (ke) => { try { return String(JSON.parse(ke)?.ringkas ?? "") || null; } catch { return null; } };
+  return {
+    total: tot.results[0].n, ip_unik: tot.results[0].ip,
+    baris: daftar.results.map((x) => ({ waktu: x.kapan, surel: surel(x.ke), ip: x.ip_hash ? x.ip_hash.slice(0, 8) : null })),
+  };
+}
+// Matriks hak apa adanya dari MATRIKS: aksi diturunkan dari boleh() (penegak yang sama), bukan salinan.
+export function matriksHak(akun) {
+  gerbangSesiAdm(akun, "baca");
+  return {
+    peran: PERAN,
+    jenis: Object.keys(MATRIKS).map((j) => ({ jenis: j, sel: PERAN.map((p, i) => ({ kode: MATRIKS[j][i], aksi: AKSI.filter((a) => boleh(p, a, j).ok) })) })),
+  };
 }
 
 /* ========================= Ikuti + Portal pembaruan 0019 ========================= */
@@ -1713,6 +1825,20 @@ export async function lalinTulis(env, rencana, tamu = null) {
 
 const RENTANG_ADM = { "24j": 1, "7h": 7, "30h": 30, semua: 0 };
 const JENIS_LALIN = ["orang", "tampilan", "ai_jawab", "ai_crawl", "mesin_cari", "tak", "klik_ai"];
+// 24 jam terakhir dari penghitung per jam (tgl + HH WIB); baris = [{ tgl, kunci: "jenis|HH", n }].
+function lalin24(baris, sekarang) {
+  const hari = tglLalin(sekarang), kemarin = tglLalin(sekarang - HARI_MS);
+  const jamKini = Number(new Date(sekarang + WIB_MS).toISOString().slice(11, 13));
+  const nilai = Object.fromEntries(baris.map((x) => [`${x.tgl}|${x.kunci}`, x.n]));
+  const per_jam = [], total24 = Object.fromEntries(JENIS_LALIN.map((k) => [k, 0]));
+  for (let i = 23; i >= 0; i--) {
+    const h = (jamKini - i + 24) % 24, tgl = jamKini - i < 0 ? kemarin : hari, HH = String(h).padStart(2, "0");
+    const v = (k) => nilai[`${tgl}|${k}|${HH}`] || 0, b = { jam: HH, tgl };
+    for (const k of JENIS_LALIN) if (k !== "tampilan") { b[k] = v(k); total24[k] += b[k]; }
+    per_jam.push(b);
+  }
+  return { per_jam, total24 };
+}
 export async function lalinAdmin(env, akun, r = "7h", sekarang = Date.now()) {
   gerbangAdm(akun);
   if (!(r in RENTANG_ADM)) throw salah("rentang tidak sah");
@@ -1727,16 +1853,7 @@ export async function lalinAdmin(env, akun, r = "7h", sekarang = Date.now()) {
       env.DB.prepare(`WITH d AS (SELECT dim, kunci, SUM(n) AS n FROM lalin WHERE dim NOT IN ('jenis','jam') AND tgl >= ? GROUP BY dim, kunci)
         SELECT dim, kunci, n FROM (SELECT *, row_number() OVER (PARTITION BY dim ORDER BY n DESC, kunci) AS r FROM d) WHERE r <= 100 ORDER BY dim, n DESC, kunci`).bind(dari),
       env.DB.prepare("SELECT MAX(diambil) AS diambil, COUNT(*) AS operator FROM lalin_ip")]);
-    // 24 jam terakhir dari penghitung per jam (tgl + HH WIB)
-    const jamKini = Number(new Date(sekarang + WIB_MS).toISOString().slice(11, 13));
-    const nilai = Object.fromEntries(jam.results.map((x) => [`${x.tgl}|${x.kunci}`, x.n]));
-    const per_jam = [], total24 = Object.fromEntries(JENIS_LALIN.map((k) => [k, 0]));
-    for (let i = 23; i >= 0; i--) {
-      const h = (jamKini - i + 24) % 24, tgl = jamKini - i < 0 ? kemarin : hari, HH = String(h).padStart(2, "0");
-      const v = (k) => nilai[`${tgl}|${k}|${HH}`] || 0, baris = { jam: HH, tgl };
-      for (const k of JENIS_LALIN) if (k !== "tampilan") { baris[k] = v(k); total24[k] += baris[k]; }
-      per_jam.push(baris);
-    }
+    const { per_jam, total24 } = lalin24(jam.results, sekarang);
     const sejak = Object.fromEntries(JENIS_LALIN.map((k) => [k, 0])); let mulai = hari;
     for (const x of semua.results) { sejak[x.kunci] = x.n; if (x.mulai < mulai) mulai = x.mulai; }
     const peta = {};
@@ -1904,7 +2021,7 @@ export async function onlineSelesai(env, orderId, lunas) {
 
 export const ping = async (env) => (await env.DB.prepare("SELECT 1 AS ok").first()).ok === 1;
 
-export const sistem = { cariAkunUntukMasuk, catatSesi, bacaSesi, akunAktif, hapusSesi, catatLaju, periksaTautanAktivasi, pakaiTautanAktivasi, ubahSandi, rehashSandi, jejakTulis, sapu, ping };
+export const sistem = { cariAkunUntukMasuk, cariAkunGoogle, catatSesi, bacaSesi, akunAktif, hapusSesi, catatLaju, periksaTautanAktivasi, pakaiTautanAktivasi, ubahSandi, rehashSandi, jejakTulis, sapu, ping };
 
 // Feed media sosial (sosmed_feed): cron menulis tanpa akun (jalur sistem seperti lalin); admin hanya mengurasi baris linkedin.
 export const sosmedDaftar = async (env) => (await tanpaTabel(() => env.DB.prepare("SELECT platform, uid, judul, tanggal, url, gambar FROM sosmed_feed ORDER BY tanggal DESC LIMIT 200").all()))?.results ?? [];

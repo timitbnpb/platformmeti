@@ -28,16 +28,23 @@ const kepala = (id, ik, ey, h2, l) => `<header class="tn-sh"><p class="tn-ey">${
 /* ---------- kartu orang: foto persegi penuh; tanpa foto = inisial kecil di tengah atas, nama dan jabatan di bawahnya ---------- */
 const TX = (k, f, par) => { const s = t(k, par); return s === k ? f.replace(/\{(\w+)\}/g, (m, n) => par[n]) : s; };
 const orang = (o, ukuran = "") => {
-  if (o.kosong || !o.nama) return `<li class="tn-fk tn-fk-kosong jm-batik ${ukuran}"><span class="tn-fk-bg" aria-hidden="true">${ikon("orang", 36)}</span><span class="tn-fk-t"><b>${esc(t("tn.lowong"))}</b><small>${esc(o.jabatan)}</small></span></li>`;
+  if (ukuran !== "besar") {
+    /* satu bentuk kartu orang untuk seluruh bagan: foto atau monogram gradien brand di atas, pita nama di bawah */
+    if (o.kosong || !o.nama) return `<li class="tn-kp tn-kp-kosong"><span class="tn-kp-b"><span class="tn-kp-f" aria-hidden="true">${ikon("orang", 36)}</span><span class="tn-kp-n"><b>${esc(t("tn.lowong"))}</b><small>${esc(o.jabatan)}</small></span></span></li>`;
+    const k = o.orang_id || slug(o.nama); PERS.set(k, o);
+    const f = o.foto ? `<img src="${esc(o.foto)}" alt="" width="360" height="360" loading="lazy">` : `<span class="tn-kp-ini" aria-hidden="true">${esc(inisial(o.nama))}</span>`;
+    return `<li class="tn-kp"><button type="button" class="tn-kp-b" data-p="${esc(k)}" aria-label="${esc(t("tn.p.buka", { nama: o.nama }))}"><span class="tn-kp-f">${f}</span><span class="tn-kp-n"><b title="${esc(o.nama)}">${esc(o.nama)}</b><small title="${esc(o.jabatan)}">${esc(o.jabatan)}</small></span></button></li>`;
+  }
+  if (o.kosong || !o.nama) return `<li class="tn-fk tn-fk-kosong ${ukuran}"><span class="tn-fk-bg" aria-hidden="true">${ikon("orang", 36)}</span><span class="tn-fk-t"><b>${esc(t("tn.lowong"))}</b><small>${esc(o.jabatan)}</small></span></li>`;
   const k = o.orang_id || slug(o.nama); PERS.set(k, o);
   const bg = o.foto ? `<img src="${esc(o.foto)}" alt="" width="360" height="360" loading="lazy">` : `<span class="tn-fk-ini" aria-hidden="true">${esc(inisial(o.nama))}</span>`;
-  const kls = o.foto ? (/-b\.webp$/.test(o.foto) ? "tn-fk-pt" : "tn-fk-ft") : "tn-fk-nf jm-batik";
+  const kls = o.foto ? (/-b\.webp$/.test(o.foto) ? "tn-fk-pt jm-batik" : "tn-fk-ft") : "tn-fk-nf jm-batik";
   return `<li class="tn-fk ${kls} ${ukuran}"><button type="button" class="tn-fk-b" data-p="${esc(k)}" aria-label="${esc(t("tn.p.buka", { nama: o.nama }))}"><span class="tn-fk-bg">${bg}</span><span class="tn-fk-t"><b>${esc(o.nama)}</b><small>${esc(o.jabatan)}</small></span></button></li>`;
 };
 const ul = (a, uk) => `<ul class="tn-fkg">${a.map((o) => orang(o, uk)).join("")}</ul>`;
 /* kepala unit seragam: ikon, nama, pil jumlah; rata tengah, pita aksen di bawah */
 const nOrang = (a) => a.filter((o) => o.nama && !o.kosong).length;
-const kepalaGrup = (ik, judul, a) => `<h4>${ikon(ik, 16)}<span>${esc(judul)}</span>${a ? `<em class="tn-n">${angka(nOrang(a))}</em>` : ""}</h4>`;
+const kepalaGrup = (ik, judul, a) => `<h4 title="${esc(judul)}">${ikon(ik, 16)}<span>${esc(judul)}</span>${a ? `<em class="tn-n">${angka(nOrang(a))}</em>` : ""}</h4>`;
 const kelompok = (judul, a, { ik = "orang", besar = "", ekstra = "" } = {}) => `<section class="tn-grp ${ekstra}" data-n="${Math.min(5, a.length || 1)}">${kepalaGrup(ik, judul, a)}${ul(a, besar)}</section>`;
 
 /* kelompok ringkas: kartu pimpinan + deret avatar + tombol "Lihat semua" yang membuka popup berisi seluruh anggota */

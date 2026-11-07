@@ -1,0 +1,5805 @@
+{
+ "id": "bayu",
+ "versi": 1,
+ "diperbarui": "2026-11-08",
+ "judul": {
+  "id": "Bayu (angin)",
+  "en": "Wind"
+ },
+ "lead": {
+  "id": "Indonesia punya potensi bayu darat 60,6 GW dan lepas pantai 94,2 GW, tetapi baru sekitar 0,15 GW terpasang, seluruhnya di Sulawesi Selatan, dan tidak bertambah sejak 2019.",
+  "en": "Indonesia has 60.6 GW of onshore and 94.2 GW of offshore wind potential, but only about 0.15 GW is installed, all in South Sulawesi, with no addition since 2019."
+ },
+ "kunci": [
+  {
+   "label": {
+    "id": "Potensi bayu darat (RUEN)",
+    "en": "Onshore wind potential (RUEN)"
+   },
+   "nilai": 60.6,
+   "d": 1,
+   "satuan": {
+    "id": "GW",
+    "en": "GW"
+   },
+   "sumber": "etp1",
+   "est": false
+  },
+  {
+   "label": {
+    "id": "Kapasitas bayu terpasang 2024",
+    "en": "Installed wind capacity 2024"
+   },
+   "nilai": 152.3,
+   "d": 1,
+   "satuan": "MW",
+   "sumber": "irena",
+   "est": false
+  },
+  {
+   "label": {
+    "id": "Produksi bayu 2024",
+    "en": "Wind generation 2024"
+   },
+   "nilai": 467,
+   "d": 0,
+   "satuan": "GWh",
+   "sumber": "ember",
+   "est": false
+  },
+  {
+   "label": {
+    "id": "Faktor kapasitas nasional 2024",
+    "en": "National capacity factor 2024"
+   },
+   "nilai": 35,
+   "d": 1,
+   "satuan": "%",
+   "sumber": "ember",
+   "est": true
+  },
+  {
+   "label": {
+    "id": "Potensi lepas pantai (BBSP KEBTKE 2023)",
+    "en": "Offshore potential (BBSP KEBTKE 2023)"
+   },
+   "nilai": 94.2,
+   "d": 1,
+   "satuan": {
+    "id": "GW",
+    "en": "GW"
+   },
+   "sumber": "etp1",
+   "est": false
+  }
+ ],
+ "penting": [
+  {
+   "id": "Hanya dua PLTB utilitas beroperasi (Sidrap 75 MW dan Tolo 72 MW), keduanya diajukan sebelum 2017 dan dibeli PLN tanpa lelang pada tarif sekitar 11 sen USD per kWh.",
+   "en": "Only two utility wind farms operate (Sidrap 75 MW and Tolo 72 MW), both proposed before 2017 and bought by PLN without a tender at about 11 US cents per kWh."
+  },
+  {
+   "id": "Satu-satunya lelang PLN (Tanah Laut 70 MW, 5,5 sen) belum mencapai financial close dan PLN dilaporkan menimbang terminasi per 1 Juli 2025.",
+   "en": "The only PLN tender (Tanah Laut 70 MW, 5.5 cents) has not reached financial close and PLN was reported to weigh termination on 1 July 2025."
+  },
+  {
+   "id": "Pelajaran luar negeri: harga yang bisa dibiayai (India, Inggris) dan pembangkit yang disinkronkan dengan transmisi (Kenya, Vietnam, Chile) menentukan.",
+   "en": "Foreign lessons: a financeable price (India, UK) and plants synchronised with transmission (Kenya, Vietnam, Chile) decide outcomes."
+  }
+ ],
+ "posisi": {
+  "id": "Porsi angin dalam listrik Indonesia 0,13 persen (2024), jauh di bawah Vietnam 4,64 persen dan Thailand 1,81 persen.",
+  "en": "The wind share of Indonesian electricity is 0.13 percent (2024), far below Vietnam at 4.64 percent and Thailand at 1.81 percent."
+ },
+ "sumber": {
+  "etp1": {
+   "judul": "Roadmap Onshore Wind Energy Development in Indonesia v5.0 (13 Des 2023)",
+   "penerbit": "Energy Transition Partnership (inisiatif Kementerian ESDM, dikelola UNOPS)",
+   "url": "https://www.energytransitionpartnership.org/wp-content/uploads/2024/09/20240919-Roadmap-Onshore-Wind-Energy-v5.0-EN.pdf",
+   "tanggal": "2026-11-08",
+   "tahun": 2023,
+   "bukti": "kajian"
+  },
+  "etp2": {
+   "judul": "Wind Energy Development in Indonesia: Investment Plan, Final Report v2.0 (23 Sep 2024)",
+   "penerbit": "Energy Transition Partnership",
+   "url": "https://www.energytransitionpartnership.org/wp-content/uploads/2024/09/20240906-Final-Report-Wind-Energy-Development-in-Indonesia-Investment-Plan-v2.0.pdf",
+   "tanggal": "2026-11-08",
+   "tahun": 2024,
+   "bukti": "kajian"
+  },
+  "ruen": {
+   "judul": "Perpres 22/2017 tentang Rencana Umum Energi Nasional (Lampiran I, Tabel 46 potensi bayu per provinsi)",
+   "penerbit": "Pemerintah RI",
+   "url": "https://peraturan.bpk.go.id/Details/68772",
+   "tanggal": "2026-11-07",
+   "tahun": 2017,
+   "bukti": "resmi"
+  },
+  "p112": {
+   "judul": "Perpres 112/2022 tentang Percepatan Pengembangan Energi Terbarukan untuk Penyediaan Tenaga Listrik (Lampiran I dan II)",
+   "penerbit": "Pemerintah RI",
+   "url": "https://peraturan.bpk.go.id/Details/225308",
+   "tanggal": "2026-11-07",
+   "tahun": 2022,
+   "bukti": "resmi"
+  },
+  "ruptl": {
+   "judul": "RUPTL PLN 2025-2034 (Kepmen ESDM 188.K/TL.03/MEM.L/2025, 26 Mei 2025), tabel proyek bayu",
+   "penerbit": "PT PLN (Persero); disahkan Kementerian ESDM",
+   "url": "https://gatrik.esdm.go.id/gatrik/gatrik-api//storage/migrasi/download_index/files/b967d-ruptl-pln-2025-2034-pub-.pdf",
+   "tanggal": "2026-11-07",
+   "tahun": 2025,
+   "bukti": "resmi"
+  },
+  "stat": {
+   "judul": "Statistik Ketenagalistrikan 2024 (kapasitas terpasang dan produksi PLN per provinsi)",
+   "penerbit": "Ditjen Ketenagalistrikan, Kementerian ESDM",
+   "url": "https://gatrik.esdm.go.id/gatrik/gatrik-api//storage/migrasi/download_index/files/91fa8-buku-statistik-ketenagalistrikan-2024.pdf",
+   "tanggal": "2026-11-07",
+   "tahun": 2024,
+   "bukti": "resmi",
+   "lisensi": "publikasi pemerintah terbuka; hanya angka"
+  },
+  "heesi": {
+   "judul": "Handbook of Energy and Economic Statistics of Indonesia 2025, Tabel 6.4.9",
+   "penerbit": "Kementerian ESDM",
+   "url": "https://www.esdm.go.id/assets/media/content/content-handbook-of-energy-and-economic-statistics-of-indonesia-2025.pdf",
+   "tanggal": "2026-11-07",
+   "tahun": 2025,
+   "bukti": "resmi"
+  },
+  "irena": {
+   "judul": "IRENASTAT Renewable Energy Statistics 2026, Indonesia (kapasitas bayu darat)",
+   "penerbit": "International Renewable Energy Agency (IRENA)",
+   "url": "https://pxweb.irena.org/pxweb/en/IRENASTAT/IRENASTAT__Power%20Capacity%20and%20Generation/",
+   "tanggal": "2026-11-08",
+   "tahun": 2026,
+   "bukti": "resmi",
+   "lisensi": "bebas dipakai dengan atribusi IRENASTAT"
+  },
+  "ember": {
+   "judul": "Ember Yearly Electricity Data, baris Indonesia, sumber listrik Wind",
+   "penerbit": "Ember",
+   "url": "https://ember-energy.org/data/yearly-electricity-data/",
+   "tanggal": "2026-11-07",
+   "tahun": 2025,
+   "bukti": "kajian",
+   "lisensi": "CC BY 4.0"
+  },
+  "owid": {
+   "judul": "Levelized cost of energy (IRENA Renewable Power Generation Costs), diolah Our World in Data; USD harga tetap 2025",
+   "penerbit": "Our World in Data / IRENA",
+   "url": "https://ourworldindata.org/grapher/levelized-cost-of-energy",
+   "tanggal": "2026-11-08",
+   "tahun": 2025,
+   "bukti": "via-pihak-ketiga",
+   "lisensi": "CC BY 4.0"
+  },
+  "owid_bauran": {
+   "judul": "Our World in Data energy-data (Ember Yearly Electricity Data), porsi angin dalam bauran listrik",
+   "penerbit": "Our World in Data / Ember",
+   "url": "https://raw.githubusercontent.com/owid/energy-data/master/owid-energy-data.csv",
+   "tanggal": "2026-11-08",
+   "tahun": 2025,
+   "bukti": "via-pihak-ketiga",
+   "lisensi": "CC BY 4.0"
+  },
+  "gem": {
+   "judul": "Global Wind Power Tracker 2026-02",
+   "penerbit": "Global Energy Monitor",
+   "url": "https://globalenergymonitor.org/projects/global-wind-power-tracker/",
+   "tanggal": "2026-11-08",
+   "tahun": 2026,
+   "bukti": "kajian",
+   "lisensi": "CC BY 4.0"
+  },
+  "esdm_sidrap": {
+   "judul": "PLTB Sidrap: Proyek Energi untuk Masyarakat, Pemerintah dan Investor (2 Sep 2019)",
+   "penerbit": "Ditjen EBTKE, Kementerian ESDM",
+   "url": "https://www.esdm.go.id/id/berita-unit/direktorat-jenderal-ebtke/pltb-sidrap-proyek-energi-untuk-masyarakat-pemerintah-dan-investor",
+   "tanggal": "2026-11-08",
+   "tahun": 2019,
+   "bukti": "resmi"
+  },
+  "esdm_tolo": {
+   "judul": "PLTB Tolo Sukses Beroperasi Komersial, Tahap II Siap Dikembangkan (6 Sep 2019)",
+   "penerbit": "Kementerian ESDM",
+   "url": "https://esdm.go.id/en/media-center/news-archives/pltb-tolo-sukses-beroperasi-komersial-tahap-ii-siap-dikembangkan",
+   "tanggal": "2026-11-08",
+   "tahun": 2019,
+   "bukti": "resmi"
+  },
+  "adb_tolo": {
+   "judul": "The Tolo Wind Power Project represents a new frontier in Indonesia's quest to increase renewable energy generation (hanya judul dibaca)",
+   "penerbit": "Asian Development Bank",
+   "url": "https://www.adb.org/node/516476",
+   "tanggal": "2026-11-08",
+   "tahun": null,
+   "bukti": "resmi"
+  },
+  "gn_sidrap": {
+   "judul": "Bersiap Memetik Angin di Kebun Angin Terbesar di Indonesia",
+   "penerbit": "Good News from Indonesia",
+   "url": "https://www.goodnewsfromindonesia.id/indonesiana/iptek/bersiap-memetik-angin-di-kebun-angin-terbesar-di-indonesia",
+   "tanggal": "2026-11-08",
+   "tahun": 2018,
+   "bukti": "media"
+  },
+  "bisnis_sidrap": {
+   "judul": "Profil PLTB Sidrap yang Mau Diakuisisi BREN, Investasi Rp2,3 Triliun (8 Des 2023)",
+   "penerbit": "Bisnis.com",
+   "url": "https://market.bisnis.com/read/20231208/192/1722287/profil-pltb-sidrap-yang-mau-diakuisisi-bren-investasi-rp23-triliun",
+   "tanggal": "2026-11-08",
+   "tahun": 2023,
+   "bukti": "media"
+  },
+  "bt_tl": {
+   "judul": "Bayang-bayang terminasi pembangkit angin Total Alamtri (ADRO) (1 Jul 2025)",
+   "penerbit": "Bloomberg Technoz",
+   "url": "https://www.bloombergtechnoz.com/detail-news/75713/bayang-bayang-terminasi-pembangkit-angin-total-alamtri-adro",
+   "tanggal": "2026-11-08",
+   "tahun": 2025,
+   "bukti": "media"
+  },
+  "bisnis_tl": {
+   "judul": "Total Eren & Adaro Pasok Listrik Tenaga Angin ke PLN, Termurah Dalam Sejarah (16 Nov 2022)",
+   "penerbit": "Bisnis.com",
+   "url": "https://ekonomi.bisnis.com/read/20221116/44/1598936/total-eren-adaro-pasok-listrik-tenaga-angin-ke-pln-termurah-dalam-sejarah",
+   "tanggal": "2026-11-08",
+   "tahun": 2022,
+   "bukti": "media"
+  },
+  "li_tl": {
+   "judul": "PLN, Total Eren, Adaro Power, PJBI Tandatangani PJBTL PLTB dengan Teknologi BESS Pertama di Indonesia (Mei 2023)",
+   "penerbit": "Listrik Indonesia",
+   "url": "https://listrikindonesia.com/detail/10980/pln-total-eren-adaro-power-pjbi-tandatangani-pjbtl-pltb-dengan-teknologi-bess-pertama-di-indonesia",
+   "tanggal": "2026-11-08",
+   "tahun": 2023,
+   "bukti": "media"
+  },
+  "pm_tl": {
+   "judul": "Tanah Laut wind power project delayed amid permitting setbacks (isi berbayar; hanya judul dibaca)",
+   "penerbit": "Petromindo",
+   "url": "https://www.petromindo.com/news/article/tanah-laut-wind-power-project-delayed-amid-permitting-setbacks",
+   "tanggal": "2026-11-08",
+   "tahun": null,
+   "bukti": "media"
+  },
+  "mongabay_np": {
+   "judul": "Refleksi dari Monumen Kegagalan Proyek Energi Bersih di Bali (26 Okt 2020)",
+   "penerbit": "Mongabay Indonesia",
+   "url": "https://www.mongabay.co.id/2020/10/26/refleksi-dari-monumen-kegagalan-proyek-energi-bersih-di-bali/",
+   "tanggal": "2026-11-08",
+   "tahun": 2020,
+   "bukti": "media"
+  },
+  "esdm_pandan": {
+   "judul": "Tamasya Energi Hibrida di Daerah Istimewa (tanggal artikel tidak terbaca)",
+   "penerbit": "Kementerian ESDM",
+   "url": "https://esdm.go.id/id/media-center/arsip-berita/tamasya-energi-hibrida-di-daerah-istimewa",
+   "tanggal": "2026-11-08",
+   "tahun": null,
+   "bukti": "resmi"
+  },
+  "antara_sk": {
+   "judul": "Pemkab Sukabumi dukung penambahan kuota kapasitas PLTB dari 60 MW jadi 150 MW (6 Jun 2023)",
+   "penerbit": "ANTARA Megapolitan",
+   "url": "https://megapolitan.antaranews.com/berita/245658/pemkab-sukabumi-dukung-penambahan-kuota-kapasitas-pltb-dari-60-mw-jadi-150-mw",
+   "tanggal": "2026-11-08",
+   "tahun": 2023,
+   "bukti": "media"
+  },
+  "iir_sk": {
+   "judul": "UPC Renewables negotiates PPA for Sukabumi windfarm in Indonesia (30 Nov 2022)",
+   "penerbit": "Industrial Info Resources",
+   "url": "https://www.industrialinfo.com/news/article/upc-renewables-negotiates-ppa-for-sukabumi-windfarm-in-indonesia--316223",
+   "tanggal": "2026-11-08",
+   "tahun": 2022,
+   "bukti": "media"
+  },
+  "wiki_ltwp": {
+   "judul": "Lake Turkana Wind Power",
+   "penerbit": "Wikipedia (ringkasan berbagai laporan media Kenya)",
+   "url": "https://en.wikipedia.org/wiki/Lake_Turkana_Wind_Power",
+   "tanggal": "2026-11-08",
+   "tahun": 2025,
+   "bukti": "via-pihak-ketiga",
+   "lisensi": "CC BY-SA 4.0"
+  },
+  "ea_ltwp": {
+   "judul": "Kenyans face higher bills over $54m fine in stalled wind power line project (hanya judul dibaca)",
+   "penerbit": "The EastAfrican",
+   "url": "https://www.theeastafrican.co.ke/tea/business-tech/kenyans-face-higher-bills-over-54m-fine-in-stalled-wind-power-line-project-1375976",
+   "tanggal": "2026-11-08",
+   "tahun": null,
+   "bukti": "media"
+  },
+  "vnexpress": {
+   "judul": "Wind power investors claim bankruptcy looms without incentive tariffs (6 Jan 2022)",
+   "penerbit": "VnExpress International",
+   "url": "https://e.vnexpress.net/news/business/industries/wind-power-investors-claim-bankruptcy-looms-without-incentive-tariffs-4412885.html",
+   "tanggal": "2026-11-08",
+   "tahun": 2022,
+   "bukti": "media"
+  },
+  "aljaz": {
+   "judul": "After renewables frenzy, Vietnam's solar energy goes to waste (18 Mei 2022)",
+   "penerbit": "Al Jazeera",
+   "url": "https://www.aljazeera.com/economy/2022/5/18/after-renewables-push-vietnam-has-too-much-energy-to-handle",
+   "tanggal": "2026-11-08",
+   "tahun": 2022,
+   "bukti": "media"
+  },
+  "orsted23": {
+   "judul": "Orsted ceases development of its US offshore wind projects Ocean Wind 1 and 2 (1 Nov 2023)",
+   "penerbit": "Orsted A/S",
+   "url": "https://orsted.com/en/company-announcement-list/2023/10/oersted-ceases-development-of-its-us-offshore-wind-73751",
+   "tanggal": "2026-11-08",
+   "tahun": 2023,
+   "bukti": "resmi"
+  },
+  "ci_h4": {
+   "judul": "Danes cancel Hornsea 4 (8 Mei 2025)",
+   "penerbit": "Construction Index",
+   "url": "https://www.theconstructionindex.co.uk/news/view/danes-cancel-hornsea-4",
+   "tanggal": "2026-11-08",
+   "tahun": 2025,
+   "bukti": "media"
+  },
+  "cms_ar6": {
+   "judul": "UK Government publishes results to the Contract for Difference Allocation Round Six",
+   "penerbit": "CMS Law",
+   "url": "https://cms.law/en/gbr/legal-updates/uk-government-publishes-results-to-the-contract-for-difference-allocation-round-six",
+   "tanggal": "2026-11-08",
+   "tahun": 2024,
+   "bukti": "via-pihak-ketiga"
+  },
+  "rw_india": {
+   "judul": "Lowest bid of Rs 2.44 per kWh discovered in SECI wind auction (6 Mar 2018)",
+   "penerbit": "Renewable Watch",
+   "url": "https://renewablewatch.in/2018/03/06/lowest-bid-rs-2-44-per-kwh-discovered-seci-wind-auction",
+   "tanggal": "2026-11-08",
+   "tahun": 2018,
+   "bukti": "media"
+  },
+  "gem_chai": {
+   "judul": "Chaiyaphum wind farm (EGCO)",
+   "penerbit": "Global Energy Monitor wiki",
+   "url": "https://gem.wiki/Chaiyaphum_wind_farm",
+   "tanggal": "2026-11-08",
+   "tahun": 2026,
+   "bukti": "kajian",
+   "lisensi": "CC BY 4.0"
+  },
+  "twp_th": {
+   "judul": "Thailand wind power statistics",
+   "penerbit": "The Wind Power",
+   "url": "https://www.thewindpower.net/country_en_102_thailand.php",
+   "tanggal": "2026-11-08",
+   "tahun": 2026,
+   "bukti": "via-pihak-ketiga"
+  },
+  "pvtech_cl": {
+   "judul": "Chile curtailed 6TWh of solar PV and wind power in 2024",
+   "penerbit": "PV Tech",
+   "url": "https://www.pv-tech.org/chile-curtailed-6twh-of-solar-pv-and-wind-power-in-2024/",
+   "tanggal": "2026-11-08",
+   "tahun": 2025,
+   "bukti": "media"
+  },
+  "gwec": {
+   "judul": "Global Wind Report 2025",
+   "penerbit": "Global Wind Energy Council (GWEC)",
+   "url": "https://www.gwec.net/reports/globalwindreport/2025",
+   "tanggal": "2026-11-08",
+   "tahun": 2025,
+   "bukti": "kajian"
+  },
+  "irena_cost": {
+   "judul": "Renewable Power Generation Costs in 2024 (angka dibaca dari ringkasan pihak ketiga, bukan PDF primer)",
+   "penerbit": "IRENA",
+   "url": "https://www.irena.org/Publications/2025/Jun/Renewable-Power-Generation-Costs-in-2024",
+   "tanggal": "2026-11-08",
+   "tahun": 2025,
+   "bukti": "via-pihak-ketiga"
+  },
+  "katadata277": {
+   "judul": "Indonesia Miliki 277 GW Potensi Energi Angin Lepas Pantai yang Belum Tersentuh (mengutip Bank Dunia)",
+   "penerbit": "Katadata",
+   "url": "https://katadata.co.id/ekonomi-hijau/energi-baru/6a27fd9abe1b4/indonesia-miliki-277-gw-potensi-energi-angin-lepas-pantai-yang-belum-tersentuh",
+   "tanggal": "2026-11-08",
+   "tahun": 2026,
+   "bukti": "media"
+  },
+  "esmap": {
+   "judul": "Offshore Wind Technical Potential: Analysis and Maps (peta Indonesia)",
+   "penerbit": "ESMAP, Bank Dunia",
+   "url": "https://esmap.org/esmap_offshorewind_techpotential_analysis_maps",
+   "tanggal": "2026-11-08",
+   "tahun": 2020,
+   "bukti": "resmi"
+  },
+  "iesr": {
+   "judul": "Unlocking Indonesia's Renewables Future: The Economic Case of 333 GW of Solar, Wind, and Hydro (Feb 2025; ringkasan di Pustaka METI)",
+   "penerbit": "Institute for Essential Services Reform (IESR)",
+   "url": "https://iesr.or.id/",
+   "tanggal": "2026-11-07",
+   "tahun": 2025,
+   "bukti": "kajian"
+  },
+  "konsul": {
+   "judul": "Berita: METI minta RUU EBET segera disahkan (arsip Konsultasi METI)",
+   "penerbit": "Liputan6",
+   "url": "https://www.liputan6.com/bisnis/read/6312024/meti-minta-ruu-ebet-segera-disahkan",
+   "tanggal": "2026-11-08",
+   "tahun": 2026,
+   "bukti": "media"
+  },
+  "perm30": {
+   "judul": "Permen ESDM 30/2006 tentang standar kompetensi tenaga teknik pembangkitan EBT termasuk PLTB (status dicabut menurut basis regulasi METI)",
+   "penerbit": "Kementerian ESDM",
+   "url": "https://peraturan.bpk.go.id/Details/143855",
+   "tanggal": "2026-11-07",
+   "tahun": 2006,
+   "bukti": "resmi"
+  },
+  "meti": {
+   "judul": "Analisis METI (Hipotesis): sintesis dari sumber-sumber di naskah ini, bukan fakta terverifikasi",
+   "penerbit": "Jaringan METI",
+   "url": "https://platformmeti.timitbnpb.workers.dev",
+   "tanggal": "2026-11-08",
+   "tahun": 2026,
+   "bukti": "editorial"
+  }
+ },
+ "bab": {
+  "2": {
+   "tipe": "faq",
+   "butir": [
+    {
+     "t": {
+      "id": "Berapa besar PLTB di Indonesia sekarang?",
+      "en": "How large is wind power in Indonesia today?"
+     },
+     "j": {
+      "id": "Kapasitas terpasang sekitar 152,3 MW (IRENA), seluruhnya dua PLTB utilitas di Sulawesi Selatan (Sidrap 75 MW dan Tolo 72 MW) plus turbin kecil di Bali. Produksi 2024 sekitar 467 GWh (Ember).",
+      "en": "Installed capacity is about 152.3 MW (IRENA), essentially two utility wind farms in South Sulawesi (Sidrap 75 MW and Tolo 72 MW) plus small turbines in Bali. 2024 generation was about 467 GWh (Ember)."
+     }
+    },
+    {
+     "t": {
+      "id": "Berapa potensi anginnya?",
+      "en": "What is the wind potential?"
+     },
+     "j": {
+      "id": "RUEN menyebut 60,6 GW bayu darat (angin di atas 4 m/s pada 50 m, data 2015); BBSP KEBTKE 2023 menambah 94,2 GW lepas pantai sehingga total sekitar 155 GW. Kajian lain memberi rentang 17 sampai 155 GW. Bank Dunia (via Katadata) menyebut potensi teknis lepas pantai 277 GW, angka teoretis dari kecepatan angin dan kedalaman laut saja.",
+      "en": "RUEN gives 60.6 GW onshore (wind above 4 m/s at 50 m, 2015 data); BBSP KEBTKE 2023 adds 94.2 GW offshore for about 155 GW in total. Other studies give a range of 17 to 155 GW. The World Bank (via Katadata) cites 277 GW technical offshore potential, a theoretical figure from wind speed and sea depth only."
+     }
+    },
+    {
+     "t": {
+      "id": "Mengapa begitu sedikit dimanfaatkan?",
+      "en": "Why is so little used?"
+     },
+     "j": {
+      "id": "ETP menyebut kendala: data angin jangka panjang terbatas, tarif dan PPA yang sulit dibiayai, jaringan, lahan dan izin, serta logistik. Tidak ada tambahan kapasitas sejak Tolo I pada 2019.",
+      "en": "ETP lists the barriers: limited long-term wind data, hard-to-finance tariffs and PPAs, grid, land and permits, and logistics. No capacity has been added since Tolo I in 2019."
+     }
+    },
+    {
+     "t": {
+      "id": "Berapa tarif PLTB?",
+      "en": "What is the wind tariff?"
+     },
+     "j": {
+      "id": "Perpres 112/2022: tahun 1 sampai 10 = koefisien x faktor lokasi F, lalu nilai tetap; untuk di atas 20 MW 9,54 sen USD per kWh x F pada 10 tahun pertama dan 5,73 sen sesudahnya. Sidrap dan Tolo dikontrak sekitar 11 sen selama 30 tahun; penawaran Tanah Laut 5,5 sen.",
+      "en": "Perpres 112/2022: years 1 to 10 = coefficient x location factor F, then a fixed value; above 20 MW it is 9.54 US cents per kWh x F for the first 10 years and 5.73 cents after. Sidrap and Tolo were contracted at about 11 cents for 30 years; the Tanah Laut bid was 5.5 cents."
+     }
+    },
+    {
+     "t": {
+      "id": "Apakah harus mengukur angin sendiri?",
+      "en": "Must I measure wind myself?"
+     },
+     "j": {
+      "id": "Untuk ikut tender PLN, ya: minimal satu tahun pengukuran menerus di lokasi. Satu menara ukur berbiaya sekitar Rp1,5 sampai 2 miliar menurut ETP.",
+      "en": "To bid in a PLN tender, yes: at least one continuous year on site. A mast costs about IDR 1.5 to 2 billion per ETP."
+     }
+    },
+    {
+     "t": {
+      "id": "Apakah PLTB perlu AMDAL?",
+      "en": "Does a wind farm need an EIA?"
+     },
+     "j": {
+      "id": "Menurut Permen LHK 4/2021 (via ETP): AMDAL untuk 50 MW ke atas, UKL-UPL untuk 1 sampai 50 MW, SPPL di bawah 1 MW.",
+      "en": "Per Environment Ministry Regulation 4/2021 (via ETP): AMDAL for 50 MW and above, UKL-UPL for 1 to 50 MW, SPPL below 1 MW."
+     }
+    },
+    {
+     "t": {
+      "id": "Apakah ada TKDN untuk turbin?",
+      "en": "Is there a local content rule for turbines?"
+     },
+     "j": {
+      "id": "Belum ada TKDN khusus bayu (ETP 2023), tetapi pengembang khawatir akan diberlakukan padahal rotor, bilah, dan generator belum diproduksi di Indonesia; baru menara yang dibuat untuk ekspor.",
+      "en": "There is no wind-specific local content rule yet (ETP 2023), but developers fear one, while rotors, blades and generators are not made in Indonesia; only towers are made, for export."
+     }
+    },
+    {
+     "t": {
+      "id": "Mengapa Sulawesi Selatan?",
+      "en": "Why South Sulawesi?"
+     },
+     "j": {
+      "id": "Dua PLTB utilitas dibangun di sana (Sidrap dan Tolo), diajukan sebelum 2017 dan dibeli PLN tanpa lelang. Lokasinya juga tercatat di atas 5 m/s menurut LAPAN.",
+      "en": "Both utility wind farms are there (Sidrap and Tolo), proposed before 2017 and bought by PLN without a tender. LAPAN also lists it above 5 m/s."
+     }
+    },
+    {
+     "t": {
+      "id": "Bagaimana dengan lepas pantai?",
+      "en": "What about offshore?"
+     },
+     "j": {
+      "id": "Belum ada proyek lepas pantai di Indonesia. Biaya terpasang global lepas pantai USD 2.852 per kW dibanding USD 1.041 per kW darat (IRENA 2024), dan Orsted membatalkan Hornsea 4 dan Ocean Wind karena biaya, sehingga pembelajaran luar negeri menekankan risiko biaya.",
+      "en": "There is no offshore project in Indonesia yet. Global offshore installed cost is USD 2,852 per kW against USD 1,041 per kW onshore (IRENA 2024), and Orsted cancelled Hornsea 4 and Ocean Wind over costs, so foreign lessons stress cost risk."
+     }
+    },
+    {
+     "t": {
+      "id": "Apa itu kurtailmen?",
+      "en": "What is curtailment?"
+     },
+     "j": {
+      "id": "Pembatasan keluaran pembangkit oleh operator jaringan karena kelebihan pasokan atau saluran penuh. Chile membatasi 5.909 GWh surya dan angin pada 2024 dan Vietnam mengalaminya di Ninh Thuan.",
+      "en": "Operator-ordered limits on plant output due to oversupply or full lines. Chile curtailed 5,909 GWh of solar and wind in 2024 and Vietnam saw it in Ninh Thuan."
+     }
+    },
+    {
+     "t": {
+      "id": "Bagaimana angin skala kecil?",
+      "en": "What about small-scale wind?"
+     },
+     "j": {
+      "id": "Contoh 2007 di Nusa Penida berhenti kurang dari dua tahun karena suku cadang; hibrida Pandansimo (Bantul) disebut hanya dua pertiga turbin berputar. Pelajaran: kontrak O&M dan pengelola harus ada sebelum serah terima.",
+      "en": "The 2007 Nusa Penida example stopped within two years because of spare parts; the Pandansimo hybrid (Bantul) is reported to have only two thirds of its turbines turning. Lesson: O&M contracts and an operator must exist before handover."
+     }
+    }
+   ]
+  },
+  "3": {
+   "tipe": "glosarium",
+   "butir": [
+    {
+     "istilah": {
+      "id": "PLTB",
+      "en": "PLTB"
+     },
+     "arti": {
+      "id": "Pembangkit Listrik Tenaga Bayu (angin)",
+      "en": "Wind power plant"
+     }
+    },
+    {
+     "istilah": {
+      "id": "RUEN",
+      "en": "RUEN"
+     },
+     "arti": {
+      "id": "Rencana Umum Energi Nasional (Perpres 22/2017)",
+      "en": "National General Energy Plan (Perpres 22/2017)"
+     }
+    },
+    {
+     "istilah": {
+      "id": "RUPTL",
+      "en": "RUPTL"
+     },
+     "arti": {
+      "id": "Rencana Usaha Penyediaan Tenaga Listrik PLN, daftar proyek yang boleh diadakan PLN",
+      "en": "PLN electricity supply business plan, the list of projects PLN may procure"
+     }
+    },
+    {
+     "istilah": {
+      "id": "PPA",
+      "en": "PPA"
+     },
+     "arti": {
+      "id": "Perjanjian jual beli listrik antara PLN dan pengembang",
+      "en": "Power purchase agreement between PLN and a developer"
+     }
+    },
+    {
+     "istilah": {
+      "id": "DPT",
+      "en": "DPT"
+     },
+     "arti": {
+      "id": "Daftar Penyedia Terseleksi, prakualifikasi IPP di PLN",
+      "en": "Selected Provider List, PLN pre-qualification for IPPs"
+     }
+    },
+    {
+     "istilah": {
+      "id": "KKPR",
+      "en": "KKPR"
+     },
+     "arti": {
+      "id": "Kesesuaian Kegiatan Pemanfaatan Ruang, izin tata ruang lahan di atas 1 ha",
+      "en": "Spatial utilisation conformity permit, for land over 1 ha"
+     }
+    },
+    {
+     "istilah": {
+      "id": "AMDAL, UKL-UPL, SPPL",
+      "en": "AMDAL, UKL-UPL, SPPL"
+     },
+     "arti": {
+      "id": "Tiga tingkat dokumen lingkungan menurut kapasitas",
+      "en": "Three tiers of environmental documents by capacity"
+     }
+    },
+    {
+     "istilah": {
+      "id": "WRA",
+      "en": "WRA"
+     },
+     "arti": {
+      "id": "Wind Resource Assessment, kajian sumber angin dari pengukuran dan model",
+      "en": "Wind Resource Assessment from measurement and models"
+     }
+    },
+    {
+     "istilah": {
+      "id": "P50 dan P90",
+      "en": "P50 dan P90"
+     },
+     "arti": {
+      "id": "Produksi tahunan yang dilampaui dengan peluang 50 persen dan 90 persen",
+      "en": "Annual yield exceeded with 50 percent and 90 percent probability"
+     }
+    },
+    {
+     "istilah": {
+      "id": "Faktor kapasitas",
+      "en": "Faktor kapasitas"
+     },
+     "arti": {
+      "id": "Produksi sebenarnya dibagi produksi maksimum teoretis dalam setahun",
+      "en": "Actual output divided by theoretical maximum over a year"
+     }
+    },
+    {
+     "istilah": {
+      "id": "Kurtailmen",
+      "en": "Kurtailmen"
+     },
+     "arti": {
+      "id": "Pembatasan keluaran pembangkit oleh operator jaringan",
+      "en": "Operator-ordered limitation of plant output"
+     }
+    },
+    {
+     "istilah": {
+      "id": "Deemed energy",
+      "en": "Deemed energy"
+     },
+     "arti": {
+      "id": "Klausul yang membuat pembeli membayar energi yang siap diproduksi tetapi tidak dapat disalurkan",
+      "en": "Clause making the buyer pay for energy ready but undeliverable"
+     }
+    },
+    {
+     "istilah": {
+      "id": "CfD",
+      "en": "CfD"
+     },
+     "arti": {
+      "id": "Contract for difference, kontrak selisih harga dua arah",
+      "en": "Contract for difference, a two-way price contract"
+     }
+    },
+    {
+     "istilah": {
+      "id": "COD",
+      "en": "COD"
+     },
+     "arti": {
+      "id": "Commercial operation date, tanggal operasi komersial",
+      "en": "Commercial operation date"
+     }
+    },
+    {
+     "istilah": {
+      "id": "BESS",
+      "en": "BESS"
+     },
+     "arti": {
+      "id": "Battery energy storage system, sistem baterai",
+      "en": "Battery energy storage system"
+     }
+    },
+    {
+     "istilah": {
+      "id": "LCOE",
+      "en": "LCOE"
+     },
+     "arti": {
+      "id": "Levelized cost of energy, biaya energi rata-rata sepanjang umur proyek",
+      "en": "Levelized cost of energy over project life"
+     }
+    },
+    {
+     "istilah": {
+      "id": "TKDN",
+      "en": "TKDN"
+     },
+     "arti": {
+      "id": "Tingkat Komponen Dalam Negeri",
+      "en": "Local content level"
+     }
+    },
+    {
+     "istilah": {
+      "id": "BPP",
+      "en": "BPP"
+     },
+     "arti": {
+      "id": "Biaya Pokok Penyediaan listrik, patokan harga beli PLN",
+      "en": "PLN cost of supply, a benchmark for purchase price"
+     }
+    },
+    {
+     "istilah": {
+      "id": "Nacelle",
+      "en": "Nacelle"
+     },
+     "arti": {
+      "id": "Rumah generator dan gearbox di puncak menara",
+      "en": "Housing for generator and gearbox atop the tower"
+     }
+    },
+    {
+     "istilah": {
+      "id": "MEASNET",
+      "en": "MEASNET"
+     },
+     "arti": {
+      "id": "Jaringan lembaga yang menyeragamkan pengukuran angin",
+      "en": "Network harmonising wind measurement standards"
+     }
+    }
+   ]
+  },
+  "4": {
+   "tipe": "teks",
+   "sumber": [
+    "etp1",
+    "ruen",
+    "irena_cost"
+   ],
+   "paragraf": [
+    {
+     "id": "Pembangkit listrik tenaga bayu mengubah energi gerak angin menjadi listrik lewat bilah yang memutar generator. Untuk Indonesia, angin kuat bersifat setempat: kecepatan umumnya 3 sampai 6 m/s, dan Global Wind Atlas menunjukkan dominasi 4 sampai 5 m/s pada 100 m, sehingga lokasi bagus terkonsentrasi di punggung bukit dan selat (NTT, NTB, Sulawesi Selatan, pantai selatan Jawa).",
+     "en": "A wind power plant converts the kinetic energy of wind into electricity through blades that drive a generator. In Indonesia strong wind is local: speeds are typically 3 to 6 m/s and Global Wind Atlas is dominated by 4 to 5 m/s at 100 m, so good sites cluster on ridges and straits (East and West Nusa Tenggara, South Sulawesi, south coast of Java)."
+    },
+    {
+     "id": "Relevansinya untuk energi terbarukan: bayu darat adalah sumber baru termurah di dunia (LCOE global USD 0,034 per kWh, IRENA 2024) dan melengkapi surya karena profil produksinya berbeda; tetapi di Indonesia pemanfaatannya kurang dari 0,1 persen potensi.",
+     "en": "Relevance for renewables: onshore wind is the cheapest new source in the world (global LCOE USD 0.034 per kWh, IRENA 2024) and complements solar because its output profile differs; but in Indonesia use is under 0.1 percent of potential."
+    },
+    {
+     "id": "Komponen utama berukuran raksasa: bilah 57 sampai 80 m, nacelle 150 sampai 200 ton, menara hingga 133 m. Karena itu logistik jalan dan pelabuhan menentukan, bukan hanya kecepatan angin.",
+     "en": "Key components are enormous: blades 57 to 80 m, nacelles 150 to 200 tonnes, towers up to 133 m. Road and port logistics therefore matter as much as wind speed."
+    }
+   ]
+  },
+  "5": {
+   "tipe": "rumus",
+   "sumber": [
+    "stat",
+    "etp1",
+    "esdm_sidrap"
+   ],
+   "rumus": [
+    {
+     "id": "Daya dari angin: P = 0,5 x kerapatan udara x luas sapuan rotor x v kubik x Cp; Cp dibatasi batas Betz.",
+     "en": "Power in wind: P = 0.5 x air density x rotor swept area x v cubed x Cp; Cp is capped by the Betz limit."
+    },
+    {
+     "id": "Energi tahunan (GWh) = kapasitas (MW) x 8,76 x faktor kapasitas.",
+     "en": "Annual energy (GWh) = capacity (MW) x 8.76 x capacity factor."
+    },
+    {
+     "id": "Faktor kapasitas (persen) = produksi (GWh) / (kapasitas MW x 8,76) x 100.",
+     "en": "Capacity factor (percent) = generation (GWh) / (capacity MW x 8.76) x 100."
+    },
+    {
+     "id": "Perhatian: karena v dipangkatkan tiga, selisih kecil kecepatan angin menggandakan produksi; itu sebabnya pengukuran lokasi wajib.",
+     "en": "Note: because v is cubed, small differences in wind speed double production; that is why on-site measurement is mandatory."
+    }
+   ],
+   "contoh": [
+    {
+     "id": "Contoh dari data resmi: PLTB Sulawesi Selatan 2024 memproduksi 465.39 GWh dari 151 MW. Faktor kapasitas = 465.39 / (151 x 8,76) x 100 = 35,18 persen (EST).",
+     "en": "Example from official data: South Sulawesi wind produced 465.39 GWh from 151 MW in 2024. Capacity factor = 465.39 / (151 x 8.76) x 100 = 35.18 percent (EST)."
+    },
+    {
+     "id": "Contoh nasional: 467 GWh (Ember) dari 152.3 MW (IRENA) memberi 35 persen (EST).",
+     "en": "National example: 467 GWh (Ember) from 152.3 MW (IRENA) gives 35 percent (EST)."
+    },
+    {
+     "id": "Proyeksi Sidrap pada faktor kapasitas 35,18 persen: 75 x 8,76 x 0,3518 = sekitar 231,13 GWh per tahun (EST, ilustrasi).",
+     "en": "Sidrap projection at 35.18 percent capacity factor: 75 x 8.76 x 0.3518 = about 231.13 GWh per year (EST, illustration)."
+    }
+   ]
+  },
+  "6": {
+   "tipe": "langkah",
+   "sumber": [
+    "etp1",
+    "etp2",
+    "esdm_sidrap"
+   ],
+   "butir": [
+    {
+     "judul": {
+      "id": "Penyusun kebijakan dan perencana",
+      "en": "Policy makers and planners"
+     },
+     "isi": {
+      "id": "ESDM, DEN, dan PLN menyusun RUEN dan RUPTL; proyek harus terdaftar di RUPTL sebelum PLN mengadakannya.",
+      "en": "ESDM, DEN and PLN draft RUEN and RUPTL; a project must be in the RUPTL before PLN procures it."
+     },
+     "pelaku": {
+      "id": "ESDM, DEN, PLN",
+      "en": "ESDM, DEN, PLN"
+     }
+    },
+    {
+     "judul": {
+      "id": "Pengukuran dan kajian angin",
+      "en": "Wind measurement and assessment"
+     },
+     "isi": {
+      "id": "Pengembang memasang menara ukur atau LiDAR minimal satu tahun, lalu konsultan independen memvalidasi.",
+      "en": "Developers install masts or LiDAR for at least a year, then an independent consultant validates."
+     },
+     "pelaku": {
+      "id": "Pengembang, konsultan WRA",
+      "en": "Developer, WRA consultant"
+     }
+    },
+    {
+     "judul": {
+      "id": "Pengembang dan pemilik proyek",
+      "en": "Developers and project owners"
+     },
+     "isi": {
+      "id": "Pengembang internasional dengan mitra lokal (mis. UPC Renewables, Vena Energy); PLN mewajibkan mitra tertentu di tender terbaru.",
+      "en": "International developers with local partners (e.g. UPC Renewables, Vena Energy); PLN requires a specific partner in recent tenders."
+     },
+     "pelaku": {
+      "id": "IPP, PLN Nusantara Renewables",
+      "en": "IPPs, PLN Nusantara Renewables"
+     }
+    },
+    {
+     "judul": {
+      "id": "Pembeli",
+      "en": "Buyer"
+     },
+     "isi": {
+      "id": "PLN adalah pembeli tunggal; PPA lewat penunjukan langsung atau lelang setelah prakualifikasi DPT.",
+      "en": "PLN is the single buyer; PPA through direct selection or tender after DPT pre-qualification."
+     },
+     "pelaku": {
+      "id": "PLN",
+      "en": "PLN"
+     }
+    },
+    {
+     "judul": {
+      "id": "Pendanaan",
+      "en": "Financing"
+     },
+     "isi": {
+      "id": "Bank dan lembaga pembangunan menilai PPA, laporan P50/P90, dan jaringan; pembiayaan non-recourse menuntut konsultan independen.",
+      "en": "Banks and development lenders assess the PPA, P50/P90 report and grid; non-recourse financing requires an independent consultant."
+     },
+     "pelaku": {
+      "id": "Bank, lembaga pembangunan",
+      "en": "Banks, development lenders"
+     }
+    },
+    {
+     "judul": {
+      "id": "Pemasok turbin dan rantai pasok",
+      "en": "Turbine supply and supply chain"
+     },
+     "isi": {
+      "id": "Rotor, bilah, hub, gearbox, dan generator diimpor; baru menara yang dibuat di Indonesia (untuk ekspor).",
+      "en": "Rotors, blades, hubs, gearboxes and generators are imported; only towers are made in Indonesia (for export)."
+     },
+     "pelaku": {
+      "id": "Pabrikan turbin, produsen menara",
+      "en": "Turbine makers, tower makers"
+     }
+    },
+    {
+     "judul": {
+      "id": "Pelabuhan dan logistik",
+      "en": "Ports and logistics"
+     },
+     "isi": {
+      "id": "Di Sidrap pelabuhan dimodifikasi untuk bongkar dan simpan; satu bilah 57 m (15 ton) butuh sekitar 10 jam ke lokasi; jalan dan pelabuhan bisa 15 sampai 30 persen investasi.",
+      "en": "At Sidrap the port was modified for offloading and storage; one 57 m (15 tonne) blade took about 10 hours to site; roads and ports can be 15 to 30 percent of investment."
+     },
+     "pelaku": {
+      "id": "Otoritas pelabuhan, pengembang, pemda",
+      "en": "Port authorities, developer, local government"
+     }
+    },
+    {
+     "judul": {
+      "id": "Konstruksi dan interkoneksi",
+      "en": "Construction and interconnection"
+     },
+     "isi": {
+      "id": "Sidrap dibangun Agustus 2015 sampai Maret 2018 (sekitar 31 bulan, EST) dan tersambung ke jaringan 150 kV.",
+      "en": "Sidrap was built August 2015 to March 2018 (about 31 months, EST) and connected to the 150 kV grid."
+     },
+     "pelaku": {
+      "id": "EPC, PLN",
+      "en": "EPC, PLN"
+     }
+    },
+    {
+     "judul": {
+      "id": "Operasi dan pemeliharaan",
+      "en": "Operations and maintenance"
+     },
+     "isi": {
+      "id": "Kontrak O&M dengan pemasok, prakiraan keluaran untuk operator sistem; pelajaran Nusa Penida: tanpa suku cadang turbin berhenti.",
+      "en": "O&M contract with the supplier, output forecasts for the system operator; Nusa Penida lesson: without spares turbines stop."
+     },
+     "pelaku": {
+      "id": "IPP, PLN",
+      "en": "IPP, PLN"
+     }
+    }
+   ]
+  },
+  "7": {
+   "tipe": "grafik",
+   "jenis": "garis",
+   "label": {
+    "id": "Kapasitas bayu terpasang vs target RUEN",
+    "en": "Installed wind capacity vs RUEN target"
+   },
+   "satuan": "MW",
+   "d": 0,
+   "seri": [
+    {
+     "nama": {
+      "id": "Terpasang (IRENASTAT)",
+      "en": "Installed (IRENASTAT)"
+     },
+     "sorot": true,
+     "titik": [
+      [
+       "2015",
+       1.46
+      ],
+      [
+       "2016",
+       1.46
+      ],
+      [
+       "2017",
+       1.46
+      ],
+      [
+       "2018",
+       143.51
+      ],
+      [
+       "2019",
+       154.31
+      ],
+      [
+       "2020",
+       154.31
+      ],
+      [
+       "2021",
+       154.31
+      ],
+      [
+       "2022",
+       154.31
+      ],
+      [
+       "2023",
+       152.3
+      ],
+      [
+       "2024",
+       152.3
+      ],
+      [
+       "2025",
+       152.3
+      ]
+     ]
+    },
+    {
+     "nama": {
+      "id": "Target RUEN 2017 (dibaca dari grafik ETP)",
+      "en": "RUEN 2017 target (read from ETP chart)"
+     },
+     "titik": [
+      [
+       "2017",
+       74
+      ],
+      [
+       "2018",
+       204
+      ],
+      [
+       "2019",
+       399
+      ],
+      [
+       "2020",
+       600
+      ],
+      [
+       "2021",
+       820
+      ],
+      [
+       "2022",
+       1049
+      ],
+      [
+       "2023",
+       1290
+      ],
+      [
+       "2024",
+       1540
+      ],
+      [
+       "2025",
+       1800
+      ]
+     ]
+    }
+   ],
+   "sumber": [
+    "irena",
+    "etp1"
+   ],
+   "catatan": {
+    "id": "Kapasitas nasional naik dari nol ke sekitar 143 MW pada 2018 (Sidrap) lalu 154 MW pada 2019 (Tolo), dan tidak bertambah sejak itu. Target RUEN (1,8 GW pada 2025) dibaca dari Gambar 7 ETP (nilai tahunan dibaca dari grafik, bukan tabel resmi); selisih 2025 kira-kira 1,65 GW.",
+    "en": "National capacity rose from zero to about 143 MW in 2018 (Sidrap) and 154 MW in 2019 (Tolo), and has not grown since. The RUEN target (1.8 GW in 2025) is read from ETP Figure 7 (yearly values read off the chart, not an official table); the 2025 gap is roughly 1.65 GW."
+   }
+  },
+  "8": {
+   "tipe": "tabel",
+   "per": 10,
+   "kolom": [
+    {
+     "k": "provinsi",
+     "l": {
+      "id": "Provinsi",
+      "en": "Province"
+     }
+    },
+    {
+     "k": "potensi_mw",
+     "l": {
+      "id": "Potensi RUEN (MW)",
+      "en": "RUEN potential (MW)"
+     },
+     "num": true,
+     "d": 0
+    },
+    {
+     "k": "terpasang_mw",
+     "l": {
+      "id": "Terpasang 2025 (MW)",
+      "en": "Installed 2025 (MW)"
+     },
+     "num": true,
+     "d": 2
+    },
+    {
+     "k": "rasio_persen",
+     "l": {
+      "id": "Terpasang / potensi (persen, EST)",
+      "en": "Installed / potential (percent, EST)"
+     },
+     "num": true,
+     "d": 2
+    },
+    {
+     "k": "terukur",
+     "l": {
+      "id": "Ukuran angin terbuka (30-50 m, 2017)",
+      "en": "Open wind measurement (30-50 m, 2017)"
+     }
+    },
+    {
+     "k": "lapan",
+     "l": {
+      "id": "Indikasi LAPAN (rata-rata tahunan)",
+      "en": "LAPAN indication (annual mean)"
+     }
+    }
+   ],
+   "baris": [
+    {
+     "provinsi": "Nusa Tenggara Timur",
+     "potensi_mw": 10188,
+     "terpasang_mw": 0,
+     "rasio_persen": 0,
+     "terukur": {
+      "id": "belum ada ukuran terbuka",
+      "en": "no open measurement"
+     },
+     "lapan": {
+      "id": "di atas 5 m/s",
+      "en": "above 5 m/s"
+     }
+    },
+    {
+     "provinsi": "Jawa Timur",
+     "potensi_mw": 7907,
+     "terpasang_mw": 0,
+     "rasio_persen": 0,
+     "terukur": {
+      "id": "belum ada ukuran terbuka",
+      "en": "no open measurement"
+     },
+     "lapan": {
+      "id": "-",
+      "en": "-"
+     }
+    },
+    {
+     "provinsi": "Jawa Barat",
+     "potensi_mw": 7036,
+     "terpasang_mw": 0,
+     "rasio_persen": 0,
+     "terukur": {
+      "id": "Sukabumi 7,0 m/s",
+      "en": "Sukabumi 7.0 m/s"
+     },
+     "lapan": {
+      "id": "-",
+      "en": "-"
+     }
+    },
+    {
+     "provinsi": "Jawa Tengah",
+     "potensi_mw": 5213,
+     "terpasang_mw": 0,
+     "rasio_persen": 0,
+     "terukur": {
+      "id": "belum ada ukuran terbuka",
+      "en": "no open measurement"
+     },
+     "lapan": {
+      "id": "-",
+      "en": "-"
+     }
+    },
+    {
+     "provinsi": "Sulawesi Selatan",
+     "potensi_mw": 4193,
+     "terpasang_mw": 150.75,
+     "rasio_persen": 3.6,
+     "terukur": {
+      "id": "Bantaeng 4,66 m/s",
+      "en": "Bantaeng 4.66 m/s"
+     },
+     "lapan": {
+      "id": "di atas 5 m/s",
+      "en": "above 5 m/s"
+     }
+    },
+    {
+     "provinsi": "Maluku",
+     "potensi_mw": 3188,
+     "terpasang_mw": 0,
+     "rasio_persen": 0,
+     "terukur": {
+      "id": "belum ada ukuran terbuka",
+      "en": "no open measurement"
+     },
+     "lapan": {
+      "id": "-",
+      "en": "-"
+     }
+    },
+    {
+     "provinsi": "Nusa Tenggara Barat",
+     "potensi_mw": 2605,
+     "terpasang_mw": 0,
+     "rasio_persen": 0,
+     "terukur": {
+      "id": "belum ada ukuran terbuka",
+      "en": "no open measurement"
+     },
+     "lapan": {
+      "id": "di atas 5 m/s",
+      "en": "above 5 m/s"
+     }
+    },
+    {
+     "provinsi": "Kepulauan Bangka Belitung",
+     "potensi_mw": 1787,
+     "terpasang_mw": 0,
+     "rasio_persen": 0,
+     "terukur": {
+      "id": "belum ada ukuran terbuka",
+      "en": "no open measurement"
+     },
+     "lapan": {
+      "id": "-",
+      "en": "-"
+     }
+    },
+    {
+     "provinsi": "Banten",
+     "potensi_mw": 1753,
+     "terpasang_mw": 0,
+     "rasio_persen": 0,
+     "terukur": {
+      "id": "belum ada ukuran terbuka",
+      "en": "no open measurement"
+     },
+     "lapan": {
+      "id": "-",
+      "en": "-"
+     }
+    },
+    {
+     "provinsi": "Bengkulu",
+     "potensi_mw": 1513,
+     "terpasang_mw": 0,
+     "rasio_persen": 0,
+     "terukur": {
+      "id": "belum ada ukuran terbuka",
+      "en": "no open measurement"
+     },
+     "lapan": {
+      "id": "-",
+      "en": "-"
+     }
+    },
+    {
+     "provinsi": "Sulawesi Tenggara",
+     "potensi_mw": 1414,
+     "terpasang_mw": 0,
+     "rasio_persen": 0,
+     "terukur": {
+      "id": "belum ada ukuran terbuka",
+      "en": "no open measurement"
+     },
+     "lapan": {
+      "id": "-",
+      "en": "-"
+     }
+    },
+    {
+     "provinsi": "Papua",
+     "potensi_mw": 1411,
+     "terpasang_mw": 0,
+     "rasio_persen": 0,
+     "terukur": {
+      "id": "Jayapura 3,05 m/s",
+      "en": "Jayapura 3.05 m/s"
+     },
+     "lapan": {
+      "id": "-",
+      "en": "-"
+     }
+    },
+    {
+     "provinsi": "Sulawesi Utara",
+     "potensi_mw": 1214,
+     "terpasang_mw": 0.08,
+     "rasio_persen": 0.01,
+     "terukur": {
+      "id": "Pulau Sangihe 6,4 m/s",
+      "en": "Sangihe Island 6.4 m/s"
+     },
+     "lapan": {
+      "id": "-",
+      "en": "-"
+     }
+    },
+    {
+     "provinsi": "Lampung",
+     "potensi_mw": 1137,
+     "terpasang_mw": 0,
+     "rasio_persen": 0,
+     "terukur": {
+      "id": "belum ada ukuran terbuka",
+      "en": "no open measurement"
+     },
+     "lapan": {
+      "id": "-",
+      "en": "-"
+     }
+    },
+    {
+     "provinsi": "DI Yogyakarta",
+     "potensi_mw": 1079,
+     "terpasang_mw": 0,
+     "rasio_persen": 0,
+     "terukur": {
+      "id": "belum ada ukuran terbuka",
+      "en": "no open measurement"
+     },
+     "lapan": {
+      "id": "-",
+      "en": "-"
+     }
+    },
+    {
+     "provinsi": "Bali",
+     "potensi_mw": 1019,
+     "terpasang_mw": 1.08,
+     "rasio_persen": 0.11,
+     "terukur": {
+      "id": "belum ada ukuran terbuka",
+      "en": "no open measurement"
+     },
+     "lapan": {
+      "id": "-",
+      "en": "-"
+     }
+    },
+    {
+     "provinsi": "Kalimantan Selatan",
+     "potensi_mw": 1006,
+     "terpasang_mw": 0,
+     "rasio_persen": 0,
+     "terukur": {
+      "id": "belum ada ukuran terbuka",
+      "en": "no open measurement"
+     },
+     "lapan": {
+      "id": "-",
+      "en": "-"
+     }
+    },
+    {
+     "provinsi": "Kepulauan Riau",
+     "potensi_mw": 922,
+     "terpasang_mw": 0,
+     "rasio_persen": 0,
+     "terukur": {
+      "id": "belum ada ukuran terbuka",
+      "en": "no open measurement"
+     },
+     "lapan": {
+      "id": "-",
+      "en": "-"
+     }
+    },
+    {
+     "provinsi": "Sulawesi Tengah",
+     "potensi_mw": 908,
+     "terpasang_mw": 0,
+     "rasio_persen": 0,
+     "terukur": {
+      "id": "belum ada ukuran terbuka",
+      "en": "no open measurement"
+     },
+     "lapan": {
+      "id": "-",
+      "en": "-"
+     }
+    },
+    {
+     "provinsi": "Aceh",
+     "potensi_mw": 894,
+     "terpasang_mw": 0,
+     "rasio_persen": 0,
+     "terukur": {
+      "id": "belum ada ukuran terbuka",
+      "en": "no open measurement"
+     },
+     "lapan": {
+      "id": "-",
+      "en": "-"
+     }
+    },
+    {
+     "provinsi": "Kalimantan Tengah",
+     "potensi_mw": 681,
+     "terpasang_mw": 0,
+     "rasio_persen": 0,
+     "terukur": {
+      "id": "belum ada ukuran terbuka",
+      "en": "no open measurement"
+     },
+     "lapan": {
+      "id": "-",
+      "en": "-"
+     }
+    },
+    {
+     "provinsi": "Kalimantan Barat",
+     "potensi_mw": 554,
+     "terpasang_mw": 0,
+     "rasio_persen": 0,
+     "terukur": {
+      "id": "belum ada ukuran terbuka",
+      "en": "no open measurement"
+     },
+     "lapan": {
+      "id": "-",
+      "en": "-"
+     }
+    },
+    {
+     "provinsi": "Sulawesi Barat",
+     "potensi_mw": 514,
+     "terpasang_mw": 0,
+     "rasio_persen": 0,
+     "terukur": {
+      "id": "belum ada ukuran terbuka",
+      "en": "no open measurement"
+     },
+     "lapan": {
+      "id": "-",
+      "en": "-"
+     }
+    },
+    {
+     "provinsi": "Maluku Utara",
+     "potensi_mw": 504,
+     "terpasang_mw": 0,
+     "rasio_persen": 0,
+     "terukur": {
+      "id": "belum ada ukuran terbuka",
+      "en": "no open measurement"
+     },
+     "lapan": {
+      "id": "-",
+      "en": "-"
+     }
+    },
+    {
+     "provinsi": "Papua Barat",
+     "potensi_mw": 437,
+     "terpasang_mw": 0,
+     "rasio_persen": 0,
+     "terukur": {
+      "id": "belum ada ukuran terbuka",
+      "en": "no open measurement"
+     },
+     "lapan": {
+      "id": "-",
+      "en": "-"
+     }
+    },
+    {
+     "provinsi": "Sumatera Barat",
+     "potensi_mw": 428,
+     "terpasang_mw": 0,
+     "rasio_persen": 0,
+     "terukur": {
+      "id": "belum ada ukuran terbuka",
+      "en": "no open measurement"
+     },
+     "lapan": {
+      "id": "-",
+      "en": "-"
+     }
+    },
+    {
+     "provinsi": "Sumatera Utara",
+     "potensi_mw": 356,
+     "terpasang_mw": 0,
+     "rasio_persen": 0,
+     "terukur": {
+      "id": "belum ada ukuran terbuka",
+      "en": "no open measurement"
+     },
+     "lapan": {
+      "id": "-",
+      "en": "-"
+     }
+    },
+    {
+     "provinsi": "Sumatera Selatan",
+     "potensi_mw": 301,
+     "terpasang_mw": 0,
+     "rasio_persen": 0,
+     "terukur": {
+      "id": "belum ada ukuran terbuka",
+      "en": "no open measurement"
+     },
+     "lapan": {
+      "id": "-",
+      "en": "-"
+     }
+    },
+    {
+     "provinsi": "Kalimantan Timur",
+     "potensi_mw": 212,
+     "terpasang_mw": 0,
+     "rasio_persen": 0,
+     "terukur": {
+      "id": "belum ada ukuran terbuka",
+      "en": "no open measurement"
+     },
+     "lapan": {
+      "id": "-",
+      "en": "-"
+     }
+    },
+    {
+     "provinsi": "Gorontalo",
+     "potensi_mw": 137,
+     "terpasang_mw": 0,
+     "rasio_persen": 0,
+     "terukur": {
+      "id": "belum ada ukuran terbuka",
+      "en": "no open measurement"
+     },
+     "lapan": {
+      "id": "-",
+      "en": "-"
+     }
+    },
+    {
+     "provinsi": "Kalimantan Utara",
+     "potensi_mw": 73,
+     "terpasang_mw": 0,
+     "rasio_persen": 0,
+     "terukur": {
+      "id": "belum ada ukuran terbuka",
+      "en": "no open measurement"
+     },
+     "lapan": {
+      "id": "-",
+      "en": "-"
+     }
+    },
+    {
+     "provinsi": "Jambi",
+     "potensi_mw": 37,
+     "terpasang_mw": 0,
+     "rasio_persen": 0,
+     "terukur": {
+      "id": "belum ada ukuran terbuka",
+      "en": "no open measurement"
+     },
+     "lapan": {
+      "id": "-",
+      "en": "-"
+     }
+    },
+    {
+     "provinsi": "Riau",
+     "potensi_mw": 22,
+     "terpasang_mw": 0,
+     "rasio_persen": 0,
+     "terukur": {
+      "id": "belum ada ukuran terbuka",
+      "en": "no open measurement"
+     },
+     "lapan": {
+      "id": "-",
+      "en": "-"
+     }
+    },
+    {
+     "provinsi": "DKI Jakarta",
+     "potensi_mw": 4,
+     "terpasang_mw": 0,
+     "rasio_persen": 0,
+     "terukur": {
+      "id": "belum ada ukuran terbuka",
+      "en": "no open measurement"
+     },
+     "lapan": {
+      "id": "-",
+      "en": "-"
+     }
+    }
+   ],
+   "sumber": [
+    "ruen",
+    "heesi",
+    "etp1"
+   ],
+   "catatan": {
+    "id": "Potensi RUEN bertahun data 2015 (34 provinsi); provinsi hasil pemekaran Papua belum punya angka sendiri sehingga tidak ditampilkan. Kecepatan angin rata-rata per provinsi tidak tersedia sebagai tabel terbuka: Global Wind Atlas hanya terbuka sebagai raster atau peta (tidak ada API ringkasan per wilayah yang terdokumentasi), jadi kolom ukuran hanya memuat empat lokasi yang pernah diukur Balai Besar Survei dan Pengujian KEBTKE selama setahun. Menurut ETP, kecepatan angin Indonesia umumnya 3 sampai 6 m/s, dan Global Wind Atlas menunjukkan dominasi 4 sampai 5 m/s pada ketinggian 100 m; LAPAN (via EBTKE 2017) menyebut NTT, NTB, Sulawesi Selatan, dan pantai selatan Jawa di atas 5 m/s. Kolom rasio dihitung METI (EST). Di Sulawesi Selatan, PLTB menyumbang sekitar 5,68 persen kapasitas terpasang dan 4,75 persen produksi PLN pada 2024 (EST, Statistik Ketenagalistrikan 2024): ini satu-satunya sistem dengan angin berarti, dan angka batas serap resmi per sistem tidak ditemukan sebagai dokumen terbuka.",
+    "en": "RUEN potential uses 2015 data (34 provinces); the new Papua provinces have no figure of their own and are omitted. Provincial mean wind speed is not available as an open table: Global Wind Atlas is open only as rasters or maps (no documented per-region summary API), so the measurement column holds only four locations measured for one year by the KEBTKE testing centre. According to ETP, Indonesian wind speeds are typically 3 to 6 m/s and Global Wind Atlas is dominated by 4 to 5 m/s at 100 m; LAPAN (via EBTKE 2017) cites East Nusa Tenggara, West Nusa Tenggara, South Sulawesi and the south coast of Java above 5 m/s. The ratio column is computed by METI (EST). In South Sulawesi wind provided about 5.68 percent of installed capacity and 4.75 percent of PLN production in 2024 (EST, Electricity Statistics 2024): it is the only system with significant wind, and no official per-system absorption limit was found as an open document."
+   }
+  },
+  "9": {
+   "tipe": "tabel",
+   "per": 12,
+   "sumber": [
+    "etp1",
+    "esdm_sidrap",
+    "esdm_tolo",
+    "bt_tl",
+    "gn_sidrap"
+   ],
+   "kolom": [
+    {
+     "k": "nama",
+     "l": {
+      "id": "Pemain",
+      "en": "Player"
+     }
+    },
+    {
+     "k": "peran",
+     "l": {
+      "id": "Peran",
+      "en": "Role"
+     }
+    },
+    {
+     "k": "catatan",
+     "l": {
+      "id": "Catatan bersumber",
+      "en": "Sourced note"
+     }
+    }
+   ],
+   "baris": [
+    {
+     "nama": "Kementerian ESDM (Ditjen EBTKE, Ditjen Ketenagalistrikan)",
+     "peran": {
+      "id": "regulator dan penyusun RUEN/RUPTL",
+      "en": "regulator and RUEN/RUPTL approver"
+     },
+     "catatan": {
+      "id": "mengesahkan RUPTL 2025-2034; BBSP KEBTKE mengukur angin 2017",
+      "en": "approved RUPTL 2025-2034; BBSP KEBTKE measured wind in 2017"
+     }
+    },
+    {
+     "nama": "PT PLN (Persero)",
+     "peran": {
+      "id": "pembeli tunggal dan pengadaan",
+      "en": "single buyer and procurement"
+     },
+     "catatan": {
+      "id": "mengadakan lewat DPT dan penunjukan langsung/lelang; kini meminta mitra wajib dan baterai di sistem kecil",
+      "en": "procures via DPT and direct selection/tender; now requires a mandatory partner and batteries in small systems"
+     }
+    },
+    {
+     "nama": "PLN Nusantara Renewables / PLN Nusantara Power",
+     "peran": {
+      "id": "mitra wajib PLN",
+      "en": "PLN mandatory partner"
+     },
+     "catatan": {
+      "id": "memegang 30 persen di PT Tata Alam Baru (Tanah Laut) menurut Bloomberg Technoz",
+      "en": "holds 30 percent of PT Tata Alam Baru (Tanah Laut) per Bloomberg Technoz"
+     }
+    },
+    {
+     "nama": "UPC Renewables / PT UPC Sidrap Bayu Energi",
+     "peran": {
+      "id": "pengembang Sidrap dan Sukabumi",
+      "en": "developer of Sidrap and Sukabumi"
+     },
+     "catatan": {
+      "id": "Sidrap 75 MW; Sukabumi dalam negosiasi PPA",
+      "en": "Sidrap 75 MW; Sukabumi in PPA negotiation"
+     }
+    },
+    {
+     "nama": "Vena Energy / PT Energi Bayu Jeneponto",
+     "peran": {
+      "id": "pengembang Tolo",
+      "en": "Tolo developer"
+     },
+     "catatan": {
+      "id": "Tolo I 72 MW, COD 14 Mei 2019; tahap II direncanakan dengan penyimpanan",
+      "en": "Tolo I 72 MW, COD 14 May 2019; phase II planned with storage"
+     }
+    },
+    {
+     "nama": "Total Eren dan Adaro Power (konsorsium awal)",
+     "peran": {
+      "id": "pemenang lelang Tanah Laut",
+      "en": "Tanah Laut tender winner"
+     },
+     "catatan": {
+      "id": "LOI 15 Nov 2022; struktur pemilik berubah ke Tata Alam Baru pada 2025",
+      "en": "LOI 15 Nov 2022; ownership structure changed to Tata Alam Baru in 2025"
+     }
+    },
+    {
+     "nama": "Gamesa (Siemens Gamesa)",
+     "peran": {
+      "id": "pemasok turbin Sidrap",
+      "en": "Sidrap turbine supplier"
+     },
+     "catatan": {
+      "id": "30 unit 2,5 MW",
+      "en": "30 units of 2.5 MW"
+     }
+    },
+    {
+     "nama": "PT Grand Sains dan PT Dwida Jaya Tama",
+     "peran": {
+      "id": "manufaktur dalam negeri (anggota/pemain di direktori METI)",
+      "en": "domestic manufacturers (members/players in the METI directory)"
+     },
+     "catatan": {
+      "id": "profil terinci ada di direktori; belum ada sumber produksi bilah/turbin utuh",
+      "en": "detailed profiles are in the directory; no source yet for whole blade/turbine production"
+     }
+    },
+    {
+     "nama": "Energy Transition Partnership",
+     "peran": {
+      "id": "pendana kajian dan peta jalan",
+      "en": "funder of studies and roadmap"
+     },
+     "catatan": {
+      "id": "menerbitkan peta jalan bayu darat (13 Des 2023) dan rencana investasi (23 Sep 2024)",
+      "en": "published the onshore wind roadmap (13 Dec 2023) and investment plan (23 Sep 2024)"
+     }
+    }
+   ],
+   "catatan": {
+    "id": "Daftar lengkap pemain otomatis di lapisan Direktori (24 organisasi bertag bayu). Baris di atas hanya yang punya sumber peran yang dibaca.",
+    "en": "The full list of players is automatic in the Directory layer (24 organisations tagged wind). Rows above include only those with a sourced role."
+   }
+  },
+  "10": {
+   "tipe": "tabel",
+   "per": 15,
+   "kolom": [
+    {
+     "k": "nama",
+     "l": {
+      "id": "Proyek",
+      "en": "Project"
+     },
+     "url": "sumber_url"
+    },
+    {
+     "k": "provinsi",
+     "l": {
+      "id": "Provinsi",
+      "en": "Province"
+     }
+    },
+    {
+     "k": "mw",
+     "l": {
+      "id": "MW",
+      "en": "MW"
+     },
+     "num": true,
+     "d": 0
+    },
+    {
+     "k": "status",
+     "l": {
+      "id": "Status",
+      "en": "Status"
+     }
+    },
+    {
+     "k": "cod",
+     "l": {
+      "id": "COD (aktual atau target)",
+      "en": "COD (actual or target)"
+     }
+    },
+    {
+     "k": "bukti",
+     "l": {
+      "id": "Tingkat bukti",
+      "en": "Evidence level"
+     }
+    },
+    {
+     "k": "catatan",
+     "l": {
+      "id": "Catatan METI",
+      "en": "METI note"
+     }
+    }
+   ],
+   "baris": [
+    {
+     "nama": "Jakarta wind farm",
+     "provinsi": "Jawa Barat",
+     "mw": 597,
+     "status": "konstruksi",
+     "cod": "-",
+     "bukti": "kajian",
+     "catatan": {
+      "id": "Status konstruksi menurut GEM tidak cocok dengan RUPTL 2025-2034 (tidak ada PLTB 597 MW di tabel RUPTL); verifikasi sebelum dikutip",
+      "en": "GEM construction status does not match RUPTL 2025-2034 (no 597 MW wind farm in the RUPTL table); verify before quoting"
+     },
+     "sumber_url": "https://www.gem.wiki/Jakarta_wind_farm"
+    },
+    {
+     "nama": "Sukabumi West Java wind farm",
+     "provinsi": "Jawa Barat",
+     "mw": 258,
+     "status": "rencana",
+     "cod": "-",
+     "bukti": "kajian",
+     "catatan": {
+      "id": "Tidak ada di tabel PLTB RUPTL 2025-2034",
+      "en": "Not in the RUPTL 2025-2034 wind table"
+     },
+     "sumber_url": "https://www.gem.wiki/Sukabumi_West_Java_wind_farm"
+    },
+    {
+     "nama": "PLTB Banten Banten",
+     "provinsi": "Banten",
+     "mw": 180,
+     "status": "-",
+     "cod": "2029 dan 2030",
+     "bukti": "resmi",
+     "catatan": {
+      "id": "-",
+      "en": "-"
+     },
+     "sumber_url": "https://gatrik.esdm.go.id/gatrik/gatrik-api//storage/migrasi/download_index/files/b967d-ruptl-pln-2025-2034-pub-.pdf"
+    },
+    {
+     "nama": "Sukabumi wind farm",
+     "provinsi": "Jawa Barat",
+     "mw": 150,
+     "status": "rencana",
+     "cod": "-",
+     "bukti": "kajian",
+     "catatan": {
+      "id": "Tidak ada di tabel PLTB RUPTL 2025-2034",
+      "en": "Not in the RUPTL 2025-2034 wind table"
+     },
+     "sumber_url": "https://www.gem.wiki/Sukabumi_(UPC_Renewables)_wind_farm"
+    },
+    {
+     "nama": "PLTB Bayu Sumatera",
+     "provinsi": "Aceh",
+     "mw": 110,
+     "status": "rencana",
+     "cod": "2026 dan 2028",
+     "bukti": "resmi",
+     "catatan": {
+      "id": "-",
+      "en": "-"
+     },
+     "sumber_url": "https://gatrik.esdm.go.id/gatrik/gatrik-api//storage/migrasi/download_index/files/b967d-ruptl-pln-2025-2034-pub-.pdf"
+    },
+    {
+     "nama": "PLTB Banten",
+     "provinsi": "Banten",
+     "mw": 100,
+     "status": "rencana",
+     "cod": "2028",
+     "bukti": "resmi",
+     "catatan": {
+      "id": "-",
+      "en": "-"
+     },
+     "sumber_url": "https://gatrik.esdm.go.id/gatrik/gatrik-api//storage/migrasi/download_index/files/b967d-ruptl-pln-2025-2034-pub-.pdf"
+    },
+    {
+     "nama": "Lombok wind farm",
+     "provinsi": "-",
+     "mw": 99,
+     "status": "rencana",
+     "cod": "-",
+     "bukti": "kajian",
+     "catatan": {
+      "id": "Titik koordinat GEM tidak cocok dengan nama (jatuh di Papua Barat); lokasi sebenarnya perlu diverifikasi",
+      "en": "GEM coordinates do not match the name (they fall in West Papua); real location needs verification"
+     },
+     "sumber_url": "https://www.gem.wiki/Lombok_wind_farm"
+    },
+    {
+     "nama": "Sidrap",
+     "provinsi": "Sulawesi Selatan",
+     "mw": 75,
+     "status": "beroperasi",
+     "cod": 2018,
+     "bukti": "media",
+     "catatan": {
+      "id": "PLTB Sidrap I; COD 5 Apr 2018 (ESDM)",
+      "en": "Sidrap I wind farm; COD 5 Apr 2018 (ESDM)"
+     },
+     "sumber_url": "https://en.wikipedia.org/wiki/List_of_power_stations_in_Indonesia"
+    },
+    {
+     "nama": "Jeneponto",
+     "provinsi": "Sulawesi Selatan",
+     "mw": 72,
+     "status": "-",
+     "cod": "-",
+     "bukti": "media",
+     "catatan": {
+      "id": "Diduga plant yang sama dengan Tolo (72 MW); dihitung sekali",
+      "en": "Likely the same plant as Tolo (72 MW); count once"
+     },
+     "sumber_url": "https://en.wikipedia.org/wiki/List_of_power_stations_in_Indonesia"
+    },
+    {
+     "nama": "Tolo wind farm",
+     "provinsi": "Sulawesi Selatan",
+     "mw": 72,
+     "status": "beroperasi",
+     "cod": 2019,
+     "bukti": "kajian",
+     "catatan": {
+      "id": "PLTB Tolo; beroperasi komersial 14 Mei 2019 (ESDM)",
+      "en": "Tolo wind farm; commercial operation 14 May 2019 (ESDM)"
+     },
+     "sumber_url": "https://www.gem.wiki/Tolo_wind_farm"
+    },
+    {
+     "nama": "PLTB Tanah Laut",
+     "provinsi": "Kalimantan Selatan",
+     "mw": 70,
+     "status": "rencana",
+     "cod": "2026",
+     "bukti": "resmi",
+     "catatan": {
+      "id": "Pengadaan; lihat kasus Tanah Laut (bab 40)",
+      "en": "Procurement; see Tanah Laut case (chapter 40)"
+     },
+     "sumber_url": "https://gatrik.esdm.go.id/gatrik/gatrik-api//storage/migrasi/download_index/files/b967d-ruptl-pln-2025-2034-pub-.pdf"
+    },
+    {
+     "nama": "Bantaeng wind farm",
+     "provinsi": "-",
+     "mw": 70,
+     "status": "rencana",
+     "cod": "-",
+     "bukti": "kajian",
+     "catatan": {
+      "id": "Titik koordinat GEM tidak cocok dengan nama (jatuh di Jawa Timur); verifikasi",
+      "en": "GEM coordinates do not match the name (they fall in East Java); verify"
+     },
+     "sumber_url": "https://www.gem.wiki/Bantaeng_wind_farm"
+    },
+    {
+     "nama": "Kluet wind farm",
+     "provinsi": "Aceh",
+     "mw": 10,
+     "status": "beroperasi",
+     "cod": 2013,
+     "bukti": "kajian",
+     "catatan": {
+      "id": "ETP 2023 hanya mencatat dua PLTB utilitas (Sulawesi Selatan); status operasi 10 MW ini menurut GEM perlu diverifikasi",
+      "en": "ETP 2023 lists only two utility wind farms (South Sulawesi); this 10 MW operating status per GEM needs verification"
+     },
+     "sumber_url": "https://www.gem.wiki/Kluet_wind_farm"
+    }
+   ],
+   "sumber": [
+    "ruptl",
+    "gem",
+    "etp1"
+   ],
+   "catatan": {
+    "id": "Direktori proyek bayu METI per 8 Nov 2026 (RUPTL PLN 2025-2034 dan Global Energy Monitor). Hanya dua PLTB utilitas yang beroperasi (Sidrap dan Tolo, Sulawesi Selatan, total 147 MW terpasang); sisanya rencana. Baris GEM berstatus \"kandidat\" dan beberapa memiliki koordinat atau status yang tidak cocok; kolom catatan menandainya. RUPTL 2025-2034 hanya memuat empat proyek PLTB (460 MW) dan satu tahap pengadaan.",
+    "en": "METI wind project directory as of 8 Nov 2026 (PLN RUPTL 2025-2034 and Global Energy Monitor). Only two utility wind farms operate (Sidrap and Tolo, South Sulawesi, 147 MW installed in total); the rest are plans. GEM rows are \"candidates\" and some have mismatched coordinates or status; the note column flags them. RUPTL 2025-2034 lists only four wind projects (460 MW) and one procurement stage."
+   }
+  },
+  "11": {
+   "tipe": "tabel",
+   "per": 8,
+   "kolom": [
+    {
+     "k": "tahun",
+     "l": {
+      "id": "Tahun",
+      "en": "Year"
+     }
+    },
+    {
+     "k": "gwh",
+     "l": {
+      "id": "Produksi bayu (GWh, Ember)",
+      "en": "Wind generation (GWh, Ember)"
+     },
+     "num": true,
+     "d": 0
+    },
+    {
+     "k": "mw",
+     "l": {
+      "id": "Kapasitas akhir tahun (MW, IRENA)",
+      "en": "Year-end capacity (MW, IRENA)"
+     },
+     "num": true,
+     "d": 1
+    },
+    {
+     "k": "fk",
+     "l": {
+      "id": "Faktor kapasitas (persen, EST)",
+      "en": "Capacity factor (percent, EST)"
+     },
+     "num": true,
+     "d": 1
+    }
+   ],
+   "baris": [
+    {
+     "tahun": "2019",
+     "gwh": 484,
+     "mw": 154.31,
+     "fk": 35.81
+    },
+    {
+     "tahun": "2020",
+     "gwh": 475,
+     "mw": 154.31,
+     "fk": 35.14
+    },
+    {
+     "tahun": "2021",
+     "gwh": 437,
+     "mw": 154.31,
+     "fk": 32.33
+    },
+    {
+     "tahun": "2022",
+     "gwh": 356,
+     "mw": 154.31,
+     "fk": 26.34
+    },
+    {
+     "tahun": "2023",
+     "gwh": 481,
+     "mw": 152.3,
+     "fk": 36.05
+    },
+    {
+     "tahun": "2024",
+     "gwh": 467,
+     "mw": 152.3,
+     "fk": 35
+    },
+    {
+     "tahun": "2025",
+     "gwh": 384,
+     "mw": 152.3,
+     "fk": 28.78
+    }
+   ],
+   "sumber": [
+    "ember",
+    "irena"
+   ],
+   "catatan": {
+    "id": "Faktor kapasitas = produksi / (kapasitas x 8.760 jam), dihitung METI (EST) dari dua sumber berbeda sehingga selisih definisi (on-grid dan off-grid, kapasitas akhir tahun) ikut masuk. Tahun 2025 sementara. Seluruh produksi bayu nasional berasal dari dua PLTB Sulawesi Selatan; pembeli tunggalnya PLN, sehingga pasar dalam negeri praktis satu pembeli dan dua penjual utilitas. Harga: 11 sen USD per kWh selama 30 tahun untuk PPA Sidrap dan Tolo (ETP, mengutip PLN 2021).",
+    "en": "Capacity factor = generation / (capacity x 8,760 hours), computed by METI (EST) from two different sources, so definitional differences (on-grid and off-grid, year-end capacity) are included. 2025 is provisional. All national wind generation comes from two South Sulawesi wind farms; the only buyer is PLN, so the domestic market is effectively one buyer and two utility sellers. Price: 11 US cents per kWh for 30 years in the Sidrap and Tolo PPAs (ETP, citing PLN 2021)."
+   }
+  },
+  "12": {
+   "tipe": "tabel",
+   "per": 10,
+   "sumber": [
+    "etp1",
+    "p112",
+    "ruen",
+    "ruptl"
+   ],
+   "kolom": [
+    {
+     "k": "instrumen",
+     "l": {
+      "id": "Instrumen",
+      "en": "Instrument"
+     }
+    },
+    {
+     "k": "isi",
+     "l": {
+      "id": "Isi kunci untuk PLTB",
+      "en": "Key content for wind"
+     }
+    },
+    {
+     "k": "status",
+     "l": {
+      "id": "Status",
+      "en": "Status"
+     }
+    }
+   ],
+   "baris": [
+    {
+     "instrumen": {
+      "id": "Perpres 22/2017 (RUEN)",
+      "en": "Perpres 22/2017 (RUEN)"
+     },
+     "isi": {
+      "id": "Target bayu 1,8 GW pada 2025 dan 28 GW pada 2050; potensi 60,6 GW darat (di atas 4 m/s pada 50 m)",
+      "en": "Wind target 1.8 GW in 2025 and 28 GW in 2050; 60.6 GW onshore potential (above 4 m/s at 50 m)"
+     },
+     "status": {
+      "id": "berlaku",
+      "en": "in force"
+     }
+    },
+    {
+     "instrumen": {
+      "id": "Perpres 112/2022",
+      "en": "Perpres 112/2022"
+     },
+     "isi": {
+      "id": "Tarif bertingkat per kapasitas: sampai 5 MW 11,22; di atas 5 sampai 20 MW 10,26; di atas 20 MW 9,54 sen USD per kWh x F pada tahun 1 sampai 10, lalu 6,73 / 6,15 / 5,73; masa kontrak maks 30 tahun",
+      "en": "Tiered tariffs by size: up to 5 MW 11.22; above 5 to 20 MW 10.26; above 20 MW 9.54 US cents per kWh x F for years 1 to 10, then 6.73 / 6.15 / 5.73; contract up to 30 years"
+     },
+     "status": {
+      "id": "berlaku (ditetapkan 13 Sep 2022)",
+      "en": "in force (enacted 13 Sep 2022)"
+     }
+    },
+    {
+     "instrumen": {
+      "id": "Permen ESDM 50/2017",
+      "en": "Permen ESDM 50/2017"
+     },
+     "isi": {
+      "id": "Tarif EBT mengacu BPP daerah; investor menilai BPP berubah tiap tahun dan tidak pasti",
+      "en": "RE tariffs referenced regional BPP; investors saw annual BPP changes as uncertain"
+     },
+     "status": {
+      "id": "digantikan sebagian oleh Perpres 112/2022 (menurut ETP)",
+      "en": "partly replaced by Perpres 112/2022 (per ETP)"
+     }
+    },
+    {
+     "instrumen": {
+      "id": "Permen ESDM 10/2017 dan 10/2018",
+      "en": "Permen ESDM 10/2017 and 10/2018"
+     },
+     "isi": {
+      "id": "Dasar PPA konvensional dan EBT yang berlaku bersamaan sehingga skema PPA tidak sesuai bayu",
+      "en": "Basis for conventional and RE PPAs applied together, so the PPA scheme fits wind poorly"
+     },
+     "status": {
+      "id": "berlaku (menurut ETP 2023)",
+      "en": "in force (per ETP 2023)"
+     }
+    },
+    {
+     "instrumen": {
+      "id": "Kepmen ESDM 188.K/TL.03/MEM.L/2025 (RUPTL 2025-2034)",
+      "en": "Kepmen ESDM 188.K/TL.03/MEM.L/2025 (RUPTL 2025-2034)"
+     },
+     "isi": {
+      "id": "Memuat empat proyek PLTB (460 MW) pada tahun 2026 sampai 2030",
+      "en": "Lists four wind projects (460 MW) for 2026 to 2030"
+     },
+     "status": {
+      "id": "berlaku; disahkan 26 Mei 2025",
+      "en": "in force; approved 26 May 2025"
+     }
+    },
+    {
+     "instrumen": {
+      "id": "Permen LHK 4/2021",
+      "en": "Environment Ministry Reg. 4/2021"
+     },
+     "isi": {
+      "id": "Dokumen lingkungan menurut kapasitas: SPPL (di bawah 1 MW), UKL-UPL (1 sampai 50 MW), AMDAL (50 MW ke atas)",
+      "en": "Environmental documents by size: SPPL (under 1 MW), UKL-UPL (1 to 50 MW), AMDAL (50 MW and above)"
+     },
+     "status": {
+      "id": "berlaku (menurut ETP)",
+      "en": "in force (per ETP)"
+     }
+    },
+    {
+     "instrumen": {
+      "id": "Permenperin 48/2010, 54/2012, 23/2023",
+      "en": "Industry Reg. 48/2010, 54/2012, 23/2023"
+     },
+     "isi": {
+      "id": "TKDN pembangkit: persentase khusus hanya untuk surya, belum ada untuk bayu",
+      "en": "Local content for power plants: specific percentage only for solar, none for wind yet"
+     },
+     "status": {
+      "id": "berlaku (menurut ETP)",
+      "en": "in force (per ETP)"
+     }
+    },
+    {
+     "instrumen": {
+      "id": "Perpres 98/2021 (nilai ekonomi karbon)",
+      "en": "Perpres 98/2021 (carbon economic value)"
+     },
+     "isi": {
+      "id": "Kerangka kredit karbon; dalam draf PPA PLN, hasil instrumen berbasis pasar (kredit karbon, REC) menjadi hak PLN",
+      "en": "Carbon credit framework; in PLN PPA drafts, proceeds of market-based instruments (carbon credits, RECs) go to PLN"
+     },
+     "status": {
+      "id": "berlaku",
+      "en": "in force"
+     }
+    },
+    {
+     "instrumen": {
+      "id": "Permen ESDM 30/2006",
+      "en": "Permen ESDM 30/2006"
+     },
+     "isi": {
+      "id": "Standar kompetensi tenaga teknik pembangkitan EBT termasuk PLTB",
+      "en": "Competence standards for RE generation technicians including wind"
+     },
+     "status": {
+      "id": "dicabut (basis regulasi METI)",
+      "en": "revoked (METI regulation base)"
+     }
+    }
+   ]
+  },
+  "13": {
+   "tipe": "linimasa",
+   "sumber": [
+    "esdm_sidrap",
+    "esdm_tolo",
+    "etp1",
+    "ruptl",
+    "bt_tl",
+    "p112",
+    "mongabay_np",
+    "bisnis_tl"
+   ],
+   "butir": [
+    {
+     "tanggal": "2007-11-01",
+     "judul": {
+      "id": "PLTB skala kecil Puncak Mundi, Nusa Penida diresmikan (berhenti kurang dari dua tahun)",
+      "en": "Small Puncak Mundi wind farm in Nusa Penida inaugurated (stops within two years)"
+     },
+     "url": "https://www.mongabay.co.id/2020/10/26/refleksi-dari-monumen-kegagalan-proyek-energi-bersih-di-bali/"
+    },
+    {
+     "tanggal": "2015-08-01",
+     "judul": {
+      "id": "Konstruksi PLTB Sidrap dimulai",
+      "en": "Sidrap wind farm construction starts"
+     },
+     "url": "https://www.esdm.go.id/id/berita-unit/direktorat-jenderal-ebtke/pltb-sidrap-proyek-energi-untuk-masyarakat-pemerintah-dan-investor"
+    },
+    {
+     "tanggal": "2018-04-05",
+     "judul": {
+      "id": "PLTB Sidrap I beroperasi komersial; diresmikan 2 Juli 2018",
+      "en": "Sidrap I enters commercial operation; inaugurated 2 July 2018"
+     },
+     "url": "https://www.esdm.go.id/id/berita-unit/direktorat-jenderal-ebtke/pltb-sidrap-proyek-energi-untuk-masyarakat-pemerintah-dan-investor"
+    },
+    {
+     "tanggal": "2019-05-14",
+     "judul": {
+      "id": "PLTB Tolo I beroperasi komersial",
+      "en": "Tolo I enters commercial operation"
+     },
+     "url": "https://esdm.go.id/en/media-center/news-archives/pltb-tolo-sukses-beroperasi-komersial-tahap-ii-siap-dikembangkan"
+    },
+    {
+     "tanggal": "2022-09-13",
+     "judul": {
+      "id": "Perpres 112/2022 ditetapkan (tarif bertingkat EBT)",
+      "en": "Perpres 112/2022 enacted (tiered RE tariffs)"
+     },
+     "url": "https://peraturan.bpk.go.id/Details/225308"
+    },
+    {
+     "tanggal": "2022-11-15",
+     "judul": {
+      "id": "Surat niat PLTB Tanah Laut ditandatangani di Bali",
+      "en": "Tanah Laut letter of intent signed in Bali"
+     },
+     "url": "https://ekonomi.bisnis.com/read/20221116/44/1598936/total-eren-adaro-pasok-listrik-tenaga-angin-ke-pln-termurah-dalam-sejarah"
+    },
+    {
+     "tanggal": "2023-05-04",
+     "judul": {
+      "id": "PPA Tanah Laut ditandatangani",
+      "en": "Tanah Laut PPA signed"
+     },
+     "url": "https://www.bloombergtechnoz.com/detail-news/75713/bayang-bayang-terminasi-pembangkit-angin-total-alamtri-adro"
+    },
+    {
+     "tanggal": "2023-12-13",
+     "judul": {
+      "id": "Peta jalan bayu darat ETP terbit (v5.0)",
+      "en": "ETP onshore wind roadmap published (v5.0)"
+     },
+     "url": "https://www.energytransitionpartnership.org/wp-content/uploads/2024/09/20240919-Roadmap-Onshore-Wind-Energy-v5.0-EN.pdf"
+    },
+    {
+     "tanggal": "2025-05-26",
+     "judul": {
+      "id": "Kepmen RUPTL 2025-2034 disahkan",
+      "en": "RUPTL 2025-2034 decree approved"
+     },
+     "url": "https://gatrik.esdm.go.id/gatrik/gatrik-api//storage/migrasi/download_index/files/b967d-ruptl-pln-2025-2034-pub-.pdf"
+    },
+    {
+     "tanggal": "2025-07-01",
+     "judul": {
+      "id": "PLN dilaporkan menimbang terminasi PLTB Tanah Laut",
+      "en": "PLN reported to weigh termination of Tanah Laut wind farm"
+     },
+     "url": "https://www.bloombergtechnoz.com/detail-news/75713/bayang-bayang-terminasi-pembangkit-angin-total-alamtri-adro"
+    },
+    {
+     "tanggal": "2026-01-01",
+     "judul": {
+      "id": "Target COD tahun 2026 di RUPTL (Bayu Sumatera tahap pertama dan Tanah Laut, skenario RE Base)",
+      "en": "RUPTL COD target year 2026 (Bayu Sumatera first stage and Tanah Laut, RE Base scenario)"
+     },
+     "url": "https://gatrik.esdm.go.id/gatrik/gatrik-api//storage/migrasi/download_index/files/b967d-ruptl-pln-2025-2034-pub-.pdf"
+    },
+    {
+     "tanggal": "2028-01-01",
+     "judul": {
+      "id": "Target COD tahun 2028 di RUPTL (PLTB Banten 100 MW dan Bayu Sumatera tahap kedua)",
+      "en": "RUPTL COD target year 2028 (Banten 100 MW and Bayu Sumatera second stage)"
+     },
+     "url": "https://gatrik.esdm.go.id/gatrik/gatrik-api//storage/migrasi/download_index/files/b967d-ruptl-pln-2025-2034-pub-.pdf"
+    },
+    {
+     "tanggal": "2029-01-01",
+     "judul": {
+      "id": "Target COD tahun 2029 sampai 2030 di RUPTL (PLTB Banten 180 MW, status tidak diketahui)",
+      "en": "RUPTL COD target years 2029 to 2030 (Banten 180 MW, status unknown)"
+     },
+     "url": "https://gatrik.esdm.go.id/gatrik/gatrik-api//storage/migrasi/download_index/files/b967d-ruptl-pln-2025-2034-pub-.pdf"
+    }
+   ],
+   "catatan": {
+    "id": "Entri berdata tahun saja memakai 1 Januari sebagai penanda; tanggal tepat tidak disebut sumber.",
+    "en": "Entries with year-only data use 1 January as a marker; exact dates are not stated by the sources."
+   }
+  },
+  "14": {
+   "tipe": "teks",
+   "sumber": [
+    "etp1",
+    "p112"
+   ],
+   "paragraf": [
+    {
+     "id": "Kewajiban: dokumen lingkungan menurut kapasitas (AMDAL untuk 50 MW ke atas), pengukuran angin minimal satu tahun di lokasi untuk tender PLN, prakualifikasi DPT, dan pada tender terbaru mitra wajib yang ditunjuk PLN. PLN juga meminta baterai di sistem kecil dengan kompensasi tarif tambahan.",
+     "en": "Obligations: environmental documents by size (AMDAL for 50 MW and above), at least one year of on-site wind measurement for PLN tenders, DPT pre-qualification and, in recent tenders, a PLN-designated mandatory partner. PLN also asks for batteries in small systems with an additional tariff as compensation."
+    },
+    {
+     "id": "Sanksi dan risiko: pelanggaran TKDN bila kelak diberlakukan dapat didenda sebesar selisih nilai komponen lokal dan impor (draf PPA Tanah Laut menurut ETP); PLN bisa menerminasi dan membeli proyek sedikitnya sebesar utang senior.",
+     "en": "Sanctions and risk: any local content breach, if later imposed, may be fined at the value difference between local and imported components (Tanah Laut PPA draft per ETP); PLN may terminate and buy the project at no less than senior debt."
+    },
+    {
+     "id": "Insentif: tarif bertingkat Perpres 112/2022 (9,54 sampai 11,22 sen USD per kWh x F pada tahun 1 sampai 10). Insentif fiskal terperinci khusus bayu tidak ditemukan dalam sumber yang dibaca; lihat lapisan Insentif METI.",
+     "en": "Incentives: tiered tariffs under Perpres 112/2022 (9.54 to 11.22 US cents per kWh x F in years 1 to 10). Detailed wind-specific fiscal incentives were not found in the sources read; see the METI Incentives layer."
+    }
+   ]
+  },
+  "15": {
+   "tipe": "langkah",
+   "sumber": [
+    "etp1",
+    "etp2"
+   ],
+   "butir": [
+    {
+     "judul": {
+      "id": "Pastikan proyek masuk RUPTL",
+      "en": "Make sure the project is in RUPTL"
+     },
+     "isi": {
+      "id": "Tanpa tercantum di RUPTL, PLN tidak membuka jalur pengadaan.",
+      "en": "Without a RUPTL listing PLN does not open a procurement path."
+     },
+     "pelaku": {
+      "id": "PLN, ESDM",
+      "en": "PLN, ESDM"
+     }
+    },
+    {
+     "judul": {
+      "id": "Prakualifikasi DPT",
+      "en": "DPT pre-qualification"
+     },
+     "isi": {
+      "id": "Serahkan dokumen hukum, portofolio, dan stabilitas keuangan.",
+      "en": "Submit legal documents, portfolio and financial stability."
+     },
+     "pelaku": {
+      "id": "Pengembang",
+      "en": "Developer"
+     }
+    },
+    {
+     "judul": {
+      "id": "Pengukuran angin minimal 1 tahun",
+      "en": "At least 1 year of wind measurement"
+     },
+     "isi": {
+      "id": "Biaya sekitar Rp1,5 sampai 2 miliar per menara atau sewa LiDAR/SODAR yang setara; risiko hangus bila kalah tender.",
+      "en": "Cost about IDR 1.5 to 2 billion per mast or equivalent LiDAR/SODAR rental; sunk if the tender is lost."
+     },
+     "pelaku": {
+      "id": "Pengembang",
+      "en": "Developer"
+     }
+    },
+    {
+     "judul": {
+      "id": "Izin lahan (KKPR) dan lingkungan",
+      "en": "Land permit (KKPR) and environmental"
+     },
+     "isi": {
+      "id": "KKPR untuk lahan di atas 1 ha dikelola pusat lewat OSS dan KATR/BPN dengan antrean panjang; AMDAL untuk 50 MW ke atas.",
+      "en": "KKPR for land over 1 ha is handled centrally via OSS and KATR/BPN with a long queue; AMDAL for 50 MW and above."
+     },
+     "pelaku": {
+      "id": "KATR/BPN, KLHK, pemda",
+      "en": "KATR/BPN, Environment Ministry, local government"
+     }
+    },
+    {
+     "judul": {
+      "id": "Tender atau penunjukan, PPA",
+      "en": "Tender or direct selection, PPA"
+     },
+     "isi": {
+      "id": "Telaah draf PPA; tanda tangan PPA tidak sama dengan pendanaan.",
+      "en": "Review the draft PPA; PPA signature is not financing."
+     },
+     "pelaku": {
+      "id": "PLN, pengembang",
+      "en": "PLN, developer"
+     }
+    },
+    {
+     "judul": {
+      "id": "Financial close",
+      "en": "Financial close"
+     },
+     "isi": {
+      "id": "Syarat: PPA yang bisa dibiayai, laporan P50/P90 independen, jalur jaringan, dan izin.",
+      "en": "Requires a bankable PPA, independent P50/P90 report, grid path and permits."
+     },
+     "pelaku": {
+      "id": "Pengembang, pemberi pinjaman",
+      "en": "Developer, lenders"
+     }
+    },
+    {
+     "judul": {
+      "id": "Konstruksi dan COD",
+      "en": "Construction and COD"
+     },
+     "isi": {
+      "id": "Sidrap memakan sekitar 31 bulan (EST).",
+      "en": "Sidrap took about 31 months (EST)."
+     },
+     "pelaku": {
+      "id": "EPC, PLN",
+      "en": "EPC, PLN"
+     }
+    }
+   ],
+   "catatan": {
+    "id": "Lama dan biaya yang disebut berasal dari ETP dan ESDM; durasi tiap izin tidak dipublikasikan sumber yang dibaca.",
+    "en": "Durations and costs cited come from ETP and ESDM; the duration of each permit is not published in the sources read."
+   }
+  },
+  "16": {
+   "tipe": "teks",
+   "sumber": [
+    "konsul"
+   ],
+   "paragraf": [
+    {
+     "id": "RUU Energi Baru dan Energi Terbarukan (RUU EBET) berstatus pembahasan di DPR RI (Komisi XII) per 2026-09-08; METI meminta pengesahan segera. Forum Konsultasi METI memuat posisi lengkap. Belum ada konsultasi publik khusus bayu yang terverifikasi per 2026-11-08.",
+     "en": "The New and Renewable Energy bill (RUU EBET) is in deliberation at DPR Commission XII as of 2026-09-08; METI urged swift passage. The METI Consultation forum holds the full position. No wind-specific public consultation was verified as of 2026-11-08."
+    }
+   ]
+  },
+  "17": {
+   "tipe": "teks",
+   "sumber": [
+    "gwec",
+    "irena_cost",
+    "cms_ar6",
+    "etp1",
+    "li_tl",
+    "esdm_sidrap",
+    "esdm_tolo"
+   ],
+   "paragraf": [
+    {
+     "id": "Dunia memasang rekor 117 GW bayu pada 2024 (109 GW darat dan 8 GW lepas pantai), sehingga total 1.136 GW; GWEC dan Mercom melaporkan sekitar 165 GW pada 2025. Biaya terpasang global 2024 sekitar USD 1.041 per kW darat dan USD 2.852 per kW lepas pantai, dengan LCOE darat USD 0,034 per kWh (IRENA, via ringkasan pihak ketiga).",
+     "en": "The world installed a record 117 GW of wind in 2024 (109 GW onshore, 8 GW offshore) for 1,136 GW in total; GWEC and Mercom report about 165 GW in 2025. Global installed costs in 2024 were about USD 1,041 per kW onshore and USD 2,852 per kW offshore, with onshore LCOE at USD 0.034 per kWh (IRENA, via third-party summary)."
+    },
+    {
+     "id": "Dalam negeri, ukuran turbin sudah berubah dalam setahun: Sidrap memakai 2,5 MW dengan menara 80 m dan bilah 57 m, sedangkan Tolo memakai 3,6 MW dengan menara 133 m dan bilah 63 m. Tanah Laut direncanakan dengan baterai 10 MW/10 MWh, yang disebut PPA bayu dengan BESS pertama di Indonesia.",
+     "en": "Domestically, turbine size changed within a year: Sidrap used 2.5 MW with an 80 m tower and 57 m blades, while Tolo used 3.6 MW with a 133 m tower and 63 m blades. Tanah Laut was planned with a 10 MW/10 MWh battery, described as Indonesia's first wind PPA with BESS."
+    },
+    {
+     "id": "Lepas pantai terapung baru mendapat satu kontrak CfD di Inggris pada AR6 (GBP 139,93 per MWh harga 2012). Alat prakiraan produksi 5 sampai 15 menit belum tersedia untuk PLTB Indonesia (ETP). Tingkat kematangan teknologi (TRL) tidak dimuat karena tidak ada sumber bertanggal.",
+     "en": "Floating offshore received a single CfD in the UK in AR6 (GBP 139.93 per MWh 2012 prices). 5 to 15 minute output forecasting is not yet available for Indonesian wind farms (ETP). Technology readiness levels (TRL) are not given because no dated source was read."
+    }
+   ]
+  },
+  "18": {
+   "tipe": "teks",
+   "sumber": [
+    "etp1",
+    "etp2",
+    "mongabay_np",
+    "esdm_pandan"
+   ],
+   "paragraf": [
+    {
+     "id": "Rantai pasok: hanya menara turbin yang diproduksi di Indonesia, untuk ekspor; rotor, bilah, hub, gearbox, dan generator masih impor. ETP mengingatkan bahwa TKDN yang terlalu dini dapat mengurangi pasokan dan bankability, dan menyarankan analisis biaya-manfaat sebelum membangun pabrik komponen. Direktori METI mencatat PT Grand Sains dan PT Dwida Jaya Tama sebagai manufaktur terkait bayu.",
+     "en": "Supply chain: only turbine towers are made in Indonesia, for export; rotors, blades, hubs, gearboxes and generators are still imported. ETP warns that premature local content can cut supply and bankability and advises a cost-benefit analysis before building component factories. The METI directory lists PT Grand Sains and PT Dwida Jaya Tama as wind-related manufacturers."
+    },
+    {
+     "id": "Angin skala kecil: contoh Puncak Mundi (sembilan kincir 30 m, target sekitar 700 kW, 2007) berhenti kurang dari dua tahun karena suku cadang; hibrida Pandansimo, Bantul, disebut ESDM hanya dua pertiga turbinnya berputar, dengan baterai dan inverter jadi sumber masalah (tanggal artikel tidak terbaca). Di Bali, ETP mencatat tiga unit 0,3 MW (PLN) dan satu unit 0,6 MW (IPP) di sistem Tiga Nusa.",
+     "en": "Small-scale wind: Puncak Mundi (nine 30 m turbines, about 700 kW target, 2007) stopped within two years over spare parts; ESDM says only two thirds of the turbines at the Pandansimo hybrid, Bantul, turn, with batteries and inverters the problem (article date not readable). In Bali ETP records three 0.3 MW units (PLN) and one 0.6 MW unit (IPP) in the Tiga Nusa system."
+    },
+    {
+     "id": "Analisis METI (Hipotesis): Skala kecil hanya masuk akal bersama kontrak O&M, stok suku cadang, dan pengelola; tanpa itu hasilnya adalah monumen, bukan pembangkit.",
+     "en": "METI analysis (Hypothesis): Small scale only makes sense with an O&M contract, spare parts stock and an operator; without them the result is a monument, not a plant."
+    }
+   ]
+  },
+  "19": {
+   "tipe": "grafik",
+   "jenis": "garis",
+   "label": {
+    "id": "LCOE bayu darat (USD harga tetap 2025)",
+    "en": "Onshore wind LCOE (constant 2025 USD)"
+   },
+   "satuan": {
+    "id": "sen USD/kWh",
+    "en": "US cents/kWh"
+   },
+   "d": 2,
+   "seri": [
+    {
+     "nama": {
+      "id": "Dunia",
+      "en": "World"
+     },
+     "titik": [
+      [
+       "2012",
+       9.88
+      ],
+      [
+       "2013",
+       9.9
+      ],
+      [
+       "2014",
+       8.76
+      ],
+      [
+       "2015",
+       7.6
+      ],
+      [
+       "2016",
+       6.98
+      ],
+      [
+       "2017",
+       6.48
+      ],
+      [
+       "2018",
+       5.56
+      ],
+      [
+       "2019",
+       4.93
+      ],
+      [
+       "2020",
+       4.09
+      ],
+      [
+       "2021",
+       3.61
+      ],
+      [
+       "2022",
+       3.4
+      ],
+      [
+       "2023",
+       3.31
+      ],
+      [
+       "2024",
+       3.43
+      ],
+      [
+       "2025",
+       3.29
+      ]
+     ],
+     "sorot": true
+    },
+    {
+     "nama": {
+      "id": "India",
+      "en": "India"
+     },
+     "titik": [
+      [
+       "2012",
+       10.59
+      ],
+      [
+       "2013",
+       10.4
+      ],
+      [
+       "2014",
+       10.09
+      ],
+      [
+       "2015",
+       8.72
+      ],
+      [
+       "2016",
+       7.53
+      ],
+      [
+       "2017",
+       6.01
+      ],
+      [
+       "2018",
+       4.71
+      ],
+      [
+       "2019",
+       4.5
+      ],
+      [
+       "2020",
+       4.08
+      ],
+      [
+       "2021",
+       3.33
+      ],
+      [
+       "2022",
+       3.97
+      ],
+      [
+       "2023",
+       4.83
+      ],
+      [
+       "2024",
+       4.84
+      ],
+      [
+       "2025",
+       4.29
+      ]
+     ]
+    },
+    {
+     "nama": {
+      "id": "Vietnam",
+      "en": "Vietnam"
+     },
+     "titik": [
+      [
+       "2012",
+       11.86
+      ],
+      [
+       "2013",
+       11.97
+      ],
+      [
+       "2015",
+       9.83
+      ],
+      [
+       "2016",
+       8.11
+      ],
+      [
+       "2017",
+       7.64
+      ],
+      [
+       "2019",
+       8.62
+      ],
+      [
+       "2020",
+       6.38
+      ],
+      [
+       "2021",
+       5.36
+      ],
+      [
+       "2022",
+       5.18
+      ],
+      [
+       "2023",
+       5.31
+      ],
+      [
+       "2024",
+       4.9
+      ]
+     ]
+    },
+    {
+     "nama": {
+      "id": "Filipina",
+      "en": "Philippines"
+     },
+     "titik": [
+      [
+       "2013",
+       17.67
+      ],
+      [
+       "2014",
+       14.91
+      ],
+      [
+       "2015",
+       14.73
+      ],
+      [
+       "2016",
+       14.77
+      ],
+      [
+       "2017",
+       11.56
+      ],
+      [
+       "2019",
+       7.55
+      ],
+      [
+       "2023",
+       6.07
+      ],
+      [
+       "2024",
+       8.19
+      ]
+     ]
+    },
+    {
+     "nama": {
+      "id": "Indonesia (hanya 2017 sampai 2020)",
+      "en": "Indonesia (2017 to 2020 only)"
+     },
+     "titik": [
+      [
+       "2017",
+       13.98
+      ],
+      [
+       "2018",
+       7.36
+      ],
+      [
+       "2019",
+       11.31
+      ],
+      [
+       "2020",
+       8.75
+      ]
+     ]
+    }
+   ],
+   "sumber": [
+    "owid",
+    "irena_cost"
+   ],
+   "catatan": {
+    "id": "Titik Indonesia memantul (13,98 pada 2017 ke 7,36 pada 2018) karena sampelnya sangat kecil (dua PLTB) dan IRENA hanya merilis 2017 sampai 2020. Biaya terpasang global 2024: USD 1.041 per kW bayu darat dan USD 2.852 per kW lepas pantai; LCOE global bayu darat USD 0,034 per kWh (IRENA, dibaca via ringkasan pihak ketiga).",
+    "en": "The Indonesian points jump (13.98 in 2017 to 7.36 in 2018) because the sample is tiny (two wind farms) and IRENA released only 2017 to 2020. Global installed cost 2024: USD 1,041 per kW onshore and USD 2,852 per kW offshore; global onshore LCOE USD 0.034 per kWh (IRENA, read via a third-party summary)."
+   }
+  },
+  "20": {
+   "tipe": "tabel",
+   "per": 8,
+   "sumber": [
+    "owid_bauran",
+    "owid",
+    "rw_india",
+    "cms_ar6",
+    "p112",
+    "vnexpress"
+   ],
+   "kolom": [
+    {
+     "k": "negara",
+     "l": {
+      "id": "Negara",
+      "en": "Country"
+     }
+    },
+    {
+     "k": "porsi",
+     "l": {
+      "id": "Porsi angin dalam listrik (persen)",
+      "en": "Wind share of electricity (percent)"
+     },
+     "num": true,
+     "d": 2
+    },
+    {
+     "k": "lcoe",
+     "l": {
+      "id": "LCOE bayu darat (sen USD/kWh)",
+      "en": "Onshore wind LCOE (US cents/kWh)"
+     },
+     "num": true,
+     "d": 2
+    },
+    {
+     "k": "mekanisme",
+     "l": {
+      "id": "Mekanisme harga",
+      "en": "Price mechanism"
+     }
+    }
+   ],
+   "baris": [
+    {
+     "negara": "Indonesia",
+     "porsi": 0.13,
+     "lcoe": 8.75,
+     "mekanisme": {
+      "id": "tarif bertingkat Perpres 112/2022; PPA dengan PLN (LCOE tahun 2020)",
+      "en": "tiered tariffs under Perpres 112/2022; PPA with PLN (LCOE for 2020)"
+     }
+    },
+    {
+     "negara": "Vietnam",
+     "porsi": 4.64,
+     "lcoe": 5.31,
+     "mekanisme": {
+      "id": "tarif tetap 8,5 sen USD/kWh sampai 31 Okt 2021; sesudahnya belum ada pengganti (Mei 2022)",
+      "en": "fixed 8.5 US cents/kWh until 31 Oct 2021; no replacement afterwards (May 2022)"
+     }
+    },
+    {
+     "negara": "Thailand",
+     "porsi": 1.81,
+     "lcoe": null,
+     "mekanisme": {
+      "id": "tidak ada sumber bertanggal yang dibaca",
+      "en": "no dated source read"
+     }
+    },
+    {
+     "negara": "Filipina",
+     "porsi": 1.19,
+     "lcoe": 6.07,
+     "mekanisme": {
+      "id": "tidak ada sumber bertanggal yang dibaca",
+      "en": "no dated source read"
+     }
+    },
+    {
+     "negara": "Malaysia",
+     "porsi": 0,
+     "lcoe": null,
+     "mekanisme": {
+      "id": "belum ada bayu skala utilitas pada data OWID 2025",
+      "en": "no utility wind in OWID 2025 data"
+     }
+    },
+    {
+     "negara": "India",
+     "porsi": null,
+     "lcoe": 4.83,
+     "mekanisme": {
+      "id": "lelang terbalik: terendah Rs2,43 (Gujarat, 2017) dan Rs2,44 (SECI, 2018)",
+      "en": "reverse auctions: lowest Rs2.43 (Gujarat, 2017) and Rs2.44 (SECI, 2018)"
+     }
+    },
+    {
+     "negara": {
+      "id": "Inggris",
+      "en": "United Kingdom"
+     },
+     "porsi": null,
+     "lcoe": null,
+     "mekanisme": {
+      "id": "CfD lepas pantai; kliring GBP 58,87/MWh harga 2012 (AR6, 2024)",
+      "en": "offshore CfD; clearing GBP 58.87/MWh 2012 prices (AR6, 2024)"
+     }
+    },
+    {
+     "negara": {
+      "id": "Rata-rata dunia",
+      "en": "World average"
+     },
+     "porsi": null,
+     "lcoe": 3.31,
+     "mekanisme": {
+      "id": "LCOE IRENA 2023, USD harga tetap 2025",
+      "en": "IRENA 2023 LCOE, constant 2025 USD"
+     }
+    }
+   ],
+   "catatan": {
+    "id": "Negara lain pada kerangka (Tiongkok, Jepang, Korea, Uni Eropa, AS, Australia, Brasil, Afrika Selatan) tidak dimuat karena belum ada data bayu bersumber dalam repo METI; sel kosong berarti tidak ada data, bukan nol.",
+    "en": "Other countries in the framework (China, Japan, Korea, EU, US, Australia, Brazil, South Africa) are omitted because no sourced wind data is in the METI repo yet; blank cell means no data, not zero."
+   }
+  },
+  "21": {
+   "tipe": "tabel",
+   "per": 6,
+   "sumber": [
+    "vnexpress",
+    "aljaz",
+    "rw_india",
+    "cms_ar6",
+    "wiki_ltwp"
+   ],
+   "kolom": [
+    {
+     "k": "negara",
+     "l": {
+      "id": "Negara",
+      "en": "Country"
+     }
+    },
+    {
+     "k": "jenis",
+     "l": {
+      "id": "Hasil",
+      "en": "Outcome"
+     }
+    },
+    {
+     "k": "inti",
+     "l": {
+      "id": "Inti kasus",
+      "en": "Case in brief"
+     }
+    },
+    {
+     "k": "pelajaran",
+     "l": {
+      "id": "Pelajaran bagi Indonesia",
+      "en": "Lesson for Indonesia"
+     }
+    }
+   ],
+   "baris": [
+    {
+     "negara": "India",
+     "jenis": {
+      "id": "berhasil",
+      "en": "success"
+     },
+     "inti": {
+      "id": "lelang kompetitif rutin menekan tarif ke Rs2,43 sampai 2,51",
+      "en": "regular competitive auctions pushed tariffs to Rs2.43 to 2.51"
+     },
+     "pelajaran": {
+      "id": "Analisis METI (Hipotesis): jadwal lelang yang dapat diprediksi",
+      "en": "METI analysis (Hypothesis): a predictable auction calendar"
+     }
+    },
+    {
+     "negara": {
+      "id": "Inggris",
+      "en": "United Kingdom"
+     },
+     "jenis": {
+      "id": "berhasil dengan catatan",
+      "en": "success with caveats"
+     },
+     "inti": {
+      "id": "CfD AR6 5,3 GW, tetapi Orsted membatalkan Hornsea 4 pada 2025 karena biaya",
+      "en": "AR6 CfD 5.3 GW, but Orsted cancelled Hornsea 4 in 2025 over costs"
+     },
+     "pelajaran": {
+      "id": "Analisis METI (Hipotesis): kontrak harga tetap perlu indeksasi biaya",
+      "en": "METI analysis (Hypothesis): fixed-price contracts need cost indexation"
+     }
+    },
+    {
+     "negara": "Vietnam",
+     "jenis": {
+      "id": "berhasil lalu terganjal",
+      "en": "success then stalled"
+     },
+     "inti": {
+      "id": "tarif tetap memicu pembangunan, lalu tenggat dan kurtailmen",
+      "en": "a fixed tariff triggered build-out, then deadline and curtailment"
+     },
+     "pelajaran": {
+      "id": "Analisis METI (Hipotesis): sinkronkan pembangkit dengan transmisi",
+      "en": "METI analysis (Hypothesis): synchronise generation with transmission"
+     }
+    },
+    {
+     "negara": "Kenya",
+     "jenis": {
+      "id": "gagal sebagian",
+      "en": "partial failure"
+     },
+     "inti": {
+      "id": "Lake Turkana siap, jalur transmisi terlambat, denda deemed energy",
+      "en": "Lake Turkana ready, transmission late, deemed energy penalty"
+     },
+     "pelajaran": {
+      "id": "Analisis METI (Hipotesis): jangan pisahkan jadwal pembangkit dan jalur",
+      "en": "METI analysis (Hypothesis): do not separate plant and line schedules"
+     }
+    }
+   ]
+  },
+  "22": {
+   "tipe": "teks",
+   "sumber": [
+    "owid_bauran",
+    "irena",
+    "gwec"
+   ],
+   "paragraf": [
+    {
+     "id": "Porsi angin dalam listrik Indonesia 0,13 persen (2024) dibanding Vietnam 4,64 persen (2025), Thailand 1,81 persen, Filipina 1,19 persen, dan Malaysia 0 persen (OWID/Ember). Di ASEAN, Indonesia di atas Malaysia, Laos, Myanmar, dan Brunei, tetapi jauh di bawah Vietnam, Thailand, dan Filipina (EST dari tabel ini).",
+     "en": "The wind share of Indonesian electricity is 0.13 percent (2024) versus Vietnam 4.64 percent (2025), Thailand 1.81 percent, the Philippines 1.19 percent and Malaysia 0 percent (OWID/Ember). Within ASEAN Indonesia is above Malaysia, Laos, Myanmar and Brunei but far below Vietnam, Thailand and the Philippines (EST from this table)."
+    },
+    {
+     "id": "Secara global, 1.136 GW terpasang pada 2024; kapasitas Indonesia sekitar 0,15 GW atau sekitar 0,013 persen (EST).",
+     "en": "Globally 1,136 GW was installed by 2024; Indonesian capacity of about 0.15 GW is about 0.013 percent (EST)."
+    }
+   ]
+  },
+  "23": {
+   "tipe": "teks",
+   "sumber": [
+    "etp1",
+    "etp2",
+    "esmap"
+   ],
+   "paragraf": [
+    {
+     "id": "Energy Transition Partnership, kemitraan multi-donor yang dikelola UNOPS atas inisiatif Kementerian ESDM, membiayai peta jalan bayu darat dan rencana investasi. Pusat Global Wind Atlas Universitas Teknik Denmark dan peta teknis lepas pantai ESMAP/Bank Dunia menyediakan data sumber angin terbuka. Perjanjian perdagangan atau pengakuan timbal balik khusus bayu tidak ditemukan; lihat topik Transisi berkeadilan dan Pembiayaan hijau untuk JETP.",
+     "en": "The Energy Transition Partnership, a multi-donor partnership run by UNOPS at the initiative of the Energy Ministry, funded the onshore wind roadmap and investment plan. The Technical University of Denmark's Global Wind Atlas and the ESMAP/World Bank offshore technical maps provide open resource data. No wind-specific trade or mutual recognition agreement was found; see the Just Transition and Green Finance topics for JETP."
+    }
+   ]
+  },
+  "24": {
+   "tipe": "teks",
+   "sumber": [
+    "etp1",
+    "etp2",
+    "esdm_sidrap",
+    "esdm_tolo"
+   ],
+   "paragraf": [
+    {
+     "id": "Pembiayaan proyek PLTB bergantung pada PPA yang bisa dibiayai dan laporan produksi independen. Sidrap berinvestasi sekitar USD 150 juta (ESDM) tanpa lelang; Tolo melibatkan pendanaan pembangunan multilateral (ADB tercatat). Hambatan: sebagian isu PPA (hak beli PLN, pembagian force majeure, mitra wajib) menaikkan risiko; ETP merekomendasikan jaminan, asesmen insentif baterai, dan sinergi jalan/pelabuhan multi-pihak.",
+     "en": "Wind project finance depends on a bankable PPA and an independent yield report. Sidrap invested about USD 150 million (ESDM) without a tender; Tolo involved multilateral development funding (ADB listed). Constraints: several PPA terms (PLN buy-out right, split force majeure, mandatory partner) raise risk; ETP recommends guarantees, an assessment of battery incentives and multi-user road and port synergies."
+    },
+    {
+     "id": "Analisis METI (Hipotesis): Pendana kecil sulit masuk selama pengukuran dan pengembangan dibiayai pengembang sebagai biaya hangus; fasilitas pengukuran bersama dapat menurunkan hambatan.",
+     "en": "METI analysis (Hypothesis): Small funders find it hard to enter while measurement and development are sunk costs for developers; shared measurement facilities could lower the barrier."
+    }
+   ]
+  },
+  "25": {
+   "tipe": "rumus",
+   "sumber": [
+    "esdm_sidrap",
+    "etp1",
+    "stat",
+    "irena_cost"
+   ],
+   "rumus": [
+    {
+     "id": "Investasi per MW = investasi total / kapasitas.",
+     "en": "Investment per MW = total investment / capacity."
+    },
+    {
+     "id": "Pendapatan kotor tahunan = energi (kWh) x tarif per kWh.",
+     "en": "Annual gross revenue = energy (kWh) x tariff per kWh."
+    },
+    {
+     "id": "Tambahan pendapatan dari kredit karbon tidak dihitung: dalam draf PPA PLN hasilnya menjadi hak PLN (ETP).",
+     "en": "Carbon credit revenue is not counted: in PLN PPA drafts the proceeds go to PLN (ETP)."
+    }
+   ],
+   "contoh": [
+    {
+     "id": "Sidrap: USD 150 juta / 75 MW = USD 2 juta per MW (EST); bandingkan USD 1,04 juta per MW darat global (IRENA 2024) dan USD 1,9 juta per MW Vietnam.",
+     "en": "Sidrap: USD 150 million / 75 MW = USD 2 million per MW (EST); compare USD 1.04 million per MW global onshore (IRENA 2024) and USD 1.9 million per MW in Vietnam."
+    },
+    {
+     "id": "Sidrap pada faktor kapasitas 35,18 persen menghasilkan sekitar 231,13 GWh per tahun; pada sekitar 11 sen USD per kWh pendapatan kotornya sekitar USD 25,42 juta per tahun (EST kasar; tarif 11 sen adalah tarif kontrak pada kapasitas kontrak 70 MW, dan biaya O&M serta pajak belum dikurangkan).",
+     "en": "At a 35.18 percent capacity factor Sidrap yields about 231.13 GWh a year; at about 11 US cents per kWh gross revenue is about USD 25.42 million a year (rough EST; 11 cents is the contract tariff on 70 MW of contract capacity, and O&M and taxes are not deducted)."
+    },
+    {
+     "id": "Perbandingan: penawaran Tanah Laut 5,5 sen USD per kWh adalah sekitar setengah tarif Sidrap/Tolo (EST).",
+     "en": "Comparison: the Tanah Laut bid of 5.5 US cents per kWh is about half the Sidrap/Tolo tariff (EST)."
+    }
+   ]
+  },
+  "26": {
+   "tipe": "teks",
+   "sumber": [
+    "bisnis_sidrap",
+    "iir_sk",
+    "orsted23",
+    "ci_h4"
+   ],
+   "paragraf": [
+    {
+     "id": "Transaksi: Bisnis.com (8 Des 2023) melaporkan PLTB Sidrap hendak diakuisisi BREN dengan investasi proyek Rp2,3 triliun; penyelesaian akuisisi tidak diverifikasi. Industrial Info Resources (30 Nov 2022) melacak 12 proyek angin UPC Renewables lain di Indonesia senilai USD 1,45 miliar.",
+     "en": "Transactions: Bisnis.com (8 Dec 2023) reported that BREN planned to acquire the Sidrap wind farm, with project investment of IDR 2.3 trillion; completion of the acquisition was not verified. Industrial Info Resources (30 Nov 2022) tracked 12 other UPC Renewables wind projects in Indonesia worth USD 1.45 billion."
+    },
+    {
+     "id": "Pembanding luar negeri: Orsted mencatat penurunan nilai DKK 28,4 miliar pada sembilan bulan 2023 (DKK 19,9 miliar untuk Ocean Wind 1) dan menghentikan Hornsea 4 pada 2025.",
+     "en": "Foreign comparators: Orsted booked DKK 28.4 billion of impairments in nine months of 2023 (DKK 19.9 billion for Ocean Wind 1) and stopped Hornsea 4 in 2025."
+    }
+   ]
+  },
+  "27": {
+   "tipe": "teks",
+   "sumber": [
+    "etp1",
+    "esdm_sidrap",
+    "wiki_ltwp",
+    "antara_sk"
+   ],
+   "paragraf": [
+    {
+     "id": "Manfaat: pengganti diesel (Tolo menghemat Rp577 per kWh dibanding PLTD), emisi operasi nol, dan lapangan kerja (Sidrap 709 pekerja, 95 persen WNI). Risiko yang harus ditelaah: kematian burung dan kelelawar, bising, bayangan kedip, keselamatan, dan dampak pada penghidupan; ETP mencatat belum ada pedoman khusus Indonesia dan jarak minimum ke permukiman belum ditetapkan.",
+     "en": "Benefits: displacing diesel (Tolo saves IDR 577 per kWh against diesel plants), zero operating emissions and jobs (Sidrap 709 workers, 95 percent Indonesian). Risks to assess: bird and bat deaths, noise, shadow flicker, safety and livelihood impacts; ETP notes there is no Indonesia-specific guideline and no minimum distance to settlements has been set."
+    },
+    {
+     "id": "Hak masyarakat dan pengamanan: Lake Turkana digugat atas lahan (Oktober 2014; pengadilan menolak menghentikan proyek November 2016) dan Bank Dunia mundur pada 2012; PLTB Sukabumi berada di kawasan geopark UNESCO sehingga tata ruang dan konservasi menjadi kunci. Konsultasi desa dan kompensasi lahan perlu didokumentasikan sebelum pembebasan.",
+     "en": "Community rights and safeguards: Lake Turkana faced a land lawsuit (October 2014; the court declined to halt the project in November 2016) and the World Bank withdrew in 2012; the Sukabumi project sits in a UNESCO geopark so zoning and conservation are decisive. Village consultation and land compensation should be documented before acquisition."
+    }
+   ]
+  },
+  "28": {
+   "tipe": "teks",
+   "sumber": [
+    "etp1",
+    "esdm_sidrap",
+    "wiki_ltwp",
+    "perm30"
+   ],
+   "paragraf": [
+    {
+     "id": "Lapangan kerja: Sidrap memakai 709 pekerja saat konstruksi (95 persen WNI); Lake Turkana 2.500 saat konstruksi dan 200 tetap. ETP menilai tenaga kerja Indonesia belum punya kompetensi untuk pembangunan besar karena baru sekitar 154 MW terpasang, dan menyarankan program alih pengetahuan.",
+     "en": "Jobs: Sidrap used 709 workers in construction (95 percent Indonesian); Lake Turkana 2,500 in construction and 200 permanent. ETP judges the Indonesian workforce lacks competencies for large roll-out as only about 154 MW is installed, and recommends knowledge-transfer programmes."
+    },
+    {
+     "id": "Sertifikasi: Permen ESDM 30/2006 pernah menetapkan standar kompetensi tenaga teknik PLTB tetapi berstatus dicabut di basis regulasi METI; standar penggantinya tidak diverifikasi. Pelatihan dan LSP terkait tercantum di lapisan Pelatihan.",
+     "en": "Certification: Permen ESDM 30/2006 once set competence standards for wind technicians but is revoked in the METI regulation base; its replacement was not verified. Related training and professional certification bodies are in the Training layer."
+    }
+   ]
+  },
+  "29": {
+   "tipe": "tabel",
+   "per": 6,
+   "sumber": [
+    "etp1",
+    "wiki_ltwp",
+    "ci_h4",
+    "cms_ar6",
+    "antara_sk"
+   ],
+   "kolom": [
+    {
+     "k": "isu",
+     "l": {
+      "id": "Isu",
+      "en": "Issue"
+     }
+    },
+    {
+     "k": "sisi_a",
+     "l": {
+      "id": "Sisi pendukung",
+      "en": "Supporting side"
+     }
+    },
+    {
+     "k": "sisi_b",
+     "l": {
+      "id": "Sisi yang mempertanyakan",
+      "en": "Questioning side"
+     }
+    }
+   ],
+   "baris": [
+    {
+     "isu": {
+      "id": "TKDN bayu",
+      "en": "Wind local content"
+     },
+     "sisi_a": {
+      "id": "melindungi industri dan lapangan kerja dalam negeri (Permenperin 48/2010 dan perubahannya)",
+      "en": "protects domestic industry and jobs (Industry Reg. 48/2010 and amendments)"
+     },
+     "sisi_b": {
+      "id": "komponen utama belum ada pabriknya sehingga TKDN dini bisa menghambat pasokan dan bankability (ETP)",
+      "en": "main components have no factory yet so early local content may block supply and bankability (ETP)"
+     }
+    },
+    {
+     "isu": {
+      "id": "Proyek di kawasan konservasi",
+      "en": "Projects in conservation areas"
+     },
+     "sisi_a": {
+      "id": "Pemkab Sukabumi mendukung perizinan dan tata ruang untuk PLTB di Ciemas",
+      "en": "Sukabumi regency supports permits and zoning for the Ciemas wind farm"
+     },
+     "sisi_b": {
+      "id": "ETP mewajibkan telaah dampak biodiversitas dan kawasan konservasi sebelum tapak dipilih",
+      "en": "ETP requires biodiversity and conservation-area assessment before site selection"
+     }
+    },
+    {
+     "isu": {
+      "id": "Lepas pantai: biaya vs potensi",
+      "en": "Offshore: cost vs potential"
+     },
+     "sisi_a": {
+      "id": "AR6 Inggris kliring GBP 58,87/MWh dan potensi Indonesia 94,2 GW (BBSP KEBTKE)",
+      "en": "UK AR6 cleared at GBP 58.87/MWh and Indonesian potential is 94.2 GW (BBSP KEBTKE)"
+     },
+     "sisi_b": {
+      "id": "Orsted membatalkan Hornsea 4 dan Ocean Wind karena biaya; biaya terpasang USD 2.852/kW",
+      "en": "Orsted cancelled Hornsea 4 and Ocean Wind over costs; installed cost USD 2,852/kW"
+     }
+    },
+    {
+     "isu": {
+      "id": "Proyek besar di wilayah terpencil",
+      "en": "Large projects in remote areas"
+     },
+     "sisi_a": {
+      "id": "Lake Turkana menghemat bahan bakar hingga USD 120 juta per tahun (perkiraan)",
+      "en": "Lake Turkana saves up to USD 120 million of fuel a year (estimate)"
+     },
+     "sisi_b": {
+      "id": "denda keterlambatan KSh14,5 miliar dan gugatan lahan; Bank Dunia mundur 2012 soal kelebihan daya",
+      "en": "KSh14.5 billion delay penalties and a land lawsuit; World Bank withdrew in 2012 over excess power"
+     }
+    }
+   ]
+  },
+  "30": {
+   "tipe": "tabel",
+   "per": 8,
+   "sumber": [
+    "etp1",
+    "ruptl",
+    "ruen"
+   ],
+   "kolom": [
+    {
+     "k": "dok",
+     "l": {
+      "id": "Dokumen",
+      "en": "Document"
+     }
+    },
+    {
+     "k": "target",
+     "l": {
+      "id": "Target",
+      "en": "Target"
+     }
+    },
+    {
+     "k": "realisasi",
+     "l": {
+      "id": "Pembacaan realisasi (METI)",
+      "en": "Realisation reading (METI)"
+     }
+    }
+   ],
+   "baris": [
+    {
+     "dok": {
+      "id": "RUEN 2017",
+      "en": "RUEN 2017"
+     },
+     "target": {
+      "id": "1,8 GW pada 2025; 28 GW pada 2050 (46 persen potensi)",
+      "en": "1.8 GW in 2025; 28 GW in 2050 (46 percent of potential)"
+     },
+     "realisasi": {
+      "id": "sekitar 0,15 GW pada 2025 (EST selisih sekitar 1,65 GW)",
+      "en": "about 0.15 GW in 2025 (EST gap about 1.65 GW)"
+     }
+    },
+    {
+     "dok": {
+      "id": "RUPTL 2021-2030",
+      "en": "RUPTL 2021-2030"
+     },
+     "target": {
+      "id": "597 MW bayu (tidak ada penambahan setelah 2026)",
+      "en": "597 MW wind (no additions after 2026)"
+     },
+     "realisasi": {
+      "id": "0 MW tambahan sejak 2021 saat ETP menulis (Des 2023)",
+      "en": "0 MW added since 2021 when ETP wrote (Dec 2023)"
+     }
+    },
+    {
+     "dok": {
+      "id": "RUPTL 2025-2034",
+      "en": "RUPTL 2025-2034"
+     },
+     "target": {
+      "id": "460 MW dalam empat proyek, COD 2026 sampai 2030 (EST jumlah dari tabel)",
+      "en": "460 MW in four projects, COD 2026 to 2030 (EST sum from the table)"
+     },
+     "realisasi": {
+      "id": "belum ada yang beroperasi per 8 Nov 2026",
+      "en": "none operating as of 8 Nov 2026"
+     }
+    },
+    {
+     "dok": {
+      "id": "BBSP KEBTKE 2023",
+      "en": "BBSP KEBTKE 2023"
+     },
+     "target": {
+      "id": "potensi 60,6 GW darat dan 94,2 GW lepas pantai",
+      "en": "potential 60.6 GW onshore and 94.2 GW offshore"
+     },
+     "realisasi": {
+      "id": "pemanfaatan di bawah 0,1 persen",
+      "en": "use below 0.1 percent"
+     }
+    },
+    {
+     "dok": {
+      "id": "Skenario 2045 dan 2060",
+      "en": "2045 and 2060 scenarios"
+     },
+     "target": {
+      "id": "tidak ada target bayu spesifik yang ditemukan dalam sumber yang dibaca",
+      "en": "no wind-specific target found in the sources read"
+     },
+     "realisasi": {
+      "id": "-",
+      "en": "-"
+     }
+    }
+   ]
+  },
+  "31": {
+   "tipe": "tabel",
+   "per": 8,
+   "sumber": [
+    "meti",
+    "etp1",
+    "etp2"
+   ],
+   "kolom": [
+    {
+     "k": "peran",
+     "l": {
+      "id": "Peran",
+      "en": "Role"
+     }
+    },
+    {
+     "k": "peluang",
+     "l": {
+      "id": "Peluang",
+      "en": "Opportunity"
+     }
+    },
+    {
+     "k": "tantangan",
+     "l": {
+      "id": "Tantangan",
+      "en": "Challenge"
+     }
+    }
+   ],
+   "baris": [
+    {
+     "peran": {
+      "id": "Pengembang",
+      "en": "Developer"
+     },
+     "peluang": {
+      "id": "Analisis METI (Hipotesis): biaya darat global terendah dan permintaan listrik naik",
+      "en": "METI analysis (Hypothesis): lowest global onshore cost and rising electricity demand"
+     },
+     "tantangan": {
+      "id": "Analisis METI (Hipotesis): biaya pengukuran hangus, PPA sulit dibiayai, jaringan",
+      "en": "METI analysis (Hypothesis): sunk measurement cost, hard-to-finance PPA, grid"
+     }
+    },
+    {
+     "peran": {
+      "id": "Pemasok",
+      "en": "Supplier"
+     },
+     "peluang": {
+      "id": "Analisis METI (Hipotesis): rantai pasok menara sudah ada untuk ekspor; bilah dan nacelle belum ada",
+      "en": "METI analysis (Hypothesis): tower supply chain exists for export; blades and nacelles do not"
+     },
+     "tantangan": {
+      "id": "Analisis METI (Hipotesis): permintaan terlalu kecil untuk pabrik lokal",
+      "en": "METI analysis (Hypothesis): demand too small for local factories"
+     }
+    },
+    {
+     "peran": {
+      "id": "Investor",
+      "en": "Investor"
+     },
+     "peluang": {
+      "id": "Analisis METI (Hipotesis): proyek tersertifikasi tarif dan PPA 30 tahun",
+      "en": "METI analysis (Hypothesis): projects with a certified tariff and 30-year PPA"
+     },
+     "tantangan": {
+      "id": "Analisis METI (Hipotesis): risiko kebijakan dan keputusan jadwal PLN",
+      "en": "METI analysis (Hypothesis): policy risk and PLN scheduling decisions"
+     }
+    },
+    {
+     "peran": {
+      "id": "Pemda",
+      "en": "Local government"
+     },
+     "peluang": {
+      "id": "Analisis METI (Hipotesis): lapangan kerja dan infrastruktur jalan/pelabuhan bersama",
+      "en": "METI analysis (Hypothesis): jobs and shared road/port infrastructure"
+     },
+     "tantangan": {
+      "id": "Analisis METI (Hipotesis): KKPR terpusat dan tumpang tindih lahan",
+      "en": "METI analysis (Hypothesis): centralised KKPR and land overlaps"
+     }
+    },
+    {
+     "peran": {
+      "id": "Akademisi",
+      "en": "Academia"
+     },
+     "peluang": {
+      "id": "Analisis METI (Hipotesis): model angin medan kompleks dan prakiraan keluaran",
+      "en": "METI analysis (Hypothesis): complex-terrain wind models and output forecasting"
+     },
+     "tantangan": {
+      "id": "Analisis METI (Hipotesis): data pengukuran bersifat tertutup",
+      "en": "METI analysis (Hypothesis): measurement data are proprietary"
+     }
+    }
+   ]
+  },
+  "32": {
+   "tipe": "tabel",
+   "per": 8,
+   "sumber": [
+    "meti",
+    "ruptl",
+    "bt_tl",
+    "konsul"
+   ],
+   "kolom": [
+    {
+     "k": "butir",
+     "l": {
+      "id": "Yang dipantau",
+      "en": "To watch"
+     }
+    },
+    {
+     "k": "indikator",
+     "l": {
+      "id": "Indikator",
+      "en": "Indicator"
+     }
+    },
+    {
+     "k": "mengapa",
+     "l": {
+      "id": "Mengapa penting",
+      "en": "Why it matters"
+     }
+    }
+   ],
+   "baris": [
+    {
+     "butir": {
+      "id": "Nasib PLTB Tanah Laut",
+      "en": "Fate of Tanah Laut"
+     },
+     "indikator": {
+      "id": "keputusan PLN terminasi atau financial close",
+      "en": "PLN decision to terminate or financial close"
+     },
+     "mengapa": {
+      "id": "Analisis METI (Hipotesis): satu-satunya proyek lelang bayu PLN dalam satu dekade",
+      "en": "METI analysis (Hypothesis): the only PLN wind tender in a decade"
+     }
+    },
+    {
+     "butir": {
+      "id": "Proyek RUPTL 2025-2034",
+      "en": "RUPTL 2025-2034 projects"
+     },
+     "indikator": {
+      "id": "PPA dan konstruksi Bayu Sumatera, Banten",
+      "en": "PPA and construction of Bayu Sumatera, Banten"
+     },
+     "mengapa": {
+      "id": "Analisis METI (Hipotesis): menentukan apakah 460 MW berwujud",
+      "en": "METI analysis (Hypothesis): determines whether 460 MW materialises"
+     }
+    },
+    {
+     "butir": {
+      "id": "RUU EBET",
+      "en": "EBET bill"
+     },
+     "indikator": {
+      "id": "pengesahan di DPR Komisi XII",
+      "en": "passage at DPR Commission XII"
+     },
+     "mengapa": {
+      "id": "Analisis METI (Hipotesis): mengubah kerangka pembelian dan insentif",
+      "en": "METI analysis (Hypothesis): changes purchase framework and incentives"
+     }
+    },
+    {
+     "butir": {
+      "id": "TKDN bayu",
+      "en": "Wind local content"
+     },
+     "indikator": {
+      "id": "terbitnya aturan khusus bayu",
+      "en": "issuance of a wind-specific rule"
+     },
+     "mengapa": {
+      "id": "Analisis METI (Hipotesis): bisa menghambat atau memicu pabrik komponen",
+      "en": "METI analysis (Hypothesis): could block or trigger component factories"
+     }
+    },
+    {
+     "butir": {
+      "id": "Pengumuman lelang tahunan",
+      "en": "Annual tender calendar"
+     },
+     "indikator": {
+      "id": "daftar lelang PLN bayu 2027",
+      "en": "PLN 2027 wind tender list"
+     },
+     "mengapa": {
+      "id": "Analisis METI (Hipotesis): model India: jadwal rutin menurunkan harga",
+      "en": "METI analysis (Hypothesis): India model: a regular calendar lowers prices"
+     }
+    }
+   ]
+  },
+  "33": {
+   "tipe": "tabel",
+   "per": 8,
+   "sumber": [
+    "etp1",
+    "iesr",
+    "esmap"
+   ],
+   "kolom": [
+    {
+     "k": "lembaga",
+     "l": {
+      "id": "Lembaga",
+      "en": "Institution"
+     },
+     "url": "url"
+    },
+    {
+     "k": "peran",
+     "l": {
+      "id": "Peran terkait bayu",
+      "en": "Wind-related role"
+     }
+    }
+   ],
+   "baris": [
+    {
+     "lembaga": "BBSP KEBTKE (Kementerian ESDM)",
+     "peran": {
+      "id": "pengukuran angin 2017 dan perhitungan potensi 2023",
+      "en": "2017 wind measurement and 2023 potential estimate"
+     },
+     "url": "https://www.energytransitionpartnership.org/wp-content/uploads/2024/09/20240919-Roadmap-Onshore-Wind-Energy-v5.0-EN.pdf"
+    },
+    {
+     "lembaga": "Energy Transition Partnership",
+     "peran": {
+      "id": "peta jalan bayu darat dan rencana investasi",
+      "en": "onshore wind roadmap and investment plan"
+     },
+     "url": "https://www.energytransitionpartnership.org/wp-content/uploads/2024/09/20240906-Final-Report-Wind-Energy-Development-in-Indonesia-Investment-Plan-v2.0.pdf"
+    },
+    {
+     "lembaga": "IESR",
+     "peran": {
+      "id": "kajian 333 GW surya, bayu, hidro (Feb 2025)",
+      "en": "333 GW solar, wind, hydro study (Feb 2025)"
+     },
+     "url": "https://iesr.or.id/"
+    },
+    {
+     "lembaga": "ESMAP (Bank Dunia)",
+     "peran": {
+      "id": "peta potensi teknis lepas pantai",
+      "en": "offshore technical potential maps"
+     },
+     "url": "https://esmap.org/esmap_offshorewind_techpotential_analysis_maps"
+    }
+   ],
+   "catatan": {
+    "id": "Pakar perorangan dan pusat studi otomatis dari lapisan Riset (12 pakar bertag bayu pada dasar).",
+    "en": "Individual experts and study centres come automatically from the Research layer (12 experts tagged wind in the base)."
+   }
+  },
+  "36": {
+   "tipe": "tabel",
+   "per": 8,
+   "sumber": [
+    "etp1",
+    "etp2",
+    "gwec",
+    "irena_cost",
+    "iesr"
+   ],
+   "kolom": [
+    {
+     "k": "judul",
+     "l": {
+      "id": "Dokumen",
+      "en": "Document"
+     },
+     "url": "url"
+    },
+    {
+     "k": "penerbit",
+     "l": {
+      "id": "Penerbit",
+      "en": "Publisher"
+     }
+    },
+    {
+     "k": "tahun",
+     "l": {
+      "id": "Tahun",
+      "en": "Year"
+     }
+    }
+   ],
+   "baris": [
+    {
+     "judul": "Roadmap Onshore Wind Energy Development in Indonesia v5.0 (13 Des 2023)",
+     "penerbit": "ETP",
+     "tahun": "2023",
+     "url": "https://www.energytransitionpartnership.org/wp-content/uploads/2024/09/20240919-Roadmap-Onshore-Wind-Energy-v5.0-EN.pdf"
+    },
+    {
+     "judul": "Wind Energy Development in Indonesia: Investment Plan, Final Report v2.0 (23 Sep 2024)",
+     "penerbit": "ETP",
+     "tahun": "2024",
+     "url": "https://www.energytransitionpartnership.org/wp-content/uploads/2024/09/20240906-Final-Report-Wind-Energy-Development-in-Indonesia-Investment-Plan-v2.0.pdf"
+    },
+    {
+     "judul": "Global Wind Report 2025",
+     "penerbit": "GWEC",
+     "tahun": "2025",
+     "url": "https://www.gwec.net/reports/globalwindreport/2025"
+    },
+    {
+     "judul": "Renewable Power Generation Costs in 2024 (angka dibaca dari ringkasan pihak ketiga, bukan PDF primer)",
+     "penerbit": "IRENA",
+     "tahun": "2025",
+     "url": "https://www.irena.org/Publications/2025/Jun/Renewable-Power-Generation-Costs-in-2024"
+    },
+    {
+     "judul": "Unlocking Indonesia's Renewables Future: The Economic Case of 333 GW of Solar, Wind, and Hydro (Feb 2025; ringkasan di Pustaka METI)",
+     "penerbit": "IESR",
+     "tahun": "2025",
+     "url": "https://iesr.or.id/"
+    }
+   ]
+  },
+  "38": {
+   "tipe": "teks",
+   "paragraf": [
+    {
+     "id": "Metode: angka resmi dan data repo dihitung ulang tanpa suntingan tangan (faktor kapasitas, rasio, investasi per MW diberi label EST). Teks kasus ditulis dari sumber web yang dibaca 2026-11-08 (UA METI-Network-research/0.1, robots dibaca, jeda 2 detik, berhenti pada 403/429); sumber yang gagal dibaca penuh (EastAfrican 403, Petromindo berbayar) hanya dipakai judulnya dan ditandai.",
+     "en": "Method: official figures and repo data are recomputed without hand edits (capacity factor, ratio, investment per MW are labelled EST). Case texts were written from web sources read on 2026-11-08 (METI-Network-research/0.1 UA, robots read, 2 second delay, stop on 403/429); sources that could not be read in full (EastAfrican 403, Petromindo paywall) are used by headline only and flagged."
+    },
+    {
+     "id": "Celah: (1) kecepatan angin rata-rata per provinsi tidak tersedia terbuka (Global Wind Atlas tanpa API ringkasan; unduhan raster ratusan MB tidak dilakukan); (2) kapasitas serap EBT variabel per sistem PLN tidak ditemukan sebagai dokumen terbuka; (3) tarif dan nilai investasi Tolo, serta faktor kapasitas resmi, tidak ditemukan; (4) PLTB Samas (Bantul) dan Lombok Timur 115 MW: tidak ada sumber yang menunjukkan kegagalan atau kemajuan, jadi tidak dimasukkan sebagai kasus; (5) Thailand, India, Chile ditulis ringkas dari ringkasan pihak ketiga; (6) angka denda Lake Turkana berbeda antarsumber dan belum direkonsiliasi; (7) data GEM untuk proyek Indonesia punya koordinat dan status yang tidak cocok (lihat bab 10).",
+     "en": "Gaps: (1) mean wind speed per province is not openly available (Global Wind Atlas has no summary API; the raster download of hundreds of MB was not done); (2) variable renewable absorption capacity per PLN system was not found as an open document; (3) Tolo tariff and investment value, and official capacity factors, were not found; (4) PLTB Samas (Bantul) and Lombok Timur 115 MW: no source shows failure or progress, so they are not included as cases; (5) Thailand, India and Chile are written briefly from third-party summaries; (6) the Lake Turkana penalty figures differ across sources and are not reconciled; (7) GEM data for Indonesian projects have mismatched coordinates and status (see chapter 10)."
+    }
+   ]
+  },
+  "39": {
+   "tipe": "kasus",
+   "butir": [
+    {
+     "id": "sidrap",
+     "nama": "PLTB Sidrap I",
+     "jenis": "berhasil",
+     "negara": "ID",
+     "lokasi": {
+      "id": "Sidenreng Rappang, Sulawesi Selatan",
+      "en": "Sidenreng Rappang, South Sulawesi"
+     },
+     "foto": {
+      "src": "/img/beranda/bayu-sidrap.webp",
+      "alt": {
+       "id": "Deretan turbin PLTB Sidrap di perbukitan",
+       "en": "Row of Sidrap wind turbines on the hills"
+      },
+      "kredit": "USAID Indonesia, domain publik (Wikimedia Commons)"
+     },
+     "profil": [
+      {
+       "label": {
+        "id": "Kapasitas",
+        "en": "Capacity"
+       },
+       "nilai": 75,
+       "satuan": "MW"
+      },
+      {
+       "label": {
+        "id": "Turbin",
+        "en": "Turbines"
+       },
+       "nilai": {
+        "id": "30 unit Gamesa 2,5 MW, menara 80 m, bilah 57 m (sekitar 15 ton per bilah)",
+        "en": "30 Gamesa 2.5 MW units, 80 m tower, 57 m blades (about 15 tonnes each)"
+       }
+      },
+      {
+       "label": {
+        "id": "Pemilik/pengembang",
+        "en": "Owner/developer"
+       },
+       "nilai": {
+        "id": "PT UPC Sidrap Bayu Energi (konsorsium UPC Renewables, Binatek, dan mitra)",
+        "en": "PT UPC Sidrap Bayu Energi (UPC Renewables, Binatek and partners consortium)"
+       }
+      },
+      {
+       "label": {
+        "id": "Investasi",
+        "en": "Investment"
+       },
+       "nilai": 150,
+       "satuan": {
+        "id": "juta USD (ESDM); media menyebut Rp2,3 triliun",
+        "en": "USD million (ESDM); media cite IDR 2.3 trillion"
+       }
+      },
+      {
+       "label": {
+        "id": "Konstruksi sampai COD",
+        "en": "Construction to COD"
+       },
+       "nilai": {
+        "id": "Agustus 2015 sampai Maret 2018; COD 5 April 2018; diresmikan 2 Juli 2018",
+        "en": "August 2015 to March 2018; COD 5 April 2018; inaugurated 2 July 2018"
+       }
+      },
+      {
+       "label": {
+        "id": "Tarif dan PPA",
+        "en": "Tariff and PPA"
+       },
+       "nilai": {
+        "id": "sekitar 11 sen USD per kWh, 30 tahun (PLN 2021 via ETP); dibeli PLN tanpa lelang karena diajukan sebelum 2017",
+        "en": "about 11 US cents per kWh, 30 years (PLN 2021 via ETP); procured by PLN without tender because proposed before 2017"
+       }
+      },
+      {
+       "label": {
+        "id": "Lokasi tapak",
+        "en": "Site"
+       },
+       "nilai": {
+        "id": "Desa Mattirotasi dan Lainungan, Kecamatan Watang Pulu",
+        "en": "Mattirotasi and Lainungan villages, Watang Pulu district"
+       }
+      }
+     ],
+     "tindakan": [
+      {
+       "id": "Pengembang asing berpengalaman bermitra dengan mitra lokal dan mengajukan proyek sebelum aturan lelang 2017 berlaku.",
+       "en": "An experienced foreign developer partnered with local firms and proposed the project before the 2017 tender rules applied."
+      },
+      {
+       "id": "PPA 30 tahun dengan PLN pada tarif sekitar 11 sen USD per kWh yang bisa dibiayai bank.",
+       "en": "A 30-year PPA with PLN at about 11 US cents per kWh that lenders could finance."
+      },
+      {
+       "id": "Pelabuhan dimodifikasi karena kapasitas bongkar dan simpan tidak cukup; satu bilah butuh sekitar 10 jam dari pelabuhan ke lokasi turbin.",
+       "en": "The port was modified because offloading and storage capacity were insufficient; one blade took about 10 hours from port to turbine site."
+      },
+      {
+       "id": "Pekerja lokal diprioritaskan: 709 pekerja, sekitar 95 persen WNI.",
+       "en": "Local hiring was prioritised: 709 workers, about 95 percent Indonesian."
+      }
+     ],
+     "sebab": [
+      {
+       "id": "Tarif dan masa kontrak membuat arus kas bisa dibiayai (PPA 30 tahun), sebelum tarif turun ke 5,5 sen pada lelang Tanah Laut.",
+       "en": "The tariff and contract term made cash flows financeable (30-year PPA), before tariffs fell to 5.5 cents in the Tanah Laut tender."
+      },
+      {
+       "id": "Sistem Sulawesi Selatan terhubung ke jaringan 150 kV lewat gardu induk Jeneponto sehingga energi tersalurkan.",
+       "en": "The South Sulawesi system is connected to the 150 kV grid via the Jeneponto substation, so energy could be evacuated."
+      },
+      {
+       "id": "Terbit dua PLTB berturut-turut di tempat yang sama (Sidrap lalu Tolo) memungkinkan mobilisasi logistik dan tenaga kerja dipakai ulang.",
+       "en": "Two wind farms back to back in the same region (Sidrap then Tolo) allowed logistics and workforce to be reused."
+      }
+     ],
+     "angka": [
+      {
+       "label": {
+        "id": "Investasi per MW",
+        "en": "Investment per MW"
+       },
+       "nilai": 2,
+       "d": 1,
+       "satuan": {
+        "id": "juta USD/MW",
+        "en": "USD million/MW"
+       },
+       "sumber": "esdm_sidrap",
+       "est": true
+      },
+      {
+       "label": {
+        "id": "Faktor kapasitas gabungan PLTB Sulsel 2024",
+        "en": "Combined capacity factor, South Sulawesi wind 2024"
+       },
+       "nilai": 35.18,
+       "d": 1,
+       "satuan": "%",
+       "sumber": "stat",
+       "est": true
+      },
+      {
+       "label": {
+        "id": "Pelanggan 900 VA terlayani",
+        "en": "900 VA customers served"
+       },
+       "nilai": 70000,
+       "d": 0,
+       "satuan": {
+        "id": "lebih dari",
+        "en": "more than"
+       },
+       "sumber": "esdm_sidrap",
+       "est": false
+      }
+     ],
+     "pelajaran": [
+      {
+       "id": "Analisis METI (Hipotesis): PPA jangka panjang dengan tarif yang menutup biaya modal adalah syarat pertama; penurunan tarif lelang berikutnya harus diuji ulang terhadap kemampuan dibiayai.",
+       "en": "METI analysis (Hypothesis): A long PPA with a tariff covering cost of capital is the first requirement; later lower auction tariffs must be re-tested for bankability."
+      },
+      {
+       "id": "Analisis METI (Hipotesis): Rencanakan logistik bilah dan menara dari awal: pelabuhan dan jalan bisa menjadi 15 sampai 30 persen biaya investasi menurut ETP.",
+       "en": "METI analysis (Hypothesis): Plan blade and tower logistics from day one: ports and roads can reach 15 to 30 percent of investment cost per ETP."
+      }
+     ],
+     "faktor": {
+      "ppa_tarif": true,
+      "pendanaan": true,
+      "jaringan": true
+     },
+     "sumber": [
+      "esdm_sidrap",
+      "etp1",
+      "gn_sidrap",
+      "bisnis_sidrap",
+      "stat"
+     ]
+    },
+    {
+     "id": "tolo",
+     "nama": "PLTB Tolo I (Jeneponto)",
+     "jenis": "berhasil",
+     "negara": "ID",
+     "lokasi": {
+      "id": "Jeneponto, Sulawesi Selatan",
+      "en": "Jeneponto, South Sulawesi"
+     },
+     "profil": [
+      {
+       "label": {
+        "id": "Kapasitas",
+        "en": "Capacity"
+       },
+       "nilai": 72,
+       "satuan": "MW"
+      },
+      {
+       "label": {
+        "id": "Turbin",
+        "en": "Turbines"
+       },
+       "nilai": {
+        "id": "20 unit 3,6 MW; menara 133 m, bilah 63 m",
+        "en": "20 units of 3.6 MW; 133 m tower, 63 m blades"
+       }
+      },
+      {
+       "label": {
+        "id": "Pemilik/pengembang",
+        "en": "Owner/developer"
+       },
+       "nilai": {
+        "id": "PT Energi Bayu Jeneponto (Vena Energy)",
+        "en": "PT Energi Bayu Jeneponto (Vena Energy)"
+       }
+      },
+      {
+       "label": {
+        "id": "COD",
+        "en": "COD"
+       },
+       "nilai": {
+        "id": "14 Mei 2019",
+        "en": "14 May 2019"
+       }
+      },
+      {
+       "label": {
+        "id": "Tarif dan PPA",
+        "en": "Tariff and PPA"
+       },
+       "nilai": {
+        "id": "sekitar 11 sen USD per kWh, 30 tahun (PLN 2021 via ETP)",
+        "en": "about 11 US cents per kWh, 30 years (PLN 2021 via ETP)"
+       }
+      },
+      {
+       "label": {
+        "id": "Penghematan",
+        "en": "Saving"
+       },
+       "nilai": {
+        "id": "Rp577 per kWh lebih murah dari PLTD (ESDM)",
+        "en": "IDR 577 per kWh cheaper than diesel plants (ESDM)"
+       }
+      }
+     ],
+     "tindakan": [
+      {
+       "id": "Memakai turbin lebih besar dari Sidrap (3,6 MW dan menara 133 m) sehingga jumlah unit dan pondasi lebih sedikit.",
+       "en": "Used bigger turbines than Sidrap (3.6 MW and 133 m towers), so fewer units and foundations."
+      },
+      {
+       "id": "Menyiapkan tahap II dengan sistem penyimpanan energi dan harga di bawah BPP sesuai arahan pemerintah.",
+       "en": "Prepared phase II with energy storage and a price below BPP, as the government asked."
+      }
+     ],
+     "sebab": [
+      {
+       "id": "Mengikuti pola Sidrap: PPA 30 tahun, jaringan Sulawesi Selatan yang sudah terhubung, dan pengembang internasional dengan pendanaan multilateral (Bank Pembangunan Asia tercatat mengenai proyek ini).",
+       "en": "Followed the Sidrap pattern: 30-year PPA, an already connected South Sulawesi grid, and an international developer with multilateral funding (the Asian Development Bank lists the project)."
+      }
+     ],
+     "angka": [
+      {
+       "label": {
+        "id": "Kapasitas per turbin",
+        "en": "Capacity per turbine"
+       },
+       "nilai": 3.6,
+       "d": 1,
+       "satuan": "MW",
+       "sumber": "esdm_tolo",
+       "est": false
+      },
+      {
+       "label": {
+        "id": "Setara rumah 900 VA (klaim ESDM)",
+        "en": "900 VA household equivalent (ESDM claim)"
+       },
+       "nilai": 300000,
+       "d": 0,
+       "satuan": "",
+       "sumber": "esdm_tolo",
+       "est": false
+      }
+     ],
+     "pelajaran": [
+      {
+       "id": "Analisis METI (Hipotesis): Satu klaster dua PLTB berhasil karena sistem tuan rumah punya jaringan dan beban yang cukup; replikasi di sistem kecil butuh baterai atau perkuatan jaringan.",
+       "en": "METI analysis (Hypothesis): The two-farm cluster worked because the host system had enough grid and load; replication in small systems needs batteries or grid reinforcement."
+      }
+     ],
+     "faktor": {
+      "ppa_tarif": true,
+      "pendanaan": true
+     },
+     "sumber": [
+      "esdm_tolo",
+      "etp1",
+      "adb_tolo"
+     ]
+    },
+    {
+     "id": "turkana",
+     "nama": "Lake Turkana Wind Power",
+     "jenis": "berhasil",
+     "negara": "KE",
+     "lokasi": {
+      "id": "Loiyangalani, Marsabit, Kenya",
+      "en": "Loiyangalani, Marsabit, Kenya"
+     },
+     "profil": [
+      {
+       "label": {
+        "id": "Kapasitas",
+        "en": "Capacity"
+       },
+       "nilai": 310.25,
+       "satuan": "MW"
+      },
+      {
+       "label": {
+        "id": "Turbin",
+        "en": "Turbines"
+       },
+       "nilai": {
+        "id": "365 unit Vestas V52 850 kW di area sekitar 160 km2",
+        "en": "365 Vestas V52 850 kW units over about 160 km2"
+       }
+      },
+      {
+       "label": {
+        "id": "Biaya proyek",
+        "en": "Project cost"
+       },
+       "nilai": {
+        "id": "sekitar KSh70 miliar; paket pembiayaan USD 853 juta",
+        "en": "about KSh70 billion; financing package USD 853 million"
+       }
+      },
+      {
+       "label": {
+        "id": "PPA",
+        "en": "PPA"
+       },
+       "nilai": {
+        "id": "20 tahun, 7,52 sen euro per kWh",
+        "en": "20 years, 7.52 euro cents per kWh"
+       }
+      },
+      {
+       "label": {
+        "id": "Tenaga kerja",
+        "en": "Workforce"
+       },
+       "nilai": {
+        "id": "2.500 saat konstruksi, 200 tetap",
+        "en": "2,500 in construction, 200 permanent"
+       }
+      }
+     ],
+     "tindakan": [
+      {
+       "id": "Membangun ladang angin terbesar di Afrika dengan pendanaan campuran (pinjaman lembaga pembangunan, hibah, jaminan risiko).",
+       "en": "Built Africa's largest wind farm with blended funding (development lender loans, grants, risk guarantee)."
+      }
+     ],
+     "sebab": [
+      {
+       "id": "Sumber angin kuat dan stabil: pada 19 Juli 2019 rata-rata keluaran 199 MW atau 64 persen kapasitas.",
+       "en": "Strong, steady wind: on 19 July 2019 average output was 199 MW or 64 percent of capacity."
+      }
+     ],
+     "angka": [
+      {
+       "label": {
+        "id": "Keluaran rata-rata pada hari pengukuran",
+        "en": "Average output on the measured day"
+       },
+       "nilai": 64,
+       "d": 0,
+       "satuan": "%",
+       "sumber": "wiki_ltwp",
+       "est": false
+      },
+      {
+       "label": {
+        "id": "Pembayaran Kenya Power FY2019",
+        "en": "Kenya Power payment FY2019"
+       },
+       "nilai": 1.1,
+       "d": 1,
+       "satuan": "TWh (KSh11 miliar)",
+       "sumber": "wiki_ltwp",
+       "est": false
+      }
+     ],
+     "pelajaran": [
+      {
+       "id": "Analisis METI (Hipotesis): Sumber angin kelas dunia tidak cukup: tanpa jalur transmisi tepat waktu, hasilnya menjadi denda (lihat bab 40).",
+       "en": "METI analysis (Hypothesis): A world-class wind resource is not enough: without timely transmission it becomes a penalty (see chapter 40)."
+      }
+     ],
+     "faktor": {
+      "ppa_tarif": true,
+      "pendanaan": true,
+      "data_angin": true
+     },
+     "sumber": [
+      "wiki_ltwp"
+     ]
+    },
+    {
+     "id": "vietnam-fit",
+     "nama": "Vietnam: tarif tetap 2017-2021",
+     "jenis": "berhasil",
+     "negara": "VN",
+     "lokasi": {
+      "id": "Ninh Thuan, Bac Lieu, Gia Lai, dan lainnya",
+      "en": "Ninh Thuan, Bac Lieu, Gia Lai and others"
+     },
+     "profil": [
+      {
+       "label": {
+        "id": "Skema",
+        "en": "Scheme"
+       },
+       "nilai": {
+        "id": "tarif tetap 20 tahun: 8,5 sen USD per kWh darat, 9,8 sen lepas pantai, untuk pembangkit beroperasi sebelum 1 November 2021",
+        "en": "20-year fixed tariff: 8.5 US cents per kWh onshore, 9.8 offshore, for plants operating before 1 November 2021"
+       }
+      },
+      {
+       "label": {
+        "id": "Contoh awal",
+        "en": "Early example"
+       },
+       "nilai": {
+        "id": "Bac Lieu dekat pantai: 99,2 MW, 62 turbin GE 1,6 MW; tahap pertama tersambung Mei 2013",
+        "en": "Bac Lieu near-shore: 99.2 MW, 62 GE 1.6 MW turbines; first phase connected May 2013"
+       }
+      },
+      {
+       "label": {
+        "id": "Biaya investasi",
+        "en": "Investment cost"
+       },
+       "nilai": {
+        "id": "rata-rata VND45 miliar (sekitar USD 1,9 juta) per MW",
+        "en": "average VND45 billion (about USD 1.9 million) per MW"
+       }
+      }
+     ],
+     "tindakan": [
+      {
+       "id": "Pemerintah menjamin harga tetap 20 tahun dengan tenggat jelas, sehingga bank dan pengembang berlomba membangun.",
+       "en": "The government guaranteed a fixed 20-year price with a clear deadline, so banks and developers rushed to build."
+      }
+     ],
+     "sebab": [
+      {
+       "id": "Kepastian harga dan tenggat memecahkan masalah bankability; Vietnam menyalip Thailand sebagai pasar surya dan angin terbesar Asia Tenggara pada 2019.",
+       "en": "Price certainty and a deadline solved bankability; Vietnam overtook Thailand as Southeast Asia's biggest solar and wind market in 2019."
+      }
+     ],
+     "angka": [
+      {
+       "label": {
+        "id": "Tarif darat",
+        "en": "Onshore tariff"
+       },
+       "nilai": 8.5,
+       "d": 1,
+       "satuan": {
+        "id": "sen USD/kWh",
+        "en": "US cents/kWh"
+       },
+       "sumber": "vnexpress",
+       "est": false
+      },
+      {
+       "label": {
+        "id": "Biaya investasi",
+        "en": "Investment cost"
+       },
+       "nilai": 1.9,
+       "d": 1,
+       "satuan": {
+        "id": "juta USD/MW",
+        "en": "USD million/MW"
+       },
+       "sumber": "vnexpress",
+       "est": false
+      }
+     ],
+     "pelajaran": [
+      {
+       "id": "Analisis METI (Hipotesis): Tarif tetap yang cepat bisa memicu pembangunan massal, tetapi harus disinkronkan dengan transmisi (lihat kegagalan Vietnam, bab 40).",
+       "en": "METI analysis (Hypothesis): A fast fixed tariff can trigger mass build-out but must be synchronised with transmission (see Vietnam failure, chapter 40)."
+      }
+     ],
+     "faktor": {
+      "ppa_tarif": true,
+      "kebijakan_pasar": true,
+      "pendanaan": true
+     },
+     "sumber": [
+      "vnexpress",
+      "aljaz"
+     ]
+    },
+    {
+     "id": "thailand-chaiyaphum",
+     "nama": "Thailand: Chaiyaphum (EGCO)",
+     "jenis": "berhasil",
+     "negara": "TH",
+     "lokasi": {
+      "id": "Chaiyaphum, Thailand timur laut",
+      "en": "Chaiyaphum, north-east Thailand"
+     },
+     "profil": [
+      {
+       "label": {
+        "id": "Kapasitas",
+        "en": "Capacity"
+       },
+       "nilai": 80,
+       "satuan": "MW"
+      },
+      {
+       "label": {
+        "id": "Turbin",
+        "en": "Turbines"
+       },
+       "nilai": {
+        "id": "32 unit Goldwind",
+        "en": "32 Goldwind units"
+       }
+      },
+      {
+       "label": {
+        "id": "Operasi",
+        "en": "Operation"
+       },
+       "nilai": "2016"
+      },
+      {
+       "label": {
+        "id": "Kapasitas bayu nasional Thailand",
+        "en": "Thailand national wind capacity"
+       },
+       "nilai": {
+        "id": "sekitar 1,5 sampai 1,6 GW (dua angka berbeda dari satu basis data)",
+        "en": "about 1.5 to 1.6 GW (two different figures from one database)"
+       }
+      }
+     ],
+     "tindakan": [
+      {
+       "id": "Pengembang listrik swasta memakai turbin pabrikan Tiongkok untuk proyek angin pertama berskala puluhan MW.",
+       "en": "A private power producer used Chinese-made turbines for a first project at tens of MW."
+      }
+     ],
+     "sebab": [
+      {
+       "id": "Sumber penyebab keberhasilan tidak diverifikasi dari dokumen resmi; dicatat sebagai pembanding regional saja.",
+       "en": "The causes of success were not verified from official documents; recorded as a regional comparator only."
+      }
+     ],
+     "angka": [
+      {
+       "label": {
+        "id": "Porsi angin dalam bauran listrik Thailand 2025",
+        "en": "Wind share of Thailand electricity 2025"
+       },
+       "nilai": 1.81,
+       "d": 2,
+       "satuan": "%",
+       "sumber": "owid_bauran",
+       "est": false
+      }
+     ],
+     "pelajaran": [
+      {
+       "id": "Analisis METI (Hipotesis): Thailand dengan sekitar 1,5 GW dan porsi 1,81 persen sudah lebih jauh dari Indonesia (0,13 persen); jarak itu dibangun dengan puluhan proyek kecil sampai menengah, bukan satu proyek besar.",
+       "en": "METI analysis (Hypothesis): Thailand, with about 1.5 GW and a 1.81 percent share, is far ahead of Indonesia (0.13 percent); the gap was built from dozens of small to mid-size projects, not one large one."
+      }
+     ],
+     "faktor": {},
+     "sumber": [
+      "gem_chai",
+      "twp_th",
+      "owid_bauran"
+     ]
+    },
+    {
+     "id": "india-lelang",
+     "nama": "India: lelang angin kompetitif",
+     "jenis": "berhasil",
+     "negara": "IN",
+     "lokasi": {
+      "id": "Gujarat, Tamil Nadu, dan lainnya",
+      "en": "Gujarat, Tamil Nadu and others"
+     },
+     "profil": [
+      {
+       "label": {
+        "id": "Harga terendah negara bagian",
+        "en": "Lowest state auction"
+       },
+       "nilai": {
+        "id": "Rs2,43 per kWh (GUVNL, Desember 2017)",
+        "en": "Rs2.43 per kWh (GUVNL, December 2017)"
+       }
+      },
+      {
+       "label": {
+        "id": "Lelang SECI Maret 2018",
+        "en": "SECI auction March 2018"
+       },
+       "nilai": {
+        "id": "terendah Rs2,44 per kWh; rata-rata Rs2,51; 1.435 MW dilelang dari 2 GW",
+        "en": "lowest Rs2.44 per kWh; average Rs2.51; 1,435 MW awarded of 2 GW"
+       }
+      },
+      {
+       "label": {
+        "id": "LCOE bayu darat India 2023",
+        "en": "India onshore wind LCOE 2023"
+       },
+       "nilai": 4.83,
+       "satuan": {
+        "id": "sen USD/kWh (harga tetap 2025)",
+        "en": "US cents/kWh (constant 2025 USD)"
+       }
+      }
+     ],
+     "tindakan": [
+      {
+       "id": "Lembaga lelang nasional dan negara bagian memakai lelang terbalik dengan jadwal rutin sehingga pasokan dan pemasok bisa direncanakan.",
+       "en": "National and state agencies ran reverse auctions on a regular schedule, so supply and suppliers could plan."
+      }
+     ],
+     "sebab": [
+      {
+       "id": "Jadwal lelang rutin dan pasar pemasok turbin dalam negeri yang matang menekan harga sampai sekitar sepertiga tarif Indonesia 2019.",
+       "en": "Regular auctions and a mature domestic turbine supplier base pushed prices to roughly a third of Indonesia's 2019 tariff."
+      }
+     ],
+     "angka": [
+      {
+       "label": {
+        "id": "Tarif terendah SECI",
+        "en": "Lowest SECI tariff"
+       },
+       "nilai": 2.44,
+       "d": 2,
+       "satuan": "Rs/kWh",
+       "sumber": "rw_india",
+       "est": false
+      }
+     ],
+     "pelajaran": [
+      {
+       "id": "Analisis METI (Hipotesis): Lelang rutin yang bisa diprediksi menurunkan harga jauh lebih besar daripada lelang tunggal; Indonesia baru punya satu lelang PLTB utilitas dalam satu dekade.",
+       "en": "METI analysis (Hypothesis): Predictable regular auctions cut prices far more than a single auction; Indonesia has had only one utility wind auction in a decade."
+      }
+     ],
+     "faktor": {
+      "kebijakan_pasar": true,
+      "ppa_tarif": true
+     },
+     "sumber": [
+      "rw_india",
+      "owid"
+     ]
+    },
+    {
+     "id": "uk-cfd",
+     "nama": "Inggris: CfD lepas pantai (AR6)",
+     "jenis": "berhasil",
+     "negara": "GB",
+     "lokasi": {
+      "id": "Laut Utara dan perairan Inggris",
+      "en": "North Sea and UK waters"
+     },
+     "profil": [
+      {
+       "label": {
+        "id": "Hasil AR6 (3 Sep 2024)",
+        "en": "AR6 result (3 Sep 2024)"
+       },
+       "nilai": {
+        "id": "sekitar 5,3 GW bayu lepas pantai mendapat kontrak",
+        "en": "about 5.3 GW offshore wind awarded contracts"
+       }
+      },
+      {
+       "label": {
+        "id": "Harga kliring tetap",
+        "en": "Fixed-bottom clearing price"
+       },
+       "nilai": 58.87,
+       "satuan": {
+        "id": "GBP/MWh harga 2012 (sekitar GBP 82 harga kini)",
+        "en": "GBP/MWh 2012 prices (about GBP 82 in today's money)"
+       }
+      },
+      {
+       "label": {
+        "id": "Terapung",
+        "en": "Floating"
+       },
+       "nilai": 139.93,
+       "satuan": {
+        "id": "GBP/MWh harga 2012 (satu proyek)",
+        "en": "GBP/MWh 2012 prices (one project)"
+       }
+      }
+     ],
+     "tindakan": [
+      {
+       "id": "Pemerintah memakai kontrak selisih (CfD) dua arah yang menjamin harga tetap bagi pengembang dan memulangkan kelebihan pendapatan ke konsumen.",
+       "en": "The government used two-way contracts for difference (CfD) that fix revenue for developers and return excess to consumers."
+      }
+     ],
+     "sebab": [
+      {
+       "id": "Putaran lelang yang terulang dengan pagu harga, dan harga kliring 19 persen di bawah pagu, menunjukkan pasar bersaing.",
+       "en": "Repeated rounds with a price cap and a clearing price 19 percent below the cap indicate a competitive market."
+      }
+     ],
+     "angka": [
+      {
+       "label": {
+        "id": "Biaya terpasang global lepas pantai 2024",
+        "en": "Global offshore installed cost 2024"
+       },
+       "nilai": 2852,
+       "d": 0,
+       "satuan": "USD/kW",
+       "sumber": "irena_cost",
+       "est": false
+      }
+     ],
+     "pelajaran": [
+      {
+       "id": "Analisis METI (Hipotesis): Desain pasar (CfD, putaran rutin) membuat biaya modal rendah; tetapi hasil yang sama di Indonesia butuh pembeli kredibel dan kurs terlindungi, yang belum ada untuk lepas pantai.",
+       "en": "METI analysis (Hypothesis): Market design (CfD, regular rounds) keeps capital cost low; the same in Indonesia needs a credible buyer and protected currency, which does not yet exist for offshore."
+      }
+     ],
+     "faktor": {
+      "kebijakan_pasar": true,
+      "ppa_tarif": true
+     },
+     "sumber": [
+      "cms_ar6",
+      "irena_cost"
+     ]
+    }
+   ],
+   "catatan": {
+    "id": "Hanya dua PLTB utilitas yang berhasil beroperasi di Indonesia (Sidrap, Tolo); pembanding luar negeri melengkapi tiga sampai lima contoh.",
+    "en": "Only two utility wind farms operate successfully in Indonesia (Sidrap, Tolo); foreign comparators complete the three to five examples."
+   }
+  },
+  "40": {
+   "tipe": "kasus",
+   "butir": [
+    {
+     "id": "tanah-laut",
+     "nama": "PLTB Tanah Laut (70 MW + baterai)",
+     "jenis": "mundur",
+     "negara": "ID",
+     "lokasi": {
+      "id": "Tanah Laut, Kalimantan Selatan",
+      "en": "Tanah Laut, South Kalimantan"
+     },
+     "profil": [
+      {
+       "label": {
+        "id": "Kapasitas",
+        "en": "Capacity"
+       },
+       "nilai": {
+        "id": "70 MW dengan baterai 10 MW/10 MWh",
+        "en": "70 MW with a 10 MW/10 MWh battery"
+       }
+      },
+      {
+       "label": {
+        "id": "Penawaran menang",
+        "en": "Winning bid"
+       },
+       "nilai": {
+        "id": "5,5 sen USD per kWh (terendah untuk PLTB di Indonesia saat itu)",
+        "en": "5.5 US cents per kWh (lowest for Indonesian wind at the time)"
+       }
+      },
+      {
+       "label": {
+        "id": "Pemegang saham menurut Bloomberg Technoz",
+        "en": "Shareholders per Bloomberg Technoz"
+       },
+       "nilai": {
+        "id": "PT Tata Alam Baru: BELL 70 persen, PLN Nusantara Renewables 30 persen (mitra wajib PLN)",
+        "en": "PT Tata Alam Baru: BELL 70 percent, PLN Nusantara Renewables 30 percent (PLN mandatory partner)"
+       }
+      },
+      {
+       "label": {
+        "id": "Status RUPTL 2025-2034",
+        "en": "RUPTL 2025-2034 status"
+       },
+       "nilai": {
+        "id": "Pengadaan, COD skenario RE Base 2026",
+        "en": "Procurement, RE Base scenario COD 2026"
+       }
+      }
+     ],
+     "kronologi": [
+      {
+       "tanggal": "2022-07-01",
+       "teks": {
+        "id": "PLN menerbitkan draf PPA untuk tender (ETP: Juli 2022; tanggal tepat tidak disebut). Investor dan pemberi pinjaman menyebut 10 isu bankability pada draf itu.",
+        "en": "PLN issues the draft PPA for the tender (ETP: July 2022; exact day not stated). Investors and lenders flag 10 bankability issues in the draft."
+       }
+      },
+      {
+       "tanggal": "2022-11-15",
+       "teks": {
+        "id": "Surat niat ditandatangani di Bali dengan konsorsium Total Eren dan Adaro Power; penawaran 5,5 sen USD per kWh.",
+        "en": "Letter of intent signed in Bali with the Total Eren and Adaro Power consortium; bid 5.5 US cents per kWh."
+       }
+      },
+      {
+       "tanggal": "2023-05-04",
+       "teks": {
+        "id": "PPA ditandatangani; konstruksi ditargetkan awal 2024 dan COD 2025.",
+        "en": "PPA signed; construction targeted for early 2024 and COD for 2025."
+       }
+      },
+      {
+       "tanggal": "2023-12-13",
+       "teks": {
+        "id": "ETP mencatat proyek dimenangkan tetapi belum dibangun.",
+        "en": "ETP records the project as awarded but not yet under construction."
+       }
+      },
+      {
+       "tanggal": "2025-05-26",
+       "teks": {
+        "id": "RUPTL 2025-2034 masih memuat Tanah Laut 70 MW berstatus pengadaan.",
+        "en": "RUPTL 2025-2034 still lists Tanah Laut 70 MW at procurement status."
+       }
+      },
+      {
+       "tanggal": "2025-07-01",
+       "teks": {
+        "id": "Bloomberg Technoz: PLN menimbang terminasi karena proyek lama molor dan konsorsium belum financial close pada semester pertama 2025.",
+        "en": "Bloomberg Technoz: PLN weighs termination because the project is long delayed and the consortium had not reached financial close in the first half of 2025."
+       }
+      }
+     ],
+     "sebab": [
+      {
+       "id": "Pendanaan: financial close belum tercapai (Bloomberg Technoz, 1 Jul 2025).",
+       "en": "Funding: financial close not reached (Bloomberg Technoz, 1 Jul 2025)."
+      },
+      {
+       "id": "PPA: ETP mencatat isu bankability pada draf PPA Tanah Laut (energi kontrak tahunan, hak PLN membeli proyek kapan saja, risiko force majeure dibagi, hasil kredit karbon ke PLN, mitra wajib).",
+       "en": "PPA: ETP notes bankability issues in the Tanah Laut PPA draft (annual contracted energy, PLN pre-emptive right to buy, shared force majeure risk, carbon proceeds to PLN, mandatory partner)."
+      },
+      {
+       "id": "Data angin: lokasi berbukit; peta menunjukkan 8,12 m/s tetapi ketidakpastian tinggi tanpa pengukuran lokasi (ETP, Gambar 9).",
+       "en": "Wind data: rugged site; the map shows 8.12 m/s but uncertainty is high without on-site measurement (ETP, Figure 9)."
+      },
+      {
+       "id": "Izin: judul Petromindo menyebut penundaan karena kendala perizinan (isi berbayar; rincian tidak dibaca).",
+       "en": "Permits: a Petromindo headline cites delay from permitting setbacks (paywalled; details not read)."
+      }
+     ],
+     "terdampak": {
+      "id": "PLN (rencana pasokan sistem Kalimantan), konsorsium yang menanggung biaya pengukuran dan persiapan, serta konsumen di sistem yang menunggu pasokan terbarukan. Struktur kepemilikan berubah dari Total Eren/Adaro (2022-2023) ke Tata Alam Baru (2025); alasan perubahan tidak dijelaskan sumber yang dibaca.",
+      "en": "PLN (Kalimantan system supply plan), the consortium bearing measurement and preparation costs, and consumers in a system waiting for renewable supply. Ownership changed from Total Eren/Adaro (2022-2023) to Tata Alam Baru (2025); the reason is not explained in the sources read."
+     },
+     "seharusnya": {
+      "id": "Analisis METI (Hipotesis): Menutup isu bankability PPA sebelum penandatanganan (ACE dan hak beli PLN), memberi jadwal financial close yang mengikat dengan sanksi seimbang, dan menyaring peserta lelang dengan bukti pendanaan, bukan hanya harga terendah.",
+      "en": "METI analysis (Hypothesis): Close PPA bankability issues before signing (ACE and PLN buy-out right), set a binding financial-close schedule with balanced sanctions, and screen bidders on proof of funding, not only lowest price."
+     },
+     "tanda_bahaya": [
+      {
+       "id": "Harga penawaran sekitar setengah tarif proyek pembanding (5,5 vs 11 sen) tanpa penyesuaian biaya modal.",
+       "en": "Bid price about half the comparable tariff (5.5 vs 11 cents) with no adjustment for cost of capital."
+      },
+      {
+       "id": "Peserta menang tanpa pengukuran angin lokasi yang kuat di medan berbukit.",
+       "en": "Winner without strong on-site wind measurement in rugged terrain."
+      },
+      {
+       "id": "Jarak antara PPA dan financial close melebihi dua tahun tanpa kemajuan terbuka.",
+       "en": "More than two years between PPA and financial close with no public progress."
+      }
+     ],
+     "faktor": {
+      "ppa_tarif": true,
+      "pendanaan": true,
+      "data_angin": true,
+      "lahan_izin": true
+     },
+     "sumber": [
+      "bt_tl",
+      "bisnis_tl",
+      "li_tl",
+      "etp1",
+      "ruptl",
+      "pm_tl"
+     ],
+     "hak_jawab": true,
+     "hak_jawab_catatan": {
+      "id": "Hak jawab: pihak yang disebut dipersilakan mengoreksi lewat formulir koreksi METI; koreksi bersumber akan dimuat berdampingan dengan teks ini.",
+      "en": "Right of reply: named parties may correct this through the METI correction form; sourced corrections will be published alongside this text."
+     }
+    },
+    {
+     "id": "sukabumi",
+     "nama": "PLTB Sukabumi (UPC Renewables)",
+     "jenis": "mundur",
+     "negara": "ID",
+     "lokasi": {
+      "id": "Ciemas, Sukabumi, Jawa Barat",
+      "en": "Ciemas, Sukabumi, West Java"
+     },
+     "profil": [
+      {
+       "label": {
+        "id": "Kapasitas diajukan",
+        "en": "Capacity proposed"
+       },
+       "nilai": {
+        "id": "60 MW lalu diminta 150 MW (Juni 2023)",
+        "en": "60 MW, then 150 MW requested (June 2023)"
+       }
+      },
+      {
+       "label": {
+        "id": "Pengembang",
+        "en": "Developer"
+       },
+       "nilai": "PT UPC Sukabumi Bayu Energi / UPC Renewables Indonesia"
+      },
+      {
+       "label": {
+        "id": "Angin terukur",
+        "en": "Measured wind"
+       },
+       "nilai": {
+        "id": "7,0 m/s di Sukabumi (30-50 m, 2017)",
+        "en": "7.0 m/s at Sukabumi (30-50 m, 2017)"
+       }
+      },
+      {
+       "label": {
+        "id": "Status di RUPTL 2025-2034",
+        "en": "Status in RUPTL 2025-2034"
+       },
+       "nilai": {
+        "id": "tidak tercantum di tabel PLTB (EST dari pembacaan tabel)",
+        "en": "not in the wind table (EST from reading the table)"
+       }
+      }
+     ],
+     "kronologi": [
+      {
+       "tanggal": "2022-11-30",
+       "teks": {
+        "id": "UPC Renewables disebut masuk tahap negosiasi PPA dengan PLN (Industrial Info).",
+        "en": "UPC Renewables reported to be in PPA negotiation with PLN (Industrial Info)."
+       }
+      },
+      {
+       "tanggal": "2023-06-06",
+       "teks": {
+        "id": "Pemkab Sukabumi mendukung permintaan UPC menaikkan kuota dari 60 ke 150 MW; lokasi di kawasan UNESCO Global Geopark Ciletuh-Palabuhanratu.",
+        "en": "Sukabumi regency backs UPC request to raise the quota from 60 to 150 MW; site inside the UNESCO Global Geopark Ciletuh-Palabuhanratu."
+       }
+      },
+      {
+       "tanggal": "2023-12-13",
+       "teks": {
+        "id": "ETP mencatat gardu 70 kV terdekat di Pelabuhan Ratu dan menyebut perlu saluran sub-transmisi lebih dari 20 km.",
+        "en": "ETP notes the nearest 70 kV substation at Pelabuhan Ratu and a sub-transmission line of more than 20 km."
+       }
+      },
+      {
+       "tanggal": "2025-05-26",
+       "teks": {
+        "id": "RUPTL 2025-2034 tidak memuat PLTB Sukabumi pada tabel bayunya.",
+        "en": "RUPTL 2025-2034 does not list Sukabumi in its wind table."
+       }
+      }
+     ],
+     "sebab": [
+      {
+       "id": "PPA belum tercapai walau negosiasi dilaporkan sejak 2022; tanpa tempat di RUPTL tidak ada jalur pengadaan PLN.",
+       "en": "No PPA despite negotiation reported since 2022; without a RUPTL slot there is no PLN procurement path."
+      },
+      {
+       "id": "Jaringan: saluran sub-transmisi lebih dari 20 km ke gardu yang harus punya feeder kosong (ETP).",
+       "en": "Grid: a sub-transmission line of more than 20 km to a substation that must have a free feeder (ETP)."
+      },
+      {
+       "id": "Lahan dan tata ruang: lokasi di dalam kawasan geopark UNESCO sehingga perizinan dan tata ruang menjadi kunci (ANTARA).",
+       "en": "Land and spatial plan: site inside a UNESCO geopark, so permits and zoning are decisive (ANTARA)."
+      }
+     ],
+     "terdampak": {
+      "id": "Sistem Jawa-Bali yang butuh pasokan terbarukan, pengembang yang menanggung biaya pengembangan sejak 2015, dan pemda yang sudah memberi dukungan perizinan.",
+      "en": "The Java-Bali system that needs renewable supply, a developer bearing development costs since 2015, and the local government that has offered permitting support."
+     },
+     "seharusnya": {
+      "id": "Analisis METI (Hipotesis): PLN dan ESDM menyatakan jelas apakah Sukabumi masuk jalur pengadaan atau tidak, dan memilih jalur lelang atau penunjukan agar investor tidak menunggu tanpa kepastian.",
+      "en": "METI analysis (Hypothesis): PLN and ESDM should state clearly whether Sukabumi is in the procurement path or not, choosing tender or direct selection so investors do not wait without certainty."
+     },
+     "tanda_bahaya": [
+      {
+       "id": "Kuota diminta naik tanpa PPA dan tanpa slot RUPTL.",
+       "en": "Quota raised without a PPA and without a RUPTL slot."
+      },
+      {
+       "id": "Target selesai (2024 menurut pemberitaan) lewat tanpa konstruksi.",
+       "en": "Target completion (2024 per reporting) passes without construction."
+      }
+     ],
+     "faktor": {
+      "ppa_tarif": true,
+      "jaringan": true,
+      "lahan_izin": true
+     },
+     "sumber": [
+      "iir_sk",
+      "antara_sk",
+      "etp1",
+      "ruptl"
+     ],
+     "hak_jawab": true,
+     "hak_jawab_catatan": {
+      "id": "Hak jawab: pihak yang disebut dipersilakan mengoreksi lewat formulir koreksi METI; koreksi bersumber akan dimuat berdampingan dengan teks ini.",
+      "en": "Right of reply: named parties may correct this through the METI correction form; sourced corrections will be published alongside this text."
+     }
+    },
+    {
+     "id": "nusa-penida",
+     "nama": "PLTB Puncak Mundi, Nusa Penida (skala kecil)",
+     "jenis": "mati",
+     "negara": "ID",
+     "lokasi": {
+      "id": "Nusa Penida, Bali",
+      "en": "Nusa Penida, Bali"
+     },
+     "profil": [
+      {
+       "label": {
+        "id": "Instalasi",
+        "en": "Installation"
+       },
+       "nilai": {
+        "id": "9 kincir setinggi 30 m, target sekitar 700 kW",
+        "en": "9 turbines 30 m tall, targeted at about 700 kW"
+       }
+      },
+      {
+       "label": {
+        "id": "Dibangun",
+        "en": "Built"
+       },
+       "nilai": "2007"
+      }
+     ],
+     "kronologi": [
+      {
+       "tanggal": "2007-11-01",
+       "teks": {
+        "id": "Diresmikan menjelang konferensi iklim akhir 2007 (bulan November; tanggal tepat tidak disebut). Berhenti total kurang dari dua tahun kemudian dengan alasan tidak ada suku cadang.",
+        "en": "Inaugurated ahead of the late-2007 climate conference (November; exact day not stated). Stopped completely less than two years later, reason cited: no spare parts."
+       }
+      },
+      {
+       "tanggal": "2020-10-26",
+       "teks": {
+        "id": "Mongabay menyebutnya monumen kegagalan; tetap mangkrak.",
+        "en": "Mongabay calls it a monument to failure; still idle."
+       }
+      }
+     ],
+     "sebab": [
+      {
+       "id": "Suku cadang tidak tersedia setelah masa awal (Mongabay).",
+       "en": "No spare parts after the early period (Mongabay)."
+      },
+      {
+       "id": "Pengelola jangka panjang tidak jelas: ESDM menyerahkan, tetapi tak ada Perusda yang mengelola setelah peresmian (Mongabay 2018 via pencarian).",
+       "en": "Unclear long-term operator: ESDM handed it over, but no regional company ran it after inauguration (Mongabay 2018 via search)."
+      }
+     ],
+     "terdampak": {
+      "id": "Warga Puncak Mundi dan sistem 3 Nusa yang tetap bergantung pada pembangkit diesel; uang negara yang dibelanjakan untuk aset yang tidak menghasilkan.",
+      "en": "Puncak Mundi residents and the 3 Nusa system, which stays dependent on diesel; public money spent on an asset that produces nothing."
+     },
+     "seharusnya": {
+      "id": "Analisis METI (Hipotesis): Proyek hibah skala kecil perlu kontrak O&M, dana suku cadang, dan pengelola yang ditetapkan sebelum serah terima, bukan sesudahnya.",
+      "en": "METI analysis (Hypothesis): Small grant projects need an O&M contract, a spare-parts fund and a designated operator before handover, not after."
+     },
+     "tanda_bahaya": [
+      {
+       "id": "Peresmian cepat tanpa pengelola tetap.",
+       "en": "Rapid inauguration without a permanent operator."
+      },
+      {
+       "id": "Pemasok turbin asing atau satu-satunya tanpa kontrak suku cadang.",
+       "en": "A single or foreign turbine supplier without a spare-parts contract."
+      }
+     ],
+     "faktor": {
+      "teknologi_om": true
+     },
+     "sumber": [
+      "mongabay_np",
+      "esdm_pandan"
+     ],
+     "hak_jawab": true,
+     "hak_jawab_catatan": {
+      "id": "Hak jawab: pihak yang disebut dipersilakan mengoreksi lewat formulir koreksi METI; koreksi bersumber akan dimuat berdampingan dengan teks ini.",
+      "en": "Right of reply: named parties may correct this through the METI correction form; sourced corrections will be published alongside this text."
+     }
+    },
+    {
+     "id": "turkana-jaringan",
+     "nama": "Lake Turkana: jalur transmisi terlambat, denda deemed energy",
+     "jenis": "mundur",
+     "negara": "KE",
+     "lokasi": {
+      "id": "Loiyangalani sampai Suswa, Kenya",
+      "en": "Loiyangalani to Suswa, Kenya"
+     },
+     "profil": [
+      {
+       "label": {
+        "id": "Jalur",
+        "en": "Line"
+       },
+       "nilai": {
+        "id": "sekitar 430 km, 400 kV, dibangun KETRACO (Loiyangalani-Suswa)",
+        "en": "about 430 km, 400 kV, built by KETRACO (Loiyangalani-Suswa)"
+       }
+      },
+      {
+       "label": {
+        "id": "Mekanisme",
+        "en": "Mechanism"
+       },
+       "nilai": {
+        "id": "klausul deemed generated energy: Kenya Power membayar kapasitas yang siap tetapi tak dapat disalurkan",
+        "en": "deemed generated energy clause: Kenya Power pays for capacity ready but unable to deliver"
+       }
+      }
+     ],
+     "kronologi": [
+      {
+       "tanggal": "2017-03-09",
+       "teks": {
+        "id": "Seluruh 365 turbin berdiri; jalur transmisi belum selesai. Pada 2017 dilaporkan penagihan kapasitas sekitar KSh700 juta per bulan (bulan tepat tidak disebut).",
+        "en": "All 365 turbines erected; transmission line not finished. In 2017 a capacity charge of about KSh700 million per month was reported (exact month not stated)."
+       }
+      },
+      {
+       "tanggal": "2018-09-24",
+       "teks": {
+        "id": "Jalur disebut tersambung ke jaringan (satu sumber); sumber yang sama juga menyebut peresmian jalur 19 Juli 2019. Kedua tanggal belum direkonsiliasi.",
+        "en": "Line said to be connected to the grid (one source); the same source also gives inauguration of the line on 19 July 2019. The two dates are not reconciled."
+       }
+      },
+      {
+       "tanggal": "2019-07-19",
+       "teks": {
+        "id": "Peresmian resmi jalur Loiyangalani-Suswa; keluaran rata-rata 199 MW (64 persen).",
+        "en": "Official commissioning of the Loiyangalani-Suswa line; average output 199 MW (64 percent)."
+       }
+      }
+     ],
+     "sebab": [
+      {
+       "id": "Jalur transmisi tidak selesai bersamaan dengan pembangkit; masalah kontraktor dan hak lintas (wayleave) disebut dalam pemberitaan.",
+       "en": "The transmission line was not finished with the plant; contractor and wayleave problems are cited in reporting."
+      },
+      {
+       "id": "Kontrak PPA menggeser risiko jaringan ke pembeli publik.",
+       "en": "The PPA shifted grid risk to the public buyer."
+      }
+     ],
+     "angka": [
+      {
+       "label": {
+        "id": "Total denda keterlambatan",
+        "en": "Total delay penalties"
+       },
+       "nilai": 14.5,
+       "d": 1,
+       "satuan": {
+        "id": "miliar KSh (Wikipedia); judul EastAfrican menyebut USD 52,5 sampai 54 juta; angka lain dari audit parlemen tidak direkonsiliasi",
+        "en": "KSh billion (Wikipedia); EastAfrican headlines cite USD 52.5 to 54 million; other parliamentary audit figures are not reconciled"
+       },
+       "sumber": "wiki_ltwp",
+       "est": false
+      },
+      {
+       "label": {
+        "id": "Cicilan bulanan disepakati",
+        "en": "Agreed monthly instalment"
+       },
+       "nilai": 78.6,
+       "d": 1,
+       "satuan": {
+        "id": "juta KSh selama enam tahun",
+        "en": "KSh million over six years"
+       },
+       "sumber": "wiki_ltwp",
+       "est": false
+      }
+     ],
+     "terdampak": {
+      "id": "Konsumen listrik Kenya yang menanggung pembayaran lewat tagihan, dan investor yang menunggu pembayaran listrik yang tak bisa disalurkan.",
+      "en": "Kenyan electricity consumers who bore payments through their bills, and investors who waited while energy could not be delivered."
+     },
+     "seharusnya": {
+      "id": "Analisis METI (Hipotesis): Sinkronkan tanggal COD pembangkit dengan jalur transmisi lewat kontrak yang mengikat kedua pihak, dan jangan memberi satu BUMN risiko tanpa batas; di Indonesia ini relevan untuk PLTB yang butuh saluran sub-transmisi.",
+      "en": "METI analysis (Hypothesis): Synchronise plant COD with the transmission line through a contract binding both sides, and do not give one state firm unlimited risk; in Indonesia this applies to wind farms needing sub-transmission lines."
+     },
+     "tanda_bahaya": [
+      {
+       "id": "Pembangkit dan jalur dikontrak terpisah dengan jadwal tidak terhubung.",
+       "en": "Plant and line contracted separately with unlinked schedules."
+      },
+      {
+       "id": "Hak lintas jalur belum diamankan saat pembangkit mulai dibangun.",
+       "en": "Right of way not secured when plant construction starts."
+      }
+     ],
+     "faktor": {
+      "jaringan": true
+     },
+     "sumber": [
+      "wiki_ltwp",
+      "ea_ltwp"
+     ],
+     "hak_jawab": true,
+     "hak_jawab_catatan": {
+      "id": "Hak jawab: pihak yang disebut dipersilakan mengoreksi lewat formulir koreksi METI; koreksi bersumber akan dimuat berdampingan dengan teks ini.",
+      "en": "Right of reply: named parties may correct this through the METI correction form; sourced corrections will be published alongside this text."
+     }
+    },
+    {
+     "id": "vietnam-kurtailmen",
+     "nama": "Vietnam: tenggat tarif dan kurtailmen",
+     "jenis": "mundur",
+     "negara": "VN",
+     "lokasi": {
+      "id": "Ninh Thuan, Gia Lai, Binh Thuan",
+      "en": "Ninh Thuan, Gia Lai, Binh Thuan"
+     },
+     "profil": [
+      {
+       "label": {
+        "id": "Tenggat",
+        "en": "Deadline"
+       },
+       "nilai": {
+        "id": "31 Oktober 2021 untuk tarif tetap",
+        "en": "31 October 2021 for the fixed tariff"
+       }
+      },
+      {
+       "label": {
+        "id": "Proyek terlewat",
+        "en": "Projects missed"
+       },
+       "nilai": {
+        "id": "sekitar 4.100 MW menurut investor; 62 proyek menurut Al Jazeera",
+        "en": "about 4,100 MW per investors; 62 projects per Al Jazeera"
+       }
+      }
+     ],
+     "kronologi": [
+      {
+       "tanggal": "2021-10-31",
+       "teks": {
+        "id": "Tenggat tarif tetap berakhir; sebagian proyek belum selesai karena penguncian COVID-19 (peralatan tertahan di pelabuhan empat bulan, ahli asing tak bisa masuk, bank menunda pencairan).",
+        "en": "Fixed-tariff deadline ends; some projects unfinished due to COVID-19 lockdowns (equipment stranded in port for four months, foreign experts unable to enter, banks slowed disbursement)."
+       }
+      },
+      {
+       "tanggal": "2022-01-06",
+       "teks": {
+        "id": "Investor memperingatkan kebangkrutan bila tenggat tak diperpanjang; meminta perpanjangan 3 sampai 6 bulan.",
+        "en": "Investors warn of bankruptcy unless the deadline is extended; ask for 3 to 6 months."
+       }
+      },
+      {
+       "tanggal": "2022-05-18",
+       "teks": {
+        "id": "Al Jazeera: proyek yang selesai setelah tenggat tak bisa menjual listrik karena belum ada kebijakan harga pengganti; di Ninh Thuan pembangkit surya 450 MW tak bisa menjual 40 persen kapasitas karena kurtailmen.",
+        "en": "Al Jazeera: projects finished after the deadline cannot sell power because no replacement price policy exists; in Ninh Thuan a 450 MW solar farm cannot sell 40 percent of its capacity due to curtailment."
+       }
+      }
+     ],
+     "sebab": [
+      {
+       "id": "Transmisi: jalur butuh sekitar tiga tahun, ladang angin sekitar satu tahun (kutipan Minh Ha Duong di Al Jazeera).",
+       "en": "Transmission: a line takes about three years, a wind farm about one (Minh Ha Duong quoted by Al Jazeera)."
+      },
+      {
+       "id": "Kebijakan: tarif tetap berakhir mendadak tanpa pengganti; pendanaan dan logistik terhenti oleh COVID-19.",
+       "en": "Policy: the fixed tariff ended abruptly with no replacement; funding and logistics stalled with COVID-19."
+      }
+     ],
+     "terdampak": {
+      "id": "Pengembang yang meminjam untuk proyek yang selesai setelah tenggat, bank pemberi pinjaman, dan konsumen yang membayar kapasitas tak termanfaatkan.",
+      "en": "Developers who borrowed for projects finished after the deadline, lending banks, and consumers paying for unused capacity."
+     },
+     "seharusnya": {
+      "id": "Analisis METI (Hipotesis): Mengikat target pembangunan pembangkit dengan target transmisi, dan memberi masa transisi tarif yang jelas sebelum kebijakan lama berakhir.",
+      "en": "METI analysis (Hypothesis): Link generation build-out targets to transmission targets, and give a clear tariff transition period before the old policy ends."
+     },
+     "tanda_bahaya": [
+      {
+       "id": "Tarif tetap dengan tenggat keras tanpa perhitungan kapasitas jaringan.",
+       "en": "Fixed tariff with a hard deadline without grid capacity planning."
+      },
+      {
+       "id": "Pembatasan keluaran (kurtailmen) mulai muncul pada pembangkit surya di wilayah yang sama.",
+       "en": "Curtailment begins on solar plants in the same region."
+      }
+     ],
+     "faktor": {
+      "jaringan": true,
+      "kebijakan_pasar": true,
+      "pendanaan": true,
+      "logistik": true
+     },
+     "sumber": [
+      "vnexpress",
+      "aljaz"
+     ],
+     "hak_jawab": true,
+     "hak_jawab_catatan": {
+      "id": "Hak jawab: pihak yang disebut dipersilakan mengoreksi lewat formulir koreksi METI; koreksi bersumber akan dimuat berdampingan dengan teks ini.",
+      "en": "Right of reply: named parties may correct this through the METI correction form; sourced corrections will be published alongside this text."
+     }
+    },
+    {
+     "id": "hornsea4",
+     "nama": "Hornsea 4 (Orsted, 2,4 GW, Inggris)",
+     "jenis": "dibatalkan",
+     "negara": "GB",
+     "lokasi": {
+      "id": "Laut Utara, Inggris",
+      "en": "North Sea, UK"
+     },
+     "profil": [
+      {
+       "label": {
+        "id": "Kapasitas",
+        "en": "Capacity"
+       },
+       "nilai": 2.4,
+       "satuan": "GW"
+      },
+      {
+       "label": {
+        "id": "Kontrak",
+        "en": "Contract"
+       },
+       "nilai": {
+        "id": "CfD AR6 (September 2024)",
+        "en": "AR6 CfD (September 2024)"
+       }
+      }
+     ],
+     "kronologi": [
+      {
+       "tanggal": "2024-09-03",
+       "teks": {
+        "id": "Hasil AR6 diumumkan; Hornsea 4 memperoleh kontrak selisih.",
+        "en": "AR6 results announced; Hornsea 4 gets a contract for difference."
+       }
+      },
+      {
+       "tanggal": "2025-05-07",
+       "teks": {
+        "id": "Orsted menghentikan proyek dalam bentuk saat ini: biaya rantai pasok naik, suku bunga lebih tinggi, risiko pembangunan meningkat; hak proyek disimpan.",
+        "en": "Orsted stops the project in its current form: supply chain costs up, higher interest rates, higher construction risk; project rights retained."
+       }
+      }
+     ],
+     "sebab": [
+      {
+       "id": "Biaya rantai pasok, suku bunga, dan risiko konstruksi membuat kontrak yang dimenangkan tidak lagi menguntungkan (Orsted).",
+       "en": "Supply chain cost, interest rates and construction risk made the awarded contract uneconomic (Orsted)."
+      }
+     ],
+     "terdampak": {
+      "id": "Pemegang saham Orsted, rantai pasok yang kontraknya diakhiri, dan target kapasitas Inggris.",
+      "en": "Orsted shareholders, supply chain firms whose contracts were terminated, and the UK capacity target."
+     },
+     "seharusnya": {
+      "id": "Analisis METI (Hipotesis): Untuk lepas pantai di Indonesia: kontrak pembelian perlu indeksasi biaya atau jendela renegosiasi agar guncangan bunga dan rantai pasok tidak berujung pembatalan.",
+      "en": "METI analysis (Hypothesis): For offshore in Indonesia: purchase contracts need cost indexation or a renegotiation window so interest-rate and supply-chain shocks do not end in cancellation."
+     },
+     "tanda_bahaya": [
+      {
+       "id": "Kontrak harga tetap berusia lebih dari satu tahun sebelum keputusan investasi akhir.",
+       "en": "A fixed-price contract more than a year old before final investment decision."
+      }
+     ],
+     "faktor": {
+      "biaya_makro": true
+     },
+     "sumber": [
+      "ci_h4",
+      "cms_ar6"
+     ],
+     "hak_jawab": true,
+     "hak_jawab_catatan": {
+      "id": "Hak jawab: pihak yang disebut dipersilakan mengoreksi lewat formulir koreksi METI; koreksi bersumber akan dimuat berdampingan dengan teks ini.",
+      "en": "Right of reply: named parties may correct this through the METI correction form; sourced corrections will be published alongside this text."
+     }
+    },
+    {
+     "id": "ocean-wind",
+     "nama": "Ocean Wind 1 dan 2 (Orsted, Amerika Serikat)",
+     "jenis": "dibatalkan",
+     "negara": "US",
+     "lokasi": {
+      "id": "New Jersey, AS",
+      "en": "New Jersey, USA"
+     },
+     "profil": [
+      {
+       "label": {
+        "id": "Kapasitas",
+        "en": "Capacity"
+       },
+       "nilai": {
+        "id": "Ocean Wind 1 sekitar 1.100 MW dan Ocean Wind 2 sekitar 1.148 MW (S&P Global)",
+        "en": "Ocean Wind 1 about 1,100 MW and Ocean Wind 2 about 1,148 MW (S&P Global)"
+       }
+      },
+      {
+       "label": {
+        "id": "Penurunan nilai",
+        "en": "Impairment"
+       },
+       "nilai": {
+        "id": "DKK 28,4 miliar sembilan bulan 2023, DKK 19,9 miliar untuk Ocean Wind 1",
+        "en": "DKK 28.4 billion in nine months of 2023, DKK 19.9 billion for Ocean Wind 1"
+       }
+      }
+     ],
+     "kronologi": [
+      {
+       "tanggal": "2023-11-01",
+       "teks": {
+        "id": "Orsted menghentikan pengembangan Ocean Wind 1 dan 2, sambil mengambil keputusan investasi untuk Revolution Wind (704 MW).",
+        "en": "Orsted ceases development of Ocean Wind 1 and 2 while taking the investment decision for Revolution Wind (704 MW)."
+       }
+      }
+     ],
+     "sebab": [
+      {
+       "id": "Keterlambatan rantai pasok, suku bunga lebih tinggi, dan tidak adanya penyesuaian kredit energi terbarukan lepas pantai (OREC) pada proyek tetangga (Orsted).",
+       "en": "Supply chain delays, higher interest rates, and the absence of an offshore renewable energy credit (OREC) adjustment on a sister project (Orsted)."
+      }
+     ],
+     "terdampak": {
+      "id": "Pemegang saham Orsted dan program energi bersih negara bagian New Jersey.",
+      "en": "Orsted shareholders and New Jersey's clean energy programme."
+     },
+     "seharusnya": {
+      "id": "Analisis METI (Hipotesis): Menunda keputusan investasi sampai rantai pasok kapal dan turbin terkunci, atau memasukkan klausul penyesuaian harga ke kontrak.",
+      "en": "METI analysis (Hypothesis): Defer investment decision until vessel and turbine supply is locked, or write price adjustment clauses into the contract."
+     },
+     "tanda_bahaya": [
+      {
+       "id": "Kapal pemasang tidak terjamin pada tahun konstruksi.",
+       "en": "Installation vessels not secured for the construction year."
+      }
+     ],
+     "faktor": {
+      "biaya_makro": true,
+      "logistik": true
+     },
+     "sumber": [
+      "orsted23"
+     ],
+     "hak_jawab": true,
+     "hak_jawab_catatan": {
+      "id": "Hak jawab: pihak yang disebut dipersilakan mengoreksi lewat formulir koreksi METI; koreksi bersumber akan dimuat berdampingan dengan teks ini.",
+      "en": "Right of reply: named parties may correct this through the METI correction form; sourced corrections will be published alongside this text."
+     }
+    },
+    {
+     "id": "chile-kurtailmen",
+     "nama": "Chile: kurtailmen di utara",
+     "jenis": "mundur",
+     "negara": "CL",
+     "lokasi": {
+      "id": "Atacama dan wilayah utara, Chile",
+      "en": "Atacama and northern Chile"
+     },
+     "profil": [
+      {
+       "label": {
+        "id": "Kurtailmen 2024",
+        "en": "Curtailment 2024"
+       },
+       "nilai": 5909,
+       "satuan": {
+        "id": "GWh surya dan angin, naik 121 persen (ACERA)",
+        "en": "GWh of solar and wind, up 121 percent (ACERA)"
+       }
+      },
+      {
+       "label": {
+        "id": "Kapasitas bayu",
+        "en": "Wind capacity"
+       },
+       "nilai": {
+        "id": "hampir 6 GW (15,5 persen kapasitas) pada 2025",
+        "en": "almost 6 GW (15.5 percent of capacity) in 2025"
+       }
+      }
+     ],
+     "kronologi": [
+      {
+       "tanggal": "2025-01-01",
+       "teks": {
+        "id": "Pembatasan keluaran melonjak 121 persen pada 2024 karena kemacetan transmisi di utara (tanggal 1 Januari 2025 mewakili laporan tahun 2024).",
+        "en": "Curtailment jumped 121 percent in 2024 due to transmission congestion in the north (1 January 2025 stands for the 2024 report)."
+       }
+      }
+     ],
+     "sebab": [
+      {
+       "id": "Kemacetan transmisi, aturan dispatch kaku, dan penyimpanan yang belum cukup (PV Tech/Ember).",
+       "en": "Transmission congestion, rigid dispatch rules and insufficient storage (PV Tech/Ember)."
+      }
+     ],
+     "terdampak": {
+      "id": "Pengembang yang kehilangan pendapatan; satu sumber menyebut proyek angin Cabo Leones II mengalami tekanan keuangan (tidak diverifikasi lebih lanjut).",
+      "en": "Developers who lost revenue; one source says the Cabo Leones II wind farm came under financial strain (not verified further)."
+     },
+     "seharusnya": {
+      "id": "Analisis METI (Hipotesis): Rencanakan transmisi dan penyimpanan sebelum menambah kapasitas variabel; relevan untuk Sulawesi Selatan dan Jawa-Bali.",
+      "en": "METI analysis (Hypothesis): Plan transmission and storage before adding variable capacity; relevant for South Sulawesi and Java-Bali."
+     },
+     "tanda_bahaya": [
+      {
+       "id": "Pembangkit variabel terkonsentrasi di satu wilayah dengan satu koridor transmisi.",
+       "en": "Variable generation concentrated in one region with one transmission corridor."
+      }
+     ],
+     "faktor": {
+      "jaringan": true
+     },
+     "sumber": [
+      "pvtech_cl"
+     ],
+     "hak_jawab": true,
+     "hak_jawab_catatan": {
+      "id": "Hak jawab: pihak yang disebut dipersilakan mengoreksi lewat formulir koreksi METI; koreksi bersumber akan dimuat berdampingan dengan teks ini.",
+      "en": "Right of reply: named parties may correct this through the METI correction form; sourced corrections will be published alongside this text."
+     }
+    }
+   ],
+   "catatan": {
+    "id": "Kasus ini disusun dari sumber publik dan bukan putusan hukum. Penyebab resmi proyek Indonesia belum dipublikasikan pihak terkait; faktor yang dicatat adalah yang disebut sumber. Pihak yang disebut dapat memakai hak jawab.",
+    "en": "These cases are compiled from public sources and are not legal findings. Official causes of the Indonesian projects have not been published by the parties; the factors recorded are those the sources mention. Named parties may use their right of reply."
+   }
+  },
+  "41": {
+   "tipe": "pola",
+   "faktor": [
+    {
+     "k": "ppa_tarif",
+     "l": {
+      "id": "PPA dan tarif layak dibiayai",
+      "en": "Bankable PPA and tariff"
+     }
+    },
+    {
+     "k": "pendanaan",
+     "l": {
+      "id": "Kepastian pendanaan (financial close)",
+      "en": "Funding certainty (financial close)"
+     }
+    },
+    {
+     "k": "jaringan",
+     "l": {
+      "id": "Sambungan dan kapasitas jaringan",
+      "en": "Grid connection and capacity"
+     }
+    },
+    {
+     "k": "lahan_izin",
+     "l": {
+      "id": "Lahan, tata ruang, perizinan",
+      "en": "Land, spatial plan, permits"
+     }
+    },
+    {
+     "k": "logistik",
+     "l": {
+      "id": "Jalan, pelabuhan, pengangkutan",
+      "en": "Roads, ports, transport"
+     }
+    },
+    {
+     "k": "teknologi_om",
+     "l": {
+      "id": "Teknologi, suku cadang, pengelola O&M",
+      "en": "Technology, spare parts, O&M operator"
+     }
+    },
+    {
+     "k": "sosial",
+     "l": {
+      "id": "Penerimaan masyarakat dan lahan adat",
+      "en": "Community acceptance and land rights"
+     }
+    },
+    {
+     "k": "data_angin",
+     "l": {
+      "id": "Data angin terukur dan andal",
+      "en": "Reliable measured wind data"
+     }
+    },
+    {
+     "k": "kebijakan_pasar",
+     "l": {
+      "id": "Kebijakan dan desain pasar stabil",
+      "en": "Stable policy and market design"
+     }
+    },
+    {
+     "k": "biaya_makro",
+     "l": {
+      "id": "Biaya modal dan rantai pasok",
+      "en": "Cost of capital and supply chain"
+     }
+    }
+   ],
+   "sumber": [
+    "meti"
+   ],
+   "catatan": {
+    "id": "Analisis METI (Hipotesis): Kolom diisi hanya bila sumber menyebut faktornya; sel kosong berarti tanpa data. Faktor yang paling sering muncul pada kasus gagal Indonesia: PPA/tarif, pendanaan, dan jaringan.",
+    "en": "METI analysis (Hypothesis): Cells are filled only when a source mentions the factor; blank means no data. The factors most frequent in Indonesian failure cases: PPA/tariff, financing and grid."
+   }
+  },
+  "42": {
+   "tipe": "periksa",
+   "peran": [
+    {
+     "k": "pengembang",
+     "l": {
+      "id": "Pengembang",
+      "en": "Developer"
+     }
+    },
+    {
+     "k": "investor",
+     "l": {
+      "id": "Investor dan pemberi pinjaman",
+      "en": "Investor and lender"
+     }
+    },
+    {
+     "k": "pemda",
+     "l": {
+      "id": "Pemerintah daerah",
+      "en": "Local government"
+     }
+    },
+    {
+     "k": "pusat",
+     "l": {
+      "id": "Pemerintah pusat",
+      "en": "Central government"
+     }
+    },
+    {
+     "k": "pln",
+     "l": {
+      "id": "PLN",
+      "en": "PLN"
+     }
+    },
+    {
+     "k": "meti",
+     "l": {
+      "id": "METI",
+      "en": "METI"
+     }
+    }
+   ],
+   "tahap": [
+    {
+     "k": "lokasi",
+     "l": {
+      "id": "Penyaringan lokasi",
+      "en": "Site screening"
+     }
+    },
+    {
+     "k": "pengukuran",
+     "l": {
+      "id": "Pengukuran angin (1 sampai 2 tahun)",
+      "en": "Wind measurement (1 to 2 years)"
+     }
+    },
+    {
+     "k": "izin",
+     "l": {
+      "id": "Perizinan dan AMDAL",
+      "en": "Permits and EIA"
+     }
+    },
+    {
+     "k": "jaringan",
+     "l": {
+      "id": "Jaringan dan interkoneksi",
+      "en": "Grid and interconnection"
+     }
+    },
+    {
+     "k": "ppa",
+     "l": {
+      "id": "PPA dan tarif",
+      "en": "PPA and tariff"
+     }
+    },
+    {
+     "k": "pendanaan",
+     "l": {
+      "id": "Pendanaan",
+      "en": "Financing"
+     }
+    },
+    {
+     "k": "logistik",
+     "l": {
+      "id": "Logistik dan konstruksi",
+      "en": "Logistics and construction"
+     }
+    },
+    {
+     "k": "operasi",
+     "l": {
+      "id": "Operasi",
+      "en": "Operations"
+     }
+    }
+   ],
+   "butir": [
+    {
+     "peran": "pengembang",
+     "tahap": "lokasi",
+     "teks": {
+      "id": "Saring lokasi dengan peta angin 100 m lalu cek jalan, pelabuhan, titik sambung PLN terdekat, status hutan, dan tata ruang sebelum membeli data angin.",
+      "en": "Screen sites with the 100 m wind map, then check roads, port, nearest PLN connection point, forest status and zoning before buying wind data."
+     },
+     "dasar": "etp1"
+    },
+    {
+     "peran": "pengembang",
+     "tahap": "pengukuran",
+     "teks": {
+      "id": "Pasang menara ukur, SODAR, atau LiDAR sesuai IEC 61400 dan MEASNET minimal satu tahun menerus; anggarkan sekitar Rp1,5 sampai 2 miliar per menara; pada medan berbukit pasang lebih dari satu.",
+      "en": "Install a met mast, SODAR or LiDAR per IEC 61400 and MEASNET for at least one continuous year; budget about IDR 1.5 to 2 billion per mast; install more than one in rugged terrain."
+     },
+     "dasar": "etp1"
+    },
+    {
+     "peran": "pengembang",
+     "tahap": "pengukuran",
+     "teks": {
+      "id": "Korelasikan data pendek ke data jangka panjang (ERA5, MERRA-2) dan minta konsultan independen menghitung produksi P50 dan P90 untuk pemberi pinjaman.",
+      "en": "Correlate short data to long-term data (ERA5, MERRA-2) and have an independent consultant compute P50 and P90 yield for lenders."
+     },
+     "dasar": "etp1"
+    },
+    {
+     "peran": "pengembang",
+     "tahap": "izin",
+     "teks": {
+      "id": "Siapkan dokumen lingkungan menurut kapasitas (SPPL di bawah 1 MW, UKL-UPL 1 sampai 50 MW, AMDAL 50 MW ke atas) dan telaah dampak burung dan kelelawar, bising, bayangan kedip, serta jarak ke permukiman.",
+      "en": "Prepare environmental documents by size (SPPL under 1 MW, UKL-UPL 1 to 50 MW, AMDAL 50 MW and above) and assess bird and bat impact, noise, shadow flicker and distance to settlements."
+     },
+     "dasar": "etp1"
+    },
+    {
+     "peran": "pengembang",
+     "tahap": "izin",
+     "teks": {
+      "id": "Ajukan KKPR untuk lahan di atas 1 ha sejak dini lewat OSS dan cek tumpang tindih hak lahan, tambang, bandara, dan kawasan konservasi.",
+      "en": "File KKPR early for land over 1 ha via OSS and check overlap with land rights, mining, airports and conservation areas."
+     },
+     "dasar": "etp1"
+    },
+    {
+     "peran": "pengembang",
+     "tahap": "jaringan",
+     "teks": {
+      "id": "Minta studi sambungan: jarak ke gardu, ketersediaan feeder, kapasitas saluran, dan kebutuhan penguatan; jangan asumsikan saluran dekat lokasi masih kosong.",
+      "en": "Request a connection study: distance to substation, feeder availability, line capacity and reinforcement needs; do not assume a nearby line is free."
+     },
+     "dasar": "etp1"
+    },
+    {
+     "peran": "pengembang",
+     "tahap": "ppa",
+     "teks": {
+      "id": "Telaah draf PPA terhadap 10 isu bankability (energi kontrak tahunan, hak beli PLN, force majeure, kredit karbon, mitra wajib, arbitrase, TKDN) sebelum menawar.",
+      "en": "Review the draft PPA against the 10 bankability issues (annual contracted energy, PLN buy-out right, force majeure, carbon credits, mandatory partner, arbitration, local content) before bidding."
+     },
+     "dasar": "etp1"
+    },
+    {
+     "peran": "pengembang",
+     "tahap": "logistik",
+     "teks": {
+      "id": "Survei rute dari pelabuhan ke tapak (bilah 70 sampai 80 m, nacelle 150 sampai 200 ton, lengkung dan jembatan) dan anggarkan 15 sampai 30 persen biaya investasi untuk jalan dan pelabuhan.",
+      "en": "Survey the port-to-site route (70 to 80 m blades, 150 to 200 tonne nacelles, bends and bridges) and budget 15 to 30 percent of investment cost for roads and ports."
+     },
+     "dasar": "etp1"
+    },
+    {
+     "peran": "pengembang",
+     "tahap": "operasi",
+     "teks": {
+      "id": "Kontrak O&M dengan pemasok turbin, stok suku cadang, dan alat prakiraan 5 sampai 15 menit untuk PLN.",
+      "en": "Contract O&M with the turbine supplier, hold spare parts, and provide 5 to 15 minute forecasting for PLN."
+     },
+     "dasar": "etp1"
+    },
+    {
+     "peran": "investor",
+     "tahap": "pengukuran",
+     "teks": {
+      "id": "Minta laporan produksi P50/P90 dari konsultan independen sebelum menyetujui pembiayaan non-recourse.",
+      "en": "Require an independent P50/P90 yield report before approving non-recourse financing."
+     },
+     "dasar": "etp1"
+    },
+    {
+     "peran": "investor",
+     "tahap": "ppa",
+     "teks": {
+      "id": "Nilai kecukupan tarif terhadap biaya modal; waspadai penawaran sekitar setengah tarif proyek pembanding (5,5 vs 11 sen USD) tanpa penjelasan.",
+      "en": "Test tariff adequacy against cost of capital; beware bids at about half the comparable tariff (5.5 vs 11 US cents) without explanation."
+     },
+     "dasar": "meti"
+    },
+    {
+     "peran": "investor",
+     "tahap": "pendanaan",
+     "teks": {
+      "id": "Tetapkan jadwal financial close dengan pemicu terminasi yang adil; cek bahwa mitra wajib PLN dan struktur pemegang saham tidak memicu konflik biaya.",
+      "en": "Set a financial-close schedule with fair termination triggers; check that PLN mandatory partner and shareholder structure do not cause cost conflicts."
+     },
+     "dasar": "etp1"
+    },
+    {
+     "peran": "investor",
+     "tahap": "logistik",
+     "teks": {
+      "id": "Cek lindung nilai kurs dan harga turbin; belajar dari pembatalan Hornsea 4 dan Ocean Wind: biaya rantai pasok dan bunga mengubah ekonomi proyek.",
+      "en": "Check currency and turbine price hedges; learn from Hornsea 4 and Ocean Wind: supply chain and interest rates changed project economics."
+     },
+     "dasar": "ci_h4"
+    },
+    {
+     "peran": "pemda",
+     "tahap": "lokasi",
+     "teks": {
+      "id": "Petakan lokasi berangin dalam RTRW dan RUED-P, tandai hutan, geopark, dan permukiman agar KKPR tidak berlarut.",
+      "en": "Map windy sites in RTRW and RUED-P, mark forests, geoparks and settlements so KKPR does not drag on."
+     },
+     "dasar": "etp1"
+    },
+    {
+     "peran": "pemda",
+     "tahap": "izin",
+     "teks": {
+      "id": "Bentuk satu pintu perizinan daerah dan jadwalkan musyawarah desa sebelum lahan dibebaskan.",
+      "en": "Create a single regional permit desk and schedule village consultations before land is released."
+     },
+     "dasar": "meti"
+    },
+    {
+     "peran": "pemda",
+     "tahap": "logistik",
+     "teks": {
+      "id": "Gabungkan perbaikan jalan dan pelabuhan dengan kebutuhan ekonomi daerah agar tidak hanya melayani satu proyek.",
+      "en": "Combine road and port upgrades with regional economic needs so they do not serve a single project."
+     },
+     "dasar": "etp2"
+    },
+    {
+     "peran": "pusat",
+     "tahap": "lokasi",
+     "teks": {
+      "id": "Terbitkan peta angin terbuka berbasis pengukuran dan unggah data pengukuran ke basis data nasional.",
+      "en": "Publish an open wind map based on measurements and upload measurement data to a national database."
+     },
+     "dasar": "etp1"
+    },
+    {
+     "peran": "pusat",
+     "tahap": "izin",
+     "teks": {
+      "id": "Tetapkan pedoman dampak PLTB (jarak ke permukiman, bising, bayangan kedip, burung) karena belum ada acuan khusus.",
+      "en": "Issue wind farm impact guidelines (distance to settlements, noise, shadow flicker, birds) since no specific guidance exists."
+     },
+     "dasar": "etp1"
+    },
+    {
+     "peran": "pusat",
+     "tahap": "ppa",
+     "teks": {
+      "id": "Selaraskan Permen ESDM 10/2017 dan 10/2018 dengan sifat energi terbarukan, dan rujuk TKDN: belum ada TKDN khusus bayu.",
+      "en": "Align Permen ESDM 10/2017 and 10/2018 with the nature of renewable energy; note there is no wind-specific local content rule yet."
+     },
+     "dasar": "etp1"
+    },
+    {
+     "peran": "pusat",
+     "tahap": "pendanaan",
+     "teks": {
+      "id": "Siapkan jaminan atau dukungan pemerintah untuk proyek yang kena risiko jaringan atau kebijakan.",
+      "en": "Prepare guarantees or government support for projects exposed to grid or policy risk."
+     },
+     "dasar": "etp2"
+    },
+    {
+     "peran": "pln",
+     "tahap": "jaringan",
+     "teks": {
+      "id": "Sinkronkan perluasan jaringan dengan daftar proyek RUPTL dan tetapkan kapasitas serap per sistem yang diumumkan.",
+      "en": "Synchronise grid expansion with RUPTL projects and publish per-system absorption capacity."
+     },
+     "dasar": "etp2"
+    },
+    {
+     "peran": "pln",
+     "tahap": "ppa",
+     "teks": {
+      "id": "Bahas ulang isu bankability PPA sebelum tender berikutnya dan umumkan jadwal lelang tahunan agar harga turun seperti di India.",
+      "en": "Revisit PPA bankability before the next tender and announce an annual tender calendar so prices fall as in India."
+     },
+     "dasar": "etp1"
+    },
+    {
+     "peran": "pln",
+     "tahap": "operasi",
+     "teks": {
+      "id": "Siapkan pusat kendali dan alat prakiraan pembangkit variabel untuk sistem luar Jawa; tetapkan siapa menanggung biaya cadangan dan kurtailmen.",
+      "en": "Set up control centres and variable generation forecasting for systems outside Java; decide who bears reserve and curtailment costs."
+     },
+     "dasar": "etp1"
+    },
+    {
+     "peran": "meti",
+     "tahap": "lokasi",
+     "teks": {
+      "id": "Pertahankan direktori proyek bayu dan tandai data yang tidak cocok (lihat bab 10).",
+      "en": "Maintain the wind project directory and flag mismatched data (see chapter 10)."
+     },
+     "dasar": "meti"
+    },
+    {
+     "peran": "meti",
+     "tahap": "ppa",
+     "teks": {
+      "id": "Kumpulkan masukan anggota tentang draf PPA dan RUU EBET lalu serahkan kepada ESDM dan DPR.",
+      "en": "Collect member input on PPA drafts and the EBET bill and submit it to ESDM and DPR."
+     },
+     "dasar": "konsul"
+    },
+    {
+     "peran": "meti",
+     "tahap": "operasi",
+     "teks": {
+      "id": "Terima koreksi dan hak jawab pada bab 40 dan perbarui kasus bila ada sumber baru.",
+      "en": "Accept corrections and rights of reply on chapter 40 and update cases when new sources appear."
+     },
+     "dasar": "meti"
+    }
+   ],
+   "sumber": [
+    "etp1",
+    "etp2",
+    "meti"
+   ]
+  }
+ }
+}

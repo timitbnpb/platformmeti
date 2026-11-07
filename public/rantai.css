@@ -53,8 +53,8 @@ main.jm-an .jm-ex>.jm-ex-hd>.jm-ex-teks>.jm-ex-sub{grid-row:2}
 .jm-rt-komp{grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:14px}
 .jm-rt-kk{display:grid;grid-template-rows:auto auto auto 1fr;align-content:start;gap:8px;padding:16px;min-height:168px;box-shadow:var(--shadow)}
 .jm-rt-kk:hover:not(.jm-rt-celah){border-color:var(--accent)}
-.jm-rt-ik{display:grid;place-items:center;width:40px;height:40px;border-radius:12px;background:color-mix(in srgb,var(--c) 16%,var(--card));color:var(--c)}
-.jm-rt-w0{--c:var(--data1)}.jm-rt-w1{--c:var(--data2)}.jm-rt-w2{--c:var(--data3)}.jm-rt-w3{--c:var(--warn)}.jm-rt-w4{--c:var(--data4)}
+.jm-rt-ik{display:grid;place-items:center;width:40px;height:40px;border-radius:12px;background:color-mix(in srgb,var(--tk) 16%,var(--card));color:var(--tk)}
+.jm-rt-w0{--tk:var(--data1)}.jm-rt-w1{--tk:var(--data2)}.jm-rt-w2{--tk:var(--data3)}.jm-rt-w3{--tk:var(--warn)}.jm-rt-w4{--tk:var(--data4)}
 .jm-rt-kk>b{font:700 var(--t-h3)/var(--lh-judul) var(--display);color:var(--head)}
 .jm-rt-n{display:flex;align-items:baseline;flex-wrap:wrap;gap:4px 8px}
 .jm-rt-n strong{font:700 var(--t-angka)/1 var(--display);color:var(--head);font-variant-numeric:tabular-nums}
@@ -98,7 +98,7 @@ main.jm-an .jm-ex>.jm-ex-hd>.jm-ex-teks>.jm-ex-sub{grid-row:2}
 .jm-rt-tabel tbody tr{height:auto}.jm-rt-tabel td{padding-top:8px;padding-bottom:8px}
 .jm-rt-tabel th.jm-rt-ka .jm-urut{justify-content:flex-end}
 .jm-rt-pab{gap:6px;padding:0 10px 0 3px}
-.jm-rt-pab .jm-rt-lgk{width:20px;height:20px;margin:0;border:0;font-size:9px}
+.jm-rt-pab .jm-rt-lgk{width:20px;height:20px;margin:0;border:0;font-size:calc(var(--t-label) * .82)}
 .jm-tabel td button.jm-rt-lebih{padding:0 10px}
 .jm-rt-kap{display:inline-block;white-space:nowrap}
 /* ---- kebutuhan, TKDN ---- */
@@ -121,7 +121,7 @@ main.jm-an .jm-ex>.jm-ex-hd>.jm-ex-teks>.jm-ex-sub{grid-row:2}
 /* ---- pop-up pabrikan ---- */
 dialog.jm-rt-pop{width:min(960px,calc(100vw - 24px));max-height:calc(100vh - 32px);padding:0;overflow:auto}
 .jm-rt-pop-h{display:flex;gap:16px;align-items:center;padding:20px 24px;border-bottom:1px solid var(--line)}
-.jm-rt-lgb{width:64px;height:64px;font-size:22px;border-radius:14px}
+.jm-rt-lgb{width:64px;height:64px;font-size:var(--t-h2);border-radius:14px}
 .jm-rt-pop-j{flex:1;min-width:0}.jm-rt-pop-j h2{margin:0 0 4px;font:700 var(--t-h2)/var(--lh-judul) var(--display);color:var(--head)}.jm-rt-pop-j p{margin:0 0 6px}
 .jm-rt-pop-pil{display:flex;flex-wrap:wrap;gap:6px}
 .jm-rt-pop-bd{display:grid;grid-template-columns:minmax(0,1.6fr) minmax(0,1fr);gap:24px;padding:20px 24px}
@@ -135,3 +135,13 @@ dialog.jm-rt-pop{width:min(960px,calc(100vw - 24px));max-height:calc(100vh - 32p
 .jm-rp-tabel{min-width:820px}
 .jm-an-cara.jm-an-cara{display:block;margin-top:0;counter-reset:none}.jm-an-cara::before{content:none}
 @media (max-width:639px){.jm-rt-svg{height:clamp(320px,52vh,400px)}}
+/* pil pasar: sebaris dengan nama, ikon, warna per label */
+.jm-rt-ps{display:inline-flex;align-items:center;gap:6px;white-space:nowrap;font-weight:700}
+.jm-rt-ps-lokal{background:var(--ok-bg);color:var(--ok)}
+.jm-rt-ps-ekspor{background:var(--info-bg);color:var(--info)}
+.jm-rt-ps-keduanya{background:color-mix(in srgb,var(--tp-simpan) 16%,var(--card));color:var(--tp-simpan)}
+.jm-rt-ps-0{background:var(--surface);color:var(--ink2)}
+.jm-rt-daftar li{display:flex;align-items:center;justify-content:space-between;gap:10px;min-width:0}
+.jm-rt-daftar li>a{flex:1 1 auto;min-width:0}
+.jm-rt-daftar .jm-id{min-width:0}.jm-rt-daftar .jm-id b{display:block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.jm-rt-daftar .jm-rt-ps{flex:none}

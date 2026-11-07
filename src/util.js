@@ -2,6 +2,13 @@
 
 export const RE_EMAIL = /^[^\s@]{1,64}@[^\s@.]+(\.[^\s@.]+)+$/;
 
+// Surel untuk catatan jejak: dua huruf awal nama dan satu huruf awal domain, sisanya bintang (mis. "ab***@d***.id").
+export function samarSurel(surel) {
+  const [l, d = ""] = String(surel).toLowerCase().split("@");
+  const ujung = d.slice(d.lastIndexOf("."));
+  return `${l.slice(0, 2)}***@${d.slice(0, 1)}***${d.includes(".") ? ujung : ""}`.slice(0, 80);
+}
+
 // Katalog kode galat (snake) -> [status baku, pesan Indonesia baku]. Klien menerjemahkan lewat kunci `galat.<kode>`.
 export const KATALOG = {
   belum_masuk: [401, "Silakan masuk terlebih dahulu."],

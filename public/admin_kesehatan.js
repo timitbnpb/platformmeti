@@ -77,3 +77,10 @@ export async function panelKesehatan(panel) {
       ${rows.length > tampil.length ? `<p class="jm-bantu">${esc(t("pf.lagi", { n: angka(rows.length - tampil.length) }))}</p>` : ""}` });
   }
 }
+
+/** Ringkasan untuk Beranda admin: jumlah masalah per jenis, dari berkas yang sama dengan tab ini. */
+export async function ringkasKesehatan() {
+  const d = await Promise.all([data("organisasi"), data("proyek"), data("regulasi"), data("berita"), data("berita_foto").catch(() => ({}))]);
+  const M = hitung(d);
+  return { tgl: d[0].dibangun_pada, jenis: MASALAH.map(([k]) => [k, M[k].length]) };
+}

@@ -21,7 +21,7 @@ export function grafikRapat(rows, { satuan = "MW", label = "", dua = null, maks 
   const mx = maks ?? sumbuMaks(Math.max(...ada.map((r) => Math.max(r.a ?? 0, r.b ?? 0))));
   const w = (v) => (v == null ? 0 : Math.max(v > 0 ? 0.8 : 0, (v / mx) * 100));
   const unit = satuan === "%" ? "%" : " " + satuan;
-  const bar = (v, teks, kls) => (v == null ? "" : `<span class="jm-wp-gb-t ${kls}"><i style="--w:${w(v).toFixed(2)}%"></i><b>${esc(teks ?? fmt(v, d) + unit)}</b></span>`);
+  const bar = (v, teks, kls) => (v == null ? "" : `<span class="jm-wp-gb-t ${kls}"><i data-w="${w(v).toFixed(2)}"></i><b>${esc(teks ?? fmt(v, d) + unit)}</b></span>`);
   const baris = ada.map((r) => `<div class="jm-wp-gb-r jm-tek-${esc(r.k)}"><span class="jm-wp-gb-l">${r.labelHtml || labelTek(r.k, r.label, r.ik)}</span><span class="jm-wp-gb-p">${bar(r.b, r.bTeks, "jm-wp-gb-b")}${bar(r.a, r.aTeks, "jm-wp-gb-a")}</span></div>`).join("");
   const ticks = [0, mx / 2, mx].map((v) => `<span>${esc(fmt(v, mx < 10 ? 1 : 0))}</span>`).join("");
   const leg = dua ? `<p class="jm-wp-gb-lg"><span><i class="jm-wp-gb-sa"></i>${esc(dua[0])}</span><span><i class="jm-wp-gb-sb"></i>${esc(dua[1])}</span></p>` : "";

@@ -1,5 +1,6 @@
 // worker.js (JM-A05): router objek "METODE /path/:id" + penjaga halaman terkunci. Satu try/catch untuk semua galat.
 import { rute as ruteSesi } from "./sesi.js";
+import { rute as ruteGoogle, googleAktif } from "./google.js";
 import { rute as ruteAkun } from "./akun.js";
 import { rute as ruteAgenda } from "./agenda.js";
 import { rute as ruteSosmed, perbaruiSosmed } from "./sosmed.js";
@@ -36,12 +37,12 @@ const rutePemilik = {
   },
   "GET /api/status": async (req, env) => {
     const db = await hak.ping(env).then(() => "ok", () => "galat");
-    return json({ versi: env.VERSI || "dev", db }, db === "ok" ? 200 : 503, { "cache-control": "no-store" });
+    return json({ versi: env.VERSI || "dev", db, google: googleAktif(env) }, db === "ok" ? 200 : 503, { "cache-control": "no-store" });
   },
 };
 
 // Tabel rute dikompilasi sekali: { metode, bagian[], fn }.
-const DAFTAR = Object.entries({ ...ruteSesi, ...ruteAkun, ...ruteAgenda, ...ruteSosmed, ...ruteEvent, ...ruteDirektori, ...ruteFoto, ...ruteAdmin, ...ruteLangganan, ...ruteKelayakan, ...rutePustaka, ...ruteKta, ...ruteMetiWilayah, ...rutePesan, ...ruteProfilAkun, ...ruteIkuti, ...rutePortal, ...ruteWilayahKelola, ...ruteKonsultasi, ...ruteDaftar, ...rutePemilik }).map(([k, fn]) => {
+const DAFTAR = Object.entries({ ...ruteSesi, ...ruteGoogle, ...ruteAkun, ...ruteAgenda, ...ruteSosmed, ...ruteEvent, ...ruteDirektori, ...ruteFoto, ...ruteAdmin, ...ruteLangganan, ...ruteKelayakan, ...rutePustaka, ...ruteKta, ...ruteMetiWilayah, ...rutePesan, ...ruteProfilAkun, ...ruteIkuti, ...rutePortal, ...ruteWilayahKelola, ...ruteKonsultasi, ...ruteDaftar, ...rutePemilik }).map(([k, fn]) => {
   const [metode, jalur] = k.split(" ");
   return { metode, bagian: jalur.split("/").slice(1), fn };
 });
@@ -81,9 +82,9 @@ async function icsSah(env, t) {
 }
 
 // Seluruh situs di balik login (KEPUTUSAN 7 Nov 2026): hanya alur masuk, aset yang dibutuhkannya, dan API masuk yang terbuka.
-const PUBLIK = /^\/((masuk|aktivasi|ganti-sandi|404)(\.html)?|masuk\.js|kta_v\.js|kta\.css|tema\.js|i18n\.js|404\.js|langganan(\.html|\.js|\.css)?|daftar(\.html|\.js|\.css)?|daftar\/lacak\/[0-9a-f]{64}|berhenti|favicon[^/]*|robots\.txt)$|^\/inti\/[^/]+\.(css|js)$|^\/i18n\/|^\/img\/(logo|ikon)[^/]*$|^\/img\/logo\/meti(-vertikal-611)?\.png$|^\/img\/bendera\/(id|gb|us)\.svg$|^\/img\/beranda\/[^/]+\.webp$|^\/fonts\/|^\/kta\/v\/\d{1,9}\.[0-9a-f]{32}$|^\/data\/keanggotaan\.json$/;
+const PUBLIK = /^\/((masuk|aktivasi|ganti-sandi|404)(\.html)?|masuk\.js|kta_v\.js|kta\.css|tema\.js|i18n\.js|404\.js|langganan(\.html|\.js|\.css)?|daftar(\.html|\.js|\.css)?|daftar\/lacak\/[0-9a-f]{64}|berhenti|favicon[^/]*|robots\.txt)$|^\/inti\/[^/]+\.(css|js)$|^\/i18n\/|^\/img\/(logo|ikon)[^/]*$|^\/img\/logo\/meti(-vertikal-611)?\.png$|^\/img\/logo\/(org|mitra)\/[a-z0-9._-]+\.(png|webp|svg|jpg)$|^\/img\/mitra\/[a-z0-9._-]+\.(png|webp|svg|jpg)$|^\/img\/bendera\/(id|gb|us)\.svg$|^\/img\/beranda\/[^/]+\.webp$|^\/fonts\/|^\/kta\/v\/\d{1,9}\.[0-9a-f]{32}$|^\/data\/keanggotaan\.json$/;
 // /api/langganan(/berhenti): ajakan publik newsletter (K19 turunan); rute lain di langganan.js tetap menagih sesi lewat perlu().
-const API_PUBLIK = new Set(["/api/masuk", "/api/keluar", "/api/status", "/api/aktivasi", "/api/saya", "/api/langganan", "/api/langganan/berhenti",
+const API_PUBLIK = new Set(["/api/masuk", "/api/masuk/google", "/api/masuk/google/kembali", "/api/keluar", "/api/status", "/api/aktivasi", "/api/saya", "/api/langganan", "/api/langganan/berhenti",
   // Pendaftaran anggota mandiri (8 Nov 2026): tamu boleh mendaftar, melacak lewat token (di badan), dan mengunggah bukti iuran.
   "/api/daftar", "/api/daftar/foto", "/api/daftar/lacak", "/api/daftar/bukti", "/api/daftar/bayar-online", "/api/daftar/midtrans/notifikasi"]);
 

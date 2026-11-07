@@ -167,6 +167,13 @@ if (TETAP) { // satu organisasi, URL logo ditunjuk manusia dari situs resminya s
   if (!png) { console.error('gagal', id); process.exit(1); }
   catat({ id }, { png, metode: 'logo-header', url_sumber: url }); simpan(); console.log('logo diganti', id);
 }
+const DAFTAR = arg('--daftar'); // berkas JSON [{id, nama, situs}] (mis. pemasok rantai yang belum punya organisasi di potret); situs dulu, Wikidata P154 bila tanpa situs/gagal
+if (DAFTAR) {
+  const l = JSON.parse(fs.readFileSync(DAFTAR, 'utf8')).filter((o) => /^[A-Za-z0-9_-]+$/.test(o.id) && (ULANG || !fs.existsSync(KELUAR + o.id + '.png')));
+  console.log('daftar', l.length);
+  await kolam(l, async (o) => { let h = o.situs ? await dariSitus(o.situs) : null; if (!h && !TANPA_WD) h = await dariWikidata(o); st[o.id] = { ...st[o.id], situs: h ? 'ok' : 'gagal' }; if (h) { catat(o, h); console.log('logo', o.id, o.nama, h.metode); } else console.log('tanpa logo', o.id, o.nama); }, 6);
+  simpan(); process.exit(0);
+}
 let orgs = TETAP ? [] : muatOrg(); if (HANYA) orgs = orgs.filter((o) => HANYA.has(o.id)); orgs = orgs.slice(0, MAKS);
 console.log('organisasi', orgs.length, 'bersitus', orgs.filter((o) => o.situs).length);
 const baru = (o) => st[o.id]?.hasil !== 'ok';

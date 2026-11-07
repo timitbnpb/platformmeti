@@ -4,13 +4,13 @@ import fs from 'node:fs';
 import { selftest, susun, validasi } from '../scripts/pipa/topik_surya.mjs';
 
 test('selftest topik surya lolos', () => { selftest(); });
-test('42 bab, K terisi, tanpa em dash, id+en', () => {
+test('naskah valid menurut TOPIK-SKEMA, kasus K terisi, hak jawab di bab 40', () => {
   const d = susun();
   assert.deepEqual(validasi(d), []);
-  assert.equal(d.bab.length, 42);
-  for (const n of [39, 40, 41, 42]) assert.equal(d.bab[n - 1].status, 'isi');
+  assert.ok(Object.keys(d.bab).length >= 30);
+  assert.ok(d.bab['39'].butir.length >= 5 && d.bab['40'].butir.length >= 5);
 });
-test('berkas data/topik/surya.json sinkron dengan skrip', () => {
-  const f = new URL('../data/topik/surya.json', import.meta.url);
+test('public/data/topik/surya.json sinkron dengan skrip', () => {
+  const f = new URL('../public/data/topik/surya.json', import.meta.url);
   assert.deepEqual(JSON.parse(fs.readFileSync(f, 'utf8')), JSON.parse(JSON.stringify(susun())));
 });

@@ -2,7 +2,7 @@
 import { t, angka } from "/i18n.js";
 import { esc } from "/inti/umum.js";
 import { sumberHtml, exHtml, lihatSemuaHtml } from "/inti/komponen.js";
-import { logoOrg, LOGO_ORG, LOGO_NAMA } from "/inti/logo_org.js";
+import { logoOrg } from "/inti/logo_org.js";
 
 const S = (d) => `<svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">${d}</svg>`;
 /* [kode, warna token, ikon] satu ikon per jenis, tidak ada yang kembar */
@@ -17,19 +17,29 @@ const JENIS = [
   ["perguruan-tinggi", "--data4", S('<path d="M3 10l9-6 9 6zM5 10v8M9 10v8M15 10v8M19 10v8M3 20h18"/>')],
   ["think-tank", "--bad", S('<circle cx="10" cy="10" r="6"/><path d="m15 15 6 6M8 10h4"/>')],
 ];
-const inisial = (n) => { const w = String(n).replace(/^PT\.?\s+/i, "").split(/\s+/).filter((x) => /^[A-Za-z]/.test(x)); return (w.length > 1 ? w.slice(0, 2).map((x) => x[0]).join("") : (w[0] || "?").slice(0, 2)).toUpperCase(); };
-const ADA_SLUG = (o) => LOGO_ORG[o.id] || LOGO_NAMA[o.nama];
+/* satu logo per keluarga induk (PLN dan anak usahanya memakai tanda yang sama) */
+const KELUARGA = /^(?:pt\.?\s+)?(pln|pertamina|medco|pgn|telkom)\b/i;
+const kunciLogo = (o, u) => (KELUARGA.exec(String(o.nama).trim())?.[1] || "").toLowerCase() || u;
+/** Logo yang pasti ada (data atau peta resmi); berkas /logo/org/<id> tanpa catatan data dianggap belum ada. */
+const logoPasti = (o) => { const u = logoOrg(o.id, o.nama, o.logo)[0]; return o.logo || (u && !u.includes("/logo/org/")) ? u : ""; };
+const singkat = (n) => String(n).replace(/^PT\.?\s+/i, "").replace(/\s*\((persero|tbk)\)/gi, "").replace(/\s+(tbk|\(persero\))$/i, "").replace(/\s*\(.*$/, "").trim();
+const MAKS_LOGO = 5;
 
 /** org: baris organisasi; pro: katalog proyek (untuk mengurutkan logo menurut kapasitas). */
 export function pelakuHtml(org, pro) {
   const mw = new Map(pro.baris.map((p) => [p.id, p.kapasitas?.[0]?.nilai || 0]));
   const skor = (o) => (o.proyek_ids || []).reduce((s, i) => s + (mw.get(i) || 0), 0);
   const kartu = JENIS.map(([k, warna, ik]) => {
-    const isi = org.filter((o) => o.kategori?.kode === k);
-    const lihat = new Set(), logo = isi.sort((a, b) => (!!ADA_SLUG(b) - !!ADA_SLUG(a)) || skor(b) - skor(a)).filter((o) => { const u = logoOrg(o.id, o.nama, o.logo)[0] || o.id; return !lihat.has(u) && lihat.add(u); }).slice(0, 3);
-    return { k, warna, ik, n: isi.length, logo };
+    const isi = org.filter((o) => o.kategori?.kode === k).sort((a, b) => skor(b) - skor(a));
+    const lihat = new Set(), logo = isi.filter((o) => { const u = logoPasti(o), kc = u && kunciLogo(o, u); return kc && !lihat.has(kc) && lihat.add(kc); });
+    return { k, warna, ik, n: isi.length, logo, nama: isi.slice(0, 3).map((o) => singkat(o.nama)) };
   }).filter((x) => x.n);
   const total = kartu.reduce((s, x) => s + x.n, 0);
-  const isiHtml = `<ul class="jm-pel">${kartu.map((x) => `<li><a class="jm-pel-k jm-pel-${x.k}" href="/direktori?tampil=lembaga&amp;kat=${encodeURIComponent(x.k)}"><span class="jm-pel-ik">${x.ik}</span><b class="jm-pel-n">${esc(angka(x.n))}</b><span class="jm-pel-l">${esc(t("beranda.pel." + x.k))}</span><span class="jm-pel-lg" aria-hidden="true">${x.logo.map((o) => { const u = logoOrg(o.id, o.nama, o.logo)[0]; return `<span class="jm-pel-lo">${esc(inisial(o.nama))}${u ? `<img src="${esc(u)}" width="32" height="32" alt="" loading="lazy" decoding="async" data-galat="hapus">` : ""}</span>`; }).join("")}</span></a></li>`).join("")}</ul>`;
-  return exHtml({ kelas: "jm-pel-ex", tingkat: "h2", ikon: "orang", topik: t("beranda.s02.ey"), judulHtml: esc(t("beranda.pel.j", { n: angka(total), k: angka(kartu.length) })), subHtml: esc(t("beranda.s02.p")), aksiHtml: sumberHtml(esc(t("beranda.eko_sumber"))), isiHtml, kakiHtml: lihatSemuaHtml("/direktori?tampil=lembaga", t("beranda.eko.semua", { n: angka(org.length) })) });
+  const deret = (x) => {
+    if (x.logo.length < 3) return `<span class="jm-pel-nm">${esc(x.nama.join(", "))}</span>`;
+    const tampil = x.logo.slice(0, MAKS_LOGO), sisa = x.n - tampil.length;
+    return `<span class="jm-pel-lg" aria-hidden="true">${tampil.map((o) => `<span class="jm-pel-lo"><img src="${esc(logoPasti(o))}" width="32" height="32" alt="" loading="lazy" decoding="async" data-galat="hapus"></span>`).join("")}${sisa > 0 ? `<span class="jm-pel-lo jm-pel-plus">+${esc(angka(sisa))}</span>` : ""}</span>`;
+  };
+  const isiHtml = `<ul class="jm-pel">${kartu.map((x) => `<li><a class="jm-pel-k jm-pel-${x.k}" href="/direktori?tampil=lembaga&amp;kat=${encodeURIComponent(x.k)}"><span class="jm-pel-ik">${x.ik}</span><span class="jm-pel-t"><b class="jm-pel-n">${esc(angka(x.n))}</b><span class="jm-pel-l">${esc(t("beranda.pel." + x.k))}</span></span>${deret(x)}</a></li>`).join("")}</ul>`;
+  return exHtml({ kelas: "jm-pel-ex", tingkat: "h2", ikon: "orang", topik: t("beranda.s02.ey"), judulHtml: esc(t("beranda.pel.j", { n: angka(total), k: angka(kartu.length) })), subHtml: esc(t("beranda.s02.p")), aksiHtml: lihatSemuaHtml("/direktori?tampil=lembaga", t("beranda.eko.semua", { n: angka(org.length) })) + sumberHtml(esc(t("beranda.eko_sumber"))), isiHtml });
 }

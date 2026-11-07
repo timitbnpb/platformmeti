@@ -21,7 +21,7 @@ import { industriHtml, logoHtml, gantiMonogram } from "/pelacak_industri.js";
 
 const $ = (id) => document.getElementById(id);
 const BATAS_LINI = 8;
-let cfg, D = {}, X = {}, isi, indSiap = false, lini = false;
+let cfg, D = {}, X = {}, isi, indSiap = false;
 const jumlah = (a) => a.reduce((s, x) => s + (x || 0), 0);
 const nm = () => t("pl.tek." + cfg.id);
 const kap = (p) => Number(p.kapasitas?.[0]?.nilai) || 0;
@@ -232,8 +232,8 @@ function tabelPipa(S) {
 function sLini(S) {
   const e = peristiwa(S), th = new Map(); for (const x of e) (th.get(x.y) || th.set(x.y, []).get(x.y)).push(x);
   const urutY = [...th.keys()];
-  const grup = [...th].map(([y, a]) => `<li class="pl-th"${lini || urutY.indexOf(y) < BATAS_LINI ? "" : " data-lebih hidden"}><h3>${y}</h3><ul>${a.map((x) => `<li><span class="jm-pil pl-jn pl-jn-${x.jenis}">${esc(t("pl.jn." + x.jenis))}</span><span class="pl-lt">${x.href ? `<a href="${esc(x.href)}">${esc(x.teks)}</a>` : esc(x.teks)}</span></li>`).join("")}</ul></li>`).join("");
-  const n = th.size, lebih = n > BATAS_LINI ? `<p class="jm-tk-lebih"><button type="button" data-lini aria-expanded="${lini}">${esc(t(lini ? "pl.lebih_sedikit" : "pl.lebih", { n }))}</button></p>` : "";
+  const grup = [...th].map(([y, a]) => `<li class="pl-th"${urutY.indexOf(y) < BATAS_LINI ? "" : " hidden"}><h3>${y}</h3><ul>${a.map((x) => `<li><span class="jm-pil pl-jn pl-jn-${x.jenis}">${esc(t("pl.jn." + x.jenis))}</span><span class="pl-lt">${x.href ? `<a href="${esc(x.href)}">${esc(x.teks)}</a>` : esc(x.teks)}</span></li>`).join("")}</ul></li>`).join("");
+  const n = th.size, lebih = navLokal({ total: th.size, per: BATAS_LINI, satuan: "pl.u.tahun" });
   const adaTek = S.perTahun.length || S.atap, pipa = tabelPipa(S);
   if (!n && !pipa) return "";
   return bagian("pl-lini", "linimasa", "lini", {

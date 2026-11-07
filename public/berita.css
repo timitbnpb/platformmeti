@@ -232,19 +232,26 @@ button.brt-bb-r:hover .brt-bb-n{color:var(--accent)}
 .brt-meta-m{flex-wrap:nowrap;align-items:flex-start}.brt-meta-m>span:last-child{min-width:0;overflow-wrap:anywhere}.brt-meta-m .brt-lg{flex:none}
 
 /* kepala bagian bergambar: foto teknologi + gradasi gelap ke kiri, teks putih */
-#bagian .jm-ex>.jm-ex-hd{min-height:180px;align-items:center;padding:24px 28px;border:0;color:var(--on-brand);background:linear-gradient(90deg,rgb(7 22 33/.88),rgb(7 22 33/.55) 55%,rgb(7 22 33/.15)),linear-gradient(135deg,var(--brand),var(--accent))}
-#bagian #ex-sorotan>.jm-ex-hd{background-image:linear-gradient(90deg,rgb(7 22 33/.88),rgb(7 22 33/.55) 55%,rgb(7 22 33/.15)),url(/img/beranda/surya-cirata.webp);background-size:cover;background-position:center}
-#bagian #ex-surya>.jm-ex-hd{background-image:linear-gradient(90deg,rgb(7 22 33/.88),rgb(7 22 33/.55) 55%,rgb(7 22 33/.15)),url(/img/beranda/surya-cirata.webp);background-size:cover;background-position:center}
-#bagian #ex-panas>.jm-ex-hd{background-image:linear-gradient(90deg,rgb(7 22 33/.88),rgb(7 22 33/.55) 55%,rgb(7 22 33/.15)),url(/img/beranda/panas-bumi-sibayak.webp);background-size:cover;background-position:center}
-#bagian #ex-bio>.jm-ex-hd{background-image:linear-gradient(90deg,rgb(7 22 33/.88),rgb(7 22 33/.55) 55%,rgb(7 22 33/.15)),url(/img/beranda/bioenergi-sawit.webp);background-size:cover;background-position:center}
+#bagian .jm-ex>.jm-ex-hd{min-height:180px;align-items:center;padding:24px 28px;border:0;color:var(--on-brand);background:linear-gradient(90deg,rgb(7 22 33/.92),rgb(7 22 33/.7) 55%,rgb(7 22 33/.3)),linear-gradient(135deg,var(--brand),var(--accent))}
+#bagian #ex-sorotan>.jm-ex-hd{background-image:linear-gradient(90deg,rgb(7 22 33/.92),rgb(7 22 33/.7) 55%,rgb(7 22 33/.3)),url(/img/beranda/surya-cirata.webp);background-size:cover;background-position:center}
+#bagian #ex-surya>.jm-ex-hd{background-image:linear-gradient(90deg,rgb(7 22 33/.92),rgb(7 22 33/.7) 55%,rgb(7 22 33/.3)),url(/img/beranda/surya-cirata.webp);background-size:cover;background-position:center}
+#bagian #ex-panas>.jm-ex-hd{background-image:linear-gradient(90deg,rgb(7 22 33/.92),rgb(7 22 33/.7) 55%,rgb(7 22 33/.3)),url(/img/beranda/panas-bumi-sibayak.webp);background-size:cover;background-position:center}
+#bagian #ex-bio>.jm-ex-hd{background-image:linear-gradient(90deg,rgb(7 22 33/.92),rgb(7 22 33/.7) 55%,rgb(7 22 33/.3)),url(/img/beranda/bioenergi-sawit.webp);background-size:cover;background-position:center}
 #bagian .jm-ex .jm-ex-ey{background:rgb(255 255 255/.16);color:var(--on-brand)}
 #bagian .jm-ex .jm-ex-j{color:var(--on-brand);font-size:var(--t-h1)}
-#bagian .jm-ex .jm-hl{color:var(--on-brand);text-decoration:underline;text-decoration-thickness:3px;text-underline-offset:4px}
+#bagian .jm-ex .jm-hl{color:var(--sorot);text-decoration:none}
 #bagian .jm-ex .jm-ex-sub{color:rgb(255 255 255/.85)}
-#bagian .jm-ex .jm-ex-sub>span+span::before{content:"";display:inline-block;width:4px;height:4px;margin-right:8px;border-radius:50%;background:currentColor;vertical-align:middle}
+#bagian .jm-ex .jm-ex-sub .brt-sp{display:inline-flex;align-items:center;gap:6px;padding:3px 10px;border-radius:var(--r-pil);background:rgb(255 255 255/.16);color:var(--on-brand);font:600 var(--t-kecil)/var(--lh-rapat) var(--font)}
+@media (min-width:600px){#bagian .jm-ex>.jm-ex-hd{grid-template-columns:minmax(0,1fr) auto auto;align-items:center}
+#bagian .jm-ex>.jm-ex-hd>.jm-ex-teks>.jm-ex-ey{grid-column:2;grid-row:1;align-self:center;margin:0}
+#bagian .jm-ex>.jm-ex-hd>.jm-ex-aksi{grid-column:3;grid-row:1;align-self:center}
+#bagian .jm-ex>.jm-ex-hd>.jm-ex-teks>.jm-ex-j,#bagian .jm-ex>.jm-ex-hd>.jm-ex-teks>.jm-ex-sub{grid-row:auto}
+#bagian .jm-ex>.jm-ex-hd>.jm-ex-teks>.jm-ex-j{grid-row:1}#bagian .jm-ex>.jm-ex-hd>.jm-ex-teks>.jm-ex-sub{grid-row:2}}
+#bagian .jm-ex .jm-sumber-b{width:36px;height:36px}
+#bagian .jm-ex .jm-ex-aksi :is(.jm-aksi-b,.jm-sumber-b){background:rgb(255 255 255/.18);color:var(--on-brand);border:1px solid rgb(255 255 255/.35)}
+#bagian .jm-ex .jm-ex-aksi :is(.jm-aksi-b,.jm-sumber-b):hover{background:rgb(255 255 255/.32);color:var(--on-brand)}
 #bagian .jm-ex .jm-ex-aksi{align-self:center}
-#bagian .jm-ex .jm-ex-aksi .jm-aksi-b{background:rgb(255 255 255/.92);color:var(--accent);border-color:transparent}
-#bagian .jm-ex .jm-ex-aksi .brt-semua{background:rgb(255 255 255/.95);border-color:transparent}
+#bagian .jm-ex .jm-ex-aksi .brt-semua{background:rgb(255 255 255/.95);border-color:transparent;gap:8px}
 #bagian .jm-ex .jm-ex-aksi .jm-sumber{color:rgb(255 255 255/.8)}
 @media (max-width:599px){#bagian .jm-ex>.jm-ex-hd{min-height:140px;padding:16px}#bagian .jm-ex .jm-ex-j{font-size:var(--t-h2)}}
 
@@ -301,8 +308,6 @@ button.brt-an-k:focus-visible,.brt-an-dlg button:focus-visible{outline:2px solid
 .brt-semua{display:inline-flex;align-items:center;gap:8px;min-height:36px;padding:0 10px 0 16px}
 .brt-semua .jm-ik{flex:none}
 .brt-semua-n{display:inline-block;padding:2px 8px;border-radius:var(--r-pil);background:var(--soft-hijau);color:var(--accent);font:600 var(--t-kecil)/1.3 var(--font);font-variant-numeric:tabular-nums}
-#bagian .jm-ex .jm-ex-aksi .jm-aksi-b{background:var(--card);color:var(--ink);border-color:var(--card)}
-#bagian .jm-ex .jm-ex-aksi .jm-aksi-b:hover{background:var(--soft-hijau);color:var(--accent)}
 #bagian .jm-ex .jm-ex-aksi .jm-sumber{color:var(--on-brand)}
 
 /* jarak antar exhibit hanya dari gap kisi (24px); aturan sibling global jm.css (+margin-top:24px) tidak boleh ikut menggandakan */

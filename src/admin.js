@@ -99,4 +99,16 @@ export const rute = {
     if (typeof b.kunci !== "string" || b.isi === undefined || b.isi === null || typeof b.isi !== "object") return gagal("masukan_salah", 422);
     return (await hak.kontenSimpan(env, akun, b.kunci, b.isi)) ? json({ ok: true }, 200, PRIVAT) : NONAKTIF();
   },
+
+  // Beranda admin: semua hitungan antrean dalam satu panggilan (COUNT terindeks).
+  "GET /api/admin/ringkas": async (req, env, ctx, p) => json(await hak.ringkasAdmin(env, perlu(p, ADM)), 200, PRIVAT),
+
+  // Keamanan akun (0025): sesi aktif semua akun, cabut per sesi, riwayat gagal masuk 30 hari, matriks hak (hanya baca).
+  "GET /api/admin/keamanan/sesi": async (req, env, ctx, p) => json({ baris: await hak.sesiAdminDaftar(env, perlu(p, ADM), p.sesi.idHash) }, 200, PRIVAT),
+  "DELETE /api/admin/keamanan/sesi/:sid": async (req, env, ctx, p) => {
+    const r = await hak.sesiAdminCabut(env, perlu(p, ADM), p.sesi.idHash, p.params.sid);
+    return r.dicabut ? json({ ok: true }, 200, PRIVAT) : gagal("tidak_ditemukan");
+  },
+  "GET /api/admin/keamanan/gagal": async (req, env, ctx, p) => json(await hak.gagalMasukDaftar(env, perlu(p, ADM)), 200, PRIVAT),
+  "GET /api/admin/keamanan/matriks": async (req, env, ctx, p) => json(hak.matriksHak(perlu(p, ADM)), 200, PRIVAT),
 };

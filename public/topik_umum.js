@@ -7,6 +7,7 @@ import { aksiHtml } from "/inti/aksi_ex.js";
 import { paginasiHtml } from "/inti/paginasi.js";
 import { sumberLipat, pil } from "/analisis.js";
 
+const REL_MATI = 'data-rel="tidak"';
 export const S = { ui: null, N: {}, sumber: {}, dipakai: new Set(), tabel: new Map() };
 export const muat = (jalur) => fetch(jalur, { credentials: "same-origin" }).then((r) => (r.ok ? r.json() : null)).catch(() => null);
 
@@ -22,7 +23,7 @@ export const num = (v, d = 0) => (v == null || !Number.isFinite(+v) ? "-" : angk
 /** ganti {token} dengan angka tercetak; token tak dikenal jadi "-" (tidak pernah tampil mentah) */
 export const tok = (s) => String(L(s)).replace(/\{(\w+)\}/g, (m, n) => (S.N[n] !== undefined ? S.N[n] : "-"));
 export const bulan = (p) => tanggal(p + "-01").replace(/^1 /, "");
-export const aman = (url) => (/^https?:\/\//.test(url || "") ? url : null);
+export const aman = (url) => (/^(https?:\/\/|\/[^/])/.test(url || "") ? url : null);
 export const tautan = (url, teks) => (aman(url) ? `<a href="${esc(url)}" target="_blank" rel="noopener noreferrer">${esc(teks)}</a>` : esc(teks));
 export const pilu = (kunci, jenis = "warn") => `<span class="jm-pil jm-pil-${jenis}">${esc(u(kunci))}</span>`;
 export const est = () => " " + pil("an.est");
@@ -39,7 +40,7 @@ export function sumberHtml(ids = [], tambahan = []) {
 export const IKON_GRUP = { A: "kajian", B: "buku", C: "grafik", D: "regulasi", E: "tek-listrik", F: "asean", G: "kartu", H: "orang", I: "linimasa", J: "berita", K: "bintang" };
 export function eksibit(n, isi, { csv = false, sumber = "", sub = "", judul = "", kelas = "" } = {}) {
   const b = S.ui.bab[n], g = b.g;
-  return exHtml({ id: "bab-" + n, ikon: IKON_GRUP[g], topik: `${g}. ${L(S.ui.grup[g])}`, judulHtml: esc(judul || L(b.j)), subHtml: sub ? esc(sub) : "", aksiHtml: aksiHtml({ csv, png: false, pdf: true, bagi: true }) + sumber, isiHtml: isi, kelas: "jm-tp-bab" + (kelas ? " " + kelas : "") });
+  return exHtml({ id: "bab-" + n, ikon: IKON_GRUP[g], topik: `${g}. ${L(S.ui.grup[g])}`, judulHtml: esc(judul || L(b.j)), subHtml: sub ? esc(sub) : "", aksiHtml: aksiHtml({ csv, png: false, pdf: true, bagi: true }) + sumber, isiHtml: isi, kelas: "jm-tp-bab" + (kelas ? " " + kelas : "") }).replace('<section class="jm-ex', "<section " + REL_MATI + ' class="jm-ex'); /* daftar isi kiri menggantikan rel mengambang */
 }
 export const teksHtml = (o, kelas = "jm-tp-p") => `<p class="${kelas}">${esc(tok(o))}</p>`;
 export const catatan = (o) => (o ? `<p class="jm-bantu jm-tp-cat">${esc(tok(o))}</p>` : "");

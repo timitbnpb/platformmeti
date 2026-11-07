@@ -1,0 +1,17 @@
+[
+ {"nama":"PT HLI Green Power","jenis":"pabrikan","kota":"Karawang","provinsi":"Jawa Barat","pasar":null,"catatan":"Usaha patungan Hyundai Motor Group dan LG Energy Solution; sel baterai EV, dipakai juga sebagai pembanding sel penyimpan energi. LG dilaporkan mundur dari konsorsium besar (bukan dari HLI).",
+  "komponen":[{"teknologi":"baterai","komponen":"sel","produk":["sel baterai kendaraan listrik"],"kapasitas":10,"satuan":"GWh/tahun","relevansi":"langsung"}],
+  "sumber":[{"url":"https://www.antaranews.com/berita/4791589/hyundai-sebut-pabrik-baterai-ev-hli-tetap-beroperasi-meski-lg-mundur","jenis":"media","tingkat_bukti":"media","tanggal":"2026-11-08","catatan":"ANTARA: pabrik sel baterai EV pertama di Indonesia, diresmikan 3 Juli 2024, kapasitas tahunan 10 GWh"}]},
+ {"nama":"PT Kenertec Power System","jenis":"pabrikan","kota":null,"provinsi":"Banten","pasar":"ekspor","catatan":"Provinsi = lokasi pelabuhan muat (Ciwandan, Banten) menurut sumber; lokasi pabrik tidak disebut. Ekspor perdana menara turbin angin (wind mill tower) ke Kanada, Februari 2026. Kapasitas tidak disebut sumber.",
+  "komponen":[{"teknologi":"bayu","komponen":"menara","produk":["wind mill tower (menara turbin angin)"],"kapasitas":null,"satuan":null,"relevansi":"langsung"}],
+  "sumber":[{"url":"https://www.antaranews.com/berita/5441338/ptp-nonpetikemas-cabang-banten-tangani-ekspor-perdana-wind-mill-tower-tujuan-kanada","jenis":"media","tingkat_bukti":"media","tanggal":"2026-02-27"}]},
+ {"nama":"PT KMI Wire and Cable Tbk","jenis":"pabrikan","kota":"Jakarta Timur","provinsi":"DKI Jakarta","situs":"https://www.kmi.co.id","catatan":"Alamat kantor Jl. Raya Bekasi Km 23.1, Cakung; lokasi pabrik tidak dirinci. Didirikan 19 Januari 1972 sebagai PT Kabelmetal Indonesia.",
+  "komponen":[{"teknologi":"jaringan","komponen":"kabel","produk":["konduktor telanjang","kabel daya tegangan rendah dan menengah","kabel kontrol"],"kapasitas":null,"satuan":null,"relevansi":"langsung"}],
+  "sumber":[{"url":"https://www.kmi.co.id/index.php/about-us/kmi-wire-cables/company-profile","jenis":"situs-sendiri","tingkat_bukti":"kata-pihak","tanggal":"2026-11-08"}]},
+ {"nama":"PT Jembo Cable Company Tbk","jenis":"pabrikan","kota":"Tangerang","provinsi":"Banten","situs":"https://jembo.co.id","catatan":"Kantor pusat dan pabrik Jl. Pajajaran, Jatiuwung, Tangerang.",
+  "komponen":[{"teknologi":"jaringan","komponen":"kabel","produk":["kabel listrik","kabel telekomunikasi"],"kapasitas":null,"satuan":null,"relevansi":"langsung"}],
+  "sumber":[{"url":"https://jembo.co.id","jenis":"situs-sendiri","tingkat_bukti":"kata-pihak","tanggal":"2026-11-08"}]},
+ {"nama":"PT Voksel Electric Tbk","jenis":"pabrikan","kota":"Jakarta Selatan","provinsi":"DKI Jakarta","situs":"https://www.voksel.co.id","catatan":"Kota = kantor eksekutif (Jl. HR Rasuna Said); lokasi pabrik tidak disebut di beranda. Bagian dari Hengtong Group; produk termasuk konduktor ACCC dan kabel bawah laut.",
+  "komponen":[{"teknologi":"jaringan","komponen":"kabel","produk":["power cable","konduktor ACCC","submarine cable"],"kapasitas":null,"satuan":null,"relevansi":"langsung"}],
+  "sumber":[{"url":"https://www.voksel.co.id","jenis":"situs-sendiri","tingkat_bukti":"kata-pihak","tanggal":"2026-11-08"}]}
+]

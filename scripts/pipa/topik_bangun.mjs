@@ -130,7 +130,14 @@ for (const T of TOPIK) {
   if (T.id === "pembiayaan-hijau") { const kh = baca("keuangan_hijau"); out.keuangan = { jetp_usd_miliar: kh.jetp.komitmen_usd_miliar, jetp_tanggal: kh.jetp.tanggal, instrumen: kh.instrumen_hijau.slice(0, 12).map((i) => ({ penerbit: i.penerbit, instrumen: i.instrumen, tahun: i.tahun, penggunaan: i.penggunaan_dana, url: i.sumber_url, tanggal: i.tanggal, bukti: i.tingkat_bukti })), skema: kh.skema.slice(0, 15).map((s) => ({ nama: s.nama, pemberi: s.pemberi, jenis: s.jenis, uraian: s.uraian, status: s.status, url: s.url, tanggal: s.tanggal })), jumlah_instrumen: kh.instrumen_hijau.length, jumlah_skema: kh.skema.length }; }
   per[T.id] = out;
   writeFileSync(D + `topik/dasar-${T.id}.json`, JSON.stringify(out));
-  indeks.push({ id: T.id, ikon: T.ikon, foto: T.foto, status, hitung, blok_terisi: isi.length, naskah: !!naskah, bab: naskah ? Object.keys(naskah.bab || {}).length : 0 });
+  const angkaHitung = ["proyek", "mw", "regulasi", "organisasi", "pakar", "riset", "inovasi", "berita"].filter((k) => hitung[k] > 0).slice(0, 3).map((k) => ({ k: "kartu.angka." + k, nilai: hitung[k], d: 0, satuan: "" }));
+  let angka = angkaHitung;
+  if (naskah?.kunci?.length && naskah.kunci.every((x) => x.nilai !== undefined)) angka = naskah.kunci.slice(0, 3).map((x) => ({ label: x.label, nilai: typeof x.nilai === "number" ? x.nilai : null, d: x.d || 0, satuan: x.satuan || "" }));
+  if (T.id === "karbon" && existsSync(D + "topik/luar_karbon.json")) {
+    const idn = JSON.parse(readFileSync(D + "topik/luar_karbon.json", "utf8")).negara.find((n) => n.kode === "IDN"), b = out.karbon.bursa.at(-1);
+    angka = [{ k: "kref.cakupan", nilai: Math.round(idn.cakupan.semua * 10) / 10, d: 1, satuan: "%" }, { k: "kref.bursa_vol", nilai: b.volume_ytd, d: 0, satuan: "tCO2e" }, { k: "kref.kredit_terbit", nilai: out.karbon.kredit.per_registri.reduce((a, r) => a + r.terbit, 0), d: 0, satuan: "tCO2e" }];
+  }
+  indeks.push({ id: T.id, angka, ikon: T.ikon, foto: T.foto, status, hitung, blok_terisi: isi.length, naskah: !!naskah, bab: naskah ? Object.keys(naskah.bab || {}).length : 0 });
 }
 writeFileSync(D + "topik/indeks.json", JSON.stringify({ dibangun_pada: hariIni, topik: indeks }));
 for (const i of indeks) console.log(i.id.padEnd(22), i.status.padEnd(8), i.blok_terisi, JSON.stringify(i.hitung));

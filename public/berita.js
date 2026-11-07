@@ -141,7 +141,7 @@ function majalah(xs, ks, balik) {
     <div class="brt-isi">${tautan(lead, esc(lead.judul), "brt-judul brt-judul-b")}${chipMedia(lead)}<div class="brt-label">${pilLead ? tagHtml(lead, 1) : ""}${orgHtml(lead)}</div></div></article>
     <ul class="brt-rows">${sisa.slice(0, 4).map(barisMini).join("")}</ul></div>`;
 }
-const angkaBagian = (xs) => `<span>${esc(t("brt.hero.media", { n: angka(new Set(xs.map((r) => r.media)).size) }))}</span><span>${esc(t("brt.hero.30", { n: angka(xs.filter((r) => umur(r.terbit) <= 30).length) }))}</span>`;
+const angkaBagian = (xs) => `<span class="brt-sp">${ikon("direktori", 14)}${esc(t("brt.hero.media", { n: angka(new Set(xs.map((r) => r.media)).size) }))}</span><span class="brt-sp">${ikon("kalender", 14)}${esc(t("brt.hero.30", { n: angka(xs.filter((r) => umur(r.terbit) <= 30).length) }))}</span>`;
 function gambarBagian() {
   const el = document.getElementById("bagian"), sumber = sumberHtml(`${esc(t("brt.sumber"))} ${esc(tanggal(DIBANGUN))}.`);
   const blok = (id, ik, topik, judulHtml, lihat, isi, i, sub = "") => `<section class="brt-bagian"><div class="jm-wadah">${exHtml({ id, ikon: ik, topik, tingkat: "h2", judulHtml, subHtml: sub, isiHtml: isi, aksiHtml: lihat + aksiHtml({ csv: false }) + sumber })}</div></section>`;
@@ -149,7 +149,7 @@ function gambarBagian() {
   BAGIAN.forEach(([kunci, ks, ik], i) => {
     const xs = dalamBagian(ks); if (xs.length < 2) return;
     const semua = B.filter((r) => (r.kepakaran || []).some((k) => ks.includes(k))).length;
-    const lihat = `<button type="button" class="brt-semua" data-lihat="${esc(ks.join(","))}"><span>${esc(t("brt.lihat.t"))}</span><b class="brt-semua-n">${esc(angka(semua))}</b>${ikon("panah-kanan", 18)}</button>`;
+    const lihat = `<button type="button" class="brt-semua" data-lihat="${esc(ks.join(","))}">${ikon("daftar2", 16)}<span>${esc(t("brt.lihat.t"))}</span><b class="brt-semua-n">${esc(angka(semua))}</b></button>`;
     html += blok("ex-" + kunci, ik, t("brt.sek." + kunci), hlHtml("brt.sek.j", angka(xs.length), { tek: t("brt.sek." + kunci).toLowerCase() }), lihat, majalah(xs, ks, i % 2 === 0), i + 1, angkaBagian(xs));
   });
   el.innerHTML = html;
