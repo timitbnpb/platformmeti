@@ -198,8 +198,8 @@ th[aria-sort="descending"] .jm-urut::after{opacity:1;clip-path:polygon(0 0,100% 
 /* TABEL kerapian bersama: kolom # bulat, identitas 2 baris, angka kanan, strip untuk nilai kosong, batang kecil */
 .jm-tabel-tetap{table-layout:fixed}
 .jm-tabel .jm-no{width:56px;padding-inline:6px;text-align:center}
-.jm-rank{display:inline-grid;place-items:center;width:28px;height:28px;border-radius:50%;background:var(--soft-hijau);color:var(--accent);font:700 12.5px/1 var(--font)}
-.jm-rank-top{background:var(--brand);color:var(--on-brand)}
+:is(.jm-tabel,.jm-ex) td .jm-rank,.jm-tabel .jm-rank{display:inline-grid;place-items:center;width:28px;height:28px;border-radius:50%;background:var(--soft-hijau);color:var(--accent);font:700 12.5px/1 var(--font)}
+.jm-tabel .jm-rank-top{background:var(--brand);color:var(--on-brand)}
 .jm-tabel td.jm-id-sel{overflow:hidden}
 .jm-tabel .jm-id{display:flex;align-items:center;gap:10px;min-width:0}
 .jm-tabel .jm-id>span{display:block;min-width:0}

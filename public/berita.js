@@ -4,12 +4,15 @@ import { esc, nanti, debounce, hantuHtml, galatHtml, ikon } from "/inti/umum.js"
 import { cariHtml, pilihHtml, hapusHtml, hitungHtml, exHtml, sumberHtml } from "/inti/komponen.js";
 import { aksiHtml, hlHtml } from "/inti/aksi_ex.js";
 import { volumeSvg, batangMendatar, jumlahJendela } from "/berita_grafik.js";
-import { muat, label, urlAman, norm } from "/publik.js";
+import { muat, label, urlAman, norm, namaRegulasi } from "/publik.js";
+import { IKON_TEK as IKT } from "/inti/ikon_tek.js";
+import { LOGO_ORG } from "/beranda_data.js";
+import { petaHtml, pasangPeta, agregat } from "/berita_peta.js";
 
 const LANJUT = 30;
 const HARI = 86400000;
-const S = { mode: "hari", tab: "berita", q: "", tek: "", media: "", periode: "", bahasa: "", n: LANJUT };
-let DIBANGUN = "", B = null, V = null, FOTO = {}, ORG = new Map(), SEKARANG = Date.now();
+const S = { mode: "hari", tab: "berita", q: "", tek: "", media: "", periode: "", bahasa: "", org: "", n: LANJUT };
+let DIBANGUN = "", PRG = [], REG = [], B = null, V = null, FOTO = {}, ORG = new Map(), SEKARANG = Date.now();
 
 const umur = (iso) => (SEKARANG - Date.parse(iso)) / HARI;
 const tek = (k) => label("brt.tek.", k);
@@ -17,7 +20,7 @@ const baris = () => (S.tab === "berita" ? B : V);
 
 function saring() {
   const q = norm(S.q.trim()), mak = S.periode ? +S.periode : 0;
-  return baris().filter((r) => (!S.tek || (r.kepakaran || []).some((k) => S.tek.split(",").includes(k))) && (!S.media || (r.media || r.kanal) === S.media)
+  return baris().filter((r) => (!S.tek || (r.kepakaran || []).some((k) => S.tek.split(",").includes(k))) && (!S.media || (r.media || r.kanal) === S.media) && (!S.org || (r.organisasi_ids || []).includes(S.org))
     && (!S.bahasa || r.bahasa === S.bahasa) && (!mak || umur(r.terbit) <= mak) && (!q || r._cari.includes(q)));
 }
 
@@ -45,35 +48,67 @@ function gambarSaring() {
 function aturSaring() {
   const v = S.tab === "video";
   for (const id of ["f-tek", "f-bahasa"]) document.getElementById(id).closest("label").hidden = v;
-  document.getElementById("f-hapus").hidden = !(S.q || S.tek || S.media || S.periode || (!v && S.bahasa));
+  document.getElementById("f-hapus").hidden = !(S.q || S.org || S.tek || S.media || S.periode || (!v && S.bahasa));
 }
 function gambarTab() {
   document.getElementById("tab").innerHTML = ["berita", "video"].map((k) => `<button type="button" role="tab" data-tab="${k}" aria-selected="${S.tab === k}">${ikon(k, 18)}<span>${esc(t("brt.tab." + k))}</span></button>`).join("");
 }
+const TEMA_IKON = { kebijakan: "regulasi", pembiayaan: "analisis", "transisi-adil": "orang", karbon: "insight", industri: "tabel", elektrifikasi: "tek-listrik", efisiensi: "analisis" };
+const TEK_WARNA = new Set(["surya", "bayu", "hidro", "panas-bumi", "bioenergi", "biomassa-sampah", "penyimpanan", "nuklir"]);
+const ikTek = (k) => IKT[k] || ikon(TEMA_IKON[k] || "tek-listrik", 18);
+const klsTek = (k) => "jm-tek-" + (TEK_WARNA.has(k) ? k : "lain");
+const inisialMedia = (m) => (String(m).replace(/^www\./, "").split(".")[0].replace(/[^a-z0-9]/gi, "").slice(0, 2) || "?").toUpperCase();
+const PROGRAM = { "plts-100gw": [/100\s*GW/i, "100 GW"], b50: [/\bB-?50\b|biodiesel/i, "B50"], e20: [/\bE-?20\b|etanol/i, "E20"], jetp: [/\bJETP\b/i, "JETP"], wte: [/\bPSEL\b|waste to energy|\bWtE\b|sampah.{0,25}(energi|listrik)|(energi|listrik).{0,25}sampah/i, "sampah"], ruptl: [/RUPTL/i, "RUPTL"], psn: [/\bPSN\b|Proyek Strategis Nasional/i, "PSN"] };
+const JENIS_REG = { uu: "uu", perpres: "perpres", pp: "pp", permen: "permen", perppu: "perppu", keppres: "keppres", inpres: "inpres", kepmen: "kepmen" };
+const RX_REG = /\b(UU|Perpres|PP|Permen|Perppu|Keppres|Inpres|Kepmen)\s*(?:ESDM\s*)?(?:No\.?|Nomor)?\s*(\d{1,3})\s*(?:\/|\s*Tahun\s*)\s*(\d{4})/gi;
+const regulasiDisebut = () => { const m = new Map(); for (const r of B) for (const x of r.judul.matchAll(RX_REG)) { const g = REG.find((q) => q.jenis === JENIS_REG[x[1].toLowerCase()] && String(q.nomor) === x[2] && String(q.tahun) === x[3]); if (g) m.set(g.id, { g, n: (m.get(g.id)?.n || 0) + 1 }); } return [...m.values()].sort((a, b) => b.n - a.n); };
+/** Perubahan 7 hari terakhir terhadap 7 hari sebelumnya (kosong bila sebelumnya nol). */
+const tren = (f) => { const ak = Date.parse(B[0].terbit), d = (r) => (ak - Date.parse(r.terbit)) / HARI; const a = B.filter((r) => f(r) && d(r) < 7).length, b = B.filter((r) => f(r) && d(r) >= 7 && d(r) < 14).length; return b ? Math.round((a / b - 1) * 100) : null; };
+const urutHitung = (f) => { const m = new Map(); for (const r of B) for (const k of f(r)) m.set(k, (m.get(k) || 0) + 1); return [...m].sort((a, b) => b[1] - a[1]); };
+
+function gambarPeta() {
+  const A = agregat(B), est = `<span class="jm-pil jm-pil-est">${esc(t("an.est"))}</span>`;
+  const el = document.getElementById("r-peta");
+  if (!A.prov.length) { el.innerHTML = ""; return; }
+  el.innerHTML = exHtml({ id: "ex-peta", ikon: "wilayah", topik: t("brt.ex.peta.ey"), tingkat: "h2", judulHtml: hlHtml("brt.ex.peta.j", A.prov[0].nama, { n: angka(A.berlokasi) }),
+    subHtml: `${esc(t("brt.ex.peta.sub", { p: angka(Math.round(A.berlokasi / B.length * 100)) }))} ${est}`, isiHtml: petaHtml(),
+    aksiHtml: aksiHtml({ csv: false }) + sumberHtml(`${esc(t("brt.sumber.peta"))} ${esc(tanggal(DIBANGUN))}.`) });
+  pasangPeta(B, { onCari: (nama) => cariKe(nama) });
+}
+function cariKe(q) { ubah(() => { S.tab = "berita"; S.q = q; gambarTab(); gambarSaring(); }); document.getElementById("ex-semua").scrollIntoView({ block: "start" }); }
+
 function gambarRingkas() {
-  const ak = B[0].terbit;
-  const c = (f) => { const m = new Map(); for (const r of B) for (const k of f(r)) m.set(k, (m.get(k) || 0) + 1); return [...m].sort((a, b) => b[1] - a[1]); };
-  const tekTop = c((r) => r.kepakaran || []).slice(0, 8), medTop = c((r) => [r.media]).slice(0, 8);
-  const est = `<span class="jm-pil jm-pil-est">${esc(t("an.est"))}</span>`;
-  const sumber = sumberHtml(`${esc(t("brt.sumber"))} ${esc(tanggal(DIBANGUN))}.`);
-  const ex = (o) => exHtml({ tingkat: "h2", aksiHtml: aksiHtml({ csv: false }) + sumber, ...o });
+  const ak = B[0].terbit, est = `<span class="jm-pil jm-pil-est">${esc(t("an.est"))}</span>`;
+  const sumber = (kunci) => sumberHtml(`${esc(t(kunci || "brt.sumber"))} ${esc(tanggal(DIBANGUN))}.`);
+  const ex = (o) => { const { sumberKunci, ...r } = o; return exHtml({ tingkat: "h2", ...r, aksiHtml: aksiHtml({ csv: false }) + sumber(sumberKunci) }); };
   const mode = `<span class="brt-mode" id="mode">${["hari", "minggu"].map((m) => `<button type="button" class="brt-chip" data-mode="${m}" aria-pressed="${S.mode === m}">${esc(t("brt.g.per_" + m))}</button>`).join("")}</span>`;
-  document.getElementById("ringkasan").innerHTML =
-    ex({ id: "ex-volume", ikon: "berita", topik: t("brt.ex.vol.ey"), judulHtml: hlHtml("brt.ex.vol.j", angka(jumlahJendela(B, S.mode, ak)), { rentang: t("brt.ex.r_" + S.mode) }),
-      subHtml: `${esc(t("brt.ex.vol.sub", { unit: t("brt.ex.u_" + S.mode), n: angka(B.length) }))}${mode}`, isiHtml: volumeSvg(B, S.mode, ak) }).replace('class="jm-ex"', 'class="jm-ex brt-lebar"')
-    + ex({ id: "ex-teknologi", ikon: "topik", topik: t("brt.ex.tek.ey"), judulHtml: hlHtml("brt.ex.tek.j", tek(tekTop[0][0])), subHtml: `${esc(t("brt.ex.tek.sub"))} ${est}`, isiHtml: batangMendatar(tekTop.map(([k, v]) => [tek(k), v, k]), "topik") })
-    + ex({ id: "ex-media", ikon: "jenis", topik: t("brt.ex.med.ey"), judulHtml: hlHtml("brt.ex.med.j", medTop[0][0]), subHtml: esc(t("brt.ex.med.sub")), isiHtml: batangMendatar(medTop.map(([k, v]) => [k, v, k]), "media") });
+  document.getElementById("r-volume").innerHTML = ex({ id: "ex-volume", ikon: "berita", topik: t("brt.ex.vol.ey"), judulHtml: hlHtml("brt.ex.vol.j", angka(jumlahJendela(B, S.mode, ak)), { rentang: t("brt.ex.r_" + S.mode) }),
+    subHtml: `${esc(t("brt.ex.vol.sub", { unit: t("brt.ex.u_" + S.mode), n: angka(B.length) }))}${mode}`, isiHtml: volumeSvg(B, S.mode, ak) });
+  const tekTop = urutHitung((r) => r.kepakaran || []).slice(0, 10), medTop = urutHitung((r) => [r.media]).slice(0, 8), orgTop = urutHitung((r) => r.organisasi_ids || []).slice(0, 8);
+  const prg = PRG.map((p) => [p, B.filter((r) => PROGRAM[p.id]?.[0].test(r.judul)).length]).filter((x) => x[1] > 0).sort((a, b) => b[1] - a[1]);
+  const reg = regulasiDisebut();
+  const logo = (id, nama) => { const s = LOGO_ORG[id]; return `<span class="brt-lg">${s ? `<img src="/img/logo/${s}.png" width="22" height="22" alt="" loading="lazy">` : esc(inisialMedia(nama))}</span>`; };
+  let h = ex({ id: "ex-teknologi", ikon: "topik", topik: t("brt.ex.tek.ey"), judulHtml: hlHtml("brt.ex.tek.j", tek(tekTop[0][0])), subHtml: `${esc(t("brt.ex.tek.sub"))} ${est}`,
+    isiHtml: batangMendatar(tekTop.map(([k, v]) => [tek(k), v, k, { ikon: ikTek(k), kelas: klsTek(k), tren: tren((r) => (r.kepakaran || []).includes(k)) }]), "topik") });
+  if (orgTop.length && ORG.size) h += ex({ id: "ex-pelaku", ikon: "orang", topik: t("brt.ex.org.ey"), judulHtml: hlHtml("brt.ex.org.j", ORG.get(orgTop[0][0]) || ""), subHtml: esc(t("brt.ex.org.sub")), sumberKunci: "brt.sumber.tag",
+    isiHtml: batangMendatar(orgTop.filter(([id]) => ORG.has(id)).map(([id, v]) => [ORG.get(id), v, id, { ikon: logo(id, ORG.get(id)) }]), "org") });
+  if (prg.length) h += ex({ id: "ex-program", ikon: "proyek", topik: t("brt.ex.prg.ey"), judulHtml: hlHtml("brt.ex.prg.j", prg[0][0].nama), subHtml: `${esc(t("brt.ex.prg.sub"))} ${est}`, sumberKunci: "brt.sumber.tag",
+    isiHtml: batangMendatar(prg.map(([p, v]) => [p.nama, v, PROGRAM[p.id][1], { ikon: ikon("proyek", 18) }]), "cari") });
+  if (reg.length) h += ex({ id: "ex-regulasi", ikon: "regulasi", topik: t("brt.ex.reg.ey"), judulHtml: hlHtml("brt.ex.reg.j", namaRegulasi(reg[0].g)), subHtml: `${esc(t("brt.ex.reg.sub"))} ${est}`, sumberKunci: "brt.sumber.tag",
+    isiHtml: batangMendatar(reg.slice(0, 8).map((x) => [namaRegulasi(x.g), x.n, namaRegulasi(x.g), { ikon: ikon("regulasi", 18) }]), "cari") });
+  h += ex({ id: "ex-media", ikon: "jenis", topik: t("brt.ex.med.ey"), judulHtml: hlHtml("brt.ex.med.j", medTop[0][0]), subHtml: esc(t("brt.ex.med.sub")),
+    isiHtml: batangMendatar(medTop.map(([k, v]) => [k, v, k, { ikon: `<span class="brt-lg">${esc(inisialMedia(k))}</span>` }]), "media") });
+  document.getElementById("r-lain").innerHTML = h;
 }
 function gambarAngka() {
-  const item = (v, k) => `<div><dd>${angka(v)}</dd><dt>${esc(t(k))}</dt></div>`;
-  document.getElementById("angka").innerHTML = item(B.length, "brt.n.berita") + item(new Set(B.map((r) => r.media)).size, "brt.n.media") + item(B.filter((r) => umur(r.terbit) <= 30).length, "brt.n.30") + item(V.length, "brt.n.video");
+  const item = (v, k, ik) => `<div>${ikon(ik, 20)}<dd>${angka(v)}</dd><dt>${esc(t(k))}</dt></div>`;
+  document.getElementById("angka").innerHTML = item(B.length, "brt.n.berita", "berita") + item(new Set(B.map((r) => r.media)).size, "brt.n.media", "jenis") + item(B.filter((r) => umur(r.terbit) <= 30).length, "brt.n.30", "tahun") + item(V.length, "brt.n.video", "video");
 }
 
 const FOTO_URL = (r) => urlAman(FOTO[r.id] || "");
-const IKON_TEK = { surya: "tek-surya", "panas-bumi": "tek-panas", bioenergi: "tek-bio", "biomassa-sampah": "tek-bio" };
-const ikonTek = (r) => IKON_TEK[(r.kepakaran || [])[0]] || "tek-listrik";
+const ikonSampul = (r) => ikTek((r.kepakaran || [])[0]);
 /** Gambar sampul; tanpa foto = latar bermerek dengan ikon teknologi (tidak pernah inisial). Gambar gagal dimuat dicopot oleh penangan error. */
-const sampul = (r, kelas, w, h, tag = false) => { const f = FOTO_URL(r); return `<span class="brt-sampul ${kelas}">${ikon(ikonTek(r), 28)}${f ? `<img src="${esc(f)}" width="${w}" height="${h}" alt="" loading="lazy" decoding="async" referrerpolicy="no-referrer">` : ""}${tag ? pil(r) : ""}</span>`; };
+const sampul = (r, kelas, w, h, tag = false) => { const f = FOTO_URL(r); return `<span class="brt-sampul ${kelas}">${ikonSampul(r)}${f ? `<img src="${esc(f)}" width="${w}" height="${h}" alt="" loading="lazy" decoding="async" referrerpolicy="no-referrer">` : ""}${tag ? pil(r) : ""}</span>`; };
 const tautan = (r, isi, kelas) => `<a class="${kelas}" href="${esc(urlAman(r.url))}" target="_blank" rel="noopener noreferrer" title="${esc(t("brt.buka"))}">${isi}</a>`;
 const metaHtml = (r) => `<p class="brt-meta">${esc(r.media)}, ${esc(tanggal(r.terbit.slice(0, 10)))}</p>`;
 const pil = (r) => (r.kepakaran?.[0] ? `<span class="brt-pil">${esc(tek(r.kepakaran[0]))}</span>` : "");
@@ -162,7 +197,8 @@ async function mulai() {
   for (const k of Object.keys(S)) if (p.has(k) && k !== "n") S[k] = p.get(k);
   if (S.tab !== "video") S.tab = "berita";
   gambarAngka(); gambarBagian(); gambarRingkas(); gambarTab(); gambarSaring(); gambarIsi();
-  muat("organisasi").then((o) => { ORG = new Map(o.baris.map((x) => [x.id, x.singkatan || x.nama])); gambarBagian(); gambarIsi(); }).catch(() => {});
+  gambarPeta();
+  Promise.all([muat("organisasi"), muat("program").catch(() => ({ baris: [] })), muat("regulasi").catch(() => ({ baris: [] }))]).then(([o, p, r]) => { ORG = new Map(o.baris.map((x) => [x.id, x.singkatan || x.nama])); PRG = p.baris; REG = r.baris; gambarBagian(); gambarRingkas(); gambarIsi(); }).catch(() => {});
 }
 
 (async () => {
@@ -181,8 +217,9 @@ async function mulai() {
   document.getElementById("ringkasan").addEventListener("click", (e) => { const b = e.target.closest("[data-mode]"); if (!b) return; S.mode = b.dataset.mode; for (const x of b.parentElement.children) x.setAttribute("aria-pressed", String(x === b)); nanti(gambarRingkas); });
   document.querySelector("main").addEventListener("click", (e) => {
     if (e.target.closest("#isi, #saring, #tab")) return;
-    const k = e.target.closest("[data-topik],[data-media],[data-lihat]"); if (!k) return;
-    ubah(() => { S.tab = "berita"; if (k.dataset.lihat) S.tek = k.dataset.lihat; else if (k.dataset.topik) S.tek = k.dataset.topik; else S.media = k.dataset.media; gambarTab(); gambarSaring(); });
+    const c = e.target.closest("[data-cari]"); if (c && !c.closest("#brPn")) return cariKe(c.dataset.cari);
+    const k = e.target.closest("[data-topik],[data-media],[data-lihat],[data-org]"); if (!k) return;
+    ubah(() => { S.tab = "berita"; if (k.dataset.lihat) S.tek = k.dataset.lihat; else if (k.dataset.topik) S.tek = k.dataset.topik; else if (k.dataset.org) S.org = k.dataset.org; else S.media = k.dataset.media; gambarTab(); gambarSaring(); });
     document.getElementById("ex-semua").scrollIntoView({ block: "start" });
   });
   addEventListener("error", (e) => { if (e.target.tagName === "IMG" && e.target.closest(".brt-sampul")) e.target.remove(); }, true);
@@ -190,6 +227,6 @@ async function mulai() {
   const sr = document.getElementById("saring");
   sr.addEventListener("input", (e) => { if (e.target.id === "f-q") { S.q = e.target.value; cariTunda(); } });
   sr.addEventListener("change", (e) => { const k = e.target.id.slice(2); if (e.target.id.startsWith("f-") && k in S && k !== "q") ubah(() => { S[k] = e.target.value; }); });
-  sr.addEventListener("click", (e) => { if (e.target.closest("#f-hapus")) ubah(() => { Object.assign(S, { q: "", tek: "", media: "", periode: "", bahasa: "" }); gambarSaring(); }); });
+  sr.addEventListener("click", (e) => { if (e.target.closest("#f-hapus")) ubah(() => { Object.assign(S, { q: "", tek: "", media: "", periode: "", bahasa: "", org: "" }); gambarSaring(); }); });
   await mulai();
 })();

@@ -24,16 +24,21 @@ export function rapikanPeta(peta) {
   return idLabel;
 }
 
-/** Peredam di luar provinsi + garis provinsi. `warna(v)` memberi nilai token CSS; `sebelum` = id lapisan data pertama. */
+let geoLuar = null;
+/** Peredam di luar Indonesia: dunia dikurangi daratan, sudah dilarutkan (geo/luar-indonesia.json, tanpa serpihan) + garis provinsi.
+    `warna(v)` memberi nilai token CSS; `sebelum` = id lapisan data pertama. */
 export function pasangBatas(peta, warna, idLabel, sebelum) {
-  geoProvinsi().then((g) => {
-    if (!g || !peta.getStyle() || peta.getSource("prov")) return;
-    const luar = [[[-180, -85], [180, -85], [180, 85], [-180, 85], [-180, -85]]];
-    for (const f of g.features) for (const poli of f.geometry.type === "Polygon" ? [f.geometry.coordinates] : f.geometry.coordinates) luar.push(poli[0]);
-    peta.addSource("prov", { type: "geojson", data: g });
-    peta.addSource("luar", { type: "geojson", data: { type: "Feature", geometry: { type: "Polygon", coordinates: luar } } });
-    peta.addLayer({ id: "luar-redam", type: "fill", source: "luar", paint: { "fill-color": warna("--paper"), "fill-opacity": 0.72 } }, idLabel || sebelum);
-    peta.addLayer({ id: "prov-garis", type: "line", source: "prov", paint: { "line-color": warna("--accent-isi"), "line-opacity": 0.55, "line-width": ["interpolate", ["linear"], ["zoom"], 4, 0.6, 9, 1.6] } }, sebelum);
+  geoLuar ??= fetch("/geo/luar-indonesia.json").then((r) => r.json()).catch(() => { geoLuar = null; return null; });
+  Promise.all([geoProvinsi(), geoLuar]).then(([g, luar]) => {
+    if (!peta.getStyle() || peta.getSource("prov")) return;
+    if (luar) {
+      peta.addSource("luar", { type: "geojson", data: luar });
+      peta.addLayer({ id: "luar-redam", type: "fill", source: "luar", paint: { "fill-color": warna("--paper"), "fill-opacity": 0.72 } }, idLabel || sebelum);
+    }
+    if (g) {
+      peta.addSource("prov", { type: "geojson", data: g });
+      peta.addLayer({ id: "prov-garis", type: "line", source: "prov", paint: { "line-color": warna("--accent-isi"), "line-opacity": 0.55, "line-width": ["interpolate", ["linear"], ["zoom"], 4, 0.6, 9, 1.6] } }, sebelum);
+    }
   });
 }
 

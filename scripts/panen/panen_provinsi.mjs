@@ -66,20 +66,27 @@ async function halaman(judul) {
 
 /* ---------- Wikipedia ---------- */
 const polos = (h) => h.replace(/<style[\s\S]*?<\/style>/g, ' ').replace(/<sup[\s\S]*?<\/sup>/g, '').replace(/<[^>]+>/g, '|').replace(/&#160;|&nbsp;/g, ' ').replace(/&amp;/g, '&').replace(/\s+/g, ' ').replace(/(\|\s*)+/g, '|');
+/* "Kota Bukittinggi|(1957-1958)|Kota Padang": nama yang diikuti keterangan kurung adalah ibu kota lama */
+export const ibuKota = (baris) => {
+  const a = baris.replace(/^\|?Ibu kota\|/, '').split('|').map((x) => x.trim()).filter(Boolean);
+  const k = a.filter((x, i) => !x.startsWith('(') && !(a[i + 1] || '').startsWith('('));
+  const v = (k[0] || a[0] || '').replace(/^Kota\s+/, '');
+  return /^(tidak ada|-)$/i.test(v) ? null : v;
+};
 export function kotakInfo(html) {
   const i = html.indexOf('class="infobox'); if (i < 0) return null;
   const b = html.slice(i, html.indexOf('</table>', i));
   const baris = (b.match(/<tr[\s\S]*?<\/tr>/g) || []).map(polos);
   const cari = (re, dari = 0) => { for (let k = dari; k < baris.length; k++) if (re.test(baris[k])) return [baris[k], k]; return [null, -1]; };
-  const num = (s) => (s ? angkaId(s) : null);
+  const num = (s) => (s ? angkaId(/^\d{1,3}(,\d{3})+$/.test(s) ? s.replace(/,/g, '') : s) : null);
   const [ib] = cari(/^\|?Ibu kota\|/), [jml] = cari(/^\|?Jumlah satuan pemerintahan/);
   const [luasT, kl] = cari(/^\|?Luas\|/), [tot] = kl >= 0 ? cari(/^\|?•\|Total\|/, kl) : [null];
   const [pop, kp] = cari(/^\|?Populasi\|/), [popT] = kp >= 0 ? cari(/^\|?•\|Total\|/, kp) : [null];
   const thn = pop && pop.match(/(\d{4})/);
   return {
-    ibu_kota: ib ? ib.replace(/^\|?Ibu kota\|/, '').split('|')[0].replace(/^Kota\s+/, '').trim() : null,
-    kabupaten: jml && jml.match(/Kabupaten:\s*(\d+)/) ? Number(jml.match(/Kabupaten:\s*(\d+)/)[1]) : null,
-    kota: jml && jml.match(/Kota:\s*(\d+)/) ? Number(jml.match(/Kota:\s*(\d+)/)[1]) : null,
+    ibu_kota: ib ? ibuKota(ib) : null,
+    kabupaten: jml && jml.match(/Kabupaten:\W*(\d+)/) ? Number(jml.match(/Kabupaten:\W*(\d+)/)[1]) : null,
+    kota: jml && jml.match(/Kota:\W*(\d+)/) ? Number(jml.match(/Kota:\W*(\d+)/)[1]) : (jml && /Kabupaten:/.test(jml) ? 0 : null), // tanpa "Kota:" berarti tidak ada kota otonom
     luas_km2: tot ? num((tot.match(/Total\|([\d.,]+)/) || [])[1]) : (luasT ? num((luasT.match(/Luas\|([\d.,]+)/) || [])[1]) : null),
     penduduk: popT ? num((popT.match(/Total\|([\d.,]+)/) || [])[1]) : null,
     penduduk_tahun: thn ? Number(thn[1]) : null,
@@ -165,6 +172,7 @@ async function main() {
 }
 
 if (process.argv.includes('--selftest')) {
+  assert.equal(ibuKota('|Ibu kota|Kota Bukittinggi|(1957-1958)|Kota Padang|'), 'Padang'); assert.equal(ibuKota('|Ibu kota|Tidak ada|'), null);
   assert.equal(angkaId('3.906.041'), 3906041); assert.equal(angkaId('50.160,05'), 50160.05); assert.equal(angkaId('-'), 0);
   assert.equal(kunci('Kepulauan Bangka Belitung'), 'bangkabelitung'); assert.equal(kunci('Bangka Belitung'), 'bangkabelitung');
   assert.equal(kunci('D.I. Yogyakarta'), 'yogyakarta'); assert.equal(kunci('DKI Jakarta'), 'jakarta'); assert.equal(kunci('Kepulauan Riau'), 'kepulauanriau'); assert.equal(kunci('Daerah Istimewa Yogyakarta'), 'yogyakarta');

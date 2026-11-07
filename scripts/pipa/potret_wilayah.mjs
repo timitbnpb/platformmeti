@@ -34,14 +34,17 @@ export function bangunWilayah() {
   const pPerda = per(reg.filter((x) => x.jenis === 'perda' && /^Pemerintah Provinsi /.test(x.instansi_penerbit)), (x) => namaProv(x.instansi_penerbit.replace('Pemerintah Provinsi ', '')));
   const pOrg = per(org, (x) => namaProv(x.lokasi?.provinsi));
   const orgNama = new Map(org.map((o) => [o.nama, o]));
+  const profil = new Map(fs.existsSync(path.join(ROOT, 'data-panen/wilayah/profil_provinsi.jsonl')) ? jsonl('data-panen/wilayah/profil_provinsi.jsonl').map((x) => [String(x.kode), x]) : []);
   const baris = prov.map((p) => {
-    const ps = (pProv.get(p.nama) || []).map((x) => ({ id: x.id, nama: x.nama, teknologi: x.teknologi, mw: x.kapasitas?.[0]?.nilai ?? null, satuan: x.kapasitas?.[0]?.satuan ?? null, status: x.status?.[0]?.nilai ?? null }));
+    const pr = profil.get(String(p.kode)) || {};
+    const ps = (pProv.get(p.nama) || []).map((x) => ({ id: x.id, nama: x.nama, teknologi: x.teknologi, mw: x.kapasitas?.[0]?.nilai ?? null, satuan: x.kapasitas?.[0]?.satuan ?? null, status: x.status?.[0]?.nilai ?? null, lat: x.lokasi?.lat != null ? +x.lokasi.lat.toFixed(4) : null, lng: x.lokasi?.lng != null ? +x.lokasi.lng.toFixed(4) : null, presisi: x.lokasi?.presisi || null }));
     const os = pOrg.get(p.nama) || [];
     const ids = new Set(os.map((o) => o.nama));
     const pk = orang.filter((o) => ids.has(o.organisasi_terkini)).map((o) => ({ id: o.id, nama: o.nama, jabatan: o.jabatan_terkini, organisasi: o.organisasi_terkini }));
     const r = p.rued || {};
     return {
       kode: String(p.kode), nama: p.nama, diperbarui: p.diperbarui,
+      identitas: pr.identitas || null, listrik: pr.listrik || null,
       terpasang_mw: sm(p.terpasang), per_teknologi_mw: p.terpasang?.per_teknologi_mw || {},
       rasio_elektrifikasi: sm(p.rasio_elektrifikasi),
       potensi_panas_bumi: sm(p.potensi?.['panas-bumi']),
@@ -49,13 +52,49 @@ export function bangunWilayah() {
       rued: r.perda ? { perda: r.perda, url: r.url_sumber, target_ebt_persen: r.target_ebt_persen ?? null, kandidat: (r.kandidat || []).map((k) => ({ tahun: k.tahun, persen: k.persen })), tanggal: r.tanggal_periksa, catatan_kosong: r.target_ebt_persen == null ? r.ekstraksi || null : null } : { ...kosong(r), perda: null },
       jumlah_proyek: ps.length, proyek: ps,
       perda: (pPerda.get(p.nama) || []).map((x) => ({ id: x.id, nomor: x.nomor, tahun: x.tahun, judul: x.judul, status: x.status, url: x.url_sumber })),
-      organisasi: os.map((o) => ({ id: o.id, nama: o.nama, kategori: o.kategori?.label || null })),
+      organisasi: os.map((o) => ({ id: o.id, nama: o.nama, kategori: o.kategori?.label || null, logo: o.logo || null })),
       pakar: pk,
       surya_atlas: atlas.get(String(p.kode)) ? (({ titik, surya_pvout_kwh_per_kwp_tahun: pvout, ghi_kwh_per_m2_tahun: ghi, dni_kwh_per_m2_tahun: dni, gti_optimal_kwh_per_m2_tahun: gti, sudut_optimal_derajat: sudut, suhu_udara_c: suhu, lat, lon, sumber, sumber_url, tanggal_periksa, lisensi, tingkat_bukti, catatan }) => ({ label: 'indikasi satu titik (' + titik + '), BUKAN rata-rata provinsi', titik: { lat, lng: lon, keterangan: titik }, pvout_kwh_per_kwp_tahun: pvout, ghi_kwh_per_m2_tahun: ghi, dni_kwh_per_m2_tahun: dni, gti_optimal_kwh_per_m2_tahun: gti, sudut_optimal_derajat: sudut, suhu_udara_c: suhu != null ? Math.round(suhu * 10) / 10 : null, sumber, url: sumber_url, tanggal: tanggal_periksa, lisensi, tingkat_bukti, catatan }))(atlas.get(String(p.kode))) : null,
     };
   });
   const tanpaLokasi = proyek.filter((x) => !x.lokasi?.provinsi).length;
   return { lapis: 'publik', dibangun_pada: TANGGAL, jumlah: baris.length, proyek_tanpa_provinsi: tanpaLokasi, baris };
+}
+
+/* ---------- detail per provinsi: public/data/wilayah/<kode>.json (berita, kalender, emisi, pakar; dimuat hanya di halaman profil) ---------- */
+export const POLA = {
+  'Aceh': /\bAceh\b/, 'DKI Jakarta': /\b(DKI\s+)?Jakarta\b/, 'DI Yogyakarta': /\bYogyakarta\b|\bDIY\b/, 'Kepulauan Riau': /\bKepulauan Riau\b|\bKepri\b/, 'Riau': /(?<!Kepulauan )\bRiau\b/,
+  'Papua': /\bPapua\b(?!\s+(Barat|Selatan|Tengah|Pegunungan|Nugini|New))/, 'Papua Barat': /\bPapua Barat\b(?!\s+Daya)/, 'Maluku': /\bMaluku\b(?!\s+Utara)/, 'Kepulauan Bangka Belitung': /\bBangka Belitung\b|\bBabel\b/,
+  'Sumatera Selatan': /\b(Sumatera|Sumatra)\s+Selatan\b|\bSumsel\b/, 'Sumatera Utara': /\b(Sumatera|Sumatra)\s+Utara\b|\bSumut\b/, 'Sumatera Barat': /\b(Sumatera|Sumatra)\s+Barat\b|\bSumbar\b/,
+};
+export const polaProv = (nama) => POLA[nama] || new RegExp('\\b' + nama.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + '\\b');
+export function dalam(lng, lat, g) {
+  const ring = (r) => { let d = false; for (let i = 0, j = r.length - 1; i < r.length; j = i++) { const [xi, yi] = r[i], [xj, yj] = r[j]; if ((yi > lat) !== (yj > lat) && lng < ((xj - xi) * (lat - yi)) / (yj - yi) + xi) d = !d; } return d; };
+  const poli = (g.type === 'Polygon' ? [g.coordinates] : g.coordinates);
+  return poli.some((p) => ring(p[0]) && !p.slice(1).some(ring));
+}
+export function bangunDetail() {
+  const prov = jsonl('data-panen/wilayah/provinsi.jsonl');
+  const berita = pub('berita.json').baris, kal = pub('kalender.json').baris, karbon = pub('karbon.json').baris.filter((x) => x.kelompok === 'pembangkit' && x.lat != null);
+  const geo = JSON.parse(fs.readFileSync(path.join(ROOT, 'public/geo/provinsi.json'), 'utf8')).features;
+  const pakar = jsonl('data-panen/orang/pakar.jsonl');
+  const out = {};
+  for (const p of prov) {
+    const kode = String(p.kode), re = polaProv(p.nama), f = geo.find((x) => String(x.properties.kode) === kode);
+    const em = f ? karbon.filter((x) => dalam(x.lng, x.lat, f.geometry)) : [];
+    const pk = pakar.filter((x) => x.afiliasi?.provinsi === kode).sort((a, b) => (b.h_index || 0) - (a.h_index || 0));
+    out[kode] = {
+      kode, nama: p.nama, dibangun_pada: TANGGAL,
+      berita: berita.filter((b) => re.test(b.judul)).sort((a, b) => String(b.terbit).localeCompare(String(a.terbit))).slice(0, 8).map((b) => ({ judul: b.judul, url: b.url, media: b.media, terbit: String(b.terbit).slice(0, 10), kepakaran: b.kepakaran || [] })),
+      kalender: kal.filter((k) => re.test(k.judul + ' ' + (k.mitra || ''))).map((k) => ({ tanggal: k.tanggal, judul: k.judul, jenis: k.jenis, url: k.sumber?.url || null })),
+      emisi: em.length ? {
+        jumlah: em.length, total_tco2e: Math.round(em.reduce((s, x) => s + (x.emisi_tco2e || 0), 0)), tahun: em[0].tahun, sumber: em[0].sumber, url: 'https://climatetrace.org/', lisensi: em[0].lisensi, tanggal: em[0].tanggal, tingkat_bukti: em[0].tingkat_bukti,
+        pembangkit: em.sort((a, b) => (b.emisi_tco2e || 0) - (a.emisi_tco2e || 0)).slice(0, 10).map((x) => ({ nama: x.nama, jenis: x.jenis_aset, mw: x.kapasitas_mw, emisi: x.emisi_tco2e, tahun: x.tahun, lat: x.lat, lng: x.lng })),
+      } : null,
+      pakar: { jumlah: pk.length, sumber: 'OpenAlex (afiliasi institusi terkini)', url: 'https://openalex.org/', tanggal: TANGGAL, daftar: pk.slice(0, 12).map((x) => ({ nama: x.nama, institusi: x.afiliasi?.institusi || null, topik: (x.kepakaran || []).map((k) => k.kode), h: x.h_index ?? null, url: x.sumber_url || null })) },
+    };
+  }
+  return out;
 }
 
 const ekor = (a, n = 10) => (Array.isArray(a) ? a.slice(-n).map(({ tahun, nilai: v }) => ({ tahun, nilai: v })) : []);
@@ -121,5 +160,9 @@ if (process.argv.includes('--selftest')) {
   assert.ok(!JSON.stringify([w, a, r]).match(/[\w.]+@[\w.]+/), 'tanpa surel');
   console.log('selftest ok');
 } else {
-  tulis('wilayah.json', bangunWilayah()); tulis('asean.json', bangunAsean()); tulis('rantai_plts.json', bangunRantai());
+  tulis('wilayah.json', bangunWilayah());
+  fs.mkdirSync(path.join(ROOT, 'public/data/wilayah'), { recursive: true });
+  for (const [k, d] of Object.entries(bangunDetail())) fs.writeFileSync(path.join(ROOT, 'public/data/wilayah', k + '.json'), JSON.stringify(d) + '\n');
+  console.log('wilayah/<kode>.json x38');
+  tulis('asean.json', bangunAsean()); tulis('rantai_plts.json', bangunRantai());
 }

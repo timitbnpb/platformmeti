@@ -112,7 +112,7 @@ d=ImageChops.difference(im,bg).convert('L').point(lambda x:255 if x>20 else 0); 
 if b and (b[2]-b[0])*(b[3]-b[1])>0.3*im.size[0]*im.size[1]: im=im.crop(b)
 w,h=im.size; s=min(w,h); top=0 if h<=w else int((h-s)*0.15); left=(w-s)//2
 im=im.crop((left,top,left+s,top+s)).resize((256,256),Image.LANCZOS); im.save(sys.argv[2],'WEBP',quality=82)`;
-  execFileSync('python3', ['-I', '-c', py, src, dst]);
+  execFileSync('python3', ['-c', py, src, dst]);
 }
 
 async function bangun() {
@@ -134,7 +134,7 @@ async function bangun() {
     for (const x of raw.p69 || []) if (lbl(x) && !pen.some((y) => norm(y.institusi) === norm(lbl(x)))) pen.push({ jenjang: null, bidang: null, institusi: lbl(x), tahun: tahun(x.b, x.pb), sumber_url: wdu });
     const tautan = [{ jenis: 'profil-meti', url: METI_URL }]; for (const t of r.tautan || []) if (t.jenis === 'profil-resmi' && !tautan.some((x) => x.url === t.url)) tautan.push({ jenis: 'profil-resmi', url: t.url });
     if (raw.wp_url) tautan.push({ jenis: 'wikipedia', url: raw.wp_url }); if (wdu) tautan.push({ jenis: 'wikidata', url: wdu });
-    const kini = r.jabatan_terkini || o.jabatan_terkini || null, org = r.organisasi_terkini || o.organisasi_terkini || null;
+    let kini = r.jabatan_terkini || o.jabatan_terkini || null, org = r.organisasi_terkini || o.organisasi_terkini || null; if (/Masyarakat Energi Terbarukan|METI/.test(org || '')) kini = org = null; // peran METI sudah ada di jabatan_meti
     const kiniSumber = (r.riwayat || []).find((x) => x.kini)?.sumber_url || o.sumber_url || (r.tautan || [])[0]?.url || null;
     const kal = [`${p.nama} menjabat ${p.jabatan}${p.bidang ? ' (' + p.bidang + ')' : ''} di METI periode 2025-2028.`];
     if (kini && org && kiniSumber) kal.push(`Jabatan terkininya ${kini} di ${org}.`);

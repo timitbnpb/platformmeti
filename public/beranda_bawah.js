@@ -122,6 +122,10 @@ const gelap = () => (document.documentElement.dataset.theme || (matchMedia("(pre
 const IKON_PROG = { "plts-100gw": "surya", wte: "biomassa-sampah", ruptl: "lapis", psn: "pabrik", jetp: "grafik", b50: "bioenergi", e20: "bioenergi" };
 let peta = null, petaSiapOk = false, dataPeta = null, terpilih = null;
 const HIDE = new Set();
+const FIT = [[94.8, -11], [141, 6.2]];
+let panelBuka = innerWidth >= 900;
+/** Bingkai peta: ruang kanan untuk panel program di layar lebar. */
+const pad = () => (innerWidth >= 1200 ? { top: 30, bottom: 56, left: 20, right: 470 } : innerWidth >= 900 ? { top: 24, bottom: 52, left: 10, right: 10 } : { top: 6, bottom: 6, left: 6, right: 6 });
 const num = (v) => angka(v, { desimal: v < 100 ? 1 : 0 });
 const fc = (features) => ({ type: "FeatureCollection", features });
 
@@ -141,11 +145,13 @@ async function siapPeta() {
   }).join("");
   const info = $("petaInfo");
   gantiKepala($("petaKartu"), { ikon: "peta", topik: t("beranda.peta.k"), judulHtml: jud("beranda.ex.peta.j", angka(lok.length)), subHtml: esc(t("beranda.peta.d")), aksiHtml: aksiHtml() + sumberHtml(esc(t("beranda.peta.s", { tanggal: tanggal(pro.dibangun_pada) }))) });
-  info.innerHTML = `<p class="jm-bb-fakta"><b>${esc(angka(lok.length))}</b> ${esc(t("beranda.peta.l.titik"))} <span aria-hidden="true">/</span> <b>${esc(angka(dataPeta.tanpa))}</b> ${esc(t("beranda.peta.l.tanpa"))}</p>
-    <div class="jm-bb-prog-w"><div class="jm-bb-prog-kop" aria-hidden="true"><span>${esc(t("beranda.peta.kol.prog"))}</span><span>${esc(t("beranda.peta.kol.n"))}</span><span>MW</span></div><ul class="jm-bb-prog-l">${baris}</ul></div>`;
+  info.innerHTML = `<button type="button" class="jm-bb-pp-t" aria-expanded="${panelBuka}"><span>${esc(t("beranda.peta.tabel"))}</span><i aria-hidden="true"></i></button><div class="jm-bb-pp-b"${panelBuka ? "" : " hidden"}><p class="jm-bb-fakta"><b>${esc(angka(lok.length))}</b> ${esc(t("beranda.peta.l.titik"))} <span aria-hidden="true">/</span> <b>${esc(angka(dataPeta.tanpa))}</b> ${esc(t("beranda.peta.l.tanpa"))}</p>
+    <div class="jm-bb-prog-w"><div class="jm-bb-prog-kop" aria-hidden="true"><span>${esc(t("beranda.peta.kol.prog"))}</span><span>${esc(t("beranda.peta.kol.n"))}</span><span>MW</span></div><ul class="jm-bb-prog-l">${baris}</ul></div></div>`;
   if (!info.dataset.pasang) {
     info.dataset.pasang = "1";
     info.addEventListener("click", (e) => {
+      const tg = e.target.closest(".jm-bb-pp-t");
+      if (tg) { panelBuka = tg.getAttribute("aria-expanded") !== "true"; tg.setAttribute("aria-expanded", String(panelBuka)); info.querySelector(".jm-bb-pp-b").hidden = !panelBuka; return; }
       const b = e.target.closest("[data-prog]"); if (!b) return;
       terpilih = terpilih === b.dataset.prog ? null : b.dataset.prog;
       for (const x of info.querySelectorAll("[data-prog]")) x.setAttribute("aria-pressed", String(x.dataset.prog === terpilih));
@@ -165,17 +171,19 @@ function terapkan(fit = true) {
   const tampak = dataPeta.titik.filter((f) => pilih(f) && !HIDE.has(f.properties.k));
   peta.getSource("besar")?.setData(fc([...tampak].sort((a, b) => b.properties.mw - a.properties.mw).slice(0, 8)));
   if (!fit) return;
-  if (!terpilih || !tampak.length) { peta.fitBounds(BATAS_ID, { padding: 10, duration: 500 }); return; }
+  if (!terpilih || !tampak.length) { peta.fitBounds(FIT, { padding: pad(), duration: 500 }); return; }
   const b = new maplibregl.LngLatBounds();
   for (const f of tampak) b.extend(f.geometry.coordinates);
-  peta.fitBounds(b, { padding: 60, maxZoom: 7, duration: 500 });
+  peta.fitBounds(b, { padding: { ...pad(), top: 70, bottom: 70 }, maxZoom: 7, duration: 500 });
 }
 
 function legendaPeta(el) {
-  el.querySelectorAll(".jm-bb-leg-peta,.jm-bb-tip").forEach((x) => x.remove());
+  el.querySelectorAll(".jm-bb-tip").forEach((x) => x.remove());
+  el.parentElement.querySelectorAll(".jm-bb-leg-peta").forEach((x) => x.remove());
   const ada = new Set(dataPeta.titik.map((f) => f.properties.k));
   const w = [...TEK, "lain"].filter((k) => ada.has(k));
-  el.insertAdjacentHTML("beforeend", `<div class="jm-bb-leg-peta" role="group" aria-label="${esc(t("beranda.peta.leg"))}">${w.map((k) => `<button type="button" aria-pressed="${!HIDE.has(k)}" data-tek="${esc(k)}"><i class="jm-bb-t-${esc(k)}"></i>${esc(k === "lain" ? t("beranda.peta.lain") : label("beranda.tek.", k))}</button>`).join("")}</div><div class="jm-bb-tip" hidden></div>`);
+  el.parentElement.insertAdjacentHTML("beforeend", `<div class="jm-bb-leg-peta" role="group" aria-label="${esc(t("beranda.peta.leg"))}">${w.map((k) => `<button type="button" aria-pressed="${!HIDE.has(k)}" data-tek="${esc(k)}"><i class="jm-bb-t-${esc(k)}"></i><span class="jm-bb-leg-ik" aria-hidden="true">${k === "lain" ? "" : IKON_TEK[k] || ""}</span>${esc(k === "lain" ? t("beranda.peta.lain.s") : label("beranda.tek.", k))}</button>`).join("")}</div>`);
+  el.insertAdjacentHTML("beforeend", `<div class="jm-bb-tip" hidden></div>`);
 }
 async function bangunPeta() {
   const el = $("petaEl");
@@ -183,13 +191,13 @@ async function bangunPeta() {
     await Promise.all([siapPeta(), muatMapLibre()]);
     petaSiapOk = false; peta?.remove();
     el.removeAttribute("role");
-    peta = new maplibregl.Map({ container: el, style: "https://tiles.openfreemap.org/styles/" + (gelap() ? "dark" : "positron"), bounds: BATAS_ID, fitBoundsOptions: { padding: 10 }, minZoom: 3, maxZoom: 12, dragRotate: false, pitchWithRotate: false, scrollZoom: false, attributionControl: { compact: true } });
+    peta = new maplibregl.Map({ container: el, style: "https://tiles.openfreemap.org/styles/" + (gelap() ? "dark" : "positron"), bounds: FIT, fitBoundsOptions: { padding: pad() }, minZoom: 3, maxZoom: 12, dragRotate: false, pitchWithRotate: false, scrollZoom: false, attributionControl: { compact: true } });
     peta.addControl(new maplibregl.NavigationControl({ showCompass: false }), "bottom-right");
     legendaPeta(el);
     const tip = el.querySelector(".jm-bb-tip");
     if (!el.dataset.pasang) {
       el.dataset.pasang = "1";
-      el.addEventListener("click", (e) => {
+      el.parentElement.addEventListener("click", (e) => {
         const b = e.target.closest("[data-tek]"); if (!b) return;
         const k = b.dataset.tek, mati = !HIDE.has(k);
         mati ? HIDE.add(k) : HIDE.delete(k); b.setAttribute("aria-pressed", String(!mati));

@@ -362,3 +362,13 @@ dialog.jm-pj-sheet[open]::backdrop{animation:jm-pj-pudar .22s ease-out}
 .jm-pj-sh-pil .jm-pil-st{background:color-mix(in srgb,var(--on-brand) 92%,transparent)}
 @media (max-width:719px){.jm-pj-ban-isi{padding:64px 16px 16px;flex-direction:column;align-items:flex-start}.jm-pj-strip,.jm-pj-sh-badan{padding-inline:14px}}
 @media (min-width:1024px){.jm-pj-dua>.jm-pj-kol:last-child{position:sticky;top:12px}}
+.jm-pj-pk-bar{flex:none}
+.jm-pj-pk-stat>div:last-child{text-align:right}
+@media (min-width:1200px){
+  .jm-pj-pk:last-child:nth-child(4n+3){display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.3fr)}
+  .jm-pj-pk:last-child:nth-child(4n+3) .jm-pj-pk-gb{aspect-ratio:auto;min-height:100%}
+}
+@media (min-width:768px) and (max-width:1199px){
+  .jm-pj-pk:last-child:nth-child(2n+1){display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.3fr)}
+  .jm-pj-pk:last-child:nth-child(2n+1) .jm-pj-pk-gb{aspect-ratio:auto;min-height:100%}
+}
