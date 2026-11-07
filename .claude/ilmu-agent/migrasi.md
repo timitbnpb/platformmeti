@@ -57,3 +57,4 @@ Berkas terkait yang kamu baca tetapi tidak kamu miliki: `public/taksonomi.js` (h
 ## Kasus
 
 Belum ada kasus. Tambahkan lewat ilmu.mjs kasus.
+- 2026-11-07 · D1 melarang PRAGMA integrity_check (SQLITE_AUTH); uji pakai foreign_key_check saja. Menghapus kolom dummy dengan regex meninggalkan koma menggantung sebelum ')' - jalankan migrasi nyata, jangan percaya baca mata.

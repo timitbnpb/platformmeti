@@ -12,3 +12,5 @@ data-panen/
 .DS_Store
 # Armada agent: jejak kerja lokal tidak masuk repo publik (R11 7.4: privasi)
 .claude/ilmu-agent/jejak/
+# Dokumen internal METI: ringkasan berkas rahasia/draf, tidak masuk repo publik.
+docs/internal/
