@@ -1,0 +1,132 @@
+/* Kalender: agenda + kalender mini + tampilan bulan. Warna hanya dari token tema.css. */
+.kal{display:grid;gap:var(--gap)}
+.kal :is(a,button){text-decoration:none}
+.kal :is(a,button,summary):focus-visible{outline:2px solid var(--fokus);outline-offset:2px}
+
+/* warna per jenis: blok di akhir berkas */
+
+/* kepala */
+.kal-kepala{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px;padding:16px 20px}
+.kal-nav,.kal-kanan{display:flex;flex-wrap:wrap;align-items:center;gap:12px}
+.kal-nav h2{margin:0;min-width:11ch;font:700 var(--t-h1)/1.1 var(--display);color:var(--head)}
+.kal-nav h2 span{font-weight:500;color:var(--ink2)}
+.kal-bulat,.kal-hariini,.kal-seg button{display:inline-flex;align-items:center;justify-content:center;gap:8px;height:40px;border:1px solid var(--line-ctl);background:var(--card);color:var(--ink);font:600 14px/1 var(--font);cursor:pointer}
+.kal-bulat{width:40px;padding:0;border-radius:50%;flex:none}
+.kal-hariini{padding:0 16px;border-radius:var(--r-pil)}
+.kal-bulat:hover,.kal-hariini:hover{background:var(--surface);border-color:var(--accent)}
+.kal-bulat .jm-ik,.kal-hariini .jm-ik,.kal-seg .jm-ik{flex:none}
+.kal-seg{display:inline-flex;padding:3px;gap:2px;border:1px solid var(--line-ctl);border-radius:var(--r-pil);background:var(--surface)}
+.kal-seg button{border:0;border-radius:var(--r-pil);padding:0 16px;height:34px;background:none;color:var(--ink2)}
+.kal-seg button[aria-pressed="true"]{background:var(--brand);color:var(--on-brand)}
+.kal-saring{display:flex;flex-wrap:wrap;width:auto;gap:12px}
+.kal-saring .jm-pil-pilih{min-height:40px;min-width:200px}
+.kal-saring .jm-hitung{justify-self:auto}
+
+/* dua kolom: kalender mini + agenda */
+.kal-dua{display:grid;gap:var(--gap);align-items:start}
+@media (min-width:1024px){.kal-dua{grid-template-columns:360px minmax(0,1fr)}.kal-mini{position:sticky;top:calc(var(--top) + 16px)}}
+.kal-mini{padding:16px}
+.kal-mini-tgl{display:none;align-items:center;gap:8px;width:100%;min-height:var(--target);padding:0 4px;border:0;background:none;color:var(--head);font:600 15px/1 var(--font);cursor:pointer}
+.kal-grid7{display:grid;grid-template-columns:repeat(7,minmax(0,1fr))}
+.kal-hn{padding:6px 0 10px;text-align:center;font:600 12px/1 var(--font);color:var(--ink2)}
+.kal-akhir{color:var(--ink2)}
+.kal-sel{position:relative;display:grid;grid-template-rows:32px 8px;justify-items:center;align-content:center;height:44px;padding:0;border:0;border-radius:var(--r-sm);background:none;color:var(--ink);font:500 14px/1 var(--font);cursor:pointer}
+.kal-sel b{display:grid;place-items:center;width:32px;height:32px;border-radius:50%;font-weight:500}
+.kal-sel.kal-akhir{color:var(--ink2)}
+.kal-sel.kal-luar{opacity:.45}
+.kal-sel:hover{background:var(--surface)}
+.kal-sel.kal-kini b{background:var(--brand);color:var(--on-brand);font-weight:700}
+.kal-sel.kal-pilih{outline:2px solid var(--accent);outline-offset:-2px}
+.kal-titik{display:flex;gap:3px;align-items:center;height:8px}
+.kal-titik i{width:6px;height:6px;border-radius:50%}
+.kal-rt{position:absolute;left:0;right:0;bottom:1px;height:3px;}
+.kal-rt-a{left:8px;border-radius:3px 0 0 3px}
+.kal-rt-z{right:8px;border-radius:0 3px 3px 0}
+@media (max-width:1023px){.kal-mini-tgl{display:flex}.kal-mini-badan{display:none;padding-top:8px}.kal-mini.kal-buka .kal-mini-badan{display:block}}
+
+/* agenda */
+.kal-agenda{display:grid;gap:var(--gap);min-width:0}
+.kal-grup{display:grid;gap:10px}
+.kal-grup h3{position:sticky;top:calc(var(--top) + 8px);z-index:2;display:flex;align-items:center;gap:10px;margin:0;padding:10px 4px;background:var(--paper);font:700 16px/1.2 var(--display);color:var(--head)}
+.kal-grup h3 span,.kal-lalu summary span+span{display:inline-grid;place-items:center;min-width:24px;height:24px;padding:0 8px;border-radius:var(--r-pil);background:var(--surface);color:var(--ink2);font:600 12px/1 var(--font)}
+.kal-daftar{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+.kal-baris{display:grid;grid-template-columns:72px minmax(0,1fr) auto;gap:16px;align-items:center;min-height:100px;padding:14px 16px;border:1px solid var(--line);border-radius:var(--r);background:var(--card);color:var(--ink)}
+a.kal-baris:hover{border-color:var(--accent);box-shadow:var(--shadow)}
+.kal-tgl{display:grid;justify-items:center;align-content:center;gap:2px;height:72px;border-radius:var(--r-sm);background:var(--akun-isi);color:var(--accent);text-align:center}
+.kal-tgl b{font:700 26px/1 var(--display)}
+.kal-tgl b.kal-rg{font-size:17px}
+.kal-tgl span{font:700 11px/1 var(--font);text-transform:uppercase;letter-spacing:.04em}
+.kal-tgl small{font:500 11px/1 var(--font);color:var(--ink2)}
+.kal-isi{display:grid;gap:6px;min-width:0}
+.kal-isi strong{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;font:700 15px/1.35 var(--font);color:var(--head)}
+.kal-meta{display:flex;align-items:center;gap:8px;color:var(--ink2);font:500 13px/1.3 var(--font);min-width:0}
+.kal-meta .jm-ik{flex:none}
+.kal-meta span{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.kal-sumber{font-size:12px}
+.kal-sisi{display:grid;justify-items:end;gap:10px}
+.kal-pil{display:inline-flex;align-items:center;gap:6px;min-height:26px;padding:0 10px;border-radius:var(--r-pil);color:var(--ink);font:600 12px/1 var(--font);white-space:nowrap}
+.kal-pil::before{content:"";width:8px;height:8px;border-radius:50%;}
+.kal-buka-tautan{display:inline-flex;align-items:center;gap:6px;color:var(--accent);font:600 13px/1 var(--font)}
+.kal-lalu{padding:0}
+.kal-lalu summary{display:flex;align-items:center;gap:10px;min-height:52px;padding:0 20px;font:600 15px/1 var(--font);color:var(--head);cursor:pointer;list-style:none}
+.kal-lalu summary::-webkit-details-marker{display:none}
+.kal-lalu[open] summary{border-bottom:1px solid var(--line)}
+.kal-lalu .kal-grup{padding:0 16px 16px}
+.kal-lalu .kal-baris{opacity:.72}
+.kal-pilih-bar{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px;padding:12px 16px;border:1px solid var(--line);border-radius:var(--r);background:var(--card);color:var(--head)}
+@media (max-width:639px){
+  .kal-kepala{padding:14px}
+  .kal-nav h2{min-width:0;flex:1;font-size:20px}
+  .kal-seg{display:none}
+  .kal-kanan,.kal-saring{width:100%}
+  .kal-saring .jm-pil-pilih{flex:1;min-width:0}
+  .kal-baris{grid-template-columns:60px minmax(0,1fr);gap:12px;padding:12px}
+  .kal-tgl{height:64px}
+  .kal-sisi{grid-column:1/-1;grid-auto-flow:column;justify-content:space-between;align-items:center;justify-items:start}
+}
+
+/* tampilan bulan: tabel tanpa celah, batang rentang melintang */
+.kal-bulan{padding:0;overflow:hidden}
+.kal-hdr{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));border-bottom:1px solid var(--line);background:var(--surface)}
+.kal-hdr .kal-hn{padding:10px 0}
+.kal-minggu{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));grid-template-rows:30px repeat(3,24px) auto;padding-bottom:6px;border-bottom:1px solid var(--line-cell);min-height:96px}
+.kal-minggu:last-child{border-bottom:0}
+.kal-hr{grid-row:1/-1;padding:6px 8px;border-left:1px solid var(--line-cell);font:600 13px/1 var(--font);color:var(--ink)}
+.kal-hr.kal-k1{border-left:0}
+.kal-hr.kal-akhir{background:var(--surface);color:var(--ink2)}
+.kal-hr.kal-luar{color:var(--ink2);opacity:.6}
+.kal-hr.kal-kini b{display:inline-grid;place-items:center;min-width:24px;height:24px;margin:-4px 0 0 -6px;border-radius:50%;background:var(--brand);color:var(--on-brand)}
+.kal-ev{z-index:1;display:flex;align-items:center;gap:6px;min-width:0;height:20px;margin:0 4px;padding:0 6px;border-radius:var(--r-sm);color:var(--ink);font:600 12px/1 var(--font);align-self:center}
+.kal-ev i{flex:none;width:7px;height:7px;border-radius:50%;}
+.kal-ev span{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+a.kal-ev:hover{background:var(--surface)}
+.kal-ev-bar{border-left:3px solid}
+.kal-pot-k{margin-left:0;border-radius:0 var(--r-sm) var(--r-sm) 0}
+.kal-pot-n{margin-right:0;border-radius:var(--r-sm) 0 0 var(--r-sm)}
+.kal-l0{grid-row:2}.kal-l1{grid-row:3}.kal-l2{grid-row:4}
+.kal-lain{grid-row:5;z-index:1;justify-self:start;margin:0 4px;padding:2px 6px;border:0;border-radius:var(--r-sm);background:none;color:var(--accent);font:600 12px/1.2 var(--font);cursor:pointer}
+.kal-lain:hover{background:var(--surface)}
+.kal-k1{grid-column-start:1}.kal-k2{grid-column-start:2}.kal-k3{grid-column-start:3}.kal-k4{grid-column-start:4}.kal-k5{grid-column-start:5}.kal-k6{grid-column-start:6}.kal-k7{grid-column-start:7}
+.kal-s1{grid-column-end:span 1}.kal-s2{grid-column-end:span 2}.kal-s3{grid-column-end:span 3}.kal-s4{grid-column-end:span 4}.kal-s5{grid-column-end:span 5}.kal-s6{grid-column-end:span 6}.kal-s7{grid-column-end:span 7}
+.kal-hr{grid-column-end:span 1}
+@media (max-width:639px){.kal-bulan{display:none}}
+
+/* warna per jenis */
+.kal-titik i.kal-t-audiensi,.kal-rt.kal-t-audiensi,.kal-pil.kal-t-audiensi::before,.kal-ev.kal-t-audiensi i{background:var(--data4)}
+.kal-pil.kal-t-audiensi{background:var(--surface)}
+.kal-ev-bar.kal-t-audiensi{background:var(--surface);border-left-color:var(--data4)}
+.kal-titik i.kal-t-konferensi,.kal-rt.kal-t-konferensi,.kal-pil.kal-t-konferensi::before,.kal-ev.kal-t-konferensi i{background:var(--ok)}
+.kal-pil.kal-t-konferensi{background:var(--ok-bg)}
+.kal-ev-bar.kal-t-konferensi{background:var(--ok-bg);border-left-color:var(--ok)}
+.kal-titik i.kal-t-lokakarya,.kal-rt.kal-t-lokakarya,.kal-pil.kal-t-lokakarya::before,.kal-ev.kal-t-lokakarya i{background:var(--warn)}
+.kal-pil.kal-t-lokakarya{background:var(--warn-bg)}
+.kal-ev-bar.kal-t-lokakarya{background:var(--warn-bg);border-left-color:var(--warn)}
+.kal-titik i.kal-t-regulasi,.kal-rt.kal-t-regulasi,.kal-pil.kal-t-regulasi::before,.kal-ev.kal-t-regulasi i{background:var(--ink2)}
+.kal-pil.kal-t-regulasi{background:var(--surface)}
+.kal-ev-bar.kal-t-regulasi{background:var(--surface);border-left-color:var(--ink2)}
+.kal-titik i.kal-t-seminar,.kal-rt.kal-t-seminar,.kal-pil.kal-t-seminar::before,.kal-ev.kal-t-seminar i{background:var(--info)}
+.kal-pil.kal-t-seminar{background:var(--info-bg)}
+.kal-ev-bar.kal-t-seminar{background:var(--info-bg);border-left-color:var(--info)}
+.kal-titik i.kal-t-tenggat,.kal-rt.kal-t-tenggat,.kal-pil.kal-t-tenggat::before,.kal-ev.kal-t-tenggat i{background:var(--ink2)}
+.kal-pil.kal-t-tenggat{background:var(--surface)}
+.kal-ev-bar.kal-t-tenggat{background:var(--surface);border-left-color:var(--ink2)}

@@ -30,3 +30,19 @@ export function subnavHtml(jalur, hash = "") {
   return `<nav class="jm-subnav" id="subnav" aria-label="${esc(t("nav.insight"))}">${tabTautan(BAGIAN_INSIGHT.map((x) => ({ href: x.href, ikon: x.ikon, label: t(x.kunci), aktif: aktif(x) })))}</nav>`;
 }
 export const diBagianInsight = (jalur) => BAGIAN_INSIGHT.some((x) => !x.href.includes("#") && (jalur === x.href || jalur.startsWith(x.href + "/")));
+
+/* Sumber: ikon "!" dalam lingkaran, klik membuka catatan sumber (permintaan pemilik 7 Nov 2026).
+   isiHtml sudah di-escape oleh pemanggil. Pakai: sumberHtml(`${esc(teks)} <a href="...">...</a>`). */
+export const sumberHtml = (isiHtml, label = t("jm.sumber")) =>
+  `<span class="jm-sumber"><button type="button" class="jm-sumber-b" aria-expanded="false" aria-label="${esc(label)}" title="${esc(label)}">${ikon("info", 16)}</button><span class="jm-sumber-isi" role="note" hidden>${isiHtml}</span></span>`;
+if (typeof document !== "undefined" && !window.__jmSumber) {
+  window.__jmSumber = true;
+  const tutup = (kec) => document.querySelectorAll(".jm-sumber-b[aria-expanded=true]").forEach((b) => { if (b !== kec) { b.setAttribute("aria-expanded", "false"); b.nextElementSibling.hidden = true; } });
+  document.addEventListener("click", (e) => {
+    const b = e.target.closest(".jm-sumber-b");
+    if (!b) { if (!e.target.closest(".jm-sumber-isi")) tutup(); return; }
+    const buka = b.getAttribute("aria-expanded") !== "true";
+    tutup(b); b.setAttribute("aria-expanded", String(buka)); b.nextElementSibling.hidden = !buka;
+  });
+  document.addEventListener("keydown", (e) => { if (e.key === "Escape") tutup(); });
+}

@@ -65,3 +65,23 @@ article.jm-ins-kartu{padding:0;overflow:hidden;gap:0}
 .jm-met h3{font:600 17px/1.3 var(--display);color:var(--head);margin-bottom:6px}
 .jm-met p{max-width:75ch;line-height:1.55}
 .jm-met:target{outline:3px solid var(--accent);outline-offset:2px}
+
+/* hero dua kolom dengan tiga ubin angka */
+.jm-ins-hero{align-items:center}
+.jm-ins-hero h1{max-width:20ch}
+.jm-ins-ubin{display:grid;gap:10px}
+.jm-ins-ub{display:grid;gap:4px;padding:14px 16px;border-radius:var(--r);background:color-mix(in srgb,var(--on-brand) 12%,transparent);color:var(--on-brand);text-decoration:none;border:1px solid color-mix(in srgb,var(--on-brand) 22%,transparent)}
+.jm-ins-ub:hover{background:color-mix(in srgb,var(--on-brand) 20%,transparent)}
+.jm-ins-ub b{font:700 28px/1.1 var(--display)}
+.jm-ins-ub small{margin-left:6px;font:500 13px/1 var(--font);opacity:.85}
+.jm-ins-ub span{font-size:13px;opacity:.9}
+@media (min-width:900px){.jm-ins-hero{grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:32px}.jm-ins-ubin{grid-template-columns:repeat(3,minmax(0,1fr))}.jm-ins-ub{align-content:start}}
+@media (max-width:899px){.jm-ins-ubin{grid-template-columns:repeat(3,minmax(0,1fr))}.jm-ins-ub b{font-size:22px}.jm-ins-ub small{display:block;margin:2px 0 0}}
+/* tautan Metode: tanpa garis bawah, ikon dan panah */
+.jm-ex-sum a.jm-ex-met{display:inline-flex;align-items:center;gap:6px;text-decoration:none;color:var(--ink2);font-weight:600}
+.jm-ex-sum a.jm-ex-met:hover{color:var(--accent)}
+.jm-ex-met .jm-ik{width:16px;height:16px}
+/* urutan: pil ringkas di kanan judul Temuan */
+.jm-ins-kepala .jm-saring{display:flex;width:auto;flex:none}
+.jm-ins-kepala .jm-pil-pilih{width:auto}
+.jm-ins-kepala .jm-pil-pilih select{width:auto}

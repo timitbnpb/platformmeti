@@ -22,7 +22,7 @@ const efektif = () => (HP.matches ? "agenda" : S.tampil);
 /** Rentang hanya ada di judul ("COP31 Antalya 9-20 Nov"); ambil bila hari awal sama dengan tanggal. */
 function akhirDari(b) {
   const m = /\b(\d{1,2})\s*-\s*(\d{1,2})\s+(jan|feb|mar|apr|mei|jun|jul|agu|agt|sep|okt|nov|des)\w*/i.exec(b.judul);
-  if (!m || +m[1] !== +b.tanggal.slice(8) || +m[3 - 0 ? 2 : 2] <= +m[1]) return b.tanggal;
+  if (!m || +m[1] !== +b.tanggal.slice(8) || +m[2] <= +m[1]) return b.tanggal;
   return BLN[m[3].toLowerCase()] === +b.tanggal.slice(5, 7) ? `${bulanDari(b.tanggal)}-${m[2].padStart(2, "0")}` : b.tanggal;
 }
 
@@ -103,7 +103,7 @@ function barisHtml(b) {
 function kelompokHtml(rows, turun) {
   const g = new Map();
   for (const b of rows) (g.get(bulanDari(b.tanggal)) || g.set(bulanDari(b.tanggal), []).get(bulanDari(b.tanggal))).push(b);
-  return [...g.keys()].sort().sort(() => 0).sort((a, c) => (turun ? c.localeCompare(a) : a.localeCompare(c))).map((ym) => {
+  return [...g.keys()].sort((a, c) => (turun ? c.localeCompare(a) : a.localeCompare(c))).map((ym) => {
     const r = g.get(ym).sort((a, c) => (turun ? c.tanggal.localeCompare(a.tanggal) : a.tanggal.localeCompare(c.tanggal)));
     return `<section class="kal-grup"><h3>${esc(namaBulan(ym))} ${esc(ym.slice(0, 4))}<span>${esc(angka(r.length))}</span></h3><ul class="kal-daftar">${r.map(barisHtml).join("")}</ul></section>`;
   }).join("");

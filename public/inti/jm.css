@@ -129,3 +129,11 @@ th[aria-sort="descending"] .jm-urut::after{opacity:1;clip-path:polygon(0 0,100% 
 .jm-subnav .jm-tab a[aria-current="page"]{background:var(--soft-hijau);border-bottom-color:var(--accent);color:var(--accent)}
 @media (max-width:767px){.jm-subnav .jm-tab{grid-auto-columns:max-content}.jm-subnav .jm-tab a{padding:0 18px}}
 @supports (animation-timeline:scroll()){.jm-subnav{animation:jm-subnav-bayang linear both;animation-timeline:scroll();animation-range:0 120px}@keyframes jm-subnav-bayang{from{box-shadow:none}to{box-shadow:0 4px 12px rgb(0 0 0/.08)}}}
+
+/* SUMBER: <span class="jm-sumber"> dari sumberHtml() di komponen.js; ikon bulat yang membuka catatan sumber */
+.jm-sumber{position:relative;display:inline-flex;vertical-align:middle}
+.jm-sumber-b{display:inline-grid;place-items:center;width:24px;height:24px;border-radius:50%;border:1px solid var(--line);background:var(--card);color:var(--ink2);cursor:pointer;padding:0}
+.jm-sumber-b:hover,.jm-sumber-b[aria-expanded="true"]{color:var(--accent);border-color:var(--accent);background:var(--soft-hijau)}
+.jm-sumber-b:focus-visible{outline:2px solid var(--fokus);outline-offset:2px}
+.jm-sumber-isi{position:absolute;z-index:30;top:calc(100% + 8px);right:0;width:min(360px,80vw);padding:12px 14px;background:var(--paper);color:var(--ink);border:1px solid var(--line);border-radius:var(--r-sm);box-shadow:var(--shadow-lg);font-size:var(--t-kecil);line-height:1.5;text-align:left}
+.jm-sumber-isi a{color:var(--accent);font-weight:600;text-decoration:none}

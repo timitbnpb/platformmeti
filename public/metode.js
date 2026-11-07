@@ -16,7 +16,7 @@ function gambar() {
   const tahun = Number(tgl.slice(0, 4)) || "";
   $("jawab").textContent = t("met.jawab", { n: DAFTAR.length, tanggal: tanggal(tgl) });
   $("umum").innerHTML = ["ins.cara1", "ins.cara2", "ins.cara3", "ins.cara4"].map((k) => `<p>${esc(t(k))}</p>`).join("");
-  $("kartu").innerHTML = DAFTAR.map(([id, k]) => `<article class="jm-wadah jm-met" id="metode-${id}"><h3>${esc(t("ins.mt." + id))}</h3><p>${esc(t("ins." + k + ".cara", { tahun, target }))}</p><p><a href="/insight#ins-${id}">${esc(t("met.lihat"))}</a></p></article>`).join("");
+  $("kartu").innerHTML = DAFTAR.map(([id, k]) => `<article class="jm-kartu jm-met" id="metode-${id}"><h3>${esc(t("ins.mt." + id))}</h3><p>${esc(t("ins." + k + ".cara", { tahun, target }))}</p><p><a href="/insight#ins-${id}">${esc(t("met.lihat"))}</a></p></article>`).join("");
   $("kutip").textContent = t("ins.kutip", { tanggal: tanggal(tgl, { gaya: "panjang" }) });
   if (location.hash) document.getElementById(decodeURIComponent(location.hash.slice(1)))?.scrollIntoView();
 }

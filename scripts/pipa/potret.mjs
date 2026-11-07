@@ -50,6 +50,19 @@ export function pisahNama(teks, gelarAda) {
   const semua = [gelarAda, gelar.join(' ')].filter(Boolean).join(' ').trim();
   return { nama: t.join(' '), gelar: [...new Set(semua.split(/\s+/))].join(' ') || undefined };
 }
+// ---------- nama anggota METI (lapis pengurus) ----------
+const SINGKATAN = new Set(['PT', 'CV', 'LTD', 'UD', 'PLN', 'BUMN', 'BUMD', 'PJB', 'LNG', 'PLTU', 'PLTS', 'PLTP', 'PLTA', 'EBT', 'GE', 'ABB', 'BP', 'ESDM', 'UI', 'ITB', 'IPB', 'UGM', 'BRIN', 'SKK', 'API', 'LLC', 'PTE', 'AG', 'SA', 'NV']);
+const kapital = (w) => (w.length > 1 && !/[AIUEO]/.test(w) ? w : w[0] + w.slice(1).toLowerCase());
+const judulHuruf = (n) => (/[a-z]/.test(n) ? n : n.replace(/[A-Za-z][A-Za-z'’]*\.?/g, (w) => { const k = w.replace(/\.$/, ''); return k.toUpperCase() === 'TBK' ? 'Tbk' + (w.endsWith('.') ? '.' : '') : SINGKATAN.has(k) || /^([A-Z]\.)+[A-Z]?$/.test(w) ? w : kapital(w); }));
+/** "ANGGOTA UTAMA: PT. X akuisisi menjadi Y" -> { nama, jenis_awalan, nama_lama }. Murni, diuji di selftest. */
+export function bersihkanNamaAnggota(mentah) {
+  let nama = String(mentah || '').trim(), jenis_awalan;
+  const m = nama.match(/^ANGGOTA\s+(UTAMA|INDIVIDU|PERUSAHAAN|ORGANISASI|KOPERASI)\b\s*:?\s*/i);
+  if (m) { jenis_awalan = m[1].toLowerCase(); nama = nama.slice(m[0].length); }
+  let nama_lama; const a = nama.match(/^(.*?)\s+akuisisi\s+(?:menjadi|oleh)\s+(.+)$/i);
+  if (a) { nama_lama = judulHuruf(a[1].trim()); nama = a[2]; }
+  return { nama: judulHuruf(nama.trim()), jenis_awalan, nama_lama };
+}
 // ---------- util ----------
 const baca = (rel) => { const f = path.join(DP, rel); return fs.existsSync(f) ? fs.readFileSync(f, 'utf8').split('\n').filter(Boolean).map((l) => JSON.parse(l)) : []; };
 const norm = (s) => String(s || '').toLowerCase().replace(/\([^)]*\)/g, ' ').replace(/\b(pt|tbk|persero|cv|perseroda|ud)\b/g, ' ').replace(/[^a-z0-9]+/g, ' ').trim();
@@ -487,11 +500,13 @@ export function bangun(masukan = {}) {
     { kode: 'regulasi', label: 'Regulasi berlaku', nilai: berlaku, satuan: 'aturan', catatan: `dari ${regOut.publik.length} aturan tercatat` },
   ], proyek_per_teknologi: cnt((x) => x.teknologi), proyek_per_status: cnt((x) => x.status?.[0]?.nilai), berita_terbaru: bAll.slice(0, 5).map((b) => b.id) };
 
+  // logo organisasi hasil panen_logo.mjs (berkas ada = tautan); logo kurasi lama (public/img/logo/*.png) tetap dipakai beranda dan menang
+  for (const o of [...organisasi.publik, ...orgAng, ...orgPen]) if (/^[A-Za-z0-9_-]+$/.test(o.id) && fs.existsSync(path.join(ROOT, 'public/img/logo/org', o.id + '.png'))) o.logo = `/img/logo/org/${o.id}.png`;
   const kosong = [];
   const lapisan = {
     publik: { proyek: proyekPub, organisasi: organisasi.publik, orang: orangOut.publik, regulasi: regOut.publik, program: progOut, berita: beritaPub, angka: angkaPub, keuangan: keuanganPub, karbon: karbonPub, video: videoPub },
     anggota: { proyek: proyekAng, organisasi: orgAng, orang: orangOut.anggota, regulasi: regOut.anggota, program: kosong, berita: kosong, angka: angkaAng, keuangan: kosong, karbon: kosong, video: kosong },
-    pengurus: { proyek: proyekPen, organisasi: orgPen, orang: orangOut.pengurus, regulasi: regOut.pengurus, program: kosong, berita: beritaPen, angka: kosong, keuangan: kosong, karbon: kosong, video: kosong, anggota_meti: anggotaLengkap },
+    pengurus: { proyek: proyekPen, organisasi: orgPen, orang: orangOut.pengurus, regulasi: regOut.pengurus, program: kosong, berita: beritaPen, angka: kosong, keuangan: kosong, karbon: kosong, video: kosong, anggota_meti: anggotaLengkap.map((a) => { const b = bersihkanNamaAnggota(a.nama); const o = nmap.get(norm(b.nama)); return bersih({ ...a, nama: b.nama || a.nama, jenis: a.jenis || b.jenis_awalan, nama_lama: b.nama_lama, org_id: o && o.id }); }) },
   };
   const ekstra = { anggota: { regulasi: { posisi_topik: posisi } } };
   const ringkas = {
@@ -544,6 +559,9 @@ function periksa() {
   const galat = periksaBerkas(semua); if (galat.length) { console.error('GAGAL:\n' + galat.slice(0, 40).join('\n')); process.exit(1); } console.log('periksa ok:', semua.length, 'berkas');
 }
 export function selftest() {
+  assert.deepEqual(bersihkanNamaAnggota('ANGGOTA UTAMA: PT. INDIKA ENERGY'), { nama: 'PT. Indika Energy', jenis_awalan: 'utama', nama_lama: undefined });
+  assert.deepEqual(bersihkanNamaAnggota('ANGGOTA UTAMA: CHEVRON GEOTHERMAL INDONESIA, LTD akuisisi menjadi STAR ENERGY GEOTHERMAL'), { nama: 'Star Energy Geothermal', jenis_awalan: 'utama', nama_lama: 'Chevron Geothermal Indonesia, LTD' });
+  assert.equal(bersihkanNamaAnggota('PT PLN (Persero)').nama, 'PT PLN (Persero)'); assert.equal(bersihkanNamaAnggota("ABDI NAFI'").nama, "Abdi Nafi'"); assert.equal(bersihkanNamaAnggota('ANGGOTA PERUSAHAAN: PT. BANK X TBK').nama, 'PT. Bank X Tbk');
   assert.deepEqual(pindai('{"surel":"info@x.co.id","t":"humas@pln.co.id","ir":"investor.relation@mind.id","u":"https://a.b/c@d.com"}'), []);
   assert.ok(pindai('{"x":"budi.santoso@gmail.com"}').length, 'surel pribadi');
   assert.ok(pindai('{"x":"hubungi 081234567890"}').length, 'ponsel rapat');

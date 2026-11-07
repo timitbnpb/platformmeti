@@ -1,6 +1,6 @@
 /* /insight: temuan dan tren dihitung saat render dari /data/*.json. Kartu tanpa data disembunyikan. Grafik SVG tanpa pustaka. */
 import { mulaiHalaman } from "/inti/kepala.js";
-import { nanti, esc, hantuHtml } from "/inti/umum.js";
+import { nanti, esc, hantuHtml, ikon } from "/inti/umum.js";
 import { t, ada, tanggal } from "/i18n.js";
 import { pasangBagi, IKON_BAGI } from "/insight_bagi.js";
 import { kolom, batang, dumbbell, garis } from "/grafik.js";
@@ -373,7 +373,7 @@ function isiKartu(c) {
   <div class="jm-ex-bd">${grafik}</div>
   <footer class="jm-ex-ft"><p class="jm-ex-fn"><b>${esc(t("ins.penting"))}</b> ${esc(c.penting)}</p>
     <p class="jm-ex-fn">${esc(c.penyebut ?? "")}</p>
-    <div class="jm-ex-sum">${sumberLipat(c.sumber)}<a href="/metode#metode-${esc(c.id)}">${esc(t("ins.metode"))}</a></div></footer>`;
+    <div class="jm-ex-sum">${sumberLipat(c.sumber)}<a class="jm-ex-met" href="/metode#metode-${esc(c.id)}">${ikon("metode", 16)}${esc(t("ins.metode"))} \u2192</a></div></footer>`;
 }
 
 function pasang(el, daftar) {
@@ -385,10 +385,17 @@ function pasang(el, daftar) {
   el.querySelectorAll("article").forEach((a) => { a._isi = () => isi(a); tinjau.observe(a); });
 }
 
+/* tiga angka utama di hero, tiap ubin menaut ke kartunya */
+function ubin() {
+  const nilai = TEMUAN.map((f) => f()).filter(Boolean), U = ["terlambat", "pipeline", "plts"].map((id) => nilai.find((c) => c.id === id)).filter(Boolean);
+  $("ubin").innerHTML = U.map((c) => `<a class="jm-ins-ub" href="#ins-${esc(c.id)}"><b>${esc(c.nilai)}<small>${esc(c.satuan)}</small></b><span>${esc(t("ins.hero." + c.id))}</span></a>`).join("");
+}
+
 function gambarTemuan() {
   const k = TEMUAN.map((f) => f()).filter(Boolean);
   k.sort(urut === "topik" ? (a, b) => URUT_TOPIK.indexOf(a.topik) - URUT_TOPIK.indexOf(b.topik) || b.bobot - a.bobot : (a, b) => b.bobot - a.bobot);
   pasang($("temuan"), k);
+  ubin();
   return k.length;
 }
 const gambarTren = () => { const k = TREN.map((f) => f()).filter(Boolean); pasang($("tren-isi"), k); return k.length; };
