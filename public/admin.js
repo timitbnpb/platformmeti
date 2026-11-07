@@ -8,7 +8,9 @@ import { panelAgenda } from "/admin_agenda.js";
 import { panelKoreksi, panelAudit } from "/admin_koreksi.js";
 import { panelKesehatan } from "/admin_kesehatan.js";
 import { panelStatistik } from "/admin_statistik.js";
+import { panelPustaka } from "/admin_pustaka.js";
 import { panelBeranda } from "/admin_beranda.js";
+import { panelLangganan } from "/admin_langganan.js";
 
 const saya = await mulaiHalaman();
 const $ = (id) => document.getElementById(id);
@@ -34,7 +36,7 @@ function jalan() {
   // kurator: hanya tab Anggota (tab Akun dan Jejak tidak ada di DOM; server tetap menolak). CSV hanya admin dan super.
   const adm = ["admin", "super"].includes(saya.peran);
   const TAB = [...(adm ? [["akun", "admin.tab.akun", "orang"]] : []), ["koreksi", "admin.tab.koreksi", "ubah"], ...(adm ? [["jejak", "admin.tab.jejak", "jejak"]] : []), ["kesehatan", "admin.tab.kesehatan", "centang"],
-    ...(adm ? [["statistik", "admin.tab.statistik", "analisis"], ["beranda", "admin.tab.beranda", "beranda"]] : []), ["anggota", "adm.anggota.tab", "daftar"], ["agenda", "adm.agenda.tab", "kalender"]];
+    ...(adm ? [["statistik", "admin.tab.statistik", "analisis"], ["beranda", "admin.tab.beranda", "beranda"], ["pustaka", "adm.pu.tab", "unduh"]] : []), ["anggota", "adm.anggota.tab", "daftar"], ["agenda", "adm.agenda.tab", "kalender"], ...(adm ? [["langganan", "admin.tab.langganan", "berita"]] : [])];
   let tab = TAB[0][0];
 
   const A = { cari: "", peran: "", status: "", hal: 1, baris: [], galat: null, ctl: null };
@@ -89,7 +91,7 @@ function jalan() {
     $("panel").setAttribute("aria-labelledby", "tab-" + k);
     const P = $("panel");
     if (k === "akun") panelAkun(); else if (k === "jejak") panelAudit(P); else if (k === "koreksi") panelKoreksi(P); else if (k === "kesehatan") panelKesehatan(P);
-    else if (k === "statistik") panelStatistik(P); else if (k === "beranda") panelBeranda(P); else if (k === "agenda") panelAgenda(P, saya); else panelAnggota(P, { boleh: adm, kabari });
+    else if (k === "statistik") panelStatistik(P); else if (k === "pustaka") panelPustaka(P); else if (k === "beranda") panelBeranda(P); else if (k === "agenda") panelAgenda(P, saya); else if (k === "langganan") panelLangganan(P); else panelAnggota(P, { boleh: adm, kabari });
   }
 
   /* ---------- tab Akun ---------- */

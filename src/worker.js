@@ -2,6 +2,7 @@
 import { rute as ruteSesi } from "./sesi.js";
 import { rute as ruteAkun } from "./akun.js";
 import { rute as ruteAgenda } from "./agenda.js";
+import { rute as ruteEvent } from "./event.js";
 import { rute as ruteDirektori } from "./direktori.js";
 import { rute as ruteFoto } from "./foto_berita.js";
 import { rute as ruteAdmin } from "./admin.js";
@@ -10,6 +11,7 @@ import { rute as ruteKelayakan } from "./kelayakan.js";
 import { rute as rutePustaka } from "./pustaka.js";
 import * as hak from "./hak.js";
 import { halamanProfil } from "./profil.js";
+import { halamanSiaran } from "./siaran.js";
 import { gagal, json, PRIVAT, sha } from "./util.js";
 
 const rutePemilik = {
@@ -28,7 +30,7 @@ const rutePemilik = {
 };
 
 // Tabel rute dikompilasi sekali: { metode, bagian[], fn }.
-const DAFTAR = Object.entries({ ...ruteSesi, ...ruteAkun, ...ruteAgenda, ...ruteDirektori, ...ruteFoto, ...ruteAdmin, ...ruteLangganan, ...ruteKelayakan, ...rutePustaka, ...rutePemilik }).map(([k, fn]) => {
+const DAFTAR = Object.entries({ ...ruteSesi, ...ruteAkun, ...ruteAgenda, ...ruteEvent, ...ruteDirektori, ...ruteFoto, ...ruteAdmin, ...ruteLangganan, ...ruteKelayakan, ...rutePustaka, ...rutePemilik }).map(([k, fn]) => {
   const [metode, jalur] = k.split(" ");
   return { metode, bagian: jalur.split("/").slice(1), fn };
 });
@@ -130,6 +132,23 @@ function halamanPrivat(res) {
   return r;
 }
 
+// /video/<id>: halaman yang sama, judul <title> diisi dari data (SSR judul); id tak dikenal tetap 200 agar klien menampilkan keadaan kosong.
+async function halamanVideo(req, env, url, id) {
+  const res = await env.ASSETS.fetch(new Request(new URL("/video_detail", url), req));
+  if (!res.ok || req.method === "HEAD") return res;
+  let judul = null;
+  for (const n of ["video_kanal", "video"]) {
+    try {
+      const r = await env.ASSETS.fetch(new Request(new URL(`/data/${n}.json`, url)));
+      judul = r.ok ? ((await r.json()).baris || []).find((v) => v.id === id)?.judul : null;
+    } catch { judul = null; }
+    if (judul) break;
+  }
+  const aman = (judul || "").replace(/[<>&"]/g, "").slice(0, 140);
+  const html = (await res.text()).replace(/<title>[^<]*<\/title>/, () => `<title>${aman ? aman + " | Video METI" : "Video | Direktori METI"}</title>`);
+  return new Response(html, { status: 200, headers: { "content-type": "text/html; charset=utf-8", "cache-control": "public, max-age=300" } });
+}
+
 async function halaman(req, env, url, akun) {
   const path = url.pathname;
   if (LANGSUNG_404.test(path)) return TIDAK_ADA();
@@ -151,10 +170,16 @@ async function halaman(req, env, url, akun) {
   }
   // Tautan berhenti newsletter (terbuka, bertoken di query): halaman yang sama dengan /langganan, mode dipilih skrip dari jalurnya.
   if (path === "/berhenti") return halamanPrivat(await env.ASSETS.fetch(new Request(new URL("/langganan", url), { method: req.method })));
+  if ((m = path.match(/^\/siaran-pers\/([^/]+)$/)) && (req.method === "GET" || req.method === "HEAD")) {
+    return (await halamanSiaran(req, env, url, m[1])) ?? TIDAK_ADA();
+  }
   if ((m = path.match(/^\/wilayah\/([^/]+)$/))) {
     if (!/^\d{2}$/.test(m[1])) return TIDAK_ADA();
     return env.ASSETS.fetch(new Request(new URL("/wilayah", url), req));
   }
+  if ((m = path.match(/^\/event\/([a-z0-9][a-z0-9-]{0,78})$/))) return env.ASSETS.fetch(new Request(new URL("/event_detail", url), req));
+  if ((m = path.match(/^\/video\/([\w-]{11})$/))) return halamanVideo(req, env, url, m[1]);
+  if ((m = path.match(/^\/(event|video)\/.+$/))) return TIDAK_ADA();
   if ((m = path.match(/^\/teknologi\/([^/]+)$/))) {
     const nama = NAMA_TEKNOLOGI[m[1]];
     if (!nama) return TIDAK_ADA();

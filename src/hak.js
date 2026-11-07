@@ -11,7 +11,7 @@ const salah = (pesan) => mk("masukan_salah", 422, pesan);
 /* Isi jejak (murni): kolom rahasia tak pernah masuk dari/ke; entitas orang hanya nama kolom (DT 3.2). Diekspor ulang oleh jejak.js. */
 const RAHASIA_JEJAK = ["garam", "sandi", "iterasi", "aktivasi_hash", "aktivasi_sampai", "id_hash", "pengaju_kontak"];
 // Teks bebas panjang (bisa memuat data pribadi) dicatat panjangnya saja, bukan isinya (K20, temuan security-reviewer).
-const RINGKAS_JEJAK = { agenda_bukti: ["notulensi"] };
+const RINGKAS_JEJAK = { agenda_bukti: ["notulensi"], event_daftar: ["catatan", "telepon"] };
 export function susunJejak({ tabel, jenisEntitas, dari, ke }) {
   const hanyaNama = tabel === "entitas" && jenisEntitas === "orang";
   const ringkas = RINGKAS_JEJAK[tabel] ?? [];
@@ -54,6 +54,8 @@ export const MATRIKS = {
   koreksi:         ["-", "T kirim", "T kirim", "T", "T kirim prov", "T", "T"],
   riwayat:         ["-", "-", "T", "-", "-", "T", "T"],
   agenda:          ["-", "B", "B", "T", "B", "T", "T"], // K20: bukti agenda (notulensi + foto); baca semua yang login
+  event_atur:      ["-", "B", "B", "B", "B", "T", "T"], // pengaturan pendaftaran acara; ubah hanya admin
+  event_daftar:    ["-", "T daftar", "T daftar", "T daftar", "T daftar", "T", "T"], // RSVP: tiap akun hanya miliknya; admin semua
   jejak:           ["-", "-", "-", "-", "-", "B", "B"],
   daftar_tolak:    ["-", "-", "-", "-", "-", "-", "B"],
 };
@@ -68,6 +70,7 @@ const KODE = {
   "B prov":       () => ({ aksi: ["baca"], klausa: ["prov", "lapis"] }),
   "T":            (j) => ({ aksi: ["baca", "tambah", "ubah", ...(TAMBAHAN_T[j] ?? [])], klausa: [] }),
   "T diri":       (j) => ({ aksi: j === "sesi" ? ["baca", "cabut"] : ["baca", "ubah"], klausa: ["sendiri"] }),
+  "T daftar":     () => ({ aksi: ["baca", "tambah", "ubah"], klausa: ["sendiri"] }),
   "T bukan-super": (j) => ({ aksi: ["baca", "tambah", "ubah", ...(TAMBAHAN_T[j] ?? [])], klausa: ["bukan-super"] }),
   "T cabut":      () => ({ aksi: ["baca", "cabut"], klausa: [] }),
   "T kirim":      () => ({ aksi: ["kirim", "baca"], klausa: ["sendiri"] }),
@@ -81,7 +84,7 @@ export const selMatriks = (peran, jenis) => MATRIKS[jenis]?.[PERAN.indexOf(peran
 /* ============================================== KLAUSA ============================================ */
 const LAPIS_JENIS = ["entitas", "orang", "fakta", "ikatan", "kontak"];
 const LAPIS_SQL_TABEL = ["entitas", "fakta", "ikatan"];
-const PEMILIK = { akun: "id", sesi: "akun_id", koreksi: "pengaju_akun" };
+const PEMILIK = { akun: "id", sesi: "akun_id", koreksi: "pengaju_akun", event_daftar: "akun_id" };
 const PROV_SQL = {
   entitas: "prov = ?",
   fakta: "entitas_id IN (SELECT id FROM entitas WHERE prov = ?)",
@@ -168,6 +171,8 @@ const KOLOM_BACA = {
   jejak: ["id", "kapan", "siapa", "peran", "aksi", "tabel", "baris_id", "dari", "ke", "ip_hash"],
   agenda_bukti: ["id", "kegiatan_ref", "tempat", "notulensi", "oleh", "dibuat", "diubah"],
   agenda_foto: ["id", "bukti_id", "kunci_r2", "tipe", "ukuran", "keterangan", "urutan", "oleh", "dibuat"],
+  event_atur: ["id", "event_id", "terbuka", "kuota", "batas", "kontak_nama", "kontak_peran", "kontak_wa", "kontak_surel", "kontak_setuju", "oleh", "dibuat", "diubah"],
+  event_daftar: ["id", "event_id", "akun_id", "jumlah", "instansi", "telepon", "catatan", "status", "waktu", "diubah"],
 };
 // tabel baca -> tabel fisik, jenis data dasar, filter tetap
 const TABEL_BACA = {
@@ -176,6 +181,7 @@ const TABEL_BACA = {
   ikatan: { t: "ikatan", jenis: "ikatan" }, akun: { t: "akun", jenis: "akun" }, sesi: { t: "sesi", jenis: "sesi" },
   koreksi: { t: "koreksi", jenis: "koreksi" }, riwayat: { t: "riwayat", jenis: "riwayat" }, jejak: { t: "jejak", jenis: "jejak" },
   agenda_bukti: { t: "agenda_bukti", jenis: "agenda" }, agenda_foto: { t: "agenda_foto", jenis: "agenda" },
+  event_atur: { t: "event_atur", jenis: "event_atur" }, event_daftar: { t: "event_daftar", jenis: "event_daftar" },
 };
 // Pemetaan tabel -> jenis data menurut baris (satu tabel data, bukan percabangan tersebar). Tabel baru tanpa entri = temuan.
 const JENIS_TABEL = {
@@ -183,7 +189,7 @@ const JENIS_TABEL = {
   fakta: (b) => (/^kontak_/.test(b?.kunci ?? "") ? "kontak" : "fakta"),
   kontak: () => "kontak", sumber: () => "fakta", ikatan: () => "ikatan", akun: () => "akun", sesi: () => "sesi",
   koreksi: () => "koreksi", riwayat: () => "riwayat", jejak: () => "jejak",
-  agenda_bukti: () => "agenda", agenda_foto: () => "agenda",
+  agenda_bukti: () => "agenda", agenda_foto: () => "agenda", event_atur: () => "event_atur", event_daftar: () => "event_daftar",
 };
 export function jenisData(tabel, baris) {
   const f = JENIS_TABEL[tabel];
@@ -204,6 +210,9 @@ const KOLOM_TULIS = {
     ubah: ["jenis", "tanggal", "tanggal_selesai", "judul", "kegiatan_ref", "catatan", "penilaian"] },
   agenda_bukti: { tambah: ["kegiatan_ref", "tempat", "notulensi"], ubah: ["tempat", "notulensi"] },
   agenda_foto: { tambah: ["bukti_id", "keterangan", "urutan"], ubah: ["keterangan", "urutan"] },
+  event_atur: { tambah: ["event_id", "terbuka", "kuota", "batas", "kontak_nama", "kontak_peran", "kontak_wa", "kontak_surel", "kontak_setuju"],
+    ubah: ["terbuka", "kuota", "batas", "kontak_nama", "kontak_peran", "kontak_wa", "kontak_surel", "kontak_setuju"] },
+  event_daftar: { tambah: ["event_id", "jumlah", "instansi", "telepon", "catatan"], ubah: ["jumlah", "instansi", "telepon", "catatan", "status"] },
 };
 // Kolom yang HANYA boleh diisi server (argumen `server`), tak pernah dari klien. id, dibuat, slug-ubah, dummy tak ada di mana pun.
 const KOLOM_SERVER = {
@@ -213,11 +222,11 @@ const KOLOM_SERVER = {
   agenda_foto: { tambah: ["kunci_r2", "tipe", "ukuran"], ubah: [] }, // hasil periksa unggahan di server, tak pernah dari klien
 };
 const OTOMATIS_TAMBAH = { entitas: "dibuat_oleh", fakta: "dibuat_oleh", ikatan: "dibuat_oleh", akun: "dibuat_oleh", koreksi: "pengaju_akun", riwayat: "oleh",
-  agenda_bukti: "oleh", agenda_foto: "oleh" };
+  agenda_bukti: "oleh", agenda_foto: "oleh", event_atur: "oleh", event_daftar: "akun_id" };
 const PAKAI_SUMBER = ["entitas", "fakta", "ikatan"];
 // SELECT baris untuk keputusan hak + isi jejak: kolom daftar putih (tanpa rahasia), plus prov entitas induk.
 const PROV_INDUK = ", (SELECT prov FROM entitas WHERE id = entitas_id) AS prov";
-const BARIS_SQL = Object.fromEntries(["entitas", "fakta", "ikatan", "akun", "koreksi", "riwayat", "agenda_bukti", "agenda_foto"].map((t) =>
+const BARIS_SQL = Object.fromEntries(["entitas", "fakta", "ikatan", "akun", "koreksi", "riwayat", "agenda_bukti", "agenda_foto", "event_atur", "event_daftar"].map((t) =>
   [t, `SELECT ${KOLOM_BACA[t].join(", ")}${t === "fakta" || t === "koreksi" ? PROV_INDUK : ""} FROM ${t} WHERE id = ?`]));
 const AKSI_JEJAK = { tambah: "tambah", ubah: "ubah", hapus: "hapus", hapus_keras: "hapus-permanen", kirim: "kirim", tinjau: "tinjau", cabut: "cabut" };
 const RE_ID = /^\d{1,12}$/;
@@ -304,6 +313,7 @@ export async function tulis(env, akun, tabel, aksi, data = {}, id = null, server
   let barisHak = lama;
   if (!lama) {
     barisHak = { ...data };
+    if (tabel === "event_daftar") barisHak.akun_id = akun?.id;
     if (tabel === "koreksi") {
       barisHak.pengaju_akun = akun?.id;
       const e = data.entitas_id != null && RE_ID.test(String(data.entitas_id))
@@ -355,7 +365,7 @@ export async function tulis(env, akun, tabel, aksi, data = {}, id = null, server
     }
   }
   if (aksi === "tinjau") { kolom.ditinjau_oleh = akun?.id ?? null; kolom.ditinjau_pada = kini(); }
-  if (aksi === "ubah" && (tabel === "entitas" || tabel === "riwayat" || tabel === "agenda_bukti")) kolom.diubah = kini();
+  if (aksi === "ubah" && ["entitas", "riwayat", "agenda_bukti", "event_atur", "event_daftar"].includes(tabel)) kolom.diubah = kini();
   if (tabel === "akun" && aksi === "ubah" && data.status === "nonaktif") stmtAkhir.push(env.DB.prepare("DELETE FROM sesi WHERE akun_id = ?").bind(Number(id)));
 
   // 5. pernyataan utama
@@ -656,11 +666,167 @@ export async function langgananAdmin(env, akun, { hal = 1, status, csv = false }
   });
 }
 
+/* ========================= Pesan 0016: chat akun ke admin ========================= */
+// Akun hanya menyentuh utas miliknya (WHERE akun_id = ?); admin dan super melihat semua. Hasil null = migrasi 0016 belum diterapkan (rute membalas 503).
+// Tiap tulis = batch([tulis, jejak]); jejak hanya memuat panjang isi, bukan isinya (data pribadi, K20).
+export const TOPIK_PESAN = ["umum", "koreksi", "keanggotaan", "kerja_sama", "wilayah", "teknis"];
+export const STATUS_PESAN = ["baru", "dibalas", "selesai"];
+const bacaLampiran = (s) => { try { return s ? JSON.parse(s) : null; } catch { return null; } };
+const SEL_PESAN = "SELECT id, dari, isi, lampiran, waktu FROM pesan WHERE utas_id = ? ORDER BY waktu, rowid LIMIT 500";
+const jejakPesan = (env, akun, aksi, tabel, barisId, ringkas) => jejakAdm(env, akun, aksi, tabel, barisId, ringkas);
+
+export async function pesanDaftarSaya(env, akun) {
+  gerbangMasuk(akun);
+  return tanpaTabel(async () => {
+    const [u, b] = await env.DB.batch([
+      env.DB.prepare("SELECT u.id, u.topik, u.status, u.dibuat, u.diubah, u.dibaca_akun, " +
+        "(SELECT substr(isi, 1, 120) FROM pesan WHERE utas_id = u.id ORDER BY waktu DESC, rowid DESC LIMIT 1) AS terakhir, " +
+        "(SELECT dari FROM pesan WHERE utas_id = u.id ORDER BY waktu DESC, rowid DESC LIMIT 1) AS terakhir_dari " +
+        "FROM pesan_utas u WHERE u.akun_id = ? ORDER BY u.diubah DESC LIMIT 50").bind(akun.id),
+      env.DB.prepare("SELECT COUNT(*) AS n FROM pesan_utas WHERE akun_id = ? AND dibaca_akun = 0").bind(akun.id),
+    ]);
+    return { utas: u.results, belum: b.results[0].n };
+  });
+}
+
+// Buka satu utas dan tandai dibaca oleh pembukanya. Akun: hanya miliknya (bukan miliknya = null = 404, tidak membedakan "ada" dan "milik orang lain").
+export async function pesanBuka(env, akun, id, { admin = false } = {}) {
+  if (admin) gerbangAdm(akun); else gerbangMasuk(akun);
+  return tanpaTabel(async () => {
+    const [u, m] = await env.DB.batch([
+      admin
+        ? env.DB.prepare("SELECT u.id, u.topik, u.status, u.dibuat, u.diubah, u.dibaca_admin, u.akun_id, a.nama, a.surel FROM pesan_utas u LEFT JOIN akun a ON a.id = u.akun_id WHERE u.id = ?").bind(id)
+        : env.DB.prepare("SELECT id, topik, status, dibuat, diubah, dibaca_admin FROM pesan_utas WHERE id = ? AND akun_id = ?").bind(id, akun.id),
+      env.DB.prepare(SEL_PESAN).bind(id),
+    ]);
+    const utas = u.results[0];
+    if (!utas) return { utas: null, pesan: [] };
+    await env.DB.prepare(admin ? "UPDATE pesan_utas SET dibaca_admin = 1 WHERE id = ? AND dibaca_admin = 0" : "UPDATE pesan_utas SET dibaca_akun = 1 WHERE id = ? AND akun_id = ? AND dibaca_akun = 0")
+      .bind(...(admin ? [id] : [id, akun.id])).run();
+    if (admin) utas.dibaca_admin = 1;
+    return { utas, pesan: m.results.map((x) => ({ ...x, lampiran: bacaLampiran(x.lampiran) })) };
+  });
+}
+
+// Akun mengirim: utas baru (utasId kosong, butuh topik) atau tambahan di utas miliknya. Utas yang bukan miliknya = { ada: false }.
+export async function pesanKirim(env, akun, { utasId, uid, topik, isi, lampiran = null, pid }) {
+  gerbangMasuk(akun);
+  if (!utasId && !TOPIK_PESAN.includes(topik)) throw salah("topik tidak sah");
+  if (typeof isi !== "string" || isi.length < 1 || isi.length > 2000) throw salah("isi tidak sah");
+  return tanpaTabel(async () => {
+    const ket = (utasId ? "pesan akun" : "utas baru") + ", " + isi.length + " karakter";
+    const lamp = lampiran ? JSON.stringify(lampiran) : null;
+    try {
+      if (utasId) {
+        const ada = await env.DB.prepare("SELECT 1 AS x FROM pesan_utas WHERE id = ? AND akun_id = ?").bind(utasId, akun.id).first();
+        if (!ada) return { ada: false };
+        await env.DB.batch([
+          env.DB.prepare("UPDATE pesan_utas SET status = 'baru', dibaca_admin = 0, dibaca_akun = 1, diubah = unixepoch() WHERE id = ? AND akun_id = ?").bind(utasId, akun.id),
+          env.DB.prepare("INSERT INTO pesan (id, utas_id, dari, akun_id, isi, lampiran) VALUES (?, ?, 'akun', ?, ?, ?)").bind(pid, utasId, akun.id, isi, lamp),
+          jejakPesan(env, akun, "tambah", "pesan", pid, ket),
+        ]);
+        return { ada: true, utas_id: utasId, id: pid };
+      }
+      await env.DB.batch([
+        env.DB.prepare("INSERT INTO pesan_utas (id, akun_id, topik) VALUES (?, ?, ?)").bind(uid, akun.id, topik),
+        env.DB.prepare("INSERT INTO pesan (id, utas_id, dari, akun_id, isi, lampiran) VALUES (?, ?, 'akun', ?, ?, ?)").bind(pid, uid, akun.id, isi, lamp),
+        jejakPesan(env, akun, "tambah", "pesan_utas", uid, ket),
+      ]);
+      return { ada: true, utas_id: uid, id: pid };
+    } catch (e) { throw terjemah(e); }
+  });
+}
+
+export async function pesanLampiran(env, akun, utasId, pid, { admin = false } = {}) {
+  if (admin) gerbangAdm(akun); else gerbangMasuk(akun);
+  return tanpaTabel(async () => {
+    const r = await env.DB.prepare("SELECT m.lampiran FROM pesan m JOIN pesan_utas u ON u.id = m.utas_id WHERE m.id = ? AND m.utas_id = ? AND m.lampiran IS NOT NULL" + (admin ? "" : " AND u.akun_id = ?"))
+      .bind(...(admin ? [pid, utasId] : [pid, utasId, akun.id])).first();
+    return { lampiran: bacaLampiran(r?.lampiran) };
+  });
+}
+
+export async function pesanBelumAdmin(env, akun) {
+  gerbangAdm(akun);
+  return tanpaTabel(async () => (await env.DB.prepare("SELECT COUNT(*) AS n FROM pesan_utas WHERE dibaca_admin = 0").first()).n);
+}
+
+export async function pesanAdminDaftar(env, akun, { status, topik, hal = 1 } = {}) {
+  gerbangAdm(akun);
+  if (status && !STATUS_PESAN.includes(status)) throw salah("status tidak sah");
+  if (topik && !TOPIK_PESAN.includes(topik)) throw salah("topik tidak sah");
+  const h = Math.min(Math.max(Number(hal) || 1, 1), 10000);
+  const w = [], b = [];
+  if (status) { w.push("u.status = ?"); b.push(status); }
+  if (topik) { w.push("u.topik = ?"); b.push(topik); }
+  const where = w.length ? " WHERE " + w.join(" AND ") : "";
+  return tanpaTabel(async () => {
+    const [r, t, n] = await env.DB.batch([
+      env.DB.prepare("SELECT u.id, u.topik, u.status, u.dibuat, u.diubah, u.dibaca_admin, u.akun_id, a.nama, a.surel, " +
+        "(SELECT substr(isi, 1, 120) FROM pesan WHERE utas_id = u.id ORDER BY waktu DESC, rowid DESC LIMIT 1) AS terakhir, " +
+        "(SELECT dari FROM pesan WHERE utas_id = u.id ORDER BY waktu DESC, rowid DESC LIMIT 1) AS terakhir_dari " +
+        "FROM pesan_utas u LEFT JOIN akun a ON a.id = u.akun_id" + where + " ORDER BY u.diubah DESC, u.rowid DESC LIMIT ? OFFSET ?").bind(...b, HALAMAN_ADM, (h - 1) * HALAMAN_ADM),
+      env.DB.prepare("SELECT COUNT(*) AS n FROM pesan_utas u" + where).bind(...b),
+      env.DB.prepare("SELECT COUNT(*) AS n FROM pesan_utas WHERE dibaca_admin = 0"),
+    ]);
+    return { baris: r.results, total: t.results[0].n, belum: n.results[0].n, hal: h };
+  });
+}
+
+export async function pesanAdminBalas(env, akun, utasId, { pid, isi, lampiran = null }) {
+  gerbangAdm(akun);
+  if (typeof isi !== "string" || isi.length < 1 || isi.length > 2000) throw salah("isi tidak sah");
+  return tanpaTabel(async () => {
+    const ada = await env.DB.prepare("SELECT 1 AS x FROM pesan_utas WHERE id = ?").bind(utasId).first();
+    if (!ada) return { ada: false };
+    try {
+      await env.DB.batch([
+        env.DB.prepare("UPDATE pesan_utas SET status = 'dibalas', dibaca_admin = 1, dibaca_akun = 0, diubah = unixepoch() WHERE id = ?").bind(utasId),
+        env.DB.prepare("INSERT INTO pesan (id, utas_id, dari, akun_id, isi, lampiran) VALUES (?, ?, 'admin', ?, ?, ?)").bind(pid, utasId, akun.id, isi, lampiran ? JSON.stringify(lampiran) : null),
+        jejakPesan(env, akun, "kirim", "pesan", pid, "balasan admin, " + isi.length + " karakter, utas " + utasId),
+      ]);
+    } catch (e) { throw terjemah(e); }
+    return { ada: true, id: pid };
+  });
+}
+
+// Tandai selesai atau buka lagi. Idempoten; jejak hanya bila status benar-benar berubah.
+export async function pesanAdminStatus(env, akun, utasId, status) {
+  gerbangAdm(akun);
+  if (!["baru", "selesai"].includes(status)) throw salah("status tidak sah");
+  return tanpaTabel(async () => {
+    const [u, , s] = await env.DB.batch([
+      env.DB.prepare("UPDATE pesan_utas SET status = ? WHERE id = ? AND status <> ?").bind(status, utasId, status),
+      env.DB.prepare("INSERT INTO jejak (siapa, peran, aksi, tabel, baris_id, ke) SELECT ?, ?, 'ubah', 'pesan_utas', ?, ? WHERE changes() > 0")
+        .bind(akun.id, akun.peran, utasId, JSON.stringify({ ringkas: "status utas menjadi " + status })),
+      env.DB.prepare("SELECT 1 AS x FROM pesan_utas WHERE id = ?").bind(utasId),
+    ]);
+    return { ada: u.meta.changes > 0 || s.results.length > 0 };
+  });
+}
+
+/* ========================================= event (RSVP) ========================================== */
+// Jumlah peserta terdaftar per acara: semua akun masuk boleh melihat angka (bukan baris orang lain).
+export async function eventHitung(env, akun) {
+  if (peranEfektif(akun) === "publik") throw tolak("event: harus masuk");
+  const r = await env.DB.prepare("SELECT event_id, coalesce(sum(jumlah), 0) AS n FROM event_daftar WHERE status = 'terdaftar' GROUP BY event_id").all();
+  return Object.fromEntries(r.results.map((x) => [x.event_id, x.n]));
+}
+// Peserta satu acara beserta nama/surel akun: admin dan super saja. `unduh` mencatat jejak 'tinjau' (ekspor berisi data pribadi).
+export async function eventPeserta(env, akun, eventId, { unduh = false } = {}) {
+  const p = peranEfektif(akun);
+  if (!["admin", "super"].includes(p)) throw tolak("event: peserta hanya untuk admin");
+  const r = await env.DB.prepare(
+    "SELECT d.id, d.akun_id, a.nama, a.surel, d.jumlah, d.instansi, d.telepon, d.catatan, d.status, d.waktu FROM event_daftar d JOIN akun a ON a.id = d.akun_id WHERE d.event_id = ? ORDER BY d.id").bind(String(eventId)).all();
+  if (unduh) await jejakTulis(env, { siapa: akun.id, peran: p, aksi: "tinjau", tabel: "event_daftar", barisId: String(eventId).slice(0, 80) });
+  return r.results;
+}
+
 /* ========================================= sistem (tanpa peran) =================================== */
 const BATCH = (env, s) => env.DB.batch(s);
 const ip16 = (v) => (v && String(v).length === 16 ? String(v) : null);
 const LEBAR = { "masuk-ip": 900, "masuk-surel": 900, "masuk-log": 60, aktivasi: 3600, "ganti-sandi": 3600, koreksi: 3600, "keluar-data": 3600,
-  cari: 60, unduh: 3600, "riset-ai": 3600, "ringkasan-ai": 3600, kurasi: 3600, impor: 3600 };
+  cari: 60, "riset-ai": 3600, "ringkasan-ai": 3600, kurasi: 3600, impor: 3600 };
 
 export async function cariAkunUntukMasuk(env, surel) {
   if (typeof surel !== "string") return null;

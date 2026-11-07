@@ -45,7 +45,8 @@ export function paragraf(teks) {
     return { p };
   });
 }
-export const topikDari = (teks) => Object.entries(ATURAN).filter(([, re]) => re.test(teks.toLowerCase().replace(/[^\p{L}\p{N}]+/gu, " "))).map(([k]) => k).slice(0, 5);
+const TOPIK_SAH = new Set(["bayu", "bioenergi", "biomassa-sampah", "efisiensi", "elektrifikasi", "hidro", "industri", "jaringan", "karbon", "kebijakan", "nuklir", "panas-bumi", "pembiayaan", "penyimpanan", "surya", "transisi-adil"]); // sama dengan kamus brt.tek.*
+export const topikDari = (teks) => Object.entries(ATURAN).filter(([k, re]) => TOPIK_SAH.has(k) && re.test(teks.toLowerCase().replace(/[^\p{L}\p{N}]+/gu, " "))).map(([k]) => k).slice(0, 5);
 
 /** Kutipan pendek (<= 25 kata) dari teks halaman media: kalimat berpetik dalam paragraf yang menyebut METI/ketua. */
 export function kutipanPendek(teks) {

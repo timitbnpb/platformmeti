@@ -25,7 +25,8 @@ const TAB = [
   { href: "/regulasi", kunci: "nav.regulasi", ikon: "regulasi", hak: null },
   { href: "/pustaka", kunci: "nav.pustaka", ikon: "buku", hak: null },
   { kunci: "nav.media", ikon: "berita", hak: null, grup: [
-    { href: "/berita", kunci: "nav.berita", ikon: "berita" }, { href: "/siaran-pers", kunci: "nav.siaran", ikon: "siaran" }] },
+    { href: "/berita", kunci: "nav.berita", ikon: "berita" }, { href: "/siaran-pers", kunci: "nav.siaran", ikon: "siaran" },
+    { href: "/galeri", kunci: "nav.foto", ikon: "gambar" }, { href: "/video", kunci: "nav.video", ikon: "video" }, { href: "/podcast", kunci: "nav.podcast", ikon: "mikrofon" }, { href: "/event", kunci: "nav.event", ikon: "kalender-bintang" }] },
   { href: "/kalender", kunci: "nav.kalender", ikon: "kalender", hak: null },
   { href: "/direktori", kunci: "nav.direktori", ikon: "direktori", hak: "masuk" },
   { href: "/tentang", kunci: "nav.tentang", ikon: "info", hak: null },

@@ -71,7 +71,7 @@ export const rute = {
     if (!d) return gagal("tidak_ditemukan");
     const berkas = d.berkas.find((x) => x.id === berkasId);
     if (!berkas) return gagal("tidak_ditemukan");
-    if ((await hak.catatLaju(env, "unduh:" + akun.id, 3600)) > BATAS_UNDUH_JAM) return gagal("laju_terlampaui");
+    if ((await hak.catatLaju(env, "kurasi:pu" + akun.id, 3600)) > BATAS_UNDUH_JAM) return gagal("laju_terlampaui");
     const profil = await hak.pustakaProfil(env, akun);
     if (!profil) return gagal("layanan");
     let tujuan = b.tujuan;

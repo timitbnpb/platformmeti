@@ -8,6 +8,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import assert from 'node:assert/strict';
 import { fileURLToPath } from 'node:url';
+import { gabung } from './kalender_perkaya.mjs';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '../..');
 const AGENDA = path.join(ROOT, 'data-panen/arsip-meti/agenda.jsonl'), TENGGAT = path.join(ROOT, 'data-panen/arsip-meti/tenggat.jsonl');
@@ -55,7 +56,9 @@ if (process.argv[1] === fileURLToPath(import.meta.url)) {
     selftest();
     const reg = JSON.parse(fs.readFileSync(REGULASI, 'utf8'));
     const hasil = bangun(baca(AGENDA), reg.baris, baca(TENGGAT), process.env.TANGGAL_BANGUN || reg.dibangun_pada);
-    fs.writeFileSync(KELUAR, JSON.stringify(hasil));
-    console.log(`kalender.json: ${hasil.jumlah} baris`);
+    const perkaya = path.join(ROOT, 'data/kalender_perkaya.json');
+    const akhir = fs.existsSync(perkaya) ? gabung(hasil, JSON.parse(fs.readFileSync(perkaya, 'utf8'))) : hasil;
+    fs.writeFileSync(KELUAR, JSON.stringify(akhir));
+    console.log(`kalender.json: ${akhir.jumlah} baris`);
   }
 }

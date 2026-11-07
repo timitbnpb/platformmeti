@@ -3,6 +3,8 @@
 import { t } from "/i18n.js";
 import { esc, ikon } from "/inti/umum.js";
 import { kabar } from "/inti/aksi_ex.js";
+import { urlMutlak, tautanBagi } from "/inti/bagi.js";
+export { urlMutlak, tautanBagi };
 
 export const cariHtml = ({ id, label, placeholder }) =>
   `<label class="jm-cari">${ikon("cari2", 18)}<span class="sr">${esc(label)}</span><input id="${esc(id)}" type="search" autocomplete="off" placeholder="${esc(placeholder ?? label)}"></label>`;
@@ -203,16 +205,6 @@ export const unduhRegHtml = (r) => {
 /* Tombol bagikan bersama (permintaan pemilik 8 Nov 2026): Facebook, X, WhatsApp, LinkedIn, salin tautan.
    Tautan dibuka di tab baru dengan rel noopener; url kanonik (relatif dijadikan mutlak). Penyalinan ditangani satu pendengar klik di bawah.
    Pakai: bagikanHtml({ url: "/siaran-pers/abc", judul: "Judul", kelas: "kecil" }). */
-export const urlMutlak = (u) => (/^https?:\/\//i.test(u) ? u : (typeof location !== "undefined" ? location.origin : "") + u);
-export const tautanBagi = (url, judul) => {
-  const u = encodeURIComponent(url), j = encodeURIComponent(judul);
-  return {
-    fb: `https://www.facebook.com/sharer/sharer.php?u=${u}`,
-    x: `https://twitter.com/intent/tweet?url=${u}&text=${j}`,
-    wa: `https://wa.me/?text=${encodeURIComponent(judul + " " + url)}`,
-    li: `https://www.linkedin.com/sharing/share-offsite/?url=${u}`,
-  };
-};
 export const bagikanHtml = ({ url, judul, kelas = "" }) => {
   const mutlak = urlMutlak(url), h = tautanBagi(mutlak, judul);
   const a = (k, ik, kunci) => `<a class="jm-bagi-b" href="${esc(h[k])}" target="_blank" rel="noopener noreferrer" title="${esc(t(kunci))}" aria-label="${esc(t(kunci))}">${ikon(ik, 18)}</a>`;

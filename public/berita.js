@@ -2,7 +2,7 @@ import { mulaiHalaman } from "/inti/kepala.js";
 import { khUbin } from "/inti/kh.js";
 import { t, angka, tanggal } from "/i18n.js";
 import { esc, nanti, debounce, hantuHtml, galatHtml, ikon, fotoBerita } from "/inti/umum.js";
-import { cariHtml, pilihHtml, hapusHtml, hitungHtml, exHtml, sumberHtml, unduhRegHtml } from "/inti/komponen.js";
+import { cariHtml, pilihHtml, hapusHtml, hitungHtml, exHtml, sumberHtml, unduhRegHtml, bagikanHtml } from "/inti/komponen.js";
 import { aksiHtml, hlHtml } from "/inti/aksi_ex.js";
 import { volumeSvg, batangMendatar, jumlahJendela } from "/berita_grafik.js";
 import { muat, label, urlAman, norm, namaRegulasi } from "/publik.js";
@@ -157,7 +157,7 @@ const grupDari = (iso) => { const u = umur(iso); return GRUP.find(([, f]) => f(u
 
 function itemBerita(r) {
   const chips = tagHtml(r) + orgHtml(r);
-  return `<li class="brt-item">${tautan(r, sampul(r, "brt-s32", 96, 64), "brt-gbr")}<div>${tautan(r, esc(r.judul), "brt-judul")}${metaHtml(r)}${chips ? `<div class="brt-label">${chips}</div>` : ""}</div></li>`;
+  return `<li class="brt-item">${tautan(r, sampul(r, "brt-s32", 96, 64), "brt-gbr")}<div>${tautan(r, esc(r.judul), "brt-judul")}${metaHtml(r)}${chips ? `<div class="brt-label">${chips}</div>` : ""}${urlAman(r.url) ? bagikanHtml({ url: urlAman(r.url), judul: r.judul, kelas: "kecil" }) : ""}</div></li>`;
 }
 function durasi(d) { const j = Math.floor(d / 3600), m = Math.floor((d % 3600) / 60), s = String(d % 60).padStart(2, "0"); return j ? `${j}:${String(m).padStart(2, "0")}:${s}` : `${m}:${s}`; }
 function itemVideo(r) {

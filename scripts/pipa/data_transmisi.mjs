@@ -11,7 +11,7 @@ export const UA = 'METI-Network-research/0.1 (+https://platformmeti.timitbnpb.wo
 export const HOST = 'https://overpass.private.coffee/api/interpreter';
 // Ubin 6x8 derajat tanpa ubin laut murni (satu kueri per ubin; server publik lambat, 85 dtk untuk kueri kecil). S,W,N,E.
 export const WILAYAH = {};
-for (let s = -11; s < 6; s += 6) for (let w = 95; w < 141; w += 8) {
+for (const s of [-5, -11, 1]) for (let w = 95; w < 141; w += 8) { // urutan: Sumatera-Kalimantan-Sulawesi dahulu
   if ((s === -11 && w === 95) || (s === 1 && w === 135)) continue;
   WILAYAH[`u_${s}_${w}`] = [s, w, s + 6, Math.min(w + 8, 141.1)];
 }

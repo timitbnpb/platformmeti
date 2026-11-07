@@ -1,0 +1,1 @@
+qrcode-generator 1.4.4, (c) 2009 Kazuhiko Arase, lisensi MIT (http://www.opensource.org/licenses/mit-license.php). Sumber: npm qrcode-generator. Hanya dibungkus sebagai modul ES (export default).

@@ -60,6 +60,86 @@
    "jenis": "situs-resmi",
    "tingkat_bukti": "situs-sendiri",
    "tanggal": "2026-11-07"
+  },
+  "su_1490e681": {
+   "nama": "JPEN = Jateng Petro Energi",
+   "provinsi": "Jawa Tengah",
+   "jenis": "nama-lembaga",
+   "tingkat_bukti": "inferensi",
+   "catatan": "provinsi tersirat dari nama BUMD; kota kantor belum diverifikasi",
+   "tanggal": "2026-11-08"
+  },
+  "su_f4ad4493": {
+   "nama": "Jateng Petro Energi",
+   "provinsi": "Jawa Tengah",
+   "jenis": "nama-lembaga",
+   "tingkat_bukti": "inferensi",
+   "catatan": "provinsi tersirat dari nama BUMD; kota kantor belum diverifikasi",
+   "tanggal": "2026-11-08"
+  },
+  "su_18b7b5a0": {
+   "nama": "Petrogas Jatim Utama",
+   "provinsi": "Jawa Timur",
+   "jenis": "nama-lembaga",
+   "tingkat_bukti": "inferensi",
+   "catatan": "provinsi tersirat dari nama BUMD; kota kantor belum diverifikasi",
+   "tanggal": "2026-11-08"
+  },
+  "su_22bce0b8": {
+   "nama": "Petrogas Jatim Adipodai",
+   "provinsi": "Jawa Timur",
+   "jenis": "nama-lembaga",
+   "tingkat_bukti": "inferensi",
+   "catatan": "provinsi tersirat dari nama BUMD; kota kantor belum diverifikasi",
+   "tanggal": "2026-11-08"
+  },
+  "su_251f76fb": {
+   "nama": "Petrogas Jatim Utama Cendana",
+   "provinsi": "Jawa Timur",
+   "jenis": "nama-lembaga",
+   "tingkat_bukti": "inferensi",
+   "catatan": "provinsi tersirat dari nama BUMD; kota kantor belum diverifikasi",
+   "tanggal": "2026-11-08"
+  },
+  "su_3118eac2": {
+   "nama": "Petrogas Jatim Sumekar",
+   "provinsi": "Jawa Timur",
+   "jenis": "nama-lembaga",
+   "tingkat_bukti": "inferensi",
+   "catatan": "provinsi tersirat dari nama BUMD; kota kantor belum diverifikasi",
+   "tanggal": "2026-11-08"
+  },
+  "su_e007f9f2": {
+   "nama": "Petrogas Pantai Madura (Madura = Jawa Timur)",
+   "provinsi": "Jawa Timur",
+   "jenis": "nama-lembaga",
+   "tingkat_bukti": "inferensi",
+   "catatan": "provinsi tersirat dari nama BUMD; kota kantor belum diverifikasi",
+   "tanggal": "2026-11-08"
+  },
+  "su_34341e83": {
+   "nama": "Migas Hulu Jabar ONWJ",
+   "provinsi": "Jawa Barat",
+   "jenis": "nama-lembaga",
+   "tingkat_bukti": "inferensi",
+   "catatan": "provinsi tersirat dari nama BUMD; kota kantor belum diverifikasi",
+   "tanggal": "2026-11-08"
+  },
+  "su_e3a901c0": {
+   "nama": "Migas Utama Jabar",
+   "provinsi": "Jawa Barat",
+   "jenis": "nama-lembaga",
+   "tingkat_bukti": "inferensi",
+   "catatan": "provinsi tersirat dari nama BUMD; kota kantor belum diverifikasi",
+   "tanggal": "2026-11-08"
+  },
+  "su_74cecfac": {
+   "nama": "MUJ Energi Indonesia (MUJI), anak Migas Utama Jabar",
+   "provinsi": "Jawa Barat",
+   "jenis": "nama-lembaga",
+   "tingkat_bukti": "inferensi",
+   "catatan": "provinsi tersirat dari nama BUMD; kota kantor belum diverifikasi",
+   "tanggal": "2026-11-08"
   }
  }
 }

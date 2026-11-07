@@ -3,10 +3,12 @@
 import { t } from "/i18n.js";
 import { api, galatTeks, esc, pesanHtml } from "/inti/umum.js";
 import { mulaiHalaman } from "/inti/kepala.js";
+import { sosmedHtml } from "/inti/sosmed.js";
 
 const saya = await mulaiHalaman();
 const $ = (id) => document.getElementById(id);
 const isi = $("lg-isi");
+$("lg-sos").innerHTML = sosmedHtml();
 const MINAT = ["kebijakan", "proyek", "acara", "kajian", "lowongan"];
 const RE_SUREL = /^[^\s@]{1,64}@[^\s@.]+(\.[^\s@.]+)+$/;
 const RE_TOKEN = /^[0-9a-f]{64}$/;

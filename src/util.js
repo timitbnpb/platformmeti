@@ -15,6 +15,8 @@ export const KATALOG = {
   persetujuan_wajib: [422, "Pilih tujuan penggunaan dan setujui ketentuan unduh."],
   berkas_belum_ada: [404, "Berkas belum tersedia."],
   sumber_wajib: [422, "Fakta dan ikatan wajib bersumber."],
+  kuota_penuh: [409, "Kuota acara sudah penuh."],
+  pendaftaran_tutup: [409, "Pendaftaran acara ini tidak dibuka."],
   laju_terlampaui: [429, "Terlalu sering. Coba lagi nanti."],
   server: [500, "Terjadi kesalahan di server."],
   layanan: [503, "Layanan belum siap."],

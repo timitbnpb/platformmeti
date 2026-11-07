@@ -1,0 +1,284 @@
+{
+ "diambil": "2026-11-08",
+ "sumber_awal": {
+  "label": "Aspirasi RDPU hlm 4",
+  "tanggal": "2026-09-08"
+ },
+ "anggota_sumber": {
+  "label": "Basis data keanggotaan METI, agregat per provinsi",
+  "tanggal": "2026-05-22"
+ },
+ "versi_angka": [
+  {
+   "sumber": "Aspirasi RDPU hlm 4 dan deck UKP",
+   "tanggal": "2026-09-08",
+   "berdiri": 6,
+   "segera": 5,
+   "rencana": 25
+  },
+  {
+   "sumber": "Deck TV Muhammadiyah",
+   "tanggal": "2026-10-28",
+   "berdiri": 8,
+   "segera": 5,
+   "rencana": 23
+  },
+  {
+   "sumber": "Panduan pelantikan Oktober 2026",
+   "tanggal": "2026-10-01",
+   "berdiri": 4,
+   "segera": 5,
+   "rencana": null
+  }
+ ],
+ "bidang_usulan": [
+  "kebijakan",
+  "organisasi",
+  "riset-sdm",
+  "industri-pembiayaan",
+  "energi-daerah",
+  "kepemudaan"
+ ],
+ "kit": [
+  {
+   "id": "panduan-pelantikan",
+   "jenis": "pdf",
+   "ext": "pdf"
+  },
+  {
+   "id": "templat-sk",
+   "jenis": "docx",
+   "ext": "docx"
+  }
+ ],
+ "provinsi": [
+  {
+   "kode": "11",
+   "nama": "Aceh",
+   "individu": null,
+   "organisasi": 0
+  },
+  {
+   "kode": "12",
+   "nama": "Sumatera Utara",
+   "individu": 58,
+   "organisasi": 2
+  },
+  {
+   "kode": "13",
+   "nama": "Sumatera Barat",
+   "individu": null,
+   "organisasi": 0
+  },
+  {
+   "kode": "14",
+   "nama": "Riau",
+   "individu": null,
+   "organisasi": 0
+  },
+  {
+   "kode": "15",
+   "nama": "Jambi",
+   "individu": null,
+   "organisasi": 0
+  },
+  {
+   "kode": "16",
+   "nama": "Sumatera Selatan",
+   "individu": null,
+   "organisasi": 0
+  },
+  {
+   "kode": "17",
+   "nama": "Bengkulu",
+   "individu": null,
+   "organisasi": 0
+  },
+  {
+   "kode": "18",
+   "nama": "Lampung",
+   "individu": null,
+   "organisasi": 0
+  },
+  {
+   "kode": "19",
+   "nama": "Kepulauan Bangka Belitung",
+   "individu": null,
+   "organisasi": 0
+  },
+  {
+   "kode": "21",
+   "nama": "Kepulauan Riau",
+   "individu": null,
+   "organisasi": 0
+  },
+  {
+   "kode": "31",
+   "nama": "DKI Jakarta",
+   "individu": 473,
+   "organisasi": 27
+  },
+  {
+   "kode": "32",
+   "nama": "Jawa Barat",
+   "individu": 58,
+   "organisasi": 1
+  },
+  {
+   "kode": "33",
+   "nama": "Jawa Tengah",
+   "individu": 19,
+   "organisasi": 0
+  },
+  {
+   "kode": "34",
+   "nama": "DI Yogyakarta",
+   "individu": null,
+   "organisasi": 0
+  },
+  {
+   "kode": "35",
+   "nama": "Jawa Timur",
+   "individu": 86,
+   "organisasi": 1
+  },
+  {
+   "kode": "36",
+   "nama": "Banten",
+   "individu": 58,
+   "organisasi": 1
+  },
+  {
+   "kode": "51",
+   "nama": "Bali",
+   "individu": null,
+   "organisasi": 0
+  },
+  {
+   "kode": "52",
+   "nama": "Nusa Tenggara Barat",
+   "individu": null,
+   "organisasi": 0
+  },
+  {
+   "kode": "53",
+   "nama": "Nusa Tenggara Timur",
+   "individu": null,
+   "organisasi": 0
+  },
+  {
+   "kode": "61",
+   "nama": "Kalimantan Barat",
+   "individu": 51,
+   "organisasi": 0
+  },
+  {
+   "kode": "62",
+   "nama": "Kalimantan Tengah",
+   "individu": null,
+   "organisasi": 0
+  },
+  {
+   "kode": "63",
+   "nama": "Kalimantan Selatan",
+   "individu": null,
+   "organisasi": 0
+  },
+  {
+   "kode": "64",
+   "nama": "Kalimantan Timur",
+   "individu": null,
+   "organisasi": 0
+  },
+  {
+   "kode": "65",
+   "nama": "Kalimantan Utara",
+   "individu": null,
+   "organisasi": 0
+  },
+  {
+   "kode": "71",
+   "nama": "Sulawesi Utara",
+   "individu": null,
+   "organisasi": 0
+  },
+  {
+   "kode": "72",
+   "nama": "Sulawesi Tengah",
+   "individu": null,
+   "organisasi": 0
+  },
+  {
+   "kode": "73",
+   "nama": "Sulawesi Selatan",
+   "individu": null,
+   "organisasi": 0
+  },
+  {
+   "kode": "74",
+   "nama": "Sulawesi Tenggara",
+   "individu": null,
+   "organisasi": 0
+  },
+  {
+   "kode": "75",
+   "nama": "Gorontalo",
+   "individu": null,
+   "organisasi": 0
+  },
+  {
+   "kode": "76",
+   "nama": "Sulawesi Barat",
+   "individu": null,
+   "organisasi": 0
+  },
+  {
+   "kode": "81",
+   "nama": "Maluku",
+   "individu": null,
+   "organisasi": 0
+  },
+  {
+   "kode": "82",
+   "nama": "Maluku Utara",
+   "individu": null,
+   "organisasi": 0
+  },
+  {
+   "kode": "91",
+   "nama": "Papua",
+   "individu": null,
+   "organisasi": 0
+  },
+  {
+   "kode": "92",
+   "nama": "Papua Barat",
+   "individu": null,
+   "organisasi": 0
+  },
+  {
+   "kode": "93",
+   "nama": "Papua Selatan",
+   "individu": null,
+   "organisasi": 0
+  },
+  {
+   "kode": "94",
+   "nama": "Papua Tengah",
+   "individu": null,
+   "organisasi": 0
+  },
+  {
+   "kode": "95",
+   "nama": "Papua Pegunungan",
+   "individu": null,
+   "organisasi": 0
+  },
+  {
+   "kode": "96",
+   "nama": "Papua Barat Daya",
+   "individu": null,
+   "organisasi": 0
+  }
+ ]
+}
