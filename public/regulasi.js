@@ -147,6 +147,7 @@ function gambarIsi() {
 
 /* ---------- pelacak kebijakan: baru 90 hari, mengubah/mencabut, dalam pembahasan (tenggat: belum ada datanya, bagian tidak dibuat) ---------- */
 const HARI = 90, MAKS_UBAH = 6;
+const potong = (s, n) => (s.length > n ? s.slice(0, n - 1).trimEnd() + "\u2026" : s);
 const tglReg = (r) => r.tanggal_diundangkan || r.tanggal_ditetapkan || "";
 /* sel aturan lengkap: logo penerbit, kode, judul satu baris, tanggal, unduh */
 const selReg = (id) => { const x = D.byId.get(id); if (!x) return `<div class="jm-pk-sel"><span class="jm-pk-nm">${esc(id)}</span></div>`;
@@ -171,7 +172,8 @@ function pkUbah() {
   const pasang = D.baris.filter((r) => (r.ikatan || []).some((x) => x.jenis === "mengubah" || x.jenis === "mencabut")).sort((a, b) => (tglReg(b) || String(b.tahun)).localeCompare(tglReg(a) || String(a.tahun))).slice(0, MAKS_UBAH);
   if (!pasang.length) return "";
   const baris = pasang.flatMap((r) => (r.ikatan || []).filter((x) => x.jenis === "mengubah" || x.jenis === "mencabut").slice(0, 2).map((x) =>
-    `<li class="jm-pk-ub2">${selReg(r.id)}<span class="jm-pk-aksi jm-tanda jm-tanda-${x.jenis}">${ikon("panah-kanan", 16)}${esc(t("reg.pk.kata." + x.jenis))}</span>${selReg(x.ke)}</li>`));
+    `<li class="jm-pk-ub2" data-r="${esc(r.id)}" data-k="${esc(x.ke)}" data-j="${esc(x.jenis)}">${selReg(r.id)}<span class="jm-pk-aksi jm-tanda jm-tanda-${x.jenis}">${ikon("panah-kanan", 16)}${esc(t("reg.pk.kata." + x.jenis))}</span>${selReg(x.ke)}
+      <p class="jm-pk-ring">${esc(potong(r.ringkasan || r.judul || "", 170))}</p><button type="button" class="jm-pk-lihat" data-pasang>${ikon("info", 16)}<span>${esc(t("reg.pk.lihat"))}</span>${ikon("panah-kanan", 16)}</button></li>`));
   return pkBagian("ubah", t("reg.pk.ubah"), t("reg.pk.ubah.sub"), `<ul class="jm-pk-ubah">${baris.join("")}</ul>`);
 }
 const LANGKAH = ["usul", "prolegnas", "pembahasan", "pengesahan", "diundangkan"];
@@ -194,6 +196,27 @@ async function gambarRuu() {
   el.innerHTML = isi ? exHtml({ id: "ex-pk", ikon: "regulasi", topik: t("reg.pk.ey"), judulHtml: esc(t("reg.pk.j")), subHtml: esc(t("reg.pk.sub")), aksiHtml: " ", isiHtml: `<div class="jm-pk">${isi}</div>` }) : "";
 }
 
+/* ---------- pop-up pasangan: ringkasan kedua aturan + apa yang diubah/dicabut + unduh ---------- */
+function kartuReg(x, judulKunci) {
+  const unduh = urlAman(x.url_pdf) ? `<a class="jm-tbl jm-tbl-kecil" href="${esc(x.url_pdf)}" target="_blank" rel="noopener noreferrer" download>${ikon("pdf", 16)}<span>${esc(t("reg.unduh"))}</span></a>` : "";
+  const naskah = urlAman(x.url_sumber) ? `<a class="jm-tbl jm-tbl-kecil" href="${esc(x.url_sumber)}" target="_blank" rel="noopener noreferrer">${ikon("tautan", 16)}<span>${esc(t("reg.naskah"))}</span></a>` : "";
+  return `<article class="jm-rg-k"><p class="jm-rg-ey">${esc(t(judulKunci))}</p><div class="jm-rg-kep">${x.instansi_penerbit ? penerbitHtml(x.instansi_penerbit, 40) : ""}<div><b class="jm-rg-kode">${esc(namaRegulasi(x))}</b><small>${esc(tanggal(x.tanggal_ditetapkan) || String(x.tahun || ""))}</small></div></div>
+    <h3>${esc(x.judul)}</h3><p class="jm-baris-meta">${pil(x)}</p><p class="jm-rg-ring">${esc(x.ringkasan || "-")}</p><div class="jm-rg-aksi">${unduh}${naskah}<button type="button" class="jm-tbl jm-tbl-kecil" data-id="${esc(x.id)}">${esc(t("reg.pop.detail"))}</button></div></article>`;
+}
+function pasangHtml(a, b, jenis) {
+  return `<div class="jm-lembar-isi"><div class="jm-lembar-kepala"><div><p class="jm-baris-no">${esc(t("reg.pop.judul"))}</p><h2 id="pasang-j">${esc(t("reg.pop.ket." + jenis, { a: namaRegulasi(a), b: namaRegulasi(b) }))}</h2></div>
+    <button type="button" class="iconbtn" data-aksi="tutup" aria-label="${esc(t("jm.tutup"))}">${ikon("tutup", 22)}</button></div>
+    <div class="jm-rg-dua">${kartuReg(a, "reg.pop.a." + jenis)}<span class="jm-rg-tengah jm-tanda jm-tanda-${esc(jenis)}">${ikon("panah-kanan", 18)}${esc(t("reg.pk.kata." + jenis))}</span>${kartuReg(b, "reg.pop.b." + jenis)}</div>
+    <section class="jm-rg-apa"><h3>${esc(t("reg.pop.apa." + jenis))}</h3><p>${esc(t("reg.pop.ket." + jenis, { a: namaRegulasi(a), b: namaRegulasi(b) }))} ${esc(t("reg.pop.rujuk"))}</p><p>${esc(potong(a.ringkasan || a.judul || "", 400))}</p></section></div>`;
+}
+function bukaPasang(ra, rk, j) {
+  const a = D.byId.get(ra), b = D.byId.get(rk), dlg = document.getElementById("pasang");
+  if (!a || !b) return;
+  dlg.innerHTML = pasangHtml(a, b, j);
+  if (!dlg.open) dlg.showModal();
+  dlg.scrollTop = 0;
+}
+
 /* ---------- lembar profil ---------- */
 function terkait(r) {
   const proyek = D.proyek.filter((p) => (p.regulasi_ids || []).includes(r.id) || (r.proyek_ids || []).includes(p.id));
@@ -207,16 +230,16 @@ function profilHtml(r) {
   const lain = (n) => (n > 8 ? ` <small>${esc(t("reg.lainnya", { n: angka(n - 8) }))}</small>` : "");
   const sat = (p) => esc(`${p.nama}${p.lokasi?.provinsi ? ", " + p.lokasi.provinsi : ""}`);
   const dd = (k, v) => (v ? `<dt>${esc(t(k))}</dt><dd>${v}</dd>` : "");
-  return `<div class="jm-lembar-isi"><div class="jm-lembar-kepala"><div><p class="jm-baris-no">${esc(namaRegulasi(r))}</p><h2 id="lembar-j">${esc(r.judul)}</h2></div>
+  return `<div class="jm-lembar-isi"><div class="jm-lembar-kepala"><div class="jm-rg-kep jm-rg-kep-b">${r.instansi_penerbit ? penerbitHtml(r.instansi_penerbit, 48) : ""}<div><p class="jm-baris-no">${esc(namaRegulasi(r))}</p><h2 id="lembar-j">${esc(r.judul)}</h2></div></div>
     <button type="button" class="iconbtn" data-aksi="tutup" aria-label="${esc(t("jm.tutup"))}">${ikon("tutup", 22)}</button></div>
-    <div class="jm-baris-meta">${r.instansi_penerbit ? penerbitHtml(r.instansi_penerbit, 32) : ""}${pil(r)}<span class="jm-pil">${esc(label("reg.tingkat.", tingkatDari(r)))}</span></div>
+    <div class="jm-baris-meta">${pil(r)}<span class="jm-pil">${esc(label("reg.tingkat.", tingkatDari(r)))}</span>${r.tanggal_ditetapkan ? `<span class="jm-pil">${ikon("kalender", 14)}${esc(tanggal(r.tanggal_ditetapkan))}</span>` : ""}</div>
     <p>${tombolKoreksi({ entitas: "regulasi", id: r.id, nama: namaRegulasi(r) })}</p>
     <dl class="jm-dl">${dd("reg.f.jenis", esc(label("reg.jenis.", r.jenis)))}${dd("reg.f.penerbit", esc(r.instansi_penerbit))}${dd("reg.f.ditetapkan", esc(tanggal(r.tanggal_ditetapkan)))}${r.tanggal_diundangkan ? dd("reg.f.diundangkan", esc(tanggal(r.tanggal_diundangkan))) : ""}${dd("reg.f.topik", (r.topik || []).map((x) => esc(label("reg.topik.", x))).join(", "))}</dl>
     <section><h3>${esc(t("reg.f.ringkasan"))} ${/^\S+ \d+\/\d+ mengatur /.test(r.ringkasan || "") ? `<span class="jm-pil jm-pil-est">${esc(t("reg.otomatis"))}</span>` : ""}</h3><p>${esc(r.ringkasan || "-")}</p></section>
     ${r.posisi_meti ? `<section class="jm-posisi"><h3>${esc(t("reg.f.posisi"))}</h3><p>${esc(r.posisi_meti)}</p></section>` : ""}
     ${rantai("reg.rantai.ikatan", r.ikatan, "ke")}${rantai("reg.rantai.diikat", r.diikat_oleh, "dari", true)}
     ${proyek.length || program.length ? `<section><h3>${esc(t("reg.terkait"))}</h3><ul class="jm-rantai">${program.map((g) => `<li><span class="jm-pil">${esc(t("reg.program"))}</span>${esc(g.nama)}</li>`).join("")}${proyek.slice(0, 8).map((p) => `<li><span class="jm-pil">${esc(t("reg.proyek"))}</span>${sat(p)}</li>`).join("")}</ul>${lain(proyek.length)}</section>` : ""}
-    <section><h3>${esc(t("reg.f.sumber"))}</h3><p class="jm-baris-meta">${urlAman(r.url_sumber) ? `<a href="${esc(r.url_sumber)}" target="_blank" rel="noopener noreferrer">${esc(t("reg.naskah"))}</a>` : ""}${urlAman(r.url_pdf) ? `<a href="${esc(r.url_pdf)}" target="_blank" rel="noopener noreferrer">${esc(t("reg.pdf"))}</a>` : ""}<span>${esc(t("reg.diambil", { tanggal: tanggal(r.tanggal_ambil) }))}</span></p></section></div>`;
+    <section><h3>${esc(t("reg.f.sumber"))}</h3><div class="jm-rg-aksi">${urlAman(r.url_pdf) ? `<a class="jm-tbl jm-tbl-kecil" href="${esc(r.url_pdf)}" target="_blank" rel="noopener noreferrer" download>${ikon("pdf", 16)}<span>${esc(t("reg.pdf"))}</span></a>` : ""}${urlAman(r.url_sumber) ? `<a class="jm-tbl jm-tbl-kecil" href="${esc(r.url_sumber)}" target="_blank" rel="noopener noreferrer">${ikon("tautan", 16)}<span>${esc(t("reg.naskah"))}</span></a>` : ""}</div><p class="jm-rg-diambil">${esc(t("reg.diambil", { tanggal: tanggal(r.tanggal_ambil) }))}</p></section></div>`;
 }
 function bukaProfil(id) {
   const r = D.byId.get(id), dlg = document.getElementById("lembar");
@@ -294,7 +317,18 @@ async function main() {
     const b = e.target.closest("[data-hal]"); if (!b) return;
     S.hal += +b.dataset.hal; tunda(); nanti(() => document.getElementById("saring").scrollIntoView({ block: "start" }));
   });
-  document.getElementById("ruu").addEventListener("click", bukaDari);
+  document.getElementById("ruu").addEventListener("click", (e) => {
+    const ps = e.target.closest(".jm-pk-ub2");
+    if (ps && !e.target.closest("a, button[data-id]")) { bukaPasang(ps.dataset.r, ps.dataset.k, ps.dataset.j); return; }
+    bukaDari(e);
+  });
+  const dp = document.createElement("dialog");
+  dp.className = "jm-lembar"; dp.id = "pasang"; dp.setAttribute("aria-labelledby", "pasang-j");
+  document.body.append(dp);
+  dp.addEventListener("click", (e) => {
+    if (e.target === dp || e.target.closest("[data-aksi=tutup]")) { dp.close(); return; }
+    const b = e.target.closest("button[data-id]"); if (b) { dp.close(); bukaProfil(b.dataset.id); }
+  });
   const dlg = document.getElementById("lembar");
   dlg.addEventListener("click", (e) => { if (e.target === dlg || e.target.closest("[data-aksi=tutup]")) dlg.close(); else bukaDari(e); });
   dlg.addEventListener("close", () => tulisUrl(""));

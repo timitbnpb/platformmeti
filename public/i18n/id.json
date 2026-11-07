@@ -2634,5 +2634,17 @@
  "tn.tek.nuklir": "Nuklir",
  "tn.faq.ada": "Masih ada pertanyaan?",
  "tn.faq.ada_isi": "Sekretariat METI siap membantu. Hubungi kami lewat kontak di bawah, atau bergabung sebagai anggota.",
- "tn.faq.surel": "Kirim surel"
+ "tn.faq.surel": "Kirim surel",
+ "reg.pk.lihat": "Lihat perubahan",
+ "reg.pop.judul": "Perubahan aturan",
+ "reg.pop.detail": "Buka detail",
+ "reg.pop.ket.mengubah": "{a} mengubah {b}.",
+ "reg.pop.ket.mencabut": "{a} mencabut {b}, sehingga {b} tidak lagi berlaku.",
+ "reg.pop.a.mengubah": "Aturan pengubah",
+ "reg.pop.a.mencabut": "Aturan pencabut",
+ "reg.pop.b.mengubah": "Aturan yang diubah",
+ "reg.pop.b.mencabut": "Aturan yang dicabut",
+ "reg.pop.apa.mengubah": "Apa yang diubah",
+ "reg.pop.apa.mencabut": "Apa yang dicabut",
+ "reg.pop.rujuk": "Isi aturan pengubah, menurut ringkasannya:"
 }

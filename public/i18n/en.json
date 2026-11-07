@@ -2634,5 +2634,17 @@
  "tn.tek.nuklir": "Nuclear",
  "tn.faq.ada": "Still have questions?",
  "tn.faq.ada_isi": "The METI secretariat is happy to help. Reach us through the contacts below, or join as a member.",
- "tn.faq.surel": "Send email"
+ "tn.faq.surel": "Send email",
+ "reg.pk.lihat": "View change",
+ "reg.pop.judul": "Regulation change",
+ "reg.pop.detail": "Open details",
+ "reg.pop.ket.mengubah": "{a} amends {b}.",
+ "reg.pop.ket.mencabut": "{a} revokes {b}, so {b} no longer applies.",
+ "reg.pop.a.mengubah": "Amending regulation",
+ "reg.pop.a.mencabut": "Revoking regulation",
+ "reg.pop.b.mengubah": "Regulation amended",
+ "reg.pop.b.mencabut": "Regulation revoked",
+ "reg.pop.apa.mengubah": "What changed",
+ "reg.pop.apa.mencabut": "What was revoked",
+ "reg.pop.rujuk": "Content of the amending regulation, per its summary:"
 }

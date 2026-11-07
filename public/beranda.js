@@ -178,7 +178,7 @@ async function main() {
   pasangBawah(R);
   addEventListener("error", (e) => { if (e.target.tagName !== "IMG") return; if (e.target.closest(".jm-feed-th")) e.target.remove(); else if (e.target.closest(".jm-pm-lg")) e.target.replaceWith(Object.assign(document.createElement("span"), { className: "jm-pm-ini", innerHTML: GEDUNG })); }, true);
   document.getElementById("kartu").addEventListener("click", (e) => e.target.closest("[data-aksi=ulang]") && mulai());
-  const input = document.getElementById("cari");
+  const input = document.getElementById("cariBeranda");
   input.addEventListener("focus", () => siapkanIndeks().catch(() => { indeks = null; }), { once: true });
   const tunda = debounce((q) => cari(q));
   input.addEventListener("input", () => tunda(input.value));

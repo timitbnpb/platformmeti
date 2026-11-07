@@ -1,0 +1,41 @@
+/* /regulasi: lembar detail dan pop-up pasangan sebagai dialog modal di tengah (menimpa panel samping bersama di publik.css) */
+dialog#lembar,dialog#pasang{position:fixed;inset:0;margin:auto;width:min(900px,94vw);height:fit-content;max-height:90dvh;padding:0;border:1px solid var(--line);border-left:1px solid var(--line);border-radius:var(--r-lg);background:var(--card);color:var(--ink);box-shadow:var(--shadow-lg);overflow:auto}
+dialog#lembar::backdrop,dialog#pasang::backdrop{background:color-mix(in srgb,var(--brand) 62%,transparent)}
+#lembar .jm-lembar-isi,#pasang .jm-lembar-isi{padding:clamp(18px,3vw,30px);gap:18px}
+#lembar .jm-lembar-kepala,#pasang .jm-lembar-kepala{padding-bottom:14px;border-bottom:2px solid var(--brand2);align-items:flex-start}
+#lembar .jm-lembar-kepala h2,#pasang .jm-lembar-kepala h2{font:700 var(--t-h1)/var(--lh-judul) var(--display);color:var(--head);margin:4px 0 0}
+#lembar .jm-baris-no,#pasang .jm-baris-no{margin:0;font:700 var(--t-kecil)/var(--lh-judul) var(--font);color:var(--accent)}
+#lembar .jm-lembar-isi>section>h3,#pasang .jm-lembar-isi>section>h3{display:flex;align-items:center;gap:8px;margin:0 0 8px;font:700 var(--t-h3)/var(--lh-judul) var(--display);color:var(--head)}
+#lembar .jm-lembar-isi>section>h3::before,#pasang .jm-lembar-isi>section>h3::before{content:"";width:4px;height:1em;border-radius:2px;background:var(--accent)}
+#lembar p,#pasang p{display:block;margin:0;line-height:var(--lh-isi)}
+#lembar section>p,#pasang section>p{text-align:justify;hyphens:auto;color:var(--ink2)}
+#lembar .jm-baris-meta,#pasang .jm-baris-meta{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+#lembar .jm-baris-meta .jm-ik{margin-right:4px}
+#lembar .jm-dl{grid-template-columns:minmax(110px,max-content) minmax(0,1fr);gap:10px 24px;padding:14px;border-radius:var(--r);background:var(--surface)}
+#lembar .jm-dl>dt,#lembar .jm-dl>dd{grid-column:auto}
+.jm-rg-kep{display:flex;align-items:center;gap:12px;min-width:0}
+.jm-rg-kep-b{align-items:flex-start;gap:16px}
+.jm-rg-kep-b .jm-pen,.jm-rg-kep-b img{flex:none}
+.jm-rg-kode{display:block;font:700 var(--t-body)/var(--lh-judul) var(--display);color:var(--head)}
+.jm-rg-kep small{display:block;color:var(--ink2);font-size:var(--t-kecil)}
+.jm-rg-aksi{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.jm-rg-aksi .jm-tbl .jm-ik{stroke:currentColor;fill:none}
+.jm-rg-diambil{margin-top:10px!important;font-size:var(--t-kecil);color:var(--ink2)}
+/* pop-up pasangan */
+.jm-rg-dua{display:grid;grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);gap:14px;align-items:stretch}
+.jm-rg-k{display:flex;flex-direction:column;gap:10px;min-width:0;padding:16px;border:1px solid var(--line);border-radius:var(--r);background:var(--surface)}
+.jm-rg-k h3{margin:0;font:700 var(--t-body)/var(--lh-judul) var(--display);color:var(--head)}
+.jm-rg-ey{font:700 var(--t-label)/1 var(--font);color:var(--accent)}
+.jm-rg-ring{font-size:var(--t-tombol);color:var(--ink2);text-align:justify;hyphens:auto}
+.jm-rg-k .jm-rg-aksi{margin-top:auto}
+.jm-rg-tengah{align-self:center;display:inline-flex;align-items:center;gap:6px;white-space:nowrap}
+.jm-rg-apa{padding:14px 16px;border-left:4px solid var(--accent);border-radius:var(--r-sm);background:var(--soft-hijau)}
+.jm-rg-apa p+p{margin-top:8px!important}
+@media (max-width:760px){dialog#lembar,dialog#pasang{width:100vw;max-height:92dvh;margin:auto 0 0;border-radius:var(--r-lg) var(--r-lg) 0 0}.jm-rg-dua{grid-template-columns:1fr}.jm-rg-tengah{justify-self:center}}
+/* pasangan di pelacak: ringkasan singkat + tombol */
+.jm-pk-ub2{cursor:pointer;transition:border-color .15s,box-shadow .15s}
+.jm-pk-ub2:hover{border-color:var(--accent);box-shadow:var(--shadow)}
+.jm-pk-ub2>.jm-pk-ring{grid-column:1/-1;margin:0;padding-top:10px;border-top:1px dashed var(--line);font-size:var(--t-tombol);line-height:var(--lh-isi);color:var(--ink2);text-align:justify;hyphens:auto}
+.jm-pk-lihat{grid-column:1/-1;justify-self:end;display:inline-flex;align-items:center;gap:8px;min-height:var(--target);padding:0 16px;border:1px solid var(--accent);border-radius:var(--r-pil);background:var(--card);color:var(--accent);font:600 var(--t-tombol)/1 var(--font);cursor:pointer}
+.jm-pk-lihat:hover{background:var(--soft-hijau)}
+.jm-pk-lihat .jm-ik{stroke:currentColor;fill:none}
