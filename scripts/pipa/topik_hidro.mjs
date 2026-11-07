@@ -6,6 +6,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { validasi } from './topik_surya.mjs';
+import { perdalam } from './topik_dalam_hidro.mjs';
 export { validasi };
 const akar = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '../..');
 const ID = 'hidro';
@@ -92,7 +93,7 @@ export const SUMBER = {
   myit: S('Myitsone Dam (ringkasan Wikipedia: 6.000 MW direncanakan, ditangguhkan 30 Sep 2011, sekitar 11.800 orang direlokasi)', 'Wikipedia', 'https://en.wikipedia.org/wiki/Myitsone_Dam', TGL, 'via-pihak-ketiga', 'CC BY-SA 4.0'),
 };
 
-export function susun() {
+function susunDasar() {
   const d0 = dasarJson();
   const kp = tren('hidro');
   const k25 = kp.at(-1), k00 = kp[0], k24 = kp.find((x) => x.tahun === 2024);
@@ -401,6 +402,8 @@ export function susun() {
     bab,
   };
 }
+
+export function susun() { return perdalam(susunDasar(), SUMBER); }
 
 export function selftest() {
   const d = susun(); const e = validasi(d);

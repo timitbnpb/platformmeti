@@ -784,6 +784,121 @@
    "tahun": 2026,
    "bukti": "editorial",
    "lisensi": "CC BY 4.0 (METI)"
+  },
+  "d_proyek": {
+   "judul": "Basis proyek METI (public/data/proyek.json: RUPTL 2025-2034, WRI GPPD, ESDM, berita; tiap proyek membawa sumbernya sendiri)",
+   "penerbit": "METI dan sumber primer per proyek",
+   "url": "https://platformmeti.timitbnpb.workers.dev/direktori",
+   "tanggal": "2026-11-07",
+   "tahun": 2026,
+   "bukti": "via-pihak-ketiga"
+  },
+  "d_org": {
+   "judul": "Basis organisasi METI (public/data/organisasi.json; tiap organisasi membawa sumbernya sendiri)",
+   "penerbit": "METI",
+   "url": "https://platformmeti.timitbnpb.workers.dev/direktori",
+   "tanggal": "2026-11-08",
+   "tahun": 2026,
+   "bukti": "via-pihak-ketiga"
+  },
+  "d_reg": {
+   "judul": "Basis regulasi METI (public/data/regulasi.json, naskah BPK JDIH)",
+   "penerbit": "BPK JDIH, METI",
+   "url": "https://peraturan.bpk.go.id/",
+   "tanggal": "2026-11-07",
+   "tahun": 2026,
+   "bukti": "resmi"
+  },
+  "d_stat": {
+   "judul": "Statistik Ketenagalistrikan 2024: kapasitas terpasang per provinsi (public/data/statistik_pln.json)",
+   "penerbit": "Ditjen Ketenagalistrikan ESDM",
+   "url": "https://gatrik.esdm.go.id/",
+   "tanggal": "2026-11-07",
+   "tahun": 2026,
+   "bukti": "resmi"
+  },
+  "d_pot": {
+   "judul": "Potensi per provinsi: RUEN (Perpres 22/2017) dan HEESI 2025 (public/data/peluang.json)",
+   "penerbit": "DEN, Kementerian ESDM",
+   "url": "https://peraturan.bpk.go.id/Details/68772",
+   "tanggal": "2026-11-07",
+   "tahun": 2026,
+   "bukti": "resmi"
+  },
+  "d_pend": {
+   "judul": "Basis pendanaan METI (public/data/pendanaan.json: skema dan proyek pendana, tiap butir membawa tautan sumbernya)",
+   "penerbit": "METI, ADB, World Bank, AIIB, JICA dan lain-lain",
+   "url": "https://platformmeti.timitbnpb.workers.dev/direktori",
+   "tanggal": "2026-11-08",
+   "tahun": 2026,
+   "bukti": "via-pihak-ketiga"
+  },
+  "d_owid": {
+   "judul": "Our World in Data energy-data (Ember Yearly Electricity Data), diiris ke data/topik_dunia/owid_negara.json",
+   "penerbit": "Ember via Our World in Data",
+   "url": "https://github.com/owid/energy-data",
+   "tanggal": "2026-11-08",
+   "tahun": 2026,
+   "bukti": "via-pihak-ketiga",
+   "lisensi": "CC BY 4.0"
+  },
+  "d_kap": {
+   "judul": "IRENA, kapasitas dan pembangkitan terpasang Indonesia (public/data/kapasitas_tren.json)",
+   "penerbit": "IRENA",
+   "url": "https://www.irena.org/Data",
+   "tanggal": "2026-11-08",
+   "tahun": 2026,
+   "bukti": "resmi",
+   "lisensi": "IRENA data terbuka"
+  },
+  "d_lcoe": {
+   "judul": "IRENA LCOE dan harga modul via Our World in Data (public/data/biaya_listrik.json)",
+   "penerbit": "IRENA via Our World in Data",
+   "url": "https://ourworldindata.org/grapher/levelized-cost-of-energy",
+   "tanggal": "2026-11-08",
+   "tahun": 2026,
+   "bukti": "via-pihak-ketiga",
+   "lisensi": "CC BY 4.0"
+  },
+  "d_lsp": {
+   "judul": "Lembaga sertifikasi profesi BNSP dan skema EBT (public/data/prodi_pelatihan.json, situs BNSP)",
+   "penerbit": "BNSP, METI",
+   "url": "https://bnsp.go.id/",
+   "tanggal": "2026-11-07",
+   "tahun": 2026,
+   "bukti": "resmi"
+  },
+  "d_inov": {
+   "judul": "Basis inovasi METI (public/data/inovasi.json; tiap inovasi membawa sumbernya)",
+   "penerbit": "METI, kampus, BRIN dan startup",
+   "url": "https://platformmeti.timitbnpb.workers.dev/direktori",
+   "tanggal": "2026-11-08",
+   "tahun": 2026,
+   "bukti": "via-pihak-ketiga"
+  },
+  "d_ins": {
+   "judul": "Basis insentif METI (public/data/insentif.json: PMK 66/2015, PMK 130/2020, Permen ESDM 11/2024, Perpres 112/2022)",
+   "penerbit": "BPK JDIH, METI",
+   "url": "https://peraturan.bpk.go.id/Details/146740/pmk-no-66pmk0102015",
+   "tanggal": "2026-11-07",
+   "tahun": 2026,
+   "bukti": "resmi"
+  },
+  "d_rpasok": {
+   "judul": "Kebutuhan MW per tahun dari RUPTL 2025-2034 (public/data/rantai_pasok.json)",
+   "penerbit": "PLN, ESDM",
+   "url": "https://gatrik.esdm.go.id/",
+   "tanggal": "2026-11-07",
+   "tahun": 2026,
+   "bukti": "resmi"
+  },
+  "d_izin": {
+   "judul": "Izin dan kontrak listrik EBT: pasal Permen ESDM 11/2021, 2/2024, Perpres 112/2022 (public/data/izin_kontrak.json, tiap jawaban membawa pasalnya)",
+   "penerbit": "Pemerintah RI via BPK JDIH",
+   "url": "https://peraturan.bpk.go.id/Details/225308",
+   "tanggal": "2026-11-07",
+   "tahun": 2026,
+   "bukti": "resmi"
   }
  },
  "bab": {
@@ -1196,419 +1311,795 @@
   "7": {
    "tipe": "grafik",
    "jenis": "garis",
+   "sumber": [
+    "irena",
+    "d_kap"
+   ],
    "label": {
-    "id": "Kapasitas terpasang panas bumi Indonesia",
-    "en": "Installed geothermal capacity, Indonesia"
+    "id": "Tren panas bumi: kapasitas, pembangkitan, dan seluruh EBT (indeks 2015 = 100)",
+    "en": "panas bumi trend: capacity, generation and all renewables (index 2015 = 100)"
    },
-   "satuan": "MW",
+   "satuan": "indeks",
    "d": 0,
    "seri": [
     {
      "nama": {
-      "id": "Kapasitas terpasang (IRENA)",
-      "en": "Installed capacity (IRENA)"
+      "id": "Kapasitas panas bumi (indeks)",
+      "en": "panas bumi capacity (index)"
      },
      "sorot": true,
      "titik": [
       [
-       "2000",
-       525
-      ],
-      [
-       "2001",
-       785
-      ],
-      [
-       "2002",
-       785
-      ],
-      [
-       "2003",
-       805
-      ],
-      [
-       "2004",
-       820
-      ],
-      [
-       "2005",
-       850
-      ],
-      [
-       "2006",
-       850
-      ],
-      [
-       "2007",
-       980
-      ],
-      [
-       "2008",
-       1052
-      ],
-      [
-       "2009",
-       1189
-      ],
-      [
-       "2010",
-       1189
-      ],
-      [
-       "2011",
-       1226
-      ],
-      [
-       "2012",
-       1336
-      ],
-      [
-       "2013",
-       1343.5
-      ],
-      [
-       "2014",
-       1403.5
-      ],
-      [
        "2015",
-       1438.3
+       100
       ],
       [
        "2016",
-       1533.3
+       106.6
       ],
       [
        "2017",
-       1808.3
+       125.7
       ],
       [
        "2018",
-       1948.3
+       135.5
       ],
       [
        "2019",
-       2130.7
+       148.1
       ],
       [
        "2020",
-       2130.7
+       148.1
       ],
       [
        "2021",
-       2286.05
+       158.9
       ],
       [
        "2022",
-       2360.33
+       164.1
       ],
       [
        "2023",
-       2597.51
+       180.6
       ],
       [
        "2024",
-       2638.76
+       183.5
       ],
       [
        "2025",
-       2743.76
+       190.8
+      ]
+     ]
+    },
+    {
+     "nama": {
+      "id": "Pembangkitan panas bumi (indeks)",
+      "en": "panas bumi generation (index)"
+     },
+     "titik": [
+      [
+       "2015",
+       100
+      ],
+      [
+       "2016",
+       106.1
+      ],
+      [
+       "2017",
+       127
+      ],
+      [
+       "2018",
+       139.5
+      ],
+      [
+       "2019",
+       140.3
+      ],
+      [
+       "2020",
+       154.9
+      ],
+      [
+       "2021",
+       158.2
+      ],
+      [
+       "2022",
+       166
+      ],
+      [
+       "2023",
+       168.6
+      ],
+      [
+       "2024",
+       166.8
+      ]
+     ]
+    },
+    {
+     "nama": {
+      "id": "Kapasitas seluruh EBT Indonesia (indeks)",
+      "en": "Capacity of all Indonesian renewables (index)"
+     },
+     "titik": [
+      [
+       "2015",
+       100
+      ],
+      [
+       "2016",
+       105.7
+      ],
+      [
+       "2017",
+       110.3
+      ],
+      [
+       "2018",
+       114.4
+      ],
+      [
+       "2019",
+       120.2
+      ],
+      [
+       "2020",
+       122
+      ],
+      [
+       "2021",
+       134.5
+      ],
+      [
+       "2022",
+       146.9
+      ],
+      [
+       "2023",
+       155.4
+      ],
+      [
+       "2024",
+       161.7
+      ],
+      [
+       "2025",
+       177
       ]
      ]
     }
    ],
    "catatan": {
-    "id": "Tambahan 2015 sampai 2025 sebesar 1305.5 MW (EST METI dari selisih dua tahun IRENA).",
-    "en": "Additions from 2015 to 2025 of 1305.5 MW (METI EST, difference of two IRENA years)."
-   },
-   "sumber": [
-    "irena"
-   ]
+    "id": "Turunan hitung METI (EST) dari IRENA: tiap deret dibagi nilai 2015 dan dikali 100. Deret asli kapasitas (MW) tersimpan di grafik sebelumnya: 2743.76 MW pada 2025. Pembangkitan 2025 belum terbit.",
+    "en": "METI derived figures (EST) from IRENA: each series divided by its 2015 value times 100. The original capacity series (MW) is in the key figures. Generation for 2025 is not yet published."
+   }
   },
   "8": {
    "tipe": "tabel",
    "per": 10,
    "judul": {
-    "id": "Peta WKP dan status lelang (kurasi METI)",
-    "en": "WKP map and auction status (METI curation)"
+    "id": "Sebaran panas bumi di 38 provinsi",
+    "en": "panas bumi across 38 provinces"
    },
+   "sumber": [
+    "d_proyek",
+    "d_stat",
+    "d_pot",
+    "wkp",
+    "lelang",
+    "lelang2",
+    "geoportal"
+   ],
    "kolom": [
     {
-     "k": "nama",
-     "l": {
-      "id": "Wilayah",
-      "en": "Area"
-     }
-    },
-    {
-     "k": "jenis",
-     "l": {
-      "id": "Jenis",
-      "en": "Type"
-     }
-    },
-    {
-     "k": "provinsi",
+     "k": "prov",
      "l": {
       "id": "Provinsi",
       "en": "Province"
+     },
+     "url": "u"
+    },
+    {
+     "k": "kode",
+     "l": {
+      "id": "Kode BPS",
+      "en": "BPS code"
      }
     },
     {
-     "k": "pemegang",
+     "k": "proyek",
      "l": {
-      "id": "Pemegang",
-      "en": "Holder"
-     }
-    },
-    {
-     "k": "status",
-     "l": {
-      "id": "Status (menurut sumber)",
-      "en": "Status (per source)"
-     }
-    },
-    {
-     "k": "rencana_mw",
-     "l": {
-      "id": "Rencana (MW)",
-      "en": "Plan (MW)"
+      "id": "Proyek tercatat",
+      "en": "Recorded projects"
      },
      "num": true,
      "d": 0
     },
     {
-     "k": "bukti",
+     "k": "mw",
      "l": {
-      "id": "Bukti",
-      "en": "Evidence"
-     }
+      "id": "Kapasitas proyek (MW)",
+      "en": "Project capacity (MW)"
+     },
+     "num": true,
+     "d": 0
     },
     {
-     "k": "url_sumber",
+     "k": "operasi_mw",
      "l": {
-      "id": "Sumber",
-      "en": "Source"
+      "id": "Beroperasi (MW)",
+      "en": "Operating (MW)"
      },
-     "url": "url_sumber"
+     "num": true,
+     "d": 0
+    },
+    {
+     "k": "terpasang_mw",
+     "l": {
+      "id": "Terpasang PLTP 2024 (MW)",
+      "en": "Installed PLTP 2024 (MW)"
+     },
+     "num": true,
+     "d": 0
+    },
+    {
+     "k": "potensi_mw",
+     "l": {
+      "id": "Potensi panas bumi (MW)",
+      "en": "panas bumi potential (MW)"
+     },
+     "num": true,
+     "d": 0
+    },
+    {
+     "k": "wkp",
+     "l": {
+      "id": "WKP yang dilelang 2025",
+      "en": "WKP tendered in 2025"
+     }
     }
    ],
    "baris": [
     {
-     "nama": "Telaga Ranau",
-     "jenis": "WKP",
-     "provinsi": "Maluku Utara",
-     "pemegang": "-",
-     "status": "dilelang 2025 (WKP)",
-     "rencana_mw": 40,
-     "bukti": "media",
-     "url_sumber": "https://www.cnbcindonesia.com/news/20250917184934-4-667921/bahlil-lelang-10-wilayah-panas-bumi-ri-tahun-2025-ini-daftarnya"
+     "prov": "Aceh",
+     "kode": "11",
+     "u": "/wilayah?prov=11",
+     "proyek": 1,
+     "mw": 5,
+     "operasi_mw": 0,
+     "terpasang_mw": 0,
+     "potensi_mw": 1031,
+     "wkp": "-"
     },
     {
-     "nama": "Songgoriti",
-     "jenis": "WKP",
-     "provinsi": "Jawa Timur",
-     "pemegang": "-",
-     "status": "dilelang 2025 (WKP)",
-     "rencana_mw": 40,
-     "bukti": "media",
-     "url_sumber": "https://www.cnbcindonesia.com/news/20250917184934-4-667921/bahlil-lelang-10-wilayah-panas-bumi-ri-tahun-2025-ini-daftarnya"
+     "prov": "Sumatera Utara",
+     "kode": "12",
+     "u": "/wilayah?prov=12",
+     "proyek": 3,
+     "mw": 526,
+     "operasi_mw": 341,
+     "terpasang_mw": 711,
+     "potensi_mw": 1866,
+     "wkp": "-"
     },
     {
-     "nama": "Danau Ranau",
-     "jenis": "WKP",
-     "provinsi": "Lampung",
-     "pemegang": "-",
-     "status": "dilelang 2025 (WKP)",
-     "rencana_mw": 40,
-     "bukti": "media",
-     "url_sumber": "https://www.cnbcindonesia.com/news/20250917184934-4-667921/bahlil-lelang-10-wilayah-panas-bumi-ri-tahun-2025-ini-daftarnya"
-    },
-    {
-     "nama": "Bandar Baru Sepa",
-     "jenis": "PSPE",
-     "provinsi": "Maluku",
-     "pemegang": "-",
-     "status": "dilelang 2025 (PSPE)",
-     "rencana_mw": 40,
-     "bukti": "media",
-     "url_sumber": "https://www.cnbcindonesia.com/news/20250917184934-4-667921/bahlil-lelang-10-wilayah-panas-bumi-ri-tahun-2025-ini-daftarnya"
-    },
-    {
-     "nama": "Jenawi",
-     "jenis": "PSPE",
-     "provinsi": "Jawa Tengah",
-     "pemegang": "-",
-     "status": "dilelang 2025 (PSPE)",
-     "rencana_mw": 86,
-     "bukti": "media",
-     "url_sumber": "https://www.cnbcindonesia.com/news/20250917184934-4-667921/bahlil-lelang-10-wilayah-panas-bumi-ri-tahun-2025-ini-daftarnya"
-    },
-    {
-     "nama": "Gunung Tampomas",
-     "jenis": "PSPE",
-     "provinsi": "Jawa Barat",
-     "pemegang": "-",
-     "status": "dilelang 2025 (PSPE)",
-     "rencana_mw": 30,
-     "bukti": "media",
-     "url_sumber": "https://www.cnbcindonesia.com/news/20250917184934-4-667921/bahlil-lelang-10-wilayah-panas-bumi-ri-tahun-2025-ini-daftarnya"
-    },
-    {
-     "nama": "Kadidia",
-     "jenis": "PSPE",
-     "provinsi": "Sulawesi Tengah",
-     "pemegang": "-",
-     "status": "dilelang 2025 (PSPE)",
-     "rencana_mw": 40,
-     "bukti": "media",
-     "url_sumber": "https://www.cnbcindonesia.com/news/20250917184934-4-667921/bahlil-lelang-10-wilayah-panas-bumi-ri-tahun-2025-ini-daftarnya"
-    },
-    {
+     "prov": "Sumatera Barat",
+     "kode": "13",
+     "u": "/wilayah?prov=13",
+     "proyek": 3,
+     "mw": 348,
+     "operasi_mw": 168,
+     "terpasang_mw": 89,
+     "potensi_mw": 1648,
      "nama": "Cubudak-Panti",
      "jenis": "PSPE",
-     "provinsi": "Sumatera Barat",
      "pemegang": "-",
      "status": "dilelang 2025 (PSPE)",
      "rencana_mw": 40,
      "bukti": "media",
-     "url_sumber": "https://www.cnbcindonesia.com/news/20250917184934-4-667921/bahlil-lelang-10-wilayah-panas-bumi-ri-tahun-2025-ini-daftarnya"
+     "url_sumber": "https://www.cnbcindonesia.com/news/20250917184934-4-667921/bahlil-lelang-10-wilayah-panas-bumi-ri-tahun-2025-ini-daftarnya",
+     "wkp": "Cubudak-Panti"
     },
     {
-     "nama": "Cisurupan Kertasari",
-     "jenis": "PSPE",
-     "provinsi": "Jawa Barat",
-     "pemegang": "-",
-     "status": "dilelang 2025 (PSPE)",
-     "rencana_mw": 20,
-     "bukti": "media",
-     "url_sumber": "https://www.cnbcindonesia.com/news/20250917184934-4-667921/bahlil-lelang-10-wilayah-panas-bumi-ri-tahun-2025-ini-daftarnya"
+     "prov": "Riau",
+     "kode": "14",
+     "u": "/wilayah?prov=14",
+     "proyek": 0,
+     "mw": 0,
+     "operasi_mw": 0,
+     "terpasang_mw": 0,
+     "potensi_mw": 45,
+     "wkp": "-"
     },
     {
-     "nama": "Tuang",
-     "jenis": "PSPE",
-     "provinsi": "Sulawesi Selatan",
-     "pemegang": "-",
-     "status": "dilelang 2025 (PSPE)",
-     "rencana_mw": 20,
-     "bukti": "media",
-     "url_sumber": "https://www.cnbcindonesia.com/news/20250917184934-4-667921/bahlil-lelang-10-wilayah-panas-bumi-ri-tahun-2025-ini-daftarnya"
+     "prov": "Jambi",
+     "kode": "15",
+     "u": "/wilayah?prov=15",
+     "proyek": 1,
+     "mw": 55,
+     "operasi_mw": 0,
+     "terpasang_mw": 0,
+     "potensi_mw": 779,
+     "wkp": "-"
     },
     {
-     "nama": "Gunung Ungaran",
-     "jenis": "WKP",
-     "provinsi": "Jawa Tengah",
-     "pemegang": "PLN",
-     "status": "PLN: masih tahap kajian (berita 2026)",
-     "rencana_mw": 55,
-     "bukti": "media",
-     "url_sumber": "https://www.antaranews.com/berita/5728691/pln-sebut-pltp-gunung-ungaran-masih-tahap-kajian"
+     "prov": "Sumatera Selatan",
+     "kode": "16",
+     "u": "/wilayah?prov=16",
+     "proyek": 6,
+     "mw": 1085,
+     "operasi_mw": 225,
+     "terpasang_mw": 158,
+     "potensi_mw": 1450,
+     "wkp": "-"
     },
     {
+     "prov": "Bengkulu",
+     "kode": "17",
+     "u": "/wilayah?prov=17",
+     "proyek": 4,
+     "mw": 220,
+     "operasi_mw": 0,
+     "terpasang_mw": 0,
+     "potensi_mw": 838,
      "nama": "Hululais",
      "jenis": "WKP",
-     "provinsi": "Bengkulu",
      "pemegang": "PLN",
      "status": "perjanjian pinjaman JICA ditandatangani 2026-03-30",
      "rencana_mw": 110,
      "bukti": "resmi",
-     "url_sumber": "https://www.jica.go.jp/english/information/press/2025/20260330_11.html"
+     "url_sumber": "https://www.jica.go.jp/english/information/press/2025/20260330_11.html",
+     "wkp": "Hululais"
     },
     {
-     "nama": "Bora Pulu (Sigi)",
-     "jenis": "WKP",
-     "provinsi": "Sulawesi Tengah",
-     "pemegang": "-",
-     "status": "pengadaan lahan proyek PLTP (berita 2026)",
-     "rencana_mw": null,
-     "bukti": "media",
-     "url_sumber": "https://www.antaranews.com/berita/5728435/pemkab-sigi-percepat-pengadaan-lahan-proyek-pltp-bora-pulu"
-    },
-    {
-     "nama": "Mataloko",
-     "jenis": "WKP",
-     "provinsi": "Nusa Tenggara Timur",
-     "pemegang": "PLN",
-     "status": "pengembangan PLTP Mataloko oleh PLN UIP Nusra (berita 2026)",
-     "rencana_mw": 20,
-     "bukti": "media",
-     "url_sumber": "https://kupang.tribunnews.com/adv/975061/pln-uip-nusra-dorong-penyerapan-tenaga-kerja-lokal-melalui-pengembangan-pltp-mataloko"
-    },
-    {
-     "nama": "Ulumbu",
-     "jenis": "WKP",
-     "provinsi": "Nusa Tenggara Timur",
-     "pemegang": "-",
-     "status": "PLTP beroperasi (berita pascagempa Flores 2026)",
-     "rencana_mw": null,
-     "bukti": "media",
-     "url_sumber": "https://kupang.tribunnews.com/adv/977279/pascagempa-m77-flores-keandalan-pltp-ulumbu-tetap-terjaga"
-    },
-    {
-     "nama": "Patuha",
-     "jenis": "WKP",
-     "provinsi": "Jawa Barat",
-     "pemegang": "Geo Dipa Energi",
-     "status": "Unit 2 belum beroperasi (berita 2026); unit lain produksi",
-     "rencana_mw": null,
-     "bukti": "media",
-     "url_sumber": "https://jabar.jpnn.com/jabar-terkini/32740/raih-satu-juta-jam-kerja-selamat-pltp-patuha-unit-2-torehkan-prestasi-sebelum-beroperasi"
-    },
-    {
-     "nama": "Kamojang",
-     "jenis": "WKP",
-     "provinsi": "Jawa Barat",
-     "pemegang": "-",
-     "status": "PLTP beroperasi (berita liputan6)",
-     "rencana_mw": null,
-     "bukti": "media",
-     "url_sumber": "https://berita.liputan6.com/peristiwa/read/8318429/menelusuri-pltp-kamojang-saat-panas-bumi-diubah-jadi-listrik"
-    },
-    {
+     "prov": "Lampung",
+     "kode": "18",
+     "u": "/wilayah?prov=18",
+     "proyek": 5,
+     "mw": 433,
+     "operasi_mw": 118,
+     "terpasang_mw": 229,
+     "potensi_mw": 1732,
      "nama": "Ulubelu",
      "jenis": "WKP",
-     "provinsi": "Lampung",
      "pemegang": "Pertamina Geothermal Energy",
      "status": "pengembangan PLTP Ulubelu oleh PGE (berita 2026)",
      "rencana_mw": null,
      "bukti": "media",
-     "url_sumber": "https://www.antaranews.com/berita/5705529/pge-pengembangan-pltp-ulubelu-dan-lahendong-perkuat-ketahanan-energi"
+     "url_sumber": "https://www.antaranews.com/berita/5705529/pge-pengembangan-pltp-ulubelu-dan-lahendong-perkuat-ketahanan-energi",
+     "wkp": "Danau Ranau, Ulubelu"
     },
     {
+     "prov": "Kepulauan Bangka Belitung",
+     "kode": "19",
+     "u": "/wilayah?prov=19",
+     "proyek": 0,
+     "mw": 0,
+     "operasi_mw": 0,
+     "terpasang_mw": 0,
+     "potensi_mw": 46,
+     "wkp": "-"
+    },
+    {
+     "prov": "Kepulauan Riau",
+     "kode": "21",
+     "u": "/wilayah?prov=21",
+     "proyek": 0,
+     "mw": 0,
+     "operasi_mw": 0,
+     "terpasang_mw": 0,
+     "potensi_mw": 7,
+     "wkp": "-"
+    },
+    {
+     "prov": "DKI Jakarta",
+     "kode": "31",
+     "u": "/wilayah?prov=31",
+     "proyek": 0,
+     "mw": 0,
+     "operasi_mw": 0,
+     "terpasang_mw": 0,
+     "potensi_mw": 0,
+     "wkp": "-"
+    },
+    {
+     "prov": "Jawa Barat",
+     "kode": "32",
+     "u": "/wilayah?prov=32",
+     "proyek": 17,
+     "mw": 1725,
+     "operasi_mw": 290,
+     "terpasang_mw": 1231,
+     "potensi_mw": 4420,
+     "nama": "Kamojang",
+     "jenis": "WKP",
+     "pemegang": "-",
+     "status": "PLTP beroperasi (berita liputan6)",
+     "rencana_mw": null,
+     "bukti": "media",
+     "url_sumber": "https://berita.liputan6.com/peristiwa/read/8318429/menelusuri-pltp-kamojang-saat-panas-bumi-diubah-jadi-listrik",
+     "wkp": "Gunung Tampomas, Cisurupan Kertasari, Patuha, Kamojang"
+    },
+    {
+     "prov": "Jawa Tengah",
+     "kode": "33",
+     "u": "/wilayah?prov=33",
+     "proyek": 5,
+     "mw": 766,
+     "operasi_mw": 60,
+     "terpasang_mw": 73,
+     "potensi_mw": 1341,
+     "nama": "Gunung Ungaran",
+     "jenis": "WKP",
+     "pemegang": "PLN",
+     "status": "PLN: masih tahap kajian (berita 2026)",
+     "rencana_mw": 55,
+     "bukti": "media",
+     "url_sumber": "https://www.antaranews.com/berita/5728691/pln-sebut-pltp-gunung-ungaran-masih-tahap-kajian",
+     "wkp": "Jenawi, Gunung Ungaran"
+    },
+    {
+     "prov": "DI Yogyakarta",
+     "kode": "34",
+     "u": "/wilayah?prov=34",
+     "proyek": 0,
+     "mw": 0,
+     "operasi_mw": 0,
+     "terpasang_mw": 0,
+     "potensi_mw": 10,
+     "wkp": "-"
+    },
+    {
+     "prov": "Jawa Timur",
+     "kode": "35",
+     "u": "/wilayah?prov=35",
+     "proyek": 3,
+     "mw": 315,
+     "operasi_mw": 0,
+     "terpasang_mw": 0,
+     "potensi_mw": 1299,
+     "nama": "Songgoriti",
+     "jenis": "WKP",
+     "pemegang": "-",
+     "status": "dilelang 2025 (WKP)",
+     "rencana_mw": 40,
+     "bukti": "media",
+     "url_sumber": "https://www.cnbcindonesia.com/news/20250917184934-4-667921/bahlil-lelang-10-wilayah-panas-bumi-ri-tahun-2025-ini-daftarnya",
+     "wkp": "Songgoriti"
+    },
+    {
+     "prov": "Banten",
+     "kode": "36",
+     "u": "/wilayah?prov=36",
+     "proyek": 2,
+     "mw": 220,
+     "operasi_mw": 0,
+     "terpasang_mw": 0,
+     "potensi_mw": 518,
+     "wkp": "-"
+    },
+    {
+     "prov": "Bali",
+     "kode": "51",
+     "u": "/wilayah?prov=51",
+     "proyek": 1,
+     "mw": 175,
+     "operasi_mw": 0,
+     "terpasang_mw": 0,
+     "potensi_mw": 335,
+     "wkp": "-"
+    },
+    {
+     "prov": "Nusa Tenggara Barat",
+     "kode": "52",
+     "u": "/wilayah?prov=52",
+     "proyek": 0,
+     "mw": 0,
+     "operasi_mw": 0,
+     "terpasang_mw": 0,
+     "potensi_mw": 78,
+     "wkp": "-"
+    },
+    {
+     "prov": "Nusa Tenggara Timur",
+     "kode": "53",
+     "u": "/wilayah?prov=53",
+     "proyek": 8,
+     "mw": 113,
+     "operasi_mw": 6,
+     "terpasang_mw": 24,
+     "potensi_mw": 1195,
+     "nama": "Ulumbu",
+     "jenis": "WKP",
+     "pemegang": "-",
+     "status": "PLTP beroperasi (berita pascagempa Flores 2026)",
+     "rencana_mw": null,
+     "bukti": "media",
+     "url_sumber": "https://kupang.tribunnews.com/adv/977279/pascagempa-m77-flores-keandalan-pltp-ulumbu-tetap-terjaga",
+     "wkp": "Mataloko, Ulumbu"
+    },
+    {
+     "prov": "Kalimantan Barat",
+     "kode": "61",
+     "u": "/wilayah?prov=61",
+     "proyek": 0,
+     "mw": 0,
+     "operasi_mw": 0,
+     "terpasang_mw": 0,
+     "potensi_mw": 65,
+     "wkp": "-"
+    },
+    {
+     "prov": "Kalimantan Tengah",
+     "kode": "62",
+     "u": "/wilayah?prov=62",
+     "proyek": 0,
+     "mw": 0,
+     "operasi_mw": 0,
+     "terpasang_mw": 0,
+     "potensi_mw": 0,
+     "wkp": "-"
+    },
+    {
+     "prov": "Kalimantan Selatan",
+     "kode": "63",
+     "u": "/wilayah?prov=63",
+     "proyek": 0,
+     "mw": 0,
+     "operasi_mw": 0,
+     "terpasang_mw": 0,
+     "potensi_mw": 50,
+     "wkp": "-"
+    },
+    {
+     "prov": "Kalimantan Timur",
+     "kode": "64",
+     "u": "/wilayah?prov=64",
+     "proyek": 0,
+     "mw": 0,
+     "operasi_mw": 0,
+     "terpasang_mw": 0,
+     "potensi_mw": 32,
+     "wkp": "-"
+    },
+    {
+     "prov": "Kalimantan Utara",
+     "kode": "65",
+     "u": "/wilayah?prov=65",
+     "proyek": 0,
+     "mw": 0,
+     "operasi_mw": 0,
+     "terpasang_mw": 0,
+     "potensi_mw": 43,
+     "wkp": "-"
+    },
+    {
+     "prov": "Sulawesi Utara",
+     "kode": "71",
+     "u": "/wilayah?prov=71",
+     "proyek": 5,
+     "mw": 160,
+     "operasi_mw": 80,
+     "terpasang_mw": 124,
+     "potensi_mw": 939,
      "nama": "Lahendong",
      "jenis": "WKP",
-     "provinsi": "Sulawesi Utara",
      "pemegang": "Pertamina Geothermal Energy",
      "status": "pengembangan PLTP Lahendong oleh PGE (berita 2026)",
      "rencana_mw": null,
      "bukti": "media",
-     "url_sumber": "https://www.antaranews.com/berita/5705529/pge-pengembangan-pltp-ulubelu-dan-lahendong-perkuat-ketahanan-energi"
+     "url_sumber": "https://www.antaranews.com/berita/5705529/pge-pengembangan-pltp-ulubelu-dan-lahendong-perkuat-ketahanan-energi",
+     "wkp": "Lahendong"
+    },
+    {
+     "prov": "Sulawesi Tengah",
+     "kode": "72",
+     "u": "/wilayah?prov=72",
+     "proyek": 2,
+     "mw": 40,
+     "operasi_mw": 0,
+     "terpasang_mw": 0,
+     "potensi_mw": 688,
+     "nama": "Bora Pulu (Sigi)",
+     "jenis": "WKP",
+     "pemegang": "-",
+     "status": "pengadaan lahan proyek PLTP (berita 2026)",
+     "rencana_mw": null,
+     "bukti": "media",
+     "url_sumber": "https://www.antaranews.com/berita/5728435/pemkab-sigi-percepat-pengadaan-lahan-proyek-pltp-bora-pulu",
+     "wkp": "Kadidia, Bora Pulu (Sigi)"
+    },
+    {
+     "prov": "Sulawesi Selatan",
+     "kode": "73",
+     "u": "/wilayah?prov=73",
+     "proyek": 1,
+     "mw": 20,
+     "operasi_mw": 0,
+     "terpasang_mw": 0,
+     "potensi_mw": 525,
+     "nama": "Tuang",
+     "jenis": "PSPE",
+     "pemegang": "-",
+     "status": "dilelang 2025 (PSPE)",
+     "rencana_mw": 20,
+     "bukti": "media",
+     "url_sumber": "https://www.cnbcindonesia.com/news/20250917184934-4-667921/bahlil-lelang-10-wilayah-panas-bumi-ri-tahun-2025-ini-daftarnya",
+     "wkp": "Tuang"
+    },
+    {
+     "prov": "Sulawesi Tenggara",
+     "kode": "74",
+     "u": "/wilayah?prov=74",
+     "proyek": 0,
+     "mw": 0,
+     "operasi_mw": 0,
+     "terpasang_mw": 0,
+     "potensi_mw": 316,
+     "wkp": "-"
+    },
+    {
+     "prov": "Gorontalo",
+     "kode": "75",
+     "u": "/wilayah?prov=75",
+     "proyek": 0,
+     "mw": 0,
+     "operasi_mw": 0,
+     "terpasang_mw": 0,
+     "potensi_mw": 160,
+     "wkp": "-"
+    },
+    {
+     "prov": "Sulawesi Barat",
+     "kode": "76",
+     "u": "/wilayah?prov=76",
+     "proyek": 0,
+     "mw": 0,
+     "operasi_mw": 0,
+     "terpasang_mw": 0,
+     "potensi_mw": 378,
+     "wkp": "-"
+    },
+    {
+     "prov": "Maluku",
+     "kode": "81",
+     "u": "/wilayah?prov=81",
+     "proyek": 2,
+     "mw": 20,
+     "operasi_mw": 0,
+     "terpasang_mw": 0,
+     "potensi_mw": 564,
+     "nama": "Bandar Baru Sepa",
+     "jenis": "PSPE",
+     "pemegang": "-",
+     "status": "dilelang 2025 (PSPE)",
+     "rencana_mw": 40,
+     "bukti": "media",
+     "url_sumber": "https://www.cnbcindonesia.com/news/20250917184934-4-667921/bahlil-lelang-10-wilayah-panas-bumi-ri-tahun-2025-ini-daftarnya",
+     "wkp": "Bandar Baru Sepa"
+    },
+    {
+     "prov": "Maluku Utara",
+     "kode": "82",
+     "u": "/wilayah?prov=82",
+     "proyek": 2,
+     "mw": 50,
+     "operasi_mw": 0,
+     "terpasang_mw": 0,
+     "potensi_mw": 706,
+     "nama": "Telaga Ranau",
+     "jenis": "WKP",
+     "pemegang": "-",
+     "status": "dilelang 2025 (WKP)",
+     "rencana_mw": 40,
+     "bukti": "media",
+     "url_sumber": "https://www.cnbcindonesia.com/news/20250917184934-4-667921/bahlil-lelang-10-wilayah-panas-bumi-ri-tahun-2025-ini-daftarnya",
+     "wkp": "Telaga Ranau"
+    },
+    {
+     "prov": "Papua",
+     "kode": "91",
+     "u": "/wilayah?prov=91",
+     "proyek": 0,
+     "mw": 0,
+     "operasi_mw": 0,
+     "terpasang_mw": 0,
+     "potensi_mw": 0,
+     "wkp": "-"
+    },
+    {
+     "prov": "Papua Barat",
+     "kode": "92",
+     "u": "/wilayah?prov=92",
+     "proyek": 0,
+     "mw": 0,
+     "operasi_mw": 0,
+     "terpasang_mw": 0,
+     "potensi_mw": 50,
+     "wkp": "-"
+    },
+    {
+     "prov": "Papua Selatan",
+     "kode": "93",
+     "u": "/wilayah?prov=93",
+     "proyek": 0,
+     "mw": 0,
+     "operasi_mw": 0,
+     "terpasang_mw": 0,
+     "potensi_mw": 0,
+     "wkp": "-"
+    },
+    {
+     "prov": "Papua Tengah",
+     "kode": "94",
+     "u": "/wilayah?prov=94",
+     "proyek": 0,
+     "mw": 0,
+     "operasi_mw": 0,
+     "terpasang_mw": 0,
+     "potensi_mw": 0,
+     "wkp": "-"
+    },
+    {
+     "prov": "Papua Pegunungan",
+     "kode": "95",
+     "u": "/wilayah?prov=95",
+     "proyek": 0,
+     "mw": 0,
+     "operasi_mw": 0,
+     "terpasang_mw": 0,
+     "potensi_mw": 0,
+     "wkp": "-"
+    },
+    {
+     "prov": "Papua Barat Daya",
+     "kode": "96",
+     "u": "/wilayah?prov=96",
+     "proyek": 0,
+     "mw": 0,
+     "operasi_mw": 0,
+     "terpasang_mw": 0,
+     "potensi_mw": 50,
+     "wkp": "-"
     }
    ],
    "catatan": {
-    "id": "Daftar kurasi 19 WKP/PSPE dengan bukti publik, bukan seluruh WKP nasional. Koordinat tidak dipanen karena robots.txt Geoportal ESDM melarang robot; hasil lelang 2025 (pemenang) belum ditemukan; semua status berdasar berita (bukti media), bukan Kepmen.",
-    "en": "A curated list of 19 WKP/PSPE with public evidence, not all national WKP. Coordinates are not harvested because the ESDM Geoportal robots.txt disallows robots; 2025 auction results (winners) were not found; all statuses are based on news (media evidence), not ministerial decrees."
-   },
-   "sumber": [
-    "wkp",
-    "lelang",
-    "lelang2",
-    "geoportal"
-   ]
+    "id": "Proyek dan MW dari basis proyek METI (status apa pun, bukan hanya beroperasi); terpasang dari Statistik Ketenagalistrikan 2024 (semua pengusaha); potensi dari RUEN 2015 atau HEESI 2025 (sumbernya tertera di basis peluang). Sel kosong berarti tidak ada angka terbuka.",
+    "en": "Projects and MW come from the METI project base (any status, not only operating); installed from the 2024 Electricity Statistics (all operators); potential from RUEN 2015 or HEESI 2025 (source recorded in the opportunity base). An empty cell means no open figure."
+   }
   },
   "9": {
    "tipe": "tabel",
    "per": 12,
    "judul": {
     "id": "Pemain panas bumi di basis METI",
-    "en": "Geothermal players in the METI base"
+    "en": "panas bumi players in the METI base"
    },
+   "sumber": [
+    "d_org",
+    "d_proyek"
+   ],
    "kolom": [
     {
      "k": "nama",
      "l": {
       "id": "Organisasi",
       "en": "Organisation"
+     },
+     "url": "u"
+    },
+    {
+     "k": "singkatan",
+     "l": {
+      "id": "Singkatan",
+      "en": "Acronym"
      }
     },
     {
@@ -1626,6 +2117,20 @@
      }
     },
     {
+     "k": "relevansi",
+     "l": {
+      "id": "Kaitan dengan topik",
+      "en": "Link to topic"
+     }
+    },
+    {
+     "k": "negara",
+     "l": {
+      "id": "Negara asal",
+      "en": "Home country"
+     }
+    },
+    {
      "k": "proyek",
      "l": {
       "id": "Proyek tercatat",
@@ -1638,181 +2143,701 @@
    "baris": [
     {
      "nama": "PT PLN Indonesia Power",
+     "id": "p_5a2e7d0c63",
+     "u": "/o/p_5a2e7d0c63",
+     "singkatan": "-",
      "kategori": "BUMN",
      "peran": "operator, pengembang",
+     "relevansi": "teknologi",
+     "negara": "ID",
      "proyek": 18
     },
     {
      "nama": "PT Pertamina Geothermal Energy Tbk",
+     "id": "p_dda1e51dae",
+     "u": "/o/p_dda1e51dae",
+     "singkatan": "-",
      "kategori": "Swasta",
      "peran": "pengembang, operator",
+     "relevansi": "teknologi",
+     "negara": "ID",
      "proyek": 11
     },
     {
      "nama": "PT Star Energy Geothermal",
+     "id": "p_7a803f3b71",
+     "u": "/o/p_7a803f3b71",
+     "singkatan": "-",
      "kategori": "Swasta",
      "peran": "pengembang, IPP",
+     "relevansi": "teknologi",
+     "negara": "ID",
      "proyek": 5
     },
     {
      "nama": "PT Geo Dipa Energi (Persero)",
+     "id": "p_7b70728bb7",
+     "u": "/o/p_7b70728bb7",
+     "singkatan": "-",
      "kategori": "BUMN",
      "peran": "pengembang, operator",
+     "relevansi": "teknologi",
+     "negara": "ID",
      "proyek": 5
     },
     {
      "nama": "Star Energy Group",
+     "id": "in_54c23478f6",
+     "u": "/o/in_54c23478f6",
+     "singkatan": "Star Energy",
      "kategori": "Perusahaan Internasional di Indonesia",
      "peran": "pengembang",
+     "relevansi": "teknologi",
+     "negara": "SG",
      "proyek": 4
     },
     {
      "nama": "Engie",
+     "id": "p_1c9eb202dd",
+     "u": "/o/p_1c9eb202dd",
+     "singkatan": "-",
      "kategori": "Perusahaan Internasional di Indonesia",
      "peran": "pengembang, IPP",
+     "relevansi": "teknologi",
+     "negara": "FR",
      "proyek": 3
     },
     {
      "nama": "PT Medco Power Indonesia",
+     "id": "p_27ae5a4203",
+     "u": "/o/p_27ae5a4203",
+     "singkatan": "-",
      "kategori": "Swasta",
      "peran": "pengembang, IPP",
+     "relevansi": "teknologi",
+     "negara": "ID",
      "proyek": 3
     },
     {
      "nama": "PT Barito Renewables Energy Tbk",
+     "id": "p_bdd0f2d140",
+     "u": "/o/p_bdd0f2d140",
+     "singkatan": "-",
      "kategori": "Swasta",
      "peran": "pengembang, IPP",
+     "relevansi": "teknologi",
+     "negara": "ID",
      "proyek": 3
     },
     {
      "nama": "PT Supreme Energy",
+     "id": "p_c6c4e478c0",
+     "u": "/o/p_c6c4e478c0",
+     "singkatan": "-",
      "kategori": "Swasta",
      "peran": "pengembang, IPP",
+     "relevansi": "teknologi",
+     "negara": "ID",
      "proyek": 3
     },
     {
      "nama": "Sumitomo Corporation",
+     "id": "p_d99d5987f7",
+     "u": "/o/p_d99d5987f7",
+     "singkatan": "Sumitomo",
      "kategori": "Perusahaan Internasional di Indonesia",
      "peran": "pengembang, pembiaya",
+     "relevansi": "teknologi",
+     "negara": "JP",
      "proyek": 3
     },
     {
      "nama": "Ormat Technologies",
+     "id": "in_c699a709bf",
+     "u": "/o/in_c699a709bf",
+     "singkatan": "Ormat",
      "kategori": "Perusahaan Internasional di Indonesia",
      "peran": "pengembang",
+     "relevansi": "teknologi",
+     "negara": "US",
      "proyek": 2
     },
     {
      "nama": "Chevron",
+     "id": "in_d61659a44f",
+     "u": "/o/in_d61659a44f",
+     "singkatan": "-",
      "kategori": "Perusahaan Internasional di Indonesia",
      "peran": "pengembang",
+     "relevansi": "teknologi",
+     "negara": "US",
      "proyek": 2
     },
     {
      "nama": "PT Pertamina (Persero)",
+     "id": "p_b1c52ad7b0",
+     "u": "/o/p_b1c52ad7b0",
+     "singkatan": "-",
      "kategori": "BUMN",
      "peran": "operator, produsen BBN",
+     "relevansi": "teknologi",
+     "negara": "ID",
      "proyek": 2
     },
     {
      "nama": "Tohoku Electric Power",
+     "id": "in_2e43564369",
+     "u": "/o/in_2e43564369",
+     "singkatan": "Tohoku Electric",
      "kategori": "Perusahaan Internasional di Indonesia",
      "peran": "pengembang",
+     "relevansi": "teknologi",
+     "negara": "JP",
      "proyek": 1
     },
     {
      "nama": "KS Orka Renewables",
+     "id": "in_4828a8b867",
+     "u": "/o/in_4828a8b867",
+     "singkatan": "KS Orka",
      "kategori": "Perusahaan Internasional di Indonesia",
      "peran": "pengembang",
+     "relevansi": "teknologi",
+     "negara": "SG",
      "proyek": 1
     },
     {
      "nama": "Kansai Electric Power",
+     "id": "in_9a7fdc6930",
+     "u": "/o/in_9a7fdc6930",
+     "singkatan": "KEPCO Jepang",
      "kategori": "Perusahaan Internasional di Indonesia",
      "peran": "pengembang",
+     "relevansi": "teknologi",
+     "negara": "JP",
      "proyek": 1
     },
     {
      "nama": "Electricity Generating PCL (EGCO)",
+     "id": "in_9d25098c0a",
+     "u": "/o/in_9d25098c0a",
+     "singkatan": "EGCO",
      "kategori": "Perusahaan Internasional di Indonesia",
      "peran": "pengembang",
+     "relevansi": "teknologi",
+     "negara": "TH",
      "proyek": 1
     },
     {
      "nama": "Inpex",
+     "id": "in_ec6d8569f9",
+     "u": "/o/in_ec6d8569f9",
+     "singkatan": "-",
      "kategori": "Perusahaan Internasional di Indonesia",
      "peran": "pengembang",
+     "relevansi": "teknologi",
+     "negara": "JP",
      "proyek": 1
     },
     {
      "nama": "Marubeni Corporation",
+     "id": "p_4322497a63",
+     "u": "/o/p_4322497a63",
+     "singkatan": "Marubeni",
      "kategori": "Perusahaan Internasional di Indonesia",
      "peran": "pengembang, pembiaya",
+     "relevansi": "teknologi",
+     "negara": "JP",
      "proyek": 1
     },
     {
      "nama": "PT Dizamatara Powerindo",
+     "id": "pm_06e29x94a26",
+     "u": "/o/pm_06e29x94a26",
+     "singkatan": "-",
      "kategori": "Swasta",
      "peran": "pengembang",
+     "relevansi": "teknologi",
+     "negara": "ID",
      "proyek": 1
     },
     {
      "nama": "PT Trinergy Mandiri International",
+     "id": "pm_0eb31x2e06d",
+     "u": "/o/pm_0eb31x2e06d",
+     "singkatan": "-",
      "kategori": "Swasta",
      "peran": "pengembang",
+     "relevansi": "teknologi",
+     "negara": "ID",
      "proyek": 1
     },
     {
      "nama": "PT Cahaya Anagata Energy",
+     "id": "pm_155f6x74c8d",
+     "u": "/o/pm_155f6x74c8d",
+     "singkatan": "-",
      "kategori": "Swasta",
      "peran": "pengembang",
+     "relevansi": "teknologi",
+     "negara": "ID",
      "proyek": 1
     },
     {
      "nama": "PT Archi Indonesia Tbk",
+     "id": "pm_1c66exc8e3f",
+     "u": "/o/pm_1c66exc8e3f",
+     "singkatan": "-",
      "kategori": "Swasta",
      "peran": "pengembang",
+     "relevansi": "teknologi",
+     "negara": "ID",
      "proyek": 1
     },
     {
      "nama": "PT Sintesa Banten Geothermal",
+     "id": "pm_36e7ex28051",
+     "u": "/o/pm_36e7ex28051",
+     "singkatan": "-",
      "kategori": "Swasta",
      "peran": "pengembang",
+     "relevansi": "teknologi",
+     "negara": "ID",
      "proyek": 1
+    },
+    {
+     "nama": "PT Bakrie Power",
+     "id": "pm_895aax201f5",
+     "u": "/o/pm_895aax201f5",
+     "singkatan": "-",
+     "kategori": "Swasta",
+     "peran": "pengembang",
+     "relevansi": "teknologi",
+     "negara": "ID",
+     "proyek": 1
+    },
+    {
+     "nama": "PT Nirwana Suci Abadi",
+     "id": "pm_a6acex4ed9a",
+     "u": "/o/pm_a6acex4ed9a",
+     "singkatan": "-",
+     "kategori": "Swasta",
+     "peran": "pengembang",
+     "relevansi": "teknologi",
+     "negara": "ID",
+     "proyek": 1
+    },
+    {
+     "nama": "PT Sokoria Geothermal Indonesia",
+     "id": "pm_f63b1x0858a",
+     "u": "/o/pm_f63b1x0858a",
+     "singkatan": "-",
+     "kategori": "Swasta",
+     "peran": "pengembang",
+     "relevansi": "teknologi",
+     "negara": "ID",
+     "proyek": 1
+    },
+    {
+     "nama": "ReNu Energy",
+     "id": "in_26ea775ad0",
+     "u": "/o/in_26ea775ad0",
+     "singkatan": "ReNu",
+     "kategori": "Perusahaan Internasional di Indonesia",
+     "peran": "pengembang",
+     "relevansi": "teknologi",
+     "negara": "AU",
+     "proyek": 0
+    },
+    {
+     "nama": "Fuji Electric",
+     "id": "in_63d60cac64",
+     "u": "/o/in_63d60cac64",
+     "singkatan": "-",
+     "kategori": "Perusahaan Internasional di Indonesia",
+     "peran": "pemasok",
+     "relevansi": "teknologi",
+     "negara": "JP",
+     "proyek": 0
+    },
+    {
+     "nama": "Toshiba",
+     "id": "in_8da76cdbb4",
+     "u": "/o/in_8da76cdbb4",
+     "singkatan": "-",
+     "kategori": "Perusahaan Internasional di Indonesia",
+     "peran": "pemasok",
+     "relevansi": "teknologi",
+     "negara": "JP",
+     "proyek": 0
+    },
+    {
+     "nama": "J-Power (Electric Power Development)",
+     "id": "in_bad1f1473c",
+     "u": "/o/in_bad1f1473c",
+     "singkatan": "J-Power",
+     "kategori": "Perusahaan Internasional di Indonesia",
+     "peran": "pengembang",
+     "relevansi": "teknologi",
+     "negara": "JP",
+     "proyek": 0
+    },
+    {
+     "nama": "Mitsubishi Heavy Industries",
+     "id": "in_c462bee334",
+     "u": "/o/in_c462bee334",
+     "singkatan": "MHI",
+     "kategori": "Perusahaan Internasional di Indonesia",
+     "peran": "pemasok",
+     "relevansi": "teknologi",
+     "negara": "JP",
+     "proyek": 0
+    },
+    {
+     "nama": "Direktorat Panas Bumi",
+     "id": "l_21d3901823",
+     "u": "/o/l_21d3901823",
+     "singkatan": "Dit. Panas Bumi",
+     "kategori": "Kementerian dan Lembaga Negara",
+     "peran": "-",
+     "relevansi": "teknologi",
+     "negara": "ID",
+     "proyek": 0
+    },
+    {
+     "nama": "Asosiasi Panas Bumi Indonesia",
+     "id": "l_7e5f8d771d",
+     "u": "/o/l_7e5f8d771d",
+     "singkatan": "API",
+     "kategori": "Asosiasi",
+     "peran": "-",
+     "relevansi": "teknologi",
+     "negara": "ID",
+     "proyek": 0
+    },
+    {
+     "nama": "PT Medco Energi Internasional Tbk",
+     "id": "p_9de27fd5b9",
+     "u": "/o/p_9de27fd5b9",
+     "singkatan": "-",
+     "kategori": "Swasta",
+     "peran": "pengembang, IPP",
+     "relevansi": "teknologi",
+     "negara": "ID",
+     "proyek": 0
+    },
+    {
+     "nama": "PLN",
+     "id": "su_ed074ff5",
+     "u": "/o/su_ed074ff5",
+     "singkatan": "-",
+     "kategori": "BUMN",
+     "peran": "manufaktur",
+     "relevansi": "pemilik proyek",
+     "negara": "ID",
+     "proyek": 93
+    },
+    {
+     "nama": "PT Sarana Multi Infrastruktur (Persero)",
+     "id": "p_a235c21f23",
+     "u": "/o/p_a235c21f23",
+     "singkatan": "-",
+     "kategori": "Lembaga Keuangan",
+     "peran": "pembiaya",
+     "relevansi": "pemilik proyek",
+     "negara": "ID",
+     "proyek": 4
+    },
+    {
+     "nama": "World Bank Indonesia",
+     "id": "l_18a9ec31f4",
+     "u": "/o/l_18a9ec31f4",
+     "singkatan": "World Bank",
+     "kategori": "Lembaga Donor",
+     "peran": "-",
+     "relevansi": "pemangku kebijakan",
+     "negara": "ID",
+     "proyek": 33
+    },
+    {
+     "nama": "Badan Pengelola Investasi Daya Anagata Nusantara",
+     "id": "l_43f00f6a72",
+     "u": "/o/l_43f00f6a72",
+     "singkatan": "Danantara",
+     "kategori": "Kementerian dan Lembaga Negara",
+     "peran": "pembiaya",
+     "relevansi": "pemangku kebijakan",
+     "negara": "ID",
+     "proyek": 3
+    },
+    {
+     "nama": "Kementerian Keuangan",
+     "id": "l_7b43a2574c",
+     "u": "/o/l_7b43a2574c",
+     "singkatan": "Kemenkeu",
+     "kategori": "Kementerian dan Lembaga Negara",
+     "peran": "-",
+     "relevansi": "pemangku kebijakan",
+     "negara": "ID",
+     "proyek": 3
+    },
+    {
+     "nama": "Kementerian Energi dan Sumber Daya Mineral",
+     "id": "l_7278e0528a",
+     "u": "/o/l_7278e0528a",
+     "singkatan": "ESDM",
+     "kategori": "Kementerian dan Lembaga Negara",
+     "peran": "-",
+     "relevansi": "pemangku kebijakan",
+     "negara": "ID",
+     "proyek": 2
+    },
+    {
+     "nama": "Kementerian Investasi dan Hilirisasi/BKPM",
+     "id": "l_05301f48a5",
+     "u": "/o/l_05301f48a5",
+     "singkatan": "BKPM",
+     "kategori": "Kementerian dan Lembaga Negara",
+     "peran": "-",
+     "relevansi": "pemangku kebijakan",
+     "negara": "ID",
+     "proyek": 0
+    },
+    {
+     "nama": "Badan Pengelola Dana Perkebunan",
+     "id": "l_060c77568c",
+     "u": "/o/l_060c77568c",
+     "singkatan": "BPDP",
+     "kategori": "Kementerian dan Lembaga Negara",
+     "peran": "-",
+     "relevansi": "pemangku kebijakan",
+     "negara": "ID",
+     "proyek": 0
+    },
+    {
+     "nama": "Asosiasi Produsen Listrik Swasta Indonesia",
+     "id": "l_06d49428ac",
+     "u": "/o/l_06d49428ac",
+     "singkatan": "APLSI",
+     "kategori": "Asosiasi",
+     "peran": "-",
+     "relevansi": "pemangku kebijakan",
+     "negara": "ID",
+     "proyek": 0
+    },
+    {
+     "nama": "Asosiasi Pengusaha Batubara Indonesia",
+     "id": "l_06ec0b587e",
+     "u": "/o/l_06ec0b587e",
+     "singkatan": "APBI",
+     "kategori": "Asosiasi",
+     "peran": "-",
+     "relevansi": "pemangku kebijakan",
+     "negara": "ID",
+     "proyek": 0
+    },
+    {
+     "nama": "Institute for Economic and Social Research FEB UI (LPEM)",
+     "id": "l_0cbcc8e8b6",
+     "u": "/o/l_0cbcc8e8b6",
+     "singkatan": "LPEM UI",
+     "kategori": "Think Tank dan Lembaga Riset",
+     "peran": "-",
+     "relevansi": "pemangku kebijakan",
+     "negara": "ID",
+     "proyek": 0
+    },
+    {
+     "nama": "Organisasi Riset Energi dan Manufaktur BRIN",
+     "id": "l_0d81cf4cb1",
+     "u": "/o/l_0d81cf4cb1",
+     "singkatan": "-",
+     "kategori": "Kementerian dan Lembaga Negara",
+     "peran": "-",
+     "relevansi": "pemangku kebijakan",
+     "negara": "ID",
+     "proyek": 0
+    },
+    {
+     "nama": "Direktorat Perencanaan dan Pembangunan Infrastruktur EBTKE",
+     "id": "l_11621e2b6c",
+     "u": "/o/l_11621e2b6c",
+     "singkatan": "Dit. PPI EBTKE",
+     "kategori": "Kementerian dan Lembaga Negara",
+     "peran": "-",
+     "relevansi": "pemangku kebijakan",
+     "negara": "ID",
+     "proyek": 0
+    },
+    {
+     "nama": "Otoritas Jasa Keuangan",
+     "id": "l_15e21f04fa",
+     "u": "/o/l_15e21f04fa",
+     "singkatan": "OJK",
+     "kategori": "Kementerian dan Lembaga Negara",
+     "peran": "-",
+     "relevansi": "pemangku kebijakan",
+     "negara": "ID",
+     "proyek": 0
+    },
+    {
+     "nama": "Climate Policy Initiative Indonesia",
+     "id": "l_17c427f563",
+     "u": "/o/l_17c427f563",
+     "singkatan": "CPI",
+     "kategori": "Think Tank dan Lembaga Riset",
+     "peran": "-",
+     "relevansi": "pemangku kebijakan",
+     "negara": "ID",
+     "proyek": 0
+    },
+    {
+     "nama": "International Renewable Energy Agency",
+     "id": "l_268f74ec67",
+     "u": "/o/l_268f74ec67",
+     "singkatan": "IRENA",
+     "kategori": "Lembaga Donor",
+     "peran": "lembaga",
+     "relevansi": "pemangku kebijakan",
+     "negara": "ID",
+     "proyek": 0
+    },
+    {
+     "nama": "Kamar Dagang dan Industri Indonesia (Komite Tetap Energi Baru Terbarukan)",
+     "id": "l_2f86ba4616",
+     "u": "/o/l_2f86ba4616",
+     "singkatan": "KADIN-EBT",
+     "kategori": "Asosiasi",
+     "peran": "-",
+     "relevansi": "pemangku kebijakan",
+     "negara": "ID",
+     "proyek": 0
+    },
+    {
+     "nama": "Direktorat Jenderal Energi Baru, Terbarukan dan Konservasi Energi",
+     "id": "l_38ba1d6f56",
+     "u": "/o/l_38ba1d6f56",
+     "singkatan": "Ditjen EBTKE",
+     "kategori": "Kementerian dan Lembaga Negara",
+     "peran": "-",
+     "relevansi": "pemangku kebijakan",
+     "negara": "ID",
+     "proyek": 0
+    },
+    {
+     "nama": "Badan Pusat Statistik",
+     "id": "l_3acae54910",
+     "u": "/o/l_3acae54910",
+     "singkatan": "BPS",
+     "kategori": "Kementerian dan Lembaga Negara",
+     "peran": "-",
+     "relevansi": "pemangku kebijakan",
+     "negara": "ID",
+     "proyek": 0
+    },
+    {
+     "nama": "Masyarakat Energi Terbarukan Indonesia",
+     "id": "l_41bf1f0b41",
+     "u": "/o/l_41bf1f0b41",
+     "singkatan": "METI",
+     "kategori": "Asosiasi",
+     "peran": "-",
+     "relevansi": "pemangku kebijakan",
+     "negara": "ID",
+     "proyek": 0
+    },
+    {
+     "nama": "Center of Economic and Law Studies",
+     "id": "l_488614e2c7",
+     "u": "/o/l_488614e2c7",
+     "singkatan": "CELIOS",
+     "kategori": "Think Tank dan Lembaga Riset",
+     "peran": "-",
+     "relevansi": "pemangku kebijakan",
+     "negara": "ID",
+     "proyek": 0
+    },
+    {
+     "nama": "International Energy Agency",
+     "id": "l_5bc6d9c59b",
+     "u": "/o/l_5bc6d9c59b",
+     "singkatan": "IEA",
+     "kategori": "Lembaga Donor",
+     "peran": "lembaga",
+     "relevansi": "pemangku kebijakan",
+     "negara": "ID",
+     "proyek": 0
+    },
+    {
+     "nama": "Dewan Perwakilan Rakyat RI Komisi XII",
+     "id": "l_774a8755e8",
+     "u": "/o/l_774a8755e8",
+     "singkatan": "Komisi XII DPR",
+     "kategori": "Kementerian dan Lembaga Negara",
+     "peran": "-",
+     "relevansi": "pemangku kebijakan",
+     "negara": "ID",
+     "proyek": 0
+    },
+    {
+     "nama": "Badan Riset dan Inovasi Nasional",
+     "id": "l_973f60de15",
+     "u": "/o/l_973f60de15",
+     "singkatan": "BRIN",
+     "kategori": "Kementerian dan Lembaga Negara",
+     "peran": "-",
+     "relevansi": "pemangku kebijakan",
+     "negara": "ID",
+     "proyek": 0
+    },
+    {
+     "nama": "Sekretariat JETP Indonesia",
+     "id": "l_c455b2f724",
+     "u": "/o/l_c455b2f724",
+     "singkatan": "JETP",
+     "kategori": "Lembaga Donor",
+     "peran": "-",
+     "relevansi": "pemangku kebijakan",
+     "negara": "ID",
+     "proyek": 0
     }
    ],
    "catatan": {
-    "id": "Pemain utama menurut berita dan sumber di bab ini: PGE (1.932 MW termasuk mitra JOC dalam rilis terbaru PGE yang terbaca; 727 MW dikelola sendiri), PLN dan PLN Indonesia Power, Geo Dipa, Star Energy, Supreme Energy, Medco, Barito Renewables, Sorik Marapi Geothermal Power.",
-    "en": "Main players per news and sources in this chapter: PGE (1,932 MW including JOC partners per the latest PGE release read; 727 MW self-operated), PLN and PLN Indonesia Power, Geo Dipa, Star Energy, Supreme Energy, Medco, Barito Renewables, Sorik Marapi Geothermal Power."
-   },
-   "sumber": [
-    "pge_q3",
-    "pge_q1",
-    "proyek",
-    "bren",
-    "medco"
-   ]
+    "id": "Urutan: organisasi berkepakaran teknologi ini, lalu pemilik atau pengembang proyek di basis proyek, lalu pemangku kebijakan dan pendana lintas teknologi. Logo dan profil dibuka lewat id (jalur /o/<id>).",
+    "en": "Order: organisations with expertise in this technology, then owners or developers of projects in the project base, then cross-technology policy bodies and financiers. Logo and profile open through id (path /o/<id>)."
+   }
   },
   "10": {
    "tipe": "tabel",
    "per": 10,
    "judul": {
     "id": "Proyek panas bumi terbesar di basis METI",
-    "en": "Largest geothermal projects in the METI base"
+    "en": "Largest panas bumi projects in the METI base"
    },
+   "sumber": [
+    "d_proyek"
+   ],
    "kolom": [
     {
      "k": "nama",
      "l": {
       "id": "Proyek",
       "en": "Project"
-     }
+     },
+     "url": "u"
     },
     {
-     "k": "provinsi",
+     "k": "prov",
      "l": {
       "id": "Provinsi",
       "en": "Province"
+     }
+    },
+    {
+     "k": "kode",
+     "l": {
+      "id": "Kode BPS",
+      "en": "BPS code"
      }
     },
     {
@@ -1832,162 +2857,1156 @@
      }
     },
     {
+     "k": "cod",
+     "l": {
+      "id": "Target COD",
+      "en": "COD target"
+     },
+     "num": true,
+     "d": 0
+    },
+    {
+     "k": "pemilik",
+     "l": {
+      "id": "Pemilik atau pengembang",
+      "en": "Owner or developer"
+     },
+     "url": "uo"
+    },
+    {
      "k": "bukti",
      "l": {
-      "id": "Bukti",
-      "en": "Evidence"
+      "id": "Tingkat bukti",
+      "en": "Evidence level"
      }
     }
    ],
    "baris": [
     {
      "nama": "PLTP 2030 2030 (FTP2)",
-     "provinsi": "Sumatera Selatan",
+     "id": "pj_0267",
+     "u": "/proyek#pj_0267",
+     "prov": "Sumatera Selatan",
+     "kode": "16",
      "mw": 600,
      "status": "rencana",
+     "cod": 2032,
+     "pemilik": "IPP",
+     "id_organisasi": null,
+     "uo": null,
      "bukti": "resmi"
     },
     {
      "nama": "PLTP Dieng (FTP2)",
-     "provinsi": "Jawa Tengah",
+     "id": "pj_0244",
+     "u": "/proyek#pj_0244",
+     "prov": "Jawa Tengah",
+     "kode": "33",
      "mw": 345,
      "status": "konstruksi",
+     "cod": 2027,
+     "pemilik": "IPP",
+     "id_organisasi": null,
+     "uo": null,
      "bukti": "resmi"
     },
     {
      "nama": "Sarulla geothermal power plant",
-     "provinsi": "Sumatera Utara",
+     "id": "gem_geothermal_L100000700157",
+     "u": "/proyek#gem_geothermal_L100000700157",
+     "prov": "Sumatera Utara",
+     "kode": "12",
      "mw": 330,
      "status": "beroperasi",
+     "cod": null,
+     "pemilik": "Sarulla Operations Ltd",
+     "id_organisasi": null,
+     "uo": null,
      "bukti": "kajian"
     },
     {
      "nama": "Kamojang geothermal",
-     "provinsi": "Jawa Barat",
+     "id": "pj_0232",
+     "u": "/proyek#pj_0232",
+     "prov": "Jawa Barat",
+     "kode": "32",
      "mw": 235,
      "status": "beroperasi",
+     "cod": null,
+     "pemilik": "PT. Indonesia Power",
+     "id_organisasi": null,
+     "uo": null,
      "bukti": "media"
     },
     {
      "nama": "Wayang Windu geothermal",
-     "provinsi": "Jawa Barat",
+     "id": "pj_0241",
+     "u": "/proyek#pj_0241",
+     "prov": "Jawa Barat",
+     "kode": "32",
      "mw": 227,
-     "status": "-",
+     "status": "tidak tercatat",
+     "cod": null,
+     "pemilik": "PT. Pertamina and Magma Nusantara Ltd. (IPP)",
+     "id_organisasi": null,
+     "uo": null,
      "bukti": "media"
     },
     {
      "nama": "Rantau Dedep geothermal power plant",
-     "provinsi": "Sumatera Selatan",
+     "id": "gem_geothermal_L100000700146",
+     "u": "/proyek#gem_geothermal_L100000700146",
+     "prov": "Sumatera Selatan",
+     "kode": "16",
      "mw": 225,
      "status": "beroperasi",
+     "cod": null,
+     "pemilik": "PT Supreme Energy",
+     "id_organisasi": "p_c6c4e478c0",
+     "uo": "/o/p_c6c4e478c0",
      "bukti": "kajian"
     },
     {
      "nama": "PLTP Baturaden (FTP2)",
-     "provinsi": "Jawa Tengah",
+     "id": "pj_0243",
+     "u": "/proyek#pj_0243",
+     "prov": "Jawa Tengah",
+     "kode": "33",
      "mw": 220,
      "status": "rencana",
+     "cod": 2031,
+     "pemilik": "PT Trinergy Mandiri International",
+     "id_organisasi": "pm_0eb31x2e06d",
+     "uo": "/o/pm_0eb31x2e06d",
      "bukti": "resmi"
     },
     {
      "nama": "Rajabasa geothermal power plant",
-     "provinsi": "Lampung",
+     "id": "gem_geothermal_L100000700144",
+     "u": "/proyek#gem_geothermal_L100000700144",
+     "prov": "Lampung",
+     "kode": "18",
      "mw": 220,
      "status": "konstruksi",
+     "cod": null,
+     "pemilik": "PT Supreme Energy",
+     "id_organisasi": "p_c6c4e478c0",
+     "uo": "/o/p_c6c4e478c0",
      "bukti": "kajian"
     },
     {
      "nama": "Darajat geothermal",
-     "provinsi": "Jawa Barat",
+     "id": "pj_0229",
+     "u": "/proyek#pj_0229",
+     "prov": "Jawa Barat",
+     "kode": "32",
      "mw": 200,
-     "status": "-",
+     "status": "tidak tercatat",
+     "cod": null,
+     "pemilik": "PT. Pertamina, Chevron Geothermal Indonesia, Ltd (IPP)",
+     "id_organisasi": null,
+     "uo": null,
      "bukti": "media"
     },
     {
      "nama": "PLTP Sorik Marapi (FTP2)",
-     "provinsi": "Sumatera Utara",
+     "id": "pj_0272",
+     "u": "/proyek#pj_0272",
+     "prov": "Sumatera Utara",
+     "kode": "12",
      "mw": 185,
      "status": "konstruksi",
+     "cod": 2025,
+     "pemilik": "IPP",
+     "id_organisasi": null,
+     "uo": null,
      "bukti": "resmi"
     },
     {
      "nama": "Gunung Salak geothermal",
-     "provinsi": "Jawa Barat",
+     "id": "pj_0230",
+     "u": "/proyek#pj_0230",
+     "prov": "Jawa Barat",
+     "kode": "32",
      "mw": 180,
-     "status": "-",
+     "status": "tidak tercatat",
+     "cod": null,
+     "pemilik": "PT. Indonesia Power",
+     "id_organisasi": null,
+     "uo": null,
      "bukti": "media"
     },
     {
      "nama": "PLTP Bedugul",
-     "provinsi": "Bali",
+     "id": "pj_0222",
+     "u": "/proyek#pj_0222",
+     "prov": "Bali",
+     "kode": "51",
      "mw": 175,
      "status": "rencana",
+     "cod": 2028,
+     "pemilik": "IPP",
+     "id_organisasi": null,
+     "uo": null,
      "bukti": "resmi"
     },
     {
      "nama": "Muara Laboh Geothermal Power Plant",
-     "provinsi": "Sumatera Barat",
+     "id": "pj_0265",
+     "u": "/proyek#pj_0265",
+     "prov": "Sumatera Barat",
+     "kode": "13",
      "mw": 168,
      "status": "beroperasi",
+     "cod": null,
+     "pemilik": "PT Supreme Energy",
+     "id_organisasi": "p_c6c4e478c0",
+     "uo": "/o/p_c6c4e478c0",
      "bukti": "resmi"
     },
     {
      "nama": "Gunung Salak geothermal",
-     "provinsi": "Jawa Barat",
+     "id": "pj_0231",
+     "u": "/proyek#pj_0231",
+     "prov": "Jawa Barat",
+     "kode": "32",
      "mw": 165,
-     "status": "-",
+     "status": "tidak tercatat",
+     "cod": null,
+     "pemilik": "Chevron Geothermal Salak Ltd and Dayabumi Salak Pratama Ltd (IPP)",
+     "id_organisasi": null,
+     "uo": null,
      "bukti": "media"
     },
     {
      "nama": "Patuha geothermal",
-     "provinsi": "Jawa Barat",
+     "id": "pj_0233",
+     "u": "/proyek#pj_0233",
+     "prov": "Jawa Barat",
+     "kode": "32",
      "mw": 165,
      "status": "konstruksi",
+     "cod": 2026,
+     "pemilik": "PT. Geo Dipa Energi (IPP)",
+     "id_organisasi": "p_7b70728bb7",
+     "uo": "/o/p_7b70728bb7",
      "bukti": "resmi"
     },
     {
      "nama": "PLTP Telaga Ngebel (FTP2)",
-     "provinsi": "Jawa Timur",
+     "id": "pj_0247",
+     "u": "/proyek#pj_0247",
+     "prov": "Jawa Timur",
+     "kode": "35",
      "mw": 165,
      "status": "rencana",
+     "cod": 2030,
+     "pemilik": "PT Bakrie Power",
+     "id_organisasi": "pm_895aax201f5",
+     "uo": "/o/pm_895aax201f5",
      "bukti": "resmi"
     },
     {
      "nama": "PLTP Wayang Windu",
-     "provinsi": "Jawa Barat",
+     "id": "pj_0239",
+     "u": "/proyek#pj_0239",
+     "prov": "Jawa Barat",
+     "kode": "32",
      "mw": 150,
      "status": "rencana",
+     "cod": 2028,
+     "pemilik": "Star Energy Geothermal",
+     "id_organisasi": "p_7a803f3b71",
+     "uo": "/o/p_7a803f3b71",
      "bukti": "resmi"
     },
     {
      "nama": "PLTP Muara Laboh (FTP2)",
-     "provinsi": "Sumatera Barat",
+     "id": "pj_0266",
+     "u": "/proyek#pj_0266",
+     "prov": "Sumatera Barat",
+     "kode": "13",
      "mw": 140,
      "status": "rencana",
+     "cod": 2028,
+     "pemilik": "IPP",
+     "id_organisasi": null,
+     "uo": null,
      "bukti": "resmi"
     },
     {
      "nama": "PLTP Wayang Windu (FTP2)",
-     "provinsi": "Jawa Barat",
+     "id": "pj_0240",
+     "u": "/proyek#pj_0240",
+     "prov": "Jawa Barat",
+     "kode": "32",
      "mw": 130,
-     "status": "-",
+     "status": "tidak tercatat",
+     "cod": 2027,
+     "pemilik": "SH-PLN",
+     "id_organisasi": null,
+     "uo": null,
      "bukti": "resmi"
     },
     {
      "nama": "PLTP Rawadano (FTP2)",
-     "provinsi": "Banten",
+     "id": "pj_0223",
+     "u": "/proyek#pj_0223",
+     "prov": "Banten",
+     "kode": "36",
      "mw": 110,
      "status": "rencana",
+     "cod": 2030,
+     "pemilik": "IPP",
+     "id_organisasi": null,
+     "uo": null,
+     "bukti": "resmi"
+    },
+    {
+     "nama": "PLTP Hululais (FTP2)",
+     "id": "pj_0224",
+     "u": "/proyek#pj_0224",
+     "prov": "Bengkulu",
+     "kode": "17",
+     "mw": 110,
+     "status": "rencana",
+     "cod": 2028,
+     "pemilik": "PLN",
+     "id_organisasi": "su_ed074ff5",
+     "uo": "/o/su_ed074ff5",
+     "bukti": "resmi"
+    },
+    {
+     "nama": "PLTP Ijen (FTP2)",
+     "id": "pj_0246",
+     "u": "/proyek#pj_0246",
+     "prov": "Jawa Timur",
+     "kode": "35",
+     "mw": 110,
+     "status": "konstruksi",
+     "cod": 2025,
+     "pemilik": "PT Medco Power Indonesia",
+     "id_organisasi": "p_27ae5a4203",
+     "uo": "/o/p_27ae5a4203",
+     "bukti": "resmi"
+    },
+    {
+     "nama": "Ulubelu Geothermal Power Station",
+     "id": "pj_0249",
+     "u": "/proyek#pj_0249",
+     "prov": "Lampung",
+     "kode": "18",
+     "mw": 110,
+     "status": "beroperasi",
+     "cod": null,
+     "pemilik": "PT. PLN",
+     "id_organisasi": "su_ed074ff5",
+     "uo": "/o/su_ed074ff5",
+     "bukti": "media"
+    },
+    {
+     "nama": "Rawa Dano geothermal power plant",
+     "id": "gem_geothermal_L100000700209",
+     "u": "/proyek#gem_geothermal_L100000700209",
+     "prov": "Banten",
+     "kode": "36",
+     "mw": 110,
+     "status": "rencana",
+     "cod": null,
+     "pemilik": "PT Sintesa Banten Geothermal",
+     "id_organisasi": "pm_36e7ex28051",
+     "uo": "/o/pm_36e7ex28051",
+     "bukti": "kajian"
+    },
+    {
+     "nama": "PLTP Danau Ranau (FPT2)",
+     "id": "pj_0268",
+     "u": "/proyek#pj_0268",
+     "prov": "Sumatera Selatan",
+     "kode": "16",
+     "mw": 95,
+     "status": "rencana",
+     "cod": 2033,
+     "pemilik": "SH-PLN",
+     "id_organisasi": null,
+     "uo": null,
+     "bukti": "resmi"
+    },
+    {
+     "nama": "PSPE panas bumi Jenawi",
+     "id": "wkp25_jenawi",
+     "u": "/proyek#wkp25_jenawi",
+     "prov": "Jawa Tengah",
+     "kode": "33",
+     "mw": 86,
+     "status": "rencana",
+     "cod": null,
+     "pemilik": "-",
+     "id_organisasi": null,
+     "uo": null,
+     "bukti": "media"
+    },
+    {
+     "nama": "Lahendong geothermal",
+     "id": "pj_0260",
+     "u": "/proyek#pj_0260",
+     "prov": "Sulawesi Utara",
+     "kode": "71",
+     "mw": 80,
+     "status": "beroperasi",
+     "cod": null,
+     "pemilik": "PT. PLN",
+     "id_organisasi": "su_ed074ff5",
+     "uo": "/o/su_ed074ff5",
+     "bukti": "media"
+    },
+    {
+     "nama": "PLTP III Gunung Salak 8",
+     "id": "pj_0236",
+     "u": "/proyek#pj_0236",
+     "prov": "Jawa Barat",
+     "kode": "32",
+     "mw": 63,
+     "status": "rencana",
+     "cod": 2032,
+     "pemilik": "IPP",
+     "id_organisasi": null,
+     "uo": null,
+     "bukti": "resmi"
+    },
+    {
+     "nama": "Dieng geothermal",
+     "id": "pj_0242",
+     "u": "/proyek#pj_0242",
+     "prov": "Jawa Tengah",
+     "kode": "33",
+     "mw": 60,
+     "status": "beroperasi",
+     "cod": null,
+     "pemilik": "PT. Geo Dipa Energi (IPP)",
+     "id_organisasi": "p_7b70728bb7",
+     "uo": "/o/p_7b70728bb7",
+     "bukti": "media"
+    },
+    {
+     "nama": "PLTP Kepahiang #1",
+     "id": "pj_0225",
+     "u": "/proyek#pj_0225",
+     "prov": "Bengkulu",
+     "kode": "17",
+     "mw": 55,
+     "status": "rencana",
+     "cod": 2030,
+     "pemilik": "PT PLN (Persero)",
+     "id_organisasi": "su_ed074ff5",
+     "uo": "/o/su_ed074ff5",
+     "bukti": "resmi"
+    },
+    {
+     "nama": "PLTP Kepahiang #2",
+     "id": "pj_0226",
+     "u": "/proyek#pj_0226",
+     "prov": "Bengkulu",
+     "kode": "17",
+     "mw": 55,
+     "status": "rencana",
+     "cod": 2030,
+     "pemilik": "SH-PLN",
+     "id_organisasi": null,
+     "uo": null,
+     "bukti": "resmi"
+    },
+    {
+     "nama": "PLTP Sungai Penuh (FTP2)",
+     "id": "pj_0227",
+     "u": "/proyek#pj_0227",
+     "prov": "Jambi",
+     "kode": "15",
+     "mw": 55,
+     "status": "konstruksi",
+     "cod": 2033,
+     "pemilik": "Pertamina Geothermal Energy",
+     "id_organisasi": "p_dda1e51dae",
+     "uo": "/o/p_dda1e51dae",
+     "bukti": "resmi"
+    },
+    {
+     "nama": "Darajat geothermal",
+     "id": "pj_0228",
+     "u": "/proyek#pj_0228",
+     "prov": "Jawa Barat",
+     "kode": "32",
+     "mw": 55,
+     "status": "beroperasi",
+     "cod": null,
+     "pemilik": "PT. Indonesia Power",
+     "id_organisasi": null,
+     "uo": null,
+     "bukti": "media"
+    },
+    {
+     "nama": "PLTP Ungaran (FTP2)",
+     "id": "pj_0245",
+     "u": "/proyek#pj_0245",
+     "prov": "Jawa Tengah",
+     "kode": "33",
+     "mw": 55,
+     "status": "rencana",
+     "cod": 2031,
+     "pemilik": "SH-PLN",
+     "id_organisasi": null,
+     "uo": null,
+     "bukti": "resmi"
+    },
+    {
+     "nama": "PLTP Lumut Balai (FTP2) #2",
+     "id": "pj_0269",
+     "u": "/proyek#pj_0269",
+     "prov": "Sumatera Selatan",
+     "kode": "16",
+     "mw": 55,
+     "status": "konstruksi",
+     "cod": 2025,
+     "pemilik": "Pertamina Geothermal Energy",
+     "id_organisasi": "p_dda1e51dae",
+     "uo": "/o/p_dda1e51dae",
+     "bukti": "resmi"
+    },
+    {
+     "nama": "PLTP Lumut Balai (FTP2) #3",
+     "id": "pj_0270",
+     "u": "/proyek#pj_0270",
+     "prov": "Sumatera Selatan",
+     "kode": "16",
+     "mw": 55,
+     "status": "konstruksi",
+     "cod": 2033,
+     "pemilik": "IPP",
+     "id_organisasi": null,
+     "uo": null,
+     "bukti": "resmi"
+    },
+    {
+     "nama": "PLTP Lumut Balai (FTP2) #4",
+     "id": "pj_0271",
+     "u": "/proyek#pj_0271",
+     "prov": "Sumatera Selatan",
+     "kode": "16",
+     "mw": 55,
+     "status": "konstruksi",
+     "cod": 2033,
+     "pemilik": "IPP",
+     "id_organisasi": null,
+     "uo": null,
+     "bukti": "resmi"
+    },
+    {
+     "nama": "Ratai geothermal power plant",
+     "id": "gem_geothermal_L100000700147",
+     "u": "/proyek#gem_geothermal_L100000700147",
+     "prov": "Lampung",
+     "kode": "18",
+     "mw": 55,
+     "status": "rencana",
+     "cod": null,
+     "pemilik": "PT Cahaya Anagata Energy",
+     "id_organisasi": "pm_155f6x74c8d",
+     "uo": "/o/pm_155f6x74c8d",
+     "bukti": "kajian"
+    },
+    {
+     "nama": "Sarulla 2 geothermal power plant",
+     "id": "gem_geothermal_L100001025662",
+     "u": "/proyek#gem_geothermal_L100001025662",
+     "prov": "-",
+     "kode": null,
+     "mw": 50,
+     "status": "rencana",
+     "cod": null,
+     "pemilik": "-",
+     "id_organisasi": null,
+     "uo": null,
+     "bukti": "kajian"
+    },
+    {
+     "nama": "PLTP I Gunung Salak 7",
+     "id": "pj_0235",
+     "u": "/proyek#pj_0235",
+     "prov": "Jawa Barat",
+     "kode": "32",
+     "mw": 40,
+     "status": "rencana",
+     "cod": 2026,
+     "pemilik": "Electricity Generating PCL",
+     "id_organisasi": "in_9d25098c0a",
+     "uo": "/o/in_9d25098c0a",
+     "bukti": "resmi"
+    },
+    {
+     "nama": "PLTP Tangkuban Perahu (FTP2)",
+     "id": "pj_0238",
+     "u": "/proyek#pj_0238",
+     "prov": "Jawa Barat",
+     "kode": "32",
+     "mw": 40,
+     "status": "rencana",
+     "cod": 2032,
+     "pemilik": "PT PLN (Persero)",
+     "id_organisasi": "su_ed074ff5",
+     "uo": "/o/su_ed074ff5",
+     "bukti": "resmi"
+    },
+    {
+     "nama": "Toka Tindung geothermal power plant",
+     "id": "gem_geothermal_L100001025604",
+     "u": "/proyek#gem_geothermal_L100001025604",
+     "prov": "-",
+     "kode": null,
+     "mw": 40,
+     "status": "rencana",
+     "cod": null,
+     "pemilik": "PT Archi Indonesia Tbk",
+     "id_organisasi": "pm_1c66exc8e3f",
+     "uo": "/o/pm_1c66exc8e3f",
+     "bukti": "kajian"
+    },
+    {
+     "nama": "WKP panas bumi Danau Ranau",
+     "id": "wkp25_danau_ranau",
+     "u": "/proyek#wkp25_danau_ranau",
+     "prov": "Lampung",
+     "kode": "18",
+     "mw": 40,
+     "status": "rencana",
+     "cod": null,
+     "pemilik": "-",
+     "id_organisasi": null,
+     "uo": null,
+     "bukti": "media"
+    },
+    {
+     "nama": "WKP panas bumi Telaga Ranau",
+     "id": "wkp25_telaga_ranau",
+     "u": "/proyek#wkp25_telaga_ranau",
+     "prov": "Maluku Utara",
+     "kode": "82",
+     "mw": 40,
+     "status": "rencana",
+     "cod": null,
+     "pemilik": "-",
+     "id_organisasi": null,
+     "uo": null,
+     "bukti": "media"
+    },
+    {
+     "nama": "WKP panas bumi Songgoriti",
+     "id": "wkp25_songgoriti",
+     "u": "/proyek#wkp25_songgoriti",
+     "prov": "Jawa Timur",
+     "kode": "35",
+     "mw": 40,
+     "status": "rencana",
+     "cod": null,
+     "pemilik": "-",
+     "id_organisasi": null,
+     "uo": null,
+     "bukti": "media"
+    },
+    {
+     "nama": "PSPE panas bumi Kadidia",
+     "id": "wkp25_kadidia",
+     "u": "/proyek#wkp25_kadidia",
+     "prov": "Sulawesi Tengah",
+     "kode": "72",
+     "mw": 40,
+     "status": "rencana",
+     "cod": null,
+     "pemilik": "-",
+     "id_organisasi": null,
+     "uo": null,
+     "bukti": "media"
+    },
+    {
+     "nama": "PSPE panas bumi Cubudak-Panti",
+     "id": "wkp25_cubudak_panti",
+     "u": "/proyek#wkp25_cubudak_panti",
+     "prov": "Sumatera Barat",
+     "kode": "13",
+     "mw": 40,
+     "status": "rencana",
+     "cod": null,
+     "pemilik": "-",
+     "id_organisasi": null,
+     "uo": null,
+     "bukti": "media"
+    },
+    {
+     "nama": "PSPE panas bumi Gunung Tampomas",
+     "id": "wkp25_gunung_tampomas",
+     "u": "/proyek#wkp25_gunung_tampomas",
+     "prov": "Jawa Barat",
+     "kode": "32",
+     "mw": 30,
+     "status": "rencana",
+     "cod": null,
+     "pemilik": "-",
+     "id_organisasi": null,
+     "uo": null,
+     "bukti": "media"
+    },
+    {
+     "nama": "PLTP Sokoria (FTP2)",
+     "id": "pj_0256",
+     "u": "/proyek#pj_0256",
+     "prov": "Nusa Tenggara Timur",
+     "kode": "53",
+     "mw": 22,
+     "status": "konstruksi",
+     "cod": 2028,
+     "pemilik": "IPP",
+     "id_organisasi": null,
+     "uo": null,
+     "bukti": "resmi"
+    },
+    {
+     "nama": "PLTP Tulehu (FTP2)",
+     "id": "pj_0251",
+     "u": "/proyek#pj_0251",
+     "prov": "Maluku",
+     "kode": "81",
+     "mw": 20,
+     "status": "rencana",
+     "cod": 2031,
+     "pemilik": "PT PLN (Persero)",
+     "id_organisasi": "su_ed074ff5",
+     "uo": "/o/su_ed074ff5",
+     "bukti": "resmi"
+    },
+    {
+     "nama": "PLTP Mataloko (FTP2)",
+     "id": "pj_0254",
+     "u": "/proyek#pj_0254",
+     "prov": "Nusa Tenggara Timur",
+     "kode": "53",
+     "mw": 20,
+     "status": "rencana",
+     "cod": 2031,
+     "pemilik": "PT PLN (Persero)",
+     "id_organisasi": "su_ed074ff5",
+     "uo": "/o/su_ed074ff5",
+     "bukti": "resmi"
+    },
+    {
+     "nama": "PLTP Ulumbu 5",
+     "id": "pj_0257",
+     "u": "/proyek#pj_0257",
+     "prov": "Nusa Tenggara Timur",
+     "kode": "53",
+     "mw": 20,
+     "status": "rencana",
+     "cod": 2030,
+     "pemilik": "PT Pertamina (Persero)",
+     "id_organisasi": "p_b1c52ad7b0",
+     "uo": "/o/p_b1c52ad7b0",
+     "bukti": "resmi"
+    },
+    {
+     "nama": "PLTP Ulumbu 6",
+     "id": "pj_0258",
+     "u": "/proyek#pj_0258",
+     "prov": "Nusa Tenggara Timur",
+     "kode": "53",
+     "mw": 20,
+     "status": "rencana",
+     "cod": 2032,
+     "pemilik": "-",
+     "id_organisasi": null,
+     "uo": null,
+     "bukti": "resmi"
+    },
+    {
+     "nama": "PLTP Kotamobagu 1 Sulbagut",
+     "id": "pj_0261",
+     "u": "/proyek#pj_0261",
+     "prov": "Sulawesi Utara",
+     "kode": "71",
+     "mw": 20,
+     "status": "rencana",
+     "cod": 2031,
+     "pemilik": "SH-PLN",
+     "id_organisasi": null,
+     "uo": null,
+     "bukti": "resmi"
+    },
+    {
+     "nama": "PLTP Kotamobagu 2",
+     "id": "pj_0262",
+     "u": "/proyek#pj_0262",
+     "prov": "Sulawesi Utara",
+     "kode": "71",
+     "mw": 20,
+     "status": "rencana",
+     "cod": 2033,
+     "pemilik": "SH-PLN",
+     "id_organisasi": null,
+     "uo": null,
+     "bukti": "resmi"
+    },
+    {
+     "nama": "PLTP Kotamobagu 3",
+     "id": "pj_0263",
+     "u": "/proyek#pj_0263",
+     "prov": "Sulawesi Utara",
+     "kode": "71",
+     "mw": 20,
+     "status": "rencana",
+     "cod": 2033,
+     "pemilik": "SH-PLN",
+     "id_organisasi": null,
+     "uo": null,
+     "bukti": "resmi"
+    },
+    {
+     "nama": "PLTP Kotamobagu 4",
+     "id": "pj_0264",
+     "u": "/proyek#pj_0264",
+     "prov": "Sulawesi Utara",
+     "kode": "71",
+     "mw": 20,
+     "status": "rencana",
+     "cod": 2033,
+     "pemilik": "SH-PLN",
+     "id_organisasi": null,
+     "uo": null,
+     "bukti": "resmi"
+    },
+    {
+     "nama": "Wapsalit geothermal power plant",
+     "id": "gem_geothermal_L100001063268",
+     "u": "/proyek#gem_geothermal_L100001063268",
+     "prov": "-",
+     "kode": null,
+     "mw": 20,
+     "status": "rencana",
+     "cod": null,
+     "pemilik": "PT PLN (Persero)",
+     "id_organisasi": "su_ed074ff5",
+     "uo": "/o/su_ed074ff5",
+     "bukti": "kajian"
+    },
+    {
+     "nama": "PSPE panas bumi Cisurupan Kertasari",
+     "id": "wkp25_cisurupan_kertasari",
+     "u": "/proyek#wkp25_cisurupan_kertasari",
+     "prov": "Jawa Barat",
+     "kode": "32",
+     "mw": 20,
+     "status": "rencana",
+     "cod": null,
+     "pemilik": "-",
+     "id_organisasi": null,
+     "uo": null,
+     "bukti": "media"
+    },
+    {
+     "nama": "PSPE panas bumi Tuang",
+     "id": "wkp25_tuang",
+     "u": "/proyek#wkp25_tuang",
+     "prov": "Sulawesi Selatan",
+     "kode": "73",
+     "mw": 20,
+     "status": "rencana",
+     "cod": null,
+     "pemilik": "-",
+     "id_organisasi": null,
+     "uo": null,
+     "bukti": "media"
+    },
+    {
+     "nama": "PLTP Karaha Bodas",
+     "id": "pj_0259",
+     "u": "/proyek#pj_0259",
+     "prov": "-",
+     "kode": null,
+     "mw": 18.16,
+     "status": "beroperasi",
+     "cod": null,
+     "pemilik": "PT PLN Indonesia Power",
+     "id_organisasi": "p_5a2e7d0c63",
+     "uo": "/o/p_5a2e7d0c63",
+     "bukti": "media"
+    },
+    {
+     "nama": "Salak Binary geothermal power plant",
+     "id": "gem_geothermal_L100001063273",
+     "u": "/proyek#gem_geothermal_L100001063273",
+     "prov": "-",
+     "kode": null,
+     "mw": 15.5,
+     "status": "beroperasi",
+     "cod": null,
+     "pemilik": "Star Energy Geothermal",
+     "id_organisasi": "p_7a803f3b71",
+     "uo": "/o/p_7a803f3b71",
+     "bukti": "kajian"
+    },
+    {
+     "nama": "PLTP Small Scale Binary",
+     "id": "pj_0237",
+     "u": "/proyek#pj_0237",
+     "prov": "Jawa Barat",
+     "kode": "32",
+     "mw": 15,
+     "status": "konstruksi",
+     "cod": 2025,
+     "pemilik": "IPP",
+     "id_organisasi": null,
+     "uo": null,
+     "bukti": "resmi"
+    },
+    {
+     "nama": "Sibayak geothermal",
+     "id": "pj_0273",
+     "u": "/proyek#pj_0273",
+     "prov": "Sumatera Utara",
+     "kode": "12",
+     "mw": 11.3,
+     "status": "beroperasi",
+     "cod": null,
+     "pemilik": "PT. Dizamatara Powerindo (IPP)",
+     "id_organisasi": "pm_06e29x94a26",
+     "uo": "/o/pm_06e29x94a26",
+     "bukti": "media"
+    },
+    {
+     "nama": "PLTP Cibuni (FTP2)",
+     "id": "pj_0234",
+     "u": "/proyek#pj_0234",
+     "prov": "Jawa Barat",
+     "kode": "32",
+     "mw": 10,
+     "status": "rencana",
+     "cod": 2028,
+     "pemilik": "IPP",
+     "id_organisasi": null,
+     "uo": null,
+     "bukti": "resmi"
+    },
+    {
+     "nama": "PLTP Songa Wayaua (FTP2)",
+     "id": "pj_0250",
+     "u": "/proyek#pj_0250",
+     "prov": "Maluku Utara",
+     "kode": "82",
+     "mw": 10,
+     "status": "rencana",
+     "cod": 2030,
+     "pemilik": "PT PLN (Persero)",
+     "id_organisasi": "su_ed074ff5",
+     "uo": "/o/su_ed074ff5",
+     "bukti": "resmi"
+    },
+    {
+     "nama": "PLTP Atadei (FTP2)",
+     "id": "pj_0252",
+     "u": "/proyek#pj_0252",
+     "prov": "Nusa Tenggara Timur",
+     "kode": "53",
+     "mw": 10,
+     "status": "rencana",
+     "cod": 2030,
+     "pemilik": "PT PLN (Persero)",
+     "id_organisasi": "su_ed074ff5",
+     "uo": "/o/su_ed074ff5",
+     "bukti": "resmi"
+    },
+    {
+     "nama": "PLTP Oka Ile Ange",
+     "id": "pj_0255",
+     "u": "/proyek#pj_0255",
+     "prov": "Nusa Tenggara Timur",
+     "kode": "53",
+     "mw": 10,
+     "status": "rencana",
+     "cod": 2033,
+     "pemilik": "PT PLN (Persero)",
+     "id_organisasi": "su_ed074ff5",
+     "uo": "/o/su_ed074ff5",
+     "bukti": "resmi"
+    },
+    {
+     "nama": "Dieng Small Scale geothermal power plant",
+     "id": "gem_geothermal_L100001042931",
+     "u": "/proyek#gem_geothermal_L100001042931",
+     "prov": "-",
+     "kode": null,
+     "mw": 10,
+     "status": "beroperasi",
+     "cod": null,
+     "pemilik": "-",
+     "id_organisasi": null,
+     "uo": null,
+     "bukti": "kajian"
+    },
+    {
+     "nama": "Ulumbo geothermal power plant",
+     "id": "gem_geothermal_L100000700215",
+     "u": "/proyek#gem_geothermal_L100000700215",
+     "prov": "Lampung",
+     "kode": "18",
+     "mw": 8,
+     "status": "beroperasi",
+     "cod": null,
+     "pemilik": "PT PLN (Persero)",
+     "id_organisasi": "su_ed074ff5",
+     "uo": "/o/su_ed074ff5",
+     "bukti": "kajian"
+    },
+    {
+     "nama": "Sokoria geothermal power plant",
+     "id": "gem_geothermal_L100000700211",
+     "u": "/proyek#gem_geothermal_L100000700211",
+     "prov": "Nusa Tenggara Timur",
+     "kode": "53",
+     "mw": 6,
+     "status": "beroperasi",
+     "cod": null,
+     "pemilik": "PT Sokoria Geothermal Indonesia",
+     "id_organisasi": "pm_f63b1x0858a",
+     "uo": "/o/pm_f63b1x0858a",
+     "bukti": "kajian"
+    },
+    {
+     "nama": "PLTP Jaboi (FTP2) Sinabang",
+     "id": "pj_0221",
+     "u": "/proyek#pj_0221",
+     "prov": "Aceh",
+     "kode": "11",
+     "mw": 5,
+     "status": "rencana",
+     "cod": 2033,
+     "pemilik": "IPP",
+     "id_organisasi": null,
+     "uo": null,
+     "bukti": "resmi"
+    },
+    {
+     "nama": "PLTP Gunung Sirung",
+     "id": "pj_0253",
+     "u": "/proyek#pj_0253",
+     "prov": "Nusa Tenggara Timur",
+     "kode": "53",
+     "mw": 5,
+     "status": "rencana",
+     "cod": 2033,
+     "pemilik": "PT PLN (Persero)",
+     "id_organisasi": "su_ed074ff5",
+     "uo": "/o/su_ed074ff5",
+     "bukti": "resmi"
+    },
+    {
+     "nama": "PLTP Bora Pulu",
+     "id": "pjb_012",
+     "u": "/proyek#pjb_012",
+     "prov": "Sulawesi Tengah",
+     "kode": "72",
+     "mw": null,
+     "status": "rencana",
+     "cod": null,
+     "pemilik": "-",
+     "id_organisasi": null,
+     "uo": null,
+     "bukti": "media"
+    },
+    {
+     "nama": "PLTP Patuha Unit 2",
+     "id": "pjb_013",
+     "u": "/proyek#pjb_013",
+     "prov": "Jawa Barat",
+     "kode": "32",
+     "mw": null,
+     "status": "konstruksi",
+     "cod": null,
+     "pemilik": "PT Geo Dipa Energi (Persero)",
+     "id_organisasi": "p_7b70728bb7",
+     "uo": "/o/p_7b70728bb7",
+     "bukti": "media"
+    },
+    {
+     "nama": "Indonesia Geothermal Resource Risk Mitigation Project (GREM)",
+     "id": "wb_P166071",
+     "u": "/proyek#wb_P166071",
+     "prov": "-",
+     "kode": null,
+     "mw": null,
+     "status": "konstruksi",
+     "cod": null,
+     "pemilik": "PT Sarana Multi Infrastruktur (Persero)",
+     "id_organisasi": "p_a235c21f23",
+     "uo": "/o/p_a235c21f23",
+     "bukti": "resmi"
+    },
+    {
+     "nama": "ID-TF PNPM GREEN Awareness Raising Project in Sumatera",
+     "id": "wb_P130909",
+     "u": "/proyek#wb_P130909",
+     "prov": "-",
+     "kode": null,
+     "mw": null,
+     "status": "beroperasi",
+     "cod": null,
+     "pemilik": "-",
+     "id_organisasi": null,
+     "uo": null,
+     "bukti": "resmi"
+    },
+    {
+     "nama": "Geothermal Clean Energy Investment Project",
+     "id": "wb_P113078",
+     "u": "/proyek#wb_P113078",
+     "prov": "-",
+     "kode": null,
+     "mw": null,
+     "status": "beroperasi",
+     "cod": null,
+     "pemilik": "Pertamina Geothermal Energy",
+     "id_organisasi": "p_dda1e51dae",
+     "uo": "/o/p_dda1e51dae",
+     "bukti": "resmi"
+    },
+    {
+     "nama": "ID: Geothermal Power Support Program",
+     "id": "wb_P115100",
+     "u": "/proyek#wb_P115100",
+     "prov": "-",
+     "kode": null,
+     "mw": null,
+     "status": "beroperasi",
+     "cod": null,
+     "pemilik": "-",
+     "id_organisasi": null,
+     "uo": null,
+     "bukti": "resmi"
+    },
+    {
+     "nama": "ID-PCF-Indonesia Lahendong Geothermal Project",
+     "id": "wb_P096677",
+     "u": "/proyek#wb_P096677",
+     "prov": "-",
+     "kode": null,
+     "mw": null,
+     "status": "beroperasi",
+     "cod": null,
+     "pemilik": "-",
+     "id_organisasi": null,
+     "uo": null,
      "bukti": "resmi"
     }
    ],
    "catatan": {
-    "id": "Satu lapangan dapat muncul lebih dari sekali (unit atau sumber berbeda). Entri \"FTP2\" dan \"2030\" adalah rencana, bukan operasi.",
-    "en": "One field can appear more than once (different units or sources). Entries marked \"FTP2\" and \"2030\" are plans, not operations."
-   },
-   "sumber": [
-    "proyek"
-   ]
+    "id": "Daftar diurutkan menurut kapasitas; \"pemilik\" dapat berupa status pengembang menurut RUPTL (PLN, IPP, SH-PLN), bukan nama perusahaan. Buka rincian dan sumber lewat id (jalur /proyek#<id>).",
+    "en": "Sorted by capacity; \"owner\" may be a developer status per RUPTL (PLN, IPP, SH-PLN) rather than a company name. Open details and sources through id (path /proyek#<id>)."
+   }
   },
   "11": {
    "tipe": "tabel",
@@ -2116,30 +4135,40 @@
   "12": {
    "tipe": "tabel",
    "per": 8,
-   "judul": {
-    "id": "Kerangka hukum panas bumi",
-    "en": "Geothermal legal framework"
-   },
+   "sumber": [
+    "uu21",
+    "pp7",
+    "perpres112",
+    "d_reg"
+   ],
    "kolom": [
     {
-     "k": "aturan",
+     "k": "dok",
      "l": {
-      "id": "Aturan",
-      "en": "Instrument"
+      "id": "Peraturan",
+      "en": "Regulation"
+     },
+     "url": "u"
+    },
+    {
+     "k": "tgl",
+     "l": {
+      "id": "Ditetapkan",
+      "en": "Enacted"
      }
     },
     {
      "k": "judul",
      "l": {
-      "id": "Judul",
-      "en": "Title"
+      "id": "Tentang",
+      "en": "Subject"
      }
     },
     {
-     "k": "tanggal",
+     "k": "isi",
      "l": {
-      "id": "Ditetapkan",
-      "en": "Enacted"
+      "id": "Pokok untuk topik ini",
+      "en": "Key point for this topic"
      }
     },
     {
@@ -2150,137 +4179,294 @@
      }
     },
     {
-     "k": "url",
+     "k": "naskah",
      "l": {
-      "id": "Sumber",
-      "en": "Source"
+      "id": "Naskah",
+      "en": "Text"
      },
      "url": "url"
     }
    ],
    "baris": [
     {
+     "dok": "PERDA 13/2026",
+     "tgl": "2026-03-16",
+     "judul": "PEMANFAATAN DAN PEMBAGIAN BONUS PRODUKSI PANAS BUMI",
+     "isi": "-",
+     "status": "berlaku",
+     "naskah": "BPK",
+     "url": "https://peraturan.bpk.go.id/Details/350217",
+     "id": null,
+     "u": null
+    },
+    {
+     "dok": "Permen 28/2025",
+     "tgl": "2025-12-23",
+     "judul": "Besaran Nilai A, Nilai B1, Nilai B2, dan Nilai B3 pada Penerimaan Negara Bukan Pajak Pungutan atas Kegiatan Perizinan Berusaha Pemanfaatan Jasa Lingkungan Panas Bumi Tahap Eksploitasi dan Pemanfaatan pada Kawasan Konservasi",
+     "isi": {
+      "id": "PERMEN 28/2025 mengatur besaran nilai a, nilai b1, nilai b2, dan nilai b3 pada penerimaan negara bukan pajak pungutan atas kegiatan.",
+      "en": "PERMEN 28/2025 mengatur besaran nilai a, nilai b1, nilai b2, dan nilai b3 pada penerimaan negara bukan pajak pungutan atas kegiatan."
+     },
+     "status": "berlaku",
+     "naskah": "BPK",
+     "url": "https://peraturan.bpk.go.id/Details/341119",
+     "id": "permen-klhk-28-2025",
+     "u": "/regulasi?id=permen-klhk-28-2025"
+    },
+    {
+     "dok": "PERDA 14/2025",
+     "tgl": "2025-03-03",
+     "judul": "Pemanfaatan dan Penyaluran Bonus Produksi Panas Bumi",
+     "isi": "-",
+     "status": "berlaku",
+     "naskah": "BPK",
+     "url": "https://peraturan.bpk.go.id/Details/318943",
+     "id": null,
+     "u": null
+    },
+    {
+     "dok": "PP 7/2017",
+     "tgl": "2017-02-21",
      "judul": "Panas Bumi untuk Pemanfaatan Tidak Langsung",
-     "aturan": "PP 7/2017",
-     "tanggal": "2017-02-21",
+     "isi": {
+      "id": "Mengatur panas bumi untuk pemanfaatan tidak langsung: lelang wilayah kerja, penugasan, dan hak serta kewajiban pengembang.",
+      "en": "Mengatur panas bumi untuk pemanfaatan tidak langsung: lelang wilayah kerja, penugasan, dan hak serta kewajiban pengembang."
+     },
      "status": "diubah",
-     "url": "https://peraturan.bpk.go.id/Details/5827"
+     "naskah": "BPK",
+     "url": "https://peraturan.bpk.go.id/Details/5827",
+     "id": "pp-7-2017",
+     "u": "/regulasi?id=pp-7-2017"
     },
     {
+     "dok": "PP 28/2016",
+     "tgl": "2016-07-14",
      "judul": "Besaran dan Tata Cara Pemberian Bonus Produksi Panas Bumi",
-     "aturan": "PP 28/2016",
-     "tanggal": "2016-07-14",
+     "isi": {
+      "id": "PP 28/2016 mengatur besaran dan tata cara pemberian bonus produksi panas bumi.",
+      "en": "PP 28/2016 mengatur besaran dan tata cara pemberian bonus produksi panas bumi."
+     },
      "status": "berlaku",
-     "url": "https://peraturan.bpk.go.id/Details/5749"
+     "naskah": "BPK",
+     "url": "https://peraturan.bpk.go.id/Details/5749",
+     "id": "pp-28-2016",
+     "u": "/regulasi?id=pp-28-2016"
     },
     {
+     "dok": "PP 75/2014",
+     "tgl": "2014-10-14",
      "judul": "Perubahan Kedua Atas Peraturan Pemerintah Nomor 59 Tahun 2007 Tentang Kegiatan Usaha Panas Bumi",
-     "aturan": "PP 75/2014",
-     "tanggal": "2014-10-14",
+     "isi": {
+      "id": "PP 75/2014 mengatur perubahan kedua atas peraturan pemerintah nomor 59 tahun 2007 tentang kegiatan usaha panas bumi.",
+      "en": "PP 75/2014 mengatur perubahan kedua atas peraturan pemerintah nomor 59 tahun 2007 tentang kegiatan usaha panas bumi."
+     },
      "status": "dicabut",
-     "url": "https://peraturan.bpk.go.id/Details/5517"
+     "naskah": "BPK",
+     "url": "https://peraturan.bpk.go.id/Details/5517",
+     "id": "pp-75-2014",
+     "u": "/regulasi?id=pp-75-2014"
     },
     {
+     "dok": "UU 21/2014",
+     "tgl": "2014-09-17",
      "judul": "Panas Bumi",
-     "aturan": "UU 21/2014",
-     "tanggal": "2014-09-17",
+     "isi": {
+      "id": "Mengatur pengusahaan panas bumi: wilayah kerja, izin, eksplorasi dan eksploitasi, termasuk pemanfaatan langsung dan tidak langsung. Mengganti UU 27/2003.",
+      "en": "Mengatur pengusahaan panas bumi: wilayah kerja, izin, eksplorasi dan eksploitasi, termasuk pemanfaatan langsung dan tidak langsung. Mengganti UU 27/2003."
+     },
      "status": "diubah",
-     "url": "https://peraturan.bpk.go.id/Details/38684"
+     "naskah": "BPK",
+     "url": "https://peraturan.bpk.go.id/Details/38684",
+     "id": "uu-21-2014",
+     "u": "/regulasi?id=uu-21-2014"
     },
     {
+     "dok": "Permen 17/2014",
+     "tgl": "2014-06-03",
      "judul": "Pembelian Tenaga Listrik Dari PLTP Dan Uap Panas Bumi Untuk PLTP Oleh PT Perusahaan Listrik Negara (Persero)",
-     "aturan": "Permen 17/2014",
-     "tanggal": "2014-06-03",
+     "isi": {
+      "id": "PERMEN 17/2014 mengatur pembelian tenaga listrik dari pltp dan uap panas bumi untuk pltp oleh pt perusahaan listrik negara (persero).",
+      "en": "PERMEN 17/2014 mengatur pembelian tenaga listrik dari pltp dan uap panas bumi untuk pltp oleh pt perusahaan listrik negara (persero)."
+     },
      "status": "berlaku",
-     "url": "https://peraturan.bpk.go.id/Details/143716"
+     "naskah": "BPK",
+     "url": "https://peraturan.bpk.go.id/Details/143716",
+     "id": "permen-esdm-17-2014",
+     "u": "/regulasi?id=permen-esdm-17-2014"
     },
     {
+     "dok": "Permen 22/2012",
+     "tgl": "2012-08-16",
      "judul": "Permen ESDM No. 22 Tahun 2012 tentang Penugasan Kepada PT Perusahaan Listrik Negara (Persero) Untuk Melakukan Pembelian Tenaga Listrik Dari Pembangkit Listrik Tenaga Panas Bumi dan Harga Patokan Pembelian Tenaga Listrik oleh PT Perusahaan Listrik Negara (Persero) Dari Pembangkit Listrik Tenaga Panas Bumi",
-     "aturan": "Permen 22/2012",
-     "tanggal": "2012-08-16",
+     "isi": {
+      "id": "PERMEN 22/2012 mengatur permen esdm no. 22 tahun 2012 tentang penugasan kepada pt perusahaan listrik negara (persero) untuk melakukan pembelian tenaga.",
+      "en": "PERMEN 22/2012 mengatur permen esdm no. 22 tahun 2012 tentang penugasan kepada pt perusahaan listrik negara (persero) untuk melakukan pembelian tenaga."
+     },
      "status": "dicabut",
-     "url": "https://peraturan.bpk.go.id/Details/143717"
+     "naskah": "BPK",
+     "url": "https://peraturan.bpk.go.id/Details/143717",
+     "id": "permen-esdm-22-2012",
+     "u": "/regulasi?id=permen-esdm-22-2012"
     },
     {
+     "dok": "Permen 2/2011",
+     "tgl": "2011-02-16",
      "judul": "Permen ESDM No. 2 Tahun 2011 tentang Penugasan Kepada PT Perusahaan Listrik Negara (Persero) Untuk Melakukan Pembelian Tenaga Listrik Dari Pembangkit Listrik Tenaga Panas Bumi Dan Harga Patokan Pembelian Tenaga Listrik Oleh PT Perusahaan Listrik Negara (Persero) Dari Pembangkit Listrik Tenaga Panas Bumi",
-     "aturan": "Permen 2/2011",
-     "tanggal": "2011-02-16",
+     "isi": {
+      "id": "PERMEN 2/2011 mengatur permen esdm no. 2 tahun 2011 tentang penugasan kepada pt perusahaan listrik negara (persero) untuk melakukan pembelian tenaga.",
+      "en": "PERMEN 2/2011 mengatur permen esdm no. 2 tahun 2011 tentang penugasan kepada pt perusahaan listrik negara (persero) untuk melakukan pembelian tenaga."
+     },
      "status": "dicabut",
-     "url": "https://peraturan.bpk.go.id/Details/143718"
+     "naskah": "BPK",
+     "url": "https://peraturan.bpk.go.id/Details/143718",
+     "id": "permen-esdm-2-2011",
+     "u": "/regulasi?id=permen-esdm-2-2011"
     },
     {
+     "dok": "PP 70/2010",
+     "tgl": "2010-10-20",
      "judul": "Perubahan Atas Peraturan Pemerintah Nomor 59 Tahun 2007 Tentang Kegiatan Usaha Panas Bumi",
-     "aturan": "PP 70/2010",
-     "tanggal": "2010-10-20",
+     "isi": {
+      "id": "PP 70/2010 mengatur perubahan atas peraturan pemerintah nomor 59 tahun 2007 tentang kegiatan usaha panas bumi.",
+      "en": "PP 70/2010 mengatur perubahan atas peraturan pemerintah nomor 59 tahun 2007 tentang kegiatan usaha panas bumi."
+     },
      "status": "dicabut",
-     "url": "https://peraturan.bpk.go.id/Details/5094"
+     "naskah": "BPK",
+     "url": "https://peraturan.bpk.go.id/Details/5094",
+     "id": "pp-70-2010",
+     "u": "/regulasi?id=pp-70-2010"
     },
     {
+     "dok": "Permen 32/2009",
+     "tgl": "2009-12-04",
      "judul": "Permen ESDM No. 32 Tahun 2009 tentang Harga Patokan Pembelian Tenaga Listrik Oleh PT PLN (Persero) Dari Pembangkit Listrik Tenaga Panas Bumi",
-     "aturan": "Permen 32/2009",
-     "tanggal": "2009-12-04",
+     "isi": {
+      "id": "PERMEN 32/2009 mengatur permen esdm no. 32 tahun 2009 tentang harga patokan pembelian tenaga listrik oleh pt pln (persero) dari pembangkit.",
+      "en": "PERMEN 32/2009 mengatur permen esdm no. 32 tahun 2009 tentang harga patokan pembelian tenaga listrik oleh pt pln (persero) dari pembangkit."
+     },
      "status": "dicabut",
-     "url": "https://peraturan.bpk.go.id/Details/143719"
+     "naskah": "BPK",
+     "url": "https://peraturan.bpk.go.id/Details/143719",
+     "id": "permen-esdm-32-2009",
+     "u": "/regulasi?id=permen-esdm-32-2009"
     },
     {
+     "dok": "PP 59/2007",
+     "tgl": "2007-11-05",
      "judul": "Kegiatan Usaha Panas Bumi",
-     "aturan": "PP 59/2007",
-     "tanggal": "2007-11-05",
+     "isi": {
+      "id": "PP 59/2007 mengatur kegiatan usaha panas bumi.",
+      "en": "PP 59/2007 mengatur kegiatan usaha panas bumi."
+     },
      "status": "dicabut",
-     "url": "https://peraturan.bpk.go.id/Details/4782"
+     "naskah": "BPK",
+     "url": "https://peraturan.bpk.go.id/Details/4782",
+     "id": "pp-59-2007",
+     "u": "/regulasi?id=pp-59-2007"
     },
     {
+     "dok": "UU 27/2003",
+     "tgl": "2003-10-22",
      "judul": "Panas Bumi",
-     "aturan": "UU 27/2003",
-     "tanggal": "2003-10-22",
+     "isi": {
+      "id": "UU panas bumi lama yang mengatur pengusahaan sektor panas bumi; digantikan UU 21/2014.",
+      "en": "UU panas bumi lama yang mengatur pengusahaan sektor panas bumi; digantikan UU 21/2014."
+     },
      "status": "dicabut",
-     "url": "https://peraturan.bpk.go.id/Details/44080"
+     "naskah": "BPK",
+     "url": "https://peraturan.bpk.go.id/Details/44080",
+     "id": "uu-27-2003",
+     "u": "/regulasi?id=uu-27-2003"
     },
     {
+     "dok": "Keppres 76/2000",
+     "tgl": "2000-05-31",
      "judul": "Pengusahaan Sumber Daya Panas Bumi Untuk Pembangkitan Tenaga Listrik",
-     "aturan": "Keppres 76/2000",
-     "tanggal": "2000-05-31",
+     "isi": {
+      "id": "KEPPRES 76/2000 mengatur pengusahaan sumber daya panas bumi untuk pembangkitan tenaga listrik.",
+      "en": "KEPPRES 76/2000 mengatur pengusahaan sumber daya panas bumi untuk pembangkitan tenaga listrik."
+     },
      "status": "berlaku",
-     "url": "https://peraturan.bpk.go.id/Details/57970"
+     "naskah": "BPK",
+     "url": "https://peraturan.bpk.go.id/Details/57970",
+     "id": "keppres-76-2000",
+     "u": "/regulasi?id=keppres-76-2000"
     },
     {
+     "dok": "Keppres 49/1991",
+     "tgl": "1991-11-12",
      "judul": "Perlakuan Pajak Penghasilan, Pajak Pertambahan Nilai Dan Pungutan-Pungutan Lainnya Terhadap Pelaksanaan Kuasa Dan Ijin Pengusahaan Sumberdaya Panas Bumi Untuk Membangkitkan Energi/Listrik",
-     "aturan": "Keppres 49/1991",
-     "tanggal": "1991-11-12",
+     "isi": {
+      "id": "KEPPRES 49/1991 mengatur perlakuan pajak penghasilan, pajak pertambahan nilai dan pungutan-pungutan lainnya terhadap pelaksanaan kuasa dan ijin pengusahaan sumberdaya panas bumi.",
+      "en": "KEPPRES 49/1991 mengatur perlakuan pajak penghasilan, pajak pertambahan nilai dan pungutan-pungutan lainnya terhadap pelaksanaan kuasa dan ijin pengusahaan sumberdaya panas bumi."
+     },
      "status": "dicabut",
-     "url": "https://peraturan.bpk.go.id/Details/63776"
+     "naskah": "BPK",
+     "url": "https://peraturan.bpk.go.id/Details/63776",
+     "id": "keppres-49-1991",
+     "u": "/regulasi?id=keppres-49-1991"
     },
     {
+     "dok": "Keppres 22/1989",
+     "tgl": "1989-05-24",
      "judul": "Penundaan Pembayaran Pajak Pertambahan Nilai Atas Penyerahan Jasa Pencarian Sumber-Sumber Dan Pemboran Minyak, Gas Bumi, Dan Panas Bumi Bagi Para Kontraktor Yang Belum Berproduksi",
-     "aturan": "Keppres 22/1989",
-     "tanggal": "1989-05-24",
+     "isi": {
+      "id": "KEPPRES 22/1989 mengatur penundaan pembayaran pajak pertambahan nilai atas penyerahan jasa pencarian sumber-sumber dan pemboran minyak, gas bumi, dan panas bumi.",
+      "en": "KEPPRES 22/1989 mengatur penundaan pembayaran pajak pertambahan nilai atas penyerahan jasa pencarian sumber-sumber dan pemboran minyak, gas bumi, dan panas bumi."
+     },
      "status": "berlaku",
-     "url": "https://peraturan.bpk.go.id/Details/64113"
+     "naskah": "BPK",
+     "url": "https://peraturan.bpk.go.id/Details/64113",
+     "id": "keppres-22-1989",
+     "u": "/regulasi?id=keppres-22-1989"
     },
     {
+     "dok": "Keppres 23/1981",
+     "tgl": "1981-06-03",
      "judul": "Pajak Perseroan Dan Pajak Atas Bunga, Dividen Dan Royalty Pada Pelaksanaan Kuasa Pengusahaan Sumber Daya Panas Bumi Dan Kontrak Operasi Bersama (Joint Operation Contract) Antara Pertamina Dan Kontraktor Dalam Pengusahaan Sumber Daya Panas Bumi",
-     "aturan": "Keppres 23/1981",
-     "tanggal": "1981-06-03",
+     "isi": {
+      "id": "KEPPRES 23/1981 mengatur pajak perseroan dan pajak atas bunga, dividen dan royalty pada pelaksanaan kuasa pengusahaan sumber daya panas bumi dan.",
+      "en": "KEPPRES 23/1981 mengatur pajak perseroan dan pajak atas bunga, dividen dan royalty pada pelaksanaan kuasa pengusahaan sumber daya panas bumi dan."
+     },
      "status": "dicabut",
-     "url": "https://peraturan.bpk.go.id/Details/66427"
+     "naskah": "BPK",
+     "url": "https://peraturan.bpk.go.id/Details/66427",
+     "id": "keppres-23-1981",
+     "u": "/regulasi?id=keppres-23-1981"
     },
     {
+     "dok": "Keppres 22/1981",
+     "tgl": "1981-06-01",
      "judul": "Mencabut Keputusan Presiden Nomor 16 Tahun 1974 Dan Memberikan Kuasa Pengusahaan Eksplorasi Dan Eksploitasi Sumber Daya Panasbumi Untuk Pembangkitan Energi/Listrik Kepada Pertamina Di Indonesia",
-     "aturan": "Keppres 22/1981",
-     "tanggal": "1981-06-01",
+     "isi": {
+      "id": "KEPPRES 22/1981 mengatur mencabut keputusan presiden nomor 16 tahun 1974 dan memberikan kuasa pengusahaan eksplorasi dan eksploitasi sumber daya panasbumi untuk.",
+      "en": "KEPPRES 22/1981 mengatur mencabut keputusan presiden nomor 16 tahun 1974 dan memberikan kuasa pengusahaan eksplorasi dan eksploitasi sumber daya panasbumi untuk."
+     },
      "status": "dicabut",
-     "url": "https://peraturan.bpk.go.id/Details/66424"
+     "naskah": "BPK",
+     "url": "https://peraturan.bpk.go.id/Details/66424",
+     "id": "keppres-22-1981",
+     "u": "/regulasi?id=keppres-22-1981"
+    },
+    {
+     "dok": "Perda 13/2026",
+     "id": "perda-b350217-13-2026",
+     "u": "/regulasi?id=perda-b350217-13-2026",
+     "naskah": "BPK",
+     "tgl": "2026-03-16",
+     "judul": "PEMANFAATAN DAN PEMBAGIAN BONUS PRODUKSI PANAS BUMI",
+     "isi": {
+      "id": "PERDA 13/2026 mengatur pemanfaatan dan pembagian bonus produksi panas bumi.",
+      "en": "PERDA 13/2026 mengatur pemanfaatan dan pembagian bonus produksi panas bumi. (ringkasan resmi basis regulasi, bahasa Indonesia)"
+     },
+     "status": "berlaku",
+     "url": "https://peraturan.bpk.go.id/Details/350217"
     }
    ],
    "catatan": {
-    "id": "Pasal kunci belum dirangkum di sini; UU 21/2014 menjadi payung, PP 7/2017 mengatur pemanfaatan tidak langsung, dan Perpres 112/2022 mengatur harga. Status mengikuti JDIH BPK per tanggal ambil.",
-    "en": "Key articles are not summarised here; Law 21/2014 is the umbrella, PP 7/2017 governs indirect use and Perpres 112/2022 governs price. Status follows JDIH BPK at harvest date."
-   },
-   "sumber": [
-    "uu21",
-    "pp7",
-    "perpres112"
-   ]
+    "id": "Baris ber-id terhubung ke basis regulasi METI (status dan naskah BPK). Pokok tulisan tangan hanya pada baris yang sudah diperiksa; baris lain memakai ringkasan resmi basis regulasi.",
+    "en": "Rows with id link to the METI regulation base (status and BPK text). Hand-written points appear only on reviewed rows; other rows use the official summary in the regulation base."
+   }
   },
   "13": {
    "tipe": "linimasa",
@@ -2294,12 +4480,48 @@
      "url": "https://www.esdm.go.id/id/media-center/arsip-berita/lapangan-kamojang-pltp-pertama-di-indonesia"
     },
     {
+     "tanggal": "1981-06-01",
+     "judul": {
+      "id": "Keppres 22/1981 ditetapkan: Mencabut Keputusan Presiden Nomor 16 Tahun 1974 Dan Memberikan Kuasa Pengusahaan Eksplorasi Dan Eksploitasi...",
+      "en": "Keppres 22/1981 enacted: Mencabut Keputusan Presiden Nomor 16 Tahun 1974 Dan Memberikan Kuasa Pengusahaan Eksplorasi Dan Eksploitasi... (official title in Indonesian)"
+     },
+     "reg": "keppres-22-1981",
+     "url": "https://peraturan.bpk.go.id/Details/66424"
+    },
+    {
+     "tanggal": "1981-06-03",
+     "judul": {
+      "id": "Keppres 23/1981 ditetapkan: Pajak Perseroan Dan Pajak Atas Bunga, Dividen Dan Royalty Pada Pelaksanaan Kuasa Pengusahaan Sumber Daya Pa...",
+      "en": "Keppres 23/1981 enacted: Pajak Perseroan Dan Pajak Atas Bunga, Dividen Dan Royalty Pada Pelaksanaan Kuasa Pengusahaan Sumber Daya Pa... (official title in Indonesian)"
+     },
+     "reg": "keppres-23-1981",
+     "url": "https://peraturan.bpk.go.id/Details/66427"
+    },
+    {
      "tanggal": "1983-01-01",
      "judul": {
       "id": "Unit 1 Kamojang 30 MW diresmikan (tahun)",
       "en": "Kamojang unit 1, 30 MW, officially recognised (year)"
      },
      "url": "https://pge.pertamina.com/en/own-operation/kamojang"
+    },
+    {
+     "tanggal": "1989-05-24",
+     "judul": {
+      "id": "Keppres 22/1989 ditetapkan: Penundaan Pembayaran Pajak Pertambahan Nilai Atas Penyerahan Jasa Pencarian Sumber-Sumber Dan Pemboran Miny...",
+      "en": "Keppres 22/1989 enacted: Penundaan Pembayaran Pajak Pertambahan Nilai Atas Penyerahan Jasa Pencarian Sumber-Sumber Dan Pemboran Miny... (official title in Indonesian)"
+     },
+     "reg": "keppres-22-1989",
+     "url": "https://peraturan.bpk.go.id/Details/64113"
+    },
+    {
+     "tanggal": "1991-11-12",
+     "judul": {
+      "id": "Keppres 49/1991 ditetapkan: Perlakuan Pajak Penghasilan, Pajak Pertambahan Nilai Dan Pungutan-Pungutan Lainnya Terhadap Pelaksanaan Kua...",
+      "en": "Keppres 49/1991 enacted: Perlakuan Pajak Penghasilan, Pajak Pertambahan Nilai Dan Pungutan-Pungutan Lainnya Terhadap Pelaksanaan Kua... (official title in Indonesian)"
+     },
+     "reg": "keppres-49-1991",
+     "url": "https://peraturan.bpk.go.id/Details/63776"
     },
     {
      "tanggal": "2014-09-17",
@@ -2384,7 +4606,8 @@
     "dieng_kabar",
     "perpres112",
     "lelang2",
-    "jica"
+    "jica",
+    "d_reg"
    ]
   },
   "14": {
@@ -2397,12 +4620,42 @@
     {
      "id": "Insentif nonfiskal utama ialah harga patokan tertinggi Perpres 112/2022. Bonus produksi untuk daerah diatur PP 28/2016. Pemakaian produk dalam negeri (TKDN) diatur Permen ESDM 11/2024; ambang per komponen belum dibaca METI.",
      "en": "The main non-fiscal incentive is the ceiling price in Perpres 112/2022. Production bonuses for regions are governed by PP 28/2016. Domestic content (TKDN) is governed by Permen ESDM 11/2024; thresholds per component have not been read by METI."
+    },
+    {
+     "id": "Badan usaha yang menjual listrik untuk kepentingan umum wajib memegang IUPTLU; izin ini berlaku paling lama 30 tahun dan dapat diperpanjang (Permen ESDM 11/2021 Pasal 11 dan 12).",
+     "en": "A business selling electricity for the public interest must hold an IUPTLU licence, valid for up to 30 years and renewable (Energy Ministry Reg. 11/2021, Articles 11 and 12)."
+    },
+    {
+     "id": "Pembangkit untuk kepentingan sendiri dengan total kapasitas lebih dari 500 kW dalam satu sistem instalasi wajib IUPTLS (paling lama 10 tahun, perpanjangan diajukan paling lambat 60 hari kerja sebelum berakhir); sampai 500 kW cukup menyampaikan laporan satu kali (Pasal 39 dan 40).",
+     "en": "A captive plant above 500 kW in one installation needs an IUPTLS licence (up to 10 years, renewal filed at least 60 working days before expiry); up to 500 kW only a one-time report is needed (Articles 39 and 40)."
+    },
+    {
+     "id": "Pembelian listrik PLN dari badan usaha memakai penunjukan langsung (paling lama 90 hari kalender) atau pemilihan langsung termasuk negosiasi harga (paling lama 180 hari kalender), dengan harga patokan tertinggi atau harga kesepakatan yang wajib disetujui Menteri (Perpres 112/2022 Pasal 5, 6, 15, 16).",
+     "en": "PLN buys power from businesses by direct appointment (up to 90 calendar days) or direct selection including price negotiation (up to 180 calendar days), at the ceiling price or an agreed price that the Minister must approve (Presidential Reg. 112/2022, Articles 5, 6, 15 and 16)."
+    },
+    {
+     "id": "Insentif yang dijanjikan Perpres 112/2022 Pasal 22 dan 23: insentif fiskal (PPh, bea masuk dan pajak impor, PBB), fasilitas pembiayaan atau penjaminan lewat BUMN, dan insentif nonfiskal; pemerintah daerah wajib mendukung sesuai kewenangannya.",
+     "en": "Presidential Reg. 112/2022 Articles 22 and 23 promise fiscal incentives (income tax, import duty and tax, property tax), financing or guarantee facilities through state enterprises, and non-fiscal incentives; local governments must support within their authority."
+    },
+    {
+     "id": "Bea masuk barang modal pembangkit dapat dibebaskan (PMK 66/PMK.010/2015) bila barang belum diproduksi dalam negeri, belum memenuhi spesifikasi, atau belum mencukupi; permohonan lewat BKPM dengan rencana impor yang disahkan Dirjen Ketenagalistrikan dan realisasi impor paling lama 24 bulan.",
+     "en": "Import duty on generation capital goods can be waived (MoF Reg. 66/PMK.010/2015) when goods are not made domestically, do not meet specifications, or are insufficient; applications go through BKPM with an import plan approved by the Director General of Electricity and imports must be realised within 24 months."
+    },
+    {
+     "id": "Tax holiday (PMK 130/PMK.010/2020) mengurangi PPh badan bagi usaha pionir menurut nilai investasi; apakah usaha pembangkit termasuk sektor pionir harus dicek di naskah, dan rincian persentasenya belum terbaca METI karena PDF pindai.",
+     "en": "Tax holiday (MoF Reg. 130/PMK.010/2020) reduces corporate income tax for pioneer businesses by investment value; whether power generation counts as a pioneer sector must be checked in the text, and the percentages are not yet read by METI because the PDF is a scan."
+    },
+    {
+     "id": "Kewajiban penggunaan produk dalam negeri untuk infrastruktur ketenagalistrikan diatur Permen ESDM 11/2024; ambang TKDN per komponen belum dibaca METI sehingga proyek perlu memeriksa naskahnya sebelum menyusun penawaran.",
+     "en": "Energy Ministry Reg. 11/2024 requires domestic products in electricity infrastructure; per-component TKDN thresholds are not yet read by METI, so projects must check the text before bidding."
     }
    ],
    "sumber": [
     "insentif",
     "pp49",
-    "perpres112"
+    "perpres112",
+    "d_izin",
+    "d_ins"
    ]
   },
   "15": {
@@ -2488,6 +4741,65 @@
     "pp7",
     "perpres112"
    ]
+  },
+  "18": {
+   "tipe": "tabel",
+   "per": 8,
+   "sumber": [
+    "d_inov"
+   ],
+   "kolom": [
+    {
+     "k": "nama",
+     "l": {
+      "id": "Inovasi",
+      "en": "Innovation"
+     },
+     "url": "url"
+    },
+    {
+     "k": "jenis",
+     "l": {
+      "id": "Jenis",
+      "en": "Type"
+     }
+    },
+    {
+     "k": "status",
+     "l": {
+      "id": "Status",
+      "en": "Status"
+     }
+    },
+    {
+     "k": "tahun",
+     "l": {
+      "id": "Tahun",
+      "en": "Year"
+     }
+    },
+    {
+     "k": "pembuat",
+     "l": {
+      "id": "Pembuat",
+      "en": "Maker"
+     }
+    },
+    {
+     "k": "trl",
+     "l": {
+      "id": "TRL",
+      "en": "TRL"
+     },
+     "num": true,
+     "d": 0
+    }
+   ],
+   "baris": [],
+   "catatan": {
+    "id": "Inovasi di basis METI yang bertag teknologi ini; id inovasi tersimpan di tiap baris, tautan membuka sumbernya. TRL kosong berarti belum dinilai.",
+    "en": "Innovations in the METI base tagged with this technology; the innovation id is kept on every row and the link opens its source. An empty TRL means not yet assessed."
+   }
   },
   "19": {
    "tipe": "teks",
@@ -2692,34 +5004,259 @@
    ]
   },
   "24": {
-   "tipe": "teks",
-   "paragraf": [
+   "tipe": "tabel",
+   "per": 8,
+   "sumber": [
+    "d_pend"
+   ],
+   "kolom": [
     {
-     "id": "Geothermal Fund (PISP) adalah dana pembiayaan infrastruktur panas bumi pemerintah yang dikelola PT SMI; menurut PT SMI dana dipakai untuk eksplorasi, eksploitasi, dan pembangkit lewat pinjaman, penyertaan ekuitas, serta penyediaan data. Pengaturannya dalam PMK 80/2022. Laporan pengelolaan 2024 diaudit dan dipublikasikan.",
-     "en": "The Geothermal Fund (PISP) is the government's geothermal infrastructure financing fund managed by PT SMI; per PT SMI it is used for exploration, exploitation and power plants through loans, equity participation and data provision. It is regulated in PMK 80/2022. The 2024 management report is audited and published."
+     "k": "nama",
+     "l": {
+      "id": "Skema atau proyek pendanaan",
+      "en": "Funding scheme or project"
+     },
+     "url": "url"
     },
     {
-     "id": "Skema pengeboran pemerintah: ESDM meminta pengeboran di lokasi tertentu, PT SMI mengontrak pengeboran dan sertifikasi data, lalu data diserahkan ke Kemenkeu; bila tak ada pemenang lelang, Kemenkeu memulihkan biaya. Proyek percontohan: Waesano (NTT) dan Jailolo (Maluku Utara). Satu laporan menyebut US$49 juta dari PISP disandingkan US$49 juta Clean Technology Fund dan hibah GEF US$6,25 juta (2016).",
-     "en": "Government drilling scheme: ESDM requests drilling at a site, PT SMI contracts drilling and data certification, then submits the data to the Ministry of Finance; if no auction winner emerges, the Ministry recovers the cost. Pilot projects: Waesano (NTT) and Jailolo (North Maluku). One report cites US$49 million from PISP matched by US$49 million from the Clean Technology Fund and a US$6.25 million GEF grant (2016)."
+     "k": "pemberi",
+     "l": {
+      "id": "Pemberi",
+      "en": "Provider"
+     }
     },
     {
-     "id": "Skema lain di basis METI: pinjaman ODA JICA, SDG Indonesia One, Green Sukuk, dan pinjaman luar negeri lewat Green Book Bappenas.",
-     "en": "Other schemes in the METI base: JICA ODA loans, SDG Indonesia One, Green Sukuk, and foreign loans via the Bappenas Green Book."
+     "k": "jenis",
+     "l": {
+      "id": "Jenis",
+      "en": "Type"
+     }
+    },
+    {
+     "k": "status",
+     "l": {
+      "id": "Status",
+      "en": "Status"
+     }
+    },
+    {
+     "k": "nilai_usd",
+     "l": {
+      "id": "Nilai (USD)",
+      "en": "Value (USD)"
+     },
+     "num": true,
+     "d": 0
+    },
+    {
+     "k": "iso2",
+     "l": {
+      "id": "Negara pemberi",
+      "en": "Provider country"
+     }
+    }
+   ],
+   "baris": [
+    {
+     "nama": "Pinjaman luar negeri lewat Green Book",
+     "id": "sk_greenbook",
+     "pemberi": "Kementerian PPN/Bappenas",
+     "jenis": "pinjaman lunak",
+     "status": "berjalan",
+     "nilai_usd": null,
+     "iso2": "ID",
+     "url": "https://www.bappenas.go.id/"
+    },
+    {
+     "nama": "Pinjaman ODA JICA",
+     "id": "sk_jica",
+     "pemberi": "Japan International Cooperation Agency",
+     "jenis": "pinjaman lunak",
+     "status": "berjalan",
+     "nilai_usd": null,
+     "iso2": "JP",
+     "url": "https://www.jica.go.jp/indonesia/"
+    },
+    {
+     "nama": "Green Climate Fund",
+     "id": "sk_gcf",
+     "pemberi": "Green Climate Fund",
+     "jenis": "blended",
+     "status": "berjalan",
+     "nilai_usd": null,
+     "iso2": "ID",
+     "url": "https://www.greenclimate.fund/"
+    },
+    {
+     "nama": "SDG Indonesia One",
+     "id": "sk_sdg_one",
+     "pemberi": "PT Sarana Multi Infrastruktur",
+     "jenis": "blended",
+     "status": "berjalan",
+     "nilai_usd": null,
+     "iso2": "ID",
+     "url": "https://www.ptsmi.co.id/"
+    },
+    {
+     "nama": "Green Sukuk Negara",
+     "id": "sk_sukuk_hijau",
+     "pemberi": "Kementerian Keuangan (DJPPR)",
+     "jenis": "obligasi hijau",
+     "status": "berjalan",
+     "nilai_usd": null,
+     "iso2": "ID",
+     "url": "https://www.djppr.kemenkeu.go.id/"
+    },
+    {
+     "nama": "Indonesia Geothermal Resource Risk Mitigation Project (GREM)",
+     "id": "pd_wb_P166071",
+     "pemberi": "World Bank (IBRD/IDA)",
+     "jenis": "pinjaman lunak",
+     "status": "konstruksi",
+     "nilai_usd": 325000000,
+     "iso2": "ID",
+     "url": "https://projects.worldbank.org/en/projects-operations/project-detail/P166071"
+    },
+    {
+     "nama": "Indonesia Geothermal Resource Risk Mitigation Project",
+     "id": "pi_XM_DAC_41317_FP083",
+     "pemberi": "Green Climate Fund",
+     "jenis": "proyek",
+     "status": "berjalan",
+     "nilai_usd": 223750000,
+     "iso2": "ID",
+     "url": "https://d-portal.org/ctrack.html#view=act&aid=XM-DAC-41317-FP083"
+    },
+    {
+     "nama": "Geothermal Clean Energy Investment Project",
+     "id": "pd_wb_P113078",
+     "pemberi": "World Bank (IBRD/IDA)",
+     "jenis": "pinjaman lunak",
+     "status": "beroperasi",
+     "nilai_usd": 175000000,
+     "iso2": "ID",
+     "url": "https://projects.worldbank.org/en/projects-operations/project-detail/P113078"
+    },
+    {
+     "nama": "Muara Laboh Geothermal Power Project",
+     "id": "pi_XM_DAC_46004_50156_001_LN3487",
+     "pemberi": "Asian Development Bank",
+     "jenis": "proyek",
+     "status": "-",
+     "nilai_usd": 70000000,
+     "iso2": "ID",
+     "url": "https://d-portal.org/ctrack.html#view=act&aid=XM-DAC-46004-50156-001-LN3487"
+    },
+    {
+     "nama": "ID-Geothermal Energy Upstream Development",
+     "id": "pd_wb_P155047",
+     "pemberi": "World Bank (IBRD/IDA)",
+     "jenis": "pinjaman lunak",
+     "status": "konstruksi",
+     "nilai_usd": 49000000,
+     "iso2": "ID",
+     "url": "https://projects.worldbank.org/en/projects-operations/project-detail/P155047"
+    },
+    {
+     "nama": "Muara Laboh Geothermal Power Project Stage 2",
+     "id": "pi_XM_DAC_46004_57311_001_LN4474",
+     "pemberi": "Asian Development Bank",
+     "jenis": "proyek",
+     "status": "-",
+     "nilai_usd": 38801764,
+     "iso2": "ID",
+     "url": "https://d-portal.org/ctrack.html#view=act&aid=XM-DAC-46004-57311-001-LN4474"
+    },
+    {
+     "nama": "Muara Laboh Geothermal Power Project",
+     "id": "pi_XM_DAC_46004_50156_001_LN8315",
+     "pemberi": "Asian Development Bank",
+     "jenis": "proyek",
+     "status": "-",
+     "nilai_usd": 19250000,
+     "iso2": "ID",
+     "url": "https://d-portal.org/ctrack.html#view=act&aid=XM-DAC-46004-50156-001-LN8315"
+    },
+    {
+     "nama": "ID-Geothermal Energy Upstream Development",
+     "id": "pd_wb_P161644",
+     "pemberi": "World Bank (IBRD/IDA)",
+     "jenis": "pinjaman lunak",
+     "status": "konstruksi",
+     "nilai_usd": 6250000,
+     "iso2": "ID",
+     "url": "https://projects.worldbank.org/en/projects-operations/project-detail/P161644"
+    },
+    {
+     "nama": "Project Ulubelu Unit 3 - 4 PT. Pertamina Geothermal Energy",
+     "id": "pd_gs_315",
+     "jenis": "kredit karbon",
+     "status": "tersertifikasi",
+     "nilai_usd": null,
+     "iso2": "ID",
+     "url": "https://assurance-platform.goldstandard.org/project-documents/GS2297"
+    },
+    {
+     "nama": "Project Lumut Balai Unit 1 - 2 PT. Pertamina Geothermal Energy",
+     "id": "pd_gs_316",
+     "jenis": "kredit karbon",
+     "status": "desain tersertifikasi",
+     "nilai_usd": null,
+     "iso2": "ID",
+     "url": "https://assurance-platform.goldstandard.org/project-documents/GS2298"
+    },
+    {
+     "nama": "Project Karaha Unit 1 PT. Pertamina Geothermal Energy",
+     "id": "pd_gs_335",
+     "jenis": "kredit karbon",
+     "status": "tersertifikasi",
+     "nilai_usd": null,
+     "iso2": "ID",
+     "url": "https://assurance-platform.goldstandard.org/project-documents/GS2419"
+    },
+    {
+     "nama": "Liki Pinangawan Muaralaboh Geothermal Power Plant",
+     "id": "pd_gs_4163",
+     "jenis": "kredit karbon",
+     "status": "tersertifikasi",
+     "nilai_usd": null,
+     "iso2": "ID",
+     "url": "https://assurance-platform.goldstandard.org/project-documents/GS12112"
+    },
+    {
+     "nama": "Pembangkit Listrik Tenaga Panas Bumi (PLTP) Muara Laboh",
+     "id": "pd_jetp_33",
+     "pemberi": "JETP Indonesia (IPG dan GFANZ)",
+     "jenis": "JETP",
+     "status": "disetujui",
+     "nilai_usd": null,
+     "iso2": "ID",
+     "url": "https://jetp-id.org/portfolio-sub/index"
+    },
+    {
+     "nama": "Grant for Patuha Unit-2 Geothermal Power Generation Project",
+     "id": "pd_jetp_prog_grant-for-patuha-unit-2-geothermal-power",
+     "pemberi": "JETP Indonesia (IPG dan GFANZ)",
+     "jenis": "JETP",
+     "status": "disetujui",
+     "nilai_usd": null,
+     "iso2": "ID",
+     "url": "https://jetp-id.org/portfolio-sub/index"
+    },
+    {
+     "nama": "Capacity Upgrade of Gunung Salak Geothermal Power Plant Project, Indonesia",
+     "id": "pd_vcs_144",
+     "jenis": "kredit karbon",
+     "status": "terdaftar terlambat verifikasi",
+     "nilai_usd": null,
+     "iso2": "ID",
+     "url": "https://registry.verra.org/app/projectDetail/VCS/144"
     }
    ],
    "catatan": {
-    "id": "Angka PISP berasal dari 2016-2017; besaran dan alokasi terkini perlu dicek di laporan PT SMI dan PMK 80/2022.",
-    "en": "PISP figures date from 2016-2017; current size and allocation should be checked in PT SMI reports and PMK 80/2022."
-   },
-   "sumber": [
-    "smi",
-    "pmk80",
-    "wbpisp",
-    "tgefund",
-    "waesano",
-    "sdgone",
-    "jica"
-   ]
+    "id": "Skema dan proyek pendanaan di basis METI yang bertag teknologi ini atau terhubung ke proyeknya, dilengkapi skema lintas teknologi. Nilai kosong berarti tidak diumumkan. Id pendanaan tersimpan di tiap baris.",
+    "en": "Funding schemes and projects in the METI base tagged with this technology or linked to its projects, plus cross-technology schemes. An empty value means not disclosed. The funding id is kept on every row."
+   }
   },
   "25": {
    "tipe": "rumus",
@@ -2762,7 +5299,146 @@
     "bren",
     "medco",
     "laboh_jbic",
-    "pge_q3"
+    "pge_q3",
+    "d_pend"
+   ],
+   "kolom": [
+    {
+     "k": "p",
+     "l": {
+      "id": "Proyek",
+      "en": "Project"
+     },
+     "url": "url"
+    },
+    {
+     "k": "o",
+     "l": {
+      "id": "Struktur kepemilikan",
+      "en": "Ownership"
+     }
+    },
+    {
+     "k": "n",
+     "l": {
+      "id": "Nilai",
+      "en": "Value"
+     }
+    }
+   ],
+   "baris": [
+    {
+     "p": "Indonesia Geothermal Resource Risk Mitigation Project (GREM)",
+     "o": {
+      "id": "World Bank (IBRD/IDA), status konstruksi",
+      "en": "World Bank (IBRD/IDA), status konstruksi"
+     },
+     "n": {
+      "id": "USD 325 juta (USD komitmen menurut sumber)",
+      "en": "USD 325 million (USD komitmen menurut sumber)"
+     },
+     "id": "pd_wb_P166071",
+     "url": "https://projects.worldbank.org/en/projects-operations/project-detail/P166071",
+     "iso2": "ID"
+    },
+    {
+     "p": "Indonesia Geothermal Resource Risk Mitigation Project",
+     "o": {
+      "id": "Green Climate Fund, status berjalan",
+      "en": "Green Climate Fund, status berjalan"
+     },
+     "n": {
+      "id": "USD 224 juta (USD komitmen aktivitas (konversi oleh d-portal))",
+      "en": "USD 224 million (USD komitmen aktivitas (konversi oleh d-portal))"
+     },
+     "id": "pi_XM_DAC_41317_FP083",
+     "url": "https://d-portal.org/ctrack.html#view=act&aid=XM-DAC-41317-FP083",
+     "iso2": "ID"
+    },
+    {
+     "p": "Geothermal Clean Energy Investment Project",
+     "o": {
+      "id": "World Bank (IBRD/IDA), status beroperasi",
+      "en": "World Bank (IBRD/IDA), status beroperasi"
+     },
+     "n": {
+      "id": "USD 175 juta (USD komitmen menurut sumber)",
+      "en": "USD 175 million (USD komitmen menurut sumber)"
+     },
+     "id": "pd_wb_P113078",
+     "url": "https://projects.worldbank.org/en/projects-operations/project-detail/P113078",
+     "iso2": "ID"
+    },
+    {
+     "p": "Muara Laboh Geothermal Power Project",
+     "o": {
+      "id": "Asian Development Bank",
+      "en": "Asian Development Bank"
+     },
+     "n": {
+      "id": "USD 70 juta (USD komitmen aktivitas (konversi oleh d-portal))",
+      "en": "USD 70 million (USD komitmen aktivitas (konversi oleh d-portal))"
+     },
+     "id": "pi_XM_DAC_46004_50156_001_LN3487",
+     "url": "https://d-portal.org/ctrack.html#view=act&aid=XM-DAC-46004-50156-001-LN3487",
+     "iso2": "ID"
+    },
+    {
+     "p": "ID-Geothermal Energy Upstream Development",
+     "o": {
+      "id": "World Bank (IBRD/IDA), status konstruksi",
+      "en": "World Bank (IBRD/IDA), status konstruksi"
+     },
+     "n": {
+      "id": "USD 49 juta (USD komitmen menurut sumber)",
+      "en": "USD 49 million (USD komitmen menurut sumber)"
+     },
+     "id": "pd_wb_P155047",
+     "url": "https://projects.worldbank.org/en/projects-operations/project-detail/P155047",
+     "iso2": "ID"
+    },
+    {
+     "p": "Muara Laboh Geothermal Power Project Stage 2",
+     "o": {
+      "id": "Asian Development Bank",
+      "en": "Asian Development Bank"
+     },
+     "n": {
+      "id": "USD 39 juta (USD komitmen aktivitas (konversi oleh d-portal))",
+      "en": "USD 39 million (USD komitmen aktivitas (konversi oleh d-portal))"
+     },
+     "id": "pi_XM_DAC_46004_57311_001_LN4474",
+     "url": "https://d-portal.org/ctrack.html#view=act&aid=XM-DAC-46004-57311-001-LN4474",
+     "iso2": "ID"
+    },
+    {
+     "p": "Muara Laboh Geothermal Power Project",
+     "o": {
+      "id": "Asian Development Bank",
+      "en": "Asian Development Bank"
+     },
+     "n": {
+      "id": "USD 19 juta (USD komitmen aktivitas (konversi oleh d-portal))",
+      "en": "USD 19 million (USD komitmen aktivitas (konversi oleh d-portal))"
+     },
+     "id": "pi_XM_DAC_46004_50156_001_LN8315",
+     "url": "https://d-portal.org/ctrack.html#view=act&aid=XM-DAC-46004-50156-001-LN8315",
+     "iso2": "ID"
+    },
+    {
+     "p": "ID-Geothermal Energy Upstream Development",
+     "o": {
+      "id": "World Bank (IBRD/IDA), status konstruksi",
+      "en": "World Bank (IBRD/IDA), status konstruksi"
+     },
+     "n": {
+      "id": "USD 6 juta (USD komitmen menurut sumber)",
+      "en": "USD 6 million (USD komitmen menurut sumber)"
+     },
+     "id": "pd_wb_P161644",
+     "url": "https://projects.worldbank.org/en/projects-operations/project-detail/P161644",
+     "iso2": "ID"
+    }
    ]
   },
   "27": {
@@ -2791,10 +5467,15 @@
     {
      "id": "Pengembangan Mataloko oleh PLN UIP Nusra disebut mendorong penyerapan tenaga kerja lokal (Tribun Kupang, 10 Agustus 2026, konten iklan advertorial). Angka pekerja per MW belum tersedia dalam sumber yang METI baca, sehingga tidak ditampilkan.",
      "en": "The Mataloko development by PLN UIP Nusra is said to boost local labour absorption (Tribun Kupang, 10 August 2026, advertorial content). Jobs-per-MW figures are not in the sources METI read, so none are shown."
+    },
+    {
+     "id": "Sertifikasi kompetensi BNSP: 10 lembaga sertifikasi profesi (LSP) memuat 52 skema terkait teknologi ini, antara lain EBTKE Indonesia, Energi dan Sumber Daya Mineral (ESDM), ENERGI INDONESIA, Energi Mandiri, Geo Mineral Batubara dan Energi, Geologi Pertambangan Panas Bumi (GPPB). Skema berjenjang dari teknisi, pelaksana, sampai engineer perencana (data prodi_pelatihan, diperiksa 2026).",
+     "en": "BNSP competency certification: 10 professional certification bodies (LSP) list 52 schemes related to this technology, including EBTKE Indonesia, Energi dan Sumber Daya Mineral (ESDM), ENERGI INDONESIA, Energi Mandiri, Geo Mineral Batubara dan Energi, Geologi Pertambangan Panas Bumi (GPPB). Schemes run from technician and installer up to planning engineer (prodi_pelatihan data, checked 2026)."
     }
    ],
    "sumber": [
-    "mataloko"
+    "mataloko",
+    "d_lsp"
    ]
   },
   "29": {

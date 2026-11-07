@@ -570,3 +570,33 @@ span.tn-kp-b{cursor:default}
 
 /* sembilan teknologi: 3 x 3 rata di bawah 1281px (bukan 4+4+1) */
 @media (min-width:1000px) and (max-width:1280px){.tn-tek:has(>li:nth-child(9):last-child){grid-template-columns:repeat(3,minmax(0,1fr))}}
+
+/* ===== struktur: tiga dewan sebaris, bidang dan unit dalam wadah exhibit dengan kisi kompartemen sama lebar ===== */
+.tn-bagan-bg .tn-r0{display:grid!important;grid-template-columns:minmax(0,1fr);gap:20px;align-items:stretch}
+@media (min-width:1280px){.tn-bagan-bg .tn-r0{grid-template-columns:repeat(3,minmax(0,1fr))!important}}
+.tn-bagan-bg .tn-r0>.tn-grp{width:auto!important;height:100%!important;flex:none}
+.tn-bagan-bg .tn-rg[data-n]{width:auto!important}
+.tn-bagan-bg .tn-rg[data-n]>.tn-lr{grid-template-columns:repeat(var(--nk,3),minmax(0,min(168px,calc((100% - 16px) / 3))))!important;justify-content:center}
+.tn-bagan-bg .tn-rg[data-n="2"]>.tn-lr{--nk:2}
+.tn-bagan-bg .tn-rg[data-n]>.tn-lr>.tn-kp{width:100%}
+.tn-bagan-bg .tn-rg>.tn-av-kisi{margin-top:auto}
+.tn-wd{margin-top:32px}
+.tn-wd>.jm-ex-bd{padding:20px 22px 24px}
+.tn-kisi{display:grid;grid-template-columns:minmax(0,1fr);gap:20px;align-items:stretch}
+@media (min-width:760px){.tn-kisi{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (min-width:1100px){.tn-kisi{grid-template-columns:repeat(3,minmax(0,1fr))}}
+.tn-bagan-bg .tn-kisi>.tn-grp{width:auto!important;height:100%!important;flex:none;padding-bottom:18px}
+.tn-bagan-bg .tn-kisi>.tn-grp>h4{flex-wrap:nowrap;min-height:52px;justify-content:flex-start;text-align:left;gap:8px}
+.tn-bagan-bg .tn-kisi>.tn-grp>h4>span{flex:1 1 0;min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.tn-bagan-bg .tn-kisi>.tn-grp>h4>.tn-n{flex:none}
+.tn-bagan-bg .tn-kisi>.tn-grp>.tn-fkg:not(.tn-dg){display:grid!important;grid-template-columns:repeat(auto-fit,168px)!important;justify-content:center;align-content:center;flex:1;gap:12px}
+.tn-bagan-bg .tn-kisi>.tn-grp>.tn-fkg:not(.tn-dg)>li{width:168px}
+@media (max-width:760px){.tn-bagan-bg .tn-kisi>.tn-grp>.tn-fkg:not(.tn-dg){grid-template-columns:repeat(auto-fit,minmax(0,168px))!important}.tn-bagan-bg .tn-kisi>.tn-grp>.tn-fkg:not(.tn-dg)>li{width:100%}.tn-bagan-bg .tn-rg[data-n]>.tn-lr{grid-template-columns:repeat(var(--nk,3),minmax(0,1fr))!important}.tn-wd>.jm-ex-bd{padding:16px}}
+/* tanpa foto: monogram di tengah ruang foto, di atas pita nama */
+.tn-kp-ini{align-self:center;margin-top:-26%;font:700 var(--t-h1)/1 var(--display)}
+.tn-bagan-bg .tn-kisi>.tn-grp>.tn-fkg:not(.tn-dg){grid-template-columns:repeat(2,minmax(0,168px))!important}
+.tn-bagan-bg .tn-kisi>.tn-grp[data-k="3"]>.tn-fkg:not(.tn-dg){grid-template-columns:repeat(3,minmax(0,168px))!important}
+.tn-bagan-bg .tn-kisi>.tn-grp>.tn-fkg:not(.tn-dg)>li{width:100%}
+.tn-bagan-bg .tn-rg[data-n]>.tn-lr{display:flex!important;justify-content:center;gap:8px}
+.tn-bagan-bg .tn-rg[data-n]>.tn-lr>.tn-kp{flex:0 0 min(168px,calc((100% - 16px) / 3));width:auto}
+.tn-pohon{grid-template-columns:minmax(0,1fr)}

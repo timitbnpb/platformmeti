@@ -6,6 +6,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { validasi } from './topik_surya.mjs';
+import { perdalam } from './topik_bioenergi_dalam.mjs';
 export { validasi };
 const akar = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '../..');
 const ID = 'bioenergi';
@@ -356,6 +357,7 @@ export function susun() {
     dasarP('pln', 'operasi', 'Publikasikan asal dan sertifikasi biomassa per PLTU.', 'Publish origin and certification of biomass per plant.', 'mgpac'),
     dasarP('meti', 'operasi', 'Pantau realisasi target co-firing dan B50, serta beri hak jawab pada pihak yang disebut.', 'Monitor co-firing and B50 actuals and give named parties a right of reply.', 'cof26'),
   ] };
+  perdalam(bab, SUMBER);
   return {
     id: ID, versi: 1, diperbarui: TGL,
     judul: T('Bioenergi', 'Bioenergy'),

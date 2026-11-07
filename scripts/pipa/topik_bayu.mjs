@@ -6,6 +6,7 @@
 // Pakai: node scripts/pipa/topik_bayu.mjs [--selftest]
 import { readFileSync, writeFileSync, mkdirSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
+import { perdalam } from './topik_dalam_bayu.mjs';
 
 const DATA = new URL('../../public/data/', import.meta.url);
 const baca = (n) => JSON.parse(readFileSync(new URL(n, DATA), 'utf8'));
@@ -557,7 +558,7 @@ const PERIKSA = [
 ];
 
 /* ---------- perakitan ---------- */
-export function bangun() {
+function bangunDasar() {
   const bab = {};
   bab['2'] = { tipe: 'faq', butir: [
     { t: t('Berapa besar PLTB di Indonesia sekarang?', 'How large is wind power in Indonesia today?'), j: t(`Kapasitas terpasang sekitar ${k(kap2024)} MW (IRENA), seluruhnya dua PLTB utilitas di Sulawesi Selatan (Sidrap 75 MW dan Tolo 72 MW) plus turbin kecil di Bali. Produksi 2024 sekitar ${Math.round(gen2024)} GWh (Ember).`, `Installed capacity is about ${kap2024} MW (IRENA), essentially two utility wind farms in South Sulawesi (Sidrap 75 MW and Tolo 72 MW) plus small turbines in Bali. 2024 generation was about ${Math.round(gen2024)} GWh (Ember).`) },
@@ -828,6 +829,8 @@ export function bangun() {
     sumber: SUMBER, bab,
   };
 }
+
+export function bangun() { return perdalam(bangunDasar(), SUMBER); }
 
 /* ---------- pemeriksaan bentuk (dipakai --selftest dan tests/topik_bayu.test.mjs) ---------- */
 export function periksa(D) {

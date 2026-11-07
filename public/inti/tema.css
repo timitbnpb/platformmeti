@@ -15,7 +15,7 @@
   --sorot:#9DC94F; --kaki-bg:#06261D;
   --ok:#066B52; --warn:#A8480A; --bad:#B3261E; --info:#1E7FA8;
   --ok-bg:#E2F3EC; --warn-bg:#FBEBDD; --bad-bg:#FBE7E5; --info-bg:#E3F3FA;
-  --fokus:#1E7FA8; --kemajuan:0; --h:0%; --w:0%; --tk:var(--accent); --sk:var(--ink2); /* warna teknologi bawaan; pil/batang menimpanya per elemen */
+  --fokus:#1E7FA8; --kemajuan:0; --h:0%; --w:0%; --tk:var(--accent); --tc:var(--accent); --ref:var(--accent); --a:0%; --b:0%; --x:50%; --nk:3; --sk:var(--ink2); /* warna teknologi bawaan; pil/batang menimpanya per elemen */
   --shadow:0 2px 14px rgb(10 60 45/.08); --shadow-lg:0 8px 28px rgb(10 60 45/.16);
  --lg-diamond:#BFE6F7; --lg-platinum:#CBD5E1; --lg-ruby:#F4B6C0; --lg-gold:#F3D27A; --lg-silver:#DDE3E8; --lg-bronze:#E3B48C; --lg-ink:#1B2623;
   --pendar:0 0 0 1px rgb(74 169 224/.35),0 8px 28px rgb(74 169 224/.18);

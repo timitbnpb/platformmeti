@@ -451,6 +451,121 @@
    "tanggal": "2026-11-08",
    "tahun": 2026,
    "bukti": "editorial"
+  },
+  "d_proyek": {
+   "judul": "Basis proyek METI (public/data/proyek.json: RUPTL 2025-2034, WRI GPPD, ESDM, berita; tiap proyek membawa sumbernya sendiri)",
+   "penerbit": "METI dan sumber primer per proyek",
+   "url": "https://platformmeti.timitbnpb.workers.dev/direktori",
+   "tanggal": "2026-11-07",
+   "tahun": 2026,
+   "bukti": "via-pihak-ketiga"
+  },
+  "d_org": {
+   "judul": "Basis organisasi METI (public/data/organisasi.json; tiap organisasi membawa sumbernya sendiri)",
+   "penerbit": "METI",
+   "url": "https://platformmeti.timitbnpb.workers.dev/direktori",
+   "tanggal": "2026-11-08",
+   "tahun": 2026,
+   "bukti": "via-pihak-ketiga"
+  },
+  "d_reg": {
+   "judul": "Basis regulasi METI (public/data/regulasi.json, naskah BPK JDIH)",
+   "penerbit": "BPK JDIH, METI",
+   "url": "https://peraturan.bpk.go.id/",
+   "tanggal": "2026-11-07",
+   "tahun": 2026,
+   "bukti": "resmi"
+  },
+  "d_stat": {
+   "judul": "Statistik Ketenagalistrikan 2024: kapasitas terpasang per provinsi (public/data/statistik_pln.json)",
+   "penerbit": "Ditjen Ketenagalistrikan ESDM",
+   "url": "https://gatrik.esdm.go.id/",
+   "tanggal": "2026-11-07",
+   "tahun": 2026,
+   "bukti": "resmi"
+  },
+  "d_pot": {
+   "judul": "Potensi per provinsi: RUEN (Perpres 22/2017) dan HEESI 2025 (public/data/peluang.json)",
+   "penerbit": "DEN, Kementerian ESDM",
+   "url": "https://peraturan.bpk.go.id/Details/68772",
+   "tanggal": "2026-11-07",
+   "tahun": 2026,
+   "bukti": "resmi"
+  },
+  "d_pend": {
+   "judul": "Basis pendanaan METI (public/data/pendanaan.json: skema dan proyek pendana, tiap butir membawa tautan sumbernya)",
+   "penerbit": "METI, ADB, World Bank, AIIB, JICA dan lain-lain",
+   "url": "https://platformmeti.timitbnpb.workers.dev/direktori",
+   "tanggal": "2026-11-08",
+   "tahun": 2026,
+   "bukti": "via-pihak-ketiga"
+  },
+  "d_owid": {
+   "judul": "Our World in Data energy-data (Ember Yearly Electricity Data), diiris ke data/topik_dunia/owid_negara.json",
+   "penerbit": "Ember via Our World in Data",
+   "url": "https://github.com/owid/energy-data",
+   "tanggal": "2026-11-08",
+   "tahun": 2026,
+   "bukti": "via-pihak-ketiga",
+   "lisensi": "CC BY 4.0"
+  },
+  "d_kap": {
+   "judul": "IRENA, kapasitas dan pembangkitan terpasang Indonesia (public/data/kapasitas_tren.json)",
+   "penerbit": "IRENA",
+   "url": "https://www.irena.org/Data",
+   "tanggal": "2026-11-08",
+   "tahun": 2026,
+   "bukti": "resmi",
+   "lisensi": "IRENA data terbuka"
+  },
+  "d_lcoe": {
+   "judul": "IRENA LCOE dan harga modul via Our World in Data (public/data/biaya_listrik.json)",
+   "penerbit": "IRENA via Our World in Data",
+   "url": "https://ourworldindata.org/grapher/levelized-cost-of-energy",
+   "tanggal": "2026-11-08",
+   "tahun": 2026,
+   "bukti": "via-pihak-ketiga",
+   "lisensi": "CC BY 4.0"
+  },
+  "d_lsp": {
+   "judul": "Lembaga sertifikasi profesi BNSP dan skema EBT (public/data/prodi_pelatihan.json, situs BNSP)",
+   "penerbit": "BNSP, METI",
+   "url": "https://bnsp.go.id/",
+   "tanggal": "2026-11-07",
+   "tahun": 2026,
+   "bukti": "resmi"
+  },
+  "d_inov": {
+   "judul": "Basis inovasi METI (public/data/inovasi.json; tiap inovasi membawa sumbernya)",
+   "penerbit": "METI, kampus, BRIN dan startup",
+   "url": "https://platformmeti.timitbnpb.workers.dev/direktori",
+   "tanggal": "2026-11-08",
+   "tahun": 2026,
+   "bukti": "via-pihak-ketiga"
+  },
+  "d_ins": {
+   "judul": "Basis insentif METI (public/data/insentif.json: PMK 66/2015, PMK 130/2020, Permen ESDM 11/2024, Perpres 112/2022)",
+   "penerbit": "BPK JDIH, METI",
+   "url": "https://peraturan.bpk.go.id/Details/146740/pmk-no-66pmk0102015",
+   "tanggal": "2026-11-07",
+   "tahun": 2026,
+   "bukti": "resmi"
+  },
+  "d_rpasok": {
+   "judul": "Kebutuhan MW per tahun dari RUPTL 2025-2034 (public/data/rantai_pasok.json)",
+   "penerbit": "PLN, ESDM",
+   "url": "https://gatrik.esdm.go.id/",
+   "tanggal": "2026-11-07",
+   "tahun": 2026,
+   "bukti": "resmi"
+  },
+  "d_izin": {
+   "judul": "Izin dan kontrak listrik EBT: pasal Permen ESDM 11/2021, 2/2024, Perpres 112/2022 (public/data/izin_kontrak.json, tiap jawaban membawa pasalnya)",
+   "penerbit": "Pemerintah RI via BPK JDIH",
+   "url": "https://peraturan.bpk.go.id/Details/225308",
+   "tanggal": "2026-11-07",
+   "tahun": 2026,
+   "bukti": "resmi"
   }
  },
  "bab": {
@@ -975,136 +1090,231 @@
   "7": {
    "tipe": "grafik",
    "jenis": "garis",
+   "sumber": [
+    "irena",
+    "etp1",
+    "d_kap"
+   ],
    "label": {
-    "id": "Kapasitas bayu terpasang vs target RUEN",
-    "en": "Installed wind capacity vs RUEN target"
+    "id": "Tren bayu: kapasitas, pembangkitan, dan seluruh EBT (indeks 2015 = 100)",
+    "en": "bayu trend: capacity, generation and all renewables (index 2015 = 100)"
    },
-   "satuan": "MW",
+   "satuan": "indeks",
    "d": 0,
    "seri": [
     {
      "nama": {
-      "id": "Terpasang (IRENASTAT)",
-      "en": "Installed (IRENASTAT)"
+      "id": "Kapasitas bayu (indeks)",
+      "en": "bayu capacity (index)"
      },
      "sorot": true,
      "titik": [
       [
        "2015",
-       1.46
+       100
       ],
       [
        "2016",
-       1.46
+       100
       ],
       [
        "2017",
-       1.46
+       100
       ],
       [
        "2018",
-       143.51
+       9829.5
       ],
       [
        "2019",
-       154.31
+       10569.2
       ],
       [
        "2020",
-       154.31
+       10569.2
       ],
       [
        "2021",
-       154.31
+       10569.2
       ],
       [
        "2022",
-       154.31
+       10569.2
       ],
       [
        "2023",
-       152.3
+       10431.5
       ],
       [
        "2024",
-       152.3
+       10431.5
       ],
       [
        "2025",
-       152.3
+       10431.5
       ]
      ]
     },
     {
      "nama": {
-      "id": "Target RUEN 2017 (dibaca dari grafik ETP)",
-      "en": "RUEN 2017 target (read from ETP chart)"
+      "id": "Pembangkitan bayu (indeks)",
+      "en": "bayu generation (index)"
      },
      "titik": [
       [
+       "2015",
+       100
+      ],
+      [
+       "2016",
+       154.1
+      ],
+      [
        "2017",
-       74
+       154.1
       ],
       [
        "2018",
-       204
+       208.1
       ],
       [
        "2019",
-       399
+       208.1
       ],
       [
        "2020",
-       600
+       208.1
       ],
       [
        "2021",
-       820
+       208.1
       ],
       [
        "2022",
-       1049
+       208.1
       ],
       [
        "2023",
-       1290
+       208.1
       ],
       [
        "2024",
-       1540
+       208.1
+      ]
+     ]
+    },
+    {
+     "nama": {
+      "id": "Kapasitas seluruh EBT Indonesia (indeks)",
+      "en": "Capacity of all Indonesian renewables (index)"
+     },
+     "titik": [
+      [
+       "2015",
+       100
+      ],
+      [
+       "2016",
+       105.7
+      ],
+      [
+       "2017",
+       110.3
+      ],
+      [
+       "2018",
+       114.4
+      ],
+      [
+       "2019",
+       120.2
+      ],
+      [
+       "2020",
+       122
+      ],
+      [
+       "2021",
+       134.5
+      ],
+      [
+       "2022",
+       146.9
+      ],
+      [
+       "2023",
+       155.4
+      ],
+      [
+       "2024",
+       161.7
       ],
       [
        "2025",
-       1800
+       177
       ]
      ]
     }
    ],
-   "sumber": [
-    "irena",
-    "etp1"
-   ],
    "catatan": {
-    "id": "Kapasitas nasional naik dari nol ke sekitar 143 MW pada 2018 (Sidrap) lalu 154 MW pada 2019 (Tolo), dan tidak bertambah sejak itu. Target RUEN (1,8 GW pada 2025) dibaca dari Gambar 7 ETP (nilai tahunan dibaca dari grafik, bukan tabel resmi); selisih 2025 kira-kira 1,65 GW.",
-    "en": "National capacity rose from zero to about 143 MW in 2018 (Sidrap) and 154 MW in 2019 (Tolo), and has not grown since. The RUEN target (1.8 GW in 2025) is read from ETP Figure 7 (yearly values read off the chart, not an official table); the 2025 gap is roughly 1.65 GW."
+    "id": "Turunan hitung METI (EST) dari IRENA: tiap deret dibagi nilai 2015 dan dikali 100. Deret asli kapasitas (MW) tersimpan di grafik sebelumnya: 152.3 MW pada 2025. Pembangkitan 2025 belum terbit.",
+    "en": "METI derived figures (EST) from IRENA: each series divided by its 2015 value times 100. The original capacity series (MW) is in the key figures. Generation for 2025 is not yet published."
    }
   },
   "8": {
    "tipe": "tabel",
    "per": 10,
+   "judul": {
+    "id": "Sebaran bayu di 38 provinsi",
+    "en": "bayu across 38 provinces"
+   },
+   "sumber": [
+    "d_proyek",
+    "d_stat",
+    "d_pot",
+    "ruen",
+    "heesi",
+    "etp1"
+   ],
    "kolom": [
     {
      "k": "provinsi",
      "l": {
       "id": "Provinsi",
       "en": "Province"
+     },
+     "url": "u"
+    },
+    {
+     "k": "kode",
+     "l": {
+      "id": "Kode BPS",
+      "en": "BPS code"
      }
     },
     {
-     "k": "potensi_mw",
+     "k": "proyek",
      "l": {
-      "id": "Potensi RUEN (MW)",
-      "en": "RUEN potential (MW)"
+      "id": "Proyek tercatat",
+      "en": "Recorded projects"
+     },
+     "num": true,
+     "d": 0
+    },
+    {
+     "k": "mw",
+     "l": {
+      "id": "Kapasitas proyek (MW)",
+      "en": "Project capacity (MW)"
+     },
+     "num": true,
+     "d": 0
+    },
+    {
+     "k": "operasi_mw",
+     "l": {
+      "id": "Beroperasi (MW)",
+      "en": "Operating (MW)"
      },
      "num": true,
      "d": 0
@@ -1112,11 +1322,20 @@
     {
      "k": "terpasang_mw",
      "l": {
-      "id": "Terpasang 2025 (MW)",
-      "en": "Installed 2025 (MW)"
+      "id": "Terpasang PLTB 2024 (MW)",
+      "en": "Installed PLTB 2024 (MW)"
      },
      "num": true,
-     "d": 2
+     "d": 0
+    },
+    {
+     "k": "potensi_mw",
+     "l": {
+      "id": "Potensi bayu (MW)",
+      "en": "bayu potential (MW)"
+     },
+     "num": true,
+     "d": 0
     },
     {
      "k": "rasio_persen",
@@ -1144,359 +1363,14 @@
    ],
    "baris": [
     {
-     "provinsi": "Nusa Tenggara Timur",
-     "potensi_mw": 10188,
-     "terpasang_mw": 0,
-     "rasio_persen": 0,
-     "terukur": {
-      "id": "belum ada ukuran terbuka",
-      "en": "no open measurement"
-     },
-     "lapan": {
-      "id": "di atas 5 m/s",
-      "en": "above 5 m/s"
-     }
-    },
-    {
-     "provinsi": "Jawa Timur",
-     "potensi_mw": 7907,
-     "terpasang_mw": 0,
-     "rasio_persen": 0,
-     "terukur": {
-      "id": "belum ada ukuran terbuka",
-      "en": "no open measurement"
-     },
-     "lapan": {
-      "id": "-",
-      "en": "-"
-     }
-    },
-    {
-     "provinsi": "Jawa Barat",
-     "potensi_mw": 7036,
-     "terpasang_mw": 0,
-     "rasio_persen": 0,
-     "terukur": {
-      "id": "Sukabumi 7,0 m/s",
-      "en": "Sukabumi 7.0 m/s"
-     },
-     "lapan": {
-      "id": "-",
-      "en": "-"
-     }
-    },
-    {
-     "provinsi": "Jawa Tengah",
-     "potensi_mw": 5213,
-     "terpasang_mw": 0,
-     "rasio_persen": 0,
-     "terukur": {
-      "id": "belum ada ukuran terbuka",
-      "en": "no open measurement"
-     },
-     "lapan": {
-      "id": "-",
-      "en": "-"
-     }
-    },
-    {
-     "provinsi": "Sulawesi Selatan",
-     "potensi_mw": 4193,
-     "terpasang_mw": 150.75,
-     "rasio_persen": 3.6,
-     "terukur": {
-      "id": "Bantaeng 4,66 m/s",
-      "en": "Bantaeng 4.66 m/s"
-     },
-     "lapan": {
-      "id": "di atas 5 m/s",
-      "en": "above 5 m/s"
-     }
-    },
-    {
-     "provinsi": "Maluku",
-     "potensi_mw": 3188,
-     "terpasang_mw": 0,
-     "rasio_persen": 0,
-     "terukur": {
-      "id": "belum ada ukuran terbuka",
-      "en": "no open measurement"
-     },
-     "lapan": {
-      "id": "-",
-      "en": "-"
-     }
-    },
-    {
-     "provinsi": "Nusa Tenggara Barat",
-     "potensi_mw": 2605,
-     "terpasang_mw": 0,
-     "rasio_persen": 0,
-     "terukur": {
-      "id": "belum ada ukuran terbuka",
-      "en": "no open measurement"
-     },
-     "lapan": {
-      "id": "di atas 5 m/s",
-      "en": "above 5 m/s"
-     }
-    },
-    {
-     "provinsi": "Kepulauan Bangka Belitung",
-     "potensi_mw": 1787,
-     "terpasang_mw": 0,
-     "rasio_persen": 0,
-     "terukur": {
-      "id": "belum ada ukuran terbuka",
-      "en": "no open measurement"
-     },
-     "lapan": {
-      "id": "-",
-      "en": "-"
-     }
-    },
-    {
-     "provinsi": "Banten",
-     "potensi_mw": 1753,
-     "terpasang_mw": 0,
-     "rasio_persen": 0,
-     "terukur": {
-      "id": "belum ada ukuran terbuka",
-      "en": "no open measurement"
-     },
-     "lapan": {
-      "id": "-",
-      "en": "-"
-     }
-    },
-    {
-     "provinsi": "Bengkulu",
-     "potensi_mw": 1513,
-     "terpasang_mw": 0,
-     "rasio_persen": 0,
-     "terukur": {
-      "id": "belum ada ukuran terbuka",
-      "en": "no open measurement"
-     },
-     "lapan": {
-      "id": "-",
-      "en": "-"
-     }
-    },
-    {
-     "provinsi": "Sulawesi Tenggara",
-     "potensi_mw": 1414,
-     "terpasang_mw": 0,
-     "rasio_persen": 0,
-     "terukur": {
-      "id": "belum ada ukuran terbuka",
-      "en": "no open measurement"
-     },
-     "lapan": {
-      "id": "-",
-      "en": "-"
-     }
-    },
-    {
-     "provinsi": "Papua",
-     "potensi_mw": 1411,
-     "terpasang_mw": 0,
-     "rasio_persen": 0,
-     "terukur": {
-      "id": "Jayapura 3,05 m/s",
-      "en": "Jayapura 3.05 m/s"
-     },
-     "lapan": {
-      "id": "-",
-      "en": "-"
-     }
-    },
-    {
-     "provinsi": "Sulawesi Utara",
-     "potensi_mw": 1214,
-     "terpasang_mw": 0.08,
-     "rasio_persen": 0.01,
-     "terukur": {
-      "id": "Pulau Sangihe 6,4 m/s",
-      "en": "Sangihe Island 6.4 m/s"
-     },
-     "lapan": {
-      "id": "-",
-      "en": "-"
-     }
-    },
-    {
-     "provinsi": "Lampung",
-     "potensi_mw": 1137,
-     "terpasang_mw": 0,
-     "rasio_persen": 0,
-     "terukur": {
-      "id": "belum ada ukuran terbuka",
-      "en": "no open measurement"
-     },
-     "lapan": {
-      "id": "-",
-      "en": "-"
-     }
-    },
-    {
-     "provinsi": "DI Yogyakarta",
-     "potensi_mw": 1079,
-     "terpasang_mw": 0,
-     "rasio_persen": 0,
-     "terukur": {
-      "id": "belum ada ukuran terbuka",
-      "en": "no open measurement"
-     },
-     "lapan": {
-      "id": "-",
-      "en": "-"
-     }
-    },
-    {
-     "provinsi": "Bali",
-     "potensi_mw": 1019,
-     "terpasang_mw": 1.08,
-     "rasio_persen": 0.11,
-     "terukur": {
-      "id": "belum ada ukuran terbuka",
-      "en": "no open measurement"
-     },
-     "lapan": {
-      "id": "-",
-      "en": "-"
-     }
-    },
-    {
-     "provinsi": "Kalimantan Selatan",
-     "potensi_mw": 1006,
-     "terpasang_mw": 0,
-     "rasio_persen": 0,
-     "terukur": {
-      "id": "belum ada ukuran terbuka",
-      "en": "no open measurement"
-     },
-     "lapan": {
-      "id": "-",
-      "en": "-"
-     }
-    },
-    {
-     "provinsi": "Kepulauan Riau",
-     "potensi_mw": 922,
-     "terpasang_mw": 0,
-     "rasio_persen": 0,
-     "terukur": {
-      "id": "belum ada ukuran terbuka",
-      "en": "no open measurement"
-     },
-     "lapan": {
-      "id": "-",
-      "en": "-"
-     }
-    },
-    {
-     "provinsi": "Sulawesi Tengah",
-     "potensi_mw": 908,
-     "terpasang_mw": 0,
-     "rasio_persen": 0,
-     "terukur": {
-      "id": "belum ada ukuran terbuka",
-      "en": "no open measurement"
-     },
-     "lapan": {
-      "id": "-",
-      "en": "-"
-     }
-    },
-    {
      "provinsi": "Aceh",
+     "kode": "11",
+     "u": "/wilayah?prov=11",
+     "proyek": 2,
+     "mw": 120,
+     "operasi_mw": 10,
+     "terpasang_mw": 0,
      "potensi_mw": 894,
-     "terpasang_mw": 0,
-     "rasio_persen": 0,
-     "terukur": {
-      "id": "belum ada ukuran terbuka",
-      "en": "no open measurement"
-     },
-     "lapan": {
-      "id": "-",
-      "en": "-"
-     }
-    },
-    {
-     "provinsi": "Kalimantan Tengah",
-     "potensi_mw": 681,
-     "terpasang_mw": 0,
-     "rasio_persen": 0,
-     "terukur": {
-      "id": "belum ada ukuran terbuka",
-      "en": "no open measurement"
-     },
-     "lapan": {
-      "id": "-",
-      "en": "-"
-     }
-    },
-    {
-     "provinsi": "Kalimantan Barat",
-     "potensi_mw": 554,
-     "terpasang_mw": 0,
-     "rasio_persen": 0,
-     "terukur": {
-      "id": "belum ada ukuran terbuka",
-      "en": "no open measurement"
-     },
-     "lapan": {
-      "id": "-",
-      "en": "-"
-     }
-    },
-    {
-     "provinsi": "Sulawesi Barat",
-     "potensi_mw": 514,
-     "terpasang_mw": 0,
-     "rasio_persen": 0,
-     "terukur": {
-      "id": "belum ada ukuran terbuka",
-      "en": "no open measurement"
-     },
-     "lapan": {
-      "id": "-",
-      "en": "-"
-     }
-    },
-    {
-     "provinsi": "Maluku Utara",
-     "potensi_mw": 504,
-     "terpasang_mw": 0,
-     "rasio_persen": 0,
-     "terukur": {
-      "id": "belum ada ukuran terbuka",
-      "en": "no open measurement"
-     },
-     "lapan": {
-      "id": "-",
-      "en": "-"
-     }
-    },
-    {
-     "provinsi": "Papua Barat",
-     "potensi_mw": 437,
-     "terpasang_mw": 0,
-     "rasio_persen": 0,
-     "terukur": {
-      "id": "belum ada ukuran terbuka",
-      "en": "no open measurement"
-     },
-     "lapan": {
-      "id": "-",
-      "en": "-"
-     }
-    },
-    {
-     "provinsi": "Sumatera Barat",
-     "potensi_mw": 428,
-     "terpasang_mw": 0,
      "rasio_persen": 0,
      "terukur": {
       "id": "belum ada ukuran terbuka",
@@ -1509,8 +1383,13 @@
     },
     {
      "provinsi": "Sumatera Utara",
+     "kode": "12",
+     "u": "/wilayah?prov=12",
+     "proyek": 0,
+     "mw": 0,
+     "operasi_mw": 0,
+     "terpasang_mw": 0,
      "potensi_mw": 356,
-     "terpasang_mw": 0,
      "rasio_persen": 0,
      "terukur": {
       "id": "belum ada ukuran terbuka",
@@ -1522,65 +1401,14 @@
      }
     },
     {
-     "provinsi": "Sumatera Selatan",
-     "potensi_mw": 301,
+     "provinsi": "Sumatera Barat",
+     "kode": "13",
+     "u": "/wilayah?prov=13",
+     "proyek": 0,
+     "mw": 0,
+     "operasi_mw": 0,
      "terpasang_mw": 0,
-     "rasio_persen": 0,
-     "terukur": {
-      "id": "belum ada ukuran terbuka",
-      "en": "no open measurement"
-     },
-     "lapan": {
-      "id": "-",
-      "en": "-"
-     }
-    },
-    {
-     "provinsi": "Kalimantan Timur",
-     "potensi_mw": 212,
-     "terpasang_mw": 0,
-     "rasio_persen": 0,
-     "terukur": {
-      "id": "belum ada ukuran terbuka",
-      "en": "no open measurement"
-     },
-     "lapan": {
-      "id": "-",
-      "en": "-"
-     }
-    },
-    {
-     "provinsi": "Gorontalo",
-     "potensi_mw": 137,
-     "terpasang_mw": 0,
-     "rasio_persen": 0,
-     "terukur": {
-      "id": "belum ada ukuran terbuka",
-      "en": "no open measurement"
-     },
-     "lapan": {
-      "id": "-",
-      "en": "-"
-     }
-    },
-    {
-     "provinsi": "Kalimantan Utara",
-     "potensi_mw": 73,
-     "terpasang_mw": 0,
-     "rasio_persen": 0,
-     "terukur": {
-      "id": "belum ada ukuran terbuka",
-      "en": "no open measurement"
-     },
-     "lapan": {
-      "id": "-",
-      "en": "-"
-     }
-    },
-    {
-     "provinsi": "Jambi",
-     "potensi_mw": 37,
-     "terpasang_mw": 0,
+     "potensi_mw": 428,
      "rasio_persen": 0,
      "terukur": {
       "id": "belum ada ukuran terbuka",
@@ -1593,8 +1421,127 @@
     },
     {
      "provinsi": "Riau",
-     "potensi_mw": 22,
+     "kode": "14",
+     "u": "/wilayah?prov=14",
+     "proyek": 0,
+     "mw": 0,
+     "operasi_mw": 0,
      "terpasang_mw": 0,
+     "potensi_mw": 22,
+     "rasio_persen": 0,
+     "terukur": {
+      "id": "belum ada ukuran terbuka",
+      "en": "no open measurement"
+     },
+     "lapan": {
+      "id": "-",
+      "en": "-"
+     }
+    },
+    {
+     "provinsi": "Jambi",
+     "kode": "15",
+     "u": "/wilayah?prov=15",
+     "proyek": 0,
+     "mw": 0,
+     "operasi_mw": 0,
+     "terpasang_mw": 0,
+     "potensi_mw": 37,
+     "rasio_persen": 0,
+     "terukur": {
+      "id": "belum ada ukuran terbuka",
+      "en": "no open measurement"
+     },
+     "lapan": {
+      "id": "-",
+      "en": "-"
+     }
+    },
+    {
+     "provinsi": "Sumatera Selatan",
+     "kode": "16",
+     "u": "/wilayah?prov=16",
+     "proyek": 0,
+     "mw": 0,
+     "operasi_mw": 0,
+     "terpasang_mw": 0,
+     "potensi_mw": 301,
+     "rasio_persen": 0,
+     "terukur": {
+      "id": "belum ada ukuran terbuka",
+      "en": "no open measurement"
+     },
+     "lapan": {
+      "id": "-",
+      "en": "-"
+     }
+    },
+    {
+     "provinsi": "Bengkulu",
+     "kode": "17",
+     "u": "/wilayah?prov=17",
+     "proyek": 0,
+     "mw": 0,
+     "operasi_mw": 0,
+     "terpasang_mw": 0,
+     "potensi_mw": 1513,
+     "rasio_persen": 0,
+     "terukur": {
+      "id": "belum ada ukuran terbuka",
+      "en": "no open measurement"
+     },
+     "lapan": {
+      "id": "-",
+      "en": "-"
+     }
+    },
+    {
+     "provinsi": "Lampung",
+     "kode": "18",
+     "u": "/wilayah?prov=18",
+     "proyek": 0,
+     "mw": 0,
+     "operasi_mw": 0,
+     "terpasang_mw": 0,
+     "potensi_mw": 1137,
+     "rasio_persen": 0,
+     "terukur": {
+      "id": "belum ada ukuran terbuka",
+      "en": "no open measurement"
+     },
+     "lapan": {
+      "id": "-",
+      "en": "-"
+     }
+    },
+    {
+     "provinsi": "Kepulauan Bangka Belitung",
+     "kode": "19",
+     "u": "/wilayah?prov=19",
+     "proyek": 0,
+     "mw": 0,
+     "operasi_mw": 0,
+     "terpasang_mw": 0,
+     "potensi_mw": 1787,
+     "rasio_persen": 0,
+     "terukur": {
+      "id": "belum ada ukuran terbuka",
+      "en": "no open measurement"
+     },
+     "lapan": {
+      "id": "-",
+      "en": "-"
+     }
+    },
+    {
+     "provinsi": "Kepulauan Riau",
+     "kode": "21",
+     "u": "/wilayah?prov=21",
+     "proyek": 0,
+     "mw": 0,
+     "operasi_mw": 0,
+     "terpasang_mw": 0,
+     "potensi_mw": 922,
      "rasio_persen": 0,
      "terukur": {
       "id": "belum ada ukuran terbuka",
@@ -1607,8 +1554,13 @@
     },
     {
      "provinsi": "DKI Jakarta",
-     "potensi_mw": 4,
+     "kode": "31",
+     "u": "/wilayah?prov=31",
+     "proyek": 0,
+     "mw": 0,
+     "operasi_mw": 0,
      "terpasang_mw": 0,
+     "potensi_mw": 4,
      "rasio_persen": 0,
      "terukur": {
       "id": "belum ada ukuran terbuka",
@@ -1618,160 +1570,1189 @@
       "id": "-",
       "en": "-"
      }
+    },
+    {
+     "provinsi": "Jawa Barat",
+     "kode": "32",
+     "u": "/wilayah?prov=32",
+     "proyek": 3,
+     "mw": 1005,
+     "operasi_mw": 0,
+     "terpasang_mw": 0,
+     "potensi_mw": 7036,
+     "rasio_persen": 0,
+     "terukur": {
+      "id": "Sukabumi 7,0 m/s",
+      "en": "Sukabumi 7.0 m/s"
+     },
+     "lapan": {
+      "id": "-",
+      "en": "-"
+     }
+    },
+    {
+     "provinsi": "Jawa Tengah",
+     "kode": "33",
+     "u": "/wilayah?prov=33",
+     "proyek": 0,
+     "mw": 0,
+     "operasi_mw": 0,
+     "terpasang_mw": 0,
+     "potensi_mw": 5213,
+     "rasio_persen": 0,
+     "terukur": {
+      "id": "belum ada ukuran terbuka",
+      "en": "no open measurement"
+     },
+     "lapan": {
+      "id": "-",
+      "en": "-"
+     }
+    },
+    {
+     "provinsi": "DI Yogyakarta",
+     "kode": "34",
+     "u": "/wilayah?prov=34",
+     "proyek": 0,
+     "mw": 0,
+     "operasi_mw": 0,
+     "terpasang_mw": 0,
+     "potensi_mw": 1079,
+     "rasio_persen": 0,
+     "terukur": {
+      "id": "belum ada ukuran terbuka",
+      "en": "no open measurement"
+     },
+     "lapan": {
+      "id": "-",
+      "en": "-"
+     }
+    },
+    {
+     "provinsi": "Jawa Timur",
+     "kode": "35",
+     "u": "/wilayah?prov=35",
+     "proyek": 0,
+     "mw": 0,
+     "operasi_mw": 0,
+     "terpasang_mw": 0,
+     "potensi_mw": 7907,
+     "rasio_persen": 0,
+     "terukur": {
+      "id": "belum ada ukuran terbuka",
+      "en": "no open measurement"
+     },
+     "lapan": {
+      "id": "-",
+      "en": "-"
+     }
+    },
+    {
+     "provinsi": "Banten",
+     "kode": "36",
+     "u": "/wilayah?prov=36",
+     "proyek": 2,
+     "mw": 280,
+     "operasi_mw": 0,
+     "terpasang_mw": 0,
+     "potensi_mw": 1753,
+     "rasio_persen": 0,
+     "terukur": {
+      "id": "belum ada ukuran terbuka",
+      "en": "no open measurement"
+     },
+     "lapan": {
+      "id": "-",
+      "en": "-"
+     }
+    },
+    {
+     "provinsi": "Bali",
+     "kode": "51",
+     "u": "/wilayah?prov=51",
+     "proyek": 0,
+     "mw": 0,
+     "operasi_mw": 0,
+     "terpasang_mw": 1.08,
+     "potensi_mw": 1019,
+     "rasio_persen": 0.11,
+     "terukur": {
+      "id": "belum ada ukuran terbuka",
+      "en": "no open measurement"
+     },
+     "lapan": {
+      "id": "-",
+      "en": "-"
+     }
+    },
+    {
+     "provinsi": "Nusa Tenggara Barat",
+     "kode": "52",
+     "u": "/wilayah?prov=52",
+     "proyek": 0,
+     "mw": 0,
+     "operasi_mw": 0,
+     "terpasang_mw": 0,
+     "potensi_mw": 2605,
+     "rasio_persen": 0,
+     "terukur": {
+      "id": "belum ada ukuran terbuka",
+      "en": "no open measurement"
+     },
+     "lapan": {
+      "id": "di atas 5 m/s",
+      "en": "above 5 m/s"
+     }
+    },
+    {
+     "provinsi": "Nusa Tenggara Timur",
+     "kode": "53",
+     "u": "/wilayah?prov=53",
+     "proyek": 0,
+     "mw": 0,
+     "operasi_mw": 0,
+     "terpasang_mw": 0,
+     "potensi_mw": 10188,
+     "rasio_persen": 0,
+     "terukur": {
+      "id": "belum ada ukuran terbuka",
+      "en": "no open measurement"
+     },
+     "lapan": {
+      "id": "di atas 5 m/s",
+      "en": "above 5 m/s"
+     }
+    },
+    {
+     "provinsi": "Kalimantan Barat",
+     "kode": "61",
+     "u": "/wilayah?prov=61",
+     "proyek": 0,
+     "mw": 0,
+     "operasi_mw": 0,
+     "terpasang_mw": 0,
+     "potensi_mw": 554,
+     "rasio_persen": 0,
+     "terukur": {
+      "id": "belum ada ukuran terbuka",
+      "en": "no open measurement"
+     },
+     "lapan": {
+      "id": "-",
+      "en": "-"
+     }
+    },
+    {
+     "provinsi": "Kalimantan Tengah",
+     "kode": "62",
+     "u": "/wilayah?prov=62",
+     "proyek": 0,
+     "mw": 0,
+     "operasi_mw": 0,
+     "terpasang_mw": 0,
+     "potensi_mw": 681,
+     "rasio_persen": 0,
+     "terukur": {
+      "id": "belum ada ukuran terbuka",
+      "en": "no open measurement"
+     },
+     "lapan": {
+      "id": "-",
+      "en": "-"
+     }
+    },
+    {
+     "provinsi": "Kalimantan Selatan",
+     "kode": "63",
+     "u": "/wilayah?prov=63",
+     "proyek": 1,
+     "mw": 70,
+     "operasi_mw": 0,
+     "terpasang_mw": 0,
+     "potensi_mw": 1006,
+     "rasio_persen": 0,
+     "terukur": {
+      "id": "belum ada ukuran terbuka",
+      "en": "no open measurement"
+     },
+     "lapan": {
+      "id": "-",
+      "en": "-"
+     }
+    },
+    {
+     "provinsi": "Kalimantan Timur",
+     "kode": "64",
+     "u": "/wilayah?prov=64",
+     "proyek": 0,
+     "mw": 0,
+     "operasi_mw": 0,
+     "terpasang_mw": 0,
+     "potensi_mw": 212,
+     "rasio_persen": 0,
+     "terukur": {
+      "id": "belum ada ukuran terbuka",
+      "en": "no open measurement"
+     },
+     "lapan": {
+      "id": "-",
+      "en": "-"
+     }
+    },
+    {
+     "provinsi": "Kalimantan Utara",
+     "kode": "65",
+     "u": "/wilayah?prov=65",
+     "proyek": 0,
+     "mw": 0,
+     "operasi_mw": 0,
+     "terpasang_mw": 0,
+     "potensi_mw": 73,
+     "rasio_persen": 0,
+     "terukur": {
+      "id": "belum ada ukuran terbuka",
+      "en": "no open measurement"
+     },
+     "lapan": {
+      "id": "-",
+      "en": "-"
+     }
+    },
+    {
+     "provinsi": "Sulawesi Utara",
+     "kode": "71",
+     "u": "/wilayah?prov=71",
+     "proyek": 0,
+     "mw": 0,
+     "operasi_mw": 0,
+     "terpasang_mw": 0.08,
+     "potensi_mw": 1214,
+     "rasio_persen": 0.01,
+     "terukur": {
+      "id": "Pulau Sangihe 6,4 m/s",
+      "en": "Sangihe Island 6.4 m/s"
+     },
+     "lapan": {
+      "id": "-",
+      "en": "-"
+     }
+    },
+    {
+     "provinsi": "Sulawesi Tengah",
+     "kode": "72",
+     "u": "/wilayah?prov=72",
+     "proyek": 0,
+     "mw": 0,
+     "operasi_mw": 0,
+     "terpasang_mw": 0,
+     "potensi_mw": 908,
+     "rasio_persen": 0,
+     "terukur": {
+      "id": "belum ada ukuran terbuka",
+      "en": "no open measurement"
+     },
+     "lapan": {
+      "id": "-",
+      "en": "-"
+     }
+    },
+    {
+     "provinsi": "Sulawesi Selatan",
+     "kode": "73",
+     "u": "/wilayah?prov=73",
+     "proyek": 3,
+     "mw": 219,
+     "operasi_mw": 147,
+     "terpasang_mw": 150.75,
+     "potensi_mw": 4193,
+     "rasio_persen": 3.6,
+     "terukur": {
+      "id": "Bantaeng 4,66 m/s",
+      "en": "Bantaeng 4.66 m/s"
+     },
+     "lapan": {
+      "id": "di atas 5 m/s",
+      "en": "above 5 m/s"
+     }
+    },
+    {
+     "provinsi": "Sulawesi Tenggara",
+     "kode": "74",
+     "u": "/wilayah?prov=74",
+     "proyek": 0,
+     "mw": 0,
+     "operasi_mw": 0,
+     "terpasang_mw": 0,
+     "potensi_mw": 1414,
+     "rasio_persen": 0,
+     "terukur": {
+      "id": "belum ada ukuran terbuka",
+      "en": "no open measurement"
+     },
+     "lapan": {
+      "id": "-",
+      "en": "-"
+     }
+    },
+    {
+     "provinsi": "Gorontalo",
+     "kode": "75",
+     "u": "/wilayah?prov=75",
+     "proyek": 0,
+     "mw": 0,
+     "operasi_mw": 0,
+     "terpasang_mw": 0,
+     "potensi_mw": 137,
+     "rasio_persen": 0,
+     "terukur": {
+      "id": "belum ada ukuran terbuka",
+      "en": "no open measurement"
+     },
+     "lapan": {
+      "id": "-",
+      "en": "-"
+     }
+    },
+    {
+     "provinsi": "Sulawesi Barat",
+     "kode": "76",
+     "u": "/wilayah?prov=76",
+     "proyek": 0,
+     "mw": 0,
+     "operasi_mw": 0,
+     "terpasang_mw": 0,
+     "potensi_mw": 514,
+     "rasio_persen": 0,
+     "terukur": {
+      "id": "belum ada ukuran terbuka",
+      "en": "no open measurement"
+     },
+     "lapan": {
+      "id": "-",
+      "en": "-"
+     }
+    },
+    {
+     "provinsi": "Maluku",
+     "kode": "81",
+     "u": "/wilayah?prov=81",
+     "proyek": 0,
+     "mw": 0,
+     "operasi_mw": 0,
+     "terpasang_mw": 0,
+     "potensi_mw": 3188,
+     "rasio_persen": 0,
+     "terukur": {
+      "id": "belum ada ukuran terbuka",
+      "en": "no open measurement"
+     },
+     "lapan": {
+      "id": "-",
+      "en": "-"
+     }
+    },
+    {
+     "provinsi": "Maluku Utara",
+     "kode": "82",
+     "u": "/wilayah?prov=82",
+     "proyek": 0,
+     "mw": 0,
+     "operasi_mw": 0,
+     "terpasang_mw": 0,
+     "potensi_mw": 504,
+     "rasio_persen": 0,
+     "terukur": {
+      "id": "belum ada ukuran terbuka",
+      "en": "no open measurement"
+     },
+     "lapan": {
+      "id": "-",
+      "en": "-"
+     }
+    },
+    {
+     "provinsi": "Papua",
+     "kode": "91",
+     "u": "/wilayah?prov=91",
+     "proyek": 0,
+     "mw": 0,
+     "operasi_mw": 0,
+     "terpasang_mw": 0,
+     "potensi_mw": 1411,
+     "rasio_persen": 0,
+     "terukur": {
+      "id": "Jayapura 3,05 m/s",
+      "en": "Jayapura 3.05 m/s"
+     },
+     "lapan": {
+      "id": "-",
+      "en": "-"
+     }
+    },
+    {
+     "provinsi": "Papua Barat",
+     "kode": "92",
+     "u": "/wilayah?prov=92",
+     "proyek": 0,
+     "mw": 0,
+     "operasi_mw": 0,
+     "terpasang_mw": 0,
+     "potensi_mw": 437,
+     "rasio_persen": 0,
+     "terukur": {
+      "id": "belum ada ukuran terbuka",
+      "en": "no open measurement"
+     },
+     "lapan": {
+      "id": "-",
+      "en": "-"
+     }
+    },
+    {
+     "provinsi": "Papua Selatan",
+     "kode": "93",
+     "u": "/wilayah?prov=93",
+     "proyek": 0,
+     "mw": 0,
+     "operasi_mw": 0,
+     "terpasang_mw": 0,
+     "potensi_mw": null,
+     "rasio_persen": null,
+     "terukur": "-",
+     "lapan": "-"
+    },
+    {
+     "provinsi": "Papua Tengah",
+     "kode": "94",
+     "u": "/wilayah?prov=94",
+     "proyek": 0,
+     "mw": 0,
+     "operasi_mw": 0,
+     "terpasang_mw": 0,
+     "potensi_mw": null,
+     "rasio_persen": null,
+     "terukur": "-",
+     "lapan": "-"
+    },
+    {
+     "provinsi": "Papua Pegunungan",
+     "kode": "95",
+     "u": "/wilayah?prov=95",
+     "proyek": 0,
+     "mw": 0,
+     "operasi_mw": 0,
+     "terpasang_mw": 0,
+     "potensi_mw": null,
+     "rasio_persen": null,
+     "terukur": "-",
+     "lapan": "-"
+    },
+    {
+     "provinsi": "Papua Barat Daya",
+     "kode": "96",
+     "u": "/wilayah?prov=96",
+     "proyek": 0,
+     "mw": 0,
+     "operasi_mw": 0,
+     "terpasang_mw": 0,
+     "potensi_mw": null,
+     "rasio_persen": null,
+     "terukur": "-",
+     "lapan": "-"
     }
    ],
-   "sumber": [
-    "ruen",
-    "heesi",
-    "etp1"
-   ],
    "catatan": {
-    "id": "Potensi RUEN bertahun data 2015 (34 provinsi); provinsi hasil pemekaran Papua belum punya angka sendiri sehingga tidak ditampilkan. Kecepatan angin rata-rata per provinsi tidak tersedia sebagai tabel terbuka: Global Wind Atlas hanya terbuka sebagai raster atau peta (tidak ada API ringkasan per wilayah yang terdokumentasi), jadi kolom ukuran hanya memuat empat lokasi yang pernah diukur Balai Besar Survei dan Pengujian KEBTKE selama setahun. Menurut ETP, kecepatan angin Indonesia umumnya 3 sampai 6 m/s, dan Global Wind Atlas menunjukkan dominasi 4 sampai 5 m/s pada ketinggian 100 m; LAPAN (via EBTKE 2017) menyebut NTT, NTB, Sulawesi Selatan, dan pantai selatan Jawa di atas 5 m/s. Kolom rasio dihitung METI (EST). Di Sulawesi Selatan, PLTB menyumbang sekitar 5,68 persen kapasitas terpasang dan 4,75 persen produksi PLN pada 2024 (EST, Statistik Ketenagalistrikan 2024): ini satu-satunya sistem dengan angin berarti, dan angka batas serap resmi per sistem tidak ditemukan sebagai dokumen terbuka.",
-    "en": "RUEN potential uses 2015 data (34 provinces); the new Papua provinces have no figure of their own and are omitted. Provincial mean wind speed is not available as an open table: Global Wind Atlas is open only as rasters or maps (no documented per-region summary API), so the measurement column holds only four locations measured for one year by the KEBTKE testing centre. According to ETP, Indonesian wind speeds are typically 3 to 6 m/s and Global Wind Atlas is dominated by 4 to 5 m/s at 100 m; LAPAN (via EBTKE 2017) cites East Nusa Tenggara, West Nusa Tenggara, South Sulawesi and the south coast of Java above 5 m/s. The ratio column is computed by METI (EST). In South Sulawesi wind provided about 5.68 percent of installed capacity and 4.75 percent of PLN production in 2024 (EST, Electricity Statistics 2024): it is the only system with significant wind, and no official per-system absorption limit was found as an open document."
+    "id": "Proyek dan MW dari basis proyek METI (status apa pun, bukan hanya beroperasi); terpasang dari Statistik Ketenagalistrikan 2024 (semua pengusaha); potensi dari RUEN 2015 atau HEESI 2025 (sumbernya tertera di basis peluang). Sel kosong berarti tidak ada angka terbuka.",
+    "en": "Projects and MW come from the METI project base (any status, not only operating); installed from the 2024 Electricity Statistics (all operators); potential from RUEN 2015 or HEESI 2025 (source recorded in the opportunity base). An empty cell means no open figure."
    }
   },
   "9": {
    "tipe": "tabel",
    "per": 12,
+   "judul": {
+    "id": "Pemain bayu di basis METI",
+    "en": "bayu players in the METI base"
+   },
    "sumber": [
-    "etp1",
-    "esdm_sidrap",
-    "esdm_tolo",
-    "bt_tl",
-    "gn_sidrap"
+    "d_org",
+    "d_proyek"
    ],
    "kolom": [
     {
      "k": "nama",
      "l": {
-      "id": "Pemain",
-      "en": "Player"
+      "id": "Organisasi",
+      "en": "Organisation"
+     },
+     "url": "u"
+    },
+    {
+     "k": "singkatan",
+     "l": {
+      "id": "Singkatan",
+      "en": "Acronym"
+     }
+    },
+    {
+     "k": "kategori",
+     "l": {
+      "id": "Kategori",
+      "en": "Category"
      }
     },
     {
      "k": "peran",
      "l": {
-      "id": "Peran",
-      "en": "Role"
+      "id": "Peran rantai",
+      "en": "Chain role"
      }
     },
     {
-     "k": "catatan",
+     "k": "relevansi",
      "l": {
-      "id": "Catatan bersumber",
-      "en": "Sourced note"
+      "id": "Kaitan dengan topik",
+      "en": "Link to topic"
      }
+    },
+    {
+     "k": "negara",
+     "l": {
+      "id": "Negara asal",
+      "en": "Home country"
+     }
+    },
+    {
+     "k": "proyek",
+     "l": {
+      "id": "Proyek tercatat",
+      "en": "Recorded projects"
+     },
+     "num": true,
+     "d": 0
     }
    ],
    "baris": [
     {
-     "nama": "Kementerian ESDM (Ditjen EBTKE, Ditjen Ketenagalistrikan)",
-     "peran": {
-      "id": "regulator dan penyusun RUEN/RUPTL",
-      "en": "regulator and RUEN/RUPTL approver"
-     },
-     "catatan": {
-      "id": "mengesahkan RUPTL 2025-2034; BBSP KEBTKE mengukur angin 2017",
-      "en": "approved RUPTL 2025-2034; BBSP KEBTKE measured wind in 2017"
-     }
+     "nama": "ACEN Corporation",
+     "id": "in_0552b8f6a9",
+     "u": "/o/in_0552b8f6a9",
+     "singkatan": "ACEN",
+     "kategori": "Perusahaan Internasional di Indonesia",
+     "peran": "pengembang",
+     "relevansi": "teknologi",
+     "negara": "PH",
+     "proyek": 3
     },
     {
-     "nama": "PT PLN (Persero)",
-     "peran": {
-      "id": "pembeli tunggal dan pengadaan",
-      "en": "single buyer and procurement"
-     },
-     "catatan": {
-      "id": "mengadakan lewat DPT dan penunjukan langsung/lelang; kini meminta mitra wajib dan baterai di sistem kecil",
-      "en": "procures via DPT and direct selection/tender; now requires a mandatory partner and batteries in small systems"
-     }
+     "nama": "ACWA Power",
+     "id": "p_0e6d34a26d",
+     "u": "/o/p_0e6d34a26d",
+     "singkatan": "ACWA",
+     "kategori": "Perusahaan Internasional di Indonesia",
+     "peran": "pengembang, IPP",
+     "relevansi": "teknologi",
+     "negara": "SA",
+     "proyek": 3
     },
     {
-     "nama": "PLN Nusantara Renewables / PLN Nusantara Power",
-     "peran": {
-      "id": "mitra wajib PLN",
-      "en": "PLN mandatory partner"
-     },
-     "catatan": {
-      "id": "memegang 30 persen di PT Tata Alam Baru (Tanah Laut) menurut Bloomberg Technoz",
-      "en": "holds 30 percent of PT Tata Alam Baru (Tanah Laut) per Bloomberg Technoz"
-     }
+     "nama": "Electricity Generating PCL (EGCO)",
+     "id": "in_9d25098c0a",
+     "u": "/o/in_9d25098c0a",
+     "singkatan": "EGCO",
+     "kategori": "Perusahaan Internasional di Indonesia",
+     "peran": "pengembang",
+     "relevansi": "teknologi",
+     "negara": "TH",
+     "proyek": 1
     },
     {
-     "nama": "UPC Renewables / PT UPC Sidrap Bayu Energi",
-     "peran": {
-      "id": "pengembang Sidrap dan Sukabumi",
-      "en": "developer of Sidrap and Sukabumi"
-     },
-     "catatan": {
-      "id": "Sidrap 75 MW; Sukabumi dalam negosiasi PPA",
-      "en": "Sidrap 75 MW; Sukabumi in PPA negotiation"
-     }
+     "nama": "Pace Energy",
+     "id": "in_c2d500ab0e",
+     "u": "/o/in_c2d500ab0e",
+     "singkatan": "Pace",
+     "kategori": "Perusahaan Internasional di Indonesia",
+     "peran": "pengembang",
+     "relevansi": "teknologi",
+     "negara": "IN",
+     "proyek": 1
     },
     {
-     "nama": "Vena Energy / PT Energi Bayu Jeneponto",
-     "peran": {
-      "id": "pengembang Tolo",
-      "en": "Tolo developer"
-     },
-     "catatan": {
-      "id": "Tolo I 72 MW, COD 14 Mei 2019; tahap II direncanakan dengan penyimpanan",
-      "en": "Tolo I 72 MW, COD 14 May 2019; phase II planned with storage"
-     }
+     "nama": "Envision Energy",
+     "id": "in_d99e015b2a",
+     "u": "/o/in_d99e015b2a",
+     "singkatan": "Envision",
+     "kategori": "Perusahaan Internasional di Indonesia",
+     "peran": "pemasok",
+     "relevansi": "teknologi",
+     "negara": "CN",
+     "proyek": 1
     },
     {
-     "nama": "Total Eren dan Adaro Power (konsorsium awal)",
-     "peran": {
-      "id": "pemenang lelang Tanah Laut",
-      "en": "Tanah Laut tender winner"
-     },
-     "catatan": {
-      "id": "LOI 15 Nov 2022; struktur pemilik berubah ke Tata Alam Baru pada 2025",
-      "en": "LOI 15 Nov 2022; ownership structure changed to Tata Alam Baru in 2025"
-     }
+     "nama": "Masdar",
+     "id": "p_45c7d8a27f",
+     "u": "/o/p_45c7d8a27f",
+     "singkatan": "-",
+     "kategori": "Perusahaan Internasional di Indonesia",
+     "peran": "pengembang, IPP",
+     "relevansi": "teknologi",
+     "negara": "AE",
+     "proyek": 1
     },
     {
-     "nama": "Gamesa (Siemens Gamesa)",
-     "peran": {
-      "id": "pemasok turbin Sidrap",
-      "en": "Sidrap turbine supplier"
-     },
-     "catatan": {
-      "id": "30 unit 2,5 MW",
-      "en": "30 units of 2.5 MW"
-     }
+     "nama": "Sembcorp Industries",
+     "id": "p_9a9db35b05",
+     "u": "/o/p_9a9db35b05",
+     "singkatan": "Sembcorp",
+     "kategori": "Perusahaan Internasional di Indonesia",
+     "peran": "pengembang, IPP",
+     "relevansi": "teknologi",
+     "negara": "SG",
+     "proyek": 1
     },
     {
-     "nama": "PT Grand Sains dan PT Dwida Jaya Tama",
-     "peran": {
-      "id": "manufaktur dalam negeri (anggota/pemain di direktori METI)",
-      "en": "domestic manufacturers (members/players in the METI directory)"
-     },
-     "catatan": {
-      "id": "profil terinci ada di direktori; belum ada sumber produksi bilah/turbin utuh",
-      "en": "detailed profiles are in the directory; no source yet for whole blade/turbine production"
-     }
+     "nama": "Vena Energy",
+     "id": "p_ef20787d46",
+     "u": "/o/p_ef20787d46",
+     "singkatan": "Vena",
+     "kategori": "Perusahaan Internasional di Indonesia",
+     "peran": "pengembang, IPP",
+     "relevansi": "teknologi",
+     "negara": "SG",
+     "proyek": 1
     },
     {
-     "nama": "Energy Transition Partnership",
-     "peran": {
-      "id": "pendana kajian dan peta jalan",
-      "en": "funder of studies and roadmap"
-     },
-     "catatan": {
-      "id": "menerbitkan peta jalan bayu darat (13 Des 2023) dan rencana investasi (23 Sep 2024)",
-      "en": "published the onshore wind roadmap (13 Dec 2023) and investment plan (23 Sep 2024)"
-     }
+     "nama": "PT Juvisk Tri Swarna",
+     "id": "pm_0dee6x6ca80",
+     "u": "/o/pm_0dee6x6ca80",
+     "singkatan": "-",
+     "kategori": "Swasta",
+     "peran": "pengembang",
+     "relevansi": "teknologi",
+     "negara": "ID",
+     "proyek": 1
+    },
+    {
+     "nama": "UPC Renewables",
+     "id": "in_0b9f1d6242",
+     "u": "/o/in_0b9f1d6242",
+     "singkatan": "UPC",
+     "kategori": "Perusahaan Internasional di Indonesia",
+     "peran": "pengembang",
+     "relevansi": "teknologi",
+     "negara": "HK",
+     "proyek": 0
+    },
+    {
+     "nama": "Quantum Power Asia",
+     "id": "in_1cae38753a",
+     "u": "/o/in_1cae38753a",
+     "singkatan": "Quantum",
+     "kategori": "Perusahaan Internasional di Indonesia",
+     "peran": "pengembang",
+     "relevansi": "teknologi",
+     "negara": "SG",
+     "proyek": 0
+    },
+    {
+     "nama": "Equinor",
+     "id": "in_4c35ebc90f",
+     "u": "/o/in_4c35ebc90f",
+     "singkatan": "-",
+     "kategori": "Perusahaan Internasional di Indonesia",
+     "peran": "pengembang",
+     "relevansi": "teknologi",
+     "negara": "NO",
+     "proyek": 0
+    },
+    {
+     "nama": "Doosan Enerbility",
+     "id": "in_95ce4b67bd",
+     "u": "/o/in_95ce4b67bd",
+     "singkatan": "Doosan",
+     "kategori": "Perusahaan Internasional di Indonesia",
+     "peran": "pemasok",
+     "relevansi": "teknologi",
+     "negara": "KR",
+     "proyek": 0
+    },
+    {
+     "nama": "GE Vernova",
+     "id": "in_b060da46bb",
+     "u": "/o/in_b060da46bb",
+     "singkatan": "-",
+     "kategori": "Perusahaan Internasional di Indonesia",
+     "peran": "pemasok",
+     "relevansi": "teknologi",
+     "negara": "US",
+     "proyek": 0
+    },
+    {
+     "nama": "Akuo",
+     "id": "in_f1af67d742",
+     "u": "/o/in_f1af67d742",
+     "singkatan": "-",
+     "kategori": "Perusahaan Internasional di Indonesia",
+     "peran": "pengembang",
+     "relevansi": "teknologi",
+     "negara": "FR",
+     "proyek": 0
+    },
+    {
+     "nama": "Kedutaan Besar Denmark di Jakarta",
+     "id": "l_4554ebcdbc",
+     "u": "/o/l_4554ebcdbc",
+     "singkatan": "Denmark Embassy",
+     "kategori": "Lembaga Donor",
+     "peran": "-",
+     "relevansi": "teknologi",
+     "negara": "ID",
+     "proyek": 0
+    },
+    {
+     "nama": "Direktorat Aneka Energi Baru dan Energi Terbarukan",
+     "id": "l_69296f786c",
+     "u": "/o/l_69296f786c",
+     "singkatan": "Dit. Bioenergi/Aneka EBT",
+     "kategori": "Kementerian dan Lembaga Negara",
+     "peran": "-",
+     "relevansi": "teknologi",
+     "negara": "ID",
+     "proyek": 0
+    },
+    {
+     "nama": "Badan Meteorologi, Klimatologi, dan Geofisika",
+     "id": "l_e0cd1f9089",
+     "u": "/o/l_e0cd1f9089",
+     "singkatan": "BMKG",
+     "kategori": "Kementerian dan Lembaga Negara",
+     "peran": "-",
+     "relevansi": "teknologi",
+     "negara": "ID",
+     "proyek": 0
+    },
+    {
+     "nama": "PT Pertamina New & Renewable Energy",
+     "id": "p_10e0dde689",
+     "u": "/o/p_10e0dde689",
+     "singkatan": "-",
+     "kategori": "BUMN",
+     "peran": "pengembang",
+     "relevansi": "teknologi",
+     "negara": "ID",
+     "proyek": 0
+    },
+    {
+     "nama": "Wpd",
+     "id": "p_8841495321",
+     "u": "/o/p_8841495321",
+     "singkatan": "-",
+     "kategori": "Swasta",
+     "peran": "pengembang",
+     "relevansi": "teknologi",
+     "negara": "DE",
+     "proyek": 0
+    },
+    {
+     "nama": "TotalEnergies",
+     "id": "p_a6be6e993f",
+     "u": "/o/p_a6be6e993f",
+     "singkatan": "Total",
+     "kategori": "Perusahaan Internasional di Indonesia",
+     "peran": "pengembang",
+     "relevansi": "teknologi",
+     "negara": "FR",
+     "proyek": 0
+    },
+    {
+     "nama": "PT Akuo Energy Indonesia",
+     "id": "p_b331ed2843",
+     "u": "/o/p_b331ed2843",
+     "singkatan": "-",
+     "kategori": "Perusahaan Internasional di Indonesia",
+     "peran": "pengembang, IPP",
+     "relevansi": "teknologi",
+     "negara": "ID",
+     "proyek": 0
+    },
+    {
+     "nama": "PT Grand Sains",
+     "id": "tk_c38b402f",
+     "u": "/o/tk_c38b402f",
+     "singkatan": "-",
+     "kategori": "Swasta",
+     "peran": "manufaktur",
+     "relevansi": "teknologi",
+     "negara": "ID",
+     "proyek": 0
+    },
+    {
+     "nama": "PT Dwida Jaya Tama",
+     "id": "tk_da2582fe",
+     "u": "/o/tk_da2582fe",
+     "singkatan": "-",
+     "kategori": "Swasta",
+     "peran": "manufaktur",
+     "relevansi": "teknologi",
+     "negara": "ID",
+     "proyek": 0
+    },
+    {
+     "nama": "PLN",
+     "id": "su_ed074ff5",
+     "u": "/o/su_ed074ff5",
+     "singkatan": "-",
+     "kategori": "BUMN",
+     "peran": "manufaktur",
+     "relevansi": "pemilik proyek",
+     "negara": "ID",
+     "proyek": 93
+    },
+    {
+     "nama": "PT Barito Renewables Energy Tbk",
+     "id": "p_bdd0f2d140",
+     "u": "/o/p_bdd0f2d140",
+     "singkatan": "-",
+     "kategori": "Swasta",
+     "peran": "pengembang, IPP",
+     "relevansi": "pemilik proyek",
+     "negara": "ID",
+     "proyek": 3
+    },
+    {
+     "nama": "World Bank Indonesia",
+     "id": "l_18a9ec31f4",
+     "u": "/o/l_18a9ec31f4",
+     "singkatan": "World Bank",
+     "kategori": "Lembaga Donor",
+     "peran": "-",
+     "relevansi": "pemangku kebijakan",
+     "negara": "ID",
+     "proyek": 33
+    },
+    {
+     "nama": "Badan Pengelola Investasi Daya Anagata Nusantara",
+     "id": "l_43f00f6a72",
+     "u": "/o/l_43f00f6a72",
+     "singkatan": "Danantara",
+     "kategori": "Kementerian dan Lembaga Negara",
+     "peran": "pembiaya",
+     "relevansi": "pemangku kebijakan",
+     "negara": "ID",
+     "proyek": 3
+    },
+    {
+     "nama": "Kementerian Keuangan",
+     "id": "l_7b43a2574c",
+     "u": "/o/l_7b43a2574c",
+     "singkatan": "Kemenkeu",
+     "kategori": "Kementerian dan Lembaga Negara",
+     "peran": "-",
+     "relevansi": "pemangku kebijakan",
+     "negara": "ID",
+     "proyek": 3
+    },
+    {
+     "nama": "Kementerian Energi dan Sumber Daya Mineral",
+     "id": "l_7278e0528a",
+     "u": "/o/l_7278e0528a",
+     "singkatan": "ESDM",
+     "kategori": "Kementerian dan Lembaga Negara",
+     "peran": "-",
+     "relevansi": "pemangku kebijakan",
+     "negara": "ID",
+     "proyek": 2
+    },
+    {
+     "nama": "Kementerian Investasi dan Hilirisasi/BKPM",
+     "id": "l_05301f48a5",
+     "u": "/o/l_05301f48a5",
+     "singkatan": "BKPM",
+     "kategori": "Kementerian dan Lembaga Negara",
+     "peran": "-",
+     "relevansi": "pemangku kebijakan",
+     "negara": "ID",
+     "proyek": 0
+    },
+    {
+     "nama": "Badan Pengelola Dana Perkebunan",
+     "id": "l_060c77568c",
+     "u": "/o/l_060c77568c",
+     "singkatan": "BPDP",
+     "kategori": "Kementerian dan Lembaga Negara",
+     "peran": "-",
+     "relevansi": "pemangku kebijakan",
+     "negara": "ID",
+     "proyek": 0
+    },
+    {
+     "nama": "Asosiasi Produsen Listrik Swasta Indonesia",
+     "id": "l_06d49428ac",
+     "u": "/o/l_06d49428ac",
+     "singkatan": "APLSI",
+     "kategori": "Asosiasi",
+     "peran": "-",
+     "relevansi": "pemangku kebijakan",
+     "negara": "ID",
+     "proyek": 0
+    },
+    {
+     "nama": "Asosiasi Pengusaha Batubara Indonesia",
+     "id": "l_06ec0b587e",
+     "u": "/o/l_06ec0b587e",
+     "singkatan": "APBI",
+     "kategori": "Asosiasi",
+     "peran": "-",
+     "relevansi": "pemangku kebijakan",
+     "negara": "ID",
+     "proyek": 0
+    },
+    {
+     "nama": "Institute for Economic and Social Research FEB UI (LPEM)",
+     "id": "l_0cbcc8e8b6",
+     "u": "/o/l_0cbcc8e8b6",
+     "singkatan": "LPEM UI",
+     "kategori": "Think Tank dan Lembaga Riset",
+     "peran": "-",
+     "relevansi": "pemangku kebijakan",
+     "negara": "ID",
+     "proyek": 0
+    },
+    {
+     "nama": "Organisasi Riset Energi dan Manufaktur BRIN",
+     "id": "l_0d81cf4cb1",
+     "u": "/o/l_0d81cf4cb1",
+     "singkatan": "-",
+     "kategori": "Kementerian dan Lembaga Negara",
+     "peran": "-",
+     "relevansi": "pemangku kebijakan",
+     "negara": "ID",
+     "proyek": 0
+    },
+    {
+     "nama": "Direktorat Perencanaan dan Pembangunan Infrastruktur EBTKE",
+     "id": "l_11621e2b6c",
+     "u": "/o/l_11621e2b6c",
+     "singkatan": "Dit. PPI EBTKE",
+     "kategori": "Kementerian dan Lembaga Negara",
+     "peran": "-",
+     "relevansi": "pemangku kebijakan",
+     "negara": "ID",
+     "proyek": 0
+    },
+    {
+     "nama": "Otoritas Jasa Keuangan",
+     "id": "l_15e21f04fa",
+     "u": "/o/l_15e21f04fa",
+     "singkatan": "OJK",
+     "kategori": "Kementerian dan Lembaga Negara",
+     "peran": "-",
+     "relevansi": "pemangku kebijakan",
+     "negara": "ID",
+     "proyek": 0
+    },
+    {
+     "nama": "Climate Policy Initiative Indonesia",
+     "id": "l_17c427f563",
+     "u": "/o/l_17c427f563",
+     "singkatan": "CPI",
+     "kategori": "Think Tank dan Lembaga Riset",
+     "peran": "-",
+     "relevansi": "pemangku kebijakan",
+     "negara": "ID",
+     "proyek": 0
+    },
+    {
+     "nama": "International Renewable Energy Agency",
+     "id": "l_268f74ec67",
+     "u": "/o/l_268f74ec67",
+     "singkatan": "IRENA",
+     "kategori": "Lembaga Donor",
+     "peran": "lembaga",
+     "relevansi": "pemangku kebijakan",
+     "negara": "ID",
+     "proyek": 0
+    },
+    {
+     "nama": "Kamar Dagang dan Industri Indonesia (Komite Tetap Energi Baru Terbarukan)",
+     "id": "l_2f86ba4616",
+     "u": "/o/l_2f86ba4616",
+     "singkatan": "KADIN-EBT",
+     "kategori": "Asosiasi",
+     "peran": "-",
+     "relevansi": "pemangku kebijakan",
+     "negara": "ID",
+     "proyek": 0
+    },
+    {
+     "nama": "Direktorat Jenderal Energi Baru, Terbarukan dan Konservasi Energi",
+     "id": "l_38ba1d6f56",
+     "u": "/o/l_38ba1d6f56",
+     "singkatan": "Ditjen EBTKE",
+     "kategori": "Kementerian dan Lembaga Negara",
+     "peran": "-",
+     "relevansi": "pemangku kebijakan",
+     "negara": "ID",
+     "proyek": 0
+    },
+    {
+     "nama": "Badan Pusat Statistik",
+     "id": "l_3acae54910",
+     "u": "/o/l_3acae54910",
+     "singkatan": "BPS",
+     "kategori": "Kementerian dan Lembaga Negara",
+     "peran": "-",
+     "relevansi": "pemangku kebijakan",
+     "negara": "ID",
+     "proyek": 0
+    },
+    {
+     "nama": "Masyarakat Energi Terbarukan Indonesia",
+     "id": "l_41bf1f0b41",
+     "u": "/o/l_41bf1f0b41",
+     "singkatan": "METI",
+     "kategori": "Asosiasi",
+     "peran": "-",
+     "relevansi": "pemangku kebijakan",
+     "negara": "ID",
+     "proyek": 0
+    },
+    {
+     "nama": "Center of Economic and Law Studies",
+     "id": "l_488614e2c7",
+     "u": "/o/l_488614e2c7",
+     "singkatan": "CELIOS",
+     "kategori": "Think Tank dan Lembaga Riset",
+     "peran": "-",
+     "relevansi": "pemangku kebijakan",
+     "negara": "ID",
+     "proyek": 0
+    },
+    {
+     "nama": "International Energy Agency",
+     "id": "l_5bc6d9c59b",
+     "u": "/o/l_5bc6d9c59b",
+     "singkatan": "IEA",
+     "kategori": "Lembaga Donor",
+     "peran": "lembaga",
+     "relevansi": "pemangku kebijakan",
+     "negara": "ID",
+     "proyek": 0
+    },
+    {
+     "nama": "Dewan Perwakilan Rakyat RI Komisi XII",
+     "id": "l_774a8755e8",
+     "u": "/o/l_774a8755e8",
+     "singkatan": "Komisi XII DPR",
+     "kategori": "Kementerian dan Lembaga Negara",
+     "peran": "-",
+     "relevansi": "pemangku kebijakan",
+     "negara": "ID",
+     "proyek": 0
+    },
+    {
+     "nama": "Badan Riset dan Inovasi Nasional",
+     "id": "l_973f60de15",
+     "u": "/o/l_973f60de15",
+     "singkatan": "BRIN",
+     "kategori": "Kementerian dan Lembaga Negara",
+     "peran": "-",
+     "relevansi": "pemangku kebijakan",
+     "negara": "ID",
+     "proyek": 0
+    },
+    {
+     "nama": "Sekretariat JETP Indonesia",
+     "id": "l_c455b2f724",
+     "u": "/o/l_c455b2f724",
+     "singkatan": "JETP",
+     "kategori": "Lembaga Donor",
+     "peran": "-",
+     "relevansi": "pemangku kebijakan",
+     "negara": "ID",
+     "proyek": 0
+    },
+    {
+     "nama": "Badan Kebijakan Fiskal",
+     "id": "l_c6d98b8a10",
+     "u": "/o/l_c6d98b8a10",
+     "singkatan": "BKF",
+     "kategori": "Kementerian dan Lembaga Negara",
+     "peran": "-",
+     "relevansi": "pemangku kebijakan",
+     "negara": "ID",
+     "proyek": 0
+    },
+    {
+     "nama": "Purnomo Yusgiantoro Center",
+     "id": "l_cac38cb0a4",
+     "u": "/o/l_cac38cb0a4",
+     "singkatan": "PYC",
+     "kategori": "Think Tank dan Lembaga Riset",
+     "peran": "-",
+     "relevansi": "pemangku kebijakan",
+     "negara": "ID",
+     "proyek": 0
+    },
+    {
+     "nama": "Kementerian Badan Usaha Milik Negara",
+     "id": "l_edde12ff1f",
+     "u": "/o/l_edde12ff1f",
+     "singkatan": "Kementerian BUMN",
+     "kategori": "Kementerian dan Lembaga Negara",
+     "peran": "-",
+     "relevansi": "pemangku kebijakan",
+     "negara": "ID",
+     "proyek": 0
+    },
+    {
+     "nama": "Ember Indonesia",
+     "id": "l_f2d9cc6c76",
+     "u": "/o/l_f2d9cc6c76",
+     "singkatan": "Ember",
+     "kategori": "Think Tank dan Lembaga Riset",
+     "peran": "-",
+     "relevansi": "pemangku kebijakan",
+     "negara": "ID",
+     "proyek": 0
+    },
+    {
+     "nama": "Indonesia Smart Grid Association (PJCI)",
+     "id": "l_pjci_asosiasi",
+     "u": "/o/l_pjci_asosiasi",
+     "singkatan": "PJCI",
+     "kategori": "Asosiasi",
+     "peran": "-",
+     "relevansi": "pemangku kebijakan",
+     "negara": "ID",
+     "proyek": 0
+    },
+    {
+     "nama": "PT PLN Icon Plus",
+     "id": "p_e0f3886341",
+     "u": "/o/p_e0f3886341",
+     "singkatan": "-",
+     "kategori": "BUMN",
+     "peran": "operator",
+     "relevansi": "pemangku kebijakan",
+     "negara": "ID",
+     "proyek": 0
     }
    ],
    "catatan": {
-    "id": "Daftar lengkap pemain otomatis di lapisan Direktori (24 organisasi bertag bayu). Baris di atas hanya yang punya sumber peran yang dibaca.",
-    "en": "The full list of players is automatic in the Directory layer (24 organisations tagged wind). Rows above include only those with a sourced role."
+    "id": "Urutan: organisasi berkepakaran teknologi ini, lalu pemilik atau pengembang proyek di basis proyek, lalu pemangku kebijakan dan pendana lintas teknologi. Logo dan profil dibuka lewat id (jalur /o/<id>).",
+    "en": "Order: organisations with expertise in this technology, then owners or developers of projects in the project base, then cross-technology policy bodies and financiers. Logo and profile open through id (path /o/<id>)."
    }
   },
   "10": {
    "tipe": "tabel",
-   "per": 15,
+   "per": 10,
+   "judul": {
+    "id": "Proyek bayu terbesar di basis METI",
+    "en": "Largest bayu projects in the METI base"
+   },
+   "sumber": [
+    "d_proyek"
+   ],
    "kolom": [
     {
      "k": "nama",
@@ -1779,13 +2760,20 @@
       "id": "Proyek",
       "en": "Project"
      },
-     "url": "sumber_url"
+     "url": "u"
     },
     {
-     "k": "provinsi",
+     "k": "prov",
      "l": {
       "id": "Provinsi",
       "en": "Province"
+     }
+    },
+    {
+     "k": "kode",
+     "l": {
+      "id": "Kode BPS",
+      "en": "BPS code"
      }
     },
     {
@@ -1807,9 +2795,19 @@
     {
      "k": "cod",
      "l": {
-      "id": "COD (aktual atau target)",
-      "en": "COD (actual or target)"
-     }
+      "id": "Target COD",
+      "en": "COD target"
+     },
+     "num": true,
+     "d": 0
+    },
+    {
+     "k": "pemilik",
+     "l": {
+      "id": "Pemilik atau pengembang",
+      "en": "Owner or developer"
+     },
+     "url": "uo"
     },
     {
      "k": "bukti",
@@ -1817,194 +2815,195 @@
       "id": "Tingkat bukti",
       "en": "Evidence level"
      }
-    },
-    {
-     "k": "catatan",
-     "l": {
-      "id": "Catatan METI",
-      "en": "METI note"
-     }
     }
    ],
    "baris": [
     {
      "nama": "Jakarta wind farm",
-     "provinsi": "Jawa Barat",
+     "id": "gem_wind_L100001062465",
+     "u": "/proyek#gem_wind_L100001062465",
+     "prov": "Jawa Barat",
+     "kode": "32",
      "mw": 597,
      "status": "konstruksi",
-     "cod": "-",
-     "bukti": "kajian",
-     "catatan": {
-      "id": "Status konstruksi menurut GEM tidak cocok dengan RUPTL 2025-2034 (tidak ada PLTB 597 MW di tabel RUPTL); verifikasi sebelum dikutip",
-      "en": "GEM construction status does not match RUPTL 2025-2034 (no 597 MW wind farm in the RUPTL table); verify before quoting"
-     },
-     "sumber_url": "https://www.gem.wiki/Jakarta_wind_farm"
+     "cod": null,
+     "pemilik": "-",
+     "id_organisasi": null,
+     "uo": null,
+     "bukti": "kajian"
     },
     {
      "nama": "Sukabumi West Java wind farm",
-     "provinsi": "Jawa Barat",
+     "id": "gem_wind_L100001062466",
+     "u": "/proyek#gem_wind_L100001062466",
+     "prov": "Jawa Barat",
+     "kode": "32",
      "mw": 258,
      "status": "rencana",
-     "cod": "-",
-     "bukti": "kajian",
-     "catatan": {
-      "id": "Tidak ada di tabel PLTB RUPTL 2025-2034",
-      "en": "Not in the RUPTL 2025-2034 wind table"
-     },
-     "sumber_url": "https://www.gem.wiki/Sukabumi_West_Java_wind_farm"
+     "cod": null,
+     "pemilik": "-",
+     "id_organisasi": null,
+     "uo": null,
+     "bukti": "kajian"
     },
     {
      "nama": "PLTB Banten Banten",
-     "provinsi": "Banten",
+     "id": "pj_0003",
+     "u": "/proyek#pj_0003",
+     "prov": "Banten",
+     "kode": "36",
      "mw": 180,
-     "status": "-",
-     "cod": "2029 dan 2030",
-     "bukti": "resmi",
-     "catatan": {
-      "id": "-",
-      "en": "-"
-     },
-     "sumber_url": "https://gatrik.esdm.go.id/gatrik/gatrik-api//storage/migrasi/download_index/files/b967d-ruptl-pln-2025-2034-pub-.pdf"
+     "status": "tidak tercatat",
+     "cod": 2029,
+     "pemilik": "IPP",
+     "id_organisasi": null,
+     "uo": null,
+     "bukti": "resmi"
     },
     {
      "nama": "Sukabumi wind farm",
-     "provinsi": "Jawa Barat",
+     "id": "gem_wind_L100000901313",
+     "u": "/proyek#gem_wind_L100000901313",
+     "prov": "Jawa Barat",
+     "kode": "32",
      "mw": 150,
      "status": "rencana",
-     "cod": "-",
-     "bukti": "kajian",
-     "catatan": {
-      "id": "Tidak ada di tabel PLTB RUPTL 2025-2034",
-      "en": "Not in the RUPTL 2025-2034 wind table"
-     },
-     "sumber_url": "https://www.gem.wiki/Sukabumi_(UPC_Renewables)_wind_farm"
+     "cod": null,
+     "pemilik": "Barito Renewables",
+     "id_organisasi": null,
+     "uo": null,
+     "bukti": "kajian"
     },
     {
      "nama": "PLTB Bayu Sumatera",
-     "provinsi": "Aceh",
+     "id": "pj_0001",
+     "u": "/proyek#pj_0001",
+     "prov": "Aceh",
+     "kode": "11",
      "mw": 110,
      "status": "rencana",
-     "cod": "2026 dan 2028",
-     "bukti": "resmi",
-     "catatan": {
-      "id": "-",
-      "en": "-"
-     },
-     "sumber_url": "https://gatrik.esdm.go.id/gatrik/gatrik-api//storage/migrasi/download_index/files/b967d-ruptl-pln-2025-2034-pub-.pdf"
+     "cod": 2026,
+     "pemilik": "SH-PLN",
+     "id_organisasi": null,
+     "uo": null,
+     "bukti": "resmi"
     },
     {
      "nama": "PLTB Banten",
-     "provinsi": "Banten",
+     "id": "pj_0002",
+     "u": "/proyek#pj_0002",
+     "prov": "Banten",
+     "kode": "36",
      "mw": 100,
      "status": "rencana",
-     "cod": "2028",
-     "bukti": "resmi",
-     "catatan": {
-      "id": "-",
-      "en": "-"
-     },
-     "sumber_url": "https://gatrik.esdm.go.id/gatrik/gatrik-api//storage/migrasi/download_index/files/b967d-ruptl-pln-2025-2034-pub-.pdf"
+     "cod": 2028,
+     "pemilik": "PLN",
+     "id_organisasi": "su_ed074ff5",
+     "uo": "/o/su_ed074ff5",
+     "bukti": "resmi"
     },
     {
      "nama": "Lombok wind farm",
-     "provinsi": "-",
+     "id": "gem_wind_L100000916669",
+     "u": "/proyek#gem_wind_L100000916669",
+     "prov": "-",
+     "kode": null,
      "mw": 99,
      "status": "rencana",
-     "cod": "-",
-     "bukti": "kajian",
-     "catatan": {
-      "id": "Titik koordinat GEM tidak cocok dengan nama (jatuh di Papua Barat); lokasi sebenarnya perlu diverifikasi",
-      "en": "GEM coordinates do not match the name (they fall in West Papua); real location needs verification"
-     },
-     "sumber_url": "https://www.gem.wiki/Lombok_wind_farm"
+     "cod": null,
+     "pemilik": "Barito Renewables Energy",
+     "id_organisasi": "p_bdd0f2d140",
+     "uo": "/o/p_bdd0f2d140",
+     "bukti": "kajian"
     },
     {
      "nama": "Sidrap",
-     "provinsi": "Sulawesi Selatan",
+     "id": "pj_0006",
+     "u": "/proyek#pj_0006",
+     "prov": "Sulawesi Selatan",
+     "kode": "73",
      "mw": 75,
      "status": "beroperasi",
-     "cod": 2018,
-     "bukti": "media",
-     "catatan": {
-      "id": "PLTB Sidrap I; COD 5 Apr 2018 (ESDM)",
-      "en": "Sidrap I wind farm; COD 5 Apr 2018 (ESDM)"
-     },
-     "sumber_url": "https://en.wikipedia.org/wiki/List_of_power_stations_in_Indonesia"
+     "cod": null,
+     "pemilik": "Barito Renewables",
+     "id_organisasi": null,
+     "uo": null,
+     "bukti": "media"
     },
     {
      "nama": "Jeneponto",
-     "provinsi": "Sulawesi Selatan",
+     "id": "pj_0005",
+     "u": "/proyek#pj_0005",
+     "prov": "Sulawesi Selatan",
+     "kode": "73",
      "mw": 72,
-     "status": "-",
-     "cod": "-",
-     "bukti": "media",
-     "catatan": {
-      "id": "Diduga plant yang sama dengan Tolo (72 MW); dihitung sekali",
-      "en": "Likely the same plant as Tolo (72 MW); count once"
-     },
-     "sumber_url": "https://en.wikipedia.org/wiki/List_of_power_stations_in_Indonesia"
+     "status": "tidak tercatat",
+     "cod": null,
+     "pemilik": "-",
+     "id_organisasi": null,
+     "uo": null,
+     "bukti": "media"
     },
     {
      "nama": "Tolo wind farm",
-     "provinsi": "Sulawesi Selatan",
+     "id": "gem_wind_L100000901004",
+     "u": "/proyek#gem_wind_L100000901004",
+     "prov": "Sulawesi Selatan",
+     "kode": "73",
      "mw": 72,
      "status": "beroperasi",
-     "cod": 2019,
-     "bukti": "kajian",
-     "catatan": {
-      "id": "PLTB Tolo; beroperasi komersial 14 Mei 2019 (ESDM)",
-      "en": "Tolo wind farm; commercial operation 14 May 2019 (ESDM)"
-     },
-     "sumber_url": "https://www.gem.wiki/Tolo_wind_farm"
+     "cod": null,
+     "pemilik": "Vena Energy",
+     "id_organisasi": "p_ef20787d46",
+     "uo": "/o/p_ef20787d46",
+     "bukti": "kajian"
     },
     {
      "nama": "PLTB Tanah Laut",
-     "provinsi": "Kalimantan Selatan",
+     "id": "pj_0004",
+     "u": "/proyek#pj_0004",
+     "prov": "Kalimantan Selatan",
+     "kode": "63",
      "mw": 70,
      "status": "rencana",
-     "cod": "2026",
-     "bukti": "resmi",
-     "catatan": {
-      "id": "Pengadaan; lihat kasus Tanah Laut (bab 40)",
-      "en": "Procurement; see Tanah Laut case (chapter 40)"
-     },
-     "sumber_url": "https://gatrik.esdm.go.id/gatrik/gatrik-api//storage/migrasi/download_index/files/b967d-ruptl-pln-2025-2034-pub-.pdf"
+     "cod": 2026,
+     "pemilik": "PT Juvisk Tri Swarna",
+     "id_organisasi": "pm_0dee6x6ca80",
+     "uo": "/o/pm_0dee6x6ca80",
+     "bukti": "resmi"
     },
     {
      "nama": "Bantaeng wind farm",
-     "provinsi": "-",
+     "id": "gem_wind_L100000916656",
+     "u": "/proyek#gem_wind_L100000916656",
+     "prov": "-",
+     "kode": null,
      "mw": 70,
      "status": "rencana",
-     "cod": "-",
-     "bukti": "kajian",
-     "catatan": {
-      "id": "Titik koordinat GEM tidak cocok dengan nama (jatuh di Jawa Timur); verifikasi",
-      "en": "GEM coordinates do not match the name (they fall in East Java); verify"
-     },
-     "sumber_url": "https://www.gem.wiki/Bantaeng_wind_farm"
+     "cod": null,
+     "pemilik": "Envision Group",
+     "id_organisasi": null,
+     "uo": null,
+     "bukti": "kajian"
     },
     {
      "nama": "Kluet wind farm",
-     "provinsi": "Aceh",
+     "id": "gem_wind_L100000901337",
+     "u": "/proyek#gem_wind_L100000901337",
+     "prov": "Aceh",
+     "kode": "11",
      "mw": 10,
      "status": "beroperasi",
-     "cod": 2013,
-     "bukti": "kajian",
-     "catatan": {
-      "id": "ETP 2023 hanya mencatat dua PLTB utilitas (Sulawesi Selatan); status operasi 10 MW ini menurut GEM perlu diverifikasi",
-      "en": "ETP 2023 lists only two utility wind farms (South Sulawesi); this 10 MW operating status per GEM needs verification"
-     },
-     "sumber_url": "https://www.gem.wiki/Kluet_wind_farm"
+     "cod": null,
+     "pemilik": "-",
+     "id_organisasi": null,
+     "uo": null,
+     "bukti": "kajian"
     }
    ],
-   "sumber": [
-    "ruptl",
-    "gem",
-    "etp1"
-   ],
    "catatan": {
-    "id": "Direktori proyek bayu METI per 8 Nov 2026 (RUPTL PLN 2025-2034 dan Global Energy Monitor). Hanya dua PLTB utilitas yang beroperasi (Sidrap dan Tolo, Sulawesi Selatan, total 147 MW terpasang); sisanya rencana. Baris GEM berstatus \"kandidat\" dan beberapa memiliki koordinat atau status yang tidak cocok; kolom catatan menandainya. RUPTL 2025-2034 hanya memuat empat proyek PLTB (460 MW) dan satu tahap pengadaan.",
-    "en": "METI wind project directory as of 8 Nov 2026 (PLN RUPTL 2025-2034 and Global Energy Monitor). Only two utility wind farms operate (Sidrap and Tolo, South Sulawesi, 147 MW installed in total); the rest are plans. GEM rows are \"candidates\" and some have mismatched coordinates or status; the note column flags them. RUPTL 2025-2034 lists only four wind projects (460 MW) and one procurement stage."
+    "id": "Daftar diurutkan menurut kapasitas; \"pemilik\" dapat berupa status pengembang menurut RUPTL (PLN, IPP, SH-PLN), bukan nama perusahaan. Buka rincian dan sumber lewat id (jalur /proyek#<id>).",
+    "en": "Sorted by capacity; \"owner\" may be a developer status per RUPTL (PLN, IPP, SH-PLN) rather than a company name. Open details and sources through id (path /proyek#<id>)."
    }
   },
   "11": {
@@ -2101,26 +3100,42 @@
   },
   "12": {
    "tipe": "tabel",
-   "per": 10,
+   "per": 8,
    "sumber": [
     "etp1",
     "p112",
     "ruen",
-    "ruptl"
+    "ruptl",
+    "d_reg"
    ],
    "kolom": [
     {
-     "k": "instrumen",
+     "k": "dok",
      "l": {
-      "id": "Instrumen",
-      "en": "Instrument"
+      "id": "Peraturan",
+      "en": "Regulation"
+     },
+     "url": "u"
+    },
+    {
+     "k": "tgl",
+     "l": {
+      "id": "Ditetapkan",
+      "en": "Enacted"
+     }
+    },
+    {
+     "k": "judul",
+     "l": {
+      "id": "Tentang",
+      "en": "Subject"
      }
     },
     {
      "k": "isi",
      "l": {
-      "id": "Isi kunci untuk PLTB",
-      "en": "Key content for wind"
+      "id": "Pokok untuk topik ini",
+      "en": "Key point for this topic"
      }
     },
     {
@@ -2129,14 +3144,24 @@
       "id": "Status",
       "en": "Status"
      }
+    },
+    {
+     "k": "naskah",
+     "l": {
+      "id": "Naskah",
+      "en": "Text"
+     },
+     "url": "url"
     }
    ],
    "baris": [
     {
-     "instrumen": {
+     "dok": {
       "id": "Perpres 22/2017 (RUEN)",
       "en": "Perpres 22/2017 (RUEN)"
      },
+     "tgl": "2017-03-02",
+     "judul": "Rencana Umum Energi Nasional",
      "isi": {
       "id": "Target bayu 1,8 GW pada 2025 dan 28 GW pada 2050; potensi 60,6 GW darat (di atas 4 m/s pada 50 m)",
       "en": "Wind target 1.8 GW in 2025 and 28 GW in 2050; 60.6 GW onshore potential (above 4 m/s at 50 m)"
@@ -2144,13 +3169,19 @@
      "status": {
       "id": "berlaku",
       "en": "in force"
-     }
+     },
+     "naskah": "BPK",
+     "url": "https://peraturan.bpk.go.id/Details/68772",
+     "id": "perpres-22-2017",
+     "u": "/regulasi?id=perpres-22-2017"
     },
     {
-     "instrumen": {
+     "dok": {
       "id": "Perpres 112/2022",
       "en": "Perpres 112/2022"
      },
+     "tgl": "2022-09-13",
+     "judul": "Percepatan Pengembangan Energi Terbarukan untuk Penyediaan Tenaga Listrik",
      "isi": {
       "id": "Tarif bertingkat per kapasitas: sampai 5 MW 11,22; di atas 5 sampai 20 MW 10,26; di atas 20 MW 9,54 sen USD per kWh x F pada tahun 1 sampai 10, lalu 6,73 / 6,15 / 5,73; masa kontrak maks 30 tahun",
       "en": "Tiered tariffs by size: up to 5 MW 11.22; above 5 to 20 MW 10.26; above 20 MW 9.54 US cents per kWh x F for years 1 to 10, then 6.73 / 6.15 / 5.73; contract up to 30 years"
@@ -2158,13 +3189,19 @@
      "status": {
       "id": "berlaku (ditetapkan 13 Sep 2022)",
       "en": "in force (enacted 13 Sep 2022)"
-     }
+     },
+     "naskah": "BPK",
+     "url": "https://peraturan.bpk.go.id/Details/225308",
+     "id": "perpres-112-2022",
+     "u": "/regulasi?id=perpres-112-2022"
     },
     {
-     "instrumen": {
+     "dok": {
       "id": "Permen ESDM 50/2017",
       "en": "Permen ESDM 50/2017"
      },
+     "tgl": "-",
+     "judul": "-",
      "isi": {
       "id": "Tarif EBT mengacu BPP daerah; investor menilai BPP berubah tiap tahun dan tidak pasti",
       "en": "RE tariffs referenced regional BPP; investors saw annual BPP changes as uncertain"
@@ -2172,13 +3209,19 @@
      "status": {
       "id": "digantikan sebagian oleh Perpres 112/2022 (menurut ETP)",
       "en": "partly replaced by Perpres 112/2022 (per ETP)"
-     }
+     },
+     "naskah": null,
+     "url": null,
+     "id": null,
+     "u": null
     },
     {
-     "instrumen": {
+     "dok": {
       "id": "Permen ESDM 10/2017 dan 10/2018",
       "en": "Permen ESDM 10/2017 and 10/2018"
      },
+     "tgl": "2017-01-19",
+     "judul": "Permen ESDM No. 10 Tahun 2017 tentang Pokok-Pokok Dalam Perjanjian Jual Beli Tenaga Listrik",
      "isi": {
       "id": "Dasar PPA konvensional dan EBT yang berlaku bersamaan sehingga skema PPA tidak sesuai bayu",
       "en": "Basis for conventional and RE PPAs applied together, so the PPA scheme fits wind poorly"
@@ -2186,13 +3229,19 @@
      "status": {
       "id": "berlaku (menurut ETP 2023)",
       "en": "in force (per ETP 2023)"
-     }
+     },
+     "naskah": "BPK",
+     "url": "https://peraturan.bpk.go.id/Details/142572",
+     "id": "permen-esdm-10-2017",
+     "u": "/regulasi?id=permen-esdm-10-2017"
     },
     {
-     "instrumen": {
+     "dok": {
       "id": "Kepmen ESDM 188.K/TL.03/MEM.L/2025 (RUPTL 2025-2034)",
       "en": "Kepmen ESDM 188.K/TL.03/MEM.L/2025 (RUPTL 2025-2034)"
      },
+     "tgl": "-",
+     "judul": "-",
      "isi": {
       "id": "Memuat empat proyek PLTB (460 MW) pada tahun 2026 sampai 2030",
       "en": "Lists four wind projects (460 MW) for 2026 to 2030"
@@ -2200,13 +3249,19 @@
      "status": {
       "id": "berlaku; disahkan 26 Mei 2025",
       "en": "in force; approved 26 May 2025"
-     }
+     },
+     "naskah": null,
+     "url": null,
+     "id": null,
+     "u": null
     },
     {
-     "instrumen": {
+     "dok": {
       "id": "Permen LHK 4/2021",
       "en": "Environment Ministry Reg. 4/2021"
      },
+     "tgl": "-",
+     "judul": "-",
      "isi": {
       "id": "Dokumen lingkungan menurut kapasitas: SPPL (di bawah 1 MW), UKL-UPL (1 sampai 50 MW), AMDAL (50 MW ke atas)",
       "en": "Environmental documents by size: SPPL (under 1 MW), UKL-UPL (1 to 50 MW), AMDAL (50 MW and above)"
@@ -2214,13 +3269,19 @@
      "status": {
       "id": "berlaku (menurut ETP)",
       "en": "in force (per ETP)"
-     }
+     },
+     "naskah": null,
+     "url": null,
+     "id": null,
+     "u": null
     },
     {
-     "instrumen": {
+     "dok": {
       "id": "Permenperin 48/2010, 54/2012, 23/2023",
       "en": "Industry Reg. 48/2010, 54/2012, 23/2023"
      },
+     "tgl": "-",
+     "judul": "-",
      "isi": {
       "id": "TKDN pembangkit: persentase khusus hanya untuk surya, belum ada untuk bayu",
       "en": "Local content for power plants: specific percentage only for solar, none for wind yet"
@@ -2228,13 +3289,19 @@
      "status": {
       "id": "berlaku (menurut ETP)",
       "en": "in force (per ETP)"
-     }
+     },
+     "naskah": null,
+     "url": null,
+     "id": null,
+     "u": null
     },
     {
-     "instrumen": {
+     "dok": {
       "id": "Perpres 98/2021 (nilai ekonomi karbon)",
       "en": "Perpres 98/2021 (carbon economic value)"
      },
+     "tgl": "2021-10-29",
+     "judul": "Penyelenggaraan Nilai Ekonomi Karbon untuk Pencapaian Target Kontribusi yang Ditetapkan Secara Nasional dan Pengendalian Emisi Gas Rumah ...",
      "isi": {
       "id": "Kerangka kredit karbon; dalam draf PPA PLN, hasil instrumen berbasis pasar (kredit karbon, REC) menjadi hak PLN",
       "en": "Carbon credit framework; in PLN PPA drafts, proceeds of market-based instruments (carbon credits, RECs) go to PLN"
@@ -2242,13 +3309,19 @@
      "status": {
       "id": "berlaku",
       "en": "in force"
-     }
+     },
+     "naskah": "BPK",
+     "url": "https://peraturan.bpk.go.id/Details/187122",
+     "id": "perpres-98-2021",
+     "u": "/regulasi?id=perpres-98-2021"
     },
     {
-     "instrumen": {
+     "dok": {
       "id": "Permen ESDM 30/2006",
       "en": "Permen ESDM 30/2006"
      },
+     "tgl": "2006-05-08",
+     "judul": "Penetapan dan Pemberlakuan Standar Kompetensi Tenaga Teknik Ketenagalistrikan Bidang Pembangkitan Energi Baru dan Terbarukan, Pembangkit ...",
      "isi": {
       "id": "Standar kompetensi tenaga teknik pembangkitan EBT termasuk PLTB",
       "en": "Competence standards for RE generation technicians including wind"
@@ -2256,9 +3329,171 @@
      "status": {
       "id": "dicabut (basis regulasi METI)",
       "en": "revoked (METI regulation base)"
-     }
+     },
+     "naskah": "BPK",
+     "url": "https://peraturan.bpk.go.id/Details/143855",
+     "id": "permen-esdm-30-2006",
+     "u": "/regulasi?id=permen-esdm-30-2006"
+    },
+    {
+     "dok": "Perda 76/2017",
+     "id": "perda-b58669-76-2017",
+     "u": "/regulasi?id=perda-b58669-76-2017",
+     "naskah": "BPK",
+     "tgl": "2017-08-10",
+     "judul": "Penunjukkan Pengelolaan Pembangkit Listrik Tenaga Biogas Berbasis Limbah Cair Kelapa Sawit (PLTBg) Dan Solar Packed Dealer Nelayan (SPDN)...",
+     "isi": {
+      "id": "PERDA 76/2017 mengatur penunjukkan pengelolaan pembangkit listrik tenaga biogas berbasis limbah cair kelapa sawit (pltbg) dan solar packed dealer nelayan (spdn).",
+      "en": "PERDA 76/2017 mengatur penunjukkan pengelolaan pembangkit listrik tenaga biogas berbasis limbah cair kelapa sawit (pltbg) dan solar packed dealer nelayan (spdn). (ringkasan resmi basis regulasi, bahasa Indonesia)"
+     },
+     "status": "berlaku",
+     "url": "https://peraturan.bpk.go.id/Details/58669"
+    },
+    {
+     "dok": "Permen 7/2026",
+     "id": "permen-esdm-7-2026",
+     "u": "/regulasi?id=permen-esdm-7-2026",
+     "naskah": "BPK",
+     "tgl": "2026-06-08",
+     "judul": "Standar Kegiatan Usaha pada Penyelenggaraan Perizinan Berusaha Berbasis Risiko Sektor Energi dan Sumber Daya Mineral",
+     "isi": {
+      "id": "PERMEN 7/2026 mengatur standar kegiatan usaha pada penyelenggaraan perizinan berusaha berbasis risiko sektor energi dan sumber daya mineral.",
+      "en": "PERMEN 7/2026 mengatur standar kegiatan usaha pada penyelenggaraan perizinan berusaha berbasis risiko sektor energi dan sumber daya mineral. (ringkasan resmi basis regulasi, bahasa Indonesia)"
+     },
+     "status": "berlaku",
+     "url": "https://peraturan.bpk.go.id/Details/350238"
+    },
+    {
+     "dok": "Permen 28/2025",
+     "id": "permen-klhk-28-2025",
+     "u": "/regulasi?id=permen-klhk-28-2025",
+     "naskah": "BPK",
+     "tgl": "2025-12-23",
+     "judul": "Besaran Nilai A, Nilai B1, Nilai B2, dan Nilai B3 pada Penerimaan Negara Bukan Pajak Pungutan atas Kegiatan Perizinan Berusaha Pemanfaata...",
+     "isi": {
+      "id": "PERMEN 28/2025 mengatur besaran nilai a, nilai b1, nilai b2, dan nilai b3 pada penerimaan negara bukan pajak pungutan atas kegiatan.",
+      "en": "PERMEN 28/2025 mengatur besaran nilai a, nilai b1, nilai b2, dan nilai b3 pada penerimaan negara bukan pajak pungutan atas kegiatan. (ringkasan resmi basis regulasi, bahasa Indonesia)"
+     },
+     "status": "berlaku",
+     "url": "https://peraturan.bpk.go.id/Details/341119"
+    },
+    {
+     "dok": "Permen 39/2025",
+     "id": "permen-kemenperin-39-2025",
+     "u": "/regulasi?id=permen-kemenperin-39-2025",
+     "naskah": "BPK",
+     "tgl": "2025-11-12",
+     "judul": "Pencabutan Peraturan Menteri Perindustrian Nomor 15/M-IND/PER/3/2016 tentang Standar Spesifikasi dan Standar Harga Tower Transmisi dan Ko...",
+     "isi": {
+      "id": "PERMEN 39/2025 mengatur pencabutan peraturan menteri perindustrian nomor 15/m-ind/per/3/2016 tentang standar spesifikasi dan standar harga tower transmisi dan konduktor produk dalam.",
+      "en": "PERMEN 39/2025 mengatur pencabutan peraturan menteri perindustrian nomor 15/m-ind/per/3/2016 tentang standar spesifikasi dan standar harga tower transmisi dan konduktor produk dalam. (ringkasan resmi basis regulasi, bahasa Indonesia)"
+     },
+     "status": "berlaku",
+     "url": "https://peraturan.bpk.go.id/Details/343106"
+    },
+    {
+     "dok": "Permen 73/2025",
+     "id": "permen-kemenkeu-73-2025",
+     "u": "/regulasi?id=permen-kemenkeu-73-2025",
+     "naskah": "BPK",
+     "tgl": "2025-11-06",
+     "judul": "Tata Cara Penyediaan, Penghitungan, Pembayaran dan Pertanggungjawaban Dana Kompensasi Atas Kekuarangan Penerimaan Badan Usaha Akibat Kebi...",
+     "isi": {
+      "id": "PERMEN 73/2025 mengatur tata cara penyediaan, penghitungan, pembayaran dan pertanggungjawaban dana kompensasi atas kekuarangan penerimaan badan usaha akibat kebijakan penetapan harga.",
+      "en": "PERMEN 73/2025 mengatur tata cara penyediaan, penghitungan, pembayaran dan pertanggungjawaban dana kompensasi atas kekuarangan penerimaan badan usaha akibat kebijakan penetapan harga. (ringkasan resmi basis regulasi, bahasa Indonesia)"
+     },
+     "status": "berlaku",
+     "url": "https://peraturan.bpk.go.id/Details/333927"
+    },
+    {
+     "dok": "Perpres 109/2025",
+     "id": "perpres-109-2025",
+     "u": "/regulasi?id=perpres-109-2025",
+     "naskah": "BPK",
+     "tgl": "2025-10-10",
+     "judul": "Penanganan Sampah Perkotaan Melalui Pengolahan Sampah Menjadi Energi Terbarukan Berbasis Teknologi Ramah Lingkungan",
+     "isi": {
+      "id": "PERPRES 109/2025 mengatur penanganan sampah perkotaan melalui pengolahan sampah menjadi energi terbarukan berbasis teknologi ramah lingkungan.",
+      "en": "PERPRES 109/2025 mengatur penanganan sampah perkotaan melalui pengolahan sampah menjadi energi terbarukan berbasis teknologi ramah lingkungan. (ringkasan resmi basis regulasi, bahasa Indonesia)"
+     },
+     "status": "berlaku",
+     "url": "https://peraturan.bpk.go.id/Details/334718"
+    },
+    {
+     "dok": "Perpres 110/2025",
+     "id": "perpres-110-2025",
+     "u": "/regulasi?id=perpres-110-2025",
+     "naskah": "BPK",
+     "tgl": "2025-10-10",
+     "judul": "Penyelenggaraan Instrumen Nilai Ekonomi Karbon dan Pengendalian Emisi Gas Rumah Kaca Nasional",
+     "isi": {
+      "id": "Mengatur instrumen nilai ekonomi karbon dan sistem registri unit karbon; menggantikan Perpres 98/2021.",
+      "en": "Mengatur instrumen nilai ekonomi karbon dan sistem registri unit karbon; menggantikan Perpres 98/2021. (ringkasan resmi basis regulasi, bahasa Indonesia)"
+     },
+     "status": "berlaku",
+     "url": "https://peraturan.bpk.go.id/Details/334733"
+    },
+    {
+     "dok": "PP 40/2025",
+     "id": "pp-40-2025",
+     "u": "/regulasi?id=pp-40-2025",
+     "naskah": "BPK",
+     "tgl": "2025-09-15",
+     "judul": "Kebijakan Energi Nasional",
+     "isi": {
+      "id": "Kebijakan Energi Nasional terbaru: sasaran bauran energi dan arah transisi sampai 2060; menggantikan PP 79/2014.",
+      "en": "Kebijakan Energi Nasional terbaru: sasaran bauran energi dan arah transisi sampai 2060; menggantikan PP 79/2014. (ringkasan resmi basis regulasi, bahasa Indonesia)"
+     },
+     "status": "berlaku",
+     "url": "https://peraturan.bpk.go.id/Details/328789"
+    },
+    {
+     "dok": "PP 28/2025",
+     "id": "pp-28-2025",
+     "u": "/regulasi?id=pp-28-2025",
+     "naskah": "BPK",
+     "tgl": "2025-06-05",
+     "judul": "Penyelenggaraan Perizinan Berusaha Berbasis Risiko",
+     "isi": {
+      "id": "Mengatur penyelenggaraan perizinan berusaha berbasis risiko, dasar perizinan sektor energi dan ketenagalistrikan.",
+      "en": "Mengatur penyelenggaraan perizinan berusaha berbasis risiko, dasar perizinan sektor energi dan ketenagalistrikan. (ringkasan resmi basis regulasi, bahasa Indonesia)"
+     },
+     "status": "berlaku",
+     "url": "https://peraturan.bpk.go.id/Details/319773"
+    },
+    {
+     "dok": "Permen 10/2025",
+     "id": "permen-esdm-10-2025",
+     "u": "/regulasi?id=permen-esdm-10-2025",
+     "naskah": "BPK",
+     "tgl": "2025-04-10",
+     "judul": "Peta Jalan (Road Map) Transisi Energi Sektor Ketenagalistrikan",
+     "isi": {
+      "id": "PERMEN 10/2025 mengatur peta jalan (road map) transisi energi sektor ketenagalistrikan.",
+      "en": "PERMEN 10/2025 mengatur peta jalan (road map) transisi energi sektor ketenagalistrikan. (ringkasan resmi basis regulasi, bahasa Indonesia)"
+     },
+     "status": "berlaku",
+     "url": "https://peraturan.bpk.go.id/Details/317729"
+    },
+    {
+     "dok": "Permen 5/2025",
+     "id": "permen-esdm-5-2025",
+     "u": "/regulasi?id=permen-esdm-5-2025",
+     "naskah": "BPK",
+     "tgl": "2025-02-27",
+     "judul": "Pedoman Perjanjian Jual Beli Tenaga Listrik dari Pembangkit Tenaga Listrik yang Memanfaatkan Sumber Energi Terbarukan",
+     "isi": {
+      "id": "Mengatur ketentuan deemed commissioning dan deemed dispatch pada perjanjian jual beli listrik.",
+      "en": "Mengatur ketentuan deemed commissioning dan deemed dispatch pada perjanjian jual beli listrik. (ringkasan resmi basis regulasi, bahasa Indonesia)"
+     },
+     "status": "berlaku",
+     "url": "https://peraturan.bpk.go.id/Details/317619"
     }
-   ]
+   ],
+   "catatan": {
+    "id": "Baris ber-id terhubung ke basis regulasi METI (status dan naskah BPK). Pokok tulisan tangan hanya pada baris yang sudah diperiksa; baris lain memakai ringkasan resmi basis regulasi.",
+    "en": "Rows with id link to the METI regulation base (status and BPK text). Hand-written points appear only on reviewed rows; other rows use the official summary in the regulation base."
+   }
   },
   "13": {
    "tipe": "linimasa",
@@ -2270,9 +3505,19 @@
     "bt_tl",
     "p112",
     "mongabay_np",
-    "bisnis_tl"
+    "bisnis_tl",
+    "d_reg"
    ],
    "butir": [
+    {
+     "tanggal": "2006-05-08",
+     "judul": {
+      "id": "Permen 30/2006 ditetapkan: Penetapan dan Pemberlakuan Standar Kompetensi Tenaga Teknik Ketenagalistrikan Bidang Pembangkitan Energi Ba...",
+      "en": "Permen 30/2006 enacted: Penetapan dan Pemberlakuan Standar Kompetensi Tenaga Teknik Ketenagalistrikan Bidang Pembangkitan Energi Ba... (official title in Indonesian)"
+     },
+     "reg": "permen-esdm-30-2006",
+     "url": "https://peraturan.bpk.go.id/Details/143855"
+    },
     {
      "tanggal": "2007-11-01",
      "judul": {
@@ -2288,6 +3533,15 @@
       "en": "Sidrap wind farm construction starts"
      },
      "url": "https://www.esdm.go.id/id/berita-unit/direktorat-jenderal-ebtke/pltb-sidrap-proyek-energi-untuk-masyarakat-pemerintah-dan-investor"
+    },
+    {
+     "tanggal": "2017-08-10",
+     "judul": {
+      "id": "Perda 76/2017 ditetapkan: Penunjukkan Pengelolaan Pembangkit Listrik Tenaga Biogas Berbasis Limbah Cair Kelapa Sawit (PLTBg) Dan Sola...",
+      "en": "Perda 76/2017 enacted: Penunjukkan Pengelolaan Pembangkit Listrik Tenaga Biogas Berbasis Limbah Cair Kelapa Sawit (PLTBg) Dan Sola... (official title in Indonesian)"
+     },
+     "reg": "perda-b58669-76-2017",
+     "url": "https://peraturan.bpk.go.id/Details/58669"
     },
     {
      "tanggal": "2018-04-05",
@@ -2387,7 +3641,9 @@
    "tipe": "teks",
    "sumber": [
     "etp1",
-    "p112"
+    "p112",
+    "d_izin",
+    "d_ins"
    ],
    "paragraf": [
     {
@@ -2401,6 +3657,34 @@
     {
      "id": "Insentif: tarif bertingkat Perpres 112/2022 (9,54 sampai 11,22 sen USD per kWh x F pada tahun 1 sampai 10). Insentif fiskal terperinci khusus bayu tidak ditemukan dalam sumber yang dibaca; lihat lapisan Insentif METI.",
      "en": "Incentives: tiered tariffs under Perpres 112/2022 (9.54 to 11.22 US cents per kWh x F in years 1 to 10). Detailed wind-specific fiscal incentives were not found in the sources read; see the METI Incentives layer."
+    },
+    {
+     "id": "Badan usaha yang menjual listrik untuk kepentingan umum wajib memegang IUPTLU; izin ini berlaku paling lama 30 tahun dan dapat diperpanjang (Permen ESDM 11/2021 Pasal 11 dan 12).",
+     "en": "A business selling electricity for the public interest must hold an IUPTLU licence, valid for up to 30 years and renewable (Energy Ministry Reg. 11/2021, Articles 11 and 12)."
+    },
+    {
+     "id": "Pembangkit untuk kepentingan sendiri dengan total kapasitas lebih dari 500 kW dalam satu sistem instalasi wajib IUPTLS (paling lama 10 tahun, perpanjangan diajukan paling lambat 60 hari kerja sebelum berakhir); sampai 500 kW cukup menyampaikan laporan satu kali (Pasal 39 dan 40).",
+     "en": "A captive plant above 500 kW in one installation needs an IUPTLS licence (up to 10 years, renewal filed at least 60 working days before expiry); up to 500 kW only a one-time report is needed (Articles 39 and 40)."
+    },
+    {
+     "id": "Pembelian listrik PLN dari badan usaha memakai penunjukan langsung (paling lama 90 hari kalender) atau pemilihan langsung termasuk negosiasi harga (paling lama 180 hari kalender), dengan harga patokan tertinggi atau harga kesepakatan yang wajib disetujui Menteri (Perpres 112/2022 Pasal 5, 6, 15, 16).",
+     "en": "PLN buys power from businesses by direct appointment (up to 90 calendar days) or direct selection including price negotiation (up to 180 calendar days), at the ceiling price or an agreed price that the Minister must approve (Presidential Reg. 112/2022, Articles 5, 6, 15 and 16)."
+    },
+    {
+     "id": "Insentif yang dijanjikan Perpres 112/2022 Pasal 22 dan 23: insentif fiskal (PPh, bea masuk dan pajak impor, PBB), fasilitas pembiayaan atau penjaminan lewat BUMN, dan insentif nonfiskal; pemerintah daerah wajib mendukung sesuai kewenangannya.",
+     "en": "Presidential Reg. 112/2022 Articles 22 and 23 promise fiscal incentives (income tax, import duty and tax, property tax), financing or guarantee facilities through state enterprises, and non-fiscal incentives; local governments must support within their authority."
+    },
+    {
+     "id": "Bea masuk barang modal pembangkit dapat dibebaskan (PMK 66/PMK.010/2015) bila barang belum diproduksi dalam negeri, belum memenuhi spesifikasi, atau belum mencukupi; permohonan lewat BKPM dengan rencana impor yang disahkan Dirjen Ketenagalistrikan dan realisasi impor paling lama 24 bulan.",
+     "en": "Import duty on generation capital goods can be waived (MoF Reg. 66/PMK.010/2015) when goods are not made domestically, do not meet specifications, or are insufficient; applications go through BKPM with an import plan approved by the Director General of Electricity and imports must be realised within 24 months."
+    },
+    {
+     "id": "Tax holiday (PMK 130/PMK.010/2020) mengurangi PPh badan bagi usaha pionir menurut nilai investasi; apakah usaha pembangkit termasuk sektor pionir harus dicek di naskah, dan rincian persentasenya belum terbaca METI karena PDF pindai.",
+     "en": "Tax holiday (MoF Reg. 130/PMK.010/2020) reduces corporate income tax for pioneer businesses by investment value; whether power generation counts as a pioneer sector must be checked in the text, and the percentages are not yet read by METI because the PDF is a scan."
+    },
+    {
+     "id": "Kewajiban penggunaan produk dalam negeri untuk infrastruktur ketenagalistrikan diatur Permen ESDM 11/2024; ambang TKDN per komponen belum dibaca METI sehingga proyek perlu memeriksa naskahnya sebelum menyusun penawaran.",
+     "en": "Energy Ministry Reg. 11/2024 requires domestic products in electricity infrastructure; per-component TKDN thresholds are not yet read by METI, so projects must check the text before bidding."
     }
    ]
   },
@@ -2554,27 +3838,88 @@
    ]
   },
   "18": {
-   "tipe": "teks",
+   "tipe": "tabel",
+   "per": 8,
    "sumber": [
     "etp1",
     "etp2",
     "mongabay_np",
-    "esdm_pandan"
+    "esdm_pandan",
+    "d_inov"
    ],
-   "paragraf": [
+   "kolom": [
     {
-     "id": "Rantai pasok: hanya menara turbin yang diproduksi di Indonesia, untuk ekspor; rotor, bilah, hub, gearbox, dan generator masih impor. ETP mengingatkan bahwa TKDN yang terlalu dini dapat mengurangi pasokan dan bankability, dan menyarankan analisis biaya-manfaat sebelum membangun pabrik komponen. Direktori METI mencatat PT Grand Sains dan PT Dwida Jaya Tama sebagai manufaktur terkait bayu.",
-     "en": "Supply chain: only turbine towers are made in Indonesia, for export; rotors, blades, hubs, gearboxes and generators are still imported. ETP warns that premature local content can cut supply and bankability and advises a cost-benefit analysis before building component factories. The METI directory lists PT Grand Sains and PT Dwida Jaya Tama as wind-related manufacturers."
+     "k": "nama",
+     "l": {
+      "id": "Inovasi",
+      "en": "Innovation"
+     },
+     "url": "url"
     },
     {
-     "id": "Angin skala kecil: contoh Puncak Mundi (sembilan kincir 30 m, target sekitar 700 kW, 2007) berhenti kurang dari dua tahun karena suku cadang; hibrida Pandansimo, Bantul, disebut ESDM hanya dua pertiga turbinnya berputar, dengan baterai dan inverter jadi sumber masalah (tanggal artikel tidak terbaca). Di Bali, ETP mencatat tiga unit 0,3 MW (PLN) dan satu unit 0,6 MW (IPP) di sistem Tiga Nusa.",
-     "en": "Small-scale wind: Puncak Mundi (nine 30 m turbines, about 700 kW target, 2007) stopped within two years over spare parts; ESDM says only two thirds of the turbines at the Pandansimo hybrid, Bantul, turn, with batteries and inverters the problem (article date not readable). In Bali ETP records three 0.3 MW units (PLN) and one 0.6 MW unit (IPP) in the Tiga Nusa system."
+     "k": "jenis",
+     "l": {
+      "id": "Jenis",
+      "en": "Type"
+     }
     },
     {
-     "id": "Analisis METI (Hipotesis): Skala kecil hanya masuk akal bersama kontrak O&M, stok suku cadang, dan pengelola; tanpa itu hasilnya adalah monumen, bukan pembangkit.",
-     "en": "METI analysis (Hypothesis): Small scale only makes sense with an O&M contract, spare parts stock and an operator; without them the result is a monument, not a plant."
+     "k": "status",
+     "l": {
+      "id": "Status",
+      "en": "Status"
+     }
+    },
+    {
+     "k": "tahun",
+     "l": {
+      "id": "Tahun",
+      "en": "Year"
+     }
+    },
+    {
+     "k": "pembuat",
+     "l": {
+      "id": "Pembuat",
+      "en": "Maker"
+     }
+    },
+    {
+     "k": "trl",
+     "l": {
+      "id": "TRL",
+      "en": "TRL"
+     },
+     "num": true,
+     "d": 0
     }
-   ]
+   ],
+   "baris": [
+    {
+     "nama": "Turbin Baskara Prima Sarana",
+     "id": "in_tkdn_082",
+     "jenis": "alat",
+     "status": "dikomersialkan",
+     "tahun": "2026",
+     "pembuat": "PT Baskara Prima Sarana",
+     "trl": 9,
+     "url": "https://tkdn.kemenperin.go.id/sertifikat?q=turbin%20air&page=2"
+    },
+    {
+     "nama": "Turbin PLN (persero)",
+     "id": "in_tkdn_083",
+     "jenis": "alat",
+     "status": "dikomersialkan",
+     "tahun": "2024",
+     "pembuat": "PT PLN (persero)",
+     "trl": 9,
+     "url": "https://tkdn.kemenperin.go.id/sertifikat?q=turbin%20air"
+    }
+   ],
+   "catatan": {
+    "id": "Inovasi di basis METI yang bertag teknologi ini; id inovasi tersimpan di tiap baris, tautan membuka sumbernya. TRL kosong berarti belum dinilai.",
+    "en": "Innovations in the METI base tagged with this technology; the innovation id is kept on every row and the link opens its source. An empty TRL means not yet assessed."
+   }
   },
   "19": {
    "tipe": "grafik",
@@ -3113,23 +4458,224 @@
    ]
   },
   "24": {
-   "tipe": "teks",
+   "tipe": "tabel",
+   "per": 8,
    "sumber": [
-    "etp1",
-    "etp2",
-    "esdm_sidrap",
-    "esdm_tolo"
+    "d_pend"
    ],
-   "paragraf": [
+   "kolom": [
     {
-     "id": "Pembiayaan proyek PLTB bergantung pada PPA yang bisa dibiayai dan laporan produksi independen. Sidrap berinvestasi sekitar USD 150 juta (ESDM) tanpa lelang; Tolo melibatkan pendanaan pembangunan multilateral (ADB tercatat). Hambatan: sebagian isu PPA (hak beli PLN, pembagian force majeure, mitra wajib) menaikkan risiko; ETP merekomendasikan jaminan, asesmen insentif baterai, dan sinergi jalan/pelabuhan multi-pihak.",
-     "en": "Wind project finance depends on a bankable PPA and an independent yield report. Sidrap invested about USD 150 million (ESDM) without a tender; Tolo involved multilateral development funding (ADB listed). Constraints: several PPA terms (PLN buy-out right, split force majeure, mandatory partner) raise risk; ETP recommends guarantees, an assessment of battery incentives and multi-user road and port synergies."
+     "k": "nama",
+     "l": {
+      "id": "Skema atau proyek pendanaan",
+      "en": "Funding scheme or project"
+     },
+     "url": "url"
     },
     {
-     "id": "Analisis METI (Hipotesis): Pendana kecil sulit masuk selama pengukuran dan pengembangan dibiayai pengembang sebagai biaya hangus; fasilitas pengukuran bersama dapat menurunkan hambatan.",
-     "en": "METI analysis (Hypothesis): Small funders find it hard to enter while measurement and development are sunk costs for developers; shared measurement facilities could lower the barrier."
+     "k": "pemberi",
+     "l": {
+      "id": "Pemberi",
+      "en": "Provider"
+     }
+    },
+    {
+     "k": "jenis",
+     "l": {
+      "id": "Jenis",
+      "en": "Type"
+     }
+    },
+    {
+     "k": "status",
+     "l": {
+      "id": "Status",
+      "en": "Status"
+     }
+    },
+    {
+     "k": "nilai_usd",
+     "l": {
+      "id": "Nilai (USD)",
+      "en": "Value (USD)"
+     },
+     "num": true,
+     "d": 0
+    },
+    {
+     "k": "iso2",
+     "l": {
+      "id": "Negara pemberi",
+      "en": "Provider country"
+     }
     }
-   ]
+   ],
+   "baris": [
+    {
+     "nama": "Kerja sama keuangan KfW",
+     "id": "sk_kfw",
+     "pemberi": "KfW Development Bank",
+     "jenis": "pinjaman lunak",
+     "status": "berjalan",
+     "nilai_usd": null,
+     "iso2": "DE",
+     "url": "https://www.kfw-entwicklungsbank.de/"
+    },
+    {
+     "nama": "Accelerating Coal Transition (CIF ACT)",
+     "id": "sk_cif_act",
+     "pemberi": "Climate Investment Funds",
+     "jenis": "blended",
+     "status": "berjalan",
+     "nilai_usd": null,
+     "iso2": "ID",
+     "url": "https://www.cif.org/"
+    },
+    {
+     "nama": "Green Climate Fund",
+     "id": "sk_gcf",
+     "pemberi": "Green Climate Fund",
+     "jenis": "blended",
+     "status": "berjalan",
+     "nilai_usd": null,
+     "iso2": "ID",
+     "url": "https://www.greenclimate.fund/"
+    },
+    {
+     "nama": "Sidrap Wind Farm Project Phase 1",
+     "id": "pd_gs_1618",
+     "pemberi": "-",
+     "jenis": "kredit karbon",
+     "status": "tersertifikasi",
+     "nilai_usd": null,
+     "iso2": "ID",
+     "url": "https://assurance-platform.goldstandard.org/project-documents/GS4813"
+    },
+    {
+     "nama": "72 MW Wind power project in the South Sulawesi Province of Indonesia",
+     "id": "pd_gs_1789",
+     "pemberi": "-",
+     "jenis": "kredit karbon",
+     "status": "tersertifikasi",
+     "nilai_usd": null,
+     "iso2": "ID",
+     "url": "https://assurance-platform.goldstandard.org/project-documents/GS7164"
+    },
+    {
+     "nama": "Pendanaan Badan Pengelola Dana Lingkungan Hidup",
+     "id": "sk_bpdlh",
+     "pemberi": "Badan Pengelola Dana Lingkungan Hidup",
+     "jenis": "hibah",
+     "status": "berjalan",
+     "nilai_usd": null,
+     "iso2": "ID",
+     "url": "https://bpdlh.id/"
+    },
+    {
+     "nama": "Global Environment Facility",
+     "id": "sk_gef",
+     "pemberi": "Global Environment Facility",
+     "jenis": "hibah",
+     "status": "berjalan",
+     "nilai_usd": null,
+     "iso2": "ID",
+     "url": "https://www.thegef.org/"
+    },
+    {
+     "nama": "SDG Indonesia One",
+     "id": "sk_sdg_one",
+     "pemberi": "PT Sarana Multi Infrastruktur",
+     "jenis": "blended",
+     "status": "berjalan",
+     "nilai_usd": null,
+     "iso2": "ID",
+     "url": "https://www.ptsmi.co.id/"
+    },
+    {
+     "nama": "Obligasi dan sukuk hijau korporasi",
+     "id": "sk_efek_hijau",
+     "pemberi": "Otoritas Jasa Keuangan",
+     "jenis": "obligasi hijau",
+     "status": "berjalan",
+     "nilai_usd": null,
+     "iso2": "ID",
+     "url": "https://www.ojk.go.id/"
+    },
+    {
+     "nama": "Green Sukuk Negara",
+     "id": "sk_sukuk_hijau",
+     "pemberi": "Kementerian Keuangan (DJPPR)",
+     "jenis": "obligasi hijau",
+     "status": "berjalan",
+     "nilai_usd": null,
+     "iso2": "ID",
+     "url": "https://www.djppr.kemenkeu.go.id/"
+    },
+    {
+     "nama": "Perdagangan karbon di IDXCarbon",
+     "id": "sk_idxcarbon",
+     "pemberi": "Bursa Efek Indonesia",
+     "jenis": "kredit karbon",
+     "status": "berjalan",
+     "nilai_usd": null,
+     "iso2": "ID",
+     "url": "https://idxcarbon.co.id/"
+    },
+    {
+     "nama": "Standar karbon sukarela (Verra dan Gold Standard)",
+     "id": "sk_karbon_sukarela",
+     "pemberi": "Verra dan Gold Standard",
+     "jenis": "kredit karbon",
+     "status": "berjalan",
+     "nilai_usd": null,
+     "iso2": "ID",
+     "url": "https://registry.verra.org/"
+    },
+    {
+     "nama": "Pembebasan bea masuk mesin, barang, dan bahan investasi",
+     "id": "sk_ins_bea_masuk_mesin",
+     "pemberi": "Kementerian Keuangan",
+     "jenis": "insentif fiskal",
+     "status": "berjalan",
+     "nilai_usd": null,
+     "iso2": "ID",
+     "url": "https://peraturan.bpk.go.id/Details/167732/pmk-no-176pmk0112009"
+    },
+    {
+     "nama": "Pembebasan bea masuk barang modal pembangkitan listrik",
+     "id": "sk_ins_bea_masuk_pembangkit",
+     "pemberi": "Kementerian Keuangan",
+     "jenis": "insentif fiskal",
+     "status": "berjalan",
+     "nilai_usd": null,
+     "iso2": "ID",
+     "url": "https://peraturan.bpk.go.id/Details/146740/pmk-no-66pmk0102015"
+    },
+    {
+     "nama": "PPN dibebaskan atas impor barang kontraktor panas bumi",
+     "id": "sk_ins_ppn_panas_bumi",
+     "pemberi": "Kementerian Keuangan",
+     "jenis": "insentif fiskal",
+     "status": "berjalan",
+     "nilai_usd": null,
+     "iso2": "ID",
+     "url": "https://peraturan.bpk.go.id/Details/232943/pp-no-49-tahun-2022"
+    },
+    {
+     "nama": "Tax holiday (pengurangan PPh badan)",
+     "id": "sk_ins_tax_holiday",
+     "pemberi": "Kementerian Keuangan",
+     "jenis": "insentif fiskal",
+     "status": "berjalan",
+     "nilai_usd": null,
+     "iso2": "ID",
+     "url": "https://peraturan.bpk.go.id/Details/148016/pmk-no-130pmk0102020"
+    }
+   ],
+   "catatan": {
+    "id": "Skema dan proyek pendanaan di basis METI yang bertag teknologi ini atau terhubung ke proyeknya, dilengkapi skema lintas teknologi. Nilai kosong berarti tidak diumumkan. Id pendanaan tersimpan di tiap baris.",
+    "en": "Funding schemes and projects in the METI base tagged with this technology or linked to its projects, plus cross-technology schemes. An empty value means not disclosed. The funding id is kept on every row."
+   }
   },
   "25": {
    "tipe": "rumus",
@@ -3174,7 +4720,8 @@
     "bisnis_sidrap",
     "iir_sk",
     "orsted23",
-    "ci_h4"
+    "ci_h4",
+    "d_pend"
    ],
    "paragraf": [
     {
@@ -3185,7 +4732,32 @@
      "id": "Pembanding luar negeri: Orsted mencatat penurunan nilai DKK 28,4 miliar pada sembilan bulan 2023 (DKK 19,9 miliar untuk Ocean Wind 1) dan menghentikan Hornsea 4 pada 2025.",
      "en": "Foreign comparators: Orsted booked DKK 28.4 billion of impairments in nine months of 2023 (DKK 19.9 billion for Ocean Wind 1) and stopped Hornsea 4 in 2025."
     }
-   ]
+   ],
+   "kolom": [
+    {
+     "k": "p",
+     "l": {
+      "id": "Proyek",
+      "en": "Project"
+     },
+     "url": "url"
+    },
+    {
+     "k": "o",
+     "l": {
+      "id": "Struktur kepemilikan",
+      "en": "Ownership"
+     }
+    },
+    {
+     "k": "n",
+     "l": {
+      "id": "Nilai",
+      "en": "Value"
+     }
+    }
+   ],
+   "baris": []
   },
   "27": {
    "tipe": "teks",
@@ -3212,7 +4784,8 @@
     "etp1",
     "esdm_sidrap",
     "wiki_ltwp",
-    "perm30"
+    "perm30",
+    "d_lsp"
    ],
    "paragraf": [
     {
@@ -3222,6 +4795,10 @@
     {
      "id": "Sertifikasi: Permen ESDM 30/2006 pernah menetapkan standar kompetensi tenaga teknik PLTB tetapi berstatus dicabut di basis regulasi METI; standar penggantinya tidak diverifikasi. Pelatihan dan LSP terkait tercantum di lapisan Pelatihan.",
      "en": "Certification: Permen ESDM 30/2006 once set competence standards for wind technicians but is revoked in the METI regulation base; its replacement was not verified. Related training and professional certification bodies are in the Training layer."
+    },
+    {
+     "id": "Sertifikasi kompetensi BNSP: 2 lembaga sertifikasi profesi (LSP) memuat 19 skema terkait teknologi ini, antara lain BBPPMPV Bidang Mesin dan Teknik Industri, Energi Terbarukan. Skema berjenjang dari teknisi, pelaksana, sampai engineer perencana (data prodi_pelatihan, diperiksa 2026).",
+     "en": "BNSP competency certification: 2 professional certification bodies (LSP) list 19 schemes related to this technology, including BBPPMPV Bidang Mesin dan Teknik Industri, Energi Terbarukan. Schemes run from technician and installer up to planning engineer (prodi_pelatihan data, checked 2026)."
     }
    ]
   },

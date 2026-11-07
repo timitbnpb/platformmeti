@@ -3,6 +3,7 @@
 // Angka tabel dihitung dari berkas repo (transisi, asean_energi, regulasi); teks dari sumber publik yang dibaca 8 Nov 2026.
 // Sintesis sendiri berlabel "Analisis METI (Hipotesis)". Tanpa jaringan saat bangun.
 import { fileURLToPath } from 'node:url';
+import { dalam } from './topik_jaringan_dalam.mjs';
 import { T, hp, S, ED, baca, teks, faq, glos, rumus, langkah, tabel, grafik, linimasa, kol, L, kunci, kas, rakit, selftest as st, jalankan, tabelRegulasi, kolRegulasi, validasi as val } from './topik_enam_lib.mjs';
 
 const tr = baca('public/data/transisi.json'), ase = baca('public/data/asean_energi.json');
@@ -46,7 +47,7 @@ const bp24 = nasional.find((b) => b.tahun === 2024).beban_puncak_mw;
 const FASE = ['sumatera', 'jawa-bali', 'kalbar', 'kalseltengtimra', 'sulbagut', 'sulbagsel', 'lombok', 'timor', 'jayapura', 'sorong'];
 const NM = { sumatera: ['Sumatera-Bangka', 'Sumatra-Bangka'], 'jawa-bali': ['Jawa-Madura-Bali', 'Java-Madura-Bali'], kalbar: ['Kalimantan Barat', 'West Kalimantan'], kalseltengtimra: ['Kalselteng-Kaltimra', 'South-Central-East-North Kalimantan'], sulbagut: ['Sulawesi bagian utara', 'North Sulawesi'], sulbagsel: ['Sulawesi bagian selatan', 'South Sulawesi'], lombok: ['Lombok', 'Lombok'], timor: ['Timor', 'Timor'], jayapura: ['Jayapura', 'Jayapura'], sorong: ['Sorong', 'Sorong'] };
 
-export function susun() {
+function susunAsal() {
   const bab = {};
   bab['2'] = faq(['esdm47', 'kontan_prog', 'ed'], [
     ['Apa itu super grid?', 'What is a super grid?', 'Jaringan transmisi tulang punggung yang menghubungkan pusat pembangkit terbarukan yang jauh ke pusat beban dan antarpulau. Dokumen pemerintah dan PLN menyebutnya green enabling super grid dengan jalur backbone dan fishbone (ESDM, Mei 2025).', 'A backbone transmission network linking distant renewable plants to load centres and islands to each other. Government and PLN documents call it a green enabling super grid with backbone and fishbone routes (ESDM, May 2025).'],
@@ -306,6 +307,7 @@ export function susun() {
     sumber: SUMBER, bab });
 }
 
+export function susun() { return dalam(susunAsal()); }
 export const validasi = val;
 export const selftest = () => st(susun);
 jalankan(import.meta.url, 'jaringan', susun);

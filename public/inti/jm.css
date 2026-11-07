@@ -708,7 +708,7 @@ main>:is(section,div,article)+:is(section,div,article){margin-top:max(24px,var(-
 .jm-kh-ubin[data-n="4"]{grid-template-columns:repeat(2,minmax(0,1fr))}
 @media (min-width:640px){.jm-kh-ubin[data-n="5"]{grid-template-columns:repeat(6,minmax(0,1fr))}.jm-kh-ubin[data-n="5"]>*{grid-column:span 2}.jm-kh-ubin[data-n="5"]>:nth-child(n+4){grid-column:span 3}}
 /* kisi kartu bersama: kolom menyesuaikan lebar, tak menyisakan baris yatim sempit */
-.jm-kisi,.jm-tk-kisi{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));gap:12px}
+.jm-kisi{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));gap:12px}
 /* target sentuh 44px di HP */
 @media (max-width:639px){
   .jm-aksi-b,.jm-bagi-b,.jm-sumber-b,.jm-chip,.jm-saring button,.jm-tab .jm-ik-saja{min-width:44px;min-height:44px}

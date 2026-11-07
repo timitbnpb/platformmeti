@@ -42,9 +42,8 @@ const orang = (o, ukuran = "") => {
   return `<li class="tn-fk tn-latar ${kls} ${ukuran}"><button type="button" class="tn-fk-b" data-p="${esc(k)}" aria-label="${esc(t("tn.p.buka", { nama: o.nama }))}"><span class="tn-fk-bg">${bg}</span><span class="tn-fk-t"><b>${esc(o.nama)}</b><small>${esc(o.jabatan)}</small></span></button></li>`;
 };
 const ada = (o) => o.nama && !o.kosong;
-/* posisi lowong tidak jadi kartu: catatan kecil "Jabatan: lowong" di bawah daftar */
-const catatLowong = (a) => a.filter((o) => !ada(o)).map((o) => `<p class="tn-lowong">${ikon("info", 14)}<span>${esc(o.jabatan)}: ${esc(t("tn.lowong").toLowerCase())}</span></p>`).join("");
-const ul = (a, uk) => `<ul class="tn-fkg">${a.filter(ada).map((o) => orang(o, uk)).join("")}</ul>${catatLowong(a)}`;
+/* posisi lowong tidak ditampilkan */
+const ul = (a, uk) => `<ul class="tn-fkg">${a.filter(ada).map((o) => orang(o, uk)).join("")}</ul>`;
 /* kepala unit seragam: ikon, nama, pil jumlah; rata tengah, pita aksen di bawah */
 const nOrang = (a) => a.filter((o) => o.nama && !o.kosong).length;
 const kepalaGrup = (ik, judul, a) => `<h4 title="${esc(judul)}">${ikon(ik, 16)}<span>${esc(judul)}</span>${a ? `<em class="tn-n">${angka(nOrang(a))}</em>` : ""}</h4>`;
@@ -65,7 +64,7 @@ function ringkas(judul, a, { ik = "orang", pimpinan = PIM } = {}) {
   const tampil = avat.length > maks ? avat.slice(0, maks - 1) : avat, lebih = avat.length - tampil.length;
   const bawah = avat.length ? `<ul class="tn-av-kisi">${tampil.map((o) => `<li title="${esc(o.nama)}, ${esc(o.jabatan)}">${avatar(o)}</li>`).join("")}${lebih ? `<li class="tn-plus" title="${esc(TX("tn.anggota_plus", "+{n} anggota", { n: lebih }))}">+${angka(lebih)}</li>` : ""}</ul>
     ${lebih ? `<button type="button" class="tn-semua" data-grup="${id}">${ikon("orang", 16)}<span>${esc(TX("tn.lihat_semua", "Lihat semua {n} anggota", { n: nyata.length }))}</span></button>` : ""}` : "";
-  return `<section class="tn-grp tn-rg" data-n="${n}">${kepalaGrup(ik, judul, a)}${lr}${catatLowong(a)}${bawah}</section>`;
+  return `<section class="tn-grp tn-rg" data-n="${n}">${kepalaGrup(ik, judul, a)}${lr}${bawah}</section>`;
 }
 
 /* hanya logo yang bergerak: tanpa kartu atau bingkai; nama di title dan aria-label */
@@ -117,25 +116,26 @@ function teknologi(D) {
   <div class="jm-ex-bd"><ul class="tn-tek">${kartu}</ul></div></div></section>`;
 }
 
-/* SDU: Chief dan Vice Chief jadi pimpinan; PMO di popup, jabatan tanpa awalan "PMO " */
-const sdu = (a) => ringkas(t("tn.u.sdu"), a.map((o) => (o.pmo ? { ...o, jabatan: o.jabatan.replace(/^PMO\s+/, "") } : o)), { ik: "direktori", pimpinan: /^(Chief|Vice Chief)\b/ });
 
+/* wadah exhibit standar: eyebrow, judul berangka "n kelompok, m orang", isi kisi kompartemen */
+const wadah = (ik, ey, kunci, n, o, isi, kls) => `<div class="jm-ex tn-wd"><header class="jm-ex-hd"><div class="jm-ex-teks"><span class="jm-ex-ey">${ikon(ik, 14)}${esc(ey)}</span><h3 class="jm-ex-j">${esc(TX(kunci, "{n}, {o}", { n, o })).replace(String(n), `<span class="jm-hl">${n}</span>`)}</h3></div></header><div class="jm-ex-bd"><div class="tn-kisi ${kls}">${isi}</div></div></div>`;
 let PERIODE = "";
 function struktur(p) {
   PERIODE = p.periode || "";
   const U = p.unit, d = U.dewan || [], iPakar = d.findIndex((o) => /Ketua Dewan Pakar/.test(o.jabatan));
   const pengawas = iPakar < 0 ? d : d.slice(0, iPakar), pakar = iPakar < 0 ? [] : d.slice(iPakar);
   const bidang = p.bidang.filter((b) => b.nama);
-  const kb = (b, i) => `<section class="tn-grp" data-n="${Math.min(5, b.anggota.filter(ada).length || 1)}">${kepalaGrup("daftar", t("tn.u.bk", { n: i + 1 }) + ": " + b.nama, b.anggota)}${ul(b.anggota, "kecil")}</section>`;
+  const kb = (b, i) => `<section class="tn-grp" data-k="${nOrang(b.anggota) === 3 ? 3 : 2}">${kepalaGrup("daftar", t("tn.u.bk", { n: i + 1 }) + ": " + b.nama, b.anggota)}${ul(b.anggota)}</section>`;
   const ket = (U.ketum || [])[0];
+  const unit = [[t("tn.u.institute"), U.institute], [t("tn.u.wilayah"), U.wilayah, { ik: "wilayah" }], [t("tn.u.muda"), U.muda], [t("tn.u.komite"), U.komite], [t("tn.u.staf"), U.staf], [t("tn.u.sdu"), U.sdu && U.sdu.map((o) => (o.pmo ? { ...o, jabatan: o.jabatan.replace(/^PMO\s+/, "") } : o)), { ik: "direktori", pimpinan: /^(Chief|Vice Chief)\b/ }]].filter(([, a]) => a);
   const baris2 = [["waketum", "tn.u.waketum", true], ["sekjen", "tn.u.sekjen"], ["bendahara", "tn.u.bendahara"], ["eksekutif", "tn.u.eksekutif", true]].filter(([k]) => U[k]).map(([k, j, s]) => kelompok(t(j), U[k])).join("");
   return `<section class="tn-seksi tn-bagan-bg" id="tim" aria-labelledby="tn-struktur">${kepala("tn-struktur", "orang", t("tn.ey.struktur"), t("tn.struktur.h2"), t("tn.struktur.pengantar", { periode: p.periode }))}
   <div class="tn-pohon"><div class="tn-r tn-r0">${ringkas(t("tn.u.penasihat"), U.penasihat || [], { ik: "kompas" })}${ringkas(t("tn.u.pengawas"), pengawas, { ik: "perisai" })}${ringkas(t("tn.u.pakar"), pakar, { ik: "wisuda" })}</div>
     <div class="tn-konek" aria-hidden="true"></div>
     ${ket ? `<div class="tn-r tn-r1"><section class="tn-grp tn-ketum">${kepalaGrup("orang", t("tn.u.ketum"))}${ul([ket], "besar")}</section></div><div class="tn-konek" aria-hidden="true"></div>` : ""}
     <div class="tn-r tn-r2">${baris2}</div></div>
-    <h3 class="tn-sub">${ikon("daftar", 18)}<span>${esc(t("tn.u.bidang"))}</span></h3><div class="tn-bidang tn-bk9">${bidang.map(kb).join("")}</div>
-    <h3 class="tn-sub">${ikon("wilayah", 18)}<span>${esc(t("tn.u.unit"))}</span></h3><div class="tn-bidang tn-unit-k">${[U.institute && ringkas(t("tn.u.institute"), U.institute), U.wilayah && ringkas(t("tn.u.wilayah"), U.wilayah, { ik: "wilayah" }), U.muda && ringkas(t("tn.u.muda"), U.muda), U.komite && ringkas(t("tn.u.komite"), U.komite), U.staf && ringkas(t("tn.u.staf"), U.staf), U.sdu && sdu(U.sdu)].filter(Boolean).join("")}</div></section>`;
+    ${wadah("daftar", t("tn.u.bidang_ey"), "tn.u.bidang_h", bidang.length, bidang.reduce((u, b) => u + nOrang(b.anggota), 0), bidang.map(kb).join(""), "tn-kisi-b")}
+    ${wadah("wilayah", t("tn.u.unit"), "tn.u.unit_h", unit.length, unit.reduce((u, [, a]) => u + nOrang(a), 0), unit.map(([j, a, o]) => ringkas(j, a, o)).join(""), "tn-kisi-u")}</section>`;
 }
 
 function mitra(m) {

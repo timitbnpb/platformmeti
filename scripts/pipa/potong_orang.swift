@@ -183,7 +183,7 @@ func bingkai(_ im: Img) -> Img {
   let x0 = max(0, min(Double(w) - Wc, cx - Wc / 2))
   let y0 = max(0, min(Double(h) - Hc, Double(f.midY) - 0.30 * Hc))
   let cw = Int(Wc.rounded()), ch = Int((Wc * 4 / 3).rounded())
-  let scale = min(640.0 / Double(cw), 1.5)
+  let scale = min(600.0 / Double(cw), 1.0) // tanpa upscale: foto kecil tetap resolusi aslinya
   let ow = Int((Double(cw) * scale).rounded()), oh = Int((Double(cw) * scale * 4 / 3).rounded())
   // potong + skala dengan CoreGraphics (alfa tak-premultiply -> pakai premultiplied lalu kembalikan)
   let cg = keCG(im)

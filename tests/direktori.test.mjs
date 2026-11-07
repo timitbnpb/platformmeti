@@ -137,7 +137,7 @@ test("sinta: rincian dilayani untuk anggota, 404 bila tak ada, 401 tamu", async 
 });
 
 test("lembar orang memuat semua bagian: riwayat jabatan, pendidikan, kiprah, tautan, riwayat METI, SINTA", () => {
-  for (const k of ["riwayatTk(", "pendidikanTk(", "tautanTk(", "Kiprah EBET", "rinciSinta(o)", "dir.riwayat.judulBagian", "Tokoh sejenis", "Berita terkait", "Pakar sejenis", "Sering menulis bersama", "Metrik publikasi menurut SINTA", "Artikel Scopus terbaru"]) assert.ok(JS.includes(k), k);
+  for (const k of ["riwayatTk(", "pendidikanTk(", "tautanTk(", "dir.pr.kiprah", "rinciSinta(o)", "dir.riwayat.judulBagian", "dir.pr.jabatan", "Berita terkait", "Pakar sejenis", "Sering menulis bersama", "pk2.s.metrik", "pk2.s.artikel"]) assert.ok(JS.includes(k), k);
 });
 
 test("GET /api/admin/anggota-meti: anggota 403, pengurus 403, admin 200 dari R2 tanpa cache, R2 kosong 404", async () => {

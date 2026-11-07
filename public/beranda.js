@@ -1,12 +1,11 @@
 import { mulaiHalaman } from "/inti/kepala.js";
 import { t, angka, tanggal } from "/i18n.js";
 import { esc, nanti, debounce, hantuHtml, kosongHtml, ikon, fotoBerita } from "/inti/umum.js";
-import { gambarDataset, LOGO_ORG, ubinProyek } from "/beranda_data.js";
+import { gambarDataset, LOGO_ORG, ubinProyek, lokasiHtml } from "/beranda_data.js";
 import { pilTek, pilStatus } from "/inti/ikon_tek.js";
-import { tautProvinsi } from "/inti/tautan.js";
 import { namaMedia, logoLokal } from "/inti/nama_media.js";
 import { namaProyek } from "/inti/nama_proyek.js";
-import { pelakuHtml } from "/beranda_pelaku.js";
+import { pelakuHtml, pasangPelaku } from "/beranda_pelaku.js";
 import { pasangBawah, IKON } from "/beranda_bawah.js";
 import { sumberHtml, lihatSemuaHtml } from "/inti/komponen.js";
 import { kontenBeranda, daftarKonten } from "/inti/konten_beranda.js";
@@ -21,7 +20,7 @@ const KAT_EKO = [["bumn", 1], ["swasta", 2], ["asosiasi", 3], ["lembaga", 4]];
 const INSIGHT_KARTU = 17; // ponytail: jumlah kartu /insight ditulis tetap; hitung dari halaman itu bila kartunya sering berubah
 /** 8 teratas per kategori: daftar sematan (id atau nama) lebih dulu, sisanya menurut total MW proyek terkait. Nama baru di data masuk otomatis. */
 const PIN = {
-  bumn: ["su_ed074ff5", "p_5a2e7d0c63", "p_ff7a390a42", "p_10e0dde689", "p_dda1e51dae", "p_b1c52ad7b0", "p_e0f3886341", "p_978ca76d57"],
+  bumn: ["p_b1c52ad7b0", "p_10e0dde689", "p_dda1e51dae", "su_ed074ff5", "p_5a2e7d0c63", "p_ff7a390a42", "p_e0f3886341", "p_978ca76d57"] /* Pertamina di atas PLN (pemilik 8 Nov 2026) */,
   swasta: ["p_bdd0f2d140", "p_7a803f3b71", "p_27ae5a4203", "p_7f829f524e", "p_c6c4e478c0", "p_d99d5987f7", "ix_keen", "p_9de27fd5b9"],
   asosiasi: ["l_41bf1f0b41", "l_dd90c88f59", "l_d3dadc789e", "l_7e5f8d771d", "l_06d49428ac", "l_67ed5e1422", "l_1192cb8a15", "l_0974f82eba"],
   lembaga: ["l_7278e0528a", "l_38ba1d6f56", "l_973f60de15", "l_15e21f04fa", "l_7b43a2574c", "l_edde12ff1f", "l_05301f48a5", "l_3d20494e0a"],
@@ -96,8 +95,8 @@ async function gambarProyek() {
     const baru = manual.length ? manual : [...p.baris].sort((a, b) => String(b.sumber?.[0]?.tanggal).localeCompare(String(a.sumber?.[0]?.tanggal)) || b.id.localeCompare(a.id)).slice(0, 6);
     const foto = await muat("berita_foto").catch(() => ({}));
     el.innerHTML = `<ul class="jm-feed">${baru.map((x) => {
-      const st = x.status?.[0]?.nilai || "tidak-diketahui", prov = x.lokasi?.provinsi, href = "/p/" + encodeURIComponent(x.id);
-      return `<li><div class="jm-feed-i"><a class="jm-feed-th jm-pt-k jm-tek-${esc(x.teknologi || "lain")}" href="${href}" tabindex="-1" aria-hidden="true">${ubinProyek(x, foto)}</a><span class="jm-feed-t"><a class="jm-feed-j" href="${href}"><strong>${esc(namaProyek(x))}</strong></a><span class="jm-baris-meta">${pilStatus(st)}${prov ? tautProvinsi(prov) : `<span class="jm-redup">${esc(t("tk.lokasi_belum"))}</span>`}</span></span></div></li>`;
+      const st = x.status?.[0]?.nilai || "tidak-diketahui", href = "/p/" + encodeURIComponent(x.id);
+      return `<li><div class="jm-feed-i"><a class="jm-feed-th jm-pt-k jm-tek-${esc(x.teknologi || "lain")}" href="${href}" tabindex="-1" aria-hidden="true">${ubinProyek(x, foto)}</a><span class="jm-feed-t"><span class="jm-feed-nm"><a class="jm-feed-j" href="${href}"><strong>${esc(namaProyek(x))}</strong></a>${x.teknologi ? pilTek(x.teknologi) : ""}${pilStatus(st)}</span><span class="jm-baris-meta">${lokasiHtml(x)}</span></span></div></li>`;
     }).join("")}</ul>${lihatSemuaHtml("/proyek", t("beranda.lihat.proyek"))}`;
   } catch (e) { sembunyi(el, e); el.closest(".jm-ex").hidden = true; }
 }
@@ -121,7 +120,7 @@ async function gambarEkosistem() {
   try {
     const [org, pro] = await Promise.all([muat("organisasi"), muat("proyek")]);
     const n = (k) => org.baris.filter((o) => o.kategori?.kode === k).length;
-    hit.innerHTML = pelakuHtml(org.baris, pro);
+    hit.innerHTML = pelakuHtml(org.baris, pro); pasangPelaku(hit);
     const d = delapan(org.baris, pro);
     kisi.innerHTML = KAT_EKO.map(([kat, w]) => {
       const { daftar } = d[kat];
@@ -136,13 +135,24 @@ async function gambarEkosistem() {
 }
 
 /* ---------- 8 pintu masuk (dulu di beranda_bawah.js) ---------- */
+/** Deret mini (batang) dari angka; kosong bila kurang dari 2 titik. */
+const spark = (v) => { v = v.filter(Number.isFinite).slice(-12); if (v.length < 2) return ""; const m = Math.max(...v) || 1, w = 80 / v.length; return `<svg class="jm-jalur-sp" viewBox="0 0 80 24" preserveAspectRatio="none" aria-hidden="true" focusable="false">${v.map((x, i) => { const h = Math.max(2, (x / m) * 24); return `<rect x="${(i * w + 1).toFixed(1)}" y="${(24 - h).toFixed(1)}" width="${(w - 2).toFixed(1)}" height="${h.toFixed(1)}" rx="1.5"/>`; }).join("")}</svg>`; };
+const hitungPer = (arr, f, urut) => { const m = new Map(); for (const x of arr) { const k = f(x); if (k) m.set(k, (m.get(k) || 0) + 1); } const e = [...m.entries()]; return (urut ? e.sort((a, b) => String(a[0]).localeCompare(String(b[0]))) : e.sort((a, b) => b[1] - a[1])).map((x) => x[1]); };
 async function gambarJalur() {
   const el = document.getElementById("ekoJalur");
   try {
-    const [rg, wl, rt, kl, pk, og] = await Promise.all(["ringkas", "wilayah", "rantai_plts", "kalender", "pustaka", "organisasi"].map(muat));
-    const J = [["proyek", "/proyek", "pin", rg.hitung.proyek, "proyek"], ["wilayah", "/wilayah", "peta", wl.jumlah, "provinsi"], ["rantai", "/rantai", "pabrik", rt.ringkas.pabrikan, "pabrikan"], ["regulasi", "/regulasi", "timbangan", rg.hitung.regulasi, "regulasi"],
-      ["direktori", "/direktori", "orangkunci", og.jumlah, "organisasi"], ["pustaka", "/direktori?tampil=pustaka", "buku", pk.jumlah, "dokumen"], ["kalender", "/kalender", "kalender", kl.jumlah, "acara"], ["insight", "/insight", "grafik", INSIGHT_KARTU, "kartu"]];
-    el.innerHTML = J.map(([k, href, ik, n, u]) => `<a class="jm-jalur jm-jalur-${k}" href="${href}"><span class="jm-jalur-ik">${IKON[ik] || ""}</span><span class="jm-jalur-t"><span class="jm-jalur-h"><strong>${esc(t("beranda.j." + k))}</strong><b class="jm-jalur-n">${esc(angka(n))}<small>${esc(t("beranda.jn." + u))}</small></b></span><span class="jm-jalur-k2"><span class="jm-jalur-ket">${esc(t("beranda.j." + k + ".ket"))}</span>${k === "direktori" ? `<span class="jm-pil jm-jalur-kunci">${ikon("kunci", 12)}${esc(t("beranda.j.masuk"))}</span>` : ""}</span></span></a>`).join("");
+    const [pr, wl, rt, kl, pk, og, rg] = await Promise.all(["proyek", "wilayah", "rantai_plts", "kalender", "pustaka", "organisasi", "regulasi"].map(muat));
+    const J = [
+      ["proyek", "/proyek", "proyek", pr.baris.length, "proyek", spark(hitungPer(pr.baris, (p) => p.teknologi))],
+      ["wilayah", "/wilayah", "wilayah", wl.baris.length, "provinsi", spark(wl.baris.map((w) => w.terpasang_mw?.nilai).filter((x) => x != null).sort((a, b) => b - a).slice(0, 12))],
+      ["rantai", "/rantai", "rantai", rt.pabrikan.length, "pabrikan", spark([...rt.pabrikan].map((p) => p.mwp).sort((a, b) => b - a).slice(0, 12))],
+      ["regulasi", "/regulasi", "regulasi", rg.baris.length, "regulasi", spark(hitungPer(rg.baris, (r) => r.tahun, true))],
+      ["direktori", "/direktori", "direktori", og.baris.length, "organisasi", spark(hitungPer(og.baris, (o) => o.kategori?.kode))],
+      ["pustaka", "/direktori?tampil=pustaka", "daftar", pk.baris.length, "dokumen", spark(hitungPer(pk.baris, (d) => String(d.tanggal || "").slice(0, 4), true))],
+      ["kalender", "/kalender", "kalender", kl.baris.length, "acara", spark(hitungPer(kl.baris, (a) => String(a.tanggal || "").slice(0, 7), true))],
+      ["insight", "/insight", "insight", INSIGHT_KARTU, "kartu", spark(hitungPer(pr.baris, (p) => p.status?.[0]?.nilai))],
+    ];
+    el.innerHTML = J.map(([k, href, ik, n, u, sp]) => `<a class="jm-jalur jm-jalur-${k}" href="${href}"><span class="jm-jalur-ik">${ikon(ik, 28)}</span>${k === "direktori" ? `<span class="jm-pil jm-jalur-kunci">${ikon("kunci", 12)}${esc(t("beranda.j.masuk"))}</span>` : ""}<b class="jm-jalur-n">${esc(angka(n))}<small>${esc(t("beranda.jn." + u))}</small></b><strong>${esc(t("beranda.j." + k))}</strong><span class="jm-jalur-ket">${esc(t("beranda.j." + k + ".ket"))}</span><span class="jm-jalur-viz">${sp}</span></a>`).join("");
   } catch (e) { sembunyi(el, e); }
 }
 
@@ -190,6 +200,7 @@ async function main() {
   document.getElementById("kartu").innerHTML = hantuHtml(2);
   const mulai = async () => {
     try { R = await muat("ringkas"); } catch (e) { sembunyi(document.getElementById("kartu"), e); return; }
+    try { const g = await muat("regulasi"); R.hitung.regulasi = g.jumlah; const k = R.kartu.find((x) => x.kode === "regulasi"); if (k) k.nilai = g.jumlah; } catch (e) { /* tetap pakai angka ringkasan */ }
     gambarKartu(); nanti(() => { gambarEkosistem(); gambarJalur(); gambarDataset(R); gambarBerita(); gambarProyek(); gambarAgenda(); gambarAkses(); });
   };
   await mulai();

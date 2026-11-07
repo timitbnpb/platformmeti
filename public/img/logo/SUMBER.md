@@ -111,3 +111,51 @@ scripts/panen/logo_kampus.mjs (UA METI, jeda >= 2 dtk). Logo hanya untuk mengena
 - kampus/uns.png | Universitas Sebelas Maret | ikon/logo resmi situs | https://uns.ac.id
 - kampus/unud.png | Universitas Udayana | wikidata-p154 | Wikimedia Commons via Wikidata Q1573634
 - kampus/usu.png | Universitas Sumatera Utara | ikon/logo resmi situs | https://usu.ac.id
+
+## Logo organisasi tambahan 8 Nov 2026
+
+Oleh scripts/pipa/logo_org_situs.mjs (cari situs resmi: data, tautan sumber, Wikidata P856, tebakan domain terverifikasi nama) lalu scripts/panen/panen_logo.mjs --daftar (apple-touch-icon, logo header, favicon, Wikidata P154; og:image TIDAK dipakai). Ditinjau tangan; yang salah ada di data/rantai/logo_tolak.json.
+
+- in_01f50e6d62 | REC Group | logo-header | https://www.recgroup.com/themes/custom/rec_tara/logo.svg
+- in_0585deca28 | Ministry of Foreign Affairs of the Netherlands | apple-touch-icon | https://www.rijksoverheid.nl/themes/logoblauw/apple-touch-icon.png
+- in_114f742f83 | Preformed Line Products | logo-header | https://plp.com/templates/preformed-home/img/preformed-line-products-logo-new-brand.png
+- in_12222945f1 | Agence Francaise de Developpement | logo-header | https://www.afd.fr/sites/default/files/2025-03/logo_AFD.png
+- in_1964fb1e88 | Standard Chartered | wikidata-p154 | https://commons.wikimedia.org/wiki/File:Standard_Chartered_(2021).svg (Wikidata Q548278)
+- in_277ebc86bd | Wilmar International | wikidata-p154 | https://commons.wikimedia.org/wiki/File:Wilmar_International_Logo.svg (Wikidata Q1786712)
+- in_2e43564369 | Tohoku Electric Power | wikidata-p154 | https://commons.wikimedia.org/wiki/File:T%C5%8Dhoku-Denryoku-Logo.svg (Wikidata Q592765)
+- in_3b887e9870 | China Gezhouba Group | favicon | http://www.cggc.cn/favicon.ico
+- in_3f774c96af | Cnooc | wikidata-p154 | https://commons.wikimedia.org/wiki/File:CNOOC_Logo.svg (Wikidata Q795354)
+- in_4227ab3084 | Giz | apple-touch-icon | https://www.giz.de/themes/custom/dreist/build/assets/images/favicon/apple-touch-icon-180x180.png
+- in_43cfaca072 | Lapp Group (JJ Lapp) | logo-header | https://www.lappgroup.com/_assets/6130e8f553858737b1120435df12e747/Images/logo_lapp.svg
+- in_526566f0dc | United Nations Development Programme | logo-header | https://www.undp.org/sites/g/files/zskgke326/files/2025-04/undp-logo-blue.4f32e17f.svg
+- in_553d02ab56 | Siemens | favicon | https://www.siemens.com/_static/favicon.svg
+- in_6abe276544 | Proparco | logo-header | https://www.proparco.fr/sites/proparco/files/2025-04/proparco_logo_rvb.png
+- in_6f68666e54 | US Department of Energy | logo-header | https://www.energy.gov/themes/custom/energy_gov/img/logo-image.png
+- in_7d89514771 | Dongfang Electric | wikidata-p154 | https://commons.wikimedia.org/wiki/File:Dongfang_Electric_logo.svg (Wikidata Q5295864)
+- in_9a375db244 | Asian Development Bank | wikidata-p154 | https://commons.wikimedia.org/wiki/File:ADB_logo_%26_wordmark.svg (Wikidata Q188822)
+- in_a1cf50e2c0 | Astronergy (Chint) | apple-touch-icon | https://image.chint.id/s3/webp/co93635/companylogo/chintindonesia6e85b17d-a6e4-43fd-892b-1254406c0369.png | DIWARISI: logo induk CHINT
+- in_b060da46bb | GE Vernova | logo-header | https://www.gevernova.com/themes/custom/ge_vernova_unified/logo.svg
+- in_b1b68a3e6f | US Agency for International Development (USAID) | wikidata-p154 | https://commons.wikimedia.org/wiki/File:USAID-Identity.svg (Wikidata Q217072)
+- in_cd6da9ed54 | Veolia | logo-header | https://www.veolia.com/sites/g/files/dvc4206/files/styles/logo_mobile_base/public/logo-veolia.png.webp?itok=G6OrciMo
+- in_dfb3ec26f0 | Hyundai Motor Group | wikidata-p154 | https://commons.wikimedia.org/wiki/File:Hyundai_Motor_Group_CI.svg (Wikidata Q59243)
+- in_e7e1f656b9 | Harbin Electric | wikidata-p154 | https://commons.wikimedia.org/wiki/File:Harbin_Electronic_Corporation_logo.svg (Wikidata Q5654441)
+- in_f57be26fd0 | Bharat Heavy Electricals (BHEL) | wikidata-p154 | https://commons.wikimedia.org/wiki/File:BHEL_logo.svg (Wikidata Q854820)
+- l_11621e2b6c | Direktorat Perencanaan dan Pembangunan Infrastruktur EBTKE | logo-header | https://ebtke.esdm.go.id/media/landing/logo-esdm.png | DIWARISI: logo Ditjen EBTKE/ESDM dipakai situs unit ini
+- l_15bc6ff298 | Direktorat Konservasi Energi | logo-header | https://ebtke.esdm.go.id/media/landing/logo-esdm.png | DIWARISI: logo Ditjen EBTKE/ESDM dipakai situs unit ini
+- l_21d3901823 | Direktorat Panas Bumi | logo-header | https://ebtke.esdm.go.id/media/landing/logo-esdm.png | DIWARISI: logo Ditjen EBTKE/ESDM dipakai situs unit ini
+- l_38ba1d6f56 | Direktorat Jenderal Energi Baru, Terbarukan dan Konservasi Energi | logo-header | https://ebtke.esdm.go.id/media/landing/logo-esdm.png | DIWARISI: logo Ditjen EBTKE/ESDM dipakai situs unit ini
+- l_69296f786c | Direktorat Aneka Energi Baru dan Energi Terbarukan | logo-header | https://ebtke.esdm.go.id/media/landing/logo-esdm.png | DIWARISI: logo Ditjen EBTKE/ESDM dipakai situs unit ini
+- l_e4f0f03487 | Direktorat Bioenergi | logo-header | https://ebtke.esdm.go.id/media/landing/logo-esdm.png | DIWARISI: logo Ditjen EBTKE/ESDM dipakai situs unit ini
+- p_2b9ed19302 | Solarvest | apple-touch-icon | https://solarvest.com/wp-content/uploads/2023/07/cropped-solarvest-favicon-v2-192x192.png
+- p_48287deb5e | Inergia | favicon | https://www.inergia.id/favicon.svg
+- p_5380eeb9d6 | PT Eleska Iatki | logo-header | https://eleskaiatki.com/image/logo.png
+- p_5fc1234af4 | PT Bmt Asia Indonesia | logo-header | https://bmtasiaindonesia.com/public/uploads/logo.PNG
+- p_68919c25c9 | PT Prima Perkasa Teknik Indonesia | apple-touch-icon | https://primaperkasa.co.id/wp-content/uploads/2021/07/cropped-cropped-favicon-prima_perkasa-v.1.1-192x192.png
+- p_75703b5fda | Energihub | logo-header | https://www.energihub.id/assets/logo.svg
+- p_8e8a5c07cc | Hexa Multi Energi | apple-touch-icon | https://hexamultienergi.com/wp-content/uploads/2022/09/cropped-Picsart_22-09-30_11-01-38-827-192x192.png
+- p_a9395eb2af | Iforte | logo-header | https://www.iforte.id/media/company-logo/new-iforte.png
+- p_fb9fd602c6 | Sedayu | apple-touch-icon | https://sedayu.co.id/wp-content/uploads/2021/11/cropped-icon-sedayu-1-192x192.png
+- pm_1c66exc8e3f | PT Archi Indonesia Tbk | logo-header | https://archiindonesia.com/wp-content/uploads/2024/11/logo-archi-full.webp
+- pm_895aax201f5 | PT Bakrie Power | logo-header | https://bakriepower.co.id//template/frontend/images/bp-logo-baru.png
+- pm_b4424x486f6 | PT Sumber Organik | logo-header | https://www.sumberorganik.com/img/logo%20SO.png
+- pm_129dbx35045 | PT Vale Indonesia Tbk | DIWARISI dari in_fe91e3c6a5 (Vale) | situs resminya vale.com/indonesia memakai logo Vale induk

@@ -209,29 +209,47 @@ function sAtap() {
   });
 }
 
+const KAT = { bumn: ["bumn", "gedung"], swasta: ["swasta", "pabrik"], internasional: ["internasional", "globe"], asosiasi: ["asosiasi", "direktori"], koperasi: ["koperasi", "lencana"] };
+const PER_PEMAIN = 12;
+/* spasi tanda baca dari judul mentah: "7 , 046" -> "7,046", "a , b" -> "a, b", "pumped - storage" -> "pumped-storage" */
+const rapi = (x) => String(x ?? "").replace(/(\d)\s*,\s*(\d{3})\b/g, "$1,$2").replace(/\s+([,.;:!?%)])/g, "$1").replace(/([(])\s+/g, "$1").replace(/(\p{L})\s+-\s+(\p{L})/gu, "$1-$2").replace(/\s{2,}/g, " ").trim();
+const inisial = (n) => { const k = String(n || "").replace(/^pt\.?\s+/i, "").split(/[^\p{L}\p{N}]+/u).filter(Boolean); return ((k.length > 1 ? k[0][0] + k[1][0] : (k[0] || "?").slice(0, 2))).toUpperCase(); };
+const warnaMono = (s) => "tkp-w" + ([...String(s)].reduce((h, c) => h + c.charCodeAt(0), 0) % 5);
+const mono = (nama, kunci) => `<b class="${warnaMono(kunci)}">${esc(inisial(nama))}</b>`;
+
 function sPemain(D) {
   if (!D.org.length) return "";
-  const nilai = (o) => (logoOrgSatu(o.id, o.nama, o.logo) && !logoOrgSatu(o.id, o.nama, o.logo).startsWith("/img/logo/org/") ? 0 : 1);
-  const daftar = [...D.org].sort((a, z) => nilai(a) - nilai(z) || a.nama.localeCompare(z.nama)).slice(0, 12);
-  const kartu = daftar.map((o) => {
-    const lg = logoOrgSatu(o.id, o.nama, o.logo);
-    return `<li><a href="/o/${esc(o.id)}"><span class="jm-tk-lg">${lg ? `<img src="${esc(lg)}" data-lg="1" alt="" loading="lazy" decoding="async" referrerpolicy="no-referrer">` : ikon("direktori", 32)}</span><strong>${esc(o.singkatan || o.nama)}</strong><small>${esc(o.kategori?.label || "")}</small></a></li>`;
+  const stat = new Map();
+  for (const p of D.proyek) for (const id of new Set(Object.values(p.pihak || {}).flat().map((a) => a?.organisasi_id).filter(Boolean))) {
+    const x = stat.get(id) || { n: 0, mw: 0 }; x.n++; x.mw += kapProyek(p); stat.set(id, x);
+  }
+  const berlogo = (o) => { const l = logoOrgSatu(o.id, o.nama, o.logo); return l && !l.startsWith("/img/logo/org/") ? 0 : 1; };
+  const daftar = [...D.org].sort((a, z) => (stat.get(z.id)?.mw || 0) - (stat.get(a.id)?.mw || 0) || (stat.get(z.id)?.n || 0) - (stat.get(a.id)?.n || 0) || berlogo(a) - berlogo(z) || a.nama.localeCompare(z.nama));
+  const kartu = daftar.map((o, i) => {
+    const lg = logoOrgSatu(o.id, o.nama, o.logo), nama = o.singkatan || o.nama, kk = o.kategori?.kode, kat = KAT[kk];
+    const kp = kat ? `<span class="tkp-pil tkp-k-${kat[0]}">${ikon(kat[1], 14)}<span>${esc(t("tk.kat." + kat[0]))}</span></span>` : `<span class="tkp-pil tkp-k-lain">${ikon("direktori", 14)}<span>${esc(o.kategori?.label || "-")}</span></span>`;
+    const neg = String(o.internasional?.negara || "").toLowerCase(), bendera = /^[a-z]{2}$/.test(neg) ? `<img class="tkp-bd" src="/img/bendera/${neg}.svg" width="18" height="13" alt="${esc(neg.toUpperCase())}" loading="lazy" decoding="async" data-lg="1">` : "";
+    const peran = (o.peran_rantai || []).slice(0, 2).map((r) => `<span class="tkp-pil tkp-peran">${esc(ada("tk.peran." + r) ? t("tk.peran." + r) : r)}</span>`).join("");
+    const s = stat.get(o.id);
+    return `<li class="tkp-li"${i >= PER_PEMAIN ? " hidden" : ""}><a class="tkp-kartu" href="/o/${esc(o.id)}"><span class="tkp-lg">${mono(nama, o.id)}${lg ? `<img src="${esc(lg)}" data-lg="1" alt="" loading="lazy" decoding="async" referrerpolicy="no-referrer">` : ""}</span><span class="tkp-nm">${bendera}<strong>${esc(nama)}</strong></span><span class="tkp-pils">${kp}${peran}</span><small class="tkp-st">${esc(s ? t("tk.u.pemain.proyek", { n: num(s.n), mw: num(s.mw) }) : t("tk.u.pemain.nol"))}</small></a></li>`;
   }).join("");
   return bagian("tk-pemain", "direktori", "pemain", {
-    judulHtml: hlHtml("tk.s.pemain.j", num(D.org.length), { nama: nm(KODE) }), sub: esc(t("tk.s.pemain.sub", { n: daftar.length })),
-    isiHtml: `<ul class="jm-tk-pemain">${kartu}</ul>`, sumber: src("tk.src.org", ORG.dibangun_pada),
+    judulHtml: hlHtml("tk.s.pemain.j", num(D.org.length), { nama: nm(KODE) }), sub: esc(t("tk.s.pemain.sub")),
+    isiHtml: `<ul class="tkp-grid">${kartu}</ul>` + navLokal({ total: daftar.length, per: PER_PEMAIN, satuan: "jm.pag.u.data" }), sumber: src("tk.src.org", ORG.dibangun_pada),
   });
 }
 
 function sBerita(D) {
   if (!D.ber.length) return "";
   const kartu = D.ber.slice(0, 6).map((b) => {
-    const f = fotoBerita(FOTO, b.id), u = amanUrl(b.url), lg = logoLokal(b.media);
-    return `<li><a href="${esc(u || "#")}" target="_blank" rel="noopener noreferrer">${f ? `<img class="jm-tk-brt-f" src="${esc(f)}" alt="" loading="lazy" decoding="async" referrerpolicy="no-referrer">` : `<span class="jm-tk-brt-k">${ikon("berita", 32)}</span>`}<span class="jm-tk-brt-t">${esc(b.judul)}</span><span class="jm-tk-brt-p">${(b.kepakaran || []).slice(0, 2).map(pilTek).join("")}</span><small class="jm-tk-media">${lg ? `<img src="${esc(lg)}" width="16" height="16" alt="" loading="lazy" decoding="async" data-galat="hapus">` : ""}<span>${esc(namaMedia(b.media))}, ${esc(tanggal(String(b.terbit).slice(0, 10)))}</span></small></a></li>`;
+    const f = b.gambar || fotoBerita(FOTO, b.id), u = amanUrl(b.url), lg = logoLokal(b.media), nmMedia = namaMedia(b.media);
+    const sampul = f ? `<img class="tkp-sp" src="${esc(f)}" alt="" loading="lazy" decoding="async" referrerpolicy="no-referrer" data-lg="1">`
+      : `<span class="tkp-sp tkp-sp-l jm-tek-${esc(KODE)}"><span class="tkp-lm"><b>${esc(inisial(nmMedia))}</b>${lg ? `<img src="${esc(lg)}" alt="" loading="lazy" decoding="async" data-lg="1">` : ""}</span></span>`;
+    return `<li><a class="tkp-brt" href="${esc(u || "#")}" target="_blank" rel="noopener noreferrer">${sampul}<span class="tkp-bt">${esc(rapi(b.judul))}</span><span class="tkp-pils">${(b.kepakaran || []).slice(0, 2).map(pilTek).join("")}</span><small class="tkp-md">${lg ? `<img src="${esc(lg)}" width="16" height="16" alt="" loading="lazy" decoding="async" data-lg="1">` : ""}<span>${esc(nmMedia)}, ${esc(tanggal(String(b.terbit).slice(0, 10)))}</span></small></a></li>`;
   }).join("");
   return bagian("tk-berita", "berita", "berita", {
     judulHtml: hlHtml("tk.s.berita.j", num(D.ber.length), { nama: nm(KODE) }), sub: esc(t("tk.s.berita.sub")),
-    isiHtml: `<ul class="jm-tk-berita">${kartu}</ul>`, sumber: src("tk.src.berita", BER.dibangun_pada),
+    isiHtml: `<ul class="tkp-berita">${kartu}</ul>`, sumber: src("tk.src.berita", BER.dibangun_pada),
     kakiHtml: lihatSemuaHtml(`/berita?teknologi=${encodeURIComponent(C.kep)}`, t("tk.lihat.berita"), num(D.ber.length)),
   });
 }
@@ -266,11 +284,11 @@ if (!C) {
     const gambar = () => { gambarKepala(); gambarIsi(); };
     gambar();
     saatBahasa(gambar);
-    // logo yang gagal dimuat diganti ikon gedung (tanpa atribut on*)
+    // logo yang gagal dimuat dicabut (cadangan monogram) (tanpa atribut on*)
     isi.addEventListener("error", (e) => {
       const im = e.target;
-      if (im.tagName === "IMG" && im.dataset.lg) im.replaceWith(Object.assign(document.createElement("span"), { innerHTML: ikon("direktori", 32) }).firstChild);
+      if (im.tagName === "IMG" && im.dataset.lg) im.remove(); /* monogram / sampul gradien di bawahnya tampil */
     }, true);
-    pasangLokal(isi, (w) => w.closest(".jm-ex-bd").querySelectorAll("tbody tr"));
+    pasangLokal(isi, (w) => w.closest(".jm-ex-bd").querySelectorAll("tbody tr, .tkp-li"));
   }
 }

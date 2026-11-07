@@ -135,3 +135,115 @@ export const nf = (x, d = 1) => String(Number(x.toFixed(d))).replace('.', ',');
 export const SPUBFIN = S('IRENA Public Finance Database dan OECD DAC, penerima Indonesia, juta USD 2023 (public/data/keuangan_hijau.json)', 'IRENA dan OECD', 'https://pxweb.irena.org/pxweb/en/IRENASTAT/IRENASTAT__Finance/', '2026-11-08', 2026, 'resmi', 'IRENA: bebas dipakai dengan atribusi');
 
 export const nfe = (x, d = 1) => String(Number(x.toFixed(d)));
+
+/* ====== Pendalaman 8 Nov 2026: koneksi id ke data repo + penambahan bab. Tidak ada id karangan: id yang tak ada di JSON repo = galat. ====== */
+const normNama = (s) => String(s || '').toLowerCase().normalize('NFKD').replace(/\(persero\)|\btbk\b|\bpt\b\.?|\bcv\b|[^a-z0-9 ]/g, ' ').replace(/\s+/g, ' ').trim();
+let _idx;
+function indeksOrg() {
+  if (_idx) return _idx;
+  const m = new Map(), dobel = new Set();
+  for (const o of baca('public/data/organisasi.json').baris) for (const n of [o.nama, o.singkatan, ...(o.nama_lain || [])]) {
+    const k = normNama(n); if (k.length < 3) continue;
+    if (m.has(k) && m.get(k) !== o.id) dobel.add(k); else m.set(k, o.id);
+  }
+  dobel.forEach((k) => m.delete(k));
+  return (_idx = m);
+}
+const ALIAS_ORG = { 'pt pln': 'su_ed074ff5', pln: 'su_ed074ff5', 'kementerian esdm': 'l_7278e0528a', esdm: 'l_7278e0528a', 'kementerian keuangan': 'l_7b43a2574c', kemenkeu: 'l_7b43a2574c', brin: 'l_973f60de15', ojk: 'l_15e21f04fa', danantara: 'l_43f00f6a72', 'ditjen ebtke': 'l_38ba1d6f56', smi: 'p_a235c21f23', 'pln indonesia power': 'p_5a2e7d0c63', 'pln nusantara power': 'p_ff7a390a42', 'pln icon plus': 'p_e0f3886341', pertamina: 'p_b1c52ad7b0', adb: 'in_9a375db244', jica: 'in_eb327fef3a', 'world bank': 'l_18a9ec31f4' };
+export const idOrg = (nama) => { const k = normNama(nama); return ALIAS_ORG[k] || indeksOrg().get(k) || null; };
+const ORGS = () => new Set(baca('public/data/organisasi.json').baris.map((o) => o.id));
+const PJS = () => new Set(baca('public/data/proyek.json').baris.map((o) => o.id));
+export const cekId = (jenis, id) => {
+  const peta = { org: ORGS, pj: PJS, pend: () => new Set(baca('public/data/pendanaan.json').pendanaan.map((x) => x.id)), reg: () => new Set(baca('public/data/regulasi.json').baris.map((x) => x.id)), riset: () => new Set(baca('public/data/riset.json').map((x) => x.id)), inov: () => new Set(baca('public/data/inovasi.json').inovasi.map((x) => x.id)), pus: () => new Set(baca('public/data/pustaka.json').baris.map((x) => x.id)), kal: () => new Set(baca('public/data/kalender.json').baris.map((x) => x.id)), ber: () => new Set(baca('public/data/berita.json').baris.map((x) => x.id)), gppd: () => new Set(baca('public/data/gppd.json').baris.map((x) => x.id)) };
+  const h = (cekId._c ||= {}); const s = (h[jenis] ||= peta[jenis]());
+  if (!s.has(id)) throw new Error(`id ${jenis} tidak ada di repo: ${id}`);
+  return id;
+};
+export const SDIREKTORI = S('Direktori METI: organisasi, proyek, pendanaan, regulasi, riset (berkas public/data/*.json; tiap baris punya sumber sendiri di berkasnya)', 'METI', 'https://platformmeti.timitbnpb.workers.dev', '2026-11-08', 2026, 'via-pihak-ketiga');
+
+/* sel teks: string atau [id,en] */
+const sel = (v) => (Array.isArray(v) ? T(v[0], v[1]) : v);
+/* bab 9: pemain. tambahan = [[nama, [peranId, peranEn], rujuk, idEksplisit?]]; baris lama dipertahankan dan diberi id bila nama cocok */
+export function pemain(d, tambahan, dasarId, maks = 45) {
+  const b = d.bab['9']; const ada = new Set();
+  const baris = b.baris.map((r) => { const id = r.id || idOrg(r.nama); if (id) ada.add(id); return { nama: r.nama, ...(id ? { id, url: '/o/' + id } : {}), peran: r.peran, rujuk: r.rujuk }; });
+  for (const [nama, peran, rujuk, ide] of tambahan) {
+    const id = ide ? cekId('org', ide) : idOrg(nama);
+    if (id && ada.has(id)) continue; if (id) ada.add(id);
+    baris.push({ nama, ...(id ? { id, url: '/o/' + id } : {}), peran: sel(peran), rujuk });
+  }
+  const ds = baca(`public/data/topik/dasar-${dasarId}.json`).pemain || [];
+  for (const o of ds) if (baris.length < maks && !ada.has(o.id)) { ada.add(o.id); baris.push({ nama: o.nama, id: o.id, url: '/o/' + o.id, peran: T(`${o.kategori || 'Organisasi'}; peran rantai: ${(o.peran || []).join(', ') || 'tercatat di direktori'}`, `${o.kategori || 'Organisation'}; chain role: ${(o.peran || []).join(', ') || 'listed in the directory'}`), rujuk: 'Direktori METI' }); }
+  d.bab['9'] = { ...b, kolom: [kol('nama', 'Pelaku', 'Actor', { url: 'url' }), kol('peran', 'Peran di topik ini', 'Role in this topic'), kol('rujuk', 'Dasar', 'Basis')], baris, sumber: [...new Set([...b.sumber, 'direktori'])], per: 15, catatan: T('Tautan nama mengarah ke profil di direktori METI bila organisasinya tercatat; pelaku tanpa tautan belum ada di direktori dan dicatat dari sumber di kolom Dasar.', 'Names link to the METI directory profile when the organisation is listed; actors without a link are not yet in the directory and are noted from the source in the Basis column.') };
+  d.sumber.direktori = SDIREKTORI;
+}
+/* bab 10: proyek. lama: peta kolom lama -> kanonik; tambahan = [[nama, wilayah, ukuran, status, rujuk, idProyekOpsional]] */
+export function proyek(d, peta, tambahan, judulKol = ['Proyek', 'Project']) {
+  const b = d.bab['10']; const ada = new Set();
+  const ambil = (r, k) => { const v = peta[k] ? r[peta[k]] : r[k]; return v == null ? '-' : v; };
+  const baris = b.baris.map((r) => { const nama = r[peta.nama || 'nama']; const id = r.id || null; return { nama, ...(id ? { id, url: '/p/' + id } : {}), wilayah: ambil(r, 'wilayah'), ukuran: ambil(r, 'ukuran'), status: ambil(r, 'status'), sumber: r.sumber || r.rujuk || '-' }; });
+  for (const [nama, wil, uk, st, rujuk, idp] of tambahan) {
+    const id = idp ? (idp.startsWith('WRI') ? cekId('gppd', idp) : cekId('pj', idp)) : null; if (id) ada.add(id);
+    baris.push({ nama, ...(id ? (id.startsWith('WRI') ? { id } : { id, url: '/p/' + id }) : {}), wilayah: sel(wil), ukuran: sel(uk), status: sel(st), sumber: rujuk });
+  }
+  d.bab['10'] = { ...b, kolom: [kol('nama', judulKol[0], judulKol[1], { url: 'url' }), kol('wilayah', 'Wilayah', 'Region'), kol('ukuran', 'Ukuran', 'Size'), kol('status', 'Status menurut sumber', 'Status per source'), kol('sumber', 'Dasar', 'Basis')], baris, per: 15 };
+}
+/* bab 12: regulasi. cat = { idRegulasi: [id,en] } ditambahkan; baris lama diberi id */
+export function regulasi(d, cat) {
+  const R = baca('public/data/regulasi.json').baris;
+  const b = d.bab['12']; const ada = new Set();
+  const nm = (r) => `${JENIS[r.jenis] || r.jenis} ${r.nomor}/${r.tahun}`;
+  const baris = b.baris.map((x) => { const r = R.find((q) => nm(q) === x.nama); if (r) ada.add(r.id); return { ...x, ...(r ? { id: r.id } : {}) }; });
+  for (const [i, ring] of Object.entries(cat)) { if (ada.has(i)) continue; const t = tabelRegulasi({ [i]: ring })[0]; baris.push({ ...t, id: i }); ada.add(i); }
+  d.bab['12'] = { ...b, baris, per: 10 };
+}
+/* ganti paragraf/butir: tambah ke daftar bab */
+export const tambah = (d, n, kunciDaftar, butir) => { d.bab[n][kunciDaftar].push(...butir); };
+export const pasang = (d, n, bab) => { d.bab[n] = bab; };
+export function sumberBaru(d, peta) { Object.assign(d.sumber, peta); }
+export function pangkas(d) {
+  const dipakai = JSON.stringify({ ku: d.kunci, bab: d.bab });
+  d.sumber = Object.fromEntries(Object.entries(d.sumber).filter(([k]) => dipakai.includes(`"${k}"`)));
+  return d;
+}
+/* gabungkan sumber ke daftar bab */
+export const pakaiSumber = (d, n, ...s) => { d.bab[n].sumber = [...new Set([...(d.bab[n].sumber || []), ...s])]; };
+
+/* bab pembiayaan: skema dari public/data/pendanaan.json (id wajib ada). daftar = [[id, [ringkasId, ringkasEn]]] */
+export function skema(daftar, catatan) {
+  const P = new Map(baca('public/data/pendanaan.json').pendanaan.map((x) => [x.id, x]));
+  const baris = daftar.map(([id, r]) => { const x = P.get(id); if (!x) throw new Error('pendanaan tidak ada: ' + id); return { nama: x.nama, id, url: x.url || x.sumber_url, pemberi: x.pemberi || '-', jenis: x.jenis || '-', bukti: x.tingkat_bukti || '-', ringkas: T(...r) }; });
+  return { tipe: 'tabel', per: 8, sumber: ['direktori'], kolom: [kol('nama', 'Skema', 'Scheme', { url: 'url' }), kol('pemberi', 'Pemberi', 'Provider'), kol('jenis', 'Jenis', 'Type'), kol('bukti', 'Tingkat bukti', 'Evidence level'), kol('ringkas', 'Relevansi untuk topik ini', 'Relevance to this topic')], baris, ...(catatan ? { catatan: T(...catatan) } : {}) };
+}
+/* tabel riset kampus/peneliti dari irisan dasar (id OpenAlex). kata = regex judul, maks baris */
+export function risetTabel(dasarId, kata, maks = 10, catatan) {
+  const baris = (baca(`public/data/topik/dasar-${dasarId}.json`).riset || []).filter((r) => kata.test(r.judul)).sort((a, b) => (b.sitasi || 0) - (a.sitasi || 0)).slice(0, maks).map((r) => ({ judul: r.judul, id: cekId('riset', r.id), url: r.url, penulis: (r.penulis || []).join(', '), jurnal: `${r.jurnal || '-'} (${r.tahun || '-'})`, sitasi: r.sitasi ?? 0 }));
+  return { tipe: 'tabel', per: 10, sumber: ['direktori'], kolom: [kol('judul', 'Karya', 'Work', { url: 'url' }), kol('penulis', 'Penulis', 'Authors'), kol('jurnal', 'Jurnal (tahun)', 'Journal (year)'), kol('sitasi', 'Sitasi', 'Citations', { num: true, d: 0 })], baris, ...(catatan ? { catatan: T(...catatan) } : {}) };
+}
+/* satu butir linimasa dari regulasi repo: tanggal dan url diambil dari JSON, teks ditulis tangan */
+export function linReg(id, a, b) {
+  const r = baca('public/data/regulasi.json').baris.find((x) => x.id === id); if (!r || !r.tanggal_ditetapkan) throw new Error('regulasi/tanggal tidak ada: ' + id);
+  return [r.tanggal_ditetapkan, a, b, r.url_sumber];
+}
+/* sumber untuk proyek Bank Dunia di public/data/proyek.json */
+export const SWB = S('World Bank Projects and Operations, ringkasan proyek Indonesia (diolah repo: public/data/proyek.json, id wb_P...)', 'The World Bank', 'https://projects.worldbank.org/en/projects-operations/projects-home', '2026-11-07', 2026, 'resmi', 'CC BY 4.0');
+export const nilaiProyek = (id) => { const p = baca('public/data/proyek.json').baris.find((x) => x.id === id); if (!p) throw new Error('proyek tidak ada: ' + id); return p; };
+export const juta = (usd) => nf(usd / 1e6, 0);
+
+/* pasar listrik nasional: dihitung dari public/data/statistik_pln.json dan kelistrikan.json (tahun 2024), semua EST karena penjumlahan 38 provinsi */
+export const SSTATPLN = S('Statistik Ketenagalistrikan 2024, Ditjen Ketenagalistrikan ESDM (diolah repo: public/data/statistik_pln.json dan kelistrikan.json, 38 provinsi)', 'Kementerian ESDM', 'https://gatrik.esdm.go.id/gatrik/gatrik-api//storage/migrasi/download_index/files/91fa8-buku-statistik-ketenagalistrikan-2024.pdf', '2026-11-07', 2024, 'resmi');
+export function pasarListrik() {
+  const sp = baca('public/data/statistik_pln.json').baris, kl = baca('public/data/kelistrikan.json').baris;
+  const fm = (x, d = 0) => x.toLocaleString('id-ID', { maximumFractionDigits: d });
+  const fe = (x, d = 0) => x.toLocaleString('en-US', { maximumFractionDigits: d });
+  const jenis = (k) => sp.reduce((a, x) => a + (x.kapasitas_terpasang_mw[k] || 0), 0);
+  const kap = jenis('total'), pltu = jenis('PLTU/MT'), terb = jenis('PLTS') + jenis('PLTB') + jenis('PLTA/M') + jenis('PLTP') + jenis('PLT Bio');
+  const rt = kl.reduce((a, x) => a + (x.rumah_tangga_berlistrik_jumlah || 0), 0);
+  const re = kl.filter((x) => Number.isFinite(x.rasio_elektrifikasi_persen)).sort((a, b) => a.rasio_elektrifikasi_persen - b.rasio_elektrifikasi_persen);
+  return [
+    T(`Kapasitas terpasang seluruh pengusaha (PLN dan nonPLN) 2024: ${fm(kap)} MW, jumlah 38 provinsi (EST; Statistik Ketenagalistrikan 2024).`, `Installed capacity of all operators (PLN and non-PLN) in 2024: ${fe(kap)} MW, the sum of 38 provinces (EST; Electricity Statistics 2024).`),
+    T(`Komposisi: kategori PLTU/MT ${fm(pltu)} MW (${fm((pltu / kap) * 100, 1)} persen); hidro, panas bumi, surya, bayu, dan bio ${fm(terb)} MW (${fm((terb / kap) * 100, 1)} persen) (EST).`, `Mix: the PLTU/MT category ${fe(pltu)} MW (${fe((pltu / kap) * 100, 1)} percent); hydro, geothermal, solar, wind and bio ${fe(terb)} MW (${fe((terb / kap) * 100, 1)} percent) (EST).`),
+    T(`Rumah tangga berlistrik (PLN dan nonPLN) 2024: ${fm(rt)} rumah tangga, jumlah 38 provinsi (EST).`, `Electrified households (PLN and non-PLN) in 2024: ${fe(rt)} households, the sum of 38 provinces (EST).`),
+    T(`Rasio elektrifikasi 2024 terendah ${re[0].provinsi} (${fm(re[0].rasio_elektrifikasi_persen, 2)} persen) dan tertinggi ${re.at(-1).provinsi} (${fm(re.at(-1).rasio_elektrifikasi_persen, 2)} persen).`, `The 2024 electrification ratio was lowest in ${re[0].provinsi} (${fe(re[0].rasio_elektrifikasi_persen, 2)} percent) and highest in ${re.at(-1).provinsi} (${fe(re.at(-1).rasio_elektrifikasi_persen, 2)} percent).`),
+  ];
+}

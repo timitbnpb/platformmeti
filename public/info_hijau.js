@@ -78,7 +78,7 @@ export function garisSvg({ seri, satuan, el, label, xTick, skalaLog = false, ano
     const dot = s.titik.length <= 30 ? s.titik.map((p) => `<circle class="ih-tk" cx="${x(p.x).toFixed(1)}" cy="${y(p.y).toFixed(1)}" r="3"/>`).join("") : "";
     return `<g class="ih-g ${s.kelas}${mati.has(s.id) ? " ih-mati" : ""}" data-s="${esc(s.id)}"><polyline class="ih-gr" points="${pts}"/>${dot}</g>`;
   }).join("");
-  const an = anot.map((a) => { const p = seri[0].titik.find((q) => q.x === a); if (!p) return ""; const px = x(p.x), py = y(p.y), fin = px > W * 0.7; return `<g class="ih-g ${seri[0].kelas}"><circle class="ih-an" cx="${px.toFixed(1)}" cy="${py.toFixed(1)}" r="6"/></g><text class="ih-lbl ih-lbl-an" x="${(fin ? px - 8 : px + 9).toFixed(1)}" y="${(fin ? py + 20 : py - 10).toFixed(1)}" text-anchor="${fin ? "end" : "start"}">${esc(`${a}: ${n1(p.y, p.y < 10 ? 2 : 0)}`)}</text>`; }).join("");
+  const an = anot.filter((a) => W >= 500 || a === anot[0]).map((a) => { const p = seri[0].titik.find((q) => q.x === a); if (!p) return ""; const px = x(p.x), py = y(p.y), fin = px > W * 0.7, bawah = fin && py + 20 < H - B - 6; return `<g class="ih-g ${seri[0].kelas}"><circle class="ih-an" cx="${px.toFixed(1)}" cy="${py.toFixed(1)}" r="6"/></g><text class="ih-lbl ih-lbl-an" x="${(fin ? px - 8 : px + 9).toFixed(1)}" y="${(bawah ? py + 20 : py - 10).toFixed(1)}" text-anchor="${fin ? "end" : "start"}">${esc(`${a}: ${n1(p.y, p.y < 10 ? 2 : 0)}`)}</text>`; }).join("");
   const id = ++gidN;
   GR.set(String(id), { W, H, X: x, Y: y, xs: [...new Set(semua.map((p) => p.x))].sort((a, b) => a - b), seri: seri.map((s) => ({ ...s, pts: [...s.titik].sort((a, b) => a.x - b.x) })), satuan, ringkas, T, B });
   if (GR.size > 40) GR.delete(GR.keys().next().value);

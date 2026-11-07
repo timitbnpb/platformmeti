@@ -3,6 +3,7 @@
 // Pakai: node scripts/pipa/topik_panas_bumi.mjs [--selftest]   (selftest: bangun di memori + validasi, tidak menulis berkas)
 import { readFileSync, writeFileSync } from "node:fs";
 import { fileURLToPath } from "node:url";
+import { perdalam } from "./topik_dalam_panas_bumi.mjs";
 
 const AKAR = new URL("../../", import.meta.url);
 const baca = (n) => JSON.parse(readFileSync(new URL("public/data/" + n + ".json", AKAR), "utf8"));
@@ -454,7 +455,7 @@ const kasusGagal = [
 ];
 
 /* ---------------- bab ---------------- */
-function bangun() {
+function bangunDasar() {
   const { tren, wkp, wkpSumber, keu, proyek, dasar } = irisan();
   const akhir = tren[tren.length - 1], thn2024 = tren.find((t) => t.tahun === 2024), thn2015 = tren.find((t) => t.tahun === 2015);
   const cf2024 = thn2024.pembangkitan_gwh / (thn2024.kapasitas_mw * 8.76); // GWh / (MW x 8,76 ribu jam) = faktor kapasitas
@@ -739,6 +740,7 @@ export function periksa(n) {
   return m;
 }
 
+function bangun() { return perdalam(bangunDasar(), sumber); }
 export const naskah = bangun;
 if (process.argv[1] === fileURLToPath(import.meta.url)) {
   const n = bangun(); const m = periksa(n);

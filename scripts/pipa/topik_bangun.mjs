@@ -29,6 +29,7 @@ const TOPIK = [
   { id: "sampah-energi", ikon: "biomassa-sampah", foto: "/img/beranda/sampah-psel.webp", kep: ["sampah", "biomassa-sampah"], tek: ["biomassa-sampah"], reg: [], kata: /psel|pltsa|sampah jadi energi|waste.to.energy|pengolahan sampah/i },
 ];
 
+const TOPIK_DALAM = new Set(["surya", "bayu", "panas-bumi", "hidro"]);
 const proyek = baca("proyek").baris, org = baca("organisasi").baris, reg = baca("regulasi").baris, inov = baca("inovasi").inovasi;
 const berita = baca("berita").baris, kal = baca("kalender").baris, pus = baca("pustaka").baris, pakar = baca("pakar_riset"), studi = baca("pusat_studi"), riset = baca("riset");
 const sama = (a, b) => (a || []).some((x) => b.includes(x));
@@ -109,17 +110,18 @@ const indeks = [];
 const per = {};
 for (const T of TOPIK) {
   const x = irisTopik(T);
+  const L = (n) => (TOPIK_DALAM.has(T.id) ? Math.round(n * 2.5) : n); /* topik yang sudah diperdalam menampilkan irisan lebih lebar */
   const blok = {
-    pemain: urut(x.og, (o) => (o.proyek_ids || []).length).slice(0, 24).map(rinci.pemain),
-    proyek: x.pj.length ? { jumlah: x.pj.length, mw: Math.round(x.mw), beroperasi: x.beroperasi.length, daftar: urut(x.pj, (p) => mwProyek(p) || 0).slice(0, 30).map(rinci.proyek) } : null,
+    pemain: urut(x.og, (o) => (o.proyek_ids || []).length).slice(0, L(24)).map(rinci.pemain),
+    proyek: x.pj.length ? { jumlah: x.pj.length, mw: Math.round(x.mw), beroperasi: x.beroperasi.length, daftar: urut(x.pj, (p) => mwProyek(p) || 0).slice(0, L(30)).map(rinci.proyek) } : null,
     regulasi: x.rg.map(rinci.regulasi),
-    inovasi: x.iv.slice(0, 20).map(rinci.inovasi),
-    berita: x.br.slice(0, 12).map(rinci.berita),
-    acara: x.ac.slice(0, 12).map(rinci.acara),
-    pustaka: x.pk.slice(0, 12).map(rinci.pustaka),
-    pakar: x.pr.slice(0, 12).map(rinci.pakar),
-    studi: x.ps.slice(0, 10).map(rinci.studi),
-    riset: x.rs.slice(0, 10).map(rinci.riset),
+    inovasi: x.iv.slice(0, L(20)).map(rinci.inovasi),
+    berita: x.br.slice(0, L(12)).map(rinci.berita),
+    acara: x.ac.slice(0, L(12)).map(rinci.acara),
+    pustaka: x.pk.slice(0, L(12)).map(rinci.pustaka),
+    pakar: x.pr.slice(0, L(12)).map(rinci.pakar),
+    studi: x.ps.slice(0, L(10)).map(rinci.studi),
+    riset: x.rs.slice(0, L(10)).map(rinci.riset),
   };
   const hitung = { organisasi: x.og.length, proyek: x.pj.length, mw: Math.round(x.mw), regulasi: x.rg.length, inovasi: x.iv.length, berita: x.br.length, acara: x.ac.length, pustaka: x.pk.length, pakar: x.pr.length, studi: x.ps.length, riset: x.rs.length };
   const isi = Object.entries({ pemain: blok.pemain.length, proyek: blok.proyek ? 1 : 0, regulasi: blok.regulasi.length, inovasi: blok.inovasi.length, berita: blok.berita.length, acara: blok.acara.length, pustaka: blok.pustaka.length, pakar: blok.pakar.length, studi: blok.studi.length, riset: blok.riset.length }).filter(([, n]) => n > 0).map(([k]) => k);

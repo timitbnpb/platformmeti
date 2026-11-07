@@ -5,7 +5,7 @@
 .jm-pel-penuh{position:relative;height:max(560px,75vh);border:0;border-radius:0 0 var(--r-lg) var(--r-lg);background:var(--surface);overflow:clip}
 .jm-pel-kanvas{position:absolute;inset:0;width:100%;height:100%}
 .jm-pel-lapis,.jm-pel-panel{position:absolute;z-index:3;border:1px solid var(--line);border-radius:16px;background:color-mix(in srgb,var(--card) 94%,transparent);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);box-shadow:var(--shadow);font-size:var(--t-kecil)}
-.jm-pel-lapis{top:12px;left:12px;width:min(248px,calc(100% - 24px))}
+.jm-pel-lapis{top:12px;left:12px;width:min(268px,calc(100% - 24px))}
 .jm-pel-panel{top:12px;right:12px;width:min(340px,calc(100% - 24px));max-height:calc(100% - 24px);display:flex;flex-direction:column;overflow:hidden}
 .jm-pel-panel:not([open]),.jm-pel-lapis:not([open]){width:auto}
 .jm-pel-lapis summary,.jm-pel-panel summary{cursor:pointer;min-height:40px;padding:0 14px;display:flex;align-items:center;gap:10px;font:700 var(--t-label)/1 var(--font);letter-spacing:normal;text-transform:none;color:var(--head);list-style:none}
@@ -133,7 +133,7 @@
 .jm-pel-top b{font-variant-numeric:tabular-nums;color:var(--accent)}
 
 /* peta, kepala, dan segmen satu wadah exhibit */
-#exPeta>.jm-ex-bd{padding:0}
+#exPeta .jm-ex>.jm-ex-bd{padding:0}
 #exPeta .jm-pel-seg{position:sticky;top:var(--top,0px);z-index:6;padding:12px 22px;border-bottom:1px solid var(--line);background:var(--card)}
 .jm-pel-seg .jm-kl-tb[aria-pressed="true"]{border-color:var(--brand);background:var(--brand);color:var(--on-brand)}
 .jm-pel-seg .jm-kl-tb[aria-pressed="true"] .jm-ikt,.jm-pel-seg .jm-kl-tb[aria-pressed="true"] .jm-ik{color:var(--on-brand)}
@@ -229,3 +229,9 @@
 .jm-pa-as:focus-visible{outline:2px solid var(--fokus);outline-offset:2px}
 .jm-pa-celah{margin:6px 0 0;padding-left:18px}
 @media (max-width:767px){.jm-pa-tab .jm-pa-grup th{display:block}}
+.jm-pa-ub .jm-kpi-ik{order:0;grid-column:1;grid-row:1;position:static;float:none;inset:auto}
+.jm-pa-ub-t{order:1;grid-column:2;grid-row:1}
+.jm-pa-ub .jm-pa-lbl{order:1}.jm-pa-ub .jm-pa-nilai{order:2}.jm-pa-ub .jm-pa-sub{order:3}
+.jm-pa-ub-t{display:flex;flex-direction:column}
+#paEx1>.jm-ex-bd{display:none}
+@media (max-width:599px){.jm-pel-seg .jm-kl-tb{padding:0 6px;gap:4px;font-size:var(--t-kecil)}}

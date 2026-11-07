@@ -66,7 +66,7 @@ function aturanHtml() {
   return `<p class="jm-bantu">${esc(a.judul)}</p><ul class="jm-pa-butir">${butir}</ul><p class="jm-redup">${esc(t("plts.aturan_cat", { tanggal: tanggal(a.tanggal_periksa) }))}</p>${sumber}`;
 }
 
-const medan = (id, ik, label, nilai) => `<div class="jm-pa-f"><label class="jm-pa-fl" for="${id}">${ikon(ik, 16)}<span>${esc(label)}</span></label><div class="jm-pa-angka"><span class="jm-pa-rp">${esc(t("plts.rp_sim"))}</span><input id="${id}" type="text" inputmode="numeric" autocomplete="off" value="${nilai ? esc(angka(nilai)) : ""}" placeholder="${esc(t("plts.contoh"))}"></div></div>`;
+const medan = (id, ik, label, nilai) => `<div class="jm-pa-f"><label class="jm-pa-fl" for="${id}">${ikon(ik, 16)}<span>${esc(label)}</span></label><div class="jm-pa-angka"><span class="jm-pa-rp">${esc(t("plts.rp_sim"))}</span><input id="${id}" type="text" inputmode="numeric" autocomplete="off" value="${nilai ? esc(angka(nilai)) : ""}" placeholder="${esc(id === "paHarga" ? t("plts.opsional") : t("plts.contoh"))}"></div></div>`;
 function kontrolHtml() {
   const kel = Object.keys(IK_KELOMPOK);
   const gol = D.tarif.slice().sort((x, y) => kel.indexOf(x.kelompok) - kel.indexOf(y.kelompok)).map((g) => [g.id, `${g.golongan} (${angka(g.tarif_idr_per_kwh, { desimal: 0 })}/kWh)`, IK_KELOMPOK[g.kelompok] || "info", "", t("plts.kel." + g.kelompok.replace(/ /g, "_"))]);

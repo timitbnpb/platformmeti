@@ -66,7 +66,7 @@
 .ih-tr{display:flex;justify-content:space-between;gap:16px;align-items:baseline}
 .ih-tr em{display:inline-flex;align-items:center;gap:6px;font-style:normal;color:var(--ink2)}
 .ih-tr strong{color:var(--ink);font-weight:600;text-align:right;white-space:nowrap}
-.ih-tr-on em,.ih-tr-on strong{font-weight:800;color:var(--head)}
+.ih-tr-on em,.ih-tr-on strong{font-weight:700;color:var(--head)}
 .ih-tr strong small,.ih-ub-k{margin-left:8px;font-weight:700}
 .ih-ring{color:var(--ink2);margin-top:2px}
 .ih-naik{color:var(--bad)}.ih-turun{color:var(--ok)}
@@ -102,3 +102,6 @@
 .ih-ti>span:first-child{display:inline-flex}
 @media (min-width:720px){#tb-lcoe td.jm-num,#tb-modul td.jm-num,#tb-banding td.jm-num{text-align:center}}
 #tb-bpp td,#tb-lcoe td,#tb-banding td,#tb-modul td{vertical-align:middle}
+.ih-ub{width:max-content;max-width:none;justify-self:start}
+.ih-ub svg{flex:none;width:12px;height:12px}
+@media (min-width:720px){.jm-tabel td .ih-ub{justify-self:center}}

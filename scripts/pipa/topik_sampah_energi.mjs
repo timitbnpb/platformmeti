@@ -6,6 +6,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { validasi } from './topik_surya.mjs';
+import { perdalam } from './topik_sampah_energi_dalam.mjs';
 export { validasi };
 const akar = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '../..');
 const ID = 'sampah-energi';
@@ -350,6 +351,7 @@ export function susun() {
     dasarP('pln', 'operasi', 'Catat realisasi listrik per ton dari Benowo dan Putri Cempo sebagai acuan.', 'Record actual electricity per tonne from Benowo and Putri Cempo as a benchmark.', 'wekdm'),
     dasarP('meti', 'operasi', 'Pantau groundbreaking Bali dan Bekasi terhadap target 2027 dan 2028, dan beri hak jawab pada pihak yang disebut.', 'Track Bali and Bekasi groundbreaking against 2027 and 2028 targets, and give named parties a right of reply.', 'bekasi'),
   ] };
+  perdalam(bab, SUMBER);
   return {
     id: ID, versi: 1, diperbarui: TGL,
     judul: T('Sampah jadi energi', 'Waste to energy'),

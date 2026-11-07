@@ -464,6 +464,8 @@ export function bangun(masukan = {}) {
   const orangIds = new Set(orang.keys());
   const idxOrang = bangunOrang([...orang.values()]);
   const idxLembaga = bangunLembaga([...org.values()].filter((o) => orgPub.has(o.id)).map((o) => ({ ...o, nama_lain: [].concat(o.nama_lain || [], ALIAS_ORG[o.id] || []) })));
+  // Medan gambar berita (berita_gambar.mjs) dibawa dari berita.json yang sudah ada; panen ulang tidak boleh membuangnya.
+  const gambarLama = new Map(); try { for (const x of JSON.parse(fs.readFileSync(path.join(ROOT, 'public/data/berita.json'), 'utf8')).baris) if (x.gambar !== undefined) gambarLama.set(x.id, { gambar: x.gambar, gambar_sumber: x.gambar_sumber, gambar_kredit: x.gambar_kredit }); } catch { /* belum ada */ }
   for (const b of beritaRows.sort((x, y) => (x.id < y.id ? -1 : 1))) {
     const nj = ' ' + norm(b.judul) + ' ';
     const o_ids = unik(lembagaDari(b.judul, idxLembaga));
@@ -471,7 +473,7 @@ export function bangun(masukan = {}) {
     const p_ids = unik([...namaProyek.filter((k) => nj.includes(k.n)).map((k) => k.id), ...kaya.proyek_ids]);
     const r_ids = unik([...[...b.judul.matchAll(regPola)].map((m) => `${m[1].toLowerCase().split(' ')[0]}-${m[2]}-${m[3]}`).filter((id) => regById.has(id)), ...kaya.regulasi_ids]);
     const ent = b.entitas_disebut || []; const pasti = unik([...ent.filter((e) => e.jenis !== 'kandidat-rujukan' && orangIds.has(e.orang_id)).map((e) => e.orang_id), ...orangDari(b.judul, idxOrang)]); const kand = unik(ent.filter((e) => e.jenis === 'kandidat-rujukan' && orangIds.has(e.orang_id)).map((e) => e.orang_id));
-    beritaPub.push(bersih({ id: b.id, judul: b.judul, url: b.url, media: b.media, terbit: b.terbit, bahasa: b.bahasa, kepakaran: b.kepakaran, organisasi_ids: o_ids, proyek_ids: p_ids, regulasi_ids: r_ids, orang_ids: pasti, wilayah: kaya.wilayah, sumber_panen: b.sumber_panen, tanggal_ambil: b.tanggal_ambil }));
+    beritaPub.push(bersih({ id: b.id, judul: b.judul, url: b.url, media: b.media, terbit: b.terbit, bahasa: b.bahasa, kepakaran: b.kepakaran, organisasi_ids: o_ids, proyek_ids: p_ids, regulasi_ids: r_ids, orang_ids: pasti, wilayah: kaya.wilayah, sumber_panen: b.sumber_panen, tanggal_ambil: b.tanggal_ambil, ...gambarLama.get(b.id) }));
     if (kand.length) beritaPen.push({ id: b.id, orang_kandidat_ids: kand });
     for (const [k, ids] of [['organisasi', o_ids], ['proyek', p_ids], ['regulasi', r_ids], ['orang', pasti]]) for (const i of ids) (revB[k].get(i) || revB[k].set(i, []).get(i)).push(b);
   }

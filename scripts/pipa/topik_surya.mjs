@@ -5,6 +5,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { perdalam } from './topik_dalam_surya.mjs';
 const akar = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '../..');
 const TGL = '2026-11-08';
 const baca = (p) => JSON.parse(fs.readFileSync(path.join(akar, p), 'utf8'));
@@ -92,7 +93,7 @@ function dariRepo() {
 
 const nama = { 'Viet Nam': 'Vietnam', 'Lao PDR': 'Laos', 'Brunei Darussalam': 'Brunei', Philippines: 'Filipina', Thailand: 'Thailand', Malaysia: 'Malaysia', Singapore: 'Singapura', Cambodia: 'Kamboja', Myanmar: 'Myanmar', Indonesia: 'Indonesia' };
 
-export function susun() {
+function susunDasar() {
   const r = dariRepo();
   const rf = (n) => Math.round(n * 100) / 100;
   const k25 = r.kap.at(-1), k12 = r.kap.find((x) => x.tahun === 2012), k24 = r.kap.find((x) => x.tahun === 2024);
@@ -444,6 +445,8 @@ export function susun() {
     bab,
   };
 }
+
+export function susun() { return perdalam(susunDasar(), SUMBER); }
 
 export function validasi(d) {
   const err = [];

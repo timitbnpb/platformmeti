@@ -172,7 +172,7 @@ function tampilTip(kode, pt) {
 }
 function legenda() {
   const nama = ["jm-pel-k0", "jm-pel-k1", "jm-pel-k2", "jm-pel-k3", "jm-pel-k4"], v = BATAS_K;
-  const baris = v.length ? nama.map((k, i) => `<li><i class="${k}" aria-hidden="true"></i><span>${esc(t("pel.rentang", { a: N(v[i]), b: N(v[i + 1]) }))} MW</span></li>`).join("") : "";
+  const baris = v.length ? nama.map((k, i) => `<li><i class="${k}" aria-hidden="true"></i><span>${esc(t("pel.rentang", { a: N(v[i]), b: N(v[i + 1]) }))}</span></li>`).join("") : "";
   $("pelLegenda").innerHTML = `<ul class="jm-pel-kuantil">${baris}<li><i class="jm-pel-nd" aria-hidden="true"></i><span>${esc(t("pel.legenda.tanpa"))}</span>${sumberHtml(esc(t("pel.legenda.cara")), t("pel.legenda.info"))}</li></ul>`;
 }
 function pasangLapisan() {
@@ -349,7 +349,7 @@ function isiMetode() {
     <section class="jm-pel-celahk"><h3>${ikon("info", 18)}<span>${esc(t("pel.celah.judul"))}</span></h3><ul>${[1, 2, 3, 4].map((i) => `<li>${ikon("peringatan", 16)}<span>${esc(t("pel.data" + i))}</span></li>`).join("")}</ul></section>
     <div class="jm-pel-kutip"><b>${esc(t("pel.kutip"))}</b><span>${esc(kutip)}</span><button type="button" class="jm-tbl jm-tbl-kecil" data-aksi="salin" data-teks="${esc(kutip)}">${ikon("tautan", 16)}<span>${esc(t("pel.kutip.salin"))}</span></button>${sumberHtml(src)}</div>` });
 }
-$("exMetode").addEventListener("click", (e) => {
+$("pelIsi").addEventListener("click", (e) => {
   const b = e.target.closest("[data-aksi=salin]"); if (!b) return;
   navigator.clipboard?.writeText(b.dataset.teks).then(() => { b.lastElementChild.textContent = t("pel.kutip.tersalin"); setTimeout(() => { b.lastElementChild.textContent = t("pel.kutip.salin"); }, 1800); });
 });

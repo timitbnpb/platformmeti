@@ -11,6 +11,10 @@ import { tombolIkuti, pasangIkuti } from "/inti/ikuti.js";
 import { S, L, u, num, tok, esc, ikon, tanggal, muat, eksibit, sumberHtml, pilu, pasangTabel, kosong } from "/topik_umum.js";
 import * as B from "/topik_bab.js";
 import * as KB from "/topik_karbon.js";
+import * as W from "/topik_tampil.js";
+import * as D from "/topik_data.js";
+import { isiK } from "/topik_wujud.js";
+import { pasangBar } from "/analisis.js";
 
 /* tombol Ikuti topik menunggu jenis "topik" di src/hak.js (JENIS_IKUTI) dan CHECK migrasi ikuti; nyalakan setelah backend siap */
 const IKUTI_TOPIK = true;
@@ -53,27 +57,25 @@ function kunciNaskah(ctx) {
 function bab1(ctx) {
   const adaNaskah = !!ctx.naskah, k = adaNaskah ? (ctx.id === "karbon" ? KB.kunci(ctx) : kunciNaskah(ctx)) : kunciGenerik(ctx);
   if (!k.length) return null;
-  const kartu = k.map((x) => kartuHtml({ judul: x.label, nilai: x.nilai, satuan: x.satuan, penyebut: x.sub, sumber: sumberHtml(x.src || []), turunan: !!x.est, ikon: x.ikon })).join("");
-  let h = `<div class="jm-an-kartu-baris jm-tp-kunci">${kartu}</div>`;
-  if (adaNaskah && ctx.naskah.penting?.length) h += `<h3 class="jm-tp-h3">${esc(u("ringkas.penting"))}</h3><ol class="jm-tp-langkah">${ctx.naskah.penting.map((p) => `<li>${esc(tok(p))}</li>`).join("")}</ol>`;
-  if (adaNaskah && ctx.naskah.posisi) h += `<p class="jm-tp-posisi">${ikon("kompas", 18)}<span>${esc(tok(ctx.naskah.posisi))}</span></p>`;
+  let h = W.ringkasanHtml(k, ctx);
   if (!adaNaskah) h += `<p class="jm-bantu">${esc(u("ringkas.dasar", { tanggal: tanggal(ctx.dasar.dibangun_pada) }))}</p>`;
   return { html: h, sumber: adaNaskah ? [] : ["dasar"], diperbarui: adaNaskah ? ctx.naskah.diperbarui : ctx.dasar.dibangun_pada, ubin: k.slice(0, 3) };
 }
 
 function hasil(ctx, n) {
   const nb = ctx.naskah?.bab?.[n], T = nb && B.TIPE[nb.tipe], karbon = ctx.id === "karbon", d = ctx.dasar;
+  ctx.n = n;
   const dasar = (r) => (r ? { ...r, sumber: ["dasar"] } : null);
   if (n === 1) return bab1(ctx);
   if (karbon && KB.KHUSUS[n]) { const r = KB.KHUSUS[n](ctx); return r; }
-  if (n === 12 && karbon) { const g = B.regulasi(d.regulasi), tb = nb ? B.TIPE.tabel(nb, "reg-tercatat") : null; return g ? { html: g.html + (tb ? `<h3 class="jm-tp-h3">${esc(L(nb.judul))}</h3>` + tb.html : ""), csv: true, sumber: ["dasar", ...(nb ? ["celah"] : [])] } : null; }
+  if (n === 12 && karbon) { const g = B.regulasi(d.regulasi), tb = nb ? B.TIPE.tabel(nb, "reg-tercatat", ctx) : null; return g ? { html: g.html + (tb ? `<h3 class="jm-tp-h3">${esc(L(nb.judul))}</h3>` + tb.html : ""), csv: true, sumber: ["dasar", ...(nb ? ["celah"] : [])] } : null; }
   if (n === 13 && nb?.tipe === "linimasa") return B.TIPE.linimasa(nb, "", ctx);
   if (n === 39 || n === 40) return nb ? B.kasus(nb, ctx) : null;
   if (n === 41) return nb ? B.pola(nb, ctx) : null;
   if (n === 42) return nb ? B.periksa(nb) : null;
   if (nb && T) { const r = T(nb, "bab-" + n + "-" + ctx.id, ctx); return r; }
   if (n === 9) return d.pemain.length ? dasar({ html: B.pemain(d.pemain, { tambahan: karbon ? pengembangKarbon(ctx) : "" }) }) : null;
-  if (n === 10) return dasar(B.proyek(d.proyek));
+  if (n === 10) return dasar(B.proyek(d.proyek, ctx));
   if (n === 12) return dasar(B.regulasi(d.regulasi));
   if (n === 18) return dasar(B.inovasi(d.inovasi));
   if (n === 33) return dasar(B.pakar(d));
@@ -124,21 +126,24 @@ function tocHtml(out, id) {
 
 async function halaman(id) {
   if (!S.ui.topik[id]) { $("judul").textContent = u("kosong.judul"); $("jawab").textContent = u("kosong.isi"); khSisi("#kh", { fakta: [{ ikon: "topik", label: u("toc.hub"), nilai: u("toc.hub"), href: "/topik" }] }); $("isi").innerHTML = ""; return; }
-  const [dasar, naskah, luar] = await Promise.all([muat(`/data/topik/dasar-${id}.json`), muat(`/data/topik/${berkas(id)}.json`), id === "karbon" ? muat("/data/topik/luar_karbon.json") : null]);
+  const [dasar, naskah, luar, org, rantai, ind] = await Promise.all([muat(`/data/topik/dasar-${id}.json`), muat(`/data/topik/${berkas(id)}.json`), id === "karbon" ? muat("/data/topik/luar_karbon.json") : null, muat("/data/organisasi.json"), muat("/data/rantai_pasok.json"), muat("/data/topik/indeks.json")]);
   if (!dasar) throw new Error("data");
   S.id = id; S.dipakai = new Set(); S.tabel.clear(); S.sumber = { ...(naskah?.sumber || {}), dasar: { judul: u("src.dasar"), penerbit: "METI", tanggal: dasar.dibangun_pada, bukti: "editorial" } };
-  const ctx = { id, dasar, naskah, luar, celah: [] };
+  const ctx = { id, dasar, naskah, luar, celah: [], rantai, foto: ind?.topik?.find((x) => x.id === id)?.foto || "" };
+  isiK(ctx, org);
   Object.assign(KONTEKS, ctx);
   if (id === "karbon") { if (!naskah || !luar) throw new Error("data"); KB.siap(ctx); ctx.selesaikan = KB.selesaikan(ctx); }
   const { out, diperbarui, ubin } = susun(ctx);
   const nama = L(S.ui.topik[id].nama);
   $("judul").textContent = nama;
   $("jawab").textContent = naskah?.lead ? tok(naskah.lead) : L(S.ui.topik[id].ket);
-  khSisi("#kh", { ubin: ubin?.length ? ubin.map((x) => ({ ikon: x.ikon, nilai: x.nilai, satuan: x.satuan.length > 3 ? "" : x.satuan, label: x.satuan.length > 3 ? `${x.label} (${x.satuan})` : x.label })) : [{ ikon: "info", nilai: num(out.length), label: u("kartu.bab") }], aksi: `<span class="jm-tp-tgl">${esc(u("diperbarui", { tanggal: tanggal(diperbarui) }))}</span>` });
+  khSisi("#kh", { ubin: ubin?.length ? ubin.map((x) => ({ ikon: x.ikon, nilai: x.nilai, satuan: x.satuan.length > 6 ? "" : x.satuan, label: x.satuan.length > 6 ? `${x.label} (${x.satuan})` : x.label })) : [{ ikon: "info", nilai: num(out.length), label: u("kartu.bab") }], aksi: `<span class="jm-tp-tgl">${esc(u("diperbarui", { tanggal: tanggal(diperbarui) }))}</span>` });
   document.title = `${nama} | ${u("ey")} | ${t("jm.merek")}`;
   $("isi").innerHTML = `<div class="jm-tp">${tocHtml(out, id)}<div class="jm-tp-isi">${out.map((x) => x.html).join("")}</div></div>`;
   pasangScroll(out);
   B.pasangPeriksa();
+  D.pasangGrafik(); W.pasangTampil(); W.awalTampil($("isi")); pasangBar($("isi"));
+  nanti(() => D.pasangPeta($("isi")));
   if (IKUTI_TOPIK) pasangIkuti($("isi"));
   if (location.hash) $(location.hash.slice(1))?.scrollIntoView();
 }

@@ -59,8 +59,8 @@ function isiTabel(id) {
     b = [...b].sort((x, z) => { const a = k.v(x), c = k.v(z); return ((a == null) - (c == null)) || (a == null ? 0 : (typeof a === "number" ? a - c : String(a).localeCompare(String(c), bahasa()))) * s.urut.arah; });
   }
   const dari = (s.hal - 1) * s.per;
-  const kep = s.kols.map((c) => `<th${c.num ? ' class="jm-num"' : ""} aria-sort="${s.urut?.k === c.k ? (s.urut.arah > 0 ? "ascending" : "descending") : "none"}"><button type="button" class="jm-urut" data-urut="${esc(c.k)}">${esc(c.l)}${c.est ? est() : ""}</button></th>`).join("");
-  const isi = b.slice(dari, dari + s.per).map((r) => `<tr>${s.kols.map((c) => `<td data-label="${esc(c.l)}"${c.num ? ' class="jm-num"' : ""}>${c.f(r)}</td>`).join("")}</tr>`).join("");
+  const kep = s.kols.map((c) => `<th class="${c.num ? "jm-num " : ""}${c.w ? "jm-tp-k-" + c.w : ""}" aria-sort="${s.urut?.k === c.k ? (s.urut.arah > 0 ? "ascending" : "descending") : "none"}"><button type="button" class="jm-urut" data-urut="${esc(c.k)}">${esc(c.l)}${c.est ? est() : ""}</button></th>`).join("");
+  const isi = b.slice(dari, dari + s.per).map((r) => `<tr>${s.kols.map((c) => `<td data-label="${esc(c.l)}" class="${c.num ? "jm-num " : ""}${c.w ? "jm-tp-k-" + c.w : ""}">${c.f(r)}</td>`).join("")}</tr>`).join("");
   return `<div class="jm-gulir"><table class="jm-tabel" data-urut="tidak"><thead><tr>${kep}</tr></thead><tbody>${isi}</tbody></table></div>${paginasiHtml({ hal: s.hal, total: b.length, per: s.per })}`;
 }
 const teksSel = (h) => { const d = document.createElement("div"); d.innerHTML = h; return d.textContent.replace(/\s+/g, " ").trim(); };
