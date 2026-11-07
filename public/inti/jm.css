@@ -422,6 +422,32 @@ button,.jm-tbl,.jm-pil,.jm-chip{font-family:var(--font);font-weight:600}
 .jm-rel a:hover .jm-rel-ik,.jm-rel a:focus-visible .jm-rel-ik,.jm-rel a[aria-current] .jm-rel-ik{background:none;color:inherit}
 .jm-rel .jm-rel-ik svg{width:18px;height:18px}
 .jm-rel .jm-rel-l{-webkit-line-clamp:1;white-space:nowrap;text-overflow:ellipsis;min-width:0}
+/* REL v4 (pemilik 8 Nov 2026): dok bawah horizontal di tengah, kapsul kaca; HP penuh lebar, ikon saja + label butir aktif */
+html .jm-rel{display:none;flex-direction:row;align-items:center;gap:2px;top:auto;bottom:calc(16px + env(safe-area-inset-bottom,0px));left:50%;right:auto;width:max-content;max-width:calc(100vw - 2*232px);max-height:none;overflow:visible;padding:6px;border-radius:var(--r-pil);background:color-mix(in srgb,var(--paper) 85%,transparent);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);border:1px solid var(--line);box-shadow:0 6px 24px rgb(0 0 0/.12);transform:translate(-50%,0);transition:transform .25s ease,opacity .25s ease;opacity:1}
+html .jm-rel::before{display:none}
+html.jm-ada-rel.jm-rel-tampil .jm-rel{display:flex}
+html .jm-rel.sembunyi{transform:translate(-50%,calc(100% + 32px));opacity:0;pointer-events:none}
+.jm-rel-gulir{display:flex;gap:2px;min-width:0;overflow-x:auto;scrollbar-width:none;scroll-behavior:smooth}
+.jm-rel-gulir::-webkit-scrollbar{display:none}
+html .jm-rel a{position:relative;flex:none;padding:8px 14px;border-radius:var(--r-pil);gap:8px;white-space:nowrap}
+html .jm-rel a[aria-current]{background:var(--accent);color:var(--on-accent)}
+html .jm-rel a[aria-current]::after{content:"";position:absolute;left:14px;right:14px;bottom:3px;height:2px;border-radius:2px;background:currentColor;opacity:.7;transform:scaleX(var(--kemajuan,0));transform-origin:left}
+html .jm-rel .jm-rel-l{display:block;overflow:visible}
+html .jm-rel .jm-rel-ik,html .jm-rel a[aria-current] .jm-rel-ik{border:0;box-shadow:none;background:none}
+.jm-rel-p{display:none;flex:none;place-items:center;width:28px;height:28px;padding:0;border:0;border-radius:50%;background:none;color:var(--ink2);cursor:pointer}
+.jm-rel-p:hover{background:var(--surface);color:var(--accent)}
+.jm-rel.kr .jm-rel-kr,.jm-rel.kn .jm-rel-kn{display:grid}
+html.jm-ada-rel.jm-rel-tampil body{padding-bottom:calc(80px + env(safe-area-inset-bottom,0px))}
+@media (max-width:767px){
+  html .jm-rel{left:max(8px,env(safe-area-inset-left,0px));right:max(8px,env(safe-area-inset-right,0px));bottom:calc(8px + env(safe-area-inset-bottom,0px));width:auto;max-width:none;transform:none;padding:4px}
+  html .jm-rel.sembunyi{transform:translateY(calc(100% + 24px))}
+  html .jm-rel-gulir{flex:1;justify-content:space-around}
+  html .jm-rel a{padding:10px 12px}
+  html .jm-rel a:not([aria-current]) .jm-rel-l{display:none}
+  html.jm-rel-tampil .ps-fab{bottom:calc(76px + env(safe-area-inset-bottom,0px))}
+  html.jm-rel-tampil .ps-pn{bottom:calc(136px + env(safe-area-inset-bottom,0px))}
+}
+@media (prefers-reduced-motion:reduce){html .jm-rel{transition:none}.jm-rel-gulir{scroll-behavior:auto}}
 /* paragraf narasi rata kiri-kanan (pemilik 7 Nov); bukan tabel, pil, tombol, label pendek */
 :is(.jm-kh-lead,.jm-sh-lead,.tn .lead,.brt-lead,.jm-bb-sc-lead,.jm-ex-teks,.jm-kp-metode,.jm-hero p,.jm-hero2-sub):not(td *,th *,.jm-pil,button){text-align:justify;hyphens:auto;-webkit-hyphens:auto}
 /* tabel lebih padat (pemilik 7 Nov): baris rapat tapi tidak dempet */

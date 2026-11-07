@@ -1,6 +1,6 @@
-/* Rel navigasi seksi (pemilik 7 Nov 2026): rel mengambang di kanan (>=1280px) berisi ikon per seksi, label muncul saat disorot,
-   seksi yang sedang dibaca menyala; di layar kecil satu tombol mengambang di pojok bawah membuka daftar seksi.
-   Otomatis di semua halaman: mengambil section/article ber-id yang punya judul (h2/h3 .jm-ex-j). Minimal 3 seksi. */
+/* Rel navigasi seksi (pemilik 8 Nov 2026): dok bawah horizontal di tengah layar (kapsul kaca), butir ikon + label pendek,
+   muncul setelah melewati kepala halaman, menyembunyi saat gulir cepat ke bawah. Otomatis di semua halaman:
+   mengambil section/article ber-id yang punya judul. Minimal 3 seksi. */
 import { esc, ikon } from "/inti/umum.js";
 import { t } from "/i18n.js";
 
@@ -36,35 +36,51 @@ function kumpul() {
   });
 }
 
-let rel, tombol, daftar, pengamat;
+let rel, pengamat, lepas;
 function bangun() {
   const seksi = kumpul();
-  rel?.remove(); tombol?.remove(); daftar?.remove(); pengamat?.disconnect();
-  document.documentElement.classList.toggle("jm-ada-rel", seksi.length >= 3);
-  if (seksi.length < 3) return;
-  const item = (el) => `<a href="#${esc(el.id)}" data-rel="${esc(el.id)}"><span class="jm-rel-ik">${ikonSeksi(el)}</span><span class="jm-rel-l">${esc(judul(el))}</span></a>`;
+  rel?.remove(); pengamat?.disconnect(); lepas?.();
+  const H = document.documentElement;
+  H.classList.toggle("jm-ada-rel", seksi.length >= 3);
+  if (seksi.length < 3) { H.classList.remove("jm-rel-tampil"); return; }
+  const item = (el) => `<a href="#${esc(el.id)}" data-rel="${esc(el.id)}" title="${esc(judul(el))}"><span class="jm-rel-ik">${ikonSeksi(el)}</span><span class="jm-rel-l">${esc(judul(el))}</span></a>`;
   rel = document.createElement("nav");
   rel.className = "jm-rel"; rel.setAttribute("aria-label", t("jm.rel"));
-  rel.innerHTML = `<span class="jm-rel-garis" aria-hidden="true"><i></i></span>${seksi.map(item).join("")}`;
-  tombol = document.createElement("button");
-  tombol.type = "button"; tombol.className = "jm-rel-fab"; tombol.setAttribute("aria-expanded", "false");
-  tombol.setAttribute("aria-label", t("jm.rel")); tombol.innerHTML = ikon("daftar", 20);
-  daftar = document.createElement("nav");
-  daftar.className = "jm-rel-lembar"; daftar.hidden = true; daftar.setAttribute("aria-label", t("jm.rel"));
-  daftar.innerHTML = seksi.map(item).join("");
-  document.body.append(rel, tombol, daftar);
-  tombol.addEventListener("click", () => { const b = daftar.hidden; daftar.hidden = !b; tombol.setAttribute("aria-expanded", String(b)); });
-  daftar.addEventListener("click", (e) => { if (e.target.closest("a")) { daftar.hidden = true; tombol.setAttribute("aria-expanded", "false"); } });
-  document.addEventListener("keydown", (e) => { if (e.key === "Escape" && !daftar.hidden) { daftar.hidden = true; tombol.setAttribute("aria-expanded", "false"); tombol.focus(); } });
-  const tanda = (id) => [rel, daftar].forEach((n) => n.querySelectorAll("a").forEach((a) => a.toggleAttribute("aria-current", a.dataset.rel === id)));
-  const garis = rel.querySelector(".jm-rel-garis i");
+  rel.innerHTML = `<button type="button" class="jm-rel-p jm-rel-kr" aria-hidden="true" tabindex="-1">${ikon("panah-kiri", 16)}</button><div class="jm-rel-gulir">${seksi.map(item).join("")}</div><button type="button" class="jm-rel-p jm-rel-kn" aria-hidden="true" tabindex="-1">${ikon("panah-kanan", 16)}</button>`;
+  document.body.append(rel);
+  const gl = rel.querySelector(".jm-rel-gulir");
+  const meluber = () => { rel.classList.toggle("kr", gl.scrollLeft > 4); rel.classList.toggle("kn", gl.scrollLeft + gl.clientWidth < gl.scrollWidth - 4); };
+  rel.querySelector(".jm-rel-kr").onclick = () => gl.scrollBy({ left: -gl.clientWidth * 0.7, behavior: "smooth" });
+  rel.querySelector(".jm-rel-kn").onclick = () => gl.scrollBy({ left: gl.clientWidth * 0.7, behavior: "smooth" });
+  gl.addEventListener("scroll", meluber, { passive: true });
+  let aktif;
+  const tanda = (id) => {
+    gl.querySelectorAll("a").forEach((a) => { const on = a.dataset.rel === id; a.toggleAttribute("aria-current", on); if (on) aktif = a; });
+    aktif?.scrollIntoView({ inline: "center", block: "nearest", behavior: "auto" });
+    meluber();
+  };
   pengamat = new IntersectionObserver((es) => {
     const v = es.filter((e) => e.isIntersecting).sort((a, b) => a.boundingClientRect.top - b.boundingClientRect.top)[0];
-    if (!v) return;
-    const i = seksi.indexOf(v.target); tanda(v.target.id);
-    garis.style.height = `${((i + 1) / seksi.length) * 100}%`;
+    if (v) tanda(v.target.id);
   }, { rootMargin: "-30% 0px -60% 0px" });
   seksi.forEach((el) => pengamat.observe(el));
+  // tampil setelah melewati kepala halaman; sembunyi saat gulir cepat ke bawah, muncul lagi saat berhenti/naik
+  let y0 = scrollY, henti, rf = 0;
+  const muncul = () => { const ya = scrollY > innerHeight * 0.6; H.classList.toggle("jm-rel-tampil", ya); rel.classList.remove("sembunyi"); };
+  const garis = () => {
+    rf = 0;
+    const el = aktif && document.getElementById(aktif.dataset.rel);
+    if (el) { const r = el.getBoundingClientRect(); aktif.style.setProperty("--kemajuan", Math.max(0, Math.min(1, -r.top / Math.max(1, r.height - innerHeight * 0.5)))); }
+    const dy = scrollY - y0; y0 = scrollY;
+    if (dy > 40 && scrollY > innerHeight * 0.6) rel.classList.add("sembunyi"); else if (dy < 0) rel.classList.remove("sembunyi");
+    H.classList.toggle("jm-rel-tampil", scrollY > innerHeight * 0.6);
+    clearTimeout(henti); henti = setTimeout(muncul, 180);
+  };
+  const gulir = () => { rf ||= requestAnimationFrame(garis); };
+  addEventListener("scroll", gulir, { passive: true });
+  addEventListener("resize", meluber);
+  lepas = () => { removeEventListener("scroll", gulir); removeEventListener("resize", meluber); clearTimeout(henti); };
+  muncul(); meluber();
 }
 
 let tunda;
