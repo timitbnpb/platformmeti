@@ -3,6 +3,7 @@ import { t, angka, tanggal } from "/i18n.js";
 import { esc, nanti, debounce, hantuHtml, kosongHtml, galatHtml, ikon } from "/inti/umum.js";
 import { cariHtml, pilihHtml, hapusHtml, exHtml, sumberHtml } from "/inti/komponen.js";
 import { aksiHtml, hlHtml } from "/inti/aksi_ex.js";
+import { penerbitHtml } from "/penerbit.js";
 import { lapisAnggota, anggotaDl, muat, label, urlAman, norm, namaRegulasi, kelasStatus, SINGKAT } from "/publik.js";
 
 const HAL = 25;
@@ -55,7 +56,7 @@ function barisHtml(r, i) {
   const no = i + 1, top = no <= 3 && S.hal === 1;
   return `<tr><td class="jm-no" data-label="${esc(t("reg.col.no"))}"><span class="jm-rank${top ? " jm-rank-top" : ""}">${no}</span></td>
     <td class="jm-id-sel" data-label="${esc(t("reg.col.aturan"))}"><span class="jm-id"><span><button type="button" data-id="${esc(r.id)}"><b>${esc(namaRegulasi(r))}</b></button><small title="${esc(r.judul)}">${esc(r.judul)}</small></span></span></td>
-    <td class="jm-id-sel" data-label="${esc(t("reg.col.penerbit"))}">${r.instansi_penerbit ? esc(r.instansi_penerbit) : strip()}</td>
+    <td class="jm-tengah jm-reg-pen" data-label="${esc(t("reg.col.penerbit"))}">${r.instansi_penerbit ? penerbitHtml(r.instansi_penerbit) : strip()}</td>
     <td class="jm-num" data-label="${esc(t("reg.col.tanggal"))}">${r.tanggal_ditetapkan ? esc(tanggal(r.tanggal_ditetapkan)) : strip()}</td>
     <td class="jm-tengah" data-label="${esc(t("reg.col.status"))}">${pil(r)}</td>
     <td class="jm-tengah jm-reg-dok" data-label="${esc(t("reg.col.dok"))}">${dokHtml(r)}</td></tr>`;
@@ -92,7 +93,7 @@ function itemHtml(r, tersembunyi) {
   const status = r.status !== "berlaku" ? `<span class="jm-tl-status jm-tl-s-${esc(r.status)}">${ikon("peringatan", 14)}${esc(label("reg.status.", r.status).toLowerCase())}</span>` : "";
   const rel = (r.ikatan || []).filter((x) => x.jenis === "mengubah" || x.jenis === "mencabut").map(chip).join("");
   return `<li class="jm-tl-item" data-id="${esc(r.id)}"${tersembunyi ? " hidden data-lebih" : ""}><span class="jm-tl-jn jm-jn-${esc(r.jenis)}">${esc(SINGKAT[r.jenis] || label("reg.jenis.", r.jenis))}</span><button type="button" class="jm-tl-no" data-id="${esc(r.id)}">${esc(`${r.nomor}/${r.tahun}`)}</button>
-    <span class="jm-tl-judul">${esc(r.judul)}</span><span class="jm-tl-meta"><span>${esc(r.instansi_penerbit || "-")}</span><span>${esc(tanggal(r.tanggal_ditetapkan))}</span><span>${esc(label("reg.tingkat.", tingkatDari(r)))}</span></span>${status || rel ? `<span class="jm-tl-rel">${status}${rel}</span>` : ""}</li>`;
+    <span class="jm-tl-judul">${esc(r.judul)}</span><span class="jm-tl-meta"><span class="jm-tl-pen">${r.instansi_penerbit ? penerbitHtml(r.instansi_penerbit, 24) : "-"}</span><span>${esc(tanggal(r.tanggal_ditetapkan))}</span><span>${esc(label("reg.tingkat.", tingkatDari(r)))}</span></span>${status || rel ? `<span class="jm-tl-rel">${status}${rel}</span>` : ""}</li>`;
 }
 function gambarLinimasa(rows) {
   document.getElementById("hal").innerHTML = "";
@@ -156,7 +157,7 @@ function profilHtml(r) {
   const dd = (k, v) => (v ? `<dt>${esc(t(k))}</dt><dd>${v}</dd>` : "");
   return `<div class="jm-lembar-isi"><div class="jm-lembar-kepala"><div><p class="jm-baris-no">${esc(namaRegulasi(r))}</p><h2 id="lembar-j">${esc(r.judul)}</h2></div>
     <button type="button" class="iconbtn" data-aksi="tutup" aria-label="${esc(t("jm.tutup"))}">${ikon("tutup", 22)}</button></div>
-    <div class="jm-baris-meta">${pil(r)}<span class="jm-pil">${esc(label("reg.tingkat.", tingkatDari(r)))}</span></div>
+    <div class="jm-baris-meta">${r.instansi_penerbit ? penerbitHtml(r.instansi_penerbit, 32) : ""}${pil(r)}<span class="jm-pil">${esc(label("reg.tingkat.", tingkatDari(r)))}</span></div>
     <dl class="jm-dl">${dd("reg.f.jenis", esc(label("reg.jenis.", r.jenis)))}${dd("reg.f.penerbit", esc(r.instansi_penerbit))}${dd("reg.f.ditetapkan", esc(tanggal(r.tanggal_ditetapkan)))}${r.tanggal_diundangkan ? dd("reg.f.diundangkan", esc(tanggal(r.tanggal_diundangkan))) : ""}${dd("reg.f.topik", (r.topik || []).map((x) => esc(label("reg.topik.", x))).join(", "))}</dl>
     <section><h3>${esc(t("reg.f.ringkasan"))} ${/^\S+ \d+\/\d+ mengatur /.test(r.ringkasan || "") ? `<span class="jm-pil jm-pil-est">${esc(t("reg.otomatis"))}</span>` : ""}</h3><p>${esc(r.ringkasan || "-")}</p></section>
     ${r.posisi_meti ? `<section class="jm-posisi"><h3>${esc(t("reg.f.posisi"))}</h3><p>${esc(r.posisi_meti)}</p></section>` : ""}

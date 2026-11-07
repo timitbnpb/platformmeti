@@ -545,13 +545,17 @@ function profilHtml(r) {
   const sm = [...(p.sumber || []).map((s) => ({ judul: s.dokumen || s.jenis, ket: [s.halaman, t("pj.bukti." + (s.tingkat_bukti || "media")), tanggal(s.tanggal), s.lisensi].filter((v) => v && v !== "-").join(", "), url: urlAman(s.url), id: s.id })),
     ...(L.sumber && L.sumber.catatan ? [{ judul: t("pj.lokasi.sumber"), ket: [L.sumber.catatan, L.sumber.lisensi].filter(Boolean).join(", "), url: urlAman(L.sumber.url) }] : [])];
   if (sm.length) bag.push(laci("sumber", `<ul class="jm-pj-sumberl">${sm.map((s) => `<li>${s.url ? `<a href="${esc(s.url)}" target="_blank" rel="noopener noreferrer">` : "<div>"}<span><b>${esc(s.judul)}</b>${s.id ? sumberRef(s.id) : ""}<small>${esc(s.ket)}</small></span>${s.url ? ikon("tautan", 18) + "</a>" : "</div>"}</li>`).join("")}</ul>`));
-  return `<header class="jm-pj-sh"><button type="button" class="jm-pj-x" data-tutup="1" aria-label="${esc(t("jm.tutup"))}" title="${esc(t("jm.tutup"))}">${ikTutup}</button>
-    <div class="jm-pj-sh-atas"><span class="jm-pj-logo ${warnaTek(r.tek)}" aria-hidden="true">${ikonTek(r.tek)}</span><div class="jm-pj-sh-nama"><h2 id="pjProfilJudul">${esc(r.nama)}</h2><p>${esc(baris)}</p>
-    <div class="jm-pj-sh-pil">${pilSt(r.st)}${r.telat ? pil(t("pj.telat.tahun", { n: r.telat }), "bad") : ""}${pil(t("pj.bukti." + (p.tingkat_bukti || "media")), p.tingkat_bukti === "resmi" ? "ok" : "warn")}${p.nama_perlu_tinjau ? `<span class="jm-pj-tinjau">${esc(t("pj.tinjau"))}</span>` : ""}</div></div></div>
-    <div class="jm-pj-tiles">${tile("pj.c.kap", r.kap === null ? esc(t("pj.prog.belum")) : `${num(r.kap)} <small>${esc(r.sat)}</small>`, r.kap === null)}${tile("pj.c.cod", r.cod === null ? esc(t("pj.prog.belum")) : r.cod, r.cod === null)}${tile(r.telat ? "pj.c.telat" : "pj.c.status", esc(tahap), false)}</div>
-    ${r.ada ? `<a class="jm-tbl jm-tbl-kecil jm-pj-sh-maps" href="${mapsUrl(L.lat, L.lng)}" target="_blank" rel="noopener noreferrer">${PIN}<span>${esc(t("pj.maps"))}</span></a>` : ""}</header>
-    <div class="jm-pj-sh-badan">${bag.join("")}</div>`;
+  const tiles = `${tile("pj.c.kap", r.kap === null ? "-" : `${num(r.kap)} <small>${esc(r.sat)}</small>`, r.kap === null)}${tile("pj.c.cod", r.cod === null ? "-" : r.cod, r.cod === null)}${tile(r.telat ? "pj.c.telat" : "pj.c.status", esc(tahap), false)}`;
+  const pilHtml = `${pilSt(r.st)}${r.telat ? pil(t("pj.telat.tahun", { n: r.telat }), "bad") : ""}${pil(t("pj.bukti." + (p.tingkat_bukti || "media")), p.tingkat_bukti === "resmi" ? "ok" : "warn")}${p.nama_perlu_tinjau ? `<span class="jm-pj-tinjau">${esc(t("pj.tinjau"))}</span>` : ""}`;
+  const aks = (r.ada ? `<a class="jm-tbl jm-tbl-kecil" href="${mapsUrl(L.lat, L.lng)}" target="_blank" rel="noopener noreferrer">${PIN}<span>${esc(t("pj.maps.pendek"))}</span></a>` : "") + aksiHtml({ csv: false });
+  return kepalaModal({ id: r.id, img: IMG_TEK[r.tek], ikonSvg: ikonTek(r.tek), judul: r.nama, ringkas: baris, pilHtml, aks, balik: dlg.dataset.balik || "" })
+    + `<div class="jm-pj-strip"><div class="jm-pj-tiles">${tiles}</div></div><div class="jm-pj-sh-badan jm-pj-dua">${bag.join("")}</div></div>`;
 }
+
+const kepalaModal = ({ id, img, ikonSvg, judul, ringkas, pilHtml = "", aks = "", balik = "" }) => `<div class="jm-ex jm-pj-mex" id="${esc(id)}"><header class="jm-pj-ban">
+  <div class="jm-pj-ban-gb">${img ? `<img src="${img}" alt="" decoding="async">` : ""}</div>
+  <div class="jm-pj-ban-bar">${balik ? `<button type="button" class="jm-pj-x jm-pj-balik" data-balik="${esc(balik)}" aria-label="${esc(t("jm.kembali"))}" title="${esc(t("jm.kembali"))}">${ikon("panah-kiri", 20)}</button>` : ""}<span class="jm-pj-ban-aksi">${aks}</span><button type="button" class="jm-pj-x" data-tutup="1" aria-label="${esc(t("jm.tutup"))}" title="${esc(t("jm.tutup"))}">${ikTutup}</button></div>
+  <div class="jm-pj-ban-isi"><span class="jm-pj-logo" aria-hidden="true">${ikonSvg}</span><div class="jm-pj-sh-nama"><h2 class="jm-ex-j" id="pjProfilJudul">${esc(judul)}</h2>${ringkas ? `<p>${esc(ringkas)}</p>` : ""}${pilHtml ? `<div class="jm-pj-sh-pil">${pilHtml}</div>` : ""}</div></div></header>`;
 
 async function isiTerkait(r) {
   const el = $("pjRelBag");
@@ -587,18 +591,40 @@ function miniPeta(r) {
 
 function programHtml(g) {
   const rows = SEMUA.filter((r) => r.prog.includes(g.id)).sort((a, b) => (b.kap ?? -1) - (a.kap ?? -1) || a.nama.localeCompare(b.nama)), tot = rows.length;
-  const per = hitung(rows, (r) => r.st), mw = jumlahMW(rows), nreg = (g.regulasi_ids || []).length;
-  const ada1 = ST_BAR.filter((k) => per[k]);
-  const bar = tot ? `<div class="jm-pj-tumpuk" role="img" aria-label="${esc(ada1.map((k) => labSt(k) + " " + per[k]).join(", "))}">${ada1.map((k) => `<i class="jm-pj-s-${k}" data-w="${(per[k] / tot) * 100}"></i>`).join("")}</div><ul class="jm-pj-leg">${ada1.map((k) => `<li><span class="jm-pj-s-${k}" aria-hidden="true"></span>${esc(labSt(k))} <b>${num(per[k])}</b></li>`).join("")}</ul>` : "";
+  const per = hitung(rows, (r) => r.st), mw = jumlahMW(rows), nreg = (g.regulasi_ids || []).length, sat = satuanProg(rows);
   const docs = hitung(rows, (r) => [...new Set((r.p.sumber || []).map((x) => x.dokumen || x.jenis))]);
-  const baris = rows.slice(0, 100).map((r) => `<tr><td data-label="${esc(t("pj.c.nama"))}"><span class="jm-id"><b><a class="jm-pj-nm" href="#${esc(r.id)}">${esc(r.nama)}</a></b><small>${esc(r.prov || "")}</small></span></td><td data-label="${esc(t("pj.c.tek"))}">${selTek(r)}</td><td class="jm-num" data-label="${esc(t("pj.c.kap"))}">${selKap(r)}</td><td data-label="${esc(t("pj.c.status"))}">${pilSt(r.st)}</td></tr>`).join("");
-  return `<header class="jm-pj-sh"><button type="button" class="jm-pj-x" data-tutup="1" aria-label="${esc(t("jm.tutup"))}" title="${esc(t("jm.tutup"))}">${ikTutup}</button>
-    <div class="jm-pj-sh-atas"><span class="jm-pj-logo" aria-hidden="true">${IK_PROG}</span><div class="jm-pj-sh-nama"><h2 id="pjProfilJudul">${esc(g.nama)}</h2><p>${esc(g.ringkas || "")}</p></div></div>
-    <div class="jm-pj-tiles">${tile("pj.prog.proyek", num(tot), false)}${tile("pj.c.kap", tot && mw ? kapTeks(mw) : esc(t("pj.prog.belum")), !(tot && mw))}${tile("pj.rel.reg", num(nreg), false)}</div>
-    ${tot ? `<button type="button" class="jm-tbl jm-tbl-kecil jm-pj-sh-maps" data-tampil="${esc(g.id)}">${esc(t("pj.prog.dipeta"))}</button>` : ""}</header>
-    <div class="jm-pj-sh-badan">${tot ? laci("status", bar) + `<section class="jm-pj-bag"><h3>${esc(t("pj.prog.daftar"))}</h3><div class="jm-pj-kartubag"><div class="jm-gulir"><table class="jm-tabel"><thead><tr><th>${esc(t("pj.c.nama"))}</th><th>${esc(t("pj.c.tek"))}</th><th>${esc(t("pj.c.kap"))}</th><th>${esc(t("pj.c.status"))}</th></tr></thead><tbody>${baris}</tbody></table></div>${tot > 100 ? `<p class="jm-bantu">${esc(t("pj.tampil", { n: 100, total: num(tot) }))}</p>` : ""}</div></section>` : ""}
-    <section class="jm-pj-bag" id="pjRelBag" hidden></section>
-    ${tot ? laci("sumber", `<ul class="jm-pj-sumberl">${Object.entries(docs).sort((a, b) => b[1] - a[1]).map(([d, n]) => `<li><div><span><b>${esc(d)}</b><small>${esc(t("pj.prog.nproyek", { n: num(n) }))}</small></span></div></li>`).join("")}</ul>`) : ""}</div>`;
+  const baris = rows.slice(0, 100).map((r) => `<tr data-id="${esc(r.id)}"><td data-label="${esc(t("pj.c.nama"))}"><span class="jm-id"><b><a class="jm-pj-nm" href="#${esc(r.id)}">${esc(r.nama)}</a></b><small>${esc(r.prov || "-")}</small></span></td><td class="jm-tengah" data-label="${esc(t("pj.c.tek"))}">${selTek(r)}</td><td class="jm-num" data-label="${esc(t("pj.c.kap"))}">${selKap(r)}</td><td class="jm-tengah" data-label="${esc(t("pj.c.status"))}">${pilSt(r.st)}</td></tr>`).join("");
+  const tiles = `${tile("pj.prog.proyek", num(tot), false)}${tile("pj.c.kap", tot && mw ? esc(kapTeks(mw, sat)) : "-", !(tot && mw))}${tile("pj.rel.reg", num(nreg), false)}`;
+  const aks = (tot ? `<button type="button" class="jm-tbl jm-tbl-kecil" data-tampil="${esc(g.id)}">${esc(t("pj.prog.dipeta"))}</button>` : "") + aksiHtml({ csv: !!tot });
+  const kiri = (tot ? laci("status", barTumpuk(per, tot) + legPil(per)) : laci("dasar", dasarKosong(g))) + `<section class="jm-pj-bag" id="pjRelBag" hidden></section>`
+    + (tot ? laci("sumber", `<ul class="jm-pj-sumberl">${Object.entries(docs).sort((a, b) => b[1] - a[1]).map(([d, n]) => `<li><div><span><b>${esc(d)}</b><small>${esc(t("pj.prog.nproyek", { n: num(n) }))}</small></span></div></li>`).join("")}</ul>`) : "");
+  const kanan = tot ? `<section class="jm-pj-bag"><h3>${esc(t("pj.l.lokasi"))}</h3><div id="pjMini" class="jm-pj-mini jm-pj-mini-b"></div></section>` : "";
+  const tabel = tot ? `<section class="jm-pj-bag jm-pj-penuhlebar"><h3>${esc(t("pj.prog.daftar"))}</h3><div class="jm-gulir"><table class="jm-tabel jm-pj-tetap jm-pj-t4"><thead><tr><th scope="col">${esc(t("pj.c.nama"))}</th><th scope="col">${esc(t("pj.c.tek"))}</th><th scope="col">${esc(t("pj.c.kap"))}</th><th scope="col">${esc(t("pj.c.status"))}</th></tr></thead><tbody>${baris}</tbody></table></div>${tot > 100 ? `<p class="jm-bantu">${esc(t("pj.tampil", { n: 100, total: num(tot) }))}</p>` : ""}</section>` : "";
+  return kepalaModal({ id: "program-" + g.id, img: IMG_PROG[g.id], ikonSvg: ikProg(g.id), judul: g.nama, ringkas: g.ringkas || "", aks })
+    + `<div class="jm-pj-strip"><div class="jm-pj-tiles">${tiles}</div></div><div class="jm-pj-sh-badan"><div class="jm-pj-dua"><div class="jm-pj-kol">${kiri}</div>${kanan ? `<div class="jm-pj-kol">${kanan}</div>` : ""}</div>${tabel}</div></div>`;
+}
+/* peta mini program: semua titik proyek program, pas ke batasnya; klik titik membuka profil proyek (dengan tombol kembali) */
+function miniProgram(g) {
+  const el = $("pjMini"), pts = SEMUA.filter((r) => r.ada && r.prog.includes(g.id));
+  if (!el) return;
+  if (!pts.length) { el.textContent = t("pj.presisi.tak"); el.classList.add("jm-bantu"); return; }
+  muatMapLibre().then(() => {
+    if (!el.isConnected) return;
+    petaMini = new maplibregl.Map({ container: el, style: gaya(), center: [pts[0].p.lokasi.lng, pts[0].p.lokasi.lat], zoom: 6, minZoom: 3, maxZoom: 16, dragRotate: false, attributionControl: { compact: true } });
+    const b = new maplibregl.LngLatBounds(); for (const r of pts) b.extend([r.p.lokasi.lng, r.p.lokasi.lat]);
+    const pas = () => { petaMini.resize(); if (pts.length > 1) petaMini.fitBounds(b, { padding: 36, maxZoom: 9, duration: 0 }); else petaMini.jumpTo({ center: b.getCenter(), zoom: 9 }); };
+    pas();
+    petaMini.on("style.load", () => {
+      pas();
+      rapikanPeta(petaMini);
+      petaMini.addSource("t", { type: "geojson", data: { type: "FeatureCollection", features: pts.map((r) => ({ type: "Feature", properties: { id: r.id, warna: warna(TEK_WARNA[r.tek] || "--ink2") }, geometry: { type: "Point", coordinates: [r.p.lokasi.lng, r.p.lokasi.lat] } })) } });
+      petaMini.addLayer({ id: "t", type: "circle", source: "t", paint: { "circle-color": ["get", "warna"], "circle-radius": ["interpolate", ["linear"], ["zoom"], 3, 4, 9, 8], "circle-stroke-color": warna("--paper"), "circle-stroke-width": 1.5 } });
+    });
+    petaMini.on("click", "t", (e) => { location.hash = e.features[0].properties.id; });
+    petaMini.on("mouseenter", "t", () => { petaMini.getCanvas().style.cursor = "pointer"; });
+    petaMini.on("mouseleave", "t", () => { petaMini.getCanvas().style.cursor = ""; });
+    petaMini.addControl(new maplibregl.NavigationControl({ showCompass: false }), "bottom-right");
+  }).catch(() => { el.textContent = t("pj.peta.galat"); });
 }
 async function isiTerkaitProgram(g) {
   const el = $("pjRelBag");
@@ -620,12 +646,12 @@ function bukaProgram(id) {
   if (!g) { if (dlg.open) dlg.close(); return; }
   if (dlg.open && dlg.dataset.id === "program-" + id) return;
   if (petaMini) { petaMini.remove(); petaMini = null; }
-  dlg.dataset.id = "program-" + id;
+  dlg.dataset.id = "program-" + id; delete dlg.dataset.balik;
   dlg.innerHTML = programHtml(g);
   for (const i of dlg.querySelectorAll("i[data-w]")) i.style.width = i.dataset.w + "%";
   if (!dlg.open) dlg.showModal();
   dlg.scrollTop = 0;
-  nanti(() => isiTerkaitProgram(g));
+  nanti(() => { miniProgram(g); isiTerkaitProgram(g); });
 }
 /* lapis anggota/pengurus (hanya bila masuk; tamu: diam). Disisipkan sesudah profil tercat. */
 const LAPIS_PJ = lapisAnggota("proyek");
@@ -641,6 +667,8 @@ function bukaProfil(id) {
   if (!r) { if (dlg.open) dlg.close(); return; }
   if (dlg.open && dlg.dataset.id === id) return;
   if (petaMini) { petaMini.remove(); petaMini = null; }
+  if (dlg.open && String(dlg.dataset.id).startsWith("program-")) dlg.dataset.balik = dlg.dataset.id;
+  else if (!dlg.open) delete dlg.dataset.balik;
   dlg.dataset.id = id;
   dlg.innerHTML = profilHtml(r);
   if (!dlg.open) dlg.showModal();
@@ -649,12 +677,16 @@ function bukaProfil(id) {
 }
 dlg.addEventListener("click", (e) => {
   const tp = e.target.closest("[data-tampil]");
-  if (tp) { dlg.close(); F.prog = tp.dataset.tampil; $("fprog").value = F.prog; segarHero(); terapkan(); $("hPeta").scrollIntoView({ behavior: "smooth", block: "start" }); return; }
+  if (tp) { dlg.close(); F.prog = tp.dataset.tampil; $("fprog").value = F.prog; segarHero(); terapkan(); $("exPeta").scrollIntoView({ behavior: "smooth", block: "start" }); return; }
+  const bl = e.target.closest("[data-balik]");
+  if (bl) { location.hash = bl.dataset.balik; return; }
+  const tr = e.target.closest("tr[data-id]");
+  if (tr && !e.target.closest("a")) { location.hash = tr.dataset.id; return; }
   if (e.target === dlg || e.target.closest("[data-tutup]")) dlg.close();
 });
 dlg.addEventListener("close", () => {
   if (petaMini) { petaMini.remove(); petaMini = null; }
-  delete dlg.dataset.id;
+  delete dlg.dataset.id; delete dlg.dataset.balik;
   if (location.hash) history.replaceState(null, "", location.pathname + location.search);
 });
 const dariHash = () => { const id = decodeURIComponent(location.hash.slice(1)); if (id.startsWith("program-")) bukaProgram(id.slice(8)); else if (id) bukaProfil(id); else if (dlg.open) dlg.close(); };
