@@ -53,7 +53,7 @@ export function panelKta(panel) {
   }
   const hitung = (st) => S.baris.filter((r) => r.st === st).length;
   function gambar() {
-    $("kRingkas").innerHTML = `<ul class="jm-kh-ubin">${[["adm.kta.r.total", S.baris.length], ["adm.kta.r.aktif", hitung("aktif")], ["adm.kta.r.tertunda", hitung("tertunda")], ["adm.kta.r.lewat", hitung("kedaluwarsa")], ["adm.kta.r.cabut", hitung("dicabut")]]
+    $("kRingkas").innerHTML = `<ul class="kta-ubin">${[["adm.kta.r.total", S.baris.length], ["adm.kta.r.aktif", hitung("aktif")], ["adm.kta.r.tertunda", hitung("tertunda")], ["adm.kta.r.lewat", hitung("kedaluwarsa")], ["adm.kta.r.cabut", hitung("dicabut")]]
       .map(([k, n]) => `<li><b>${esc(angka(n))}</b><span>${esc(t(k))}</span></li>`).join("")}</ul>`;
     const n = S.saring.length, maks = Math.max(1, Math.ceil(n / BARIS));
     S.hal = Math.min(S.hal, maks);
@@ -64,7 +64,7 @@ export function panelKta(panel) {
       : `<th scope="col">${esc(t(kunci))}</th>`);
     const baris = S.saring.slice((S.hal - 1) * BARIS, S.hal * BARIS).map((r) => {
       const k = r.kta, L = (kunci) => `data-l="${esc(t(kunci))}"`;
-      const aksi = (a, kunci, ik) => `<button type="button" class="jm-tbl jm-tbl-kecil${a === "cabut" || a === "tolak" ? " jm-tbl-bahaya" : ""}" data-k="${a}" data-id="${esc(r.id)}" aria-label="${esc(t("adm.kta.a.untuk", { aksi: t(kunci), nama: r.nama }))}">${ikon(ik, 16)}<span>${esc(t(kunci))}</span></button>`;
+      const aksi = (a, kunci, ik) => `<button type="button" class="jm-tbl jm-tbl-kecil${a === "cabut" || a === "tolak" ? " jm-tbl-bahaya" : ""}" data-k="${a}" data-id="${esc(r.id)}" title="${esc(t(kunci))}" aria-label="${esc(t("adm.kta.a.untuk", { aksi: t(kunci), nama: r.nama }))}">${ikon(ik, 18)}</button>`;
       const tombol = r.st === "belum" || r.st === "dicabut" ? aksi("terbit", "adm.kta.a.terbit", "tambah")
         : r.st === "tertunda" ? aksi("setujui", "adm.kta.a.setujui", "centang") + aksi("tolak", "adm.kta.a.tolak", "silang")
         : aksi("perpanjang", "adm.kta.a.perpanjang", "kalender") + aksi("cabut", "adm.kta.a.cabut", "blokir");
@@ -74,7 +74,7 @@ export function panelKta(panel) {
         <td ${L("adm.kta.k.status")}><span class="jm-pil ${NADA[r.st]}">${esc(t("adm.kta.status." + r.st))}</span></td>
         <td ${L("adm.kta.k.berlaku")}>${k?.berlaku_sampai ? esc(tanggal(k.berlaku_sampai)) : "-"}</td>
         <td ${L("adm.kta.k.akun")}>${esc(k?.akun_surel || "-")}</td>
-        <td ${L("adm.kta.k.aksi")}><span class="jm-adm-acts">${tombol}${k?.ada_bukti && r.st === "tertunda" ? `<a class="jm-tbl jm-tbl-kecil" href="/api/admin/kta/${k.id}/bukti" download>${ikon("unduh", 16)}<span>${esc(t("adm.kta.a.bukti"))}</span></a>` : ""}</span></td></tr>`;
+        <td ${L("adm.kta.k.aksi")}><span class="jm-adm-acts">${tombol}${k?.ada_bukti && r.st === "tertunda" ? `<a class="jm-tbl jm-tbl-kecil" href="/api/admin/kta/${k.id}/bukti" download title="${esc(t("adm.kta.a.bukti"))}" aria-label="${esc(t("adm.kta.a.bukti"))}">${ikon("unduh", 18)}</a>` : ""}</span></td></tr>`;
     }).join("");
     $("kIsi").innerHTML = `<div class="jm-gulir"><table class="jm-tabel jm-adm-tabel"><thead><tr>${th("adm.kta.k.nama", "nama")}${th("adm.kta.k.sumber")}${th("adm.kta.k.nomor", "nomor")}${th("adm.kta.k.jenis")}${th("adm.kta.k.status", "status")}${th("adm.kta.k.berlaku", "berlaku")}${th("adm.kta.k.akun")}${th("adm.kta.k.aksi")}</tr></thead><tbody>${baris}</tbody></table></div>
       ${maks > 1 ? `<div class="jm-bar"><button type="button" class="jm-tbl jm-tbl-kecil" data-k="hal-"${S.hal <= 1 ? " disabled" : ""} aria-label="${esc(t("jm.sebelumnya"))}">${ikon("panah-kiri", 18)}</button><span>${esc(t("adm.kta.hal", { n: angka(S.hal), m: angka(maks) }))}</span><button type="button" class="jm-tbl jm-tbl-kecil" data-k="hal+"${S.hal >= maks ? " disabled" : ""} aria-label="${esc(t("jm.berikutnya"))}">${ikon("panah-kanan", 18)}</button></div>` : ""}`;
@@ -103,7 +103,7 @@ export function panelKta(panel) {
     } else {
       isi = `${kepala(aksi === "cabut" ? "adm.kta.d.cabut" : "adm.kta.d.tolak")}<p>${esc(t(aksi === "cabut" ? "adm.kta.d.cabut_isi" : "adm.kta.d.tolak_isi", { nama: r.nama }))}</p>${kaki("adm.kta.d.ya", true)}`;
     }
-    dlg.innerHTML = `<form id="dForm" novalidate data-aksi="${aksi}" data-id="${esc(r?.id || "")}">${isi}<div id="dPesan" aria-live="polite"></div></form>`;
+    dlg.innerHTML = `<form class="kta-dlg-form" id="dForm" novalidate data-aksi="${aksi}" data-id="${esc(r?.id || "")}">${isi}<div id="dPesan" aria-live="polite"></div></form>`;
     dlg.showModal();
   }
   async function kirimDialog(e) {

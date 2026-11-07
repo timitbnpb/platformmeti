@@ -138,3 +138,14 @@ li.jm-ber-kosong{justify-content:center;color:var(--ink2);border-style:dashed}
 .jm-centang{display:flex;align-items:center;gap:10px;min-height:var(--target);font:400 var(--t-body)/var(--lh-rapat) var(--font)}
 .jm-centang input{width:20px;height:20px;accent-color:var(--accent)}
 .ev-dlg-galat{margin:0;padding:10px 12px;border-radius:var(--r-sm);background:var(--bad-bg);color:var(--bad);font:600 var(--t-tombol)/var(--lh-rapat) var(--font)}
+
+/* tab KTA: ringkasan jumlah */
+.kta-ubin{display:grid;gap:8px;grid-template-columns:repeat(2,minmax(0,1fr));margin:10px 0 16px;padding:0;list-style:none}
+.kta-ubin li{display:grid;gap:2px;padding:12px 14px;border:1px solid var(--line-cell);border-radius:var(--r-sm);background:var(--card)}
+.kta-ubin b{font:700 var(--t-h2)/var(--lh-judul) var(--display);color:var(--head)}
+.kta-ubin span{font-size:var(--t-kecil);color:var(--ink2)}
+@media (min-width:900px){.kta-ubin{grid-template-columns:repeat(5,minmax(0,1fr))}}
+.kta-dlg-form{display:grid;gap:14px}
+.kta-dlg-form h2{margin:0;font:700 var(--t-h2)/var(--lh-rapat) var(--display);color:var(--head)}
+.kta-dlg-form p{margin:0;color:var(--ink2);line-height:var(--lh-isi)}
+.kta-dlg-form .jm-aksi-baris{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin-top:4px}
