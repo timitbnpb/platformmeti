@@ -40,7 +40,7 @@ export function ringkasHtml(o, S, { tombolIkuti, tombolKoreksi }) {
   const r = S.per.get(o.id), N = S.baris.length, tgl = tanggal(o.diperiksa || S.tgl), tglP = tanggal(S.tglProyek);
   const L = o.lokasi || {}, sek = sektorDari(o), url = urlAman(o.situs), bh = badanHukum(o.nama), dSitus = url ? domain(url) : "", dom = domSumber(o);
   const cocokNama = new Map(S.baris.map((x) => [NORM(x.nm), x]));
-  const jawab = t("oj.jawab", { nama: o.nama, kat: (o.kategori?.label || "").toLowerCase(), sek: namaSek(sek).toLowerCase(), kota: L.kota ? t("oj.jawab.kota", { kota: L.kota }) : "", proyek: r.nProy ? t("oj.jawab.proyek", { n: angka(r.nProy), mw: angka(Math.round(r.mw)), v: angka(r.nProv) }) : t("oj.jawab.tanpa"), k: angka(r.rank), N: angka(N) });
+  const jawab = t("oj.jawab", { nama: o.nama, kat: (o.kategori?.label || "").toLowerCase(), sek: namaSek(sek).toLowerCase(), kota: L.kota ? t("oj.jawab.kota", { kota: L.kota }) : "", proyek: r.nProy ? t(r.mw ? "oj.jawab.proyek" : "oj.jawab.proyek0", { n: angka(r.nProy), mw: angka(Math.round(r.mw)), v: angka(r.nProv) }) : t("oj.jawab.tanpa"), k: angka(r.rank), N: angka(N) });
   const kutip = `${o.nama}. ${t("oj.kutip.dari", { tgl })}. ${location.origin}/o/${o.id}`;
   const sk = r.yakin.skor, tingkat = sk >= 0.65 ? "ok" : sk >= 0.4 ? "warn" : "bad";
 

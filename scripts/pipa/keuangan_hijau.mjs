@@ -38,7 +38,7 @@ export async function ambilSemua() {
 }
 export function bangun() {
   const p = baca('data/keuangan_hijau/pubfin.json');
-  const tek = Object.values(p.dimension.Technology.category.label), th = Object.keys(p.dimension.Year.category.index);
+  const tek = Object.values(p.dimension.Technology.category.label), th = Object.values(p.dimension.Year.category.label);
   const investasi = [];
   tek.forEach((nama, i) => th.forEach((y, j) => {
     const v = p.value[i * th.length + j]; if (v === null || v === undefined) return;

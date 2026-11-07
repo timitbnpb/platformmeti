@@ -1,0 +1,117 @@
+/* Kerangka halaman informasi (paket pemda, kebijakan, desa energi, izin dan kontrak): kamus teks per halaman (/data/teks_<nama>.json,
+   id+en), seksi exhibit, tabel urut berpaginasi bernomor, peta provinsi berlambang, kartu "butuh unduhan pemilik", sumber bertanggal.
+   Hanya informasi: tidak ada kalkulator atau alat. Teks UI tinggal di kamus JSON, bukan di JS. */
+import { bahasa, angka, tanggal } from "/i18n.js";
+import { esc, ikon, nanti } from "/inti/umum.js";
+import { paginasiHtml, sorotHalaman } from "/inti/paginasi.js";
+import { exHtml } from "/inti/komponen.js";
+import { aksiHtml } from "/inti/aksi_ex.js";
+import { temuanHtml, sumberLipat, pil } from "/analisis.js";
+
+let kamus = { id: {}, en: {} };
+export async function muatTeks(nama) {
+  const r = await fetch(`/data/teks_${nama}.json`, { credentials: "same-origin" });
+  if (!r.ok) throw new Error("teks");
+  kamus = await r.json();
+}
+export function tt(k, p) {
+  const s = kamus[bahasa()]?.[k] ?? kamus.id[k];
+  if (s === undefined) return k;
+  return p ? s.replace(/\{(\w+)\}/g, (m, n) => (p[n] !== undefined ? p[n] : m)) : s;
+}
+export const L = (o) => (o && typeof o === "object" ? o[bahasa()] ?? o.id ?? "" : o ?? "");
+export const num = (v, d = 0) => angka(v, { desimal: d });
+export const tgl = (s) => tanggal(s);
+export const url = (u) => (/^https:\/\//.test(u || "") ? u : null);
+export const tautan = (u, teks) => (url(u) ? `<a href="${esc(u)}" target="_blank" rel="noopener noreferrer">${esc(teks)}</a>` : esc(teks));
+export const labelPil = (k, jenis = "warn") => `<span class="jm-pil jm-pil-${jenis}">${esc(tt(k))}</span>`;
+export const estPil = () => pil("an.est");
+
+/** Seksi exhibit: judul = kalimat berangka (angka disorot), sub = nama metrik. */
+export const seksi = ({ id, ik, topik, judul, turunan = true, sub = "", isi, csv = false, kelas = "" }) =>
+  exHtml({ id, kelas, ikon: ik, topik, judulHtml: temuanHtml(judul, turunan), subHtml: esc(sub), aksiHtml: aksiHtml({ csv }), isiHtml: isi });
+export const catatan = (teks) => `<p class="jm-bantu inf-cat">${esc(teks)}</p>`;
+/** Teks naratif rata kanan-kiri. */
+export const narasi = (teks) => `<p class="inf-narasi">${esc(teks)}</p>`;
+
+/** Sumber bertanggal (dilipat): [{sumber, halaman?, url?, tanggal, tahun?}] */
+export const sumber = (daftar) => sumberLipat(daftar.map((s) => ({ ...s, url: url(s.url) })));
+
+/** Kartu "butuh unduhan pemilik": alasan dari kamus (kunci b.<id>), sumber nama saja. */
+export function butuhHtml(id, b) {
+  return `<article class="inf-butuh"><header>${ikon("unduh", 18)}<h3>${esc(tt("butuh.judul"))}</h3>${labelPil("butuh.pil")}</header><p>${esc(tt("b." + id))}</p><p class="jm-bantu">${esc(tt("butuh.sumber"))}: ${tautan(b.url, b.sumber)}</p></article>`;
+}
+export const butuhDaftar = (peta, kunci) => `<div class="inf-butuh-baris">${kunci.filter((k) => peta[k]).map((k) => butuhHtml(k, peta[k])).join("")}</div>`;
+
+/* ---------- tabel urut berpaginasi bernomor ----------
+   kolom: [{k, label (teks), v(r) nilai urut/tampil mentah, f(r) HTML sel (default esc(v)), num, tengah}]
+   Urut dan halaman memakai SELURUH data (bukan DOM); chrome (aria-sort, nomor tersorot) berubah seketika, isi menyusul lewat nanti(). */
+export function tabel(akar, { kolom, baris, per = 10, satuan = "jm.pag.u.data", urut = null, label = "" }) {
+  const st = { k: urut?.k ?? null, arah: urut?.arah ?? 1, hal: 1 };
+  const nilai = (r, k) => kolom.find((c) => c.k === k).v(r);
+  const susun = () => {
+    if (!st.k) return baris;
+    return [...baris].sort((a, z) => {
+      const x = nilai(a, st.k), y = nilai(z, st.k);
+      return ((x == null) - (y == null)) || (x == null ? 0 : (typeof x === "number" && typeof y === "number" ? x - y : String(x).localeCompare(String(y), "id", { numeric: true })) * st.arah);
+    });
+  };
+  const gambar = () => {
+    const a = susun(), mulai = (st.hal - 1) * per;
+    const th = `<th class="jm-tengah" data-urut="tidak">${esc(tt("tabel.no"))}</th>` + kolom.map((c) => `<th aria-sort="${st.k === c.k ? (st.arah > 0 ? "ascending" : "descending") : "none"}"><button type="button" class="jm-urut" data-k="${esc(c.k)}">${esc(c.label)}</button></th>`).join("");
+    const tr = a.slice(mulai, mulai + per).map((r, i) => `<tr><td class="jm-tengah" data-label="${esc(tt("tabel.no"))}">${num(mulai + i + 1)}</td>${kolom.map((c) => `<td data-label="${esc(c.label)}"${c.num ? ' class="jm-num"' : c.tengah ? ' class="jm-tengah"' : ""}>${c.f ? c.f(r) : esc(c.v(r) ?? "-")}</td>`).join("")}</tr>`).join("");
+    akar.innerHTML = `<div class="jm-gulir"><table class="jm-tabel" data-urut="tidak" aria-label="${esc(label)}"><thead><tr>${th}</tr></thead><tbody>${tr}</tbody></table></div>${paginasiHtml({ hal: st.hal, total: a.length, per, satuan })}`;
+  };
+  akar.addEventListener("click", (e) => {
+    const u = e.target.closest(".jm-urut"), h = e.target.closest("[data-hal]");
+    if (u) {
+      const k = u.dataset.k; st.arah = st.k === k ? -st.arah : 1; st.k = k; st.hal = 1;
+      for (const th of akar.querySelectorAll("th[aria-sort]")) th.setAttribute("aria-sort", th === u.parentElement ? (st.arah > 0 ? "ascending" : "descending") : "none");
+      nanti(gambar);
+    } else if (h && !h.disabled) {
+      st.hal = Number(h.dataset.hal); sorotHalaman(h, st.hal); nanti(gambar);
+    }
+  });
+  gambar();
+  // CSV penuh (bukan hanya halaman terlihat)
+  akar.closest(".jm-ex")?.addEventListener("jm:csv", (e) => { e.detail.baris = [[tt("tabel.no"), ...kolom.map((c) => c.label)], ...susun().map((r, i) => [i + 1, ...kolom.map((c) => c.v(r) ?? "")])]; });
+  return { ulang: gambar };
+}
+
+/* ---------- peta provinsi berlambang ----------
+   data: Map(kode -> {nilai, teks}); lima kelas kuantil (inf-k0..inf-k4, gelap = nilai besar); lambang di provinsi yang cukup lebar. */
+let geo = null;
+const muatGeo = () => (geo ??= fetch("/geo/provinsi.json").then((r) => r.json()).catch(() => { geo = null; return null; }));
+const cincin = (g) => (g.type === "Polygon" ? [g.coordinates] : g.coordinates).flatMap((p) => p.slice(0, 1));
+export async function petaHtml(data, { nama, onPilih, pilih = null, lebar = 640 } = {}) {
+  const g = await muatGeo();
+  if (!g) return "";
+  const W = Math.max(300, Math.min(960, Math.round(lebar))), X0 = 94.6, X1 = 141.2, Y0 = -11.2, Y1 = 6.2, k = W / (X1 - X0), H = Math.round((Y1 - Y0) * k);
+  const px = ([x, y]) => [((x - X0) * k).toFixed(1), ((Y1 - y) * k).toFixed(1)];
+  const nil = [...data.values()].map((d) => d.nilai).filter((v) => v != null).sort((a, z) => a - z);
+  const batas = [1, 2, 3, 4].map((i) => nil[Math.floor((nil.length * i) / 5)]);
+  const kelas = (v) => (v == null ? "inf-kx" : "inf-k" + batas.filter((b) => v >= b).length);
+  const isi = g.features.map((f) => {
+    const kode = String(f.properties.kode), d = data.get(kode), rs = cincin(f.geometry);
+    const jalan = rs.map((r) => "M" + r.filter((_, i) => i % 2 === 0 || i === r.length - 1).map((p) => px(p).join(",")).join("L") + "Z").join("");
+    const besar = rs.reduce((a, r) => (r.length > a.length ? r : a), rs[0]);
+    const xs = besar.map((p) => +px(p)[0]), ys = besar.map((p) => +px(p)[1]), lx = Math.max(...xs) - Math.min(...xs);
+    const cx = (Math.min(...xs) + Math.max(...xs)) / 2, cy = (Math.min(...ys) + Math.max(...ys)) / 2;
+    const judul = `${nama(kode)}: ${d ? d.teks : tt("peta.tanpa")}`;
+    return `<path class="inf-pv ${kelas(d?.nilai)}${pilih === kode ? " on" : ""}" d="${jalan}" data-kode="${kode}" tabindex="0" role="button" aria-label="${esc(judul)}"><title>${esc(judul)}</title></path>${lx >= 34 ? `<image class="inf-lb" href="/img/provinsi/${kode}.png" x="${(cx - 9).toFixed(1)}" y="${(cy - 9).toFixed(1)}" width="18" height="18" aria-hidden="true"/>` : ""}`;
+  }).join("");
+  const legenda = [0, 1, 2, 3, 4].map((i) => `<span class="inf-lg"><i class="inf-k${i}"></i>${esc(i === 0 ? tt("peta.rendah") : i === 4 ? tt("peta.tinggi") : "")}</span>`).join("");
+  const peta = `<div class="inf-peta"><svg viewBox="0 0 ${W} ${H}" role="group" aria-label="${esc(tt("peta.label"))}" focusable="false">${isi}</svg><div class="inf-legenda">${legenda}</div></div>`;
+  return peta;
+}
+export function pasangPeta(akar, onPilih) {
+  const f = (e) => { const p = e.target.closest(".inf-pv"); if (p) onPilih(p.dataset.kode); };
+  akar.addEventListener("click", f);
+  akar.addEventListener("keydown", (e) => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); f(e); } });
+}
+/** Lambang kecil di samping nama provinsi. */
+export const lambang = (kode, ukuran = 18) => `<img class="inf-lb-kecil" src="/img/provinsi/${esc(kode)}.png" width="${ukuran}" height="${ukuran}" alt="" loading="lazy" data-galat="hapus">`;
+
+/** Tooltip batang dipasang lewat title oleh analisis.js; di sini hanya pembantu bobot persen. */
+export const persen = (v, d = 1) => (v == null ? "-" : `${num(v, d)}%`);
+export const saatBahasa = (fn) => document.addEventListener("jm:bahasa", fn);

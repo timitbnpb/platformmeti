@@ -77,7 +77,7 @@ export async function bangunSensus(akar) {
     st.hal = hal;
     $("soHitung").textContent = t("so.tampil", { n: angka(hasil.length) });
     $("soUbin").firstElementChild.lastElementChild.textContent = t("so.dari", { x: angka(hasil.length), n: angka(N) });
-    const th = (kk, kunci, num) => `<th scope="col" class="${num ? "so-num" : ""}" aria-sort="${st.urut.k === kk ? (st.urut.arah > 0 ? "ascending" : "descending") : "none"}"><button type="button" class="so-th" data-urut="${kk}">${esc(t(kunci))}</button></th>`;
+    const th = (kk, kunci, num) => `<th scope="col" class="${num ? "so-num" : ""}" aria-sort="${st.urut.k === kk ? (st.urut.arah > 0 ? "ascending" : "descending") : "none"}"><button type="button" class="jm-urut so-th" data-urut="${kk}">${esc(t(kunci))}</button></th>`;
     $("soTab").innerHTML = hasil.length ? `<table class="jm-tabel so-tabel"><caption class="so-sr">${esc(t("so.caption"))}</caption><thead><tr><th scope="col" class="so-no">${esc(t("so.c.no"))}</th>${th("nm", "so.c.org")}<th scope="col">${esc(t("so.c.sektor"))}</th><th scope="col">${esc(t("so.c.kota"))}</th>${th("nProy", "so.c.proyek", 1)}${th("mw", "so.c.mw", 1)}</tr></thead><tbody>${hasil.slice(a, a + PER).map((r, i) => baris(r, a + i + 1)).join("")}</tbody></table>`
       : `<div class="jm-kosong">${ikon("cari", 32)}<p>${esc(t("so.kosong"))}</p><button type="button" class="so-tb" id="soReset">${esc(t("so.reset"))}</button></div>`;
     $("soPag").innerHTML = paginasiHtml({ hal, total: hasil.length, per: PER, satuan: "so.satuan" });

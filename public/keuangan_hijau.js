@@ -14,6 +14,7 @@ const src = (...id) => sumberLipat(id.map((i) => { const s = d.sumber.find((x) =
 const KEL = ["ebt", "fosil", "lain"], KLS = { ebt: "ih-ebt", fosil: "ih-fosil", lain: "ih-lain" };
 const jumlahKel = (a, b) => { const o = { ebt: 0, fosil: 0, lain: 0 }; for (const r of d.investasi_publik) if (r.tahun >= a && r.tahun <= b) o[r.kelompok] += r.usd_juta_2023; return o; };
 const TAHUN = () => [...new Set(d.investasi_publik.map((r) => r.tahun))].sort((a, b) => a - b);
+const slug = (x) => x.toLowerCase().replace(/[^a-z]+/g, "-");
 const pilihTingkat = (b) => t("kg.bukti." + b);
 
 function ubin() {
@@ -58,7 +59,7 @@ function rangka() {
 function tabelTabel() {
   const th = TAHUN(), z = th.at(-1), ref = [...new Set(d.investasi_publik.map((r) => r.teknologi))];
   tabel($("tb-investasi"), { satuan: "ih.u.tek", per: 10, urutAwal: 2, kolom: [
-    { label: t("kg.c.tek"), v: (r) => t("kg.tek." + r.t), f: (r) => esc(t("kg.tek." + r.t)) },
+    { label: t("kg.c.tek"), v: (r) => t("kg.tek." + slug(r.t)), f: (r) => esc(t("kg.tek." + slug(r.t))) },
     { label: t("kg.c.kel"), v: (r) => t("kg.kel." + r.kel), f: (r) => esc(t("kg.kel." + r.kel)) },
     { label: t("kg.c.jumlah", { a: z - 9, b: z }), num: true, v: (r) => r.jml, f: (r) => num(r.jml, 1) },
     { label: t("kg.c.semua"), num: true, v: (r) => r.semua, f: (r) => num(r.semua, 1) },
@@ -66,7 +67,7 @@ function tabelTabel() {
   tabel($("tb-obligasi"), { satuan: "ih.u.instrumen", per: 6, urutAwal: 3, kolom: [
     { label: t("kg.c.penerbit"), v: (r) => r.penerbit, f: (r) => esc(r.penerbit) },
     { label: t("kg.c.instrumen"), v: (r) => r.instrumen, f: (r) => esc(r.instrumen) },
-    { label: t("kg.c.nilai"), num: true, v: (r) => (r.satuan === "USD juta" ? r.nilai * 16 : r.satuan === "IDR miliar" ? r.nilai / 1000 : null), f: (r) => (r.nilai == null ? "-" : `${num(r.nilai, 0)} ${esc(r.satuan)}`) },
+    { label: t("kg.c.nilai"), num: true, v: (r) => (r.nilai == null ? null : `${r.satuan}|${String(Math.round(r.nilai)).padStart(10, "0")}`), f: (r) => (r.nilai == null ? "-" : `${num(r.nilai, 0)} ${esc(r.satuan)}`) },
     { label: t("kg.c.tahun"), num: true, v: (r) => r.tahun, f: (r) => String(r.tahun) },
     { label: t("kg.c.bukti"), v: (r) => r.tingkat_bukti, f: (r) => esc(pilihTingkat(r.tingkat_bukti)) },
   ], baris: d.instrumen_hijau });
@@ -79,7 +80,7 @@ function tabelTabel() {
   tabel($("tb-skema"), { satuan: "ih.u.skema", per: 8, urutAwal: 0, menurun: false, kolom: [
     { label: t("kg.c.skema"), v: (r) => r.nama, f: (r) => (r.url ? `<a href="${esc(r.url)}" target="_blank" rel="noopener noreferrer">${esc(r.nama)}</a>` : esc(r.nama)) },
     { label: t("kg.c.pemberi"), v: (r) => r.pemberi, f: (r) => esc(r.pemberi) },
-    { label: t("kg.c.jenis"), v: (r) => r.jenis, f: (r) => esc(t("kg.skj." + r.jenis)) },
+    { label: t("kg.c.jenis"), v: (r) => r.jenis, f: (r) => esc(t("kg.skj." + slug(r.jenis))) },
     { label: t("kg.c.bukti"), v: (r) => r.tingkat_bukti, f: (r) => esc(pilihTingkat(r.tingkat_bukti)) },
   ], baris: d.skema });
   tabel($("tb-tetangga"), { satuan: "ih.u.negara", per: 10, urutAwal: 1, kelasBaris: (r) => (r.iso3 === "IDN" ? "ih-baris-id" : ""), kolom: [

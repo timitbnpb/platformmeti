@@ -24,7 +24,7 @@ const cacah = (n) => (typeof n === "number" ? angka(n) : n ? t("mw.kurang10") : 
 export function isiKartu(b, tautan) {
   const baris = [["orang", b.ketua && `${esc(t("mw.ketua"))}: <b>${esc(b.ketua)}</b>`], ["lokasi", b.sekretariat && esc(b.sekretariat)], ["tahun", tahunDari(b) && esc(t("mw.tahun", { tahun: tahunDari(b) }))]].filter((x) => x[1]);
   const ang = [["orang", cacah(b.individu), t("mw.u.individu")], ["direktori", cacah(b.organisasi), t("mw.u.organisasi")]].filter((x) => x[1]);
-  const aj = `${ik("tautan", 16)}${esc(t("mw.buka_profil"))}`;
+  const aj = `${ik("tautan", 16)}${esc(t("mw.kartu_profil"))}`;
   return `<header>${lambang(b.kode, 48)}<strong>${esc(b.nama)}</strong>${pilStatus(b.status)}</header>
     ${baris.length ? `<ul class="mw-info">${baris.map(([i, v]) => `<li>${ik(i)}<span>${v}</span></li>`).join("")}</ul>` : `<p class="mw-kos">${esc(t("mw.belum_semua"))}</p>`}
     ${ang.length ? `<div class="mw-cacah">${ang.map(([i, v, l]) => `<span>${ik(i, 18)}<b>${esc(v)}</b><small>${esc(l)}</small></span>`).join("")}</div>` : ""}

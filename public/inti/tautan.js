@@ -48,7 +48,7 @@ export function siapTautan(...jenis) {
 const cari = (j, kunci) => { const x = idx[j]; if (!x) return undefined; const s = String(kunci ?? ""); return x.byId.get(s) ?? x.byId.get(x.byNama.get(norm(s))) ?? null; };
 
 /** Rekam ringkas untuk satu butir panel Terkait: { id, nama, kode?, tgl?, status?, logo?, pdf?, sumber?, href } atau null (indeks belum siap/tak ada). */
-export const rinci = (j, kunci) => { const r = cari(j, kunci); return r ? { ...r, href: RUTE[j](r.id) } : null; };
+export const rinci = (j, kunci) => { const r = cari(j, kunci); return r && RUTE[j] ? { ...r, href: RUTE[j](r.id) } : null; };
 
 /* ---------- provinsi dan teknologi: tanpa fetch ---------- */
 const KODE_PROV = new Set(Object.values(PROV).map((k) => String(k)));

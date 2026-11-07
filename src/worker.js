@@ -2,6 +2,7 @@
 import { rute as ruteSesi } from "./sesi.js";
 import { rute as ruteAkun } from "./akun.js";
 import { rute as ruteAgenda } from "./agenda.js";
+import { rute as ruteSosmed, perbaruiSosmed } from "./sosmed.js";
 import { rute as ruteEvent } from "./event.js";
 import { rute as ruteDirektori } from "./direktori.js";
 import { rute as ruteFoto } from "./foto_berita.js";
@@ -39,7 +40,7 @@ const rutePemilik = {
 };
 
 // Tabel rute dikompilasi sekali: { metode, bagian[], fn }.
-const DAFTAR = Object.entries({ ...ruteSesi, ...ruteAkun, ...ruteAgenda, ...ruteEvent, ...ruteDirektori, ...ruteFoto, ...ruteAdmin, ...ruteLangganan, ...ruteKelayakan, ...rutePustaka, ...ruteKta, ...ruteMetiWilayah, ...rutePesan, ...ruteProfilAkun, ...ruteIkuti, ...rutePortal, ...ruteWilayahKelola, ...ruteDaftar, ...rutePemilik }).map(([k, fn]) => {
+const DAFTAR = Object.entries({ ...ruteSesi, ...ruteAkun, ...ruteAgenda, ...ruteSosmed, ...ruteEvent, ...ruteDirektori, ...ruteFoto, ...ruteAdmin, ...ruteLangganan, ...ruteKelayakan, ...rutePustaka, ...ruteKta, ...ruteMetiWilayah, ...rutePesan, ...ruteProfilAkun, ...ruteIkuti, ...rutePortal, ...ruteWilayahKelola, ...ruteDaftar, ...rutePemilik }).map(([k, fn]) => {
   const [metode, jalur] = k.split(" ");
   return { metode, bagian: jalur.split("/").slice(1), fn };
 });
@@ -282,5 +283,8 @@ export default {
     ctx?.waitUntil?.(catatHit(env, req, res.status).catch((e) => console.error("lalin", e?.message)));
     return res;
   },
-  async scheduled(ev, env, ctx) { ctx?.waitUntil?.(perbaruiRentang(env).catch((e) => console.error("rentang-ip", e?.message))); },
+  async scheduled(ev, env, ctx) {
+    ctx?.waitUntil?.(perbaruiRentang(env).catch((e) => console.error("rentang-ip", e?.message)));
+    ctx?.waitUntil?.(perbaruiSosmed(env).then((h) => console.log("sosmed", JSON.stringify(h))).catch((e) => console.error("sosmed", e?.message)));
+  },
 };

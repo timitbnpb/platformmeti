@@ -651,3 +651,13 @@ main>:is(section,div,article)+:is(section,div,article){margin-top:max(24px,var(-
 .jm-tek-pembiayaan{--tk:var(--tp-biaya)}.jm-tek-transisi-adil{--tk:var(--tp-adil)}.jm-tek-karbon{--tk:var(--tp-karbon)}.jm-tek-elektrifikasi{--tk:var(--tp-listrik)}.jm-tek-efisiensi{--tk:var(--tp-efisiensi)}
 .pc-tw{display:inline-grid;color:var(--tk)}.pc-tw svg{width:18px;height:18px}
 .jm-hal>.jm-pag{flex:1;margin:0}
+/* label kepala (eyebrow) di KANAN ATAS kepala seksi, bukan kiri atas (pemilik 8 Nov 2026) */
+@media (min-width:600px){
+.jm-ex>.jm-ex-hd>.jm-ex-teks{display:contents}
+.jm-ex>.jm-ex-hd>.jm-ex-teks>*{grid-column:1}
+.jm-ex>.jm-ex-hd>.jm-ex-teks>.jm-ex-ey{grid-column:2;grid-row:1;justify-self:end;margin-bottom:0}
+.jm-ex>.jm-ex-hd>.jm-ex-teks>.jm-ex-j{grid-row:1;align-self:center}
+.jm-ex>.jm-ex-hd>.jm-ex-aksi{grid-column:2;grid-row:2 / span 2;align-self:start}
+}
+/* bar saring tanpa chip hitungan "n dari N": pilihan mengisi sampai ujung (pemilik 8 Nov 2026); jumlah tampil di paginasi */
+.jm-saring>.jm-hitung{display:none!important}

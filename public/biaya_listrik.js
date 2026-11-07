@@ -35,7 +35,7 @@ function rangka() {
   const ex = (o) => exHtml({ ...o, aksiHtml: aksiHtml({ csv: !!o.csv }), tingkat: "h2" });
   const tabBanding = `<div class="jm-tab" role="tablist" aria-label="${esc(t("bl.pilih_tek"))}">${["surya", "bayu-darat"].map((k) => `<button type="button" role="tab" data-tek="${k}" aria-selected="${k === banding}">${esc(nm(k))}</button>`).join("")}</div>`;
   $("isi").innerHTML = [
-    ex({ id: "lcoe", ikon: "tek-surya", topik: t("bl.ey.lcoe"), judulHtml: hlHtml("bl.t.lcoe", `${num(persen(awal(s).sen_usd_kwh, akhir(s).sen_usd_kwh), 0)}%`, { a: awal(s).tahun, b: akhir(s).tahun }) + est, subHtml: esc(t("bl.s.lcoe")), csv: true,
+    ex({ id: "lcoe", ikon: "tek-surya", topik: t("bl.ey.lcoe"), judulHtml: hlHtml("bl.t.lcoe", `${num(Math.abs(persen(awal(s).sen_usd_kwh, akhir(s).sen_usd_kwh)), 0)}%`, { a: awal(s).tahun, b: akhir(s).tahun }) + est, subHtml: esc(t("bl.s.lcoe")), csv: true,
       isiHtml: `${legendaHtml(TEK.map((k) => ({ kelas: KLS[k], label: nm(k) })))}<div id="g-lcoe" class="ih-bagan"></div>${detailHtml()}<div id="tb-lcoe" class="ih-tabel"></div><p class="jm-bantu ih-catatan">${esc(t("bl.n.lcoe"))}</p>${src("s-irena-lcoe")}` }),
     ex({ id: "banding", ikon: "wilayah", topik: t("bl.ey.banding"), judulHtml: hlHtml("bl.t.banding", `${n1(i1.sen_usd_kwh, 2)}`, { tahun: i1.tahun, x: n1(i1.sen_usd_kwh / w1.sen_usd_kwh, 1), w: n1(w1.sen_usd_kwh, 2) }) + est, subHtml: esc(t("bl.s.banding")), csv: true,
       isiHtml: `${tabBanding}<div id="g-banding" class="ih-bagan"></div>${detailHtml()}<div id="tb-banding" class="ih-tabel"></div><p class="jm-bantu ih-catatan">${esc(t("bl.n.banding"))}</p>${src("s-irena-lcoe")}` }),
@@ -97,7 +97,7 @@ function bagan() {
   $("g-bpp").innerHTML = kolomSvg({ el: $("g-bpp"), satuan: "Rp/kWh", label: t("bl.s.bpp"), seri: [{ k: "v", kelas: "ih-netral" }],
     kategori: d.bpp_nasional.map((r) => ({ label: String(r.tahun), nilai: { v: r.rp_kwh }, tip: t("bl.tip_bpp", { tahun: r.tahun, rp: num(r.rp_kwh, 1), sen: n1(r.sen_usd_kwh, 2), kepmen: r.kepmen }) })) });
   const th = d.bpp_nasional.at(-1).tahun, atas = [...d.bpp_sistem].filter((r) => r.rp_kwh[th]).sort((x, y) => y.rp_kwh[th] - x.rp_kwh[th]).slice(0, 12);
-  $("g-bpp2").innerHTML = `<p class="jm-bantu">${esc(t("bl.top", { tahun: th }))}</p>` + batangSvg({ el: $("g-bpp2"), d: 0, label: t("bl.top", { tahun: th }), satuan: "Rp/kWh", seri: [{ k: "v", kelas: "ih-netral" }], baris: atas.map((r) => ({ label: r.nama, tip: `${r.nama}, ${th}: Rp${num(r.rp_kwh, 0)}/kWh`, bagian: [{ k: "v", nilai: r.rp_kwh }] })) });
+  $("g-bpp2").innerHTML = `<p class="jm-bantu">${esc(t("bl.top", { tahun: th }))}</p>` + batangSvg({ el: $("g-bpp2"), d: 0, label: t("bl.top", { tahun: th }), satuan: "Rp/kWh", seri: [{ k: "v", kelas: "ih-netral" }], baris: atas.map((r) => ({ label: r.nama, tip: `${r.nama}, ${th}: Rp${num(r.rp_kwh, 0)}/kWh`, bagian: [{ k: "v", nilai: r.rp_kwh[th] }] })) });
 }
 function gBanding() {
   const negara = [...new Set(d.lcoe.filter((r) => r.teknologi === banding).map((r) => r.iso3))];

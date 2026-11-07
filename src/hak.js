@@ -1901,3 +1901,22 @@ export async function onlineSelesai(env, orderId, lunas) {
 export const ping = async (env) => (await env.DB.prepare("SELECT 1 AS ok").first()).ok === 1;
 
 export const sistem = { cariAkunUntukMasuk, catatSesi, bacaSesi, akunAktif, hapusSesi, catatLaju, periksaTautanAktivasi, pakaiTautanAktivasi, ubahSandi, rehashSandi, jejakTulis, sapu, ping };
+
+// Feed media sosial (sosmed_feed): cron menulis tanpa akun (jalur sistem seperti lalin); admin hanya mengurasi baris linkedin.
+export const sosmedDaftar = async (env) => (await tanpaTabel(() => env.DB.prepare("SELECT platform, uid, judul, tanggal, url, gambar FROM sosmed_feed ORDER BY tanggal DESC LIMIT 200").all()))?.results ?? [];
+// Upsert satu platform; baris yang tak lagi ada di sumber dipangkas. Mengembalikan kunci R2 baris terpangkas agar berkasnya ikut dihapus.
+export async function sosmedSimpan(env, platform, baris) {
+  if (!baris.length) return [];
+  const up = baris.map((b) => env.DB.prepare("INSERT INTO sosmed_feed (platform, uid, judul, tanggal, url, gambar) VALUES (?, ?, ?, ?, ?, ?) ON CONFLICT (platform, uid) DO UPDATE SET judul = excluded.judul, tanggal = excluded.tanggal, url = excluded.url, gambar = COALESCE(excluded.gambar, gambar)")
+    .bind(platform, b.uid, b.judul, b.tanggal, b.url, b.gambar ?? null));
+  const ada = baris.map((b) => b.uid), ph = ada.map(() => "?").join(",");
+  const buang = (await env.DB.prepare(`SELECT gambar FROM sosmed_feed WHERE platform = ? AND uid NOT IN (${ph}) AND gambar IS NOT NULL`).bind(platform, ...ada).all()).results.map((r) => r.gambar);
+  await env.DB.batch([...up, env.DB.prepare(`DELETE FROM sosmed_feed WHERE platform = ? AND uid NOT IN (${ph})`).bind(platform, ...ada)]);
+  return buang;
+}
+export async function sosmedLinkedin(env, akun, aksi, b) {
+  gerbangAdm(akun);
+  if (aksi === "hapus") return void (await env.DB.prepare("DELETE FROM sosmed_feed WHERE platform = 'linkedin' AND uid = ?").bind(b.uid).run());
+  await env.DB.prepare("INSERT INTO sosmed_feed (platform, uid, judul, tanggal, url) VALUES ('linkedin', ?, ?, ?, ?) ON CONFLICT (platform, uid) DO UPDATE SET judul = excluded.judul, tanggal = excluded.tanggal, url = excluded.url")
+    .bind(b.uid, b.judul, b.tanggal, b.url).run();
+}

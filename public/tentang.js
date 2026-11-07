@@ -52,18 +52,20 @@ function ringkas(judul, a, { ik = "orang", pimpinan = PIM } = {}) {
   return `<section class="tn-grp tn-rg">${kepalaGrup(ik, judul, a)}${lr}${bawah}</section>`;
 }
 
-const tbl = (x, dup) => {
-  const l = LAMBANG[x.nama], src = l ? l[0] : x.logo, lebar = !l && x.w / x.h > 3.2;
-  return `<li${dup ? ' aria-hidden="true"' : ""}><a class="tn-logo"${dup ? ' tabindex="-1"' : ""} data-org-nama="${esc(x.nama)}" href="/direktori?cari=${encodeURIComponent(x.nama)}" title="${esc(x.nama)}"><img src="${esc(src)}" alt="${esc(x.nama)}" loading="lazy">${l || lebar ? `<span>${esc(l ? l[1] : x.nama)}</span>` : ""}</a></li>`;
+const kartuLogo = (href, nama, g, extra = "") => `<li><a class="tn-logo" ${extra} href="${esc(href)}" title="${esc(nama)}"><span class="tn-logo-g">${g}</span><span class="tn-logo-n">${esc(nama)}</span></a></li>`;
+const mono = (n) => `<b class="tn-mono" aria-hidden="true">${esc(String(n).replace(/[^\p{L}]/gu, "").slice(0, 4).toUpperCase())}</b>`;
+const tbl = (x) => {
+  const l = LAMBANG[x.nama], src = l ? l[0] : x.logo;
+  return kartuLogo("/direktori?cari=" + encodeURIComponent(x.nama), l ? l[1] : x.nama, src ? `<img src="${esc(src)}" alt="" loading="lazy">` : mono(x.nama), `data-org-nama="${esc(x.nama)}"`);
 };
-const tblAsos = (a, dup) => `<li${dup ? ' aria-hidden="true"' : ""}><a class="tn-logo"${dup ? ' tabindex="-1"' : ""} href="/direktori?cari=${encodeURIComponent(a)}" title="${esc(a)}">${LOGO_ASOS[a] ? `<img src="${LOGO_ASOS[a]}" alt="${esc(a)}" loading="lazy">` : `<b class="tn-mono">${esc(a)}</b>`}</a></li>`;
-/* ponytail: marquee CSS murni; daftar pendek diulang sampai >= 10 butir lalu digandakan untuk putaran mulus */
-const jalur = (a, fn, balik) => { const r = Math.ceil(10 / a.length), basis = Array.from({ length: r }, (_, k) => a.map((x) => fn(x, k > 0))).flat(); return `<div class="tn-pita"><ul class="tn-trek${balik ? " balik" : ""}">${basis.join("")}${a.length ? Array.from({ length: r }, () => a.map((x) => fn(x, true))).flat().join("") : ""}</ul></div>`; };
+const tblAsos = (a, sudah) => kartuLogo("/direktori?cari=" + encodeURIComponent(a), a, LOGO_ASOS[a] && !sudah.has(LOGO_ASOS[a]) ? (sudah.add(LOGO_ASOS[a]), `<img src="${LOGO_ASOS[a]}" alt="" loading="lazy">`) : mono(a));
+/* kisi kartu seragam; duplikat nama dibuang */
+const jalur = (a, fn) => { const lihat = new Set(), sudah = new Set(); return `<ul class="tn-kisi">${a.filter((x) => { const k = typeof x === "string" ? x : x.nama; return lihat.has(k) ? false : lihat.add(k); }).map((x) => fn(x, sudah)).join("")}</ul>`; };
 
 /* ---------- bagian ---------- */
-const KOLFOTO = [["surya", "solar"], ["bayu", "bayu"], ["hidro", "hidro"], ["panas-bumi", "panas-bumi"], ["bioenergi", "bioenergi"]];
+const KOLFOTO = [["surya", "surya-cirata"], ["bayu", "bayu-sidrap"], ["hidro", "hidro-saguling"], ["panas-bumi", "panas-bumi-sibayak"], ["bioenergi", "bioenergi-sawit"]];
 function hero(f) {
-  const kol = KOLFOTO.map(([k, fl], i) => `<a class="tn-kol" href="/proyek?teknologi=${k}" aria-label="${esc(t("tn.foto.buka", { nama: t("tn.foto." + k) }))}"><img src="/img/tentang/${fl}.webp" alt="" width="1600" height="900" ${i ? 'loading="lazy"' : 'fetchpriority="high"'}><span class="tn-kol-isi">${ikonTek(k)}${esc(t("tn.foto." + k))}</span></a>`).join("");
+  const kol = KOLFOTO.map(([k, fl], i) => `<a class="tn-kol" href="/proyek?teknologi=${k}" aria-label="${esc(t("tn.foto.buka", { nama: t("tn.foto." + k) }))}"><img src="/img/beranda/${fl}.webp" alt="" width="1600" height="900" ${i ? 'loading="lazy"' : 'fetchpriority="high"'}><span class="tn-kol-isi">${ikonTek(k)}${esc(t("tn.foto." + k))}</span></a>`).join("");
   const st = [["kalender", 1999, t("tn.stat.berdiri")], ["orang", f.pengurus, t("tn.stat.pengurus")], ["tautan", f.mitra, t("tn.stat.mitra")], ["proyek", f.proyek, t("tn.stat.proyek")]];
   return `<section class="tn-hero" aria-labelledby="tn-judul"><div class="tn-kolom">${kol}</div><div class="tn-wrap tn-hero-isi"><h1 id="tn-judul">${esc(t("tn.judul"))}</h1><p class="tn-lead tn-hero-lead">${esc(t("tn.lead"))}</p>
     <div class="tn-aksi"><a class="tn-tbl tn-tbl-putih" href="/direktori">${esc(t("tn.cta_direktori"))}</a><a class="tn-tbl tn-tbl-garis" href="${MI}/membership" target="_blank" rel="noopener noreferrer">${esc(t("tn.cta_gabung"))}</a></div>
@@ -116,9 +118,9 @@ function struktur(p) {
 }
 
 function mitra(m) {
-  const grup = (kunci, a, fn, balik) => `<h3 class="tn-sub tn-tengah">${esc(t(kunci))}</h3>${jalur(a, fn, balik)}`;
+  const grup = (kunci, a, fn, ik) => `<h3 class="tn-sub tn-tengah">${ikon(ik, 18)}<span>${esc(t(kunci))}</span><span class="tn-jml">${angka(new Set(a.map((x) => (typeof x === "string" ? x : x.nama))).size)}</span></h3>${jalur(a, fn)}`;
   return `<section class="tn-seksi tn-pita-bg" id="mitra" aria-labelledby="tn-mitra">${kepala("tn-mitra", "tautan", t("tn.ey.mitra"), t("tn.mitra.h2"), t("tn.mitra.pengantar", { tanggal: tanggal(m.diambil) }))}
-  ${grup("tn.mitra.kerja", m.mitra, tbl)}${grup("tn.mitra.anggota", m.anggota, tbl, true)}${grup("tn.mitra.asosiasi", m.asosiasi, tblAsos)}</section>`;
+  ${grup("tn.mitra.kerja", m.mitra, tbl, "tautan")}${grup("tn.mitra.anggota", m.anggota, tbl, "gedung")}${grup("tn.mitra.asosiasi", m.asosiasi, tblAsos, "direktori")}</section>`;
 }
 
 function faq(k) {

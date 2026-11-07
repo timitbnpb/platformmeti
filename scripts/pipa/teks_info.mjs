@@ -1,0 +1,125 @@
+// Kamus dwibahasa (id, en) untuk empat halaman informasi. Satu sumber: tiap kunci [id, en]; keluaran public/data/teks_<halaman>.json.
+// Pakai: node scripts/pipa/teks_info.mjs. Tanpa em dash, tanpa titik tengah, tanpa panah teks.
+import fs from 'node:fs';
+import path from 'node:path';
+
+const AKAR = path.resolve(path.dirname(new URL(import.meta.url).pathname), '..', '..');
+
+export const UMUM = {
+  'tabel.no': ['No', 'No'],
+  'tabel.kosong': ['-', '-'],
+  'tabel.provinsi': ['Provinsi', 'Province'],
+  'butuh.judul': ['Butuh unduhan pemilik', 'Needs a manual download'],
+  'butuh.pil': ['Belum tersedia', 'Not yet available'],
+  'butuh.sumber': ['Sumber yang perlu diunduh', 'Source to download'],
+  'peta.tanpa': ['tanpa data', 'no data'],
+  'peta.rendah': ['rendah', 'low'],
+  'peta.tinggi': ['tinggi', 'high'],
+  'peta.label': ['Peta provinsi Indonesia dengan lambang daerah', 'Map of Indonesian provinces with regional emblems'],
+  'satuan.poin': ['poin', 'points'],
+};
+
+export const PEMDA = {
+  'judul.halaman': ['Paket pemda: 38 provinsi | Direktori METI', 'Regional government pack: 38 provinces | METI Directory'],
+  'kh.ey': ['Paket pemerintah daerah', 'Regional government pack'],
+  'kh.judul': ['Paket pemda', 'Regional government pack'],
+  'kh.lead': ['Satu paket informasi per provinsi untuk dinas, bappeda, dan DPRD: seberapa siap, apa kebijakannya, dan data apa yang masih kosong.', 'One information pack per province for agencies, planning bodies and regional councils: how ready, what policies, and which data is still missing.'],
+  'ubin.siap': ['provinsi tingkat siap', 'provinces at the ready level'],
+  'ubin.rued': ['provinsi dengan Perda RUED tercatat', 'provinces with a recorded RUED regulation'],
+  'ubin.kontak': ['provinsi dengan situs dinas tercatat', 'provinces with a recorded agency website'],
+  'tk.siap': ['Siap', 'Ready'], 'tk.berkembang': ['Berkembang', 'Developing'], 'tk.awal': ['Awal', 'Early'],
+  'st.tercapai': ['Tercapai', 'Achieved'], 'st.di-jalur': ['Di jalur', 'On track'], 'st.tertinggal': ['Tertinggal', 'Behind'],
+  'komp.rued_ada': ['Perda RUED', 'RUED regulation'], 'komp.rued_capaian': ['Capaian RUED', 'RUED progress'], 'komp.elektrifikasi': ['Elektrifikasi', 'Electrification'],
+  'komp.pipeline': ['Pipeline EBT', 'Renewable pipeline'], 'komp.kelembagaan': ['Perda daerah', 'Regional rules'],
+  'kd.rued_ada': ['Bernilai 1 bila Perda Rencana Umum Energi Daerah provinsi tercatat di direktori, 0 bila tidak tercatat.', 'Scores 1 if the province\'s Regional Energy General Plan regulation is recorded in the directory, 0 if not recorded.'],
+  'kd.rued_capaian': ['Pangsa kapasitas EBT 2024 dibagi target bauran 2025 dalam Perda, batas atas 1. Kosong bila Perda tak memuat angka target.', 'Share of renewable capacity in 2024 divided by the regulation\'s 2025 mix target, capped at 1. Empty when the regulation states no numeric target.'],
+  'kd.elektrifikasi': ['Rasio elektrifikasi 2024 diskalakan min-maks antarprovinsi.', 'The 2024 electrification ratio scaled min-max across provinces.'],
+  'kd.pipeline': ['MW proyek EBT tercatat (tanpa penyimpanan dan yang dibatalkan) per 100 ribu penduduk, peringkat persentil.', 'MW of recorded renewable projects (excluding storage and cancelled) per 100 thousand residents, percentile rank.'],
+  'kd.kelembagaan': ['Jumlah Perda/Pergub provinsi bertopik perizinan, insentif, perencanaan, dan karbon, peringkat persentil.', 'Number of provincial regulations on permitting, incentives, planning and carbon, percentile rank.'],
+  'indeks.topik': ['Indeks kesiapan 2.0', 'Readiness index 2.0'],
+  'indeks.sub': ['Skor 0 sampai 1 per provinsi', 'Score from 0 to 1 per province'],
+  'indeks.judul': ['{n} dari {total} provinsi berada di tingkat siap; {top} tertinggi dengan skor {skor}.', '{n} of {total} provinces are at the ready level; {top} leads with a score of {skor}.'],
+  'indeks.narasi': ['Indeks ini membaca lima hal yang tercatat di data METI: apakah provinsi punya Perda RUED, seberapa jauh capaian targetnya, rasio elektrifikasi, besar pipeline proyek EBT per penduduk, dan jumlah Perda/Pergub yang mengatur energi. Ini hipotesis kerja untuk menentukan prioritas pembinaan, bukan penilaian resmi.', 'This index reads five things recorded in METI data: whether the province has a RUED regulation, how far it has reached its target, the electrification ratio, the renewable project pipeline per resident, and the number of regional rules on energy. It is a working hypothesis for setting support priorities, not an official rating.'],
+  'indeks.klik': ['Klik provinsi di peta untuk membuka lembar keputusannya.', 'Click a province on the map to open its decision sheet.'],
+  'indeks.bar': ['Sepuluh skor tertinggi', 'Ten highest scores'],
+  'indeks.hipotesis': ['Hipotesis: bobot sama dan ambang tingkat dipilih METI; komponen tanpa data dilewati sehingga skor provinsi berkomponen lebih sedikit kurang sebanding.', 'Hypothesis: equal weights and tier thresholds are chosen by METI; components without data are skipped, so scores with fewer components are less comparable.'],
+  'tabel.peringkat': ['Peringkat', 'Rank'], 'tabel.skor': ['Skor', 'Score'], 'tabel.tingkat': ['Tingkat', 'Tier'],
+  'rapor.topik': ['Rapor transisi', 'Transition report card'],
+  'rapor.sub': ['Indikator utama per provinsi, diperbarui bulanan', 'Key indicators per province, updated monthly'],
+  'rapor.judul': ['{n} dari {m} provinsi ber-Perda RUED tertinggal dari target 2025 pada rapor {periode}.', '{n} of {m} provinces with a RUED regulation are behind their 2025 target on the {periode} report card.'],
+  'rapor.narasi': ['Rapor ini menyatukan indikator yang sudah ada di direktori dalam satu tabel per provinsi. Urutkan kolom untuk membandingkan, dan unduh CSV untuk bahan rapat. Angka berasal dari Statistik Ketenagalistrikan 2024, direktori proyek METI, dan pengumuman AMDAL.', 'This report card brings indicators already in the directory into one table per province. Sort columns to compare and download the CSV for meetings. Figures come from the 2024 Electricity Statistics, the METI project directory and AMDAL announcements.'],
+  'tabel.status_rued': ['Status RUED', 'RUED status'], 'tabel.elektrifikasi': ['Rasio elektrifikasi', 'Electrification ratio'], 'tabel.desa_nonpln': ['Desa non-PLN', 'Non-PLN villages'],
+  'tabel.pipeline': ['Pipeline (MW)', 'Pipeline (MW)'], 'tabel.operasi': ['Beroperasi (MW)', 'Operating (MW)'], 'tabel.amdal': ['Pengumuman AMDAL', 'AMDAL notices'], 'tabel.pvout': ['PVOUT (kWh/kWp)', 'PVOUT (kWh/kWp)'],
+  'lembar.topik': ['Lembar keputusan', 'Decision sheet'],
+  'lembar.sub': ['Satu halaman per provinsi, siap cetak', 'One page per province, print-ready'],
+  'lembar.judul': ['Lembar satu halaman untuk {n} provinsi, siap dicetak untuk rapat.', 'A one-page sheet for {n} provinces, ready to print for meetings.'],
+  'lembar.narasi': ['Pilih provinsi, lalu cetak atau simpan sebagai PDF. Lembar ini hanya informasi: memuat posisi data, dasar kewenangan daerah, dan hal yang belum tersedia, tanpa alat hitung.', 'Pick a province, then print or save as PDF. The sheet is information only: it holds the data position, the legal basis for regional action and what is still missing, with no calculators.'],
+  'lembar.cetak': ['Cetak lembar', 'Print sheet'],
+  'lembar.periode': ['Periode data {periode}', 'Data period {periode}'],
+  'lembar.skor': ['Skor kesiapan', 'Readiness score'],
+  'lembar.emisi': ['Emisi pembangkit 2024', 'Power plant emissions 2024'],
+  'lembar.baca': ['Bacaan data', 'Reading the data'],
+  'lembar.b_rued': ['Perda RUED {perda} menargetkan {t}% bauran EBT pada 2025; pangsa kapasitas EBT 2024 tercatat {r}, jadi statusnya {s} (hipotesis, ukuran keduanya berbeda).', 'RUED regulation {perda} targets a {t}% renewable mix in 2025; the 2024 renewable capacity share is recorded at {r}, so the status is {s} (hypothesis, the two measures differ).'],
+  'lembar.b_norued': ['Perda RUED provinsi ini belum tercatat di direktori, sehingga capaian target tidak dapat dibaca.', 'This province\'s RUED regulation is not recorded in the directory, so target progress cannot be read.'],
+  'lembar.b_pipa': ['Direktori mencatat {n} proyek EBT dengan total {mw} MW, dan {op} MW di antaranya sudah beroperasi.', 'The directory records {n} renewable projects totalling {mw} MW, of which {op} MW are operating.'],
+  'lembar.b_desa': ['{n} dari {j} desa memperoleh listrik dari sumber non-PLN (PLTS, diesel, atau mikrohidro komunal).', '{n} of {j} villages get power from non-PLN sources (solar, diesel or community micro-hydro).'],
+  'lembar.b_nodesa': ['Data desa berlistrik provinsi ini tidak tersedia.', 'Village electrification data for this province is not available.'],
+  'lembar.dasar': ['Dasar kewenangan daerah', 'Legal basis for regional action'],
+  'lembar.dasar_isi': ['Perpres 112/2022 Pasal 22 ayat (3) dan Pasal 23 ayat (1): insentif nonfiskal dapat diberikan pemerintah daerah, dan pemerintah daerah wajib mendukung pengembangan pembangkit EBT sesuai kewenangannya. Naskah:', 'Presidential Regulation 112/2022 Article 22(3) and Article 23(1): regional governments may grant non-fiscal incentives and must support renewable generation within their authority. Text:'],
+  'lembar.kosong': ['Belum tersedia', 'Not yet available'],
+  'lembar.kosong_isi': ['Anggaran EBT dalam APBD, rasio elektrifikasi per kabupaten/kota, dan status pelaporan inventarisasi GRK daerah masih butuh unduhan pemilik.', 'Renewable energy spending in regional budgets, electrification ratio per district and the regional GHG inventory reporting status still need a manual download.'],
+  'lembar.kaki': ['Diolah METI dari data publik, diperiksa {tanggal}. Angka turunan adalah estimasi.', 'Compiled by METI from public data, checked {tanggal}. Derived figures are estimates.'],
+  'lembar.perda_tautan': ['Buka Perda RUED', 'Open the RUED regulation'],
+  'kebijakan.topik': ['Perbandingan kebijakan', 'Policy comparison'],
+  'kebijakan.sub': ['Perda RUED dan Perda/Pergub energi per provinsi', 'RUED and energy regional rules per province'],
+  'kebijakan.judul': ['{n} dari {total} provinsi memiliki Perda RUED tercatat; median target bauran 2025 adalah {med}%.', '{n} of {total} provinces have a recorded RUED regulation; the median 2025 mix target is {med}%.'],
+  'kebijakan.narasi': ['Tabel menyandingkan target Perda RUED dengan pangsa kapasitas EBT terbaru dan jumlah Perda/Pergub provinsi per topik. Target dan realisasi memakai ukuran berbeda (bauran energi primer lawan pangsa kapasitas), jadi selisihnya adalah hipotesis arah, bukan angka pasti.', 'The table sets RUED targets beside the latest renewable capacity share and the number of provincial rules per topic. Target and actual use different measures (primary energy mix versus capacity share), so the gap is a directional hypothesis, not an exact figure.'],
+  'kebijakan.bar': ['Selisih target 2025 dan pangsa kapasitas 2024 terbesar', 'Largest gaps between the 2025 target and 2024 capacity share'],
+  'kebijakan.hal': ['Pasal target dan lampiran Perda', 'Target article and annex of each regulation'],
+  'kebijakan.catatan': ['Insentif daerah dihitung dari Perda/Pergub bertopik insentif di direktori regulasi, bukan dari anggaran. Kosong berarti tidak tercatat, bukan tidak ada.', 'Regional incentives are counted from regulations on incentives in the regulation directory, not from budgets. Empty means not recorded, not absent.'],
+  'tabel.perda': ['Perda RUED', 'RUED regulation'], 'tabel.target25': ['Target 2025', '2025 target'], 'tabel.target_akhir': ['Target akhir', 'Final target'], 'tabel.realisasi': ['Pangsa kapasitas 2024', 'Capacity share 2024'],
+  'tabel.perda_izin': ['Perda perizinan', 'Permitting rules'], 'tabel.perda_insentif': ['Perda insentif', 'Incentive rules'], 'tabel.perda_renc': ['Perda perencanaan', 'Planning rules'],
+  'anggaran.topik': ['Anggaran EBT dalam APBD', 'Renewable spending in regional budgets'],
+  'anggaran.sub': ['Keseriusan daerah lewat belanja', 'Regional commitment through spending'],
+  'anggaran.judul': ['Belanja EBT per provinsi belum bisa ditampilkan karena data APBD belum terunduh.', 'Renewable spending per province cannot be shown yet because the budget data is not downloaded.'],
+  'anggaran.narasi': ['Realisasi APBD per fungsi dan urusan tersedia di portal keuangan daerah Kementerian Keuangan, tetapi situsnya tidak terjangkau dari mesin panen pada 8 Nov 2026. Angka tidak diisi dari perkiraan; begitu pemilik mengunduh berkasnya, kolom belanja urusan energi dapat dipasang di tabel rapor.', 'Budget realisation by function and affair is on the Finance Ministry\'s regional finance portal, but the site was unreachable from the harvesting machine on 8 Nov 2026. Figures are not filled from guesses; once the owner downloads the file, the energy spending column can be added to the report card.'],
+  'b.apbd': ['Situs tidak terjangkau dari mesin panen pada 8 Nov 2026; realisasi belanja urusan energi per provinsi perlu diunduh pemilik.', 'The site was unreachable from the harvesting machine on 8 Nov 2026; realised energy spending per province must be downloaded by the owner.'],
+  'kab.topik': ['Data kabupaten/kota', 'District and city data'],
+  'kab.sub': ['Proyek, pengumuman AMDAL, dan Perda tercatat', 'Recorded projects, AMDAL notices and regulations'],
+  'kab.judul': ['{n} kabupaten/kota punya catatan proyek, AMDAL, atau Perda energi; {top} terbesar dengan {mw} MW.', '{n} districts and cities have recorded projects, AMDAL notices or energy regulations; {top} is largest with {mw} MW.'],
+  'kab.narasi': ['Daftar ini hanya memuat kabupaten/kota yang muncul di data METI, bukan seluruh 514. Nama diambil apa adanya dari sumber, sehingga satu daerah dapat tampil dengan dua ejaan.', 'This list holds only districts and cities that appear in METI data, not all 514. Names are taken as written in each source, so one area can appear with two spellings.'],
+  'kab.catatan': ['Rasio elektrifikasi dan potensi per kabupaten/kota belum ada di tabel ini.', 'Electrification ratio and potential per district are not in this table yet.'],
+  'b.bps_kab': ['bps.go.id tidak menyediakan berkas terbuka yang dapat dipanen; rasio elektrifikasi dan potensi per kabupaten/kota perlu diunduh pemilik.', 'bps.go.id offers no open file that can be harvested; electrification ratio and potential per district must be downloaded by the owner.'],
+  'tabel.kabkota': ['Kabupaten/kota', 'District/city'], 'tabel.proyek_n': ['Proyek', 'Projects'], 'tabel.perda_n': ['Perda', 'Regulations'],
+  'kontak.topik': ['Kontak dinas energi', 'Energy agency contacts'],
+  'kontak.sub': ['Situs resmi kantor dinas', 'Official agency websites'],
+  'kontak.judul': ['{n} dari {total} provinsi punya situs resmi dinas energi yang sudah tercatat.', '{n} of {total} provinces have an official energy agency website on record.'],
+  'kontak.narasi': ['Hanya kantor dinas resmi yang dimuat, lewat situs masing-masing pemerintah provinsi. Tidak ada nomor pribadi. Alamat dan telepon kantor belum dipanen, jadi gunakan halaman kontak di situs yang tertaut.', 'Only official agency offices are listed, through each provincial government\'s website. No personal numbers. Office addresses and phone numbers are not harvested yet, so use the contact page on the linked site.'],
+  'kontak.belum': ['Belum tercatat', 'Not yet recorded'],
+  'b.kontak': ['Alamat dan telepon kantor belum dipanen; untuk provinsi tanpa baris, situs resmi dinas perlu dicari dan dicatat pemilik.', 'Office addresses and phone numbers are not harvested; for provinces without a row, the agency\'s official website must be found and recorded by the owner.'],
+  'tabel.dinas': ['Dinas', 'Agency'], 'tabel.kota': ['Kota', 'City'], 'tabel.situs': ['Situs resmi', 'Official site'], 'tabel.diperiksa': ['Diperiksa', 'Checked'],
+  'grk.topik': ['GRK dan emisi daerah', 'Regional GHG and emissions'],
+  'grk.sub': ['Emisi pembangkit listrik per provinsi', 'Power plant emissions per province'],
+  'grk.judul': ['Pembangkit listrik di {top} menghasilkan {mt} juta ton CO2e pada {tahun}, terbesar di antara provinsi.', 'Power plants in {top} emitted {mt} million tonnes of CO2e in {tahun}, the most of any province.'],
+  'grk.narasi': ['Tabel ini memuat emisi pembangkit listrik per provinsi dari Climate TRACE dan jumlah Perda bertopik karbon. Status pelaporan inventarisasi GRK daerah ke sistem nasional belum tersedia sebagai berkas terbuka, sehingga kolomnya ditandai belum tersedia.', 'The table holds power plant emissions per province from Climate TRACE and the number of regulations on carbon. The regional GHG inventory reporting status to the national system is not available as an open file, so its column is marked not yet available.'],
+  'grk.bar': ['Sepuluh provinsi dengan emisi pembangkit terbesar', 'Ten provinces with the largest power plant emissions'],
+  'b.grk': ['Status pelaporan inventarisasi GRK daerah tidak tersedia sebagai berkas terbuka; perlu diunduh pemilik dari sistem nasional.', 'The regional GHG inventory reporting status is not an open file; the owner must download it from the national system.'],
+  'tabel.emisi': ['Emisi (juta tCO2e)', 'Emissions (Mt CO2e)'], 'tabel.perda_karbon': ['Perda karbon', 'Carbon rules'], 'tabel.lapor': ['Status pelaporan GRK', 'GHG reporting status'],
+  'metode.topik': ['Metode', 'Method'], 'metode.sub': ['Cara indeks dan rapor dihitung', 'How the index and report card are built'],
+  'metode.judul': ['Indeks memakai lima komponen berbobot sama dan bersifat hipotesis.', 'The index uses five equally weighted components and is a hypothesis.'],
+  'metode.isi': ['Tiap komponen diubah menjadi nilai 0 sampai 1, lalu dirata-ratakan dengan bobot sama. Komponen tanpa data dilewati dan bobot dinormalkan ulang. Berikut komponen dan arti nilainya.', 'Each component is turned into a value from 0 to 1, then averaged with equal weights. Components without data are skipped and weights are renormalised. The components and what they mean follow.'],
+  'metode.ambang': ['Tingkat siap bila skor {siap} ke atas, berkembang bila {kembang} ke atas, selebihnya awal. Skor dihitung bila minimal {min} komponen tersedia.', 'The ready tier needs a score of {siap} or more, developing {kembang} or more, otherwise early. A score is computed when at least {min} components are available.'],
+  'metode.tanggal': ['Data dibangun {tanggal} dari berkas publik yang sudah ada di direktori; tidak ada angka dari sumber yang tidak dapat ditelusuri.', 'Data built {tanggal} from public files already in the directory; no figure comes from an untraceable source.'],
+};
+
+export const HALAMAN = { pemda: PEMDA };
+export function tulis(extra = {}) {
+  const peta = { ...HALAMAN, ...extra };
+  for (const [nama, kamus] of Object.entries(peta)) {
+    const k = { id: {}, en: {} };
+    for (const [kunci, [id, en]] of Object.entries({ ...UMUM, ...kamus })) { k.id[kunci] = id; k.en[kunci] = en; }
+    fs.writeFileSync(path.join(AKAR, 'public/data', `teks_${nama}.json`), JSON.stringify(k) + '\n');
+    console.log('teks_' + nama, Object.keys(k.id).length, 'kunci');
+  }
+}
+if (process.argv[1] === new URL(import.meta.url).pathname) tulis();

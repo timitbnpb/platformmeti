@@ -7,7 +7,7 @@ import { muatPembaruanWilayah } from "/inti/pembaruan.js";
 import { geoProvinsi, jalurPerProvinsi } from "/inti/peta_indonesia.js";
 import { t, angka } from "/i18n.js";
 import { api, esc, ikon, nanti, galatTeks, pesanHtml, hantuHtml, GalatApi } from "/inti/umum.js";
-import { exHtml } from "/inti/komponen.js";
+import { exHtml, sumberHtml } from "/inti/komponen.js";
 import { lambang, pilStatus, namaWilayah, tgl } from "/meti-wilayah.js";
 
 const TAHAP = ["diajukan", "ditinjau", "sk_terbit", "pelantikan", "berdiri"];
@@ -19,21 +19,25 @@ const labelBidang = (b) => (BIDANG_STD.includes(b) ? t("mw.bidang." + b) : b);
 const MAKS_BERKAS = 5 * 1024 * 1024, EKS = /\.(pdf|docx|jpe?g|png)$/i;
 const seksi = (o) => exHtml({ tingkat: "h2", ...o });
 const dl = (baris) => `<dl class="mw-dl">${baris.map(([k, v]) => `<div><dt>${esc(k)}</dt><dd>${v}</dd></div>`).join("")}</dl>`;
+const ubinHtml = (a) => `<div class="mw-ubin">${a.map((u) => `<div class="mw-ub"${u.judul ? ` title="${esc(u.judul)}"` : ""}><span class="mw-ub-ik">${ikon(u.ikon, 20)}</span><b>${esc(u.nilai)}</b><small>${esc(u.label)}</small></div>`).join("")}</div>`;
+const tombol = (href, ik, kunci) => `<a class="jm-tbl" href="${esc(href)}">${ikon(ik, 16)}<span>${esc(t(kunci))}</span></a>`;
+const kaki = (kunci) => sumberHtml(esc(t(kunci)));
 const kos = (kunci) => `<span class="mw-kos">${esc(t(kunci))}</span>`;
 const tambahHari = (iso, n) => { const d = new Date(iso + "T00:00:00Z"); d.setUTCDate(d.getUTCDate() + n); return d.toISOString().slice(0, 10); };
 
 /* ---------- bagian ---------- */
 function kepalaHtml(b, w, anggota) {
   const ub = [
-    { ikon: "orang", nilai: anggota.individu == null ? "<10" : angka(anggota.individu), label: t("mw.u.individu") },
+    { ikon: "orang", nilai: anggota.individu == null ? "< 10" : angka(anggota.individu), label: t("mw.u.individu") },
     { ikon: "direktori", nilai: angka(anggota.organisasi), label: t("mw.u.organisasi") },
     { ikon: "daftar", nilai: angka((w?.bidang || []).length || BIDANG_STD.length), label: t("mw.u.bidang") },
   ];
   return { html: `<nav class="mw-remah" aria-label="${esc(t("mw.remah"))}"><a href="/meti-wilayah">${ikon("panah-kiri", 16)}<span>${esc(t("mw.judul"))}</span></a></nav>
-    <section class="jm-kh" aria-labelledby="judul-p"><div class="jm-kh-teks mw-kh-isi">${lambang(b.kode, 96)}<div>
+    <section class="jm-kh mw-kh" aria-labelledby="judul-p"><div class="jm-kh-teks mw-kh-isi">${lambang(b.kode, 112)}<div class="mw-kh-t">
       <p class="jm-kh-ey">${ikon("wilayah", 16)}<span>${esc(t("mw.eyebrow"))}</span></p>
       <h1 id="judul-p">${esc(namaWilayah(b.nama))}</h1>
-      <p class="jm-kh-lead">${pilStatus(b.status)} ${esc(t("mw." + (b.status === "belum" ? "lead_belum" : "lead_ada"), { prov: b.nama }))}</p></div></div>
+      <div class="mw-kh-baris">${pilStatus(b.status)}${tombolIkuti({ jenis: "provinsi", id: b.kode, nama: b.nama })}</div>
+      <p class="jm-kh-lead">${esc(t("mw." + (b.status === "belum" ? "lead_belum" : "lead_ada"), { prov: b.nama }))}</p></div></div>
       <div class="jm-kh-ubin" id="ubin-p"></div></section>`, ub };
 }
 
@@ -68,26 +72,27 @@ function pengurusHtml(b, saya) {
   const isi = kosong
     ? `<div class="mw-kosong-st">${ikon("orang", 28)}<p>${esc(t("mw.pengurus_kosong"))}</p>${kelola ? `<a class="jm-tbl jm-tbl-utama" href="/meti-wilayah/${esc(b.kode)}/kelola">${ikon("ubah", 16)}${esc(t("mw.kelola"))}</a>` : ""}</div>`
     : `<ul class="mw-slot">${slotOrang(b.ketua, t("mw.ketua"))}${slotOrang(b.sekretaris, t("mw.sekretaris"))}${slotOrang(b.bendahara, t("mw.bendahara"))}</ul>`;
-  return seksi({ id: "pengurus", ikon: "orang", topik: t("mw.ey.pengurus"), judulHtml: esc(t("mw.pengurus")), isiHtml: isi, kakiHtml: `<p class="jm-bantu">${esc(t("mw.pengurus_bantu"))}</p>` });
+  return seksi({ id: "pengurus", ikon: "orang", topik: t("mw.ey.pengurus"), judulHtml: esc(t("mw.pengurus")), isiHtml: isi, kakiHtml: kaki("mw.pengurus_bantu") });
 }
 
 function bidangHtml(b) {
   const sendiri = b.bidang?.length > 0, daftar = sendiri ? b.bidang : BIDANG_STD;
   return seksi({ id: "bidang", ikon: "daftar", topik: t("mw.ey.bidang"), judulHtml: esc(t(sendiri ? "mw.bidang_j" : "mw.bidang_usulan_j")),
     isiHtml: `<ol class="mw-bidang">${daftar.map((x) => `<li><span class="mw-no" aria-hidden="true"></span><span>${esc(labelBidang(x))}</span></li>`).join("")}</ol>`,
-    kakiHtml: `<p class="jm-bantu">${esc(t(sendiri ? "mw.bidang_bantu" : "mw.bidang_usulan_bantu"))}</p>` });
+    kakiHtml: kaki(sendiri ? "mw.bidang_bantu" : "mw.bidang_usulan_bantu") });
 }
 
 function anggotaHtml(a, kode, saya) {
   const staf = ["pengurus", "kurator", "admin", "super"].includes(saya.peran);
-  const isi = `<div class="mw-angka"><p><b>${esc(a.individu == null ? t("mw.kurang10") : angka(a.individu))}</b><span>${esc(t("mw.u.individu"))}</span></p><p><b>${esc(angka(a.organisasi))}</b><span>${esc(t("mw.u.organisasi"))}</span></p></div>
-    <p>${esc(t(staf ? "mw.anggota_staf" : "mw.anggota_agregat"))}</p>${staf ? `<a class="jm-tbl" href="/direktori?prov=${esc(kode)}">${esc(t("mw.lihat_direktori"))}</a>` : ""}`;
-  return seksi({ id: "anggota", ikon: "direktori", topik: t("mw.ey.anggota"), judulHtml: esc(t("mw.anggota")), isiHtml: isi, kakiHtml: `<p class="jm-bantu">${esc(t("mw.anggota_sumber"))}</p>` });
+  const isi = `${ubinHtml([{ ikon: "orang", nilai: a.individu == null ? "< 10" : angka(a.individu), label: t("mw.u.individu"), judul: a.individu == null ? t("mw.kurang10") : "" }, { ikon: "direktori", nilai: angka(a.organisasi), label: t("mw.u.organisasi") }])}
+    <p>${esc(t(staf ? "mw.anggota_staf" : "mw.anggota_agregat"))}</p>`;
+  return seksi({ id: "anggota", ikon: "direktori", topik: t("mw.ey.anggota"), judulHtml: esc(t("mw.anggota")), aksiHtml: staf ? tombol("/direktori?prov=" + kode, "direktori", "mw.lihat_direktori") : "", isiHtml: isi, kakiHtml: kaki("mw.anggota_sumber") });
 }
 
 function kegiatanHtml() {
   return seksi({ id: "kegiatan", ikon: "kalender", topik: t("mw.ey.kegiatan"), judulHtml: esc(t("mw.kegiatan")), isiHtml: `<div id="kg-isi">${hantuHtml(2)}</div>` });
 }
+const kosongKg = (ik, kunci, href, lihat) => `<div class="mw-kosong-kartu">${ikon(ik, 28)}<p>${esc(t(kunci))}</p><a class="jm-tbl" href="${href}">${esc(t(lihat))}</a></div>`;
 async function isiKegiatan(b) {
   const el = document.getElementById("kg-isi");
   if (!el) return;
@@ -97,21 +102,21 @@ async function isiKegiatan(b) {
   const berita = (br.baris || []).filter((x) => meti.test(x.judul || "") && (x.wilayah || []).some((w) => String(w.prov || "").toLowerCase() === nm)).sort((p, q) => String(q.terbit).localeCompare(String(p.terbit))).slice(0, 5);
   const acara = (kal.baris || []).filter((x) => /meti wilayah/i.test(`${x.judul} ${x.mitra}`) && `${x.judul} ${x.mitra}`.toLowerCase().includes(nm)).sort((p, q) => String(q.tanggal).localeCompare(String(p.tanggal))).slice(0, 5);
   const li = (a) => a.map(([tg, tj, href]) => `<li><time>${esc(tgl(String(tg).slice(0, 10)))}</time>${href ? `<a href="${esc(href)}" target="_blank" rel="noopener noreferrer">${esc(tj)}</a>` : `<span>${esc(tj)}</span>`}</li>`).join("");
-  el.innerHTML = `<div class="mw-dua"><div><h3>${esc(t("mw.acara"))}</h3>${acara.length ? `<ul class="mw-daftar">${li(acara.map((x) => [x.tanggal, x.judul, ""]))}</ul>` : `<p class="jm-bantu">${esc(t("mw.acara_kosong"))}</p>`}</div>
-    <div><h3>${esc(t("mw.berita"))}</h3>${berita.length ? `<ul class="mw-daftar">${li(berita.map((x) => [x.terbit, x.judul, /^https?:\/\//.test(x.url || "") ? x.url : ""]))}</ul>` : `<p class="jm-bantu">${esc(t("mw.berita_kosong"))}</p>`}</div></div>`;
+  el.innerHTML = `<div class="mw-dua"><div><h3>${esc(t("mw.acara"))}</h3>${acara.length ? `<ul class="mw-daftar">${li(acara.map((x) => [x.tanggal, x.judul, ""]))}</ul>` : kosongKg("kalender", "mw.acara_kosong", "/kalender", "mw.acara_lihat")}</div>
+    <div><h3>${esc(t("mw.berita"))}</h3>${berita.length ? `<ul class="mw-daftar">${li(berita.map((x) => [x.terbit, x.judul, /^https?:\/\//.test(x.url || "") ? x.url : ""]))}</ul>` : kosongKg("berita", "mw.berita_kosong", "/berita", "mw.berita_lihat")}</div></div>`;
 }
 
 function proyekHtml(b) {
   return seksi({ id: "proyek", ikon: "proyek", topik: t("mw.ey.proyek"), judulHtml: esc(t("mw.proyek", { prov: b.nama })),
-    isiHtml: `<div id="py-isi" class="mw-angka"></div><div class="mw-aksi"><a class="jm-tbl" href="/wilayah?prov=${esc(b.kode)}">${esc(t("mw.ke_wilayah"))}</a><a class="jm-tbl" href="/peluang">${esc(t("mw.ke_peluang"))}</a><a class="jm-tbl" href="/proyek">${esc(t("mw.ke_proyek"))}</a></div>` });
+    aksiHtml: `${tombol("/wilayah?prov=" + b.kode, "wilayah", "mw.ke_wilayah")}${tombol("/peluang", "analisis", "mw.ke_peluang")}${tombol("/proyek", "proyek", "mw.ke_proyek")}`, isiHtml: `<div id="py-isi">${hantuHtml(1)}</div>` });
 }
 async function isiProyek(b) {
   try {
     const d = await (await fetch("/data/wilayah.json", { credentials: "same-origin" })).json(), p = d.baris.find((x) => x.kode === b.kode);
     if (!p) return;
     const mw = p.terpasang_mw?.nilai;
-    document.getElementById("py-isi").innerHTML = `<p><b>${esc(angka(p.jumlah_proyek ?? 0))}</b><span>${esc(t("mw.n_proyek"))}</span></p><p><b>${esc(mw == null ? "-" : angka(mw, { desimal: 0 }))}</b><span>${esc(t("mw.mw_terpasang"))}</span></p>`;
-  } catch { /* tautan saja */ }
+    document.getElementById("py-isi").innerHTML = ubinHtml([{ ikon: "proyek", nilai: angka(p.jumlah_proyek ?? 0), label: t("mw.n_proyek") }, { ikon: "grafik", nilai: mw == null ? "-" : angka(mw, { desimal: 0 }), label: t("mw.mw_terpasang") }]);
+  } catch { document.getElementById("py-isi")?.replaceChildren(); }
 }
 
 /* ---------- kit: unduhan + linimasa H-45 sebagai daftar tugas ---------- */
@@ -121,12 +126,11 @@ function kitHtml(b) {
   const tersimpan = tugasTersimpan(b.kode);
   const butir = HARI.map((h, i) => {
     const tanggalH = b.tgl_pelantikan ? tgl(tambahHari(b.tgl_pelantikan, -h)) : "";
-    return `<li><label class="jm-cek"><input type="checkbox" data-i="${i}"${tersimpan.has(i) ? " checked" : ""}><span><b>${esc(h === 0 ? t("mw.h0") : t("mw.hmin", { n: h }))}</b>${tanggalH ? ` <small>${esc(tanggalH)}</small>` : ""} ${esc(t("mw.tl." + i))}</span></label></li>`;
+    return `<li><label class="jm-cek"><input type="checkbox" data-i="${i}"${tersimpan.has(i) ? " checked" : ""}><span><b class="mw-hp">${esc(h === 0 ? t("mw.h0") : t("mw.hmin", { n: h }))}</b>${tanggalH ? ` <small>${esc(tanggalH)}</small>` : ""} ${esc(t("mw.tl." + i))}</span></label></li>`;
   }).join("");
   const unduh = [["panduan-pelantikan", "mw.kit.panduan"], ["templat-sk", "mw.kit.templat"]].map(([id, k]) => `<button type="button" class="jm-tbl" data-kit="${id}">${ikon("unduh", 16)}<span>${esc(t(k))}</span></button>`).join("");
   return seksi({ id: "kit", ikon: "unduh", topik: t("mw.ey.kit"), judulHtml: esc(t("mw.kit")),
-    isiHtml: `<div class="mw-aksi">${unduh}</div><div id="kit-pesan" aria-live="polite"></div><h3>${esc(t("mw.linimasa"))}</h3><ol class="mw-tugas">${butir}</ol>`,
-    kakiHtml: `<p class="jm-bantu">${esc(t(b.tgl_pelantikan ? "mw.linimasa_bantu" : "mw.linimasa_tanpa_tanggal"))}</p>` });
+    aksiHtml: unduh, isiHtml: `<div id="kit-pesan" aria-live="polite"></div><h3>${esc(t("mw.linimasa"))}</h3><ol class="mw-tugas">${butir}</ol>` });
 }
 
 /* ---------- pengajuan ---------- */
@@ -239,7 +243,7 @@ export async function profilWilayah(kode, S, saya, akar) {
   const { html, ub } = kepalaHtml(w, det.wilayah, det.anggota);
   akar.innerHTML = html + `<div class="mw-isi">${[skHtml(w), sekretariatHtml(w), pengurusHtml(w, saya), bidangHtml(w), anggotaHtml(det.anggota, kode, saya), kegiatanHtml(), proyekHtml(w), kitHtml(w), w.status === "berdiri" ? "" : ajakanHtml(w, det.wilayah, det.ajuan_saya)].join("")}</div>`;
   khUbin("ubin-p", ub);
-  akar.querySelector(".jm-kh-lead")?.insertAdjacentHTML("afterend", `<p>${tombolIkuti({ jenis: "provinsi", id: kode, nama: b.nama })}</p>`);
+  const k10 = akar.querySelector(".jm-kh-ub b"); if (k10 && det.anggota.individu == null) k10.title = t("mw.kurang10");
   pasangIkuti(akar);
   muatPembaruanWilayah(kode, akar.querySelector(".mw-isi"));
   pasangFoto(akar); pasangKit(akar, w);
