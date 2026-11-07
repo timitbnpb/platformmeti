@@ -26,6 +26,7 @@ Sumber: percakapan pemilik 7 Nov 2026 (sesi perencanaan), materi METI di folder 
 | K12 | Repo neraca-papua dijadikan rujukan. | *"Cek github neraca papua ini ya."* |
 | K13 | Artifact (Grand Design, Design System) dibuat, lalu semua rencana dan artifact masuk GitHub. | *"Buat artifactsnya juga masukin ke githubnya nanti di akhir dan design system semuanya"*; *"Artifact dan rencana semua masukkan ke github."* |
 | K14 | Sebelum mulai membangun, pemilik menerima 20 pertanyaan. | *"Habis itu kasih 20 pertanyaan sebelum kita mulai nanti"* |
+| K15 | TIDAK ada tombol isi data dummy di platform ini (7 Nov 2026). Mengalahkan D18 dan aturan global `DUMMY.md` khusus untuk repo ini. Data contoh fiktif tetap boleh sebagai fixture uji dan seed D1 lokal/pratinjau, tidak pernah lewat tombol di layar. | *"Btw tombol dummy gausah"* |
 
 ## B. Diputus perancang (sesi induk), boleh dibatalkan pemilik
 
@@ -48,7 +49,7 @@ Sumber: percakapan pemilik 7 Nov 2026 (sesi perencanaan), materi METI di folder 
 | D15 | Data dari 1001startup.id: diambil sebatas fakta (nama, sektor, lokasi, relasi) dan tautan sumber primer yang mereka kutip, dengan atribusi "via 1001startup.id" dan tanggal ambil. Teks deskripsi, estimasi mereka (EST), skor, dan logo tidak disimpan. **Diubah 7 Nov 2026 atas perintah pemilik:** panen otomatis terbatas DIJALANKAN (R13), karena `llms.txt` mereka mengundang mesin membaca dengan atribusi dan robots.txt membuka `User-agent: *`; yang dilarang hanya crawler training (`ai-train=no`, ClaudeBot). Syarat: UA jujur, jeda >= 2 dtk, path `/api` dkk tidak disentuh, data mentah tidak masuk repo (`data-panen/` di .gitignore). Izin tertulis pengelolanya tetap diminta sebelum rilis publik (C-13). | K11 dengan menjaga hak cipta dan etika panen. |
 | D16 | Fase: **F0** porting kerangka dan login (direktori lama berjalan di METI dengan data contoh), **F1** sensus publik EBT dan direktori anggota, **F2** rantai pasok, pembiaya, kuadran BUMN, cerita data, peta lengkap, **F3** klaim profil, API terbuka, pencocokan kebutuhan. | Nilai terlihat paling cepat: kode yang sudah ada jalan dulu. |
 | D17 | Semua angka tampil dengan format Indonesia (`toLocaleString("id-ID")`) di mode ID dan format Inggris di mode EN, lewat satu formatter. Tanpa titik tengah "·" sebagai pemisah teks. | Aturan pemilik. |
-| D18 | Tiap halaman punya tombol isi data dummy dua ikon, hanya Super Admin, isinya ditentukan halaman yang dibuka. | Aturan global pemilik `DUMMY.md`. |
+| D18 | ~~Tiap halaman punya tombol isi data dummy dua ikon.~~ **DIBATALKAN pemilik 7 Nov 2026 (K15).** | Diganti fixture uji dan seed lokal/pratinjau. |
 
 ## C. Pertanyaan terbuka (punya bawaan, tidak menghalangi kerja)
 

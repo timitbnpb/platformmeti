@@ -50,7 +50,7 @@ Singkatan: KP = KEPUTUSAN-METI, GD = GRAND-DESIGN, R1..R9 = riset/, DT = DESAIN-
 | JM-C02 | Port `akademisi.html/js/css` ke `/direktori` (berkas [A]) | layar | F0 | L | belum |
 | JM-C03 | Ganti konstanta domain: `RUMPUN`->`SEKTOR`, `KAT`, `TABS`, teks | layar | F0 | M | belum |
 | JM-C04 | Port `src/akademisi.js` ke `src/direktori.js` + konstanta | worker | F0 | M | belum |
-| JM-C05 | `dataContoh()` METI fiktif + tombol dummy dua ikon | layar | F0 | M | belum |
+| JM-C05 | Data contoh METI fiktif sebagai fixture uji + seed D1 lokal/pratinjau (TANPA tombol dummy, KP K15) | layar | F0 | S | belum |
 | JM-C06 | i18n: `id.json`, `en.json`, toggle, formatter angka | layar | F0 | M | belum |
 | JM-C07 | Gerbang layar asal diport (`direktori-seg/klik/layar/versi`) | gerbang | F0 | M | belum |
 | JM-D01 | Skema kurasi `0003_entitas.sql` (entitas, fakta, ikatan, sumber) | worker | F1 | M | belum |
@@ -168,7 +168,7 @@ Singkatan: KP = KEPUTUSAN-METI, GD = GRAND-DESIGN, R1..R9 = riset/, DT = DESAIN-
 - **Pemeriksa:** `guard-api`. **Ukuran:** M
 
 #### JM-C05 Data contoh dan dummy
-- **Isi:** `dataContoh()` energi fiktif (`example.org`, akhiran "(contoh)"), tombol dummy dua ikon hanya `super`, isi ditentukan halaman. **Ukuran:** M
+- **Isi:** data contoh energi fiktif (`example.org`, akhiran "(contoh)") sebagai fixture uji dan seed D1 lokal/pratinjau. TANPA tombol dummy (KP K15). **Ukuran:** S
 
 #### JM-C06 i18n
 - **Berkas:** `public/i18n/id.json`, `en.json`, `public/i18n.js` (`t(kunci)`, `angka(n)`, `tanggal(d)`), tombol ID/EN di kepala.

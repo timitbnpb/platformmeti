@@ -306,6 +306,8 @@ Anggaran berasal dari DT §8.2 (angka target, bukan hasil ukur).
 
 ### 2.7 Data dummy (KP D18, DUMMY.md)
 
+> **Dibatalkan KP K15 (7 Nov 2026):** tidak ada tombol dummy, rute `/api/admin/dummy`, kolom `dummy`, maupun gerbang-dummy. Yang tersisa: data contoh fiktif (`example.org`, akhiran "(contoh)") sebagai fixture uji dan `scripts/seed-lokal` untuk D1 lokal/pratinjau, tidak pernah ke produksi. Isi di bawah ini tidak berlaku lagi.
+
 `gerbang-dummy`, `gerbang-dummy-layar`, `tests/e2e/05-dummy-jejak.sql`, dan langkah 10 e2e (§2.5) menjaga enam syarat dan tiga kelas kegagalan DUMMY.md dalam bentuk METI:
 
 | Syarat atau kelas | Wujud uji |

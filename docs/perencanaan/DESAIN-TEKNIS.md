@@ -995,6 +995,8 @@ Aturan: tanpa `COUNT(*)` tak terbatas; semua kueri memakai indeks (uji `EXPLAIN 
 
 ### 8.3 Dummy
 
+> **Dibatalkan KP K15 (7 Nov 2026):** tidak ada tombol dummy, rute `/api/admin/dummy`, kolom `dummy`, maupun gerbang-dummy. Yang tersisa: data contoh fiktif (`example.org`, akhiran "(contoh)") sebagai fixture uji dan `scripts/seed-lokal` untuk D1 lokal/pratinjau, tidak pernah ke produksi. Isi di bawah ini tidak berlaku lagi.
+
 Tiap halaman punya tombol isi data dummy dua ikon (isi dan hapus), hanya SA, isi ditentukan halaman yang dibuka (KP D18). Pola asal dipertahankan: `dataContoh()` per halaman menyusun baris berakhiran "(contoh)", `dummy: true`, domain `example.org`; peta halaman ke berkas dalam `NAMA_DUMMY`. Di server, `POST` dan `DELETE /api/admin/dummy/:halaman` menulis atau menghapus baris `dummy = 1` lewat `hak.js`; klausa `dummy` menyembunyikan baris itu dari semua peran kecuali SA, dan potret tidak pernah memuatnya (pipeline membaca `dummy = 0`). Gerbang: `tests/e2e/05-dummy-jejak.sql` dan `gerbang-dummy.test.mjs` (tiap tabel data punya kolom `dummy`; tiap halaman berlayar data punya tombol; tombol hanya SA).
 
 ### 8.4 i18n teknis
