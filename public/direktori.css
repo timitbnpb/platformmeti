@@ -2492,3 +2492,6 @@ button.ak-r[data-kh][aria-pressed="true"]{border-color:var(--w0,var(--brand2));b
 .ak-ptn{position:absolute;left:50%;bottom:4px;transform:translateX(-50%);z-index:5;margin:0;padding:3px 10px;border-radius:var(--r-pil);background:var(--card);color:var(--ink);font-size:12px;box-shadow:var(--shadow);pointer-events:none}
 /* sentuh (DS 6.0): target minimal 44px untuk kontrol utama di layar sempit */
 @media (max-width:600px){.ak-seg button,.ak-chip button,.ak-tog,.ak-kbtn,.ak-tbl,.ak-hal button,.ak-tabpanah{min-height:44px}.ak-tabpanah{min-width:44px}}
+/* mode gelap: teks bertinta --brand2 (gelap) diganti --accent agar lolos kontras (DS 2.1) */
+:root[data-theme="dark"] :is(.ak-riw-t,.ak-pk,.ak-kp-pil,.ak-hit,.ak-bk,.ak-lh){color:var(--accent)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) :is(.ak-riw-t,.ak-pk,.ak-kp-pil,.ak-hit,.ak-bk,.ak-lh){color:var(--accent)}}
