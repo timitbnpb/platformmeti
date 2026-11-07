@@ -78,3 +78,4 @@
 .pf-orang-t{display:flex;flex-direction:column;align-items:flex-start;gap:4px;min-width:0}
 .pf-orang-n{font-weight:700;color:var(--ink);overflow-wrap:anywhere}
 .pf-orang-j{font-size:var(--t-kecil);color:var(--ink2);overflow-wrap:anywhere}
+@media (max-width:760px){.pf-balik{display:inline-flex;align-items:center;min-height:44px}}

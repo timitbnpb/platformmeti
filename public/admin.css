@@ -191,3 +191,4 @@ li.jm-ber-kosong{justify-content:center;color:var(--ink2);border-style:dashed}
 #isi>.jm-tab>button{justify-content:center;min-height:40px;border-radius:var(--r-sm);white-space:nowrap}
 #isi>.jm-tab>button[aria-selected="true"]{background:var(--brand);color:var(--on-brand);border-bottom-color:transparent}
 #isi>.jm-tab>button[aria-selected="true"] svg{color:var(--on-brand)}
+@media (max-width:760px){#isi>.jm-tab>button{min-height:44px}}

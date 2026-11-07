@@ -640,3 +640,4 @@ main>:is(section,div,article)+:is(section,div,article){margin-top:max(24px,var(-
 .jm-geser.sisi-kanan>.jm-geser-pegangan{left:0;right:auto}
 .jm-geser>.jm-geser-pegangan::after{opacity:.55;left:6px;height:40px;margin-top:-20px;width:3px}
 .jm-geser:hover>.jm-geser-pegangan::after{opacity:.9;background:var(--accent)}
+@media (max-width:760px){.jj-chip{min-height:44px}}

@@ -45,3 +45,5 @@
 .jm-tk-media{display:flex;align-items:center;gap:6px}
 .jm-tk-media img{width:16px;height:16px;object-fit:contain;border-radius:3px}
 .jm-ex>.jm-ex-ft:has(.jm-lihat){padding-top:12px}
+@media (max-width:760px){.jm-tk-nama{min-height:44px}.jm-tk-nama a,a.jm-tk-nama{min-height:44px;display:inline-flex;align-items:center}}
+@media (max-width:760px){.jm-taut{display:inline-flex;align-items:center;min-height:44px}}

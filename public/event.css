@@ -255,3 +255,5 @@ dialog.gal-dlg::backdrop{background:rgb(4 14 11/.82)}
 .ev-kartu-p .ev-ph b{display:none}
 
 .vid-banner h3{color:var(--on-brand)}
+/* seluler: titik slide dengan area sentuh 44px (tampilan tetap 10px), tombol bulan 44px */
+@media (max-width:760px){.ev-bulat{width:44px;height:44px}.ev-titik button{position:relative}.ev-titik button::after{content:"";position:absolute;inset:-17px -7px}}
