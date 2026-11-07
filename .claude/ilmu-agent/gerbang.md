@@ -60,3 +60,4 @@ Kamu penulisnya; penghakimmu: `penulis-gerbang` (cakupan dan celah gerbang), `pe
 ## Kasus
 
 Belum ada kasus. Tambahkan lewat ilmu.mjs kasus.
+- 2026-11-07 · Uji rute lewat worker.fetch dengan sesi dimasukkan via hak.catatSesi (token hex 64, cookie sesi=); terapkanMigrasi dua kali ke DB berisi gagal karena migrasi lain tak idempoten terhadap data, uji idempoten per-berkas saja.

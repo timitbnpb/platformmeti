@@ -19,11 +19,12 @@ const inisial = (n) => String(n).replace(/[^\p{L} ]/gu, "").split(/\s+/).filter(
 const avatar = (o, besar) => o.foto ? `<img class="tn-av${besar ? " besar" : ""}" src="${esc(o.foto)}" alt="" width="${besar ? 96 : 48}" height="${besar ? 96 : 48}" loading="lazy">` : `<span class="tn-av tn-ini${besar ? " besar" : ""}" aria-hidden="true">${esc(inisial(o.nama))}</span>`;
 const PERS = new Map();
 const slug = (n) => String(n).toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
-const orang = (o, besar) => { const k = o.orang_id || slug(o.nama); PERS.set(k, o); return `<li class="tn-org${besar ? " besar" : ""}"><button type="button" class="tn-org-b" data-p="${esc(k)}" aria-label="${esc(t("tn.p.buka", { nama: o.nama }))}">${avatar(o, besar)}<span><b>${esc(o.nama)}</b><small>${esc(o.jabatan)}</small></span></button></li>`; };
+const orang = (o, besar) => { if (o.kosong || !o.nama) return lowong(o.jabatan); const k = o.orang_id || slug(o.nama); PERS.set(k, o); return `<li class="tn-org${besar ? " besar" : ""}"><button type="button" class="tn-org-b" data-p="${esc(k)}" aria-label="${esc(t("tn.p.buka", { nama: o.nama }))}">${avatar(o, besar)}<span><b>${esc(o.nama)}</b><small>${esc(o.jabatan)}</small></span></button></li>`; };
 const lowong = (jabatan) => `<li class="tn-org"><span class="tn-av tn-kosong" aria-hidden="true">${ikon("orang", 22)}</span><span><b>${esc(t("tn.lowong"))}</b><small>${esc(jabatan)}</small></span></li>`;
 /* kartu unit: pemimpin tampil, sisanya terlipat */
-const kartu = (judul, a, ekstra = "") => {
-  const [ketua, ...sisa] = a;
+const kartu = (judul, a, ekstra = "", semua = false) => {
+  const [ketua, ...sisa] = semua ? [a[0]] : a;
+  if (semua) return `<section class="tn-kartu${ekstra}"><h4>${esc(judul)}</h4><ul class="tn-daftar">${a.map((o) => orang(o)).join("")}</ul></section>`;
   return `<section class="tn-kartu${ekstra}"><h4>${esc(judul)}</h4><ul class="tn-daftar">${ketua ? orang(ketua) : ""}</ul>${sisa.length ? `<details class="tn-unit"><summary><span>${esc(t("tn.anggota_plus", { n: sisa.length }))}</span></summary><ul class="tn-daftar">${sisa.map((o) => orang(o)).join("")}</ul></details>` : ""}</section>`;
 };
 
@@ -57,10 +58,16 @@ function mengapa(f) {
     <ul class="tn-cek">${[1, 2, 3, 4].map((n) => `<li>${ikon("centang", 18)}<span>${esc(t("tn.dir.b" + n))}</span></li>`).join("")}</ul><a class="tn-lanjut tn-bawah" href="/metode">${esc(t("tn.dir.link"))}</a></article></div></section>`;
 }
 
+/* SDU: Chief dan Vice Chief terlihat; PMO terlipat, jabatan tanpa awalan "PMO " */
+function sdu(a) {
+  const inti = a.filter((o) => !o.pmo), pmo = a.filter((o) => o.pmo).map((o) => ({ ...o, jabatan: o.jabatan.replace(/^PMO\s+/, "") }));
+  return `<section class="tn-kartu tn-bid tn-sdu"><h4>${esc(t("tn.u.sdu"))}</h4><ul class="tn-daftar">${inti.map((o) => orang(o)).join("")}</ul>${pmo.length ? `<details class="tn-unit"><summary><span>${esc(t("tn.u.pmo", { n: pmo.length }))}</span></summary><ul class="tn-daftar">${pmo.map((o) => orang(o)).join("")}</ul></details>` : ""}</section>`;
+}
+
 function struktur(p) {
   const U = p.unit, d = U.dewan || [], iPakar = d.findIndex((o) => /Ketua Dewan Pakar/.test(o.jabatan));
   const pengawas = iPakar < 0 ? d : d.slice(0, iPakar), pakar = iPakar < 0 ? [] : d.slice(iPakar);
-  const bidang = p.bidang.filter((b) => b.nama).map((b) => [b.nama, b.anggota]).concat([[t("tn.u.institute"), U.institute], [t("tn.u.komite"), U.komite], [t("tn.u.staf"), U.staf]].filter((x) => x[1]));
+  const bidang = p.bidang.filter((b) => b.nama).map((b) => [b.nama, b.anggota]);
   const kb = ([nama, a]) => `<section class="tn-kartu tn-bid"><h4>${esc(nama)}</h4><ul class="tn-daftar">${orang(a[0])}</ul><details class="tn-unit"><summary><span>${esc(t("tn.orang", { n: a.length }))}</span></summary><ul class="tn-daftar">${a.slice(1).map((o) => orang(o)).join("")}</ul></details></section>`;
   const ket = (U.ketum || [])[0];
   return `<section class="seksi putih" id="tim" aria-labelledby="tn-struktur">${bandL("tn-struktur", "/img/tentang/solar.webp", "50% 40%", t("tn.struktur.h2"), t("tn.struktur.pengantar", { periode: p.periode }))}
@@ -69,8 +76,11 @@ function struktur(p) {
     <div class="tn-konek" aria-hidden="true"></div>
     ${ket ? `<div class="tn-r tn-r1"><section class="tn-kartu tn-ketum"><h4>${esc(t("tn.u.ketum"))}</h4><ul class="tn-daftar">${orang(ket, true)}</ul></section></div>` : ""}
     <div class="tn-konek" aria-hidden="true"></div>
-    <div class="tn-r tn-r2 tn-cabang">${[["waketum", "tn.u.waketum"], ["sekjen", "tn.u.sekjen"], ["bendahara", "tn.u.bendahara"], ["eksekutif", "tn.u.eksekutif"]].filter(([k]) => U[k]).map(([k, j]) => kartu(t(j), U[k])).join("")}</div></div>
-    <h3 class="tn-sub">${esc(t("tn.u.bidang"))}</h3><div class="tn-bidang">${bidang.map(kb).join("")}<section class="tn-kartu tn-bid"><h4>${esc(t("tn.u.wilayah"))}</h4><p>${esc(t("tn.u.wilayah_isi"))}</p></section><section class="tn-kartu tn-bid"><h4>${esc(t("tn.u.muda"))}</h4><p>${esc(t("tn.u.muda_isi"))}</p></section></div>
+    <div class="tn-r tn-r2 tn-cabang">${[["waketum", "tn.u.waketum"], ["sekjen", "tn.u.sekjen"], ["bendahara", "tn.u.bendahara"], ["eksekutif", "tn.u.eksekutif"]].filter(([k]) => U[k]).map(([k, j]) => (k === "sekjen" ? kartu(t(j), [{ kosong: true, jabatan: "Sekretaris Jenderal" }, ...U[k].filter((o) => !o.kosong && o.nama)]) : kartu(t(j), U[k], "", k === "waketum"))).join("")}</div></div>
+    ${U.komite ? `<h3 class="tn-sub">${esc(t("tn.u.komite"))}</h3><div class="tn-bidang">${kartu(t("tn.u.komite"), U.komite, " tn-bid")}</div>` : ""}
+    <h3 class="tn-sub">${esc(t("tn.u.bidang"))}</h3><div class="tn-bidang">${bidang.map(kb).join("")}</div>
+    <h3 class="tn-sub">${esc(t("tn.u.unit"))}</h3><div class="tn-bidang">${[U.institute && kb([t("tn.u.institute"), U.institute]), U.wilayah && kb([t("tn.u.wilayah"), U.wilayah]), U.sdu && sdu(U.sdu)].filter(Boolean).join("")}<section class="tn-kartu tn-bid"><h4>${esc(t("tn.u.muda"))}</h4><p>${esc(t("tn.u.muda_isi"))}</p></section></div>
+    ${U.staf ? `<h3 class="tn-sub">${esc(t("tn.u.staf"))}</h3><div class="tn-bidang">${kb([t("tn.u.staf"), U.staf])}</div>` : ""}
     <p class="tn-kecil">${esc(t("tn.struktur.sumber", { tanggal: tanggal(p.diambil) }))} <a href="${esc(p.sumber)}" target="_blank" rel="noopener noreferrer">metiires.or.id</a></p></div></section>`;
 }
 

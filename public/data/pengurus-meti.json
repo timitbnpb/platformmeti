@@ -5,8 +5,13 @@
  "unit": {
   "dewan": [
    {
-    "nama": "Wiluyo Kusdiharto",
+    "nama": "Hashim Djojohadikusumo",
     "jabatan": "Ketua Dewan Pengawas",
+    "foto": "/img/pengurus/hashim-djojohadikusumo-b.webp"
+   },
+   {
+    "nama": "Wiluyo Kusdiharto",
+    "jabatan": "Anggota Dewan Pengawas",
     "foto": "/img/pengurus/wiluyo-kusdiharto-b.webp",
     "orang_id": "o_eef7649be0"
    },
@@ -271,7 +276,7 @@
    {
     "nama": "Fadli Rahman",
     "jabatan": "Wakil Ketua Umum 2",
-    "foto": "",
+    "foto": "/img/pengurus/fadli-rahman-b.webp",
     "orang_id": "o_053924d842"
    }
   ],
@@ -303,32 +308,25 @@
   ],
   "sekjen": [
    {
-    "nama": "Elvi Nasution",
+    "nama": null,
     "jabatan": "Sekretaris Jenderal",
-    "foto": "/img/pengurus/elvi-nasution.jpg",
-    "orang_id": "o_5de0820f07"
-   },
-   {
-    "nama": "Ricky Andrian",
-    "jabatan": "Wakil Sekretaris 1",
-    "foto": "/img/pengurus/ricky-andrian.jpg",
-    "orang_id": "o_8e30d21bb7"
+    "foto": "",
+    "kosong": true
    },
    {
     "nama": "Lucila Ismoyo Rukmi",
-    "jabatan": "Wakil Sekretaris 2",
+    "jabatan": "Wakil Sekretaris 1",
     "foto": "/img/pengurus/lucila-ismoyo-rukmi-b.webp",
     "orang_id": "o_e8e10fd9c9"
    },
    {
-    "nama": "Daniel Tampubolon",
-    "jabatan": "Wakil Sekretaris 3",
-    "foto": "/img/pengurus/daniel-tampubolon-b.webp",
-    "orang_id": "pm_23c2115b"
+    "nama": "Cindy",
+    "jabatan": "Wakil Sekretaris 2",
+    "foto": "/img/pengurus/cindy-b.webp"
    },
    {
     "nama": "Dicky Septriadi",
-    "jabatan": "Wakil Sekretaris 4",
+    "jabatan": "Wakil Sekretaris 3",
     "foto": "",
     "orang_id": "o_4e4c201236"
    },
@@ -416,6 +414,134 @@
     "foto": "",
     "orang_id": "pm_9bd4e00d"
    }
+  ],
+  "wilayah": [
+   {
+    "nama": "Parlindungan Purba",
+    "jabatan": "Ketua METI Wilayah",
+    "foto": "/img/pengurus/parlindungan-purba-b.webp",
+    "orang_id": "o_ad03fad68e"
+   },
+   {
+    "nama": "Eva Djauhari",
+    "jabatan": "Wakil Koordinator",
+    "foto": "",
+    "orang_id": "o_fc7e4a5bf0"
+   },
+   {
+    "nama": "Alif Zulviqar Syahroni",
+    "jabatan": "Ketua METI Energi Muda",
+    "foto": "",
+    "orang_id": "o_9305311f4e"
+   },
+   {
+    "nama": "Anggi Renaldy Pratama",
+    "jabatan": "Anggota METI Energi Muda",
+    "foto": "",
+    "orang_id": "pm_646f3a41"
+   },
+   {
+    "nama": "Bagas Maropindra",
+    "jabatan": "Anggota METI Energi Muda",
+    "foto": "",
+    "orang_id": "pm_07fea834"
+   },
+   {
+    "nama": "Rachel Anabeluthfiya Teratai Yudhistira",
+    "jabatan": "Anggota METI Energi Muda",
+    "foto": "",
+    "orang_id": "pm_ea4c2439"
+   },
+   {
+    "nama": "Vania Herlambang",
+    "jabatan": "Anggota METI Energi Muda",
+    "foto": "",
+    "orang_id": "pm_21da0077"
+   }
+  ],
+  "sdu": [
+   {
+    "nama": "Anthoni Utomo",
+    "jabatan": "Chief Strategic Delivery Unit",
+    "foto": ""
+   },
+   {
+    "nama": "Priyanka Puteri Ariffia",
+    "jabatan": "Vice Chief SDU 1",
+    "foto": ""
+   },
+   {
+    "nama": "Henny Triana",
+    "jabatan": "Vice Chief SDU 2",
+    "foto": ""
+   },
+   {
+    "nama": "Herbert Lubis",
+    "jabatan": "Vice Chief SDU 3",
+    "foto": ""
+   },
+   {
+    "nama": "Rama Dinara",
+    "jabatan": "PMO Solar PV 100 GW",
+    "foto": "",
+    "pmo": true
+   },
+   {
+    "nama": "John Rembet",
+    "jabatan": "PMO Geothermal",
+    "foto": "",
+    "pmo": true
+   },
+   {
+    "nama": null,
+    "jabatan": "PMO Green Charging Station",
+    "foto": "",
+    "kosong": true,
+    "pmo": true
+   },
+   {
+    "nama": "Sigit Setiawan",
+    "jabatan": "PMO Biofuel for Transportation",
+    "foto": "",
+    "pmo": true
+   },
+   {
+    "nama": "Anita Puspitasari",
+    "jabatan": "PMO Bioenergy for Power",
+    "foto": "",
+    "pmo": true
+   },
+   {
+    "nama": null,
+    "jabatan": "PMO Waste to Energy",
+    "foto": "",
+    "kosong": true,
+    "pmo": true
+   },
+   {
+    "nama": "Irman Boyle",
+    "jabatan": "PMO Green Financing",
+    "foto": "",
+    "pmo": true
+   },
+   {
+    "nama": "Haryo Ajie Dewanto",
+    "jabatan": "PMO Carbon Trading",
+    "foto": "",
+    "pmo": true
+   },
+   {
+    "nama": "Nanang Kurniawan",
+    "jabatan": "PMO Green Hydrogen & Ammonia",
+    "foto": "",
+    "pmo": true
+   },
+   {
+    "nama": "Yudha Permana Jayadikarta",
+    "jabatan": "PMO Hydro Energy",
+    "foto": "/img/pengurus/yudha-permana-jayadikarta-b.webp",
+    "pmo": true
+   }
   ]
  },
  "bidang": [
@@ -423,10 +549,10 @@
    "nama": "Pengembangan Organisasi & Kerjasama Antar Lembaga",
    "anggota": [
     {
-     "nama": "Yudha Permana Jayadikarta",
+     "nama": "Ricky Andrian",
      "jabatan": "Ketua Bidang 1",
-     "foto": "/img/pengurus/yudha-permana-jayadikarta-b.webp",
-     "orang_id": "o_40f2f13118"
+     "foto": "/img/pengurus/ricky-andrian.jpg",
+     "orang_id": "o_8e30d21bb7"
     },
     {
      "nama": "Alexander",
@@ -824,10 +950,10 @@
    "nama": "Sertifikasi",
    "anggota": [
     {
-     "nama": "John Paulus Pantouw",
+     "nama": "Yudha Permana Jayadikarta",
      "jabatan": "Ketua Bidang 8",
-     "foto": "/img/pengurus/john-paulus-pantouw-b.webp",
-     "orang_id": "o_84f4272976"
+     "foto": "/img/pengurus/yudha-permana-jayadikarta-b.webp",
+     "orang_id": "o_40f2f13118"
     },
     {
      "nama": "Irfan Suwardi",
@@ -860,53 +986,7 @@
      "orang_id": "pm_59e329a5"
     }
    ]
-  },
-  {
-   "nama": "",
-   "anggota": [
-    {
-     "nama": "Parlindungan Purba",
-     "jabatan": "Koordinator METI Wilayah",
-     "foto": "/img/pengurus/parlindungan-purba-b.webp",
-     "orang_id": "o_ad03fad68e"
-    },
-    {
-     "nama": "Eva Djauhari",
-     "jabatan": "Wakil Koordinator",
-     "foto": "",
-     "orang_id": "o_fc7e4a5bf0"
-    },
-    {
-     "nama": "Alif Zulviqar Syahroni",
-     "jabatan": "Ketua METI Energi Muda",
-     "foto": "",
-     "orang_id": "o_9305311f4e"
-    },
-    {
-     "nama": "Anggi Renaldy Pratama",
-     "jabatan": "Anggota METI Energi Muda",
-     "foto": "",
-     "orang_id": "pm_646f3a41"
-    },
-    {
-     "nama": "Bagas Maropindra",
-     "jabatan": "Anggota METI Energi Muda",
-     "foto": "",
-     "orang_id": "pm_07fea834"
-    },
-    {
-     "nama": "Rachel Anabeluthfiya Teratai Yudhistira",
-     "jabatan": "Anggota METI Energi Muda",
-     "foto": "",
-     "orang_id": "pm_ea4c2439"
-    },
-    {
-     "nama": "Vania Herlambang",
-     "jabatan": "Anggota METI Energi Muda",
-     "foto": "",
-     "orang_id": "pm_21da0077"
-    }
-   ]
   }
- ]
+ ],
+ "diperbarui": "2026-11-07"
 }

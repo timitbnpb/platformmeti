@@ -1,6 +1,7 @@
 // worker.js (JM-A05): router objek "METODE /path/:id" + penjaga halaman terkunci. Satu try/catch untuk semua galat.
 import { rute as ruteSesi } from "./sesi.js";
 import { rute as ruteAkun } from "./akun.js";
+import { rute as ruteAgenda } from "./agenda.js";
 import { rute as ruteDirektori } from "./direktori.js";
 import * as hak from "./hak.js";
 import { halamanProfil } from "./profil.js";
@@ -15,7 +16,7 @@ const rutePemilik = {
 };
 
 // Tabel rute dikompilasi sekali: { metode, bagian[], fn }.
-const DAFTAR = Object.entries({ ...ruteSesi, ...ruteAkun, ...ruteDirektori, ...rutePemilik }).map(([k, fn]) => {
+const DAFTAR = Object.entries({ ...ruteSesi, ...ruteAkun, ...ruteAgenda, ...ruteDirektori, ...rutePemilik }).map(([k, fn]) => {
   const [metode, jalur] = k.split(" ");
   return { metode, bagian: jalur.split("/").slice(1), fn };
 });
@@ -24,7 +25,9 @@ function cocok(r, bagian) {
   if (r.bagian.length !== bagian.length) return null;
   const params = {};
   for (let i = 0; i < bagian.length; i++) {
-    if (r.bagian[i][0] === ":") params[r.bagian[i].slice(1)] = decodeURIComponent(bagian[i]);
+    if (r.bagian[i][0] === ":") {
+      try { params[r.bagian[i].slice(1)] = decodeURIComponent(bagian[i]); } catch { return null; }
+    }
     else if (r.bagian[i] !== bagian[i]) return null;
   }
   return params;

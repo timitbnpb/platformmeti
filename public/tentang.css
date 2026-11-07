@@ -214,3 +214,6 @@
 .tn-logo img{max-height:44px!important;max-width:132px!important;width:auto;height:auto;object-fit:contain}
 .tn-nama{display:inline-grid;place-items:center;width:52px;height:52px;border-radius:50%;background:var(--soft-hijau);border:0!important;font:700 var(--t-kecil)/1 var(--display);letter-spacing:0;color:var(--brand);padding:0!important}
 .tn-trek li{margin:0 20px}
+
+/* kartu SDU: dua kolom di desktop */
+@media (min-width:900px){.tn-sdu{grid-column:span 2}.tn-sdu>.tn-daftar{grid-template-columns:repeat(2,minmax(0,1fr))}}

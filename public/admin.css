@@ -76,3 +76,18 @@ dialog.jm-modal header{display:flex;justify-content:space-between;align-items:ce
 .jm-adm-konfirm{display:inline-flex;flex-wrap:wrap;gap:6px;align-items:center}
 .jm-adm-acts{display:inline-flex;gap:6px}
 @media (max-width:560px){.jm-adm-form{grid-template-columns:1fr}}
+/* tab Agenda */
+.jm-ag-bar{grid-template-columns:minmax(0,1fr) auto;align-items:center}
+.jm-ag-baris{cursor:pointer}
+.jm-ag-baris:focus-visible{outline:2px solid var(--fokus);outline-offset:-2px}
+.jm-ag-ed{display:grid;gap:14px}
+.jm-ag-ed .jm-tbl-kecil:first-child{justify-self:start}
+.jm-ag-judul h2{font:700 20px/1.25 var(--display);margin:0}
+.jm-ag-teks{min-height:200px;resize:vertical;font:inherit}
+.jm-ag-foto{display:grid;gap:10px}
+.jm-ag-foto h3{font:600 15px/1.3 var(--font);margin:0}
+.jm-ag-kisi{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:12px}
+.jm-ag-f{margin:0;display:grid;gap:6px;align-content:start;padding:8px;border:1px solid var(--line);border-radius:var(--r-sm)}
+.jm-ag-f[aria-busy="true"]{opacity:.5}
+.jm-ag-f img{display:block;width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:var(--r-sm);background:var(--surface)}
+.jm-ag-f .jm-tbl{justify-self:start}

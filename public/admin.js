@@ -4,6 +4,7 @@ import { t, ada, angka, tanggal, tanggalDariUnix, jam } from "/i18n.js";
 import { esc, api, nanti, debounce, hantuHtml, kosongHtml, galatHtml, galatTeks, ikon, pesanHtml } from "/inti/umum.js";
 import { mulaiHalaman } from "/inti/kepala.js";
 import { panelAnggota } from "/admin_anggota.js";
+import { panelAgenda } from "/admin_agenda.js";
 
 const saya = await mulaiHalaman();
 const $ = (id) => document.getElementById(id);
@@ -28,7 +29,7 @@ function jalan() {
   const peranBisa = sa ? PERAN : PERAN.filter((p) => p !== "super");
   // kurator: hanya tab Anggota (tab Akun dan Jejak tidak ada di DOM; server tetap menolak). CSV hanya admin dan super.
   const adm = ["admin", "super"].includes(saya.peran);
-  const TAB = [...(adm ? [["akun", "admin.tab.akun", "orang"], ["jejak", "admin.tab.jejak", "jejak"]] : []), ["anggota", "adm.anggota.tab", "daftar"]];
+  const TAB = [...(adm ? [["akun", "admin.tab.akun", "orang"], ["jejak", "admin.tab.jejak", "jejak"]] : []), ["anggota", "adm.anggota.tab", "daftar"], ["agenda", "adm.agenda.tab", "kalender"]];
   let tab = TAB[0][0];
 
   const A = { cari: "", peran: "", status: "", hal: 1, baris: [], galat: null, ctl: null };
@@ -82,7 +83,7 @@ function jalan() {
     tab = k;
     kabari("ok", "");
     $("panel").setAttribute("aria-labelledby", "tab-" + k);
-    if (k === "akun") panelAkun(); else if (k === "jejak") panelJejak(); else panelAnggota($("panel"), { boleh: adm, kabari });
+    if (k === "akun") panelAkun(); else if (k === "jejak") panelJejak(); else if (k === "agenda") panelAgenda($("panel"), saya); else panelAnggota($("panel"), { boleh: adm, kabari });
   }
 
   /* ---------- tab Akun ---------- */
@@ -312,7 +313,7 @@ function jalan() {
 
   function klikPanel(e) {
     const b = e.target.closest("button");
-    if (!b || tab === "anggota") return; // tab Anggota punya penangan sendiri
+    if (!b || tab === "anggota" || tab === "agenda") return; // tab Anggota dan Agenda punya penangan sendiri
     const ke = (tab === "akun" ? A : J);
     switch (b.id === "aBuat" ? "buat" : b.dataset.aksi) {
       case "buat": {

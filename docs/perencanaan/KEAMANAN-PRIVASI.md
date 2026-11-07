@@ -39,6 +39,7 @@ Sel berkualifikasi: `B prov` atau `T prov` = hanya baris yang `cakupan_prov` aku
 | Sesi (cookie, daftar sesi aktif) | - | T diri | T diri | T diri | T diri | T (cabut) | T |
 | Koreksi (usulan perbaikan data) | - | T kirim | T kirim | T | T kirim prov | T | T |
 | Riwayat dengan METI (narasumber, audiensi, MoU, sponsor; KP C-17) | - | - | T | - | - | T | T |
+| Bukti agenda METI: notulensi dan foto (KP K20; foto privat di R2) | - | B | B | T | B | T | T |
 | Jejak admin (siapa, kapan, aksi, dari, ke) | - | - | - | - | - | B | B |
 | Daftar tolak (`daftar-tolak.json`, privat di R2; KP D14) | - | - | - | - | - | - | B |
 | Baris dummy (`dummy=1`) dan tombol dummy (KP D18) | - | - | - | - | - | - | T |
@@ -124,6 +125,7 @@ Penghapusan bersifat keras: baris D1, kolom turunan, berkas R2 (logo atau dokume
 | Tautan aktivasi | 72 jam atau sekali pakai |
 | Jejak admin | 2 tahun (bawaan), hash IP tidak lebih lama dari sesinya |
 | Riwayat dengan METI | selama relasi, ditambah 2 tahun |
+| Bukti agenda METI (notulensi, foto) | selama arsip kegiatan METI disimpan; foto dihapus atas permintaan orang yang tampak di dalamnya |
 
 ### 3.5 Daftar tolak (KP D14)
 

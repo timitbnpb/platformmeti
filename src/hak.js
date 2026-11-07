@@ -10,11 +10,15 @@ const salah = (pesan) => mk("masukan_salah", 422, pesan);
 
 /* Isi jejak (murni): kolom rahasia tak pernah masuk dari/ke; entitas orang hanya nama kolom (DT 3.2). Diekspor ulang oleh jejak.js. */
 const RAHASIA_JEJAK = ["garam", "sandi", "iterasi", "aktivasi_hash", "aktivasi_sampai", "id_hash", "pengaju_kontak"];
+// Teks bebas panjang (bisa memuat data pribadi) dicatat panjangnya saja, bukan isinya (K20, temuan security-reviewer).
+const RINGKAS_JEJAK = { agenda_bukti: ["notulensi"] };
 export function susunJejak({ tabel, jenisEntitas, dari, ke }) {
   const hanyaNama = tabel === "entitas" && jenisEntitas === "orang";
+  const ringkas = RINGKAS_JEJAK[tabel] ?? [];
   const bentuk = (o) => {
     if (o == null) return null;
-    const s = Object.fromEntries(Object.entries(o).filter(([k]) => !RAHASIA_JEJAK.includes(k)));
+    const s = Object.fromEntries(Object.entries(o).filter(([k]) => !RAHASIA_JEJAK.includes(k))
+      .map(([k, v]) => (ringkas.includes(k) && typeof v === "string" ? [k + "_panjang", v.length] : [k, v])));
     let teks = JSON.stringify(hanyaNama ? Object.keys(s) : s);
     if (teks.length > 3900) teks = JSON.stringify(Object.keys(s)); // ponytail: batas CHECK 4000; nama kolom cukup untuk audit
     return teks;
@@ -49,13 +53,14 @@ export const MATRIKS = {
   sesi:            ["-", "T diri", "T diri", "T diri", "T diri", "T cabut", "T"],
   koreksi:         ["-", "T kirim", "T kirim", "T", "T kirim prov", "T", "T"],
   riwayat:         ["-", "-", "T", "-", "-", "T", "T"],
+  agenda:          ["-", "B", "B", "T", "B", "T", "T"], // K20: bukti agenda (notulensi + foto); baca semua yang login
   jejak:           ["-", "-", "-", "-", "-", "B", "B"],
   daftar_tolak:    ["-", "-", "-", "-", "-", "-", "B"],
 };
 export const AKSI = ["baca", "tambah", "ubah", "hapus", "kirim", "cabut", "tinjau", "hapus_keras"];
 
 // Tambahan aksi untuk sel 'T' menurut jenis data (DT 5.2).
-const TAMBAHAN_T = { koreksi: ["tinjau", "kirim"], entitas: ["hapus_keras"], orang: ["hapus_keras"], riwayat: ["hapus"], sesi: ["cabut"] };
+const TAMBAHAN_T = { koreksi: ["tinjau", "kirim"], entitas: ["hapus_keras"], orang: ["hapus_keras"], riwayat: ["hapus"], agenda: ["hapus"], sesi: ["cabut"] };
 // Kode sel -> { aksi, klausa } (peta kode ke aksi, KPV 1 / DT 5.2). 'T diri' menurut jenis: akun ubah, sesi cabut.
 const KODE = {
   "-":            () => ({ aksi: [], klausa: [] }),
@@ -161,6 +166,8 @@ const KOLOM_BACA = {
   koreksi: ["id", "entitas_id", "jenis", "kunci", "usulan", "sumber_url", "pengaju_akun", "status", "alasan", "ditinjau_oleh", "ditinjau_pada", "dibuat"],
   riwayat: ["id", "target_id", "jenis", "tanggal", "tanggal_selesai", "judul", "kegiatan_ref", "catatan", "penilaian", "oleh", "dibuat", "diubah"],
   jejak: ["id", "kapan", "siapa", "peran", "aksi", "tabel", "baris_id", "dari", "ke", "ip_hash"],
+  agenda_bukti: ["id", "kegiatan_ref", "tempat", "notulensi", "oleh", "dibuat", "diubah"],
+  agenda_foto: ["id", "bukti_id", "kunci_r2", "tipe", "ukuran", "keterangan", "urutan", "oleh", "dibuat"],
 };
 // tabel baca -> tabel fisik, jenis data dasar, filter tetap
 const TABEL_BACA = {
@@ -168,6 +175,7 @@ const TABEL_BACA = {
   kontak: { t: "fakta", jenis: "kontak", tetap: "kunci LIKE 'kontak\\_%' ESCAPE '\\'" },
   ikatan: { t: "ikatan", jenis: "ikatan" }, akun: { t: "akun", jenis: "akun" }, sesi: { t: "sesi", jenis: "sesi" },
   koreksi: { t: "koreksi", jenis: "koreksi" }, riwayat: { t: "riwayat", jenis: "riwayat" }, jejak: { t: "jejak", jenis: "jejak" },
+  agenda_bukti: { t: "agenda_bukti", jenis: "agenda" }, agenda_foto: { t: "agenda_foto", jenis: "agenda" },
 };
 // Pemetaan tabel -> jenis data menurut baris (satu tabel data, bukan percabangan tersebar). Tabel baru tanpa entri = temuan.
 const JENIS_TABEL = {
@@ -175,6 +183,7 @@ const JENIS_TABEL = {
   fakta: (b) => (/^kontak_/.test(b?.kunci ?? "") ? "kontak" : "fakta"),
   kontak: () => "kontak", sumber: () => "fakta", ikatan: () => "ikatan", akun: () => "akun", sesi: () => "sesi",
   koreksi: () => "koreksi", riwayat: () => "riwayat", jejak: () => "jejak",
+  agenda_bukti: () => "agenda", agenda_foto: () => "agenda",
 };
 export function jenisData(tabel, baris) {
   const f = JENIS_TABEL[tabel];
@@ -193,18 +202,22 @@ const KOLOM_TULIS = {
   koreksi: { tambah: ["entitas_id", "jenis", "kunci", "usulan", "sumber_url", "pengaju_kontak"], tinjau: ["status", "alasan"] },
   riwayat: { tambah: ["target_id", "jenis", "tanggal", "tanggal_selesai", "judul", "kegiatan_ref", "catatan", "penilaian"],
     ubah: ["jenis", "tanggal", "tanggal_selesai", "judul", "kegiatan_ref", "catatan", "penilaian"] },
+  agenda_bukti: { tambah: ["kegiatan_ref", "tempat", "notulensi"], ubah: ["tempat", "notulensi"] },
+  agenda_foto: { tambah: ["bukti_id", "keterangan", "urutan"], ubah: ["keterangan", "urutan"] },
 };
 // Kolom yang HANYA boleh diisi server (argumen `server`), tak pernah dari klien. id, dibuat, slug-ubah, dummy tak ada di mana pun.
 const KOLOM_SERVER = {
   entitas: { tambah: ["kunci", "slug"], ubah: [] },
   fakta: { tambah: [] }, ikatan: { tambah: [] },
   akun: { tambah: ["aktivasi_hash", "aktivasi_sampai"], ubah: ["aktivasi_hash", "aktivasi_sampai"] },
+  agenda_foto: { tambah: ["kunci_r2", "tipe", "ukuran"], ubah: [] }, // hasil periksa unggahan di server, tak pernah dari klien
 };
-const OTOMATIS_TAMBAH = { entitas: "dibuat_oleh", fakta: "dibuat_oleh", ikatan: "dibuat_oleh", akun: "dibuat_oleh", koreksi: "pengaju_akun", riwayat: "oleh" };
+const OTOMATIS_TAMBAH = { entitas: "dibuat_oleh", fakta: "dibuat_oleh", ikatan: "dibuat_oleh", akun: "dibuat_oleh", koreksi: "pengaju_akun", riwayat: "oleh",
+  agenda_bukti: "oleh", agenda_foto: "oleh" };
 const PAKAI_SUMBER = ["entitas", "fakta", "ikatan"];
 // SELECT baris untuk keputusan hak + isi jejak: kolom daftar putih (tanpa rahasia), plus prov entitas induk.
 const PROV_INDUK = ", (SELECT prov FROM entitas WHERE id = entitas_id) AS prov";
-const BARIS_SQL = Object.fromEntries(["entitas", "fakta", "ikatan", "akun", "koreksi", "riwayat"].map((t) =>
+const BARIS_SQL = Object.fromEntries(["entitas", "fakta", "ikatan", "akun", "koreksi", "riwayat", "agenda_bukti", "agenda_foto"].map((t) =>
   [t, `SELECT ${KOLOM_BACA[t].join(", ")}${t === "fakta" || t === "koreksi" ? PROV_INDUK : ""} FROM ${t} WHERE id = ?`]));
 const AKSI_JEJAK = { tambah: "tambah", ubah: "ubah", hapus: "hapus", hapus_keras: "hapus-permanen", kirim: "kirim", tinjau: "tinjau", cabut: "cabut" };
 const RE_ID = /^\d{1,12}$/;
@@ -342,7 +355,7 @@ export async function tulis(env, akun, tabel, aksi, data = {}, id = null, server
     }
   }
   if (aksi === "tinjau") { kolom.ditinjau_oleh = akun?.id ?? null; kolom.ditinjau_pada = kini(); }
-  if (aksi === "ubah" && (tabel === "entitas" || tabel === "riwayat")) kolom.diubah = kini();
+  if (aksi === "ubah" && (tabel === "entitas" || tabel === "riwayat" || tabel === "agenda_bukti")) kolom.diubah = kini();
   if (tabel === "akun" && aksi === "ubah" && data.status === "nonaktif") stmtAkhir.push(env.DB.prepare("DELETE FROM sesi WHERE akun_id = ?").bind(Number(id)));
 
   // 5. pernyataan utama

@@ -1,6 +1,6 @@
 import { mulaiHalaman } from "/inti/kepala.js";
 import { t, angka, tanggal } from "/i18n.js";
-import { esc, nanti, ikon, hantuHtml, kosongHtml, galatHtml } from "/inti/umum.js";
+import { esc, nanti, ikon, hantuHtml, kosongHtml, galatHtml, api } from "/inti/umum.js";
 import { pilihHtml, exHtml, sumberHtml } from "/inti/komponen.js";
 import { aksiHtml, hlHtml } from "/inti/aksi_ex.js";
 import { muat, label, urlAman } from "/publik.js";
@@ -9,6 +9,7 @@ const JENIS = ["seminar", "konferensi", "audiensi", "lokakarya", "regulasi", "te
 const HP = matchMedia("(max-width:639px)");
 const S = { tampil: "bulan", jenis: "", bulan: "" }; // bulan = "YYYY-MM"
 let D = null, KINI = "", ROWS = [], OPENER = null;
+let BUKTI = new Map(); // kegiatan_ref -> { ada_notulensi, jumlah_foto }; kosong untuk publik
 
 const MAKS_LANE = 3;
 const BLN = { jan: 1, feb: 2, mar: 3, apr: 4, mei: 5, jun: 6, jul: 7, agu: 8, agt: 8, sep: 9, okt: 10, nov: 11, des: 12 };
@@ -95,6 +96,88 @@ function barisHtml(b) {
     <span class="kal-meta kal-sumber">${ikon("info", 16)}<span>${esc(t("kal.sumber." + b.sumber.label))}, ${esc(t("kal.diambil", { tanggal: tanggal(b.sumber.tanggal) }))}</span></span></span>
     <span class="kal-sisi">${pilJenis(b.jenis)}</span></button></li>`;
 }
+function buktiHtml(b) {
+  const x = BUKTI.get(b.id);
+  if (!x || (!x.jumlah_foto && !x.ada_notulensi)) return "";
+  const tb = (a, ik, kunci, n) => `<button type="button" class="jm-tbl jm-tbl-kecil" data-bukti="${a}" data-ref="${esc(b.id)}">${ikon(ik, 16)}<span>${esc(t(kunci, n ? { n: angka(n) } : undefined))}</span></button>`;
+  return `<div class="kal-bukti">${x.jumlah_foto ? tb("foto", "gambar", "kal.bukti.foto", x.jumlah_foto) : ""}${x.ada_notulensi ? tb("notulen", "berita", "kal.bukti.notulen") : ""}</div>`;
+}
+
+/* ---------- dialog bukti (hanya yang login; publik tidak pernah melihatnya) ---------- */
+const DL = { el: null, ref: "", det: null, foto: -1, ctl: null };
+function notulenHtml(teks) {
+  const keluar = [];
+  for (const blok of esc(teks).split(/\n\s*\n/)) {
+    const baris = blok.split("\n").map((x) => x.trim()).filter(Boolean);
+    let para = [], daftar = null;
+    const tutup = () => { if (para.length) keluar.push(`<p>${para.join("<br>")}</p>`); if (daftar) keluar.push(`<${daftar.tag}>${daftar.li.map((x) => `<li>${x}</li>`).join("")}</${daftar.tag}>`); para = []; daftar = null; };
+    for (const r of baris) {
+      const m = /^(\d+[.)]|-)\s+(.*)$/.exec(r);
+      if (m) { const tag = m[1] === "-" ? "ul" : "ol"; if (!daftar || daftar.tag !== tag) { tutup(); daftar = { tag, li: [] }; } else if (para.length) tutup(); daftar.li.push(m[2]); }
+      else { if (daftar) tutup(); para.push(r); }
+    }
+    tutup();
+  }
+  return keluar.join("");
+}
+function dialog() {
+  if (DL.el) return DL.el;
+  const d = document.createElement("dialog");
+  d.className = "jm-dlg jm-dlg-lebar";
+  d.setAttribute("aria-labelledby", "bktJudul");
+  document.body.appendChild(d);
+  d.addEventListener("click", (e) => {
+    if (e.target === d) { d.close(); return; }
+    const b = e.target.closest("button");
+    if (!b) return;
+    const a = b.dataset.bk;
+    if (a === "tutup") d.close();
+    else if (a === "foto") { DL.foto = +b.dataset.i; gambarBukti(); }
+    else if (a === "galeri") { DL.foto = -1; gambarBukti(); }
+    else if (a === "prev" || a === "next") geserFoto(a === "next" ? 1 : -1);
+  });
+  d.addEventListener("keydown", (e) => { if (DL.foto >= 0 && (e.key === "ArrowLeft" || e.key === "ArrowRight")) { e.preventDefault(); geserFoto(e.key === "ArrowRight" ? 1 : -1); } });
+  d.addEventListener("close", () => { if (DL.ctl) DL.ctl.abort(); DL.foto = -1; });
+  return (DL.el = d);
+}
+function geserFoto(n) { const f = DL.det.foto; DL.foto = (DL.foto + n + f.length) % f.length; gambarBukti(); }
+function gambarBukti() {
+  const d = DL.el, { bukti, foto } = DL.det, acara = D.baris.find((b) => b.id === DL.ref) || {};
+  const kepala = `<header class="kal-bk-kepala"><div><h2 id="bktJudul">${esc(acara.judul || "")}</h2><p class="jm-bantu">${esc(tanggal(acara.tanggal))}${bukti && bukti.tempat ? ", " + esc(bukti.tempat) : ""}</p></div>
+    <button type="button" class="jm-tbl jm-tbl-kecil" data-bk="tutup" aria-label="${esc(t("jm.tutup"))}">${ikon("tutup", 18)}</button></header>`;
+  let isi;
+  if (DL.foto >= 0 && foto[DL.foto]) {
+    const f = foto[DL.foto];
+    isi = `<div class="kal-bk-penuh"><button type="button" class="jm-tbl jm-tbl-kecil" data-bk="galeri">${ikon("panah-kiri", 18)}<span>${esc(t("kal.bukti.galeri"))}</span></button>
+      <div class="kal-bk-lihat"><button type="button" class="jm-tbl kal-bulat" data-bk="prev" aria-label="${esc(t("kal.sebelumnya"))}">${ikon("panah-kiri", 20)}</button>
+      <img src="/api/agenda/foto/${encodeURIComponent(f.id)}" alt="${esc(f.keterangan || t("kal.bukti.foto_alt", { n: angka(DL.foto + 1) }))}" decoding="async">
+      <button type="button" class="jm-tbl kal-bulat" data-bk="next" aria-label="${esc(t("kal.berikutnya"))}">${ikon("panah-kanan", 20)}</button></div>
+      <p class="jm-bantu">${esc(t("kal.bukti.n_dari", { n: angka(DL.foto + 1), total: angka(foto.length) }))}${f.keterangan ? ": " + esc(f.keterangan) : ""}</p></div>`;
+  } else {
+    isi = (foto.length ? `<section aria-label="${esc(t("kal.bukti.foto", { n: angka(foto.length) }))}"><div class="kal-bk-kisi">${foto.map((f, i) => `<figure><button type="button" data-bk="foto" data-i="${i}" aria-label="${esc(f.keterangan || t("kal.bukti.foto_alt", { n: angka(i + 1) }))}"><img src="/api/agenda/foto/${encodeURIComponent(f.id)}" alt="" loading="lazy" decoding="async"></button>${f.keterangan ? `<figcaption>${esc(f.keterangan)}</figcaption>` : ""}</figure>`).join("")}</div></section>` : "")
+      + (bukti && bukti.notulensi ? `<section class="kal-bk-notulen"><h3>${esc(t("kal.bukti.notulen"))}</h3>${notulenHtml(bukti.notulensi)}</section>` : "");
+  }
+  d.innerHTML = kepala + (isi || kosongHtml("kal.bukti.kosong"));
+}
+async function bukaBukti(ref, fokus) {
+  const d = dialog();
+  DL.ref = ref; DL.foto = -1;
+  if (DL.ctl) DL.ctl.abort();
+  DL.ctl = new AbortController();
+  d.innerHTML = hantuHtml(4);
+  if (!d.open) d.showModal();
+  try { DL.det = await api("/api/agenda/" + encodeURIComponent(ref), { signal: DL.ctl.signal }); } catch (e) { if (e.name !== "AbortError") d.innerHTML = galatHtml(e.kode || "umum"); return; }
+  DL.det.foto = DL.det.foto || [];
+  nanti(() => { gambarBukti(); const k = fokus === "notulen" && d.querySelector(".kal-bk-notulen"); if (k) k.scrollIntoView({ block: "start" }); });
+}
+/** Diam bila 401/403/galat: publik tidak melihat apa pun yang baru (DS prinsip 5). */
+async function muatBukti() {
+  try {
+    const d = await api("/api/agenda");
+    BUKTI = new Map(((d && d.bukti) || []).map((b) => [b.kegiatan_ref, b]));
+  } catch (e) { BUKTI = new Map(); }
+  if (BUKTI.size) nanti(gambarIsi);
+}
 function kelompokHtml(rows, turun) {
   const g = new Map();
   for (const b of rows) (g.get(bulanDari(b.tanggal)) || g.set(bulanDari(b.tanggal), []).get(bulanDari(b.tanggal))).push(b);
@@ -163,7 +246,7 @@ function bukaAcara(id, opener) {
   tampilPop(`<div class="kal-pop-isi">${tutupX()}${pilJenis(b.jenis)}<h2 id="kalPopJ">${esc(b.judul)}</h2>
     <dl class="kal-pop-dl">${dd("kal.pop.tanggal", esc(tglRentang(b)))}${dd("kal.pop.mitra", b.mitra ? esc(b.mitra) : "")}${dd("kal.pop.lokasi", b.lokasi ? esc(b.lokasi) : "")}${dd("kal.pop.sumber", `${esc(t("kal.sumber." + b.sumber.label))}, ${esc(t("kal.diambil", { tanggal: tanggal(b.sumber.tanggal) }))}`)}</dl>
     ${b.deskripsi ? `<p class="kal-pop-desk">${esc(b.deskripsi)}</p>` : ""}
-    <div class="kal-pop-aksi"><button type="button" class="jm-tbl" data-pop="ics" data-id="${esc(b.id)}">${ikon("kalender", 18)}${esc(t("kal.pop.ics"))}</button>
+    <div class="kal-pop-aksi">${buktiHtml(b)}<button type="button" class="jm-tbl" data-pop="ics" data-id="${esc(b.id)}">${ikon("kalender", 18)}${esc(t("kal.pop.ics"))}</button>
     ${u ? `<a class="jm-tbl" href="${esc(u)}" target="_blank" rel="noopener noreferrer">${esc(t("kal.pop.buka"))} &rarr;</a>` : ""}
     <button type="button" class="jm-tbl" data-pop="bagi" data-id="${esc(b.id)}">${ikon("tautan", 18)}<span>${esc(t("kal.pop.bagi"))}</span></button></div></div>`, opener);
   history.replaceState(null, "", `${location.pathname}${location.search}#acara-${b.id}`);
@@ -188,6 +271,7 @@ function pasangPop() {
   document.body.append(d);
   d.addEventListener("click", (e) => {
     if (e.target === d || e.target.closest("[data-pop=tutup]")) return d.close();
+    const bk = e.target.closest("[data-bukti]"); if (bk) { OPENER = null; d.close(); return bukaBukti(bk.dataset.ref, bk.dataset.bukti); }
     const a = e.target.closest("[data-acara]"); if (a) return bukaAcara(a.dataset.acara);
     const b = e.target.closest("[data-pop]"); if (!b) return;
     const ev = ROWS.find((x) => x.id === b.dataset.id) || acaraDari(D.baris).find((x) => x.id === b.dataset.id);
@@ -209,7 +293,7 @@ function pasangPop() {
 const csvBaris = () => [[t("kal.pop.tanggal"), "s/d", "Judul", t("kal.pop.jenis"), t("kal.pop.mitra"), t("kal.pop.sumber"), "URL"], ...ROWS.slice().sort((a, c) => a.tanggal.localeCompare(c.tanggal)).map((b) => [b.tanggal, b.akhir, b.judul, label("kal.jenis.", b.jenis), b.mitra || "", t("kal.sumber." + b.sumber.label), urlB(b)])];
 
 async function main() {
-  await mulaiHalaman();
+  const saya = await mulaiHalaman();
   bacaUrl();
   KINI = new Date().toISOString().slice(0, 10);
   const isi = document.getElementById("isi");
@@ -221,6 +305,7 @@ async function main() {
     else if (!S.bulan) { const kini = KINI.slice(0, 7); S.bulan = D.baris.some((b) => bulanDari(b.tanggal) === kini) ? kini : bulanDari(D.baris.filter((b) => b.tanggal <= KINI).pop()?.tanggal || D.baris[D.baris.length - 1].tanggal); }
     gambarKepala(); gambarIsi();
     if (tuju) bukaAcara(deep);
+    if (!saya || saya.masuk !== false) muatBukti();
   };
   pasangPop();
   await mulai();
@@ -232,7 +317,8 @@ async function main() {
     if (!D || e.target.closest("dialog")) return;
     const q = (s) => e.target.closest(s);
     let b;
-    if ((b = q("[data-tampil]"))) {
+    if ((b = q("[data-bukti]"))) bukaBukti(b.dataset.ref, b.dataset.bukti);
+    else if ((b = q("[data-tampil]"))) {
       S.tampil = b.dataset.tampil;
       for (const x of document.querySelectorAll("[data-tampil]")) x.setAttribute("aria-pressed", String(x === b)); // chrome urgent
       ulang();

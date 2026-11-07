@@ -83,6 +83,7 @@ Singkatan: KP = KEPUTUSAN-METI, GD = GRAND-DESIGN, R1..R9 = riset/, DT = DESAIN-
 | JM-F08 | Cerita data `/cerita` (Jawaban singkat, Cara menghitung, Cara mengutip, beku) | layar | F2 | M | belum |
 | JM-F09 | Riwayat dengan METI + agenda METI Wilayah | worker+layar | F2 | M | belum |
 | JM-F10 | Sinkron berita dan acara dari API metiires.or.id | pipa | F2 | S | belum |
+| JM-F11 | Bukti agenda METI (K20): migrasi 0010, rute `/api/agenda*` (`src/agenda.js`), tab Agenda di `/admin`, dialog Foto dan Notulensi di `/kalender` | worker, layar, gerbang | F2 | M | berjalan |
 | JM-P01 | Data proyek ke `entitas`/`fakta`/`ikatan` (K17): impor `data-panen/proyek` + program + COD target/aktual | pipa | F1 | M | belum |
 | JM-P02 | Pelacak proyek `/proyek` (peta klaster per teknologi/status, saringan program/provinsi, funnel status, daftar terlambat COD) | layar | F1 | L | belum |
 | JM-P03 | Profil proyek `/p/<id>` (garis waktu PPA-COD, pihak, pendana, regulasi, berita) ID/EN; ikon Google Maps per proyek (`google.com/maps/search/?api=1&query=lat,lng`, label presisi lokasi bila bukan titik persis) juga di kartu daftar `/proyek` | layar | F1 | L | belum |

@@ -735,6 +735,22 @@ Kolom Hak memakai lambang di kepala. "Fase" hanya ditulis bila bukan F0.
 
 **i18n.** Kamus statis `GET /i18n/id.json` dan `GET /i18n/en.json` (aset, PB, `public, max-age=300`, versi lewat `?v=<hash>`). Tidak ada rute API khusus bahasa: pilihan bahasa disimpan klien (`localStorage` dibungkus try/catch dan `?lang=`), dan untuk akun tersimpan di `akun.bahasa` lewat `PATCH /api/saya`. Potret membawa kolom `_en`; bila kosong klien menampilkan versi Indonesia dengan pil "ID" (KP D10).
 
+### 4.4 Bukti agenda METI (K20, JM-F11)
+
+Berkas: `src/agenda.js` (rute, pemilik `worker`), `public/admin_agenda.js` (tab Agenda, `layar`), dialog bukti di `public/kalender.js` (`layar`), `tests/agenda.test.mjs` (`gerbang`). Skema: migrasi 0010 (`agenda_bukti` satu baris per `kegiatan_ref`, `agenda_foto` banyak per bukti). Jenis data hak `agenda`: baca AN, PG, KR, WL, AD, SA; tulis KR, AD, SA; publik ditolak (401 `belum_masuk` bila tanpa sesi, 403 `dilarang` bila peran salah). Semua D1 lewat `hak.baca`/`hak.tulis` (jejak satu batch). `kegiatan_ref` = `id` baris `public/data/kalender.json` (pola `^[a-z0-9_-]{1,40}$`) dan wajib ada di berkas itu dengan `sumber.label = "arsip-meti"` (dibaca lewat `env.ASSETS`), selain itu 404.
+
+| Rute | Peran | Masukan | Keluaran |
+| --- | --- | --- | --- |
+| `GET /api/agenda` | baca | | `{ bukti: [{ kegiatan_ref, ada_notulensi, jumlah_foto }] }` untuk penanda di kalender |
+| `GET /api/agenda/:ref` | baca | | `{ bukti: { kegiatan_ref, tempat, notulensi, diubah } \| null, foto: [{ id, keterangan, urutan, tipe }] }` urut `urutan, id` |
+| `PUT /api/agenda/:ref` | tulis | JSON `{ tempat?, notulensi? }` (teks; null mengosongkan) | `{ id }`; tambah bila belum ada, ubah bila ada |
+| `POST /api/agenda/:ref/foto?keterangan=` | tulis | badan biner `image/jpeg\|png\|webp`, maks 5 MB; tipe dicek dari magic byte, bukan header saja | 201 `{ id }`; bukti dibuat kosong bila belum ada; R2 `agenda/<32 hex>.<jpg\|png\|webp>` ditulis dulu, dihapus lagi bila D1 gagal |
+| `PATCH /api/agenda/foto/:id` | tulis | JSON `{ keterangan?, urutan? }` | `{ id }` |
+| `DELETE /api/agenda/foto/:id` | tulis | | `{ ok: true }`; baris D1 dihapus (hak.tulis hapus) lalu objek R2 |
+| `GET /api/agenda/foto/:id` | baca | | isi gambar dari R2 dengan `content-type` dari kolom `tipe`, `cache-control: private, no-store`, `content-disposition: inline`, `x-content-type-options: nosniff` |
+
+Batas laju tulis memakai aksi `kurasi` (`hak.catatLaju`). Peramban memperkecil foto (sisi terpanjang 2000 px, JPEG 0,85) lewat canvas sebelum unggah, sehingga EXIF (termasuk lokasi GPS) terbuang. Notulensi ditampilkan sebagai teks biasa (paragraf, daftar bernomor dan berbutir sederhana) setelah `esc()`, tanpa HTML dari pengguna. Gambar tidak pernah masuk potret, repo, atau `public/`.
+
 ## 5. `src/hak.js`
 
 Satu-satunya modul yang menyentuh D1 (KP D7, KPV §2). Isinya data (matriks, daftar putih) dan beberapa fungsi pendek; tidak ada kebijakan tersebar di rute.
