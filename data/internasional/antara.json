@@ -103,6 +103,116 @@
     "judul": "Wartsila pasok genset untuk dua pembangkit listrik di Indonesia",
     "tanggal": "2023-12-01"
    }
-  ]
+  ],
+  "Nordex": [],
+  "Siemens Gamesa": [],
+  "Suzlon": [],
+  "Siemens Energy": [
+   {
+    "url": "https://www.antaranews.com/berita/4263891/pertamina-siemens-energy-siap-wujudkan-transisi-energi-berkelanjutan",
+    "judul": "Pertamina-Siemens Energy siap wujudkan transisi energi berkelanjutan",
+    "tanggal": "2024-08-15"
+   }
+  ],
+  "GE Vernova": [
+   {
+    "url": "https://www.antaranews.com/berita/5225861/toshiba-dan-ge-vernova-tandatangani-mou-untuk-percepat-penurunan-emisi-karbon-dan-tingkatkan-efisiensi-pembangkit-listrik-tenaga-gas-dan-uap",
+    "judul": "Toshiba dan GE Vernova Tandatangani MoU untuk Percepat Penurunan Emisi Karbon dan Tingkatkan Efisiensi Pembangkit Listrik Tenaga Gas dan Uap",
+    "tanggal": "2025-11-07"
+   },
+   {
+    "url": "https://www.antaranews.com/berita/4109436/ge-vernova-fokus-bisnis-kelistrikan-dan-dekarbonisasi-di-indonesia",
+    "judul": "GE Vernova fokus bisnis kelistrikan dan dekarbonisasi di Indonesia",
+    "tanggal": "2024-05-17"
+   }
+  ],
+  "Hitachi Energy": [
+   {
+    "url": "https://www.antaranews.com/berita/5148929/hitachi-energy-pacu-otomasi-jaringan-listrik-transisi-energi-bersih",
+    "judul": "Hitachi Energy pacu otomasi jaringan listrik, transisi energi bersih",
+    "tanggal": "2025-10-02"
+   },
+   {
+    "url": "https://www.antaranews.com/berita/3595632/kementerian-esdm-hitachi-teken-loi-pengembangan-teknologi-energi-hijau",
+    "judul": "Kementerian ESDM-Hitachi teken LoI pengembangan teknologi energi hijau",
+    "tanggal": "2023-06-19"
+   },
+   {
+    "url": "https://www.antaranews.com/berita/3358935/bertemu-ceo-hitachi-energy-menteri-esdm-jelaskan-transisi-energi-ri",
+    "judul": "Bertemu CEO Hitachi Energy, Menteri ESDM jelaskan transisi energi RI",
+    "tanggal": "2023-01-20"
+   }
+  ],
+  "ABB": [
+   {
+    "url": "https://www.antaranews.com/berita/5438430/abb-sebut-sdm-investasi-utama-pengembangan-teknologi-otomatisasi",
+    "judul": "ABB sebut SDM investasi utama pengembangan teknologi otomatisasi",
+    "tanggal": "2026-02-26"
+   },
+   {
+    "url": "https://www.antaranews.com/berita/5316109/barito-group-abb-modernisasi-pltpb-wayang-windu-perkuat-suplai-energi",
+    "judul": "Barito Group, ABB modernisasi PLTPB Wayang Windu perkuat suplai energi",
+    "tanggal": "2025-12-21"
+   },
+   {
+    "url": "https://www.antaranews.com/berita/4689005/abb-soroti-kompleksitas-transisi-energi-di-indonesia",
+    "judul": "ABB soroti kompleksitas transisi energi di Indonesia",
+    "tanggal": "2025-03-05"
+   },
+   {
+    "url": "https://www.antaranews.com/berita/4688285/abb-bauran-ebt-indonesia-bergantung-pada-solusi-efisiensi-energi",
+    "judul": "ABB: Bauran EBT Indonesia bergantung pada solusi efisiensi energi",
+    "tanggal": "2025-03-04"
+   }
+  ],
+  "Schneider Electric": [],
+  "Huawei Digital Power": [
+   {
+    "url": "https://www.antaranews.com/berita/5828223/huawei-gelar-ajang-7th-global-installer-summit-hadirkan-instalatur-terbaik-perkuat-ekosistem-energi-yang-baru-untuk-rumah",
+    "judul": "Huawei Gelar Ajang 7th Global Installer Summit, Hadirkan Instalatur Terbaik, Perkuat Ekosistem Energi yang Baru untuk Rumah",
+    "tanggal": "2026-11-03"
+   },
+   {
+    "url": "https://www.antaranews.com/berita/5758307/huawei-paparkan-enam-proyek-percontohan-ketenagalistrikan-global-bangun-sistem-baru-dengan-sinergi-ai-dan-energi",
+    "judul": "Huawei Paparkan Enam Proyek Percontohan Ketenagalistrikan Global, Bangun Sistem Baru dengan Sinergi AI dan Energi",
+    "tanggal": "2026-09-25"
+   },
+   {
+    "url": "https://www.antaranews.com/berita/5654441/huawei-luncurkan-strategi-grid-forming-terbaru-untuk-mendukung-sistem-kelistrikan-masa-depan-di-ajang-the-smarter-e-2026",
+    "judul": "Huawei Luncurkan Strategi \"Grid-Forming\" Terbaru untuk Mendukung Sistem Kelistrikan Masa Depan di Ajang The Smarter E 2026",
+    "tanggal": "2026-07-17"
+   }
+  ],
+  "SMA Solar Technology": [],
+  "Fuji Electric": [],
+  "Mitsubishi Heavy Industries": [
+   {
+    "url": "https://www.antaranews.com/berita/3306823/mitsubishi-power-terima-pesanan-pltp-55-mw-dari-pertamina",
+    "judul": "Mitsubishi Power terima pesanan PLTP 55 MW dari Pertamina",
+    "tanggal": "2022-12-15"
+   },
+   {
+    "url": "https://www.antaranews.com/berita/2693689/mitsubishi-heavy-industries-dan-itb-dorong-dekarbonisasi",
+    "judul": "Mitsubishi Heavy Industries dan ITB dorong dekarbonisasi",
+    "tanggal": "2022-02-09"
+   },
+   {
+    "url": "https://www.antaranews.com/berita/1872444/mitsubishi-power-terima-pesanan-untuk-tingkatkan-fasilitas-pltp-makban-filipina",
+    "judul": "Mitsubishi Power terima pesanan untuk tingkatkan fasilitas PLTP Makban Filipina",
+    "tanggal": "2020-12-02"
+   },
+   {
+    "url": "https://www.antaranews.com/berita/1699822/mitsubishi-power-dimapankan-dengan-komitmen-baru-untuk-mentransformasi-sistem-energi-di-seluruh-dunia",
+    "judul": "Mitsubishi Power dimapankan dengan komitmen baru untuk mentransformasi sistem energi di seluruh dunia",
+    "tanggal": "2020-09-01"
+   }
+  ],
+  "Ansaldo Energia": [],
+  "Andritz": [],
+  "Voith": [],
+  "Dongfang Electric": [],
+  "Harbin Electric": [],
+  "Hanwha": [],
+  "Hyosung Heavy Industries": []
  }
 }

@@ -64,26 +64,54 @@ nav.tabs a[aria-current="page"] .jm-ik,.jm-grup-tbl[aria-current="page"] .jm-ik{
 nav.tabs a[aria-current="page"]:hover,.jm-grup-tbl[aria-current="page"]:hover{background:var(--brand2)!important}
 
 /* pencarian global (cari_global.js) */
-dialog.jm-cari{width:min(680px,calc(100vw - 24px));max-height:min(620px,calc(100dvh - 40px));margin:max(20px,6vh) auto auto;padding:0;border:1px solid var(--line);border-radius:var(--r-lg);background:var(--card);color:var(--ink);box-shadow:var(--shadow-lg);overflow:hidden}
-dialog.jm-cari[open]{display:flex;flex-direction:column;align-items:stretch;justify-content:flex-start}
-dialog.jm-cari::backdrop{background:rgb(11 23 38/.55)}
-.jm-cari-atas{display:flex;align-items:center;gap:10px;padding:10px 12px 10px 16px;border-bottom:1px solid var(--line);color:var(--ink2)}
-.jm-cari .jm-cari-isi{flex:1;width:auto;max-width:none;min-width:0;height:var(--target);margin:0;padding:0;box-shadow:none;border:0;background:none;color:var(--ink);font:400 var(--t-h3)/var(--lh-judul) var(--font);outline:none}
+dialog.jm-cari{width:min(720px,calc(100vw - 24px));max-height:min(660px,calc(100dvh - 40px));margin:max(20px,8vh) auto auto;padding:0;border:1px solid var(--line);border-radius:20px;background:var(--card);color:var(--ink);font-family:var(--font);box-shadow:var(--shadow-lg);overflow:hidden}
+dialog.jm-cari[open]{display:flex;flex-direction:column;align-items:stretch;justify-content:flex-start;animation:jm-cari-masuk .18s ease-out}
+dialog.jm-cari::backdrop{background:color-mix(in srgb,var(--ink) 45%,transparent);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);animation:jm-cari-latar .18s ease-out}
+@keyframes jm-cari-masuk{from{opacity:0;transform:translateY(-8px) scale(.98)}}
+@keyframes jm-cari-latar{from{opacity:0}}
+@media (prefers-reduced-motion:reduce){dialog.jm-cari[open],dialog.jm-cari::backdrop{animation:none}}
+.jm-cari-atas{display:flex;align-items:center;gap:12px;padding:12px 12px 12px 20px;color:var(--accent)}
+.jm-cari .jm-cari-isi{flex:1;width:auto;max-width:none;min-width:0;height:48px;margin:0;padding:0;box-shadow:none;border:0;background:none;color:var(--ink);font:500 20px/1.3 var(--font);outline:none}
+.jm-cari-isi::placeholder{color:var(--ink2);font-weight:400}
 .jm-cari-isi::-webkit-search-cancel-button{display:none}
-.jm-cari-hasil{flex:1;overflow-y:auto;padding:8px 8px 12px}
-.jm-cari-grup{padding:6px 0 10px}
-.jm-cari-grup h3{display:flex;align-items:center;gap:8px;margin:0;padding:6px 10px;font:700 var(--t-kecil)/var(--lh-judul) var(--font);letter-spacing:normal;text-transform:none;color:var(--accent)}
-.jm-cari-baris{display:flex;align-items:center;gap:12px;min-height:var(--target);padding:8px 10px;border-radius:var(--r-sm);color:var(--ink);text-decoration:none}
+.jm-cari-chips{display:flex;gap:8px;padding:2px 16px 12px;overflow-x:auto;scrollbar-width:none;border-bottom:1px solid var(--line)}
+.jm-cari-chips::-webkit-scrollbar{display:none}
+.jm-cari-chip{flex:none;display:inline-flex;align-items:center;gap:6px;min-height:34px;padding:0 12px;border:1px solid var(--line);border-radius:var(--r-pil);background:var(--surface);color:var(--ink2);font:600 var(--t-tombol)/1 var(--font);cursor:pointer;transition:background .12s,border-color .12s,color .12s}
+.jm-cari-chip:hover{border-color:var(--accent);color:var(--ink)}
+.jm-cari-chip[aria-pressed=true]{background:var(--accent);border-color:var(--accent);color:var(--on-accent)}
+.jm-cari-chip b{font-weight:700;opacity:.8}.jm-cari-chip b:empty{display:none}
+.jm-cari-chip.jm-cari-nol:not([aria-pressed=true]){opacity:.5}
+.jm-cari-hasil{flex:1;overflow-y:auto;padding:8px 10px 12px;overscroll-behavior:contain}
+.jm-cari-grup,.jm-cari-bag{padding:4px 0 8px}
+.jm-cari-grup h3,.jm-cari-bag h3{display:flex;align-items:center;gap:8px;margin:0;padding:8px 10px 6px;font:700 var(--t-kecil)/var(--lh-judul) var(--font);letter-spacing:normal;text-transform:none;color:var(--ink2)}
+.jm-cari-grup h3 .jm-ik,.jm-cari-bag h3 .jm-ik{color:var(--accent)}
+.jm-cari-grup h3 em{font-style:normal;padding:1px 8px;border-radius:var(--r-pil);background:var(--soft-hijau);color:var(--accent)}
+.jm-cari-semua{margin-left:auto;border:0;background:none;color:var(--accent);font:600 var(--t-kecil)/1 var(--font);cursor:pointer;padding:6px 8px;border-radius:var(--r-sm)}
+.jm-cari-semua:hover{background:var(--soft-hijau)}
+.jm-cari-baris{position:relative;display:flex;align-items:center;gap:12px;min-height:var(--target);padding:8px 10px;border-radius:12px;color:var(--ink);text-decoration:none}
 .jm-cari-baris[aria-selected=true],.jm-cari-baris:hover{background:var(--soft-hijau)}
-.jm-cari-baris img{flex:none;width:28px;height:28px;object-fit:contain}
-.jm-cari-ik{flex:none;display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;color:var(--accent)}
-.jm-cari-teks{flex:1;min-width:0;display:flex;flex-direction:column;gap:2px}
+.jm-cari-baris img{flex:none;width:32px;height:32px;object-fit:contain;border-radius:8px}
+.jm-cari-ik{flex:none;display:inline-flex;align-items:center;justify-content:center;width:32px;height:32px;border-radius:10px;background:var(--soft-biru);color:var(--accent)}
+.jm-cari-teks{flex:1;min-width:0;display:flex;flex-direction:column;gap:3px}
 .jm-cari-teks b{font:600 var(--t-body)/var(--lh-rapat) var(--font);overflow:hidden;text-overflow:ellipsis;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical}
 .jm-cari-teks small{font:400 var(--t-tombol)/var(--lh-rapat) var(--font);color:var(--ink2);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
-.jm-cari mark{background:var(--soft-biru);color:inherit;border-radius:3px;padding:0 1px}
-.jm-cari-info{margin:0;padding:28px 16px;text-align:center;color:var(--ink2)}
-.jm-cari .jm-cari-petunjuk{max-width:none;margin:0;padding:10px 16px;border-top:1px solid var(--line);font:400 var(--t-kecil)/var(--lh-rapat) var(--font);color:var(--ink2)}
-@media (max-width:600px){.jm-cari-petunjuk{display:none}}
+.jm-cari-pil{display:flex;align-items:center;flex-wrap:wrap;gap:6px}
+.jm-cari-enter{flex:none;display:none;align-items:center;justify-content:center;width:24px;height:24px;border-radius:7px;background:var(--card);border:1px solid var(--line);color:var(--ink2)}
+.jm-cari-baris[aria-selected=true] .jm-cari-enter{display:inline-flex}
+.jm-cari mark{background:none;color:var(--accent);font-weight:800;padding:0}
+.jm-cari-info{display:flex;flex-direction:column;align-items:center;gap:10px;margin:0;padding:40px 16px;text-align:center;color:var(--ink2)}
+.jm-cari-lalu{display:flex;align-items:center;gap:10px;width:100%;min-height:40px;padding:6px 10px;border:0;border-radius:10px;background:none;color:var(--ink);font:400 var(--t-body)/1.3 var(--font);text-align:left;cursor:pointer}
+.jm-cari-lalu:hover{background:var(--soft-hijau)}.jm-cari-lalu .jm-ik{color:var(--ink2);flex:none}
+.jm-cari-pintas{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;padding:0 4px}
+.jm-cari-pintas a{display:flex;align-items:center;gap:10px;min-height:48px;padding:8px 12px;border:1px solid var(--line);border-radius:12px;background:var(--surface);color:var(--ink);font:600 var(--t-tombol)/1.25 var(--font);text-decoration:none}
+.jm-cari-pintas a:hover{border-color:var(--accent);background:var(--soft-hijau)}.jm-cari-pintas .jm-ik{color:var(--accent);flex:none}
+.jm-cari-contoh{display:flex;flex-wrap:wrap;gap:8px;padding:0 10px}
+.jm-cari-contoh button{min-height:36px;padding:0 14px;border:1px solid var(--line);border-radius:var(--r-pil);background:var(--card);color:var(--ink);font:500 var(--t-tombol)/1 var(--font);cursor:pointer}
+.jm-cari-contoh button:hover{border-color:var(--accent);color:var(--accent)}
+.jm-cari-kaki{display:flex;align-items:center;gap:16px;padding:10px 16px;border-top:1px solid var(--line);background:var(--surface);color:var(--ink2);font:500 var(--t-kecil)/1 var(--font)}
+.jm-cari-kaki span{display:inline-flex;align-items:center;gap:6px}.jm-cari-kaki-k{margin-left:auto}
+.jm-cari kbd{display:inline-flex;align-items:center;justify-content:center;min-width:22px;height:22px;padding:0 6px;border:1px solid var(--line-ctl);border-bottom-width:2px;border-radius:6px;background:var(--card);color:var(--ink);font:600 11px/1 var(--font)}
+.jm-cari-chip:focus-visible,.jm-cari-pintas a:focus-visible,.jm-cari-contoh button:focus-visible,.jm-cari-lalu:focus-visible,.jm-cari-semua:focus-visible{outline:2px solid var(--fokus);outline-offset:2px}
 /* menu desktop rata (pemilik 7 Nov): kolom sama lebar, grup Insight ikut sel grid, jarak sama di semua halaman */
 @media (min-width:1200px){
   nav.tabs,nav.tabs.buka{grid-auto-columns:minmax(0,1fr);gap:4px}
@@ -134,4 +162,4 @@ dialog.jm-cari::backdrop{background:rgb(11 23 38/.55)}
 /* seluler: tombol bulat kepala 44px */
 @media (max-width:760px){.jm-bulat{width:44px;height:44px;min-width:44px}.jm-sisi{gap:4px}}
 /* seluler: pencarian global layar penuh */
-@media (max-width:600px){dialog.jm-cari{width:100vw;max-width:100vw;height:100dvh;max-height:100dvh;margin:0;border:0;border-radius:0}.jm-cari-atas .iconbtn,.jm-cari-atas button{min-width:44px;min-height:44px}.jm-cari .jm-cari-isi{font-size:var(--t-masukan)}}
+@media (max-width:600px){dialog.jm-cari{width:100vw;max-width:100vw;height:100dvh;max-height:100dvh;margin:0;border:0;border-radius:0}.jm-cari-pintas{grid-template-columns:repeat(2,minmax(0,1fr))}.jm-cari-kaki{display:none}.jm-cari-chip{min-height:40px}.jm-cari-atas .iconbtn,.jm-cari-atas button{min-width:44px;min-height:44px}.jm-cari .jm-cari-isi{font-size:var(--t-masukan)}}
