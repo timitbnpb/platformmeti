@@ -13,7 +13,7 @@
    {
     "nama": "Brian Yuliarto",
     "jabatan": "Wakil Ketua Dewan Penasihat",
-    "foto": ""
+    "foto": "/img/pengurus/brian-yuliarto.webp"
    },
    {
     "nama": "Muhammad Assegaf",
@@ -23,68 +23,68 @@
    {
     "nama": "Ferry Juliantono",
     "jabatan": "Anggota Dewan Penasihat",
-    "foto": ""
+    "foto": "/img/pengurus/ferry-juliantono.webp"
    },
    {
     "nama": "Rosan Roeslani",
     "jabatan": "Anggota Dewan Penasihat",
-    "foto": ""
+    "foto": "/img/pengurus/rosan-roeslani.webp"
    },
    {
     "nama": "Rachmat Pambudy",
     "jabatan": "Anggota Dewan Penasihat",
-    "foto": ""
+    "foto": "/img/pengurus/rachmat-pambudy.webp"
    },
    {
     "nama": "Dody Hanggodo",
     "jabatan": "Anggota Dewan Penasihat",
-    "foto": ""
+    "foto": "/img/pengurus/dody-hanggodo.webp"
    },
    {
     "nama": "Todotua Pasaribu",
     "jabatan": "Anggota Dewan Penasihat",
-    "foto": ""
+    "foto": "/img/pengurus/todotua-pasaribu.webp"
    },
    {
     "nama": "Hanif Faisol Nurofiq",
     "jabatan": "Anggota Dewan Penasihat",
-    "foto": ""
+    "foto": "/img/pengurus/hanif-faisol-nurofiq.webp"
    },
    {
     "nama": "Sudaryono",
     "jabatan": "Anggota Dewan Penasihat",
-    "foto": ""
+    "foto": "/img/pengurus/sudaryono.webp"
    },
    {
     "nama": "Bambang Patijaya",
     "jabatan": "Anggota Dewan Penasihat",
-    "foto": "",
+    "foto": "/img/pengurus/bambang-patijaya.webp",
     "orang_id": "o_4f99fe937c"
    },
    {
     "nama": "Agus Hermanto",
     "jabatan": "Anggota Dewan Penasihat",
-    "foto": ""
+    "foto": "/img/pengurus/agus-hermanto.webp"
    },
    {
     "nama": "Satya Widya Yudha",
     "jabatan": "Anggota Dewan Penasihat",
-    "foto": ""
+    "foto": "/img/pengurus/satya-widya-yudha.webp"
    },
    {
     "nama": "Pandu Patria Sjahrir",
     "jabatan": "Anggota Dewan Penasihat",
-    "foto": ""
+    "foto": "/img/pengurus/pandu-patria-sjahrir.webp"
    },
    {
     "nama": "Sigit Puji Santosa",
     "jabatan": "Anggota Dewan Penasihat",
-    "foto": ""
+    "foto": "/img/pengurus/sigit-puji-santosa.webp"
    },
    {
     "nama": "Burhanuddin Abdullah",
     "jabatan": "Anggota Dewan Penasihat",
-    "foto": ""
+    "foto": "/img/pengurus/burhanuddin-abdullah.webp"
    },
    {
     "nama": "Mochamad Iriawan",
@@ -99,24 +99,24 @@
    {
     "nama": "Simon Aloysius Mantiri",
     "jabatan": "Anggota Dewan Penasihat",
-    "foto": ""
+    "foto": "/img/pengurus/simon-aloysius-mantiri.webp"
    },
    {
     "nama": "Suroso Isnandar",
     "jabatan": "Anggota Dewan Penasihat",
-    "foto": "",
+    "foto": "/img/pengurus/suroso-isnandar.webp",
     "orang_id": "o_da0236222d"
    },
    {
     "nama": "Rizal Calvary Marimbo",
     "jabatan": "Anggota Dewan Penasihat",
-    "foto": "",
+    "foto": "/img/pengurus/rizal-calvary-marimbo.webp",
     "orang_id": "o_4c31ad4490"
    },
    {
     "nama": "Agung Wicaksono",
     "jabatan": "Anggota Dewan Penasihat",
-    "foto": ""
+    "foto": "/img/pengurus/agung-wicaksono.webp"
    },
    {
     "nama": "Musa Bangun",
@@ -126,7 +126,7 @@
    {
     "nama": "Ilham Akbar Habibie",
     "jabatan": "Anggota Dewan Penasihat",
-    "foto": ""
+    "foto": "/img/pengurus/ilham-akbar-habibie.webp"
    },
    {
     "nama": "Surya Darma",
@@ -136,7 +136,7 @@
    {
     "nama": "Hilmi Panigoro",
     "jabatan": "Anggota Dewan Penasihat",
-    "foto": ""
+    "foto": "/img/pengurus/hilmi-panigoro.webp"
    },
    {
     "nama": "Sukmo Harsono",
@@ -176,7 +176,7 @@
    {
     "nama": "Anindya Novyan Bakrie",
     "jabatan": "Anggota Dewan Penasihat",
-    "foto": ""
+    "foto": "/img/pengurus/anindya-novyan-bakrie.webp"
    },
    {
     "nama": "Shinta Widjaja Kamdani",
@@ -241,13 +241,13 @@
    {
     "nama": "Rudi Margono",
     "jabatan": "Anggota Dewan Pengawas",
-    "foto": "",
+    "foto": "/img/pengurus/rudi-margono.webp",
     "orang_id": "o_ff36d63b49"
    },
    {
     "nama": "Ahmad Erani Yustika",
     "jabatan": "Anggota Dewan Pengawas (Ex-Officio)",
-    "foto": "",
+    "foto": "/img/pengurus/ahmad-erani-yustika.webp",
     "orang_id": "o_78c9b81374"
    },
    {
@@ -358,7 +358,7 @@
    {
     "nama": "Fabby Tumiwa",
     "jabatan": "Anggota Dewan Pakar",
-    "foto": "",
+    "foto": "/img/pengurus/fabby-tumiwa.webp",
     "orang_id": "o_d6fac3543f"
    },
    {

@@ -577,3 +577,7 @@ a.jm-foto:focus-visible{outline:3px solid var(--fokus)}
 .jm-pm-pil .jm-pil-st{--tk:var(--sk);min-height:22px;padding:2px 9px;font-size:var(--t-label)}
 .jm-pm-pil .jm-pil-st>.jm-ik{color:var(--sk)}
 .jm-pm-pil .jm-st-rencana{--sk:var(--info)}
+.jm-rank-tx a{display:inline;padding:0;border-radius:0;background:none;color:inherit;text-decoration:none}
+.jm-rank-tx a:hover{background:none;color:var(--accent)}
+.jm-baris-meta .jm-taut{display:inline-flex;padding:0;background:none;border-radius:0}
+@media (max-width:760px){.jm-ds-pasar{grid-template-columns:minmax(0,1fr)}.jm-ds-ps{grid-template-columns:auto minmax(0,1fr) auto auto}.jm-ds-ps small{min-width:0;overflow-wrap:anywhere}}

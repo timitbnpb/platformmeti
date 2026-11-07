@@ -606,3 +606,25 @@ main>:is(section,div,article)+:is(section,div,article){margin-top:max(24px,var(-
 .jm-batik-rata{--batik-pudar:linear-gradient(rgb(0 0 0),rgb(0 0 0))}
 .jm-batik::before{content:"";position:absolute;inset:0;pointer-events:none;background:var(--batik,currentColor);opacity:var(--batik-op,.1);-webkit-mask-image:var(--batik-pola),var(--batik-pudar);mask-image:var(--batik-pola),var(--batik-pudar);-webkit-mask-size:40px 40px,100% 100%;mask-size:40px 40px,100% 100%;-webkit-mask-composite:source-in;mask-composite:intersect}
 .jm-sejajar>*{margin-top:0!important}
+
+/* seluler (pemilik: ramah pengguna mobile): filter 1 kolom, kontrol 16px (iOS tanpa zoom), target sentuh 44px */
+@media (max-width:760px){
+  .jm-saring{grid-template-columns:minmax(0,1fr)!important}
+  .jm-saring>*{grid-column:1/-1!important;justify-self:stretch!important}
+  .jm-cari input,.jm-pil-pilih select,.jm-saring select,.jm-saring input,select,textarea,input:not([type=checkbox],[type=radio],[type=range],[type=file]){font-size:16px}
+  .jm-sumber-b{position:relative}
+  .jm-sumber-b::after{content:"";position:absolute;inset:-10px}
+  .jm-aksi-b,.jm-bagi.kecil .jm-bagi-b{width:44px;height:44px}
+  a.jm-pil,button.jm-pil{min-height:44px}
+  .jm-urut{min-height:44px}
+}
+
+/* seluler, bagian 1/2 (halaman publik): teks rata kiri tanpa pemenggalan suku kata, ubin ganjil selebar baris, target sentuh 44px */
+@media (max-width:760px){
+  :is(p,li,dd,blockquote,h1,h2,h3,h4,.jm-ex-teks,.jm-ex-j){text-align:start!important;hyphens:manual!important;-webkit-hyphens:manual!important}
+  .jm-kh-ubin>:last-child:nth-child(odd){grid-column:1/-1}
+  .jm-lihat,.brt-chip,.kal-hariini,.kal-bulat{min-height:44px}
+  .jm-reg-ik{width:44px;height:44px}
+  .jm-pk-nm,.ix-buka{display:inline-flex;align-items:center;min-height:44px}
+  .jm-sisi .iconbtn{width:44px;height:44px}
+}

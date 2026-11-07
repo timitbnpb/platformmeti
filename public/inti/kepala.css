@@ -130,3 +130,6 @@ dialog.jm-cari::backdrop{background:rgb(11 23 38/.55)}
   nav.tabs>.jm-grup{display:flex;justify-content:center}
   nav.tabs a[aria-current="page"],.jm-grup-tbl[aria-current="page"]{box-shadow:0 2px 8px color-mix(in srgb,var(--brand) 25%,transparent)}
 }
+
+/* seluler: tombol bulat kepala 44px */
+@media (max-width:760px){.jm-bulat{width:44px;height:44px;min-width:44px}.jm-sisi{gap:4px}}

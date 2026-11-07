@@ -10,7 +10,7 @@ const urls = arg.filter(a => !a.startsWith('--'));
 const { chromium } = await import(process.env.PLAYWRIGHT_MODUL || 'playwright');
 const pub = new URL('../../public/', import.meta.url).pathname;
 const b = await chromium.launch();
-const ctx = await b.newContext({ viewport: { width: 390, height: 844 }, deviceScaleFactor: 3, isMobile: true, hasTouch: true });
+const ctx = await b.newContext({ viewport: { width: 390, height: 844 }, deviceScaleFactor: +(opsi('dsf') || 3), isMobile: true, hasTouch: true });
 await ctx.route('**/api/**', async r => {
   const u = new URL(r.request().url());
   if (u.pathname === '/api/saya') return r.fulfill({ json: { masuk: true, peran: 'admin', nama: 'Uji' } });
@@ -39,7 +39,7 @@ for (const u of urls) {
   if (h.lu.length) console.log('  luber:', h.lu.join(' | '));
   if (h.kecil.length) console.log('  sentuh<44 (' + h.kecil.length + '):', [...new Set(h.kecil)].slice(0, 8).join(' | '));
   if (h.kap.length) console.log('  KAPITAL:', [...new Set(h.kap)].join(' | '));
-  if (foto) await p.screenshot({ path: join(foto, u.replace(/\W+/g, '_') + '.png'), fullPage: true });
+  if (foto) await p.screenshot({ path: join(foto, u.replace(/\W+/g, '_') + '.png'), fullPage: true, ...(opsi('tinggi') ? { clip: { x: 0, y: +opsi('mulai') || 0, width: 390, height: +opsi('tinggi') } } : {}) });
   await p.close();
 }
 await b.close();

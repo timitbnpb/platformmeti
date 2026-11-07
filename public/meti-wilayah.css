@@ -66,6 +66,7 @@
 .mw-kartu .mw-info{flex:1;font-size:var(--t-kecil)}
 .mw-kaki{display:inline-flex;align-items:center;justify-content:space-between;gap:6px;min-height:var(--target);padding-top:8px;border-top:1px solid var(--line);color:var(--accent);font:700 var(--t-tombol)/1 var(--font);text-decoration:none}
 .mw-kaki.jm-tbl{justify-content:center;border-top:0;padding-top:0}
+.mw-kaki.jm-tbl-utama{color:var(--on-accent)}
 .mw-k-belum{background:var(--surface)}
 .mw-pil-nol{background:var(--surface);color:var(--ink2);border:1px solid var(--line)}
 .mw-kartu dl,.mw-dl{display:grid;gap:8px;margin:0}

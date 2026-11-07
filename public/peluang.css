@@ -122,3 +122,4 @@
 .jm-pel-celahk ul{margin:0;padding-left:20px;display:grid;gap:6px;color:var(--ink)}
 .jm-pel-kutip{display:flex;align-items:center;flex-wrap:wrap;gap:8px;margin:14px 0 0;color:var(--ink2);font-size:var(--t-kecil)}
 #pelIsi{display:grid;gap:24px;min-width:0}
+@media (max-width:760px){#pelIsi{grid-template-columns:minmax(0,1fr)}}
