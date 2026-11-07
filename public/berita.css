@@ -28,7 +28,7 @@
 @media (min-width:900px){.jm-saring{grid-template-columns:minmax(0,1fr) repeat(4,minmax(176px,1fr)) auto auto}}
 #isi{min-width:0}
 
-.brt-grup{margin:20px 0 4px;padding-bottom:6px;border-bottom:1px solid var(--line);font:600 var(--t-kecil)/var(--lh-rapat) ui-monospace,Menlo,monospace;letter-spacing:normal;text-transform:none;color:var(--ink2)}
+.brt-grup{margin:20px 0 4px;padding-bottom:6px;border-bottom:1px solid var(--line);font:600 var(--t-kecil)/var(--lh-rapat) var(--font);letter-spacing:normal;text-transform:none;color:var(--ink2)}
 .brt-daftar{list-style:none;margin:0;padding:0}
 .brt-judul{display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2;line-clamp:2;overflow:hidden;font:600 var(--t-h3)/var(--lh-rapat) var(--font);color:var(--ink);text-decoration:none}
 .brt-judul:hover{color:var(--accent)}
@@ -56,7 +56,7 @@
 .brt-dua>.jm-ex{height:100%}
 @media (min-width:1000px){.brt-dua{grid-template-columns:repeat(2,minmax(0,1fr))}.brt-dua>:last-child:nth-child(odd){grid-column:1/-1}}
 .brt-blok{display:grid;gap:10px;align-content:start;min-width:0}
-.brt-blok h3{font:600 var(--t-kecil)/var(--lh-rapat) ui-monospace,Menlo,monospace;letter-spacing:normal;text-transform:none;color:var(--ink2)}
+.brt-blok h3{font:600 var(--t-kecil)/var(--lh-rapat) var(--font);letter-spacing:normal;text-transform:none;color:var(--ink2)}
 .brt-bar-kepala{display:flex;flex-wrap:wrap;gap:8px;align-items:center;justify-content:space-between}
 .brt-mode{display:flex;gap:6px}
 .brt-svg{width:100%;height:auto;display:block}

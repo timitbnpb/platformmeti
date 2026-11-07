@@ -162,13 +162,13 @@ a.jm-bento:hover{border-color:var(--accent)}
 .jm-hero2::before{content:"";position:absolute;top:-40px;bottom:0;left:calc(50% - 50vw);right:calc(50% - 50vw);z-index:-1;background:radial-gradient(520px 320px at 100% 0,color-mix(in srgb,var(--data3) 22%,transparent),transparent 70%),radial-gradient(480px 300px at 85% 100%,color-mix(in srgb,var(--data4) 20%,transparent),transparent 70%),linear-gradient(var(--line) 1px,transparent 1px) 0 0/48px 48px,linear-gradient(90deg,var(--line) 1px,transparent 1px) 0 0/48px 48px;opacity:.55;-webkit-mask-image:linear-gradient(black 60%,transparent);mask-image:linear-gradient(black 60%,transparent)}
 @media (min-width:1000px){.jm-hero2{grid-template-columns:minmax(0,11fr) minmax(0,9fr);gap:48px;padding:48px 0 16px;align-items:center}}
 .jm-hero2-kiri{display:grid;gap:20px;align-content:start}
-.jm-eyebrow{display:flex;align-items:center;gap:8px;font:600 var(--t-kecil)/var(--lh-rapat) ui-monospace,Menlo,monospace;letter-spacing:normal;text-transform:none;color:var(--ink2)}
+.jm-eyebrow{display:flex;align-items:center;gap:8px;font:600 var(--t-kecil)/var(--lh-rapat) var(--font);letter-spacing:normal;text-transform:none;color:var(--ink2)}
 .jm-hero2 h1{font-size:var(--t-display);line-height:var(--lh-judul);letter-spacing:-.01em;font-weight:700;color:var(--ink);max-width:14ch}
 .jm-hero2-sub{font-size:var(--t-h3);line-height:var(--lh-isi);color:var(--ink2);max-width:52ch}
 .jm-hero2 .jm-hero-cari{max-width:none}
 .jm-cari2{display:flex;min-height:60px}
 .jm-cari2 .jm-isian{flex:1;min-width:0;min-height:60px;border:2px solid var(--ink);border-right:0;border-radius:0;background:var(--card);font-size:var(--t-h3);padding:0 16px}
-.jm-cari2-tbl{flex:none;min-width:96px;border:2px solid var(--brand2);border-radius:0;background:var(--brand2);color:var(--on-brand);font:700 var(--t-tombol)/1 ui-monospace,Menlo,monospace;letter-spacing:normal;text-transform:none;cursor:pointer}
+.jm-cari2-tbl{flex:none;min-width:96px;border:2px solid var(--brand2);border-radius:0;background:var(--brand2);color:var(--on-brand);font:700 var(--t-tombol)/1 var(--font);letter-spacing:normal;text-transform:none;cursor:pointer}
 .jm-cari2-tbl:hover{filter:brightness(1.1)}
 .jm-hitung-hero{font-size:var(--t-body)}
 .jm-hitung-hero b{font:700 var(--t-body)/1 var(--display)}
@@ -271,7 +271,7 @@ main{flex:1}
 .jm-isi{display:flex;gap:6px;overflow-x:auto;padding:10px clamp(16px,4vw,32px);border-block:1px solid var(--line);background:var(--card);position:sticky;top:var(--top);z-index:5;scrollbar-width:none}
 .jm-isi a{display:inline-flex;gap:6px;align-items:center;white-space:nowrap;min-height:36px;padding:0 12px;border-radius:var(--r-pil);color:var(--ink2);text-decoration:none;font-size:var(--t-tombol)}
 .jm-isi a:hover{background:var(--surface);color:var(--ink)}
-.jm-isi b{font:700 var(--t-label)/1 ui-monospace,Menlo,monospace;color:var(--accent)}
+.jm-isi b{font:700 var(--t-label)/1 var(--font);color:var(--accent)}
 @media (min-width:1500px){.jm-isi{position:fixed;top:50%;right:12px;translate:0 -50%;flex-direction:column;overflow:visible;padding:8px 6px;border:1px solid var(--line);border-radius:var(--r);box-shadow:var(--shadow);gap:2px;z-index:6}
   .jm-isi a{min-height:30px;padding:0 8px}.jm-isi-l{display:none}.jm-isi a:hover .jm-isi-l{display:inline;position:absolute;right:100%;margin-right:8px;padding:4px 8px;border-radius:6px;background:var(--ink);color:var(--paper);white-space:nowrap}.jm-isi a{position:relative}}
 /* foto teknologi: kartu 4:3, judul di atas foto */
