@@ -1,6 +1,6 @@
 // admin.js: koreksi publik + putusan, statistik agregat, konten beranda, jejak admin (migrasi 0010). Semua D1 lewat hak.js.
 import * as hak from "./hak.js";
-import { bacaBody, cacheTepi, gagal, ipHash, json, perlu, PRIVAT } from "./util.js";
+import { bacaBody, cacheTepi, gagal, ipHash, json, perlu, PRIVAT, sha } from "./util.js";
 
 const ADM = ["admin", "super"];
 const NONAKTIF = () => json({ galat: "Fitur belum aktif.", kode: "fitur_belum_aktif" }, 503, PRIVAT);
@@ -17,10 +17,11 @@ export function normalisasiCari(v) {
   return k;
 }
 // Jalur halaman: tanpa query/hash, huruf kecil, karakter jalur saja.
+const HALAMAN = new Set(["/", "/asean", "/berita", "/direktori", "/insight", "/kalender", "/kelayakan", "/metode", "/peluang", "/proyek", "/rantai", "/regulasi", "/tentang", "/wilayah", "/masuk"]);
 export function normalisasiHalaman(v) {
   if (typeof v !== "string") return null;
-  const k = v.toLowerCase().split(/[?#]/)[0].slice(0, 120);
-  return /^\/[a-z0-9/_.-]*$/.test(k) && !k.startsWith("//") ? k : null;
+  const k = v.toLowerCase().split(/[?#]/)[0].replace(/(.)\/$/, "$1").replace(/\.html$/, "");
+  return HALAMAN.has(k) || /^\/[op]\/[a-z0-9_-]{1,80}$/.test(k) || /^\/wilayah\/\d{2}$/.test(k) ? k : null;
 }
 
 export const rute = {
@@ -60,7 +61,8 @@ export const rute = {
     return r ? json(r, 200, PRIVAT) : NONAKTIF();
   },
 
-  // sendBeacon: tidak bisa memasang x-pb, jadi router memeriksa asal sendiri untuk jalur ini. Selalu 204 (tak membocorkan penolakan).
+  // sendBeacon: tidak bisa memasang x-pb, jadi router memeriksa asal sendiri untuk jalur ini.
+  // 204 untuk kunci yang tak lolos normalisasi; 422 badan/jenis salah; 429 bila melewati batas laju.
   "POST /api/statistik": async (req, env) => {
     const teks = await req.text();
     if (teks.length > 512) return gagal("terlalu_besar");
@@ -68,8 +70,11 @@ export const rute = {
     if (!b || !["halaman", "cari"].includes(b.jenis)) return gagal("masukan_salah", 422);
     const kunci = b.jenis === "cari" ? normalisasiCari(b.kunci) : normalisasiHalaman(b.kunci);
     if (!kunci) return new Response(null, { status: 204 });
-    if ((await hak.sistem.catatLaju(env, "cari:st" + await ipHash(env, req), 60)) > 120) return gagal("laju_terlampaui");
-    await hak.statistikHit(env, b.jenis, kunci);
+    const ip = await ipHash(env, req);
+    if ((await hak.sistem.catatLaju(env, "cari:st" + ip, 60)) > 120) return gagal("laju_terlampaui");
+    // unik harian: kunci laju = hash(ip|kata) pada jendela sehari; hit pertama = koneksi baru. Hash tak masuk statistik_harian.
+    const unik = b.jenis === "cari" && (await hak.sistem.catatLaju(env, "cari:u" + (await sha(ip + "|" + kunci)).slice(0, 24), 86400)) === 1;
+    await hak.statistikHit(env, b.jenis, kunci, unik);
     return new Response(null, { status: 204 });
   },
 

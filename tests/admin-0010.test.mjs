@@ -75,7 +75,7 @@ test("statistik: normalisasi, agregat tanpa data pribadi, asal wajib, rekap admi
   assert.deepEqual(baris.map((b) => ({ ...b })), [{ jenis: "halaman", kunci: "/direktori", jumlah: 2 }, { jenis: "cari", kunci: "tenaga surya", jumlah: 1 }]);
   assert.ok(!(await E.DB.prepare("PRAGMA table_info(statistik_harian)").all()).results.some((c) => /^ip|agent|akun/.test(c.name)));
   const s = await panggil("/api/admin/statistik?hari=7", "GET", "admin");
-  assert.equal(s.halaman[0].kunci, "/direktori"); assert.equal(s.halaman[0].jumlah, 2); assert.equal(s.harian[0].cari, 1);
+  assert.equal(s.halaman[0].kunci, "/direktori"); assert.equal(s.halaman[0].jumlah, 2); assert.equal(s.harian[0].cari, 0); assert.deepEqual(s.cari, []);
 });
 
 test("konten beranda: publik kosong, PUT admin + jejak, validasi", async () => {

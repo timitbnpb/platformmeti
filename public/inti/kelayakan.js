@@ -20,7 +20,7 @@ const BULAN = ["JAN", "FEB", "MAR", "APR", "MAY", "JUN", "JUL", "AUG", "SEP", "O
 function iklim(lat, lon) {
   const la = (Math.round(lat * 2) / 2).toFixed(2), lo = (Math.round(lon * 2) / 2).toFixed(2);
   return sekali(`power:${la}:${lo}`, async () => {
-    const d = await ambil(`https://power.larc.nasa.gov/api/temporal/climatology/point?parameters=ALLSKY_SFC_SW_DWN,WS50M&community=RE&longitude=${lo}&latitude=${la}&format=JSON`);
+    const d = await ambil(`/api/kelayakan/power?lat=${la}&lon=${lo}`);
     const p = d?.properties?.parameter;
     const baca = (k) => BULAN.map((b) => Number(p?.[k]?.[b]));
     const sw = baca("ALLSKY_SFC_SW_DWN"), ws = baca("WS50M");

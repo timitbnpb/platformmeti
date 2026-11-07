@@ -1,5 +1,6 @@
 // GET /api/foto-berita/:id (publik): thumbnail berita dari host asal. Hanya url yang tercatat di berita_foto.json (bukan open proxy).
-import { gagal } from "./util.js";
+import * as hak from "./hak.js";
+import { gagal, ipHash } from "./util.js";
 
 const MAKS = 2 * 1024 * 1024, TTL = 30 * 86400;
 let PETA = null; // ponytail: cache per isolat; data baru terbaca setelah isolat daur ulang.
@@ -12,6 +13,7 @@ async function peta(env, url) {
 }
 
 const tak = () => gagal("tidak_ditemukan");
+const NEG = { "cache-control": "public, max-age=3600" }; // cache negatif 1 jam: id sah yang gagal diambil tak memukul host asal berulang
 const HDR = { "cache-control": `public, max-age=${TTL}, immutable`, "x-content-type-options": "nosniff" };
 
 async function foto(req, env, ctx, { params }) {
@@ -21,16 +23,30 @@ async function foto(req, env, ctx, { params }) {
   const kunci = new Request(new URL(req.url).origin + "/api/foto-berita/" + params.id);
   const c = globalThis.caches?.default, kena = c && (await c.match(kunci));
   if (kena) return kena;
+  // Hanya cache-miss yang menyentuh host asal: batas 30/menit per koneksi.
+  const ip = await ipHash(env, req).catch(() => null);
+  if (ip && (await hak.sistem.catatLaju(env, "cari:ft" + ip, 60)) > 30) return gagal("laju_terlampaui");
+  const gagalCache = () => { const r = gagal("tidak_ditemukan", 404, NEG); if (c) ctx?.waitUntil?.(c.put(kunci, r.clone())); return r; };
   try {
     const o = await fetch(u, { redirect: "manual", headers: { accept: "image/*" }, signal: AbortSignal.timeout(8000) });
     const tipe = (o.headers.get("content-type") || "").toLowerCase();
-    if (o.status !== 200 || !/^image\/(?!svg)/.test(tipe) || Number(o.headers.get("content-length") || 0) > MAKS) return tak();
-    const buf = await o.arrayBuffer();
-    if (buf.byteLength > MAKS || !buf.byteLength) return tak();
+    if (o.status !== 200 || !/^image\/(?!svg)/.test(tipe) || Number(o.headers.get("content-length") || 0) > MAKS) return gagalCache();
+    const rd = o.body.getReader(), bagian = [];
+    let n = 0;
+    for (;;) { // batalkan begitu kumulatif melewati MAKS (Content-Length bisa bohong/tak ada)
+      const { value, done } = await rd.read();
+      if (done) break;
+      n += value.length;
+      if (n > MAKS) { rd.cancel().catch(() => {}); return gagalCache(); }
+      bagian.push(value);
+    }
+    if (!n) return gagalCache();
+    const buf = new Uint8Array(n);
+    for (let i = 0, p = 0; i < bagian.length; p += bagian[i++].length) buf.set(bagian[i], p);
     const res = new Response(buf, { status: 200, headers: { ...HDR, "content-type": tipe.split(";")[0] } });
     if (c) ctx?.waitUntil?.(c.put(kunci, res.clone()));
     return res;
-  } catch { return tak(); }
+  } catch { return gagalCache(); }
 }
 
 export const rute = { "GET /api/foto-berita/:id": foto };

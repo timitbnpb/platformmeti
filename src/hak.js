@@ -471,20 +471,23 @@ export async function koreksiPutus(env, akun, id, aksi, catatan) {
   });
 }
 
-export async function statistikHit(env, jenis, kunci) {
+export const BATAS_KATA_BARU = 500, MIN_UNIK_CARI = 3;
+// unik = 1 bila koneksi ini baru bagi kunci hari ini (diputuskan pemanggil lewat laju). Kata cari baru dibatasi per hari.
+export async function statistikHit(env, jenis, kunci, unik = 0) {
   return tanpaTabel(async () => {
-    await env.DB.prepare("INSERT INTO statistik_harian (tanggal, jenis, kunci) VALUES (?, ?, ?) ON CONFLICT (tanggal, jenis, kunci) DO UPDATE SET jumlah = jumlah + 1")
-      .bind(new Date().toISOString().slice(0, 10), jenis, kunci).run();
+    const tgl = new Date().toISOString().slice(0, 10);
+    await env.DB.prepare("INSERT INTO statistik_harian (tanggal, jenis, kunci, unik) SELECT ?1, ?2, ?3, ?4 WHERE ?2 <> 'cari' OR EXISTS (SELECT 1 FROM statistik_harian WHERE tanggal = ?1 AND jenis = 'cari' AND kunci = ?3) OR (SELECT COUNT(*) FROM statistik_harian WHERE tanggal = ?1 AND jenis = 'cari') < ?5 ON CONFLICT (tanggal, jenis, kunci) DO UPDATE SET jumlah = jumlah + 1, unik = unik + ?4")
+      .bind(tgl, jenis, kunci, unik ? 1 : 0, BATAS_KATA_BARU).run();
     return true;
   });
 }
 export async function statistikAdmin(env, akun, hari = 30) {
   gerbangAdm(akun);
   const dari = new Date(Date.now() - (Math.min(Math.max(Number(hari) || 30, 1), 90) - 1) * 86400000).toISOString().slice(0, 10);
-  const top = (j) => env.DB.prepare("SELECT kunci, SUM(jumlah) AS jumlah FROM statistik_harian WHERE jenis = ? AND tanggal >= ? GROUP BY kunci ORDER BY jumlah DESC, kunci LIMIT 20").bind(j, dari);
+  const top = (j) => env.DB.prepare("SELECT kunci, SUM(jumlah) AS jumlah FROM statistik_harian WHERE jenis = ? AND tanggal >= ? GROUP BY kunci HAVING ? = 'halaman' OR SUM(unik) >= ? ORDER BY jumlah DESC, kunci LIMIT 20").bind(j, dari, j, MIN_UNIK_CARI);
   return tanpaTabel(async () => {
     const [h, c, d] = await env.DB.batch([top("halaman"), top("cari"),
-      env.DB.prepare("SELECT tanggal, SUM(CASE WHEN jenis = 'halaman' THEN jumlah ELSE 0 END) AS halaman, SUM(CASE WHEN jenis = 'cari' THEN jumlah ELSE 0 END) AS cari FROM statistik_harian WHERE tanggal >= ? GROUP BY tanggal ORDER BY tanggal").bind(dari)]);
+      env.DB.prepare("SELECT tanggal, SUM(CASE WHEN jenis = 'halaman' THEN jumlah ELSE 0 END) AS halaman, SUM(CASE WHEN jenis = 'cari' AND unik >= 3 THEN jumlah ELSE 0 END) AS cari FROM statistik_harian WHERE tanggal >= ? GROUP BY tanggal ORDER BY tanggal").bind(dari)]);
     return { halaman: h.results, cari: c.results, harian: d.results };
   });
 }
@@ -527,7 +530,7 @@ export async function jejakDaftar(env, akun, { tabel, baris, hal = 1 } = {}) {
       .bind(...b, HALAMAN_ADM, (h - 1) * HALAMAN_ADM),
     env.DB.prepare("SELECT COUNT(*) AS n FROM jejak j" + where).bind(...b),
   ]);
-  const ringkas = (ke) => { if (!ke) return ""; try { const o = JSON.parse(ke); return String(o?.ringkas ?? (o?.kolom ? "kolom: " + o.kolom.join(", ") : ke)).slice(0, 300); } catch { return ""; } };
+  const ringkas = (ke) => { if (!ke) return ""; try { const o = JSON.parse(ke); return String(o?.ringkas ?? (Array.isArray(o?.kolom) ? "kolom: " + o.kolom.join(", ") : "(rincian disembunyikan)")).slice(0, 300); } catch { return "(rincian disembunyikan)"; } };
   return { baris: r.results.map((x) => ({ id: x.id, waktu: x.kapan, akun_id: x.siapa, akun_nama: x.akun_nama ?? null, peran: x.peran, aksi: x.aksi, entitas: x.tabel, entitas_id: x.baris_id, tabel: x.tabel, baris_id: x.baris_id, ringkas: ringkas(x.ke) })), total: t.results[0].n };
 }
 

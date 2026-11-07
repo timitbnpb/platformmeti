@@ -23,6 +23,7 @@ CREATE TABLE IF NOT EXISTS statistik_harian (
   jenis TEXT NOT NULL CHECK (jenis IN ('halaman','cari')),
   kunci TEXT NOT NULL CHECK (length(kunci) BETWEEN 1 AND 120),
   jumlah INTEGER NOT NULL DEFAULT 1 CHECK (jumlah >= 1),
+  unik INTEGER NOT NULL DEFAULT 0 CHECK (unik >= 0),   -- jumlah koneksi berbeda hari itu (hitungan saja; hash koneksi tidak disimpan)
   PRIMARY KEY (tanggal, jenis, kunci)
 ) WITHOUT ROWID;
 

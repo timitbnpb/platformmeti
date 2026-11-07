@@ -107,7 +107,8 @@ export async function ipHash(env, req, kini = Date.now()) {
 
 // Cache tepi HANYA untuk respons lapis publik; kunci tanpa cookie. Pemanggil wajib sudah memeriksa sesi.
 export async function cacheTepi(req, ctx, bikin, detik = 300) {
-  const kunci = new Request(new URL(req.url).origin + new URL(req.url).pathname + new URL(req.url).search);
+  const u = new URL(req.url);
+  const kunci = new Request(u.origin + u.pathname + (u.pathname === "/api/konten-beranda" ? "" : u.search)); // konten beranda tanpa query: cegah cache-busting
   const c = globalThis.caches?.default;
   const kena = c && (await c.match(kunci));
   if (kena) return kena;

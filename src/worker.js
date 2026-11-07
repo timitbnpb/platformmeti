@@ -5,6 +5,7 @@ import { rute as ruteAgenda } from "./agenda.js";
 import { rute as ruteDirektori } from "./direktori.js";
 import { rute as ruteFoto } from "./foto_berita.js";
 import { rute as ruteAdmin } from "./admin.js";
+import { rute as ruteKelayakan } from "./kelayakan.js";
 import * as hak from "./hak.js";
 import { halamanProfil } from "./profil.js";
 import { gagal, json, sha } from "./util.js";
@@ -18,7 +19,7 @@ const rutePemilik = {
 };
 
 // Tabel rute dikompilasi sekali: { metode, bagian[], fn }.
-const DAFTAR = Object.entries({ ...ruteSesi, ...ruteAkun, ...ruteAgenda, ...ruteDirektori, ...ruteFoto, ...ruteAdmin, ...rutePemilik }).map(([k, fn]) => {
+const DAFTAR = Object.entries({ ...ruteSesi, ...ruteAkun, ...ruteAgenda, ...ruteDirektori, ...ruteFoto, ...ruteAdmin, ...ruteKelayakan, ...rutePemilik }).map(([k, fn]) => {
   const [metode, jalur] = k.split(" ");
   return { metode, bagian: jalur.split("/").slice(1), fn };
 });
