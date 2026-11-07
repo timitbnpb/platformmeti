@@ -341,3 +341,13 @@
 .tn-dd-cr>svg{position:absolute;left:14px;top:50%;transform:translateY(-50%);color:var(--ink2);pointer-events:none}
 .tn-dd-kp .tn-dd-cari{margin:0;padding-left:42px;border:0;border-radius:var(--r-pil);background:var(--card);box-shadow:var(--shadow);font-size:var(--t-masukan)}
 .tn-dlg-daftar .tn-x{z-index:4;background:color-mix(in srgb,var(--on-brand) 18%,transparent);color:var(--on-brand);border-color:transparent}
+/* KOMPARTEMEN (pemilik 8 Nov 2026 "ya, kompartemen"): tiap dewan/unit jadi kartu dengan pita kepala gradien */
+.tn-pohon .tn-grp{gap:14px;padding:0 16px 18px;border:1px solid var(--line);border-radius:var(--r-lg);background:var(--card);box-shadow:var(--shadow);overflow:hidden;height:100%;box-sizing:border-box}
+.tn-pohon .tn-grp>h4{margin:0 -16px;padding:12px 16px;border-bottom:0;background:linear-gradient(135deg,var(--brand),var(--brand2));color:var(--on-brand);justify-content:center}
+.tn-pohon .tn-grp>h4::after{display:none}
+.tn-pohon .tn-grp>h4 .jm-ik{color:var(--meti-lime)}
+.tn-pohon .tn-grp>h4 .tn-n{background:color-mix(in srgb,var(--on-brand) 18%,transparent);color:var(--on-brand)}
+.tn-pohon .tn-grp .tn-semua{margin-top:auto}
+.tn-pohon .tn-ketum{display:inline-flex;width:auto;min-width:300px}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .tn-pohon .tn-grp{background:var(--surface)}}
+:root[data-theme="dark"] .tn-pohon .tn-grp{background:var(--surface)}
