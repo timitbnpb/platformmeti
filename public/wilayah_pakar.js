@@ -53,7 +53,7 @@ const avatar = (o) => (o.foto
 const kampus = (o) => {
   if (!o.institusi) return kos(t("wp.kos"));
   const lg = logoPeta.get(o.institusi);
-  return `<span class="jm-wp-ki"><span class="jm-wp-lg">${lg ? `<img src="${esc(lg)}" alt="" width="28" height="28" loading="lazy">` : ikon("wisuda", 18)}</span><span>${esc(o._i)}</span></span>`;
+  return `<span class="jm-wp-ki"><span class="jm-wp-kg">${lg ? `<img src="${esc(lg)}" alt="" width="28" height="28" loading="lazy">` : ikon("wisuda", 18)}</span><span>${esc(o._i)}</span></span>`;
 };
 const topik = (o) => {
   if (!o.topik?.length) return kos(t("wp.kos"));
@@ -62,18 +62,18 @@ const topik = (o) => {
 };
 function barisHtml(a) {
   const L = (k) => esc(t(k));
-  return a.map((o) => `<tr class="jm-wp-pk-r" data-href="${esc(href(o))}"><td data-label="${L("wp.col.nama")}" class="jm-wp-pk-n"><span class="jm-wp-pk-nm">${avatar(o)}<a href="${esc(href(o))}" aria-label="${esc(t("wp.pk.buka", { nama: o._n }))}">${esc(o._n)}</a></span></td>`
+  return a.map((o) => `<tr class="jm-wp-px-r" data-href="${esc(href(o))}"><td data-label="${L("wp.col.nama")}" class="jm-wp-px-n"><span class="jm-wp-px-nm">${avatar(o)}<a href="${esc(href(o))}" aria-label="${esc(t("wp.pk.buka", { nama: o._n }))}">${esc(o._n)}</a></span></td>`
     + `<td data-label="${L("wp.col.inst")}">${kampus(o)}</td><td data-label="${L("wp.col.topik")}">${topik(o)}</td>`
     + `<td data-label="${L("wp.col.h")}" class="jm-num">${o.h == null ? kos(t("wp.kos")) : `<span class="jm-wp-h jm-wp-h-${tingkat(o.h)}" title="${esc(t("wp.pk.h.tip", { h: num(o.h), tingkat: t("wp.pk.h." + tingkat(o.h)) }))}">${ikon("bintang", 14)}<b>${esc(num(o.h))}</b></span>`}</td></tr>`).join("");
 }
 function gambar(akar) {
   const a = urut().slice((S.hal - 1) * PER, S.hal * PER);
   akar.querySelector("tbody").innerHTML = barisHtml(a);
-  akar.querySelector(".jm-wp-pk-pag").innerHTML = paginasiHtml({ hal: S.hal, total: PK.rows.length, per: PER, satuan: "jm.pag.u.pakar" });
+  akar.querySelector(".jm-wp-px-pag").innerHTML = paginasiHtml({ hal: S.hal, total: PK.rows.length, per: PER, satuan: "jm.pag.u.pakar" });
   isiFoto(akar);
 }
 const th = (k, label, kls = "") => `<th scope="col" class="${kls}" aria-sort="${S.uk === k ? (S.ua > 0 ? "ascending" : "descending") : "none"}"><button type="button" class="jm-urut" data-uk="${k}">${esc(label)}</button></th>`;
-const ub = (ik, label, nilai, sub) => `<li class="jm-wp-ub">${ikon(ik, 22)}<span><small>${esc(label)}</small><b>${nilai}</b>${sub ? `<em>${esc(sub)}</em>` : ""}</span></li>`;
+const ub = (ik, label, nilai, sub) => `<li class="jm-wp-pu">${ikon(ik, 22)}<span><small>${esc(label)}</small><b>${nilai}</b>${sub ? `<em>${esc(sub)}</em>` : ""}</span></li>`;
 
 export function pakarHtml(p, d, H) {
   const x = d?.pakar; if (!x?.daftar?.length) return "";
@@ -81,12 +81,12 @@ export function pakarHtml(p, d, H) {
   S.uk = "h"; S.ua = -1; S.hal = 1;
   const per = new Map(); for (const o of PK.rows) if (o._i) per.set(o._i, (per.get(o._i) || 0) + 1);
   const top = [...per].sort((a, z) => z[1] - a[1])[0], hMaks = Math.max(0, ...PK.rows.map((o) => o.h || 0));
-  const ringkas = `<ul class="jm-wp-ubs" aria-label="${esc(t("wp.pk.ringkas"))}">${ub("orang", t("wp.pk.u.n"), esc(num(x.jumlah)), t("wp.pk.u.n.sub", { n: num(PK.rows.length) }))}`
-    + ub("wisuda", t("wp.pk.u.kampus"), esc(num(per.size)), "")
+  const ringkas = `<ul class="jm-wp-pus" aria-label="${esc(t("wp.pk.ringkas"))}">${ub("orang", t("wp.pk.u.n"), esc(num(x.jumlah)), t("wp.pk.u.n.sub", { n: num(PK.rows.length) }))}`
+    + ub("wisuda", t("wp.pk.u.kampus"), esc(num(per.size)), t("wp.pk.u.kampus.sub", { n: num(PK.rows.length) }))
     + (top ? ub("gedung", t("wp.pk.u.top"), esc(top[0]), t("wp.pk.u.top.n", { n: num(top[1]) })) : "")
-    + ub("bintang", t("wp.pk.u.h"), esc(num(hMaks)), "") + "</ul>";
-  const tb = `<div class="jm-gulir"><table class="jm-tabel jm-wp-pk" data-urut-terpasang="1"><thead><tr>${th("nama", t("wp.col.nama"))}${th("inst", t("wp.col.inst"))}<th scope="col" data-urut="tidak">${esc(t("wp.col.topik"))}</th>${th("h", t("wp.col.h"), "jm-num")}</tr></thead><tbody>${barisHtml(urut().slice(0, PER))}</tbody></table></div><div class="jm-wp-pk-pag">${paginasiHtml({ hal: 1, total: PK.rows.length, per: PER, satuan: "jm.pag.u.pakar" })}</div>`;
-  return H.seksi({ id: "pakar", ikon: "orang", topik: t("wp.ey.pakar"), judulHtml: H.hlHtml("wp.j.pakar", num(x.jumlah), { nama: p.nama, n: num(x.daftar.length) }), aksiHtml: H.aksiHtml({ csv: true }) + H.sumberDari({ sumber: x.sumber, url: x.url, tanggal: x.tanggal }), isiHtml: ringkas + `<div class="jm-wp-pk-w">${tb}</div>`, kakiHtml: `<p class="jm-bantu">${esc(t("wp.cat.pakar"))}</p>` });
+    + ub("bintang", t("wp.pk.u.h"), esc(num(hMaks)), PK.rows.find((o) => o.h === hMaks)?._n || "") + "</ul>";
+  const tb = `<div class="jm-gulir"><table class="jm-tabel jm-wp-px" data-urut-terpasang="1"><thead><tr>${th("nama", t("wp.col.nama"))}${th("inst", t("wp.col.inst"))}<th scope="col" data-urut="tidak">${esc(t("wp.col.topik"))}</th>${th("h", t("wp.col.h"), "jm-num")}</tr></thead><tbody>${barisHtml(urut().slice(0, PER))}</tbody></table></div><div class="jm-wp-px-pag">${paginasiHtml({ hal: 1, total: PK.rows.length, per: PER, satuan: "jm.pag.u.pakar" })}</div>`;
+  return H.seksi({ id: "pakar", ikon: "orang", topik: t("wp.ey.pakar"), judulHtml: H.hlHtml("wp.j.pakar", num(x.jumlah), { nama: p.nama, n: num(x.daftar.length) }), aksiHtml: H.aksiHtml({ csv: true }) + H.sumberDari({ sumber: x.sumber, url: x.url, tanggal: x.tanggal }), isiHtml: ringkas + `<div class="jm-wp-px-w">${tb}</div>`, kakiHtml: `<p class="jm-bantu">${esc(t("wp.cat.pakar"))}</p>` });
 }
 
 /* foto pakar dari potret (bila tersedia): isi sesudah tercat, siluet tetap bila tidak ada */
@@ -112,7 +112,7 @@ async function isiFoto(akar) {
 }
 
 export function pasangPakar(akar) {
-  const w = akar.querySelector(".jm-wp-pk-w"); if (!w || !PK) return;
+  const w = akar.querySelector(".jm-wp-px-w"); if (!w || !PK) return;
   w.addEventListener("click", (e) => {
     const u = e.target.closest(".jm-urut");
     if (u) {

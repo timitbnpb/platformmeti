@@ -54,4 +54,4 @@ async function main() {
   fs.writeFileSync(JSON_OUT, JSON.stringify(Object.fromEntries(Object.entries(hasil).sort()), null, 1) + '\n');
 }
 if (process.argv.includes('--selftest')) { assert.ok(lisensiBebas('CC BY-SA 4.0')); assert.ok(lisensiBebas('Public domain')); assert.ok(!lisensiBebas('Fair use')); console.log('selftest ok'); }
-else if (process.argv.includes('--jalan')) await main();
+else if (process.argv.includes('--jalan') && process.argv[1] === fileURLToPath(import.meta.url)) await main();

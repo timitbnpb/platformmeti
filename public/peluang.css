@@ -148,7 +148,7 @@
 .jm-pel-kuantil .jm-pel-nd{background:color-mix(in srgb,var(--accent-isi) 5%,var(--card))}
 
 /* tab halaman: ujung ke ujung, aktif pil hijau tua, tanpa scrollbar */
-#tabHal.jm-tab{display:grid!important;grid-auto-flow:column;grid-auto-columns:1fr;grid-template-columns:none!important;gap:4px;padding:6px;overflow:visible!important;border:1px solid var(--line);border-radius:var(--r-pil);background:var(--card)}
+#tabHal.jm-tab{display:grid!important;grid-auto-flow:column!important;grid-auto-columns:1fr!important;grid-template-columns:none!important;gap:4px;padding:6px;overflow:visible!important;border:1px solid var(--line);border-radius:var(--r-pil);background:var(--card)}
 #tabHal.jm-tab>button{justify-content:center;min-height:44px;margin:0;padding:0 12px;border:0;border-radius:var(--r-pil);white-space:nowrap}
 #tabHal.jm-tab>button[aria-selected="true"]{background:var(--brand);color:var(--on-brand)}
 #tabHal.jm-tab>button[aria-selected="true"] svg{color:var(--on-brand)}
@@ -167,7 +167,7 @@
 .jm-pel-tabel td.jm-num,.jm-pel-tabel td.jm-tengah{width:auto}
 .jm-pel-tabel td:first-child .jm-pel-pj{min-width:0}.jm-pel-tabel td:first-child a{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .jm-pel-ulang a{opacity:.5}
-.jm-pel-tabel td.jm-pel-celah{font-weight:800;color:var(--accent);font-size:var(--t-body)}
+.jm-pel-tabel td.jm-pel-celah{font-weight:700;color:var(--accent);font-size:var(--t-body)}
 .jm-pel-rh,.jm-pel-tbx{display:grid;gap:3px;justify-items:end}
 .jm-pel-rh b,.jm-pel-tbx b{font-weight:600}
 .jm-pel-tbx small{color:var(--ink2)}

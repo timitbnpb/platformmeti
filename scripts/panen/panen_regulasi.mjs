@@ -36,6 +36,8 @@ const KATA = [
 ];
 // relevansi judul (lebih ketat dari kata kunci pencarian)
 const RELEVAN = /energi (baru|terbarukan)|panas ?bumi|surya|bayu|tenaga angin|tenaga air|hidro|bio ?(energi|diesel|etanol|massa|gas|fuel)|nabati|hidrogen|ketenagalistrikan|tenaga listrik|ketenaganukliran|nuklir|pembangkit|kelistrikan|\blistrik\b|konservasi energi|efisiensi energi|kebijakan energi|rencana umum energi|\benergi\b.*(nasional|daerah)|karbon|gas rumah kaca|emisi|perubahan iklim|komponen dalam negeri|tkdn|baterai|penyimpanan energi|taksonomi|keuangan berkelanjutan|cipta kerja|berbasis risiko|transisi energi|energi laut|sampah.*(energi|listrik)|\bplt[a-z]{0,2}\b|konversi|bidang energi dan sumber daya mineral|perlindungan dan pengelolaan lingkungan hidup/i;
+export const STRIKTIF = /energi|listrik|panas ?bumi|surya|\bbayu\b(?! asih)|tenaga angin|hidro(?!logi|meteo|geo|grafi)|bio ?(diesel|etanol|massa|gas|fuel)|nabati|hidrogen|nuklir|karbon|iklim|emisi|pembangkit|ketenaga|gas rumah kaca|baterai|komponen dalam negeri|taksonomi|keuangan berkelanjutan|pengadaan.*(pembangkit|energi)/i;
+export const NEGATIF = /rumah sakit|uang rupiah|krimer|perlindungan dan pengelolaan lingkungan hidup|batas wilayah|pajak (barang|air)|hidrologi|dokter|pendelegasian|pengawasan intern|ozon|perizinan berusaha berbasis risiko subsektor kebudayaan|bantuan pendidikan|beasiswa|listrik dan air bagi rumah ibadah|perusahaan efek|pelaporan insidental|areal bernilai konservasi|pemilihan mitra kerja|barang hasil pekerjaan/i;
 const TOPIK = [
   ['surya', /surya|\bplts\b/i], ['panas_bumi', /panas ?bumi|\bpltp\b/i],
   ['bioenergi', /bio ?(energi|diesel|etanol|massa|gas|fuel)|nabati|\bpltbm\b|sampah/i], ['hidro', /tenaga air|hidro|\bplta\b/i],
@@ -243,19 +245,23 @@ function bangun() {
   }
   // gabung masukan lokal (nomor "Perpres 112/2022"); baris tanpa padanan BPK ditambah apa adanya
   const idx = new Map(rows.map((r) => [`${r.jenis}|${r.nomor}|${r.tahun}`, r]));
+  let nLokal = 0;   // id lokal stabil (dirujuk berita_wilayah, proyek, program): mulai 430 sesuai potret terbit, bukan rows.length yang bergeser tiap panen
   for (const l of bacaJsonl(LOKAL)) {
     const m = String(l.nomor).match(/^([A-Za-z ]+?)\s+(\S+?)\/(\d{4})/);
     const jenis = m ? jenisDari(m[1].replace(/ESDM/i, '').trim()) : l.jenis_regulasi;
     const r = m && idx.get(`${jenis}|${m[2]}|${m[3]}`);
     if (r) { r.posisi_meti = l.posisi_meti || r.posisi_meti; r.sumber_posisi = l.posisi_meti ? l.sumber_berkas : r.sumber_posisi; r.dari_lokal = true; continue; }
-    const baru = { id: m ? slugId(jenis, /esdm/i.test(l.nomor) ? 'esdm' : '', m[2], m[3]) : 'lokal-' + rows.length, jenis, nomor: m ? m[2] : l.nomor, tahun: m ? +m[3] : null, judul: l.judul,
+    const baru = { id: m ? slugId(jenis, /esdm/i.test(l.nomor) ? 'esdm' : '', m[2], m[3]) : 'lokal-' + (430 + nLokal++), jenis, nomor: m ? m[2] : l.nomor, tahun: m ? +m[3] : null, judul: l.judul,
       tanggal_ditetapkan: null, tanggal_diundangkan: null, instansi_penerbit: null, status: /draf/.test(l.status) ? 'rancangan' : l.status || 'tidak-diketahui', diubah_oleh: [], mencabut: [], mengubah: [], dicabut_oleh: null,
       topik: topikDari(l.judul), ringkasan: ringkas(jenis, m ? m[2] : l.nomor, m ? m[3] : '', l.judul), pasal_kunci: null, url_sumber: null, url_pdf: null, tanggal_ambil: today,
       posisi_meti: l.posisi_meti || null, sumber_posisi: l.posisi_meti ? l.sumber_berkas : null, dari_lokal: true };
     if (rows.some((x) => x.id === baru.id)) continue;
     rows.push(baru);
   }
-  const unik = [...new Map(rows.map((r) => [r.id, r])).values()].sort((a, b) => a.tahun - b.tahun || String(a.id).localeCompare(b.id));
+  // Baris BARU (belum ada di regulasi.jsonl terbit) wajib lolos saring ketat: kata kunci "bayu"/"energi" menarik RSUD Bayu Asih, uang rupiah, RPPLH dst.
+  const terbit = new Set(bacaJsonl(path.join(OUT, 'regulasi.jsonl')).map((r) => r.id));
+  const ketat = (r) => terbit.has(r.id) || r.dari_lokal || (STRIKTIF.test(r.judul) && !NEGATIF.test(r.judul));
+  const unik = [...new Map(rows.filter(ketat).map((r) => [r.id, r])).values()].sort((a, b) => a.tahun - b.tahun || String(a.id).localeCompare(b.id));
   jsonl(path.join(OUT, 'regulasi.jsonl'), unik);
   const kunci = new Set(); const ik = ikat.filter((x) => { const k = x.dari + '>' + x.ke + '>' + x.jenis; return kunci.has(k) ? false : (kunci.add(k), true); });
   jsonl(path.join(OUT, 'ikatan_regulasi.jsonl'), ik);
@@ -273,6 +279,7 @@ function selftest() {
   assert.equal(jenisDari('Permen ESDM'), 'permen'); assert.equal(jenisDari('Perpres'), 'perpres'); assert.equal(jenisDari('UU'), 'uu');
   assert.equal(slugId('permen', 'Kementerian Energi dan Sumber Daya Mineral', '2', 2024), 'permen-esdm-2-2024');
   assert(RELEVAN.test('Pemanfaatan Sumber Energi Terbarukan untuk Penyediaan Tenaga Listrik'));
+  assert.ok(STRIKTIF.test('Pembangkit Listrik Tenaga Hibrida') && NEGATIF.test('Tarif RSUD Bayu Asih rumah sakit') && !STRIKTIF.test('Tarif RSUD Bayu Asih'));
   console.log('selftest ok');
 }
 

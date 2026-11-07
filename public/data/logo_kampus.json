@@ -1,0 +1,208 @@
+{
+ "um": {
+  "nama": "UM",
+  "lengkap": "Universitas Negeri Malang",
+  "alias": [
+   "State University of Malang"
+  ],
+  "logo": "/img/logo/kampus/um.png"
+ },
+ "uns": {
+  "nama": "UNS",
+  "lengkap": "Universitas Sebelas Maret",
+  "alias": [
+   "Sebelas Maret University"
+  ],
+  "logo": "/img/logo/kampus/uns.png"
+ },
+ "itb": {
+  "nama": "ITB",
+  "lengkap": "Institut Teknologi Bandung",
+  "alias": [
+   "Bandung Institute of Technology"
+  ],
+  "logo": "/img/logo/kampus/itb.png"
+ },
+ "undip": {
+  "nama": "Undip",
+  "lengkap": "Universitas Diponegoro",
+  "alias": [
+   "Diponegoro University"
+  ],
+  "logo": "/img/logo/kampus/undip.png"
+ },
+ "unri": {
+  "nama": "Unri",
+  "lengkap": "Universitas Riau",
+  "alias": [
+   "Riau University"
+  ],
+  "logo": "/img/logo/kampus/unri.png"
+ },
+ "ugm": {
+  "nama": "UGM",
+  "lengkap": "Universitas Gadjah Mada",
+  "alias": [
+   "Gadjah Mada University"
+  ],
+  "logo": null
+ },
+ "its": {
+  "nama": "ITS",
+  "lengkap": "Institut Teknologi Sepuluh Nopember",
+  "alias": [
+   "Sepuluh Nopember Institute of Technology"
+  ],
+  "logo": "/img/logo/kampus/its.png"
+ },
+ "usk": {
+  "nama": "USK",
+  "lengkap": "Universitas Syiah Kuala",
+  "alias": [
+   "Syiah Kuala University"
+  ],
+  "logo": null
+ },
+ "usu": {
+  "nama": "USU",
+  "lengkap": "Universitas Sumatera Utara",
+  "alias": [
+   "University of North Sumatra",
+   "North Sumatra University"
+  ],
+  "logo": "/img/logo/kampus/usu.png"
+ },
+ "ui": {
+  "nama": "UI",
+  "lengkap": "Universitas Indonesia",
+  "alias": [
+   "University of Indonesia"
+  ],
+  "logo": "/img/logo/kampus/ui.png"
+ },
+ "ub": {
+  "nama": "UB",
+  "lengkap": "Universitas Brawijaya",
+  "alias": [
+   "Brawijaya University",
+   "University of Brawijaya"
+  ],
+  "logo": "/img/logo/kampus/ub.png"
+ },
+ "ipb": {
+  "nama": "IPB",
+  "lengkap": "Institut Pertanian Bogor",
+  "alias": [
+   "IPB University",
+   "Bogor Agricultural University"
+  ],
+  "logo": "/img/logo/kampus/ipb.png"
+ },
+ "unand": {
+  "nama": "Unand",
+  "lengkap": "Universitas Andalas",
+  "alias": [
+   "Andalas University"
+  ],
+  "logo": "/img/logo/kampus/unand.png"
+ },
+ "unud": {
+  "nama": "Unud",
+  "lengkap": "Universitas Udayana",
+  "alias": [
+   "Udayana University"
+  ],
+  "logo": "/img/logo/kampus/unud.png"
+ },
+ "unej": {
+  "nama": "Unej",
+  "lengkap": "Universitas Jember",
+  "alias": [
+   "Jember University",
+   "University of Jember"
+  ],
+  "logo": null
+ },
+ "unair": {
+  "nama": "Unair",
+  "lengkap": "Universitas Airlangga",
+  "alias": [
+   "Airlangga University"
+  ],
+  "logo": "/img/logo/kampus/unair.png"
+ },
+ "polinema": {
+  "nama": "Polinema",
+  "lengkap": "Politeknik Negeri Malang",
+  "alias": [
+   "State Polytechnic of Malang"
+  ],
+  "logo": null
+ },
+ "upi": {
+  "nama": "UPI",
+  "lengkap": "Universitas Pendidikan Indonesia",
+  "alias": [
+   "Indonesia University of Education"
+  ],
+  "logo": null
+ },
+ "unila": {
+  "nama": "Unila",
+  "lengkap": "Universitas Lampung",
+  "alias": [
+   "Lampung University"
+  ],
+  "logo": "/img/logo/kampus/unila.png"
+ },
+ "unsri": {
+  "nama": "Unsri",
+  "lengkap": "Universitas Sriwijaya",
+  "alias": [
+   "Sriwijaya University"
+  ],
+  "logo": null
+ },
+ "telkom": {
+  "nama": "Telkom University",
+  "lengkap": "Universitas Telkom",
+  "alias": [
+   "Telkom University"
+  ],
+  "logo": "/img/logo/kampus/telkom.png"
+ },
+ "unhas": {
+  "nama": "Unhas",
+  "lengkap": "Universitas Hasanuddin",
+  "alias": [
+   "Hasanuddin University"
+  ],
+  "logo": "/img/logo/kampus/unhas.png"
+ },
+ "unnes": {
+  "nama": "Unnes",
+  "lengkap": "Universitas Negeri Semarang",
+  "alias": [
+   "State University of Semarang",
+   "Semarang State University"
+  ],
+  "logo": "/img/logo/kampus/unnes.png"
+ },
+ "unpad": {
+  "nama": "Unpad",
+  "lengkap": "Universitas Padjadjaran",
+  "alias": [
+   "Padjadjaran University"
+  ],
+  "logo": null
+ },
+ "unp": {
+  "nama": "UNP",
+  "lengkap": "Universitas Negeri Padang",
+  "alias": [
+   "Padang State University",
+   "State University of Padang"
+  ],
+  "logo": "/img/logo/kampus/unp.png"
+ }
+}

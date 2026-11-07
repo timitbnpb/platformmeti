@@ -88,3 +88,26 @@ Diambil oleh scripts/panen/panen_logo.mjs (UA METI, robots.txt dihormati, jeda >
 - tk_db3acaae | tk_db3acaae | apple-touch-icon | https://bambangdjaja.com/wp-content/uploads/2019/02/cropped-favicon-bd-192x192.jpg
 - tk_de99b435 | tk_de99b435 | logo-header | https://www.pindad.com/assets/img/theme-1/logo-putih.png
 - tk_e79c0f86 | tk_e79c0f86 | logo-header | https://jembo.co.id/assets/images/fav/logo_mobile.png
+
+## Logo kampus
+
+scripts/panen/logo_kampus.mjs (UA METI, jeda >= 2 dtk). Logo hanya untuk mengenali kampus; hak cipta pada pemiliknya. Pemetaan nama: public/data/logo_kampus.json. Ditolak: Wikidata P154 UGM (logo fakultas FEB) dan berkas JPG (tidak tembus pandang); UGM, USK, UPI, Unpad, Unsri, Unej, Polinema tanpa logo (situs 403/timeout/ikon tak terbaca).
+
+- kampus/ipb.png | Institut Pertanian Bogor | ikon/logo resmi situs | https://ipb.ac.id
+- kampus/itb.png | Institut Teknologi Bandung | ikon/logo resmi situs | https://itb.ac.id
+- kampus/its.png | Institut Teknologi Sepuluh Nopember | ikon/logo resmi situs | https://its.ac.id
+- kampus/telkom.png | Universitas Telkom | wikidata-p154 | Wikimedia Commons via Wikidata Q15057698
+- kampus/ub.png | Universitas Brawijaya | wikidata-p154 | Wikimedia Commons via Wikidata Q1336952
+- kampus/ui.png | Universitas Indonesia | ikon/logo resmi situs | https://ui.ac.id
+- kampus/um.png | Universitas Negeri Malang | wikidata-p154 | Wikimedia Commons via Wikidata Q4250919
+- kampus/unair.png | Universitas Airlangga | wikidata-p154 | Wikimedia Commons via Wikidata Q1494353
+- kampus/unand.png | Universitas Andalas | ikon/logo resmi situs | https://unand.ac.id
+- kampus/undip.png | Universitas Diponegoro | ikon/logo resmi situs | https://undip.ac.id
+- kampus/unhas.png | Universitas Hasanuddin | ikon/logo resmi situs | https://unhas.ac.id
+- kampus/unila.png | Universitas Lampung | ikon/logo resmi situs | https://unila.ac.id
+- kampus/unnes.png | Universitas Negeri Semarang | ikon/logo resmi situs | https://unnes.ac.id
+- kampus/unp.png | Universitas Negeri Padang | ikon/logo resmi situs | https://unp.ac.id
+- kampus/unri.png | Universitas Riau | ikon/logo resmi situs | https://unri.ac.id
+- kampus/uns.png | Universitas Sebelas Maret | ikon/logo resmi situs | https://uns.ac.id
+- kampus/unud.png | Universitas Udayana | wikidata-p154 | Wikimedia Commons via Wikidata Q1573634
+- kampus/usu.png | Universitas Sumatera Utara | ikon/logo resmi situs | https://usu.ac.id

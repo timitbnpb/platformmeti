@@ -25,7 +25,6 @@ export function akunMenuHtml(saya) {
       ${taut("/langganan", ikon("surel", 20), "am.langganan")}
       ${saya.peran === "admin" || saya.peran === "super" || saya.peran === "pengurus" ? taut("/admin", ikon("perisai", 20), "nav.admin") : ""}
       ${taut("/ganti-sandi", ikon("kunci", 20), "am.sandi")}
-      ${butir("bahasa", ikon("bahasa", 20), "am.bahasa", `<span class="jm-am-sisi" data-i18n="am.bahasa_now">${esc(t("am.bahasa_now"))}</span>`)}
       <hr>
       <button type="button" role="menuitem" id="keluar" data-am="keluar">${ikon("keluar", 20)}<span data-i18n="jm.keluar">${esc(t("jm.keluar"))}</span></button>
     </div></div>`;

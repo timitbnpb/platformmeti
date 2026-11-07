@@ -226,14 +226,14 @@ function regulasi(p) {
   const A = [...p.perda].sort((a, b) => (b.tahun || 0) - (a.tahun || 0));
   const stil = (v) => {
     const k = /cabut|batal/i.test(v) ? "bad" : /berlaku/i.test(v) ? "ok" : "warn", lab = ada("wp.rg.st." + String(v).toLowerCase()) ? t("wp.rg.st." + String(v).toLowerCase()) : String(v).charAt(0).toUpperCase() + String(v).slice(1);
-    return `<span class="jm-pil jm-pil-${k} jm-wp-rk-st">${ikon(k === "bad" ? "blokir" : k === "ok" ? "centang" : "info", 14)}<span>${esc(lab)}</span></span>`;
+    return `<span class="jm-pil jm-pil-${k} jm-wp-rj-st">${ikon(k === "bad" ? "blokir" : k === "ok" ? "centang" : "info", 14)}<span>${esc(lab)}</span></span>`;
   };
   const kartuR = A.map((x) => {
     const [, jn, ik] = jenisReg(x.judul), nama = t("wl.perda_item", { nomor: x.nomor, tahun: x.tahun }), judul = namaBaku(x.judul).nama;
-    return `<li class="jm-wp-rk"><div class="jm-wp-rk-a"><span class="jm-pil-tek jm-tek-${ik}">${ikon("regulasi", 14).replace('class="jm-ik"', 'class="jm-ik jm-ikt-s"')}<span>${esc(t("wp.rg.jn." + jn))}</span></span>${x.status ? stil(x.status) : ""}<span class="jm-wp-rk-th">${ikon("kalender", 14)}${esc(x.tahun ?? "-")}</span>${unduhRegHtml({ judul, url_sumber: x.url, ...REG.get(x.id) })}</div>`
-      + `<b class="jm-wp-rk-n">${tautanReg(x, nama)}</b><span class="jm-wp-rk-j">${esc(judul)}</span><span class="jm-wp-rk-p">${lambang(p, 24)}<span>${esc(p.nama)}</span></span></li>`;
+    return `<li class="jm-wp-rj"><div class="jm-wp-rj-a"><span class="jm-pil-tek jm-wp-jn-${jn}">${ikon("regulasi", 14).replace('class="jm-ik"', 'class="jm-ik jm-ikt-s"')}<span>${esc(t("wp.rg.jn." + jn))}</span></span>${x.status ? stil(x.status) : ""}${unduhRegHtml({ judul, url_sumber: x.url, ...REG.get(x.id) })}</div>`
+      + `<b class="jm-wp-rj-n">${tautanReg(x, nama)}</b><span class="jm-wp-rj-j">${esc(judul)}</span><span class="jm-wp-rj-p">${lambang(p, 24)}<span>${esc(p.nama)}</span><span class="jm-wp-rj-th">${ikon("kalender", 14)}${esc(x.tahun ?? "-")}</span></span></li>`;
   }).join("");
-  return seksi({ id: "regulasi", ikon: "regulasi", topik: t("wp.ey.reg"), judulHtml: hlHtml("wp.j.reg", num(A.length), { nama: p.nama }), aksiHtml: aksiHtml({ csv: true }) + sumberDari({ sumber: t("wl.sumber_perda"), tanggal: "" }), isiHtml: `<ul class="jm-wp-rks">${kartuR}</ul>` });
+  return seksi({ id: "regulasi", ikon: "regulasi", topik: t("wp.ey.reg"), judulHtml: hlHtml("wp.j.reg", num(A.length), { nama: p.nama }), aksiHtml: aksiHtml({ csv: true }) + sumberDari({ sumber: t("wl.sumber_perda"), tanggal: "" }), isiHtml: `<ul class="jm-wp-rjs">${kartuR}</ul>` });
 }
 
 /* ---------- 11. berita dan agenda ---------- */

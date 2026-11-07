@@ -11,7 +11,7 @@ const tgl = (v) => (v == null || v === "" ? null : /^\d{4,6}$/.test(String(v)) &
 
 /* kepakaran = tag di organisasi/berita/pustaka/riset/pakar/inovasi; tek = teknologi di proyek; reg = tag topik regulasi; kata = regex berita/acara/regulasi */
 const TOPIK = [
-  { id: "karbon", ikon: "karbon", foto: "", kep: ["karbon"], tek: [], reg: [], kata: /karbon|carbon|emisi|\bets\b|idxcarbon|net zero|nol bersih/i, regKata: /nilai ekonomi karbon|karbon|gas rumah kaca|paris agreement|framework convention|emisi nol bersih/i, regTolak: /remisi|uji emisi|gas buang|baku mutu emisi|retribusi/i },
+  { id: "karbon", ikon: "karbon", foto: "/img/beranda/karbon.webp", kep: ["karbon"], tek: [], reg: [], kata: /karbon|carbon|emisi|\bets\b|idxcarbon|net zero|nol bersih/i, regKata: /nilai ekonomi karbon|karbon|gas rumah kaca|paris agreement|framework convention|emisi nol bersih/i, regTolak: /remisi|uji emisi|gas buang|baku mutu emisi|retribusi/i },
   { id: "surya", ikon: "surya", foto: "/img/beranda/surya-cirata.webp", kep: ["surya"], tek: ["surya"], reg: ["surya"], kata: /surya|plts|solar|photovoltaic/i },
   { id: "bayu", ikon: "bayu", foto: "/img/beranda/bayu-sidrap.webp", kep: ["bayu"], tek: ["bayu"], reg: ["angin"], kata: /bayu|angin|pltb|wind/i },
   { id: "panas-bumi", ikon: "panas-bumi", foto: "/img/beranda/panas-bumi-sibayak.webp", kep: ["panas-bumi"], tek: ["panas-bumi"], reg: ["panas_bumi"], kata: /panas bumi|pltp|geothermal/i },
@@ -19,14 +19,14 @@ const TOPIK = [
   { id: "bioenergi", ikon: "bioenergi", foto: "/img/beranda/bioenergi-sawit.webp", kep: ["bioenergi", "biomassa-sampah"], tek: ["bioenergi", "biomassa-sampah"], reg: ["bioenergi"], kata: /bioenergi|biomassa|biodiesel|bioetanol|biogas|psel|sampah/i },
   { id: "hidrogen", ikon: "hidrogen", foto: "/img/beranda/hidrogen-spbu.webp", kep: ["hidrogen"], tek: ["hidrogen"], reg: ["hidrogen"], kata: /hidrogen|hydrogen|amonia/i },
   { id: "penyimpanan", ikon: "penyimpanan", foto: "/img/beranda/penyimpanan-baterai.webp", kep: ["penyimpanan"], tek: ["penyimpanan"], reg: ["penyimpanan"], kata: /baterai|battery|penyimpanan energi|bess|pumped/i },
-  { id: "kendaraan-listrik", ikon: "elektrifikasi", foto: "", kep: ["elektrifikasi"], tek: [], reg: [], kata: /kendaraan listrik|mobil listrik|motor listrik|spklu|spbklu|\bkbl|ev charging|elektrifikasi/i, regKata: /kendaraan bermotor listrik|kendaraan listrik|spklu|baterai/i, regTolak: /remisi/i },
-  { id: "jaringan", ikon: "jaringan", foto: "", kep: ["jaringan"], tek: [], reg: ["jaringan"], kata: /transmisi|jaringan listrik|smart grid|grid|gardu|sutet|interkoneksi|supergrid/i, batasReg: 40 },
-  { id: "efisiensi", ikon: "efisiensi", foto: "", kep: ["efisiensi"], tek: [], reg: ["efisiensi"], kata: /efisiensi energi|konservasi energi|hemat energi|audit energi/i },
+  { id: "kendaraan-listrik", ikon: "elektrifikasi", foto: "/img/beranda/kendaraan-listrik.webp", kep: ["elektrifikasi"], tek: [], reg: [], kata: /kendaraan listrik|mobil listrik|motor listrik|spklu|spbklu|\bkbl|ev charging|elektrifikasi/i, regKata: /kendaraan bermotor listrik|kendaraan listrik|spklu|baterai/i, regTolak: /remisi/i },
+  { id: "jaringan", ikon: "jaringan", foto: "/img/beranda/jaringan.webp", kep: ["jaringan"], tek: [], reg: ["jaringan"], kata: /transmisi|jaringan listrik|smart grid|grid|gardu|sutet|interkoneksi|supergrid/i, batasReg: 40 },
+  { id: "efisiensi", ikon: "efisiensi", foto: "/img/beranda/efisiensi.webp", kep: ["efisiensi"], tek: [], reg: ["efisiensi"], kata: /efisiensi energi|konservasi energi|hemat energi|audit energi/i },
   { id: "nuklir", ikon: "nuklir", foto: "/img/beranda/nuklir-menara.webp", kep: ["nuklir"], tek: ["nuklir"], reg: ["nuklir"], kata: /nuklir|\bsmr\b|reaktor|bapeten|thorcon/i },
-  { id: "transisi-berkeadilan", ikon: "transisi-adil", foto: "", kep: ["transisi-adil"], tek: [], reg: [], kata: /transisi berkeadilan|transisi yang adil|just energy|jetp|pensiun dini|phase.?out|pltu/i, regKata: /transisi energi|pensiun dini|percepatan pengembangan energi terbarukan/i, regTolak: /remisi/i },
-  { id: "pembiayaan-hijau", ikon: "pembiayaan", foto: "", kep: ["pembiayaan"], tek: [], reg: ["insentif", "harga"], kata: /obligasi hijau|sukuk hijau|pembiayaan hijau|green bond|jetp|pendanaan|investasi hijau|blended/i },
-  { id: "energi-laut", ikon: "laut", foto: "", kep: ["laut"], tek: ["laut"], reg: [], kata: /energi laut|arus laut|gelombang laut|pasang surut|otec|ocean energy|tidal|wave energy/i },
-  { id: "sampah-energi", ikon: "biomassa-sampah", foto: "", kep: ["sampah", "biomassa-sampah"], tek: ["biomassa-sampah"], reg: [], kata: /psel|pltsa|sampah jadi energi|waste.to.energy|pengolahan sampah/i },
+  { id: "transisi-berkeadilan", ikon: "transisi-adil", foto: "/img/beranda/transisi-berkeadilan.webp", kep: ["transisi-adil"], tek: [], reg: [], kata: /transisi berkeadilan|transisi yang adil|just energy|jetp|pensiun dini|phase.?out|pltu/i, regKata: /transisi energi|pensiun dini|percepatan pengembangan energi terbarukan/i, regTolak: /remisi/i },
+  { id: "pembiayaan-hijau", ikon: "pembiayaan", foto: "/img/beranda/pembiayaan-hijau.webp", kep: ["pembiayaan"], tek: [], reg: ["insentif", "harga"], kata: /obligasi hijau|sukuk hijau|pembiayaan hijau|green bond|jetp|pendanaan|investasi hijau|blended/i },
+  { id: "energi-laut", ikon: "laut", foto: "/img/beranda/energi-laut.webp", kep: ["laut"], tek: ["laut"], reg: [], kata: /energi laut|arus laut|gelombang laut|pasang surut|otec|ocean energy|tidal|wave energy/i },
+  { id: "sampah-energi", ikon: "biomassa-sampah", foto: "/img/beranda/sampah-psel.webp", kep: ["sampah", "biomassa-sampah"], tek: ["biomassa-sampah"], reg: [], kata: /psel|pltsa|sampah jadi energi|waste.to.energy|pengolahan sampah/i },
 ];
 
 const proyek = baca("proyek").baris, org = baca("organisasi").baris, reg = baca("regulasi").baris, inov = baca("inovasi").inovasi;

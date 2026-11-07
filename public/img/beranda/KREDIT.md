@@ -23,3 +23,15 @@ Dua foto berikut diunduh 8 Nov 2026 dari thumbnail 1280 px Commons (UA METI-Netw
 | --- | --- | --- | --- | --- |
 | hidrogen-spbu.webp | Pengisian hidrogen (H2) ke mobil sel bahan bakar (contoh, bukan di Indonesia) | Ogidya | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Hydrogen_refueling.jpg |
 | nuklir-menara.webp | Menara pendingin PLTN Gösgen, Swiss (contoh, bukan di Indonesia) | Christian David | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Cooling_tower_of_the_G%C3%B6sgen_Nuclear_Power_Plant,_close_view,_D%C3%A4niken,_Solothurn.jpg |
+
+Tujuh foto hub topik berikut diunduh 8 Nov 2026 dari thumbnail 1280 px Commons (UA METI-Network-research/0.1, jeda 2 detik), dipotong 16:9, lebar 800 px, WebP maks 90 KB. Hub sampah-energi memakai ulang sampah-psel.webp.
+
+| berkas | foto | pembuat | lisensi | halaman berkas |
+| --- | --- | --- | --- | --- |
+| kendaraan-listrik.webp | Bus listrik Transjakarta di Bundaran HI, Jakarta | Farhan S. Fadhillah | CC0 | https://commons.wikimedia.org/wiki/File:Transjakarta_Electric_Bus_at_Bundaran_HI.jpg |
+| jaringan.webp | Gardu listrik di Sangir, Sumatera Barat | sugeng widodo | CC BY-SA 3.0 | https://commons.wikimedia.org/wiki/File:Electrical_substation_in_Sangir,_West_Sumatra,_Indonesia.jpg |
+| efisiensi.webp | KWh meter listrik PLN, Kebumen (pengukuran konsumsi energi) | SATELITBM | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:KWH_Meter_Listrik_PLN_Analog_1_Fasa_Kantor_UPT_Wilayah_Timur_DLHKP_Kab.Kebumen.jpg |
+| karbon.webp | Hutan mangrove Benoa, Bali (penyerap karbon) | CEphoto, Uwe Aranas | CC BY-SA 3.0 | https://commons.wikimedia.org/wiki/File:Benoa_Bali_Indonesia-Mangrove-forest-01.jpg |
+| transisi-berkeadilan.webp | PLTU Suralaya, Banten | satari | CC BY 3.0 | https://commons.wikimedia.org/wiki/File:PLTU_Suralaya_-_panoramio.jpg |
+| pembiayaan-hijau.webp | Gedung Bursa Efek Indonesia (IDX), Jakarta | Bursa Efek Indonesia | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Gedung-bursa-efek-1_(1).jpg |
+| energi-laut.webp | Turbin arus pasang surut SeaGen (contoh, bukan di Indonesia) | MyName (Fundy) | Domain publik | https://commons.wikimedia.org/wiki/File:SeaGen_marine_current_turbine_HandW.jpg |
