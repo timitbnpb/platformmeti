@@ -262,3 +262,4 @@ dialog.jm-dlg-lebar{width:min(920px,calc(100vw - 24px));max-height:calc(100dvh -
 .kal-legenda li{display:inline-flex;align-items:center;gap:6px}
 .kal-legenda .kal-titik{height:auto}.kal-legenda .kal-titik i{width:10px;height:10px}
 .kal-legenda svg{width:16px;height:16px;color:var(--ink2)}
+.kal-legenda{justify-content:center;border:0;background:none;padding:4px 0 12px}
