@@ -382,3 +382,19 @@
 .tn-bagan-bg .tn-grp>.tn-fkg:not(.tn-dg){display:flex!important;flex-wrap:wrap;justify-content:center;gap:12px}
 .tn-bagan-bg .tn-grp>.tn-fkg:not(.tn-dg)>li{flex:0 1 128px;min-width:0}
 .tn-bagan-bg .tn-grp>h4{flex-wrap:wrap;row-gap:4px}
+/* nama tidak boleh menutupi wajah (pemilik 8 Nov 2026): pada kartu berfoto non-besar, foto mengisi bagian atas,
+   nama dan jabatan di pita bawah yang padat; foto potongan diangkat agar kepala di sepertiga atas */
+.tn-fk:not(.besar):is(.tn-fk-pt,.tn-fk-ft){aspect-ratio:auto;display:flex;flex-direction:column}
+.tn-fk:not(.besar):is(.tn-fk-pt,.tn-fk-ft) .tn-fk-b{position:relative;display:flex;flex-direction:column;height:100%}
+.tn-fk:not(.besar):is(.tn-fk-pt,.tn-fk-ft) .tn-fk-bg{position:relative;inset:auto;flex:none;aspect-ratio:4/4;overflow:hidden}
+.tn-fk:not(.besar):is(.tn-fk-pt,.tn-fk-ft) .tn-fk-bg img{object-position:50% 12%}
+.tn-fk:not(.besar):is(.tn-fk-pt,.tn-fk-ft)::after{display:none}
+.tn-fk:not(.besar):is(.tn-fk-pt,.tn-fk-ft) .tn-fk-t{position:relative;flex:1;padding:8px 10px 10px;background:color-mix(in srgb,var(--brand) 92%,black);text-align:left;align-content:start}
+/* kartu besar: teks hanya di sepertiga bawah dengan gradien kuat, foto potongan dinaikkan */
+.tn-fk.besar .tn-fk-bg img{object-position:50% 0}
+.tn-fk.besar.tn-fk-pt .tn-fk-bg img{height:86%;object-fit:contain;object-position:50% 0}
+/* baris pimpinan: kartu sejajar sama lebar (tanpa susun 2:1) agar wajah tidak tertutup nama */
+.tn-lr-k{grid-template-columns:none;grid-template-rows:none;grid-auto-flow:column;grid-auto-columns:minmax(0,1fr)}
+.tn-lr-k>.tn-fk:first-child,.tn-lr-k>.tn-fk:nth-child(2):last-child{grid-row:auto}
+.tn-lr{height:auto!important;align-items:stretch}
+.tn-lr .tn-fk:is(.tn-fk-nf,.tn-fk-kosong){min-height:100%}
