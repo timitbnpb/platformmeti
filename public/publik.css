@@ -467,3 +467,6 @@ a.jm-foto:focus-visible{outline:3px solid var(--fokus)}
 @media (max-width:999px){.jm-strip{grid-template-columns:1fr}.jm-strip li+li{border-left:0;border-top:1px solid var(--line)}}
 .jm-strip-l{display:block}.jm-strip-l::first-letter{text-transform:none}
 @media (max-width:999px){.jm-strip{grid-template-columns:repeat(2,minmax(0,1fr))}.jm-strip li:nth-child(2n){border-left:1px solid var(--line)}.jm-strip a{grid-template-columns:36px minmax(0,1fr);padding:12px}.jm-strip-ik{width:36px;height:36px}.jm-strip a>svg:last-child{display:none}}
+/* logo/lambang di daftar peringkat beranda */
+.jm-rank-t:has(.jm-rank-lg){grid-template-columns:24px minmax(0,1fr);column-gap:10px;align-items:center}
+.jm-rank-lg{width:24px;height:24px;object-fit:contain;grid-row:1/3}
