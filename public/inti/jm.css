@@ -531,3 +531,6 @@ main>:is(section,div,article)+:is(section,div,article){margin-top:max(24px,var(-
 .jm-sandi-bk>.jm-mata svg{width:20px;height:20px;grid-area:1/1}
 .jm-sandi-bk>.jm-mata .jm-mata-tutup,.jm-sandi-bk>.jm-mata[aria-pressed="true"] .jm-mata-buka{opacity:0}
 .jm-sandi-bk>.jm-mata[aria-pressed="true"] .jm-mata-tutup{opacity:1}
+/* pemilik 8 Nov 2026: kolom Dokumen sempit, judul regulasi utuh (maks 2 baris), tanpa elipsis satu baris */
+.jm-reg-tabel th:nth-child(6){width:96px}.jm-reg-tabel th:nth-child(4){width:120px}.jm-reg-tabel th:nth-child(5){width:100px}
+.jm-reg-tabel .jm-id small{white-space:normal;display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2;line-clamp:2;overflow:hidden;text-overflow:clip}
