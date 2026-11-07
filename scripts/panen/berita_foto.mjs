@@ -1,6 +1,6 @@
 // Foto sampul berita: URL gambar saja (bukan berkas), dari media:content/thumbnail/enclosure RSS, lalu og:image halaman.
 // Pakai: node scripts/panen/berita_foto.mjs [--maks N]. Menulis public/data/berita_foto.json {id: url https}. Gagal = dilewati.
-// Sopan: robots.txt dihormati, UA METI, jeda 1,5 s per host, timeout 8 s, 6 host paralel, 403 = host dilewati.
+// Sopan: robots.txt dihormati, UA METI, jeda 2 s per host, timeout 8 s, 6 host paralel, 403 = host dilewati.
 import { readFileSync, writeFileSync, existsSync, mkdirSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import { FEEDS, UA, robotsBolehkan, urlKanon } from './berita.mjs';
@@ -20,7 +20,7 @@ const https = (u, dasar) => { try { const x = new URL(lepas(u), dasar); x.protoc
 const terakhir = new Map(), robots = new Map(), blok = new Set();
 async function ambil(url, { teks = true, batas = 400000 } = {}) {
   const h = new URL(url).host; if (blok.has(h)) return '';
-  const tunggu = (terakhir.get(h) || 0) + 1500 - Date.now(); terakhir.set(h, Math.max(Date.now(), terakhir.get(h) || 0) + 1500); if (tunggu > 0) await tidur(tunggu);
+  const tunggu = (terakhir.get(h) || 0) + 2000 - Date.now(); terakhir.set(h, Math.max(Date.now(), terakhir.get(h) || 0) + 2000); if (tunggu > 0) await tidur(tunggu);
   try {
     const r = await fetch(url, { headers: { 'User-Agent': UA, Accept: 'text/html,application/xml' }, redirect: 'follow', signal: AbortSignal.timeout(8000) });
     if (r.status === 403 || r.status === 429) { blok.add(h); return ''; }
@@ -64,11 +64,20 @@ async function kerja() {
   }
 }
 await Promise.all(Array.from({ length: 6 }, kerja));
-// Pangkas: hanya host dengan >= 3 foto (muat di batas 2000 karakter satu baris _headers; img-src daftar host eksplisit, bukan https:).
+// Hanya https, host bernama (bukan IP/localhost/port). Host foto -> img-src di public/_headers (diperbarui di bawah).
+const layak = (u) => { try { const x = new URL(u); return x.protocol === 'https:' && !x.port && /^[a-z0-9-]+(\.[a-z0-9-]+)+$/.test(x.hostname) && !/^\d+(\.\d+)+$/.test(x.hostname); } catch { return false; } };
+for (const [id, u] of Object.entries(peta)) if (!layak(u)) delete peta[id];
+// CSP: satu baris _headers maks 2000 karakter, tanpa '*' (gerbang-headers H2): host dipilih serakah menurut jumlah foto sampai muat; foto host sisa dibuang (celah, dicatat).
+const HDR = AKAR + 'public/_headers', hdr = readFileSync(HDR, 'utf8');
+const CSP = /(Content-Security-Policy:.*img-src 'self' data: blob: https:\/\/tiles\.openfreemap\.org https:\/\/i\.ytimg\.com)[^;]*/;
 const hitung = {}; for (const u of Object.values(peta)) { const h = new URL(u).host; hitung[h] = (hitung[h] || 0) + 1; }
-for (const [id, u] of Object.entries(peta)) if (hitung[new URL(u).host] < 3) delete peta[id];
-const hosts = Object.keys(hitung).filter((h) => hitung[h] >= 3).sort();
+let sisaPanjang = 2000 - hdr.replace(CSP, '$1').match(/Content-Security-Policy:.*/)[0].length - 2; const hosts = [];
+for (const h of Object.keys(hitung).sort((x, y) => hitung[y] - hitung[x] || x.localeCompare(y))) { if (h.length + 9 <= sisaPanjang) { hosts.push(h); sisaPanjang -= h.length + 9; } }
+for (const [id, u] of Object.entries(peta)) if (!hosts.includes(new URL(u).host)) delete peta[id];
+hosts.sort();
+const baru = hdr.replace(CSP, '$1 ' + hosts.map((h) => 'https://' + h).join(' '));
+if (baru !== hdr) writeFileSync(HDR, baru);
+console.log('img-src host:', hosts.length, 'dari', Object.keys(hitung).length, 'panjang CSP', baru.match(/Content-Security-Policy:.*/)[0].length);
 writeFileSync(KELUAR, JSON.stringify(peta));
 mkdirSync(AKAR + 'data-panen/berita', { recursive: true }); writeFileSync(RINGKAS, JSON.stringify(ringkas));
-console.log('img-src host:', hosts.map((h) => 'https://' + h).join(' '));
 console.log(`foto: ${Object.keys(peta).length} dari ${baris.length} (rss ${dariRss}, og ${og}); host diblok ${[...blok].join(',') || '-'}`);

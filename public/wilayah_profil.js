@@ -22,6 +22,8 @@ const median = (a) => { const s = [...a].sort((x, y) => x - y), m = s.length >> 
 /* nama dengan token berulang persis ("Irianto Irianto") ditampilkan sekali */
 const namaRapi = (n) => { const a = String(n).trim().split(/\s+/); return a.length === 2 && a[0].toLowerCase() === a[1].toLowerCase() ? a[0] : String(n); };
 const tautan = (u, teks) => (amanUrl(u) ? `<a href="${esc(u)}" target="_blank" rel="noopener noreferrer">${esc(teks)}</a>` : esc(teks));
+const REG = new Map();
+const tautanReg = (x, teks) => (REG.has(x.id) ? `<a href="/regulasi?id=${encodeURIComponent(x.id)}">${esc(teks)}</a>` : tautan(x.url, teks));
 const lambang = (p, u = 64) => `<img class="jm-wl-lb" src="/img/provinsi/${esc(p.kode)}.png" width="${u}" height="${u}" alt="" decoding="async">`;
 const juta = (v) => (v >= 1e6 ? t("wp.juta", { n: num(v / 1e6, 1) }) : num(v));
 
@@ -145,7 +147,7 @@ function rued(p) {
   const j = r.target_ebt_persen != null ? hlHtml("wp.j.rued_t", num(r.target_ebt_persen, 0) + "%", { nama: p.nama, perda: r.perda }) : hlHtml("wp.j.rued", "Perda " + r.perda, { nama: p.nama });
   const kand = (r.kandidat || []).length ? `<p class="jm-bantu">${esc(t("wl.rued_kand_judul"))} ${(r.kandidat || []).map((k) => esc(t("wl.rued_kand", { tahun: k.tahun, persen: num(k.persen, 0) }))).join("; ")}</p>` : "";
   const isi = dl([
-    [t("wp.k.perda"), tautan(r.url, t("wl.rued_ada", { perda: r.perda }))],
+    [t("wp.k.perda"), (() => { const [no, th] = r.perda.split("/"), x = p.perda.find((q) => q.nomor === no && String(q.tahun) === th); return `${x ? tautanReg(x, t("wl.rued_ada", { perda: r.perda })) : tautan(r.url, t("wl.rued_ada", { perda: r.perda }))} ${unduhRegHtml({ judul: r.perda, url_sumber: r.url, ...(x && REG.get(x.id)) })}`; })()],
     [t("wp.k.target"), r.target_ebt_persen != null ? esc(num(r.target_ebt_persen, 1)) + "%" : kos(t("wp.kos.target"))],
     [t("wp.k.real"), porsi != null ? `${esc(num(porsi, 1))}% <small>(${esc(t("wp.k.real_ket", { tahun: kj.tahun }))})</small>` : kos(t("wp.kos.real"))],
   ]);
@@ -226,8 +228,8 @@ function pakar(p, d) {
 function regulasi(p) {
   if (!p.perda.length) return "";
   const A = [...p.perda].sort((a, b) => (b.tahun || 0) - (a.tahun || 0));
-  const tb = `<div class="jm-gulir"><table class="jm-tabel"><thead><tr><th>${esc(t("wp.col.perda"))}</th><th>${esc(t("wp.col.judul"))}</th><th>${esc(t("wl.col.status"))}</th></tr></thead><tbody>${A.map((x) =>
-    `<tr><td data-label="${esc(t("wp.col.perda"))}">${tautan(x.url, t("wl.perda_item", { nomor: x.nomor, tahun: x.tahun }))}</td><td data-label="${esc(t("wp.col.judul"))}">${esc(x.judul)}</td><td data-label="${esc(t("wl.col.status"))}">${nilaiAtau(x.status, esc)}</td><td data-label="${esc(t("pf.c.unduh"))}" class="jm-tengah">${unduhRegHtml({ judul: x.judul, url_sumber: x.url }) || "-"}</td></tr>`).join("")}</tbody></table></div>`;
+  const tb = `<div class="jm-gulir"><table class="jm-tabel"><thead><tr><th>${esc(t("wp.col.perda"))}</th><th>${esc(t("wp.col.judul"))}</th><th>${esc(t("wl.col.status"))}</th><th>${esc(t("pf.c.unduh"))}</th></tr></thead><tbody>${A.map((x) =>
+    `<tr><td data-label="${esc(t("wp.col.perda"))}">${tautanReg(x, t("wl.perda_item", { nomor: x.nomor, tahun: x.tahun }))}</td><td data-label="${esc(t("wp.col.judul"))}">${esc(x.judul)}</td><td data-label="${esc(t("wl.col.status"))}">${nilaiAtau(x.status, esc)}</td><td data-label="${esc(t("pf.c.unduh"))}" class="jm-tengah">${unduhRegHtml({ judul: x.judul, url_sumber: x.url, ...REG.get(x.id) }) || "-"}</td></tr>`).join("")}</tbody></table></div>`;
   return seksi({ id: "regulasi", ikon: "regulasi", topik: t("wp.ey.reg"), judulHtml: hlHtml("wp.j.reg", num(A.length), { nama: p.nama }), aksiHtml: aksiHtml({ csv: true }) + sumberDari({ sumber: t("wl.sumber_perda"), tanggal: "" }), isiHtml: tb });
 }
 
@@ -264,6 +266,7 @@ function banding(data, p) {
 /* ---------- pasang ---------- */
 export async function profilProvinsi(p, data, $) {
   document.title = t("wl.profil_title", { nama: p.nama }); TGL = data.dibangun_pada;
+  try { for (const r of (await muatData("regulasi.json")).baris) REG.set(r.id, r); } catch (e) { /* tautan sumber saja */ }
   let d = null;
   try { d = await muatData("wilayah/" + encodeURIComponent(p.kode) + ".json"); } catch (e) { /* bagian tambahan disembunyikan */ }
   $("profil-isi").innerHTML = kepala(data, p) + [ringkasan(p), kelistrikan(p), potensi(p), rued(p), petaSeksi(p), proyek(p), organisasi(p), pakar(p, d), regulasi(p), emisi(p, d), berita(p, d), banding(data, p)].join("");

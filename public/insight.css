@@ -4,18 +4,18 @@
 .jm-ins{align-content:start}
 
 article.jm-ins-kartu[data-belum]{min-height:360px}
-.jm-ins h3.jm-ins-j{font:600 17px/1.35 var(--display);color:var(--head)}
+.jm-ins h3.jm-ins-j{font:600 var(--t-h3)/var(--lh-rapat) var(--display);color:var(--head)}
 .jm-ins-kartu .jm-an-angka{display:flex;flex-wrap:wrap;align-items:baseline;gap:8px}
 .jm-ins-grafik{min-width:0}
 .jm-ins-grafik .jm-an-batang{max-width:none}
-.jm-ins-penting{font-size:14px;line-height:1.5;color:var(--ink);max-width:70ch}
+.jm-ins-penting{font-size:var(--t-body);line-height:var(--lh-isi);color:var(--ink);max-width:70ch}
 .jm-ins-penting b{color:var(--head)}
-.jm-ins summary{font:600 14px/1.3 var(--font);color:var(--accent)}
-.jm-ins-kartu details p{font-size:14px;line-height:1.5;max-width:70ch;color:var(--ink2)}
+.jm-ins summary{font:600 var(--t-body)/var(--lh-rapat) var(--font);color:var(--accent)}
+.jm-ins-kartu details p{font-size:var(--t-body);line-height:var(--lh-isi);max-width:70ch;color:var(--ink2)}
 .jm-ins-svg{width:100%;height:auto;display:block}
-.jm-ins-svg text{font-size:11px;fill:var(--ink2)}
+.jm-ins-svg text{font-size:var(--t-label);fill:var(--ink2)}
 .jm-ins-svg .jm-ins-nilai{fill:var(--ink);font-weight:600}
-@media (max-width:700px){.jm-ins-svg text{font-size:18px}}
+@media (max-width:700px){.jm-ins-svg text{font-size:var(--t-h3)}}
 .jm-ins-l1,.jm-ins-l2,.jm-ins-l3,.jm-ins-l4{fill:none;stroke-width:2.5;stroke-linejoin:round;stroke-linecap:round}
 .jm-ins-l1{stroke:var(--data1)}
 .jm-ins-l2{stroke:var(--data3)}
@@ -29,28 +29,28 @@ article.jm-ins-kartu[data-belum]{min-height:360px}
 /* kartu "exhibit" (anatomi Posko Karhutla): kepala bergradasi, badan grafik, kaki */
 article.jm-ins-kartu{padding:0;overflow:hidden;gap:0}
 .jm-ex-hd{position:relative;padding:18px 22px 14px;background:linear-gradient(180deg,var(--surface),color-mix(in srgb,var(--surface) 40%,var(--card)));border-bottom:1px solid var(--line)}
-.jm-ex-ey{display:inline-block;margin-bottom:8px;padding:3px 9px;border-radius:var(--r-pil);background:var(--soft-hijau);font:800 10px/1.3 var(--font);letter-spacing:.08em;text-transform:uppercase}
+.jm-ex-ey{display:inline-block;margin-bottom:8px;padding:3px 9px;border-radius:var(--r-pil);background:var(--soft-hijau);font:700 var(--t-label)/var(--lh-rapat) var(--font);letter-spacing:.08em;text-transform:uppercase}
 .jm-ins-w-a{color:var(--accent)}
 .jm-ins-w-b{color:var(--info)}
 .jm-ins-w-c{color:var(--warn)}
 .jm-ins-w-d{color:var(--ok)}
-.jm-ins h3.jm-ins-j{padding-right:36px;font:600 19px/1.3 var(--display);letter-spacing:-.01em;color:var(--ink)}
+.jm-ins h3.jm-ins-j{padding-right:36px;font:600 var(--t-h2)/var(--lh-rapat) var(--display);letter-spacing:-.01em;color:var(--ink)}
 .jm-hl{color:var(--accent);font-weight:700}
-.jm-ex-sub{display:flex;flex-wrap:wrap;align-items:center;gap:6px;margin:8px 0 0;font:600 13px/1.4 var(--font);color:var(--ink2)}
-.jm-ex-unit{margin:2px 0 0;font-size:12px;color:var(--ink2)}
+.jm-ex-sub{display:flex;flex-wrap:wrap;align-items:center;gap:6px;margin:8px 0 0;font:600 var(--t-tombol)/var(--lh-rapat) var(--font);color:var(--ink2)}
+.jm-ex-unit{margin:2px 0 0;font-size:var(--t-kecil);color:var(--ink2)}
 .jm-ex-bd{padding:16px 22px 10px;min-width:0}
-.jm-ex-ft{display:grid;gap:6px;padding:10px 22px 14px;border-top:1px solid var(--line);font-size:11.5px;color:var(--ink2)}
-.jm-ex-fn{margin:0;line-height:1.45}
+.jm-ex-ft{display:grid;gap:6px;padding:10px 22px 14px;border-top:1px solid var(--line);font-size:var(--t-label);color:var(--ink2)}
+.jm-ex-fn{margin:0;line-height:var(--lh-isi)}
 .jm-ex-fn:empty{display:none}
 .jm-ex-fn b{color:var(--head)}
 .jm-ex-sum{display:flex;flex-wrap:wrap;align-items:center;gap:4px 14px}
 .jm-ex-sum .jm-an-src{flex:1 1 220px;min-width:0}
-.jm-ex-sum .jm-an-src summary{font:500 11.5px/1.3 var(--font);min-height:28px;color:var(--ink2)}
+.jm-ex-sum .jm-an-src summary{font:400 var(--t-label)/var(--lh-rapat) var(--font);min-height:28px;color:var(--ink2)}
 .jm-ex-sum a{color:var(--accent);font-weight:600}
 .jm-ins-bagi{position:absolute;top:8px;right:10px;min-width:var(--target);min-height:var(--target);display:inline-flex;align-items:center;justify-content:center;border:0;border-radius:var(--r-pil);background:transparent;color:var(--ink2);cursor:pointer}
 .jm-ins-bagi:hover{color:var(--accent);background:var(--card)}
 .jm-ins-menu{position:absolute;z-index:5;top:52px;right:12px;display:grid;min-width:210px;padding:6px;border:1px solid var(--line);border-radius:var(--r-sm);background:var(--card);box-shadow:var(--shadow-lg)}
-.jm-ins-mi{min-height:var(--target);padding:0 12px;border:0;border-radius:var(--r-sm);background:transparent;color:var(--ink);font:500 14px/1 var(--font);text-align:left;cursor:pointer}
+.jm-ins-mi{min-height:var(--target);padding:0 12px;border:0;border-radius:var(--r-sm);background:transparent;color:var(--ink);font:400 var(--t-body)/1 var(--font);text-align:left;cursor:pointer}
 .jm-ins-mi:hover{background:var(--surface);color:var(--accent)}
 .jm-ins-stat{padding:0 12px 4px}
 .jm-ins-stat:empty{display:none}
@@ -58,12 +58,12 @@ article.jm-ins-kartu{padding:0;overflow:hidden;gap:0}
 /* gambar unduhan */
 .jm-snap{background:var(--paper);color:var(--ink);font-family:var(--font);padding:28px;box-sizing:border-box;display:grid;gap:16px}
 .jm-snap .jm-ins-kartu{border:0;box-shadow:none;padding:0}
-.jm-snap-kaki{display:flex;align-items:center;gap:12px;border-top:1px solid var(--line);padding-top:14px;font-size:13px;color:var(--ink2)}
-.jm-snap-kaki p{margin:0;line-height:1.45}
+.jm-snap-kaki{display:flex;align-items:center;gap:12px;border-top:1px solid var(--line);padding-top:14px;font-size:var(--t-tombol);color:var(--ink2)}
+.jm-snap-kaki p{margin:0;line-height:var(--lh-isi)}
 .jm-snap-kaki b{color:var(--head)}
 .jm-met-daftar{display:grid;gap:var(--gap)}
-.jm-met h3{font:600 17px/1.3 var(--display);color:var(--head);margin-bottom:6px}
-.jm-met p{max-width:75ch;line-height:1.55}
+.jm-met h3{font:600 var(--t-h3)/var(--lh-rapat) var(--display);color:var(--head);margin-bottom:6px}
+.jm-met p{max-width:75ch;line-height:var(--lh-isi)}
 .jm-met:target{outline:3px solid var(--accent);outline-offset:2px}
 
 /* hero dua kolom dengan tiga ubin angka */
@@ -72,11 +72,11 @@ article.jm-ins-kartu{padding:0;overflow:hidden;gap:0}
 .jm-ins-ubin{display:grid;gap:10px}
 .jm-ins-ub{display:grid;gap:4px;padding:14px 16px;border-radius:var(--r);background:color-mix(in srgb,var(--on-brand) 12%,transparent);color:var(--on-brand);text-decoration:none;border:1px solid color-mix(in srgb,var(--on-brand) 22%,transparent)}
 .jm-ins-ub:hover{background:color-mix(in srgb,var(--on-brand) 20%,transparent)}
-.jm-ins-ub b{font:700 28px/1.1 var(--display)}
-.jm-ins-ub small{margin-left:6px;font:500 13px/1 var(--font);opacity:.85}
-.jm-ins-ub span{font-size:13px;opacity:.9}
+.jm-ins-ub b{font:700 var(--t-h1)/var(--lh-judul) var(--display)}
+.jm-ins-ub small{margin-left:6px;font:400 var(--t-tombol)/1 var(--font);opacity:.85}
+.jm-ins-ub span{font-size:var(--t-tombol);opacity:.9}
 @media (min-width:900px){.jm-ins-hero{grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:32px}.jm-ins-ubin{grid-template-columns:repeat(3,minmax(0,1fr))}.jm-ins-ub{align-content:start}}
-@media (max-width:899px){.jm-ins-ubin{grid-template-columns:repeat(3,minmax(0,1fr))}.jm-ins-ub b{font-size:22px}.jm-ins-ub small{display:block;margin:2px 0 0}}
+@media (max-width:899px){.jm-ins-ubin{grid-template-columns:repeat(3,minmax(0,1fr))}.jm-ins-ub b{font-size:var(--t-h2)}.jm-ins-ub small{display:block;margin:2px 0 0}}
 /* tautan Metode: tanpa garis bawah, ikon dan panah */
 .jm-ex-sum a.jm-ex-met{display:inline-flex;align-items:center;gap:6px;text-decoration:none;color:var(--ink2);font-weight:600}
 .jm-ex-sum a.jm-ex-met:hover{color:var(--accent)}
@@ -85,3 +85,12 @@ article.jm-ins-kartu{padding:0;overflow:hidden;gap:0}
 .jm-ins-kepala .jm-saring{display:flex;width:auto;flex:none}
 .jm-ins-kepala .jm-pil-pilih{width:auto}
 .jm-ins-kepala .jm-pil-pilih select{width:auto}
+/* kepala bagian Temuan/Tren dalam wadah (pemilik: tidak ada judul dan kontrol yang melayang sendiri) */
+.jm-ins-kepala{display:grid;grid-template-columns:auto minmax(0,1fr) minmax(0,auto);align-items:center;gap:14px;margin:0 0 16px;padding:14px 18px;border:1px solid var(--line);border-radius:var(--r);background:linear-gradient(180deg,var(--surface),color-mix(in srgb,var(--surface) 40%,var(--card)));box-shadow:var(--shadow)}
+.jm-ins-kepala h2{margin:0;font:700 var(--t-h2)/var(--lh-judul) var(--display);color:var(--head)}
+.jm-ins-kep-ik{display:grid;place-items:center;width:40px;height:40px;border-radius:50%;background:var(--soft-hijau);color:var(--accent)}
+.jm-ins-kepala .jm-saring{display:flex;flex-wrap:nowrap;gap:10px;width:auto;justify-self:end;min-width:0}
+.jm-ins-kepala .jm-saring>*{width:auto;min-width:200px;max-width:260px;flex:0 1 auto}
+.jm-ins-kepala .jm-pil-pilih,.jm-ins-kepala .jm-pil-pilih select{width:100%;min-height:44px}
+@media (max-width:700px){.jm-ins-kepala{grid-template-columns:auto minmax(0,1fr)}.jm-ins-kepala .jm-saring{grid-column:1/-1;justify-self:stretch;display:grid;grid-auto-flow:column;grid-auto-columns:1fr}.jm-ins-kepala .jm-saring>*{min-width:0}.jm-ins-kepala .jm-saring{grid-auto-flow:row;grid-auto-columns:auto}}
+.jm-ins-kep-tk{display:grid;gap:2px;min-width:0}.jm-ins-kep-tk small{color:var(--ink2);font-size:var(--t-kecil,13px);line-height:1.35}

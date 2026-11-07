@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="referrer" content="no-referrer">
+<title data-i18n="kl.title">Kalkulator kelayakan lokasi EBT | Direktori METI</title>
+<meta name="description" content="Klik titik di peta, pilih teknologi, dan lihat perkiraan produksi, faktor kapasitas, dan LCOE dibanding BPP dan harga patokan." data-i18n-attr="content:kl.deskripsi">
+<link rel="icon" href="/img/logo-meti-tanda.png" type="image/png">
+<link rel="preload" href="/fonts/inter-400.woff2" as="font" type="font/woff2" crossorigin>
+<script src="/tema.js"></script>
+<link rel="stylesheet" href="/inti/tema.css">
+<link rel="stylesheet" href="/inti/kepala.css">
+<link rel="stylesheet" href="/inti/gaya.css">
+<link rel="stylesheet" href="/inti/jm.css">
+<link rel="stylesheet" href="/publik.css">
+<link rel="stylesheet" href="/analisis.css">
+<link rel="stylesheet" href="/kelayakan.css">
+</head>
+<body data-halaman="kelayakan">
+<header class="top" id="kepala"></header>
+<main class="jm-wadah jm-kl-halaman" id="isi">
+  <header class="jm-judul">
+    <p class="jm-eyebrow"><span class="jm-kotak" aria-hidden="true"></span><span data-i18n="kl.eyebrow">Kalkulator kelayakan</span></p>
+    <h1 id="judul" data-i18n="kl.judul">Kelayakan lokasi pembangkit EBT</h1>
+    <p data-i18n="kl.lead">Klik satu titik di peta atau pilih provinsi, lalu pilih teknologi. Hasilnya perkiraan awal berdasarkan data iklim NASA POWER, bukan studi kelayakan.</p>
+  </header>
+  <div class="jm-kl-kontrol" id="klKontrol"></div>
+  <section class="jm-kl-petaw" aria-label="Lokasi" data-i18n-attr="aria-label:kl.peta">
+    <div id="klPeta" class="jm-kl-peta" role="application" data-i18n-attr="aria-label:kl.peta.petunjuk"></div>
+  </section>
+  <div id="kelayakanHasil" aria-live="polite"></div>
+</main>
+<footer class="jm-kaki" id="kaki"></footer>
+<script type="module" src="/kelayakan.js"></script>
+</body>
+</html>

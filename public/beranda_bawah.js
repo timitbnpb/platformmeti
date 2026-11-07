@@ -111,6 +111,7 @@ async function bento() {
 const CARA = [["sumber", "tautan", () => `<span class="jm-chip">peraturan.bpk.go.id</span>`], ["est", "label", () => `<span class="jm-pil jm-pil-est">EST</span>`], ["tanggal", "kalender", (tgl) => `<span class="jm-chip">${esc(tgl)}</span>`], ["bukti", "lapis", () => `<span class="jm-chip">${esc(t("beranda.cara.t.resmi"))}</span><span class="jm-chip">${esc(t("beranda.cara.t.media"))}</span><span class="jm-chip">${esc(t("beranda.cara.t.pihak"))}</span>`]];
 async function cara() {
   const el = document.getElementById("cara");
+  if (!el) return;
   let tgl = "";
   try { tgl = tanggal((await muat("ringkas")).dibangun_pada); } catch (e) { /* tanpa tanggal contoh: chip tanggal kosong disembunyikan di bawah */ }
   el.innerHTML = CARA.map(([k, ik, ex], i) => `<div class="jm-cara"><div class="jm-cara-kep"><span class="jm-kpi-ik">${IKON[ik]}</span><span class="jm-cara-no">0${i + 1}</span></div><h3>${esc(t("beranda.cara." + k))}</h3><p>${esc(t("beranda.cara." + k + ".d"))}</p><div class="jm-baris-kecil">${k === "tanggal" && !tgl ? "" : ex(tgl)}</div></div>`).join("");
@@ -145,7 +146,7 @@ async function siapPeta() {
   }).join("");
   const info = $("petaInfo");
   gantiKepala($("petaKartu"), { ikon: "peta", topik: t("beranda.peta.k"), judulHtml: jud("beranda.ex.peta.j", angka(lok.length)), subHtml: esc(t("beranda.peta.d")), aksiHtml: aksiHtml() + sumberHtml(esc(t("beranda.peta.s", { tanggal: tanggal(pro.dibangun_pada) }))) });
-  info.innerHTML = `<button type="button" class="jm-bb-pp-t" aria-expanded="${panelBuka}"><span>${esc(t("beranda.peta.tabel"))}</span><i aria-hidden="true"></i></button><div class="jm-bb-pp-b"${panelBuka ? "" : " hidden"}><p class="jm-bb-fakta"><b>${esc(angka(lok.length))}</b> ${esc(t("beranda.peta.l.titik"))} <span aria-hidden="true">/</span> <b>${esc(angka(dataPeta.tanpa))}</b> ${esc(t("beranda.peta.l.tanpa"))}</p>
+  info.innerHTML = `<button type="button" class="jm-bb-pp-t" aria-expanded="${panelBuka}"><span>${esc(t("beranda.peta.tabel"))}</span><i aria-hidden="true"></i></button><div class="jm-bb-pp-b"${panelBuka ? "" : " hidden"}>
     <div class="jm-bb-prog-w"><ul class="jm-bb-prog-l">${baris}</ul></div></div>`;
   if (!info.dataset.pasang) {
     info.dataset.pasang = "1";
@@ -236,7 +237,7 @@ const bagus = (m, n = 4) => { const mentah = m / n, p = 10 ** Math.floor(Math.lo
 async function karbon() {
   const el = $("karbon");
   try {
-    const k = await muat("karbon");
+    const [k, wil, geo] = await Promise.all([muat("karbon"), muat("wilayah"), geoProvinsi()]);
     const p = k.baris.filter((x) => x.kelompok === "pembangkit" && x.emisi_tco2e > 0 && x.kapasitas_mw > 0);
     if (!p.length) { el.closest("section").hidden = true; return; }
     const urut = [...p].sort((a, b) => b.emisi_tco2e - a.emisi_tco2e), top = urut.slice(0, 14), tot = jml(p, (x) => x.emisi_tco2e), pct = (jml(top, (x) => x.emisi_tco2e) / tot) * 100;
@@ -246,27 +247,46 @@ async function karbon() {
     const gx = []; for (let i = x0; i <= x1; i++) gx.push(i);
     const gy = []; for (let v = 0; v <= ym / 1e6 + 1e-9; v += langkah) gy.push(v);
     const kelas = (x) => "jm-bb-f-" + (BAHAN.has(bahan(x)) ? bahan(x) : "lain");
+    const BK_IK = { coal: "jaringan", gas: "hidrogen", oil: "laut", biomass: "bioenergi", lain: "jaringan" };
+    const rd = (i) => (i < 5 ? 10 : 6.5);
+    const pos = top.map((x) => ({ x: X(x.kapasitas_mw), y: Y(x.emisi_tco2e) }));
+    // lingkaran 6-14 digeser kecil sampai tidak saling tindih (5 teratas tetap di tempatnya)
+    for (let it = 0; it < 60; it++) for (let i = 0; i < pos.length; i++) for (let j = i + 1; j < pos.length; j++) {
+      const dx = pos[j].x - pos[i].x, dy = pos[j].y - pos[i].y, d = Math.hypot(dx, dy) || 0.01, min = rd(i) + rd(j) + 1.5;
+      if (d >= min) continue;
+      const wi = i < 5 ? 0 : 1, wj = j < 5 ? 0 : 1, w = wi + wj || 1, m = (min - d + 0.05) / d;
+      pos[i].x -= (dx * m * wi) / w; pos[i].y -= (dy * m * wi) / w; pos[j].x += (dx * m * wj) / w; pos[j].y += (dy * m * wj) / w;
+    }
     const abu = urut.slice(14).map((x, i) => `<circle class="jm-bb-sc-abu" data-i="${i + 14}" cx="${X(x.kapasitas_mw).toFixed(1)}" cy="${Y(x.emisi_tco2e).toFixed(1)}" r="4"><title>${esc(pendek(x.nama, 60))}</title></circle>`).join("");
-    const OFF = [[34, -26], [34, 30], [-34, -26], [-34, 30], [0, -40]];
-    const titik = top.map((x, i) => {
-      const cx = X(x.kapasitas_mw), cy = Y(x.emisi_tco2e);
-      let lab = "";
-      if (i < 5) {
-        let [dx, dy] = OFF[i]; if (cx + dx > R - 90 && dx > 0) dx = -dx; if (cx + dx < L + 90 && dx < 0) dx = -dx;
-        const ex = cx + dx, ey = cy + dy, ur = Math.hypot(dx, dy), ax = cx + (dx / ur) * 10, ay = cy + (dy / ur) * 10;
-        lab = `<line class="jm-bb-sc-lead" x1="${ax.toFixed(1)}" y1="${ay.toFixed(1)}" x2="${ex.toFixed(1)}" y2="${ey.toFixed(1)}"/><text class="jm-bb-sc-nama" x="${(ex + (dx >= 0 ? 4 : -4)).toFixed(1)}" y="${(ey + 3.5).toFixed(1)}" text-anchor="${dx >= 0 ? "start" : "end"}">${esc(pendek(x.nama))}</text>`;
-      }
-      return `<g class="jm-bb-sc-g ${kelas(x)}" data-i="${i}" tabindex="0" role="img" aria-label="${esc(pendek(x.nama, 60))}">${lab}<circle class="jm-bb-sc-dot" cx="${cx.toFixed(1)}" cy="${cy.toFixed(1)}" r="10"/><text class="jm-bb-sc-no" x="${cx.toFixed(1)}" y="${(cy + 3.5).toFixed(1)}" text-anchor="middle">${i + 1}</text></g>`;
-    }).join("");
+    // label 5 teratas: coba kanan/kiri x geser vertikal sampai tidak menabrak label lain maupun lingkaran
+    const kotak = [], bentur = (q) => kotak.some((k) => q.x0 < k.x1 && q.x1 > k.x0 && q.y0 < k.y1 && q.y1 > k.y0) || pos.some((c, j) => c.x > q.x0 - rd(j) && c.x < q.x1 + rd(j) && c.y > q.y0 - rd(j) && c.y < q.y1 + rd(j)) || q.y0 < T - 14 || q.y1 > B || q.x0 < L || q.x1 > R + 6;
+    const labs = top.slice(0, 5).map((x, i) => {
+      const nm = pendek(x.nama), w = nm.length * 6.9, c = pos[i], cand = [];
+      for (const dy of [0, -18, 18, -36, 36, -54, 54]) for (const sisi of c.x + 16 + w < R ? [1, -1] : [-1, 1]) cand.push([sisi, dy]);
+      const x0s = (k) => (k[0] > 0 ? c.x + 16 : c.x - 16 - w);
+      const pil = cand.find((k) => !bentur({ x0: x0s(k), x1: x0s(k) + w, y0: c.y + k[1] - 8, y1: c.y + k[1] + 8 })) || cand[0], [sisi, dy] = pil;
+      kotak.push({ x0: x0s(pil), x1: x0s(pil) + w, y0: c.y + dy - 8, y1: c.y + dy + 8 });
+      const lead = dy ? `<line class="jm-bb-sc-lead" x1="${(c.x + sisi * 8).toFixed(1)}" y1="${(c.y + Math.sign(dy) * 6).toFixed(1)}" x2="${(c.x + sisi * 14).toFixed(1)}" y2="${(c.y + dy).toFixed(1)}"/>` : "";
+      return lead + `<text class="jm-bb-sc-nama" x="${(c.x + sisi * 16).toFixed(1)}" y="${(c.y + dy + 4).toFixed(1)}" text-anchor="${sisi > 0 ? "start" : "end"}">${esc(nm)}</text>`;
+    });
+    const titik = top.map((x, i) => `<g class="jm-bb-sc-g ${kelas(x)}" data-i="${i}"${x.organisasi_ids?.[0] ? ` data-p="${esc(x.organisasi_ids[0])}"` : ""} tabindex="0" role="img" aria-label="${esc(pendek(x.nama, 60))}">${i < 5 ? labs[i] : ""}<circle class="jm-bb-sc-dot" cx="${pos[i].x.toFixed(1)}" cy="${pos[i].y.toFixed(1)}" r="${rd(i)}"/><text class="jm-bb-sc-no${i < 5 ? "" : " jm-bb-sc-kecil"}" x="${pos[i].x.toFixed(1)}" y="${(pos[i].y + (i < 5 ? 3.5 : 3)).toFixed(1)}" text-anchor="middle">${i + 1}</text></g>`).join("");
     const grid = gx.map((i) => `<line class="jm-sc-bagi" x1="${X(10 ** i).toFixed(1)}" y1="${T}" x2="${X(10 ** i).toFixed(1)}" y2="${B}"/><text class="jm-sc-sb" x="${X(10 ** i).toFixed(1)}" y="${B + 18}" text-anchor="middle">${esc(angka(10 ** i))}</text>`).join("")
       + gy.map((v) => `<line class="jm-sc-bagi" x1="${L}" y1="${Y(v * 1e6).toFixed(1)}" x2="${R}" y2="${Y(v * 1e6).toFixed(1)}"/><text class="jm-sc-sb" x="${L - 8}" y="${(Y(v * 1e6) + 3).toFixed(1)}" text-anchor="end">${esc(angka(v, { desimal: langkah < 1 ? 1 : 0 }))}</text>`).join("");
-    const svg = `<svg class="jm-bb-sc" viewBox="0 0 700 420" role="group" aria-label="${esc(t("beranda.karbon.aria"))}"><line class="jm-sc-as" x1="${L}" y1="${B}" x2="${R}" y2="${B}"/><line class="jm-sc-as" x1="${L}" y1="${T}" x2="${L}" y2="${B}"/>${grid}<text class="jm-sc-sb" x="${L}" y="414">${esc(t("beranda.karbon.x"))}</text><text class="jm-sc-sb" x="${L}" y="16">${esc(t("beranda.karbon.y"))}</text>${abu}${titik}</svg>`;
-    const baris = (x, i) => `<li${i >= 8 ? ' class="jm-bb-lebih" hidden' : ""}><button type="button" class="jm-bb-em" data-i="${i}" aria-pressed="false"><span class="jm-bb-em-no ${kelas(x)}"><span>${i + 1}</span></span><span class="jm-bb-em-t"><strong>${esc(pendek(x.nama, 34))}</strong>, <span>${esc(label("beranda.karbon.j.", bahan(x)).toLowerCase())}</span></span><b>${esc(angka(x.emisi_tco2e / 1e6, { desimal: 1 }))} <small>Mt</small></b><svg class="jm-bb-em-bar ${kelas(x)}" viewBox="0 0 100 4" preserveAspectRatio="none" aria-hidden="true"><rect class="jm-bar-latar" width="100" height="4"/><rect class="jm-bar-isi" width="${Math.max(2, Math.round((x.emisi_tco2e / top[0].emisi_tco2e) * 100))}" height="4"/></svg></button></li>`;
+    const svg = `<svg class="jm-bb-sc" viewBox="0 0 700 420" role="group" aria-label="${esc(t("beranda.karbon.aria"))}"><line class="jm-sc-as" x1="${L}" y1="${B}" x2="${R}" y2="${B}"/><line class="jm-sc-as" x1="${L}" y1="${T}" x2="${L}" y2="${B}"/>${grid}<text class="jm-sc-sb" x="${(L + R) / 2}" y="414" text-anchor="middle">${esc(t("beranda.karbon.x"))}</text><text class="jm-sc-sb" x="${L}" y="16">${esc(t("beranda.karbon.y"))}</text>${abu}${titik}</svg>`;
+    const kodeProv = (x) => { if (!geo) return ""; let best = "", bd = 1e9; for (const f of geo.features) for (const po of f.geometry.type === "Polygon" ? [f.geometry.coordinates] : f.geometry.coordinates) { const r = po[0]; let c = false; for (let i = 0, j = r.length - 1; i < r.length; j = i++) { const [xi, yi] = r[i], [xj, yj] = r[j]; if ((yi > x.lat) !== (yj > x.lat) && x.lng < ((xj - xi) * (x.lat - yi)) / (yj - yi) + xi) c = !c; const d = Math.hypot(xi - x.lng, yi - x.lat); if (d < bd) { bd = d; best = f.properties.kode; } } if (c) return f.properties.kode; } return best; };
+    const namaProv = {}; for (const w of wil.baris) namaProv[w.kode] = w.nama;
+    const rows = top.map((x, i) => ({ x, i, kp: kodeProv(x) }));
+    const KOL = { no: (r) => r.i, nama: (r) => r.x.nama.toLowerCase(), prov: (r) => namaProv[r.kp] || "", mw: (r) => r.x.kapasitas_mw, mt: (r) => r.x.emisi_tco2e };
+    const sc = { k: "no", asc: true }, tampil = { buka: false }, SEL = 8;
+    const barisT = (r, n) => { const { x, i, kp } = r, bk = BAHAN.has(bahan(x)) ? bahan(x) : "lain", pid = x.organisasi_ids?.[0], nm = esc(pendek(x.nama, 34));
+      return `<tr data-i="${i}"${n >= SEL && !tampil.buka ? " hidden" : ""}><td class="jm-bb-tn">${i + 1}</td><td><span class="jm-id">${pid ? `<a href="/p/${esc(pid)}">${nm}</a>` : `<b>${nm}</b>`}<span class="jm-bb-pk jm-bb-f-${bk}">${IKON_TEK[BK_IK[bk]].replace('class="jm-ikt"', 'class="jm-ikt jm-ikt-s"')}<span>${esc(label("beranda.karbon.j.", bk))}</span></span></span></td><td class="jm-bb-tp">${kp ? `<img src="/img/provinsi/${esc(kp)}.png" width="18" height="18" alt="" loading="lazy" decoding="async">` : ""}<span>${esc(namaProv[kp] || "-")}</span></td><td class="jm-num">${esc(angka(x.kapasitas_mw))}</td><td class="jm-num"><b>${esc(angka(x.emisi_tco2e / 1e6, { desimal: 1 }))}</b></td></tr>`; };
+    const isiBody = () => [...rows].sort((p, q) => { const a = KOL[sc.k](p), b = KOL[sc.k](q); return (a < b ? -1 : a > b ? 1 : 0) * (sc.asc ? 1 : -1); }).map(barisT).join("");
+    const kepala = [["no", "c.no", ""], ["nama", "c.nama", ""], ["prov", "c.prov", ""], ["mw", "c.mw", "jm-num"], ["mt", "c.mt", "jm-num"]].map(([k, c]) => `<th scope="col" aria-sort="${sc.k === k ? (sc.asc ? "ascending" : "descending") : "none"}"><button type="button" class="jm-urut" data-k="${k}">${esc(t("beranda.karbon." + c))}</button></th>`).join("");
     const fakta = (n, l, est) => `<div><b>${esc(n)}</b><span>${esc(t(l))}${est ? ' <span class="jm-pil jm-pil-est">EST</span>' : ""}</span></div>`;
     const jenisAda = [...new Set(top.map(bahan))].filter((b) => BAHAN.has(b));
     const isi = `<div class="jm-bb-karbon-g"><div class="jm-bb-kol">
-      <h4 class="jm-bb-h4">${esc(t("beranda.karbon.tabel"))}</h4><ol class="jm-bb-em-l">${top.map(baris).join("")}</ol>
-      <button type="button" class="jm-bb-lebih-t" aria-expanded="false" data-buka="${esc(t("beranda.karbon.lainnya", { n: angka(top.length - 8) }))}" data-tutup="${esc(t("beranda.karbon.ringkas"))}">${esc(t("beranda.karbon.lainnya", { n: angka(top.length - 8) }))}</button></div>
+      <h4 class="jm-bb-h4">${esc(t("beranda.karbon.tabel"))}</h4><div class="jm-gulir jm-bb-tabel"><table class="jm-tabel"><thead><tr>${kepala}</tr></thead><tbody>${isiBody()}</tbody></table></div>
+      <button type="button" class="jm-bb-lebih-t" aria-expanded="false" data-buka="${esc(t("beranda.karbon.lainnya", { n: angka(top.length - SEL) }))}" data-tutup="${esc(t("beranda.karbon.ringkas"))}">${esc(t("beranda.karbon.lainnya", { n: angka(top.length - SEL) }))}</button></div>
       <div class="jm-bb-kol jm-bb-kanan"><div class="jm-bb-kpi"><div class="jm-bb-kpi-b"><b>${esc(angka(pct, { desimal: 0 }))}%</b><span>${esc(t("beranda.karbon.wawasan", { n: angka(top.length), total: angka(p.length) }))}</span></div><div class="jm-bb-kpi-f">${fakta(angka(p.length), "beranda.karbon.l.n")}${fakta(angka(jml(p, (x) => x.kapasitas_mw) / 1000, { desimal: 1 }), "beranda.karbon.l.gw")}${fakta(angka(tot / 1e6, { desimal: 1 }), "beranda.karbon.l.mt", 1)}</div></div>
       <div class="jm-bb-sc-w">${svg}<div class="jm-bb-tip" hidden></div></div>
       <div class="jm-bb-leg" role="list">${jenisAda.map((b) => `<span role="listitem"><i class="jm-bb-f-${b}"></i>${esc(label("beranda.karbon.j.", b))}</span>`).join("")}<span role="listitem"><i class="jm-bb-sc-abu"></i>${esc(t("beranda.karbon.leg.lain", { n: angka(p.length - 14) }))}</span><small>${esc(t("beranda.karbon.leg.label"))}</small></div></div></div>`;
@@ -277,10 +297,14 @@ async function karbon() {
     const tunjuk = (g) => { const x = urut[+g.dataset.i]; tip.innerHTML = info(x); tip.hidden = false; const a = g.getBoundingClientRect(), w = wrap.getBoundingClientRect(); tip.style.left = Math.min(Math.max(8, a.left - w.left + a.width / 2 - tip.offsetWidth / 2), w.width - tip.offsetWidth - 8) + "px"; tip.style.top = Math.max(8, a.top - w.top - tip.offsetHeight - 8) + "px"; };
     el.onpointerover = el.onfocusin = (e) => { const n = e.target.closest?.("[data-i]"); if (!n) return; sorot(n.dataset.i, true); if (n.closest("svg")) tunjuk(n); };
     el.onpointerout = el.onfocusout = (e) => { const n = e.target.closest?.("[data-i]"); if (!n) return; sorot(n.dataset.i, false); tip.hidden = true; };
+    const gambarUlang = () => { el.querySelector("tbody").innerHTML = isiBody(); };
+    const buka = (g) => { const id = g?.dataset.p; if (id) location.href = "/p/" + encodeURIComponent(id); };
+    el.onkeydown = (e) => { if (e.key === "Enter") buka(e.target.closest?.(".jm-bb-sc-g")); };
     el.onclick = (e) => {
       const b = e.target.closest(".jm-bb-lebih-t");
-      if (b) { const buka = b.getAttribute("aria-expanded") !== "true"; b.setAttribute("aria-expanded", String(buka)); b.textContent = buka ? b.dataset.tutup : b.dataset.buka; nanti(() => el.querySelectorAll(".jm-bb-lebih").forEach((li) => { li.hidden = !buka; })); return; }
-      const r = e.target.closest(".jm-bb-em"); if (r) r.setAttribute("aria-pressed", String(r.getAttribute("aria-pressed") !== "true"));
+      if (b) { tampil.buka = b.getAttribute("aria-expanded") !== "true"; b.setAttribute("aria-expanded", String(tampil.buka)); b.textContent = tampil.buka ? b.dataset.tutup : b.dataset.buka; nanti(gambarUlang); return; }
+      const u = e.target.closest(".jm-urut"); if (u) { const k = u.dataset.k; sc.asc = sc.k === k ? !sc.asc : k !== "mw" && k !== "mt"; sc.k = k; u.closest("tr").querySelectorAll("th").forEach((th) => th.setAttribute("aria-sort", th === u.parentNode ? (sc.asc ? "ascending" : "descending") : "none")); nanti(gambarUlang); return; }
+      buka(e.target.closest(".jm-bb-sc-g"));
     };
   } catch (e) { sembunyi(el, e); }
 }

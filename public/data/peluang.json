@@ -1,0 +1,5744 @@
+{
+ "meta": {
+  "diperbarui": "2026-11-07",
+  "jumlah": 38,
+  "proyek_tanpa_provinsi": 95,
+  "definisi_tanpa_pengembang": "status proyek \"rencana\" dan tidak ada pemilik, atau pemilik hanya label generik \"IPP\" (RUPTL); proyek tanpa provinsi atau tanpa status tidak dihitung",
+  "catatan": "Potensi RUEN bertahun data 2015 (34 provinsi); hidro RUEN per kelompok wilayah (null per provinsi bila kelompok); Papua/Papua Barat induk tidak dibagi ke provinsi pemekaran. Terpasang dan rasio dari HEESI 2025. BPP belum tersedia (null). Mikrohidro terpasang tidak dipisah dari hidro. Laut: potensi praktis RUEN, tanpa terpasang.",
+  "celah": [
+   "bpp"
+  ]
+ },
+ "sumber": [
+  {
+   "id": "ruen",
+   "judul": "Rencana Umum Energi Nasional (Perpres 22/2017), Lampiran I: Tabel 37, 40, 42, 44, 46, 48",
+   "penerbit": "Pemerintah RI (Sekretariat Negara/DEN)",
+   "tahun": 2017,
+   "url": "https://peraturan.bpk.go.id/Details/68772",
+   "catatan": "Angka potensi tahun data 2015, 34 provinsi sebelum pemekaran Papua."
+  },
+  {
+   "id": "heesi2025",
+   "judul": "Handbook of Energy and Economic Statistics of Indonesia 2025: Tabel 6.4.9 (kapasitas terpasang) dan 6.5.1 (potensi panas bumi)",
+   "penerbit": "Kementerian ESDM",
+   "tahun": 2025,
+   "url": "https://www.esdm.go.id/assets/media/content/content-handbook-of-energy-and-economic-statistics-of-indonesia-2025.pdf"
+  },
+  {
+   "id": "perpres112",
+   "judul": "Perpres 112/2022 tentang Percepatan Pengembangan Energi Terbarukan untuk Penyediaan Tenaga Listrik, Lampiran I dan II",
+   "penerbit": "Pemerintah RI (Sekretariat Negara)",
+   "tahun": 2022,
+   "url": "https://peraturan.bpk.go.id/Details/225308"
+  },
+  {
+   "id": "proyek-meti",
+   "judul": "Direktori proyek EBT METI (public/data/proyek.json; sumber per proyek di berkasnya)",
+   "penerbit": "Jaringan METI",
+   "tahun": 2026,
+   "url": "https://platformmeti.timitbnpb.workers.dev/data/proyek.json"
+  }
+ ],
+ "harga_patokan": {
+  "sumber_id": "perpres112",
+  "tahun": 2022,
+  "satuan": "sen USD/kWh",
+  "catatan": "Tahun ke-1 s.d. 10 = koefisien x F (F per Lampiran II); tahun ke-11 dst = nilai tetap tanpa F. Ditranskripsi dari pdftotext (OCR) dan dicek visual untuk Lampiran II. Laut/arus/gelombang tidak diatur Perpres 112/2022.",
+  "teknologi": {
+   "hidro": {
+    "jenis": "PLTA aliran/terjunan air",
+    "tahun_maks": 30,
+    "tingkat": [
+     {
+      "kapasitas": "s.d. 1 MW",
+      "koef_1_10": 11.23,
+      "tahun_11_dst": 7.02
+     },
+     {
+      "kapasitas": ">1 MW s.d. 3 MW",
+      "koef_1_10": 10.92,
+      "tahun_11_dst": 6.82
+     },
+     {
+      "kapasitas": ">3 MW s.d. 5 MW",
+      "koef_1_10": 9.65,
+      "tahun_11_dst": 6.03
+     },
+     {
+      "kapasitas": ">5 MW s.d. 20 MW",
+      "koef_1_10": 9.09,
+      "tahun_11_dst": 5.68
+     },
+     {
+      "kapasitas": ">20 MW s.d. 50 MW",
+      "koef_1_10": 8.86,
+      "tahun_11_dst": 5.54
+     },
+     {
+      "kapasitas": ">50 MW s.d. 100 MW",
+      "koef_1_10": 7.81,
+      "tahun_11_dst": 4.88
+     },
+     {
+      "kapasitas": ">100 MW",
+      "koef_1_10": 6.74,
+      "tahun_11_dst": 4.21
+     }
+    ],
+    "varian": [
+     {
+      "nama": "waduk/bendungan atau irigasi Kementerian PUPR (multiguna)",
+      "pengali": 0.8
+     },
+     {
+      "nama": "PLTA ekspansi",
+      "pengali": 0.7
+     },
+     {
+      "nama": "excess power",
+      "tetap": 4.06
+     },
+     {
+      "nama": "dibangun seluruhnya oleh pemerintah",
+      "tetap": 3.76
+     }
+    ]
+   },
+   "mikrohidro": {
+    "jenis": "diatur lewat tingkat PLTA kapasitas kecil (s.d. 1 MW dan >1 MW s.d. 3 MW); Perpres 112/2022 tidak punya kelas mikrohidro tersendiri",
+    "rujuk": "hidro",
+    "tingkat_rujukan": [
+     "s.d. 1 MW",
+     ">1 MW s.d. 3 MW",
+     ">3 MW s.d. 5 MW"
+    ]
+   },
+   "surya": {
+    "jenis": "PLTS fotovoltaik (di luar baterai)",
+    "tahun_maks": 30,
+    "tingkat": [
+     {
+      "kapasitas": "s.d. 1 MW",
+      "koef_1_10": 11.47,
+      "tahun_11_dst": 6.88
+     },
+     {
+      "kapasitas": ">1 MW s.d. 3 MW",
+      "koef_1_10": 9.94,
+      "tahun_11_dst": 5.97
+     },
+     {
+      "kapasitas": ">3 MW s.d. 5 MW",
+      "koef_1_10": 8.77,
+      "tahun_11_dst": 5.26
+     },
+     {
+      "kapasitas": ">5 MW s.d. 10 MW",
+      "koef_1_10": 8.26,
+      "tahun_11_dst": 4.96
+     },
+     {
+      "kapasitas": ">10 MW s.d. 20 MW",
+      "koef_1_10": 7.94,
+      "tahun_11_dst": 4.76
+     },
+     {
+      "kapasitas": ">20 MW",
+      "koef_1_10": 6.95,
+      "tahun_11_dst": 4.17
+     }
+    ],
+    "varian": [
+     {
+      "nama": "PLTS ekspansi",
+      "pengali": 0.8
+     },
+     {
+      "nama": "lahan disediakan pemerintah",
+      "pengali": 0.95
+     },
+     {
+      "nama": "dibangun seluruhnya oleh pemerintah",
+      "tetap": 5.63
+     }
+    ]
+   },
+   "bayu": {
+    "jenis": "PLTB (di luar baterai)",
+    "tahun_maks": 30,
+    "tingkat": [
+     {
+      "kapasitas": "s.d. 5 MW",
+      "koef_1_10": 11.22,
+      "tahun_11_dst": 6.73
+     },
+     {
+      "kapasitas": ">5 MW s.d. 20 MW",
+      "koef_1_10": 10.26,
+      "tahun_11_dst": 6.15
+     },
+     {
+      "kapasitas": ">20 MW",
+      "koef_1_10": 9.54,
+      "tahun_11_dst": 5.73
+     }
+    ],
+    "varian": [
+     {
+      "nama": "PLTB ekspansi",
+      "pengali": 0.7
+     },
+     {
+      "nama": "dibangun seluruhnya oleh pemerintah",
+      "tetap": 5.63
+     }
+    ]
+   },
+   "bioenergi": {
+    "jenis": "PLTBm (biomassa) dan PLTBg (biogas)",
+    "tahun_maks": {
+     "PLTBm": 25,
+     "PLTBg": 20
+    },
+    "tingkat": [
+     {
+      "jenis": "PLTBm",
+      "kapasitas": "s.d. 1 MW",
+      "koef_1_10": 11.55,
+      "tahun_11_dst": 9.24
+     },
+     {
+      "jenis": "PLTBm",
+      "kapasitas": ">1 MW s.d. 3 MW",
+      "koef_1_10": 10.73,
+      "tahun_11_dst": 8.59
+     },
+     {
+      "jenis": "PLTBm",
+      "kapasitas": ">3 MW s.d. 5 MW",
+      "koef_1_10": 10.2,
+      "tahun_11_dst": 8.16
+     },
+     {
+      "jenis": "PLTBm",
+      "kapasitas": ">5 MW s.d. 10 MW",
+      "koef_1_10": 9.86,
+      "tahun_11_dst": 7.89
+     },
+     {
+      "jenis": "PLTBm",
+      "kapasitas": ">10 MW",
+      "koef_1_10": 9.29,
+      "tahun_11_dst": 7.43
+     },
+     {
+      "jenis": "PLTBg",
+      "kapasitas": "s.d. 1 MW",
+      "koef_1_10": 10.18,
+      "tahun_11_dst": 6.11
+     },
+     {
+      "jenis": "PLTBg",
+      "kapasitas": ">1 MW s.d. 3 MW",
+      "koef_1_10": 9.81,
+      "tahun_11_dst": 5.89
+     },
+     {
+      "jenis": "PLTBg",
+      "kapasitas": ">3 MW s.d. 5 MW",
+      "koef_1_10": 8.99,
+      "tahun_11_dst": 5.39
+     },
+     {
+      "jenis": "PLTBg",
+      "kapasitas": ">5 MW s.d. 10 MW",
+      "koef_1_10": 8.51,
+      "tahun_11_dst": 5.1
+     },
+     {
+      "jenis": "PLTBg",
+      "kapasitas": ">10 MW",
+      "koef_1_10": 7.44,
+      "tahun_11_dst": 4.46
+     }
+    ],
+    "varian": [
+     {
+      "nama": "ekspansi",
+      "pengali": 0.8
+     },
+     {
+      "nama": "excess power",
+      "tetap": {
+       "PLTBm": 9.29,
+       "PLTBg": 7.44
+      }
+     },
+     {
+      "nama": "dibangun seluruhnya oleh pemerintah",
+      "tetap": {
+       "PLTBm": 9.29,
+       "PLTBg": 7.44
+      }
+     }
+    ]
+   },
+   "panas_bumi": {
+    "jenis": "PLTP (listrik)",
+    "tahun_maks": 30,
+    "tingkat": [
+     {
+      "kapasitas": "s.d. 10 MW",
+      "koef_1_10": 9.76,
+      "tahun_11_dst": 8.3
+     },
+     {
+      "kapasitas": ">10 MW s.d. 50 MW",
+      "koef_1_10": 9.41,
+      "tahun_11_dst": 8
+     },
+     {
+      "kapasitas": ">50 MW s.d. 100 MW",
+      "koef_1_10": 8.64,
+      "tahun_11_dst": 7.35
+     },
+     {
+      "kapasitas": ">100 MW",
+      "koef_1_10": 7.65,
+      "tahun_11_dst": 6.5
+     }
+    ],
+    "varian": [
+     {
+      "nama": "uap setara listrik",
+      "tingkat": [
+       {
+        "kapasitas": "s.d. 10 MW",
+        "koef_1_10": 6.6,
+        "tahun_11_dst": 5.6
+       },
+       {
+        "kapasitas": ">10 MW s.d. 50 MW",
+        "koef_1_10": 6.25,
+        "tahun_11_dst": 5.31
+       },
+       {
+        "kapasitas": ">50 MW s.d. 100 MW",
+        "koef_1_10": 5.48,
+        "tahun_11_dst": 4.65
+       },
+       {
+        "kapasitas": ">100 MW",
+        "koef_1_10": 4.48,
+        "tahun_11_dst": 3.91
+       }
+      ]
+     }
+    ]
+   },
+   "laut": null
+  },
+  "faktor_lokasi": [
+   {
+    "wilayah": "Jawa, Madura, Bali",
+    "F": 1
+   },
+   {
+    "wilayah": "Sumatera",
+    "F": 1.1
+   },
+   {
+    "wilayah": "Kepulauan Riau",
+    "F": 1.2
+   },
+   {
+    "wilayah": "Bangka Belitung",
+    "F": 1.1
+   },
+   {
+    "wilayah": "Kalimantan",
+    "F": 1.1
+   },
+   {
+    "wilayah": "Sulawesi",
+    "F": 1.1
+   },
+   {
+    "wilayah": "Nusa Tenggara",
+    "F": 1.2
+   },
+   {
+    "wilayah": "Maluku Utara",
+    "F": 1.25
+   },
+   {
+    "wilayah": "Maluku",
+    "F": 1.25
+   },
+   {
+    "wilayah": "Papua Barat",
+    "F": 1.5
+   },
+   {
+    "wilayah": "Papua",
+    "F": 1.5
+   }
+  ],
+  "faktor_lokasi_kecil": "Pulau kecil dan Mentawai punya F lebih tinggi (1,10 s.d. 1,30); tidak dipetakan ke provinsi karena butuh daftar pulau."
+ },
+ "baris": [
+  {
+   "kode": "11",
+   "nama": "Aceh",
+   "potensi": {
+    "surya": {
+     "mw": 7881,
+     "tahun": 2015,
+     "sumber_id": "ruen",
+     "halaman": "Tabel 44 hlm 77"
+    },
+    "bayu": {
+     "mw": 894,
+     "tahun": 2015,
+     "sumber_id": "ruen",
+     "halaman": "Tabel 46 hlm 80"
+    },
+    "mikrohidro": {
+     "mw": 1538,
+     "tahun": 2015,
+     "sumber_id": "ruen",
+     "halaman": "Tabel 40 (minihidro + mikrohidro) hlm 72"
+    },
+    "bioenergi": {
+     "mw": 1174.3,
+     "tahun": 2015,
+     "sumber_id": "ruen",
+     "halaman": "Tabel 42 (biomassa/biofuel + biogas) hlm 74"
+    },
+    "hidro": {
+     "mw": 5062,
+     "tahun": 2015,
+     "sumber_id": "ruen",
+     "halaman": "Tabel 37 (PLTA per wilayah) hlm 69"
+    },
+    "panas_bumi": {
+     "mw": 1031,
+     "tahun": 2025,
+     "sumber_id": "heesi2025",
+     "halaman": "Tabel 6.5.1 hlm 120-121 (sumber daya + cadangan, Badan Geologi per Des 2025)"
+    },
+    "laut": {
+     "mw": null,
+     "tahun": 2015,
+     "sumber_id": "ruen",
+     "catatan": "tidak tercantum di tabel RUEN untuk provinsi ini"
+    }
+   },
+   "terpasang": {
+    "hidro": {
+     "mw": 37.85,
+     "tahun": 2025,
+     "sumber_id": "heesi2025",
+     "halaman": "Tabel 6.4.9 hlm 118"
+    },
+    "panas_bumi": {
+     "mw": 0,
+     "tahun": 2025,
+     "sumber_id": "heesi2025",
+     "halaman": "Tabel 6.4.9 hlm 118"
+    },
+    "surya": {
+     "mw": 1.46,
+     "tahun": 2025,
+     "sumber_id": "heesi2025",
+     "halaman": "Tabel 6.4.9 hlm 118"
+    },
+    "bayu": {
+     "mw": 0,
+     "tahun": 2025,
+     "sumber_id": "heesi2025",
+     "halaman": "Tabel 6.4.9 hlm 118"
+    },
+    "bioenergi": {
+     "mw": 25.1,
+     "tahun": 2025,
+     "sumber_id": "heesi2025",
+     "halaman": "Tabel 6.4.9 hlm 118"
+    },
+    "mikrohidro": {
+     "mw": null,
+     "tahun": null,
+     "sumber_id": "heesi2025",
+     "catatan": "HEESI menggabung PLTA dan PLTM/H dalam satu kolom (lihat hidro)"
+    },
+    "laut": {
+     "mw": null,
+     "tahun": null,
+     "sumber_id": "heesi2025",
+     "catatan": "tidak ada kapasitas terpasang listrik laut di HEESI"
+    }
+   },
+   "rasio_pemanfaatan": {
+    "hidro": {
+     "persen": 0.57,
+     "penyebut_mw": 6600,
+     "catatan": "terpasang 2025 (HEESI) / potensi 2015 (RUEN): beda tahun, indikasi saja"
+    },
+    "panas_bumi": {
+     "persen": 0,
+     "penyebut_mw": 1031,
+     "catatan": "terpasang 2025 / potensi 2025 (HEESI)"
+    },
+    "surya": {
+     "persen": 0.02,
+     "penyebut_mw": 7881,
+     "catatan": "terpasang 2025 (HEESI) / potensi 2015 (RUEN): beda tahun, indikasi saja"
+    },
+    "bayu": {
+     "persen": 0,
+     "penyebut_mw": 894,
+     "catatan": "terpasang 2025 (HEESI) / potensi 2015 (RUEN): beda tahun, indikasi saja"
+    },
+    "bioenergi": {
+     "persen": 2.14,
+     "penyebut_mw": 1174.3,
+     "catatan": "terpasang 2025 (HEESI) / potensi 2015 (RUEN): beda tahun, indikasi saja"
+    }
+   },
+   "bpp": {
+    "rp_per_kwh": null,
+    "sistem": null,
+    "tahun": null,
+    "sumber_id": null,
+    "catatan": "Kepmen ESDM BPP pembangkitan terbaru belum terambil (jdih.esdm.go.id menolak klien otomatis); isi manual dari Kepmen resmi"
+   },
+   "faktor_lokasi": {
+    "F": 1.1,
+    "wilayah": "Sumatera",
+    "sumber_id": "perpres112",
+    "catatan": "F pulau kecil/Mentawai lebih tinggi; tidak dipetakan"
+   },
+   "proyek": {
+    "rencana": 7,
+    "rencana_tanpa_pengembang": 4,
+    "mw_rencana_tanpa_pengembang": 220.3,
+    "sumber_id": "proyek-meti"
+   }
+  },
+  {
+   "kode": "12",
+   "nama": "Sumatera Utara",
+   "potensi": {
+    "surya": {
+     "mw": 11851,
+     "tahun": 2015,
+     "sumber_id": "ruen",
+     "halaman": "Tabel 44 hlm 77"
+    },
+    "bayu": {
+     "mw": 356,
+     "tahun": 2015,
+     "sumber_id": "ruen",
+     "halaman": "Tabel 46 hlm 80"
+    },
+    "mikrohidro": {
+     "mw": 1204,
+     "tahun": 2015,
+     "sumber_id": "ruen",
+     "halaman": "Tabel 40 (minihidro + mikrohidro) hlm 72"
+    },
+    "bioenergi": {
+     "mw": 2911.6,
+     "tahun": 2015,
+     "sumber_id": "ruen",
+     "halaman": "Tabel 42 (biomassa/biofuel + biogas) hlm 74"
+    },
+    "hidro": {
+     "mw": 3808,
+     "tahun": 2015,
+     "sumber_id": "ruen",
+     "halaman": "Tabel 37 (PLTA per wilayah) hlm 69"
+    },
+    "panas_bumi": {
+     "mw": 1866,
+     "tahun": 2025,
+     "sumber_id": "heesi2025",
+     "halaman": "Tabel 6.5.1 hlm 120-121 (sumber daya + cadangan, Badan Geologi per Des 2025)"
+    },
+    "laut": {
+     "mw": null,
+     "tahun": 2015,
+     "sumber_id": "ruen",
+     "catatan": "tidak tercantum di tabel RUEN untuk provinsi ini"
+    }
+   },
+   "terpasang": {
+    "hidro": {
+     "mw": 1398.03,
+     "tahun": 2025,
+     "sumber_id": "heesi2025",
+     "halaman": "Tabel 6.4.9 hlm 118"
+    },
+    "panas_bumi": {
+     "mw": 710.54,
+     "tahun": 2025,
+     "sumber_id": "heesi2025",
+     "halaman": "Tabel 6.4.9 hlm 118"
+    },
+    "surya": {
+     "mw": 17.34,
+     "tahun": 2025,
+     "sumber_id": "heesi2025",
+     "halaman": "Tabel 6.4.9 hlm 118"
+    },
+    "bayu": {
+     "mw": 0,
+     "tahun": 2025,
+     "sumber_id": "heesi2025",
+     "halaman": "Tabel 6.4.9 hlm 118"
+    },
+    "bioenergi": {
+     "mw": 398.18,
+     "tahun": 2025,
+     "sumber_id": "heesi2025",
+     "halaman": "Tabel 6.4.9 hlm 118"
+    },
+    "mikrohidro": {
+     "mw": null,
+     "tahun": null,
+     "sumber_id": "heesi2025",
+     "catatan": "HEESI menggabung PLTA dan PLTM/H dalam satu kolom (lihat hidro)"
+    },
+    "laut": {
+     "mw": null,
+     "tahun": null,
+     "sumber_id": "heesi2025",
+     "catatan": "tidak ada kapasitas terpasang listrik laut di HEESI"
+    }
+   },
+   "rasio_pemanfaatan": {
+    "hidro": {
+     "persen": 27.89,
+     "penyebut_mw": 5012,
+     "catatan": "terpasang 2025 (HEESI) / potensi 2015 (RUEN): beda tahun, indikasi saja"
+    },
+    "panas_bumi": {
+     "persen": 38.08,
+     "penyebut_mw": 1866,
+     "catatan": "terpasang 2025 / potensi 2025 (HEESI)"
+    },
+    "surya": {
+     "persen": 0.15,
+     "penyebut_mw": 11851,
+     "catatan": "terpasang 2025 (HEESI) / potensi 2015 (RUEN): beda tahun, indikasi saja"
+    },
+    "bayu": {
+     "persen": 0,
+     "penyebut_mw": 356,
+     "catatan": "terpasang 2025 (HEESI) / potensi 2015 (RUEN): beda tahun, indikasi saja"
+    },
+    "bioenergi": {
+     "persen": 13.68,
+     "penyebut_mw": 2911.6,
+     "catatan": "terpasang 2025 (HEESI) / potensi 2015 (RUEN): beda tahun, indikasi saja"
+    }
+   },
+   "bpp": {
+    "rp_per_kwh": null,
+    "sistem": null,
+    "tahun": null,
+    "sumber_id": null,
+    "catatan": "Kepmen ESDM BPP pembangkitan terbaru belum terambil (jdih.esdm.go.id menolak klien otomatis); isi manual dari Kepmen resmi"
+   },
+   "faktor_lokasi": {
+    "F": 1.1,
+    "wilayah": "Sumatera",
+    "sumber_id": "perpres112",
+    "catatan": "F pulau kecil/Mentawai lebih tinggi; tidak dipetakan"
+   },
+   "proyek": {
+    "rencana": 10,
+    "rencana_tanpa_pengembang": 7,
+    "mw_rencana_tanpa_pengembang": 218.8,
+    "sumber_id": "proyek-meti"
+   }
+  },
+  {
+   "kode": "13",
+   "nama": "Sumatera Barat",
+   "potensi": {
+    "surya": {
+     "mw": 5898,
+     "tahun": 2015,
+     "sumber_id": "ruen",
+     "halaman": "Tabel 44 hlm 77"
+    },
+    "bayu": {
+     "mw": 428,
+     "tahun": 2015,
+     "sumber_id": "ruen",
+     "halaman": "Tabel 46 hlm 80"
+    },
+    "mikrohidro": {
+     "mw": 1353,
+     "tahun": 2015,
+     "sumber_id": "ruen",
+     "halaman": "Tabel 40 (minihidro + mikrohidro) hlm 72"
+    },
+    "bioenergi": {
+     "mw": 957.8,
+     "tahun": 2015,
+     "sumber_id": "ruen",
+     "halaman": "Tabel 42 (biomassa/biofuel + biogas) hlm 74"
+    },
+    "hidro": {
+     "mw": null,
+     "tahun": 2015,
+     "sumber_id": "ruen",
+     "halaman": "Tabel 37 (PLTA per wilayah) hlm 69",
+     "catatan": "RUEN hanya memberi total kelompok Sumatera Barat, Riau (3607 MW); tidak dipisah per provinsi",
+     "kelompok_mw": 3607
+    },
+    "panas_bumi": {
+     "mw": 1648,
+     "tahun": 2025,
+     "sumber_id": "heesi2025",
+     "halaman": "Tabel 6.5.1 hlm 120-121 (sumber daya + cadangan, Badan Geologi per Des 2025)"
+    },
+    "laut": {
+     "mw": null,
+     "tahun": 2015,
+     "sumber_id": "ruen",
+     "catatan": "tidak tercantum di tabel RUEN untuk provinsi ini"
+    }
+   },
+   "terpasang": {
+    "hidro": {
+     "mw": 323.69,
+     "tahun": 2025,
+     "sumber_id": "heesi2025",
+     "halaman": "Tabel 6.4.9 hlm 118"
+    },
+    "panas_bumi": {
+     "mw": 89.25,
+     "tahun": 2025,
+     "sumber_id": "heesi2025",
+     "halaman": "Tabel 6.4.9 hlm 118"
+    },
+    "surya": {
+     "mw": 3.38,
+     "tahun": 2025,
+     "sumber_id": "heesi2025",
+     "halaman": "Tabel 6.4.9 hlm 118"
+    },
+    "bayu": {
+     "mw": 0,
+     "tahun": 2025,
+     "sumber_id": "heesi2025",
+     "halaman": "Tabel 6.4.9 hlm 118"
+    },
+    "bioenergi": {
+     "mw": 82.97,
+     "tahun": 2025,
+     "sumber_id": "heesi2025",
+     "halaman": "Tabel 6.4.9 hlm 118"
+    },
+    "mikrohidro": {
+     "mw": null,
+     "tahun": null,
+     "sumber_id": "heesi2025",
+     "catatan": "HEESI menggabung PLTA dan PLTM/H dalam satu kolom (lihat hidro)"
+    },
+    "laut": {
+     "mw": null,
+     "tahun": null,
+     "sumber_id": "heesi2025",
+     "catatan": "tidak ada kapasitas terpasang listrik laut di HEESI"
+    }
+   },
+   "rasio_pemanfaatan": {
+    "hidro": {
+     "persen": null,
+     "penyebut_mw": null,
+     "catatan": "potensi per provinsi tidak tersedia"
+    },
+    "panas_bumi": {
+     "persen": 5.42,
+     "penyebut_mw": 1648,
+     "catatan": "terpasang 2025 / potensi 2025 (HEESI)"
+    },
+    "surya": {
+     "persen": 0.06,
+     "penyebut_mw": 5898,
+     "catatan": "terpasang 2025 (HEESI) / potensi 2015 (RUEN): beda tahun, indikasi saja"
+    },
+    "bayu": {
+     "persen": 0,
+     "penyebut_mw": 428,
+     "catatan": "terpasang 2025 (HEESI) / potensi 2015 (RUEN): beda tahun, indikasi saja"
+    },
+    "bioenergi": {
+     "persen": 8.66,
+     "penyebut_mw": 957.8,
+     "catatan": "terpasang 2025 (HEESI) / potensi 2015 (RUEN): beda tahun, indikasi saja"
+    }
+   },
+   "bpp": {
+    "rp_per_kwh": null,
+    "sistem": null,
+    "tahun": null,
+    "sumber_id": null,
+    "catatan": "Kepmen ESDM BPP pembangkitan terbaru belum terambil (jdih.esdm.go.id menolak klien otomatis); isi manual dari Kepmen resmi"
+   },
+   "faktor_lokasi": {
+    "F": 1.1,
+    "wilayah": "Sumatera",
+    "sumber_id": "perpres112",
+    "catatan": "F pulau kecil/Mentawai lebih tinggi; tidak dipetakan"
+   },
+   "proyek": {
+    "rencana": 6,
+    "rencana_tanpa_pengembang": 5,
+    "mw_rencana_tanpa_pengembang": 210.3,
+    "sumber_id": "proyek-meti"
+   }
+  },
+  {
+   "kode": "14",
+   "nama": "Riau",
+   "potensi": {
+    "surya": {
+     "mw": 753,
+     "tahun": 2015,
+     "sumber_id": "ruen",
+     "halaman": "Tabel 44 hlm 77"
+    },
+    "bayu": {
+     "mw": 22,
+     "tahun": 2015,
+     "sumber_id": "ruen",
+     "halaman": "Tabel 46 hlm 80"
+    },
+    "mikrohidro": {
+     "mw": 284,
+     "tahun": 2015,
+     "sumber_id": "ruen",
+     "halaman": "Tabel 40 (minihidro + mikrohidro) hlm 72"
+    },
+    "bioenergi": {
+     "mw": 4195.1,
+     "tahun": 2015,
+     "sumber_id": "ruen",
+     "halaman": "Tabel 42 (biomassa/biofuel + biogas) hlm 74"
+    },
+    "hidro": {
+     "mw": null,
+     "tahun": 2015,
+     "sumber_id": "ruen",
+     "halaman": "Tabel 37 (PLTA per wilayah) hlm 69",
+     "catatan": "RUEN hanya memberi total kelompok Sumatera Barat, Riau (3607 MW); tidak dipisah per provinsi",
+     "kelompok_mw": 3607
+    },
+    "panas_bumi": {
+     "mw": 45,
+     "tahun": 2025,
+     "sumber_id": "heesi2025",
+     "halaman": "Tabel 6.5.1 hlm 120-121 (sumber daya + cadangan, Badan Geologi per Des 2025)"
+    },
+    "laut": {
+     "mw": null,
+     "tahun": 2015,
+     "sumber_id": "ruen",
+     "catatan": "tidak tercantum di tabel RUEN untuk provinsi ini"
+    }
+   },
+   "terpasang": {
+    "hidro": {
+     "mw": 114.06,
+     "tahun": 2025,
+     "sumber_id": "heesi2025",
+     "halaman": "Tabel 6.4.9 hlm 118"
+    },
+    "panas_bumi": {
+     "mw": 0,
+     "tahun": 2025,
+     "sumber_id": "heesi2025",
+     "halaman": "Tabel 6.4.9 hlm 118"
+    },
+    "surya": {
+     "mw": 46.71,
+     "tahun": 2025,
+     "sumber_id": "heesi2025",
+     "halaman": "Tabel 6.4.9 hlm 118"
+    },
+    "bayu": {
+     "mw": 0,
+     "tahun": 2025,
+     "sumber_id": "heesi2025",
+     "halaman": "Tabel 6.4.9 hlm 118"
+    },
+    "bioenergi": {
+     "mw": 895.61,
+     "tahun": 2025,
+     "sumber_id": "heesi2025",
+     "halaman": "Tabel 6.4.9 hlm 118"
+    },
+    "mikrohidro": {
+     "mw": null,
+     "tahun": null,
+     "sumber_id": "heesi2025",
+     "catatan": "HEESI menggabung PLTA dan PLTM/H dalam satu kolom (lihat hidro)"
+    },
+    "laut": {
+     "mw": null,
+     "tahun": null,
+     "sumber_id": "heesi2025",
+     "catatan": "tidak ada kapasitas terpasang listrik laut di HEESI"
+    }
+   },
+   "rasio_pemanfaatan": {
+    "hidro": {
+     "persen": null,
+     "penyebut_mw": null,
+     "catatan": "potensi per provinsi tidak tersedia"
+    },
+    "panas_bumi": {
+     "persen": 0,
+     "penyebut_mw": 45,
+     "catatan": "terpasang 2025 / potensi 2025 (HEESI)"
+    },
+    "surya": {
+     "persen": 6.2,
+     "penyebut_mw": 753,
+     "catatan": "terpasang 2025 (HEESI) / potensi 2015 (RUEN): beda tahun, indikasi saja"
+    },
+    "bayu": {
+     "persen": 0,
+     "penyebut_mw": 22,
+     "catatan": "terpasang 2025 (HEESI) / potensi 2015 (RUEN): beda tahun, indikasi saja"
+    },
+    "bioenergi": {
+     "persen": 21.35,
+     "penyebut_mw": 4195.1,
+     "catatan": "terpasang 2025 (HEESI) / potensi 2015 (RUEN): beda tahun, indikasi saja"
+    }
+   },
+   "bpp": {
+    "rp_per_kwh": null,
+    "sistem": null,
+    "tahun": null,
+    "sumber_id": null,
+    "catatan": "Kepmen ESDM BPP pembangkitan terbaru belum terambil (jdih.esdm.go.id menolak klien otomatis); isi manual dari Kepmen resmi"
+   },
+   "faktor_lokasi": {
+    "F": 1.1,
+    "wilayah": "Sumatera",
+    "sumber_id": "perpres112",
+    "catatan": "F pulau kecil/Mentawai lebih tinggi; tidak dipetakan"
+   },
+   "proyek": {
+    "rencana": 0,
+    "rencana_tanpa_pengembang": 0,
+    "mw_rencana_tanpa_pengembang": 0,
+    "sumber_id": "proyek-meti"
+   }
+  },
+  {
+   "kode": "15",
+   "nama": "Jambi",
+   "potensi": {
+    "surya": {
+     "mw": 8847,
+     "tahun": 2015,
+     "sumber_id": "ruen",
+     "halaman": "Tabel 44 hlm 77"
+    },
+    "bayu": {
+     "mw": 37,
+     "tahun": 2015,
+     "sumber_id": "ruen",
+     "halaman": "Tabel 46 hlm 80"
+    },
+    "mikrohidro": {
+     "mw": 447,
+     "tahun": 2015,
+     "sumber_id": "ruen",
+     "halaman": "Tabel 40 (minihidro + mikrohidro) hlm 72"
+    },
+    "bioenergi": {
+     "mw": 1839.9,
+     "tahun": 2015,
+     "sumber_id": "ruen",
+     "halaman": "Tabel 42 (biomassa/biofuel + biogas) hlm 74"
+    },
+    "hidro": {
+     "mw": null,
+     "tahun": 2015,
+     "sumber_id": "ruen",
+     "halaman": "Tabel 37 (PLTA per wilayah) hlm 69",
+     "catatan": "RUEN hanya memberi total kelompok Sumatera Selatan, Bengkulu, Jambi, Lampung (3102 MW); tidak dipisah per provinsi",
+     "kelompok_mw": 3102
+    },
+    "panas_bumi": {
+     "mw": 779,
+     "tahun": 2025,
+     "sumber_id": "heesi2025",
+     "halaman": "Tabel 6.5.1 hlm 120-121 (sumber daya + cadangan, Badan Geologi per Des 2025)"
+    },
+    "laut": {
+     "mw": null,
+     "tahun": 2015,
+     "sumber_id": "ruen",
+     "catatan": "tidak tercantum di tabel RUEN untuk provinsi ini"
+    }
+   },
+   "terpasang": {
+    "hidro": {
+     "mw": 496.21,
+     "tahun": 2025,
+     "sumber_id": "heesi2025",
+     "halaman": "Tabel 6.4.9 hlm 118"
+    },
+    "panas_bumi": {
+     "mw": 0,
+     "tahun": 2025,
+     "sumber_id": "heesi2025",
+     "halaman": "Tabel 6.4.9 hlm 118"
+    },
+    "surya": {
+     "mw": 1.87,
+     "tahun": 2025,
+     "sumber_id": "heesi2025",
+     "halaman": "Tabel 6.4.9 hlm 118"
+    },
+    "bayu": {
+     "mw": 0,
+     "tahun": 2025,
+     "sumber_id": "heesi2025",
+     "halaman": "Tabel 6.4.9 hlm 118"
+    },
+    "bioenergi": {
+     "mw": 125.28,
+     "tahun": 2025,
+     "sumber_id": "heesi2025",
+     "halaman": "Tabel 6.4.9 hlm 118"
+    },
+    "mikrohidro": {
+     "mw": null,
+     "tahun": null,
+     "sumber_id": "heesi2025",
+     "catatan": "HEESI menggabung PLTA dan PLTM/H dalam satu kolom (lihat hidro)"
+    },
+    "laut": {
+     "mw": null,
+     "tahun": null,
+     "sumber_id": "heesi2025",
+     "catatan": "tidak ada kapasitas terpasang listrik laut di HEESI"
+    }
+   },
+   "rasio_pemanfaatan": {
+    "hidro": {
+     "persen": null,
+     "penyebut_mw": null,
+     "catatan": "potensi per provinsi tidak tersedia"
+    },
+    "panas_bumi": {
+     "persen": 0,
+     "penyebut_mw": 779,
+     "catatan": "terpasang 2025 / potensi 2025 (HEESI)"
+    },
+    "surya": {
+     "persen": 0.02,
+     "penyebut_mw": 8847,
+     "catatan": "terpasang 2025 (HEESI) / potensi 2015 (RUEN): beda tahun, indikasi saja"
+    },
+    "bayu": {
+     "persen": 0,
+     "penyebut_mw": 37,
+     "catatan": "terpasang 2025 (HEESI) / potensi 2015 (RUEN): beda tahun, indikasi saja"
+    },
+    "bioenergi": {
+     "persen": 6.81,
+     "penyebut_mw": 1839.9,
+     "catatan": "terpasang 2025 (HEESI) / potensi 2015 (RUEN): beda tahun, indikasi saja"
+    }
+   },
+   "bpp": {
+    "rp_per_kwh": null,
+    "sistem": null,
+    "tahun": null,
+    "sumber_id": null,
+    "catatan": "Kepmen ESDM BPP pembangkitan terbaru belum terambil (jdih.esdm.go.id menolak klien otomatis); isi manual dari Kepmen resmi"
+   },
+   "faktor_lokasi": {
+    "F": 1.1,
+    "wilayah": "Sumatera",
+    "sumber_id": "perpres112",
+    "catatan": "F pulau kecil/Mentawai lebih tinggi; tidak dipetakan"
+   },
+   "proyek": {
+    "rencana": 1,
+    "rencana_tanpa_pengembang": 1,
+    "mw_rencana_tanpa_pengembang": 350,
+    "sumber_id": "proyek-meti"
+   }
+  },
+  {
+   "kode": "16",
+   "nama": "Sumatera Selatan",
+   "potensi": {
+    "surya": {
+     "mw": 17233,
+     "tahun": 2015,
+     "sumber_id": "ruen",
+     "halaman": "Tabel 44 hlm 77"
+    },
+    "bayu": {
+     "mw": 301,
+     "tahun": 2015,
+     "sumber_id": "ruen",
+     "halaman": "Tabel 46 hlm 80"
+    },
+    "mikrohidro": {
+     "mw": 448,
+     "tahun": 2015,
+     "sumber_id": "ruen",
+     "halaman": "Tabel 40 (minihidro + mikrohidro) hlm 72"
+    },
+    "bioenergi": {
+     "mw": 2132.6,
+     "tahun": 2015,
+     "sumber_id": "ruen",
+     "halaman": "Tabel 42 (biomassa/biofuel + biogas) hlm 74"
+    },
+    "hidro": {
+     "mw": null,
+     "tahun": 2015,
+     "sumber_id": "ruen",
+     "halaman": "Tabel 37 (PLTA per wilayah) hlm 69",
+     "catatan": "RUEN hanya memberi total kelompok Sumatera Selatan, Bengkulu, Jambi, Lampung (3102 MW); tidak dipisah per provinsi",
+     "kelompok_mw": 3102
+    },
+    "panas_bumi": {
+     "mw": 1450,
+     "tahun": 2025,
+     "sumber_id": "heesi2025",
+     "halaman": "Tabel 6.5.1 hlm 120-121 (sumber daya + cadangan, Badan Geologi per Des 2025)"
+    },
+    "laut": {
+     "mw": null,
+     "tahun": 2015,
+     "sumber_id": "ruen",
+     "catatan": "tidak tercantum di tabel RUEN untuk provinsi ini"
+    }
+   },
+   "terpasang": {
+    "hidro": {
+     "mw": 21.37,
+     "tahun": 2025,
+     "sumber_id": "heesi2025",
+     "halaman": "Tabel 6.4.9 hlm 118"
+    },
+    "panas_bumi": {
+     "mw": 213.33,
+     "tahun": 2025,
+     "sumber_id": "heesi2025",
+     "halaman": "Tabel 6.4.9 hlm 118"
+    },
+    "surya": {
+     "mw": 13.57,
+     "tahun": 2025,
+     "sumber_id": "heesi2025",
+     "halaman": "Tabel 6.4.9 hlm 118"
+    },
+    "bayu": {
+     "mw": 0,
+     "tahun": 2025,
+     "sumber_id": "heesi2025",
+     "halaman": "Tabel 6.4.9 hlm 118"
+    },
+    "bioenergi": {
+     "mw": 838.29,
+     "tahun": 2025,
+     "sumber_id": "heesi2025",
+     "halaman": "Tabel 6.4.9 hlm 118"
+    },
+    "mikrohidro": {
+     "mw": null,
+     "tahun": null,
+     "sumber_id": "heesi2025",
+     "catatan": "HEESI menggabung PLTA dan PLTM/H dalam satu kolom (lihat hidro)"
+    },
+    "laut": {
+     "mw": null,
+     "tahun": null,
+     "sumber_id": "heesi2025",
+     "catatan": "tidak ada kapasitas terpasang listrik laut di HEESI"
+    }
+   },
+   "rasio_pemanfaatan": {
+    "hidro": {
+     "persen": null,
+     "penyebut_mw": null,
+     "catatan": "potensi per provinsi tidak tersedia"
+    },
+    "panas_bumi": {
+     "persen": 14.71,
+     "penyebut_mw": 1450,
+     "catatan": "terpasang 2025 / potensi 2025 (HEESI)"
+    },
+    "surya": {
+     "persen": 0.08,
+     "penyebut_mw": 17233,
+     "catatan": "terpasang 2025 (HEESI) / potensi 2015 (RUEN): beda tahun, indikasi saja"
+    },
+    "bayu": {
+     "persen": 0,
+     "penyebut_mw": 301,
+     "catatan": "terpasang 2025 (HEESI) / potensi 2015 (RUEN): beda tahun, indikasi saja"
+    },
+    "bioenergi": {
+     "persen": 39.31,
+     "penyebut_mw": 2132.6,
+     "catatan": "terpasang 2025 (HEESI) / potensi 2015 (RUEN): beda tahun, indikasi saja"
+    }
+   },
+   "bpp": {
+    "rp_per_kwh": null,
+    "sistem": null,
+    "tahun": null,
+    "sumber_id": null,
+    "catatan": "Kepmen ESDM BPP pembangkitan terbaru belum terambil (jdih.esdm.go.id menolak klien otomatis); isi manual dari Kepmen resmi"
+   },
+   "faktor_lokasi": {
+    "F": 1.1,
+    "wilayah": "Sumatera",
+    "sumber_id": "perpres112",
+    "catatan": "F pulau kecil/Mentawai lebih tinggi; tidak dipetakan"
+   },
+   "proyek": {
+    "rencana": 6,
+    "rencana_tanpa_pengembang": 3,
+    "mw_rencana_tanpa_pengembang": 842.7,
+    "sumber_id": "proyek-meti"
+   }
+  },
+  {
+   "kode": "17",
+   "nama": "Bengkulu",
+   "potensi": {
+    "surya": {
+     "mw": 3475,
+     "tahun": 2015,
+     "sumber_id": "ruen",
+     "halaman": "Tabel 44 hlm 77"
+    },
+    "bayu": {
+     "mw": 1513,
+     "tahun": 2015,
+     "sumber_id": "ruen",
+     "halaman": "Tabel 46 hlm 80"
+    },
+    "mikrohidro": {
+     "mw": 108,
+     "tahun": 2015,
+     "sumber_id": "ruen",
+     "halaman": "Tabel 40 (minihidro + mikrohidro) hlm 72"
+    },
+    "bioenergi": {
+     "mw": 644.8,
+     "tahun": 2015,
+     "sumber_id": "ruen",
+     "halaman": "Tabel 42 (biomassa/biofuel + biogas) hlm 74"
+    },
+    "hidro": {
+     "mw": null,
+     "tahun": 2015,
+     "sumber_id": "ruen",
+     "halaman": "Tabel 37 (PLTA per wilayah) hlm 69",
+     "catatan": "RUEN hanya memberi total kelompok Sumatera Selatan, Bengkulu, Jambi, Lampung (3102 MW); tidak dipisah per provinsi",
+     "kelompok_mw": 3102
+    },
+    "panas_bumi": {
+     "mw": 838,
+     "tahun": 2025,
+     "sumber_id": "heesi2025",
+     "halaman": "Tabel 6.5.1 hlm 120-121 (sumber daya + cadangan, Badan Geologi per Des 2025)"
+    },
+    "laut": {
+     "mw": null,
+     "tahun": 2015,
+     "sumber_id": "ruen",
+     "catatan": "tidak tercantum di tabel RUEN untuk provinsi ini"
+    }
+   },
+   "terpasang": {
+    "hidro": {
+     "mw": 322.56,
+     "tahun": 2025,
+     "sumber_id": "heesi2025",
+     "halaman": "Tabel 6.4.9 hlm 118"
+    },
+    "panas_bumi": {
+     "mw": 0,
+     "tahun": 2025,
+     "sumber_id": "heesi2025",
+     "halaman": "Tabel 6.4.9 hlm 118"
+    },
+    "surya": {
+     "mw": 0.41,
+     "tahun": 2025,
+     "sumber_id": "heesi2025",
+     "halaman": "Tabel 6.4.9 hlm 118"
+    },
+    "bayu": {
+     "mw": 0,
+     "tahun": 2025,
+     "sumber_id": "heesi2025",
+     "halaman": "Tabel 6.4.9 hlm 118"
+    },
+    "bioenergi": {
+     "mw": 18.34,
+     "tahun": 2025,
+     "sumber_id": "heesi2025",
+     "halaman": "Tabel 6.4.9 hlm 118"
+    },
+    "mikrohidro": {
+     "mw": null,
+     "tahun": null,
+     "sumber_id": "heesi2025",
+     "catatan": "HEESI menggabung PLTA dan PLTM/H dalam satu kolom (lihat hidro)"
+    },
+    "laut": {
+     "mw": null,
+     "tahun": null,
+     "sumber_id": "heesi2025",
+     "catatan": "tidak ada kapasitas terpasang listrik laut di HEESI"
+    }
+   },
+   "rasio_pemanfaatan": {
+    "hidro": {
+     "persen": null,
+     "penyebut_mw": null,
+     "catatan": "potensi per provinsi tidak tersedia"
+    },
+    "panas_bumi": {
+     "persen": 0,
+     "penyebut_mw": 838,
+     "catatan": "terpasang 2025 / potensi 2025 (HEESI)"
+    },
+    "surya": {
+     "persen": 0.01,
+     "penyebut_mw": 3475,
+     "catatan": "terpasang 2025 (HEESI) / potensi 2015 (RUEN): beda tahun, indikasi saja"
+    },
+    "bayu": {
+     "persen": 0,
+     "penyebut_mw": 1513,
+     "catatan": "terpasang 2025 (HEESI) / potensi 2015 (RUEN): beda tahun, indikasi saja"
+    },
+    "bioenergi": {
+     "persen": 2.84,
+     "penyebut_mw": 644.8,
+     "catatan": "terpasang 2025 (HEESI) / potensi 2015 (RUEN): beda tahun, indikasi saja"
+    }
+   },
+   "bpp": {
+    "rp_per_kwh": null,
+    "sistem": null,
+    "tahun": null,
+    "sumber_id": null,
+    "catatan": "Kepmen ESDM BPP pembangkitan terbaru belum terambil (jdih.esdm.go.id menolak klien otomatis); isi manual dari Kepmen resmi"
+   },
+   "faktor_lokasi": {
+    "F": 1.1,
+    "wilayah": "Sumatera",
+    "sumber_id": "perpres112",
+    "catatan": "F pulau kecil/Mentawai lebih tinggi; tidak dipetakan"
+   },
+   "proyek": {
+    "rencana": 4,
+    "rencana_tanpa_pengembang": 1,
+    "mw_rencana_tanpa_pengembang": 0,
+    "sumber_id": "proyek-meti"
+   }
+  },
+  {
+   "kode": "18",
+   "nama": "Lampung",
+   "potensi": {
+    "surya": {
+     "mw": 2238,
+     "tahun": 2015,
+     "sumber_id": "ruen",
+     "halaman": "Tabel 44 hlm 77"
+    },
+    "bayu": {
+     "mw": 1137,
+     "tahun": 2015,
+     "sumber_id": "ruen",
+     "halaman": "Tabel 46 hlm 80"
+    },
+    "mikrohidro": {
+     "mw": 352,
+     "tahun": 2015,
+     "sumber_id": "ruen",
+     "halaman": "Tabel 40 (minihidro + mikrohidro) hlm 72"
+    },
+    "bioenergi": {
+     "mw": 1492.1,
+     "tahun": 2015,
+     "sumber_id": "ruen",
+     "halaman": "Tabel 42 (biomassa/biofuel + biogas) hlm 74"
+    },
+    "hidro": {
+     "mw": null,
+     "tahun": 2015,
+     "sumber_id": "ruen",
+     "halaman": "Tabel 37 (PLTA per wilayah) hlm 69",
+     "catatan": "RUEN hanya memberi total kelompok Sumatera Selatan, Bengkulu, Jambi, Lampung (3102 MW); tidak dipisah per provinsi",
+     "kelompok_mw": 3102
+    },
+    "laut": {
+     "mw": null,
+     "tahun": 2015,
+     "sumber_id": "ruen",
+     "halaman": "Tabel 48 (praktis; teknis dan teoritis ikut) hlm 82",
+     "catatan": "RUEN hanya memberi total kelompok Jawa Barat, Lampung (2273 MW); tidak dipisah per provinsi",
+     "kelompok_mw": 2273
+    },
+    "panas_bumi": {
+     "mw": 1732,
+     "tahun": 2025,
+     "sumber_id": "heesi2025",
+     "halaman": "Tabel 6.5.1 hlm 120-121 (sumber daya + cadangan, Badan Geologi per Des 2025)"
+    }
+   },
+   "terpasang": {
+    "hidro": {
+     "mw": 208.47,
+     "tahun": 2025,
+     "sumber_id": "heesi2025",
+     "halaman": "Tabel 6.4.9 hlm 118"
+    },
+    "panas_bumi": {
+     "mw": 229,
+     "tahun": 2025,
+     "sumber_id": "heesi2025",
+     "halaman": "Tabel 6.4.9 hlm 118"
+    },
+    "surya": {
+     "mw": 7.78,
+     "tahun": 2025,
+     "sumber_id": "heesi2025",
+     "halaman": "Tabel 6.4.9 hlm 118"
+    },
+    "bayu": {
+     "mw": 0,
+     "tahun": 2025,
+     "sumber_id": "heesi2025",
+     "halaman": "Tabel 6.4.9 hlm 118"
+    },
+    "bioenergi": {
+     "mw": 70.18,
+     "tahun": 2025,
+     "sumber_id": "heesi2025",
+     "halaman": "Tabel 6.4.9 hlm 118"
+    },
+    "mikrohidro": {
+     "mw": null,
+     "tahun": null,
+     "sumber_id": "heesi2025",
+     "catatan": "HEESI menggabung PLTA dan PLTM/H dalam satu kolom (lihat hidro)"
+    },
+    "laut": {
+     "mw": null,
+     "tahun": null,
+     "sumber_id": "heesi2025",
+     "catatan": "tidak ada kapasitas terpasang listrik laut di HEESI"
+    }
+   },
+   "rasio_pemanfaatan": {
+    "hidro": {
+     "persen": null,
+     "penyebut_mw": null,
+     "catatan": "potensi per provinsi tidak tersedia"
+    },
+    "panas_bumi": {
+     "persen": 13.22,
+     "penyebut_mw": 1732,
+     "catatan": "terpasang 2025 / potensi 2025 (HEESI)"
+    },
+    "surya": {
+     "persen": 0.35,
+     "penyebut_mw": 2238,
+     "catatan": "terpasang 2025 (HEESI) / potensi 2015 (RUEN): beda tahun, indikasi saja"
+    },
+    "bayu": {
+     "persen": 0,
+     "penyebut_mw": 1137,
+     "catatan": "terpasang 2025 (HEESI) / potensi 2015 (RUEN): beda tahun, indikasi saja"
+    },
+    "bioenergi": {
+     "persen": 4.7,
+     "penyebut_mw": 1492.1,
+     "catatan": "terpasang 2025 (HEESI) / potensi 2015 (RUEN): beda tahun, indikasi saja"
+    }
+   },
+   "bpp": {
+    "rp_per_kwh": null,
+    "sistem": null,
+    "tahun": null,
+    "sumber_id": null,
+    "catatan": "Kepmen ESDM BPP pembangkitan terbaru belum terambil (jdih.esdm.go.id menolak klien otomatis); isi manual dari Kepmen resmi"
+   },
+   "faktor_lokasi": {
+    "F": 1.1,
+    "wilayah": "Sumatera",
+    "sumber_id": "perpres112",
+    "catatan": "F pulau kecil/Mentawai lebih tinggi; tidak dipetakan"
+   },
+   "proyek": {
+    "rencana": 9,
+    "rencana_tanpa_pengembang": 5,
+    "mw_rencana_tanpa_pengembang": 267.8,
+    "sumber_id": "proyek-meti"
+   }
+  },
+  {
+   "kode": "19",
+   "nama": "Kepulauan Bangka Belitung",
+   "potensi": {
+    "surya": {
+     "mw": 2810,
+     "tahun": 2015,
+     "sumber_id": "ruen",
+     "halaman": "Tabel 44 hlm 77"
+    },
+    "bayu": {
+     "mw": 1787,
+     "tahun": 2015,
+     "sumber_id": "ruen",
+     "halaman": "Tabel 46 hlm 80"
+    },
+    "bioenergi": {
+     "mw": 223.1,
+     "tahun": 2015,
+     "sumber_id": "ruen",
+     "halaman": "Tabel 42 (biomassa/biofuel + biogas) hlm 74"
+    },
+    "panas_bumi": {
+     "mw": 46,
+     "tahun": 2025,
+     "sumber_id": "heesi2025",
+     "halaman": "Tabel 6.5.1 hlm 120-121 (sumber daya + cadangan, Badan Geologi per Des 2025)"
+    },
+    "hidro": {
+     "mw": null,
+     "tahun": 2015,
+     "sumber_id": "ruen",
+     "catatan": "tidak tercantum di tabel RUEN untuk provinsi ini"
+    },
+    "mikrohidro": {
+     "mw": null,
+     "tahun": 2015,
+     "sumber_id": "ruen",
+     "catatan": "tidak tercantum di tabel RUEN untuk provinsi ini"
+    },
+    "laut": {
+     "mw": null,
+     "tahun": 2015,
+     "sumber_id": "ruen",
+     "catatan": "tidak tercantum di tabel RUEN untuk provinsi ini"
+    }
+   },
+   "terpasang": {
+    "hidro": {
+     "mw": 0,
+     "tahun": 2025,
+     "sumber_id": "heesi2025",
+     "halaman": "Tabel 6.4.9 hlm 118"
+    },
+    "panas_bumi": {
+     "mw": 0,
+     "tahun": 2025,
+     "sumber_id": "heesi2025",
+     "halaman": "Tabel 6.4.9 hlm 118"
+    },
+    "surya": {
+     "mw": 2.85,
+     "tahun": 2025,
+     "sumber_id": "heesi2025",
+     "halaman": "Tabel 6.4.9 hlm 118"
+    },
+    "bayu": {
+     "mw": 0,
+     "tahun": 2025,
+     "sumber_id": "heesi2025",
+     "halaman": "Tabel 6.4.9 hlm 118"
+    },
+    "bioenergi": {
+     "mw": 126.11,
+     "tahun": 2025,
+     "sumber_id": "heesi2025",
+     "halaman": "Tabel 6.4.9 hlm 118"
+    },
+    "mikrohidro": {
+     "mw": null,
+     "tahun": null,
+     "sumber_id": "heesi2025",
+     "catatan": "HEESI menggabung PLTA dan PLTM/H dalam satu kolom (lihat hidro)"
+    },
+    "laut": {
+     "mw": null,
+     "tahun": null,
+     "sumber_id": "heesi2025",
+     "catatan": "tidak ada kapasitas terpasang listrik laut di HEESI"
+    }
+   },
+   "rasio_pemanfaatan": {
+    "hidro": {
+     "persen": null,
+     "penyebut_mw": null,
+     "catatan": "potensi per provinsi tidak tersedia"
+    },
+    "panas_bumi": {
+     "persen": 0,
+     "penyebut_mw": 46,
+     "catatan": "terpasang 2025 / potensi 2025 (HEESI)"
+    },
+    "surya": {
+     "persen": 0.1,
+     "penyebut_mw": 2810,
+     "catatan": "terpasang 2025 (HEESI) / potensi 2015 (RUEN): beda tahun, indikasi saja"
+    },
+    "bayu": {
+     "persen": 0,
+     "penyebut_mw": 1787,
+     "catatan": "terpasang 2025 (HEESI) / potensi 2015 (RUEN): beda tahun, indikasi saja"
+    },
+    "bioenergi": {
+     "persen": 56.53,
+     "penyebut_mw": 223.1,
+     "catatan": "terpasang 2025 (HEESI) / potensi 2015 (RUEN): beda tahun, indikasi saja"
+    }
+   },
+   "bpp": {
+    "rp_per_kwh": null,
+    "sistem": null,
+    "tahun": null,
+    "sumber_id": null,
+    "catatan": "Kepmen ESDM BPP pembangkitan terbaru belum terambil (jdih.esdm.go.id menolak klien otomatis); isi manual dari Kepmen resmi"
+   },
+   "faktor_lokasi": {
+    "F": 1.1,
+    "wilayah": "Bangka Belitung",
+    "sumber_id": "perpres112",
+    "catatan": "F pulau kecil/Mentawai lebih tinggi; tidak dipetakan"
+   },
+   "proyek": {
+    "rencana": 3,
+    "rencana_tanpa_pengembang": 3,
+    "mw_rencana_tanpa_pengembang": 253.5,
+    "sumber_id": "proyek-meti"
+   }
+  },
+  {
+   "kode": "21",
+   "nama": "Kepulauan Riau",
+   "potensi": {
+    "surya": {
+     "mw": 7763,
+     "tahun": 2015,
+     "sumber_id": "ruen",
+     "halaman": "Tabel 44 hlm 77"
+    },
+    "bayu": {
+     "mw": 922,
+     "tahun": 2015,
+     "sumber_id": "ruen",
+     "halaman": "Tabel 46 hlm 80"
+    },
+    "bioenergi": {
+     "mw": 15.9,
+     "tahun": 2015,
+     "sumber_id": "ruen",
+     "halaman": "Tabel 42 (biomassa/biofuel + biogas) hlm 74"
+    },
+    "laut": {
+     "mw": 6027,
+     "tahun": 2015,
+     "sumber_id": "ruen",
+     "halaman": "Tabel 48 (praktis; teknis dan teoritis ikut) hlm 82",
+     "teknis_mw": 24108,
+     "teoritis_mw": 96432
+    },
+    "panas_bumi": {
+     "mw": 7,
+     "tahun": 2025,
+     "sumber_id": "heesi2025",
+     "halaman": "Tabel 6.5.1 hlm 120-121 (sumber daya + cadangan, Badan Geologi per Des 2025)"
+    },
+    "hidro": {
+     "mw": null,
+     "tahun": 2015,
+     "sumber_id": "ruen",
+     "catatan": "tidak tercantum di tabel RUEN untuk provinsi ini"
+    },
+    "mikrohidro": {
+     "mw": null,
+     "tahun": 2015,
+     "sumber_id": "ruen",
+     "catatan": "tidak tercantum di tabel RUEN untuk provinsi ini"
+    }
+   },
+   "terpasang": {
+    "hidro": {
+     "mw": 0,
+     "tahun": 2025,
+     "sumber_id": "heesi2025",
+     "halaman": "Tabel 6.4.9 hlm 118"
+    },
+    "panas_bumi": {
+     "mw": 0,
+     "tahun": 2025,
+     "sumber_id": "heesi2025",
+     "halaman": "Tabel 6.4.9 hlm 118"
+    },
+    "surya": {
+     "mw": 28.09,
+     "tahun": 2025,
+     "sumber_id": "heesi2025",
+     "halaman": "Tabel 6.4.9 hlm 118"
+    },
+    "bayu": {
+     "mw": 0,
+     "tahun": 2025,
+     "sumber_id": "heesi2025",
+     "halaman": "Tabel 6.4.9 hlm 118"
+    },
+    "bioenergi": {
+     "mw": 2,
+     "tahun": 2025,
+     "sumber_id": "heesi2025",
+     "halaman": "Tabel 6.4.9 hlm 118"
+    },
+    "mikrohidro": {
+     "mw": null,
+     "tahun": null,
+     "sumber_id": "heesi2025",
+     "catatan": "HEESI menggabung PLTA dan PLTM/H dalam satu kolom (lihat hidro)"
+    },
+    "laut": {
+     "mw": null,
+     "tahun": null,
+     "sumber_id": "heesi2025",
+     "catatan": "tidak ada kapasitas terpasang listrik laut di HEESI"
+    }
+   },
+   "rasio_pemanfaatan": {
+    "hidro": {
+     "persen": null,
+     "penyebut_mw": null,
+     "catatan": "potensi per provinsi tidak tersedia"
+    },
+    "panas_bumi": {
+     "persen": 0,
+     "penyebut_mw": 7,
+     "catatan": "terpasang 2025 / potensi 2025 (HEESI)"
+    },
+    "surya": {
+     "persen": 0.36,
+     "penyebut_mw": 7763,
+     "catatan": "terpasang 2025 (HEESI) / potensi 2015 (RUEN): beda tahun, indikasi saja"
+    },
+    "bayu": {
+     "persen": 0,
+     "penyebut_mw": 922,
+     "catatan": "terpasang 2025 (HEESI) / potensi 2015 (RUEN): beda tahun, indikasi saja"
+    },
+    "bioenergi": {
+     "persen": 12.58,
+     "penyebut_mw": 15.9,
+     "catatan": "terpasang 2025 (HEESI) / potensi 2015 (RUEN): beda tahun, indikasi saja"
+    }
+   },
+   "bpp": {
+    "rp_per_kwh": null,
+    "sistem": null,
+    "tahun": null,
+    "sumber_id": null,
+    "catatan": "Kepmen ESDM BPP pembangkitan terbaru belum terambil (jdih.esdm.go.id menolak klien otomatis); isi manual dari Kepmen resmi"
+   },
+   "faktor_lokasi": {
+    "F": 1.2,
+    "wilayah": "Kepulauan Riau",
+    "sumber_id": "perpres112",
+    "catatan": "F pulau kecil/Mentawai lebih tinggi; tidak dipetakan"
+   },
+   "proyek": {
+    "rencana": 3,
+    "rencana_tanpa_pengembang": 3,
+    "mw_rencana_tanpa_pengembang": 26,
+    "sumber_id": "proyek-meti"
+   }
+  },
+  {
+   "kode": "31",
+   "nama": "DKI Jakarta",
+   "potensi": {
+    "surya": {
+     "mw": 225,
+     "tahun": 2015,
+     "sumber_id": "ruen",
+     "halaman": "Tabel 44 hlm 77"
+    },
+    "bayu": {
+     "mw": 4,
+     "tahun": 2015,
+     "sumber_id": "ruen",
+     "halaman": "Tabel 46 hlm 80"
+    },
+    "bioenergi": {
+     "mw": 126.6,
+     "tahun": 2015,
+     "sumber_id": "ruen",
+     "halaman": "Tabel 42 (biomassa/biofuel + biogas) hlm 74"
+    },
+    "panas_bumi": {
+     "mw": 0,
+     "tahun": 2025,
+     "sumber_id": "heesi2025",
+     "halaman": "Tabel 6.5.1 hlm 120-121 (sumber daya + cadangan, Badan Geologi per Des 2025)"
+    },
+    "hidro": {
+     "mw": null,
+     "tahun": 2015,
+     "sumber_id": "ruen",
+     "catatan": "tidak tercantum di tabel RUEN untuk provinsi ini"
+    },
+    "mikrohidro": {
+     "mw": null,
+     "tahun": 2015,
+     "sumber_id": "ruen",
+     "catatan": "tidak tercantum di tabel RUEN untuk provinsi ini"
+    },
+    "laut": {
+     "mw": null,
+     "tahun": 2015,
+     "sumber_id": "ruen",
+     "catatan": "tidak tercantum di tabel RUEN untuk provinsi ini"
+    }
+   },
+   "terpasang": {
+    "hidro": {
+     "mw": 0,
+     "tahun": 2025,
+     "sumber_id": "heesi2025",
+     "halaman": "Tabel 6.4.9 hlm 118"
+    },
+    "panas_bumi": {
+     "mw": 0,
+     "tahun": 2025,
+     "sumber_id": "heesi2025",
+     "halaman": "Tabel 6.4.9 hlm 118"
+    },
+    "surya": {
+     "mw": 65.33,
+     "tahun": 2025,
+     "sumber_id": "heesi2025",
+     "halaman": "Tabel 6.4.9 hlm 118"
+    },
+    "bayu": {
+     "mw": 0,
+     "tahun": 2025,
+     "sumber_id": "heesi2025",
+     "halaman": "Tabel 6.4.9 hlm 118"
+    },
+    "bioenergi": {
+     "mw": 0,
+     "tahun": 2025,
+     "sumber_id": "heesi2025",
+     "halaman": "Tabel 6.4.9 hlm 118"
+    },
+    "mikrohidro": {
+     "mw": null,
+     "tahun": null,
+     "sumber_id": "heesi2025",
+     "catatan": "HEESI menggabung PLTA dan PLTM/H dalam satu kolom (lihat hidro)"
+    },
+    "laut": {
+     "mw": null,
+     "tahun": null,
+     "sumber_id": "heesi2025",
+     "catatan": "tidak ada kapasitas terpasang listrik laut di HEESI"
+    }
+   },
+   "rasio_pemanfaatan": {
+    "hidro": {
+     "persen": null,
+     "penyebut_mw": null,
+     "catatan": "potensi per provinsi tidak tersedia"
+    },
+    "panas_bumi": {
+     "persen": null,
+     "penyebut_mw": null,
+     "catatan": "potensi per provinsi tidak tersedia"
+    },
+    "surya": {
+     "persen": 29.04,
+     "penyebut_mw": 225,
+     "catatan": "terpasang 2025 (HEESI) / potensi 2015 (RUEN): beda tahun, indikasi saja"
+    },
+    "bayu": {
+     "persen": 0,
+     "penyebut_mw": 4,
+     "catatan": "terpasang 2025 (HEESI) / potensi 2015 (RUEN): beda tahun, indikasi saja"
+    },
+    "bioenergi": {
+     "persen": 0,
+     "penyebut_mw": 126.6,
+     "catatan": "terpasang 2025 (HEESI) / potensi 2015 (RUEN): beda tahun, indikasi saja"
+    }
+   },
+   "bpp": {
+    "rp_per_kwh": null,
+    "sistem": null,
+    "tahun": null,
+    "sumber_id": null,
+    "catatan": "Kepmen ESDM BPP pembangkitan terbaru belum terambil (jdih.esdm.go.id menolak klien otomatis); isi manual dari Kepmen resmi"
+   },
+   "faktor_lokasi": {
+    "F": 1,
+    "wilayah": "Jawa, Madura, Bali",
+    "sumber_id": "perpres112",
+    "catatan": "F pulau kecil/Mentawai lebih tinggi; tidak dipetakan"
+   },
+   "proyek": {
+    "rencana": 0,
+    "rencana_tanpa_pengembang": 0,
+    "mw_rencana_tanpa_pengembang": 0,
+    "sumber_id": "proyek-meti"
+   }
+  },
+  {
+   "kode": "32",
+   "nama": "Jawa Barat",
+   "potensi": {
+    "surya": {
+     "mw": 9099,
+     "tahun": 2015,
+     "sumber_id": "ruen",
+     "halaman": "Tabel 44 hlm 77"
+    },
+    "bayu": {
+     "mw": 7036,
+     "tahun": 2015,
+     "sumber_id": "ruen",
+     "halaman": "Tabel 46 hlm 80"
+    },
+    "mikrohidro": {
+     "mw": 647,
+     "tahun": 2015,
+     "sumber_id": "ruen",
+     "halaman": "Tabel 40 (minihidro + mikrohidro) hlm 72"
+    },
+    "bioenergi": {
+     "mw": 2554.1,
+     "tahun": 2015,
+     "sumber_id": "ruen",
+     "halaman": "Tabel 42 (biomassa/biofuel + biogas) hlm 74"
+    },
+    "hidro": {
+     "mw": 2861,
+     "tahun": 2015,
+     "sumber_id": "ruen",
+     "halaman": "Tabel 37 (PLTA per wilayah) hlm 69"
+    },
+    "laut": {
+     "mw": null,
+     "tahun": 2015,
+     "sumber_id": "ruen",
+     "halaman": "Tabel 48 (praktis; teknis dan teoritis ikut) hlm 82",
+     "catatan": "RUEN hanya memberi total kelompok Jawa Barat, Lampung (2273 MW); tidak dipisah per provinsi",
+     "kelompok_mw": 2273
+    },
+    "panas_bumi": {
+     "mw": 4420,
+     "tahun": 2025,
+     "sumber_id": "heesi2025",
+     "halaman": "Tabel 6.5.1 hlm 120-121 (sumber daya + cadangan, Badan Geologi per Des 2025)"
+    }
+   },
+   "terpasang": {
+    "hidro": {
+     "mw": 2298.62,
+     "tahun": 2025,
+     "sumber_id": "heesi2025",
+     "halaman": "Tabel 6.4.9 hlm 118"
+    },
+    "panas_bumi": {
+     "mw": 1260.68,
+     "tahun": 2025,
+     "sumber_id": "heesi2025",
+     "halaman": "Tabel 6.4.9 hlm 118"
+    },
+    "surya": {
+     "mw": 630.85,
+     "tahun": 2025,
+     "sumber_id": "heesi2025",
+     "halaman": "Tabel 6.4.9 hlm 118"
+    },
+    "bayu": {
+     "mw": 0,
+     "tahun": 2025,
+     "sumber_id": "heesi2025",
+     "halaman": "Tabel 6.4.9 hlm 118"
+    },
+    "bioenergi": {
+     "mw": 0,
+     "tahun": 2025,
+     "sumber_id": "heesi2025",
+     "halaman": "Tabel 6.4.9 hlm 118"
+    },
+    "mikrohidro": {
+     "mw": null,
+     "tahun": null,
+     "sumber_id": "heesi2025",
+     "catatan": "HEESI menggabung PLTA dan PLTM/H dalam satu kolom (lihat hidro)"
+    },
+    "laut": {
+     "mw": null,
+     "tahun": null,
+     "sumber_id": "heesi2025",
+     "catatan": "tidak ada kapasitas terpasang listrik laut di HEESI"
+    }
+   },
+   "rasio_pemanfaatan": {
+    "hidro": {
+     "persen": 65.53,
+     "penyebut_mw": 3508,
+     "catatan": "terpasang 2025 (HEESI) / potensi 2015 (RUEN): beda tahun, indikasi saja"
+    },
+    "panas_bumi": {
+     "persen": 28.52,
+     "penyebut_mw": 4420,
+     "catatan": "terpasang 2025 / potensi 2025 (HEESI)"
+    },
+    "surya": {
+     "persen": 6.93,
+     "penyebut_mw": 9099,
+     "catatan": "terpasang 2025 (HEESI) / potensi 2015 (RUEN): beda tahun, indikasi saja"
+    },
+    "bayu": {
+     "persen": 0,
+     "penyebut_mw": 7036,
+     "catatan": "terpasang 2025 (HEESI) / potensi 2015 (RUEN): beda tahun, indikasi saja"
+    },
+    "bioenergi": {
+     "persen": 0,
+     "penyebut_mw": 2554.1,
+     "catatan": "terpasang 2025 (HEESI) / potensi 2015 (RUEN): beda tahun, indikasi saja"
+    }
+   },
+   "bpp": {
+    "rp_per_kwh": null,
+    "sistem": null,
+    "tahun": null,
+    "sumber_id": null,
+    "catatan": "Kepmen ESDM BPP pembangkitan terbaru belum terambil (jdih.esdm.go.id menolak klien otomatis); isi manual dari Kepmen resmi"
+   },
+   "faktor_lokasi": {
+    "F": 1,
+    "wilayah": "Jawa, Madura, Bali",
+    "sumber_id": "perpres112",
+    "catatan": "F pulau kecil/Mentawai lebih tinggi; tidak dipetakan"
+   },
+   "proyek": {
+    "rencana": 21,
+    "rencana_tanpa_pengembang": 16,
+    "mw_rencana_tanpa_pengembang": 346.5,
+    "sumber_id": "proyek-meti"
+   }
+  },
+  {
+   "kode": "33",
+   "nama": "Jawa Tengah",
+   "potensi": {
+    "surya": {
+     "mw": 8753,
+     "tahun": 2015,
+     "sumber_id": "ruen",
+     "halaman": "Tabel 44 hlm 77"
+    },
+    "bayu": {
+     "mw": 5213,
+     "tahun": 2015,
+     "sumber_id": "ruen",
+     "halaman": "Tabel 46 hlm 80"
+    },
+    "mikrohidro": {
+     "mw": 1044,
+     "tahun": 2015,
+     "sumber_id": "ruen",
+     "halaman": "Tabel 40 (minihidro + mikrohidro) hlm 72"
+    },
+    "bioenergi": {
+     "mw": 2232.5,
+     "tahun": 2015,
+     "sumber_id": "ruen",
+     "halaman": "Tabel 42 (biomassa/biofuel + biogas) hlm 74"
+    },
+    "hidro": {
+     "mw": 813,
+     "tahun": 2015,
+     "sumber_id": "ruen",
+     "halaman": "Tabel 37 (PLTA per wilayah) hlm 69"
+    },
+    "panas_bumi": {
+     "mw": 1341,
+     "tahun": 2025,
+     "sumber_id": "heesi2025",
+     "halaman": "Tabel 6.5.1 hlm 120-121 (sumber daya + cadangan, Badan Geologi per Des 2025)"
+    },
+    "laut": {
+     "mw": null,
+     "tahun": 2015,
+     "sumber_id": "ruen",
+     "catatan": "tidak tercantum di tabel RUEN untuk provinsi ini"
+    }
+   },
+   "terpasang": {
+    "hidro": {
+     "mw": 372.79,
+     "tahun": 2025,
+     "sumber_id": "heesi2025",
+     "halaman": "Tabel 6.4.9 hlm 118"
+    },
+    "panas_bumi": {
+     "mw": 72.8,
+     "tahun": 2025,
+     "sumber_id": "heesi2025",
+     "halaman": "Tabel 6.4.9 hlm 118"
+    },
+    "surya": {
+     "mw": 108.61,
+     "tahun": 2025,
+     "sumber_id": "heesi2025",
+     "halaman": "Tabel 6.4.9 hlm 118"
+    },
+    "bayu": {
+     "mw": 0,
+     "tahun": 2025,
+     "sumber_id": "heesi2025",
+     "halaman": "Tabel 6.4.9 hlm 118"
+    },
+    "bioenergi": {
+     "mw": 24.7,
+     "tahun": 2025,
+     "sumber_id": "heesi2025",
+     "halaman": "Tabel 6.4.9 hlm 118"
+    },
+    "mikrohidro": {
+     "mw": null,
+     "tahun": null,
+     "sumber_id": "heesi2025",
+     "catatan": "HEESI menggabung PLTA dan PLTM/H dalam satu kolom (lihat hidro)"
+    },
+    "laut": {
+     "mw": null,
+     "tahun": null,
+     "sumber_id": "heesi2025",
+     "catatan": "tidak ada kapasitas terpasang listrik laut di HEESI"
+    }
+   },
+   "rasio_pemanfaatan": {
+    "hidro": {
+     "persen": 20.07,
+     "penyebut_mw": 1857,
+     "catatan": "terpasang 2025 (HEESI) / potensi 2015 (RUEN): beda tahun, indikasi saja"
+    },
+    "panas_bumi": {
+     "persen": 5.43,
+     "penyebut_mw": 1341,
+     "catatan": "terpasang 2025 / potensi 2025 (HEESI)"
+    },
+    "surya": {
+     "persen": 1.24,
+     "penyebut_mw": 8753,
+     "catatan": "terpasang 2025 (HEESI) / potensi 2015 (RUEN): beda tahun, indikasi saja"
+    },
+    "bayu": {
+     "persen": 0,
+     "penyebut_mw": 5213,
+     "catatan": "terpasang 2025 (HEESI) / potensi 2015 (RUEN): beda tahun, indikasi saja"
+    },
+    "bioenergi": {
+     "persen": 1.11,
+     "penyebut_mw": 2232.5,
+     "catatan": "terpasang 2025 (HEESI) / potensi 2015 (RUEN): beda tahun, indikasi saja"
+    }
+   },
+   "bpp": {
+    "rp_per_kwh": null,
+    "sistem": null,
+    "tahun": null,
+    "sumber_id": null,
+    "catatan": "Kepmen ESDM BPP pembangkitan terbaru belum terambil (jdih.esdm.go.id menolak klien otomatis); isi manual dari Kepmen resmi"
+   },
+   "faktor_lokasi": {
+    "F": 1,
+    "wilayah": "Jawa, Madura, Bali",
+    "sumber_id": "perpres112",
+    "catatan": "F pulau kecil/Mentawai lebih tinggi; tidak dipetakan"
+   },
+   "proyek": {
+    "rencana": 9,
+    "rencana_tanpa_pengembang": 5,
+    "mw_rencana_tanpa_pengembang": 312.7,
+    "sumber_id": "proyek-meti"
+   }
+  },
+  {
+   "kode": "34",
+   "nama": "DI Yogyakarta",
+   "potensi": {
+    "surya": {
+     "mw": 996,
+     "tahun": 2015,
+     "sumber_id": "ruen",
+     "halaman": "Tabel 44 hlm 77"
+    },
+    "bayu": {
+     "mw": 1079,
+     "tahun": 2015,
+     "sumber_id": "ruen",
+     "halaman": "Tabel 46 hlm 80"
+    },
+    "mikrohidro": {
+     "mw": 5,
+     "tahun": 2015,
+     "sumber_id": "ruen",
+     "halaman": "Tabel 40 (minihidro + mikrohidro) hlm 72"
+    },
+    "bioenergi": {
+     "mw": 224.2,
+     "tahun": 2015,
+     "sumber_id": "ruen",
+     "halaman": "Tabel 42 (biomassa/biofuel + biogas) hlm 74"
+    },
+    "panas_bumi": {
+     "mw": 10,
+     "tahun": 2025,
+     "sumber_id": "heesi2025",
+     "halaman": "Tabel 6.5.1 hlm 120-121 (sumber daya + cadangan, Badan Geologi per Des 2025)"
+    },
+    "hidro": {
+     "mw": null,
+     "tahun": 2015,
+     "sumber_id": "ruen",
+     "catatan": "tidak tercantum di tabel RUEN untuk provinsi ini"
+    },
+    "laut": {
+     "mw": null,
+     "tahun": 2015,
+     "sumber_id": "ruen",
+     "catatan": "tidak tercantum di tabel RUEN untuk provinsi ini"
+    }
+   },
+   "terpasang": {
+    "hidro": {
+     "mw": 0.5,
+     "tahun": 2025,
+     "sumber_id": "heesi2025",
+     "halaman": "Tabel 6.4.9 hlm 118"
+    },
+    "panas_bumi": {
+     "mw": 0,
+     "tahun": 2025,
+     "sumber_id": "heesi2025",
+     "halaman": "Tabel 6.4.9 hlm 118"
+    },
+    "surya": {
+     "mw": 4.17,
+     "tahun": 2025,
+     "sumber_id": "heesi2025",
+     "halaman": "Tabel 6.4.9 hlm 118"
+    },
+    "bayu": {
+     "mw": 0,
+     "tahun": 2025,
+     "sumber_id": "heesi2025",
+     "halaman": "Tabel 6.4.9 hlm 118"
+    },
+    "bioenergi": {
+     "mw": 3.8,
+     "tahun": 2025,
+     "sumber_id": "heesi2025",
+     "halaman": "Tabel 6.4.9 hlm 118"
+    },
+    "mikrohidro": {
+     "mw": null,
+     "tahun": null,
+     "sumber_id": "heesi2025",
+     "catatan": "HEESI menggabung PLTA dan PLTM/H dalam satu kolom (lihat hidro)"
+    },
+    "laut": {
+     "mw": null,
+     "tahun": null,
+     "sumber_id": "heesi2025",
+     "catatan": "tidak ada kapasitas terpasang listrik laut di HEESI"
+    }
+   },
+   "rasio_pemanfaatan": {
+    "hidro": {
+     "persen": null,
+     "penyebut_mw": null,
+     "catatan": "potensi per provinsi tidak tersedia"
+    },
+    "panas_bumi": {
+     "persen": 0,
+     "penyebut_mw": 10,
+     "catatan": "terpasang 2025 / potensi 2025 (HEESI)"
+    },
+    "surya": {
+     "persen": 0.42,
+     "penyebut_mw": 996,
+     "catatan": "terpasang 2025 (HEESI) / potensi 2015 (RUEN): beda tahun, indikasi saja"
+    },
+    "bayu": {
+     "persen": 0,
+     "penyebut_mw": 1079,
+     "catatan": "terpasang 2025 (HEESI) / potensi 2015 (RUEN): beda tahun, indikasi saja"
+    },
+    "bioenergi": {
+     "persen": 1.69,
+     "penyebut_mw": 224.2,
+     "catatan": "terpasang 2025 (HEESI) / potensi 2015 (RUEN): beda tahun, indikasi saja"
+    }
+   },
+   "bpp": {
+    "rp_per_kwh": null,
+    "sistem": null,
+    "tahun": null,
+    "sumber_id": null,
+    "catatan": "Kepmen ESDM BPP pembangkitan terbaru belum terambil (jdih.esdm.go.id menolak klien otomatis); isi manual dari Kepmen resmi"
+   },
+   "faktor_lokasi": {
+    "F": 1,
+    "wilayah": "Jawa, Madura, Bali",
+    "sumber_id": "perpres112",
+    "catatan": "F pulau kecil/Mentawai lebih tinggi; tidak dipetakan"
+   },
+   "proyek": {
+    "rencana": 0,
+    "rencana_tanpa_pengembang": 0,
+    "mw_rencana_tanpa_pengembang": 0,
+    "sumber_id": "proyek-meti"
+   }
+  },
+  {
+   "kode": "35",
+   "nama": "Jawa Timur",
+   "potensi": {
+    "surya": {
+     "mw": 10335,
+     "tahun": 2015,
+     "sumber_id": "ruen",
+     "halaman": "Tabel 44 hlm 77"
+    },
+    "bayu": {
+     "mw": 7907,
+     "tahun": 2015,
+     "sumber_id": "ruen",
+     "halaman": "Tabel 46 hlm 80"
+    },
+    "mikrohidro": {
+     "mw": 1142,
+     "tahun": 2015,
+     "sumber_id": "ruen",
+     "halaman": "Tabel 40 (minihidro + mikrohidro) hlm 72"
+    },
+    "bioenergi": {
+     "mw": 3420.9,
+     "tahun": 2015,
+     "sumber_id": "ruen",
+     "halaman": "Tabel 42 (biomassa/biofuel + biogas) hlm 74"
+    },
+    "hidro": {
+     "mw": 525,
+     "tahun": 2015,
+     "sumber_id": "ruen",
+     "halaman": "Tabel 37 (PLTA per wilayah) hlm 69"
+    },
+    "panas_bumi": {
+     "mw": 1299,
+     "tahun": 2025,
+     "sumber_id": "heesi2025",
+     "halaman": "Tabel 6.5.1 hlm 120-121 (sumber daya + cadangan, Badan Geologi per Des 2025)"
+    },
+    "laut": {
+     "mw": null,
+     "tahun": 2015,
+     "sumber_id": "ruen",
+     "catatan": "tidak tercantum di tabel RUEN untuk provinsi ini"
+    }
+   },
+   "terpasang": {
+    "hidro": {
+     "mw": 306.96,
+     "tahun": 2025,
+     "sumber_id": "heesi2025",
+     "halaman": "Tabel 6.4.9 hlm 118"
+    },
+    "panas_bumi": {
+     "mw": 34,
+     "tahun": 2025,
+     "sumber_id": "heesi2025",
+     "halaman": "Tabel 6.4.9 hlm 118"
+    },
+    "surya": {
+     "mw": 177.12,
+     "tahun": 2025,
+     "sumber_id": "heesi2025",
+     "halaman": "Tabel 6.4.9 hlm 118"
+    },
+    "bayu": {
+     "mw": 0,
+     "tahun": 2025,
+     "sumber_id": "heesi2025",
+     "halaman": "Tabel 6.4.9 hlm 118"
+    },
+    "bioenergi": {
+     "mw": 180.69,
+     "tahun": 2025,
+     "sumber_id": "heesi2025",
+     "halaman": "Tabel 6.4.9 hlm 118"
+    },
+    "mikrohidro": {
+     "mw": null,
+     "tahun": null,
+     "sumber_id": "heesi2025",
+     "catatan": "HEESI menggabung PLTA dan PLTM/H dalam satu kolom (lihat hidro)"
+    },
+    "laut": {
+     "mw": null,
+     "tahun": null,
+     "sumber_id": "heesi2025",
+     "catatan": "tidak ada kapasitas terpasang listrik laut di HEESI"
+    }
+   },
+   "rasio_pemanfaatan": {
+    "hidro": {
+     "persen": 18.41,
+     "penyebut_mw": 1667,
+     "catatan": "terpasang 2025 (HEESI) / potensi 2015 (RUEN): beda tahun, indikasi saja"
+    },
+    "panas_bumi": {
+     "persen": 2.62,
+     "penyebut_mw": 1299,
+     "catatan": "terpasang 2025 / potensi 2025 (HEESI)"
+    },
+    "surya": {
+     "persen": 1.71,
+     "penyebut_mw": 10335,
+     "catatan": "terpasang 2025 (HEESI) / potensi 2015 (RUEN): beda tahun, indikasi saja"
+    },
+    "bayu": {
+     "persen": 0,
+     "penyebut_mw": 7907,
+     "catatan": "terpasang 2025 (HEESI) / potensi 2015 (RUEN): beda tahun, indikasi saja"
+    },
+    "bioenergi": {
+     "persen": 5.28,
+     "penyebut_mw": 3420.9,
+     "catatan": "terpasang 2025 (HEESI) / potensi 2015 (RUEN): beda tahun, indikasi saja"
+    }
+   },
+   "bpp": {
+    "rp_per_kwh": null,
+    "sistem": null,
+    "tahun": null,
+    "sumber_id": null,
+    "catatan": "Kepmen ESDM BPP pembangkitan terbaru belum terambil (jdih.esdm.go.id menolak klien otomatis); isi manual dari Kepmen resmi"
+   },
+   "faktor_lokasi": {
+    "F": 1,
+    "wilayah": "Jawa, Madura, Bali",
+    "sumber_id": "perpres112",
+    "catatan": "F pulau kecil/Mentawai lebih tinggi; tidak dipetakan"
+   },
+   "proyek": {
+    "rencana": 5,
+    "rencana_tanpa_pengembang": 3,
+    "mw_rencana_tanpa_pengembang": 206.7,
+    "sumber_id": "proyek-meti"
+   }
+  },
+  {
+   "kode": "36",
+   "nama": "Banten",
+   "potensi": {
+    "surya": {
+     "mw": 2461,
+     "tahun": 2015,
+     "sumber_id": "ruen",
+     "halaman": "Tabel 44 hlm 77"
+    },
+    "bayu": {
+     "mw": 1753,
+     "tahun": 2015,
+     "sumber_id": "ruen",
+     "halaman": "Tabel 46 hlm 80"
+    },
+    "mikrohidro": {
+     "mw": 72,
+     "tahun": 2015,
+     "sumber_id": "ruen",
+     "halaman": "Tabel 40 (minihidro + mikrohidro) hlm 72"
+    },
+    "bioenergi": {
+     "mw": 465.1,
+     "tahun": 2015,
+     "sumber_id": "ruen",
+     "halaman": "Tabel 42 (biomassa/biofuel + biogas) hlm 74"
+    },
+    "panas_bumi": {
+     "mw": 518,
+     "tahun": 2025,
+     "sumber_id": "heesi2025",
+     "halaman": "Tabel 6.5.1 hlm 120-121 (sumber daya + cadangan, Badan Geologi per Des 2025)"
+    },
+    "hidro": {
+     "mw": null,
+     "tahun": 2015,
+     "sumber_id": "ruen",
+     "catatan": "tidak tercantum di tabel RUEN untuk provinsi ini"
+    },
+    "laut": {
+     "mw": null,
+     "tahun": 2015,
+     "sumber_id": "ruen",
+     "catatan": "tidak tercantum di tabel RUEN untuk provinsi ini"
+    }
+   },
+   "terpasang": {
+    "hidro": {
+     "mw": 15.5,
+     "tahun": 2025,
+     "sumber_id": "heesi2025",
+     "halaman": "Tabel 6.4.9 hlm 118"
+    },
+    "panas_bumi": {
+     "mw": 0,
+     "tahun": 2025,
+     "sumber_id": "heesi2025",
+     "halaman": "Tabel 6.4.9 hlm 118"
+    },
+    "surya": {
+     "mw": 91.53,
+     "tahun": 2025,
+     "sumber_id": "heesi2025",
+     "halaman": "Tabel 6.4.9 hlm 118"
+    },
+    "bayu": {
+     "mw": 0,
+     "tahun": 2025,
+     "sumber_id": "heesi2025",
+     "halaman": "Tabel 6.4.9 hlm 118"
+    },
+    "bioenergi": {
+     "mw": 0,
+     "tahun": 2025,
+     "sumber_id": "heesi2025",
+     "halaman": "Tabel 6.4.9 hlm 118"
+    },
+    "mikrohidro": {
+     "mw": null,
+     "tahun": null,
+     "sumber_id": "heesi2025",
+     "catatan": "HEESI menggabung PLTA dan PLTM/H dalam satu kolom (lihat hidro)"
+    },
+    "laut": {
+     "mw": null,
+     "tahun": null,
+     "sumber_id": "heesi2025",
+     "catatan": "tidak ada kapasitas terpasang listrik laut di HEESI"
+    }
+   },
+   "rasio_pemanfaatan": {
+    "hidro": {
+     "persen": null,
+     "penyebut_mw": null,
+     "catatan": "potensi per provinsi tidak tersedia"
+    },
+    "panas_bumi": {
+     "persen": 0,
+     "penyebut_mw": 518,
+     "catatan": "terpasang 2025 / potensi 2025 (HEESI)"
+    },
+    "surya": {
+     "persen": 3.72,
+     "penyebut_mw": 2461,
+     "catatan": "terpasang 2025 (HEESI) / potensi 2015 (RUEN): beda tahun, indikasi saja"
+    },
+    "bayu": {
+     "persen": 0,
+     "penyebut_mw": 1753,
+     "catatan": "terpasang 2025 (HEESI) / potensi 2015 (RUEN): beda tahun, indikasi saja"
+    },
+    "bioenergi": {
+     "persen": 0,
+     "penyebut_mw": 465.1,
+     "catatan": "terpasang 2025 (HEESI) / potensi 2015 (RUEN): beda tahun, indikasi saja"
+    }
+   },
+   "bpp": {
+    "rp_per_kwh": null,
+    "sistem": null,
+    "tahun": null,
+    "sumber_id": null,
+    "catatan": "Kepmen ESDM BPP pembangkitan terbaru belum terambil (jdih.esdm.go.id menolak klien otomatis); isi manual dari Kepmen resmi"
+   },
+   "faktor_lokasi": {
+    "F": 1,
+    "wilayah": "Jawa, Madura, Bali",
+    "sumber_id": "perpres112",
+    "catatan": "F pulau kecil/Mentawai lebih tinggi; tidak dipetakan"
+   },
+   "proyek": {
+    "rencana": 10,
+    "rencana_tanpa_pengembang": 7,
+    "mw_rencana_tanpa_pengembang": 131.8,
+    "sumber_id": "proyek-meti"
+   }
+  },
+  {
+   "kode": "51",
+   "nama": "Bali",
+   "potensi": {
+    "surya": {
+     "mw": 1254,
+     "tahun": 2015,
+     "sumber_id": "ruen",
+     "halaman": "Tabel 44 hlm 77"
+    },
+    "bayu": {
+     "mw": 1019,
+     "tahun": 2015,
+     "sumber_id": "ruen",
+     "halaman": "Tabel 46 hlm 80"
+    },
+    "mikrohidro": {
+     "mw": 15,
+     "tahun": 2015,
+     "sumber_id": "ruen",
+     "halaman": "Tabel 40 (minihidro + mikrohidro) hlm 72"
+    },
+    "bioenergi": {
+     "mw": 191.6,
+     "tahun": 2015,
+     "sumber_id": "ruen",
+     "halaman": "Tabel 42 (biomassa/biofuel + biogas) hlm 74"
+    },
+    "hidro": {
+     "mw": null,
+     "tahun": 2015,
+     "sumber_id": "ruen",
+     "halaman": "Tabel 37 (PLTA per wilayah) hlm 69",
+     "catatan": "RUEN hanya memberi total kelompok Bali, Nusa Tenggara Barat, Nusa Tenggara Timur (624 MW); tidak dipisah per provinsi",
+     "kelompok_mw": 624
+    },
+    "laut": {
+     "mw": 320,
+     "tahun": 2015,
+     "sumber_id": "ruen",
+     "halaman": "Tabel 48 (praktis; teknis dan teoritis ikut) hlm 82",
+     "teknis_mw": 1280,
+     "teoritis_mw": 5119
+    },
+    "panas_bumi": {
+     "mw": 335,
+     "tahun": 2025,
+     "sumber_id": "heesi2025",
+     "halaman": "Tabel 6.5.1 hlm 120-121 (sumber daya + cadangan, Badan Geologi per Des 2025)"
+    }
+   },
+   "terpasang": {
+    "hidro": {
+     "mw": 2.53,
+     "tahun": 2025,
+     "sumber_id": "heesi2025",
+     "halaman": "Tabel 6.4.9 hlm 118"
+    },
+    "panas_bumi": {
+     "mw": 0,
+     "tahun": 2025,
+     "sumber_id": "heesi2025",
+     "halaman": "Tabel 6.4.9 hlm 118"
+    },
+    "surya": {
+     "mw": 41.6,
+     "tahun": 2025,
+     "sumber_id": "heesi2025",
+     "halaman": "Tabel 6.4.9 hlm 118"
+    },
+    "bayu": {
+     "mw": 1.08,
+     "tahun": 2025,
+     "sumber_id": "heesi2025",
+     "halaman": "Tabel 6.4.9 hlm 118"
+    },
+    "bioenergi": {
+     "mw": 0,
+     "tahun": 2025,
+     "sumber_id": "heesi2025",
+     "halaman": "Tabel 6.4.9 hlm 118"
+    },
+    "mikrohidro": {
+     "mw": null,
+     "tahun": null,
+     "sumber_id": "heesi2025",
+     "catatan": "HEESI menggabung PLTA dan PLTM/H dalam satu kolom (lihat hidro)"
+    },
+    "laut": {
+     "mw": null,
+     "tahun": null,
+     "sumber_id": "heesi2025",
+     "catatan": "tidak ada kapasitas terpasang listrik laut di HEESI"
+    }
+   },
+   "rasio_pemanfaatan": {
+    "hidro": {
+     "persen": null,
+     "penyebut_mw": null,
+     "catatan": "potensi per provinsi tidak tersedia"
+    },
+    "panas_bumi": {
+     "persen": 0,
+     "penyebut_mw": 335,
+     "catatan": "terpasang 2025 / potensi 2025 (HEESI)"
+    },
+    "surya": {
+     "persen": 3.32,
+     "penyebut_mw": 1254,
+     "catatan": "terpasang 2025 (HEESI) / potensi 2015 (RUEN): beda tahun, indikasi saja"
+    },
+    "bayu": {
+     "persen": 0.11,
+     "penyebut_mw": 1019,
+     "catatan": "terpasang 2025 (HEESI) / potensi 2015 (RUEN): beda tahun, indikasi saja"
+    },
+    "bioenergi": {
+     "persen": 0,
+     "penyebut_mw": 191.6,
+     "catatan": "terpasang 2025 (HEESI) / potensi 2015 (RUEN): beda tahun, indikasi saja"
+    }
+   },
+   "bpp": {
+    "rp_per_kwh": null,
+    "sistem": null,
+    "tahun": null,
+    "sumber_id": null,
+    "catatan": "Kepmen ESDM BPP pembangkitan terbaru belum terambil (jdih.esdm.go.id menolak klien otomatis); isi manual dari Kepmen resmi"
+   },
+   "faktor_lokasi": {
+    "F": 1,
+    "wilayah": "Jawa, Madura, Bali",
+    "sumber_id": "perpres112",
+    "catatan": "F pulau kecil/Mentawai lebih tinggi; tidak dipetakan"
+   },
+   "proyek": {
+    "rencana": 2,
+    "rencana_tanpa_pengembang": 2,
+    "mw_rencana_tanpa_pengembang": 200,
+    "sumber_id": "proyek-meti"
+   }
+  },
+  {
+   "kode": "52",
+   "nama": "Nusa Tenggara Barat",
+   "potensi": {
+    "surya": {
+     "mw": 9931,
+     "tahun": 2015,
+     "sumber_id": "ruen",
+     "halaman": "Tabel 44 hlm 77"
+    },
+    "bayu": {
+     "mw": 2605,
+     "tahun": 2015,
+     "sumber_id": "ruen",
+     "halaman": "Tabel 46 hlm 80"
+    },
+    "mikrohidro": {
+     "mw": 31,
+     "tahun": 2015,
+     "sumber_id": "ruen",
+     "halaman": "Tabel 40 (minihidro + mikrohidro) hlm 72"
+    },
+    "bioenergi": {
+     "mw": 394.1,
+     "tahun": 2015,
+     "sumber_id": "ruen",
+     "halaman": "Tabel 42 (biomassa/biofuel + biogas) hlm 74"
+    },
+    "hidro": {
+     "mw": null,
+     "tahun": 2015,
+     "sumber_id": "ruen",
+     "halaman": "Tabel 37 (PLTA per wilayah) hlm 69",
+     "catatan": "RUEN hanya memberi total kelompok Bali, Nusa Tenggara Barat, Nusa Tenggara Timur (624 MW); tidak dipisah per provinsi",
+     "kelompok_mw": 624
+    },
+    "laut": {
+     "mw": 8644,
+     "tahun": 2015,
+     "sumber_id": "ruen",
+     "halaman": "Tabel 48 (praktis; teknis dan teoritis ikut) hlm 82",
+     "teknis_mw": 34577,
+     "teoritis_mw": 138308
+    },
+    "panas_bumi": {
+     "mw": 78,
+     "tahun": 2025,
+     "sumber_id": "heesi2025",
+     "halaman": "Tabel 6.5.1 hlm 120-121 (sumber daya + cadangan, Badan Geologi per Des 2025)"
+    }
+   },
+   "terpasang": {
+    "hidro": {
+     "mw": 18.6,
+     "tahun": 2025,
+     "sumber_id": "heesi2025",
+     "halaman": "Tabel 6.4.9 hlm 118"
+    },
+    "panas_bumi": {
+     "mw": 0,
+     "tahun": 2025,
+     "sumber_id": "heesi2025",
+     "halaman": "Tabel 6.4.9 hlm 118"
+    },
+    "surya": {
+     "mw": 50.58,
+     "tahun": 2025,
+     "sumber_id": "heesi2025",
+     "halaman": "Tabel 6.4.9 hlm 118"
+    },
+    "bayu": {
+     "mw": 0,
+     "tahun": 2025,
+     "sumber_id": "heesi2025",
+     "halaman": "Tabel 6.4.9 hlm 118"
+    },
+    "bioenergi": {
+     "mw": 0,
+     "tahun": 2025,
+     "sumber_id": "heesi2025",
+     "halaman": "Tabel 6.4.9 hlm 118"
+    },
+    "mikrohidro": {
+     "mw": null,
+     "tahun": null,
+     "sumber_id": "heesi2025",
+     "catatan": "HEESI menggabung PLTA dan PLTM/H dalam satu kolom (lihat hidro)"
+    },
+    "laut": {
+     "mw": null,
+     "tahun": null,
+     "sumber_id": "heesi2025",
+     "catatan": "tidak ada kapasitas terpasang listrik laut di HEESI"
+    }
+   },
+   "rasio_pemanfaatan": {
+    "hidro": {
+     "persen": null,
+     "penyebut_mw": null,
+     "catatan": "potensi per provinsi tidak tersedia"
+    },
+    "panas_bumi": {
+     "persen": 0,
+     "penyebut_mw": 78,
+     "catatan": "terpasang 2025 / potensi 2025 (HEESI)"
+    },
+    "surya": {
+     "persen": 0.51,
+     "penyebut_mw": 9931,
+     "catatan": "terpasang 2025 (HEESI) / potensi 2015 (RUEN): beda tahun, indikasi saja"
+    },
+    "bayu": {
+     "persen": 0,
+     "penyebut_mw": 2605,
+     "catatan": "terpasang 2025 (HEESI) / potensi 2015 (RUEN): beda tahun, indikasi saja"
+    },
+    "bioenergi": {
+     "persen": 0,
+     "penyebut_mw": 394.1,
+     "catatan": "terpasang 2025 (HEESI) / potensi 2015 (RUEN): beda tahun, indikasi saja"
+    }
+   },
+   "bpp": {
+    "rp_per_kwh": null,
+    "sistem": null,
+    "tahun": null,
+    "sumber_id": null,
+    "catatan": "Kepmen ESDM BPP pembangkitan terbaru belum terambil (jdih.esdm.go.id menolak klien otomatis); isi manual dari Kepmen resmi"
+   },
+   "faktor_lokasi": {
+    "F": 1.2,
+    "wilayah": "Nusa Tenggara",
+    "sumber_id": "perpres112",
+    "catatan": "F pulau kecil/Mentawai lebih tinggi; tidak dipetakan"
+   },
+   "proyek": {
+    "rencana": 2,
+    "rencana_tanpa_pengembang": 2,
+    "mw_rencana_tanpa_pengembang": 15.5,
+    "sumber_id": "proyek-meti"
+   }
+  },
+  {
+   "kode": "53",
+   "nama": "Nusa Tenggara Timur",
+   "potensi": {
+    "surya": {
+     "mw": 7272,
+     "tahun": 2015,
+     "sumber_id": "ruen",
+     "halaman": "Tabel 44 hlm 77"
+    },
+    "bayu": {
+     "mw": 10188,
+     "tahun": 2015,
+     "sumber_id": "ruen",
+     "halaman": "Tabel 46 hlm 80"
+    },
+    "mikrohidro": {
+     "mw": 95,
+     "tahun": 2015,
+     "sumber_id": "ruen",
+     "halaman": "Tabel 40 (minihidro + mikrohidro) hlm 72"
+    },
+    "bioenergi": {
+     "mw": 240.5,
+     "tahun": 2015,
+     "sumber_id": "ruen",
+     "halaman": "Tabel 42 (biomassa/biofuel + biogas) hlm 74"
+    },
+    "hidro": {
+     "mw": null,
+     "tahun": 2015,
+     "sumber_id": "ruen",
+     "halaman": "Tabel 37 (PLTA per wilayah) hlm 69",
+     "catatan": "RUEN hanya memberi total kelompok Bali, Nusa Tenggara Barat, Nusa Tenggara Timur (624 MW); tidak dipisah per provinsi",
+     "kelompok_mw": 624
+    },
+    "laut": {
+     "mw": 333,
+     "tahun": 2015,
+     "sumber_id": "ruen",
+     "halaman": "Tabel 48 (praktis; teknis dan teoritis ikut) hlm 82",
+     "teknis_mw": 1334,
+     "teoritis_mw": 5335
+    },
+    "panas_bumi": {
+     "mw": 1195,
+     "tahun": 2025,
+     "sumber_id": "heesi2025",
+     "halaman": "Tabel 6.5.1 hlm 120-121 (sumber daya + cadangan, Badan Geologi per Des 2025)"
+    }
+   },
+   "terpasang": {
+    "hidro": {
+     "mw": 11.88,
+     "tahun": 2025,
+     "sumber_id": "heesi2025",
+     "halaman": "Tabel 6.4.9 hlm 118"
+    },
+    "panas_bumi": {
+     "mw": 24.08,
+     "tahun": 2025,
+     "sumber_id": "heesi2025",
+     "halaman": "Tabel 6.4.9 hlm 118"
+    },
+    "surya": {
+     "mw": 24.53,
+     "tahun": 2025,
+     "sumber_id": "heesi2025",
+     "halaman": "Tabel 6.4.9 hlm 118"
+    },
+    "bayu": {
+     "mw": 0,
+     "tahun": 2025,
+     "sumber_id": "heesi2025",
+     "halaman": "Tabel 6.4.9 hlm 118"
+    },
+    "bioenergi": {
+     "mw": 0,
+     "tahun": 2025,
+     "sumber_id": "heesi2025",
+     "halaman": "Tabel 6.4.9 hlm 118"
+    },
+    "mikrohidro": {
+     "mw": null,
+     "tahun": null,
+     "sumber_id": "heesi2025",
+     "catatan": "HEESI menggabung PLTA dan PLTM/H dalam satu kolom (lihat hidro)"
+    },
+    "laut": {
+     "mw": null,
+     "tahun": null,
+     "sumber_id": "heesi2025",
+     "catatan": "tidak ada kapasitas terpasang listrik laut di HEESI"
+    }
+   },
+   "rasio_pemanfaatan": {
+    "hidro": {
+     "persen": null,
+     "penyebut_mw": null,
+     "catatan": "potensi per provinsi tidak tersedia"
+    },
+    "panas_bumi": {
+     "persen": 2.02,
+     "penyebut_mw": 1195,
+     "catatan": "terpasang 2025 / potensi 2025 (HEESI)"
+    },
+    "surya": {
+     "persen": 0.34,
+     "penyebut_mw": 7272,
+     "catatan": "terpasang 2025 (HEESI) / potensi 2015 (RUEN): beda tahun, indikasi saja"
+    },
+    "bayu": {
+     "persen": 0,
+     "penyebut_mw": 10188,
+     "catatan": "terpasang 2025 (HEESI) / potensi 2015 (RUEN): beda tahun, indikasi saja"
+    },
+    "bioenergi": {
+     "persen": 0,
+     "penyebut_mw": 240.5,
+     "catatan": "terpasang 2025 (HEESI) / potensi 2015 (RUEN): beda tahun, indikasi saja"
+    }
+   },
+   "bpp": {
+    "rp_per_kwh": null,
+    "sistem": null,
+    "tahun": null,
+    "sumber_id": null,
+    "catatan": "Kepmen ESDM BPP pembangkitan terbaru belum terambil (jdih.esdm.go.id menolak klien otomatis); isi manual dari Kepmen resmi"
+   },
+   "faktor_lokasi": {
+    "F": 1.2,
+    "wilayah": "Nusa Tenggara",
+    "sumber_id": "perpres112",
+    "catatan": "F pulau kecil/Mentawai lebih tinggi; tidak dipetakan"
+   },
+   "proyek": {
+    "rencana": 15,
+    "rencana_tanpa_pengembang": 10,
+    "mw_rencana_tanpa_pengembang": 136.9,
+    "sumber_id": "proyek-meti"
+   }
+  },
+  {
+   "kode": "61",
+   "nama": "Kalimantan Barat",
+   "potensi": {
+    "surya": {
+     "mw": 20113,
+     "tahun": 2015,
+     "sumber_id": "ruen",
+     "halaman": "Tabel 44 hlm 77"
+    },
+    "bayu": {
+     "mw": 554,
+     "tahun": 2015,
+     "sumber_id": "ruen",
+     "halaman": "Tabel 46 hlm 80"
+    },
+    "mikrohidro": {
+     "mw": 124,
+     "tahun": 2015,
+     "sumber_id": "ruen",
+     "halaman": "Tabel 40 (minihidro + mikrohidro) hlm 72"
+    },
+    "bioenergi": {
+     "mw": 1308.2,
+     "tahun": 2015,
+     "sumber_id": "ruen",
+     "halaman": "Tabel 42 (biomassa/biofuel + biogas) hlm 74"
+    },
+    "hidro": {
+     "mw": 4737,
+     "tahun": 2015,
+     "sumber_id": "ruen",
+     "halaman": "Tabel 37 (PLTA per wilayah) hlm 69"
+    },
+    "panas_bumi": {
+     "mw": 65,
+     "tahun": 2025,
+     "sumber_id": "heesi2025",
+     "halaman": "Tabel 6.5.1 hlm 120-121 (sumber daya + cadangan, Badan Geologi per Des 2025)"
+    },
+    "laut": {
+     "mw": null,
+     "tahun": 2015,
+     "sumber_id": "ruen",
+     "catatan": "tidak tercantum di tabel RUEN untuk provinsi ini"
+    }
+   },
+   "terpasang": {
+    "hidro": {
+     "mw": 6.6,
+     "tahun": 2025,
+     "sumber_id": "heesi2025",
+     "halaman": "Tabel 6.4.9 hlm 118"
+    },
+    "panas_bumi": {
+     "mw": 0,
+     "tahun": 2025,
+     "sumber_id": "heesi2025",
+     "halaman": "Tabel 6.4.9 hlm 118"
+    },
+    "surya": {
+     "mw": 7.39,
+     "tahun": 2025,
+     "sumber_id": "heesi2025",
+     "halaman": "Tabel 6.4.9 hlm 118"
+    },
+    "bayu": {
+     "mw": 0,
+     "tahun": 2025,
+     "sumber_id": "heesi2025",
+     "halaman": "Tabel 6.4.9 hlm 118"
+    },
+    "bioenergi": {
+     "mw": 156.38,
+     "tahun": 2025,
+     "sumber_id": "heesi2025",
+     "halaman": "Tabel 6.4.9 hlm 118"
+    },
+    "mikrohidro": {
+     "mw": null,
+     "tahun": null,
+     "sumber_id": "heesi2025",
+     "catatan": "HEESI menggabung PLTA dan PLTM/H dalam satu kolom (lihat hidro)"
+    },
+    "laut": {
+     "mw": null,
+     "tahun": null,
+     "sumber_id": "heesi2025",
+     "catatan": "tidak ada kapasitas terpasang listrik laut di HEESI"
+    }
+   },
+   "rasio_pemanfaatan": {
+    "hidro": {
+     "persen": 0.14,
+     "penyebut_mw": 4861,
+     "catatan": "terpasang 2025 (HEESI) / potensi 2015 (RUEN): beda tahun, indikasi saja"
+    },
+    "panas_bumi": {
+     "persen": 0,
+     "penyebut_mw": 65,
+     "catatan": "terpasang 2025 / potensi 2025 (HEESI)"
+    },
+    "surya": {
+     "persen": 0.04,
+     "penyebut_mw": 20113,
+     "catatan": "terpasang 2025 (HEESI) / potensi 2015 (RUEN): beda tahun, indikasi saja"
+    },
+    "bayu": {
+     "persen": 0,
+     "penyebut_mw": 554,
+     "catatan": "terpasang 2025 (HEESI) / potensi 2015 (RUEN): beda tahun, indikasi saja"
+    },
+    "bioenergi": {
+     "persen": 11.95,
+     "penyebut_mw": 1308.2,
+     "catatan": "terpasang 2025 (HEESI) / potensi 2015 (RUEN): beda tahun, indikasi saja"
+    }
+   },
+   "bpp": {
+    "rp_per_kwh": null,
+    "sistem": null,
+    "tahun": null,
+    "sumber_id": null,
+    "catatan": "Kepmen ESDM BPP pembangkitan terbaru belum terambil (jdih.esdm.go.id menolak klien otomatis); isi manual dari Kepmen resmi"
+   },
+   "faktor_lokasi": {
+    "F": 1.1,
+    "wilayah": "Kalimantan",
+    "sumber_id": "perpres112",
+    "catatan": "F pulau kecil/Mentawai lebih tinggi; tidak dipetakan"
+   },
+   "proyek": {
+    "rencana": 7,
+    "rencana_tanpa_pengembang": 5,
+    "mw_rencana_tanpa_pengembang": 430,
+    "sumber_id": "proyek-meti"
+   }
+  },
+  {
+   "kode": "62",
+   "nama": "Kalimantan Tengah",
+   "potensi": {
+    "surya": {
+     "mw": 8459,
+     "tahun": 2015,
+     "sumber_id": "ruen",
+     "halaman": "Tabel 44 hlm 77"
+    },
+    "bayu": {
+     "mw": 681,
+     "tahun": 2015,
+     "sumber_id": "ruen",
+     "halaman": "Tabel 46 hlm 80"
+    },
+    "mikrohidro": {
+     "mw": 3313,
+     "tahun": 2015,
+     "sumber_id": "ruen",
+     "halaman": "Tabel 40 (minihidro + mikrohidro) hlm 72"
+    },
+    "bioenergi": {
+     "mw": 1498.9,
+     "tahun": 2015,
+     "sumber_id": "ruen",
+     "halaman": "Tabel 42 (biomassa/biofuel + biogas) hlm 74"
+    },
+    "hidro": {
+     "mw": null,
+     "tahun": 2015,
+     "sumber_id": "ruen",
+     "halaman": "Tabel 37 (PLTA per wilayah) hlm 69",
+     "catatan": "RUEN hanya memberi total kelompok Kalimantan Selatan, Kalimantan Tengah, Kalimantan Timur (16844 MW); tidak dipisah per provinsi",
+     "kelompok_mw": 16844
+    },
+    "panas_bumi": {
+     "mw": 0,
+     "tahun": 2025,
+     "sumber_id": "heesi2025",
+     "halaman": "Tabel 6.5.1 hlm 120-121 (sumber daya + cadangan, Badan Geologi per Des 2025)"
+    },
+    "laut": {
+     "mw": null,
+     "tahun": 2015,
+     "sumber_id": "ruen",
+     "catatan": "tidak tercantum di tabel RUEN untuk provinsi ini"
+    }
+   },
+   "terpasang": {
+    "hidro": {
+     "mw": 0.77,
+     "tahun": 2025,
+     "sumber_id": "heesi2025",
+     "halaman": "Tabel 6.4.9 hlm 118"
+    },
+    "panas_bumi": {
+     "mw": 0,
+     "tahun": 2025,
+     "sumber_id": "heesi2025",
+     "halaman": "Tabel 6.4.9 hlm 118"
+    },
+    "surya": {
+     "mw": 3.12,
+     "tahun": 2025,
+     "sumber_id": "heesi2025",
+     "halaman": "Tabel 6.4.9 hlm 118"
+    },
+    "bayu": {
+     "mw": 0,
+     "tahun": 2025,
+     "sumber_id": "heesi2025",
+     "halaman": "Tabel 6.4.9 hlm 118"
+    },
+    "bioenergi": {
+     "mw": 441.57,
+     "tahun": 2025,
+     "sumber_id": "heesi2025",
+     "halaman": "Tabel 6.4.9 hlm 118"
+    },
+    "mikrohidro": {
+     "mw": null,
+     "tahun": null,
+     "sumber_id": "heesi2025",
+     "catatan": "HEESI menggabung PLTA dan PLTM/H dalam satu kolom (lihat hidro)"
+    },
+    "laut": {
+     "mw": null,
+     "tahun": null,
+     "sumber_id": "heesi2025",
+     "catatan": "tidak ada kapasitas terpasang listrik laut di HEESI"
+    }
+   },
+   "rasio_pemanfaatan": {
+    "hidro": {
+     "persen": null,
+     "penyebut_mw": null,
+     "catatan": "potensi per provinsi tidak tersedia"
+    },
+    "panas_bumi": {
+     "persen": null,
+     "penyebut_mw": null,
+     "catatan": "potensi per provinsi tidak tersedia"
+    },
+    "surya": {
+     "persen": 0.04,
+     "penyebut_mw": 8459,
+     "catatan": "terpasang 2025 (HEESI) / potensi 2015 (RUEN): beda tahun, indikasi saja"
+    },
+    "bayu": {
+     "persen": 0,
+     "penyebut_mw": 681,
+     "catatan": "terpasang 2025 (HEESI) / potensi 2015 (RUEN): beda tahun, indikasi saja"
+    },
+    "bioenergi": {
+     "persen": 29.46,
+     "penyebut_mw": 1498.9,
+     "catatan": "terpasang 2025 (HEESI) / potensi 2015 (RUEN): beda tahun, indikasi saja"
+    }
+   },
+   "bpp": {
+    "rp_per_kwh": null,
+    "sistem": null,
+    "tahun": null,
+    "sumber_id": null,
+    "catatan": "Kepmen ESDM BPP pembangkitan terbaru belum terambil (jdih.esdm.go.id menolak klien otomatis); isi manual dari Kepmen resmi"
+   },
+   "faktor_lokasi": {
+    "F": 1.1,
+    "wilayah": "Kalimantan",
+    "sumber_id": "perpres112",
+    "catatan": "F pulau kecil/Mentawai lebih tinggi; tidak dipetakan"
+   },
+   "proyek": {
+    "rencana": 4,
+    "rencana_tanpa_pengembang": 4,
+    "mw_rencana_tanpa_pengembang": 325,
+    "sumber_id": "proyek-meti"
+   }
+  },
+  {
+   "kode": "63",
+   "nama": "Kalimantan Selatan",
+   "potensi": {
+    "surya": {
+     "mw": 6031,
+     "tahun": 2015,
+     "sumber_id": "ruen",
+     "halaman": "Tabel 44 hlm 77"
+    },
+    "bayu": {
+     "mw": 1006,
+     "tahun": 2015,
+     "sumber_id": "ruen",
+     "halaman": "Tabel 46 hlm 80"
+    },
+    "mikrohidro": {
+     "mw": 158,
+     "tahun": 2015,
+     "sumber_id": "ruen",
+     "halaman": "Tabel 40 (minihidro + mikrohidro) hlm 72"
+    },
+    "bioenergi": {
+     "mw": 1289.9,
+     "tahun": 2015,
+     "sumber_id": "ruen",
+     "halaman": "Tabel 42 (biomassa/biofuel + biogas) hlm 74"
+    },
+    "hidro": {
+     "mw": null,
+     "tahun": 2015,
+     "sumber_id": "ruen",
+     "halaman": "Tabel 37 (PLTA per wilayah) hlm 69",
+     "catatan": "RUEN hanya memberi total kelompok Kalimantan Selatan, Kalimantan Tengah, Kalimantan Timur (16844 MW); tidak dipisah per provinsi",
+     "kelompok_mw": 16844
+    },
+    "panas_bumi": {
+     "mw": 50,
+     "tahun": 2025,
+     "sumber_id": "heesi2025",
+     "halaman": "Tabel 6.5.1 hlm 120-121 (sumber daya + cadangan, Badan Geologi per Des 2025)"
+    },
+    "laut": {
+     "mw": null,
+     "tahun": 2015,
+     "sumber_id": "ruen",
+     "catatan": "tidak tercantum di tabel RUEN untuk provinsi ini"
+    }
+   },
+   "terpasang": {
+    "hidro": {
+     "mw": 30.09,
+     "tahun": 2025,
+     "sumber_id": "heesi2025",
+     "halaman": "Tabel 6.4.9 hlm 118"
+    },
+    "panas_bumi": {
+     "mw": 0,
+     "tahun": 2025,
+     "sumber_id": "heesi2025",
+     "halaman": "Tabel 6.4.9 hlm 118"
+    },
+    "surya": {
+     "mw": 21.22,
+     "tahun": 2025,
+     "sumber_id": "heesi2025",
+     "halaman": "Tabel 6.4.9 hlm 118"
+    },
+    "bayu": {
+     "mw": 0,
+     "tahun": 2025,
+     "sumber_id": "heesi2025",
+     "halaman": "Tabel 6.4.9 hlm 118"
+    },
+    "bioenergi": {
+     "mw": 30.55,
+     "tahun": 2025,
+     "sumber_id": "heesi2025",
+     "halaman": "Tabel 6.4.9 hlm 118"
+    },
+    "mikrohidro": {
+     "mw": null,
+     "tahun": null,
+     "sumber_id": "heesi2025",
+     "catatan": "HEESI menggabung PLTA dan PLTM/H dalam satu kolom (lihat hidro)"
+    },
+    "laut": {
+     "mw": null,
+     "tahun": null,
+     "sumber_id": "heesi2025",
+     "catatan": "tidak ada kapasitas terpasang listrik laut di HEESI"
+    }
+   },
+   "rasio_pemanfaatan": {
+    "hidro": {
+     "persen": null,
+     "penyebut_mw": null,
+     "catatan": "potensi per provinsi tidak tersedia"
+    },
+    "panas_bumi": {
+     "persen": 0,
+     "penyebut_mw": 50,
+     "catatan": "terpasang 2025 / potensi 2025 (HEESI)"
+    },
+    "surya": {
+     "persen": 0.35,
+     "penyebut_mw": 6031,
+     "catatan": "terpasang 2025 (HEESI) / potensi 2015 (RUEN): beda tahun, indikasi saja"
+    },
+    "bayu": {
+     "persen": 0,
+     "penyebut_mw": 1006,
+     "catatan": "terpasang 2025 (HEESI) / potensi 2015 (RUEN): beda tahun, indikasi saja"
+    },
+    "bioenergi": {
+     "persen": 2.37,
+     "penyebut_mw": 1289.9,
+     "catatan": "terpasang 2025 (HEESI) / potensi 2015 (RUEN): beda tahun, indikasi saja"
+    }
+   },
+   "bpp": {
+    "rp_per_kwh": null,
+    "sistem": null,
+    "tahun": null,
+    "sumber_id": null,
+    "catatan": "Kepmen ESDM BPP pembangkitan terbaru belum terambil (jdih.esdm.go.id menolak klien otomatis); isi manual dari Kepmen resmi"
+   },
+   "faktor_lokasi": {
+    "F": 1.1,
+    "wilayah": "Kalimantan",
+    "sumber_id": "perpres112",
+    "catatan": "F pulau kecil/Mentawai lebih tinggi; tidak dipetakan"
+   },
+   "proyek": {
+    "rencana": 1,
+    "rencana_tanpa_pengembang": 1,
+    "mw_rencana_tanpa_pengembang": 70,
+    "sumber_id": "proyek-meti"
+   }
+  },
+  {
+   "kode": "64",
+   "nama": "Kalimantan Timur",
+   "potensi": {
+    "surya": {
+     "mw": 13479,
+     "tahun": 2015,
+     "sumber_id": "ruen",
+     "halaman": "Tabel 44 hlm 77"
+    },
+    "bayu": {
+     "mw": 212,
+     "tahun": 2015,
+     "sumber_id": "ruen",
+     "halaman": "Tabel 46 hlm 80"
+    },
+    "mikrohidro": {
+     "mw": 3562,
+     "tahun": 2015,
+     "sumber_id": "ruen",
+     "halaman": "Tabel 40 (minihidro + mikrohidro) hlm 72"
+    },
+    "bioenergi": {
+     "mw": null,
+     "tahun": 2015,
+     "sumber_id": "ruen",
+     "halaman": "Tabel 42 (biomassa/biofuel + biogas) hlm 74",
+     "catatan": "RUEN menggabung Kalimantan Timur/Utara (964.3 MW); tidak dipisah",
+     "kelompok_mw": 964.3
+    },
+    "hidro": {
+     "mw": null,
+     "tahun": 2015,
+     "sumber_id": "ruen",
+     "halaman": "Tabel 37 (PLTA per wilayah) hlm 69",
+     "catatan": "RUEN hanya memberi total kelompok Kalimantan Selatan, Kalimantan Tengah, Kalimantan Timur (16844 MW); tidak dipisah per provinsi",
+     "kelompok_mw": 16844
+    },
+    "panas_bumi": {
+     "mw": 32,
+     "tahun": 2025,
+     "sumber_id": "heesi2025",
+     "halaman": "Tabel 6.5.1 hlm 120-121 (sumber daya + cadangan, Badan Geologi per Des 2025)"
+    },
+    "laut": {
+     "mw": null,
+     "tahun": 2015,
+     "sumber_id": "ruen",
+     "catatan": "tidak tercantum di tabel RUEN untuk provinsi ini"
+    }
+   },
+   "terpasang": {
+    "hidro": {
+     "mw": 0.34,
+     "tahun": 2025,
+     "sumber_id": "heesi2025",
+     "halaman": "Tabel 6.4.9 hlm 118"
+    },
+    "panas_bumi": {
+     "mw": 0,
+     "tahun": 2025,
+     "sumber_id": "heesi2025",
+     "halaman": "Tabel 6.4.9 hlm 118"
+    },
+    "surya": {
+     "mw": 80.47,
+     "tahun": 2025,
+     "sumber_id": "heesi2025",
+     "halaman": "Tabel 6.4.9 hlm 118"
+    },
+    "bayu": {
+     "mw": 0,
+     "tahun": 2025,
+     "sumber_id": "heesi2025",
+     "halaman": "Tabel 6.4.9 hlm 118"
+    },
+    "bioenergi": {
+     "mw": 119.12,
+     "tahun": 2025,
+     "sumber_id": "heesi2025",
+     "halaman": "Tabel 6.4.9 hlm 118"
+    },
+    "mikrohidro": {
+     "mw": null,
+     "tahun": null,
+     "sumber_id": "heesi2025",
+     "catatan": "HEESI menggabung PLTA dan PLTM/H dalam satu kolom (lihat hidro)"
+    },
+    "laut": {
+     "mw": null,
+     "tahun": null,
+     "sumber_id": "heesi2025",
+     "catatan": "tidak ada kapasitas terpasang listrik laut di HEESI"
+    }
+   },
+   "rasio_pemanfaatan": {
+    "hidro": {
+     "persen": null,
+     "penyebut_mw": null,
+     "catatan": "potensi per provinsi tidak tersedia"
+    },
+    "panas_bumi": {
+     "persen": 0,
+     "penyebut_mw": 32,
+     "catatan": "terpasang 2025 / potensi 2025 (HEESI)"
+    },
+    "surya": {
+     "persen": 0.6,
+     "penyebut_mw": 13479,
+     "catatan": "terpasang 2025 (HEESI) / potensi 2015 (RUEN): beda tahun, indikasi saja"
+    },
+    "bayu": {
+     "persen": 0,
+     "penyebut_mw": 212,
+     "catatan": "terpasang 2025 (HEESI) / potensi 2015 (RUEN): beda tahun, indikasi saja"
+    },
+    "bioenergi": {
+     "persen": null,
+     "penyebut_mw": null,
+     "catatan": "potensi per provinsi tidak tersedia"
+    }
+   },
+   "bpp": {
+    "rp_per_kwh": null,
+    "sistem": null,
+    "tahun": null,
+    "sumber_id": null,
+    "catatan": "Kepmen ESDM BPP pembangkitan terbaru belum terambil (jdih.esdm.go.id menolak klien otomatis); isi manual dari Kepmen resmi"
+   },
+   "faktor_lokasi": {
+    "F": 1.1,
+    "wilayah": "Kalimantan",
+    "sumber_id": "perpres112",
+    "catatan": "F pulau kecil/Mentawai lebih tinggi; tidak dipetakan"
+   },
+   "proyek": {
+    "rencana": 10,
+    "rencana_tanpa_pengembang": 4,
+    "mw_rencana_tanpa_pengembang": 455,
+    "sumber_id": "proyek-meti"
+   }
+  },
+  {
+   "kode": "65",
+   "nama": "Kalimantan Utara",
+   "potensi": {
+    "surya": {
+     "mw": 4643,
+     "tahun": 2015,
+     "sumber_id": "ruen",
+     "halaman": "Tabel 44 hlm 77"
+    },
+    "bayu": {
+     "mw": 73,
+     "tahun": 2015,
+     "sumber_id": "ruen",
+     "halaman": "Tabel 46 hlm 80"
+    },
+    "mikrohidro": {
+     "mw": 943,
+     "tahun": 2015,
+     "sumber_id": "ruen",
+     "halaman": "Tabel 40 (minihidro + mikrohidro) hlm 72"
+    },
+    "bioenergi": {
+     "mw": null,
+     "tahun": 2015,
+     "sumber_id": "ruen",
+     "halaman": "Tabel 42 (biomassa/biofuel + biogas) hlm 74",
+     "catatan": "RUEN menggabung Kalimantan Timur/Utara (964.3 MW); tidak dipisah",
+     "kelompok_mw": 964.3
+    },
+    "panas_bumi": {
+     "mw": 43,
+     "tahun": 2025,
+     "sumber_id": "heesi2025",
+     "halaman": "Tabel 6.5.1 hlm 120-121 (sumber daya + cadangan, Badan Geologi per Des 2025)"
+    },
+    "hidro": {
+     "mw": null,
+     "tahun": 2015,
+     "sumber_id": "ruen",
+     "catatan": "tidak tercantum di tabel RUEN untuk provinsi ini"
+    },
+    "laut": {
+     "mw": null,
+     "tahun": 2015,
+     "sumber_id": "ruen",
+     "catatan": "tidak tercantum di tabel RUEN untuk provinsi ini"
+    }
+   },
+   "terpasang": {
+    "hidro": {
+     "mw": 2.13,
+     "tahun": 2025,
+     "sumber_id": "heesi2025",
+     "halaman": "Tabel 6.4.9 hlm 118"
+    },
+    "panas_bumi": {
+     "mw": 0,
+     "tahun": 2025,
+     "sumber_id": "heesi2025",
+     "halaman": "Tabel 6.4.9 hlm 118"
+    },
+    "surya": {
+     "mw": 3.98,
+     "tahun": 2025,
+     "sumber_id": "heesi2025",
+     "halaman": "Tabel 6.4.9 hlm 118"
+    },
+    "bayu": {
+     "mw": 0,
+     "tahun": 2025,
+     "sumber_id": "heesi2025",
+     "halaman": "Tabel 6.4.9 hlm 118"
+    },
+    "bioenergi": {
+     "mw": 7.31,
+     "tahun": 2025,
+     "sumber_id": "heesi2025",
+     "halaman": "Tabel 6.4.9 hlm 118"
+    },
+    "mikrohidro": {
+     "mw": null,
+     "tahun": null,
+     "sumber_id": "heesi2025",
+     "catatan": "HEESI menggabung PLTA dan PLTM/H dalam satu kolom (lihat hidro)"
+    },
+    "laut": {
+     "mw": null,
+     "tahun": null,
+     "sumber_id": "heesi2025",
+     "catatan": "tidak ada kapasitas terpasang listrik laut di HEESI"
+    }
+   },
+   "rasio_pemanfaatan": {
+    "hidro": {
+     "persen": null,
+     "penyebut_mw": null,
+     "catatan": "potensi per provinsi tidak tersedia"
+    },
+    "panas_bumi": {
+     "persen": 0,
+     "penyebut_mw": 43,
+     "catatan": "terpasang 2025 / potensi 2025 (HEESI)"
+    },
+    "surya": {
+     "persen": 0.09,
+     "penyebut_mw": 4643,
+     "catatan": "terpasang 2025 (HEESI) / potensi 2015 (RUEN): beda tahun, indikasi saja"
+    },
+    "bayu": {
+     "persen": 0,
+     "penyebut_mw": 73,
+     "catatan": "terpasang 2025 (HEESI) / potensi 2015 (RUEN): beda tahun, indikasi saja"
+    },
+    "bioenergi": {
+     "persen": null,
+     "penyebut_mw": null,
+     "catatan": "potensi per provinsi tidak tersedia"
+    }
+   },
+   "bpp": {
+    "rp_per_kwh": null,
+    "sistem": null,
+    "tahun": null,
+    "sumber_id": null,
+    "catatan": "Kepmen ESDM BPP pembangkitan terbaru belum terambil (jdih.esdm.go.id menolak klien otomatis); isi manual dari Kepmen resmi"
+   },
+   "faktor_lokasi": {
+    "F": 1.1,
+    "wilayah": "Kalimantan",
+    "sumber_id": "perpres112",
+    "catatan": "F pulau kecil/Mentawai lebih tinggi; tidak dipetakan"
+   },
+   "proyek": {
+    "rencana": 3,
+    "rencana_tanpa_pengembang": 1,
+    "mw_rencana_tanpa_pengembang": 240,
+    "sumber_id": "proyek-meti"
+   }
+  },
+  {
+   "kode": "71",
+   "nama": "Sulawesi Utara",
+   "potensi": {
+    "surya": {
+     "mw": 2113,
+     "tahun": 2015,
+     "sumber_id": "ruen",
+     "halaman": "Tabel 44 hlm 77"
+    },
+    "bayu": {
+     "mw": 1214,
+     "tahun": 2015,
+     "sumber_id": "ruen",
+     "halaman": "Tabel 46 hlm 80"
+    },
+    "mikrohidro": {
+     "mw": 111,
+     "tahun": 2015,
+     "sumber_id": "ruen",
+     "halaman": "Tabel 40 (minihidro + mikrohidro) hlm 72"
+    },
+    "bioenergi": {
+     "mw": 164,
+     "tahun": 2015,
+     "sumber_id": "ruen",
+     "halaman": "Tabel 42 (biomassa/biofuel + biogas) hlm 74"
+    },
+    "hidro": {
+     "mw": null,
+     "tahun": 2015,
+     "sumber_id": "ruen",
+     "halaman": "Tabel 37 (PLTA per wilayah) hlm 69",
+     "catatan": "RUEN hanya memberi total kelompok Sulawesi Utara, Sulawesi Tengah (3967 MW); tidak dipisah per provinsi",
+     "kelompok_mw": 3967
+    },
+    "panas_bumi": {
+     "mw": 939,
+     "tahun": 2025,
+     "sumber_id": "heesi2025",
+     "halaman": "Tabel 6.5.1 hlm 120-121 (sumber daya + cadangan, Badan Geologi per Des 2025)"
+    },
+    "laut": {
+     "mw": null,
+     "tahun": 2015,
+     "sumber_id": "ruen",
+     "catatan": "tidak tercantum di tabel RUEN untuk provinsi ini"
+    }
+   },
+   "terpasang": {
+    "hidro": {
+     "mw": 63.46,
+     "tahun": 2025,
+     "sumber_id": "heesi2025",
+     "halaman": "Tabel 6.4.9 hlm 118"
+    },
+    "panas_bumi": {
+     "mw": 123.72,
+     "tahun": 2025,
+     "sumber_id": "heesi2025",
+     "halaman": "Tabel 6.4.9 hlm 118"
+    },
+    "surya": {
+     "mw": 23.43,
+     "tahun": 2025,
+     "sumber_id": "heesi2025",
+     "halaman": "Tabel 6.4.9 hlm 118"
+    },
+    "bayu": {
+     "mw": 0.08,
+     "tahun": 2025,
+     "sumber_id": "heesi2025",
+     "halaman": "Tabel 6.4.9 hlm 118"
+    },
+    "bioenergi": {
+     "mw": 0,
+     "tahun": 2025,
+     "sumber_id": "heesi2025",
+     "halaman": "Tabel 6.4.9 hlm 118"
+    },
+    "mikrohidro": {
+     "mw": null,
+     "tahun": null,
+     "sumber_id": "heesi2025",
+     "catatan": "HEESI menggabung PLTA dan PLTM/H dalam satu kolom (lihat hidro)"
+    },
+    "laut": {
+     "mw": null,
+     "tahun": null,
+     "sumber_id": "heesi2025",
+     "catatan": "tidak ada kapasitas terpasang listrik laut di HEESI"
+    }
+   },
+   "rasio_pemanfaatan": {
+    "hidro": {
+     "persen": null,
+     "penyebut_mw": null,
+     "catatan": "potensi per provinsi tidak tersedia"
+    },
+    "panas_bumi": {
+     "persen": 13.18,
+     "penyebut_mw": 939,
+     "catatan": "terpasang 2025 / potensi 2025 (HEESI)"
+    },
+    "surya": {
+     "persen": 1.11,
+     "penyebut_mw": 2113,
+     "catatan": "terpasang 2025 (HEESI) / potensi 2015 (RUEN): beda tahun, indikasi saja"
+    },
+    "bayu": {
+     "persen": 0.01,
+     "penyebut_mw": 1214,
+     "catatan": "terpasang 2025 (HEESI) / potensi 2015 (RUEN): beda tahun, indikasi saja"
+    },
+    "bioenergi": {
+     "persen": 0,
+     "penyebut_mw": 164,
+     "catatan": "terpasang 2025 (HEESI) / potensi 2015 (RUEN): beda tahun, indikasi saja"
+    }
+   },
+   "bpp": {
+    "rp_per_kwh": null,
+    "sistem": null,
+    "tahun": null,
+    "sumber_id": null,
+    "catatan": "Kepmen ESDM BPP pembangkitan terbaru belum terambil (jdih.esdm.go.id menolak klien otomatis); isi manual dari Kepmen resmi"
+   },
+   "faktor_lokasi": {
+    "F": 1.1,
+    "wilayah": "Sulawesi",
+    "sumber_id": "perpres112",
+    "catatan": "F pulau kecil/Mentawai lebih tinggi; tidak dipetakan"
+   },
+   "proyek": {
+    "rencana": 6,
+    "rencana_tanpa_pengembang": 2,
+    "mw_rencana_tanpa_pengembang": 30,
+    "sumber_id": "proyek-meti"
+   }
+  },
+  {
+   "kode": "72",
+   "nama": "Sulawesi Tengah",
+   "potensi": {
+    "surya": {
+     "mw": 6187,
+     "tahun": 2015,
+     "sumber_id": "ruen",
+     "halaman": "Tabel 44 hlm 77"
+    },
+    "bayu": {
+     "mw": 908,
+     "tahun": 2015,
+     "sumber_id": "ruen",
+     "halaman": "Tabel 46 hlm 80"
+    },
+    "mikrohidro": {
+     "mw": 370,
+     "tahun": 2015,
+     "sumber_id": "ruen",
+     "halaman": "Tabel 40 (minihidro + mikrohidro) hlm 72"
+    },
+    "bioenergi": {
+     "mw": 326.9,
+     "tahun": 2015,
+     "sumber_id": "ruen",
+     "halaman": "Tabel 42 (biomassa/biofuel + biogas) hlm 74"
+    },
+    "hidro": {
+     "mw": null,
+     "tahun": 2015,
+     "sumber_id": "ruen",
+     "halaman": "Tabel 37 (PLTA per wilayah) hlm 69",
+     "catatan": "RUEN hanya memberi total kelompok Sulawesi Utara, Sulawesi Tengah (3967 MW); tidak dipisah per provinsi",
+     "kelompok_mw": 3967
+    },
+    "panas_bumi": {
+     "mw": 688,
+     "tahun": 2025,
+     "sumber_id": "heesi2025",
+     "halaman": "Tabel 6.5.1 hlm 120-121 (sumber daya + cadangan, Badan Geologi per Des 2025)"
+    },
+    "laut": {
+     "mw": null,
+     "tahun": 2015,
+     "sumber_id": "ruen",
+     "catatan": "tidak tercantum di tabel RUEN untuk provinsi ini"
+    }
+   },
+   "terpasang": {
+    "hidro": {
+     "mw": 644.8,
+     "tahun": 2025,
+     "sumber_id": "heesi2025",
+     "halaman": "Tabel 6.4.9 hlm 118"
+    },
+    "panas_bumi": {
+     "mw": 0,
+     "tahun": 2025,
+     "sumber_id": "heesi2025",
+     "halaman": "Tabel 6.4.9 hlm 118"
+    },
+    "surya": {
+     "mw": 1.19,
+     "tahun": 2025,
+     "sumber_id": "heesi2025",
+     "halaman": "Tabel 6.4.9 hlm 118"
+    },
+    "bayu": {
+     "mw": 0,
+     "tahun": 2025,
+     "sumber_id": "heesi2025",
+     "halaman": "Tabel 6.4.9 hlm 118"
+    },
+    "bioenergi": {
+     "mw": 16.77,
+     "tahun": 2025,
+     "sumber_id": "heesi2025",
+     "halaman": "Tabel 6.4.9 hlm 118"
+    },
+    "mikrohidro": {
+     "mw": null,
+     "tahun": null,
+     "sumber_id": "heesi2025",
+     "catatan": "HEESI menggabung PLTA dan PLTM/H dalam satu kolom (lihat hidro)"
+    },
+    "laut": {
+     "mw": null,
+     "tahun": null,
+     "sumber_id": "heesi2025",
+     "catatan": "tidak ada kapasitas terpasang listrik laut di HEESI"
+    }
+   },
+   "rasio_pemanfaatan": {
+    "hidro": {
+     "persen": null,
+     "penyebut_mw": null,
+     "catatan": "potensi per provinsi tidak tersedia"
+    },
+    "panas_bumi": {
+     "persen": 0,
+     "penyebut_mw": 688,
+     "catatan": "terpasang 2025 / potensi 2025 (HEESI)"
+    },
+    "surya": {
+     "persen": 0.02,
+     "penyebut_mw": 6187,
+     "catatan": "terpasang 2025 (HEESI) / potensi 2015 (RUEN): beda tahun, indikasi saja"
+    },
+    "bayu": {
+     "persen": 0,
+     "penyebut_mw": 908,
+     "catatan": "terpasang 2025 (HEESI) / potensi 2015 (RUEN): beda tahun, indikasi saja"
+    },
+    "bioenergi": {
+     "persen": 5.13,
+     "penyebut_mw": 326.9,
+     "catatan": "terpasang 2025 (HEESI) / potensi 2015 (RUEN): beda tahun, indikasi saja"
+    }
+   },
+   "bpp": {
+    "rp_per_kwh": null,
+    "sistem": null,
+    "tahun": null,
+    "sumber_id": null,
+    "catatan": "Kepmen ESDM BPP pembangkitan terbaru belum terambil (jdih.esdm.go.id menolak klien otomatis); isi manual dari Kepmen resmi"
+   },
+   "faktor_lokasi": {
+    "F": 1.1,
+    "wilayah": "Sulawesi",
+    "sumber_id": "perpres112",
+    "catatan": "F pulau kecil/Mentawai lebih tinggi; tidak dipetakan"
+   },
+   "proyek": {
+    "rencana": 6,
+    "rencana_tanpa_pengembang": 5,
+    "mw_rencana_tanpa_pengembang": 49.6,
+    "sumber_id": "proyek-meti"
+   }
+  },
+  {
+   "kode": "73",
+   "nama": "Sulawesi Selatan",
+   "potensi": {
+    "surya": {
+     "mw": 7588,
+     "tahun": 2015,
+     "sumber_id": "ruen",
+     "halaman": "Tabel 44 hlm 77"
+    },
+    "bayu": {
+     "mw": 4193,
+     "tahun": 2015,
+     "sumber_id": "ruen",
+     "halaman": "Tabel 46 hlm 80"
+    },
+    "mikrohidro": {
+     "mw": 762,
+     "tahun": 2015,
+     "sumber_id": "ruen",
+     "halaman": "Tabel 40 (minihidro + mikrohidro) hlm 72"
+    },
+    "bioenergi": {
+     "mw": 959.4,
+     "tahun": 2015,
+     "sumber_id": "ruen",
+     "halaman": "Tabel 42 (biomassa/biofuel + biogas) hlm 74"
+    },
+    "hidro": {
+     "mw": null,
+     "tahun": 2015,
+     "sumber_id": "ruen",
+     "halaman": "Tabel 37 (PLTA per wilayah) hlm 69",
+     "catatan": "RUEN hanya memberi total kelompok Sulawesi Selatan, Sulawesi Tenggara (6340 MW); tidak dipisah per provinsi",
+     "kelompok_mw": 6340
+    },
+    "panas_bumi": {
+     "mw": 525,
+     "tahun": 2025,
+     "sumber_id": "heesi2025",
+     "halaman": "Tabel 6.5.1 hlm 120-121 (sumber daya + cadangan, Badan Geologi per Des 2025)"
+    },
+    "laut": {
+     "mw": null,
+     "tahun": 2015,
+     "sumber_id": "ruen",
+     "catatan": "tidak tercantum di tabel RUEN untuk provinsi ini"
+    }
+   },
+   "terpasang": {
+    "hidro": {
+     "mw": 829.86,
+     "tahun": 2025,
+     "sumber_id": "heesi2025",
+     "halaman": "Tabel 6.4.9 hlm 118"
+    },
+    "panas_bumi": {
+     "mw": 0,
+     "tahun": 2025,
+     "sumber_id": "heesi2025",
+     "halaman": "Tabel 6.4.9 hlm 118"
+    },
+    "surya": {
+     "mw": 14.86,
+     "tahun": 2025,
+     "sumber_id": "heesi2025",
+     "halaman": "Tabel 6.4.9 hlm 118"
+    },
+    "bayu": {
+     "mw": 150.75,
+     "tahun": 2025,
+     "sumber_id": "heesi2025",
+     "halaman": "Tabel 6.4.9 hlm 118"
+    },
+    "bioenergi": {
+     "mw": 19,
+     "tahun": 2025,
+     "sumber_id": "heesi2025",
+     "halaman": "Tabel 6.4.9 hlm 118"
+    },
+    "mikrohidro": {
+     "mw": null,
+     "tahun": null,
+     "sumber_id": "heesi2025",
+     "catatan": "HEESI menggabung PLTA dan PLTM/H dalam satu kolom (lihat hidro)"
+    },
+    "laut": {
+     "mw": null,
+     "tahun": null,
+     "sumber_id": "heesi2025",
+     "catatan": "tidak ada kapasitas terpasang listrik laut di HEESI"
+    }
+   },
+   "rasio_pemanfaatan": {
+    "hidro": {
+     "persen": null,
+     "penyebut_mw": null,
+     "catatan": "potensi per provinsi tidak tersedia"
+    },
+    "panas_bumi": {
+     "persen": 0,
+     "penyebut_mw": 525,
+     "catatan": "terpasang 2025 / potensi 2025 (HEESI)"
+    },
+    "surya": {
+     "persen": 0.2,
+     "penyebut_mw": 7588,
+     "catatan": "terpasang 2025 (HEESI) / potensi 2015 (RUEN): beda tahun, indikasi saja"
+    },
+    "bayu": {
+     "persen": 3.6,
+     "penyebut_mw": 4193,
+     "catatan": "terpasang 2025 (HEESI) / potensi 2015 (RUEN): beda tahun, indikasi saja"
+    },
+    "bioenergi": {
+     "persen": 1.98,
+     "penyebut_mw": 959.4,
+     "catatan": "terpasang 2025 (HEESI) / potensi 2015 (RUEN): beda tahun, indikasi saja"
+    }
+   },
+   "bpp": {
+    "rp_per_kwh": null,
+    "sistem": null,
+    "tahun": null,
+    "sumber_id": null,
+    "catatan": "Kepmen ESDM BPP pembangkitan terbaru belum terambil (jdih.esdm.go.id menolak klien otomatis); isi manual dari Kepmen resmi"
+   },
+   "faktor_lokasi": {
+    "F": 1.1,
+    "wilayah": "Sulawesi",
+    "sumber_id": "perpres112",
+    "catatan": "F pulau kecil/Mentawai lebih tinggi; tidak dipetakan"
+   },
+   "proyek": {
+    "rencana": 6,
+    "rencana_tanpa_pengembang": 4,
+    "mw_rencana_tanpa_pengembang": 30.1,
+    "sumber_id": "proyek-meti"
+   }
+  },
+  {
+   "kode": "74",
+   "nama": "Sulawesi Tenggara",
+   "potensi": {
+    "surya": {
+     "mw": 3917,
+     "tahun": 2015,
+     "sumber_id": "ruen",
+     "halaman": "Tabel 44 hlm 77"
+    },
+    "bayu": {
+     "mw": 1414,
+     "tahun": 2015,
+     "sumber_id": "ruen",
+     "halaman": "Tabel 46 hlm 80"
+    },
+    "mikrohidro": {
+     "mw": 301,
+     "tahun": 2015,
+     "sumber_id": "ruen",
+     "halaman": "Tabel 40 (minihidro + mikrohidro) hlm 72"
+    },
+    "bioenergi": {
+     "mw": 150.5,
+     "tahun": 2015,
+     "sumber_id": "ruen",
+     "halaman": "Tabel 42 (biomassa/biofuel + biogas) hlm 74"
+    },
+    "hidro": {
+     "mw": null,
+     "tahun": 2015,
+     "sumber_id": "ruen",
+     "halaman": "Tabel 37 (PLTA per wilayah) hlm 69",
+     "catatan": "RUEN hanya memberi total kelompok Sulawesi Selatan, Sulawesi Tenggara (6340 MW); tidak dipisah per provinsi",
+     "kelompok_mw": 6340
+    },
+    "panas_bumi": {
+     "mw": 316,
+     "tahun": 2025,
+     "sumber_id": "heesi2025",
+     "halaman": "Tabel 6.5.1 hlm 120-121 (sumber daya + cadangan, Badan Geologi per Des 2025)"
+    },
+    "laut": {
+     "mw": null,
+     "tahun": 2015,
+     "sumber_id": "ruen",
+     "catatan": "tidak tercantum di tabel RUEN untuk provinsi ini"
+    }
+   },
+   "terpasang": {
+    "hidro": {
+     "mw": 5.7,
+     "tahun": 2025,
+     "sumber_id": "heesi2025",
+     "halaman": "Tabel 6.4.9 hlm 118"
+    },
+    "panas_bumi": {
+     "mw": 0,
+     "tahun": 2025,
+     "sumber_id": "heesi2025",
+     "halaman": "Tabel 6.4.9 hlm 118"
+    },
+    "surya": {
+     "mw": 3.95,
+     "tahun": 2025,
+     "sumber_id": "heesi2025",
+     "halaman": "Tabel 6.4.9 hlm 118"
+    },
+    "bayu": {
+     "mw": 0,
+     "tahun": 2025,
+     "sumber_id": "heesi2025",
+     "halaman": "Tabel 6.4.9 hlm 118"
+    },
+    "bioenergi": {
+     "mw": 0,
+     "tahun": 2025,
+     "sumber_id": "heesi2025",
+     "halaman": "Tabel 6.4.9 hlm 118"
+    },
+    "mikrohidro": {
+     "mw": null,
+     "tahun": null,
+     "sumber_id": "heesi2025",
+     "catatan": "HEESI menggabung PLTA dan PLTM/H dalam satu kolom (lihat hidro)"
+    },
+    "laut": {
+     "mw": null,
+     "tahun": null,
+     "sumber_id": "heesi2025",
+     "catatan": "tidak ada kapasitas terpasang listrik laut di HEESI"
+    }
+   },
+   "rasio_pemanfaatan": {
+    "hidro": {
+     "persen": null,
+     "penyebut_mw": null,
+     "catatan": "potensi per provinsi tidak tersedia"
+    },
+    "panas_bumi": {
+     "persen": 0,
+     "penyebut_mw": 316,
+     "catatan": "terpasang 2025 / potensi 2025 (HEESI)"
+    },
+    "surya": {
+     "persen": 0.1,
+     "penyebut_mw": 3917,
+     "catatan": "terpasang 2025 (HEESI) / potensi 2015 (RUEN): beda tahun, indikasi saja"
+    },
+    "bayu": {
+     "persen": 0,
+     "penyebut_mw": 1414,
+     "catatan": "terpasang 2025 (HEESI) / potensi 2015 (RUEN): beda tahun, indikasi saja"
+    },
+    "bioenergi": {
+     "persen": 0,
+     "penyebut_mw": 150.5,
+     "catatan": "terpasang 2025 (HEESI) / potensi 2015 (RUEN): beda tahun, indikasi saja"
+    }
+   },
+   "bpp": {
+    "rp_per_kwh": null,
+    "sistem": null,
+    "tahun": null,
+    "sumber_id": null,
+    "catatan": "Kepmen ESDM BPP pembangkitan terbaru belum terambil (jdih.esdm.go.id menolak klien otomatis); isi manual dari Kepmen resmi"
+   },
+   "faktor_lokasi": {
+    "F": 1.1,
+    "wilayah": "Sulawesi",
+    "sumber_id": "perpres112",
+    "catatan": "F pulau kecil/Mentawai lebih tinggi; tidak dipetakan"
+   },
+   "proyek": {
+    "rencana": 5,
+    "rencana_tanpa_pengembang": 1,
+    "mw_rencana_tanpa_pengembang": 94.6,
+    "sumber_id": "proyek-meti"
+   }
+  },
+  {
+   "kode": "75",
+   "nama": "Gorontalo",
+   "potensi": {
+    "surya": {
+     "mw": 1218,
+     "tahun": 2015,
+     "sumber_id": "ruen",
+     "halaman": "Tabel 44 hlm 77"
+    },
+    "bayu": {
+     "mw": 137,
+     "tahun": 2015,
+     "sumber_id": "ruen",
+     "halaman": "Tabel 46 hlm 80"
+    },
+    "mikrohidro": {
+     "mw": 117,
+     "tahun": 2015,
+     "sumber_id": "ruen",
+     "halaman": "Tabel 40 (minihidro + mikrohidro) hlm 72"
+    },
+    "bioenergi": {
+     "mw": 130.6,
+     "tahun": 2015,
+     "sumber_id": "ruen",
+     "halaman": "Tabel 42 (biomassa/biofuel + biogas) hlm 74"
+    },
+    "panas_bumi": {
+     "mw": 160,
+     "tahun": 2025,
+     "sumber_id": "heesi2025",
+     "halaman": "Tabel 6.5.1 hlm 120-121 (sumber daya + cadangan, Badan Geologi per Des 2025)"
+    },
+    "hidro": {
+     "mw": null,
+     "tahun": 2015,
+     "sumber_id": "ruen",
+     "catatan": "tidak tercantum di tabel RUEN untuk provinsi ini"
+    },
+    "laut": {
+     "mw": null,
+     "tahun": 2015,
+     "sumber_id": "ruen",
+     "catatan": "tidak tercantum di tabel RUEN untuk provinsi ini"
+    }
+   },
+   "terpasang": {
+    "hidro": {
+     "mw": 16.57,
+     "tahun": 2025,
+     "sumber_id": "heesi2025",
+     "halaman": "Tabel 6.4.9 hlm 118"
+    },
+    "panas_bumi": {
+     "mw": 0,
+     "tahun": 2025,
+     "sumber_id": "heesi2025",
+     "halaman": "Tabel 6.4.9 hlm 118"
+    },
+    "surya": {
+     "mw": 13.21,
+     "tahun": 2025,
+     "sumber_id": "heesi2025",
+     "halaman": "Tabel 6.4.9 hlm 118"
+    },
+    "bayu": {
+     "mw": 0,
+     "tahun": 2025,
+     "sumber_id": "heesi2025",
+     "halaman": "Tabel 6.4.9 hlm 118"
+    },
+    "bioenergi": {
+     "mw": 1.94,
+     "tahun": 2025,
+     "sumber_id": "heesi2025",
+     "halaman": "Tabel 6.4.9 hlm 118"
+    },
+    "mikrohidro": {
+     "mw": null,
+     "tahun": null,
+     "sumber_id": "heesi2025",
+     "catatan": "HEESI menggabung PLTA dan PLTM/H dalam satu kolom (lihat hidro)"
+    },
+    "laut": {
+     "mw": null,
+     "tahun": null,
+     "sumber_id": "heesi2025",
+     "catatan": "tidak ada kapasitas terpasang listrik laut di HEESI"
+    }
+   },
+   "rasio_pemanfaatan": {
+    "hidro": {
+     "persen": null,
+     "penyebut_mw": null,
+     "catatan": "potensi per provinsi tidak tersedia"
+    },
+    "panas_bumi": {
+     "persen": 0,
+     "penyebut_mw": 160,
+     "catatan": "terpasang 2025 / potensi 2025 (HEESI)"
+    },
+    "surya": {
+     "persen": 1.08,
+     "penyebut_mw": 1218,
+     "catatan": "terpasang 2025 (HEESI) / potensi 2015 (RUEN): beda tahun, indikasi saja"
+    },
+    "bayu": {
+     "persen": 0,
+     "penyebut_mw": 137,
+     "catatan": "terpasang 2025 (HEESI) / potensi 2015 (RUEN): beda tahun, indikasi saja"
+    },
+    "bioenergi": {
+     "persen": 1.49,
+     "penyebut_mw": 130.6,
+     "catatan": "terpasang 2025 (HEESI) / potensi 2015 (RUEN): beda tahun, indikasi saja"
+    }
+   },
+   "bpp": {
+    "rp_per_kwh": null,
+    "sistem": null,
+    "tahun": null,
+    "sumber_id": null,
+    "catatan": "Kepmen ESDM BPP pembangkitan terbaru belum terambil (jdih.esdm.go.id menolak klien otomatis); isi manual dari Kepmen resmi"
+   },
+   "faktor_lokasi": {
+    "F": 1.1,
+    "wilayah": "Sulawesi",
+    "sumber_id": "perpres112",
+    "catatan": "F pulau kecil/Mentawai lebih tinggi; tidak dipetakan"
+   },
+   "proyek": {
+    "rencana": 0,
+    "rencana_tanpa_pengembang": 0,
+    "mw_rencana_tanpa_pengembang": 0,
+    "sumber_id": "proyek-meti"
+   }
+  },
+  {
+   "kode": "76",
+   "nama": "Sulawesi Barat",
+   "potensi": {
+    "surya": {
+     "mw": 1677,
+     "tahun": 2015,
+     "sumber_id": "ruen",
+     "halaman": "Tabel 44 hlm 77"
+    },
+    "bayu": {
+     "mw": 514,
+     "tahun": 2015,
+     "sumber_id": "ruen",
+     "halaman": "Tabel 46 hlm 80"
+    },
+    "mikrohidro": {
+     "mw": 7,
+     "tahun": 2015,
+     "sumber_id": "ruen",
+     "halaman": "Tabel 40 (minihidro + mikrohidro) hlm 72"
+    },
+    "bioenergi": {
+     "mw": 205.9,
+     "tahun": 2015,
+     "sumber_id": "ruen",
+     "halaman": "Tabel 42 (biomassa/biofuel + biogas) hlm 74"
+    },
+    "panas_bumi": {
+     "mw": 378,
+     "tahun": 2025,
+     "sumber_id": "heesi2025",
+     "halaman": "Tabel 6.5.1 hlm 120-121 (sumber daya + cadangan, Badan Geologi per Des 2025)"
+    },
+    "hidro": {
+     "mw": null,
+     "tahun": 2015,
+     "sumber_id": "ruen",
+     "catatan": "tidak tercantum di tabel RUEN untuk provinsi ini"
+    },
+    "laut": {
+     "mw": null,
+     "tahun": 2015,
+     "sumber_id": "ruen",
+     "catatan": "tidak tercantum di tabel RUEN untuk provinsi ini"
+    }
+   },
+   "terpasang": {
+    "hidro": {
+     "mw": 8.33,
+     "tahun": 2025,
+     "sumber_id": "heesi2025",
+     "halaman": "Tabel 6.4.9 hlm 118"
+    },
+    "panas_bumi": {
+     "mw": 0,
+     "tahun": 2025,
+     "sumber_id": "heesi2025",
+     "halaman": "Tabel 6.4.9 hlm 118"
+    },
+    "surya": {
+     "mw": 1.36,
+     "tahun": 2025,
+     "sumber_id": "heesi2025",
+     "halaman": "Tabel 6.4.9 hlm 118"
+    },
+    "bayu": {
+     "mw": 0,
+     "tahun": 2025,
+     "sumber_id": "heesi2025",
+     "halaman": "Tabel 6.4.9 hlm 118"
+    },
+    "bioenergi": {
+     "mw": 20.2,
+     "tahun": 2025,
+     "sumber_id": "heesi2025",
+     "halaman": "Tabel 6.4.9 hlm 118"
+    },
+    "mikrohidro": {
+     "mw": null,
+     "tahun": null,
+     "sumber_id": "heesi2025",
+     "catatan": "HEESI menggabung PLTA dan PLTM/H dalam satu kolom (lihat hidro)"
+    },
+    "laut": {
+     "mw": null,
+     "tahun": null,
+     "sumber_id": "heesi2025",
+     "catatan": "tidak ada kapasitas terpasang listrik laut di HEESI"
+    }
+   },
+   "rasio_pemanfaatan": {
+    "hidro": {
+     "persen": null,
+     "penyebut_mw": null,
+     "catatan": "potensi per provinsi tidak tersedia"
+    },
+    "panas_bumi": {
+     "persen": 0,
+     "penyebut_mw": 378,
+     "catatan": "terpasang 2025 / potensi 2025 (HEESI)"
+    },
+    "surya": {
+     "persen": 0.08,
+     "penyebut_mw": 1677,
+     "catatan": "terpasang 2025 (HEESI) / potensi 2015 (RUEN): beda tahun, indikasi saja"
+    },
+    "bayu": {
+     "persen": 0,
+     "penyebut_mw": 514,
+     "catatan": "terpasang 2025 (HEESI) / potensi 2015 (RUEN): beda tahun, indikasi saja"
+    },
+    "bioenergi": {
+     "persen": 9.81,
+     "penyebut_mw": 205.9,
+     "catatan": "terpasang 2025 (HEESI) / potensi 2015 (RUEN): beda tahun, indikasi saja"
+    }
+   },
+   "bpp": {
+    "rp_per_kwh": null,
+    "sistem": null,
+    "tahun": null,
+    "sumber_id": null,
+    "catatan": "Kepmen ESDM BPP pembangkitan terbaru belum terambil (jdih.esdm.go.id menolak klien otomatis); isi manual dari Kepmen resmi"
+   },
+   "faktor_lokasi": {
+    "F": 1.1,
+    "wilayah": "Sulawesi",
+    "sumber_id": "perpres112",
+    "catatan": "F pulau kecil/Mentawai lebih tinggi; tidak dipetakan"
+   },
+   "proyek": {
+    "rencana": 0,
+    "rencana_tanpa_pengembang": 0,
+    "mw_rencana_tanpa_pengembang": 0,
+    "sumber_id": "proyek-meti"
+   }
+  },
+  {
+   "kode": "81",
+   "nama": "Maluku",
+   "potensi": {
+    "surya": {
+     "mw": 2020,
+     "tahun": 2015,
+     "sumber_id": "ruen",
+     "halaman": "Tabel 44 hlm 77"
+    },
+    "bayu": {
+     "mw": 3188,
+     "tahun": 2015,
+     "sumber_id": "ruen",
+     "halaman": "Tabel 46 hlm 80"
+    },
+    "mikrohidro": {
+     "mw": 190,
+     "tahun": 2015,
+     "sumber_id": "ruen",
+     "halaman": "Tabel 40 (minihidro + mikrohidro) hlm 72"
+    },
+    "bioenergi": {
+     "mw": 32.6,
+     "tahun": 2015,
+     "sumber_id": "ruen",
+     "halaman": "Tabel 42 (biomassa/biofuel + biogas) hlm 74"
+    },
+    "hidro": {
+     "mw": 430,
+     "tahun": 2015,
+     "sumber_id": "ruen",
+     "halaman": "Tabel 37 (PLTA per wilayah) hlm 69"
+    },
+    "panas_bumi": {
+     "mw": 564,
+     "tahun": 2025,
+     "sumber_id": "heesi2025",
+     "halaman": "Tabel 6.5.1 hlm 120-121 (sumber daya + cadangan, Badan Geologi per Des 2025)"
+    },
+    "laut": {
+     "mw": null,
+     "tahun": 2015,
+     "sumber_id": "ruen",
+     "catatan": "tidak tercantum di tabel RUEN untuk provinsi ini"
+    }
+   },
+   "terpasang": {
+    "hidro": {
+     "mw": 0.12,
+     "tahun": 2025,
+     "sumber_id": "heesi2025",
+     "halaman": "Tabel 6.4.9 hlm 118"
+    },
+    "panas_bumi": {
+     "mw": 0,
+     "tahun": 2025,
+     "sumber_id": "heesi2025",
+     "halaman": "Tabel 6.4.9 hlm 118"
+    },
+    "surya": {
+     "mw": 2.96,
+     "tahun": 2025,
+     "sumber_id": "heesi2025",
+     "halaman": "Tabel 6.4.9 hlm 118"
+    },
+    "bayu": {
+     "mw": 0,
+     "tahun": 2025,
+     "sumber_id": "heesi2025",
+     "halaman": "Tabel 6.4.9 hlm 118"
+    },
+    "bioenergi": {
+     "mw": 0,
+     "tahun": 2025,
+     "sumber_id": "heesi2025",
+     "halaman": "Tabel 6.4.9 hlm 118"
+    },
+    "mikrohidro": {
+     "mw": null,
+     "tahun": null,
+     "sumber_id": "heesi2025",
+     "catatan": "HEESI menggabung PLTA dan PLTM/H dalam satu kolom (lihat hidro)"
+    },
+    "laut": {
+     "mw": null,
+     "tahun": null,
+     "sumber_id": "heesi2025",
+     "catatan": "tidak ada kapasitas terpasang listrik laut di HEESI"
+    }
+   },
+   "rasio_pemanfaatan": {
+    "hidro": {
+     "persen": 0.02,
+     "penyebut_mw": 620,
+     "catatan": "terpasang 2025 (HEESI) / potensi 2015 (RUEN): beda tahun, indikasi saja"
+    },
+    "panas_bumi": {
+     "persen": 0,
+     "penyebut_mw": 564,
+     "catatan": "terpasang 2025 / potensi 2025 (HEESI)"
+    },
+    "surya": {
+     "persen": 0.15,
+     "penyebut_mw": 2020,
+     "catatan": "terpasang 2025 (HEESI) / potensi 2015 (RUEN): beda tahun, indikasi saja"
+    },
+    "bayu": {
+     "persen": 0,
+     "penyebut_mw": 3188,
+     "catatan": "terpasang 2025 (HEESI) / potensi 2015 (RUEN): beda tahun, indikasi saja"
+    },
+    "bioenergi": {
+     "persen": 0,
+     "penyebut_mw": 32.6,
+     "catatan": "terpasang 2025 (HEESI) / potensi 2015 (RUEN): beda tahun, indikasi saja"
+    }
+   },
+   "bpp": {
+    "rp_per_kwh": null,
+    "sistem": null,
+    "tahun": null,
+    "sumber_id": null,
+    "catatan": "Kepmen ESDM BPP pembangkitan terbaru belum terambil (jdih.esdm.go.id menolak klien otomatis); isi manual dari Kepmen resmi"
+   },
+   "faktor_lokasi": {
+    "F": 1.25,
+    "wilayah": "Maluku",
+    "sumber_id": "perpres112",
+    "catatan": "F pulau kecil/Mentawai lebih tinggi; tidak dipetakan"
+   },
+   "proyek": {
+    "rencana": 12,
+    "rencana_tanpa_pengembang": 7,
+    "mw_rencana_tanpa_pengembang": 55,
+    "sumber_id": "proyek-meti"
+   }
+  },
+  {
+   "kode": "82",
+   "nama": "Maluku Utara",
+   "potensi": {
+    "surya": {
+     "mw": 3036,
+     "tahun": 2015,
+     "sumber_id": "ruen",
+     "halaman": "Tabel 44 hlm 77"
+    },
+    "bayu": {
+     "mw": 504,
+     "tahun": 2015,
+     "sumber_id": "ruen",
+     "halaman": "Tabel 46 hlm 80"
+    },
+    "mikrohidro": {
+     "mw": 24,
+     "tahun": 2015,
+     "sumber_id": "ruen",
+     "halaman": "Tabel 40 (minihidro + mikrohidro) hlm 72"
+    },
+    "bioenergi": {
+     "mw": 34.5,
+     "tahun": 2015,
+     "sumber_id": "ruen",
+     "halaman": "Tabel 42 (biomassa/biofuel + biogas) hlm 74"
+    },
+    "panas_bumi": {
+     "mw": 706,
+     "tahun": 2025,
+     "sumber_id": "heesi2025",
+     "halaman": "Tabel 6.5.1 hlm 120-121 (sumber daya + cadangan, Badan Geologi per Des 2025)"
+    },
+    "hidro": {
+     "mw": null,
+     "tahun": 2015,
+     "sumber_id": "ruen",
+     "catatan": "tidak tercantum di tabel RUEN untuk provinsi ini"
+    },
+    "laut": {
+     "mw": null,
+     "tahun": 2015,
+     "sumber_id": "ruen",
+     "catatan": "tidak tercantum di tabel RUEN untuk provinsi ini"
+    }
+   },
+   "terpasang": {
+    "hidro": {
+     "mw": 0.01,
+     "tahun": 2025,
+     "sumber_id": "heesi2025",
+     "halaman": "Tabel 6.4.9 hlm 118"
+    },
+    "panas_bumi": {
+     "mw": 0,
+     "tahun": 2025,
+     "sumber_id": "heesi2025",
+     "halaman": "Tabel 6.4.9 hlm 118"
+    },
+    "surya": {
+     "mw": 6.16,
+     "tahun": 2025,
+     "sumber_id": "heesi2025",
+     "halaman": "Tabel 6.4.9 hlm 118"
+    },
+    "bayu": {
+     "mw": 0,
+     "tahun": 2025,
+     "sumber_id": "heesi2025",
+     "halaman": "Tabel 6.4.9 hlm 118"
+    },
+    "bioenergi": {
+     "mw": 0,
+     "tahun": 2025,
+     "sumber_id": "heesi2025",
+     "halaman": "Tabel 6.4.9 hlm 118"
+    },
+    "mikrohidro": {
+     "mw": null,
+     "tahun": null,
+     "sumber_id": "heesi2025",
+     "catatan": "HEESI menggabung PLTA dan PLTM/H dalam satu kolom (lihat hidro)"
+    },
+    "laut": {
+     "mw": null,
+     "tahun": null,
+     "sumber_id": "heesi2025",
+     "catatan": "tidak ada kapasitas terpasang listrik laut di HEESI"
+    }
+   },
+   "rasio_pemanfaatan": {
+    "hidro": {
+     "persen": null,
+     "penyebut_mw": null,
+     "catatan": "potensi per provinsi tidak tersedia"
+    },
+    "panas_bumi": {
+     "persen": 0,
+     "penyebut_mw": 706,
+     "catatan": "terpasang 2025 / potensi 2025 (HEESI)"
+    },
+    "surya": {
+     "persen": 0.2,
+     "penyebut_mw": 3036,
+     "catatan": "terpasang 2025 (HEESI) / potensi 2015 (RUEN): beda tahun, indikasi saja"
+    },
+    "bayu": {
+     "persen": 0,
+     "penyebut_mw": 504,
+     "catatan": "terpasang 2025 (HEESI) / potensi 2015 (RUEN): beda tahun, indikasi saja"
+    },
+    "bioenergi": {
+     "persen": 0,
+     "penyebut_mw": 34.5,
+     "catatan": "terpasang 2025 (HEESI) / potensi 2015 (RUEN): beda tahun, indikasi saja"
+    }
+   },
+   "bpp": {
+    "rp_per_kwh": null,
+    "sistem": null,
+    "tahun": null,
+    "sumber_id": null,
+    "catatan": "Kepmen ESDM BPP pembangkitan terbaru belum terambil (jdih.esdm.go.id menolak klien otomatis); isi manual dari Kepmen resmi"
+   },
+   "faktor_lokasi": {
+    "F": 1.25,
+    "wilayah": "Maluku Utara",
+    "sumber_id": "perpres112",
+    "catatan": "F pulau kecil/Mentawai lebih tinggi; tidak dipetakan"
+   },
+   "proyek": {
+    "rencana": 8,
+    "rencana_tanpa_pengembang": 6,
+    "mw_rencana_tanpa_pengembang": 94.5,
+    "sumber_id": "proyek-meti"
+   }
+  },
+  {
+   "kode": "91",
+   "nama": "Papua",
+   "potensi": {
+    "surya": {
+     "mw": null,
+     "tahun": 2015,
+     "sumber_id": "ruen",
+     "halaman": "Tabel 44 hlm 77",
+     "catatan": "RUEN 2015 mencatat 2035 MW untuk provinsi induk \"Papua\" sebelum pemekaran; tidak dibagi ke provinsi baru",
+     "induk_mw": 2035
+    },
+    "bayu": {
+     "mw": null,
+     "tahun": 2015,
+     "sumber_id": "ruen",
+     "halaman": "Tabel 46 hlm 80",
+     "catatan": "RUEN 2015 mencatat 1411 MW untuk provinsi induk \"Papua\" sebelum pemekaran; tidak dibagi ke provinsi baru",
+     "induk_mw": 1411
+    },
+    "mikrohidro": {
+     "mw": null,
+     "tahun": 2015,
+     "sumber_id": "ruen",
+     "halaman": "Tabel 40 (minihidro + mikrohidro) hlm 72",
+     "catatan": "RUEN 2015 mencatat 615 MW untuk provinsi induk \"Papua\" sebelum pemekaran; tidak dibagi ke provinsi baru",
+     "induk_mw": 615
+    },
+    "bioenergi": {
+     "mw": null,
+     "tahun": 2015,
+     "sumber_id": "ruen",
+     "halaman": "Tabel 42 (biomassa/biofuel + biogas) hlm 74",
+     "catatan": "RUEN 2015 mencatat 96.5 MW untuk provinsi induk \"Papua\" sebelum pemekaran; tidak dibagi ke provinsi baru",
+     "induk_mw": 96.5
+    },
+    "hidro": {
+     "mw": null,
+     "tahun": 2015,
+     "sumber_id": "ruen",
+     "halaman": "Tabel 37 (PLTA per wilayah) hlm 69",
+     "catatan": "RUEN 2015 mencatat 22371 MW untuk provinsi induk \"Papua\" sebelum pemekaran; tidak dibagi ke provinsi baru",
+     "induk_mw": 22371
+    },
+    "panas_bumi": {
+     "mw": 0,
+     "tahun": 2025,
+     "sumber_id": "heesi2025",
+     "halaman": "Tabel 6.5.1 hlm 120-121 (sumber daya + cadangan, Badan Geologi per Des 2025)"
+    },
+    "laut": {
+     "mw": null,
+     "tahun": 2015,
+     "sumber_id": "ruen",
+     "catatan": "tidak tercantum di tabel RUEN untuk provinsi ini"
+    }
+   },
+   "terpasang": {
+    "hidro": {
+     "mw": 23.54,
+     "tahun": 2025,
+     "sumber_id": "heesi2025",
+     "halaman": "Tabel 6.4.9 hlm 118"
+    },
+    "panas_bumi": {
+     "mw": 0,
+     "tahun": 2025,
+     "sumber_id": "heesi2025",
+     "halaman": "Tabel 6.4.9 hlm 118"
+    },
+    "surya": {
+     "mw": 10.75,
+     "tahun": 2025,
+     "sumber_id": "heesi2025",
+     "halaman": "Tabel 6.4.9 hlm 118"
+    },
+    "bayu": {
+     "mw": 0,
+     "tahun": 2025,
+     "sumber_id": "heesi2025",
+     "halaman": "Tabel 6.4.9 hlm 118"
+    },
+    "bioenergi": {
+     "mw": 3.6,
+     "tahun": 2025,
+     "sumber_id": "heesi2025",
+     "halaman": "Tabel 6.4.9 hlm 118"
+    },
+    "mikrohidro": {
+     "mw": null,
+     "tahun": null,
+     "sumber_id": "heesi2025",
+     "catatan": "HEESI menggabung PLTA dan PLTM/H dalam satu kolom (lihat hidro)"
+    },
+    "laut": {
+     "mw": null,
+     "tahun": null,
+     "sumber_id": "heesi2025",
+     "catatan": "tidak ada kapasitas terpasang listrik laut di HEESI"
+    }
+   },
+   "rasio_pemanfaatan": {
+    "hidro": {
+     "persen": null,
+     "penyebut_mw": null,
+     "catatan": "potensi per provinsi tidak tersedia"
+    },
+    "panas_bumi": {
+     "persen": null,
+     "penyebut_mw": null,
+     "catatan": "potensi per provinsi tidak tersedia"
+    },
+    "surya": {
+     "persen": null,
+     "penyebut_mw": null,
+     "catatan": "potensi per provinsi tidak tersedia"
+    },
+    "bayu": {
+     "persen": null,
+     "penyebut_mw": null,
+     "catatan": "potensi per provinsi tidak tersedia"
+    },
+    "bioenergi": {
+     "persen": null,
+     "penyebut_mw": null,
+     "catatan": "potensi per provinsi tidak tersedia"
+    }
+   },
+   "bpp": {
+    "rp_per_kwh": null,
+    "sistem": null,
+    "tahun": null,
+    "sumber_id": null,
+    "catatan": "Kepmen ESDM BPP pembangkitan terbaru belum terambil (jdih.esdm.go.id menolak klien otomatis); isi manual dari Kepmen resmi"
+   },
+   "faktor_lokasi": {
+    "F": 1.5,
+    "wilayah": "Papua / Papua Barat",
+    "sumber_id": "perpres112",
+    "catatan": "F pulau kecil/Mentawai lebih tinggi; tidak dipetakan"
+   },
+   "proyek": {
+    "rencana": 0,
+    "rencana_tanpa_pengembang": 0,
+    "mw_rencana_tanpa_pengembang": 0,
+    "sumber_id": "proyek-meti"
+   }
+  },
+  {
+   "kode": "92",
+   "nama": "Papua Barat",
+   "potensi": {
+    "surya": {
+     "mw": null,
+     "tahun": 2015,
+     "sumber_id": "ruen",
+     "halaman": "Tabel 44 hlm 77",
+     "catatan": "RUEN 2015 mencatat 6307 MW untuk provinsi induk \"Papua Barat\" sebelum pemekaran; tidak dibagi ke provinsi baru",
+     "induk_mw": 6307
+    },
+    "bayu": {
+     "mw": null,
+     "tahun": 2015,
+     "sumber_id": "ruen",
+     "halaman": "Tabel 46 hlm 80",
+     "catatan": "RUEN 2015 mencatat 437 MW untuk provinsi induk \"Papua Barat\" sebelum pemekaran; tidak dibagi ke provinsi baru",
+     "induk_mw": 437
+    },
+    "mikrohidro": {
+     "mw": null,
+     "tahun": 2015,
+     "sumber_id": "ruen",
+     "halaman": "Tabel 40 (minihidro + mikrohidro) hlm 72",
+     "catatan": "RUEN 2015 mencatat 3 MW untuk provinsi induk \"Papua Barat\" sebelum pemekaran; tidak dibagi ke provinsi baru",
+     "induk_mw": 3
+    },
+    "bioenergi": {
+     "mw": null,
+     "tahun": 2015,
+     "sumber_id": "ruen",
+     "halaman": "Tabel 42 (biomassa/biofuel + biogas) hlm 74",
+     "catatan": "RUEN 2015 mencatat 54.9 MW untuk provinsi induk \"Papua Barat\" sebelum pemekaran; tidak dibagi ke provinsi baru",
+     "induk_mw": 54.9
+    },
+    "laut": {
+     "mw": null,
+     "tahun": 2015,
+     "sumber_id": "ruen",
+     "halaman": "Tabel 48 (praktis; teknis dan teoritis ikut) hlm 82",
+     "catatan": "RUEN 2015 mencatat 391 MW untuk provinsi induk \"Papua Barat\" sebelum pemekaran; tidak dibagi ke provinsi baru",
+     "induk_mw": 391
+    },
+    "panas_bumi": {
+     "mw": 50,
+     "tahun": 2025,
+     "sumber_id": "heesi2025",
+     "halaman": "Tabel 6.5.1 hlm 120-121 (sumber daya + cadangan, Badan Geologi per Des 2025)"
+    },
+    "hidro": {
+     "mw": null,
+     "tahun": 2015,
+     "sumber_id": "ruen",
+     "catatan": "tidak tercantum di tabel RUEN untuk provinsi ini"
+    }
+   },
+   "terpasang": {
+    "hidro": {
+     "mw": 4.16,
+     "tahun": 2025,
+     "sumber_id": "heesi2025",
+     "halaman": "Tabel 6.4.9 hlm 118"
+    },
+    "panas_bumi": {
+     "mw": 0,
+     "tahun": 2025,
+     "sumber_id": "heesi2025",
+     "halaman": "Tabel 6.4.9 hlm 118"
+    },
+    "surya": {
+     "mw": 12.44,
+     "tahun": 2025,
+     "sumber_id": "heesi2025",
+     "halaman": "Tabel 6.4.9 hlm 118"
+    },
+    "bayu": {
+     "mw": 0,
+     "tahun": 2025,
+     "sumber_id": "heesi2025",
+     "halaman": "Tabel 6.4.9 hlm 118"
+    },
+    "bioenergi": {
+     "mw": 0.55,
+     "tahun": 2025,
+     "sumber_id": "heesi2025",
+     "halaman": "Tabel 6.4.9 hlm 118"
+    },
+    "mikrohidro": {
+     "mw": null,
+     "tahun": null,
+     "sumber_id": "heesi2025",
+     "catatan": "HEESI menggabung PLTA dan PLTM/H dalam satu kolom (lihat hidro)"
+    },
+    "laut": {
+     "mw": null,
+     "tahun": null,
+     "sumber_id": "heesi2025",
+     "catatan": "tidak ada kapasitas terpasang listrik laut di HEESI"
+    }
+   },
+   "rasio_pemanfaatan": {
+    "hidro": {
+     "persen": null,
+     "penyebut_mw": null,
+     "catatan": "potensi per provinsi tidak tersedia"
+    },
+    "panas_bumi": {
+     "persen": 0,
+     "penyebut_mw": 50,
+     "catatan": "terpasang 2025 / potensi 2025 (HEESI)"
+    },
+    "surya": {
+     "persen": null,
+     "penyebut_mw": null,
+     "catatan": "potensi per provinsi tidak tersedia"
+    },
+    "bayu": {
+     "persen": null,
+     "penyebut_mw": null,
+     "catatan": "potensi per provinsi tidak tersedia"
+    },
+    "bioenergi": {
+     "persen": null,
+     "penyebut_mw": null,
+     "catatan": "potensi per provinsi tidak tersedia"
+    }
+   },
+   "bpp": {
+    "rp_per_kwh": null,
+    "sistem": null,
+    "tahun": null,
+    "sumber_id": null,
+    "catatan": "Kepmen ESDM BPP pembangkitan terbaru belum terambil (jdih.esdm.go.id menolak klien otomatis); isi manual dari Kepmen resmi"
+   },
+   "faktor_lokasi": {
+    "F": 1.5,
+    "wilayah": "Papua / Papua Barat",
+    "sumber_id": "perpres112",
+    "catatan": "F pulau kecil/Mentawai lebih tinggi; tidak dipetakan"
+   },
+   "proyek": {
+    "rencana": 0,
+    "rencana_tanpa_pengembang": 0,
+    "mw_rencana_tanpa_pengembang": 0,
+    "sumber_id": "proyek-meti"
+   }
+  },
+  {
+   "kode": "93",
+   "nama": "Papua Selatan",
+   "potensi": {
+    "surya": {
+     "mw": null,
+     "tahun": 2015,
+     "sumber_id": "ruen",
+     "halaman": "Tabel 44 hlm 77",
+     "catatan": "RUEN 2015 mencatat 2035 MW untuk provinsi induk \"Papua\" sebelum pemekaran; tidak dibagi ke provinsi baru",
+     "induk_mw": 2035
+    },
+    "bayu": {
+     "mw": null,
+     "tahun": 2015,
+     "sumber_id": "ruen",
+     "halaman": "Tabel 46 hlm 80",
+     "catatan": "RUEN 2015 mencatat 1411 MW untuk provinsi induk \"Papua\" sebelum pemekaran; tidak dibagi ke provinsi baru",
+     "induk_mw": 1411
+    },
+    "mikrohidro": {
+     "mw": null,
+     "tahun": 2015,
+     "sumber_id": "ruen",
+     "halaman": "Tabel 40 (minihidro + mikrohidro) hlm 72",
+     "catatan": "RUEN 2015 mencatat 615 MW untuk provinsi induk \"Papua\" sebelum pemekaran; tidak dibagi ke provinsi baru",
+     "induk_mw": 615
+    },
+    "bioenergi": {
+     "mw": null,
+     "tahun": 2015,
+     "sumber_id": "ruen",
+     "halaman": "Tabel 42 (biomassa/biofuel + biogas) hlm 74",
+     "catatan": "RUEN 2015 mencatat 96.5 MW untuk provinsi induk \"Papua\" sebelum pemekaran; tidak dibagi ke provinsi baru",
+     "induk_mw": 96.5
+    },
+    "hidro": {
+     "mw": null,
+     "tahun": 2015,
+     "sumber_id": "ruen",
+     "halaman": "Tabel 37 (PLTA per wilayah) hlm 69",
+     "catatan": "RUEN 2015 mencatat 22371 MW untuk provinsi induk \"Papua\" sebelum pemekaran; tidak dibagi ke provinsi baru",
+     "induk_mw": 22371
+    },
+    "panas_bumi": {
+     "mw": 0,
+     "tahun": 2025,
+     "sumber_id": "heesi2025",
+     "halaman": "Tabel 6.5.1 hlm 120-121 (sumber daya + cadangan, Badan Geologi per Des 2025)"
+    },
+    "laut": {
+     "mw": null,
+     "tahun": 2015,
+     "sumber_id": "ruen",
+     "catatan": "tidak tercantum di tabel RUEN untuk provinsi ini"
+    }
+   },
+   "terpasang": {
+    "hidro": {
+     "mw": 0,
+     "tahun": 2025,
+     "sumber_id": "heesi2025",
+     "halaman": "Tabel 6.4.9 hlm 118"
+    },
+    "panas_bumi": {
+     "mw": 0,
+     "tahun": 2025,
+     "sumber_id": "heesi2025",
+     "halaman": "Tabel 6.4.9 hlm 118"
+    },
+    "surya": {
+     "mw": 4.66,
+     "tahun": 2025,
+     "sumber_id": "heesi2025",
+     "halaman": "Tabel 6.4.9 hlm 118"
+    },
+    "bayu": {
+     "mw": 0,
+     "tahun": 2025,
+     "sumber_id": "heesi2025",
+     "halaman": "Tabel 6.4.9 hlm 118"
+    },
+    "bioenergi": {
+     "mw": 3.5,
+     "tahun": 2025,
+     "sumber_id": "heesi2025",
+     "halaman": "Tabel 6.4.9 hlm 118"
+    },
+    "mikrohidro": {
+     "mw": null,
+     "tahun": null,
+     "sumber_id": "heesi2025",
+     "catatan": "HEESI menggabung PLTA dan PLTM/H dalam satu kolom (lihat hidro)"
+    },
+    "laut": {
+     "mw": null,
+     "tahun": null,
+     "sumber_id": "heesi2025",
+     "catatan": "tidak ada kapasitas terpasang listrik laut di HEESI"
+    }
+   },
+   "rasio_pemanfaatan": {
+    "hidro": {
+     "persen": null,
+     "penyebut_mw": null,
+     "catatan": "potensi per provinsi tidak tersedia"
+    },
+    "panas_bumi": {
+     "persen": null,
+     "penyebut_mw": null,
+     "catatan": "potensi per provinsi tidak tersedia"
+    },
+    "surya": {
+     "persen": null,
+     "penyebut_mw": null,
+     "catatan": "potensi per provinsi tidak tersedia"
+    },
+    "bayu": {
+     "persen": null,
+     "penyebut_mw": null,
+     "catatan": "potensi per provinsi tidak tersedia"
+    },
+    "bioenergi": {
+     "persen": null,
+     "penyebut_mw": null,
+     "catatan": "potensi per provinsi tidak tersedia"
+    }
+   },
+   "bpp": {
+    "rp_per_kwh": null,
+    "sistem": null,
+    "tahun": null,
+    "sumber_id": null,
+    "catatan": "Kepmen ESDM BPP pembangkitan terbaru belum terambil (jdih.esdm.go.id menolak klien otomatis); isi manual dari Kepmen resmi"
+   },
+   "faktor_lokasi": {
+    "F": 1.5,
+    "wilayah": "Papua / Papua Barat",
+    "sumber_id": "perpres112",
+    "catatan": "F pulau kecil/Mentawai lebih tinggi; tidak dipetakan"
+   },
+   "proyek": {
+    "rencana": 0,
+    "rencana_tanpa_pengembang": 0,
+    "mw_rencana_tanpa_pengembang": 0,
+    "sumber_id": "proyek-meti"
+   }
+  },
+  {
+   "kode": "94",
+   "nama": "Papua Tengah",
+   "potensi": {
+    "surya": {
+     "mw": null,
+     "tahun": 2015,
+     "sumber_id": "ruen",
+     "halaman": "Tabel 44 hlm 77",
+     "catatan": "RUEN 2015 mencatat 2035 MW untuk provinsi induk \"Papua\" sebelum pemekaran; tidak dibagi ke provinsi baru",
+     "induk_mw": 2035
+    },
+    "bayu": {
+     "mw": null,
+     "tahun": 2015,
+     "sumber_id": "ruen",
+     "halaman": "Tabel 46 hlm 80",
+     "catatan": "RUEN 2015 mencatat 1411 MW untuk provinsi induk \"Papua\" sebelum pemekaran; tidak dibagi ke provinsi baru",
+     "induk_mw": 1411
+    },
+    "mikrohidro": {
+     "mw": null,
+     "tahun": 2015,
+     "sumber_id": "ruen",
+     "halaman": "Tabel 40 (minihidro + mikrohidro) hlm 72",
+     "catatan": "RUEN 2015 mencatat 615 MW untuk provinsi induk \"Papua\" sebelum pemekaran; tidak dibagi ke provinsi baru",
+     "induk_mw": 615
+    },
+    "bioenergi": {
+     "mw": null,
+     "tahun": 2015,
+     "sumber_id": "ruen",
+     "halaman": "Tabel 42 (biomassa/biofuel + biogas) hlm 74",
+     "catatan": "RUEN 2015 mencatat 96.5 MW untuk provinsi induk \"Papua\" sebelum pemekaran; tidak dibagi ke provinsi baru",
+     "induk_mw": 96.5
+    },
+    "hidro": {
+     "mw": null,
+     "tahun": 2015,
+     "sumber_id": "ruen",
+     "halaman": "Tabel 37 (PLTA per wilayah) hlm 69",
+     "catatan": "RUEN 2015 mencatat 22371 MW untuk provinsi induk \"Papua\" sebelum pemekaran; tidak dibagi ke provinsi baru",
+     "induk_mw": 22371
+    },
+    "panas_bumi": {
+     "mw": 0,
+     "tahun": 2025,
+     "sumber_id": "heesi2025",
+     "halaman": "Tabel 6.5.1 hlm 120-121 (sumber daya + cadangan, Badan Geologi per Des 2025)"
+    },
+    "laut": {
+     "mw": null,
+     "tahun": 2015,
+     "sumber_id": "ruen",
+     "catatan": "tidak tercantum di tabel RUEN untuk provinsi ini"
+    }
+   },
+   "terpasang": {
+    "hidro": {
+     "mw": 0,
+     "tahun": 2025,
+     "sumber_id": "heesi2025",
+     "halaman": "Tabel 6.4.9 hlm 118"
+    },
+    "panas_bumi": {
+     "mw": 0,
+     "tahun": 2025,
+     "sumber_id": "heesi2025",
+     "halaman": "Tabel 6.4.9 hlm 118"
+    },
+    "surya": {
+     "mw": 2.16,
+     "tahun": 2025,
+     "sumber_id": "heesi2025",
+     "halaman": "Tabel 6.4.9 hlm 118"
+    },
+    "bayu": {
+     "mw": 0,
+     "tahun": 2025,
+     "sumber_id": "heesi2025",
+     "halaman": "Tabel 6.4.9 hlm 118"
+    },
+    "bioenergi": {
+     "mw": 0,
+     "tahun": 2025,
+     "sumber_id": "heesi2025",
+     "halaman": "Tabel 6.4.9 hlm 118"
+    },
+    "mikrohidro": {
+     "mw": null,
+     "tahun": null,
+     "sumber_id": "heesi2025",
+     "catatan": "HEESI menggabung PLTA dan PLTM/H dalam satu kolom (lihat hidro)"
+    },
+    "laut": {
+     "mw": null,
+     "tahun": null,
+     "sumber_id": "heesi2025",
+     "catatan": "tidak ada kapasitas terpasang listrik laut di HEESI"
+    }
+   },
+   "rasio_pemanfaatan": {
+    "hidro": {
+     "persen": null,
+     "penyebut_mw": null,
+     "catatan": "potensi per provinsi tidak tersedia"
+    },
+    "panas_bumi": {
+     "persen": null,
+     "penyebut_mw": null,
+     "catatan": "potensi per provinsi tidak tersedia"
+    },
+    "surya": {
+     "persen": null,
+     "penyebut_mw": null,
+     "catatan": "potensi per provinsi tidak tersedia"
+    },
+    "bayu": {
+     "persen": null,
+     "penyebut_mw": null,
+     "catatan": "potensi per provinsi tidak tersedia"
+    },
+    "bioenergi": {
+     "persen": null,
+     "penyebut_mw": null,
+     "catatan": "potensi per provinsi tidak tersedia"
+    }
+   },
+   "bpp": {
+    "rp_per_kwh": null,
+    "sistem": null,
+    "tahun": null,
+    "sumber_id": null,
+    "catatan": "Kepmen ESDM BPP pembangkitan terbaru belum terambil (jdih.esdm.go.id menolak klien otomatis); isi manual dari Kepmen resmi"
+   },
+   "faktor_lokasi": {
+    "F": 1.5,
+    "wilayah": "Papua / Papua Barat",
+    "sumber_id": "perpres112",
+    "catatan": "F pulau kecil/Mentawai lebih tinggi; tidak dipetakan"
+   },
+   "proyek": {
+    "rencana": 0,
+    "rencana_tanpa_pengembang": 0,
+    "mw_rencana_tanpa_pengembang": 0,
+    "sumber_id": "proyek-meti"
+   }
+  },
+  {
+   "kode": "95",
+   "nama": "Papua Pegunungan",
+   "potensi": {
+    "surya": {
+     "mw": null,
+     "tahun": 2015,
+     "sumber_id": "ruen",
+     "halaman": "Tabel 44 hlm 77",
+     "catatan": "RUEN 2015 mencatat 2035 MW untuk provinsi induk \"Papua\" sebelum pemekaran; tidak dibagi ke provinsi baru",
+     "induk_mw": 2035
+    },
+    "bayu": {
+     "mw": null,
+     "tahun": 2015,
+     "sumber_id": "ruen",
+     "halaman": "Tabel 46 hlm 80",
+     "catatan": "RUEN 2015 mencatat 1411 MW untuk provinsi induk \"Papua\" sebelum pemekaran; tidak dibagi ke provinsi baru",
+     "induk_mw": 1411
+    },
+    "mikrohidro": {
+     "mw": null,
+     "tahun": 2015,
+     "sumber_id": "ruen",
+     "halaman": "Tabel 40 (minihidro + mikrohidro) hlm 72",
+     "catatan": "RUEN 2015 mencatat 615 MW untuk provinsi induk \"Papua\" sebelum pemekaran; tidak dibagi ke provinsi baru",
+     "induk_mw": 615
+    },
+    "bioenergi": {
+     "mw": null,
+     "tahun": 2015,
+     "sumber_id": "ruen",
+     "halaman": "Tabel 42 (biomassa/biofuel + biogas) hlm 74",
+     "catatan": "RUEN 2015 mencatat 96.5 MW untuk provinsi induk \"Papua\" sebelum pemekaran; tidak dibagi ke provinsi baru",
+     "induk_mw": 96.5
+    },
+    "hidro": {
+     "mw": null,
+     "tahun": 2015,
+     "sumber_id": "ruen",
+     "halaman": "Tabel 37 (PLTA per wilayah) hlm 69",
+     "catatan": "RUEN 2015 mencatat 22371 MW untuk provinsi induk \"Papua\" sebelum pemekaran; tidak dibagi ke provinsi baru",
+     "induk_mw": 22371
+    },
+    "panas_bumi": {
+     "mw": 0,
+     "tahun": 2025,
+     "sumber_id": "heesi2025",
+     "halaman": "Tabel 6.5.1 hlm 120-121 (sumber daya + cadangan, Badan Geologi per Des 2025)"
+    },
+    "laut": {
+     "mw": null,
+     "tahun": 2015,
+     "sumber_id": "ruen",
+     "catatan": "tidak tercantum di tabel RUEN untuk provinsi ini"
+    }
+   },
+   "terpasang": {
+    "hidro": {
+     "mw": 4.66,
+     "tahun": 2025,
+     "sumber_id": "heesi2025",
+     "halaman": "Tabel 6.4.9 hlm 118"
+    },
+    "panas_bumi": {
+     "mw": 0,
+     "tahun": 2025,
+     "sumber_id": "heesi2025",
+     "halaman": "Tabel 6.4.9 hlm 118"
+    },
+    "surya": {
+     "mw": 0.66,
+     "tahun": 2025,
+     "sumber_id": "heesi2025",
+     "halaman": "Tabel 6.4.9 hlm 118"
+    },
+    "bayu": {
+     "mw": 0,
+     "tahun": 2025,
+     "sumber_id": "heesi2025",
+     "halaman": "Tabel 6.4.9 hlm 118"
+    },
+    "bioenergi": {
+     "mw": 0,
+     "tahun": 2025,
+     "sumber_id": "heesi2025",
+     "halaman": "Tabel 6.4.9 hlm 118"
+    },
+    "mikrohidro": {
+     "mw": null,
+     "tahun": null,
+     "sumber_id": "heesi2025",
+     "catatan": "HEESI menggabung PLTA dan PLTM/H dalam satu kolom (lihat hidro)"
+    },
+    "laut": {
+     "mw": null,
+     "tahun": null,
+     "sumber_id": "heesi2025",
+     "catatan": "tidak ada kapasitas terpasang listrik laut di HEESI"
+    }
+   },
+   "rasio_pemanfaatan": {
+    "hidro": {
+     "persen": null,
+     "penyebut_mw": null,
+     "catatan": "potensi per provinsi tidak tersedia"
+    },
+    "panas_bumi": {
+     "persen": null,
+     "penyebut_mw": null,
+     "catatan": "potensi per provinsi tidak tersedia"
+    },
+    "surya": {
+     "persen": null,
+     "penyebut_mw": null,
+     "catatan": "potensi per provinsi tidak tersedia"
+    },
+    "bayu": {
+     "persen": null,
+     "penyebut_mw": null,
+     "catatan": "potensi per provinsi tidak tersedia"
+    },
+    "bioenergi": {
+     "persen": null,
+     "penyebut_mw": null,
+     "catatan": "potensi per provinsi tidak tersedia"
+    }
+   },
+   "bpp": {
+    "rp_per_kwh": null,
+    "sistem": null,
+    "tahun": null,
+    "sumber_id": null,
+    "catatan": "Kepmen ESDM BPP pembangkitan terbaru belum terambil (jdih.esdm.go.id menolak klien otomatis); isi manual dari Kepmen resmi"
+   },
+   "faktor_lokasi": {
+    "F": 1.5,
+    "wilayah": "Papua / Papua Barat",
+    "sumber_id": "perpres112",
+    "catatan": "F pulau kecil/Mentawai lebih tinggi; tidak dipetakan"
+   },
+   "proyek": {
+    "rencana": 0,
+    "rencana_tanpa_pengembang": 0,
+    "mw_rencana_tanpa_pengembang": 0,
+    "sumber_id": "proyek-meti"
+   }
+  },
+  {
+   "kode": "96",
+   "nama": "Papua Barat Daya",
+   "potensi": {
+    "surya": {
+     "mw": null,
+     "tahun": 2015,
+     "sumber_id": "ruen",
+     "halaman": "Tabel 44 hlm 77",
+     "catatan": "RUEN 2015 mencatat 6307 MW untuk provinsi induk \"Papua Barat\" sebelum pemekaran; tidak dibagi ke provinsi baru",
+     "induk_mw": 6307
+    },
+    "bayu": {
+     "mw": null,
+     "tahun": 2015,
+     "sumber_id": "ruen",
+     "halaman": "Tabel 46 hlm 80",
+     "catatan": "RUEN 2015 mencatat 437 MW untuk provinsi induk \"Papua Barat\" sebelum pemekaran; tidak dibagi ke provinsi baru",
+     "induk_mw": 437
+    },
+    "mikrohidro": {
+     "mw": null,
+     "tahun": 2015,
+     "sumber_id": "ruen",
+     "halaman": "Tabel 40 (minihidro + mikrohidro) hlm 72",
+     "catatan": "RUEN 2015 mencatat 3 MW untuk provinsi induk \"Papua Barat\" sebelum pemekaran; tidak dibagi ke provinsi baru",
+     "induk_mw": 3
+    },
+    "bioenergi": {
+     "mw": null,
+     "tahun": 2015,
+     "sumber_id": "ruen",
+     "halaman": "Tabel 42 (biomassa/biofuel + biogas) hlm 74",
+     "catatan": "RUEN 2015 mencatat 54.9 MW untuk provinsi induk \"Papua Barat\" sebelum pemekaran; tidak dibagi ke provinsi baru",
+     "induk_mw": 54.9
+    },
+    "laut": {
+     "mw": null,
+     "tahun": 2015,
+     "sumber_id": "ruen",
+     "halaman": "Tabel 48 (praktis; teknis dan teoritis ikut) hlm 82",
+     "catatan": "RUEN 2015 mencatat 391 MW untuk provinsi induk \"Papua Barat\" sebelum pemekaran; tidak dibagi ke provinsi baru",
+     "induk_mw": 391
+    },
+    "panas_bumi": {
+     "mw": 50,
+     "tahun": 2025,
+     "sumber_id": "heesi2025",
+     "halaman": "Tabel 6.5.1 hlm 120-121 (sumber daya + cadangan, Badan Geologi per Des 2025)"
+    },
+    "hidro": {
+     "mw": null,
+     "tahun": 2015,
+     "sumber_id": "ruen",
+     "catatan": "tidak tercantum di tabel RUEN untuk provinsi ini"
+    }
+   },
+   "terpasang": {
+    "hidro": {
+     "mw": 3.64,
+     "tahun": 2025,
+     "sumber_id": "heesi2025",
+     "halaman": "Tabel 6.4.9 hlm 118"
+    },
+    "panas_bumi": {
+     "mw": 0,
+     "tahun": 2025,
+     "sumber_id": "heesi2025",
+     "halaman": "Tabel 6.4.9 hlm 118"
+    },
+    "surya": {
+     "mw": 2.37,
+     "tahun": 2025,
+     "sumber_id": "heesi2025",
+     "halaman": "Tabel 6.4.9 hlm 118"
+    },
+    "bayu": {
+     "mw": 0,
+     "tahun": 2025,
+     "sumber_id": "heesi2025",
+     "halaman": "Tabel 6.4.9 hlm 118"
+    },
+    "bioenergi": {
+     "mw": 2.5,
+     "tahun": 2025,
+     "sumber_id": "heesi2025",
+     "halaman": "Tabel 6.4.9 hlm 118"
+    },
+    "mikrohidro": {
+     "mw": null,
+     "tahun": null,
+     "sumber_id": "heesi2025",
+     "catatan": "HEESI menggabung PLTA dan PLTM/H dalam satu kolom (lihat hidro)"
+    },
+    "laut": {
+     "mw": null,
+     "tahun": null,
+     "sumber_id": "heesi2025",
+     "catatan": "tidak ada kapasitas terpasang listrik laut di HEESI"
+    }
+   },
+   "rasio_pemanfaatan": {
+    "hidro": {
+     "persen": null,
+     "penyebut_mw": null,
+     "catatan": "potensi per provinsi tidak tersedia"
+    },
+    "panas_bumi": {
+     "persen": 0,
+     "penyebut_mw": 50,
+     "catatan": "terpasang 2025 / potensi 2025 (HEESI)"
+    },
+    "surya": {
+     "persen": null,
+     "penyebut_mw": null,
+     "catatan": "potensi per provinsi tidak tersedia"
+    },
+    "bayu": {
+     "persen": null,
+     "penyebut_mw": null,
+     "catatan": "potensi per provinsi tidak tersedia"
+    },
+    "bioenergi": {
+     "persen": null,
+     "penyebut_mw": null,
+     "catatan": "potensi per provinsi tidak tersedia"
+    }
+   },
+   "bpp": {
+    "rp_per_kwh": null,
+    "sistem": null,
+    "tahun": null,
+    "sumber_id": null,
+    "catatan": "Kepmen ESDM BPP pembangkitan terbaru belum terambil (jdih.esdm.go.id menolak klien otomatis); isi manual dari Kepmen resmi"
+   },
+   "faktor_lokasi": {
+    "F": 1.5,
+    "wilayah": "Papua / Papua Barat",
+    "sumber_id": "perpres112",
+    "catatan": "F pulau kecil/Mentawai lebih tinggi; tidak dipetakan"
+   },
+   "proyek": {
+    "rencana": 0,
+    "rencana_tanpa_pengembang": 0,
+    "mw_rencana_tanpa_pengembang": 0,
+    "sumber_id": "proyek-meti"
+   }
+  }
+ ]
+}

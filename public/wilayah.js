@@ -1,11 +1,14 @@
 /* /wilayah: peta koroplet 38 provinsi + profil provinsi (?prov=XX). Data statis /data/wilayah.json. */
 import { mulaiHalaman } from "/inti/kepala.js";
+import { geserPanel } from "/inti/panel_geser.js";
+import { unduhRegHtml } from "/inti/komponen.js";
 import { nanti, esc, hantuHtml, debounce } from "/inti/umum.js";
 import { t, tanggal } from "/i18n.js";
 import { muatData, tampilGalat, sumberHtml, sumberLipat, pasangAksi, kartuHtml, batangHtml, pasangBar, temuanHtml, heroVisual, ubinHtml, pil, teksTek, teksStatus, num, saatBahasa, amanUrl } from "/analisis.js";
 
 const $ = (id) => document.getElementById(id);
 const param = new URLSearchParams(location.search).get("prov");
+const REG = new Map();
 let data = null, geo = null, metrik = "terpasang", peta = null, petaSiap = false;
 
 const METRIK = {
@@ -60,16 +63,18 @@ function kelasPeta(m) {
 }
 
 function urutan() {
-  const m = metrik, B = urutM(m), maks = Math.max(1, ...B.map((p) => METRIK[m].ambil(p) ?? 0));
+  const m = metrik, B = urutM(m);
   const th = (k, s = "") => `<th class="${s}">${esc(t(k))}</th>`;
   const rued = (p) => {
     if (!p.rued.perda) return `<span class="jm-wl-kos" title="${esc(t("wl.rued_belum"))}">-</span>`;
+    const [no, th] = p.rued.perda.split("/"), x = p.perda.find((q) => q.nomor === no && String(q.tahun) === th), r = x && REG.get(x.id);
     const isi = esc(t("wl.rued_ada", { perda: p.rued.perda })), u = amanUrl(p.rued.url);
-    return u ? `<a class="jm-pil jm-wl-perda" href="${esc(u)}" target="_blank" rel="noopener noreferrer">${isi}</a>` : `<span class="jm-pil jm-wl-perda">${isi}</span>`;
+    const nama = r ? `<a class="jm-pil jm-wl-perda" href="/regulasi?id=${encodeURIComponent(r.id)}">${isi}</a>` : u ? `<a class="jm-pil jm-wl-perda" href="${esc(u)}" target="_blank" rel="noopener noreferrer">${isi}</a>` : `<span class="jm-pil jm-wl-perda">${isi}</span>`;
+    return `<span class="jm-wl-pd">${nama}${unduhRegHtml(r || { url_sumber: p.rued.url, judul: isi })}</span>`;
   };
   $("urutan").innerHTML = `<div class="jm-gulir"><table class="jm-tabel jm-wl-tabel"><colgroup><col class="jm-wl-c1"><col><col class="jm-wl-c3"><col class="jm-wl-c4"></colgroup><thead><tr><th>#</th>${th("wl.col.prov")}<th>${esc(t("wl.m." + m))}</th>${th("wl.col.rued")}</tr></thead><tbody>${B.map((p, i) => {
     const v = METRIK[m].ambil(p), lbl = (k) => esc(t(k));
-    return `<tr data-href="/wilayah?prov=${esc(p.kode)}"><td data-label="#"><span class="jm-wl-no">${i + 1}</span></td><td data-label="${lbl("wl.col.prov")}"><a class="jm-wl-nama" href="/wilayah?prov=${esc(p.kode)}">${lambang(p)}<span>${esc(p.nama)}</span></a></td><td data-label="${esc(t("wl.col.nilai"))}" class="jm-num"><span class="jm-wl-nil"><span class="jm-wl-mb" aria-hidden="true"><i data-w="${v === null ? 0 : ((v / maks) * 100).toFixed(1)}"></i></span><b>${esc(nilaiTeks(m, p))}</b></span></td><td data-label="${lbl("wl.col.rued")}" class="jm-tengah">${rued(p)}</td></tr>`;
+    return `<tr data-href="/wilayah?prov=${esc(p.kode)}"><td data-label="#"><span class="jm-wl-no">${i + 1}</span></td><td data-label="${lbl("wl.col.prov")}"><a class="jm-wl-nama" href="/wilayah?prov=${esc(p.kode)}">${lambang(p)}<span>${esc(p.nama)}</span></a></td><td data-label="${esc(t("wl.col.nilai"))}" class="jm-num"><b class="jm-wl-nil">${esc(nilaiTeks(m, p))}</b></td><td data-label="${lbl("wl.col.rued")}" class="jm-tengah">${rued(p)}</td></tr>`;
   }).join("")}</tbody></table></div>`;
   pasangBar($("urutan"));
 }
@@ -77,7 +82,8 @@ function urutan() {
 function legenda() {
   const m = metrik, { rentang } = kelasPeta(m), s = ciriSumber(m), kosong = data.baris.length - berdata(m).length;
   const fmt = (v) => num(v, METRIK[m].d);
-  $("legenda").innerHTML = `<p class="jm-wl-lg-j">${esc(t("wl.m." + m))}</p><div class="jm-wl-rp"><div class="jm-wl-rp-s">${rentang.map((r) => `<span><i class="jm-wl-k${r.k}" aria-hidden="true"></i><small>${esc(m === "rued" ? t("wl.lg.ada") : fmt(r.min))}</small></span>`).join("")}</div>${kosong ? `<span class="jm-wl-rp-k"><i class="jm-wl-sw-kos" aria-hidden="true"></i><small>${esc(t("an.tanpa_data"))}</small></span>` : ""}<span class="jm-wl-lg-s">${sumberHtml(s)}</span></div>`;
+  $("lg-j").textContent = t("wl.m." + m);
+  $("lg-isi").innerHTML = `<div class="jm-wl-rp"><div class="jm-wl-rp-s">${rentang.map((r) => `<span><i class="jm-wl-k${r.k}" aria-hidden="true"></i><small>${esc(m === "rued" ? t("wl.lg.ada") : fmt(r.min))}</small></span>`).join("")}</div>${kosong ? `<span class="jm-wl-rp-k"><i class="jm-wl-sw-kos" aria-hidden="true"></i><small>${esc(t("an.tanpa_data"))}</small></span>` : ""}<span class="jm-wl-lg-s">${sumberHtml(s)}</span></div>`;
   const tp = urutM(m)[0], tgt = METRIK[m].ambil(tp);
   const sumP = berdata(m).reduce((a, p) => a + METRIK[m].ambil(p), 0), top10 = urutM(m).slice(0, 10).reduce((a, p) => a + (METRIK[m].ambil(p) ?? 0), 0);
   $("j-peta").innerHTML = m === "rued" ? hlHtml("wl.j.rued", { n: data.baris.length }, num(berdata(m).length)) : hlHtml("wl.j.peta", { mj: t("wl.mj." + m), nilai: nilaiTeks(m, tp) }, tp.nama);
@@ -149,9 +155,8 @@ function warnai() {
 }
 
 function peringkatPanel() {
-  const m = metrik, B = urutM(m).filter((p) => METRIK[m].ambil(p) !== null).slice(0, 10), maks = Math.max(1, ...B.map((p) => METRIK[m].ambil(p)));
-  $("peringkat").innerHTML = `<h3>${esc(t("wl.ey.urut"))}</h3><ol>${B.map((p, i) => `<li data-k="${esc(p.kode)}" tabindex="0"><span class="jm-wl-no">${i + 1}</span>${lambang(p, 18)}<span class="jm-wl-pn">${esc(p.nama)}</span>${m === "rued" ? "" : `<span class="jm-wl-mb" aria-hidden="true"><i data-w="${((METRIK[m].ambil(p) / maks) * 100).toFixed(1)}"></i></span>`}<b>${esc(nilaiTeks(m, p))}</b></li>`).join("")}</ol>`;
-  pasangBar($("peringkat"));
+  const m = metrik, B = urutM(m).filter((p) => METRIK[m].ambil(p) !== null).slice(0, 10);
+  $("pr-isi").innerHTML = `<ol>${B.map((p, i) => `<li data-k="${esc(p.kode)}" tabindex="0"><span class="jm-wl-no">${i + 1}</span>${lambang(p, 18)}<span class="jm-wl-pn">${esc(p.nama)}</span><b>${esc(nilaiTeks(m, p))}</b></li>`).join("")}</ol>`;
 }
 
 async function bukaPeta() {
@@ -182,6 +187,7 @@ async function bukaPeta() {
   pr.addEventListener("mouseleave", () => naik(null));
   pr.addEventListener("click", (e) => buka(e.target.closest("li[data-k]")?.dataset.k));
   pr.addEventListener("keydown", (e) => { if (e.key === "Enter") buka(e.target.closest("li[data-k]")?.dataset.k); });
+  if (innerWidth >= 900) for (const [id, k] of [["peringkat", "peringkat"], ["legenda", "legenda"]]) geserPanel($(id), { kunci: k });
   petaSiap = true;
   warnai();
   new ResizeObserver(debounce(warnai, 150)).observe($("peta"));
@@ -225,6 +231,7 @@ async function mulai() {
   await mulaiHalaman();
   $("kartu") && ($("kartu").innerHTML = hantuHtml(2));
   try { data = await muatData("wilayah.json"); } catch (e) { tampilGalat($(param ? "profil-isi" : "kartu"), mulai); if (param) { $("daftar").hidden = true; $("profil").hidden = false; } return; }
+  try { for (const r of (await muatData("regulasi.json")).baris) REG.set(r.id, r); } catch (e) { /* tanpa naskah: tautan sumber saja */ }
   if (!param) pasangAksi(["aksi-urut"]);
   gambar();
   saatBahasa(gambar);

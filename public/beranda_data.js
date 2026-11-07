@@ -2,6 +2,7 @@
 import { t, angka, tanggal } from "/i18n.js";
 import { esc } from "/inti/umum.js";
 import { sumberHtml, unduhRegHtml } from "/inti/komponen.js";
+import { penerbitHtml } from "/penerbit.js";
 import { muat, label, namaRegulasi, sembunyi } from "/publik.js";
 
 export const LOGO_ORG = { p_6998264f50: "pertamina-nre", p_10e0dde689: "pertamina-nre", p_dda1e51dae: "pge", p_5a2e7d0c63: "pln-indonesia-power", p_ff7a390a42: "pln-nusantara-power", p_27ae5a4203: "medco-power", p_bdd0f2d140: "barito-renewables", p_7a803f3b71: "star-energy", l_41bf1f0b41: "meti", l_dd90c88f59: "aesi", l_d3dadc789e: "aprobi", l_7278e0528a: "esdm", l_973f60de15: "brin", su_ed074ff5: "pln", p_b1c52ad7b0: "pertamina", p_476a6bf2fb: "pertamina", p_e0f3886341: "pln-icon-plus", p_d99d5987f7: "sumitomo", p_9de27fd5b9: "medco-energi", l_38ba1d6f56: "ebtke", p_7f829f524e: "adaro", p_c6c4e478c0: "supreme-energy", ix_keen: "kencana-energi-lestari", l_7e5f8d771d: "api-inaga", l_15e21f04fa: "ojk", l_7b43a2574c: "kemenkeu", l_edde12ff1f: "kementerian-bumn", l_05301f48a5: "bkpm", l_3d20494e0a: "kemenhut", l_06d49428ac: "aplsi", l_67ed5e1422: "apamsi", l_1192cb8a15: "ibeka", l_0974f82eba: "aspebindo", p_978ca76d57: "mind-id" };
@@ -27,10 +28,10 @@ const kartu = (kunci, w, href, tgl, stat, viz, sumberTeks) => `<article class="j
   <footer class="jm-ds-kaki"><span>${esc(t("beranda.ds.diperbarui", { tanggal: tanggal(tgl) }))}</span><a class="jm-lihat" href="${href}">${esc(t("beranda.ds.buka"))} &rarr;</a></footer></article>`;
 
 /** Baris peringkat: nomor bulat, nama + pil, batang tipis, nilai tabular di kanan. items: {nama, pil, nilai, unit, frac} */
-const rangking = (items) => `<ol class="jm-rank">${items.map((o, i) => `<li class="jm-rank-i"><span class="jm-rank-no">${i + 1}</span><span class="jm-rank-t"><strong title="${esc(o.nama)}">${o.href ? `<a href="${esc(o.href)}">${esc(o.nama)}</a>` : esc(o.nama)}</strong>${o.aksi || ""}${o.pil ? `<small><span class="jm-pil">${esc(o.pil)}</span></small>` : ""}</span><span class="jm-rank-v"><b>${esc(o.nilai)}</b>${o.unit ? ` <small>${esc(o.unit)}</small>` : ""}</span>${o.frac != null ? `<svg class="jm-rank-bar${i === 0 ? " jm-rank-atas" : ""}" viewBox="0 0 100 6" preserveAspectRatio="none" aria-hidden="true"><rect class="jm-bar-latar" width="100" height="6"/><rect class="jm-bar-isi" width="${Math.max(1, Math.round(o.frac * 100))}" height="6"/></svg>` : ""}</li>`).join("")}</ol>`;
+const rangking = (items) => `<ol class="jm-rank">${items.map((o, i) => `<li class="jm-rank-i"><span class="jm-rank-no">${i + 1}</span><span class="jm-rank-t"><strong title="${esc(o.nama)}">${o.href ? `<a href="${esc(o.href)}">${esc(o.nama)}</a>` : esc(o.nama)}</strong>${o.aksi || ""}${o.pil ? `<small><span class="jm-pil">${esc(o.pil)}</span></small>` : ""}</span><span class="jm-rank-v"><b>${esc(o.nilai)}</b>${o.unit ? ` <small>${esc(o.unit)}</small>` : ""}</span></li>`).join("")}</ol>`;
 
 const baris = (kiri, kanan) => `<div class="jm-ds-baris"><span>${esc(kiri)}</span><span>${esc(kanan)}</span></div>`;
-const bar = (frac, w) => `<svg class="jm-ds-bar jm-w${w}" viewBox="0 0 100 6" preserveAspectRatio="none" aria-hidden="true"><rect class="jm-bar-latar" width="100" height="6"/><rect class="jm-bar-isi" width="${Math.max(1, Math.round(frac * 100))}" height="6"/></svg>`;
+const bar = (frac, w) => `<svg class="jm-ds-bar jm-w${w}" viewBox="0 0 100 6" preserveAspectRatio="none" aria-hidden="true"><rect class="jm-bar-isi" width="${Math.max(1, Math.round(frac * 100))}" height="6"/></svg>`;
 
 const norm = (n) => String(n).toLowerCase().replace(/^pt\.?\s+/, "").replace(/\s+tbk$/, "").trim();
 function logoPemilik(nama, orgIdx) {
@@ -49,7 +50,7 @@ function pencar(proyek, org) {
   const baris = top.map((d) => {
     const lg = logoPemilik(d.k, idx), b = (d.bangun / mx) * 100, r = (d.rencana / mx) * 100;
     return `<li class="jm-pm"><span class="jm-pm-lg">${lg ? `<img src="${esc(lg)}" width="24" height="24" alt="" loading="lazy" data-ini="${esc(inisial(d.k))}">` : `<span class="jm-pm-ini" aria-hidden="true">${esc(inisial(d.k))}</span>`}</span><span class="jm-pm-n" title="${esc(d.k)}">${esc(d.k)}</span>
-      <svg class="jm-pm-bar" viewBox="0 0 100 8" preserveAspectRatio="none" aria-hidden="true"><rect class="jm-bar-latar" width="100" height="8"/><rect class="jm-pm-b" width="${b.toFixed(2)}" height="8"/><rect class="jm-pm-r" x="${b.toFixed(2)}" width="${r.toFixed(2)}" height="8"/></svg>
+      <svg class="jm-pm-bar" viewBox="0 0 100 8" preserveAspectRatio="none" aria-hidden="true"><rect class="jm-pm-b" width="${b.toFixed(2)}" height="8"/><rect class="jm-pm-r" x="${b.toFixed(2)}" width="${r.toFixed(2)}" height="8"/></svg>
       <span class="jm-pm-v"><b>${esc(angka(d.bangun + d.rencana))}</b> <small>MW</small></span></li>`;
   }).join("");
   const svg = `<div class="jm-pm-leg"><span><i class="jm-pm-kb"></i>${esc(t("beranda.ds.pengembang.x"))}</span><span><i class="jm-pm-kr"></i>${esc(t("beranda.ds.pengembang.y"))}</span></div><ol class="jm-pm-daftar" aria-label="${esc(t("beranda.ds.pengembang.aria"))}">${baris}</ol>`;
@@ -67,7 +68,7 @@ export async function gambarDataset(R) {
     const urut7 = [...pro.baris].sort((a, b) => sat(b) - sat(a)).slice(0, 7);
     const top7 = rangking(urut7.map((p) => ({ nama: p.nama, href: "/p/" + p.id, pil: label("beranda.tek.", p.teknologi), nilai: angka(sat(p)), unit: p.kapasitas[0].satuan, frac: sat(p) / sat(urut7[0]) })));
     const pc = pencar(pro.baris, org.baris);
-    const baru = rangking([...reg.baris].filter((r) => r.tanggal_ditetapkan).sort((a, b) => String(b.tanggal_ditetapkan).localeCompare(String(a.tanggal_ditetapkan))).slice(0, 7).map((r) => ({ nama: namaRegulasi(r), nilai: tanggal(r.tanggal_ditetapkan), aksi: unduhRegHtml(r) })));
+    const baru = `<ol class="jm-rb">${[...reg.baris].filter((r) => r.tanggal_ditetapkan).sort((a, b) => String(b.tanggal_ditetapkan).localeCompare(String(a.tanggal_ditetapkan))).slice(0, 7).map((r) => `<li class="jm-rb-i">${penerbitHtml(r.instansi_penerbit, 28).replace(/<span class="jm-pen-pendek">.*?<\/span>/, "")}<a class="jm-rb-t" href="/regulasi?id=${encodeURIComponent(r.id)}"><b>${esc(namaRegulasi(r))}</b><small title="${esc(r.judul || "")}">${esc(r.judul || "")}</small></a><span class="jm-rb-tgl">${esc(tanggal(r.tanggal_ditetapkan))}</span>${unduhRegHtml(r)}</li>`).join("")}</ol>`;
     const topPab = [...rantai.pabrikan].sort((a, b) => b.mwp - a.mwp).slice(0, 4), rr = rantai.ringkas, tk = rantai.pabrikan.filter((x) => x.tkdn != null), tkdn = tk.length ? jml(tk, (x) => x.tkdn) / tk.length : null;
     const top5 = [...wil.baris].filter((w) => w.terpasang_mw?.nilai != null).sort((a, b) => b.terpasang_mw.nilai - a.terpasang_mw.nilai).slice(0, 5), mw5 = top5[0]?.terpasang_mw.nilai || 1;
     const re = wil.baris.map((w) => w.rasio_elektrifikasi?.nilai).filter(Number.isFinite);

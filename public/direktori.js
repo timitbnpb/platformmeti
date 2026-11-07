@@ -1649,7 +1649,7 @@ h4{margin:0 0 2px;font-size:8px;letter-spacing:.08em;text-transform:uppercase;co
     const top = a.slice().sort((p, q) => ((strat("L:" + q.id) ? 1000 : 0) + (terhLb(q.id)[0] || 0) + bobot(q)) - ((strat("L:" + p.id) ? 1000 : 0) + (terhLb(p.id)[0] || 0) + bobot(p))).slice(0, 3);
     return `<div class="ak-tipw ak-tipw2"><div class="ak-tw-h">${lambangHtml(lambangUrl(prov, ""), 32)}<b>${esc(r.nama)}</b><span class="ak-tw-l">Lihat semua \u2192</span></div>
       ${ubin.length ? `<div class="ak-tw-u">${ubin.map(([l, v]) => `<div><b>${angka(v)}</b><small>${l}</small></div>`).join("")}</div>` : ""}
-      ${kats.length ? `<div class="ak-tw-bar">${kats.map(([k, n]) => `<i data-st="width:${(n / tot * 100).toFixed(1)}%;background:${(KAT[k] || [])[2] || "var(--ink2)"}"></i>`).join("")}</div><div class="ak-tw-leg">${kats.slice(0, 3).map(([k, n]) => `<span><i data-st="background:${(KAT[k] || [])[2] || "var(--ink2)"}"></i>${esc((KAT[k] || [k])[0])} ${angka(n)}</span>`).join("")}</div>` : ""}
+      ${kats.length ? pilKatP(kats) : ""}
       ${top.length ? `<div class="ak-tw-t"><small>Terbesar</small>${top.map(x => `<div class="ak-tw-r">${logoLb(x).replace('class="ak-lgo"', 'class="ak-lgo kecil"')}<b>${esc(x.nama)}</b><em>${esc((KAT[x.kategori] || [x.kategori])[0])}</em></div>`).join("")}</div>` : ""}</div>`; };
   /* peta dasar tanpa papan nomor jalan (mis. "3367"); nama jalan tetap tampil (keputusan pemilik) */
   /* label negara tetangga disembunyikan dan area di luar Indonesia diredam (kode sama dengan /proyek) */
@@ -1682,6 +1682,9 @@ h4{margin:0 0 2px;font-size:8px;letter-spacing:.08em;text-transform:uppercase;co
     const rows = rowsCache.rows.slice(), u = SDP.urut, d = SDP.arah; rows.sort((a, b) => u === "nama" ? d * -a.nama.localeCompare(b.nama, "id") : d * (a[u] - b[u]) || a.nama.localeCompare(b.nama, "id"));
     return {rows: rows.filter(r => !q || nrm(r.nama).includes(q))};
   }
+  /* pil kategori: maks 3 terbesar + "+n" (title berisi rincian sisanya); m = [[kategori, jumlah], ...] terurut */
+  const labKat = k => (CHIP_KAT.find(c => c[0] === k) || [])[1] || (KAT[k] || [k])[0];
+  const pilKatP = (m, maks = 3) => `<span class="ak-sdp-k">${m.slice(0, maks).map(([k, n]) => `<span class="ak-sdp-p"><i data-st="background:${(KAT[k] || [])[2] || "var(--ink2)"}"></i>${esc(labKat(k))} <b>${angka(n)}</b></span>`).join("")}${m.length > maks ? `<span class="ak-sdp-p ak-sdp-p-n" title="${esc(m.slice(maks).map(([k, n]) => labKat(k) + " " + angka(n)).join(", "))}">+${angka(m.length - maks)}</span>` : ""}</span>`;
   function isiSide() {
     const L = lbArr.filter(x => x.kategori !== "penerbit"), b = barisSide();
     const rt = [`<button type="button" data-sd-naik="id">Indonesia</button>`]; if (SDP.prov) rt.push(`<button type="button" data-sd-naik="prov">${esc(provT(SDP.prov))}</button>`); if (SDP.kab) rt.push(`<span>${esc(SDP.kab)}</span>`);
@@ -1694,7 +1697,7 @@ h4{margin:0 0 2px;font-size:8px;letter-spacing:.08em;text-transform:uppercase;co
     const hit = new Map(); L.forEach(x => { const k = SDP.prov ? (x.prov === SDP.prov ? x.kab : null) : x.prov; if (!k) return; const m = hit.get(k) || hit.set(k, {}).get(k); m[x.kategori] = (m[x.kategori] || 0) + 1; });
     const rows = b.rows.filter(r => r.n > 0).sort((p, q) => q.n - p.n || p.nama.localeCompare(q.nama, "id"));
     $("akSideT").innerHTML = `<div class="ak-sdp-l">${rows.map(r => { const m = Object.entries(hit.get(r.k) || {}).sort((p, q) => q[1] - p[1]);
-      return `<button type="button" class="ak-sdp" data-sd-baris="${esc(r.k)}">${lambangHtml(lambangUrl(SDP.prov ? "" : r.k, SDP.prov), 22)}<span class="ak-sdp-n"><b>${esc(SDP.prov && !/^(kota|kab\.?|kabupaten) /i.test(r.nama) ? "Kab. " + r.nama : r.nama)}</b><span class="ak-sdp-k">${m.map(([k, n]) => `<span class="ak-sdp-p"><i data-st="background:${(KAT[k] || [])[2] || "var(--ink2)"}"></i>${esc((CHIP_KAT.find(c => c[0] === k) || [])[1] || (KAT[k] || [k])[0])} <b>${angka(n)}</b></span>`).join("")}</span></span><em>${angka(r.n)}</em></button>`; }).join("") || '<p class="ak-khampa">Tidak ada wilayah.</p>'}</div>`;
+      return `<button type="button" class="ak-sdp" data-sd-baris="${esc(r.k)}">${lambangHtml(lambangUrl(SDP.prov ? "" : r.k, SDP.prov), 22)}<span class="ak-sdp-n"><b>${esc(SDP.prov && !/^(kota|kab\.?|kabupaten) /i.test(r.nama) ? "Kab. " + r.nama : r.nama)}</b>${pilKatP(m)}</span><em>${angka(r.n)}</em></button>`; }).join("") || '<p class="ak-khampa">Tidak ada wilayah.</p>'}</div>`;
   }
   async function terbangKab(kab) { const m = PT.map, a = lbArr.filter(x => x.prov === SDP.prov && x.kab === kab && Number.isFinite(x.lat)); if (!a.length) return; const lo = a.map(x => x.lon), la = a.map(x => x.lat); m.fitBounds([[Math.min(...lo) - .01, Math.min(...la) - .01], [Math.max(...lo) + .01, Math.max(...la) + .01]], {padding: 80, maxZoom: 11}); }
   /* lebar sidebar dan drawer bisa digeser (min 300px, maks 60% layar), tersimpan di localStorage */
@@ -1717,8 +1720,9 @@ h4{margin:0 0 2px;font-size:8px;letter-spacing:.08em;text-transform:uppercase;co
     isiSide();
   }
   async function geoProvinsi() { if (!PT.geoProv) PT.geoProv = await ambilJson("/geo/provinsi.json"); if (!PT.cent && PT.geoProv?.features) { PT.cent = {}; for (const f of PT.geoProv.features) { const b = bbox(f); PT.cent[String(f.properties.kode)] = [(b[0] + b[2]) / 2, (b[1] + b[3]) / 2]; } } return PT.geoProv; }
+  const padAwal = () => innerWidth > 700 ? {top: 104, bottom: 24, left: 372, right: 60} : {top: 110, bottom: Math.round(innerHeight * .46) + 8, left: 10, right: 10};   /* seluruh Indonesia pas di area kanan panel */
   async function terbangKe(k) {
-    const m = PT.map; if (k === "id") { m.fitBounds([[94, -11.5], [141.5, 6.5]], {padding: 10}); return; }
+    const m = PT.map; if (k === "id") { m.fitBounds([[94, -11.5], [141.5, 6.5]], {padding: padAwal()}); return; }
     const g = await geoProvinsi(), f = g?.features.find(f => String(f.properties.kode) === k); if (f) { const b = bbox(f); m.fitBounds([[b[0], b[1]], [b[2], b[3]]], {padding: 60, maxZoom: 9}); }
   }
 
@@ -1838,14 +1842,20 @@ h4{margin:0 0 2px;font-size:8px;letter-spacing:.08em;text-transform:uppercase;co
     const hit = k => lbArr.filter(x => x.kategori === k).length + (k === "perguruan-tinggi" ? nk : 0);   /* total per kategori, bukan hanya yang berkoordinat */
     const chip = (k, l, n, w) => `<button type="button" data-kk="${k}" aria-pressed="false"><i class="ak-kdot" data-st="background:${w}"></i><span>${esc(l)}</span><small>${angka(n)}</small></button>`;
     const box = document.createElement("div"); box.className = "ak-kchips"; box.id = "akPtKChip"; box.setAttribute("role", "group"); box.setAttribute("aria-label", "Lapisan peta");
-    box.innerHTML = chip("", "Semua", lbArr.filter(x => x.kategori !== "penerbit").length + nk, "var(--brand)") + [...CHIP_KAT, ...Object.keys(hitungLb(x => x.kategori)).filter(k => k !== "penerbit" && !CHIP_KAT.some(c => c[0] === k)).map(k => [k, (KAT[k] || [k])[0]])].filter(([k]) => hit(k)).map(([k, l]) => chip(k, l, hit(k), (KAT[k] || [])[2] || "var(--ink2)")).join("") + chip("proyek", "Proyek", 0, "var(--meti-oranye)");
-    (el.querySelector(".ak-ptaisi") || el).append(box);
-    const segar = () => box.querySelectorAll("button").forEach(b => { const k = b.dataset.kk; b.setAttribute("aria-pressed", String(k === "" ? !PT.kat.size && !PT.lapis.proyek : k === "proyek" ? PT.lapis.proyek : PT.kat.has(k))); });
+    const kats = [...CHIP_KAT, ...Object.keys(hitungLb(x => x.kategori)).filter(k => k !== "penerbit" && !CHIP_KAT.some(c => c[0] === k)).map(k => [k, (KAT[k] || [k])[0]])].filter(([k]) => hit(k)).sort((a, c) => hit(c[0]) - hit(a[0])), tops = kats.slice(0, 5), sisa = kats.slice(5);
+    box.innerHTML = chip("", "Semua", lbArr.filter(x => x.kategori !== "penerbit").length + nk, "var(--brand)") + tops.map(([k, l]) => chip(k, ({"swasta": "Swasta", "kementerian-lembaga": "K/L", "ormawa": "Ormawa", "perguruan-tinggi": "Kampus"})[k] || l, hit(k), (KAT[k] || [])[2] || "var(--ink2)")).join("")
+      + (sisa.length ? `<button type="button" data-kl="1" aria-expanded="false" aria-haspopup="true"><span>Lainnya</span><small>${angka(sisa.length)}</small><svg class="ak-panah" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button>` : "") + chip("proyek", "Proyek", 0, "var(--meti-oranye)");
+    const menu = document.createElement("div"); menu.className = "ak-kmenu"; menu.id = "akPtKMenu"; menu.hidden = true; menu.setAttribute("role", "group"); menu.setAttribute("aria-label", "Kategori lain");
+    menu.innerHTML = sisa.map(([k, l]) => chip(k, l, hit(k), (KAT[k] || [])[2] || "var(--ink2)")).join("");
+    const isi = el.querySelector(".ak-ptaisi") || el; isi.append(box, menu);
+    const segar = () => { const pk = b => { const k = b.dataset.kk; b.setAttribute("aria-pressed", String(k === "" ? !PT.kat.size && !PT.lapis.proyek : k === "proyek" ? PT.lapis.proyek : PT.kat.has(k))); }; box.querySelectorAll("button[data-kk]").forEach(pk); menu.querySelectorAll("button").forEach(pk); const lb = box.querySelector("[data-kl]"); if (lb) lb.setAttribute("aria-pressed", String(sisa.some(([k]) => PT.kat.has(k)))); };
     ambilData("proyek").then(d => { PT.proyekArr = dlist(d).filter(x => x?.lokasi && Number.isFinite(x.lokasi.lat)); const s = box.querySelector('[data-kk="proyek"] small'); if (s) s.textContent = angka(PT.proyekArr.length); if (PT.lapis.proyek) nanti(segarPeta); });
-    box.addEventListener("click", e => { const b = e.target.closest("button[data-kk]"); if (!b) return; const k = b.dataset.kk;
-      if (k === "") { PT.kat.clear(); PT.lapis.proyek = false; } else if (k === "proyek") PT.lapis.proyek = !PT.lapis.proyek;
+    const tutup = () => { menu.hidden = true; box.querySelector("[data-kl]")?.setAttribute("aria-expanded", "false"); };
+    const klik = e => { const l = e.target.closest("button[data-kl]"); if (l) { e.stopPropagation(); menu.hidden = !menu.hidden; l.setAttribute("aria-expanded", String(!menu.hidden)); return; } const b = e.target.closest("button[data-kk]"); if (!b) return; const k = b.dataset.kk;
+      if (k === "") { PT.kat.clear(); PT.lapis.proyek = false; tutup(); } else if (k === "proyek") PT.lapis.proyek = !PT.lapis.proyek;
       else for (const z of k === "perguruan-tinggi" ? [k, "kampus"] : [k]) PT.kat.has(k) ? PT.kat.delete(z) : PT.kat.add(z);
-      segar(); PT.fitKat = !!PT.kat.size; nanti(segarPeta); });
+      segar(); PT.fitKat = !!PT.kat.size; nanti(segarPeta); };
+    box.addEventListener("click", klik); menu.addEventListener("click", klik); document.addEventListener("click", e => { if (!menu.hidden && !e.target.closest("#akPtKMenu")) tutup(); });
     segar();
   }
   async function bangunPeta(el) {
@@ -1862,10 +1872,10 @@ h4{margin:0 0 2px;font-size:8px;letter-spacing:.08em;text-transform:uppercase;co
     { const sr = $("akSideQ")?.closest(".ak-sr-w"); if (sr) { sr.id = "akPtCari"; el.querySelector(".ak-ptaisi").append(sr); } }   /* kotak cari di samping pemilih kategori, tetap ada walau panel dilipat */
     try { await muatMapLib(); } catch (e) { $("akMap").innerHTML = '<p class="ak-khampa">Peta tidak bisa dimuat. Periksa koneksi lalu muat ulang.</p>'; return; }
     const gelap = document.documentElement.dataset.theme ? document.documentElement.dataset.theme === "dark" : matchMedia("(prefers-color-scheme: dark)").matches;
-    const m = PT.map = new maplibregl.Map({container: "akMap", style: "https://tiles.openfreemap.org/styles/" + (gelap ? "dark" : "positron"), bounds: [[94, -11.5], [141.5, 6.5]], fitBoundsOptions: {padding: 10}, minZoom: 3, maxZoom: 16, dragRotate: false, pitchWithRotate: false,
+    const m = PT.map = new maplibregl.Map({container: "akMap", style: "https://tiles.openfreemap.org/styles/" + (gelap ? "dark" : "positron"), bounds: [[94, -11.5], [141.5, 6.5]], fitBoundsOptions: {padding: padAwal()}, minZoom: 3, maxZoom: 16, dragRotate: false, pitchWithRotate: false,
       attributionControl: {compact: true, customAttribution: "Batas wilayah BIG"}});
     m.addControl(new maplibregl.NavigationControl({showCompass: false}), "bottom-right"); m.addControl(new maplibregl.GeolocateControl({positionOptions: {enableHighAccuracy: false}}), "bottom-right");
-    PT.chot = 0; m.once("load", () => { m.resize(); sembunyikanJalan(m); redamLuar(m); if (!PT.fitStrat) m.fitBounds([[94, -11.5], [141.5, 6.5]], {padding: 10, animate: false}); }); taruhSeg("peta"); new ResizeObserver(() => m.resize()).observe($("akMap"));
+    PT.chot = 0; m.once("load", () => { m.resize(); sembunyikanJalan(m); redamLuar(m); if (!PT.fitStrat) m.fitBounds([[94, -11.5], [141.5, 6.5]], {padding: padAwal(), animate: false}); }); taruhSeg("peta"); new ResizeObserver(() => m.resize()).observe($("akMap"));
     pasangPilih("akPtSens", {semua: "Semua jenis sensor", nilai: () => PT.sens, opsi: () => Object.entries(sub1(PT.sensorArr, s => s.jenis)).map(([k, a]) => [k, kapital(k), a.length]).sort((a, b) => b[2] - a[2]), pilih: v => { PT.sens = v; nanti(segarPeta); }});
     $("akPtLayer").addEventListener("click", e => { const b = e.target.closest("[data-ly]"); if (!b) return; PT.lapis[b.dataset.ly] = !PT.lapis[b.dataset.ly]; if (b.dataset.ly === "strat") { try { const u = new URL(location.href); PT.lapis.strat ? u.searchParams.delete("strat") : u.searchParams.set("strat", "0"); history.replaceState(null, "", u); } catch (er) {} } b.setAttribute("aria-pressed", String(PT.lapis[b.dataset.ly]));
       $("akPtSensW").hidden = !PT.lapis.sensor; if (b.dataset.ly === "pusat" && PT.lapis.pusat && !PT.pusatArr.length) ambilData("pusat_studi").then(d => { PT.pusatArr = dlist(d).filter(x => x && x.nama && x.nama_terverifikasi === true); nanti(segarPeta); }); nanti(segarPeta); });
@@ -2092,7 +2102,7 @@ h4{margin:0 0 2px;font-size:8px;letter-spacing:.08em;text-transform:uppercase;co
     gambarIn(false);
     return;   /* peta layar penuh tab Inovasi dihapus atas permintaan pemilik 30 Okt 2026; lokasi ada di lembar inovasi. Pulihkan: hapus baris ini dan kembalikan #akInMap */
     try { await muatMapLib(); } catch (e) { $("akInMap").innerHTML = '<p class="ak-khampa">Peta tidak bisa dimuat.</p>'; return; }
-    const m = new maplibregl.Map({container: "akInMap", style: "https://tiles.openfreemap.org/styles/positron", bounds: [[94, -11.5], [141.5, 6.5]], fitBoundsOptions: {padding: 10}, minZoom: 3, dragRotate: false, pitchWithRotate: false, attributionControl: {compact: true}});
+    const m = new maplibregl.Map({container: "akInMap", style: "https://tiles.openfreemap.org/styles/positron", bounds: [[94, -11.5], [141.5, 6.5]], fitBoundsOptions: {padding: padAwal()}, minZoom: 3, dragRotate: false, pitchWithRotate: false, attributionControl: {compact: true}});
     m.addControl(new maplibregl.NavigationControl({showCompass: false}), "bottom-right"); inMap = {m, siap: false}; m.once("load", () => m.resize()); new ResizeObserver(() => m.resize()).observe($("akInMap"));
     m.on("load", () => { m.addSource("inv", {type: "geojson", data: {type: "FeatureCollection", features: []}});
       m.addLayer({id: "inv-dot", type: "circle", source: "inv", paint: {"circle-color": ["get", "warna"], "circle-radius": 7, "circle-stroke-color": rv("var(--on-brand)"), "circle-stroke-width": 2}});

@@ -146,6 +146,9 @@ function gambarIsi() {
 /* ---------- pelacak kebijakan: baru 90 hari, mengubah/mencabut, dalam pembahasan (tenggat: belum ada datanya, bagian tidak dibuat) ---------- */
 const HARI = 90, MAKS_UBAH = 6;
 const tglReg = (r) => r.tanggal_diundangkan || r.tanggal_ditetapkan || "";
+/* sel aturan lengkap: logo penerbit, kode, judul satu baris, tanggal, unduh */
+const selReg = (id) => { const x = D.byId.get(id); if (!x) return `<div class="jm-pk-sel"><span class="jm-pk-nm">${esc(id)}</span></div>`;
+  return `<div class="jm-pk-sel">${x.instansi_penerbit ? penerbitHtml(x.instansi_penerbit, 32).replace(/<span class="jm-pen-pendek">.*?<\/span>/, "") : ""}<div class="jm-pk-sel-t"><button type="button" class="jm-pk-nm" data-id="${esc(id)}">${esc(namaRegulasi(x))}</button><span class="jm-pk-jd" title="${esc(x.judul || "")}">${esc(x.judul || "")}</span><small>${ikon("kalender", 14)}${esc(tanggal(tglReg(x)) || String(x.tahun || ""))}</small></div>${unduhRegHtml(x)}</div>`; };
 const ikId = (id) => { const x = D.byId.get(id); return x ? `<button type="button" class="jm-pk-nm" data-id="${esc(id)}">${esc(namaRegulasi(x))}</button>` : `<span class="jm-pk-nm">${esc(id)}</span>`; };
 function pkBagian(ik, judul, sub, isi) {
   return `<section class="jm-pk-b"><h3>${ikon(ik, 18)}<span>${esc(judul)}</span></h3><p class="jm-pk-sub">${esc(sub)}</p>${isi}</section>`;
@@ -166,7 +169,7 @@ function pkUbah() {
   const pasang = D.baris.filter((r) => (r.ikatan || []).some((x) => x.jenis === "mengubah" || x.jenis === "mencabut")).sort((a, b) => (tglReg(b) || String(b.tahun)).localeCompare(tglReg(a) || String(a.tahun))).slice(0, MAKS_UBAH);
   if (!pasang.length) return "";
   const baris = pasang.flatMap((r) => (r.ikatan || []).filter((x) => x.jenis === "mengubah" || x.jenis === "mencabut").slice(0, 2).map((x) =>
-    `<li class="jm-pk-ub">${ikId(r.id)}<span class="jm-tanda jm-tanda-${x.jenis}">${esc(t("reg.pk.kata." + x.jenis))}</span>${ikId(x.ke)}<span class="jm-pk-unduh">${unduhRegHtml(r)}</span></li>`));
+    `<li class="jm-pk-ub2">${selReg(r.id)}<span class="jm-pk-aksi jm-tanda jm-tanda-${x.jenis}">${ikon("panah-kanan", 16)}${esc(t("reg.pk.kata." + x.jenis))}</span>${selReg(x.ke)}</li>`));
   return pkBagian("ubah", t("reg.pk.ubah"), t("reg.pk.ubah.sub"), `<ul class="jm-pk-ubah">${baris.join("")}</ul>`);
 }
 const LANGKAH = ["usul", "prolegnas", "pembahasan", "pengesahan", "diundangkan"];

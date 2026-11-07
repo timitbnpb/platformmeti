@@ -1,10 +1,10 @@
 /* Dasar: huruf, reset, tipografi, tombol, isian, kartu, keadaan komponen. Hanya token. */
 @font-face{font-family:"Inter";font-weight:400;font-style:normal;font-display:swap;src:url("/fonts/inter-400.woff2") format("woff2")}
-@font-face{font-family:"Inter";font-weight:500;font-style:normal;font-display:swap;src:url("/fonts/inter-500.woff2") format("woff2")}
+@font-face{font-family:"Inter";font-weight:400;font-style:normal;font-display:swap;src:url("/fonts/inter-500.woff2") format("woff2")}
 @font-face{font-family:"Inter";font-weight:600;font-style:normal;font-display:swap;src:url("/fonts/inter-600.woff2") format("woff2")}
 @font-face{font-family:"Inter";font-weight:700;font-style:normal;font-display:swap;src:url("/fonts/inter-700.woff2") format("woff2")}
 @font-face{font-family:"Poppins";font-weight:400;font-style:normal;font-display:swap;src:local("Poppins Regular"),local("Poppins-Regular"),url("/fonts/poppins-400.woff2") format("woff2")}
-@font-face{font-family:"Poppins";font-weight:500;font-style:normal;font-display:swap;src:local("Poppins Medium"),local("Poppins-Medium"),url("/fonts/poppins-500.woff2") format("woff2")}
+@font-face{font-family:"Poppins";font-weight:400;font-style:normal;font-display:swap;src:local("Poppins Medium"),local("Poppins-Medium"),url("/fonts/poppins-500.woff2") format("woff2")}
 @font-face{font-family:"Poppins";font-weight:600;font-style:normal;font-display:swap;src:local("Poppins SemiBold"),local("Poppins-SemiBold"),url("/fonts/poppins-600.woff2") format("woff2")}
 @font-face{font-family:"Poppins";font-weight:700;font-style:normal;font-display:swap;src:local("Poppins Bold"),local("Poppins-Bold"),url("/fonts/poppins-700.woff2") format("woff2")}
 
@@ -12,7 +12,7 @@
 [hidden]{display:none!important}
 html{-webkit-text-size-adjust:100%}
 body{margin:0;padding-top:var(--top);min-height:100vh;display:flex;flex-direction:column;background:var(--paper);color:var(--ink);font:400 var(--t-body)/1.55 var(--font);font-variant-numeric:tabular-nums;overflow-x:hidden}
-h1,h2,h3{margin:0;font-family:var(--display);color:var(--head);line-height:1.25}
+h1,h2,h3{margin:0;font-family:var(--display);color:var(--head);line-height:var(--lh-judul)}
 h1{font-size:var(--t-h1);font-weight:700}
 h2{font-size:var(--t-h2);font-weight:600}
 p{margin:0}
@@ -23,21 +23,21 @@ a{color:var(--accent)}
 em.hl{font-style:normal;color:var(--accent)}
 
 /* tombol */
-.jm-tbl{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:var(--target);padding:0 18px;border:1px solid var(--line-ctl);border-radius:var(--r-pil);background:var(--card);color:var(--ink);font:600 14px/1 var(--font);text-decoration:none;cursor:pointer}
+.jm-tbl{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:var(--target);padding:0 18px;border:1px solid var(--line-ctl);border-radius:var(--r-pil);background:var(--card);color:var(--ink);font:600 var(--t-body)/1 var(--font);text-decoration:none;cursor:pointer}
 .jm-tbl:hover{border-color:var(--accent);color:var(--accent)}
 .jm-tbl-utama{background:var(--accent);border-color:var(--accent);color:var(--on-accent)}
 .jm-tbl-utama:hover{color:var(--on-accent);filter:brightness(1.08)}
 .jm-tbl-bahaya{border-color:var(--bad);color:var(--bad)}
 .jm-tbl-bahaya:hover{background:var(--bad-bg);color:var(--bad);border-color:var(--bad)}
-.jm-tbl-kecil{padding:0 12px;font-size:13px}
+.jm-tbl-kecil{padding:0 12px;font-size:var(--t-tombol)}
 .jm-tbl[disabled],.jm-tbl[aria-busy="true"]{opacity:.6;cursor:not-allowed}
 
 /* isian */
 .jm-medan{display:grid;gap:6px}
-.jm-medan label,.jm-label{font:600 13px/1.3 var(--font);color:var(--ink)}
-.jm-isian,.jm-pilih{width:100%;min-height:var(--target);padding:0 12px;border:1px solid var(--line-ctl);border-radius:var(--r-sm);background:var(--card);color:var(--ink);font:400 16px/1.3 var(--font)}
+.jm-medan label,.jm-label{font:600 var(--t-tombol)/var(--lh-rapat) var(--font);color:var(--ink)}
+.jm-isian,.jm-pilih{width:100%;min-height:var(--target);padding:0 12px;border:1px solid var(--line-ctl);border-radius:var(--r-sm);background:var(--card);color:var(--ink);font:400 var(--t-h3)/var(--lh-rapat) var(--font)}
 .jm-bantu{font-size:var(--t-kecil);color:var(--ink2)}
-.jm-cek{display:flex;align-items:center;gap:10px;min-height:var(--target);font-size:14px;cursor:pointer}
+.jm-cek{display:flex;align-items:center;gap:10px;min-height:var(--target);font-size:var(--t-body);cursor:pointer}
 .jm-cek input{width:20px;height:20px;accent-color:var(--accent)}
 
 /* tata letak */
@@ -51,7 +51,7 @@ em.hl{font-style:normal;color:var(--accent)}
 .jm-kaki{flex-wrap:wrap;justify-content:space-between;align-items:flex-start;row-gap:16px}
 .jm-kaki img{width:34px;height:32px}
 .jm-kaki-merek{display:flex;align-items:center;gap:12px}
-.jm-kaki-alamat{display:flex;flex-direction:column;gap:4px;font-style:normal;max-width:60ch;line-height:1.5}
+.jm-kaki-alamat{display:flex;flex-direction:column;gap:4px;font-style:normal;max-width:60ch;line-height:var(--lh-isi)}
 .jm-kaki-alamat a{color:inherit;text-decoration:underline;text-underline-offset:3px}
 .jm-kaki-alamat a:focus-visible{outline:2px solid currentColor;outline-offset:2px}
 
@@ -64,7 +64,7 @@ em.hl{font-style:normal;color:var(--accent)}
 .jm-galat{color:var(--bad)}
 .jm-galat .jm-ik{width:32px;height:32px}
 .jm-galat p{color:var(--ink)}
-.jm-pesan{display:flex;gap:8px;align-items:flex-start;padding:10px 12px;border-radius:var(--r-sm);font-size:14px;line-height:1.45}
+.jm-pesan{display:flex;gap:8px;align-items:flex-start;padding:10px 12px;border-radius:var(--r-sm);font-size:var(--t-body);line-height:var(--lh-isi)}
 .jm-pesan .jm-ik{flex:none;margin-top:1px}
 .jm-pesan-galat{background:var(--bad-bg);color:var(--bad)}
 .jm-pesan-galat span{color:var(--ink)}
@@ -73,33 +73,33 @@ em.hl{font-style:normal;color:var(--accent)}
 @media (prefers-reduced-motion:reduce){.jm-hantu i{animation:none}*{scroll-behavior:auto!important}}
 
 /* ===== kaki METI: hijau sangat gelap, garis hijau-lime di atas, kolom rata, kontak berupa daftar ===== */
-.jm-kaki{display:block;position:relative;padding:0;background:var(--kaki-bg);color:var(--on-brand);font-size:15px;line-height:1.5}
+.jm-kaki{display:block;position:relative;padding:0;background:var(--kaki-bg);color:var(--on-brand);font-size:var(--t-body);line-height:var(--lh-isi)}
 .jm-kaki::before{content:"";position:absolute;inset:0 0 auto 0;height:2px;background:linear-gradient(90deg,var(--brand2),var(--meti-lime))}
 .jm-kaki-isi{max-width:var(--maks);margin:0 auto;padding:48px var(--gut) 36px;display:grid;gap:36px 32px;grid-template-columns:minmax(0,1.7fr) repeat(3,minmax(0,.8fr)) minmax(0,1.5fr);align-items:start}
 .jm-kaki-merek{display:flex;align-items:center;gap:14px}
-.jm-kaki-merek strong{display:block;font:700 20px/1.1 var(--display)}
-.jm-kaki-merek span:not(.jm-kaki-logo){display:block;font-size:14px;margin-top:4px;color:color-mix(in srgb,var(--on-brand) 70%,transparent)}
+.jm-kaki-merek strong{display:block;font:700 var(--t-h2)/var(--lh-judul) var(--display)}
+.jm-kaki-merek span:not(.jm-kaki-logo){display:block;font-size:var(--t-body);margin-top:4px;color:color-mix(in srgb,var(--on-brand) 70%,transparent)}
 .jm-kaki-logo{display:grid;place-items:center;width:48px;height:48px;border-radius:12px;background:var(--on-brand);flex:none}
 .jm-kaki .jm-kaki-logo img{width:34px;height:32px}
 .jm-kaki-stat{list-style:none;margin:22px 0 0;padding:0;display:grid;grid-auto-flow:column;grid-auto-columns:minmax(0,1fr);gap:8px;max-width:360px}
 .jm-kaki-stat li{padding:10px 12px;border-radius:10px;background:color-mix(in srgb,var(--on-brand) 6%,transparent);border:1px solid color-mix(in srgb,var(--on-brand) 12%,transparent);display:grid;gap:2px;cursor:help;min-width:0}
-.jm-kaki-stat b{font:700 22px/1 var(--display);color:var(--meti-lime)}
-.jm-kaki-stat span{font-size:12px;color:color-mix(in srgb,var(--on-brand) 70%,transparent);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.jm-kaki-stat b{font:700 var(--t-h2)/1 var(--display);color:var(--meti-lime)}
+.jm-kaki-stat span{font-size:var(--t-kecil);color:color-mix(in srgb,var(--on-brand) 70%,transparent);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .jm-kaki-sos{display:flex;gap:10px;margin-top:18px}
 .jm-kaki-sos a{display:grid;place-items:center;width:36px;height:36px;border-radius:50%;color:var(--on-brand);border:1px solid color-mix(in srgb,var(--on-brand) 22%,transparent);transition:background .15s,color .15s}
 .jm-kaki-sos a:hover{background:var(--meti-lime);color:var(--kaki-bg);border-color:var(--meti-lime)}
-.jm-kaki-kol h2{margin:0 0 14px;font:700 12px/1 var(--font);letter-spacing:.12em;text-transform:uppercase;color:color-mix(in srgb,var(--meti-lime) 80%,var(--kaki-bg));white-space:nowrap}
+.jm-kaki-kol h2{margin:0 0 14px;font:700 var(--t-kecil)/1 var(--font);letter-spacing:.08em;text-transform:uppercase;color:color-mix(in srgb,var(--meti-lime) 80%,var(--kaki-bg));white-space:nowrap}
 .jm-kaki-kol ul{list-style:none;margin:0;padding:0;display:grid;gap:10px}
 .jm-kaki-kol>ul>li>a:not(.jm-kaki-ln){display:inline-flex;align-items:center;gap:8px;color:color-mix(in srgb,var(--on-brand) 75%,transparent);text-decoration:none;min-height:24px}
 .jm-kaki-kol>ul>li>a:not(.jm-kaki-ln):hover{color:var(--on-brand);text-decoration:underline;text-underline-offset:4px;text-decoration-thickness:1px}
 .jm-kaki-kunci{display:inline-flex;opacity:.6}
 .jm-kaki-hub ul{gap:14px}
-.jm-kaki-hub li{display:grid;grid-template-columns:16px minmax(0,1fr);gap:10px;align-items:start;font-size:14px}
+.jm-kaki-hub li{display:grid;grid-template-columns:16px minmax(0,1fr);gap:10px;align-items:start;font-size:var(--t-body)}
 .jm-kaki-hub .jm-kaki-ik{color:var(--meti-lime);margin-top:2px;display:inline-flex}
-.jm-kaki-hub small{display:block;font-size:12px;color:color-mix(in srgb,var(--on-brand) 60%,transparent);margin-bottom:1px}
+.jm-kaki-hub small{display:block;font-size:var(--t-kecil);color:color-mix(in srgb,var(--on-brand) 60%,transparent);margin-bottom:1px}
 .jm-kaki-hub a{color:color-mix(in srgb,var(--on-brand) 85%,transparent);text-decoration:none;overflow-wrap:anywhere}
 .jm-kaki-hub a:hover{color:var(--on-brand);text-decoration:underline;text-underline-offset:3px;text-decoration-thickness:1px}
-.jm-kaki-bawah{max-width:var(--maks);margin:0 auto;padding:16px var(--gut) 22px;display:flex;flex-wrap:wrap;gap:10px 24px;align-items:center;border-top:1px solid color-mix(in srgb,var(--on-brand) 12%,transparent);font-size:13px;color:color-mix(in srgb,var(--on-brand) 60%,transparent)}
+.jm-kaki-bawah{max-width:var(--maks);margin:0 auto;padding:16px var(--gut) 22px;display:flex;flex-wrap:wrap;gap:10px 24px;align-items:center;border-top:1px solid color-mix(in srgb,var(--on-brand) 12%,transparent);font-size:var(--t-tombol);color:color-mix(in srgb,var(--on-brand) 60%,transparent)}
 .jm-kaki-bawah p{margin:0}
 .jm-kaki-bawah a{margin-left:auto;color:color-mix(in srgb,var(--on-brand) 60%,transparent);text-decoration:none}
 .jm-kaki-bawah a:hover{color:var(--on-brand);text-decoration:underline;text-underline-offset:3px}
@@ -120,11 +120,11 @@ header.top{padding-inline:clamp(12px,2vw,28px)}
 /* kaki: tautan empat kolom, kontak satu baris mendatar di bawah garis tipis */
 .jm-kaki-isi{grid-template-columns:minmax(0,1.5fr) repeat(3,minmax(0,1fr));padding-bottom:28px}
 .jm-kaki-stat{max-width:none}
-.jm-kaki-stat b{font-size:20px}
+.jm-kaki-stat b{font-size:var(--t-h2)}
 .jm-kaki-kontak{max-width:var(--maks);margin-inline:auto;padding:24px clamp(16px,4vw,32px) 28px;border-top:1px solid color-mix(in srgb,var(--on-brand) 12%,transparent)}
 .jm-kaki-kontak h2{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);margin:0}
 .jm-kaki-kontak .jm-kaki-hub ul{grid-template-columns:repeat(4,minmax(0,1fr));gap:24px}
-.jm-kaki-kontak .jm-kaki-hub li{font-size:13.5px;line-height:1.45}
+.jm-kaki-kontak .jm-kaki-hub li{font-size:var(--t-tombol);line-height:var(--lh-isi)}
 .jm-kaki-kontak .jm-kaki-hub li a{display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
 @media (max-width:1100px){.jm-kaki-isi{grid-template-columns:repeat(3,minmax(0,1fr))}.jm-kaki-kontak .jm-kaki-hub ul{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media (max-width:600px){.jm-kaki-isi{grid-template-columns:repeat(2,minmax(0,1fr))}.jm-kaki-kontak .jm-kaki-hub ul{grid-template-columns:repeat(2,minmax(0,1fr));gap:18px 14px}.jm-kaki-kontak .jm-kaki-hub li{grid-template-columns:1fr}.jm-kaki-kontak .jm-kaki-hub .jm-kaki-ik{display:none}}

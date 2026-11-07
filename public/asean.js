@@ -14,6 +14,7 @@ const M = {
 const sumber = (m) => { const s = d.sumber[M[m].sumber]; return sumberHtml({ sumber: s.sumber, halaman: s.keterangan, url: s.url, tanggal: s.tanggal }); };
 const ISO2 = { IDN: "id", VNM: "vn", PHL: "ph", THA: "th", MYS: "my", SGP: "sg", LAO: "la", KHM: "kh", MMR: "mm", BRN: "bn", TLS: "tl" };
 const bendera = (n, u = 20) => `<img class="jm-bd${u > 20 ? " jm-bd-b" : ""}" src="/img/bendera/${ISO2[n.iso3]}.svg" width="${u}" height="${Math.round(u * 0.75)}" alt="" loading="lazy">`;
+const ISO_URUT = Object.keys(ISO2);
 const namaN = (n) => t("as.n." + n.iso3);
 const nilaiN = (n, m) => n[M[m].nilai]?.nilai ?? null;
 const urutan = (m) => d.baris.filter((n) => nilaiN(n, m) !== null).sort((a, b) => nilaiN(b, m) - nilaiN(a, m));
@@ -43,9 +44,9 @@ function band() {
   $("temuan-band").innerHTML = temuanHtml(t("as.t.band", { metrik: t("as.m." + m), r: peringkat(m), n: ada.length, v: num(nilaiN(i, m), M[m].d) + " " + M[m].satuan }), true);
   const baris = [...ada, ...tanpa].map((n) => {
     const v = nilaiN(n, m);
-    return { id: n.iso3, pilih: pilih === n.iso3, label: namaN(n), labelHtml: `${bendera(n, n.iso3 === "IDN" ? 32 : 20)}<span>${esc(namaN(n))}</span>`, sorot: n.iso3 === "IDN", bagian: [{ nilai: v ?? 0, kelas: n.iso3 === "IDN" ? "jm-an-b1" : "jm-an-b4" }], teks: v === null ? t("an.tanpa_data") : `${num(v, M[m].d)} ${M[m].satuan} (${n[M[m].nilai].tahun})` };
+    return { id: n.iso3, pilih: pilih === n.iso3, label: namaN(n), labelHtml: `${bendera(n, n.iso3 === "IDN" ? 32 : 20)}<span>${esc(namaN(n))}</span>`, sorot: n.iso3 === "IDN", bagian: [{ nilai: v ?? 0, kelas: n.iso3 === "IDN" ? "jm-an-id" : "jm-an-c" + (1 + ISO_URUT.indexOf(n.iso3) % 4) }], teks: v === null ? t("an.tanpa_data") : `${num(v, M[m].d)} ${M[m].satuan} (${n[M[m].nilai].tahun})` };
   });
-  $("grafik-band").innerHTML = batangHtml(baris, { label: t("as.m." + m), aksi: true }) + `<p class="jm-bantu">${esc(t("as.klik"))}</p>` + sumber(m);
+  $("grafik-band").innerHTML = batangHtml(baris, { label: t("as.m." + m), aksi: true, satuan: M[m].satuan === "%" ? "%" : "MW" }) + `<p class="jm-bantu">${esc(t("as.klik"))}</p>` + sumber(m);
   pasangBar($("grafik-band"));
 }
 

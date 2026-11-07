@@ -29,7 +29,7 @@ const BARIS_IDX = [
   ['unit_tersedia_tco2e', /Available Carbon Unit\s+ton CO2e\s+([\d,]+)/],
   ['unit_pensiun_tco2e', /Retired Carbon Unit\s+ton CO2e\s+([\d,]+)/],
   ['hari_bursa', /No\. of Trading Days\s+([\d,]+)/],
-  ['volume_tco2e', /Total Volume\s+ton CO2e\s+([\d,]+)/],
+  ['volume_tco2e', /Total Volume\s+ton CO2e\s+([\d,.]+)/],
   ['nilai_idr', /Total Value\s+IDR\s+([\d,]+)/],
   ['frekuensi', /Total Frequency\s+times\s+([\d,]+)/],
   ['volume_ytd_tco2e', /Total Volume \(YTD\)\s+ton CO2e\s+([\d,]+)/],
@@ -39,7 +39,7 @@ const BARIS_IDX = [
 ];
 export function idxRingkasan(teks) {
   const out = {};
-  for (const [k, re] of BARIS_IDX) { const m = teks.match(re); out[k] = m ? Number(m[1].replace(/,/g, '')) : null; }
+  for (const [k, re] of BARIS_IDX) { const m = teks.match(re); out[k] = m ? Number(m[1].replace(/[,.]/g, '')) : null; }
   return out.volume_tco2e === null ? null : out;
 }
 export function tautanBulanan(html) { // [{bulan, url}] dari tabel Data Bulanan IDXCarbon

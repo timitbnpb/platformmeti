@@ -1,8 +1,8 @@
 /* Khusus /admin. Hanya token. */
-.jm-adm-ringkas{color:var(--ink2);font-size:14px}
+.jm-adm-ringkas{color:var(--ink2);font-size:var(--t-body)}
 .jm-adm-form{display:grid;gap:12px;margin-bottom:14px;padding:14px;border:1px dashed var(--line-ctl);border-radius:var(--r-sm)}
 @media (min-width:768px){.jm-adm-form{grid-template-columns:1fr 1fr}.jm-adm-form .jm-lebar{grid-column:1/-1}}
-.jm-adm-jejak pre{margin:6px 0 0;padding:8px;border-radius:var(--r-sm);background:var(--surface);font:12px/1.4 ui-monospace,Menlo,monospace;white-space:pre-wrap;word-break:break-all;max-width:100%}
+.jm-adm-jejak pre{margin:6px 0 0;padding:8px;border-radius:var(--r-sm);background:var(--surface);font:400 var(--t-kecil)/var(--lh-rapat) var(--font);white-space:pre-wrap;word-break:break-all;max-width:100%}
 .jm-adm-jejak summary{cursor:pointer;color:var(--accent);min-height:24px}
 .jm-adm-status{min-height:24px}
 @media (min-width:768px){.jm-bar.jm-adm-jejak{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}}
@@ -11,19 +11,19 @@
 .jm-adm-s{display:flex;flex-direction:column;justify-content:center;gap:2px;min-width:0;padding:8px 12px;border:1px solid var(--line-cell);border-radius:var(--r-sm);background:var(--surface);color:var(--ink);text-align:left;font:inherit;cursor:pointer}
 button.jm-adm-s:hover,.jm-adm-iur button:hover{border-color:var(--accent)}
 .jm-adm-s[aria-pressed=true],.jm-adm-iur button[aria-pressed=true]{border-color:var(--accent);box-shadow:inset 0 0 0 1px var(--accent)}
-.jm-adm-s strong{font:700 20px/1.2 var(--display);color:var(--ink)}
+.jm-adm-s strong{font:700 var(--t-h2)/var(--lh-judul) var(--display);color:var(--ink)}
 .jm-adm-s small{color:var(--ink2);font-size:var(--t-kecil)}
 .jm-adm-jenis,.jm-adm-iur{cursor:default;grid-column:1/-1}
 .jm-adm-bar{display:flex;gap:2px;height:14px;border-radius:var(--r-pil);overflow:hidden}
 .jm-adm-seg{flex:0 1 0;min-width:6px;padding:0;border:0;cursor:pointer}
 .jm-adm-seg[aria-pressed=true]{outline:2px solid var(--ink);outline-offset:-2px}
 .jm-adm-w0{background:var(--data1)}.jm-adm-w1{background:var(--data2)}.jm-adm-w2{background:var(--data3)}.jm-adm-w3{background:var(--data4)}.jm-adm-w4{background:var(--data5)}
-.jm-adm-jenis>small{display:flex;flex-wrap:wrap;gap:2px 10px;font-size:11px}
+.jm-adm-jenis>small{display:flex;flex-wrap:wrap;gap:2px 10px;font-size:var(--t-label)}
 .jm-adm-jenis small i{display:inline-block;width:8px;height:8px;margin-right:4px;border-radius:2px}
 .jm-adm-iur{flex-direction:row;gap:6px;padding:6px}
 .jm-adm-iur button{flex:1;display:grid;grid-template-rows:20px auto auto;justify-items:center;align-items:end;gap:1px;padding:4px 6px;border:1px solid transparent;border-radius:var(--r-sm);background:none;color:var(--ink);font:inherit;cursor:pointer}
 .jm-adm-iur b{display:block;width:14px;min-height:2px;background:var(--accent);border-radius:2px 2px 0 0}
-.jm-adm-iur strong{font-size:13px}
+.jm-adm-iur strong{font-size:var(--t-tombol)}
 @media (min-width:1100px){.jm-adm-strip{grid-template-columns:auto auto minmax(0,1fr) minmax(0,1fr)}.jm-adm-jenis,.jm-adm-iur{grid-column:auto}}
 .jm-adm-saring{margin-bottom:12px;grid-template-columns:repeat(2,minmax(0,1fr))}
 .jm-adm-saring .jm-hitung{justify-self:end}
@@ -34,14 +34,14 @@ button.jm-adm-s:hover,.jm-adm-iur button:hover{border-color:var(--accent)}
 .jm-adm-tabel tbody tr{cursor:pointer}.jm-adm-tabel tbody tr:hover{background:var(--surface)}
 .jm-adm-id{display:flex;flex-direction:column;justify-content:center;gap:1px;min-width:0}
 .jm-adm-nama{overflow-wrap:anywhere}
-.jm-adm-id small,.jm-adm-lama,.jm-adm-kt small{color:var(--ink2);font-size:12px;line-height:1.3}
+.jm-adm-id small,.jm-adm-lama,.jm-adm-kt small{color:var(--ink2);font-size:var(--t-kecil);line-height:var(--lh-rapat)}
 .jm-adm-lama{font-style:italic}
 .jm-adm-cek{text-align:center;color:var(--ok);width:1%}
 .jm-adm-cek span[aria-hidden]{color:var(--ink2)}
-.jm-adm-kt{display:flex;flex-direction:column;gap:1px;font-size:13px;line-height:1.35;overflow-wrap:anywhere}
-.jm-adm-kt a{font-weight:500}
-.jm-adm-hot{min-height:18px;padding:0 6px;font-size:10.5px}
-.jm-adm-lebih{align-self:flex-start;padding:0 8px;min-height:20px;border:1px solid var(--line-ctl);border-radius:var(--r-pil);background:none;color:var(--accent);font:600 11.5px/1 var(--font);cursor:pointer}
+.jm-adm-kt{display:flex;flex-direction:column;gap:1px;font-size:var(--t-tombol);line-height:var(--lh-rapat);overflow-wrap:anywhere}
+.jm-adm-kt a{font-weight:400}
+.jm-adm-hot{min-height:18px;padding:0 6px;font-size:var(--t-label)}
+.jm-adm-lebih{align-self:flex-start;padding:0 8px;min-height:20px;border:1px solid var(--line-ctl);border-radius:var(--r-pil);background:none;color:var(--accent);font:600 var(--t-label)/1 var(--font);cursor:pointer}
 .jm-adm-cek{width:auto;padding-inline:4px}
 @media (min-width:900px){.jm-adm-tabel{table-layout:fixed}.jm-adm-tabel th,.jm-adm-tabel td{padding-inline:8px}
 .jm-adm-w5{width:5%}.jm-adm-w8{width:8%}.jm-adm-w10{width:10%}.jm-adm-w22{width:22%}.jm-adm-w30{width:30%}}
@@ -50,9 +50,9 @@ dialog.jm-lembar{margin:0 0 0 auto;width:min(420px,100vw);height:100dvh;max-heig
 dialog.jm-lembar::backdrop{background:rgb(11 23 38/.55)}
 dialog.jm-lembar[open]{display:grid;gap:12px;align-content:start}
 .jm-lembar header{display:flex;justify-content:space-between;gap:12px;align-items:start}
-.jm-lembar h2{font:700 20px/1.25 var(--display);margin:0}.jm-lembar h3{font:600 14px/1.3 var(--font);margin:0}
+.jm-lembar h2{font:700 var(--t-h2)/var(--lh-judul) var(--display);margin:0}.jm-lembar h3{font:600 var(--t-body)/var(--lh-rapat) var(--font);margin:0}
 .jm-lembar p{margin:6px 0 0;display:flex;gap:6px}
-.jm-lembar dl{display:grid;grid-template-columns:auto 1fr;gap:6px 14px;margin:0;font-size:14px}
+.jm-lembar dl{display:grid;grid-template-columns:auto 1fr;gap:6px 14px;margin:0;font-size:var(--t-body)}
 .jm-lembar dt{color:var(--ink2)}.jm-lembar dd{margin:0;overflow-wrap:anywhere}
 .jm-adm-riwayat{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin:0;padding:0;list-style:none}
 .jm-adm-riwayat li{display:flex;flex-direction:column;align-items:center;gap:4px;padding:8px;border:1px solid var(--line-cell);border-radius:var(--r-sm);color:var(--ink2)}
@@ -60,10 +60,10 @@ dialog.jm-lembar[open]{display:grid;gap:12px;align-content:start}
 /* sub-tab jenis: tepi ke tepi, lebar sama */
 .jm-tab.jm-adm-sub{display:flex;width:100%;margin-bottom:12px;overflow-x:auto}
 .jm-adm-sub button{flex:1 1 0;justify-content:center;white-space:nowrap}
-.jm-adm-n{margin-left:6px;padding:1px 8px;border-radius:var(--r-pil);background:var(--surface);color:var(--ink2);font:600 11.5px/1.6 var(--font)}
+.jm-adm-n{margin-left:6px;padding:1px 8px;border-radius:var(--r-pil);background:var(--surface);color:var(--ink2);font:600 var(--t-label)/var(--lh-isi) var(--font)}
 .jm-adm-sub [aria-selected=true] .jm-adm-n{background:var(--accent);color:var(--on-accent)}
 .jm-adm-lg{display:flex;gap:10px;align-items:center}
-.jm-adm-ava{flex:none;display:grid;place-items:center;width:34px;height:34px;border-radius:var(--r-sm);background:var(--soft-hijau);color:var(--accent);font:700 12px/1 var(--font)}
+.jm-adm-ava{flex:none;display:grid;place-items:center;width:34px;height:34px;border-radius:var(--r-sm);background:var(--soft-hijau);color:var(--accent);font:700 var(--t-kecil)/1 var(--font)}
 /* modal formulir anggota (tengah layar) */
 dialog.jm-modal{margin:auto;width:min(640px,calc(100vw - 24px));max-height:calc(100dvh - 24px);padding:20px;border:1px solid var(--line);border-radius:12px;background:var(--card);color:var(--ink);overflow:auto}
 dialog.jm-modal::backdrop{background:rgb(11 23 38/.55)}

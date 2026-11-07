@@ -2,14 +2,14 @@
 header.top{position:fixed;inset:0 0 auto 0;z-index:50;height:var(--top);display:flex;align-items:center;gap:8px;padding:0 max(8px,env(safe-area-inset-right)) 0 max(8px,env(safe-area-inset-left));
   background:var(--paper);color:var(--ink);border-bottom:1px solid var(--line)}
 header.top::after{content:"";position:absolute;left:0;bottom:0;width:48px;height:2px;background:var(--accent-isi)}
-.jm-merek{display:flex;align-items:center;gap:10px;min-height:var(--target);color:var(--head);text-decoration:none;font:600 16px/1 var(--display);white-space:nowrap}
+.jm-merek{display:flex;align-items:center;gap:10px;min-height:var(--target);color:var(--head);text-decoration:none;font:600 var(--t-h3)/1 var(--display);white-space:nowrap}
 .jm-merek img{width:40px;height:40px;display:block}
 .iconbtn{display:inline-flex;align-items:center;justify-content:center;width:var(--target);height:var(--target);padding:0;border:0;background:none;color:var(--ink2);cursor:pointer;border-radius:var(--r-sm);text-decoration:none}
 .iconbtn:hover{color:var(--accent);background:var(--soft-hijau)}
 .iconbtn .jm-ik{width:22px;height:22px}
 header.top :focus-visible{outline:2px solid var(--fokus);outline-offset:2px}
 nav.tabs{display:none}
-nav.tabs a{display:flex;align-items:center;gap:8px;min-height:var(--target);padding:0 14px;color:var(--ink);text-decoration:none;font:500 14px/1 var(--font);border-radius:var(--r-pil)}
+nav.tabs a{display:flex;align-items:center;gap:8px;min-height:var(--target);padding:0 14px;color:var(--ink);text-decoration:none;font:400 var(--t-body)/1 var(--font);border-radius:var(--r-pil)}
 nav.tabs a:hover{background:var(--surface)}
 nav.tabs a[aria-current="page"]{background:var(--soft-hijau);color:var(--accent);font-weight:600}
 nav.tabs.buka{display:flex;flex-direction:column;position:absolute;top:var(--top);left:0;right:0;padding:8px var(--gut) 12px;background:var(--paper);border-bottom:1px solid var(--line);box-shadow:var(--shadow-lg)}
@@ -19,23 +19,23 @@ nav.tabs.buka{display:flex;flex-direction:column;position:absolute;top:var(--top
 .jm-bahasa svg{display:block}
 .jm-sisi .jm-teks{display:none}
 @media (max-width:479px){.jm-merek span{display:none}}
-@media (min-width:600px){.jm-sisi .jm-teks{display:inline;margin-left:6px;font:500 14px/1 var(--font)}.jm-sisi .iconbtn.jm-akun{width:auto;padding:0 10px}}
+@media (min-width:600px){.jm-sisi .jm-teks{display:inline;margin-left:6px;font:400 var(--t-body)/1 var(--font)}.jm-sisi .iconbtn.jm-akun{width:auto;padding:0 10px}}
 @media (min-width:1200px){
   #burger{display:none}
-  nav.tabs a{padding:0 10px;gap:8px;font-size:14px}
+  nav.tabs a{padding:0 10px;gap:8px;font-size:var(--t-body)}
   nav.tabs,nav.tabs.buka{display:flex;flex-direction:row;position:static;padding:0;background:none;box-shadow:none;margin-left:12px;gap:2px}
 }
-.jm-pita{display:flex;align-items:center;gap:8px;padding:8px var(--gut);background:var(--info-bg);color:var(--ink);font-size:var(--t-kecil);line-height:1.4}
+.jm-pita{display:flex;align-items:center;gap:8px;padding:8px var(--gut);background:var(--info-bg);color:var(--ink);font-size:var(--t-kecil);line-height:var(--lh-rapat)}
 .jm-pita .jm-ik{flex:none;width:18px;height:18px;color:var(--info)}
 
 /* grup menu Analisis: pemicu berpanah, submenu kartu; di hamburger submenu terbuka berjajar */
 .jm-grup{position:relative}
-.jm-grup-tbl{display:flex;align-items:center;gap:8px;min-height:var(--target);padding:0 14px;border:0;background:none;color:var(--ink);font:500 14px/1 var(--font);border-radius:var(--r-pil);cursor:pointer;width:100%}
+.jm-grup-tbl{display:flex;align-items:center;gap:8px;min-height:var(--target);padding:0 14px;border:0;background:none;color:var(--ink);font:400 var(--t-body)/1 var(--font);border-radius:var(--r-pil);cursor:pointer;width:100%}
 .jm-grup-tbl:hover{background:var(--surface)}
 .jm-grup-tbl[aria-current="page"]{background:var(--soft-hijau);color:var(--accent);font-weight:600}
 .jm-caret{margin-left:2px;transition:transform .15s}.jm-grup-tbl[aria-expanded="true"] .jm-caret{transform:rotate(180deg)}
 .jm-sub{display:grid;gap:2px;padding:6px 0 6px 28px}
-.jm-sub a{display:flex;align-items:center;min-height:40px;padding:0 14px;color:var(--ink);text-decoration:none;font:500 14px/1 var(--font);border-radius:var(--r-sm)}
+.jm-sub a{display:flex;align-items:center;min-height:40px;padding:0 14px;color:var(--ink);text-decoration:none;font:400 var(--t-body)/1 var(--font);border-radius:var(--r-sm)}
 .jm-sub a:hover{background:var(--surface)}.jm-sub a[aria-current="page"]{color:var(--accent);font-weight:600;background:var(--soft-hijau)}
 @media (min-width:1200px){
   .jm-grup-tbl{width:auto;padding:0 10px;gap:8px}
@@ -49,7 +49,7 @@ nav.tabs a:not([aria-current="page"]):hover,.jm-grup-tbl:not([aria-current="page
 nav.tabs a .jm-ik,.jm-grup-tbl .jm-ik,.jm-sub a .jm-ik{width:18px;height:18px;flex:none;color:currentColor}
 .jm-sub a{gap:10px}
 /* 1200-1366: rapatkan jarak agar semua label tetap terbaca */
-@media (min-width:1200px) and (max-width:1366px){nav.tabs{margin-left:4px;gap:0}nav.tabs a,.jm-grup-tbl{padding:0 8px;gap:6px;font-size:13px}.jm-merek span{display:none}}
+@media (min-width:1200px) and (max-width:1366px){nav.tabs{margin-left:4px;gap:0}nav.tabs a,.jm-grup-tbl{padding:0 8px;gap:6px;font-size:var(--t-tombol)}.jm-merek span{display:none}}
 
 /* subnav bagian Insight berada tepat di bawah header tetap */
 
@@ -68,19 +68,19 @@ dialog.jm-cari{width:min(680px,calc(100vw - 24px));max-height:min(620px,calc(100
 dialog.jm-cari[open]{display:flex;flex-direction:column;align-items:stretch;justify-content:flex-start}
 dialog.jm-cari::backdrop{background:rgb(11 23 38/.55)}
 .jm-cari-atas{display:flex;align-items:center;gap:10px;padding:10px 12px 10px 16px;border-bottom:1px solid var(--line);color:var(--ink2)}
-.jm-cari .jm-cari-isi{flex:1;width:auto;max-width:none;min-width:0;height:var(--target);margin:0;padding:0;box-shadow:none;border:0;background:none;color:var(--ink);font:500 17px/1.2 var(--font);outline:none}
+.jm-cari .jm-cari-isi{flex:1;width:auto;max-width:none;min-width:0;height:var(--target);margin:0;padding:0;box-shadow:none;border:0;background:none;color:var(--ink);font:400 var(--t-h3)/var(--lh-judul) var(--font);outline:none}
 .jm-cari-isi::-webkit-search-cancel-button{display:none}
 .jm-cari-hasil{flex:1;overflow-y:auto;padding:8px 8px 12px}
 .jm-cari-grup{padding:6px 0 10px}
-.jm-cari-grup h3{display:flex;align-items:center;gap:8px;margin:0;padding:6px 10px;font:700 12px/1.2 var(--font);letter-spacing:.06em;text-transform:uppercase;color:var(--accent)}
+.jm-cari-grup h3{display:flex;align-items:center;gap:8px;margin:0;padding:6px 10px;font:700 var(--t-kecil)/var(--lh-judul) var(--font);letter-spacing:.08em;text-transform:uppercase;color:var(--accent)}
 .jm-cari-baris{display:flex;align-items:center;gap:12px;min-height:var(--target);padding:8px 10px;border-radius:var(--r-sm);color:var(--ink);text-decoration:none}
 .jm-cari-baris[aria-selected=true],.jm-cari-baris:hover{background:var(--soft-hijau)}
 .jm-cari-baris img{flex:none;width:28px;height:28px;object-fit:contain}
 .jm-cari-ik{flex:none;display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;color:var(--accent)}
 .jm-cari-teks{flex:1;min-width:0;display:flex;flex-direction:column;gap:2px}
-.jm-cari-teks b{font:600 15px/1.3 var(--font);overflow:hidden;text-overflow:ellipsis;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical}
-.jm-cari-teks small{font:400 13px/1.3 var(--font);color:var(--ink2);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.jm-cari-teks b{font:600 var(--t-body)/var(--lh-rapat) var(--font);overflow:hidden;text-overflow:ellipsis;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical}
+.jm-cari-teks small{font:400 var(--t-tombol)/var(--lh-rapat) var(--font);color:var(--ink2);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .jm-cari mark{background:var(--soft-biru);color:inherit;border-radius:3px;padding:0 1px}
 .jm-cari-info{margin:0;padding:28px 16px;text-align:center;color:var(--ink2)}
-.jm-cari .jm-cari-petunjuk{max-width:none;margin:0;padding:10px 16px;border-top:1px solid var(--line);font:400 12px/1.4 var(--font);color:var(--ink2)}
+.jm-cari .jm-cari-petunjuk{max-width:none;margin:0;padding:10px 16px;border-top:1px solid var(--line);font:400 var(--t-kecil)/var(--lh-rapat) var(--font);color:var(--ink2)}
 @media (max-width:600px){.jm-cari-petunjuk{display:none}}

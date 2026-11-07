@@ -65,23 +65,31 @@ export function heroVisual({ angka: a, label, rows, ref, teksRef, turunan = true
 /* Temuan utama di kepala wadah: kalimat besar dari data + pil EST bila turunan. */
 export const temuanHtml = (teks, turunan = true) => `${esc(teks).replace(/(\d[\d.,]*(?:\s?(?:%|GWp|GW|MW))?)/, '<span class="jm-hl">$1</span>')}${turunan ? " " + pil("an.est") : ""}`;
 
-/* Batang horizontal HTML. baris: [{label, bagian:[{nilai, kelas}], teks, sorot, id}]; ref = nilai garis putus-putus; aksi = batang bisa diklik.
-   Lebar lewat data-w; panggil pasangBar(akar) sesudah innerHTML (CSSOM, tanpa atribut style). */
-export function batangHtml(baris, { maks, ref, label, aksi } = {}) {
-  const M = maks || Math.max(1, ref || 0, ...baris.map((b) => b.bagian.reduce((s, x) => s + (x.nilai || 0), 0)));
+/* Batang horizontal HTML tanpa lintasan: kisi vertikal tipis + sumbu (0..atas), nilai di ujung batang.
+   baris: [{label, bagian:[{nilai, kelas}], teks, sorot, id}]; ref = nilai garis putus-putus; aksi = batang bisa diklik; satuan = sufiks label sumbu.
+   Posisi lewat data-w/data-x/data-xi; panggil pasangBar(akar) sesudah innerHTML (CSSOM, tanpa atribut style). */
+export function batangHtml(baris, { maks, ref, label, aksi, satuan = "" } = {}) {
+  const tot = (b) => b.bagian.reduce((s, x) => s + (x.nilai || 0), 0);
+  const mentah = (maks || Math.max(1, ref || 0, ...baris.map(tot))) / 4, mag = 10 ** Math.floor(Math.log10(mentah));
+  const langkah = [1, 2, 2.5, 5, 10].find((k) => k * mag >= mentah - 1e-9) * mag, M = langkah * 4;
+  const sumbu = `<li class="jm-bar-ax${aksi ? " jm-bar-ax-x" : ""}" aria-hidden="true"><span></span><span class="jm-bar-axis">${[0, 1, 2, 3, 4].map((k) => `<span data-p="${k * 25}" class="${k === 0 ? "jm-ax-a" : k === 4 ? "jm-ax-z" : ""}">${esc(num(langkah * k, 0) + (satuan ? " " + satuan : ""))}</span>`).join("")}</span></li>`;
   const isi = baris.map((b) => {
     const garis = ref ? `<u class="jm-bar-garis" data-ref="${((ref / M) * 100).toFixed(2)}"></u>` : "";
     const seg = b.bagian.map((p) => `<i class="${p.kelas}" data-w="${(Math.max(0, (p.nilai || 0) / M) * 100).toFixed(2)}"></i>`).join("");
-    const dalam = `<span class="jm-bar-lbl">${b.labelHtml ?? esc(b.label)}</span><span class="jm-bar-trek">${seg}${garis}</span><b class="jm-bar-val">${esc(b.teks)}</b>`;
+    const pct = (tot(b) / M) * 100, dlm = pct > 70;
+    const dalam = `<span class="jm-bar-lbl">${b.labelHtml ?? esc(b.label)}</span><span class="jm-bar-trek">${seg}${garis}<b class="jm-bar-val${dlm ? " jm-bar-in" : ""}" ${dlm ? "data-xi" : "data-x"}="${pct.toFixed(2)}">${esc(b.teks)}</b></span>`;
     const kelas = `${aksi ? "jm-bar-x" : "jm-bar-b"}${b.sorot ? " jm-an-sorot" : ""}`;
     return aksi ? `<li class="${kelas}"><button type="button" class="jm-bar-aksi" data-id="${esc(b.id)}" aria-pressed="${b.pilih ? "true" : "false"}" title="${esc(b.label + ": " + b.teks)}">${dalam}</button></li>`
       : `<li class="${kelas}" title="${esc(b.label + ": " + b.teks)}">${dalam}</li>`;
   }).join("");
-  return `<ul class="jm-batang" aria-label="${esc(label || "")}">${isi}</ul>`;
+  return `<ul class="jm-batang" aria-label="${esc(label || "")}">${sumbu}${isi}</ul>`;
 }
 export function pasangBar(akar) {
   for (const e of akar.querySelectorAll("[data-w]")) e.style.width = e.dataset.w + "%";
   for (const e of akar.querySelectorAll("[data-ref]")) e.style.left = e.dataset.ref + "%";
+  for (const e of akar.querySelectorAll("[data-p]")) e.style.left = e.dataset.p + "%";
+  for (const e of akar.querySelectorAll("[data-x]")) e.style.left = `calc(${e.dataset.x}% + 8px)`;
+  for (const e of akar.querySelectorAll("[data-xi]")) e.style.right = `calc(${100 - e.dataset.xi}% + 8px)`;
 }
 
 /* Versi lama (batang SVG berskala viewBox), masih dipakai insight.js. */

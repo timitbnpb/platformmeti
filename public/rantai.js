@@ -105,7 +105,7 @@ let semuaIndo = false;
 
 function viewBoxPeta() {
   if (semuaIndo || !d.kota.length) return [0, 0, WS, HS];
-  const la = d.kota.map((k) => k.lat), lo = d.kota.map((k) => k.lng), pad = 1.2;
+  const la = d.kota.map((k) => k.lat), lo = d.kota.map((k) => k.lng), pad = 3;
   const x0 = px(Math.min(...lo) - pad), x1 = px(Math.max(...lo) + pad), y0 = py(Math.max(...la) + pad), y1 = py(Math.min(...la) - pad);
   return [x0, y0, x1 - x0, y1 - y0];
 }
@@ -241,16 +241,18 @@ function tabelKota() {
     const k = urutKota.k, x = k === "kota" ? a.kota : k === "n" ? a.pabrik.length : a.mwp, y = k === "kota" ? b.kota : k === "n" ? b.pabrik.length : b.mwp;
     return (typeof x === "string" ? x.localeCompare(y) : x - y) * urutKota.arah || a.kota.localeCompare(b.kota);
   });
-  const maks = Math.max(1, ...grup.map((g) => g.mwp)), totN = grup.reduce((s, g) => s + g.pabrik.length, 0), totMw = grup.reduce((s, g) => s + g.mwp, 0);
+  const totN = grup.reduce((s, g) => s + g.pabrik.length, 0), totMw = grup.reduce((s, g) => s + g.mwp, 0);
   const th = (k, kk) => `<th aria-sort="${urutKota.k === k ? (urutKota.arah > 0 ? "ascending" : "descending") : "none"}"><button type="button" class="jm-urut" data-kk="${k}">${esc(t(kk))}</button></th>`;
-  const mini = (g) => { const a = g.pabrik.slice(0, 4); return `<span class="jm-rt-mini" aria-hidden="true">${a.map((x) => logoHtml(x)).join("")}${g.pabrik.length > 4 ? `<span class="jm-an-logo jm-rt-plus">+${g.pabrik.length - 4}</span>` : ""}</span>`; };
-  $("tabel-kota").innerHTML = `<div class="jm-gulir"><table class="jm-tabel jm-rt-tabel"><colgroup><col class="jm-rt-k1"><col class="jm-rt-k2"><col class="jm-rt-k3"><col class="jm-rt-k4"><col class="jm-rt-k5"></colgroup><thead><tr><th>#</th>${th("kota", "rt.col.kota")}${th("n", "rt.col.n")}${th("mwp", "rt.col.mwp")}<th>${esc(t("rt.col.pasar"))}</th></tr></thead><tbody>${B.map((g, i) => `<tr data-kota="${esc(g.kota)}"${g.kota === sel ? ' class="jm-baris-pilih"' : ""}>
+  const pendek = (n) => n.replace(/\([^)]*\)/g, " ").split(/\s+/).filter((w) => w && !/^(pt|tbk|cv)$/i.test(w)).slice(0, 2).join(" ") || n;
+  const pp = (x) => `<span class="jm-rt-pab">${esc(pendek(x.nama))}</span>`;
+  const mini = (g) => `<span class="jm-rt-mini">${g.pabrik.slice(0, 3).map(pp).join("")}${g.pabrik.length > 3 ? `<button type="button" class="jm-rt-pab jm-rt-lebih" aria-expanded="false" data-n="${g.pabrik.length - 3}" aria-label="${esc(t("rt.lebih", { n: g.pabrik.length - 3 }))}">+${g.pabrik.length - 3}</button><span class="jm-rt-sisa" hidden>${g.pabrik.slice(3).map(pp).join("")}</span>` : ""}</span>`;
+  $("tabel-kota").innerHTML = `<div class="jm-gulir"><table class="jm-tabel jm-rt-tabel"><colgroup><col class="jm-rt-k1"><col class="jm-rt-k2"><col class="jm-rt-k3"><col class="jm-rt-k4"><col class="jm-rt-k5"><col class="jm-rt-k6"></colgroup><thead><tr><th>#</th>${th("kota", "rt.col.kota")}${th("n", "rt.col.n")}<th>${esc(t("rt.col.nama"))}</th>${th("mwp", "rt.col.mwp")}<th>${esc(t("rt.col.pasar"))}</th></tr></thead><tbody>${B.map((g, i) => `<tr data-kota="${esc(g.kota)}"${g.kota === sel ? ' class="jm-baris-pilih"' : ""}>
     <td data-label="#"><span class="jm-wl-no">${i + 1}</span></td>
-    <td data-label="${esc(t("rt.col.kota"))}"><span class="jm-rt-kota"><span class="jm-id"><b>${esc(g.kota)}</b><small>${esc(g.pabrik[0]?.provinsi || "-")}</small></span>${mini(g)}</span></td>
+    <td data-label="${esc(t("rt.col.kota"))}"><span class="jm-id"><b>${esc(g.kota)}</b><small>${esc(g.pabrik[0]?.provinsi || "-")}</small></span></td>
     <td data-label="${esc(t("rt.col.n"))}" class="jm-tengah">${num(g.pabrik.length)}</td>
-    <td data-label="${esc(t("rt.col.mwp"))}" class="jm-num"><span class="jm-rt-kap"><span class="jm-wl-mb" aria-hidden="true"><i class="${KELAS[g.dom]}" data-w="${((g.mwp / maks) * 100).toFixed(1)}"></i></span><b>${esc(num(g.mwp))}<small>MWp</small></b></span></td>
-    <td data-label="${esc(t("rt.col.pasar"))}" class="jm-tengah">${pasarPil(g.dom)}</td></tr>`).join("")}</tbody><tfoot><tr><td></td><td>${esc(t("rt.total"))}</td><td class="jm-tengah">${num(totN)}</td><td class="jm-num"><b>${esc(num(gw(totMw), 1))} GWp</b></td><td></td></tr></tfoot></table></div>`;
-  pasangBar($("tabel-kota"));
+    <td data-label="${esc(t("rt.col.nama"))}">${mini(g)}</td>
+    <td data-label="${esc(t("rt.col.mwp"))}" class="jm-num"><b class="jm-rt-kap">${esc(num(g.mwp))}<small>MWp</small></b></td>
+    <td data-label="${esc(t("rt.col.pasar"))}" class="jm-tengah">${pasarPil(g.dom)}</td></tr>`).join("")}</tbody><tfoot><tr><td></td><td>${esc(t("rt.total"))}</td><td class="jm-tengah">${num(totN)}</td><td></td><td class="jm-num"><b>${esc(num(gw(totMw), 1))} GWp</b></td><td></td></tr></tfoot></table></div>`;
 }
 
 /* ---------- tabel pabrikan ---------- */
@@ -315,7 +317,8 @@ function pasang() {
   $("seg-apamsi").addEventListener("click", (e) => { const b = e.target.closest("button[data-a]"); if (!b || b.dataset.a === mApamsi) return; segSync($("seg-apamsi"), b); mApamsi = b.dataset.a; nanti(petaPerbarui); });
   $("kota-panel").addEventListener("click", (e) => { if (e.target.closest("[data-aksi=tutup]")) nanti(tutupKota); });
   $("tabel-kota").addEventListener("click", (e) => {
-    const k = e.target.closest("tr[data-kota]"), s = e.target.closest("button[data-kk]");
+    const k = e.target.closest("tr[data-kota]"), s = e.target.closest("button[data-kk]"), l = e.target.closest(".jm-rt-lebih");
+    if (l) { const o = l.nextElementSibling, b = o.hidden; o.hidden = !b; l.setAttribute("aria-expanded", String(b)); l.textContent = b ? "-" : "+" + l.dataset.n; return; }
     if (s) { const kk = s.dataset.kk; urutKota = urutKota.k === kk ? { k: kk, arah: -urutKota.arah } : { k: kk, arah: kk === "kota" ? 1 : -1 }; nanti(tabelKota); }
     else if (k) { for (const x of $("tabel-kota").querySelectorAll("tr[data-kota]")) x.classList.toggle("jm-baris-pilih", x === k); nanti(() => pilihKota(k.dataset.kota)); }
   });

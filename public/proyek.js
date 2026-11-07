@@ -159,10 +159,9 @@ function segarHero() {
   $("pjStatus").innerHTML = `<div class="jm-pj-tumpuk jm-pj-tumpuk-b" role="group" aria-label="${esc(t("pj.stat.judul"))}">${ada1.map((k) => `<button type="button" class="jm-pj-seg jm-pj-s-${k}" data-st="${k}" data-w="${(st[k] / n) * 100}" aria-pressed="${F.st === k}" title="${esc(labSt(k) + ": " + st[k])}" aria-label="${esc(labSt(k) + ": " + st[k])}"></button>`).join("")}</div>
     <ul class="jm-pj-leg jm-pj-leg-b">${ada1.map((k) => `<li><button type="button" data-st="${k}" aria-pressed="${F.st === k}">${pilStatus(k)}<b>${num(st[k])}</b></button></li>`).join("")}</ul>`;
   for (const i of $("pjStatus").querySelectorAll("[data-w]")) i.style.width = i.dataset.w + "%";
-  const pc = hitung(SEMUA, (r) => r.prog), baris = PROG.baris.map((g) => [g.id, pc[g.id] || 0]).sort((a, b) => b[1] - a[1]), maks = Math.max(1, baris[0][1]);
+  const pc = hitung(SEMUA, (r) => r.prog), baris = PROG.baris.map((g) => [g.id, pc[g.id] || 0]).sort((a, b) => b[1] - a[1]);
   /* batang pakai akar supaya program kecil tidak jadi serpihan 2% di samping satu program raksasa */
-  $("pjProgBar").innerHTML = `<ul class="jm-pj-pbar">${baris.map(([id, c]) => `<li><button type="button" data-pg="${esc(id)}" aria-pressed="${F.prog === id}"><span class="jm-pj-pbar-n">${esc(progNamaPendek(id))}</span><b>${num(c)}</b><span class="jm-pj-pbar-t"><i data-w="${c ? Math.max(6, Math.sqrt(c / maks) * 100) : 0}"></i></span></button></li>`).join("")}</ul>`;
-  for (const i of $("pjProgBar").querySelectorAll("i")) i.style.width = i.dataset.w + "%";
+  $("pjProgBar").innerHTML = `<ul class="jm-pj-pbar">${baris.map(([id, c]) => `<li><button type="button" data-pg="${esc(id)}" aria-pressed="${F.prog === id}"><span class="jm-pj-pbar-n">${esc(progNamaPendek(id))}</span><b>${num(c)}</b></button></li>`).join("")}</ul>`;
 }
 function ubahFilter(k, v) {
   F[k] = F[k] === v ? "" : v;
@@ -641,7 +640,7 @@ async function isiTerkait(r) {
   const el = $("pjRelBag"), ber = $("pjBerBag");
   if (!el) return;
   try {
-    const [rg, br, og] = await Promise.all([lazy("/data/regulasi.json"), lazy("/data/berita.json"), lazy("/data/organisasi.json")]);
+    const [rg, br, og, bf] = await Promise.all([lazy("/data/regulasi.json"), lazy("/data/berita.json"), lazy("/data/organisasi.json"), lazy("/data/berita_foto.json").catch(() => ({}))]);
     if (!el.isConnected || dlg.dataset.id !== r.id) return;
     const ids = new Set([...(r.p.regulasi_ids || []), ...r.prog.flatMap((id) => (PROG.baris.find((g) => g.id === id) || {}).regulasi_ids || [])]);
     const regs = rg.baris.filter((x) => ids.has(x.id) || (x.proyek_ids || []).includes(r.id));
@@ -649,7 +648,7 @@ async function isiTerkait(r) {
     el.innerHTML = regs.length ? `<h3>${esc(t("pj.rel.reg"))}</h3><div class="jm-pj-kartubag"><ul class="jm-pj-regl">${regs.map(regBaris).join("")}</ul></div>` : "";
     el.hidden = !regs.length;
     if (ber) {
-      ber.innerHTML = brs.length ? `<h3>${esc(t("pj.rel.ber"))}</h3><div class="jm-pj-kartubag"><ul class="jm-pj-ber">${brs.map((x) => `<li><a href="${esc(urlAman(x.url) || "#")}" target="_blank" rel="noopener noreferrer"><span class="jm-pj-ber-t" aria-hidden="true">${esc((x.media || "?")[0].toUpperCase())}</span><span><b>${esc(x.judul)}</b><small>${esc(x.media || "")}, ${esc(tglIso(x.terbit))}</small></span></a></li>`).join("")}</ul></div>` : "";
+      ber.innerHTML = brs.length ? `<h3>${esc(t("pj.rel.ber"))}</h3><div class="jm-pj-kartubag"><ul class="jm-pj-ber">${brs.map((x) => `<li><a href="${esc(urlAman(x.url) || "#")}" target="_blank" rel="noopener noreferrer">${(bf || {})[x.id] ? `<img class="jm-pj-ber-img" src="${esc(urlAman(bf[x.id]) || "")}" alt="" loading="lazy" decoding="async" referrerpolicy="no-referrer">` : `<span class="jm-pj-ber-t jm-pj-ber-kos" aria-hidden="true">${ikon("berita", 22)}</span>`}<span><b>${esc(x.judul)}</b><small>${esc(x.media || "")}, ${esc(tglIso(x.terbit))}</small></span></a></li>`).join("")}</ul></div>` : "";
       ber.hidden = !brs.length;
     }
     const nama = new Map(og.baris.map((o) => [o.id, o.nama]));
@@ -712,14 +711,15 @@ function programHtml(g) {
   const kiri = (tot ? laci("status", barTumpuk(per, tot) + legPil(per)) : "")
     + (al.length ? laci("alokasi", `<ul class="jm-pj-kolom">${al.map((x) => `<li><span class="jm-pj-kolom-b"><i data-h="${(x.total_kl / maksAl) * 100}"></i></span><b>${num(x.total_kl / 1e6, 1)}</b><small>${esc(String(x.tahun))}</small></li>`).join("")}</ul><p class="jm-bantu">${esc(t("pj.alokasi.ket"))}</p>`) : "")
     + `<section class="jm-pj-bag" id="pjReg" hidden></section>`
-    + (tot ? laci("sumber", `<ul class="jm-pj-sumberl">${Object.entries(docs).sort((a, b) => b[1] - a[1]).map(([d, n]) => `<li><div><span><b>${esc(namaSumberJenis(d))}</b><small>${esc(t("pj.prog.nproyek", { n: num(n) }))}</small></span></div></li>`).join("")}</ul>`) : "");
+;
+  const sumberBag = tot ? `<section class="jm-pj-bag jm-pj-penuhlebar jm-pj-sumberbawah"><h3>${esc(t("pj.l.sumber"))}</h3><ul class="jm-pj-sumberpil">${Object.entries(docs).sort((a, b) => b[1] - a[1]).map(([d, n]) => `<li>${ikon("metode", 16)}<b>${esc(namaSumberJenis(d))}</b><small>${esc(t("pj.prog.nproyek", { n: num(n) }))}</small></li>`).join("")}</ul></section>` : "";
   const kanan = (tot ? `<section class="jm-pj-bag"><h3>${esc(t("pj.l.lokasi"))}</h3><div id="pjMini" class="jm-pj-mini jm-pj-mini-b"></div></section>` : "") + `<section class="jm-pj-bag" id="pjBer" hidden></section>`;
   const tabel = tot ? `<section class="jm-pj-bag jm-pj-penuhlebar"><h3>${esc(t("pj.prog.daftar"))}</h3>
     <div class="jm-pj-bar-alat"><label class="jm-cari"><svg class="jm-ik" width="18" height="18" aria-hidden="true" focusable="false"><use href="/img/ikon.svg#i-cari2"/></svg><span class="sr">${esc(t("pj.cari.tabel"))}</span><input type="search" id="pjMq" autocomplete="off" placeholder="${esc(t("pj.cari.tabel"))}"></label>
     <span class="jm-pj-chipst" role="group">${ST_BAR.filter((k) => per[k]).map((k) => `<button type="button" data-mst="${k}" aria-pressed="false">${pilStatus(k)}<b>${num(per[k])}</b></button>`).join("")}</span></div>
     <div class="jm-gulir"><table class="jm-tabel jm-pj-tetap jm-pj-t4"><thead><tr>${kol.map(([kt]) => `<th scope="col">${esc(t(kt))}</th>`).join("")}</tr></thead><tbody id="pjMtb">${bt.html}</tbody></table></div><p class="jm-bantu" id="pjMket">${esc(t("pj.tampil", { n: num(Math.min(100, bt.n)), total: num(bt.n) }))}</p></section>` : "";
   return kepalaModal({ id: "program-" + g.id, img: IMG_PROG[g.id], ikonSvg: ikProg(g.id), judul: g.nama, ringkas: g.ringkas || "", aks })
-    + `<div class="jm-pj-strip"><div class="jm-pj-tiles">${tiles}</div></div><div class="jm-pj-sh-badan"><div class="jm-pj-dua" id="pjDua"><div class="jm-pj-kol">${kiri}</div><div class="jm-pj-kol" id="pjKanan">${kanan}</div></div>${tabel}</div></div>`;
+    + `<div class="jm-pj-strip"><div class="jm-pj-tiles">${tiles}</div></div><div class="jm-pj-sh-badan"><div class="jm-pj-dua" id="pjDua"><div class="jm-pj-kol">${kiri}</div><div class="jm-pj-kol" id="pjKanan">${kanan}</div></div>${tabel}${sumberBag}</div></div>`;
 }
 /* tabel modal: cari + chip status memfilter baris tanpa membangun ulang seluruh modal */
 function segarModalTabel(g) {
@@ -765,7 +765,7 @@ async function isiTerkaitProgram(g) {
   const reg = $("pjReg"), ber = $("pjBer");
   if (!reg || !ber) return;
   try {
-    const [rg, br, og] = await Promise.all([lazy("/data/regulasi.json"), lazy("/data/berita.json"), lazy("/data/organisasi.json")]);
+    const [rg, br, og, bf] = await Promise.all([lazy("/data/regulasi.json"), lazy("/data/berita.json"), lazy("/data/organisasi.json"), lazy("/data/berita_foto.json").catch(() => ({}))]);
     if (!reg.isConnected || dlg.dataset.id !== "program-" + g.id) return;
     const ids = new Set(g.regulasi_ids || []), pids = new Set(g.proyek_ids && g.proyek_ids.length ? g.proyek_ids : SEMUA.filter((r) => r.prog.includes(g.id)).map((r) => r.id));
     const regs = rg.baris.filter((x) => ids.has(x.id) || (x.program_ids || []).includes(g.id));
@@ -775,7 +775,7 @@ async function isiTerkaitProgram(g) {
     const pelHtml = pel.length ? `<h3>${esc(t("pj.prog.pelaksana"))}</h3><div class="jm-pj-kartubag"><ul class="jm-pj-pihak">${pel.map((x) => { const o = orgP.get(x.organisasi_id), lg = urlAman(o.logo); return `<li>${lg ? `<img class="jm-pj-av" src="${esc(lg)}" alt="" width="40" height="40" loading="lazy">` : `<span class="jm-pj-av" aria-hidden="true">${esc(inisial(o.nama))}</span>`}<span class="jm-pj-pn"><a href="/o/${esc(o.id)}"><b>${esc(o.nama)}</b></a><small>${esc(x.peran)}</small></span></li>`; }).join("")}</ul></div>` : "";
     reg.innerHTML = pelHtml + (regs.length ? `<h3>${esc(t("pj.prog.dasar"))}</h3><div class="jm-pj-kartubag"><ul class="jm-pj-regl">${regs.map(regBaris).join("")}</ul></div>` : "");
     reg.hidden = !regs.length && !pel.length;
-    ber.innerHTML = brs.length ? `<h3>${esc(t("pj.rel.ber"))}</h3><div class="jm-pj-kartubag"><ul class="jm-pj-ber">${brs.map((x) => `<li><a href="${esc(urlAman(x.url) || "#")}" target="_blank" rel="noopener noreferrer"><span class="jm-pj-ber-t" aria-hidden="true">${esc((x.media || "?")[0].toUpperCase())}</span><span><b>${esc(x.judul)}</b><small>${esc(x.media || "")}, ${esc(tglIso(x.terbit))}</small></span></a></li>`).join("")}</ul></div>` : "";
+    ber.innerHTML = brs.length ? `<h3>${esc(t("pj.rel.ber"))}</h3><div class="jm-pj-kartubag"><ul class="jm-pj-ber">${brs.map((x) => `<li><a href="${esc(urlAman(x.url) || "#")}" target="_blank" rel="noopener noreferrer">${(bf || {})[x.id] ? `<img class="jm-pj-ber-img" src="${esc(urlAman(bf[x.id]) || "")}" alt="" loading="lazy" decoding="async" referrerpolicy="no-referrer">` : `<span class="jm-pj-ber-t jm-pj-ber-kos" aria-hidden="true">${ikon("berita", 22)}</span>`}<span><b>${esc(x.judul)}</b><small>${esc(x.media || "")}, ${esc(tglIso(x.terbit))}</small></span></a></li>`).join("")}</ul></div>` : "";
     ber.hidden = !brs.length;
     const kanan = $("pjKanan"), kosong = !kanan.querySelector("section:not([hidden])");
     $("pjDua").classList.toggle("jm-pj-tunggal", kosong);
