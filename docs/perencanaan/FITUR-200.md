@@ -420,3 +420,32 @@ Keluaran: graf pengetahuan, asisten bersumber, API mitra, penyaring lahan, pelac
 - Dua belas sumber tidak terbaca (IRENA, SEIA, Solar Power Europe, WindEurope, IESR, Power Africa, IEEFA PDF, dan beberapa halaman JavaScript). Informasi tentang mereka dari pencarian tidak boleh dianggap lengkap.
 - Hasil pencarian memuat bahan bertanggal 2026 dan beberapa berasal dari media; keandalan sumber sekunder tidak diuji satu per satu.
 - Tidak ada data pribadi yang diambil. Tidak ada kode diubah dan tidak ada commit.
+
+## 8. Dua puluh final (gabungan, diputuskan 8 Nov 2026)
+
+Penggabungan dari 200 butir, 20 prioritas riset, dan 20 usulan awal. Yang sudah dibangun (Ikuti dan ringkasan mingguan O02, Portal lembaga I01, Indeks terbuka, Rantai pasok, Program prioritas) tidak dihitung ulang; hanya ditingkatkan bila perlu.
+
+| # | Butir gabungan | Menggabungkan | Gelombang |
+|---|---|---|---|
+| 1 | Pelacak pipeline proyek bertahap (RUPTL, izin, PPA, financial close, konstruksi, COD) dengan peringatan proyek macet | A01, A02, A07, A16, L04, proyek bermasalah | 2 |
+| 2 | Pabrik ekstraksi dokumen resmi: PDF (RUPTL, HEESI, Statistik PLN, Perda RUED, Kepmen BPP) jadi tabel berversi bersitasi halaman | K01, K02, K07, B01 | 1 |
+| 3 | Registri lisensi dan atribusi per baris data, syarat sebelum apa pun dibuka | K03, K04 (dasar) | 1 |
+| 4 | Papan rekonsiliasi angka plus pemeriksa fakta untuk media | L01, F01, F02 | 1 |
+| 5 | Pelacak kapasitas baru bulanan dan rapor bulanan "Kondisi EBT Indonesia" (PDF/PNG siap bagi) | L02, M01, rapor bulanan | 1 |
+| 6 | Radar tender dan pengadaan IPP (opentender OCDS, pengumuman PLN) | A09, A10 | 1 |
+| 7 | Kedekatan jaringan: skor sambungan lokasi, gardu, transmisi, neraca daya per sistem | A03, B04, B08 | 2 |
+| 8 | Pencocok pendana dan proyek, dengan daftar JETP/CIPP terstruktur dan pelacak pendanaan iklim | H01, H02, H03, H04, H05 | 2 |
+| 9 | Peta sisi permintaan: pembeli listrik hijau (KEK, smelter, pusat data, RE100), captive dan peluang substitusinya | A13, A14 | 2 |
+| 10 | Papan daerah: RUED dibanding realisasi, anggaran EBT di APBD, profil kabupaten/kota | C01, C02, C07, profil kab/kota | 1 dan 2 |
+| 11 | Advokasi kebijakan: kalender konsultasi publik dan tenggat, plus repositori masukan dan posisi METI | D02, D03 | 1 |
+| 12 | Kalkulator PLTS atap rumah dan industri (tagihan ke kWp, penghematan, balik modal, kuota sistem) | A05, kalkulator atap | 1 |
+| 13 | Papan permintaan komponen dan pasar pemasok dari RUPTL (kebutuhan per tahun per komponen) | J01, J04 | 2 |
+| 14 | Dedieselisasi dan elektrifikasi pulau: PLTD yang diganti EBT, peluang hibrida, desa belum berlistrik | B-seri dedieselisasi, desa listrik | 2 |
+| 15 | Penyaring lahan dan risiko lokasi (kawasan hutan, gambut, rawan bencana, lahan bekas tambang) | A11, A12, lahan bekas tambang | 3 |
+| 16 | Papan lowongan, magang, dan SDM hijau (prodi, LSP, pelatihan) | E-seri, lowongan, SDM hijau | 2 |
+| 17 | Peta risiko sosial: konflik dan penolakan proyek, plus repositori AMDAL per proyek | G01, G03, AMDAL | 3 |
+| 18 | Beranda per peran (investor, pemda, praktisi, peneliti, media) memakai semua papan di atas | beranda per peran | 2 |
+| 19 | Graf pengetahuan lanjutan dan API mitra bertoken (baca saja, kuota) | K05, K04 | 3 |
+| 20 | Tanya Direktori: asisten AI yang hanya menjawab dari data situs dengan kutipan | O01 | 3 (butuh keputusan biaya) |
+
+Urutan kerja: gelombang 1 (nomor 2, 3, 4, 5, 6, 10a, 11, 12) membangun fondasi data dan produk yang langsung terlihat; gelombang 2 memakai fondasi itu untuk produk pasar; gelombang 3 menunggu data dan keputusan.
