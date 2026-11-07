@@ -238,9 +238,14 @@ function bulanHtml(rows) {
   }).join("");
   const n = rows.filter((b) => b.tanggal.slice(0, 7) <= S.bulan && b.akhir.slice(0, 7) >= S.bulan).length;
   return exHtml({ id: "ex-bulan", ikon: "kalender", topik: t("kal.ex.bulan.ey"), judulHtml: hlHtml("kal.ex.bulan.j", angka(n), { bulan: `${namaBulan(S.bulan)} ${S.bulan.slice(0, 4)}` }), subHtml: esc(t("kal.ex.bulan.sub")),
-    aksiHtml: aksiHtml({ csv: true }) + sumberKal(), isiHtml: `<div class="kal-bulan"><div class="kal-hdr">${kepalaHari("kal-hn")}</div>${minggu}</div>` });
+    aksiHtml: aksiHtml({ csv: true }) + sumberKal(), isiHtml: `${legendaJenis()}<div class="kal-bulan"><div class="kal-hdr">${kepalaHari("kal-hn")}</div>${minggu}</div>` });
 }
 
+/* legenda warna jenis acara di atas kalender bulanan (pemilik 8 Nov 2026) */
+function legendaJenis() {
+  const ada = new Set(D.baris.map((b) => b.jenis));
+  return `<ul class="kal-legenda" aria-label="${esc(t("kal.legenda"))}">${JENIS.filter((j) => ada.has(j)).map((j) => `<li><span class="kal-titik"><i class="kal-t-${j}"></i></span>${ikon(IKON_JENIS[j], 16)}<span>${esc(label("kal.jenis.", j))}</span></li>`).join("")}</ul>`;
+}
 function gambarIsi() {
   const rows = acaraDari(D.baris.filter((b) => !S.jenis || b.jenis === S.jenis));
   const v = efektif();

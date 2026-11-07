@@ -49,6 +49,7 @@
  "reg.col.penerbit": "Penerbit",
  "reg.col.tanggal": "Ditetapkan",
  "reg.col.status": "Status",
+ "kal.legenda": "Keterangan jenis acara",
  "kal.ex.bulan.ey": "Kalender bulanan",
  "kal.ex.bulan.j": "{hl} acara pada {bulan}",
  "kal.ex.bulan.sub": "Acara METI dan ekosistem, menurut jenis",

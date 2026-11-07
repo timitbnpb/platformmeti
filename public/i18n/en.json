@@ -49,6 +49,7 @@
  "reg.col.penerbit": "Issuer",
  "reg.col.tanggal": "Enacted",
  "reg.col.status": "Status",
+ "kal.legenda": "Event type legend",
  "kal.ex.bulan.ey": "Monthly calendar",
  "kal.ex.bulan.j": "{hl} events in {bulan}",
  "kal.ex.bulan.sub": "METI and ecosystem events, by type",
