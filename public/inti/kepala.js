@@ -21,22 +21,22 @@ const STAF = ["pengurus", "kurator", "admin", "super"];
 const TAB = [
   { href: "/", kunci: "nav.beranda", ikon: "beranda", hak: null },
   { kunci: "nav.insight", ikon: "insight", hak: null, grup: [
-    { href: "/insight", kunci: "nav.insight_ringkasan", ikon: "insight" }, { href: "/insight#tren", kunci: "nav.sub.tren", ikon: "analisis" },
-    { href: "/rantai", kunci: "nav.rantai", ikon: "rantai" }, { href: "/asean", kunci: "nav.asean", ikon: "asean" }, { href: "/jejaring", kunci: "nav.jejaring", ikon: "rantai" }, { href: "/metode", kunci: "nav.sub.metode", ikon: "metode" }] },
+    { href: "/insight", kunci: "nav.insight_ringkasan", ikon: "kajian" }, { href: "/insight#tren", kunci: "nav.sub.tren", ikon: "linimasa" },
+    { href: "/rantai", kunci: "nav.rantai", ikon: "rantai" }, { href: "/asean", kunci: "nav.asean", ikon: "asean" }, { href: "/jejaring", kunci: "nav.jejaring", ikon: "tautan" }, { href: "/metode", kunci: "nav.sub.metode", ikon: "metode" }] },
   /* pemilik 8 Nov 2026: Proyek, Peluang, Wilayah berbasis daerah, digabung satu grup */
-  { kunci: "nav.wilayah", ikon: "peta", hak: null, grup: [
+  { kunci: "nav.wilayah", ikon: "wilayah", hak: null, grup: [
     { href: "/wilayah", kunci: "nav.wilayah_peta", ikon: "peta" }, { href: "/proyek", kunci: "nav.proyek", ikon: "proyek" },
-    { href: "/program", kunci: "nav.program", ikon: "proyek" }, { href: "/peluang", kunci: "nav.peluang", ikon: "analisis" },
-    { href: "/kelayakan", kunci: "nav.kelayakan", ikon: "analisis" }, { href: "/indeks", kunci: "nav.indeks", ikon: "analisis" }] },
+    { href: "/program", kunci: "nav.program", ikon: "bintang" }, { href: "/peluang", kunci: "nav.peluang", ikon: "kompas" },
+    { href: "/kelayakan", kunci: "nav.kelayakan", ikon: "kalkulator" }, { href: "/indeks", kunci: "nav.indeks", ikon: "grafik" }] },
   { href: "/regulasi", kunci: "nav.regulasi", ikon: "regulasi", hak: null },
   { href: "/pustaka", kunci: "nav.pustaka", ikon: "buku", hak: null },
-  { kunci: "nav.media", ikon: "berita", hak: null, grup: [
+  { kunci: "nav.media", ikon: "kamera", hak: null, grup: [
     { href: "/berita", kunci: "nav.berita", ikon: "berita" }, { href: "/siaran-pers", kunci: "nav.siaran", ikon: "siaran" },
     { href: "/galeri", kunci: "nav.foto", ikon: "gambar" }, { href: "/video", kunci: "nav.video", ikon: "video" }, { href: "/podcast", kunci: "nav.podcast", ikon: "mikrofon" }, { href: "/event", kunci: "nav.event", ikon: "kalender-bintang" }] },
   { href: "/kalender", kunci: "nav.kalender", ikon: "kalender", hak: null },
   { href: "/direktori", kunci: "nav.direktori", ikon: "direktori", hak: "masuk" },
   { kunci: "nav.tentang", ikon: "info", hak: null, grup: [
-    { href: "/tentang", kunci: "nav.tentang_ringkas", ikon: "info" }, { href: "/meti-wilayah", kunci: "nav.meti_wilayah", ikon: "wilayah" }] },
+    { href: "/tentang", kunci: "nav.tentang_ringkas", ikon: "gedung" }, { href: "/meti-wilayah", kunci: "nav.meti_wilayah", ikon: "lokasi" }] },
   { href: "/admin", kunci: "nav.admin", ikon: "perisai", hak: "admin" },
 ];
 
