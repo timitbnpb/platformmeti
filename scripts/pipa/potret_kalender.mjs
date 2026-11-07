@@ -9,10 +9,11 @@ import path from 'node:path';
 import assert from 'node:assert/strict';
 import { fileURLToPath } from 'node:url';
 import { gabung } from './kalender_perkaya.mjs';
+import { tenggatDari } from './data_konsultasi.mjs';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '../..');
 const AGENDA = path.join(ROOT, 'data-panen/arsip-meti/agenda.jsonl'), TENGGAT = path.join(ROOT, 'data-panen/arsip-meti/tenggat.jsonl');
-const REGULASI = path.join(ROOT, 'public/data/regulasi.json'), KELUAR = path.join(ROOT, 'public/data/kalender.json');
+const REGULASI = path.join(ROOT, 'public/data/regulasi.json'), KELUAR = path.join(ROOT, 'public/data/kalender.json'), KONSUL = path.join(ROOT, 'public/data/konsultasi.json');
 const baca = (f) => (fs.existsSync(f) ? fs.readFileSync(f, 'utf8').split('\n').filter(Boolean).map((l) => JSON.parse(l)) : []);
 
 /** Judul publik: sebelum titik dua pertama; bila terlalu pendek, sampai koma/titik koma pertama. Angka rinci di belakangnya ikut dibuang. */
@@ -55,7 +56,7 @@ if (process.argv[1] === fileURLToPath(import.meta.url)) {
   if (process.argv.includes('--selftest')) { selftest(); console.log('selftest ok'); } else {
     selftest();
     const reg = JSON.parse(fs.readFileSync(REGULASI, 'utf8'));
-    const hasil = bangun(baca(AGENDA), reg.baris, baca(TENGGAT), process.env.TANGGAL_BANGUN || reg.dibangun_pada);
+    const hasil = bangun(baca(AGENDA), reg.baris, [...baca(TENGGAT), ...tenggatDari(fs.existsSync(KONSUL) ? JSON.parse(fs.readFileSync(KONSUL, 'utf8')) : { baris: [] }).map((t) => ({ tanggal: t.tanggal, judul: t.judul, mitra: t.mitra, url: t.sumber.url }))], process.env.TANGGAL_BANGUN || reg.dibangun_pada);
     const perkaya = path.join(ROOT, 'data/kalender_perkaya.json');
     const akhir = fs.existsSync(perkaya) ? gabung(hasil, JSON.parse(fs.readFileSync(perkaya, 'utf8'))) : hasil;
     fs.writeFileSync(KELUAR, JSON.stringify(akhir));

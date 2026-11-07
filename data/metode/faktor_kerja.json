@@ -1,0 +1,23 @@
+{
+  "judul": "Faktor tenaga kerja per MW untuk perkiraan (EST) di halaman proyek",
+  "diperbarui": "2026-11-08",
+  "catatan": "Faktor dasar negara OECD dari Rutovitz, Dominish, Downes (2015), dikalikan pengali produktivitas Non-OECD Asia. Manufaktur komponen tidak dihitung karena sebagian besar dikerjakan di luar Indonesia. IRENA (2012) hanya memberi job-years per GWh, bukan per MW, sehingga dipakai sebagai pembanding urutan teknologi, bukan sebagai faktor.",
+  "sumber": [
+    {"id": "uts2015", "judul": "Calculating global energy sector jobs: 2015 methodology update, Tabel 1 (faktor OECD) dan Tabel 6 (pengali regional)", "penerbit": "Institute for Sustainable Futures, University of Technology Sydney", "tahun": 2015, "url": "https://opus.lib.uts.edu.au/bitstream/10453/43718/1/Rutovitzetal2015Calculatingglobalenergysectorjobsmethodology.pdf"},
+    {"id": "irena2012", "judul": "Renewable Energy Jobs: Status, Prospects and Policies (pembanding job-years per GWh)", "penerbit": "IRENA", "tahun": 2012, "url": "https://www.irena.org/-/media/Files/IRENA/Agency/Publication/2012/RenewableEnergyJobs.pdf"}
+  ],
+  "pengali_wilayah": {"nilai": 2.4, "wilayah": "Non-OECD Asia", "tahun": 2015, "sumber_id": "uts2015"},
+  "ambang_hidro_besar_mw": 10,
+  "ambang_catatan": "Pemisahan PLTA besar dan kecil di sumber tidak diberi ambang angka; ambang 10 MW adalah asumsi METI.",
+  "faktor": {
+    "surya": {"konstruksi": 13.0, "manufaktur": 6.7, "om": 0.7, "satuan_konstruksi": "tahun-orang per MW", "satuan_om": "orang per MW"},
+    "bayu": {"konstruksi": 3.2, "manufaktur": 4.7, "om": 0.3},
+    "hidro-besar": {"konstruksi": 7.4, "manufaktur": 3.5, "om": 0.2},
+    "hidro-kecil": {"konstruksi": 15.8, "manufaktur": 10.9, "om": 4.9},
+    "panas-bumi": {"konstruksi": 6.8, "manufaktur": 3.9, "om": 0.4},
+    "bioenergi": {"konstruksi": 14.0, "manufaktur": 2.9, "om": 1.5},
+    "biomassa-sampah": {"konstruksi": 14.0, "manufaktur": 2.9, "om": 1.5},
+    "nuklir": {"konstruksi": 11.8, "manufaktur": 1.3, "om": 0.6}
+  },
+  "tanpa_faktor": ["penyimpanan"]
+}

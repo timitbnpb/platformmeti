@@ -16,6 +16,8 @@ import { rute as ruteKta } from "./kta.js";
 import { rute as ruteIkuti } from "./ikuti.js";
 import { rute as rutePortal } from "./portal.js";
 import { rute as ruteWilayahKelola } from "./wilayah_kelola.js";
+import { rute as ruteDaftar } from "./daftar.js";
+import { catatHit, perbaruiRentang } from "./lalin.js";
 import * as hak from "./hak.js";
 import { halamanProfil } from "./profil.js";
 import { halamanSiaran } from "./siaran.js";
@@ -37,7 +39,7 @@ const rutePemilik = {
 };
 
 // Tabel rute dikompilasi sekali: { metode, bagian[], fn }.
-const DAFTAR = Object.entries({ ...ruteSesi, ...ruteAkun, ...ruteAgenda, ...ruteEvent, ...ruteDirektori, ...ruteFoto, ...ruteAdmin, ...ruteLangganan, ...ruteKelayakan, ...rutePustaka, ...ruteKta, ...ruteMetiWilayah, ...rutePesan, ...ruteProfilAkun, ...ruteIkuti, ...rutePortal, ...ruteWilayahKelola, ...rutePemilik }).map(([k, fn]) => {
+const DAFTAR = Object.entries({ ...ruteSesi, ...ruteAkun, ...ruteAgenda, ...ruteEvent, ...ruteDirektori, ...ruteFoto, ...ruteAdmin, ...ruteLangganan, ...ruteKelayakan, ...rutePustaka, ...ruteKta, ...ruteMetiWilayah, ...rutePesan, ...ruteProfilAkun, ...ruteIkuti, ...rutePortal, ...ruteWilayahKelola, ...ruteDaftar, ...rutePemilik }).map(([k, fn]) => {
   const [metode, jalur] = k.split(" ");
   return { metode, bagian: jalur.split("/").slice(1), fn };
 });
@@ -77,9 +79,11 @@ async function icsSah(env, t) {
 }
 
 // Seluruh situs di balik login (KEPUTUSAN 7 Nov 2026): hanya alur masuk, aset yang dibutuhkannya, dan API masuk yang terbuka.
-const PUBLIK = /^\/((masuk|aktivasi|ganti-sandi|404)(\.html)?|masuk\.js|kta_v\.js|kta\.css|tema\.js|i18n\.js|404\.js|langganan(\.html|\.js|\.css)?|berhenti|favicon[^/]*|robots\.txt)$|^\/inti\/[^/]+\.(css|js)$|^\/i18n\/|^\/img\/(logo|ikon)[^/]*$|^\/img\/logo\/meti\.png$|^\/img\/beranda\/[^/]+\.webp$|^\/fonts\/|^\/kta\/v\/\d{1,9}\.[0-9a-f]{32}$/;
+const PUBLIK = /^\/((masuk|aktivasi|ganti-sandi|404)(\.html)?|masuk\.js|kta_v\.js|kta\.css|tema\.js|i18n\.js|404\.js|langganan(\.html|\.js|\.css)?|daftar(\.html|\.js|\.css)?|daftar\/lacak\/[0-9a-f]{64}|berhenti|favicon[^/]*|robots\.txt)$|^\/inti\/[^/]+\.(css|js)$|^\/i18n\/|^\/img\/(logo|ikon)[^/]*$|^\/img\/logo\/meti\.png$|^\/img\/beranda\/[^/]+\.webp$|^\/fonts\/|^\/kta\/v\/\d{1,9}\.[0-9a-f]{32}$/;
 // /api/langganan(/berhenti): ajakan publik newsletter (K19 turunan); rute lain di langganan.js tetap menagih sesi lewat perlu().
-const API_PUBLIK = new Set(["/api/masuk", "/api/keluar", "/api/status", "/api/aktivasi", "/api/saya", "/api/langganan", "/api/langganan/berhenti"]);
+const API_PUBLIK = new Set(["/api/masuk", "/api/keluar", "/api/status", "/api/aktivasi", "/api/saya", "/api/langganan", "/api/langganan/berhenti",
+  // Pendaftaran anggota mandiri (8 Nov 2026): tamu boleh mendaftar, melacak lewat token (di badan), dan mengunggah bukti iuran.
+  "/api/daftar", "/api/daftar/foto", "/api/daftar/lacak", "/api/daftar/bukti", "/api/daftar/bayar-online", "/api/daftar/midtrans/notifikasi"]);
 
 // Verifikasi KTA publik (token HMAC di jalur; salah = 404 seragam): satu-satunya rute data terbuka selain alur masuk.
 const API_KTA_PUBLIK = /^\/api\/kta\/verifikasi\/[^/]+$/;
@@ -184,6 +188,7 @@ async function halaman(req, env, url, akun) {
     return (await halamanProfil(req, env, url, m[1], m[2])) ?? TIDAK_ADA();
   }
   // Tautan berhenti newsletter (terbuka, bertoken di query): halaman yang sama dengan /langganan, mode dipilih skrip dari jalurnya.
+  if (/^\/daftar\/lacak\/[0-9a-f]{64}$/.test(path)) return halamanPrivat(await env.ASSETS.fetch(new Request(new URL("/daftar", url), { method: req.method })));
   if (path === "/berhenti") return halamanPrivat(await env.ASSETS.fetch(new Request(new URL("/langganan", url), { method: req.method })));
   if (/^\/kta\/v\/\d{1,9}\.[0-9a-f]{32}$/.test(path) && (req.method === "GET" || req.method === "HEAD")) return halamanPrivat(await env.ASSETS.fetch(new Request(new URL("/kta_v", url), { method: req.method })));
   if ((m = path.match(/^\/siaran-pers\/([^/]+)$/)) && (req.method === "GET" || req.method === "HEAD")) {
@@ -246,7 +251,7 @@ async function api(req, env, ctx, url) {
     metodeLain = true;
   }
   if (!ada) return metodeLain ? gagal("metode") : gagal("tidak_ditemukan");
-  if (TULIS.has(req.method) && !(url.pathname === "/api/statistik" ? asalSama(req, url) : csrfSah(req, url))) return gagal("dilarang");
+  if (TULIS.has(req.method) && !(url.pathname === "/api/statistik" ? asalSama(req, url) : url.pathname === "/api/daftar/midtrans/notifikasi" || csrfSah(req, url))) return gagal("dilarang");
   const { sesi, akun } = await muatSesi(req, env);
   if (!akun && !API_PUBLIK.has(url.pathname) && !API_KTA_PUBLIK.test(url.pathname)) return gagal("belum_masuk", 401, PRIVAT);
   if (akun?.wajib_ganti && !BOLEH_WAJIB_GANTI.has(url.pathname)) return gagal("dilarang");
@@ -273,7 +278,9 @@ export default {
       res = new Response(res.body, res);
       res.headers.set("x-content-type-options", "nosniff");
     }
+    // Lalu lintas orang vs AI: dihitung sebelum gerbang masuk berlaku (bot yang menabrak /masuk tetap tercatat); galat tak pernah mengganggu respons.
+    ctx?.waitUntil?.(catatHit(env, req, res.status).catch((e) => console.error("lalin", e?.message)));
     return res;
   },
-  async scheduled() {},
+  async scheduled(ev, env, ctx) { ctx?.waitUntil?.(perbaruiRentang(env).catch((e) => console.error("rentang-ip", e?.message))); },
 };

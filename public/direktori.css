@@ -2841,3 +2841,34 @@ img.ak-foto,.ak-pgr img,.ak-pk-foto img,.ak-pkbtn img.ak-foto,.ak-orang img.ak-f
 .ak-mw{display:inline-flex;align-items:center;align-self:flex-start;gap:5px;font-size:var(--t-label);font-weight:700;line-height:14px;color:var(--ink);background:color-mix(in srgb,var(--meti-lime) 28%,transparent);border:1px solid var(--meti-lime);border-radius:999px;padding:3px 9px;text-decoration:none}
 .ak-mw img{width:14px;height:14px;object-fit:contain}
 .ak-mw:hover{background:color-mix(in srgb,var(--meti-lime) 45%,transparent)}
+
+/* foto direksi: titik info sumber di pojok kanan atas foto (pengganti baris kredit bergaris bawah) */
+.ak-pgf{position:relative}
+.ak-pgf .ak-fkr{position:absolute;top:0;right:8px;z-index:2}
+.ak-pgf .ak-fkr .jm-sumber-b{width:20px;height:20px}
+.ak-pgf .ak-fi{display:inline-grid;place-items:center;width:20px;height:20px;border-radius:50%;border:1px solid var(--line);background:var(--card);color:var(--ink2);font-size:var(--t-kecil);text-decoration:none}
+.ak-in-gw{position:relative;width:min(100%,260px)}.ak-in-gw .ak-in-gal{width:100%}.ak-in-gw .ak-fkr{position:absolute;top:6px;right:6px;z-index:2}
+
+/* tab Riset: kartu topik memuat empat angka (karya, pakar, berita, proyek) dan tautan program */
+.ak-kj2-u{flex-wrap:wrap}.ak-kj2-u>div{flex:1 1 calc(50% - 8px);min-width:0}.ak-kj2-u>div.nol{opacity:.55}
+.ak-kj2-p{display:inline-flex;align-items:center;gap:6px;align-self:flex-start;font-size:var(--t-label);font-weight:600;color:var(--brand);text-decoration:none}
+.ak-kj2-p svg{width:14px;height:14px;fill:none;stroke:currentColor;stroke-width:1.9}.ak-kj2-p:hover{text-decoration:underline}
+.ak-rkbaris .ak-tbl:disabled{opacity:.45;cursor:not-allowed;box-shadow:none}
+.ak-kj2-a{flex-wrap:wrap}.ak-kj2-j{flex:none;max-width:100%;white-space:nowrap}
+/* tab Riset: chip sektor mengalir ke bawah ujung ke ujung (bukan satu baris tergulir); sumber tiga kolom sama lebar */
+#akRR,#akKjC{display:flex;flex-wrap:wrap;overflow:visible;grid-auto-flow:row}
+#akRR button,#akKjC button{flex:1 1 auto}
+#akRS{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));width:100%;overflow:visible}
+@media (max-width:600px){#akRS button{white-space:normal;flex-direction:column;gap:2px;min-height:44px;padding:4px 6px;line-height:1.15;text-align:center}}
+.ak-kepala-nav>#akPS{display:none!important}   /* Pusat studi / Aset riset sudah ada di bilah sub-tab Riset */
+
+/* Sistem data dan Pendanaan: batang tipis tanpa lintasan */
+#akv-sistem_data .ak-bt,#akv-pendanaan .ak-bt{background:none;height:5px;border-radius:3px}
+#akv-sistem_data .ak-bt i,#akv-pendanaan .ak-bt i{border-radius:3px}
+.ak-pn-kep{display:grid;gap:6px}.ak-pn-jd{font-size:var(--t-h2);font-weight:700;color:var(--ink)}.ak-pn-kal{font-size:var(--t-body);font-weight:400;color:var(--ink2)}
+.ak-pn-tabel tbody tr{cursor:pointer}.ak-pn-tabel tbody tr:hover{background:var(--surface)}.ak-pn-nm{display:flex;align-items:center;gap:10px}.ak-pn-tek{display:inline-grid;place-items:center;margin-right:4px}.ak-pn-tek svg{width:18px;height:18px}
+.ak-pn-tabel td{vertical-align:middle}.ak-pn-tabel .ak-n{text-align:right;font-variant-numeric:tabular-nums}
+#akPdS button{white-space:nowrap}
+@media (max-width:600px){#akPdS{display:flex;overflow-x:auto;gap:6px;scrollbar-width:none;-webkit-mask-image:linear-gradient(90deg,#000 88%,transparent);mask-image:linear-gradient(90deg,#000 88%,transparent)}#akPdS::-webkit-scrollbar{display:none}#akPdS button{flex:0 0 auto;width:auto;min-width:max-content;padding-inline:14px;overflow:visible}}
+#akPkRC,#akHbRC,#akDsRC{display:flex;flex-wrap:wrap;overflow:visible;grid-auto-flow:row}
+#akPkRC button,#akHbRC button,#akDsRC button{flex:1 1 auto}

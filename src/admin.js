@@ -61,6 +61,15 @@ export const rute = {
     return r ? json(r, 200, PRIVAT) : NONAKTIF();
   },
 
+  // Lalu lintas orang vs AI (0020): GET /api/admin/lalin?r=24j|7h|30h|semua
+  "GET /api/admin/lalin": async (req, env, ctx, p) => {
+    const akun = perlu(p, ADM);
+    const r = new URL(req.url).searchParams.get("r") ?? "7h";
+    if (!["24j", "7h", "30h", "semua"].includes(r)) return gagal("masukan_salah", 422);
+    const d = await hak.lalinAdmin(env, akun, r);
+    return d ? json(d, 200, PRIVAT) : NONAKTIF();
+  },
+
   // sendBeacon: tidak bisa memasang x-pb, jadi router memeriksa asal sendiri untuk jalur ini.
   // 204 untuk kunci yang tak lolos normalisasi; 422 badan/jenis salah; 429 bila melewati batas laju.
   "POST /api/statistik": async (req, env) => {

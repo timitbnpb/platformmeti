@@ -1,0 +1,12 @@
+[
+ {"id": "ds-gsa", "nama": "Global Solar Atlas", "penyedia": "Bank Dunia (data Solargis)", "jenis": "peta dan data potensi", "sektor": ["surya"], "cakupan": "Global, termasuk Indonesia", "web": "https://globalsolaratlas.info", "kata": ["Global Solar Atlas"]},
+ {"id": "ds-gwa", "nama": "Global Wind Atlas", "penyedia": "DTU dan Bank Dunia", "jenis": "peta dan data potensi", "sektor": ["bayu"], "cakupan": "Global, termasuk Indonesia", "web": "https://globalwindatlas.info", "kata": ["Global Wind Atlas"]},
+ {"id": "ds-nasa-power", "nama": "NASA POWER (data radiasi dan cuaca untuk energi)", "penyedia": "NASA", "jenis": "data deret waktu dan API", "sektor": ["surya", "bayu"], "cakupan": "Global", "web": "https://power.larc.nasa.gov", "kata": ["POWER"]},
+ {"id": "ds-satudata", "nama": "Portal Satu Data Indonesia", "penyedia": "Pemerintah Republik Indonesia", "jenis": "portal data terbuka", "sektor": ["efisiensi"], "cakupan": "Nasional", "web": "https://data.go.id", "kata": ["Satu Data"]},
+ {"id": "ds-bps", "nama": "Badan Pusat Statistik", "penyedia": "BPS", "jenis": "statistik resmi", "sektor": ["efisiensi"], "cakupan": "Nasional dan provinsi", "web": "https://www.bps.go.id", "kata": ["Badan Pusat Statistik"]},
+ {"id": "ds-wri-gppd", "nama": "WRI Global Power Plant Database", "penyedia": "World Resources Institute", "jenis": "basis data pembangkit", "sektor": ["jaringan"], "cakupan": "Global, termasuk Indonesia", "web": "https://datasets.wri.org", "kata": ["WRI"]},
+ {"id": "ds-gem", "nama": "Global Energy Monitor", "penyedia": "Global Energy Monitor", "jenis": "pelacak pembangkit dan proyek", "sektor": ["jaringan"], "cakupan": "Global, termasuk Indonesia", "web": "https://globalenergymonitor.org", "kata": ["Global Energy Monitor"]},
+ {"id": "ds-irena", "nama": "Statistik energi terbarukan IRENA", "penyedia": "IRENA", "jenis": "statistik kapasitas dan biaya", "sektor": ["kebijakan"], "cakupan": "Global, per negara", "web": "https://www.irena.org/Data", "kata": ["IRENA"]},
+ {"id": "ds-osm", "nama": "OpenStreetMap", "penyedia": "OpenStreetMap Foundation", "jenis": "data peta terbuka", "sektor": ["jaringan"], "cakupan": "Global", "web": "https://www.openstreetmap.org", "kata": ["OpenStreetMap"]},
+ {"id": "ds-openalex", "nama": "OpenAlex", "penyedia": "OurResearch", "jenis": "metadata karya ilmiah (CC0)", "sektor": ["kebijakan"], "cakupan": "Global", "web": "https://openalex.org", "kata": ["OpenAlex"]}
+]

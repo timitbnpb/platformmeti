@@ -28,6 +28,57 @@ Logo hanya untuk mengenali organisasi. Diambil 7 Nov 2026 dari ikon resmi di sit
 Diambil oleh scripts/panen/panen_logo.mjs (UA METI, robots.txt dihormati, jeda >= 2 dtk per host). Berkas public/img/logo/org/<org_id>.png; catatan mentah data-panen/logo/logo.jsonl. Logo hanya untuk mengenali organisasi; hak cipta tetap pada pemiliknya. Metode wikidata-p154: logo di Wikimedia Commons.
 
 - am_c3ae14a5 | PT. ANDRITZ Hydro | wikidata-p154 | https://commons.wikimedia.org/wiki/File:Andritz_Hydro_Logo.svg (Wikidata Q511944)
+- in_034df13777 | Aboitiz Power (SN Aboitiz Power) | logo-header | https://aboitizpower.com/static-assets/header/aboitiz-power-logo.png
+- in_0552b8f6a9 | ACEN Corporation | apple-touch-icon | https://www.acenrenewables.com/storage/2024/09/acen-favicon.png
+- in_0b044d6d3e | IGIS Asset Management | wikidata-p154 | https://commons.wikimedia.org/wiki/File:IGIS_Asset_Management.png (Wikidata Q115056612)
+- in_0d1892cd4f | World Bank | og-image | https://www.worldbank.org/ext/en/media_1d3c9b6f1c41de4cf0aea31fbf18f449397fcedbe.jpg?width=1200&#x26;format=pjpg&#x26;optimize=medium
+- in_102d767a80 | Sumitomo Mitsui Banking Corporation | apple-touch-icon | https://www.smbc.co.jp/apple-touch-icon.png
+- in_12838779f4 | PacificLight Power | apple-touch-icon | https://www.pacificlight.com.sg/favicon/apple-touch-icon.png
+- in_284d3c9557 | Khazanah | logo-header | https://www.khazanah.com.my/wp-content/uploads/logo.svg
+- in_34901d69af | Siemens Energy | og-image | https://assets.siemens-energy.com/dam/c9943d17-fbfb-4061-9d4a-b38b0092804a/Grid-access-sales-manager-Christian_184-jpg_Rendition1280.jpg
+- in_37f8a574f6 | Netherlands Enterprise Agency (RVO) | wikidata-p154 | https://commons.wikimedia.org/wiki/File:Logo_RDO.svg (Wikidata Q15881312)
+- in_41e3e0c573 | Islamic Development Bank | apple-touch-icon | https://www.isdb.org/apple-touch-icon.png
+- in_4354ac2f54 | Private Infrastructure Development Group | apple-touch-icon | https://pidg.org/wp-content/uploads/cropped-favicon-192x192.png
+- in_4534c37022 | Office for Government Policy Coordination (Korea) | wikidata-p154 | https://commons.wikimedia.org/wiki/File:Office_for_Government_Policy_Coordination_of_the_Republic_of_Korea_Logo_(vertical).svg (Wikidata Q12592024)
+- in_4c35ebc90f | Equinor | og-image | https://cdn.equinor.com/images/h61q9gi9/global/a8acf96481d898337d1a0ac4374880b88e3afb75-6489x4326.jpg?rect=0,468,6489,3391&w=1200&h=627&fit=crop&auto=format
+- in_55021b70c7 | South Pole | apple-touch-icon | https://www.southpole.com/apple-touch-icon.png
+- in_568bb2c518 | Keppel | apple-touch-icon | https://www.keppel.com/apple-touch-icon.png
+- in_57d7ae2795 | Fmo | logo-header | https://www.fmo.nl/l/library/download/urn:uuid:6ed885e1-dbcc-4f61-a101-8799439af084/fmo-without+edb.png?scaleType=1&height=100
+- in_63d60cac64 | Fuji Electric | og-image | https://www.fujielectric.com/ics/res/img/ogp/ogp-global.png
+- in_69e0337f94 | Kosher Climate | apple-touch-icon | https://kosherclimate.com/wp-content/uploads/2022/04/kosher-favicon-1-300x300.png
+- in_733c8ba1ad | European Commission | apple-touch-icon | https://commission.europa.eu/themes/contrib/oe_theme/images/favicons/ec/favicon.png
+- in_7906ed1464 | Scatec | apple-touch-icon | https://www.scatec.com/en/wp-content/uploads/sites/2/2025/11/cropped-favicon-32x32-1-300x298.png
+- in_7d164dcab7 | Millennium Challenge Corporation | wikidata-p154 | https://commons.wikimedia.org/wiki/File:US-MillenniumChallengeCorporation-2008Logo.svg (Wikidata Q1425405)
+- in_838811a72d | REPT Battero | apple-touch-icon | https://www.reptbattero.com/wp-content/uploads/2023/09/REPT-BATTERO-logo-2-300x300.png
+- in_86f9d210d2 | Wartsila | logo-header | https://www.wartsila.com/images/default-source/brand-portal/logo/w_logo_color_pos_rgb.png
+- in_8da76cdbb4 | Toshiba | apple-touch-icon | https://www.global.toshiba/content/dam/toshiba/brand-assets/favicon/touch-icon_152.png
+- in_8faeb24f4f | Swedish International Development Cooperation Agency (Sida) | apple-touch-icon | https://www.sida.se/icon-apple.png
+- in_935a274434 | Green Climate Fund | apple-touch-icon | https://www.greenclimate.fund/themes/custom/gcf_theme/static/favicon/2026/favicon-96x96.png
+- in_977f02422f | Hitachi Energy | apple-touch-icon | https://www.hitachienergy.com/etc.clientlibs/pg/clientlibs/clientlib-site/resources/apple-touch-icon-180x180.png
+- in_990f523213 | Mitsubishi Power | apple-touch-icon | https://power.mhi.com/themes/custom/mhps/favicons/en/apple_touch_icon.png
+- in_b50ac2a3e1 | Contemporary Amperex Technology (CATL) | favicon | https://www.catl.com/favicon.ico
+- in_b58bf2b897 | US Trade and Development Agency (USTDA) | favicon | https://ustda.gov/favicon.ico
+- in_b85adbd893 | Ember | logo-header | https://ember-energy.org/app/themes/ember-energy/resources/images/icons/Ember24HoverGrad.svg
+- in_b87ab519c7 | Shell | apple-touch-icon | https://www.shell.com/etc.clientlibs/amidala/clientlibs/theme-base/resources/favicon/apple-touch-icon.png
+- in_bad1f1473c | J-Power (Electric Power Development) | apple-touch-icon | https://www.jpower.co.jp/android-touch-icon.png
+- in_bff562d58f | German Federal Ministry for Economic Cooperation and Development (BMZ) | apple-touch-icon | https://www.bmz.de/resource/crblob/10326/fc3e7504d845a324cf22c5fa175511ca/apple-touch-icon-180x180-png-data.png
+- in_c462bee334 | Mitsubishi Heavy Industries | apple-touch-icon | https://www.mhi.com/themes/custom/mhi_base_theme/favicons/en/apple_touch_icon.png
+- in_c699a709bf | Ormat Technologies | logo-header | https://ormat.cachefly.net/Warehouse//misc/hero-logo-60.svg
+- in_cdb4d9d1ed | Norwegian Agency for Development Cooperation (Norad) | og-image | https://www.norad.no/globalassets/bilder/norads-lokaler-2026/norad_fasade-16.jpg?width=1200&height=627&quality=80&rxy=0.5,0.5
+- in_d99e015b2a | Envision Energy | wikidata-p154 | https://commons.wikimedia.org/wiki/File:Logo_envision.png (Wikidata Q24910394)
+- in_da1b59b2ea | Jiangsu Seraphim Solar System | logo-header | https://www.seraphim-energy.com/uploads/upload/images/20240912/193fe702daebc6a9150499b58b35273e.png
+- in_dbbeb7c197 | Aboitiz Equity Ventures | wikidata-p154 | https://commons.wikimedia.org/wiki/File:Aboitiz_Equity_Ventures_logo.svg (Wikidata Q48804734)
+- in_e049455716 | Global Environment Facility | apple-touch-icon | https://www.thegef.org/themes/custom/geftheme/images/icons/apple-touch-icon-180x180.png
+- in_eb327fef3a | Japan International Cooperation Agency | apple-touch-icon | https://www.jica.go.jp/apple-touch-icon.png
+- in_ec3f049b8f | Danish Ministry of Foreign Affairs (Danida) | apple-touch-icon | https://um.dk/media/hnrpmdo5/um-ico.png?rmode=pad&width=180&height=180&format=png&bgcolor=transparent&v=1dc8ba4219ce4e0
+- in_ec6d8569f9 | Inpex | logo-header | https://www.inpex.com/assets/images/common/logo-inpex.svg
+- in_eeb5d39e3d | Ansaldo Energia | apple-touch-icon | https://www.ansaldoenergia.com/typo3conf/ext/sculptor_ansaldoenergia/Resources/Public/img/favicons/apple-touch-icon.png
+- in_ef4c0b53eb | LONGi Green Energy | og-image | https://www.longi.com/_nuxt/img/seoLogo.1ecaaf1.png
+- in_f1af67d742 | Akuo | apple-touch-icon | https://www.akuoenergy.com/themes/custom/frontend/apple-touch-icon.png
+- in_f3b7246f11 | Ampotech | apple-touch-icon | https://www.ampotech.com/wp-content/uploads/2024/11/cropped-512x512-1-192x192.png
+- in_f702e0408e | ib vogt | apple-touch-icon | https://www.ibvogt.com/wp-content/uploads/2023/03/cropped-favicon_ib-vogt_blue-192x192.png
+- in_fe6aa1aba4 | Solar Philippines | apple-touch-icon | https://www.solarphilippines.ph/wp-content/uploads/2019/07/solar-logo-black.png
+- in_fe91e3c6a5 | Vale | apple-touch-icon | https://vale.com/documents/44618/57981/fav_128px/550e3a42-f32c-7356-de52-41320d095395
 - l_01e6230365 | Perusahaan Listrik Negara | wikidata-p154 | https://commons.wikimedia.org/wiki/File:Logo_PLN.svg (Wikidata Q4201636)
 - l_05301f48a5 | Kementerian Investasi dan Hilirisasi/BKPM | logo-header | https://bkpm.go.id/assets/frontend/image/logo/logo-id-2024.png
 - l_060c77568c | Badan Pengelola Dana Perkebunan | wikidata-p154 | https://commons.wikimedia.org/wiki/File:Logo_BPDP_Sawit.svg (Wikidata Q122763776)

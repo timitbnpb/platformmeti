@@ -174,12 +174,15 @@ function cmdBangun() {
   const b = JSON.parse(fs.readFileSync(path.join(D, 'bukti.json'), 'utf8')); const calon = new Map(parseCalon().map((c) => [c.nama, c]));
   const sf = path.join(D, 'situs.json'); const situs = fs.existsSync(sf) ? JSON.parse(fs.readFileSync(sf, 'utf8')).baris : {};
   const orgs = J('public/data/organisasi.json').baris; const idNama = new Map(orgs.map((o) => [norm(o.nama), o]));
+  const pf = path.join(ROOT, 'data-panen/perusahaan/perusahaan.jsonl');
+  const lokal = (fs.existsSync(pf) ? fs.readFileSync(pf, 'utf8').split('\n').filter(Boolean).map((l) => JSON.parse(l)) : []).map((p) => ({ id: p.perusahaan_id, nama: p.nama, induk: p.induk }));
   const rows = [];
   for (const x of b.baris) {
     const c = calon.get(x.nama); const s = situs[x.nama]; const sOk = s?.status === 'ok';
     const kunci = norm(c.nama);
     const multi = MULTI.has(c.iso);
-    const afil = c.afiliasi.map((n) => idNama.get(norm(n))).filter(Boolean).map((o) => ({ organisasi_id: o.id, nama: o.nama }));
+    // afiliasi: PT lokal di direktori yang induknya (atau namanya) memuat pola entitas ini; induk berasal dari benih (inferensi), maka hanya ditautkan bila PT itu sendiri bernama 'PT ...'
+    const afil = [...new Map([...c.afiliasi.map((n) => idNama.get(norm(n))).filter(Boolean).map((o) => [o.id, o.nama]), ...lokal.filter((l) => !l.id.startsWith('in_') && /^pt\b/i.test(l.nama) && c.pola.some((pl) => pl.trim().length >= 4 && (norm(l.induk || '').includes(pl) || norm(l.nama).includes(pl)))).map((l) => [l.id, l.nama])]).entries()].map(([organisasi_id, nama]) => ({ organisasi_id, nama }));
     const sumber = x.bukti.map((e, i) => ({ id: 'b' + (i + 1) + '-' + e.jenis, url: e.url, keterangan: e.ket, tanggal_periksa: TGL, tingkat_bukti: e.tb === 'resmi' ? 'resmi' : e.tb || 'kajian' }));
     if (sOk) sumber.push({ id: 'situs', url: c.situs, keterangan: 'situs resmi, beranda terbaca dan memuat nama', tanggal_periksa: TGL, tingkat_bukti: 'kata-pihak' });
     sumber.push({ id: 'benih', url: null, keterangan: 'negara markas dan subjenis: pengetahuan peneliti METI (inferensi)', tanggal_periksa: TGL, tingkat_bukti: 'inferensi' });

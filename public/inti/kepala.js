@@ -31,7 +31,7 @@ const TAB = [
     { href: "/indeks", kunci: "nav.indeks", ikon: "grafik" }] },
   { kunci: "nav.direktori", ikon: "direktori", hak: "masuk", grup: [
     { href: "/direktori?tampil=pakar", kunci: "nav.d_orang", ikon: "orang" }, { href: "/direktori?tampil=lembaga", kunci: "nav.d_org", ikon: "gedung" },
-    { href: "/direktori?tampil=inovasi", kunci: "nav.d_inovasi", ikon: "tek-surya" }] },
+    { href: "/direktori?tampil=inovasi", kunci: "nav.d_inovasi", ikon: "tek-surya" }, { href: "/sektor", kunci: "nav.d_sektor", ikon: "analisis" }] },
   { kunci: "nav.pustaka", ikon: "buku", hak: null, grup: [
     { href: "/regulasi", kunci: "nav.regulasi", ikon: "regulasi" }, { href: "/pustaka", kunci: "nav.dokumen", ikon: "pdf" }] },
   { kunci: "nav.media", ikon: "kamera", hak: null, grup: [

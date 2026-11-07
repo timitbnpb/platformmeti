@@ -554,6 +554,192 @@
    "url_akhir": "https://www.smbc.co.jp/",
    "judul": "�O��Z�F��s",
    "tanggal": "2026-11-08"
+  },
+  "GIZ": {
+   "status": "diblokir",
+   "alasan": "robots.txt melarang"
+  },
+  "DEG": {
+   "status": "diblokir",
+   "alasan": "robots.txt melarang"
+  },
+  "German Federal Ministry for Economic Cooperation and Development (BMZ)": {
+   "status": "ok",
+   "url_akhir": "https://www.bmz.de/de",
+   "judul": "Bundesministerium für wirtschaftliche Zusammenarbeit und Entwicklung",
+   "tanggal": "2026-11-08"
+  },
+  "Agence Francaise de Developpement": {
+   "status": "diblokir",
+   "alasan": "robots.txt melarang"
+  },
+  "Proparco": {
+   "status": "diblokir",
+   "alasan": "robots.txt melarang"
+  },
+  "Netherlands Enterprise Agency (RVO)": {
+   "status": "ok",
+   "url_akhir": "https://www.rvo.nl/",
+   "judul": "Rijksdienst voor Ondernemend Nederland | RVO.nl",
+   "tanggal": "2026-11-08"
+  },
+  "FMO": {
+   "status": "ok",
+   "url_akhir": "https://www.fmo.nl/",
+   "judul": "Dutch Entrepreneurial Development Bank - FMO",
+   "tanggal": "2026-11-08"
+  },
+  "Norwegian Agency for Development Cooperation (Norad)": {
+   "status": "ok",
+   "url_akhir": "https://www.norad.no/",
+   "judul": "Norad | Norad.no",
+   "tanggal": "2026-11-08"
+  },
+  "Swedish International Development Cooperation Agency (Sida)": {
+   "status": "ok",
+   "url_akhir": "https://www.sida.se/",
+   "judul": "Startsida | Styrelsen för internationellt utvecklingssamarbete | Sida",
+   "tanggal": "2026-11-08"
+  },
+  "Danish Ministry of Foreign Affairs (Danida)": {
+   "status": "ok",
+   "url_akhir": "https://um.dk/",
+   "judul": "Udenrigsministeriet",
+   "tanggal": "2026-11-08"
+  },
+  "Finnfund": {
+   "status": "gagal",
+   "alasan": "The operation was aborted due to timeout"
+  },
+  "Finland Ministry for Foreign Affairs": {
+   "status": "diblokir",
+   "alasan": "HTTP 403"
+  },
+  "Australian Department of Foreign Affairs and Trade (DFAT)": {
+   "status": "gagal",
+   "alasan": "The operation was aborted due to timeout"
+  },
+  "Global Affairs Canada": {
+   "status": "diblokir",
+   "alasan": "robots.txt melarang"
+  },
+  "New Zealand Ministry of Foreign Affairs and Trade": {
+   "status": "diblokir",
+   "alasan": "robots.txt melarang"
+  },
+  "UK Foreign Commonwealth and Development Office (FCDO)": {
+   "status": "diblokir",
+   "alasan": "robots.txt melarang"
+  },
+  "Standard Chartered": {
+   "status": "diblokir",
+   "alasan": "robots.txt melarang"
+  },
+  "Department for Science Innovation and Technology (UK)": {
+   "status": "diblokir",
+   "alasan": "robots.txt melarang"
+  },
+  "US International Development Finance Corporation (DFC)": {
+   "status": "diblokir",
+   "alasan": "robots.txt melarang"
+  },
+  "US Agency for International Development (USAID)": {
+   "status": "diblokir",
+   "alasan": "robots.txt 403/429"
+  },
+  "US Trade and Development Agency (USTDA)": {
+   "status": "ok",
+   "url_akhir": "https://ustda.gov/",
+   "judul": "USTDA &#8211; United States Trade and Development Agency",
+   "tanggal": "2026-11-08"
+  },
+  "Millennium Challenge Corporation": {
+   "status": "ok",
+   "url_akhir": "https://www.mcc.gov/",
+   "judul": "Millennium Challenge Corporation",
+   "tanggal": "2026-11-08"
+  },
+  "US Department of Energy": {
+   "status": "diblokir",
+   "alasan": "robots.txt melarang"
+  },
+  "US Department of State": {
+   "status": "diblokir",
+   "alasan": "robots.txt 403/429"
+  },
+  "Ember": {
+   "status": "ok",
+   "url_akhir": "https://ember-energy.org/",
+   "judul": "Ember",
+   "tanggal": "2026-11-08"
+  },
+  "South Pole": {
+   "status": "ok",
+   "url_akhir": "https://www.southpole.com/",
+   "judul": "South Pole | Climate consulting, carbon credits and project development",
+   "tanggal": "2026-11-08"
+  },
+  "myclimate Foundation": {
+   "status": "diblokir",
+   "alasan": "robots.txt melarang"
+  },
+  "Kosher Climate": {
+   "status": "ok",
+   "url_akhir": "https://kosherclimate.com/",
+   "judul": "Home - Kosher Climate",
+   "tanggal": "2026-11-08"
+  },
+  "Mitsubishi Power": {
+   "status": "ok",
+   "url_akhir": "https://power.mhi.com/",
+   "judul": "Mitsubishi Power",
+   "tanggal": "2026-11-08"
+  },
+  "CNOOC": {
+   "status": "tak-memuat-nama",
+   "url_akhir": "https://www.cnoocltd.com/",
+   "judul": "中国海洋石油有限公司"
+  },
+  "Khazanah": {
+   "status": "ok",
+   "url_akhir": "https://www.khazanah.com.my/",
+   "judul": "Home - Khazanah Nasional Berhad",
+   "tanggal": "2026-11-08"
+  },
+  "Aboitiz Equity Ventures": {
+   "status": "ok",
+   "url_akhir": "https://aboitiz.com/",
+   "judul": "Aboitiz | Building the Philippines&#x27; First Techglomerate",
+   "tanggal": "2026-11-08"
+  },
+  "GSMA Foundation": {
+   "status": "diblokir",
+   "alasan": "HTTP 403"
+  },
+  "Office for Government Policy Coordination (Korea)": {
+   "status": "ok",
+   "url_akhir": "https://www.opm.go.kr/en/index.do",
+   "judul": "Office for Government Policy Coordination Prime Minister's Secretariat",
+   "tanggal": "2026-11-08"
+  },
+  "German Federal Foreign Office": {
+   "status": "tak-memuat-nama",
+   "url_akhir": "https://www.auswaertiges-amt.de/",
+   "judul": "Auswärtiges Amt - Auswärtiges Amt"
+  },
+  "Ministry of Foreign Affairs of the Netherlands": {
+   "status": "tak-memuat-nama",
+   "url_akhir": "https://www.government.nl/",
+   "judul": "Information from the Government of the Netherlands | Government.nl"
+  },
+  "IMPSA": {
+   "status": "tak-memuat-nama",
+   "url_akhir": "https://www.impsa.com/",
+   "judul": "Sitio en mantenimiento"
+  },
+  "Hangzhou Jinjiang Group": {
+   "status": "gagal",
+   "alasan": "fetch failed"
   }
  }
 }

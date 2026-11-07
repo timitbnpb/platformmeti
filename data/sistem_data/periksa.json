@@ -1,0 +1,341 @@
+{
+ "sd_esdm_geoportal": {
+  "terjangkau": false,
+  "robots": "melarang",
+  "tanggal": "2026-11-08"
+ },
+ "sd_momi": {
+  "terjangkau": true,
+  "http": 200,
+  "robots": "boleh",
+  "tanggal": "2026-11-08"
+ },
+ "sd_heesi": {
+  "terjangkau": true,
+  "http": 200,
+  "robots": "boleh",
+  "tanggal": "2026-11-08"
+ },
+ "sd_gatrik": {
+  "terjangkau": true,
+  "http": 200,
+  "robots": "boleh",
+  "tanggal": "2026-11-08"
+ },
+ "sd_ebtke": {
+  "terjangkau": true,
+  "http": 200,
+  "robots": "boleh",
+  "tanggal": "2026-11-08"
+ },
+ "sd_satudata_esdm": {
+  "terjangkau": false,
+  "http": 0,
+  "robots": "tidak ada",
+  "tanggal": "2026-11-08"
+ },
+ "sd_pln_statistik": {
+  "terjangkau": false,
+  "http": 0,
+  "robots": "tidak ada",
+  "tanggal": "2026-11-08"
+ },
+ "sd_ruptl": {
+  "terjangkau": true,
+  "http": 200,
+  "robots": "boleh",
+  "tanggal": "2026-11-08"
+ },
+ "sd_oss": {
+  "terjangkau": true,
+  "http": 200,
+  "robots": "boleh",
+  "tanggal": "2026-11-08"
+ },
+ "sd_inaproc": {
+  "terjangkau": true,
+  "http": 200,
+  "robots": "boleh",
+  "tanggal": "2026-11-08"
+ },
+ "sd_opentender": {
+  "terjangkau": false,
+  "robots": "melarang",
+  "tanggal": "2026-11-08"
+ },
+ "sd_idxcarbon": {
+  "terjangkau": true,
+  "http": 200,
+  "robots": "tidak ada",
+  "tanggal": "2026-11-08"
+ },
+ "sd_srn_ppi": {
+  "terjangkau": false,
+  "http": 0,
+  "robots": "tidak ada",
+  "tanggal": "2026-11-08"
+ },
+ "sd_sign_smart": {
+  "terjangkau": false,
+  "http": 0,
+  "robots": "tidak ada",
+  "tanggal": "2026-11-08"
+ },
+ "sd_bps": {
+  "terjangkau": true,
+  "http": 200,
+  "robots": "tidak ada",
+  "tanggal": "2026-11-08"
+ },
+ "sd_data_go_id": {
+  "terjangkau": true,
+  "http": 200,
+  "robots": "boleh",
+  "tanggal": "2026-11-08"
+ },
+ "sd_kemendes": {
+  "terjangkau": false,
+  "http": 0,
+  "robots": "tidak ada",
+  "tanggal": "2026-11-08"
+ },
+ "sd_pddikti": {
+  "terjangkau": true,
+  "http": 200,
+  "robots": "boleh",
+  "tanggal": "2026-11-08"
+ },
+ "sd_sinta": {
+  "terjangkau": false,
+  "http": 403,
+  "robots": "tidak ada",
+  "tanggal": "2026-11-08"
+ },
+ "sd_tkdn": {
+  "terjangkau": true,
+  "http": 200,
+  "robots": "boleh",
+  "tanggal": "2026-11-08"
+ },
+ "sd_amdalnet": {
+  "terjangkau": false,
+  "http": 0,
+  "robots": "tidak ada",
+  "tanggal": "2026-11-08"
+ },
+ "sd_jdih_esdm": {
+  "terjangkau": true,
+  "http": 200,
+  "robots": "boleh",
+  "tanggal": "2026-11-08"
+ },
+ "sd_jdih_bpk": {
+  "terjangkau": true,
+  "http": 200,
+  "robots": "boleh",
+  "tanggal": "2026-11-08"
+ },
+ "sd_djppr": {
+  "terjangkau": false,
+  "http": 0,
+  "robots": "tidak ada",
+  "tanggal": "2026-11-08"
+ },
+ "sd_bmkg": {
+  "terjangkau": true,
+  "http": 200,
+  "robots": "boleh",
+  "tanggal": "2026-11-08"
+ },
+ "sd_ina_geoportal": {
+  "terjangkau": true,
+  "http": 200,
+  "robots": "tidak ada",
+  "tanggal": "2026-11-08"
+ },
+ "sd_den": {
+  "terjangkau": false,
+  "robots": "melarang",
+  "tanggal": "2026-11-08"
+ },
+ "sd_rin_brin": {
+  "terjangkau": true,
+  "http": 200,
+  "robots": "boleh",
+  "tanggal": "2026-11-08"
+ },
+ "sd_garuda": {
+  "terjangkau": true,
+  "http": 200,
+  "robots": "tidak ada",
+  "tanggal": "2026-11-08"
+ },
+ "sd_sipsn": {
+  "terjangkau": false,
+  "http": 0,
+  "robots": "tidak ada",
+  "tanggal": "2026-11-08"
+ },
+ "sd_idx_emiten": {
+  "terjangkau": false,
+  "http": 403,
+  "robots": "tidak ada",
+  "tanggal": "2026-11-08"
+ },
+ "sd_global_solar_atlas": {
+  "terjangkau": true,
+  "http": 200,
+  "robots": "boleh",
+  "tanggal": "2026-11-08"
+ },
+ "sd_global_wind_atlas": {
+  "terjangkau": true,
+  "http": 200,
+  "robots": "boleh",
+  "tanggal": "2026-11-08"
+ },
+ "sd_gem": {
+  "terjangkau": true,
+  "http": 200,
+  "robots": "boleh",
+  "tanggal": "2026-11-08"
+ },
+ "sd_irenastat": {
+  "terjangkau": false,
+  "http": 403,
+  "robots": "tidak ada",
+  "tanggal": "2026-11-08"
+ },
+ "sd_ember": {
+  "terjangkau": true,
+  "http": 200,
+  "robots": "boleh",
+  "tanggal": "2026-11-08"
+ },
+ "sd_climate_trace": {
+  "terjangkau": true,
+  "http": 200,
+  "robots": "tidak ada",
+  "tanggal": "2026-11-08"
+ },
+ "sd_owid_energi": {
+  "terjangkau": true,
+  "http": 200,
+  "robots": "boleh",
+  "tanggal": "2026-11-08"
+ },
+ "sd_energydata": {
+  "terjangkau": true,
+  "http": 200,
+  "robots": "boleh",
+  "tanggal": "2026-11-08"
+ },
+ "sd_nasa_power": {
+  "terjangkau": true,
+  "http": 200,
+  "robots": "boleh",
+  "tanggal": "2026-11-08"
+ },
+ "sd_osm": {
+  "terjangkau": true,
+  "http": 200,
+  "robots": "boleh",
+  "tanggal": "2026-11-08"
+ },
+ "sd_wb_open_data": {
+  "terjangkau": true,
+  "http": 200,
+  "robots": "boleh",
+  "tanggal": "2026-11-08"
+ },
+ "sd_wb_projects": {
+  "terjangkau": true,
+  "http": 200,
+  "robots": "boleh",
+  "tanggal": "2026-11-08"
+ },
+ "sd_iati": {
+  "terjangkau": false,
+  "http": 0,
+  "robots": "tidak ada",
+  "tanggal": "2026-11-08"
+ },
+ "sd_openalex": {
+  "terjangkau": true,
+  "http": 200,
+  "robots": "boleh",
+  "tanggal": "2026-11-08"
+ },
+ "sd_iea": {
+  "terjangkau": true,
+  "http": 200,
+  "robots": "boleh",
+  "tanggal": "2026-11-08"
+ },
+ "sd_wri_gppd": {
+  "terjangkau": true,
+  "http": 200,
+  "robots": "boleh",
+  "tanggal": "2026-11-08"
+ },
+ "sd_geoboundaries": {
+  "terjangkau": true,
+  "http": 200,
+  "robots": "boleh",
+  "tanggal": "2026-11-08"
+ },
+ "sd_wikidata": {
+  "terjangkau": true,
+  "http": 200,
+  "robots": "boleh",
+  "tanggal": "2026-11-08"
+ },
+ "sd_verra": {
+  "terjangkau": true,
+  "http": 200,
+  "robots": "boleh",
+  "tanggal": "2026-11-08"
+ },
+ "sd_gold_standard": {
+  "terjangkau": true,
+  "http": 200,
+  "robots": "tidak ada",
+  "tanggal": "2026-11-08"
+ },
+ "sd_ren21": {
+  "terjangkau": true,
+  "http": 200,
+  "robots": "boleh",
+  "tanggal": "2026-11-08"
+ },
+ "sd_bnef": {
+  "terjangkau": true,
+  "http": 200,
+  "robots": "boleh",
+  "tanggal": "2026-11-08"
+ },
+ "sd_era5": {
+  "terjangkau": true,
+  "http": 200,
+  "robots": "boleh",
+  "tanggal": "2026-11-08"
+ },
+ "sd_ei_review": {
+  "terjangkau": false,
+  "http": 403,
+  "robots": "tidak ada",
+  "tanggal": "2026-11-08"
+ },
+ "sd_aeds": {
+  "terjangkau": true,
+  "http": 200,
+  "robots": "boleh",
+  "tanggal": "2026-11-08"
+ },
+ "sd_oecd_crs": {
+  "terjangkau": true,
+  "http": 200,
+  "robots": "boleh",
+  "tanggal": "2026-11-08"
+ }
+}

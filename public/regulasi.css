@@ -63,3 +63,15 @@ dialog#lembar{width:min(1100px,95vw)}
 .jm-hub-isi button{align-self:flex-start;border:0;background:none;padding:0;font:600 var(--t-tombol)/var(--lh-rapat) var(--font);color:var(--accent);cursor:pointer}
 .jm-hub-jd,.jm-hub-tgl{font-size:var(--t-kecil);color:var(--ink2)}.jm-hub-jd{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.jm-hub-tgl{flex:none;white-space:nowrap}
 @media (max-width:860px){.jm-rgb{grid-template-columns:1fr}.jm-rgh{flex-wrap:wrap}.jm-rgh-aksi{max-width:none;justify-content:flex-start;width:100%}}
+
+/* tab Konsultasi (konsultasi.js) */
+#panelKonsultasi{display:grid;gap:var(--gap);min-width:0}
+.jm-ks-daftar{display:grid;gap:var(--gap)}
+.jm-ks-k{display:grid;gap:12px;min-width:0;padding:16px 20px;border:1px solid var(--line);border-radius:var(--r);background:var(--card)}
+.jm-ks-k header{display:grid;gap:8px;justify-items:start}
+.jm-ks-k h3{margin:0;font:700 var(--t-h3)/var(--lh-judul) var(--display);color:var(--head)}
+.jm-ks-k footer{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:8px 16px}
+.jm-ks-cat{margin:0;color:var(--ink2);font-size:var(--t-tombol);line-height:var(--lh-isi)}
+.jm-ks-posisi{display:grid;gap:8px;min-width:0;padding:14px;border:1px solid var(--line);border-radius:var(--r-sm);background:var(--surface)}
+.jm-ks-posisi h4{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin:0;font:700 var(--t-body)/var(--lh-judul) var(--display);color:var(--head)}
+.jm-ks-posisi p{margin:0;color:var(--ink2);font-size:var(--t-tombol)}

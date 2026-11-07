@@ -58,6 +58,7 @@ export const MATRIKS = {
   event_daftar:    ["-", "T daftar", "T daftar", "T daftar", "T daftar", "T", "T"], // RSVP: tiap akun hanya miliknya; admin semua
   jejak:           ["-", "-", "-", "-", "-", "B", "B"],
   daftar_tolak:    ["-", "-", "-", "-", "-", "-", "B"],
+  pendaftaran:     ["-", "-", "T", "-", "-", "T", "T"], // 8 Nov 2026: persetujuan anggota mandiri (setujui/tolak, bukti iuran) oleh pengurus, admin, super
 };
 export const AKSI = ["baca", "tambah", "ubah", "hapus", "kirim", "cabut", "tinjau", "hapus_keras"];
 
@@ -1640,6 +1641,261 @@ export async function wilayahBerkas(env, akun, id) {
     if (x.status !== "setuju" && !ADM_HAK.includes(akun.peran) && (await env.DB.prepare("SELECT 1 AS y FROM wilayah_akun WHERE akun_id = ? AND kode_prov = ?").bind(akun.id, x.kode_prov).first()) == null) return { ada: false };
     return { ada: true, kunci: x.berkas_kunci, berkas: uraiP(x.berkas, null) };
   });
+}
+
+/* ========================= Lalu lintas orang vs AI (0020) ========================= */
+const HARI_MS = 86400000, WIB_MS = 7 * 3600e3;
+const tglLalin = (ms) => new Date(ms + WIB_MS).toISOString().slice(0, 10);
+const GUARD = "INSERT INTO lalin (tgl, dim, kunci, n) SELECT ?1, ?2, ?3, 1 WHERE EXISTS (SELECT 1 FROM lalin WHERE tgl = ?1 AND dim = ?2 AND kunci = ?3) OR (SELECT COUNT(*) FROM lalin WHERE tgl = ?1 AND dim = ?2) < 80 ON CONFLICT (tgl, dim, kunci) DO UPDATE SET n = n + 1";
+const PASTI = "INSERT INTO lalin (tgl, dim, kunci, n) VALUES (?1, ?2, ?3, 1) ON CONFLICT (tgl, dim, kunci) DO UPDATE SET n = n + 1";
+const JIKA_BARU = "INSERT INTO lalin (tgl, dim, kunci, n) SELECT ?1, ?2, ?3, 1 WHERE changes() = 1 ON CONFLICT (tgl, dim, kunci) DO UPDATE SET n = n + 1";
+let GARAM_LALIN = null, RENTANG_LALIN = null;
+
+// Garam harian: dibuat saat pertama dipakai; hari baru = garam lama dan hash tamu lama dimusnahkan (retensi dirawat di sini).
+export async function lalinGaram(env, tgl) {
+  if (GARAM_LALIN?.tgl === tgl) return GARAM_LALIN.garam;
+  const baru = [...crypto.getRandomValues(new Uint8Array(32))].map((x) => x.toString(16).padStart(2, "0")).join("");
+  const ins = await env.DB.prepare("INSERT OR IGNORE INTO lalin_garam (tgl, garam) VALUES (?, ?)").bind(tgl, baru).run();
+  const g = (await env.DB.prepare("SELECT garam FROM lalin_garam WHERE tgl = ?").bind(tgl).first()).garam;
+  if (ins.meta.changes === 1) {
+    const sekarang = Date.parse(tgl + "T00:00:00Z");
+    await env.DB.batch([
+      env.DB.prepare("DELETE FROM lalin_garam WHERE tgl < ?").bind(tgl),
+      env.DB.prepare("DELETE FROM lalin_tamu WHERE tgl < ?").bind(tgl),
+      env.DB.prepare("DELETE FROM lalin WHERE dim = 'jam' AND tgl < ?").bind(tglLalin(sekarang - 3 * HARI_MS)),
+      env.DB.prepare("DELETE FROM lalin WHERE dim <> 'jenis' AND tgl < ?").bind(tglLalin(sekarang - 120 * HARI_MS))]);
+  }
+  GARAM_LALIN = { tgl, garam: g };
+  return g;
+}
+// -> { operator: [[net, n, bits]] }, cache isolat 6 jam; tabel belum ada = kosong (semua tak terverifikasi).
+export async function lalinRentang(env, kini, cidrKe) {
+  if (RENTANG_LALIN && kini - RENTANG_LALIN.dimuat < 6 * 3600e3) return RENTANG_LALIN.op;
+  const op = {};
+  try {
+    for (const x of (await env.DB.prepare("SELECT operator, cidr FROM lalin_ip").all()).results) op[x.operator] = JSON.parse(x.cidr).map(cidrKe).filter(Boolean);
+  } catch { /* tabel belum ada */ }
+  RENTANG_LALIN = { dimuat: kini, op };
+  return op;
+}
+export async function lalinSimpanRentang(env, operator, cidr, kini) {
+  await env.DB.prepare("INSERT INTO lalin_ip (operator, cidr, diambil) VALUES (?, ?, ?) ON CONFLICT (operator) DO UPDATE SET cidr = excluded.cidr, diambil = excluded.diambil")
+    .bind(operator, JSON.stringify(cidr), Math.floor(kini / 1000)).run();
+  RENTANG_LALIN = null;
+}
+export const lalinRentangUsang = async (env, kini) => {
+  const r = await tanpaTabel(() => env.DB.prepare("SELECT COUNT(*) AS n, MIN(diambil) AS tertua FROM lalin_ip").first());
+  return !r || r.n === 0 || r.tertua < kini / 1000 - 26 * 3600;
+};
+// rencana = keluaran lalin.rencanaHit; tamu = { h, hjam } (hash bergaram), jalur untuk "sedang membaca".
+export async function lalinTulis(env, rencana, tamu = null) {
+  const { tgl, jam, jenis, dim } = rencana, s = [];
+  const d = (kunci) => s.push(env.DB.prepare(PASTI).bind(tgl, "jenis", kunci));
+  const j = (kunci) => s.push(env.DB.prepare(PASTI).bind(tgl, "jam", `${kunci}|${jam}`));
+  if (jenis === "manusia") {
+    s.push(env.DB.prepare("INSERT OR IGNORE INTO lalin_tamu (tgl, h) VALUES (?, ?)").bind(tgl, tamu.h));
+    s.push(env.DB.prepare(JIKA_BARU).bind(tgl, "jenis", "orang"));
+    d("tampilan");
+    s.push(env.DB.prepare("INSERT OR IGNORE INTO lalin_tamu (tgl, h) VALUES (?, ?)").bind(tgl, tamu.hjam));
+    s.push(env.DB.prepare(JIKA_BARU).bind(tgl, "jam", `orang|${jam}`));
+    if (rencana.klik_ai) { d("klik_ai"); j("klik_ai"); }
+    s.push(env.DB.prepare("INSERT INTO lalin_kini (h, waktu, jalur) VALUES (?, ?, ?) ON CONFLICT (h) DO UPDATE SET waktu = excluded.waktu, jalur = excluded.jalur")
+      .bind(tamu.h.slice(0, 8), tamu.kini, String(rencana.jalur).slice(0, 80)));
+    s.push(env.DB.prepare("DELETE FROM lalin_kini WHERE waktu < ?").bind(tamu.kini - 10 * 60000));
+  } else { d(jenis); j(jenis); }
+  for (const [dm, kunci] of dim) s.push(env.DB.prepare(GUARD).bind(tgl, dm, String(kunci).replace(/[\u0000-\u001F<>"\\]/g, "").slice(0, 120) || "-"));
+  await env.DB.batch(s);
+}
+
+const RENTANG_ADM = { "24j": 1, "7h": 7, "30h": 30, semua: 0 };
+const JENIS_LALIN = ["orang", "tampilan", "ai_jawab", "ai_crawl", "mesin_cari", "tak", "klik_ai"];
+export async function lalinAdmin(env, akun, r = "7h", sekarang = Date.now()) {
+  gerbangAdm(akun);
+  if (!(r in RENTANG_ADM)) throw salah("rentang tidak sah");
+  const hari = tglLalin(sekarang), kemarin = tglLalin(sekarang - HARI_MS);
+  const dari = r === "semua" ? "0000-00-00" : r === "24j" ? kemarin : tglLalin(sekarang - (RENTANG_ADM[r] - 1) * HARI_MS);
+  return tanpaTabel(async () => {
+    const [kini, jam, semua, seri, dim, ip] = await env.DB.batch([
+      env.DB.prepare("SELECT h, jalur FROM lalin_kini WHERE waktu > ? ORDER BY waktu DESC").bind(sekarang - 5 * 60000),
+      env.DB.prepare("SELECT tgl, kunci, n FROM lalin WHERE dim = 'jam' AND tgl >= ?").bind(kemarin),
+      env.DB.prepare("SELECT kunci, SUM(n) AS n, MIN(tgl) AS mulai FROM lalin WHERE dim = 'jenis' GROUP BY kunci"),
+      env.DB.prepare("SELECT tgl, kunci, n FROM lalin WHERE dim = 'jenis' AND tgl >= ? ORDER BY tgl").bind(dari),
+      env.DB.prepare(`WITH d AS (SELECT dim, kunci, SUM(n) AS n FROM lalin WHERE dim NOT IN ('jenis','jam') AND tgl >= ? GROUP BY dim, kunci)
+        SELECT dim, kunci, n FROM (SELECT *, row_number() OVER (PARTITION BY dim ORDER BY n DESC, kunci) AS r FROM d) WHERE r <= 100 ORDER BY dim, n DESC, kunci`).bind(dari),
+      env.DB.prepare("SELECT MAX(diambil) AS diambil, COUNT(*) AS operator FROM lalin_ip")]);
+    // 24 jam terakhir dari penghitung per jam (tgl + HH WIB)
+    const jamKini = Number(new Date(sekarang + WIB_MS).toISOString().slice(11, 13));
+    const nilai = Object.fromEntries(jam.results.map((x) => [`${x.tgl}|${x.kunci}`, x.n]));
+    const per_jam = [], total24 = Object.fromEntries(JENIS_LALIN.map((k) => [k, 0]));
+    for (let i = 23; i >= 0; i--) {
+      const h = (jamKini - i + 24) % 24, tgl = jamKini - i < 0 ? kemarin : hari, HH = String(h).padStart(2, "0");
+      const v = (k) => nilai[`${tgl}|${k}|${HH}`] || 0, baris = { jam: HH, tgl };
+      for (const k of JENIS_LALIN) if (k !== "tampilan") { baris[k] = v(k); total24[k] += baris[k]; }
+      per_jam.push(baris);
+    }
+    const sejak = Object.fromEntries(JENIS_LALIN.map((k) => [k, 0])); let mulai = hari;
+    for (const x of semua.results) { sejak[x.kunci] = x.n; if (x.mulai < mulai) mulai = x.mulai; }
+    const peta = {};
+    for (const x of seri.results) (peta[x.tgl] ||= { tgl: x.tgl, ...Object.fromEntries(JENIS_LALIN.map((k) => [k, 0])) })[x.kunci] = x.n;
+    const D = {};
+    for (const x of dim.results) (D[x.dim] ||= []).push([x.kunci, x.n]);
+    const olehTamu = new Set(), buka = {};
+    for (const x of kini.results) if (!olehTamu.has(x.h)) { olehTamu.add(x.h); buka[x.jalur] = (buka[x.jalur] || 0) + 1; }
+    return { rentang: r, hari, online: olehTamu.size, buka: Object.entries(buka).sort((a, b) => b[1] - a[1]).slice(0, 10),
+      total24, sejak, mulai, seri: Object.values(peta), per_jam: r === "24j" ? per_jam : null, dim: D,
+      rentang_ip: { operator: ip.results[0]?.operator || 0, diambil: ip.results[0]?.diambil || null } };
+  });
+}
+
+/* ========================= Pendaftaran anggota mandiri (0021) ========================= */
+export const JENIS_DAFTAR = ["individu", "organisasi", "mahasiswa"];
+export const KUNCI_ATUR_DAFTAR = ["iuran_individu", "iuran_organisasi", "iuran_mahasiswa", "rekening_bank", "rekening_nomor", "rekening_nama", "rekening_catatan"];
+const gerbangPend = (akun) => { const i = boleh(akun?.peran, "ubah", "pendaftaran", undefined, akun); if (!i.ok) throw tolak(i.alasan); };
+const KOLOM_LIST_DAFTAR = "id, jenis, status, nama, organisasi, kota, prov, bayar, tanpa_lunas, iuran, dibuat, diputus_pada";
+const jejakPend = (env, siapa, peran, aksi, id, ke, kondisi = "") =>
+  env.DB.prepare(`INSERT INTO jejak (siapa, peran, aksi, tabel, baris_id, ke) SELECT ?, ?, ?, 'pendaftaran', ?, ? ${kondisi}`).bind(siapa, peran, aksi, String(id), JSON.stringify(ke));
+
+export async function pengaturanDaftarBaca(env) {
+  const o = Object.fromEntries(KUNCI_ATUR_DAFTAR.map((k) => [k, ""]));
+  try { for (const r of (await env.DB.prepare("SELECT kunci, nilai FROM pengaturan_daftar").all()).results) o[r.kunci] = r.nilai; } catch { /* tabel belum ada = kosong */ }
+  return o;
+}
+export async function pengaturanDaftarAdmin(env, akun) { gerbangAdm(akun); return pengaturanDaftarBaca(env); }
+export async function pengaturanDaftarSimpan(env, akun, nilai) {
+  gerbangAdm(akun);
+  const s = [];
+  for (const [k, v] of Object.entries(nilai)) {
+    if (!KUNCI_ATUR_DAFTAR.includes(k) || typeof v !== "string" || v.length > 300) throw salah("pengaturan tidak sah");
+    if (k.startsWith("iuran_") && v !== "" && !/^\d{1,9}$/.test(v)) throw salah("iuran harus angka rupiah");
+    s.push(v === "" ? env.DB.prepare("DELETE FROM pengaturan_daftar WHERE kunci = ?").bind(k)
+      : env.DB.prepare("INSERT INTO pengaturan_daftar (kunci, nilai, diubah, diubah_oleh) VALUES (?, ?, unixepoch(), ?) ON CONFLICT (kunci) DO UPDATE SET nilai = excluded.nilai, diubah = excluded.diubah, diubah_oleh = excluded.diubah_oleh").bind(k, v, akun.id));
+  }
+  if (!s.length) throw salah("tidak ada pengaturan");
+  s.push(jejakPend(env, akun.id, akun.peran, "ubah", "pengaturan", { kunci: Object.keys(nilai) }));
+  try { await env.DB.batch(s); } catch (e) { throw terjemah(e); }
+  return true;
+}
+
+// Publik; nilai sudah divalidasi rute. Surel yang sudah jadi akun atau sudah menunggu = konflik.
+export async function pendaftaranBaru(env, d, tokenHash, ipHash = null) {
+  const ada = await env.DB.prepare("SELECT 1 AS x FROM akun WHERE surel = ?").bind(d.surel).first();
+  if (ada) throw mk("konflik", 409, "surel sudah terdaftar");
+  const at = await pengaturanDaftarBaca(env), iuran = /^\d+$/.test(at["iuran_" + d.jenis]) ? Number(at["iuran_" + d.jenis]) : null;
+  try {
+    const r = await env.DB.batch([
+      env.DB.prepare("INSERT INTO pendaftaran (token_hash, jenis, nama, surel, hp, organisasi, kota, prov, rinci, setuju_pdp, iuran) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, 1, ?)")
+        .bind(tokenHash, d.jenis, d.nama, d.surel, d.hp, d.organisasi ?? null, d.kota ?? null, d.prov ?? null, JSON.stringify(d.rinci ?? {}), iuran),
+      env.DB.prepare("INSERT INTO jejak (siapa, peran, aksi, tabel, baris_id, ke, ip_hash) VALUES (NULL, 'publik', 'tambah', 'pendaftaran', CAST(last_insert_rowid() AS TEXT), ?, ?)")
+        .bind(JSON.stringify({ jenis: d.jenis }), ip16(ipHash))]);
+    return { id: r[0].meta.last_row_id };
+  } catch (e) { throw terjemah(e); }
+}
+export async function pendaftaranFotoSet(env, tokenHash, kunci) {
+  const r = await env.DB.prepare("UPDATE pendaftaran SET foto_kunci = ? WHERE token_hash = ? AND foto_kunci IS NULL AND status = 'menunggu'").bind(kunci, tokenHash).run();
+  return r.meta.changes === 1;
+}
+// Pendaftar melihat statusnya sendiri lewat token: tanpa HP/surel/rinci, hanya yang perlu untuk membayar.
+export async function pendaftaranLacak(env, tokenHash) {
+  const p = await env.DB.prepare("SELECT id, jenis, status, nama, bayar, iuran, catatan_admin, dibuat FROM pendaftaran WHERE token_hash = ?").bind(tokenHash).first();
+  if (!p) return null;
+  const [b, at] = [(await env.DB.prepare("SELECT id, status, catatan, tipe, dibuat FROM pendaftaran_bukti WHERE pendaftaran_id = ? ORDER BY id DESC").bind(p.id).all()).results, await pengaturanDaftarBaca(env)];
+  const { id, catatan_admin, ...pub } = p;
+  return { pendaftaran: { ...pub, catatan: p.status === "ditolak" ? catatan_admin : null }, bukti: b,
+    rekening: { bank: at.rekening_bank, nomor: at.rekening_nomor, nama: at.rekening_nama, catatan: at.rekening_catatan }, _id: id };
+}
+export async function pendaftaranBuktiTambah(env, tokenHash, { kunci, tipe, ukuran }) {
+  const [a] = await env.DB.batch([
+    env.DB.prepare("INSERT INTO pendaftaran_bukti (pendaftaran_id, kunci_r2, tipe, ukuran) SELECT p.id, ?, ?, ? FROM pendaftaran p WHERE p.token_hash = ? AND p.status <> 'ditolak' AND p.bayar <> 'lunas' AND (SELECT COUNT(*) FROM pendaftaran_bukti WHERE pendaftaran_id = p.id AND status = 'menunggu') < 3")
+      .bind(kunci, tipe, ukuran, tokenHash),
+    env.DB.prepare("UPDATE pendaftaran SET bayar = 'menunggu' WHERE token_hash = ? AND bayar = 'belum' AND changes() = 1").bind(tokenHash)]);
+  return a.meta.changes === 1;
+}
+
+export async function pendaftaranDaftar(env, akun, { status = "menunggu", jenis = "", prov = "", hal = 1 } = {}) {
+  gerbangPend(akun);
+  const w = ["status = ?"], b = [status];
+  if (jenis) { w.push("jenis = ?"); b.push(jenis); }
+  if (prov) { w.push("prov = ?"); b.push(prov); }
+  const h = Math.min(Math.max(Number(hal) || 1, 1), 10000);
+  return tanpaTabel(async () => {
+    const [r, t, hit] = await env.DB.batch([
+      env.DB.prepare(`SELECT ${KOLOM_LIST_DAFTAR} FROM pendaftaran WHERE ${w.join(" AND ")} ORDER BY id DESC LIMIT ? OFFSET ?`).bind(...b, HALAMAN_ADM, (h - 1) * HALAMAN_ADM),
+      env.DB.prepare(`SELECT COUNT(*) AS n FROM pendaftaran WHERE ${w.join(" AND ")}`).bind(...b),
+      env.DB.prepare("SELECT status, COUNT(*) AS n FROM pendaftaran GROUP BY status")]);
+    return { baris: r.results, total: t.results[0].n, hitung: Object.fromEntries(hit.results.map((x) => [x.status, x.n])) };
+  });
+}
+export async function pendaftaranRincian(env, akun, id) {
+  gerbangPend(akun);
+  if (!RE_ID.test(String(id))) throw salah("id tidak sah");
+  const p = await env.DB.prepare("SELECT id, jenis, status, nama, surel, hp, organisasi, kota, prov, rinci, foto_kunci IS NOT NULL AS ada_foto, bayar, iuran, tanpa_lunas, catatan_admin, akun_id, dibuat, diputus_pada FROM pendaftaran WHERE id = ?").bind(Number(id)).first();
+  if (!p) return null;
+  let rinci = {}; try { rinci = JSON.parse(p.rinci); } catch { /* rusak = kosong */ }
+  const bukti = (await env.DB.prepare("SELECT id, tipe, ukuran, status, catatan, dibuat FROM pendaftaran_bukti WHERE pendaftaran_id = ? ORDER BY id DESC").bind(p.id).all()).results;
+  return { ...p, rinci, bukti };
+}
+export async function pendaftaranFotoKunci(env, akun, id) {
+  gerbangPend(akun);
+  return (await env.DB.prepare("SELECT foto_kunci FROM pendaftaran WHERE id = ?").bind(Number(id)).first())?.foto_kunci ?? null;
+}
+export async function pendaftaranBuktiKunci(env, akun, bid) {
+  gerbangPend(akun);
+  return env.DB.prepare("SELECT kunci_r2, tipe FROM pendaftaran_bukti WHERE id = ?").bind(Number(bid)).first();
+}
+// Setujui: akun anggota 'menunggu' + tautan aktivasi (hash dari rute) dalam SATU batch; tanpa lunas = bertanda. Tolak: alasan wajib.
+export async function pendaftaranPutus(env, akun, id, aksi, { catatan = null, aktivasiHash = null, aktivasiSampai = null } = {}) {
+  gerbangPend(akun);
+  if (!["setuju", "tolak"].includes(aksi)) throw salah("aksi tidak dikenal");
+  if (!RE_ID.test(String(id))) throw salah("id tidak sah");
+  const n = kini();
+  try {
+    if (aksi === "tolak") {
+      const [u] = await env.DB.batch([
+        env.DB.prepare("UPDATE pendaftaran SET status = 'ditolak', catatan_admin = ?, diputus_pada = ?, diputus_oleh = ? WHERE id = ? AND status = 'menunggu'").bind(catatan, n, akun.id, Number(id)),
+        jejakPend(env, akun.id, akun.peran, "tinjau", id, { ringkas: "pendaftaran tolak" }, "WHERE changes() > 0")]);
+      return { ubah: u.meta.changes };
+    }
+    if (!aktivasiHash) throw salah("tautan aktivasi wajib");
+    const [, u] = await env.DB.batch([
+      env.DB.prepare("INSERT INTO akun (surel, nama, peran, status, aktivasi_hash, aktivasi_sampai, dibuat_oleh) SELECT surel, nama, 'anggota', 'menunggu', ?, ?, ? FROM pendaftaran WHERE id = ? AND status = 'menunggu'")
+        .bind(aktivasiHash, aktivasiSampai, akun.id, Number(id)),
+      env.DB.prepare("UPDATE pendaftaran SET status = 'disetujui', akun_id = last_insert_rowid(), diputus_pada = ?, diputus_oleh = ?, catatan_admin = ?, tanpa_lunas = CASE WHEN bayar = 'lunas' THEN 0 ELSE 1 END WHERE id = ? AND status = 'menunggu' AND changes() = 1")
+        .bind(n, akun.id, catatan, Number(id)),
+      jejakPend(env, akun.id, akun.peran, "tinjau", id, { ringkas: "pendaftaran setuju" }, "WHERE changes() > 0"),
+      env.DB.prepare("INSERT INTO jejak (siapa, peran, aksi, tabel, baris_id, ke) SELECT ?, ?, 'tambah', 'akun', CAST(akun_id AS TEXT), ? FROM pendaftaran WHERE id = ? AND akun_id IS NOT NULL AND changes() > 0")
+        .bind(akun.id, akun.peran, JSON.stringify({ peran: "anggota", dari: "pendaftaran" }), Number(id))]);
+    return { ubah: u.meta.changes };
+  } catch (e) { throw terjemah(e); }
+}
+export async function pendaftaranBuktiPutus(env, akun, bid, aksi, catatan = null) {
+  gerbangPend(akun);
+  if (!["terima", "tolak"].includes(aksi)) throw salah("aksi tidak dikenal");
+  if (!RE_ID.test(String(bid))) throw salah("id tidak sah");
+  const [u] = await env.DB.batch([
+    env.DB.prepare("UPDATE pendaftaran_bukti SET status = ?, catatan = ?, diputus_pada = ?, diputus_oleh = ? WHERE id = ? AND status = 'menunggu'").bind(aksi === "terima" ? "diterima" : "ditolak", catatan, kini(), akun.id, Number(bid)),
+    env.DB.prepare(`UPDATE pendaftaran SET bayar = CASE WHEN EXISTS (SELECT 1 FROM pendaftaran_bukti WHERE pendaftaran_id = pendaftaran.id AND status = 'diterima') THEN 'lunas'
+        WHEN EXISTS (SELECT 1 FROM pendaftaran_bukti WHERE pendaftaran_id = pendaftaran.id AND status = 'menunggu') THEN 'menunggu' ELSE 'belum' END,
+      tanpa_lunas = CASE WHEN EXISTS (SELECT 1 FROM pendaftaran_bukti WHERE pendaftaran_id = pendaftaran.id AND status = 'diterima') THEN 0 ELSE tanpa_lunas END
+      WHERE changes() = 1 AND id = (SELECT pendaftaran_id FROM pendaftaran_bukti WHERE id = ?)`).bind(Number(bid)),
+    jejakPend(env, akun.id, akun.peran, "tinjau", bid, { ringkas: "bukti iuran " + aksi }, "WHERE changes() > 0")]);
+  return { ubah: u.meta.changes };
+}
+
+// Midtrans (opsional): gross SELALU dari DB.
+export async function onlineBuat(env, tokenHash, orderId) {
+  const p = await env.DB.prepare("SELECT id, nama, surel, iuran, bayar, status FROM pendaftaran WHERE token_hash = ?").bind(tokenHash).first();
+  if (!p || p.status === "ditolak" || p.bayar === "lunas" || !(p.iuran > 0)) return null;
+  await env.DB.prepare("INSERT INTO pembayaran_online (order_id, pendaftaran_id, gross) VALUES (?, ?, ?)").bind(orderId, p.id, p.iuran).run();
+  return { nama: p.nama, surel: p.surel, gross: p.iuran };
+}
+export const onlineBaca = (env, orderId) => env.DB.prepare("SELECT order_id, gross, status, pendaftaran_id FROM pembayaran_online WHERE order_id = ?").bind(orderId).first();
+export async function onlineSelesai(env, orderId, lunas) {
+  const [u] = await env.DB.batch([
+    env.DB.prepare("UPDATE pembayaran_online SET status = ?, diubah = unixepoch() WHERE order_id = ? AND status = 'tertunda'").bind(lunas ? "lunas" : "gagal", orderId),
+    env.DB.prepare("UPDATE pendaftaran SET bayar = 'lunas', tanpa_lunas = 0 WHERE ? = 1 AND changes() = 1 AND id = (SELECT pendaftaran_id FROM pembayaran_online WHERE order_id = ?)").bind(lunas ? 1 : 0, orderId),
+    env.DB.prepare("INSERT INTO jejak (siapa, peran, aksi, tabel, baris_id, ke) SELECT NULL, 'publik', 'ubah', 'pendaftaran', CAST(pendaftaran_id AS TEXT), ? FROM pembayaran_online WHERE order_id = ? AND ? = 1 AND changes() > 0")
+      .bind(JSON.stringify({ ringkas: "iuran lunas via Midtrans" }), orderId, lunas ? 1 : 0)]);
+  return u.meta.changes === 1;
 }
 
 export const ping = async (env) => (await env.DB.prepare("SELECT 1 AS ok").first()).ok === 1;

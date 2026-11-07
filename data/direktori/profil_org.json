@@ -1,0 +1,1325 @@
+{
+ "sumber": "situs resmi tiap organisasi (beranda dan halaman tentang, keberlanjutan, investor, kontak)",
+ "diambil": "2026-11-08",
+ "lisensi": "fakta pendek berumber; teks sumber tidak disalin",
+ "baris": {
+  "p_039ffe3689": {
+   "halaman": {
+    "beranda": "https://www.ptsi.co.id"
+   },
+   "sumber": [
+    "https://www.ptsi.co.id"
+   ],
+   "kontak": {
+    "telepon": [],
+    "surel": [
+     "info@ptsi.co.id"
+    ],
+    "sumber_url": "https://www.ptsi.co.id"
+   },
+   "logo_url": "https://www.ptsi.co.id/images/surveyor.png",
+   "tanggal_periksa": "2026-11-07"
+  },
+  "p_0e6d34a26d": {
+   "halaman": {
+    "beranda": "https://acwapower.com",
+    "kontak": "https://acwapower.com/en/contact-us/",
+    "tentang": "https://acwapower.com/en/who-we-are/about-us/",
+    "manajemen": "https://acwapower.com/en/who-we-are/board-of-directors/",
+    "proyek": "https://acwapower.com/en/what-we-do/acwa-operations/",
+    "keberlanjutan": "https://acwapower.com/en/sustainability/sustainability/"
+   },
+   "sumber": [
+    "https://acwapower.com",
+    "https://acwapower.com/en/contact-us/",
+    "https://acwapower.com/en/who-we-are/about-us/",
+    "https://acwapower.com/en/who-we-are/board-of-directors/",
+    "https://acwapower.com/en/what-we-do/acwa-operations/",
+    "https://acwapower.com/en/sustainability/sustainability/"
+   ],
+   "kapasitas": [
+    {
+     "mw": 98000,
+     "jenis": "tercatat",
+     "konteks": "With a generation capacity of 98.0 GW, our portfolio powers more than 16 million households and supplies over 6.8 million households with 9.7 million cubic meters of desalinated wa",
+     "sumber_url": "https://acwapower.com"
+    },
+    {
+     "mw": 52300,
+     "jenis": "tercatat",
+     "konteks": "Learn more 16 Countries 13 Offices 4000&#x2B; Employees 111 Assets 126.6 billion Assets under management (AUM) 53% Renewables 9.7 million m&#xB3; Desalinated water Green hydrogen 1",
+     "sumber_url": "https://acwapower.com"
+    },
+    {
+     "mw": 7000,
+     "jenis": "tercatat",
+     "konteks": "During this period Acwa brought 7 GW of power, 600 thousand cubic meters/day of water and 3,000 tonnes per annum of green hydrogen to operations.",
+     "sumber_url": "https://acwapower.com"
+    },
+    {
+     "mw": 45000,
+     "jenis": "tercatat",
+     "konteks": "Today, our teams operate 45 GW of power capacity and 8 million cubic meters of desalinated water per day, working across more than 14 countries with a shared commitment to consiste",
+     "sumber_url": "https://acwapower.com/en/what-we-do/acwa-operations/"
+    }
+   ],
+   "sosmed": [
+    {
+     "jenis": "linkedin",
+     "url": "https://www.linkedin.com/company/acwa-global",
+     "sumber_url": "https://acwapower.com"
+    },
+    {
+     "jenis": "twitter",
+     "url": "https://x.com/Acwa_en",
+     "sumber_url": "https://acwapower.com"
+    },
+    {
+     "jenis": "facebook",
+     "url": "https://www.facebook.com/AcwaPower",
+     "sumber_url": "https://acwapower.com"
+    },
+    {
+     "jenis": "youtube",
+     "url": "https://www.youtube.com/channel/UCttEMbF92cABvWoTpYE5OUQ",
+     "sumber_url": "https://acwapower.com"
+    }
+   ],
+   "logo_url": "https://acwapower.com/images/apple-touch-icon.png",
+   "kontak": {
+    "telepon": [
+     "2966 12 618 9000",
+     "2968 24981464",
+     "2971 4 440 9828"
+    ],
+    "surel": [
+     "corporate.communications@acwapower.com",
+     "media.inquiries@acwapower.com",
+     "ir@acwapower.com"
+    ],
+    "sumber_url": "https://acwapower.com/en/contact-us/"
+   },
+   "tahun_berdiri": {
+    "nilai": 2004,
+    "sumber_url": "https://acwapower.com/en/who-we-are/about-us/"
+   },
+   "karyawan": {
+    "nilai": 4000,
+    "sumber_url": "https://acwapower.com/en/who-we-are/about-us/"
+   },
+   "net_zero": {
+    "tahun": 2030,
+    "konteks": "Our overarching targets 50% GHG emissions intensity reduction of our electricity generation by 2030 70% Total renewable energy portfolio by 2030 Net zero by 2050 Based on integrate",
+    "sumber_url": "https://acwapower.com/en/sustainability/sustainability/"
+   },
+   "tanggal_periksa": "2026-11-07"
+  },
+  "p_10e0dde689": {
+   "halaman": {
+    "beranda": "https://pertaminanre.com/id",
+    "kontak": "https://pertaminanre.com/id/hubungi-kami",
+    "tentang": "https://pertaminanre.com/id/tentang-kami/sekilas",
+    "manajemen": "https://pertaminanre.com/id/tentang-kami/manajemen",
+    "proyek": "https://pertaminanre.com/id/tentang-kami/struktur-grup-perusahaan",
+    "investor": "https://pertaminanre.com/id/media-dan-informasi/hubungan-investor"
+   },
+   "sumber": [
+    "https://pertaminanre.com/id",
+    "https://pertaminanre.com/id/hubungi-kami",
+    "https://pertaminanre.com/id/tentang-kami/sekilas",
+    "https://pertaminanre.com/id/tentang-kami/manajemen",
+    "https://pertaminanre.com/id/tentang-kami/struktur-grup-perusahaan",
+    "https://pertaminanre.com/id/media-dan-informasi/hubungan-investor"
+   ],
+   "net_zero": {
+    "tahun": 2060,
+    "konteks": "Kami menghadirkan energi yang lebih bersih untuk memperkuat ketahanan energi nasional, menciptakan nilai berkelanjutan bagi para pemangku kepentingan, dan mendukung pencapaian targ",
+    "sumber_url": "https://pertaminanre.com/id"
+   },
+   "sertifikasi": [
+    "ISO 9001"
+   ],
+   "logo_url": "https://pertaminanre.com/favicon.ico?favicon.1yx76fazwx8u_.ico",
+   "tanggal_periksa": "2026-11-07"
+  },
+  "p_11c6f0d460": {
+   "halaman": {
+    "beranda": "https://sundaya.com"
+   },
+   "sumber": [
+    "https://sundaya.com"
+   ],
+   "tahun_berdiri": {
+    "nilai": 1993,
+    "sumber_url": "https://sundaya.com"
+   },
+   "logo_url": "https://sundaya.com/favicon.png",
+   "tanggal_periksa": "2026-11-07"
+  },
+  "p_1848d9c52b": {
+   "halaman": {
+    "beranda": "https://adhi.co.id",
+    "tentang": "https://adhi.co.id/tentang-adhi/profil-perusahaan/",
+    "proyek": "https://adhi.co.id/tentang-adhi/profil-perusahaan/",
+    "manajemen": "https://adhi.co.id/tentang-adhi/manajemen/direksi/",
+    "investor": "https://adhi.co.id/hubungan-investor/saham/",
+    "keberlanjutan": "https://adhi.co.id/keberlanjutan-2/laporan-keberlanjutan/"
+   },
+   "sumber": [
+    "https://adhi.co.id",
+    "https://adhi.co.id/tentang-adhi/profil-perusahaan/",
+    "https://adhi.co.id/tentang-adhi/profil-perusahaan/",
+    "https://adhi.co.id/tentang-adhi/manajemen/direksi/",
+    "https://adhi.co.id/hubungan-investor/saham/",
+    "https://adhi.co.id/keberlanjutan-2/laporan-keberlanjutan/"
+   ],
+   "sosmed": [
+    {
+     "jenis": "facebook",
+     "url": "https://www.facebook.com/adhikaryaID",
+     "sumber_url": "https://adhi.co.id"
+    },
+    {
+     "jenis": "twitter",
+     "url": "https://twitter.com/adhikaryaid",
+     "sumber_url": "https://adhi.co.id"
+    },
+    {
+     "jenis": "instagram",
+     "url": "https://www.instagram.com/adhikaryaid",
+     "sumber_url": "https://adhi.co.id"
+    },
+    {
+     "jenis": "tiktok",
+     "url": "https://www.tiktok.com/@adhikaryaid",
+     "sumber_url": "https://adhi.co.id"
+    },
+    {
+     "jenis": "youtube",
+     "url": "https://www.youtube.com/channel/UClxNBoAAGbaeFCd5eHqclVg",
+     "sumber_url": "https://adhi.co.id"
+    },
+    {
+     "jenis": "linkedin",
+     "url": "https://www.linkedin.com/company/adhikaryaid",
+     "sumber_url": "https://adhi.co.id"
+    }
+   ],
+   "logo_url": "https://adhi.co.id/wp-content/uploads/2024/05/adhi-karya-logo-black.webp",
+   "tahun_berdiri": {
+    "nilai": 1974,
+    "sumber_url": "https://adhi.co.id/tentang-adhi/profil-perusahaan/"
+   },
+   "tanggal_periksa": "2026-11-07"
+  },
+  "p_1a272e3233": {
+   "halaman": {
+    "beranda": "https://enero.co.id/",
+    "tentang": "https://enero.co.id/category/profil-home-dokumen/"
+   },
+   "sumber": [
+    "https://enero.co.id/",
+    "https://enero.co.id/category/profil-home-dokumen/"
+   ],
+   "kontak": {
+    "telepon": [],
+    "surel": [
+     "customercare@enero.co.id"
+    ],
+    "sumber_url": "https://enero.co.id/"
+   },
+   "logo_url": "https://enero.co.id/wp-content/uploads/2018/01/Logo-web-enero.png",
+   "tanggal_periksa": "2026-11-07"
+  },
+  "p_1c9eb202dd": {
+   "halaman": {
+    "beranda": "https://www.engie.com"
+   },
+   "sumber": [
+    "https://www.engie.com"
+   ],
+   "sosmed": [
+    {
+     "jenis": "facebook",
+     "url": "https://www.facebook.com/ENGIE",
+     "sumber_url": "https://www.engie.com"
+    },
+    {
+     "jenis": "twitter",
+     "url": "http://x.com/engiegroup",
+     "sumber_url": "https://www.engie.com"
+    },
+    {
+     "jenis": "instagram",
+     "url": "http://instagram.com/engie",
+     "sumber_url": "https://www.engie.com"
+    },
+    {
+     "jenis": "linkedin",
+     "url": "https://www.linkedin.com/company/engie",
+     "sumber_url": "https://www.engie.com"
+    },
+    {
+     "jenis": "youtube",
+     "url": "https://www.youtube.com/engiegroup",
+     "sumber_url": "https://www.engie.com"
+    }
+   ],
+   "logo_url": "https://www.engie.com/app/uploads/2026/03/favicon-engie-150x150.png",
+   "tanggal_periksa": "2026-11-07"
+  },
+  "p_236f2f34ab": {
+   "halaman": {
+    "beranda": "https://xurya.com",
+    "tentang": "https://xurya.com/tentang-kami",
+    "kontak": "https://xurya.com/kontak"
+   },
+   "sumber": [
+    "https://xurya.com",
+    "https://xurya.com/tentang-kami",
+    "https://xurya.com/kontak"
+   ],
+   "sertifikasi": [
+    "ISO 9001",
+    "ISO 14001",
+    "ISO 45001"
+   ],
+   "kontak": {
+    "telepon": [],
+    "surel": [
+     "sales@xurya.com"
+    ],
+    "sumber_url": "https://xurya.com"
+   },
+   "sosmed": [
+    {
+     "jenis": "instagram",
+     "url": "https://www.instagram.com/energixurya",
+     "sumber_url": "https://xurya.com"
+    },
+    {
+     "jenis": "linkedin",
+     "url": "https://www.linkedin.com/company/xurya",
+     "sumber_url": "https://xurya.com"
+    },
+    {
+     "jenis": "youtube",
+     "url": "https://www.youtube.com/channel/UCk9mBxkRfpFM3NIbDmU1Duw/videos",
+     "sumber_url": "https://xurya.com"
+    },
+    {
+     "jenis": "facebook",
+     "url": "https://www.facebook.com/energixurya",
+     "sumber_url": "https://xurya.com"
+    }
+   ],
+   "logo_url": "https://xurya.com/favicon.ico",
+   "tanggal_periksa": "2026-11-07"
+  },
+  "p_27ae5a4203": {
+   "halaman": {
+    "beranda": "https://medcopower.co.id/",
+    "tentang": "https://medcopower.co.id/about-us-at-a-glance/",
+    "proyek": "https://medcopower.co.id/project-category/operating-assets/",
+    "investor": "https://medcopower.co.id/document-category/annual-report/",
+    "keberlanjutan": "https://medcopower.co.id/medco-power-receives-smi-environmental-and-social-safeguards-award-2026/"
+   },
+   "sumber": [
+    "https://medcopower.co.id/",
+    "https://medcopower.co.id/about-us-at-a-glance/",
+    "https://medcopower.co.id/project-category/operating-assets/",
+    "https://medcopower.co.id/document-category/annual-report/",
+    "https://medcopower.co.id/medco-power-receives-smi-environmental-and-social-safeguards-award-2026/"
+   ],
+   "kontak": {
+    "telepon": [],
+    "surel": [
+     "corsec.mpi@medcoenergi.com"
+    ],
+    "sumber_url": "https://medcopower.co.id/"
+   },
+   "logo_url": "https://medco.storage.googleapis.com/wp-content/uploads/2026/02/26144211/cropped-mpi-favicon-32x32.png",
+   "kapasitas": [
+    {
+     "mw": 1011,
+     "jenis": "terpasang",
+     "konteks": "In 2025, the Company recorded IPP Installed Capacity of 1,011 MW and power sales of 4,371 GWh through its Gas to Power, Geothermal, Solar PV, and other Renewables assets across Ind",
+     "sumber_url": "https://medcopower.co.id/about-us-at-a-glance/"
+    },
+    {
+     "mw": 3600000,
+     "jenis": "tercatat",
+     "konteks": "At the same time, Medco Power is also committed to the task of capturing long-term growth arising from an estimated 3,600 GW of renewable energy potential in Indonesia, and the gro",
+     "sumber_url": "https://medcopower.co.id/about-us-at-a-glance/"
+    },
+    {
+     "mw": 35,
+     "jenis": "terpasang",
+     "konteks": "The 35 MW Ijen Geothermal Unit 1 reached its Commercial Operation Date (COD) in February 2025, the 25 MW East Bali Solar PV reached COD in July 2025, and the 109 MW ELB Expansion p",
+     "sumber_url": "https://medcopower.co.id/about-us-at-a-glance/"
+    },
+    {
+     "mw": 60,
+     "jenis": "pipeline",
+     "konteks": "Preliminary exploration of Bonjol Geothermal (60 MW) was completed towards the end of 2025 and subsurface studies of Samosir Geothermal (40 MW) are targeted to be completed in Q1 2",
+     "sumber_url": "https://medcopower.co.id/about-us-at-a-glance/"
+    }
+   ],
+   "asosiasi": [
+    "EBTKE"
+   ],
+   "tanggal_periksa": "2026-11-07"
+  },
+  "p_4322497a63": {
+   "halaman": {
+    "beranda": "https://www.marubeni.com",
+    "tentang": "https://www.marubeni.com/en/company/",
+    "manajemen": "https://www.marubeni.com/en/company/policy/",
+    "proyek": "https://www.marubeni.com/en/business/",
+    "investor": "https://www.marubeni.com/en/ir/",
+    "keberlanjutan": "https://www.marubeni.com/en/sustainability/contribution/"
+   },
+   "sumber": [
+    "https://www.marubeni.com",
+    "https://www.marubeni.com/en/company/",
+    "https://www.marubeni.com/en/company/policy/",
+    "https://www.marubeni.com/en/business/",
+    "https://www.marubeni.com/en/ir/",
+    "https://www.marubeni.com/en/sustainability/contribution/"
+   ],
+   "sosmed": [
+    {
+     "jenis": "linkedin",
+     "url": "https://www.linkedin.com/company/marubeni-corporation",
+     "sumber_url": "https://www.marubeni.com"
+    },
+    {
+     "jenis": "youtube",
+     "url": "https://www.youtube.com/channel/UCVvUqA4Jog_WE6JmV_owi4A",
+     "sumber_url": "https://www.marubeni.com"
+    },
+    {
+     "jenis": "twitter",
+     "url": "https://twitter.com/Marubeni_Corp",
+     "sumber_url": "https://www.marubeni.com"
+    },
+    {
+     "jenis": "facebook",
+     "url": "https://www.facebook.com/marubeni.jp",
+     "sumber_url": "https://www.marubeni.com"
+    },
+    {
+     "jenis": "instagram",
+     "url": "https://instagram.com/marubeni_gallery_official",
+     "sumber_url": "https://www.marubeni.com"
+    }
+   ],
+   "logo_url": "https://www.marubeni.com/common/images/ogp.jpg",
+   "tanggal_periksa": "2026-11-07"
+  },
+  "p_45c7d8a27f": {
+   "halaman": {
+    "beranda": "https://masdar.ae",
+    "tentang": "https://masdar.ae/en/our-company",
+    "manajemen": "https://masdar.ae/en/our-management",
+    "investor": "https://masdar.ae/en/investors",
+    "kontak": "https://masdar.ae/en/contact-us",
+    "proyek": "https://masdar.ae/en/renewables/our-projects"
+   },
+   "sumber": [
+    "https://masdar.ae",
+    "https://masdar.ae/en/our-company",
+    "https://masdar.ae/en/our-management",
+    "https://masdar.ae/en/investors",
+    "https://masdar.ae/en/contact-us",
+    "https://masdar.ae/en/renewables/our-projects"
+   ],
+   "kontak": {
+    "telepon": [
+     "+97126533333",
+     "+97126536002"
+    ],
+    "surel": [
+     "info@masdar.ae",
+     "ir@masdar.ae",
+     "press@masdar.ae"
+    ],
+    "sumber_url": "https://masdar.ae"
+   },
+   "sosmed": [
+    {
+     "jenis": "facebook",
+     "url": "https://www.facebook.com/masdar.ae",
+     "sumber_url": "https://masdar.ae"
+    },
+    {
+     "jenis": "twitter",
+     "url": "https://twitter.com/masdar",
+     "sumber_url": "https://masdar.ae"
+    },
+    {
+     "jenis": "instagram",
+     "url": "http://instagram.com/masdar",
+     "sumber_url": "https://masdar.ae"
+    },
+    {
+     "jenis": "linkedin",
+     "url": "https://www.linkedin.com/company/masdar-abu-dhabi-future-energy-company",
+     "sumber_url": "https://masdar.ae"
+    },
+    {
+     "jenis": "youtube",
+     "url": "https://www.youtube.com/masdarvideos",
+     "sumber_url": "https://masdar.ae"
+    }
+   ],
+   "logo_url": "https://masdar.ae/-/media/corporate-revamp/icons/favicon/masdar-fav-64x64.ico",
+   "kapasitas": [
+    {
+     "mw": 630,
+     "jenis": "terpasang",
+     "konteks": "London Array Installed Capacity: 630MW Wind | England The 72-megawatt (MW) onshore wind farm is Montenegro's first wind farm and one of the largest in the region.",
+     "sumber_url": "https://masdar.ae/en/renewables/our-projects"
+    },
+    {
+     "mw": 72,
+     "jenis": "tercatat",
+     "konteks": "Krnovo Wind Farm Total Capacity: 72MW Wind | Montenegro In July 2021, Masdar signed an agreement with the Ministry of Investment and Foreign Trade of the Republic of Uzbekistan and",
+     "sumber_url": "https://masdar.ae/en/renewables/our-projects"
+    },
+    {
+     "mw": 402,
+     "jenis": "terpasang",
+     "konteks": "Dudgeon Offshore Wind Farm Installed capacity: 402MW Offshore Wind | England Romainville Solar Park is a 5-megawatt (MW) solar photovoltaic (PV) power plant with battery storage in",
+     "sumber_url": "https://masdar.ae/en/renewables/our-projects"
+    },
+    {
+     "mw": 315,
+     "jenis": "tercatat",
+     "konteks": "315MW Neftchala Solar PV Project Capacity: 315MW Will supply enough electricity to power 50,000 homes Will displace 303,000 tonnes of CO2 a year Solar PV | Azerbaijan In August 202",
+     "sumber_url": "https://masdar.ae/en/renewables/our-projects"
+    }
+   ],
+   "tanggal_periksa": "2026-11-07"
+  },
+  "p_476a6bf2fb": {
+   "halaman": {
+    "beranda": "https://pertaminapatraniaga.com",
+    "investor": "https://pertaminapatraniaga.com/page/laporan-tahunan",
+    "tentang": "https://pertaminapatraniaga.com/page/tentang-esg-pertamina-patra-niaga",
+    "keberlanjutan": "https://pertaminapatraniaga.com/page/tentang-esg-pertamina-patra-niaga"
+   },
+   "sumber": [
+    "https://pertaminapatraniaga.com",
+    "https://pertaminapatraniaga.com/page/laporan-tahunan",
+    "https://pertaminapatraniaga.com/page/tentang-esg-pertamina-patra-niaga",
+    "https://pertaminapatraniaga.com/page/tentang-esg-pertamina-patra-niaga"
+   ],
+   "sosmed": [
+    {
+     "jenis": "instagram",
+     "url": "https://www.instagram.com/ptpertaminapatraniaga",
+     "sumber_url": "https://pertaminapatraniaga.com"
+    },
+    {
+     "jenis": "tiktok",
+     "url": "https://www.tiktok.com/@pertaminapatraniaga",
+     "sumber_url": "https://pertaminapatraniaga.com"
+    },
+    {
+     "jenis": "twitter",
+     "url": "https://x.com/ptm_patraniaga",
+     "sumber_url": "https://pertaminapatraniaga.com"
+    },
+    {
+     "jenis": "facebook",
+     "url": "https://www.facebook.com/ptpertaminapatraniaga",
+     "sumber_url": "https://pertaminapatraniaga.com"
+    },
+    {
+     "jenis": "youtube",
+     "url": "https://www.youtube.com/@ptpertaminapatraniaga8128",
+     "sumber_url": "https://pertaminapatraniaga.com"
+    }
+   ],
+   "logo_url": "https://pertaminapatraniaga.com/favicon.ico",
+   "tanggal_periksa": "2026-11-07"
+  },
+  "p_6a3903d60a": {
+   "halaman": {
+    "beranda": "https://holding-perkebunan.com",
+    "tentang": "https://holding-perkebunan.com/profil-perusahaan/",
+    "proyek": "https://holding-perkebunan.com/profil-perusahaan/",
+    "keberlanjutan": "https://holding-perkebunan.com/keberlanjutan/",
+    "investor": "https://holding-perkebunan.com/laporan-tahunan/"
+   },
+   "sumber": [
+    "https://holding-perkebunan.com",
+    "https://holding-perkebunan.com/profil-perusahaan/",
+    "https://holding-perkebunan.com/profil-perusahaan/",
+    "https://holding-perkebunan.com/keberlanjutan/",
+    "https://holding-perkebunan.com/laporan-tahunan/"
+   ],
+   "kontak": {
+    "telepon": [
+     "+622129183300"
+    ],
+    "surel": [
+     "sekretariat@ptpn.id"
+    ],
+    "sumber_url": "https://holding-perkebunan.com"
+   },
+   "logo_url": "https://holding-perkebunan.com/wp-content/uploads/2026/10/apple-icon-57x57-1.png",
+   "tanggal_periksa": "2026-11-07"
+  },
+  "p_7a803f3b71": {
+   "halaman": {
+    "beranda": "https://www.starenergy.co.id/"
+   },
+   "sumber": [
+    "https://www.starenergy.co.id/"
+   ],
+   "tahun_berdiri": {
+    "nilai": 2003,
+    "sumber_url": "https://www.starenergy.co.id/"
+   },
+   "logo_url": "https://www.starenergy.co.id/content/image/cropped-favicon-180x180.png",
+   "tanggal_periksa": "2026-11-07"
+  },
+  "p_978ca76d57": {
+   "halaman": {
+    "beranda": "https://mind.id",
+    "tentang": "https://mind.id/pages/tentang-kami",
+    "proyek": "https://mind.id/pages/purpose-value",
+    "manajemen": "https://mind.id/pages/board-of-commisioner",
+    "keberlanjutan": "https://mind.id/pages/sustainability",
+    "kontak": "https://mind.id/pages/contact"
+   },
+   "sumber": [
+    "https://mind.id",
+    "https://mind.id/pages/tentang-kami",
+    "https://mind.id/pages/purpose-value",
+    "https://mind.id/pages/board-of-commisioner",
+    "https://mind.id/pages/sustainability",
+    "https://mind.id/pages/contact"
+   ],
+   "kontak": {
+    "telepon": [
+     "(+6221) 27938750"
+    ],
+    "surel": [
+     "corsec@mind.id",
+     "investor.relation@mind.id",
+     "info@mind.id"
+    ],
+    "sumber_url": "https://mind.id"
+   },
+   "sosmed": [
+    {
+     "jenis": "facebook",
+     "url": "https://www.facebook.com/MiningIndustryIndonesia",
+     "sumber_url": "https://mind.id"
+    },
+    {
+     "jenis": "twitter",
+     "url": "https://twitter.com/miningindonesia",
+     "sumber_url": "https://mind.id"
+    },
+    {
+     "jenis": "instagram",
+     "url": "https://instagram.com/miningindustry.id",
+     "sumber_url": "https://mind.id"
+    },
+    {
+     "jenis": "youtube",
+     "url": "https://youtube.com/channel/UCN6nZzB13pMFBDPh2cO863g",
+     "sumber_url": "https://mind.id"
+    },
+    {
+     "jenis": "linkedin",
+     "url": "https://www.linkedin.com/company/mining-industry-indonesia",
+     "sumber_url": "https://mind.id"
+    }
+   ],
+   "logo_url": "https://mind.id/img/icons/apple-icon-57x57.png",
+   "tanggal_periksa": "2026-11-07"
+  },
+  "p_9de27fd5b9": {
+   "halaman": {
+    "beranda": "https://www.medcoenergi.com",
+    "tentang": "https://www.medcoenergi.com/en/about-us/at-a-glance/",
+    "manajemen": "https://www.medcoenergi.com/index.php?controller=page&action=view&page=about-us&detail=our-leaders&detail1=board-of-directors&detail2=&lang=en",
+    "proyek": "https://www.medcoenergi.com/en/our-businesses/overview/",
+    "keberlanjutan": "https://www.medcoenergi.com/index.php?controller=page&action=view&page=our-sustainability&detail=environment&detail1=waste-management&detail2=&lang=en",
+    "investor": "https://www.medcoenergi.com/en/investors/overview/"
+   },
+   "sumber": [
+    "https://www.medcoenergi.com",
+    "https://www.medcoenergi.com/en/about-us/at-a-glance/",
+    "https://www.medcoenergi.com/index.php?controller=page&action=view&page=about-us&detail=our-leaders&detail1=board-of-directors&detail2=&lang=en",
+    "https://www.medcoenergi.com/en/our-businesses/overview/",
+    "https://www.medcoenergi.com/index.php?controller=page&action=view&page=our-sustainability&detail=environment&detail1=waste-management&detail2=&lang=en",
+    "https://www.medcoenergi.com/en/investors/overview/"
+   ],
+   "net_zero": {
+    "tahun": 2050,
+    "konteks": "Climate Action Recognizing the urgent need for action on climate change, MedcoEnergi is mobilizing efforts to achieve net-zero emissions Scope 1 and Scope 2 by 2050.",
+    "sumber_url": "https://www.medcoenergi.com"
+   },
+   "kontak": {
+    "telepon": [
+     "+622129953000"
+    ],
+    "surel": [],
+    "sumber_url": "https://www.medcoenergi.com"
+   },
+   "logo_url": "https://www.medcoenergi.com/apple-touch-icon.png",
+   "tanggal_periksa": "2026-11-07"
+  },
+  "p_a321da2bd5": {
+   "halaman": {
+    "beranda": "https://acidatama.co.id/",
+    "tentang": "https://acidatama.co.id/tentang-kami/",
+    "proyek": "https://acidatama.co.id/tentang-kami/",
+    "manajemen": "https://acidatama.co.id/tentang-kami/manajemen/direksi/",
+    "kontak": "https://acidatama.co.id/tentang-kami/contacts/",
+    "investor": "https://acidatama.co.id/hubungan-investor/"
+   },
+   "sumber": [
+    "https://acidatama.co.id/",
+    "https://acidatama.co.id/tentang-kami/",
+    "https://acidatama.co.id/tentang-kami/",
+    "https://acidatama.co.id/tentang-kami/manajemen/direksi/",
+    "https://acidatama.co.id/tentang-kami/contacts/",
+    "https://acidatama.co.id/hubungan-investor/"
+   ],
+   "kontak": {
+    "telepon": [
+     "(62-21) 53660777",
+     "(62-271) 648400"
+    ],
+    "surel": [
+     "info@acidatama.co.id"
+    ],
+    "sumber_url": "https://acidatama.co.id/"
+   },
+   "logo_url": "https://acidatama.co.id/wp-content/uploads/2024/05/cropped-Picture1-32x32.png",
+   "tahun_berdiri": {
+    "nilai": 1983,
+    "sumber_url": "https://acidatama.co.id/tentang-kami/"
+   },
+   "tanggal_periksa": "2026-11-07"
+  },
+  "p_a363064837": {
+   "halaman": {
+    "beranda": "https://www.wika.co.id",
+    "proyek": "https://www.wika.co.id/en/contact-us/business-to-business",
+    "kontak": "https://www.wika.co.id/en/contact-us/business-to-business",
+    "tentang": "https://www.wika.co.id/en/company/who-we-are",
+    "keberlanjutan": "https://www.wika.co.id/en/company/safety-health-and-environment",
+    "manajemen": "https://www.wika.co.id/en/gcg/risk-management"
+   },
+   "sumber": [
+    "https://www.wika.co.id",
+    "https://www.wika.co.id/en/contact-us/business-to-business",
+    "https://www.wika.co.id/en/contact-us/business-to-business",
+    "https://www.wika.co.id/en/company/who-we-are",
+    "https://www.wika.co.id/en/company/safety-health-and-environment",
+    "https://www.wika.co.id/en/gcg/risk-management"
+   ],
+   "tahun_berdiri": {
+    "nilai": 1960,
+    "sumber_url": "https://www.wika.co.id"
+   },
+   "kontak": {
+    "telepon": [
+     "+6221 8067 9200"
+    ],
+    "surel": [
+     "corsec@wikagedung.co.id",
+     "marketing@wikarekon.co.id",
+     "info@wikaikon.co.id"
+    ],
+    "sumber_url": "https://www.wika.co.id"
+   },
+   "sosmed": [
+    {
+     "jenis": "instagram",
+     "url": "https://www.instagram.com/ptwijayakarya",
+     "sumber_url": "https://www.wika.co.id"
+    },
+    {
+     "jenis": "linkedin",
+     "url": "https://www.linkedin.com/company/ptwijayakaryaperserotbk.",
+     "sumber_url": "https://www.wika.co.id"
+    },
+    {
+     "jenis": "youtube",
+     "url": "https://www.youtube.com/channel/UCUF609VvNhSKbuJxSXGfKYQ",
+     "sumber_url": "https://www.wika.co.id"
+    },
+    {
+     "jenis": "facebook",
+     "url": "https://facebook.com/ptwika",
+     "sumber_url": "https://www.wika.co.id"
+    },
+    {
+     "jenis": "twitter",
+     "url": "https://twitter.com/ptwijayakarya",
+     "sumber_url": "https://www.wika.co.id"
+    },
+    {
+     "jenis": "tiktok",
+     "url": "https://www.tiktok.com/@ptwijayakarya",
+     "sumber_url": "https://www.wika.co.id"
+    }
+   ],
+   "logo_url": "https://www.wika.co.id/apple-icon.png",
+   "sertifikasi": [
+    "ISO 45001",
+    "ISO 14001"
+   ],
+   "tanggal_periksa": "2026-11-07"
+  },
+  "p_b1c52ad7b0": {
+   "halaman": {
+    "beranda": "https://www.pertamina.com",
+    "investor": "https://www.pertamina.com/hubungan-investor",
+    "tentang": "https://www.pertamina.com/tata-kelola-perseroan",
+    "proyek": "https://www.pertamina.com/tata-kelola-perseroan"
+   },
+   "sumber": [
+    "https://www.pertamina.com",
+    "https://www.pertamina.com/hubungan-investor",
+    "https://www.pertamina.com/tata-kelola-perseroan",
+    "https://www.pertamina.com/tata-kelola-perseroan"
+   ],
+   "kontak": {
+    "telepon": [],
+    "surel": [
+     "infopublik@pertamina.com"
+    ],
+    "sumber_url": "https://www.pertamina.com"
+   },
+   "sosmed": [
+    {
+     "jenis": "facebook",
+     "url": "https://www.facebook.com/pertamina",
+     "sumber_url": "https://www.pertamina.com"
+    },
+    {
+     "jenis": "twitter",
+     "url": "https://x.com/pertamina",
+     "sumber_url": "https://www.pertamina.com"
+    },
+    {
+     "jenis": "instagram",
+     "url": "https://www.instagram.com/pertamina",
+     "sumber_url": "https://www.pertamina.com"
+    },
+    {
+     "jenis": "linkedin",
+     "url": "https://www.linkedin.com/company/pertamina",
+     "sumber_url": "https://www.pertamina.com"
+    },
+    {
+     "jenis": "tiktok",
+     "url": "https://www.tiktok.com/@pertamina",
+     "sumber_url": "https://www.pertamina.com"
+    },
+    {
+     "jenis": "youtube",
+     "url": "https://www.youtube.com/user/PTPertamina",
+     "sumber_url": "https://www.pertamina.com"
+    }
+   ],
+   "logo_url": "https://www.pertamina.com/favicon.png",
+   "tanggal_periksa": "2026-11-07"
+  },
+  "p_bd4e2d9bd2": {
+   "halaman": {
+    "beranda": "https://inalum.id",
+    "tentang": "https://www.inalum.id/id/tentang-kami",
+    "keberlanjutan": "https://www.inalum.id/id/esg",
+    "investor": "https://www.inalum.id/id/esg/hubungan-investor",
+    "kontak": "https://www.inalum.id/id/kontak",
+    "proyek": "https://www.inalum.id/id/tentang-kami/profil-perusahaan"
+   },
+   "sumber": [
+    "https://inalum.id",
+    "https://www.inalum.id/id/tentang-kami",
+    "https://www.inalum.id/id/esg",
+    "https://www.inalum.id/id/esg/hubungan-investor",
+    "https://www.inalum.id/id/kontak",
+    "https://www.inalum.id/id/tentang-kami/profil-perusahaan"
+   ],
+   "tahun_berdiri": {
+    "nilai": 1976,
+    "sumber_url": "https://inalum.id"
+   },
+   "kontak": {
+    "telepon": [
+     "(+6221) 27517566",
+     "(+62622) 31331",
+     "(+62622) 31311"
+    ],
+    "surel": [
+     "corsec@inalum.id",
+     "investor.relation@mind.id",
+     "pengadaan-adm@inalum.id"
+    ],
+    "sumber_url": "https://inalum.id"
+   },
+   "sosmed": [
+    {
+     "jenis": "instagram",
+     "url": "https://www.instagram.com/inalum",
+     "sumber_url": "https://inalum.id"
+    },
+    {
+     "jenis": "youtube",
+     "url": "https://www.youtube.com/channel/UCrPnI_rPzOuuKk1jEhYERpA",
+     "sumber_url": "https://inalum.id"
+    },
+    {
+     "jenis": "linkedin",
+     "url": "https://www.linkedin.com/company/pt-indonesia-asahan-aluminium",
+     "sumber_url": "https://inalum.id"
+    }
+   ],
+   "logo_url": "https://www.inalum.id/storage/favicon-kH5U.ico",
+   "tanggal_periksa": "2026-11-07"
+  },
+  "p_bdd0f2d140": {
+   "halaman": {
+    "beranda": "https://www.baritorenewables.co.id",
+    "tentang": "https://www.baritorenewables.co.id/en/barito-spirit",
+    "manajemen": "https://www.baritorenewables.co.id/en/board-of-commissioners",
+    "proyek": "https://www.baritorenewables.co.id/en/our-business",
+    "investor": "https://www.baritorenewables.co.id/en/annual-report",
+    "keberlanjutan": "https://www.baritorenewables.co.id/en/sustainability-report"
+   },
+   "sumber": [
+    "https://www.baritorenewables.co.id",
+    "https://www.baritorenewables.co.id/en/barito-spirit",
+    "https://www.baritorenewables.co.id/en/board-of-commissioners",
+    "https://www.baritorenewables.co.id/en/our-business",
+    "https://www.baritorenewables.co.id/en/annual-report",
+    "https://www.baritorenewables.co.id/en/sustainability-report"
+   ],
+   "kontak": {
+    "telepon": [
+     "(62-21) 530 6711"
+    ],
+    "surel": [
+     "corpsec@baritorenewables.co.id"
+    ],
+    "sumber_url": "https://www.baritorenewables.co.id"
+   },
+   "logo_url": "https://www.baritorenewables.co.id/uploads/2024/07/8a63dc7f0ccf52fa774831e3334ae5e7_f3bcad0dbe37b63aae8548b82a650b46_57.png",
+   "kapasitas": [
+    {
+     "mw": 113.5,
+     "jenis": "tercatat",
+     "konteks": "The first Unit (113,5 MW) at Wayang Windu was completed in 1999 and, since 2000, has been producing at full capacity with an availability rate of over 98%.",
+     "sumber_url": "https://www.baritorenewables.co.id/en/our-business"
+    },
+    {
+     "mw": 117,
+     "jenis": "tercatat",
+     "konteks": "On March 2nd 2009, the then Indonesian Minister of Energy and Resources officially inaugurated Wayang Windu Unit 2, which has a generation capacity of 117 MW from a single turbine.",
+     "sumber_url": "https://www.baritorenewables.co.id/en/our-business"
+    }
+   ],
+   "tanggal_periksa": "2026-11-07"
+  },
+  "p_c9b8bffbec": {
+   "halaman": {
+    "beranda": "https://www.indonesiabatterycorp.com/id",
+    "tentang": "https://www.indonesiabatterycorp.com/id/about-us",
+    "manajemen": "https://www.indonesiabatterycorp.com/id/about-us/dewan-direksi",
+    "proyek": "https://www.indonesiabatterycorp.com/id/future-project",
+    "kontak": "https://www.indonesiabatterycorp.com/id/contact-us"
+   },
+   "sumber": [
+    "https://www.indonesiabatterycorp.com/id",
+    "https://www.indonesiabatterycorp.com/id/about-us",
+    "https://www.indonesiabatterycorp.com/id/about-us/dewan-direksi",
+    "https://www.indonesiabatterycorp.com/id/future-project",
+    "https://www.indonesiabatterycorp.com/id/contact-us"
+   ],
+   "sosmed": [
+    {
+     "jenis": "instagram",
+     "url": "https://www.instagram.com/indobatterycorp",
+     "sumber_url": "https://www.indonesiabatterycorp.com/id"
+    },
+    {
+     "jenis": "twitter",
+     "url": "https://twitter.com/ev_batteryindo",
+     "sumber_url": "https://www.indonesiabatterycorp.com/id"
+    },
+    {
+     "jenis": "facebook",
+     "url": "https://www.facebook.com/profile.php",
+     "sumber_url": "https://www.indonesiabatterycorp.com/id"
+    },
+    {
+     "jenis": "youtube",
+     "url": "https://www.youtube.com/channel/UCBn_0vxbiGXZNCaoCma-x9A",
+     "sumber_url": "https://www.indonesiabatterycorp.com/id"
+    }
+   ],
+   "logo_url": "https://www.indonesiabatterycorp.com/images/logo-ibc-mobile.png",
+   "tanggal_periksa": "2026-11-07"
+  },
+  "p_d3818e1614": {
+   "halaman": {
+    "beranda": "https://www.indikaenergy.co.id",
+    "proyek": "https://indikaenergy.co.id/business-portfolios/",
+    "keberlanjutan": "https://indikaenergy.co.id/esg/",
+    "investor": "https://indikaenergy.co.id/investors/",
+    "tentang": "https://indikaenergy.co.id/investors/company-update/",
+    "kontak": "https://indikaenergy.co.id/contact-us/"
+   },
+   "sumber": [
+    "https://www.indikaenergy.co.id",
+    "https://indikaenergy.co.id/business-portfolios/",
+    "https://indikaenergy.co.id/esg/",
+    "https://indikaenergy.co.id/investors/",
+    "https://indikaenergy.co.id/investors/company-update/",
+    "https://indikaenergy.co.id/contact-us/"
+   ],
+   "kontak": {
+    "telepon": [
+     "+62+622125579888"
+    ],
+    "surel": [],
+    "sumber_url": "https://www.indikaenergy.co.id"
+   },
+   "sosmed": [
+    {
+     "jenis": "instagram",
+     "url": "https://www.instagram.com/indika.energy",
+     "sumber_url": "https://www.indikaenergy.co.id"
+    },
+    {
+     "jenis": "youtube",
+     "url": "https://www.youtube.com/channel/UCl7ztmOIAcayAiqwphipRaA",
+     "sumber_url": "https://www.indikaenergy.co.id"
+    },
+    {
+     "jenis": "linkedin",
+     "url": "https://www.linkedin.com/company/pt.-indika-energy-tbk.",
+     "sumber_url": "https://www.indikaenergy.co.id"
+    }
+   ],
+   "logo_url": "https://indikaenergy.co.id/wp-content/uploads/2021/05/logo-INDIKA-ENERGY.png",
+   "net_zero": {
+    "tahun": 2050,
+    "konteks": "We continue to diversify into low-carbon businesses and decarbonize our operations to achieve net-zero emissions by 2050.",
+    "sumber_url": "https://indikaenergy.co.id/esg/"
+   },
+   "asosiasi": [
+    "Indonesia Business Council for Sustainable Development"
+   ],
+   "karyawan": {
+    "nilai": 4306,
+    "sumber_url": "https://indikaenergy.co.id/esg/"
+   },
+   "tanggal_periksa": "2026-11-07"
+  },
+  "p_dda1e51dae": {
+   "halaman": {
+    "beranda": "https://pge.pertamina.com",
+    "proyek": "https://pge.pertamina.com/id/bisnis-kami",
+    "keberlanjutan": "https://pge.pertamina.com/id/strategi",
+    "investor": "https://pge.pertamina.com/id/ikhtisar-keuangan",
+    "kontak": "https://pge.pertamina.com/kontak"
+   },
+   "sumber": [
+    "https://pge.pertamina.com",
+    "https://pge.pertamina.com/id/bisnis-kami",
+    "https://pge.pertamina.com/id/strategi",
+    "https://pge.pertamina.com/id/ikhtisar-keuangan",
+    "https://pge.pertamina.com/kontak"
+   ],
+   "kontak": {
+    "telepon": [
+     "622139833222",
+     "622139833230",
+     "+622139833222"
+    ],
+    "surel": [],
+    "sumber_url": "https://pge.pertamina.com"
+   },
+   "sosmed": [
+    {
+     "jenis": "instagram",
+     "url": "https://instagram.com/pge.pertamina",
+     "sumber_url": "https://pge.pertamina.com"
+    },
+    {
+     "jenis": "facebook",
+     "url": "https://www.facebook.com/pgepertamina-100348771617597",
+     "sumber_url": "https://pge.pertamina.com"
+    },
+    {
+     "jenis": "twitter",
+     "url": "https://twitter.com/pgepertamina",
+     "sumber_url": "https://pge.pertamina.com"
+    },
+    {
+     "jenis": "linkedin",
+     "url": "https://www.linkedin.com/company/pt-pertamina-geothermal-energy",
+     "sumber_url": "https://pge.pertamina.com"
+    }
+   ],
+   "logo_url": "https://pge.pertamina.com/assets/img/favicon/apple-touch-icon.png",
+   "kapasitas": [
+    {
+     "mw": 1932,
+     "jenis": "terpasang",
+     "konteks": "Saat ini PGE mengelola 13 Wilayah Kerja Panas Bumi (WKP) dan 1 penugasan dengan total kapasitas terpasang sebesar 1932 MW.",
+     "sumber_url": "https://pge.pertamina.com/id/bisnis-kami"
+    }
+   ],
+   "tanggal_periksa": "2026-11-07"
+  },
+  "p_e09699d02c": {
+   "halaman": {
+    "beranda": "https://www.wika.co.id/en/subsidiaries/pt-wika-industri-energi",
+    "proyek": "https://www.wika.co.id/en/contact-us/business-to-business",
+    "kontak": "https://www.wika.co.id/en/contact-us/business-to-business",
+    "tentang": "https://www.wika.co.id/en/company/who-we-are",
+    "keberlanjutan": "https://www.wika.co.id/en/company/safety-health-and-environment",
+    "manajemen": "https://www.wika.co.id/en/gcg/risk-management"
+   },
+   "sumber": [
+    "https://www.wika.co.id/en/subsidiaries/pt-wika-industri-energi",
+    "https://www.wika.co.id/en/contact-us/business-to-business",
+    "https://www.wika.co.id/en/contact-us/business-to-business",
+    "https://www.wika.co.id/en/company/who-we-are",
+    "https://www.wika.co.id/en/company/safety-health-and-environment",
+    "https://www.wika.co.id/en/gcg/risk-management"
+   ],
+   "kontak": {
+    "telepon": [
+     "+6221 8067 9200"
+    ],
+    "surel": [
+     "corsec@wikagedung.co.id",
+     "marketing@wikarekon.co.id",
+     "info@wikaikon.co.id"
+    ],
+    "sumber_url": "https://www.wika.co.id/en/subsidiaries/pt-wika-industri-energi"
+   },
+   "sosmed": [
+    {
+     "jenis": "instagram",
+     "url": "https://www.instagram.com/ptwijayakarya",
+     "sumber_url": "https://www.wika.co.id/en/subsidiaries/pt-wika-industri-energi"
+    },
+    {
+     "jenis": "linkedin",
+     "url": "https://www.linkedin.com/company/ptwijayakaryaperserotbk.",
+     "sumber_url": "https://www.wika.co.id/en/subsidiaries/pt-wika-industri-energi"
+    },
+    {
+     "jenis": "youtube",
+     "url": "https://www.youtube.com/channel/UCUF609VvNhSKbuJxSXGfKYQ",
+     "sumber_url": "https://www.wika.co.id/en/subsidiaries/pt-wika-industri-energi"
+    },
+    {
+     "jenis": "facebook",
+     "url": "https://facebook.com/ptwika",
+     "sumber_url": "https://www.wika.co.id/en/subsidiaries/pt-wika-industri-energi"
+    },
+    {
+     "jenis": "twitter",
+     "url": "https://twitter.com/ptwijayakarya",
+     "sumber_url": "https://www.wika.co.id/en/subsidiaries/pt-wika-industri-energi"
+    },
+    {
+     "jenis": "tiktok",
+     "url": "https://www.tiktok.com/@ptwijayakarya",
+     "sumber_url": "https://www.wika.co.id/en/subsidiaries/pt-wika-industri-energi"
+    }
+   ],
+   "logo_url": "https://www.wika.co.id/apple-icon.png",
+   "sertifikasi": [
+    "ISO 45001",
+    "ISO 14001"
+   ],
+   "tanggal_periksa": "2026-11-07"
+  },
+  "p_e0f3886341": {
+   "halaman": {
+    "beranda": "https://iconpln.co.id"
+   },
+   "sumber": [
+    "https://iconpln.co.id"
+   ],
+   "logo_url": "https://iconpln.co.id/seo/apple-icon-57x57.png",
+   "tanggal_periksa": "2026-11-07"
+  },
+  "p_e6a5cc3fbe": {
+   "halaman": {
+    "beranda": "https://www.tunasbarulampung.com/",
+    "tentang": "https://www.tunasbarulampung.com/company/",
+    "proyek": "https://www.tunasbarulampung.com/company/",
+    "manajemen": "https://www.tunasbarulampung.com/management/",
+    "investor": "https://www.tunasbarulampung.com/financial-statment/",
+    "keberlanjutan": "https://www.tunasbarulampung.com/csr/"
+   },
+   "sumber": [
+    "https://www.tunasbarulampung.com/",
+    "https://www.tunasbarulampung.com/company/",
+    "https://www.tunasbarulampung.com/company/",
+    "https://www.tunasbarulampung.com/management/",
+    "https://www.tunasbarulampung.com/financial-statment/",
+    "https://www.tunasbarulampung.com/csr/"
+   ],
+   "tahun_berdiri": {
+    "nilai": 1973,
+    "sumber_url": "https://www.tunasbarulampung.com/"
+   },
+   "sertifikasi": [
+    "ISO 26000"
+   ],
+   "karyawan": {
+    "nilai": 5000,
+    "sumber_url": "https://www.tunasbarulampung.com/csr/"
+   },
+   "tanggal_periksa": "2026-11-07"
+  },
+  "p_e87ad21cbc": {
+   "halaman": {
+    "beranda": "https://www.bki.co.id",
+    "manajemen": "https://www.bki.co.id/our-services/statutory/international-safety-management",
+    "investor": "https://www.bki.co.id/annual-report",
+    "keberlanjutan": "https://www.bki.co.id/sustainability-report",
+    "tentang": "https://www.bki.co.id/company-profile"
+   },
+   "sumber": [
+    "https://www.bki.co.id",
+    "https://www.bki.co.id/our-services/statutory/international-safety-management",
+    "https://www.bki.co.id/annual-report",
+    "https://www.bki.co.id/sustainability-report",
+    "https://www.bki.co.id/company-profile"
+   ],
+   "kontak": {
+    "telepon": [],
+    "surel": [
+     "cs@bki.co.id"
+    ],
+    "sumber_url": "https://www.bki.co.id"
+   },
+   "sosmed": [
+    {
+     "jenis": "twitter",
+     "url": "https://x.com/BKI_1964",
+     "sumber_url": "https://www.bki.co.id"
+    },
+    {
+     "jenis": "facebook",
+     "url": "https://www.facebook.com/BKI1964",
+     "sumber_url": "https://www.bki.co.id"
+    },
+    {
+     "jenis": "instagram",
+     "url": "https://www.instagram.com/bki_1964",
+     "sumber_url": "https://www.bki.co.id"
+    },
+    {
+     "jenis": "youtube",
+     "url": "https://www.youtube.com/BKI1964",
+     "sumber_url": "https://www.bki.co.id"
+    }
+   ],
+   "logo_url": "https://www.bki.co.id/favicon.ico",
+   "tahun_berdiri": {
+    "nilai": 1964,
+    "sumber_url": "https://www.bki.co.id/company-profile"
+   },
+   "net_zero": {
+    "tahun": 2060,
+    "konteks": "This partnership accelerates SOEs&#x27; decarbonization efforts and contributes to achieving Net Zero Emissions by 2060.",
+    "sumber_url": "https://www.bki.co.id/company-profile"
+   },
+   "tanggal_periksa": "2026-11-07"
+  },
+  "p_ff7a390a42": {
+   "halaman": {
+    "beranda": "https://plnnusantarapower.co.id",
+    "tentang": "https://plnnusantarapower.co.id/about-us",
+    "keberlanjutan": "https://plnnusantarapower.co.id/sustainability",
+    "proyek": "https://plnnusantarapower.co.id/business-product",
+    "investor": "https://plnnusantarapower.co.id/investor"
+   },
+   "sumber": [
+    "https://plnnusantarapower.co.id",
+    "https://plnnusantarapower.co.id/about-us",
+    "https://plnnusantarapower.co.id/sustainability",
+    "https://plnnusantarapower.co.id/business-product",
+    "https://plnnusantarapower.co.id/investor"
+   ],
+   "kapasitas": [
+    {
+     "mw": 140.5,
+     "jenis": "pipeline",
+     "konteks": "Kaltimra GU (140.5 MW)')\">Hydro Diesel Solar PLN NP as Industry Leader We are dedicated to achieving the Net Zero Emission 2060 target by developing over 6.3 GW of renewable energy",
+     "sumber_url": "https://plnnusantarapower.co.id"
+    },
+    {
+     "mw": 23000,
+     "jenis": "tercatat",
+     "konteks": "English Indonesia Procurement CSMS Registration E-Procurement About Us Overview Learn More About Us Who We Are Learn More About Us Project & Achievements Learn More About Us Overvi",
+     "sumber_url": "https://plnnusantarapower.co.id/about-us"
+    },
+    {
+     "mw": 6300,
+     "jenis": "tercatat",
+     "konteks": "Learn More About Us Project & Achievement As the largest GenCo in Indonesia, PLN NP is developing over 6.3 GW of renewable energy power plants and pioneering the construction of va",
+     "sumber_url": "https://plnnusantarapower.co.id/about-us"
+    }
+   ],
+   "net_zero": {
+    "tahun": 2060,
+    "konteks": "Kaltimra GU (140.5 MW)')\">Hydro Diesel Solar PLN NP as Industry Leader We are dedicated to achieving the Net Zero Emission 2060 target by developing over 6.3 GW of renewable energy",
+    "sumber_url": "https://plnnusantarapower.co.id"
+   },
+   "kontak": {
+    "telepon": [],
+    "surel": [
+     "info@plnnusantarapower.co.id"
+    ],
+    "sumber_url": "https://plnnusantarapower.co.id"
+   },
+   "sosmed": [
+    {
+     "jenis": "instagram",
+     "url": "https://www.instagram.com/plnnusantarapower",
+     "sumber_url": "https://plnnusantarapower.co.id"
+    },
+    {
+     "jenis": "facebook",
+     "url": "https://www.facebook.com/plnnusantarapower",
+     "sumber_url": "https://plnnusantarapower.co.id"
+    },
+    {
+     "jenis": "youtube",
+     "url": "https://www.youtube.com/@plnnusantarapower",
+     "sumber_url": "https://plnnusantarapower.co.id"
+    },
+    {
+     "jenis": "twitter",
+     "url": "https://x.com/ptpln_np",
+     "sumber_url": "https://plnnusantarapower.co.id"
+    }
+   ],
+   "logo_url": "https://plnnusantarapower.co.id/images/pln-57.png",
+   "tanggal_periksa": "2026-11-07"
+  }
+ }
+}

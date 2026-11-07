@@ -7,6 +7,7 @@ import { namaBaku } from "/inti/nama_baku.js";
 import { logoOrg } from "/inti/logo_org.js";
 import { PROV } from "/inti/prov_singkat.js";
 import { paginasiHtml, sorotHalaman } from "/inti/paginasi.js";
+import { sumberHtml } from "/inti/komponen.js";
 
 const awal = [...document.querySelectorAll("[data-i18n], [data-i18n-attr]")].map((el) => [el, el.textContent, el.getAttribute("aria-label")]);
 const saya = await mulaiHalaman();
@@ -15,7 +16,7 @@ for (const [el, teks, label] of awal) {
   if (el.dataset.i18nAttr && label !== null && el.dataset.i18nAttr.split(";").some((p) => !ada(p.split(":")[1]))) el.setAttribute("aria-label", label);
 }
 if (document.title === "dir.title") document.title = "Direktori METI";
-window.JM = { ...(window.JM || {}), t, ada, angka, tanggal, bahasa, saya, logoOrg, namaBaku, PROV, paginasiHtml, sorotHalaman };
+window.JM = { ...(window.JM || {}), t, ada, angka, tanggal, bahasa, saya, logoOrg, namaBaku, PROV, paginasiHtml, sorotHalaman, sumberHtml };
 const muat = (src) => new Promise((ok, gagal) => {
   const s = document.createElement("script"); s.src = src; s.onload = ok; s.onerror = () => gagal(new Error(src)); document.body.append(s);
 });

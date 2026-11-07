@@ -1,0 +1,484 @@
+{
+ "jenis": "bulanan",
+ "periode": "2026-07",
+ "dibekukan": "2026-11-08",
+ "cakupan": {
+  "berita_sejak": "2026-07"
+ },
+ "ubin": {
+  "mw_baru": null,
+  "proyek_cod": null,
+  "regulasi": 0,
+  "berita": 4,
+  "tender": 0
+ },
+ "alasan": {
+  "mw_baru": "COD proyek di data hanya per tahun, tidak per bulan; lihat rapor tahunan."
+ },
+ "banding": {
+  "periode_lalu": "2026-06",
+  "berita": [
+   4,
+   0
+  ],
+  "regulasi": [
+   0,
+   0
+  ],
+  "tender": [
+   0,
+   0
+  ],
+  "mw_baru": null
+ },
+ "kapasitas_baru": null,
+ "regulasi": [],
+ "berita": [
+  {
+   "id": "24da1e2be5",
+   "judul": "PLN Bakal Serap Listrik 40,79 MW dari PSEL Legok Nangka",
+   "media": "Tempo",
+   "tanggal": "2026-07-31",
+   "url": "https://bisnis.tempo.co/read/2116304/pln-bakal-serap-listrik-4079-mw-dari-psel-legok-nangka"
+  },
+  {
+   "id": "206a942189",
+   "judul": "Proyek PSEL di Jawa Barat Senilai Rp 7,2 T Mulai Dibangun",
+   "media": "Tempo",
+   "tanggal": "2026-07-31",
+   "url": "https://bisnis.tempo.co/read/2116264/proyek-psel-di-jawa-barat-senilai-rp-72-t-mulai-dibangun"
+  },
+  {
+   "id": "ab15ba69de",
+   "judul": "MRT Jakarta Kembangkan Bisnis TOD, Pendanaan di Luar APBD",
+   "media": "Tempo",
+   "tanggal": "2026-07-31",
+   "url": "https://bisnis.tempo.co/read/2116246/mrt-jakarta-kembangkan-bisnis-tod-pendanaan-di-luar-apbd"
+  },
+  {
+   "id": "674f1f6431",
+   "judul": "Menperin: Penjualan Kendaraan Listrik Pesat",
+   "media": "Tempo",
+   "tanggal": "2026-07-30",
+   "url": "https://bisnis.tempo.co/read/2116181/menperin-penjualan-kendaraan-listrik-pesat"
+  }
+ ],
+ "tender": [],
+ "bagian": {
+  "pengembang": {
+   "jumlah_pengembang": 58,
+   "atas": 10,
+   "porsi_atas_persen": 78.5,
+   "mw_bernama": 31009,
+   "mw_semua": null,
+   "proyek_bernama": 138,
+   "proyek_ber_mw": 439,
+   "baris": [
+    {
+     "peringkat": 1,
+     "nama": "PT Kayan Hydro Energy",
+     "mw": 10375,
+     "proyek": 6,
+     "porsi_persen": 33.5
+    },
+    {
+     "peringkat": 2,
+     "nama": "PT PLN (Persero)",
+     "mw": 5200,
+     "proyek": 42,
+     "porsi_persen": 16.8
+    },
+    {
+     "peringkat": 3,
+     "nama": "Sunseap Group Pte Ltd",
+     "mw": 2200,
+     "proyek": 1,
+     "porsi_persen": 7.1
+    },
+    {
+     "peringkat": 4,
+     "nama": "PT. Indonesia Power",
+     "mw": 1352,
+     "proyek": 5,
+     "porsi_persen": 4.4
+    },
+    {
+     "peringkat": 5,
+     "nama": "PT. Pembangkitan Jawa Bali",
+     "mw": 1203,
+     "proyek": 4,
+     "porsi_persen": 3.9
+    },
+    {
+     "peringkat": 6,
+     "nama": "PT PLN Indonesia Power",
+     "mw": 998,
+     "proyek": 10,
+     "porsi_persen": 3.2
+    },
+    {
+     "peringkat": 7,
+     "nama": "PT PLN Nusantara Power PT",
+     "mw": 962,
+     "proyek": 7,
+     "porsi_persen": 3.1
+    },
+    {
+     "peringkat": 8,
+     "nama": "PT Poso Energy",
+     "mw": 795,
+     "proyek": 3,
+     "porsi_persen": 2.6
+    },
+    {
+     "peringkat": 9,
+     "nama": "PacificLight Power Pte Ltd",
+     "mw": 670,
+     "proyek": 1,
+     "porsi_persen": 2.2
+    },
+    {
+     "peringkat": 10,
+     "nama": "PT. Inalum",
+     "mw": 603,
+     "proyek": 2,
+     "porsi_persen": 1.9
+    },
+    {
+     "peringkat": 11,
+     "nama": "INCO",
+     "mw": 467,
+     "proyek": 3,
+     "porsi_persen": 1.5
+    },
+    {
+     "peringkat": 12,
+     "nama": "PT Kerinci Merangin Hydro",
+     "mw": 350,
+     "proyek": 1,
+     "porsi_persen": 1.1
+    },
+    {
+     "peringkat": 13,
+     "nama": "Sarulla Operations Ltd",
+     "mw": 330,
+     "proyek": 1,
+     "porsi_persen": 1.1
+    },
+    {
+     "peringkat": 14,
+     "nama": "PT Vale Indonesia Tbk",
+     "mw": 305,
+     "proyek": 2,
+     "porsi_persen": 1
+    },
+    {
+     "peringkat": 15,
+     "nama": "PT. Poso Energi (IPP)",
+     "mw": 260,
+     "proyek": 1,
+     "porsi_persen": 0.8
+    }
+   ]
+  },
+  "pendana": {
+   "jumlah_pendana": 33,
+   "satu_saja": 3,
+   "jumlah_aktivitas": 235,
+   "baris": [
+    {
+     "peringkat": 1,
+     "nama": "Asian Development Bank",
+     "proyek": 37,
+     "nilai_usd": 6486400064
+    },
+    {
+     "peringkat": 2,
+     "nama": "Federal Ministry for Economic Cooperation and Development (BMZ)",
+     "proyek": 24,
+     "nilai_usd": 1474293034
+    },
+    {
+     "peringkat": 3,
+     "nama": "Netherlands Enterprise Agency",
+     "proyek": 24,
+     "nilai_usd": 1333129
+    },
+    {
+     "peringkat": 4,
+     "nama": "Green Climate Fund",
+     "proyek": 12,
+     "nilai_usd": 10867477630
+    },
+    {
+     "peringkat": 5,
+     "nama": "U.S. Agency for International Development",
+     "proyek": 11,
+     "nilai_usd": 230465854
+    },
+    {
+     "peringkat": 6,
+     "nama": "UK - Foreign, Commonwealth Development Office (FCDO)",
+     "proyek": 11,
+     "nilai_usd": 28234503
+    },
+    {
+     "peringkat": 7,
+     "nama": "Ministry for Foreign Affairs of Finland",
+     "proyek": 11,
+     "nilai_usd": 8611636
+    },
+    {
+     "peringkat": 8,
+     "nama": "Sweden",
+     "proyek": 8,
+     "nilai_usd": 26254903
+    },
+    {
+     "peringkat": 9,
+     "nama": "UK - Foreign, Commonwealth and Development Office",
+     "proyek": 8,
+     "nilai_usd": 5098840
+    },
+    {
+     "peringkat": 10,
+     "nama": "Foreign Affairs, Trade and Development Canada (DFATD)",
+     "proyek": 6,
+     "nilai_usd": 1020957383
+    },
+    {
+     "peringkat": 11,
+     "nama": "Australia Aid",
+     "proyek": 6,
+     "nilai_usd": 192841171
+    },
+    {
+     "peringkat": 12,
+     "nama": "Ministry of Foreign Affairs of the Netherlands",
+     "proyek": 6,
+     "nilai_usd": 46033638
+    },
+    {
+     "peringkat": 13,
+     "nama": "Office for Government Policy Coordination",
+     "proyek": 6,
+     "nilai_usd": 32713874
+    },
+    {
+     "peringkat": 14,
+     "nama": "Ministry of Foreign Affairs, Denmark",
+     "proyek": 6,
+     "nilai_usd": 12171807
+    },
+    {
+     "peringkat": 15,
+     "nama": "DEPARTMENT FOR SCIENCE, INNOVATION AND TECHNOLOGY",
+     "proyek": 6,
+     "nilai_usd": 8648663
+    }
+   ]
+  },
+  "berhenti": {
+   "per_tahun": [
+    {
+     "tahun": "2026",
+     "jumlah": 2
+    }
+   ],
+   "proyek": [
+    {
+     "id": "pj_0362",
+     "nama": "Batam floating solar",
+     "status": "ditunda",
+     "mw": 2200,
+     "tanggal": "2026-11-07",
+     "dilaporkan_media": true,
+     "sumber_url": "https://en.wikipedia.org/wiki/List_of_power_stations_in_Indonesia"
+    },
+    {
+     "id": "wb_P040524",
+     "nama": "Java Power Distribution Project",
+     "status": "dibatalkan",
+     "mw": null,
+     "tanggal": "2026-11-07",
+     "dilaporkan_media": false,
+     "sumber_url": "https://projects.worldbank.org/en/projects-operations/project-detail/P040524"
+    },
+    {
+     "id": "wb_P121003",
+     "nama": "ID - Chiller Energy Efficiency Project",
+     "status": "dibatalkan",
+     "mw": null,
+     "tanggal": "2026-11-07",
+     "dilaporkan_media": false,
+     "sumber_url": "https://projects.worldbank.org/en/projects-operations/project-detail/P121003"
+    },
+    {
+     "id": "wb_P128568",
+     "nama": "ID-Renewable Energy for Electrification Project",
+     "status": "dibatalkan",
+     "mw": null,
+     "tanggal": "2026-11-07",
+     "dilaporkan_media": false,
+     "sumber_url": "https://projects.worldbank.org/en/projects-operations/project-detail/P128568"
+    },
+    {
+     "id": "wb_P036044",
+     "nama": "Eastern Indonesia Renewable Energy Development Project",
+     "status": "dibatalkan",
+     "mw": null,
+     "tanggal": "2026-11-07",
+     "dilaporkan_media": false,
+     "sumber_url": "https://projects.worldbank.org/en/projects-operations/project-detail/P036044"
+    },
+    {
+     "id": "wb_P171353",
+     "nama": "Indonesia Energy Transition Development Policy Loan",
+     "status": "dibatalkan",
+     "mw": null,
+     "tanggal": "2026-11-07",
+     "dilaporkan_media": false,
+     "sumber_url": "https://projects.worldbank.org/en/projects-operations/project-detail/P171353"
+    },
+    {
+     "id": "wb_P093047",
+     "nama": "Electricity Access for Rural Transformation",
+     "status": "dibatalkan",
+     "mw": null,
+     "tanggal": "2026-11-07",
+     "dilaporkan_media": false,
+     "sumber_url": "https://projects.worldbank.org/en/projects-operations/project-detail/P093047"
+    }
+   ],
+   "catatan": "Jumlah per tahun = judul berita bernada batal, mundur, atau tunda; bukan jumlah proyek."
+  },
+  "terbuka": {
+   "total": 548,
+   "dengan_nilai": 67,
+   "dengan_ppa": 0,
+   "alasan_ppa": "Tidak ada kolom PPA publik di data proyek; PPA umumnya rahasia.",
+   "baris": [
+    {
+     "id": "wb_P501217",
+     "nama": "Indonesia Sustainable Least-cost Electrification-2 (ISLE-2) Operation",
+     "nilai": 90000000000,
+     "satuan": "USD",
+     "jenis": "dilaporkan",
+     "mw": null
+    },
+    {
+     "id": "wb_P115199",
+     "nama": "Public Expenditure Support Facility (DPL-DDO)",
+     "nilai": 2000000000,
+     "satuan": "USD",
+     "jenis": "dilaporkan",
+     "mw": null
+    },
+    {
+     "id": "wb_P172439",
+     "nama": "Indonesia Investment and Trade Reforms DPL",
+     "nilai": 800000000,
+     "satuan": "USD",
+     "jenis": "dilaporkan",
+     "mw": null
+    },
+    {
+     "id": "wb_P178788",
+     "nama": "Indonesia Grid and Renewable Energy Financing Facility (GREFI)",
+     "nilai": 750000000,
+     "satuan": "USD",
+     "jenis": "dilaporkan",
+     "mw": null
+    },
+    {
+     "id": "wb_P107163",
+     "nama": "ID-Infrastructure DPL (IDPL)",
+     "nilai": 700000000,
+     "satuan": "USD",
+     "jenis": "dilaporkan",
+     "mw": null
+    },
+    {
+     "id": "wb_P112158",
+     "nama": "Pumped Storage Technical Assistance Project",
+     "nilai": 640000000,
+     "satuan": "USD",
+     "jenis": "dilaporkan",
+     "mw": null
+    },
+    {
+     "id": "wb_P172256",
+     "nama": "Development of Pumped Storage Hydropower in Java Bali System Project",
+     "nilai": 610000000,
+     "satuan": "USD",
+     "jenis": "dilaporkan",
+     "mw": null
+    },
+    {
+     "id": "wb_P174350",
+     "nama": "Indonesia Sustainable Least-cost Electrification-1 (ISLE-1) Program",
+     "nilai": 500000000,
+     "satuan": "USD",
+     "jenis": "dilaporkan",
+     "mw": null
+    },
+    {
+     "id": "wb_P154291",
+     "nama": "Indonesia Energy Sector DPL",
+     "nilai": 500000000,
+     "satuan": "USD",
+     "jenis": "dilaporkan",
+     "mw": null
+    },
+    {
+     "id": "wb_P171353",
+     "nama": "Indonesia Energy Transition Development Policy Loan",
+     "nilai": 500000000,
+     "satuan": "USD",
+     "jenis": "dilaporkan",
+     "mw": null
+    },
+    {
+     "id": "wb_P003916",
+     "nama": "Suralaya Thermal Power",
+     "nilai": 423600000,
+     "satuan": "USD",
+     "jenis": "dilaporkan",
+     "mw": null
+    },
+    {
+     "id": "pj_0043",
+     "nama": "Energi asal sampah Bandung (PSN nomor 154)",
+     "nilai": 400000000,
+     "satuan": "USD",
+     "jenis": "perkiraan",
+     "mw": 40.79
+    },
+    {
+     "id": "wb_P003979",
+     "nama": "Rural Electrification Project (02)",
+     "nilai": 398000000,
+     "satuan": "USD",
+     "jenis": "dilaporkan",
+     "mw": null
+    },
+    {
+     "id": "wb_P040524",
+     "nama": "Java Power Distribution Project",
+     "nilai": 395000000,
+     "satuan": "USD",
+     "jenis": "dilaporkan",
+     "mw": null
+    },
+    {
+     "id": "wb_P004021",
+     "nama": "Second Power Transmission and Distribution Project",
+     "nilai": 373000000,
+     "satuan": "USD",
+     "jenis": "dilaporkan",
+     "mw": null
+    }
+   ]
+  }
+ }
+}

@@ -1,0 +1,9 @@
+/* /tender: hanya token tema.css. Grafik memakai .jm-lg-* (inti/jm.css); tabel .jm-tabel. */
+.jm-td-saring{display:grid;gap:var(--gap)}
+.jm-td-tek{display:inline-flex;align-items:center;gap:6px;white-space:nowrap}
+.jm-td-tek .jm-ikt{width:16px;height:16px;flex:none;color:var(--accent)}
+.jm-td-ikon{display:inline-flex;align-items:center;justify-content:center;min-width:var(--target);min-height:var(--target);color:var(--accent)}
+.jm-td-aksi{display:inline-flex;align-items:center;gap:8px;flex-wrap:wrap;justify-content:center}
+.jm-td-cat{display:grid;gap:6px;margin:0;padding:12px 16px;border:1px solid var(--line);border-radius:var(--r);background:var(--surface);color:var(--ink2);font-size:var(--t-kecil)}
+.jm-td-cat ul{margin:0;padding-left:18px;display:grid;gap:4px}
+.jm-td-cat b{color:var(--head)}

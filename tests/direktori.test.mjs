@@ -20,7 +20,7 @@ test("tujuh tab (Proyek, Regulasi, Wilayah pindah ke rumahnya), tanpa Donasi; Je
   assert.deepEqual(tabs, ["pakar", "lembaga", "inovasi", "riset", "sistem_data", "pendanaan", "pustaka"]);
   assert.match(JS, /RUMAH = \{proyek: "\/proyek", regulasi: "\/regulasi", wilayah: "\/wilayah"\}/);
   assert.match(JS, /location\.replace\(RUMAH\[k\]/);
-  assert.match(JS, /\["jejak-isu", "Jejak isu", "kejadian"\]/);
+  assert.match(JS, /\["jejak-isu", "Topik", "kejadian"\]/);
 });
 
 test("SEKTOR di layar = 19 kode K16 (13 teknologi + 6 lintas bidang) = SEKTOR_SAH Worker", () => {
