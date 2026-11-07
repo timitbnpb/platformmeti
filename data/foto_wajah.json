@@ -1,0 +1,3839 @@
+{
+ "diperbarui": "2026-11-07",
+ "aturan": "persegi 256px, ruang atas 30% tinggi wajah; crop = [x,y,sisi] dalam piksel sumber",
+ "baris": [
+  {
+   "berkas": "data-panen/orang/foto/o_01edfd91a7.png",
+   "status": "ok",
+   "sumber_px": [
+    256,
+    256
+   ],
+   "crop": [
+    0,
+    0,
+    256
+   ]
+  },
+  {
+   "berkas": "data-panen/orang/foto/o_08854b7b4b.png",
+   "status": "ok",
+   "sumber_px": [
+    256,
+    256
+   ],
+   "crop": [
+    2,
+    2,
+    251
+   ]
+  },
+  {
+   "berkas": "data-panen/orang/foto/o_0e7743e552.jpg",
+   "status": "ok",
+   "sumber_px": [
+    256,
+    256
+   ],
+   "crop": [
+    0,
+    0,
+    256
+   ]
+  },
+  {
+   "berkas": "data-panen/orang/foto/o_1235cfe8f9.png",
+   "status": "ok",
+   "sumber_px": [
+    256,
+    256
+   ],
+   "crop": [
+    1,
+    2,
+    252
+   ]
+  },
+  {
+   "berkas": "data-panen/orang/foto/o_15a26d6d74.png",
+   "status": "ok",
+   "sumber_px": [
+    256,
+    256
+   ],
+   "crop": [
+    0,
+    0,
+    256
+   ]
+  },
+  {
+   "berkas": "data-panen/orang/foto/o_163447f899.png",
+   "status": "ok",
+   "sumber_px": [
+    256,
+    256
+   ],
+   "crop": [
+    0,
+    0,
+    256
+   ]
+  },
+  {
+   "berkas": "data-panen/orang/foto/o_16c93cb7b4.jpg",
+   "status": "ok",
+   "sumber_px": [
+    256,
+    256
+   ],
+   "crop": [
+    3,
+    1,
+    252
+   ]
+  },
+  {
+   "berkas": "data-panen/orang/foto/o_191f303dc1.jpg",
+   "status": "ok",
+   "sumber_px": [
+    256,
+    256
+   ],
+   "crop": [
+    0,
+    0,
+    256
+   ]
+  },
+  {
+   "berkas": "data-panen/orang/foto/o_1a630ff975.jpg",
+   "status": "ok",
+   "sumber_px": [
+    256,
+    256
+   ],
+   "crop": [
+    0,
+    0,
+    256
+   ]
+  },
+  {
+   "berkas": "data-panen/orang/foto/o_1dca2121e8.jpg",
+   "status": "ok",
+   "sumber_px": [
+    256,
+    256
+   ],
+   "crop": [
+    0,
+    0,
+    256
+   ]
+  },
+  {
+   "berkas": "data-panen/orang/foto/o_2073b6b0ef.png",
+   "status": "ok",
+   "sumber_px": [
+    256,
+    256
+   ],
+   "crop": [
+    0,
+    0,
+    256
+   ]
+  },
+  {
+   "berkas": "data-panen/orang/foto/o_20d46220ac.webp",
+   "status": "ok",
+   "sumber_px": [
+    256,
+    256
+   ],
+   "crop": [
+    0,
+    0,
+    256
+   ]
+  },
+  {
+   "berkas": "data-panen/orang/foto/o_23cacd97b6.png",
+   "status": "ok",
+   "sumber_px": [
+    256,
+    256
+   ],
+   "crop": [
+    0,
+    0,
+    256
+   ]
+  },
+  {
+   "berkas": "data-panen/orang/foto/o_2c9573f328.png",
+   "status": "ok",
+   "sumber_px": [
+    256,
+    256
+   ],
+   "crop": [
+    3,
+    2,
+    251
+   ]
+  },
+  {
+   "berkas": "data-panen/orang/foto/o_2e10bbe20f.webp",
+   "status": "ok",
+   "sumber_px": [
+    256,
+    256
+   ],
+   "crop": [
+    0,
+    0,
+    256
+   ]
+  },
+  {
+   "berkas": "data-panen/orang/foto/o_30cadc520b.webp",
+   "status": "ok",
+   "sumber_px": [
+    256,
+    256
+   ],
+   "crop": [
+    0,
+    0,
+    256
+   ]
+  },
+  {
+   "berkas": "data-panen/orang/foto/o_30f2c0c58e.png",
+   "status": "ok",
+   "sumber_px": [
+    256,
+    256
+   ],
+   "crop": [
+    0,
+    0,
+    256
+   ]
+  },
+  {
+   "berkas": "data-panen/orang/foto/o_3338d8dd53.webp",
+   "status": "ok",
+   "sumber_px": [
+    256,
+    256
+   ],
+   "crop": [
+    0,
+    0,
+    256
+   ]
+  },
+  {
+   "berkas": "data-panen/orang/foto/o_34330c9b53.png",
+   "status": "ok",
+   "sumber_px": [
+    256,
+    256
+   ],
+   "crop": [
+    0,
+    0,
+    256
+   ]
+  },
+  {
+   "berkas": "data-panen/orang/foto/o_3677e7141e.jpg",
+   "status": "ok",
+   "sumber_px": [
+    256,
+    256
+   ],
+   "crop": [
+    1,
+    1,
+    255
+   ]
+  },
+  {
+   "berkas": "data-panen/orang/foto/o_3878da3eba.jpg",
+   "status": "ok",
+   "sumber_px": [
+    256,
+    256
+   ],
+   "crop": [
+    0,
+    0,
+    256
+   ]
+  },
+  {
+   "berkas": "data-panen/orang/foto/o_3bafdaed86.png",
+   "status": "ok",
+   "sumber_px": [
+    256,
+    256
+   ],
+   "crop": [
+    1,
+    1,
+    253
+   ]
+  },
+  {
+   "berkas": "data-panen/orang/foto/o_3c6a67af1d.png",
+   "status": "ok",
+   "sumber_px": [
+    256,
+    256
+   ],
+   "crop": [
+    0,
+    1,
+    255
+   ]
+  },
+  {
+   "berkas": "data-panen/orang/foto/o_3c7c314f01.jpg",
+   "status": "ok",
+   "sumber_px": [
+    256,
+    256
+   ],
+   "crop": [
+    3,
+    2,
+    250
+   ]
+  },
+  {
+   "berkas": "data-panen/orang/foto/o_40ef9f4e8d.png",
+   "status": "ok",
+   "sumber_px": [
+    256,
+    256
+   ],
+   "crop": [
+    0,
+    0,
+    256
+   ]
+  },
+  {
+   "berkas": "data-panen/orang/foto/o_40f2f13118.png",
+   "status": "ok",
+   "sumber_px": [
+    256,
+    256
+   ],
+   "crop": [
+    0,
+    0,
+    256
+   ]
+  },
+  {
+   "berkas": "data-panen/orang/foto/o_432fd59f17.png",
+   "status": "ok",
+   "sumber_px": [
+    256,
+    256
+   ],
+   "crop": [
+    0,
+    0,
+    256
+   ]
+  },
+  {
+   "berkas": "data-panen/orang/foto/o_443c3d502b.webp",
+   "status": "ok",
+   "sumber_px": [
+    256,
+    256
+   ],
+   "crop": [
+    0,
+    0,
+    256
+   ]
+  },
+  {
+   "berkas": "data-panen/orang/foto/o_448bd9ab83.png",
+   "status": "ok",
+   "sumber_px": [
+    256,
+    256
+   ],
+   "crop": [
+    7,
+    4,
+    244
+   ]
+  },
+  {
+   "berkas": "data-panen/orang/foto/o_464401d2d8.png",
+   "status": "ok",
+   "sumber_px": [
+    256,
+    256
+   ],
+   "crop": [
+    0,
+    0,
+    256
+   ]
+  },
+  {
+   "berkas": "data-panen/orang/foto/o_47591127b5.png",
+   "status": "ok",
+   "sumber_px": [
+    256,
+    256
+   ],
+   "crop": [
+    0,
+    0,
+    256
+   ]
+  },
+  {
+   "berkas": "data-panen/orang/foto/o_4c31ad4490.png",
+   "status": "ok",
+   "sumber_px": [
+    256,
+    256
+   ],
+   "crop": [
+    0,
+    0,
+    256
+   ]
+  },
+  {
+   "berkas": "data-panen/orang/foto/o_4d4c7c2ecd.jpg",
+   "status": "ok",
+   "sumber_px": [
+    256,
+    256
+   ],
+   "crop": [
+    1,
+    2,
+    253
+   ]
+  },
+  {
+   "berkas": "data-panen/orang/foto/o_4db28a7f3c.png",
+   "status": "ok",
+   "sumber_px": [
+    256,
+    256
+   ],
+   "crop": [
+    0,
+    0,
+    256
+   ]
+  },
+  {
+   "berkas": "data-panen/orang/foto/o_4df07f7ca1.png",
+   "status": "ok",
+   "sumber_px": [
+    256,
+    256
+   ],
+   "crop": [
+    0,
+    0,
+    256
+   ]
+  },
+  {
+   "berkas": "data-panen/orang/foto/o_4ed008256f.png",
+   "status": "ok",
+   "sumber_px": [
+    256,
+    256
+   ],
+   "crop": [
+    0,
+    0,
+    256
+   ]
+  },
+  {
+   "berkas": "data-panen/orang/foto/o_50b6fd0c13.jpg",
+   "status": "ok",
+   "sumber_px": [
+    256,
+    256
+   ],
+   "crop": [
+    2,
+    0,
+    253
+   ]
+  },
+  {
+   "berkas": "data-panen/orang/foto/o_5497a8db00.png",
+   "status": "ok",
+   "sumber_px": [
+    256,
+    256
+   ],
+   "crop": [
+    0,
+    2,
+    251
+   ]
+  },
+  {
+   "berkas": "data-panen/orang/foto/o_58df02167d.png",
+   "status": "ok",
+   "sumber_px": [
+    256,
+    256
+   ],
+   "crop": [
+    0,
+    0,
+    256
+   ]
+  },
+  {
+   "berkas": "data-panen/orang/foto/o_592b6271d7.png",
+   "status": "ok",
+   "sumber_px": [
+    256,
+    256
+   ],
+   "crop": [
+    0,
+    0,
+    256
+   ]
+  },
+  {
+   "berkas": "data-panen/orang/foto/o_59924a18b0.png",
+   "status": "ok",
+   "sumber_px": [
+    256,
+    256
+   ],
+   "crop": [
+    0,
+    0,
+    256
+   ]
+  },
+  {
+   "berkas": "data-panen/orang/foto/o_5d4ea2ba31.jpg",
+   "status": "ok",
+   "sumber_px": [
+    256,
+    256
+   ],
+   "crop": [
+    0,
+    0,
+    256
+   ]
+  },
+  {
+   "berkas": "data-panen/orang/foto/o_5de0820f07.png",
+   "status": "ok",
+   "sumber_px": [
+    256,
+    256
+   ],
+   "crop": [
+    0,
+    0,
+    256
+   ]
+  },
+  {
+   "berkas": "data-panen/orang/foto/o_5dfc34a165.jpg",
+   "status": "ok",
+   "sumber_px": [
+    256,
+    256
+   ],
+   "crop": [
+    0,
+    0,
+    256
+   ]
+  },
+  {
+   "berkas": "data-panen/orang/foto/o_63c5202688.png",
+   "status": "ok",
+   "sumber_px": [
+    256,
+    256
+   ],
+   "crop": [
+    2,
+    1,
+    252
+   ]
+  },
+  {
+   "berkas": "data-panen/orang/foto/o_6493c4fe03.webp",
+   "status": "ok",
+   "sumber_px": [
+    256,
+    256
+   ],
+   "crop": [
+    0,
+    0,
+    256
+   ]
+  },
+  {
+   "berkas": "data-panen/orang/foto/o_65d7a9df79.png",
+   "status": "ok",
+   "sumber_px": [
+    256,
+    256
+   ],
+   "crop": [
+    2,
+    3,
+    251
+   ]
+  },
+  {
+   "berkas": "data-panen/orang/foto/o_68ea558465.png",
+   "status": "ok",
+   "sumber_px": [
+    256,
+    256
+   ],
+   "crop": [
+    0,
+    1,
+    255
+   ]
+  },
+  {
+   "berkas": "data-panen/orang/foto/o_69bf5e059d.jpg",
+   "status": "ok",
+   "sumber_px": [
+    256,
+    256
+   ],
+   "crop": [
+    0,
+    0,
+    256
+   ]
+  },
+  {
+   "berkas": "data-panen/orang/foto/o_6e1aec1adc.png",
+   "status": "ok",
+   "sumber_px": [
+    256,
+    256
+   ],
+   "crop": [
+    0,
+    0,
+    256
+   ]
+  },
+  {
+   "berkas": "data-panen/orang/foto/o_6e230653be.webp",
+   "status": "ok",
+   "sumber_px": [
+    256,
+    256
+   ],
+   "crop": [
+    0,
+    0,
+    256
+   ]
+  },
+  {
+   "berkas": "data-panen/orang/foto/o_6e5d3327da.png",
+   "status": "ok",
+   "sumber_px": [
+    256,
+    256
+   ],
+   "crop": [
+    1,
+    2,
+    254
+   ]
+  },
+  {
+   "berkas": "data-panen/orang/foto/o_70577158f8.png",
+   "status": "ok",
+   "sumber_px": [
+    256,
+    256
+   ],
+   "crop": [
+    2,
+    0,
+    254
+   ]
+  },
+  {
+   "berkas": "data-panen/orang/foto/o_74f02913f7.webp",
+   "status": "ok",
+   "sumber_px": [
+    256,
+    256
+   ],
+   "crop": [
+    0,
+    0,
+    254
+   ]
+  },
+  {
+   "berkas": "data-panen/orang/foto/o_771aff7bda.webp",
+   "status": "ok",
+   "sumber_px": [
+    256,
+    256
+   ],
+   "crop": [
+    1,
+    0,
+    254
+   ]
+  },
+  {
+   "berkas": "data-panen/orang/foto/o_78590a9fda.webp",
+   "status": "ok",
+   "sumber_px": [
+    256,
+    256
+   ],
+   "crop": [
+    1,
+    1,
+    255
+   ]
+  },
+  {
+   "berkas": "data-panen/orang/foto/o_78c9b81374.png",
+   "status": "ok",
+   "sumber_px": [
+    256,
+    256
+   ],
+   "crop": [
+    0,
+    0,
+    256
+   ]
+  },
+  {
+   "berkas": "data-panen/orang/foto/o_799d0cccc5.png",
+   "status": "ok",
+   "sumber_px": [
+    256,
+    256
+   ],
+   "crop": [
+    0,
+    0,
+    256
+   ]
+  },
+  {
+   "berkas": "data-panen/orang/foto/o_7a3d78f1b3.webp",
+   "status": "ok",
+   "sumber_px": [
+    256,
+    256
+   ],
+   "crop": [
+    0,
+    0,
+    256
+   ]
+  },
+  {
+   "berkas": "data-panen/orang/foto/o_7a95923df6.webp",
+   "status": "ok",
+   "sumber_px": [
+    256,
+    256
+   ],
+   "crop": [
+    0,
+    0,
+    256
+   ]
+  },
+  {
+   "berkas": "data-panen/orang/foto/o_7bc9f9dadd.png",
+   "status": "ok",
+   "sumber_px": [
+    256,
+    256
+   ],
+   "crop": [
+    0,
+    0,
+    256
+   ]
+  },
+  {
+   "berkas": "data-panen/orang/foto/o_7db1722608.webp",
+   "status": "ok",
+   "sumber_px": [
+    256,
+    256
+   ],
+   "crop": [
+    1,
+    0,
+    255
+   ]
+  },
+  {
+   "berkas": "data-panen/orang/foto/o_7e1955e37e.jpg",
+   "status": "ok",
+   "sumber_px": [
+    256,
+    256
+   ],
+   "crop": [
+    0,
+    0,
+    256
+   ]
+  },
+  {
+   "berkas": "data-panen/orang/foto/o_80d994debc.png",
+   "status": "ok",
+   "sumber_px": [
+    256,
+    256
+   ],
+   "crop": [
+    0,
+    0,
+    256
+   ]
+  },
+  {
+   "berkas": "data-panen/orang/foto/o_839ab0e826.png",
+   "status": "ok",
+   "sumber_px": [
+    256,
+    256
+   ],
+   "crop": [
+    0,
+    0,
+    256
+   ]
+  },
+  {
+   "berkas": "data-panen/orang/foto/o_840419ed58.png",
+   "status": "ok",
+   "sumber_px": [
+    256,
+    256
+   ],
+   "crop": [
+    2,
+    2,
+    252
+   ]
+  },
+  {
+   "berkas": "data-panen/orang/foto/o_84f4272976.png",
+   "status": "ok",
+   "sumber_px": [
+    256,
+    256
+   ],
+   "crop": [
+    0,
+    0,
+    256
+   ]
+  },
+  {
+   "berkas": "data-panen/orang/foto/o_8903ea0a59.webp",
+   "status": "ok",
+   "sumber_px": [
+    256,
+    256
+   ],
+   "crop": [
+    0,
+    0,
+    256
+   ]
+  },
+  {
+   "berkas": "data-panen/orang/foto/o_8c1a593067.jpg",
+   "status": "ok",
+   "sumber_px": [
+    256,
+    256
+   ],
+   "crop": [
+    0,
+    0,
+    256
+   ]
+  },
+  {
+   "berkas": "data-panen/orang/foto/o_8c87909186.png",
+   "status": "ok",
+   "sumber_px": [
+    256,
+    256
+   ],
+   "crop": [
+    0,
+    0,
+    256
+   ]
+  },
+  {
+   "berkas": "data-panen/orang/foto/o_8cb4253a76.png",
+   "status": "ok",
+   "sumber_px": [
+    256,
+    256
+   ],
+   "crop": [
+    0,
+    0,
+    255
+   ]
+  },
+  {
+   "berkas": "data-panen/orang/foto/o_8e30d21bb7.jpg",
+   "status": "ok",
+   "sumber_px": [
+    256,
+    256
+   ],
+   "crop": [
+    0,
+    0,
+    256
+   ]
+  },
+  {
+   "berkas": "data-panen/orang/foto/o_8e54d39af0.webp",
+   "status": "ok",
+   "sumber_px": [
+    256,
+    256
+   ],
+   "crop": [
+    0,
+    0,
+    256
+   ]
+  },
+  {
+   "berkas": "data-panen/orang/foto/o_91430190f5.png",
+   "status": "ok",
+   "sumber_px": [
+    256,
+    256
+   ],
+   "crop": [
+    1,
+    1,
+    255
+   ]
+  },
+  {
+   "berkas": "data-panen/orang/foto/o_943d7abbea.jpg",
+   "status": "ok",
+   "sumber_px": [
+    256,
+    256
+   ],
+   "crop": [
+    0,
+    0,
+    256
+   ]
+  },
+  {
+   "berkas": "data-panen/orang/foto/o_94b32a2fe8.png",
+   "status": "ok",
+   "sumber_px": [
+    256,
+    256
+   ],
+   "crop": [
+    0,
+    0,
+    256
+   ]
+  },
+  {
+   "berkas": "data-panen/orang/foto/o_951f9a9324.jpg",
+   "status": "ok",
+   "sumber_px": [
+    256,
+    256
+   ],
+   "crop": [
+    0,
+    0,
+    256
+   ]
+  },
+  {
+   "berkas": "data-panen/orang/foto/o_9b51e4f524.png",
+   "status": "ok",
+   "sumber_px": [
+    256,
+    256
+   ],
+   "crop": [
+    0,
+    0,
+    256
+   ]
+  },
+  {
+   "berkas": "data-panen/orang/foto/o_a203f6bf28.jpg",
+   "status": "ok",
+   "sumber_px": [
+    256,
+    256
+   ],
+   "crop": [
+    2,
+    0,
+    253
+   ]
+  },
+  {
+   "berkas": "data-panen/orang/foto/o_a37f57f36e.webp",
+   "status": "ok",
+   "sumber_px": [
+    256,
+    256
+   ],
+   "crop": [
+    0,
+    0,
+    256
+   ]
+  },
+  {
+   "berkas": "data-panen/orang/foto/o_a626b0c7f0.png",
+   "status": "ok",
+   "sumber_px": [
+    256,
+    256
+   ],
+   "crop": [
+    1,
+    1,
+    253
+   ]
+  },
+  {
+   "berkas": "data-panen/orang/foto/o_aa80783794.webp",
+   "status": "ok",
+   "sumber_px": [
+    256,
+    256
+   ],
+   "crop": [
+    0,
+    0,
+    256
+   ]
+  },
+  {
+   "berkas": "data-panen/orang/foto/o_ad03fad68e.png",
+   "status": "ok",
+   "sumber_px": [
+    256,
+    256
+   ],
+   "crop": [
+    1,
+    3,
+    252
+   ]
+  },
+  {
+   "berkas": "data-panen/orang/foto/o_ae4fa074fa.png",
+   "status": "ok",
+   "sumber_px": [
+    256,
+    256
+   ],
+   "crop": [
+    0,
+    1,
+    255
+   ]
+  },
+  {
+   "berkas": "data-panen/orang/foto/o_b22fd18ff7.png",
+   "status": "ok",
+   "sumber_px": [
+    256,
+    256
+   ],
+   "crop": [
+    0,
+    0,
+    256
+   ]
+  },
+  {
+   "berkas": "data-panen/orang/foto/o_b51978ef93.webp",
+   "status": "ok",
+   "sumber_px": [
+    256,
+    256
+   ],
+   "crop": [
+    2,
+    2,
+    254
+   ]
+  },
+  {
+   "berkas": "data-panen/orang/foto/o_b8133a70ee.webp",
+   "status": "ok",
+   "sumber_px": [
+    256,
+    256
+   ],
+   "crop": [
+    0,
+    0,
+    256
+   ]
+  },
+  {
+   "berkas": "data-panen/orang/foto/o_ba027820e6.png",
+   "status": "ok",
+   "sumber_px": [
+    256,
+    256
+   ],
+   "crop": [
+    0,
+    0,
+    256
+   ]
+  },
+  {
+   "berkas": "data-panen/orang/foto/o_ba106c57f8.webp",
+   "status": "ok",
+   "sumber_px": [
+    256,
+    256
+   ],
+   "crop": [
+    0,
+    0,
+    256
+   ]
+  },
+  {
+   "berkas": "data-panen/orang/foto/o_ba711cde50.jpg",
+   "status": "ok",
+   "sumber_px": [
+    256,
+    256
+   ],
+   "crop": [
+    0,
+    0,
+    256
+   ]
+  },
+  {
+   "berkas": "data-panen/orang/foto/o_c150e18fd8.png",
+   "status": "ok",
+   "sumber_px": [
+    256,
+    256
+   ],
+   "crop": [
+    0,
+    0,
+    256
+   ]
+  },
+  {
+   "berkas": "data-panen/orang/foto/o_c296edc192.png",
+   "status": "ok",
+   "sumber_px": [
+    256,
+    256
+   ],
+   "crop": [
+    0,
+    0,
+    256
+   ]
+  },
+  {
+   "berkas": "data-panen/orang/foto/o_c469708d1b.webp",
+   "status": "ok",
+   "sumber_px": [
+    256,
+    256
+   ],
+   "crop": [
+    0,
+    0,
+    256
+   ]
+  },
+  {
+   "berkas": "data-panen/orang/foto/o_c5bb4ac0b7.png",
+   "status": "ok",
+   "sumber_px": [
+    256,
+    256
+   ],
+   "crop": [
+    0,
+    0,
+    256
+   ]
+  },
+  {
+   "berkas": "data-panen/orang/foto/o_c70d64315c.png",
+   "status": "ok",
+   "sumber_px": [
+    256,
+    256
+   ],
+   "crop": [
+    0,
+    0,
+    256
+   ]
+  },
+  {
+   "berkas": "data-panen/orang/foto/o_cad0086638.webp",
+   "status": "ok",
+   "sumber_px": [
+    256,
+    256
+   ],
+   "crop": [
+    0,
+    0,
+    256
+   ]
+  },
+  {
+   "berkas": "data-panen/orang/foto/o_cf5b6caa7e.png",
+   "status": "ok",
+   "sumber_px": [
+    256,
+    256
+   ],
+   "crop": [
+    0,
+    0,
+    256
+   ]
+  },
+  {
+   "berkas": "data-panen/orang/foto/o_cf66bd11ae.png",
+   "status": "ok",
+   "sumber_px": [
+    256,
+    256
+   ],
+   "crop": [
+    1,
+    1,
+    255
+   ]
+  },
+  {
+   "berkas": "data-panen/orang/foto/o_d0c6948086.jpg",
+   "status": "ok",
+   "sumber_px": [
+    256,
+    256
+   ],
+   "crop": [
+    0,
+    0,
+    256
+   ]
+  },
+  {
+   "berkas": "data-panen/orang/foto/o_d0fc55db87.webp",
+   "status": "ok",
+   "sumber_px": [
+    256,
+    256
+   ],
+   "crop": [
+    0,
+    0,
+    256
+   ]
+  },
+  {
+   "berkas": "data-panen/orang/foto/o_d44dc86ba4.png",
+   "status": "ok",
+   "sumber_px": [
+    256,
+    256
+   ],
+   "crop": [
+    0,
+    0,
+    256
+   ]
+  },
+  {
+   "berkas": "data-panen/orang/foto/o_d6fac3543f.webp",
+   "status": "ok",
+   "sumber_px": [
+    256,
+    256
+   ],
+   "crop": [
+    0,
+    0,
+    256
+   ]
+  },
+  {
+   "berkas": "data-panen/orang/foto/o_d701363133.jpg",
+   "status": "ok",
+   "sumber_px": [
+    256,
+    256
+   ],
+   "crop": [
+    0,
+    0,
+    256
+   ]
+  },
+  {
+   "berkas": "data-panen/orang/foto/o_d829e0116b.webp",
+   "status": "ok",
+   "sumber_px": [
+    256,
+    256
+   ],
+   "crop": [
+    0,
+    0,
+    256
+   ]
+  },
+  {
+   "berkas": "data-panen/orang/foto/o_d936b671ef.webp",
+   "status": "ok",
+   "sumber_px": [
+    256,
+    256
+   ],
+   "crop": [
+    0,
+    0,
+    256
+   ]
+  },
+  {
+   "berkas": "data-panen/orang/foto/o_da0236222d.png",
+   "status": "ok",
+   "sumber_px": [
+    256,
+    256
+   ],
+   "crop": [
+    0,
+    0,
+    256
+   ]
+  },
+  {
+   "berkas": "data-panen/orang/foto/o_df59eba597.jpg",
+   "status": "ok",
+   "sumber_px": [
+    256,
+    256
+   ],
+   "crop": [
+    0,
+    0,
+    256
+   ]
+  },
+  {
+   "berkas": "data-panen/orang/foto/o_e3e34f0fcb.jpg",
+   "status": "ok",
+   "sumber_px": [
+    256,
+    256
+   ],
+   "crop": [
+    0,
+    0,
+    256
+   ]
+  },
+  {
+   "berkas": "data-panen/orang/foto/o_e459f82606.jpg",
+   "status": "ok",
+   "sumber_px": [
+    256,
+    256
+   ],
+   "crop": [
+    0,
+    0,
+    256
+   ]
+  },
+  {
+   "berkas": "data-panen/orang/foto/o_e6f94d18a7.webp",
+   "status": "ok",
+   "sumber_px": [
+    256,
+    256
+   ],
+   "crop": [
+    0,
+    0,
+    256
+   ]
+  },
+  {
+   "berkas": "data-panen/orang/foto/o_e8d27d326c.png",
+   "status": "ok",
+   "sumber_px": [
+    256,
+    256
+   ],
+   "crop": [
+    0,
+    0,
+    256
+   ]
+  },
+  {
+   "berkas": "data-panen/orang/foto/o_e8e10fd9c9.png",
+   "status": "ok",
+   "sumber_px": [
+    256,
+    256
+   ],
+   "crop": [
+    1,
+    0,
+    255
+   ]
+  },
+  {
+   "berkas": "data-panen/orang/foto/o_e9108c751f.png",
+   "status": "ok",
+   "sumber_px": [
+    256,
+    256
+   ],
+   "crop": [
+    2,
+    1,
+    253
+   ]
+  },
+  {
+   "berkas": "data-panen/orang/foto/o_eb77a12a80.png",
+   "status": "ok",
+   "sumber_px": [
+    256,
+    256
+   ],
+   "crop": [
+    0,
+    0,
+    256
+   ]
+  },
+  {
+   "berkas": "data-panen/orang/foto/o_ed365de05f.png",
+   "status": "ok",
+   "sumber_px": [
+    256,
+    256
+   ],
+   "crop": [
+    0,
+    0,
+    256
+   ]
+  },
+  {
+   "berkas": "data-panen/orang/foto/o_ed9ba08146.png",
+   "status": "ok",
+   "sumber_px": [
+    256,
+    256
+   ],
+   "crop": [
+    0,
+    0,
+    256
+   ]
+  },
+  {
+   "berkas": "data-panen/orang/foto/o_eeb6470d78.png",
+   "status": "ok",
+   "sumber_px": [
+    256,
+    256
+   ],
+   "crop": [
+    0,
+    0,
+    256
+   ]
+  },
+  {
+   "berkas": "data-panen/orang/foto/o_eef7649be0.png",
+   "status": "ok",
+   "sumber_px": [
+    256,
+    256
+   ],
+   "crop": [
+    0,
+    0,
+    256
+   ]
+  },
+  {
+   "berkas": "data-panen/orang/foto/o_f1dc433617.webp",
+   "status": "ok",
+   "sumber_px": [
+    256,
+    256
+   ],
+   "crop": [
+    0,
+    0,
+    256
+   ]
+  },
+  {
+   "berkas": "data-panen/orang/foto/o_f476b782b4.webp",
+   "status": "ok",
+   "sumber_px": [
+    256,
+    256
+   ],
+   "crop": [
+    0,
+    0,
+    256
+   ]
+  },
+  {
+   "berkas": "data-panen/orang/foto/o_f965e65f65.jpg",
+   "status": "ok",
+   "sumber_px": [
+    256,
+    256
+   ],
+   "crop": [
+    0,
+    0,
+    256
+   ]
+  },
+  {
+   "berkas": "data-panen/orang/foto/o_fa586ac257.png",
+   "status": "ok",
+   "sumber_px": [
+    256,
+    256
+   ],
+   "crop": [
+    0,
+    0,
+    256
+   ]
+  },
+  {
+   "berkas": "data-panen/orang/foto/o_fb42f71e9e.webp",
+   "status": "ok",
+   "sumber_px": [
+    256,
+    256
+   ],
+   "crop": [
+    0,
+    0,
+    256
+   ]
+  },
+  {
+   "berkas": "data-panen/orang/foto/o_fc8f6dd8fb.png",
+   "status": "ok",
+   "sumber_px": [
+    256,
+    256
+   ],
+   "crop": [
+    0,
+    0,
+    256
+   ]
+  },
+  {
+   "berkas": "data-panen/orang/foto/o_fd29c275d6.png",
+   "status": "ok",
+   "sumber_px": [
+    256,
+    256
+   ],
+   "crop": [
+    0,
+    0,
+    256
+   ]
+  },
+  {
+   "berkas": "data-panen/orang/foto/o_fe73f8d3b1.png",
+   "status": "ok",
+   "sumber_px": [
+    256,
+    256
+   ],
+   "crop": [
+    1,
+    1,
+    254
+   ]
+  },
+  {
+   "berkas": "data-panen/orang/foto/o_fea1c59464.jpg",
+   "status": "ok",
+   "sumber_px": [
+    256,
+    256
+   ],
+   "crop": [
+    0,
+    0,
+    256
+   ]
+  },
+  {
+   "berkas": "data-panen/orang/foto/pm_8b84cf3d.webp",
+   "status": "ok",
+   "sumber_px": [
+    256,
+    256
+   ],
+   "crop": [
+    1,
+    2,
+    253
+   ]
+  },
+  {
+   "berkas": "public/img/orang/o_02b0410b12.webp",
+   "status": "ok",
+   "sumber_px": [
+    1000,
+    1000
+   ],
+   "crop": [
+    0,
+    0,
+    1000
+   ]
+  },
+  {
+   "berkas": "public/img/orang/o_04618eab9c.webp",
+   "status": "ok",
+   "sumber_px": [
+    3242,
+    4863
+   ],
+   "crop": [
+    1001,
+    879,
+    1277
+   ]
+  },
+  {
+   "berkas": "public/img/orang/o_049a6d113f.webp",
+   "status": "ok",
+   "sumber_px": [
+    231,
+    280
+   ],
+   "crop": [
+    21,
+    38,
+    166
+   ]
+  },
+  {
+   "berkas": "public/img/orang/o_09299baa45.webp",
+   "status": "ok",
+   "sumber_px": [
+    256,
+    256
+   ],
+   "crop": [
+    0,
+    0,
+    256
+   ]
+  },
+  {
+   "berkas": "public/img/orang/o_0989126215.webp",
+   "status": "ok",
+   "sumber_px": [
+    293,
+    295
+   ],
+   "crop": [
+    77,
+    33,
+    159
+   ]
+  },
+  {
+   "berkas": "public/img/orang/o_0f8dd76ddb.webp",
+   "status": "ok",
+   "sumber_px": [
+    600,
+    800
+   ],
+   "crop": [
+    74,
+    110,
+    526
+   ]
+  },
+  {
+   "berkas": "public/img/orang/o_11c27e7091.webp",
+   "status": "ok",
+   "sumber_px": [
+    256,
+    256
+   ],
+   "crop": [
+    0,
+    0,
+    256
+   ]
+  },
+  {
+   "berkas": "public/img/orang/o_124b61ab6f.webp",
+   "status": "ok",
+   "sumber_px": [
+    1770,
+    1770
+   ],
+   "crop": [
+    453,
+    279,
+    766
+   ]
+  },
+  {
+   "berkas": "public/img/orang/o_12f24c3644.webp",
+   "status": "ok",
+   "sumber_px": [
+    180,
+    180
+   ],
+   "crop": [
+    0,
+    0,
+    180
+   ]
+  },
+  {
+   "berkas": "public/img/orang/o_151ee76002.webp",
+   "status": "ok",
+   "sumber_px": [
+    1080,
+    1350
+   ],
+   "crop": [
+    170,
+    250,
+    618
+   ]
+  },
+  {
+   "berkas": "public/img/orang/o_15a26d6d74.webp",
+   "status": "ok",
+   "sumber_px": [
+    256,
+    256
+   ],
+   "crop": [
+    0,
+    0,
+    256
+   ]
+  },
+  {
+   "berkas": "public/img/orang/o_1cabf6c3b2.webp",
+   "status": "ok",
+   "sumber_px": [
+    1181,
+    1181
+   ],
+   "crop": [
+    102,
+    212,
+    969
+   ]
+  },
+  {
+   "berkas": "public/img/orang/o_267ac590b3.webp",
+   "status": "ok",
+   "sumber_px": [
+    1000,
+    1000
+   ],
+   "crop": [
+    27,
+    98,
+    902
+   ]
+  },
+  {
+   "berkas": "public/img/orang/o_268ecfb536.webp",
+   "status": "ok",
+   "sumber_px": [
+    256,
+    256
+   ],
+   "crop": [
+    0,
+    0,
+    256
+   ]
+  },
+  {
+   "berkas": "public/img/orang/o_2a18b23212.webp",
+   "status": "ok",
+   "sumber_px": [
+    1254,
+    1254
+   ],
+   "crop": [
+    293,
+    188,
+    708
+   ]
+  },
+  {
+   "berkas": "public/img/orang/o_2c9573f328.webp",
+   "status": "ok",
+   "sumber_px": [
+    256,
+    256
+   ],
+   "crop": [
+    1,
+    3,
+    253
+   ]
+  },
+  {
+   "berkas": "public/img/orang/o_2d1f779775.webp",
+   "status": "ok",
+   "sumber_px": [
+    256,
+    256
+   ],
+   "crop": [
+    0,
+    0,
+    256
+   ]
+  },
+  {
+   "berkas": "public/img/orang/o_2d203e7837.webp",
+   "status": "ok",
+   "sumber_px": [
+    500,
+    500
+   ],
+   "crop": [
+    139,
+    32,
+    195
+   ]
+  },
+  {
+   "berkas": "public/img/orang/o_2eec87fb1b.webp",
+   "status": "ok",
+   "sumber_px": [
+    333,
+    500
+   ],
+   "crop": [
+    61,
+    62,
+    208
+   ]
+  },
+  {
+   "berkas": "public/img/orang/o_30c7a0acb5.webp",
+   "status": "ok",
+   "sumber_px": [
+    3648,
+    5472
+   ],
+   "crop": [
+    1153,
+    1029,
+    1434
+   ]
+  },
+  {
+   "berkas": "public/img/orang/o_33d3d555f9.webp",
+   "status": "ok",
+   "sumber_px": [
+    1000,
+    1000
+   ],
+   "crop": [
+    0,
+    0,
+    1000
+   ]
+  },
+  {
+   "berkas": "public/img/orang/o_34330c9b53.webp",
+   "status": "tidak_terdeteksi",
+   "sumber_px": [
+    256,
+    256
+   ],
+   "dipindah": "data-panen/foto_tinjau/o_34330c9b53.webp"
+  },
+  {
+   "berkas": "public/img/orang/o_370d9c44f0.webp",
+   "status": "ok",
+   "sumber_px": [
+    256,
+    256
+   ],
+   "crop": [
+    1,
+    1,
+    255
+   ]
+  },
+  {
+   "berkas": "public/img/orang/o_3808ad8b82.webp",
+   "status": "ok",
+   "sumber_px": [
+    750,
+    446
+   ],
+   "crop": [
+    246,
+    31,
+    224
+   ]
+  },
+  {
+   "berkas": "public/img/orang/o_3bafdaed86.webp",
+   "status": "tidak_terdeteksi",
+   "sumber_px": [
+    256,
+    256
+   ],
+   "dipindah": "data-panen/foto_tinjau/o_3bafdaed86.webp"
+  },
+  {
+   "berkas": "public/img/orang/o_3ee288406d.webp",
+   "status": "ok",
+   "sumber_px": [
+    256,
+    256
+   ],
+   "crop": [
+    0,
+    0,
+    256
+   ]
+  },
+  {
+   "berkas": "public/img/orang/o_408b7ffb32.webp",
+   "status": "ok",
+   "sumber_px": [
+    3648,
+    5472
+   ],
+   "crop": [
+    1152,
+    1035,
+    1417
+   ]
+  },
+  {
+   "berkas": "public/img/orang/o_40e421970d.webp",
+   "status": "ok",
+   "sumber_px": [
+    1000,
+    1000
+   ],
+   "crop": [
+    116,
+    96,
+    782
+   ]
+  },
+  {
+   "berkas": "public/img/orang/o_44550dda0b.webp",
+   "status": "ok",
+   "sumber_px": [
+    256,
+    256
+   ],
+   "crop": [
+    12,
+    17,
+    235
+   ]
+  },
+  {
+   "berkas": "public/img/orang/o_4569762026.webp",
+   "status": "ok",
+   "sumber_px": [
+    1620,
+    1620
+   ],
+   "crop": [
+    77,
+    77,
+    1543
+   ]
+  },
+  {
+   "berkas": "public/img/orang/o_47591127b5.webp",
+   "status": "tidak_terdeteksi",
+   "sumber_px": [
+    256,
+    256
+   ],
+   "dipindah": "data-panen/foto_tinjau/o_47591127b5.webp"
+  },
+  {
+   "berkas": "public/img/orang/o_4c6b0735fb.webp",
+   "status": "ok",
+   "sumber_px": [
+    256,
+    256
+   ],
+   "crop": [
+    0,
+    0,
+    256
+   ]
+  },
+  {
+   "berkas": "public/img/orang/o_4f067be437.webp",
+   "status": "ok",
+   "sumber_px": [
+    1620,
+    1620
+   ],
+   "crop": [
+    0,
+    0,
+    1620
+   ]
+  },
+  {
+   "berkas": "public/img/orang/o_502b533e4e.webp",
+   "status": "ok",
+   "sumber_px": [
+    1000,
+    1000
+   ],
+   "crop": [
+    56,
+    70,
+    797
+   ]
+  },
+  {
+   "berkas": "public/img/orang/o_50c5fb0b99.webp",
+   "status": "tidak_terdeteksi",
+   "sumber_px": [
+    812,
+    505
+   ],
+   "dipindah": "data-panen/foto_tinjau/o_50c5fb0b99.webp"
+  },
+  {
+   "berkas": "public/img/orang/o_53431023c9.webp",
+   "status": "ok",
+   "sumber_px": [
+    231,
+    280
+   ],
+   "crop": [
+    55,
+    45,
+    125
+   ]
+  },
+  {
+   "berkas": "public/img/orang/o_57020e35a4.webp",
+   "status": "ok",
+   "sumber_px": [
+    256,
+    256
+   ],
+   "crop": [
+    1,
+    3,
+    253
+   ]
+  },
+  {
+   "berkas": "public/img/orang/o_58dc35919f.webp",
+   "status": "ok",
+   "sumber_px": [
+    256,
+    256
+   ],
+   "crop": [
+    0,
+    1,
+    255
+   ]
+  },
+  {
+   "berkas": "public/img/orang/o_58df02167d.webp",
+   "status": "ok",
+   "sumber_px": [
+    256,
+    256
+   ],
+   "crop": [
+    0,
+    2,
+    254
+   ]
+  },
+  {
+   "berkas": "public/img/orang/o_592b6271d7.webp",
+   "status": "ok",
+   "sumber_px": [
+    256,
+    256
+   ],
+   "crop": [
+    0,
+    2,
+    254
+   ]
+  },
+  {
+   "berkas": "public/img/orang/o_5d4ea2ba31.webp",
+   "status": "ok",
+   "sumber_px": [
+    256,
+    256
+   ],
+   "crop": [
+    0,
+    0,
+    256
+   ]
+  },
+  {
+   "berkas": "public/img/orang/o_5dfc34a165.webp",
+   "status": "ok",
+   "sumber_px": [
+    256,
+    256
+   ],
+   "crop": [
+    0,
+    0,
+    256
+   ]
+  },
+  {
+   "berkas": "public/img/orang/o_6124cff83d.webp",
+   "status": "ok",
+   "sumber_px": [
+    1588,
+    1588
+   ],
+   "crop": [
+    510,
+    286,
+    624
+   ]
+  },
+  {
+   "berkas": "public/img/orang/o_622a5140d7.webp",
+   "status": "ok",
+   "sumber_px": [
+    256,
+    256
+   ],
+   "crop": [
+    2,
+    2,
+    253
+   ]
+  },
+  {
+   "berkas": "public/img/orang/o_68a25b39a2.webp",
+   "status": "ok",
+   "sumber_px": [
+    180,
+    180
+   ],
+   "crop": [
+    37,
+    11,
+    91
+   ]
+  },
+  {
+   "berkas": "public/img/orang/o_6922994e30.webp",
+   "status": "ok",
+   "sumber_px": [
+    256,
+    256
+   ],
+   "crop": [
+    0,
+    0,
+    256
+   ]
+  },
+  {
+   "berkas": "public/img/orang/o_6942b6c4c3.webp",
+   "status": "ok",
+   "sumber_px": [
+    256,
+    256
+   ],
+   "crop": [
+    0,
+    0,
+    256
+   ]
+  },
+  {
+   "berkas": "public/img/orang/o_695debe5f6.webp",
+   "status": "ok",
+   "sumber_px": [
+    1000,
+    1000
+   ],
+   "crop": [
+    0,
+    0,
+    1000
+   ]
+  },
+  {
+   "berkas": "public/img/orang/o_6b8040dea0.webp",
+   "status": "ok",
+   "sumber_px": [
+    256,
+    256
+   ],
+   "crop": [
+    0,
+    0,
+    256
+   ]
+  },
+  {
+   "berkas": "public/img/orang/o_6ba09a26a8.webp",
+   "status": "ok",
+   "sumber_px": [
+    293,
+    295
+   ],
+   "crop": [
+    49,
+    30,
+    168
+   ]
+  },
+  {
+   "berkas": "public/img/orang/o_6ca0780a28.webp",
+   "status": "ok",
+   "sumber_px": [
+    1000,
+    1000
+   ],
+   "crop": [
+    0,
+    0,
+    1000
+   ]
+  },
+  {
+   "berkas": "public/img/orang/o_71032ae142.webp",
+   "status": "ok",
+   "sumber_px": [
+    256,
+    256
+   ],
+   "crop": [
+    0,
+    0,
+    256
+   ]
+  },
+  {
+   "berkas": "public/img/orang/o_71be393193.webp",
+   "status": "ok",
+   "sumber_px": [
+    1000,
+    1000
+   ],
+   "crop": [
+    36,
+    112,
+    888
+   ]
+  },
+  {
+   "berkas": "public/img/orang/o_730af90d0c.webp",
+   "status": "ok",
+   "sumber_px": [
+    1620,
+    1620
+   ],
+   "crop": [
+    0,
+    52,
+    1568
+   ]
+  },
+  {
+   "berkas": "public/img/orang/o_737bbd1723.webp",
+   "status": "ok",
+   "sumber_px": [
+    1000,
+    999
+   ],
+   "crop": [
+    249,
+    95,
+    687
+   ]
+  },
+  {
+   "berkas": "public/img/orang/o_771aff7bda.webp",
+   "status": "ok",
+   "sumber_px": [
+    256,
+    256
+   ],
+   "crop": [
+    0,
+    0,
+    256
+   ]
+  },
+  {
+   "berkas": "public/img/orang/o_78590a9fda.webp",
+   "status": "ok",
+   "sumber_px": [
+    256,
+    256
+   ],
+   "crop": [
+    0,
+    0,
+    256
+   ]
+  },
+  {
+   "berkas": "public/img/orang/o_78dbfa6231.webp",
+   "status": "ok",
+   "sumber_px": [
+    1620,
+    1620
+   ],
+   "crop": [
+    0,
+    0,
+    1620
+   ]
+  },
+  {
+   "berkas": "public/img/orang/o_79ec677f1a.webp",
+   "status": "ok",
+   "sumber_px": [
+    832,
+    1168
+   ],
+   "crop": [
+    227,
+    254,
+    344
+   ]
+  },
+  {
+   "berkas": "public/img/orang/o_7bcf5383e7.webp",
+   "status": "ok",
+   "sumber_px": [
+    1000,
+    1000
+   ],
+   "crop": [
+    0,
+    0,
+    1000
+   ]
+  },
+  {
+   "berkas": "public/img/orang/o_7fc74309e3.webp",
+   "status": "ok",
+   "sumber_px": [
+    256,
+    256
+   ],
+   "crop": [
+    0,
+    0,
+    256
+   ]
+  },
+  {
+   "berkas": "public/img/orang/o_806858e1b4.webp",
+   "status": "ok",
+   "sumber_px": [
+    256,
+    256
+   ],
+   "crop": [
+    0,
+    0,
+    256
+   ]
+  },
+  {
+   "berkas": "public/img/orang/o_81bad8893f.webp",
+   "status": "ok",
+   "sumber_px": [
+    1620,
+    1620
+   ],
+   "crop": [
+    0,
+    0,
+    1620
+   ]
+  },
+  {
+   "berkas": "public/img/orang/o_839ab0e826.webp",
+   "status": "ok",
+   "sumber_px": [
+    256,
+    256
+   ],
+   "crop": [
+    2,
+    0,
+    253
+   ]
+  },
+  {
+   "berkas": "public/img/orang/o_88c2edbb38.webp",
+   "status": "ok",
+   "sumber_px": [
+    256,
+    256
+   ],
+   "crop": [
+    0,
+    0,
+    256
+   ]
+  },
+  {
+   "berkas": "public/img/orang/o_89fc5a2b60.webp",
+   "status": "ok",
+   "sumber_px": [
+    2694,
+    4042
+   ],
+   "crop": [
+    854,
+    719,
+    992
+   ]
+  },
+  {
+   "berkas": "public/img/orang/o_8c5aaa2e69.webp",
+   "status": "ok",
+   "sumber_px": [
+    1620,
+    1620
+   ],
+   "crop": [
+    48,
+    56,
+    1564
+   ]
+  },
+  {
+   "berkas": "public/img/orang/o_8e6f73c2c8.webp",
+   "status": "ok",
+   "sumber_px": [
+    256,
+    256
+   ],
+   "crop": [
+    0,
+    0,
+    256
+   ]
+  },
+  {
+   "berkas": "public/img/orang/o_9085fd2fc1.webp",
+   "status": "ok",
+   "sumber_px": [
+    320,
+    480
+   ],
+   "crop": [
+    0,
+    55,
+    320
+   ]
+  },
+  {
+   "berkas": "public/img/orang/o_91430190f5.webp",
+   "status": "ok",
+   "sumber_px": [
+    256,
+    256
+   ],
+   "crop": [
+    9,
+    6,
+    244
+   ]
+  },
+  {
+   "berkas": "public/img/orang/o_943d7abbea.webp",
+   "status": "ok",
+   "sumber_px": [
+    256,
+    256
+   ],
+   "crop": [
+    0,
+    0,
+    256
+   ]
+  },
+  {
+   "berkas": "public/img/orang/o_951f9a9324.webp",
+   "status": "ok",
+   "sumber_px": [
+    256,
+    256
+   ],
+   "crop": [
+    0,
+    3,
+    253
+   ]
+  },
+  {
+   "berkas": "public/img/orang/o_973538c595.webp",
+   "status": "ok",
+   "sumber_px": [
+    256,
+    256
+   ],
+   "crop": [
+    0,
+    0,
+    256
+   ]
+  },
+  {
+   "berkas": "public/img/orang/o_97610c14db.webp",
+   "status": "ok",
+   "sumber_px": [
+    256,
+    256
+   ],
+   "crop": [
+    0,
+    0,
+    256
+   ]
+  },
+  {
+   "berkas": "public/img/orang/o_97948a1cd1.webp",
+   "status": "ok",
+   "sumber_px": [
+    320,
+    480
+   ],
+   "crop": [
+    0,
+    70,
+    320
+   ]
+  },
+  {
+   "berkas": "public/img/orang/o_9a84767c83.webp",
+   "status": "ok",
+   "sumber_px": [
+    293,
+    295
+   ],
+   "crop": [
+    72,
+    32,
+    165
+   ]
+  },
+  {
+   "berkas": "public/img/orang/o_9c4d677c0e.webp",
+   "status": "ok",
+   "sumber_px": [
+    256,
+    256
+   ],
+   "crop": [
+    4,
+    4,
+    252
+   ]
+  },
+  {
+   "berkas": "public/img/orang/o_9cf1f9bce1.webp",
+   "status": "ok",
+   "sumber_px": [
+    180,
+    180
+   ],
+   "crop": [
+    32,
+    21,
+    125
+   ]
+  },
+  {
+   "berkas": "public/img/orang/o_9eb6ab115c.webp",
+   "status": "ok",
+   "sumber_px": [
+    256,
+    256
+   ],
+   "crop": [
+    0,
+    0,
+    256
+   ]
+  },
+  {
+   "berkas": "public/img/orang/o_a203f6bf28.webp",
+   "status": "ok",
+   "sumber_px": [
+    256,
+    256
+   ],
+   "crop": [
+    0,
+    0,
+    256
+   ]
+  },
+  {
+   "berkas": "public/img/orang/o_a626b0c7f0.webp",
+   "status": "ok",
+   "sumber_px": [
+    256,
+    256
+   ],
+   "crop": [
+    0,
+    0,
+    256
+   ]
+  },
+  {
+   "berkas": "public/img/orang/o_a62d6c2bda.webp",
+   "status": "ok",
+   "sumber_px": [
+    1080,
+    1350
+   ],
+   "crop": [
+    278,
+    234,
+    553
+   ]
+  },
+  {
+   "berkas": "public/img/orang/o_a69c555a3f.webp",
+   "status": "ok",
+   "sumber_px": [
+    1620,
+    1620
+   ],
+   "crop": [
+    0,
+    72,
+    1548
+   ]
+  },
+  {
+   "berkas": "public/img/orang/o_a6d0668363.webp",
+   "status": "ok",
+   "sumber_px": [
+    256,
+    256
+   ],
+   "crop": [
+    0,
+    0,
+    256
+   ]
+  },
+  {
+   "berkas": "public/img/orang/o_ab64440035.webp",
+   "status": "ok",
+   "sumber_px": [
+    256,
+    256
+   ],
+   "crop": [
+    1,
+    1,
+    255
+   ]
+  },
+  {
+   "berkas": "public/img/orang/o_ac0848a077.webp",
+   "status": "ok",
+   "sumber_px": [
+    320,
+    480
+   ],
+   "crop": [
+    0,
+    67,
+    320
+   ]
+  },
+  {
+   "berkas": "public/img/orang/o_ad49e4fd32.webp",
+   "status": "ok",
+   "sumber_px": [
+    256,
+    256
+   ],
+   "crop": [
+    0,
+    0,
+    256
+   ]
+  },
+  {
+   "berkas": "public/img/orang/o_b0153171c4.webp",
+   "status": "ok",
+   "sumber_px": [
+    256,
+    256
+   ],
+   "crop": [
+    0,
+    0,
+    256
+   ]
+  },
+  {
+   "berkas": "public/img/orang/o_b057f5ea4f.webp",
+   "status": "ok",
+   "sumber_px": [
+    256,
+    256
+   ],
+   "crop": [
+    0,
+    0,
+    256
+   ]
+  },
+  {
+   "berkas": "public/img/orang/o_b479e14c9c.webp",
+   "status": "ok",
+   "sumber_px": [
+    1000,
+    1000
+   ],
+   "crop": [
+    0,
+    0,
+    1000
+   ]
+  },
+  {
+   "berkas": "public/img/orang/o_b6765b88a9.webp",
+   "status": "ok",
+   "sumber_px": [
+    657,
+    840
+   ],
+   "crop": [
+    151,
+    184,
+    372
+   ]
+  },
+  {
+   "berkas": "public/img/orang/o_b7c1b61335.webp",
+   "status": "ok",
+   "sumber_px": [
+    256,
+    256
+   ],
+   "crop": [
+    0,
+    0,
+    256
+   ]
+  },
+  {
+   "berkas": "public/img/orang/o_b8133a70ee.webp",
+   "status": "ok",
+   "sumber_px": [
+    256,
+    256
+   ],
+   "crop": [
+    0,
+    0,
+    256
+   ]
+  },
+  {
+   "berkas": "public/img/orang/o_bcf0b6ee4e.webp",
+   "status": "ok",
+   "sumber_px": [
+    231,
+    280
+   ],
+   "crop": [
+    0,
+    33,
+    224
+   ]
+  },
+  {
+   "berkas": "public/img/orang/o_bdc9ec787d.webp",
+   "status": "ok",
+   "sumber_px": [
+    1620,
+    1620
+   ],
+   "crop": [
+    0,
+    79,
+    1541
+   ]
+  },
+  {
+   "berkas": "public/img/orang/o_bec51b7659.webp",
+   "status": "ok",
+   "sumber_px": [
+    1620,
+    1620
+   ],
+   "crop": [
+    100,
+    100,
+    1520
+   ]
+  },
+  {
+   "berkas": "public/img/orang/o_c150e18fd8.webp",
+   "status": "ok",
+   "sumber_px": [
+    256,
+    256
+   ],
+   "crop": [
+    2,
+    1,
+    254
+   ]
+  },
+  {
+   "berkas": "public/img/orang/o_c26d85fe1e.webp",
+   "status": "ok",
+   "sumber_px": [
+    293,
+    295
+   ],
+   "crop": [
+    70,
+    29,
+    152
+   ]
+  },
+  {
+   "berkas": "public/img/orang/o_c296edc192.webp",
+   "status": "ok",
+   "sumber_px": [
+    256,
+    256
+   ],
+   "crop": [
+    0,
+    0,
+    256
+   ]
+  },
+  {
+   "berkas": "public/img/orang/o_c423673886.webp",
+   "status": "ok",
+   "sumber_px": [
+    1000,
+    1000
+   ],
+   "crop": [
+    0,
+    0,
+    1000
+   ]
+  },
+  {
+   "berkas": "public/img/orang/o_c6b4f49c59.webp",
+   "status": "ok",
+   "sumber_px": [
+    1620,
+    1620
+   ],
+   "crop": [
+    177,
+    259,
+    1309
+   ]
+  },
+  {
+   "berkas": "public/img/orang/o_cf5b6caa7e.webp",
+   "status": "ok",
+   "sumber_px": [
+    256,
+    256
+   ],
+   "crop": [
+    0,
+    0,
+    256
+   ]
+  },
+  {
+   "berkas": "public/img/orang/o_cfe162d1d9.webp",
+   "status": "ok",
+   "sumber_px": [
+    200,
+    200
+   ],
+   "crop": [
+    0,
+    7,
+    193
+   ]
+  },
+  {
+   "berkas": "public/img/orang/o_d2864882da.webp",
+   "status": "ok",
+   "sumber_px": [
+    400,
+    400
+   ],
+   "crop": [
+    71,
+    80,
+    255
+   ]
+  },
+  {
+   "berkas": "public/img/orang/o_d7f4bc0ff4.webp",
+   "status": "ok",
+   "sumber_px": [
+    320,
+    480
+   ],
+   "crop": [
+    0,
+    70,
+    320
+   ]
+  },
+  {
+   "berkas": "public/img/orang/o_d82076a9a3.webp",
+   "status": "ok",
+   "sumber_px": [
+    256,
+    256
+   ],
+   "crop": [
+    1,
+    1,
+    255
+   ]
+  },
+  {
+   "berkas": "public/img/orang/o_ddffddee1e.webp",
+   "status": "ok",
+   "sumber_px": [
+    320,
+    480
+   ],
+   "crop": [
+    0,
+    77,
+    320
+   ]
+  },
+  {
+   "berkas": "public/img/orang/o_df59eba597.webp",
+   "status": "ok",
+   "sumber_px": [
+    256,
+    256
+   ],
+   "crop": [
+    0,
+    0,
+    256
+   ]
+  },
+  {
+   "berkas": "public/img/orang/o_e05f2b2afb.webp",
+   "status": "ok",
+   "sumber_px": [
+    1000,
+    1000
+   ],
+   "crop": [
+    0,
+    0,
+    1000
+   ]
+  },
+  {
+   "berkas": "public/img/orang/o_e0e1ab9e7a.webp",
+   "status": "ok",
+   "sumber_px": [
+    1620,
+    1620
+   ],
+   "crop": [
+    0,
+    0,
+    1620
+   ]
+  },
+  {
+   "berkas": "public/img/orang/o_e34fde4171.webp",
+   "status": "ok",
+   "sumber_px": [
+    1620,
+    1620
+   ],
+   "crop": [
+    0,
+    0,
+    1620
+   ]
+  },
+  {
+   "berkas": "public/img/orang/o_e3f3390eb0.webp",
+   "status": "ok",
+   "sumber_px": [
+    256,
+    256
+   ],
+   "crop": [
+    0,
+    0,
+    256
+   ]
+  },
+  {
+   "berkas": "public/img/orang/o_e45f072671.webp",
+   "status": "ok",
+   "sumber_px": [
+    1126,
+    1397
+   ],
+   "crop": [
+    0,
+    175,
+    1126
+   ]
+  },
+  {
+   "berkas": "public/img/orang/o_e53f2c788d.webp",
+   "status": "ok",
+   "sumber_px": [
+    180,
+    180
+   ],
+   "crop": [
+    10,
+    10,
+    170
+   ]
+  },
+  {
+   "berkas": "public/img/orang/o_e5a517c214.webp",
+   "status": "ok",
+   "sumber_px": [
+    1080,
+    1350
+   ],
+   "crop": [
+    233,
+    246,
+    709
+   ]
+  },
+  {
+   "berkas": "public/img/orang/o_e7c00e5697.webp",
+   "status": "ok",
+   "sumber_px": [
+    750,
+    750
+   ],
+   "crop": [
+    57,
+    99,
+    600
+   ]
+  },
+  {
+   "berkas": "public/img/orang/o_e9108c751f.webp",
+   "status": "tidak_terdeteksi",
+   "sumber_px": [
+    256,
+    256
+   ],
+   "dipindah": "data-panen/foto_tinjau/o_e9108c751f.webp"
+  },
+  {
+   "berkas": "public/img/orang/o_eadfd04916.webp",
+   "status": "ok",
+   "sumber_px": [
+    413,
+    413
+   ],
+   "crop": [
+    6,
+    34,
+    361
+   ]
+  },
+  {
+   "berkas": "public/img/orang/o_eb77a12a80.webp",
+   "status": "ok",
+   "sumber_px": [
+    256,
+    256
+   ],
+   "crop": [
+    1,
+    1,
+    255
+   ]
+  },
+  {
+   "berkas": "public/img/orang/o_ebebf29fc3.webp",
+   "status": "ok",
+   "sumber_px": [
+    256,
+    256
+   ],
+   "crop": [
+    0,
+    0,
+    256
+   ]
+  },
+  {
+   "berkas": "public/img/orang/o_ec8758546d.webp",
+   "status": "ok",
+   "sumber_px": [
+    1080,
+    1350
+   ],
+   "crop": [
+    219,
+    246,
+    658
+   ]
+  },
+  {
+   "berkas": "public/img/orang/o_edb30181c6.webp",
+   "status": "ok",
+   "sumber_px": [
+    231,
+    280
+   ],
+   "crop": [
+    0,
+    63,
+    182
+   ]
+  },
+  {
+   "berkas": "public/img/orang/o_eec7bf71fe.webp",
+   "status": "ok",
+   "sumber_px": [
+    256,
+    256
+   ],
+   "crop": [
+    0,
+    0,
+    256
+   ]
+  },
+  {
+   "berkas": "public/img/orang/o_f4acc37124.webp",
+   "status": "tidak_terdeteksi",
+   "sumber_px": [
+    628,
+    445
+   ],
+   "dipindah": "data-panen/foto_tinjau/o_f4acc37124.webp"
+  },
+  {
+   "berkas": "public/img/orang/o_f684ef4d55.webp",
+   "status": "ok",
+   "sumber_px": [
+    1620,
+    1620
+   ],
+   "crop": [
+    0,
+    5,
+    1615
+   ]
+  },
+  {
+   "berkas": "public/img/orang/o_f951287824.webp",
+   "status": "ok",
+   "sumber_px": [
+    256,
+    256
+   ],
+   "crop": [
+    0,
+    1,
+    255
+   ]
+  },
+  {
+   "berkas": "public/img/orang/o_f965e65f65.webp",
+   "status": "ok",
+   "sumber_px": [
+    256,
+    256
+   ],
+   "crop": [
+    1,
+    2,
+    254
+   ]
+  },
+  {
+   "berkas": "public/img/orang/o_f9c769dceb.webp",
+   "status": "ok",
+   "sumber_px": [
+    183,
+    181
+   ],
+   "crop": [
+    20,
+    31,
+    144
+   ]
+  },
+  {
+   "berkas": "public/img/orang/o_f9f5767c0d.webp",
+   "status": "ok",
+   "sumber_px": [
+    334,
+    500
+   ],
+   "crop": [
+    75,
+    76,
+    181
+   ]
+  },
+  {
+   "berkas": "public/img/orang/o_fa586ac257.webp",
+   "status": "ok",
+   "sumber_px": [
+    256,
+    256
+   ],
+   "crop": [
+    0,
+    0,
+    256
+   ]
+  },
+  {
+   "berkas": "public/img/orang/o_fb467b0941.webp",
+   "status": "ok",
+   "sumber_px": [
+    1620,
+    1620
+   ],
+   "crop": [
+    0,
+    0,
+    1620
+   ]
+  },
+  {
+   "berkas": "public/img/orang/o_fd43432691.webp",
+   "status": "ok",
+   "sumber_px": [
+    256,
+    256
+   ],
+   "crop": [
+    0,
+    0,
+    256
+   ]
+  },
+  {
+   "berkas": "public/img/orang/o_fe73f8d3b1.webp",
+   "status": "tidak_terdeteksi",
+   "sumber_px": [
+    256,
+    256
+   ],
+   "dipindah": "data-panen/foto_tinjau/o_fe73f8d3b1.webp"
+  },
+  {
+   "berkas": "public/img/orang/o_fecaf7d558.webp",
+   "status": "ok",
+   "sumber_px": [
+    231,
+    280
+   ],
+   "crop": [
+    2,
+    36,
+    222
+   ]
+  },
+  {
+   "berkas": "public/img/orang/o_ffa553a552.webp",
+   "status": "ok",
+   "sumber_px": [
+    256,
+    256
+   ],
+   "crop": [
+    0,
+    0,
+    256
+   ]
+  },
+  {
+   "berkas": "public/img/pengurus/agung-hermawan-b.webp",
+   "status": "ok",
+   "sumber_px": [
+    256,
+    256
+   ],
+   "crop": [
+    0,
+    0,
+    256
+   ]
+  },
+  {
+   "berkas": "public/img/pengurus/anthoni-utomo-b.webp",
+   "status": "ok",
+   "sumber_px": [
+    256,
+    256
+   ],
+   "crop": [
+    0,
+    0,
+    256
+   ]
+  },
+  {
+   "berkas": "public/img/pengurus/arief-noerhidayat-b.webp",
+   "status": "ok",
+   "sumber_px": [
+    256,
+    256
+   ],
+   "crop": [
+    0,
+    0,
+    256
+   ]
+  },
+  {
+   "berkas": "public/img/pengurus/arief-subekti-b.webp",
+   "status": "ok",
+   "sumber_px": [
+    256,
+    256
+   ],
+   "crop": [
+    1,
+    1,
+    254
+   ]
+  },
+  {
+   "berkas": "public/img/pengurus/cindy-b.webp",
+   "status": "ok",
+   "sumber_px": [
+    256,
+    256
+   ],
+   "crop": [
+    0,
+    2,
+    254
+   ]
+  },
+  {
+   "berkas": "public/img/pengurus/daniel-tampubolon-b.webp",
+   "status": "ok",
+   "sumber_px": [
+    256,
+    256
+   ],
+   "crop": [
+    0,
+    0,
+    256
+   ]
+  },
+  {
+   "berkas": "public/img/pengurus/delano-dalo-b.webp",
+   "status": "ok",
+   "sumber_px": [
+    256,
+    256
+   ],
+   "crop": [
+    0,
+    0,
+    256
+   ]
+  },
+  {
+   "berkas": "public/img/pengurus/dicky-septriadi-b.webp",
+   "status": "ok",
+   "sumber_px": [
+    256,
+    256
+   ],
+   "crop": [
+    0,
+    0,
+    256
+   ]
+  },
+  {
+   "berkas": "public/img/pengurus/elrika-hamdi-b.webp",
+   "status": "ok",
+   "sumber_px": [
+    256,
+    256
+   ],
+   "crop": [
+    0,
+    0,
+    256
+   ]
+  },
+  {
+   "berkas": "public/img/pengurus/erik-tarigan-b.webp",
+   "status": "ok",
+   "sumber_px": [
+    256,
+    256
+   ],
+   "crop": [
+    5,
+    5,
+    251
+   ]
+  },
+  {
+   "berkas": "public/img/pengurus/fadli-rahman-b.webp",
+   "status": "ok",
+   "sumber_px": [
+    256,
+    256
+   ],
+   "crop": [
+    2,
+    2,
+    254
+   ]
+  },
+  {
+   "berkas": "public/img/pengurus/hashim-djojohadikusumo-b.webp",
+   "status": "ok",
+   "sumber_px": [
+    256,
+    256
+   ],
+   "crop": [
+    0,
+    0,
+    256
+   ]
+  },
+  {
+   "berkas": "public/img/pengurus/henny-triana-b.webp",
+   "status": "ok",
+   "sumber_px": [
+    256,
+    256
+   ],
+   "crop": [
+    0,
+    0,
+    256
+   ]
+  },
+  {
+   "berkas": "public/img/pengurus/herbert-lubis-b.webp",
+   "status": "ok",
+   "sumber_px": [
+    256,
+    256
+   ],
+   "crop": [
+    1,
+    1,
+    255
+   ]
+  },
+  {
+   "berkas": "public/img/pengurus/herman-darnel-ibrahim-b.webp",
+   "status": "ok",
+   "sumber_px": [
+    256,
+    256
+   ],
+   "crop": [
+    0,
+    0,
+    256
+   ]
+  },
+  {
+   "berkas": "public/img/pengurus/hokkop-situngkir-b.webp",
+   "status": "ok",
+   "sumber_px": [
+    256,
+    256
+   ],
+   "crop": [
+    0,
+    1,
+    255
+   ]
+  },
+  {
+   "berkas": "public/img/pengurus/john-paulus-pantouw-b.webp",
+   "status": "ok",
+   "sumber_px": [
+    256,
+    256
+   ],
+   "crop": [
+    0,
+    0,
+    256
+   ]
+  },
+  {
+   "berkas": "public/img/pengurus/julfi-hadi-b.webp",
+   "status": "ok",
+   "sumber_px": [
+    256,
+    256
+   ],
+   "crop": [
+    0,
+    1,
+    255
+   ]
+  },
+  {
+   "berkas": "public/img/pengurus/kuki-soejachmoen-b.webp",
+   "status": "ok",
+   "sumber_px": [
+    256,
+    256
+   ],
+   "crop": [
+    2,
+    2,
+    254
+   ]
+  },
+  {
+   "berkas": "public/img/pengurus/lucila-ismoyo-rukmi-b.webp",
+   "status": "ok",
+   "sumber_px": [
+    256,
+    256
+   ],
+   "crop": [
+    1,
+    1,
+    255
+   ]
+  },
+  {
+   "berkas": "public/img/pengurus/mada-ayu-habsari-b.webp",
+   "status": "ok",
+   "sumber_px": [
+    256,
+    256
+   ],
+   "crop": [
+    2,
+    2,
+    254
+   ]
+  },
+  {
+   "berkas": "public/img/pengurus/mirda-rasyid-b.webp",
+   "status": "ok",
+   "sumber_px": [
+    256,
+    256
+   ],
+   "crop": [
+    0,
+    0,
+    256
+   ]
+  },
+  {
+   "berkas": "public/img/pengurus/muliandy-nasution-b.webp",
+   "status": "ok",
+   "sumber_px": [
+    256,
+    256
+   ],
+   "crop": [
+    0,
+    0,
+    256
+   ]
+  },
+  {
+   "berkas": "public/img/pengurus/norman-ginting-b.webp",
+   "status": "ok",
+   "sumber_px": [
+    256,
+    256
+   ],
+   "crop": [
+    0,
+    0,
+    256
+   ]
+  },
+  {
+   "berkas": "public/img/pengurus/parlindungan-purba-b.webp",
+   "status": "ok",
+   "sumber_px": [
+    256,
+    256
+   ],
+   "crop": [
+    0,
+    0,
+    256
+   ]
+  },
+  {
+   "berkas": "public/img/pengurus/priyanka-puteri-ariffia-b.webp",
+   "status": "ok",
+   "sumber_px": [
+    256,
+    256
+   ],
+   "crop": [
+    0,
+    2,
+    254
+   ]
+  },
+  {
+   "berkas": "public/img/pengurus/ruly-marianti-b.webp",
+   "status": "ok",
+   "sumber_px": [
+    256,
+    256
+   ],
+   "crop": [
+    0,
+    0,
+    256
+   ]
+  },
+  {
+   "berkas": "public/img/pengurus/sim-budiman-setiawan-b.webp",
+   "status": "ok",
+   "sumber_px": [
+    256,
+    256
+   ],
+   "crop": [
+    2,
+    2,
+    254
+   ]
+  },
+  {
+   "berkas": "public/img/pengurus/sumanggar-milton-pakpahan-b.webp",
+   "status": "ok",
+   "sumber_px": [
+    256,
+    256
+   ],
+   "crop": [
+    0,
+    0,
+    256
+   ]
+  },
+  {
+   "berkas": "public/img/pengurus/sutiyo-siswanto-b.webp",
+   "status": "ok",
+   "sumber_px": [
+    256,
+    256
+   ],
+   "crop": [
+    0,
+    1,
+    255
+   ]
+  },
+  {
+   "berkas": "public/img/pengurus/teuku-agassi-harsya-b.webp",
+   "status": "ok",
+   "sumber_px": [
+    256,
+    256
+   ],
+   "crop": [
+    0,
+    0,
+    256
+   ]
+  },
+  {
+   "berkas": "public/img/pengurus/wiluyo-kusdiharto-b.webp",
+   "status": "ok",
+   "sumber_px": [
+    256,
+    256
+   ],
+   "crop": [
+    0,
+    0,
+    256
+   ]
+  },
+  {
+   "berkas": "public/img/pengurus/yasmine-surachman-b.webp",
+   "status": "ok",
+   "sumber_px": [
+    256,
+    256
+   ],
+   "crop": [
+    1,
+    1,
+    254
+   ]
+  },
+  {
+   "berkas": "public/img/pengurus/yudha-permana-jayadikarta-b.webp",
+   "status": "ok",
+   "sumber_px": [
+    256,
+    256
+   ],
+   "crop": [
+    0,
+    0,
+    256
+   ]
+  }
+ ]
+}

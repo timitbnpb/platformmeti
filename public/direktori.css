@@ -337,7 +337,7 @@ body{padding-top:var(--top);overflow-x:hidden}
 
 /* kotak centang di kartu */
 .ak-orang{position:relative}
-.ak-orang .ak-atas{padding-right:34px}
+.ak-orang .ak-atas{padding-right:0}
 .ak .ak-pilih{position:absolute;top:10px;right:10px;width:36px;height:36px;display:grid;place-items:center;cursor:pointer;z-index:1}
 .ak .ak-pilih input{position:absolute;inset:0;width:100%;height:100%;min-height:0;margin:0;padding:0;opacity:0;cursor:pointer;border-radius:50%}
 .ak-cek{width:22px;height:22px;border-radius:7px;border:1.5px solid var(--ink2);background:var(--card);display:grid;place-items:center;pointer-events:none;transition:background-color .12s,border-color .12s}
@@ -2578,7 +2578,7 @@ button.ak-r[data-kh][aria-pressed="true"]{border-color:var(--w0,var(--brand2));b
 @media (max-width:700px){.ak-bpanel .ak-sektor button .ak-sl,.ak-bpanel .ak-sektor button .ak-sn{display:inline!important}.ak-bpanel .ak-sektor .ak-sg-b>button{display:flex!important;padding:0 8px;min-height:40px}}
 /* kartu orang: logo METI kecil di pojok kanan atas; pil organisasi tenang (garis, bukan blok hijau) */
 .ak-orang{position:relative}
-.ak-mt-logo{position:absolute;top:10px;right:10px;width:24px;height:24px;object-fit:contain;z-index:1}
+.ak-mt-logo{width:22px;height:22px;padding:2px;right:-6px;bottom:-6px}
 .ak-orang .ak-lbl-inst{background:transparent!important;color:var(--ink2)!important;border:1px solid var(--line-ctl);font-weight:600;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .ak-orang .ak-lbl-inst:hover{background:var(--surface)!important;color:var(--ink)!important}
 /* toggle keanggotaan METI: tiga pilihan sama lebar selebar baris saringan, hitungan di kanan */
@@ -2755,3 +2755,13 @@ button.ak-r[data-kh][aria-pressed="true"]{border-color:var(--w0,var(--brand2));b
 .ak-lbpeta .ak-drawer,.ak-lbpeta .ak-ptpanel{right:var(--tepi)}
 .ak-lbpeta .ak-ptlayer{right:calc(var(--tepi) + 44px)}
 @media (max-width:700px){.ak-lbpeta .ak-drawer{right:0}}
+/* legenda ikon kolom tabel provinsi (pemilik 8 Nov 2026) */
+.ak-sdleg{display:flex;flex-wrap:wrap;gap:6px 14px;padding:10px 12px;background:var(--surface);border-bottom:1px solid var(--line);font:600 var(--t-label)/1.3 var(--font);color:var(--ink2)}
+.ak-sdleg span{display:inline-flex;align-items:center;gap:6px}
+.ak-sdleg svg,.ak-sdleg .ak-ikon{width:16px;height:16px;color:var(--brand)}
+
+/* avatar bersama: potret berfokus ke atas agar kepala tidak terpotong; foto sudah di-crop wajah (scripts/pipa/foto_wajah.mjs) */
+img.ak-foto,.ak-pgr img,.ak-pk-foto img,.ak-pkbtn img.ak-foto,.ak-orang img.ak-foto,.ak-sosok img.ak-foto{object-fit:cover;object-position:center 15%}
+/* kartu orang: tinggi seragam, nama maksimal 2 baris tanpa patah kata */
+.ak-daftar:has(.ak-orang){grid-auto-rows:1fr}
+.ak-orang .ak-nama h3{hyphens:none;overflow-wrap:normal;word-break:normal;display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2;line-clamp:2;overflow:hidden;text-overflow:ellipsis}

@@ -521,6 +521,7 @@ export function bangun(masukan = {}) {
     const o = oid && org.get(oid), prov = o?.lokasi?.provinsi;
     return prov && KAT_DAERAH.has(katOrg.get(oid)) ? { lingkup: 'daerah', label: prov, provinsi: prov } : { lingkup: 'nasional', label: 'Nasional' };
   };
+  const fotoLokal = (r) => { const sl = norm(r.nama).replace(/ /g, '-'); return ['/img/orang/' + r.id + '.webp', '/img/pengurus/' + sl + '-b.webp'].find((u) => fs.existsSync(path.join(ROOT, 'public', u))); }; // foto sudah di-crop wajah (foto_wajah.mjs)
   for (const r of orangList) {
     const ada = unik(r.sumber_urls).some(adaUrl) || adaUrl(r.sumber_url);
     const kel = kelompokDari(r);
@@ -530,7 +531,7 @@ export function bangun(masukan = {}) {
     if (!ada) { orangOut.pengurus.push(bersih({ ...pen, baru: true, ditahan: 'tanpa-sumber-url', nama: r.nama })); continue; }
     const oid = r.organisasi_terkini && orgPerNama(r.organisasi_terkini);
     const jab = r.jabatan.map((j) => bersih({ organisasi_id: j.organisasi_id || (j.organisasi && orgPerNama(j.organisasi)), organisasi: j.organisasi, jabatan: j.jabatan, mulai: j.mulai, selesai: j.selesai, kini: j.kini, catatan: j.catatan, sumber_url: j.sumber_url }));
-    orangOut.publik.push(bersih({ id: r.id, nama: r.nama, gelar: r.gelar, kelompok: { kode: kel, label: KELOMPOK[kel] }, jenis: r.jenis, wilayah: wilayahDari(r, oid), status: r.status, jabatan_terkini: r.jabatan_terkini, organisasi_terkini: r.organisasi_terkini, organisasi_id: oid || (jab.find((j) => j.organisasi_id)?.organisasi_id), kepakaran: kodeMax3(r.kepakaran), ringkasan: r.ringkasan, pendidikan: r.pengurus_profil ? r.pendidikan : undefined, dpr: r.dpr, jalur: r.jalur, pernah_birokrasi: r.pernah_birokrasi, jabatan: jab, tautan: r.tautan, wikidata_id: r.wikidata_id, berita_ids: bTerbaru('orang', r.id), sumber_url: r.sumber_url || unik(r.sumber_urls).find(adaUrl), tanggal: r.tanggal }));
+    orangOut.publik.push(bersih({ id: r.id, nama: r.nama, gelar: r.gelar, kelompok: { kode: kel, label: KELOMPOK[kel] }, jenis: r.jenis, wilayah: wilayahDari(r, oid), status: r.status, jabatan_terkini: r.jabatan_terkini, organisasi_terkini: r.organisasi_terkini, organisasi_id: oid || (jab.find((j) => j.organisasi_id)?.organisasi_id), kepakaran: kodeMax3(r.kepakaran), ringkasan: r.ringkasan, pendidikan: r.pengurus_profil ? r.pendidikan : undefined, dpr: r.dpr, jalur: r.jalur, pernah_birokrasi: r.pernah_birokrasi, jabatan: jab, tautan: r.tautan, wikidata_id: r.wikidata_id, berita_ids: bTerbaru('orang', r.id), sumber_url: r.sumber_url || unik(r.sumber_urls).find(adaUrl), tanggal: r.tanggal, foto: fotoLokal(r) }));
     const ros = metiOrang.has(r.id) && jmlNama.get(norm(r.nama)) === 1 && anggotaNama.get(norm(r.nama))?.size === 1 ? rosterNama.get(norm(r.nama)) : null;
     const skAf = !ros && jmlNama.get(norm(r.nama)) === 1 ? afilSk.get(norm(pisahNama(r.nama).nama)) : null; // afiliasi dari SK/struktur METI (arsip lokal), nama unik saja
     const afil = skAf ? [bersih({ organisasi: skAf.organisasi || undefined, organisasi_id: skAf.organisasi ? orgPerNama(skAf.organisasi) || undefined : undefined, jabatan: skAf.jabatan, sumber: 'sk-meti' })] : ros ? [bersih({ organisasi: bersihInstansi(ros.instansi), organisasi_id: orgPerNama(bersihInstansi(ros.instansi)) || undefined, jabatan: ros.jabatan || undefined, sumber: 'daftar-keanggotaan-meti' })] : undefined;
