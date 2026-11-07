@@ -64,10 +64,11 @@ function gambarKartu() {
 async function gambarBerita() {
   const el = document.getElementById("berita");
   try {
-    const b = await muat("berita");
+    const [b, foto] = await Promise.all([muat("berita"), muat("berita_foto").catch(() => ({}))]);
+    const IK = { surya: "tek-surya", "panas-bumi": "tek-panas", bioenergi: "tek-bio", "biomassa-sampah": "tek-bio" };
     const baris = [...b.baris].filter((x) => urlAman(x.url) && x.terbit).sort((x, y) => String(y.terbit).localeCompare(String(x.terbit))).slice(0, 6);
     if (!baris.length) throw new Error("berita kosong");
-    el.innerHTML = `<ul class="jm-feed">${baris.map((x) => `<li><a class="jm-feed-i" href="${esc(x.url)}" target="_blank" rel="noopener noreferrer"><span class="jm-feed-ik">${esc(String(x.media || "?").replace(/^www\./, "").slice(0, 2).toUpperCase())}</span><span class="jm-feed-t"><strong>${esc(x.judul)}</strong><span class="jm-baris-meta"><span>${esc(x.media)}, ${esc(tanggal(String(x.terbit).slice(0, 10)))}</span>${x.kepakaran?.[0] ? `<span class="jm-pil">${esc(label("beranda.tek.", x.kepakaran[0]))}</span>` : ""}</span></span>${ikon("tautan", 16)}</a></li>`).join("")}</ul><a class="jm-lihat" href="/berita">${esc(t("beranda.lihat.berita"))} &rarr;</a>`;
+    el.innerHTML = `<ul class="jm-feed">${baris.map((x) => `<li><a class="jm-feed-i jm-feed-foto" href="${esc(x.url)}" target="_blank" rel="noopener noreferrer"><span class="jm-feed-th">${ikon(IK[x.kepakaran?.[0]] || "tek-listrik", 28)}${urlAman(foto?.[x.id]) ? `<img src="${esc(foto[x.id])}" width="112" height="72" alt="" loading="lazy" decoding="async" referrerpolicy="no-referrer">` : ""}</span><span class="jm-feed-t"><strong>${esc(x.judul)}</strong><span class="jm-baris-meta"><span>${esc(x.media)}, ${esc(tanggal(String(x.terbit).slice(0, 10)))}</span>${x.kepakaran?.[0] ? `<span class="jm-pil">${esc(label("beranda.tek.", x.kepakaran[0]))}</span>` : ""}</span></span></a></li>`).join("")}</ul><a class="jm-lihat" href="/berita">${esc(t("beranda.lihat.berita"))} &rarr;</a>`;
   } catch (e) { sembunyi(el, e); el.closest(".jm-kartu").hidden = true; }
 }
 
@@ -139,6 +140,7 @@ async function main() {
   };
   await mulai();
   pasangBawah(R);
+  addEventListener("error", (e) => { if (e.target.tagName === "IMG" && e.target.closest(".jm-feed-th")) e.target.remove(); }, true);
   document.getElementById("kartu").addEventListener("click", (e) => e.target.closest("[data-aksi=ulang]") && mulai());
   const input = document.getElementById("cari");
   input.addEventListener("focus", () => siapkanIndeks().catch(() => { indeks = null; }), { once: true });

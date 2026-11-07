@@ -1,0 +1,315 @@
+- generic [active] [ref=f4e1]:
+  - banner [ref=f4e2]:
+    - button "Menu utama" [ref=f4e3] [cursor=pointer]
+    - link [ref=f4e6] [cursor=pointer]:
+      - /url: /
+    - generic [ref=f4e7]:
+      - button "Ganti bahasa ke English" [ref=f4e8] [cursor=pointer]
+      - button "Ganti tema" [ref=f4e14] [cursor=pointer]
+      - link "Masuk" [ref=f4e17] [cursor=pointer]:
+        - /url: /masuk?ke=%2F
+  - main [ref=f4e20]:
+    - region [ref=f4e22]:
+      - generic [ref=f4e23]:
+        - paragraph [ref=f4e24]:
+          - generic [ref=f4e26]: Data ekosistem EBET
+        - heading "Data energi terbarukan Indonesia" [level=1] [ref=f4e27]
+        - paragraph [ref=f4e28]: Daftar proyek, perusahaan, lembaga, tokoh, dan regulasi energi terbarukan. Angka disertai sumber dan tanggal.
+        - generic [ref=f4e30]:
+          - generic [ref=f4e31]: Cari proyek, organisasi, tokoh, atau regulasi
+          - searchbox "Cari proyek, organisasi, tokoh, atau regulasi" [ref=f4e32]
+          - button "Cari" [ref=f4e33] [cursor=pointer]
+        - list [ref=f4e34]:
+          - listitem [ref=f4e35]:
+            - generic [ref=f4e37]: "397"
+            - text: proyek
+          - listitem [ref=f4e38]:
+            - generic [ref=f4e40]: "355"
+            - text: organisasi
+          - listitem [ref=f4e41]:
+            - generic [ref=f4e43]: "409"
+            - text: orang
+          - listitem [ref=f4e44]:
+            - generic [ref=f4e46]: "430"
+            - text: regulasi
+          - listitem [ref=f4e47]:
+            - generic [ref=f4e49]: "519"
+            - text: berita
+      - generic [ref=f4e50]:
+        - link:
+          - /url: /direktori?tampil=lembaga
+    - navigation "Di halaman ini" [ref=f4e52]:
+      - link "01 Kondisi sekarang" [ref=f4e53] [cursor=pointer]:
+        - /url: "#s01"
+        - generic [ref=f4e54]: "01"
+        - generic [ref=f4e55]: Kondisi sekarang
+      - link "02 Ekosistem" [ref=f4e56] [cursor=pointer]:
+        - /url: "#s02"
+        - generic [ref=f4e57]: "02"
+        - generic [ref=f4e58]: Ekosistem
+      - link "03 Dataset" [ref=f4e59] [cursor=pointer]:
+        - /url: "#s03"
+        - generic [ref=f4e60]: "03"
+        - generic [ref=f4e61]: Dataset
+      - link "04 Proyek dan emisi" [ref=f4e62] [cursor=pointer]:
+        - /url: "#s04"
+        - generic [ref=f4e63]: "04"
+        - generic [ref=f4e64]: Proyek dan emisi
+      - link "05 Teknologi" [ref=f4e65] [cursor=pointer]:
+        - /url: "#s05"
+        - generic [ref=f4e66]: "05"
+        - generic [ref=f4e67]: Teknologi
+      - link "06 Halaman lain" [ref=f4e68] [cursor=pointer]:
+        - /url: "#s06"
+        - generic [ref=f4e69]: "06"
+        - generic [ref=f4e70]: Halaman lain
+      - link "07 Cara data dibuat" [ref=f4e71] [cursor=pointer]:
+        - /url: "#s07"
+        - generic [ref=f4e72]: "07"
+        - generic [ref=f4e73]: Cara data dibuat
+      - link "08 Akses data" [ref=f4e74] [cursor=pointer]:
+        - /url: "#s08"
+        - generic [ref=f4e75]: "08"
+        - generic [ref=f4e76]: Akses data
+    - region [ref=f4e77]:
+      - generic [ref=f4e78]:
+        - generic [ref=f4e79]:
+          - paragraph [ref=f4e80]:
+            - generic [ref=f4e82]: 01 Kondisi sekarang
+          - heading "Angka terbaru" [level=2] [ref=f4e83]
+          - paragraph [ref=f4e84]: Enam angka utama, masing-masing dengan sumber dan tanggal.
+        - generic [ref=f4e85]:
+          - generic [ref=f4e86]:
+            - generic [ref=f4e91]: Proyek
+            - generic [ref=f4e93]:
+              - generic [ref=f4e94]: "397"
+              - generic [ref=f4e95]: proyek
+            - 'generic "Sumber: RUPTL PLN 2025-2034, daftar komunitas, materi publik; diambil 7 Nov 2026. Belum lengkap." [ref=f4e97]': RUPTL 2025-2034
+          - generic [ref=f4e101]:
+            - generic [ref=f4e105]:
+              - generic [ref=f4e106]: Kapasitas
+              - generic [ref=f4e107]: EST
+            - generic [ref=f4e108]:
+              - generic [ref=f4e109]: "28.633"
+              - generic [ref=f4e110]: MW
+            - 'generic "Sumber: RUPTL PLN 2025-2034 dan sumber publik; nilai pertama per proyek, rencana maupun terpasang; diambil 7 Nov 2026." [ref=f4e112]': RUPTL 2025-2034
+          - generic [ref=f4e116]:
+            - generic [ref=f4e120]: Organisasi
+            - generic [ref=f4e122]:
+              - generic [ref=f4e123]: "355"
+              - generic [ref=f4e124]: organisasi
+            - 'generic "Sumber: halaman resmi tiap organisasi; hanya yang bersumber URL; diambil 7 Nov 2026." [ref=f4e126]': Situs resmi
+          - generic [ref=f4e130]:
+            - generic [ref=f4e136]: Orang
+            - generic [ref=f4e138]:
+              - generic [ref=f4e139]: "409"
+              - generic [ref=f4e140]: orang
+            - 'generic "Sumber: jabatan publik bersumber URL; diambil 7 Nov 2026." [ref=f4e142]': Jabatan publik
+          - generic [ref=f4e146]:
+            - generic [ref=f4e150]: Regulasi berlaku
+            - generic [ref=f4e152]:
+              - generic [ref=f4e153]: "294"
+              - generic [ref=f4e154]: aturan
+            - 'generic "Sumber: peraturan.bpk.go.id; dari 430 aturan tercatat; diambil 7 Nov 2026." [ref=f4e156]': BPK
+          - generic [ref=f4e160]:
+            - generic [ref=f4e164]: Konstruksi
+            - generic [ref=f4e166]:
+              - generic [ref=f4e167]: "55"
+              - generic [ref=f4e168]: proyek
+            - generic [ref=f4e169]: 55 dari 397 proyek
+            - 'generic "Sumber: RUPTL PLN 2025-2034 dan sumber publik; status menurut sumber; diambil 7 Nov 2026." [ref=f4e170]': RUPTL 2025-2034
+        - group [ref=f4e174]:
+          - generic "Cara menghitung" [ref=f4e175]
+        - paragraph [ref=f4e176]: Data per 7 Nov 2026. Sumber tertera di tiap kartu.
+        - generic [ref=f4e177]:
+          - heading "Berita terbaru" [level=3] [ref=f4e179]
+          - heading "Proyek terbaru di katalog" [level=3] [ref=f4e181]
+    - region [ref=f4e182]:
+      - generic [ref=f4e183]:
+        - generic [ref=f4e184]:
+          - paragraph [ref=f4e185]:
+            - generic [ref=f4e187]: 02 Ekosistem
+          - heading "Pelaku menurut jenis" [level=2] [ref=f4e188]
+          - paragraph [ref=f4e189]: Jumlah pelaku menurut jenis, dengan tautan ke tiap bagian data.
+        - list
+        - status "Memuat" [ref=f4e191]
+        - paragraph [ref=f4e195]: Logo dipakai untuk mengenali organisasi, diambil dari situs resmi masing-masing (lihat img/logo/SUMBER.md). Jumlah dihitung dari data organisasi, proyek, dan regulasi bersumber.
+    - region [ref=f4e196]:
+      - generic [ref=f4e197]:
+        - generic [ref=f4e198]:
+          - paragraph [ref=f4e199]:
+            - generic [ref=f4e201]: 03 Dataset
+          - heading "Data yang tersedia" [level=2] [ref=f4e202]
+          - paragraph [ref=f4e203]: Angka dihitung dari data bersumber. Label EST menandai angka hasil hitungan sendiri.
+        - status "Memuat" [ref=f4e205]
+    - region [ref=f4e209]:
+      - generic [ref=f4e210]:
+        - generic [ref=f4e211]:
+          - paragraph [ref=f4e212]:
+            - generic [ref=f4e214]: 04 Proyek dan emisi
+          - heading "Lokasi proyek dan emisi pembangkit" [level=2] [ref=f4e215]
+          - paragraph [ref=f4e216]: Peta proyek menurut teknologi dan program, dan sebaran emisi pembangkit listrik.
+        - img "Peta proyek energi terbarukan menurut teknologi dan program" [ref=f4e218]
+        - status "Memuat" [ref=f4e220]
+    - region [ref=f4e224]:
+      - generic [ref=f4e225]:
+        - generic [ref=f4e226]:
+          - paragraph [ref=f4e227]:
+            - generic [ref=f4e229]: 05 Teknologi
+          - heading "Teknologi di lapangan" [level=2] [ref=f4e230]
+          - paragraph [ref=f4e231]: Jumlah proyek per teknologi dan jumlah organisasi per jenis.
+        - status "Memuat" [ref=f4e233]
+        - status "Memuat" [ref=f4e238]
+        - paragraph
+        - paragraph
+    - region [ref=f4e242]:
+      - generic [ref=f4e243]:
+        - generic [ref=f4e244]:
+          - paragraph [ref=f4e245]:
+            - generic [ref=f4e247]: 06 Halaman lain
+          - heading "Halaman dari data yang sama" [level=2] [ref=f4e248]
+          - paragraph [ref=f4e249]: Halaman lain yang memakai data ini.
+        - status "Memuat" [ref=f4e251]
+    - region [ref=f4e255]:
+      - generic [ref=f4e256]:
+        - generic [ref=f4e257]:
+          - paragraph [ref=f4e258]:
+            - generic [ref=f4e260]: 07 Cara data dibuat
+          - heading "Aturan penyusunan data" [level=2] [ref=f4e261]
+          - paragraph [ref=f4e262]: Empat aturan untuk tiap baris.
+        - generic [ref=f4e263]:
+          - generic [ref=f4e264]:
+            - generic [ref=f4e265]: "01"
+            - heading "Ada sumbernya" [level=3] [ref=f4e270]
+            - paragraph [ref=f4e271]: Tiap baris memuat tautan atau nama dokumen sumber. Baris tanpa sumber tidak ditampilkan.
+            - generic [ref=f4e272]: peraturan.bpk.go.id
+          - generic [ref=f4e274]:
+            - generic [ref=f4e275]: "02"
+            - heading "Estimasi diberi label" [level=3] [ref=f4e280]
+            - paragraph [ref=f4e281]: Angka hasil hitungan sendiri berlabel EST, dan cara menghitungnya ditulis di dekatnya.
+            - generic [ref=f4e282]: EST
+          - generic [ref=f4e284]:
+            - generic [ref=f4e285]: "03"
+            - heading "Ada tanggalnya" [level=3] [ref=f4e291]
+            - paragraph [ref=f4e292]: Tiap angka memuat tanggal data diambil.
+            - generic [ref=f4e293]: 7 Nov 2026
+          - generic [ref=f4e295]:
+            - generic [ref=f4e296]: "04"
+            - heading "Bukti bertingkat" [level=3] [ref=f4e301]
+            - paragraph [ref=f4e302]: "Tiap sumber ditandai tingkat buktinya: resmi, media, kata pihak, atau situs sendiri."
+            - generic [ref=f4e303]:
+              - generic [ref=f4e304]: resmi
+              - generic [ref=f4e305]: media
+              - generic [ref=f4e306]: kata pihak
+    - region [ref=f4e307]:
+      - generic [ref=f4e308]:
+        - paragraph [ref=f4e309]:
+          - generic [ref=f4e311]: 08 Akses data
+        - generic [ref=f4e312]:
+          - generic [ref=f4e313]:
+            - heading "Gabung METI untuk akses direktori anggota" [level=2] [ref=f4e314]
+            - paragraph [ref=f4e315]: Data di situs ini bisa dibaca siapa saja. Kontak dan catatan kurator hanya tampil untuk anggota yang sudah masuk.
+          - generic [ref=f4e316]:
+            - link "Gabung METI" [ref=f4e317] [cursor=pointer]:
+              - /url: https://metiires.or.id/membership
+            - link "Hubungi kami" [ref=f4e318] [cursor=pointer]:
+              - /url: mailto:meti.ires@gmail.com
+            - paragraph [ref=f4e319]:
+              - text: Cara mengutip dan penyusun situs ada di
+              - link "halaman Tentang" [ref=f4e320] [cursor=pointer]:
+                - /url: /tentang
+  - contentinfo [ref=f4e321]:
+    - generic [ref=f4e322]:
+      - generic [ref=f4e323]:
+        - generic [ref=f4e326]:
+          - strong [ref=f4e327]: METI
+          - generic [ref=f4e328]: Masyarakat Energi Terbarukan Indonesia
+        - list [ref=f4e329]:
+          - 'listitem "Sumber: metiires.or.id, diperiksa 7 Nov 2026" [ref=f4e330]':
+            - generic [ref=f4e331]: "1999"
+            - generic [ref=f4e332]: Berdiri
+        - generic [ref=f4e333]:
+          - link "LinkedIn METI" [ref=f4e334] [cursor=pointer]:
+            - /url: https://www.linkedin.com/in/meti-ires-b06066a1/
+          - link "Instagram METI" [ref=f4e338] [cursor=pointer]:
+            - /url: https://www.instagram.com/metiires/
+      - navigation [ref=f4e342]:
+        - heading "Tentang" [level=2] [ref=f4e343]
+        - list [ref=f4e344]:
+          - listitem [ref=f4e345]:
+            - link "Siapa kami" [ref=f4e346] [cursor=pointer]:
+              - /url: https://metiires.or.id/about
+          - listitem [ref=f4e348]:
+            - link "Pengurus dan tim" [ref=f4e349] [cursor=pointer]:
+              - /url: https://metiires.or.id/about/meettheteam
+          - listitem [ref=f4e351]:
+            - link "Bergabung" [ref=f4e352] [cursor=pointer]:
+              - /url: https://metiires.or.id/membership
+          - listitem [ref=f4e354]:
+            - link "Kemitraan" [ref=f4e355] [cursor=pointer]:
+              - /url: https://metiires.or.id/about/partnership
+      - navigation [ref=f4e357]:
+        - heading "Berita" [level=2] [ref=f4e358]
+        - list [ref=f4e359]:
+          - listitem [ref=f4e360]:
+            - link "Berita" [ref=f4e361] [cursor=pointer]:
+              - /url: https://metiires.or.id/news
+          - listitem [ref=f4e363]:
+            - link "Event" [ref=f4e364] [cursor=pointer]:
+              - /url: https://metiires.or.id/news/events
+          - listitem [ref=f4e366]:
+            - link "E-Voting Perlu masuk di metiires.or.id" [ref=f4e367] [cursor=pointer]:
+              - /url: https://metiires.or.id/login?redirect=/news/evoting
+              - generic [ref=f4e368]: E-Voting
+              - generic "Perlu masuk di metiires.or.id" [ref=f4e369]
+          - listitem [ref=f4e374]:
+            - link "Materi dan dokumen Perlu masuk di metiires.or.id" [ref=f4e375] [cursor=pointer]:
+              - /url: https://metiires.or.id/login?redirect=/news/materials
+              - generic [ref=f4e376]: Materi dan dokumen
+              - generic "Perlu masuk di metiires.or.id" [ref=f4e377]
+      - navigation [ref=f4e382]:
+        - heading "Direktori" [level=2] [ref=f4e383]
+        - list [ref=f4e384]:
+          - listitem [ref=f4e385]:
+            - link "Proyek" [ref=f4e386] [cursor=pointer]:
+              - /url: /direktori?tampil=proyek
+          - listitem [ref=f4e388]:
+            - link "Organisasi" [ref=f4e389] [cursor=pointer]:
+              - /url: /direktori?tampil=lembaga
+          - listitem [ref=f4e391]:
+            - link "Orang dan pakar" [ref=f4e392] [cursor=pointer]:
+              - /url: /direktori?tampil=pakar
+          - listitem [ref=f4e394]:
+            - link "Regulasi" [ref=f4e395] [cursor=pointer]:
+              - /url: /direktori?tampil=regulasi
+          - listitem [ref=f4e397]:
+            - link "Pustaka" [ref=f4e398] [cursor=pointer]:
+              - /url: /direktori?tampil=pustaka
+    - navigation [ref=f4e401]:
+      - heading "Kontak" [level=2] [ref=f4e402]
+      - list [ref=f4e403]:
+        - listitem [ref=f4e404]:
+          - generic [ref=f4e409]:
+            - generic [ref=f4e410]: Kantor
+            - link "Taman Sari Parama Lt. 10, Jl. K.H. Wahid Hasyim No. 84-86, Kebon Sirih, Menteng, Jakarta Pusat 10340" [ref=f4e411] [cursor=pointer]:
+              - /url: https://www.google.com/maps/search/?api=1&query=Taman%20Sari%20Parama%2C%20Jl.%20K.H.%20Wahid%20Hasyim%20No.%2084-86%2C%20Kebon%20Sirih%2C%20Menteng%2C%20Jakarta%20Pusat%2010340
+        - listitem [ref=f4e412]:
+          - generic [ref=f4e417]:
+            - generic [ref=f4e418]: Rumah Energi Terbarukan
+            - link "Jl. Jatinegara Barat IV No. 3A, Balimester, Jatinegara, Jakarta Timur 13310" [ref=f4e419] [cursor=pointer]:
+              - /url: https://www.google.com/maps/search/?api=1&query=Jl.%20Jatinegara%20Barat%20IV%20No.%203A%2C%20Balimester%2C%20Jatinegara%2C%20Jakarta%20Timur%2013310
+        - listitem [ref=f4e420]:
+          - generic [ref=f4e425]:
+            - generic [ref=f4e426]: Surel
+            - link "meti.ires@gmail.com" [ref=f4e427] [cursor=pointer]:
+              - /url: mailto:meti.ires@gmail.com
+        - listitem [ref=f4e428]:
+          - generic [ref=f4e433]:
+            - generic [ref=f4e434]: Situs
+            - link "www.meti.or.id" [ref=f4e435] [cursor=pointer]:
+              - /url: https://www.meti.or.id
+    - generic [ref=f4e436]:
+      - paragraph [ref=f4e437]: © 2026 METI
+      - link "Kebijakan membership dan pembayaran" [ref=f4e438] [cursor=pointer]:
+        - /url: https://metiires.or.id/policy/membership
+      - button "Kembali ke atas" [ref=f4e439] [cursor=pointer]

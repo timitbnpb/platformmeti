@@ -1,0 +1,4 @@
+[      19ms] [ERROR] Failed to load resource: the server responded with a status of 401 (Unauthorized) @ http://localhost:8124/api/saya:0
+[      37ms] ReferenceError: gambarRingkas is not defined
+    at mulai (http://localhost:8124/berita.js:146:34)
+    at async http://localhost:8124/berita.js:174:3

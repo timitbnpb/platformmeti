@@ -35,7 +35,7 @@ export async function unduhPng(art) {
   const w = document.createElement("div");
   w.className = "jm-snap"; w.dataset.theme = tema; w.style.width = lebar + "px";
   const k = art.cloneNode(true);
-  k.querySelectorAll(".jm-ins-bagi, .jm-ins-menu, details").forEach((x) => x.remove());
+  k.querySelectorAll(".jm-ins-bagi, .jm-ins-menu, details, .jm-ex-sum a, .jm-ex-sum > span").forEach((x) => x.remove());
   k.removeAttribute("id"); k.classList.add("jm-ins-snap");
   const sumber = art.querySelector(".jm-an-src div span")?.textContent.trim() ?? "";
   const kaki = document.createElement("div");

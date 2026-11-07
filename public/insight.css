@@ -2,7 +2,7 @@
 .jm-ins-kepala{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:12px;margin-bottom:12px}
 .jm-ins-grid{display:grid;gap:var(--gap);grid-template-columns:repeat(auto-fill,minmax(min(100%,420px),1fr))}
 .jm-ins{align-content:start}
-article.jm-ins-kartu{display:grid;gap:10px;align-content:start;min-width:0}
+
 article.jm-ins-kartu[data-belum]{min-height:360px}
 .jm-ins h3.jm-ins-j{font:600 17px/1.35 var(--display);color:var(--head)}
 .jm-ins-kartu .jm-an-angka{display:flex;flex-wrap:wrap;align-items:baseline;gap:8px}
@@ -26,27 +26,34 @@ article.jm-ins-kartu[data-belum]{min-height:360px}
 .jm-ins-t2{fill:var(--data3)}
 .jm-ins-bagian{scroll-margin-top:calc(var(--top) + 56px)}
 
-/* kepala kartu: topik, tanggal, bagikan */
-.jm-ins-h{display:flex;align-items:center;gap:10px;position:relative}
-.jm-ins-topik{font:700 11px/1 var(--font);letter-spacing:.1em;text-transform:uppercase}
+/* kartu "exhibit" (anatomi Posko Karhutla): kepala bergradasi, badan grafik, kaki */
+article.jm-ins-kartu{padding:0;overflow:hidden;gap:0}
+.jm-ex-hd{position:relative;padding:18px 22px 14px;background:linear-gradient(180deg,var(--surface),color-mix(in srgb,var(--surface) 40%,var(--card)));border-bottom:1px solid var(--line)}
+.jm-ex-ey{display:inline-block;margin-bottom:8px;padding:3px 9px;border-radius:var(--r-pil);background:var(--soft-hijau);font:800 10px/1.3 var(--font);letter-spacing:.08em;text-transform:uppercase}
 .jm-ins-w-a{color:var(--accent)}
 .jm-ins-w-b{color:var(--info)}
 .jm-ins-w-c{color:var(--warn)}
 .jm-ins-w-d{color:var(--ok)}
-.jm-ins-meta{margin-left:auto;font-size:var(--t-kecil);color:var(--ink2)}
-.jm-ins-bagi{min-width:var(--target);min-height:var(--target);margin:-10px -10px -10px 0;display:inline-flex;align-items:center;justify-content:center;border:0;border-radius:var(--r-pil);background:transparent;color:var(--ink2);cursor:pointer}
-.jm-ins-bagi:hover{color:var(--accent);background:var(--surface)}
-.jm-ins-menu{position:absolute;z-index:5;top:calc(100% + 2px);right:0;display:grid;min-width:210px;padding:6px;border:1px solid var(--line);border-radius:var(--r-sm);background:var(--card);box-shadow:var(--shadow-lg)}
+.jm-ins h3.jm-ins-j{padding-right:36px;font:600 19px/1.3 var(--display);letter-spacing:-.01em;color:var(--head)}
+.jm-hl{color:var(--accent)}
+.jm-ex-sub{display:flex;flex-wrap:wrap;align-items:center;gap:6px;margin:8px 0 0;font:600 13px/1.4 var(--font);color:var(--ink2)}
+.jm-ex-unit{margin:2px 0 0;font-size:12px;color:var(--ink2)}
+.jm-ex-bd{padding:16px 22px 10px;min-width:0}
+.jm-ex-ft{display:grid;gap:6px;padding:10px 22px 14px;border-top:1px solid var(--line);font-size:11.5px;color:var(--ink2)}
+.jm-ex-fn{margin:0;line-height:1.45}
+.jm-ex-fn:empty{display:none}
+.jm-ex-fn b{color:var(--head)}
+.jm-ex-sum{display:flex;flex-wrap:wrap;align-items:center;gap:4px 14px}
+.jm-ex-sum .jm-an-src{flex:1 1 220px;min-width:0}
+.jm-ex-sum .jm-an-src summary{font:500 11.5px/1.3 var(--font);min-height:28px;color:var(--ink2)}
+.jm-ex-sum a{color:var(--accent);font-weight:600}
+.jm-ins-bagi{position:absolute;top:8px;right:10px;min-width:var(--target);min-height:var(--target);display:inline-flex;align-items:center;justify-content:center;border:0;border-radius:var(--r-pil);background:transparent;color:var(--ink2);cursor:pointer}
+.jm-ins-bagi:hover{color:var(--accent);background:var(--card)}
+.jm-ins-menu{position:absolute;z-index:5;top:52px;right:12px;display:grid;min-width:210px;padding:6px;border:1px solid var(--line);border-radius:var(--r-sm);background:var(--card);box-shadow:var(--shadow-lg)}
 .jm-ins-mi{min-height:var(--target);padding:0 12px;border:0;border-radius:var(--r-sm);background:transparent;color:var(--ink);font:500 14px/1 var(--font);text-align:left;cursor:pointer}
 .jm-ins-mi:hover{background:var(--surface);color:var(--accent)}
 .jm-ins-stat{padding:0 12px 4px}
 .jm-ins-stat:empty{display:none}
-/* akordeon dan sumber */
-.jm-ins-ak{border-top:1px solid var(--line)}
-.jm-ins-ak p{margin:0 0 8px}
-.jm-ins-ak .jm-ins-penting{margin:0}
-.jm-ins-src .jm-an-sumber{margin:0}
-.jm-ins-src details summary{font:500 12.5px/1.3 var(--font);min-height:32px;color:var(--ink2)}
 .jm-ins-sorot{outline:3px solid var(--accent);outline-offset:2px}
 /* gambar unduhan */
 .jm-snap{background:var(--paper);color:var(--ink);font-family:var(--font);padding:28px;box-sizing:border-box;display:grid;gap:16px}
@@ -54,3 +61,7 @@ article.jm-ins-kartu[data-belum]{min-height:360px}
 .jm-snap-kaki{display:flex;align-items:center;gap:12px;border-top:1px solid var(--line);padding-top:14px;font-size:13px;color:var(--ink2)}
 .jm-snap-kaki p{margin:0;line-height:1.45}
 .jm-snap-kaki b{color:var(--head)}
+.jm-met-daftar{display:grid;gap:var(--gap)}
+.jm-met h3{font:600 17px/1.3 var(--display);color:var(--head);margin-bottom:6px}
+.jm-met p{max-width:75ch;line-height:1.55}
+.jm-met:target{outline:3px solid var(--accent);outline-offset:2px}

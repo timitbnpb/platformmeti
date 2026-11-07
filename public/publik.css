@@ -277,7 +277,12 @@ main{flex:1}
 .jm-feed{list-style:none;margin:0;padding:0;display:grid}
 .jm-feed li+li{border-top:1px solid var(--line)}
 .jm-feed-i{display:flex;gap:12px;align-items:center;padding:12px 4px;color:var(--ink);text-decoration:none;min-width:0}
-.jm-feed-i:hover strong{text-decoration:underline;text-underline-offset:3px}
+.jm-feed-i:hover strong{color:var(--accent)}
+.jm-feed-i{min-height:96px}
+.jm-feed-th{position:relative;display:grid;place-items:center;flex:none;width:112px;height:72px;overflow:hidden;border-radius:var(--r-sm);background:color-mix(in srgb,var(--brand) 12%,var(--surface));color:var(--accent)}
+.jm-feed-th img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.jm-feed-th .jm-ik{opacity:.7}
+@media (max-width:479px){.jm-feed-th{width:88px;height:60px}}
 .jm-feed-i>.jm-ik{flex:none;color:var(--ink2)}
 .jm-feed-ik{display:grid;place-items:center;flex:none;width:40px;height:40px;border-radius:10px;background:color-mix(in srgb,var(--data2) 16%,var(--card));color:var(--head);font:700 12px/1 var(--display)}
 .jm-feed-tek svg{width:22px;height:22px}

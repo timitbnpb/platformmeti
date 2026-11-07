@@ -21,9 +21,9 @@ export const tabTautan = (items) => `<div class="jm-tab">${items.map((x) => `<a 
 export const BAGIAN_INSIGHT = [
   { href: "/insight", ikon: "insight", kunci: "nav.sub.ringkasan" },
   { href: "/insight#tren", ikon: "analisis", kunci: "nav.sub.tren" },
-  { href: "/wilayah", ikon: "wilayah", kunci: "nav.wilayah" },
   { href: "/rantai", ikon: "rantai", kunci: "nav.rantai" },
   { href: "/asean", ikon: "asean", kunci: "nav.asean" },
+  { href: "/metode", ikon: "metode", kunci: "nav.sub.metode" },
 ];
 export function subnavHtml(jalur, hash = "") {
   const aktif = (x) => (x.href === "/insight" ? jalur === "/insight" && hash !== "#tren" : x.href === "/insight#tren" ? jalur === "/insight" && hash === "#tren" : jalur === x.href || jalur.startsWith(x.href + "/"));

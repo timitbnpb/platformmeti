@@ -121,6 +121,11 @@ th[aria-sort="descending"] .jm-urut::after{opacity:1;clip-path:polygon(0 0,100% 
 .jm-tab :is(button[aria-selected="true"],a[aria-current="page"]){color:var(--accent);border-bottom-color:var(--accent)}
 .jm-tab :is(button,a):focus-visible{outline:2px solid var(--fokus);outline-offset:-2px}
 
-/* ---- subnav antarhalaman (Insight, Wilayah, Rantai, ASEAN) ---- */
-.jm-subnav{background:var(--card);border-bottom:1px solid var(--line)}
-.jm-subnav .jm-tab{max-width:var(--maks);margin-inline:auto;padding-inline:clamp(16px,4vw,32px);border-bottom:0}
+/* ---- subnav antarhalaman (Insight): kolom sama lebar, melebar penuh, menempel di bawah header ---- */
+.jm-subnav{position:sticky;top:var(--top);z-index:20;background:var(--card);border-bottom:1px solid var(--line)}
+.jm-subnav .jm-tab{display:grid;grid-auto-flow:column;grid-auto-columns:1fr;gap:0;max-width:var(--maks);margin-inline:auto;padding-inline:0;border-bottom:0;overflow-x:auto;scroll-snap-type:x proximity;scrollbar-width:none}
+.jm-subnav .jm-tab a{justify-content:center;min-height:52px;padding:0 14px;gap:8px;margin-bottom:0;border-bottom:3px solid transparent;font:600 14.5px/1 var(--font);white-space:nowrap;scroll-snap-align:center}
+.jm-subnav .jm-tab a .jm-ik{width:18px;height:18px}
+.jm-subnav .jm-tab a[aria-current="page"]{background:var(--soft-hijau);border-bottom-color:var(--accent);color:var(--accent)}
+@media (max-width:767px){.jm-subnav .jm-tab{grid-auto-columns:max-content}.jm-subnav .jm-tab a{padding:0 18px}}
+@supports (animation-timeline:scroll()){.jm-subnav{animation:jm-subnav-bayang linear both;animation-timeline:scroll();animation-range:0 120px}@keyframes jm-subnav-bayang{from{box-shadow:none}to{box-shadow:0 4px 12px rgb(0 0 0/.08)}}}

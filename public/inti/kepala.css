@@ -52,7 +52,7 @@ nav.tabs a .jm-ik,.jm-grup-tbl .jm-ik,.jm-sub a .jm-ik{width:18px;height:18px;fl
 @media (min-width:1200px) and (max-width:1366px){nav.tabs{margin-left:4px;gap:0}nav.tabs a,.jm-grup-tbl{padding:0 8px;gap:6px;font-size:13px}.jm-merek span{display:none}}
 
 /* subnav bagian Insight berada tepat di bawah header tetap */
-.jm-subnav{position:relative;z-index:1}
+
 .jm-sub a{white-space:nowrap}
 @media (min-width:1200px){.jm-sub{min-width:210px}}
 

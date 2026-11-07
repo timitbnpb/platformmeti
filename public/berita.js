@@ -49,6 +49,15 @@ function aturSaring() {
 function gambarTab() {
   document.getElementById("tab").innerHTML = ["berita", "video"].map((k) => `<button type="button" role="tab" data-tab="${k}" aria-selected="${S.tab === k}">${ikon(k, 18)}<span>${esc(t("brt.tab." + k))}</span></button>`).join("");
 }
+function gambarRingkas() {
+  const ak = B[0].terbit;
+  document.getElementById("mode").innerHTML = ["hari", "minggu"].map((m) => `<button type="button" class="brt-chip" data-mode="${m}" aria-pressed="${S.mode === m}">${esc(t("brt.g.per_" + m))}</button>`).join("");
+  document.getElementById("vol-h").textContent = t("brt.g.volume_" + S.mode);
+  document.getElementById("volume").innerHTML = volumeSvg(B, S.mode, ak);
+  const c = (f) => { const m = new Map(); for (const r of B) for (const k of f(r)) m.set(k, (m.get(k) || 0) + 1); return [...m].sort((a, b) => b[1] - a[1]); };
+  document.getElementById("sebaran").innerHTML = batangMendatar(c((r) => r.kepakaran || []).slice(0, 8).map(([k, v]) => [tek(k), v, k]), "topik");
+  document.getElementById("media-top").innerHTML = batangMendatar(c((r) => [r.media]).slice(0, 8).map(([k, v]) => [k, v, k]), "media");
+}
 function gambarAngka() {
   const item = (v, k) => `<div><dd>${angka(v)}</dd><dt>${esc(t(k))}</dt></div>`;
   document.getElementById("angka").innerHTML = item(B.length, "brt.n.berita") + item(new Set(B.map((r) => r.media)).size, "brt.n.media") + item(B.filter((r) => umur(r.terbit) <= 30).length, "brt.n.30") + item(V.length, "brt.n.video");
@@ -58,27 +67,28 @@ const FOTO_URL = (r) => urlAman(FOTO[r.id] || "");
 const IKON_TEK = { surya: "tek-surya", "panas-bumi": "tek-panas", bioenergi: "tek-bio", "biomassa-sampah": "tek-bio" };
 const ikonTek = (r) => IKON_TEK[(r.kepakaran || [])[0]] || "tek-listrik";
 /** Gambar sampul; tanpa foto = latar bermerek dengan ikon teknologi (tidak pernah inisial). Gambar gagal dimuat dicopot oleh penangan error. */
-const sampul = (r, kelas, w, h) => { const f = FOTO_URL(r); return `<span class="brt-sampul ${kelas}">${ikon(ikonTek(r), 28)}${f ? `<img src="${esc(f)}" width="${w}" height="${h}" alt="" loading="lazy" decoding="async" referrerpolicy="no-referrer">` : ""}</span>`; };
+const sampul = (r, kelas, w, h, tag = false) => { const f = FOTO_URL(r); return `<span class="brt-sampul ${kelas}">${ikon(ikonTek(r), 28)}${f ? `<img src="${esc(f)}" width="${w}" height="${h}" alt="" loading="lazy" decoding="async" referrerpolicy="no-referrer">` : ""}${tag ? pil(r) : ""}</span>`; };
 const tautan = (r, isi, kelas) => `<a class="${kelas}" href="${esc(urlAman(r.url))}" target="_blank" rel="noopener noreferrer" title="${esc(t("brt.buka"))}">${isi}</a>`;
-const metaHtml = (r) => `<p class="brt-meta"><span>${esc(r.media)}</span><span>${esc(tanggal(r.terbit.slice(0, 10)))}</span></p>`;
+const metaHtml = (r) => `<p class="brt-meta">${esc(r.media)}, ${esc(tanggal(r.terbit.slice(0, 10)))}</p>`;
+const pil = (r) => (r.kepakaran?.[0] ? `<span class="brt-pil">${esc(tek(r.kepakaran[0]))}</span>` : "");
 const tagHtml = (r, n = 2) => (r.kepakaran || []).slice(0, n).map((k) => `<button type="button" class="brt-tek" data-topik="${esc(k)}">${esc(tek(k))}</button>`).join("");
 const orgHtml = (r) => (r.organisasi_ids || []).map((id) => ORG.get(id)).filter(Boolean).slice(0, 2).map((nama) => `<a class="brt-org" href="/direktori?tampil=lembaga">${esc(nama)}</a>`).join("");
-const kartu = (r) => `<li class="brt-kartu-b">${tautan(r, sampul(r, "brt-s169", 400, 250), "brt-gbr")}<div class="brt-isi">${tautan(r, esc(r.judul), "brt-judul")}${metaHtml(r)}<div class="brt-label">${tagHtml(r)}</div></div></li>`;
-const kecil = (r) => `<li class="brt-kecil">${tautan(r, sampul(r, "brt-s32", 96, 64), "brt-gbr")}<div>${tautan(r, esc(r.judul), "brt-judul")}${metaHtml(r)}</div></li>`;
+const kartu = (r) => `<li class="brt-kartu-b">${tautan(r, sampul(r, "brt-s169", 400, 225, true) + `<span class="brt-cb"><span class="brt-judul">${esc(r.judul)}</span>${metaHtml(r)}</span>`, "brt-card")}</li>`;
+const kecil = (r) => `<li class="brt-kartu-b">${tautan(r, sampul(r, "brt-s32", 96, 64) + `<span class="brt-cb"><span class="brt-judul">${esc(r.judul)}</span>${metaHtml(r)}</span>`, "brt-card brt-card-h")}</li>`;
 const BAGIAN = [["surya", ["surya"]], ["panas", ["panas-bumi"]], ["bio", ["bioenergi", "biomassa-sampah"]], ["kebijakan", ["kebijakan", "pembiayaan", "transisi-adil"]]];
 const dalamBagian = (ks) => B.filter((r) => umur(r.terbit) <= 90 && (r.kepakaran || []).some((k) => ks.includes(k)));
 const urutFoto = (xs) => [...xs.filter(FOTO_URL), ...xs.filter((r) => !FOTO_URL(r))];
-const kepalaBagian = (no, kunci, p, lihat) => `<header class="jm-sh brt-sh"><div><p class="jm-eyebrow"><span class="jm-kotak" aria-hidden="true"></span><span><b>${no}</b> ${esc(t("brt.sek." + kunci))}</span></p><h2>${esc(t("brt.sek." + kunci))}</h2><p class="brt-lead">${esc(p)}</p></div>${lihat || ""}</header>`;
+const kepalaBagian = (kunci, p, lihat) => `<header class="brt-sh"><h2>${esc(t("brt.sek." + kunci))}</h2>${p ? `<p class="brt-sub">${esc(p)}</p>` : ""}${lihat || ""}</header>`;
 function gambarBagian() {
   const el = document.getElementById("bagian"), terbaru = B.filter((r) => umur(r.terbit) <= 90);
   const sor = urutFoto(B.slice(0, 40)).slice(0, 5), [lead, ...sisi] = sor;
-  let html = `<section class="brt-bagian"><div class="jm-wadah">${kepalaBagian("01", "sorotan", t("brt.sek.sorotan.p"))}
-    <div class="brt-sorot"><article class="brt-lead-k">${tautan(lead, sampul(lead, "brt-s169", 800, 450), "brt-gbr")}<div class="brt-isi">${tautan(lead, esc(lead.judul), "brt-judul brt-judul-b")}${metaHtml(lead)}<div class="brt-label">${tagHtml(lead, 3)}${orgHtml(lead)}</div></div></article>
+  let html = `<section class="brt-bagian"><div class="jm-wadah">${kepalaBagian("sorotan", "")}
+    <div class="brt-sorot"><article class="brt-lead-k">${tautan(lead, sampul(lead, "brt-s169", 800, 450, true) + `<span class="brt-cb"><span class="brt-judul brt-judul-b">${esc(lead.judul)}</span>${metaHtml(lead)}</span>`, "brt-card")}</article>
     <ul class="brt-sisi">${sisi.map(kecil).join("")}</ul></div></div></section>`;
   BAGIAN.forEach(([kunci, ks], i) => {
     const xs = dalamBagian(ks); if (!xs.length) return;
-    const lihat = `<button type="button" class="brt-semua" data-lihat="${esc(ks.join(","))}">${esc(t("brt.lihat", { n: angka(xs.length) }))}</button>`;
-    html += `<section class="brt-bagian"><div class="jm-wadah">${kepalaBagian(String(i + 2).padStart(2, "0"), kunci, t("brt.sek.p", { n: angka(xs.length) }), lihat)}<ul class="brt-grid-k">${urutFoto(xs.slice(0, 16)).slice(0, 4).map(kartu).join("")}</ul></div></section>`;
+    const lihat = `<button type="button" class="brt-semua" data-lihat="${esc(ks.join(","))}">${esc(t("brt.lihat", { n: angka(xs.length) }))} &rarr;</button>`;
+    html += `<section class="brt-bagian"><div class="jm-wadah">${kepalaBagian(kunci, t("brt.sek.p", { n: angka(xs.length) }), lihat)}<ul class="brt-grid-k">${urutFoto(xs.slice(0, 16)).slice(0, 4).map(kartu).join("")}</ul></div></section>`;
   });
   el.innerHTML = html;
 }

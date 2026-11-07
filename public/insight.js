@@ -5,7 +5,7 @@ import { t, ada, tanggal } from "/i18n.js";
 import { pasangBagi, IKON_BAGI } from "/insight_bagi.js";
 import { kolom, batang, dumbbell, garis } from "/grafik.js";
 import { pilihHtml } from "/inti/komponen.js";
-import { muatData, sumberHtml, pil, num, saatBahasa } from "/analisis.js";
+import { muatData, sumberLipat, pil, num, saatBahasa } from "/analisis.js";
 
 const $ = (id) => document.getElementById(id);
 const NAMA = ["proyek", "program", "regulasi", "berita", "wilayah", "asean", "rantai_plts", "kalender", "karbon", "keuangan"];
@@ -25,7 +25,8 @@ const tahunIni = () => Number((D.proyek?.dibangun_pada ?? D.regulasi?.dibangun_p
 const sekarang = () => Date.parse(D.berita?.dibangun_pada ?? D.regulasi?.dibangun_pada ?? "") || Date.now();
 const namaTek = (k) => (ada("an.tek." + k) ? t("an.tek." + k) : null);
 const terpasangMeta = () => { const m = D.wilayah?.baris?.find((b) => b.terpasang_mw)?.terpasang_mw; return m ? { sumber: m.sumber, halaman: m.halaman, tahun: m.tahun, url: m.url, tanggal: m.tanggal } : null; };
-const sumberData = (kunci, berkas) => sumberHtml({ sumber: t(kunci), tanggal: D[berkas].dibangun_pada });
+const S = (o) => o;
+const sumberData = (kunci, berkas) => ({ sumber: t(kunci), tanggal: D[berkas].dibangun_pada });
 const terpasangTotal = () => { const w = (D.wilayah?.baris ?? []).map((b) => b.terpasang_mw?.nilai).filter(Number.isFinite); return w.length ? jumlah(w) : null; };
 const pangsa = (m, k) => { const tot = jumlah(Object.values(m)); return tot ? (m[k] / tot) * 100 : 0; };
 
@@ -45,7 +46,7 @@ function cPipeline() {
     nilai: num(total), satuan: "MW",
     penyebut: (terpasang ? t("ins.pip.vs", { persen: num((total / terpasang) * 100, 0), mw: num(terpasang) }) + " | " : "") + t("an.n_dari", { n: P.length, total: proyek().length }),
     chart: () => kolom(th.map((y) => ({ label: String(y), v: Math.round(per.get(y)) })), { rata: Math.round(total / th.length), teksRata: t("ins.g.rata", { v: num(total / th.length) }), label: t("ins.pip.chart") }),
-    sumber: [sumberData("ins.s.proyek", "proyek"), sumberHtml(terpasangMeta())],
+    sumber: [sumberData("ins.s.proyek", "proyek"), S(terpasangMeta())],
     cara: t("ins.pip.cara"), penting: t("ins.pip.penting"), tgl: D.proyek.dibangun_pada,
   };
 }
@@ -55,15 +56,14 @@ function cTerlambat() {
   if (!ada_.length) return null;
   const lewat = ada_.filter((p) => cod(p) < tahunIni()), mw = jumlah(lewat.map((p) => MW(p) ?? 0));
   const per = new Map();
-  lewat.forEach((p) => (p.program_ids?.length ? p.program_ids : ["-"]).forEach((id) => per.set(id, (per.get(id) ?? 0) + 1)));
-  const nama = (id) => D.program?.baris?.find((b) => b.id === id)?.nama ?? t("an.tanpa_data");
-  const baris = [...per].sort((a, b) => b[1] - a[1]).slice(0, 6).map(([id, n], i) => ({ label: nama(id), v: n, teks: num(n), sorot: i === 0 }));
+  lewat.forEach((p) => per.set(p.teknologi, (per.get(p.teknologi) ?? 0) + 1));
+  const baris = [...per].filter(([k]) => namaTek(k)).sort((a, b) => b[1] - a[1]).slice(0, 6).map(([k, n]) => ({ label: namaTek(k).slice(0, 10), v: n, tip: `${namaTek(k)}: ${num(n)}` }));
   return {
     id: "terlambat", topik: "proyek", bobot: 95, est: true,
     judul: t("ins.tel.j", { n: lewat.length, mw: num(mw), tahun: tahunIni() }),
     nilai: num(lewat.length), satuan: t("ins.proyek"),
     penyebut: t("an.n_dari", { n: lewat.length, total: ada_.length }),
-    chart: () => (baris.length ? batang(baris, { label: t("ins.tel.chart") }) : `<p class="jm-bantu">${esc(t("ins.kosong"))}</p>`),
+    chart: () => (baris.length ? kolom(baris, { label: t("ins.tel.chart") }) : `<p class="jm-bantu">${esc(t("ins.kosong"))}</p>`),
     sumber: [sumberData("ins.s.proyek", "proyek")],
     cara: t("ins.tel.cara", { tahun: tahunIni() }), penting: t("ins.tel.penting"), tgl: D.proyek.dibangun_pada,
   };
@@ -82,7 +82,7 @@ function cCelah() {
     penyebut: t("an.n_dari", { n: R_.length, total: D.wilayah.baris.length }),
     chart: () => batang(top.map((r, i) => ({ label: r.nama, v0: r.ter, v: r.gap, sorot: i === 0, teks: `${num(r.gap)} MW` })), { maks, label: t("ins.cel.chart") }) +
       `<p class="jm-bantu">${esc(t("ins.cel.kunci"))}</p>`,
-    sumber: [sumberHtml({ sumber: a.meta.sumber, halaman: a.meta.halaman, tahun: a.meta.tahun, url: a.meta.url, tanggal: a.meta.tanggal }), sumberHtml(terpasangMeta())],
+    sumber: [S({ sumber: a.meta.sumber, halaman: a.meta.halaman, tahun: a.meta.tahun, url: a.meta.url, tanggal: a.meta.tanggal }), S(terpasangMeta())],
     cara: t("ins.cel.cara"), penting: t("ins.cel.penting"), tgl: D.wilayah.dibangun_pada,
   };
 }
@@ -100,7 +100,7 @@ function cPlts() {
       { label: t("ins.plt.butuh"), v: butuh, teks: num(butuh, 1) + " GWp" },
       { label: t("ins.plt.lokal"), v: lokal, teks: num(lokal, 1) + " GWp", sorot: true },
     ], { label: t("ins.plt.chart") }),
-    sumber: [sumberHtml({ sumber: D.rantai_plts.sumber.judul, tanggal: D.rantai_plts.sumber.tanggal }), sumberHtml({ sumber: pr.sumber, tanggal: pr.tanggal_sumber })],
+    sumber: [S({ sumber: D.rantai_plts.sumber.judul, tanggal: D.rantai_plts.sumber.tanggal }), S({ sumber: pr.sumber, tanggal: pr.tanggal_sumber })],
     cara: t("ins.plt.cara", { target: pr.target_gwp }), penting: t("ins.plt.penting"), tgl: D.rantai_plts.dibangun_pada,
   };
 }
@@ -122,7 +122,7 @@ function cBauran() {
     nilai: num(sorot.a, 0), satuan: "%",
     penyebut: t("an.n_dari", { n: kunci.length, total: Object.keys(pip).length }),
     chart: () => dumbbell(baris, { kepA: t("ins.mix.terpasang"), kepB: t("ins.mix.pipeline"), label: t("ins.mix.chart") }),
-    sumber: [sumberData("ins.s.proyek", "proyek"), sumberHtml(terpasangMeta())],
+    sumber: [sumberData("ins.s.proyek", "proyek"), S(terpasangMeta())],
     cara: t("ins.mix.cara"), penting: t("ins.mix.penting"), tgl: D.proyek.dibangun_pada,
   };
 }
@@ -141,7 +141,7 @@ function cRegulasi() {
     nilai: num(n1), satuan: t("ins.regulasi"),
     penyebut: t("an.n_dari", { n: R_.length, total: D.regulasi.baris.length }),
     chart: () => kolom(thReg.map((y, i) => ({ label: String(y).slice(2), v: perReg[i], sorot: i === thReg.length - 1, tip: `${y}: ${num(perReg[i])}` })), { label: t("ins.reg.chart") }) + (ruu ? `<p class="jm-bantu">${esc(t("ins.reg.ruu", { judul: ruu.judul, tanggal: tanggal(ruu.tanggal) }))}</p>` : ""),
-    sumber: [sumberData("ins.s.regulasi", "regulasi"), ...(ruu ? [sumberHtml({ sumber: t("ins.s.kalender"), tanggal: ruu.sumber?.tanggal ?? D.kalender.dibangun_pada })] : [])],
+    sumber: [sumberData("ins.s.regulasi", "regulasi"), ...(ruu ? [S({ sumber: t("ins.s.kalender"), tanggal: ruu.sumber?.tanggal ?? D.kalender.dibangun_pada })] : [])],
     cara: t("ins.reg.cara"), penting: t("ins.reg.penting"), tgl: D.regulasi.dibangun_pada,
   };
 }
@@ -189,7 +189,7 @@ function cJetp() {
     nilai: num(usdJt(re.usd)), satuan: t("ins.fin.satuan"),
     penyebut: t("an.n_dari", { n: lain.length, total: keu("green_finance").length }) + (jt?.jumlah_proyek ? " | " + t("ins.fin.proyek", { n: jt.jumlah_proyek, mw: num(jt.kapasitas_mw) }) : ""),
     chart: () => batang(baris, { label: t("ins.fin.chart") }),
-    sumber: [sumberHtml({ sumber: re.dokumen, url: re.sumber_url, tanggal: re.tanggal }), sumberHtml({ sumber: t("ins.s.jetp"), url: "https://jetp-id.org/", tanggal: D.keuangan.dibangun_pada })],
+    sumber: [S({ sumber: re.dokumen, url: re.sumber_url, tanggal: re.tanggal }), S({ sumber: t("ins.s.jetp"), url: "https://jetp-id.org/", tanggal: D.keuangan.dibangun_pada })],
     cara: t("ins.fin.cara"), penting: t("ins.fin.penting"), tgl: D.keuangan.dibangun_pada,
   };
 }
@@ -204,7 +204,7 @@ function cKarbon() {
     nilai: num(a.volume_tco2e), satuan: "tCO2e",
     penyebut: t("ins.kar.bulan", { n: B.length, tot: num(tot) }),
     chart: () => kolom(B.map((r) => ({ label: blnPendek(r.periode), v: r.volume_tco2e })), { rata: Math.round(tot / B.length), teksRata: t("ins.g.rata", { v: num(tot / B.length) }), label: t("ins.kar.chart") }),
-    sumber: [sumberHtml({ sumber: a.sumber, url: a.halaman_sumber, tanggal: a.tanggal })],
+    sumber: [S({ sumber: a.sumber, url: a.halaman_sumber, tanggal: a.tanggal })],
     cara: t("ins.kar.cara"), penting: t("ins.kar.penting"), tgl: D.karbon.dibangun_pada,
   };
 }
@@ -222,7 +222,7 @@ function cTarif() {
     nilai: num(hi.hi, 2), satuan: t("ins.trf.satuan"),
     penyebut: t("an.n_dari", { n: T.length, total: keu("tarif").length }),
     chart: () => dumbbell(baris.map((r) => ({ label: r.k, a: r.lo, b: r.hi, sorot: r.k === hi.k })), { kepA: t("ins.trf.rendah"), kepB: t("ins.trf.tinggi"), d: 2, label: t("ins.trf.chart") }),
-    sumber: [sumberHtml({ sumber: r0.dasar_hukum, url: r0.sumber_url, tanggal: r0.tanggal })],
+    sumber: [S({ sumber: r0.dasar_hukum, url: r0.sumber_url, tanggal: r0.tanggal })],
     cara: t("ins.trf.cara"), penting: t("ins.trf.penting"), tgl: D.keuangan.dibangun_pada,
   };
 }
@@ -238,7 +238,7 @@ function cAsean() {
     nilai: num(nil(idn), 1), satuan: "%",
     penyebut: t("an.n_dari", { n: ada_.length, total: B.length }) + " | " + t("as.tahun", { tahun: idn.bauran_persen.tahun }),
     chart: () => batang(ada_.map((n) => ({ label: n.nama, sorot: n.iso3 === "IDN", v: nil(n), teks: num(nil(n), 1) + "%" })), { maks: 100, ref: med, teksRef: t("ins.g.median", { v: num(med, 1) }), label: t("ins.asn.chart") }),
-    sumber: [sumberHtml({ sumber: s.sumber, halaman: s.keterangan, url: s.url, tanggal: s.tanggal })],
+    sumber: [S({ sumber: s.sumber, halaman: s.keterangan, url: s.url, tanggal: s.tanggal })],
     cara: t("ins.asn.cara"), penting: t("ins.asn.penting"), tgl: D.asean.dibangun_pada,
   };
 }
@@ -253,7 +253,7 @@ function tKapasitas() {
     judul: t("ins.tk.j", { a: a.tahun, b: b.tahun, va: num(a.nilai), vb: num(b.nilai) }),
     nilai: num(b.nilai - a.nilai), satuan: "MW",
     chart: () => garis(s.map((p) => String(p.tahun)), [{ nama: t("ins.tk.seri"), v: s.map((p) => p.nilai), sorot: true }], { area: true, label: t("ins.tk.chart"), teksAkhir: false }),
-    sumber: [sumberHtml({ sumber: m.sumber, halaman: m.keterangan, url: m.url, tanggal: m.tanggal })],
+    sumber: [S({ sumber: m.sumber, halaman: m.keterangan, url: m.url, tanggal: m.tanggal })],
     cara: t("ins.tk.cara"), penting: t("ins.tk.penting"), tgl: D.asean.dibangun_pada,
   };
 }
@@ -324,7 +324,7 @@ function tAsean() {
     nilai: num(b.nilai - a.nilai, 1), satuan: t("as.pp"),
     penyebut: t("an.n_dari", { n: B.filter((n) => n.tren_bauran?.length).length, total: B.length }),
     chart: () => garis(th.map((y) => String(y).slice(2)), [{ nama: "Indonesia", v: idn.tren_bauran.map((p) => p.nilai), sorot: true }, { nama: t("ins.ta.median"), v: med }], { d: 1, label: t("ins.ta.chart") }),
-    sumber: [sumberHtml({ sumber: s.sumber, halaman: s.keterangan, url: s.url, tanggal: s.tanggal })],
+    sumber: [S({ sumber: s.sumber, halaman: s.keterangan, url: s.url, tanggal: s.tanggal })],
     cara: t("ins.ta.cara"), penting: t("ins.ta.penting"), tgl: D.asean.dibangun_pada,
   };
 }
@@ -341,7 +341,7 @@ function tKarbon() {
     nilai: num(jumlah(nilai.filter((v) => v != null))), satuan: t("ins.tkar.satuan"),
     penyebut: t("an.n_dari", { n: B.length, total: bln.length }),
     chart: () => garis(bln.map(blnPendek), [{ nama: t("ins.tkar.seri"), v: nilai, sorot: true }], { area: true, label: t("ins.tkar.chart"), teksAkhir: false }),
-    sumber: [sumberHtml({ sumber: B[0].sumber, url: B[0].halaman_sumber, tanggal: B[0].tanggal })],
+    sumber: [S({ sumber: B[0].sumber, url: B[0].halaman_sumber, tanggal: B[0].tanggal })],
     cara: t("ins.tkar.cara"), penting: t("ins.tkar.penting"), tgl: D.karbon.dibangun_pada,
   };
 }
@@ -353,18 +353,27 @@ const URUT_TOPIK = ["proyek", "rantai", "wilayah", "regulasi", "berita", "pembia
 /* ---------- render lazy ---------- */
 const WARNA = { proyek: "a", rantai: "b", wilayah: "a", regulasi: "c", berita: "b", pembiayaan: "d", karbon: "d", asean: "c" };
 
+/* Judul satu kalimat; angka kunci dibungkus .jm-hl (warna sorot). */
+function judulSorot(c) {
+  const j = esc(c.judul), n = esc(c.nilai), p = `${n} ${esc(c.satuan)}`;
+  const kunci = j.includes(p) ? p : n;
+  const i = kunci ? j.indexOf(kunci) : -1;
+  return i < 0 ? j : j.slice(0, i) + `<span class="jm-hl">${kunci}</span>` + j.slice(i + kunci.length);
+}
+
+/* Bentuk kartu mengikuti "exhibit" Posko Karhutla: kepala (eyebrow, judul, sub tebal, satuan), badan grafik, kaki (catatan, sumber). */
 function isiKartu(c) {
-  return `<header class="jm-ins-h"><span class="jm-ins-topik jm-ins-w-${WARNA[c.topik] ?? "a"}">${esc(t("ins.topik." + c.topik))}</span>
-    <span class="jm-ins-meta">${esc(tanggal(c.tgl))}</span>
-    <button type="button" class="jm-ins-bagi" aria-haspopup="menu" aria-expanded="false" aria-label="${esc(t("ins.bagi"))}" title="${esc(t("ins.bagi"))}">${IKON_BAGI}</button></header>
+  const grafik = c.chart(), metrik = (grafik.match(/aria-label="([^"]*)"/) ?? [])[1] ?? "";
+  return `<header class="jm-ex-hd"><button type="button" class="jm-ins-bagi" aria-haspopup="menu" aria-expanded="false" aria-label="${esc(t("ins.bagi"))}" title="${esc(t("ins.bagi"))}">${IKON_BAGI}</button>
     ${c.anchor ? `<span id="${esc(c.anchor)}"></span>` : ""}
-    <h3 class="jm-ins-j">${esc(c.judul)}</h3>
-    <p class="jm-an-angka">${esc(c.nilai)} <span>${esc(c.satuan)}</span> ${c.est ? pil("an.est") : ""} ${c.hip ? pil("an.hipotesis") : ""}</p>
-    ${c.penyebut ? `<p class="jm-bantu">${esc(c.penyebut)}</p>` : ""}
-    <div class="jm-ins-grafik">${c.chart()}</div>
-    <details class="jm-ins-ak" open><summary>${esc(t("ins.penting"))}</summary><p>${esc(c.penting)}</p></details>
-    <details class="jm-ins-ak"${c.hip ? " open" : ""}><summary>${esc(t("an.cara"))}</summary><p>${esc(c.cara)}</p></details>
-    <div class="jm-ins-src">${c.sumber.join("")}</div>`;
+    <span class="jm-ex-ey jm-ins-w-${WARNA[c.topik] ?? "a"}">${esc(t("ins.topik." + c.topik))}</span>
+    <h3 class="jm-ins-j">${judulSorot(c)}</h3>
+    <p class="jm-ex-sub">${metrik} ${c.est ? pil("an.est") : ""} ${c.hip ? pil("an.hipotesis") : ""}</p>
+    <p class="jm-ex-unit">${esc(c.satuan)}</p></header>
+  <div class="jm-ex-bd">${grafik}</div>
+  <footer class="jm-ex-ft"><p class="jm-ex-fn"><b>${esc(t("ins.penting"))}</b> ${esc(c.penting)}</p>
+    <p class="jm-ex-fn">${esc(c.penyebut ?? "")}</p>
+    <div class="jm-ex-sum">${sumberLipat(c.sumber)}<span>${esc(tanggal(c.tgl))}</span><a href="/metode#metode-${esc(c.id)}">${esc(t("ins.metode"))}</a></div></footer>`;
 }
 
 function pasang(el, daftar) {
@@ -394,11 +403,6 @@ function isiFilter() {
   $("f-prov").addEventListener("change", (e) => { fProv = e.target.value; nanti(gambarTren); });
 }
 
-function cara() {
-  $("cara").innerHTML = ["ins.cara1", "ins.cara2", "ins.cara3", "ins.cara4"].map((k) => `<p>${esc(t(k))}</p>`).join("");
-  $("kutip").textContent = t("ins.kutip", { tanggal: tanggal(D.proyek?.dibangun_pada ?? D.regulasi?.dibangun_pada, { gaya: "panjang" }) });
-}
-
 /* tautan #ins-<id>: gulir ke kartu (dirender dulu bila masih kerangka) dan sorot sebentar */
 function sorotHash() {
   const a = location.hash.startsWith("#ins-") ? document.getElementById(decodeURIComponent(location.hash.slice(1))) : null;
@@ -412,7 +416,6 @@ function sorotHash() {
 function gambar() {
   const a = gambarTemuan(), b = gambarTren();
   $("jawab").textContent = t("ins.jawab", { n: a + b, tanggal: tanggal(D.proyek?.dibangun_pada ?? D.regulasi?.dibangun_pada) });
-  cara();
   sorotHash();
 }
 

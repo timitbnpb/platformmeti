@@ -1,0 +1,1055 @@
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - link [ref=e3] [cursor=pointer]:
+      - /url: /
+    - navigation "Menu utama" [ref=e4]:
+      - link "Beranda" [ref=e5] [cursor=pointer]:
+        - /url: /
+      - button "Insight" [ref=e10] [cursor=pointer]
+      - link "Proyek" [ref=e16] [cursor=pointer]:
+        - /url: /proyek
+      - link "Regulasi" [ref=e20] [cursor=pointer]:
+        - /url: /regulasi
+      - link "Berita" [ref=e24] [cursor=pointer]:
+        - /url: /berita
+      - link "Kalender" [ref=e28] [cursor=pointer]:
+        - /url: /kalender
+      - link "Tentang" [ref=e32] [cursor=pointer]:
+        - /url: /tentang
+    - generic [ref=e36]:
+      - button "Ganti bahasa ke English" [ref=e37] [cursor=pointer]
+      - button "Ganti tema" [ref=e43] [cursor=pointer]
+      - link "Masuk" [ref=e46] [cursor=pointer]:
+        - /url: /masuk?ke=%2Fberita
+  - main [ref=e50]:
+    - generic [ref=e52]:
+      - paragraph [ref=e53]:
+        - generic [ref=e55]: Berita dan video EBET
+      - heading "Berita dan video energi terbarukan" [level=1] [ref=e56]
+      - paragraph [ref=e57]: Judul dan tautan ke sumber aslinya, dikelompokkan menurut teknologi dan pelaku yang disebut.
+      - generic [ref=e58]:
+        - generic [ref=e59]:
+          - definition [ref=e60]: "519"
+          - term [ref=e61]: berita
+        - generic [ref=e62]:
+          - definition [ref=e63]: "172"
+          - term [ref=e64]: media
+        - generic [ref=e65]:
+          - definition [ref=e66]: "98"
+          - term [ref=e67]: 30 hari terakhir
+        - generic [ref=e68]:
+          - definition [ref=e69]: "95"
+          - term [ref=e70]: video
+    - generic [ref=e71]:
+      - generic [ref=e73]:
+        - generic [ref=e75]:
+          - paragraph [ref=e76]:
+            - generic [ref=e78]: 01 Sorotan
+          - heading "Sorotan" [level=2] [ref=e79]
+          - paragraph [ref=e80]: Berita terbaru yang paling bergambar dari semua teknologi.
+        - generic [ref=e81]:
+          - article [ref=e82]:
+            - link "Buka di tab baru" [ref=e83] [cursor=pointer]:
+              - /url: https://www.antaranews.com/berita/5838603/brin-intensifkan-riset-penentuan-lokasi-dan-teknologi-pltn-kaltim
+            - generic [ref=e86]:
+              - link "BRIN intensifkan riset penentuan lokasi dan teknologi PLTN Kaltim" [ref=e87] [cursor=pointer]:
+                - /url: https://www.antaranews.com/berita/5838603/brin-intensifkan-riset-penentuan-lokasi-dan-teknologi-pltn-kaltim
+              - paragraph [ref=e88]:
+                - generic [ref=e89]: Antara
+                - generic [ref=e90]: 7 Nov 2026
+              - generic [ref=e91]:
+                - button "Nuklir" [ref=e92] [cursor=pointer]
+                - link "BRIN" [ref=e93] [cursor=pointer]:
+                  - /url: /direktori?tampil=lembaga
+          - list [ref=e94]:
+            - listitem [ref=e95]:
+              - link "Buka di tab baru" [ref=e96] [cursor=pointer]:
+                - /url: https://www.cnbcindonesia.com/news/20261104112725-8-782207/videokeunggulan-panel-surya-lokal-bersaing-di-pasar-domestik--ekspor
+              - generic [ref=e99]:
+                - link "Video:Keunggulan Panel Surya Lokal Bersaing di Pasar Domestik - Ekspor" [ref=e100] [cursor=pointer]:
+                  - /url: https://www.cnbcindonesia.com/news/20261104112725-8-782207/videokeunggulan-panel-surya-lokal-bersaing-di-pasar-domestik--ekspor
+                - paragraph [ref=e101]:
+                  - generic [ref=e102]: CNBC Indonesia
+                  - generic [ref=e103]: 7 Nov 2026
+            - listitem [ref=e104]:
+              - link "Buka di tab baru" [ref=e105] [cursor=pointer]:
+                - /url: https://www.antaranews.com/berita/5838399/pln-epi-bidik-pemanfaatan-biomassa-10-juta-ton-per-tahun
+              - generic [ref=e108]:
+                - link "PLN EPI bidik pemanfaatan biomassa 10 juta ton per tahun" [ref=e109] [cursor=pointer]:
+                  - /url: https://www.antaranews.com/berita/5838399/pln-epi-bidik-pemanfaatan-biomassa-10-juta-ton-per-tahun
+                - paragraph [ref=e110]:
+                  - generic [ref=e111]: Antara
+                  - generic [ref=e112]: 7 Nov 2026
+            - listitem [ref=e113]:
+              - link "Buka di tab baru" [ref=e114] [cursor=pointer]:
+                - /url: https://www.cnbcindonesia.com/news/20261106130150-8-782969/video-dorong-ekonomi-lewat-reindustrialisasi-regulasi-dipermudah
+              - generic [ref=e117]:
+                - 'link "Video: Dorong Ekonomi Lewat Reindustrialisasi, Regulasi Dipermudah" [ref=e118] [cursor=pointer]':
+                  - /url: https://www.cnbcindonesia.com/news/20261106130150-8-782969/video-dorong-ekonomi-lewat-reindustrialisasi-regulasi-dipermudah
+                - paragraph [ref=e119]:
+                  - generic [ref=e120]: CNBC Indonesia
+                  - generic [ref=e121]: 7 Nov 2026
+            - listitem [ref=e122]:
+              - link "Buka di tab baru" [ref=e123] [cursor=pointer]:
+                - /url: https://www.cnbcindonesia.com/market/20261103161404-19-781962/video-ambisi-rijadi-pusat-manufaktur-perdagangan-emas-dunia
+              - generic [ref=e126]:
+                - 'link "Video: Ambisi RIJadi Pusat Manufaktur dan Perdagangan Emas Dunia" [ref=e127] [cursor=pointer]':
+                  - /url: https://www.cnbcindonesia.com/market/20261103161404-19-781962/video-ambisi-rijadi-pusat-manufaktur-perdagangan-emas-dunia
+                - paragraph [ref=e128]:
+                  - generic [ref=e129]: CNBC Indonesia
+                  - generic [ref=e130]: 7 Nov 2026
+      - generic [ref=e132]:
+        - generic [ref=e133]:
+          - generic [ref=e134]:
+            - paragraph [ref=e135]:
+              - generic [ref=e137]: 02 Surya
+            - heading "Surya" [level=2] [ref=e138]
+            - paragraph [ref=e139]: 178 berita dalam 90 hari terakhir.
+          - button "Lihat semua (178)" [ref=e140] [cursor=pointer]
+        - list [ref=e141]:
+          - listitem [ref=e142]:
+            - link "Buka di tab baru" [ref=e143] [cursor=pointer]:
+              - /url: https://www.cnbcindonesia.com/news/20261104112725-8-782207/videokeunggulan-panel-surya-lokal-bersaing-di-pasar-domestik--ekspor
+            - generic [ref=e146]:
+              - link "Video:Keunggulan Panel Surya Lokal Bersaing di Pasar Domestik - Ekspor" [ref=e147] [cursor=pointer]:
+                - /url: https://www.cnbcindonesia.com/news/20261104112725-8-782207/videokeunggulan-panel-surya-lokal-bersaing-di-pasar-domestik--ekspor
+              - paragraph [ref=e148]:
+                - generic [ref=e149]: CNBC Indonesia
+                - generic [ref=e150]: 7 Nov 2026
+              - button "Surya" [ref=e152] [cursor=pointer]
+          - listitem [ref=e153]:
+            - link "Buka di tab baru" [ref=e154] [cursor=pointer]:
+              - /url: https://economy.okezone.com/read/2026/11/07/320/3252619/ri-kejar-target-plts-100-gwp-dalam-3-tahun-caranya
+            - generic [ref=e157]:
+              - 'link "RI Kejar Target PLTS 100 GWp dalam 3 Tahun , Caranya ? : Okezone Economy" [ref=e158] [cursor=pointer]':
+                - /url: https://economy.okezone.com/read/2026/11/07/320/3252619/ri-kejar-target-plts-100-gwp-dalam-3-tahun-caranya
+              - paragraph [ref=e159]:
+                - generic [ref=e160]: economy.okezone.com
+                - generic [ref=e161]: 7 Nov 2026
+              - button "Surya" [ref=e163] [cursor=pointer]
+          - listitem [ref=e164]:
+            - link "Buka di tab baru" [ref=e165] [cursor=pointer]:
+              - /url: https://ecologic.harianjogja.com/r-1276207/plts-terapung-jatigede-100-mw-segera-dimulai-jatiluhur-masih-dikaji
+            - generic [ref=e168]:
+              - link "PLTS Terapung Jatigede 100 MW Segera Dimulai , Jatiluhur Masih Dikaji" [ref=e169] [cursor=pointer]:
+                - /url: https://ecologic.harianjogja.com/r-1276207/plts-terapung-jatigede-100-mw-segera-dimulai-jatiluhur-masih-dikaji
+              - paragraph [ref=e170]:
+                - generic [ref=e171]: ecologic.harianjogja.com
+                - generic [ref=e172]: 24 Okt 2026
+              - button "Surya" [ref=e174] [cursor=pointer]
+          - listitem [ref=e175]:
+            - link "Buka di tab baru" [ref=e176] [cursor=pointer]:
+              - /url: https://www.antaranews.com/berita/5809071/pjt-ii-sebut-pengembangan-plts-jatigede-100-mw-segera-dimulai
+            - generic [ref=e179]:
+              - link "PJT II sebut pengembangan PLTS Jatigede 100 MW segera dimulai" [ref=e180] [cursor=pointer]:
+                - /url: https://www.antaranews.com/berita/5809071/pjt-ii-sebut-pengembangan-plts-jatigede-100-mw-segera-dimulai
+              - paragraph [ref=e181]:
+                - generic [ref=e182]: antaranews.com
+                - generic [ref=e183]: 24 Okt 2026
+              - button "Surya" [ref=e185] [cursor=pointer]
+      - generic [ref=e187]:
+        - generic [ref=e188]:
+          - generic [ref=e189]:
+            - paragraph [ref=e190]:
+              - generic [ref=e192]: 03 Panas bumi
+            - heading "Panas bumi" [level=2] [ref=e193]
+            - paragraph [ref=e194]: 44 berita dalam 90 hari terakhir.
+          - button "Lihat semua (44)" [ref=e195] [cursor=pointer]
+        - list [ref=e196]:
+          - listitem [ref=e197]:
+            - link "Buka di tab baru" [ref=e198] [cursor=pointer]:
+              - /url: https://www.cnnindonesia.com/ekonomi/20261106171043-85-1424202/geo-dipa-bidik-ri-jadi-negara-berkapasitas-panas-bumi-nomor-1-dunia
+            - generic [ref=e201]:
+              - link "Geo Dipa Bidik RI Jadi Negara Berkapasitas Panas Bumi Nomor 1 Dunia" [ref=e202] [cursor=pointer]:
+                - /url: https://www.cnnindonesia.com/ekonomi/20261106171043-85-1424202/geo-dipa-bidik-ri-jadi-negara-berkapasitas-panas-bumi-nomor-1-dunia
+              - paragraph [ref=e203]:
+                - generic [ref=e204]: CNN Indonesia
+                - generic [ref=e205]: 6 Nov 2026
+              - button "Panas bumi" [ref=e207] [cursor=pointer]
+          - listitem [ref=e208]:
+            - link "Buka di tab baru" [ref=e209] [cursor=pointer]:
+              - /url: https://www.cnnindonesia.com/ekonomi/20261104191343-85-1423384/bos-pertamina-geothermal-pede-prospek-bisnis-listrik-panas-bumi-cerah
+            - generic [ref=e212]:
+              - link "Bos Pertamina Geothermal Pede Prospek Bisnis Listrik Panas Bumi Cerah" [ref=e213] [cursor=pointer]:
+                - /url: https://www.cnnindonesia.com/ekonomi/20261104191343-85-1423384/bos-pertamina-geothermal-pede-prospek-bisnis-listrik-panas-bumi-cerah
+              - paragraph [ref=e214]:
+                - generic [ref=e215]: CNN Indonesia
+                - generic [ref=e216]: 5 Nov 2026
+              - button "Panas bumi" [ref=e218] [cursor=pointer]
+          - listitem [ref=e219]:
+            - link "Buka di tab baru" [ref=e220] [cursor=pointer]:
+              - /url: https://berita.liputan6.com/peristiwa/read/8318429/menelusuri-pltp-kamojang-saat-panas-bumi-diubah-jadi-listrik
+            - generic [ref=e223]:
+              - link "Menelusuri PLTP Kamojang , Saat Panas Bumi Diubah Jadi Listrik" [ref=e224] [cursor=pointer]:
+                - /url: https://berita.liputan6.com/peristiwa/read/8318429/menelusuri-pltp-kamojang-saat-panas-bumi-diubah-jadi-listrik
+              - paragraph [ref=e225]:
+                - generic [ref=e226]: berita.liputan6.com
+                - generic [ref=e227]: 21 Okt 2026
+              - button "Panas bumi" [ref=e229] [cursor=pointer]
+          - listitem [ref=e230]:
+            - link "Buka di tab baru" [ref=e231] [cursor=pointer]:
+              - /url: https://koran-jakarta.com/2026-10-21/pengeboran-panas-bumi-picu-gempa-guru-besar-itb-beri-penjelasan
+            - generic [ref=e234]:
+              - link "Pengeboran Panas Bumi Picu Gempa ? Guru Besar ITB Beri Penjelasan" [ref=e235] [cursor=pointer]:
+                - /url: https://koran-jakarta.com/2026-10-21/pengeboran-panas-bumi-picu-gempa-guru-besar-itb-beri-penjelasan
+              - paragraph [ref=e236]:
+                - generic [ref=e237]: koran-jakarta.com
+                - generic [ref=e238]: 20 Okt 2026
+              - button "Panas bumi" [ref=e240] [cursor=pointer]
+      - generic [ref=e242]:
+        - generic [ref=e243]:
+          - generic [ref=e244]:
+            - paragraph [ref=e245]:
+              - generic [ref=e247]: 04 Bioenergi dan sampah jadi energi
+            - heading "Bioenergi dan sampah jadi energi" [level=2] [ref=e248]
+            - paragraph [ref=e249]: 9 berita dalam 90 hari terakhir.
+          - button "Lihat semua (9)" [ref=e250] [cursor=pointer]
+        - list [ref=e251]:
+          - listitem [ref=e252]:
+            - link "Buka di tab baru" [ref=e253] [cursor=pointer]:
+              - /url: https://www.antaranews.com/berita/5838399/pln-epi-bidik-pemanfaatan-biomassa-10-juta-ton-per-tahun
+            - generic [ref=e256]:
+              - link "PLN EPI bidik pemanfaatan biomassa 10 juta ton per tahun" [ref=e257] [cursor=pointer]:
+                - /url: https://www.antaranews.com/berita/5838399/pln-epi-bidik-pemanfaatan-biomassa-10-juta-ton-per-tahun
+              - paragraph [ref=e258]:
+                - generic [ref=e259]: Antara
+                - generic [ref=e260]: 7 Nov 2026
+              - button "Biomassa dan sampah" [ref=e262] [cursor=pointer]
+          - listitem [ref=e263]:
+            - link "Buka di tab baru" [ref=e264] [cursor=pointer]:
+              - /url: https://www.cnnindonesia.com/ekonomi/20261105192402-97-1423850/psel-palembang-bisa-serap-1000-pekerja-buka-peluang-ekonomi-baru
+            - generic [ref=e267]:
+              - link "PSEL Palembang Bisa Serap 1.000 Pekerja, Buka Peluang Ekonomi Baru" [ref=e268] [cursor=pointer]:
+                - /url: https://www.cnnindonesia.com/ekonomi/20261105192402-97-1423850/psel-palembang-bisa-serap-1000-pekerja-buka-peluang-ekonomi-baru
+              - paragraph [ref=e269]:
+                - generic [ref=e270]: CNN Indonesia
+                - generic [ref=e271]: 5 Nov 2026
+              - button "Biomassa dan sampah" [ref=e273] [cursor=pointer]
+          - listitem [ref=e274]:
+            - link "Buka di tab baru" [ref=e275] [cursor=pointer]:
+              - /url: https://www.cnnindonesia.com/ekonomi/20261105184809-97-1423822/psel-palembang-hampir-rampung-1000-ton-sampah-diolah-per-hari
+            - generic [ref=e278]:
+              - link "PSEL Palembang Hampir Rampung, 1.000 Ton Sampah Diolah per Hari" [ref=e279] [cursor=pointer]:
+                - /url: https://www.cnnindonesia.com/ekonomi/20261105184809-97-1423822/psel-palembang-hampir-rampung-1000-ton-sampah-diolah-per-hari
+              - paragraph [ref=e280]:
+                - generic [ref=e281]: CNN Indonesia
+                - generic [ref=e282]: 5 Nov 2026
+              - button "Biomassa dan sampah" [ref=e284] [cursor=pointer]
+          - listitem [ref=e285]:
+            - link "Buka di tab baru" [ref=e286] [cursor=pointer]:
+              - /url: https://www.jawapos.com/energi/2610210158/proyek-energi-prabowo-gibran-b50-hingga-plts-100-gw-core-soroti-beban-subsidi-dan-pasokan
+            - generic [ref=e289]:
+              - 'link "Proyek Energi Prabowo - Gibran : B50 hingga PLTS 100 GW , CORE Soroti Beban Subsidi dan Pasokan" [ref=e290] [cursor=pointer]':
+                - /url: https://www.jawapos.com/energi/2610210158/proyek-energi-prabowo-gibran-b50-hingga-plts-100-gw-core-soroti-beban-subsidi-dan-pasokan
+              - paragraph [ref=e291]:
+                - generic [ref=e292]: jawapos.com
+                - generic [ref=e293]: 21 Okt 2026
+              - generic [ref=e294]:
+                - button "Surya" [ref=e295] [cursor=pointer]
+                - button "Bioenergi" [ref=e296] [cursor=pointer]
+      - generic [ref=e298]:
+        - generic [ref=e299]:
+          - generic [ref=e300]:
+            - paragraph [ref=e301]:
+              - generic [ref=e303]: 05 Kebijakan dan pembiayaan
+            - heading "Kebijakan dan pembiayaan" [level=2] [ref=e304]
+            - paragraph [ref=e305]: 31 berita dalam 90 hari terakhir.
+          - button "Lihat semua (31)" [ref=e306] [cursor=pointer]
+        - list [ref=e307]:
+          - listitem [ref=e308]:
+            - link "Buka di tab baru" [ref=e309] [cursor=pointer]:
+              - /url: https://www.cnbcindonesia.com/news/20261106130150-8-782969/video-dorong-ekonomi-lewat-reindustrialisasi-regulasi-dipermudah
+            - generic [ref=e312]:
+              - 'link "Video: Dorong Ekonomi Lewat Reindustrialisasi, Regulasi Dipermudah" [ref=e313] [cursor=pointer]':
+                - /url: https://www.cnbcindonesia.com/news/20261106130150-8-782969/video-dorong-ekonomi-lewat-reindustrialisasi-regulasi-dipermudah
+              - paragraph [ref=e314]:
+                - generic [ref=e315]: CNBC Indonesia
+                - generic [ref=e316]: 7 Nov 2026
+              - button "Kebijakan" [ref=e318] [cursor=pointer]
+          - listitem [ref=e319]:
+            - link "Buka di tab baru" [ref=e320] [cursor=pointer]:
+              - /url: https://www.cnnindonesia.com/ekonomi/20261105055804-92-1423455/pacu-hilirisasi-dan-transisi-energi-bahlil-raih-cnn-indonesia-awards
+            - generic [ref=e323]:
+              - link "Pacu Hilirisasi dan Transisi Energi, Bahlil Raih CNN Indonesia Awards" [ref=e324] [cursor=pointer]:
+                - /url: https://www.cnnindonesia.com/ekonomi/20261105055804-92-1423455/pacu-hilirisasi-dan-transisi-energi-bahlil-raih-cnn-indonesia-awards
+              - paragraph [ref=e325]:
+                - generic [ref=e326]: CNN Indonesia
+                - generic [ref=e327]: 6 Nov 2026
+              - generic [ref=e328]:
+                - button "Industri" [ref=e329] [cursor=pointer]
+                - button "Transisi adil" [ref=e330] [cursor=pointer]
+          - listitem [ref=e331]:
+            - link "Buka di tab baru" [ref=e332] [cursor=pointer]:
+              - /url: https://finance.detik.com/moneter/d-8741912/hut-ke-65-bank-sumut-perkuat-pembiayaan-rumah-dan-layanan-digital
+            - generic [ref=e335]:
+              - link "HUT Ke-65, Bank Sumut Perkuat Pembiayaan Rumah dan Layanan Digital" [ref=e336] [cursor=pointer]:
+                - /url: https://finance.detik.com/moneter/d-8741912/hut-ke-65-bank-sumut-perkuat-pembiayaan-rumah-dan-layanan-digital
+              - paragraph [ref=e337]:
+                - generic [ref=e338]: Detik Finance
+                - generic [ref=e339]: 6 Nov 2026
+              - button "Pembiayaan" [ref=e341] [cursor=pointer]
+          - listitem [ref=e342]:
+            - link "Buka di tab baru" [ref=e343] [cursor=pointer]:
+              - /url: https://www.cnbcindonesia.com/news/20261106173209-8-783081/video-magnet-investasi-jawa-tengah-regulasi-jelas--tak-ada-pungli
+            - generic [ref=e346]:
+              - 'link "Video: Magnet Investasi Jawa Tengah: Regulasi Jelas - Tak Ada Pungli" [ref=e347] [cursor=pointer]':
+                - /url: https://www.cnbcindonesia.com/news/20261106173209-8-783081/video-magnet-investasi-jawa-tengah-regulasi-jelas--tak-ada-pungli
+              - paragraph [ref=e348]:
+                - generic [ref=e349]: CNBC Indonesia
+                - generic [ref=e350]: 6 Nov 2026
+              - button "Kebijakan" [ref=e352] [cursor=pointer]
+    - region [ref=e353]:
+      - generic [ref=e354]:
+        - generic [ref=e355]:
+          - paragraph [ref=e356]:
+            - generic [ref=e358]: 06 Ringkasan
+          - heading "Jumlah pemberitaan" [level=2] [ref=e359]
+        - generic [ref=e360]:
+          - generic [ref=e361]:
+            - generic [ref=e362]:
+              - heading "Berita per hari, 30 hari terakhir" [level=3] [ref=e363]
+              - generic [ref=e364]:
+                - button "Per hari" [pressed] [ref=e365] [cursor=pointer]
+                - button "Per minggu" [ref=e366] [cursor=pointer]
+            - img "Berita per hari" [ref=e368]:
+              - 'generic "9 Okt 2026: 0" [ref=e369]'
+              - 'generic "10 Okt 2026: 0" [ref=e370]'
+              - 'generic "11 Okt 2026: 0" [ref=e371]'
+              - 'generic "12 Okt 2026: 0" [ref=e372]'
+              - 'generic "13 Okt 2026: 0" [ref=e373]'
+              - 'generic "14 Okt 2026: 1" [ref=e374]'
+              - 'generic "15 Okt 2026: 8" [ref=e375]'
+              - 'generic "16 Okt 2026: 4" [ref=e376]'
+              - 'generic "17 Okt 2026: 6" [ref=e377]'
+              - 'generic "18 Okt 2026: 3" [ref=e378]'
+              - 'generic "19 Okt 2026: 3" [ref=e379]'
+              - 'generic "20 Okt 2026: 15" [ref=e380]'
+              - 'generic "21 Okt 2026: 14" [ref=e381]'
+              - 'generic "22 Okt 2026: 7" [ref=e382]'
+              - 'generic "23 Okt 2026: 5" [ref=e383]'
+              - 'generic "24 Okt 2026: 4" [ref=e384]'
+              - 'generic "25 Okt 2026: 2" [ref=e385]'
+              - 'generic "26 Okt 2026: 0" [ref=e386]'
+              - 'generic "27 Okt 2026: 0" [ref=e387]'
+              - 'generic "28 Okt 2026: 0" [ref=e388]'
+              - 'generic "29 Okt 2026: 0" [ref=e389]'
+              - 'generic "30 Okt 2026: 0" [ref=e390]'
+              - 'generic "31 Okt 2026: 0" [ref=e391]'
+              - 'generic "1 Nov 2026: 0" [ref=e392]'
+              - 'generic "2 Nov 2026: 0" [ref=e393]'
+              - 'generic "3 Nov 2026: 0" [ref=e394]'
+              - 'generic "4 Nov 2026: 0" [ref=e395]'
+              - 'generic "5 Nov 2026: 4" [ref=e396]'
+              - 'generic "6 Nov 2026: 13" [ref=e397]'
+              - 'generic "7 Nov 2026: 9" [ref=e398]'
+              - generic [ref=e399]: 9 Okt 2026
+              - generic [ref=e400]: 7 Nov 2026
+              - generic [ref=e401]: "15"
+          - generic [ref=e402]:
+            - heading "Sebaran teknologi" [level=3] [ref=e403]
+            - list [ref=e405]:
+              - listitem [ref=e406]:
+                - button "Surya 178" [ref=e407] [cursor=pointer]:
+                  - generic [ref=e408]: Surya
+                  - emphasis [ref=e412]: "178"
+              - listitem [ref=e413]:
+                - button "Panas bumi 44" [ref=e414] [cursor=pointer]:
+                  - generic [ref=e415]: Panas bumi
+                  - emphasis [ref=e419]: "44"
+              - listitem [ref=e420]:
+                - button "Transisi adil 16" [ref=e421] [cursor=pointer]:
+                  - generic [ref=e422]: Transisi adil
+                  - emphasis [ref=e426]: "16"
+              - listitem [ref=e427]:
+                - button "Industri 10" [ref=e428] [cursor=pointer]:
+                  - generic [ref=e429]: Industri
+                  - emphasis [ref=e433]: "10"
+              - listitem [ref=e434]:
+                - button "Penyimpanan 10" [ref=e435] [cursor=pointer]:
+                  - generic [ref=e436]: Penyimpanan
+                  - emphasis [ref=e440]: "10"
+              - listitem [ref=e441]:
+                - button "Kebijakan 8" [ref=e442] [cursor=pointer]:
+                  - generic [ref=e443]: Kebijakan
+                  - emphasis [ref=e447]: "8"
+              - listitem [ref=e448]:
+                - button "Pembiayaan 8" [ref=e449] [cursor=pointer]:
+                  - generic [ref=e450]: Pembiayaan
+                  - emphasis [ref=e454]: "8"
+              - listitem [ref=e455]:
+                - button "Biomassa dan sampah 6" [ref=e456] [cursor=pointer]:
+                  - generic [ref=e457]: Biomassa dan sampah
+                  - emphasis [ref=e461]: "6"
+          - generic [ref=e462]:
+            - heading "Media teratas" [level=3] [ref=e463]
+            - list [ref=e465]:
+              - listitem [ref=e466]:
+                - button "antaranews.com 72" [ref=e467] [cursor=pointer]:
+                  - generic [ref=e468]: antaranews.com
+                  - emphasis [ref=e472]: "72"
+              - listitem [ref=e473]:
+                - button "koran-jakarta.com 26" [ref=e474] [cursor=pointer]:
+                  - generic [ref=e475]: koran-jakarta.com
+                  - emphasis [ref=e479]: "26"
+              - listitem [ref=e480]:
+                - button "en.antaranews.com 24" [ref=e481] [cursor=pointer]:
+                  - generic [ref=e482]: en.antaranews.com
+                  - emphasis [ref=e486]: "24"
+              - listitem [ref=e487]:
+                - button "jawapos.com 17" [ref=e488] [cursor=pointer]:
+                  - generic [ref=e489]: jawapos.com
+                  - emphasis [ref=e493]: "17"
+              - listitem [ref=e494]:
+                - button "jateng.tribunnews.com 14" [ref=e495] [cursor=pointer]:
+                  - generic [ref=e496]: jateng.tribunnews.com
+                  - emphasis [ref=e500]: "14"
+              - listitem [ref=e501]:
+                - button "rri.co.id 12" [ref=e502] [cursor=pointer]:
+                  - generic [ref=e503]: rri.co.id
+                  - emphasis [ref=e507]: "12"
+              - listitem [ref=e508]:
+                - button "en.tempo.co 11" [ref=e509] [cursor=pointer]:
+                  - generic [ref=e510]: en.tempo.co
+                  - emphasis [ref=e514]: "11"
+              - listitem [ref=e515]:
+                - button "tribunnews.com 11" [ref=e516] [cursor=pointer]:
+                  - generic [ref=e517]: tribunnews.com
+                  - emphasis [ref=e521]: "11"
+    - region [ref=e522]:
+      - generic [ref=e523]:
+        - generic [ref=e524]:
+          - paragraph [ref=e525]:
+            - generic [ref=e527]: 07 Daftar
+          - heading "Semua berita dan video" [level=2] [ref=e528]
+        - tablist [ref=e529]:
+          - tab "Berita" [selected] [ref=e530] [cursor=pointer]
+          - tab "Video" [ref=e534] [cursor=pointer]
+        - generic [ref=e537]:
+          - generic [ref=e538]:
+            - generic [ref=e541]: Cari judul atau media
+            - searchbox "Cari judul atau media" [ref=e542]
+          - generic [ref=e543]:
+            - generic [ref=e544]: Semua teknologi
+            - combobox "Semua teknologi" [ref=e545] [cursor=pointer]:
+              - option "Semua teknologi" [selected]
+              - option "Bayu"
+              - option "Bioenergi"
+              - option "Biomassa dan sampah"
+              - option "Efisiensi"
+              - option "Elektrifikasi"
+              - option "Hidro"
+              - option "Industri"
+              - option "Jaringan"
+              - option "Karbon"
+              - option "Kebijakan"
+              - option "Nuklir"
+              - option "Panas bumi"
+              - option "Pembiayaan"
+              - option "Penyimpanan"
+              - option "Surya"
+              - option "Transisi adil"
+          - generic [ref=e546]:
+            - generic [ref=e547]: Semua media
+            - combobox "Semua media" [ref=e548] [cursor=pointer]:
+              - option "Semua media" [selected]
+              - option "933thedrive.com"
+              - option "agrinews-pubs.com"
+              - option "alanbatnews.net"
+              - option "allafrica.com"
+              - option "analisadaily.com"
+              - option "Antara"
+              - option "antaranews.com"
+              - option "asiaone.com"
+              - option "bali.jpnn.com"
+              - option "bali.tribunnews.com"
+              - option "bandung.bisnis.com"
+              - option "bangka.tribunnews.com"
+              - option "bangkokpost.com"
+              - option "belitung.tribunnews.com"
+              - option "berita.liputan6.com"
+              - option "beritajatim.com"
+              - option "bignewsnetwork.com"
+              - option "bjreview.com.cn"
+              - option "bola.okezone.com"
+              - option "bruneinews.net"
+              - option "business-standard.com"
+              - option "businesstimes.com.sg"
+              - option "china.org.cn"
+              - option "CNBC Indonesia"
+              - option "CNN Indonesia"
+              - option "cnnindonesia.com"
+              - option "compositesworld.com"
+              - option "countercurrents.org"
+              - option "daerah.sindonews.com"
+              - option "dailyexcelsior.com"
+              - option "dailykos.com"
+              - option "dailynews.co.tz"
+              - option "dailypioneer.com"
+              - option "dailysabah.com"
+              - option "dealstreetasia.com"
+              - option "Detik Finance"
+              - option "dw.com"
+              - option "eco-business.com"
+              - option "ecologic.harianjogja.com"
+              - option "economictimes.indiatimes.com"
+              - option "economy.okezone.com"
+              - option "ekbis.harianjogja.com"
+              - option "ekbis.sindonews.com"
+              - option "ekonomi.bisnis.com"
+              - option "ekonomi.republika.co.id"
+              - option "en.antaranews.com"
+              - option "en.ce.cn"
+              - option "en.gmw.cn"
+              - option "en.mercopress.com"
+              - option "en.tempo.co"
+              - option "english.aawsat.com"
+              - option "english.anhuinews.com"
+              - option "english.kontan.co.id"
+              - option "english.news.cn"
+              - option "esgnow.republika.co.id"
+              - option "esmmagazine.com"
+              - option "eurekalert.org"
+              - option "fastmarkets.com"
+              - option "finance.yahoo.com"
+              - option "finanznachrichten.de"
+              - option "fool.com"
+              - option "forbes.com"
+              - option "foreignpolicy.com"
+              - option "fortune.com"
+              - option "freemalaysiatoday.com"
+              - option "gdnonline.com"
+              - option "globalissues.org"
+              - option "globaltimes.cn"
+              - option "greentechlead.com"
+              - option "harianjogja.com"
+              - option "hellenicshippingnews.com"
+              - option "hijau.bisnis.com"
+              - option "hindustantimes.com"
+              - option "hinews.cn"
+              - option "iaindale.com"
+              - option "indonesiatribune.com"
+              - option "insideretail.asia"
+              - option "insight.kontan.co.id"
+              - option "internationalviewpoint.org"
+              - option "investegate.co.uk"
+              - option "jabar.jpnn.com"
+              - option "jabar.tribunnews.com"
+              - option "jateng.harianjogja.com"
+              - option "jateng.jpnn.com"
+              - option "jateng.tribunnews.com"
+              - option "jawapos.com"
+              - option "jogja.tribunnews.com"
+              - option "jpnn.com"
+              - option "kaltara.antaranews.com"
+              - option "kaltim.tribunnews.com"
+              - option "Katadata"
+              - option "kepri.batampos.co.id"
+              - option "keuangan.kontan.co.id"
+              - option "kompas.com"
+              - option "koran-jakarta.com"
+              - option "kupang.tribunnews.com"
+              - option "lampung.tribunnews.com"
+              - option "lampung.viva.co.id"
+              - option "laosnews.net"
+              - option "latimes.com"
+              - option "leadership.ng"
+              - option "links.org.au"
+              - option "liputan6.com"
+              - option "livemint.com"
+              - option "makassar.tribunnews.com"
+              - option "malaysiasun.com"
+              - option "manado.antaranews.com"
+              - option "manado.tribunnews.com"
+              - option "manilatimes.net"
+              - option "market.bisnis.com"
+              - option "merdeka.com"
+              - option "metrotvnews.com"
+              - option "middleeastmonitor.com"
+              - option "miragenews.com"
+              - option "momsmoney.kontan.co.id"
+              - option "money.kompas.com"
+              - option "moneycontrol.com"
+              - option "mpoc.org.my"
+              - option "nasional.kompas.com"
+              - option "news.republika.co.id"
+              - option "newsday.com"
+              - option "newstodaynet.com"
+              - option "newsweek.com"
+              - option "ntt.viva.co.id"
+              - option "oilandgas360.com"
+              - option "oilprice.com"
+              - option "organiser.org"
+              - option "ototekno.harianjogja.com"
+              - option "pakistantelegraph.com"
+              - option "palembang.tribunnews.com"
+              - option "peakoil.com"
+              - option "philippinetimes.com"
+              - option "pontianak.tribunnews.com"
+              - option "prnewswire.com"
+              - option "pv-tech.org"
+              - option "regional.kompas.com"
+              - option "rejogja.republika.co.id"
+              - option "retail.economictimes.indiatimes.com"
+              - option "rri.co.id"
+              - option "Ruang Energi"
+              - option "semarang.bisnis.com"
+              - option "shangbao.com.ph"
+              - option "skepticalscience.com"
+              - option "smh.com.au"
+              - option "sumatra.bisnis.com"
+              - option "sumsel.tribunnews.com"
+              - option "surabaya.bisnis.com"
+              - option "Tempo"
+              - option "tempo.co"
+              - option "thailand-business-news.com"
+              - option "thedailystar.net"
+              - option "thediplomat.com"
+              - option "theepochtimes.com"
+              - option "thefifthestate.com.au"
+              - option "thehindubusinessline.com"
+              - option "thejakartapost.com"
+              - option "themarketsdaily.com"
+              - option "thestar.com.my"
+              - option "thisdaylive.com"
+              - option "tradearabia.com"
+              - option "trend.az"
+              - option "tribune.com.pk"
+              - option "tribunnews.com"
+              - option "ttrweekly.com"
+              - option "vietnamnews.vn"
+              - option "vietnamtribune.com"
+              - option "viva.co.id"
+              - option "wartakota.tribunnews.com"
+              - option "wattsupwiththat.com"
+              - option "yahoo.com"
+              - option "yalibnan.com"
+              - option "yourdemocracy.net.au"
+          - generic [ref=e549]:
+            - generic [ref=e550]: Semua periode
+            - combobox "Semua periode" [ref=e551] [cursor=pointer]:
+              - option "Semua periode" [selected]
+              - option "7 hari terakhir"
+              - option "30 hari terakhir"
+              - option "90 hari terakhir"
+          - generic [ref=e552]:
+            - generic [ref=e553]: Semua bahasa
+            - combobox "Semua bahasa" [ref=e554] [cursor=pointer]:
+              - option "Semua bahasa" [selected]
+              - option "Indonesia"
+              - option "Inggris"
+          - status [ref=e555]: 519 dari 519
+        - tabpanel [ref=e556]:
+          - heading "Hari ini" [level=3] [ref=e557]
+          - list [ref=e558]:
+            - listitem [ref=e559]:
+              - link "Buka di tab baru" [ref=e560] [cursor=pointer]:
+                - /url: https://www.antaranews.com/berita/5838603/brin-intensifkan-riset-penentuan-lokasi-dan-teknologi-pltn-kaltim
+              - generic [ref=e563]:
+                - link "BRIN intensifkan riset penentuan lokasi dan teknologi PLTN Kaltim" [ref=e564] [cursor=pointer]:
+                  - /url: https://www.antaranews.com/berita/5838603/brin-intensifkan-riset-penentuan-lokasi-dan-teknologi-pltn-kaltim
+                - paragraph [ref=e565]:
+                  - generic [ref=e566]: Antara
+                  - generic [ref=e567]: 7 Nov 2026
+                - generic [ref=e568]:
+                  - button "Nuklir" [ref=e569] [cursor=pointer]
+                  - link "BRIN" [ref=e570] [cursor=pointer]:
+                    - /url: /direktori?tampil=lembaga
+            - listitem [ref=e571]:
+              - link "Buka di tab baru" [ref=e572] [cursor=pointer]:
+                - /url: https://www.cnbcindonesia.com/news/20261104112725-8-782207/videokeunggulan-panel-surya-lokal-bersaing-di-pasar-domestik--ekspor
+              - generic [ref=e575]:
+                - link "Video:Keunggulan Panel Surya Lokal Bersaing di Pasar Domestik - Ekspor" [ref=e576] [cursor=pointer]:
+                  - /url: https://www.cnbcindonesia.com/news/20261104112725-8-782207/videokeunggulan-panel-surya-lokal-bersaing-di-pasar-domestik--ekspor
+                - paragraph [ref=e577]:
+                  - generic [ref=e578]: CNBC Indonesia
+                  - generic [ref=e579]: 7 Nov 2026
+                - button "Surya" [ref=e581] [cursor=pointer]
+            - listitem [ref=e582]:
+              - link "Buka di tab baru" [ref=e583] [cursor=pointer]:
+                - /url: https://www.antaranews.com/berita/5838399/pln-epi-bidik-pemanfaatan-biomassa-10-juta-ton-per-tahun
+              - generic [ref=e586]:
+                - link "PLN EPI bidik pemanfaatan biomassa 10 juta ton per tahun" [ref=e587] [cursor=pointer]:
+                  - /url: https://www.antaranews.com/berita/5838399/pln-epi-bidik-pemanfaatan-biomassa-10-juta-ton-per-tahun
+                - paragraph [ref=e588]:
+                  - generic [ref=e589]: Antara
+                  - generic [ref=e590]: 7 Nov 2026
+                - button "Biomassa dan sampah" [ref=e592] [cursor=pointer]
+            - listitem [ref=e593]:
+              - link "Buka di tab baru" [ref=e594] [cursor=pointer]:
+                - /url: https://www.cnbcindonesia.com/news/20261106130150-8-782969/video-dorong-ekonomi-lewat-reindustrialisasi-regulasi-dipermudah
+              - generic [ref=e597]:
+                - 'link "Video: Dorong Ekonomi Lewat Reindustrialisasi, Regulasi Dipermudah" [ref=e598] [cursor=pointer]':
+                  - /url: https://www.cnbcindonesia.com/news/20261106130150-8-782969/video-dorong-ekonomi-lewat-reindustrialisasi-regulasi-dipermudah
+                - paragraph [ref=e599]:
+                  - generic [ref=e600]: CNBC Indonesia
+                  - generic [ref=e601]: 7 Nov 2026
+                - button "Kebijakan" [ref=e603] [cursor=pointer]
+            - listitem [ref=e604]:
+              - link "Buka di tab baru" [ref=e605] [cursor=pointer]:
+                - /url: https://www.cnbcindonesia.com/market/20261103161404-19-781962/video-ambisi-rijadi-pusat-manufaktur-perdagangan-emas-dunia
+              - generic [ref=e608]:
+                - 'link "Video: Ambisi RIJadi Pusat Manufaktur dan Perdagangan Emas Dunia" [ref=e609] [cursor=pointer]':
+                  - /url: https://www.cnbcindonesia.com/market/20261103161404-19-781962/video-ambisi-rijadi-pusat-manufaktur-perdagangan-emas-dunia
+                - paragraph [ref=e610]:
+                  - generic [ref=e611]: CNBC Indonesia
+                  - generic [ref=e612]: 7 Nov 2026
+                - button "Industri" [ref=e614] [cursor=pointer]
+            - listitem [ref=e615]:
+              - link "Buka di tab baru" [ref=e616] [cursor=pointer]:
+                - /url: https://economy.okezone.com/read/2026/11/07/320/3252619/ri-kejar-target-plts-100-gwp-dalam-3-tahun-caranya
+              - generic [ref=e619]:
+                - 'link "RI Kejar Target PLTS 100 GWp dalam 3 Tahun , Caranya ? : Okezone Economy" [ref=e620] [cursor=pointer]':
+                  - /url: https://economy.okezone.com/read/2026/11/07/320/3252619/ri-kejar-target-plts-100-gwp-dalam-3-tahun-caranya
+                - paragraph [ref=e621]:
+                  - generic [ref=e622]: economy.okezone.com
+                  - generic [ref=e623]: 7 Nov 2026
+                - button "Surya" [ref=e625] [cursor=pointer]
+            - listitem [ref=e626]:
+              - link "Buka di tab baru" [ref=e627] [cursor=pointer]:
+                - /url: https://www.ruangenergi.com/pln-epi-targetkan-10-juta-ton-biomassa-per-tahun-buka-peluang-150-ribu-lapangan-kerja-hijau/
+              - generic [ref=e630]:
+                - link "PLN EPI Targetkan 10 Juta Ton Biomassa per Tahun, Buka Peluang 150 Ribu Lapangan Kerja Hijau" [ref=e631] [cursor=pointer]:
+                  - /url: https://www.ruangenergi.com/pln-epi-targetkan-10-juta-ton-biomassa-per-tahun-buka-peluang-150-ribu-lapangan-kerja-hijau/
+                - paragraph [ref=e632]:
+                  - generic [ref=e633]: Ruang Energi
+                  - generic [ref=e634]: 7 Nov 2026
+                - button "Biomassa dan sampah" [ref=e636] [cursor=pointer]
+            - listitem [ref=e637]:
+              - link "Buka di tab baru" [ref=e638] [cursor=pointer]:
+                - /url: https://www.ruangenergi.com/aesi-ajak-jurnalis-nasional-dan-daerah-kawal-proyek-plts/
+              - generic [ref=e641]:
+                - link "AESI Ajak Jurnalis Nasional dan Daerah Kawal Proyek PLTS" [ref=e642] [cursor=pointer]:
+                  - /url: https://www.ruangenergi.com/aesi-ajak-jurnalis-nasional-dan-daerah-kawal-proyek-plts/
+                - paragraph [ref=e643]:
+                  - generic [ref=e644]: Ruang Energi
+                  - generic [ref=e645]: 7 Nov 2026
+                - generic [ref=e646]:
+                  - button "Surya" [ref=e647] [cursor=pointer]
+                  - link "AESI" [ref=e648] [cursor=pointer]:
+                    - /url: /direktori?tampil=lembaga
+            - listitem [ref=e649]:
+              - link "Buka di tab baru" [ref=e650] [cursor=pointer]:
+                - /url: https://katadata.co.id/berita/internasional/6aee7fa00edec/iran-bagikan-tablet-antiradiasi-ke-warga-antisipasi-serangan-nuklir-as
+              - generic [ref=e653]:
+                - link "Iran Bagikan Tablet Antiradiasi ke Warga, Antisipasi Serangan Nuklir AS" [ref=e654] [cursor=pointer]:
+                  - /url: https://katadata.co.id/berita/internasional/6aee7fa00edec/iran-bagikan-tablet-antiradiasi-ke-warga-antisipasi-serangan-nuklir-as
+                - paragraph [ref=e655]:
+                  - generic [ref=e656]: Katadata
+                  - generic [ref=e657]: 7 Nov 2026
+                - button "Nuklir" [ref=e659] [cursor=pointer]
+            - listitem [ref=e660]:
+              - link "Buka di tab baru" [ref=e661] [cursor=pointer]:
+                - /url: https://www.cnbcindonesia.com/news/20261106184017-7-783114/demo-pecah-aktivis-lompat-pagar-tembus-lokasi-proyek-data-center
+              - generic [ref=e664]:
+                - link "Demo Pecah, Aktivis Lompat Pagar-Tembus Lokasi Proyek Data Center" [ref=e665] [cursor=pointer]:
+                  - /url: https://www.cnbcindonesia.com/news/20261106184017-7-783114/demo-pecah-aktivis-lompat-pagar-tembus-lokasi-proyek-data-center
+                - paragraph [ref=e666]:
+                  - generic [ref=e667]: CNBC Indonesia
+                  - generic [ref=e668]: 6 Nov 2026
+                - button "Efisiensi" [ref=e670] [cursor=pointer]
+            - listitem [ref=e671]:
+              - link "Buka di tab baru" [ref=e672] [cursor=pointer]:
+                - /url: https://www.cnnindonesia.com/ekonomi/20261105055804-92-1423455/pacu-hilirisasi-dan-transisi-energi-bahlil-raih-cnn-indonesia-awards
+              - generic [ref=e675]:
+                - link "Pacu Hilirisasi dan Transisi Energi, Bahlil Raih CNN Indonesia Awards" [ref=e676] [cursor=pointer]:
+                  - /url: https://www.cnnindonesia.com/ekonomi/20261105055804-92-1423455/pacu-hilirisasi-dan-transisi-energi-bahlil-raih-cnn-indonesia-awards
+                - paragraph [ref=e677]:
+                  - generic [ref=e678]: CNN Indonesia
+                  - generic [ref=e679]: 6 Nov 2026
+                - generic [ref=e680]:
+                  - button "Industri" [ref=e681] [cursor=pointer]
+                  - button "Transisi adil" [ref=e682] [cursor=pointer]
+            - listitem [ref=e683]:
+              - link "Buka di tab baru" [ref=e684] [cursor=pointer]:
+                - /url: https://finance.detik.com/moneter/d-8741912/hut-ke-65-bank-sumut-perkuat-pembiayaan-rumah-dan-layanan-digital
+              - generic [ref=e687]:
+                - link "HUT Ke-65, Bank Sumut Perkuat Pembiayaan Rumah dan Layanan Digital" [ref=e688] [cursor=pointer]:
+                  - /url: https://finance.detik.com/moneter/d-8741912/hut-ke-65-bank-sumut-perkuat-pembiayaan-rumah-dan-layanan-digital
+                - paragraph [ref=e689]:
+                  - generic [ref=e690]: Detik Finance
+                  - generic [ref=e691]: 6 Nov 2026
+                - button "Pembiayaan" [ref=e693] [cursor=pointer]
+            - listitem [ref=e694]:
+              - link "Buka di tab baru" [ref=e695] [cursor=pointer]:
+                - /url: https://www.cnbcindonesia.com/news/20261106173209-8-783081/video-magnet-investasi-jawa-tengah-regulasi-jelas--tak-ada-pungli
+              - generic [ref=e698]:
+                - 'link "Video: Magnet Investasi Jawa Tengah: Regulasi Jelas - Tak Ada Pungli" [ref=e699] [cursor=pointer]':
+                  - /url: https://www.cnbcindonesia.com/news/20261106173209-8-783081/video-magnet-investasi-jawa-tengah-regulasi-jelas--tak-ada-pungli
+                - paragraph [ref=e700]:
+                  - generic [ref=e701]: CNBC Indonesia
+                  - generic [ref=e702]: 6 Nov 2026
+                - button "Kebijakan" [ref=e704] [cursor=pointer]
+            - listitem [ref=e705]:
+              - link "Buka di tab baru" [ref=e706] [cursor=pointer]:
+                - /url: https://www.cnbcindonesia.com/market/20261106164259-17-783061/ada-angin-segar-dari-as-harga-minyak-dunia-2027-bisa-turun-ke-us-85
+              - generic [ref=e709]:
+                - link "Ada Angin Segar dari AS, Harga Minyak Dunia 2027 Bisa Turun ke US$85" [ref=e710] [cursor=pointer]:
+                  - /url: https://www.cnbcindonesia.com/market/20261106164259-17-783061/ada-angin-segar-dari-as-harga-minyak-dunia-2027-bisa-turun-ke-us-85
+                - paragraph [ref=e711]:
+                  - generic [ref=e712]: CNBC Indonesia
+                  - generic [ref=e713]: 6 Nov 2026
+                - button "Bayu" [ref=e715] [cursor=pointer]
+          - heading "Minggu ini" [level=3] [ref=e716]
+          - list [ref=e717]:
+            - listitem [ref=e718]:
+              - link "Buka di tab baru" [ref=e719] [cursor=pointer]:
+                - /url: https://analisadaily.com/berita/baca/2026/11/06/1079236/ajak-jurnalis-nasional-dan-daerah-kawal-proyek-plts-aesi-gelar-diskursus-energi-surya-nasional/
+              - generic [ref=e722]:
+                - link "Ajak Jurnalis Nasional dan Daerah Kawal Proyek PLTS , AESI Gelar Diskursus Energi Surya Nasional" [ref=e723] [cursor=pointer]:
+                  - /url: https://analisadaily.com/berita/baca/2026/11/06/1079236/ajak-jurnalis-nasional-dan-daerah-kawal-proyek-plts-aesi-gelar-diskursus-energi-surya-nasional/
+                - paragraph [ref=e724]:
+                  - generic [ref=e725]: analisadaily.com
+                  - generic [ref=e726]: 6 Nov 2026
+                - generic [ref=e727]:
+                  - button "Surya" [ref=e728] [cursor=pointer]
+                  - link "AESI" [ref=e729] [cursor=pointer]:
+                    - /url: /direktori?tampil=lembaga
+            - listitem [ref=e730]:
+              - link "Buka di tab baru" [ref=e731] [cursor=pointer]:
+                - /url: https://www.cnnindonesia.com/ekonomi/20261106171043-85-1424202/geo-dipa-bidik-ri-jadi-negara-berkapasitas-panas-bumi-nomor-1-dunia
+              - generic [ref=e734]:
+                - link "Geo Dipa Bidik RI Jadi Negara Berkapasitas Panas Bumi Nomor 1 Dunia" [ref=e735] [cursor=pointer]:
+                  - /url: https://www.cnnindonesia.com/ekonomi/20261106171043-85-1424202/geo-dipa-bidik-ri-jadi-negara-berkapasitas-panas-bumi-nomor-1-dunia
+                - paragraph [ref=e736]:
+                  - generic [ref=e737]: CNN Indonesia
+                  - generic [ref=e738]: 6 Nov 2026
+                - button "Panas bumi" [ref=e740] [cursor=pointer]
+            - listitem [ref=e741]:
+              - link "Buka di tab baru" [ref=e742] [cursor=pointer]:
+                - /url: https://www.trend.az/world/4243656.html
+              - generic [ref=e745]:
+                - link "IEA forecasts 74 GW increase in global pumped - storage hydropower capacity" [ref=e746] [cursor=pointer]:
+                  - /url: https://www.trend.az/world/4243656.html
+                - paragraph [ref=e747]:
+                  - generic [ref=e748]: trend.az
+                  - generic [ref=e749]: 6 Nov 2026
+                - generic [ref=e750]:
+                  - button "Hidro" [ref=e751] [cursor=pointer]
+                  - button "Penyimpanan" [ref=e752] [cursor=pointer]
+            - listitem [ref=e753]:
+              - link "Buka di tab baru" [ref=e754] [cursor=pointer]:
+                - /url: https://www.cnnindonesia.com/ekonomi/20261105135747-92-1423662/dukung-pembiayaan-perumahan-bank-bjb-sabet-penghargaan-cnn-indonesia
+              - generic [ref=e757]:
+                - link "Dukung Pembiayaan Perumahan, Bank BJB Sabet Penghargaan CNN Indonesia" [ref=e758] [cursor=pointer]:
+                  - /url: https://www.cnnindonesia.com/ekonomi/20261105135747-92-1423662/dukung-pembiayaan-perumahan-bank-bjb-sabet-penghargaan-cnn-indonesia
+                - paragraph [ref=e759]:
+                  - generic [ref=e760]: CNN Indonesia
+                  - generic [ref=e761]: 6 Nov 2026
+                - button "Pembiayaan" [ref=e763] [cursor=pointer]
+            - listitem [ref=e764]:
+              - link "Buka di tab baru" [ref=e765] [cursor=pointer]:
+                - /url: https://www.cnnindonesia.com/ekonomi/20261105150747-92-1423711/perluas-pembiayaan-produktif-bank-mandiri-sabet-cnn-indonesia-awards
+              - generic [ref=e768]:
+                - link "Perluas Pembiayaan Produktif, Bank Mandiri Sabet CNN Indonesia Awards" [ref=e769] [cursor=pointer]:
+                  - /url: https://www.cnnindonesia.com/ekonomi/20261105150747-92-1423711/perluas-pembiayaan-produktif-bank-mandiri-sabet-cnn-indonesia-awards
+                - paragraph [ref=e770]:
+                  - generic [ref=e771]: CNN Indonesia
+                  - generic [ref=e772]: 6 Nov 2026
+                - button "Pembiayaan" [ref=e774] [cursor=pointer]
+            - listitem [ref=e775]:
+              - link "Buka di tab baru" [ref=e776] [cursor=pointer]:
+                - /url: https://www.cnnindonesia.com/ekonomi/20261106121955-92-1424088/perluas-pasar-investasi-hijau-bei-luncurkan-indeks-obligasi-esg
+              - generic [ref=e779]:
+                - link "Perluas Pasar Investasi Hijau, BEI Luncurkan Indeks Obligasi ESG" [ref=e780] [cursor=pointer]:
+                  - /url: https://www.cnnindonesia.com/ekonomi/20261106121955-92-1424088/perluas-pasar-investasi-hijau-bei-luncurkan-indeks-obligasi-esg
+                - paragraph [ref=e781]:
+                  - generic [ref=e782]: CNN Indonesia
+                  - generic [ref=e783]: 6 Nov 2026
+                - button "Pembiayaan" [ref=e785] [cursor=pointer]
+            - listitem [ref=e786]:
+              - link "Buka di tab baru" [ref=e787] [cursor=pointer]:
+                - /url: https://finance.detik.com/industri/d-8740874/industri-manufaktur-ri-naik-5-88-lampaui-pertumbuhan-ekonomi
+              - generic [ref=e790]:
+                - link "Industri Manufaktur RI Naik 5,88%, Lampaui Pertumbuhan Ekonomi" [ref=e791] [cursor=pointer]:
+                  - /url: https://finance.detik.com/industri/d-8740874/industri-manufaktur-ri-naik-5-88-lampaui-pertumbuhan-ekonomi
+                - paragraph [ref=e792]:
+                  - generic [ref=e793]: Detik Finance
+                  - generic [ref=e794]: 6 Nov 2026
+                - button "Industri" [ref=e796] [cursor=pointer]
+            - listitem [ref=e797]:
+              - link "Buka di tab baru" [ref=e798] [cursor=pointer]:
+                - /url: https://www.thailand-business-news.com/news/339062-thailand-business-news-morning-briefing-7
+              - generic [ref=e801]:
+                - link "Thailand Business News Morning Briefing - Emerging markets suffer US$33 . 8 billion capital outflow as investors retreat from Asian equities" [ref=e802] [cursor=pointer]:
+                  - /url: https://www.thailand-business-news.com/news/339062-thailand-business-news-morning-briefing-7
+                - paragraph [ref=e803]:
+                  - generic [ref=e804]: thailand-business-news.com
+                  - generic [ref=e805]: 6 Nov 2026
+            - listitem [ref=e806]:
+              - link "Buka di tab baru" [ref=e807] [cursor=pointer]:
+                - /url: https://www.cnnindonesia.com/ekonomi/20261104191343-85-1423384/bos-pertamina-geothermal-pede-prospek-bisnis-listrik-panas-bumi-cerah
+              - generic [ref=e810]:
+                - link "Bos Pertamina Geothermal Pede Prospek Bisnis Listrik Panas Bumi Cerah" [ref=e811] [cursor=pointer]:
+                  - /url: https://www.cnnindonesia.com/ekonomi/20261104191343-85-1423384/bos-pertamina-geothermal-pede-prospek-bisnis-listrik-panas-bumi-cerah
+                - paragraph [ref=e812]:
+                  - generic [ref=e813]: CNN Indonesia
+                  - generic [ref=e814]: 5 Nov 2026
+                - generic [ref=e815]:
+                  - button "Panas bumi" [ref=e816] [cursor=pointer]
+                  - link "PT Pertamina (Persero)" [ref=e817] [cursor=pointer]:
+                    - /url: /direktori?tampil=lembaga
+            - listitem [ref=e818]:
+              - link "Buka di tab baru" [ref=e819] [cursor=pointer]:
+                - /url: https://www.cnnindonesia.com/ekonomi/20261105224036-532-1423929/taruna-ikrar-jadikan-bpom-motor-hilirisasi-riset-nasional-lewat-abg
+              - generic [ref=e822]:
+                - link "Taruna Ikrar Jadikan BPOM Motor Hilirisasi Riset Nasional Lewat ABG" [ref=e823] [cursor=pointer]:
+                  - /url: https://www.cnnindonesia.com/ekonomi/20261105224036-532-1423929/taruna-ikrar-jadikan-bpom-motor-hilirisasi-riset-nasional-lewat-abg
+                - paragraph [ref=e824]:
+                  - generic [ref=e825]: CNN Indonesia
+                  - generic [ref=e826]: 5 Nov 2026
+                - button "Industri" [ref=e828] [cursor=pointer]
+            - listitem [ref=e829]:
+              - link "Buka di tab baru" [ref=e830] [cursor=pointer]:
+                - /url: https://www.cnnindonesia.com/ekonomi/20261105192402-97-1423850/psel-palembang-bisa-serap-1000-pekerja-buka-peluang-ekonomi-baru
+              - generic [ref=e833]:
+                - link "PSEL Palembang Bisa Serap 1.000 Pekerja, Buka Peluang Ekonomi Baru" [ref=e834] [cursor=pointer]:
+                  - /url: https://www.cnnindonesia.com/ekonomi/20261105192402-97-1423850/psel-palembang-bisa-serap-1000-pekerja-buka-peluang-ekonomi-baru
+                - paragraph [ref=e835]:
+                  - generic [ref=e836]: CNN Indonesia
+                  - generic [ref=e837]: 5 Nov 2026
+                - button "Biomassa dan sampah" [ref=e839] [cursor=pointer]
+            - listitem [ref=e840]:
+              - link "Buka di tab baru" [ref=e841] [cursor=pointer]:
+                - /url: https://www.cnnindonesia.com/ekonomi/20261105184809-97-1423822/psel-palembang-hampir-rampung-1000-ton-sampah-diolah-per-hari
+              - generic [ref=e844]:
+                - link "PSEL Palembang Hampir Rampung, 1.000 Ton Sampah Diolah per Hari" [ref=e845] [cursor=pointer]:
+                  - /url: https://www.cnnindonesia.com/ekonomi/20261105184809-97-1423822/psel-palembang-hampir-rampung-1000-ton-sampah-diolah-per-hari
+                - paragraph [ref=e846]:
+                  - generic [ref=e847]: CNN Indonesia
+                  - generic [ref=e848]: 5 Nov 2026
+                - button "Biomassa dan sampah" [ref=e850] [cursor=pointer]
+          - heading "Bulan ini" [level=3] [ref=e851]
+          - list [ref=e852]:
+            - listitem [ref=e853]:
+              - link "Buka di tab baru" [ref=e854] [cursor=pointer]:
+                - /url: https://countercurrents.org/2026/10/the-central-role-of-energy-in-the-geopolitics-of-late-capitalism/
+              - generic [ref=e857]:
+                - link "The Central Role of Energy in the Geopolitics of Late Capitalism" [ref=e858] [cursor=pointer]:
+                  - /url: https://countercurrents.org/2026/10/the-central-role-of-energy-in-the-geopolitics-of-late-capitalism/
+                - paragraph [ref=e859]:
+                  - generic [ref=e860]: countercurrents.org
+                  - generic [ref=e861]: 25 Okt 2026
+            - listitem [ref=e862]:
+              - link "Buka di tab baru" [ref=e863] [cursor=pointer]:
+                - /url: https://www.antaranews.com/berita/5810487/pemerintah-luncurkan-program-pengawal-energi-untuk-3679-spbu
+              - generic [ref=e866]:
+                - link "Pemerintah luncurkan program Pengawal Energi untuk 3 . 679 SPBU" [ref=e867] [cursor=pointer]:
+                  - /url: https://www.antaranews.com/berita/5810487/pemerintah-luncurkan-program-pengawal-energi-untuk-3679-spbu
+                - paragraph [ref=e868]:
+                  - generic [ref=e869]: antaranews.com
+                  - generic [ref=e870]: 25 Okt 2026
+            - listitem [ref=e871]:
+              - link "Buka di tab baru" [ref=e872] [cursor=pointer]:
+                - /url: https://www.thestar.com.my/aseanplus/aseanplus-news/2026/10/24/gas-supply-cut-from-indonesia-accounts-for-less-than-2-of-singapores-daily-gas-demand-ema
+              - generic [ref=e875]:
+                - 'link "Gas supply cut from Indonesia accounts for less than 2 % of Singapore daily gas demand : EMA" [ref=e876] [cursor=pointer]':
+                  - /url: https://www.thestar.com.my/aseanplus/aseanplus-news/2026/10/24/gas-supply-cut-from-indonesia-accounts-for-less-than-2-of-singapores-daily-gas-demand-ema
+                - paragraph [ref=e877]:
+                  - generic [ref=e878]: thestar.com.my
+                  - generic [ref=e879]: 24 Okt 2026
+            - listitem [ref=e880]:
+              - link "Buka di tab baru" [ref=e881] [cursor=pointer]:
+                - /url: https://en.antaranews.com/news/437615/indonesias-energy-transformation-on-the-right-track-deputy-minister
+              - generic [ref=e884]:
+                - 'link "Indonesia energy transformation on the right track : Deputy Minister" [ref=e885] [cursor=pointer]':
+                  - /url: https://en.antaranews.com/news/437615/indonesias-energy-transformation-on-the-right-track-deputy-minister
+                - paragraph [ref=e886]:
+                  - generic [ref=e887]: en.antaranews.com
+                  - generic [ref=e888]: 24 Okt 2026
+          - button "Tampilkan 30 lagi" [ref=e890] [cursor=pointer]
+        - paragraph [ref=e891]: Hanya judul dan tautan yang disimpan; isi berita tetap di situs asalnya. Label teknologi diberikan otomatis dari kata kunci judul (EST). Data per 7 Nov 2026.
+  - contentinfo [ref=e892]:
+    - generic [ref=e893]:
+      - generic [ref=e894]:
+        - generic [ref=e897]:
+          - strong [ref=e898]: METI
+          - generic [ref=e899]: Masyarakat Energi Terbarukan Indonesia
+        - list [ref=e900]:
+          - 'listitem "Sumber: metiires.or.id, diperiksa 7 Nov 2026" [ref=e901]':
+            - generic [ref=e902]: "1999"
+            - generic [ref=e903]: Berdiri
+        - generic [ref=e904]:
+          - link "LinkedIn METI" [ref=e905] [cursor=pointer]:
+            - /url: https://www.linkedin.com/in/meti-ires-b06066a1/
+          - link "Instagram METI" [ref=e909] [cursor=pointer]:
+            - /url: https://www.instagram.com/metiires/
+      - navigation [ref=e913]:
+        - heading "Tentang" [level=2] [ref=e914]
+        - list [ref=e915]:
+          - listitem [ref=e916]:
+            - link "Siapa kami" [ref=e917] [cursor=pointer]:
+              - /url: https://metiires.or.id/about
+          - listitem [ref=e919]:
+            - link "Pengurus dan tim" [ref=e920] [cursor=pointer]:
+              - /url: https://metiires.or.id/about/meettheteam
+          - listitem [ref=e922]:
+            - link "Bergabung" [ref=e923] [cursor=pointer]:
+              - /url: https://metiires.or.id/membership
+          - listitem [ref=e925]:
+            - link "Kemitraan" [ref=e926] [cursor=pointer]:
+              - /url: https://metiires.or.id/about/partnership
+      - navigation [ref=e928]:
+        - heading "Berita" [level=2] [ref=e929]
+        - list [ref=e930]:
+          - listitem [ref=e931]:
+            - link "Berita" [ref=e932] [cursor=pointer]:
+              - /url: https://metiires.or.id/news
+          - listitem [ref=e934]:
+            - link "Event" [ref=e935] [cursor=pointer]:
+              - /url: https://metiires.or.id/news/events
+          - listitem [ref=e937]:
+            - link "E-Voting Perlu masuk di metiires.or.id" [ref=e938] [cursor=pointer]:
+              - /url: https://metiires.or.id/login?redirect=/news/evoting
+              - generic [ref=e939]: E-Voting
+              - generic "Perlu masuk di metiires.or.id" [ref=e940]
+          - listitem [ref=e945]:
+            - link "Materi dan dokumen Perlu masuk di metiires.or.id" [ref=e946] [cursor=pointer]:
+              - /url: https://metiires.or.id/login?redirect=/news/materials
+              - generic [ref=e947]: Materi dan dokumen
+              - generic "Perlu masuk di metiires.or.id" [ref=e948]
+      - navigation [ref=e953]:
+        - heading "Direktori" [level=2] [ref=e954]
+        - list [ref=e955]:
+          - listitem [ref=e956]:
+            - link "Proyek" [ref=e957] [cursor=pointer]:
+              - /url: /direktori?tampil=proyek
+          - listitem [ref=e959]:
+            - link "Organisasi" [ref=e960] [cursor=pointer]:
+              - /url: /direktori?tampil=lembaga
+          - listitem [ref=e962]:
+            - link "Orang dan pakar" [ref=e963] [cursor=pointer]:
+              - /url: /direktori?tampil=pakar
+          - listitem [ref=e965]:
+            - link "Regulasi" [ref=e966] [cursor=pointer]:
+              - /url: /direktori?tampil=regulasi
+          - listitem [ref=e968]:
+            - link "Pustaka" [ref=e969] [cursor=pointer]:
+              - /url: /direktori?tampil=pustaka
+    - navigation [ref=e972]:
+      - heading "Kontak" [level=2] [ref=e973]
+      - list [ref=e974]:
+        - listitem [ref=e975]:
+          - generic [ref=e980]:
+            - generic [ref=e981]: Kantor
+            - link "Taman Sari Parama Lt. 10, Jl. K.H. Wahid Hasyim No. 84-86, Kebon Sirih, Menteng, Jakarta Pusat 10340" [ref=e982] [cursor=pointer]:
+              - /url: https://www.google.com/maps/search/?api=1&query=Taman%20Sari%20Parama%2C%20Jl.%20K.H.%20Wahid%20Hasyim%20No.%2084-86%2C%20Kebon%20Sirih%2C%20Menteng%2C%20Jakarta%20Pusat%2010340
+        - listitem [ref=e983]:
+          - generic [ref=e988]:
+            - generic [ref=e989]: Rumah Energi Terbarukan
+            - link "Jl. Jatinegara Barat IV No. 3A, Balimester, Jatinegara, Jakarta Timur 13310" [ref=e990] [cursor=pointer]:
+              - /url: https://www.google.com/maps/search/?api=1&query=Jl.%20Jatinegara%20Barat%20IV%20No.%203A%2C%20Balimester%2C%20Jatinegara%2C%20Jakarta%20Timur%2013310
+        - listitem [ref=e991]:
+          - generic [ref=e996]:
+            - generic [ref=e997]: Surel
+            - link "meti.ires@gmail.com" [ref=e998] [cursor=pointer]:
+              - /url: mailto:meti.ires@gmail.com
+        - listitem [ref=e999]:
+          - generic [ref=e1004]:
+            - generic [ref=e1005]: Situs
+            - link "www.meti.or.id" [ref=e1006] [cursor=pointer]:
+              - /url: https://www.meti.or.id
+    - generic [ref=e1007]:
+      - paragraph [ref=e1008]: © 2026 METI
+      - link "Kebijakan membership dan pembayaran" [ref=e1009] [cursor=pointer]:
+        - /url: https://metiires.or.id/policy/membership
+      - button "Kembali ke atas" [ref=e1010] [cursor=pointer]
