@@ -40,6 +40,7 @@ const IK_ST = {
   dibatalkan: '<circle cx="12" cy="12" r="9"/><path d="m9 9 6 6M15 9l-6 6"/>',
   "tidak-diketahui": '<circle cx="12" cy="12" r="9"/><path d="M9.5 9.5a2.5 2.5 0 1 1 3.5 2.3c-.7.4-1 1-1 1.7M12 17h.01"/>',
 };
+export const ikonStatus = (kode) => S(IK_ST[IK_ST[kode] ? kode : "tidak-diketahui"]);
 export const pilStatus = (kode) => {
   const k = IK_ST[kode] ? kode : "tidak-diketahui", lab = ada("pj.st." + kode) ? t("pj.st." + kode) : kode || "-";
   return `<span class="jm-pil-st jm-st-${k}">${kecil(S(IK_ST[k]))}<span>${esc(lab)}</span></span>`;

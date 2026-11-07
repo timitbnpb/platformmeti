@@ -307,8 +307,8 @@ main.jm-an{gap:24px}
 /* /rantai: peta SVG penuh lebar, laci kota, legenda */
 .jm-rt-bingkai{min-height:420px}
 .jm-rt-peta{padding:0}
-.jm-rt-svg{display:block;width:100%;height:600px}
-@media (max-width:639px){.jm-rt-svg{height:420px}}
+.jm-rt-svg{display:block;width:100%;height:max(560px,75vh)}
+@media (max-width:639px){.jm-rt-svg{height:max(420px,65vh)}}
 .jm-rt-prov{fill:var(--card);stroke:var(--line-ctl);stroke-width:.6;vector-effect:non-scaling-stroke}
 .jm-rt-c{stroke:var(--card);stroke-width:1.5;fill-opacity:.82;cursor:pointer;outline:none;vector-effect:non-scaling-stroke}
 .jm-rt-lokal{fill:var(--data1)}.jm-rt-ekspor{fill:var(--data3)}.jm-rt-keduanya{fill:var(--data4)}
@@ -317,7 +317,7 @@ main.jm-an{gap:24px}
 .jm-rt-gl{stroke:var(--head);stroke-opacity:.6;stroke-width:1;vector-effect:non-scaling-stroke;pointer-events:none}
 .jm-rt-lr{fill:var(--card);fill-opacity:.92;stroke:var(--line-ctl);stroke-width:1;vector-effect:non-scaling-stroke;pointer-events:none}
 .jm-rt-lt{font-family:var(--font);font-weight:700;fill:var(--head);pointer-events:none}
-.jm-rt-reset{position:absolute;top:12px;right:12px;z-index:3;min-height:36px;padding:0 14px;border:1px solid var(--line-ctl);border-radius:var(--r-pil);background:var(--card);color:var(--ink);font:600 var(--t-tombol)/1 var(--font);cursor:pointer;box-shadow:var(--shadow)}
+.jm-rt-reset{position:absolute;top:76px;right:12px;z-index:3;min-height:36px;padding:0 14px;border:1px solid var(--line-ctl);border-radius:var(--r-pil);background:var(--card);color:var(--ink);font:600 var(--t-tombol)/1 var(--font);cursor:pointer;box-shadow:var(--shadow)}
 .jm-rt-reset:hover{border-color:var(--accent);color:var(--accent)}
 .jm-rt-leg{min-width:170px}
 .jm-rt-leg .jm-an-sw{margin:0;width:18px;height:12px;border-radius:3px}
@@ -329,7 +329,7 @@ main.jm-an{gap:24px}
 .jm-rt-tip strong{font:700 var(--t-body)/var(--lh-judul) var(--display);color:var(--head)}
 .jm-rt-tip ul{list-style:none;margin:0;padding:0;display:grid;gap:3px;font-size:var(--t-tombol);color:var(--ink2)}
 .jm-rt-tip li{display:flex;justify-content:space-between;gap:14px}.jm-rt-tip li b{color:var(--ink)}
-.jm-rt-laci{position:absolute;z-index:5;top:56px;right:12px;bottom:12px;width:min(340px,calc(100% - 24px));overflow:auto;padding:14px;border:1px solid var(--line);border-radius:var(--r);background:var(--card);box-shadow:var(--shadow-lg);display:grid;gap:10px;align-content:start}
+.jm-rt-laci{position:absolute;z-index:5;top:120px;right:12px;bottom:12px;width:min(340px,calc(100% - 24px));overflow:auto;padding:14px;border:1px solid var(--line);border-radius:var(--r);background:var(--card);box-shadow:var(--shadow-lg);display:grid;gap:10px;align-content:start}
 .jm-rt-laci[hidden]{display:none}
 .jm-rt-laci h3{margin:0;font:700 var(--t-h3)/var(--lh-judul) var(--display);color:var(--head)}
 .jm-rt-x{display:grid;place-items:center;width:32px;height:32px;border:1px solid var(--line);border-radius:50%;background:var(--card);color:var(--ink2);cursor:pointer}
@@ -498,3 +498,14 @@ a.jm-wp-op:hover{color:var(--accent)}
 .jm-wl-pr h3{padding-right:28px}
 .jm-wl-c4{width:250px}.jm-wl-pd{flex-wrap:nowrap;white-space:nowrap}
 .jm-wl-c4{width:272px}.jm-wl-tabel td:last-child{overflow:visible;padding-right:20px}
+
+/* ---- peta penuh lebar di bawah kepala: tab metrik melayang (bilah kaca ujung ke ujung) di atas peta ---- */
+.jm-wl-bingkai>.jm-tab.jm-wl-seg{position:absolute;z-index:5;top:0;left:0;right:0;width:auto;margin:0;padding:8px 12px;gap:6px;border-radius:0;border-bottom:1px solid var(--line);background:color-mix(in srgb,var(--card) 86%,transparent);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px)}
+.jm-wl-svg{height:max(560px,75vh)}
+.jm-wl-pr{top:72px}
+@media (max-width:639px){.jm-wl-svg{height:max(420px,65vh)}}
+@media (max-width:899px){.jm-wl-pr{top:auto}}
+
+/* rantai: filter pasar dan keanggotaan melayang di atas peta (bilah kaca ujung ke ujung) */
+.jm-rt-bingkai>.jm-an-chip{position:absolute;z-index:6;top:0;left:0;right:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px 16px;margin:0;padding:8px 12px;border-bottom:1px solid var(--line);background:color-mix(in srgb,var(--card) 86%,transparent);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px)}
+@media (max-width:899px){.jm-rt-bingkai>.jm-an-chip{grid-template-columns:minmax(0,1fr)}.jm-rt-reset{top:auto;bottom:12px}}

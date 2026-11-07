@@ -3,13 +3,6 @@
 .jm-pj-ringkas{display:grid;gap:24px}
 @media (min-width:900px){.jm-pj-ringkas{grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:40px}}
 .jm-pj-ringkas h2{margin-bottom:12px}
-.jm-pj-seg{all:unset;box-sizing:border-box;display:block;height:100%;cursor:pointer;min-width:3px}
-.jm-pj-seg:focus-visible,.jm-pj-leg-b button:focus-visible,.jm-pj-pbar button:focus-visible{outline:2px solid var(--fokus);outline-offset:2px}
-.jm-pj-seg[aria-pressed="true"]{box-shadow:inset 0 0 0 2px var(--ink)}
-.jm-pj-leg-b button{all:unset;cursor:pointer;display:inline-flex;align-items:center;gap:5px;padding:4px 10px;border-radius:var(--r-pil);border:1px solid var(--line);font-size:var(--t-tombol);color:var(--ink)}
-.jm-pj-leg-b button[aria-pressed="true"]{border-color:var(--accent);background:var(--soft-hijau)}
-.jm-pj-leg-b{gap:8px;margin-top:12px}
-.jm-pj-pbar{list-style:none;margin:0;padding:0;display:grid;gap:4px}
 .jm-pj-pilpeta{margin:8px 0 0;padding:5px 10px;border-radius:var(--r-pil);background:var(--surface);border:1px solid var(--line);color:var(--ink2);font-size:var(--t-label);line-height:var(--lh-rapat)}
 .jm-pj-lapis summary{cursor:pointer;min-height:40px;padding:0 14px;display:flex;align-items:center;font:700 var(--t-kecil)/1 var(--font);letter-spacing:normal;text-transform:none;color:var(--head);list-style:none}
 .jm-pj-lapis summary::-webkit-details-marker{display:none}
@@ -169,15 +162,7 @@ a.jm-pj-pk:hover .jm-pj-link{color:var(--head)}
 
 /* ---- gambaran ---- */
 .jm-pj-s-dibatalkan{background:var(--bad)}
-.jm-pj-tumpuk-b{height:22px}
 .jm-pj-ringkas h3{margin:0 0 12px;font:700 var(--t-kecil)/var(--lh-rapat) var(--font);letter-spacing:normal;text-transform:none;color:var(--ink2)}
-.jm-pj-pbar{list-style:none;margin:0;padding:0;display:grid;gap:6px 14px}
-@media (min-width:560px){.jm-pj-pbar{grid-template-columns:repeat(2,minmax(0,1fr))}}
-.jm-pj-pbar button{all:unset;box-sizing:border-box;cursor:pointer;display:grid;grid-template-columns:minmax(0,1fr) auto;gap:4px 10px;align-items:baseline;width:100%;padding:8px 10px;border-radius:var(--r-sm);border:1px solid var(--line-cell);font-size:var(--t-body);color:var(--ink)}
-.jm-pj-pbar button:hover,.jm-pj-pbar button[aria-pressed="true"]{background:var(--soft-hijau);border-color:var(--accent)}
-.jm-pj-pbar-n{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
-.jm-pj-pbar b{font:700 var(--t-h3)/var(--lh-judul) var(--display);font-variant-numeric:tabular-nums;color:var(--head)}
-.jm-pj-leg-b{gap:8px;margin-top:14px}
 .jm-pj-halaman>*{min-width:0}
 .jm-pj-isi>.jm-gulir{margin:0}
 body[data-halaman="proyek"]{overflow-x:clip}
@@ -195,11 +180,15 @@ body[data-halaman="proyek"]{overflow-x:clip}
 .jm-pil-netral{background:var(--surface);color:var(--ink2);border:1px solid var(--line)}
 
 /* ---- peta penuh layar ---- */
-.jm-pj-penuh{position:relative;width:100vw;margin-inline:calc(50% - 50vw);height:max(640px,calc(100vh - var(--top)));border-block:1px solid var(--line);background:var(--surface);overflow:hidden}
+.jm-pj-penuh{position:relative;height:max(560px,75vh);border:1px solid var(--line);border-radius:var(--r-lg);background:var(--surface);overflow:hidden}
+.jm-pj-area{position:absolute;inset:0}
 .jm-pj-penuh .jm-pj-kanvas{position:absolute;inset:0;width:100%;height:100%}
+.jm-pj-penuh .jm-pj-bilah.jm-saring{position:absolute;z-index:5;top:0;left:0;right:0;width:auto;margin:0;padding:10px 12px;gap:10px;border-bottom:1px solid var(--line);background:color-mix(in srgb,var(--card) 86%,transparent);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px)}
+.jm-pj-penuh .jm-pj-bilah+.jm-pj-area{margin-top:0}
+@media (min-width:1001px){.jm-pj-penuh .jm-pj-bilah.jm-saring{grid-template-columns:minmax(220px,2fr) repeat(4,minmax(0,1fr)) auto!important}}
 .jm-pj-lapis,.jm-pj-panel{position:absolute;z-index:3;border:1px solid var(--line);border-radius:var(--r);background:var(--card);box-shadow:var(--shadow);font-size:var(--t-tombol)}
-.jm-pj-lapis{top:12px;left:12px;width:min(264px,calc(100% - 24px));max-height:calc(100% - 60px);overflow:auto}
-.jm-pj-panel{top:12px;right:12px;width:min(340px,calc(100% - 24px));max-height:calc(100% - 140px);display:flex;flex-direction:column;overflow:hidden}
+.jm-pj-lapis{top:76px;left:12px;width:min(264px,calc(100% - 24px));max-height:calc(100% - 130px);overflow:auto}
+.jm-pj-panel{top:76px;right:12px;width:min(340px,calc(100% - 24px));max-height:calc(100% - 140px);display:flex;flex-direction:column;overflow:hidden}
 .jm-pj-panel:not([open]){width:auto}
 .jm-pj-lapis summary,.jm-pj-panel summary{cursor:pointer;min-height:40px;padding:0 14px;display:flex;align-items:center;gap:10px;font:700 var(--t-kecil)/1 var(--font);letter-spacing:normal;text-transform:none;color:var(--head);list-style:none}
 .jm-pj-panel summary{flex:none}
@@ -209,9 +198,9 @@ body[data-halaman="proyek"]{overflow-x:clip}
 .jm-pj-panel[open] summary{border-bottom:1px solid var(--line)}
 .jm-pj-lapis summary:focus-visible,.jm-pj-panel summary:focus-visible{outline:2px solid var(--fokus);outline-offset:-2px}
 .jm-pj-panel-isi{flex:1;min-height:0;overflow:auto;padding:6px}
-.jm-pj-chip-hasil{position:absolute;z-index:3;top:12px;left:50%;transform:translateX(-50%);max-width:calc(100% - 24px);padding:8px 16px;border-radius:var(--r-pil);background:var(--card);border:1px solid var(--line);box-shadow:var(--shadow);font:600 var(--t-tombol)/var(--lh-rapat) var(--font);color:var(--head);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-@media (max-width:1180px){.jm-pj-chip-hasil{top:auto;bottom:40px;left:12px;transform:none}}
-@media (max-width:999px){.jm-pj-panel{top:auto;bottom:12px;max-height:55%}.jm-pj-penuh{height:max(560px,calc(100vh - var(--top)))}}
+.jm-pj-chip-hasil{position:absolute;z-index:3;bottom:28px;left:50%;transform:translateX(-50%);max-width:calc(100% - 24px);padding:8px 16px;border-radius:var(--r-pil);background:var(--card);border:1px solid var(--line);box-shadow:var(--shadow);font:600 var(--t-tombol)/var(--lh-rapat) var(--font);color:var(--head);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+@media (max-width:1180px){.jm-pj-chip-hasil{bottom:40px;left:12px;transform:none}}
+@media (max-width:999px){.jm-pj-panel{top:auto;bottom:12px;max-height:55%}.jm-pj-penuh{height:auto;display:grid;overflow:visible;background:none;border:0}.jm-pj-penuh .jm-pj-bilah.jm-saring{position:relative;border:1px solid var(--line);border-radius:var(--r-lg) var(--r-lg) 0 0}.jm-pj-area{position:relative;inset:auto;height:70vh;min-height:480px;border:1px solid var(--line);border-top:0;border-radius:0 0 var(--r-lg) var(--r-lg);overflow:hidden;background:var(--surface)}.jm-pj-lapis,.jm-pj-panel{top:12px}.jm-pj-panel{top:auto}}
 .jm-pj-lap .jm-pj-ikt{width:18px;height:18px}
 .jm-pj-lap button{min-height:32px}
 .jm-pj-pop.maplibregl-popup .maplibregl-popup-content{max-height:min(300px,45vh);overflow:auto}
@@ -252,7 +241,6 @@ body[data-halaman="proyek"]{overflow-x:clip}
 @media (max-width:767px){.jm-pj-tetap td.jm-num,.jm-pj-tetap td.jm-tengah{text-align:left}.jm-pj-tetap td.jm-tengah .jm-pj-chip{justify-content:flex-start}.jm-pj-telat{text-align:left}}
 .jm-pj-ringkas>div+div{margin-top:0}
 @media (max-width:899px){.jm-pj-ringkas>div+div{margin-top:24px}}
-.jm-pj-leg-b{margin-bottom:0}
 .jm-tabel.jm-pj-tetap .jm-id{display:block}
 .jm-tabel.jm-pj-tetap .jm-id b{white-space:normal;overflow:visible}
 .jm-pj-pk-stat{grid-template-columns:auto minmax(0,1fr) auto;gap:8px 18px}
@@ -310,9 +298,6 @@ a.jm-pj-pk:hover .jm-pj-pk-gb img{transform:scale(1.04)}
 .jm-pj-lap button{gap:8px}
 .jm-pj-lap button span:not(.jm-pj-titik):not(.jm-pj-ikt){flex:0 1 auto}
 .jm-pj-lap button b{margin-left:auto}
-.jm-pj-leg-b button{display:inline-flex;gap:6px;padding:3px 10px 3px 3px;border-radius:var(--r-pil)}
-.jm-pj-leg-b button .jm-pil-st{padding:3px 8px}
-.jm-pj-pbar-n{font-weight:400}
 
 /* ---- modal besar di tengah ---- */
 dialog.jm-pj-sheet{margin:auto;width:min(1100px,94vw);max-width:94vw;height:auto;max-height:90vh;border-radius:20px;background:var(--paper);overflow:auto;overscroll-behavior:contain}
@@ -622,3 +607,13 @@ dialog.jm-pj-sheet{height:fit-content;min-height:0}@media (max-width:599px){dial
 .jm-kp-s-nuklir{fill:var(--bad);background:var(--bad)}
 .jm-kp-tabel{width:100%}
 @media (max-width:767px){.jm-kp-tabel{min-width:0}.jm-kp-ubin{grid-template-columns:1fr 1fr}}
+
+/* ---- gambaran: ubin berikon berangka (status dan program), tombol saring ---- */
+.jm-pj-ubinst{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:12px}
+.jm-pj-ub{all:unset;box-sizing:border-box;cursor:pointer;display:grid;grid-template-columns:auto minmax(0,1fr);grid-template-rows:auto auto;gap:2px 12px;align-items:center;padding:14px 16px;border:1px solid var(--line);border-radius:var(--r);background:var(--card);box-shadow:var(--shadow);transition:border-color .15s,background .15s}
+.jm-pj-ub:hover,.jm-pj-ub[aria-pressed="true"]{border-color:var(--accent);background:var(--soft-hijau)}
+.jm-pj-ub:focus-visible{outline:2px solid var(--fokus);outline-offset:2px}
+.jm-pj-ub-ik{grid-row:1/3;display:grid;place-items:center;width:40px;height:40px;border-radius:50%;background:var(--soft-hijau);color:var(--tk,var(--sk,var(--accent)))}
+.jm-pj-ub-ik .jm-ikt{width:22px;height:22px;color:inherit}
+.jm-pj-ub b{font:700 var(--t-h1)/var(--lh-judul) var(--display);font-variant-numeric:tabular-nums;color:var(--head)}
+.jm-pj-ub-n{font:400 var(--t-tombol)/var(--lh-rapat) var(--font);color:var(--ink2);overflow-wrap:anywhere}

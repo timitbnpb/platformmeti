@@ -7,8 +7,8 @@
 .jm-kl-tb:hover{border-color:var(--accent)}
 .jm-kl-tb[aria-pressed="true"]{border-color:var(--accent);background:var(--soft-hijau);color:var(--head)}
 .jm-kl-tb:focus-visible{outline:2px solid var(--fokus);outline-offset:2px}
-.jm-kl-petaw{border:1px solid var(--line);border-radius:var(--r);overflow:hidden;background:var(--surface)}
-.jm-kl-peta{width:100%;height:clamp(300px,46vh,460px)}
+.jm-kl-petaw{position:relative;border:1px solid var(--line);border-radius:var(--r);overflow:hidden;background:var(--surface)}
+.jm-kl-peta{width:100%;height:max(560px,75vh)}
 .jm-kl-kisi{grid-template-columns:repeat(5,minmax(0,1fr))}
 .jm-kl-vonisw{display:grid;gap:8px;margin-top:var(--gap)}
 .jm-kl-vonis{display:flex;align-items:center;gap:10px;margin:0;padding:10px 14px;border-radius:var(--r-sm)}
@@ -38,3 +38,7 @@
 .jm-kl-kisi .jm-kpi-lab{flex-wrap:wrap}
 .jm-kl-kisi .jm-kpi-lab>span:first-child{white-space:normal;overflow:visible;text-overflow:clip}
 @media (max-width:640px){.jm-kl-form{grid-template-columns:repeat(2,minmax(0,1fr))}}
+
+/* kontrol teknologi dan provinsi: bilah kaca ujung ke ujung di atas peta (di layar kecil tetap di atas, tidak menutup peta) */
+.jm-kl-petaw>.jm-kl-kontrol{position:absolute;z-index:5;top:0;left:0;right:0;padding:10px 12px;border-bottom:1px solid var(--line);background:color-mix(in srgb,var(--card) 86%,transparent);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px)}
+@media (max-width:900px){.jm-kl-petaw>.jm-kl-kontrol{position:relative;background:var(--card)}.jm-kl-peta{height:max(420px,65vh)}}

@@ -104,6 +104,7 @@ function kerangka() {
   <div id="exProyek">${exHtml({ id: "", ikon: "proyek", topik: "", judulHtml: "", isiHtml: `<div class="jm-saring" id="pelSaring" role="group" aria-label="${esc(t("pel.saring"))}"></div><div id="pelKartu"></div>` })}</div>
   <div id="exKalk">${exHtml({ id: "pelKalkEx", ikon: "analisis", topik: "", judulHtml: "", isiHtml: `<div class="jm-pel-kalk-alat" id="pelKalkAlat"></div><div id="pelKalk" aria-live="polite"></div>` })}</div>
   <div id="exMetode"></div>`;
+  document.querySelector(".jm-pel-penuh").prepend($("pelSeg")); /* filter teknologi melayang di atas peta */
 }
 function kepala(id, d) {
   const m = $(id), tmp = document.createElement("div");

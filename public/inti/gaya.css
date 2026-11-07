@@ -111,9 +111,9 @@ em.hl{font-style:normal;color:var(--accent)}
 @media (max-width:600px){.jm-kaki-isi{grid-template-columns:repeat(2,minmax(0,1fr));padding-top:36px}.jm-kaki-hub ul{grid-template-columns:1fr}.jm-kaki-bawah a{margin-left:0}}
 
 /* ===== wadah global: satu lebar isi dan satu jarak tepi untuk semua halaman (pakai class jm-wadah) ===== */
-.jm-wadah{width:100%;max-width:var(--maks);margin-inline:auto;padding-inline:clamp(16px,4vw,32px)}
+.jm-wadah{width:100%;max-width:var(--maks);margin-inline:auto;padding-inline:var(--gut)}
 header.top{padding-inline:clamp(12px,2vw,28px)}
-.jm-kaki-isi,.jm-kaki-bawah{max-width:var(--maks);margin-inline:auto;padding-inline:clamp(16px,4vw,32px)}
+.jm-kaki-isi,.jm-kaki-bawah{max-width:var(--maks);margin-inline:auto;padding-inline:var(--gut)}
 .jm-kaki-isi{padding-block:48px 36px}
 .jm-kaki-kol>ul>li>a:not(.jm-kaki-ln){white-space:nowrap}
 .jm-kaki-isi{grid-template-columns:minmax(0,1.6fr) repeat(3,minmax(0,.95fr)) minmax(0,1.5fr)}

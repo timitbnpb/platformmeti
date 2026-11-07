@@ -10,7 +10,7 @@
 .jm-kh-lead{margin:0;max-width:60ch;font-size:var(--t-h3);line-height:var(--lh-isi);color:var(--ink2)}
 .jm-kh-ubin{display:grid;gap:12px;grid-template-columns:repeat(3,minmax(0,1fr))}
 .jm-kh-ub{display:grid;gap:8px;align-content:start;padding:16px;border:1px solid var(--line);border-radius:var(--r);background:var(--card);color:inherit;text-decoration:none;box-shadow:var(--shadow)}
-.jm-kh .jm-kpi-ik{display:grid;place-items:center;flex:none;width:32px;height:32px;border-radius:50%;background:var(--soft-hijau);color:var(--accent)}
+.jm-kh .jm-kpi-ik{grid-area:auto;display:grid;place-items:center;flex:none;width:32px;height:32px;border-radius:50%;background:var(--soft-hijau);color:var(--accent)}
 .jm-kh-angka{display:flex;align-items:baseline;gap:6px;margin:0;white-space:nowrap}
 .jm-kh-angka b{font:700 var(--t-display)/var(--lh-judul) var(--display);color:var(--head);font-variant-numeric:tabular-nums}
 .jm-kh-angka span{font:600 var(--t-body)/1 var(--font);color:var(--ink2)}

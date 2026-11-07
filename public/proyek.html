@@ -19,24 +19,13 @@
 <body data-halaman="proyek">
 <header class="top" id="kepala"></header>
 <main class="jm-wadah jm-pj-halaman" id="isi">
-  <section class="jm-kh" aria-labelledby="judul"><div class="jm-kh-teks">
+  <section class="jm-kh jm-kh-satu" aria-labelledby="judul"><div class="jm-kh-teks">
     <p class="jm-kh-ey"><svg class="jm-ik" width="16" height="16" aria-hidden="true" focusable="false"><use href="/img/ikon.svg#i-proyek"/></svg><span data-i18n="pj.eyebrow">Pelacak proyek EBT</span></p>
     <h1 id="judul" data-i18n="pj.judul">Pelacak proyek energi terbarukan</h1>
     <p class="jm-kh-lead" data-i18n="pj.lead">Proyek pembangkit dan program transisi energi nasional, lengkap dengan status, target COD, lokasi, dan sumber tiap angka.</p>
   </div><div class="jm-kh-ubin" id="pjAngka" aria-live="polite"></div></section>
-  <div id="exGb"><div class="jm-pj-isi"><div class="jm-pj-ringkas">
-    <div>
-      <h3 id="hStat" data-i18n="pj.stat.judul">Status proyek</h3>
-      <div id="pjStatus"></div>
-    </div>
-    <div>
-      <h3 id="hPbar" data-i18n="pj.pbar.judul">Proyek per program</h3>
-      <div id="pjProgBar"></div>
-    </div>
-  </div></div></div>
-
-  <div id="exPeta"><div class="jm-pj-isi">
-    <div class="jm-saring" id="pjSaring" role="group" data-i18n-attr="aria-label:pj.saring">
+  <section class="jm-pj-penuh" aria-label="Peta proyek" data-i18n-attr="aria-label:pj.peta.judul">
+    <div class="jm-saring jm-pj-bilah" id="pjSaring" role="group" data-i18n-attr="aria-label:pj.saring">
       <label class="jm-cari"><svg class="jm-ik" width="18" height="18" aria-hidden="true" focusable="false"><use href="/img/ikon.svg#i-cari2"/></svg><span class="sr" data-i18n="pj.f.cari">Cari proyek</span><input id="fq" type="search" autocomplete="off" data-i18n-attr="placeholder:pj.f.cari"></label>
       <label class="jm-pil-pilih"><svg class="jm-ik" width="18" height="18" aria-hidden="true" focusable="false"><use href="/img/ikon.svg#i-jenis"/></svg><span class="sr" data-i18n="pj.f.tek">Teknologi</span><select data-ikon="jenis" id="ftek"></select></label>
       <label class="jm-pil-pilih"><svg class="jm-ik" width="18" height="18" aria-hidden="true" focusable="false"><use href="/img/ikon.svg#i-status"/></svg><span class="sr" data-i18n="pj.f.status">Status</span><select data-ikon="status" id="fst"></select></label>
@@ -44,15 +33,25 @@
       <label class="jm-pil-pilih"><svg class="jm-ik" width="18" height="18" aria-hidden="true" focusable="false"><use href="/img/ikon.svg#i-peta"/></svg><span class="sr" data-i18n="pj.f.provinsi">Provinsi</span><select data-ikon="peta" id="fprov"></select></label>
       <button type="button" class="jm-hapus" id="freset" hidden><svg class="jm-ik" width="18" height="18" aria-hidden="true" focusable="false"><use href="/img/ikon.svg#i-silang"/></svg><span data-i18n="jm.kosong.reset">Hapus filter</span></button>
     </div>
-  </div></div>
-
-  <section class="jm-pj-penuh" aria-label="Peta proyek" data-i18n-attr="aria-label:pj.peta.judul">
-    <div id="pjPeta" class="jm-pj-kanvas" role="application" data-i18n-attr="aria-label:pj.peta.judul"></div>
-    <details class="jm-pj-lapis" id="pjLapis" open><summary><span data-i18n="pj.lapis.judul">Lapisan peta</span></summary><div id="pjLegenda"></div></details>
-    <span class="jm-pj-chip-hasil" id="pjHasil" role="status" aria-live="polite"></span>
-    <details class="jm-pj-panel" id="pjDrawer"><summary id="pjPanelJ"><span data-i18n="pj.panel.judul">Proyek di peta</span></summary><div id="pjPanel" class="jm-pj-panel-isi"></div></details>
-    <div class="jm-pj-tip" id="pjTip" role="tooltip" hidden></div>
+    <div class="jm-pj-area">
+      <div id="pjPeta" class="jm-pj-kanvas" role="application" data-i18n-attr="aria-label:pj.peta.judul"></div>
+      <details class="jm-pj-lapis" id="pjLapis" open><summary><span data-i18n="pj.lapis.judul">Lapisan peta</span></summary><div id="pjLegenda"></div></details>
+      <span class="jm-pj-chip-hasil" id="pjHasil" role="status" aria-live="polite"></span>
+      <details class="jm-pj-panel" id="pjDrawer"><summary id="pjPanelJ"><span data-i18n="pj.panel.judul">Proyek di peta</span></summary><div id="pjPanel" class="jm-pj-panel-isi"></div></details>
+      <div class="jm-pj-tip" id="pjTip" role="tooltip" hidden></div>
+    </div>
   </section>
+
+  <div id="exGb"><div class="jm-pj-isi"><div class="jm-pj-ringkas">
+    <div>
+      <h3 id="hStat" data-i18n="pj.stat.judul">Status proyek</h3>
+      <div id="pjStatus" class="jm-pj-ubinst"></div>
+    </div>
+    <div>
+      <h3 id="hPbar" data-i18n="pj.pbar.judul">Proyek per program</h3>
+      <div id="pjProgBar" class="jm-pj-ubinst"></div>
+    </div>
+  </div></div></div>
 
   <div id="exTahap"><div class="jm-pj-isi">
     <div id="pjCorong"></div>

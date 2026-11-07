@@ -19,7 +19,7 @@
   --shadow:0 2px 14px rgb(10 60 45/.08); --shadow-lg:0 8px 28px rgb(10 60 45/.16);
   --pendar:0 0 0 1px rgb(74 169 224/.35),0 8px 28px rgb(74 169 224/.18);
   --r:14px; --r-sm:10px; --r-lg:16px; --r-pil:999px;
-  --top:60px; --maks:1240px; --gut:16px; --gap:12px; --target:44px;
+  --top:60px; --maks:1600px; --gut:16px; --gap:12px; --target:44px;
   --display:"Poppins",system-ui,sans-serif;
   --font:"Inter",Arial,system-ui,sans-serif;
   /* Skala tipografi tunggal (gerbang-tipografi): CSS lain WAJIB memakai token ini, bukan px literal.
@@ -28,7 +28,8 @@
   --lh-judul:1.2; --lh-rapat:1.35; --lh-isi:1.5; --ls-label:.08em;
   color-scheme:light;
 }
-@media (min-width:600px){:root{--gut:20px}}
+@media (min-width:600px){:root{--gut:24px}}
+@media (min-width:1000px){:root{--gut:32px}}
 @media (min-width:768px){:root{--t-display:44px; --t-h1:32px; --t-h2:22px; --t-angka:40px}}
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
   --paper:#0E1A17; --surface:#14241F; --card:#14241F;

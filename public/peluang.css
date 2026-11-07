@@ -2,11 +2,11 @@
 .jm-pel-halaman{display:grid;grid-template-columns:minmax(0,1fr);gap:var(--gap);padding-block:20px 64px;align-content:start}
 .jm-pel-halaman>*{min-width:0}
 .jm-pel-seg{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:8px}
-.jm-pel-penuh{position:relative;height:clamp(520px,calc(100vh - var(--top) - 80px),760px);border:1px solid var(--line);border-radius:var(--r);background:var(--surface);overflow:hidden}
+.jm-pel-penuh{position:relative;height:max(560px,75vh);border:1px solid var(--line);border-radius:var(--r);background:var(--surface);overflow:hidden}
 .jm-pel-kanvas{position:absolute;inset:0;width:100%;height:100%}
 .jm-pel-lapis,.jm-pel-panel{position:absolute;z-index:3;border:1px solid var(--line);border-radius:16px;background:color-mix(in srgb,var(--card) 94%,transparent);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);box-shadow:var(--shadow);font-size:var(--t-kecil)}
-.jm-pel-lapis{top:12px;left:12px;width:min(248px,calc(100% - 24px))}
-.jm-pel-panel{top:12px;right:12px;width:min(340px,calc(100% - 24px));max-height:calc(100% - 24px);display:flex;flex-direction:column;overflow:hidden}
+.jm-pel-lapis{top:76px;left:12px;width:min(248px,calc(100% - 24px))}
+.jm-pel-panel{top:76px;right:12px;width:min(340px,calc(100% - 24px));max-height:calc(100% - 90px);display:flex;flex-direction:column;overflow:hidden}
 .jm-pel-panel:not([open]),.jm-pel-lapis:not([open]){width:auto}
 .jm-pel-lapis summary,.jm-pel-panel summary{cursor:pointer;min-height:40px;padding:0 14px;display:flex;align-items:center;gap:10px;font:700 var(--t-label)/1 var(--font);letter-spacing:normal;text-transform:none;color:var(--head);list-style:none}
 .jm-pel-panel summary{flex:none}
@@ -66,3 +66,7 @@
 .jm-pel-tabel th{white-space:normal}
 @media (min-width:768px){#pelTabel .jm-gulir{max-height:620px;overflow-y:auto}#pelTabel .jm-tabel thead th{position:sticky;top:0;z-index:2}}
 @media (max-width:767px){.jm-pel-tabel.jm-tabel td[data-label]{grid-template-columns:120px minmax(0,1fr);align-items:start}.jm-pel-tabel.jm-tabel td[data-label]::before{overflow-wrap:anywhere}}
+
+/* filter teknologi: bilah kaca ujung ke ujung di atas peta */
+.jm-pel-penuh>.jm-pel-seg{position:absolute;z-index:5;top:0;left:0;right:0;padding:10px 12px;border-bottom:1px solid var(--line);background:color-mix(in srgb,var(--card) 86%,transparent);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px)}
+@media (max-width:999px){.jm-pel-penuh>.jm-pel-seg{display:flex;overflow-x:auto;scrollbar-width:none}.jm-pel-penuh>.jm-pel-seg .jm-kl-tb{flex:none}}

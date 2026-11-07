@@ -7,7 +7,7 @@ import { khUbin } from "/inti/kh.js";
 import { muatMapLibre } from "/inti/maplibre.js";
 import { lapisAnggota, anggotaDl } from "/publik.js";
 import { sumberHtml, exHtml, unduhRegHtml } from "/inti/komponen.js";
-import { ikonTek, pilTek, pilStatus } from "/inti/ikon_tek.js";
+import { ikonTek, pilTek, pilStatus, ikonStatus } from "/inti/ikon_tek.js";
 import { PROV } from "/penerbit.js";
 import { geserPanel } from "/inti/panel_geser.js";
 import { aksiHtml } from "/inti/aksi_ex.js";
@@ -125,9 +125,8 @@ function ex(id, d) {
   m.querySelector(".jm-ex-hd").replaceWith(tmp.querySelector(".jm-ex-hd"));
 }
 function kepalaSeksi() {
-  const n = SEMUA.length, st = hitung(SEMUA, (r) => r.st), dok = dokSumber();
-  ex("exGb", { ikon: "analisis", topik: t("pj.ex.gb"), judulHtml: `${hl(num(n))} ${esc(t("pj.ex.gb.1"))} ${hl(num(st.beroperasi || 0))} ${esc(t("pj.ex.gb.2"))}`, subHtml: esc(t("pj.ex.gb.s")), aksiHtml: aksiHtml() + sumberHtml(`${esc(t("pj.sumber", { tgl: tanggal(DATA.dibangun_pada, { gaya: "panjang" }), dok }))}<br>${esc(t("pj.sumber.rinci"))}`) });
-  ex("exPeta", { ikon: "peta", topik: t("pj.ex.peta"), judulHtml: `${hl(num(SEMUA.filter((r) => r.ada).length))} ${esc(t("pj.ex.peta.j", { total: num(n) }))}`, subHtml: esc(t("pj.ex.peta.s")), aksiHtml: aksiHtml() });
+  const dok = dokSumber();
+  ex("exGb", { ikon: "analisis", topik: t("pj.ex.gb"), judulHtml: esc(t("pj.ex.gb.j")), subHtml: esc(t("pj.ex.gb.s")), aksiHtml: aksiHtml() + sumberHtml(`${esc(t("pj.sumber", { tgl: tanggal(DATA.dibangun_pada, { gaya: "panjang" }), dok }))}<br>${esc(t("pj.sumber.rinci"))}`) });
   ex("exProg", { ikon: "topik", topik: t("pj.ex.prog"), judulHtml: `${hl(num(PROG.baris.length))} ${esc(t("pj.ex.prog.j"))}`, subHtml: esc(t("pj.ex.prog.s", { n: num(PROG.baris.filter((g) => g.jumlah_proyek).length) })), aksiHtml: aksiHtml() });
   kepalaTabel();
 }
@@ -144,17 +143,15 @@ const progNamaPendek = (id) => (ada("pj.pn." + id) ? t("pj.pn." + id) : progNama
 function gambarHero() {
   const n = SEMUA.length, mw = jumlahMW(SEMUA), st = hitung(SEMUA, (r) => r.st);
   const [kv, ks] = mw >= 10000 ? [num(mw / 1000, 1), "GW"] : [num(mw, 0), "MW"];
-  khUbin("pjAngka", [{ ikon: "proyek", nilai: num(n), label: t("pj.k.total") }, { ikon: "analisis", nilai: kv, satuan: ks, label: t("pj.k.kap") }, { ikon: "status", nilai: num(st.konstruksi || 0), label: labSt("konstruksi") }, { ikon: "centang", nilai: num(st.beroperasi || 0), label: labSt("beroperasi") }]);
+  khUbin("pjAngka", [{ ikon: "proyek", nilai: num(n), label: t("pj.k.total") }, { ikon: "analisis", nilai: kv, satuan: ks, label: t("pj.k.kap") }, { ikon: "status", nilai: num(st.konstruksi || 0), label: labSt("konstruksi") }, { ikon: "centang", nilai: num(st.beroperasi || 0), label: labSt("beroperasi") }, { ikon: "kalender", nilai: num(SEMUA.filter((r) => r.telat).length), label: t("pj.k.telat") }]);
   segarHero(); kepalaSeksi();
 }
 function segarHero() {
-  const n = SEMUA.length, st = hitung(SEMUA, (r) => r.st), ada1 = URUT_ST.concat(TIDAK).filter((k) => st[k]);
-  $("pjStatus").innerHTML = `<div class="jm-pj-tumpuk jm-pj-tumpuk-b" role="group" aria-label="${esc(t("pj.stat.judul"))}">${ada1.map((k) => `<button type="button" class="jm-pj-seg jm-pj-s-${k}" data-st="${k}" data-w="${(st[k] / n) * 100}" aria-pressed="${F.st === k}" title="${esc(labSt(k) + ": " + st[k])}" aria-label="${esc(labSt(k) + ": " + st[k])}"></button>`).join("")}</div>
-    <ul class="jm-pj-leg jm-pj-leg-b">${ada1.map((k) => `<li><button type="button" data-st="${k}" aria-pressed="${F.st === k}">${pilStatus(k)}<b>${num(st[k])}</b></button></li>`).join("")}</ul>`;
-  for (const i of $("pjStatus").querySelectorAll("[data-w]")) i.style.width = i.dataset.w + "%";
+  const st = hitung(SEMUA, (r) => r.st), ada1 = URUT_ST.concat(TIDAK).filter((k) => st[k]);
+  const ub = (att, nilai, ikonHtml, nama, n, tekan, kls = "") => `<button type="button" class="jm-pj-ub ${kls}" ${att}="${esc(nilai)}" aria-pressed="${tekan}"><span class="jm-pj-ub-ik">${ikonHtml}</span><b>${num(n)}</b><span class="jm-pj-ub-n">${esc(nama)}</span></button>`;
+  $("pjStatus").innerHTML = ada1.map((k) => ub("data-st", k, ikonStatus(k), labSt(k), st[k], F.st === k, "jm-st-" + k)).join("");
   const pc = hitung(SEMUA, (r) => r.prog), baris = PROG.baris.map((g) => [g.id, pc[g.id] || 0]).sort((a, b) => b[1] - a[1]);
-  /* batang pakai akar supaya program kecil tidak jadi serpihan 2% di samping satu program raksasa */
-  $("pjProgBar").innerHTML = `<ul class="jm-pj-pbar">${baris.map(([id, c]) => `<li><button type="button" data-pg="${esc(id)}" aria-pressed="${F.prog === id}"><span class="jm-pj-pbar-n">${esc(progNamaPendek(id))}</span><b>${num(c)}</b></button></li>`).join("")}</ul>`;
+  $("pjProgBar").innerHTML = baris.map(([id, c]) => ub("data-pg", id, ikProg(id), progNamaPendek(id), c, F.prog === id)).join("");
 }
 function ubahFilter(k, v) {
   F[k] = F[k] === v ? "" : v;
@@ -814,7 +811,7 @@ function bukaProfil(id) {
 }
 dlg.addEventListener("click", (e) => {
   const tp = e.target.closest("[data-tampil]");
-  if (tp) { dlg.close(); F.prog = tp.dataset.tampil; $("fprog").value = F.prog; segarHero(); terapkan(); $("exPeta").scrollIntoView({ behavior: "smooth", block: "start" }); return; }
+  if (tp) { dlg.close(); F.prog = tp.dataset.tampil; $("fprog").value = F.prog; segarHero(); terapkan(); $("pjPeta").scrollIntoView({ behavior: "smooth", block: "start" }); return; }
   const ms = e.target.closest("[data-mst]");
   if (ms) {
     MS.st = MS.st === ms.dataset.mst ? "" : ms.dataset.mst;
