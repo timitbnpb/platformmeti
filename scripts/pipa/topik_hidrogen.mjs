@@ -6,6 +6,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { validasi } from './topik_surya.mjs';
+import { perdalam } from './topik_hidrogen_dalam.mjs';
 export { validasi };
 const akar = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '../..');
 const ID = 'hidrogen';
@@ -343,6 +344,7 @@ export function susun() {
     dasarP('pln', 'operasi', 'Publikasikan pemakaian riil hidrogen PLN (pendingin, kendaraan) dan perbarui angka kapasitas yang berbeda antar sumber.', 'Publish PLN\'s actual hydrogen use (cooling, vehicles) and reconcile capacity figures that differ between sources.', 'ghp21'),
     dasarP('meti', 'operasi', 'Pantau pilot Ulubelu dan NEOM 2027, serta beri hak jawab pada pihak yang disebut.', 'Monitor the Ulubelu pilot and NEOM 2027, and give named parties a right of reply.', 'ulu'),
   ] };
+  perdalam(bab, SUMBER);
   return {
     id: ID, versi: 1, diperbarui: TGL,
     judul: T('Hidrogen dan amonia hijau', 'Green hydrogen and ammonia'),
