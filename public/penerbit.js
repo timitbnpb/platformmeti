@@ -1,7 +1,7 @@
 /* logo penerbit regulasi: satu helper untuk tabel, linimasa, dan lembar rinci. Tanpa teks tampak; nama lengkap di title + aria-label. */
 import { esc } from "/inti/umum.js";
 
-const PROV = { "aceh": 11, "sumatera utara": 12, "sumatera barat": 13, "riau": 14, "jambi": 15, "sumatera selatan": 16, "bengkulu": 17, "lampung": 18, "bangka belitung": 19, "kepulauan bangka belitung": 19, "kepulauan riau": 21,
+export const PROV = { "aceh": 11, "sumatera utara": 12, "sumatera barat": 13, "riau": 14, "jambi": 15, "sumatera selatan": 16, "bengkulu": 17, "lampung": 18, "bangka belitung": 19, "kepulauan bangka belitung": 19, "kepulauan riau": 21,
   "daerah khusus ibukota jakarta": 31, "dki jakarta": 31, "jawa barat": 32, "jawa tengah": 33, "daerah istimewa yogyakarta": 34, "di yogyakarta": 34, "jawa timur": 35, "banten": 36, "bali": 51, "nusa tenggara barat": 52, "nusa tenggara timur": 53,
   "kalimantan barat": 61, "kalimantan tengah": 62, "kalimantan selatan": 63, "kalimantan timur": 64, "kalimantan utara": 65, "sulawesi utara": 71, "sulawesi tengah": 72, "sulawesi selatan": 73, "sulawesi tenggara": 74, "gorontalo": 75, "sulawesi barat": 76,
   "maluku": 81, "maluku utara": 82, "papua": 91, "papua barat": 92, "papua selatan": 93, "papua tengah": 94, "papua pegunungan": 95, "papua barat daya": 96 };

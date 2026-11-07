@@ -10,6 +10,7 @@ import path from 'node:path';
 import crypto from 'node:crypto';
 import assert from 'node:assert/strict';
 import { fileURLToPath } from 'node:url';
+import { bangunSitemap } from './sitemap.mjs';
 import { normWilayah } from '../panen/panen_proyek.mjs';
 import { bangunKonteks, perkaya } from '../panen/berita_wilayah.mjs';
 
@@ -113,7 +114,7 @@ const kat = (kode) => ({ kode, label: KATEGORI[kode] });
 
 const PROGRAM = {
   'plts-100gw': { nama: 'PLTS 100 GWp', ringkas: 'Percepatan PLTS 100 gigawatt-peak (rancangan Perpres dan proyek turunannya).', re: /100 gigawatt|plts 100|100 gwp/i },
-  wte: { nama: 'Pengolahan sampah menjadi energi (WtE/PLTSa)', ringkas: 'Pembangkit listrik berbasis sampah di kota-kota prioritas.', re: /sampah|pltsa/i },
+  wte: { nama: 'Pengolahan sampah menjadi energi (WtE/PLTSa)', ringkas: 'Pembangkit listrik berbasis sampah di kota-kota prioritas.', re: /sampah|pltsa/i, pelaksana: [['l_43f00f6a72', 'pengarah dan investor'], ['p_0ed65b38b8', 'pelaksana (unit WtE Danantara)']] }, // sumber: Jakarta Post 2026-03-08 dan 2026-07-14
   b50: { nama: 'Biodiesel B50', ringkas: 'Mandatori campuran biodiesel 50 persen.', re: /biodiesel|\bb50\b|bahan bakar nabati/i },
   e20: { nama: 'Bioetanol E5-E20 dan SAF', ringkas: 'Mandatori campuran etanol pada bensin dan bioavtur.', re: /bioetanol|etanol|\be20\b|\be10\b/i },
   ruptl: { nama: 'RUPTL 2025-2034', ringkas: 'Rencana Usaha Penyediaan Tenaga Listrik PLN: daftar pembangkit terencana.', re: /ruptl|rencana usaha penyediaan tenaga listrik/i },
@@ -527,7 +528,7 @@ export function bangun(masukan = {}) {
     const hit = (k) => ps.reduce((m, x) => { const v = x[k]; return m; }, null); void hit;
     const per = (f) => ps.reduce((m, x) => { const v = f(x) || 'tidak-diketahui'; m[v] = (m[v] || 0) + 1; return m; }, {});
     const mw = ps.reduce((s, x) => { const k = (x.kapasitas || []).find((c) => MW.has(c.satuan) && typeof c.nilai === 'number'); return s + (k ? k.nilai : 0); }, 0);
-    return { id, nama: p.nama, ringkas: p.ringkas, regulasi_ids: progReg[id] || [], proyek_ids: ps.map((x) => x.id), jumlah_proyek: ps.length, kapasitas_mw: Math.round(mw * 10) / 10, per_status: per((x) => x.status?.[0]?.nilai), per_teknologi: per((x) => x.teknologi), ...(id === 'b50' && bbn.length ? { alokasi_bbn: bbn } : {}) };
+    return { id, nama: p.nama, ringkas: p.ringkas, regulasi_ids: progReg[id] || [], ...(p.pelaksana ? { pelaksana: p.pelaksana.filter(([oid]) => orgPub.has(oid)).map(([organisasi_id, peran]) => ({ organisasi_id, peran })) } : {}), proyek_ids: ps.map((x) => x.id), jumlah_proyek: ps.length, kapasitas_mw: Math.round(mw * 10) / 10, per_status: per((x) => x.status?.[0]?.nilai), per_teknologi: per((x) => x.teknologi), ...(id === 'b50' && bbn.length ? { alokasi_bbn: bbn } : {}) };
   });
 
   // --- angka rapat ---
@@ -616,6 +617,7 @@ function jalankan() {
   for (const b of semua) console.log(`${b.lapis}/${b.berkas}`.padEnd(34), (b.byte / 1024).toFixed(0).padStart(6) + ' KB');
   if (galat.length) { console.error('GAGAL pemindai/ukuran:\n' + galat.slice(0, 40).join('\n')); process.exit(1); }
   console.log('pemindai data pribadi: bersih (publik + anggota); semua berkas publik < 2 MB');
+  try { fs.writeFileSync(path.join(path.dirname(fileURLToPath(import.meta.url)), '../../public/sitemap.xml'), bangunSitemap()); console.log('sitemap.xml ditulis'); } catch (e) { console.error('sitemap dilewati:', e.message); }
 }
 function periksa() {
   const semua = [];

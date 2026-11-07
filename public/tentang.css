@@ -100,7 +100,7 @@
 /* ---------- logo mitra: marquee kanan ke kiri ---------- */
 .tn-tengah{text-align:center}
 .tn-pita{overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,black 8%,black 92%,transparent);mask-image:linear-gradient(90deg,transparent,black 8%,black 92%,transparent)}
-.tn-trek{list-style:none;margin:0;padding:6px 0;display:flex;width:max-content;animation:tn-gerak 35s linear infinite}
+.tn-trek{list-style:none;margin:0;padding:6px 0;display:flex;width:max-content;animation:tn-gerak 80s linear infinite}
 .tn-trek.balik{animation-direction:reverse}
 .tn-pita:hover .tn-trek,.tn-pita:focus-within .tn-trek{animation-play-state:paused}
 @keyframes tn-gerak{to{transform:translateX(-50%)}}
@@ -204,3 +204,13 @@
 .tn-kosongp{padding:14px;border-radius:var(--r);background:var(--surface);color:var(--ink2);font-size:14px}
 @media (max-width:760px){.tn-dlg{width:100%;max-width:100%;margin:auto 0 0;border-radius:var(--r-lg) var(--r-lg) 0 0;max-height:90vh}}
 .tn-dlg a{text-decoration:none}
+/* daftar centang ikut gutter kartu (sebelumnya menempel ke tepi kiri) */
+.tn-fitur>.tn-cek{margin-inline:clamp(20px,3vw,32px)}
+.tn-fitur>.tn-cek li{padding:10px 12px;border-radius:var(--r-sm);background:var(--surface)}
+.tn-fitur>.tn-bawah{margin-top:auto;padding-bottom:clamp(18px,2.4vw,26px)}
+
+/* logo mitra: ukuran optis seragam, monogram asosiasi seukuran logo (bukan pil besar) */
+.tn-logo{height:64px!important;width:160px!important}
+.tn-logo img{max-height:44px!important;max-width:132px!important;width:auto;height:auto;object-fit:contain}
+.tn-nama{display:inline-grid;place-items:center;width:52px;height:52px;border-radius:50%;background:var(--soft-hijau);border:0!important;font:800 12px/1 var(--display);letter-spacing:.02em;color:var(--brand);padding:0!important}
+.tn-trek li{margin:0 20px}

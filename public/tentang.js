@@ -45,7 +45,7 @@ function hero(f) {
     <dl class="tn-angka" aria-label="${esc(t("tn.hero.aria"))}">${st.map(([ik, n, l]) => `<div>${ikon(ik, 22)}<dd>${esc(n === 1999 ? "1999" : angka(Number(n)))}</dd><dt>${esc(l)}</dt></div>`).join("")}</dl></div></section>`;
 }
 
-const pita = (m) => `<section class="tn-kredit" aria-label="${esc(t("tn.mitra.kerja"))}"><div class="wrap"><p>${esc(t("tn.mitra.judul_n", { judul: t("tn.mitra.kerja"), n: m.mitra.length }))}</p></div>${jalur(m.mitra, tbl)}</section>`;
+const pita = (m) => `<section class="tn-kredit" aria-label="${esc(t("tn.mitra.kerja"))}"><div class="wrap"><p>${esc(t("tn.mitra.kerja"))}</p></div>${jalur(m.mitra, tbl)}</section>`;
 
 function mengapa(f) {
   const st = [["kalender", "1999", t("tn.stat.berdiri")], ["tautan", angka(f.anggota), t("tn.stat.anggota")], ["orang", angka(f.pengurus), t("tn.stat.pengurus")]];
@@ -74,7 +74,7 @@ function struktur(p) {
 }
 
 function mitra(m) {
-  const grup = (kunci, a, fn, balik) => `<h3 class="tn-sub tn-tengah">${esc(t("tn.mitra.judul_n", { judul: t(kunci), n: a.length }))}</h3>${jalur(a, fn, balik)}`;
+  const grup = (kunci, a, fn, balik) => `<h3 class="tn-sub tn-tengah">${esc(t(kunci))}</h3>${jalur(a, fn, balik)}`;
   return `<section class="seksi kertas" id="mitra" aria-labelledby="tn-mitra">${bandL("tn-mitra", "/img/tentang/panas-bumi.webp", "50% 50%", t("tn.mitra.h2"), t("tn.mitra.pengantar", { tanggal: tanggal(m.diambil) }))}
   <div class="wrap">${grup("tn.mitra.kerja", m.mitra, tbl)}${grup("tn.mitra.anggota", m.anggota, tbl, true)}${grup("tn.mitra.asosiasi", m.asosiasi, tblAsos)}<p class="tn-tengah tn-pangkal"><a class="tn-lanjut" href="${esc(m.sumber)}" target="_blank" rel="noopener noreferrer">${esc(t("tn.mitra.lengkap"))}</a></p></div></section>`;
 }
@@ -82,7 +82,7 @@ function mitra(m) {
 function metode() {
   const ik = ["direktori", "jejak", "ubah"];
   return `<section class="seksi putih" id="metode" aria-labelledby="tn-met">${bandL("tn-met", "/img/tentang/bayu.webp", "50% 50%", t("tn.met.h2"), t("tn.met.lead"))}
-  <div class="wrap"><ol class="tn-pilar">${[1, 2, 3].map((n, i) => `<li><span class="tn-no">${ikon(ik[i], 22)}<i>0${n}</i></span><h3>${esc(t("tn.met." + n))}</h3></li>`).join("")}</ol><p class="tn-kanan"><a class="tn-lanjut" href="/metode">${esc(t("tn.met.lihat"))}</a></p></div></section>`;
+  <div class="wrap"><ol class="tn-pilar">${[1, 2, 3].map((n, i) => `<li><span class="tn-no">${ikon(ik[i], 22)}</span><h3>${esc(t("tn.met." + n))}</h3></li>`).join("")}</ol><p class="tn-kanan"><a class="tn-lanjut" href="/metode">${esc(t("tn.met.lihat"))}</a></p></div></section>`;
 }
 
 function kontak() {

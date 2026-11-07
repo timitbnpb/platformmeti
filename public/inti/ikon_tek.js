@@ -23,7 +23,7 @@ const TEK_ADA = new Set(["surya", "bayu", "hidro", "panas-bumi", "bioenergi", "b
 const kecil = (svg) => svg.replace('class="jm-ikt"', 'class="jm-ikt jm-ikt-s"');
 export const pilTek = (kode) => {
   if (!kode) return "-";
-  const lab = ada("pj.tek." + kode) ? t("pj.tek." + kode) : kode;
+  const lab = ada("pj.tek.s." + kode) ? t("pj.tek.s." + kode) : ada("pj.tek." + kode) ? t("pj.tek." + kode) : kode;
   return `<span class="jm-pil-tek jm-tek-${TEK_ADA.has(kode) ? kode : "lain"}">${kecil(ikonTek(kode))}<span>${esc(lab)}</span></span>`;
 };
 

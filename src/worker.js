@@ -3,6 +3,7 @@ import { rute as ruteSesi } from "./sesi.js";
 import { rute as ruteAkun } from "./akun.js";
 import { rute as ruteDirektori } from "./direktori.js";
 import * as hak from "./hak.js";
+import { halamanProfil } from "./profil.js";
 import { gagal, json, sha } from "./util.js";
 
 const rutePemilik = {
@@ -70,7 +71,7 @@ export async function muatSesi(req, env) {
 
 const TERKUNCI = [
   { re: /^\/direktori\/?$/, aset: "/direktori", peran: null, ke: "/direktori" },
-  { re: /^\/admin(\/.*)?$/, aset: "/admin", peran: ["pengurus", "kurator", "admin", "super"], ke: "/admin" },
+  { re: /^\/admin(\/.*)?$/, aset: "/admin", peran: ["admin", "super"], ke: "/admin" },
 ];
 const TIDAK_ADA = () => new Response("Tidak ditemukan", { status: 404, headers: { "content-type": "text/plain; charset=utf-8" } });
 const LANGSUNG_404 = /^\/(direktori|admin)\.html$/;
@@ -94,9 +95,8 @@ async function halaman(req, env, url) {
     return halamanPrivat(await env.ASSETS.fetch(new Request(new URL(k.aset, url), req)));
   }
   let m;
-  if ((m = path.match(/^\/p\/([^/]+)$/))) {
-    if (!/^[a-z0-9-]{2,60}$/.test(m[1])) return TIDAK_ADA();
-    return env.ASSETS.fetch(new Request(new URL("/p", url), req));
+  if ((m = path.match(/^\/([op])\/([^/]+)$/)) && (req.method === "GET" || req.method === "HEAD")) {
+    return (await halamanProfil(req, env, url, m[1], m[2])) ?? TIDAK_ADA();
   }
   if ((m = path.match(/^\/wilayah\/([^/]+)$/))) {
     if (!/^\d{2}$/.test(m[1])) return TIDAK_ADA();

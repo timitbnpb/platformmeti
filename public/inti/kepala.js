@@ -22,14 +22,14 @@ const TAB = [
   { href: "/kalender", kunci: "nav.kalender", ikon: "kalender", hak: null },
   { href: "/direktori", kunci: "nav.direktori", ikon: "direktori", hak: "masuk" },
   { href: "/tentang", kunci: "nav.tentang", ikon: "info", hak: null },
-  { href: "/admin", kunci: "nav.admin", ikon: "perisai", hak: "staf" },
+  { href: "/admin", kunci: "nav.admin", ikon: "perisai", hak: "admin" },
 ];
 
 const BENDERA = {
   id: '<svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" focusable="false"><clipPath id="bid"><circle cx="12" cy="12" r="11"/></clipPath><g clip-path="url(#bid)"><rect width="24" height="12" fill="#E70011"/><rect y="12" width="24" height="12" fill="#fff"/></g><circle cx="12" cy="12" r="10.75" fill="none" stroke="currentColor" stroke-opacity=".25" stroke-width=".5"/></svg>',
   en: '<svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" focusable="false"><clipPath id="ben"><circle cx="12" cy="12" r="11"/></clipPath><g clip-path="url(#ben)"><rect width="24" height="24" fill="#012169"/><path d="M0 0l24 24M24 0L0 24" stroke="#fff" stroke-width="4"/><path d="M0 0l24 24M24 0L0 24" stroke="#C8102E" stroke-width="1.6"/><path d="M12 0v24M0 12h24" stroke="#fff" stroke-width="6"/><path d="M12 0v24M0 12h24" stroke="#C8102E" stroke-width="3.2"/></g><circle cx="12" cy="12" r="10.75" fill="none" stroke="currentColor" stroke-opacity=".25" stroke-width=".5"/></svg>' };
 
-const boleh = (hak, s) => hak === null || (hak === "masuk" && s.masuk) || (hak === "staf" && s.masuk && STAF.includes(s.peran));
+const boleh = (hak, s) => hak === null || (hak === "masuk" && s.masuk) || (hak === "staf" && s.masuk && STAF.includes(s.peran)) || (hak === "admin" && s.masuk && ["admin", "super"].includes(s.peran));
 
 async function ambilSaya() {
   try { return await api("/api/saya"); } catch (e) { return { masuk: false, galat: true }; }

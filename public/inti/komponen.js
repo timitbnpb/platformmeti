@@ -93,3 +93,14 @@ if (typeof document !== "undefined" && !window.__jmUrut) {
   new MutationObserver(() => { clearTimeout(window.__jmUrutT); window.__jmUrutT = setTimeout(jalan, 60); }).observe(document.documentElement, { childList: true, subtree: true });
   if (document.readyState !== "loading") jalan(); else document.addEventListener("DOMContentLoaded", jalan);
 }
+
+/* Unduh naskah regulasi (pemilik 7 Nov 2026: tiap penyebutan regulasi di mana pun WAJIB punya ikon unduh PDF langsung + tautan sumber).
+   r = baris regulasi (url_pdf, url_sumber, judul). */
+const httpOk = (u) => /^https?:\/\//i.test(String(u || ""));
+export const unduhRegHtml = (r) => {
+  if (!r) return "";
+  const nama = esc(r.judul || r.nomor || "");
+  const pdf = httpOk(r.url_pdf) ? `<a class="jm-reg-ik" href="${esc(r.url_pdf)}" target="_blank" rel="noopener noreferrer" download title="${esc(t("reg.unduh"))}" aria-label="${esc(t("reg.unduh"))}: ${nama}">${ikon("pdf", 18)}</a>` : "";
+  const src = httpOk(r.url_sumber) ? `<a class="jm-reg-ik" href="${esc(r.url_sumber)}" target="_blank" rel="noopener noreferrer" title="${esc(t("reg.naskah"))}" aria-label="${esc(t("reg.naskah"))}: ${nama}">${ikon("tautan", 18)}</a>` : "";
+  return pdf || src ? `<span class="jm-reg-iks">${pdf}${src}</span>` : "";
+};

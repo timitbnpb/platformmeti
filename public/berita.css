@@ -177,3 +177,5 @@ button.brt-bb-r:hover .brt-bb-n{color:var(--accent)}
 .jm-tek-penyimpanan .brt-bb-i{fill:var(--ink2)}.jm-tek-penyimpanan .brt-bb-n .jm-ikt,.jm-tek-penyimpanan .brt-bb-n .jm-ik{color:var(--ink2)}
 .jm-tek-nuklir .brt-bb-i{fill:var(--bad)}.jm-tek-nuklir .brt-bb-n .jm-ikt,.jm-tek-nuklir .brt-bb-n .jm-ik{color:var(--bad)}
 .jm-tek-lain .brt-bb-i{fill:var(--ink2)}.jm-tek-lain .brt-bb-n .jm-ikt,.jm-tek-lain .brt-bb-n .jm-ik{color:var(--ink2)}
+.brt-bb li:has(.jm-reg-iks){display:flex;align-items:center;gap:8px}
+.brt-bb li:has(.jm-reg-iks)>.brt-bb-r{flex:1;min-width:0;width:auto}

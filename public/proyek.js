@@ -5,8 +5,10 @@ import { esc, nanti, debounce, hantuHtml, galatHtml, ikon } from "/inti/umum.js"
 import { mulaiHalaman } from "/inti/kepala.js";
 import { muatMapLibre } from "/inti/maplibre.js";
 import { lapisAnggota, anggotaDl } from "/publik.js";
-import { sumberHtml, exHtml } from "/inti/komponen.js";
+import { sumberHtml, exHtml, unduhRegHtml } from "/inti/komponen.js";
 import { ikonTek, pilTek, pilStatus } from "/inti/ikon_tek.js";
+import { PROV } from "/penerbit.js";
+import { geserPanel } from "/inti/panel_geser.js";
 import { aksiHtml } from "/inti/aksi_ex.js";
 
 const $ = (id) => document.getElementById(id);
@@ -46,7 +48,10 @@ try {
 /* ---------- bentuk baris ---------- */
 /* nama dari Wikidata sering berbahasa Inggris ("Agam hydro"); pakai nama_lain berawalan PLT bila ada ("PLTA Agam") */
 const ID_POLA = [[/^(.+?) floating solar$/i, "PLTS Terapung $1"], [/^(.+?) pumped storage(?: hydro)?(.*)$/i, "PLTA pumped storage $1$2"], [/^(.+?) hydro(?:power)?(?: project)?$/i, "PLTA $1"], [/^(.+?) geothermal$/i, "PLTP $1"], [/^(.+?) wind(?: farm)?$/i, "PLTB $1"]];
-const namaId = (p) => {
+/* "PLTSa PLTSa Palembang" -> "PLTSa Palembang"; "Energi asal sampah X (PSN nomor 154)" -> "PSEL X" + penanda PSN terpisah */
+const bersihNama = (n) => n.replace(/\s*\(PSN nomor \d+\)/i, "").replace(/^Energi asal sampah\s+/i, "PSEL ").replace(/\b([\p{L}\d]+)(\s+\1\b)+/giu, "$1").trim();
+const namaId = (p) => bersihNama(namaIdMentah(p));
+const namaIdMentah = (p) => {
   const n = p.nama || "";
   if (/^PLT/i.test(n)) return n;
   const lain = (p.nama_lain || []).find((x) => /^PLT[A-Za-z]*\s/.test(x) && !/power|plant/i.test(x));
@@ -54,6 +59,14 @@ const namaId = (p) => {
   for (const [re, to] of ID_POLA) if (re.test(n)) return n.replace(re, to);
   return n;
 };
+/* pengembang: nama perusahaan bila ada; "IPP", "SH-PLN" dan sejenisnya bukan nama perusahaan */
+const GENERIK = /^(ipp|sh-pln|pln|swasta|pemerintah|-)$/i;
+function pengembang(p) {
+  const ph = p.pihak || {}, daftar = ph.pemilik || ph.pengembang || Object.values(ph)[0] || [], x = daftar[0];
+  if (!x || !x.nilai) return null;
+  const generik = GENERIK.test(x.nilai.trim()) || /bukan nama perusahaan/i.test(x.catatan || "");
+  return { nama: /^(sh-)?pln$/i.test(x.nilai.trim()) ? "PLN" : x.nilai, ipp: /^ipp$/i.test(x.nilai.trim()), id: x.organisasi_id || "", generik, lebih: daftar.length - 1 };
+}
 const SEMUA = DATA.baris.map((p) => {
   const k = (p.kapasitas || [])[0];
   const cods = (p.cod_target || []).map((x) => x.nilai).filter(Number.isFinite);
@@ -64,6 +77,7 @@ const SEMUA = DATA.baris.map((p) => {
     p, id: p.id, nama: namaId(p), tek: p.teknologi || "", st: ((p.status || [])[0] || {}).nilai || TIDAK,
     prog: p.program_ids || p.programs || (p.program ? [p.program] : []), prov: L.provinsi || "", kab, pemilik,
     kap: k && Number.isFinite(k.nilai) ? k.nilai : null, sat: (k && k.satuan) || "MW",
+    psn: /\(PSN nomor \d+\)/i.test(p.nama || ""), peng: pengembang(p),
     cod: cods.length ? Math.min(...cods) : null, ada: Number.isFinite(L.lat) && Number.isFinite(L.lng),
   };
   r.telat = r.cod !== null && r.cod < TAHUN && r.st !== "beroperasi" ? TAHUN - r.cod : 0;
@@ -210,23 +224,37 @@ function gambarCorong() {
 }
 
 /* ---------- tabel (urut + paging) ---------- */
-const selNama = (r) => {
-  const ket = [...r.prog.map(progNama), r.pemilik].filter(Boolean).join(", ");
-  return `<span class="jm-id"><b><a class="jm-pj-nm" href="#${esc(r.id)}">${esc(r.nama)}</a></b>${r.p.nama_perlu_tinjau ? `<span class="jm-pj-tinjau">${esc(t("pj.tinjau"))}</span>` : ""}${ket ? `<small>${esc(ket)}</small>` : ""}</span>`;
+const selNama = (r) => `<span class="jm-id"><b><a class="jm-pj-nm" href="/p/${esc(r.id)}">${esc(r.nama)}</a></b>${r.p.nama_perlu_tinjau ? `<span class="jm-pj-tinjau">${esc(t("pj.tinjau"))}</span>` : ""}</span>`;
+const progIds = (r) => (r.psn && !r.prog.includes("psn") ? [...r.prog, "psn"] : r.prog);
+const PROG_PIL = { ruptl: "RUPTL", "plts-100gw": "PLTS 100 GWp", wte: "WtE", psn: "PSN", jetp: "JETP", b50: "B50", e20: "E20" };
+const selProg = (r) => {
+  const a = progIds(r);
+  if (!a.length) return "-";
+  return `<span class="jm-pj-progsel"><a class="jm-pil-prog" href="#program-${esc(a[0])}" title="${esc(progNama(a[0]))}">${ikProg(a[0]).replace('class="jm-ikt"', 'class="jm-ikt jm-ikt-s"')}<span>${esc(PROG_PIL[a[0]] || progNamaPendek(a[0]))}</span></a>${a.length > 1 ? `<small>+${a.length - 1}</small>` : ""}</span>`;
 };
+const selPeng = (r) => {
+  const x = r.peng;
+  if (!x) return `<span class="jm-bantu">-</span>`;
+  if (x.generik) return `<span class="jm-pil-muted">${esc(x.ipp ? t("pj.p.ipp") : x.nama)}</span>`;
+  const nm = esc(x.nama);
+  return `<span class="jm-pj-peng">${x.id ? `<a href="/o/${esc(x.id)}">${nm}</a>` : `<span>${nm}</span>`}${x.lebih > 0 ? `<small>+${x.lebih}</small>` : ""}</span>`;
+};
+const selProvL = (r) => (r.prov ? `<span class="jm-pj-provsel">${lambangProv(r.prov)}<span>${esc(r.prov)}</span></span>` : "-");
+const lambangProv = (prov) => { const k = PROV[String(prov || "").trim().toLowerCase()]; return k ? `<img src="/img/provinsi/${k}.png" width="18" height="18" alt="" loading="lazy" decoding="async">` : ""; };
 const selTek = (r) => pilTek(r.tek);
 const selKap = (r) => (r.kap === null ? "-" : `<span>${num(r.kap)} <span class="jm-pj-sat">${esc(r.sat)}</span></span>`);
-const selProv = (r) => esc(r.prov || "-");
 const selSt = (r) => pilSt(r.st);
 const selCod = (r) => (r.cod === null ? "-" : r.cod);
-const selTelat = (r) => `<span class="jm-pj-telat jm-pj-telat-${r.telat >= 3 ? "b" : "w"}"><b>${esc(t("pj.telat.singkat", { n: r.telat }))}</b><span class="jm-pj-telat-t"><i data-w="${Math.min(r.telat, 5) * 20}"></i></span></span>`;
+const JAM = '<svg class="jm-ikt jm-ikt-s" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>';
+const selTelat = (r) => `<span class="jm-pil-telat${r.telat >= 2 ? " jm-pil-telat-b" : ""}">${JAM}<span>${esc(t("pj.telat.singkat", { n: r.telat }))}</span></span>`;
 const kolomDasar = [
-  ["nama", "pj.c.nama", selNama, ""], ["tek", "pj.c.tek", selTek, "jm-tengah"], ["kap", "pj.c.kap", selKap, "jm-num"],
-  ["prov", "pj.c.prov", selProv, "jm-tengah"], ["st", "pj.c.status", selSt, "jm-tengah"], ["cod", "pj.c.cod", selCod, "jm-tengah"],
+  ["nama", "pj.c.nama", selNama, ""], ["tek", "pj.c.tek", selTek, "jm-tengah"], ["progS", "pj.c.program2", selProg, "jm-tengah"], ["pengS", "pj.c.pengembang", selPeng, "jm-tengah"],
+  ["kap", "pj.c.kap", selKap, "jm-num"], ["prov", "pj.c.prov", selProvL, ""], ["st", "pj.c.status", selSt, "jm-tengah"], ["cod", "pj.c.cod", selCod, "jm-tengah"],
 ];
 const kolomPeta = [null, "pj.c.maps", mapsTbl, "jm-pj-aksi"];
 const kolomDaftar = [...kolomDasar, [null, "pj.c.sumber", sumberRingkas, "jm-tengah jm-pj-src"], kolomPeta];
 const kolomTelat = [...kolomDasar, ["telat", "pj.c.telat", selTelat, "jm-tengah"], kolomPeta];
+for (const r of SEMUA) { r.progS = r.prog.length ? progNamaPendek(r.prog[0]) : ""; r.pengS = r.peng ? r.peng.nama : ""; }
 const TD = { el: "pjDaftar", kolom: kolomDaftar, k: "nama", arah: 1, n: BATAS, baris: () => tampil };
 const TT = { el: "pjTelat", kolom: kolomTelat, k: "telat", arah: -1, n: BATAS, baris: () => tampil.filter((r) => r.telat) };
 const bandingkan = (k, a) => (x, y) => {
@@ -402,11 +430,17 @@ function sorotPeta(r) {
 }
 /* padding peta mengikuti lebar panel melayang supaya Indonesia memenuhi ruang bebas di antaranya */
 const padPanel = () => {
-  const lebar = innerWidth >= 1000, kiri = $("pjLapis"), kanan = $("pjDrawer");
-  return { top: 72, bottom: 48, left: lebar ? kiri.offsetWidth + 24 : 12, right: lebar && kanan.open ? kanan.offsetWidth + 24 : 12 };
+  const box = $("pjPeta").getBoundingClientRect(), p = { top: 72, bottom: 48, left: 12, right: 12 };
+  if (innerWidth < 1000) return p;
+  for (const id of ["pjLapis", "pjDrawer"]) {
+    const r = $(id).getBoundingClientRect(), tengah = r.left + r.width / 2 - box.left;
+    if (tengah < box.width / 2) p.left = Math.max(p.left, r.right - box.left + 24); else p.right = Math.max(p.right, box.right - r.left + 24);
+  }
+  return p;
 };
 function pasIndonesia() { if (peta && !Object.values(F).some(Boolean)) peta.fitBounds([[94, -11.5], [141.5, 6.5]], { padding: padPanel(), duration: 350 }); }
-for (const id of ["pjLapis", "pjDrawer"]) $(id).addEventListener("toggle", () => nanti(pasIndonesia));
+for (const id of ["pjLapis", "pjDrawer"]) { $(id).addEventListener("toggle", () => nanti(pasIndonesia)); $(id).addEventListener("jm:geser", () => nanti(pasIndonesia)); }
+if (innerWidth >= 1000) { geserPanel($("pjLapis"), { kunci: "lapis" }); geserPanel($("pjDrawer"), { kunci: "drawer" }); }
 function bukaPeta() {
   muatMapLibre().then(() => {
     peta = new maplibregl.Map({ container: "pjPeta", style: gaya(), bounds: [[94, -11.5], [141.5, 6.5]], fitBoundsOptions: { padding: padPanel() }, minZoom: 3, maxZoom: 16, dragRotate: false, pitchWithRotate: false, attributionControl: { compact: true } });
@@ -480,36 +514,38 @@ $("pjPanel").addEventListener("click", (e) => {
 /* ---------- program ---------- */
 const ST_BAR = ["rencana", "izin", "pendanaan", "konstruksi", "beroperasi", "dibatalkan", TIDAK];
 const IMG = (f) => `/img/beranda/${f}.webp`;
-const IMG_PROG = { "plts-100gw": IMG("surya-cirata"), wte: IMG("biomassa-bantargebang"), b50: IMG("bioenergi-sawit"), e20: IMG("bioetanol-tebu"), ruptl: IMG("hidro-saguling"), psn: IMG("panas-bumi-sibayak"), jetp: IMG("bayu-sidrap") };
+const IMG_PROG = { "plts-100gw": IMG("surya-cirata"), wte: IMG("sampah-psel"), b50: IMG("bioenergi-sawit"), e20: IMG("bioetanol-tebu"), ruptl: IMG("hidro-saguling"), psn: IMG("panas-bumi-sibayak"), jetp: IMG("bayu-sidrap") };
 const IMG_TEK = { surya: IMG("surya-cirata"), bayu: IMG("bayu-sidrap"), hidro: IMG("hidro-saguling"), "panas-bumi": IMG("panas-bumi-sibayak"), bioenergi: IMG("bioenergi-sawit"), "biomassa-sampah": IMG("biomassa-bantargebang"), nuklir: IMG("nuklir-siwabessy"), penyimpanan: IMG("penyimpanan-baterai") };
 const TEK_PROG = { "plts-100gw": "surya", wte: "biomassa-sampah", b50: "bioenergi", e20: "bioenergi" };
 const ikProg = (id) => ikonTek(TEK_PROG[id] || "jaringan");
 /* satuan kapasitas program: MWp bila mayoritas proyeknya MWp (PLTS), selain itu MW */
 const satuanProg = (rows) => { const c = hitung(rows.filter((r) => r.kap !== null), (r) => r.sat); return (c.MWp || 0) > (c.MW || 0) ? "MWp" : "MW"; };
 const kapTeks = (mw, sat = "MW") => (mw >= 10000 ? `${num(mw / 1000, 1)} G${sat.slice(1)}` : `${num(mw, 0)} ${sat}`);
+const kapKecil = (mw, sat) => { const [v, u] = mw >= 10000 ? [num(mw / 1000, 1), "G" + sat.slice(1)] : [num(mw, 0), sat]; return `${esc(v)} <small>${esc(u)}</small>`; };
 const legPil = (per) => `<ul class="jm-pj-leg">${ST_BAR.filter((k) => per[k]).map((k) => `<li>${pilStatus(k)}<b>${num(per[k])}</b></li>`).join("")}</ul>`;
 const barTumpuk = (per, tot) => `<div class="jm-pj-tumpuk" role="img" aria-label="${esc(ST_BAR.filter((k) => per[k]).map((k) => labSt(k) + " " + per[k]).join(", "))}">${ST_BAR.filter((k) => per[k]).map((k) => `<i class="jm-pj-s-${k}" data-w="${(per[k] / tot) * 100}"></i>`).join("")}</div>`;
 function tekBaris(id) {
   const c = hitung(SEMUA.filter((r) => r.prog.includes(id) && r.tek), (r) => r.tek), ks = Object.keys(c).sort((a, b) => c[b] - c[a]);
   return ks.length ? `<ul class="jm-pj-pk-tek">${ks.map((k) => `<li>${pilTek(k)}<b>${num(c[k])}</b></li>`).join("")}</ul>` : "";
 }
+/* program tanpa proyek: blok warna lembut berisi angka/dasar hukum, bukan kotak putus-putus */
 function dasarKosong(g) {
-  const al = (g.alokasi_bbn || []).find((x) => x.jenis === "alokasi" && x.total_kl);
+  const al = (g.alokasi_bbn || []).filter((x) => x.jenis === "alokasi" && x.total_kl).sort((a, b) => b.tahun - a.tahun)[0];
   const nreg = (g.regulasi_ids || []).length;
-  const baris = [al ? `<li><b>${esc(t("pj.alokasi", { tahun: al.tahun, n: num(al.total_kl / 1e6, 1) }))}</b><small>${esc(al.dasar_hukum)}</small></li>` : "",
-    nreg ? `<li data-reg="${esc(g.id)}"><b>${esc(t("pj.dasar"))}</b><small>${esc(t("pj.prog.nreg", { n: num(nreg) }))}</small></li>` : ""].join("");
-  return `<ul class="jm-pj-dasar">${baris || `<li><b>${esc(t("pj.dasar"))}</b><small>${esc(g.ringkas || "")}</small></li>`}</ul>`;
+  if (al) return `<div class="jm-pj-blok"><b>${esc(t("pj.alokasi", { tahun: al.tahun, n: num(al.total_kl / 1e6, 1) }))}</b><span>${esc(t("pj.dasar"))}: ${esc(al.dasar_hukum)}</span></div>`;
+  return `<div class="jm-pj-blok"><b>${esc(t("pj.prog.nreg", { n: num(nreg) }))}</b><span data-reg="${esc(g.id)}">${esc(t("pj.dasar"))}: ${esc(g.ringkas || "")}</span></div>`;
 }
+const legTitik = (per) => `<ul class="jm-pj-leg2">${ST_BAR.filter((k) => per[k]).map((k) => `<li><span class="jm-pj-s-${k}" aria-hidden="true"></span><b>${num(per[k])}</b> ${esc(labSt(k).toLowerCase())}</li>`).join("")}</ul>`;
 function gambarProg() {
   $("pjProg").innerHTML = PROG.baris.map((g, i) => {
     const rows = SEMUA.filter((r) => r.prog.includes(g.id)), per = g.per_status || {}, tot = g.jumlah_proyek || 0, nreg = (g.regulasi_ids || []).length, sat = satuanProg(rows);
     const punyaKap = tot && g.kapasitas_mw;
-    const isi = tot ? `${tekBaris(g.id)}<div class="jm-pj-pk-bar">${barTumpuk(per, tot)}</div>${legPil(per)}` : dasarKosong(g);
-    const kaki = tot ? t("pj.prog.lihat", { n: num(tot) }) : t(nreg ? "pj.prog.reg" : "pj.prog.buka");
-    return `<a class="jm-pj-pk jm-pj-pg-${i % 5}" href="#program-${esc(g.id)}"><div class="jm-pj-pk-gb">${IMG_PROG[g.id] ? `<img src="${IMG_PROG[g.id]}" alt="" width="800" height="450" loading="lazy" decoding="async">` : ""}<span class="jm-pj-pk-ik">${ikProg(g.id)}</span></div>
-      <div class="jm-pj-pk-isi"><h3>${esc(g.nama)}</h3><p class="jm-pj-pk-desk">${esc(g.ringkas || "")}</p>
-      <dl class="jm-pj-pk-stat"><div><dt>${esc(t("pj.prog.proyek"))}</dt><dd>${num(tot)}</dd></div><div><dt>${esc(t("pj.c.kap"))}</dt><dd${punyaKap ? "" : ` class="jm-pj-redup" title="${esc(t("pj.prog.belum.ket"))}"`}>${punyaKap ? esc(kapTeks(g.kapasitas_mw, sat)) : "-"}</dd></div><div><dt>${esc(t("pj.rel.reg"))}</dt><dd>${num(nreg)}</dd></div></dl>
-      ${isi}<span class="jm-pj-link">${esc(kaki)}</span></div></a>`;
+    const isi = tot ? `<div class="jm-pj-pk-bar">${barTumpuk(per, tot)}</div>${legTitik(per)}` : dasarKosong(g);
+    const kaki = (tot ? t("pj.prog.lihat", { n: num(tot) }) : t(nreg ? "pj.prog.reg" : "pj.prog.buka")).replace(/\s*\u2192\s*$/, "");
+    return `<a class="jm-pj-pk jm-pj-pg-${i % 5}" href="#program-${esc(g.id)}"><div class="jm-pj-pk-gb">${IMG_PROG[g.id] ? `<img src="${IMG_PROG[g.id]}" alt="" width="800" height="450" loading="lazy" decoding="async">` : ""}<span class="jm-pj-pk-ik">${ikProg(g.id)}</span><h3>${esc(g.nama)}</h3></div>
+      <div class="jm-pj-pk-isi"><p class="jm-pj-pk-desk">${esc(g.ringkas || "")}</p>
+      <dl class="jm-pj-pk-stat"><div><dt>${esc(t("pj.prog.proyek"))}</dt><dd>${num(tot)}</dd></div><div><dt>${esc(t("pj.c.kap"))}</dt><dd${punyaKap ? "" : ` class="jm-pj-redup" title="${esc(t("pj.prog.belum.ket"))}"`}>${punyaKap ? kapKecil(g.kapasitas_mw, sat) : "-"}</dd></div><div><dt>${esc(t("pj.rel.reg"))}</dt><dd${nreg ? "" : ' class="jm-pj-redup"'}>${nreg ? num(nreg) : "-"}</dd></div></dl>
+      ${isi}<span class="jm-pj-link">${esc(kaki)} <span aria-hidden="true">\u2192</span></span></div></a>`;
   }).join("");
   for (const i of $("pjProg").querySelectorAll("i[data-w]")) i.style.width = i.dataset.w + "%";
   isiDasar();
@@ -521,10 +557,10 @@ async function isiDasar() {
     const rg = await lazy("/data/regulasi.json");
     for (const el of els) {
       const g = PROG.baris.find((x) => x.id === el.dataset.reg), ids = new Set(g.regulasi_ids || []);
-      const x = rg.baris.filter((r) => ids.has(r.id)).slice(0, 2);
-      if (x.length) el.querySelector("small").textContent = x.map((r) => r.judul).join("; ");
+      const x = rg.baris.find((r) => ids.has(r.id));
+      if (x) el.textContent = `${t("pj.dasar")}: ${regPil(x)} ${x.judul}`;
     }
-  } catch (e) { /* tetap tampil jumlah regulasi */ }
+  } catch (e) { /* tetap tampil ringkasan */ }
 }
 /* ---------- profil: lembar dari kanan (gaya lembar direktori), tautan dalam #id ---------- */
 const dlg = $("pjProfil");
@@ -543,32 +579,58 @@ const daftarNilai = (a, f) => `<ul class="jm-pj-nilai">${a.map((x) => `<li>${f(x
 const ikTutup = ikon("tutup", 22);
 const tile = (k, v, redup) => `<div class="jm-pj-tile"><b${redup ? ' class="jm-pj-redup"' : ""}>${v}</b><span>${esc(t(k))}</span></div>`;
 
+const tile2 = (k, v) => `<div class="jm-pj-tile jm-pj-tile2"><span>${esc(t(k))}</span><div class="jm-pj-tv">${v}</div></div>`;
+const regBaris = (x) => `<li><a class="jm-pj-regl-a" href="/regulasi?id=${encodeURIComponent(x.id)}"><span class="jm-pil jm-pj-regkode">${esc(regPil(x))}</span><span class="jm-pj-regjudul">${esc(x.judul)}</span></a>${x.status ? `<span class="jm-pil jm-pj-regst">${esc(x.status)}</span>` : ""}${unduhRegHtml(x)}</li>`;
+const ringkasSumber = (s) => {
+  const hlm = s.halaman, u = urlAman(s.url);
+  const bag = [esc(namaSumber(s)), esc(tanggal(s.tanggal))]; if (hlm) bag.push(esc(hlm));
+  return bag.join(", ") + (u ? ` <a href="${esc(u)}" target="_blank" rel="noopener noreferrer">${esc(t("pj.sumber.buka"))}</a>` : "");
+};
 function profilHtml(r) {
-  const p = r.p, L = p.lokasi || {};
-  const bag = [];
+  const p = r.p, L = p.lokasi || {}, src = new Map((p.sumber || []).map((x) => [x.id, x]));
+  /* id sumber internal tidak pernah tampil: hanya ikon info kecil yang membuka nama sumber, tanggal, dan tautan */
+  const ref = (id) => (src.has(id) ? `<sup class="jm-pj-ref">${sumberHtml(ringkasSumber(src.get(id)), namaSumber(src.get(id)))}</sup>` : "");
   const baris = [labTek(r.tek), r.prov, ...r.prog.map(progNama)].filter(Boolean).join(", ");
-  const tahap = r.telat ? t("pj.telat.tahun", { n: r.telat }) : labSt(r.st);
-  if (r.ada || r.prov) {
-    bag.push(laci("lokasi", `${r.ada ? `<div id="pjMini" class="jm-pj-mini"></div>` : ""}<div class="jm-pj-lokbaris"><span>${esc([r.kab, r.prov].filter(Boolean).join(", "))}</span>${r.ada ? `<span class="jm-pj-pilpeta2">${esc(presisiTeks(r))}</span>` : ""}</div>`));
-  }
-  if ((p.kapasitas || []).length) bag.push(laci("teknis", daftarNilai(p.kapasitas, (x) => `<b>${num(x.nilai)} ${esc(x.satuan || "")}</b> ${pilTek(r.tek)}`)));
+  const cods = [...new Set((p.cod_target || []).map((x) => x.nilai))].sort(), aktual = (p.cod_aktual || [])[0];
+  const kiri = [], kanan = [];
+  /* rincian angka */
   const dana = (p.nilai_investasi || []).filter((x) => Number.isFinite(x.nilai));
-  if (dana.length) bag.push(laci("uang", daftarNilai(dana, (x) => `<b>${uang(x)}</b>`)));
-  const kron = [...Object.entries(p.waktu || {}).map(([k, v]) => ["pj.w." + k, v, 0]), ...(p.tanggal_ppa || []).map((x) => ["pj.w.ppa", x.nilai, 0, x.sumber_id]), ...(p.financial_close || []).map((x) => ["pj.w.fc", x.nilai, 0, x.sumber_id]), ...(p.cod_target || []).map((x) => ["pj.w.target", x.nilai, 0, x.sumber_id, x.catatan]), ...(p.cod_aktual || []).map((x) => ["pj.w.aktual", x.nilai, 1, x.sumber_id])]
-    .filter((x) => x[1]).sort((a, b) => String(a[1]).localeCompare(String(b[1])));
-  if (kron.length) bag.push(laci("waktu", `<ol class="jm-pj-garis">${kron.map(([k, v, ok, sid, cat]) => `<li${ok ? ' class="ok"' : ""}><b>${esc(String(v).slice(0, 4))}</b><span><strong>${esc(ada(k) ? t(k) : k.replace("pj.w.", ""))}</strong>${String(v).length > 4 ? ` <small>${esc(tglWaktu(v))}</small>` : ""}${cat ? ` <small>${esc(cat)}</small>` : ""}${sumberRef(sid)}</span></li>`).join("")}</ol>`));
+  const rinci = [...(p.kapasitas || []).map((x) => `<li><b>${num(x.nilai)} ${esc(x.satuan || "")}</b> <span class="jm-pj-redup">${esc(t("pj.c.kap"))}</span>${x.catatan ? `<small>${esc(x.catatan)}</small>` : ""}${ref(x.sumber_id)}</li>`), ...dana.map((x) => `<li><b>${uang(x)}</b> <span class="jm-pj-redup">${esc(t("pj.l.uang"))}</span>${x.catatan ? `<small>${esc(x.catatan)}</small>` : ""}${ref(x.sumber_id)}</li>`)];
+  if (rinci.length > 1 || (p.kapasitas || []).some((x) => x.catatan)) kiri.push(laci("teknis", `<ul class="jm-pj-nilai">${rinci.join("")}</ul>`));
+  /* pihak: nama perusahaan nyata saja yang berlogo dan tertaut; "IPP"/"SH-PLN" ditulis apa adanya dan redup */
   const pihak = Object.entries(p.pihak || {}).flatMap(([peran, a]) => (a || []).map((x) => [peran, x])).filter(([, x]) => x.nilai);
-  if (pihak.length) bag.push(laci("pihak", `<ul class="jm-pj-pihak">${pihak.map(([peran, x]) => `<li><span class="jm-pj-av" aria-hidden="true">${esc(inisial(x.nilai))}</span><span class="jm-pj-pn"><b>${esc(x.nilai)}</b><small>${esc(lab("pj.p.", peran))}</small></span>${x.organisasi_id ? `<a class="jm-pj-pt" href="/direktori#${esc(x.organisasi_id)}" data-org="${esc(x.organisasi_id)}" aria-label="${esc(t("pj.p.direktori"))}: ${esc(x.nilai)}">${ikon("panah-kanan", 18)}</a>` : ""}</li>`).join("")}</ul>`));
-  bag.push(`<section class="jm-pj-bag" id="pjRelBag" hidden></section>`);
-  const sm = [...(p.sumber || []).map((s) => ({ judul: s.dokumen || s.jenis, ket: [s.halaman, t("pj.bukti." + (s.tingkat_bukti || "media")), tanggal(s.tanggal), s.lisensi].filter((v) => v && v !== "-").join(", "), url: urlAman(s.url), id: s.id })),
+  if (pihak.length) kiri.push(laci("pihak", `<ul class="jm-pj-pihak">${pihak.map(([peran, x]) => {
+    const gen = GENERIK.test(x.nilai.trim()) || /bukan nama perusahaan/i.test(x.catatan || "");
+    if (gen) return `<li class="jm-pj-pihak-g"><span class="jm-pj-pn"><b class="jm-pj-redup">${esc(t(/^ipp$/i.test(x.nilai.trim()) ? "pj.p.ipp.ket" : "pj.p.pln.ket"))}</b><small>${esc(lab("pj.p.", peran))}</small></span>${ref(x.sumber_id)}</li>`;
+    return `<li><span class="jm-pj-av" aria-hidden="true">${esc(inisial(x.nilai))}</span><span class="jm-pj-pn">${x.organisasi_id ? `<a href="/o/${esc(x.organisasi_id)}" data-org="${esc(x.organisasi_id)}"><b>${esc(x.nilai)}</b></a>` : `<b>${esc(x.nilai)}</b>`}<small>${esc(lab("pj.p.", peran))}</small></span>${ref(x.sumber_id)}</li>`;
+  }).join("")}</ul>`));
+  const pg = progIds(r);
+  if (pg.length) kiri.push(laci("program", `<ul class="jm-pj-progl">${pg.map((id) => `<li><a class="jm-pil-prog" href="#program-${esc(id)}">${ikProg(id).replace('class="jm-ikt"', 'class="jm-ikt jm-ikt-s"')}<span>${esc(progNama(id))}</span></a></li>`).join("")}</ul>`));
+  kiri.push(`<section class="jm-pj-bag" id="pjRelBag" hidden></section>`);
+  /* lokasi */
+  if (r.ada || r.prov) kanan.push(laci("lokasi", `${r.ada ? `<div id="pjMini" class="jm-pj-mini"></div>` : ""}<div class="jm-pj-lokbaris"><span>${provHtmlSel(r)}</span>${r.ada ? `<span class="jm-pj-pilpeta2">${esc(presisiTeks(r))}</span>` : ""}</div>`));
+  kanan.push(`<section class="jm-pj-bag" id="pjBerBag" hidden></section>`);
+  /* linimasa mendatar */
+  const w = p.waktu || {}, idx = { rencana: 0, izin: 0, pendanaan: 0, konstruksi: 1, beroperasi: 3 }[r.st] ?? -1;
+  const noda = [[t("pj.st.rencana"), w.rencana || w.pengumuman || ""], [t("pj.st.konstruksi"), w.konstruksi || w.mulai_konstruksi || ""], [t("pj.w.target"), cods.join(" / ")], [t("pj.w.aktual"), aktual ? String(aktual.nilai).slice(0, 4) : ""]];
+  const lain = [...(p.tanggal_ppa || []).map((x) => ["pj.w.ppa", x.nilai]), ...(p.financial_close || []).map((x) => ["pj.w.fc", x.nilai])].filter((x) => x[1]);
+  const linimasa = `<ol class="jm-pj-tl">${noda.map(([lb, sub], i) => `<li class="${i < idx ? "sudah" : i === idx ? "kini" : ""}${i === 2 && r.telat ? " telat" : ""}"><span class="jm-pj-tl-t" aria-hidden="true"></span><b>${esc(lb)}</b><small>${esc(sub || "-")}</small></li>`).join("")}</ol>${lain.length ? `<ul class="jm-pj-tl-lain">${lain.map(([k, v]) => `<li><span class="jm-pil">${esc(t(k))}</span> ${esc(tglWaktu(v))}</li>`).join("")}</ul>` : ""}`;
+  /* sumber: nama yang layak dibaca, bukan slug */
+  const sm = [...(p.sumber || []).map((x) => ({ judul: namaSumber(x), ket: [x.halaman, t("pj.bukti." + (x.tingkat_bukti || "media")), tanggal(x.tanggal), x.lisensi].filter((v) => v && v !== "-").join(", "), url: urlAman(x.url) })),
     ...(L.sumber && L.sumber.catatan ? [{ judul: t("pj.lokasi.sumber"), ket: [L.sumber.catatan, L.sumber.lisensi].filter(Boolean).join(", "), url: urlAman(L.sumber.url) }] : [])];
-  if (sm.length) bag.push(laci("sumber", `<ul class="jm-pj-sumberl">${sm.map((s) => `<li>${s.url ? `<a href="${esc(s.url)}" target="_blank" rel="noopener noreferrer">` : "<div>"}<span><b>${esc(s.judul)}</b>${s.id ? sumberRef(s.id) : ""}<small>${esc(s.ket)}</small></span>${s.url ? ikon("tautan", 18) + "</a>" : "</div>"}</li>`).join("")}</ul>`));
-  const tiles = `${tile("pj.c.kap", r.kap === null ? "-" : `${num(r.kap)} <small>${esc(r.sat)}</small>`, r.kap === null)}${tile("pj.c.cod", r.cod === null ? "-" : r.cod, r.cod === null)}${tile(r.telat ? "pj.c.telat" : "pj.c.status", esc(tahap), false)}`;
-  const pilHtml = `${pilSt(r.st)}${r.telat ? pil(t("pj.telat.tahun", { n: r.telat }), "bad") : ""}${pil(t("pj.bukti." + (p.tingkat_bukti || "media")), p.tingkat_bukti === "resmi" ? "ok" : "warn")}${p.nama_perlu_tinjau ? `<span class="jm-pj-tinjau">${esc(t("pj.tinjau"))}</span>` : ""}`;
+  const tahap = r.telat ? t("pj.telat.tahun", { n: r.telat }) : "";
+  const tiles = tile2("pj.c.kap", r.kap === null ? "-" : `<b>${num(r.kap)} <small>${esc(r.sat)}</small></b>${pilTek(r.tek)}`)
+    + tile2("pj.c.status", `${pilSt(r.st)}${tahap ? `<span class="jm-pil jm-pil-bad">${esc(tahap)}</span>` : ""}`)
+    + tile2("pj.c.cod", `<b>${cods.length ? esc(cods.join(" / ")) : "-"}</b>${aktual ? `<small>${esc(t("pj.w.aktual"))} ${esc(String(aktual.nilai).slice(0, 4))}</small>` : ""}`)
+    + tile2("pj.c.prov", `<b>${provHtmlSel(r)}</b>`);
+  const pilHtml = `${pil(t("pj.bukti." + (p.tingkat_bukti || "media")), p.tingkat_bukti === "resmi" ? "ok" : "warn")}${p.nama_perlu_tinjau ? `<span class="jm-pj-tinjau">${esc(t("pj.tinjau"))}</span>` : ""}`;
   const aks = (r.ada ? `<a class="jm-tbl jm-tbl-kecil" href="${mapsUrl(L.lat, L.lng)}" target="_blank" rel="noopener noreferrer">${PIN}<span>${esc(t("pj.maps.pendek"))}</span></a>` : "") + aksiHtml({ csv: false });
   return kepalaModal({ id: r.id, img: IMG_TEK[r.tek], ikonSvg: ikonTek(r.tek), judul: r.nama, ringkas: baris, pilHtml, aks, balik: dlg.dataset.balik || "" })
-    + `<div class="jm-pj-strip"><div class="jm-pj-tiles">${tiles}</div></div><div class="jm-pj-sh-badan jm-pj-dua">${bag.join("")}</div></div>`;
+    + `<div class="jm-pj-strip"><div class="jm-pj-tiles jm-pj-tiles4">${tiles}</div></div><div class="jm-pj-sh-badan"><div class="jm-pj-dua" id="pjDua"><div class="jm-pj-kol" id="pjKiri">${kiri.join("")}</div><div class="jm-pj-kol" id="pjKanan">${kanan.join("")}</div></div>
+    <section class="jm-pj-bag jm-pj-penuhlebar"><h3>${esc(t("pj.l.waktu"))}</h3><div class="jm-pj-kartubag">${linimasa}</div></section>
+    ${sm.length ? `<section class="jm-pj-bag jm-pj-penuhlebar"><h3>${esc(t("pj.l.sumber"))}</h3><div class="jm-pj-kartubag"><ul class="jm-pj-sumberl jm-pj-sumber2">${sm.map((x) => `<li>${x.url ? `<a href="${esc(x.url)}" target="_blank" rel="noopener noreferrer">` : "<div>"}<span><b>${esc(x.judul)}</b><small>${esc(x.ket)}</small></span>${x.url ? ikon("tautan", 18) + "</a>" : "</div>"}</li>`).join("")}</ul></div></section>` : ""}</div></div>`;
 }
+const provHtmlSel = (r) => (r.prov ? `<span class="jm-pj-provsel">${lambangProv(r.prov)}<span>${esc(r.prov)}</span></span>` : "-");
 
 const kepalaModal = ({ id, img, ikonSvg, judul, ringkas, pilHtml = "", aks = "", balik = "" }) => `<div class="jm-ex jm-pj-mex" id="${esc(id)}"><header class="jm-pj-ban">
   <div class="jm-pj-ban-gb">${img ? `<img src="${img}" alt="" decoding="async">` : ""}</div>
@@ -576,51 +638,58 @@ const kepalaModal = ({ id, img, ikonSvg, judul, ringkas, pilHtml = "", aks = "",
   <div class="jm-pj-ban-isi"><span class="jm-pj-logo" aria-hidden="true">${ikonSvg}</span><div class="jm-pj-sh-nama"><h2 class="jm-ex-j" id="pjProfilJudul">${esc(judul)}</h2>${ringkas ? `<p>${esc(ringkas)}</p>` : ""}${pilHtml ? `<div class="jm-pj-sh-pil">${pilHtml}</div>` : ""}</div></div></header>`;
 
 async function isiTerkait(r) {
-  const el = $("pjRelBag");
+  const el = $("pjRelBag"), ber = $("pjBerBag");
   if (!el) return;
   try {
     const [rg, br, og] = await Promise.all([lazy("/data/regulasi.json"), lazy("/data/berita.json"), lazy("/data/organisasi.json")]);
     if (!el.isConnected || dlg.dataset.id !== r.id) return;
-    const ids = new Set(r.p.regulasi_ids || []);
+    const ids = new Set([...(r.p.regulasi_ids || []), ...r.prog.flatMap((id) => (PROG.baris.find((g) => g.id === id) || {}).regulasi_ids || [])]);
     const regs = rg.baris.filter((x) => ids.has(x.id) || (x.proyek_ids || []).includes(r.id));
-    const brs = br.baris.filter((x) => (x.proyek_ids || []).includes(r.id) || (r.p.berita_ids || []).includes(x.id));
-    const item = (judul, ket, url) => `<li>${urlAman(url) ? `<a href="${esc(url)}" target="_blank" rel="noopener noreferrer">` : "<div>"}<span><b>${esc(judul)}</b><small>${esc(ket)}</small></span>${urlAman(url) ? ikon("tautan", 18) + "</a>" : "</div>"}</li>`;
-    el.innerHTML = (regs.length ? `<h3>${esc(t("pj.rel.reg"))}</h3><div class="jm-pj-kartubag"><ul class="jm-pj-sumberl">${regs.map((x) => item(x.judul, `${String(x.jenis || "").toUpperCase()} ${x.nomor || ""}/${x.tahun || ""}, ${x.status || ""}`, x.url_sumber)).join("")}</ul></div>` : "") +
-      (brs.length ? `<h3 class="jm-pj-h3b">${esc(t("pj.rel.ber"))}</h3><div class="jm-pj-kartubag"><ul class="jm-pj-sumberl">${brs.map((x) => item(x.judul, `${x.media || ""}, ${tglIso(x.terbit)}`, x.url)).join("")}</ul></div>` : "");
-    el.hidden = !(regs.length || brs.length);
+    const brs = br.baris.filter((x) => (x.proyek_ids || []).includes(r.id) || (r.p.berita_ids || []).includes(x.id)).slice(0, 5);
+    el.innerHTML = regs.length ? `<h3>${esc(t("pj.rel.reg"))}</h3><div class="jm-pj-kartubag"><ul class="jm-pj-regl">${regs.map(regBaris).join("")}</ul></div>` : "";
+    el.hidden = !regs.length;
+    if (ber) {
+      ber.innerHTML = brs.length ? `<h3>${esc(t("pj.rel.ber"))}</h3><div class="jm-pj-kartubag"><ul class="jm-pj-ber">${brs.map((x) => `<li><a href="${esc(urlAman(x.url) || "#")}" target="_blank" rel="noopener noreferrer"><span class="jm-pj-ber-t" aria-hidden="true">${esc((x.media || "?")[0].toUpperCase())}</span><span><b>${esc(x.judul)}</b><small>${esc(x.media || "")}, ${esc(tglIso(x.terbit))}</small></span></a></li>`).join("")}</ul></div>` : "";
+      ber.hidden = !brs.length;
+    }
     const nama = new Map(og.baris.map((o) => [o.id, o.nama]));
-    for (const a of dlg.querySelectorAll("[data-org]")) if (nama.has(a.dataset.org)) { const b = a.parentElement.querySelector(".jm-pj-pn b"); if (b) b.textContent = nama.get(a.dataset.org); }
+    for (const a of dlg.querySelectorAll("[data-org]")) if (nama.has(a.dataset.org)) { const b = a.querySelector("b"); if (b) b.textContent = nama.get(a.dataset.org); }
+    for (const k of ["pjKiri", "pjKanan"]) { const c = $(k); if (c && !c.querySelector("section:not([hidden])")) c.hidden = true; }
+    $("pjDua").classList.toggle("jm-pj-tunggal", $("pjKanan").hidden || $("pjKiri").hidden);
   } catch (e) { /* data terkait bersifat tambahan; lembar tetap utuh */ }
 }
 
 function miniPeta(r) {
   const el = $("pjMini");
   if (!el) return;
-  muatMapLibre().then(() => {
+  muatMapLibre().then(async () => {
     if (!el.isConnected) return;
-    const z = { titik_persis: 11, kabupaten: 8 }[r.p.lokasi.presisi] || 5;
-    petaMini = new maplibregl.Map({ container: el, style: gaya(), center: [r.p.lokasi.lng, r.p.lokasi.lat], zoom: z, minZoom: 3, maxZoom: 16, dragRotate: false, attributionControl: { compact: true } });
-    petaMini.on("style.load", () => rapikanPeta(petaMini));
-    const m = document.createElement("div"); m.className = "jm-pj-penanda" + (r.p.lokasi.presisi === "titik_persis" ? "" : " kira");
-    new maplibregl.Marker({ element: m }).setLngLat([r.p.lokasi.lng, r.p.lokasi.lat]).addTo(petaMini);
+    const L = r.p.lokasi, prov = L.presisi === "provinsi";
+    const kode = prov ? PROV[String(r.prov).trim().toLowerCase()] : null;
+    const geo = prov && kode ? await (geoProv ??= ambil("/geo/provinsi.json").catch(() => null)) : null;
+    const fit = geo ? geo.features.find((f) => String(f.properties.kode) === String(kode)) : null;
+    const z = { titik_persis: 11, kabupaten: 8 }[L.presisi] || 5;
+    petaMini = new maplibregl.Map({ container: el, style: gaya(), center: [L.lng, L.lat], zoom: z, minZoom: 3, maxZoom: 16, dragRotate: false, attributionControl: { compact: true } });
     petaMini.addControl(new maplibregl.NavigationControl({ showCompass: false }), "bottom-right");
+    if (fit) {
+      const b = new maplibregl.LngLatBounds();
+      for (const poli of fit.geometry.type === "Polygon" ? [fit.geometry.coordinates] : fit.geometry.coordinates) for (const c of poli[0]) b.extend(c);
+      const pas = () => { petaMini.resize(); petaMini.fitBounds(b, { padding: 24, duration: 0, maxZoom: 9 }); };
+      pas();
+      petaMini.on("style.load", () => {
+        pas(); rapikanPeta(petaMini);
+        petaMini.addSource("pv", { type: "geojson", data: fit });
+        petaMini.addLayer({ id: "pv-isi", type: "fill", source: "pv", paint: { "fill-color": warna("--accent-isi"), "fill-opacity": 0.22 } });
+        petaMini.addLayer({ id: "pv-garis", type: "line", source: "pv", paint: { "line-color": warna("--accent-isi"), "line-width": 2 } });
+      });
+      return;
+    }
+    petaMini.on("style.load", () => rapikanPeta(petaMini));
+    const m = document.createElement("div"); m.className = "jm-pj-penanda" + (L.presisi === "titik_persis" ? "" : " kira");
+    new maplibregl.Marker({ element: m }).setLngLat([L.lng, L.lat]).addTo(petaMini);
   }).catch(() => { el.textContent = t("pj.peta.galat"); });
 }
 
-function programHtml(g) {
-  const rows = SEMUA.filter((r) => r.prog.includes(g.id)).sort((a, b) => (b.kap ?? -1) - (a.kap ?? -1) || a.nama.localeCompare(b.nama)), tot = rows.length;
-  const per = hitung(rows, (r) => r.st), mw = jumlahMW(rows), nreg = (g.regulasi_ids || []).length, sat = satuanProg(rows);
-  const docs = hitung(rows, (r) => [...new Set((r.p.sumber || []).map((x) => x.dokumen || x.jenis))]);
-  const baris = rows.slice(0, 100).map((r) => `<tr data-id="${esc(r.id)}"><td data-label="${esc(t("pj.c.nama"))}"><span class="jm-id"><b><a class="jm-pj-nm" href="#${esc(r.id)}">${esc(r.nama)}</a></b><small>${esc(r.prov || "-")}</small></span></td><td class="jm-tengah" data-label="${esc(t("pj.c.tek"))}">${selTek(r)}</td><td class="jm-num" data-label="${esc(t("pj.c.kap"))}">${selKap(r)}</td><td class="jm-tengah" data-label="${esc(t("pj.c.status"))}">${pilSt(r.st)}</td></tr>`).join("");
-  const tiles = `${tile("pj.prog.proyek", num(tot), false)}${tile("pj.c.kap", tot && mw ? esc(kapTeks(mw, sat)) : "-", !(tot && mw))}${tile("pj.rel.reg", num(nreg), false)}`;
-  const aks = (tot ? `<button type="button" class="jm-tbl jm-tbl-kecil" data-tampil="${esc(g.id)}">${esc(t("pj.prog.dipeta"))}</button>` : "") + aksiHtml({ csv: !!tot });
-  const kiri = (tot ? laci("status", barTumpuk(per, tot) + legPil(per)) : laci("dasar", dasarKosong(g))) + `<section class="jm-pj-bag" id="pjRelBag" hidden></section>`
-    + (tot ? laci("sumber", `<ul class="jm-pj-sumberl">${Object.entries(docs).sort((a, b) => b[1] - a[1]).map(([d, n]) => `<li><div><span><b>${esc(d)}</b><small>${esc(t("pj.prog.nproyek", { n: num(n) }))}</small></span></div></li>`).join("")}</ul>`) : "");
-  const kanan = tot ? `<section class="jm-pj-bag"><h3>${esc(t("pj.l.lokasi"))}</h3><div id="pjMini" class="jm-pj-mini jm-pj-mini-b"></div></section>` : "";
-  const tabel = tot ? `<section class="jm-pj-bag jm-pj-penuhlebar"><h3>${esc(t("pj.prog.daftar"))}</h3><div class="jm-gulir"><table class="jm-tabel jm-pj-tetap jm-pj-t4"><thead><tr><th scope="col">${esc(t("pj.c.nama"))}</th><th scope="col">${esc(t("pj.c.tek"))}</th><th scope="col">${esc(t("pj.c.kap"))}</th><th scope="col">${esc(t("pj.c.status"))}</th></tr></thead><tbody>${baris}</tbody></table></div>${tot > 100 ? `<p class="jm-bantu">${esc(t("pj.tampil", { n: 100, total: num(tot) }))}</p>` : ""}</section>` : "";
-  return kepalaModal({ id: "program-" + g.id, img: IMG_PROG[g.id], ikonSvg: ikProg(g.id), judul: g.nama, ringkas: g.ringkas || "", aks })
-    + `<div class="jm-pj-strip"><div class="jm-pj-tiles">${tiles}</div></div><div class="jm-pj-sh-badan"><div class="jm-pj-dua"><div class="jm-pj-kol">${kiri}</div>${kanan ? `<div class="jm-pj-kol">${kanan}</div>` : ""}</div>${tabel}</div></div>`;
-}
 /* peta mini program: semua titik proyek program, pas ke batasnya; klik titik membuka profil proyek (dengan tombol kembali) */
 function miniProgram(g) {
   const el = $("pjMini"), pts = SEMUA.filter((r) => r.ada && r.prog.includes(g.id));
@@ -644,19 +713,36 @@ function miniProgram(g) {
     petaMini.addControl(new maplibregl.NavigationControl({ showCompass: false }), "bottom-right");
   }).catch(() => { el.textContent = t("pj.peta.galat"); });
 }
+const SUMBER_NAMA = { ruptl: "RUPTL PLN 2025\u20132034", wikipedia: "Wikipedia", wikidata: "Wikidata", "jetp-portfolio": "Portofolio JETP", "situs-resmi": "Situs resmi", berita: "Berita", esdm: "ESDM", psn: "Daftar PSN", pln: "PLN" };
+const HOST_NAMA = { "kontan.co.id": "Kontan", "katadata.co.id": "Katadata", "antaranews.com": "ANTARA", "esdm.go.id": "Kementerian ESDM", "pln.co.id": "PLN", "bisnis.com": "Bisnis Indonesia", "cnbcindonesia.com": "CNBC Indonesia", "kompas.com": "Kompas", "detik.com": "detikcom", "tempo.co": "Tempo", "wikipedia.org": "Wikipedia", "wikidata.org": "Wikidata" };
+const namaSumberJenis = (d) => SUMBER_NAMA[d] || d;
+const namaSumber = (s) => {
+  let host = "";
+  try { host = new URL(s.url).hostname.replace(/^(www|industri|en|id|m)\./, ""); } catch (e) { /* tanpa url */ }
+  if (s.jenis === "berita" || s.jenis === "media") return HOST_NAMA[host] || host || SUMBER_NAMA.berita;
+  return SUMBER_NAMA[s.jenis] || s.dokumen || HOST_NAMA[host] || s.jenis;
+};
+const regPil = (x) => `${String(x.jenis || "").toUpperCase()} ${x.nomor || ""}/${x.tahun || ""}`.trim();
 async function isiTerkaitProgram(g) {
-  const el = $("pjRelBag");
-  if (!el) return;
+  const reg = $("pjReg"), ber = $("pjBer");
+  if (!reg || !ber) return;
   try {
-    const [rg, br] = await Promise.all([lazy("/data/regulasi.json"), lazy("/data/berita.json")]);
-    if (!el.isConnected || dlg.dataset.id !== "program-" + g.id) return;
-    const ids = new Set(g.regulasi_ids || []), pids = new Set((g.proyek_ids && g.proyek_ids.length ? g.proyek_ids : SEMUA.filter((r) => r.prog.includes(g.id)).map((r) => r.id)));
+    const [rg, br, og] = await Promise.all([lazy("/data/regulasi.json"), lazy("/data/berita.json"), lazy("/data/organisasi.json")]);
+    if (!reg.isConnected || dlg.dataset.id !== "program-" + g.id) return;
+    const ids = new Set(g.regulasi_ids || []), pids = new Set(g.proyek_ids && g.proyek_ids.length ? g.proyek_ids : SEMUA.filter((r) => r.prog.includes(g.id)).map((r) => r.id));
     const regs = rg.baris.filter((x) => ids.has(x.id) || (x.program_ids || []).includes(g.id));
-    const brs = br.baris.filter((x) => (x.proyek_ids || []).some((i) => pids.has(i))).sort((a, b) => String(b.terbit).localeCompare(String(a.terbit))).slice(0, 8);
-    const item = (judul, ket, url, dalam) => `<li><a href="${esc(url)}"${dalam ? "" : ' target="_blank" rel="noopener noreferrer"'}><span><b>${esc(judul)}</b><small>${esc(ket)}</small></span>${ikon(dalam ? "panah-kanan" : "tautan", 18)}</a></li>`;
-    el.innerHTML = (regs.length ? `<h3>${esc(t("pj.prog.dasar"))}</h3><div class="jm-pj-kartubag"><ul class="jm-pj-sumberl">${regs.map((x) => item(x.judul, `${String(x.jenis || "").toUpperCase()} ${x.nomor || ""}/${x.tahun || ""}, ${x.status || ""}`, "/regulasi?id=" + encodeURIComponent(x.id), true)).join("")}</ul></div>` : "") +
-      (brs.length ? `<h3 class="jm-pj-h3b">${esc(t("pj.rel.ber"))}</h3><div class="jm-pj-kartubag"><ul class="jm-pj-sumberl">${brs.map((x) => item(x.judul, `${x.media || ""}, ${tglIso(x.terbit)}`, urlAman(x.url) || "#", false)).join("")}</ul></div>` : "");
-    el.hidden = !(regs.length || brs.length);
+    const kata = KATA_PROG[g.id];
+    const brs = br.baris.filter((x) => (x.proyek_ids || []).some((i) => pids.has(i)) || (kata && kata.test(x.judul))).sort((a, b) => String(b.terbit).localeCompare(String(a.terbit))).slice(0, 5);
+    const orgP = new Map(og.baris.map((o) => [o.id, o])), pel = (g.pelaksana || []).filter((x) => orgP.has(x.organisasi_id));
+    const pelHtml = pel.length ? `<h3>${esc(t("pj.prog.pelaksana"))}</h3><div class="jm-pj-kartubag"><ul class="jm-pj-pihak">${pel.map((x) => { const o = orgP.get(x.organisasi_id), lg = urlAman(o.logo); return `<li>${lg ? `<img class="jm-pj-av" src="${esc(lg)}" alt="" width="40" height="40" loading="lazy" style="object-fit:contain;background:#fff">` : `<span class="jm-pj-av" aria-hidden="true">${esc(inisial(o.nama))}</span>`}<span class="jm-pj-pn"><a href="/o/${esc(o.id)}"><b>${esc(o.nama)}</b></a><small>${esc(x.peran)}</small></span></li>`; }).join("")}</ul></div>` : "";
+    reg.innerHTML = pelHtml + (regs.length ? `<h3>${esc(t("pj.prog.dasar"))}</h3><div class="jm-pj-kartubag"><ul class="jm-pj-regl">${regs.map(regBaris).join("")}</ul></div>` : "");
+    reg.hidden = !regs.length && !pel.length;
+    ber.innerHTML = brs.length ? `<h3>${esc(t("pj.rel.ber"))}</h3><div class="jm-pj-kartubag"><ul class="jm-pj-ber">${brs.map((x) => `<li><a href="${esc(urlAman(x.url) || "#")}" target="_blank" rel="noopener noreferrer"><span class="jm-pj-ber-t" aria-hidden="true">${esc((x.media || "?")[0].toUpperCase())}</span><span><b>${esc(x.judul)}</b><small>${esc(x.media || "")}, ${esc(tglIso(x.terbit))}</small></span></a></li>`).join("")}</ul></div>` : "";
+    ber.hidden = !brs.length;
+    const kanan = $("pjKanan"), kosong = !kanan.querySelector("section:not([hidden])");
+    $("pjDua").classList.toggle("jm-pj-tunggal", kosong);
+    kanan.hidden = kosong;
+    if (!regs.length && !$("pjDua").querySelector(".jm-pj-kol:first-child section:not([hidden])")) $("pjDua").firstElementChild.hidden = true;
   } catch (e) { /* tambahan saja */ }
 }
 function bukaProgram(id) {
@@ -667,6 +753,7 @@ function bukaProgram(id) {
   dlg.dataset.id = "program-" + id; delete dlg.dataset.balik;
   dlg.innerHTML = programHtml(g);
   for (const i of dlg.querySelectorAll("i[data-w]")) i.style.width = i.dataset.w + "%";
+  for (const i of dlg.querySelectorAll("i[data-h]")) i.style.height = i.dataset.h + "%";
   if (!dlg.open) dlg.showModal();
   dlg.scrollTop = 0;
   nanti(() => { miniProgram(g); isiTerkaitProgram(g); });
@@ -678,7 +765,7 @@ async function isiAnggota(id) {
   if (!x || dlg.dataset.id !== id || dlg.querySelector("#pjAnggota")) return;
   const materi = Object.entries(x.dari_materi || {}).map(([k, v]) => `${k}: ${[].concat(v).join(", ")}`);
   const isi = anggotaDl([["pj.ang.skema", x.skema_kerjasama], ["pj.ang.dana", x.pemberi_dana], ["pj.ang.pihak", x.pihak_terlibat], ["pj.ang.fc", x.financial_close], ["pj.ang.ppa", x.tanggal_ppa], ["pj.ang.tk", x.tenaga_kerja], ["pj.ang.materi", materi], ["pj.ang.catatan", x.catatan], ["pj.ang.konflik", x.konflik]], esc);
-  if (isi) dlg.querySelector(".jm-pj-sh-badan")?.insertAdjacentHTML("afterbegin", `<section class="jm-pj-bag" id="pjAnggota"><h3>${esc(t("pj.l.anggota"))}</h3><div class="jm-pj-kartubag">${isi}</div></section>`);
+  if (isi) (dlg.querySelector("#pjKiri") || dlg.querySelector(".jm-pj-sh-badan"))?.insertAdjacentHTML("beforeend", `<section class="jm-pj-bag jm-pj-kurator" id="pjAnggota"><h3>${esc(t("pj.l.anggota"))}</h3><div class="jm-pj-kartubag">${isi}</div></section>`);
 }
 function bukaProfil(id) {
   const r = PER_ID.get(id);
@@ -696,12 +783,23 @@ function bukaProfil(id) {
 dlg.addEventListener("click", (e) => {
   const tp = e.target.closest("[data-tampil]");
   if (tp) { dlg.close(); F.prog = tp.dataset.tampil; $("fprog").value = F.prog; segarHero(); terapkan(); $("exPeta").scrollIntoView({ behavior: "smooth", block: "start" }); return; }
+  const ms = e.target.closest("[data-mst]");
+  if (ms) {
+    MS.st = MS.st === ms.dataset.mst ? "" : ms.dataset.mst;
+    for (const b of dlg.querySelectorAll("[data-mst]")) b.setAttribute("aria-pressed", String(b.dataset.mst === MS.st));
+    segarModalTabel(PROG.baris.find((x) => "program-" + x.id === dlg.dataset.id)); return;
+  }
   const bl = e.target.closest("[data-balik]");
   if (bl) { location.hash = bl.dataset.balik; return; }
   const tr = e.target.closest("tr[data-id]");
   if (tr && !e.target.closest("a")) { location.hash = tr.dataset.id; return; }
   if (e.target === dlg || e.target.closest("[data-tutup]")) dlg.close();
 });
+dlg.addEventListener("input", debounce((e) => {
+  if (e.target.id !== "pjMq") return;
+  MS.q = e.target.value.trim().toLowerCase();
+  segarModalTabel(PROG.baris.find((x) => "program-" + x.id === dlg.dataset.id));
+}, 120));
 dlg.addEventListener("close", () => {
   if (petaMini) { petaMini.remove(); petaMini = null; }
   delete dlg.dataset.id; delete dlg.dataset.balik;

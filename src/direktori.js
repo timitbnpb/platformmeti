@@ -27,6 +27,7 @@ const CONTOH = { induk: c_induk, kampus: c_kampus, kontak: c_kontak, lembaga: c_
 // Semua peran bersesi sudah anggota ke atas (PERAN di hak.js); kontak hanya lapis pengurus (KPV 1).
 const ANGGOTA = ["anggota", "pengurus", "kurator", "wilayah", "admin", "super"];
 const PENGURUS = ["pengurus", "kurator", "admin", "super"];
+const ADMIN = ["admin", "super"]; // pemilik 7 Nov 2026: layar Admin (termasuk daftar anggota METI) hanya untuk admin
 const PRIVAT = { "cache-control": "private, no-store" };
 const JSON_HDR = { "content-type": "application/json; charset=utf-8", "x-content-type-options": "nosniff", ...PRIVAT };
 
@@ -374,7 +375,7 @@ export function gabungAnggota(dasar, log) {
 const iuranNilai = (baru, lama) => { const h = { ...(lama || {}) }; for (const [th, v] of Object.entries(baru || {})) h[th] = v ? "1" : "0"; return h; };
 
 const anggotaMeti = async (req, env, ctx, p) => {
-  const akun = perlu(p, PENGURUS);
+  const akun = perlu(p, ADMIN);
   const o = env.BERKAS ? await env.BERKAS.get("potret/pengurus/anggota_meti.json").catch(() => null) : null;
   if (!o) throw new Galat("tidak_ditemukan");
   const d = await o.json(), log = await hak.anggotaLog(env, akun), baris = gabungAnggota(dasarBaris(d), log ?? []);
@@ -388,7 +389,7 @@ const keadaanId = async (env, akun, id) => { // "ada" | "hapus" | null menurut l
   return ada;
 };
 const tulisAnggota = async (req, env, p, aksi) => {
-  const akun = perlu(p, PENGURUS);
+  const akun = perlu(p, ADMIN);
   if ((await hak.anggotaLog(env, akun)) === null) return NONAKTIF();
   const id = aksi === "tambah" ? "am_" + acak(6) : p.params.id;
   if (!RE_ID_ANGGOTA.test(id)) throw new Galat("tidak_ditemukan");

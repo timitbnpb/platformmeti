@@ -26,7 +26,7 @@ export function batangMendatar(xs, aksi) {
     const tr = o.tren == null ? "" : `<span class="brt-tr ${o.tren > 0 ? "naik" : o.tren < 0 ? "turun" : ""}">${o.tren > 0 ? "+" : o.tren < 0 ? "-" : ""}${angka(Math.abs(o.tren))}%</span>`;
     const isi = `<span class="brt-bb-n">${o.ikon || ""}<span>${esc(nm)}</span></span><svg class="brt-bb-b" viewBox="0 0 100 10" preserveAspectRatio="none" aria-hidden="true"><rect class="brt-bb-l" width="100" height="10" rx="3"/><rect class="brt-bb-i" width="${(v / m * 100).toFixed(1)}" height="10" rx="3"/></svg><em>${angka(v)}</em>${tr}`;
     const k = `brt-bb-r ${o.kelas || ""}`;
-    return `<li>${aksi && kunci ? `<button type="button" class="${k}" data-${aksi}="${esc(kunci)}">${isi}</button>` : `<div class="${k}">${isi}</div>`}</li>`;
+    return `<li>${aksi && kunci ? `<button type="button" class="${k}" data-${aksi}="${esc(kunci)}">${isi}</button>` : `<div class="${k}">${isi}</div>`}${o.aksi || ""}</li>`;
   }).join("")}</ul>`;
 }
 

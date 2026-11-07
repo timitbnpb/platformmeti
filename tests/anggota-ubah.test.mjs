@@ -26,7 +26,7 @@ const U = "/api/admin/anggota-meti";
 before(async () => {
   ({ env: E, tutup } = await buatEnv());
   E.BERKAS = { get: async (k) => (k === "potret/pengurus/anggota_meti.json" ? { body: JSON.stringify(DASAR), json: async () => DASAR } : null) };
-  for (const p of ["anggota", "pengurus"]) await masuk(p);
+  for (const p of ["anggota", "pengurus", "admin"]) await masuk(p);
 });
 after(async () => { await tutup?.(); });
 
@@ -40,28 +40,30 @@ test("gerbang: tamu 401, anggota 403, CSRF (tanpa x-pb / origin asing) 403", asy
   assert.equal((await panggil(U, "POST", null, { nama: "X", jenis: "individu" })).status, 401);
   assert.equal((await panggil(U, "POST", "anggota", { nama: "X", jenis: "individu" })).status, 403);
   assert.equal((await panggil(U + "/b0", "DELETE", "anggota")).status, 403);
-  assert.equal((await panggil(U, "POST", "pengurus", { nama: "X", jenis: "individu" }, { header: { "x-pb": "0" } })).status, 403);
-  assert.equal((await panggil(U, "POST", "pengurus", { nama: "X", jenis: "individu" }, { origin: "https://jahat.test" })).status, 403);
+  // Keputusan pemilik 7 Nov 2026: pengurus tidak lagi boleh
+  for (const [m, j] of [["GET", U], ["POST", U], ["PATCH", U + "/b0"], ["DELETE", U + "/b0"]]) assert.equal((await panggil(j, m, "pengurus", m === "GET" || m === "DELETE" ? undefined : { nama: "X", jenis: "individu" })).status, 403, "pengurus " + m);
+  assert.equal((await panggil(U, "POST", "admin", { nama: "X", jenis: "individu" }, { header: { "x-pb": "0" } })).status, 403);
+  assert.equal((await panggil(U, "POST", "admin", { nama: "X", jenis: "individu" }, { origin: "https://jahat.test" })).status, 403);
 });
 
 test("validasi: nama wajib, jenis/status/surel/telepon/situs/iuran salah ditolak 422 per kolom", async () => {
-  const r = await panggil(U, "POST", "pengurus", { nama: " ", jenis: "hantu", surel: "bukan", telepon: "abc", situs: "http://x.id", iuran: { 1999: true } });
+  const r = await panggil(U, "POST", "admin", { nama: " ", jenis: "hantu", surel: "bukan", telepon: "abc", situs: "http://x.id", iuran: { 1999: true } });
   assert.equal(r.status, 422);
   for (const k of ["nama", "jenis", "surel", "telepon", "situs", "iuran"]) assert.ok(r.kolom[k], k);
-  assert.equal((await panggil(U, "POST", "pengurus", { nama: "x".repeat(201), jenis: "individu" })).kolom.nama.includes("200"), true);
-  assert.equal((await panggil(U, "POST", "pengurus", "{" )).status, 422 );
+  assert.equal((await panggil(U, "POST", "admin", { nama: "x".repeat(201), jenis: "individu" })).kolom.nama.includes("200"), true);
+  assert.equal((await panggil(U, "POST", "admin", "{" )).status, 422 );
 });
 
 test("badan terlalu besar ditolak 413", async () => {
-  assert.equal((await panggil(U, "POST", "pengurus", { nama: "x", jenis: "individu", catatan: "y".repeat(20000) })).status, 413);
+  assert.equal((await panggil(U, "POST", "admin", { nama: "x", jenis: "individu", catatan: "y".repeat(20000) })).status, 413);
 });
 
 test("tambah, ubah, hapus: GET menggabung dasar R2 + log, no-store, jejak tertulis", async () => {
-  const t = await panggil(U, "POST", "pengurus", { nama: "Baru PT", jenis: "Baru registrasi", status: "aktif", surel: "Info@Baru.id", situs: "https://baru.id", iuran: { 2025: true }, catatan: "uji" });
+  const t = await panggil(U, "POST", "admin", { nama: "Baru PT", jenis: "Baru registrasi", status: "aktif", surel: "Info@Baru.id", situs: "https://baru.id", iuran: { 2025: true }, catatan: "uji" });
   assert.equal(t.status, 201); assert.match(t.id, /^am_[0-9a-f]{12}$/);
-  assert.equal((await panggil(U + "/b0", "PATCH", "pengurus", { jabatan: "Ketua", iuran: { 2025: true } })).status, 200);
-  assert.equal((await panggil(U + "/b1", "DELETE", "pengurus")).status, 200);
-  const g = await panggil(U, "GET", "pengurus");
+  assert.equal((await panggil(U + "/b0", "PATCH", "admin", { jabatan: "Ketua", iuran: { 2025: true } })).status, 200);
+  assert.equal((await panggil(U + "/b1", "DELETE", "admin")).status, 200);
+  const g = await panggil(U, "GET", "admin");
   assert.equal(g.status, 200); assert.match(g.cache, /no-store/);
   assert.deepEqual(g.baris.map((r) => r.nama), ["Satu", "Baru PT"]);
   const satu = g.baris[0], baru = g.baris[1];
@@ -73,9 +75,9 @@ test("tambah, ubah, hapus: GET menggabung dasar R2 + log, no-store, jejak tertul
 });
 
 test("ubah/hapus id tak dikenal atau sudah dihapus = 404; id berbentuk liar = 404", async () => {
-  assert.equal((await panggil(U + "/b1", "PATCH", "pengurus", { nama: "Z" })).status, 404);
-  assert.equal((await panggil(U + "/am_tidakada1234", "DELETE", "pengurus")).status, 404);
-  assert.equal((await panggil(U + "/x'; DROP", "DELETE", "pengurus")).status, 404);
+  assert.equal((await panggil(U + "/b1", "PATCH", "admin", { nama: "Z" })).status, 404);
+  assert.equal((await panggil(U + "/am_tidakada1234", "DELETE", "admin")).status, 404);
+  assert.equal((await panggil(U + "/x'; DROP", "DELETE", "admin")).status, 404);
 });
 
 test("tabel anggota_ubah belum ada (tanpa 0009): GET = dasar R2 penyunting:false, tulis = 503 fitur_belum_aktif", async () => {
@@ -88,11 +90,11 @@ test("tabel anggota_ubah belum ada (tanpa 0009): GET = dasar R2 penyunting:false
     E0.BERKAS = E.BERKAS;
     const keep = E; E = E0;
     try {
-      await masuk("pengurus");
-      const g = await panggil(U, "GET", "pengurus");
+      await masuk("admin");
+      const g = await panggil(U, "GET", "admin");
       assert.equal(g.status, 200); assert.equal(g.penyunting, false); assert.equal(g.baris.length, 2);
       for (const [j, m, b] of [[U, "POST", { nama: "X", jenis: "individu" }], [U + "/b0", "PATCH", { nama: "Y" }], [U + "/b0", "DELETE", undefined]]) {
-        const r = await panggil(j, m, "pengurus", b);
+        const r = await panggil(j, m, "admin", b);
         assert.equal(r.status, 503, m); assert.equal(r.galat, "fitur_belum_aktif");
       }
     } finally { E = keep; }

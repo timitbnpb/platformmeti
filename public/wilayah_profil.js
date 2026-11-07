@@ -2,7 +2,7 @@
    Data: /data/wilayah.json (baris provinsi) + /data/wilayah/<kode>.json (berita, kalender, emisi, pakar). Nilai kosong = "-" berpetunjuk; seksi kosong disembunyikan. */
 import { esc, ikon } from "/inti/umum.js";
 import { t, tanggal } from "/i18n.js";
-import { exHtml } from "/inti/komponen.js";
+import { exHtml, unduhRegHtml } from "/inti/komponen.js";
 import { aksiHtml, hlHtml } from "/inti/aksi_ex.js";
 import { batang } from "/grafik.js";
 import { pilTek, pilStatus } from "/inti/ikon_tek.js";
@@ -182,7 +182,7 @@ function proyek(p) {
   const mw = A.reduce((s, x) => s + (x.mw || 0), 0);
   const hit = (f) => { const m = new Map(); for (const x of A) m.set(f(x), (m.get(f(x)) || 0) + 1); return [...m].sort((a, b) => b[1] - a[1]); };
   const rinci = `<div class="jm-wp-pil">${hit((x) => x.teknologi).map(([k, n]) => `<span class="jm-wp-pilgrup">${pilTek(k)} <b>${n}</b></span>`).join("")}${hit((x) => x.status || ST0).map(([k, n]) => `<span class="jm-wp-pilgrup">${pilStatus(k)} <b>${n}</b></span>`).join("")}</div>`;
-  const tb = `<div class="jm-gulir"><table class="jm-tabel"><thead><tr><th>${esc(t("wl.col.proyek"))}</th><th>${esc(t("wl.col.tek"))}</th><th class="jm-num">${esc(t("wl.col.kap"))}</th><th>${esc(t("wl.col.status"))}</th></tr></thead><tbody>${A.map((x) =>
+  const tb = `<div class="jm-gulir"><table class="jm-tabel"><thead><tr><th>${esc(t("wl.col.proyek"))}</th><th>${esc(t("wl.col.tek"))}</th><th class="jm-num">${esc(t("wl.col.kap"))}</th><th>${esc(t("wl.col.status"))}</th><th>${esc(t("pf.c.unduh"))}</th></tr></thead><tbody>${A.map((x) =>
     `<tr><td data-label="${esc(t("wl.col.proyek"))}">${esc(x.nama)}</td><td data-label="${esc(t("wl.col.tek"))}">${pilTek(x.teknologi)}</td><td data-label="${esc(t("wl.col.kap"))}" class="jm-num">${x.mw == null ? kos() : esc(num(x.mw, 1) + " " + (x.satuan || "MW"))}</td><td data-label="${esc(t("wl.col.status"))}">${pilStatus(x.status || ST0)}</td></tr>`).join("")}</tbody></table></div>`;
   return seksi({ id: "proyek", ikon: "proyek", topik: t("wp.ey.proyek"), judulHtml: hlHtml("wp.j.proyek", num(A.length), { nama: p.nama, mw: num(mw, 0) }), aksiHtml: aksiHtml({ csv: true }) + sumberDari({ sumber: t("wl.sumber_proyek"), tanggal: "" }), isiHtml: rinci + tb, kakiHtml: `<p class="jm-bantu">${esc(t("wp.cat.proyek"))}</p>` });
 }
@@ -208,7 +208,7 @@ function regulasi(p) {
   if (!p.perda.length) return "";
   const A = [...p.perda].sort((a, b) => (b.tahun || 0) - (a.tahun || 0));
   const tb = `<div class="jm-gulir"><table class="jm-tabel"><thead><tr><th>${esc(t("wp.col.perda"))}</th><th>${esc(t("wp.col.judul"))}</th><th>${esc(t("wl.col.status"))}</th></tr></thead><tbody>${A.map((x) =>
-    `<tr><td data-label="${esc(t("wp.col.perda"))}">${tautan(x.url, t("wl.perda_item", { nomor: x.nomor, tahun: x.tahun }))}</td><td data-label="${esc(t("wp.col.judul"))}">${esc(x.judul)}</td><td data-label="${esc(t("wl.col.status"))}">${nilaiAtau(x.status, esc)}</td></tr>`).join("")}</tbody></table></div>`;
+    `<tr><td data-label="${esc(t("wp.col.perda"))}">${tautan(x.url, t("wl.perda_item", { nomor: x.nomor, tahun: x.tahun }))}</td><td data-label="${esc(t("wp.col.judul"))}">${esc(x.judul)}</td><td data-label="${esc(t("wl.col.status"))}">${nilaiAtau(x.status, esc)}</td><td data-label="${esc(t("pf.c.unduh"))}" class="jm-tengah">${unduhRegHtml({ judul: x.judul, url_sumber: x.url }) || "-"}</td></tr>`).join("")}</tbody></table></div>`;
   return seksi({ id: "regulasi", ikon: "regulasi", topik: t("wp.ey.reg"), judulHtml: hlHtml("wp.j.reg", num(A.length), { nama: p.nama }), aksiHtml: aksiHtml({ csv: true }) + sumberDari({ sumber: t("wl.sumber_perda"), tanggal: "" }), isiHtml: tb });
 }
 

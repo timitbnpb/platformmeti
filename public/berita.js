@@ -1,7 +1,7 @@
 import { mulaiHalaman } from "/inti/kepala.js";
 import { t, angka, tanggal } from "/i18n.js";
 import { esc, nanti, debounce, hantuHtml, galatHtml, ikon } from "/inti/umum.js";
-import { cariHtml, pilihHtml, hapusHtml, hitungHtml, exHtml, sumberHtml } from "/inti/komponen.js";
+import { cariHtml, pilihHtml, hapusHtml, hitungHtml, exHtml, sumberHtml, unduhRegHtml } from "/inti/komponen.js";
 import { aksiHtml, hlHtml } from "/inti/aksi_ex.js";
 import { volumeSvg, batangMendatar, jumlahJendela } from "/berita_grafik.js";
 import { muat, label, urlAman, norm, namaRegulasi } from "/publik.js";
@@ -93,7 +93,7 @@ function gambarRingkas() {
   if (prg.length) h += ex({ id: "ex-program", ikon: "proyek", topik: t("brt.ex.prg.ey"), judulHtml: hlHtml("brt.ex.prg.j", prg[0][0].nama), subHtml: `${esc(t("brt.ex.prg.sub"))} ${est}`, sumberKunci: "brt.sumber.tag",
     isiHtml: batangMendatar(prg.map(([p, v]) => [p.nama, v, PROGRAM[p.id][1], { ikon: ikon("proyek", 18) }]), "cari") });
   if (reg.length) h += ex({ id: "ex-regulasi", ikon: "regulasi", topik: t("brt.ex.reg.ey"), judulHtml: hlHtml("brt.ex.reg.j", namaRegulasi(reg[0].g)), subHtml: `${esc(t("brt.ex.reg.sub"))} ${est}`, sumberKunci: "brt.sumber.tag",
-    isiHtml: batangMendatar(reg.slice(0, 8).map((x) => [namaRegulasi(x.g), x.n, namaRegulasi(x.g), { ikon: ikon("regulasi", 18) }]), "cari") });
+    isiHtml: batangMendatar(reg.slice(0, 8).map((x) => [namaRegulasi(x.g), x.n, namaRegulasi(x.g), { ikon: ikon("regulasi", 18), aksi: unduhRegHtml(x.g) }]), "cari") });
   h += ex({ id: "ex-media", ikon: "jenis", topik: t("brt.ex.med.ey"), judulHtml: hlHtml("brt.ex.med.j", medTop[0][0]), subHtml: esc(t("brt.ex.med.sub")),
     isiHtml: batangMendatar(medTop.map(([k, v]) => [k, v, k, { ikon: `<span class="brt-lg">${esc(inisialMedia(k))}</span>` }]), "media") });
   document.getElementById("r-lain").innerHTML = h;
@@ -111,7 +111,7 @@ const tautan = (r, isi, kelas) => `<a class="${kelas}" href="${esc(urlAman(r.url
 const metaHtml = (r) => `<p class="brt-meta">${esc(r.media)}, ${esc(tanggal(r.terbit.slice(0, 10)))}</p>`;
 const pil = (r) => (r.kepakaran?.[0] ? `<span class="brt-pil">${esc(tek(r.kepakaran[0]))}</span>` : "");
 const tagHtml = (r, n = 2) => (r.kepakaran || []).slice(0, n).map((k) => `<button type="button" class="brt-tek" data-topik="${esc(k)}">${esc(tek(k))}</button>`).join("");
-const orgHtml = (r) => (r.organisasi_ids || []).map((id) => ORG.get(id)).filter(Boolean).slice(0, 2).map((nama) => `<a class="brt-org" href="/direktori?tampil=lembaga">${esc(nama)}</a>`).join("");
+const orgHtml = (r) => (r.organisasi_ids || []).filter((id) => ORG.has(id)).slice(0, 2).map((id) => `<a class="brt-org" href="/o/${esc(id)}">${esc(ORG.get(id))}</a>`).join("");
 const kartu = (r) => `<li class="brt-kartu-b">${tautan(r, sampul(r, "brt-s169", 400, 225, true) + `<span class="brt-cb"><span class="brt-judul">${esc(r.judul)}</span>${metaHtml(r)}</span>`, "brt-card")}</li>`;
 const kecil = (r) => `<li class="brt-kartu-b">${tautan(r, sampul(r, "brt-s32", 96, 64) + `<span class="brt-cb"><span class="brt-judul">${esc(r.judul)}</span>${metaHtml(r)}</span>`, "brt-card brt-card-h")}</li>`;
 const BAGIAN = [["surya", ["surya"]], ["panas", ["panas-bumi"]], ["bio", ["bioenergi", "biomassa-sampah"]], ["kebijakan", ["kebijakan", "pembiayaan", "transisi-adil"]]];

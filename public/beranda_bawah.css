@@ -179,3 +179,9 @@
 .jm-bb-peta-g>.jm-bb-leg-peta{position:static;max-width:none;order:2;padding:8px 12px;background:var(--card);border-bottom:1px solid var(--line)}
 #petaInfo.jm-peta-info{position:static;order:3;width:auto;max-height:none;border:0;border-radius:0;box-shadow:none;background:var(--card);backdrop-filter:none}
 }
+/* daftar program tanpa kepala kolom (pemilik 7 Nov 2026): satu angka MW di kanan, jumlah proyek di baris kecil */
+.jm-bb-prog{grid-template-columns:40px minmax(0,1fr) auto!important}
+.jm-bb-prog-w{border:0!important;background:none!important}
+.jm-bb-prog-l>li+li{border-top:1px solid var(--line)}
+.jm-bb-mw{font-size:16px;white-space:nowrap}
+.jm-bb-mw small{font-size:12px;font-weight:600;color:var(--ink2)}

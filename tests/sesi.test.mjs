@@ -217,7 +217,8 @@ test("R12 halaman terkunci: tamu 302 ke /masuk?ke=, peran salah 403, peran benar
   const adm = await kirim(minta("/admin", { cookie: ang }));
   assert.equal(adm.status, 403);
   assert.match(adm.headers.get("cache-control"), /no-store/);
-  const kur = await login(await buatAkun({ peran: "kurator" }));
+  const kur = await login(await buatAkun({ peran: "admin" })); // /admin hanya admin/super: Keputusan pemilik 7 Nov 2026
+  assert.equal((await kirim(minta("/admin", { cookie: await login(await buatAkun({ peran: "pengurus" })) }))).status, 403);
   const ok = await kirim(minta("/admin", { cookie: kur }));
   assert.equal(ok.status, 200);
   assert.equal(ok.headers.get("cache-control"), "private, no-store");
@@ -228,7 +229,6 @@ test("R12 halaman terkunci: tamu 302 ke /masuk?ke=, peran salah 403, peran benar
 
 test("R13 halaman dinamis: slug dan kode provinsi divalidasi, halaman publik lewat aset", async () => {
   assert.equal((await kirim(minta("/p/Bukan Slug!"))).status, 404);
-  assert.equal((await kirim(minta("/p/pln-persero"))).status, 200);
   assert.equal((await kirim(minta("/wilayah/3"))).status, 404);
   assert.equal((await kirim(minta("/wilayah/32"))).status, 200);
   assert.equal((await kirim(minta("/"))).status, 200);

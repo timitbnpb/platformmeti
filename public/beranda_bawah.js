@@ -141,12 +141,12 @@ async function siapPeta() {
     const meta = awal?.id === g.id ? t("beranda.prog.awal", { n: angka(g.jumlah_proyek), gw: angka(awal.tahap_awal_gwp, { desimal: 1 }) }) : t("beranda.prog.meta", { n: angka(g.jumlah_proyek), tek: label("beranda.tek.", tek).toLowerCase() });
     const tgt = awal?.id === g.id && target > 0 ? Math.min(1, g.kapasitas_mw / target) : null;
     const bar = tgt === null ? "" : `<span class="jm-bb-tgt"><svg viewBox="0 0 100 4" preserveAspectRatio="none" aria-hidden="true"><rect class="jm-bar-latar" width="100" height="4"/><rect class="jm-bar-isi" width="${Math.max(1, Math.round(tgt * 100))}" height="4"/></svg><small>${esc(t("beranda.prog.target", { persen: angka(tgt * 100, { desimal: 0 }), mw: angka(target) }))}</small></span>`;
-    return `<li><button type="button" class="jm-bb-prog" data-prog="${esc(g.id)}" aria-pressed="${terpilih === g.id}"><span class="jm-bb-prog-ik">${IKON[IKON_PROG[g.id] || "lapis"]}</span><span class="jm-bb-prog-t"><strong>${esc(ada("beranda.prog." + g.id) ? t("beranda.prog." + g.id) : g.nama)}</strong><small>${esc(meta)}</small>${bar}</span><b class="jm-bb-n">${esc(angka(g.jumlah_proyek))}</b><b class="jm-bb-n">${esc(num(g.kapasitas_mw))}</b></button></li>`;
+    return `<li><button type="button" class="jm-bb-prog" data-prog="${esc(g.id)}" aria-pressed="${terpilih === g.id}"><span class="jm-bb-prog-ik">${IKON[IKON_PROG[g.id] || "lapis"]}</span><span class="jm-bb-prog-t"><strong>${esc(ada("beranda.prog." + g.id) ? t("beranda.prog." + g.id) : g.nama)}</strong><small>${esc(meta)}</small>${bar}</span><b class="jm-bb-n jm-bb-mw">${esc(num(g.kapasitas_mw))}<small> MW</small></b></button></li>`;
   }).join("");
   const info = $("petaInfo");
   gantiKepala($("petaKartu"), { ikon: "peta", topik: t("beranda.peta.k"), judulHtml: jud("beranda.ex.peta.j", angka(lok.length)), subHtml: esc(t("beranda.peta.d")), aksiHtml: aksiHtml() + sumberHtml(esc(t("beranda.peta.s", { tanggal: tanggal(pro.dibangun_pada) }))) });
   info.innerHTML = `<button type="button" class="jm-bb-pp-t" aria-expanded="${panelBuka}"><span>${esc(t("beranda.peta.tabel"))}</span><i aria-hidden="true"></i></button><div class="jm-bb-pp-b"${panelBuka ? "" : " hidden"}><p class="jm-bb-fakta"><b>${esc(angka(lok.length))}</b> ${esc(t("beranda.peta.l.titik"))} <span aria-hidden="true">/</span> <b>${esc(angka(dataPeta.tanpa))}</b> ${esc(t("beranda.peta.l.tanpa"))}</p>
-    <div class="jm-bb-prog-w"><div class="jm-bb-prog-kop" aria-hidden="true"><span>${esc(t("beranda.peta.kol.prog"))}</span><span>${esc(t("beranda.peta.kol.n"))}</span><span>MW</span></div><ul class="jm-bb-prog-l">${baris}</ul></div></div>`;
+    <div class="jm-bb-prog-w"><ul class="jm-bb-prog-l">${baris}</ul></div></div>`;
   if (!info.dataset.pasang) {
     info.dataset.pasang = "1";
     info.addEventListener("click", (e) => {
