@@ -247,7 +247,7 @@ main{flex:1}
 .jm-sh-lead{color:var(--ink2);font-size:var(--t-h3);max-width:60ch}
 .jm-eyebrow b{color:var(--accent)}
 .jm-terbaru{margin-top:32px;align-items:stretch}
-.jm-terbaru>.jm-kartu{display:grid;align-content:start;gap:12px}
+.jm-terbaru>.jm-ex{display:grid;align-content:start;grid-template-rows:auto 1fr;margin-top:0}
 .jm-terbaru h3{font:700 var(--t-h2)/var(--lh-judul) var(--display)}
 /* daftar berita dan proyek: satu kartu, tanpa kotak di dalam kotak */
 .jm-feed{list-style:none;margin:0;padding:0;display:grid}
@@ -470,3 +470,50 @@ a.jm-foto:focus-visible{outline:3px solid var(--fokus)}
 /* logo/lambang di daftar peringkat beranda */
 .jm-rank-t:has(.jm-rank-lg){grid-template-columns:24px minmax(0,1fr);column-gap:10px;align-items:center}
 .jm-rank-lg{width:24px;height:24px;object-fit:contain;grid-row:1/3}
+/* kartu dataset beranda memakai kepala exhibit (.jm-ex-hd) */
+.jm-ds.jm-ex{display:flex;flex-direction:column;padding:0;gap:0;border-top:1px solid var(--line)}
+.jm-ds.jm-ex>.jm-ex-bd{flex:1;display:grid;gap:16px;align-content:start}
+.jm-ds.jm-ex .jm-ex-j{font-size:var(--t-h3)}
+.jm-ds.jm-ex>.jm-ex-ft{margin-top:auto}
+.jm-feed-th svg{width:28px;height:28px}
+.jm-rank-th{position:relative;display:grid;place-items:center;width:72px;height:48px;overflow:hidden;border-radius:var(--r-sm);background:color-mix(in srgb,var(--brand) 12%,var(--surface));color:var(--accent);grid-row:1/3}
+.jm-rank-th img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.jm-rank-t:has(.jm-rank-th){grid-template-columns:72px minmax(0,1fr);column-gap:12px;align-items:center}
+.jm-rank-th .jm-ik{opacity:.7}
+.jm-pm{grid-template-columns:28px minmax(0,1fr) auto}
+.jm-pm-pil{grid-column:2/4;display:flex;flex-wrap:wrap;gap:6px}
+.jm-pm-pil .jm-pil{min-height:20px;padding:0 8px;font-size:var(--t-label)}
+.jm-pm-ini svg{width:16px;height:16px}
+.jm-terbaru>.jm-ex+.jm-ex,.jm-ds-kisi>.jm-ex+.jm-ex{margin-top:0}
+.jm-rank-t:has(.jm-rank-th) strong{white-space:normal;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical}
+
+/* ---------- beranda: ubin hitung hero satu baris, kartu KPI, metode di kepala bagian ---------- */
+.jm-hero2>.jm-hitung-hero{grid-column:1/-1;list-style:none;margin:0;padding:12px;display:grid;grid-template-columns:repeat(5,minmax(0,1fr)) auto;gap:10px;align-items:stretch;border:1px solid var(--line);border-radius:var(--r-lg);background:var(--card);box-shadow:var(--shadow)}
+.jm-hitung-hero>li{display:flex;align-items:center;gap:12px;min-width:0;padding:10px 12px;border-radius:var(--r);background:var(--surface)}
+.jm-hh-ik{display:grid;place-items:center;flex:none;width:40px;height:40px;border-radius:50%;background:color-mix(in srgb,var(--data1) 18%,var(--card));color:var(--head)}
+.jm-hitung-hero>li.jm-w2 .jm-hh-ik{background:color-mix(in srgb,var(--data2) 18%,var(--card))}.jm-hitung-hero>li.jm-w3 .jm-hh-ik{background:color-mix(in srgb,var(--data3) 22%,var(--card))}
+.jm-hitung-hero>li.jm-w4 .jm-hh-ik{background:color-mix(in srgb,var(--data4) 28%,var(--card))}.jm-hitung-hero>li.jm-w5 .jm-hh-ik{background:color-mix(in srgb,var(--data5) 20%,var(--card))}
+.jm-hh-t{display:grid;min-width:0}
+.jm-hh-t b{font:700 var(--t-h2)/var(--lh-judul) var(--display);font-variant-numeric:tabular-nums;color:var(--head)}
+.jm-hh-t span{font-size:var(--t-kecil);color:var(--ink2);line-height:var(--lh-judul)}
+.jm-hitung-hero>li.jm-hitung-src{background:none;padding:0 4px;margin:0}
+@media (max-width:1000px){.jm-hero2>.jm-hitung-hero{grid-template-columns:repeat(2,minmax(0,1fr))}.jm-hitung-hero>li.jm-hitung-src{grid-column:1/-1;justify-content:flex-end}}
+/* kepala bagian: judul token, lead justify, metode di dalam kartu */
+.jm-sh h2{font-size:var(--t-h1)}
+.jm-sh-lead{max-width:none;text-align:justify;hyphens:auto}
+.jm-sh .jm-cara-hit{margin:6px 0 0;border:1px solid var(--line);border-radius:var(--r);background:var(--card);overflow:hidden}
+.jm-sh .jm-cara-hit summary{display:flex;align-items:center;gap:8px;min-height:var(--target);padding:0 14px;list-style:none;font:600 var(--t-tombol)/var(--lh-rapat) var(--font);color:var(--accent)}
+.jm-sh .jm-cara-hit summary::-webkit-details-marker{display:none}
+.jm-sh .jm-cara-hit summary::after{content:"+";margin-left:auto;display:grid;place-items:center;width:24px;height:24px;border-radius:50%;background:var(--soft-hijau);font:400 var(--t-h3)/1 var(--font)}
+.jm-sh .jm-cara-hit[open] summary::after{content:"\2212";background:var(--accent);color:var(--on-accent)}
+.jm-sh .jm-cara-hit[open] summary{border-bottom:1px solid var(--line)}
+.jm-sh .jm-cara-hit p{margin:0;padding:12px 14px;font-size:var(--t-body);line-height:var(--lh-isi);color:var(--ink2);text-align:justify;hyphens:auto}
+.jm-sh .jm-cara-hit .jm-ik{stroke:currentColor;fill:none;flex:none}
+/* kartu KPI: ikon + label huruf biasa, angka besar, satuan, konteks */
+.jm-kpi{display:grid;grid-template-columns:auto minmax(0,1fr);grid-template-areas:"ik lab" "n n" "ctx ctx";align-items:center;gap:10px 12px;padding:18px 16px 14px}
+.jm-kpi-ik{grid-area:ik}
+.jm-kpi-lab{grid-area:lab;padding-right:28px;font:600 var(--t-tombol)/var(--lh-judul) var(--font);color:var(--ink2);white-space:normal}
+.jm-kpi-n{grid-area:n}
+.jm-kpi-n b{font-size:var(--t-angka)}
+.jm-kpi-ctx{grid-area:ctx;min-height:0}
+.jm-kpi-ctx:empty,.jm-kpi-ctx:has(:only-child:empty){display:none}

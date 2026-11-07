@@ -1,12 +1,17 @@
 /* Enam kartu dataset di beranda: semua angka dihitung dari public/data/*.json; grafik SVG/CSS polos. */
 import { t, angka, tanggal } from "/i18n.js";
-import { esc } from "/inti/umum.js";
-import { sumberHtml, unduhRegHtml } from "/inti/komponen.js";
+import { esc, ikon } from "/inti/umum.js";
+import { sumberHtml, unduhRegHtml, exHtml } from "/inti/komponen.js";
 import { penerbitHtml } from "/penerbit.js";
 import { muat, label, namaRegulasi, sembunyi } from "/publik.js";
 
 import { LOGO_ORG, LOGO_NAMA } from "/inti/logo_org.js";
 export { LOGO_ORG };
+/** Foto teknologi untuk thumbnail proyek (proyek belum punya foto sendiri). */
+export const FOTO_TEK = { surya: "surya-cirata", bayu: "bayu-sidrap", hidro: "hidro-saguling", "panas-bumi": "panas-bumi-sibayak", bioenergi: "bioenergi-sawit", "biomassa-sampah": "biomassa-bantargebang", nuklir: "nuklir-siwabessy", penyimpanan: "penyimpanan-baterai" };
+/** Ikon gedung untuk pemilik tanpa logo. */
+export const GEDUNG = '<svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 21V5l9-2v18M13 8h7v13M7 8h3M7 12h3M7 16h3M3 21h18"/></svg>';
+const IKON_DS = { proyek: "proyek", pengembang: "direktori", regulasi: "regulasi", rantai: "rantai", wilayah: "wilayah", pustaka: "daftar" };
 const BUMN = /^(PLN|Indonesia Power|Pembangkitan Jawa Bali|Inalum|Jasa Tirta)/i;
 const jml = (a, f) => a.reduce((s, x) => s + (f(x) || 0), 0);
 const sat = (p) => p.kapasitas?.[0]?.nilai || 0;
@@ -20,16 +25,16 @@ function pemilik(nilai) {
   return n;
 }
 
-const kartu = (kunci, w, href, tgl, stat, viz, sumberTeks) => `<article class="jm-ds jm-w${w}">
-  <header class="jm-ds-kep"><span class="jm-ds-eb">${esc(t("beranda.ds." + kunci + ".k"))}</span>${sumberHtml(esc(sumberTeks))}</header>
-  <h3>${esc(t("beranda.ds." + kunci + ".j"))}</h3><p>${esc(t("beranda.ds." + kunci + ".d"))}</p>
-  <dl class="jm-ds-stat">${stat.map(([n, l, est]) => `<div><dd class="jm-ds-n">${esc(n)}</dd><dt>${esc(t(l))}${est ? ` <span class="jm-pil jm-pil-est">EST</span>` : ""}</dt></div>`).join("")}</dl>
-  <div class="jm-ds-viz">${viz}</div>
-  <footer class="jm-ds-kaki"><span>${esc(t("beranda.ds.diperbarui", { tanggal: tanggal(tgl) }))}</span><a class="jm-lihat" href="${href}">${esc(t("beranda.ds.buka"))} &rarr;</a></footer></article>`;
+const kartu = (kunci, w, href, tgl, stat, viz, sumberTeks) => exHtml({
+  kelas: "jm-ds jm-w" + w, tingkat: "h3", ikon: IKON_DS[kunci], topik: t("beranda.ds." + kunci + ".k"),
+  judulHtml: esc(t("beranda.ds." + kunci + ".j")), subHtml: esc(t("beranda.ds." + kunci + ".sub")), aksiHtml: sumberHtml(esc(sumberTeks)),
+  isiHtml: `<dl class="jm-ds-stat">${stat.map(([n, l, est]) => `<div><dd class="jm-ds-n">${esc(n)}</dd><dt>${esc(t(l))}${est ? ` <span class="jm-pil jm-pil-est">EST</span>` : ""}</dt></div>`).join("")}</dl><div class="jm-ds-viz">${viz}</div>`,
+  kakiHtml: `<span>${esc(t("beranda.ds.diperbarui", { tanggal: tanggal(tgl) }))}</span><a class="jm-lihat" href="${href}">${esc(t("beranda.ds.buka"))} &rarr;</a>` });
 
 /** Baris peringkat: nomor bulat, nama + pil, batang tipis, nilai tabular di kanan. items: {nama, pil, nilai, unit, frac} */
-const rangking = (items) => `<ol class="jm-rank">${items.map((o, i) => `<li class="jm-rank-i"><span class="jm-rank-no">${i + 1}</span><span class="jm-rank-t">${o.logo ? `<img class="jm-rank-lg" src="${esc(o.logo)}" width="24" height="24" alt="" loading="lazy">` : ""}<strong title="${esc(o.nama)}">${o.href ? `<a href="${esc(o.href)}">${esc(o.nama)}</a>` : esc(o.nama)}</strong>${o.aksi || ""}${o.pil ? `<small><span class="jm-pil">${esc(o.pil)}</span></small>` : ""}</span><span class="jm-rank-v"><b>${esc(o.nilai)}</b>${o.unit ? ` <small>${esc(o.unit)}</small>` : ""}</span></li>`).join("")}</ol>`;
+const rangking = (items) => `<ol class="jm-rank">${items.map((o, i) => `<li class="jm-rank-i"><span class="jm-rank-no">${i + 1}</span><span class="jm-rank-t">${o.foto ? `<span class="jm-rank-th">${IKON_TEK}<img src="/img/beranda/${esc(o.foto)}.webp" width="72" height="48" alt="" decoding="async"></span>` : ""}${o.logo ? `<img class="jm-rank-lg" src="${esc(o.logo)}" width="24" height="24" alt="" loading="lazy">` : ""}<strong title="${esc(o.nama)}">${o.href ? `<a href="${esc(o.href)}">${esc(o.nama)}</a>` : esc(o.nama)}</strong>${o.aksi || ""}${o.pil ? `<small><span class="jm-pil">${esc(o.pil)}</span></small>` : ""}</span><span class="jm-rank-v"><b>${esc(o.nilai)}</b>${o.unit ? ` <small>${esc(o.unit)}</small>` : ""}</span></li>`).join("")}</ol>`;
 
+const IKON_TEK = ikon("tek-listrik", 20);
 const baris = (kiri, kanan) => `<div class="jm-ds-baris"><span>${esc(kiri)}</span><span>${esc(kanan)}</span></div>`;
 const bar = (frac, w) => `<svg class="jm-ds-bar jm-w${w}" viewBox="0 0 100 6" preserveAspectRatio="none" aria-hidden="true"><rect class="jm-bar-isi" width="${Math.max(1, Math.round(frac * 100))}" height="6"/></svg>`;
 
@@ -46,14 +51,13 @@ function pencar(proyek, org) {
     if (s === "beroperasi" || s === "konstruksi") d.bangun += m; else if (s === "rencana") d.rencana += m;
   }
   const semua = [...per.values()], top = semua.filter((d) => d.bangun + d.rencana > 0).sort((a, b) => b.bangun + b.rencana - a.bangun - a.rencana).slice(0, 10);
-  const mx = Math.max(1, ...top.map((d) => d.bangun + d.rencana));
   const baris = top.map((d) => {
-    const lg = logoPemilik(d.k, idx), b = (d.bangun / mx) * 100, r = (d.rencana / mx) * 100;
-    return `<li class="jm-pm"><span class="jm-pm-lg">${lg ? `<img src="${esc(lg)}" width="24" height="24" alt="" loading="lazy" data-ini="${esc(inisial(d.k))}">` : `<span class="jm-pm-ini" aria-hidden="true">${esc(inisial(d.k))}</span>`}</span><span class="jm-pm-n" title="${esc(d.k)}">${esc(d.k)}</span>
-      <svg class="jm-pm-bar" viewBox="0 0 100 8" preserveAspectRatio="none" aria-hidden="true"><rect class="jm-pm-b" width="${b.toFixed(2)}" height="8"/><rect class="jm-pm-r" x="${b.toFixed(2)}" width="${r.toFixed(2)}" height="8"/></svg>
-      <span class="jm-pm-v"><b>${esc(angka(d.bangun + d.rencana))}</b> <small>MW</small></span></li>`;
+    const lg = logoPemilik(d.k, idx);
+    return `<li class="jm-pm"><span class="jm-pm-lg">${lg ? `<img src="${esc(lg)}" width="24" height="24" alt="" loading="lazy">` : `<span class="jm-pm-ini" aria-hidden="true">${GEDUNG}</span>`}</span><span class="jm-pm-n" title="${esc(d.k)}">${esc(d.k)}</span>
+      <span class="jm-pm-v"><b>${esc(angka(d.bangun + d.rencana))}</b> <small>MW</small></span>
+      <span class="jm-pm-pil"><span class="jm-pil">${esc(t("beranda.ds.pengembang.bangun", { n: angka(d.bangun) }))}</span><span class="jm-pil">${esc(t("beranda.ds.pengembang.rencana", { n: angka(d.rencana) }))}</span></span></li>`;
   }).join("");
-  const svg = `<div class="jm-pm-leg"><span><i class="jm-pm-kb"></i>${esc(t("beranda.ds.pengembang.x"))}</span><span><i class="jm-pm-kr"></i>${esc(t("beranda.ds.pengembang.y"))}</span></div><ol class="jm-pm-daftar" aria-label="${esc(t("beranda.ds.pengembang.aria"))}">${baris}</ol>`;
+  const svg = `<ol class="jm-pm-daftar" aria-label="${esc(t("beranda.ds.pengembang.aria"))}">${baris}</ol>`;
   const total = jml(semua, (d) => d.bangun + d.rencana), bumn = jml(semua.filter((d) => BUMN.test(d.k)), (d) => d.bangun + d.rencana);
   return { n: semua.length, pangsa: total ? (bumn / total) * 100 : 0, pipa: jml(semua, (d) => d.rencana + (d.bangun)), svg };
 }
@@ -66,7 +70,7 @@ export async function gambarDataset(R) {
     const kap = R.kartu.find((k) => k.kode === "kapasitas")?.nilai;
     const lewat = pro.baris.filter((p) => st(p) !== "beroperasi" && p.cod_target?.length && Math.min(...p.cod_target.map((c) => c.nilai)) < tahun).length;
     const urut7 = [...pro.baris].sort((a, b) => sat(b) - sat(a)).slice(0, 7);
-    const top7 = rangking(urut7.map((p) => ({ nama: p.nama, href: "/p/" + p.id, pil: label("beranda.tek.", p.teknologi), nilai: angka(sat(p)), unit: p.kapasitas[0].satuan, frac: sat(p) / sat(urut7[0]) })));
+    const top7 = rangking(urut7.map((p) => ({ nama: p.nama, href: "/p/" + p.id, pil: label("beranda.tek.", p.teknologi), foto: FOTO_TEK[p.teknologi], nilai: angka(sat(p)), unit: p.kapasitas[0].satuan, frac: sat(p) / sat(urut7[0]) })));
     const pc = pencar(pro.baris, org.baris);
     const baru = `<ol class="jm-rb">${[...reg.baris].filter((r) => r.tanggal_ditetapkan).sort((a, b) => String(b.tanggal_ditetapkan).localeCompare(String(a.tanggal_ditetapkan))).slice(0, 7).map((r) => `<li class="jm-rb-i">${penerbitHtml(r.instansi_penerbit, 28).replace(/<span class="jm-pen-pendek">.*?<\/span>/, "")}<a class="jm-rb-t" href="/regulasi?id=${encodeURIComponent(r.id)}"><b>${esc(namaRegulasi(r))}</b><small title="${esc(r.judul || "")}">${esc(r.judul || "")}</small></a><span class="jm-rb-tgl">${esc(tanggal(r.tanggal_ditetapkan))}</span>${unduhRegHtml(r)}</li>`).join("")}</ol>`;
     const topPab = [...rantai.pabrikan].sort((a, b) => b.mwp - a.mwp).slice(0, 4), rr = rantai.ringkas, tk = rantai.pabrikan.filter((x) => x.tkdn != null), tkdn = tk.length ? jml(tk, (x) => x.tkdn) / tk.length : null;

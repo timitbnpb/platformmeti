@@ -22,7 +22,7 @@ function gambar() {
   $("umum-w").innerHTML = ex({ id: "ex-umum", ikon: "metode", topik: t("met.ex.umum.ey"), judulHtml: hlHtml("met.ex.umum.j", 4), subHtml: esc(t("met.ex.umum.sub")),
     isiHtml: `<div class="jm-an-cara">${["ins.cara1", "ins.cara2", "ins.cara3", "ins.cara4"].map((k) => `<p>${esc(t(k))}</p>`).join("")}</div>` });
   $("kartu-w").innerHTML = ex({ id: "ex-kartu", ikon: "analisis", topik: t("met.ex.kartu.ey"), judulHtml: hlHtml("met.ex.kartu.j", DAFTAR.length), subHtml: esc(t("met.ex.kartu.sub")),
-    isiHtml: `<div class="jm-met-daftar">${DAFTAR.map(([id, k]) => `<article class="jm-kartu jm-met" id="metode-${id}"><h3>${esc(t("ins.mt." + id))}</h3><p>${esc(t("ins." + k + ".cara", { tahun, target }))}</p><p><a href="/insight#ins-${id}">${esc(t("met.lihat"))}</a></p></article>`).join("")}</div>` });
+    isiHtml: `<div class="jm-met-daftar">${DAFTAR.map(([id, k]) => (exHtml({ id: "metode-" + id, kelas: "jm-met", ikon: "analisis", topik: t("met.ex.kartu.ey"), tingkat: "h3", judulHtml: esc(t("ins.mt." + id)), isiHtml: `<p>${esc(t("ins." + k + ".cara", { tahun, target }))}</p><p><a href="/insight#ins-${id}">${esc(t("met.lihat"))}</a></p>` }))).join("")}</div>` });
   $("kutip").textContent = t("ins.kutip", { tanggal: tanggal(tgl, { gaya: "panjang" }) });
   if (location.hash) document.getElementById(decodeURIComponent(location.hash.slice(1)))?.scrollIntoView();
 }

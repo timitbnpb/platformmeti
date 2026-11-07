@@ -133,3 +133,4 @@ dialog.jm-modal header{display:flex;justify-content:space-between;align-items:ce
 .jm-ber-pegang{color:var(--ink2);flex:none}
 li.jm-ber-kosong{justify-content:center;color:var(--ink2);border-style:dashed}
 .jm-koreksi textarea.jm-isian{min-height:64px;resize:vertical;font:inherit}
+.jm-ber>.jm-ex-bd{display:grid;gap:10px;align-content:start}

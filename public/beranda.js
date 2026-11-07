@@ -1,7 +1,7 @@
 import { mulaiHalaman } from "/inti/kepala.js";
 import { t, angka, tanggal } from "/i18n.js";
 import { esc, nanti, debounce, hantuHtml, kosongHtml, ikon, fotoBerita } from "/inti/umum.js";
-import { gambarDataset, LOGO_ORG } from "/beranda_data.js";
+import { gambarDataset, LOGO_ORG, GEDUNG, FOTO_TEK } from "/beranda_data.js";
 import { pasangBawah, IKON } from "/beranda_bawah.js";
 import { sumberHtml } from "/inti/komponen.js";
 import { kontenBeranda, daftarKonten } from "/inti/konten_beranda.js";
@@ -66,9 +66,10 @@ function gambarKartu() {
   el.innerHTML = kartu.map((k, i) => `<div class="jm-kpi jm-w${(i % 5) + 1}"><div class="jm-kpi-ik">${IKON_KPI[k.kode]}</div><span class="jm-kpi-src">${sumberHtml(esc(t("beranda.src." + k.kode, { tanggal: tgl, total: angka(R.hitung.regulasi) })))}</span>
     <div class="jm-kpi-lab"><span>${esc(t("beranda.kk." + k.kode))}</span>${k.kode === "kapasitas" ? `<span class="jm-pil jm-pil-est">EST</span>` : ""}</div>
     <div class="jm-kpi-n"><b>${esc(angka(k.nilai))}</b><small>${esc(t("beranda.u." + k.satuan))}</small></div>
-    <div class="jm-kpi-ctx">${k.dari ? esc(t("beranda.dari", { n: angka(k.nilai), total: angka(k.dari) })) : "&nbsp;"}</div></div>`).join("");
+    <div class="jm-kpi-ctx">${k.dari ? esc(t("beranda.dari", { n: angka(k.nilai), total: angka(k.dari) })) : ""}</div></div>`).join("");
   pasangSumber(tgl);
-  document.getElementById("heroHitung").innerHTML = ["proyek", "organisasi", "orang", "regulasi", "berita"].map((k, i) => `<li><span class="jm-kotak jm-w${(i % 5) + 1}" aria-hidden="true"></span><b>${esc(angka(R.hitung[k]))}</b> ${esc(t("beranda.hero.h." + k))}</li>`).join("") + `<li class="jm-hitung-src">${sumberHtml(esc(t("beranda.sumber", { tanggal: tgl })))}</li>`;
+  const IKH = { proyek: "proyek", organisasi: "direktori", orang: "orang", regulasi: "regulasi", berita: "berita" };
+  document.getElementById("heroHitung").innerHTML = ["proyek", "organisasi", "orang", "regulasi", "berita"].map((k, i) => `<li class="jm-w${(i % 5) + 1}"><span class="jm-hh-ik" aria-hidden="true">${ikon(IKH[k], 20)}</span><span class="jm-hh-t"><b>${esc(angka(R.hitung[k]))}</b><span>${esc(t("beranda.hero.h." + k))}</span></span></li>`).join("") + `<li class="jm-hitung-src">${sumberHtml(esc(t("beranda.sumber", { tanggal: tgl })))}</li>`;
 }
 
 async function gambarBerita() {
@@ -81,7 +82,7 @@ async function gambarBerita() {
     const baris = manual.length ? manual : [...b.baris].filter((x) => urlAman(x.url) && x.terbit).sort((x, y) => String(y.terbit).localeCompare(String(x.terbit))).slice(0, 6);
     if (!baris.length) throw new Error("berita kosong");
     el.innerHTML = `<ul class="jm-feed">${baris.map((x) => `<li><a class="jm-feed-i jm-feed-foto" href="${esc(x.url)}" target="_blank" rel="noopener noreferrer"><span class="jm-feed-th">${ikon(IK[x.kepakaran?.[0]] || "tek-listrik", 28)}${fotoBerita(foto, x.id) ? `<img src="${fotoBerita(foto, x.id)}" width="112" height="72" alt="" loading="lazy" decoding="async" referrerpolicy="no-referrer">` : ""}</span><span class="jm-feed-t"><strong>${esc(x.judul)}</strong><span class="jm-baris-meta"><span>${esc(x.media)}, ${esc(tanggal(String(x.terbit).slice(0, 10)))}</span>${x.kepakaran?.[0] ? `<span class="jm-pil">${esc(label("beranda.tek.", x.kepakaran[0]))}</span>` : ""}</span></span></a></li>`).join("")}</ul><a class="jm-lihat" href="/berita">${esc(t("beranda.lihat.berita"))} &rarr;</a>`;
-  } catch (e) { sembunyi(el, e); el.closest(".jm-kartu").hidden = true; }
+  } catch (e) { sembunyi(el, e); el.closest(".jm-ex").hidden = true; }
 }
 
 async function gambarProyek() {
@@ -93,9 +94,9 @@ async function gambarProyek() {
     const baru = manual.length ? manual : [...p.baris].sort((a, b) => String(b.sumber?.[0]?.tanggal).localeCompare(String(a.sumber?.[0]?.tanggal)) || b.id.localeCompare(a.id)).slice(0, 6);
     el.innerHTML = `<ul class="jm-feed">${baru.map((x) => {
       const kap = x.kapasitas?.[0], st = x.status?.[0]?.nilai;
-      return `<li><a class="jm-feed-i" href="/proyek#${encodeURIComponent(x.id)}"><span class="jm-feed-ik jm-feed-tek">${IKON[x.teknologi] || IKON.surya}</span><span class="jm-feed-t"><strong>${esc(x.nama)}</strong><span class="jm-baris-meta">${st ? `<span class="jm-pil">${esc(label("beranda.st.", st))}</span>` : ""}<span>${esc(x.lokasi?.provinsi || "-")}</span>${kap ? `<span class="jm-angka-tab">${esc(angka(kap.nilai, { desimal: kap.nilai % 1 ? 1 : 0 }))} ${esc(kap.satuan)}</span>` : ""}</span></span></a></li>`;
+      return `<li><a class="jm-feed-i jm-feed-foto" href="/p/${encodeURIComponent(x.id)}"><span class="jm-feed-th">${IKON[x.teknologi] || IKON.surya}${FOTO_TEK[x.teknologi] ? `<img src="/img/beranda/${FOTO_TEK[x.teknologi]}.webp" width="112" height="72" alt="" loading="lazy" decoding="async">` : ""}</span><span class="jm-feed-t"><strong>${esc(x.nama)}</strong><span class="jm-baris-meta">${st ? `<span class="jm-pil">${esc(label("beranda.st.", st))}</span>` : ""}<span>${esc(x.lokasi?.provinsi || "-")}</span>${kap ? `<span class="jm-angka-tab">${esc(angka(kap.nilai, { desimal: kap.nilai % 1 ? 1 : 0 }))} ${esc(kap.satuan)}</span>` : ""}</span></span></a></li>`;
     }).join("")}</ul><a class="jm-lihat" href="/proyek">${esc(t("beranda.lihat.proyek"))} &rarr;</a>`;
-  } catch (e) { sembunyi(el, e); el.closest(".jm-kartu").hidden = true; }
+  } catch (e) { sembunyi(el, e); el.closest(".jm-ex").hidden = true; }
 }
 
 async function gambarAgenda() {
@@ -175,7 +176,7 @@ async function main() {
   };
   await mulai();
   pasangBawah(R);
-  addEventListener("error", (e) => { if (e.target.tagName !== "IMG") return; if (e.target.closest(".jm-feed-th")) e.target.remove(); else if (e.target.closest(".jm-pm-lg")) e.target.replaceWith(Object.assign(document.createElement("span"), { className: "jm-pm-ini", textContent: e.target.dataset.ini || "" })); }, true);
+  addEventListener("error", (e) => { if (e.target.tagName !== "IMG") return; if (e.target.closest(".jm-feed-th")) e.target.remove(); else if (e.target.closest(".jm-pm-lg")) e.target.replaceWith(Object.assign(document.createElement("span"), { className: "jm-pm-ini", innerHTML: GEDUNG })); }, true);
   document.getElementById("kartu").addEventListener("click", (e) => e.target.closest("[data-aksi=ulang]") && mulai());
   const input = document.getElementById("cari");
   input.addEventListener("focus", () => siapkanIndeks().catch(() => { indeks = null; }), { once: true });
