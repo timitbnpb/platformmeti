@@ -32,7 +32,7 @@ function jalan() {
 
 function kontrol(prov) {
   $("klKontrol").innerHTML = `<div class="jm-kl-tek" role="group" aria-label="${esc(t("kl.tek"))}">${TEKNOLOGI.map((k) => `<button type="button" class="jm-kl-tb" data-tek="${k}" aria-pressed="${k === S.tek}">${ikonTek(IKON_PADA[k])}<span>${esc(t("kl.tek." + k))}</span></button>`).join("")}</div>
-    <label class="jm-pil-pilih jm-kl-prov">${ikon("peta", 18)}<span class="sr">${esc(t("kl.provinsi"))}</span><select id="klProv"><option value="">${esc(t("kl.provinsi.pilih"))}</option>${prov.map((p) => `<option value="${p.kode}">${esc(p.nama)}</option>`).join("")}</select></label>`;
+    <label class="jm-pil-pilih jm-kl-prov">${ikon("peta", 18)}<span class="sr">${esc(t("kl.provinsi"))}</span><select data-ikon="peta" id="klProv"><option value="">${esc(t("kl.provinsi.pilih"))}</option>${prov.map((p) => `<option value="${p.kode}" data-ikon="prov:${p.kode}">${esc(p.nama)}</option>`).join("")}</select></label>`;
   $("klKontrol").addEventListener("click", (e) => {
     const b = e.target.closest("[data-tek]"); if (!b) return;
     S.tek = b.dataset.tek;

@@ -270,8 +270,8 @@ let nKartu = BATAS_KARTU;
 function saring() {
   const tekAdaList = TEK.filter((k) => TERBUKA.some((p) => p.tek === k));
   const cods = [...new Set(TERBUKA.map((p) => p.cod).filter(Boolean))].sort();
-  $("pelSaring").innerHTML = pilihHtml({ id: "ftek", ikon: "jenis", label: t("pj.f.tek"), opsi: [["", t("pel.semua")], ...tekAdaList.map((k) => [k, labTek(k)])], nilai: S.tek === "semua" ? "" : S.tek })
-    + pilihHtml({ id: "fprov", ikon: "peta", label: t("pj.f.provinsi"), opsi: [["", t("pel.semua_prov")], ...PEL.baris.map((b) => [b.kode, b.nama])], nilai: S.prov })
+  $("pelSaring").innerHTML = pilihHtml({ id: "ftek", ikon: "jenis", label: t("pj.f.tek"), opsi: [["", t("pel.semua")], ...tekAdaList.map((k) => [k, labTek(k), "tek:" + k])], nilai: S.tek === "semua" ? "" : S.tek })
+    + pilihHtml({ id: "fprov", ikon: "peta", label: t("pj.f.provinsi"), opsi: [["", t("pel.semua_prov")], ...PEL.baris.map((b) => [b.kode, b.nama, "prov:" + b.kode])], nilai: S.prov })
     + pilihHtml({ id: "fcod", ikon: "tahun", label: t("pj.c.cod"), opsi: [["", t("pel.semua_cod")], ...cods.map((c) => [String(c), String(c)])], nilai: S.cod })
     + `<span class="jm-hitung" id="pelHitungP" role="status" aria-live="polite"></span>`;
 }
@@ -298,7 +298,7 @@ let provKalk = [];
 const K = { kode: "", tek: "plts" };
 function alatKalk() {
   $("pelKalkAlat").innerHTML = `<div class="jm-kl-tek" role="group" aria-label="${esc(t("kl.tek"))}">${TEKNOLOGI.map((k) => `<button type="button" class="jm-kl-tb" data-ktek="${k}" aria-pressed="${k === K.tek}">${ikonTek(IK_KALK[k])}<span>${esc(t("kl.tek." + k))}</span></button>`).join("")}</div>
-    <label class="jm-pil-pilih jm-kl-prov">${ikon("peta", 18)}<span class="sr">${esc(t("kl.provinsi"))}</span><select id="pelKProv"><option value="">${esc(t("kl.provinsi.pilih"))}</option>${provKalk.map((p) => `<option value="${p.kode}"${p.kode === K.kode ? " selected" : ""}>${esc(p.nama)}</option>`).join("")}</select></label>`;
+    <label class="jm-pil-pilih jm-kl-prov">${ikon("peta", 18)}<span class="sr">${esc(t("kl.provinsi"))}</span><select data-ikon="peta" id="pelKProv"><option value="">${esc(t("kl.provinsi.pilih"))}</option>${provKalk.map((p) => `<option value="${p.kode}" data-ikon="prov:${p.kode}"${p.kode === K.kode ? " selected" : ""}>${esc(p.nama)}</option>`).join("")}</select></label>`;
 }
 function jalanKalk() {
   const p = provKalk.find((x) => x.kode === K.kode);

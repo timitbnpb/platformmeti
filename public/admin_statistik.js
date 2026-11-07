@@ -2,6 +2,7 @@
 import { t, angka, tanggal } from "/i18n.js";
 import { esc, api, nanti, hantuHtml, kosongHtml } from "/inti/umum.js";
 import { kepalaTab, keadaan } from "/admin_umum.js";
+import { exHtml } from "/inti/komponen.js";
 
 const HARI = [7, 30, 90];
 const W = 640, H = 200, KIRI = 36, BAWAH = 22, ATAS = 8;
@@ -17,12 +18,12 @@ function grafik(harian) {
     ${garis("halaman", "sta-g1")}${garis("cari", "sta-g2")}</svg>
     <ul class="sta-legenda"><li><i class="sta-k1"></i>${esc(t("sta.halaman"))}</li><li><i class="sta-k2"></i>${esc(t("sta.cari"))}</li></ul>`;
 }
-const tabel = (judul, kolom, baris, samarkan) => `<div class="jm-kartu"><h3 class="jm-adm-sub">${esc(t(judul))}</h3>${baris.length ? `<div class="jm-gulir"><table class="jm-tabel"><thead><tr><th scope="col">${esc(t(kolom))}</th><th scope="col">${esc(t("sta.jumlah"))}</th></tr></thead><tbody>${baris.map((r) => `<tr><td data-l="${esc(t(kolom))}">${esc(samarkan ? samar(String(r.kunci)) : r.kunci)}</td><td data-l="${esc(t("sta.jumlah"))}"><span data-urut="${+r.jumlah || 0}">${esc(angka(r.jumlah))}</span></td></tr>`).join("")}</tbody></table></div>` : kosongHtml("sta.kosong")}</div>`;
+const tabel = (judul, kolom, baris, samarkan) => exHtml({ ikon: "tabel", topik: t("sta.ey"), tingkat: "h3", judulHtml: esc(t(judul)), subHtml: esc(t("sta.sub.tabel")), isiHtml: `${baris.length ? `<div class="jm-gulir"><table class="jm-tabel"><thead><tr><th scope="col">${esc(t(kolom))}</th><th scope="col">${esc(t("sta.jumlah"))}</th></tr></thead><tbody>${baris.map((r) => `<tr><td data-l="${esc(t(kolom))}">${esc(samarkan ? samar(String(r.kunci)) : r.kunci)}</td><td data-l="${esc(t("sta.jumlah"))}"><span data-urut="${+r.jumlah || 0}">${esc(angka(r.jumlah))}</span></td></tr>`).join("")}</tbody></table></div>` : kosongHtml("sta.kosong")}` });
 
 export function panelStatistik(panel) {
   const S = { hari: 30, ctl: null };
   panel.innerHTML = `${kepalaTab("analisis", "sta.ey", "sta.j", "sta.d")}
-    <div class="jm-bar jm-adm-bar1"><select class="jm-pilih" id="sHari" aria-label="${esc(t("sta.rentang"))}">${HARI.map((h) => `<option value="${h}"${h === S.hari ? " selected" : ""}>${esc(t("sta.hari", { n: h }))}</option>`).join("")}</select></div>
+    <div class="jm-bar jm-adm-bar1"><select data-ikon="tahun" class="jm-pilih" id="sHari" aria-label="${esc(t("sta.rentang"))}">${HARI.map((h) => `<option value="${h}"${h === S.hari ? " selected" : ""}>${esc(t("sta.hari", { n: h }))}</option>`).join("")}</select></div>
     <div id="sIsi" aria-live="polite"></div>`;
   const isi = panel.querySelector("#sIsi");
   panel.addEventListener("change", (e) => { if (e.target.id === "sHari") { S.hari = +e.target.value; muat(); } });
@@ -37,7 +38,7 @@ export function panelStatistik(panel) {
     try { d = await api(`/api/admin/statistik?hari=${S.hari}`, { signal: S.ctl.signal }); } catch (e) { if (e.name !== "AbortError") isi.innerHTML = keadaan(e.kode || "umum"); return; }
     nanti(() => {
       const h = d.harian || [];
-      isi.innerHTML = `<div class="jm-kartu">${h.length ? grafik(h) : kosongHtml("sta.kosong")}</div><div class="jm-adm-dua">${tabel("sta.top_halaman", "sta.c.halaman", d.halaman || [], false)}${tabel("sta.top_cari", "sta.c.kata", d.cari || [], true)}</div>`;
+      isi.innerHTML = `${exHtml({ ikon: "analisis", topik: t("sta.ey"), tingkat: "h3", judulHtml: esc(t("sta.j.grafik")), subHtml: esc(t("sta.sub.grafik")), isiHtml: h.length ? grafik(h) : kosongHtml("sta.kosong") })}<div class="jm-adm-dua">${tabel("sta.top_halaman", "sta.c.halaman", d.halaman || [], false)}${tabel("sta.top_cari", "sta.c.kata", d.cari || [], true)}</div>`;
     });
   }
 }

@@ -29,7 +29,7 @@ function saring() {
 function opsiTab() {
   const dari = (f) => [...new Set(baris().map(f).filter(Boolean))].sort((a, b) => a.localeCompare(b)).map((v) => [v, v]);
   return {
-    tek: [["", t("brt.f.tek")], ...[...new Set(B.flatMap((r) => r.kepakaran || []))].map((k) => [k, tek(k)]).sort((a, b) => a[1].localeCompare(b[1])), ...(S.tek.includes(",") ? [[S.tek, S.tek.split(",").map(tek).join(" + ")]] : [])],
+    tek: [["", t("brt.f.tek")], ...[...new Set(B.flatMap((r) => r.kepakaran || []))].map((k) => [k, tek(k), "tek:" + k]).sort((a, b) => a[1].localeCompare(b[1])), ...(S.tek.includes(",") ? [[S.tek, S.tek.split(",").map(tek).join(" + ")]] : [])],
     media: [["", t(S.tab === "berita" ? "brt.f.media" : "brt.f.kanal")], ...dari((r) => r.media || r.kanal)],
     periode: [["", t("brt.f.periode")], ...["7", "30", "90"].map((v) => [v, t("brt.p." + v)])],
     bahasa: [["", t("brt.f.bahasa")], ["id", t("brt.b.id")], ["en", t("brt.b.en")]],

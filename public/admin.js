@@ -105,14 +105,14 @@ function jalan() {
       <div class="jm-bar">
         <div class="jm-medan"><label class="sr" for="aCari">${esc(t("admin.cari"))}</label>
           <input class="jm-isian" id="aCari" type="search" autocomplete="off" placeholder="${esc(t("admin.cari"))}" value="${esc(A.cari)}"></div>
-        <select class="jm-pilih" id="aPeran" aria-label="${esc(t("admin.f.peran"))}">${opsi(PERAN, "peran.", A.peran, "admin.f.semua_peran")}</select>
-        <select class="jm-pilih" id="aStatus" aria-label="${esc(t("admin.f.status"))}">${opsi(STATUS, "status.", A.status, "admin.f.semua_status")}</select>
+        <select data-ikon="orang" class="jm-pilih" id="aPeran" aria-label="${esc(t("admin.f.peran"))}">${opsi(PERAN, "peran.", A.peran, "admin.f.semua_peran")}</select>
+        <select data-ikon="status" class="jm-pilih" id="aStatus" aria-label="${esc(t("admin.f.status"))}">${opsi(STATUS, "status.", A.status, "admin.f.semua_status")}</select>
         <button type="button" class="jm-tbl jm-tbl-utama" id="aBuat" aria-expanded="false" aria-controls="aForm">${ikon("tambah", 18)}${esc(t("admin.buat"))}</button>
       </div>
       <form class="jm-adm-form" id="aForm" novalidate hidden>
         <div class="jm-medan"><label for="fSurel">${esc(t("masuk.surel"))}</label><input class="jm-isian" id="fSurel" type="email" autocomplete="off" autocapitalize="none" spellcheck="false" required></div>
         <div class="jm-medan"><label for="fNama">${esc(t("admin.nama"))}</label><input class="jm-isian" id="fNama" autocomplete="off" maxlength="120" required></div>
-        <div class="jm-medan"><label for="fPeran">${esc(t("admin.f.peran"))}</label><select class="jm-pilih" id="fPeran">${opsi(peranBisa, "peran.", "anggota")}</select></div>
+        <div class="jm-medan"><label for="fPeran">${esc(t("admin.f.peran"))}</label><select data-ikon="orang" class="jm-pilih" id="fPeran">${opsi(peranBisa, "peran.", "anggota")}</select></div>
         ${kolomCakupan("fProv")}
         <div class="jm-lebar" id="fPesan"></div>
         <div class="jm-aksi jm-lebar"><button type="submit" class="jm-tbl jm-tbl-utama" id="fKirim">${esc(t("admin.buat"))}</button><button type="button" class="jm-tbl" data-aksi="batal-buat">${esc(t("jm.batal"))}</button></div>
@@ -210,7 +210,7 @@ function jalan() {
     bukaDialog(`<form class="jm-form" id="dForm" data-id="${esc(r.id)}" novalidate>
       <h2 id="dlgJudul">${esc(t("admin.ubah_peran"))}</h2><p class="jm-bantu">${esc(r.nama)}</p>
       <div id="dPesan"></div>
-      <div class="jm-medan"><label for="dPeran">${esc(t("admin.f.peran"))}</label><select class="jm-pilih" id="dPeran">${opsi(peranBisa, "peran.", r.peran)}</select></div>
+      <div class="jm-medan"><label for="dPeran">${esc(t("admin.f.peran"))}</label><select data-ikon="orang" class="jm-pilih" id="dPeran">${opsi(peranBisa, "peran.", r.peran)}</select></div>
       ${kolomCakupan("dProv", r.peran === "wilayah" ? r.cakupan_prov || "" : undefined)}
       <div class="jm-aksi"><button type="submit" class="jm-tbl jm-tbl-utama">${esc(t("jm.simpan"))}</button><button type="button" class="jm-tbl" data-aksi="batal">${esc(t("jm.batal"))}</button></div></form>`);
   }

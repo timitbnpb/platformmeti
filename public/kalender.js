@@ -6,6 +6,7 @@ import { pilihHtml, exHtml, sumberHtml } from "/inti/komponen.js";
 import { aksiHtml, hlHtml } from "/inti/aksi_ex.js";
 import { muat, label, urlAman } from "/publik.js";
 
+const IKON_JENIS = { seminar: "video", konferensi: "orang", audiensi: "perisai", lokakarya: "metode", regulasi: "regulasi", tenggat: "linimasa" };
 const JENIS = ["seminar", "konferensi", "audiensi", "lokakarya", "regulasi", "tenggat"];
 const HP = matchMedia("(max-width:639px)");
 const S = { tampil: "bulan", jenis: "", bulan: "" }; // bulan = "YYYY-MM"
@@ -62,7 +63,7 @@ function gambarKepala() {
     <div class="kal-kanan">
       <a class="kal-hariini" id="kalLanggan" href="https://calendar.google.com/calendar/r?cid=${encodeURIComponent("webcal://" + location.host + "/kalender.ics")}" target="_blank" rel="noopener noreferrer" title="${esc(t("kal.langgan"))}" aria-label="${esc(t("kal.langgan"))}">${ikon("tambah", 18)}<span>${esc(t("kal.langgan_pendek"))}</span></a>
       <button type="button" class="kal-bulat" data-salin-ical aria-label="${esc(t("kal.salin_ical"))}" title="${esc(t("kal.salin_ical"))}">${ikon("salin", 20)}</button>
-      <div class="jm-saring kal-saring">${pilihHtml({ id: "jenis", ikon: "jenis", label: t("kal.semua"), opsi: [["", t("kal.semua")], ...JENIS.map((j) => [j, label("kal.jenis.", j)])], nilai: S.jenis })}</div>
+      <div class="jm-saring kal-saring">${pilihHtml({ id: "jenis", ikon: "jenis", label: t("kal.semua"), opsi: [["", t("kal.semua")], ...JENIS.map((j) => [j, label("kal.jenis.", j), IKON_JENIS[j]])], nilai: S.jenis })}</div>
     </div>`;
   judulBulan();
 }

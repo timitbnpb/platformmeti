@@ -404,7 +404,7 @@ function isiFilter() {
   const tek = [...new Set(proyek().map((p) => p.teknologi).filter(namaTek))].sort((a, b) => namaTek(a).localeCompare(namaTek(b)));
   const pv = [...new Set(proyek().map(prov).filter(Boolean))].sort(), semua = ["", t("rt.semua")];
   $("saring-urut").innerHTML = pilihHtml({ id: "urut", ikon: "status", label: t("ins.urut"), nilai: urut, opsi: [["penting", t("ins.urut.penting")], ["topik", t("ins.urut.topik")]] });
-  $("saring-tren").innerHTML = pilihHtml({ id: "f-tek", ikon: "jenis", label: t("ins.f_tek"), nilai: fTek, opsi: [semua, ...tek.map((k) => [k, namaTek(k)])] }) + pilihHtml({ id: "f-prov", ikon: "wilayah", label: t("ins.f_prov"), nilai: fProv, opsi: [semua, ...pv.map((v) => [v, v])] });
+  $("saring-tren").innerHTML = pilihHtml({ id: "f-tek", ikon: "jenis", label: t("ins.f_tek"), nilai: fTek, opsi: [semua, ...tek.map((k) => [k, namaTek(k), "tek:" + k])] }) + pilihHtml({ id: "f-prov", ikon: "wilayah", label: t("ins.f_prov"), nilai: fProv, opsi: [semua, ...pv.map((v) => [v, v])] });
   $("urut").addEventListener("change", (e) => { urut = e.target.value; nanti(gambarTemuan); });
   $("f-tek").addEventListener("change", (e) => { fTek = e.target.value; nanti(gambarTren); });
   $("f-prov").addEventListener("change", (e) => { fProv = e.target.value; nanti(gambarTren); });

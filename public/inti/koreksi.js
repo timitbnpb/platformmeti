@@ -53,7 +53,7 @@ export async function bukaKoreksi({ entitas, id, nama, kolom }) {
   rec = null;
   d.innerHTML = `<form class="jm-form" id="korForm" novalidate data-ent="${esc(entitas)}" data-eid="${esc(id)}">
     <h2 id="korJudul">${esc(t("kor.judul"))}</h2><p class="jm-bantu">${esc(nama || id)}</p>
-    <div class="jm-medan"><label for="korKolom">${esc(t("kor.f.kolom"))}</label><select class="jm-pilih" id="korKolom">${kolomOk.map((k) => `<option value="${k}"${k === kolom ? " selected" : ""}>${esc(labelKolom(k))}</option>`).join("")}</select></div>
+    <div class="jm-medan"><label for="korKolom">${esc(t("kor.f.kolom"))}</label><select data-ikon="tabel" class="jm-pilih" id="korKolom">${kolomOk.map((k) => `<option value="${k}"${k === kolom ? " selected" : ""}>${esc(labelKolom(k))}</option>`).join("")}</select></div>
     <div class="jm-medan"><span class="jm-bantu">${esc(t("kor.f.sekarang"))}</span><strong id="korNow">-</strong></div>
     <div class="jm-medan"><label for="korNilai">${esc(t("kor.f.usulan"))}</label><textarea class="jm-isian" id="korNilai" rows="2" maxlength="500" required></textarea></div>
     <div class="jm-medan"><label for="korAlasan">${esc(t("kor.f.alasan"))}</label><textarea class="jm-isian" id="korAlasan" rows="3" maxlength="1000" required></textarea></div>

@@ -17,8 +17,8 @@ export function formHtml(r, { jenis, status, bayar }) {
       <button type="button" class="jm-tbl jm-tbl-kecil" data-m="form-tutup" aria-label="${esc(t("jm.tutup"))}">${ikon("tutup", 18)}</button></header>
     <div class="jm-adm-form">
       ${medan("nama", "adm.anggota.k.nama", teks("nama", v.nama), "", true)}
-      ${medan("jenis", "adm.anggota.f.jenis", `<select class="jm-pilih" id="f_jenis" name="jenis">${opsi(jenis, "adm.anggota.jenis.", v.jenis || jenis[0])}</select>`)}
-      ${medan("status", "adm.anggota.f.status", `<select class="jm-pilih" id="f_status" name="status">${opsi(status, "adm.anggota.status.", v.status || "aktif")}</select>`)}
+      ${medan("jenis", "adm.anggota.f.jenis", `<select data-ikon="jenis" class="jm-pilih" id="f_jenis" name="jenis">${opsi(jenis, "adm.anggota.jenis.", v.jenis || jenis[0])}</select>`)}
+      ${medan("status", "adm.anggota.f.status", `<select data-ikon="status" class="jm-pilih" id="f_status" name="status">${opsi(status, "adm.anggota.status.", v.status || "aktif")}</select>`)}
       ${medan("instansi", "adm.anggota.k.instansi", teks("instansi", v.instansi))}
       ${medan("jabatan", "adm.anggota.k.jabatan", teks("jabatan", v.jabatan))}
       ${medan("provinsi", "adm.anggota.k.provinsi", teks("provinsi", v.provinsi))}

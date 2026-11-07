@@ -181,9 +181,10 @@ const sinkronUrl = () => {
 let tampil = SEMUA, versi = 0;
 
 function isiPilihan() {
+  const ik = (kunci, v) => kunci === "tek" ? "tek:" + v : kunci === "st" ? "st:" + v : kunci === "prov" && PROV[String(v).trim().toLowerCase()] ? "prov:" + PROV[String(v).trim().toLowerCase()] : "";
   const opsi = (sel, daftar, kunci, nm) => {
     const cur = F[kunci];
-    $(sel).innerHTML = `<option value="">${esc(t(nm))}</option>` + daftar.map(([v, l, n]) => `<option value="${esc(v)}">${esc(l)} (${num(n)})</option>`).join("");
+    $(sel).innerHTML = `<option value="">${esc(t(nm))}</option>` + daftar.map(([v, l, n]) => `<option value="${esc(v)}"${ik(kunci, v) ? ` data-ikon="${ik(kunci, v)}"` : ""} data-n="${num(n)}">${esc(l)}</option>`).join("");
     $(sel).value = cur;
   };
   const ct = hitung(SEMUA, (r) => r.tek), cs = hitung(SEMUA, (r) => r.st), cp = hitung(SEMUA, (r) => r.prog), cv = hitung(SEMUA, (r) => r.prov || "_");

@@ -30,7 +30,7 @@ function entitasSel(r, P) {
 export function panelKoreksi(panel) {
   const S = { status: "baru", hal: 1, baris: [], total: 0, galat: null, ctl: null, P: {}, pilih: null };
   panel.innerHTML = `${kepalaTab("ubah", "kor.tab.ey", "kor.tab.j", "kor.tab.d")}
-    <div class="jm-bar jm-adm-bar1"><select class="jm-pilih" id="kStatus" aria-label="${esc(t("kor.f.status"))}">${STATUS.map((s) => `<option value="${s}"${s === S.status ? " selected" : ""}>${esc(t("kor.s." + s))}</option>`).join("")}</select></div>
+    <div class="jm-bar jm-adm-bar1"><select data-ikon="status" class="jm-pilih" id="kStatus" aria-label="${esc(t("kor.f.status"))}">${STATUS.map((s) => `<option value="${s}"${s === S.status ? " selected" : ""}>${esc(t("kor.s." + s))}</option>`).join("")}</select></div>
     <div id="kDaftar" aria-live="polite"></div><div class="jm-hal" id="kHal"></div>
     <dialog class="jm-dlg" id="kTinjau" aria-labelledby="kTinjauJ"></dialog>`;
   const $ = (i) => panel.querySelector("#" + i), dlg = $("kTinjau");
@@ -101,7 +101,7 @@ const IK_AKSI = { tinjau: "centang", buat: "tambah", tambah: "tambah", ubah: "ub
 export function panelAudit(panel) {
   const S = { jenis: "", hal: 1, baris: [], galat: null, ctl: null };
   panel.innerHTML = `${kepalaTab("jejak", "aud.ey", "aud.j", "aud.d")}
-    <div class="jm-bar jm-adm-bar1"><select class="jm-pilih" id="aJenis" aria-label="${esc(t("aud.f.jenis"))}">${JENIS.map((j) => `<option value="${j}">${esc(t(j ? "aud.jenis." + j : "aud.semua"))}</option>`).join("")}</select></div>
+    <div class="jm-bar jm-adm-bar1"><select data-ikon="jenis" class="jm-pilih" id="aJenis" aria-label="${esc(t("aud.f.jenis"))}">${JENIS.map((j) => `<option value="${j}">${esc(t(j ? "aud.jenis." + j : "aud.semua"))}</option>`).join("")}</select></div>
     <div id="aDaftar" aria-live="polite"></div><div class="jm-hal" id="aHal"></div>`;
   const $ = (i) => panel.querySelector("#" + i);
   panel.addEventListener("change", (e) => { if (e.target.id === "aJenis") { S.jenis = e.target.value; S.hal = 1; muat(); } });

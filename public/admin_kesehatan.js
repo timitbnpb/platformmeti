@@ -4,6 +4,7 @@ import { t, angka, tanggal } from "/i18n.js";
 import { esc, nanti, hantuHtml, kosongHtml, ikon } from "/inti/umum.js";
 import { LOGO_ORG, LOGO_NAMA } from "/inti/logo_org.js";
 import { data, kepalaTab, keadaan } from "/admin_umum.js";
+import { exHtml } from "/inti/komponen.js";
 import { tombolKoreksi } from "/inti/koreksi.js";
 
 /* [kunci, ikon, entitas, kolom koreksi] */
@@ -69,11 +70,10 @@ export async function panelKesehatan(panel) {
     const m = MASALAH.find(([k]) => k === pilih), rows = M[pilih];
     if (!rows.length) { el.innerHTML = kosongHtml("keh.bersih"); return; }
     const tampil = rows.slice(0, 200);
-    el.innerHTML = `<h3 class="jm-adm-sub">${esc(t("keh.m." + pilih))} <span class="jm-pil">${esc(angka(rows.length))}</span></h3>
-      <div class="jm-gulir"><table class="jm-tabel jm-adm-tabel-k"><thead><tr><th scope="col">${esc(t("keh.c.nama"))}</th><th scope="col">${esc(t("keh.c.jenis"))}</th><th scope="col" data-urut="tidak">${esc(t("admin.k.aksi"))}</th></tr></thead><tbody>${tampil.map((r) => `<tr${r.href ? ` data-href="${esc(r.href)}"` : ""}>
+    el.innerHTML = exHtml({ ikon: "tabel", topik: t("keh.ey"), tingkat: "h3", judulHtml: esc(t("keh.m." + pilih)), subHtml: esc(t("keh.sub.tabel", { n: angka(rows.length) })), isiHtml: `<div class="jm-gulir"><table class="jm-tabel jm-adm-tabel-k"><thead><tr><th scope="col">${esc(t("keh.c.nama"))}</th><th scope="col">${esc(t("keh.c.jenis"))}</th><th scope="col" data-urut="tidak">${esc(t("admin.k.aksi"))}</th></tr></thead><tbody>${tampil.map((r) => `<tr${r.href ? ` data-href="${esc(r.href)}"` : ""}>
         <td data-l="${esc(t("keh.c.nama"))}">${r.href ? `<a href="${esc(r.href)}"${r.ent === "berita" ? ' target="_blank" rel="noopener noreferrer"' : ""}>${esc(r.nama)}</a>` : esc(r.nama)}</td>
         <td data-l="${esc(t("keh.c.jenis"))}">${esc(t("kor.e." + r.ent))}</td>
         <td data-l="${esc(t("admin.k.aksi"))}">${r.ent === "berita" ? "-" : tombolKoreksi({ entitas: r.ent, id: r.id, nama: r.nama, kolom: m[3] })}</td></tr>`).join("")}</tbody></table></div>
-      ${rows.length > tampil.length ? `<p class="jm-bantu">${esc(t("pf.lagi", { n: angka(rows.length - tampil.length) }))}</p>` : ""}`;
+      ${rows.length > tampil.length ? `<p class="jm-bantu">${esc(t("pf.lagi", { n: angka(rows.length - tampil.length) }))}</p>` : ""}` });
   }
 }

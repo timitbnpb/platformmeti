@@ -50,7 +50,7 @@ function urutKlik(sec, S, gambar, kananDulu) {
     } else if (l) { S.n += BATAS; l.setAttribute("aria-busy", "true"); nanti(gambar); }
   });
 }
-const pilihHtml = (id, ik, label, opsi, nilai) => `<label class="jm-pil-pilih">${ikon(ik, 18)}<span class="sr">${esc(label)}</span><select id="${id}">${opsi.map(([v, l]) => `<option value="${esc(v)}"${v === nilai ? " selected" : ""}>${esc(l)}</option>`).join("")}</select></label>`;
+const pilihHtml = (id, ik, label, opsi, nilai) => `<label class="jm-pil-pilih">${ikon(ik, 18)}<span class="sr">${esc(label)}</span><select id="${id}" data-ikon="${esc(ik)}">${opsi.map(([v, l, oi]) => `<option value="${esc(v)}"${oi ? ` data-ikon="${esc(oi)}"` : ""}${v === nilai ? " selected" : ""}>${esc(l)}</option>`).join("")}</select></label>`;
 
 export async function pasangKeputusan(SEMUA, wadah, tglProyek) {
   let rup, ber;
@@ -100,8 +100,8 @@ export async function pasangKeputusan(SEMUA, wadah, tglProyek) {
       aksiHtml: aksiHtml({ csv: true }) + sumberHtml(esc(t("kp.j.sumber", { p: tanggal(tglProyek), b: tanggal(ber.dibangun_pada) }))),
       isiHtml: `<div class="jm-kp-ubin" id="kpJUbin"></div>
         <div class="jm-saring" role="group" aria-label="${esc(t("kp.j.ey"))}">
-          ${pilihHtml("kpJTek", "jenis", t("pj.f.tek"), [["", t("pj.f.tek")], ...teks.map((k) => [k, labTek(k)])], J.tek)}
-          ${pilihHtml("kpJProv", "peta", t("pj.f.provinsi"), [["", t("pj.f.provinsi")], ...provs.map((p) => [p, p])], J.prov)}
+          ${pilihHtml("kpJTek", "jenis", t("pj.f.tek"), [["", t("pj.f.tek")], ...teks.map((k) => [k, labTek(k), "tek:" + k])], J.tek)}
+          ${pilihHtml("kpJProv", "peta", t("pj.f.provinsi"), [["", t("pj.f.provinsi")], ...provs.map((p) => [p, p, PROV[p.trim().toLowerCase()] ? "prov:" + PROV[p.trim().toLowerCase()] : ""])], J.prov)}
           <button type="button" class="jm-hapus" id="kpJHapus" hidden>${ikon("silang", 18)}<span>${esc(t("jm.kosong.reset"))}</span></button>
         </div>
         <div id="kpJTab"></div>
@@ -191,7 +191,7 @@ export async function pasangKeputusan(SEMUA, wadah, tglProyek) {
         <h3 class="jm-kp-h3">${esc(t("kp.n.tabel"))}</h3>
         <div class="jm-saring" role="group" aria-label="${esc(t("kp.n.tabel"))}">
           ${pilihHtml("kpNSis", "wilayah", t("kp.f.sis"), [["", t("kp.f.sis")], ...sist.map((s) => [s, t("kp.s." + s)])], N.sis)}
-          ${pilihHtml("kpNProv", "peta", t("pj.f.provinsi"), [["", t("pj.f.provinsi")], ...provs.map((p) => [p, p])], N.prov)}
+          ${pilihHtml("kpNProv", "peta", t("pj.f.provinsi"), [["", t("pj.f.provinsi")], ...provs.map((p) => [p, p, PROV[p.trim().toLowerCase()] ? "prov:" + PROV[p.trim().toLowerCase()] : ""])], N.prov)}
           <button type="button" class="jm-kp-tog" id="kpNIpp" aria-pressed="${N.ipp}">${ikon("centang", 16)}<span>${esc(t("kp.f.ipp"))}</span></button>
         </div>
         <div id="kpNTab"></div>

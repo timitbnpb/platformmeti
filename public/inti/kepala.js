@@ -5,6 +5,7 @@ import { t, angka, mulaiBahasa, gantiBahasa, bahasa } from "/i18n.js";
 import { api, ikon, nanti } from "/inti/umum.js";
 import { subnavHtml, diBagianInsight } from "/inti/komponen.js";
 import { pasangRel } from "/inti/rel.js";
+import { pasangPilih } from "/inti/pilih.js";
 import { pasangCari } from "/inti/cari_global.js";
 import { catatHalaman } from "/inti/statistik.js";
 
@@ -152,6 +153,7 @@ export async function mulaiHalaman() {
   const kaki = document.getElementById("kaki");
   if (kaki) { kaki.innerHTML = kakiHtml(); kakiIsi(kaki, saya); }
   pasangRel();
+  pasangPilih();
   catatHalaman();
   return saya;
 }

@@ -3,6 +3,7 @@
 import { t } from "/i18n.js";
 import { esc, api, nanti, hantuHtml, ikon, pesanHtml, galatTeks } from "/inti/umum.js";
 import { data, kepalaTab, keadaan } from "/admin_umum.js";
+import { exHtml } from "/inti/komponen.js";
 
 const SEKSI = [["sorotan", "daftar"], ["berita_pilihan", "berita"], ["agenda", "kalender"], ["program", "regulasi"]];
 const norm = (s) => String(s || "").toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, "");
@@ -40,12 +41,10 @@ export async function panelBeranda(panel) {
   const jenisTeks = (k, i) => (k === "sorotan" && i.jenis ? `<span class="jm-pil">${esc(t("ber.j." + i.jenis))}</span>` : "");
 
   function gambar() {
-    isi.innerHTML = `<div class="jm-adm-dua">${SEKSI.map(([k, ik]) => `<section class="jm-kartu jm-ber" data-k="${k}" aria-labelledby="bj-${k}">
-      <h3 class="jm-adm-sub" id="bj-${k}">${ikon(ik, 18)}${esc(t("ber.s." + k))}</h3><p class="jm-bantu">${esc(t("ber.d." + k))}</p>
-      <ol class="jm-ber-daftar" data-daftar="${k}"></ol>
+    isi.innerHTML = `<div class="jm-adm-dua">${SEKSI.map(([k, ik]) => exHtml({ kelas: "jm-ber", ikon: ik, topik: t("ber.ey"), tingkat: "h3", judulHtml: esc(t("ber.s." + k)), subHtml: esc(t("ber.d." + k)), isiHtml: `<ol class="jm-ber-daftar" data-daftar="${k}"></ol>
       <div class="jm-medan"><label class="sr" for="bc-${k}">${esc(t("ber.cari"))}</label><input class="jm-isian" id="bc-${k}" type="search" autocomplete="off" placeholder="${esc(t("ber.cari"))}" data-cari="${k}"></div>
       <ul class="jm-ber-hasil" data-hasil="${k}"></ul>
-      <div class="jm-aksi"><button type="button" class="jm-tbl jm-tbl-utama" data-simpan="${k}">${ikon("centang", 18)}${esc(t("jm.simpan"))}</button><span data-pesan="${k}" role="status"></span></div></section>`).join("")}</div>`;
+      <div class="jm-aksi"><button type="button" class="jm-tbl jm-tbl-utama" data-simpan="${k}">${ikon("centang", 18)}${esc(t("jm.simpan"))}</button><span data-pesan="${k}" role="status"></span></div>` }).replace("<section ", `<section data-k="${k}" `)).join("")}</div>`;
     for (const [k] of SEKSI) daftar(k);
   }
   function daftar(k) {
